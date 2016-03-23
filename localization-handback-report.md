@@ -1,52 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 3
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [dsc\authoringResourceMofDesigner.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/authoringResourceMofDesigner.md) | InSyncHandedBackSuccess | [Details](#a95d0b59a90cbae44ec8d68bdaf59a1e318736d911)
- [dsc\configDataCredentials.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/configDataCredentials.md) | InSyncHandedBackSuccess | [Details](#0ed581ed07a81f654304c888733aa4429de146a314)
- [dsc\lnxScriptResource.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/lnxScriptResource.md) | InSyncHandedBackSuccess | [Details](#056b0c86701cfd096c863560836dc129ecefc86237)
 
 ## Item Details
-##### <a name='a95d0b59a90cbae44ec8d68bdaf59a1e318736d911'></a> Source: [dsc\authoringResourceMofDesigner.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/authoringResourceMofDesigner.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [dsc\authoringResourceMofDesigner.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/a9267aa56e2e8d2e04f1e7733395e85d6efa24c6/dsc/authoringResourceMofDesigner.md)
-* Handoff File: [authoringResourceMofDesigner.09b1adffc4afb0d9b1154880e2dab0b25d82d51b.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/281a86483eecee88bb7c15b1b8f893369305e848/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/authoringResourceMofDesigner.09b1adffc4afb0d9b1154880e2dab0b25d82d51b.ja-jp.xlf)
-* Handoff Datetime: 2016-02-23 03:01:00
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [authoringResourceMofDesigner.09b1adffc4afb0d9b1154880e2dab0b25d82d51b.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/727ab56b3d126e6b6b77f8e02fb67a80950e191e/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/authoringResourceMofDesigner.09b1adffc4afb0d9b1154880e2dab0b25d82d51b.ja-jp.xlf)
-* Handback Datetime: 2016-03-23 21:49:09
-* [Back to Top](#report-top)
-
-##### <a name='0ed581ed07a81f654304c888733aa4429de146a314'></a> Source: [dsc\configDataCredentials.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/configDataCredentials.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [dsc\configDataCredentials.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/a9267aa56e2e8d2e04f1e7733395e85d6efa24c6/dsc/configDataCredentials.md)
-* Handoff File: [configDataCredentials.f3e75119e7d93b2f914823c5ea23bfde3935a874.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/281a86483eecee88bb7c15b1b8f893369305e848/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/configDataCredentials.f3e75119e7d93b2f914823c5ea23bfde3935a874.ja-jp.xlf)
-* Handoff Datetime: 2016-02-23 03:01:00
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [configDataCredentials.f3e75119e7d93b2f914823c5ea23bfde3935a874.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/727ab56b3d126e6b6b77f8e02fb67a80950e191e/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/configDataCredentials.f3e75119e7d93b2f914823c5ea23bfde3935a874.ja-jp.xlf)
-* Handback Datetime: 2016-03-23 21:49:09
-* [Back to Top](#report-top)
-
-##### <a name='056b0c86701cfd096c863560836dc129ecefc86237'></a> Source: [dsc\lnxScriptResource.md](https://github.com/PowerShell/powerShell-Docs/blob/dcacf14d13cc0c3e4bb3b6602ad3ab6b3141471f/dsc/lnxScriptResource.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [dsc\lnxScriptResource.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/a9267aa56e2e8d2e04f1e7733395e85d6efa24c6/dsc/lnxScriptResource.md)
-* Handoff File: [lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/281a86483eecee88bb7c15b1b8f893369305e848/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.ja-jp.xlf)
-* Handoff Datetime: 2016-02-23 03:01:00
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/727ab56b3d126e6b6b77f8e02fb67a80950e191e/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/lnxScriptResource.1344a5d5b807ee53705e93842d9ef5e25a883359.ja-jp.xlf)
-* Handback Datetime: 2016-03-23 21:49:09
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
