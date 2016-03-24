@@ -11,9 +11,9 @@
 ## レポートを送信するようにするためのノードの構成
 
 ノードがサーバーにレポートを送信するようにするには、そのノードの LCM 構成で **ReportServerWeb** ブロックを使用します (LCM の構成については、
-「[ローカル構成マネージャーの構成](metaConfig.md)」を参照してください)。 ノードからレポートを送信するサーバーは、Web プル サーバーとしてセットアップする必要があります 
-(SMB 共有にレポートを送信することはできません)。 プル サーバーのセットアップについては、「[DSC Web プル サーバーのセットアップ](pullServer.md)」を参照してください。 レポート サーバーは、ノードが構成をプルしてリソースを取得するのと同じサービスにすることも、
-別のサービスにすることもできます。
+「[ローカル構成マネージャーの構成](metaConfig.md)」をご覧ください)。 ノードからレポートを送信するサーバーは、Web プル サーバーとしてセットアップする必要があります 
+(SMB 共有にレポートを送信することはできません)。 プル サーバーのセットアップについては、「[DSC Web プル サーバーのセットアップ](pullServer.md)」を参照してください。 レポート サーバーは、ノードが構成をプルしてリソースを取得するのと同じサービスであっても、
+別のサービスであってもかまいません。
  
  **ReportServerWeb** ブロックには、プル サービスの URL と、
 サーバーに認識されている登録キーを指定します。
@@ -148,7 +148,7 @@ ResourceName:  WindowsFeature
 ```
 
 これらの例は、レポート データを使用してどのようなことができるかを理解するためのものです。 PowerShell での JSON の操作の概要については、
-「[Playing with JSON and PowerShell (JSON と PowerShell で遊ぶ)](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/)」を参照してください。
+「[JSON と PowerShell で遊ぶ](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/)」をご覧ください。
 
 ## 参照
 >[ローカル構成マネージャーの構成](metaConfig.md)
