@@ -26,6 +26,7 @@
 ### [クラスに基づくカスタム リソース](authoringResourceClass.md)
 ### [複合リソース](authoringResourceComposite.md)
 ### [DSC リソースのデバッグ](debugResource.md)
+### [リソース作成のチェックリスト](resourceAuthoringChecklist.md)
 
 # [ローカル構成マネージャー (LCM) の構成](metaConfig.md)
 ## [PowerShell 4.0 での LCM の構成](metaConfig4.md)
@@ -52,4 +53,4 @@
 ### [nxService リソース](lnxServiceResource.md)
 ### [nxSshAuthorizedKeys リソース](lnxSshAuthorizedKeysResource.md)
 ### [nxUser リソース](lnxUserResource.md)
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=Mar16_HO1-->
