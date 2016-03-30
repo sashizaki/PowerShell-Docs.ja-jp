@@ -1,40 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [dsc\images\CredentialEncryptionDiagram1.png](https://github.com/PowerShell/powerShell-Docs/blob/97cfb44dc3db0937a0eaae5af5113210f988aa56/dsc/images/CredentialEncryptionDiagram1.png) | InSyncHandedBackSuccess | [Details](#d9f53a805041164f5070845c0fd216b63d17ae5824)
- [wmf\TOC.md](https://github.com/PowerShell/powerShell-Docs/blob/dc5696c9540352c5382d57cb8aed3df8f119d091/wmf/TOC.md) | InSyncHandedBackSuccess | [Details](#ab0af09d1888be43952868d9a8f16902fa28c1e1151)
 
 ## Item Details
-##### <a name='d9f53a805041164f5070845c0fd216b63d17ae5824'></a> Source: [dsc\images\CredentialEncryptionDiagram1.png](https://github.com/PowerShell/powerShell-Docs/blob/97cfb44dc3db0937a0eaae5af5113210f988aa56/dsc/images/CredentialEncryptionDiagram1.png)
-* Status: InSyncHandedBackSuccess
-* Target File: [dsc\images\CredentialEncryptionDiagram1.png](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/1a1d66e5502916aa76f54a5419a9ec6f4ff44d55/dsc/images/CredentialEncryptionDiagram1.png)
-* Handoff File: [d9f53a805041164f5070845c0fd216b63d17ae58.png](https://github.com/PowerShell/powerShell-Docs.handoff/blob/5765f5f26529ca16b4dd5e7da3713ccb964f610e/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/d9f53a805041164f5070845c0fd216b63d17ae58.png)
-* Handoff Datetime: 2016-03-11 01:02:12
-* Handoff Reason: IsDependency
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: [d9f53a805041164f5070845c0fd216b63d17ae58.png](https://github.com/PowerShell/powerShell-Docs.handback/blob/d64f6d30158b151ff7e1dcb644cee742288d95b0/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/d9f53a805041164f5070845c0fd216b63d17ae58.png)
-* Handback Datetime: 2016-03-30 18:33:30
-* Dependency From: dsc\secureMOF.md
-* [Back to Top](#report-top)
-
-##### <a name='ab0af09d1888be43952868d9a8f16902fa28c1e1151'></a> Source: [wmf\TOC.md](https://github.com/PowerShell/powerShell-Docs/blob/dc5696c9540352c5382d57cb8aed3df8f119d091/wmf/TOC.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [wmf\TOC.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/1a1d66e5502916aa76f54a5419a9ec6f4ff44d55/wmf/TOC.md)
-* Handoff File: [TOC.60497266061c38453b3db893ec675eb65584af89.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/3022cea39cf1c80d00c29b75e9c0d9a2960572a6/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/TOC.60497266061c38453b3db893ec675eb65584af89.ja-jp.xlf)
-* Handoff Datetime: 2016-03-16 22:51:47
-* Handoff Reason: Include
-* Archive File: [TOC.60497266061c38453b3db893ec675eb65584af89.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/ba008d182b349d34c44c35195a33af3b863140ef/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/TOC.60497266061c38453b3db893ec675eb65584af89.ja-jp.xlf)
-* Archive Datetime: 2016-03-29 13:11:05
-* Handback File: [TOC.60497266061c38453b3db893ec675eb65584af89.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d64f6d30158b151ff7e1dcb644cee742288d95b0/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/TOC.60497266061c38453b3db893ec675eb65584af89.ja-jp.xlf)
-* Handback Datetime: 2016-03-30 18:33:30
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
