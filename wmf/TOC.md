@@ -39,7 +39,6 @@
 #### [複数の構成フラグメントによるノードの構成](dsc_partialconfig.md)
 ##### [RefreshMode の混在のサポート](dsc_partialconfig_mixedmode.md)
 #### [新しい属性を使用した DSC エンジンの構成](dsc_metaconfiguration.md)
-#### [プッシュ モードとプル モードのさまざまな組み合わせ](dsc_mixedrefreshmode.md)
 #### [LCM 状態に関する詳細情報](dsc_lcmstate.md)
 #### [RefreshMode と ConfigurationMode の出現頻度は互いの倍数である必要はない](dsc_freqnomultiple.md)
 #### [RefreshMode プロパティの追加の値](dsc_refreshmode.md)
@@ -98,4 +97,4 @@
 
 # [既知の問題と制限事項](limitation_overview.md)
 ## [Desired State Configuration (DSC) の既知の問題](limitation_dsc.md)
-<!--HONumber=Mar16_HO2-->
+<!--HONumber=Mar16_HO3-->
