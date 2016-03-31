@@ -12,4 +12,8 @@ DSC リソースは、Windows PowerShell モジュールです。 モジュー�
 * [Implementing a DSC resource in C# (C# での DSC リソースの実装)](authoringResourceMofCS.md) 
 * [PowerShell クラスを使用したカスタム DSC リソースの記述](authoringResourceClass.md) 
 * [複合リソース: リソースとしての DSC 構成の使用](authoringResourceComposite.md) 
-* [リソース デザイナー ツールの使用](authoringResourceMofDesigner.md) <!--HONumber=Feb16_HO4-->
+* [リソース デザイナー ツールの使用](authoringResourceMofDesigner.md) 
+
+<!--HONumber=Feb16_HO4-->
+
+

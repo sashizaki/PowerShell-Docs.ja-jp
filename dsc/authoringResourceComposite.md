@@ -181,4 +181,8 @@ configuration RenameVM
 ### 概念
 * [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)
 * [Windows PowerShell Desired State Configuration の概要](overview.md)
+
+
 <!--HONumber=Feb16_HO4-->
+
+

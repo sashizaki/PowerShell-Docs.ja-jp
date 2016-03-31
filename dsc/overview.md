@@ -37,4 +37,8 @@ DSC には、構成の作成を許可し、DSC リソースのビルドに役立
 * [DSC リソース](resources.md)
 * [ローカル構成マネージャーの構成](metaconfig.md)
 
+
+
 <!--HONumber=Feb16_HO4-->
+
+

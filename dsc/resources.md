@@ -10,4 +10,8 @@ Desired State Configuration (DSC) リソースは、DSC 構成の構成要素を
 
 - [組み込み DSC リソース](builtInResource.md)
 - [カスタム DSC リソースのビルド](authoringResource.md)
-- [Linux 用組み込み DSC リソース](lnxBuiltInResources.md)<!--HONumber=Feb16_HO4-->
+- [Linux 用組み込み DSC リソース](lnxBuiltInResources.md)
+
+<!--HONumber=Feb16_HO4-->
+
+

@@ -168,4 +168,8 @@ Linux 用 DSC のメッセージのために次のログ ファイルが生成�
 |ログ ファイル|Directory|説明|
 |---|---|---|
 |omiserver.log|/opt/omi/var/log/|OMI CIM サーバーの操作に関連するメッセージ。|
-|dsc.log|/opt/omi/var/log/|ローカル構成マネージャー (LCM) と DSC リソースの操作に関連するメッセージ。|<!--HONumber=Feb16_HO4-->
+|dsc.log|/opt/omi/var/log/|ローカル構成マネージャー (LCM) と DSC リソースの操作に関連するメッセージ。|
+
+<!--HONumber=Feb16_HO4-->
+
+

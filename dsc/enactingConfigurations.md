@@ -29,4 +29,8 @@ DSC プル サーバーをオンプレミスで展開する方法の詳細につ
 
 - [Setting up a web pull server (Web プル サーバーのセットアップ)](pullServer.md)
 - [Setting up an SMB pull server (SMB プル サーバーのセットアップ)](pullServerSMB.md)
-- [Configuring a pull client (プル クライアントの構成)](pullClientConfigID.md)<!--HONumber=Feb16_HO4-->
+- [Configuring a pull client (プル クライアントの構成)](pullClientConfigID.md)
+
+<!--HONumber=Feb16_HO4-->
+
+

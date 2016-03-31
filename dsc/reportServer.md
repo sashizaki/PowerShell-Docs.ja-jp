@@ -154,4 +154,8 @@ ResourceName:  WindowsFeature
 >[ローカル構成マネージャーの構成](metaConfig.md)
 >[DSC Web プル サーバーのセットアップ](pullServer.md)
 >[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
+
+
 <!--HONumber=Feb16_HO4-->
+
+

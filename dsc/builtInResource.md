@@ -16,4 +16,8 @@ Windows PowerShell Desired State Configuration (DSC) には、一連の組み込
 * [ユーザー リソース](userResource.md)
 * [Windows 機能リソース](windowsFeatureResource.md)
 * [Windows プロセス リソース](windowsProcessResource.md)
+
+
 <!--HONumber=Feb16_HO4-->
+
+

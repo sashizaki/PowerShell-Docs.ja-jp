@@ -519,4 +519,8 @@ Start-DscConfiguration -Wait -Force Test
 ## 参照
 ### 概念
 [カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -87,4 +87,8 @@ PullClientConfigID
 
 * [構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)
 * [DSC Web プル サーバーのセットアップ](pullServer.md)
+
+
 <!--HONumber=Feb16_HO4-->
+
+

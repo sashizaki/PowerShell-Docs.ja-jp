@@ -35,4 +35,8 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 
 ## 構成 ID
 このスクリプトは、LCM の **ConfigurationID** プロパティをこの目的で以前に作成した GUID に設定します (GUID を作成するには、**New-Guid** コマンドレットを使用します)。 **ConfigurationID** は、LCM がプル サーバーで適切な構成を検索する場合に使用します。 プル サーバー上の構成 MOF ファイルは、`ConfigurationID.mof` という名前にする必要があります。ここで、*ConfigurationID* はターゲット ノードの LCM の **ConfigurationID** プロパティの値です。
+
+
 <!--HONumber=Feb16_HO4-->
+
+
