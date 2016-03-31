@@ -812,9 +812,9 @@
 * Archive Datetime: 2016-03-29 13:11:05
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\pullClientConfigID.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/556a363e876cac56e106e1fc02327327442dabd1/dsc/pullClientConfigID.md)
-* Current Handback File: [pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4e67ce90e4f1a31ea4b0c8f924d1ea870ec855ae/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.ja-jp.xlf)
-* Current Handback Datetime: 2016-03-30 17:58:59
+* Current Target File: [dsc\pullClientConfigID.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/fa4101d5936a30dead1e38f107c65a782caa8498/dsc/pullClientConfigID.md)
+* Current Handback File: [pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/6ef81648cf90b2c1c25f8c9ea07649d757e90f43/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.ja-jp.xlf)
+* Current Handback Datetime: 2016-03-31 19:49:35
 * [Back to Top](#report-top)
 
 ##### <a name='d0beb3d04da2488302a56f714d8d8a5b9e5ac6f949'></a> Source: [dsc\pullClientConfigID4.md](https://github.com/PowerShell/powerShell-Docs/blob/0a303e872e91ac5f8eff4f9f84a25237ab0e8fb2/dsc/pullClientConfigID4.md)
