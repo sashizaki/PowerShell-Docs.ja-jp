@@ -111,4 +111,8 @@ PullClientConfigID
 
 ## 参照
 
-* [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)<!--HONumber=Feb16_HO4-->
+* [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
+
+<!--HONumber=Feb16_HO4-->
+
+
