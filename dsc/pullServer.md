@@ -63,7 +63,7 @@ configuration Sample_xDscWebService
 1. 構成を実行して、作成した自己署名証明書の拇印を **certificateThumbPrint** パラメーターとして渡します。
 
 ```powershell
-PS:\>$myCert = Get-ChildItem CERT: | Where-Object {$_.Subject -eq 'CN=PSDSCPullServerCert'}
+PS:\>$myCert = Get-ChildItem CERT:\LocalMachine\My | Where-Object {$_.Subject -eq 'CN=PSDSCPullServerCert'}
 PS:\>Sample_xDSCService -certificateThumbprint $myCert.Thumbprint 
 ```
 
@@ -74,8 +74,8 @@ PS:\>Sample_xDSCService -certificateThumbprint $myCert.Thumbprint
 ## 構成とリソースの配置
 プル サーバーのセットアップが完了した後、`$env:PROGRAMFILES\WindowsPowerShell` の下に "DscService" という名前の新しいフォルダーがあります。 そのフォルダーには、"Modules" および "Configuration" という 2 つのフォルダーがあります。 "Modules" フォルダーには、ノードがこのサーバーからプルする構成に必要となるすべてのリソースを配置します。 "Configuration" フォルダーには、ノードによってプルされる構成の構成 MOF ファイルを配置します。 MOF ファイルの名前は、プル クライアントの種類によって異なります。 次のトピックでは、プル クライアントのセットアップについて詳しく説明します。
 
-* [構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)
-* [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
+* [構成 ID を使用した DSC プル クライアントのセットアップ](pullClientConfigID.md)
+* [構成名を使用した DSC プル クライアントのセットアップ](pullClientConfigNames.md)
 * [部分構成](partialConfigs.md)
 
 ## MOF チェックサムの作成
@@ -89,4 +89,8 @@ PS:\>Sample_xDSCService -certificateThumbprint $myCert.Thumbprint
 * [Windows PowerShell Desired State Configuration の概要](overview.md)
 * [構成の適用](enactingConfigurations.md)
 * [How to retrieve node information from DSC pull server (DSC プル サーバーからノード情報を取得する方法)](retrieveNodeInfo.md)
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=Mar16_HO1-->
+
+
