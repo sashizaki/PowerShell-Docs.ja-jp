@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "28bbc20513f4d10baec66dc5931e8c3e35dd92a7",
-  "LastTranslatedCommit": "860af6ee25c0fa9347e5d47d81d045a839994bea",
+  "LastTranslatedCommit": "e10c8d88573f5d92efa7f09cb3742f13f28dd53f",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
       "FileHash": "81efeb79a70df604ef8c126c0ebd17b4f4711a44",
@@ -1766,14 +1766,14 @@
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": null,
-      "TargetFilePath": null,
-      "HandbackFilePath": null,
-      "HandbackFileCommit": null,
-      "HandbackDateTime": "0001-01-01T00:00:00",
+      "TargetFileCommit": "e10c8d88573f5d92efa7f09cb3742f13f28dd53f",
+      "TargetFilePath": "dsc\\pullServer.md",
+      "HandbackFilePath": "ol-handback\\PowerShell\\powerShell-Docs.ja-jp\\live\\pullServer.4b925b277da29998394af746bdbdd508fda48909.ja-jp.xlf",
+      "HandbackFileCommit": "0ee17e64a6d00c8c36f5c8d191a23f662c8b8c6c",
+      "HandbackDateTime": "2016-04-04T19:45:54.9540588Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "UpdatedDateTime": "2016-04-04T19:45:54.9540588Z",
       "ArchiveFilePath": null,
       "ArchiveFileCommit": null,
       "ArchiveFileDateTime": "0001-01-01T00:00:00",

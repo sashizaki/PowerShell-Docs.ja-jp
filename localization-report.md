@@ -857,9 +857,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/28c1af6fa8dcfa916e59c66a7ea82b1bf68a59df/dsc/pullServer.md)
-* Current Handback File: [pullServer.4b925b277da29998394af746bdbdd508fda48909.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fa4924d4a12de73bcc07edb26ade90c22a1b90a6/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/pullServer.4b925b277da29998394af746bdbdd508fda48909.ja-jp.xlf)
-* Current Handback Datetime: 2016-03-23 21:45:31
+* Current Target File: [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/e10c8d88573f5d92efa7f09cb3742f13f28dd53f/dsc/pullServer.md)
+* Current Handback File: [pullServer.4b925b277da29998394af746bdbdd508fda48909.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/0ee17e64a6d00c8c36f5c8d191a23f662c8b8c6c/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/pullServer.4b925b277da29998394af746bdbdd508fda48909.ja-jp.xlf)
+* Current Handback Datetime: 2016-04-04 19:45:54
 * [Back to Top](#report-top)
 
 ##### <a name='f1dfcb2e422869686b457b9c080d3165031fafcd52'></a> Source: [dsc\pullServerSMB.md](https://github.com/PowerShell/powerShell-Docs/blob/0a303e872e91ac5f8eff4f9f84a25237ab0e8fb2/dsc/pullServerSMB.md)
