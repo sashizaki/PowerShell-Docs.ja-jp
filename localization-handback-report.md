@@ -1,11 +1,26 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [dsc\troubleshooting.md](https://github.com/PowerShell/powerShell-Docs/blob/9aee11690c9278e18265f954c6808eecbb1576b5/dsc/troubleshooting.md) | InSyncHandedBackSuccess | [Details](#d571a7562bd23e3bca78127732dd4fccb88fee1c64)
 
 ## Item Details
+##### <a name='d571a7562bd23e3bca78127732dd4fccb88fee1c64'></a> Source: [dsc\troubleshooting.md](https://github.com/PowerShell/powerShell-Docs/blob/9aee11690c9278e18265f954c6808eecbb1576b5/dsc/troubleshooting.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\troubleshooting.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/860af6ee25c0fa9347e5d47d81d045a839994bea/dsc/troubleshooting.md)
+* Handoff File: [troubleshooting.bcb1039de4ec46bfb0ab2d224be50829d0891e7d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/acc8658caf7cf0e1b5f00dbe416ad080f1da0c1d/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/troubleshooting.bcb1039de4ec46bfb0ab2d224be50829d0891e7d.ja-jp.xlf)
+* Handoff Datetime: 2016-03-04 21:11:25
+* Handoff Reason: Include
+* Archive File: [troubleshooting.bcb1039de4ec46bfb0ab2d224be50829d0891e7d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/ba008d182b349d34c44c35195a33af3b863140ef/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/troubleshooting.bcb1039de4ec46bfb0ab2d224be50829d0891e7d.ja-jp.xlf)
+* Archive Datetime: 2016-03-29 13:11:05
+* Handback File: [troubleshooting.bcb1039de4ec46bfb0ab2d224be50829d0891e7d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/396073d296b67910e9ff50596da1fcf67330098b/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/troubleshooting.bcb1039de4ec46bfb0ab2d224be50829d0891e7d.ja-jp.xlf)
+* Handback Datetime: 2016-04-04 13:14:51
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
