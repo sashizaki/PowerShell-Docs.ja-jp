@@ -52,7 +52,7 @@ Configuration MyDscConfiguration {
 }
 ```
 
-この例では、構成をコンパイルするときに、ノードの名前を $computerName パラメーターとして渡すことによって、ノードの名前を指定します。 名前の既定値は "localhost" です。
+この例では、[構成をコンパイルする](# Compiling the configuration) ときに、ノードの名前を $computerName パラメーターとして渡すことによって、ノードの名前を指定します。 名前の既定値は "localhost" です。
 
 ## 構成のコンパイル
 構成を適用する前に、MOF ドキュメントにコンパイルする必要があります。 そのためには、PowerShell 関数の場合と同じように構成を呼び出します。
@@ -118,4 +118,8 @@ Configuration DependsOnExample {
 * [Windows PowerShell Desired State Configuration の概要](overview.md)
 * [DSC リソース](resources.md)
 * [ローカル構成マネージャーの構成](metaconfig.md)
+
+
 <!--HONumber=Feb16_HO4-->
+
+
