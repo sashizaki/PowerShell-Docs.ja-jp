@@ -1,0 +1,305 @@
+# 単一インスタンスの DSC リソースを記述する (ベスト プラクティス)
+
+>**注:** このトピックでは、構成で単一のインスタンスのみを許可する DSC リソースを定義するためのベスト プラクティスについて説明します。 現在のところ、これを行う組み込みの DSC 機能はありません。 その状況は、
+>将来変わる可能性があります。
+
+構成の中で、1 つのリソースを複数回使用することを許可したくない状況があります。 たとえば、 
+xTimeZone リソースの以前の実装では、構成がリソースを複数回呼び出し、各リソース ブロックに別々のタイム ゾーンを設定する可能性がありました。
+
+```powershell
+Configuration SetTimeZone 
+{ 
+    Param 
+    ( 
+        [String[]]$NodeName = $env:COMPUTERNAME 
+
+    ) 
+
+    Import-DSCResource -ModuleName xTimeZone 
+ 
+ 
+    Node $NodeName 
+    { 
+         xTimeZone TimeZoneExample 
+         { 
+        
+            TimeZone = 'Eastern Standard Time' 
+         } 
+
+         xTimeZone TimeZoneExample2
+         {
+
+            TimeZone = 'Pacific Standard Time'
+
+         }        
+
+    } 
+} 
+```
+
+これは、DSC リソース キーの動作方法が原因でした。 1 つのリソースには、少なくとも 1 つのキー プロパティが必要です。 キー プロパティのすべての値の組み合わせが一意であれば、 
+リソースのインスタンスは一意とみなされます。 リソースの以前の実装では、[xTimeZone](https://github.com/PowerShell/xTimeZone) リソースには **TimeZone** プロパティが 1 つあるだけで、 
+そのプロパティをキーにする必要がありました。 このため、上記のような構成は、警告なしにコンパイルされ実行されました。 各 **xTimeZone** リソース ブロックは、一意とみなされます。 これは、 
+タイムゾーンが戻されたり進められたりすることを循環することになって、構成がノードに繰り返し適用される原因になりました。
+
+構成がタイムゾーンを対象のノードに 1 回だけ設定されるようにするため、リソースは、2 番目のプロパティで、キー プロパティになる **IsSingleInstance** を追加するよう更新されることになっていました。 
+**IsSingleInstance** は、**ValueMap** を使用して、単一の値 "Yes" に制限されていました。 リソースの以前の MOF スキーマは、次のようでした。
+
+```powershell
+[ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
+class xTimeZone : OMI_BaseResource
+{
+    [Key, Description("Specifies the TimeZone.")] String TimeZone;
+};
+```
+
+リソースの更新された MOF スキーマを、次に示します。
+
+```powershell
+[ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
+class xTimeZone : OMI_BaseResource
+{
+    [Key, Description("Specifies the resource is a single instance, the value must be 'Yes'"), ValueMap{"Yes"}, Values{"Yes"}] String IsSingleInstance;
+    [Required, Description("Specifies the TimeZone.")] String TimeZone;
+};
+```
+
+リソース スクリプトも、新しいパラメーターを使用するよう更新されました。 次に示すのは、以前のリソース スクリプトです。
+
+```powershell
+function Get-TargetResource
+{
+    [CmdletBinding()]
+    [OutputType([Hashtable])]
+    param
+    (
+        [parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]
+        $TimeZone
+    )
+
+    #Get the current TimeZone
+    $CurrentTimeZone = Invoke-Expression "tzutil.exe /g"
+
+    $returnValue = @{
+        TimeZone = $CurrentTimeZone
+    }
+
+    #Output the target resource
+    $returnValue
+}
+
+
+function Set-TargetResource
+{
+    [CmdletBinding(SupportsShouldProcess=$true)]
+    param
+    (
+        [parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]
+        $TimeZone
+    )
+    
+    #Output the result of Get-TargetResource function.
+    $GetCurrentTimeZone = Get-TargetResource -TimeZone $TimeZone
+
+    If($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
+    {
+        Try
+        {
+            Write-Verbose "Setting the TimeZone"
+            Invoke-Expression "tzutil.exe /s ""$TimeZone"""
+        }
+        Catch
+        {
+            $ErrorMsg = $_.Exception.Message
+            Write-Verbose $ErrorMsg
+        }
+    }
+}
+
+
+function Test-TargetResource
+{
+    [CmdletBinding()]
+    [OutputType([Boolean])]
+    param
+    (
+        [parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]
+        $TimeZone
+    )
+
+    #Output from Get-TargetResource
+    $Get = Get-TargetResource -TimeZone $TimeZone
+
+    If($TimeZone -eq $Get.TimeZone)
+    {
+        return $true
+    }
+    Else
+    {
+        return $false
+    }
+}
+
+Export-ModuleMember -Function *-TargetResource
+```
+
+次に示すのは、更新されたスクリプトです。 必須の **IsSingleInstance** パラメーターが、各関数に追加されるようになったことにご注意ください。
+
+```powershell
+function Get-TargetResource
+{
+    [CmdletBinding()]
+    [OutputType([Hashtable])]
+    param
+    (
+        [parameter(Mandatory = $true)]
+        [ValidateSet('Yes')]
+        [String]
+        $IsSingleInstance, 
+
+        [parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]
+        $TimeZone
+    )
+
+    #Get the current TimeZone
+    $CurrentTimeZone = Get-TimeZone
+
+    $returnValue = @{
+        TimeZone = $CurrentTimeZone
+    }
+
+    #Output the target resource
+    $returnValue
+}
+
+
+function Set-TargetResource
+{
+    [CmdletBinding(SupportsShouldProcess=$true)]
+    param
+    (
+        [parameter(Mandatory = $true)]
+        [ValidateSet('Yes')]
+        [String]
+        $IsSingleInstance, 
+
+        [parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]
+        $TimeZone
+    )
+    
+    #Output the result of Get-TargetResource function.
+    $CurrentTimeZone = Get-TimeZone
+    
+    If($PSCmdlet.ShouldProcess("'$TimeZone'","Replace the System Time Zone"))
+    {
+        Try{
+            if($CurrentTimeZone -ne $TimeZone){
+                Write-Verbose "Setting the TimeZone"
+                Set-TimeZone -TimeZone $TimeZone}
+            else{
+                Write-Verbose "TimeZone already set to $TimeZone"
+            }
+        }
+        Catch{
+            $ErrorMsg = $_.Exception.Message
+            Write-Verbose $ErrorMsg
+        }
+    }
+}
+
+
+function Test-TargetResource
+{
+    [CmdletBinding()]
+    [OutputType([Boolean])]
+    param
+    (
+        [parameter(Mandatory = $true)]
+        [ValidateSet('Yes')]
+        [String]
+        $IsSingleInstance, 
+
+        [parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [String]
+        $TimeZone
+    )
+
+    #Output from Get-TargetResource
+    $CurrentTimeZone = Get-TimeZone
+
+    If($TimeZone -eq $CurrentTimeZone)
+    {
+        return $true
+    }
+    Else
+    {
+        return $false
+    }
+}
+
+Function Get-TimeZone 
+{
+    [CmdletBinding()]
+    param()
+
+    & tzutil.exe /g
+}
+
+Function Set-TimeZone 
+{
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory=$true)]
+        [System.String]
+        $TimeZone
+    )
+
+    try
+    {
+        & tzutil.exe /s $TimeZone    
+    }catch
+    {
+        $ErrorMsg = $_.Exception.Message
+        Write-Verbose $ErrorMsg
+    }
+}
+
+Export-ModuleMember -Function *-TargetResource
+```
+
+**TimeZone** プロパティは、もはやキーではないことにご注意ください。 現在は、構成がタイムゾーンの設定を (2 つの別々の **xTimeZone** ブロックを別の **TimeZone** の値と共に使用することによって) 2 回試みる場合、
+構成をコンパイルしようとすると、次のようにエラーが発生します。
+
+```powershell
+Test-ConflictingResources : A conflict was detected between resources '[xTimeZone]TimeZoneExample (::15::10::xTimeZone)' and 
+'[xTimeZone]TimeZoneExample2 (::22::10::xTimeZone)' in node 'CONTOSO-CLIENT'. Resources have identical key properties but there are differences in the 
+following non-key properties: 'TimeZone'. Values 'Eastern Standard Time' don't match values 'Pacific Standard Time'. Please update these property 
+values so that they are identical in both cases.
+At line:271 char:9
++         Test-ConflictingResources $keywordName $canonicalizedValue $k ...
++         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (:) [Write-Error], InvalidOperationException
+    + FullyQualifiedErrorId : ConflictingDuplicateResource,Test-ConflictingResources
+Errors occurred while processing configuration 'SetTimeZone'.
+At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguration\PSDesiredStateConfiguration.psm1:3705 char:5
++     throw $ErrorRecord
++     ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidOperation: (SetTimeZone:String) [], InvalidOperationException
+    + FullyQualifiedErrorId : FailToProcessConfiguration
+```
+   
+
+<!--HONumber=Apr16_HO1-->
+
+

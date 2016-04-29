@@ -4,6 +4,7 @@
 ## [構成の適用](enactingConfigurations.md)
 ## [構成データ](configData.md)
 ### [構成データでの資格情報オプション](configDataCredentials.md)
+### [ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)
 ## [構成 MOF ファイルのセキュリティ保護](secureMOF.md)
 ## [部分構成](partialConfigs.md)
 # [参照情報](resources.md)
@@ -18,7 +19,7 @@
 ### [スクリプト リソース](scriptResource.md)
 ### [サービス リソース](serviceResource.md)
 ### [[ユーザー リソース]](userResource.md)
-### [Windows 機能リソース](windowsfeatureResource.md)
+### [WindowsFeature リソース](windowsfeatureResource.md)
 ### [WindowsProcess リソース](windowsProcessResource.md)
 ## [カスタム リソースの作成](authoringResource.md) 
 ### [MOF ベースのカスタム リソース](authoringResourceMOF.md)
@@ -26,6 +27,7 @@
 ### [クラスに基づくカスタム リソース](authoringResourceClass.md)
 ### [複合リソース](authoringResourceComposite.md)
 ### [DSC リソースのデバッグ](debugResource.md)
+### [単一インスタンスの DSC リソースの記述 (ベスト プラクティス)](singleInstance.md)
 ### [リソース作成のチェックリスト](resourceAuthoringChecklist.md)
 
 # [ローカル構成マネージャー (LCM) の構成](metaConfig.md)
@@ -33,6 +35,7 @@
 
 # DSC プル モデル
 ## [Web プル サーバーのセットアップ](pullServer.md)
+## [DSC SMB プル サーバーのセットアップ](pullServerSMB.md)
 ## [プル クライアントのセットアップ](pullClient.md)
 ### [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
 ### [構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)
@@ -53,4 +56,8 @@
 ### [nxService リソース](lnxServiceResource.md)
 ### [nxSshAuthorizedKeys リソース](lnxSshAuthorizedKeysResource.md)
 ### [nxUser リソース](lnxUserResource.md)
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Apr16_HO1-->
+
+
