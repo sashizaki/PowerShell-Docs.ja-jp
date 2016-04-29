@@ -1,6 +1,6 @@
 # Linux 用 Desired State Configuration (DSC) の概要
 
-このトピックでは、Linux 用 PowerShell Desired State Configuration (DSC) の使用を開始する方法について説明します。 DSC に関する一般的な情報については、「[Windows PowerShell Desired State Configuration の概要](overview.md)」を参照してください。
+このトピックでは、Linux 用 PowerShell Desired State Configuration (DSC) の使用を開始する方法について説明します。 DSC に関する一般的な情報については、「[Windows PowerShell Desired State Configuration の概要](overview.md)」をご覧ください。
 
 ## サポートされている Linux オペレーティング システム バージョン
 
@@ -29,7 +29,7 @@ Linux 用 DSC をインストールする前に、[Open Management Infrastructur
 
 ### OMI のインストール
 
-Linux 用 Desired State Configuration には、Open Management Infrastructure (OMI) CIM サーバーのバージョン 1.0.8.1 が必要です。 OMI は、Open Group: [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/) からダウンロードできます。
+Linux 用 Desired State Configuration には、Open Management Infrastructure (OMI) CIM サーバーのバージョン 1.0.8.1 が必要です。 OMI は、The Open Group: [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/) からダウンロードできます。
 
 OMI をインストールするには、Linux システムに適したパッケージ (.rpm または .deb)、OpenSSL バージョンに適したパッケージ (ssl_098 または ssl_100)、およびアーキテクチャに適したパッケージ (x86/x64) をインストールします。 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server、および Oracle Linux には、RPM パッケージが適しています。 Debian GNU/Linux および Ubuntu Server には、DEB パッケージが適しています。 OpenSSL 0.9.8 がインストールされているコンピューターには ssl_098 パッケージが適し、OpenSSL 1.0 がインストールされているコンピューターには ssl_100 パッケージが適しています。
 
@@ -40,6 +40,8 @@ CentOS 7 x64 システムに OMI をインストールするには、次のコ�
 `# sudo rpm -Uvh omiserver-1.0.8.ssl_100.rpm`
 
 ### DSC のインストール
+
+Linux 用の DSC は、[こちら](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)からダウンロードできます。 
 
 DSC をインストールするには、Linux システムに適したパッケージ (.rpm または .deb)、OpenSSL バージョンに適したパッケージ (ssl_098 または ssl_100)、およびアーキテクチャに適したパッケージ (x86/x64) をインストールします。 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server、および Oracle Linux には、RPM パッケージが適しています。 Debian GNU/Linux および Ubuntu Server には、DEB パッケージが適しています。 OpenSSL 0.9.8 がインストールされているコンピューターには ssl_098 パッケージが適し、OpenSSL 1.0 がインストールされているコンピューターには ssl_100 パッケージが適しています。
 
@@ -92,7 +94,7 @@ ExampleConfiguration -OutputPath:"C:\temp"
 
 ### Linux コンピューターへの構成のプッシュ
 
-構成ドキュメント (MOF ファイル) を Linux コンピューターにプッシュするには、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを使用します。 Linux コンピューターに対してリモートからこのコマンドレットを [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx と共に使用するか、または [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) コマンドレットを使用するためには、CIMSession を使用する必要あります。 Linux コンピューターに CIMSession を作成するには、[New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) コマンドレットを使用します。
+構成ドキュメント (MOF ファイル) を Linux コンピューターにプッシュするには、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを使用します。 Linux コンピューターに対してリモートからこのコマンドレットを [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx と共に使用するか、または [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) コマンドレットと共に使用するためには、CIMSession を使用する必要あります。 Linux コンピューターに CIMSession を作成するには、[New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) コマンドレットを使用します。
 
 次のコードは、Linux 用 DSC の CIMSession を作成する方法を示しています。
 
@@ -108,7 +110,7 @@ $opt = New-CimSessionOption -UseSsl:$true
 $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90 
 ```
 
-> **注**:
+> **注意**:
 * "プッシュ" モードの場合、ユーザーの資格情報は Linux コンピューターの root ユーザーである必要があります。
 * Linux 用 DSC では SSL/TLS 接続のみがサポートされているため、New-CimSession を使用するときは、-UseSSL パラメーターを $true に設定する必要があります。
 * OMI (DSC 用) で使用される SSL 証明書は、pemfile プロパティと keyfile プロパティを使用して `/opt/omi/etc/omiserver.conf` ファイルに指定します。
@@ -120,22 +122,22 @@ Linux ノードに DSC 構成をプッシュするには、次のコマンドを
 
 ### プル サーバーを使用した構成の配布
 
-構成を Linux コンピューターに配布するには、Windows コンピューターの場合と同じく、プル サーバーを使用できます。 プル サーバーを使用する方法の詳細については、「[DSC Web プル サーバーのセットアップ](pullServer.md)」を参照してください。 プル サーバーでの Linux コンピューターの使用に関する追加情報および制限事項については、Linux 用 Desired State Configuration のリリース ノートをご覧ください。
+構成を Linux コンピューターに配布するには、Windows コンピューターの場合と同じく、プル サーバーを使用できます。 プル サーバーを使用する方法の詳細については、「[DSC Web プル サーバーのセットアップ](pullServer.md)」をご覧ください。 プル サーバーでの Linux コンピューターの使用に関する追加情報および制限事項については、Linux 用 Desired State Configuration のリリース ノートをご覧ください。
 
 ### ローカルでの構成の操作
 
 Linux 用 DSC には、ローカルの Linux コンピューターから構成を操作するためのスクリプトが含まれています。 これらのスクリプトは、`/opt/microsoft/dsc/Scripts` にあり、次のものが含まれています。
-* GetConfiguration.py
+* GetDscConfiguration.py
 
  コンピューターに適用される現在の構成を返します。 Windows PowerShell コマンドレットである Get-DscConfiguration に似ています。
 
-`# sudo ./GetConfiguration.py`
+`# sudo ./GetDscConfiguration.py`
 
-* GetMetaConfiguration.py
+* GetDscLocalConfigurationManager.py
 
  コンピューターに適用される現在のメタ構成を返します。 [Get-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) コマンドレットに似ています。
 
-`# sudo ./GetMetaConfiguration.py`
+`# sudo ./GetDscLocalConfigurationManager.py`
 
 * InstallModule.py
 
@@ -149,17 +151,17 @@ Linux 用 DSC には、ローカルの Linux コンピューターから構成�
 
 `# sudo ./RemoveModule.py cnx_Resource`
 
-* SendConfigurationApply.py
+* StartDscLocalConfigurationManager.py 
 
  構成 MOF ファイルをコンピューターに適用します。 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットに似ています。 適用する構成 MOF へのパスが必要です。
 
-`# sudo ./RemoveModule.py cnx_Resource`
+`# sudo ./StartDscLocalConfigurationManager.py –configurationmof /tmp/localhost.mof`
 
-* SendMetaConfiguration.py
+* SetDscLocalConfigurationManager.py
 
  メタ構成 MOF ファイルをコンピューターに適用します。 [Set-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) コマンドレットに似ています。 適用するメタ構成 MOF へのパスが必要です。
 
-`# sudo ./SendMetaConfiguration.py –configurationmof /tmp/localhost.meta.mof`
+`# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
 ## Linux 用 PowerShell Desired State Configuration のログ ファイル
 
@@ -170,6 +172,7 @@ Linux 用 DSC のメッセージのために次のログ ファイルが生成�
 |omiserver.log|/opt/omi/var/log/|OMI CIM サーバーの操作に関連するメッセージ。|
 |dsc.log|/opt/omi/var/log/|ローカル構成マネージャー (LCM) と DSC リソースの操作に関連するメッセージ。|
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=Mar16_HO2-->
 
 

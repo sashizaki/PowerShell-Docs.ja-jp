@@ -2,9 +2,9 @@
 
 > 適用先: Windows PowerShell 5.0
 
-各ターゲット ノードに対し、プル モードを使用するように指示し、プル サーバーに接続して構成を取得するための URL を指定する必要があります。 これを行うには、必要な情報を備えるようにローカル構成マネージャー (LCM) を構成する必要があります。 LCM を構成するには、**DSCLocalConfigurationManager** 属性で修飾された特別な種類の構成を作成します。 LCM の構成の詳細については、「[ローカル構成マネージャーの構成](metaConfig.md)」を参照してください。
+各ターゲット ノードに対し、プル モードを使用するように指示し、プル サーバーに接続して構成を取得するための URL を指定する必要があります。 これを行うには、必要な情報を備えるようにローカル構成マネージャー (LCM) を構成する必要があります。 LCM を構成するには、**DSCLocalConfigurationManager** 属性で修飾された特別な種類の構成を作成します。 LCM の構成の詳細については、「[ローカル構成マネージャーの構成](metaConfig.md)」をご覧ください。
 
-> **注**: このトピックは、PowerShell 5.0 に適用されます。 PowerShell 4.0 でのプル クライアントのセットアップについては、「[PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID4.md)」を参照してください。
+> **注**: このトピックは、PowerShell 5.0 に適用されます。 PowerShell 4.0 でのプル クライアントのセットアップについては、「[PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID4.md)」をご覧ください。
 
 次のスクリプトは、"CONTOSO-PullSrv" という名前のサーバーから構成をプルするように LCM を構成します。
 
@@ -31,7 +31,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-このスクリプトでは、**ConfigurationRepositoryWeb** ブロックにプル サーバーを定義しています。 **ServerURL**
+このスクリプトでは、**ConfigurationRepositoryWeb** ブロックでプル サーバーを定義しています。 **ServerURL**
 
 このスクリプトを実行すると、**PullClientConfigID** という名前の新しい出力フォルダーが作成され、そこにメタ構成 MOF ファイルが格納されます。 この場合、メタ構成 MOF ファイルの名前は `localhost.meta.mof` になります。
 
@@ -70,8 +70,45 @@ PullClientConfigID
 
 ## リソースおよびレポート サーバー
 
-既定では、クライアント ノードは構成プル サーバーから必要なリソースを取得し、構成プル サーバーに状態をレポートします。 ただし、リソース用とレポート用にそれぞれ異なるプル サーバーを指定できます。
-リソース サーバーを指定するには、**ResourceRepositoryWeb** (Web プル サーバーの場合) または **ResourceRepositoryShare** ブロック (SMB プル サーバーの場合) を使用します。
+LCM 構成で **ConfigurationRepositoryWeb** ブロックまたは **ConfigurationRepositoryShare** ブロックのみを指定した場合 (前の例はこれに当たります)、プル クライアントは 
+指定されたサーバーからリソースをプルしますが、そのサーバーに対してレポートは送信しません。 構成、リソース、およびレポートについて単一のプル サーバーを使うことができますが、 
+レポートをセットアップするために ReportRepositoryWeb ブロックを作成する必要があります。 
+
+次の例は、構成とリソースをプルし、レポート データを送信する、単一のプル サーバーをクライアントに設定するメタ構成を示しています。
+pull server.
+
+```powershell
+[DSCLocalConfigurationManager()]
+configuration PullClientConfigID
+{
+    Node localhost
+    {
+        Settings
+        {
+            RefreshMode = 'Pull'
+            ConfigurationID = '1d545e3b-60c3-47a0-bf65-5afc05182fd0'
+            RefreshFrequencyMins = 30 
+            RebootNodeIfNeeded = $true
+        }
+
+        ConfigurationRepositoryWeb CONTOSO-PullSrv
+        {
+            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            
+        }
+        
+        
+        ReportServerWeb CONTOSO-PullSrv
+        {
+            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+        }
+    }
+}
+PullClientConfigID
+```
+
+また、リソース用とレポート用にそれぞれ異なるプル サーバーを指定することもできます。 To specify a resource server, you use either a <bpt id="p1">**</bpt>ResourceRepositoryWeb<ept id="p1">**</ept> (for a web pull server) or a 
+リソース サーバーを指定するには、**ResourceRepositoryWeb** (Web プル サーバーの場合) ブロックまたは **ResourceRepositoryShare** ブロック (SMB プル サーバーの場合) を使用します。
 レポート サーバーを指定するには、**ReportRepositoryWeb** ブロックを使用します。 レポート サーバーを SMB サーバーにすることはできません。
 次のメタ構成は、**CONTOSO-PullSrv** から構成を取得し、**CONTOSO-ResourceSrv** からリソースを取得し、**CONTOSO-ReportSrv** に状態レポートを送信するように、プル クライアントを構成します。
 
@@ -113,6 +150,6 @@ PullClientConfigID
 
 * [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
 
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=Mar16_HO4-->
 
 

@@ -8,7 +8,7 @@ Windows PowerShell 5.0 の PowerShell クラスの導入により、クラスを
 
 このトピックでは、指定されたパス内のファイルを管理する **FileResource** という名前の単純なリソースを作成します。
 
-DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」を参照してください。
+DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」をご覧ください。
 
 ## クラス リソースのフォルダー構造
 
@@ -20,25 +20,6 @@ $env: psmodulepath (folder)
         |- MyDscResource.psm1 
            MyDscResource.psd1 
 ```
-
-### 入れ子のモジュール
-
-リソースを複数の `.psm1` ファイルに分割し、それらのファイルを入れ子のモジュールとして含めることもできます。
-これは、リソースの数が多く、すべてを 1 つのファイルに配置すると管理が困難になる場合に適切です。
-
-```
-$env: psmodulepath (folder)
-    |- MyDscResource (folder)
-        |- MyDscResourceA.psm1
-           MyDscResourceB.psm1 
-           MyDscResource.psd1 
-```
-
-1 つのクラスを各ファイルに配置するか、いくつかを配置できます。 
-リソースを 1 つの入れ子のモジュール内のサブエリアにグループ化すると役立つ場合があります。
-ユーザーが使用する方法に違いはありません。
-すべてのリソースは `MyDscResource` モジュールに表示されます。
-これらの入れ子のモジュールは、実装の詳細と考え、都合に合わせて使用してください。
 
 ## クラスの作成
 
@@ -75,7 +56,7 @@ DSC リソースのスキーマは、クラスのプロパティとして定義�
 - **DscProperty(NotConfigurable)**: プロパティは読み取り専用です。 この属性でマークされたプロパティは、構成で設定できませんが、**Get()** メソッド (存在する場合) によって設定されます。
 - **DscProperty()**: プロパティは構成可能ですが、必須ではありません。
 
-**$Path** と **$SourcePath** プロパティは、両方とも文字列です。 **$CreationTime** は、[DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) プロパティです。 **$Ensure** プロパティは、次のように定義された列挙型です。
+**$Path** プロパティと **$SourcePath** プロパティは、両方とも文字列です。 **$CreationTime** は、[DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) プロパティです。 **$Ensure** プロパティは、次のように定義された列挙型です。
 
 ```powershell
 enum Ensure 
@@ -423,7 +404,7 @@ class FileResource
 
 ## マニフェストの作成
 
-クラスベースのリソースを DSC エンジンで使用できるようにするには、マニフェスト ファイルに、リソースをエクスポートするようにモジュールに指示する **DscResourcesToExport** ステートメントを含める必要があります。 
+クラスベースのリソースを DSC エンジンで使用できるようにするには、マニフェスト ファイルに、リソースをエクスポートするようにモジュールに指示する **DscResourcesToExport** ステートメントを含める必要があります。 この例では、マニフェストは次のようになります。
 
 ```powershell
 @{
@@ -431,45 +412,7 @@ class FileResource
 # Script module or binary module file associated with this manifest.
 RootModule = 'MyDscResource.psm1'
 
-DscResourcesToExport = @('FileResource')
-
-# Version number of this module.
-ModuleVersion = '1.0'
-
-# ID used to uniquely identify this module
-GUID = '81624038-5e71-40f8-8905-b1a87afe22d7'
-
-# Author of this module
-Author = 'Microsoft Corporation'
-
-# Company or vendor of this module
-CompanyName = 'Microsoft Corporation'
-
-# Copyright statement for this module
-Copyright = '(c) 2014 Microsoft. All rights reserved.'
-
-# Description of the functionality provided by this module
-# Description = ''
-
-# Minimum version of the Windows PowerShell engine required by this module
-PowerShellVersion = '5.0'
-
-# Name of the Windows PowerShell host required by this module
-# PowerShellHostName = ''
-} 
-```
-
-**入れ子のモジュール**を使用してリソースをいくつかのファイルに分割する場合は、入れ子のモジュールの一覧を `NestedModules` キーに配置する必要があります。
-
-```powershell
-@{
-
-# Don't specify RootModule
-
-# Script module or binary module file associated with this manifest.
-NestedModules = @('MyDscResourceA.psm1', 'MyDscResourceB.psm1')
-
-DscResourcesToExport = @('MyDscResourceA', 'MyDscResourceB')
+DscResourcesToExport = 'FileResource'
 
 # Version number of this module.
 ModuleVersion = '1.0'
@@ -499,7 +442,7 @@ PowerShellVersion = '5.0'
 
 ## リソースのテスト
 
-既に説明したように、クラスとマニフェスト ファイルをフォルダー構造で保存した後で、新しいリソースを使用する構成を作成できます。 DSC 構成を実行する方法については、「[構成の適用](enactingConfigurations.md)」を参照してください。 次の構成では、`c:\test\test.txt` のファイルが存在するかどうかを確認し、存在しない場合は、ファイルを `c:\test.txt` からコピーします (構成を実行する前に `c:\test.txt` を作成する必要があります)。
+既に説明したように、クラスとマニフェスト ファイルをフォルダー構造で保存した後で、新しいリソースを使用する構成を作成できます。 DSC 構成を実行する方法については、「[構成の適用](enactingConfigurations.md)」をご覧ください。 次の構成では、`c:\test\test.txt` のファイルが存在するかどうかを確認し、存在しない場合は、ファイルを `c:\test.txt` からコピーします (構成を実行する前に `c:\test.txt` を作成する必要があります)。
 
 ```powershell
 Configuration Test
@@ -521,6 +464,6 @@ Start-DscConfiguration -Wait -Force Test
 [カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)
 
 
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO4-->
 
 

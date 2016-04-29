@@ -5,7 +5,7 @@
 PowerShell 5.0 では、構成が適用されているときに DSC リソースをデバッグできる新機能が Desired State Configuraiton (DSC) に導入されました。
 
 ## DSC デバッグの有効化
-リソースをデバッグする前に、[Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) コマンドレットを呼び出すことによって、デバッグを有効にする必要があります。 このコマンドレットは、必須パラメーター **BreakAll** を受け取ります。 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) への呼び出しの結果を参照して、デバッグが有効になっていることを確認できます。 次の PowerShell 出力は、デバッグを有効にした結果を示しています。
+リソースをデバッグする前に、[Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) コマンドレットを呼び出すことによって、デバッグを有効にする必要があります。 このコマンドレットは、必須パラメーター **BreakAll** を取ります。 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) への呼び出しの結果を参照して、デバッグが有効になっていることを確認できます。 次の PowerShell 出力は、デバッグを有効にした結果を示しています。
 
 
 ```powershell
@@ -73,8 +73,20 @@ Debug-Runspace -Id 9
 ## リソース スクリプトのデバッグ
 
 PowerShell ISE の新しいインスタンスを開始します。 コンソール ウィンドウで、`Start-DscConifiguration` 出力から出力の最後の 3 行をコマンドとして入力し、`<credentials>` を
-有効なユーザー資格情報に置き換えます。 次に、結果の出力を示します。
+有効なユーザー資格情報に置き換えます。 次のようなプロンプトが表示されます。
+
+```powershell
+[TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
+```
+
+スクリプト ウィンドウが開いてリソース スクリプトが表示され、**Test-TargetResource** 関数の最初の行 (クラスベースのリソースの **Test()** メソッド) でデバッガーが停止します。
+ISE でデバッグ コマンドを使うと、リソース スクリプトをステップ実行したり、変数の値を確認したり、呼び出し履歴を表示したりできます。 PowerShell ISE でのデバッグについて
+詳しくは、「Windows PowerShell ISE でスクリプトをデバッグする方法」をご覧ください。 リソース スクリプト (またはクラス) のすべての行がブレークポイントとして設定されていることに注意してください。
+
+## 参照
+- [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md) 
+- [PowerShell クラスを使用したカスタム DSC リソースの記述](authoringResourceClass.md)
+
+<!--HONumber=Mar16_HO2-->
 
 
-
-<!--HONumber=Feb16_HO4-->

@@ -4,18 +4,18 @@
 
 このトピックでは、Desired State Configuration (DSC) スクリプトがエラーなしで実行されるようにする方法を説明します。 ログを効率的に使用してエラーを追跡し、リソース変更の結果を即時に反映するためにキャッシュをリサイクルする方法を理解することで、DSC のトラブルシューティングを効率化できます。 これらの手法を次の 2 つのセクションで説明します。
 
-* スクリプトが実行されない: **DSC ログを使用したスクリプト エラーの診断**
-* リソースが更新されない: **キャッシュをリセットする方法**
+* スクリプトが実行されない: DSC ログを使用したスクリプト エラーの診断
+* リソースが更新されない: キャッシュをリセットする方法
 
 ## スクリプトが実行されない: DSC ログを使用したスクリプト エラーの診断
 
-すべての Windows ソフトウェアと同じく、DSC は[イベント ビューアー](http://windows.microsoft.com/windows/what-information-event-logs-event-viewer)から参照可能な[ログ](https://msdn.microsoft.com/library/windows/desktop/aa363632.aspx)にエラーとイベントを記録します。 これらのログを調べることは、特定の操作が失敗した理由や、今後エラーを防止する方法を理解するために役立ちます。 構成スクリプトの記述は複雑になることがあります。そのため、作成しながらエラーをより簡単に追跡できるように、DSC ログ リソースを使用して DSC 分析イベント ログで構成の進行状況を追跡してください。
+すべての Windows ソフトウェアと同じく、DSC はイベント ビューアーから参照可能なログにエラーとイベントを記録します。 これらのログを調べることは、特定の操作が失敗した理由や、今後エラーを防止する方法を理解するために役立ちます。 構成スクリプトの記述は複雑になることがあります。そのため、作成しながらエラーをより簡単に追跡できるように、DSC ログ リソースを使用して DSC 分析イベント ログで構成の進行状況を追跡してください。
 
 ## DSC イベント ログの場所
 
-イベント ビューアーでは、DSC イベントは **Applications and Services Logs/Microsoft/Windows/Desired State Configuration** にあります。
+イベント ビューアーでは、DSC イベントは、アプリケーションとサービス ログ/Microsoft/Windows/Desired State Configuration にあります。
 
-対応する PowerShell コマンドレット [Get-WinEvent](https://technet.microsoft.com/library/hh849682.aspx) を次のように実行して、イベント ログを表示することもできます。
+対応する PowerShell コマンドレット Get-WinEvent を次のように実行して、イベント ログを表示することもできます。
 
 ```
 PS C:\> Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
@@ -25,7 +25,7 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} : 
 ```
 
-上に示すように、DSC のプライマリ ログ名は **Microsoft->Windows->DSC** です (簡略化のため、Windows の下にあるその他のログ名は表示していません)。 完全なログ名を作成するには、プライマリ名にチャネル名を追加します。 DSC エンジンは、主に 3 種類のログに書き込みます。[操作ログ、分析ログ、およびデバッグ ログ](https://technet.microsoft.com/library/cc722404.aspx)です。 分析ログとデバッグ ログは既定でオフになっているため、それらをイベント ビューアーで有効にする必要があります。 これを行うには、Windows PowerShell で「Show-EventLog」と入力するか、または、**[スタート]** ボタンをクリックし、**[コントロール パネル]**、**[管理ツール]**、**[イベント ビューアー]** の順にクリックして、イベント ビューアーを開きます。 イベント ビューアーの **[表示]** メニューで、**[分析およびデバッグ ログの表示]** をクリックします。 分析チャネルのログ名は **Microsoft-Windows-Dsc/Analytic** で、デバッグ チャネルのログ名は **Microsoft-Windows-Dsc/Debug** です。 次の例に示すように、[wevtutil](https://technet.microsoft.com/library/cc732848.aspx) ユーティリティを使用してログを有効にすることもできます。
+上に示すように、DSC のプライマリ ログ名は Microsoft->Windows->DSC です (簡略化のため、Windows の下にあるその他のログ名は表示していません)。 完全なログ名を作成するには、プライマリ名にチャネル名を追加します。 DSC エンジンは、主に 3 種類のログに書き込みます。操作ログ、分析ログ、およびデバッグ ログです。 分析ログとデバッグ ログは既定でオフになっているため、それらをイベント ビューアーで有効にする必要があります。 これを行うには、Windows PowerShell で「Show-EventLog」と入力するか、または、[スタート] ボタンをクリックし、[コントロール パネル]、[管理ツール]、[イベント ビューアー] の順にクリックして、イベント ビューアーを開きます。 イベント ビューアーの [表示] メニューで、[分析およびデバッグ ログの表示] をクリックします。 分析チャネルのログ名は Microsoft-Windows-Dsc/Analytic で、デバッグ チャネルのログ名は Microsoft-Windows-Dsc/Debug です。 次の例に示すように、wevtutil ユーティリティを使用してログを有効にすることもできます。
 
 ```powershell
 wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
@@ -45,7 +45,7 @@ Consistency engine was run successfully.
 
 DSC イベントは、ユーザーが 1 つの DSC ジョブからイベントを集計できるように特定の構造に記録されます。 その構造は次のとおりです。
 
-**Job ID : <Guid>**
+Job ID : <Guid>
 **<Event Message>**
 
 ## 1 つの DSC 操作からのイベントの収集
@@ -111,11 +111,11 @@ TimeCreated                     Id LevelDisplayName Message
 12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...       
 ```
 
-[Where-Object](https://technet.microsoft.com/library/ee177028.aspx) を使用して変数 `$SeparateDscOperations` 内のデータを抽出できます。 次に、DSC のトラブルシューティングに役立つデータを抽出する 5 つのシナリオを示します。
+Where-Object を使用して変数 `$SeparateDscOperations` 内のデータを抽出できます。 次に、DSC のトラブルシューティングに役立つデータを抽出する 5 つのシナリオを示します。
 
 ### 1: 操作エラー
 
-すべてのイベントには[重大度レベル](https://msdn.microsoft.com/library/dd996917(v=vs.85))があります。 この情報を使用して、エラー イベントを識別できます。
+すべてのイベントには重大度レベルがあります。 この情報を使用して、エラー イベントを識別できます。
 
 ```
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.LevelDisplayName -contains "Error"}
@@ -192,7 +192,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 ## xDscDiagnostics を使用した DSC ログの分析
 
-**xDscDiagnostics** は、コンピューター上の DSC 障害の分析に役立つ 2 つのシンプルな関数 `Get-xDscOperation` と `Trace-xDscOperation` で構成される PowerShell モジュールです。 これらの関数は、過去の DSC 操作からのすべてのローカル イベント、またはリモート コンピューター上の DSC イベントの識別に役立ちます (有効な資格情報を使用)。 ここでは、開始から終了まで 1 回の一意の DSC 実行を定義するために、DSC 操作という用語を使用します。 たとえば、`Test-DscConfiguration` は独立した DSC 操作です。 同様に、DSC の他のすべてのコマンドレット (`Get-DscConfiguration` や `Start-DscConfiguration` など) をそれぞれ別の DSC 操作として識別できます。 [xDscDiagnostics](https://powershellgallery.com/packages/xDscDiagnostics) PowerShell モジュール (DSC リソース キット) には 2 つの関数についての説明があり、以下ではより詳細に説明します。 ヘルプを参照するには、`Get-Help <cmdlet name>` を実行します。
+xDscDiagnostics は、コンピューター上の DSC 障害の分析に役立つ 2 つのシンプルな関数 `Get-xDscOperation` と `Trace-xDscOperation` で構成される PowerShell モジュールです。 これらの関数は、過去の DSC 操作からのすべてのローカル イベント、またはリモート コンピューター上の DSC イベントの識別に役立ちます (有効な資格情報を使用)。 ここでは、開始から終了まで 1 回の一意の DSC 実行を定義するために、DSC 操作という用語を使用します。 たとえば、`Test-DscConfiguration` は独立した DSC 操作です。 同様に、DSC の他のすべてのコマンドレット (`Get-DscConfiguration` や `Start-DscConfiguration` など) をそれぞれ別の DSC 操作として識別できます。 xDscDiagnostics PowerShell モジュール (DSC リソース キット) には 2 つの関数についての説明があり、以下ではより詳細に説明します。 ヘルプを参照するには、`Get-Help <cmdlet name>` を実行します。
 
 ## Get-xDscOperation
 
@@ -202,22 +202,22 @@ TODO: Get-xDscOperation 出力を示すこのイメージを置き換えてく�
 
 ### パラメーター
 
-* **Newest**: 表示する操作の数を示す整数値を受け取ります。 既定では、最新の 10 個の操作を返します。 たとえば、
+* Newest: 表示する操作の数を示す整数値を受け取ります。 既定では、最新の 10 個の操作を返します。 たとえば、
   TODO: Get-xDscOperation -Newest 5 を表示してください。
-* **ComputerName**: 文字列の配列を受け取るパラメーター。それぞれの文字列には、DSC イベント ログ データを収集するコンピューターの名前が含まれています。 既定では、ローカル コンピューターからデータを収集します。 この機能を有効にするには、イベントを収集できるように管理者特権モードにしてからリモート コンピューターで次のコマンドを実行する必要があります。
+* ComputerName: 文字列の配列を受け取るパラメーター。それぞれの文字列には、DSC イベント ログ データを収集するコンピューターの名前が含まれています。 既定では、ローカル コンピューターからデータを収集します。 この機能を有効にするには、イベントを収集できるように管理者特権モードにしてからリモート コンピューターで次のコマンドを実行する必要があります。
 ```powershell
   New-NetFirewallRule -Name "Service RemoteAdmin" -Action Allow
 ```
-* **Credential**: PSCredential 型のパラメーター。ComputerName パラメーターに指定されているコンピューターにアクセスできるようにします。
+* Credential: PSCredential 型のパラメーター。ComputerName パラメーターに指定されているコンピューターにアクセスできるようにします。
 
 ### 返されるオブジェクト
 
-コマンドレットは、いずれも **Microsoft.PowerShell.xDscDiagnostics.GroupedEvents** 型であるオブジェクトの配列を返します。 この配列内の各オブジェクトは、それぞれ異なる DSC 操作に関連します。 このオブジェクトの既定の表示には、次のプロパティがあります。
-* **SequenceID**: 時刻に基づいて DSC 操作に割り当てられた増分番号を示します。 たとえば、最後に実行された操作の SequenceID は 1、最後から 2 番目の DSC 操作の SequenceID は 2、以下同様となります。 この番号は、返される配列内の各オブジェクトの別の識別子となります。
-* **TimeCreated**: DSC 操作が開始された日時を示す DateTime 値。
-* **ComputerName**: 結果が集計されるコンピューター名。
-* **Result**: 値が **Failure** または **Success** になる文字列で、それぞれ DSC 操作でエラーが発生したかどうかを示します。
-* **AllEvents**: DSC 操作によって生成されるイベントのコレクションを表すオブジェクト。
+コマンドレットは、いずれも Microsoft.PowerShell.xDscDiagnostics.GroupedEvents 型であるオブジェクトの配列を返します。 この配列内の各オブジェクトは、それぞれ異なる DSC 操作に関連します。 このオブジェクトの既定の表示には、次のプロパティがあります。
+* SequenceID: 時刻に基づいて DSC 操作に割り当てられた増分番号を示します。 たとえば、最後に実行された操作の SequenceID は 1、最後から 2 番目の DSC 操作の SequenceID は 2、以下同様となります。 この番号は、返される配列内の各オブジェクトの別の識別子となります。
+* TimeCreated: DSC 操作が開始された日時を示す DateTime 値。
+* ComputerName: 結果が集計されるコンピューター名。
+* Result: 値が Failure または Success になる文字列で、それぞれ DSC 操作でエラーが発生したか発生しなかったかを示します。
+* AllEvents: DSC 操作によって生成されるイベントのコレクションを表すオブジェクト。
 
 たとえば、次の出力は複数のコンピューターでの最後の操作の結果を示しています。
   TODO: リモート コンピューター ログを表示するように Get-xDscOperation の画像を置き換えてください。
@@ -228,12 +228,12 @@ TODO: Get-xDscOperation 出力を示すこのイメージを置き換えてく�
 
 ### パラメーター
 
-* **SequenceID**: これは、特定のコンピューターに関連するすべての操作に割り当てられる整数値です。 たとえば、シーケンス ID を 4 に指定すると、最後から 4 番目の DSC 操作のトレースが出力されます。
+* SequenceID: これは、特定のコンピューターに関連するすべての操作に割り当てられる整数値です。 たとえば、シーケンス ID を 4 に指定すると、最後から 4 番目の DSC 操作のトレースが出力されます。
 
 シーケンス ID が指定された Trace-xDscOperation
-* **JobID**: これは、操作を一意に識別するために、LCM xDscOperation によって割り当てられる GUID 値です。 JobID を指定すると、対応する DSC 操作のトレースが出力されます。
+* JobID: これは、操作を一意に識別するために、LCM xDscOperation によって割り当てられる GUID 値です。 JobID を指定すると、対応する DSC 操作のトレースが出力されます。
   TODO: パラメーターとして JobID を取るように Trace-xDscOperation の画像を置き換えてください。
-* **ComputerName** と **Credential**: これらのパラメーターを指定すると、リモート コンピューターからトレースを収集できます。
+* ComputerName と Credential: これらのパラメーターを指定すると、リモート コンピューターからトレースを収集できます。
 ```powershell
 New-NetFirewallRule -Name "Service RemoteAdmin" -Action Allow
 ```
@@ -244,21 +244,21 @@ New-NetFirewallRule -Name "Service RemoteAdmin" -Action Allow
 ### 返されるオブジェクト
 
 コマンドレットは、いずれも `Microsoft.PowerShell.xDscDiagnostics.TraceOutput` 型であるオブジェクトの配列を返します。 この配列内の各オブジェクトには、次のフィールドが含まれています。
-* **ComputerName**: ログが収集されるコンピューターの名前。
-* **EventType**: これは、イベントの種類に関する情報が含まれている列挙子型のフィールドです。 次のいずれかとなります。
-  - *Operational*: 操作ログからのイベントです。
-  - *Analytic*: 分析ログからのイベントです。
-  - *Debug*: デバッグ ログからのイベントです。
-  - *Verbose*: 実行中に詳細なメッセージとして出力されたイベントです。 詳細メッセージにより、発行されたイベントのシーケンスを容易に識別できます。
-  - *Error*: エラー イベントです。 通常、エラー イベントを探すことで、失敗の理由がすばやくわかります。
-* **TimeCreated**: DSC によってイベントが記録された日時を示す DateTime 値。
-* **Message**: DSC によってイベント ログに記録されたメッセージ。
+* ComputerName: ログが収集されるコンピューターの名前。
+* EventType: これは、イベントの種類に関する情報が含まれている列挙子型のフィールドです。 次のいずれかとなります。
+  - Operational: 操作ログからのイベントです。
+  - Analytic: 分析ログからのイベントです。
+  - Debug: デバッグ ログからのイベントです。
+  - Verbose: 実行中に詳細なメッセージとして出力されたイベントです。 詳細メッセージにより、発行されたイベントのシーケンスを容易に識別できます。
+  - Error: エラー イベントです。 通常、エラー イベントを探すことで、失敗の理由がすばやくわかります。
+* TimeCreated: DSC によってイベントが記録された日時を示す DateTime 値。
+* Message: DSC によってイベント ログに記録されたメッセージ。
 
 次に、イベントに関するその他の情報に使用できるものの既定では表示されない、このオブジェクト内のフィールドを示します。
 
-* **JobID**: その DSC 操作に固有のジョブ ID (GUID 形式)。
-* **SequenceID**: そのコンピューターでの DSC 操作に固有の SequenceID。
-* **Event**: これは、`System.Diagnostics.Eventing.Reader.EventLogRecord` 型で DSC によって記録された実際のイベントです。 これは、コマンドレット `Get-WinEvent` を実行して取得することもできます。 タスク、イベント ID、イベントのレベルなど、その他の情報が含まれています。
+* JobID: その DSC 操作に固有のジョブ ID (GUID 形式)。
+* SequenceID: そのコンピューターでの DSC 操作に固有の SequenceID。
+* Event: これは、`System.Diagnostics.Eventing.Reader.EventLogRecord` 型で DSC によって記録された実際のイベントです。 これは、コマンドレット `Get-WinEvent` を実行して取得することもできます。 タスク、イベント ID、イベントのレベルなど、その他の情報が含まれています。
 
 また、`Trace-xDscOperation` の出力を変数に保存して、イベントに関する情報を収集することもできます。 次のコマンドを使用すると、特定の DSC 操作のすべてのイベントを表示できます。
 
@@ -279,7 +279,7 @@ DSC エンジンは、効率化のために、PowerShell モジュールとし�
 
 コンピューターを再起動することなく、構成を正常にリサイクルし、キャッシュをクリアするには、ホスト プロセスを停止してから再起動する必要があります。 このことは、プロセスを識別し、停止し、再起動することで、インスタンスごとに実行できます。 また、以下に示すように、`DebugMode` を使用して PowerShell DSC リソースを再読み込みすることもできます。
 
-DSC エンジンをホストしているプロセスを識別し、インスタンスごとにそのプロセスを停止するには、DSC エンジンをホストしている WmiPrvSE のプロセス ID を一覧表示します。 次に、プロバイダーを更新するために、次のコマンドを使用して WmiPrvSE プロセスを停止し、再度 **Start-DscConfiguration** を実行します。
+DSC エンジンをホストしているプロセスを識別し、インスタンスごとにそのプロセスを停止するには、DSC エンジンをホストしている WmiPrvSE のプロセス ID を一覧表示します。 次に、プロバイダーを更新するために、次のコマンドを使用して WmiPrvSE プロセスを停止し、再度 Start-DscConfiguration を実行します。
 
 ```powershell
 ###
@@ -297,7 +297,7 @@ Get-Process -Id $dscProcessID | Stop-Process
 
 ## DebugMode の使用
 
-ホスト プロセスの再起動時に `DebugMode` を使用して常にキャッシュをクリアするように、DSC ローカル構成マネージャー (LCM) を構成できます。 **TRUE** に設定すると、エンジンは常に PowerShell DSC リソースを再読み込みします。 リソースの書き込みが完了した後、**FALSE** に設定し直して、モジュールをキャッシュするようにエンジンの動作を戻すことができます。
+ホスト プロセスの再起動時に `DebugMode` を使用して常にキャッシュをクリアするように、DSC ローカル構成マネージャー (LCM) を構成できます。 TRUE に設定すると、エンジンは常に PowerShell DSC リソースを再読み込みします。 リソースの書き込みが完了した後、FALSE に設定し直して、モジュールをキャッシュするようにエンジンの動作を戻すことができます。
 
 次は、`DebugMode` がどのようにキャッシュを自動的に更新できるかを示すデモです。 まず、既定の構成を見てみましょう。
 
@@ -321,7 +321,7 @@ RefreshMode                    : PUSH
 PSComputerName                 :  
 ```
 
-`DebugMode` が **FALSE** に設定されています。
+`DebugMode` が FALSE に設定されています。
 
 `DebugMode` のデモを設定するには、次の PowerShell リソースを使用します。
 
@@ -372,7 +372,7 @@ Configuration ConfigTestDebugMode
 ConfigTestDebugMode
 ```
 
-ファイル "**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**" の内容は **1** になっています。
+ファイル "$env:SystemDrive\OutputFromTestProviderDebugMode.txt" の内容は 1 になっています。
 
 ここで、次のスクリプトを使用してプロバイダー コードを更新します。
 
@@ -409,9 +409,9 @@ function Test-TargetResource
 "@ | Out-File -FilePath "C:\Program Files\WindowsPowerShell\Modules\MyPowerShellModules\DSCResources\TestProviderDebugMode\TestProviderDebugMode.psm1
 ```
 
-このスクリプトは、乱数を生成し、それに合わせてプロバイダー コードを更新します。 `DebugMode` を false に設定しても、ファイル "**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**" の内容は変わりません。
+このスクリプトは、乱数を生成し、それに合わせてプロバイダー コードを更新します。 `DebugMode` を false に設定すると、ファイル "$env:SystemDrive\OutputFromTestProviderDebugMode.txt" の内容は変わりません。
 
-ここで、構成スクリプトで `DebugMode` を **TRUE** に設定します。
+ここで、構成スクリプトで `DebugMode` を TRUE に設定します。
 
 ```powershell
 LocalConfigurationManager
