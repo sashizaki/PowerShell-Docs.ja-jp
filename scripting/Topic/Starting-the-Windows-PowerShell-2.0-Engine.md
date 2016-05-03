@@ -31,13 +31,13 @@ PowerShell.exe -Version 2
 
 これは、通常システム管理者によって実行される高度なタスクです。
 
-次の手順では、[Register-PSSessionConfiguration](assetId:///e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) コマンドレットの **PSVersion** パラメーターを使用して、[!INCLUDE[psversion2](../Token/psversion2_md.md)] エンジンを使用するセッション構成を作成します。 [New-PSSessionConfigurationFile](assetId:///5f3e3633-6e90-479c-aea9-ba45a1954866) コマンドレットの **PowerShellVersion** パラメーターを使用して、[!INCLUDE[psversion2](../Token/psversion2_md.md)] エンジンを読み込むセッションのセッション構成ファイルを作成することも、[Set-PSSessionConfiguration](assetId:///b21fbad3-1759-4260-b206-dcb8431cd6ea) パラメーターの **PSVersion** パラメーターを使用して、[!INCLUDE[psversion2](../Token/psversion2_md.md)] エンジンを使用するようにセッション構成を変更することもできます。
+次の手順では、[Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) コマンドレットの **PSVersion** パラメーターを使用して、[!INCLUDE[psversion2](../Token/psversion2_md.md)] エンジンを使用するセッション構成を作成します。 [New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866) コマンドレットの **PowerShellVersion** パラメーターを使用して、[!INCLUDE[psversion2](../Token/psversion2_md.md)] エンジンを読み込むセッションのセッション構成ファイルを作成することも、[Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) パラメーターの **PSVersion** パラメーターを使用して、[!INCLUDE[psversion2](../Token/psversion2_md.md)] エンジンを使用するようにセッション構成を変更することもできます。
 
-セッション構成ファイルの詳細については、「[about_Session_Configuration_Files](assetId:///c7217447-1ebf-477b-a8ef-4dbe9a1473b8)」をご覧ください。セットアップとセキュリティを含むセッション構成の詳細については、「[about_Session_Configurations [v4]](assetId:///a2fbe12a-350c-4d04-be50-24102824e3ab)」をご覧ください。
+セッション構成ファイルの詳細については、「[about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8)」をご覧ください。セットアップとセキュリティを含むセッション構成の詳細については、「[about_Session_Configurations [v4]](https://technet.microsoft.com/en-us/library/a2fbe12a-350c-4d04-be50-24102824e3ab)」をご覧ください。
 
 #### リモート [!INCLUDE[psversion2](../Token/psversion2_md.md)] セッションを開始するには
 
-1.  [!INCLUDE[psversion2](../Token/psversion2_md.md)] エンジンを必要とするセッション構成を作成するには、**PSVersion** パラメーターに値 "2.0" を指定して [Register-PSSessionConfiguration](assetId:///e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) コマンドレットを使用します。 接続の "サーバー側" (受信側) にあるコンピューターでこのコマンドを実行します。
+1.  [!INCLUDE[psversion2](../Token/psversion2_md.md)] エンジンを必要とするセッション構成を作成するには、**PSVersion** パラメーターに値 "2.0" を指定して [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) コマンドレットを使用します。 接続の "サーバー側" (受信側) にあるコンピューターでこのコマンドを実行します。
 
     次のサンプル コマンドは、Server01 コンピューター上に PS2 セッション構成を作成します。 このコマンドを実行するには、**[管理者として実行]** オプションを使用して [!INCLUDE[psversion4](../Token/psversion4_md.md)] または [!INCLUDE[psversion3](../Token/psversion3_md.md)] を起動します。
 
@@ -45,7 +45,7 @@ PowerShell.exe -Version 2
     Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
     ```
 
-2.  PS2 セッション構成を使用する Server01 コンピューターでセッションを作成するには、リモート セッションを作成するコマンドレット ([New-PSSession](assetId:///76f6628c-054c-4eda-ba7a-a6f28daaa26f) コマンドレットなど) の **ConfigurationName** パラメーターを使用します。
+2.  PS2 セッション構成を使用する Server01 コンピューターでセッションを作成するには、リモート セッションを作成するコマンドレット ([New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) コマンドレットなど) の **ConfigurationName** パラメーターを使用します。
 
     セッション構成を使用するセッションを開始すると、[!INCLUDE[psversion2](../Token/psversion2_md.md)] エンジンが自動的にセッションに読み込まれます。
 
@@ -56,7 +56,7 @@ PowerShell.exe -Version 2
     ```
 
 ## [!INCLUDE[psversion2](../Token/psversion2_md.md)] エンジンを使ってバックグラウンド ジョブを開始する方法
-[!INCLUDE[psversion2](../Token/psversion2_md.md)] エンジンを使ってバックグラウンド ジョブを開始するには、[Start-Job](assetId:///2bc04935-0deb-4ec0-b856-d7290cca6442) コマンドレットの **PSVersion** パラメーターを使用します。
+[!INCLUDE[psversion2](../Token/psversion2_md.md)] エンジンを使ってバックグラウンド ジョブを開始するには、[Start-Job](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442) コマンドレットの **PSVersion** パラメーターを使用します。
 
 次のコマンドは、[!INCLUDE[psversion2](../Token/psversion2_md.md)] エンジンを使ってバックグラウンド ジョブを開始します。
 
@@ -64,10 +64,10 @@ PowerShell.exe -Version 2
 Start-Job {Get-Process} -PSVersion 2.0
 ```
 
-バックグラウンド ジョブの詳細については、「[about_Jobs [v4]](assetId:///7362512a-8a4e-4575-b2ea-a740e5c4f002)」をご覧ください。
+バックグラウンド ジョブの詳細については、「[about_Jobs [v4]](https://technet.microsoft.com/en-us/library/7362512a-8a4e-4575-b2ea-a740e5c4f002)」をご覧ください。
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

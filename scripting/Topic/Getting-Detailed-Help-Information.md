@@ -13,7 +13,7 @@ Windows PowerShell には、Windows PowerShell の概念と言語について説
 これらのヘルプ トピックはコマンド プロンプトで表示でき、Microsoft TechNet ライブラリで最新版のトピックを見ることもできます。 Windows PowerShell Integrated Scripting Environment など、Windows PowerShell をホストする多くのプログラムでは、状況依存のヘルプやコンパイル済みヘルプ ファイル (.chm) などの追加のヘルプ機能が用意されています。
 
 ## コマンドレットのヘルプの表示
-Windows PowerShell のコマンドレットに関するヘルプを表示するには、[Get-Help [m2]](assetId:///2d7fe1b4-0025-4580-a911-d81922dd6cd2) コマンドレットを使用します。 たとえば、[Get-ChildItem [m2]](assetId:///4b270d63-c995-45b8-b5b4-3f8887efbfcc) コマンドレットのヘルプを表示するには、次のように入力します。
+Windows PowerShell のコマンドレットに関するヘルプを表示するには、[Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) コマンドレットを使用します。 たとえば、[Get-ChildItem [m2]](https://technet.microsoft.com/en-us/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) コマンドレットのヘルプを表示するには、次のように入力します。
 
 ```
 get-help get-childitem
@@ -126,7 +126,7 @@ get-help c:\ps-test\TestScript.ps1
 
 *Detailed*、*Full*、*Examples*、*Parameter* など、コマンドレットのヘルプを表示するためにデザインされているパラメーターは、スクリプトのヘルプや関数のヘルプにも使用できます。 ただし、"get-help *" を入力してすべてのヘルプを表示した場合、関数およびスクリプトのヘルプは表示されません。
 
-関数およびスクリプトに関するヘルプ トピックを記述する方法については、「[about_Functions [m2]](assetId:///61d40692-5300-4de9-a9b5-bae31815e105)」、「[about_Scripts](assetId:///7dc08334-dcfe-450b-b949-0554855623af)」、「[about_Comment_Based_Help](assetId:///99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)」をご覧ください。
+関数およびスクリプトに関するヘルプ トピックを記述する方法については、「[about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)」、「[about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)」、「[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)」をご覧ください。
 
 ## オンライン ヘルプの表示
 インターネットに接続している場合、ヘルプを見るための最も良い方法の 1 つは、ヘルプ トピックをオンラインで表示することです。 オンライン トピックは簡単に更新できるため、最新の情報が得られる可能性が高くなります。
@@ -163,16 +163,16 @@ get-help add-computer
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-ヘルプ トピックのオンライン サポートを提供する方法については、「[about_Comment_Based_Help](assetId:///99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)」および MSDN (Microsoft Developer Network) ライブラリの「[How to Write Cmdlet Help (コマンドレット ヘルプの記述方法)](http://go.microsoft.com/fwlink/?LinkID=123415)」(http://go.microsoft.com/fwlink/?LinkID=123415) をご覧ください。
+ヘルプ トピックのオンライン サポートを提供する方法については、「[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)」および MSDN (Microsoft Developer Network) ライブラリの「[How to Write Cmdlet Help (コマンドレット ヘルプの記述方法)](http://go.microsoft.com/fwlink/?LinkID=123415)」(http://go.microsoft.com/fwlink/?LinkID=123415) をご覧ください。
 
 ## 参照
-[about_Functions [m2]](assetId:///61d40692-5300-4de9-a9b5-bae31815e105)
-[about_Scripts](assetId:///7dc08334-dcfe-450b-b949-0554855623af)
-[about_Comment_Based_Help](assetId:///99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-[Get-Help [m2]](assetId:///2d7fe1b4-0025-4580-a911-d81922dd6cd2)
+[about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
+[about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
+[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
+[Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

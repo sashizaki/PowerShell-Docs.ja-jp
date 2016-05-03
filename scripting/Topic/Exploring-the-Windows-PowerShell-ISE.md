@@ -14,7 +14,7 @@ ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 > [!INCLUDE[ise_2](../Token/ise_2_md.md)] 3.0 以降、コマンド ウィンドウと出力ウィンドウは、単一のコンソール ウィンドウに統合されました。
 
 ## メニュー バー
-メニュー バーには、**[ファイル]**、**[編集]**、**[表示]**、**[ツール]**、**[デバッグ]**、**[アドオン]**、**[ヘルプ]** の各メニューがあります。 メニューのボタンを使用すると、スクリプトの記述と実行、および [!INCLUDE[ise_2](../Token/ise_2_md.md)] でのコマンドの実行に関連したタスクを実行できます。 さらに、[Windows PowerShell ISE スクリプト オブジェクト モデル](assetId:///1737ddb7-c20d-4e6b-a0d3-68cc2650f2a1)を使用する特定のスクリプトを実行すれば、[[アドオン] メニュー](assetId:///412dd662-417a-4661-ada2-558802d0f6d2#submenus)をメニュー バーに配置することもできます。
+メニュー バーには、**[ファイル]**、**[編集]**、**[表示]**、**[ツール]**、**[デバッグ]**、**[アドオン]**、**[ヘルプ]** の各メニューがあります。 メニューのボタンを使用すると、スクリプトの記述と実行、および [!INCLUDE[ise_2](../Token/ise_2_md.md)] でのコマンドの実行に関連したタスクを実行できます。 さらに、[Windows PowerShell ISE スクリプト オブジェクト モデル](https://technet.microsoft.com/en-us/library/1737ddb7-c20d-4e6b-a0d3-68cc2650f2a1)を使用する特定のスクリプトを実行すれば、[[アドオン] メニュー](https://technet.microsoft.com/en-us/library/412dd662-417a-4661-ada2-558802d0f6d2#submenus)をメニュー バーに配置することもできます。
 
 > [!NOTE]
 > [!INCLUDE[ise_2](../Token/ise_2_md.md)] 2.0 には、**[ツール]** と **[アドオン]** メニューはありませんでした。
@@ -73,6 +73,6 @@ Windows PowerShell タブは、Windows PowerShell スクリプトが動作する
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

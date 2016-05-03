@@ -22,12 +22,12 @@ ms.assetid: 6fbb0409-5a54-48ec-95e6-7f8b7d8c4969
 
 -   [Server Core での Windows PowerShell のインストール](../Topic/Installing-Windows-PowerShell.md#BKMK_InstallingOnServerCore)
 
--   [Windows PowerShell Web Access の展開](assetId:///639d0eff-98a3-4124-b52c-26921ebd98b0)
+-   [Windows PowerShell Web Access の展開](https://technet.microsoft.com/en-us/library/639d0eff-98a3-4124-b52c-26921ebd98b0)
 
 -   [Windows PowerShell 2.0 エンジンのインストール](../Topic/Installing-the-Windows-PowerShell-2.0-Engine.md)
 
 ## <a name="BKMK_InstallingOnWindows8andWindowsServer2012"></a>Windows 8 と Windows Server 2012 での Windows PowerShell のインストール
-[!INCLUDE[psversion3](../Token/psversion3_md.md)] は最初からインストールと構成が済んでおり、使用準備が整った状態です。 [!INCLUDE[mshgraphicalhost](../Token/mshgraphicalhost_md.md)] はインストール済みの有効な状態です。 [!INCLUDE[mshshort](../Token/mshshort_md.md)] を開始する方法の詳細については、「[Windows 8 で Windows PowerShell を開始する](assetId:///d7be1668-8617-4890-ad90-dd9765fbd2c3)」と「[Windows Server 2012 で Windows PowerShell を開始する](assetId:///4fc0110a-cc0c-42a4-bbb5-3cc89a0fc968)」をご覧ください。
+[!INCLUDE[psversion3](../Token/psversion3_md.md)] は最初からインストールと構成が済んでおり、使用準備が整った状態です。 [!INCLUDE[mshgraphicalhost](../Token/mshgraphicalhost_md.md)] はインストール済みの有効な状態です。 [!INCLUDE[mshshort](../Token/mshshort_md.md)] を開始する方法の詳細については、「[Windows 8 で Windows PowerShell を開始する](https://technet.microsoft.com/en-us/library/d7be1668-8617-4890-ad90-dd9765fbd2c3)」と「[Windows Server 2012 で Windows PowerShell を開始する](https://technet.microsoft.com/en-us/library/4fc0110a-cc0c-42a4-bbb5-3cc89a0fc968)」をご覧ください。
 
 ## <a name="BKMK_InstallingOnWindows7andWindowsServer2008R2"></a>Windows 7 と Windows Server 2008 R2 での Windows PowerShell のインストール
 次に挙げる手順では、[!INCLUDE[win7_client_secondref](../Token/win7_client_secondref_md.md)] Service Pack 1 と [!INCLUDE[win7_server_secondref](../Token/win7_server_secondref_md.md)] Service Pack 1 を実行するコンピューターに [!INCLUDE[psversion3](../Token/psversion3_md.md)] をインストールする方法を説明します。 その下には、[!INCLUDE[win7_server_secondref](../Token/win7_server_secondref_md.md)] の Server Core インストール オプションを使用して実行するコンピューター用に、インストール手順が別に用意されています。
@@ -96,10 +96,10 @@ ms.assetid: 6fbb0409-5a54-48ec-95e6-7f8b7d8c4969
 
 ## 参照
 [Windows PowerShell のシステム要件](../Topic/Windows-PowerShell-System-Requirements.md)
-[Windows PowerShell [ps] を開始する](assetId:///8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+[Windows PowerShell [ps] を開始する](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

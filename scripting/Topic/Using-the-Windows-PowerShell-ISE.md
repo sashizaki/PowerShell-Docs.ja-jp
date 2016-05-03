@@ -31,10 +31,10 @@ ms.assetid: 64fb5f37-90a8-4b89-9fc8-c6b8fcc0c7d0
 ## 参照
 [Windows PowerShell ISE の操作](../Topic/Exploring-the-Windows-PowerShell-ISE.md)
 [Windows PowerShell ISE のアクセシビリティ](../Topic/Accessibility-in-Windows-PowerShell-ISE.md)
-[Windows PowerShell ISE スクリプト オブジェクト モデル](assetId:///69b047d0-da79-413e-b948-8e45d05d1f85)
+[Windows PowerShell ISE スクリプト オブジェクト モデル](https://technet.microsoft.com/en-us/library/69b047d0-da79-413e-b948-8e45d05d1f85)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

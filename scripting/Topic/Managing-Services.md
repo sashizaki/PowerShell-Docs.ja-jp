@@ -136,16 +136,16 @@ Set-Service コマンドレットは、ローカル コンピューターまた�
 
 Windows Vista 以降のバージョンの Windows で、Set-Service を使用するには、Windows PowerShell を開く際に [管理者として実行] オプションを指定する必要があります。
 
-詳細については、「[Set-Service [m2]](assetId:///b71e29ed-372b-4e32-a4b7-5eb6216e56c3)」を参照してください。
+詳細については、「[Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)」を参照してください。
 
 ## 参照
-[Get-Service [m2]](assetId:///0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
-[Set-Service [m2]](assetId:///b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
-[Restart-Service [m2]](assetId:///45acf50d-2277-4523-baf7-ce7ced977d0f)
-[Suspend-Service [m2]](assetId:///c8492b87-0e21-4faf-8054-3c83c2ec2826)
+[Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
+[Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+[Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
+[Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 
