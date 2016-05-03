@@ -6,37 +6,37 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [wmf\class_newtype.md](https://github.com/PowerShell/powerShell-Docs/blob/3950bffa1f487b15d380ac2889f0fb17b7518ca6/wmf/class_newtype.md) | OutofSyncHandedBackSuccess | [Details](#b91e3bbb40b2b5eddd1e43be568773c850a9b8e0266)
- [wmf\dsc_classbasedresource.md](https://github.com/PowerShell/powerShell-Docs/blob/5118413ae9c05970e9857b9284c6886007dd484a/wmf/dsc_classbasedresource.md) | OutofSyncHandedBackSuccess | [Details](#7e25c8195c153a2fda21fac320c2750d51678b6a271)
+ [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs/blob/4f89541a1821ca4283a39a9a1cb97c75e9e496db/dsc/pullServer.md) | OutofSyncHandedBackSuccess | [Details](#4327f7428aa839fd7bb1788b203d72c838814aa976)
+ [wmf\limitation_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/45663ee62b9d9a1ccde45affa2022e88ce92493d/wmf/limitation_overview.md) | OutofSyncHandedBackSuccess | [Details](#c0c0b63ad6fcbfecbd130e1f5a736ab65f301627323)
 
 ## Item Details
-##### <a name='b91e3bbb40b2b5eddd1e43be568773c850a9b8e0266'></a> Source: [wmf\class_newtype.md](https://github.com/PowerShell/powerShell-Docs/blob/3950bffa1f487b15d380ac2889f0fb17b7518ca6/wmf/class_newtype.md)
+##### <a name='4327f7428aa839fd7bb1788b203d72c838814aa976'></a> Source: [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs/blob/4f89541a1821ca4283a39a9a1cb97c75e9e496db/dsc/pullServer.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [class_newtype.a9f52b670970046f8b1147d4ba646b73abb430dc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/88250476268849439536c3dc760957a7766b40a6/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/class_newtype.a9f52b670970046f8b1147d4ba646b73abb430dc.ja-jp.xlf)
-* Handoff Datetime: 2016-04-29 23:38:32
+* Handoff File: [pullServer.4b925b277da29998394af746bdbdd508fda48909.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/2d27ceb522fbbc6f7450e84dcdd99d2bf7ee87b7/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/pullServer.4b925b277da29998394af746bdbdd508fda48909.ja-jp.xlf)
+* Handoff Datetime: 2016-05-03 23:48:10
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [wmf\class_newtype.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/fb801d61f2d60d29e3d9b9f15ae8c3ac2aedacfc/wmf/class_newtype.md)
-* Current Handback File: [class_newtype.a9f52b670970046f8b1147d4ba646b73abb430dc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/06a30b5f12a808113bfcdf55e4a5b5fd4916cc02/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/class_newtype.a9f52b670970046f8b1147d4ba646b73abb430dc.ja-jp.xlf)
-* Current Handback Datetime: 2016-03-28 18:05:41
+* Current Target File: [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/c96beef85f0ba3046f5096cf975594f0bdceff30/dsc/pullServer.md)
+* Current Handback File: [pullServer.4b925b277da29998394af746bdbdd508fda48909.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5cee639d5bf5260af0992235680b20f3eae487b2/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/pullServer.4b925b277da29998394af746bdbdd508fda48909.ja-jp.xlf)
+* Current Handback Datetime: 2016-04-29 16:59:29
 * [Back to Top](#report-top)
 
-##### <a name='7e25c8195c153a2fda21fac320c2750d51678b6a271'></a> Source: [wmf\dsc_classbasedresource.md](https://github.com/PowerShell/powerShell-Docs/blob/5118413ae9c05970e9857b9284c6886007dd484a/wmf/dsc_classbasedresource.md)
+##### <a name='c0c0b63ad6fcbfecbd130e1f5a736ab65f301627323'></a> Source: [wmf\limitation_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/45663ee62b9d9a1ccde45affa2022e88ce92493d/wmf/limitation_overview.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [dsc_classbasedresource.a3d6b22652db939b51db1218584247396454ae0f.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/88250476268849439536c3dc760957a7766b40a6/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/dsc_classbasedresource.a3d6b22652db939b51db1218584247396454ae0f.ja-jp.xlf)
-* Handoff Datetime: 2016-04-29 23:38:32
+* Handoff File: [limitation_overview.6cc9c8c028f5912636637d836aed7db0614de522.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/2d27ceb522fbbc6f7450e84dcdd99d2bf7ee87b7/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/limitation_overview.6cc9c8c028f5912636637d836aed7db0614de522.ja-jp.xlf)
+* Handoff Datetime: 2016-05-03 23:48:10
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [wmf\dsc_classbasedresource.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/fb801d61f2d60d29e3d9b9f15ae8c3ac2aedacfc/wmf/dsc_classbasedresource.md)
-* Current Handback File: [dsc_classbasedresource.a3d6b22652db939b51db1218584247396454ae0f.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/06a30b5f12a808113bfcdf55e4a5b5fd4916cc02/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/dsc_classbasedresource.a3d6b22652db939b51db1218584247396454ae0f.ja-jp.xlf)
+* Current Target File: [wmf\limitation_overview.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/fb801d61f2d60d29e3d9b9f15ae8c3ac2aedacfc/wmf/limitation_overview.md)
+* Current Handback File: [limitation_overview.6cc9c8c028f5912636637d836aed7db0614de522.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/06a30b5f12a808113bfcdf55e4a5b5fd4916cc02/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/limitation_overview.6cc9c8c028f5912636637d836aed7db0614de522.ja-jp.xlf)
 * Current Handback Datetime: 2016-03-28 18:05:41
 * [Back to Top](#report-top)
 
