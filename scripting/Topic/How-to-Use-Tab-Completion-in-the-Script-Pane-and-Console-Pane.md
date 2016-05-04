@@ -22,11 +22,11 @@ ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
 たとえば、「`get-process -`」と入力し、Tab キーを何回か押すと、コマンドレットの各パラメーターが順番に表示されます。
 
 ## 参照
-[Windows PowerShell ISE の使用](assetId:///777ea82b-dd73-4269-b61a-69a17e6ff16f)
-[PowerShell タブを作成する方法](assetId:///c57fc210-19c8-47b1-9171-26a2144c907c)
+[Windows PowerShell ISE の使用](https://technet.microsoft.com/en-us/library/777ea82b-dd73-4269-b61a-69a17e6ff16f)
+[PowerShell タブを作成する方法](https://technet.microsoft.com/en-us/library/c57fc210-19c8-47b1-9171-26a2144c907c)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

@@ -13,7 +13,7 @@ ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
 > [!NOTE]
 > 1 つのタブで作成した変数、関数、別名が、他のタブに引き継がれることはありません。 それらのタブは、別々の Windows PowerShell セッションです。
 
-[!INCLUDE[wps_2](../Token/wps_2_md.md)] でタブを開いたり閉じたりするには、次の手順を実行します。 タブの名前を変更するには、[!INCLUDE[wps_2](../Token/wps_2_md.md)] タブのスクリプト オブジェクトで [DisplayName](assetId:///a9b58556-951b-4f48-b3ae-b351b7564360#Displayname) プロパティを設定します。
+[!INCLUDE[wps_2](../Token/wps_2_md.md)] でタブを開いたり閉じたりするには、次の手順を実行します。 タブの名前を変更するには、[!INCLUDE[wps_2](../Token/wps_2_md.md)] タブのスクリプト オブジェクトで [DisplayName](https://technet.microsoft.com/en-us/library/a9b58556-951b-4f48-b3ae-b351b7564360#Displayname) プロパティを設定します。
 
 ## 新しい PowerShell タブを作成して使用するには
 **[ファイル]** メニューで、**[PowerShell タブの新規作成]** をクリックします。 新しい PowerShell タブは、常にアクティブなウィンドウとして表示されます。 PowerShell のタブには、開かれた順に番号が付けられます。 各タブは、それぞれ独自の Windows PowerShell コンソール ウィンドウに関連付けられます。 独自のセッションを持つ PowerShell タブは、最大 32 個まで ([!INCLUDE[ise_2](../Token/ise_2_md.md)] 2.0 では、8 個まで) 同時に開くことができます。
@@ -32,7 +32,7 @@ PowerShell タブをアクティブにするには、タブをクリックしま
 
 -   **[ファイル]** メニューの **[PowerShell タブを閉じる]** をクリックするか、アクティブなタブの閉じるボタン (**X**) をクリックして、タブを閉じます。
 
-閉じようとしている PowerShell タブに未保存のファイルがあると、そのファイルを保存するか破棄するかを求められます。 スクリプトを保存する方法について詳しくは、「[スクリプトを保存する方法](assetId:///162f594d-efd3-4234-9960-45e56e6eadc8)」をご覧ください。
+閉じようとしている PowerShell タブに未保存のファイルがあると、そのファイルを保存するか破棄するかを求められます。 スクリプトを保存する方法について詳しくは、「[スクリプトを保存する方法](https://technet.microsoft.com/en-us/library/162f594d-efd3-4234-9960-45e56e6eadc8)」をご覧ください。
 
 ## 参照
 [Windows PowerShell ISE の使用](../Topic/Using-the-Windows-PowerShell-ISE.md)
@@ -40,6 +40,6 @@ PowerShell タブをアクティブにするには、タブをクリックしま
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 

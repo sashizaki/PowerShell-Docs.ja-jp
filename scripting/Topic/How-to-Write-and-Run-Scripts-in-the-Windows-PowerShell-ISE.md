@@ -20,7 +20,7 @@ ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
 [!INCLUDE[wps_1](../Token/wps_1_md.md)] ファイルは、スクリプト ウィンドウで開いたり、編集したりできます。 [!INCLUDE[wps_1](../Token/wps_1_md.md)] で対象となるファイルの種類は、スクリプト ファイル (.ps1)、スクリプト データ ファイル (.psd1)、スクリプト モジュール ファイル (.psm1) です。 これらのファイルの種類は、スクリプト ウィンドウのエディターで構文が色分けされます。 スクリプト ウィンドウで開くことのできる他の一般的なファイルの種類には、構成ファイル (.ps1xml)、XML ファイル、テキスト ファイルがあります。
 
 > [!NOTE]
-> [!INCLUDE[wps_2](../Token/wps_2_md.md)] の実行ポリシーによって、スクリプトの実行や、Windows PowerShell のプロファイルと構成ファイルの読み込みを実行できるかどうかが決まります。 既定の実行ポリシー Restricted では、すべてのスクリプトの実行とプロファイルの読み込みが防止されます。 プロファイルの、読み込みと使用を許可するように実行ポリシーを変更する方法については、「[Set-ExecutionPolicy[PSITPro5_Security]](assetId:///5690a0e1-495b-4e63-8280-65ead7bf01ab)」と「[about_Signing [v4]](assetId:///fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d)」をご覧ください。
+> [!INCLUDE[wps_2](../Token/wps_2_md.md)] の実行ポリシーによって、スクリプトの実行や、Windows PowerShell のプロファイルと構成ファイルの読み込みを実行できるかどうかが決まります。 既定の実行ポリシー Restricted では、すべてのスクリプトの実行とプロファイルの読み込みが防止されます。 プロファイルの、読み込みと使用を許可するように実行ポリシーを変更する方法については、「[Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab)」と「[about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d)」をご覧ください。
 
 ### 新しいスクリプト ファイルを作成するには
 ツール バーの **[新規作成]**、または **[ファイル]** メニューの **[新規作成]** をクリックします。 作成されたファイルは、現在の PowerShell タブの下に新しいファイル タブとして表示されます。 PowerShell のタブは、少なくとも 1 つのタブが存在する場合にのみ表示されることにご注意ください。 既定では種類のスクリプトのファイル (.ps1) が作成されますが、そのファイルに新しい名前や拡張子を指定して保存できます。 同じ PowerShell タブ内に複数のスクリプト ファイルを作成できます。
@@ -118,7 +118,7 @@ ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
 4.  **[保存]** をクリックします。
 
 ### ASCII エンコードでスクリプトを保存するには
-既定では、[!INCLUDE[ise_2](../Token/ise_2_md.md)] は新しいスクリプト ファイル (.ps1)、スクリプト データ ファイル (.psd1)、スクリプト モジュール ファイル (.psm1) を Unicode (BigEndianUnicode) として保存します。 ASCII (ANSI) など、別のエンコードでスクリプトを保存するには、[$psISE.CurrentFile](assetId:///bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) オブジェクトの **Save** または **SaveAs** メソッドを使います。
+既定では、[!INCLUDE[ise_2](../Token/ise_2_md.md)] は新しいスクリプト ファイル (.ps1)、スクリプト データ ファイル (.psd1)、スクリプト モジュール ファイル (.psm1) を Unicode (BigEndianUnicode) として保存します。 ASCII (ANSI) など、別のエンコードでスクリプトを保存するには、[$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) オブジェクトの **Save** または **SaveAs** メソッドを使います。
 
 次のコマンドでは、新しいスクリプトを MyScript.ps1 という名前の ASCII エンコードで保存します。
 
@@ -147,6 +147,6 @@ $psise.CurrentFile.encoding
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO2-->
 
 
