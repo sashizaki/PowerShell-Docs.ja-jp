@@ -7,11 +7,11 @@
 [ Handoff Failed Files ](#handoff-failed-list)| 0
 [ Handoff Success Files ](#handoff-success-list)| 0
 [ Archive Failed Files ](#archive-failed-list)| 0
-[ Archive Success Files ](#archive-success-list)| 98
+[ Archive Success Files ](#archive-success-list)| 96
 [ Handback Failed Files ](#handback-failed-list)| 0
-[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 29
-[ In Sync Handback Files ](#insync-handback-success-list)| 203
-[ Ignored Files ](#ignored-list)| 12
+[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 28
+[ In Sync Handback Files ](#insync-handback-success-list)| 205
+[ Ignored Files ](#ignored-list)| 13
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
 
@@ -117,8 +117,6 @@
  [scripting\Token\wps_1_md.md](https://github.com/PowerShell/powerShell-Docs/blob/946772f8ecc312a15d3cb53310f449dbab7467a1/scripting/Token/wps_1_md.md) | ArchivedSuccess | [Details](#aef45282e868f874d615c6b42678d9c5f821c994181)
  [scripting\Token\wps_2.md](https://github.com/PowerShell/powerShell-Docs/blob/946772f8ecc312a15d3cb53310f449dbab7467a1/scripting/Token/wps_2.md) | ArchivedSuccess | [Details](#e9096a16bdd11b30f840ceba6f1cb16bd4cf25e8182)
  [scripting\Token\wps_2_md.md](https://github.com/PowerShell/powerShell-Docs/blob/946772f8ecc312a15d3cb53310f449dbab7467a1/scripting/Token/wps_2_md.md) | ArchivedSuccess | [Details](#7aec405442c5cb6c886214b18022f4f9d2af5cbf183)
- [scripting\Topic\Changing-Computer-State.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Changing-Computer-State.md) | ArchivedSuccess | [Details](#1e8e62ebabf3d1d50f62118cee16ac65f5b14f86188)
- [scripting\Topic\Understanding-Important-Windows-PowerShell-Concepts.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Understanding-Important-Windows-PowerShell-Concepts.md) | ArchivedSuccess | [Details](#b34db3f79c3148bf0f32970c3b7d7e3ba252ae66230)
  [scripting\Topic\WinRMSecurity.md](https://github.com/PowerShell/powerShell-Docs/blob/7a7b201f894b746447d9f05a82adb0f731e08f1c/scripting/Topic/WinRMSecurity.md) | ArchivedSuccess | [Details](#00e5a37e5fbe4532a00ead52c14a61558361c719250)
 
 ## <a name='handback-failed-list'></a> Handback Failed File List
@@ -153,7 +151,6 @@
  [wmf\feedback_clipboard.md](https://github.com/PowerShell/powerShell-Docs/blob/6a22c1413a5f360bffd5d1cd16214b2721152e97/wmf/feedback_clipboard.md) | OutofSyncHandedBackSuccess | [Details](#51e7169b4b8a80bc5df81e4336171eb9cb2ab8e4302)
  [wmf\feedback_fileinfo.md](https://github.com/PowerShell/powerShell-Docs/blob/6a22c1413a5f360bffd5d1cd16214b2721152e97/wmf/feedback_fileinfo.md) | OutofSyncHandedBackSuccess | [Details](#aa0991efc9ca39cc0aae39516d4b6cac03c4501a306)
  [wmf\limitation_dsc.md](https://github.com/PowerShell/powerShell-Docs/blob/c350e12ff2aea294e8f8f3385eb3a7df80f1c687/wmf/limitation_dsc.md) | OutofSyncHandedBackSuccess | [Details](#fe1c40cbfd2c76f45d170b82d8a099e860b15db8322)
- [wmf\limitation_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/45663ee62b9d9a1ccde45affa2022e88ce92493d/wmf/limitation_overview.md) | OutofSyncHandedBackSuccess | [Details](#c0c0b63ad6fcbfecbd130e1f5a736ab65f301627323)
  [wmf\productincompat.md](https://github.com/PowerShell/powerShell-Docs/blob/8a039df18b65d0f3af59c575bbd8a038ff91c9e8/wmf/productincompat.md) | OutofSyncHandedBackSuccess | [Details](#7cf46669ea41d4e9929d162df31f646e12a5a06a329)
 
 ## <a name='insync-handback-success-list'></a> In Sync Handback File Success List
@@ -227,6 +224,7 @@
  [scripting\Topic\About-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/About-Windows-PowerShell.md) | InSyncHandedBackSuccess | [Details](#41d53276e911d6db3c9adc28c60d804949864ca4184)
  [scripting\Topic\Appendix-1---Compatibility-Aliases.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Appendix-1---Compatibility-Aliases.md) | InSyncHandedBackSuccess | [Details](#bdcc1376acf8fda3d68cc85d4c28d4a8fcc0b6f5186)
  [scripting\Topic\Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md) | InSyncHandedBackSuccess | [Details](#a30fcb49f83cb29ce659afeb59ec8813e86fc829187)
+ [scripting\Topic\Changing-Computer-State.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Changing-Computer-State.md) | InSyncHandedBackSuccess | [Details](#1e8e62ebabf3d1d50f62118cee16ac65f5b14f86188)
  [scripting\Topic\Collecting-Information-About-Computers.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Collecting-Information-About-Computers.md) | InSyncHandedBackSuccess | [Details](#95fdc3d38d6b2bf5ea45017fe5c44eac7b489a30189)
  [scripting\Topic\Creating-.NET-and-COM-Objects--New-Object-.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Creating-.NET-and-COM-Objects--New-Object-.md) | InSyncHandedBackSuccess | [Details](#609d39f35215ec8142792c4e133996626be8cfc9190)
  [scripting\Topic\Creating-a-Custom-Input-Box.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Creating-a-Custom-Input-Box.md) | InSyncHandedBackSuccess | [Details](#c71ccacd9b51b4da9999a909b9e27ed4255c941c191)
@@ -265,6 +263,7 @@
  [scripting\Topic\Starting-the-Windows-PowerShell-2.0-Engine.md](https://github.com/PowerShell/powerShell-Docs/blob/54d8f8daa70f889268934121a37dac848846c307/scripting/Topic/Starting-the-Windows-PowerShell-2.0-Engine.md) | InSyncHandedBackSuccess | [Details](#b15700eeb9f448c60adf6d5aab1d0d5bde17af38227)
  [scripting\Topic\Starting-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Starting-Windows-PowerShell.md) | InSyncHandedBackSuccess | [Details](#b5e3c279ebf51cea2af7df8c13580d69dae7f2b2229)
  [scripting\Topic\Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md) | InSyncHandedBackSuccess | [Details](#faa7485e649b7c3e00fccd4f1d45f2b07773fcb3228)
+ [scripting\Topic\Understanding-Important-Windows-PowerShell-Concepts.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Understanding-Important-Windows-PowerShell-Concepts.md) | InSyncHandedBackSuccess | [Details](#b34db3f79c3148bf0f32970c3b7d7e3ba252ae66230)
  [scripting\Topic\Understanding-the-Windows-PowerShell-Pipeline.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Understanding-the-Windows-PowerShell-Pipeline.md) | InSyncHandedBackSuccess | [Details](#d72b78f5bc9928874b3c34871a104ea4304b52e9231)
  [scripting\Topic\Using-Familiar-Command-Names.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Using-Familiar-Command-Names.md) | InSyncHandedBackSuccess | [Details](#3385c1c66918dc2056dd67c38268f28126c13011232)
  [scripting\Topic\Using-Format-Commands-to-Change-Output-View.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Using-Format-Commands-to-Change-Output-View.md) | InSyncHandedBackSuccess | [Details](#889615eb40617d7016cb1bb73ba630d57f22a8cb233)
@@ -377,6 +376,7 @@
  [scripting\docfx.json](https://github.com/PowerShell/powerShell-Docs/blob/946772f8ecc312a15d3cb53310f449dbab7467a1/scripting/docfx.json) | Ignored | [Details](#9c38507d64e79807091da129978f4ef71091d94697)
  [scripting\md.style](https://github.com/PowerShell/powerShell-Docs/blob/946772f8ecc312a15d3cb53310f449dbab7467a1/scripting/md.style) | Ignored | [Details](#755db60abb7859af5065e2c5ddfbfc6cfb7aeeda98)
  [wmf\docfx.json](https://github.com/PowerShell/powerShell-Docs/blob/946772f8ecc312a15d3cb53310f449dbab7467a1/wmf/docfx.json) | Ignored | [Details](#90e6537c69b63c19d38e53440bb0982e01600134269)
+ [wmf\limitation_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/946772f8ecc312a15d3cb53310f449dbab7467a1/wmf/limitation_overview.md) | Ignored | [Details](#35cdbfab22a0fa00480012fed0a2cf32ffa11f8d323)
  [wmf\md.style](https://github.com/PowerShell/powerShell-Docs/blob/946772f8ecc312a15d3cb53310f449dbab7467a1/wmf/md.style) | Ignored | [Details](#755db60abb7859af5065e2c5ddfbfc6cfb7aeeda324)
 
 ## Item Details
@@ -2687,15 +2687,15 @@
 * [Back to Top](#report-top)
 
 ##### <a name='1e8e62ebabf3d1d50f62118cee16ac65f5b14f86188'></a> Source: [scripting\Topic\Changing-Computer-State.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Changing-Computer-State.md)
-* Status: ArchivedSuccess
-* Target File: 
+* Status: InSyncHandedBackSuccess
+* Target File: [scripting\Topic\Changing-Computer-State.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/139652062d0612362519e86dbee273c254b094f1/scripting/Topic/Changing-Computer-State.md)
 * Handoff File: [Changing-Computer-State.13db18a3b5a71336f10ad463a50ded05ce8c23a2.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/826c127afe8d47b471110e96795ed1fb08bf5baa/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/Changing-Computer-State.13db18a3b5a71336f10ad463a50ded05ce8c23a2.ja-jp.xlf)
 * Handoff Datetime: 2016-04-05 17:31:49
 * Handoff Reason: Include
 * Archive File: [Changing-Computer-State.13db18a3b5a71336f10ad463a50ded05ce8c23a2.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/b4aefb9646f87919ea7b9cf46ae875f7afb8ad9f/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/Changing-Computer-State.13db18a3b5a71336f10ad463a50ded05ce8c23a2.ja-jp.xlf)
 * Archive Datetime: 2016-04-15 00:46:35
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Handback File: [Changing-Computer-State.13db18a3b5a71336f10ad463a50ded05ce8c23a2.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fdb4b87b63222c937a4d2db6274e1893cbe11389/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Changing-Computer-State.13db18a3b5a71336f10ad463a50ded05ce8c23a2.ja-jp.xlf)
+* Handback Datetime: 2016-05-06 13:46:01
 * [Back to Top](#report-top)
 
 ##### <a name='95fdc3d38d6b2bf5ea45017fe5c44eac7b489a30189'></a> Source: [scripting\Topic\Collecting-Information-About-Computers.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Collecting-Information-About-Computers.md)
@@ -3200,15 +3200,15 @@
 * [Back to Top](#report-top)
 
 ##### <a name='b34db3f79c3148bf0f32970c3b7d7e3ba252ae66230'></a> Source: [scripting\Topic\Understanding-Important-Windows-PowerShell-Concepts.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Understanding-Important-Windows-PowerShell-Concepts.md)
-* Status: ArchivedSuccess
-* Target File: 
+* Status: InSyncHandedBackSuccess
+* Target File: [scripting\Topic\Understanding-Important-Windows-PowerShell-Concepts.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/139652062d0612362519e86dbee273c254b094f1/scripting/Topic/Understanding-Important-Windows-PowerShell-Concepts.md)
 * Handoff File: [Understanding-Important-Windows-PowerShell-Concepts.e8bae9b84b4e44e1b22cc9b182a634b655760a6d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/826c127afe8d47b471110e96795ed1fb08bf5baa/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/Understanding-Important-Windows-PowerShell-Concepts.e8bae9b84b4e44e1b22cc9b182a634b655760a6d.ja-jp.xlf)
 * Handoff Datetime: 2016-04-05 17:31:49
 * Handoff Reason: Include
 * Archive File: [Understanding-Important-Windows-PowerShell-Concepts.e8bae9b84b4e44e1b22cc9b182a634b655760a6d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/b4aefb9646f87919ea7b9cf46ae875f7afb8ad9f/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/Understanding-Important-Windows-PowerShell-Concepts.e8bae9b84b4e44e1b22cc9b182a634b655760a6d.ja-jp.xlf)
 * Archive Datetime: 2016-04-15 00:46:35
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Handback File: [Understanding-Important-Windows-PowerShell-Concepts.e8bae9b84b4e44e1b22cc9b182a634b655760a6d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fdb4b87b63222c937a4d2db6274e1893cbe11389/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Understanding-Important-Windows-PowerShell-Concepts.e8bae9b84b4e44e1b22cc9b182a634b655760a6d.ja-jp.xlf)
+* Handback Datetime: 2016-05-06 13:46:01
 * [Back to Top](#report-top)
 
 ##### <a name='d72b78f5bc9928874b3c34871a104ea4304b52e9231'></a> Source: [scripting\Topic\Understanding-the-Windows-PowerShell-Pipeline.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Understanding-the-Windows-PowerShell-Pipeline.md)
@@ -4345,19 +4345,16 @@
 * Current Handback Datetime: 2016-03-28 18:05:41
 * [Back to Top](#report-top)
 
-##### <a name='c0c0b63ad6fcbfecbd130e1f5a736ab65f301627323'></a> Source: [wmf\limitation_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/45663ee62b9d9a1ccde45affa2022e88ce92493d/wmf/limitation_overview.md)
-* Status: OutofSyncHandedBackSuccess
+##### <a name='35cdbfab22a0fa00480012fed0a2cf32ffa11f8d323'></a> Source: [wmf\limitation_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/946772f8ecc312a15d3cb53310f449dbab7467a1/wmf/limitation_overview.md)
+* Status: Ignored
 * Target File: 
-* Handoff File: [limitation_overview.6cc9c8c028f5912636637d836aed7db0614de522.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/2d27ceb522fbbc6f7450e84dcdd99d2bf7ee87b7/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/limitation_overview.6cc9c8c028f5912636637d836aed7db0614de522.ja-jp.xlf)
-* Handoff Datetime: 2016-05-03 23:48:10
-* Handoff Reason: Include
+* Handoff File: 
+* Handoff Datetime: 0001-01-01 00:00:00
+* Handoff Reason: Ignored
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [wmf\limitation_overview.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/fb801d61f2d60d29e3d9b9f15ae8c3ac2aedacfc/wmf/limitation_overview.md)
-* Current Handback File: [limitation_overview.6cc9c8c028f5912636637d836aed7db0614de522.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/06a30b5f12a808113bfcdf55e4a5b5fd4916cc02/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/limitation_overview.6cc9c8c028f5912636637d836aed7db0614de522.ja-jp.xlf)
-* Current Handback Datetime: 2016-03-28 18:05:41
 * [Back to Top](#report-top)
 
 ##### <a name='755db60abb7859af5065e2c5ddfbfc6cfb7aeeda324'></a> Source: [wmf\md.style](https://github.com/PowerShell/powerShell-Docs/blob/946772f8ecc312a15d3cb53310f449dbab7467a1/wmf/md.style)
