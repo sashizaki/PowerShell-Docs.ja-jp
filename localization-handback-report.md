@@ -1,39 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [scripting\Topic\Changing-Computer-State.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Changing-Computer-State.md) | InSyncHandedBackSuccess | [Details](#1e8e62ebabf3d1d50f62118cee16ac65f5b14f86188)
- [scripting\Topic\Understanding-Important-Windows-PowerShell-Concepts.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Understanding-Important-Windows-PowerShell-Concepts.md) | InSyncHandedBackSuccess | [Details](#b34db3f79c3148bf0f32970c3b7d7e3ba252ae66230)
 
 ## Item Details
-##### <a name='1e8e62ebabf3d1d50f62118cee16ac65f5b14f86188'></a> Source: [scripting\Topic\Changing-Computer-State.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Changing-Computer-State.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [scripting\Topic\Changing-Computer-State.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/139652062d0612362519e86dbee273c254b094f1/scripting/Topic/Changing-Computer-State.md)
-* Handoff File: [Changing-Computer-State.13db18a3b5a71336f10ad463a50ded05ce8c23a2.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/826c127afe8d47b471110e96795ed1fb08bf5baa/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/Changing-Computer-State.13db18a3b5a71336f10ad463a50ded05ce8c23a2.ja-jp.xlf)
-* Handoff Datetime: 2016-04-05 17:31:49
-* Handoff Reason: Include
-* Archive File: [Changing-Computer-State.13db18a3b5a71336f10ad463a50ded05ce8c23a2.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/b4aefb9646f87919ea7b9cf46ae875f7afb8ad9f/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/Changing-Computer-State.13db18a3b5a71336f10ad463a50ded05ce8c23a2.ja-jp.xlf)
-* Archive Datetime: 2016-04-15 00:46:35
-* Handback File: [Changing-Computer-State.13db18a3b5a71336f10ad463a50ded05ce8c23a2.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fdb4b87b63222c937a4d2db6274e1893cbe11389/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Changing-Computer-State.13db18a3b5a71336f10ad463a50ded05ce8c23a2.ja-jp.xlf)
-* Handback Datetime: 2016-05-06 13:46:01
-* [Back to Top](#report-top)
-
-##### <a name='b34db3f79c3148bf0f32970c3b7d7e3ba252ae66230'></a> Source: [scripting\Topic\Understanding-Important-Windows-PowerShell-Concepts.md](https://github.com/PowerShell/powerShell-Docs/blob/7221b5bd5ba90da32836d8c4e2bddb18c8f02ba6/scripting/Topic/Understanding-Important-Windows-PowerShell-Concepts.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [scripting\Topic\Understanding-Important-Windows-PowerShell-Concepts.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/139652062d0612362519e86dbee273c254b094f1/scripting/Topic/Understanding-Important-Windows-PowerShell-Concepts.md)
-* Handoff File: [Understanding-Important-Windows-PowerShell-Concepts.e8bae9b84b4e44e1b22cc9b182a634b655760a6d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/826c127afe8d47b471110e96795ed1fb08bf5baa/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/Understanding-Important-Windows-PowerShell-Concepts.e8bae9b84b4e44e1b22cc9b182a634b655760a6d.ja-jp.xlf)
-* Handoff Datetime: 2016-04-05 17:31:49
-* Handoff Reason: Include
-* Archive File: [Understanding-Important-Windows-PowerShell-Concepts.e8bae9b84b4e44e1b22cc9b182a634b655760a6d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/b4aefb9646f87919ea7b9cf46ae875f7afb8ad9f/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/Understanding-Important-Windows-PowerShell-Concepts.e8bae9b84b4e44e1b22cc9b182a634b655760a6d.ja-jp.xlf)
-* Archive Datetime: 2016-04-15 00:46:35
-* Handback File: [Understanding-Important-Windows-PowerShell-Concepts.e8bae9b84b4e44e1b22cc9b182a634b655760a6d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fdb4b87b63222c937a4d2db6274e1893cbe11389/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Understanding-Important-Windows-PowerShell-Concepts.e8bae9b84b4e44e1b22cc9b182a634b655760a6d.ja-jp.xlf)
-* Handback Datetime: 2016-05-06 13:46:01
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
