@@ -1,11 +1,26 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [dsc\builtInResource.md](https://github.com/PowerShell/powerShell-Docs/blob/682edfe87872b7b99546c2a78c1b6191d1933ad6/dsc/builtInResource.md) | InSyncHandedBackSuccess | [Details](#3e887680203d836b4161a1e54b6bc60bb20dc6c812)
 
 ## Item Details
+##### <a name='3e887680203d836b4161a1e54b6bc60bb20dc6c812'></a> Source: [dsc\builtInResource.md](https://github.com/PowerShell/powerShell-Docs/blob/682edfe87872b7b99546c2a78c1b6191d1933ad6/dsc/builtInResource.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\builtInResource.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/3328d5b22ce74611da4364e20c47ed1ddc463bfb/dsc/builtInResource.md)
+* Handoff File: [builtInResource.2f855e1582347e986aa4e5e62b842b886596fdc2.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/6f00330c309692b847496f2bda51fa05ed9d36cf/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/builtInResource.2f855e1582347e986aa4e5e62b842b886596fdc2.ja-jp.xlf)
+* Handoff Datetime: 2016-04-10 21:04:22
+* Handoff Reason: Include
+* Archive File: [builtInResource.2f855e1582347e986aa4e5e62b842b886596fdc2.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/993486c8ec0a50021d4ba49322a4779ea05d52d7/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/builtInResource.2f855e1582347e986aa4e5e62b842b886596fdc2.ja-jp.xlf)
+* Archive Datetime: 2016-04-29 00:25:38
+* Handback File: [builtInResource.2f855e1582347e986aa4e5e62b842b886596fdc2.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/a86437206fa623f81dce082decd2fcf364f58e7e/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/builtInResource.2f855e1582347e986aa4e5e62b842b886596fdc2.ja-jp.xlf)
+* Handback Datetime: 2016-05-09 22:34:49
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
