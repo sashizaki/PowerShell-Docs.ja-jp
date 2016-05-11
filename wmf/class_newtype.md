@@ -124,7 +124,7 @@ hashtable new(int capacity, float loadFactor)
 
 ## メソッド
 
-Windows PowerShell のクラス メソッドは、end ブロックのみを持つ ScriptBlock として実装されます。 すべてのメソッドはパブリックです。 **DoSomething** という名前のメソッドを定義する例を次に示します。
+Windows PowerShell のクラス メソッドは、end ブロックのみを持つ ScriptBlock として実装されます。 すべてのメソッドはパブリックです。 **DoSomething** という名前のメソッドを定義する例を次に示します。.
 
 ```powershell
 class MyClass
@@ -168,7 +168,7 @@ C# コードで Windows PowerShell 内と同じセマンティクスを使用で
 
 ## 属性
 
-4 つの新しい属性 **DscResource**、**DscResourceKey**、**DscResourceMandatory**、および **DscResourceOut** が追加されました。
+2 つの新しい属性 **DscResource** と **DscProperty** が追加されました。
 
 ## 変数の語彙的スコープ
 
@@ -324,4 +324,8 @@ function Style
 # and then returns the resulting type.
 #
 function Html ([HTML] $doc) { return $doc }
-```<!--HONumber=Mar16_HO2-->
+```
+
+<!--HONumber=Apr16_HO5-->
+
+

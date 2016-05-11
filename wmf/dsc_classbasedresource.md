@@ -9,7 +9,7 @@
 * モジュール フォルダーの **DSCResource** サブフォルダーは不要です。
 * PowerShell モジュールのファイルには、複数の DSC リソース クラスを含めることができます。
 
-同じファイル内の他のクラスの DSC リソースを拡張するクラスベースの DSC リソースの例を次に示します。 これは、モジュール **MyDSCResource.psm1** として保存されます。 
+同じファイル内の他のクラスの DSC リソースを拡張するクラスベースの DSC リソースの例を次に示します。 これは、モジュール **MyDSCResource.psm1** として保存されます。. 
 少なくとも 1 つのキー プロパティと、クラス定義の DSC リソースやその基本クラスの Get、Set、Test メソッドを常に含める必要があることに注意してください。
 
 ```powershell
@@ -60,7 +60,7 @@ NOTE: This property is required because [DscProperty(Mandatory)] is set.
 [string] $SourcePath
 
 <#
-This property reports the file's creation timestamp.
+This property reports the file creation timestamp.
 
 [DscProperty(NotConfigurable)] attribute indicates the property is not configurable in a DSC configuration. Properties marked this way are populated by the Get() method to report additional details about the resource when it is present.
 #>
@@ -212,13 +212,13 @@ class FileResource : BaseFileResource
     [bool] $IsReadOnly
 
     <#
-    This property reports the file's LastAccessTime timestamp.
+    This property reports the file LastAccessTime timestamp.
     #>
     [DscProperty(NotConfigurable)]
     [Nullable[datetime]] $LastAccessTime
 
     <#
-    This property reports the file's LastWriteTime timestamp.
+    This property reports the file LastWriteTime timestamp.
     #>
     [DscProperty(NotConfigurable)]
     [Nullable[datetime]] $LastWriteTime
@@ -252,7 +252,7 @@ class FileResource : BaseFileResource
 }
 ```
 
-クラス定義の DSC リソース プロバイダーを作成し、モジュールとして保存すると、モジュールのモジュール マニフェストを作成できます。 この例では、次のモジュール マニフェストは **MyDscResource.psd1** として保存されます。
+クラス定義の DSC リソース プロバイダーを作成し、モジュールとして保存すると、モジュールのモジュール マニフェストを作成できます。 この例では、次のモジュール マニフェストは **MyDscResource.psd1** として保存されます。.
 
 ```powershell
 @{
@@ -288,13 +288,13 @@ DscResourcesToExport = @('BaseFileResource','FileResource')
 }
 ```
 
-新しい DSC リソース プロバイダーをデプロイするには、それに対する **MyDscResource** フォルダーを `$env:SystemDrive\Program Files\WindowsPowerShell\Modules` の下で作成します。
+新しい DSC リソース プロバイダーをデプロイするには、それに対する **MyDscResource** フォルダーを次の下で作成します。 `$env:SystemDrive\Program Files\WindowsPowerShell\Modules`.
 DSCResource サブフォルダーを作成する必要はありません。
 モジュールとモジュールのマニフェスト ファイル (**MyDscResource.psm1** と **MyDscResource.psd1**) を **MyDscResource** フォルダーにコピーします。
 
 これ以降、他の DSC リソースの場合と同様に、構成スクリプトを作成して実行します。 
 MyDSCResource モジュールを参照する構成を次に示します。 
-これをスクリプト **MyResource.ps1** として保存します。
+これをスクリプト **MyResource.ps1** として保存します。.
 
 ```powershell
 Configuration MyConfig
@@ -333,4 +333,8 @@ Get-DscConfiguration
 
 * クラスベースの DSC リソースの Get() 関数によって複合型が返される場合、Get-DscConfiguration は空の値 (null) やエラーを返すことがあります。
 * 複合リソースを、クラスベースのリソースとして記述することはできません。
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Apr16_HO5-->
+
+
