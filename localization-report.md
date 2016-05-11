@@ -7,10 +7,10 @@
 [ Handoff Failed Files ](#handoff-failed-list)| 0
 [ Handoff Success Files ](#handoff-success-list)| 1
 [ Archive Failed Files ](#archive-failed-list)| 0
-[ Archive Success Files ](#archive-success-list)| 116
+[ Archive Success Files ](#archive-success-list)| 115
 [ Handback Failed Files ](#handback-failed-list)| 0
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 23
-[ In Sync Handback Files ](#insync-handback-success-list)| 165
+[ In Sync Handback Files ](#insync-handback-success-list)| 166
 [ Ignored Files ](#ignored-list)| 12
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
@@ -122,7 +122,6 @@
  [scripting\getting-started\fundamental\Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md](https://github.com/PowerShell/powerShell-Docs/blob/2d25a11466cf779e87cc3e602814e3fa4ffcf490/scripting/getting-started/fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md) | ArchivedSuccess | [Details](#fd325f8f4bc0ad8bf7616a536b836b0a4b375e05209)
  [scripting\getting-started\fundamental-concepts.md](https://github.com/PowerShell/powerShell-Docs/blob/c26bfd8cd5f474b8fd26b2d1ba91a439948f0afd/scripting/getting-started/fundamental-concepts.md) | ArchivedSuccess | [Details](#305b348a25efb88770eff99e366d6b9f2339ebac194)
  [scripting\getting-started\Getting-Ready-to-Use-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/0c24c85fca26ea153187ea3b591aa711908f6695/scripting/getting-started/Getting-Ready-to-Use-Windows-PowerShell.md) | ArchivedSuccess | [Details](#712f569902888ec0d9ab7e5645ab374dcda0651d210)
- [scripting\getting-started\Getting-Started-with-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/0c24c85fca26ea153187ea3b591aa711908f6695/scripting/getting-started/Getting-Started-with-Windows-PowerShell.md) | ArchivedSuccess | [Details](#db1b81c10382adfb0a76674ac0882c6665ca457e211)
  [scripting\getting-started\more-powershell-learning.md](https://github.com/PowerShell/powerShell-Docs/blob/ccebb91a942aa8b44e7b3b2a68c4e5fe8c61ae60/scripting/getting-started/more-powershell-learning.md) | ArchivedSuccess | [Details](#c85a8b3968289e3094793bcdbf62afc666172d57212)
  [scripting\getting-started\understanding-concepts-reference.md](https://github.com/PowerShell/powerShell-Docs/blob/e3bf157a96d0b71cd212bbfa4720b4ec5f2208eb/scripting/getting-started/understanding-concepts-reference.md) | ArchivedSuccess | [Details](#61629128c1b047e2df989716f3fe5e7322e4363c213)
  [scripting\PowerShell-Scripting.md](https://github.com/PowerShell/powerShell-Docs/blob/1e2dd46b366d06bbc02033708d9aedf9f7b328d6/scripting/PowerShell-Scripting.md) | ArchivedSuccess | [Details](#fa3aff30e20da1489864e981a67ff7000630d1c3215)
@@ -263,6 +262,7 @@
  [scripting\getting-started\fundamental\Using-Variables-to-Store-Objects.md](https://github.com/PowerShell/powerShell-Docs/blob/6be2c308b99b84687ff1cc23a4f15b384b51101c/scripting/getting-started/fundamental/Using-Variables-to-Store-Objects.md) | InSyncHandedBackSuccess | [Details](#670f3b9f1d61e8ddcf00bf9c2670f770392e429c205)
  [scripting\getting-started\fundamental\Using-Windows-PowerShell-for-Administration.md](https://github.com/PowerShell/powerShell-Docs/blob/6be2c308b99b84687ff1cc23a4f15b384b51101c/scripting/getting-started/fundamental/Using-Windows-PowerShell-for-Administration.md) | InSyncHandedBackSuccess | [Details](#0058e4840a0caa394278975765832ad26f25d3a5206)
  [scripting\getting-started\fundamental\Windows-PowerShell-Basics.md](https://github.com/PowerShell/powerShell-Docs/blob/6be2c308b99b84687ff1cc23a4f15b384b51101c/scripting/getting-started/fundamental/Windows-PowerShell-Basics.md) | InSyncHandedBackSuccess | [Details](#070a3d10d24d1cc7f251dd1f7efe1531922650fd208)
+ [scripting\getting-started\Getting-Started-with-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/0c24c85fca26ea153187ea3b591aa711908f6695/scripting/getting-started/Getting-Started-with-Windows-PowerShell.md) | InSyncHandedBackSuccess | [Details](#db1b81c10382adfb0a76674ac0882c6665ca457e211)
  [wmf\audit_cms.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/audit_cms.md) | InSyncHandedBackSuccess | [Details](#2160a4b932075c98df6806c61d263d30f650b9f4233)
  [wmf\audit_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/audit_overview.md) | InSyncHandedBackSuccess | [Details](#94d24bd3b67d1eceb71af4ffe704f2e03bf0806c234)
  [wmf\audit_script.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/audit_script.md) | InSyncHandedBackSuccess | [Details](#654c0d5e83b9832524298b5c96eae094f371330f235)
@@ -2943,15 +2943,15 @@
 * [Back to Top](#report-top)
 
 ##### <a name='db1b81c10382adfb0a76674ac0882c6665ca457e211'></a> Source: [scripting\getting-started\Getting-Started-with-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/0c24c85fca26ea153187ea3b591aa711908f6695/scripting/getting-started/Getting-Started-with-Windows-PowerShell.md)
-* Status: ArchivedSuccess
-* Target File: 
+* Status: InSyncHandedBackSuccess
+* Target File: [scripting\getting-started\Getting-Started-with-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/61d675000e326a301f6d71b49d1e9446a523ff24/scripting/getting-started/Getting-Started-with-Windows-PowerShell.md)
 * Handoff File: [Getting-Started-with-Windows-PowerShell.a63e6424e1216675a9fb5a347b8bffe414db98cb.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/e345a2be3918ff7352f81fdeb84c5fa8c8bb8f86/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/Getting-Started-with-Windows-PowerShell.a63e6424e1216675a9fb5a347b8bffe414db98cb.ja-jp.xlf)
 * Handoff Datetime: 2016-05-09 17:23:29
 * Handoff Reason: Include
 * Archive File: [Getting-Started-with-Windows-PowerShell.a63e6424e1216675a9fb5a347b8bffe414db98cb.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/651e62bc0cda8ca6f2fed8fd7bed96cc0d5b9976/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/Getting-Started-with-Windows-PowerShell.a63e6424e1216675a9fb5a347b8bffe414db98cb.ja-jp.xlf)
 * Archive Datetime: 2016-05-10 13:24:29
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Handback File: [Getting-Started-with-Windows-PowerShell.a63e6424e1216675a9fb5a347b8bffe414db98cb.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4a8b79ffffe77f423a5c6cb5c8c5fb532024c1bc/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Getting-Started-with-Windows-PowerShell.a63e6424e1216675a9fb5a347b8bffe414db98cb.ja-jp.xlf)
+* Handback Datetime: 2016-05-11 11:40:36
 * [Back to Top](#report-top)
 
 ##### <a name='c85a8b3968289e3094793bcdbf62afc666172d57212'></a> Source: [scripting\getting-started\more-powershell-learning.md](https://github.com/PowerShell/powerShell-Docs/blob/ccebb91a942aa8b44e7b3b2a68c4e5fe8c61ae60/scripting/getting-started/more-powershell-learning.md)
