@@ -1,11 +1,39 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 2
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [wmf\class_newtype.md](https://github.com/PowerShell/powerShell-Docs/blob/3950bffa1f487b15d380ac2889f0fb17b7518ca6/wmf/class_newtype.md) | InSyncHandedBackSuccess | [Details](#b91e3bbb40b2b5eddd1e43be568773c850a9b8e0241)
+ [wmf\dsc_classbasedresource.md](https://github.com/PowerShell/powerShell-Docs/blob/5118413ae9c05970e9857b9284c6886007dd484a/wmf/dsc_classbasedresource.md) | InSyncHandedBackSuccess | [Details](#7e25c8195c153a2fda21fac320c2750d51678b6a246)
 
 ## Item Details
+##### <a name='b91e3bbb40b2b5eddd1e43be568773c850a9b8e0241'></a> Source: [wmf\class_newtype.md](https://github.com/PowerShell/powerShell-Docs/blob/3950bffa1f487b15d380ac2889f0fb17b7518ca6/wmf/class_newtype.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [wmf\class_newtype.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/caa68b2b7a22fa4bb49381baf927eb2aa0e9c758/wmf/class_newtype.md)
+* Handoff File: [class_newtype.a9f52b670970046f8b1147d4ba646b73abb430dc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/88250476268849439536c3dc760957a7766b40a6/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/class_newtype.a9f52b670970046f8b1147d4ba646b73abb430dc.ja-jp.xlf)
+* Handoff Datetime: 2016-04-29 23:38:32
+* Handoff Reason: Include
+* Archive File: [class_newtype.a9f52b670970046f8b1147d4ba646b73abb430dc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/226fdd1a8b44604ddf61cbd05918327a6ee22fe3/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/class_newtype.a9f52b670970046f8b1147d4ba646b73abb430dc.ja-jp.xlf)
+* Archive Datetime: 2016-05-03 15:35:56
+* Handback File: [class_newtype.a9f52b670970046f8b1147d4ba646b73abb430dc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/626b2d4942f0f9be1e6a828fc4009fef83b10546/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/class_newtype.a9f52b670970046f8b1147d4ba646b73abb430dc.ja-jp.xlf)
+* Handback Datetime: 2016-05-11 11:09:22
+* [Back to Top](#report-top)
+
+##### <a name='7e25c8195c153a2fda21fac320c2750d51678b6a246'></a> Source: [wmf\dsc_classbasedresource.md](https://github.com/PowerShell/powerShell-Docs/blob/5118413ae9c05970e9857b9284c6886007dd484a/wmf/dsc_classbasedresource.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [wmf\dsc_classbasedresource.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/caa68b2b7a22fa4bb49381baf927eb2aa0e9c758/wmf/dsc_classbasedresource.md)
+* Handoff File: [dsc_classbasedresource.a3d6b22652db939b51db1218584247396454ae0f.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/88250476268849439536c3dc760957a7766b40a6/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/dsc_classbasedresource.a3d6b22652db939b51db1218584247396454ae0f.ja-jp.xlf)
+* Handoff Datetime: 2016-04-29 23:38:32
+* Handoff Reason: Include
+* Archive File: [dsc_classbasedresource.a3d6b22652db939b51db1218584247396454ae0f.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/226fdd1a8b44604ddf61cbd05918327a6ee22fe3/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/dsc_classbasedresource.a3d6b22652db939b51db1218584247396454ae0f.ja-jp.xlf)
+* Archive Datetime: 2016-05-03 15:35:56
+* Handback File: [dsc_classbasedresource.a3d6b22652db939b51db1218584247396454ae0f.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/626b2d4942f0f9be1e6a828fc4009fef83b10546/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/dsc_classbasedresource.a3d6b22652db939b51db1218584247396454ae0f.ja-jp.xlf)
+* Handback Datetime: 2016-05-11 11:09:22
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
