@@ -44,7 +44,7 @@
 ### [Windows PowerShell のナビゲーション](Topic/Windows-PowerShell-Navigation.md)
 #### [現在の場所の管理](Topic/Managing-Current-Location.md)
 #### [Windows PowerShell ドライブの管理](Topic/Managing-Windows-PowerShell-Drives.md)
-#### [ファイル、フォルダー、レジストリ キーの操作](Topic/Working-With-Files,-Folders-and-Registry-Keys.md)
+#### [ファイル、フォルダー、レジストリ キーの操作](Topic/Working-With-Files-Folders-and-Registry-Keys.md)
 #### [項目を直接操作する](Topic/Manipulating-Items-Directly.md)
 ### [オブジェクトの操作](Topic/Working-with-Objects.md)
 #### [WMI オブジェクトの取得 'Get-WmiObject'](Topic/Getting-WMI-Objects--Get-WmiObject-.md)
@@ -67,6 +67,8 @@
 #### [レジストリ キーの操作](Topic/Working-with-Registry-Keys.md)
 #### [レジストリ エントリの操作](Topic/Working-with-Registry-Entries.md)
 #### [リモート コマンドの実行](Topic/Running-Remote-Commands.md)
+## Windows PowerShell セキュリティ
+### [PowerShell リモート処理のセキュリティに関する考慮事項](Topic/WinRMSecurity.md)
 ## [Windows PowerShell 5 の新機能](Topic/What-s-New-in-Windows-PowerShell.md)
 ### [互換性のあるエイリアス](Topic/Appendix-1---Compatibility-Aliases.md)
 ### [カスタムの PowerShell ショートカットの作成](Topic/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md)
@@ -74,6 +76,6 @@
 ## [Windows PowerShell 用語集](Topic/Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=Apr16_HO4-->
 
 

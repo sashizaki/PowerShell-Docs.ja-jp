@@ -35,10 +35,10 @@ DSC には、構成の作成を許可し、DSC リソースのビルドに役立
 ## 参照
 * [DSC 構成](configurations.md)
 * [DSC リソース](resources.md)
-* [ローカル構成マネージャーの構成](metaconfig.md)
+* [ローカル構成マネージャーの構成](metaConfig.md)
 
 
 
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=Apr16_HO2-->
 
 

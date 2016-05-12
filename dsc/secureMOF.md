@@ -13,8 +13,8 @@ a user. このトピックでは、それらの資格情報を証明書で暗号
 
 DSC 構成のセキュリティ保護に使用される資格情報を正常に暗号化するには、次のものが必要になります。
 
-* **証明書を発行して配布するための手段**。 このトピックとその例では、Active Directory 証明機関を使用することを前提としています。 For more background information on 
-Active Directory 証明書サービスの背景情報について詳しくは、「Active Directory 証明書サービスの概要」と、 
+* **証明書を発行して配布するための手段**。 このトピックとその例では、Active Directory 証明機関を使用することを前提としています。 Active Directory 証明書サービスの背景情報の詳細については、 
+「Active Directory 証明書サービスの概要」と 
 「[Windows Server 2008 の Active Directory 証明書サービス](https://technet.microsoft.com/windowsserver/dd448615.aspx)」をご覧ください。
 * **ターゲット ノードへの管理アクセス**。
 * **各ターゲット ノードでは、暗号化可能な証明書がそれぞれの個人用ストアに保存されています**。 Windows PowerShell では、ストアへのパスは Cert:\LocalMachine\My です。 このトピックの例では、 
@@ -49,24 +49,154 @@ configuration from. **公開**キーのみをエクスポートし、秘密キ�
 >EKUs.
   
 _ターゲット ノード_にある既存の証明書で、これらの条件を満たしているものがあれば、DSC 資格情報をセキュリティで保護するために使うことができます。
- 
+
 ## 証明書の作成
 
-秘密キーは、MOF を復号化するのに使用されるため、秘密に保つ必要があります。 そのための最も簡単な方法は、*ターゲット ノード*で秘密キー証明書を作成し、 
-DSC 構成を MOF ファイルにコンパイルするために使用されるコンピューターに公開キー証明書をコピーすることです。 次の例は、証明書を作成し、公開キーをエクスポートし、
-ローカルの証明書ストアのルートに公開キーをインポートします。
+必要な暗号化証明書 (公開/秘密キー ペア) を作成して使用するための方法は 2 つあります。
+
+1. **ターゲット ノード**上に作成し、公開キーのみを**オーサリング ノード**にエクスポートする
+2. **オーサリング ノード**上に作成し、キー ペア全体を**ターゲット ノード**にエクスポートする
+
+MOF の証明書の暗号化を解除するための秘密キーが常にターゲット ノードで保持されるため、1 つ目の方法をお勧めします。
+
+
+### ターゲット ノードでの証明書の作成
+
+秘密キーは、**ターゲット ノード**で MOF の暗号化解除に使用されるため、秘密に保つ必要があります。
+そのための最も簡単な方法は、**ターゲット ノード**で秘密キー証明書を作成し、DSC 構成を MOF ファイルに作成するために使用されるコンピューターに**公開キー証明書**をコピーすることです。
+次に例を示します。
+ 1. **ターゲット ノード**で証明書を作成します。
+ 2. 公開キー証明書を**ターゲット ノード**にエクスポートします。
+ 3. 公開キー証明書を**オーサリング ノード**の**マイ**証明書ストアにインポートします。
+
+#### ターゲット ノード: 証明書を作成してエクスポートする
+>オーサリング ノード: Windows Server 2016 および Windows 10
 
 ```powershell
-# create the cert
-$cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName 'DscEncryptionCert' 
-# export the cert’s public key
-$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer"  -Force                                                              
-# import the cert’s public key as a trusted root certificate authority so that it is trusted
-Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\Root > $null
+# note: These steps need to be performed in an Administrator PowerShell session
+$cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName 'DscEncryptionCert' -HashAlgorithm SHA256
+# export the public key certificate
+$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
+```
+エクスポートしたら、```DscPublicKey.cer``` を**オーサリング ノード**にコピーする必要があります。
+
+>オーサリング ノード: Windows Server 2012 R2/Windows 8.1 以前
+
+Windows 10 および Windows Server 2016 より前の Windows オペレーティング システムの New-SelfSignedCertificate コマンドレットでは、**Type** パラメーターがサポートされていないため、これらのオペレーティング システムでは、他の方法でこの証明書を作成する必要があります。
+この場合は、```makecert.exe``` または ```certutil.exe``` を使って証明書を作成できます。
+
+また、別の方法として、[Microsoft スクリプト センターから New-SelfSignedCertificateEx.ps1 スクリプトをダウンロード](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)し、それを使用して証明書を作成することもできます。
+```powershell
+# note: These steps need to be performed in an Administrator PowerShell session
+# and in the folder that contains New-SelfSignedCertificateEx.ps1
+. .\New-SelfSignedCertificateEx.ps1
+New-SelfsignedCertificateEx `
+    -Subject "CN=${ENV:ComputerName}" `
+    -EKU 'Document Encryption' `
+    -KeyUsage 'KeyEncipherment, DataEncipherment' `
+    -SAN ${ENV:ComputerName} `
+    -FriendlyName 'DSC Credential Encryption certificate' `
+    -Exportable `
+    -StoreLocation 'LocalMachine' `
+    -StoreName 'My' `
+    -KeyLength 2048 `
+    -ProviderName 'Microsoft Enhanced Cryptographic Provider v1.0' `
+    -AlgorithmName 'RSA' `
+    -SignatureAlgorithm 'SHA256'
+# Locate the newly created certificate
+$Cert = Get-ChildItem -Path cert:\LocalMachine\My `
+    | Where-Object {
+        ($_.FriendlyName -eq 'DSC Credential Encryption certificate') `
+        -and ($_.Subject -eq "CN=${ENV:ComputerName}")
+    } | Select-Object -First 1
+# export the public key certificate
+$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
+```
+エクスポートしたら、```DscPublicKey.cer``` を**オーサリング ノード**にコピーする必要があります。
+
+#### オーサリング ノード: 証明書の公開キーをインポートする
+```powershell
+# Import to the my store
+Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-別の方法として、DSC 構成ファイルをコンパイルするために使用されるコンピューター上で秘密キー証明書を作成し、秘密キーと一緒にエクスポートした後、_ターゲット ノード_にインポートすることもできます。 
-これは、DSC 資格情報の暗号化を実装するために Nano Server で実行されている現在の手法です。 秘密キーは、転送中にセキュリティで保護される必要があります。
+### オーサリング ノードでの証明書の作成
+**オーサリング ノード**で暗号化証明書を作成し、**秘密キー**と共に PFX ファイルとしてエクスポートして、**ターゲット ノード**にインポートすることもできます。
+これは、DSC 資格情報の暗号化を実装するために _Nano Server_ で実行されている現在の手法です。
+PFX はパスワードで保護されていますが、転送中はセキュリティで保護する必要があります。
+次に例を示します。
+ 1. **オーサリング ノード**で証明書を作成します。
+ 2. **オーサリング ノード**で、秘密キーを含む証明書をエクスポートします。
+ 3. **オーサリング ノード**から秘密キーを削除します。ただし、公開キー証明書を**マイ** ストアに保管しておきます。
+ 4. 秘密キー証明書を**ターゲット ノード**のルート証明書ストアにインポートします。
+   - これはルート ストアに追加されるため、**ターゲット ノード**で信頼されるようになります。
+
+#### オーサリング ノード: 証明書を作成してエクスポートする
+>ターゲット ノード: Windows Server 2016 および Windows 10
+
+```powershell
+# note: These steps need to be performed in an Administrator PowerShell session
+$cert = New-SelfSignedCertificate -Type DocumentEncryptionCertLegacyCsp -DnsName 'DscEncryptionCert' -HashAlgorithm SHA256
+# export the private key certificate
+$mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
+$cert | Export-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -Password $mypwd -Force
+# remove the private key certificate from the node but keep the public key certificate
+$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
+$cert | Remove-Item -Force
+Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
+```
+エクスポートしたら、```DscPrivateKey.cer``` を**ターゲット ノード**にコピーする必要があります。
+
+>ターゲット ノード: Windows Server 2012 R2/Windows 8.1 以前
+
+Windows 10 および Windows Server 2016 より前の Windows オペレーティング システムの New-SelfSignedCertificate コマンドレットでは、**Type** パラメーターがサポートされていないため、これらのオペレーティング システムでは、他の方法でこの証明書を作成する必要があります。
+この場合は、```makecert.exe``` または ```certutil.exe``` を使って証明書を作成できます。
+
+また、別の方法として、[Microsoft スクリプト センターから New-SelfSignedCertificateEx.ps1 スクリプトをダウンロード](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)し、それを使用して証明書を作成することもできます。
+```powershell
+# note: These steps need to be performed in an Administrator PowerShell session
+# and in the folder that contains New-SelfSignedCertificateEx.ps1
+. .\New-SelfSignedCertificateEx.ps1
+New-SelfsignedCertificateEx `
+    -Subject "CN=${ENV:ComputerName}" `
+    -EKU 'Document Encryption' `
+    -KeyUsage 'KeyEncipherment, DataEncipherment' `
+    -SAN ${ENV:ComputerName} `
+    -FriendlyName 'DSC Credential Encryption certificate' `
+    -Exportable `
+    -StoreLocation 'LocalMachine' `
+    -StoreName 'My' `
+    -KeyLength 2048 `
+    -ProviderName 'Microsoft Enhanced Cryptographic Provider v1.0' `
+    -AlgorithmName 'RSA' `
+    -SignatureAlgorithm 'SHA256'
+# Locate the newly created certificate
+$Cert = Get-ChildItem -Path cert:\LocalMachine\My `
+    | Where-Object {
+        ($_.FriendlyName -eq 'DSC Credential Encryption certificate') `
+        -and ($_.Subject -eq "CN=${ENV:ComputerName}")
+    } | Select-Object -First 1
+# export the public key certificate
+$mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
+$cert | Export-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -Password $mypwd -Force
+# remove the private key certificate from the node but keep the public key certificate
+$cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
+$cert | Remove-Item -Force
+Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
+```
+
+#### ターゲット ノード: 証明書の秘密キーを信頼されたルートとしてインポートする
+```powershell
+# Import to the root store so that it is trusted
+$mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
+Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation Cert:\LocalMachine\Root -Password $mypwd > $null
+```
+
+注: ターゲット ノードが _Nano Server_ の場合は、```Import-PfxCertificate``` コマンドレットを使用できないため、CertOC.exe アプリケーションを使用して、秘密キー証明書をインポートする必要があります。
+```powershell
+# Import to the root store so that it is trusted
+certoc.exe -ImportPFX -p YOUR_PFX_PASSWD Root c:\temp\DscPrivateKey.pfx
+```
 
 ## 構成データ
 
@@ -197,7 +327,7 @@ Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
 この例では、DSC 構成をターゲット ノードにプッシュします。
 DSC プル サーバーが利用可能な場合は、DSC プル サーバーを使って DSC 構成を適用することもできます。
 
-DSC プル サーバーを使って DSC 構成を適用する方法について詳しくは、[このページ](PullClient.md)を参照してください。
+DSC プル サーバーを使って DSC 構成を適用する方法の詳細については、「[DSC プル クライアントのセットアップ](pullClient.md)」を参照してください。
 
 ## 資格情報暗号化モジュールの例
 
@@ -318,6 +448,6 @@ Start-CredentialEncryptionExample
 ```
 
 
-<!--HONumber=Mar16_HO5-->
+<!--HONumber=Apr16_HO3-->
 
 

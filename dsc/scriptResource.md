@@ -3,7 +3,16 @@
  
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
-Windows PowerShell Desired State Configuration (DSC) の **Script** リソースは、ターゲット ノードで Windows PowerShell スクリプトのブロックを実行するためのメカニズムを備えています。
+Windows PowerShell Desired State Configuration (DSC) の **Script** リソースは、ターゲット ノードで Windows PowerShell スクリプトのブロックを実行するためのメカニズムを備えています。 `Script` リソースには、`GetScript`、`SetScript`、`TestScript` プロパティがあります。 このプロパティは、各ターゲット ノードに対して実行されるスクリプト ブロックに設定する必要があります。 
+
+`GetScript` スクリプト ブロックは、現在のノードの状態を表すハッシュ テーブルを返します。 何も返す必要はありません。 DSC は、このスクリプト ブロックの出力を処理しません。
+
+`TestScript` スクリプト ブロックは、現在のノードを変更する必要があるかどうかを判定します。 ノードが最新の場合は `$true` を返します。 ノードの構成が最新ではなく、`SetScript` スクリプト ブロックで更新する必要がある場合は、`$false` が返されます。 `TestScript` スクリプト ブロックは DSC によって呼び出されます。
+
+`SetScript` スクリプト ブロックはノードを変更します。 これは、`TestScript` ブロックから `$false` が返された場合に DSC によって呼び出されます。
+
+`GetScript`、`TestScript`、または `SetScript` スクリプト ブロックで構成スクリプトの変数を使用する必要がある場合は、`$using:` スコープを使用します (例については、以下を参照してください)。
+
 
 ## 構文
 
@@ -28,7 +37,7 @@ Script [string] #ResourceName
 | Credential| 資格情報が必要な場合、このスクリプトの実行に使用する資格情報を示します。| 
 | DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。
 
-## 例
+## 例 1
 ```powershell
 Script ScriptExample
 {
@@ -42,8 +51,35 @@ Script ScriptExample
 }
 ```
 
+## 例 2
+```powershell
+$version = Get-Content 'version.txt'
+Script UpdateConfigurationVersion
+{
+    GetScript = { 
+        $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+        return @{ 'Version' = $currentVersion }
+    }          
+    TestScript = { 
+        $state = GetScript
+        if( $state['Version'] -eq $using:version )
+        {
+            Write-Verbose -Message ('{0} -eq {1}' -f $state['Version'],$using:version)
+            return $true
+        }
+        Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+        return $false
+    }
+    SetScript = { 
+        $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+    }
+}
+```
+
+このリソースは、構成のバージョンをテキスト ファイルに書き込んでいます。 このバージョンはクライアント コンピューターで利用できますが、いずれのノードでも使用できないため、PowerShell の `using` スコープを指定して、`Script` リソースのスクリプト ブロックそれぞれに渡す必要があります。 ノードの MOF ファイルを生成すると、`$version` 変数の値は、クライアント コンピューター上のテキスト ファイルから読み取られます。 各スクリプト ブロックの `$using:version` 変数は、DSC によって `$version` 変数の値に置き換えられます。
 
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=Apr16_HO2-->
 
 

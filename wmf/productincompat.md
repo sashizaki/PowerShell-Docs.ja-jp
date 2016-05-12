@@ -7,8 +7,13 @@
 - Microsoft SharePoint Server 2013
 - Microsoft SharePoint Server 2010
 - System Center 2012 Virtual Machine Manager
+- System Center 2012 R2 Service Management Automation
 
 **次のアプリケーションを実行しているサーバーは、WMF 5.0 を実行できます。**
 
 - System Center 2012 Configuration Manager
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Apr16_HO2-->
+
+
