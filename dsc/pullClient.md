@@ -1,3 +1,14 @@
+---
+title:   DSC プル クライアントのセットアップ
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC プル クライアントのセットアップ
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -10,9 +21,10 @@
 * [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
 * [構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)
 
-> <ctype="x-NOTFOUND" mdpre="**" mdpost="**">注</ctype="x-NOTFOUND">: これらのトピックは、PowerShell 5.0 に適用されます。 PowerShell 4.0 でのプル クライアントのセットアップについては、「<ctype="x-NOTFOUND" mdpre="[" mdpost="](pullClientConfigID4.md)">PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ</ctype="x-NOTFOUND">」をご覧ください。
+> **注**: これらのトピックは、PowerShell 5.0 に適用されます。 PowerShell 4.0 でのプル クライアントのセットアップについては、「[PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID4.md)」を参照してください。
 
 
-<!--HONumber=Mar16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

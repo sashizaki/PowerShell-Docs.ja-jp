@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell パイプラインを理解する
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
+title:  Windows PowerShell パイプラインを理解する
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6be50926-7943-4ef7-9499-4490d72a63fb
 ---
+
 # Windows PowerShell パイプラインを理解する
 Windows PowerShell では、パイプ処理をほぼすべての状況で使用できます。 画面にはテキストが表示されますが、コマンド間で受け渡しされる情報はテキストではありません。 パイプの中を流れるデータは、実際にはオブジェクトです。
 
@@ -62,6 +65,6 @@ Windows PowerShell のコマンドから、コンソール ウィンドウに表
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

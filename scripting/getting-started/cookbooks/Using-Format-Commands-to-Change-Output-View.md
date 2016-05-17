@@ -1,12 +1,15 @@
 ---
-title: Format コマンドを使用した出力ビューの変更
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
+title:  Format コマンドを使用した出力ビューの変更
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  63515a06-a6f7-4175-a45e-a0537f4f6d05
 ---
+
 # Format コマンドを使用した出力ビューの変更
 Windows PowerShell には、特定のオブジェクトのプロパティの表示を制御するためのコマンドレットのセットがあります。 すべてのコマンドレットの名前は、動詞 **Format** から始まります。 表示するプロパティを 1 つ以上選択できます。
 
@@ -212,6 +215,6 @@ powershell 2656 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

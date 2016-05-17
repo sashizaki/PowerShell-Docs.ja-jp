@@ -1,12 +1,15 @@
 ---
-title: 変数を使用したオブジェクトの保存
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
+title:  変数を使用したオブジェクトの保存
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  b1688d73-c173-491e-9ba6-6d0c1cc852de
 ---
+
 # 変数を使用したオブジェクトの保存
 Windows PowerShell はオブジェクトを操作します。 Windows PowerShell では変数 (本質的には名前付きのオブジェクト) を作成し、後で使用する出力を保持できます。 他のシェルで変数を使用することに慣れている場合、Windows PowerShell の変数はテキストではなくオブジェクトであることを覚えていてください。
 
@@ -98,6 +101,6 @@ C:\WINDOWS
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

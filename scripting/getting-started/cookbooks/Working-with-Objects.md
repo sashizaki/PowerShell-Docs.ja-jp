@@ -1,12 +1,15 @@
 ---
-title: オブジェクトの操作
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 7ecc94a4-015c-4459-ae58-85289ea09030
+title:  オブジェクトの操作
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  7ecc94a4-015c-4459-ae58-85289ea09030
 ---
+
 # オブジェクトの操作
 Windows PowerShell がオブジェクトを使用してコマンドレット間でデータを転送する方法について説明しました。また、実際に Get-Member コマンドレットを使用してオブジェクトの詳細情報を表示したり、Format コマンドレットを使用してオブジェクトの特定のプロパティを表示したりする方法を紹介しました。
 
@@ -14,6 +17,6 @@ Windows PowerShell がオブジェクトを使用してコマンドレット間�
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

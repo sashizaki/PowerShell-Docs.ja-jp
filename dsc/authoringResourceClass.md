@@ -1,3 +1,14 @@
+---
+title:   PowerShell クラスを使用したカスタム DSC リソースの記述
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # PowerShell クラスを使用したカスタム DSC リソースの記述
 
 > 適用先: Windows PowerShell 5.0
@@ -464,6 +475,7 @@ Start-DscConfiguration -Wait -Force Test
 [カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)
 
 
-<!--HONumber=Mar16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

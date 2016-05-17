@@ -1,3 +1,14 @@
+---
+title:   ホワイトペーパー
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # ホワイトペーパー
 
 次のホワイトペーパーは、PowerShell Desired State Configuration に関連するトピックの追加情報を提供するために公開されました。
@@ -7,6 +18,8 @@
 
 **[PDF のダウンロード](http://aka.ms/thereleasepipelinemodelpdf)**
 
-<!--HONumber=Apr16_HO2-->
+
+
+<!--HONumber=May16_HO3-->
 
 

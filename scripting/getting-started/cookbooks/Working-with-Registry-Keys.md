@@ -1,12 +1,15 @@
 ---
-title: レジストリ キーの操作
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
+title:  レジストリ キーの操作
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  91bfaecd-8684-48b4-ad86-065dfe6dc90a
 ---
+
 # レジストリ キーの操作
 レジストリ キーは Windows PowerShell ドライブ上の項目であるため、それらの操作はファイルやフォルダーの操作によく似ています。 1 つの決定的な違いは、レジストリ ベースの Windows PowerShell ドライブ上のすべての項目は、ファイル システム ドライブ上のフォルダーと同じように、コンテナーであることです。 ただし、レジストリ エントリとそれに関連する値は、個別の項目ではなく、項目のプロパティです。
 
@@ -117,6 +120,6 @@ Remove-Item -Path HKCU:\CurrentVersion\* -Recurse
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,3 +1,14 @@
+---
+title:   Windows PowerShell Desired State Configuration の組み込みリソース
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Windows PowerShell Desired State Configuration の組み込みリソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -18,6 +29,7 @@ Windows PowerShell Desired State Configuration (DSC) には、一連の組み込
 * [WindowsProcess リソース](windowsProcessResource.md)
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

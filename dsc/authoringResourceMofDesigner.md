@@ -1,3 +1,14 @@
+---
+title:   リソース デザイナー ツールの使用
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # リソース デザイナー ツールの使用
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -171,4 +182,9 @@ PS C:\> Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $En
 
 #### その他のリソース
 [xDscResourceDesigner モジュール](https://powershellgallery.com/packages/xDscResourceDesigner)
-<!--HONumber=Feb16_HO4-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

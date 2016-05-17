@@ -1,3 +1,14 @@
+---
+title:   構成データと環境データの分離
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 構成データと環境データの分離
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -207,4 +218,9 @@ configuration MyConfiguration
 ```
 
 含まれる完全な例は、[xWebAdministration module (xWebAdministration モジュール)](https://powershellgallery.com/packages/xWebAdministration) にあります。
-<!--HONumber=Feb16_HO4-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

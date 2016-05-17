@@ -1,3 +1,14 @@
+---
+title:   Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -61,4 +72,10 @@ Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 
 > **注**: **Path** パラメーターには、前の例で構成を呼び出したときに **OutputPath** パラメーターに指定したパスと同じパスを指定する必要があります。
 
-現在のローカル構成マネージャー設定を表示するには、**Get-DscLocalConfigurationManager** コマンドレットを使用します。 パラメーターなしでこのコマンドレットを呼び出す場合、既定では、ローカル構成マネージャーを実行しているノードのローカル構成マネージャー設定が取得されます。 別のノードを指定するには、このコマンドレットで **CimSession** パラメーターを使用します。<!--HONumber=Feb16_HO4-->
+現在のローカル構成マネージャー設定を表示するには、**Get-DscLocalConfigurationManager** コマンドレットを使用します。 パラメーターなしでこのコマンドレットを呼び出す場合、既定では、ローカル構成マネージャーを実行しているノードのローカル構成マネージャー設定が取得されます。 別のノードを指定するには、このコマンドレットで **CimSession** パラメーターを使用します。
+
+
+
+<!--HONumber=May16_HO3-->
+
+

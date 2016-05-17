@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell ファースト ステップ ガイド
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
+title:  Windows PowerShell ファースト ステップ ガイド
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  b0e2ad92-875f-421d-b612-f624e644aa69
 ---
+
 # Windows PowerShell ファースト ステップ ガイド
 Windows PowerShell は、特にシステム管理者向けに設計された新しい Windows コマンド ライン シェルです。 Windows PowerShell には対話型のプロンプトとスクリプト環境が含まれており、それらを単独で、または組み合わせて使用できます。
 

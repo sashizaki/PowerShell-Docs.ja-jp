@@ -1,12 +1,15 @@
 ---
-title: オブジェクト パイプライン
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 523d8ae4-d743-47a4-b79a-806130ca688a
+title:  オブジェクト パイプライン
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  523d8ae4-d743-47a4-b79a-806130ca688a
 ---
+
 # オブジェクト パイプライン
 パイプラインは、複数の管を 1 つに継ぎ合わせた管路のような役割を果たします。 パイプラインに沿って移動する項目は、個々の管を通過します。 Windows PowerShell でパイプラインを作成するには、パイプ演算子 (|) を使ってコマンドを接続します。 接続すると、各コマンドの出力が、次のコマンドの入力として使用されるようになります。
 
@@ -16,6 +19,6 @@ ms.assetid: 523d8ae4-d743-47a4-b79a-806130ca688a
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
