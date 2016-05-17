@@ -3,12 +3,13 @@
 # [構成](configurations.md)
 ## [構成の適用](enactingConfigurations.md)
 ## [複数のバージョンがあるリソースの使用](sxsResource.md)
+## [ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)
 ## [ノードの相互依存関係の指定](crossNodeDependencies.md)
 ## [構成データ](configData.md)
 ### [構成データでの資格情報オプション](configDataCredentials.md)
-### [ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)
 ## [構成 MOF ファイルのセキュリティ保護](secureMOF.md)
 ## [部分構成](partialConfigs.md)
+## [DSC 構成のヘルプの作成](configHelp.md)
 
 # [参照情報](resources.md)
 ## [組み込みリソース](builtInResource.md)
@@ -89,6 +90,7 @@
 ## [ホワイトペーパー](whitepapers.md)
 
 
-<!--HONumber=Apr16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 
