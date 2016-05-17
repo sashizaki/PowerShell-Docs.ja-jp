@@ -308,15 +308,6 @@
   "2ec3eca1fb7ce214b2b860ad763da69210f4ca37": [
     "dsc\\TOC.md"
   ],
-  "436d1bfab335c2333333be2fa4ba0330c2a6ffb1": [
-    "dsc\\TOC.md"
-  ],
-  "8a1b3001e3db183d6cef1f7f7bdcb9c685268fac": [
-    "dsc\\TOC.md"
-  ],
-  "bbe92fa020f2c0db430d13112d346778e44b5905": [
-    "dsc\\TOC.md"
-  ],
   "95e75bd95552a9bcfa41adee74ef5ceacb3ea33b": [
     "dsc\\troubleshooting.md"
   ],
@@ -743,9 +734,6 @@
   "72d0c66e8fe1c87561af89821e16032f25c3b1b5": [
     "scripting\\getting-started\\cookbooks\\Sorting-Objects.md"
   ],
-  "3a8408656ec59f58154bfca1b4bca6ea45547ac6": [
-    "scripting\\getting-started\\cookbooks\\Sorting-Objects.md"
-  ],
   "db5f410c8f84949c969f21ed59ac48a4e31e91fd": [
     "scripting\\getting-started\\fundamental\\Understanding-Important-Windows-PowerShell-Concepts.md"
   ],
@@ -846,9 +834,6 @@
     "scripting\\core-powershell\\Running-Remote-Commands.md"
   ],
   "6be9940608483a3fdb31216b69845e4751006167": [
-    "dsc\\msft-dsclocalconfigurationmanager.md"
-  ],
-  "12e17503c55845ecaa154bd4c8c6b108bb3293c9": [
     "dsc\\msft-dsclocalconfigurationmanager.md"
   ],
   "7a40dd0eac55352c504a76c2ea7aaafabcf07721": [
