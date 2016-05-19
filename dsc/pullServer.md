@@ -17,13 +17,13 @@ IIS サーバー ロールと DSC サービスを追加するには、サーバ�
 ## XWebService リソースの使用
 Web プル サーバーをセットアップする最も簡単な方法は、xPSDesiredStateConfiguration モジュールに含まれる xWebService リソースを使用することです。 次の手順では、Web サービスをセットアップする構成でリソースを使用する方法について説明します。
 
-1. [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) コマンドレットを呼び出して、**xPSDesiredStateConfiguration** モジュールをインストールします。 **注**: **Install-Module** は、PowerShell 5.0 に含まれている **PowerShellGet** モジュールに含まれています。 「[PackageManagement PowerShell Modules Preview (PackageManagement PowerShell モジュールのプレビュー)](https://www.microsoft.com/en-us/download/details.aspx?id=49186)」で PowerShell 3.0 と 4.0 の **PowerShellGet** モジュールをダウンロードできます。 
+1. [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) コマンドレットを呼び出して、**xPSDesiredStateConfiguration** モジュールをインストールします。 **注**: **Install-Module** は、PowerShell 5.0 に含まれている **PowerShellGet** モジュールに含まれています。 「[PackageManagement PowerShell Modules Preview (PackageManagement PowerShell モジュールのプレビュー)](https://www.microsoft.com/en-us/download/details.aspx?id=49186)」で PowerShell 3.0 と 4.0 の **PowerShellGet** モジュールをダウンロードできます。. 
 1. DSC プル サーバーの SSL 証明書を、自社組織内またはパブリック証明機関のいずれかの信頼された証明機関から取得します。 証明機関から受け取る証明書は、通常、PFX 形式です。 証明書は、DSC プル サーバーになるノードの既定の場所 (CERT:\LocalMachine\My である必要があります) にインストールします。 証明書の拇印をメモしておきます。
 1. 登録キーとして使う GUID を選択します。 PowerShell を使って GUID を生成するには、PS プロンプトに「``` [guid]::newGuid()```」と入力し、Enter キーを押します。 このキーは、登録時にクライアント ノードによって認証のために共有キーとして使用されます。 詳細については、この後の「[登録キー](#RegKey)」セクションを参照してください。
 1. PowerShell ISE で、次の構成スクリプトを起動 (F5) します (このスクリプトは、**xPSDesiredStateConfiguration** モジュールの Example フォルダーに Sample_xDscWebService.ps1 として存在します)。 このスクリプトは、プル サーバーをセットアップします。
   
 ```powershell
-configuration Sample_xDscWebService 
+configuration Sample_xDscPullServer
 { 
     param  
     ( 
@@ -44,27 +44,26 @@ configuration Sample_xDscWebService
      { 
          WindowsFeature DSCServiceFeature 
          { 
-             Ensure = "Present" 
-             Name   = "DSC-Service"             
+             Ensure = 'Present'
+             Name   = 'DSC-Service'             
          } 
- 
  
          xDscWebService PSDSCPullServer 
          { 
-             Ensure                  = "Present" 
-             EndpointName            = "PSDSCPullServer" 
+             Ensure                  = 'Present' 
+             EndpointName            = 'PSDSCPullServer' 
              Port                    = 8080 
              PhysicalPath            = "$env:SystemDrive\inetpub\PSDSCPullServer" 
              CertificateThumbPrint   = $certificateThumbPrint          
              ModulePath              = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules" 
-             ConfigurationPath       = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration"             
-             State                   = "Started" 
-             DependsOn               = "[WindowsFeature]DSCServiceFeature"                         
+             ConfigurationPath       = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration" 
+             State                   = 'Started'
+             DependsOn               = '[WindowsFeature]DSCServiceFeature'                         
          } 
 
         File RegistrationKeyFile
         {
-            Ensure          ='Present'
+            Ensure          = 'Present'
             Type            = 'File'
             DestinationPath = "$env:ProgramFiles\WindowsPowerShell\DscService\RegistrationKeys.txt"
             Contents        = $RegistrationKey
@@ -82,7 +81,10 @@ configuration Sample_xDscWebService
 dir Cert:\LocalMachine\my
 
 # Then include this thumbprint when running the configuration
-Sample_xDSCService -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301FAE9CCC' -RegistrationKey '140a952b-b9d6-406b-b416-e0f759c9c0e4' -OutpuPath c:\Configs\PullServer
+Sample_xDSCPullServer -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301FAE9CCC' -RegistrationKey '140a952b-b9d6-406b-b416-e0f759c9c0e4' -OutpuPath c:\Configs\PullServer
+
+# Run the compiled configuration to make the target node a DSC Pull Server
+Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
 ```
 
 ## 登録キー
@@ -99,22 +101,22 @@ configuration PullClientConfigID
     {
         Settings
         {
-            RefreshMode = 'Pull'
+            RefreshMode          = 'Pull'
             RefreshFrequencyMins = 30 
-            RebootNodeIfNeeded = $true
+            RebootNodeIfNeeded   = $true
         }
         
         ConfigurationRepositoryWeb CONTOSO-PullSrv
         {
-            ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            RegistrationKey = '140a952b-b9d6-406b-b416-e0f759c9c0e4'
+            ServerURL          = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey    = '140a952b-b9d6-406b-b416-e0f759c9c0e4'
             ConfigurationNames = @('ClientConfig')
         }   
         
         ReportServerWeb CONTOSO-PullSrv
         {
-            ServerURL         = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
-            RegistrationKey   = '140a952b-b9d6-406b-b416-e0f759c9c0e4'
+            ServerURL       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
+            RegistrationKey = '140a952b-b9d6-406b-b416-e0f759c9c0e4'
         }
     }
 }
@@ -151,7 +153,7 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
      Publish-DSCModuleAndMof -Source C:\LocalDepot -Force
 ```
 
-1. プル サーバーが正しく構成されていることを検証するスクリプト。 [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/Examples/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1)。
+1. プル サーバーが正しく構成されていることを検証するスクリプト。 [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/Examples/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1).
 
 
 ## プル クライアントの構成 
@@ -168,6 +170,6 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 * [DSC レポート サーバーの使用](reportServer.md)
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO1-->
 
 

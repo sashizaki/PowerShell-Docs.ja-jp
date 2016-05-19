@@ -1,10 +1,10 @@
-# C`#` での DSC リソースの作成
+# C での DSC リソースの作成`#`
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
-通常、Windows PowerShell Desired State Configuration (DSC) カスタム リソースは、PowerShell スクリプトで実装されます。 ただし、C# でコマンドレットを記述して、DSC カスタム リソースの機能を実装することもできます。 C# でのコマンドレットの記述の概要については、「[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](https://technet.microsoft.com/en-us/library/dd878294.aspx)」を参照してください。
+通常、Windows PowerShell Desired State Configuration (DSC) カスタム リソースは、PowerShell スクリプトで実装されます。 ただし、C# でコマンドレットを記述して、DSC カスタム リソースの機能を実装することもできます。 C# でのコマンドレットの記述の概要については、「[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](https://technet.microsoft.com/en-us/library/dd878294.aspx)」を参照してください。.
 
-C# でコマンドレットとしてリソースを実装すること以外に、MOF スキーマの作成、フォルダー構造の作成、およびカスタム DSC リソースのインポートと使用のプロセスは、「[MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)」で説明されていることと同じです。
+C# でコマンドレットとしてリソースを実装すること以外に、MOF スキーマの作成、フォルダー構造の作成、およびカスタム DSC リソースのインポートと使用のプロセスは、「[MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)」で説明されていることと同じです。.
 
 ## コマンドレットベースのリソースの記述
 この例では、テキスト ファイルとその内容を管理する単純なリソースを実装します。
@@ -29,9 +29,9 @@ class MSFT_XDemoFile : OMI_BaseResource
 1. Visual Studio を開きます。
 1. C# プロジェクトを作成し、名前を指定します。
 1. 使用可能なプロジェクト テンプレートから **[クラス ライブラリ]** を選択します。
-1. **[OK]** をクリックします。
+1. **[OK]** をクリックします。.
 1. System.Automation.Management.dll へのアセンブリ参照をプロジェクトに追加します。
-1. リソース名と一致するようにアセンブリ名を変更します。 この例では、アセンブリは **MSFT_XDemoFile** という名前にする必要があります。
+1. リソース名と一致するようにアセンブリ名を変更します。 この例では、アセンブリは **MSFT_XDemoFile** という名前にする必要があります。.
 
 ### コマンドレット コードの記述
 
@@ -150,6 +150,7 @@ Test-TargetResource
 ```
 $env: psmodulepath (folder)
     |- MyDscResources (folder)
+        |- MyDscResources.psd1 (file, required)     
         |- DSCResources (folder)
             |- MSFT_XDemoFile (folder)
                 |- MSFT_XDemoFile.psd1 (file, optional)
@@ -161,4 +162,9 @@ $env: psmodulepath (folder)
 #### 概念
 [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)
 #### その他のリソース
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](https://msdn.microsoft.com/en-us/library/dd878294.aspx)<!--HONumber=Feb16_HO4-->
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
+
+
+<!--HONumber=May16_HO2-->
+
+

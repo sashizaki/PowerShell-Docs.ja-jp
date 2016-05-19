@@ -10,10 +10,10 @@
 
 ### MOF リソースのフォルダー構造
 
-MOF スキーマを使用して DSC カスタム リソースを実装するには、次のフォルダー構造を作成します。 MOF スキーマは Demo_IISWebsite.schema.mof ファイルで定義し、リソース スクリプトは Demo_IISWebsite.ps1 で定義します。 必要に応じて、モジュール マニフェスト (psd1) ファイルを作成できます。
+MOF スキーマを使用して DSC カスタム リソースを実装するには、次のフォルダー構造を作成します。 MOF スキーマは Demo_IISWebsite.schema.mof ファイルで定義し、リソース スクリプトは Demo_IISWebsite.psm1 で定義します。 必要に応じて、モジュール マニフェスト (psd1) ファイルを作成できます。
 
 ```
-$env: psmodulepath (folder)
+$env:PSModulePath (folder)
     |- MyDscResources (folder)
         |- DSCResources (folder)
             |- Demo_IISWebsite (folder)
@@ -26,7 +26,7 @@ $env: psmodulepath (folder)
 
 ### MOF ファイルの内容
 
-カスタム Web サイト リソースに使用できる MOF ファイルの例を次に示します。 この例に従うには、このスキーマをファイルに保存し、ファイルの名前は *Demo_IISWebsite.schema.mof* にします。
+カスタム Web サイト リソースに使用できる MOF ファイルの例を次に示します。 この例に従うには、このスキーマをファイルに保存し、ファイルの名前は *Demo_IISWebsite.schema.mof* にします。.
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("Website")] 
@@ -45,18 +45,18 @@ class Demo_IISWebsite : OMI_BaseResource
 
 前のコードについて、次のことに注意してください。
 
-* `FriendlyName` では、DSC 構成スクリプトでこのカスタム リソースを参照するために使用できる名前を定義します。 この例では、`Website` は、組み込みのアーカイブ リソースのフレンドリ名 `Archive` に相当します。
-* カスタム リソース用に定義するクラスは、`OMI_BaseResource` から派生する必要があります。
-* プロパティの型修飾子 `[Key]` は、このプロパティがリソース インスタンスを一意に識別することを示します。 `[Key]` プロパティは必須でもあります。
+* `FriendlyName` FriendlyName では、DSC 構成スクリプトでこのカスタム リソースを参照するために使用できる名前を定義します。 この例では、`Website` は、組み込みのアーカイブ リソースのフレンドリ名 `Archive` に相当します。
+* カスタム リソース用に定義するクラスは、OMI_BaseResource から派生する必要があります。 `OMI_BaseResource`.
+* プロパティの型修飾子 `[Key]` は、このプロパティがリソース インスタンスを一意に識別することを示します。 1 つ以上の `[Key]` プロパティが必要です。
 * `[Required]` 修飾子は、プロパティが必須であることを示します (このリソースを使用する構成スクリプトで値を指定する必要があります)。
 * `[write]` 修飾子は、構成スクリプトでカスタム リソースを使用するときにこのプロパティが省略可能であることを示します。 `[read]` 修飾子は、プロパティが構成では設定できず、報告のみを目的とするとを示します。
-* `Values` は、プロパティに割り当てることのできる値を `ValueMap` で定義されている値の一覧に制限します。 詳細については、「[ValueMap and Value Qualifiers (ValueMap 修飾子と Value 修飾子)](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx)」を参照してください。
-* 組み込みの DSC リソースとの一貫したスタイルを維持する方法として、リソースに `Ensure` というプロパティを含めることをお勧めします。
+* `Values` Values は、プロパティに割り当てることのできる値を `ValueMap` で定義されている値の一覧に制限します。 詳細については、「[ValueMap and Value Qualifiers (ValueMap 修飾子と Value 修飾子)](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx)」を参照してください。.
+* 組み込みの DSC リソースとの一貫したスタイルを維持する方法として、値 `Present` と `Absent` を持つ `Ensure` というプロパティをリソースに含めることをお勧めします。
 * カスタム リソースのスキーマ ファイルには、`classname.schema.mof` のように名前を付けます。ここで、`classname` はスキーマ定義内の `class` キーワードに続く識別子です。
 
 ### リソース スクリプトの作成
 
-リソース スクリプトでは、リソースのロジックを実装します。 このモジュールでは、**Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** という 3 つの関数を含める必要があります。 3 つのすべての関数は、リソース用に作成した MOF スキーマで定義されている一連のプロパティと同じパラメーター セットを受け取る必要があります。 このドキュメントでは、この一連のプロパティを "リソース プロパティ" と呼びます。 これらの 3 つの関数は、<ResourceName>.psm1 というファイルに格納します。 次の例では、関数は Demo_IISWebsite.psm1 というファイルに格納されます。
+リソース スクリプトでは、リソースのロジックを実装します。 このモジュールでは、**Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** という 3 つの関数を含める必要があります。 3 つのすべての関数は、リソース用に作成した MOF スキーマで定義されている一連のプロパティと同じパラメーター セットを受け取る必要があります。 このドキュメントでは、この一連のプロパティを "リソース プロパティ" と呼びます。 これらの 3 つの関数は、 <ResourceName>.psm1 というファイルに格納します。 次の例では、関数は Demo_IISWebsite.psm1 というファイルに格納されます。
 
 > **注**: リソースに対して同じ構成スクリプトを複数回実行する場合は、エラーが発生しないこと、および、リソースの状態が、スクリプトを 1 回実行したときと同じに保たれることが必要となります。 これを実現するには、**Get-TargetResource** と **Test-TargetResource** 関数によってリソースが変更されないようにし、シーケンス内で同じパラメーター値を使用して **Set-TargetResource** 関数を複数回呼び出した場合に、1 回呼び出した場合と常に同じ結果になるようにします。
 
@@ -154,7 +154,7 @@ function Set-TargetResource
 }
 ```
 
-最後に、**Test-TargetResource** 関数は、**Get-TargetResource** および **Set-TargetResource** と同じパラメーター セットを受け取る必要があります。 **Test-TargetResource** の実装で、キー パラメーターで指定されているリソース インスタンスの状態を確認します。 リソース インスタンスの実際の状態がパラメーター セットで指定された値と一致しない場合は、**$false** を返します。 それ以外の場合は、**$true ** を返します。
+最後に、**Test-TargetResource** 関数は、**Get-TargetResource** および **Set-TargetResource** と同じパラメーター セットを受け取る必要があります。 **Test-TargetResource** の実装で、キー パラメーターで指定されているリソース インスタンスの状態を確認します。 リソース インスタンスの実際の状態がパラメーター セットで指定された値と一致しない場合は、**$false** を返します。 それ以外の場合は、**$true** を返します。.
 
 次のコードでは、**Test-TargetResource** 関数を実装します。
 
@@ -207,7 +207,7 @@ $result
 
 ### モジュール マニフェストの作成
 
-最後に、**New-ModuleManifest** コマンドレットを使用して、カスタム リソース モジュールの <ResourceName>.psd1 ファイルを定義します。 このコマンドレットを呼び出すときに、前のセクションで説明したスクリプト モジュール (.psm1) ファイルを参照します。 **Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** をエクスポートする関数の一覧に含めます。 マニフェスト ファイルの例を次に示します。
+最後に、**New-ModuleManifest** コマンドレットを使用して、 <ResourceName>カスタム リソース モジュールの .psd1 ファイルを定義します。 このコマンドレットを呼び出すときに、前のセクションで説明したスクリプト モジュール (.psm1) ファイルを参照します。 **Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** をエクスポートする関数の一覧に含めます。 マニフェスト ファイルの例を次に示します。
 
 ```powershell
 # Module manifest for module 'Demo.IIS.Website'
@@ -261,6 +261,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 }
 ```
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=May16_HO2-->
 
 

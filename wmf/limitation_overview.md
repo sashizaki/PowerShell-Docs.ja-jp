@@ -43,4 +43,63 @@ SIL を既に実行している Windows Server 2012 R2 に WMF 5.0 をインス�
 期待どおりの結果が生成されません。
 
 **解決策:** 理想的ではありませんが、現在の対応策では、コマンドレットに依存するのではなく、スクリプトに再帰を実装します。
-<!--HONumber=Mar16_HO2-->
+
+
+WMF 5.0 のインストール後に Sysprep が失敗する
+----------------------------------------
+
+実行中の Windows Server のバージョンによって、この問題の解決策は 2 つあります。
+
+**解決策:**
+- **Windows Server 2008 R2** を実行するシステムの場合
+  1.    管理者として PowerShell を開きます。
+  2.    次のコマンドを実行します。
+   ```powershell
+    Set-SilLogging –TargetUri https://BlankTarget –CertificateThumbprint 0123456789
+   ```
+  3.    予想されるとおりにコマンドを実行してエラーを無視します。
+   ```powershell
+    Publish-SilData
+   ```
+  4.    \Windows\System32\Logfiles\SIL\ ディレクトリ内のファイルを削除します。
+  ```powershell
+  Remove-Item -Recurse $env:SystemRoot\System32\Logfiles\SIL\
+  ```
+  5.    使用可能な重要な Windows 更新プログラムをすべてをインストールし、通常どおりに Sysyprep の操作を開始します。
+  
+- **Windows Server 2012** を実行するシステムの場合
+  1.    Sysprep を取得するサーバーに WMF 5.0 をインストールした後、管理者としてログインします。
+  2.    \Windows\System32\Sysprep\ActionFiles\ ディレクトリから Windows ディレクトリ以外の場所 (例: C:\) に Generize.xml をコピーします。
+  3.    メモ帳で Generalize.xml のコピーを開きます。
+  4.    次のテキストを検索して削除します。テキストごとに 1 つのインスタンスを削除する必要があります (これらはドキュメントの末尾付近にあります)。
+    ```
+    <sysprepOrder order="0x3200"></sysprepOrder>
+    
+    <sysprepOrder order="0x3300"></sysprepOrder>
+    ```
+  5.    編集した Generalize.xml のコピーを保存してファイルを閉じます。
+  6.    管理者としてコマンド プロンプトを開きます。
+  7.    次のコマンドを実行し、System32 フォルダーで Generalize.xml ファイルの所有権を取得します。
+    ```
+      Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+    ```
+  8.    次のコマンドを実行し、ファイルの適切なアクセス許可を設定します。
+    ```
+      Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F 
+    ```
+      * 確認のプロンプトで [はい] と回答します。 
+      * なお `<AdministratorUserName>` をコンピューター管理者のユーザー名に置き換える必要があります。 たとえば、"Administrator" にします。
+      
+  9.    次のコマンドを使用して、Sysprep ディレクトリに保存した編集済みファイルをコピーします。
+      ```
+      xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+      ```
+      * [はい] と回答して上書きします (上書きの確認メッセージが表示されない場合は、入力されたパスを再確認してください)。
+      * 編集した Generalize.xml のコピーは C:\ にコピーされたことを想定しています。
+  10.   この解決策により Generalize.xml が更新されます。 Sysprep を実行して汎用化オプションを有効にしてください。
+
+
+
+<!--HONumber=May16_HO1-->
+
+
