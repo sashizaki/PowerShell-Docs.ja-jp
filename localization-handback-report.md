@@ -1,39 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [wmf\limitation_dsc.md](https://github.com/PowerShell/powerShell-Docs/blob/c350e12ff2aea294e8f8f3385eb3a7df80f1c687/wmf/limitation_dsc.md) | InSyncHandedBackSuccess | [Details](#fe1c40cbfd2c76f45d170b82d8a099e860b15db8298)
- [wmf\limitation_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/ac27b0155177a013965fbf9c761fc712daf16af2/wmf/limitation_overview.md) | InSyncHandedBackSuccess | [Details](#35cdbfab22a0fa00480012fed0a2cf32ffa11f8d299)
 
 ## Item Details
-##### <a name='fe1c40cbfd2c76f45d170b82d8a099e860b15db8298'></a> Source: [wmf\limitation_dsc.md](https://github.com/PowerShell/powerShell-Docs/blob/c350e12ff2aea294e8f8f3385eb3a7df80f1c687/wmf/limitation_dsc.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [wmf\limitation_dsc.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/c76f5433f81734e9bbcc8ea2534f4b5da3e709a3/wmf/limitation_dsc.md)
-* Handoff File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/24e8416e67b0845cf9401400ea16633d56169709/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf)
-* Handoff Datetime: 2016-05-05 21:19:33
-* Handoff Reason: Include
-* Archive File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/651e62bc0cda8ca6f2fed8fd7bed96cc0d5b9976/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf)
-* Archive Datetime: 2016-05-10 13:24:29
-* Handback File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ccaaf094af43380043c34413f7de98df4f3c5cc2/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf)
-* Handback Datetime: 2016-05-19 16:50:03
-* [Back to Top](#report-top)
-
-##### <a name='35cdbfab22a0fa00480012fed0a2cf32ffa11f8d299'></a> Source: [wmf\limitation_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/ac27b0155177a013965fbf9c761fc712daf16af2/wmf/limitation_overview.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [wmf\limitation_overview.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/c76f5433f81734e9bbcc8ea2534f4b5da3e709a3/wmf/limitation_overview.md)
-* Handoff File: [limitation_overview.6cc9c8c028f5912636637d836aed7db0614de522.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/525404bd0f450a66d75bac4b73450c0e7fbbbb83/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/limitation_overview.6cc9c8c028f5912636637d836aed7db0614de522.ja-jp.xlf)
-* Handoff Datetime: 2016-05-06 13:49:37
-* Handoff Reason: Include
-* Archive File: [limitation_overview.6cc9c8c028f5912636637d836aed7db0614de522.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/651e62bc0cda8ca6f2fed8fd7bed96cc0d5b9976/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/limitation_overview.6cc9c8c028f5912636637d836aed7db0614de522.ja-jp.xlf)
-* Archive Datetime: 2016-05-10 13:24:29
-* Handback File: [limitation_overview.6cc9c8c028f5912636637d836aed7db0614de522.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ccaaf094af43380043c34413f7de98df4f3c5cc2/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/limitation_overview.6cc9c8c028f5912636637d836aed7db0614de522.ja-jp.xlf)
-* Handback Datetime: 2016-05-19 16:50:03
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
