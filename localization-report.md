@@ -1065,9 +1065,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\msft-dsclocalconfigurationmanager-disabledebugconfiguration.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/a2595435bcaae8556cfeb997726f12fad20b44d7/dsc/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)
-* Current Handback File: [msft-dsclocalconfigurationmanager-disabledebugconfiguration.9c5587dc91662800483c6063f100aa74b2fc1881.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/35021754a337e4ce8b49eda35ea0482dbb02f2e7/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-disabledebugconfiguration.9c5587dc91662800483c6063f100aa74b2fc1881.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-19 00:17:41
+* Current Target File: [dsc\msft-dsclocalconfigurationmanager-disabledebugconfiguration.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/e588d09f19b66e05c365cf3435f2f7f77db31963/dsc/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)
+* Current Handback File: [msft-dsclocalconfigurationmanager-disabledebugconfiguration.9c5587dc91662800483c6063f100aa74b2fc1881.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/0a5282109a3ce20499c0578346a167564c167533/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-disabledebugconfiguration.9c5587dc91662800483c6063f100aa74b2fc1881.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-21 22:01:46
 * [Back to Top](#report-top)
 
 ##### <a name='f74e9941180c00a1aae1bd1d7b48fa4de0c8790d50'></a> Source: [dsc\msft-dsclocalconfigurationmanager-enabledebugconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/919438862ca9786447b690d2db10e905da0a7c42/dsc/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)
@@ -1080,9 +1080,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\msft-dsclocalconfigurationmanager-enabledebugconfiguration.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/a2595435bcaae8556cfeb997726f12fad20b44d7/dsc/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)
-* Current Handback File: [msft-dsclocalconfigurationmanager-enabledebugconfiguration.56f0b880660ab81bf574c91fac5c3489b478d217.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/35021754a337e4ce8b49eda35ea0482dbb02f2e7/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-enabledebugconfiguration.56f0b880660ab81bf574c91fac5c3489b478d217.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-19 00:17:41
+* Current Target File: [dsc\msft-dsclocalconfigurationmanager-enabledebugconfiguration.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/e588d09f19b66e05c365cf3435f2f7f77db31963/dsc/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)
+* Current Handback File: [msft-dsclocalconfigurationmanager-enabledebugconfiguration.56f0b880660ab81bf574c91fac5c3489b478d217.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/0a5282109a3ce20499c0578346a167564c167533/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-enabledebugconfiguration.56f0b880660ab81bf574c91fac5c3489b478d217.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-21 22:01:46
 * [Back to Top](#report-top)
 
 ##### <a name='19d4790f22491e0bb11de1e315d1ee3b07929d5551'></a> Source: [dsc\msft-dsclocalconfigurationmanager-getconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/919438862ca9786447b690d2db10e905da0a7c42/dsc/msft-dsclocalconfigurationmanager-getconfiguration.md)
@@ -1110,9 +1110,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/a2595435bcaae8556cfeb997726f12fad20b44d7/dsc/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)
-* Current Handback File: [msft-dsclocalconfigurationmanager-getconfigurationresultoutput.3528ac9caa01aaee78b88e1d947f7c6d57c55834.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/35021754a337e4ce8b49eda35ea0482dbb02f2e7/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.3528ac9caa01aaee78b88e1d947f7c6d57c55834.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-19 00:17:41
+* Current Target File: [dsc\msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/e588d09f19b66e05c365cf3435f2f7f77db31963/dsc/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)
+* Current Handback File: [msft-dsclocalconfigurationmanager-getconfigurationresultoutput.3528ac9caa01aaee78b88e1d947f7c6d57c55834.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/0a5282109a3ce20499c0578346a167564c167533/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.3528ac9caa01aaee78b88e1d947f7c6d57c55834.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-21 22:01:46
 * [Back to Top](#report-top)
 
 ##### <a name='b430e98c7ec287c0efcf2c2e273625379724290453'></a> Source: [dsc\msft-dsclocalconfigurationmanager-getconfigurationstatus.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-getconfigurationstatus.md)
@@ -1125,9 +1125,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\msft-dsclocalconfigurationmanager-getconfigurationstatus.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/a2595435bcaae8556cfeb997726f12fad20b44d7/dsc/msft-dsclocalconfigurationmanager-getconfigurationstatus.md)
-* Current Handback File: [msft-dsclocalconfigurationmanager-getconfigurationstatus.e0b502813784f28980b44659361b3c0a51f6ba28.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/35021754a337e4ce8b49eda35ea0482dbb02f2e7/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-getconfigurationstatus.e0b502813784f28980b44659361b3c0a51f6ba28.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-19 00:17:41
+* Current Target File: [dsc\msft-dsclocalconfigurationmanager-getconfigurationstatus.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/e588d09f19b66e05c365cf3435f2f7f77db31963/dsc/msft-dsclocalconfigurationmanager-getconfigurationstatus.md)
+* Current Handback File: [msft-dsclocalconfigurationmanager-getconfigurationstatus.e0b502813784f28980b44659361b3c0a51f6ba28.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/0a5282109a3ce20499c0578346a167564c167533/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-getconfigurationstatus.e0b502813784f28980b44659361b3c0a51f6ba28.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-21 22:01:46
 * [Back to Top](#report-top)
 
 ##### <a name='4662bfed62fce47be7d42a083ad5a7be801e6ff154'></a> Source: [dsc\msft-dsclocalconfigurationmanager-getmetaconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/919438862ca9786447b690d2db10e905da0a7c42/dsc/msft-dsclocalconfigurationmanager-getmetaconfiguration.md)
@@ -1140,9 +1140,9 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\msft-dsclocalconfigurationmanager-getmetaconfiguration.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/a2595435bcaae8556cfeb997726f12fad20b44d7/dsc/msft-dsclocalconfigurationmanager-getmetaconfiguration.md)
-* Current Handback File: [msft-dsclocalconfigurationmanager-getmetaconfiguration.56421b2916eff5832f34238a84bacda6cb4d6679.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/35021754a337e4ce8b49eda35ea0482dbb02f2e7/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-getmetaconfiguration.56421b2916eff5832f34238a84bacda6cb4d6679.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-19 00:17:41
+* Current Target File: [dsc\msft-dsclocalconfigurationmanager-getmetaconfiguration.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/e588d09f19b66e05c365cf3435f2f7f77db31963/dsc/msft-dsclocalconfigurationmanager-getmetaconfiguration.md)
+* Current Handback File: [msft-dsclocalconfigurationmanager-getmetaconfiguration.56421b2916eff5832f34238a84bacda6cb4d6679.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/0a5282109a3ce20499c0578346a167564c167533/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-getmetaconfiguration.56421b2916eff5832f34238a84bacda6cb4d6679.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-21 22:01:46
 * [Back to Top](#report-top)
 
 ##### <a name='f9eb975845f6ccabcac80e2591fd987f80f8133155'></a> Source: [dsc\msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md)
@@ -1155,9 +1155,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/a2595435bcaae8556cfeb997726f12fad20b44d7/dsc/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md)
-* Current Handback File: [msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.f68602d47b6c2e9673f52e9a43fcf688b1115c6e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/35021754a337e4ce8b49eda35ea0482dbb02f2e7/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.f68602d47b6c2e9673f52e9a43fcf688b1115c6e.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-19 00:17:41
+* Current Target File: [dsc\msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/e588d09f19b66e05c365cf3435f2f7f77db31963/dsc/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md)
+* Current Handback File: [msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.f68602d47b6c2e9673f52e9a43fcf688b1115c6e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/0a5282109a3ce20499c0578346a167564c167533/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.f68602d47b6c2e9673f52e9a43fcf688b1115c6e.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-21 22:01:46
 * [Back to Top](#report-top)
 
 ##### <a name='4f3d74949d98e3ab3f5136303e229c23ed903c5d56'></a> Source: [dsc\msft-dsclocalconfigurationmanager-removeconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-removeconfiguration.md)
@@ -1170,9 +1170,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\msft-dsclocalconfigurationmanager-removeconfiguration.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/a2595435bcaae8556cfeb997726f12fad20b44d7/dsc/msft-dsclocalconfigurationmanager-removeconfiguration.md)
-* Current Handback File: [msft-dsclocalconfigurationmanager-removeconfiguration.dfbeb60ce8a2ce97a6dd15d3d1cff3363d1d73e9.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/35021754a337e4ce8b49eda35ea0482dbb02f2e7/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-removeconfiguration.dfbeb60ce8a2ce97a6dd15d3d1cff3363d1d73e9.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-19 00:17:41
+* Current Target File: [dsc\msft-dsclocalconfigurationmanager-removeconfiguration.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/e588d09f19b66e05c365cf3435f2f7f77db31963/dsc/msft-dsclocalconfigurationmanager-removeconfiguration.md)
+* Current Handback File: [msft-dsclocalconfigurationmanager-removeconfiguration.dfbeb60ce8a2ce97a6dd15d3d1cff3363d1d73e9.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/0a5282109a3ce20499c0578346a167564c167533/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-removeconfiguration.dfbeb60ce8a2ce97a6dd15d3d1cff3363d1d73e9.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-21 22:01:46
 * [Back to Top](#report-top)
 
 ##### <a name='1666b85402f17230090f7290c8cb400dd9fbf0a657'></a> Source: [dsc\msft-dsclocalconfigurationmanager-resourceget.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-resourceget.md)
@@ -1260,9 +1260,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\msft-dsclocalconfigurationmanager-sendconfigurationapply.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/a2595435bcaae8556cfeb997726f12fad20b44d7/dsc/msft-dsclocalconfigurationmanager-sendconfigurationapply.md)
-* Current Handback File: [msft-dsclocalconfigurationmanager-sendconfigurationapply.04f85927d24f711ab08c310f7301b3477b8ce2d1.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/35021754a337e4ce8b49eda35ea0482dbb02f2e7/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-sendconfigurationapply.04f85927d24f711ab08c310f7301b3477b8ce2d1.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-19 00:17:41
+* Current Target File: [dsc\msft-dsclocalconfigurationmanager-sendconfigurationapply.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/e588d09f19b66e05c365cf3435f2f7f77db31963/dsc/msft-dsclocalconfigurationmanager-sendconfigurationapply.md)
+* Current Handback File: [msft-dsclocalconfigurationmanager-sendconfigurationapply.04f85927d24f711ab08c310f7301b3477b8ce2d1.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/0a5282109a3ce20499c0578346a167564c167533/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-sendconfigurationapply.04f85927d24f711ab08c310f7301b3477b8ce2d1.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-21 22:01:46
 * [Back to Top](#report-top)
 
 ##### <a name='41177f2eb2bbcf2dddaf232141fb483efaaeeea563'></a> Source: [dsc\msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)
@@ -1275,9 +1275,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/a2595435bcaae8556cfeb997726f12fad20b44d7/dsc/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)
-* Current Handback File: [msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.6d0c80dc6d6cb7b85269234b88c53e813bb7d47f.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/35021754a337e4ce8b49eda35ea0482dbb02f2e7/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.6d0c80dc6d6cb7b85269234b88c53e813bb7d47f.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-19 00:17:41
+* Current Target File: [dsc\msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/e588d09f19b66e05c365cf3435f2f7f77db31963/dsc/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)
+* Current Handback File: [msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.6d0c80dc6d6cb7b85269234b88c53e813bb7d47f.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/0a5282109a3ce20499c0578346a167564c167533/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.6d0c80dc6d6cb7b85269234b88c53e813bb7d47f.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-21 22:01:46
 * [Back to Top](#report-top)
 
 ##### <a name='a81b41f66883b3cf0931905d24c8ff92ef55b6c764'></a> Source: [dsc\msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)
@@ -1290,9 +1290,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/a2595435bcaae8556cfeb997726f12fad20b44d7/dsc/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)
-* Current Handback File: [msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.a2ebf60264f7a711d4c37b3dbfc197f36e50280e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/35021754a337e4ce8b49eda35ea0482dbb02f2e7/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.a2ebf60264f7a711d4c37b3dbfc197f36e50280e.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-19 00:17:41
+* Current Target File: [dsc\msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/e588d09f19b66e05c365cf3435f2f7f77db31963/dsc/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)
+* Current Handback File: [msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.a2ebf60264f7a711d4c37b3dbfc197f36e50280e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/0a5282109a3ce20499c0578346a167564c167533/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.a2ebf60264f7a711d4c37b3dbfc197f36e50280e.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-21 22:01:46
 * [Back to Top](#report-top)
 
 ##### <a name='9721486cca6f94d6b156c6ee1992eced6652c12365'></a> Source: [dsc\msft-dsclocalconfigurationmanager-stopconfiguration.md](https://github.com/PowerShell/powerShell-Docs/blob/c915ebd021ed20209bc491505d45cff2ac89f21d/dsc/msft-dsclocalconfigurationmanager-stopconfiguration.md)
