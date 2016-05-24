@@ -1452,9 +1452,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/dsc/pullServer.md)
-* Current Handback File: [pullServer.4b925b277da29998394af746bdbdd508fda48909.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/pullServer.4b925b277da29998394af746bdbdd508fda48909.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Current Target File: [dsc\pullServer.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/dsc/pullServer.md)
+* Current Handback File: [pullServer.4b925b277da29998394af746bdbdd508fda48909.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/pullServer.4b925b277da29998394af746bdbdd508fda48909.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='35ac9b38086b12fb48844c56a488854f63529e2177'></a> Source: [dsc\pullServerSMB.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullServerSMB.md)
@@ -1752,9 +1752,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\console\PowerShell.exe-Command-Line-Help.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/scripting/core-powershell/console/PowerShell.exe-Command-Line-Help.md)
-* Current Handback File: [PowerShell.exe-Command-Line-Help.40e957a31e9460d52f195b5f1ce8890c354d85ca.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PowerShell.exe-Command-Line-Help.40e957a31e9460d52f195b5f1ce8890c354d85ca.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Current Target File: [scripting\core-powershell\console\PowerShell.exe-Command-Line-Help.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/console/PowerShell.exe-Command-Line-Help.md)
+* Current Handback File: [PowerShell.exe-Command-Line-Help.40e957a31e9460d52f195b5f1ce8890c354d85ca.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PowerShell.exe-Command-Line-Help.40e957a31e9460d52f195b5f1ce8890c354d85ca.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='644dbbb51e98efda9735f0ff23489e936f6b28a299'></a> Source: [scripting\core-powershell\console\Using-Tab-Expansion.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/console/Using-Tab-Expansion.md)
@@ -1824,9 +1824,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\core-modules\Microsoft.PowerShell.Core-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/scripting/core-powershell/core-modules/Microsoft.PowerShell.Core-Module.md)
-* Current Handback File: [Microsoft.PowerShell.Core-Module.76340b0d71587564fa20820318a10a07233be59b.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Microsoft.PowerShell.Core-Module.76340b0d71587564fa20820318a10a07233be59b.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Current Target File: [scripting\core-powershell\core-modules\Microsoft.PowerShell.Core-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/core-modules/Microsoft.PowerShell.Core-Module.md)
+* Current Handback File: [Microsoft.PowerShell.Core-Module.76340b0d71587564fa20820318a10a07233be59b.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Microsoft.PowerShell.Core-Module.76340b0d71587564fa20820318a10a07233be59b.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='15ffabd2e8c9385990e08ac7311449f000b1302e103'></a> Source: [scripting\core-powershell\core-modules\Microsoft.PowerShell.Diagnostics-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/core-modules/Microsoft.PowerShell.Diagnostics-Module.md)
@@ -1869,9 +1869,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\core-modules\Microsoft.PowerShell.Management-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/scripting/core-powershell/core-modules/Microsoft.PowerShell.Management-Module.md)
-* Current Handback File: [Microsoft.PowerShell.Management-Module.a21ffb1493afa615f7bd2efea3e1621f77a29dc5.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Microsoft.PowerShell.Management-Module.a21ffb1493afa615f7bd2efea3e1621f77a29dc5.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Current Target File: [scripting\core-powershell\core-modules\Microsoft.PowerShell.Management-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/core-modules/Microsoft.PowerShell.Management-Module.md)
+* Current Handback File: [Microsoft.PowerShell.Management-Module.a21ffb1493afa615f7bd2efea3e1621f77a29dc5.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Microsoft.PowerShell.Management-Module.a21ffb1493afa615f7bd2efea3e1621f77a29dc5.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='ad4433d14277a6e10906ee74a765504cede12587106'></a> Source: [scripting\core-powershell\core-modules\Microsoft.PowerShell.ODataUtils-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/core-modules/Microsoft.PowerShell.ODataUtils-Module.md)
@@ -1914,9 +1914,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\core-modules\Microsoft.WSMan.Management-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/scripting/core-powershell/core-modules/Microsoft.WSMan.Management-Module.md)
-* Current Handback File: [Microsoft.WSMan.Management-Module.f24f503e4d28823e358502b180e5f5a39405fdaa.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Microsoft.WSMan.Management-Module.f24f503e4d28823e358502b180e5f5a39405fdaa.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Current Target File: [scripting\core-powershell\core-modules\Microsoft.WSMan.Management-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/core-modules/Microsoft.WSMan.Management-Module.md)
+* Current Handback File: [Microsoft.WSMan.Management-Module.f24f503e4d28823e358502b180e5f5a39405fdaa.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Microsoft.WSMan.Management-Module.f24f503e4d28823e358502b180e5f5a39405fdaa.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='dfca9909da78dc45cd72cbfaff5ab4c441762c60109'></a> Source: [scripting\core-powershell\core-modules\PackageManagement-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/core-modules/PackageManagement-Module.md)
@@ -1929,9 +1929,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\core-modules\PackageManagement-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/17f90204e4c9ab804bf26acf1bffbcc5708992a5/scripting/core-powershell/core-modules/PackageManagement-Module.md)
-* Current Handback File: [PackageManagement-Module.db63e59b8c60034c7f6a864670d6f919655aa107.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4c35d240791b90297f5f64f4c8dba27d99f69edf/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PackageManagement-Module.db63e59b8c60034c7f6a864670d6f919655aa107.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-20 07:59:17
+* Current Target File: [scripting\core-powershell\core-modules\PackageManagement-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/core-modules/PackageManagement-Module.md)
+* Current Handback File: [PackageManagement-Module.db63e59b8c60034c7f6a864670d6f919655aa107.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PackageManagement-Module.db63e59b8c60034c7f6a864670d6f919655aa107.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='130368e634668b7229f1c1423c946ae4b0a65466110'></a> Source: [scripting\core-powershell\core-modules\PSLocalAccount5-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/core-modules/PSLocalAccount5-Module.md)
@@ -1959,9 +1959,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\core-modules\PSReadline-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/17f90204e4c9ab804bf26acf1bffbcc5708992a5/scripting/core-powershell/core-modules/PSReadline-Module.md)
-* Current Handback File: [PSReadline-Module.b9c1f6d98794d369cbcffb57ed137937ea9593f3.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4c35d240791b90297f5f64f4c8dba27d99f69edf/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PSReadline-Module.b9c1f6d98794d369cbcffb57ed137937ea9593f3.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-20 07:59:17
+* Current Target File: [scripting\core-powershell\core-modules\PSReadline-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/core-modules/PSReadline-Module.md)
+* Current Handback File: [PSReadline-Module.b9c1f6d98794d369cbcffb57ed137937ea9593f3.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PSReadline-Module.b9c1f6d98794d369cbcffb57ed137937ea9593f3.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='1583fba47d9a709500e3cd678e2e0c27b2777a7d112'></a> Source: [scripting\core-powershell\core-modules\PSScheduledJob-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/core-modules/PSScheduledJob-Module.md)
@@ -1974,9 +1974,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\core-modules\PSScheduledJob-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/17f90204e4c9ab804bf26acf1bffbcc5708992a5/scripting/core-powershell/core-modules/PSScheduledJob-Module.md)
-* Current Handback File: [PSScheduledJob-Module.e29be58211e466eab7c8e97c6c20cabe6ab4a201.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4c35d240791b90297f5f64f4c8dba27d99f69edf/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PSScheduledJob-Module.e29be58211e466eab7c8e97c6c20cabe6ab4a201.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-20 07:59:17
+* Current Target File: [scripting\core-powershell\core-modules\PSScheduledJob-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/core-modules/PSScheduledJob-Module.md)
+* Current Handback File: [PSScheduledJob-Module.e29be58211e466eab7c8e97c6c20cabe6ab4a201.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PSScheduledJob-Module.e29be58211e466eab7c8e97c6c20cabe6ab4a201.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='3e9ba43162afb7b689bf92883f2347c2c8551ea2113'></a> Source: [scripting\core-powershell\core-modules\PSScriptAnalyzer-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/core-modules/PSScriptAnalyzer-Module.md)
@@ -2004,9 +2004,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\core-modules\Windows-PowerShell-5.0.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/17f90204e4c9ab804bf26acf1bffbcc5708992a5/scripting/core-powershell/core-modules/Windows-PowerShell-5.0.md)
-* Current Handback File: [Windows-PowerShell-5.0.af9ec34f7af19f97e9c2299972cbfcfc182580a2.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4c35d240791b90297f5f64f4c8dba27d99f69edf/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Windows-PowerShell-5.0.af9ec34f7af19f97e9c2299972cbfcfc182580a2.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-20 07:59:17
+* Current Target File: [scripting\core-powershell\core-modules\Windows-PowerShell-5.0.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/core-modules/Windows-PowerShell-5.0.md)
+* Current Handback File: [Windows-PowerShell-5.0.af9ec34f7af19f97e9c2299972cbfcfc182580a2.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Windows-PowerShell-5.0.af9ec34f7af19f97e9c2299972cbfcfc182580a2.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='cc44c1deb8c3162b0d2188c2af313bf064290267115'></a> Source: [scripting\core-powershell\core-modules\Windows-PowerShell-Core-About-Topics.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/core-modules/Windows-PowerShell-Core-About-Topics.md)
@@ -2019,9 +2019,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\core-modules\Windows-PowerShell-Core-About-Topics.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/17f90204e4c9ab804bf26acf1bffbcc5708992a5/scripting/core-powershell/core-modules/Windows-PowerShell-Core-About-Topics.md)
-* Current Handback File: [Windows-PowerShell-Core-About-Topics.2a5d5e1d8931655ca501f33cf2e7cce9dd120e9d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4c35d240791b90297f5f64f4c8dba27d99f69edf/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Windows-PowerShell-Core-About-Topics.2a5d5e1d8931655ca501f33cf2e7cce9dd120e9d.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-20 07:59:17
+* Current Target File: [scripting\core-powershell\core-modules\Windows-PowerShell-Core-About-Topics.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/core-modules/Windows-PowerShell-Core-About-Topics.md)
+* Current Handback File: [Windows-PowerShell-Core-About-Topics.2a5d5e1d8931655ca501f33cf2e7cce9dd120e9d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Windows-PowerShell-Core-About-Topics.2a5d5e1d8931655ca501f33cf2e7cce9dd120e9d.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='f6b1ca1a3253c941c76826c6644079a14f19ddcf116'></a> Source: [scripting\core-powershell\core-modules\Windows-PowerShell-Core-Providers.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/core-modules/Windows-PowerShell-Core-Providers.md)
@@ -2034,9 +2034,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\core-modules\Windows-PowerShell-Core-Providers.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/17f90204e4c9ab804bf26acf1bffbcc5708992a5/scripting/core-powershell/core-modules/Windows-PowerShell-Core-Providers.md)
-* Current Handback File: [Windows-PowerShell-Core-Providers.bcff2b847a340e422ebfc93deb36b35a46b009ad.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4c35d240791b90297f5f64f4c8dba27d99f69edf/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Windows-PowerShell-Core-Providers.bcff2b847a340e422ebfc93deb36b35a46b009ad.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-20 07:59:17
+* Current Target File: [scripting\core-powershell\core-modules\Windows-PowerShell-Core-Providers.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/core-modules/Windows-PowerShell-Core-Providers.md)
+* Current Handback File: [Windows-PowerShell-Core-Providers.bcff2b847a340e422ebfc93deb36b35a46b009ad.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Windows-PowerShell-Core-Providers.bcff2b847a340e422ebfc93deb36b35a46b009ad.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='897702d56a14657881121890f2283f50bdc2d517117'></a> Source: [scripting\core-powershell\core-powershell.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/core-powershell.md)
@@ -2199,9 +2199,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\ise\Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/17f90204e4c9ab804bf26acf1bffbcc5708992a5/scripting/core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-* Current Handback File: [Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.0b72c76c2a89652b43b66f9e87694dc03c4a27cd.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4c35d240791b90297f5f64f4c8dba27d99f69edf/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.0b72c76c2a89652b43b66f9e87694dc03c4a27cd.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-20 07:59:17
+* Current Target File: [scripting\core-powershell\ise\Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+* Current Handback File: [Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.0b72c76c2a89652b43b66f9e87694dc03c4a27cd.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.0b72c76c2a89652b43b66f9e87694dc03c4a27cd.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='811cdcc3466d366f89fe43b90f928019d7405039131'></a> Source: [scripting\core-powershell\ise\The-ISEAddOnToolCollection-Object.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/ise/The-ISEAddOnToolCollection-Object.md)
@@ -2319,9 +2319,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\ise\The-ISE-Object-Model-Hierarchy.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/scripting/core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)
-* Current Handback File: [The-ISE-Object-Model-Hierarchy.f74241c9b9e43821335ec834d39bcd25105102a5.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/The-ISE-Object-Model-Hierarchy.f74241c9b9e43821335ec834d39bcd25105102a5.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Current Target File: [scripting\core-powershell\ise\The-ISE-Object-Model-Hierarchy.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)
+* Current Handback File: [The-ISE-Object-Model-Hierarchy.f74241c9b9e43821335ec834d39bcd25105102a5.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/The-ISE-Object-Model-Hierarchy.f74241c9b9e43821335ec834d39bcd25105102a5.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='272749d487a59ccf5eb30352dc902591228746f3137'></a> Source: [scripting\core-powershell\ise\The-ISEOptions-Object.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/ise/The-ISEOptions-Object.md)
@@ -2376,9 +2376,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\ise\The-ObjectModelRoot-Object.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/17f90204e4c9ab804bf26acf1bffbcc5708992a5/scripting/core-powershell/ise/The-ObjectModelRoot-Object.md)
-* Current Handback File: [The-ObjectModelRoot-Object.a169b6b5ad03bb7bd4958b09a1583849d2d65179.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4c35d240791b90297f5f64f4c8dba27d99f69edf/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/The-ObjectModelRoot-Object.a169b6b5ad03bb7bd4958b09a1583849d2d65179.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-20 07:59:17
+* Current Target File: [scripting\core-powershell\ise\The-ObjectModelRoot-Object.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/ise/The-ObjectModelRoot-Object.md)
+* Current Handback File: [The-ObjectModelRoot-Object.a169b6b5ad03bb7bd4958b09a1583849d2d65179.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/The-ObjectModelRoot-Object.a169b6b5ad03bb7bd4958b09a1583849d2d65179.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='4456b1e165130fd52249ffdbd7c22ff591061a8e142'></a> Source: [scripting\core-powershell\ise\The-PowerShellTabCollection-Object.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/ise/The-PowerShellTabCollection-Object.md)
@@ -2391,9 +2391,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\ise\The-PowerShellTabCollection-Object.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/scripting/core-powershell/ise/The-PowerShellTabCollection-Object.md)
-* Current Handback File: [The-PowerShellTabCollection-Object.a2b2b49a9b0542cb693b54f1dc6b5f4602d24cbc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/The-PowerShellTabCollection-Object.a2b2b49a9b0542cb693b54f1dc6b5f4602d24cbc.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Current Target File: [scripting\core-powershell\ise\The-PowerShellTabCollection-Object.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/ise/The-PowerShellTabCollection-Object.md)
+* Current Handback File: [The-PowerShellTabCollection-Object.a2b2b49a9b0542cb693b54f1dc6b5f4602d24cbc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/The-PowerShellTabCollection-Object.a2b2b49a9b0542cb693b54f1dc6b5f4602d24cbc.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='cad77145053b9f13f482f860310891da9366e53b141'></a> Source: [scripting\core-powershell\ise\The-PowerShellTab-Object.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/ise/The-PowerShellTab-Object.md)
@@ -2436,9 +2436,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\ise\Using-the-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/17f90204e4c9ab804bf26acf1bffbcc5708992a5/scripting/core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
-* Current Handback File: [Using-the-Windows-PowerShell-ISE.88e5c7c38e58fe4a132fd25a09265d8c01620f82.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4c35d240791b90297f5f64f4c8dba27d99f69edf/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Using-the-Windows-PowerShell-ISE.88e5c7c38e58fe4a132fd25a09265d8c01620f82.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-20 07:59:17
+* Current Target File: [scripting\core-powershell\ise\Using-the-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+* Current Handback File: [Using-the-Windows-PowerShell-ISE.88e5c7c38e58fe4a132fd25a09265d8c01620f82.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Using-the-Windows-PowerShell-ISE.88e5c7c38e58fe4a132fd25a09265d8c01620f82.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='9bfb74ba438dd27fc2799263fc12a20edd2bb8cb145'></a> Source: [scripting\core-powershell\ise\Windows-PowerShell-ISE-Object-Model-Reference.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/ise/Windows-PowerShell-ISE-Object-Model-Reference.md)
@@ -2466,9 +2466,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\ise-guide.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/scripting/core-powershell/ise-guide.md)
-* Current Handback File: [ise-guide.e255e30893594b93657175b8567eda7793f2f503.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/ise-guide.e255e30893594b93657175b8567eda7793f2f503.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Current Target File: [scripting\core-powershell\ise-guide.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/ise-guide.md)
+* Current Handback File: [ise-guide.e255e30893594b93657175b8567eda7793f2f503.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/ise-guide.e255e30893594b93657175b8567eda7793f2f503.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='9c1136db524ba52d47db94c68571c6892bdfdbe9146'></a> Source: [scripting\core-powershell\language-guide.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/language-guide.md)
@@ -2481,9 +2481,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\language-guide.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/scripting/core-powershell/language-guide.md)
-* Current Handback File: [language-guide.b80e883ae84feda3c396932da510be2923e56d2d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/language-guide.b80e883ae84feda3c396932da510be2923e56d2d.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Current Target File: [scripting\core-powershell\language-guide.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/language-guide.md)
+* Current Handback File: [language-guide.b80e883ae84feda3c396932da510be2923e56d2d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/language-guide.b80e883ae84feda3c396932da510be2923e56d2d.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='b68341b6e94bb02882dad27a4acb1627b197674c147'></a> Source: [scripting\core-powershell\Running-Remote-Commands.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/Running-Remote-Commands.md)
@@ -2583,9 +2583,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\web-access\uninstall-windows-powershell-web-access.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/17f90204e4c9ab804bf26acf1bffbcc5708992a5/scripting/core-powershell/web-access/uninstall-windows-powershell-web-access.md)
-* Current Handback File: [uninstall-windows-powershell-web-access.95bac7bf293e2b8b9e3aecf2e955c5e893499e71.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4c35d240791b90297f5f64f4c8dba27d99f69edf/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/uninstall-windows-powershell-web-access.95bac7bf293e2b8b9e3aecf2e955c5e893499e71.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-20 07:59:17
+* Current Target File: [scripting\core-powershell\web-access\uninstall-windows-powershell-web-access.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/web-access/uninstall-windows-powershell-web-access.md)
+* Current Handback File: [uninstall-windows-powershell-web-access.95bac7bf293e2b8b9e3aecf2e955c5e893499e71.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/uninstall-windows-powershell-web-access.95bac7bf293e2b8b9e3aecf2e955c5e893499e71.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='02964dd763ccccbf27a963c0f8eef20aa23cc117154'></a> Source: [scripting\core-powershell\web-access\use-the-web-based-windows-powershell-console.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/web-access/use-the-web-based-windows-powershell-console.md)
@@ -2613,9 +2613,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\workflows\PSWorkflow-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/17f90204e4c9ab804bf26acf1bffbcc5708992a5/scripting/core-powershell/workflows/PSWorkflow-Module.md)
-* Current Handback File: [PSWorkflow-Module.921d75cae6b7a7d92b6ecea5e55ba16e085b9ec6.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4c35d240791b90297f5f64f4c8dba27d99f69edf/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PSWorkflow-Module.921d75cae6b7a7d92b6ecea5e55ba16e085b9ec6.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-20 07:59:17
+* Current Target File: [scripting\core-powershell\workflows\PSWorkflow-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/core-powershell/workflows/PSWorkflow-Module.md)
+* Current Handback File: [PSWorkflow-Module.921d75cae6b7a7d92b6ecea5e55ba16e085b9ec6.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PSWorkflow-Module.921d75cae6b7a7d92b6ecea5e55ba16e085b9ec6.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='62cb6e90637373791e66ad1f94af085de00e4666157'></a> Source: [scripting\core-powershell\workflows\PSWorkflowUtility-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/workflows/PSWorkflowUtility-Module.md)
@@ -2715,9 +2715,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\getting-started\cookbooks\basic-cookbooks-reference.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/scripting/getting-started/cookbooks/basic-cookbooks-reference.md)
-* Current Handback File: [basic-cookbooks-reference.5da8328fb64dd6fc478181655b0b740c33e1cf9c.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/basic-cookbooks-reference.5da8328fb64dd6fc478181655b0b740c33e1cf9c.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Current Target File: [scripting\getting-started\cookbooks\basic-cookbooks-reference.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/getting-started/cookbooks/basic-cookbooks-reference.md)
+* Current Handback File: [basic-cookbooks-reference.5da8328fb64dd6fc478181655b0b740c33e1cf9c.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/basic-cookbooks-reference.5da8328fb64dd6fc478181655b0b740c33e1cf9c.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='13b1fd65b9dddf2570e7ab9c5420c0a6d18ce35e163'></a> Source: [scripting\getting-started\cookbooks\Changing-Computer-State.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/cookbooks/Changing-Computer-State.md)
@@ -2937,9 +2937,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\getting-started\cookbooks\PowerShellGet-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/scripting/getting-started/cookbooks/PowerShellGet-Module.md)
-* Current Handback File: [PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Current Target File: [scripting\getting-started\cookbooks\PowerShellGet-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/getting-started/cookbooks/PowerShellGet-Module.md)
+* Current Handback File: [PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='955d00f61a8222ff83797fbc923357c6d85cad7a178'></a> Source: [scripting\getting-started\cookbooks\Redirecting-Data-with-Out---Cmdlets.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/cookbooks/Redirecting-Data-with-Out---Cmdlets.md)
@@ -3189,9 +3189,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\getting-started\fundamental\Exploring-the-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/scripting/getting-started/fundamental/Exploring-the-Windows-PowerShell-ISE.md)
-* Current Handback File: [Exploring-the-Windows-PowerShell-ISE.a3f992702bf0a10e452f02c0ce43f75d90f185dc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Exploring-the-Windows-PowerShell-ISE.a3f992702bf0a10e452f02c0ce43f75d90f185dc.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Current Target File: [scripting\getting-started\fundamental\Exploring-the-Windows-PowerShell-ISE.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/getting-started/fundamental/Exploring-the-Windows-PowerShell-ISE.md)
+* Current Handback File: [Exploring-the-Windows-PowerShell-ISE.a3f992702bf0a10e452f02c0ce43f75d90f185dc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Exploring-the-Windows-PowerShell-ISE.a3f992702bf0a10e452f02c0ce43f75d90f185dc.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='1c514b101f708f11f095e1c95e12d7eff403e3bb197'></a> Source: [scripting\getting-started\fundamental\Getting-Detailed-Help-Information.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/fundamental/Getting-Detailed-Help-Information.md)
@@ -3381,9 +3381,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\getting-started\fundamental-concepts.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/scripting/getting-started/fundamental-concepts.md)
-* Current Handback File: [fundamental-concepts.8d6219b42c9bbb2735aa45fc3604c76da06b0f1e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/fundamental-concepts.8d6219b42c9bbb2735aa45fc3604c76da06b0f1e.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Current Target File: [scripting\getting-started\fundamental-concepts.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/getting-started/fundamental-concepts.md)
+* Current Handback File: [fundamental-concepts.8d6219b42c9bbb2735aa45fc3604c76da06b0f1e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/fundamental-concepts.8d6219b42c9bbb2735aa45fc3604c76da06b0f1e.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='fdf7b47e2222ec94783fc17aba839dcc3e78ab53210'></a> Source: [scripting\getting-started\Getting-Ready-to-Use-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/Getting-Ready-to-Use-Windows-PowerShell.md)
@@ -3564,9 +3564,9 @@
 * Archive Datetime: 2016-05-17 13:25:11
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\setup\Starting-the-32-Bit-Version-of-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/scripting/setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
-* Current Handback File: [Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Current Target File: [scripting\setup\Starting-the-32-Bit-Version-of-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md)
+* Current Handback File: [Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Starting-the-32-Bit-Version-of-Windows-PowerShell.4a4eaf664caff353459bbcc3d81a3756ede97b7f.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-24 23:36:54
 * [Back to Top](#report-top)
 
 ##### <a name='45102cbc730d8eaac9ebdcb73456b1d1e149c6f2223'></a> Source: [scripting\setup\Starting-the-Windows-PowerShell-2.0-Engine.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/setup/Starting-the-Windows-PowerShell-2.0-Engine.md)
