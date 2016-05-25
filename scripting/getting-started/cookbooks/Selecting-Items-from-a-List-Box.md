@@ -173,7 +173,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ```
 
 ## 参照
-[Hey Scripting Guy: これらの PowerShell GUI の例が機能しない理由](http://go.microsoft.com/fwlink/?LinkId=506644)
+[Hey Scripting Guy: これらの PowerShell GUI の例が機能しないのはなぜですか。](http://go.microsoft.com/fwlink/?LinkId=506644)
 [GitHub: Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 [今週の Windows PowerShell ヒント: リスト ボックスからアイテムを選択する](http://technet.microsoft.com/library/ff730949.aspx)
 
