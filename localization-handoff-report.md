@@ -1,50 +1,43 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 3
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [scripting\getting-started\fundamental\Scripting-with-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/fundamental/Scripting-with-Windows-PowerShell.md) | HandedOffSuccess | [Details](#0148f4631e34e65a4336c5d1d50e313fb6639748201)
- [scripting\PowerShell-Scripting.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/PowerShell-Scripting.md) | HandedOffSuccess | [Details](#5398df704bc69fc4f333e23b5d9f21efc0859dff215)
- [scripting\setup\Installing-the-Windows-PowerShell-SDK.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/setup/Installing-the-Windows-PowerShell-SDK.md) | HandedOffSuccess | [Details](#9ba9ef3efe6a8ae85d96b59db53ad3a16bf57699218)
+ [dsc\reportServer.md](https://github.com/PowerShell/powerShell-Docs/blob/59793e1701740dc783439cf1408c6efabd53cbcf/dsc/reportServer.md) | OutofSyncHandedBackSuccess | [Details](#d541f37723d77cf0b52012bae143dc7d64efd65d80)
+ [scripting\core-powershell\Running-Remote-Commands.md](https://github.com/PowerShell/powerShell-Docs/blob/593f0c2ca72e00f19c395c1dae31798d5a5f652d/scripting/core-powershell/Running-Remote-Commands.md) | OutofSyncHandedBackSuccess | [Details](#75d41569b18e61342809eebcc76b7899ec6363fa147)
 
 ## Item Details
-##### <a name='0148f4631e34e65a4336c5d1d50e313fb6639748201'></a> Source: [scripting\getting-started\fundamental\Scripting-with-Windows-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
-* Status: HandedOffSuccess
+##### <a name='d541f37723d77cf0b52012bae143dc7d64efd65d80'></a> Source: [dsc\reportServer.md](https://github.com/PowerShell/powerShell-Docs/blob/59793e1701740dc783439cf1408c6efabd53cbcf/dsc/reportServer.md)
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [Scripting-with-Windows-PowerShell.2db569b949f9f41122774e4819582e471a7b8657.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/5e033ad7f37e2a0bbc8cc08fcc77f5b6f89b0941/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/Scripting-with-Windows-PowerShell.2db569b949f9f41122774e4819582e471a7b8657.ja-jp.xlf)
-* Handoff Datetime: 2016-05-25 03:20:52
+* Handoff File: [reportServer.53df4bc8b7b80c0a19c11434bdf5f4304e8248f7.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/c45dff5cfd0d33fd2a718ce3ae1051dfe51b4c07/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/reportServer.53df4bc8b7b80c0a19c11434bdf5f4304e8248f7.ja-jp.xlf)
+* Handoff Datetime: 2016-05-27 16:23:22
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [dsc\reportServer.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/c96beef85f0ba3046f5096cf975594f0bdceff30/dsc/reportServer.md)
+* Current Handback File: [reportServer.53df4bc8b7b80c0a19c11434bdf5f4304e8248f7.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/5cee639d5bf5260af0992235680b20f3eae487b2/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/reportServer.53df4bc8b7b80c0a19c11434bdf5f4304e8248f7.ja-jp.xlf)
+* Current Handback Datetime: 2016-04-29 16:59:29
 * [Back to Top](#report-top)
 
-##### <a name='5398df704bc69fc4f333e23b5d9f21efc0859dff215'></a> Source: [scripting\PowerShell-Scripting.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/PowerShell-Scripting.md)
-* Status: HandedOffSuccess
+##### <a name='75d41569b18e61342809eebcc76b7899ec6363fa147'></a> Source: [scripting\core-powershell\Running-Remote-Commands.md](https://github.com/PowerShell/powerShell-Docs/blob/593f0c2ca72e00f19c395c1dae31798d5a5f652d/scripting/core-powershell/Running-Remote-Commands.md)
+* Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/5e033ad7f37e2a0bbc8cc08fcc77f5b6f89b0941/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/PowerShell-Scripting.8f5d79e74e333fb9812de946411a1b4ef2060582.ja-jp.xlf)
-* Handoff Datetime: 2016-05-25 03:20:52
+* Handoff File: [Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/c45dff5cfd0d33fd2a718ce3ae1051dfe51b4c07/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/Running-Remote-Commands.625cb4f9a4da4433a285f1820cb5aa2ba4546438.ja-jp.xlf)
+* Handoff Datetime: 2016-05-27 16:23:22
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* [Back to Top](#report-top)
-
-##### <a name='9ba9ef3efe6a8ae85d96b59db53ad3a16bf57699218'></a> Source: [scripting\setup\Installing-the-Windows-PowerShell-SDK.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/setup/Installing-the-Windows-PowerShell-SDK.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [Installing-the-Windows-PowerShell-SDK.bfd31a5fc654dd34236aff66cf62844476672b64.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/5e033ad7f37e2a0bbc8cc08fcc77f5b6f89b0941/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/Installing-the-Windows-PowerShell-SDK.bfd31a5fc654dd34236aff66cf62844476672b64.ja-jp.xlf)
-* Handoff Datetime: 2016-05-25 03:20:52
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [scripting\core-powershell\Running-Remote-Commands.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/28e8ecf82b68f58ebda34c4cffa6cc57a1cf8db8/scripting/core-powershell/Running-Remote-Commands.md)
+* Current Handback File: [Running-Remote-Commands.02abceafc4a52a019a27fce2025b3172df143844.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/34a5de66542c274b8d70c0d480cf5ff116a93ade/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Running-Remote-Commands.02abceafc4a52a019a27fce2025b3172df143844.ja-jp.xlf)
+* Current Handback Datetime: 2016-05-12 12:42:02
 * [Back to Top](#report-top)
 
 
