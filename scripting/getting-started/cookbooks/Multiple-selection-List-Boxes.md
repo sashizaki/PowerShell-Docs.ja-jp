@@ -1,12 +1,15 @@
 ---
-title: 複数選択のリスト ボックス
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
+title:  複数選択のリスト ボックス
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  f74cd5d9-da57-4802-b614-0b194a7bc8f8
 ---
+
 # 複数選択のリスト ボックス
 Windows PowerShell 3.0 以降のリリースを使用すると、カスタム Windows フォームで複数選択のリスト ボックス コントロールを作成できます。
 
@@ -177,12 +180,12 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ```
 
 ## 参照
-[Hey Scripting Guy: これらの PowerShell GUI の例が機能しない理由](http://go.microsoft.com/fwlink/?LinkId=506644)
-[GitHub: Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-[Windows PowerShell Tip of the Week: 複数選択のリスト ボックスなど](http://technet.microsoft.com/library/ff730950.aspx)
+[Hey Scripting Guy:  Why don’t these PowerShell GUI examples work? (Hey Scripting Guy: これらの PowerShell GUI の例が機能しない理由)](http://go.microsoft.com/fwlink/?LinkId=506644)
+[GitHub: Dave Wyatt's WinFormsExampleUpdates (GitHub: Dave Wyatt の WinFormsExampleUpdates)](https://github.com/dlwyatt/WinFormsExampleUpdates)
+[Windows PowerShell Tip of the Week:  Multi-Select List Boxes – And More! (Windows PowerShell Tip of the Week: 複数選択のリスト ボックスなど)](http://technet.microsoft.com/library/ff730950.aspx)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

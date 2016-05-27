@@ -1,12 +1,15 @@
 ---
-title: 使い慣れたコマンド名の使用
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
+title:  使い慣れたコマンド名の使用
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  021e2424-c64e-4fa5-aa98-aa6405758d5d
 ---
+
 # 使い慣れたコマンド名の使用
 Windows PowerShell では、*エイリアス*というメカニズムにより、ユーザーは代替名でコマンドを表せます。 エイリアスがあることで、他のシェルの経験のあるユーザーは、既に知っている一般的なコマンド名を再使用して、Windows PowerShell でも同様の操作を行えます。 Windows PowerShell のエイリアスについて詳しくは解説しませんが、Windows PowerShell の入門段階でもエイリアスを使用できます。
 
@@ -59,13 +62,11 @@ Set-Alias -Name gcm -Value Get-Command
 
 Windows PowerShell はこうしたコマンドを起動時に内部で使用しますが、これらのエイリアスは変更できません。 これらのコマンドのいずれかを実際に実行しようとすると、エイリアスは変更できないことを示すエラーが表示されます。 たとえば、次のように入力します。
 
-<pre>PS> Set-Alias -Name gi -Value Get-Item
-Set-Alias : Alias is not writeable because alias gi is read-only or constant and cannot be written to.
-At line:1 char:10
-+ Set-Alias  <<<< -Name gi -Value Get-Item</pre>
+<pre>PS> Set-Alias -Name gi -Value Get-Item Set-Alias : エイリアスは書き込み可能ではありません。エイリアス gi は読み取り専用または定数であり、書き込めません。
+At line:1 char:10 + Set-Alias  <<<< -Name gi -Value Get-Item</pre>
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

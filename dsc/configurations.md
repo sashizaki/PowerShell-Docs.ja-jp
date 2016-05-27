@@ -1,3 +1,14 @@
+---
+title:   DSC 構成
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC 構成
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -37,9 +48,9 @@ Configuration MyDscConfiguration {
 Configuration MyDscConfiguration {
 
     param(
-        [string[]]$computerName="localhost"
+        [string[]]$ComputerName="localhost"
     )
-    Node $computerName {
+    Node $ComputerName {
         WindowsFeature MyFeatureInstance {
             Ensure = "Present"
             Name =  "RSAT"
@@ -52,7 +63,7 @@ Configuration MyDscConfiguration {
 }
 ```
 
-この例では、[構成をコンパイルする](# Compiling the configuration) ときに、ノードの名前を $computerName パラメーターとして渡すことによって、ノードの名前を指定します。 名前の既定値は "localhost" です。
+この例では、[構成のコンパイル時](# Compiling the configuration)にノードの名前を $ComputerName パラメーターとして渡すことで、ノードの名前を指定します。 名前の既定値は "localhost" です。
 
 ## 構成のコンパイル
 構成を適用する前に、MOF ドキュメントにコンパイルする必要があります。 そのためには、PowerShell 関数の場合と同じように構成を呼び出します。
@@ -80,7 +91,7 @@ Mode                LastWriteTime         Length Name
 
 ```powershell
 PS C:\users\default\Documents\DSC Configurations> . .\MyDscConfiguration.ps1
-PS C:\users\default\Documents\DSC Configurations> MyDscConfiguration -computerName 'MyTestNode'
+PS C:\users\default\Documents\DSC Configurations> MyDscConfiguration -ComputerName 'MyTestNode'
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
 Mode                LastWriteTime         Length Name                                                                                              
 ----                -------------         ------ ----                                                                                         
@@ -121,6 +132,7 @@ Configuration DependsOnExample {
 * [ローカル構成マネージャーの構成](metaConfig.md)
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

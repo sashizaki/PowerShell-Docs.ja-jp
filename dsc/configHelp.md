@@ -1,10 +1,19 @@
+---
+title:   DSC 構成のヘルプの作成
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC 構成のヘルプの作成
 
 >適用先: Windows PowerShell 5.0
 
-DSC 構成では、コメント ベースのヘルプを使用できます。 ユーザーは、構成関数に `-?` を付けて呼び出すか、次を使うことで、ヘルプにアクセスできます。 
-[Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) コマンドレット。 PowerShell のコメント ベースのヘルプについて詳しくは、次をご覧ください。 
-[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).
+DSC 構成では、コメント ベースのヘルプを使用できます。 ユーザーは、構成関数に `-?` を付けて呼び出すか、[Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) コマンドレットを使用することで、ヘルプにアクセスできます。 PowerShell のコメント ベースのヘルプの詳細については、「[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx)」を参照してください。
 
 次の例では、2 つの構成と各構成のコメント ベースのヘルプを含むスクリプトを示します。
 
@@ -52,8 +61,7 @@ configuration HelpSample1
 
 ## 構成のヘルプの表示
 
-構成のヘルプを表示するには、**Get-Help** コマンドレットに関数名を付けて使うか、関数名の後に「`-?`」と入力します。 次は、前の関数を
-Get-Help に渡した場合の出力です。
+構成のヘルプを表示するには、**Get-Help** コマンドレットに関数名を付けて使うか、関数名の後に「`-?`」と入力します。 前の関数を **Get-Help** に渡した場合の出力を次に示します。
 
 ```powershell
 PS C:\> Get-Help HelpSample1
@@ -85,6 +93,8 @@ REMARKS
 ## 参照
 * [DSC 構成](configurations.md)
 
-<!--HONumber=Apr16_HO5-->
+
+
+<!--HONumber=May16_HO3-->
 
 

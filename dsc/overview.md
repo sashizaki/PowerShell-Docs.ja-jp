@@ -1,3 +1,14 @@
+---
+title:   Windows PowerShell Desired State Configuration の概要 
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Windows PowerShell Desired State Configuration の概要 
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -30,7 +41,7 @@ DSC は、システムの構成、展開、および管理に使用する宣言�
 * リソースは、サブシステムのさまざまなコンポーネントをモデル化し、その状態の変更の制御フローを実装するために作成される DSC の不可欠な構成要素です。 PowerShell モジュール内に存在し、ファイルまたは Windows プロセスのように汎用的なものをモデル化したり、IIS サーバーまたは Azure で実行されている VM のように具体的なものをモデル化したりするように作成できます。
 * ローカル構成マネージャー (LCM) は、DSC でのリソースと構成の間の対話を容易にするエンジンです。 LCM は、リソースによって実装される制御フローを使用してシステムを定期的にポーリングし、構成によって配置された状態が維持されるようにします。 システムが状態外の場合、LCM はリソース内のより多くのロジックを使用して、構成の宣言に従って、指定されたことを実現します。 
 
-DSC には、構成の作成を許可し、DSC リソースのビルドに役立ち、構成を呼び出して、LCM を管理する、さまざまな新しい言語キーワード、コマンドレット、およびツールも含まれています。 これらのコマンドレットの多くは、PsDesiredStateConfig モジュールの一部として Windows 8.1 で見つけることができます (`Start-DscConfiguration`、`Set-DscLocalConfigurationManager`、および `Get-DscResource` を含む)。 xDscResourceDesigner ([PowerShell ギャラリー](https://www.powershellgallery.com/packages/xDSCResourceDesigner/)にあります) は、DSC リソースの開発を簡略化するためのコマンドレットのコレクションです。
+DSC には、構成の作成を許可し、DSC リソースのビルドに役立ち、構成を呼び出して、LCM を管理する、さまざまな新しい言語キーワード、コマンドレット、およびツールも含まれています。 これらのコマンドレットの多くは、Windows 8.1 の PSDesiredStateConfiguration モジュールの一部として含まれています (`Start-DscConfiguration`、`Set-DscLocalConfigurationManager`、および `Get-DscResource` を含む)。 xDscResourceDesigner ([PowerShell ギャラリー](https://www.powershellgallery.com/packages/xDSCResourceDesigner/)にあります) は、DSC リソースの開発を簡略化するためのコマンドレットのコレクションです。
 
 ## 参照
 * [DSC 構成](configurations.md)
@@ -39,6 +50,6 @@ DSC には、構成の作成を許可し、DSC リソースのビルドに役立
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

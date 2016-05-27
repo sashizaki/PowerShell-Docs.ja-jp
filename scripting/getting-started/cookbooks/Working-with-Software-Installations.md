@@ -1,12 +1,15 @@
 ---
-title: ソフトウェア インストールの操作
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
+title:  ソフトウェア インストールの操作
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 ---
+
 # ソフトウェア インストールの操作
 Windows インストーラーを使用するように設計されているアプリケーションは、WMI の **Win32_Product** クラスからアクセスできますが、今日使用されているすべてのアプリケーションが Windows インストーラーを使用しているわけではありません。 Windows インストーラーは、インストール可能なアプリケーションを操作するための標準的な手法を最も広範囲に提供しているため、主にこれらのアプリケーションについて説明します。 代替のセットアップ ルーチンを使用するアプリケーションは、通常 Windows インストーラーによって管理されません。 これらのアプリケーションを処理する具体的な方法は、インストーラーのソフトウェアとアプリケーションの開発者によってなされた決定によって異なります。
 
@@ -137,8 +140,7 @@ SKC  VC Name                           Property
 ### アプリケーションのインストール
 **Win32_Product** クラスを使用して、リモートまたはローカルで、Windows インストーラー パッケージをインストールできます。
 
-> [!NOTE]
-> Windows Vista、Windows Server 2008、およびそれ以降のバージョンの Windows では、アプリケーションをインストールするには、[管理者として実行] オプションを使用して Windows PowerShell を起動する必要があります。
+> [!NOTE]Windows Vista、Windows Server 2008、およびそれ以降のバージョンの Windows では、アプリケーションをインストールするには、[管理者として実行] オプションを使用して Windows PowerShell を起動する必要があります。
 
 リモートでインストールする場合は、WMI のサブシステムが Windows PowerShell のパスを認識しないため、.msi パッケージへのパスを指定するのに、汎用名前付け規則 (UNC) のネットワーク パスを使用します。 たとえば、リモート コンピューター PC01 のネットワーク共有 \\AppServ\dsp にある NewPackage.msi パッケージをインストールするには、Windows PowerShell プロンプトで次のコマンドを入力します。
 
@@ -178,6 +180,6 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue("Displ
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

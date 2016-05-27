@@ -1,25 +1,29 @@
+---
+title:   DSC レポート サーバーの使用
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC レポート サーバーの使用
 
 > 適用先: Windows PowerShell 5.0
 
 >**注:** このトピックで説明しているレポート サーバーは、PowerShell 4.0 では使用できません。
 
-構成の状態に関するレポートをプル サーバーに送信するように、ノードのローカル構成マネージャー (LCM) を構成できます。これにより、プル サーバーに対してクエリを実行してデータを取得できるようになります。 ノードは、構成を確認して適用するたびに、
-レポート サーバーにレポートを送信します。 これらのレポートは、サーバー上のデータベースに格納され、レポート Web サービスを呼び出すことで取得できます。 各レポートには、
-適用された構成の内容、構成適用の成否、使用されたリソース、スローされたエラー、開始時刻と終了時刻などの情報が含まれています。
+構成の状態に関するレポートをプル サーバーに送信するように、ノードのローカル構成マネージャー (LCM) を構成できます。これにより、プル サーバーに対してクエリを実行してデータを取得できるようになります。 ノードは、構成を確認して適用するたびに、レポート サーバーにレポートを送信します。 これらのレポートは、サーバー上のデータベースに格納され、レポート Web サービスを呼び出すことで取得できます。 各レポートには、適用された構成の内容、構成適用の成否、使用されたリソース、スローされたエラー、開始時刻と終了時刻などの情報が含まれています。
 
 ## レポートを送信するようにするためのノードの構成
 
-ノードがサーバーにレポートを送信するようにするには、そのノードの LCM 構成で **ReportServerWeb** ブロックを使用します (LCM の構成については、
-「[ローカル構成マネージャーの構成](metaConfig.md)」をご参照ください)。 ノードがレポートを送信するサーバーは、Web プル サーバーとしてセットアップする必要があります (
-SMB 共有にレポートを送信することはできません)。 プル サーバーのセットアップについては、「[DSC Web プル サーバーのセットアップ](pullServer.md)」を参照してください。 レポート サーバーは、ノードが構成をプルしてリソースを取得するのと同じサービスにすることも、
-別のサービスにすることもできます。
+ノードがサーバーにレポートを送信するようにするには、そのノードの LCM 構成で **ReportServerWeb** ブロックを使用します (LCM の構成については、「[ローカル構成マネージャーの構成](metaConfig.md)」を参照)。 ノードのレポート送信先になるサーバーは、Web プル サーバーとしてセットアップする必要があります (SMB 共有にレポートを送信することはできません)。 プル サーバーのセットアップについては、「[DSC Web プル サーバーのセットアップ](pullServer.md)」を参照してください。 レポート サーバーは、ノードが構成をプルしてリソースを取得するのと同じサービスにすることも、別のサービスにすることもできます。
  
-**ReportServerWeb** ブロックには、プル サービスの URL と、
-サーバーに認識されている登録キーを指定します。
+**ReportServerWeb** ブロックには、プル サービスの URL と、サーバーに認識されている登録キーを指定します。
  
-次の構成は、あるサービスから構成をプルし、別のサーバー上のサービスにレポートを送信するように
-ノードを構成しています。 
+次の構成では、あるサービスから構成をプルし、別のサーバー上のサービスにレポートを送信するようにノードを構成しています。 
  
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -88,11 +92,7 @@ PullClientConfig
 
 ## レポート データの取得
 
-プル サーバーに送信されたレポートは、サーバー上のデータベースに格納されます。 これらのレポートは、Web サービスを呼び出すことで利用できます。 特定のノードのレポートを取得するには、 
-次の形式でレポート Web サービスに HTTP 要求を送信します。
-`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentID = MyNodeAgentId)/Reports` 
-ここで、`MyNodeAgentId` はレポートを取得するノードの AgentId です。 ノードの AgentID を取得するには、そのノードで [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) を
-呼び出します。
+プル サーバーに送信されたレポートは、サーバー上のデータベースに格納されます。 これらのレポートは、Web サービスを呼び出すことで利用できます。 特定のノードのレポートを取得するには、`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentID = MyNodeAgentId)/Reports` の形式でレポート Web サービスに HTTP 要求を送信します。ここで、`MyNodeAgentId` はレポートを取得するノードの AgentId です。 ノードの AgentID を取得するには、そのノードで [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) を呼び出します。
 
 レポートは、JSON オブジェクトの配列として返されます。
 
@@ -160,8 +160,7 @@ $reportsByStartTime = $reports | Sort-Object -Property StartTime -Descending
 $reportMostRecent = $reportsByStartTime[0]
 ```
 
-**StatusData** プロパティは、さまざまなプロパティを持つオブジェクトであることにご注意ください。 これは、レポート データの多くがある場所です。 Let's look at the individual fields of the
-最新のレポートを確認するために、StatusData プロパティの個々のフィールドをご覧ください。
+**StatusData** プロパティは、さまざまなプロパティを持つオブジェクトであることにご注意ください。 これは、レポート データの多くがある場所です。 最新のレポートについての **StatusData** プロパティの個々のフィールドを以下に示します。
 
 ```powershell
 $statusData = $reportMostRecent.StatusData | ConvertFrom-Json
@@ -199,8 +198,7 @@ Locale                     : en-US
 Mode                       : Pull
 ```
 
-特にこれは、最新の構成が 2 つのリソースを呼び出したことを示しています。期待した状態になっているのはいずれか片方で、もう一方はそうなっていません。 You can get
-ResourcesNotInDesiredState プロパティのみで、より読みやすい出力を取得できます。
+特にこれは、最新の構成が 2 つのリソースを呼び出したことを示しています。期待した状態になっているのはいずれか片方で、もう一方はそうなっていません。 **ResourcesNotInDesiredState** プロパティのみを使用すると、より読みやすい出力を取得できます。
 
 ```powershell
 $statusData.ResourcesInDesiredState
@@ -218,8 +216,7 @@ ConfigurationName : Sample_ArchiveFirewall
 InDesiredState    : True
 ```
 
-これらの例は、レポート データを使用してどのようなことができるかを理解するためのものです。 PowerShell での JSON の使用方法については、
-「[JSON と PowerShell での再生](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/)」をご参照ください。
+これらの例は、レポート データを使用してどのようなことができるかを理解するためのものです。 PowerShell での JSON の使用方法については、「[Playing with JSON and PowerShell (PowerShell での JSON の使用)](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/)」を参照してください。
 
 ## 参照
 - [ローカル構成マネージャーの構成](metaConfig.md)
@@ -227,6 +224,7 @@ InDesiredState    : True
 - [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
 
 
-<!--HONumber=Apr16_HO1-->
+
+<!--HONumber=May16_HO3-->
 
 

@@ -1,12 +1,15 @@
 ---
-title: 現在の場所の管理
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
+title:  現在の場所の管理
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
 ---
+
 # 現在の場所の管理
 エクスプローラーでフォルダー システムを移動している場合、通常は特定の作業場所 (現在開いているフォルダー) があります。 現在のフォルダーの項目は、クリックして簡単に操作できます。 Cmd.exe などのコマンド ライン インターフェイスで、特定のファイルと同じフォルダーにいる場合は、ファイルへのパス全体を指定する代わりに、比較的短い形式の名前を指定することでアクセスできます。 現在のディレクトリは、作業ディレクトリと呼ばれます。
 
@@ -47,10 +50,7 @@ C:\WINDOWS
 
 たとえば、**C:\Windows** フォルダーの場合、ピリオド (**.**) は **C:\Windows** を表し、二重のピリオド (**..**) は **C:** を表します。 現在の場所から C: ドライブのルートに移動するには、次のように入力します。
 
-<pre>PS> Set-Location -Path .. -PassThru
-パス
-----
-C:\</pre>
+<pre>PS> Set-Location -Path .. -PassThru Path ---- C:\</pre>
 
 **HKLM:** のようなファイル システムのドライブでない Windows PowerShell ドライブでも、同じ手法が機能します。 HKLM\Software キーの場所をレジストリに設定するには、次のように入力します。
 
@@ -168,6 +168,6 @@ Set-Location : Cannot find path 'D:\' because it does not exist.
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

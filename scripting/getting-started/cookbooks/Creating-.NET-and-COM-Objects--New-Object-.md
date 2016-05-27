@@ -1,12 +1,15 @@
 ---
-title: .NET オブジェクトと COM オブジェクトを作成する (New-Object)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
+title:  .NET オブジェクトと COM オブジェクトの作成 (New-Object) 
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  2057b113-efeb-465e-8b44-da2f20dbf603
 ---
+
 # .NET オブジェクトと COM オブジェクトを作成する (New-Object)
 ソフトウェア コンポーネントの中には、さまざまなシステム管理タスクを実行できるようにする .NET Framework や COM インターフェイスを備えているものがあります。 これらのコンポーネントは Windows PowerShell から使用することもでき、コマンドレットだけではできないタスクも実行できます。 Windows PowerShell の初回リリースでは、コマンドレットの多くがリモート コンピューターに対応していません。 ここでは、イベント ログを管理する場合に、.NET Framework の **System.Diagnostics.EventLog** クラスを Windows PowerShell から直接使用して、この制限を回避する方法を紹介します。
 
@@ -175,20 +178,11 @@ $Home\Desktop\PSHome.lnk
 
 **$lnk** という変数には、現在、新しいショートカットの参照が格納されています。 メンバーを表示するには、この変数をパイプを使って **Get-Member** に渡します。 次のように、ショートカットを完成するために必要なメンバーが出力結果として表示されます。
 
-<pre>PS> $lnk | Get-Member
-TypeName: System.__ComObject#{f935dc23-1cf0-11d0-adb9-00c04fd58a0b}
-Name             MemberType   Definition
-----             ----------   ----------
-...
-Save             Method       void Save ()
-...
-TargetPath       Property     string TargetPath () {get} {set}
-...</pre>
+<pre>PS> $lnk | Get-Member TypeName: System.__ComObject#{f935dc23-1cf0-11d0-adb9-00c04fd58a0b} Name             MemberType   Definition ----             ----------   ---------- ...Save             Method       void Save ()TargetPath       Property     string TargetPath () {get} {set} ...</pre>
 
 **TargetPath** (Windows PowerShell のアプリケーション フォルダー) を指定した後、**Save** メソッドを呼び出してショートカット **$lnk** を保存する必要があります。 Windows PowerShell のアプリケーション フォルダーのパスは変数 **$PSHome** に保存されているため、次のように入力します。
 
-<pre>$lnk.TargetPath = $PSHome
-$lnk.Save()</pre>
+<pre>$lnk.TargetPath = $PSHome $lnk.Save()</pre>
 
 ### Windows PowerShell からの Internet Explorer の使用
 Microsoft Office ファミリのアプリケーションや Internet Explorer など、多くのアプリケーションは COM を使用して自動化できます。 COM ベースのアプリケーション操作に関係する一般的なテクニックと問題点を、Internet Explorer を例に取り上げます。
@@ -266,6 +260,6 @@ At line:1 char:17
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

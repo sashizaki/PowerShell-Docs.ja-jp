@@ -1,3 +1,14 @@
+---
+title:   Linux 用 DSC の nxScript リソース
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Linux 用 DSC の nxScript リソース
 
 PowerShell Desired State Configuration (DSC) の **nxScript** リソースは、Linux ノード上で Linux スクリプトを実行するためのメカニズムを備えています。
@@ -63,6 +74,7 @@ fi
 ```
 
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

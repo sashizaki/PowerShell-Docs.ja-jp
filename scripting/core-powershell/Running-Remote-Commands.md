@@ -1,12 +1,15 @@
 ---
-title: リモート コマンドの実行
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
+title:  リモート コマンドの実行
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 ---
+
 # リモート コマンドの実行
 1 つの Windows PowerShell コマンドを使用し、1 台から数百台のコンピューターでコマンドを実行できます。 Windows PowerShell は、WMI、RPC、WS-Management など、さまざまなテクノロジを使用してリモート コンピューティングをサポートします。
 
@@ -46,8 +49,7 @@ Windows PowerShell のリモート処理では、WS-Management プロトコル�
 
 Windows PowerShell のリモート処理を使用するには、リモート管理のためにリモート コンピューターを構成する必要があります。 手順を含む詳細については、「[about_Remote_Requirements](https://technet.microsoft.com/en-us/library/dd315349.aspx)」を参照してください。
 
-Windows PowerShell のリモート処理を構成した後は、多くのリモート処理の戦略が使用可能になります。 このドキュメントの残りの部分では、その一部だけを取り上げます。 詳細については、「[about_Remote](https://technet.microsoft.com/en-us/library/dd347744.aspx)」および 
-「[about_Remote_FAQ](https://technet.microsoft.com/en-us/library/dd347744.aspx)」を参照してください。
+Windows PowerShell のリモート処理を構成した後は、多くのリモート処理の戦略が使用可能になります。 このドキュメントの残りの部分では、その一部だけを取り上げます。 詳細については、[リモート コマンドに関するページ](https://technet.microsoft.com/en-us/library/dd347744.aspx)と[リモート コマンドの FAQ に関するページ](https://technet.microsoft.com/en-us/library/dd347744.aspx)を参照してください。
 
 ### 対話型セッションの開始
 1 台のリモート コンピューターとの対話型セッションを開始するには、[Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) コマンドレットを使用します。 たとえば、Server01 リモート コンピューターと対話型セッションを開始するには、次のように入力します。
@@ -64,8 +66,7 @@ enter-pssession Server01
 exit-pssession
 ```
 
-Enter\-PSSession コマンドレットと Exit\-PSSession コマンドレットの詳細については、「[Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx)」 
-と「[Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx)」を参照してください。
+Enter-PSSession コマンドレットと Exit-PSSession コマンドレットの詳細については、「[Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx)」と「[Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx)」を参照してください。
 
 ### リモート コマンドの実行
 1 台以上のリモート コンピューターでいずれかのコマンドを実行するには、[Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx) コマンドレットを使用します。
@@ -124,8 +125,7 @@ invoke-command -session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"
 Windows PowerShell のリモート管理はこれだけではありません。 Windows PowerShell と共にインストールされるコマンドレットを使用して、ローカルとリモートの両側からのリモート セッションの確立と構成、カスタマイズおよび制限されたセッションの作成、リモート セッションで実際に暗黙的に実行されるコマンドのリモート セッションからのユーザーによるインポート、リモート セッションのセキュリティの構成など、さまざまな処理を実行できます。
 
 リモートの構成を容易にするために、Windows PowerShell には WSMan プロバイダーが含まれます。 プロバイダーが作成する WSMAN: ドライブでは、ローカル コンピューターとリモート コンピューターの構成設定の階層内を移動できます。
- WSMan プロバイダーの詳細については、「[WSMan Provider](https://technet.microsoft.com/en-us/library/dd819476.aspx)」および
-「  [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/dd819481.aspx)」を参照するか、Windows PowerShell コンソールで「get\-help wsman」と入力してください。
+ WSMan プロバイダーの詳細については、「[WSMan Provider (WSMan プロバイダー)](https://technet.microsoft.com/en-us/library/dd819476.aspx)」および   [WS-Management コマンドレット関するページ](https://technet.microsoft.com/en-us/library/dd819481.aspx)を参照するか、Windows PowerShell コンソールで「get-help wsman」と入力してください。
 
 詳細については、次のドキュメントを参照してください。
 - [about_Remote_FAQ](https://technet.microsoft.com/en-us/library/dd315359.aspx)
@@ -149,6 +149,6 @@ Windows PowerShell のリモート管理はこれだけではありません。 
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

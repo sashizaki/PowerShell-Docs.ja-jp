@@ -1,3 +1,14 @@
+---
+title:   構成データでの資格情報オプション
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 構成データでの資格情報オプション
 >適用先: Windows PowerShell 5.0
 
@@ -15,7 +26,7 @@ DSC 構成リソースは、既定で `Local System` として実行されます
 ただし、`Package` リソースでソフトウェアを特定のユーザー アカウントでインストールする必要がある場合など、リソースによっては資格情報が必要となることがあります。
 
 以前のリソースでは、ハード コードされた `Credential` プロパティ名使用してこのことに対処していました。
-WMF 5.0 では、すべてのリソースに対して自動 `PsDscRunAsCredential` プロパティが追加されました。
+WMF 5.0 では、すべてのリソースに対して自動 `PsDscRunAsCredential` プロパティが追加されました。 `PsDscRunAsCredential` の使用の詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
 新しいリソースおよびカスタム リソースでは、資格情報の独自のプロパティを作成する代わりに、この自動プロパティを使用できます。
 
 *一部のリソースは特定の理由のために複数の資格情報を使用するように設計されており、それらのリソースには独自の資格情報プロパティがあることに注意してください。*
@@ -161,7 +172,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 
 **DSC リソースで資格情報を使用す場合、可能な場合は、ドメイン アカウントではなくローカル アカウントを選択します。**
 
-資格情報の `Username` プロパティに '\' または '@' がある場合、DSC ではその資格情報はドメイン アカウントとして処理されます。
+資格情報の `Username` プロパティに \' または '@' がある場合、DSC ではその資格情報はドメイン アカウントとして処理されます。
 ユーザー名のドメイン部分には、"localhost"、"127.0.0.1"、および "::1" の例外があります。
 
 ## PSDscAllowDomainUser
@@ -183,4 +194,9 @@ $cd = @{
 ```
 
 これで、構成スクリプトによってエラーや警告なしで MOF ファイルが生成されます。
-<!--HONumber=Feb16_HO4-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

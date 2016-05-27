@@ -1,3 +1,14 @@
+---
+title:   Linux 用 DSC の nxUser リソース
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Linux 用 DSC の nxUser リソース
 
 PowerShell Desired State Configuration (DSC) の **nxUser** リソースは、Linux ノード上でローカル ユーザーを管理するためのメカニズムを備えています。
@@ -63,6 +74,7 @@ nxGroup GroupExample{
 ```
 
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

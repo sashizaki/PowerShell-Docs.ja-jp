@@ -1,12 +1,15 @@
 ---
-title: オブジェクトの一部を選択する (Select-Object)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 72e64b1a-d351-4500-9da3-24d8a71d7a92
+title:  オブジェクトの一部を選択する (Select-Object) 
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  72e64b1a-d351-4500-9da3-24d8a71d7a92
 ---
+
 # オブジェクトの一部を選択する (Select-Object)
 **Select-Object** コマンドレットを使用して、Windows PowerShell のオブジェクトを新規作成、またはカスタマイズできます。それらのオブジェクトには、作成時に使用する元のオブジェクトから選択したプロパティを含めることができます。 次のコマンドを入力して、Win32_LogicalDisk WMI クラスの Name および FreeSpace プロパティのみを含む、新規オブジェクトを作成します。
 
@@ -46,6 +49,6 @@ C:                                                                48317.7265625
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,9 +1,12 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '構成ドキュメントを管理ノードに送信し、Get メソッドを使って構成エージェントを使用し、構成を適用します。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager クラスの GetConfiguration メソッド'
+title:  MSFT_DSCLocalConfigurationManager クラスの GetConfiguration メソッド
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
 
 # MSFT_DSCLocalConfigurationManager クラスの GetConfiguration メソッド
@@ -57,6 +60,6 @@ uint32 GetConfiguration(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

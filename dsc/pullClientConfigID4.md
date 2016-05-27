@@ -1,3 +1,14 @@
+---
+title:   PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -15,7 +26,7 @@ Configuration SimpleMetaConfigurationForPull
         RefreshMode = "PULL";
         DownloadManagerName = "WebDownloadManager";
         RebootNodeIfNeeded = $true;
-        RefreshFrequencyMins = 15;
+        RefreshFrequencyMins = 30;
         ConfigurationModeFrequencyMins = 30; 
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "http://PullServer:8080/PSDSCPullServer/PSDSCPullServer.svc"; AllowUnsecureConnection = “TRUE”}
@@ -40,7 +51,6 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 
 プル サーバーを、Web サービスではなく SMB ファイル共有としてセットアップするには、**WebDownLoadManager** ではなく **DscFileDownloadManager** を指定します。
 **DscFileDownloadManager** は、**ServerUrl** の代わりに **SourcePath** プロパティを取ります。 次のスクリプトは、"CONTOSO-SERVER" という名前のサーバーの "SmbDscShare" という名前の SMB 共有から構成をプルするように LCM を構成します。
-"SmbDscShare" on a server named "CONTOSO-SERVER":
 
 ```powershell
 Configuration SimpleMetaConfigurationForPull 
@@ -51,7 +61,7 @@ Configuration SimpleMetaConfigurationForPull
         RefreshMode = "PULL";
         DownloadManagerName = "DscFileDownloadManager";
         RebootNodeIfNeeded = $true;
-        RefreshFrequencyMins = 15;
+        RefreshFrequencyMins = 30;
         ConfigurationModeFrequencyMins = 30; 
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "\\CONTOSO-SERVER\SmbDscShare"}
@@ -65,6 +75,8 @@ SimpleMetaConfigurationForPull -Output "."
 - [DSC Web プル サーバーのセットアップ](pullServer.md)
 - [DSC SMB プル サーバーのセットアップ](pullServerSMB.md)
 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=May16_HO3-->
 
 

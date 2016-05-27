@@ -1,12 +1,15 @@
 ---
-title: 静的なクラスとメソッドの使用
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
+title:  静的なクラスとメソッドの使用
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  418ad766-afa6-4b8c-9a44-471889af7fd9
 ---
+
 # 静的なクラスとメソッドの使用
 .NET Framework のクラスの中には、**New-Object** では作成できないものもあります。 たとえば、**New-Object** で **System.Environment** オブジェクトや **System.Math** オブジェクトを作成しようとすると、次のようなエラー メッセージが表示されます。
 
@@ -113,8 +116,7 @@ False
 ### System.Math による数学的演算の実行
 System.Math 静的クラスは、数学的演算を行うのに役立ちます。 **System.Math** の重要なメンバーのほとんどはメソッドであり、**Get-Member** を使って表示できます。
 
-> [!NOTE]
-> System.Math には同じ名前の複数のメソッドが存在しますが、これらはパラメーターの型が異なります。
+> [!NOTE]System.Math には名前が同じ複数のメソッドが存在しますが、それぞれパラメーターの型が異なります。
 
 **System.Math** クラスのメソッドを一覧表示するには、次のコマンドを入力します。
 
@@ -182,6 +184,6 @@ PS> [System.Math]::Truncate(-9.3)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

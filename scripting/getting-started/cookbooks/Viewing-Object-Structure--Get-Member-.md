@@ -1,12 +1,15 @@
 ---
-title: オブジェクトの構造を表示する (Get-member)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
+title:  オブジェクトの構造の表示 (Get-member) 
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  a1819ed2-2ef3-453a-b2b0-f3589c550481
 ---
+
 # オブジェクトの構造を表示する (Get-member)
 オブジェクトは、Windows PowerShell において非常に中心的な役割を担っているため、任意のオブジェクトの種類で動作するよう設計されたネイティブ コマンドがいくつかあります。 最も重要なコマンドは、**Get-Member** コマンドです。
 
@@ -57,8 +60,7 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 ...
 ```
 
-> [!NOTE]
-> MemberType の指定できる値は、AliasProperty、CodeProperty、Property、NoteProperty、ScriptProperty、Properties、PropertySet、Method、CodeMethod、ScriptMethod、Methods、ParameterizedProperty、MemberSet、および All です。
+> [!NOTE]MemberType の指定できる値は、AliasProperty、CodeProperty、Property、NoteProperty、ScriptProperty、Properties、PropertySet、Method、CodeMethod、ScriptMethod、Methods、ParameterizedProperty、MemberSet、および All です。
 
 プロセスには、60 を超えるプロパティがあります。 Windows PowerShell では、既知のオブジェクトのほんの一部のプロパティしか表示されません。これは、すべてを表示すると管理が困難なほどの大量の情報が生成されるためです。
 
@@ -69,6 +71,6 @@ Windows PowerShell が既定で表示する以外のプロパティを確認す�
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

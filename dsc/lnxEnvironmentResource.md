@@ -1,3 +1,14 @@
+---
+title:   Linux 用 DSC の nxEnvironment リソース
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Linux 用 DSC の nxEnvironment リソース
 
 PowerShell Desired State Configuration (DSC) の **nxEnvironment** リソースは、Linux ノード上でシステム環境変数を管理するためのメカニズムを備えています。
@@ -50,6 +61,6 @@ nxEnvironment EnvironmentExample
 
 
 
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=May16_HO3-->
 
 

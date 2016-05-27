@@ -1,12 +1,15 @@
 ---
-title: グラフィカルな日付の選択を作成する
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
+title:  グラフィカルな日付の選択を作成する
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  c1cb722c-41e9-4baa-be83-59b4653222e9
 ---
+
 # グラフィカルな日付の選択を作成する
 ユーザーが日付を選べる、グラフィカルな予定表スタイルのコントロールを備えたフォームを作成するには、Windows PowerShell 3.0 以降のリリースを使用します。
 
@@ -131,12 +134,12 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ```
 
 ## 参照
-[Hey Scripting Guy: これらの PowerShell GUI の例が機能しない理由](http://go.microsoft.com/fwlink/?LinkId=506644)
-[GitHub: Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-[Windows PowerShell Tip of the Week: グラフィカルな日付の選択を作成する](http://technet.microsoft.com/library/ff730942.aspx)
+[Hey Scripting Guy:  Why don’t these PowerShell GUI examples work? (Hey Scripting Guy: これらの PowerShell GUI の例が機能しない理由)](http://go.microsoft.com/fwlink/?LinkId=506644)
+[GitHub: Dave Wyatt's WinFormsExampleUpdates (GitHub: Dave Wyatt の WinFormsExampleUpdates)](https://github.com/dlwyatt/WinFormsExampleUpdates)
+[Windows PowerShell Tip of the Week: Creating a Graphical Date Picker (Windows PowerShell Tip of the Week: グラフィカルな日付の選択を作成する)](http://technet.microsoft.com/library/ff730942.aspx)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

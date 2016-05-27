@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell で用いられる名前の習得
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
+title:  Windows PowerShell で用いられる名前の習得
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  b4d0fd22-8298-4ee6-82ae-9b6f2907c986
 ---
+
 # Windows PowerShell で用いられる名前の習得
 大半のコマンドライン インターフェイスに共通して言えることは、コマンドやコマンド パラメーターの名前を覚えるために多大な時間と労力が必要であるという点です。 この問題の原因は、決まったパターンがほとんどなく、よく使用するコマンドやパラメーターを暗記する以外に覚える方法がないことです。
 
@@ -92,6 +95,6 @@ Windows PowerShell のコア コマンドレットでは、パラメーター名
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,3 +1,14 @@
+---
+title:   DSC ファイル リソース
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC ファイル リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -69,6 +80,7 @@ Configuration FileResourceDemo
 ```
 
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

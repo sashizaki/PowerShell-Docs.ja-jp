@@ -1,12 +1,15 @@
 ---
-title: コマンドに関する情報の取得
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
+title:  コマンドに関する情報の取得
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ---
+
 # コマンドに関する情報の取得
 Windows PowerShell の **Get-Command** コマンドレットは、現在のセッションで使用できるすべてのコマンドを取得します。 Windows PowerShell プロンプトで **Get-Command** と入力すると、次のような出力が得られます。
 
@@ -78,6 +81,6 @@ Get-Command -CommandType Script
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

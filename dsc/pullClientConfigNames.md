@@ -1,3 +1,14 @@
+---
+title:   構成名を使用したプル クライアントのセットアップ
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 構成名を使用したプル クライアントのセットアップ
 
 > 適用先: Windows PowerShell 5.0
@@ -38,16 +49,13 @@ PullClientConfigID
 
 このスクリプトを実行すると、**PullClientConfigID** という名前の新しい出力フォルダーが作成され、そこにメタ構成 MOF ファイルが格納されます。 この場合、メタ構成 MOF ファイルの名前は `localhost.meta.mof` になります。
 
-構成を適用するには、**Path** をメタ構成 MOF ファイルの場所に設定して **Set-DscLocalConfigurationManager** コマンドレットを呼び出します。 たとえば次のようになります。`Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`
+構成を適用するには、**Path** をメタ構成 MOF ファイルの場所に設定して **Set-DscLocalConfigurationManager** コマンドレットを呼び出します。 たとえば、次のように入力します。 `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`
 
 > **注**: 登録キーは、Web プル サーバーでのみ動作します。 SMB プル サーバーでは、引き続き **ConfigurationID** を使用する必要があります。 **ConfigurationID** を使用したプル サーバーの構成については、「[構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)」を参照してください。
 
 ## リソースおよびレポート サーバー
 
-LCM 構成で **ConfigurationRepositoryWeb** ブロックまたは **ConfigurationRepositoryShare** ブロックのみを指定した場合 (前の例はこれに当たります)、プル クライアントは、 
-指定されたサーバーからリソースをプルしますが、そのサーバーに対してレポートは送信しません。 構成、リソース、およびレポートについて単一のプル サーバーを使うことができますが、 
-レポートをセットアップするために ReportRepositoryWeb ブロックを作成する必要があります。 次の例は、単一のプル サーバーに対して構成とリソースをプルし、レポート データを送信するように
-クライアントを設定するメタ構成を示しています。
+LCM 構成で **ConfigurationRepositoryWeb** ブロックまたは **ConfigurationRepositoryShare** ブロックのみを指定した場合 (前の例はこれに当たります)、プル クライアントは、指定されたサーバーからリソースをプルしますが、そのサーバーに対してレポートは送信しません。 構成、リソース、およびレポートについて単一のプル サーバーを使うことができますが、レポートをセットアップするために **ReportRepositoryWeb** ブロックを作成する必要があります。 次の例は、単一のプル サーバーに対して構成とリソースをプルし、レポート データを送信するようにクライアントを設定するメタ構成を示しています。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -80,8 +88,7 @@ PullClientConfigID
 ```
 
 
-また、リソース用とレポート用にそれぞれ異なるプル サーバーを指定することもできます。 リソース サーバーを指定するには、**ResourceRepositoryWeb** ブロック (Web プル サーバーの場合) または  
-**ResourceRepositoryShare** ブロック (SMB プル サーバーの場合) を使用します。
+また、リソース用とレポート用にそれぞれ異なるプル サーバーを指定することもできます。 リソース サーバーを指定するには、**ResourceRepositoryWeb** (Web プル サーバーの場合) または **ResourceRepositoryShare** ブロック (SMB プル サーバーの場合) を使用します。
 レポート サーバーを指定するには、**ReportRepositoryWeb** ブロックを使用します。 レポート サーバーを SMB サーバーにすることはできません。
 次のメタ構成は、**CONTOSO-PullSrv** から構成を取得し、**CONTOSO-ResourceSrv** からリソースを取得し、**CONTOSO-ReportSrv** に状態レポートを送信するように、プル クライアントを構成します。
 
@@ -126,6 +133,7 @@ PullClientConfigID
 * [DSC Web プル サーバーのセットアップ](pullServer.md)
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

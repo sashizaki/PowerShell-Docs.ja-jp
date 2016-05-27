@@ -1,3 +1,14 @@
+---
+title:   リソース作成のチェックリスト
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # リソース作成のチェックリスト
 このチェックリストは、新しい DSC リソースを作成するときのベスト プラクティスの一覧です。
 ## リソース モジュールにすべてのリソースの .psd1 ファイルと schema.mof が含まれている 
@@ -33,8 +44,7 @@ xPSDesiredStateConfiguration
 - [read] プロパティは [required]、[key]、[write] のいずれとも共存できません。
 
 
-- [read] 以外の複数の条件が指定されている場合、[key] が優先されます。
-[write] と [required] が指定されている場合、[required] が優先されます。
+- [read] 以外の複数の修飾子が指定されている場合、[key] が優先されます。また [write] と [required] が指定されている場合、[required] が優先されます。
 -   ValueMap が適切な場所に指定されている
 
 次に例を示します。
@@ -44,7 +54,7 @@ xPSDesiredStateConfiguration
 
 -   フレンドリ名が指定され、DSC 名前付け規則に準拠している
 
-次に例を示します。 
+次に例を示します。
 ```[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]```
 
 -   すべてのフィールドにわかりやすい説明がある
@@ -83,8 +93,7 @@ If ($error.count –ne 0) {
     Throw “Module was not imported correctly. Errors returned: $error”
 }
 ```
-4   正の場合、リソースはべき等である 
-すべての DSC リソースの基本的な特性の 1 つに、べき等性があります。 これは、そのリソースを含む DSC 構成を複数回適用しても、最初に適用したときと結果が変わらないことを意味します。 たとえば、次の File リソースを含む構成を作成するとします。
+4   正の場合、リソースはべき等です。すべての DSC リソースの基本的な特性の 1 つに、べき等性があります。 これは、そのリソースを含む DSC 構成を複数回適用しても、最初に適用したときと結果が変わらないことを意味します。 たとえば、次の File リソースを含む構成を作成するとします。
 ```powershell
 File file {
     DestinationPath = "C:\test\test.txt"
@@ -101,8 +110,7 @@ File file {
 2.  リソースで構成を実行します。
 3.  **Test-DscConfiguration** が true を返すことを確認します。
 4.  目的の状態からリソースを変更します。
-5.  **Test-DscConfiguration** が false を返すことを確認します。
-レジストリ リソースを使用した具体的な例を次に示します。
+5.  **Test-DscConfiguration** が false を返すことを確認します。Registry リソースを使用した具体的な例を次に示します。
 1.  目的の状態でないレジストリ キーで開始します。
 2.  **Start-DscConfiguration** を構成で実行し、目的の状態にして正常終了することを確認します。
 3.  **Test-DscConfiguration** を実行し、true を返すことを確認します。
@@ -195,8 +203,7 @@ Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg"
 -   わかりやすい: 人間が判読できる、明瞭なエラー コード。
 -   正確である: 何が問題であるかを正確に説明します。
 -   建設的である: 問題を解決する方法を助言します。
--   礼儀正しい: ユーザーを非難したり、見下したりしません。
-エラーはリソース機能を直接実行したときに返されるものとは異なる可能性があるため、エンド ツー エンドのシナリオで (**Start-DscConfiguration** を使用して) エラーを確認します。 
+-   礼儀正しい: ユーザーを非難したり、見下したりしません。エラーはリソース機能を直接実行したときに返されるものとは異なる可能性があるため、エンド ツー エンドのシナリオで (**Start-DscConfiguration** を使用して) エラーを確認します。 
 
 ## ログ メッセージは、わかりやすく、有益な情報が含まれている (-verbose、-debug、および ETW ログを含む) ##
 リソースによって出力されるログがわかりやすく、ユーザーにとって価値のあるものであることを確認します。 リソースは、ユーザーに役立つ可能性のあるすべての情報を出力する必要がありますが、常にログが多い方がよいとは限りません。 冗長性および付加価値を提供しないデータを出力することは避ける必要があります。求めている情報を探して何百ものログ エントリを確認する必要がないようにします。 もちろん、ログを出力しないことはこの問題に対する適切な解決策ではありません。 
@@ -256,9 +263,7 @@ xRemoteFile の場合、ResourceTests.ps1 は次のように単純になりま�
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof 
 ```
-**ベスト プラクティス: リソース フォルダーにスキーマを生成するためのリソース デザイナー スクリプトが含まれている**
-各リソースに、リソースの mof スキーマを生成する、リソース デザイナー スクリプトを含める必要があります。 このファイルは、 <ResourceName>\ResourceDesignerScripts に配置し、Generate<ResourceName>Schema.ps1 という名前を付ける必要があります。
-xRemoteFile リソースの場合、このファイルの名前は GenerateXRemoteFileSchema.ps1 となり、次の内容が含まれます。
+**ベスト プラクティス: リソース フォルダーにスキーマを生成するためのリソース デザイナー スクリプトが含まれている**。各リソースに、リソースの mof スキーマを生成するリソース デザイナー スクリプトを含める必要があります。 このファイルは、 <ResourceName>\ResourceDesignerScripts に配置し、Generate<ResourceName>Schema.ps1 という名前を付ける必要があります。xRemoteFile リソースの場合、このファイルの名前は GenerateXRemoteFileSchema.ps1 となり、次の内容が含まれます。
 ```powershell 
 $DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
 $Uri = New-xDscResourceProperty -Name Uri -Type String -Attribute Required -Description 'Uri of a file which should be copied or downloaded. This parameter supports HTTP and HTTPS values.'
@@ -270,8 +275,7 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile 
 ```
-22  ベスト プラクティス: リソースによる -whatif のサポート
-リソースが "危険な" 操作を実行する場合は、-whatif 機能を実装することをお勧めします。 完了したら、whatif スイッチを使用しないでコマンドが実行された場合にどのようなことが発生するかについて、whatif 出力で正しく記述されていることを確認します。
+ベスト プラクティス: リソースによる -whatif のサポート。リソースが "危険な" 操作を実行する場合は、-whatif 機能を実装することをお勧めします。 完了したら、whatif スイッチを使用しないでコマンドが実行された場合にどのようなことが発生するかについて、whatif 出力で正しく記述されていることを確認します。
 また、-whatif スイッチが存在する場合は、その操作が実行されない (ノードの状態の変更は行われない) ことも確認します。 
 たとえば、File リソースをテストすると仮定します。 "test" の内容を持つファイル "test.txt" を作成する単純な構成を次に示します。
 ```powershell
@@ -317,6 +321,7 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 DSC リソースの作成およびテストに使用するガイドラインとベスト プラクティスを作成した場合は、ぜひ共有してください。
 
 
-<!--HONumber=Mar16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

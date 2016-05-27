@@ -1,3 +1,14 @@
+---
+title:   Linux 用 DSC の nxService リソース
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Linux 用 DSC の nxService リソース
 
 PowerShell Desired State Configuration (DSC) の **nxService** リソースは、Linux ノード上でサービスを管理するためのメカニズムを備えています。
@@ -48,4 +59,9 @@ Controller = "systemd"
 }
 }
 ```
-<!--HONumber=Mar16_HO1-->
+
+
+
+<!--HONumber=May16_HO3-->
+
+

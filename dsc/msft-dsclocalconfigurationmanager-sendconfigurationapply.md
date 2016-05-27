@@ -1,10 +1,14 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '構成ドキュメントを管理ノードに送信し、構成エージェントを使用して構成を適用します。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_sendconfigurationapply'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApply メソッド'
+title:  MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApply メソッド
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
+
 
 # MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApply メソッド
 
@@ -59,6 +63,6 @@ uint32 SendConfigurationApply(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

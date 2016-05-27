@@ -1,9 +1,12 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '特定のジョブに関連する構成エージェントの出力を取得します。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getconfigurationresultoutput'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド'
+title:  MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
 
 # MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド
@@ -62,6 +65,6 @@ uint32 GetConfigurationResultOutput(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

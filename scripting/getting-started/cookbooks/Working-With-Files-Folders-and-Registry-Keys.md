@@ -1,12 +1,15 @@
 ---
-title: ファイル、フォルダー、レジストリ キーの操作
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
+title:  ファイル、フォルダー、レジストリ キーの操作
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
 ---
+
 # ファイル、フォルダー、レジストリ キーの操作
 Windows PowerShell は、名詞の **Item** を使用して Windows PowerShell ドライブで検出された項目を参照します。 Windows PowerShell FileSystem プロバイダーを処理する場合、**Item** は、ファイル、フォルダー、または Windows PowerShell ドライブである可能性があります。 これらの項目を一覧表示して操作することは、ほとんどの管理設定において重要で基本的なタスクであるため、これらのタスクについては詳細に説明します。
 
@@ -118,19 +121,7 @@ Get-ChildItem の **Exclude** パラメーターを使用して、特定の項�
 
 **w&#42;32&#42;.dll** などの式で条件を満たす DLL がすべて見つかりますが、名前に "95" または "16" を含む Windows 95 および 16 ビットの Windows 互換性の DLL も返される可能性があります。 **Exclude** パラメーターにパターン **&#42;[9516]&#42;** を指定して使用し、名前にこれらの数字があるファイルを省略できます。
 
-<pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]*
-Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32
-Mode                LastWriteTime     Length Name
-----                -------------     ------ ----
--a---        2004-08-04   8:00 AM     174592 w32time.dll
--a---        2004-08-04   8:00 AM      22016 w32topl.dll
--a---        2004-08-04   8:00 AM     101888 win32spl.dll
--a---        2004-08-04   8:00 AM     172032 wldap32.dll
--a---        2004-08-04   8:00 AM     264192 wow32.dll
--a---        2004-08-04   8:00 AM      82944 ws2_32.dll
--a---        2004-08-04   8:00 AM      42496 wsnmp32.dll
--a---        2004-08-04   8:00 AM      22528 wsock32.dll
--a---        2004-08-04   8:00 AM      18432 wtsapi32.dll</pre>
+<pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]* Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32 Mode                LastWriteTime     Length Name ----                -------------     ------ ---- -a---        2004-08-04   8:00 AM     174592 w32time.dll -a---        2004-08-04   8:00 AM      22016 w32topl.dll -a---        2004-08-04   8:00 AM     101888 win32spl.dll -a---        2004-08-04   8:00 AM     172032 wldap32.dll -a---        2004-08-04   8:00 AM     264192 wow32.dll -a---        2004-08-04   8:00 AM      82944 ws2_32.dll -a---        2004-08-04   8:00 AM      42496 wsnmp32.dll -a---        2004-08-04   8:00 AM      22528 wsock32.dll -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll</pre>
 
 #### Get-ChildItem パラメーターの混在
 同じコマンドの中で、**Get-ChildItem** コマンドレットのパラメーターを複数使用できます。 パラメーターを混在させる前に、ワイルドカードのマッチングを理解しておいてください。 たとえば、次のコマンドは、結果を返しません。
@@ -163,6 +154,6 @@ Mode                LastWriteTime     Length Name
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

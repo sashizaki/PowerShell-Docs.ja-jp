@@ -1,12 +1,15 @@
 ---
-title: レジストリ エントリの操作
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
+title:  レジストリ エントリの操作
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  fd254570-27ac-4cc9-81d4-011afd29b7dc
 ---
+
 # レジストリ エントリの操作
 レジストリ エントリはキーのプロパティであり直接参照できないため、利用するときは少し異なる方法を取る必要があります。
 
@@ -143,8 +146,7 @@ PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 |String|任意の文字列値|
 |QWord|8 バイトのバイナリ データ|
 
-> [!NOTE]
-> **Path** パラメーターに値の配列を指定して、レジストリ エントリを複数の場所に追加できます。
+> [!NOTE]次のように **Path** パラメーターに値の配列を指定して、レジストリ エントリを複数の場所に追加できます。
 
 ```
 New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -PropertyType String -Value $PSHome
@@ -175,6 +177,6 @@ Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name 
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

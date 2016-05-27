@@ -1,3 +1,14 @@
+---
+title:   Linux 用 DSC の nxSshAuthorizedKeys リソース
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Linux 用 DSC の nxSshAuthorizedKeys リソース
 
 PowerShell Desired State Configuration (DSC) の **nxAuthorizedKeys** リソースは、特定のユーザーの承認された ssh キーを管理するためのメカニズムを備えています。
@@ -46,6 +57,6 @@ nxSshAuthorizedKeys myKey{
 
 
 
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=May16_HO3-->
 
 

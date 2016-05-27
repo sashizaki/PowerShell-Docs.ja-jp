@@ -1,3 +1,14 @@
+---
+title:   Linux 用 DSC の nxArchive リソース
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Linux 用 DSC の nxArchive リソース
 
 PowerShell Desired State Configuration (DSC) の **nxArchive** リソースは、Linux ノード上の特定のパスでアーカイブ (.tar、.zip) ファイルをアンパックするメカニズムを備えています。
@@ -53,6 +64,7 @@ nxArchive SyncWebDir
 ```
 
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

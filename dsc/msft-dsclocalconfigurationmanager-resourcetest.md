@@ -1,10 +1,14 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'プロバイダーに対して Test を直接実行します。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_resourcetest'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager クラスの ResourceTest メソッド'
+title:  MSFT_DSCLocalConfigurationManager クラスの ResourceTest メソッド
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
+
 
 # MSFT_DSCLocalConfigurationManager クラスの ResourceTest メソッド
 
@@ -32,8 +36,7 @@ uint32 ResourceTest(
 呼び出すリソースを含むモジュールの名前。
 
 *resourceProperty* \[in\]  
-ハッシュ テーブルで、リソースのプロパティ名と値を、それぞれキーと値として指定します。 「
-リソースのプロパティと種類を検出するには [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) コマンドレットを使用してください。
+ハッシュ テーブルで、リソースのプロパティ名と値を、それぞれキーと値として指定します。 リソースのプロパティと種類を検出するには、[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) コマンドレットを使用します。
 
 *InDesiredState* \[out\]  
 ターゲット ノードが目的の状態にある場合、制御が戻るときに、このプロパティは **true** に設定されます。
@@ -68,6 +71,6 @@ uint32 ResourceTest(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

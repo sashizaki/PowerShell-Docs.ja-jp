@@ -1,10 +1,14 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '以前の構成にロールバックします。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_rollback'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager クラスの RollBack メソッド'
+title: MSFT_DSCLocalConfigurationManager クラスの RollBack メソッド 
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
+
 
 # MSFT_DSCLocalConfigurationManager クラスの RollBack メソッド
 
@@ -55,6 +59,6 @@ uint32 RollBack(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

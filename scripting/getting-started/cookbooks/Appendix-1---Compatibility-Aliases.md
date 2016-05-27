@@ -1,12 +1,15 @@
 ---
-title: 付録 1 - 互換性のあるエイリアス
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 96ad921e-1a57-463e-8e60-424faf8b6ef8
+title:  付録 1 - 互換性のあるエイリアス
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  96ad921e-1a57-463e-8e60-424faf8b6ef8
 ---
+
 # 付録 1 - 互換性のあるエイリアス
 Windows PowerShell には、UNIX と Cmd のユーザーが使い慣れたコマンド名を Windows PowerShell でも使用できるようにするいくつかの移行エイリアスがあります。 最も一般的なエイリアスについて、対応する Windows PowerShell コマンド、および Windows PowerShell の標準エイリアス (存在する場合) と共に以下の表にまとめました。
 
@@ -34,6 +37,6 @@ Alias           cls                             Clear-Host
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

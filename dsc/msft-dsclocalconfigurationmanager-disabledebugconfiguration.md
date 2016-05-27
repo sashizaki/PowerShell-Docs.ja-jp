@@ -1,9 +1,12 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'デバッグ DSC 構成を無効にします。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_disabledebugconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager クラスの DisableDebugConfiguration メソッド'
+title:  MSFT_DSCLocalConfigurationManager クラスの DisableDebugConfiguration メソッド
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
 
 # MSFT_DSCLocalConfigurationManager クラスの DisableDebugConfiguration メソッド
@@ -51,6 +54,6 @@ uint32 DisableDebugConfiguration();
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

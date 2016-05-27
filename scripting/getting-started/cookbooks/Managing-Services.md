@@ -1,12 +1,15 @@
 ---
-title: サービスの管理
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
+title:  サービスの管理
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  7a410e4d-514b-4813-ba0c-0d8cef88df31
 ---
+
 # サービスの管理
 サービスに関連したさまざまなタスクを実行するために設計された 8 つの主要な Service コマンドレットがあります。 ここでは、サービスの実行状態の一覧表示と変更についてのみ取り上げていますが、**Get-Help &#42;-Service** でサービスに関連したコマンドレットを一覧表示したり、**Get-Help <Cmdlet-Name>** (**Get-Help New-Service** など) でサービスに関連した各種コマンドレットの情報を検索したりできます。
 
@@ -146,6 +149,6 @@ Windows Vista 以降のバージョンの Windows で、Set-Service を使用す
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

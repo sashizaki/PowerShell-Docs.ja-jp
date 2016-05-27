@@ -1,3 +1,14 @@
+---
+title:   PowerShell Desired State Configuration の部分構成
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # PowerShell Desired State Configuration の部分構成
 
 >適用先: Windows PowerShell 5.0
@@ -146,10 +157,11 @@ PartialConfigDemo
 ##参照 
 
 **概念**
-[Windows PowerShell Desired State Configuration プル サーバー](pullServer.md) 
-[ローカル構成マネージャーの構成](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
+[Windows PowerShell Desired State Configuration プル サーバーに関するページ](pullServer.md) 
+[Windows でのローカル構成マネージャーの構成に関するページ](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

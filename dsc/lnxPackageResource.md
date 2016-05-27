@@ -1,3 +1,14 @@
+---
+title:   Linux 用 DSC の nxPackage リソース
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Linux 用 DSC の nxPackage リソース
 
 PowerShell Desired State Configuration (DSC) の **nxPackage** リソースは、Linux ノード上でパッケージを管理するためのメカニズムを備えています。
@@ -50,6 +61,7 @@ nxPackage httpd
 ```
 
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

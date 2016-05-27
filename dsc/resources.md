@@ -1,3 +1,14 @@
+---
+title:   DSC リソース
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC リソース
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -12,6 +23,8 @@ Desired State Configuration (DSC) リソースは、DSC 構成の構成要素を
 - [カスタム DSC リソースのビルド](authoringResource.md)
 - [Linux 用組み込み DSC リソース](lnxBuiltInResources.md)
 
-<!--HONumber=Feb16_HO4-->
+
+
+<!--HONumber=May16_HO3-->
 
 

@@ -1,3 +1,8 @@
+---
+タイトル: 複合リソース: リソースとしての DSC 構成の使用 ms.date: 2016-05-16 キーワード: powershell、DSC 説明:  
+ms.topic:  記事 作成者: eslesar マネージャー: dongill ms.prod:  powershell
+---
+
 # 複合リソース: リソースとしての DSC 構成の使用
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -183,6 +188,7 @@ configuration RenameVM
 * [Windows PowerShell Desired State Configuration の概要](overview.md)
 
 
-<!--HONumber=Feb16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

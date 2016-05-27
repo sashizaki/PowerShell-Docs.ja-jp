@@ -1,3 +1,14 @@
+---
+title:   Linux 用 Desired State Configuration (DSC) の概要
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Linux 用 Desired State Configuration (DSC) の概要
 
 このトピックでは、Linux 用 PowerShell Desired State Configuration (DSC) の使用を開始する方法について説明します。 DSC に関する一般的な情報については、「[Windows PowerShell Desired State Configuration の概要](overview.md)」を参照してください。
@@ -114,7 +125,7 @@ $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Aut
 * "プッシュ" モードの場合、ユーザーの資格情報は Linux コンピューターの root ユーザーである必要があります。
 * Linux 用 DSC では SSL/TLS 接続のみがサポートされているため、New-CimSession を使用するときは、-UseSSL パラメーターを $true に設定する必要があります。
 * OMI (DSC 用) で使用される SSL 証明書は、pemfile プロパティと keyfile プロパティを使用して `/opt/omi/etc/omiserver.conf` ファイルに指定します。
-[New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) コマンドレットを実行している Windows コンピューターでこの証明書が信頼されていない場合は、`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true` の各 CIMSession オプションを使用して証明書の検証を無視することを選択できます。
+[New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) コマンドレットを実行している Windows コンピューターでこの証明書が信頼されていない場合は、次の各 CIMSession オプションを使用して証明書の検証を無視することができます: `-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true`
 
 Linux ノードに DSC 構成をプッシュするには、次のコマンドを実行します。
 
@@ -173,6 +184,7 @@ Linux 用 DSC のメッセージのために次のログ ファイルが生成�
 |dsc.log|/opt/omi/var/log/|ローカル構成マネージャー (LCM) と DSC リソースの操作に関連するメッセージ。|
 
 
-<!--HONumber=Apr16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 

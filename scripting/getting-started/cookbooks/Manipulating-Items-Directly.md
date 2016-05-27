@@ -1,12 +1,15 @@
 ---
-title: 項目を直接操作する
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
+title:  項目を直接操作する
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  8cbd4867-917d-41ea-9ff0-b8e765509735
 ---
+
 # 項目を直接操作する
 ファイル システムのドライブ内のファイルやフォルダー、Windows PowerShell レジストリ ドライブのレジストリ キーなど、Windows PowerShell のドライブに表示される要素は、Windows PowerShell の*項目*と呼ばれます。 項目を操作するためのコマンドレットは、名前に **Item** という名詞の部分があります。
 
@@ -86,7 +89,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-レジストリ エントリを項目として処理することは便利ですが、レジストリ エントリへのパスを一意な方法で指定できません。 パスの表記法では、**Run** という名前のレジストリ サブキーと、**Run** サブキーの **(Default)** レジストリ エントリを区別しません。 さらに、レジストリ エントリの名前にバックスラッシュ (**\**) を含めることができるので、レジストリ エントリが項目の場合は、パスの表記法を使用して、**Windows\CurrentVersion\Run** という名前のレジストリ エントリと、そのパスに配置されているサブキーとを区別できません。
+レジストリ エントリを項目として処理することは便利ですが、レジストリ エントリへのパスを一意な方法で指定できません。 パスの表記法では、**Run** という名前のレジストリ サブキーと、**Run** サブキーの **(Default)** レジストリ エントリを区別しません。 さらに、レジストリ エントリの名前にバックスラッシュ (**\\**) を含めることができるので、レジストリ エントリが項目の場合、**Windows\CurrentVersion\Run** という名前のレジストリ エントリとそのパスに配置されているサブキーとを、パスの表記法を使用して区別することはできません。
 
 ### 既存の項目の名前を変更する (Rename-Item)
 ファイルまたはフォルダーの名前を変更するには、**Rename-Item** コマンドレットを使用します。 次のコマンドは、**file1.txt** ファイルの名前を **fileOne.txt** に変更します。
@@ -197,6 +200,6 @@ PS> Invoke-Item C:\boot.ini
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

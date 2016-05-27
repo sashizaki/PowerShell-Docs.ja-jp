@@ -1,12 +1,15 @@
 ---
-title: ユーザー設定の入力ボックスを作成する
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
+title:  ユーザー設定の入力ボックスを作成する
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  0b12e56c-299f-40ee-afbf-d30d23ed2565
 ---
+
 # ユーザー設定の入力ボックスを作成する
 Windows PowerShell 3.0 以降のリリースで、Microsoft .NET Framework フォーム作成機能を使用してカスタムのグラフィカル入力ボックスをスクリプト化します。
 
@@ -153,12 +156,12 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ```
 
 ## 参照
-[Hey Scripting Guy: これらの PowerShell GUI の例が機能しない理由](http://go.microsoft.com/fwlink/?LinkId=506644)
-[GitHub: Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-[Windows PowerShell Tip of the Week: ユーザー設定の入力ボックスを作成する](http://technet.microsoft.com/library/ff730941.aspx)
+[Hey Scripting Guy:  Why don’t these PowerShell GUI examples work? (Hey Scripting Guy: これらの PowerShell GUI の例が機能しない理由)](http://go.microsoft.com/fwlink/?LinkId=506644)
+[GitHub: Dave Wyatt's WinFormsExampleUpdates (GitHub: Dave Wyatt の WinFormsExampleUpdates)](https://github.com/dlwyatt/WinFormsExampleUpdates)
+[Windows PowerShell Tip of the Week: Creating a Custom Input Box (Windows PowerShell Tip of the Week: ユーザー設定の入力ボックスを作成する)](http://technet.microsoft.com/library/ff730941.aspx)
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

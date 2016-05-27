@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell ドライブの管理
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
+title:  Windows PowerShell ドライブの管理
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  bd809e38-8de9-437a-a250-f30a667d11b4
 ---
+
 # Windows PowerShell ドライブの管理
 *Windows PowerShell ドライブ*は、Windows PowerShell のファイル システム ドライブのようにアクセスできるデータ格納場所です。 Windows PowerShell プロバイダーは、ファイル システムのドライブ (C: および D: を含む)、レジストリ ドライブ (HKCU: および HKLM:)、および証明書ドライブ (Cert:) など、いくつかのドライブを作成して、独自の Windows PowerShell ドライブを作成できます。 これらのドライブは非常に便利ですが、Windows PowerShell 内でのみ利用可能です。 ファイル エクスプローラーや Cmd.exe など、他の Windows ツールを使用してアクセスすることはできません。
 
@@ -56,20 +59,11 @@ D          FileSystem    D:\
 
 レジストリ ハイブを表す Windows PowerShell ドライブを表示するには、**PSProvider** パラメーターを使用して、Windows PowerShell Registry プロバイダーによってサポートされる Windows PowerShell ドライブのみを表示します。
 
-<pre>PS> Get-PSDrive -PSProvider Registry
-Name       Provider      Root                                   CurrentLocation
-----       --------      ----                                   ---------------
-HKCU       Registry      HKEY_CURRENT_USER
-HKLM       Registry      HKEY_LOCAL_MACHINE</pre>
+<pre>PS> Get-PSDrive -PSProvider Registry Name       Provider      Root                                   CurrentLocation ----       --------      ----                                   --------------- HKCU       Registry      HKEY_CURRENT_USER HKLM       Registry      HKEY_LOCAL_MACHINE</pre>
 
 また、Windows PowerShell ドライブに標準的な Location コマンドレットを使用することもできます。
 
-<pre>PS> Set-Location HKLM:\SOFTWARE
-PS> Push-Location .\Microsoft
-PS> Get-Location
-パス
-----
-HKLM:\SOFTWARE\Microsoft</pre>
+<pre>PS> Set-Location HKLM:\SOFTWARE PS> Push-Location .\Microsoft PS> Get-Location Path ---- HKLM:\SOFTWARE\Microsoft</pre>
 
 ### 新しい Windows PowerShell ドライブの追加 (New-PSDrive)
 **New-PSDrive** コマンドを使用して、独自の Windows PowerShell ドライブを追加できます。 **New-PSDrive** コマンドの構文を取得するには、**Get-Command** コマンドに **Syntax** パラメーターを指定して入力します。
@@ -101,18 +95,13 @@ Name       Provider      Root                                   CurrentLocation
 Office     FileSystem    C:\Program Files\Microsoft Offic...
 ```
 
-> [!NOTE]
-> 一般的に、パスは大文字と小文字が区別されません。
+> [!NOTE]一般的に、パスは大文字と小文字が区別されません。
 
 すべての Windows PowerShell ドライブと同様に、名前の後にコロン (**:**) を指定して、新しい Windows PowerShell ドライブを参照します。
 
 Windows PowerShell ドライブにより、多数のタスクが簡単になります。 たとえば、Windows レジストリ内の最も重要なキーのいくつかが、極端に長いパスを持っていて、アクセスが煩雑で覚えにくいものがあります。 重要な設定情報が **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion** にあります。 CurrentVersion レジストリ キーの項目を表示して変更するために、次のように入力して、そのキーのルートになる Windows PowerShell ドライブを作成できます。
 
-<pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
-indows\CurrentVersion
-Name       Provider      Root                                   CurrentLocation
-----       --------      ----                                   ---------------
-cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
+<pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W indows\CurrentVersion Name       Provider      Root                                   CurrentLocation ----       --------      ----                                   --------------- cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
 
 **cvkey:** ドライブに場所を移動するには、他のドライブと同様、次のように入力します。
 
@@ -120,10 +109,7 @@ cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
 
 または
 
-<pre>PS> Set-Location cvkey: -PassThru
-パス
-----
-cvkey:\</pre>
+<pre>PS> Set-Location cvkey: -PassThru Path ---- cvkey:\</pre>
 
 New-PsDrive コマンドレットでは、新しいドライブは現在の Windows PowerShell セッションにしか追加されません。 Windows PowerShell ウィンドウを閉じると、新しいドライブは失われます。 Windows PowerShell ドライブを保存するには、Export-Console コマンドレットを使用して、現在の Windows PowerShell セッションをエクスポートし、PowerShell.exe **PSConsoleFile** パラメーターを使用してインポートします。 または、新しいドライブを Windows PowerShell プロファイルに追加します。
 
@@ -157,6 +143,6 @@ Windows PowerShell は、マップされるネットワーク ドライブ、挿
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

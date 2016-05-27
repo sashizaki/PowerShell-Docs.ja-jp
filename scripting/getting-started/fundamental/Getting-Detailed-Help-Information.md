@@ -1,12 +1,15 @@
 ---
-title: 詳しいヘルプ情報の取得
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
+title:  詳しいヘルプ情報の取得
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6fb4daf7-8607-4a3e-b692-f77631adc1b9
 ---
+
 # 詳しいヘルプ情報の取得
 Windows PowerShell には、Windows PowerShell の概念と言語について説明した詳しいヘルプ トピックが含まれています。 また、各コマンドレットおよびプロバイダーに関するヘルプ トピックや、多くの関数およびスクリプトに関するヘルプ トピックもあります。
 
@@ -173,6 +176,6 @@ Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

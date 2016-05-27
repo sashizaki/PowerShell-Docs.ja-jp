@@ -1,22 +1,29 @@
+---
+title:   ノードの相互依存関係の指定
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # ノードの相互依存関係の指定
 
 > 適用先: Windows PowerShell 5.0
 
-DSC には、**WaitForAll**、**WaitForAny**、**WaitForSome** などの特別なリソースが用意されています。このリソースを構成で使用すると、他のノードの構成への依存関係を指定することができます。 既定では、
-これらのリソースの動作は次のとおりです。
+DSC には、**WaitForAll**、**WaitForAny**、**WaitForSome** などの特別なリソースが用意されています。このリソースを構成で使用すると、他のノードの構成への依存関係を指定することができます。 これらのリソースの動作は次のとおりです。
 
 * **WaitForAll**: **NodeName** プロパティで定義されているすべてのターゲット ノードで、指定されたリソースが目的の状態である場合に成功します。
 * **WaitForAny**: **NodeName** プロパティで定義されているターゲット ノードの少なくとも 1 つで、指定されたリソースが目的の状態である場合に成功します。
-* **WaitForSome**: **NodeName** プロパティのほか、**NodeCount** プロパティも指定します。 リソースは、 
-NodeName プロパティで定義されたノードの最小数 (NodeCount で指定) で目的の状態である場合に成功します。 
+* **WaitForSome**: **NodeName** プロパティのほか、**NodeCount** プロパティも指定します。 リソースは、**NodeName** プロパティで定義されたノードの最小数 (**NodeCount** で指定) で目的の状態になった場合に成功します。 
 
 ## WaitForXXXX リソースの使用
 
-**WaitForXXXX** リソースを使用するには、待機する DSC リソースとノードを指定する、そのリソースの種類のリソース ブロックを作成します。 その後、構成の他のリソース ブロックで **DependsOn** プロパティを使用して、
-**WaitForXXXX** ノードで指定されている条件が成功するのを待ちます。
+**WaitForXXXX** リソースを使用するには、待機する DSC リソースとノードを指定する、そのリソースの種類のリソース ブロックを作成します。 その後、構成の他のリソース ブロックで **DependsOn** プロパティを使用して、**WaitForXXXX** ノードで指定されている条件が成功するのを待ちます。
 
-たとえば、次の構成では、ターゲット ノードは **MyDC** ノード上の **xADDomain** リソースが完了するまで 15 秒間隔で 30 回試行しながら待機した後、 
-ドメインに参加できるようになります。
+たとえば、次の構成では、ターゲット ノードは **MyDC** ノード上の **xADDomain** リソースが完了するまで 15 秒間隔で 30 回試行しながら待機した後、ドメインに参加できるようになります。
 
 ```PowerShell
 Configuration JoinDomain
@@ -53,6 +60,8 @@ Configuration JoinDomain
 * [DSC リソース](resources.md)
 * [ローカル構成マネージャーの構成](metaConfig.md)
 
-<!--HONumber=Apr16_HO4-->
+
+
+<!--HONumber=May16_HO3-->
 
 

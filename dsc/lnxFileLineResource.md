@@ -1,3 +1,14 @@
+---
+title:   Linux 用 DSC の nxFileLine リソース
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # Linux 用 DSC の nxFileLine リソース
 
 PowerShell Desired State Configuration (DSC) の **nxFileLine** リソースは、Linux ノード上で構成ファイルの行を管理するためのメカニズムを備えています。
@@ -41,6 +52,6 @@ nxFileLine DoNotRequireTTY
 
 
 
-<!--HONumber=Feb16_HO4-->
+<!--HONumber=May16_HO3-->
 
 

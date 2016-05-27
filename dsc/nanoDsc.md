@@ -1,35 +1,41 @@
+---
+title:   DSC on Nano Server の使用
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # DSC on Nano Server の使用
 
 > 適用先: Windows PowerShell 5.0
 
-**DSC on Nano Server** は、Windows Server 2016 メディアの `NanoServer\Packages` フォルダーに含まれるオプションのパッケージです。 このパッケージをインストールするには、Nano Server の VHD を作成するときに、
-**New-NanoServerImage** 関数の **Package** パラメーターの値として **Microsoft-NanoServer-DSC-Package** を指定します。 たとえば、仮想マシンの VHD を作成する場合、
-コマンドは次のようになります。
+**DSC on Nano Server** は、Windows Server 2016 メディアの `NanoServer\Packages` フォルダーに含まれるオプションのパッケージです。 このパッケージをインストールするには、Nano Server の VHD を作成するときに、**New-NanoServerImage** 関数の **Packages** パラメーターの値として **Microsoft-NanoServer-DSC-Package** を指定します。 たとえば、仮想マシンの VHD を作成する場合、コマンドは次のようになります。
 
 ```powershell
 New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -BasePath .\Base -TargetPath .\Nano1\Nano.vhd -ComputerName Nano1 -Packages Microsoft-NanoServer-DSC-Package
 ```
 
-Nano Server のインストールと使用、および PowerShell リモート処理による Nano Server の管理方法については、 
-[「Getting Started with Nano Server (Nano Server の概要)」を参照してください。](https://technet.microsoft.com/en-us/library/mt126167.aspx).
+Nano Server のインストールと使用、および PowerShell リモート処理による Nano Server の管理方法については、「[Getting Started with Nano Server (Nano Server の概要)](https://technet.microsoft.com/en-us/library/mt126167.aspx)」を参照してください。
 
 
 ## Nano Server で使用できる DSC 機能
 
- Nano Server でサポートされる API のセットは、通常版の Windows Server と比べると限定的であるため、当面の間、DSC on Nano Server では、 
- すべての SKU で DSC が動作している、完全に機能するパリティを利用できません。 DSC on Nano Server は現在開発中であり、まだ完全な機能ではありません。
+ Nano Server でサポートされる API のセットは、通常版の Windows Server と比べると限定的であるため、当面の間、DSC on Nano Server では、すべての SKU で DSC が動作する、完全に機能するパリティを利用できません。 DSC on Nano Server は現在開発中であり、まだ完全な機能ではありません。
  
  現在、Nano Server で使用できる DSC 機能は次のとおりです。 
 
 
 * プッシュ モードとプル モード
+
 * 以下を含む、通常版の Windows Server に存在するすべての DSC コマンドレット 
   * [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx)
-  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx)
-        
+  * [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx)   
   * [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)
-  * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)
-        
+  * [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx)       
   * [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx)
   * [Stop-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143542.aspx)
   * [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx)
@@ -37,56 +43,79 @@ Nano Server のインストールと使用、および PowerShell リモート�
   * [Publish-DscConfiguraiton](https://technet.microsoft.com/en-us/library/mt517875.aspx) 
   * [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541.aspx)
   * [Restore-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407383.aspx)
-
   * [Remove-DscConfigurationDocument](https://technet.microsoft.com/en-us/library/mt143544.aspx)
-    
   * [Get-DscConfigurationStatus](https://technet.microsoft.com/en-us/library/mt517868.aspx)
-        
   * [Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx)
   * [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
   * [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx)
+  * [New-DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)    
 
-  * [New-DscChecksum](https://technet.microsoft.com/en-us/library/dn521622.aspx)
-    
-* 構成のコンパイル (「[DSC 構成](configurations.md)」を参照))
-* メタ構成のコンパイル (「[ローカル構成マネージャーの構成](metaConfig.md)」を参照))
-* [ユーザー資格情報を指定した DSC の実行 (RunAs)](runAsUser.md)
-* クラスベースのリソース (「[PowerShell クラスを使用したカスタム DSC リソースの記述](authoringResourceClass.md)」を参照))
+* 構成のコンパイル (「[DSC 構成](configurations.md)」を参照)
+
+  **問題:** 構成のコンパイル中にパスワードの暗号化 (「[MOF ファイルのセキュリティ保護](securemof.md)」を参照) が機能しません。
+
+* メタ構成のコンパイル (「[ローカル構成マネージャーの構成](metaConfig.md)」を参照)
+
+* ユーザー コンテキストでのリソースの実行 ([ユーザーの資格情報を指定した DSC の実行 (RunAs)](runAsUser.md) に関するページを参照)
+
+* クラスベースのリソース (「[PowerShell クラスを使用したカスタム DSC リソースの記述](authoringResourceClass.md)」を参照)
+
+* DSC リソースのデバッグ (「[DSC リソースのデバッグ](debugresource.md)」を参照)
+  
+  **問題:** リソースで PsDscRunAsCredential が使用されている場合に機能しません (「[ユーザの資格情報を指定して DSC を実行する](runAsUser.md)」を参照)
+
 * [ノードの相互依存関係の指定](crossNodeDependencies.md) 
+
 * [リソースのバージョン管理](sxsResource.md)
-* イベント
-* プル クライアント (構成とリソース) (「[構成 ID を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」を参照))
+
+* プル クライアント (構成とリソース) (「[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」を参照)
+
 * [部分構成 (プルとプッシュ)](partialConfigs.md)
+
 * [プル サーバーへの報告](reportServer.md) 
+
 * MOF 暗号化
+
 * イベント ログ
+
 * Azure Automation DSC レポート
 
-
-* 機能しているリソース
+* 完全に機能するリソース
   * [アーカイブ](archiveResource.md)
   * [環境](environmentResource.md)
   * [ファイル](fileResource.md)
-  * [グループ](groupResource.md)
-  * GroupSet
   * [ログ](logResource.md)
   * ProcessSet
   * [Registry](registryResource.md)
-  * [サービス](serviceResource.md)
-  * ServiceSet
   * [スクリプト](scriptResource.md)
-  * [User](userResource.md)
   * WindowsPackageCab
   * [WindowsProcess](windowsProcessResource.md)
+  * WaitForAll (「[ノードの相互依存関係の指定](crossNodeDependencies.md)」を参照)
+  * WaitForAny (「[ノードの相互依存関係の指定](crossNodeDependencies.md)」を参照)
+  * WaitForSome (「[ノードの相互依存関係の指定](crossNodeDependencies.md)」を参照)
 
-  * WaitForAll (「[ノードの相互依存関係の指定](crossNodeDependencies.md)」を参照))
-  * WaitForAny (「[ノードの相互依存関係の指定](crossNodeDependencies.md)」を参照))
-  * WaitForSome (「[ノードの相互依存関係の指定](crossNodeDependencies.md)」を参照))
+* 部分的に機能するリソース
+  * [グループ](groupResource.md)
+  * GroupSet
+  
+  **問題:** 特定のインスタンスを 2 回呼び出す (同じ構成を 2 回実行する) と上記のリソースでエラーが発生します
+  
+  * [サービス](serviceResource.md)
+  * ServiceSet
+  
+  **問題:** サービス (状態) の開始/停止でのみ正常に動作します。 StartupType、資格情報、説明などのほかのサービス属性を変更しようとするとエラーが発生します。 次のようなエラーがスローされます。
+  
+  *型 [management.managementobject] が見つかりません。この型を含むアセンブリが読み込まれていることを確認してください。*
+  
+* 機能しないリソース
+  * [User](userResource.md)
+  
 
 ## Nano Server で使用できない DSC 機能
 
 現在、Nano Server で使用できない DSC 機能は次のとおりです。
 
+* 暗号化パスワードを使用した MOF ドキュメントの暗号化解除 
 * プル サーバー - 現在、Nano Server でプル サーバーをセットアップすることはできません
 * 動作する機能の一覧に含まれていないもの
 
@@ -98,6 +127,8 @@ DSC カスタム リソースを運用環境に展開する前に、エンド �
 ## 参照
 - [Getting Started with Nano Server (Nano Server の概要)](https://technet.microsoft.com/en-us/library/mt126167.aspx)
 
-<!--HONumber=Apr16_HO4-->
+
+
+<!--HONumber=May16_HO3-->
 
 

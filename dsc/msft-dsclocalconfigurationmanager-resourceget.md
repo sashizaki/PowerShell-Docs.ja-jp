@@ -1,9 +1,12 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: 'プロバイダーに対して Get を直接実行します。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_resourceget'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager クラスの ResourceGet メソッド'
+title: MSFT_DSCLocalConfigurationManager クラスの ResourceGet メソッド 
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
 
 # MSFT_DSCLocalConfigurationManager クラスの ResourceGet メソッド
@@ -32,8 +35,7 @@ uint32 ResourceGet(
 呼び出すリソースを含むモジュールの名前。
 
 *resourceProperty* \[in\]  
-ハッシュ テーブルで、リソースのプロパティ名と値を、それぞれキーと値として指定します。 「
-リソースのプロパティと種類を検出するには [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) コマンドレットを使用してください。
+ハッシュ テーブルで、リソースのプロパティ名と値を、それぞれキーと値として指定します。 リソースのプロパティと種類を検出するには、[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) コマンドレットを使用します。
 
 *configurations* \[out\]  
 制御が戻ったとき、その構成の埋め込みインスタンスが含まれます。
@@ -68,6 +70,6 @@ uint32 ResourceGet(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

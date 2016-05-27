@@ -1,9 +1,12 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '構成状態の履歴を取得します。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getconfigurationstatus'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager クラスの GetConfigurationStatus メソッド'
+title:  MSFT_DSCLocalConfigurationManager クラスの GetConfigurationStatus メソッド
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
 
 # MSFT_DSCLocalConfigurationManager クラスの GetConfigurationStatus メソッド
@@ -24,8 +27,7 @@ uint32 GetConfigurationStatus(
 ----------
 
 *All* \[in\]  
-**true** の場合、コンピューターで実行中のすべての構成についての情報が返されます
-(構成の適用や整合性チェックも含む)。
+**true** の場合、コンピューターで実行中のすべての構成 (構成の適用や整合性チェックも含む) についての情報が返されます
 
 *configurationStatus* \[out\]  
 制御が戻ったとき、設定を定義する **MSFT_DSCConfigurationStatus** クラスの埋め込みインスタンスが含まれます。
@@ -60,6 +62,6 @@ uint32 GetConfigurationStatus(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

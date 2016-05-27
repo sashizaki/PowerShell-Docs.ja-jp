@@ -1,12 +1,15 @@
 ---
-title: Process コマンドレットによるプロセスの管理
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
+title:  Process コマンドレットによるプロセスの管理
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  5038f612-d149-4698-8bbb-999986959e31
 ---
+
 # Process コマンドレットによるプロセスの管理
 Windows PowerShell で Process コマンドレットを使用して、Windows PowerShell のローカル プロセスおよびリモート プロセスを管理できます。
 
@@ -174,6 +177,6 @@ Windows PowerShell には、プロセスを開始 (または再開) するため
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,10 +1,14 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '構成エージェントを制御するために使用するローカル構成マネージャーの設定を取得します。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_getmetaconfiguration'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager クラスの GetMetaConfiguration メソッド'
+title:  MSFT_DSCLocalConfigurationManager クラスの GetMetaConfiguration メソッド
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
+
 
 # MSFT_DSCLocalConfigurationManager クラスの GetMetaConfiguration メソッド
 
@@ -55,6 +59,6 @@ uint32 GetMetaConfiguration(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

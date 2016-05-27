@@ -1,12 +1,15 @@
 ---
-title: 複数のオブジェクトのタスクを繰り返す (ForEach-Object)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
+title:  複数のオブジェクトのタスクを繰り返す (ForEach-Object) 
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6697a12d-2470-4ed6-b5bb-c35e5d525eb6
 ---
+
 # 複数のオブジェクトのタスクを繰り返す (ForEach-Object)
 **ForEach-Object** コマンドレットは、現在のパイプライン オブジェクトのスクリプト ブロックと $_ 記述子を使用して、パイプライン内の各オブジェクトのコマンドを実行できるようにします。 これは、いくつかの複雑なタスクを実行するために使用できます。
 
@@ -49,6 +52,6 @@ eeSpace = ($_.FreeSpace)/1024.0/1024.0}
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

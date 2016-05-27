@@ -1,12 +1,15 @@
 ---
-title: Windows PowerShell について
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 979654ae-7994-47f8-be43-d79e7a140143
+title:  Windows PowerShell について
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  979654ae-7994-47f8-be43-d79e7a140143
 ---
+
 # Windows PowerShell について
 Windows PowerShell は、従来からの問題を排除し、新しい機能を追加することにより、コマンド ラインおよびスクリプト環境を改善することを目的として設計されています。
 
@@ -14,19 +17,18 @@ Windows PowerShell は、従来からの問題を排除し、新しい機能を�
 Windows PowerShell では、簡単にその機能を見つけられます。 たとえば、Windows サービスを表示したり変更したりするコマンドレットの一覧を検索するには、次のように入力します。
 
 ```
-get-command *-service
+Get-Command *-Service
 ```
 
 タスクを実行するコマンドレットが見つかったら、Get-Help コマンドレットを使用して、コマンドレットの詳細を確認することができます。 たとえば、Get-Service コマンドレットのヘルプを表示するには、次のように入力します。
 
 ```
-get-help get-service
+Get-Help Get-Service
 ```
-
-そのコマンドレットの出力を完全に理解するには、Get-Member コマンドレットにその出力をパイプ処理します。 たとえば、次のコマンドは、Get-Service コマンドレットによって出力されるオブジェクトのメンバーについての情報を表示します。
+ほとんどのコマンドレットでは、操作を加えてから表示用のテキストに変換できるオブジェクトが出力されます。 そのコマンドレットの出力を完全に理解するには、Get-Member コマンドレットにその出力をパイプ処理します。 たとえば、次のコマンドは、Get-Service コマンドレットによって出力されるオブジェクトのメンバーについての情報を表示します。
 
 ```
-get-service | get-member
+Get-Service | Get-Member
 ```
 
 ## Consistency
@@ -51,6 +53,6 @@ Windows PowerShell では、対話的なコマンドの入力から、それを�
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

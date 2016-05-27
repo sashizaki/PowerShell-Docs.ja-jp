@@ -1,12 +1,15 @@
 ---
-title: パイプラインからオブジェクトを削除する (Where-Object)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
+title:  パイプラインからオブジェクトを削除する (Where-Object) 
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  01df8b22-2d22-4e2c-a18d-c004cd3cc284
 ---
+
 # パイプラインからオブジェクトを削除する (Where-Object)
 Windows PowerShell では、考えていた数よりも多くのオブジェクトが生成され、パイプラインに渡されることがよくあります。 **Format** コマンドレットを使用して、特定のオブジェクトのプロパティを指定し、表示することができます。しかし、これはオブジェクト全体を表示から削除するという問題には役立ちません。 パイプラインの終了前に、オブジェクトをフィルタリングすることによって、最初に生成されたオブジェクトのサブセット上でのみアクションを実行できます。
 
@@ -15,8 +18,7 @@ Windows PowerShell には、**Where-Object** コマンドレットがありま�
 ### Where-Object を使用して単純なテストを実行する
 **FilterScript** の値は、true または false に評価される*スクリプト ブロック* (中かっこ {} で囲まれた Windows PowerShell の 1 つ以上のコマンド) です。 これらのスクリプト ブロックはごく単純にすることができますが、作成するには別の Windows PowerShell の概念である比較演算子について知っておく必要があります。 比較演算子は、演算子の両辺のアイテムを比較します。 比較演算子は、'-' 文字で始まり、名前が続きます。 基本的な比較演算子は、ほとんどの種類のオブジェクトで機能します。 より高度な比較演算子の中には、テキストまたは配列でのみ機能するものもあります。
 
-> [!NOTE]
-> 既定では、テキストで使用する場合、Windows PowerShell の比較演算子は、大文字小文字を区別しません。
+> [!NOTE]既定では、テキストで使用する場合、Windows PowerShell の比較演算子は大文字小文字を区別しません。
 
 解析の考慮事項のため、<、>、= などのシンボルは、比較演算子として使用されません。 代わりに、比較演算子は文字で構成されます。 基本的な比較演算子を次の表に挙げます。
 
@@ -98,10 +100,10 @@ Get-WmiObject -Class Win32_SystemDriver | Where-Object -FilterScript { ($_.State
 |-and|論理積。両辺が true の場合は true|(1 -eq 1) -and (2 -eq 2)|
 |-or|論理和。どちらかの辺が true の場合は true|(1 -eq 1) -or (1 -eq 2)|
 |-not|論理否定。true と false を逆にする|-not (1 -eq 2)|
-|\!|論理否定。true と false を逆にする|!(1 -eq 2)|
+|!|論理否定。true と false を逆にする|!(1 -eq 2)|
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

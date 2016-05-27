@@ -1,10 +1,14 @@
 ---
-DCS.appliesToProduct: 'WindowsServer\_Dev'
-Description: '構成ドキュメントを管理ノードに送信し、構成エージェントの使用を開始して構成を適用します。 GetConfigurationResultOutput を使用して、結果の出力を取得します。'
-MS-HAID: 'cimwin32a.MSFT_DSCLocalConfigurationManager\_sendconfigurationapplyasync'
-MSHAttr: 'PreferredLib:/library'
-title: 'MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApplyAsync メソッド'
+title:  MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApplyAsync メソッド
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
 ---
+
 
 # MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApplyAsync メソッド
 
@@ -63,6 +67,6 @@ uint32 SendConfigurationApplyAsync(
 
 
 
-<!--HONumber=Apr16_HO2-->
+<!--HONumber=May16_HO3-->
 
 

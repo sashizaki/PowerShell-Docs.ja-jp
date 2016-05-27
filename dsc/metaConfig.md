@@ -1,3 +1,14 @@
+---
+title:   ローカル構成マネージャーの構成
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # ローカル構成マネージャーの構成
 
 > 適用先: Windows PowerShell 5.0
@@ -138,8 +149,7 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 ## 参照 
 
 ### 概念
-Windows PowerShell Desired State Configuration の概要 
-[DSC Web プル サーバーのセットアップ](pullServer.md) 
+Windows PowerShell Desired State Configuration の概要[DSC Web プル サーバーのセットアップ](pullServer.md) 
 [Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)](metaConfig4.md) 
 
 ### その他のリソース
@@ -147,6 +157,7 @@ Windows PowerShell Desired State Configuration の概要
 [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md) 
 
 
-<!--HONumber=Mar16_HO4-->
+
+<!--HONumber=May16_HO3-->
 
 

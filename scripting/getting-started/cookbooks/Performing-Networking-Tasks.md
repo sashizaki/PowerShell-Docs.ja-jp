@@ -1,12 +1,15 @@
 ---
-title: ネットワーク関連タスクの実行
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
+title:  ネットワーク関連タスクの実行
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  a43cc55f-70c1-45c8-9467-eaad0d57e3b5
 ---
+
 # ネットワーク関連タスクの実行
 TCP/IP は最も一般的に使用されるネットワーク プロトコルです。そのため、TCP/IP に関連したタスクは、最も低レベルのネットワーク プロトコル管理タスクと言えます。 このセクションでは、Windows PowerShell および WMI を使用して、これらのタスクを実行します。
 
@@ -21,19 +24,11 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -C
 
 <pre>IPAddress
 ---------
-{192.168.1.80}
-{192.168.148.1}
-{192.168.171.1}
-{0.0.0.0}</pre>
+{192.168.1.80} {192.168.148.1} {192.168.171.1} {0.0.0.0}</pre>
 
 中かっこで囲まれている理由を理解するには、Get-Member コマンドレットを使用して **IPAddress** プロパティを調べます。
 
-<pre>PS> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName . | Get-Member -Name IPAddress
-TypeName: System.Management.ManagementObject#root\cimv2\Win32_NetworkAdapter
-構成
-Name      MemberType Definition
-----      ---------- ----------
-IPAddress Property   System.String[] IPAddress {get;}</pre>
+<pre>PS> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName . | Get-Member -Name IPAddress TypeName: System.Management.ManagementObject#root\cimv2\Win32_NetworkAdapter Configuration Name      MemberType Definition ----      ---------- ---------- IPAddress Property   System.String[] IPAddress {get;}</pre>
 
 各ネットワーク アダプターの IPAddress プロパティは、実際には配列です。 Definition 列に示されている中かっこは、**IPAddress** が **System.String** 値ではなく、**System.String** 値の配列であることを示しています。
 
@@ -157,8 +152,7 @@ DHCP リースを更新する場合は、**ReleaseDHCPLease** メソッドの代
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=true and DHCPEnabled=true" -ComputerName . | Where-Object -FilterScript {$_.DHCPServer -contains "192.168.1.254"} | ForEach-Object -Process {$_.ReleaseDHCPLease()}
 ```
 
-> [!NOTE]
-> これらのメソッドをリモート コンピューターに対して使用する場合は、接続に使用されているアダプターのリースが解放または更新されると、リモート システムへのアクセスが失われる可能性があることにご注意ください。
+> [!NOTE]これらのメソッドをリモート コンピューターに対して使用する場合は、接続に使用されているアダプターのリースが解放または更新されると、リモート システムへのアクセスが失われる可能性があることにご注意ください。
 
 #### すべてのアダプターの DHCP リースの解放および更新
 **Win32_NetworkAdapterConfiguration** の **ReleaseDHCPLeaseAll** メソッドと **RenewDHCPLeaseAll** メソッドを使用すれば、すべてのアダプターを対象に DHCP アドレスをグローバルに解放または更新できます。 ただし、リースの解放と更新をグローバルに実行する場合、実行の対象は、特定のアダプターではなく、WMI クラスになります。したがって、コマンドは特定のアダプターに適用するのではなく、WMI クラスに適用する必要があります。
@@ -225,6 +219,6 @@ net use B: \\FPS01\users
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 

@@ -1,12 +1,15 @@
 ---
-title: Out-* コマンドレットを使用してデータをリダイレクトする
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
+title:  Out-* コマンドレットを使用したデータのリダイレクト
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  2a4acd33-041d-43a5-a3e9-9608a4c52b0c
 ---
+
 # Out-* コマンドレットを使用してデータをリダイレクトする
 Windows PowerShell には、データ出力を直接制御できるようにするコマンドレットがいくつかあります。 これらのコマンドレットには、2 つの重要な特性があります。
 
@@ -61,8 +64,7 @@ Name    : explorer
 
 これは、すべての **Out** コマンドレットに適用されます。 **Out** コマンドレットは、常にパイプラインの末尾に置く必要があります。
 
-> [!NOTE]
-> すべての **Out** コマンドレットは、コンソール ウィンドウに有効な書式設定 (行の長さの制限を含む) を使用して、テキストとして出力を表示します。
+> [!NOTE]すべての **Out** コマンドレットは、コンソール ウィンドウに有効な書式設定 (行の長さの制限を含む) を使用して、出力をテキストとして表示します。
 
 #### コンソール出力のページング (Out-Host)
 既定では、Windows PowerShell は、データをホスト ウィンドウに送信します。実際にそのことを実行するのが Out-Host コマンドレットです。 Out-Host コマンドレットの主な用途は、前に説明したようにデータのページングです。 たとえば、次のコマンドは、Out-Host を使用して、Get-Command コマンドレットの出力をページングします。
@@ -153,6 +155,6 @@ Get-Command | Out-File -FilePath c:\temp\output.txt -Width 2147483647
 
 
 
-<!--HONumber=Apr16_HO1-->
+<!--HONumber=May16_HO2-->
 
 
