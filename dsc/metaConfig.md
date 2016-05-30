@@ -22,7 +22,7 @@ ms.prod:  powershell
 
 特殊な種類の構成を使用して、これらの各動作を指定するように LCM を構成します。 ここでは、LCM を構成する方法について説明します。
 
-> **注**: このトピックは、Windows PowerShell 5.0 で導入された LCM に適用されます。 Windows PowerShell 4.0 での LCM の構成については、「Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)」を参照してください。
+> **注**: このトピックは、Windows PowerShell 5.0 で導入された LCM に適用されます。 Windows PowerShell 4.0 での LCM の構成については、「[Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)](metaconfig4.md)」を参照してください。
 
 ## LCM 構成の作成と適用
 
@@ -42,7 +42,7 @@ configuration LCMConfig
 } 
 ```
 
-標準構成と同様に、構成を呼び出し、実行して、構成 MOF を作成します (構成 MOF の作成については、「Windows PowerShell Desired State Configuration の概要」を参照してください)。 通常の構成とは異なり、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを呼び出すことによって LCM 構成を適用しません。 代わりに、Set-DscLocalConfigurationManager コマンドレットを呼び出して、パラメーターとして構成 MOF のパスを指定します。 構成を適用した後、[Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) コマンドレットを呼び出して、LCM のプロパティを確認できます。
+標準構成と同様に、構成を呼び出し、実行して、構成 MOF を作成します (構成 MOF の作成については、「[構成のコンパイル](configurations#compiling-the-configuration)」を参照してください)。 通常の構成とは異なり、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを呼び出すことによって LCM 構成を適用しません。 代わりに、[Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) コマンドレットを呼び出して、パラメーターとして構成 MOF のパスを指定します。 構成を適用した後、[Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) コマンドレットを呼び出して、LCM のプロパティを確認できます。
 
 LCM 構成には、限定されたリソースのセットに対するブロックのみを含めることができます。 前の例では、呼び出されたリソースは、**Settings** のみです。 その他の使用可能なリソースは次のとおりです。
 
@@ -149,11 +149,15 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 ## 参照 
 
 ### 概念
-Windows PowerShell Desired State Configuration の概要[DSC Web プル サーバーのセットアップ](pullServer.md) 
+[Windows PowerShell Desired State Configuration の概要](overview.md)
+ 
+[DSC Web プル サーバーのセットアップ](pullServer.md) 
+
 [Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)](metaConfig4.md) 
 
 ### その他のリソース
 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) 
+
 [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md) 
 
 

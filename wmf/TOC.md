@@ -2,7 +2,7 @@
 
 # [インストールの詳細](requirements.md)
 
-# [既知の製品の非互換性](productincompat.md)
+# [製品の互換性の状態](productincompat.md)
 
 # [フィードバック](feedback.md)
 
@@ -97,4 +97,8 @@
 
 # [既知の問題と制限事項](limitation_overview.md)
 ## [Desired State Configuration (DSC) の既知の問題](limitation_dsc.md)
-<!--HONumber=Mar16_HO3-->
+
+
+<!--HONumber=May16_HO4-->
+
+
