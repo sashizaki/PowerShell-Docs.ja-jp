@@ -156,7 +156,7 @@ AdditionalData       : {}
 既定では、レポートは **JobID** 順に並べ替えられます。 最新のレポートを取得するには、**StartTime** プロパティを降順にしてレポートを並べ替えることができます。そして、配列の最初の要素を取得します。
 
 ```powershell
-$reportsByStartTime = $reports | Sort-Object -Property StartTime -Descending
+$reportsByStartTime = $reports | Sort-Object {$_."StartTime" -as [DateTime] } -Descending
 $reportMostRecent = $reportsByStartTime[0]
 ```
 
@@ -225,6 +225,6 @@ InDesiredState    : True
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=May16_HO4-->
 
 
