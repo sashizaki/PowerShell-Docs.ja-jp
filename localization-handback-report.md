@@ -1,11 +1,26 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [dsc\pullClientConfigID.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClientConfigID.md) | InSyncHandedBackSuccess | [Details](#f6569220fbafdba49bac9ac9dca3e6036a7aad0873)
 
 ## Item Details
+##### <a name='f6569220fbafdba49bac9ac9dca3e6036a7aad0873'></a> Source: [dsc\pullClientConfigID.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/pullClientConfigID.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\pullClientConfigID.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ce23fc5fa9af45489d5d4f7d2db05c7c818231fd/dsc/pullClientConfigID.md)
+* Handoff File: [pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/2414e68b8a8ce394a5a33f2c290497810bb1f053/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.ja-jp.xlf)
+* Handoff Datetime: 2016-05-16 23:00:51
+* Handoff Reason: Include
+* Archive File: [pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/faa6d753f52e10bf5f7fab051cdc2366a95d2230/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.ja-jp.xlf)
+* Archive Datetime: 2016-05-17 13:25:11
+* Handback File: [pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f2eb0497583a55d99d9ad49a0c2cce2950b57197/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/pullClientConfigID.1b955603d220e49bbe52711bacf74c46feec04cc.ja-jp.xlf)
+* Handback Datetime: 2016-06-03 10:09:24
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
