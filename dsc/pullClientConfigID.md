@@ -1,10 +1,21 @@
+---
+title:   構成 ID を使用したプル クライアントのセットアップ
+ms.date:  2016-05-16
+keywords:  powershell,DSC
+description:  
+ms.topic:  article
+author:  eslesar
+manager:  dongill
+ms.prod:  powershell
+---
+
 # 構成 ID を使用したプル クライアントのセットアップ
 
 > 適用先: Windows PowerShell 5.0
 
-各ターゲット ノードに対し、プル モードを使用するように指示し、プル サーバーに接続して構成を取得するための URL を指定する必要があります。 これを行うには、必要な情報を備えるようにローカル構成マネージャー (LCM) を構成する必要があります。 LCM を構成するには、**DSCLocalConfigurationManager** 属性で修飾された特別な種類の構成を作成します。 LCM の構成の詳細については、「[ローカル構成マネージャーの構成](metaConfig.md)」を参照してください。.
+各ターゲット ノードに対し、プル モードを使用するように指示し、プル サーバーに接続して構成を取得するための URL を指定する必要があります。 これを行うには、必要な情報を備えるようにローカル構成マネージャー (LCM) を構成する必要があります。 LCM を構成するには、**DSCLocalConfigurationManager** 属性で修飾された特別な種類の構成を作成します。 LCM の構成の詳細については、「[ローカル構成マネージャーの構成](metaConfig.md)」をご覧ください。
 
-> **注**: このトピックは、PowerShell 5.0 に適用されます。 PowerShell 4.0 でのプル クライアントのセットアップについては、「[PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID4.md)」を参照してください。
+> **注**: このトピックは、PowerShell 5.0 に適用されます。 PowerShell 4.0 でのプル クライアントのセットアップについては、「[PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID4.md)」をご覧ください。
 
 次のスクリプトは、"CONTOSO-PullSrv" という名前のサーバーから構成をプルするように LCM を構成します。
 
@@ -31,9 +42,9 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-このスクリプトでは、**ConfigurationRepositoryWeb** ブロックにプル サーバーを定義しています。 **ServerURL**
+このスクリプトでは、**ConfigurationRepositoryWeb** ブロックでプル サーバーを定義しています。 **ServerURL**
 
-このスクリプトを実行すると、**PullClientConfigID** という名前の新しい出力フォルダーが作成され、そこにメタ構成 MOF ファイルが格納されます。 この場合、メタ構成 MOF ファイルの名前は次のようになります。 `localhost.meta.mof`.
+このスクリプトを実行すると、**PullClientConfigID** という名前の新しい出力フォルダーが作成され、そこにメタ構成 MOF ファイルが格納されます。 この場合、メタ構成 MOF ファイルの名前は `localhost.meta.mof` になります。
 
 構成を適用するには、**Path** をメタ構成 MOF ファイルの場所に設定して **Set-DscLocalConfigurationManager** コマンドレットを呼び出します。 たとえば、次のように入力します。 `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`
 
@@ -43,7 +54,7 @@ PullClientConfigID
 
 ## SMB プル サーバー
 
-SMB サーバーから構成をプルするようにクライアントをセットアップするには、**ConfigurationRepositoryShare** ブロックを使用します。 **ConfigurationRepositoryShare** ブロックでは、**SourcePath** プロパティを設定して、サーバーへのパスを指定します。 次のメタ構成は、**SMBPullServer** という名前の SMB プル サーバーからプルするようにターゲット ノードを構成します。.
+SMB サーバーから構成をプルするようにクライアントをセットアップするには、**ConfigurationRepositoryShare** ブロックを使用します。 **ConfigurationRepositoryShare** ブロックでは、**SourcePath** プロパティを設定して、サーバーへのパスを指定します。 次のメタ構成は、**SMBPullServer** という名前の SMB プル サーバーからプルするようにターゲット ノードを構成します。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -70,12 +81,9 @@ PullClientConfigID
 
 ## リソースおよびレポート サーバー
 
-LCM 構成で **ConfigurationRepositoryWeb** ブロックまたは **ConfigurationRepositoryShare** ブロックのみを指定した場合 (前の例はこれに当たります)、プル クライアントは、指定されたサーバーからリソースをプルしますが、そのサーバーに対してレポートは送信しません。 
-resources from the specified server, but it will not send reports to it. 構成、リソース、およびレポートについて単一のプル サーバーを使うことができますが、レポートをセットアップするために  
-ReportRepositoryWeb ブロックを作成する必要があります。 
+LCM 構成で **ConfigurationRepositoryWeb** ブロックまたは **ConfigurationRepositoryShare** ブロックのみを指定した場合 (前の例はこれに当たります)、プル クライアントは、指定されたサーバーからリソースをプルしますが、そのサーバーに対してレポートは送信しません。 構成、リソース、およびレポートについて単一のプル サーバーを使うことができますが、レポートをセットアップするために **ReportRepositoryWeb** ブロックを作成する必要があります。 
 
 次の例は、単一のプル サーバーに対して構成とリソースをプルし、レポート データを送信するようにクライアントを設定するメタ構成を示しています。
-pull server.
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -107,8 +115,7 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-また、リソース用とレポート用にそれぞれ異なるプル サーバーを指定することもできます。 リソース サーバーを指定するには、**ResourceRepositoryWeb** ブロック (Web プル サーバーの場合) または  
-**ResourceRepositoryShare** ブロック (SMB プル サーバーの場合) を使用します。
+また、リソース用とレポート用にそれぞれ異なるプル サーバーを指定することもできます。 リソース サーバーを指定するには、**ResourceRepositoryWeb** (Web プル サーバーの場合) または **ResourceRepositoryShare** ブロック (SMB プル サーバーの場合) を使用します。
 レポート サーバーを指定するには、**ReportRepositoryWeb** ブロックを使用します。 レポート サーバーを SMB サーバーにすることはできません。
 次のメタ構成は、**CONTOSO-PullSrv** から構成を取得し、**CONTOSO-ResourceSrv** からリソースを取得し、**CONTOSO-ReportSrv** に状態レポートを送信するように、プル クライアントを構成します。
 
@@ -151,6 +158,7 @@ PullClientConfigID
 * [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=May16_HO3-->
 
 
