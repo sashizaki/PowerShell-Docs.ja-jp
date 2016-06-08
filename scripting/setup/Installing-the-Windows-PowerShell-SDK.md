@@ -19,21 +19,21 @@ ms.assetid:  c3636b45-61aa-4720-85f0-58312c4fc8f9
   <section>
     <title>Windows 8 および Windows Server 2012 用 Windows PowerShell 3.0 SDK のインストール</title>
     <content>
-      <para>Windows PowerShell 3.0 は、Windows 8 および Windows Server 2012 で自動的にインストールされます。 さらに、Windows 8 SDK の一部としての Windows PowerShell 3.0 の参照アセンブリもダウンロードおよびインストールできます。 これらのアセンブリでは、Windows PowerShell 3.0 のコマンドレット、プロバイダー、およびホスト プログラムを記述できます。 Windows 8 用 Windows SDK をインストールすると、 Windows PowerShell アセンブリが自動的に \Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0 にインストールされます。 詳細については、<externalLink><linkText>Windows 8 SDK のダウンロード サイト </linkText><linkUri>http://msdn.microsoft.com/windows/hardware/hh852363.aspx</linkUri></externalLink> を参照してください。 Windows PowerShell のサンプル コードもデベロッパー センターで入手できます。 詳細については、<externalLink><linkText>デベロッパー センター サイト </linkText><linkUri>http://code.msdn.microsoft.com/windowsdesktop/</linkUri></externalLink> のデスクトップ サンプル コード ページを参照してください。 </para>
-      <para>さらに、Windows PowerShell 3.0 には Windows PowerShell 2.0 SDK との下位互換性があり、これには多くのサンプルコードが含まれます。 Windows PowerShell 2.0 SDK をダウンロードする方法の詳細については、以下を参照してください、 (2.0 のサンプル コードは Windows 8 および Windows PowerShell 3.0 と互換性がありますが、Windows PowerShell 2.0 を Windows 8 プラットフォームにインストールすることはできません)。 </para>
+      <para>Windows PowerShell 3.0 は、Windows 8 および Windows Server 2012 で自動的にインストールされます。 さらに、Windows 8 SDK の一部としての Windows PowerShell 3.0 の参照アセンブリもダウンロードおよびインストールできます。 これらのアセンブリでは、Windows PowerShell 3.0 のコマンドレット、プロバイダー、およびホスト プログラムを記述できます。 Windows 8 用 Windows SDK をインストールすると、Windows PowerShell アセンブリが自動的に \Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0 にインストールされます。 詳細については、<externalLink><linkText>Windows 8 SDK のダウンロード サイト (</linkText><linkUri>http://msdn.microsoft.com/windows/hardware/hh852363.aspx</linkUri></externalLink>) をご覧ください。 Windows PowerShell のサンプル コードもデベロッパー センターで入手できます。 詳細については、「<externalLink><linkText>デベロッパー センター サイト」 (</linkText><linkUri>http://code.msdn.microsoft.com/windowsdesktop/</linkUri></externalLink>) のデスクトップ サンプル コード ページをご覧ください。 </para>
+      <para>さらに、Windows PowerShell 3.0 には Windows PowerShell 2.0 SDK との下位互換性があり、これには多くのサンプルコードが含まれます。 Windows PowerShell 2.0 SDK をダウンロードする方法の詳細については、以下をご覧ください。 (2.0 のサンプル コードは Windows 8 および Windows PowerShell 3.0 と互換性がありますが、Windows PowerShell 2.0 を Windows 8 プラットフォームにインストールすることはできません)。 </para>
     </content>
   </section>
   <section>
     <title>Windows 7 および Windows Server 2008 R2 用 Windows PowerShell 3.0 SDK のインストール</title>
     <content>
-      <para>Windows ７ および Windows Server 2008 R2 には、PowerShell 2.0 が自動的にインストールされています。 さらに、これらのシステムに PowerShell 3.0 をインストールできます。 詳細については、「<link xlink:href="6fbb0409-5a54-48ec-95e6-7f8b7d8c4969">Windows PowerShell のインストール</link>」を参照してください。 前述のように、Windows 7 および Windows Server 2008 R2 で Windows 8 SDK をインストールすることもできます。</para>
+      <para>Windows ７ および Windows Server 2008 R2 には、PowerShell 2.0 が自動的にインストールされています。 さらに、これらのシステムに PowerShell 3.0 をインストールできます。 詳細については、「<link xlink:href="6fbb0409-5a54-48ec-95e6-7f8b7d8c4969">Windows PowerShell のインストール</link>」をご覧ください。 前述のように、Windows 7 および Windows Server 2008 R2 で Windows 8 SDK をインストールすることもできます。</para>
     </content>
   </section>
   <section>
     <title>Windows 7、Vista、XP、Server 2003、および Server 2008 用 Windows PowerShell 2.0 SDK のインストール</title>
     <content>
       <para><token>mshshort</token> 2.0 SDK は、コマンドレット、プロバイダー、およびホスト アプリケーションを記述するために必要な参照アセンブリ、およびコードの記述を開始するときに開始点として使用できる C# サンプル コードを提供します。 </para>
-      <para>この SDK をインストールするには、<externalLink><linkText>Windows PowerShell 2.0 SDK</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=184611</linkUri></externalLink>を参照してください。</para>
+      <para>この SDK をインストールするには、「<externalLink><linkText>Windows PowerShell 2.0 SDK」 (</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=184611</linkUri></externalLink>) をご覧ください。</para>
     </content>
     <sections>
       <section>
@@ -41,7 +41,7 @@ ms.assetid:  c3636b45-61aa-4720-85f0-58312c4fc8f9
         <content>
           <para>参照アセンブリは、既定で次の場所にインストールされます: <codeInline>c:\Program \reference Assemblies\Microsoft\WindowsPowerShell\V1.0</codeInline></para>
           <alert class="note">
-            <para>Windows PowerShell 1.0 のインストールには、Windows PowerShell 2.0 のアセンブリに対してコンパイルされるコードを読み込むことができません。 ただし、Windows PowerShell 1.0 のアセンブリに対してコンパイルされるコードは Windows PowerShell 2.0 のインストールに読み込むことができます。</para>
+            <para>Windows PowerShell 1.0 のインストールには、Windows PowerShell 2.0 のアセンブリに対してコンパイルされるコードを読み込むことができません。 ただし、Windows PowerShell 1.0 のアセンブリに対してコンパイルされるコードは、Windows PowerShell 2.0 のインストールに読み込むことができます。</para>
           </alert>
         </content>
       </section>
@@ -86,7 +86,7 @@ ms.assetid:  c3636b45-61aa-4720-85f0-58312c4fc8f9
                 </definition>
                 <definedTerm>StopProcessSample01</definedTerm>
                 <definition>
-                  <para><parameterReference>PassThru</parameterReference>パラメーターを実装し、 <codeEntityReference>Overload:System.Management.Automation.Cmdlet.ShouldProcess</codeEntityReference> および <codeEntityReference>Overload:System.Management.Automation.Cmdlet.ShouldContinue</codeEntityReference> メソッドの呼び出しによってユーザーからのフィードバックを要求する方法を示します。 ユーザーは、コマンドレットがオブジェクトを返すように強制するときに <parameterReference>PassThru</parameterReference> を指定します。 </para>
+                  <para><parameterReference>PassThru</parameterReference>パラメーターを実装し、<codeEntityReference>Overload:System.Management.Automation.Cmdlet.ShouldProcess</codeEntityReference> および <codeEntityReference>Overload:System.Management.Automation.Cmdlet.ShouldContinue</codeEntityReference> メソッドの呼び出しによってユーザーからのフィードバックを要求する方法を示します。 ユーザーは、コマンドレットがオブジェクトを返すように強制するときに <parameterReference>PassThru</parameterReference> を指定します。</para>
                 </definition>
                 <definedTerm>StopProcessSample02</definedTerm>
                 <definition>
@@ -151,11 +151,11 @@ ms.assetid:  c3636b45-61aa-4720-85f0-58312c4fc8f9
               <definitionTable>
                 <definedTerm>Runspace01</definedTerm>
                 <definition>
-                  <para><codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> クラスを使用して <externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> コマンドレットを同期的に実行する方法を示します。 <externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> コマンドレットはローカル コンピューターで実行されている各プロセスに対して <codeEntityReference>T:System.Diagnostics.Process</codeEntityReference> オブジェクトを返します。</para>
+                  <para><codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> クラスを使用して <externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> コマンドレットを同期的に実行する方法を示します。 <externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> コマンドレットは、ローカル コンピューターで実行されている各プロセスに対して <codeEntityReference>T:System.Diagnostics.Process</codeEntityReference> オブジェクトを返します。</para>
                 </definition>
                 <definedTerm>Runspace02</definedTerm>
                 <definition>
-                  <para><codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> クラスを使用して <externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> コマンドレットと <externalLink><linkText>Sort-Object</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkID=113403</linkUri></externalLink> コマンドレットを同期的に実行する方法を示します。 <externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> コマンドレットはローカル コンピューターで実行されている各プロセスに対して <codeEntityReference>T:System.Diagnostics.Process</codeEntityReference> オブジェクトを返し、Sort-Object は <codeEntityReference>P:System.Diagnostics.Process.Id</codeEntityReference> プロパティに基づいてオブジェクトを並べ替えます。 これらのコマンドの結果は、<codeEntityReference>T:System.Windows.Forms.DataGridView</codeEntityReference> コントロールを使用して表示されます。</para>
+                  <para><codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> クラスを使用して <externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> コマンドレットと <externalLink><linkText>Sort-Object</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkID=113403</linkUri></externalLink> コマンドレットを同期的に実行する方法を示します。 <externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> コマンドレットは、ローカル コンピューターで実行されている各プロセスに対して <codeEntityReference>T:System.Diagnostics.Process</codeEntityReference> オブジェクトを返し、Sort-Object は <codeEntityReference>P:System.Diagnostics.Process.Id</codeEntityReference> プロパティに基づいてオブジェクトを並べ替えます。 これらのコマンドの結果は、<codeEntityReference>T:System.Windows.Forms.DataGridView</codeEntityReference> コントロールを使用して表示されます。</para>
                 </definition>
                 <definedTerm>Runspace03</definedTerm>
                 <definition>
@@ -167,11 +167,11 @@ ms.assetid:  c3636b45-61aa-4720-85f0-58312c4fc8f9
                 </definition>
                 <definedTerm>Runspace05</definedTerm>
                 <definition>
-                  <para><codeEntityReference>T:System.Management.Automation.Runspaces.InitialSessionState</codeEntityReference> オブジェクトにスナップインを追加して、実行空間が開かれたときにこのスナップインのコマンドレットを使用できるようにする方法を示します。 スナップインによって、<codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> オブジェクトを使用して同期的に実行される (<legacyLink xlink:href="7b48bf80-cbf0-4cb1-8d5b-3b8d06196598">GetProcessSample01 サンプル</legacyLink>によって定義される) Get-Proc コマンドレットが提供されます。</para>
+                  <para><codeEntityReference>T:System.Management.Automation.Runspaces.InitialSessionState</codeEntityReference> オブジェクトにスナップインを追加して、実行空間が開かれたときにこのスナップインのコマンドレットを使用できるようにする方法を示します。 このスナップインでは、<codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> オブジェクトを使用して同期的に実行される (<legacyLink xlink:href="7b48bf80-cbf0-4cb1-8d5b-3b8d06196598">GetProcessSample01 サンプル</legacyLink>によって定義される) Get-Proc コマンドレットが提供されます。</para>
                 </definition>
                 <definedTerm>Runspace06</definedTerm>
                 <definition>
-                  <para><codeEntityReference>T:System.Management.Automation.Runspaces.InitialSessionState</codeEntityReference> オブジェクトにモジュールを追加し、実行空間が開かれたときにこのモジュールが読み込まれるようにする方法を示します。 このモジュールによって、<codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> オブジェクトを使って同期的に実行される (<legacyLink xlink:href="481f557d-3344-4d33-b2da-4736a0165181">GetProcessSample02 サンプル</legacyLink>によって定義される) Get-Proc コマンドレットが提供されます。</para>
+                  <para><codeEntityReference>T:System.Management.Automation.Runspaces.InitialSessionState</codeEntityReference> オブジェクトにモジュールを追加し、実行空間が開かれたときにこのモジュールが読み込まれるようにする方法を示します。 このモジュールでは、<codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> オブジェクトを使って同期的に実行される (<legacyLink xlink:href="481f557d-3344-4d33-b2da-4736a0165181">GetProcessSample02 サンプル</legacyLink>によって定義される) Get-Proc コマンドレットが提供されます。</para>
                 </definition>
                 <definedTerm>Runspace07</definedTerm>
                 <definition>
@@ -187,7 +187,7 @@ ms.assetid:  c3636b45-61aa-4720-85f0-58312c4fc8f9
                 </definition>
                 <definedTerm>Runspace10</definedTerm>
                 <definition>
-                  <para>既定の最初のセッション状態を作成する方法、 <codeEntityReference>T:System.Management.Automation.Runspaces.InitialSessionState</codeEntityReference> にコマンドレットを追加する方法、 最初のセッション状態を使用する実行空間を作成する方法、および <codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> オブジェクトを使用してコマンドを実行する方法を示します。</para>
+                  <para>既定の最初のセッション状態を作成する方法、<codeEntityReference>T:System.Management.Automation.Runspaces.InitialSessionState</codeEntityReference> にコマンドレットを追加する方法、 最初のセッション状態を使用する実行空間を作成する方法、および <codeEntityReference>T:System.Management.Automation.PowerShell</codeEntityReference> オブジェクトを使用してコマンドを実行する方法を示します。</para>
                 </definition>
                 <definedTerm>Runspace11</definedTerm>
                 <definition>
@@ -214,7 +214,7 @@ ms.assetid:  c3636b45-61aa-4720-85f0-58312c4fc8f9
                 </definition>
                 <definedTerm>Host02</definedTerm>
                 <definition>
-                  <para>カスタム ホストの実装で <token>mshshort</token> ランタイムを使用するホスト アプリケーションを書き込む方法を示します。 ホスト アプリケーションはホストのカルチャをドイツ語に設定し、<externalLink><linkText>Get-Process</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> コマンドレットを実行して、pwrsh.exe を使用して確認できるものと同じ結果を表示し、最新のデータと時刻をドイツ語で印刷します。</para>
+                  <para>カスタム ホストの実装で <token>mshshort</token> ランタイムを使用するホスト アプリケーションを書き込む方法を示します。 ホスト アプリケーションはホストのカルチャをドイツ語に設定し、<externalLink><linkText>Get-Process </linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=113324</linkUri></externalLink> コマンドレットを実行して、pwrsh.exe を使用して確認できるものと同じ結果を表示し、最新のデータと時刻をドイツ語で印刷します。</para>
                 </definition>
                 <definedTerm>Host03</definedTerm>
                 <definition>
@@ -226,11 +226,11 @@ ms.assetid:  c3636b45-61aa-4720-85f0-58312c4fc8f9
                 </definition>
                 <definedTerm>Host05</definedTerm>
                 <definition>
-                  <para>コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する対話型コンソール ベースのホスト アプリケーションを構築する方法を示します。 このホスト アプリケーションでは、<externalLink><linkText>Enter-PsSession</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=135210</linkUri></externalLink> コマンドレットおよび <externalLink><linkText>Exit-PsSession</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=135212</linkUri></externalLink> コマンドレットを使用したリモート コンピューターへの呼び出しもサポートされます。</para>
+                  <para>コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する対話型コンソール ベースのホスト アプリケーションを構築する方法を示します。 このホスト アプリケーションでは、<externalLink><linkText>Enter-PsSession (</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=135210</linkUri></externalLink>) コマンドレットおよび <externalLink><linkText>Exit-PsSession (</linkText><linkUri>http://go.microsoft.com/fwlink/?LinkId=135212</linkUri></externalLink>) コマンドレットを使用したリモート コンピューターへの呼び出しもサポートされます。</para>
                 </definition>
                 <definedTerm>Host06</definedTerm>
                 <definition>
-                  <para>コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する対話型コンソール ベースのホスト アプリケーションを構築する方法を示します。 さらに、このサンプルでは、トークナイザー Api を使用して、ユーザーが入力したテキストの色を指定します。</para>
+                  <para>コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する対話型コンソール ベースのホスト アプリケーションを構築する方法を示します。 さらに、このサンプルでは、トークナイザー API を使用して、ユーザーが入力したテキストの色を指定します。</para>
                 </definition>
               </definitionTable>
             </content>
@@ -245,7 +245,7 @@ ms.assetid:  c3636b45-61aa-4720-85f0-58312c4fc8f9
                 </definition>
                 <definedTerm>AccessDBProviderSample02</definedTerm>
                 <definition>
-                  <para> <codeEntityReference>M:System.Management.Automation.Provider.DriveCmdletProvider.NewDrive(System.Management.Automation.PSDriveInfo)</codeEntityReference> メソッドおよび <codeEntityReference>M:System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive(System.Management.Automation.PSDriveInfo)</codeEntityReference> メソッドを上書きして New-PSDrive コマンドレットと Remove-PSDrive コマンドレットの呼び出しをサポートする方法を示します。 このサンプルのプロバイダー クラスは、<codeEntityReference>T:System.Management.Automation.Provider.DriveCmdletProvider</codeEntityReference> クラスから派生します。</para>
+                  <para> <codeEntityReference>M:System.Management.Automation.Provider.DriveCmdletProvider.NewDrive(System.Management.Automation.PSDriveInfo)</codeEntityReference> メソッドおよび <codeEntityReference>M:System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive(System.Management.Automation.PSDriveInfo)</codeEntityReference> メソッドを上書きして、New-PSDrive コマンドレットと Remove-PSDrive コマンドレットの呼び出しをサポートする方法を示します。 このサンプルのプロバイダー クラスは、<codeEntityReference>T:System.Management.Automation.Provider.DriveCmdletProvider</codeEntityReference> クラスから派生します。</para>
                 </definition>
                 <definedTerm>AccessDBProviderSample03</definedTerm>
                 <definition>

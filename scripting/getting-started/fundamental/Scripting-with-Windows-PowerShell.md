@@ -12,7 +12,7 @@ ms.assetid:  c425d27a-bb41-4947-8d73-ba5480bc8ee0
 
 # Windows PowerShell を使用したスクリプト
 
-Windows PowerShell® は、システム管理に重点を置いて設計されたタスクベースのコマンド ライン シェルおよびスクリプト言語です。 .NET Framework 上に構築された Windows PowerShell は、IT 技術者およびパワー ユーザーが Windows オペレーティング システムと Windows 上で実行するアプリケーションの管理の自動化を制御する際に役立ちます。
+Windows PowerShell® は、システム管理に重点を置いて設計されたタスクベースのコマンド ライン シェルおよびスクリプト言語です。 .NET Framework 上に構築された Windows PowerShell は、IT 技術者およびパワー ユーザーが Windows オペレーティング システムと Windows 上で実行するアプリケーションの管理の自動化を制御するときに役立ちます。
 
 *コマンドレット*と呼ばれる Windows PowerShell コマンドを使用すると、コマンド ラインからコンピューターを管理できます。 Windows PowerShell の*プロバイダー*を使用すると、レジストリや証明書ストアなどのデータ ストアに、ファイル システムにアクセスするのと同じくらい簡単にアクセスすることができます。 さらに、Windows PowerShell には、豊富な式パーサーと、完全に開発されたスクリプト言語があります。
 

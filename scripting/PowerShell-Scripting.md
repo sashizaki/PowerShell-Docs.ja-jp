@@ -27,11 +27,11 @@ ms.prod:  powershell
 ##  3.[PowerShell ファースト ステップ ガイド](getting-started/Getting-Started-with-Windows-PowerShell.md)
 このセクションでは、PowerShell を初めて使うユーザーがこの製品を使用するために必要なすべての情報が提供されます。  
 このセクションの内容:
--   PowerShell をセットアップして「PowerShell ファースト ステップ ガイド」で示されているすべてのコードとコマンド スニペットを実行および試行するのに必要なステップを示す「[Windows PowerShell を使用する準備を行う](getting-started/Getting-Ready-to-Use-Windows-PowerShell.md)」。
--  PowerShell の説明および PowerShell の使用にあたって必要な基本的な概念を示す「[基本的な概念](getting-started/fundamental-concepts.md)」ガイド。
--  PowerShell の基礎を説明する一連の「[&lt;概念&gt;を理解する](getting-started/understanding-concepts-reference.md)」トピック。
--  ファイル、ファイル システム、レジストリ、プロセス、サービスのような日常的なサブジェクトに関する標準的なタスクを実行するレシピを提供する、一連の「[&lt;使用方法&gt;の基本的なクックブック ](getting-started/cookbooks/basic-cookbooks-reference.md)」トピック。
--  [PowerShell について学習する](getting-started/more-powershell-learning.md)ためのその他のソースへの精選されたガイド 。
+-   PowerShell をセットアップして「PowerShell ファースト ステップ ガイド」で示されているすべてのコードとコマンド スニペットを実行および試行するのに必要なステップを示す [Windows PowerShell を使用する準備を行う](getting-started/Getting-Ready-to-Use-Windows-PowerShell.md)。
+-  PowerShell の説明および PowerShell の使用にあたって必要な基本的概念を示す「[基本的な概念](getting-started/fundamental-concepts.md)」ガイド。
+-  PowerShell の基礎を説明する一連の [&lt;概念&gt;を理解する](getting-started/understanding-concepts-reference.md) トピック。
+-  ファイル、ファイル システム、レジストリ、プロセス、サービスのような日常的なサブジェクトに関する標準的なタスクを実行するレシピを提供する、一連の「[&lt;使用方法&gt;の基本的なクックブック](getting-started/cookbooks/basic-cookbooks-reference.md)」トピック。
+-  [PowerShell について学習する](getting-started/more-powershell-learning.md) ためのその他のソースへの精選されたガイド。
 
 ##  4.[コア PowerShell](core-powershell/core-powershell.md)
 このセクションには、PowerShell の詳細なガイドや参考資料がすべて含まれています。  
