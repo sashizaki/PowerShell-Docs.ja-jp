@@ -1,39 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 2
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [scripting\core-powershell\ise\The-ISEOptions-Object.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/ise/The-ISEOptions-Object.md) | InSyncHandedBackSuccess | [Details](#272749d487a59ccf5eb30352dc902591228746f3141)
- [scripting\core-powershell\web-access\troubleshooting-access-problems-in-windows-powershell-web-access.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md) | InSyncHandedBackSuccess | [Details](#6366ec9c49f721b758b6a520f68cf2b3c5ee0caf156)
 
 ## Item Details
-##### <a name='272749d487a59ccf5eb30352dc902591228746f3141'></a> Source: [scripting\core-powershell\ise\The-ISEOptions-Object.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/ise/The-ISEOptions-Object.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [scripting\core-powershell\ise\The-ISEOptions-Object.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/6c582ffd749c2cf085e0c763b3a86830285fff13/scripting/core-powershell/ise/The-ISEOptions-Object.md)
-* Handoff File: [The-ISEOptions-Object.c3be3e584cddf0fbee4dc195cc7dc8959113e07b.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/277d3870c490627e169732d9bb57aa8898c03bca/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/The-ISEOptions-Object.c3be3e584cddf0fbee4dc195cc7dc8959113e07b.ja-jp.xlf)
-* Handoff Datetime: 2016-05-12 23:18:55
-* Handoff Reason: Include
-* Archive File: [The-ISEOptions-Object.c3be3e584cddf0fbee4dc195cc7dc8959113e07b.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/faa6d753f52e10bf5f7fab051cdc2366a95d2230/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/The-ISEOptions-Object.c3be3e584cddf0fbee4dc195cc7dc8959113e07b.ja-jp.xlf)
-* Archive Datetime: 2016-05-17 13:25:11
-* Handback File: [The-ISEOptions-Object.c3be3e584cddf0fbee4dc195cc7dc8959113e07b.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b184c54e64d45cf09cfa678b6300e232dfa3f50b/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/The-ISEOptions-Object.c3be3e584cddf0fbee4dc195cc7dc8959113e07b.ja-jp.xlf)
-* Handback Datetime: 2016-06-10 09:58:03
-* [Back to Top](#report-top)
-
-##### <a name='6366ec9c49f721b758b6a520f68cf2b3c5ee0caf156'></a> Source: [scripting\core-powershell\web-access\troubleshooting-access-problems-in-windows-powershell-web-access.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [scripting\core-powershell\web-access\troubleshooting-access-problems-in-windows-powershell-web-access.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/6c582ffd749c2cf085e0c763b3a86830285fff13/scripting/core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md)
-* Handoff File: [troubleshooting-access-problems-in-windows-powershell-web-access.1c7875e668a4ef265134d93052c69465d51413d7.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/277d3870c490627e169732d9bb57aa8898c03bca/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/troubleshooting-access-problems-in-windows-powershell-web-access.1c7875e668a4ef265134d93052c69465d51413d7.ja-jp.xlf)
-* Handoff Datetime: 2016-05-12 23:18:55
-* Handoff Reason: Include
-* Archive File: [troubleshooting-access-problems-in-windows-powershell-web-access.1c7875e668a4ef265134d93052c69465d51413d7.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/faa6d753f52e10bf5f7fab051cdc2366a95d2230/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/troubleshooting-access-problems-in-windows-powershell-web-access.1c7875e668a4ef265134d93052c69465d51413d7.ja-jp.xlf)
-* Archive Datetime: 2016-05-17 13:25:11
-* Handback File: [troubleshooting-access-problems-in-windows-powershell-web-access.1c7875e668a4ef265134d93052c69465d51413d7.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/b184c54e64d45cf09cfa678b6300e232dfa3f50b/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/troubleshooting-access-problems-in-windows-powershell-web-access.1c7875e668a4ef265134d93052c69465d51413d7.ja-jp.xlf)
-* Handback Datetime: 2016-06-10 09:58:03
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
