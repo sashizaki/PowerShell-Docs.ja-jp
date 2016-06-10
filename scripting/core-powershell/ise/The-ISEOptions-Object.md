@@ -1,12 +1,15 @@
 ---
-title: ISEOptions オブジェクト
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
+title:  ISEOptions オブジェクト
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  75e2a76f-f3d1-490b-ad5d-e3829946aabb
 ---
+
 # ISEOptions オブジェクト
   **ISEOptions** オブジェクトは、Windows PowerShell ISE のさまざまな設定を表します。 これは **Microsoft.PowerShell.Host.ISE.ISEOptions** クラスのインスタンスです。
 
@@ -142,7 +145,7 @@ $psISE.Options.RestoreDefaultTokenColors()
 ###  <a name="rdxtc"></a> RestoreDefaultXmlTokenColors\(\)
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
- Windows PowerShell ISE で表示される XML 要素のトークンの色の既定値を復元します。 [XmlTokenColors](#xtc) も参照してください。.
+ Windows PowerShell ISE で表示される XML 要素のトークンの色の既定値を復元します。 [XmlTokenColors](#xtc) も参照してください。
 
 ```
 # Changes the color of the comments in XML data to red and then restores it to its default value.
@@ -163,7 +166,7 @@ $psISE.Options.AutoSaveMinuteInterval = 3
 ```
 
 ###  <a name="cpbc"></a> CommandPaneBackgroundColor
-  この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。  後のバージョンについては、[ConsolePaneBackgroundColor](#conpbc) を参照してください。.
+  この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。  後のバージョンについては、[ConsolePaneBackgroundColor](#conpbc) を参照してください。
 
  コマンド ウィンドウの背景色を指定します。 これは **System.Windows.Media.Color** クラスのインスタンスです。
 
@@ -356,7 +359,7 @@ $psISE.Options.MruCount = 5
 ```
 
 ###  <a name="opbc"></a> OutputPaneBackgroundColor
-  この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。  後のバージョンについては、[ConsolePaneBackgroundColor](#conpbc) を参照してください。.
+  この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。  後のバージョンについては、[ConsolePaneBackgroundColor](#conpbc) を参照してください。
 
  出力ウィンドウ自体の背景色を取得または設定する読み取り\/書き込みのプロパティ。 これは **System.Windows.Media.Color** クラスのインスタンスです。
 
@@ -367,7 +370,7 @@ $psISE.Options.OutputPaneForegroundColor = "gold"
 ```
 
 ###  <a name="optfc"></a> OutputPaneTextForegroundColor
-  この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。  後のバージョンについては、[ConsolePaneForegroundColor](#conpfc) を参照してください。.
+  この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。  後のバージョンについては、[ConsolePaneForegroundColor](#conpfc) を参照してください。
 
  Windows PowerShell ISE 2.0 で出力ウィンドウのテキストの前景色を変更する読み取り\/書き込みプロパティ。
 
@@ -378,7 +381,7 @@ $psISE.Options.OutputPaneTextForegroundColor  = "blue"
 ```
 
 ###  <a name="optbc"></a> OutputPaneTextBackgroundColor
-  この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。  後のバージョンについては、[ConsolePaneTextBackgroundColor](#conptbc) を参照してください。.
+  この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。  後のバージョンについては、[ConsolePaneTextBackgroundColor](#conptbc) を参照してください。
 
  出力ウィンドウのテキストの背景色を変更する読み取り\/書き込みプロパティ。
 
@@ -429,7 +432,7 @@ $psISE.Options.SelectedScriptPaneState = "Maximized"
 ###  <a name="sds"></a> ShowDefaultSnippets
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
- スニペットの **CTRL\+J** 一覧に、Windows PowerShell に含まれるスターター セットを含めるどうかを指定します。 **$false** に設定すると、ユーザー定義のスニペットのみが **CTRL\+J** 一覧に表示されます。 既定値は **$true** です。.
+ スニペットの **CTRL\+J** 一覧に、Windows PowerShell に含まれるスターター セットを含めるどうかを指定します。 **$false** に設定すると、ユーザー定義のスニペットのみが **CTRL\+J** 一覧に表示されます。 既定値は **$true** です。
 
 ```
 # Hide the default snippets from the CTRL+J list.
@@ -439,7 +442,7 @@ $psISe.Options.ShowDefaultSnippets = $false
 ###  <a name="siicp"></a> ShowIntellisenseInConsolePane
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
- IntelliSense がコンソール ウィンドウで構文、パラメーター、および値の候補を提供するかどうかを指定します。 既定値は **$true** です。.
+ IntelliSense がコンソール ウィンドウで構文、パラメーター、および値の候補を提供するかどうかを指定します。 既定値は **$true** です。
 
 ```
 # Turn off IntelliSense in the console pane.
@@ -449,7 +452,7 @@ $psISe.Options.ShowIntellisenseInConsolePane = $false
 ###  <a name="siisp"></a> ShowIntellisenseInScriptPane
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
- IntelliSense がスクリプト ウィンドウで構文、パラメーター、および値の候補を提供するかどうかを指定します。 既定値は **$true** です。.
+ IntelliSense がスクリプト ウィンドウで構文、パラメーター、および値の候補を提供するかどうかを指定します。 既定値は **$true** です。
 
 ```
 # Turn off IntelliSense in the Script pane.
@@ -459,7 +462,7 @@ $psISe.Options.ShowIntellisenseInScriptPane = $false
 ###  <a name="sln"></a> ShowLineNumbers
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
- スクリプト ペインの左の余白に行番号を表示するかどうかを指定します。 既定値は **$true** です。.
+ スクリプト ペインの左の余白に行番号を表示するかどうかを指定します。 既定値は **$true** です。
 
 ```
 # Turn off line numbers in the Script pane.
@@ -469,7 +472,7 @@ $psISe.Options.ShowLineNumbers = $false
 ###  <a name="so"></a> ShowOutlining
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
- スクリプト ペインの左の余白のコードのセクションの横にある展開と折りたたみの角かっこを表示するかどうかを指定します。 表示する場合、テキストのブロックの横にあるマイナス アイコン \(\-\) をクリックすると折りたたみ、プラス アイコン \(\+\) をクリックするとテキストのブロックを展開することができます。 既定値は **$true** です。.
+ スクリプト ペインの左の余白のコードのセクションの横にある展開と折りたたみの角かっこを表示するかどうかを指定します。 表示する場合、テキストのブロックの横にあるマイナス アイコン \(\-\) をクリックすると折りたたみ、プラス アイコン \(\+\) をクリックするとテキストのブロックを展開することができます。 既定値は **$true** です。
 
 ```
 # Turn off outlining in the Script pane.
@@ -479,7 +482,7 @@ $psISe.Options.ShowOutlining = $false
 ###  <a name="stb"></a> ShowToolBar
   Windows PowerShell ISE 2.0 以降でサポートされています。
 
- Windows PowerShell ISE ウィンドウの上部に ISE ツールバーを表示するかどうかを指定します。 既定値は **$true** です。.
+ Windows PowerShell ISE ウィンドウの上部に ISE ツールバーを表示するかどうかを指定します。 既定値は **$true** です。
 
 ```
 # Show the toolbar.
@@ -489,7 +492,7 @@ $psISe.Options.ShowToolBar = $true
 ###  <a name="swbsor"></a> ShowWarningBeforeSavingOnRun
   Windows PowerShell ISE 2.0 以降でサポートされています。
 
- スクリプトが実行される前に自動的に保存されるときに警告メッセージを表示するかどうかを指定します。 既定値は **$true** です。.
+ スクリプトが実行される前に自動的に保存されるときに警告メッセージを表示するかどうかを指定します。 既定値は **$true** です。
 
 ```
 # Enable the warning message when an attempt
@@ -501,7 +504,7 @@ $psISE.Options.ShowWarningBeforeSavingOnRun=$true
 ###  <a name="swfdf"></a> ShowWarningForDuplicateFiles
   Windows PowerShell ISE 2.0 以降でサポートされています。
 
- さまざまな PowerShell タブで同じファイルが開かれているときに警告メッセージを表示するかどうかを指定します。 **$true** に設定している場合、複数のタブで同じファイルが開かれると、「このファイルのコピーが別の Windows PowerShell タブで開かれています。このファイルを変更すると、開かれているすべてのファイルに影響します。」というメッセージが表示されます。 Changes made to this file will affect all open copies." 既定値は **$true** です。.
+ さまざまな PowerShell タブで同じファイルが開かれているときに警告メッセージを表示するかどうかを指定します。 **$true** に設定している場合、複数のタブで同じファイルが開かれると、「このファイルのコピーが別の Windows PowerShell タブで開かれています。 このファイルを変更すると、開かれているすべてのファイルに影響します。」というメッセージが表示されます。 既定値は **$true** です。
 
 ```
 # Enable the warning message when a file is
@@ -526,7 +529,7 @@ $psISE.Options.TokenColors["Keyword"] = "magenta"
 ###  <a name="uetsicpi"></a> UseEnterToSelectInConsolePaneIntellisense
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
- Enter キーを使用して、IntelliSense が提供するオプションをコンソール ウィンドウで選択できるようにするかどうかを指定します。 既定値は **$true** です。.
+ Enter キーを使用して、IntelliSense が提供するオプションをコンソール ウィンドウで選択できるようにするかどうかを指定します。 既定値は **$true** です。
 
 ```
 # Turn off using the ENTER key to select an IntelliSense provided option in the Console pane.
@@ -537,7 +540,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense=$false
 ###  <a name="uetsispi"></a> UseEnterToSelectInScriptPaneIntellisense
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
- Enter キーを使用して、IntelliSense が提供するオプションをスクリプト ウィンドウで選択できるようにするかどうかを指定します。 既定値は **$true** です。.
+ Enter キーを使用して、IntelliSense が提供するオプションをスクリプト ウィンドウで選択できるようにするかどうかを指定します。 既定値は **$true** です。
 
 ```
 # Turn on using the Enter key to select an IntelliSense provided option in the Console pane.
@@ -601,7 +604,7 @@ $psISE.Options.WarningForegroundColor =”yellow”
 ###  <a name="xtc"></a> XmlTokenColors
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
- Windows PowerShell ISE で表示される XML コンテンツのトークンの種類と色の名前\/値のペアを含むディクショナリ オブジェクトを指定します。 次のトークンの色を設定することができます: Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 [RestoreDefaultXmlTokenColors()](#rdxtc) も参照してください。.
+ Windows PowerShell ISE で表示される XML コンテンツのトークンの種類と色の名前\/値のペアを含むディクショナリ オブジェクトを指定します。 次のトークンの色を設定することができます: Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 [RestoreDefaultXmlTokenColors()](#rdxtc) も参照してください。
 
 ```
 # Sets the color of XML element names to green.
@@ -622,8 +625,9 @@ $psISE.Options.Zoom = 200
 ```
 
 ## 参照
- [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
- [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md)
+ [The Windows PowerShell ISE Scripting Object Model (Windows PowerShell ISE スクリプト オブジェクト モデル)](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+ [Windows PowerShell ISE Object Model Reference (Windows PowerShell ISE オブジェクト モデル リファレンス)](Windows-PowerShell-ISE-Object-Model-Reference.md)
+
 
 
 <!--HONumber=May16_HO2-->
