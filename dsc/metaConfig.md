@@ -42,7 +42,7 @@ configuration LCMConfig
 } 
 ```
 
-標準構成と同様に、構成を呼び出し、実行して、構成 MOF を作成します (構成 MOF の作成については、「[構成のコンパイル](configurations#compiling-the-configuration)」を参照してください)。 通常の構成とは異なり、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを呼び出すことによって LCM 構成を適用しません。 代わりに、[Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) コマンドレットを呼び出して、パラメーターとして構成 MOF のパスを指定します。 構成を適用した後、[Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) コマンドレットを呼び出して、LCM のプロパティを確認できます。
+標準構成と同様に、構成を呼び出し、実行して、構成 MOF を作成します (構成 MOF の作成については、「[構成のコンパイル](configurations.md#compiling-the-configuration)」を参照してください)。 通常の構成とは異なり、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを呼び出すことによって LCM 構成を適用しません。 代わりに、[Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) コマンドレットを呼び出して、パラメーターとして構成 MOF のパスを指定します。 構成を適用した後、[Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) コマンドレットを呼び出して、LCM のプロパティを確認できます。
 
 LCM 構成には、限定されたリソースのセットに対するブロックのみを含めることができます。 前の例では、呼び出されたリソースは、**Settings** のみです。 その他の使用可能なリソースは次のとおりです。
 
@@ -162,6 +162,6 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO1-->
 
 
