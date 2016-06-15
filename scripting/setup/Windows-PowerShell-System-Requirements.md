@@ -1,16 +1,19 @@
 ---
-title: Windows PowerShell のシステム要件
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
+title:  Windows PowerShell のシステム要件
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
 ---
+
 # Windows PowerShell のシステム要件
 このトピックでは、Windows PowerShell 3.0 と Windows PowerShell 4.0 のシステム要件、および Windows PowerShell Integrated Scripting Environment (ISE)、CIM コマンド、ワークフローなどの特殊な機能の一覧を示します。
 
-WindowsÂ® 8.1 と Windows ServerÂ® 2012 R2 には、必要なプログラムがすべて付属しています。 このトピックは、以前のリリースの Windows のユーザー向けです。
+Windows® 8.1 および Windows Server® 2012 R2 には、必要なプログラムがすべて付属しています。 このトピックは、以前のリリースの Windows のユーザー向けです。
 
 ## オペレーティング システムの要件
 Windows PowerShell 4.0 は、次のバージョンの Windows で実行できます。
@@ -19,9 +22,9 @@ Windows PowerShell 4.0 は、次のバージョンの Windows で実行できま
 
 -   Windows Server 2012 R2 (既定でインストール済み)
 
--   WindowsÂ® 7 (Service Pack 1 適用済み) では、[Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) をインストールして Windows PowerShell 4.0 を実行します
+-   Windows® 7 (Service Pack 1 適用済み) では、[Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) をインストールして Windows PowerShell 4.0 を実行します
 
--   Windows ServerÂ® 2008 R2 (Service Pack 1 適用済み) では、[Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) をインストールして Windows PowerShell 4.0 を実行します
+-   Windows Server® 2008 R2 (Service Pack 1 適用済み) では、[Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) をインストールして Windows PowerShell 4.0 を実行します
 
 Windows PowerShell 3.0 は、次のバージョンの Windows で実行できます。
 
@@ -29,9 +32,9 @@ Windows PowerShell 3.0 は、次のバージョンの Windows で実行できま
 
 -   Windows Server 2012 (既定でインストール済み)
 
--   WindowsÂ® 7 (Service Pack 1 適用済み) では、[Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) をインストールして Windows PowerShell 3.0 を実行します
+-   Windows® 7 (Service Pack 1 適用済み) では、[Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) をインストールして Windows PowerShell 3.0 を実行します
 
--   Windows ServerÂ® 2008 R2 (Service Pack 1 適用済み) では、[Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) をインストールして Windows PowerShell 3.0 を実行します
+-   Windows Server® 2008 R2 (Service Pack 1 適用済み) では、[Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) をインストールして Windows PowerShell 3.0 を実行します
 
 -   Windows Server 2008 (Service Pack 2 適用済み) では、[Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) をインストールして Windows PowerShell 3.0 を実行します
 
@@ -74,7 +77,7 @@ Windows PowerShell はグラフィカル ユーザー インターフェイス�
 
     1.  [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) コマンドレットの **ShowWindow** パラメーター。
 
-    2.  [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) と [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) コマンドレットの **ShowSecurityDescriptorUi** パラメーター。
+    2.  [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) と [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) コマンドレットの **ShowSecurityDescriptorUI** パラメーター。
 
 ## Windows PowerShell Engine の要件
 Windows PowerShell 4.0 は、Windows PowerShell 3.0 および Windows PowerShell 2.0 との下位互換性を保つように設計されています。 Windows PowerShell 2.0 と Windows PowerShell 3.0 用に記述されたコマンドレット、プロバイダー、スナップイン、モジュール、スクリプトは、未変更のまま Windows PowerShell 4.0 で実行できます。
@@ -83,7 +86,7 @@ Windows PowerShell 4.0 は、Windows PowerShell 3.0 および Windows PowerShell
 
 Windows PowerShell 2.0 エンジンには最低でも Microsoft .NET Framework 2.0.50727 が必要です。 この要件は Microsoft .NET Framework 3.5 Service Pack 1 で満たされています。 Microsoft .NET Framework 4 以降のリリースの Microsoft .NET Framework では、この要件が満たされません。
 
-Windows PowerShell 2.0 エンジンの追加とインストールや、必要なバージョンの Microsoft .NET Framework の追加とインストールについては、「[Windows PowerShell 2.0 エンジンのインストール](Installing-the-Windows-PowerShell-2.0-Engine.md)」をご覧ください。 Windows PowerShell 2.0 エンジンの開始に関する情報については、「[Windows PowerShell 2.0 エンジンの開始](Starting-the-Windows-PowerShell-2.0-Engine.md)」を参照してください。.
+Windows PowerShell 2.0 エンジンの追加とインストールや、必要なバージョンの Microsoft .NET Framework の追加とインストールについては、「[Windows PowerShell 2.0 エンジンのインストール](Installing-the-Windows-PowerShell-2.0-Engine.md)」をご覧ください。 Windows PowerShell 2.0 エンジンの開始に関する情報については、「[Windows PowerShell 2.0 エンジンの開始](Starting-the-Windows-PowerShell-2.0-Engine.md)」を参照してください。
 
 ## Windows プレインストール環境
 Windows PowerShell 2.0、Windows PowerShell 3.0、および Windows PowerShell 4.0 は、Windows プレインストール環境 (Windows PE) で実行できます。 ただし、次のコマンドレットはサポートされていません。
@@ -92,18 +95,20 @@ Windows PowerShell 2.0、Windows PowerShell 3.0、および Windows PowerShell 4
 
 -   [Get-EventLog](https://technet.microsoft.com/en-us/library/b4985b11-82bf-487d-928d-becd96fc0419)
 
--   [Get-WinEvent[PSITPro5_Diagnostic]](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
+-   [Get-WinEvent](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
 
 -   [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa)
 
 -   [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545)
 
-また、**WinRm** サービスは Windows PE に存在しません。
+また、**WinRM** サービスは Windows PE に存在しません。
 
 ## 参照
 [Windows PowerShell ファースト ステップ ガイド](../getting-started/Getting-Started-with-Windows-PowerShell.md)
+
 [Windows PowerShell のインストール](Installing-Windows-PowerShell.md)
-[Windows PowerShell [ps] の開始](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+
+[Windows PowerShell の開始](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 
 
 

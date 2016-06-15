@@ -1,3 +1,14 @@
+---
+title:  PowerShell の新機能
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 # PowerShell の新機能
 Windows PowerShell® 5.0 には、その用途を拡大し、使いやすさを向上させる重要な機能や、Windows ベースの環境をより簡単かつ包括的に制御および管理できるようにする重要な新しい機能が含まれています。
 
@@ -16,6 +27,7 @@ Windows PowerShell 5.0 は、Windows Server® 2016 Technical Preview および W
 
 -   New features in Windows PowerShell 3.0
 -->
+
 
 
 <!--HONumber=May16_HO2-->

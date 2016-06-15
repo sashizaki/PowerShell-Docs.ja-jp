@@ -1,12 +1,15 @@
 ---
-title: ISEEditor オブジェクト
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
-ms.topic: article
-ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
+title:  ISEEditor オブジェクト
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+ms.assetid:  0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 ---
+
 # ISEEditor オブジェクト
   **ISEEditor** オブジェクトは、Microsoft.PowerShell.Host.ISE.ISEEditor クラスのインスタンスです。 コンソール ウィンドウは **ISEEditor** オブジェクトです。 各 [ISEFile](The-ISEFile-Object.md) オブジェクトには、関連付けられている **ISEEditor** オブジェクトがあります。 次のセクションでは、**ISEEditor** オブジェクトのメソッドとプロパティについて説明します。
 
@@ -29,7 +32,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.Clear()
  指定した **lineNumber** パラメーターの値に対応する行が表示されるようにエディターをスクロールします。 指定した行番号が 1 から最後の行番号までの有効な行番号を定義する範囲を超えた場合、例外がスローされます。
 
  **lineNumber**
- 表示するようにする行の番号。
+ 表示させる行の番号。
 
 ```
 # Scrolls the text in the Script pane so that the fifth line is in view. 
@@ -55,7 +58,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
  **lineNumber**
  長さを取得する対象の行の番号。
 
- **戻り値**
+ **Returns**
  指定した行番号にある行の長さ。
 
 ```
@@ -66,7 +69,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### GoToMatch\(\)
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
- エディター オブジェクトの **CanGoToMatch** プロパティが **$true** の場合、一致する文字にカーソルを移動します。これは、カーソルが始めかっこ、始め角かっこ、または始め波かっこ (\(、\[、{) の直前または終わりかっこ、終わり角かっこ、または終わり波かっこ (\)、\]、}) の直後にある場合に発生します。  カーソルは、開始文字の前または終了文字の後に配置されます。 **CanGoToMatch** プロパティが **$false** の場合、このメソッドでは何も実行されません。 [CanGoToMatch](#cangotomatch) を参照してください。.
+ エディター オブジェクトの **CanGoToMatch** プロパティが **$true** の場合、一致する文字にカーソルを移動します。これは、カーソルが始めかっこ、始め角かっこ、または始め波かっこ (\(、\[、{) の直前または終わりかっこ、終わり角かっこ、または終わり波かっこ (\)、\]、}) の直後にある場合に発生します。  カーソルは、開始文字の前または終了文字の後に配置されます。 **CanGoToMatch** プロパティが **$false** の場合、このメソッドでは何も実行されません。 [CanGoToMatch](#cangotomatch) を参照してください。
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -77,8 +80,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  選択範囲をテキストに置き換えるか、現在のカーソル位置でテキストを挿入します。
 
- **text** \- 文字列
- 挿入するテキスト。
+ **text** \- String  挿入するテキスト。
 
  後述の「[スクリプト例](#example)」を参照してください。
 
@@ -87,17 +89,13 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **startLine**、**startColumn**、**endLine**、**endColumn** パラメーターからテキストを選択します。
 
- **startLine** \- 整数
- 選択範囲が開始する行。
+ **startLine** \- Integer  選択範囲が開始する行。
 
- **startColumn** \- 整数
- 選択範囲が開始する開始行内の列。
+ **startColumn** \- Integer  選択範囲が開始する開始行内の列。
 
- **endLine** \- 整数
- 選択範囲が終了する行。
+ **endLine** \- Integer  選択範囲が終了する行。
 
- **endColumn** \- 整数
- 選択範囲が終了する終了行内の列。
+ **endColumn** \- Integer  選択範囲が終了する終了行内の列。
 
  後述の「[スクリプト例](#example)」を参照してください。
 
@@ -119,11 +117,9 @@ $psIse.CurrentFile.Editor.SelectCaretLine()
 
  行番号および列番号でカーソル位置を設定します。 カーソル行番号またはカーソル列番号のいずれかがそれぞれの有効な範囲外である場合、例外をスローします。
 
- **lineNumber** \- 整数
- カーソル行番号。
+ **lineNumber** \- Integer  カーソル行番号。
 
- **columnNumber** \- 整数
- カーソル列番号。
+ **columnNumber** \- Integer  カーソル列番号。
 
 ```
 # Set the CaretPosition.
@@ -146,7 +142,7 @@ $psIse.CurrentFile.Editor.ToggleOutliningExpansion()
 ###  <a name="CanGoToMatch"></a> CanGoToMatch
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
- カーソルがかっこ、角かっこ、または波かっこ (\(\)、\[\]、{}) の横にあるかどうかを示す読み取り専用のブール型プロパティ。 カーソルがかっこの始め文字の直前またはかっこの終わり文字の直後にある場合、このプロパティの値は **$true** です。 それ以外の場合は **$false** です。.
+ カーソルがかっこ、角かっこ、または波かっこ (\(\)、\[\]、{}) の横にあるかどうかを示す読み取り専用のブール型プロパティ。 カーソルがかっこの始め文字の直前またはかっこの終わり文字の直後にある場合、このプロパティの値は **$true** です。 それ以外の場合は **$false** です。
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -247,7 +243,7 @@ $myEditor.InsertText($selection.ToLower())
  [PowerShellTab オブジェクト](The-PowerShellTab-Object.md) 
  [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
  [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)
+ [ISE オブジェクト モデル階層](The-ISE-Object-Model-Hierarchy.md)
 
   
 

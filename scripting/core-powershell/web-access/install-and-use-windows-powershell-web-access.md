@@ -1,3 +1,14 @@
+---
+title:  Windows PowerShell Web Access のインストールと使用
+ms.date:  2016-05-11
+keywords:  powershell,cmdlet
+description:  
+ms.topic:  article
+author:  jpjofre
+manager:  dongill
+ms.prod:  powershell
+---
+
 #  Windows PowerShell Web Access のインストールと使用
 
 最終更新日: 2013 年 11 月 5 日
@@ -128,9 +139,9 @@ Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマ�
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
-    -   Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。.
+    -   Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
 
-    -   Windows の**スタート**画面で、**[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。.
+    -   Windows の**スタート**画面で、**[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
 
     <table>
     <colgroup>
@@ -178,7 +189,7 @@ Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマ�
 
 3.  インストールが完了したら、対象サーバーに Windows PowerShell Web Access がインストールされたことを確認します。これには、管理者特権で開いた Windows PowerShell コンソールで、対象サーバーに対して **Get-WindowsFeature** コマンドレットを実行します。 また、サーバー マネージャー コンソールに Windows PowerShell Web Access がインストールされたことも確認できます。これには、**[すべてのサーバー]** ページで対象サーバーを選択し、選択したサーバーの **[役割と機能]** タイルを表示します。 Windows PowerShell Web Access の Readme ファイルも表示できます。
 
-4.  Windows PowerShell Web Access がインストールされると、基本的かつ必須のゲートウェイ セットアップ手順を記載した Readme ファイルの確認を求めるメッセージが表示されます。 これらのセットアップ手順は、次の「[手順 2. ゲートウェイを構成する](#BKMK_step2)」セクションでも説明します。 Readme ファイルのパスは <span class="computerOutputInline">C:\\Windows\\Web\\PowerShellWebAccess\\wwwroot\\README.txt です。</span>.
+4.  Windows PowerShell Web Access がインストールされると、基本的かつ必須のゲートウェイ セットアップ手順を記載した Readme ファイルの確認を求めるメッセージが表示されます。 これらのセットアップ手順は、次の「[手順 2. ゲートウェイを構成する](#BKMK_step2)」セクションでも説明します。 Readme ファイルのパスは <span class="computerOutputInline">C:\\Windows\\Web\\PowerShellWebAccess\\wwwroot\\README.txt</span> です。
 
 <a href="" id="BKMK_step2"></a>
 ###
@@ -217,9 +228,9 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
     -   Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックします。
 
-    -   Windows の**スタート**画面で、**[Windows PowerShell]** をクリックします。.
+    -   Windows の**スタート**画面で、**[Windows PowerShell]** をクリックします。
 
-2.  次のように入力して **Enter** キーを押します。.
+2.  次のように入力して **Enter** キーを押します。
 
     **Install-PswaWebApplication -UseTestCertificate**
 
@@ -253,7 +264,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
     <span class="label">例:</span> <span class="code">Install-PswaWebApplication –webApplicationName myWebApp –useTestCertificate</span>
 
-    この例では、Windows PowerShell Web Access の最終的な Web サイトは https://&lt; *server\_name*&gt;/myWebApp になります。
+    この例では、Windows PowerShell Web Access の最終的な Web サイトは https://&lt;*server\_name*&gt;/myWebApp になります。
 
     <table>
     <colgroup>
@@ -266,7 +277,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
     </thead>
     <tbody>
     <tr class="odd">
-    <td><p>サインインできるのは、承認規則の追加によって Web サイトへのアクセスが許可されたユーザーだけです。 詳細については、「<a href="#BKMK_step3">手順 3. 制限的な承認規則を構成する</a>」と「<a href="https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx">Windows PowerShell Web Access の承認規則とセキュリティ機能」を参照してください。</a>.</p></td>
+    <td><p>サインインできるのは、承認規則の追加によって Web サイトへのアクセスが許可されたユーザーだけです。 詳細については、「<a href="#BKMK_step3">手順 3. 制限的な承認規則を構成する</a>」と「<a href="https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx">Windows PowerShell Web Access の承認規則とセキュリティ機能</a>」を参照してください。</p></td>
     </tr>
     </tbody>
     </table>
@@ -277,9 +288,9 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
     -   Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックします。
 
-    -   Windows の**スタート**画面で、**[Windows PowerShell]** をクリックします。.
+    -   Windows の**スタート**画面で、**[Windows PowerShell]** をクリックします。
 
-2.  次のように入力して **Enter** キーを押します。.
+2.  次のように入力して **Enter** キーを押します。
 
     **Install-PswaWebApplication**
 
@@ -295,17 +306,17 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
 3.  次のいずれかの方法で IIS マネージャー コンソールを開きます。
 
-    -   Windows デスクトップで、Windows タスク バーの **[サーバー マネージャー]** をクリックし、サーバー マネージャーを開始します。 [サーバー マネージャー] の **[ツール]** メニューで **[インターネット インフォメーション サービス (IIS) マネージャー]** をクリックします。.
+    -   Windows デスクトップで、Windows タスク バーの **[サーバー マネージャー]** をクリックし、サーバー マネージャーを開始します。 [サーバー マネージャー] の **[ツール]** メニューで **[インターネット インフォメーション サービス (IIS) マネージャー]** をクリックします。
 
-    -   Windows の**スタート**画面で、**[サーバー マネージャー]** をクリックします。.
+    -   Windows の**スタート**画面で、**[サーバー マネージャー]** をクリックします。
 
 4.  IIS マネージャーのツリー ウィンドウで、Windows PowerShell Web Access がインストールされているサーバーのノードを展開し、**[サイト]** フォルダーを表示させます。 **[サイト]** フォルダーを展開します。
 
-5.  Windows PowerShell Web Access の Web アプリケーションをインストールした Web サイトを選択します。 **[操作]** ウィンドウで、**[バインド]** をクリックします。.
+5.  Windows PowerShell Web Access の Web アプリケーションをインストールした Web サイトを選択します。 **[操作]** ウィンドウで、**[バインド]** をクリックします。
 
-6.  **[サイト バインド]** ダイアログ ボックスの **[追加]** をクリックします。.
+6.  **[サイト バインド]** ダイアログ ボックスの **[追加]** をクリックします。
 
-7.  **[サイト バインドの追加]** ダイアログ ボックスの **"種類"** フィールドで、**[https]** をクリックします。.
+7.  **[サイト バインドの追加]** ダイアログ ボックスの **[種類]** フィールドで、**[https]** をクリックします。
 
 8.  **"SSL 証明書"** フィールドのドロップダウン メニューから、署名済み証明書を選択します。 **[OK]** をクリックします。 証明書の取得方法の詳細については、このトピックの「[IIS マネージャーで SSL 証明書を構成するには](#BKMK_cert)」を参照してください。
 
@@ -322,7 +333,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
     </thead>
     <tbody>
     <tr class="odd">
-    <td><p>サインインできるのは、承認規則の追加によって Web サイトへのアクセスが許可されたユーザーだけです。 詳細については、「<a href="#BKMK_step3">手順 3. 制限的な承認規則を構成する</a>」と「<a href="https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx">Windows PowerShell Web Access の承認規則とセキュリティ機能」を参照してください。</a>.</p></td>
+    <td><p>サインインできるのは、承認規則の追加によって Web サイトへのアクセスが許可されたユーザーだけです。 詳細については、「<a href="#BKMK_step3">手順 3. 制限的な承認規則を構成する</a>」と「<a href="https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx">Windows PowerShell Web Access の承認規則とセキュリティ機能</a>」を参照してください。</p></td>
     </tr>
     </tbody>
     </table>
@@ -334,33 +345,33 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
 ------------------------------------------------------------------------
 
-Windows PowerShell Web Access をインストールし、ゲートウェイを構成すると、ユーザーがブラウザーでサインイン ページを開けるようになります。ただし、Windows PowerShell Web Access 管理者によってアクセスを明示的に許可されない限りサインインできません。 Windows PowerShell Web Access のアクセス制御は、次の表に示す一連の Windows PowerShell コマンドレットによって管理します。 承認規則の追加と管理に関しては、相当する GUI はありません。 Windows PowerShell Web Access コマンドレットの詳細については、コマンドレット リファレンス トピック「[Windows PowerShell Web Access Cmdlets (Windows PowerShell Web Access コマンドレット)](https://technet.microsoft.com/library/hh918342.aspx)」を参照してください。.
+Windows PowerShell Web Access をインストールし、ゲートウェイを構成すると、ユーザーがブラウザーでサインイン ページを開けるようになります。ただし、Windows PowerShell Web Access 管理者によってアクセスを明示的に許可されない限りサインインできません。 Windows PowerShell Web Access のアクセス制御は、次の表に示す一連の Windows PowerShell コマンドレットによって管理します。 承認規則の追加と管理に関しては、相当する GUI はありません。 Windows PowerShell Web Access コマンドレットの詳細については、コマンドレット リファレンス トピック「[Windows PowerShell Web Access Cmdlets](https://technet.microsoft.com/library/hh918342.aspx)」(Windows PowerShell Web Access コマンドレット) を参照してください。
 
-Windows PowerShell Web Access の承認規則とセキュリティの詳細については、「[Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)」を参照してください。.
+Windows PowerShell Web Access の承認規則とセキュリティの詳細については、「[Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)」を参照してください。
 
 #### 制限的な承認規則を追加するには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
-    -   Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。.
+    -   Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
 
-    -   Windows の**スタート**画面で、**[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。.
+    -   Windows の**スタート**画面で、**[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
 
 2.  <span class="label">セッション構成を使用してユーザー アクセスを制限するためのオプション手順:</span>規則内で使用するセッション構成が既に存在することを確認します。 まだ作成されていない場合は、MSDN の「[about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx)」に記載されているセッション構成の作成手順を使用してください。
 
-3.  次のように入力して **Enter** キーを押します。.
+3.  次のように入力して **Enter** キーを押します。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_f9e7959b-75d0-4d63-8f8e-02334a8dd09d'); "Copy to clipboard.")
 
         Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    この承認規則により、特定のユーザー 1 人が、通常アクセスが許可されているネットワーク上の 1 つのコンピューターにアクセスして、このユーザーが通常必要とするスクリプトとコマンドレットに制限された特定の 1 つのセッション構成にアクセスできるようになります。 次の例では、<span class="code">Contoso</span> ドメインの <span class="code">JSmith</span> というユーザーに、<span class="code">Contoso\_214</span> というコンピューターを管理し、<span class="code">NewAdminsOnly というセッション構成を使うためのアクセス権が付与されます。</span>.
+    この承認規則により、特定のユーザー 1 人が、通常アクセスが許可されているネットワーク上の 1 つのコンピューターにアクセスして、このユーザーが通常必要とするスクリプトとコマンドレットに制限された特定の 1 つのセッション構成にアクセスできるようになります。 次の例では、<span class="code">Contoso</span> ドメインの <span class="code">JSmith</span> というユーザーに、<span class="code">Contoso\_214</span> というコンピューターを管理し、<span class="code">NewAdminsOnly</span> というセッション構成を使うためのアクセス権が付与されます。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_ebd5bc5e-ec5d-4955-a86a-63843e480e37'); "Copy to clipboard.")
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  **Get-PswaAuthorizationRule** コマンドレットまたは **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer\_name&gt; を実行して、規則が作成されていることを確認します。 例: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**.
+4.  **Get-PswaAuthorizationRule** コマンドレットまたは **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer\_name&gt; を実行して、規則が作成されていることを確認します。 例: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**。
 
 承認規則が構成されたため、承認されたユーザーは Web ベースのコンソールにサインインして Windows PowerShell Web Access の使用を開始できます。
 
@@ -382,19 +393,19 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 #### 役割と機能の追加ウィザードを使って Windows PowerShell Web Access をインストールするには
 
-1.  サーバー マネージャーを既に開いている場合は、次の手順に進んでください。 サーバー マネージャーをまだ開いていない場合は、次のどちらかの方法で開きます。
+1.  サーバー マネージャーを既に開いている場合は、次の手順に進んでください。 サーバー マネージャーをまだ開いていない場合は、次のいずれかの方法で開きます。
 
     -   Windows デスクトップで、Windows タスク バーの **[サーバー マネージャー]** をクリックし、サーバー マネージャーを開始します。
 
-    -   Windows の**スタート**画面で、**[サーバー マネージャー]** をクリックします。.
+    -   Windows の**スタート**画面で、**[サーバー マネージャー]** をクリックします。
 
-2.  **[管理]** メニューの **[役割と機能の追加]** をクリックします。.
+2.  **[管理]** メニューの **[役割と機能の追加]** をクリックします。
 
-3.  **[インストールの種類の選択]** ページで **[役割ベースまたは機能ベースのインストール]** を選択します。 **[次へ]** をクリックします。.
+3.  **[インストールの種類の選択]** ページで **[役割ベースまたは機能ベースのインストール]** を選択します。 **[次へ]** をクリックします。
 
-4.  **[対象サーバーの選択]** ページで、サーバー プールからサーバーを選択するか、オフライン VHD を選択します。 対象サーバーとしてオフライン VHD を選択するには、まず VHD マウント先のサーバーを選択してから、VHD ファイルを選択します。 サーバーをサーバー プールに追加する方法については、サーバー マネージャーのヘルプを参照してください。 対象サーバーを選択したら、**[次へ]** をクリックします。.
+4.  **[対象サーバーの選択]** ページで、サーバー プールからサーバーを選択するか、オフライン VHD を選択します。 対象サーバーとしてオフライン VHD を選択するには、まず VHD マウント先のサーバーを選択してから、VHD ファイルを選択します。 サーバーをサーバー プールに追加する方法については、サーバー マネージャーのヘルプを参照してください。 対象サーバーを選択したら、**[次へ]** をクリックします。
 
-5.  ウィザードの **[機能の選択]** ページで **[Windows PowerShell]** を展開し、**[Windows PowerShell Web Access]** を選択します。.
+5.  ウィザードの **[機能の選択]** ページで **[Windows PowerShell]** を展開し、**[Windows PowerShell Web Access]** を選択します。
 
 6.  .NET Framework 4.5 や Web サーバー (IIS) の役割サービスなど、必要な機能の追加を求めるメッセージが表示されます。 必要な機能を追加して続行します。
 
@@ -414,9 +425,9 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
     </tbody>
     </table>
 
-7.  **[インストール オプションの確認]** ページで、手順 4. で選択した対象サーバーに Windows PowerShell Web Access の機能のファイルが保存されていない場合、**[代替ソース パスの指定]** をクリックして機能ファイルのパスを入力します。 それ以外の場合、**[インストール]** をクリックします。.
+7.  **[インストール オプションの確認]** ページで、手順 4. で選択した対象サーバーに Windows PowerShell Web Access の機能のファイルが保存されていない場合、**[代替ソース パスの指定]** をクリックして機能ファイルのパスを入力します。 それ以外の場合、**[インストール]** をクリックします。
 
-8.  **[インストール]** をクリックすると、**[インストールの進行状況]** ページには、インストールの進行状況、結果、メッセージ (警告、エラー、Windows PowerShell Web Access に必要なインストール後の構成手順など) が表示されます。 Windows PowerShell Web Access がインストールされると、基本的かつ必須のゲートウェイ セットアップ手順を記載した Readme ファイルの確認を求めるメッセージが表示されます。 これらの手順も、このドキュメントで説明しています。 Readme ファイルのパスは <span class="computerOutputInline">C:\\Windows\\Web\\PowerShellWebAccess\\wwwroot\\README.txt です。</span>.
+8.  **[インストール]** をクリックすると、**[インストールの進行状況]** ページには、インストールの進行状況、結果、メッセージ (警告、エラー、Windows PowerShell Web Access に必要なインストール後の構成手順など) が表示されます。 Windows PowerShell Web Access がインストールされると、基本的かつ必須のゲートウェイ セットアップ手順を記載した Readme ファイルの確認を求めるメッセージが表示されます。 これらの手順も、このドキュメントで説明しています。 Readme ファイルのパスは <span class="computerOutputInline">C:\\Windows\\Web\\PowerShellWebAccess\\wwwroot\\README.txt</span> です。
 
 ###
 
@@ -436,23 +447,23 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 1.  次のいずれかの方法で IIS マネージャー コンソールを開きます。
 
-    -   Windows デスクトップで、Windows タスク バーの **[サーバー マネージャー]** をクリックし、サーバー マネージャーを開始します。 [サーバー マネージャー] の **[ツール]** メニューで **[インターネット インフォメーション サービス (IIS) マネージャー]** をクリックします。.
+    -   Windows デスクトップで、Windows タスク バーの **[サーバー マネージャー]** をクリックし、サーバー マネージャーを開始します。 [サーバー マネージャー] の **[ツール]** メニューで **[インターネット インフォメーション サービス (IIS) マネージャー]** をクリックします。
 
     -   Windows の**スタート**画面で、**インターネット インフォメーション サービス (IIS) マネージャー**という名前の任意の一部を入力します。 **[アプリ]** の結果に表示されたショートカットをクリックします。
 
 2.  Windows PowerShell Web Access 用の新しいアプリケーション プールを作成します。 IIS マネージャーのツリー ウィンドウでゲートウェイ サーバーのノードを展開して、**[アプリケーション プール]** を選択し、**[操作]** ウィンドウの **[アプリケーション プールの追加]** をクリックします。
 
-3.  新しいアプリケーション プールを **pswa\_pool** という名前で追加するか、別の名前を指定して追加します。 **[OK]** をクリックします。.
+3.  新しいアプリケーション プールを **pswa\_pool** という名前で追加するか、別の名前を指定して追加します。 **[OK]** をクリックします。
 
 4.  IIS マネージャーのツリー ウィンドウで、Windows PowerShell Web Access がインストールされているサーバーのノードを展開し、**[サイト]** フォルダーを表示させます。 **[サイト]** フォルダーを選択します。
 
-5.  Windows PowerShell Web Access の Web サイトの追加先となる Web サイト (**[既定の Web サイト]** など) を右クリックして、**[アプリケーションの追加]** をクリックします。.
+5.  Windows PowerShell Web Access の Web サイトの追加先となる Web サイト (**[既定の Web サイト]** など) を右クリックして、**[アプリケーションの追加]** をクリックします。
 
 6.  **"エイリアス"** フィールドに「pswa」と入力するか、別のエイリアスを入力します。 このエイリアスが仮想ディレクトリ名となります。 たとえば、次の URL の **pswa** は、この手順で指定されたエイリアスを表します。https://&lt;server\_name&gt;/pswa
 
 7.  **"アプリケーション プール"** フィールドで、手順 3. で作成したアプリケーション プールを選択します。
 
-8.  **"物理パス"** フィールドで、アプリケーションの場所を参照します。 既定の場所 (%windir%/Web/PowerShellWebAccess/wwwroot) を使うことができます。 **[OK]** をクリックします。.
+8.  **"物理パス"** フィールドで、アプリケーションの場所を参照します。 既定の場所 (%windir%/Web/PowerShellWebAccess/wwwroot) を使うことができます。 **[OK]** をクリックします。
 
 9.  このトピックの「[IIS マネージャーで SSL 証明書を構成するには](#BKMK_cert)」の説明に従って手順を実行します。
 
@@ -460,7 +471,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 11. クライアント デバイスでブラウザー セッションを開きます。 サポートされるブラウザーとデバイスの詳細については、このトピックの「[ブラウザーとクライアント デバイスのサポート](#BKMK_browser)」を参照してください。
 
-12. 新しい Windows PowerShell Web Access Web サイト https://&lt; *gateway\_server\_name*&gt;/pswa を開きます。
+12. 新しい Windows PowerShell Web Access Web サイト https://&lt;*gateway\_server\_name*&gt;/pswa を開きます。
 
     ブラウザーには Windows PowerShell Web Access コンソールのサインイン ページが表示されます。
 
@@ -498,27 +509,27 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 1.  次のいずれかの方法で IIS マネージャー コンソールを開きます。
 
-    -   Windows デスクトップで、Windows タスク バーの **[サーバー マネージャー]** をクリックし、サーバー マネージャーを開始します。 [サーバー マネージャー] の **[ツール]** メニューで **[インターネット インフォメーション サービス (IIS) マネージャー]** をクリックします。.
+    -   Windows デスクトップで、Windows タスク バーの **[サーバー マネージャー]** をクリックし、サーバー マネージャーを開始します。 [サーバー マネージャー] の **[ツール]** メニューで **[インターネット インフォメーション サービス (IIS) マネージャー]** をクリックします。
 
     -   Windows の**スタート**画面で、**インターネット インフォメーション サービス (IIS) マネージャー**という名前の任意の一部を入力します。 **[アプリ]** の結果に表示されたショートカットをクリックします。
 
 2.  IIS マネージャーのツリー ウィンドウで、Windows PowerShell Web Access がインストールされているサーバーのノードを展開し、**[サイト]** フォルダーを表示させます。 **[サイト]** フォルダーを選択します。
 
-3.  **[操作]** ウィンドウで **[Web サイトの追加]** をクリックします。.
+3.  **[操作]** ウィンドウで **[Web サイトの追加]** をクリックします。
 
-4.  Web サイトの名前 (**Windows PowerShell Web Access** など) を入力します。.
+4.  Web サイトの名前 (**Windows PowerShell Web Access** など) を入力します。
 
-5.  新しい Web サイト用のアプリケーション プールが自動で作成されます。 別のアプリケーション プールを使うには、**[選択]** をクリックして、新しい Web サイトに関連付けるアプリケーション プールを選択します。 **[アプリケーション プールの選択]** ダイアログ ボックスで別のアプリケーション プールを選択し、**[OK]** をクリックします。.
+5.  新しい Web サイト用のアプリケーション プールが自動で作成されます。 別のアプリケーション プールを使うには、**[選択]** をクリックして、新しい Web サイトに関連付けるアプリケーション プールを選択します。 **[アプリケーション プールの選択]** ダイアログ ボックスで別のアプリケーション プールを選択し、**[OK]** をクリックします。
 
 6.  **[物理パス]** テキスト ボックスで、%*windir*%/Web/PowerShellWebAccess/wwwroot に移動します。
 
-7.  **[バインド]** 領域の **"種類"** フィールドで、**[https]** を選択します。.
+7.  **[バインド]** 領域の **[種類]** フィールドで、**[https]** を選択します。
 
 8.  別のサイトまたはアプリケーションがまだ使っていないポート番号を Web サイトに割り当てます。 未使用のポートを調べるには、コマンド プロンプト ウィンドウで **netstat** コマンドを実行します。 既定のポート番号は 443 です。
 
     別の Web サイトが既に 443 を使っている場合、またはポート番号を変更するセキュリティ上の理由がある場合は、既定のポートを変更します。 選択したポートを、ゲートウェイ サーバー上で実行されている別の Web サイトが使っている場合は、**[Web サイトの追加]** ダイアログ ボックスで **[OK]** をクリックすると警告が表示されます。 Windows PowerShell Web Access を実行するには未使用のポートを使う必要があります。
 
-9.  組織の必要に応じて、組織またはユーザーがわかりやすいホスト名を指定します (**www.contoso.com** など)。 **[OK]** をクリックします。.
+9.  組織の必要に応じて、組織またはユーザーがわかりやすいホスト名を指定します (**www.contoso.com** など)。 **[OK]** をクリックします。
 
 10. 運用環境のセキュリティ保護を強化するため、CA によって署名された有効な証明書を提供することを強くお勧めします。 ユーザーは HTTPS Web サイトを経由しないと Windows PowerShell Web Access に接続できないため、SSL 証明書は必ず提供する必要があります。 証明書の取得方法の詳細については、このトピックの「[IIS マネージャーで SSL 証明書を構成するには](#BKMK_cert)」を参照してください。
 
@@ -544,7 +555,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 15. 新しい Windows PowerShell Web Access の Web サイトを開きます。
 
-    ルート Web サイトは Windows PowerShell Web Access フォルダーを参照しているため、https://&lt; *gateway\_server\_name*&gt; を開くと、ブラウザーには Windows PowerShell Web Access のサインイン ページが表示されます。 URL に **/pswa** を追加する必要はありません。
+    ルート Web サイトは Windows PowerShell Web Access フォルダーを参照しているため、https://&lt;*gateway\_server\_name*&gt; を開くと、ブラウザーには Windows PowerShell Web Access のサインイン ページが表示されます。 URL に **/pswa** を追加する必要はありません。
 
     <table>
     <colgroup>
@@ -568,33 +579,33 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 ------------------------------------------------------------------------
 
-Windows PowerShell Web Access をインストールし、ゲートウェイを構成すると、ユーザーがブラウザーでサインイン ページを開けるようになります。ただし、Windows PowerShell Web Access 管理者によってアクセスを明示的に許可されない限りサインインできません。 Windows PowerShell Web Access のアクセス制御は、次の表に示す一連の Windows PowerShell コマンドレットによって管理します。 承認規則の追加と管理に関しては、相当する GUI はありません。 Windows PowerShell Web Access コマンドレットの詳細については、コマンドレット リファレンス トピック「[Windows PowerShell Web Access Cmdlets (Windows PowerShell Web Access コマンドレット)](https://technet.microsoft.com/library/hh918342.aspx)」を参照してください。.
+Windows PowerShell Web Access をインストールし、ゲートウェイを構成すると、ユーザーがブラウザーでサインイン ページを開けるようになります。ただし、Windows PowerShell Web Access 管理者によってアクセスを明示的に許可されない限りサインインできません。 Windows PowerShell Web Access のアクセス制御は、次の表に示す一連の Windows PowerShell コマンドレットによって管理します。 承認規則の追加と管理に関しては、相当する GUI はありません。 Windows PowerShell Web Access コマンドレットの詳細については、コマンドレット リファレンス トピック「[Windows PowerShell Web Access Cmdlets](https://technet.microsoft.com/library/hh918342.aspx)」(Windows PowerShell Web Access コマンドレット) を参照してください。
 
-Windows PowerShell Web Access の承認規則とセキュリティの詳細については、「[Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)」を参照してください。.
+Windows PowerShell Web Access の承認規則とセキュリティの詳細については、「[Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)」を参照してください。
 
 #### 制限的な承認規則を追加するには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
-    -   Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。.
+    -   Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
 
-    -   Windows の**スタート**画面で、**[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。.
+    -   Windows の**スタート**画面で、**[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
 
 2.  <span class="label">セッション構成を使用してユーザー アクセスを制限するためのオプション手順:</span>規則内で使用するセッション構成が既に存在することを確認します。 まだ作成されていない場合は、MSDN の「[about\_Session\_Configuration\_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx)」に記載されているセッション構成の作成手順を使用してください。
 
-3.  次のように入力して **Enter** キーを押します。.
+3.  次のように入力して **Enter** キーを押します。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4df22c91-f56f-4bb5-91e7-99f9b365ed5d'); "Copy to clipboard.")
 
         Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    この承認規則により、特定のユーザー 1 人が、通常アクセスが許可されているネットワーク上の 1 つのコンピューターにアクセスして、このユーザーが通常必要とするスクリプトとコマンドレットに制限された特定の 1 つのセッション構成にアクセスできるようになります。 次の例では、<span class="code">Contoso</span> ドメインの <span class="code">JSmith</span> というユーザーに、<span class="code">Contoso\_214</span> というコンピューターを管理し、<span class="code">NewAdminsOnly というセッション構成を使うためのアクセス権が付与されます。</span>.
+    この承認規則により、特定のユーザー 1 人が、通常アクセスが許可されているネットワーク上の 1 つのコンピューターにアクセスして、このユーザーが通常必要とするスクリプトとコマンドレットに制限された特定の 1 つのセッション構成にアクセスできるようになります。 次の例では、<span class="code">Contoso</span> ドメインの <span class="code">JSmith</span> というユーザーに、<span class="code">Contoso\_214</span> というコンピューターを管理し、<span class="code">NewAdminsOnly</span> というセッション構成を使うためのアクセス権が付与されます。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_efc3999a-2905-453f-86cd-014b41658ffc'); "Copy to clipboard.")
 
         Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  **Get-PswaAuthorizationRule** コマンドレットまたは **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer\_name&gt; を実行して、規則が作成されていることを確認します。 例: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**.
+4.  **Get-PswaAuthorizationRule** コマンドレットまたは **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer\_name&gt; を実行して、規則が作成されていることを確認します。 例: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso\_214**。
 
 承認規則が構成されたため、承認されたユーザーは Web ベースのコンソールにサインインして Windows PowerShell Web Access の使用を開始できます。
 
@@ -611,9 +622,9 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 1.  IIS マネージャーのツリー ウィンドウで、Windows PowerShell Web Access がインストールされているサーバーを選択します。
 
-2.  コンテンツ ウィンドウで **[サーバー証明書]** をダブルクリックします。.
+2.  コンテンツ ウィンドウで **[サーバー証明書]** をダブルクリックします。
 
-3.  **[操作]** ウィンドウで、次のいずれかを実行します。 IIS でサーバー証明書を構成する方法の詳細については、「[IIS 7 でサーバー証明書を構成する](https://technet.microsoft.com/library/cc732230.aspx)」を参照してください。.
+3.  **[操作]** ウィンドウで、次のいずれかを実行します。 IIS でサーバー証明書を構成する方法の詳細については、「[IIS 7 でサーバー証明書を構成する](https://technet.microsoft.com/library/cc732230.aspx)」を参照してください。
 
     -   **[インポート]** をクリックして、ネットワーク内の場所にある既存の有効な証明書をインポートします。
 
@@ -625,7 +636,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 5.  **[サイト バインドの追加]** ダイアログ ボックスで、サイトの **[https]** バインドを追加します (表示されていない場合)。 自己署名証明書を使っていない場合、手順 3. のホスト名を指定します。 自己署名証明書を使っている場合、この手順は必要ありません。
 
-6.  手順 3. で取得または作成した証明書を選択して、**[OK]** をクリックします。.
+6.  手順 3. で取得または作成した証明書を選択して、**[OK]** をクリックします。
 
 <a href="" id="BKMK_using"></a>
 
@@ -634,38 +645,34 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 ------------------------------------------------------------------------
 
-このトピックの説明に従って Windows PowerShell Web Access のインストールとゲートウェイ構成が完了したら、Web ベースの Windows PowerShell コンソールを使えるようになります。 Web ベース コンソールの概要については、「[Web ベースの Windows PowerShell コンソールの使用](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)」を参照してください。.
+このトピックの説明に従って Windows PowerShell Web Access のインストールとゲートウェイ構成が完了したら、Web ベースの Windows PowerShell コンソールを使えるようになります。 Web ベース コンソールの概要については、「[Web ベースの Windows PowerShell コンソールの使用](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)」を参照してください。
 
 <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">参照</span></a>
 <a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_6" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
 
-[インターネット インフォメーション サービス (IIS) 7.0 のドキュメントに関するページ](https://technet.microsoft.com/library/cc753433.aspx)
-[IIS Manager 7.0 Help (IIS マネージャー ヘルプ)](https://technet.microsoft.com/library/cc732664.aspx)
-[Configure Web Server Security (IIS 7) (Web サーバーのセキュリティを構成する (IIS 7))](https://technet.microsoft.com/library/cc731278.aspx)
-[IPsec の展開リソースに関するページ](https://technet.microsoft.com/network/bb531150)
+[インターネット インフォメーション サービス (IIS) 7.0 のドキュメント](https://technet.microsoft.com/library/cc753433.aspx)
+[IIS マネージャー 7.0 ヘルプ](https://technet.microsoft.com/library/cc732664.aspx)
+[Web サーバーのセキュリティを構成する (IIS 7)](https://technet.microsoft.com/library/cc731278.aspx)
+[IPsec 展開のリソース](https://technet.microsoft.com/network/bb531150)
 
 <span>表示:</span> 保護されている継承
 
 <span class="stdr-votetitle">このページは役に立ちましたか。</span>
-はい
-いいえ
+はい いいえ
 
 その他にご意見はありますか。
 
-<span class="stdr-count"><span class="stdr-charcnt">残り 1500</span> 文字</span>
-送信
-スキップする
+<span class="stdr-count"><span class="stdr-charcnt">残り 1500</span> 文字</span> 送信 スキップする
 
-<span class="stdr-thankyou">ありがとうございました。</span> <span class="stdr-appreciate">貴重なご意見をお寄せいただき心より感謝いたします。</span>
+<span class="stdr-thankyou">ありがとうございました。</span> <span class="stdr-appreciate">ご意見をお送りいただきありがとうございます。</span>
 
 [プロファイル (個人情報) の管理](https://social.technet.microsoft.com/profile)
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> サイトのフィードバック</a>
-サイトのフィードバック
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> サイトのフィードバック</a> サイトのフィードバック
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -698,6 +705,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 サードパーティのスクリプトやコード、サードパーティから本 Web サイトへのリンク、あるいは本サイトからサードパーティへのリンクは、マイクロソフトではなく、そのようなコードの所有者によってお客様にライセンス供与されています。 ASP.NET Ajax CDN の使用条件 - http://www.asp.net/ajaxlibrary/CDN.ashx
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
+
 
 
 <!--HONumber=May16_HO2-->
