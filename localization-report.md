@@ -503,8 +503,8 @@
 * Archive Datetime: 2016-06-14 13:16:39
 * Handback File: [authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d861576396fccd02e7a86cc8696b34900d23ee8d/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.ja-jp.xlf)
 * Handback Datetime: 2016-06-20 13:19:43
-* Bilingual File: [authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ff1397b8d70fd17288558e95dfa32889258e7399/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.ja-jp.xlf)
-* Bilingual Datetime: 2016-06-16 14:28:32
+* Bilingual File: [authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d861576396fccd02e7a86cc8696b34900d23ee8d/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/authoringResourceMofCS.0647b27b00ec52b2f524a2856e48bc7c29c0f867.ja-jp.xlf)
+* Bilingual Datetime: 2016-06-20 13:20:15
 * [Back to Top](#report-top)
 
 ##### <a name='be2141330dda803a22fdce6d65a1e379adf14fed11'></a> Source: [dsc\authoringResourceMofDesigner.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/authoringResourceMofDesigner.md)
