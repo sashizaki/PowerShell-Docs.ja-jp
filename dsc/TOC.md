@@ -30,10 +30,10 @@
 #### [C 言語での MOF ベースのリソース#](authoringResourceMofCS.md)
 ### [クラスに基づくカスタム リソース](authoringResourceClass.md)
 ### [複合リソース](authoringResourceComposite.md)
-### [DSC リソースのデバッグ](debugResource.md)
-### [DSC リソース メソッドの直接呼び出し](directCallResource.md)
 ### [単一インスタンスの DSC リソースを記述する (ベスト プラクティス)](singleInstance.md)
 ### [リソース作成のチェックリスト](resourceAuthoringChecklist.md)
+## [DSC リソースのデバッグ](debugResource.md)
+## [DSC リソース メソッドの直接呼び出し](directCallResource.md)
 
 # [ローカル構成マネージャー (LCM) の構成](metaConfig.md)
 ## [PowerShell 4.0 での LCM の構成](metaConfig4.md)
@@ -91,6 +91,6 @@
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO3-->
 
 
