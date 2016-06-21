@@ -1,11 +1,43 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 2
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [dsc\configData.md](https://github.com/PowerShell/powerShell-Docs/blob/ebd74549e2671a332ef6abf131ab984a4d0865a6/dsc/configData.md) | InSyncHandedBackSuccess | [Details](#8a3ae5fdf5d70de999ca6b992efb14533408c30513)
+ [dsc\TOC.md](https://github.com/PowerShell/powerShell-Docs/blob/7c58908c91eb2913a848ff7845f03d05e13fe634/dsc/TOC.md) | InSyncHandedBackSuccess | [Details](#924d5878a6d93e846adbd9cb4c69bea79e104bcd90)
 
 ## Item Details
+##### <a name='8a3ae5fdf5d70de999ca6b992efb14533408c30513'></a> Source: [dsc\configData.md](https://github.com/PowerShell/powerShell-Docs/blob/ebd74549e2671a332ef6abf131ab984a4d0865a6/dsc/configData.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\configData.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ad955ca6e29793dbf437f2b2485dd63e5ad01650/dsc/configData.md)
+* Handoff File: [configData.51d01a46dd9af8b425788cc485523b09f8470b95.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/89466df2db99d0c7e536753ca09d6aefa053691b/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/configData.51d01a46dd9af8b425788cc485523b09f8470b95.ja-jp.xlf)
+* Handoff Datetime: 2016-06-17 21:43:48
+* Handoff Reason: Include
+* Archive File: [configData.51d01a46dd9af8b425788cc485523b09f8470b95.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/30b9a900569286cf4282a38aa6e3c7831f2dd0c0/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/configData.51d01a46dd9af8b425788cc485523b09f8470b95.ja-jp.xlf)
+* Archive Datetime: 2016-06-21 13:12:43
+* Handback File: [configData.51d01a46dd9af8b425788cc485523b09f8470b95.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4f43b45b5a843f1685291c41fc37357645fe8776/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/configData.51d01a46dd9af8b425788cc485523b09f8470b95.ja-jp.xlf)
+* Handback Datetime: 2016-06-21 15:05:49
+* Bilingual File: [configData.51d01a46dd9af8b425788cc485523b09f8470b95.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/a162e044e2413664b31d207e0298ccef8f7df023/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/configData.51d01a46dd9af8b425788cc485523b09f8470b95.ja-jp.xlf)
+* Bilingual Datetime: 2016-06-16 14:28:32
+* [Back to Top](#report-top)
+
+##### <a name='924d5878a6d93e846adbd9cb4c69bea79e104bcd90'></a> Source: [dsc\TOC.md](https://github.com/PowerShell/powerShell-Docs/blob/7c58908c91eb2913a848ff7845f03d05e13fe634/dsc/TOC.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\TOC.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ad955ca6e29793dbf437f2b2485dd63e5ad01650/dsc/TOC.md)
+* Handoff File: [TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/89466df2db99d0c7e536753ca09d6aefa053691b/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.ja-jp.xlf)
+* Handoff Datetime: 2016-06-17 21:43:48
+* Handoff Reason: Include
+* Archive File: [TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/30b9a900569286cf4282a38aa6e3c7831f2dd0c0/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.ja-jp.xlf)
+* Archive Datetime: 2016-06-21 13:12:43
+* Handback File: [TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/4f43b45b5a843f1685291c41fc37357645fe8776/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.ja-jp.xlf)
+* Handback Datetime: 2016-06-21 15:05:49
+* Bilingual File: [TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/a162e044e2413664b31d207e0298ccef8f7df023/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/TOC.b2a7935bce42ebc7e43bfe65f3058900e2942427.ja-jp.xlf)
+* Bilingual Datetime: 2016-06-16 14:28:32
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
