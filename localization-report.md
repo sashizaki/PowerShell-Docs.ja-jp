@@ -5026,14 +5026,14 @@
 
 ##### <a name='02ce3d08b01e58d6d9506f90142f92cc16304e64318'></a> Source: [wmf\requirements.md](https://github.com/PowerShell/powerShell-Docs/blob/02b9b25c505adbf49630145bc0543d6436edae0b/wmf/requirements.md)
 * Status: InSyncHandedBackSuccess
-* Target File: [wmf\requirements.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/d4a628e57bfb3e0108e144d197b44835f27b9773/wmf/requirements.md)
+* Target File: [wmf\requirements.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/cc3cf8f1b35425fb4f6a5beb9ae88bc00cc75f45/wmf/requirements.md)
 * Handoff File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/5a71b81c392d6da562530065616ffd96e97744bc/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.ja-jp.xlf)
 * Handoff Datetime: 2016-03-23 21:11:08
 * Handoff Reason: Include
 * Archive File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/ba008d182b349d34c44c35195a33af3b863140ef/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.ja-jp.xlf)
 * Archive Datetime: 2016-03-29 13:11:05
-* Handback File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/9feda504dd76550e44af2f082d3445a1e57e6d1b/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.ja-jp.xlf)
-* Handback Datetime: 2016-04-29 16:55:56
+* Handback File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fe22a5951a5fba3a302f1f36dff1f4e1050cf597/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.ja-jp.xlf)
+* Handback Datetime: 2016-06-22 18:58:42
 * Bilingual File: [requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/9feda504dd76550e44af2f082d3445a1e57e6d1b/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/requirements.ef8332f358d65b1759bfd4c7336b11d1dc8c2d46.ja-jp.xlf)
 * Bilingual Datetime: 2016-06-16 14:28:32
 * [Back to Top](#report-top)
