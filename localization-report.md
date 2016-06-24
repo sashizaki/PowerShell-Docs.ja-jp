@@ -4917,8 +4917,8 @@
 * Archive Datetime: 2016-06-21 13:12:43
 * Handback File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/139a077d5faa9b32e0e5deab41f99d4711c2d785/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf)
 * Handback Datetime: 2016-06-24 14:39:41
-* Bilingual File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf)
-* Bilingual Datetime: 2016-06-16 14:28:32
+* Bilingual File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/139a077d5faa9b32e0e5deab41f99d4711c2d785/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf)
+* Bilingual Datetime: 2016-06-24 14:41:38
 * [Back to Top](#report-top)
 
 ##### <a name='35cdbfab22a0fa00480012fed0a2cf32ffa11f8d313'></a> Source: [wmf\limitation_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/ac27b0155177a013965fbf9c761fc712daf16af2/wmf/limitation_overview.md)
