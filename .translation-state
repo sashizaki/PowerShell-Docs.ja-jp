@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "a8a46b56f2252a7f65b3e5e574343f0b3e59e84a",
+  "LastProcessedCommit": "f9237503f40b7eede67fa39683f4a06173ff05a9",
   "LastTranslatedCommit": "67187ce6a34f5594448bb9cac20ce4b425f70ed9",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
@@ -28526,6 +28526,40 @@
       "HandoffFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.ja-jp\\live\\TOC.94c88eadcdc1b167fb0a17837d186c734f84dea9.ja-jp.xlf",
       "HandoffFileCommit": "7141c97aaa959e50ec5bb3e2b0dbd6dc2f091bc6",
       "HandoffDateTime": "2016-06-23T22:16:08.4370212Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null,
+      "BilingualFilePath": null,
+      "BilingualFileCommit": null,
+      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualException": null
+    },
+    "c4ef56848e95dafe0addfdf29a51e5a795518eee": {
+      "FileHash": "c4ef56848e95dafe0addfdf29a51e5a795518eee",
+      "SourceFileCommit": "983d64c1584576e34a8805888b57121011f45cd5",
+      "SourceFilePath": "dsc\\troubleshooting.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "dsc\\troubleshooting.md"
+      ],
+      "HasMetadata": true,
+      "HandoffFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.ja-jp\\live\\troubleshooting.bcb1039de4ec46bfb0ab2d224be50829d0891e7d.ja-jp.xlf",
+      "HandoffFileCommit": "36926f8c9db0848a27e2e1bb2db72d8e045b1ff0",
+      "HandoffDateTime": "2016-06-24T20:38:20.6874039Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
