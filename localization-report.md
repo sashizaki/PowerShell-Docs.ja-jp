@@ -9,8 +9,8 @@
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 1
 [ Handback Failed Files ](#handback-failed-list)| 0
-[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 78
-[ In Sync Handback Files ](#insync-handback-success-list)| 224
+[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 77
+[ In Sync Handback Files ](#insync-handback-success-list)| 225
 [ Ignored Files ](#ignored-list)| 16
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
@@ -121,7 +121,6 @@
  [scripting\setup\WinRMSecurity.md](https://github.com/PowerShell/powerShell-Docs/blob/7facb78962411d7b96ef6741e3ffa153d5537a0d/scripting/setup/WinRMSecurity.md) | OutofSyncHandedBackSuccess | [Details](#e1827e102a9b35ea214f89395f7ff3c5e0a58506241)
  [scripting\TOC.md](https://github.com/PowerShell/powerShell-Docs/blob/2fe345e6dc0734769a78bd91a0e831d413fcd7c1/scripting/TOC.md) | OutofSyncHandedBackSuccess | [Details](#c3d86239550566a7704405930f72c598d140cdb8242)
  [scripting\Windows-PowerShell-Glossary.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/Windows-PowerShell-Glossary.md) | OutofSyncHandedBackSuccess | [Details](#0cd377653a3ca82052b1b88f00bfe92830f2020f247)
- [wmf\limitation_dsc.md](https://github.com/PowerShell/powerShell-Docs/blob/3c72d76301f0dc9296feb7644951883206d72562/wmf/limitation_dsc.md) | OutofSyncHandedBackSuccess | [Details](#ad262a8f38b79f748757c1503a5e7173a1010923312)
 
 ## <a name='insync-handback-success-list'></a> In Sync Handback File Success List
  Source File | Status | Details 
@@ -332,6 +331,7 @@
  [wmf\jea_endpoint.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/jea_endpoint.md) | InSyncHandedBackSuccess | [Details](#061fb3a39191f7aaf3f5e51b12f56cac84031f49309)
  [wmf\jea_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/jea_overview.md) | InSyncHandedBackSuccess | [Details](#811596d4ad7994a12987ff172e626eac534bdf4d310)
  [wmf\jea_report.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/jea_report.md) | InSyncHandedBackSuccess | [Details](#a91b675a4f19306481bb87dc3f3b8cb32ab07e8c311)
+ [wmf\limitation_dsc.md](https://github.com/PowerShell/powerShell-Docs/blob/3c72d76301f0dc9296feb7644951883206d72562/wmf/limitation_dsc.md) | InSyncHandedBackSuccess | [Details](#ad262a8f38b79f748757c1503a5e7173a1010923312)
  [wmf\limitation_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/ac27b0155177a013965fbf9c761fc712daf16af2/wmf/limitation_overview.md) | InSyncHandedBackSuccess | [Details](#35cdbfab22a0fa00480012fed0a2cf32ffa11f8d313)
  [wmf\networkswitch_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/networkswitch_overview.md) | InSyncHandedBackSuccess | [Details](#9a9e69d384ffd92e0c26904a176f9954c5815f9a315)
  [wmf\odata_overview.md](https://github.com/PowerShell/powerShell-Docs/blob/743c597c721d4abe67d657eaabd03ecc5cf19690/wmf/odata_overview.md) | InSyncHandedBackSuccess | [Details](#8849fb46853f12318dd34781d07085419737d196316)
@@ -4908,18 +4908,15 @@
 * [Back to Top](#report-top)
 
 ##### <a name='ad262a8f38b79f748757c1503a5e7173a1010923312'></a> Source: [wmf\limitation_dsc.md](https://github.com/PowerShell/powerShell-Docs/blob/3c72d76301f0dc9296feb7644951883206d72562/wmf/limitation_dsc.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
+* Status: InSyncHandedBackSuccess
+* Target File: [wmf\limitation_dsc.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/67187ce6a34f5594448bb9cac20ce4b425f70ed9/wmf/limitation_dsc.md)
 * Handoff File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/89466df2db99d0c7e536753ca09d6aefa053691b/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf)
 * Handoff Datetime: 2016-06-17 21:43:48
 * Handoff Reason: Include
 * Archive File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/30b9a900569286cf4282a38aa6e3c7831f2dd0c0/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf)
 * Archive Datetime: 2016-06-21 13:12:43
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [wmf\limitation_dsc.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/ae6dfdd57a86870bad7de3f3cad1da4836858f88/wmf/limitation_dsc.md)
-* Current Handback File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-21 21:39:27
+* Handback File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/139a077d5faa9b32e0e5deab41f99d4711c2d785/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf)
+* Handback Datetime: 2016-06-24 14:39:41
 * Bilingual File: [limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/d6d07d83cc8199c4f8bcf03c5cba75239640f1db/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/limitation_dsc.3684c81bb088cba98089dffdb1a1e56e1c098335.ja-jp.xlf)
 * Bilingual Datetime: 2016-06-16 14:28:32
 * [Back to Top](#report-top)
