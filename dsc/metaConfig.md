@@ -59,14 +59,14 @@ LCM 構成には、限定されたリソースのセットに対するブロッ�
 
 |  プロパティ  |  種類  |  説明   | 
 |----------- |------- |--------------- | 
-| ConfigurationModeFrequencyMins| UInt32| 現在の構成がチェックおよび適用される頻度 (分単位) ConfigurationMode プロパティが ApplyOnly に設定されている場合、このプロパティは無視されます。 既定値は 15 です。 __注__: このプロパティの値が __RefreshFrequencyMins__ プロパティの値の倍数であるか、または __RefreshFrequencyMins__ プロパティの値がこのプロパティの値の倍数であるか、そのいずれかである必要があります。| 
+| ConfigurationModeFrequencyMins| UInt32| 現在の構成がチェックおよび適用される頻度 (分単位) ConfigurationMode プロパティが ApplyOnly に設定されている場合、このプロパティは無視されます。 既定値は 15 です。 <br> __注__: このプロパティの値が __RefreshFrequencyMins__ プロパティの値の倍数であるか、または __RefreshFrequencyMins__ プロパティの値がこのプロパティの値の倍数であるか、そのいずれかである必要があります。| 
 | RebootNodeIfNeeded| ブール| 再起動が必要な構成が適用された後にノードを自動的に再起動するには、これを __$true__ に設定します。 設定しない場合は、再起動が必要な構成のノードを手動で再起動する必要があります。 既定値は __$false__ です。| 
-| ConfigurationMode| string | LCM が実際に構成をターゲット ノードに適用する方法を指定します。 次の値を指定できます。__"ApplyOnly"__: DSC によって構成が適用され、その後何も行われません。ただし、ターゲット ノードに新しい構成がプッシュされたか、新しい構成がサーバーからプルされた場合を除きます。 新しい構成を最初に適用した後、DSC では以前に構成した状態からのずれを確認しません。 __"ApplyAndMonitor"__: これは既定値です。 LCM は、新しい構成を適用します。 新しい構成を最初に適用した後、ターゲット ノードが望ましい状態からずれた場合、DSC は、ログに不一致を報告します。__"ApplyAndAutoCorrect"__: DSC は、すべての新しい構成を適用します。 新しい構成を最初に適用した後、ターゲット ノードが望ましい状態からずれた場合、DSC では、ログで不一致を報告し、現在の構成を再度適用します。| 
-| ActionAfterReboot| string| 構成の適用中の再起動後の動作を指定します。 使用できる値は次のとおりです。__"ContinueConfiguration"__: 現在の構成の適用を続行します。__"StopConfiguraiton"__: 現在の構成を停止します。| 
-| RefreshMode| string| LCM が構成を取得する方法を指定します。 使用できる値は次のとおりです。__"Disabled"__: このノードの DSC 構成が無効になります。 __"Push"__: Start-DscConfiguration コマンドレットを呼び出すことによって構成を開始します。 構成は、ノードにすぐに適用されます。 これは、既定値です。 __Pull:__ プル サーバーから構成が定期的にチェックされるようにノードを構成します。 このプロパティが Pull に設定されている場合は、__ConfigurationRepositoryWeb__ または __ConfigurationRepositoryShare__ ブロックでプル サーバーを指定する必要があります。 プル サーバーの詳細については、「[DSC Web プル サーバーのセットアップ](pullServer.md)」をご覧ください。| 
+| ConfigurationMode| string | LCM が実際に構成をターゲット ノードに適用する方法を指定します。 指定できる値は __"ApplyOnly"__、__"ApplyandMonitior"(既定)__、__"ApplyandAutoCorrect"__ です。 <ul><li>__"ApplyOnly"__: DSC によって構成が適用され、その後何も行われません。ただし、ターゲット ノードに新しい構成がプッシュされたか、新しい構成がサーバーからプルされた場合を除きます。 新しい構成を最初に適用した後、DSC では以前に構成した状態からのずれを確認しません。</li><li> __"ApplyAndMonitor"__: これは既定値です。 LCM は、新しい構成を適用します。 新しい構成を最初に適用した後、ターゲット ノードが望ましい状態からずれた場合、DSC では、ログで不一致を報告します。</li><li>__ApplyAndAutoCorrect__: DSC によって新しい構成が適用されます。 新しい構成を最初に適用した後、ターゲット ノードが望ましい状態からずれた場合、DSC では、ログで不一致を報告し、現在の構成を再度適用します。</li></ul>| 
+| ActionAfterReboot| string| 構成の適用中の再起動後の動作を指定します。 指定できる値は __"ContinueConfiguration(default)"__ と __"StopConfiguration"__ です。 <ul><li> __ContinueConfiguration__: コンピューターの再起動後、現在の構成を引き続き適用します。</li><li>__StopConfiguration__: コンピューターの再起動後、現在の構成の適用を停止します。</li></ul>| 
+| RefreshMode| string| LCM が構成を取得する方法を指定します。 指定できる値は、__"Disabled"__、__"Push(既定)"__、__"Pull"__ です。 <ul><li>__"Disabled"__: このノードの DSC 構成が無効になります。</li><li> __"Push"__: [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを呼び出すことによって構成を開始します。 構成は、ノードにすぐに適用されます。 これは、既定値です。</li><li>__Pull:__ プル サーバーから構成が定期的にチェックされるようにノードを構成します。 このプロパティが __Pull__ に設定されている場合は、__ConfigurationRepositoryWeb__ または __ConfigurationRepositoryShare__ ブロックでプル サーバーを指定する必要があります。 プル サーバーの詳細については、「[DSC Web プル サーバーのセットアップ](pullServer.md)」をご覧ください。</li></ul>| 
 | CertificateID| string| 構成へのアクセスの資格情報をセキュリティ保護するために使用される証明書を指定する GUID。 詳細については、「[Want to secure credentials in Windows PowerShell Desired State Configuration? (Windows PowerShell Desired State Configuration で資格情報をセキュリティ保護する)](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)」をご覧ください。| 
-| ConfigurationID| string| プル モードでプル サーバーから取得する構成ファイルを識別する GUID。 構成 MOF の名前が ConfigurationID.mof の場合、ノードはプル サーバーで構成をプルします。 __注:__ このプロパティを設定すると、__RegistryKeys__ を使用したプル サーバーへのノードの登録は機能しません。 詳細については、「[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」をご覧ください。| 
-| RefreshFrequencyMins| Uint32| LCM がプル サーバーをチェックして、更新された構成を取得する時間間隔 (分)。 この値は、LCM がプル モードで構成されていない場合は無視されます。 既定値は 30 です。 __注:__ このプロパティの値が __ConfigurationModeFrequencyMins__ プロパティの値の倍数であるか、または __ConfigurationModeFrequencyMins__ プロパティの値がこのプロパティの値の倍数であるか、そのいずれかである必要があります。| 
+| ConfigurationID| string| プル モードでプル サーバーから取得する構成ファイルを識別する GUID。 構成 MOF の名前が ConfigurationID.mof の場合、ノードはプル サーバーで構成をプルします。<br> __注:__ このプロパティを設定すると、__RegistrationKey__ を使用したプル サーバーへのノードの登録は機能しません。 詳細については、「[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」をご覧ください。| 
+| RefreshFrequencyMins| Uint32| LCM がプル サーバーをチェックして、更新された構成を取得する時間間隔 (分)。 この値は、LCM がプル モードで構成されていない場合は無視されます。 既定値は 30 です。<br> __注:__ このプロパティの値が __ConfigurationModeFrequencyMins__ プロパティの値の倍数であるか、または __ConfigurationModeFrequencyMins__ プロパティの値がこのプロパティの値の倍数であるか、そのいずれかである必要があります。| 
 | AllowModuleOverwrite| ブール| 構成サーバーからダウンロードされた新しい構成がターゲット ノードの古い構成を上書きできる場合は、__$TRUE__。 それ以外の場合は、$FALSE。| 
 | DebugMode| string| 使用できる値は __None (既定)__、__ForceModuleImport__、および __All__ です。 <ul><li>キャッシュされたリソースを使用する場合は、__None__ に設定します。 これが既定値であり、運用シナリオではこの値を使う必要があります。</li><li>__ForceModuleImport__ に設定すると、以前に読み込まれ、キャッシュされた DSC リソース モジュールも LCM によって再読み込みされます。 これは、使用時に各モジュールが再読み込みされるため、DSC 操作のパフォーマンスに影響します。 通常、リソースのデバッグ中には、この値を使用します</li><li>このリリースでは、__All__ は、__ForceModuleImport__ と同じです。</li></ul> |
 | ConfigurationDownloadManagers| CimInstance[]| 使われていません。 __ConfigurationRepositoryWeb__ ブロックと __ConfigurationRepositoryShare__ ブロックを使用して、構成プル サーバーを定義します。| 
@@ -143,7 +143,7 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 |DependsOn|string{}|この部分構成が適用される前に完了する必要があるその他の構成の名前の一覧。|
 |説明|string|部分構成を記述するために使用するテキスト。|
 |ExclusiveResources|string[]|この部分構成に固有のリソースの配列。|
-|RefreshMode|string|DCS がこの部分構成を取得する方法を指定します。 使用できる値は次のとおりです。**Disabled**: この部分構成が無効になります。 **Push**: [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx) コマンドレットを呼び出すと、部分構成がノードにプッシュされます。 ノードのすべての部分構成がプッシュされたか、またはサーバーからプルされた後、`Start-DscConfiguration –UseExisting` を呼び出すことによって構成を開始できます。 これは、既定値です。 **Pull**: プル サーバーから部分構成が定期的にチェックされるようにノードを構成します。 このプロパティが "Pull" に設定されている場合は、**ConfigurationSource** プロパティを設定して、プル サーバーを指定する必要があります。 プル サーバーの詳細については、「[DSC Web プル サーバーのセットアップ](pullServer.md)」をご覧ください。|
+|RefreshMode|string|LCM がこの部分構成を取得する方法を指定します。 指定できる値は、__"Disabled"__、__"Push(既定)"__、__"Pull"__ です。 <ul><li>__Disabled__: この部分的な構成が無効になります。</li><li> __Push__: [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx) コマンドレットを呼び出すと、部分構成がノードにプッシュされます。 ノードのすべての部分構成がプッシュされたか、またはサーバーからプルされた後、`Start-DscConfiguration –UseExisting` を呼び出すことによって構成を開始できます。 これは、既定値です。</li><li>__Pull__: プル サーバーから部分構成が定期的にチェックされるようにノードを構成します。 このプロパティが __Pull__ に設定されている場合は、__ConfigurationSource__ プロパティでプル サーバーを指定する必要があります。 プル サーバーの詳細については、「[DSC Web プル サーバーのセットアップ](pullServer.md)」をご覧ください。</li></ul>|
 |ResourceModuleSource|string[]|この部分構成に必要なリソースのダウンロード元となるリソース サーバーの名前の配列。 これらの名前は、**ResourceRepositoryWeb** および **ResourceRepositoryShare** ブロックで以前に定義したリソース サーバーを参照する必要があります。|
 
 ## 参照 
@@ -162,6 +162,6 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 
 
 
-<!--HONumber=Jun16_HO1-->
+<!--HONumber=Jun16_HO3-->
 
 

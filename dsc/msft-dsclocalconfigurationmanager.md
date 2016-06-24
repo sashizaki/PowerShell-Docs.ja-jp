@@ -51,7 +51,7 @@ class MSFT_DSCLocalConfigurationManager
 | [ResourceSet](msft-dsclocalconfigurationmanager-resourceset.md)| DSC リソースの **Set** メソッドを直接呼び出します。| 
 | [ResourceTest](msft-dsclocalconfigurationmanager-resourcetest.md)| DSC リソースの **Test** メソッドを直接呼び出します。| 
 | [RollBack](msft-dsclocalconfigurationmanager-rollback.md)| 以前の構成にロールバックします。| 
-| [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| 構成ドキュメントを管理ノードに送信し、保留中として保存します。構成ドキュメントを管理ノードに送信し、保留中の変更として保存します。| 
+| [SendConfiguration](msft-dsclocalconfigurationmanager-sendconfiguration.md)| 構成ドキュメントを管理ノードに送信し、保留中の変更として保存します。| 
 | [SendConfigurationApply](msft-dsclocalconfigurationmanager-sendconfigurationapply.md)| 構成ドキュメントを管理ノードに送信し、構成エージェントを使用して構成を適用します。| 
 | [SendConfigurationApplyAsync](msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md)| 構成ドキュメントを管理ノードに送信し、構成エージェントの使用を開始して構成を適用します。 GetConfigurationResultOutput を使用して、結果の出力を取得します。| 
 | [SendMetaConfigurationApply](msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md)| 構成エージェントを制御するために使用する LCM の設定を設定します。| 
@@ -78,6 +78,6 @@ class MSFT_DSCLocalConfigurationManager
 
 
 
-<!--HONumber=May16_HO3-->
+<!--HONumber=Jun16_HO3-->
 
 
