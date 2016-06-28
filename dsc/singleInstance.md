@@ -1,12 +1,16 @@
 ---
-title:   単一インスタンスの DSC リソースを記述する (ベスト プラクティス)
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "単一インスタンスの DSC リソースを記述する (ベスト プラクティス)"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 4b1e8a6d3fb4feca426a9d7861c40d194e612c22
+
 ---
 
 # 単一インスタンスの DSC リソースを記述する (ベスト プラクティス)
@@ -48,8 +52,7 @@ Configuration SetTimeZone
 
 これは、DSC リソース キーの動作方法が原因でした。 1 つのリソースには、少なくとも 1 つのキー プロパティが必要です。 キー プロパティのすべての値の組み合わせが一意であれば、リソースのインスタンスは一意とみなされます。 リソースの以前の実装では、[xTimeZone](https://github.com/PowerShell/xTimeZone) リソースには **TimeZone** プロパティしかなかったため、このプロパティをキーにする必要がありました。 このため、上記のような構成は、警告なしにコンパイルされ実行されました。 各 **xTimeZone** リソース ブロックは、一意とみなされます。 これにより、構成がノードに繰り返し適用され、タイムゾーンが何度も戻されたり進められたりしていました。
 
-構成がタイムゾーンを対象のノードに 1 回だけ設定されるようにするため、リソースは、2 番目のプロパティで、キー プロパティになる **IsSingleInstance** を追加するよう更新されることになっていました。 
-**IsSingleInstance** は、**ValueMap** を使用して、単一の値 "Yes" に制限されていました。 リソースの以前の MOF スキーマは、次のようでした。
+構成がタイムゾーンを対象のノードに 1 回だけ設定されるようにするため、リソースは、2 番目のプロパティで、キー プロパティになる **IsSingleInstance** を追加するよう更新されることになっていました。 **IsSingleInstance** は、**ValueMap** を使用して、単一の値 "Yes" に制限されていました。 リソースの以前の MOF スキーマは、次のようでした。
 
 ```powershell
 [ClassVersion("1.0.0.0"), FriendlyName("xTimeZone")]
@@ -225,6 +228,7 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
    
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

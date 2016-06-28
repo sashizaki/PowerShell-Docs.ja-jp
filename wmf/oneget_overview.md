@@ -8,4 +8,8 @@ PackageManagement (OneGet とも呼ばれる) は、Web 上のソフトウェア
 -   1 つ以上のソフトウェア リポジトリからのパッケージのシームレスなインストール、アンインストール、およびインベントリ
 
 詳細については、http://oneget.org/ をご覧ください。
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+
