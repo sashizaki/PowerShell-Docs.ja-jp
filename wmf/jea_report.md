@@ -31,4 +31,8 @@ Cmdlet          Restart-Service                                    3.0.0.0 Micro
 
 JEA セッション中にユーザーが行った_操作_についてレポートするには、次のことを行います。
 1. その JEA エンドポイントの "over-the-shoulder" トランスクリプトを有効にして、トランスクリプト ディレクトリで各ユーザーの操作の完全なログを参照します。
-2. PowerShell モジュールのログを有効にし、PowerShell イベント ログを調べます。<!--HONumber=Mar16_HO2-->
+2. PowerShell モジュールのログを有効にし、PowerShell イベント ログを調べます。
+
+<!--HONumber=Jun16_HO4-->
+
+

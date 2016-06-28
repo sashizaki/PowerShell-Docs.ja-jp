@@ -1,12 +1,16 @@
 ---
-title:   DSC リソースのデバッグ
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "DSC リソースのデバッグ"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: f5290e085c8949f6b3cdf23f3244a7142da6248d
+
 ---
 
 # DSC リソースのデバッグ
@@ -18,8 +22,7 @@ PowerShell 5.0 では、構成が適用されているときに DSC リソース
 ## DSC デバッグの有効化
 リソースをデバッグする前に、[Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) コマンドレットを呼び出すことによって、デバッグを有効にする必要があります。 このコマンドレットは、必須パラメーター **BreakAll** を取ります。 
 
-[Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) への呼び出しの結果を参照して、デバッグが有効になっていることを確認できます。 
-次の PowerShell 出力は、デバッグを有効にした結果を示しています。
+[Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) への呼び出しの結果を参照して、デバッグが有効になっていることを確認できます。 次の PowerShell 出力は、デバッグを有効にした結果を示しています。
 
 
 ```powershell
@@ -106,6 +109,7 @@ ISE でデバッグ コマンドを使うと、リソース スクリプトを�
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 
