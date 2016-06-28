@@ -1,20 +1,23 @@
 ---
-title:   DSC 構成
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "DSC 構成"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 29676d0bf51adf9176753d0056efe76687a40600
+
 ---
 
 # DSC 構成
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
-DSC 構成は、特殊な関数を定義する PowerShell スクリプトです。 
-構成を定義するには、PowerShell キーワード __Configuration__ を使用します。
+DSC 構成は、特殊な関数を定義する PowerShell スクリプトです。 構成を定義するには、PowerShell キーワード __Configuration__ を使用します。
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -121,8 +124,7 @@ Configuration DependsOnExample {
 
 ## 構成での新しいリソースの使用
 前の例を実行した場合、リソースを明示的にインポートしないで使用することについて警告されることがあります。
-今日、DSC には PSDesiredStateConfiguration モジュールの一部として 12 のリソースが付属しています。 外部モジュールの他のリソースが LCM によって認識されるためには、`$env:PSModulePath` に配置する必要があります。 新しいコマンドレット [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) を使用して、どのリソースがシステムにインストールされ、LCM で使用できるかを決定できます。 
-これらのモジュールが `$env:PSModulePath` に配置され、[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) によって正しく認識された後、構成内に読み込む必要があります。 __Import-DscResource__ は、__Configuration__ ブロック内でのみ認識される動的なキーワードです (つまり、コマンドレットではありません)。 __Import-DscResource__ は、次の 2 つのパラメーターをサポートしています。
+今日、DSC には PSDesiredStateConfiguration モジュールの一部として 12 のリソースが付属しています。 外部モジュールの他のリソースが LCM によって認識されるためには、`$env:PSModulePath` に配置する必要があります。 新しいコマンドレット [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) を使用して、どのリソースがシステムにインストールされ、LCM で使用できるかを決定できます。 これらのモジュールが `$env:PSModulePath` に配置され、[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) によって正しく認識された後、構成内に読み込む必要があります。 __Import-DscResource__ は、__Configuration__ ブロック内でのみ認識される動的なキーワードです (つまり、コマンドレットではありません)。 __Import-DscResource__ は、次の 2 つのパラメーターをサポートしています。
 * __ModuleName__ は、__Import-DscResource__ を使用する場合に推奨される方法です。 これは、インポートするリソースを含むモジュールの名前 (およびモジュール名の文字列配列) を受け取ります。 
 * __Name__ は、インポートするリソースの名前です。 これは、[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) によって "Name" として返されるフレンドリ名ではありませんが、リソース スキーマを定義するときに使用されるクラス名です ([Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) によって __ResourceType__ として返されます)。 
 
@@ -133,6 +135,7 @@ Configuration DependsOnExample {
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -84,4 +84,8 @@ Configuration WebApplication
 }
 ```
 
-この非常に類似した構成は、WindowsFeature FE_IIS と WindowsFeature Worker_IIS リソースが一致せず、競合が発生するようになったため、失敗します。<!--HONumber=Mar16_HO2-->
+この非常に類似した構成は、WindowsFeature FE_IIS と WindowsFeature Worker_IIS リソースが一致せず、競合が発生するようになったため、失敗します。
+
+<!--HONumber=Jun16_HO4-->
+
+

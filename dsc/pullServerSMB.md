@@ -1,12 +1,16 @@
 ---
-title:   DSC SMB プル サーバーのセットアップ
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "DSC SMB プル サーバーのセットアップ"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 35ac9b38086b12fb48844c56a488854f63529e21
+
 ---
 
 # DSC SMB プル サーバーのセットアップ
@@ -136,9 +140,7 @@ Import-DscResource -ModuleName cNtfsAccessControl
 クライアントに必要なすべてのリソースは、アーカイブ済みの `.zip` ファイルとして SMB 共有フォルダーに配置する必要があります。  
 
 ## MOF チェックサムの作成
-ターゲット ノード上の LCM が構成を検証できるように、構成 MOF ファイルはチェックサム ファイルと組み合わせて使用する必要があります。 
-チェックサムを作成するには、[New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) コマンドレットを呼び出します。 このコマンドレットは、構成 MOF が存在するフォルダーが指定された **Path** パラメーターを受け取ります。 このコマンドレットは、`ConfigurationMOFName.mof.checksum` という名前でチェックサム ファイルを作成します。ここで、`ConfigurationMOFName` は構成 MOF ファイルの名前です。 
-指定のフォルダーに複数の構成 MOF ファイルがある場合は、そのフォルダー内の構成ごとにチェックサムが作成されます。
+ターゲット ノード上の LCM が構成を検証できるように、構成 MOF ファイルはチェックサム ファイルと組み合わせて使用する必要があります。 チェックサムを作成するには、[New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) コマンドレットを呼び出します。 このコマンドレットは、構成 MOF が存在するフォルダーが指定された **Path** パラメーターを受け取ります。 このコマンドレットは、`ConfigurationMOFName.mof.checksum` という名前でチェックサム ファイルを作成します。ここで、`ConfigurationMOFName` は構成 MOF ファイルの名前です。 指定のフォルダーに複数の構成 MOF ファイルがある場合は、そのフォルダー内の構成ごとにチェックサムが作成されます。
 
 チェックサム ファイルは、構成 MOF ファイルと同じディレクトリ (既定では `$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration`) に存在し、拡張子として `.checksum` が付けられた同じ名前である必要があります。
 
@@ -159,6 +161,7 @@ Import-DscResource -ModuleName cNtfsAccessControl
  
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

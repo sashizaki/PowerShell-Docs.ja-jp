@@ -41,4 +41,8 @@ Windows PowerShell ISE では、PSEdit コマンドを実行することによ�
 Windows PowerShell が読み込まれているすべてのコンピューター プロセスにアタッチできるようになりました。 これを行うには、プロセスを使って対話型セッションに入ります。これは、Enter-PSSession コマンドレットを実行して、対話型リモート セッションに入る方法と似ています。
 
 -   Enter-PSHostProcess
--   Exit-PSHostProcess<!--HONumber=Mar16_HO2-->
+-   Exit-PSHostProcess
+
+<!--HONumber=Jun16_HO4-->
+
+

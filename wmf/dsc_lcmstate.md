@@ -8,4 +8,8 @@ LCM 状態に関する詳細情報を公開する機能が強化されました�
 * **PendingConfiguration**
 
 また、状態に関するさらに詳細な情報を含む LCMStateDetail プロパティも追加されました。
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+
