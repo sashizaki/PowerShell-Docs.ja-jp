@@ -4020,8 +4020,8 @@
 * Archive Datetime: 2016-06-28 13:27:29
 * Handback File: [What-s-New-With-PowerShell.8b0e86271984e828077d39559df46f794de87d12.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/3d7d27f6beef3728d8c9bc8735414b2f82cd7024/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/What-s-New-With-PowerShell.8b0e86271984e828077d39559df46f794de87d12.ja-jp.xlf)
 * Handback Datetime: 2016-07-05 15:55:40
-* Bilingual File: [What-s-New-With-PowerShell.8b0e86271984e828077d39559df46f794de87d12.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/3ff3d9d78b4fef8638703254acc893f1d99b0da3/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/What-s-New-With-PowerShell.8b0e86271984e828077d39559df46f794de87d12.ja-jp.xlf)
-* Bilingual Datetime: 2016-06-16 14:28:32
+* Bilingual File: [What-s-New-With-PowerShell.8b0e86271984e828077d39559df46f794de87d12.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/3d7d27f6beef3728d8c9bc8735414b2f82cd7024/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/What-s-New-With-PowerShell.8b0e86271984e828077d39559df46f794de87d12.ja-jp.xlf)
+* Bilingual Datetime: 2016-07-05 15:56:11
 * [Back to Top](#report-top)
 
 ##### <a name='0cd377653a3ca82052b1b88f00bfe92830f2020f248'></a> Source: [scripting\Windows-PowerShell-Glossary.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/Windows-PowerShell-Glossary.md)
