@@ -1,11 +1,28 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 0
+ Total Files | 1
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [scripting\whats-new\What-s-New-With-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/whats-new/What-s-New-With-PowerShell.md) | InSyncHandedBackSuccess | [Details](#abb8a868b735a2eb39a2276da6ece611d5423a16247)
 
 ## Item Details
+##### <a name='abb8a868b735a2eb39a2276da6ece611d5423a16247'></a> Source: [scripting\whats-new\What-s-New-With-PowerShell.md](https://github.com/PowerShell/powerShell-Docs/blob/03ac4b90d299b316194f1fa932e7dbf62d4b1c8e/scripting/whats-new/What-s-New-With-PowerShell.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [scripting\whats-new\What-s-New-With-PowerShell.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/5382a6d8da440b53ac48a7000f59461949e14b50/scripting/whats-new/What-s-New-With-PowerShell.md)
+* Handoff File: [What-s-New-With-PowerShell.8b0e86271984e828077d39559df46f794de87d12.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/3c07fdf7065a26276df70af035b9a3e9d9c1cfe5/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/What-s-New-With-PowerShell.8b0e86271984e828077d39559df46f794de87d12.ja-jp.xlf)
+* Handoff Datetime: 2016-06-27 20:14:35
+* Handoff Reason: Include
+* Archive File: [What-s-New-With-PowerShell.8b0e86271984e828077d39559df46f794de87d12.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/7363a954bc309e8917708faa47a6217eda082c9b/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/What-s-New-With-PowerShell.8b0e86271984e828077d39559df46f794de87d12.ja-jp.xlf)
+* Archive Datetime: 2016-06-28 13:27:29
+* Handback File: [What-s-New-With-PowerShell.8b0e86271984e828077d39559df46f794de87d12.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/3d7d27f6beef3728d8c9bc8735414b2f82cd7024/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/What-s-New-With-PowerShell.8b0e86271984e828077d39559df46f794de87d12.ja-jp.xlf)
+* Handback Datetime: 2016-07-05 15:55:40
+* Bilingual File: [What-s-New-With-PowerShell.8b0e86271984e828077d39559df46f794de87d12.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/3ff3d9d78b4fef8638703254acc893f1d99b0da3/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/What-s-New-With-PowerShell.8b0e86271984e828077d39559df46f794de87d12.ja-jp.xlf)
+* Bilingual Datetime: 2016-06-16 14:28:32
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
