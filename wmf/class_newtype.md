@@ -4,8 +4,7 @@ PowerShell 5.0 では、Windows PowerShell に次の新しい言語要素が導�
 
 ## class キーワード
 
-**class** キーワードでは新しいクラスを定義します。 これは、真の .NET Framework 型です。 
-クラス メンバーはパブリックですが、モジュール スコープ内でのみパブリックです。
+**class** キーワードでは新しいクラスを定義します。 これは、真の .NET Framework 型です。 クラス メンバーはパブリックですが、モジュール スコープ内でのみパブリックです。
 型名を文字列として参照することはできません (たとえば、`New-Object` は機能しません)。このリリースでは、クラスが定義されているスクリプトまたはモジュール ファイルの外で type リテラル (`[MyClass]` など) を使用することはできません。
 
 ```powershell
@@ -124,7 +123,7 @@ hashtable new(int capacity, float loadFactor)
 
 ## メソッド
 
-Windows PowerShell のクラス メソッドは、end ブロックのみを持つ ScriptBlock として実装されます。 すべてのメソッドはパブリックです。 **DoSomething** という名前のメソッドを定義する例を次に示します。.
+Windows PowerShell のクラス メソッドは、end ブロックのみを持つ ScriptBlock として実装されます。 すべてのメソッドはパブリックです。 **DoSomething** という名前のメソッドを定義する例を次に示します。
 
 ```powershell
 class MyClass
@@ -200,8 +199,7 @@ $v -eq $d # true
 
 ## エンド ツー エンドの例
 
-次の例では、HTML 動的スタイル シート言語 (DSL) を実装するいくつかの新しいカスタム クラスを作成します。 
-次に、モジュールのスコープの外部では型を使用できないため、この例では見出しスタイルやテーブルなど、要素クラスの一部として特定の要素型を作成するヘルパー関数を追加します。
+次の例では、HTML 動的スタイル シート言語 (DSL) を実装するいくつかの新しいカスタム クラスを作成します。 次に、モジュールのスコープの外部では型を使用できないため、この例では見出しスタイルやテーブルなど、要素クラスの一部として特定の要素型を作成するヘルパー関数を追加します。
 
 ```powershell
 # Classes that define the structure of the document
@@ -326,6 +324,6 @@ function Style
 function Html ([HTML] $doc) { return $doc }
 ```
 
-<!--HONumber=Apr16_HO5-->
+<!--HONumber=Jun16_HO4-->
 
 

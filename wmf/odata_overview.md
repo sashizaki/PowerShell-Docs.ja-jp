@@ -6,7 +6,7 @@ OData エンドポイントに基づく Windows PowerShell コマンドレット
 
 次の例では、この新しいコマンドレットを使用する方法を示します。
 
-Export-ODataEndpointProxy の \# 基本ユース ケース
+\# Export-ODataEndpointProxy の基本ユース ケース
 
 ```powershell
 Export-ODataEndpointProxy -Uri 'http://services.odata.org/v3/(S(snyobsk1hhutkb2yulwldgf1))/odata/odata.svc' -OutputModule C:\Users\user\Generated.psd1
@@ -98,4 +98,8 @@ Export-ODataEndpointProxy コマンドレットと、これによって生成さ
 
 Export-ODataEndpointProxy -Uri $endPointUri -OutputModule $generatedProxyModuleDir -Force -AllowUnSecureConnection -Verbose -Headers @{'subscription-key'='XXXX'}
 ```
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+
