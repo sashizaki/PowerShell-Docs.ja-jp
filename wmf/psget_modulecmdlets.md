@@ -196,7 +196,7 @@ d----- 4/21/2015 5:40 PM RequiredModule3
 ## Update-ModuleManifest コマンドレット
 この新しいコマンドレットを使用して、入力プロパティ値でマニフェスト ファイルを更新します。 このコマンドレットは、Test-ModuleManifest が受け取るすべてのパラメーターを受け取ります。
 
-多数のモジュール作成者は FunctionsToExport、CmdletsToExport などのエクスポートされた値に "\ *" を指定します。PowerShell ギャラリーへのモジュールの発行時に、指定されていない関数やコマンドはギャラリーに正しく設定されません。 このため、モジュール作成者はマニフェストを適切な値で更新することをお勧めします。
+多数のモジュール作成者は FunctionsToExport、CmdletsToExport などのエクスポートされた値に "\*" を指定します。PowerShell ギャラリーへのモジュールの発行時に、指定されていない関数やコマンドはギャラリーに正しく設定されません。 このため、モジュール作成者はマニフェストを適切な値で更新することをお勧めします。
 
 プロパティをエクスポートしたモジュールがある場合は、Update-ModuleManifest によって、エクスポートされた関数、コマンドレット、変数などの情報を指定されたマニフェスト ファイルに入力します。
 ```powershell
@@ -277,4 +277,8 @@ PrivateData = @{
 } # End of PrivateData hashtable
 ```
 ***注:*** DscResourcesToExport は、最新の PowerShell バージョン 5.0 でのみサポートされています。 以前の PowerShell バージョンで実行している場合は、フィールドを更新できません。
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

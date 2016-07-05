@@ -1,20 +1,24 @@
 ---
-title:  Process コマンドレットによるプロセスの管理
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  5038f612-d149-4698-8bbb-999986959e31
+title: "Process コマンドレットによるプロセスの管理"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 6857cf5e73252f646e563fa12a8252b4bdc2e1e5
+
 ---
 
 # Process コマンドレットによるプロセスの管理
 Windows PowerShell で Process コマンドレットを使用して、Windows PowerShell のローカル プロセスおよびリモート プロセスを管理できます。
 
-## プロセスの取得 (Get-Process)
-ローカル コンピューターで実行されているプロセスを取得するには、パラメーターを指定せずに **Get-Process** を実行します。
+## プロセスの取得 (Get\-Process)
+ローカル コンピューターで実行されているプロセスを取得するには、パラメーターを指定せずに **Get\-Process** を実行します。
 
 特定のプロセスを取得するには、プロセス名またはプロセス ID を指定します。 次のコマンドを実行すると、アイドル状態のプロセスを取得できます。
 
@@ -25,7 +29,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
       0       0        0         16     0               0 Idle
 ```
 
-場合によっては、コマンドレットからデータが返されないこともあります。しかし、**Get-Process** で ProcessId を使用してプロセスを指定した場合は、通常、実行中の既知のプロセスを取得することが目的であるため、一致するプロセスが見つからないときはエラーが発生します。 指定された ID と一致するプロセスが存在しない場合、その ID が間違っているか、プロセスが既に終了している可能性があります。
+場合によっては、コマンドレットからデータが返されないこともあります。しかし、**Get\-Process** で ProcessId を使用してプロセスを指定した場合は、通常、実行中の既知のプロセスを取得することが目的であるため、一致するプロセスが見つからないときはエラーが発生します。 指定された ID と一致するプロセスが存在しない場合、その ID が間違っているか、プロセスが既に終了している可能性があります。
 
 ```
 PS> Get-Process -Id 99
@@ -34,7 +38,7 @@ At line:1 char:12
 + Get-Process  <<<< -Id 99
 ```
 
-Get-Process コマンドレットの Name パラメーターを使用すると、プロセスのサブセットをプロセス名で指定できます。 Name パラメーターでは、コンマ区切り一覧を使用して複数の名前を指定できます。また、ワイルドカードを使用できるため、名前のパターンを入力できます。
+Get\-Process コマンドレットの Name パラメーターを使用すると、プロセスのサブセットをプロセス名で指定できます。 Name パラメーターでは、コンマ区切り一覧を使用して複数の名前を指定できます。また、ワイルドカードを使用できるため、名前のパターンを入力できます。\-
 
 たとえば、次のコマンドでは、名前が "ex" で始まるプロセスを取得できます。
 
@@ -48,7 +52,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 .NET System.Diagnostics.Process クラスは、Windows PowerShell のプロセスの基礎となるクラスです。そのため、Windows PowerShell のプロセスには、System.Diagnostics.Process の表記規則の一部が使用されています。 これらの規則の 1 つとして、実行可能ファイルのプロセス名の最後に ".exe" は付きません。
 
-**Get-Process** の Name パラメーターには、複数の値を指定することもできます。
+**Get\-Process** の Name パラメーターには、複数の値を指定することもできます。
 
 ```
 PS> Get-Process -Name exp*,power* 
@@ -58,7 +62,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-Get-Process の ComputerName パラメーターを使用すると、リモート コンピューター上のプロセスを取得できます。 たとえば、次のコマンドでは、ローカル コンピューター ("localhost" で表す) と 2 台のリモート コンピューターの PowerShell プロセスを取得できます。
+Get\-Process の ComputerName パラメーターを使用すると、リモート コンピューター上のプロセスを取得できます。 たとえば、次のコマンドでは、ローカル コンピューター ("localhost" で表す) と 2 台のリモート コンピューターの PowerShell プロセスを取得できます。
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server02
@@ -69,7 +73,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     605       9    30668      29800   155     7.11   3052 powershell
 ```
 
-ここではコンピューターの名前は表示されませんが、Get-Process から返されたプロセス オブジェクトの MachineName プロパティに格納されています。 次のコマンドでは、Format-Table コマンドレットを使用して、プロセス オブジェクトのプロセス ID、ProcessName、および MachineName (ComputerName) の各プロパティを表示します。
+ここではコンピューターの名前は表示されませんが、Get\-Process から返されたプロセス オブジェクトの MachineName プロパティに格納されています。 次のコマンドでは、Format\-Table コマンドレットを使用して、プロセス オブジェクトのプロセス ID、ProcessName、MachineName (ComputerName) の各プロパティを表示します。
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | Format-Table -Property ID, ProcessName, MachineName
@@ -80,7 +84,7 @@ PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | F
 5816 powershell  localhost
 ```
 
-より複雑なこのコマンドは、Get-Process の標準の表示に MachineName プロパティを追加します。 アクサン グラーブ文字 (`) (ASCII 96) は、Windows PowerShell の連結文字です。
+より複雑なこのコマンドは、Get\-Process の標準の表示に MachineName プロパティを追加します。 アクサン グラーブ文字 (\`) (ASCII 96) は、Windows PowerShell の連結文字です。
 
 ```
 get-process powershell -computername localhost, Server01, Server02 | format-table -property Handles, `
@@ -99,10 +103,10 @@ Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
     605       9  30668 29800   155 7.11    3052 powershell Server02
 ```
 
-## プロセスの停止 (Stop-Process)
+## プロセスの停止 (Stop\-Process)
 Windows PowerShell では、さまざまな方法でプロセスを一覧表示できますが、プロセスの停止についてはどうでしょうか。
 
-**Stop-Process** コマンドレットでは、停止するプロセスを Name または Id で指定できます。 プロセスを停止できるかどうかは、ユーザーのアクセス許可によって異なります。 停止することのできないプロセスもあります。 たとえば、アイドル状態のプロセスを停止しようとすると、エラーが発生します。
+**Stop\-Process** コマンドレットでは、停止するプロセスを Name または ID で指定できます。 プロセスを停止できるかどうかは、ユーザーのアクセス許可によって異なります。 停止することのできないプロセスもあります。 たとえば、アイドル状態のプロセスを停止しようとすると、エラーが発生します。
 
 ```
 PS> Stop-Process -Name Idle
@@ -134,13 +138,13 @@ Performing operation "Stop-Process" on Target "taskmgr (4072)".
 Get-Process | Where-Object -FilterScript {$_.Responding -eq $false} | Stop-Process
 ```
 
-他の状況でも、これと同じアプローチを使用できます。 たとえば、あるアプリケーションを起動すると、補助的なアプリケーションが自動的に実行され、通知領域に表示されるとします。 このとき、ターミナル サービスのセッションで補助的なアプリケーションが正しく起動しないことがわかりました。しかし、物理的なコンピューター コンソールで実行されているセッションでは起動したままにしておく必要があります。 物理的なコンピューター デスクトップに関連付けられたセッションには、常にセッション ID として 0 が割り当てられます。したがって、**Where-Object** およびプロセスの **SessionId** を使用することで、その他のセッションに属するプロセスのすべてのインスタンスを停止できます。
+他の状況でも、これと同じアプローチを使用できます。 たとえば、あるアプリケーションを起動すると、補助的なアプリケーションが自動的に実行され、通知領域に表示されるとします。 このとき、ターミナル サービスのセッションで補助的なアプリケーションが正しく起動しないことがわかりました。しかし、物理的なコンピューター コンソールで実行されているセッションでは起動したままにしておく必要があります。 物理的なコンピューター デスクトップに関連付けられたセッションには、常にセッション ID として 0 が割り当てられます。したがって、**Where\-Object** およびプロセスの **SessionId** を使用することで、その他のセッションに属するプロセスのすべてのインスタンスを停止できます。
 
 ```
 Get-Process -Name BadApp | Where-Object -FilterScript {$_.SessionId -neq 0} | Stop-Process
 ```
 
-Stop-Process コマンドレットには、ComputerName パラメーターがありません。 そのため、リモート コンピューター上でプロセスを停止するコマンドを実行するには、Invoke-Command コマンドレットを使用します。 たとえば、リモート コンピューター Server01 上で PowerShell プロセスを停止するには、次のように入力します。
+Stop\-Process コマンドレットには、ComputerName パラメーターがありません。 そのため、リモート コンピューター上でプロセスを停止するコマンドを実行するには、Invoke\-Command コマンドレットを使用します。 たとえば、リモート コンピューター Server01 上で PowerShell プロセスを停止するには、次のように入力します。
 
 ```
 Invoke-Command -ComputerName Server01 {Stop-Process Powershell}
@@ -177,6 +181,7 @@ Windows PowerShell には、プロセスを開始 (または再開) するため
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

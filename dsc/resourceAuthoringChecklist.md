@@ -1,19 +1,22 @@
 ---
-title:   リソース作成のチェックリスト
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "リソース作成のチェックリスト"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: bd6af2cbf746e71aa59f509eae14664e647a1b05
+
 ---
 
 # リソース作成のチェックリスト
 このチェックリストは、新しい DSC リソースを作成するときのベスト プラクティスの一覧です。
 ## リソース モジュールにすべてのリソースの .psd1 ファイルと schema.mof が含まれている 
-最初に、リソースが正しい構造であり、必要なすべてのファイルが含まれていることを確認する必要があります。 すべてのリソース モジュールには .psd1 ファイルが含まれている必要があり、すべて非複合リソースには .schema.mof ファイルが含まれている必要があります。 スキーマが含まれていないリソースは **Get-DscResource** によって一覧表示されず、ユーザーは ISE でこれらのモジュールに対してコードを記述するときに IntelliSense を使用できません。 
-xPSDesiredStateConfiguration リソース モジュールの一部である xRemoteFile リソースのディレクトリ構造の例は、次のようになります。
+最初に、リソースが正しい構造であり、必要なすべてのファイルが含まれていることを確認する必要があります。 すべてのリソース モジュールには .psd1 ファイルが含まれている必要があり、すべて非複合リソースには .schema.mof ファイルが含まれている必要があります。 スキーマが含まれていないリソースは **Get-DscResource** によって一覧表示されず、ユーザーは ISE でこれらのモジュールに対してコードを記述するときに IntelliSense を使用できません。 xPSDesiredStateConfiguration リソース モジュールの一部である xRemoteFile リソースのディレクトリ構造の例は、次のようになります。
 
 
 ```
@@ -32,8 +35,7 @@ xPSDesiredStateConfiguration
 ```
 
 ## リソースとスキーマが正しく、DscResourceDesigner コマンドレットを使用して検証されている ##
-もう 1 つの重要な側面は、リソース スキーマ (*.schema.mof) ファイルを確認することです。 
-次のことを確認します。
+もう 1 つの重要な側面は、リソース スキーマ (*.schema.mof) ファイルを確認することです。 次のことを確認します。
 -   プロパティの型が正しい (たとえば、数値を受け入れるプロパティには文字列を使用せず、UInt32 またはその他の数値型を代わりに使用する必要があります)
 -   プロパティの属性が正しく指定されている ([key]、[required]、[write]、[read])
 
@@ -126,8 +128,7 @@ Get-TargetResource は、リソースの現在の状態の詳細を返す必要�
 
 ## リソースが **Start-DscConfiguration** を使用してエンド ツー エンドで検証されている ##
 
-直接呼び出すことによって **Get/Set/Test-TargetResource** 関数をテストすることは重要ですが、この方法ですべての問題が検出されるわけではありません。 テストにおいては、**Start-DscConfiguration** やプル サーバーの使用に関する部分を重視する必要があります。 これはユーザーが実際にリソースを使用する方法であり、この種類のテストの重要性を過小評価しないようにしてください。 
-可能性がある問題の種類:
+直接呼び出すことによって **Get/Set/Test-TargetResource** 関数をテストすることは重要ですが、この方法ですべての問題が検出されるわけではありません。 テストにおいては、**Start-DscConfiguration** やプル サーバーの使用に関する部分を重視する必要があります。 これはユーザーが実際にリソースを使用する方法であり、この種類のテストの重要性を過小評価しないようにしてください。 可能性がある問題の種類:
 -   DSC エージェントはサービスとして実行されるため、資格情報またはセッションの動作が異なる可能性があります。  機能は必ずエンド ツー エンドでテストしてください。
 -   リソースによって表示されたエラー メッセージがわかりやすいことを確認します。 たとえば、**Start-DscConfiguration** によるエラー出力は、**Set-TargetResource** 関数を直接呼び出したときに表示されるものとは異なる場合があります。
 
@@ -179,8 +180,7 @@ configuration Sample_xRemoteFile_DownloadFile
     }
 } 
 ```
--   スクリプトの例の最後に、実際の値を使用して構成を呼び出す方法の例 (コメント アウト) を含めることをお勧めします。 
-たとえば、上記の構成では、UserAgent を指定する最善の方法が次のとおりであることは明白になっていません。
+-   スクリプトの例の最後に、実際の値を使用して構成を呼び出す方法の例 (コメント アウト) を含めることをお勧めします。 たとえば、上記の構成では、UserAgent を指定する最善の方法が次のとおりであることは明白になっていません。
 
 `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer`  
 そのため、構成のサンプルの実行にコメントを含める必要があります。
@@ -208,8 +208,7 @@ Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg"
 ## ログ メッセージは、わかりやすく、有益な情報が含まれている (-verbose、-debug、および ETW ログを含む) ##
 リソースによって出力されるログがわかりやすく、ユーザーにとって価値のあるものであることを確認します。 リソースは、ユーザーに役立つ可能性のあるすべての情報を出力する必要がありますが、常にログが多い方がよいとは限りません。 冗長性および付加価値を提供しないデータを出力することは避ける必要があります。求めている情報を探して何百ものログ エントリを確認する必要がないようにします。 もちろん、ログを出力しないことはこの問題に対する適切な解決策ではありません。 
 
-テストする場合は、詳細ログとデバッグ ログ (**Start-DscConfiguration** を -verbose および -debug スイッチを適切に指定して実行する)、および ETW ログも分析する必要があります。 DSC ETW ログを確認するには、イベント ビューアーに移動し、次のフォルダーを開きます。Applications and Services- Microsoft - Windows - Desired State Configuration。  既定では、稼動チャネルがありますが、分析およびデバッグ チャネルを有効にします (構成を実行する前に行う必要があります)。 
-分析/デバッグ チャネルを有効にするには、次のスクリプトを実行できます。
+テストする場合は、詳細ログとデバッグ ログ (**Start-DscConfiguration** を -verbose および -debug スイッチを適切に指定して実行する)、および ETW ログも分析する必要があります。 DSC ETW ログを確認するには、イベント ビューアーに移動し、次のフォルダーを開きます。Applications and Services- Microsoft - Windows - Desired State Configuration。  既定では、稼動チャネルがありますが、分析およびデバッグ チャネルを有効にします (構成を実行する前に行う必要があります)。 分析/デバッグ チャネルを有効にするには、次のスクリプトを実行できます。
 ```powershell
 $statusEnabled = $true
 # Use "Analytic" to enable Analytic channel
@@ -256,14 +255,13 @@ $programFilesPath = ${env:ProgramFiles(x86)}
 ## リソース機能が十分にテストされている ##
 リソースが正しく動作するかことを確認するため、その機能を手動でテストするか、できれば、自動化を記述します。 このチェックリストには、テストする必要がある重要な項目や見落とされがちな項目が含まれています。 一連のテスト (テストするリソースに固有であり、ここに記載されていない、主に機能のテスト) があります。 負のテスト ケースを忘れないでください。 多くの場合、これは、リソース テストの最も時間がかかる部分になります。 
 ## ベスト プラクティス: リソース モジュールに、ResourceDesignerTests.ps1 スクリプトを含む Test フォルダーが含まれている ##
-リソース モジュール内に "Test" フォルダーを作成し、ResourceDesignerTests.ps1 ファイルを作成し、指定したモジュール内のすべてのリソースに対して **Test-xDscResource** と **Test-xDscSchema** を使用してテストを追加することをお勧めします。 
-この方法で、指定したモジュールのすべてのリソースのスキーマをすばやく検証し、発行する前にサニティ チェックを実行できます。
+リソース モジュール内に "Test" フォルダーを作成し、ResourceDesignerTests.ps1 ファイルを作成し、指定したモジュール内のすべてのリソースに対して **Test-xDscResource** と **Test-xDscSchema** を使用してテストを追加することをお勧めします。 この方法で、指定したモジュールのすべてのリソースのスキーマをすばやく検証し、発行する前にサニティ チェックを実行できます。
 xRemoteFile の場合、ResourceTests.ps1 は次のように単純になります。
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof 
 ```
-**ベスト プラクティス: リソース フォルダーにスキーマを生成するためのリソース デザイナー スクリプトが含まれている**。各リソースに、リソースの mof スキーマを生成するリソース デザイナー スクリプトを含める必要があります。 このファイルは、 <ResourceName>\ResourceDesignerScripts に配置し、Generate<ResourceName>Schema.ps1 という名前を付ける必要があります。xRemoteFile リソースの場合、このファイルの名前は GenerateXRemoteFileSchema.ps1 となり、次の内容が含まれます。
+**ベスト プラクティス: リソース フォルダーにスキーマを生成するためのリソース デザイナー スクリプトが含まれている**。各リソースに、リソースの mof スキーマを生成するリソース デザイナー スクリプトを含める必要があります。 このファイルは、<ResourceName>\ResourceDesignerScripts に配置し、Generate<ResourceName>Schema.ps1 という名前を付ける必要があります。xRemoteFile リソースの場合、このファイルの名前は GenerateXRemoteFileSchema.ps1 となり、次の内容が含まれます。
 ```powershell 
 $DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
 $Uri = New-xDscResourceProperty -Name Uri -Type String -Attribute Required -Description 'Uri of a file which should be copied or downloaded. This parameter supports HTTP and HTTPS values.'
@@ -276,8 +274,7 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile 
 ```
 ベスト プラクティス: リソースによる -whatif のサポート。リソースが "危険な" 操作を実行する場合は、-whatif 機能を実装することをお勧めします。 完了したら、whatif スイッチを使用しないでコマンドが実行された場合にどのようなことが発生するかについて、whatif 出力で正しく記述されていることを確認します。
-また、-whatif スイッチが存在する場合は、その操作が実行されない (ノードの状態の変更は行われない) ことも確認します。 
-たとえば、File リソースをテストすると仮定します。 "test" の内容を持つファイル "test.txt" を作成する単純な構成を次に示します。
+また、-whatif スイッチが存在する場合は、その操作が実行されない (ノードの状態の変更は行われない) ことも確認します。 たとえば、File リソースをテストすると仮定します。 "test" の内容を持つファイル "test.txt" を作成する単純な構成を次に示します。
 ```powershell
 configuration config
 {
@@ -317,11 +314,11 @@ VERBOSE: [X]: LCM:  [ End    Set      ]    in  0.1050 seconds.
 VERBOSE: Operation 'Invoke CimMethod' complete.
 ```
 
-これで、このチェックリストは終わりです。 この一覧ですべての内容を網羅しているわけではないことに注意する必要がありますが、DSC リソースの設計、開発、およびテスト中に発生した多くの重要な問題を反映しています。 チェックリストを使用することは、そのような側面を忘れないようにするために役立ち、Microsoft 社内では DSC リソースを開発するときに実際にチェックリストを使用しています。 
-DSC リソースの作成およびテストに使用するガイドラインとベスト プラクティスを作成した場合は、ぜひ共有してください。
+これで、このチェックリストは終わりです。 この一覧ですべての内容を網羅しているわけではないことに注意する必要がありますが、DSC リソースの設計、開発、およびテスト中に発生した多くの重要な問題を反映しています。 チェックリストを使用することは、そのような側面を忘れないようにするために役立ち、Microsoft 社内では DSC リソースを開発するときに実際にチェックリストを使用しています。 DSC リソースの作成およびテストに使用するガイドラインとベスト プラクティスを作成した場合は、ぜひ共有してください。
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

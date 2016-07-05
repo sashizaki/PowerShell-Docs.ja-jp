@@ -1,19 +1,23 @@
 ---
-title:  グラフィカルな日付の選択を作成する
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  c1cb722c-41e9-4baa-be83-59b4653222e9
+title: "グラフィカルな日付の選択を作成する"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: f359254900dce0ef0a28af3e16b8ef4095e85309
+
 ---
 
 # グラフィカルな日付の選択を作成する
-ユーザーが日付を選べる、グラフィカルな予定表スタイルのコントロールを備えたフォームを作成するには、Windows PowerShell 3.0 以降のリリースを使用します。
+ユーザーが日付を選べる、グラフィカルな予定表スタイルのコントロールを備えたフォームを作成するには、Windows PowerShell 3.0 以降のリリースを使用します。\-
 
-## グラフィカルな日付の選択コントロールの作成
+## グラフィカルな日付の選択コントロールの作成\-
 以下を Windows PowerShell ISE にコピーしてから貼り付け、Windows PowerShell スクリプト (.ps1) として保存します。
 
 ```
@@ -140,6 +144,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

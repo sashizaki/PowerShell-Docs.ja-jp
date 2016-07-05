@@ -1,17 +1,21 @@
 ---
-title:  静的なクラスとメソッドの使用
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  418ad766-afa6-4b8c-9a44-471889af7fd9
+title: "静的なクラスとメソッドの使用"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 50ebc8a737b50aba5a5af49716b59905da74669a
+
 ---
 
 # 静的なクラスとメソッドの使用
-.NET Framework のクラスの中には、**New-Object** では作成できないものもあります。 たとえば、**New-Object** で **System.Environment** オブジェクトや **System.Math** オブジェクトを作成しようとすると、次のようなエラー メッセージが表示されます。
+.NET Framework のクラスの中には、**New\-Object** では作成できないものもあります。 たとえば、**New\-Object** で **System.Environment** オブジェクトや **System.Math** オブジェクトを作成しようとすると、次のようなエラー メッセージが表示されます。
 
 ```
 PS> New-Object System.Environment
@@ -29,7 +33,7 @@ At line:1 char:11
 エラーが発生する理由は、これらのクラスからは、新しいオブジェクトを作成することができないためです。 これらのクラスは、メソッドおよびプロパティが収められている参照用のライブラリであり、状態の変化を伴いません。 これらのメソッドやプロパティは、オブジェクトを作成しなくても使用できます。 これらのクラスやメソッドは、作成、破棄、変更されないため、*静的クラス*と呼ばれます。 この点をわかりやすく説明するために、実際に静的クラスを使用する例を紹介します。
 
 ### System.Environment による環境データの取得
-通常、Windows PowerShell でオブジェクトを操作するために最初に行うことは、Get-Member を使用して、そのオブジェクトに含まれているメンバーを調べることです。 静的クラスの場合、実際のクラスがオブジェクトではないため、このプロセスが若干異なります。
+通常、Windows PowerShell でオブジェクトを操作するために最初に行うことは、Get\-Member を使用して、そのオブジェクトに含まれているメンバーを調べることです。 静的クラスの場合、実際のクラスがオブジェクトではないため、このプロセスが若干異なります。
 
 #### 静的クラス System.Environment の参照
 静的クラスを参照するには、そのクラス名を角かっこで囲みます。 たとえば、**System.Environment** を参照するには、角かっこの内側に名前を入力します。 これにより、型に関する一般的な情報が表示されます。
@@ -43,11 +47,11 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> 既に説明したように、**New-Object** を使用するとき、 型名の前には ’**System.**’ が自動的に追加されます。 角かっこで囲まれた型名を使用する場合も同様です。つまり、**[System.Environment]** は、**[Environment]** と指定することもできます。
+> 既に説明したように、**New-Object** を使用するとき、 型名の前には ’**System.**’ が自動的に追加されます。\- 角かっこで囲まれた型名を使用する場合も同様です。つまり、**\[System.Environment]** は、**\[Environment]** と指定することもできます。
 
 **System.Environment** クラスには、現在のプロセス (Windows PowerShell 内で作業している場合は powershell.exe) の作業環境に関する一般情報が格納されます。
 
-「**[System.Environment] | Get-Member**」と入力してこのクラスの詳細を表示しようとすると、オブジェクトの種類は、**System.Environment** ではなく、**System.RuntimeType** であると報告されます。
+「**\[System.Environment] | Get\-Member**」と入力してこのクラスの詳細を表示しようとすると、オブジェクトの種類は、**System.Environment** ではなく、**System.RuntimeType** であると報告されます。
 
 ```
 PS> [System.Environment] | Get-Member
@@ -55,7 +59,7 @@ PS> [System.Environment] | Get-Member
    TypeName: System.RuntimeType
 ```
 
-Get-Member で静的メンバーを表示するには、**Static** パラメーターを指定します。
+Get\-Member で静的メンバーを表示するには、**Static** パラメーターを指定します。
 
 ```
 PS> [System.Environment] | Get-Member -Static
@@ -114,9 +118,10 @@ False
 ```
 
 ### System.Math による数学的演算の実行
-System.Math 静的クラスは、数学的演算を行うのに役立ちます。 **System.Math** の重要なメンバーのほとんどはメソッドであり、**Get-Member** を使って表示できます。
+System.Math 静的クラスは、数学的演算を行うのに役立ちます。 **System.Math** の重要なメンバーのほとんどはメソッドであり、**Get\-Member** を使って表示できます。
 
-> [!NOTE]System.Math には名前が同じ複数のメソッドが存在しますが、それぞれパラメーターの型が異なります。
+> [!NOTE]
+> System.Math には同じ名前の複数のメソッドが存在しますが、これらはパラメーターの型が異なります。
 
 **System.Math** クラスのメソッドを一覧表示するには、次のコマンドを入力します。
 
@@ -184,6 +189,7 @@ PS> [System.Math]::Truncate(-9.3)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

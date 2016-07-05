@@ -1,19 +1,23 @@
 ---
-title:  コンピューターに関する情報の収集
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
+title: "コンピューターに関する情報の収集"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: d45fbf8a7ddaf7c1176dc09386f96b4f0c0da8f6
+
 ---
 
 # コンピューターに関する情報の収集
-**Get-WmiObject** は、システム全般の管理タスクを行うための最も重要なコマンドレットです。 サブシステムの重要なすべての設定は、WMI を介して公開されています。 さらに、WMI では、データは 1 つまたは複数の項目が集まったオブジェクトとして扱われます。 Windows PowerShell の操作の対象もオブジェクトです。パイプラインを使用することにより、1 つまたは複数のオブジェクトを同じ方法で処理できます。このため、一般的な WMI アクセスにより、高度なタスクを最小限の労力で実行できるようになります。
+**Get\-WmiObject** は、システム全般の管理タスクを行うための最も重要なコマンドレットです。 サブシステムの重要なすべての設定は、WMI を介して公開されています。 さらに、WMI では、データは 1 つまたは複数の項目が集まったオブジェクトとして扱われます。 Windows PowerShell の操作の対象もオブジェクトです。パイプラインを使用することにより、1 つまたは複数のオブジェクトを同じ方法で処理できます。このため、一般的な WMI アクセスにより、高度なタスクを最小限の労力で実行できるようになります。
 
-以降、任意のコンピューターに対して **Get-WmiObject** を使用し、特定の情報を収集する例を紹介します。 **ComputerName** パラメーターの値には、ローカル コンピューターを表すドット (**.**) を指定しています。 WMI 経由でアクセス可能なコンピューターであれば、任意のコンピューターの名前または IP アドレスを指定できます。 ローカル コンピューターに関する情報を取得する場合、**-ComputerName. ** は省略することもできます。
+以降、任意のコンピューターに対して **Get\-WmiObject** を使用し、特定の情報を収集する例を紹介します。 **ComputerName** パラメーターの値には、ローカル コンピューターを表すドット (**.**) を指定しています。 WMI 経由でアクセス可能なコンピューターであれば、任意のコンピューターの名前または IP アドレスを指定できます。 ローカル コンピューターに関する情報を取得する場合、**\-ComputerName** は省略することもできます。
 
 ### デスクトップの設定を一覧表示する
 まず、ローカル コンピューターのデスクトップに関する情報を収集するコマンドについて説明します。
@@ -25,29 +29,29 @@ Get-WmiObject -Class Win32_Desktop -ComputerName .
 このコマンドを実行すると、使用中であるかどうかに関係なく、すべてのデスクトップの情報が返されます。
 
 > [!NOTE]
-> WMI のクラスによっては、非常に詳しい情報が返されます。その WMI クラスのメタデータが含まれる場合もあります。 こうしたメタデータのプロパティには、通常、二重アンダースコアで始まる名前が付いているため、Select-Object を使用することでこれらのプロパティをフィルター処理できます。 アルファベット文字で始まるプロパティだけを指定するには、Property 値として **[a-z]&#42;** を使用します。次にその例を示します。 たとえば、次のように入力します。
+> WMI のクラスによっては、非常に詳しい情報が返されます。その WMI クラスのメタデータが含まれる場合もあります。 こうしたメタデータのプロパティには、通常、二重アンダースコアで始まる名前が付いているため、Select\-Object を使用することでこれらのプロパティをフィルター処理できます。\- アルファベット文字で始まるプロパティだけを指定するには、Property 値として **\[a\-z]\&#42;** を使用します。 たとえば、次のように入力します。
 
 ```
 Get-WmiObject -Class Win32_Desktop -ComputerName . | Select-Object -Property [a-z]*
 ```
 
-メタデータをフィルターで除外するには、パイプライン演算子 (|) を使用して、Get-WmiObject コマンドの結果を **Select-Object -Property [a-z]&#42;** に渡します。
+メタデータをフィルターで除外するには、パイプライン演算子 (|) を使用して、Get\-WmiObject コマンドの結果を **Select\-Object \-Property \[a\-z]\&#42;** に渡します。
 
 ### BIOS 情報を一覧表示する
-WMI Win32_BIOS クラスは、ローカル コンピューターのシステム BIOS について、詳細な情報を凝縮して返します。
+WMI Win32\_BIOS クラスは、ローカル コンピューターのシステム BIOS について、詳細な情報を凝縮して返します。
 
 ```
 Get-WmiObject -Class Win32_BIOS -ComputerName .
 ```
 
 ### プロセッサ情報を一覧表示する
-WMI の **Win32_Processor** クラスを使用すると (通常はフィルター処理を併用)、プロセッサ全般に関する情報を取得できます。
+WMI の **Win32\_Processor** クラスを使用すると (通常はフィルター処理を併用)、プロセッサ全般に関する情報を取得できます。
 
 ```
 Get-WmiObject -Class Win32_Processor -ComputerName . | Select-Object -Property [a-z]*
 ```
 
-**Win32_ComputerSystemSystemType** プロパティを返すことで、プロセッサ ファミリの一般的な説明を表示できます。
+**Win32\_ComputerSystemSystemType** プロパティを返すことで、プロセッサ ファミリの一般的な説明を表示できます。
 
 ```
 PS> Get-WmiObject -Class Win32_ComputerSystem -ComputerName . | Select-Object -Property SystemType
@@ -57,7 +61,7 @@ X86-based PC
 ```
 
 ### コンピューターの製造元および型番を一覧表示する
-コンピューターの型番情報も **Win32_ComputerSystem** から取得できます。 OEM データを取得するのであれば、標準の表示出力で十分です。フィルター処理は不要です。
+コンピューターの型番情報も **Win32\_ComputerSystem** から取得できます。 OEM データを取得するのであれば、標準の表示出力で十分です。フィルター処理は不要です。
 
 ```
 PS> Get-WmiObject -Class Win32_ComputerSystem
@@ -72,7 +76,7 @@ TotalPhysicalMemory : 804765696
 このようなコマンドからの出力結果はハードウェアから直接情報が取得されますが、詳しい情報は含まれていません。 ハードウェアの製造元によって正しく構成されていないために利用できない情報もあります。
 
 ### インストールされている修正プログラムを一覧表示する
-インストールされているすべての修正プログラムを一覧表示するには **Win32_QuickFixEngineering** を使用します。
+インストールされているすべての修正プログラムを一覧表示するには **Win32\_QuickFixEngineering** を使用します。
 
 ```
 Get-WmiObject -Class Win32_QuickFixEngineering -ComputerName .
@@ -92,7 +96,7 @@ ServicePackInEffect : SP3
 Status              :
 ```
 
-より簡潔な出力を得るには、いくつかのプロパティを除外します。 **Get-WmiObject Property** パラメーターを使用して **HotFixID** だけを選ぶこともできますが、その場合は非常に多くの情報が返されます。既定では、すべてのメタデータが表示されるためです。
+より簡潔な出力を得るには、いくつかのプロパティを除外します。 **Get\-WmiObject Property** パラメーターを使用して **HotFixID** だけを選ぶこともできますが、その場合は非常に多くの情報が返されます。既定では、すべてのメタデータが表示されるためです。
 
 ```
 PS> Get-WmiObject -Class Win32_QuickFixEngineering -ComputerName . -Property HotFixId
@@ -109,7 +113,7 @@ __NAMESPACE      :
 __PATH           :
 ```
 
-**Get-WmiObject** の Property パラメーターによって制限されるのは、WMI クラスのインスタンスから返されるプロパティです。Windows PowerShell に返されるオブジェクトが制限されるわけではありません。実際、上の例を見ると、余分なデータが返されていることがわかります。 出力結果を減らすためには、**Select-Object** を使用します。
+**Get\-WmiObject** の Property パラメーターによって制限されるのは、WMI クラスのインスタンスから返されるプロパティです。Windows PowerShell に返されるオブジェクトが制限されるわけではありません。実際、上の例を見ると、余分なデータが返されていることがわかります。 出力結果を減らすためには、**Select\-Object** を使用します。
 
 ```
 PS> Get-WmiObject -Class Win32_QuickFixEngineering -ComputerName . -Property Hot
@@ -120,13 +124,13 @@ KB910437
 ```
 
 ### オペレーティング システムのバージョン情報を一覧表示する
-**Win32_OperatingSystem** クラスのプロパティには、バージョンおよびサービス パックの情報が含まれます。 これらのプロパティだけを明示的に選ぶことによって、バージョン情報の概要を **Win32_OperatingSystem** から取得できます。
+**Win32\_OperatingSystem** クラスのプロパティには、バージョンおよびサービス パックの情報が含まれます。 これらのプロパティだけを明示的に選ぶことによって、バージョン情報の概要を **Win32\_OperatingSystem** から取得できます。
 
 ```
 Get-WmiObject -Class Win32_OperatingSystem -ComputerName . | Select-Object -Property BuildNumber,BuildType,OSType,ServicePackMajorVersion,ServicePackMinorVersion
 ```
 
-**Select-Object Property** パラメーターでは、ワイルドカードも使用できます。 ここでは **Build** または **ServicePack** で始まるすべてのプロパティを使用することが重要であるため、次のように短く記述することもできます。
+**Select\-Object Property** パラメーターでは、ワイルドカードも使用できます。 ここでは **Build** または **ServicePack** で始まるすべてのプロパティを使用することが重要であるため、次のように短く記述することもできます。
 
 ```
 PS> Get-WmiObject -Class Win32_OperatingSystem -ComputerName . | Select-Object -Property Build*,OSType,ServicePack*
@@ -139,7 +143,7 @@ ServicePackMinorVersion : 0
 ```
 
 ### ローカル ユーザーと所有者を一覧表示する
-ライセンスされたユーザー数、現在のユーザー数、所有者名など、ローカル ユーザーの全般的な情報は、**Win32_OperatingSystem** のプロパティを選択することによって取得できます。 表示するプロパティを明示的に選ぶには、次のように入力します。
+ライセンスされたユーザー数、現在のユーザー数、所有者名など、ローカル ユーザーの全般的な情報は、**Win32\_OperatingSystem** のプロパティを選択することによって取得できます。 表示するプロパティを明示的に選ぶには、次のように入力します。
 
 ```
 Get-WmiObject -Class Win32_OperatingSystem -ComputerName . | Select-Object -Property NumberOfLicensedUsers,NumberOfUsers,RegisteredUser
@@ -152,7 +156,7 @@ Get-WmiObject -Class Win32_OperatingSystem -ComputerName . | Select-Object -Prop
 ```
 
 ### 使用可能なディスク領域を取得する
-ローカル ドライブのディスク容量と空き領域を表示するには、WMI Win32_LogicalDisk クラスを使用します。 表示する必要があるのは、DriveType が 3 (WMI が固定ハード ディスクに使用する値) のドライブだけです。
+ローカル ドライブのディスク容量と空き領域を表示するには、WMI Win32\_LogicalDisk クラスを使用します。 表示する必要があるのは、DriveType が 3 (WMI が固定ハード ディスクに使用する値) のドライブだけです。
 
 ```
 Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType=3" -ComputerName .
@@ -177,21 +181,21 @@ Get-WmiObject -Class Win32_LogicalDisk -Filter "DriveType=3" -ComputerName . | M
 ```
 
 ### ログオン セッション情報を取得する
-ユーザーに関連付けられたログオン セッションの全般的な情報は、WMI Win32_LogonSession クラスを使って取得できます。
+ユーザーに関連付けられたログオン セッションの全般的な情報は、WMI Win32\_LogonSession クラスを使って取得できます。
 
 ```
 Get-WmiObject -Class Win32_LogonSession -ComputerName .
 ```
 
 ### コンピューターにログオンしたユーザーを取得する
-特定のコンピューター システムにログオンしているユーザーを表示するには、Win32_ComputerSystem を使用します。 このコマンドで返されるのは、システムのデスクトップにログオンしているユーザーだけです。
+特定のコンピューター システムにログオンしているユーザーを表示するには、Win32\_ComputerSystem を使用します。 このコマンドで返されるのは、システムのデスクトップにログオンしているユーザーだけです。
 
 ```
 Get-WmiObject -Class Win32_ComputerSystem -Property UserName -ComputerName .
 ```
 
 ### コンピューターのローカル時刻を取得する
-特定のコンピューターにおける現在のローカル時刻を取得するには、WMI Win32_LocalTime クラスを使用します。 このクラスでは、すべてのメタデータが既定で表示されるため、必要に応じて、**Select-Object** を使ってフィルター処理します。
+特定のコンピューターにおける現在のローカル時刻を取得するには、WMI Win32\_LocalTime クラスを使用します。 このクラスでは、すべてのメタデータが既定で表示されるため、必要に応じて、**Select\-Object** を使ってフィルター処理します。
 
 ```
 PS> Get-WmiObject -Class Win32_LocalTime -ComputerName . | Select-Object -Property [a-z]*
@@ -209,13 +213,13 @@ Year         : 2006
 ```
 
 ### サービスの状態を表示する
-前述のように、特定のコンピューターを対象に、すべてのサービスの状態を表示するには、ローカルで **Get-Service** コマンドレットを使用します。 リモート システムの場合は、WMI Win32_Service クラスを使用します。 **Select-Object** を併用して結果をフィルター処理し、**Status**、**Name**、**DisplayName** だけを抽出した場合は、**Get-Service** を実行した場合とほぼ同じ出力形式になります。
+前述のように、特定のコンピューターを対象に、すべてのサービスの状態を表示するには、ローカルで **Get\-Service** コマンドレットを使用します。 リモート システムの場合は、WMI Win32\_Service クラスを使用します。 **Select\-Object** を併用して結果をフィルター処理し、**Status**、**Name**、**DisplayName** だけを抽出した場合は、**Get\-Service** を実行した場合とほぼ同じ出力形式になります。
 
 ```
 Get-WmiObject -Class Win32_Service -ComputerName . | Select-Object -Property Status,Name,DisplayName
 ```
 
-非常に長い名前のサービスも存在します。こうしたサービスの名前全体を表示するには、**Format-Table** に **AutoSize** パラメーターと **Wrap** パラメーターを使用します。列幅が調整され、長い名前は切り詰められるのではなく折り返されます。
+非常に長い名前のサービスも存在します。こうしたサービスの名前全体を表示するには、**Format\-Table** に **AutoSize** パラメーターと **Wrap** パラメーターを使用します。列幅が調整され、長い名前は切り詰められるのではなく折り返されます。
 
 ```
 Get-WmiObject -Class Win32_Service -ComputerName . | Format-Table -Property Status,Name,DisplayName -AutoSize -Wrap
@@ -223,6 +227,7 @@ Get-WmiObject -Class Win32_Service -ComputerName . | Format-Table -Property Stat
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

@@ -1,17 +1,21 @@
 ---
-title:  ユーザー設定の入力ボックスを作成する
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  0b12e56c-299f-40ee-afbf-d30d23ed2565
+title: "ユーザー設定の入力ボックスを作成する"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 628062cfadcadcec3311dcb8bfdd6bd3b9a9e567
+
 ---
 
 # ユーザー設定の入力ボックスを作成する
-Windows PowerShell 3.0 以降のリリースで、Microsoft .NET Framework フォーム作成機能を使用してカスタムのグラフィカル入力ボックスをスクリプト化します。
+Windows PowerShell 3.0 以降のリリースで、Microsoft .NET Framework フォーム作成機能を使用してカスタムのグラフィカル入力ボックスをスクリプト化します。\-
 
 ## カスタムのグラフィカル入力ボックスの作成
 以下を Windows PowerShell ISE にコピーしてから貼り付け、Windows PowerShell スクリプト (.ps1) として保存します。
@@ -162,6 +166,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

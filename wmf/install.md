@@ -38,8 +38,11 @@
 - 最新のサービス パックがインストールされていること。
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) がインストールされていること。
 
-*WinRM の依存関係:*
-Windows PowerShell Desired State Configuration (DSC) は、WinRM に依存します。 WinRM は、Windows Server 2008 R2 および Windows 7 では既定で無効になっています。 WinRM を有効にするには、Windows PowerShell 管理者特権セッションで **Set-WSManQuickConfig** を実行します。
+*WinRM の依存関係:* Windows PowerShell Desired State Configuration (DSC) は、WinRM に依存します。 WinRM は、Windows Server 2008 R2 および Windows 7 では既定で無効になっています。 WinRM を有効にするには、Windows PowerShell 管理者特権セッションで **Set-WSManQuickConfig** を実行します。
 
 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

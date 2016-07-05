@@ -1,12 +1,16 @@
 ---
-title:  Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
+title: "Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 6366ec9c49f721b758b6a520f68cf2b3c5ee0caf
+
 ---
 
 #  Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
@@ -65,7 +69,7 @@ Windows PowerShell Web Access を使ったリモート コンピューターへ�
 </tr>
 <tr class="odd">
 <td><p>リモートのワークグループ コンピューターに接続できない</p></td>
-<td><p>対象のコンピューターがワークグループ メンバーである場合、次の構文を使ってユーザー名を入力し、コンピューターにサインインします: &lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name。</em>&gt;</p></td>
+<td><p>対象のコンピューターがワークグループ メンバーである場合、次の構文を使ってユーザー名を入力し、コンピューターにサインインします: &lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;</p></td>
 </tr>
 <tr class="even">
 <td><p>ロールがインストールされているにもかかわらず Web サーバー (IIS) 管理ツールが見つからない</p></td>
@@ -192,6 +196,7 @@ Windows PowerShell Web Access を使ったリモート コンピューターへ�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

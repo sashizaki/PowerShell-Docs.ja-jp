@@ -1,12 +1,16 @@
 ---
-title:   DSC on Nano Server の使用
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "DSC on Nano Server の使用"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 962941ba946a67256baf141bd195361c94a68f90
+
 ---
 
 # DSC on Nano Server の使用
@@ -62,7 +66,7 @@ Nano Server のインストールと使用、および PowerShell リモート�
 
 * DSC リソースのデバッグ (「[DSC リソースのデバッグ](debugresource.md)」を参照)
   
-  **問題:** リソースで PsDscRunAsCredential が使用されている場合に機能しません (「[ユーザの資格情報を指定して DSC を実行する](runAsUser.md)」を参照)
+  **問題:** リソースで PsDscRunAsCredential が使用されている場合に機能しません (「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照)
 
 * [ノードの相互依存関係の指定](crossNodeDependencies.md) 
 
@@ -121,14 +125,14 @@ Nano Server のインストールと使用、および PowerShell リモート�
 
 ## Nano Server でのカスタム DSC リソースの使用
  
-Nano Server で使用できる Windows API と CLR ライブラリは限定されているため、完全な CLR バージョンの Windows で動作する DSC は、必ずしも Nano Server で動作するとは限りません。 
-DSC カスタム リソースを運用環境に展開する前に、エンド ツー エンドのテストを完了してください。
+Nano Server で使用できる Windows API と CLR ライブラリは限定されているため、完全な CLR バージョンの Windows で動作する DSC は、必ずしも Nano Server で動作するとは限りません。 DSC カスタム リソースを運用環境に展開する前に、エンド ツー エンドのテストを完了してください。
 
 ## 参照
 - [Getting Started with Nano Server (Nano Server の概要)](https://technet.microsoft.com/en-us/library/mt126167.aspx)
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

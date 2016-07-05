@@ -1,41 +1,9 @@
 # ノードの相互依存関係の指定
 
-組み込みの WaitFor\* リソース (WaitForAll、WaitForAny、および WaitForSome) を使えば、コンピューター間の依存関係を外部の指揮なしで構成の実行中に指定できます。 各 WaitFor\* リソースの動作は次のとおりです。
+組み込みの WaitFor\* リソース (`WaitForAll`、`WaitForAny`、`WaitForSome`) を使えば、コンピューター間の依存関係を外部の指揮なしで構成の実行中に指定できます。 
 
-* <ctype="x-NOTFOUND" mdpre="**" mdpost="**">WaitForAll</ctype="x-NOTFOUND"> では、NodeName プロパティで定義されている<ctype="x-NOTFOUND" mdpre="*" mdpost="*">すべての</ctype="x-NOTFOUND">ターゲット ノード上の指定されたリソースが必要な状態になるのを待機します。
-* <ctype="x-NOTFOUND" mdpre="**" mdpost="**">WaitForAny</ctype="x-NOTFOUND"> では、NodeName プロパティで定義されている<ctype="x-NOTFOUND" mdpre="*" mdpost="*">いずれかの</ctype="x-NOTFOUND">ターゲット ノード上の指定されたリソースが必要な状態になるのを待機します。
-* <ctype="x-NOTFOUND" mdpre="**" mdpost="**">WaitForSome</ctype="x-NOTFOUND"> NodeName プロパティで定義されているターゲット ノード上の指定されたリソースが、NodeCount プロパティで定義された個数まで必要な状態になるのを待機します。
+詳細については、「[ノードの相互依存関係の指定](../dsc/crossNodeDependencies.md)」をご覧ください。
 
-これらのリソースは、WS-Man プロトコルで CIM 接続を使用して、ノード間の同期を提供します。 これらのリソースを使うと、別のコンピューターの特定のリソースの状態が変化するのを待機してから、構成を続行することができます。 
-
-たとえば、次の構成では、ターゲット ノードは <ctype="x-NOTFOUND" mdpre="**" mdpost="**">MyDC</ctype="x-NOTFOUND"> ノード上の <ctype="x-NOTFOUND" mdpre="**" mdpost="**">xADDomain</ctype="x-NOTFOUND"> リソースが完了するまで何回か再試行しながら待機した後で、ドメインに参加できるようになります。
-
-```PowerShell
-Configuration JoinDomain
-
-{
-    Import-DscResource -Module xComputerManagement
-
-    WaitForAll DC
-    {
-        ResourceName      = '[xADDomain]NewDomain'
-        NodeName          = 'MyDC'
-        RetryIntervalSec  = 15
-        RetryCount        = 30
-    }
-
-    xComputer JoinDomain
-    {
-        Name             = 'MyPC'
-        DomainName       = 'Contoso.com'
-        Credential       = (get-credential)
-        DependsOn        ='[WaitForAll]DC'
-    }
-}
-```
-<ctype="x-NOTFOUND" mdpre="**" mdpost="**">ヒント:</ctype="x-NOTFOUND"> WaitFor\* リソースは、既定では、1 回試行してから失敗します。そのため、必須ではありませんが、通常は再試行の間隔と回数を指定することをお勧めします。
-
-
-<!--HONumber=Mar16_HO3-->
+<!--HONumber=Jun16_HO4-->
 
 

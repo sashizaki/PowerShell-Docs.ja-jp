@@ -1,12 +1,16 @@
 ---
-title:  Windows PowerShell Web Access のインストールと使用
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
+title: "Windows PowerShell Web Access のインストールと使用"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: d2f78148402f06992f5f58cd40e8c4f624b5e4b5
+
 ---
 
 #  Windows PowerShell Web Access のインストールと使用
@@ -264,7 +268,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
     <span class="label">例:</span> <span class="code">Install-PswaWebApplication –webApplicationName myWebApp –useTestCertificate</span>
 
-    この例では、Windows PowerShell Web Access の最終的な Web サイトは https://&lt;*server\_name*&gt;/myWebApp になります。
+    この例では、Windows PowerShell Web Access の最終的な Web サイトは https://&lt; *server\_name*&gt;/myWebApp になります。
 
     <table>
     <colgroup>
@@ -459,7 +463,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 5.  Windows PowerShell Web Access の Web サイトの追加先となる Web サイト (**[既定の Web サイト]** など) を右クリックして、**[アプリケーションの追加]** をクリックします。
 
-6.  **"エイリアス"** フィールドに「pswa」と入力するか、別のエイリアスを入力します。 このエイリアスが仮想ディレクトリ名となります。 たとえば、次の URL の **pswa** は、この手順で指定されたエイリアスを表します。https://&lt;server\_name&gt;/pswa
+6.  **"エイリアス"** フィールドに「pswa」と入力するか、別のエイリアスを入力します。 このエイリアスが仮想ディレクトリ名となります。 たとえば、次の URL の **pswa** は、この手順で指定されたエイリアスを表します (https://&lt;server\_name&gt;/pswa)。
 
 7.  **"アプリケーション プール"** フィールドで、手順 3. で作成したアプリケーション プールを選択します。
 
@@ -471,7 +475,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 11. クライアント デバイスでブラウザー セッションを開きます。 サポートされるブラウザーとデバイスの詳細については、このトピックの「[ブラウザーとクライアント デバイスのサポート](#BKMK_browser)」を参照してください。
 
-12. 新しい Windows PowerShell Web Access Web サイト https://&lt;*gateway\_server\_name*&gt;/pswa を開きます。
+12. 新しい Windows PowerShell Web Access Web サイト https://&lt; *gateway\_server\_name*&gt;/pswa を開きます。
 
     ブラウザーには Windows PowerShell Web Access コンソールのサインイン ページが表示されます。
 
@@ -555,7 +559,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 15. 新しい Windows PowerShell Web Access の Web サイトを開きます。
 
-    ルート Web サイトは Windows PowerShell Web Access フォルダーを参照しているため、https://&lt;*gateway\_server\_name*&gt; を開くと、ブラウザーには Windows PowerShell Web Access のサインイン ページが表示されます。 URL に **/pswa** を追加する必要はありません。
+    ルート Web サイトは Windows PowerShell Web Access フォルダーを参照しているため、https://&lt; *gateway\_server\_name*&gt; を開くと、ブラウザーには Windows PowerShell Web Access のサインイン ページが表示されます。 URL に **/pswa** を追加する必要はありません。
 
     <table>
     <colgroup>
@@ -708,6 +712,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

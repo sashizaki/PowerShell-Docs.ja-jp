@@ -16,6 +16,10 @@ Windows PowerShell ISE では、IntelliSense と共に表示されます。
 
 **注**: `–ModuleVersion` パラメーターは `–ModuleName` パラメーターと組み合わせてのみ使用できます。 `–Name` パラメーターのみを使用したリソース名では、使用できません。
 
-これまでは、DSC リソースを読み込むときに、モジュールのバージョンを指定する唯一の方法は、`–ModuleName @{ModuleName="UserConfigProvider";ModuleVersion="3.0"}` などのモジュール指定オブジェクトを使用する方法のみでした。
+これまでは、DSC リソースを読み込むときに、モジュールのバージョンを指定する唯一の方法は、次のようなモジュール指定オブジェクトを使用する方法でした。 `–ModuleName @{ModuleName="UserConfigProvider";ModuleVersion="3.0"}`
 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

@@ -10,65 +10,10 @@
 
 **注:** これらの機能は追加されたものです。既存のプル機能や概念と置き換わるものでありません。 このリリースで出荷された新しいプル サーバーでは、これらの新機能または以前の機能を使うことができます。
 
-## エージェント ID
+詳細については、「[構成名を使用したプル クライアントのセットアップ](../dsc/pullClientConfigNames.md)」をご覧ください。
 
-この機能は、ターゲット ノードごとに一意の識別子をセットアップして管理する手間を省くために最適です。 これで、GUID のブックキーピングが必要なくなります。 DSC では、プル サーバーと通信するときに使うエージェント ID が自動的に生成されます。 プルサーバーでは、この ID を使って特定のノードのすべての情報を一意に識別できます。 また、一意の ID を含む一意のメタ構成を指定して各ターゲット ノードをセットアップする必要がなくなるため、1 つのメタ構成を多数のターゲット ノードで使いながらも、各ノードに一意の ID を保持できます。 
 
-## 構成名
 
-構成名は、ターゲット ノードが適用する構成の名前を定義するフレンドリ名です。 これに関連した変更点は次のとおりです。  
+<!--HONumber=Jun16_HO4-->
 
-### フレンドリ名
 
-任意の文字列を指定できます。 GUID の形式にする必要はないため、SQL Server をセットアップする構成に 'SQL_Server' といったシンプルな名前を付けることができます。 これにより、特定の構成の用途を簡単に識別できるようになります。
-
-### 割り当て
-
-ターゲット ノードに割り当てる構成は、プル サーバーで集中管理されます。 この構成は、メタ構成の ConfigrationName プロパティを定義することによってブートストラップで使うことができますが、これが使われるのは登録時のみです。 登録後は、ターゲット ノードが取得する構成はサーバーから指示されます。 オンプレミスのプル サーバーでは、構成とターゲット ノード間のこのマッピングは登録中にしか実行できません。しかし、Azure Automation では、UI を使うかコマンドレットを通してこのマッピングを容易に変更できます。 オンプレミスのプル サーバーのターゲット ノードに割り当てられている構成を変更するには、登録を再実行します。
-
-### 複数の構成と部分的な構成
-
-ターゲット ノードに複数の構成名を割り当てると、それらの構成は部分的な構成のように処理されます。 これが機能するためには、ターゲット ノード上のメタ構成が部分的な構成を受け入れるように構成する必要があります。 **注:** これはオンプレミスのプル サーバーでのみサポートされます。 Azure Automation では、部分的な構成はサポートされません。
-
-## 登録
-
-構成名は GUID ではなくなった (今はフレンドリ名になった) ため、だれでも推測できてしまいます。 これに伴う本質的なセキュリティ問題を軽減するために、ノードがサーバーから構成を要求できるようになる前に、登録ステップが追加されました。 ノードは自身を共有シークレット (ノードとサーバーの両方に既知のもの) を指定してプル サーバーに登録し、必要に応じて、要求する構成の名前も指定します。 この共有シークレットは、各コンピューターに対して一意である必要はありません。 ただし、共有シークレットは、GUID のように推測しにくい識別子であることを想定しています。 この共有シークレットは、ターゲット ノードのメタ構成に含まれる **RegistrationKey** プロパティで定義されます。
-
-### メタ構成の例
-
-```powershell
-[DscLocalConfigurationManager()]
-Configuration SampleMetaConfig
-{
-    Settings
-    {
-        RefreshMode = "PULL";
-        AllowModuleOverwrite = $true;
-        RebootNodeIfNeeded = $true;
-        ConfigurationModeFrequencyMins = 60;
-    }
-
-    ConfigurationRepositoryWeb ConfigurationManager
-    {
-        ServerURL = “https://PullServerMachine:8080/psdscpullserver.svc”
-        RegistrationKey = "140a952b-b9d6-406b-b416-e0f759c9c0e4"
-        ConfigurationNames = @(“WebRole”)
-    }
-}
-
-SampleMetaConfig
-```
-
-RegistrationKey 値は、プル サーバー上で定義する必要があります。 プル サーバーのセットアップ中に定義するには、**RegistrationKeys.txt** という名前のテキスト ファイルを特定の場所に作成し、次のようにしてプル サーバーの web.config にその場所を設定します。  
-
-```XML
-<add key="ConfigurationPath" value="C:\Program Files\WindowsPowerShell\DscService\Configuration">
-
-<add key="ModulePath" value="C:\Program Files\WindowsPowerShell\DscService\Modules">
-
-<add key="RegistrationKeyPath" value="C:\Program Files\WindowsPowerShell\DscService">
-```
-
-これを使用するオンプレミスのプル サーバーを完全に展開するには、最新バージョンの xDSCWebService DSC リソースを使用します。 完全な構成は、[構成の例](https://github.com/grayzu/PSSummitEU2015/blob/master/PullServer/02%20-%20PullServer%20Config.ps1)を参照してください。
-
-**注:** ファイル共有用にプル サーバーがセットアップされている場合、この機能はサポートされません。 Web ベースのプル サーバーの場合にのみサポートされます。<!--HONumber=Mar16_HO2-->

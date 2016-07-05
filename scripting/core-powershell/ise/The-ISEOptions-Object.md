@@ -1,13 +1,17 @@
 ---
-title:  ISEOptions オブジェクト
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  75e2a76f-f3d1-490b-ad5d-e3829946aabb
+title: "ISEOptions オブジェクト"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 272749d487a59ccf5eb30352dc902591228746f3
+
 ---
 
 # ISEOptions オブジェクト
@@ -405,7 +409,7 @@ $psISE.Options.ScriptPaneBackgroundColor = ”yellow”
 ###  <a name="spfc"></a> ScriptPaneForegroundColor
   Windows PowerShell ISE 2.0 以降でサポートされています。
 
- スクリプト ウィンドウのスクリプト以外のファイルの前景色を取得または設定する読み取り\/書き込みのプロパティ。
+ スクリプト ウィンドウのスクリプト以外のファイルの前景色を取得または設定する読み取り\/書き込みのプロパティ。\-
 スクリプト ファイルの前景色を設定する場合、[TokenColors](The-ISEOptions-Object.md#tc) プロパティを使用してください。
 
 ```
@@ -432,7 +436,7 @@ $psISE.Options.SelectedScriptPaneState = "Maximized"
 ###  <a name="sds"></a> ShowDefaultSnippets
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
- スニペットの **CTRL\+J** 一覧に、Windows PowerShell に含まれるスターター セットを含めるどうかを指定します。 **$false** に設定すると、ユーザー定義のスニペットのみが **CTRL\+J** 一覧に表示されます。 既定値は **$true** です。
+ スニペットの **CTRL\+J** 一覧に、Windows PowerShell に含まれるスターター セットを含めるどうかを指定します。 **$false** に設定すると、ユーザー定義のスニペットのみが **CTRL\+J** 一覧に表示されます。\- 既定値は **$true** です。
 
 ```
 # Hide the default snippets from the CTRL+J list.
@@ -540,7 +544,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense=$false
 ###  <a name="uetsispi"></a> UseEnterToSelectInScriptPaneIntellisense
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
- Enter キーを使用して、IntelliSense が提供するオプションをスクリプト ウィンドウで選択できるようにするかどうかを指定します。 既定値は **$true** です。
+ Enter キーを使用して、IntelliSense が提供するオプションをスクリプト ウィンドウで選択できるようにするかどうかを指定します。\- 既定値は **$true** です。
 
 ```
 # Turn on using the Enter key to select an IntelliSense provided option in the Console pane.
@@ -551,7 +555,7 @@ $psISE.Options.UseEnterToSelectInConsolePaneIntellisense=$true
 ###  <a name="ulh"></a> UseLocalHelp
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
- カーソルをキーワードに置いた状態で F1 キーを押したときに、ローカルにインストールされたヘルプまたはオンラインの TechNet ライブラリのヘルプを表示するかどうかを指定します。 **$true** に設定すると、ローカルにインストールされたヘルプ コンテンツがポップアップ ウィンドウに表示されます。 `Update-Help` コマンドを実行すると、ヘルプ ファイルをインストールすることができます。 **$false** に設定すると、ブラウザーが開き、TechNet ライブラリ内のページに移動します。
+ カーソルをキーワードに置いた状態で F1 キーを押したときに、ローカルにインストールされたヘルプまたはオンラインの TechNet ライブラリのヘルプを表示するかどうかを指定します。 **$true** に設定すると、ローカルにインストールされたヘルプ コンテンツがポップアップ ウィンドウに表示されます。\- `Update-Help` コマンドを実行すると、ヘルプ ファイルをインストールすることができます。 **$false** に設定すると、ブラウザーが開き、TechNet ライブラリ内のページに移動します。
 
 ```
 # Sets the option for the online help to be displayed.
@@ -630,6 +634,7 @@ $psISE.Options.Zoom = 200
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jun16_HO4-->
 
 

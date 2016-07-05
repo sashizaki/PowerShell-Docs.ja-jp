@@ -2,4 +2,8 @@
 
 [強化されたトランスクリプション オプション](audit_transcript.md)
 [スクリプトのトレースとログ](audit_script.md)
-[Cryptographic Message Syntax (CMS) コマンドレット](audit_cms.md)<!--HONumber=Mar16_HO2-->
+[Cryptographic Message Syntax (CMS) コマンドレット](audit_cms.md)
+
+<!--HONumber=Jun16_HO4-->
+
+

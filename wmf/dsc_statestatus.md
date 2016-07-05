@@ -26,9 +26,7 @@ LCM 状態と DSC 操作ステータスの形式を再検討し、次の規則�
 | r、F                            | PendingReboot        | 成功    | $true         | $null                        | r                              |
 
 ^
-S<sub>i</sub>: 一連のリソースが正常に適用された
-F<sub>i</sub>: 一連のリソースの適用に失敗した
-r: 再起動が必要なリソース
+S<sub>i</sub>: 一連のリソースが正常に適用された F<sub>i</sub>: 一連のリソースの適用に失敗した r: 再起動が必要なリソース
 \*
 
 ```powershell
@@ -105,4 +103,8 @@ LCM State: Idle,
 LCM State: Busy, LCM is performing a consistency check.
 LCM State: Idle,
 ```
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

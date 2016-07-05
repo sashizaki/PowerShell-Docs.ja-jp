@@ -73,17 +73,16 @@ P1    P2
 
 > 2 \[C:\\temp\]
 >
-> &gt;&gt; Get-Content .\\addresses.output.txt | ConvertFrom-String -TemplateFile .\\addresses.template.txt |
-> &gt;&gt;&gt; Format-Table -Auto
+> &gt;&gt; Get-Content .\\addresses.output.txt | ConvertFrom-String -TemplateFile .\\addresses.template.txt | &gt;&gt;&gt; Format-Table -Auto
 >
 > ExtentText                     Name               City     State
 > ----------                     ----               ----     -----
-> Ana Trujillo...              Ana Trujillo       Redmond  WA
-> Antonio Moreno...            Antonio Moreno     Renton   WA
-> Thomas Hardy...              Thomas Hardy       Seattle  WA
-> Christina Berglund...        Christina Berglund Redmond  WA
-> Hanna Moos...                Hanna Moos         Puyallup WA
+> Ana Trujillo...              Ana Trujillo       Redmond  WA Antonio Moreno...            Antonio Moreno     Renton   WA Thomas Hardy...              Thomas Hardy       Seattle  WA Christina Berglund...        Christina Berglund Redmond  WA Hanna Moos...                Hanna Moos         Puyallup WA
 
 抽出されたテキストに追加のデータ操作を行う目的で、**ExtentText** プロパティに、レコードの抽出元から未加工のテキストがキャプチャされます。 この機能にフィードバックを提供したり、例を書き出すのが難しいコンテンツについて相談したりするには、<psdmfb@microsoft.com> までメールでお知らせください。
 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

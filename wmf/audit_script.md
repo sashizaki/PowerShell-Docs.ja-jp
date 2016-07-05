@@ -1,6 +1,6 @@
 # スクリプトのトレースとログ
 
-Windows PowerShell には、コマンドレットの呼び出しをログに記録する **LogPipelineExecutionDetails** グループ ポリシー設定が既に備えられていますが、PowerShell のスクリプト言語には、ログへの記録や監査の対象とする可能性がある機能が数多く含まれています。 新しい詳細スクリプト トレース機能では、システムで使用される Windows PowerShell スクリプトの詳細な追跡や分析を有効にすることができます。 詳細なスクリプト トレースを有効にしすると、Windows PowerShell はすべてのスクリプト ブロックを ETW イベント ログ **Microsoft-Windows-PowerShell/Operational** に記録します。 スクリプト ブロックによって別のスクリプト ブロックが作成される場合 (たとえば、文字列で Invoke-Expression コマンドレットを呼び出すスクリプト)、その結果として得られるスクリプト ブロックも記録されます。
+Windows PowerShell には、コマンドレットの呼び出しをログに記録する **LogPipelineExecutionDetails** グループ ポリシー設定が既に備えられていますが、PowerShell のスクリプト言語には、ログへの記録や監査の対象とする可能性がある機能が数多く含まれています。 新しい詳細スクリプト トレース機能では、システムで使用される Windows PowerShell スクリプトの詳細な追跡や分析を有効にすることができます。 詳細なスクリプト トレースを有効にすると、Windows PowerShell はすべてのスクリプト ブロックを ETW イベント ログ **Microsoft-Windows-PowerShell/Operational** に記録します。 スクリプト ブロックによって別のスクリプト ブロックが作成される場合 (たとえば、文字列で Invoke-Expression コマンドレットを呼び出すスクリプト)、その結果として得られるスクリプト ブロックも記録されます。
 
 これらのイベントのログ記録は、**[PowerShell スクリプト ブロックのログ記録を有効にする]** グループ ポリシー設定 ([管理用テンプレート] -> [Windows コンポーネント] -> [Windows PowerShell]) で有効にすることができます。
 
@@ -96,4 +96,8 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 ```
 
 保持するバッファーが限られているすべてのログ システム (ETW ログなど) の場合と同様、このインフラストラクチャに対して、正しくないイベントでログを溢れさせて以前の証拠を隠す攻撃が行われる場合があります。 この攻撃から保護するには、何らかの形式のイベント ログ収集が設定されていることを確認し (つまり、Windows イベント転送、「[Spotting the Adversary with Windows Event Log Monitoring (Windows イベント ログ監視による敵対者の偵察)](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)」)、できるだけ早くコンピューターからイベント ログを移動します。
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+
