@@ -31140,9 +31140,9 @@
       "ArchiveFileCommit": "eb5f8d1bd37ed5334e76f11bbf0f8dcd33ef84bc",
       "ArchiveFileDateTime": "2016-07-12T13:12:50.3382917Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.ja-jp\\live\\dsc_importdscresource.6e807c405f17f191256af2d3a990bb08e143b60e.ja-jp.xlf",
+      "BilingualFileCommit": "c31f9a55bb3619177cccdf02475d5cb48aa92e10",
+      "BilingualDateTime": "2016-07-12T20:08:37.773671Z",
       "BilingualException": null
     },
     "695980323cb5d00d5c8f6bbe2d1c1c29ec99f809": {
@@ -32085,9 +32085,9 @@
       "ArchiveFileCommit": "eb5f8d1bd37ed5334e76f11bbf0f8dcd33ef84bc",
       "ArchiveFileDateTime": "2016-07-12T13:12:50.3382917Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.ja-jp\\live\\creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf",
+      "BilingualFileCommit": "c31f9a55bb3619177cccdf02475d5cb48aa92e10",
+      "BilingualDateTime": "2016-07-12T20:08:37.773671Z",
       "BilingualException": null
     },
     "48385de53964217b2f7d263d85bfb99b1dbf6507": {

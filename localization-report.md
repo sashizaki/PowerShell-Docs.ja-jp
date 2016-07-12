@@ -1843,8 +1843,8 @@
 * Archive Datetime: 2016-07-12 13:12:50
 * Handback File: [creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/c31f9a55bb3619177cccdf02475d5cb48aa92e10/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf)
 * Handback Datetime: 2016-07-12 20:08:08
-* Bilingual File: [creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/f6ef8b2a81f2efffd4a204f42eca769352338c64/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf)
-* Bilingual Datetime: 2016-07-05 14:57:16
+* Bilingual File: [creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/c31f9a55bb3619177cccdf02475d5cb48aa92e10/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf)
+* Bilingual Datetime: 2016-07-12 20:08:37
 * [Back to Top](#report-top)
 
 ##### <a name='fa5ac04e8f04a6f033fbb4726f384a693551251e105'></a> Source: [jea\docfx.json](https://github.com/PowerShell/powerShell-Docs/blob/c1bb25eeb1a4fbda5f2fc8f9ca29213f01487ccb/jea/docfx.json)
@@ -4448,6 +4448,8 @@
 * Archive Datetime: 2016-07-12 13:12:50
 * Handback File: [dsc_importdscresource.6e807c405f17f191256af2d3a990bb08e143b60e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/c31f9a55bb3619177cccdf02475d5cb48aa92e10/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/dsc_importdscresource.6e807c405f17f191256af2d3a990bb08e143b60e.ja-jp.xlf)
 * Handback Datetime: 2016-07-12 20:08:08
+* Bilingual File: [dsc_importdscresource.6e807c405f17f191256af2d3a990bb08e143b60e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/c31f9a55bb3619177cccdf02475d5cb48aa92e10/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/dsc_importdscresource.6e807c405f17f191256af2d3a990bb08e143b60e.ja-jp.xlf)
+* Bilingual Datetime: 2016-07-12 20:08:37
 * [Back to Top](#report-top)
 
 ##### <a name='336c6bc43b482eda6524ebed0381240868261f64275'></a> Source: [wmf\5.0\dsc_improvements.md](https://github.com/PowerShell/powerShell-Docs/blob/b32cb86b7a18fee929cc81360d81f479571a74c2/wmf/5.0/dsc_improvements.md)

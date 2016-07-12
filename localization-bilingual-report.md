@@ -1,11 +1,43 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 0
+ Total Files | 2
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [jea\creating-a-domain-controller.md](https://github.com/PowerShell/powerShell-Docs/blob/d4a72a7c5883b1d3ba8de3dbc9cfe016a6fb3498/jea/creating-a-domain-controller.md) | InSyncHandedBackSuccess | [Details](#8473eb668e4da5bab01c2f2b7647cbced413bd22104)
+ [wmf\5.0\dsc_importdscresource.md](https://github.com/PowerShell/powerShell-Docs/blob/4a8cf1a6fcdde0ceb1590914b1cd2c414a851e95/wmf/5.0/dsc_importdscresource.md) | InSyncHandedBackSuccess | [Details](#56ec43a84cfdbceb7633609696ea697c515e2931274)
 
 ## Item Details
+##### <a name='8473eb668e4da5bab01c2f2b7647cbced413bd22104'></a> Source: [jea\creating-a-domain-controller.md](https://github.com/PowerShell/powerShell-Docs/blob/d4a72a7c5883b1d3ba8de3dbc9cfe016a6fb3498/jea/creating-a-domain-controller.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [jea\creating-a-domain-controller.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/6700e422cfa75c1bf9a3fedcfe9640d0a7fb843f/jea/creating-a-domain-controller.md)
+* Handoff File: [creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/09d1a610d7fdaac8b684f1166c213437dbdb11b5/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf)
+* Handoff Datetime: 2016-07-07 21:11:37
+* Handoff Reason: Include
+* Archive File: [creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/eb5f8d1bd37ed5334e76f11bbf0f8dcd33ef84bc/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf)
+* Archive Datetime: 2016-07-12 13:12:50
+* Handback File: [creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/c31f9a55bb3619177cccdf02475d5cb48aa92e10/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf)
+* Handback Datetime: 2016-07-12 20:08:08
+* Bilingual File: [creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/c31f9a55bb3619177cccdf02475d5cb48aa92e10/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/creating-a-domain-controller.b6645bbc4de5b0de067c85719afba2a9b0dcc9fb.ja-jp.xlf)
+* Bilingual Datetime: 2016-07-12 20:08:37
+* [Back to Top](#report-top)
+
+##### <a name='56ec43a84cfdbceb7633609696ea697c515e2931274'></a> Source: [wmf\5.0\dsc_importdscresource.md](https://github.com/PowerShell/powerShell-Docs/blob/4a8cf1a6fcdde0ceb1590914b1cd2c414a851e95/wmf/5.0/dsc_importdscresource.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [wmf\5.0\dsc_importdscresource.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/6700e422cfa75c1bf9a3fedcfe9640d0a7fb843f/wmf/5.0/dsc_importdscresource.md)
+* Handoff File: [dsc_importdscresource.6e807c405f17f191256af2d3a990bb08e143b60e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/05c6c214f1998c2624edfe6b89ad625dfd2a72fb/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/dsc_importdscresource.6e807c405f17f191256af2d3a990bb08e143b60e.ja-jp.xlf)
+* Handoff Datetime: 2016-07-06 23:47:50
+* Handoff Reason: Include
+* Archive File: [dsc_importdscresource.6e807c405f17f191256af2d3a990bb08e143b60e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/eb5f8d1bd37ed5334e76f11bbf0f8dcd33ef84bc/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/dsc_importdscresource.6e807c405f17f191256af2d3a990bb08e143b60e.ja-jp.xlf)
+* Archive Datetime: 2016-07-12 13:12:50
+* Handback File: [dsc_importdscresource.6e807c405f17f191256af2d3a990bb08e143b60e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/c31f9a55bb3619177cccdf02475d5cb48aa92e10/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/dsc_importdscresource.6e807c405f17f191256af2d3a990bb08e143b60e.ja-jp.xlf)
+* Handback Datetime: 2016-07-12 20:08:08
+* Bilingual File: [dsc_importdscresource.6e807c405f17f191256af2d3a990bb08e143b60e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/c31f9a55bb3619177cccdf02475d5cb48aa92e10/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/dsc_importdscresource.6e807c405f17f191256af2d3a990bb08e143b60e.ja-jp.xlf)
+* Bilingual Datetime: 2016-07-12 20:08:37
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
