@@ -4399,6 +4399,8 @@
 * Archive Datetime: 2016-07-12 13:12:50
 * Handback File: [dsc_encryptedmof.ae98aa583f49a21a6d3fb46448195bcd56337fdc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/203913612c7352017dc446e96d1d565ec8e603bf/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/dsc_encryptedmof.ae98aa583f49a21a6d3fb46448195bcd56337fdc.ja-jp.xlf)
 * Handback Datetime: 2016-07-12 18:04:26
+* Bilingual File: [dsc_encryptedmof.ae98aa583f49a21a6d3fb46448195bcd56337fdc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/203913612c7352017dc446e96d1d565ec8e603bf/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/dsc_encryptedmof.ae98aa583f49a21a6d3fb46448195bcd56337fdc.ja-jp.xlf)
+* Bilingual Datetime: 2016-07-12 18:05:14
 * [Back to Top](#report-top)
 
 ##### <a name='c858f997c814483a10f5a9d59fb5352c99ac1093271'></a> Source: [wmf\5.0\dsc_freqnomultiple.md](https://github.com/PowerShell/powerShell-Docs/blob/4a8cf1a6fcdde0ceb1590914b1cd2c414a851e95/wmf/5.0/dsc_freqnomultiple.md)

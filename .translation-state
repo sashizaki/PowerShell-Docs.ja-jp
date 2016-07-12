@@ -31035,9 +31035,9 @@
       "ArchiveFileCommit": "eb5f8d1bd37ed5334e76f11bbf0f8dcd33ef84bc",
       "ArchiveFileDateTime": "2016-07-12T13:12:50.3382917Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.ja-jp\\live\\dsc_encryptedmof.ae98aa583f49a21a6d3fb46448195bcd56337fdc.ja-jp.xlf",
+      "BilingualFileCommit": "203913612c7352017dc446e96d1d565ec8e603bf",
+      "BilingualDateTime": "2016-07-12T18:05:14.2197583Z",
       "BilingualException": null
     },
     "c858f997c814483a10f5a9d59fb5352c99ac1093": {
