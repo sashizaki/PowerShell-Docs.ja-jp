@@ -1,26 +1,11 @@
 # <a name='report-top'></a> Localization Handback Report
 
 ## Summary
- Total Files | 1
+ Total Files | 0
 
 ## File List
- Source File | Status | Details 
- ----------- | ------ | ------- 
- [wmf\5.0\dsc_encryptedmof.md](https://github.com/PowerShell/powerShell-Docs/blob/4a8cf1a6fcdde0ceb1590914b1cd2c414a851e95/wmf/5.0/dsc_encryptedmof.md) | InSyncHandedBackSuccess | [Details](#be8fdde764d0e3adb9aad50217ebc7c3ea26bbc4270)
 
 ## Item Details
-##### <a name='be8fdde764d0e3adb9aad50217ebc7c3ea26bbc4270'></a> Source: [wmf\5.0\dsc_encryptedmof.md](https://github.com/PowerShell/powerShell-Docs/blob/4a8cf1a6fcdde0ceb1590914b1cd2c414a851e95/wmf/5.0/dsc_encryptedmof.md)
-* Status: InSyncHandedBackSuccess
-* Target File: [wmf\5.0\dsc_encryptedmof.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/d5a8a5069a7b81f3a3b18f12d3c2bd0f7dcf1b14/wmf/5.0/dsc_encryptedmof.md)
-* Handoff File: [dsc_encryptedmof.ae98aa583f49a21a6d3fb46448195bcd56337fdc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/05c6c214f1998c2624edfe6b89ad625dfd2a72fb/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/dsc_encryptedmof.ae98aa583f49a21a6d3fb46448195bcd56337fdc.ja-jp.xlf)
-* Handoff Datetime: 2016-07-06 23:47:50
-* Handoff Reason: Include
-* Archive File: [dsc_encryptedmof.ae98aa583f49a21a6d3fb46448195bcd56337fdc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/eb5f8d1bd37ed5334e76f11bbf0f8dcd33ef84bc/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/archive/dsc_encryptedmof.ae98aa583f49a21a6d3fb46448195bcd56337fdc.ja-jp.xlf)
-* Archive Datetime: 2016-07-12 13:12:50
-* Handback File: [dsc_encryptedmof.ae98aa583f49a21a6d3fb46448195bcd56337fdc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/203913612c7352017dc446e96d1d565ec8e603bf/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/dsc_encryptedmof.ae98aa583f49a21a6d3fb46448195bcd56337fdc.ja-jp.xlf)
-* Handback Datetime: 2016-07-12 18:04:26
-* [Back to Top](#report-top)
-
 
 ## Error Details
 
