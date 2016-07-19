@@ -2,8 +2,8 @@
 title: "PowerShell エンジンの機能強化"
 author: jasonsh
 translationtype: Human Translation
-ms.sourcegitcommit: 9ce218a2807dd7b1c69f81efdbd6132321e6a815
-ms.openlocfilehash: 90d8067c0d3eacf60260da654c2a8b8caeca20a2
+ms.sourcegitcommit: 6813902aec214aee9ede27ff79dd291364e9f443
+ms.openlocfilehash: f864850128f118704d7545b09110835ab1d51b8e
 
 ---
 
@@ -26,7 +26,7 @@ ms.openlocfilehash: 90d8067c0d3eacf60260da654c2a8b8caeca20a2
 | `powershell -command "echo 1"` | 900 | 250 |
 | PowerShell の初めての実行: `powershell -command "Unknown-Command"` | 30000 | 13000 |
 | コマンド分析キャッシュの構築: `powershell -command "Unknown-Command"` | 7000 | 520 |
-| `1..1000000 | % { }` | 1400 | 750 |
+| <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
   
 起動に関連する 1 つの変更が、一部の (サポートされていない) シナリオに影響を与える可能性があります。 PowerShell は `$pshome\*.ps1xml` ファイルを読み込まなくなりました。これらのファイルは、xml ファイルの処理でファイルと CPU にオーバーヘッドが発生しないよう、C# に変換されています。 これらのファイルは V2 のサイド バイ サイド インストールをサポートするためにまだ存在するので、ファイルの内容を変更した場合、V5 には影響がなく、影響を受けるのは V2 だけです。 これらのファイルの内容を変更するシナリオはサポートされていないことに注意してください。
 
@@ -35,20 +35,6 @@ ms.openlocfilehash: 90d8067c0d3eacf60260da654c2a8b8caeca20a2
 
 バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
 
-
-## 長いファイル名のサポート ##
-
-Andrew...
-
-
-## モジュール ##
-
-Chunqing...
-
-
-## PSEdition ##
-
-Mani...
 
 
 ## バグ修正 ##
@@ -136,6 +122,7 @@ WMF5.1 では、最新バージョンのトピックのヘルプを返すこと�
 Get-Help には、必要なバージョンを指定する方法がありません。これを回避するには、モジュール ディレクトリに移動し、好みのエディターなどのツールで直接ヘルプを表示します。 
 
 
-<!--HONumber=Jul16_HO1-->
+
+<!--HONumber=Jul16_HO2-->
 
 
