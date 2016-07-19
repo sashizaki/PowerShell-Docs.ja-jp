@@ -9,8 +9,8 @@
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 18
 [ Handback Failed Files ](#handback-failed-list)| 1
-[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 120
-[ In Sync Handback Files ](#insync-handback-success-list)| 214
+[ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 119
+[ In Sync Handback Files ](#insync-handback-success-list)| 215
 [ Ignored Files ](#ignored-list)| 29
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
@@ -163,7 +163,6 @@
  [wmf\5.0\releasenotes.md](https://github.com/PowerShell/powerShell-Docs/blob/b32cb86b7a18fee929cc81360d81f479571a74c2/wmf/5.0/releasenotes.md) | OutofSyncHandedBackSuccess | [Details](#37ba02e8b09b56312fbcf8b031b9ef49a53e5436329)
  [wmf\5.0\uninstall.md](https://github.com/PowerShell/powerShell-Docs/blob/b32cb86b7a18fee929cc81360d81f479571a74c2/wmf/5.0/uninstall.md) | OutofSyncHandedBackSuccess | [Details](#f97722883acccd0addb49cc473fc1cce5300c184333)
  [wmf\5.1\features-scenarios-cache\oneget-improvement.md](https://github.com/PowerShell/powerShell-Docs/blob/3b5a3bb0ef9cf123c0cee4a36890ac61431c85ff/wmf/5.1/features-scenarios-cache/oneget-improvement.md) | OutofSyncHandedBackSuccess | [Details](#bb1129e6aa20b64e94ddb6d7b7cf7b51b1df9ca3353)
- [wmf\5.1\features-scenarios-cache\ps-engine-enhancements.md](https://github.com/PowerShell/powerShell-Docs/blob/6813902aec214aee9ede27ff79dd291364e9f443/wmf/5.1/features-scenarios-cache/ps-engine-enhancements.md) | OutofSyncHandedBackSuccess | [Details](#f864850128f118704d7545b09110835ab1d51b8e355)
  [wmf\5.1\install-configure.md](https://github.com/PowerShell/powerShell-Docs/blob/26da6c80568327faadc6746099ac9869f2018fcf/wmf/5.1/install-configure.md) | OutofSyncHandedBackSuccess | [Details](#8a10903c421f62311a28c9f32e352bba75f21052358)
  [wmf\5.1\known-issues.md](https://github.com/PowerShell/powerShell-Docs/blob/57049ff138604b0e13c8fd949ae14da05cb03a4b/wmf/5.1/known-issues.md) | OutofSyncHandedBackSuccess | [Details](#387ebc0467b9f154444292f391af0f4b77123639360)
  [wmf\5.1\release-notes.md](https://github.com/PowerShell/powerShell-Docs/blob/9c763f92b8e342b0208204f997c079c725891933/wmf/5.1/release-notes.md) | OutofSyncHandedBackSuccess | [Details](#d25a22b0448e82a85e45c302a998abc35bd4c1b6361)
@@ -381,6 +380,7 @@
  [wmf\5.1\compatibility.md](https://github.com/PowerShell/powerShell-Docs/blob/1f6f18e46537d4b9f5e64c9e808e46e82b2d3050/wmf/5.1/compatibility.md) | InSyncHandedBackSuccess | [Details](#8e7dd69fc5ba29e719aec353afcac2471ecb2352336)
  [wmf\5.1\features-scenarios-cache\analysis_cache.md](https://github.com/PowerShell/powerShell-Docs/blob/9ce218a2807dd7b1c69f81efdbd6132321e6a815/wmf/5.1/features-scenarios-cache/analysis_cache.md) | InSyncHandedBackSuccess | [Details](#3e5d5e93231b772b65d1913a4dbafc86d4edb950340)
  [wmf\5.1\features-scenarios-cache\console-enhancements.md](https://github.com/PowerShell/powerShell-Docs/blob/9ce218a2807dd7b1c69f81efdbd6132321e6a815/wmf/5.1/features-scenarios-cache/console-enhancements.md) | InSyncHandedBackSuccess | [Details](#e6653a02421e3aec3910a70c64f7cf7cecd696ab342)
+ [wmf\5.1\features-scenarios-cache\ps-engine-enhancements.md](https://github.com/PowerShell/powerShell-Docs/blob/6813902aec214aee9ede27ff79dd291364e9f443/wmf/5.1/features-scenarios-cache/ps-engine-enhancements.md) | InSyncHandedBackSuccess | [Details](#f864850128f118704d7545b09110835ab1d51b8e355)
  [wmf\5.1\features-scenarios-cache\template.md](https://github.com/PowerShell/powerShell-Docs/blob/a952a27ec1695ce9951c352446194cf72d18f50a/wmf/5.1/features-scenarios-cache/template.md) | InSyncHandedBackSuccess | [Details](#dfba55f1eae5468df95309e14b3ee256511badf4356)
  [wmf\5.1\known-issues-cache\template.md](https://github.com/PowerShell/powerShell-Docs/blob/a952a27ec1695ce9951c352446194cf72d18f50a/wmf/5.1/known-issues-cache/template.md) | InSyncHandedBackSuccess | [Details](#cfe0a6562743f1df81acb81e33c120cb67f9042c359)
  [wmf\images\DscResourceDebugging.jpg](https://github.com/PowerShell/powerShell-Docs/blob/97cfb44dc3db0937a0eaae5af5113210f988aa56/wmf/images/DscResourceDebugging.jpg) | InSyncHandedBackSuccess | [Details](#ba1897f38317f5fe38f2d8caf0efcc57bc8bb19d366)
@@ -5537,18 +5537,15 @@
 * [Back to Top](#report-top)
 
 ##### <a name='f864850128f118704d7545b09110835ab1d51b8e355'></a> Source: [wmf\5.1\features-scenarios-cache\ps-engine-enhancements.md](https://github.com/PowerShell/powerShell-Docs/blob/6813902aec214aee9ede27ff79dd291364e9f443/wmf/5.1/features-scenarios-cache/ps-engine-enhancements.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
+* Status: InSyncHandedBackSuccess
+* Target File: [wmf\5.1\features-scenarios-cache\ps-engine-enhancements.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/d1a969221d86115cc64f0b1a55e7189c572b38b6/wmf/5.1/features-scenarios-cache/ps-engine-enhancements.md)
 * Handoff File: [ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/56f55ce6590bcd7ff36bb6a5f4e752ca4c9729be/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf)
 * Handoff Datetime: 2016-07-12 21:20:29
 * Handoff Reason: Include
 * Archive File: [ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/a4c8fed4647474f9afb2413602b9c0109a3e027a/ol-archive/PowerShell/powerShell-Docs.ja-jp/live/ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf)
 * Archive Datetime: 2016-07-19 13:10:15
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [wmf\5.1\features-scenarios-cache\ps-engine-enhancements.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/770019bec5611e566ba4dbc0f9540b5cb311d563/wmf/5.1/features-scenarios-cache/ps-engine-enhancements.md)
-* Current Handback File: [ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fef206f663b59f8055273d5e4d75a592da098d6c/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-19 14:00:58
+* Handback File: [ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/8be07fd9f40255901b094ed2fda910d3faded77a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf)
+* Handback Datetime: 2016-07-19 14:28:27
 * Bilingual File: [ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fef206f663b59f8055273d5e4d75a592da098d6c/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf)
 * Bilingual Datetime: 2016-07-19 14:01:55
 * [Back to Top](#report-top)
@@ -5577,6 +5574,7 @@
 * Archive Datetime: 2016-07-19 13:10:15
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
+* Handback Error: [handback_transform_failed](#e09cfe0994ac523fd10658955731a93b6c176c88357handback_transform_failed)
 * [Back to Top](#report-top)
 
 ##### <a name='8a10903c421f62311a28c9f32e352bba75f21052358'></a> Source: [wmf\5.1\install-configure.md](https://github.com/PowerShell/powerShell-Docs/blob/26da6c80568327faadc6746099ac9869f2018fcf/wmf/5.1/install-configure.md)
@@ -5901,5 +5899,11 @@
 
 
 ## Error Details
+##### <a name='e09cfe0994ac523fd10658955731a93b6c176c88357handback_transform_failed'></a> Source: [wmf\5.1\features-scenarios-cache\using-module.md](#e09cfe0994ac523fd10658955731a93b6c176c88357)
+* Error Code: handback_transform_failed
+* Error Message: Handback file: C:\ol\master\PSD.handback\7f42c4\ol-handback\PowerShell\powerShell-Docs.ja-jp\live\using-module.dfdedb618ec7d188918f7f3f705c8c39bbb26521.ja-jp.xlf failed.
+* Retriable: False
+* Error Details: {"internal_error_code":"handback_transform_failed","internal_error_message":"Handback file: C:\\ol\\master\\PSD.handback\\7f42c4\\ol-handback\\PowerShell\\powerShell-Docs.ja-jp\\live\\using-module.dfdedb618ec7d188918f7f3f705c8c39bbb26521.ja-jp.xlf failed.","internal_error_retriable":false,"exception_message":"Fail to transform from xliff to markdown with invalid metadata: Invalid yaml header when parsing:\ntitle: 'using module' の FullyQuilifiedModuleName\nauthor: jaimeo\ncontributor: vors\nError message: (Line: 1, Col: 23, Idx: 22) - (Line: 1, Col: 49, Idx: 48): While parsing a block mapping, did not find expected key.","exception_type":"System.IO.InvalidDataException","stack_trace":"   at Microsoft.OpenLocalization.Transformer.TransformerClient.XliffToMarkdown(Stream xliffStream, Stream skeletonStream, Stream targetStream) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization.Transformer.Core\\TransformerClient.cs:line 119\r\n   at Microsoft.OpenLocalization.Helper.XliffTransformUtil.XliffToMarkdown(String skeletonFile, String xliffFile, String mdfile, Boolean useJavascriptTransformer) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Helper\\XliffTransformUtil.cs:line 92\r\n   at Microsoft.OpenLocalization.Localization.LocalizationCore.<>c__DisplayClass7_0.<GetHandbackFiles>b__1(String file) in C:\\Jenkins\\workspace\\OpenLocalization-Prod\\src\\OpenLocalization\\Localization\\HandbackCore.cs:line 420","extended_information":null}
+
 
 Generated by OpenLocalization.
