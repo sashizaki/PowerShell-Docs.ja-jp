@@ -75,8 +75,6 @@
 ### [さらに詳しく](getting-started/more-powershell-learning.md)
 
 ## [コア PowerShell](core-powershell/core-powershell.md)
-### [スクリプト作成ガイド](core-powershell/scripting-guide.md)
-### [言語ガイド](core-powershell/language-guide.md)
 ### [コア モジュール](core-powershell/core-modules.md)
 ####  [アーカイブ モジュール](core-powershell/core-modules/Microsoft.PowerShell.Archive-Module.md)
 ####  [コア モジュール](core-powershell/core-modules/Microsoft.PowerShell.Core-Module.md)
@@ -112,6 +110,8 @@
 ####  [PowerShell ISE の紹介](core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
 ####  [ISE モジュール](core-powershell/ise/ISE-Module.md)
 ####  [PowerShell ISE のキーボード ショートカット](core-powershell/ise/Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md)
+####  [PowerShell タブ オブジェクト](core-powershell/ise/The-PowerShellTab-Object.md)
+####  [PowerShell タブ コレクション オブジェクト](core-powershell/ise/The-PowerShellTabCollection-Object.md)
 ####  [PowerShell ISE スクリプト オブジェクト モデルの目的](core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 ####  [ISE オブジェクト モデルの階層](core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)
 ####  [ISE アドオン ツール オブジェクト](core-powershell/ise/The-ISEAddOnTool-Object.md)
@@ -124,8 +124,6 @@
 ### [コンソール](core-powershell/console-guide.md)
 ####  [コンソール コマンド ライン リファレンス](core-powershell/console/PowerShell.exe-Command-Line-Help.md)
 ####  [スクリプト ウィンドウとコンソール ウィンドウでタブ補完を使用する方法](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
-####  [PowerShell タブ オブジェクト](core-powershell/ise/The-PowerShellTab-Object.md)
-####  [PowerShell タブ コレクション オブジェクト](core-powershell/ise/The-PowerShellTabCollection-Object.md)
 ####  [タブ拡張の使用](core-powershell/console/Using-Tab-Expansion.md)
 
 ### [リモート コマンドの実行](core-powershell/Running-Remote-Commands.md)
@@ -144,6 +142,6 @@
 ## [PowerShell 用語集](Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=May16_HO2-->
+<!--HONumber=Jun16_HO4-->
 
 

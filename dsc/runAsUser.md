@@ -1,29 +1,30 @@
 ---
-title:   ユーザーの資格情報を指定して DSC を実行する 
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "ユーザーの資格情報を指定して DSC を実行する"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: dbe2c1ca2fb7dd65b49876f3bee6752ec9a24d6b
+
 ---
 
 # ユーザーの資格情報を指定して DSC を実行する 
 
 > 適用先: Windows PowerShell 5.0
 
-資格情報のセットを指定して DSC リソースを実行するには、構成の中で自動 **PsDscRunAsCredential** プロパティを使います。 
-既定では、DSC はシステム アカウントとして各リソースを実行します。 
-時には、ユーザーとして実行することが必要な場合があります。たとえば、特定のユーザー コンテキストで MSI パッケージをインストールする場合や、ユーザーのレジストリ キーを設定する場合、ユーザーの特定のローカル ディレクトリにアクセスする場合、ネットワーク共有にアクセスする場合などです。
+資格情報のセットを指定して DSC リソースを実行するには、構成の中で自動 **PsDscRunAsCredential** プロパティを使います。 既定では、DSC はシステム アカウントとして各リソースを実行します。 時には、ユーザーとして実行することが必要な場合があります。たとえば、特定のユーザー コンテキストで MSI パッケージをインストールする場合や、ユーザーのレジストリ キーを設定する場合、ユーザーの特定のローカル ディレクトリにアクセスする場合、ネットワーク共有にアクセスする場合などです。
 
 すべての DSC リソースには、任意のユーザー資格情報に設定できる **PsDscRunAsCredential** プロパティがあります ([PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx) オブジェクト)。
 資格情報は、構成内でプロパティの値としてハードコーディングするか、[Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx) に対して値を設定することができます。後者の場合は、構成のコンパイル時に資格情報を入力するように求めるプロンプトが表示されます (構成のコンパイルの詳細については、[構成](configurations.md)に関する記事を参照してください)。
 
 >**注:** **PsDscRunAsCredential** プロパティは PowerShell 4.0 では使用できません。
 
-次の例では、**Get-Credential** を使って、ユーザーに資格情報を入力するようにプロンプトが出ます。 
-また、[Registry](registryResource.md) リソースを使って、Windows のコマンド プロンプト ウィンドウの背景色を指定するレジストリ キーを変更します。
+次の例では、**Get-Credential** を使って、ユーザーに資格情報を入力するようにプロンプトが出ます。 また、[Registry](registryResource.md) リソースを使って、Windows のコマンド プロンプト ウィンドウの背景色を指定するレジストリ キーを変更します。
 
 ```powershell
 Configuration ChangeCmdBackGroundColor    
@@ -64,6 +65,7 @@ ChangeCmdBackGroundColor -ConfigurationData $configData
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

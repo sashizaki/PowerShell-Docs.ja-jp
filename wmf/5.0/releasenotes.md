@@ -13,4 +13,8 @@ Windows 管理フレームワーク (WMF) 5.0 RTM には、WMF 4.0 から更新�
 [WMF 5.0 Production Preview](http://blogs.msdn.com/b/powershell/archive/2015/08/31/windows-management-framework-5-0-production-preview-is-now-available.aspx) は WMF 5.0 RTM に置き換えられました。 WMF 5.0 Production Preview をアンインストールせずに WMF 5.0 RTM をインストールできますが、WMF 5.0 RTM をインストールする前に WMF 5.0 Preview の他の古いリリースをすべてアンインストールする必要があります。
 
 *注:* Windows 10 を実行している場合は、Windows 10 の 11 月の更新プログラム (バージョン 1511) に更新して、WMF 5.0 RTM で利用できる同じ機能セットを取得できます。 Windows 10 システムをまだ更新していない場合は、[スタート] ボタンを選択し、[設定] > [更新とセキュリティ] > [Windows Update] > [更新プログラムのチェック] を選択します。 
-<!--HONumber=Mar16_HO2-->
+
+
+<!--HONumber=Jun16_HO4-->
+
+

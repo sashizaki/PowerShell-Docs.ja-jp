@@ -136,4 +136,8 @@ JEA エンドポイントへの接続は、他の PowerShell エンドポイン�
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
-JEA セッションに接続した後は、自分がアクセス権を持つロール機能のホワイトリストに登録されたコマンドのみを実行できます。 ロールに許可されていないコマンドを実行しようとすると、エラーが発生します。<!--HONumber=Mar16_HO2-->
+JEA セッションに接続した後は、自分がアクセス権を持つロール機能のホワイトリストに登録されたコマンドのみを実行できます。 ロールに許可されていないコマンドを実行しようとすると、エラーが発生します。
+
+<!--HONumber=Jun16_HO4-->
+
+

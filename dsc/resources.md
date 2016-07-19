@@ -1,12 +1,16 @@
 ---
-title:   DSC リソース
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "DSC リソース"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 0a27a40b995393c41f0496a5f7fa3f56fbd865dd
+
 ---
 
 # DSC リソース
@@ -25,6 +29,7 @@ Desired State Configuration (DSC) リソースは、DSC 構成の構成要素を
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 

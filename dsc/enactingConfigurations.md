@@ -1,12 +1,16 @@
 ---
-title:   構成の適用
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "構成の適用"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
+ms.openlocfilehash: 4c802002c6a03a27d02221dd713677911a77c30b
+
 ---
 
 # 構成の適用
@@ -30,8 +34,7 @@ PowerShell Desired State Configuration (DSC) 構成を適用するには、プ�
 
 ![プル モード](images/Pull.png "How pull mode works")
 
-プル モードでは、プル クライアントはリモート プル サーバーから Desired State Configuration を取得するように構成されます。 同様に、プル サーバーは、DSC サービスをホストするようにセットアップされ、プル クライアントに必要な構成とリソースを使用してプロビジョニングされています。 それぞれのプル クライアントには、ノードの構成に対して定期的なコンプライアンス チェックを実行するタスクがスケジュールされています。 イベントが最初にトリガーされたとき、プル クライアント上のローカル構成マネージャー (LCM) によって構成の検証が行われます。 
-プル クライアントが期待どおりに構成されている場合は、何も起こりません。 期待どおりに構成されていない場合、LCM は指定された構成を取得するようプル サーバーに要求します。 プル サーバーにその構成が存在し、最初の検証チェックに合格した場合、構成はプル クライアントに送信され、LCM によって実行されます。
+プル モードでは、プル クライアントはリモート プル サーバーから Desired State Configuration を取得するように構成されます。 同様に、プル サーバーは、DSC サービスをホストするようにセットアップされ、プル クライアントに必要な構成とリソースを使用してプロビジョニングされています。 それぞれのプル クライアントには、ノードの構成に対して定期的なコンプライアンス チェックを実行するタスクがスケジュールされています。 イベントが最初にトリガーされたとき、プル クライアント上のローカル構成マネージャー (LCM) によって構成の検証が行われます。 プル クライアントが期待どおりに構成されている場合は、何も起こりません。 期待どおりに構成されていない場合、LCM は指定された構成を取得するようプル サーバーに要求します。 プル サーバーにその構成が存在し、最初の検証チェックに合格した場合、構成はプル クライアントに送信され、LCM によって実行されます。
 
 DSC プル サーバーをオンプレミスで展開する方法の詳細については、『DSC Pull Server Configuration and Planning Guide (DSC プル サーバー構成および計画ガイド)』を参照してください。
 
@@ -45,6 +48,7 @@ DSC プル サーバーをオンプレミスで展開する方法の詳細につ
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jun16_HO4-->
 
 
