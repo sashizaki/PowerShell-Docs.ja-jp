@@ -5546,8 +5546,8 @@
 * Archive Datetime: 2016-07-19 13:10:15
 * Handback File: [ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/8be07fd9f40255901b094ed2fda910d3faded77a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf)
 * Handback Datetime: 2016-07-19 14:28:27
-* Bilingual File: [ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fef206f663b59f8055273d5e4d75a592da098d6c/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf)
-* Bilingual Datetime: 2016-07-19 14:01:55
+* Bilingual File: [ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/8be07fd9f40255901b094ed2fda910d3faded77a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf)
+* Bilingual Datetime: 2016-07-19 14:29:44
 * [Back to Top](#report-top)
 
 ##### <a name='dfba55f1eae5468df95309e14b3ee256511badf4356'></a> Source: [wmf\5.1\features-scenarios-cache\template.md](https://github.com/PowerShell/powerShell-Docs/blob/a952a27ec1695ce9951c352446194cf72d18f50a/wmf/5.1/features-scenarios-cache/template.md)

@@ -32653,9 +32653,9 @@
       "ArchiveFileCommit": "a4c8fed4647474f9afb2413602b9c0109a3e027a",
       "ArchiveFileDateTime": "2016-07-19T13:10:15.0434953Z",
       "ArchiveException": null,
-      "BilingualFilePath": null,
-      "BilingualFileCommit": null,
-      "BilingualDateTime": "0001-01-01T00:00:00",
+      "BilingualFilePath": "ol-handback\\PowerShell\\powerShell-Docs.ja-jp\\live\\ps-engine-enhancements.51ba717e1fb1db2a8fb647083ba968b9f58c4a82.ja-jp.xlf",
+      "BilingualFileCommit": "8be07fd9f40255901b094ed2fda910d3faded77a",
+      "BilingualDateTime": "2016-07-19T14:29:44.9490606Z",
       "BilingualException": null
     },
     "8a10903c421f62311a28c9f32e352bba75f21052": {
