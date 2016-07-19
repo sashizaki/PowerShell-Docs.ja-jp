@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 13b1fd65b9dddf2570e7ab9c5420c0a6d18ce35e
+ms.sourcegitcommit: c6b87ed59a16ccb147fdd3d98e48cfa1c0aa748d
+ms.openlocfilehash: d1f3c08451b385c56d0c4e084dce8fa5795c278e
 
 ---
 
@@ -31,7 +31,7 @@ Windows XP の場合など、ユーザーの簡易切り替えが有効なとき
 ターミナル サーバーで特定のセッションをシャットダウンするには、**tsshutdn.exe** コマンド ライン ツールを使用します。
 
 ### 現在のセッションからログオフする
-ローカル システム上でセッションからログオフする場合、いくつかの方法が考えられます。 最も簡単な方法は、リモート デスクトップ\/ターミナル サービスのコマンドライン ツールである **logoff.exe** を使用することです (詳細については、Windows PowerShell プロンプトで「**logoff \/?**」と入力してください)。\- 現在アクティブなセッションからログオフするには、引数を付けずに **logoff** と入力します。
+ローカル システム上でセッションからログオフする場合、いくつかの方法が考えられます。 最も簡単な方法は、リモート デスクトップ/ターミナル サービスのコマンドライン ツールである **logoff.exe** を使用することです (詳細については、Windows PowerShell プロンプトで **logoff /?** と入力してください)。 現在アクティブなセッションからログオフするには、引数を付けずに **logoff** と入力します。
 
 また、**shutdown.exe** ツールにログオフのオプションを指定することもできます。
 
@@ -48,7 +48,7 @@ shutdown.exe -l
 詳細について、および Win32Shutdown メソッドの他の機能については、MSDN の「Win32\_OperatingSystem クラスの Win32Shutdown メソッド」をご覧ください。
 
 ### コンピューターをシャットダウンまたは再起動する
-通常、コンピューターのシャットダウンと再起動は同じ種類に属するタスクです。 コンピューターをシャットダウンできるツールであれば、コンピューターを再起動することもできます。逆にコンピューターを再起動できるツールであれば、コンピューターをシャットダウンすることもできます。 Windows PowerShell からコンピューターを簡単に再起動する方法としては、2 とおりの方法があります。 Tsshutdn.exe または Shutdown.exe に適切な引数を指定して実行することです。 詳しい使用方法は、**tsshutdn.exe \/?**  または **shutdown.exe \/?** を実行すると参照できます。
+通常、コンピューターのシャットダウンと再起動は同じ種類に属するタスクです。 コンピューターをシャットダウンできるツールであれば、コンピューターを再起動することもできます。逆にコンピューターを再起動できるツールであれば、コンピューターをシャットダウンすることもできます。 Windows PowerShell からコンピューターを簡単に再起動する方法としては、2 とおりの方法があります。 Tsshutdn.exe または Shutdown.exe に適切な引数を指定して実行することです。 詳しい使用方法は、**tsshutdn.exe ?** または **shutdown.exe ?** を実行すると参照できます。
 
 シャットダウン操作と再起動操作は、Windows PowerShell から直接 **Win32\_OperatingSystem** を使用して実行することもできます。
 
@@ -67,6 +67,6 @@ shutdown.exe -l
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

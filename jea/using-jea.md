@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "JEA の使用"
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 3bac5932c3ed57713bdb08e3a9ed435b228518bc
+translationtype: Human Translation
+ms.sourcegitcommit: 88ce340c09efdbb3d81a72fe6113c1187a9152f2
+ms.openlocfilehash: 9db7a5a91d25d459313117da34af63016f03c241
 
 ---
 
@@ -49,7 +50,7 @@ Get-Command
 ```
 
 お察しのように、表示されるのは、通常の PowerShell ウィンドウで使用できるコマンド (多くの場合、数千のコマンドを含む可能性があります) の非常に限定されたサブセットです。
-具体的には、JEA の 7 つの既定のコマンドレット (Clear-Host、Exit-PSSession、Get-Command、Get-FormatData、Get-Help、Measure-Object、Out-Default、Select-Object) と、メンテナンス ロール ファイルに明示的に含まれている 2 つのコマンドだけが表示されます。
+具体的には、JEA の 8 つの既定のコマンド (Clear-Host、Exit-PSSession、Get-Command、Get-FormatData、Get-Help、Measure-Object、Out-Default、Select-Object) と、メンテナンス ロール ファイルに明示的に含まれている 2 つのコマンドだけが表示されます。
 
 次に、メンテナンス ロール機能ファイルに含まれるユーザー定義関数を呼び出して、このセッションが動作しているユーザー コンテキストを調べてみましょう。
 
@@ -96,6 +97,6 @@ Exit-PSSession
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

@@ -1,12 +1,16 @@
 ---
-title:   DSC Script リソース
-ms.date:  2016-05-16
-keywords:  powershell,DSC
-description:  
-ms.topic:  article
-author:  eslesar
-manager:  dongill
-ms.prod:  powershell
+title: "DSC Script リソース"
+ms.date: 2016-05-16
+keywords: powershell,DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e1d217b8e633779f55e195fbf80aeee83db01409
+ms.openlocfilehash: ad2b20a3a977dc33b27f8a1096a2b48fcb3abe0e
+
 ---
 
 # DSC Script リソース
@@ -16,7 +20,7 @@ ms.prod:  powershell
 
 Windows PowerShell Desired State Configuration (DSC) の **Script** リソースは、ターゲット ノードで Windows PowerShell スクリプトのブロックを実行するためのメカニズムを備えています。 `Script` リソースには、`GetScript`、`SetScript`、`TestScript` プロパティがあります。 このプロパティは、各ターゲット ノードに対して実行されるスクリプト ブロックに設定する必要があります。 
 
-`GetScript` スクリプト ブロックは、現在のノードの状態を表すハッシュ テーブルを返します。 何も返す必要はありません。 DSC は、このスクリプト ブロックの出力を処理しません。
+`GetScript` スクリプト ブロックは、現在のノードの状態を表すハッシュ テーブルを返します。 ハッシュ テーブルに入るキーは 1 つだけです (`Result`)。値の型は `String` になります。 何も返す必要はありません。 DSC は、このスクリプト ブロックの出力を処理しません。
 
 `TestScript` スクリプト ブロックは、現在のノードを変更する必要があるかどうかを判定します。 ノードが最新の場合は `$true` を返します。 ノードの構成が最新ではなく、`SetScript` スクリプト ブロックで更新する必要がある場合は、`$false` が返されます。 `TestScript` スクリプト ブロックは DSC によって呼び出されます。
 
@@ -42,7 +46,7 @@ Script [string] #ResourceName
 
 |  プロパティ  |  説明   | 
 |---|---| 
-| GetScript| [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) コマンドレットを呼び出すと実行される Windows PowerShell スクリプトのブロックを提供します。 このブロックでは、ハッシュ テーブルを返す必要があります。| 
+| GetScript| [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) コマンドレットを呼び出すと実行される Windows PowerShell スクリプトのブロックを提供します。 このブロックでは、ハッシュ テーブルを返す必要があります。 ハッシュ テーブルに入るキーは 1 つだけです (**結果**)。値の型は**文字列**になります。| 
 | SetScript| Windows PowerShell スクリプトのブロックを提供します。 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを呼び出すと、**TestScript** ブロックが最初に実行されます。 **TestScript** ブロックが **$false** を返した場合は、**SetScript** ブロックが実行されます。 **TestScript** ブロックが **$true** を返した場合は、**SetScript** ブロックが実行されません。| 
 | TestScript| Windows PowerShell スクリプトのブロックを提供します。 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを呼び出すと、このブロックが実行されます。 これが **$false** を返した場合は、SetScript ブロックが実行されます。 これが **$true** を返した場合は、SetScript ブロックが実行されません。 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) コマンドレットを呼び出すと、**TestScript** ブロックも実行されます。 ただし、この場合、TestScript ブロックがどのような値を返すかに関係なく、**SetScript** ブロックは実行されません。 **TestScript** ブロックは、実際の構成が現在の Desired State Configuration と一致する場合には True を返す必要があり、一致しない場合には False を返す必要があります  (現在の Desired State Configuration は DSC を使用しているノードに適用された最後の構成です)。| 
 | Credential| 資格情報が必要な場合、このスクリプトの実行に使用する資格情報を示します。| 
@@ -58,7 +62,7 @@ Script ScriptExample
         $sw.Close()
     }
     TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-    GetScript = { <# This must return a hash table #> }          
+    GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }          
 }
 ```
 
@@ -69,7 +73,7 @@ Script UpdateConfigurationVersion
 {
     GetScript = { 
         $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-        return @{ 'Version' = $currentVersion }
+        return @{ 'Result' = "Version: $currentVersion" }
     }          
     TestScript = { 
         $state = GetScript
@@ -91,6 +95,7 @@ Script UpdateConfigurationVersion
 
 
 
-<!--HONumber=May16_HO3-->
+
+<!--HONumber=Jul16_HO1-->
 
 

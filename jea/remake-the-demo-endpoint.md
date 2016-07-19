@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "デモ エンドポイントを作り直す"
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: dabb5023012e90ace3fbc5f347c17821abd92595
+translationtype: Human Translation
+ms.sourcegitcommit: d20ea8418cb7389d756de94ea752cf604b8d07af
+ms.openlocfilehash: acd2cfbd038250a26236c875d0e8b03a32cd84f9
 
 ---
 
@@ -91,7 +92,7 @@ RoleDefinitions = @{'CONTOSO\JEA_NonAdmin_Operator' = @{ RoleCapabilities =  'Ma
 これは、特権アカウントとして誰が何を実行できるかを定義します。
 このフィールドを使用して、接続しているユーザーがグループ メンバーシップに基づいて利用できる機能を指定できます。
 これは、JEA の RBAC 機能の核心です。
-この例では、事前に作成された "デモ用の" ロール機能を "Contoso\JEA_NonAdmin_Operator" グループのメンバーに公開しています。
+この例では、事前に作成された "保守管理用の" ロール機能を "Contoso\JEA_NonAdmin_Operator" グループのメンバーに公開しています。
 
 3.  *RunAsVirtualAccount* フィールドは、このエンドポイントで PowerShell を仮想アカウント "として (RunAs)" 実行する必要があることを示します。
 既定では、仮想アカウントは、組み込み Administrators グループのメンバーです。
@@ -124,7 +125,7 @@ Register-PSSessionConfiguration -Name 'JEADemo2' -Path "$env:ProgramData\JEAConf
 
 ## エンドポイントをテストする
 「[JEA の使用](using-jea.md)」セクションに示されている手順をもう一度実行して、新しいエンドポイントが意図したとおりに動作していることを確認します。
-Enter-pssession に構成名を指定するときに、新しいエンドポイント名 (JEADemo2) を必ず使用してください。
+`Enter-PSSession` に構成名を指定するときに、新しいエンドポイント名 (JEADemo2) を必ず使用してください。
 
 ```PowerShell
 Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdminCred
@@ -152,6 +153,6 @@ TranscriptDirectory フィールドを使用して、JEA セッションのト�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

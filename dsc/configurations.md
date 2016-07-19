@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 29676d0bf51adf9176753d0056efe76687a40600
+ms.sourcegitcommit: 59bf4cff540dabeeb77038ea84177f7c6bac2b4b
+ms.openlocfilehash: e5412a3168a18d1dbd117ed8b3eb6dd42a8d8f70
 
 ---
 
@@ -72,10 +72,11 @@ Configuration MyDscConfiguration {
 構成を適用する前に、MOF ドキュメントにコンパイルする必要があります。 そのためには、PowerShell 関数の場合と同じように構成を呼び出します。
 >__注:__ 構成を呼び出すには、(他の PowerShell 関数と同様に) 関数がグローバル スコープ内にある必要があります。 そのためには、スクリプトで "ドット ソース" を行うか、F5 キーを使用するか、または ISE で __[スクリプトの実行]__ をクリックして、構成スクリプトを実行します。 スクリプトでドット ソースを行うには、構成を含むスクリプト ファイルの名前が `myConfig.ps1` である場合、`. .\myConfig.ps1` でコマンドを実行します。
 
-構成を呼び出すと、次のものが作成されます。
+構成を呼び出すと、結果は次のようになります。
 
-- 構成と同じ名前のフォルダー (現在のディレクトリ内)。
-- _NodeName_.mof という名前のファイル (新しいディレクトリ内)。_NodeName_ は、構成のターゲット ノードの名前です。 複数のノードがある場合は、ノードごとに MOF ファイルが作成されます。
+- すべての変数が解決されます 
+- 構成と同じ名前のフォルダーが現在のディレクトリ内に作成されます。
+- _NodeName_.mof という名前のファイルが新しいディレクトリ内に作成されます。_NodeName_ は、構成のターゲット ノードの名前です。 複数のノードがある場合は、ノードごとに MOF ファイルが作成されます。
 
 >__注__: MOF ファイルには、ターゲット ノードのすべての構成情報が含まれています。 このため、このファイルをセキュリティ保護することが重要です。 詳細については、「[MOF ファイルのセキュリティ保護](secureMOF.md)」を参照してください。
 
@@ -136,6 +137,6 @@ Configuration DependsOnExample {
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

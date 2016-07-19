@@ -1,13 +1,17 @@
 ---
-title:  リモート コマンドの実行
-ms.date:  2016-05-11
-keywords:  powershell,cmdlet
-description:  
-ms.topic:  article
-author:  jpjofre
-manager:  dongill
-ms.prod:  powershell
-ms.assetid:  d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
+title: "リモート コマンドの実行"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
+translationtype: Human Translation
+ms.sourcegitcommit: 0f77e2d13a26c58d2a4813e57a76ba54dbcaac46
+ms.openlocfilehash: 48385de53964217b2f7d263d85bfb99b1dbf6507
+
 ---
 
 # リモート コマンドの実行
@@ -26,7 +30,7 @@ ms.assetid:  d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 
 -   [Get-EventLog](https://technet.microsoft.com/en-us/library/dd315250.aspx)
 
--   [Get-Hotfix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
+-   [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
 
 -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
 
@@ -41,7 +45,7 @@ ms.assetid:  d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
 通常、特別な構成なしでリモート処理をサポートするコマンドレットは、ComputerName パラメーターを指定し、Session パラメーター必要はありません。 セッションでこれらのコマンドレットを見つけるには、次のように入力します。
 
 ```
-get-command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
+Get-Command | where { $_.parameters.keys -contains "ComputerName" -and $_.parameters.keys -notcontains "Session"}
 ```
 
 ## Windows PowerShell のリモート処理
@@ -55,7 +59,7 @@ Windows PowerShell のリモート処理を構成した後は、多くのリモ�
 1 台のリモート コンピューターとの対話型セッションを開始するには、[Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) コマンドレットを使用します。 たとえば、Server01 リモート コンピューターと対話型セッションを開始するには、次のように入力します。
 
 ```
-enter-pssession Server01
+Enter-PSSession Server01
 ```
 
 コマンド プロンプトが、接続しているコンピューターの名前を表示するよう変更されます。 これ以降、プロンプトで入力したコマンドはリモート コンピューターで実行され、結果はローカル コンピューターに表示されます。
@@ -63,7 +67,7 @@ enter-pssession Server01
 対話型セッションを終了するには、次のように入力します。
 
 ```
-exit-pssession
+Exit-PSSession
 ```
 
 Enter\-PSSession コマンドレットと Exit\-PSSession コマンドレットの詳細については、「[Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx)」と「[Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx)」をご覧ください。
@@ -73,7 +77,7 @@ Enter\-PSSession コマンドレットと Exit\-PSSession コマンドレット�
 たとえば、[Get-UICulture](https://technet.microsoft.com/en-us/library/dd347742.aspx) コマンドをリモート コンピューター Server01 と Server02 で実行するには、次のように入力します。
 
 ```
-invoke-command -computername Server01, Server02 {get-UICulture}
+Invoke-Command -ComputerName Server01, Server02 {Get-UICulture}
 ```
 
 コンピューターに出力が返されます。
@@ -93,7 +97,7 @@ Invoke\-Command コマンドレットの詳細については、「[Invoke-Comma
 たとえば、次のコマンドは、リモート コンピューター Server01 と Server02 で DiskCollect.ps1 スクリプトを実行します。
 
 ```
-invoke-command -computername Server01, Server02 -filepath c:\Scripts\DiskCollect.ps1
+Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
 Invoke\-Command コマンドレットの詳細については、「[Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx)」をご覧ください。
@@ -104,28 +108,28 @@ Invoke\-Command コマンドレットの詳細については、「[Invoke-Comma
 たとえば、次のコマンドは、コンピューター Server01 でリモート セッションを作成し、コンピューター Server02 で別のリモート セッションを作成します。 セッション オブジェクトは $s 変数に保存されます。
 
 ```
-$s = new-pssession -computername Server01, Server02
+$s = New-PSSession -ComputerName Server01, Server02
 ```
 
 セッションが確立されたので、それらで任意のコマンドを実行できます。 また、セッションは永続的であるため、1 つのコマンドでデータを収集し、後続のコマンドで利用することができます。
 
-たとえば、次のコマンドは $s 変数のセッションで Get\-Hotfix コマンドを実行し、結果を $h 変数に保存します。 $h 変数は $s のそれぞれのセッションで作成されますが、ローカル セッションには存在しません。
+たとえば、次のコマンドは $s 変数のセッションで Get\-HotFix コマンドを実行し、結果を $h 変数に保存します。 $h 変数は $s のそれぞれのセッションで作成されますが、ローカル セッションには存在しません。
 
 ```
-invoke-command -session $s {$h = get-hotfix}
+Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
 これで、次のように、後続のコマンドで $h 変数のデータを使用できます。 結果はローカル コンピューターに表示されます。
 
 ```
-invoke-command -session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"} }
+Invoke-Command -Session $s {$h | where {$_.installedby -ne "NTAUTHORITY\SYSTEM"}}
 ```
 
 ### 高度なリモート処理
 Windows PowerShell のリモート管理はこれだけではありません。 Windows PowerShell と共にインストールされるコマンドレットを使用して、ローカルとリモートの両側からのリモート セッションの確立と構成、カスタマイズおよび制限されたセッションの作成、リモート セッションで実際に暗黙的に実行されるコマンドのリモート セッションからのユーザーによるインポート、リモート セッションのセキュリティの構成など、さまざまな処理を実行できます。
 
 リモートの構成を容易にするために、Windows PowerShell には WSMan プロバイダーが含まれます。 プロバイダーが作成する WSMAN: ドライブでは、ローカル コンピューターとリモート コンピューターの構成設定の階層内を移動できます。
-WSMan プロバイダーの詳細については、[WSMan Provider](https://technet.microsoft.com/en-us/library/dd819476.aspx) (WSMan プロバイダー) および  [WS-Management コマンドレット関するページ](https://technet.microsoft.com/en-us/library/dd819481.aspx) を参照するか、Windows PowerShell コンソールで「get\-help wsman」と入力してください。
+WSMan プロバイダーの詳細については、[WSMan Provider](https://technet.microsoft.com/en-us/library/dd819476.aspx) (WSMan プロバイダー) および  [WS-Management コマンドレット関するページ](https://technet.microsoft.com/en-us/library/dd819481.aspx) を参照するか、Windows PowerShell コンソールで「Get\-Help wsman」と入力してください。
 
 詳細については、次のドキュメントをご覧ください。
 - [about_Remote_FAQ](https://technet.microsoft.com/en-us/library/dd315359.aspx)
@@ -149,6 +153,7 @@ WSMan プロバイダーの詳細については、[WSMan Provider](https://tech
 
 
 
-<!--HONumber=May16_HO4-->
+
+<!--HONumber=Jul16_HO1-->
 
 

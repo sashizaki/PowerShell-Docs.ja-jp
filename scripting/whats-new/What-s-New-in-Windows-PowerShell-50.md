@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
 translationtype: Human Translation
-ms.sourcegitcommit: ca7ab17f7ba2615c7a39d1e3dd944501bab4e72c
-ms.openlocfilehash: 87e4a23f93d19219a8d00671f319ef93a96fbbf6
+ms.sourcegitcommit: b41a40fd06de6898ba9adf01053d225edaa31b29
+ms.openlocfilehash: cd94291f225851a99253f5f54e10d6174e63f413
 
 ---
 
@@ -38,9 +38,9 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
     -   [Get-DscResource](http://technet.microsoft.com/library/dn521625.aspx) が高速になりました (特に ISE で)。
 
-    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) に新しいパラメーター、–UseExisting が追加されました。これは最後に適用した構成を再度適用するものです。
+    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) に新しいパラメーター、UseExisting が追加されました。これは最後に適用した構成を再度適用するものです。
 
-    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) \-Force が修正されました。
+    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) -Force が修正されました。
 
     -   [Get-DscLocalConfigurationManager](http://technet.microsoft.com/library/dn407378.aspx) がエンジン状態に関するより有用な情報を表示します。
 
@@ -104,13 +104,13 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
     -   構成が適用される前に、モジュールのバージョンが適用されるようになりました。
 
-    -   **DebugPreference** が、Get\-、Set\-、または Test\-TargetResource の各呼び出しに対して適切に設定されるようになりました。
+    -   **DebugPreference** が、Get-、Set-、または Test-TargetResource の各呼び出しに対して適切に設定されるようになりました。
 
 -   資格情報の処理の向上
 
     -   **Certificate** と **PSDscAllowPlainTextPassword** の両方が指定される場合、証明書が使用されるようになりました。
 
-    -   資格情報は、暗号化が解除されます。Get\-TargetResource でも暗号化解除されます。
+    -   資格情報は、暗号化が解除されます。Get-TargetResource でも暗号化解除されます。
 
     -   メタ構成の資格情報は暗号化および暗号化解除されます。
 
@@ -142,87 +142,87 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 ### <a name="BKMK_newcore"></a>Windows PowerShell の新機能
 
--   Windows PowerShell 5.0 以降では、クラスを使用して、他のオブジェクト指向のプログラミング言語に類似した正式な構文とセマンティクスを使用して開発することができます。 **Class**、**Enum** などのキーワードが、新しい機能をサポートするために Windows PowerShell 言語に追加されました。 クラスに関する作業の詳細については、「about\_Classes」を参照してください。
+-   Windows PowerShell 5.0 以降では、クラスを使用して、他のオブジェクト指向のプログラミング言語に類似した正式な構文とセマンティクスを使用して開発することができます。 **Class**、**Enum** などのキーワードが、新しい機能をサポートするために Windows PowerShell 言語に追加されました。 クラスに関する作業の詳細については、「about_Classes」を参照してください。
 
--   Windows PowerShell 5.0 では、スクリプトとその呼び出し元 (またはホスト環境) の間で構造化データを転送するために使用できる新しい構造化された情報ストリームが導入されています。 Write\-Host を使用して、情報ストリームに出力を生成できるようになりました。 また、情報ストリームは PowerShell.Streams、ジョブ、スケジュールされたジョブ、およびワークフローでも機能します。 次の機能は情報ストリームをサポートしています。
+-   Windows PowerShell 5.0 では、スクリプトとその呼び出し元 (またはホスト環境) の間で構造化データを転送するために使用できる新しい構造化された情報ストリームが導入されています。 Write-Host を使用して、情報ストリームに出力を生成できるようになりました。 また、情報ストリームは PowerShell.Streams、ジョブ、スケジュールされたジョブ、およびワークフローでも機能します。 次の機能は情報ストリームをサポートしています。
 
-    -   Windows PowerShell がコマンドの情報ストリーム データを処理する方法を指定できる新しい Write\-Information コマンドレット。 Write\-Host は、Write\-Information のラッパーです。 Write\-Information はサポートされているワークフロー アクティビティでもあります。
+    -   Windows PowerShell がコマンドの情報ストリーム データを処理する方法を指定できる新しい Write-Information コマンドレット。 Write-Host は、Write-Information のラッパーです。 Write-Information はサポートされているワークフロー アクティビティでもあります。
 
-    -   2 つの新しい共通パラメーター、InformationVariable と InformationAction を使用して、コマンドからの情報ストリームを表示する方法を決定できます。 InformationAction の有効な値は、SilentlyContinue、Stop、Continue、Inquire、Ignore、または Suspend です。既定値は SilentlyContinue です。 InformationVariable は、保存されたコマンドからの必要な Write\-Host データに対する変数の名前として文字列を指定します。
+    -   2 つの新しい共通パラメーター、InformationVariable と InformationAction を使用して、コマンドからの情報ストリームを表示する方法を決定できます。 InformationAction の有効な値は、SilentlyContinue、Stop、Continue、Inquire、Ignore、または Suspend です。既定値は SilentlyContinue です。 InformationVariable は、保存されたコマンドからの必要な Write-Host データに対する変数の名前として文字列を指定します。
 
     -   新しいユーザー設定変数、InformationPreference は、Windows PowerShell セッション内の情報ストリーム データの既定の基本設定を指定します。 既定値は SilentlyContinue です。
 
     -   2 つの新しいワークフロー共通パラメーター、PSInformation と InformationAction が追加されました。
 
-    -   Format\-Table コマンドを使用すると、ストリームを通過する最初の 300 ミリ秒のデータが評価され、テーブル列が自動的に書式設定されるようになりました。
+    -   Format-Table コマンドを使用すると、ストリームを通過する最初の 300 ミリ秒のデータが評価され、テーブル列が自動的に書式設定されるようになりました。
 
--   [Microsoft Research](http://research.microsoft.com/) とのコラボレーションにより、新しいコマンドレット、ConvertFrom\-String が追加されました。 ConvertFrom\-String では、テキスト文字列のコンテンツから構造化されたオブジェクトを抽出して、解析することができます。 詳細については、ConvertFrom\-String を参照してください。
+-   [Microsoft Research](http://research.microsoft.com/) とのコラボレーションにより、新しいコマンドレット、ConvertFrom-String が追加されました。 ConvertFrom-String では、テキスト文字列のコンテンツから構造化されたオブジェクトを抽出して、解析することができます。 詳細については、ConvertFrom-String を参照してください。
 
--   新しい Convert\-String コマンドレットは、\-Example パラメーターで指定する例を基にテキストを自動的に書式設定します。
+-   新しい Convert-String コマンドレットは、-Example パラメーターで指定する例を基にテキストを自動的に書式設定します。
 
 -   新しいモジュール、Microsoft.PowerShell.Archive には、コマンドレットが含まれています。そのコマンドレットでは、ファイルとフォルダーをアーカイブ (ZIP とも呼ばれる) ファイルに圧縮して、既存の ZIP ファイルからファイルを抽出し、ZIP ファイル内で圧縮されたファイルの新しいバージョンで ZIP ファイルを更新できます。
 
 -   新しいモジュール、PackageManagement では、インターネット上のソフトウェア パッケージを検出してインストールすることができます。 PackageManagement (旧 OneGet) モジュールは、Windows のパッケージ管理を単一の Windows PowerShell インターフェイスと統一するための、マネージャー、または既存のパッケージ マネージャー (パッケージ プロバイダーとも呼ばれる) のマルチプレクサーです。
 
--   新しいモジュール、PowerShellGet では、[PowerShell ギャラリー](http://www.powershellgallery.com/)上、または Register\-PSRepository コマンドレットを実行することでセットアップできる内部モジュール リポジトリ上で、モジュールと DSC リソースを検索、インストール、発行、および更新することができます。
+-   新しいモジュール、PowerShellGet では、[PowerShell ギャラリー](http://www.powershellgallery.com/)上、または Register-PSRepository コマンドレットを実行することでセットアップできる内部モジュール リポジトリ上で、モジュールと DSC リソースを検索、インストール、発行、および更新することができます。
 
--   新しい言語キーワード、**Hidden** が追加され、メンバー (プロパティまたはメソッド) が Get\-Member の結果に既定で表示されないように指定できるようになりました (\-Force パラメーターを追加する場合を除く)。 非表示としてマークされているプロパティやメソッドは、IntelliSense の結果にも表示されません。ただし、メンバーが表示される必要のあるコンテキスト内で作業している場合を除きます。たとえば、クラス メソッドを使用している場合、自動変数 $This は非表示のメンバーを表示する必要があります。
+-   新しい言語キーワード、**Hidden** が追加され、メンバー (プロパティまたはメソッド) が Get-Member の結果に既定で表示されないように指定できるようになりました (-Force パラメーターを追加する場合を除く)。 非表示としてマークされているプロパティやメソッドは、IntelliSense の結果にも表示されません。ただし、メンバーが表示される必要のあるコンテキスト内で作業している場合を除きます。たとえば、クラス メソッドを使用している場合、自動変数 $This は非表示のメンバーを表示する必要があります。
 
--   New\-Item、Remove\-Item、および Get\-ChildItem が[シンボリック リンク](http://en.wikipedia.org/wiki/Symbolic_link)の作成と管理をサポートするために強化されました。 New\-Item の **ItemType** パラメーターでは、新しい値、**SymbolicLink** を使用できます。 シンボリック リンクは、New\-Item コマンドレットを実行することで、1 つの行で作成できるようになりました。
+-   New-Item、Remove-Item、および Get-ChildItem が[シンボリック リンク](http://en.wikipedia.org/wiki/Symbolic_link)の作成と管理をサポートするために強化されました。 New-Item の **-ItemType** パラメーターでは、新しい値、**SymbolicLink** を使用できます。 シンボリック リンクは、New-Item コマンドレットを実行することで、1 つの行で作成できるようになりました。
 
--   また、Get\-ChildItem には新しい –Depth パラメーターも追加されました。これを –Recurse パラメーターと共に使用すると再帰を制限します。 たとえば、Get\-ChildItem –Recurse –Depth 2 は、現在のフォルダー、現在のフォルダー内のすべての子フォルダー、および子フォルダー内のすべてのフォルダーから結果を返します。
+-   また、Get-ChildItem には新しい –Depth パラメーターも追加されました。これを –Recurse パラメーターと共に使用すると再帰を制限します。 たとえば、Get-ChildItem –Recurse –Depth 2 は、現在のフォルダー、現在のフォルダー内のすべての子フォルダー、および子フォルダー内のすべてのフォルダーから結果を返します。
 
--   Copy\-Item で、1 つの Windows PowerShell セッションから別のセッションにファイルまたはフォルダーをコピーできるようになりました。つまり、リモート コンピューター ( [Windows Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) を実行しているため他のインターフェイスを持たないコンピューターを含む) に接続されているセッションにファイルをコピーできるようになりました。 ファイルをコピーするには、新しい \-FromSession と \-ToSession パラメーターの値として PSSession ID を指定し、–Path と –Destination を追加して元のパスと宛先をそれぞれ指定します。 例: Copy\-Item \-Path c:\\myFile.txt \-ToSession $s \-Destination d:\\destinationFolder。
+-   Copy-Item で、1 つの Windows PowerShell セッションから別のセッションにファイルまたはフォルダーをコピーできるようになりました。つまり、リモート コンピューター ([Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) を実行しているため他のインターフェイスを持たないコンピューターを含む) に接続されているセッションにファイルをコピーできるようになりました。 ファイルをコピーするには、新しい -FromSession と -ToSession パラメーターの値として PSSession ID を指定し、–Path と –Destination を追加して元のパスと宛先をそれぞれ指定します。 例: Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder
 
--   Windows PowerShell トランスクリプションが強化され、コンソール ホスト (**powershell.exe**) に加えて、すべてのホスト アプリケーション (Windows PowerShell ISE など) に適用されるようになりました。 トランスクリプション オプション (システム全体のトランスクリプトの有効化を含む) は、**[PowerShell トランスクリプションを有効にする]** グループ ポリシー設定 ([管理用テンプレート]\/[Windows コンポーネント]\/[Windows PowerShell]) を有効にすることで設定できます。
+-   Windows PowerShell トランスクリプションが強化され、コンソール ホスト (**powershell.exe**) に加えて、すべてのホスト アプリケーション (Windows PowerShell ISE など) に適用されるようになりました。 トランスクリプション オプション (システム全体のトランスクリプトの有効化を含む) は、**[PowerShell トランスクリプションを有効にする]** グループ ポリシー設定 ([管理用テンプレート]/[Windows コンポーネント]/[Windows PowerShell]) を有効にすることで設定できます。
 
--   新しい詳細スクリプト トレース機能では、システムで使用される Windows PowerShell スクリプトの詳細な追跡や分析を有効にすることができます。 詳細なスクリプト トレースを有効にすると、Windows PowerShell はすべてのスクリプト ブロックを Windows イベント トレーシング (ETW) イベント ログ、**Microsoft\-Windows\-PowerShell\/Operational** に記録します。
+-   新しい詳細スクリプト トレース機能では、システムで使用される Windows PowerShell スクリプトの詳細な追跡や分析を有効にすることができます。 詳細なスクリプト トレースを有効にすると、Windows PowerShell はすべてのスクリプト ブロックを Windows イベント トレーシング (ETW) イベント ログ、**Microsoft-Windows-PowerShell/Operational** に記録します。
 
--   Windows PowerShell 5.0 以降では、新しい Cryptographic Message Syntax コマンドレットが、[RFC5652](http://tools.ietf.org/html/rfc5652) で説明されているように暗号によってメッセージを保護するための IETF 標準書式を使用して、コンテンツの暗号化と暗号化解除をサポートします。 Get\-CmsMessage、Protect\-CmsMessage、および Unprotect\-CmsMessage の各コマンドレットが [Microsoft.PowerShell.Security](http://technet.microsoft.com/library/hh849807.aspx) モジュールに追加されました。
+-   Windows PowerShell 5.0 以降では、新しい Cryptographic Message Syntax コマンドレットが、[RFC5652](http://tools.ietf.org/html/rfc5652) で説明されているように暗号によってメッセージを保護するための IETF 標準書式を使用して、コンテンツの暗号化と暗号化解除をサポートします。 Get-CmsMessage、Protect-CmsMessage、および Unprotect-CmsMessage の各コマンドレットが [Microsoft.PowerShell.Security](http://technet.microsoft.com/library/hh849807.aspx) モジュールに追加されました。
 
--   [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールの新しいコマンドレット、Get\-Runspace、Debug\-Runspace、Get\-RunspaceDebug、Enable\-RunspaceDebug、および Disable\-RunspaceDebug を使用すると、実行空間でのデバッグ オプションを設定して、実行空間でのデバッグを開始、停止できます。 任意の実行空間をデバッグする場合、つまり、Windows PowerShell コンソールまたは Windows PowerShell ISE セッションの既定の実行空間ではない実行空間をデバッグする場合、Windows PowerShell では、スクリプトにブレークポイントを設定し、追加されたブレークポイントを使用して、実行空間スクリプトをデバッグするデバッガーをアタッチするまでスクリプトが実行されないようにすることができます。 実行空間用の Windows PowerShell スクリプト デバッガーに、任意の実行空間に対する入れ子になったデバッグのサポートが追加されました。
+-   [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールの新しいコマンドレット、Get-Runspace、Debug-Runspace、Get-RunspaceDebug、Enable-RunspaceDebug、および Disable-RunspaceDebug を使用すると、実行空間でのデバッグ オプションを設定して、実行空間でのデバッグを開始、停止できます。 任意の実行空間をデバッグする場合、つまり、Windows PowerShell コンソールまたは Windows PowerShell ISE セッションの既定の実行空間ではない実行空間をデバッグする場合、Windows PowerShell では、スクリプトにブレークポイントを設定し、追加されたブレークポイントを使用して、実行空間スクリプトをデバッグするデバッガーをアタッチするまでスクリプトが実行されないようにすることができます。 実行空間用の Windows PowerShell スクリプト デバッガーに、任意の実行空間に対する入れ子になったデバッグのサポートが追加されました。
 
--   新しい Format\-Hex コマンドレットが [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。 Format\-Hex を使用すると、テキスト データやバイナリ データを 16 進数形式で表示できます。
+-   新しい Format-Hex コマンドレットが [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。 Format-Hex を使うと、テキスト データやバイナリ データを 16 進数形式で表示できます。
 
--   Get\-Clipboard コマンドレットと Set\-Clipboard コマンドレットが、[Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。これらのコマンドレットにより、Windows PowerShell セッションとの間のコンテンツの転送が容易になります。 クリップボードのコマンドレットは、画像、オーディオ ファイル、ファイルのリスト、およびテキストをサポートします。
+-   Get-Clipboard コマンドレットと Set-Clipboard コマンドレットが、[Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。これらのコマンドレットにより、Windows PowerShell セッションとの間のコンテンツの転送が容易になります。 クリップボードのコマンドレットは、画像、オーディオ ファイル、ファイルのリスト、およびテキストをサポートします。
 
--   新しいコマンドレット、Clear\-RecycleBin が、[Microsoft.PowerShell.Management](http://technet.microsoft.com/library/hh849827(v=wps.640).aspx) モジュールに追加されました。このコマンドレットは、外部ドライブを含む固定ドライブのゴミ箱を空にします。 既定では、コマンドレットの ConfirmImpact プロパティが ConfirmImpact.High に設定されているため、Clear\-RecycleBin コマンドを確認するよう求めるメッセージが表示されます。
+-   新しいコマンドレット、Clear-RecycleBin が、[Microsoft.PowerShell.Management](http://technet.microsoft.com/library/hh849827(v=wps.640).aspx) モジュールに追加されました。このコマンドレットは、外部ドライブを含む固定ドライブのゴミ箱を空にします。 既定では、コマンドレットの ConfirmImpact プロパティが ConfirmImpact.High に設定されているため、Clear-RecycleBin コマンドを確認するよう求めるメッセージが表示されます。
 
--   新しいコマンドレット、New\-TemporaryFile では、スクリプトの一部として一時ファイルを作成できます。 既定では、新しい一時ファイルは C:\\Users\\<user name>\\AppData\\Local\\Temp に作成されます。
+-   新しいコマンドレット、New-TemporaryFile では、スクリプトの一部として一時ファイルを作成できます。 既定では、新しい一時ファイルは ```C:\Users\<user name>\AppData\Local\Temp``` に作成されます。
 
--   Out\-File、Add\-Content、および Set\-Content の各コマンドレットに新しい –NoNewline パラメーターが追加されました。これを指定すると、出力後の改行が省略されます。
+-   Out-File、Add-Content、および Set-Content の各コマンドレットに新しい –NoNewline パラメーターが追加されました。これを指定すると、出力後の改行が省略されます。
 
--   New\-Guid コマンドレットは、.NET Framework Guid クラスを利用して GUID を生成します。これはスクリプトまたは DSC リソースを作成している場合に便利です。
+-   New-Guid コマンドレットは、.NET Framework Guid クラスを利用して GUID を生成します。これはスクリプトまたは DSC リソースを作成している場合に便利です。
 
--   ファイルのバージョン情報は、特にファイルにパッチが適用された場合に、解釈を間違えやすいデータであるため、新しいスクリプト プロパティ、FileVersionRaw と ProductVersionRaw が FileInfo オブジェクトに対して使用できます。 たとえば、次のコマンドを実行して、PowerShell.exe のこれらのプロパティ値を表示できます。ここで、$pid には Windows PowerShell の実行中のセッションのプロセス ID が含まれます。Get\-Process \-Id $pid \-FileVersionInfo | Format\-List \*version\* \-Force
+-   ファイルのバージョン情報は、特にファイルにパッチが適用された場合に、解釈を間違えやすいデータであるため、新しいスクリプト プロパティ、FileVersionRaw と ProductVersionRaw が FileInfo オブジェクトに対して使用できます。 たとえば、次のコマンドを実行して、PowerShell.exe のこれらのプロパティ値を表示できます。ここで、$pid には Windows PowerShell の実行中のセッションのプロセス ID が含まれます。  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 
--   新しいコマンドレット、Enter\-PSHostProcess と Exit\-PSHostProcess を使用すると、Windows PowerShell コンソールで実行している現在のプロセスとは別のプロセスで Windows PowerShell スクリプトをデバッグできます。 Enter\-PSHostProcess を実行して、特定のプロセス ID を入力するか、特定のプロセス ID にアタッチしてから、Get\-Runspace を実行して、プロセス内のアクティブな実行空間を返します。 プロセス内でスクリプトのデバッグが完了したら、Exit\-PSHostProcess を実行して、プロセスからデタッチします。
+-   新しいコマンドレット、Enter-PSHostProcess と Exit-PSHostProcess を使用すると、Windows PowerShell コンソールで実行している現在のプロセスとは別のプロセスで Windows PowerShell スクリプトをデバッグできます。 Enter-PSHostProcess を実行して、特定のプロセス ID を入力するか、特定のプロセス ID にアタッチしてから、Get-Runspace を実行して、プロセス内のアクティブな実行空間を返します。 プロセス内でスクリプトのデバッグが完了したら、Exit-PSHostProcess を実行して、プロセスからデタッチします。
 
--   新しい Wait\-Debugger コマンドレットが [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。 Wait\-Debugger を実行すると、スクリプトの次のステートメントを実行する前に、デバッガー内のスクリプトを停止することができます。
+-   新しい Wait-Debugger コマンドレットが [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。 Wait-Debugger を実行すると、スクリプトの次のステートメントを実行する前に、デバッガー内のスクリプトを停止することができます。
 
--   Windows PowerShell ワークフロー デバッガーで、コマンドまたはタブ補完をサポートするようになったため、入れ子になったワークフロー関数をデバッグすることができます。 **Ctrl\+Break** キーを押すと、実行中のスクリプト、ローカルとリモートの両方のセッション、およびワークフロー スクリプトで、デバッガーに入れるようになりました。
+-   Windows PowerShell ワークフロー デバッガーで、コマンドまたはタブ補完をサポートするようになったため、入れ子になったワークフロー関数をデバッグすることができます。 **Ctrl+Break** キーを押すと、実行中のスクリプト、ローカルとリモートの両方のセッション、およびワークフロー スクリプトで、デバッガーに入れるようになりました。
 
--   Debug\-Job コマンドレットが [Microsoft.PowerShell.Core](http://technet.microsoft.com/library/hh849695.aspx) モジュールに追加され、Windows PowerShell ワークフローの実行中のジョブ スクリプト、バックグラウンド、およびリモート セッションで実行するジョブをデバッグできます。
+-   Debug-Job コマンドレットが [Microsoft.PowerShell.Core](http://technet.microsoft.com/library/hh849695.aspx) モジュールに追加され、Windows PowerShell ワークフローの実行中のジョブ スクリプト、バックグラウンド、およびリモート セッションで実行するジョブをデバッグできます。
 
--   新しい状態、AtBreakpoint が Windows PowerShell ジョブに追加されました。 AtBreakpoint 状態は、ジョブがブレークポイントの設定を含むスクリプトを実行し、スクリプトがブレークポイントにヒットした場合に適用されます。 ジョブがデバッグ ブレークポイントで停止したら、Debug\-Job コマンドレットを実行して、ジョブをデバッグする必要があります。
+-   新しい状態、AtBreakpoint が Windows PowerShell ジョブに追加されました。 AtBreakpoint 状態は、ジョブがブレークポイントの設定を含むスクリプトを実行し、スクリプトがブレークポイントにヒットした場合に適用されます。 ジョブがデバッグ ブレークポイントで停止したら、Debug-Job コマンドレットを実行して、ジョブをデバッグする必要があります。
 
--   Windows PowerShell 5.0 では、$PSModulePath の同一フォルダーにある 1 つの Windows PowerShell モジュールの複数のバージョンに対するサポートを実装しています。 RequiredVersion プロパティが ModuleSpecification クラスに追加され、必要なバージョンのモジュールを取得できるようになりました。このプロパティは、ModuleVersion プロパティとは相互に排他的です。 RequiredVersion が、Get\-Module、Import\-Module、および Remove\-Module コマンドレットの FullyQualifiedName パラメーターの値の一部としてサポートされるようになりました。
+-   Windows PowerShell 5.0 では、$PSModulePath の同一フォルダーにある 1 つの Windows PowerShell モジュールの複数のバージョンに対するサポートを実装しています。 RequiredVersion プロパティが ModuleSpecification クラスに追加され、必要なバージョンのモジュールを取得できるようになりました。このプロパティは、ModuleVersion プロパティとは相互に排他的です。 RequiredVersion が、Get-Module、Import-Module、および Remove-Module コマンドレットの FullyQualifiedName パラメーターの値の一部としてサポートされるようになりました。
 
--   Test\-ModuleManifest コマンドレットを実行して、モジュール バージョンを検証できるようになりました。
+-   Test-ModuleManifest コマンドレットを実行して、モジュール バージョンを検証できるようになりました。
 
--   Get\-Command コマンドレットの結果が、バージョン列に表示されるようになりました。新しい Version プロパティが CommandInfo クラスに追加されました。 Get\-Command では、同じモジュールの複数のバージョンからのコマンドが表示されます。 Version プロパティは、CmdletInfo の派生クラスの一部 (CmdletInfo と ApplicationInfo) でもあります。
+-   Get-Command コマンドレットの結果が、バージョン列に表示されるようになりました。新しい Version プロパティが CommandInfo クラスに追加されました。 Get-Command では、同じモジュールの複数のバージョンからのコマンドが表示されます。 Version プロパティは、CmdletInfo の派生クラスの一部 (CmdletInfo と ApplicationInfo) でもあります。
 
--   Get\-Command に、\-ShowCommand の情報を PSObject として返す新しいパラメーター、-ShowCommandInfo が追加されました。 これは、Windows PowerShell リモート処理を使用して、Windows PowerShell ISE で Show\-Command を実行する場合に、特に便利な機能です。 Microsoft.PowerShell.Utility モジュールの既存の Get\-SerializedCommand 関数は、–ShowCommandInfo に置き換えられます。ただし、Get\-SerializedCommand スクリプトは、ダウンレベルのスクリプトをサポートするために引き続き使用できます。
+-   Get-Command に、ShowCommand の情報を PSObject として返す新しいパラメーター、-ShowCommandInfo が追加されました。 これは、Windows PowerShell リモート処理を使用して、Windows PowerShell ISE で Show-Command を実行する場合に、特に便利な機能です。 Microsoft.PowerShell.Utility モジュールの既存の Get-SerializedCommand 関数は、–ShowCommandInfo に置き換えられます。ただし、Get-SerializedCommand スクリプトは、ダウンレベルのスクリプトをサポートするために引き続き使用できます。
 
--   新しい Get\-ItemPropertyValue コマンドレットでは、ドット表記を使用せずにプロパティの値を取得できます。 たとえば、Windows PowerShell の以前のリリースでは、PowerShellEngine レジストリ キーの Application Base プロパティの値を取得するには、**(Get\-ItemProperty \-Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine \-Name ApplicationBase).ApplicationBase** を実行します。 Windows PowerShell 5.0 以降では、**Get\-ItemPropertyValue \-Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine \-Name ApplicationBase** を実行できます。
+-   新しい Get-ItemPropertyValue コマンドレットでは、ドット表記を使用せずにプロパティの値を取得できます。 たとえば、Windows PowerShell の以前のリリースでは、PowerShellEngine レジストリ キーの Application Base プロパティの値を取得するには、**(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase** を実行します。 Windows PowerShell 5.0 以降では、**Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase** を実行できます。
 
 -   Windows PowerShell コンソールでは、Windows PowerShell ISE と同じ方法の構文の色分けを使用するようになりました。
 
 -   新しい NetworkSwitch モジュールには、スイッチ、仮想 LAN (VLAN)、および基本的なレイヤー 2 ネットワーク スイッチ ポートの構成を、Windows Server 2012 R2 ロゴ認定を受けたネットワーク スイッチに適用できるコマンドレットが含まれます。
 
--   FullyQualifiedName パラメーターが、Import\-Module コマンドレットと Remove\-Module コマンドレットに追加され、1 つのモジュールの複数のバージョンの保存をサポートします。
+-   FullyQualifiedName パラメーターが、Import-Module コマンドレットと Remove-Module コマンドレットに追加され、1 つのモジュールの複数のバージョンの保存をサポートします。
 
--   Save\-Help、Update\-Help、Import\-PSSession、Export\-PSSession、および Get\-Command に、ModuleSpecification 型の新しいパラメーター、FullyQualifiedModule が追加されました。 このパラメーターを追加して、完全修飾名でモジュールを指定します。
+-   Save-Help、Update-Help、Import-PSSession、Export-PSSession、および Get-Command に、ModuleSpecification 型の新しいパラメーター、FullyQualifiedModule が追加されました。 このパラメーターを追加して、完全修飾名でモジュールを指定します。
 
 -   **$PSVersionTable.PSVersion** の値が 5.0 に更新されました。
 
@@ -759,6 +759,6 @@ Windows PowerShell 3.0 では、特殊文字を正しく解釈して処理する
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

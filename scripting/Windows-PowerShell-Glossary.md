@@ -1,12 +1,19 @@
 ---
-title: Windows PowerShell 用語集
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell 用語集"
+ms.date: 2016-05-11
+keywords: powershell,cmdlet
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
+translationtype: Human Translation
+ms.sourcegitcommit: ea25f98e60050a52fc1d72c7e529985855eeed36
+ms.openlocfilehash: ab41246eda58eb384500daa1f99aa9a8f9e019e1
+
 ---
+
 # Windows PowerShell 用語集
 
 
@@ -15,7 +22,7 @@ ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 |バイナリ モジュール|ルート モジュールがバイナリ モジュール ファイル (.dll) である Windows PowerShell モジュール。 バイナリ モジュールにはモジュール マニフェストが含まれる場合と、含まれない場合があります。|
 |共有パラメーター|Windows PowerShell エンジンによってすべてのコマンドレットおよび高度な関数に追加されるパラメーター。|
 |ドット ソース|Windows PowerShell では、コマンドの前にドットとスペースを入力することによってコマンドを開始すること。 ドット ソースのコマンドは、新しいスコープではなく、現在のスコープで実行されます。 コマンドが作成するすべての変数、エイリアス、関数、またはドライブは、現在のスコープで作成され、コマンドが完了すると使用できるようになります。|
-|動的モジュール|メモリ内にのみ存在するモジュール。 動的モジュールは Import-PSSession コマンドレットによって作成されます。|
+|動的モジュール|メモリ内にのみ存在するモジュール。 New-Module コマンドレットと Import-PSSession コマンドレットは動的モジュールを作成します。|
 |動的パラメーター|Windows PowerShell コマンドレット、関数、または特定の条件下のスクリプトに追加されるパラメーター。 コマンドレット、関数、プロバイダー、およびスクリプトは動的パラメーターを追加できます。|
 |書式設定ファイル|拡張子が .format.ps1xml で、Windows PowerShell がどのように .NET Framework 型に基づいてオブジェクを表示するかを定義する Windows PowerShell XML ファイル。|
 |グローバル セッション状態|Windows PowerShell セッションのユーザーがアクセスできるデータを含むセッション状態。|
@@ -46,7 +53,7 @@ ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 |Windows PowerShell コマンド|アクションを実行させるパイプライン内の要素。 Windows PowerShell コマンドは、キーボードで入力されるか、プログラムで呼び出されます。|
 |Windows PowerShell データ ファイル|.psd1 ファイル名拡張子を持つテキスト ファイル。 Windows PowerShell では、モジュール マニフェスト データの格納や、スクリプトの国際化のための翻訳された文字列の格納など、さまざまな目的でデータ ファイルを使用します。|
 |Windows PowerShell ドライブ|データ ストアに直接アクセスできる仮想ドライブ。 Windows PowerShell プロバイダーによって定義されるか、コマンド ラインで作成されます。 コマンド ラインで作成されたドライブは、セッション固有のドライブであり、セッションが閉じられたときに失われます。|
-|Windows PowerShell Integrated Scripting Environment (ISE)|Windows PowerShell ホスト アプリケーション。分かりやすくて、構文がカラーで表記された、ユニコード準拠の環境で、コマンドを実行し、スクリプトを書き、テストし、デバッグすることができます。|
+|Windows PowerShell Integrated Scripting Environment (ISE)|Windows PowerShell ホスト アプリケーション。わかりやすく、構文がカラーで表記される、ユニコード準拠の環境で、コマンドの実行し、スクリプトの記述、テスト、デバッグが可能になります。|
 |Windows PowerShell モジュール|Windows PowerShell コードをパーティション分割、整理、抽象化するための再利用可能な自己完結型の単位。 モジュールには、1 つの単位としてインポートできるコマンドレット、プロバイダー、関数、変数、その他の種類のリソースを含めることができます。|
 |Windows PowerShell プロバイダー|特化されたデータ ストアのデータを Windows PowerShell で利用できるようにし、そのデータを表示および管理できるようにするための Microsoft .NET Framework ベースのプログラム。|
 |Windows PowerShell スクリプト|Windows PowerShell 言語で記述されたスクリプト。|
@@ -56,6 +63,7 @@ ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Jul16_HO1-->
 
 

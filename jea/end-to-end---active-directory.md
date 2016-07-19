@@ -8,8 +8,9 @@ keywords: powershell,cmdlet,jea
 ms.date: 2016-06-22
 title: "エンド ツー エンド - Active Directory"
 ms.technology: powershell
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 0a262e2c83174db7041d3cf35d97542b1cac4386
+translationtype: Human Translation
+ms.sourcegitcommit: 5954eb797df43de6f132a434ecad7049ee0221fb
+ms.openlocfilehash: 204909c16d5e3e2099f6ba4247929d61445cd654
 
 ---
 
@@ -82,7 +83,7 @@ Active Directory 管理エンドポイントを作成するための調査で利
 
 各コマンドを検討した後、次のように制限することを決定したとします。
 
-1.  `Set-ADUser`  は、"-Title" パラメーターが指定された場合のみ実行することを許可する
+1.  `Set-ADUser` は、-Title パラメーターが指定された場合のみ実行することを許可する
 
 2.  `Add-ADGroupMember`  と `Remove-ADGroupMember` は、特定のグループでのみ動作する必要がある
 
@@ -92,15 +93,15 @@ JEA は *NoLanguage* モードで実行されますが、このモードは、�
 スムーズなエンド ユーザー エクスペリエンスを実現するには、いくつかの事項を確認する必要があります。
 
 例として、`Set-ADAccountPassword` を検討します。
-"-NewPassword" パラメーターには、セキュリティで保護された文字列が必要です。
+-NewPassword パラメーターには、セキュリティで保護された文字列が必要です。
 多くの場合、ユーザーは、セキュリティで保護された文字列を作成し、それを変数として渡します (下記参照)。
 
 ```PowerShell
-$newPassword = (Read-Host -Prompt "Specify a new password" -AsSecureString)
+$newPassword = Read-Host -Prompt "Specify a new password" -AsSecureString
 Set-ADAccountPassword -Identity mollyd -NewPassword $newPassword -Reset
 ```
 
-ただし、NoLanguage モードでは、変数は使用できません。
+ただし、*NoLanguage* モードでは、変数は使用できません。
 この制限は、次の 2 つの方法で回避できます。
 
 1.  変数を割り当てずにコマンドを実行することをユーザーに要求する。
@@ -124,7 +125,7 @@ Set-ADAccountPassword -Identity mollyd -NewPassword (Read-Host -Prompt "Specify 
 
 1. PowerShell ISE で Contoso_AD_Module.psm1 を開きます。
 ```PowerShell
-ISE 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1'
+ise 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1'
 ```
 
 2. Crtl + J キーを押して、スニペット メニューを開きます。
@@ -165,7 +166,7 @@ Set-ADUser -Identity $Identity -ChangePasswordAtLogon
 「[ロール機能の作成](#role-capability-creation)」セクションで、空のロール機能ファイルを作成しました。
 このセクションでは、このファイルに値を設定します。
 
-ISE でロール機能ファイルを開いて開始します。
+PowerShell ISE でロール機能ファイルを開いて開始します。
 ```PowerShell
 ise 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\RoleCapabilities\ADHelpDesk.psrc'
 ```
@@ -193,7 +194,7 @@ VisibleFunctions = 'Reset-ContosoUserPassword'
 1.  PowerShell は、ロール機能に必要なモジュールの自動読み込みを試行します。
 モジュールが自動的に読み込まれない問題が発生した場合、ModulesToImport フィールドにモジュール名を明示的にリストする必要がある場合があります。
 
-2.  コマンドがコマンドレットまたは関数のいずれであるか分からない場合は、`Get-Command` を実行して、CommandType を確認します。
+2.  コマンドがコマンドレットまたは関数のいずれであるかわからない場合は、`Get-Command` を実行して、"CommandType" プロパティを確認します。
 
 3.  一連の使用可能値を簡単に定義できない場合は、ValidatePattern により、正規表現を使って、パラメーター引数を制限できます。
 1 つのパラメーターについて ValidatePattern と ValidateSet の両方を定義することはできません。
@@ -210,7 +211,7 @@ PSSC ファイル内の次のフィールドを変更します。
 独自の環境で作業している場合は、CONTOSO\JEA_NonAdmins_Helpdesk を自身の管理者以外のユーザーまたはグループに置き換える必要があります。
 ```PowerShell
 # OLD: Description = ''
-Description = 'An endpoint for active directory tasks.'
+Description = 'An endpoint for Active Directory tasks.'
 
 # OLD: SessionType = 'Default'
 SessionType = 'RestrictedRemoteServer'
@@ -266,12 +267,12 @@ Exit-PSSession
 詳細を確認するには、`Get-Help about_Functions` を実行してください。
 
 **ValidateSet/ValidatePattern**: コマンドの公開時に、特定のパラメーターに有効な引数を制限できます。
-ValidateSet は、有効なコマンドの特定の一覧です。
+ValidateSet は、有効な引数の特定のリストです。
 ValidatePattern は、そのパラメーターの引数が一致する必要のある正規表現です。
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 

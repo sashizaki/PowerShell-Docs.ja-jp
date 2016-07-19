@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: bee671bf537a100bd8ad407f34ccd5fe63c7f9a8
+ms.sourcegitcommit: 35dafe18719cd26977966a26d2781fc99cbf4097
+ms.openlocfilehash: d0f5fb26844edd4e07265a8c7d638f30a51244f7
 
 ---
 
 # Windows PowerShell ファースト ステップ ガイド
-Windows PowerShell は、特にシステム管理者向けに設計された新しい Windows コマンド ライン シェルです。\- Windows PowerShell には対話型のプロンプトとスクリプト環境が含まれており、それらを単独で、または組み合わせて使用できます。
+Windows PowerShell は、特にシステム管理者向けに設計された Windows コマンド ライン シェルです。 Windows PowerShell には対話型のプロンプトとスクリプト環境が含まれており、それらを単独で、または組み合わせて使用できます。
 
 テキストを受け入れて返す大部分のシェルとは異なり、Windows PowerShell は .NET Framework の共通言語ランタイム (CLR) と .NET Framework の上に構築されており、.NET Framework オブジェクトを受け入れて返すことができます。 環境のこの根本的な変更により、まったく新しいツールと方法で Windows の管理と構成を行うことができます。
 
@@ -38,6 +38,6 @@ Windows PowerShell は、シンプルな単一機能のコマンド ライン �
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Jul16_HO1-->
 
 
