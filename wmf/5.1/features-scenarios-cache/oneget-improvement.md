@@ -2,8 +2,8 @@
 title: "PackageManagement (別名  OneGet) の機能強化"
 contributor: jianyunt, quoctruong
 translationtype: Human Translation
-ms.sourcegitcommit: 4c1b57f221d0f502313eecb21dd36b5e85c2de4d
-ms.openlocfilehash: e2646a59c7a241491ef934c62fdfb6d649d16191
+ms.sourcegitcommit: 3b5a3bb0ef9cf123c0cee4a36890ac61431c85ff
+ms.openlocfilehash: bb1129e6aa20b64e94ddb6d7b7cf7b51b1df9ca3
 
 ---
 
@@ -36,9 +36,9 @@ ms.openlocfilehash: e2646a59c7a241491ef934c62fdfb6d649d16191
 **シナリオ**: エンタープライズのシナリオで、ユーザーはイントラネットのみでインターネット アクセスのない環境で作業しています。 OneGet は WMF 5.0 でこのケースをサポートしていませんでした。
 
 **解決策**:
-- インターネットに接続できる別のコンピューターで Install-PackageProvider NuGet コマンドを使用して NuGet プロバイダーをダウンロードできます。
+- インターネットに接続できる別のコンピューターで "Install-PackageProvider -Name NuGet" コマンドを使用して NuGet プロバイダーをダウンロードできます。
 
-- $env:ProgramFiles\PackageManagement\ProviderAssemblies\nuget または $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\nuget で NuGet プロバイダーを探します。 
+- $env:ProgramFiles\PackageManagement\ProviderAssemblies\nuget または $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\nuget で、インストールした NuGet プロバイダーを見つけます。 
 
 - インターネットにアクセスできないコンピューターでもアクセスできるフォルダーまたはネットワーク共有の場所にバイナリをコピーし、"Install-PackageProvider NuGet -Source <Path to folder>" で NuGet プロバイダーをインストールします。
 
@@ -60,6 +60,6 @@ Find-Package -Source http://www.nuget.org/api/v2/ -Proxy http://www.myproxyserve
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Jul16_HO3-->
 
 

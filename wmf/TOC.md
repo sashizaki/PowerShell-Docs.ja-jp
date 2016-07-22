@@ -2,6 +2,11 @@
 
 # [WMF 5.1](5.1/release-notes.md)
 ## [新しいシナリオと機能](5.1/scenarios-features.md)
+### [WMF 5.1 で修正されたバグ](5.1/bugfixes.md)
+### [PowerShell コンソールの機能強化](5.1/console-improvements.md)
+### [PowerShell エンジンの機能強化](5.1/engine-improvements.md)
+### [Desired State Configuration (DSC) の機能強化](5.1/DSC-improvements.md)
+### [OneGet の機能強化]
 ## [インストールと構成](5.1/install-configure.md)
 ## [の既知の問題](5.1/known-issues.md)
 ## [互換性](5.1/Compatibility.md)
@@ -89,6 +94,6 @@
 ### [ソフトウェア インベントリ ログ (SIL)](5.0/sil_overview.md)
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Jul16_HO3-->
 
 
