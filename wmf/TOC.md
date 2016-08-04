@@ -8,7 +8,7 @@
 ### [Desired State Configuration (DSC) の機能強化](5.1/DSC-improvements.md)
 ### [OneGet の機能強化]
 ## [インストールと構成](5.1/install-configure.md)
-## [の既知の問題](5.1/known-issues.md)
+## [既知の問題](5.1/known-issues.md)
 ## [互換性](5.1/Compatibility.md)
 
 # [WMF 5.0](5.0/releasenotes.md)
