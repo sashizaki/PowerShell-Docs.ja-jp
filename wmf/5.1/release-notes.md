@@ -1,6 +1,6 @@
 ---
 title: "WMF 5.1 リリース ノート (プレビュー)"
-ms.date: 2016-05-16
+ms.date: 2016-07-27
 keywords: PowerShell, DSC, WMF
 description: 
 ms.topic: article
@@ -9,28 +9,32 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 9c763f92b8e342b0208204f997c079c725891933
-ms.openlocfilehash: d25a22b0448e82a85e45c302a998abc35bd4c1b6
+ms.sourcegitcommit: 5eb9eae6257cdb57f4f778b5dddf5aa7ef9d10bb
+ms.openlocfilehash: 12f2c084ab92134b733ee037c3d9fbd512af2e4c
 
 ---
 
-# Windows Management Framework (WMF) 5.1 リリース ノート (プレビュー) #
+# Windows Management Framework (WMF) 5.1 プレビューのリリース ノート #
 
-> 注意: この情報は暫定版であり、変更することがあります。
+WMF 5.1 プレビューには、Windows Server 2016 でリリースされる PowerShell、WMI、WinRM、ソフトウェア インベントリおよびライセンス (SIL) のコンポーネントが含まれています。 WMF 5.1 は、Windows 7、Windows 8.1、Windows Server 2008 R2、Windows Server 2012、および Windows Server 2012 R2 にインストールすることができ、WMF 5.0 RTM と比較すると次のような機能が強化されています。
 
-このセクションの文書は、今後発表される WMF 5.1 プレビューに適用されます。 WMF 5.1 プレビューのリリース日は未定です。 このコンテンツは準備段階のものであり、これからの数週間、頻繁に更新されます。 
+- 新しいコマンドレット: ローカル ユーザーとグループ、Get-ComputerInfo
+- PowerShellGet では、署名付きモジュールの適用や JEA モジュールのインストールなどの機能強化が行われています。
+- PackageManagement では、コンテナー、CBS セットアップ、EXE ベースのセットアップ、CAB パッケージをサポートするようになりました。
+- DSC および PowerShell クラスにおけるデバッグ機能の強化
+- セキュリティの機能強化としては、プル サーバーからもたらされるカタログ署名付きモジュールの適用、PowerShellGet コマンドレットを使用するタイミングなどが挙げられます。
+- さまざまなユーザー要求と問題への対応
 
-早い時期にこのコンテンツは本稼働となり、Windows Server 2016 の以前のリリースにアクセスできるユーザーに情報を提供します。 これらの文書の情報の多くは、Windows Server 2016 のプレビュー バージョンにも適用されます。インストール、構成、互換性のセクションは例外であり、これは WMF にのみ関連します。
+**重要な注意事項:**
+
+- **WMF 5.1 プレビューでは Windows Management Framework 4.6 を必要とします**。 .Net 4.6 がインストールされていない場合、インストールは成功しますが、主な機能は失敗します。 手順については、トピック「[WMF 5.1 のインストールと構成 (プレビュー)](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/install-configure)」を参照してください。 
+- 現時点で、**WMF 5.1 プレビューは、運用環境での展開がサポートされていません**。 このプレビューの目的は、リリースに組み込まれる機能について事前情報を紹介し、PowerShell チームにフィードバックする機会をユーザーに提供することにあります。
+- WMF 5.1 プレビューは、WMF 5.0 経由で直接インストールしてもかまいません。
+- 既知の問題として、Windows 7 および Windows Server 2008 に WMF 5.1 プレビューをインストールするには、現時点では WMF 4.0 が必要です。 この要件は、最終リリースの発行前に削除する予定です。
+- WMF 5.1 の将来のバージョン (RTM バージョンを含む) をインストールする場合は、WMF 5.1 プレビューをアンインストールする必要があります。
 
 
 
-
-
-
-
-
-
-
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Jul16_HO5-->
 
 

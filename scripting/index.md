@@ -1,1 +1,5 @@
-# Index test file for Open Publishing
+# Open Publishing 用のインデックス テスト ファイル
+
+<!--HONumber=Jul16_HO5-->
+
+
