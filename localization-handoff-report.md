@@ -1,22 +1,21 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 4
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs/blob/3928be9ff8dc0f262edd4251af3a170be57ad66e/dsc/partialConfigs.md) | HandedOffSuccess | [Details](#12decb2502031f85c40e1f68bc426b2d837f13cf73)
- [dsc\pullClientConfigNames.md](https://github.com/PowerShell/powerShell-Docs/blob/3928be9ff8dc0f262edd4251af3a170be57ad66e/dsc/pullClientConfigNames.md) | HandedOffSuccess | [Details](#ec4ce56d00daa265fb0031f20ded05d3f3c0489578)
- [wmf\5.1\package-management-improvements.md](https://github.com/PowerShell/powerShell-Docs/blob/3928be9ff8dc0f262edd4251af3a170be57ad66e/wmf/5.1/package-management-improvements.md) | HandedOffSuccess | [Details](#f83066393a966ee1cd054ea528ed0590bc494643424)
- [wmf\5.1\release-notes.md](https://github.com/PowerShell/powerShell-Docs/blob/ebbd7d4d39cd335d994dd6cd3a06dd644df6d919/wmf/5.1/release-notes.md) | HandedOffSuccess | [Details](#83061e651b190bab3e5914bb6270a5857f7aa7a5425)
+ [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs/blob/0e830804616ff23412e0d6ff69c38e2ea20228e5/dsc/partialConfigs.md) | HandedOffSuccess | [Details](#c5d3cb1045e67d4913fbbad13938e8f95a43cacf73)
+ [gallery\psget\psget_cmdlets_troubleshooting.md](https://github.com/PowerShell/powerShell-Docs/blob/05ae53b510412cd6e81f10e6dd8960025467f304/gallery/psget/psget_cmdlets_troubleshooting.md) | HandedOffSuccess | [Details](#dc283a7dd5794c07194066537a10734b0b5e743e144)
+ [gallery\TOC.md](https://github.com/PowerShell/powerShell-Docs/blob/763a6068064be04fd198f2bc2699d0e53dedef83/gallery/TOC.md) | HandedOffSuccess | [Details](#420624e0e554b0838bcca582a0e6c3c0cbd15901163)
 
 ## Item Details
-##### <a name='12decb2502031f85c40e1f68bc426b2d837f13cf73'></a> Source: [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs/blob/3928be9ff8dc0f262edd4251af3a170be57ad66e/dsc/partialConfigs.md)
+##### <a name='c5d3cb1045e67d4913fbbad13938e8f95a43cacf73'></a> Source: [dsc\partialConfigs.md](https://github.com/PowerShell/powerShell-Docs/blob/0e830804616ff23412e0d6ff69c38e2ea20228e5/dsc/partialConfigs.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/0b20a522dfa84ec0369b636d904edfefd2ca7fa8/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.ja-jp.xlf)
-* Handoff Datetime: 2016-08-11 18:16:37
+* Handoff File: [partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/c533b0c6c15c5414fe34c908f65e0a12f3e93cde/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/partialConfigs.f483ab7fa1511b557780a02b5b807245f730c1b6.ja-jp.xlf)
+* Handoff Datetime: 2016-08-12 22:17:11
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -29,28 +28,11 @@
 * Bilingual Datetime: 2016-06-28 14:57:20
 * [Back to Top](#report-top)
 
-##### <a name='ec4ce56d00daa265fb0031f20ded05d3f3c0489578'></a> Source: [dsc\pullClientConfigNames.md](https://github.com/PowerShell/powerShell-Docs/blob/3928be9ff8dc0f262edd4251af3a170be57ad66e/dsc/pullClientConfigNames.md)
+##### <a name='dc283a7dd5794c07194066537a10734b0b5e743e144'></a> Source: [gallery\psget\psget_cmdlets_troubleshooting.md](https://github.com/PowerShell/powerShell-Docs/blob/05ae53b510412cd6e81f10e6dd8960025467f304/gallery/psget/psget_cmdlets_troubleshooting.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [pullClientConfigNames.90531abb3b29bfd751ad2f3a115a4ba02024827e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/0b20a522dfa84ec0369b636d904edfefd2ca7fa8/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/pullClientConfigNames.90531abb3b29bfd751ad2f3a115a4ba02024827e.ja-jp.xlf)
-* Handoff Datetime: 2016-08-11 18:16:37
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [dsc\pullClientConfigNames.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/28763a888816fcec697dcf7261657866ccfa083e/dsc/pullClientConfigNames.md)
-* Current Handback File: [pullClientConfigNames.90531abb3b29bfd751ad2f3a115a4ba02024827e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/263a5ad1ab4a67f56d3059098975795c5f07b9c3/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/pullClientConfigNames.90531abb3b29bfd751ad2f3a115a4ba02024827e.ja-jp.xlf)
-* Current Handback Datetime: 2016-06-28 15:29:02
-* Bilingual File: [pullClientConfigNames.90531abb3b29bfd751ad2f3a115a4ba02024827e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/263a5ad1ab4a67f56d3059098975795c5f07b9c3/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/pullClientConfigNames.90531abb3b29bfd751ad2f3a115a4ba02024827e.ja-jp.xlf)
-* Bilingual Datetime: 2016-06-28 15:31:55
-* [Back to Top](#report-top)
-
-##### <a name='f83066393a966ee1cd054ea528ed0590bc494643424'></a> Source: [wmf\5.1\package-management-improvements.md](https://github.com/PowerShell/powerShell-Docs/blob/3928be9ff8dc0f262edd4251af3a170be57ad66e/wmf/5.1/package-management-improvements.md)
-* Status: HandedOffSuccess
-* Target File: 
-* Handoff File: [package-management-improvements.81c1bcda67908dcb003110be1bfb73a016cee225.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/0b20a522dfa84ec0369b636d904edfefd2ca7fa8/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/package-management-improvements.81c1bcda67908dcb003110be1bfb73a016cee225.ja-jp.xlf)
-* Handoff Datetime: 2016-08-11 18:16:37
+* Handoff File: [psget_cmdlets_troubleshooting.d9c18494b8d800c47375d9b3b54afd5a739502dc.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/c533b0c6c15c5414fe34c908f65e0a12f3e93cde/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/psget_cmdlets_troubleshooting.d9c18494b8d800c47375d9b3b54afd5a739502dc.ja-jp.xlf)
+* Handoff Datetime: 2016-08-12 22:17:11
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
@@ -58,21 +40,16 @@
 * Handback Datetime: 0001-01-01 00:00:00
 * [Back to Top](#report-top)
 
-##### <a name='83061e651b190bab3e5914bb6270a5857f7aa7a5425'></a> Source: [wmf\5.1\release-notes.md](https://github.com/PowerShell/powerShell-Docs/blob/ebbd7d4d39cd335d994dd6cd3a06dd644df6d919/wmf/5.1/release-notes.md)
+##### <a name='420624e0e554b0838bcca582a0e6c3c0cbd15901163'></a> Source: [gallery\TOC.md](https://github.com/PowerShell/powerShell-Docs/blob/763a6068064be04fd198f2bc2699d0e53dedef83/gallery/TOC.md)
 * Status: HandedOffSuccess
 * Target File: 
-* Handoff File: [release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/0b20a522dfa84ec0369b636d904edfefd2ca7fa8/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.ja-jp.xlf)
-* Handoff Datetime: 2016-08-11 18:16:37
+* Handoff File: [TOC.8c64df72d95d4bd53637941319526dd80056a223.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/c533b0c6c15c5414fe34c908f65e0a12f3e93cde/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/TOC.8c64df72d95d4bd53637941319526dd80056a223.ja-jp.xlf)
+* Handoff Datetime: 2016-08-12 22:17:11
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [wmf\5.1\release-notes.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/643a91b242b4cf666ea2d321b16ecae1a9d41278/wmf/5.1/release-notes.md)
-* Current Handback File: [release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/459e6dbb103ddd865a94ca4b61ebfb054afa3f1c/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.ja-jp.xlf)
-* Current Handback Datetime: 2016-08-05 08:48:49
-* Bilingual File: [release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/459e6dbb103ddd865a94ca4b61ebfb054afa3f1c/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/release-notes.218509b1bab21c093b32cb5d4953c42d1cb90cb4.ja-jp.xlf)
-* Bilingual Datetime: 2016-08-05 08:49:25
 * [Back to Top](#report-top)
 
 
