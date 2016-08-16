@@ -25,7 +25,7 @@ ms.openlocfilehash: cdf1f553d0bea91e2dcd051faef42417ad0cbc7a
 * [Windows PowerShell のタブのキーボード ショートカット](#bkmk_6)
 * [開始および終了のキーボード ショートカット](#bkmk_7)
 
-Microsoft は、あらゆるユーザーの皆様に使いやすい製品とサービスをお届けできるように努めています。 以下のトピックでは、障害のある方に Windows PowerShell ISE を快適にご利用いただくための機能、製品、およびサービスについて説明します。
+Microsoft は、あらゆるユーザーの皆様に使いやすい製品とサービスをお届けできるように努めています。 以下のトピックでは、障碍のある方に Windows PowerShell ISE を快適にご利用いただくための機能、製品、およびサービスについて説明します。
 
 Windows PowerShell ISE は、ハイ コントラスト モードをサポートしています。 視覚に障碍のある方のために、ブレークポイントを管理するコマンドレット ([Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6)、[Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420) など) を通じて、ブレークポイント情報をご利用いただけます。 詳しくは、「[Windows PowerShell ISE でスクリプトをデバッグする方法](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md#bkmk_1)」の「ブレークポイントを管理する方法」をご覧ください。 Microsoft Windows のアクセシビリティ機能とユーティリティに加え、Windows PowerShell ISE には、身体に障碍のある方に役立つ次の機能が備わっています。
 
