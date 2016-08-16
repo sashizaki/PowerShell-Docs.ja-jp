@@ -1,6 +1,6 @@
 {
   "LastProcessedCommit": "877e2df3b80ad730f143f8008a5d8c071eabb9ca",
-  "LastTranslatedCommit": "643a91b242b4cf666ea2d321b16ecae1a9d41278",
+  "LastTranslatedCommit": "60f89266146c383ab8320101b6ee3714bebdcfce",
   "Items": {
     "81efeb79a70df604ef8c126c0ebd17b4f4711a44": {
       "FileHash": "81efeb79a70df604ef8c126c0ebd17b4f4711a44",
@@ -32369,14 +32369,14 @@
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
-      "TargetFileCommit": "770019bec5611e566ba4dbc0f9540b5cb311d563",
+      "TargetFileCommit": "60f89266146c383ab8320101b6ee3714bebdcfce",
       "TargetFilePath": "scripting\\setup\\Accessibility-in-Windows-PowerShell-ISE.md",
       "HandbackFilePath": "ol-handback\\PowerShell\\powerShell-Docs.ja-jp\\live\\Accessibility-in-Windows-PowerShell-ISE.2ca37c157ff546e8a8bfde68228e933bd363cbbe.ja-jp.xlf",
-      "HandbackFileCommit": "fef206f663b59f8055273d5e4d75a592da098d6c",
-      "HandbackDateTime": "2016-07-19T14:00:58.6407288Z",
+      "HandbackFileCommit": "5bd284f4bb3835fa80e4e12c006f401a23377ebf",
+      "HandbackDateTime": "2016-08-16T08:10:47.5911977Z",
       "HandbackException": null,
       "HandbackFailureTimes": 0,
-      "UpdatedDateTime": "2016-07-19T14:00:58.6407288Z",
+      "UpdatedDateTime": "2016-08-16T08:10:47.5911977Z",
       "ArchiveFilePath": "ol-handoff\\PowerShell\\powerShell-Docs.ja-jp\\live\\archive\\Accessibility-in-Windows-PowerShell-ISE.2ca37c157ff546e8a8bfde68228e933bd363cbbe.ja-jp.xlf",
       "ArchiveFileCommit": "eb5f8d1bd37ed5334e76f11bbf0f8dcd33ef84bc",
       "ArchiveFileDateTime": "2016-07-12T13:12:50.3273617Z",
