@@ -44,18 +44,18 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 ```
 カタログ バージョン 1 と 2 がサポートされています。 バージョン 1 は SHA1 ハッシュ アルゴリズムを使用して、バージョン 2 は SHA256 ハッシュ アルゴリズムを使用してファイル ハッシュを作成します。 *Windows Server 2008 R2* と *Windows 7* はカタログ バージョン 2 に対応していません。 カタログ バージョン 2 は *Windows 8*、*Windows Server 2012* 以降のオペレーティング システムで利用する必要があります。  
 
-![](../../images/NewFileCatalog.jpg)
+![](../images/NewFileCatalog.jpg)
 
 これはカタログ ファイルを作成します。 
 
-![](../../images/CatalogFile1.jpg)  
+![](../images/CatalogFile1.jpg)  
 
-![](../../images/CatalogFile2.jpg) 
+![](../images/CatalogFile2.jpg) 
 
 カタログ ファイルの整合性を検証するために (上記の例では Pester.cat)、[Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) コマンドレットで署名します。   
 
 
-###Test-FileCatalog 
+### Test-FileCatalog 
 --------------------------------
 
 Test-FileCatalog は、一連のフォルダーを表すカタログを検証します。 
@@ -64,9 +64,9 @@ Test-FileCatalog は、一連のフォルダーを表すカタログを検証し
 Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-FilesToSkip <string[]>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-![](../../images/TestFileCatalog.jpg)
+![](../images/TestFileCatalog.jpg)
 
-このコマンドレットは、*カタログ*で見つかったすべてのファイル ハッシュとその相対パスを*ディスク*のそれらと比較します。 ファイル ハッシュとパスの間に不一致が検出された場合、*ValidationFailed* というステータスを返します。 *-Detailed* フラグを利用し、この情報をすべて取得できます。 提出された*署名*には、カタログの署名ステータスも表示されます。これは、カタログ ファイルで [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) コマンドレットを呼び出すことと同じです。 *-FilesToSkip* パラメーターを利用し、検証中にファイルをスキップすることもできます。 
+このコマンドレットは、*カタログ*で見つかったすべてのファイル ハッシュとその相対パスを*ディスク*のそれらと比較します。 ファイル ハッシュとパスの間に不一致が検出された場合、*ValidationFailed* というステータスを返します。 *-Detailed* フラグを利用し、この情報をすべて取得できます。 提出された*署名*には、カタログの署名ステータスも表示されます。これは、カタログ ファイルで [Get-AuthenticodeSignature](https://technet.microsoft.com/ja-jp/library/hh849805.aspx) コマンドレットを呼び出すことと同じです。 *-FilesToSkip* パラメーターを利用し、検証中にファイルをスキップすることもできます。 
 
 
 ## モジュール分析キャッシュ ##
@@ -98,7 +98,7 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 この環境変数の設定は、現在のプロセスで直ちに有効になります。
 
-##モジュールのバージョンの指定
+## モジュールのバージョンの指定
 
 WMF 5.1 では、`using module` は PowerShell の他のモジュール関連構造と同様に動作します。 以前は、モジュールの特定のバージョンを指定する方法はありませんでした。複数のバージョンが存在する場合、エラーが発生しました。
 
@@ -118,7 +118,7 @@ WMF 5.1 では次のようになります。
 
 
 
-##Pester の機能強化
+## Pester の機能強化
 WMF 5.1 では、PowerShell で出荷される Pester のバージョンが 3.3.5 から 3.4.0 に更新され、コミット https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e が追加されました。Nano での Pester の動作を改善します。 
 
 https://github.com/pester/Pester/blob/master/CHANGELOG.md で ChangeLog.md ファイルを調べると、バージョン 3.3.5 から 3.4.0 への変更を確認できます。
