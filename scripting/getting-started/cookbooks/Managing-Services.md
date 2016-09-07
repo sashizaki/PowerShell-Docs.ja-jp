@@ -1,7 +1,7 @@
 ---
 title: "サービスの管理"
 ms.date: 2016-05-11
-keywords: powershell,cmdlet
+keywords: "PowerShell, コマンドレット"
 description: 
 ms.topic: article
 author: jpjofre
@@ -9,16 +9,16 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: a9d6ece1df3b66090b2abf9d85019fee4db946b5
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 66c2a8c8afab49f16e8ef7d0b5ba3a2a65c92490
 
 ---
 
 # サービスの管理
-サービスに関連したさまざまなタスクを実行するために設計された 8 つの主要な Service コマンドレットがあります。 ここでは、サービスの実行状態の一覧表示と変更についてのみ取り上げていますが、**Get\-Help \&#42;\-Service** でサービスに関連したコマンドレットを一覧表示したり、**Get\-Help<Cmdlet\-Name>** (**Get\-Help New\-Service** など) でサービスに関連した各種コマンドレットの情報を検索したりできます。
+サービスに関連したさまざまなタスクを実行するために設計された 8 つの主要な Service コマンドレットがあります。 ここでは、サービスの実行状態の一覧表示と変更についてのみ取り上げていますが、**Get-Help \&#42;-Service** でサービスに関連したコマンドレットを一覧表示したり、**Get-Help<Cmdlet-Name>** (**Get-Help New-Service** など) でサービスに関連した各種コマンドレットの情報を検索したりできます。
 
 ## サービスの取得
-**Get\-Service** コマンドレットを使用して、ローカル コンピューターまたはリモート コンピューター上のサービスを取得できます。 **Get\-Process** と同様、パラメーターを指定せずに **Get\-Service** コマンドを実行した場合、すべてのサービスが返されます。 アスタリスクをワイルドカードとして使用し、サービスを名前でフィルター処理するには、次のように入力します。
+**Get-Service** コマンドレットを使用して、ローカル コンピューターまたはリモート コンピューター上のサービスを取得できます。 **Get-Process** と同様、パラメーターを指定せずに **Get-Service** コマンドを実行した場合、すべてのサービスが返されます。 アスタリスクをワイルドカードとして使用し、サービスを名前でフィルター処理するには、次のように入力します。
 
 ```
 PS> Get-Service -Name se*
@@ -47,16 +47,16 @@ Running  lanmanserver       Server
 Stopped  ServiceLayer       ServiceLayer
 ```
 
-Get\-Service コマンドレットの ComputerName パラメーターを使用して、リモート コンピューター上のサービスを取得できます。 ComputerName パラメーターには複数の値およびワイルドカード文字を使用できるため、1 つのコマンドで複数のコンピューター上のサービスを取得できます。 たとえば、次のコマンドでは、Server01 リモート コンピューター上のサービスを取得できます。
+Get-Service コマンドレットの ComputerName パラメーターを使用して、リモート コンピューター上のサービスを取得できます。 ComputerName パラメーターには複数の値およびワイルドカード文字を使用できるため、1 つのコマンドで複数のコンピューター上のサービスを取得できます。 たとえば、次のコマンドでは、Server01 リモート コンピューター上のサービスを取得できます。
 
 ```
 Get-Service -ComputerName Server01
 ```
 
 ## 必要なサービスおよび依存するサービスの取得
-Get\-Service コマンドレットには、サービスの管理に非常に便利な 2 つのパラメーターがあります。 DependentServices パラメーターは、そのサービスに依存するサービスを取得します。 RequiredServices パラメーターは、そのサービスが依存しているサービスを取得します。
+Get-Service コマンドレットには、サービスの管理に非常に便利な 2 つのパラメーターがあります。 DependentServices パラメーターは、そのサービスに依存するサービスを取得します。 RequiredServices パラメーターは、そのサービスが依存しているサービスを取得します。
 
-これらのパラメーターは、Get\-Service が返す System.ServiceProcess.ServiceController オブジェクトの DependentServices プロパティと ServicesDependedOn (エイリアス \= RequiredServices) プロパティの値を表示するだけですが、コマンドが単純化され、この情報をずっと簡単に取得できるようになります。
+これらのパラメーターは、Get-Service が返す System.ServiceProcess.ServiceController オブジェクトの DependentServices プロパティと ServicesDependedOn (エイリアス: RequiredServices) プロパティの値を表示するだけですが、コマンドが単純化され、この情報をずっと簡単に取得できるようになります。
 
 次のコマンドは、LanmanWorkstation サービスが必要とするサービスを取得します。
 
@@ -82,7 +82,7 @@ Stopped  Browser            Computer Browser
 Running  BITS               Background Intelligent Transfer Ser...
 ```
 
-また、依存関係を持つサービスをすべて取得することもできます。 次のコマンドは、それを実行した後、Format\-Table コマンドレットを使用して、コンピューター上のサービスの Status、Name、RequiredServices、DependentServices の各プロパティを表示します。
+また、依存関係を持つサービスをすべて取得することもできます。 次のコマンドは、それを実行した後、Format-Table コマンドレットを使用して、コンピューター上のサービスの Status、Name、RequiredServices、DependentServices の各プロパティを表示します。
 
 ```
 Get-Service -Name * | where {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
@@ -107,7 +107,7 @@ Start-Service -Name spooler
 Suspend-Service -Name spooler
 ```
 
-**Restart\-Service** コマンドレットの動作も、サービスを扱う他のコマンドレットと同じですが、もう少し複雑な例を示します。 最も簡単な使い方は、サービスの名前を指定することです。
+**Restart-Service** コマンドレットの動作も、サービスを扱う他のコマンドレットと同じですが、もう少し複雑な例を示します。 最も簡単な使い方は、サービスの名前を指定することです。
 
 ```
 PS> Restart-Service -Name spooler
@@ -132,16 +132,16 @@ WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 ```
 
-サービスを扱うこれらのコマンドレットには ComputerName パラメーターはありませんが、Invoke\-Command コマンドレットを使用すれば、これらのコマンドレットをリモート コンピューター上で実行できます。 たとえば、次のコマンドでは、Server01 リモート コンピューター上のスプーラー サービスを再起動できます。
+サービスを扱うこれらのコマンドレットには ComputerName パラメーターはありませんが、Invoke-Command コマンドレットを使用すれば、これらのコマンドレットをリモート コンピューター上で実行できます。 たとえば、次のコマンドでは、Server01 リモート コンピューター上のスプーラー サービスを再起動できます。
 
 ```
 Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 ```
 
 ## サービスのプロパティの設定
-Set\-Service コマンドレットは、ローカル コンピューターまたはリモート コンピューター上のサービスのプロパティを変更します。 サービスの状態もプロパティの 1 つであるため、このコマンドレットを使用してサービスを開始、停止、一時停止できます。 Set\-Service コマンドレットには、サービスのスタートアップの種類を変更できる StartupType パラメーターもあります。
+Set-Service コマンドレットは、ローカル コンピューターまたはリモート コンピューター上のサービスのプロパティを変更します。 サービスの状態もプロパティの 1 つであるため、このコマンドレットを使用してサービスを開始、停止、一時停止できます。 Set-Service コマンドレットには、サービスのスタートアップの種類を変更できる StartupType パラメーターもあります。
 
-Windows Vista 以降のバージョンの Windows で、Set\-Service を使用するには、Windows PowerShell を開く際に [管理者として実行] オプションを指定する必要があります。
+Windows Vista 以降のバージョンの Windows で、Set-Service を使用するには、Windows PowerShell を開く際に [管理者として実行] オプションを指定する必要があります。
 
 詳細については、「[Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)」を参照してください。
 
@@ -154,6 +154,6 @@ Windows Vista 以降のバージョンの Windows で、Set\-Service を使用�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

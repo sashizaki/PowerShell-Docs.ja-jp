@@ -1,7 +1,7 @@
 ---
 title: "付録 2 - カスタムの PowerShell ショートカットの作成"
 ms.date: 2016-05-11
-keywords: powershell,cmdlet
+keywords: "PowerShell, コマンドレット"
 description: 
 ms.topic: article
 author: jpjofre
@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 24e9b67cf51b99156db3f0bdfb446996b9d3df76
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: ceec1038516ddd4c29df770d14981c0a69437498
 
 ---
 
@@ -19,15 +19,15 @@ ms.openlocfilehash: 24e9b67cf51b99156db3f0bdfb446996b9d3df76
 
 1.  Powershell.exe へのショートカットを作成します。
 
-2.  ショートカットを右クリックし、**[プロパティ]** をクリックします。\-
+2.  ショートカットを右クリックし、**[プロパティ]** をクリックします。
 
 3.  **[オプション]** タブをクリックします。
 
 4.  **[編集オプション]** セクションの **[簡易編集モード]** チェック ボックスをオンにします。
 
-    この設定により、Windows PowerShell のコンソール ウィンドウで、左マウス ボタンをドラッグしてテキストを選択したり、Enter キーを押すかマウスを右クリックすることによってテキストをクリップボードにコピーしたりできるようになります。\-
+    この設定により、Windows PowerShell のコンソール ウィンドウで、左マウス ボタンをドラッグしてテキストを選択したり、Enter キーを押すかマウスを右クリックすることによってテキストをクリップボードにコピーしたりできるようになります。
 
-5.  **[編集オプション]** セクションの **[挿入モード]** チェック ボックスをオンにします。 この設定により、コンソール ウィンドウで右クリックすると、クリップボードから自動的にテキストが貼り付けられます。\-
+5.  **[編集オプション]** セクションの **[挿入モード]** チェック ボックスをオンにします。 この設定により、コンソール ウィンドウで右クリックすると、クリップボードから自動的にテキストが貼り付けられます。
 
 6.  **[コマンドの履歴]** セクションの **[バッファー サイズ]** ボックスで、1 から 999 までの数値を入力するか選択します。 これにより、コンソール バッファーに保持される、入力されたコマンドの数が設定されます。
 
@@ -46,6 +46,6 @@ ms.openlocfilehash: 24e9b67cf51b99156db3f0bdfb446996b9d3df76
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

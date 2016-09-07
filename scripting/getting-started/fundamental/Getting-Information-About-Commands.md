@@ -1,7 +1,7 @@
 ---
 title: "コマンドに関する情報の取得"
 ms.date: 2016-05-11
-keywords: powershell,cmdlet
+keywords: "PowerShell, コマンドレット"
 description: 
 ms.topic: article
 author: jpjofre
@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: a19601bd785ab91f5d8175acd081113e87a62a57
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: c60f0f63b0d64c82a3ae0716743087ee2b8740c0
 
 ---
 
 # コマンドに関する情報の取得
-Windows PowerShell の **Get\-Command** コマンドレットは、現在のセッションで使用できるすべてのコマンドを取得します。 Windows PowerShell プロンプトで **Get\-Command** と入力すると、次のような出力が得られます。
+Windows PowerShell の **Get-Command** コマンドレットは、現在のセッションで使用できるすべてのコマンドを取得します。 Windows PowerShell プロンプトで **Get-Command** と入力すると、次のような出力が得られます。
 
 ```
 PS> Get-Command
@@ -27,13 +27,13 @@ Cmdlet          Add-Member                      Add-Member [-MemberType] <PS...
 ...
 ```
 
-この出力は、Cmd.exe のヘルプの出力に似ている、内部コマンドの表形式の概要です。 上記の **Get\-Command** コマンドの出力の抜粋では、表示されているすべてのコマンドのコマンドレットは CommandType です。 コマンドレットは、Windows PowerShell の組み込みコマンドの種類であり、Cmd.exe の **dir** コマンドと **cd** コマンドや、BASH などの UNIX シェルの組み込み要素にほぼ対応します。\-
+この出力は、Cmd.exe のヘルプの出力に似ている、内部コマンドの表形式の概要です。 上記の **Get-Command** コマンドの出力の抜粋では、表示されているすべてのコマンドのコマンドレットは CommandType です。 コマンドレットは、Windows PowerShell の組み込みコマンドの種類であり、Cmd.exe の **dir** コマンドと **cd** コマンドや、BASH などの UNIX シェルの組み込み要素にほぼ対応します。
 
-**Get\-Command** コマンドの出力では、すべての定義が省略記号 (...) で終わっており、PowerShell で使用可能なスペースにすべてのコンテンツを表示できないことを示します。 Windows PowerShell に出力が表示されると、出力をテキストとして書式設定し、ウィンドウにきちんと収まるようにデータを配置します。 これについては、フォーマッタのセクションで後述します。
+**Get-Command** コマンドの出力では、すべての定義が省略記号 (...) で終わっており、PowerShell で使用可能なスペースにすべてのコンテンツを表示できないことを示します。 Windows PowerShell に出力が表示されると、出力をテキストとして書式設定し、ウィンドウにきちんと収まるようにデータを配置します。 これについては、フォーマッタのセクションで後述します。
 
-**Get\-Command** コマンドレットには、各コマンドレットの構文を取得する **Syntax** パラメーターがあります。 Get\-Help コマンドレットの構文を取得するには、次のコマンドを使用します。
+**Get-Command** コマンドレットには、各コマンドレットの構文を取得する **Syntax** パラメーターがあります。 Get-help コマンドレットの構文を取得するには、次のコマンドを使用します。
 
-**Get\-Command Get\-Help \-Syntax**
+**Get-Command Get-Help -構文**
 
 ```
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>] [-Functionality <String[]>]
@@ -50,7 +50,7 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
 ```
 
 ### 使用可能なコマンドの種類の表示
-**Get\-Command** コマンドは、Windows PowerShell で使用可能なコマンドのすべてを一覧表示しません。 代わりに、**Get\-Command** コマンドは、現在のセッションのコマンドレットのみを一覧表示します。 Windows PowerShell は、実際にはその他のいくつかの種類のコマンドをサポートします。 エイリアス、関数、およびスクリプトも Windows PowerShell のコマンドですが、『Windows PowerShell ユーザー ガイド』では詳細に説明していません。 実行可能な外部ファイル、または登録されているファイル タイプのハンドラーを持つ外部ファイルも、コマンドとして分類されます。
+**Get-Command** コマンドは、Windows PowerShell で使用可能なコマンドのすべてを一覧表示しません。 代わりに、**Get-Command** コマンドは、現在のセッションのコマンドレットのみを一覧表示します。 Windows PowerShell は、実際にはその他のいくつかの種類のコマンドをサポートします。 エイリアス、関数、およびスクリプトも Windows PowerShell のコマンドですが、『Windows PowerShell ユーザー ガイド』では詳細に説明していません。 実行可能な外部ファイル、または登録されているファイル タイプのハンドラーを持つ外部ファイルも、コマンドとして分類されます。
 
 セッション内のすべてのコマンドを取得するには、次のように入力します。
 
@@ -60,10 +60,10 @@ Get-Command *
 
 この一覧には、検索パスの外部ファイルが含まれるため、何千もの項目が含まれることがあります。 コマンド セットを削減して表示する方が実用的です。
 
-その他の種類のネイティブ コマンドを取得するには、**Get\-Command** コマンドレットの **CommandType** パラメーターを使用します。
+その他の種類のネイティブ コマンドを取得するには、**Get-Command** コマンドレットの **CommandType** パラメーターを使用します。
 
 > [!NOTE]
-> アスタリスク (\*) は、Windows PowerShell コマンドの引数のワイルドカードによるマッチングに使用されます。 \* は、「1 つ以上の任意の文字に一致する」という意味です。 **Get\-Command a\&#42;** を入力すると、文字 "a" で始まるコマンドをすべて検索できます。 Cmd.exe のワイルドカードのマッチングとは異なり、Windows PowerShell のワイルドカードは、ピリオドもマッチングします。
+> アスタリスク (\*) は、Windows PowerShell コマンドの引数のワイルドカードによるマッチングに使用されます。 \* は、「1 つ以上の任意の文字に一致する」という意味です。 **Get-Command a\&#42;** を入力すると、文字 "a" で始まるコマンドをすべて検索できます。 Cmd.exe のワイルドカードのマッチングとは異なり、Windows PowerShell のワイルドカードは、ピリオドもマッチングします。
 
 コマンドの割り当て済みのニックネームであるコマンドのエイリアスを取得するには、次のように入力します。
 
@@ -86,6 +86,6 @@ Get-Command -CommandType Script
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

@@ -1,7 +1,7 @@
 ---
 title: "オブジェクトの並べ替え"
 ms.date: 2016-05-11
-keywords: powershell,cmdlet
+keywords: "PowerShell, コマンドレット"
 description: 
 ms.topic: article
 author: jpjofre
@@ -9,15 +9,15 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 8530caa8-3ed4-4c56-aed7-1295dd9ba199
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 72d0c66e8fe1c87561af89821e16032f25c3b1b5
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 88753c43124cfce3581af2259449be5f01579ae8
 
 ---
 
 # オブジェクトの並べ替え
-**Sort\-Object** コマンドレットを使用すると、表示データを見やすく整理できます。 **Sort\-Object** では、並べ替え条件としてプロパティ名 (複数可) を指定すると、そのプロパティ値で並べ替えられたデータが返されます。
+**Sort-Object** コマンドレットを使用すると、表示データを見やすく整理できます。 **Sort-Object** では、並べ替え条件としてプロパティ名 (複数可) を指定すると、そのプロパティ値で並べ替えられたデータが返されます。
 
-たとえば、Win32\_SystemDriver のインスタンスを一覧表示する場合を考えてみます。 **State** で並べ替えた後、**Name** で並べ替えるには、次のように入力します。
+たとえば、Win32_SystemDriver のインスタンスを一覧表示する場合を考えてみます。 **State** で並べ替えた後、**Name** で並べ替えるには、次のように入力します。
 
 ```
 Get-WmiObject -Class Win32_SystemDriver | Sort-Object -Property State,Name | Format-Table -Property Name,State,Started,DisplayName -AutoSize -Wrap
@@ -58,6 +58,6 @@ Wanarp         Running    True Remote Access IP ARP Driver
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

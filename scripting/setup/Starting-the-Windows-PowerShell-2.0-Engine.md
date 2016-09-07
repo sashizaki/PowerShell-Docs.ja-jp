@@ -1,23 +1,30 @@
 ---
-title: Windows PowerShell 2.0 エンジンの開始
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell 2.0 エンジンを開始する"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 094c3c9f240457fc884031e7d82dcdc1e81e582d
+
 ---
-# Windows PowerShell 2.0 エンジンの開始
+
+# Windows PowerShell 2.0 エンジンを開始する
 このセクションでは、Windows PowerShell 2.0 エンジンがインストールされている Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、および Windows PowerShell 2.0、Windows PowerShell 3.0、Windows PowerShell 4.0 がインストールされているその他のシステムで、Windows PowerShell 2.0 エンジンを開始する方法について説明します。
 
-Windows PowerShell 4.0 および Windows PowerShell 3.0 は、Windows PowerShell 2.0 との下位互換性を保つように設計されています。 Windows PowerShell 2.0 用に記述されたコマンドレット、プロバイダー、スナップイン、モジュール、スクリプトは、未変更のまま Windows PowerShell 4.0 と Windows PowerShell 3.0 で実行できます。 ただし、Microsoft .NET Framework 4 でランタイムのアクティブ化ポリシーが変更されたため、Windows PowerShell 2.0 用に記述され、共通言語ランタイム (CLR) 2.0 でコンパイルされた Windows PowerShell ホスト プログラムは、変更を加えなければ Windows PowerShell 3.0 または Windows PowerShell 4.0 (CLR 4.0 でコンパイルされたもの) で実行できません。 Windows PowerShell 2.0 エンジンは、既存のスクリプトまたはホスト プログラムが Windows PowerShell 4.0、Windows PowerShell 3.0、Microsoft .NET Framework 4 との互換性がないために実行できない場合に限り使用することを意図しています。 そのようなケースはまれと考えられます。
+Windows PowerShell 4.0 および Windows PowerShell 3.0 は、Windows PowerShell 2.0 との下位互換性を保つように設計されています。 Windows PowerShell 2.0 と Windows PowerShell 3.0 用に記述されたコマンドレット、プロバイダー、スナップイン、モジュール、スクリプトは、未変更のまま Windows PowerShell 4.0 で実行できます。 ただし、Microsoft .NET Framework 4 でランタイムのアクティブ化ポリシーが変更されたため、Windows PowerShell 2.0 用に記述され、共通言語ランタイム (CLR) 2.0 でコンパイルされた Windows PowerShell ホスト プログラムは、変更を加えなければ Windows PowerShell 3.0 または Windows PowerShell 4.0 (CLR 4.0 でコンパイルされたもの) で実行できません。 Windows PowerShell 2.0 エンジンは、既存のスクリプトまたはホスト プログラムが Windows PowerShell 4.0、Windows PowerShell 3.0、Microsoft .NET Framework 4 との互換性がないために実行できない場合に限り使用することを意図しています。 そのようなケースはまれと考えられます。
 
 Windows PowerShell 2.0 エンジンを必要とする多くのプログラムは、エンジンを自動的に起動します。 次の手順は、エンジンを手動で起動する必要のあるまれな状況のためのものです。
 
 ## 必要なプログラムのインストールと有効化
-Windows PowerShell 2.0 エンジンを起動する前に、Windows PowerShell 2.0 エンジンと Microsoft .NET Framework 3.5 Service Pack 1 を有効にします。 方法については、「[Windows PowerShell のインストール](Installing-Windows-PowerShell.md)」をご覧ください。.
+Windows PowerShell 2.0 エンジンを起動する前に、Windows PowerShell 2.0 エンジンと Microsoft .NET Framework 3.5 Service Pack 1 を有効にします。 方法については、「[Windows PowerShell のインストール](Installing-Windows-PowerShell.md)」をご覧ください。
 
-[Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) または Windows Management Framework 3.0 がインストールされているシステムには、すべての必要なコンポーネントが揃っています。 これ以上の構成は必要ありません。 [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) または Windows Management Framework 3.0 のインストール方法の詳細については、「[Windows PowerShell のインストール](Installing-Windows-PowerShell.md)」をご覧ください。.
+[Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) または Windows Management Framework 3.0 がインストールされているシステムには、すべての必要なコンポーネントが揃っています。 これ以上の構成は必要ありません。 [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) または Windows Management Framework 3.0 のインストール方法の詳細については、「[Windows PowerShell のインストール](Installing-Windows-PowerShell.md)」をご覧ください。
 
 ## Windows PowerShell 2.0 エンジンを起動する方法
 Windows PowerShell を起動すると、既定で最新バージョンが起動します。 Windows PowerShell 2.0 エンジンで Windows PowerShell を起動するには、PowerShell.exe の Version パラメーターを使用します。 コマンドは、Windows PowerShell と Cmd.exe を含む任意のコマンド プロンプトで実行できます。
@@ -33,7 +40,7 @@ PowerShell.exe -Version 2
 
 次の手順では、[Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) コマンドレットの **PSVersion** パラメーターを使用して、Windows PowerShell 2.0 エンジンを使用するセッション構成を作成します。 [New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866) コマンドレットの **PowerShellVersion** パラメーターを使用して、Windows PowerShell 2.0 エンジンを読み込むセッションのセッション構成ファイルを作成することも、[Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) パラメーターの **PSVersion** パラメーターを使用して、Windows PowerShell 2.0 エンジンを使用するようにセッション構成を変更することもできます。
 
-セッション構成ファイルの詳細については、「[about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8)」をご覧ください。セットアップとセキュリティを含むセッション構成の詳細については、「[about_Session_Configurations [v4]](https://technet.microsoft.com/en-us/library/a2fbe12a-350c-4d04-be50-24102824e3ab)」をご覧ください。.
+セッション構成ファイルの詳細については、「[about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8)」をご覧ください。セットアップとセキュリティを含むセッション構成の詳細については、「[about_Session_Configurations [v4]](https://technet.microsoft.com/en-us/library/a2fbe12a-350c-4d04-be50-24102824e3ab)」をご覧ください。
 
 #### リモートの Windows PowerShell 2.0 セッションを開始するには
 
@@ -64,10 +71,11 @@ Windows PowerShell 2.0 エンジンを使用してバックグラウンド ジ�
 Start-Job {Get-Process} -PSVersion 2.0
 ```
 
-バックグラウンド ジョブの詳細については、「[about_Jobs [v4]](https://technet.microsoft.com/en-us/library/7362512a-8a4e-4575-b2ea-a740e5c4f002)」をご覧ください。.
+バックグラウンド ジョブの詳細については、「[about_Jobs [v4]](https://technet.microsoft.com/en-us/library/7362512a-8a4e-4575-b2ea-a740e5c4f002)」をご覧ください。
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

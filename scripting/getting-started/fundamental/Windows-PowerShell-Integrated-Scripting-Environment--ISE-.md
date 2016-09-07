@@ -1,12 +1,19 @@
 ---
 title: Windows PowerShell Integrated Scripting Environment (ISE)
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 061e22c26853664c89adc023d43802628859b9a6
+
 ---
+
 # Windows PowerShell Integrated Scripting Environment (ISE)
 Windows PowerShell Integrated Scripting Environment (ISE) は、Windows PowerShell エンジンと言語の 2 つのホストのうちの 1 つです。 それを使って、Windows PowerShell コンソールでは使用できない方法でテスト スクリプトを記述し、実行できます。 ISE は、構文の色指定、タブ補完、IntelliSense、視覚的なデバッグ機能、状況依存のヘルプを追加します。
 
@@ -34,7 +41,7 @@ ISE に機能を追加する**アドオン ツール**は、[Windows PowerShell 
 
 -   **XML 構文の色分け**。 ISE エディターは、Windows PowerShell コード構文を色付けするのと同じ方法で XML 構文を色付けします。
 
--   **かっこの照合**。 ISEWindows PowerShell では、照合するかっこを強調表示して、始めかっこと同じ数の終わりかっこがあることを確認しやすくします。 CTRL-[ を使用して、カーソルが置かれている始めかっこと照合する終わりかっこを検索します。
+-   **かっこの照合**。 ISEWindows PowerShell では、照合するかっこを強調表示して、始めかっこと同じ数の終わりかっこがあることを確認しやすくします。 CTRL-\[ を使用して、カーソルが置かれている始めかっこと照合する終わりかっこを検索します。
 
 -   **アウトライン表示**。 左余白のプラス記号とマイナス記号をクリックして、コードのセクションを折りたたんだり、展開したりできます。 これにより、長いスクリプト内で探しているコードを見つけるのが容易になります。
 
@@ -46,7 +53,7 @@ ISE に機能を追加する**アドオン ツール**は、[Windows PowerShell 
 
 -   **リッチ テキストのコピーと貼り付け**。 ISE からクリップボードにコピーする際、選択したテキストのフォント、サイズ、色の情報が含まれます。
 
--   **ブロック選択**。 テキストのブロック型の塊を選択するには、Alt キーを押したままマウスでスクリプト ウィンドウ内のテキストを選択するか、または **Alt + Shift + 方向キー**を押します。.
+-   **ブロック選択**。 テキストのブロック型の塊を選択するには、Alt キーを押したままマウスでスクリプト ウィンドウ内のテキストを選択するか、または **Alt + Shift + 方向キー**を押します。
 
 ### PowerShell 2.0 に追加 (Windows Server 2008 R2、Windows 7)
 ISE が PowerShell v2.0 に導入されました。
@@ -62,6 +69,7 @@ ISE は、Windows PowerShell v2.0 以降を実行できるすべてのコンピ�
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

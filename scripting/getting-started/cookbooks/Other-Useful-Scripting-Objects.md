@@ -1,7 +1,7 @@
 ---
 title: "その他の役に立つスクリプティング オブジェクト"
 ms.date: 2016-05-11
-keywords: powershell,cmdlet
+keywords: "PowerShell, コマンドレット"
 description: 
 ms.topic: article
 author: jpjofre
@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
 translationtype: Human Translation
-ms.sourcegitcommit: ebf9d61bd67cc352d6d6404a9b592f856c99759e
-ms.openlocfilehash: c68e6d7d26a8a9b1e32a35e82dd705d95480c9bf
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 83aa2ceb63497c7a12ec80d4b1472327284acf5b
 
 ---
 
@@ -33,7 +33,7 @@ psUnsupportedConsoleApplications
 ```
 
 ### $psLocalHelp
- これは、ヘルプ トピックと、ローカルのコンパイル済み HTML ヘルプ ファイル内の関連するリンクとの間のコンテキスト依存のマッピングを保持するディクショナリ オブジェクトです。 特定のトピックのローカル ヘルプを見つけるために使用されます。 この一覧からトピックを追加または削除することができます。 次のコード例では、**$psLocalHelp** に含まれているキーと値のペアの例を示します。
+ これは、ヘルプ トピックと、ローカルのコンパイル済み HTML ヘルプ ファイル内の関連するリンクの間のコンテキスト依存のマッピングを保持するディクショナリ オブジェクトです。 特定のトピックのローカル ヘルプを見つけるために使用されます。 この一覧からトピックを追加または削除することができます。 次のコード例では、**$psLocalHelp** に含まれているキーと値のペアの例を示します。
 
 ```
 # See the local help map
@@ -45,8 +45,8 @@ $psLocalHelp | Format-List
 
 |||
 |-|-|
-|キー : Add\-Computer|値 : WindowsPowerShellHelp.chm::\/html\/093f660c\-b8d5\-43cf\-aa0c\-54e5e54e76f9.htm|
-|キー : Add\-Content|値 : WindowsPowerShellHelp.chm::\/html\/0c836a1b\-f389\-4e9a\-9325\-0f415686d194.htm|
+|キー: Add-Computer|値: WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm|
+|キー: Add-Content|値: WindowsPowerShellHelp.chm::/html/0c836a1b-f389-4e9a-9325-0f415686d194.htm|
 
  次のスクリプトによって一覧にエントリが追加されます。
 
@@ -66,8 +66,8 @@ $psOnlineHelp | Format-List
 
 |||
 |-|-|
-|キー : Add\-Computer|値 : http:\/\/go.microsoft.com\/fwlink\/p\/?LinkID\=135194|
-|キー : Add\-Content|値 : http:\/\/go.microsoft.com\/fwlink\/p\/?LinkID\=113278|
+|キー: Add-Computer|値: http://go.microsoft.com/fwlink/p/?LinkID=135194|
+|キー: Add-Content|値: http:http://go.microsoft.com/fwlink/p/?LinkID=113278|
 
  次のスクリプトによって一覧にエントリが追加されます。
 
@@ -82,6 +82,6 @@ $psOnlineHelp.Add("get-myNoun","http://www.mydomain.com/MyNoun.html")
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

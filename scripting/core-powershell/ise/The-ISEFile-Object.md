@@ -1,12 +1,19 @@
 ---
-title: ISEFile オブジェクト
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "ISEFile オブジェクト"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: c1744841e23aa9c2fedf3eb92230ef422c36f0cd
+
 ---
+
 # ISEFile オブジェクト
   **ISEFile** オブジェクトは、Windows PowerShellÂ® Integrated Scripting Environment (ISE) のファイルを表します。 これは Microsoft.PowerShell.Host.ISE.ISEFile クラスのインスタンスです。 このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。 **$PsISE.CurrentFile** と、PowerShell タブのファイル コレクション内のファイルは、Microsoft.PowerShell.Host.ISE.ISEFile クラスのすべてのインスタンスです。
 
@@ -17,8 +24,8 @@ ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 
  ファイルをディスクに保存します。
 
- **\[saveEncoding\]** – 省略可能な [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- 保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。.
+ **\[saveEncoding\]** – 省略可能 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+ 保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
 
  **例外**
  -   **System.IO.IOException**: ファイルを保存できませんでした。
@@ -41,11 +48,10 @@ $myfile.Encoding
 
  指定したファイル名およびエンコードでファイルを保存します。
 
- **filename** \- 文字列
- ファイルを保存するために使用する名前。
+ **filename** - ファイルを保存するために使用する名前の文字列。
 
- **\[saveEncoding\]** – 省略可能な [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- 保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。.
+ **\[saveEncoding\]** – 省略可能 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+ 保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
 
  **例外**
  -   **System.ArgumentNullException**: **filename** パラメーターが null です。
@@ -68,7 +74,7 @@ $psIse.CurrentFile.SaveAs( $fullPath, [System.Text.Encoding]::UTF8 )
 ###  <a name="Displayname"></a> 表示名
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- このファイルの表示名が含まれている文字列を取得する読み取り専用のプロパティ。 名前は、エディターの上部の **[ファイル]** タブに表示されます。 名前の末尾のアスタリスク \(\*\) は、保存されていない変更がファイルに含まれていることを示します。
+ このファイルの表示名が含まれている文字列を取得する読み取り専用のプロパティ。 名前は、エディターの上部の **[ファイル]** タブに表示されます。 名前の末尾のアスタリスク (\(\*\)) は、保存されていない変更がファイルに含まれていることを示します。
 
 ```
 # Shows the display name of the file.
@@ -138,11 +144,12 @@ $psISE.CurrentFile.IsUntitled
  [ISEFileCollectionObject](The-ISEFileCollection-Object.md) 
  [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
  [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)
+ [ISE オブジェクト モデル階層](The-ISE-Object-Model-Hierarchy.md)
 
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

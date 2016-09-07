@@ -1,12 +1,19 @@
 ---
-title: Windows PowerShell コア About トピック
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell コア About トピック"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 4d33ebe2a067781d708ca3b0f8dc4dd2848ba4d4
+
 ---
+
 # Windows PowerShell コア About トピック
 このセクションには、すべての Windows PowerShell モジュールに適用されるコンセプト (「About」) ヘルプ トピックが含まれています。 他のモジュールの About トピックについては、特定のモジュールのヘルプ トピックを参照してください。
 
@@ -18,7 +25,7 @@ ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 |[about_Assignment_Operators [v4]](https://technet.microsoft.com/en-us/library/ac2e399d-9cdc-422c-8b44-7746d93d1db5)|値を変数に割り当てる演算子について説明します。|
 |[about_Automatic_Variables [v4]](https://technet.microsoft.com/en-us/library/68bc622f-eb7e-4cf5-9c56-a289737efc99)|Windows PowerShell の状態情報を保存する自動変数について説明します。|
 |[about_Break [v4]](https://technet.microsoft.com/en-us/library/fb810374-761e-46f2-8748-eac12557cf54)|**Break** ステートメントの使用方法について説明します。これは **Foreach** ステートメント、**For** ステートメント、**While** ステートメント、**Do** ステートメント、**Switch** ステートメントをすぐに終了させるステートメントです。|
-|[about_Checkpoint-Workflow](https://technet.microsoft.com/en-us/library/3a309488-1e7a-4807-b83b-dedbeac3ee1c)|ワークフローのチェックポイントを取得する Checkpoint\-Workflow アクティビティについて説明します。|
+|[about_Checkpoint-Workflow](https://technet.microsoft.com/en-us/library/3a309488-1e7a-4807-b83b-dedbeac3ee1c)|ワークフローのチェックポイントを取得する Checkpoint-Workflow アクティビティについて説明します。|
 |[about_Command_Precedence [v4]](https://technet.microsoft.com/en-us/library/fb14a05e-d461-432d-a253-e9371b54bd2e)|Windows PowerShell が実行するコマンドを決定する仕組みについて説明します。|
 |[about_Command_Syntax [v4]](https://technet.microsoft.com/en-us/library/f39782e8-fe76-46ea-b8b5-b50bbee8da4b)|Windows PowerShell のコマンド形式について説明します。|
 |[about_Comment_Based_Help [v4]](https://technet.microsoft.com/en-us/library/c270e198-6da2-4825-b6eb-35d5c8a5cf3d)|関数とスクリプトのコマンドベースのヘルプ トピックの記述方法について説明します。|
@@ -67,7 +74,7 @@ ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 |[about_Path_Syntax [v4]](https://technet.microsoft.com/en-us/library/4d2789b0-8c37-4227-acf3-717a0bc155bc)|Windows PowerShell の完全パス名と相対パス名の形式について説明します。|
 |[about_Pipelines [v4]](https://technet.microsoft.com/en-us/library/f39a6658-4309-42a7-afe8-871bd4c6b01a)|Windows PowerShell のコマンドをパイプラインに結合する方法について説明します。|
 |[about_PowerShell.exe](https://technet.microsoft.com/en-us/library/d5548671-5362-4b0b-b22c-4360c71d7f26)|PowerShell.exe コマンドライン ツールのヘルプを表示します。|
-|[about_PowerShell_Ise.exe](https://technet.microsoft.com/en-us/library/f78d2891-de05-4403-8c91-e856abbd4fb6)|PowerShell\_ISE.exe コマンドライン ツールのヘルプを表示します。|
+|[about_PowerShell_Ise.exe](https://technet.microsoft.com/en-us/library/f78d2891-de05-4403-8c91-e856abbd4fb6)|PowerShell_ISE.exe コマンドライン ツールのヘルプを表示します。|
 |[about_Preference_Variables [v4]](https://technet.microsoft.com/en-us/library/31344314-be29-4286-b039-afa5460cbe8b)|Windows PowerShell をカスタマイズするユーザー設定変数について説明します。|
 |[about_Profiles [v4]](https://technet.microsoft.com/en-us/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054)|Windows PowerShell プロファイルを作成し、使用する方法について説明します。|
 |[about_Prompts [v4]](https://technet.microsoft.com/en-us/library/251843dc-4db3-4e21-aac6-acd3135b3ef6)|Windows PowerShell プロファイルを作成し、使用する方法について説明します。|
@@ -121,10 +128,10 @@ ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 |[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)|Windows PowerShellÂ® Integrated Scripting Environment (ISE) について説明します。|
 |[about_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)|Windows PowerShell ワークフロー機能について簡単に紹介します。|
 |[about_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)|すべての Windows PowerShell ワークフロー コマンドで有効なパラメーターについて説明します。|
-|[about_WMI](https://technet.microsoft.com/en-us/library/32da7221-c213-48ad-8466-fad82285e4e8)|Windows Management Instrumentation (WMI) について説明します。これは Web\-Based Enterprise Management (WBEM) 業界標準を Microsoft が実装したものです。|
+|[about_WMI](https://technet.microsoft.com/en-us/library/32da7221-c213-48ad-8466-fad82285e4e8)|Windows Management Instrumentation (WMI) について説明します。これは Web-Based Enterprise Management (WBEM) 業界標準を Microsoft が実装したものです。|
 |[about_WMI_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/9c56b172-3b25-47b2-b6e0-86db649b1c45)|Windows Management Instrumentation (WMI) と Windows PowerShell の背景情報を提供します。|
 |[about_WQL](https://technet.microsoft.com/en-us/library/820b2d23-3473-46f5-a188-5910704c7905)|WMI Query Language (WQL) について説明します。これは Windows PowerShell で WMI オブジェクトを取得するために使用できます。|
-|[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|Microsoft.WsMan.Management モジュールのコマンドレットについて説明します。 それらをまとめて利用し、WSMan プロバイダー ドライブを含む、WS\-Management 機能を管理する方法について説明します。|
+|[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|Microsoft.WsMan.Management モジュールのコマンドレットについて説明します。 それらをまとめて利用し、WSMan プロバイダー ドライブを含む、WS-Management 機能を管理する方法について説明します。|
 
 ## 参照
 [Windows PowerShell を使用したスクリプト](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
@@ -137,6 +144,7 @@ ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

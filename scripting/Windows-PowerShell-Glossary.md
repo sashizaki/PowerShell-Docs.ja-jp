@@ -1,7 +1,7 @@
 ---
 title: "Windows PowerShell 用語集"
 ms.date: 2016-05-11
-keywords: powershell,cmdlet
+keywords: "PowerShell, コマンドレット"
 description: 
 ms.topic: article
 author: jpjofre
@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
 translationtype: Human Translation
-ms.sourcegitcommit: ea25f98e60050a52fc1d72c7e529985855eeed36
-ms.openlocfilehash: ab41246eda58eb384500daa1f99aa9a8f9e019e1
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 5c6f660f9de9039355f3a991da440b75e97275eb
 
 ---
 
@@ -53,7 +53,7 @@ ms.openlocfilehash: ab41246eda58eb384500daa1f99aa9a8f9e019e1
 |Windows PowerShell コマンド|アクションを実行させるパイプライン内の要素。 Windows PowerShell コマンドは、キーボードで入力されるか、プログラムで呼び出されます。|
 |Windows PowerShell データ ファイル|.psd1 ファイル名拡張子を持つテキスト ファイル。 Windows PowerShell では、モジュール マニフェスト データの格納や、スクリプトの国際化のための翻訳された文字列の格納など、さまざまな目的でデータ ファイルを使用します。|
 |Windows PowerShell ドライブ|データ ストアに直接アクセスできる仮想ドライブ。 Windows PowerShell プロバイダーによって定義されるか、コマンド ラインで作成されます。 コマンド ラインで作成されたドライブは、セッション固有のドライブであり、セッションが閉じられたときに失われます。|
-|Windows PowerShell Integrated Scripting Environment (ISE)|Windows PowerShell ホスト アプリケーション。わかりやすく、構文がカラーで表記される、ユニコード準拠の環境で、コマンドの実行し、スクリプトの記述、テスト、デバッグが可能になります。|
+|Windows PowerShell Integrated Scripting Environment (ISE)|Windows PowerShell ホスト アプリケーション。分かりやすくて、構文がカラーで表記された、ユニコード準拠の環境で、コマンドを実行し、スクリプトを書き、テストし、デバッグすることができます。|
 |Windows PowerShell モジュール|Windows PowerShell コードをパーティション分割、整理、抽象化するための再利用可能な自己完結型の単位。 モジュールには、1 つの単位としてインポートできるコマンドレット、プロバイダー、関数、変数、その他の種類のリソースを含めることができます。|
 |Windows PowerShell プロバイダー|特化されたデータ ストアのデータを Windows PowerShell で利用できるようにし、そのデータを表示および管理できるようにするための Microsoft .NET Framework ベースのプログラム。|
 |Windows PowerShell スクリプト|Windows PowerShell 言語で記述されたスクリプト。|
@@ -64,6 +64,6 @@ ms.openlocfilehash: ab41246eda58eb384500daa1f99aa9a8f9e019e1
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

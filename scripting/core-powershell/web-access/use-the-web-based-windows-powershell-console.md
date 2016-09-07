@@ -1,3 +1,18 @@
+---
+title: "Web ベースの Windows PowerShell コンソールの使用"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 9c633d457db9d15621285b2662244c4190550f63
+
+---
+
 #  Web ベースの Windows PowerShell コンソールの使用
 
 最終更新日 : 2013 年 6 月 24 日
@@ -74,7 +89,7 @@ Web ベースの Windows PowerShell コンソールを使うには、ブラウ�
 
 ------------------------------------------------------------------------
 
-Windows PowerShell Web Access 管理者は、所属組織の Windows PowerShell Web Access ゲートウェイ Web サイトのアドレスを示す URL を担当者に提供する必要があります。 この Web サイトのアドレスは、既定で https://&lt;server\_name&gt;/pswa となっています。 Windows PowerShell Web Access にサインインする前に、管理対象のリモート コンピューターの名前または IP アドレスがわかっていることを確認してください。 また担当者がリモート コンピューターの承認済みユーザーであることと、リモート コンピューターがリモート管理を許可するよう構成されている必要があります。 リモート管理を許可するようコンピューターを構成する方法の詳細については、[Windows PowerShell でのリモート コマンドの有効化および使用](https://technet.microsoft.com/magazine/ff700227.aspx)に関するページを参照してください。 コンピューターを構成してリモート管理を有効にする最も簡単な方法は、Windows PowerShell セッションを管理者特権で開き (**[管理者として実行]**)、コンピューター上で **Enable-PSRemoting -force** コマンドレットを実行することです。).
+Windows PowerShell Web Access 管理者は、所属組織の Windows PowerShell Web Access ゲートウェイ Web サイトのアドレスを示す URL を担当者に提供する必要があります。 この Web サイトのアドレスは、既定で https://&lt;server_name&gt;/pswa となっています。 Windows PowerShell Web Access にサインインする前に、管理対象のリモート コンピューターの名前または IP アドレスがわかっていることを確認してください。 また担当者がリモート コンピューターの承認済みユーザーであることと、リモート コンピューターがリモート管理を許可するよう構成されている必要があります。 リモート管理を許可するようコンピューターを構成する方法の詳細については、[Windows PowerShell でのリモート コマンドの有効化および使用](https://technet.microsoft.com/magazine/ff700227.aspx)に関するページを参照してください。 コンピューターを構成してリモート管理を有効にする最も簡単な方法は、Windows PowerShell セッションを管理者特権で開き (**[管理者として実行]**)、コンピューター上で **Enable-PSRemoting -force** コマンドレットを実行することです。
 
 ### Windows PowerShell Web Access にサインインするには
 
@@ -94,23 +109,23 @@ Windows PowerShell Web Access 管理者は、所属組織の Windows PowerShell 
     <tbody>
     <tr class="odd">
     <td><ul>
-    <li><p>対象のコンピューターがワークグループに含まれる場合、computer:&lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name の構文を使ってユーザー名を入力し、コンピューターにサインインします。</em>&gt;.</p></li>
+    <li><p>対象のコンピューターがワークグループに含まれる場合、&lt;<em>ワークグループ名</em>&gt;\&lt;<em>ユーザー名</em>&gt; の構文を使ってユーザー名を入力し、コンピューターにサインインします。</p></li>
     <li><p>対象のコンピューターがゲートウェイ サーバーの場合、<strong>[コンピューター名]</strong> フィールドで <strong>localhost</strong> を指定できます。</p></li>
-    <li><p>対象のコンピューターがゲートウェイ サーバーで、そのゲートウェイ サーバーがワークグループに含まれている場合、<strong>[コンピューター名]</strong> フィールドで <strong>localhost</strong> を使用できます。ただし <strong>[ユーザー名]</strong> フィールドでは localhost\&lt;<em>user_name</em>&gt; を使わないでください。 &lt;<em>workgroup name</em>&gt;\&lt;<em>user_name を使用する必要があります。</em>&gt;.</p></li>
+    <li><p>対象のコンピューターがゲートウェイ サーバーで、そのゲートウェイ サーバーがワークグループに含まれている場合、<strong>[コンピューター名]</strong> フィールドで <strong>localhost</strong> を使用できます。ただし <strong>[ユーザー名]</strong> フィールドでは localhost\&lt;<em>user_name</em>&gt; を使わないでください。 &lt;<em>ワークグループ名</em>&gt;\&lt;<em>ユーザー名</em>&gt; を使用する必要があります。</p></li>
     </ul></td>
     </tr>
     </tbody>
     </table>
 
-3.  **[オプションの接続設定]** セクションは、管理対象のリモート コンピューターの承認要件に関連しています。 オプションの接続設定に相当するパラメーターの詳細については、[Enter-PSSession コマンドレットのヘルプ](https://technet.microsoft.com/library/dd315384.aspx)を参照してください。.
+3.  **[オプションの接続設定]** セクションは、管理対象のリモート コンピューターの承認要件に関連しています。 オプションの接続設定に相当するパラメーターの詳細については、[Enter-PSSession コマンドレットのヘルプ](https://technet.microsoft.com/library/dd315384.aspx)を参照してください。
 
     通常、Windows PowerShell Web Access ゲートウェイの通過に使う資格情報は、管理対象のリモート コンピューターが認識する資格情報と同じです。 ただし、手順 2. で指定したリモート コンピューターを別の資格情報を使って管理する場合、**[オプションの接続設定]** セクションを展開して、別の資格情報を入力します。 それ以外の場合、手順 6. に進みます。
 
-4.  Windows PowerShell Web Access 管理者が Windows PowerShell Web Access ユーザー用にカスタムのセッション構成を作成している場合、そのセッション構成の名前を **"構成名"** フィールドに入力します。 セッション構成の詳細については、Microsoft Web サイトの「[about\_Session\_Configurations](https://technet.microsoft.com/library/dd819508.aspx)」を参照してください。
+4.  Windows PowerShell Web Access 管理者が Windows PowerShell Web Access ユーザー用にカスタムのセッション構成を作成している場合、そのセッション構成の名前を **"構成名"** フィールドに入力します。 セッション構成の詳細については、Microsoft Web サイトの「[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)」を参照してください。
 
 5.  **[認証の種類]** の設定は、それ以外にするよう Windows PowerShell Web Access 管理者から指示された場合を除き、**[既定]** が設定されたままにしておきます。
 
-6.  **[サインイン]** をクリックします。.
+6.  **[サインイン]** をクリックします。
 
 <a href="" id="BKMK_timeout"></a>
 
@@ -129,7 +144,7 @@ Windows PowerShell Web Access 管理者は、所属組織の Windows PowerShell 
 
 -   同じブラウザー セッションまたは同じブラウザー セッションの新しいタブで、別のリモート コンピューターを管理するためにサインインする。 (これは、ゲートウェイ サーバーが Windows Server 2012 R2 を実行している場合は適用されません。Windows Server 2012 R2 で実行している Windows PowerShell Web Access では、同じブラウザー セッションの新しいタブで複数のユーザー セッションを開くことができます)。同じコンピューターで複数のアクティブ セッションを使う方法の詳細については、このトピックの「[Web ベース コンソールの制限事項](#BKMK_limits)」セクションの「複数の対象コンピューターへの同時接続」を参照してください。
 
--   セッションの非アクティブな状態が 20 分続いた場合。 ゲートウェイの管理者は、非アクティブ状態によるタイムアウトの長さをカスタマイズできます。詳細については、「[セッションの管理](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt)」を参照してください。.
+-   セッションの非アクティブな状態が 20 分続いた場合。 ゲートウェイの管理者は、非アクティブ状態によるタイムアウトの長さをカスタマイズできます。詳細については、「[セッションの管理](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx#BKMK_sesmgmt)」を参照してください。
 
     -   ユーザー自身がセッションを閉じたためではなく、ネットワーク エラーまたはその他の予期しないシャットダウンや障害のために、ユーザーがセッションから切断された場合、クライアント側でタイムアウト期間が経過するまで Windows PowerShell Web Access セッションは実行を続け、ターゲット コンピューターに接続されたままになります。 既定ではこのタイムアウト期間は 20 分であり、ゲートウェイ管理者が構成します。 既定の 20 分またはゲートウェイ管理者が指定したタイムアウト期間のどちらか短い方が経過すると、セッションは切断されます。
 
@@ -304,7 +319,7 @@ Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Acce
 
     -   コマンドレットを使ってコンソール ウィンドウの高さと幅を変更する
 
-        Windows PowerShell Web Access のコンソール ウィンドウは、次のコマンドレットを使って構成できます。 次の例では、ユーザーが Windows PowerShell Web Access コンソールの幅を **20** に変更しています。.
+        Windows PowerShell Web Access のコンソール ウィンドウは、次のコマンドレットを使って構成できます。 次の例では、ユーザーが Windows PowerShell Web Access コンソールの幅を **20** に変更しています。
 
         [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_778d5e55-9195-4bd7-b313-d1fbca7876e4'); "Copy to clipboard.")
 
@@ -317,39 +332,35 @@ Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Acce
 
         同じ方法でコンソールの高さを変更できます。
 
-        コンソール ビューをカスタマイズするその他の例については、[Windows PowerShell チームのブログ](http://blogs.msdn.com/b/powershell/)を参照してください。.
+        コンソール ビューをカスタマイズするその他の例については、[Windows PowerShell チームのブログ](http://blogs.msdn.com/b/powershell/)を参照してください。
 
 <a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">参照</span></a>
 <a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
 
-[Windows PowerShell コマンドレット リファレンスのページ](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
-[Microsoft TechNet の「Windows PowerShell (Windows PowerShell)」](https://technet.microsoft.com/library/bb978526.aspx)
-[TechNet スクリプト センター リポジトリのページ](http://gallery.technet.microsoft.com/scriptcenter)
-[スクリプト センター - Hey, Scripting Guy! のページ](https://technet.microsoft.com/scriptcenter)
-[Windows PowerShell チーム ブログのページ](http://blogs.msdn.com/b/powershell/)
+スクリプト センター - Hey, Scripting Guy! のページ[Windows PowerShell コマンドレット リファレンス](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
+[Microsoft TechNet の Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
+[TTechNet スクリプト センター リポジトリ](http://gallery.technet.microsoft.com/scriptcenter)
+[スクリプト センター - Hey, Scripting Guy!](https://technet.microsoft.com/scriptcenter)
+[Windows PowerShell チーム ブログ](http://blogs.msdn.com/b/powershell/)
 
 <span>表示:</span> 保護されている継承
 
 <span class="stdr-votetitle">このページは役に立ちましたか。</span>
-はい
-いいえ
+はい いいえ
 
 その他にご意見はありますか。
 
-<span class="stdr-count"><span class="stdr-charcnt">残り 1500</span> 文字</span>
-送信
-スキップする
+<span class="stdr-count"><span class="stdr-charcnt">残り 1500</span> 文字</span> 送信 スキップする
 
-<span class="stdr-thankyou">ありがとうございました。</span> <span class="stdr-appreciate">貴重なご意見をお寄せいただき心より感謝いたします。</span>
+<span class="stdr-thankyou">ありがとうございました。</span> <span class="stdr-appreciate">ご意見をお送りいただきありがとうございます。</span>
 
 [プロファイル (個人情報) の管理](https://social.technet.microsoft.com/profile)
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> サイトのフィードバック</a>
-サイトのフィードバック
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> サイトのフィードバック</a> サイトのフィードバック
 
 <a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
 
@@ -384,6 +395,8 @@ Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Acce
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO4-->
 
 

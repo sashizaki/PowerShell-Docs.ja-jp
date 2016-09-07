@@ -1,7 +1,7 @@
 ---
 title: "ISEEditor オブジェクト"
 ms.date: 2016-05-11
-keywords: powershell,cmdlet
+keywords: "PowerShell, コマンドレット"
 description: 
 ms.topic: article
 author: jpjofre
@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 4812092dea24fa61245af7e06d1c5924ec812218
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 05255e63ae34e239003e5847c9f3b7fb2f4e3a0a
 
 ---
 
@@ -73,7 +73,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### GoToMatch\(\)
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
- エディター オブジェクトの **CanGoToMatch** プロパティが **$true** の場合、一致する文字にカーソルを移動します。これは、カーソルが始めかっこ、始め角かっこ、始め波かっこ \-\(、\[、{\- の直前または終わりかっこ、終わり角かっこ、終わり波かっこ \-\)、\]、}) の直後にある場合に発生します。  カーソルは、開始文字の前または終了文字の後に配置されます。 **CanGoToMatch** プロパティが **$false** の場合、このメソッドでは何も実行されません。 [CanGoToMatch](#cangotomatch) を参照してください。
+ エディター オブジェクトの **CanGoToMatch** プロパティが **$true** の場合、一致する文字にカーソルを移動します。これは、カーソルが始めかっこ \(、始め角かっこ \[、始め波かっこ { の直前または終わりかっこ \)、終わり角かっこ \]、終わり波かっこ } の直後にある場合に発生します。  カーソルは、開始文字の前または終了文字の後に配置されます。 **CanGoToMatch** プロパティが **$false** の場合、このメソッドでは何も実行されません。 [CanGoToMatch](#cangotomatch) を参照してください。
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -84,7 +84,7 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  選択範囲をテキストに置き換えるか、現在のカーソル位置でテキストを挿入します。
 
- **text** \- String 挿入するテキスト。
+ **text** - 文字列。挿入するテキスト。
 
  後述の「[スクリプト例](#example)」を参照してください。
 
@@ -93,13 +93,13 @@ $psIse.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **startLine**、**startColumn**、**endLine**、**endColumn** パラメーターからテキストを選択します。
 
- **startLine** \- Integer 選択範囲が開始する行。
+ **startLine** - 整数。選択範囲が開始する行。
 
- **startColumn** \- Integer 選択範囲が開始する開始行内の列。
+ **startColumn** - 整数。選択範囲が開始する開始行内の列。
 
- **endLine** \- Integer 選択範囲が終了する行。
+ **endLine** - 整数。選択範囲が終了する行。
 
- **endColumn** \- Integer 選択範囲が終了する終了行内の列。
+ **endColumn** - 整数。選択範囲が終了する終了行内の列。
 
  後述の「[スクリプト例](#example)」を参照してください。
 
@@ -121,9 +121,9 @@ $psIse.CurrentFile.Editor.SelectCaretLine()
 
  行番号および列番号でカーソル位置を設定します。 カーソル行番号またはカーソル列番号のいずれかがそれぞれの有効な範囲外である場合、例外をスローします。
 
- **lineNumber** \- Integer カーソル行番号。
+ **lineNumber** - 整数。カーソル行番号。
 
- **columnNumber** \- Integer カーソル列番号。
+ **columnNumber** - 整数。カーソル列番号。
 
 ```
 # Set the CaretPosition.
@@ -146,7 +146,7 @@ $psIse.CurrentFile.Editor.ToggleOutliningExpansion()
 ###  <a name="CanGoToMatch"></a> CanGoToMatch
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
- カーソルがかっこ、角かっこ、波かっこ (\(\)、\[\]、{}) の横にあるかどうかを示す読み取り専用のブール型プロパティ。\- カーソルがかっこの始め文字の直前またはかっこの終わり文字の直後にある場合、このプロパティの値は **$true** です。 それ以外の場合は **$false** です。
+ カーソルがかっこ、角かっこ、または波かっこ (\(\)、\[\]、{}) の横にあるかどうかを示す読み取り専用のブール型プロパティ。 カーソルがかっこの始め文字の直前またはかっこの終わり文字の直後にある場合、このプロパティの値は **$true** です。 それ以外の場合は **$false** です。
 
 ```
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -157,7 +157,7 @@ $psIse.CurrentFile.Editor.CanGoToMatch
 ###  <a name="CaretColumn"></a> CaretColumn
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- カーソルの位置に対応する列番号を取得する読み取り専用プロパティ。\-
+ カーソルの位置に対応する列番号を取得する読み取り専用プロパティ。
 
 ```
 # Get the CaretColumn.
@@ -168,7 +168,7 @@ $psIse.CurrentFile.Editor.CaretColumn
 ###  <a name="CaretLine"></a> CaretLine
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- カーソルのある行の番号を取得する読み取り専用のプロパティ。\-
+ カーソルのある行の番号を取得する読み取り専用のプロパティ。
 
 ```
 # Get the CaretLine.
@@ -179,7 +179,7 @@ $psIse.CurrentFile.Editor.CaretLine
 ###  <a name="caretlinetext"></a> CaretLineText
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- カーソルのある行のテキスト全体を取得する読み取り専用のプロパティ。\-
+ カーソルのある行のテキスト全体を取得する読み取り専用のプロパティ。
 
 ```
 # Get all of the text on the line that contains the caret.
@@ -190,7 +190,7 @@ $psIse.CurrentFile.Editor.CaretLineText
 ###  <a name="LineCount"></a> LineCount
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- エディターから行数を取得する読み取り専用のプロパティ。\-
+ エディターから行数を取得する読み取り専用のプロパティ。
 
 ```
 # Get the LineCount.
@@ -201,14 +201,14 @@ $psIse.CurrentFile.Editor.LineCount
 ###  <a name="SelectedText"></a> SelectedText
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- エディターから選択テキストを取得する読み取り専用のプロパティ。\-
+ エディターから選択テキストを取得する読み取り専用のプロパティ。
 
  後述の「[スクリプト例](#example)」を参照してください。
 
 ###  <a name="Text"></a> テキスト
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- エディターでテキストを取得または設定する読み取り\/書き込みのプロパティ。
+ エディターでテキストを取得または設定する読み取り/書き込みのプロパティ。
 
  後述の「[スクリプト例](#example)」を参照してください。
 
@@ -253,6 +253,6 @@ $myEditor.InsertText($selection.ToLower())
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

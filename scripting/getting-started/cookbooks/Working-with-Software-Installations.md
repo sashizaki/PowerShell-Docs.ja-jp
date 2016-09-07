@@ -1,7 +1,7 @@
 ---
 title: "ソフトウェア インストールの操作"
 ms.date: 2016-05-11
-keywords: powershell,cmdlet
+keywords: "PowerShell, コマンドレット"
 description: 
 ms.topic: article
 author: jpjofre
@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 9f60be9bebe9dfaa98f495c8e9a9c0d8c2fa5cc2
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 13fdac5369d70289d7a0b5115a04879f707e47fc
 
 ---
 
 # ソフトウェア インストールの操作
-Windows インストーラーを使用するように設計されているアプリケーションは、WMI の **Win32\_Product** クラスからアクセスできますが、今日使用されているすべてのアプリケーションが Windows インストーラーを使用しているわけではありません。 Windows インストーラーは、インストール可能なアプリケーションを操作するための標準的な手法を最も広範囲に提供しているため、主にこれらのアプリケーションについて説明します。 代替のセットアップ ルーチンを使用するアプリケーションは、通常 Windows インストーラーによって管理されません。 これらのアプリケーションを処理する具体的な方法は、インストーラーのソフトウェアとアプリケーションの開発者によってなされた決定によって異なります。
+Windows インストーラーを使用するように設計されているアプリケーションは、WMI の **Win32_Product** クラスからアクセスできますが、今日使用されているすべてのアプリケーションが Windows インストーラーを使用しているわけではありません。 Windows インストーラーは、インストール可能なアプリケーションを操作するための標準的な手法を最も広範囲に提供しているため、主にこれらのアプリケーションについて説明します。 代替のセットアップ ルーチンを使用するアプリケーションは、通常 Windows インストーラーによって管理されません。 これらのアプリケーションを処理する具体的な方法は、インストーラーのソフトウェアとアプリケーションの開発者によってなされた決定によって異なります。
 
 > [!NOTE]
 > コンピューターにアプリケーションのファイルをコピーすることによってインストールされているアプリケーションは、通常、ここで紹介されている手法を使用してで管理することはできません。 これらのアプリケーションは、「ファイルとフォルダーの操作」セクションで説明した手法を使用することで、ファイルやフォルダーとして管理できます。
@@ -32,7 +32,7 @@ Version           : 2.0.50727
 Caption           : Microsoft .NET Framework 2.0
 ```
 
-Win32\_Product オブジェクトのすべてのプロパティを画面に表示するには、Format\-List コマンドレットなど、書式設定のコマンドレットの Properties パラメーターに \* (all) の値を指定して使用します。
+Win32_Product オブジェクトのすべてのプロパティを画面に表示するには、Format-List コマンドレットなど、書式設定のコマンドレットの Properties パラメーターに \* (all) の値を指定して使用します。
 
 ```
 PS> Get-WmiObject -Class Win32_Product -ComputerName . | Where-Object -FilterScript {$_.Name -eq "Microsoft .NET Framework 2.0"} | Format-List -Property *
@@ -50,7 +50,7 @@ SKUNumber         :
 Vendor            : Microsoft Corporation
 ```
 
-または、**Get\-WmiObject Filter** パラメーターを使用して、Microsoft .NET Framework 2.0 のみを選択できます。 このコマンドで使用されているフィルターは WMI フィルターであるため、Windows PowerShell の構文ではなく、WMI クエリ言語 (WQL) 構文を使用します。 代わりに、
+または、**Get-WmiObject Filter** パラメーターを使用して、Microsoft .NET Framework 2.0 のみを選択できます。 このコマンドで使用されているフィルターは WMI フィルターであるため、Windows PowerShell の構文ではなく、WMI クエリ言語 (WQL) 構文を使用します。 代わりに、
 
 ```
 Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='Microsoft .NET Framework 2.0'"| Format-List -Property *
@@ -77,7 +77,7 @@ IdentifyingNumber : {FCE65C4E-B0E8-4FBD-AD16-EDCBE6CD591F}
 ...
 ```
 
-最後に、インストールされたアプリケーションの名前のみを検索するには、単純な **Format\-Wide** ステートメントにより、出力が簡略化されます。
+最後に、インストールされたアプリケーションの名前のみを検索するには、単純な **Format-Wide** ステートメントにより、出力が簡略化されます。
 
 ```
 Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
@@ -88,7 +88,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 ### アンインストール可能なすべてのアプリケーションを一覧表示する
 システム上のすべてのアプリケーションを検索する確実な方法はありませんが、[プログラム追加と削除] ダイアログ ボックスに表示される一覧ですべてのプログラムを検索することができます。 [プログラム追加と削除] は、次のレジストリ キーでこれらのアプリケーションを検索します。
 
-**HKEY\_LOCAL\_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**
+**HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**
 
 また、このキーを確認してアプリケーションを検索することもできます。 Uninstall キーを簡単に表示できるように、このレジストリの場所に Windows PowerShell ドライブをマップできます。
 
@@ -101,7 +101,7 @@ Uninstall  Registry      HKEY_LOCAL_MACHINE\SOFTWARE\Micr...
 ```
 
 > [!NOTE]
-> **HKLM:** ドライブは、**HKEY\_LOCAL\_MACHINE** のルートにマップされているので、このドライブを Uninstall キーのパスに使用しました。 **HKLM:** の代わりに、**HKLM** または **HKEY\_LOCAL\_MACHINE** のいずれかを使用して、レジストリのパスを指定できます。 既存のレジストリ ドライブを使用する利点は、タブ補完を利用してキーの名前を入力できるため、ユーザーが入力する必要がないことです。\-
+> **HKLM:** ドライブは、**HKEY_LOCAL_MACHINE** のルートにマップされているので、このドライブを Uninstall キーのパスに使用しました。 **HKLM:** の代わりに、**HKLM** または **HKEY_LOCAL_MACHINE** のいずれかを使用して、レジストリのパスを指定できます。 既存のレジストリ ドライブを使用する利点は、タブ補完を利用してキーの名前を入力できるため、ユーザーが入力する必要がないことです。
 
 これで、"Uninstall" という名前のドライブができ、これを利用することでアプリケーションのインストールの検索が迅速かつ便利になります。 Uninstall: Windows PowerShell ドライブで、レジストリ キーの数をカウントすることによって、インストールされているアプリケーションの数がわかります。
 
@@ -110,14 +110,14 @@ PS> (Get-ChildItem -Path Uninstall:).Count
 459
 ```
 
-**Get\-ChildItem** をはじめとするさまざまな方法を利用して、アプリケーションの一覧を詳細に検索できます。 アプリケーションの一覧を取得して、**$UninstallableApplications** 変数に保存するには、次のコマンドを使用します。
+**Get-ChildItem** をはじめとするさまざまな方法を利用して、アプリケーションの一覧を詳細に検索できます。 アプリケーションの一覧を取得して、**$UninstallableApplications** 変数に保存するには、次のコマンドを使用します。
 
 ```
 $UninstallableApplications = Get-ChildItem -Path Uninstall:
 ```
 
 > [!NOTE]
-> ここでは、わかりやすくするために長い変数名を使用しています。 実際に使用するときは、長い名前を使用する必要はありません。 変数名にタブ補完を使用できますが、1 ～ 2 文字の名前を使用すると時間を短縮できます。\- 長くわかりやすい名前は、再利用するためのコードを開発する際に役立ちます。
+> ここでは、わかりやすくするために長い変数名を使用しています。 実際に使用するときは、長い名前を使用する必要はありません。 変数名にタブ補完を使用できますが、1 ～ 2 文字の名前を使用すると時間を短縮できます。 長くわかりやすい名前は、再利用するためのコードを開発する際に役立ちます。
 
 Uninstall の下のレジストリ キーにレジストリ エントリの値を表示するには、レジストリ キーの GetValue メソッドを使用します。 メソッドの値は、レジストリ エントリの名前です。
 
@@ -142,7 +142,7 @@ SKC  VC Name                           Property
 ```
 
 ### アプリケーションのインストール
-**Win32\_Product** クラスを使用して、リモートまたはローカルで、Windows インストーラー パッケージをインストールできます。
+**Win32_Product** クラスを使用して、リモートまたはローカルで、Windows インストーラー パッケージをインストールできます。
 
 > [!NOTE]
 > Windows Vista、Windows Server 2008、およびそれ以降のバージョンの Windows では、アプリケーションをインストールするには、[管理者として実行] オプションを使用して Windows PowerShell を起動する必要があります。
@@ -153,7 +153,7 @@ SKC  VC Name                           Property
 (Get-WMIObject -ComputerName PC01 -List | Where-Object -FilterScript {$_.Name -eq "Win32_Product"}).Install(\\AppSrv\dsp\NewPackage.msi)
 ```
 
-Windows インストーラー テクノロジを使用しないアプリケーションは、展開の自動化に利用できるアプリケーション固有の方法があります。\- 展開を自動化するための方法があるかどうかを確認するには、アプリケーションのマニュアルを参照するか、アプリケーション ベンダーのサポート システムを参照してください。 場合によっては、アプリケーション ベンダーが特にインストールの自動化に対応するようアプリケーションを設計していなくても、インストーラー ソフトウェアの製造元が自動化のためのテクニックをいくつか持っていることがあります。
+Windows インストーラー テクノロジを使用しないアプリケーションは、展開の自動化に利用できるアプリケーション固有の方法があります。 展開を自動化するための方法があるかどうかを確認するには、アプリケーションのマニュアルを参照するか、アプリケーション ベンダーのサポート システムを参照してください。 場合によっては、アプリケーション ベンダーが特にインストールの自動化に対応するようアプリケーションを設計していなくても、インストーラー ソフトウェアの製造元が自動化のためのテクニックをいくつか持っていることがあります。
 
 ### アプリケーションの削除
 Windows PowerShell を使用した Windows インストーラー パッケージの削除は、パッケージのインストールとほとんど同じ方法で機能します。 名前に基づいてアンインストールするパッケージを選択する例を以下に示します。場合によっては、**IdentifyingNumber** を使用してフィルター処理した方が簡単になることがあります。
@@ -186,6 +186,6 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue("Displ
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

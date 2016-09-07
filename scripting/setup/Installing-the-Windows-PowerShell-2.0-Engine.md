@@ -1,7 +1,7 @@
 ---
 title: "Windows PowerShell 2.0 エンジンのインストール"
 ms.date: 2016-05-11
-keywords: powershell,cmdlet
+keywords: "PowerShell, コマンドレット"
 description: 
 ms.topic: article
 author: jpjofre
@@ -9,17 +9,17 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 8a61e974e7f7ea479ecc447c2db91c677cd8931f
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: b6189e43fc9579a29d598deb705bb8e4e32e4a4f
 
 ---
 
 # Windows PowerShell 2.0 エンジンのインストール
 このトピックでは、Windows PowerShell 2.0 エンジンのインストール方法について説明します。
 
-Windows PowerShell 3.0 は、Windows PowerShell 2.0 との下位互換性を保つように設計されています。 Windows PowerShell 2.0 用に記述されたコマンドレット、プロバイダー、スナップイン、モジュール、スクリプトは、未変更のまま Windows PowerShell 3.0 と Windows PowerShell 4.0 で実行できます。\- ただし、Microsoft .NET Framework 4 でランタイムのアクティブ化ポリシーが変更されたため、Windows PowerShell 2.0 用に記述され、共通言語ランタイム (CLR) 2.0 でコンパイルされた Windows PowerShell ホスト プログラムは、変更を加えなければ新しいリリースの Windows PowerShell (CLR 4.0 でコンパイルされたもの) で実行できません。
+Windows PowerShell 3.0 は、Windows PowerShell 2.0 との下位互換性を保つように設計されています。 Windows PowerShell 2.0 と Windows PowerShell 3.0 用に記述されたコマンドレット、プロバイダー、スナップイン、モジュール、スクリプトは、未変更のまま Windows PowerShell 4.0 で実行できます。 ただし、Microsoft .NET Framework 4 でランタイムのアクティブ化ポリシーが変更されたため、Windows PowerShell 2.0 用に記述され、共通言語ランタイム (CLR) 2.0 でコンパイルされた Windows PowerShell ホスト プログラムは、変更を加えなければ新しいリリースの Windows PowerShell (CLR 4.0 でコンパイルされたもの) で実行できません。
 
-これらの変更の影響を受けるコマンドやホスト プログラムとの下位互換性を維持するため、Windows PowerShell 2.0、Windows PowerShell 3.0、Windows PowerShell 4.0 のエンジンは、side\-by\-side で実行できるように設計されています。 また、Windows PowerShell 2.0 エンジンは Windows Server 2012 R2、Windows 8.1、Windows 8、Windows Server 2012、Windows Management Framework 3.0 にも組み込まれています。 Windows PowerShell 2.0 エンジンは、既存のスクリプトまたはホスト プログラムが Windows PowerShell 3.0、Windows PowerShell 4.0、Microsoft .NET Framework 4 との互換性がないために実行できない場合に限り使用することを意図しています。 そのようなケースはまれと考えられます。
+これらの変更の影響を受けるコマンドやホスト プログラムとの下位互換性を維持するため、Windows PowerShell 2.0、Windows PowerShell 3.0、および Windows PowerShell 4.0 のエンジンは、side-by-side で実行できるように設計されています。 また、Windows PowerShell 2.0 エンジンは Windows Server 2012 R2、Windows 8.1、Windows 8、Windows Server 2012、Windows Management Framework 3.0 にも組み込まれています。 Windows PowerShell 2.0 エンジンは、既存のスクリプトまたはホスト プログラムが Windows PowerShell 3.0、Windows PowerShell 4.0、Microsoft .NET Framework 4 との互換性がないために実行できない場合に限り使用することを意図しています。 そのようなケースはまれと考えられます。
 
 Windows PowerShell 2.0 エンジンは、Windows Server 2012 R2、Windows 8.1、WindowsÂ® 8、Windows ServerÂ® 2012 のオプション機能です。 以前のバージョンの Windows に Windows Management Framework 3.0 をインストールすると、Windows PowerShell のインストール ディレクトリ内で Windows PowerShell 2.0 インストールが Windows PowerShell 3.0 のインストールによって完全に置き換えられます。 ただし、Windows PowerShell 2.0 エンジンは保持されます。
 
@@ -53,9 +53,9 @@ Windows 8.1 と Windows 8 では、Windows PowerShell 2.0 エンジンの機能�
 
 1.  **サーバー マネージャー**で、**[管理]** メニューから **[役割と機能の追加]** を選びます。
 
-    または、**サーバー マネージャー**で、**[すべてのサーバー]** をクリックし、サーバー名を右クリックしてから、**[役割と機能の追加]** を選びます。\-
+    または、**サーバー マネージャー**で、**[すべてのサーバー]** をクリックし、サーバー名を右クリックしてから、**[役割と機能の追加]** を選びます。
 
-2.  **[インストールの種類]** ページで **[役割ベースまたは機能ベースのインストール]** を選びます。\-\-
+2.  **[インストールの種類]** ページで **[役割ベースまたは機能ベースのインストール]** を選びます。
 
 3.  **[機能]** ページで、**[.NET 3.5 Framework 機能]** ノードを展開し、**[.NET Framework 3.5 (.NET 2.0 および 3.0 を含む)]** を選びます。
 
@@ -65,9 +65,9 @@ Windows 8.1 と Windows 8 では、Windows PowerShell 2.0 エンジンの機能�
 
 -   **サーバー マネージャー**で、**[管理]** メニューから **[役割と機能の追加]** を選びます。
 
-    または、**サーバー マネージャー**で、**[すべてのサーバー]** をクリックし、サーバー名を右クリックしてから、**[役割と機能の追加]** を選びます。\-
+    または、**サーバー マネージャー**で、**[すべてのサーバー]** をクリックし、サーバー名を右クリックしてから、**[役割と機能の追加]** を選びます。
 
--   **[インストールの種類]** ページで **[役割ベースまたは機能ベースのインストール]** を選びます。\-\-
+-   **[インストールの種類]** ページで **[役割ベースまたは機能ベースのインストール]** を選びます。
 
 -   **[機能]** ページで、**[Windows PowerShell (インストール済み)]** ノードを展開し、**[Windows PowerShell 2.0 エンジン]** を選択します。
 
@@ -87,6 +87,6 @@ Windows 7、Windows Server 2008 R2、および Windows Server 2008 に Windows P
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

@@ -1,12 +1,19 @@
 ---
-title: PowerShellTab オブジェクト
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "PowerShellTab オブジェクト"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: f3f2d27c3c82406f8e8967fd1784a6e07579c1fa
+
 ---
+
 # PowerShellTab オブジェクト
   **PowerShellTab** オブジェクトは、Windows PowerShell ランタイム環境を表します。
 
@@ -20,8 +27,7 @@ ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 > [!NOTE]
 >  このメソッドは、その他の [PowerShell] タブでのみ機能し、実行元となる [PowerShell] タブでは機能しません。 このコマンドはオブジェクトや値を返しません。 このコードによって変数が変更されると、その変更はコマンドが呼び出されたタブで保持されます。
 
- **Script** \- System.Management.Automation.ScriptBlock または文字列
- 実行するスクリプト ブロックです。
+ **Script** - System.Management.Automation.ScriptBlock または文字列。実行するスクリプト ブロック。
 
 ```
 # Manually create a second PowerShell tab before running this script.
@@ -37,14 +43,13 @@ $psise.PowerShellTabs[1].Invoke({dir})
 > [!NOTE]
 >  このメソッドは、その他の [PowerShell] タブでのみ機能し、実行元となる [PowerShell] タブでは機能しません。 スクリプト ブロックが実行され、スクリプトから返される値はコマンドを呼び出した実行環境に返されます。 コマンドが **millesecondsTimeout** の値で指定した時間内に完了しない場合、コマンドが失敗して例外 "処理がタイムアウトになりました。" が発生します。
 
- **Script** \- System.Management.Automation.ScriptBlock または文字列
- 実行するスクリプト ブロックです。
+ **Script** - System.Management.Automation.ScriptBlock または文字列。実行するスクリプト ブロック。
 
- **\[useNewScope\]** \-  **$true** を既定値とする省略可能なブール値
- 値が **$true** に設定すると、そのコマンドを実行する新しいスコープが作成されます。 コマンドで指定されている [PowerShell] タブのランタイム環境は変更されません。
+ **\[useNewScope\]** - 省略可能なブール値で、既定は **$true**
+ です。**$true** に設定されると、そのコマンドを実行する新しいスコープが作成されます。 コマンドで指定されている [PowerShell] タブのランタイム環境は変更されません。
 
- **\[millisecondsTimeout\]** \-  **500** を既定値とする省略可能な整数.
- 指定した時間内にコマンドが完了しない場合、コマンドによって **TimeoutException** が生成され、"処理がタイムアウトになりました。" というメッセージが表示されます。
+ **\[millisecondsTimeout\]** - **500** を既定値とする省略可能な整数。
+指定した時間内にコマンドが完了しない場合、コマンドによって **TimeoutException** が生成され、"処理がタイムアウトになりました。" というメッセージが表示されます。
 
 ```
 # create a new PowerShell tab and then switch back to the first
@@ -71,7 +76,7 @@ measure-command {$psISE.PowerShellTabs[1].InvokeSynchronous("sleep 10",$false,50
 ###  <a name="AddOnsMenu"></a> AddOnsMenu
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- [PowerShell] タブのアドオン メニューを取得する読み取り専用のプロパティです 。
+ [PowerShell] タブのアドオン メニューを取得する読み取り専用のプロパティです。
 
 ```
 # Clear the Add-ons menu if one exists.
@@ -106,7 +111,7 @@ $secondTab.CanInvoke
 ```
 
 ###  <a name="Commandpane"></a> Consolepane
-  Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。  Windows PowerShell ISE 2.0 では、このパラメータの名前は **CommandPane** でした。.
+  Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。  Windows PowerShell ISE 2.0 では、このパラメータの名前は **CommandPane** でした。
 
  コンソール ウィンドウの [editor](../ise/The-ISEEditor-Object.md) オブジェクトを取得する読み取り専用のプロパティです。
 
@@ -119,7 +124,7 @@ $psISE.CurrentPowerShellTab.ConsolePane
 ###  <a name="Displayname"></a> 表示名
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- [PowerShell] タブ に表示されるテキストを取得または設定する読み取り/書き込みプロパティです。 既定では、タブ名は "PowerShell \#" となり、「#」には番号が入ります。
+ [PowerShell] タブに表示されるテキストを取得または設定する読み取り/書き込みプロパティです。 既定では、タブ名は "PowerShell #" となり、「#」には番号が入ります。
 
 ```
 $newTab = $psise.PowerShellTabs.Add()
@@ -153,7 +158,7 @@ $newFile.Editor.LineCount
 ###  <a name="Output"></a> 出力
   この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。  Windows PowerShell ISE 2.0 より後のバージョンでは、**ConsolePane** オブジェクトを同じ目的で使用できます。
 
- 現在の[エディター](../ise/The-ISEEditor-Object.md)の出力ウィンドウが取得する読み取り専用のプロパティです。.
+ 現在の[エディター](../ise/The-ISEEditor-Object.md)の出力ウィンドウが取得する読み取り専用のプロパティです。
 
 ```
 # Clears the text in the Output pane.
@@ -218,11 +223,12 @@ $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
  [PowerShellTabCollection オブジェクト](The-PowerShellTabCollection-Object.md) 
  [Windows PowerShell ISE スクリプト オブジェクト モデル](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
  [Windows PowerShell ISE オブジェクト モデル リファレンス](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [ISE オブジェクト モデルの階層](../ise/The-ISE-Object-Model-Hierarchy.md)
+ [ISE オブジェクト モデル階層](../ise/The-ISE-Object-Model-Hierarchy.md)
 
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO4-->
 
 

@@ -1,14 +1,21 @@
 ---
-title: Windows PowerShell を使用する
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell を使用する"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 994e6c89f6fc20b95691f010deb3c48062cef310
+
 ---
+
 # Windows PowerShell を使用する
-Windows PowerShellÂ® は、システム管理に重点を置いて設計されたタスクベースのコマンド ライン シェルおよびスクリプト言語です。 .NET Framework 上に構築された Windows PowerShell は、IT 技術者およびパワー ユーザーが Windows オペレーティング システムと Windows 上で実行するアプリケーションの管理の自動化を制御する際に役立ちます。
+Windows PowerShell® は、システム管理に重点を置いて設計されたタスクベースのコマンド ライン シェルおよびスクリプト言語です。 .NET Framework 上に構築された Windows PowerShell は、IT 技術者およびパワー ユーザーが Windows オペレーティング システムと Windows 上で実行するアプリケーションの管理の自動化を制御するときに役立ちます。
 
 このセクションのリソースは、Windows PowerShell に付属する Windows PowerShell の機能、およびグラフィカルな Windows PowerShell エディターである Windows PowerShell Integrated Scripting Environment について学ぶ際に役立ちます。
 
@@ -62,13 +69,15 @@ Windows PowerShell の学習を開始するには、まず次のリソースを�
 
 -   [Update-Help](http://technet.microsoft.com/library/hh849720.aspx) コマンドレット。 ご使用のコンピューターに Windows PowerShell モジュールのヘルプ トピックの最新バージョンをダウンロードし、インストールする Windows PowerShell コマンドレットです。
 
-    ネットワークから分離されたコンピューターに更新可能なヘルプをインストールする方法を含む、Windows PowerShell の更新可能なヘルプ システムの詳細については、「[about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx)」、「[Save-Help](http://technet.microsoft.com/library/hh849724.aspx)」、および「[更新可能なヘルプをサポートする](http://msdn.microsoft.com/library/hh852754.aspx)」を参照してください。.
+    ネットワークから分離されたコンピューターに更新可能なヘルプをインストールする方法を含む、Windows PowerShell の更新可能なヘルプ システムの詳細については、「[about_Updatable_Help](http://technet.microsoft.com/library/hh847735.aspx)」、「[Save-Help](http://technet.microsoft.com/library/hh849724.aspx)」、および「[更新可能なヘルプをサポートする](http://msdn.microsoft.com/library/hh852754.aspx)」を参照してください。
 
 -   [Get-Help](http://technet.microsoft.com/library/hh849696(v=wps.630).aspx) コマンドレット。 システムにインストールされているコマンドレットとプロバイダーについて確認するために使用する Windows PowerShell コマンドレットです。
 
--   公開されたヘルプ ファイルの更新に関する通知を受け取るには、次の RSS フィードを購読してください。[http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions).
+-   公開されたヘルプ ファイルの更新に関する通知を受け取るには、次の RSS フィードを購読してください。[http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions](http://sxp.microsoft.com/feeds/msdntn/PowerShellHelpVersions)
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO4-->
 
 

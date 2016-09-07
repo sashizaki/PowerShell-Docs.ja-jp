@@ -1,12 +1,19 @@
 ---
-title: Windows PowerShell ISE の操作
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell ISE の操作"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
+translationtype: Human Translation
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: c1f285a1d1beb35c931c17f5944d7ec697cb152e
+
 ---
+
 # Windows PowerShell ISE の操作
 Windows PowerShellÂ® Integrated Scripting Environment (ISE) を使用すると、コマンドやスクリプトを作成、実行、デバッグできます。 Windows PowerShell ISE は、メニュー バー、Windows PowerShell タブ、ツール バー、スクリプト タブ、スクリプト ウィンドウ、コンソール ウィンドウ、ステータス バー、文字サイズ スライダー、状況依存のヘルプで構成されています。
 
@@ -14,7 +21,7 @@ Windows PowerShellÂ® Integrated Scripting Environment (ISE) を使用すると
 > Windows PowerShell ISE 3.0 以降、コマンド ウィンドウと出力ウィンドウは、単一のコンソール ウィンドウに統合されました。
 
 ## メニュー バー
-メニュー バーには、**[ファイル]**、**[編集]**、**[表示]**、**[ツール]**、**[デバッグ]**、**[アドオン]**、**[ヘルプ]** の各メニューがあります。 メニューのボタンを使用すると、スクリプトの記述と実行、および Windows PowerShell ISE でのコマンドの実行に関連したタスクを実行できます。 さらに、[Windows PowerShell ISE スクリプト オブジェクト モデル](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)を使用する特定のスクリプトを実行すれば、[アドオン ツール](../../core-powershell/ise/The-ISEAddOnTool-Object.md)をメニュー バーに配置することもできます。.
+メニュー バーには、**[ファイル]**、**[編集]**、**[表示]**、**[ツール]**、**[デバッグ]**、**[アドオン]**、**[ヘルプ]** の各メニューがあります。 メニューのボタンを使用すると、スクリプトの記述と実行、および Windows PowerShell ISE でのコマンドの実行に関連したタスクを実行できます。 さらに、[Windows PowerShell ISE スクリプト オブジェクト モデル](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)を使用する特定のスクリプトを実行すれば、[アドオン ツール](../../core-powershell/ise/The-ISEAddOnTool-Object.md)をメニュー バーに配置することもできます。
 
 > [!NOTE]
 > Windows PowerShell ISE 2.0 には、**[ツール]** と **[アドオン]** メニューはありませんでした。
@@ -57,7 +64,7 @@ Windows PowerShell タブは、Windows PowerShell スクリプトが動作する
 実行したコマンドおよびスクリプトの結果が表示されます。 出力ウィンドウの内容をコピーおよびクリアすることもできます。
 
 ## コマンド ウィンドウ
-コマンドを記述できます。 コマンド ウィンドウでは、1 行のコマンドまたは複数行のコマンドを実行できます。 Shift キーを押しながら Enter キーを押すことで、改行を挿入し、複数行のコマンドを入力できます。最後の行の後で Enter キーを押すと、複数行のコマンドが実行されます。 コマンド ウィンドウの上部に表示されるプロンプトには、現在の作業ディレクトリへのパスが表示されます。
+コマンドを記述できます。 コマンド ウィンドウでは、1 行のコマンドまたは複数行のコマンドを実行できます。 SHIFT キーを押しながら ENTER キーを押すことで、改行を挿入し、複数行のコマンドを入力できます。最後の行の後で Enter キーを押すと、複数行のコマンドが実行されます。 コマンド ウィンドウの上部に表示されるプロンプトには、現在の作業ディレクトリへのパスが表示されます。
 
 ## ステータス バー
 実行したコマンドおよびスクリプトが完了しているかどうかを確認できます。 ステータス バーは、画面の最下部に表示されます。 エラー メッセージの選んだ部分がステータス バーに表示されます。
@@ -72,6 +79,8 @@ Windows PowerShell ISE のヘルプは、Web 上の TechNet ライブラリで�
 [Windows PowerShell ISE の使用](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO4-->
 
 

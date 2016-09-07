@@ -1,7 +1,7 @@
 ---
 title: "レジストリ キーの操作"
 ms.date: 2016-05-11
-keywords: powershell,cmdlet
+keywords: "PowerShell, コマンドレット"
 description: 
 ms.topic: article
 author: jpjofre
@@ -9,16 +9,16 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: b979750580ea5c7171569f8982d6aeca883c33ab
+ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
+ms.openlocfilehash: 4809eb60ba1a5529343c2ab3c88493bf2c32389b
 
 ---
 
 # レジストリ キーの操作
-レジストリ キーは Windows PowerShell ドライブ上の項目であるため、それらの操作はファイルやフォルダーの操作によく似ています。 1 つの決定的な違いは、レジストリ ベースの Windows PowerShell ドライブ上のすべての項目は、ファイル システム ドライブ上のフォルダーと同じように、コンテナーであることです。\- ただし、レジストリ エントリとそれに関連する値は、個別の項目ではなく、項目のプロパティです。
+レジストリ キーは Windows PowerShell ドライブ上の項目であるため、それらの操作はファイルやフォルダーの操作によく似ています。 1 つの決定的な違いは、レジストリ ベースの Windows PowerShell ドライブ上のすべての項目は、ファイル システム ドライブ上のフォルダーと同じように、コンテナーであることです。 ただし、レジストリ エントリとそれに関連する値は、個別の項目ではなく、項目のプロパティです。
 
 ### レジストリ キーのすべてのサブキーを一覧表示
-**Get\-ChildItem** を使用することにより、レジストリ キーの直下にあるすべての項目を表示することができます。 非表示の項目やシステム項目を表示するには、オプションの **Force** パラメーターを追加します。 たとえば、次のコマンドは、HKEY\_CURRENT\_USER レジストリ ハイブに対応する、Windows PowerShell ドライブ HKCU: の直下にある項目を表示します。
+**Get-ChildItem** を使用することにより、レジストリ キーの直下にあるすべての項目を表示することができます。 非表示の項目やシステム項目を表示するには、オプションの **Force** パラメーターを追加します。 たとえば、次のコマンドは、HKEY_CURRENT_USER レジストリ ハイブに対応する、Windows PowerShell ドライブ HKCU: の直下にある項目を表示します。
 
 ```
 PS> Get-ChildItem -Path hkcu:\
@@ -36,7 +36,7 @@ SKC  VC Name                           Property
 ...
 ```
 
-これらは、レジストリ エディター (Regedit.exe) 内の HKEY\_CURRENT\_USER の下に表示される最上位キーです。\-
+これらは、レジストリ エディター (Regedit.exe) 内の HKEY_CURRENT_USER の下に表示される最上位キーです。
 
 レジストリ プロバイダーの名前とその後に "**::**" を指定することにより、このレジストリ パスを指定することもできます。 レジストリ プロバイダーの完全名は **Microsoft.PowerShell.Core\\Registry** ですが、短縮して **Registry** だけにすることができます。 次のいずれのコマンドを使用しても、HKCU の直下にある内容を一覧表示できます。
 
@@ -54,20 +54,20 @@ Get-ChildItem HKCU:
 Get-ChildItem -Path hkcu:\ -Recurse
 ```
 
-**Get\-ChildItem** は、**Path**、**Filter**、**Include**、**Exclude** の各パラメーターを使用して複雑なフィルター処理機能を実行できますが、これらのパラメーターは通常、名前にのみ基づいています。 **Where\-Object** コマンドレットを使用することにより、項目の他のプロパティに基づいた複雑なフィルター処理を実行できます。 次のコマンドは、1 つのサブキーと 4 つの値を持つ、HKCU:\\Software 内のすべてのキーを検索します。
+**Get-ChildItem** は、**Path**、**Filter**、**Include**、**Exclude** の各パラメーターを使用して複雑なフィルター処理機能を実行できますが、これらのパラメーターは通常、名前にのみ基づいています。 **Where-Object** コマンドレットを使用することにより、項目の他のプロパティに基づいた複雑なフィルター処理を実行できます。 次のコマンドは、1 つのサブキーと 4 つの値を持つ、HKCU:\\Software 内のすべてのキーを検索します。
 
 ```
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
 ### キーのコピー
-コピーは **Copy\-Item** を使用して行われます。 次のコマンドは、HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion とそのすべてのプロパティを HKCU:\\ にコピーして、"CurrentVersion" という名前の新しいキーを作成します。
+コピーは **Copy-Item** を使用して行われます。 次のコマンドは、HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion とそのすべてのプロパティを HKCU:\\ にコピーして、"CurrentVersion" という名前の新しいキーを作成します。
 
 ```
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination hkcu:
 ```
 
-レジストリ エディター内、または **Get\-ChildItem** を使用してこの新しいキーを調べると、格納されているサブキーのコピーが新しい場所に存在しないことがわかります。 コンテナーのすべての内容をコピーするために、**Recurse** パラメーターを指定する必要があります。 上記のコピー コマンドを再帰的に実行するには、次のコマンドを使用します。
+レジストリ エディター内、または **Get-ChildItem** を使用してこの新しいキーを調べると、格納されているサブキーのコピーが新しい場所に存在しないことがわかります。 コンテナーのすべての内容をコピーするために、**Recurse** パラメーターを指定する必要があります。 上記のコピー コマンドを再帰的に実行するには、次のコマンドを使用します。
 
 ```
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination hkcu: -Recurse
@@ -79,25 +79,25 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination h
 レジストリでのキーの新規作成は、ファイル システムに新しい項目を作成するよりも簡単です。 すべてのレジストリ キーはコンテナーであるため、項目の種類を指定する必要はなく、次に示すように、明示的なパスを指定するだけで済みます。
 
 ```
-New-Item -Path hkcu:\software\_DeleteMe
+New-Item -Path hkcu:\software_DeleteMe
 ```
 
-また、プロバイダーに基づくパスを使用して、キーを指定することもできます。\-
+また、プロバイダーに基づくパスを使用して、キーを指定することもできます。
 
 ```
-New-Item -Path Registry::HKCU\_DeleteMe
+New-Item -Path Registry::HKCU_DeleteMe
 ```
 
 ### キーの削除
 項目の削除は、基本的にすべてのプロバイダーで同じです。 次のコマンドを実行すると、確認を求められずに項目が削除されます。
 
 ```
-Remove-Item -Path hkcu:\Software\_DeleteMe
+Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
 ### 特定のキーの下にあるすべてのキーの削除
-内包されている項目を削除するには、**Remove\-Item** を使用します。ただし、その項目に他の何らかの項目が含まれている場合は、削除の確認を求められます。 たとえば、作成した HKCU:\\CurrentVersion サブキーを削除しようとしすると、次のメッセージが表示されます。
+内包されている項目を削除するには、**Remove-Item** を使用します。ただし、その項目に他の何らかの項目が含まれている場合は、削除の確認を求められます。 たとえば、作成した HKCU:\\CurrentVersion サブキーを削除しようとしすると、次のメッセージが表示されます。
 
 ```
 Remove-Item -Path hkcu:\CurrentVersion
@@ -110,7 +110,7 @@ parameter was not specified. If you continue, all children will be removed with
 (default is "Y"):
 ```
 
-確認のメッセージを表示せずに、内包されている項目を削除するには、**\-Recurse** パラメーターを指定します。
+確認のメッセージを表示せずに、内包されている項目を削除するには、**-Recurse** パラメーターを指定します。
 
 ```
 Remove-Item -Path HKCU:\CurrentVersion -Recurse
@@ -125,6 +125,6 @@ Remove-Item -Path HKCU:\CurrentVersion\* -Recurse
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 
