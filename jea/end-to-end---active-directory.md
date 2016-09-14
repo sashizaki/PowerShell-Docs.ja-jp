@@ -4,13 +4,13 @@ manager: dongill
 ms.topic: article
 author: jpjofre
 ms.prod: powershell
-keywords: powershell,cmdlet,jea
+keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "エンド ツー エンド - Active Directory"
 ms.technology: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 5954eb797df43de6f132a434ecad7049ee0221fb
-ms.openlocfilehash: 204909c16d5e3e2099f6ba4247929d61445cd654
+ms.sourcegitcommit: 33e92c7fd6039a1e3f5f784470c7bd0e43a7f030
+ms.openlocfilehash: e7ea3957ce3bbd3ce0fc072a82cd108606f05614
 
 ---
 
@@ -27,7 +27,7 @@ Active Directory の操作を実行するために、ドメイン コントロ�
 このセクションの手順を実行するには、ドメイン コントローラーを操作する必要があります。
 ドメイン コントローラーにアクセスしたことがなくても大丈夫です。
 熟知している他のシナリオやロールでの作業を想像しながら、読み進めてください。
-新しいドメイン コントローラーをすぐに設定する場合は、付録の「[ドメイン コントローラーの作成](#creating-a-domain-controller)」を参照してください。
+新しいドメイン コントローラーをすぐに設定する場合は、付録の「[ドメイン コントローラーの作成](.\creating-a-domain-controller.md)」を参照してください。
 
 ## 新しいロール機能とセッション構成の作成手順
 
@@ -87,7 +87,7 @@ Active Directory 管理エンドポイントを作成するための調査で利
 
 2.  `Add-ADGroupMember`  と `Remove-ADGroupMember` は、特定のグループでのみ動作する必要がある
 
-### 手順 3: タスクが JEAで動作することを確認する
+### 手順 3: タスクが JEA で動作することを確認する
 これらのコマンドレットは、制限された JEA 環境では単純に使用できない場合があります。
 JEA は *NoLanguage* モードで実行されますが、このモードは、なによりもユーザーが変数を使用することを禁止します。
 スムーズなエンド ユーザー エクスペリエンスを実現するには、いくつかの事項を確認する必要があります。
@@ -163,7 +163,7 @@ Set-ADUser -Identity $Identity -ChangePasswordAtLogon
 これで、ユーザーは `Reset-ContosoUserPassword` を簡単に呼び出すことができ、安全なインライン文字列を作成する構文を覚えて置く必要もなくなりました。
 
 ## 手順 4: ロール機能ファイルを編集する
-「[ロール機能の作成](#role-capability-creation)」セクションで、空のロール機能ファイルを作成しました。
+「[ロール機能の作成](./role-capabilities.md#role-capability-creation)」セクションで、空のロール機能ファイルを作成しました。
 このセクションでは、このファイルに値を設定します。
 
 PowerShell ISE でロール機能ファイルを開いて開始します。
@@ -273,6 +273,6 @@ ValidatePattern は、そのパラメーターの引数が一致する必要の�
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO5-->
 
 

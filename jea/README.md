@@ -9,8 +9,8 @@ ms.date: 2016-06-22
 title: README
 ms.technology: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: bd7f637d0889fd0f56c3fa653389819341d2ccff
-ms.openlocfilehash: bfee5ef59a4085f0350ff454f634fc0bf5d6d837
+ms.sourcegitcommit: 8149f656f0aacbb23cacc8a1a9b45ed59866b92f
+ms.openlocfilehash: 7bb5635832e912b39ec387e8ac93ada24a434ff8
 
 ---
 
@@ -83,7 +83,7 @@ JEA のすべての操作とインフラストラクチャの監査とレポー�
 
 ## 独自の JEA エンドポイントの作成を開始する
 JEA エンドポイントの作成は簡単です。必要なのは、JEA 対応のシステムとテキスト エディター (PowerShell ISE など) だけです。
-作業開始に役立つヒントとして、`New-PSRoleCapabilityFile -Path <path>` および `New-PSSessionCapabilityFile -Path <Path>` (他の引数は使用しない) を使用してスケルトン ファイルを作成します。
+作業開始に役立つヒントは、[`New-PSRoleCapabilityFile -Path <path>`](https://technet.microsoft.com/library/mt631422.aspx) および [`New-PSSessionConfigurationFile -Path <Path>`](https://technet.microsoft.com/library/mt631422.aspx) を使用して、他の引数は使用せずにスケルトン ファイルを作成することです。
 これらのスケルトン ファイルには、すべての適用可能な構成フィールドと、各フィールドの使用目的を説明するコメントが含まれています。
 
 JEA エンドポイントのさらに簡単な作成方法については、[JEA ツールキット ヘルパー](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx)を参照してください。ここに用意された GUI を使用して、セッション構成およびロール機能ファイルを作成できます。
@@ -92,6 +92,6 @@ JEA エンドポイントのさらに簡単な作成方法については、[JEA
 
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO5-->
 
 
