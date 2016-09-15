@@ -274,7 +274,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 -   Windows PowerShell 5.0 で、部分構成ができるようになりました。 ノードに対して構成ドキュメントをフラグメントとして提供できます。 構成ドキュメントの複数のフラグメントをノードが受け取るには、想定されるフラグメントを指定するように、そのノードのローカル構成マネージャーをまず設定する必要があります
 
--   クロス コンピューターの同期は、Windows PowerShell 5.0 の DSC での新機能です。 組み込みの WaitFor\* リソース (**WaitForAll**、**WaitForAny**、および **WaitForSome**) を使用すると、コンピューター間の依存関係を外部の指揮なしで構成の実行中に指定できます。 これらのリソースは、WS-Man プロトコルで CIM 接続を使用して、ノード間の同期を提供します。 構成は、別のコンピューターの特定のリソースの状態が変更されるまで待機できます。
+-   コンピューター間の同期は、Windows PowerShell 5.0 の DSC での新機能です。 組み込みの WaitFor\* リソース (**WaitForAll**、**WaitForAny**、および **WaitForSome**) を使用すると、コンピューター間の依存関係を外部のオーケストレーションなしで構成の実行中に指定できます。 これらのリソースは、WS-Man プロトコルで CIM 接続を使用して、ノード間の同期を提供します。 構成は、別のコンピューターの特定のリソースの状態が変更されるまで待機できます。
 
 -   新しい委任セキュリティ機能である Just Enough Administration (JEA) は、DSC と Windows PowerShell の制限付き実行空間を活用して、意図的であるかどうかに関わらず、従業員によるデータの損失や侵害から企業をセキュリティで保護します。 xJEA DSC リソースをダウンロードできる場所など、JEA に関する詳細については、「[Just Enough Administration の使用手順](http://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx)」を参照してください。
 
@@ -284,7 +284,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
     -   新しい Compare-DscConfiguration コマンドレットは、指定した構成を 1 つ以上のターゲット ノードの実際の状態と比較します。
 
-    -   新しい Publish-DscConfiguration コマンドレットでは、構成の MOF ファイルをターゲット ノードにコピーしますが、その構成は適用されません。 この構成が適用されるのは、次の一貫性パス中、または Update-DscConfiguration コマンドレットの実行時です。
+    -   新しい Publish-DscConfiguration コマンドレットでは、構成の MOF ファイルをターゲット ノードにコピーしますが、その構成は適用しません。 この構成が適用されるのは、次の整合性パス中、または Update-DscConfiguration コマンドレットの実行時です。
 
     -   新しい Test-DscConfiguration コマンドレットを使用すると、結果の構成が必要な構成と一致することを確認して、構成が必要な構成と一致する場合は True を、実際の構成が必要な構成と一致しない場合は False を返すようにできます。
 
@@ -298,7 +298,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 -   Windows PowerShell ISE でリモート スクリプトをデバッグできるようになりました。
 
--   新しいメニュー コマンド、**Break All** (Ctrl+B) は、ローカルとリモートの実行中の両方のスクリプトに対してデバッガーを中断します。
+-   新しいメニュー コマンド、**Break All** (Ctrl+B) は、ローカルとリモートで実行中の両方のスクリプトを中断し、デバッガーに移ります。
 
 ### <a name="BKMK_newOData"></a>Windows PowerShell Web サービス (Management OData IIS 拡張機能) の新機能
 
@@ -311,7 +311,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 -   Windows PowerShell セッションでの最初のタブ補完に対するパフォーマンスが大幅に改善され、タブ補完に要する時間が 500 ミリ秒近く短縮されました。
 
 ## <a name="BKMK_wps4"></a>Windows PowerShell 4.0 の新機能
-Windows PowerShell 4.0 には下位互換性があります。 Windows PowerShell 3.0 および Windows PowerShell 2.0 用に設計されたコマンドレット、プロバイダー、モジュール、スナップイン、スクリプト、関数、およびプロファイルは、全般的に変更なしで Windows PowerShell 4.0 でも動作します。
+Windows PowerShell 4.0 には下位互換性があります。 Windows PowerShell 3.0 および Windows PowerShell 2.0 用に設計されたコマンドレット、プロバイダー、モジュール、スナップイン、スクリプト、関数、およびプロファイルは、変更なしで Windows PowerShell 4.0 でも動作します。
 
 Windows PowerShell 4.0 は、既定で WindowsÂ® 8.1 と Windows Server 2012 R2 にインストールされています。 Windows 7 SP1 または Windows Server 2008 R2 に Windows PowerShell 4.0 をインストールするには、[Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855) をダウンロードしてインストールします。 Windows Management Framework 4.0 をインストールする前に、ダウンロードの詳細を読み、システム要件がすべて満たされていることを確認してください。
 
@@ -353,7 +353,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 -   **Passthru** パラメーターが **Enable-JobTrigger** および **Disable-JobTrigger** コマンドレットに追加されました。 Passthru パラメーターを使用すると、実行するコマンドによって作成または変更されるすべてのオブジェクトが表示されます。
 
--   **Add-Computer** および **Remove-Computer** コマンドレットにワークグループを指定するパラメーターの名前が一貫性のあるものになりました。 どちらのコマンドレットでも、パラメーター **WorkgroupName** を使用します。
+-   **Add-Computer** および **Remove-Computer** コマンドレットにワークグループを指定するパラメーターの名前が整合性のあるものになりました。 どちらのコマンドレットでも、パラメーター **WorkgroupName** を使用します。
 
 -   新しい共通パラメーター **PipelineVariable** が追加されました。 PipelineVariable を使用すると、パイプされたコマンド (またはパイプされたコマンドの一部) の結果を変数として保存し、パイプラインの残りの部分に引き渡すことができます。
 
@@ -377,15 +377,15 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 ### <a name="BKMK_workflow"></a>Windows PowerShell ワークフローの新機能
 
--   反復パイプラインのコンテキストで、新しい **PipelineVariable** 共通パラメーターのサポートが追加されました。これは、System Center Orchestrator などの、ストリーミングを使用することによって散発的に実行するのではなく、コマンドを単純に左から右へと実行するパイプラインで使用します。
+-   System Center Orchestrator などで使用されている反復パイプラインのコンテキストで、新しい **PipelineVariable** 共通パラメーターのサポートが追加されました。反復パイプラインとは、ストリーミングを使用することによって散発的に実行するのではなく、コマンドを単純に左から右へと実行するパイプラインです。
 
 -   パラメーターのバインドが大幅に拡張され、Tab 補完のシナリオを越えて、たとえば、現在の実行空間に存在しないコマンドでも機能するようになりました。
 
--   Windows PowerShell ワークフローにカスタム コンテナー活動のサポートが追加されました。 活動のパラメーターの型が **Activity** または **Activity\[]** であるか、活動のジェネリック コレクションである場合に、ユーザーが引数としてスクリプト ブロックを提供すると、Windows PowerShell ワークフローはそのスクリプト ブロックを通常の Windows PowerShell によるスクリプトからワークフローへのコンパイルと同様に XAML に変換します。
+-   Windows PowerShell ワークフローにカスタム コンテナー アクティビティのサポートが追加されました。 アクティビティのパラメーターの型が **Activity** または **Activity\[]** であるか、アクティビティのジェネリック コレクションである場合に、ユーザーが引数としてスクリプト ブロックを提供すると、Windows PowerShell ワークフローはそのスクリプト ブロックを通常の Windows PowerShell によるスクリプトからワークフローへのコンパイルと同様に XAML に変換します。
 
 -   クラッシュの後、Windows PowerShell ワークフローは自動的に管理対象ノードに再接続します。
 
--   **Foreach-Parallel** 活動ステートメントのスロットルを、**ThrottleLimit** プロパティを使用して調整できるようになりました。
+-   **Foreach-Parallel** アクティビティ ステートメントのスロットルを、**ThrottleLimit** プロパティを使用して調整できるようになりました。
 
 -   **ErrorAction** 共通パラメーターに新しい有効値 **Suspend** が追加されました。これはワークフロー専用です。
 
@@ -515,15 +515,15 @@ Windows PowerShell 3.0 には、次に示す新機能があります。
 ### <a name="BKMK_Workflow"></a>Windows PowerShell ワークフロー
 Windows PowerShellÂ® ワークフローによって、Windows Workflow Foundation の機能を Windows PowerShell で利用できます。 ワークフローは、XAML または Windows PowerShell 言語で記述し、コマンドレットを実行するのとまったく同様に実行できます。 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) コマンドレットはワークフロー コマンドを取得し、[Get-help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) コマンドレットは、ワークフローのヘルプを取得します。
 
-ワークフローは、複数のコンピューターを管理する活動のシーケンスです。これは、実行時間が長く、反復可能な、頻繁に実行できるシーケンスで、並列実行、割り込み、中断、および再起動が可能です。 ワークフローは、ネットワークの停止、Windows の再起動、電源障害などの意図的または偶発的な割り込みから再開できます。
+ワークフローは、複数のコンピューターを管理するアクティビティのシーケンスです。これは、実行時間が長く、反復可能な、頻繁に実行できるシーケンスで、並列実行、割り込み、中断、および再起動が可能です。 ワークフローは、ネットワークの停止、Windows の再起動、電源障害などの意図的または偶発的な割り込みから再開できます。
 
-また、ワークフローは移植可能で、XAML ファイルとしてエクスポートしたり、XAML ファイルからインポートしたりできます。 カスタム セッション構成を記述することにより、委任されたユーザーまたは下位ユーザーがワークフローまたはワークフロー内の活動を実行可能にすることができます。
+また、ワークフローは移植可能で、XAML ファイルとしてエクスポートしたり、XAML ファイルからインポートしたりできます。 カスタム セッション構成を記述することにより、委任されたユーザーまたは下位ユーザーがワークフローまたはワークフロー内のアクティビティを実行可能にすることができます。
 
 Windows PowerShell ワークフローの利点を次に示します。
 
 -   **実行時間の長いタスクのシーケンスを自動化します。**
 
--   **実行時間の長いタスクをリモート監視します**。 活動の状態と進行状況をいつでも表示できます。
+-   **実行時間の長いタスクをリモート監視します**。 アクティビティの状態と進行状況をいつでも表示できます。
 
 -   **複数コンピューターの管理。** 数百の管理対象ノードでタスクをワークフローとして同時に実行できます。 Windows PowerShell ワークフローには、**PSComputerName** などの共通管理パラメーターで構成される組み込みライブラリが含まれているため、複数のコンピューターを管理するシナリオに対応できます。
 
@@ -531,7 +531,7 @@ Windows PowerShell ワークフローの利点を次に示します。
 
 -   **永続化。**ワークフローは、作成者によって定義された特定の時点で保存 (またはチェックポイントを作成) できるため、ワークフローを最初から再開する代わりに、最後の永続化されたタスク (またはチェックポイント) からワークフローを再開できます。
 
--   **信頼性。** エラー回復が自動化されます。 ワークフローは、計画的な、および計画外の再起動の後も残ります。 ワークフローの実行を中断した後、最後の永続化ポイントからワークフローを再開できます。 ワークフローの作成者は、1 つまたは複数の管理対象ノードで障害が発生した時に再実行する特定の活動を指定できます。
+-   **信頼性。** エラー回復が自動化されます。 ワークフローは、計画的な、および計画外の再起動の後も残ります。 ワークフローの実行を中断した後、最後の永続化ポイントからワークフローを再開できます。 ワークフローの作成者は、1 つまたは複数の管理対象ノードで障害が発生した時に再実行する特定のアクティビティを指定できます。
 
 -   **切断、再接続、切断されたセッションでの実行が可能。** ユーザーがワークフロー サーバーに接続したり切断したりしても、ワークフローは継続的に実行されます。 クライアント コンピューターからログオフするか、クライアント コンピューターを再始動しても、ワークフローに割り込むことなく別のコンピューターからワークフローの実行を監視できます。
 
