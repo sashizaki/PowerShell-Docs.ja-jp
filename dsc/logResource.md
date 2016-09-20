@@ -1,15 +1,15 @@
 ---
 title: "DSC Log リソース"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: PowerShell, DSC
 description: 
 ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 97ffa20191016584fc2fba459c457787365d11ee
+ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
+ms.openlocfilehash: 60085295fa7df6179a81cd98859cd33e6923150f
 
 ---
 
@@ -29,6 +29,12 @@ Log [string] #ResourceName
 }
 ```
 
+注: 既定では、DSC の操作ログのみが有効になります。
+分析ログを利用または表示するには、最初にそれを有効にする必要があります。
+次の記事を参照してください。
+
+[DSC イベント ログの場所](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
+
 ## プロパティ
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -42,15 +48,24 @@ Log [string] #ResourceName
 > **注**: このリソースが構成されている状態で [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) を実行すると、常に **$false** が返されます。
 
 ```powershell 
-Log LogExample
+Configuration logResourceTest
 {
-    Message = "This message will appear in the Microsoft-Windows-Desired State Configuration/Analytic event log."
-} 
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+
+    Node localhost
+
+    {
+        Log LogExample
+        {
+            Message = "This message will appear in the Microsoft-Windows-Desired State Configuration/Analytic event log."
+        }
+    }
+}
 ```
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

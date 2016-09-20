@@ -1,15 +1,15 @@
 ---
 title: "構成名を使用したプル クライアントのセットアップ"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: PowerShell, DSC
 description: 
 ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 32ff157c7c8366cf0c9847dec4815d2d4b9cc5fa
+ms.sourcegitcommit: b617ae80ae6a555e531469efde07e443d83c51d8
+ms.openlocfilehash: 02721f0f6f68cc78ae0430205d06f079e3e7465a
 
 ---
 
@@ -25,7 +25,7 @@ ms.openlocfilehash: 32ff157c7c8366cf0c9847dec4815d2d4b9cc5fa
 
 ```powershell
 [DSCLocalConfigurationManager()]
-configuration PullClientConfigID
+configuration PullClientConfigNames
 {
     Node localhost
     {
@@ -44,18 +44,22 @@ configuration PullClientConfigID
         }      
     }
 }
-PullClientConfigID
+PullClientConfigNames
 ```
 
 このスクリプトでは、**ConfigurationRepositoryWeb** ブロックにプル サーバーを定義しています。 **ServerURL** プロパティには、プル サーバー用のエンドポイントを指定します。
 
-**RegistrationKey** プロパティは、プル サーバーのすべてのクライアント ノードとそのプル サーバーとの間で共有されるキーです。 同じ値がプル サーバー上のファイルに格納されます。 **ConfigurationNames** プロパティには、クライアント ノード用の構成の名前を指定します。 プル サーバーでは、このクライアント ノードの構成 MOF ファイルに *ConfigurationNames*.mof という名前を指定する必要があります。ここで、*ConfigurationNames* はこのメタ構成に設定した **ConfigurationNames** プロパティの値と一致します。
+**RegistrationKey** プロパティは、プル サーバーのすべてのクライアント ノードとそのプル サーバーとの間で共有されるキーです。 同じ値がプル サーバー上のファイルに格納されます。 
 
-このスクリプトを実行すると、**PullClientConfigID** という名前の新しい出力フォルダーが作成され、そこにメタ構成 MOF ファイルが格納されます。 この場合、メタ構成 MOF ファイルの名前は `localhost.meta.mof` になります。
+**ConfigurationNames** プロパティは、クライアント ノード用の構成の名前を指定する配列です。 プル サーバーでは、このクライアント ノードの構成 MOF ファイルに *ConfigurationNames*.mof という名前を指定する必要があります。ここで、*ConfigurationNames* はこのメタ構成に設定した **ConfigurationNames** プロパティの値と一致します。
 
-構成を適用するには、**Path** をメタ構成 MOF ファイルの場所に設定して **Set-DscLocalConfigurationManager** コマンドレットを呼び出します。 たとえば、次のように入力します。 `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigID –Verbose.`
+>**注:** **ConfigurationNames** に複数の値を指定する場合、構成に **PartialConfiguration** ブロックも指定する必要があります。 部分構成の詳細については、「[PowerShell Desired State Configuration の部分構成](partialConfigs.md)」を参照してください。
 
-> **注**: 登録キーは、Web プル サーバーでのみ動作します。 SMB プル サーバーでは、引き続き **ConfigurationID** を使用する必要があります。 **ConfigurationID** を使用したプル サーバーの構成については、「[構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)」を参照してください。
+このスクリプトを実行すると、**PullClientConfigNames** という名前の新しい出力フォルダーが作成され、そこにメタ構成 MOF ファイルが格納されます。 この場合、メタ構成 MOF ファイルの名前は `localhost.meta.mof` になります。
+
+構成を適用するには、**Path** をメタ構成 MOF ファイルの場所に設定して **Set-DscLocalConfigurationManager** コマンドレットを呼び出します。 たとえば、次のように入力します。 `Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigNames –Verbose.`
+
+> **注**: 登録キーは、Web プル サーバーでのみ動作します。 SMB プル サーバーでは、引き続き **ConfigurationID** を使用する必要があります。 **ConfigurationID** を使用したプル サーバーの構成については、「[構成 ID を使用したプル クライアントのセットアップ](PullClientConfigNames.md)」を参照してください。
 
 ## リソースおよびレポート サーバー
 
@@ -63,7 +67,7 @@ LCM 構成で **ConfigurationRepositoryWeb** ブロックまたは **Configurati
 
 ```powershell
 [DSCLocalConfigurationManager()]
-configuration PullClientConfigID
+configuration PullClientConfigNames
 {
     Node localhost
     {
@@ -80,17 +84,14 @@ configuration PullClientConfigID
             RegistrationKey = 'fbc6ef09-ad98-4aad-a062-92b0e0327562'
         }
         
-        
-
         ReportServerWeb CONTOSO-PullSrv
         {
             ServerURL = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'
         }
     }
 }
-PullClientConfigID
+PullClientConfigNames
 ```
-
 
 また、リソース用とレポート用にそれぞれ異なるプル サーバーを指定することもできます。 リソース サーバーを指定するには、**ResourceRepositoryWeb** (Web プル サーバーの場合) または **ResourceRepositoryShare** ブロック (SMB プル サーバーの場合) を使用します。
 レポート サーバーを指定するには、**ReportRepositoryWeb** ブロックを使用します。 レポート サーバーを SMB サーバーにすることはできません。
@@ -98,7 +99,7 @@ PullClientConfigID
 
 ```powershell
 [DSCLocalConfigurationManager()]
-configuration PullClientConfigID
+configuration PullClientConfigNames
 {
     Node localhost
     {
@@ -128,17 +129,17 @@ configuration PullClientConfigID
         }
     }
 }
-PullClientConfigID
+PullClientConfigNames
 ```
 
 ## 参照
 
-* [構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)
+* [構成 ID を使用したプル クライアントのセットアップ](PullClientConfigNames.md)
 * [DSC Web プル サーバーのセットアップ](pullServer.md)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 
