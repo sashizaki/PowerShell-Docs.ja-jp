@@ -1,7 +1,7 @@
 ---
 title: "スクリプト ウィンドウとコンソール ウィンドウでタブ補完を使用する方法"
 ms.date: 2016-05-11
-keywords: powershell,cmdlet
+keywords: "PowerShell, コマンドレット"
 description: 
 ms.topic: article
 author: jpjofre
@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 07f7fb6b4e5d94de31551566ca8faff263817383
+ms.sourcegitcommit: b14aaee5a66a80295420fe9b517ba1fc652c86bf
+ms.openlocfilehash: 290d9237e20b35ec603f0967854b1e0d193e6cbb
 
 ---
 
@@ -26,15 +26,15 @@ ms.openlocfilehash: 07f7fb6b4e5d94de31551566ca8faff263817383
 ## コマンドレット パラメーターの入力を自動的に補完するには
 コマンド ウィンドウまたはスクリプト ウィンドウで、コマンドレット名を入力し、その後にダッシュを入力し、次に Tab キーを押します。
 
-たとえば、「`get-process -`」と入力し、Tab キーを何回か押すと、コマンドレットの各パラメーターが順番に表示されます。
+たとえば、「`Get-Process -`」と入力し、Tab キーを何回か押すと、コマンドレットの各パラメーターが順番に表示されます。
 
 ## 参照
-[Windows PowerShell ISE の使用](using-the-windows-powershell-ise.md)
-[PowerShell タブを作成する方法](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE の使用](using-the-windows-powershell-ise.md)
+- [PowerShell タブを作成する方法](How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md)
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

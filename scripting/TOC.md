@@ -74,8 +74,8 @@
 
 ### [さらに詳しく](getting-started/more-powershell-learning.md)
 
-## [コア PowerShell](core-powershell/core-powershell.md)
-### [コア モジュール](core-powershell/core-modules.md)
+## [一般的な PowerShell](core-powershell/core-powershell.md)
+### [共通モジュール](core-powershell/core-modules.md)
 ####  [アーカイブ モジュール](core-powershell/core-modules/Microsoft.PowerShell.Archive-Module.md)
 ####  [コア モジュール](core-powershell/core-modules/Microsoft.PowerShell.Core-Module.md)
 ####  [コア モジュール参照の一覧](core-powershell/core-modules/Windows-PowerShell-5.0.md)
@@ -106,6 +106,7 @@
 ####  [PowerShell ISE でスクリプトをデバッグする方法](core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)
 ####  [PowerShell ISE でプロファイルを使用する方法](core-powershell/ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md)
 ####  [PowerShell ISE でコンソール ウィンドウを使用する方法](core-powershell/ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+####  [スクリプト ウィンドウとコンソール ウィンドウでタブ補完を使用する方法](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 ####  [Windows PowerShell ISE でスクリプトを記述および実行する方法](core-powershell/ise/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md)
 ####  [PowerShell ISE の紹介](core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
 ####  [ISE モジュール](core-powershell/ise/ISE-Module.md)
@@ -123,7 +124,6 @@
 
 ### [コンソール](core-powershell/console-guide.md)
 ####  [コンソール コマンド ライン リファレンス](core-powershell/console/PowerShell.exe-Command-Line-Help.md)
-####  [スクリプト ウィンドウとコンソール ウィンドウでタブ補完を使用する方法](core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)
 ####  [タブ拡張の使用](core-powershell/console/Using-Tab-Expansion.md)
 
 ### [リモート コマンドの実行](core-powershell/Running-Remote-Commands.md)
@@ -142,6 +142,6 @@
 ## [PowerShell 用語集](Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

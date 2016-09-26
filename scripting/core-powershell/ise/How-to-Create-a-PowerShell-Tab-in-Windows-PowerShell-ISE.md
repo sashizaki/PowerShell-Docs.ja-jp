@@ -1,19 +1,26 @@
 ---
-title: Windows PowerShell ISE で PowerShell タブを作成する方法
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell ISE で PowerShell タブを作成する方法"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
+translationtype: Human Translation
+ms.sourcegitcommit: d015dfae1990c66ea75aa45004b366d1609fb36f
+ms.openlocfilehash: 460ab6d82b694266d31b09779866f746b56c9f51
+
 ---
+
 # Windows PowerShell ISE で PowerShell タブを作成する方法
-Windows PowerShellÂ® Integrated Scripting Environment (ISE) のタブを使うと、同じアプリケーション内で複数の実行環境を作成して同時に使うことができます。 PowerShell の各タブは、独立した実行環境またはセッションに対応します。
+Windows PowerShell® Integrated Scripting Environment (ISE) のタブを使うと、同じアプリケーション内で複数の実行環境を同時に作成して使用することができます。 PowerShell の各タブは、独立した実行環境またはセッションに対応します。
 
 > [!NOTE]
 > 1 つのタブで作成した変数、関数、別名が、他のタブに引き継がれることはありません。 それらのタブは、別々の Windows PowerShell セッションです。
 
-Windows PowerShell でタブを開いたり閉じたりするには、次の手順を実行します。 タブの名前を変更するには、Windows PowerShell タブのスクリプト オブジェクトで [DisplayName](https://technet.microsoft.com/en-us/library/a9b58556-951b-4f48-b3ae-b351b7564360#Displayname) プロパティを設定します。
+Windows PowerShell でタブを開いたり閉じたりするには、次の手順を実行します。 タブの名前を変更するには、Windows PowerShell タブのスクリプト オブジェクトで [DisplayName](The-PowerShellTab-Object.md#Displayname) プロパティを設定します。
 
 ## 新しい PowerShell タブを作成して使用するには
 **[ファイル]** メニューで、**[PowerShell タブの新規作成]** をクリックします。 新しい PowerShell タブは、常にアクティブなウィンドウとして表示されます。 PowerShell のタブには、開かれた順に番号が付けられます。 各タブは、それぞれ独自の Windows PowerShell コンソール ウィンドウに関連付けられます。 独自のセッションを持つ PowerShell タブは、最大 32 個まで (Windows PowerShell ISE 2.0 では 8 個まで) を同時に開くことができます。
@@ -32,14 +39,15 @@ PowerShell タブをアクティブにするには、タブをクリックしま
 
 -   **[ファイル]** メニューの **[PowerShell タブを閉じる]** をクリックするか、アクティブなタブの閉じるボタン (**X**) をクリックして、タブを閉じます。
 
-閉じようとしている PowerShell タブに未保存のファイルがあると、そのファイルを保存するか破棄するかを求められます。 スクリプトを保存する方法の詳細については、「[スクリプトを保存する方法](https://technet.microsoft.com/en-us/library/162f594d-efd3-4234-9960-45e56e6eadc8)」を参照してください。.
+閉じようとしている PowerShell タブに未保存のファイルがあると、そのファイルを保存するか破棄するかを求められます。 スクリプトを保存する方法について詳しくは、「[スクリプトを保存する方法](https://technet.microsoft.com/library/162f594d-efd3-4234-9960-45e56e6eadc8)」をご覧ください。
 
 ## 参照
-[Windows PowerShell ISE の使用](Using-the-Windows-PowerShell-ISE.md)
-[Windows PowerShell ISE でコンソール ウィンドウを使用する方法](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE の使用](Using-the-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE でコンソール ウィンドウを使用する方法](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Sep16_HO3-->
 
 

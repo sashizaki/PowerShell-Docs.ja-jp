@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 387ebc0467b9f154444292f391af0f4b77123639
+ms.sourcegitcommit: f413ba6470985622e55bb4bd175d7c5d4b94c7d9
+ms.openlocfilehash: e545d49381a92ef3f7cc6a27316cbfc3a036a8c9
 
 ---
 
@@ -18,13 +18,18 @@ ms.openlocfilehash: 387ebc0467b9f154444292f391af0f4b77123639
 
 > 注意: この情報は暫定版であり、変更することがあります。
 
-##Pester 問題
+##Pester
 このリリースでは、Nano Server で Pester を利用するとき、2 つの問題に注意する必要があります。
 
-* Pester 自体にテストを実行すると、FULL CLR と CORE CLR の違いに起因し、エラーが発生します。 具体的には、Validate メソッドが XmlDocument 型で利用できません。 nunit 出力ログのスキーマの検証を試行するテストが 6 つあり、これでエラーが発生します。 
+* Pester 自体にテストを実行すると、FULL CLR と CORE CLR の違いに起因し、エラーが発生します。 具体的には、Validate メソッドが XmlDocument 型で利用できません。 NUnit 出力ログのスキーマの検証を試行するテストが 6 つありますが、これでエラーが発生することが確認されています。 
 * 現在、コード カバレッジの 1 つでエラーが発生します。*WindowsFeature* DSC リソースが Nano Server にないためです。 しかしながら、以上のエラーは一般的に無害であり、無視しても問題ありません。
 
+##操作検証 
 
-<!--HONumber=Jul16_HO3-->
+* Microsoft.PowerShell.Operation.Validation モジュールの場合、ヘルプ URI が動作しないため、Update-Help は失敗します。
+
+
+
+<!--HONumber=Sep16_HO3-->
 
 

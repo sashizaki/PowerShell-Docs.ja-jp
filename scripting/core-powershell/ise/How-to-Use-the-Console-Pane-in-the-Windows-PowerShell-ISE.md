@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 44d67705-87c7-4a69-a53e-6471fdebb757
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d48ea75b99ef3d20c3e180ccec7f35adf6290a63
+ms.sourcegitcommit: 117b3fe541b7a92479e9c68e07fa21fc8add9678
+ms.openlocfilehash: 4588577c0c05fadee6b443e2fa4c32049cf99ac3
 
 ---
 
 # Windows PowerShell ISE でコンソール ウィンドウを使用する方法
-Windows PowerShellÂ® Integrated Scripting Environment (ISE) のコンソール ウィンドウは、スタンドアロンの Windows PowerShell ISE コンソール ウィンドウとまったく同じ動作をします。
+Windows PowerShell® Integrated Scripting Environment (ISE) のコンソール ウィンドウは、スタンドアロンの Windows PowerShell ISE コンソール ウィンドウとまったく同じ動作をします。
 
 コンソール ウィンドウでコマンドを実行するには、コマンドを入力し、Enter キーを押します。 順番に実行する複数のコマンドを入力するには、コマンドとコマンドの間で SHIFT キーを押しながら ENTER キーを押します。 コマンドを入力する際の支援機能については、「[スクリプト ウィンドウとコンソール ウィンドウでタブ補完を使用する方法](How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md)」をご覧ください。
 
@@ -35,6 +35,6 @@ Windows PowerShell v3 以降で、出力ウィンドウがコンソール ウィ
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Sep16_HO3-->
 
 

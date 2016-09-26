@@ -2,8 +2,8 @@
 title: "PowerShell エンジンの機能強化"
 author: jasonsh
 translationtype: Human Translation
-ms.sourcegitcommit: 6813902aec214aee9ede27ff79dd291364e9f443
-ms.openlocfilehash: f864850128f118704d7545b09110835ab1d51b8e
+ms.sourcegitcommit: 47c963343c541d0f2ace194f365de5fcd809ccc5
+ms.openlocfilehash: 1b35a25312b44d14ec8771be9e17aaa43e270b61
 
 ---
 
@@ -28,7 +28,7 @@ ms.openlocfilehash: f864850128f118704d7545b09110835ab1d51b8e
 | コマンド分析キャッシュの構築: `powershell -command "Unknown-Command"` | 7000 | 520 |
 | <code>1..1000000 &#124; % { }</code> | 1400 | 750 |
   
-起動に関連する 1 つの変更が、一部の (サポートされていない) シナリオに影響を与える可能性があります。 PowerShell は `$pshome\*.ps1xml` ファイルを読み込まなくなりました。これらのファイルは、xml ファイルの処理でファイルと CPU にオーバーヘッドが発生しないよう、C# に変換されています。 これらのファイルは V2 のサイド バイ サイド インストールをサポートするためにまだ存在するので、ファイルの内容を変更した場合、V5 には影響がなく、影響を受けるのは V2 だけです。 これらのファイルの内容を変更するシナリオはサポートされていないことに注意してください。
+起動に関連する 1 つの変更が、一部の (サポートされていない) シナリオに影響を与える可能性があります。 PowerShell は `$pshome\*.ps1xml` ファイルを読み込まなくなりました。これらのファイルは、XML ファイルの処理でファイルと CPU にオーバーヘッドが発生しないよう、C# に変換されています。 これらのファイルは V2 のサイド バイ サイド インストールをサポートするためにまだ存在するので、ファイルの内容を変更した場合、V5 には影響がなく、影響を受けるのは V2 だけです。 これらのファイルの内容を変更するシナリオはサポートされていないことに注意してください。
 
 もう 1 つの明らかな変更は、システムにインストールされているモジュールのために PowerShell がエクスポートしたコマンドと他の情報をキャッシュするしくみです。 これまでは、このキャッシュは `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis` ディレクトリに保存されていました。 WMF 5.1 では、キャッシュは `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache` ファイル 1 つだけになっています。
 詳細については、「[analysis_cache.md]()」を参照してください。
@@ -49,7 +49,7 @@ WMF5.1 では、この動作が `$env:PSModulePath` を完全に受け入れる�
 
 ### ファイルのリダイレクトの非ハードコード化 `-Encoding Unicode` ###
 
-PowerShell のこれまでのすべてのバージョンでは、PowerShell が `-Encoding Unicode` を追加していたため、ファイル リダイレクト演算子 (`get-childitem > out.txt` など) によって使用されるファイル エンコードを制御できませんでした。
+PowerShell のこれまでのすべてのバージョンでは、PowerShell が `-Encoding Unicode` を追加していたため、ファイル リダイレクト演算子 (`Get-ChildItem > out.txt` など) によって使用されるファイル エンコードを制御できませんでした。
 
 WMF 5.1 からは、`$PSDefaultParameterValues` を設定することによってリダイレクトのファイル エンコードを変更できます。次に例を示します。
 
@@ -60,20 +60,20 @@ $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ### メンバーへのアクセスでのバグ再発の修正 `System.Reflection.TypeInfo` ###
 
 WMF5 で新しく発生したバグにより、`System.Reflection.RuntimeType` のメンバーにアクセスできませんでした (`[int].ImplementedInterfaces` など)。
-WMF5.1 ではこのバグが修正されています。
+WMF 5.1 ではこのバグが修正されています。
 
 
 ### COM オブジェクトでのいくつかの問題の修正 ###
 
 WMF5 では、COM オブジェクト上のメソッドを呼び出して COM オブジェクトのプロパティにアクセスする新しい COM バインダーが導入されました。
-この新しいバインダーによりパフォーマンスが大幅に向上しましたが、バグもいくつか含まれていました。WMF5.1 ではそれが修正されました。
+この新しいバインダーによりパフォーマンスが大幅に向上しましたが、バグもいくつか含まれていました。WMF 5.1 ではそれが修正されました。
 
 #### 引数の変換が正常に実行されないことがあった ####
 
 次に例を示します。
 
 ```
-$obj = new-object -com wscript.shell
+$obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
@@ -100,7 +100,7 @@ $x = Get-COMDictionary
 
 ### `[ordered]` がクラス内で許可されなかった ###
 
-WMF5 では、クラスで使用されるリテラル形を検証するクラスが導入されました。  `[ordered]` はリテラル形のように見えますが、真の .Net 型ではありません。  WMF5 は、クラスの内の `[ordered]` で誤ってエラーを報告しました。
+WMF5 では、クラスで使用されるリテラル形を検証するクラスが導入されました。  `[ordered]` はリテラル形のように見えますが、真の .NET 型ではありません。  WMF5 は、クラスの内の `[ordered]` で誤ってエラーを報告しました。
 
 ```
 class CThing
@@ -123,6 +123,6 @@ Get-Help には、必要なバージョンを指定する方法がありませ�
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Sep16_HO3-->
 
 
