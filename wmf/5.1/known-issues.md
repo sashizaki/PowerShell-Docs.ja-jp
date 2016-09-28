@@ -9,14 +9,18 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: f413ba6470985622e55bb4bd175d7c5d4b94c7d9
-ms.openlocfilehash: e545d49381a92ef3f7cc6a27316cbfc3a036a8c9
+ms.sourcegitcommit: 3dde62efa7ba595ed5160cc81b4e2b17a54e52a2
+ms.openlocfilehash: d4c9e88ddd6cfaec611527d19d00cbd4db9f5d1d
 
 ---
 
 #WMF 5.1 (プレビュー) の既知の問題 #
 
 > 注意: この情報は暫定版であり、変更することがあります。
+
+##PowerShell ショートカットを管理者として起動する
+WMF がインストールされている場合に、管理者としてショートカットから PowerShell を起動しようとすると、"未定義のエラー" メッセージが表示されることがあります。
+管理者以外でショートカットを開きなおすと、その後は管理者でも動作するようになります。
 
 ##Pester
 このリリースでは、Nano Server で Pester を利用するとき、2 つの問題に注意する必要があります。
@@ -30,6 +34,6 @@ ms.openlocfilehash: e545d49381a92ef3f7cc6a27316cbfc3a036a8c9
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Sep16_HO4-->
 
 
