@@ -2,6 +2,6 @@
 問題点の報告やフィードバックには、[PowerShell UserVoice のサイト](http://windowsserver.uservoice.com/forums/301869-powershell)をご利用ください。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

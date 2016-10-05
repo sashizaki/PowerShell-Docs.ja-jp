@@ -4,6 +4,6 @@ DSC 構成の状態について詳細な情報を、DSC サービスを実行し
 
 詳細については、「[DSC レポート サーバーの使用](https://msdn.microsoft.com/powershell/dsc/reportserver)」を参照してください。
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

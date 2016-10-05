@@ -4,6 +4,6 @@
 
 詳細については、「[構成 ID を使用したプル クライアントのセットアップ](https://msdn.microsoft.com/powershell/dsc/pullclientconfigid)」または「[構成名を使用したプル クライアントのセットアップ](https://msdn.microsoft.com/powershell/dsc/pullclientconfignames)」を参照してください。
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

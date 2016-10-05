@@ -1,7 +1,7 @@
 ---
 title: "DSC リソース"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: PowerShell, DSC
 description: 
 ms.topic: article
 author: eslesar
@@ -30,6 +30,6 @@ Desired State Configuration (DSC) リソースは、DSC 構成の構成要素を
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

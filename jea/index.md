@@ -1,5 +1,5 @@
 # Open Publishing 用のインデックス テスト ファイル
 
-<!--HONumber=Jul16_HO5-->
+<!--HONumber=Aug16_HO3-->
 
 

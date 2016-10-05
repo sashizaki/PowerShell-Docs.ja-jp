@@ -1,7 +1,7 @@
 ---
 title: "DSC レポート サーバーの使用"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: PowerShell, DSC
 description: 
 ms.topic: article
 author: eslesar
@@ -230,6 +230,6 @@ InDesiredState    : True
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

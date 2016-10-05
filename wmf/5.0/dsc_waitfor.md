@@ -4,6 +4,6 @@
 
 詳細については、「[ノードの相互依存関係の指定](https://msdn.microsoft.com/powershell/dsc/crossnodedependencies)」を参照してください。
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

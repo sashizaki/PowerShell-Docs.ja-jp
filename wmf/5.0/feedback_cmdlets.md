@@ -2,6 +2,6 @@
 [Connect](https://connect.microsoft.com/powershell) 経由で寄せられたコミュニティからのフィードバックに基づいて、Microsoft ではいくつかの新しいユーティリティ コマンドレットを追加し、既存のコマンドレットを更新しました。 Microsoft では、今後もフィードバックを精査し、可能な限り皆様のご要望にお応えしてまいります。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 
