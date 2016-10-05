@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 221b8095c15a810c032bd93aafe8ec886af233d9
+ms.sourcegitcommit: 749c1ca8bc617014dffacecce7d14a55adc38036
+ms.openlocfilehash: 2a17fdd4092adf734398f38bec915d53c1b3e566
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: 221b8095c15a810c032bd93aafe8ec886af233d9
 
 ## PowerShell コンソールの機能強化
 
-コンソールのエクスペリエンスを改善するため、WMF 5.1 の Powershell.exe が次のように変更されました。
+コンソールのエクスペリエンスを改善するため、WMF 5.1 の powershell.exe が次のように変更されました。
 
 ###VT100 のサポート
 
@@ -51,12 +51,12 @@ VT100 エスケープ シーケンスは、Windows 10 Anniversary 更新以降�
 
 以前のバージョンでは、stdin がリダイレクトされ、コマンドを対話的に入力するときは、PowerShell を `powershell -File -` で起動する必要がありました。
 
-WMF 5.1 では、この見つけにくいオプションは不要になり、`powershell` といったオプションを何も使わずに PowerShell を起動できます。
+WMF 5.1 では、この見つけにくいオプションは不要になりました。 `powershell` のようなオプションを何も使わずに PowerShell を起動できます。
 
-PSReadline は現在はリダイレクトされた stdin をサポートせず、リダイレクトされた stdin での組み込みコマンド ライン編集エクスペリエンスは非常に限られたものであることに注意してください (たとえば、方向キーは機能しません)。  PSReadline の将来のリリースではこの問題が対処されるはずです。   
+PSReadline は現在はリダイレクトされた stdin をサポートせず、リダイレクトされた stdin での組み込みコマンド ライン編集エクスペリエンスは非常に限られたものであることに注意してください (たとえば、方向キーは機能しません)。 PSReadline の将来のリリースではこの問題が対処されるはずです。   
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

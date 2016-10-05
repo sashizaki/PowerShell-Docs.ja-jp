@@ -4,7 +4,7 @@ manager: dongill
 ms.topic: article
 author: jpjofre
 ms.prod: powershell
-keywords: powershell,cmdlet,jea
+keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "前提条件"
 ms.technology: powershell
@@ -129,6 +129,6 @@ Register-PSSessionConfiguration -Name $sessionName -Path "$env:ProgramData\JEACo
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

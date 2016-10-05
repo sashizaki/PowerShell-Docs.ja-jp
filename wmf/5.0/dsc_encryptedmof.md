@@ -11,6 +11,6 @@
 この暗号化は、構成 MOF ドキュメント (pending.mof、current.mof、previous.mof、および部分的な MOF) にのみ適用されます。 シークレットが含まれる可能性が低いため、メタ構成 MOF は引き続きプレーン テキストに保存されます。
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -11,6 +11,6 @@ PowerShell の新しい Desired State Configuration 機能や、今回のリリ�
 PsDesiredStateConfiguration モジュールのバージョンが 1.1 に更新されました。 WMF 5.0 Preview Feb 2015 またはそれより前のバージョンでコンパイルした DSC 構成は、PowerShell/WMF 5.0 では機能しません。 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

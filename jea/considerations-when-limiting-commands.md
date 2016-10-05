@@ -4,7 +4,7 @@ manager: dongill
 ms.topic: article
 author: jpjofre
 ms.prod: powershell
-keywords: powershell,cmdlet,jea
+keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "コマンドの制限時の考慮事項"
 ms.technology: powershell
@@ -25,6 +25,6 @@ JEA を通じて公開されるすべての機能は、管理者によって制�
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

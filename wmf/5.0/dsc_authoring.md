@@ -10,6 +10,6 @@ Windows PowerShell ISE での DSC 構成のオーサリングが、はるかに�
 **注:** Ctrl+Space を使ってオプションを一覧表示するには、リソース プロパティ値に空の文字列が必要です。 **タブ**を押して、オプションを順番に切り替えます。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,7 +4,7 @@ manager: dongill
 ms.topic: article
 author: jpjofre
 ms.prod: powershell
-keywords: powershell,cmdlet,jea
+keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "ドメイン コントローラーの作成"
 ms.technology: powershell
@@ -138,6 +138,6 @@ Add-ADGroupMember -Identity $NonAdminHelpDeskGroup -Members $HelpDeskUser
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

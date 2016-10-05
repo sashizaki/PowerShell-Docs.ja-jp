@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 90d57af0c8b90e709769525455ae39557b9c7176
+ms.sourcegitcommit: be3659b02cb1bc58cc13aa9d8f92946b2afa37b1
+ms.openlocfilehash: 8a7774b36f15ff790c31d4c1a8bc69be257b8508
 
 ---
 
@@ -28,9 +28,9 @@ WMF 5.1 では、この動作が `$env:PSModulePath` を完全に受け入れる
 
 ### ファイルのリダイレクトの非ハードコード化 `-Encoding Unicode` ###
 
-PowerShell のこれまでのすべてのバージョンでは、PowerShell が `-Encoding Unicode` を追加していたため、ファイル リダイレクト演算子 (`get-childitem > out.txt` など) によって使用されるファイル エンコードを制御できませんでした。
+PowerShell のこれまでのすべてのバージョンでは、PowerShell が `-Encoding Unicode` を追加していたため、ファイル リダイレクト演算子 (`Get-ChildItem > out.txt` など) によって使用されるファイル エンコードを制御できませんでした。
 
-WMF 5.1 からは、`$PSDefaultParameterValues` を設定することによってリダイレクトのファイル エンコードを変更できます。次に例を示します。
+WMF 5.1 からは、`$PSDefaultParameterValues` を設定することによってリダイレクトのファイル エンコードを変更できます。
 
 ```
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
@@ -39,20 +39,19 @@ $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ### メンバーへのアクセスでのバグ再発の修正 `System.Reflection.TypeInfo` ###
 
 WMF 5.0 で新しく発生したバグにより、`System.Reflection.RuntimeType` のメンバーにアクセスできませんでした (`[int].ImplementedInterfaces` など)。
-WMF5.1 ではこのバグが修正されています。
+WMF 5.1 ではこのバグが修正されています。
 
 
 ### COM オブジェクトでのいくつかの問題の修正 ###
 
-WMF 5.0 では、COM オブジェクト上のメソッドを呼び出して COM オブジェクトのプロパティにアクセスする新しい COM バインダーが導入されました。
-この新しいバインダーによりパフォーマンスが大幅に向上しましたが、バグもいくつか含まれていました。WMF5.1 ではそれが修正されました。
+WMF 5.0 では、COM オブジェクト上のメソッドを呼び出して COM オブジェクトのプロパティにアクセスする新しい COM バインダーが導入されました。 この新しいバインダーによりパフォーマンスが大幅に向上しましたが、バグもいくつか含まれていました。WMF 5.1 ではそれが修正されました。
 
 #### 引数の変換が正常に実行されないことがあった ####
 
 次に例を示します。
 
 ```
-$obj = new-object -com wscript.shell
+$obj = New-Object -ComObject WScript.Shell
 $obj.SendKeys([char]173)
 ```
 
@@ -74,13 +73,14 @@ function Get-COMDictionary
 $x = Get-COMDictionary
 ```
 
-上の例の WMF 5.0 は、キーと値のペアを列挙するのではなく、Scripting.Dictionary をパイプラインに誤って書き込みます。
+上の例では、WMF 5.0 が、キーと値のペアを列挙せずに、誤って Scripting.Dictionary をパイプラインに書き込みます。
 
 この変更は、[Connect の問題 1752224](https://connect.microsoft.com/PowerShell/feedback/details/1752224) も解消します。
 
 ### `[ordered]` がクラス内で許可されなかった ###
 
-WMF5 では、クラスで使用されるリテラル形を検証するクラスが導入されました。  `[ordered]` はリテラル形のように見えますが、真の .Net 型ではありません。  WMF5 は、クラスの内の `[ordered]` で誤ってエラーを報告しました。
+WMF 5.0 では、クラスで使用されるリテラル形を検証するクラスが導入されました。  
+`[ordered]` はリテラル形のように見えますが、真の .NET 型ではありません。 WMF 5.0 は、クラスの内の `[ordered]` で誤ってエラーを報告しました。
 
 ```
 class CThing
@@ -99,10 +99,10 @@ WMF 5.1 より前では、複数のバージョンのモジュールがインス
 
 WMF 5.1 では、最新バージョンのトピックのヘルプを返すことでこれが解決されています。
 
-Get-Help では、必要なヘルプのバージョンを指定する方法はありません。 これを回避するには、モジュール ディレクトリに移動し、好みのエディターなどのツールで直接ヘルプを表示します。 
+`Get-Help` では、必要なヘルプのバージョンを指定する方法はありません。 これを回避するには、モジュール ディレクトリに移動し、好みのエディターなどのツールで直接ヘルプを表示します。 
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

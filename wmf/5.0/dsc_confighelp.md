@@ -4,6 +4,6 @@ DSC 構成内のコメント ベースのヘルプを使用して、`-?` を使�
 
 詳細については、「[DSC 構成のヘルプの作成](https://msdn.microsoft.com/powershell/dsc/confighelp)」を参照してください。
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

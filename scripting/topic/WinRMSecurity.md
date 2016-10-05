@@ -1,5 +1,5 @@
 ---
-title: WinRMSecurity
+title: WinRMSecurityRedirect
 ms.date: 2016-05-11
 keywords: "PowerShell, コマンドレット"
 description: 
@@ -7,9 +7,10 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
+redirect_url: https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity
 translationtype: Human Translation
-ms.sourcegitcommit: 67ef350559f9b3d17232f3c93d67634b3e939c60
-ms.openlocfilehash: b1addddd50368fadcbb2581673d3ebc7cad8e32a
+ms.sourcegitcommit: afa259b8611f995bbf5b824179a12e3d8f15df86
+ms.openlocfilehash: 207792452c563ec6cca5c17fbcd122372442d8ac
 
 ---
 
@@ -19,7 +20,7 @@ PowerShell リモート処理は、Windows システムの管理に推奨され�
 
 ## PowerShell リモート処理とは
 
-PowerShell リモート処理は、[Windows リモート管理 (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx) を使用しています。これは、ユーザーがリモート コンピューター上で PowerShell コマンドを実行できるように、Microsoft によって [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) プロトコルが実装されたものです。 PowerShell リモート処理の使用方法の詳細については、「[リモート コマンドの実行](https://technet.microsoft.com/en-us/library/dd819505.aspx)」を参照してください。
+PowerShell リモート処理は、[Windows リモート管理 (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx) を使用しています。これは、ユーザーがリモート コンピューター上で PowerShell コマンドを実行できるように、Microsoft によって [Web Services for Managment (WS-Managment)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) プロトコルが実装されたものです。 PowerShell リモート処理の使用方法の詳細については、「[リモート コマンドの実行](https://technet.microsoft.com/en-us/library/dd819505.aspx)」を参照してください。
 
 PowerShell リモート処理は、コマンドレットの **ComputerName** パラメーターを使用してリモート コンピューターでコマンドを実行することとは異なります。この場合は、基盤となるプロトコルとしてリモート プロシージャ コール (RPC) が使用されています。
 
@@ -62,7 +63,7 @@ Kerberos では、再利用可能な資格情報を送信しなくても、ユ�
       
 一方、NTLM プロトコルでは、サーバー ID が保証されません。 ドメインに参加しているコンピューターのコンピューター アカウントにアクセスできる攻撃者は、認証に NTLM を使用するプロトコルと同様にドメイン コントローラーを呼び出して NTLM セッション キーを計算することで、サーバーになりすます場合があります。
 
-NTLM ベースの認証は既定では無効になっていますが、ターゲット サーバーで SSL を構成するか、クライアントで WinRM TrustedHosts 設定を構成することで許可できます。
+NTLM ベースの認証は既定では無効になっていますが、ターゲット サーバーで SSL を構成するか、WinRM TrustedHosts 設定を構成することで許可できます。
     
 #### NTLM ベースの接続時に SSL 証明書を使用してサーバー ID を検証する
 

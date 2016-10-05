@@ -1,7 +1,7 @@
 ---
 title: "Windows PowerShell Desired State Configuration の組み込みリソース"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: PowerShell, DSC
 description: 
 ms.topic: article
 author: eslesar
@@ -35,6 +35,6 @@ Windows PowerShell Desired State Configuration (DSC) には、一連の組み込
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

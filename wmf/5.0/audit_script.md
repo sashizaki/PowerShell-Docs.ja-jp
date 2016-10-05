@@ -98,6 +98,6 @@ $mergedScript = -join ($sortedScripts | % { $_.Properties[2].Value })
 保持するバッファーが限られているすべてのログ システム (ETW ログなど) の場合と同様、このインフラストラクチャに対して、正しくないイベントでログを溢れさせて以前の証拠を隠す攻撃が行われる場合があります。 この攻撃から保護するには、何らかの形式のイベント ログ収集が設定されていることを確認し (つまり、Windows イベント転送、「[Spotting the Adversary with Windows Event Log Monitoring (Windows イベント ログ監視による敵対者の偵察)](http://www.nsa.gov/ia/_files/app/Spotting_the_Adversary_with_Windows_Event_Log_Monitoring.pdf)」)、できるだけ早くコンピューターからイベント ログを移動します。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -10,6 +10,6 @@ LCM 状態に関する詳細情報を公開する機能が強化されました�
 また、状態に関するさらに詳細な情報を含む LCMStateDetail プロパティも追加されました。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

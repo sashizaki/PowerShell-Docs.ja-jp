@@ -1,15 +1,15 @@
 ---
 title: "PowerShell Desired State Configuration の部分構成"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: PowerShell, DSC
 description: 
 ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: ede565ef23c36a195f137e9949b215c6632a7e26
-ms.openlocfilehash: 9e3052353dd54568eb2dfaf5af5efde7faafd03a
+ms.sourcegitcommit: 0e830804616ff23412e0d6ff69c38e2ea20228e5
+ms.openlocfilehash: c5d3cb1045e67d4913fbbad13938e8f95a43cacf
 
 ---
 
@@ -34,9 +34,9 @@ configuration PartialConfigDemo
     Node localhost
     {
         
-           PartialConfiguration OSInstall
+           PartialConfiguration ServiceAccountConfig
         {
-            Description = 'Configuration for the Base OS'
+            Description = 'Configuration to add the SharePoint service account to the Administrators group.'
             RefreshMode = 'Push'
         }
            PartialConfiguration SharePointConfig
@@ -49,7 +49,7 @@ configuration PartialConfigDemo
 PartialConfigDemo 
 ```
 
-各部分構成の **RefreshMode** は、"Push" に設定されています。 **PartialConfiguration** ブロックの名前 (この例では "OSInstall" と "SharePointConfig") はターゲット ノードにプッシュされる構成の名前と正確に一致する必要があります。
+各部分構成の **RefreshMode** は、"Push" に設定されています。 **PartialConfiguration** ブロックの名前 (この例では "ServiceAccountConfig" と "SharePointConfig") はターゲット ノードにプッシュされる構成の名前と正確に一致する必要があります。
 
 ### プッシュ モードの部分構成の公開および開始
 ![PartialConfig フォルダー構造](./images/PartialConfig1.jpg)
@@ -85,12 +85,12 @@ Configuration PartialConfigDemoConfigNames
         {
             ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'    
             RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38     
-            ConfigurationNames              = @("OSInstall", "SharePointConfig")
+            ConfigurationNames              = @("ServiceAccountConfig", "SharePointConfig")
         }     
         
-        PartialConfiguration Part1 
+        PartialConfiguration ServiceAccountConfig 
         {
-            Description                     = "OSInstall"
+            Description                     = "ServiceAccountConfig"
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv") 
         }
  
@@ -98,7 +98,7 @@ Configuration PartialConfigDemoConfigNames
         {
             Description                     = "SharePointConfig"
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
-            DependsOn                       = '[PartialConfiguration]OSInstall'
+            DependsOn                       = '[PartialConfiguration]ServiceAccountConfig'
         }
    
 }
@@ -125,7 +125,7 @@ configuration PartialConfigDemoConfigID
             
         }
         
-           PartialConfiguration OSInstall
+           PartialConfiguration ServiceAccountConfig
         {
             Description                     = 'Configuration for the Base OS'
             ConfigurationSource             = '[ConfigurationRepositoryWeb]CONTOSO-PullSrv'
@@ -135,7 +135,7 @@ configuration PartialConfigDemoConfigID
         {
             Description                     = 'Configuration for the Sharepoint Server'
             ConfigurationSource             = '[ConfigurationRepositoryWeb]CONTOSO-PullSrv'
-            DependsOn                       = '[PartialConfiguration]OSInstall'
+            DependsOn                       = '[PartialConfiguration]ServiceAccountConfig'
             RefreshMode                     = 'Pull'
         }
     }
@@ -143,7 +143,7 @@ configuration PartialConfigDemoConfigID
 PartialConfigDemo 
 ```
 
-複数のプル サーバーから部分構成をプルすることができます。このためには、各プル サーバーを定義し、各 PartialConfiguration ブロックで適切なプル サーバーを参照することのみが必要となります。
+複数のプル サーバーから部分構成をプルすることができます。このためには、各プル サーバーを定義し、各 **PartialConfiguration** ブロックで適切なプル サーバーを参照することのみが必要となります。
 
 メタ構成を作成したら、実行して、構成ドキュメント (MOF ファイル) を作成し、[Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621(v=wps.630).aspx) を呼び出して LCM を構成する必要があります。
 
@@ -152,8 +152,8 @@ PartialConfigDemo
 部分構成ドキュメントは、プル サーバーの `web.config` ファイルで **ConfigurationPath** として指定されたフォルダーに配置する必要があります (通常 `C:\Program Files\WindowsPowerShell\DscService\Configuration`)。 構成ドキュメントは次のように名前を付ける必要があります。_ConfigurationName_ が部分構成の名前である場合、`ConfigurationName.mof` です。 この例では、構成ドキュメントの名前は次のようになります。
 
 ```
-OSInstall.mof
-OSInstall.mof.checksum
+ServiceAccountConfig.mof
+ServiceAccountConfig.mof.checksum
 SharePointConfig.mof
 SharePointConfig.mof.checksum
 ```
@@ -163,8 +163,8 @@ SharePointConfig.mof.checksum
 部分構成ドキュメントは、プル サーバーの `web.config` ファイルで **ConfigurationPath** として指定されたフォルダーに配置する必要があります (通常 `C:\Program Files\WindowsPowerShell\DscService\Configuration`)。 構成ドキュメントは次のように名前を付ける必要があります。_ConfigurationName_. _ConfigurationID_`.mof`。ここで _ConfigurationName_ は部分構成の名前であり、_ConfigurationID_ はターゲット ノードの LCM で定義されている構成 ID です。 この例では、構成ドキュメントの名前は次のようになります。
 
 ```
-OSInstall.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
-OSInstall.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
+ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
+ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
 SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
 SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
 ```
@@ -177,7 +177,7 @@ SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
 
 ## プッシュとプルの混在モードでの部分構成
 
-部分構成のプッシュ モードとプル モードを混在させることができます。 つまり、プル サーバーからプルされた部分構成とプッシュされた別の部分構成を持つことができます。 それぞれの部分構成は、前のセクションで説明したように、更新モードに応じて扱います。 たとえば、次のメタ構成では、プル モードのオペレーティング システムの部分構成とプッシュ モードの SharePoint 部分構成がある同じ例が記述されています。
+部分構成のプッシュ モードとプル モードを混在させることができます。 つまり、プル サーバーからプルされた部分構成とプッシュされた別の部分構成を持つことができます。 それぞれの部分構成は、前のセクションで説明したように、更新モードに応じて扱います。 たとえば、次のメタ構成では、プル モードのサービス アカウントの部分構成とプッシュ モードの SharePoint 部分構成がある同じ例が記述されています。
 
 ### ConfigurationNames を使用したプッシュとプルの混在モード
 
@@ -198,12 +198,12 @@ Configuration PartialConfigDemoConfigNames
         {
             ServerURL                       = 'https://CONTOSO-PullSrv:8080/PSDSCPullServer.svc'    
             RegistrationKey                 = 5b41f4e6-5e6d-45f5-8102-f2227468ef38     
-            ConfigurationNames              = @("OSInstall", "SharePointConfig")
+            ConfigurationNames              = @("ServiceAccountConfig", "SharePointConfig")
         }     
         
-        PartialConfiguration OSInstall 
+        PartialConfiguration ServiceAccountConfig 
         {
-            Description                     = "OSInstall"
+            Description                     = "ServiceAccountConfig"
             ConfigurationSource             = @("[ConfigurationRepositoryWeb]CONTOSO-PullSrv")
             RefreshMode                     = 'Pull' 
         }
@@ -211,7 +211,7 @@ Configuration PartialConfigDemoConfigNames
         PartialConfiguration SharePointConfig
         {
             Description                     = "SharePointConfig"
-            DependsOn                       = '[PartialConfiguration]OSInstall'
+            DependsOn                       = '[PartialConfiguration]ServiceAccountConfig'
             RefreshMode                     = 'Push'
         }
    
@@ -239,7 +239,7 @@ configuration PartialConfigDemo
             
         }
         
-           PartialConfiguration OSInstall
+           PartialConfiguration ServiceAccountConfig
         {
             Description             = 'Configuration for the Base OS'
             ConfigurationSource     = '[ConfigurationRepositoryWeb]CONTOSO-PullSrv'
@@ -248,7 +248,7 @@ configuration PartialConfigDemo
            PartialConfiguration SharePointConfig
         {
             Description             = 'Configuration for the Sharepoint Server'
-            DependsOn               = '[PartialConfiguration]OSInstall'
+            DependsOn               = '[PartialConfiguration]ServiceAccountConfig'
             RefreshMode             = 'Push'
         }
     }
@@ -256,14 +256,14 @@ configuration PartialConfigDemo
 PartialConfigDemo 
 ```
 
-なお、Settings ブロックで指定されている **RefreshMode** は "Pull" ですが、OSInstall 部分構成の **RefreshMode** は "Push" です。
+なお、Settings ブロックで指定されている **RefreshMode** は "Pull" ですが、SharePointConfig 部分構成の **RefreshMode** は "Push" です。
 
-それぞれの更新モードの前述の説明に従って、構成 MOF ファイルの名前付けおよび配置を行います。 **Publish-DSCConfiguration** を呼び出して、`SharePointInstall`部分構成を公開し、`OSInstall`構成がプル サーバーからプルされることを待機するか、または [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx) を呼び出して強制的に更新します。
+それぞれの更新モードの前述の説明に従って、構成 MOF ファイルの名前付けおよび配置を行います。 **Publish-DSCConfiguration** を呼び出して、`SharePointConfig`部分構成を公開し、`ServiceAccountConfig`構成がプル サーバーからプルされることを待機するか、または [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx) を呼び出して強制的に更新します。
 
-## OSInstall 部分構成の例
+## ServiceAccountConfig 部分構成の例
 
 ```powershell
-Configuration OSInstall
+Configuration ServiceAccountConfig
 {
     Param (
         [Parameter(Mandatory,
@@ -294,7 +294,7 @@ Configuration OSInstall
         }
     }
 }
-OSInstall
+ServiceAccountConfig
 
 ```
 ## SharePointConfig 部分構成の例
@@ -324,12 +324,13 @@ SharePointConfig
 ##参照 
 
 **概念**
-[Windows PowerShell Desired State Configuration プル サーバーに関するページ](pullServer.md) 
-[Windows でのローカル構成マネージャーの構成に関するページ](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
+[Windows PowerShell Desired State Configuration プル サーバー](pullServer.md) 
+
+[ローカル構成マネージャーの構成](https://technet.microsoft.com/en-us/library/mt421188.aspx) 
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 
