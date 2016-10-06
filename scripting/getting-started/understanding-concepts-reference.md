@@ -1,3 +1,18 @@
+---
+title: "概念の理解に関するリファレンス"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 119b4d50423498e08383f02e56ae76653d06e555
+ms.openlocfilehash: e3cac149d549400b6a180b4a4fd6ff1a13a8130b
+
+---
+
 # 概念について
 
 *  PowerShell のオブジェクト  
@@ -18,6 +33,8 @@
 *  ヘルプの更新 
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Sep16_HO5-->
 
 
