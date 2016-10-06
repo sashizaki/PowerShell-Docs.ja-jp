@@ -1,7 +1,7 @@
 ---
 title: "MSFT_DSCLocalConfigurationManager クラスの RemoveConfiguration メソッド"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: PowerShell, DSC
 description: 
 ms.topic: article
 author: eslesar
@@ -35,7 +35,7 @@ uint32 RemoveConfiguration(
 
 |値 |説明 |
 |:--- |:---|
-|**1** | **現在**の構成ドキュメント (current.mof)。 |
+|**1 で保護されたプロセスとして起動されました** | **現在**の構成ドキュメント (current.mof)。 |
 |**2** | **保留中**の構成ドキュメント (pending.mof)。  |
 |**4** | **以前**の構成ドキュメント (previous.mof)。 |
 
@@ -73,6 +73,6 @@ uint32 RemoveConfiguration(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

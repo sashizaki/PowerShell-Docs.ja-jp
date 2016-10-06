@@ -1,7 +1,7 @@
 ---
 title: "PowerShell 50 ISE の新機能"
 ms.date: 2016-05-11
-keywords: powershell,cmdlet
+keywords: "PowerShell, コマンドレット"
 description: 
 ms.topic: article
 author: jpjofre
@@ -236,6 +236,6 @@ Windows PowerShell での Windows PowerShell ISE の使用に関する詳細に�
 
 
 
-<!--HONumber=Jul16_HO2-->
+<!--HONumber=Aug16_HO3-->
 
 

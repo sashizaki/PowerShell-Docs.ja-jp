@@ -4,7 +4,7 @@ manager: dongill
 ms.topic: article
 author: jpjofre
 ms.prod: powershell
-keywords: powershell,cmdlet,jea
+keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "複数のコンピューターの展開と保守"
 ms.technology: powershell
@@ -69,6 +69,6 @@ Unregister-PSSessionConfiguration -Name JEADemo
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

@@ -4,7 +4,7 @@ manager: dongill
 ms.topic: article
 author: jpjofre
 ms.prod: powershell
-keywords: powershell,cmdlet,jea
+keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "ブラックリストへの登録"
 ms.technology: powershell
@@ -36,6 +36,6 @@ JEA を通じて公開するコマンドの機能はご自身で把握してい�
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

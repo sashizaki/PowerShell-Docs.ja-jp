@@ -1,12 +1,19 @@
 ---
-title: Microsoft.PowerShell.Host モジュール
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Microsoft.PowerShell.Host モジュール"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 580a896f-b1dc-46f9-af1d-ab1a93c1fbf4
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 10dff4577e717b2c74604515f7fa696dc7fb996b
+
 ---
+
 # Microsoft.PowerShell.Host モジュール
 このセクションには、**Microsoft.PowerShell.Host** モジュールのヘルプ トピックが含まれています。 **Microsoft.PowerShell.Host** モジュールには、Windows PowerShell をホストするプログラムの機能を管理するコマンドレットが含まれています。 これは Windows PowerShell と共にインストールされます。
 
@@ -20,6 +27,7 @@ ms.assetid: 580a896f-b1dc-46f9-af1d-ab1a93c1fbf4
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

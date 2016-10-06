@@ -11,6 +11,6 @@
 ソフトウェア インベントリ ログ コマンドレットの詳細およびドキュメントについては、Windows Server 2012 R2 のオンライン リソース (<http://technet.microsoft.com/library/dn383584.aspx>) をご覧ください。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

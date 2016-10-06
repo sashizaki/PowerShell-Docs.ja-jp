@@ -1,7 +1,7 @@
 ---
 title: "MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: PowerShell, DSC
 description: 
 ms.topic: article
 author: eslesar
@@ -70,6 +70,6 @@ uint32 GetConfigurationResultOutput(
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

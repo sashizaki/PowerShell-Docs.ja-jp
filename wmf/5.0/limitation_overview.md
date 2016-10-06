@@ -99,6 +99,6 @@ WMF 5.0 のインストール後に Sysprep が失敗する
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

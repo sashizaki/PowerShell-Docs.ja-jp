@@ -4,13 +4,13 @@ ms.date: 2016-07-27
 keywords: PowerShell, DSC, WMF
 description: 
 ms.topic: article
-author: keithb
+author: jkeithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 5eb9eae6257cdb57f4f778b5dddf5aa7ef9d10bb
-ms.openlocfilehash: 12f2c084ab92134b733ee037c3d9fbd512af2e4c
+ms.sourcegitcommit: ebbd7d4d39cd335d994dd6cd3a06dd644df6d919
+ms.openlocfilehash: 83061e651b190bab3e5914bb6270a5857f7aa7a5
 
 ---
 
@@ -27,7 +27,7 @@ WMF 5.1 プレビューには、Windows Server 2016 でリリースされる Pow
 
 **重要な注意事項:**
 
-- **WMF 5.1 プレビューでは Windows Management Framework 4.6 を必要とします**。 .Net 4.6 がインストールされていない場合、インストールは成功しますが、主な機能は失敗します。 手順については、トピック「[WMF 5.1 のインストールと構成 (プレビュー)](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/install-configure)」を参照してください。 
+- **WMF 5.1 プレビューには .NET Framework 4.6 が必要です**。 .NET 4.6 がインストールされていない場合、インストールは成功しますが、主な機能は失敗します。 手順については、トピック「[WMF 5.1 のインストールと構成 (プレビュー)](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/install-configure)」を参照してください。 
 - 現時点で、**WMF 5.1 プレビューは、運用環境での展開がサポートされていません**。 このプレビューの目的は、リリースに組み込まれる機能について事前情報を紹介し、PowerShell チームにフィードバックする機会をユーザーに提供することにあります。
 - WMF 5.1 プレビューは、WMF 5.0 経由で直接インストールしてもかまいません。
 - 既知の問題として、Windows 7 および Windows Server 2008 に WMF 5.1 プレビューをインストールするには、現時点では WMF 4.0 が必要です。 この要件は、最終リリースの発行前に削除する予定です。
@@ -35,6 +35,7 @@ WMF 5.1 プレビューには、Windows Server 2016 でリリースされる Pow
 
 
 
-<!--HONumber=Jul16_HO5-->
+
+<!--HONumber=Aug16_HO3-->
 
 

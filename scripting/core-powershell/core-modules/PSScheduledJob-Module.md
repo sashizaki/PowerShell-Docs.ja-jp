@@ -1,12 +1,19 @@
 ---
-title: PSScheduledJob モジュール
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "PSScheduledJob モジュール"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 9ab43b8d-3f4d-48fe-a274-9116f1bc4b60
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 1583fba47d9a709500e3cd678e2e0c27b2777a7d
+
 ---
+
 # PSScheduledJob モジュール
 このセクションには、Windows PowerShell でスケジュール済みジョブを管理する **PSScheduledJob** モジュールのヘルプ トピックが含まれています。 このモジュールは、Windows PowerShell と共にインストールされます。
 
@@ -28,6 +35,7 @@ ms.assetid: 9ab43b8d-3f4d-48fe-a274-9116f1bc4b60
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

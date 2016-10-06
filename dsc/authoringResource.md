@@ -1,7 +1,7 @@
 ---
 title: "カスタム Windows PowerShell Desired State Configuration のビルド"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: PowerShell, DSC
 description: 
 ms.topic: article
 author: eslesar
@@ -32,6 +32,6 @@ DSC リソースは、Windows PowerShell モジュールです。 モジュー�
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

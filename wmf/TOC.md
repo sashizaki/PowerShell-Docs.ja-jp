@@ -5,7 +5,7 @@
 ### [Desired State Configuration (DSC) の機能強化](5.1/DSC-improvements.md)
 ### [PowerShell コンソールの機能強化](5.1/console-improvements.md)
 ### [PowerShell エンジンの機能強化](5.1/engine-improvements.md)
-### [パッケージ管理の機能強化](5/1/package-management-improvements.md)
+### [パッケージ管理の機能強化](5.1/package-management-improvements.md)
 ### [WMF 5.1 で修正されたバグ](5.1/bugfixes.md)
 ## [インストールと構成](5.1/install-configure.md)
 ## [の既知の問題](5.1/known-issues.md)
@@ -34,7 +34,7 @@
 ##### [DSC 構成に関するヘルプ サポート](5.0/dsc_confighelp.md)
 ##### [PowerShell ISE を使ったオーサリングの強化](5.0/dsc_authoring.md)
 ##### [構成における同一重複リソースの許容](5.0/dsc_identicalduplicate.md)
-##### [-moduleversion パラメーターをサポートする Import-DscResource キーワード](5.0/dsc_importdscresource.md)
+##### [-ModuleVersion パラメーターをサポートする Import-DscResource キーワード](5.0/dsc_importdscresource.md)
 ##### [構成キーワードの WOW64 サポート](5.0/dsc_wow64.md)
 #### [参照情報]()
 ##### [クラスベースの DSC リソース](5.0/dsc_classbasedresource.md)
@@ -60,12 +60,12 @@
 #### [プル モード]()
 ##### [DSC 構成のオンデマンド プル](5.0/dsc_updateconfig.md)
 ##### [ノード ID と構成 ID の分離](5.0/dsc_nodeid.md)
-##### [構成、リソース、およびレポートのリポジトリの分離](5.0/dsc_repository.md)
+##### [構成、リソース、レポートのリポジトリの分離](5.0/dsc_repository.md)
 ##### [構成の状態を中央の場所にレポートする](5.0/dsc_reporting.md)
 ### [トランスクリプトおよびログを使用した PowerShell の使用状況の監査](5.0/audit_overview.md)
 #### [強化されたトランスクリプション オプション](5.0/audit_transcript.md)
 #### [スクリプトのトレースとログ](5.0/audit_script.md)
-#### [Cryptographic Message Syntax (CMS) コマンドレット](5.0/audit_cms.md)\
+#### [Cryptographic Message Syntax (CMS) コマンドレット](5.0/audit_cms.md)
 ### [PackageManagement によるソフトウェアの検出、インストール、およびインベントリ](5.0/oneget_overview.md)
 #### [PackageManagement コマンドレット](5.0/oneget_cmdlets.md)
 ### [PowerShellGet による PowerShell モジュールの検出、インストール、およびインベントリ](5.0/psget_module_overview.md)
@@ -75,7 +75,7 @@
 #### [モジュール管理用の PowerShellGet コマンドレット](5.0/psget_modulecmdlets.md)
 ### [PowerShellGet による PowerShell スクリプトの検出、インストール、および管理](5.0/psget_script_overview.md)
 #### [スクリプト管理用の PowerShellGet コマンドレット](5.0/psget_scriptcmdlets.md)
-### [コミュニティからのフィードバックに基づいて更新されたコマンドレットと新規コマンドレット ](5.0/feedback_cmdlets.md)
+### [コミュニティからのフィードバックに基づいて更新されたコマンドレットと新規コマンドレット](5.0/feedback_cmdlets.md)
 #### [Item コマンドレットを使用したシンボリック リンク](5.0/feedback_symbolic.md)
 #### [アーカイブのコマンドレット](5.0/feedback_archive.md)
 #### [クリップボードのコマンドレット](5.0/feedback_clipboard.md)
@@ -94,6 +94,6 @@
 ### [ソフトウェア インベントリ ログ (SIL)](5.0/sil_overview.md)
 
 
-<!--HONumber=Jul16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

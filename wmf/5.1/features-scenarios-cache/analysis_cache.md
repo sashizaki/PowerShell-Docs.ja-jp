@@ -28,6 +28,6 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 この環境変数の設定は、現在のプロセスで直ちに有効になります。
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

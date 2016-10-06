@@ -1,12 +1,19 @@
 ---
-title: Microsoft.PowerShell.Archive モジュール
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Microsoft.PowerShell.Archive モジュール"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 71a727b5-49a5-47a9-8034-161c86cf042b
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 249a0ece77a11fd9aa54a6ff4170e44f42b377c9
+
 ---
+
 # Microsoft.PowerShell.Archive モジュール
 このセクションでは、Windows PowerShell **Microsoft.PowerShell.Archive** モジュールと共にインストールされるコマンドレットのヘルプ トピックを紹介しています。 アーカイブ モジュールには、アーカイブまたは ZIP ファイルを作成して抽出するためのコマンドレットが含まれています。
 
@@ -22,6 +29,7 @@ ms.assetid: 71a727b5-49a5-47a9-8034-161c86cf042b
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

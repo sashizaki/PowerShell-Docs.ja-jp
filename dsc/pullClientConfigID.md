@@ -1,7 +1,7 @@
 ---
 title: "構成 ID を使用したプル クライアントのセットアップ"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: PowerShell, DSC
 description: 
 ms.topic: article
 author: eslesar
@@ -164,6 +164,6 @@ PullClientConfigID
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

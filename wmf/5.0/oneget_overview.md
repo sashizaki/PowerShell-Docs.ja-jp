@@ -10,6 +10,6 @@ PackageManagement (OneGet とも呼ばれる) は、Web 上のソフトウェア
 詳細については、http://oneget.org/ をご覧ください。
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 
