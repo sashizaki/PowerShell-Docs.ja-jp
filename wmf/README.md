@@ -1,7 +1,7 @@
 ---
 title: Windows Management Framework (WMF)
 ms.date: 2016-05-16
-keywords: PowerShell, WMF
+keywords: "PowerShell、WMF"
 description: 
 ms.topic: article
 author: keithb
@@ -62,6 +62,6 @@ PowerShell と特定の WMF のその他のコンポーネントのさまざま�
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 
