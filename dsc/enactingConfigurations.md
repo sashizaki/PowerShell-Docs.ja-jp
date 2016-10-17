@@ -1,7 +1,7 @@
 ---
 title: "構成の適用"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: PowerShell, DSC
 description: 
 ms.topic: article
 author: eslesar
@@ -49,6 +49,6 @@ DSC プル サーバーをオンプレミスで展開する方法の詳細につ
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO3-->
 
 

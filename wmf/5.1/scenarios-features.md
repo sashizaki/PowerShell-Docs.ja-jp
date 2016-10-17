@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.technology: WMF
 translationtype: Human Translation
-ms.sourcegitcommit: 57049ff138604b0e13c8fd949ae14da05cb03a4b
-ms.openlocfilehash: 01d7ac9815a8650f36150e36b4f6942f451dc368
+ms.sourcegitcommit: a1dde68414fd9754a15adb42642646f87adb0823
+ms.openlocfilehash: 9611a7da48a849b52821ac2890e1ea60441a75e3
 
 ---
 
@@ -32,7 +32,7 @@ ms.openlocfilehash: 01d7ac9815a8650f36150e36b4f6942f451dc368
 
 ## カタログ コマンドレット  
 
-[Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) モジュールに新しいコマンドレットが 2 つ追加されました。Windows カタログ ファイルを生成し、検証するコマンドレットです。  
+[Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) モジュールに新しいコマンドレットが 2 つ追加されました。Windows カタログ ファイルを生成し、検証するコマンドレットです。  
 
 ###New-FileCatalog 
 --------------------------------
@@ -55,7 +55,7 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 カタログ ファイルの整合性を検証するために (上記の例では Pester.cat)、[Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) コマンドレットで署名します。   
 
 
-### Test-FileCatalog 
+###Test-FileCatalog 
 --------------------------------
 
 Test-FileCatalog は、一連のフォルダーを表すカタログを検証します。 
@@ -66,7 +66,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-このコマンドレットは、*カタログ*で見つかったすべてのファイル ハッシュとその相対パスを*ディスク*のそれらと比較します。 ファイル ハッシュとパスの間に不一致が検出された場合、*ValidationFailed* というステータスを返します。 *-Detailed* フラグを利用し、この情報をすべて取得できます。 提出された*署名*には、カタログの署名ステータスも表示されます。これは、カタログ ファイルで [Get-AuthenticodeSignature](https://technet.microsoft.com/ja-jp/library/hh849805.aspx) コマンドレットを呼び出すことと同じです。 *-FilesToSkip* パラメーターを利用し、検証中にファイルをスキップすることもできます。 
+このコマンドレットは、*カタログ*で見つかったすべてのファイル ハッシュとその相対パスを*ディスク*のそれらと比較します。 ファイル ハッシュとパスの間に不一致が検出された場合、*ValidationFailed* というステータスを返します。 *-Detailed* パラメーターを利用し、この情報をすべて取得できます。 *署名*プロパティには、カタログの署名ステータスも表示されます。これは、カタログ ファイルで [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) コマンドレットを呼び出すことと同じです。 *-FilesToSkip* パラメーターを利用し、検証中にファイルをスキップすることもできます。 
 
 
 ## モジュール分析キャッシュ ##
@@ -75,9 +75,7 @@ WMF 5.1 以降の PowerShell では、エクスポートするコマンドなど
 既定では、このキャッシュは `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache` ファイルに格納されます。
 キャッシュは、通常、起動時にコマンドを検索するときに読み取られ、モジュールのインポート後しばらくしてバックグラウンド スレッドで書き込まれます。
 
-キャッシュの既定の場所を変更するには、PowerShell を開始する前に、環境変数 PSModuleAnalysisCachePath を設定します。 この環境変数の変更は、子プロセスのみに影響します。
-値には、PowerShell がファイルの作成および書き込みアクセス許可を持つ完全なパス (ファイル名を含む) を指定する必要があります。
-ファイル キャッシュを無効にするには、たとえば次のような無効な場所をこの値に設定します。
+キャッシュの既定の場所を変更するには、PowerShell を開始する前に、環境変数 `$env:PSModuleAnalysisCachePath` を設定します。 この環境変数の変更は、子プロセスのみに影響します。 値には、PowerShell がファイルの作成および書き込みアクセス許可を持つ完全なパス (ファイル名を含む) を指定する必要があります。 ファイル キャッシュを無効にするには、たとえば次のような無効な場所をこの値に設定します。
 
 ```PowerShell
 $env:PSModuleAnalysisCachePath = 'nul'
@@ -98,33 +96,27 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 この環境変数の設定は、現在のプロセスで直ちに有効になります。
 
-## モジュールのバージョンの指定
+##モジュールのバージョンの指定
 
 WMF 5.1 では、`using module` は PowerShell の他のモジュール関連構造と同様に動作します。 以前は、モジュールの特定のバージョンを指定する方法はありませんでした。複数のバージョンが存在する場合、エラーが発生しました。
 
 
 WMF 5.1 では次のようになります。
 
-* `ModuleSpecification` [ハッシュ テーブル](https://msdn.microsoft.com/en-us/library/jj136290(v=vs.85).aspx)を使用できます。 このハッシュテーブルの形式は `Get-Module -FullyQualifiedName` と同じです。
+* `ModuleSpecification` [ハッシュ テーブル](https://msdn.microsoft.com/en-us/library/jj136290(v=vs.85).aspx)を使用できます。 このハッシュ テーブルの形式は `Get-Module -FullyQualifiedName` と同じです。
 
 **次に例を示します。** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
 * モジュールに複数のバージョンがある場合、PowerShell は**同じ解決ロジック**を `Import-Module` として使用し、エラーを返しません。`Import-Module` および `Import-DscResource` と同じ動作です。
 
 
-
-
-
-
-
-
-## Pester の機能強化
-WMF 5.1 では、PowerShell で出荷される Pester のバージョンが 3.3.5 から 3.4.0 に更新され、コミット https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e が追加されました。Nano での Pester の動作を改善します。 
+##Pester の機能強化
+WMF 5.1 では、PowerShell で出荷される Pester のバージョンが 3.3.5 から 3.4.0 に更新され、コミット https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e が追加されました。Nano Server での Pester の動作を改善します。 
 
 https://github.com/pester/Pester/blob/master/CHANGELOG.md で ChangeLog.md ファイルを調べると、バージョン 3.3.5 から 3.4.0 への変更を確認できます。
 
 
 
-<!--HONumber=Jul16_HO3-->
+<!--HONumber=Aug16_HO3-->
 
 

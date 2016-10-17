@@ -1,6 +1,21 @@
-#  PowerShell コア モジュール ガイド
+---
+title: "コア モジュール"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: ab536969fac8ded0e540da3eb138448b4f444f67
+ms.openlocfilehash: 3bee547fc53d1164d3cbf17f033083d4f1099ae7
 
-PowerShell コア モジュールは、PowerShell の基本的な機能を提供します。
+---
+
+#  PowerShell 共通モジュール
+
+PowerShell 共通モジュールは、PowerShell の基本的な機能を提供します。
 これらのモジュールの対象となる主な領域は次のとおりです。
 
 -  [アーカイブ モジュール](core-modules/Microsoft.PowerShell.Archive-Module.md)
@@ -21,6 +36,7 @@ PowerShell コア モジュールは、PowerShell の基本的な機能を提供
 -  [ユーティリティ モジュール](core-modules/Microsoft.PowerShell.Utility-Module.md)
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

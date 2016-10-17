@@ -1,3 +1,18 @@
+---
+title: "Cookbooks の基本リファレンス"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
+ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: a5bfad60f1cb254f1899723c40751cd8b96ef54e
+
+---
+
 #  Cookbooks の基本リファレンス
 
 -  [コンピューターの状態を変更する](Changing-Computer-State.md)
@@ -35,6 +50,8 @@
 -  [ソフトウェア インストールの操作](Working-with-Software-Installations.md)
 
 
-<!--HONumber=May16_HO2-->
+
+
+<!--HONumber=Aug16_HO3-->
 
 

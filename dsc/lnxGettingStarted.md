@@ -1,15 +1,15 @@
 ---
 title: "Linux 用 Desired State Configuration (DSC) の概要"
 ms.date: 2016-05-16
-keywords: powershell,DSC
+keywords: PowerShell, DSC
 description: 
 ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: c05b48d2c903e59f8b65c4c8c289d2dd5c23c3f9
+ms.sourcegitcommit: e4385f0ed482b97e8794cde968de549902cc358e
+ms.openlocfilehash: 2283e797275f426b624119bd1191e58080780c09
 
 ---
 
@@ -184,12 +184,12 @@ Linux 用 DSC のメッセージのために次のログ ファイルが生成�
 
 |ログ ファイル|Directory|説明|
 |---|---|---|
-|omiserver.log|/opt/omi/var/log/|OMI CIM サーバーの操作に関連するメッセージ。|
-|dsc.log|/opt/omi/var/log/|ローカル構成マネージャー (LCM) と DSC リソースの操作に関連するメッセージ。|
+|omiserver.log|/var/opt/omi/log|OMI CIM サーバーの操作に関連するメッセージ。|
+|dsc.log|/var/opt/omi/log|ローカル構成マネージャー (LCM) と DSC リソースの操作に関連するメッセージ。|
 
 
 
 
-<!--HONumber=Jun16_HO4-->
+<!--HONumber=Aug16_HO4-->
 
 

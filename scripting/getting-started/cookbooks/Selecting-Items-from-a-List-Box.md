@@ -1,12 +1,19 @@
 ---
-title: リスト ボックスから項目を選択する
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "リスト ボックスから項目を選択する"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 7e8fd05cfedd500c51f2d7e4f6adbb7d1f27cb00
+
 ---
+
 # リスト ボックスから項目を選択する
 Windows PowerShell 3.0 以降のリリースを使用すると、ユーザーがリスト ボックス コントロールから項目を選択できるダイアログ ボックスを作成できます。
 
@@ -137,7 +144,7 @@ $listBox.Height = 80
 次のセクションでは、リスト ボックスでユーザーに対して表示する値を指定します。
 
 > [!NOTE]
-> このスクリプトによって作成されるリスト ボックスでは、1 つの選択肢のみが許可されています。 複数の選択肢を指定できるリスト ボックス コントロールを作成するには、`$listBox.SelectionMode = "MultiExtended"` と同様に **SelectionMode** プロパティの値を指定します。 詳細については、「[複数選択のリスト ボックス](Multiple-selection-List-Boxes.md)」を参照してください。.
+> このスクリプトによって作成されるリスト ボックスでは、1 つの選択肢のみが許可されています。 複数の選択肢を指定できるリスト ボックス コントロールを作成するには、`$listBox.SelectionMode = "MultiExtended"` と同様に **SelectionMode** プロパティの値を指定します。 詳しくは、「[複数選択のリスト ボックス](Multiple-selection-List-Boxes.md)」を参照してください。
 
 ```
 [void] $listBox.Items.Add("atl-dc-001")
@@ -173,12 +180,13 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 ```
 
 ## 参照
-[Hey Scripting Guy: これらの PowerShell GUI の例が機能しないのはなぜですか。](http://go.microsoft.com/fwlink/?LinkId=506644)
-[GitHub: Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-[今週の Windows PowerShell ヒント: リスト ボックスからアイテムを選択する](http://technet.microsoft.com/library/ff730949.aspx)
+[Hey Scripting Guy: Why don’t these PowerShell GUI examples work? (Hey Scripting Guy: これらの PowerShell GUI の例が機能しない理由)](http://go.microsoft.com/fwlink/?LinkId=506644)
+[GitHub: Dave Wyatt's WinFormsExampleUpdates (GitHub: Dave Wyatt の WinFormsExampleUpdates)](https://github.com/dlwyatt/WinFormsExampleUpdates)
+[Windows PowerShell Tip of the Week: Selecting Items from a List Box (Windows PowerShell Tip of the Week: リスト ボックスから項目を選択する)](http://technet.microsoft.com/library/ff730949.aspx)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

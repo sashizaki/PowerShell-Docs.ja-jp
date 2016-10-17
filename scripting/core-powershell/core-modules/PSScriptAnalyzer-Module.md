@@ -1,14 +1,21 @@
 ---
-title: PSScriptAnalyzer モジュール
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "PSScriptAnalyzer モジュール"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 8734c1e1-898e-4fc1-8fc0-d1ad7d3cf077
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 3e9ba43162afb7b689bf92883f2347c2c8551ea2
+
 ---
+
 # PSScriptAnalyzer モジュール
-このセクションには、**PSScriptAnalyzer** モジュールのヘルプ トピックが含まれています。これを使用して Windows PowerShellÂ® のモジュールおよびスクリプトに関する問題を確認できます。 このモジュールは、Windows PowerShell と共にインストールされます。
+このセクションには **PSScriptAnalyzer** モジュールのヘルプ トピックが含まれており、Windows PowerShellÂ® のスクリプトとモジュールに関する問題を確認するために使用できます。 このモジュールは、Windows PowerShell と共にインストールされます。
 
 ## ヘルプ トピック
 
@@ -19,6 +26,7 @@ ms.assetid: 8734c1e1-898e-4fc1-8fc0-d1ad7d3cf077
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

@@ -1,16 +1,23 @@
 ---
-title: Windows PowerShell コア プロバイダー
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell コア プロバイダー"
+ms.date: 2016-05-11
+keywords: "PowerShell, コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: 6e24bf6d-4c70-4edf-956a-1e8e4779ba10
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: f6b1ca1a3253c941c76826c6644079a14f19ddcf
+
 ---
+
 # Windows PowerShell コア プロバイダー
 このセクションには、**Microsoft.PowerShell.Core** モジュールの Windows PowerShell プロバイダーについて説明するヘルプ トピックが含まれています。
 
-Windows PowerShell プロバイダーは .NET プログラムであり、特化されたデータ ストアのデータを Windows PowerShell で利用できるようにします。このデータを簡単に表示し、管理できるようになります。 プロバイダーが公開するデータはファイル システム ドライブのようにドライブに表示されます。 詳細については、「[about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)」を参照してください。.
+Windows PowerShell プロバイダーは .NET プログラムであり、特化されたデータ ストアのデータを Windows PowerShell で利用できるようにします。このデータを簡単に表示し、管理できるようになります。 プロバイダーが公開するデータはファイル システム ドライブのようにドライブに表示されます。 詳細については、「[about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)」を参照してください。
 
 |プロバイダー|説明|
 |------------|---------------|
@@ -22,13 +29,14 @@ Windows PowerShell プロバイダーは .NET プログラムであり、特化�
 |[Variable プロバイダー [v3]](https://technet.microsoft.com/en-us/library/78dbcbbd-7946-4b9b-b75b-146f247f821c)|Windows PowerShell の変数とその値へのアクセスを提供します。|
 
 ## 参照
-[Certificate プロバイダー [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d)
+[証明書プロバイダー [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d)
 [WSMan プロバイダー [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
 [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)
 [Microsoft.PowerShell.Core モジュール](Microsoft.PowerShell.Core-Module.md)
 
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 

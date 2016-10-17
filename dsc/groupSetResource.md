@@ -1,7 +1,7 @@
 ---
 title: "DSC GroupSet リソース"
 ms.date: 2016-05-16
-keywords: powershell, DSC, built-in, resource
+keywords: "powershell、DSC、ビルトイン、リソース"
 description: "ターゲット ノード上のローカル グループを管理するためのメカニズムを備えています。"
 ms.topic: article
 author: eslesar
@@ -86,6 +86,6 @@ GroupSetTest -ConfigurationData $cd
 
 
 
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO3-->
 
 

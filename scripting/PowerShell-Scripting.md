@@ -1,19 +1,33 @@
 ---
 title: "PowerShell スクリプト"
 ms.date: 2016-05-11
-keywords: powershell,cmdlet
+keywords: "PowerShell, コマンドレット"
 description: 
 ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 32b4e11f150fe0374472d2d4c75f8de6c3575abb
-ms.openlocfilehash: 8ef9ea5b00c9c0ac0d14370a39d1ed7970e65cc3
+ms.sourcegitcommit: b38cfd053cc2356fa7ca99605dbd84190d342327
+ms.openlocfilehash: fc6307be4dafb378350b6d9667b2b6aca0e2e6d4
 
 ---
 
-#  PowerShell スクリプト
+#  PowerShell
+
+Windows PowerShell は、システム管理者とパワーユーザー向けに .NET Framework 上に構築されたタスクベースのコマンドライン シェルとスクリプト言語であり、複数のオペレーティング システム (Linux、OSX、Unix、Windows) の管理とこれらのオペレーティング システム上で実行されるアプリケーションに関連するプロセスを迅速に自動化するものです。
+
+###  PowerShell は現在、オープン ソースです
+
+PowerShell ベースのソース コードは現在、GitHub で入手可能であり、コミュニティ投稿が可能です。[PowerShell](https://github.com/powershell/powershell) を参照してください。
+
+「[PowerShell を入手](https://github.com/PowerShell/PowerShell#get-powershell)」で必要なものから開始できます。
+または、「[はじめに](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)」からクイック ツアーを開始します。
+
+>  **注: **  
+>  GitHub の PowerShell に関するすべてのリンクから、GitHub に移動できます。
+
+#  ドキュメント
 
 ドキュメント コレクションは、4 つの主要なセクションに分かれています。
 
@@ -34,20 +48,19 @@ ms.openlocfilehash: 8ef9ea5b00c9c0ac0d14370a39d1ed7970e65cc3
 -  ファイル、ファイル システム、レジストリ、プロセス、サービスのような日常的なサブジェクトに関する標準的なタスクを実行するレシピを提供する、一連の「[&lt;使用方法&gt;の基本的なクックブック](getting-started/cookbooks/basic-cookbooks-reference.md)」トピック。
 -  [PowerShell について学習する](getting-started/more-powershell-learning.md) ためのその他のソースへの精選されたガイド。
 
-##  [コア PowerShell](core-powershell/core-powershell.md)
-このセクションには、PowerShell の詳細なガイドや参考資料がすべて含まれています。  
+##  [一般的な PowerShell](core-powershell/core-powershell.md)
+このセクションには、PowerShell の参考資料がすべて含まれています。  
 このセクションの内容:
--  [PowerShell コア モジュール ガイド](core-powershell/core-modules.md)
--  [PowerShell Integrated Scripting Environment (ISE) ガイド](core-powershell/ise-guide.md)
--  [PowerShell コンソール ウィンドウ ガイド](core-powershell/console-guide.md)
--  [PowerShell リモート管理ガイド](core-powershell/Running-Remote-Commands.md)
--  [PowerShell ワークフロー ガイド](core-powershell/workflows-guide.md)
--  [PowerShell Web Access ガイド](core-powershell/web-access.md)
+-  [PowerShell 共通モジュール](core-powershell/core-modules.md)
+-  [PowerShell Integrated Scripting Environment \(ISE\)](core-powershell/ise-guide.md)
+-  [PowerShell コンソール ウィンドウ](core-powershell/console-guide.md)
+-  [PowerShell リモート管理](core-powershell/Running-Remote-Commands.md)
+-  [PowerShell ワークフロー](core-powershell/workflows-guide.md)
+-  [PowerShell Web Access ](core-powershell/web-access.md)
 -  [PowerShell 用語集](Windows-PowerShell-Glossary.md)
 
 
 
-
-<!--HONumber=Jul16_HO1-->
+<!--HONumber=Aug16_HO4-->
 
 

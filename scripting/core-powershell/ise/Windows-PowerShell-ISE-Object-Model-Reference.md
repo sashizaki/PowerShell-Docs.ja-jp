@@ -1,19 +1,26 @@
 ---
-title: Windows PowerShell ISE オブジェクト モデル リファレンス
-ms.custom: na
-ms.reviewer: na
-ms.suite: na
-ms.tgt_pltfrm: na
+title: "Windows PowerShell ISE オブジェクト モデル リファレンス"
+ms.date: 2016-05-11
+keywords: "powershell,コマンドレット"
+description: 
 ms.topic: article
+author: jpjofre
+manager: dongill
+ms.prod: powershell
 ms.assetid: e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
+translationtype: Human Translation
+ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
+ms.openlocfilehash: 9bfb74ba438dd27fc2799263fc12a20edd2bb8cb
+
 ---
+
 # Windows PowerShell ISE オブジェクト モデル リファレンス
   
 ## オブジェクト モデル リファレンス
- このセクションでは、Windows PowerShellÂ® Integrated Scripting Environment (ISE) でさまざまなオブジェクトを定義する基礎となるクラスのリファレンスを示します。 階層構造のオブジェクトを確認するには、[ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)に関するページを参照してください。.
+ このセクションでは、Windows PowerShellÂ® Integrated Scripting Environment (ISE) で各種オブジェクトを定義する基礎となるクラスへのリファレンスを提供します。 これらのオブジェクトの階層構造については、「[ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)」を参照してください。
 
  [ISEAddOnTool オブジェクト](The-ISEAddOnTool-Object.md)
- 例: $psISE.CurrentVisibleHorizontalTool、$psISE.CurrentVisibleVerticalTool 。
+ 例: $psISE.CurrentVisibleHorizontalTool、$psISE.CurrentVisibleVerticalTool。
 
  [ISEAddOnTool オブジェクト](The-ISEAddOnTool-Object.md)
   [ISEEditor オブジェクト](The-ISEEditor-Object.md)
@@ -49,6 +56,7 @@ ms.assetid: e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
   
 
 
-<!--HONumber=May16_HO2-->
+
+<!--HONumber=Aug16_HO3-->
 
 
