@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
 translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 9e012dd8218a256e4236c2263babefd29ecdb016
+ms.sourcegitcommit: 1d4062490ba76a8cc62faa8fb96eff92b49169b7
+ms.openlocfilehash: 966cab74cb2519893d4744e8bd0ca12f93f73136
 
 ---
 
@@ -19,7 +19,10 @@ Windows PowerShell® 5.0 には、その用途を拡大し、使いやすさを�
 
 Windows PowerShell 5.0 には下位互換性があります。 Windows PowerShell 4.0、Windows PowerShell 3.0、Windows PowerShell 2.0 用に設計されたコマンドレット、プロバイダー、モジュール、スナップイン、スクリプト、関数、およびプロファイルは、全般的に変更なしで Windows PowerShell 5.0 でも動作します。
 
-Windows PowerShell 5.0 は、Windows Server® 2016 Technical Preview および Windows 10® に既定でインストールされています。 Windows PowerShell 5.0 を Windows Server 2012 R2、Windows 8.1 Enterprise または Windows 8.1 Pro にインストールするには、[Windows Management Framework 5.0](http://aka.ms/wmf5download) をダウンロードしてインストールします。 Windows Management Framework 5.0 をインストールする前に、ダウンロードの詳細を読み、システム要件がすべて満たされていることを確認してください。
+# Windows PowerShell のインストール
+Windows PowerShell 5.0 は、Windows Server® 2016 Technical Preview および Windows 10® に既定でインストールされています。 
+
+Windows PowerShell 5.0 を Windows Server 2012 R2、Windows 8.1 Enterprise または Windows 8.1 Pro にインストールするには、[Windows Management Framework 5.0](http://aka.ms/wmf5download) をダウンロードしてインストールします。 Windows Management Framework 5.0 をインストールする前に、ダウンロードの詳細を読み、システム要件がすべて満たされていることを確認してください。
 
 ## このトピックの内容
 
@@ -752,13 +755,13 @@ Windows PowerShell 3.0 には、RunAs 機能と共有ホスト機能のサポー
 Windows PowerShell 3.0 では、特殊文字を正しく解釈して処理する機能が改善されました。パスに含まれる特殊文字を処理する **LiteralPath** パラメーターが、新しい [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) および [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) コマンドレットを含む、**Path** パラメーターを持つほとんどすべてのコマンドレットで有効になりました。 また、ファイル名やパスに含まれるアクサングラーブ文字 (\`) と角かっこの処理を改善する特別なロジックがパーサーに組み込まれました。
 
 ## 参照
-[about_Windows_PowerShell_4.0](http://technet.microsoft.com/en-us/library/hh847833(v=wps.630).aspx)
-[about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)
-[Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
+- [about_Windows_PowerShell_4.0](http://technet.microsoft.com/en-us/library/hh847833(v=wps.630).aspx)
+- [about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)
+- [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116)
 
 
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO3-->
 
 

@@ -142,6 +142,6 @@
 ## [PowerShell 用語集](Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=Oct16_HO1-->
+<!--HONumber=Oct16_HO2-->
 
 
