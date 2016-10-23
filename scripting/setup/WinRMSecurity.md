@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 67ef350559f9b3d17232f3c93d67634b3e939c60
-ms.openlocfilehash: b1addddd50368fadcbb2581673d3ebc7cad8e32a
+ms.sourcegitcommit: 4ddd5099ce33263d43dcbad0930e654b573a8937
+ms.openlocfilehash: fa7e5c84ac82fa72836536ece507f1751e099077
 
 ---
 
@@ -86,10 +86,6 @@ PowerShell リモート処理では、既定で、認証に Kerberos (使用可�
 
 この問題を回避する方法はいくつかあります。
 
-### Kerberos の制約付き委任
-
-信頼性の高いサーバーの場合は、[Kerberos の制約付き委任](https://technet.microsoft.com/en-us/library/cc995228.aspx)を有効にすることができます。 これにより、リモート サーバーが、指定したコンピューターおよびサービス一覧に対して認証済みユーザーを偽装できるようになります。
-
 ### リモート コンピューター間の信頼
 
 *Server2* のリソースについて *Server1* にリモート接続されたユーザーを信頼する場合、そのリソースへのアクセスを *Server1* に明示的に許可できます。
@@ -121,6 +117,6 @@ PowerShell リモート処理で CredSSP を使用する場合のセキュリテ
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO2-->
 
 
