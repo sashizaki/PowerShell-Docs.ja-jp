@@ -8,8 +8,8 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 75e9b6525d74a8bc632b9fe2e64183717f59776f
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: fe79ca70ff1f9a3960b79747221a70adc46b7c67
 
 ---
 
@@ -60,7 +60,7 @@ Windows PowerShell Web Access をインストールして構成する前に、�
 
 ------------------------------------------------------------------------
 
-Windows PowerShell Web Access を使用するには、ゲートウェイを実行するサーバーで Web サーバー (IIS)、.NET Framework 4.5、Windows PowerShell 3.0 または Windows PowerShell 4.0 が実行されている必要があります。 Windows PowerShell Web Access は、サーバー マネージャーの役割および機能の追加ウィザードを使用するか、サーバー マネージャーのWindows PowerShell のデプロイ コマンドレットを使用して、Windows Server 2012 R2 または Windows Server 2012 を実行中のサーバーにインストールできます。 サーバー マネージャーまたはデプロイ コマンドレットを使って Windows PowerShell Web Access をインストールすると、インストール プロセスの一環として、必要な役割と機能が自動的に追加されます。
+Windows PowerShell Web Access を使用するには、ゲートウェイを実行するサーバーで Web サーバー (IIS)、.NET Framework 4.5、Windows PowerShell 3.0 または Windows PowerShell 4.0 が実行されている必要があります。 Windows PowerShell Web Access は、サーバー マネージャーの役割および機能の追加ウィザードを使用するか、サーバー マネージャーの Windows PowerShell のデプロイ コマンドレットを使用して、Windows Server 2012 R2 または Windows Server 2012 を実行中のサーバーにインストールできます。 サーバー マネージャーまたはデプロイ コマンドレットを使って Windows PowerShell Web Access をインストールすると、インストール プロセスの一環として、必要な役割と機能が自動的に追加されます。
 
 Windows PowerShell Web Access により、リモート ユーザーは Web ブラウザーで Windows PowerShell を使って、組織内のコンピューターにアクセスできます。 Windows PowerShell Web Access は便利で強力な管理ツールですが、Web ベースのアクセスを利用するとセキュリティ上のリスクが生じるため、できる限りセキュリティを確保して構成する必要があります。 Windows PowerShell Web Access ゲートウェイを構成する管理者は、利用可能なセキュリティ層を使うことをお勧めします。このセキュリティ層とは、Windows PowerShell Web Access に含まれるコマンドレット ベースの承認規則と、Web サーバー (IIS) およびサード パーティ アプリケーションで使うことができるセキュリティ層の両方です。 このドキュメントには、テスト環境にのみ推奨される安全でない例と、セキュリティ保護された展開に推奨される例の両方が含まれています。
 
@@ -167,7 +167,7 @@ Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマ�
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_374a9c21-4f6e-471e-b957-bb190a594533'); "Copy to clipboard.")
 
-        Install-WindowsFeature –Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart
+        Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart
 
     <table>
     <colgroup>
@@ -189,7 +189,7 @@ Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマ�
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_d841d509-347e-49d0-bf54-8d1f306bece6'); "Copy to clipboard.")
 
-        Install-WindowsFeature –Name WindowsPowerShellWebAccess –VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart
+        Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart
 
 3.  インストールが完了したら、対象サーバーに Windows PowerShell Web Access がインストールされたことを確認します。これには、管理者特権で開いた Windows PowerShell コンソールで、対象サーバーに対して **Get-WindowsFeature** コマンドレットを実行します。 また、サーバー マネージャー コンソールに Windows PowerShell Web Access がインストールされたことも確認できます。これには、**[すべてのサーバー]** ページで対象サーバーを選択し、選択したサーバーの **[役割と機能]** タイルを表示します。 Windows PowerShell Web Access の Readme ファイルも表示できます。
 
@@ -266,7 +266,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
     -   PhysicalPath: %*windir*%/Web/PowerShellWebAccess/wwwroot
 
-    <span class="label">例:</span> <span class="code">Install-PswaWebApplication –webApplicationName myWebApp –useTestCertificate</span>
+    <span class="label">例:</span> <span class="code">Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate</span>
 
     この例では、Windows PowerShell Web Access の最終的な Web サイトは https://&lt;*server_name*&gt;/myWebApp になります。
 
@@ -367,15 +367,15 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_f9e7959b-75d0-4d63-8f8e-02334a8dd09d'); "Copy to clipboard.")
 
-        Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
+        Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
     この承認規則により、特定のユーザー 1 人が、通常アクセスが許可されているネットワーク上の 1 つのコンピューターにアクセスして、このユーザーが通常必要とするスクリプトとコマンドレットに制限された特定の 1 つのセッション構成にアクセスできるようになります。 次の例では、<span class="code">Contoso</span> ドメインの <span class="code">JSmith</span> というユーザーに、<span class="code">Contoso_214</span> というコンピューターを管理し、<span class="code">NewAdminsOnly</span> というセッション構成を使うためのアクセス権が付与されます。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_ebd5bc5e-ec5d-4955-a86a-63843e480e37'); "Copy to clipboard.")
 
-        Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
+        Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  **Get-PswaAuthorizationRule** コマンドレットまたは **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt; を実行して、規則が作成されていることを確認します。 例: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**。
+4.  **Get-PswaAuthorizationRule** コマンドレットまたは **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt; を実行して、規則が作成されていることを確認します。 例: **Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**。
 
 承認規則が構成されたため、承認されたユーザーは Web ベースのコンソールにサインインして Windows PowerShell Web Access の使用を開始できます。
 
@@ -601,15 +601,15 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4df22c91-f56f-4bb5-91e7-99f9b365ed5d'); "Copy to clipboard.")
 
-        Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
+        Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
     この承認規則により、特定のユーザー 1 人が、通常アクセスが許可されているネットワーク上の 1 つのコンピューターにアクセスして、このユーザーが通常必要とするスクリプトとコマンドレットに制限された特定の 1 つのセッション構成にアクセスできるようになります。 次の例では、<span class="code">Contoso</span> ドメインの <span class="code">JSmith</span> というユーザーに、<span class="code">Contoso_214</span> というコンピューターを管理し、<span class="code">NewAdminsOnly</span> というセッション構成を使うためのアクセス権が付与されます。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_efc3999a-2905-453f-86cd-014b41658ffc'); "Copy to clipboard.")
 
-        Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
+        Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  **Get-PswaAuthorizationRule** コマンドレットまたは **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt; を実行して、規則が作成されていることを確認します。 例: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**。
+4.  **Get-PswaAuthorizationRule** コマンドレットまたは **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt; を実行して、規則が作成されていることを確認します。 例: **Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**。
 
 承認規則が構成されたため、承認されたユーザーは Web ベースのコンソールにサインインして Windows PowerShell Web Access の使用を開始できます。
 
@@ -707,12 +707,12 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 © 2016 Microsoft
 
-サードパーティのスクリプトやコード、サードパーティから本 Web サイトへのリンク、あるいは本サイトからサードパーティへのリンクは、マイクロソフトではなく、そのようなコードの所有者によってお客様にライセンス供与されています。 ASP.NET Ajax CDN の使用条件 - http://www.asp.net/ajaxlibrary/CDN.ashx
+サードパーティのスクリプトやコード、サードパーティから本 Web サイトへのリンク、あるいは本サイトからサードパーティへのリンクは、マイクロソフトではなく、そのようなコードの所有者によってお客様にライセンス供与されています。 ASP.NET Ajax CDN の使用条件 - http://www.asp.net/ajaxlibrary/CDN.ashx を参照してください。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 12b31890-2609-4a76-8c24-0ebe78084f50
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
+ms.sourcegitcommit: fa0a541965b4121b8e8ac677b3c38e6f316b4553
+ms.openlocfilehash: 4e6a0e7f8935b905d1cb19576541d1b532fcba21
 
 ---
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: 310f898a471ca60da4d9ebe5234ee86a636e44b5
 
 Windows PowerShell の 32 ビット版を起動するには、次の手順のいずれかを使用します。
 
-#### Windows ServerÂ® 2012 R2 の場合
+#### Windows Server® 2012 R2 の場合
 
 -   **[スタート]** 画面で、「**Windows PowerShell (x86)**」と入力します。 **[Windows PowerShell x86]** タイルをクリックします。
 
@@ -31,7 +31,7 @@ Windows PowerShell の 32 ビット版を起動するには、次の手順のい
 
 -   コマンド ラインで、次のように入力します。 `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### Windows Server 2012 の場合
+#### Windows Server® 2012 の場合
 
 -   **[スタート]** 画面で、「**PowerShell**」と入力して **[Windows PowerShell (x86)]** をクリックします。
 
@@ -41,7 +41,7 @@ Windows PowerShell の 32 ビット版を起動するには、次の手順のい
 
 -   コマンド ラインで、次のように入力します。 `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### Windows 8.1 の場合
+#### Windows® 8.1 の場合
 
 -   **[スタート]** 画面で、「**Windows PowerShell (x86)**」と入力します。 **[Windows PowerShell x86]** タイルをクリックします。
 
@@ -51,7 +51,7 @@ Windows PowerShell の 32 ビット版を起動するには、次の手順のい
    
 -   コマンド ラインで、次のように入力します。 `%SystemRoot%\SysWOW64\WindowsPowerShell\v1.0\powershell.exe`
 
-#### Windows 8 の場合
+#### In Windows® 8 の場合
 
 -   **[スタート]** 画面で、右上隅にカーソルを移動し、**[設定]** をクリックし、**[タイル]** をクリックします。そして、**[管理ツールを表示する]** スライダーを [はい] に移動させます。 次に「**PowerShell**」と入力し、**[Windows PowerShell(x86)]** をクリックします。
 
@@ -63,6 +63,6 @@ Windows PowerShell の 32 ビット版を起動するには、次の手順のい
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

@@ -9,15 +9,15 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: e1a9e7d1-0fd5-47de-8d9b-f1be1ed13b0c
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 9bfb74ba438dd27fc2799263fc12a20edd2bb8cb
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: c60a7adb5cce55392d5dc09c7ca357bfc4c73e15
 
 ---
 
 # Windows PowerShell ISE オブジェクト モデル リファレンス
   
 ## オブジェクト モデル リファレンス
- このセクションでは、Windows PowerShellÂ® Integrated Scripting Environment (ISE) で各種オブジェクトを定義する基礎となるクラスへのリファレンスを提供します。 これらのオブジェクトの階層構造については、「[ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)」を参照してください。
+ このセクションでは、Windows PowerShell® Integrated Scripting Environment (ISE) で各種オブジェクトを定義する基礎となるクラスへのリファレンスを提供します。 これらのオブジェクトの階層構造については、「[ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)」を参照してください。
 
  [ISEAddOnTool オブジェクト](The-ISEAddOnTool-Object.md)
  例: $psISE.CurrentVisibleHorizontalTool、$psISE.CurrentVisibleVerticalTool。
@@ -51,12 +51,12 @@ ms.openlocfilehash: 9bfb74ba438dd27fc2799263fc12a20edd2bb8cb
  例: $psISE.PowerShellTabs。
 
 ## 参照
- [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

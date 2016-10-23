@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 666590df32157a7477d385961dd5665094275868
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 9e012dd8218a256e4236c2263babefd29ecdb016
 
 ---
 
@@ -38,7 +38,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
     -   [Get-DscResource](http://technet.microsoft.com/library/dn521625.aspx) が高速になりました (特に ISE で)。
 
-    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) に新しいパラメーター、UseExisting が追加されました。これは最後に適用した構成を再度適用するものです。
+    -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) に新しいパラメーター、-UseExisting が追加されました。これは最後に適用した構成を再適用します。
 
     -   [Start-DscConfiguration](http://technet.microsoft.com/library/dn521623.aspx) -Force が修正されました。
 
@@ -170,9 +170,9 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 -   New-Item、Remove-Item、および Get-ChildItem が[シンボリック リンク](http://en.wikipedia.org/wiki/Symbolic_link)の作成と管理をサポートするために強化されました。 New-Item の **-ItemType** パラメーターでは、新しい値、**SymbolicLink** を使用できます。 シンボリック リンクは、New-Item コマンドレットを実行することで、1 つの行で作成できるようになりました。
 
--   また、Get-ChildItem には新しい –Depth パラメーターも追加されました。これを –Recurse パラメーターと共に使用すると再帰を制限します。 たとえば、Get-ChildItem –Recurse –Depth 2 は、現在のフォルダー、現在のフォルダー内のすべての子フォルダー、および子フォルダー内のすべてのフォルダーから結果を返します。
+-   また、Get-ChildItem には新しい -Depth パラメーターも追加されました。これを -Recurse パラメーターと共に使用すると再帰を制限します。 たとえば、Get-ChildItem -Recurse -Depth 2 は、現在のフォルダー、現在のフォルダー内のすべての子フォルダー、および子フォルダー内のすべてのフォルダーから結果を返します。
 
--   Copy-Item で、1 つの Windows PowerShell セッションから別のセッションにファイルまたはフォルダーをコピーできるようになりました。つまり、リモート コンピューター ([Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) を実行しているため他のインターフェイスを持たないコンピューターを含む) に接続されているセッションにファイルをコピーできるようになりました。 ファイルをコピーするには、新しい -FromSession と -ToSession パラメーターの値として PSSession ID を指定し、–Path と –Destination を追加して元のパスと宛先をそれぞれ指定します。 例: Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder
+-   Copy-Item で、1 つの Windows PowerShell セッションから別のセッションにファイルまたはフォルダーをコピーできるようになりました。つまり、リモート コンピューター ([Nano Server](http://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) を実行しているため他のインターフェイスを持たないコンピューターを含む) に接続されているセッションにファイルをコピーできるようになりました。 ファイルをコピーするには、新しい -FromSession と -ToSession パラメーターの値として PSSession ID を指定し、-Path と -Destination を追加して元のパスと宛先をそれぞれ指定します。 例: Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder
 
 -   Windows PowerShell トランスクリプションが強化され、コンソール ホスト (**powershell.exe**) に加えて、すべてのホスト アプリケーション (Windows PowerShell ISE など) に適用されるようになりました。 トランスクリプション オプション (システム全体のトランスクリプトの有効化を含む) は、**[PowerShell トランスクリプションを有効にする]** グループ ポリシー設定 ([管理用テンプレート]/[Windows コンポーネント]/[Windows PowerShell]) を有効にすることで設定できます。
 
@@ -190,7 +190,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 -   新しいコマンドレット、New-TemporaryFile では、スクリプトの一部として一時ファイルを作成できます。 既定では、新しい一時ファイルは ```C:\Users\<user name>\AppData\Local\Temp``` に作成されます。
 
--   Out-File、Add-Content、および Set-Content の各コマンドレットに新しい –NoNewline パラメーターが追加されました。これを指定すると、出力後の改行が省略されます。
+-   Out-File、Add-Content、および Set-Content の各コマンドレットに新しい -NoNewline パラメーターが追加されました。これを指定すると、出力後の改行が省略されます。
 
 -   New-Guid コマンドレットは、.NET Framework Guid クラスを利用して GUID を生成します。これはスクリプトまたは DSC リソースを作成している場合に便利です。
 
@@ -212,7 +212,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 -   Get-Command コマンドレットの結果が、バージョン列に表示されるようになりました。新しい Version プロパティが CommandInfo クラスに追加されました。 Get-Command では、同じモジュールの複数のバージョンからのコマンドが表示されます。 Version プロパティは、CmdletInfo の派生クラスの一部 (CmdletInfo と ApplicationInfo) でもあります。
 
--   Get-Command に、ShowCommand の情報を PSObject として返す新しいパラメーター、-ShowCommandInfo が追加されました。 これは、Windows PowerShell リモート処理を使用して、Windows PowerShell ISE で Show-Command を実行する場合に、特に便利な機能です。 Microsoft.PowerShell.Utility モジュールの既存の Get-SerializedCommand 関数は、–ShowCommandInfo に置き換えられます。ただし、Get-SerializedCommand スクリプトは、ダウンレベルのスクリプトをサポートするために引き続き使用できます。
+-   Get-Command に、ShowCommand の情報を PSObject として返す新しいパラメーター、-ShowCommandInfo が追加されました。 これは、Windows PowerShell リモート処理を使用して、Windows PowerShell ISE で Show-Command を実行する場合に、特に便利な機能です。 Microsoft.PowerShell.Utility モジュールの既存の Get-SerializedCommand 関数は、-ShowCommandInfo に置き換えられます。ただし、Get-SerializedCommand スクリプトは、ダウンレベルのスクリプトをサポートするために引き続き使用できます。
 
 -   新しい Get-ItemPropertyValue コマンドレットでは、ドット表記を使用せずにプロパティの値を取得できます。 たとえば、Windows PowerShell の以前のリリースでは、PowerShellEngine レジストリ キーの Application Base プロパティの値を取得するには、**(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase** を実行します。 Windows PowerShell 5.0 以降では、**Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase** を実行できます。
 
@@ -313,7 +313,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 ## <a name="BKMK_wps4"></a>Windows PowerShell 4.0 の新機能
 Windows PowerShell 4.0 には下位互換性があります。 Windows PowerShell 3.0 および Windows PowerShell 2.0 用に設計されたコマンドレット、プロバイダー、モジュール、スナップイン、スクリプト、関数、およびプロファイルは、変更なしで Windows PowerShell 4.0 でも動作します。
 
-Windows PowerShell 4.0 は、既定で WindowsÂ® 8.1 と Windows Server 2012 R2 にインストールされています。 Windows 7 SP1 または Windows Server 2008 R2 に Windows PowerShell 4.0 をインストールするには、[Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855) をダウンロードしてインストールします。 Windows Management Framework 4.0 をインストールする前に、ダウンロードの詳細を読み、システム要件がすべて満たされていることを確認してください。
+Windows PowerShell 4.0 は、既定で Windows® 8.1 と Windows Server 2012 R2 にインストールされています。 Windows 7 SP1 または Windows Server 2008 R2 に Windows PowerShell 4.0 をインストールするには、[Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855) をダウンロードしてインストールします。 Windows Management Framework 4.0 をインストールする前に、ダウンロードの詳細を読み、システム要件がすべて満たされていることを確認してください。
 
 -   [Windows PowerShell の新機能](#BKMK_core)
 
@@ -367,7 +367,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 -   **$PSVersionTable.PSVersion** の値が 4.0 に更新されました。
 
--   **Where()** 演算子の動作が変更されました。 `Collection.Where('property –match name')` 形式 `"Property –CompareOperator Value"` の文字列式は受け入れられなくなりました。 ただし、**Where()** 演算子は、スクリプト ブロック形式の文字列式を受け入れます。これは、引き続きサポートされます。
+-   **Where()** 演算子の動作が変更されました。 `Collection.Where('property -match name')` 形式 `"Property -CompareOperator Value"` の文字列式は受け入れられなくなりました。 ただし、**Where()** 演算子は、スクリプト ブロック形式の文字列式を受け入れます。これは、引き続きサポートされます。
 
 ### <a name="BKMK_ise"></a>Windows PowerShell Integrated Scripting Environment (ISE) の新機能
 
@@ -433,7 +433,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 -   **Get-Module** で、**Version** 列にモジュールのバージョンが表示されるようになりました。
 
--   Remove-Item –Recurse で、想定どおりにサブフォルダーから項目が削除されるようになりました。
+-   Remove-Item -Recurse で、想定どおりにサブフォルダーから項目が削除されるようになりました。
 
 -   **Get-Process** 出力オブジェクトに **UserName** プロパティが追加されました。
 
@@ -441,7 +441,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 -   **Add-Member** が、ハッシュ テーブルがまだアクセスされていない場合でも、ハッシュ テーブルに効果を与えるようになりました。
 
--   **Select-Object –Expand** が、プロパティの値が null または空の場合に、失敗したり、例外を生成したりしなくなりました。
+-   **Select-Object -Expand** が、プロパティの値が null または空の場合に、失敗したり、例外を生成したりしなくなりました。
 
 -   **Get-Process** が、オブジェクトから **ComputerName** プロパティを取得する他のコマンドと一緒にパイプラインで使用できるようになりました。
 
@@ -513,7 +513,7 @@ Windows PowerShell 3.0 には、次に示す新機能があります。
 -   [特殊文字の処理の改善](#BKMK_CHAR)
 
 ### <a name="BKMK_Workflow"></a>Windows PowerShell ワークフロー
-Windows PowerShellÂ® ワークフローによって、Windows Workflow Foundation の機能を Windows PowerShell で利用できます。 ワークフローは、XAML または Windows PowerShell 言語で記述し、コマンドレットを実行するのとまったく同様に実行できます。 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) コマンドレットはワークフロー コマンドを取得し、[Get-help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) コマンドレットは、ワークフローのヘルプを取得します。
+Windows PowerShell® ワークフローによって、Windows Workflow Foundation の機能を Windows PowerShell で利用できます。 ワークフローは、XAML または Windows PowerShell 言語で記述し、コマンドレットを実行するのとまったく同様に実行できます。 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) コマンドレットはワークフロー コマンドを取得し、[Get-help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) コマンドレットは、ワークフローのヘルプを取得します。
 
 ワークフローは、複数のコンピューターを管理するアクティビティのシーケンスです。これは、実行時間が長く、反復可能な、頻繁に実行できるシーケンスで、並列実行、割り込み、中断、および再起動が可能です。 ワークフローは、ネットワークの停止、Windows の再起動、電源障害などの意図的または偶発的な割り込みから再開できます。
 
@@ -540,12 +540,12 @@ Windows PowerShell ワークフローの利点を次に示します。
 -   **ワークフローと接続のスロットル調整。** ワークフローの実行とノードへの接続をスロットルで調整できるため、スケーラビリティと高可用性のシナリオに対応できます。
 
 ### <a name="BKMK_WebAccess"></a>Windows PowerShell Web Access
-Windows PowerShell Web Access は、Windows PowerShell のコマンドとスクリプトをユーザーが Web ベースのコンソールで実行できる Windows Server 2012 の機能です。 Web ベースのコンソールを使用するデバイスでは、Windows PowerShell、リモート管理ソフトウェアまたはブラウザー プラグインをインストールする必要はありません。 必要なのは、適切に構成された Windows PowerShell Web Access ゲートウェイと、JavaScript® をサポートし、Cookie を許可するクライアント デバイスのブラウザーのみです。
+Windows PowerShell® Web Access は、Windows PowerShell のコマンドとスクリプトをユーザーが Web ベースのコンソールで実行できる Windows Server 2012 の機能です。 Web ベースのコンソールを使用するデバイスでは、Windows PowerShell、リモート管理ソフトウェアまたはブラウザー プラグインをインストールする必要はありません。 必要なのは、適切に構成された Windows PowerShell Web Access ゲートウェイと、JavaScript® をサポートし、Cookie を許可するクライアント デバイスのブラウザーのみです。
 
 詳細については、「[ Windows PowerShell Web Access の展開](http://go.microsoft.com/fwlink/p/?LinkID=221050)」を参照してください。
 
 ### <a name="BKMK_ISE"></a>Windows PowerShell ISE の新機能
-Windows PowerShell 3.0 では、 Windows PowerShell Integrated Scripting Environment (ISE) に多くの新機能が追加されました。たとえば、IntelliSense、Show-Command ウィンドウ、統合されたコンソール ウィンドウ、スニペット、かっこの一致に基づくセクションの展開/折りたたみ、自動保存、最近使った項目の一覧、機能豊富なコピー、ブロックのコピー、および Windows PowerShell スクリプト ワークフローの記述を完全サポートする機能などの多くの新しい機能です。 詳細については、「[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)」を参照してください。
+Windows PowerShell 3.0 では、 Windows PowerShell® Integrated Scripting Environment (ISE) に多くの新機能が追加されました。たとえば、IntelliSense、Show-Command ウィンドウ、統合されたコンソール ウィンドウ、スニペット、かっこの一致に基づくセクションの展開/折りたたみ、自動保存、最近使った項目の一覧、機能豊富なコピー、ブロックのコピー、および Windows PowerShell スクリプト ワークフローの記述を完全サポートする機能などです。 詳細については、「[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)」を参照してください。
 
 ### <a name="BKMK_NET4"></a>Microsoft .NET Framework 4 のサポート
 Windows PowerShell は、共通言語ランタイム 4.0 を背景にして作成されました。 コマンドレット、スクリプト、およびワークフローの作成者は、新しい Microsoft .NET Framework 4 のクラスを Windows PowerShell で使用できます。たとえば、アプリケーションの互換性と配置、Managed Extensibility Framework、並列コンピューティング、ネットワーク接続、Windows Communication Foundation、および Windows Workflow Foundation があります。
@@ -562,7 +562,7 @@ Windows PowerShell 3.0 以降では、New-PSSession コマンドレットを使�
 
 "切断されたセッション" 機能をサポートする新しいコマンドレットが追加されました。たとえば、[Disconnect-PSSession](https://technet.microsoft.com/en-us/library/f8f95111-612f-4cba-9098-77904b0473d8)、[Connect-PSSession](https://technet.microsoft.com/en-us/library/b803dd29-f208-4079-80d4-db04d778f060)、Receive-PSSession などです。また、PSSessions を管理するコマンドレットに新しいパラメーターが追加されました。たとえば、[Invoke-Command](https://technet.microsoft.com/en-us/library/906b4b41-7da8-4330-9363-e7164e5e6970) コマンドレットの **InDisconnectedSession** パラメーターなどです。
 
-"切断されたセッション"機能がサポートされるのは、接続の両端、つまり、開始側 ("クライアント") と終了側 ("サーバー") にある両方のコンピューターで Windows PowerShell 3.0 が実行されている場合のみです。
+"切断されたセッション" 機能がサポートされるのは、接続の両端、つまり、開始側 ("クライアント") と終了側 ("サーバー") にある両方のコンピューターで Windows PowerShell 3.0 が実行されている場合のみです。
 
 ### <a name="BKMK_Robust"></a>堅牢なセッション接続
 Windows PowerShell 3.0 は、クライアントとサーバー間の接続が予期せずに失われた状態を検出すると、自動的に接続を再接続し、実行を再開しようとします。 割り当てられた時間内にクライアントとサーバー間の接続を再確立できなかった場合は、ユーザーに通知され、セッションは切断されます。 再接続を試行している間、Windows PowerShell はユーザーに通知を継続的にフィードバックします。
@@ -759,6 +759,6 @@ Windows PowerShell 3.0 では、特殊文字を正しく解釈して処理する
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

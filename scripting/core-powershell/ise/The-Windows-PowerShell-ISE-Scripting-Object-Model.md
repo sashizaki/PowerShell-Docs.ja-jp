@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 69b047d0-da79-413e-b948-8e45d05d1f85
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: e1c4da3865f8c9dd7d2f73b243ac0b0216bd9631
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: 3b3c7561466db47f9bbf5b3bdc41719521a8f002
 
 ---
 
 # Windows PowerShell ISE スクリプト オブジェクト モデル
-  Windows PowerShellÂ® Integrated Scripting Environment (ISE) は、Windows PowerShell ISE の外観および機能のさまざまな側面を操作する Windows PowerShell スクリプトを記述できるようにする、基になるスクリプティング オブジェクト モデルによってその機能を公開します。 スクリプティング オブジェクト、スクリプティング オブジェクトのプロパティ、およびそのメソッドは、この用途専用で定義されます。
+  Windows PowerShell® Integrated Scripting Environment (ISE) は、Windows PowerShell ISE の外観および機能のさまざまな側面を操作する Windows PowerShell スクリプトを記述できるようにする、基になるスクリプティング オブジェクト モデルによってその機能を公開します。 スクリプティング オブジェクト、スクリプティング オブジェクトのプロパティ、およびそのメソッドは、この用途専用で定義されます。
 
 ## このドキュメントの内容
 
@@ -28,12 +28,12 @@ ms.openlocfilehash: e1c4da3865f8c9dd7d2f73b243ac0b0216bd9631
 -   [その他の役に立つスクリプティング オブジェクト](../../getting-started/cookbooks/Other-Useful-Scripting-Objects.md)
 
 ## 参照
- [Windows PowerShell Integrated Scripting Environment (ISE)](../../getting-started/fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
+- [Windows PowerShell Integrated Scripting Environment (ISE)](../../getting-started/fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
 
   
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

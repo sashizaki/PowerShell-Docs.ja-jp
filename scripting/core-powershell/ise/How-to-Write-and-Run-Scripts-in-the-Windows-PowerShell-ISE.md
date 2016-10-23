@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 6e58c298725254a84819856070b9702340fcf81d
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: c378e9f38c6cc9ea94ce07c320d7a42dd3f102b5
 
 ---
 
@@ -24,7 +24,7 @@ ms.openlocfilehash: 6e58c298725254a84819856070b9702340fcf81d
 -   [スクリプトを保存する方法](#bkmk_3)
 
 ## <a name="bkmk_1"></a>スクリプトを作成して実行する方法
-Windows PowerShellÂ® ファイルは、スクリプト ウィンドウで開いたり、編集したりできます。 Windows PowerShellÂ® で対象となるファイルの種類は、スクリプト ファイル (.ps1)、スクリプト データ ファイル (.psd1)、スクリプト モジュール ファイル (.psm1) です。 これらのファイルの種類は、スクリプト ウィンドウのエディターで構文が色分けされます。 スクリプト ウィンドウで開くことのできる他の一般的なファイルの種類には、構成ファイル (.ps1xml)、XML ファイル、テキスト ファイルがあります。
+Windows PowerShell® ファイルは、スクリプト ウィンドウで開いたり、編集したりできます。 Windows PowerShell® で対象となるファイルの種類は、スクリプト ファイル (.ps1)、スクリプト データ ファイル (.psd1)、スクリプト モジュール ファイル (.psm1) です。 これらのファイルの種類は、スクリプト ウィンドウのエディターで構文が色分けされます。 スクリプト ウィンドウで開くことのできる他の一般的なファイルの種類には、構成ファイル (.ps1xml)、XML ファイル、テキスト ファイルがあります。
 
 > [!NOTE]
 > Windows PowerShell の実行ポリシーによって、スクリプトの実行や、Windows PowerShell のプロファイルと構成ファイルの読み込みを実行できるかどうかが決まります。 既定の実行ポリシー Restricted では、すべてのスクリプトの実行とプロファイルの読み込みが防止されます。 プロファイルの、読み込みと使用を許可するように実行ポリシーを変更する方法については、「[Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab)」と「[about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d)」をご覧ください。
@@ -150,11 +150,11 @@ Windows PowerShell ISE では、次のエンコード オプションをサポ�
 Windows PowerShell ISE では、Windows PowerShell ISE の [保存] または [名前を付けて保存] コマンドを使った場合でも、他のエディターによって作成されたスクリプトのエンコードは変更しません。
 
 ## 参照
-[Windows PowerShell ISE の使用](Using-the-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE の使用](Using-the-Windows-PowerShell-ISE.md)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

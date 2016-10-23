@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 7fb70aba7d4c3c44cc89b5f8c4f6ff5aeb3b14c9
-ms.openlocfilehash: 4830be14b105485c50446f06e9d36491b4c4fe44
+ms.sourcegitcommit: c7b198d6206c57ef663ea5f4c8cef5ab5678a823
+ms.openlocfilehash: d06b330e3a64705e2f86230e8a9e344e85b8d4be
 
 ---
 
@@ -296,7 +296,7 @@ SRV1   5          6/23/2016 4:36:51 PM  Success                                 
 
 ### DSC イベントの詳細の取得
 
-`Trace-xDscOperation1 cmdlet returns an object containing a collection of events, their event types, and the message output generated from a particular DSC operation. Typically, when you find a failure in any of the operations using `Get-xdscoperation` では、その操作をトレースすると、どのイベントによってエラーが発生したかがわかります。
+`Trace-xDscOperation1` コマンドレットは、イベント、そのイベントの種類、および特定の DSC 操作から生成されたメッセージ出力のコレクションが含まれているオブジェクトを返します。 通常、`Get-xDscOperation` を使用した操作のいずれかでエラーが発生した場合、その操作をトレースすると、どのイベントによってエラーが発生したかがわかります。
 
 `SequenceID` パラメーターを使用して特定のコンピューターの特定の操作に対するイベントを取得します。 たとえば、`SequenceID` に 9 を指定すると、`Trace-xDscOperaion` は最後の操作から 9 番目の DSC 操作のトレースを取得します。
 
@@ -626,6 +626,6 @@ onlyProperty                            PSComputerName
 
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

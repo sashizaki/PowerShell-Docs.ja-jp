@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: c1f285a1d1beb35c931c17f5944d7ec697cb152e
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: 09e9006286ca960efafe7badd250f0357b21f608
 
 ---
 
 # Windows PowerShell ISE の操作
-Windows PowerShellÂ® Integrated Scripting Environment (ISE) を使用すると、コマンドやスクリプトを作成、実行、デバッグできます。 Windows PowerShell ISE は、メニュー バー、Windows PowerShell タブ、ツール バー、スクリプト タブ、スクリプト ウィンドウ、コンソール ウィンドウ、ステータス バー、文字サイズ スライダー、状況依存のヘルプで構成されています。
+Windows PowerShell® Integrated Scripting Environment (ISE) を使用すると、コマンドやスクリプトを作成、実行、デバッグできます。 Windows PowerShell ISE は、メニュー バー、Windows PowerShell タブ、ツール バー、スクリプト タブ、スクリプト ウィンドウ、コンソール ウィンドウ、ステータス バー、文字サイズ スライダー、状況依存のヘルプで構成されています。
 
 > [!NOTE]
 > Windows PowerShell ISE 3.0 以降、コマンド ウィンドウと出力ウィンドウは、単一のコンソール ウィンドウに統合されました。
@@ -35,9 +35,9 @@ Windows PowerShell タブは、Windows PowerShell スクリプトが動作する
 |ボタン|機能|
 |----------|------------|
 |**新規**|新しいスクリプトを開きます。|
-|**［開く］**|既存のスクリプトまたはファイルを開きます。|
+|**[開く]**|既存のスクリプトまたはファイルを開きます。|
 |**上書き保存**|スクリプトまたはファイルを保存します。|
-|**［切り取り］**|選んだテキストを切り取り、クリップボードにコピーします。|
+|**[切り取り]**|選んだテキストを切り取り、クリップボードにコピーします。|
 |**コピー**|選択したテキストをクリップボードにコピーします。|
 |**貼り付け**|カーソル位置にクリップボードの内容を貼り付けます。|
 |**出力ウィンドウをクリアします**|出力ウィンドウの内容をすべてクリアします。|
@@ -76,11 +76,11 @@ Windows PowerShell タブは、Windows PowerShell スクリプトが動作する
 Windows PowerShell ISE のヘルプは、Web 上の TechNet ライブラリで利用できます。 ヘルプを開くには、**[ヘルプ]** メニューの **[Windows PowerShell ISE ヘルプ]** をクリックするか、F1 キーを押します。これは、スクリプト ウィンドウまたはコンソール ウィンドウでコマンドレット名の上にカーソルがある場合を除き、どこからでも実行できます。 **[ヘルプ]** メニューからは、Update-Help コマンドレットを実行することや、コマンド ウィンドウを表示することもできます。コマンド ウィンドウは、コマンドレットのすべてのパラメーターを示したり、使いやすいフォームにパラメーターを入力できるようにしたりして、コマンドの作成を助けます。
 
 ## 参照
-[Windows PowerShell ISE の使用](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE の使用](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

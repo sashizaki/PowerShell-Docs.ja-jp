@@ -8,14 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 9c633d457db9d15621285b2662244c4190550f63
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 67426f6ad72967293f8aee1b3f098afc73067c59
 
 ---
 
 #  Web ベースの Windows PowerShell コンソールの使用
 
-最終更新日 : 2013 年 6 月 24 日
+最終更新日: 2013 年 6 月 24 日
 
 適用対象: Windows Server 2012 R2、Windows Server 2012
 
@@ -391,12 +391,12 @@ Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Acce
 
 © 2016 Microsoft
 
-サードパーティのスクリプトやコード、サードパーティから本 Web サイトへのリンク、あるいは本サイトからサードパーティへのリンクは、マイクロソフトではなく、そのようなコードの所有者によってお客様にライセンス供与されています。 ASP.NET Ajax CDN の使用条件 - http://www.asp.net/ajaxlibrary/CDN.ashx
+サードパーティのスクリプトやコード、サードパーティから本 Web サイトへのリンク、あるいは本サイトからサードパーティへのリンクは、マイクロソフトではなく、そのようなコードの所有者によってお客様にライセンス供与されています。 ASP.NET Ajax CDN の使用条件 - http://www.asp.net/ajaxlibrary/CDN.ashx を参照してください。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

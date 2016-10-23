@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: cf06f1e5-3945-47e4-98be-412f5a1f43fe
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 994e6c89f6fc20b95691f010deb3c48062cef310
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: 9563e58d2840c7cc2120b58b041660aaeee12830
 
 ---
 
@@ -45,9 +45,9 @@ Windows PowerShell は、Windows ベースのコンピューターのリモー�
 
 -   [Windows PowerShell Desired State Configuration ファースト ステップ ガイド](https://technet.microsoft.com/en-us/library/c134aa32-b085-4656-9a89-955d8ff768d0)。 Windows PowerShell Desired State Configuration (DSC) は、Windows PowerShell で導入された、Windows PowerShell 4.0 の新しい管理プラットフォームであり、ソフトウェア サービスとそれらの実行環境向けに構成データの展開と管理を実行できます。 DSC は、ソフトウェア環境の状態をどのように構成するかを宣言によって指定するために使用する、Windows PowerShell の言語拡張機能、新しいコマンドレット、およびリソースのセットです。
 
--   [Windows Management Framework 4.0 プレビュー](http://go.microsoft.com/fwlink/?LinkID=293881)には、Windows PowerShell の更新プログラム、Windows PowerShell ISE、Windows PowerShell Web サービス (Management OData IIS 拡張機能)、Windows リモート管理 (WinRM)、Windows Management Infrastructure (WMI)、サーバー マネージャーの WMI プロバイダー、および 4.0 の新機能である Windows PowerShell Desired State Configuration (DSC) などがあります。 Windows Management Framework 4.0 プレビューを使用すると、Windows Server 2012、WindowsÂ® 7 SP1、Windows Server 2008 R2 SP1 を実行するコンピューターにこれらのテクノロジをインストールして使用できます。
+-   [Windows Management Framework 4.0 プレビュー](http://go.microsoft.com/fwlink/?LinkID=293881)には、Windows PowerShell の更新プログラム、Windows PowerShell ISE、Windows PowerShell Web サービス (Management OData IIS 拡張機能)、Windows リモート管理 (WinRM)、Windows Management Infrastructure (WMI)、サーバー マネージャーの WMI プロバイダー、および 4.0 の新機能である Windows PowerShell Desired State Configuration (DSC) などがあります。 Windows Management Framework 4.0 プレビューを使用すると、Windows Server 2012、Windows® 7 SP1、Windows Server 2008 R2 SP1 を実行するコンピューターにこれらのテクノロジをインストールして使用できます。
 
--   [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) には、Windows PowerShell の更新プログラム、Windows PowerShell ISE、Windows PowerShell Web サービス (Management OData IIS の拡張機能)、Windows リモート管理 (WinRM)、Windows Management Infrastructure (WMI)、およびサーバー マネージャーの WMI プロバイダーが含まれています。 Windows Management Framework 3.0 プレビューを使用すると、WindowsÂ® 7 SP1、Windows Server 2008 SP2、Windows Server 2008 R2 SP1 を実行するコンピューターにこれらのテクノロジをインストールして使用できます。
+-   [Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) には、Windows PowerShell の更新プログラム、Windows PowerShell ISE、Windows PowerShell Web サービス (Management OData IIS の拡張機能)、Windows リモート管理 (WinRM)、Windows Management Infrastructure (WMI)、およびサーバー マネージャーの WMI プロバイダーが含まれています。 Windows Management Framework 3.0 プレビューを使用すると、Windows® 7 SP1、Windows Server 2008 SP2、Windows Server 2008 R2 SP1 を実行するコンピューターにこれらのテクノロジをインストールして使用できます。
 
 ## Windows PowerShell について学習する
 Windows PowerShell の学習を開始するには、まず次のリソースを使用してください。
@@ -78,6 +78,6 @@ Windows PowerShell の学習を開始するには、まず次のリソースを�
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 57125436-3d1e-4e7f-b5c4-8f0ecb49d642
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 6cdb6bb5d901c9bc7d2b7f5051e372337bbb69f9
+ms.sourcegitcommit: c40ab96196531d36001e4d94a3821d20612cbfce
+ms.openlocfilehash: 333469a642a4b88442a7d3ca8fa65f5755c69bcc
 
 ---
 
 # 以前のバージョンの Windows で Windows PowerShell を開始する
-このセクションでは、WindowsÂ® 7、Windows ServerÂ® 2008 R2、Windows Server 2008 で、Windows PowerShell および Windows PowerShell Integrated Scripting Environment (ISE) を開始する方法について説明します。 Windows ServerÂ® 2008 R2 および Windows Server 2008 で、Windows PowerShell 2.0 の Windows PowerShell ISE のオプション機能を有効にする方法についても説明します。
+このセクションでは、Windows® 7、Windows Server® 2008 R2、Windows Server® 2008 で、Windows PowerShell と Windows PowerShell Integrated Scripting Environment (ISE) を開始する方法について説明します。 Windows Server® 2008 R2 と Windows Server® 2008 で、Windows PowerShell 2.0 の Windows PowerShell ISE のオプション機能を有効にする方法についても説明します。
 
 サポートされるシステムで Windows PowerShell 4.0 をインストールするには、[Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) をダウンロードしてインストールします。 詳しくは、「[Windows PowerShell のインストール](Installing-Windows-PowerShell.md)」をご覧ください。
 
@@ -89,6 +89,6 @@ Windows Server 2008 R2 または Windows Server 2008 で Windows PowerShell 2.0 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 8b632570-5739-4fab-bf09-a1d59004743d
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: dfca9909da78dc45cd72cbfaff5ab4c441762c60
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: f72179db813b6065de172f76f134f02ee33f1caa
 
 ---
 
 # PackageManagement モジュール
-このセクションには、**Microsoft.PowerShell.PackageManagement** モジュールのヘルプ トピックが含まれています。 **Microsoft.PowerShell.PackageManagement** モジュールは Windows PowerShellÂ® 5.0 でインストールされます。
+このセクションには、**Microsoft.PowerShell.PackageManagement** モジュールのヘルプ トピックが含まれています。 **Microsoft.PowerShell.PackageManagement** モジュールは Windows PowerShell® 5.0 でインストールされます。
 
 ## ヘルプ トピック
 [Windows PowerShell PackageManagement コマンドレット](http://technet.microsoft.com/library/dn890706(v=wps.640).aspx)
@@ -28,6 +28,6 @@ ms.openlocfilehash: dfca9909da78dc45cd72cbfaff5ab4c441762c60
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

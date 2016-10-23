@@ -8,8 +8,8 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: a5f3025ff222d4a27c0da074df9e84d82c51a46f
-ms.openlocfilehash: 7bbfc31fdebdde83ac1784373b51af40b1dc9492
+ms.sourcegitcommit: 8e486891a4e5db20389d6ae65d00c42e1308af35
+ms.openlocfilehash: 4ab20cdcac6f10dc9ecab6d85b38f413e0ade8b0
 
 ---
 
@@ -150,6 +150,8 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 ### DSC リソース モジュールのパッケージの形式
 各リソース モジュールは、圧縮し、**{モジュール名}_{モジュールのバージョン}.zip** というパターンで名前を付ける必要があります。 たとえば、モジュール名が xWebAdminstration で、バージョンが 3.1.2.0 のモジュールでは、'xWebAdministration_3.2.1.0.zip' という名前になります。 各バージョンのモジュールを 1 つの zip ファイルに含める必要があります。 各 zip ファイルには 1 つのバージョンのリソースのみが含まれるので、WMF 5.0 で追加された、単一のディレクトリに複数のモジュール バージョンを入れるモジュール形式はサポートされていません。 このため、プル サーバーで使うための DSC リソース モジュールをパッケージ化する前に、ディレクトリ構造に少しの変更が必要です。 WMF 5.0 の DSC リソースを含むモジュールの既定の形式は、'{モジュール フォルダー}\{モジュールのバージョン}\DscResources\{DSC リソース フォルダー}\' です。 プル サーバー用にパッケージ化する前には、単純に **{モジュールのバージョン}** フォルダーを削除して、'{モジュール フォルダー}\DscResources\{DSC リソース フォルダー}\' というパスにします。 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを **ModulePath** フォルダーに置きます。
 
+新しく追加したモジュールのチェックサム ファイルを作成するには、`new-dscchecksum {module zip file}` を使用します。
+
 ### 構成 MOF の形式 
 ターゲット ノード上の LCM が構成を検証できるように、構成 MOF ファイルはチェックサム ファイルと組み合わせて使用する必要があります。 チェックサムを作成するには、[New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) コマンドレットを呼び出します。 このコマンドレットは、構成 MOF が存在するフォルダーが指定された **Path** パラメーターを受け取ります。 このコマンドレットは、`ConfigurationMOFName.mof.checksum` という名前でチェックサム ファイルを作成します。ここで、`ConfigurationMOFName` は構成 MOF ファイルの名前です。 指定のフォルダーに複数の構成 MOF ファイルがある場合は、そのフォルダー内の構成ごとにチェックサムが作成されます。 MOF ファイルと、それに関連するチェックサム ファイルは、**ConfigurationPath** フォルダーに配置します。
 
@@ -187,6 +189,6 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

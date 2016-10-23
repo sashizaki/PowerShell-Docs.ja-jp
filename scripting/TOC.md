@@ -12,7 +12,7 @@
 #### [以前の Windows バージョンでの PowerShell の開始](setup/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)
 ### [Windows PowerShell 2.0 エンジンのインストール](setup/Installing-the-Windows-PowerShell-2.0-Engine.md)
 ### [Windows PowerShell 2.0 エンジンの開始](setup/Starting-the-Windows-PowerShell-2.0-Engine.md)
-### [Windows PowerShell SDK のインストール](https://msdn.microsoft.com/en-us/library/ff458115.aspx)
+### [Windows PowerShell SDK のインストール](setup/Installing-the-Windows-PowerShell-SDK.md)
 ### [セキュリティ](setup/security.md)
 #### [PowerShell リモート処理のセキュリティに関する考慮事項](setup/WinRMSecurity.md)
 ### [ユーザー補助](setup/Accessibility-in-Windows-PowerShell-ISE.md)
@@ -41,11 +41,11 @@
 ####  [コンピューターの状態を変更する](getting-started/cookbooks/Changing-Computer-State.md)
 ####  [コンピューターに関する情報の収集](getting-started/cookbooks/Collecting-Information-About-Computers.md)
 ####  [互換性のあるエイリアス](getting-started/cookbooks/Appendix-1---Compatibility-Aliases.md)
-####  [.NET および COM オブジェクトの作成 'New-Object'](getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md)
+####  [.NET オブジェクトと COM オブジェクトを作成する (New-Object)](getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md)
 ####  [ユーザー設定の入力ボックスを作成する](getting-started/cookbooks/Creating-a-Custom-Input-Box.md)
 ####  [カスタムの PowerShell ショートカットの作成](getting-started/cookbooks/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md)
 ####  [グラフィカルな日付の選択を作成する](getting-started/cookbooks/Creating-a-Graphical-Date-Picker.md)
-####  [WMI オブジェクトの取得 'Get-WmiObject'](getting-started/cookbooks/Getting-WMI-Objects--Get-WmiObject-.md)
+####  [WMI オブジェクトの取得 (Get-WmiObject)](getting-started/cookbooks/Getting-WMI-Objects--Get-WmiObject-.md)
 ####  [Process コマンドレットによるプロセスの管理](getting-started/cookbooks/Managing-Processes-with-Process-Cmdlets.md)
 ####  [サービスの管理](getting-started/cookbooks/Managing-Services.md)
 ####  [Windows PowerShell ドライブの管理](getting-started/cookbooks/Managing-Windows-PowerShell-Drives.md)
@@ -56,14 +56,14 @@
 ####  [ネットワーク関連タスクの実行](getting-started/cookbooks/Performing-Networking-Tasks.md)
 ####  [PowerShell Get モジュール](getting-started/cookbooks/PowerShellGet-Module.md)
 ####  [Out-* コマンドレットを使用してデータをリダイレクトする](getting-started/cookbooks/Redirecting-Data-with-Out---Cmdlets.md)
-####  [パイプラインからオブジェクトを削除する ’Where-Object’](getting-started/cookbooks/Removing-Objects-from-the-Pipeline--Where-Object-.md)
-####  [複数のオブジェクトのタスクを繰り返す 'ForEach-Object'](getting-started/cookbooks/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)
+####  [パイプラインからオブジェクトを削除する (Where-Object)](getting-started/cookbooks/Removing-Objects-from-the-Pipeline--Where-Object-.md)
+####  [複数のオブジェクトのタスクを繰り返す (ForEach-Object)](getting-started/cookbooks/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)
 ####  [リスト ボックスから項目を選択する](getting-started/cookbooks/Selecting-Items-from-a-List-Box.md)
-####  [オブジェクトの一部を選択する 'Select-Object'](getting-started/cookbooks/Selecting-Parts-of-Objects--Select-Object-.md)
+####  [オブジェクトの一部を選択する (Select-Object)](getting-started/cookbooks/Selecting-Parts-of-Objects--Select-Object-.md)
 ####  [オブジェクトの並べ替え](getting-started/cookbooks/Sorting-Objects.md)
 ####  [Format コマンドを使用した出力ビューの変更](getting-started/cookbooks/Using-Format-Commands-to-Change-Output-View.md)
 ####  [静的なクラスとメソッドの使用](getting-started/cookbooks/Using-Static-Classes-and-Methods.md)
-####  [オブジェクトの構造の表示 'Get-Member'](getting-started/cookbooks/Viewing-Object-Structure--Get-Member-.md)
+####  [オブジェクトの構造を表示する (Get-member)](getting-started/cookbooks/Viewing-Object-Structure--Get-Member-.md)
 ####  [ファイル、フォルダー、レジストリ キーの操作](getting-started/cookbooks/Working-With-Files-Folders-and-Registry-Keys.md)
 ####  [ファイルとフォルダーの操作](getting-started/cookbooks/Working-with-Files-and-Folders.md)
 ####  [オブジェクトの操作](getting-started/cookbooks/Working-with-Objects.md)
@@ -142,6 +142,6 @@
 ## [PowerShell 用語集](Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=Sep16_HO3-->
+<!--HONumber=Oct16_HO1-->
 
 

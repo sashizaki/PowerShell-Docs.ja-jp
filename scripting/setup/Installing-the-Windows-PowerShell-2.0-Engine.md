@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: b6189e43fc9579a29d598deb705bb8e4e32e4a4f
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: 34fc34fa752e8f67e9bdb015c234da83e80b7328
 
 ---
 
@@ -21,7 +21,7 @@ Windows PowerShell 3.0 は、Windows PowerShell 2.0 との下位互換性を保�
 
 これらの変更の影響を受けるコマンドやホスト プログラムとの下位互換性を維持するため、Windows PowerShell 2.0、Windows PowerShell 3.0、および Windows PowerShell 4.0 のエンジンは、side-by-side で実行できるように設計されています。 また、Windows PowerShell 2.0 エンジンは Windows Server 2012 R2、Windows 8.1、Windows 8、Windows Server 2012、Windows Management Framework 3.0 にも組み込まれています。 Windows PowerShell 2.0 エンジンは、既存のスクリプトまたはホスト プログラムが Windows PowerShell 3.0、Windows PowerShell 4.0、Microsoft .NET Framework 4 との互換性がないために実行できない場合に限り使用することを意図しています。 そのようなケースはまれと考えられます。
 
-Windows PowerShell 2.0 エンジンは、Windows Server 2012 R2、Windows 8.1、WindowsÂ® 8、Windows ServerÂ® 2012 のオプション機能です。 以前のバージョンの Windows に Windows Management Framework 3.0 をインストールすると、Windows PowerShell のインストール ディレクトリ内で Windows PowerShell 2.0 インストールが Windows PowerShell 3.0 のインストールによって完全に置き換えられます。 ただし、Windows PowerShell 2.0 エンジンは保持されます。
+Windows PowerShell 2.0 エンジンは、Windows Server 2012 R2、Windows 8.1、Windows® 8、Windows Server® 2012 のオプション機能です。 以前のバージョンの Windows に Windows Management Framework 3.0 をインストールすると、Windows PowerShell のインストール ディレクトリ内で Windows PowerShell 2.0 インストールが Windows PowerShell 3.0 のインストールによって完全に置き換えられます。 ただし、Windows PowerShell 2.0 エンジンは保持されます。
 
 Windows PowerShell 2.0 エンジンの開始に関する情報については、「[Windows PowerShell 2.0 エンジンの開始](Starting-the-Windows-PowerShell-2.0-Engine.md)」を参照してください。
 
@@ -87,6 +87,6 @@ Windows 7、Windows Server 2008 R2、および Windows Server 2008 に Windows P
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

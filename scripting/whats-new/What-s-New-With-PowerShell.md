@@ -8,13 +8,13 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: edb3be980d23cafb8c9b9923a7153308481e6c67
+ms.sourcegitcommit: 18949229d4d9e3867cdc265c3fd958d2598186b4
+ms.openlocfilehash: 77ac8a58f87371a176ca7a3613c1f319aa69baff
 
 ---
 
 # PowerShell の新機能
-Windows PowerShell® 5.0 には、その用途を拡大し、使いやすさを向上させる重要な機能や、Windows ベースの環境をより簡単かつ包括的に制御および管理できるようにする重要な新しい機能が含まれています。
+Windows PowerShell® 5.0 には、その用途を拡大し、使いやすさを向上させる重要な機能や、Windows ベースの環境をより簡単かつ包括的に制御および管理できるようにする重要な新しい機能が含まれています。  Desired State Configuration、セキュリティ、パフォーマンス、リモート処理、および言語拡張機能に関して重要な強化が行われています。
 
 Windows PowerShell 5.0 には下位互換性があります。 Windows PowerShell 4.0、Windows PowerShell 3.0、Windows PowerShell 2.0 用に設計されたコマンドレット、プロバイダー、モジュール、スナップイン、スクリプト、関数、およびプロファイルは、全般的に変更なしで Windows PowerShell 5.0 でも動作します。
 
@@ -35,6 +35,6 @@ Windows PowerShell 5.0 は、Windows Server® 2016 Technical Preview および W
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

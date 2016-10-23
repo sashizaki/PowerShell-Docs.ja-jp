@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 8b950138-9782-4dfe-bd5f-6bdcea7060da
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 4d33ebe2a067781d708ca3b0f8dc4dd2848ba4d4
+ms.sourcegitcommit: 16608d8b97ec816d77ec7b8ac2438a4d64b55fba
+ms.openlocfilehash: aeb0b26ff7cb65381a4cecbf9ae790e5a22a8e97
 
 ---
 
@@ -125,7 +125,7 @@ ms.openlocfilehash: 4d33ebe2a067781d708ca3b0f8dc4dd2848ba4d4
 |[about_While [v4]](https://technet.microsoft.com/en-us/library/3a1a1329-2501-4e4e-8660-a2ca68c68541)|Windows PowerShell の **While** ループについて説明します。|
 |[about_Wildcards [v4]](https://technet.microsoft.com/en-us/library/9fe09a23-afce-4547-9e2f-c38090f77636)|Windows PowerShell のワイルドカード文字 (\*) の使用方法について説明します。|
 |[about_Windows_PowerShell_5.0](https://technet.microsoft.com/en-us/library/6d56fa88-371e-40c9-b2de-64a2a0cd49da)|Windows PowerShell 4.0 の新しい機能と変更について説明します。|
-|[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)|Windows PowerShellÂ® Integrated Scripting Environment (ISE) について説明します。|
+|[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)|Windows PowerShell® Integrated Scripting Environment (ISE) について説明します。|
 |[about_Workflows](https://technet.microsoft.com/en-us/library/f2897bdd-1b9d-4679-8b19-09840bd40a22)|Windows PowerShell ワークフロー機能について簡単に紹介します。|
 |[about_WorkflowCommonParameters](https://technet.microsoft.com/en-us/library/119f968e-618e-439c-b76c-cdd17e6df27c)|すべての Windows PowerShell ワークフロー コマンドで有効なパラメーターについて説明します。|
 |[about_WMI](https://technet.microsoft.com/en-us/library/32da7221-c213-48ad-8466-fad82285e4e8)|Windows Management Instrumentation (WMI) について説明します。これは Web-Based Enterprise Management (WBEM) 業界標準を Microsoft が実装したものです。|
@@ -145,6 +145,6 @@ ms.openlocfilehash: 4d33ebe2a067781d708ca3b0f8dc4dd2848ba4d4
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

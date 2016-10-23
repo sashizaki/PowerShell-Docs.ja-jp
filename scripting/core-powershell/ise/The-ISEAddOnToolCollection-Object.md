@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
 translationtype: Human Translation
-ms.sourcegitcommit: 457451343b51891e336b0df6f979c285fb6144eb
-ms.openlocfilehash: 0a8f19693085b9b878fae60953a2cdc358ba8f4c
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 575ee3b8279ad50920df17ff92d4f65467d83830
 
 ---
 
 # ISEAddOnToolCollection オブジェクト
-  **ISEAddOnToolCollection** オブジェクトは、**ISEAddOnTool** オブジェクトのコレクションです。 例としては、 **$psISE.CurrentPowerShellTab.VerticalAddOnTools** オブジェクトです。
+  **ISEAddOnToolCollection** オブジェクトは、**ISEAddOnTool** オブジェクトのコレクションです。 例としては、**$psISE.CurrentPowerShellTab.VerticalAddOnTools** オブジェクトです。
 
 ## メソッド
 
@@ -24,11 +24,11 @@ ms.openlocfilehash: 0a8f19693085b9b878fae60953a2cdc358ba8f4c
 
  新しいアドオン ツールをコレクションに追加します。 新しく追加されたアドオン ツールが返されます。 このコマンドを実行する前に、ローカル コンピューターにアドオン ツールをインストールし、アセンブリを読み込む必要があります。
 
- **Name** – Windows PowerShell ISE に追加するアドオン ツールの表示名を指定する文字列。
+ **Name** - Windows PowerShell ISE に追加するアドオン ツールの表示名を指定する文字列。
 
- **ControlType** – 追加するコントロールを指定する種類。
+ **ControlType** - 追加するコントロールを指定する種類。
 
- **\[IsVisible\]** – 省略可能なブール値は、**$true** に設定すると、アドオン ツールは、関連付けられているツール ウィンドウに直ちに表示します。
+ **\[IsVisible\]** - 省略可能なブール値は、**$true** に設定すると、アドオン ツールが、関連付けられているツール ウィンドウに直ちに表示されます。
 
 ```PowerShell
 # Load a DLL with an add-on and then add it to the ISE
@@ -41,7 +41,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  コレクションから指定したアドオン ツールを削除します。
 
- **項目** – Microsoft.PowerShell.Host.ISE.ISEAddOnTool Windows PowerShell ISE から削除するオブジェクトを指定します。
+ **Item** - Microsoft.PowerShell.Host.ISE.ISEAddOnTool Windows PowerShell ISE から削除するオブジェクトを指定します。
 
 ```PowerShell
 # Load a DLL with an add-on and then add it to the ISE
@@ -54,7 +54,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 
  **psTab** パラメーターが指定する PowerShell タブを選択します。
 
- **psTab** – PowerShell タブが選択するMicrosoft.PowerShell.Host.ISE.PowerShellTab。
+ **psTab** - PowerShell タブが選択するMicrosoft.PowerShell.Host.ISE.PowerShellTab。
 
 ```PowerShell
       $newTab = $psISE.PowerShellTabs.Add()
@@ -67,7 +67,7 @@ $newTab.DisplayName="Brand New Tab"
 
  **psTab** パラメーターが指定する PowerShell タブを削除します。
 
- **psTab** – PowerShell タブが削除する Microsoft.PowerShell.Host.ISE.PowerShellTab。
+ **psTab** - PowerShell タブが削除する Microsoft.PowerShell.Host.ISE.PowerShellTab。
 
 ```PowerShell
 $newTab = $psISE.PowerShellTabs.Add()
@@ -87,6 +87,6 @@ $psISE.PowerShellTabs.Remove($newTab)
 
 
 
-<!--HONumber=Sep16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

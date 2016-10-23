@@ -8,14 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d54139714552943901f565a8525bb478ed308f09
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 ---
 
 #  Windows PowerShell Web Access をアンインストールする
 
-最終更新日 : 2013 年 6 月 24 日
+最終更新日: 2013 年 6 月 24 日
 
 適用対象: Windows Server 2012 R2、Windows Server 2012
 
@@ -74,17 +74,17 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
     -   Windows の**スタート**画面で、**[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
 
-2.  次のように入力して **Enter** キーを押します。*computer_name* は、Windows PowerShell Web Access を削除するリモート サーバーです。 <span class="code">–Restart</span> パラメーターによって、対象サーバーが自動的に再起動されます (削除で必要な場合)。
+2.  次のように入力して **Enter** キーを押します。*computer_name* は、Windows PowerShell Web Access を削除するリモート サーバーです。 <span class="code">-Restart</span> パラメーターによって、対象サーバーが自動的に再起動されます (削除で必要な場合)。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_7b534520-f292-471f-89e3-a1079c03e369'); "Copy to clipboard.")
 
-        Uninstall-WindowsFeature –Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
+        Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -Restart
 
     オフライン VHD に役割や機能を削除するには、<span class="code">-ComputerName</span> パラメーターと <span class="code">-VHD</span> パラメーターの両方を追加する必要があります。 <span class="code">-ComputerName</span> パラメーターには VHD のマウント先のサーバー名が格納され、<span class="code">-VHD</span> パラメーターには指定したサーバー上の VHD ファイルへのパスが格納されます。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_5d8f91ee-b91a-4653-b7df-e745187fd72d'); "Copy to clipboard.")
 
-        Uninstall-WindowsFeature –Name WindowsPowerShellWebAccess –VHD <path> -ComputerName <computer_name> -Restart
+        Uninstall-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -Restart
 
 3.  削除が完了したら、Windows PowerShell Web Access が削除されていることを確認します。これには、サーバー マネージャーの **[すべてのサーバー]** ページを開き、機能を削除したサーバーを選択して、選択したサーバーのページで **[役割と機能]** タイルを表示します。 また、選択したサーバーを対象として <span class="code">Get-WindowsFeature</span> コマンドレット (Get-WindowsFeature -ComputerName &lt;*computer_name*&gt;) を実行し、サーバーにインストールされている役割と機能の一覧を表示することもできます。
 
@@ -93,7 +93,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 ------------------------------------------------------------------------
 
-このセクションの手順では、サーバー マネージャーの役割と機能の削除ウィザード 、および IIS マネージャー コンソールを使用して Windows PowerShell Web Access の Web アプリケーションと Windows PowerShell Web Access 機能の両方をアンインストールできます。
+このセクションの手順では、サーバー マネージャーの役割と機能の削除ウィザード、および IIS マネージャー コンソールを使用して Windows PowerShell Web Access の Web アプリケーションと Windows PowerShell Web Access 機能の両方をアンインストールできます。
 
 ###
 
@@ -213,12 +213,12 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 © 2016 Microsoft
 
-サードパーティのスクリプトやコード、サードパーティから本 Web サイトへのリンク、あるいは本サイトからサードパーティへのリンクは、マイクロソフトではなく、そのようなコードの所有者によってお客様にライセンス供与されています。 ASP.NET Ajax CDN の使用条件 - http://www.asp.net/ajaxlibrary/CDN.ashx
+サードパーティのスクリプトやコード、サードパーティから本 Web サイトへのリンク、あるいは本サイトからサードパーティへのリンクは、マイクロソフトではなく、そのようなコードの所有者によってお客様にライセンス供与されています。 ASP.NET Ajax CDN の使用条件 - http://www.asp.net/ajaxlibrary/CDN.ashx を参照してください。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

@@ -9,13 +9,13 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: c1744841e23aa9c2fedf3eb92230ef422c36f0cd
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 9063e17928c433db8c3c9d26d41d31c2675e413c
 
 ---
 
 # ISEFile オブジェクト
-  **ISEFile** オブジェクトは、Windows PowerShellÂ® Integrated Scripting Environment (ISE) のファイルを表します。 これは Microsoft.PowerShell.Host.ISE.ISEFile クラスのインスタンスです。 このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。 **$PsISE.CurrentFile** と、PowerShell タブのファイル コレクション内のファイルは、Microsoft.PowerShell.Host.ISE.ISEFile クラスのすべてのインスタンスです。
+  **ISEFile** オブジェクトは、Windows PowerShell® Integrated Scripting Environment (ISE) のファイルを表します。 これは Microsoft.PowerShell.Host.ISE.ISEFile クラスのインスタンスです。 このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。 **$PsISE.CurrentFile** と、PowerShell タブのファイル コレクション内のファイルは、Microsoft.PowerShell.Host.ISE.ISEFile クラスのすべてのインスタンスです。
 
 ## メソッド
 
@@ -24,8 +24,8 @@ ms.openlocfilehash: c1744841e23aa9c2fedf3eb92230ef422c36f0cd
 
  ファイルをディスクに保存します。
 
- **\[saveEncoding\]** – 省略可能 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- 保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
+ **\[saveEncoding\]** - 省略可能な [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+。保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
 
  **例外**
  -   **System.IO.IOException**: ファイルを保存できませんでした。
@@ -50,8 +50,8 @@ $myfile.Encoding
 
  **filename** - ファイルを保存するために使用する名前の文字列。
 
- **\[saveEncoding\]** – 省略可能 [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
- 保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
+ **\[saveEncoding\]** - 省略可能な [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
+。保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
 
  **例外**
  -   **System.ArgumentNullException**: **filename** パラメーターが null です。
@@ -150,6 +150,6 @@ $psISE.CurrentFile.IsUntitled
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

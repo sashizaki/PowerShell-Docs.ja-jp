@@ -8,14 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: df935247806f108705c9528e4c5454ce499becef
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
 
 ---
 
 #  Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
 
-最終更新日 : 2013 年 6 月 24 日
+最終更新日: 2013 年 6 月 24 日
 
 適用対象: Windows Server 2012 R2、Windows Server 2012
 
@@ -127,7 +127,7 @@ Windows PowerShell Web Access を使ったリモート コンピューターへ�
 </tr>
 <tr class="odd">
 <td><p>承認規則内に、構文 <em>user_name</em>/<em>computer_name ではなくセキュリティ識別子 (SID) が表示される</em> </p></td>
-<td><p>規則が有効ではなくなっているか、Active Directory ドメイン サービスのクエリが失敗しています。 以前はワークグループ内にあったゲートウェイ サーバーが後でドメインに参加した場合は通常、承認規則は有効ではありません。</p></td>
+<td><p>規則が有効ではなくなっているか、Active Directory Domain Services のクエリが失敗しています。 以前はワークグループ内にあったゲートウェイ サーバーが後でドメインに参加した場合は通常、承認規則は有効ではありません。</p></td>
 </tr>
 <tr class="even">
 <td><p>ドメインを伴う IPv6 アドレスとして承認規則内で指定されている対象コンピューターにサインインできない。</p></td>
@@ -191,12 +191,12 @@ Windows PowerShell Web Access を使ったリモート コンピューターへ�
 
 © 2016 Microsoft
 
-サードパーティのスクリプトやコード、サードパーティから本 Web サイトへのリンク、あるいは本サイトからサードパーティへのリンクは、マイクロソフトではなく、そのようなコードの所有者によってお客様にライセンス供与されています。 ASP.NET Ajax CDN の使用条件 - http://www.asp.net/ajaxlibrary/CDN.ashx
+サードパーティのスクリプトやコード、サードパーティから本 Web サイトへのリンク、あるいは本サイトからサードパーティへのリンクは、マイクロソフトではなく、そのようなコードの所有者によってお客様にライセンス供与されています。 ASP.NET Ajax CDN の使用条件 - http://www.asp.net/ajaxlibrary/CDN.ashx を参照してください。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 

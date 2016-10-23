@@ -8,14 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: dc50a729855a71d61c187da9d698bd294f740546
+ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
+ms.openlocfilehash: f62b1e0ec9f26e1b2bcb364c78a2ce39467655a5
 
 ---
 
 # Windows PowerShell Web Access の承認規則とセキュリティ機能
 
-最終更新日 : 2013 年 6 月 24 日
+最終更新日: 2013 年 6 月 24 日
 
 適用対象: Windows Server 2012 R2、Windows Server 2012
 
@@ -32,7 +32,7 @@ Windows PowerShell Web Access をインストールし、ゲートウェイを�
 
 Windows Server 2012 R2 の Add-PswaAuthorizationRule および Test-PswaAuthorizationRule に、リモート コンピューターから、またはアクティブな Windows PowerShell Web Access セッション内から Windows PowerShell Web Access 承認規則を追加およびテストできるようにするために、資格情報パラメーターが用意されました。 資格情報パラメーターを持つ他の Windows PowerShell コマンドレットと同様、PSCredential オブジェクトをパラメーターの値として指定できます。 リモート コンピューターに渡す資格情報を含む PSCredential オブジェクトを作成するには、[Get-Credential](https://technet.microsoft.com/library/hh849815.aspx) コマンドレットを実行します。
 
-Windows PowerShell Web Access の認証規則はホワイトリスト方式です。 各規則は、ユーザー、対象コンピューター、および指定された対象コンピューターにおける特定のWindows PowerShell [セッション構成](https://technet.microsoft.com/library/dd819508.aspx) (エンドポイントまたは実行空間とも呼ばれます) の間に許可される接続を定義したものです。
+Windows PowerShell Web Access の認証規則はホワイトリスト方式です。 各規則は、ユーザー、対象コンピューター、および指定された対象コンピューターにおける特定の Windows PowerShell [セッション構成](https://technet.microsoft.com/library/dd819508.aspx) (エンドポイントまたは実行空間とも呼ばれます) の間に許可される接続を定義したものです。
 
 <table>
 <colgroup>
@@ -180,7 +180,7 @@ Windows PowerShell Web Access のセキュリティ モデルは、Web ベース
 
 カスタム セッション構成を使用することで、特定のユーザーに対して Windows PowerShell Web Access の制限付き実行空間内でのみ作業することを許可する場合、カスタム セッション構成は、これらが参照される承認規則を追加する前に作成してください。 Windows PowerShell Web Access コマンドレットを使用してカスタム セッション構成を作成することはできません。 カスタム セッション構成の作成方法の詳細については、MSDN サイトの「[about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx)」を参照してください。
 
-Windows PowerShell Web Access コマンドレットは、ワイルドカード文字 、アスタリスク(\*) をサポートしています。 文字列内のワイルドカード文字はサポートされていません。アスタリスクは、プロパティ (ユーザー、コンピューター、セッション構成) ごとに 1 つ使うことができます。
+Windows PowerShell Web Access コマンドレットは、ワイルドカード文字、アスタリスク(\*) をサポートしています。 文字列内のワイルドカード文字はサポートされていません。アスタリスクは、プロパティ (ユーザー、コンピューター、セッション構成) ごとに 1 つ使うことができます。
 
 <table>
 <colgroup>
@@ -212,15 +212,15 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_1079478f-cd51-4d35-8022-4b532a9d57a4'); "Copy to clipboard.")
 
-        Add-PswaAuthorizationRule –UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
+        Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
     この承認規則により、特定のユーザー 1 人が、通常アクセスが許可されているネットワーク上の 1 つのコンピューターにアクセスして、このユーザーが通常必要とするスクリプトとコマンドレットに制限された特定の 1 つのセッション構成にアクセスできるようになります。 次の例では、<span class="code">Contoso</span> ドメインの <span class="code">JSmith</span> というユーザーに、<span class="code">Contoso_214</span> というコンピューターを管理し、<span class="code">NewAdminsOnly</span> というセッション構成を使うためのアクセス権が付与されます。
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_4e760377-e401-4ef4-988f-7a0aec1b2a90'); "Copy to clipboard.")
 
-        Add-PswaAuthorizationRule –UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
+        Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4.  **Get-PswaAuthorizationRule** コマンドレットまたは **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt; を実行して、規則が作成されていることを確認します。 例: **Test-PswaAuthorizationRule –UserName Contoso\\JSmith –ComputerName Contoso_214**。
+4.  **Get-PswaAuthorizationRule** コマンドレットまたは **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt; を実行して、規則が作成されていることを確認します。 例: **Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**。
 
 #### 承認規則を削除するには
 
@@ -265,7 +265,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
 -   管理者は、その他のユーザーよりも権限の強いアクセスを特定のユーザーに許可することができます。 たとえば、管理者が、**Admins** と **BasicSupport** という 2 つのユーザー グループを作成します。 管理者はさらに、制限付き実行空間を指定して **PswaEndpoint** というエンドポイントを作成し、**Admins,\*,\*** と **BasicSupport,\*,PswaEndpoint** という 2 つの規則を定義します。 最初の規則は、**Admin** グループのすべてのユーザーにすべてのコンピューターへのアクセスを許可します。2 つ目の規則は、**BasicSupport** グループに、**PswaEndpoint** を持つコンピューターだけに対するアクセスを許可します。
 
--   管理者がプライベートなテスト環境をセットアップして、すべての承認済みネットワーク ユーザーに、通常アクセスが許可されるネットワーク内のすべてのコンピューターに対するアクセスと、通常アクセスが許可されるすべてのセッション構成に対するアクセスを許可します。 これはプライベートなテスト環境であるため、管理者が作成する承認規則は安全ではありません。 管理者は <span class="code">Add-PswaAuthorizationRule \* \* \*</span> コマンドレットを実行します。ここで使われているワイルドカード文字 **\*** は、すべてのコンピューター、すべてのユーザー、すべてのセッション構成をそれぞれ示します。 この規則は次の内容と同等です: <span class="code">Add-PswaAuthorizationRule –UserName \* -ComputerName \* -ConfigurationName \*</span>
+-   管理者がプライベートなテスト環境をセットアップして、すべての承認済みネットワーク ユーザーに、通常アクセスが許可されるネットワーク内のすべてのコンピューターに対するアクセスと、通常アクセスが許可されるすべてのセッション構成に対するアクセスを許可します。 これはプライベートなテスト環境であるため、管理者が作成する承認規則は安全ではありません。 管理者は <span class="code">Add-PswaAuthorizationRule \* \* \*</span> コマンドレットを実行します。ここで使われているワイルドカード文字 **\*** は、すべてのコンピューター、すべてのユーザー、すべてのセッション構成をそれぞれ示します。 この規則は次と同じです: <span class="code">Add-PswaAuthorizationRule -UserName \* -ComputerName \* -ConfigurationName \*</span>。
 
     <table>
     <colgroup>
@@ -287,7 +287,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
     [Copy](javascript:if%20(window.epx.codeSnippet)window.epx.codeSnippet.copyCode('CodeSnippetContainerCode_8d183d3d-1c19-44b8-9297-530b0efc7c79'); "Copy to clipboard.")
 
-        Add-PswaAuthorizationRule –userName PswaServer\chrisLocal –computerName srv1.contoso.com –configurationName Microsoft.PowerShell
+        Add-PswaAuthorizationRule -userName PswaServer\chrisLocal -computerName srv1.contoso.com -configurationName Microsoft.PowerShell
 
     この規則例では、Chris がゲートウェイ サーバーで認証され、Chris による *srv1* へのアクセスが承認されます。 サインイン ページで、Chris は 2 番目の資格情報 (*contoso\\chris*) を **[オプションの接続設定]** に指定する必要があります。 ゲートウェイ サーバーでは、対象コンピューター (*srv1.contoso.com*) で Chris を認証するために、追加の資格情報が使用されます。
 
@@ -422,12 +422,12 @@ Windows Server 2012 R2 で実行する Windows PowerShell Web Access では、�
 
 © 2016 Microsoft
 
-サードパーティのスクリプトやコード、サードパーティから本 Web サイトへのリンク、あるいは本サイトからサードパーティへのリンクは、マイクロソフトではなく、そのようなコードの所有者によってお客様にライセンス供与されています。 ASP.NET Ajax CDN の使用条件 - http://www.asp.net/ajaxlibrary/CDN.ashx
+サードパーティのスクリプトやコード、サードパーティから本 Web サイトへのリンク、あるいは本サイトからサードパーティへのリンクは、マイクロソフトではなく、そのようなコードの所有者によってお客様にライセンス供与されています。 ASP.NET Ajax CDN の使用条件 - http://www.asp.net/ajaxlibrary/CDN.ashx を参照してください。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO1-->
 
 
