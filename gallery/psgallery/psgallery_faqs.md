@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,コマンドレット,ギャラリー"
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_faqs
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 96d38c487a311852a0f670b7d3de4929fab68e4d
+
+---
+
 # AppLocker: Frequently Asked Questions (AppLocker: よく寄せられる質問)
 
 ## PowerShell モジュールとは何ですか。
@@ -158,6 +175,9 @@ PackageManagement パッケージ プロバイダー層では、PSModule パッ�
 
 その項目所有者とその他の項目所有者の間で生じる論争については、PowerShell コミュニティでの解決をお勧めします。  [争いの解決プロセス](psgallery_dispute_resolution.md)を用意しておりますので、PowerShellGallery.com の管理者が仲裁に入る前に確認してください。
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

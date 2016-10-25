@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,コマンドレット,ギャラリー"
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_filelist_feature
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: ffd07e9666ed903fbed6b8f27e365f6182f1c131
+
+---
+
 # ギャラリーの FileList 機能
 
 ギャラリーで公開されているすべてのアイテムの内容を表示できます。 
@@ -10,6 +27,8 @@
 サポートされているファイルの種類はハイパーリンクとして表示されます。ハイパーリンクをクリックすると、新しいページが開き、ファイル コンテンツが表示されます。PowerShell 構文が強調表示されます。 画面の上部にあるアイテムのタイトルまたはバージョンをクリックすると、アイテム詳細ページに戻ります。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

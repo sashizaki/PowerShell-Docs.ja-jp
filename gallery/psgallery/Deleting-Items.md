@@ -1,3 +1,21 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,コマンドレット,ギャラリー"
+ms.date: 2016-10-14
+contributor: manikb
+title: "アイテムを削除する"
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 4e0258ccf05ef5ab0dc799a5113b05becc3dbb05
+
+---
+
+
 # アイテムを削除する
 
 PowerShell ギャラリーでは、アイテムを完全に削除することはできません。アイテムの依存関係がなくなるためです。
@@ -6,6 +24,9 @@ PowerShell ギャラリーでは、アイテムを完全に削除することは
 
 アイテムを削除しなければならない、例外的な状況になった場合、PowerShell ギャラリー チームが手動で削除します。 たとえば、著作権の侵害や有害なコンテンツがあれば、それはアイテムを削除する正当な理由となります。 その場合、[PowerShell ギャラリー] (http://www.PowerShellGallery.com) からサポート依頼を提出してください。
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

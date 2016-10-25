@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,コマンドレット,ギャラリー"
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_search_syntax
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: bb42496bdc9794b8d33dc9869f33771a241d31db
+
+---
+
 # ギャラリー検索構文
 
 PowerShell ギャラリーでは単語、フレーズ、キーワード表現を使用して検索結果を絞り込むテキスト検索ボックスが用意されています。
@@ -83,6 +100,7 @@ DSC タグのあるすべての項目を検索します。
 
 
 
-<!--HONumber=Aug16_HO3-->
+
+<!--HONumber=Oct16_HO2-->
 
 

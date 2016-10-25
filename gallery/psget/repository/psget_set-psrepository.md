@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,コマンドレット,ギャラリー"
+ms.date: 2016-10-14
+contributor: manikb
+title: psget_set psrepository
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: f53076825f764ff805f2d956eecddbb492f7b694
+
+---
+
 # Set-PSRepository
 
 Set-PSRepository は登録されたリポジトリの値を設定します。
@@ -59,6 +76,8 @@ ProviderOptions : {}
 ```
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

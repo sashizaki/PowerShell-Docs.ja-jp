@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,コマンドレット,ギャラリー"
+ms.date: 2016-10-14
+contributor: manikb
+title: "アイテムの所有者を管理する"
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 00fe57762c6b2bb690255ecaea642f97124f4328
+
+---
+
 # アイテムの所有者を管理する
 
 PowerShell ギャラリーのアイテムの所有権は、そのアイテムをギャラリーに公開した人により定義されます。
@@ -67,6 +84,9 @@ Microsoft がアイテムの所有権を確認するためのプロセスを進�
 この措置は所有者であることが確認された場合にのみ行われ、そのプロセスは状況によって変わります。
 多くの場合、Microsoft はアイテムのプロジェクト URL を利用し、プロジェクトの所有者に連絡を取る方法を模索します。Twitter、メール、その他の方法を利用することもあります。
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

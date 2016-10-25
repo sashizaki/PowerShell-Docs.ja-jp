@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,コマンドレット,ギャラリー"
+ms.date: 2016-10-14
+contributor: manikb
+title: bootstrapping_nuget_proivder_and_exe
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 0e0e1287dbe0912e90dfeabee8e22cdf78d9e82a
+
+---
+
 # 単一のプロンプト メッセージを指定した発行操作に対する NuGet プロバイダーと NuGet.exe の両方のブートストラップ、および発行以外の操作に対する NuGet プロバイダーのみのブートストラップ
 
 NuGet.exe は最新の NuGet プロバイダーから削除されています。 モジュール/スクリプトを発行する場合、PowerShellGet では .nupkg ファイルを作成してリポジトリにプッシュするために NuGet.exe を必要とします。 NuGet プロバイダーは、検索、インストール、更新、保存などの発行以外の操作で必要になります。
@@ -84,6 +101,9 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'C:\LocalGallery'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

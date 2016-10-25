@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,コマンドレット,ギャラリー"
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_gettingstarted
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: d6f36a62c95a4444f456cf7c14f7f3dc08236447
+
+---
+
 # PowerShell ギャラリーの概要
 
 ## PowerShell ギャラリーとは
@@ -74,7 +91,7 @@ PowerShell ギャラリーから項目をダウンロードするとき、次の
 
 誠意をもって公開されていると思われない項目が見つかった場合は、その項目のページの **[不正使用を報告]** をクリックします。
 
-### ［インストール］
+### [インストール]
 
 使用のためにギャラリーから項目をインストールするには、項目の種類に応じて [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行します。
 
@@ -105,6 +122,8 @@ PowerShell ギャラリーからどのモジュールをインストールした
 同様に、PowerShell ギャラリーからどのスクリプトをインストールしたかを調べるには、[**Get-InstalledScript**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行します。 このコマンドは、PowerShell ギャラリーから直接インストールした、システム上にあるスクリプトをすべて一覧表示します。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

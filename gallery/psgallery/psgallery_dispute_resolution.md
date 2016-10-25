@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,コマンドレット,ギャラリー"
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_dispute_resolution
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 6d7015a14f0d0a75bc28e201dceefe6c9c682b31
+
+---
+
 # 争いの解決
 
 この文書は、コミュニティ メンバーが PowerShell ギャラリーの他の発行元との争いを解決する際の推奨プロセスをまとめたものです。
@@ -29,6 +46,8 @@ PowerShellGallery.com サポート チームが関与し、問題の解決に取
 **このポリシーは、PowerShell ギャラリーの判断で変更される場合があります。**
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

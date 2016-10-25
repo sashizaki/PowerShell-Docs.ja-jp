@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,コマンドレット,ギャラリー"
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_pseditions
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: a2e6f87603795e7781115239b87c73a076e5e6ca
+
+---
+
 # 互換性のある PowerShell エディションが含まれる項目
 バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
 
@@ -22,6 +39,9 @@ Tags:"PSEdition_Desktop" と Tags:"PSEdition_Core" を使用して PowerShell �
 ### [PSEditions が含まれるモジュール](../psget/module/modulewithpseditionsupport.md)
 ### [PSEditions のスクリプト](../psget/script/scriptwithpseditionsupport.md)
 
-<!--HONumber=Aug16_HO3-->
+
+
+
+<!--HONumber=Oct16_HO2-->
 
 

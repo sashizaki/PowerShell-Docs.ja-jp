@@ -1,3 +1,20 @@
+---
+description: 
+manager: carolz
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "powershell,コマンドレット,ギャラリー"
+ms.date: 2016-10-14
+contributor: manikb
+title: psgallery_contacting_administrators
+ms.technology: powershell
+translationtype: Human Translation
+ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
+ms.openlocfilehash: 0268fed62bc4c30f5e299af0cc29a0f2316ce731
+
+---
+
 # ギャラリーの管理者に問い合わせる
 
 ## ギャラリーの管理者への問い合わせが必要な状況
@@ -17,6 +34,8 @@
 3. その他、ギャラリーに関する一般的な質問がございましたら、[UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell) に送信してください。
 
 
-<!--HONumber=Aug16_HO3-->
+
+
+<!--HONumber=Oct16_HO2-->
 
 

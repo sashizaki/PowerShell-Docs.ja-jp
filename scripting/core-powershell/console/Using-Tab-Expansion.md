@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: fd950429d80972b6025e67ea727aa49ef195e882
+ms.sourcegitcommit: 27512f637dd44485eee38936fea4723cd17b6218
+ms.openlocfilehash: b67024fb27c08e1079caad891cfc3e621a354b27
 
 ---
 
@@ -18,7 +18,7 @@ ms.openlocfilehash: fd950429d80972b6025e67ea727aa49ef195e882
 コマンド ライン シェルは多くの場合、長いファイルやコマンドの名前を自動補完する手段を備えており、コマンド入力を迅速化したり、ヒントを与えたりします。 Windows PowerShell では、**Tab** キーを押してファイル名やコマンドレット名を入力できます。
 
 > [!NOTE]
-> タブ拡張は、内部関数 TabExpansion によって制御されています。 この関数は変更やオーバーライドができるため、この説明は既定の Windows PowerShell 構成の動作についてのガイドとなっています。
+> タブ拡張は、内部関数 TabExpansion または TabExpansion2 によって制御されています。 この関数は変更やオーバーライドができるため、この説明は既定の Windows PowerShell 構成の動作についてのガイドとなっています。
 
 使用可能な選択肢からファイル名またはパスを自動的に入力するには、名前の一部を入力して **Tab** キーを押します。 Windows PowerShell は自動的に名前を拡張し、最初に見つかった一致する項目を表示します。 **Tab** キーを繰り返し押すと、すべての利用可能な選択肢が順番に表示されます。
 
@@ -54,6 +54,6 @@ PS> Get-Content C:\windows\actsetup.log
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO2-->
 
 
