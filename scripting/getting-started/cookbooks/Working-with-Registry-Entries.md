@@ -14,10 +14,10 @@ ms.openlocfilehash: cdc7f45c9fa8a6bf748a52b460a1ac190d283971
 
 ---
 
-# レジストリ エントリの操作
+# <a name="working-with-registry-entries"></a>レジストリ エントリの操作
 レジストリ エントリはキーのプロパティであり直接参照できないため、利用するときは少し異なる方法を取る必要があります。
 
-### レジストリ エントリの一覧表示
+### <a name="listing-registry-entries"></a>レジストリ エントリの一覧表示
 レジストリ エントリを確認するには、多くのさまざまな方法があります。 最も簡単な方法は、キーに関連付けられているプロパティの名前を取得することです。 たとえば、レジストリ キー **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion** のエントリの名前を表示するには、**Get-Item** を使用します。 レジストリ キーは、キーのレジストリ エントリの一覧であり、"Property"という汎用的な名前のプロパティを持っています。 次のコマンドは、Property プロパティを選択し、一覧に表示されるように項目を拡張します。
 
 ```
@@ -80,7 +80,7 @@ ProgramFilesDir     : C:\Program Files
 
 パスの展開は、ファイル システム内と同様に機能するので、この場所からは、**GetItemProperty Path ..\\Help** を使用して **HKLM:\\SOFTWARE\\Microsoft\\Windows\\Help** の **ItemProperty** の一覧を取得できます。
 
-### 1 つのレジストリ エントリの取得
+### <a name="getting-a-single-registry-entry"></a>1 つのレジストリ エントリの取得
 レジストリ キーの特定のエントリを取得する場合は、いくつかの可能なアプローチのいずれかを使用できます。 この例では、**HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion** の **DevicePath** の値を検索します。
 
 **Get-ItemProperty** を使用する場合に、**Path** パラメーターを使用してキーの名前を指定し、**Name** パラメーターを使用して **DevicePath** のエントリの名前を指定します。
@@ -121,7 +121,7 @@ PS> (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windo
 %SystemRoot%\inf
 ```
 
-### 新しいレジストリ エントリの作成
+### <a name="creating-new-registry-entries"></a>新しいレジストリ エントリの作成
 "PowerShellPath" という名前の新しいエントリを **CurrentVersion** キーに追加するには、キーのパス、エントリ名、エントリの値を指定して **New-ItemProperty** を使用します。 この例では、Windows PowerShell の変数 **$PSHome** の値を取得します。これは、Windows PowerShell のインストール ディレクトリへのパスを保存します。
 
 キーに新しいエントリを追加するには、次のコマンドを使用します。このコマンドは、新しいエントリに関する情報も返します。
@@ -159,7 +159,7 @@ New-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SO
 
 また、**Force** パラメーターを **New-ItemProperty** コマンドに追加して、既存のレジストリ エントリの値を上書きすることもできます。
 
-### レジストリ エントリの名前変更
+### <a name="renaming-registry-entries"></a>レジストリ エントリの名前変更
 **PowerShellPath** エントリの名前を "PSHome" に変更するには、**Rename-ItemProperty** を使用します。
 
 ```
@@ -172,7 +172,7 @@ Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name 
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
-### レジストリ エントリの削除
+### <a name="deleting-registry-entries"></a>レジストリ エントリの削除
 PSHome と PowerShellPath の両方のレジストリ エントリを削除するには、**Remove-ItemProperty** を使用します。
 
 ```
@@ -183,6 +183,6 @@ Remove-ItemProperty -Path HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 

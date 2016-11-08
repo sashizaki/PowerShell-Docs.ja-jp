@@ -14,12 +14,12 @@ ms.openlocfilehash: de9e8af7908ac6a72a100fd2c86b52c30c390c39
 
 ---
 
-# WMI オブジェクトの取得 (Get-WmiObject)
+# <a name="getting-wmi-objects-getwmiobject"></a>WMI オブジェクトの取得 (Get-WmiObject)
 
-## WMI オブジェクトの取得 (Get-WmiObject)
+## <a name="getting-wmi-objects-getwmiobject"></a>WMI オブジェクトの取得 (Get-WmiObject)
 Windows Management Instrumentation (WMI) は、Windows システム管理のための中核となるテクノロジであり、幅広い種類の情報を一貫した方法で公開します。 WMI によって可能になるタスクが非常に多いことから、WMI オブジェクトにアクセスするための Windows PowerShell コマンドレットである **Get-WmiObject** は、実際の作業を行うための最も便利なコマンドレットの 1 つと言えます。 ここでは、Get-WmiObject を使って WMI オブジェクトにアクセスする方法と、WMI オブジェクトを使って特定の作業を行う方法について説明します。
 
-### WMI クラスの一覧を取得する
+### <a name="listing-wmi-classes"></a>WMI クラスの一覧を取得する
 WMI のほとんどのユーザーが直面する最初の問題は、WMI で何ができるかを調べることです。 WMI クラスは、管理できるリソースを記述しています。 何百もの WMI クラスがあり、その中には数十個のプロパティを持つクラスもあります。
 
 この問題に対処するため、**Get-WmiObject** では WMI を探索可能にしました。 ローカル コンピューター上で使える WMI クラスの一覧を取得するには、次のように入力します。
@@ -72,7 +72,7 @@ __Provider                              __Win32Provider
 ...
 ```
 
-### WMI クラスの詳細を表示する
+### <a name="displaying-wmi-class-details"></a>WMI クラスの詳細を表示する
 WMI クラスの名前がわかっている場合は、その名前を使って情報をすぐに取得できます。 たとえば、コンピューターに関する情報を取得するためによく使われる WMI クラスの 1 つに、**Win32_OperatingSystem** があります。
 
 ```
@@ -109,7 +109,7 @@ BuildNumber                               Property   System.String BuildNumb...
 ...
 ```
 
-#### 既定以外のプロパティを Format コマンドレットで表示する
+#### <a name="displaying-nondefault-properties-with-format-cmdlets"></a>既定以外のプロパティを Format コマンドレットで表示する
 **Win32_OperatingSystem** クラスに含まれている情報のうち、既定では表示されない情報を表示するには、**Format** コマンドレットを使います。 たとえば、利用可能なメモリのデータを表示するには、次のように入力します。
 
 ```
@@ -139,6 +139,6 @@ FreeSpaceInPagingFiles : 1556644
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Nov16_HO1-->
 
 
