@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
 translationtype: Human Translation
-ms.sourcegitcommit: 5b978b9c939759bd47ee73d4f7ffa6e3a66df788
-ms.openlocfilehash: ababa1b3ce913528a3ac7089d91ef74c5eb27737
+ms.sourcegitcommit: 1d4062490ba76a8cc62faa8fb96eff92b49169b7
+ms.openlocfilehash: 232b6a7020cbe3181a1fe722eae31d4d27d37669
 
 ---
 
@@ -27,16 +27,16 @@ Windows PowerShell ISE の概要については、[Windows PowerShell Integrated
 
 |機能|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-|**[IntelliSense](#BKMK_Intellisense)**|○|○||
-|**[スニペット](#bkmk_snippets)**|○|○||
-|**[アドオン ツール](#BKMK_AddOnTools)**|○|○||
-|**[再起動マネージャーと自動保存](#BKMK_RestartMgr)**|○|○||
-|**[コンソール ウィンドウ](#BKMK_ConsolePane)**|○|○||
-|**[最近使用した一覧](#BKMK_MRU)**|○|○||
-|**[コマンド ライン スイッチ](#BKMK_CommandLine)**|○|○||
-|**[エディターの新機能](#BKMK_NewEditorFeatures)**|○|○||
-|**[新しいヘルプ ビューアー ウィンドウ](#BKMK_NewHelpViewer)**|○|○||
-|**[Show-Command コマンドレット](#BKMK_ShowCommand)**|○|○||
+|**[IntelliSense](#BKMK_Intellisense)**|X|X||
+|**[スニペット](#bkmk_snippets)**|X|X||
+|**[アドオン ツール](#BKMK_AddOnTools)**|X|X||
+|**[再起動マネージャーと自動保存](#BKMK_RestartMgr)**|X|X||
+|**[コンソール ウィンドウ](#BKMK_ConsolePane)**|X|X||
+|**[最近使用した一覧](#BKMK_MRU)**|X|X||
+|**[コマンド ライン スイッチ](#BKMK_CommandLine)**|X|X||
+|**[エディターの新機能](#BKMK_NewEditorFeatures)**|X|X||
+|**[新しいヘルプ ビューアー ウィンドウ](#BKMK_NewHelpViewer)**|X|X||
+|**[Show-Command コマンドレット](#BKMK_ShowCommand)**|X|X||
 
 ### <a name="BKMK_Intellisense"></a>IntelliSense
 **ISE 3.0 に追加**
@@ -227,15 +227,13 @@ Show-Command は Windows PowerShell ISE 3.0 の新機能です。
 ## <a name="BKMK_LINKS"></a>関連項目
 Windows PowerShell での Windows PowerShell ISE の使用に関する詳細については、次のリンクを参照してください。
 
--   [Windows PowerShell Integrated Scripting Environment の使用](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
-
--   [TechNet Wiki の ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
-
--   [スクリプト センター](http://technet.microsoft.com/scriptcenter/default)
+- [Windows PowerShell Integrated Scripting Environment の使用](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [TechNet Wiki の ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
+- [スクリプト センター](http://technet.microsoft.com/scriptcenter/default)
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO3-->
 
 
