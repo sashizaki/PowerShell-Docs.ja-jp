@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: 6dc7052d-cc5a-4220-950f-98f963a2b587
 translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 52d55ff10a9118bea2a34a53452fd252d1e17580
+ms.sourcegitcommit: 416d21d2a2fa3d837eba19b1023e4045a124e23c
+ms.openlocfilehash: 9229df48b00c125e04d0f97536697495d0ca01ed
 
 ---
 
@@ -28,12 +28,12 @@ Windows PowerShell をインストールして起動したら、次のセット�
     注: Windows PowerShell 2.0 を実行しているコンピューターでリモート処理が有効になっている場合は、Windows Management Framework 3.0 をインストールした後も、リモート処理は引き続き有効のままです。 ただし、Windows Server 2008 (Windows Server 2008 R2 ではない) では、Windows Management Framework 3.0 をインストールした後に re-enable のリモート処理が必要です。
 
 ## 参照
-[Windows PowerShell のインストール](../setup/Installing-Windows-PowerShell.md)
-[Windows PowerShell の開始 [ps]](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+- [Windows PowerShell のインストール](../setup/Installing-Windows-PowerShell.md)
+- [Windows PowerShell [ps] の開始](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
 
 
 
 
-<!--HONumber=Aug16_HO4-->
+<!--HONumber=Oct16_HO3-->
 
 
