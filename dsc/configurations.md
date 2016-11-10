@@ -8,12 +8,12 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6c5f3d3321b7e50215cf58267e1864b7da827764
-ms.openlocfilehash: d84bb35ada3588367436e6f5e3c6696b90c3661b
+ms.sourcegitcommit: 49ddf6faf98a51f7ad5252e9563b1543478ed113
+ms.openlocfilehash: 567ab9528402c7d39d80a997bc14b6c6992cf772
 
 ---
 
-# DSC 構成
+# <a name="dsc-configurations"></a>DSC 構成
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -37,7 +37,7 @@ Configuration MyDscConfiguration {
 
 スクリプトを .ps1 ファイルとして保存します。
 
-## 構成構文
+## <a name="configuration-syntax"></a>構成構文
 
 構成スクリプトは次の部分で構成されます。
 
@@ -68,7 +68,7 @@ Configuration MyDscConfiguration {
 
 この例では、[構成のコンパイル時](# Compiling the configuration)にノードの名前を $ComputerName パラメーターとして渡すことで、ノードの名前を指定します。 名前の既定値は "localhost" です。
 
-## 構成のコンパイル
+## <a name="compiling-the-configuration"></a>構成のコンパイル
 構成を適用する前に、MOF ドキュメントにコンパイルする必要があります。 そのためには、PowerShell 関数の場合と同じように構成を呼び出します。
 >__注:__ 構成を呼び出すには、(他の PowerShell 関数と同様に) 関数がグローバル スコープ内にある必要があります。 そのためには、スクリプトで "ドット ソース" を行うか、F5 キーを使用するか、または ISE で __[スクリプトの実行]__ をクリックして、構成スクリプトを実行します。 スクリプトでドット ソースを行うには、構成を含むスクリプト ファイルの名前が `myConfig.ps1` である場合、`. .\myConfig.ps1` でコマンドを実行します。
 
@@ -102,7 +102,7 @@ Mode                LastWriteTime         Length Name
 -a----       10/23/2015   4:32 PM           2842 MyTestNode.mof
 ```      
 
-## DependsOn の使用
+## <a name="using-dependson"></a>DependsOn の使用
 __DependsOn__ は便利な DSC キーワードです。 通常 (必ずしも常にではありませんが)、DSC では、構成内で出現する順序でリソースが適用されます。 ただし、__DependsOn__ でどのリソースが他のリソースに依存するかを指定すると、リソース インスタンスが定義されている順序に関係なく、LCM によってリソースが正しい順序で適用されます。 たとえば、構成で、__User__ リソースのインスタンスが __Group__ インスタンスの存在に依存することを指定できます。
 
 ```powershell
@@ -123,13 +123,13 @@ Configuration DependsOnExample {
 }
 ```
 
-## 構成での新しいリソースの使用
+## <a name="using-new-resources-in-your-configuration"></a>構成での新しいリソースの使用
 前の例を実行した場合、リソースを明示的にインポートしないで使用することについて警告されることがあります。
 今日、DSC には PSDesiredStateConfiguration モジュールの一部として 12 のリソースが付属しています。 外部モジュールの他のリソースが LCM によって認識されるためには、`$env:PSModulePath` に配置する必要があります。 新しいコマンドレット [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) を使用して、どのリソースがシステムにインストールされ、LCM で使用できるかを決定できます。 これらのモジュールが `$env:PSModulePath` に配置され、[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) によって正しく認識された後、構成内に読み込む必要があります。 __Import-DscResource__ は、__Configuration__ ブロック内でのみ認識される動的なキーワードです (つまり、コマンドレットではありません)。 __Import-DscResource__ は、次の 2 つのパラメーターをサポートしています。
 * __ModuleName__ は、__Import-DscResource__ を使用する場合に推奨される方法です。 これは、インポートするリソースを含むモジュールの名前 (およびモジュール名の文字列配列) を受け取ります。 
 * __Name__ は、インポートするリソースの名前です。 これは、[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) によって "Name" として返されるフレンドリ名ではありませんが、リソース スキーマを定義するときに使用されるクラス名です ([Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) によって __ResourceType__ として返されます)。 
 
-## 参照
+## <a name="see-also"></a>参照
 * [Windows PowerShell Desired State Configuration の概要](overview.md)
 * [DSC リソース](resources.md)
 * [ローカル構成マネージャーの構成](metaConfig.md)
@@ -137,6 +137,6 @@ Configuration DependsOnExample {
 
 
 
-<!--HONumber=Aug16_HO5-->
+<!--HONumber=Nov16_HO1-->
 
 
