@@ -10,8 +10,10 @@
 ## [構成 MOF ファイルのセキュリティ保護](secureMOF.md)
 ## [部分構成](partialConfigs.md)
 ## [DSC 構成のヘルプの作成](configHelp.md)
+## [DSC を使用した初回起動時の仮想マシンの構成](bootstrapDsc.md)
+### [DSCAutomationHostEnabled レジストリ キー](DSCAutomationHostEnabled.md)
 
-# [参照情報](resources.md)
+# [リソース](resources.md)
 ## [組み込みリソース](builtInResource.md)
 ### [アーカイブ リソース](archiveResource.md)
 ### [環境リソース](environmentResource.md)
@@ -22,12 +24,12 @@
 ### [レジストリ リソース](registryResource.md)
 ### [スクリプト リソース](scriptResource.md)
 ### [サービス リソース](serviceResource.md)
-### [[ユーザー リソース]](userResource.md)
+### [ユーザー リソース](userResource.md)
 ### [WindowsFeature リソース](windowsfeatureResource.md)
 ### [WindowsProcess リソース](windowsProcessResource.md)
 ## [カスタム リソースの作成](authoringResource.md) 
 ### [MOF ベースのカスタム リソース](authoringResourceMOF.md)
-#### [C 言語での MOF ベースのリソース#](authoringResourceMofCS.md)
+#### [C 言語での MOF ベースのリソース](authoringResourceMofCS.md)
 ### [クラスに基づくカスタム リソース](authoringResourceClass.md)
 ### [複合リソース](authoringResourceComposite.md)
 ### [単一インスタンスの DSC リソースを記述する (ベスト プラクティス)](singleInstance.md)
@@ -39,7 +41,7 @@
 ## [PowerShell 4.0 での LCM の構成](metaConfig4.md)
 
 # DSC プル モデル
-## [Web プル サーバーのセットアップ](pullServer.md)
+## [Setting up a web pull server (Web プル サーバーのセットアップ)](pullServer.md)
 ## [DSC SMB プル サーバーのセットアップ](pullServerSMB.md)
 ## [プル クライアントのセットアップ](pullClient.md)
 ### [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
@@ -49,7 +51,7 @@
 
 # [DSC のトラブルシューティング](troubleshooting.md)
 
-# [DSC on Nano Server の使用](nanoDsc.md)
+# [Nano Server での DSC の使用](nanoDsc.md)
 
 # Linux での DSC
 ## [Linux 用 DSC の概要](lnxGettingStarted.md)
@@ -91,6 +93,6 @@
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO4-->
 
 

@@ -1,9 +1,9 @@
-# DSC ドキュメントの削除
+# <a name="remove-dsc-documents"></a>DSC ドキュメントの削除
 
-構成ドキュメントを DSC に提供すると、ドキュメントはさまざまな段階 (保留中、現在、以前) を通過します。 新しいコマンドレット Remove-DscConfigurationDocument が KB3000850 の一部として Windows PowerShell 4.0 の DSC に追加されました。 
+構成ドキュメントを DSC に提供すると、ドキュメントはさまざまな段階 (保留中、現在、以前) を通過します。 新しいコマンドレット Remove-DscConfigurationDocument が [KB3000850](https://support.microsoft.com/en-us/kb/3000850) の一部として Windows PowerShell 4.0 の DSC に追加されました。 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Oct16_HO4-->
 
 
