@@ -8,29 +8,29 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 4c802002c6a03a27d02221dd713677911a77c30b
+ms.sourcegitcommit: 49ddf6faf98a51f7ad5252e9563b1543478ed113
+ms.openlocfilehash: 9090f4be2987b8a56ba4d839f54e05082a8bcfa0
 
 ---
 
-# 構成の適用
+# <a name="enacting-configurations"></a>構成の適用
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 PowerShell Desired State Configuration (DSC) 構成を適用するには、プッシュ モードとプル モードの 2 つの方法があります。
 
-## プッシュ モード
+## <a name="push-mode"></a>プッシュ モード
 
 ![プッシュ モード](images/Push.png "How push mode works")
 
 プッシュ モードは、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを呼び出してターゲット ノードに構成を適用するユーザー アクティビティを示します。
 
-構成を作成し、コンパイルした後、プッシュ モードで適用するには、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを呼び出し、コマンドレットの -Path パラメーターを構成 MOF が配置されているパスに設定します。 たとえば、構成 MOF が `C:\DSC\Configurations\localhost.mof` にある場合は、次のコマンドを使用してローカル コンピューターに適用します。 `Start-DscConfiguration -Path 'C:\DSC\Configurations'`
+構成を作成し、コンパイルした後、プッシュ モードで適用するには、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを呼び出し、コマンドレットの -Path パラメーターを構成 MOF が配置されているパスに設定します。 たとえば、構成 MOF が `C:\DSC\Configurations\localhost.mof` にある場合は、`Start-DscConfiguration -Path 'C:\DSC\Configurations'` というコマンドを使用してローカル コンピューターに適用します。
 
-> __注__: 既定では、DSC はバックグラウンド ジョブとして構成を実行します。 構成を対話的に実行するには、__-Wait__ パラメーターを指定して [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) を呼び出します。
+> __注__: 既定では、DSC はバックグラウンド ジョブとして構成を実行します。 構成を対話的に実行するには、__-Wait__ パラメーターを指定して [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) を呼び出します。
 
 
-## プル モード
+## <a name="pull-mode"></a>プル モード
 
 ![プル モード](images/Pull.png "How pull mode works")
 
@@ -42,13 +42,13 @@ DSC プル サーバーをオンプレミスで展開する方法の詳細につ
 
 次のトピックでは、プル サーバーとクライアントをセットアップする方法について説明します。
 
-- [Web プル サーバーのセットアップ](pullServer.md)
-- [SMB プル サーバーのセットアップ](pullServerSMB.md)
-- [プル クライアントの構成](pullClientConfigID.md)
+- [Setting up a web pull server (Web プル サーバーのセットアップ)](pullServer.md)
+- [Setting up an SMB pull server (SMB プル サーバーのセットアップ)](pullServerSMB.md)
+- [Configuring a pull client (プル クライアントの構成)](pullClientConfigID.md)
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO1-->
 
 
