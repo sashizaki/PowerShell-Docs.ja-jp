@@ -6,9 +6,10 @@
 ### [PowerShell コンソールの機能強化](5.1/console-improvements.md)
 ### [PowerShell エンジンの機能強化](5.1/engine-improvements.md)
 ### [パッケージ管理の機能強化](5.1/package-management-improvements.md)
+### [JEA の改善](5.1/jea-improvements.md)
 ### [WMF 5.1 で修正されたバグ](5.1/bugfixes.md)
 ## [インストールと構成](5.1/install-configure.md)
-## [の既知の問題](5.1/known-issues.md)
+## [既知の問題](5.1/known-issues.md)
 ## [互換性](5.1/Compatibility.md)
 
 # [WMF 5.0](5.0/releasenotes.md)
@@ -36,7 +37,7 @@
 ##### [構成における同一重複リソースの許容](5.0/dsc_identicalduplicate.md)
 ##### [-ModuleVersion パラメーターをサポートする Import-DscResource キーワード](5.0/dsc_importdscresource.md)
 ##### [構成キーワードの WOW64 サポート](5.0/dsc_wow64.md)
-#### [参照情報]()
+#### [リソース]()
 ##### [クラスベースの DSC リソース](5.0/dsc_classbasedresource.md)
 ##### [DSC リソース スクリプトのデバッグ](5.0/dsc_resourcedebugging.md)
 ##### [DSC リソースの自動 RunAs サポート](5.0/dsc_runas.md)
@@ -94,6 +95,6 @@
 ### [ソフトウェア インベントリ ログ (SIL)](5.0/sil_overview.md)
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO2-->
 
 
