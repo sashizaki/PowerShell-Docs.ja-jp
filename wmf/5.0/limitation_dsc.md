@@ -45,7 +45,7 @@ LCM が DebugMode の場合、CTRL + C キーを押して Get-DscConfiguration �
 ------------------------------------------------------------------------------------------------------------------------
 LCM が DebugMode の場合、Get-DscConfiguration で開始された操作を停止しようとすると Stop-DscConfiguration がハングする場合があります。
 
-**解決策:** Get-DscConfiguration で開始された操作のデバッグを「[DSC リソースのデバッグ](../../dsc/debugResource.md)」セクションの説明に従って終了します。
+**解決策:** Get-DscConfiguration で開始された操作のデバッグを「[DSC リソースのデバッグ](https://msdn.microsoft.com/powershell/dsc/debugresource)」セクションの説明に従って終了します。
 
 
 <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>DebugMode で詳細なエラー メッセージが表示されない
@@ -77,7 +77,7 @@ Invoke-DscResource コマンドレットでは、詳細、警告、およびエ�
 
 <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invokedscresource"></a>Invoke-DscResource と共に使用すると、DSC リソースを簡単にデバッグできない
 -----------------------------------------------------------------------
-LCM がデバッグ モードで実行されている場合 (詳細については「[DSC リソースのデバッグ](../../dsc/debugResource.md)」を参照)、Invoke-DscResource コマンドレットはデバッグ用に接続する実行空間に関する情報を提供しません。
+LCM がデバッグ モードで実行されている場合 (詳細については「[DSC リソースのデバッグ](https://msdn.microsoft.com/powershell/dsc/debugresource)」を参照)、Invoke-DscResource コマンドレットはデバッグ用に接続する実行空間に関する情報を提供しません。
 **解決策:** **Get-PSHostProcessInfo**、**Enter-PSHostProcess**、**Get-Runspace**、および **Debug-Runspace** コマンドレットを使用して実行空間を検出して接続し、DSC リソースをデバッグします。
 
 ```powershell
@@ -228,6 +228,6 @@ Configuration $configName
 ```
 
 
-<!--HONumber=Nov16_HO1-->
+<!--HONumber=Nov16_HO2-->
 
 
