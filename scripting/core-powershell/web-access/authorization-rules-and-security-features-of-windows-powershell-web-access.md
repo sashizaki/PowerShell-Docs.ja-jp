@@ -13,7 +13,7 @@ ms.openlocfilehash: f62b1e0ec9f26e1b2bcb364c78a2ce39467655a5
 
 ---
 
-# Windows PowerShell Web Access の承認規則とセキュリティ機能
+# <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Access の承認規則とセキュリティ機能
 
 最終更新日: 2013 年 6 月 24 日
 
@@ -170,9 +170,11 @@ Windows PowerShell Web Access のセキュリティ モデルは、Web ベース
 </table>
 
 <a href="" id="BKMK_configrules"></a>
+
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">承認規則の構成</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">
+承認規則の構成</span></a>
 
 ------------------------------------------------------------------------
 
@@ -198,7 +200,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 </tbody>
 </table>
 
-#### 制限的な承認規則を追加するには
+#### <a name="to-add-a-restrictive-authorization-rule"></a>制限的な承認規則を追加するには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
@@ -206,7 +208,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
     -   Windows の**スタート**画面で、**[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
 
-2.  <span class="label">セッション構成を使用してユーザー アクセスを制限するためのオプション手順:</span>規則内で使用するセッション構成が既に存在することを確認します。 まだ作成されていない場合は、MSDN の「[about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx)」に記載されているセッション構成の作成手順を使用してください。
+2.  <span class="label">セッション構成を使用してユーザー アクセスを制限するためのオプション手順:</span> 規則内で使用するセッション構成が既に存在することを確認します。 まだ作成されていない場合は、MSDN の「[about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx)」に記載されているセッション構成の作成手順を使用してください。
 
 3.  次のように入力して **Enter** キーを押します。
 
@@ -222,7 +224,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
 4.  **Get-PswaAuthorizationRule** コマンドレットまたは **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt; を実行して、規則が作成されていることを確認します。 例: **Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**。
 
-#### 承認規則を削除するには
+#### <a name="to-remove-an-authorization-rule"></a>承認規則を削除するには
 
 1.  Windows PowerShell セッションが開かれていない場合は、このセクションの[非制限的な承認規則を追加する方法](#BKMK_arar)の手順 1. を参照してください。
 
@@ -240,7 +242,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -265,7 +267,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
 -   管理者は、その他のユーザーよりも権限の強いアクセスを特定のユーザーに許可することができます。 たとえば、管理者が、**Admins** と **BasicSupport** という 2 つのユーザー グループを作成します。 管理者はさらに、制限付き実行空間を指定して **PswaEndpoint** というエンドポイントを作成し、**Admins,\*,\*** と **BasicSupport,\*,PswaEndpoint** という 2 つの規則を定義します。 最初の規則は、**Admin** グループのすべてのユーザーにすべてのコンピューターへのアクセスを許可します。2 つ目の規則は、**BasicSupport** グループに、**PswaEndpoint** を持つコンピューターだけに対するアクセスを許可します。
 
--   管理者がプライベートなテスト環境をセットアップして、すべての承認済みネットワーク ユーザーに、通常アクセスが許可されるネットワーク内のすべてのコンピューターに対するアクセスと、通常アクセスが許可されるすべてのセッション構成に対するアクセスを許可します。 これはプライベートなテスト環境であるため、管理者が作成する承認規則は安全ではありません。 管理者は <span class="code">Add-PswaAuthorizationRule \* \* \*</span> コマンドレットを実行します。ここで使われているワイルドカード文字 **\*** は、すべてのコンピューター、すべてのユーザー、すべてのセッション構成をそれぞれ示します。 この規則は次と同じです: <span class="code">Add-PswaAuthorizationRule -UserName \* -ComputerName \* -ConfigurationName \*</span>。
+-   管理者がプライベートなテスト環境をセットアップして、すべての承認済みネットワーク ユーザーに、通常アクセスが許可されるネットワーク内のすべてのコンピューターに対するアクセスと、通常アクセスが許可されるすべてのセッション構成に対するアクセスを許可します。 これはプライベートなテスト環境であるため、管理者が作成する承認規則は安全ではありません。 管理者が <span class="code">Add-PswaAuthorizationRule \* \* \* </span> コマンドレットを実行します。ここで使われているワイルドカード文字 **\*** は、すべてのコンピューター、すべてのユーザー、すべてのセッション構成をそれぞれ示します。 この規則は、<span class="code">Add-PswaAuthorizationRule -UserName \* -ComputerName \* -ConfigurationName \*</span> と同等です。
 
     <table>
     <colgroup>
@@ -273,7 +275,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> セキュリティ メモ </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">セキュリティ メモ</span></th>
     </tr>
     </thead>
     <tbody>
@@ -303,7 +305,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -315,7 +317,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">1 セットの承認規則の複数サイトでの使用</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">複数サイトでの 1 セットの承認規則の使用</span></a>
 
 ------------------------------------------------------------------------
 
@@ -367,7 +369,7 @@ Windows Server 2012 R2 で実行する Windows PowerShell Web Access では、�
 
 ゲートウェイ サーバーが Windows Server 2012 R2 を実行している場合の Windows PowerShell Web Access では、ユーザーは保存されているセッションに再接続できますが、ネットワーク エラー、予期しないシャットダウン、または他のエラーによるセッションの切断が発生した場合、ユーザーはゲートウェイ管理者によって指定されたタイムアウト期間が経過するまでは、保存されているセッションを表示または再接続できません。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">参照</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
 <a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -376,14 +378,14 @@ Windows Server 2012 R2 で実行する Windows PowerShell Web Access では、�
 [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 [Windows PowerShell Web Access コマンドレット](https://technet.microsoft.com/library/hh918342.aspx)
 
-<span>表示:</span> 保護されている継承
+<span>表示:</span> 継承 保護
 
 <span class="stdr-votetitle">このページは役に立ちましたか。</span>
 はい いいえ
 
 その他にご意見はありますか。
 
-<span class="stdr-count"><span class="stdr-charcnt">残り 1500</span> 文字</span> 送信 スキップする
+残り <span class="stdr-count"><span class="stdr-charcnt">1500</span> 文字</span> 送信 スキップする
 
 <span class="stdr-thankyou">ありがとうございました。</span> <span class="stdr-appreciate">ご意見をお送りいただきありがとうございます。</span>
 
@@ -391,9 +393,9 @@ Windows Server 2012 R2 で実行する Windows PowerShell Web Access では、�
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> サイトのフィードバック</a> サイトのフィードバック
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span>サイトのフィードバック</a> サイトのフィードバック
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
+<a href="javascript:void(0)" id="SiteFeedbackLinkCloser">X</a>
 
 お客様のご体験をお聞かせください。
 

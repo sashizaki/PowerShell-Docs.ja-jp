@@ -13,7 +13,7 @@ ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
 
 ---
 
-#  Windows PowerShell Web Access をアンインストールする
+#  <a name="uninstall-windows-powershell-web-access"></a>Windows PowerShell Web Access をアンインストールする
 
 最終更新日: 2013 年 6 月 24 日
 
@@ -44,7 +44,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 独自のカスタム Web サイト名を指定した場合は、コマンドに <span class="code">WebsiteName</span> パラメーターを追加し、Web サイト名を指定します。 (既定のアプリケーション **pswa** ではなく) カスタム Web アプリケーションを使用している場合は、コマンドに <span class="code">WebApplicationName</span> パラメーターを追加し、Web アプリケーションの名前を指定します。
 
-#### Uninstall-PswaWebApplication コマンドレットを使って Web サイトおよびアプリケーションを削除するには
+#### <a name="to-delete-the-website-and-web-applications-by-using-the-uninstallpswawebapplication-cmdlet"></a>Uninstall-PswaWebApplication コマンドレットを使って Web サイトおよびアプリケーションを削除するには
 
 1.  次のいずれかを実行して Windows PowerShell セッションを開きます。
 
@@ -66,7 +66,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 ------------------------------------------------------------------------
 
-#### Windows PowerShell コマンドレットを使って Windows PowerShell Web Access をアンインストールするには
+#### <a name="to-uninstall-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>Windows PowerShell コマンドレットを使って Windows PowerShell Web Access をアンインストールするには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。 セッションを既に開いている場合は、次の手順に進んでください。
 
@@ -101,7 +101,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 ------------------------------------------------------------------------
 
-#### IIS マネージャーを使って Windows PowerShell Web Access Web サイトおよびアプリケーションを削除するには
+#### <a name="to-delete-the-windows-powershell-web-access-website-and-web-applications-by-using-iis-manager"></a>IIS マネージャーを使って Windows PowerShell Web Access Web サイトおよびアプリケーションを削除するには
 
 1.  次のいずれかの方法で IIS マネージャー コンソールを開きます。 既に開いている場合は、次の手順に進んでください。
 
@@ -125,7 +125,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -141,7 +141,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 ------------------------------------------------------------------------
 
-#### 役割と機能の削除ウィザードを使って Windows PowerShell Web Access をアンインストールするには
+#### <a name="to-uninstall-windows-powershell-web-access-by-using-the-remove-roles-and-features-wizard"></a>役割と機能の削除ウィザードを使って Windows PowerShell Web Access をアンインストールするには
 
 1.  サーバー マネージャーを既に開いている場合は、次の手順に進んでください。 サーバー マネージャーをまだ開いていない場合は、次のいずれかの方法で開きます。
 
@@ -159,7 +159,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 6.  **[削除オプションの確認]** ページで、**[削除]** をクリックします。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">参照</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
 <a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -167,14 +167,14 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 [Windows PowerShell Web Access のインストールと使用](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
 [IIS マネージャー ヘルプ](https://technet.microsoft.com/library/cc732664.aspx)
 
-<span>表示:</span> 保護されている継承
+<span>表示:</span> 継承 保護
 
 <span class="stdr-votetitle">このページは役に立ちましたか。</span>
 はい いいえ
 
 その他にご意見はありますか。
 
-<span class="stdr-count"><span class="stdr-charcnt">残り 1500</span> 文字</span> 送信 スキップする
+残り <span class="stdr-count"><span class="stdr-charcnt">1500</span> 文字</span> 送信 スキップする
 
 <span class="stdr-thankyou">ありがとうございました。</span> <span class="stdr-appreciate">ご意見をお送りいただきありがとうございます。</span>
 
@@ -182,9 +182,9 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> サイトのフィードバック</a> サイトのフィードバック
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span>サイトのフィードバック</a> サイトのフィードバック
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
+<a href="javascript:void(0)" id="SiteFeedbackLinkCloser">X</a>
 
 お客様のご体験をお聞かせください。
 

@@ -13,7 +13,7 @@ ms.openlocfilehash: 67426f6ad72967293f8aee1b3f098afc73067c59
 
 ---
 
-#  Web ベースの Windows PowerShell コンソールの使用
+#  <a name="use-the-webbased-windows-powershell-console"></a>Web ベースの Windows PowerShell コンソールの使用
 
 最終更新日: 2013 年 6 月 24 日
 
@@ -91,7 +91,7 @@ Web ベースの Windows PowerShell コンソールを使うには、ブラウ�
 
 Windows PowerShell Web Access 管理者は、所属組織の Windows PowerShell Web Access ゲートウェイ Web サイトのアドレスを示す URL を担当者に提供する必要があります。 この Web サイトのアドレスは、既定で https://&lt;server_name&gt;/pswa となっています。 Windows PowerShell Web Access にサインインする前に、管理対象のリモート コンピューターの名前または IP アドレスがわかっていることを確認してください。 また担当者がリモート コンピューターの承認済みユーザーであることと、リモート コンピューターがリモート管理を許可するよう構成されている必要があります。 リモート管理を許可するようコンピューターを構成する方法の詳細については、[Windows PowerShell でのリモート コマンドの有効化および使用](https://technet.microsoft.com/magazine/ff700227.aspx)に関するページを参照してください。 コンピューターを構成してリモート管理を有効にする最も簡単な方法は、Windows PowerShell セッションを管理者特権で開き (**[管理者として実行]**)、コンピューター上で **Enable-PSRemoting -force** コマンドレットを実行することです。
 
-### Windows PowerShell Web Access にサインインするには
+### <a name="to-sign-in-to-windows-powershell-web-access"></a>Windows PowerShell Web Access にサインインするには
 
 1.  Windows PowerShell Web Access Web サイトをインターネット ブラウザーのウィンドウまたはタブで開きます。
 
@@ -103,13 +103,13 @@ Windows PowerShell Web Access 管理者は、所属組織の Windows PowerShell 
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
     <td><ul>
-    <li><p>対象のコンピューターがワークグループに含まれる場合、&lt;<em>ワークグループ名</em>&gt;\&lt;<em>ユーザー名</em>&gt; の構文を使ってユーザー名を入力し、コンピューターにサインインします。</p></li>
+    <li><p>対象のコンピューターがワークグループに含まれる場合は、&lt;<em>ワークグループ名</em>&gt;\&lt;<em>ユーザー名</em>&gt; の構文を使ってユーザー名を入力し、コンピューターにサインインします。</p></li>
     <li><p>対象のコンピューターがゲートウェイ サーバーの場合、<strong>[コンピューター名]</strong> フィールドで <strong>localhost</strong> を指定できます。</p></li>
     <li><p>対象のコンピューターがゲートウェイ サーバーで、そのゲートウェイ サーバーがワークグループに含まれている場合、<strong>[コンピューター名]</strong> フィールドで <strong>localhost</strong> を使用できます。ただし <strong>[ユーザー名]</strong> フィールドでは localhost\&lt;<em>user_name</em>&gt; を使わないでください。 &lt;<em>ワークグループ名</em>&gt;\&lt;<em>ユーザー名</em>&gt; を使用する必要があります。</p></li>
     </ul></td>
@@ -175,13 +175,13 @@ Windows PowerShell Web Access にサインインすると、Web ベースの Win
 
 Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Access の Web ベース コンソールでも利用できますが、いくつかの機能は利用できません。
 
--   <span class="label">入れ子になった進行状況の表示。</span>  進行状況を報告するコマンドレットを使用すると、Windows PowerShell Web Access が表示する進行状況 GUI には、最上位レベルの情報だけが表示されます。
+-   <span class="label">入れ子になった進行状況の表示:</span>   進行状況を報告するコマンドレットを使用すると、Windows PowerShell Web Access が表示する進行状況 GUI には、最上位レベルの情報だけが表示されます。
 
--   <span class="label">入力色の変更。</span>  入力色 (前景と背景) は変更できません。 出力、警告、詳細、およびエラー メッセージのスタイルは、スクリプトを実行することで変更できます。
+-   <span class="label">入力色の変更:</span>   入力色 (前景と背景) は変更できません。 出力、警告、詳細、およびエラー メッセージのスタイルは、スクリプトを実行することで変更できます。
 
--   <span class="label">PSHostRawUserInterface。</span>  Windows PowerShell Web Accessは Windows PowerShell リモート管理経由で実装され、リモートの実行空間を使います。 たとえば Windows コンソールへの書き込みを実行するあらゆるコマンドなど、一部のメソッドは Windows PowerShell Web Access によってこのインターフェイスに実装されません。 **PowerTab** などのコマンドは、Windows PowerShell Web Access では動作しません。
+-   <span class="label">PSHostRawUserInterface:</span>   Windows PowerShell Web Accessは Windows PowerShell リモート管理経由で実装され、リモートの実行空間を使います。 たとえば Windows コンソールへの書き込みを実行するあらゆるコマンドなど、一部のメソッドは Windows PowerShell Web Access によってこのインターフェイスに実装されません。 **PowerTab** などのコマンドは、Windows PowerShell Web Access では動作しません。
 
--   <span class="label">ファンクション キー。</span>  一部のファンクション キーは Windows PowerShell Web Access によってサポートされません。多くの場合、それらのコマンドがブラウザーによって予約されていることが原因です。
+-   <span class="label">ファンクション キー:</span>   一部のファンクション キーは Windows PowerShell Web Access によってサポートされません。多くの場合、それらのコマンドがブラウザーによって予約されていることが原因です。
 
 <table>
 <colgroup>
@@ -279,13 +279,15 @@ Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Acce
 </table>
 
 <a href="" id="BKMK_limits"></a>
+
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Web ベース コンソールの制限事項</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">
+Web ベース コンソールの制限事項</span></a>
 
 ------------------------------------------------------------------------
 
--   <span class="label">ダブルホップ。</span>   Windows PowerShell Web Access を使って新しいセッションを作成または操作しようとすると、ダブルホップ (最初の接続から 2 つ目のコンピューターに接続すること) の制限が発生します。 Windows PowerShell Web Access はリモートの実行空間を使いますが、現時点では、リモートの実行空間から 2 つ目のコンピューターへのリモート接続の確立を **PowerShell.exe** がサポートしていません。 たとえば、**Enter-PSSession** コマンドレットを使って既存の接続から 2 つ目のリモート コンピューターに接続しようとすると、"ネットワーク リソースを取得できません" など、さまざまなエラーが発生します。
+-   <span class="label">ダブルホップ:</span>    Windows PowerShell Web Access を使って新しいセッションを作成または操作しようとすると、ダブルホップ (最初の接続から 2 つ目のコンピューターに接続すること) の制限が発生します。 Windows PowerShell Web Access はリモートの実行空間を使いますが、現時点では、リモートの実行空間から 2 つ目のコンピューターへのリモート接続の確立を **PowerShell.exe** がサポートしていません。 たとえば、**Enter-PSSession** コマンドレットを使って既存の接続から 2 つ目のリモート コンピューターに接続しようとすると、"ネットワーク リソースを取得できません" など、さまざまなエラーが発生します。
 
     ダブルホップのエラーを避けるには、管理者が組織のネットワーク環境に CredSSP 認証を構成する必要があります。 CredSSP 認証の構成方法の詳細については、Microsoft Web サイトの [CredSSP による次ホップのリモート処理](http://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx)に関するページを参照してください。 2 つ目のリモート コンピューターを管理する場合、明示的な資格情報を提供することも可能です。暗黙的な資格情報の場合、次ホップが許可される可能性が低くなります。
 
@@ -305,13 +307,13 @@ Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Acce
 
 -   **NoLanguage** の Windows PowerShell Web Access セッション構成または制限付き実行空間にサインインしているユーザーは **[終了]** コマンドを実行してセッションを終了できません。 サインアウトするには、コンソール ページの **[サインアウト]** をクリックする必要があります。
 
--   <span class="label">複数の対象コンピューターへの同時接続。</span>   ゲートウェイ サーバーが Windows Server 2012 を実行している場合、Windows PowerShell Web Access では、ブラウザー セッションごとに接続できるリモート コンピューターは 1 つだけです。一度サインインした後に別のブラウザー タブを使って複数のリモート コンピューターに接続することはできません。 新しいタブまたはブラウザー ウィンドウを開くと、現在のセッションの切断と新しいセッションの開始を確認するメッセージが Windows PowerShell Web Access により表示されます。このメッセージから新しい (または同じ) リモート コンピューターに接続できます。 ただし、異なるリモート コンピューターに対して個別のセッションを 2 つ以上実行する必要がある場合、Internet Explorer の機能を使って新しいセッションを作成できます。 Internet Explorer で新しいブラウザー セッションを開始するには、**Alt** キーを押して **[ファイル]** メニューを開き、**[新しいセッション]** をクリックします。 次に新しいセッションで Windows PowerShell Web Access の Web サイトを開き、サインインして別のリモート コンピューターにアクセスします。
+-   <span class="label">複数の対象コンピューターへの同時接続:</span>    ゲートウェイ サーバーが Windows Server 2012 を実行している場合、Windows PowerShell Web Access では、ブラウザー セッションごとに接続できるリモート コンピューターは 1 つだけです。一度サインインした後に別のブラウザー タブを使って複数のリモート コンピューターに接続することはできません。 新しいタブまたはブラウザー ウィンドウを開くと、現在のセッションの切断と新しいセッションの開始を確認するメッセージが Windows PowerShell Web Access により表示されます。このメッセージから新しい (または同じ) リモート コンピューターに接続できます。 ただし、異なるリモート コンピューターに対して個別のセッションを 2 つ以上実行する必要がある場合、Internet Explorer の機能を使って新しいセッションを作成できます。 Internet Explorer で新しいブラウザー セッションを開始するには、**Alt** キーを押して **[ファイル]** メニューを開き、**[新しいセッション]** をクリックします。 次に新しいセッションで Windows PowerShell Web Access の Web サイトを開き、サインインして別のリモート コンピューターにアクセスします。
 
     Windows PowerShell Web Access ゲートウェイが Windows Server 2012 R2 で実行されている場合、ユーザーは異なるブラウザー タブでリモート コンピューターへの複数の接続を開くことができます。 Web ベースの Windows PowerShell コンソールを使用してリモート コンピューターへの複数の接続を開く必要がある場合は、ゲートウェイ サーバーがこの機能をサポートしているかどうかを Windows PowerShell Web Access ゲートウェイ管理者に確認してください。
 
--   <span class="label">永続的な Windows PowerShell セッション (再接続)。</span>   Windows PowerShell Web Access ゲートウェイがタイムアウトすると、ゲートウェイと対象コンピューターとのリモート接続は閉じられます。 これによって、現在処理中のすべてのコマンドレットとスクリプトが停止されます。 実行時間の長いタスクを実行している場合は、Windows PowerShell の **-Job** インフラストラクチャを使うことが推奨されます。これにより、ジョブを開始し、コンピューターから切断した後に再接続して、ジョブを永続的なものにすることができます。 **-Job** コマンドレットを使うもう 1 つのメリットは、Windows PowerShell Web Access を使ってジョブを開始し、サインアウトした後に、Windows PowerShell Web Access またはその他のホスト (Windows PowerShell® 統合スクリプティング環境 (ISE) など) を使って再接続できる点です。
+-   <span class="label">永続的な Windows PowerShell セッション (再接続):</span>    Windows PowerShell Web Access ゲートウェイがタイムアウトすると、ゲートウェイと対象コンピューターとのリモート接続は閉じられます。 これによって、現在処理中のすべてのコマンドレットとスクリプトが停止されます。 実行時間の長いタスクを実行している場合は、Windows PowerShell の **-Job** インフラストラクチャを使うことが推奨されます。これにより、ジョブを開始し、コンピューターから切断した後に再接続して、ジョブを永続的なものにすることができます。 **-Job** コマンドレットを使うもう 1 つのメリットは、Windows PowerShell Web Access を使ってジョブを開始し、サインアウトした後に、Windows PowerShell Web Access またはその他のホスト (Windows PowerShell® 統合スクリプティング環境 (ISE) など) を使って再接続できる点です。
 
--   <span class="label">コンソールのサイズ変更。</span>   **PowerShell.exe** コンソール ウィンドウのサイズは次の 3 つの方法で変更できます。
+-   <span class="label">コンソールのサイズ変更:</span>    **PowerShell.exe** コンソール ウィンドウのサイズは次の 3 つの方法で変更できます。
 
     -   マウスを使ってコンソール ウィンドウをドラッグして調整する
 
@@ -334,7 +336,7 @@ Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Acce
 
         コンソール ビューをカスタマイズするその他の例については、[Windows PowerShell チームのブログ](http://blogs.msdn.com/b/powershell/)を参照してください。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">参照</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
 <a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -345,14 +347,14 @@ Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Acce
 [スクリプト センター - Hey, Scripting Guy!](https://technet.microsoft.com/scriptcenter)
 [Windows PowerShell チーム ブログ](http://blogs.msdn.com/b/powershell/)
 
-<span>表示:</span> 保護されている継承
+<span>表示:</span> 継承 保護
 
 <span class="stdr-votetitle">このページは役に立ちましたか。</span>
 はい いいえ
 
 その他にご意見はありますか。
 
-<span class="stdr-count"><span class="stdr-charcnt">残り 1500</span> 文字</span> 送信 スキップする
+残り <span class="stdr-count"><span class="stdr-charcnt">1500</span> 文字</span> 送信 スキップする
 
 <span class="stdr-thankyou">ありがとうございました。</span> <span class="stdr-appreciate">ご意見をお送りいただきありがとうございます。</span>
 
@@ -360,9 +362,9 @@ Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Acce
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> サイトのフィードバック</a> サイトのフィードバック
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span>サイトのフィードバック</a> サイトのフィードバック
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
+<a href="javascript:void(0)" id="SiteFeedbackLinkCloser">X</a>
 
 お客様のご体験をお聞かせください。
 

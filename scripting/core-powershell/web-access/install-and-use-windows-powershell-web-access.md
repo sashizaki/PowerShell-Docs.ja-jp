@@ -13,7 +13,7 @@ ms.openlocfilehash: fe79ca70ff1f9a3960b79747221a70adc46b7c67
 
 ---
 
-#  Windows PowerShell Web Access のインストールと使用
+#  <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Access のインストールと使用
 
 最終更新日: 2013 年 11 月 5 日
 
@@ -126,20 +126,20 @@ Web ベースの Windows PowerShell コンソールを使うには、ブラウ�
 
 Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマンドレットを使用するか、サーバー マネージャーから開く役割および機能の追加ウィザードを使用して、Windows Server 2012 R2 または Windows Server 2012 を実行中のサーバーにインストールできます。 クイック インストールと構成では、このセクションで説明する Windows PowerShell コマンドレットを使用します。
 
--   [手順 1. Windows PowerShell Web Access をインストールする](#BKMK_step1)
+-   [手順 1: Windows PowerShell Web Access をインストールする](#BKMK_step1)
 
--   [手順 2. ゲートウェイを構成する](#BKMK_step2)
+-   [手順 2: ゲートウェイを構成する](#BKMK_step2)
 
--   [手順 3. 制限的な承認規則を構成する](#BKMK_step3)
+-   [手順 3: 制限的な承認規則を構成する](#BKMK_step3)
 
 <a href="" id="BKMK_step1"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 1. Windows PowerShell Web Access をインストールする</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 1: Windows PowerShell Web Access をインストールする</span></a>
 
 ------------------------------------------------------------------------
 
-#### Windows PowerShell コマンドレットを使って Windows PowerShell Web Access をインストールするには
+#### <a name="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>Windows PowerShell コマンドレットを使って Windows PowerShell Web Access をインストールするには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
@@ -153,7 +153,7 @@ Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマ�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -175,7 +175,7 @@ Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマ�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -198,7 +198,7 @@ Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマ�
 <a href="" id="BKMK_step2"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 2. ゲートウェイを構成する</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 2: ゲートウェイを構成する</span></a>
 
 ------------------------------------------------------------------------
 
@@ -226,7 +226,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
 -   [正規の証明書を持つ Windows PowerShell Web Access ゲートウェイを Install-PswaWebApplication と IIS Manager を使用して構成するには](#BKMK_gencert)
 
-#### Install-PswaWebApplication を使って、テスト証明書を使う Windows PowerShell Web Access Web ゲートウェイを構成するには
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-installpswawebapplication"></a>Install-PswaWebApplication を使って、テスト証明書を使う Windows PowerShell Web Access Web ゲートウェイを構成するには
 
 1.  次のいずれかを実行して Windows PowerShell セッションを開きます。
 
@@ -244,7 +244,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> セキュリティ メモ </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">セキュリティ メモ</span></th>
     </tr>
     </thead>
     <tbody>
@@ -276,7 +276,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -286,7 +286,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
     </tbody>
     </table>
 
-#### 正規の証明書を持つ Windows PowerShell Web Access ゲートウェイを Install-PswaWebApplication と IIS Manager を使用して構成するには
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-installpswawebapplication-and-iis-manager"></a>正規の証明書を持つ Windows PowerShell Web Access ゲートウェイを Install-PswaWebApplication と IIS Manager を使用して構成するには
 
 1.  次のいずれかを実行して Windows PowerShell セッションを開きます。
 
@@ -332,7 +332,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -345,7 +345,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 <a href="" id="BKMK_step3"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 3. 制限的な承認規則を構成する</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 3: 制限的な承認規則を構成する</span></a>
 
 ------------------------------------------------------------------------
 
@@ -353,7 +353,7 @@ Windows PowerShell Web Access をインストールし、ゲートウェイを�
 
 Windows PowerShell Web Access の承認規則とセキュリティの詳細については、「[Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)」を参照してください。
 
-#### 制限的な承認規則を追加するには
+#### <a name="to-add-a-restrictive-authorization-rule"></a>制限的な承認規則を追加するには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
@@ -361,7 +361,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
     -   Windows の**スタート**画面で、**[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
 
-2.  <span class="label">セッション構成を使用してユーザー アクセスを制限するためのオプション手順:</span>規則内で使用するセッション構成が既に存在することを確認します。 まだ作成されていない場合は、MSDN の「[about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx)」に記載されているセッション構成の作成手順を使用してください。
+2.  <span class="label">セッション構成を使用してユーザー アクセスを制限するためのオプション手順:</span> 規則内で使用するセッション構成が既に存在することを確認します。 まだ作成されていない場合は、MSDN の「[about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx)」に記載されているセッション構成の作成手順を使用してください。
 
 3.  次のように入力して **Enter** キーを押します。
 
@@ -391,11 +391,11 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 <a href="" id="BKMK_custom1"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 1. Windows PowerShell Web Access をインストールする</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 1: Windows PowerShell Web Access をインストールする</span></a>
 
 ------------------------------------------------------------------------
 
-#### 役割と機能の追加ウィザードを使って Windows PowerShell Web Access をインストールするには
+#### <a name="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard"></a>役割と機能の追加ウィザードを使って Windows PowerShell Web Access をインストールするには
 
 1.  サーバー マネージャーを既に開いている場合は、次の手順に進んでください。 サーバー マネージャーをまだ開いていない場合は、次のいずれかの方法で開きます。
 
@@ -419,7 +419,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -435,7 +435,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 2. ゲートウェイを構成する</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 2: ゲートウェイを構成する</span></a>
 
 ------------------------------------------------------------------------
 
@@ -447,7 +447,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 -   
 
-#### IIS マネージャーを使って既存の Web サイトにゲートウェイを構成するには
+#### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>IIS マネージャーを使って既存の Web サイトにゲートウェイを構成するには
 
 1.  次のいずれかの方法で IIS マネージャー コンソールを開きます。
 
@@ -469,7 +469,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 8.  **"物理パス"** フィールドで、アプリケーションの場所を参照します。 既定の場所 (%windir%/Web/PowerShellWebAccess/wwwroot) を使うことができます。 **[OK]** をクリックします。
 
-9.  このトピックの「[IIS マネージャーで SSL 証明書を構成するには](#BKMK_cert)」の説明に従って手順を実行します。
+9.  このトピックの「 [IIS マネージャーで SSL 証明書を構成するには](#BKMK_cert) 」の手順に従います。
 
 10. <span class="label">セキュリティに関する手順 (オプション):</span> ツリー ウィンドウで Web サイトが選択された状態で、コンテンツ ウィンドウの **[SSL 設定]** をダブルクリックします。 **[SSL が必要]** を選択して、**[操作]** ウィンドウで **[適用]** をクリックします。 必要に応じて、**[SSL 設定]** ウィンドウを使って、Windows PowerShell Web Access の Web サイトに接続するユーザーに対してクライアント証明書の所有を要求できます。 クライアント証明書により、クライアント デバイスのユーザーの ID を検証できます。 クライアント証明書の要求によって Windows PowerShell Web Access のセキュリティを強化する方法の詳細については、このトピックの「[Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)」を参照してください。
 
@@ -485,7 +485,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -509,7 +509,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
         c:\windows\system32\icacls.exe $authorizationFile
 
-#### IIS マネージャーを使用してテスト証明書を持つゲートウェイをルート Web サイトとして構成するには
+#### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>IIS マネージャーを使用してテスト証明書を持つゲートウェイをルート Web サイトとして構成するには
 
 1.  次のいずれかの方法で IIS マネージャー コンソールを開きます。
 
@@ -567,7 +567,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
     </colgroup>
     <thead>
     <tr class="header">
-    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+    <th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
     </tr>
     </thead>
     <tbody>
@@ -579,7 +579,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 3. 制限的な承認規則を構成する</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 3: 制限的な承認規則を構成する</span></a>
 
 ------------------------------------------------------------------------
 
@@ -587,7 +587,7 @@ Windows PowerShell Web Access をインストールし、ゲートウェイを�
 
 Windows PowerShell Web Access の承認規則とセキュリティの詳細については、「[Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)」を参照してください。
 
-#### 制限的な承認規則を追加するには
+#### <a name="to-add-a-restrictive-authorization-rule"></a>制限的な承認規則を追加するには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
@@ -595,7 +595,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
     -   Windows の**スタート**画面で、**[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
 
-2.  <span class="label">セッション構成を使用してユーザー アクセスを制限するためのオプション手順:</span>規則内で使用するセッション構成が既に存在することを確認します。 まだ作成されていない場合は、MSDN の「[about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx)」に記載されているセッション構成の作成手順を使用してください。
+2.  <span class="label">セッション構成を使用してユーザー アクセスを制限するためのオプション手順:</span> 規則内で使用するセッション構成が既に存在することを確認します。 まだ作成されていない場合は、MSDN の「[about_Session_Configuration_Files](https://msdn.microsoft.com/library/windows/desktop/hh847838.aspx)」に記載されているセッション構成の作成手順を使用してください。
 
 3.  次のように入力して **Enter** キーを押します。
 
@@ -622,7 +622,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 運用環境のセキュリティ保護のため、証明機関 (CA) によって署名されている有効な SSL 証明書を常に使用してください。 このセクションの手順では、有効な SSL 証明書を CA から取得して適用する方法について説明します。
 
-### IIS マネージャーで SSL 証明書を構成するには
+### <a name="to-configure-an-ssl-certificate-in-iis-manager"></a>IIS マネージャーで SSL 証明書を構成するには
 
 1.  IIS マネージャーのツリー ウィンドウで、Windows PowerShell Web Access がインストールされているサーバーを選択します。
 
@@ -651,7 +651,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 このトピックの説明に従って Windows PowerShell Web Access のインストールとゲートウェイ構成が完了したら、Web ベースの Windows PowerShell コンソールを使えるようになります。 Web ベース コンソールの概要については、「[Web ベースの Windows PowerShell コンソールの使用](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)」を参照してください。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">参照</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
 <a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_6" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -661,14 +661,14 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 [Web サーバーのセキュリティを構成する (IIS 7)](https://technet.microsoft.com/library/cc731278.aspx)
 [IPsec 展開のリソース](https://technet.microsoft.com/network/bb531150)
 
-<span>表示:</span> 保護されている継承
+<span>表示:</span> 継承 保護
 
 <span class="stdr-votetitle">このページは役に立ちましたか。</span>
 はい いいえ
 
 その他にご意見はありますか。
 
-<span class="stdr-count"><span class="stdr-charcnt">残り 1500</span> 文字</span> 送信 スキップする
+残り <span class="stdr-count"><span class="stdr-charcnt">1500</span> 文字</span> 送信 スキップする
 
 <span class="stdr-thankyou">ありがとうございました。</span> <span class="stdr-appreciate">ご意見をお送りいただきありがとうございます。</span>
 
@@ -676,9 +676,9 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> サイトのフィードバック</a> サイトのフィードバック
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span>サイトのフィードバック</a> サイトのフィードバック
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
+<a href="javascript:void(0)" id="SiteFeedbackLinkCloser">X</a>
 
 お客様のご体験をお聞かせください。
 
