@@ -8,12 +8,12 @@ author: eslesar
 manager: dongill
 ms.prod: powershell
 translationtype: Human Translation
-ms.sourcegitcommit: 59793e1701740dc783439cf1408c6efabd53cbcf
-ms.openlocfilehash: d541f37723d77cf0b52012bae143dc7d64efd65d
+ms.sourcegitcommit: 1e7bc38f03dd72fc29d004eb92bf130c416e490a
+ms.openlocfilehash: f7f2699287e76970d0b2565f7bbd45a5d75ac93a
 
 ---
 
-# DSC レポート サーバーの使用
+# <a name="using-a-dsc-report-server"></a>DSC レポート サーバーの使用
 
 > 適用先: Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ ms.openlocfilehash: d541f37723d77cf0b52012bae143dc7d64efd65d
 
 構成の状態に関するレポートをプル サーバーに送信するように、ノードのローカル構成マネージャー (LCM) を構成できます。これにより、プル サーバーに対してクエリを実行してデータを取得できるようになります。 ノードは、構成を確認して適用するたびに、レポート サーバーにレポートを送信します。 これらのレポートは、サーバー上のデータベースに格納され、レポート Web サービスを呼び出すことで取得できます。 各レポートには、適用された構成の内容、構成適用の成否、使用されたリソース、スローされたエラー、開始時刻と終了時刻などの情報が含まれています。
 
-## レポートを送信するようにするためのノードの構成
+## <a name="configuring-a-node-to-send-reports"></a>レポートを送信するようにするためのノードの構成
 
 ノードがサーバーにレポートを送信するようにするには、そのノードの LCM 構成で **ReportServerWeb** ブロックを使用します (LCM の構成については、「[ローカル構成マネージャーの構成](metaConfig.md)」を参照)。 ノードのレポート送信先になるサーバーは、Web プル サーバーとしてセットアップする必要があります (SMB 共有にレポートを送信することはできません)。 プル サーバーのセットアップについては、「[DSC Web プル サーバーのセットアップ](pullServer.md)」を参照してください。 レポート サーバーは、ノードが構成をプルしてリソースを取得するのと同じサービスにすることも、別のサービスにすることもできます。
  
@@ -94,7 +94,7 @@ PullClientConfig
 
 >**注:** プル サーバーを設定するとき、Web サービスには任意の名前を指定できますが、**ServerURL** プロパティはサービス名と一致する必要があります。
 
-## レポート データの取得
+## <a name="getting-report-data"></a>レポート データの取得
 
 プル サーバーに送信されたレポートは、サーバー上のデータベースに格納されます。 これらのレポートは、Web サービスを呼び出すことで利用できます。 特定のノードのレポートを取得するには、`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentID = MyNodeAgentId)/Reports` の形式でレポート Web サービスに HTTP 要求を送信します。ここで、`MyNodeAgentId` はレポートを取得するノードの AgentId です。 ノードの AgentID を取得するには、そのノードで [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) を呼び出します。
 
@@ -105,8 +105,8 @@ PullClientConfig
 ```powershell
 function GetReport
 {
-    param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCReportServer.svc")
-    $requestUri = "$serviceURL/Nodes(AgentId= '$AgentId')/Reports"
+    param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc")
+    $requestUri = "$serviceURL/Node(ConfigurationId= '$AgentId')/StatusReports"
     $request = Invoke-WebRequest -Uri $requestUri  -ContentType "application/json;odata=minimalmetadata;streaming=true;charset=utf-8" `
                -UseBasicParsing -Headers @{Accept = "application/json";ProtocolVersion = "2.0"} `
                -ErrorAction SilentlyContinue -ErrorVariable ev
@@ -115,7 +115,7 @@ function GetReport
 }
 ```
     
-## レポート データの表示
+## <a name="viewing-report-data"></a>レポート データの表示
 
 **GetReport** 関数の結果を変数に設定すると、返される配列の要素に個別のフィールドを表示できます。
 
@@ -222,7 +222,7 @@ InDesiredState    : True
 
 これらの例は、レポート データを使用してどのようなことができるかを理解するためのものです。 PowerShell での JSON の使用方法については、「[Playing with JSON and PowerShell (PowerShell での JSON の使用)](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/)」を参照してください。
 
-## 参照
+## <a name="see-also"></a>参照
 - [ローカル構成マネージャーの構成](metaConfig.md)
 - [DSC Web プル サーバーのセットアップ](pullServer.md)
 - [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
@@ -230,6 +230,6 @@ InDesiredState    : True
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO3-->
 
 
