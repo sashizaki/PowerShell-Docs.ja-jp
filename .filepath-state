@@ -203,9 +203,6 @@
   "b60c45e5a779e36784b74589b8d1c1e8f97aff2f": [
     "dsc\\TOC.md"
   ],
-  "924d5878a6d93e846adbd9cb4c69bea79e104bcd": [
-    "dsc\\TOC.md"
-  ],
   "caf661fe58faf8cf24c789b408505051429df3f4": [
     "dsc\\troubleshooting.md"
   ],
@@ -390,9 +387,6 @@
     "dsc\\singleInstance.md"
   ],
   "4916c6b7a1d93b5dc94f4ed54afd26b919061c3e": [
-    "scripting\\TOC.md"
-  ],
-  "c3d86239550566a7704405930f72c598d140cdb8": [
     "scripting\\TOC.md"
   ],
   "548cb522ecf8f8f5e82fb43e709c6b8bf3a05096": [
@@ -884,12 +878,6 @@
   "c935d6f066aed1496069681723aa7bd72edbb8e3": [
     "scripting\\core-powershell\\core-modules\\Windows-PowerShell-Core-About-Topics.md"
   ],
-  "cc44c1deb8c3162b0d2188c2af313bf064290267": [
-    "scripting\\core-powershell\\core-modules\\Windows-PowerShell-Core-About-Topics.md"
-  ],
-  "1bdf2709c27c727e944be999c4eaa62f7bdd4454": [
-    "scripting\\core-powershell\\core-modules\\Windows-PowerShell-Core-About-Topics.md"
-  ],
   "39692bf9deda498e05742f0b746af0bd54cb07c3": [
     "scripting\\core-powershell\\core-modules\\Windows-PowerShell-Core-Providers.md"
   ],
@@ -1043,12 +1031,6 @@
   "410cd4503883ea2cc02936044d7357b9cb029274": [
     "scripting\\core-powershell\\ise\\The-ISESnippetCollection-Object.md"
   ],
-  "1d899709f3a0caa2c957fc8b84f00eeb597a47fa": [
-    "scripting\\core-powershell\\ise\\The-ISESnippetCollection-Object.md"
-  ],
-  "0287c679870ad394eaaf5b0fd8d8405c70e8c3ef": [
-    "scripting\\core-powershell\\ise\\The-ISESnippetCollection-Object.md"
-  ],
   "04d650aca06977883c029684b37838da01b456aa": [
     "scripting\\core-powershell\\ise\\The-ISESnippetObject.md"
   ],
@@ -1059,12 +1041,6 @@
     "scripting\\core-powershell\\ise\\The-ISESnippetObject.md"
   ],
   "d51f5ab8b80bdf5e12a5b0f505f91eeeb4f3d48a": [
-    "scripting\\core-powershell\\ise\\The-ObjectModelRoot-Object.md"
-  ],
-  "01b67073be64bac6e993cf0f4a5f07ce7a8c6f0d": [
-    "scripting\\core-powershell\\ise\\The-ObjectModelRoot-Object.md"
-  ],
-  "36f992bb670db3cac0c82e9a6c3c1ec9ffe76262": [
     "scripting\\core-powershell\\ise\\The-ObjectModelRoot-Object.md"
   ],
   "948c7347a4794a1d0cb8369a34e2d5c21ad78241": [
@@ -1091,19 +1067,7 @@
   "6363aff01a6018f1fc3a850c6e40ad96e485f554": [
     "scripting\\core-powershell\\ise\\Using-the-Windows-PowerShell-ISE.md"
   ],
-  "117a7a3e031ffde70ebcbcb5d180c2d7b822ac76": [
-    "scripting\\core-powershell\\ise\\Using-the-Windows-PowerShell-ISE.md"
-  ],
-  "f93caadda26a75e107fa0e5eb04de33a3010f5f3": [
-    "scripting\\core-powershell\\ise\\Using-the-Windows-PowerShell-ISE.md"
-  ],
   "bc65c69906a514a2490e6e7144a0cd4f377bec16": [
-    "scripting\\core-powershell\\ise\\Windows-PowerShell-ISE-Object-Model-Reference.md"
-  ],
-  "9bfb74ba438dd27fc2799263fc12a20edd2bb8cb": [
-    "scripting\\core-powershell\\ise\\Windows-PowerShell-ISE-Object-Model-Reference.md"
-  ],
-  "d48c69fb3ebb60f69b846f640ca29a0aa791d477": [
     "scripting\\core-powershell\\ise\\Windows-PowerShell-ISE-Object-Model-Reference.md"
   ],
   "053a4fd734b1e86c5f8ca22c8197ce4e80b6fce6": [
@@ -1229,12 +1193,6 @@
   "20718ebbfb38f847d460a33e3c69b5cb45b754c6": [
     "scripting\\getting-started\\fundamental\\Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md"
   ],
-  "fcb516c5d7bdc14c2e23bdb9d96e8e19c383eda5": [
-    "scripting\\getting-started\\fundamental\\Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md"
-  ],
-  "fd325f8f4bc0ad8bf7616a536b836b0a4b375e05": [
-    "scripting\\getting-started\\fundamental\\Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md"
-  ],
   "b3b97b9dcf01094fe1fadbac355c92df35feaee2": [
     "scripting\\getting-started\\fundamental-concepts.md"
   ],
@@ -1334,12 +1292,6 @@
   "260805af4b64646922477f874c6679f58af8aea9": [
     "scripting\\setup\\Starting-Windows-PowerShell.md"
   ],
-  "f8406a2066ef54ea0fdaaff6e612bb0d43b12ab6": [
-    "scripting\\setup\\Starting-Windows-PowerShell.md"
-  ],
-  "973543505b67941d05ecf6d80477025119cdfa73": [
-    "scripting\\setup\\Starting-Windows-PowerShell.md"
-  ],
   "333469a642a4b88442a7d3ca8fa65f5755c69bcc": [
     "scripting\\setup\\Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md"
   ],
@@ -1362,9 +1314,6 @@
     "scripting\\whats-new\\What-s-New-in-the-PowerShell-50-ISE.md"
   ],
   "966cab74cb2519893d4744e8bd0ca12f93f73136": [
-    "scripting\\whats-new\\What-s-New-in-Windows-PowerShell-50.md"
-  ],
-  "cd94291f225851a99253f5f54e10d6174e63f413": [
     "scripting\\whats-new\\What-s-New-in-Windows-PowerShell-50.md"
   ],
   "035fc8adc08df500069e800cfb94c5dcff46d88f": [
