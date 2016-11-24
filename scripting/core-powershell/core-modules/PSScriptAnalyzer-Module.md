@@ -14,12 +14,12 @@ ms.openlocfilehash: 6b5710be87f6362fb3274e333737e31ad477aaee
 
 ---
 
-# PSScriptAnalyzer モジュール
+# <a name="psscriptanalyzer-module"></a>PSScriptAnalyzer モジュール
 このセクションには **PSScriptAnalyzer** モジュールのヘルプ トピックが含まれており、Windows PowerShell® のスクリプトとモジュールに関する問題を確認するために使用できます。 このモジュールは、Windows PowerShell と共にインストールされます。
 
-## ヘルプ トピック
+## <a name="help-topics"></a>ヘルプ トピック
 
-## 参照
+## <a name="see-also"></a>参照
 - [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
 - [Windows PowerShell コア](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
 - [Windows PowerShell を使用したスクリプト](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
@@ -27,6 +27,6 @@ ms.openlocfilehash: 6b5710be87f6362fb3274e333737e31ad477aaee
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

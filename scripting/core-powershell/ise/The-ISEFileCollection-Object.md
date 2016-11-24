@@ -14,12 +14,12 @@ ms.openlocfilehash: 86cb3485445fdb00c9b99a20694b9bf12a6e8f2c
 
 ---
 
-# ISEFileCollection オブジェクト
+# <a name="the-isefilecollection-object"></a>ISEFileCollection オブジェクト
   **ISEFileCollection** オブジェクトは **ISEFile** オブジェクトのコレクションです。 たとえば $psISE.CurrentPowerShellTab.Files コレクションです。
 
-## メソッド
+## <a name="methods"></a>メソッド
 
-### Add\( \[fullPath\] \)
+### <a name="add-fullpath-"></a>Add\( \[fullPath\] \)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  新しい無題ファイルを作成して返し、コレクションに追加します。 新しく作成されたファイルの **IsUntitled** プロパティは **$true** です。
@@ -35,7 +35,7 @@ $psISE.CurrentPowerShellTab.Files.Add("$pshome\Examples\profile.ps1")
 
 ```
 
-### Remove\( File、\[Force\] \)
+### <a name="remove-file-force-"></a>Remove\( File, \[Force\] \)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  現在の PowerShell タブから指定されたファイルを削除します。
@@ -55,7 +55,7 @@ $firstfile = $psISE.CurrentPowerShellTab.Files[0]
 $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 ```
 
-### SetSelectedFile\( selectedFile \)
+### <a name="setselectedfile-selectedfile-"></a>SetSelectedFile\( selectedFile \)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  **selectedFile** パラメーターにより指定されたファイルを選択します。
@@ -70,7 +70,7 @@ $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
 
 ```
 
-## 参照
+## <a name="see-also"></a>参照
 - [ISEFile オブジェクト](The-ISEFile-Object.md) 
 - [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
@@ -80,6 +80,6 @@ $psISE.CurrentPowerShellTab.Files.SetSelectedFile($firstfile)
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

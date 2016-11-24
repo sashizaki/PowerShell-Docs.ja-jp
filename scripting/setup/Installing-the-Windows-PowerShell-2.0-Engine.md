@@ -14,7 +14,7 @@ ms.openlocfilehash: 68a3d823f6545e1fbf6399b4d566a7e62daeebc9
 
 ---
 
-# Windows PowerShell 2.0 エンジンのインストール
+# <a name="installing-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 エンジンのインストール
 このトピックでは、Windows PowerShell 2.0 エンジンのインストール方法について説明します。
 
 Windows PowerShell 3.0 は、Windows PowerShell 2.0 との下位互換性を保つように設計されています。 Windows PowerShell 2.0 と Windows PowerShell 3.0 用に記述されたコマンドレット、プロバイダー、スナップイン、モジュール、スクリプトは、未変更のまま Windows PowerShell 4.0 で実行できます。 ただし、Microsoft .NET Framework 4 でランタイムのアクティブ化ポリシーが変更されたため、Windows PowerShell 2.0 用に記述され、共通言語ランタイム (CLR) 2.0 でコンパイルされた Windows PowerShell ホスト プログラムは、変更を加えなければ新しいリリースの Windows PowerShell (CLR 4.0 でコンパイルされたもの) で実行できません。
@@ -25,10 +25,10 @@ Windows PowerShell 2.0 エンジンは、Windows Server 2012 R2、Windows 8.1、
 
 Windows PowerShell 2.0 エンジンの開始に関する情報については、「[Windows PowerShell 2.0 エンジンの開始](Starting-the-Windows-PowerShell-2.0-Engine.md)」を参照してください。
 
-## Windows 8 および Windows 8.1
+## <a name="on-windows-81-and-windows-8"></a>Windows 8 および Windows 8.1
 Windows 8.1 と Windows 8 では、Windows PowerShell 2.0 エンジンの機能が既定でオンになっています。 ただし、この機能を使うには、この機能に必要な Microsoft .NET Framework 3.5 オプションをオンにする必要があります。 このセクションでは、Windows PowerShell 2.0 エンジンの機能をオンまたはオフにする方法についても説明します。
 
-#### .NET Framework 3.5 をオンにするには
+#### <a name="to-turn-on-net-framework-35"></a>.NET Framework 3.5 をオンにするには
 
 1.  **[スタート]** 画面で、「**Windows の機能**」と入力します。
 
@@ -38,7 +38,7 @@ Windows 8.1 と Windows 8 では、Windows PowerShell 2.0 エンジンの機能�
 
     **[.NET Framework 3.5 (.NET 2.0 および 3.0 を含む)]** を選択すると、ボックスが塗りつぶされて、機能の一部のみが選択された状態になります。 Windows PowerShell 2.0 エンジンの場合はこの状態で十分です。
 
-#### Windows PowerShell 2.0 エンジンをオンまたはオフにするには
+#### <a name="to-turn-the-windows-powershell-20-engine-on-and-off"></a>Windows PowerShell 2.0 エンジンをオンまたはオフにするには
 
 1.  **[スタート]** 画面で、「**Windows の機能**」と入力します。
 
@@ -46,10 +46,10 @@ Windows 8.1 と Windows 8 では、Windows PowerShell 2.0 エンジンの機能�
 
 3.  **[Windows の機能]** ボックスで、[**Windows PowerShell 2.0**] ノードを展開し、[**Windows PowerShell 2.0** エンジン] ボックスをクリックして、オンまたはオフにします。
 
-## Windows Server 2012 R2 または Windows Server 2012
+## <a name="on-windows-server-2012-r2-and-windows-server-2012"></a>Windows Server 2012 R2 または Windows Server 2012
 次の手順を実行して、Windows PowerShell 2.0 エンジンと Microsoft .NET Framework 3.5 の機能を追加します。 Windows PowerShell 2.0 エンジンには最低でも Microsoft .NET Framework 2.0.50727 が必要です。 この要件は Microsoft .NET Framework 3.5 で満たされます。
 
-#### .NET Framework 3.5 の機能を追加するには
+#### <a name="to-add-the-net-framework-35-feature"></a>.NET Framework 3.5 の機能を追加するには
 
 1.  **サーバー マネージャー**で、**[管理]** メニューから **[役割と機能の追加]** を選びます。
 
@@ -61,7 +61,7 @@ Windows 8.1 と Windows 8 では、Windows PowerShell 2.0 エンジンの機能�
 
     このノードの下にあるその他のオプションは、Windows PowerShell 2.0 エンジンには必要ありません。
 
-#### Windows PowerShell 2.0 エンジンの機能を追加するには
+#### <a name="to-add-the-windows-powershell-20-engine-feature"></a>Windows PowerShell 2.0 エンジンの機能を追加するには
 
 -   **サーバー マネージャー**で、**[管理]** メニューから **[役割と機能の追加]** を選びます。
 
@@ -73,12 +73,12 @@ Windows 8.1 と Windows 8 では、Windows PowerShell 2.0 エンジンの機能�
 
 Windows PowerShell 2.0 エンジンの開始に関する情報については、「[Windows PowerShell 2.0 エンジンの開始](Starting-the-Windows-PowerShell-2.0-Engine.md)」を参照してください。
 
-## 以前のシステムの場合
-Windows 7、Windows Server 2008 R2、および Windows Server 2012 に Windows PowerShell 4.0 をインストールする [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) パッケージには、Windows PowerShell 2.0 エンジンが組み込まれています。 Windows PowerShell 2.0 を エンジンは有効になっており、使用準備が整っていますので、追加のインストールや、セットアップ、構成は必要ありません。
+## <a name="on-earlier-systems"></a>以前のシステムの場合
+Windows 7、Windows Server 2008 R2、および Windows Server 2012 に Windows PowerShell 4.0 をインストールする [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) パッケージには、Windows PowerShell 2.0 エンジンが組み込まれています。 Windows PowerShell 2.0 をエンジンは有効になっており、使用準備が整っていますので、追加のインストールや、セットアップ、構成は必要ありません。
 
-Windows 7、Windows Server 2008 R2、および Windows Server 2008 に Windows PowerShell 3.0 をインストールする Windows Management Framework 3.0 パッケージには、Windows PowerShell 2.0 エンジンが組み込まれています。 Windows PowerShell 2.0 を エンジンは有効になっており、使用準備が整っていますので、追加のインストールや、セットアップ、構成は必要ありません。
+Windows 7、Windows Server 2008 R2、および Windows Server 2008 に Windows PowerShell 3.0 をインストールする Windows Management Framework 3.0 パッケージには、Windows PowerShell 2.0 エンジンが組み込まれています。 Windows PowerShell 2.0 をエンジンは有効になっており、使用準備が整っていますので、追加のインストールや、セットアップ、構成は必要ありません。
 
-## 参照
+## <a name="see-also"></a>参照
 - [Windows PowerShell のシステム要件](Windows-PowerShell-System-Requirements.md)
 - [Windows PowerShell のインストール](Installing-Windows-PowerShell.md)
 - [Windows PowerShell の開始](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
@@ -87,6 +87,6 @@ Windows 7、Windows Server 2008 R2、および Windows Server 2008 に Windows P
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

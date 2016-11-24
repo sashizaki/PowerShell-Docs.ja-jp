@@ -14,12 +14,12 @@ ms.openlocfilehash: 489c9492e8de213145b71a7963e180fe1a4ad5b6
 
 ---
 
-# ISEMenuItemCollection オブジェクト
+# <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection オブジェクト
   **ISEMenuItemCollection** オブジェクトは、**ISEMenuItem** オブジェクトのコレクションです。 これは Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection クラスのインスタンスです。 例としては、Windows PowerShell® Integrated Scripting Environment (ISE) の **アドオン** メニューをカスタマイズするために使用される **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** オブジェクトです。
 
-## 方法
+## <a name="method"></a>方法
 
-### Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)
+### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a>Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  メニュー項目をコレクションに追加します。
@@ -42,7 +42,7 @@ ms.openlocfilehash: 489c9492e8de213145b71a7963e180fe1a4ad5b6
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
 ```
 
-### クリア\(\)
+### <a name="clear"></a>Clear\(\)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  メニュー項目からすべてのサブメニューを削除します。
@@ -53,7 +53,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
 ```
 
-## 参照
+## <a name="see-also"></a>参照
 - [ISEMenuItem オブジェクト](The-ISEMenuItem-Object.md) 
 - [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
@@ -63,6 +63,6 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

@@ -14,10 +14,10 @@ ms.openlocfilehash: 03a9bbfb14c4587d794db2eaadf60cc7a4d4dcdc
 
 ---
 
-# 複数選択のリスト ボックス
+# <a name="multiple-selection-list-boxes"></a>複数選択のリスト ボックス
 Windows PowerShell 3.0 と以降のリリースを使用すると、カスタム Windows フォームで複数選択のリスト ボックス コントロールを作成できます。
 
-## 複数選択ができるようにするリスト ボックス コントロールを作成します。
+## <a name="create-list-box-controls-that-allow-multiple-selections"></a>複数選択ができるようにするリスト ボックス コントロールを作成します。
 以下を Windows PowerShell ISE にコピーしてから貼り付け、Windows PowerShell スクリプト (.ps1) として保存します。
 
 ```
@@ -84,11 +84,11 @@ $form = New-Object System.Windows.Forms.Form
 
 フォーム クラスのインスタンスを作成したら、このクラスの次の 3 つのプロパティに値を割り当てます。
 
--   **Text。** ウィンドウのタイトルになります。
+-   **Text**。 ウィンドウのタイトルになります。
 
--   **Size。** フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
+-   **Size**。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
 
--   **StartingPosition。** 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。 このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
+-   **StartingPosition**。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。 このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
 
 ```
 $form.Text = "Data Entry Form"
@@ -184,7 +184,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## 参照
+## <a name="see-also"></a>参照
 - [Hey Scripting Guy: これらの PowerShell GUI の例が機能しないのはなぜですか。](http://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell Tip of the Week: 複数選択のリスト ボックスなど](http://technet.microsoft.com/library/ff730950.aspx)
@@ -192,6 +192,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

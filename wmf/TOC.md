@@ -7,6 +7,7 @@
 ### [PowerShell エンジンの機能強化](5.1/engine-improvements.md)
 ### [パッケージ管理の機能強化](5.1/package-management-improvements.md)
 ### [JEA の改善](5.1/jea-improvements.md)
+### [カタログ コマンドレット](5.1/catalog-cmdlets.md)
 ### [WMF 5.1 で修正されたバグ](5.1/bugfixes.md)
 ## [インストールと構成](5.1/install-configure.md)
 ## [既知の問題](5.1/known-issues.md)
@@ -95,6 +96,6 @@
 ### [ソフトウェア インベントリ ログ (SIL)](5.0/sil_overview.md)
 
 
-<!--HONumber=Nov16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

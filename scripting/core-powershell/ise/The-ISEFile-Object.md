@@ -14,12 +14,12 @@ ms.openlocfilehash: e4d830fa49157366fb20851f01b34d433b296534
 
 ---
 
-# ISEFile オブジェクト
+# <a name="the-isefile-object"></a>ISEFile オブジェクト
   **ISEFile** オブジェクトは、Windows PowerShell® Integrated Scripting Environment (ISE) のファイルを表します。 これは Microsoft.PowerShell.Host.ISE.ISEFile クラスのインスタンスです。 このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。 **$PsISE.CurrentFile** と、PowerShell タブのファイル コレクション内のファイルは、Microsoft.PowerShell.Host.ISE.ISEFile クラスのすべてのインスタンスです。
 
-## メソッド
+## <a name="methods"></a>メソッド
 
-###  <a name="save-override"></a> Save\( \[saveEncoding\] \)
+###  <a name="a-namesave-overridea-save-saveencoding-"></a><a name="save-override"></a> Save\( \[saveEncoding\] \)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  ファイルをディスクに保存します。
@@ -43,7 +43,7 @@ $myfile.Encoding
 
 ```
 
-###  <a name="saveas"></a> SaveAs\(filename, \[saveEncoding\]\)
+###  <a name="a-namesaveasa-saveasfilename-saveencoding"></a><a name="saveas"></a> SaveAs\(filename, \[saveEncoding\]\)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  指定したファイル名およびエンコードでファイルを保存します。
@@ -69,12 +69,12 @@ $psIse.CurrentFile.SaveAs( $fullPath, [System.Text.Encoding]::UTF8 )
 
 ```
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
-###  <a name="Displayname"></a> 表示名
+###  <a name="a-namedisplaynamea-displayname"></a><a name="Displayname"></a> DisplayName
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- このファイルの表示名が含まれている文字列を取得する読み取り専用のプロパティ。 名前は、エディターの上部の **[ファイル]** タブに表示されます。 名前の末尾のアスタリスク (\(\*\)) は、保存されていない変更がファイルに含まれていることを示します。
+ このファイルの表示名が含まれている文字列を取得する読み取り専用のプロパティ。 名前は、エディターの上部の **[ファイル]** タブに表示されます。 名前の末尾のアスタリスク \(\*\) は、保存されていない変更がファイルに含まれていることを示します。
 
 ```
 # Shows the display name of the file.
@@ -82,7 +82,7 @@ $psIse.CurrentFile.DisplayName
 
 ```
 
-###  <a name="Editor"></a> Editor
+###  <a name="a-nameeditora-editor"></a><a name="Editor"></a> Editor
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  指定したファイルで使用される[エディター オブジェクト](The-ISEEditor-Object.md)を取得する読み取り専用のプロパティ。
@@ -93,7 +93,7 @@ $psIse.CurrentFile.Editor.Text
 
 ```
 
-###  <a name="Encoding"></a> エンコード
+###  <a name="a-nameencodinga-encoding"></a><a name="Encoding"></a> Encoding
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  元のファイル エンコードを取得する読み取り専用のプロパティ。 これは **System.Text.Encoding** オブジェクトです。
@@ -104,7 +104,7 @@ $psIse.CurrentFile.Encoding
 
 ```
 
-###  <a name="FullPath"></a> FullPath
+###  <a name="a-namefullpatha-fullpath"></a><a name="FullPath"></a> FullPath
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  開いているファイルの完全パスを指定する文字列を取得する読み取り専用プロパティ。
@@ -115,7 +115,7 @@ $psIse.CurrentFile.FullPath
 
 ```
 
-###  <a name="IsSaved"></a> IsSaved
+###  <a name="a-nameissaveda-issaved"></a><a name="IsSaved"></a> IsSaved
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  ファイルが最後に変更された後にファイルが保存されている場合に **$true** を返す読み取り専用のブール型プロパティ。
@@ -127,7 +127,7 @@ $myfile.IsSaved
 
 ```
 
-###  <a name="IsUntitled"></a> IsUntitled
+###  <a name="a-nameisuntitleda-isuntitled"></a><a name="IsUntitled"></a> IsUntitled
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  ファイルにタイトルが指定されたことがない場合に **$true** を返す読み取り専用のプロパティ。
@@ -140,8 +140,8 @@ $psISE.CurrentFile.IsUntitled
 
 ```
 
-## 参照
-- [ISEFileCollectionObject](The-ISEFileCollection-Object.md) 
+## <a name="see-also"></a>参照
+- [The ISEFileCollectionObject](The-ISEFileCollection-Object.md) 
 - [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
 - [ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)
@@ -150,6 +150,6 @@ $psISE.CurrentFile.IsUntitled
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 
