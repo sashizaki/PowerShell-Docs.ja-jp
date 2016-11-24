@@ -14,9 +14,9 @@ ms.openlocfilehash: bc65c69906a514a2490e6e7144a0cd4f377bec16
 
 ---
 
-# Windows PowerShell ISE オブジェクト モデル リファレンス
+# <a name="windows-powershell-ise-object-model-reference"></a>Windows PowerShell ISE オブジェクト モデル リファレンス
   
-## オブジェクト モデル リファレンス
+## <a name="object-model-reference"></a>オブジェクト モデル リファレンス
  このセクションでは、Windows PowerShell® Integrated Scripting Environment (ISE) で各種オブジェクトを定義する基礎となるクラスへのリファレンスを提供します。 これらのオブジェクトの階層構造については、「[ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)」を参照してください。
 
  [ISEAddOnTool オブジェクト](The-ISEAddOnTool-Object.md)
@@ -50,13 +50,13 @@ ms.openlocfilehash: bc65c69906a514a2490e6e7144a0cd4f377bec16
  [PowerShellTabCollection オブジェクト](The-PowerShellTabCollection-Object.md)
  例: $psISE.PowerShellTabs。
 
-## 参照
+## <a name="see-also"></a>参照
 - [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

@@ -66,6 +66,8 @@
 ### [nxSshAuthorizedKeys リソース](lnxSshAuthorizedKeysResource.md)
 ### [nxUser リソース](lnxUserResource.md)
 
+# [Microsoft Azure での DSC の使用](azureDsc.md)
+
 # DSC MOF の参照
 ## [MSFT_DSCLocalConfigurationManager クラス](msft-dsclocalconfigurationmanager.md)
 ### [MSFT_DSCLocalConfigurationManager クラスの ApplyConfiguration メソッド](msft-dsclocalconfigurationmanager-applyconfiguration.md)
@@ -93,6 +95,6 @@
 
 
 
-<!--HONumber=Oct16_HO4-->
+<!--HONumber=Nov16_HO4-->
 
 

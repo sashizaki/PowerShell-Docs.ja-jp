@@ -14,7 +14,7 @@ ms.openlocfilehash: c935d6f066aed1496069681723aa7bd72edbb8e3
 
 ---
 
-# Windows PowerShell コア About トピック
+# <a name="windows-powershell-core-about-topics"></a>Windows PowerShell コア About トピック
 このセクションには、すべての Windows PowerShell モジュールに適用されるコンセプト (「About」) ヘルプ トピックが含まれています。 他のモジュールの About トピックについては、特定のモジュールのヘルプ トピックを参照してください。
 
 |トピック|説明|
@@ -133,7 +133,7 @@ ms.openlocfilehash: c935d6f066aed1496069681723aa7bd72edbb8e3
 |[about_WQL](https://technet.microsoft.com/en-us/library/820b2d23-3473-46f5-a188-5910704c7905)|WMI Query Language (WQL) について説明します。これは Windows PowerShell で WMI オブジェクトを取得するために使用できます。|
 |[about_WS-Management_Cmdlets [v3]](https://technet.microsoft.com/en-us/library/22738d36-4d49-472c-ae51-9365b9bbd7c2)|Microsoft.WsMan.Management モジュールのコマンドレットについて説明します。 それらをまとめて利用し、WSMan プロバイダー ドライブを含む、WS-Management 機能を管理する方法について説明します。|
 
-## 参照
+## <a name="see-also"></a>参照
 - [Windows PowerShell を使用したスクリプト](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 - [Windows PowerShell コア](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
 - [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
@@ -145,6 +145,6 @@ ms.openlocfilehash: c935d6f066aed1496069681723aa7bd72edbb8e3
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

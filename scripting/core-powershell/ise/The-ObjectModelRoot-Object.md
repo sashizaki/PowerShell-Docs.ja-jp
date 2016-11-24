@@ -14,42 +14,42 @@ ms.openlocfilehash: d51f5ab8b80bdf5e12a5b0f505f91eeeb4f3d48a
 
 ---
 
-# ObjectModelRoot オブジェクト
+# <a name="the-objectmodelroot-object"></a>ObjectModelRoot オブジェクト
   Windows PowerShell® Integrated Scripting Environment (ISE) のプリンシパル ルート オブジェクトである **$PsISE** オブジェクトは、Microsoft.PowerShell.Host.ISE.ObjectModelRoot クラスのインスタンスです。 このトピックでは、**ObjectModelRoot** オブジェクトのプロパティについて説明します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
-### CurrentFile
+### <a name="currentfile"></a>CurrentFile
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  現在フォーカスしているこのホスト オブジェクトに関連付けられているファイルを取得する読み取り専用のプロパティ。
 
-### CurrentPowerShellTab
+### <a name="currentpowershelltab"></a>CurrentPowerShellTab
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  フォーカスしている PowerShell タブを取得する読み取り専用のプロパティ。
 
-### CurrentVisibleHorizontalTool
+### <a name="currentvisiblehorizontaltool"></a>CurrentVisibleHorizontalTool
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  エディターの下部にある水平方向のツール ウィンドウに現在表示されている Windows PowerShell ISE アドオン ツールを取得する読み取り専用のプロパティ。
 
-### CurrentVisibleVerticalTool
+### <a name="currentvisibleverticaltool"></a>CurrentVisibleVerticalTool
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  エディターの右側にある垂直方向のツール ウィンドウに現在表示されている Windows PowerShell ISE アドオン ツールを取得する読み取り専用のプロパティ。
 
-### オプション
+### <a name="options"></a>オプション
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  Windows PowerShell ISE の設定を変更することができるさまざまなオプションを取得する読み取り専用のプロパティ。
 
-### PowerShellTabs
+### <a name="powershelltabs"></a>PowerShellTabs
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  Windows PowerShell ISE で開かれている PowerShell タブのコレクションを取得する読み取り専用のプロパティ。 既定では、このオブジェクトには 1 つの PowerShell タブが含まれています。 ただし、スクリプトまたは Windows PowerShell ISE のメニューを使用して、このオブジェクトに他の PowerShell タブを追加することができます。
 
-## 参照
+## <a name="see-also"></a>参照
 - [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
 - [ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)
@@ -58,6 +58,6 @@ ms.openlocfilehash: d51f5ab8b80bdf5e12a5b0f505f91eeeb4f3d48a
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

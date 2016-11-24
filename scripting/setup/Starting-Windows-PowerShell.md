@@ -14,7 +14,7 @@ ms.openlocfilehash: 260805af4b64646922477f874c6679f58af8aea9
 
 ---
 
-# Windows PowerShell の開始
+# <a name="starting-windows-powershell"></a>Windows PowerShell の開始
 PowerShell は、複数のホストに埋め込まれているスクリプト エンジン dll です。  開始するホストとして最も一般的なものは、対話型コマンド ラインの PowerShell.exe および対話型スクリプト環境の PowerShell_ISE.exe です。  
 
 Windows Server® 2012 R2、Windows® 8.1、Windows Server 2012、Windows 8 で Windows PowerShell® を開始するには、「[一般的な管理タスクとナビゲーション](http://technet.microsoft.com/library/hh831491.aspx)」を参照してください。
@@ -29,13 +29,13 @@ Windows Server® 2012 R2、Windows® 8.1、Windows Server 2012、Windows 8 で W
 
 -   [Windows PowerShell 2.0 エンジンの開始](Starting-the-Windows-PowerShell-2.0-Engine.md)
 
-## 参照
+## <a name="see-also"></a>参照
 - [Windows PowerShell のシステム要件](Windows-PowerShell-System-Requirements.md)
 - [Windows PowerShell のインストール](Installing-Windows-PowerShell.md)
 
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

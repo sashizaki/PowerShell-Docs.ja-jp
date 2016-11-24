@@ -14,15 +14,15 @@ ms.openlocfilehash: 20718ebbfb38f847d460a33e3c69b5cb45b754c6
 
 ---
 
-# Windows PowerShell Integrated Scripting Environment (ISE)
+# <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE)
 Windows PowerShell Integrated Scripting Environment (ISE) は、Windows PowerShell エンジンと言語の 2 つのホストのうちの 1 つです。 それを使って、Windows PowerShell コンソールでは使用できない方法でテスト スクリプトを記述し、実行できます。 ISE は、構文の色指定、タブ補完、IntelliSense、視覚的なデバッグ機能、状況依存のヘルプを追加します。
 
 ISE を使用することにより、コンソール ウィンドウでコマンドを実行できるだけでなく、スクリプトのソース コードと ISE に接続できる他のツールを同時に表示するのに使用できるウィンドウもサポートします。 同時に複数のスクリプト ウィンドウを開くこともできます。これは、他のスクリプトまたはモジュールで定義された関数を使用するスクリプトをデバッグする際に特に便利です。
 
-## 新機能
+## <a name="whats-new"></a>新機能
 最新のリリースの PowerShell で ISE に追加されたいくつかの機能を次に示します。
 
-### PowerShell 3.0 に追加 (Windows Server 2012、Windows 8)
+### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>PowerShell 3.0 に追加 (Windows Server 2012、Windows 8)
 **IntelliSense** は、文字を入力するときに、一致するコマンドレット、パラメーター、パラメーター値、ファイル、またはフォルダーのメニューを表示することによって、自動的にコマンドを完成させます。
 
 **スニペット**は、記述するスクリプトに簡単に挿入できるコードの短いセクションです。 便利なスニペットのコレクションがあらかじめ用意されており、**New-Snippet** コマンドレットを使ってさらに追加できます。
@@ -55,21 +55,21 @@ ISE に機能を追加する**アドオン ツール**は、[Windows PowerShell 
 
 -   **ブロック選択**。 テキストのブロック型の塊を選択するには、Alt キーを押したままマウスでスクリプト ウィンドウ内のテキストを選択するか、または **Alt + Shift + 方向キー**を押します。
 
-### PowerShell 2.0 に追加 (Windows Server 2008 R2、Windows 7)
+### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>PowerShell 2.0 に追加 (Windows Server 2008 R2、Windows 7)
 ISE が PowerShell v2.0 に導入されました。
 
-## Windows PowerShell ISE の実行に関する要件
+## <a name="requirements-for-running-the-windows-powershell-ise"></a>Windows PowerShell ISE の実行に関する要件
 ISE は、Windows PowerShell v2.0 以降を実行できるすべてのコンピューターで使用できます。 Windows と Windows Server の各バージョンには、Windows PowerShell と ISE のいずれかのバージョンが含まれますが、Windows Management Framework をインストールすることによって、使用可能な最新のバージョンにアップグレードできます。 この検索を実行して使用可能な最新のバージョンを検索します: [ダウンロード](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending)。 「プレビュー」というラベルが付いたすべてのエントリはプレリリース コードであり、完全な機能ではないことに注意してください。
 
 > [!NOTE]
 > Windows PowerShell ISE にはグラフィカル ユーザー インターフェイスが必要なため、Windows Server の [Server Core] オプションでは実行できません。
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 - [Windows PowerShell Integrated Scripting Environment の使用](http://technet.microsoft.com/library/cc732148.aspx)
 
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 

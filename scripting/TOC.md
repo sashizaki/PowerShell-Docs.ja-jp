@@ -35,7 +35,7 @@
 ####  [使い慣れたコマンド名の使用](getting-started/fundamental/Using-Familiar-Command-Names.md)
 ####  [オブジェクト パイプライン](getting-started/fundamental/Object-Pipeline.md)
 ####  [Windows PowerShell を使用したスクリプト](getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
-####  [Windows PowerShell を使用する](getting-started/fundamental/Using-Windows-PowerShell.md)
+####  [Windows PowerShell の使用](getting-started/fundamental/Using-Windows-PowerShell.md)
 
 ### [基本的なクックブック](getting-started/basic-cookbooks.md)
 ####  [コンピューターの状態を変更する](getting-started/cookbooks/Changing-Computer-State.md)
@@ -142,6 +142,6 @@
 ## [PowerShell 用語集](Windows-PowerShell-Glossary.md)
 
 
-<!--HONumber=Oct16_HO2-->
+<!--HONumber=Nov16_HO4-->
 
 

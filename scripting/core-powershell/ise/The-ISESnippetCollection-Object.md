@@ -14,12 +14,12 @@ ms.openlocfilehash: 410cd4503883ea2cc02936044d7357b9cb029274
 
 ---
 
-# ISESnippetCollection オブジェクト
+# <a name="the-isesnippetcollection-object"></a>ISESnippetCollection オブジェクト
   **ISESnippetCollection** オブジェクトは、**ISESnippet** オブジェクトのコレクションです。 **PowerShellTab** オブジェクトに関連付けられているファイル コレクションは、このクラスのメンバーです。 例としては、**$psISE.CurrentPowerShellTab.Files** コレクションです。
 
-## メソッド
+## <a name="methods"></a>メソッド
 
-### Load\( FilePathName \)
+### <a name="load-filepathname-"></a>Load\( FilePathName \)
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
  ユーザー定義のスニペットを含む .snippets.ps1xml ファイルを読み込みます。 スニペットを作成する最も簡単な方法は、New-IseSnippet コマンドレットを使用することです。このコマンドレットでは、Windows PowerShell ISE を開始するたびにスニペットがロードされるように、自動的にスニペットをプロファイル フォルダーに保存します。
@@ -32,7 +32,7 @@ $SnipFile = Join-Path ( Split-Path $profile) “Snippets\MySnips.snippets.ps1xml
 
 ```
 
-## 参照
+## <a name="see-also"></a>参照
 - [ISESnippetObject](The-ISESnippetObject.md) 
 - [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
@@ -42,6 +42,6 @@ $SnipFile = Join-Path ( Split-Path $profile) “Snippets\MySnips.snippets.ps1xml
 
 
 
-<!--HONumber=Oct16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 
