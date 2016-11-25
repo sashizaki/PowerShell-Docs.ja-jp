@@ -56,9 +56,6 @@
   "9090f4be2987b8a56ba4d839f54e05082a8bcfa0": [
     "dsc\\enactingConfigurations.md"
   ],
-  "4c802002c6a03a27d02221dd713677911a77c30b": [
-    "dsc\\enactingConfigurations.md"
-  ],
   "20a7711604033b5ff1484dbb526df2642a9a1738": [
     "dsc\\environmentResource.md"
   ],
@@ -783,12 +780,6 @@
     "scripting\\core-powershell\\core-modules\\Microsoft.PowerShell.Core-Module.md"
   ],
   "5a404bca8e9435a9eab29b8b4cfa8c336d024c38": [
-    "scripting\\core-powershell\\core-modules\\Microsoft.PowerShell.Diagnostics-Module.md"
-  ],
-  "15ffabd2e8c9385990e08ac7311449f000b1302e": [
-    "scripting\\core-powershell\\core-modules\\Microsoft.PowerShell.Diagnostics-Module.md"
-  ],
-  "eaab3d4e848e14818260981d9e07043c52eda3e8": [
     "scripting\\core-powershell\\core-modules\\Microsoft.PowerShell.Diagnostics-Module.md"
   ],
   "201152ec2c4e9033041717f496b0cd26dee2355c": [
