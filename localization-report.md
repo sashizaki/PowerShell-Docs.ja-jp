@@ -2849,8 +2849,8 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cfb8cc70be31b126c554dce3edfaed213a6dedf6/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf)
 * Handback Datetime: 2016-11-25 14:09:47
-* Bilingual File: [enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/8cc2b665151e25afcb645fceaa3e5ec910cab3c8/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf)
-* Bilingual Datetime: 2016-07-19 20:06:55
+* Bilingual File: [enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cfb8cc70be31b126c554dce3edfaed213a6dedf6/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf)
+* Bilingual Datetime: 2016-11-25 14:11:37
 * [Back to Top](#report-top)
 
 ##### <a name='20a7711604033b5ff1484dbb526df2642a9a173828'></a> Source: [dsc\environmentResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/environmentResource.md)
@@ -28970,8 +28970,8 @@
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [Microsoft.PowerShell.Diagnostics-Module.43631b8500d21df241721a0fa0a6490a42176055.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cfb8cc70be31b126c554dce3edfaed213a6dedf6/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Microsoft.PowerShell.Diagnostics-Module.43631b8500d21df241721a0fa0a6490a42176055.ja-jp.xlf)
 * Handback Datetime: 2016-11-25 14:09:47
-* Bilingual File: [Microsoft.PowerShell.Diagnostics-Module.43631b8500d21df241721a0fa0a6490a42176055.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/ff1397b8d70fd17288558e95dfa32889258e7399/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Microsoft.PowerShell.Diagnostics-Module.43631b8500d21df241721a0fa0a6490a42176055.ja-jp.xlf)
-* Bilingual Datetime: 2016-06-16 14:28:32
+* Bilingual File: [Microsoft.PowerShell.Diagnostics-Module.43631b8500d21df241721a0fa0a6490a42176055.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cfb8cc70be31b126c554dce3edfaed213a6dedf6/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Microsoft.PowerShell.Diagnostics-Module.43631b8500d21df241721a0fa0a6490a42176055.ja-jp.xlf)
+* Bilingual Datetime: 2016-11-25 14:11:37
 * [Back to Top](#report-top)
 
 ##### <a name='201152ec2c4e9033041717f496b0cd26dee2355c2183'></a> Source: [scripting\core-powershell\core-modules\Microsoft.PowerShell.Host-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/core-modules/Microsoft.PowerShell.Host-Module.md)

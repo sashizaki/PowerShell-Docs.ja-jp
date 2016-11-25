@@ -1,11 +1,43 @@
 # <a name='report-top'></a> Localization Bilingual Report
 
 ## Summary
- Total Files | 0
+ Total Files | 2
 
 ## File List
+ Source File | Status | Details 
+ ----------- | ------ | ------- 
+ [dsc\enactingConfigurations.md](https://github.com/PowerShell/powerShell-Docs/blob/49ddf6faf98a51f7ad5252e9563b1543478ed113/dsc/enactingConfigurations.md) | InSyncHandedBackSuccess | [Details](#9090f4be2987b8a56ba4d839f54e05082a8bcfa027)
+ [scripting\core-powershell\core-modules\Microsoft.PowerShell.Diagnostics-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/core-modules/Microsoft.PowerShell.Diagnostics-Module.md) | InSyncHandedBackSuccess | [Details](#5a404bca8e9435a9eab29b8b4cfa8c336d024c382182)
 
 ## Item Details
+##### <a name='9090f4be2987b8a56ba4d839f54e05082a8bcfa027'></a> Source: [dsc\enactingConfigurations.md](https://github.com/PowerShell/powerShell-Docs/blob/49ddf6faf98a51f7ad5252e9563b1543478ed113/dsc/enactingConfigurations.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [dsc\enactingConfigurations.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/4c6eb38d2fa11a3c7ef7f2f80f4f64040a2a4f30/dsc/enactingConfigurations.md)
+* Handoff File: [enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/af93e5e9479ea36a21bd342a73b45c8c0b3005d3/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf)
+* Handoff Datetime: 2016-11-23 21:41:25
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cfb8cc70be31b126c554dce3edfaed213a6dedf6/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf)
+* Handback Datetime: 2016-11-25 14:09:47
+* Bilingual File: [enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cfb8cc70be31b126c554dce3edfaed213a6dedf6/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf)
+* Bilingual Datetime: 2016-11-25 14:11:37
+* [Back to Top](#report-top)
+
+##### <a name='5a404bca8e9435a9eab29b8b4cfa8c336d024c382182'></a> Source: [scripting\core-powershell\core-modules\Microsoft.PowerShell.Diagnostics-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/core-modules/Microsoft.PowerShell.Diagnostics-Module.md)
+* Status: InSyncHandedBackSuccess
+* Target File: [scripting\core-powershell\core-modules\Microsoft.PowerShell.Diagnostics-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/4c6eb38d2fa11a3c7ef7f2f80f4f64040a2a4f30/scripting/core-powershell/core-modules/Microsoft.PowerShell.Diagnostics-Module.md)
+* Handoff File: [Microsoft.PowerShell.Diagnostics-Module.43631b8500d21df241721a0fa0a6490a42176055.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/af93e5e9479ea36a21bd342a73b45c8c0b3005d3/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/Microsoft.PowerShell.Diagnostics-Module.43631b8500d21df241721a0fa0a6490a42176055.ja-jp.xlf)
+* Handoff Datetime: 2016-11-23 21:41:25
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: [Microsoft.PowerShell.Diagnostics-Module.43631b8500d21df241721a0fa0a6490a42176055.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cfb8cc70be31b126c554dce3edfaed213a6dedf6/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Microsoft.PowerShell.Diagnostics-Module.43631b8500d21df241721a0fa0a6490a42176055.ja-jp.xlf)
+* Handback Datetime: 2016-11-25 14:09:47
+* Bilingual File: [Microsoft.PowerShell.Diagnostics-Module.43631b8500d21df241721a0fa0a6490a42176055.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cfb8cc70be31b126c554dce3edfaed213a6dedf6/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/Microsoft.PowerShell.Diagnostics-Module.43631b8500d21df241721a0fa0a6490a42176055.ja-jp.xlf)
+* Bilingual Datetime: 2016-11-25 14:11:37
+* [Back to Top](#report-top)
+
 
 ## Error Details
 
