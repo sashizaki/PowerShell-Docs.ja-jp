@@ -9,8 +9,8 @@ manager: dongill
 ms.prod: powershell
 ms.assetid: f5aab004-d759-4f8b-9064-a30095ad4257
 translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 15ffabd2e8c9385990e08ac7311449f000b1302e
+ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
+ms.openlocfilehash: 5a404bca8e9435a9eab29b8b4cfa8c336d024c38
 
 ---
 
@@ -21,13 +21,13 @@ ms.openlocfilehash: 15ffabd2e8c9385990e08ac7311449f000b1302e
 [Windows PowerShell 診断コマンドレット](http://go.microsoft.com/fwlink/?LinkID=245858)
 
 ## 参照
-[Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
-[Windows PowerShell コア](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-[Windows PowerShell を使用したスクリプト](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+- [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
+- [Windows PowerShell コア](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
+- [Windows PowerShell を使用したスクリプト](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 
 
 
 
-<!--HONumber=Aug16_HO3-->
+<!--HONumber=Nov16_HO4-->
 
 
