@@ -5,10 +5,10 @@
  -------- | ----- 
  Total Files | 2424
 [ Handoff Failed Files ](#handoff-failed-list)| 1
-[ Handoff Success Files ](#handoff-success-list)| 2165
+[ Handoff Success Files ](#handoff-success-list)| 2163
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 17
-[ Handback Failed Files ](#handback-failed-list)| 6
+[ Handback Failed Files ](#handback-failed-list)| 8
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 0
 [ In Sync Handback Files ](#insync-handback-success-list)| 199
 [ Ignored Files ](#ignored-list)| 36
@@ -2115,7 +2115,6 @@
  [scripting\core-powershell\web-access\troubleshooting-access-problems-in-windows-powershell-web-access.md](https://github.com/PowerShell/powerShell-Docs/blob/fe3d7885b7c031a24a737f58523c8018cfc36146/scripting/core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md) | HandedOffSuccess | [Details](#3d2eb84bf706c935e978e78b84e221f9f68042f82229)
  [scripting\core-powershell\web-access\uninstall-windows-powershell-web-access.md](https://github.com/PowerShell/powerShell-Docs/blob/fe3d7885b7c031a24a737f58523c8018cfc36146/scripting/core-powershell/web-access/uninstall-windows-powershell-web-access.md) | HandedOffSuccess | [Details](#d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d2230)
  [scripting\core-powershell\web-access\use-the-web-based-windows-powershell-console.md](https://github.com/PowerShell/powerShell-Docs/blob/fe3d7885b7c031a24a737f58523c8018cfc36146/scripting/core-powershell/web-access/use-the-web-based-windows-powershell-console.md) | HandedOffSuccess | [Details](#67426f6ad72967293f8aee1b3f098afc73067c592231)
- [scripting\core-powershell\workflows\PSWorkflow-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/workflows/PSWorkflow-Module.md) | HandedOffSuccess | [Details](#4bef4aa944dce5c15cd87ff3b256f2222a92daf02233)
  [scripting\core-powershell\workflows\PSWorkflowUtility-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/workflows/PSWorkflowUtility-Module.md) | HandedOffSuccess | [Details](#c49b8f4f5969faa017a858f8b66fe9bfc5515c362234)
  [scripting\getting-started\cookbooks\Appendix-1---Compatibility-Aliases.md](https://github.com/PowerShell/powerShell-Docs/blob/f1ecd7d8598ad4585285a5dc1c6d20f2d4fefe6e/scripting/getting-started/cookbooks/Appendix-1---Compatibility-Aliases.md) | HandedOffSuccess | [Details](#5ff999383d23aed2bdbb501e4974fd4543a0a2f52237)
  [scripting\getting-started\cookbooks\Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md](https://github.com/PowerShell/powerShell-Docs/blob/3222a0ba54e87b214c5ebf64e587f920d531956a/scripting/getting-started/cookbooks/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md) | HandedOffSuccess | [Details](#ceec1038516ddd4c29df770d14981c0a694374982238)
@@ -2130,7 +2129,6 @@
  [scripting\getting-started\cookbooks\Manipulating-Items-Directly.md](https://github.com/PowerShell/powerShell-Docs/blob/3222a0ba54e87b214c5ebf64e587f920d531956a/scripting/getting-started/cookbooks/Manipulating-Items-Directly.md) | HandedOffSuccess | [Details](#b21af4711cc5a846517c3e286c9e90f858612ccb2250)
  [scripting\getting-started\cookbooks\Other-Useful-Scripting-Objects.md](https://github.com/PowerShell/powerShell-Docs/blob/f891988cce205b5729d0da6c4ce23da5fbd53b7f/scripting/getting-started/cookbooks/Other-Useful-Scripting-Objects.md) | HandedOffSuccess | [Details](#938e3e80b709a5f9a09cd52120fca41c60b5675d2252)
  [scripting\getting-started\cookbooks\Performing-Networking-Tasks.md](https://github.com/PowerShell/powerShell-Docs/blob/3222a0ba54e87b214c5ebf64e587f920d531956a/scripting/getting-started/cookbooks/Performing-Networking-Tasks.md) | HandedOffSuccess | [Details](#39266e1e4ae2101de26277c20a98596f62cf223d2253)
- [scripting\getting-started\cookbooks\PowerShellGet-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/f891988cce205b5729d0da6c4ce23da5fbd53b7f/scripting/getting-started/cookbooks/PowerShellGet-Module.md) | HandedOffSuccess | [Details](#16b3617b75b6aae25a92beaf5d6d2d6f2437ee132254)
  [scripting\getting-started\cookbooks\Redirecting-Data-with-Out---Cmdlets.md](https://github.com/PowerShell/powerShell-Docs/blob/3222a0ba54e87b214c5ebf64e587f920d531956a/scripting/getting-started/cookbooks/Redirecting-Data-with-Out---Cmdlets.md) | HandedOffSuccess | [Details](#e62ae14e4d7334d0cd42681c7e2591692c0891872255)
  [scripting\getting-started\cookbooks\Removing-Objects-from-the-Pipeline--Where-Object-.md](https://github.com/PowerShell/powerShell-Docs/blob/3222a0ba54e87b214c5ebf64e587f920d531956a/scripting/getting-started/cookbooks/Removing-Objects-from-the-Pipeline--Where-Object-.md) | HandedOffSuccess | [Details](#94117fcf337ecf550d6df1d167e608ba64582c032256)
  [scripting\getting-started\cookbooks\Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md](https://github.com/PowerShell/powerShell-Docs/blob/3222a0ba54e87b214c5ebf64e587f920d531956a/scripting/getting-started/cookbooks/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md) | HandedOffSuccess | [Details](#8dd7904611fb697f9b398161e12765454b4f34412257)
@@ -2218,7 +2216,9 @@
  [gallery\psgallery\PackageManagement_Architecture .md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/PackageManagement_Architecture%20.md) | HandedBackFailed | [Details](#c84ff58e4378feffa15c91485826b74f421c737e120)
  [scripting\core-powershell\core-modules\Microsoft.PowerShell.Diagnostics-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/core-modules/Microsoft.PowerShell.Diagnostics-Module.md) | HandedBackFailed | [Details](#5a404bca8e9435a9eab29b8b4cfa8c336d024c382182)
  [scripting\core-powershell\ise\The-ISEMenuItem-Object.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/ise/The-ISEMenuItem-Object.md) | HandedBackFailed | [Details](#438ea8016e76b4165cd9bda0fabbb7e7d041c27b2214)
+ [scripting\core-powershell\workflows\PSWorkflow-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/workflows/PSWorkflow-Module.md) | HandedBackFailed | [Details](#4bef4aa944dce5c15cd87ff3b256f2222a92daf02233)
  [scripting\getting-started\cookbooks\Managing-Services.md](https://github.com/PowerShell/powerShell-Docs/blob/f891988cce205b5729d0da6c4ce23da5fbd53b7f/scripting/getting-started/cookbooks/Managing-Services.md) | HandedBackFailed | [Details](#61c98c54ca1b555f6b2e827fb31228bf6a2cc71d2248)
+ [scripting\getting-started\cookbooks\PowerShellGet-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/f891988cce205b5729d0da6c4ce23da5fbd53b7f/scripting/getting-started/cookbooks/PowerShellGet-Module.md) | HandedBackFailed | [Details](#16b3617b75b6aae25a92beaf5d6d2d6f2437ee132254)
 
 ## <a name='outofsync-handback-success-list'></a> Out Of Sync Handback Success File List
 
@@ -29772,7 +29772,7 @@
 * [Back to Top](#report-top)
 
 ##### <a name='4bef4aa944dce5c15cd87ff3b256f2222a92daf02233'></a> Source: [scripting\core-powershell\workflows\PSWorkflow-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/workflows/PSWorkflow-Module.md)
-* Status: HandedOffSuccess
+* Status: HandedBackFailed
 * Target File: 
 * Handoff File: [PSWorkflow-Module.921d75cae6b7a7d92b6ecea5e55ba16e085b9ec6.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/af93e5e9479ea36a21bd342a73b45c8c0b3005d3/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/PSWorkflow-Module.921d75cae6b7a7d92b6ecea5e55ba16e085b9ec6.ja-jp.xlf)
 * Handoff Datetime: 2016-11-23 21:41:25
@@ -29780,10 +29780,8 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\core-powershell\workflows\PSWorkflow-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/770019bec5611e566ba4dbc0f9540b5cb311d563/scripting/core-powershell/workflows/PSWorkflow-Module.md)
-* Current Handback File: [PSWorkflow-Module.921d75cae6b7a7d92b6ecea5e55ba16e085b9ec6.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fef206f663b59f8055273d5e4d75a592da098d6c/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PSWorkflow-Module.921d75cae6b7a7d92b6ecea5e55ba16e085b9ec6.ja-jp.xlf)
-* Current Handback Datetime: 2016-07-19 14:00:58
+* Handback Datetime: 2016-11-30 23:58:33
+* Handback Error: [handback_file_rejected](#4bef4aa944dce5c15cd87ff3b256f2222a92daf02233handback_file_rejected)
 * Bilingual File: [PSWorkflow-Module.921d75cae6b7a7d92b6ecea5e55ba16e085b9ec6.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/fef206f663b59f8055273d5e4d75a592da098d6c/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PSWorkflow-Module.921d75cae6b7a7d92b6ecea5e55ba16e085b9ec6.ja-jp.xlf)
 * Bilingual Datetime: 2016-07-19 14:01:55
 * [Back to Top](#report-top)
@@ -30130,7 +30128,7 @@
 * [Back to Top](#report-top)
 
 ##### <a name='16b3617b75b6aae25a92beaf5d6d2d6f2437ee132254'></a> Source: [scripting\getting-started\cookbooks\PowerShellGet-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/f891988cce205b5729d0da6c4ce23da5fbd53b7f/scripting/getting-started/cookbooks/PowerShellGet-Module.md)
-* Status: HandedOffSuccess
+* Status: HandedBackFailed
 * Target File: 
 * Handoff File: [PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/af93e5e9479ea36a21bd342a73b45c8c0b3005d3/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.ja-jp.xlf)
 * Handoff Datetime: 2016-11-23 21:41:25
@@ -30138,10 +30136,8 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [scripting\getting-started\cookbooks\PowerShellGet-Module.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/9e5dbfcde261f994b9ad50a5bdb48859e2aa2361/scripting/getting-started/cookbooks/PowerShellGet-Module.md)
-* Current Handback File: [PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.ja-jp.xlf)
-* Current Handback Datetime: 2016-05-24 23:36:54
+* Handback Datetime: 2016-11-30 23:58:33
+* Handback Error: [handback_file_rejected](#16b3617b75b6aae25a92beaf5d6d2d6f2437ee132254handback_file_rejected)
 * Bilingual File: [PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/15c12cd76577eeb3e6221a7fe7576cd8d458c99a/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.ja-jp.xlf)
 * Bilingual Datetime: 2016-06-16 14:28:32
 * [Back to Top](#report-top)
@@ -32691,11 +32687,23 @@
 * Retriable: False
 * Error Details: {"internal_error_code":"handback_file_rejected","internal_error_message":"file The-ISEMenuItem-Object.14fd39d94a609a4d0fe1a1e747bc1b5b00a2c526.ja-jp.xlf is out of handoff scope","internal_error_retriable":false,"exception_message":"file The-ISEMenuItem-Object.14fd39d94a609a4d0fe1a1e747bc1b5b00a2c526.ja-jp.xlf is out of handoff scope","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
 
+##### <a name='4bef4aa944dce5c15cd87ff3b256f2222a92daf02233handback_file_rejected'></a> Source: [scripting\core-powershell\workflows\PSWorkflow-Module.md](#4bef4aa944dce5c15cd87ff3b256f2222a92daf02233)
+* Error Code: handback_file_rejected
+* Error Message: file PSWorkflow-Module.921d75cae6b7a7d92b6ecea5e55ba16e085b9ec6.ja-jp.xlf is out of handoff scope
+* Retriable: False
+* Error Details: {"internal_error_code":"handback_file_rejected","internal_error_message":"file PSWorkflow-Module.921d75cae6b7a7d92b6ecea5e55ba16e085b9ec6.ja-jp.xlf is out of handoff scope","internal_error_retriable":false,"exception_message":"file PSWorkflow-Module.921d75cae6b7a7d92b6ecea5e55ba16e085b9ec6.ja-jp.xlf is out of handoff scope","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
+
 ##### <a name='61c98c54ca1b555f6b2e827fb31228bf6a2cc71d2248handback_file_rejected'></a> Source: [scripting\getting-started\cookbooks\Managing-Services.md](#61c98c54ca1b555f6b2e827fb31228bf6a2cc71d2248)
 * Error Code: handback_file_rejected
 * Error Message: file Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.ja-jp.xlf is out of handoff scope
 * Retriable: False
 * Error Details: {"internal_error_code":"handback_file_rejected","internal_error_message":"file Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.ja-jp.xlf is out of handoff scope","internal_error_retriable":false,"exception_message":"file Managing-Services.6af555cdf1bed42d8fbea56b1540ab3d1472685c.ja-jp.xlf is out of handoff scope","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
+
+##### <a name='16b3617b75b6aae25a92beaf5d6d2d6f2437ee132254handback_file_rejected'></a> Source: [scripting\getting-started\cookbooks\PowerShellGet-Module.md](#16b3617b75b6aae25a92beaf5d6d2d6f2437ee132254)
+* Error Code: handback_file_rejected
+* Error Message: file PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.ja-jp.xlf is out of handoff scope
+* Retriable: False
+* Error Details: {"internal_error_code":"handback_file_rejected","internal_error_message":"file PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.ja-jp.xlf is out of handoff scope","internal_error_retriable":false,"exception_message":"file PowerShellGet-Module.ac51526ac1d58e30a623a4d259ded86670804b8e.ja-jp.xlf is out of handoff scope","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
 
 
 Generated by OpenLocalization.
