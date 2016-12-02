@@ -8,9 +8,9 @@
 [ Handoff Success Files ](#handoff-success-list)| 2161
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 16
-[ Handback Failed Files ](#handback-failed-list)| 12
+[ Handback Failed Files ](#handback-failed-list)| 13
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 0
-[ In Sync Handback Files ](#insync-handback-success-list)| 198
+[ In Sync Handback Files ](#insync-handback-success-list)| 197
 [ Ignored Files ](#ignored-list)| 36
 
 ## <a name='handoff-failed-list'></a> Handoff Failed File List
@@ -2210,6 +2210,7 @@
  ----------- | ------ | ------- 
  [dsc\authoringResourceComposite.md](https://github.com/PowerShell/powerShell-Docs/blob/48cfed9e0c31e24c441eafb388a799bd7fc7415f/dsc/authoringResourceComposite.md) | HandedBackFailed | [Details](#6631d60d7d82e71c315c26a0196aa3e4c1b60b1510)
  [dsc\DSCAutomationHostEnabled.md](https://github.com/PowerShell/powerShell-Docs/blob/260490003335923d4e1c6b6873b11ee71ba780c0/dsc/DSCAutomationHostEnabled.md) | HandedBackFailed | [Details](#24842d755aa34ab29c6a5b4f973052476bc907e526)
+ [dsc\enactingConfigurations.md](https://github.com/PowerShell/powerShell-Docs/blob/49ddf6faf98a51f7ad5252e9563b1543478ed113/dsc/enactingConfigurations.md) | HandedBackFailed | [Details](#9090f4be2987b8a56ba4d839f54e05082a8bcfa027)
  [gallery\psgallery\Managing-Item-Owners.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/Managing-Item-Owners.md) | HandedBackFailed | [Details](#00fe57762c6b2bb690255ecaea642f97124f4328119)
  [gallery\psgallery\PackageManagement_Architecture .md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/PackageManagement_Architecture%20.md) | HandedBackFailed | [Details](#c84ff58e4378feffa15c91485826b74f421c737e120)
  [gallery\psgallery\psgallery_contacting_item_owners.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_contacting_item_owners.md) | HandedBackFailed | [Details](#1e86d285ba2d9fb7fb3d652a7c941c458f888a53122)
@@ -2239,7 +2240,6 @@
  [dsc\debugResource.md](https://github.com/PowerShell/powerShell-Docs/blob/83ca45d507e39b77751ac7feb6a7b65ae2834280/dsc/debugResource.md) | InSyncHandedBackSuccess | [Details](#e1922008a92f00c9ddab28598735839c25219d2422)
  [dsc\decisionMaker.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/decisionMaker.md) | InSyncHandedBackSuccess | [Details](#2d2b142dc862f7655f28aa34e1fd91f63bd6286e23)
  [dsc\directCallResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/directCallResource.md) | InSyncHandedBackSuccess | [Details](#1fe624c2532e44ed675762f3c141934fb4f0b60d24)
- [dsc\enactingConfigurations.md](https://github.com/PowerShell/powerShell-Docs/blob/49ddf6faf98a51f7ad5252e9563b1543478ed113/dsc/enactingConfigurations.md) | InSyncHandedBackSuccess | [Details](#9090f4be2987b8a56ba4d839f54e05082a8bcfa027)
  [dsc\environmentResource.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/environmentResource.md) | InSyncHandedBackSuccess | [Details](#20a7711604033b5ff1484dbb526df2642a9a173828)
  [dsc\fileResource.md](https://github.com/PowerShell/powerShell-Docs/blob/df9bb0362e82757ed1580cc4ace27735414a3e6d/dsc/fileResource.md) | InSyncHandedBackSuccess | [Details](#8c8fb7a40c066b048e1a54a741f4953e6b5a47b629)
  [dsc\gettingStarted.md](https://github.com/PowerShell/powerShell-Docs/blob/6477ae8575c83fc24150f9502515ff5b82bc8198/dsc/gettingStarted.md) | InSyncHandedBackSuccess | [Details](#c5ee7f7e7678b60700edb1ab1b66139791ea67c630)
@@ -2841,7 +2841,7 @@
 * [Back to Top](#report-top)
 
 ##### <a name='9090f4be2987b8a56ba4d839f54e05082a8bcfa027'></a> Source: [dsc\enactingConfigurations.md](https://github.com/PowerShell/powerShell-Docs/blob/49ddf6faf98a51f7ad5252e9563b1543478ed113/dsc/enactingConfigurations.md)
-* Status: InSyncHandedBackSuccess
+* Status: HandedBackFailed
 * Target File: [dsc\enactingConfigurations.md](https://github.com/PowerShell/powerShell-Docs.ja-jp/blob/4c6eb38d2fa11a3c7ef7f2f80f4f64040a2a4f30/dsc/enactingConfigurations.md)
 * Handoff File: [enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/af93e5e9479ea36a21bd342a73b45c8c0b3005d3/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf)
 * Handoff Datetime: 2016-11-23 21:41:25
@@ -2849,7 +2849,8 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: [enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cfb8cc70be31b126c554dce3edfaed213a6dedf6/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf)
-* Handback Datetime: 2016-11-25 14:09:47
+* Handback Datetime: 2016-12-02 23:02:34
+* Handback Error: [handback_file_rejected](#9090f4be2987b8a56ba4d839f54e05082a8bcfa027handback_file_rejected)
 * Bilingual File: [enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handback/blob/cfb8cc70be31b126c554dce3edfaed213a6dedf6/ol-handback/PowerShell/powerShell-Docs.ja-jp/live/enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf)
 * Bilingual Datetime: 2016-11-25 14:11:37
 * [Back to Top](#report-top)
@@ -32666,6 +32667,12 @@
 * Error Message: file DSCAutomationHostEnabled.fba7c9b1470882c6192cbd39804769a5471d975c.ja-jp.xlf is out of handoff scope
 * Retriable: False
 * Error Details: {"internal_error_code":"handback_file_rejected","internal_error_message":"file DSCAutomationHostEnabled.fba7c9b1470882c6192cbd39804769a5471d975c.ja-jp.xlf is out of handoff scope","internal_error_retriable":false,"exception_message":"file DSCAutomationHostEnabled.fba7c9b1470882c6192cbd39804769a5471d975c.ja-jp.xlf is out of handoff scope","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
+
+##### <a name='9090f4be2987b8a56ba4d839f54e05082a8bcfa027handback_file_rejected'></a> Source: [dsc\enactingConfigurations.md](#9090f4be2987b8a56ba4d839f54e05082a8bcfa027)
+* Error Code: handback_file_rejected
+* Error Message: file enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf is out of handoff scope
+* Retriable: False
+* Error Details: {"internal_error_code":"handback_file_rejected","internal_error_message":"file enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf is out of handoff scope","internal_error_retriable":false,"exception_message":"file enactingConfigurations.5949c3926cc7d368fa49b0ba340a078984794e5d.ja-jp.xlf is out of handoff scope","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
 
 ##### <a name='00fe57762c6b2bb690255ecaea642f97124f4328119handback_file_rejected'></a> Source: [gallery\psgallery\Managing-Item-Owners.md](#00fe57762c6b2bb690255ecaea642f97124f4328119)
 * Error Code: handback_file_rejected
