@@ -5,10 +5,10 @@
  -------- | ----- 
  Total Files | 2424
 [ Handoff Failed Files ](#handoff-failed-list)| 1
-[ Handoff Success Files ](#handoff-success-list)| 2163
+[ Handoff Success Files ](#handoff-success-list)| 2161
 [ Archive Failed Files ](#archive-failed-list)| 0
 [ Archive Success Files ](#archive-success-list)| 16
-[ Handback Failed Files ](#handback-failed-list)| 10
+[ Handback Failed Files ](#handback-failed-list)| 12
 [ Out Of Sync Handback Files ](#outofsync-handback-success-list)| 0
 [ In Sync Handback Files ](#insync-handback-success-list)| 198
 [ Ignored Files ](#ignored-list)| 36
@@ -39,9 +39,7 @@
  [gallery\psgallery\Creating-and-Publishing-an-item.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/Creating-and-Publishing-an-item.md) | HandedOffSuccess | [Details](#70db6e1eafefa04eb5be969457275f149870a030111)
  [gallery\psgallery\Deleting-Items.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/Deleting-Items.md) | HandedOffSuccess | [Details](#4e0258ccf05ef5ab0dc799a5113b05becc3dbb05112)
  [gallery\psgallery\Item-Conventions.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/Item-Conventions.md) | HandedOffSuccess | [Details](#5df8007fbcb49f80708fa892ac9d3e21656b476a118)
- [gallery\psgallery\Managing-Item-Owners.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/Managing-Item-Owners.md) | HandedOffSuccess | [Details](#00fe57762c6b2bb690255ecaea642f97124f4328119)
  [gallery\psgallery\psgallery_contacting_administrators.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_contacting_administrators.md) | HandedOffSuccess | [Details](#0268fed62bc4c30f5e299af0cc29a0f2316ce731121)
- [gallery\psgallery\psgallery_contacting_item_owners.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_contacting_item_owners.md) | HandedOffSuccess | [Details](#1e86d285ba2d9fb7fb3d652a7c941c458f888a53122)
  [gallery\psgallery\psgallery_deploy_to_azure_automation.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_deploy_to_azure_automation.md) | HandedOffSuccess | [Details](#c028bf6145b41c13bccda9543a782b838bd730ff123)
  [gallery\psgallery\psgallery_dispute_resolution.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_dispute_resolution.md) | HandedOffSuccess | [Details](#6d7015a14f0d0a75bc28e201dceefe6c9c682b31124)
  [gallery\psgallery\psgallery_faqs.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_faqs.md) | HandedOffSuccess | [Details](#96d38c487a311852a0f670b7d3de4929fab68e4d125)
@@ -2212,7 +2210,9 @@
  ----------- | ------ | ------- 
  [dsc\authoringResourceComposite.md](https://github.com/PowerShell/powerShell-Docs/blob/48cfed9e0c31e24c441eafb388a799bd7fc7415f/dsc/authoringResourceComposite.md) | HandedBackFailed | [Details](#6631d60d7d82e71c315c26a0196aa3e4c1b60b1510)
  [dsc\DSCAutomationHostEnabled.md](https://github.com/PowerShell/powerShell-Docs/blob/260490003335923d4e1c6b6873b11ee71ba780c0/dsc/DSCAutomationHostEnabled.md) | HandedBackFailed | [Details](#24842d755aa34ab29c6a5b4f973052476bc907e526)
+ [gallery\psgallery\Managing-Item-Owners.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/Managing-Item-Owners.md) | HandedBackFailed | [Details](#00fe57762c6b2bb690255ecaea642f97124f4328119)
  [gallery\psgallery\PackageManagement_Architecture .md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/PackageManagement_Architecture%20.md) | HandedBackFailed | [Details](#c84ff58e4378feffa15c91485826b74f421c737e120)
+ [gallery\psgallery\psgallery_contacting_item_owners.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_contacting_item_owners.md) | HandedBackFailed | [Details](#1e86d285ba2d9fb7fb3d652a7c941c458f888a53122)
  [jea\prerequisites.md](https://github.com/PowerShell/powerShell-Docs/blob/7504fe496a8913718847e45115d126caf4049bef/jea/prerequisites.md) | HandedBackFailed | [Details](#ac9231a475ba84e9051bbd06a65f3f20c9e49846188)
  [reference\README.md](https://github.com/PowerShell/powerShell-Docs/blob/6f2cc23f6fce9c267e793fa8653f292e6a6b98ec/reference/README.md) | HandedBackFailed | [Details](#edafde9188cad3b21d0cd2b30cfaaf1bede9b1952174)
  [scripting\core-powershell\core-modules\Microsoft.PowerShell.Diagnostics-Module.md](https://github.com/PowerShell/powerShell-Docs/blob/6c666e2e23cb74818e37293410dafc9033057733/scripting/core-powershell/core-modules/Microsoft.PowerShell.Diagnostics-Module.md) | HandedBackFailed | [Details](#5a404bca8e9435a9eab29b8b4cfa8c336d024c382182)
@@ -4133,7 +4133,7 @@
 * [Back to Top](#report-top)
 
 ##### <a name='00fe57762c6b2bb690255ecaea642f97124f4328119'></a> Source: [gallery\psgallery\Managing-Item-Owners.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/Managing-Item-Owners.md)
-* Status: HandedOffSuccess
+* Status: HandedBackFailed
 * Target File: 
 * Handoff File: [Managing-Item-Owners.20ba127bece18032f9becaca9900f96afe54a89f.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/af93e5e9479ea36a21bd342a73b45c8c0b3005d3/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/Managing-Item-Owners.20ba127bece18032f9becaca9900f96afe54a89f.ja-jp.xlf)
 * Handoff Datetime: 2016-11-23 21:41:25
@@ -4141,7 +4141,8 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Handback Datetime: 2016-12-02 01:21:43
+* Handback Error: [handback_file_rejected](#00fe57762c6b2bb690255ecaea642f97124f4328119handback_file_rejected)
 * [Back to Top](#report-top)
 
 ##### <a name='c84ff58e4378feffa15c91485826b74f421c737e120'></a> Source: [gallery\psgallery\PackageManagement_Architecture .md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/PackageManagement_Architecture%20.md)
@@ -4170,7 +4171,7 @@
 * [Back to Top](#report-top)
 
 ##### <a name='1e86d285ba2d9fb7fb3d652a7c941c458f888a53122'></a> Source: [gallery\psgallery\psgallery_contacting_item_owners.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_contacting_item_owners.md)
-* Status: HandedOffSuccess
+* Status: HandedBackFailed
 * Target File: 
 * Handoff File: [psgallery_contacting_item_owners.879cc50a48f278046286c3aa1d93362e5de5487c.ja-jp.xlf](https://github.com/PowerShell/powerShell-Docs.handoff/blob/af93e5e9479ea36a21bd342a73b45c8c0b3005d3/ol-handoff/PowerShell/powerShell-Docs.ja-jp/live/psgallery_contacting_item_owners.879cc50a48f278046286c3aa1d93362e5de5487c.ja-jp.xlf)
 * Handoff Datetime: 2016-11-23 21:41:25
@@ -4178,7 +4179,8 @@
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
+* Handback Datetime: 2016-12-02 01:21:43
+* Handback Error: [handback_file_rejected](#1e86d285ba2d9fb7fb3d652a7c941c458f888a53122handback_file_rejected)
 * [Back to Top](#report-top)
 
 ##### <a name='c028bf6145b41c13bccda9543a782b838bd730ff123'></a> Source: [gallery\psgallery\psgallery_deploy_to_azure_automation.md](https://github.com/PowerShell/powerShell-Docs/blob/e6c526d1074f61154d03b92b6bf6f599976f5936/gallery/psgallery/psgallery_deploy_to_azure_automation.md)
@@ -32665,11 +32667,23 @@
 * Retriable: False
 * Error Details: {"internal_error_code":"handback_file_rejected","internal_error_message":"file DSCAutomationHostEnabled.fba7c9b1470882c6192cbd39804769a5471d975c.ja-jp.xlf is out of handoff scope","internal_error_retriable":false,"exception_message":"file DSCAutomationHostEnabled.fba7c9b1470882c6192cbd39804769a5471d975c.ja-jp.xlf is out of handoff scope","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
 
+##### <a name='00fe57762c6b2bb690255ecaea642f97124f4328119handback_file_rejected'></a> Source: [gallery\psgallery\Managing-Item-Owners.md](#00fe57762c6b2bb690255ecaea642f97124f4328119)
+* Error Code: handback_file_rejected
+* Error Message: file Managing-Item-Owners.20ba127bece18032f9becaca9900f96afe54a89f.ja-jp.xlf is out of handoff scope
+* Retriable: False
+* Error Details: {"internal_error_code":"handback_file_rejected","internal_error_message":"file Managing-Item-Owners.20ba127bece18032f9becaca9900f96afe54a89f.ja-jp.xlf is out of handoff scope","internal_error_retriable":false,"exception_message":"file Managing-Item-Owners.20ba127bece18032f9becaca9900f96afe54a89f.ja-jp.xlf is out of handoff scope","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
+
 ##### <a name='c84ff58e4378feffa15c91485826b74f421c737e120handback_validate_file_name_invalide'></a> Source: [gallery\psgallery\PackageManagement_Architecture .md](#c84ff58e4378feffa15c91485826b74f421c737e120)
 * Error Code: handback_validate_file_name_invalide
 * Error Message: Handback file name: PackageManagement_Architecture%20.342c41f221a468f60c1ece4ef6d32b4005ca3c94.ja-jp is different with handoff file name: PackageManagement_Architecture .342c41f221a468f60c1ece4ef6d32b4005ca3c94.ja-jp.
 * Retriable: False
 * Error Details: {"internal_error_code":"handback_validate_file_name_invalide","internal_error_message":"Handback file name: PackageManagement_Architecture%20.342c41f221a468f60c1ece4ef6d32b4005ca3c94.ja-jp is different with handoff file name: PackageManagement_Architecture .342c41f221a468f60c1ece4ef6d32b4005ca3c94.ja-jp.","internal_error_retriable":false,"exception_message":"Handback file name: PackageManagement_Architecture%20.342c41f221a468f60c1ece4ef6d32b4005ca3c94.ja-jp is different with handoff file name: PackageManagement_Architecture .342c41f221a468f60c1ece4ef6d32b4005ca3c94.ja-jp.","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
+
+##### <a name='1e86d285ba2d9fb7fb3d652a7c941c458f888a53122handback_file_rejected'></a> Source: [gallery\psgallery\psgallery_contacting_item_owners.md](#1e86d285ba2d9fb7fb3d652a7c941c458f888a53122)
+* Error Code: handback_file_rejected
+* Error Message: file psgallery_contacting_item_owners.879cc50a48f278046286c3aa1d93362e5de5487c.ja-jp.xlf is out of handoff scope
+* Retriable: False
+* Error Details: {"internal_error_code":"handback_file_rejected","internal_error_message":"file psgallery_contacting_item_owners.879cc50a48f278046286c3aa1d93362e5de5487c.ja-jp.xlf is out of handoff scope","internal_error_retriable":false,"exception_message":"file psgallery_contacting_item_owners.879cc50a48f278046286c3aa1d93362e5de5487c.ja-jp.xlf is out of handoff scope","exception_type":"Microsoft.OpenLocalization.Common.ErrorHandling.OpenLocalizationException","stack_trace":null,"extended_information":null}
 
 ##### <a name='ac9231a475ba84e9051bbd06a65f3f20c9e49846188handback_file_rejected'></a> Source: [jea\prerequisites.md](#ac9231a475ba84e9051bbd06a65f3f20c9e49846188)
 * Error Code: handback_file_rejected
