@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 72e64b1a-d351-4500-9da3-24d8a71d7a92
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 463eaa5d27eeb03f232239bc6810ab00d4a1eaf4
-
+ms.openlocfilehash: 66f2927652b33371aa11db1662d3e9d28b4f5fbd
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# オブジェクトの一部を選択する (Select-Object)
+# <a name="selecting-parts-of-objects-select-object"></a>オブジェクトの一部を選択する (Select-Object)
 **Select-Object** コマンドレットを使用して、Windows PowerShell のオブジェクトを新規作成、またはカスタマイズできます。それらのオブジェクトには、作成時に使用する元のオブジェクトから選択したプロパティを含めることができます。 次のコマンドを入力して、Win32_LogicalDisk WMI クラスの Name および FreeSpace プロパティのみを含む、新規オブジェクトを作成します。
 
 ```
@@ -50,10 +48,4 @@ Name                                                                  FreeSpace
 ----                                                                  ---------
 C:                                                                48317.7265625
 ```
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

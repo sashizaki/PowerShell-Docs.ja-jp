@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 2edbc1d11dfc7c84369430688a8b0d773277e864
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Linux 用 DSC の nxArchive リソース
+# <a name="dsc-for-linux-nxarchive-resource"></a>Linux 用 DSC の nxArchive リソース
 
 PowerShell Desired State Configuration (DSC) の **nxArchive** リソースは、Linux ノード上の特定のパスでアーカイブ (.tar、.zip) ファイルをアンパックするメカニズムを備えています。
 
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 nxArchive <string> #ResourceName
@@ -31,7 +29,7 @@ nxArchive <string> #ResourceName
 }
 ```
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ |  説明 | 
 |---|---|
@@ -42,7 +40,7 @@ nxArchive <string> #ResourceName
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 | Ensure| アーカイブのコンテンツが **Destination** に存在するかどうかを決定します。 コンテンツが存在することを保証するには、このプロパティを "Present" に設定します。 コンテンツが存在しないことを保証するには、"Absent" に設定します。 既定値は "Present" です。| 
 
-## 例
+## <a name="example"></a>例
 
 次の例は、**nxArchive** リソースを使用して、`website.tar` というアーカイブ ファイルのコンテンツが指定した宛先に存在し、抽出されていることを保証する方法を示します。
 
@@ -66,10 +64,4 @@ nxArchive SyncWebDir
    DependsOn = "[nxFile]SyncArchiveFromWeb"
 } 
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

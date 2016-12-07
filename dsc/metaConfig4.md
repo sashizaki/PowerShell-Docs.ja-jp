@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 25195166f4d9dd668427d6bb5d748ef61273cdee
-
+ms.openlocfilehash: 64fc906cf0328d7be3aba7d5d6819640b4dcb4fa
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)
+# <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 ローカル構成マネージャーは、Windows PowerShell Desired State Configuration (DSC) エンジンです。 すべてのターゲット ノードで実行され、DSC 構成スクリプトに含まれている構成リソースを呼び出します。 このトピックでは、ローカル構成マネージャーのプロパティを一覧表示し、ターゲット ノードでローカル構成マネージャーの設定を変更する方法について説明します。
 
-## ローカル構成マネージャーのプロパティ
+## <a name="local-configuration-manager-properties"></a>ローカル構成マネージャーのプロパティ
 設定または取得できるローカル構成マネージャーのプロパティを次に示します。
  
 * **AllowModuleOverwrite**: 構成サーバーからダウンロードされた新しい構成がターゲット ノードの古い構成を上書きできるかどうかを制御します。 設定可能な値は True および False です。
@@ -37,7 +35,7 @@ ms.openlocfilehash: 25195166f4d9dd668427d6bb5d748ef61273cdee
 * **RefreshFrequencyMins**: "プル" サーバーをセットアップするときに使用します。 ローカル構成マネージャーが "プル" サーバーに接続して現在の構成をダウンロードする頻度 (分) を表します。 この値は、ConfigurationModeFrequencyMins と組み合わせて設定することができます。 RefreshMode を PULL に設定すると、ターゲット ノードは RefreshFrequencyMins の設定間隔で "プル" サーバーに接続し、現在の構成をダウンロードします。 その後、ConfigurationModeFrequencyMins の設定間隔で、整合性エンジンがターゲット ノードにダウンロードされた最新の構成を適用します。 RefreshFrequencyMins が ConfigurationModeFrequencyMins の倍数である整数に設定されていない場合は、システムによって切り上げられます。 既定値は 30 です。
 * **RefreshMode**: 設定可能な値は **Push** (既定値) と **Pull** です。 "プッシュ" 構成では、任意のクライアント コンピューターを使用して各ターゲット ノードに構成ファイル配置する必要があります。 "プル" モードでは、ローカル構成マネージャーの "プル" サーバーを構成ファイルに接続およびアクセスするようにセットアップする必要があります。
 
-### ローカル構成マネージャー設定の更新の例
+### <a name="example-of-updating-local-configuration-manager-settings"></a>ローカル構成マネージャー設定の更新の例
 
 次の例に示すように、構成スクリプトのノード ブロックに **LocalConfigurationManager** ブロックを含めることによって、ターゲット ノードのローカル構成マネージャー設定を更新できます。
 
@@ -77,10 +75,4 @@ Set-DscLocalConfigurationManager -Path "c:\users\public\dsc"
 > **注**: **Path** パラメーターには、前の例で構成を呼び出したときに **OutputPath** パラメーターに指定したパスと同じパスを指定する必要があります。
 
 現在のローカル構成マネージャー設定を表示するには、**Get-DscLocalConfigurationManager** コマンドレットを使用します。 パラメーターなしでこのコマンドレットを呼び出す場合、既定では、ローカル構成マネージャーを実行しているノードのローカル構成マネージャー設定が取得されます。 別のノードを指定するには、このコマンドレットで **CimSession** パラメーターを使用します。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

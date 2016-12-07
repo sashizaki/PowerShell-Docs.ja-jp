@@ -8,15 +8,13 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 270f2a458a40f005f462d3de5236defbb91a7362
-ms.openlocfilehash: c88c145c3585befcee194499f7e21aaeac67c0f3
-
+ms.openlocfilehash: 53c3bcb76f2bb9284339a4e506f28375a14285ae
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+#<a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 の Desired State Configuration (DSC) の機能強化
 
-#WMF 5.1 の Desired State Configuration (DSC) の機能強化
-
-## DSC クラス リソースの機能強化
+## <a name="dsc-class-resource-improvements"></a>DSC クラス リソースの機能強化
 
 WMF 5.1 で、次の既知の問題を修正しました。
 * クラスベースの DSC リソースの Get() 関数によって複合/ハッシュ テーブル型が返される場合、Get-DscConfiguration は空の値 (null) やエラーを返すことがあります。
@@ -26,20 +24,20 @@ WMF 5.1 で、次の既知の問題を修正しました。
 * クラス ベースのリソースは排他リソースとして使用できません。
 
 
-## DSC リソースのデバッグの機能強化
+## <a name="dsc-resource-debugging-improvements"></a>DSC リソースのデバッグの機能強化
 
 WMF 5.0 では、PowerShell デバッガーは、クラス ベースのリソース メソッド (Get/Set/Test) で直接停止しませんでした。
 WMF 5.1 では、このデバッガーは、MOF ベースのリソース メソッドと同様に、クラス ベースのリソース メソッドで停止します。
 
-## DSC プル クライアントは TLS 1.1 と TLS 1.2 をサポート 
+## <a name="dsc-pull-client-supports-tls-11-and-tls-12"></a>DSC プル クライアントは TLS 1.1 と TLS 1.2 をサポート 
 以前、DSC プル クライアントは HTTPS 接続で SSL3.0 と TLS1.0 にのみ対応していました。 より安全なプロトコルを使用するように強制されると、このプル クライアントは動作を停止しました。 WMF 5.1 では、DSC プル クライアントは SSL 3.0 をサポートせず、より安全な TLS 1.1 プロトコルと TLS 1.2 プロトコルをサポートします。  
 
-## プル サーバー登録の機能強化 ##
+## <a name="improved-pull-server-registration"></a>プル サーバー登録の機能強化 ##
 
 以前のバージョンの WMF では、ESENT データベースを使用しながら同時に DSC プル サーバーに登録/レポートを要求すると、LCM は登録またはレポートに失敗していました。 そのような場合、プル サーバーのイベント ログに "既に使用されているインスタンス名" というエラーが記録されました。
 これは、マルチスレッド シナリオで ESENT データベースにアクセスするとき、間違ったパターンが使用されることに起因していました。 WMF 5.1 では、この問題は修正されました。 同時登録または同時レポート (ESENT データベースを含む) が WMF 5.1 では正常に機能します。 この問題は ESENT データベースにのみ関連し、OLEDB データベースには関連しません。 
 
-##部分構成命名規則のプル
+##<a name="pull-partial-configuration-naming-convention"></a>部分構成命名規則のプル
 以前のリリースでは、部分構成の命名規則は、プル サーバー/サービスの MOF ファイル名はローカル構成マネージャー設定に指定されている部分構成名に一致する必要があり、ローカル構成マネージャー設定は MOF ファイルに組み込まれている構成名に一致する必要があるというものでした。 
 
 下のスナップショットを参照してください。
@@ -132,7 +130,7 @@ WMF 5.1 では、プル サーバー/サービスの部分構成の名前を `<C
    slcm -Path .\RegistrationMetaConfig -Verbose
  ```
 
-# PsDscRunAsCredential と DSC 複合リソースを使用する   
+# <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>PsDscRunAsCredential と DSC 複合リソースを使用する   
 
 [*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) と DSC [複合](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite)リソースが使用できるようになりました。    
 
@@ -177,14 +175,14 @@ InstallWindowsFeature -ConfigurationData $configData
 
 ```
 
-##DSC のモジュールと構成の署名検証
+##<a name="dsc-module-and-configuration-signing-validations"></a>DSC のモジュールと構成の署名検証
 DSC では、プル サーバーから管理対象コンピューターに構成とモジュールが配信されます。 プル サーバーが侵害された場合、攻撃者はプル サーバーで構成とモジュールを改ざんし、すべての管理対象ノードに配信し、侵害する可能性があります。 
 
  WMF 5.1 では、DSC はカタログ ファイルと構成 (.MOF) ファイルのデジタル署名の検証に対応しています。 この機能では、信頼できる署名者が署名していない、あるいは信頼できる署名者が署名した後に改ざんされた構成ファイルまたはモジュール ファイルの実行が防止されます。 
 
 
 
-###構成とモジュールに署名する方法 
+###<a name="how-to-sign-configuration-and-module"></a>構成とモジュールに署名する方法 
 ***
 * 構成ファイル (.MOF): 既存の PowerShell コマンドレット [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) が拡張され、MOF ファイルの署名に対応しています。  
 * モジュール: モジュールの署名は、次の手順を利用し、対応するモジュール カタログに署名することで完了します: 
@@ -195,9 +193,9 @@ DSC では、プル サーバーから管理対象コンピューターに構成
     3. モジュール フォルダー内にカタログ ファイルを配置します。
 慣例では、モジュール カタログ ファイルは、モジュールと同じ名前のモジュール フォルダーの下に配置する必要があります。
 
-###LocalConfigurationManager 設定で署名検証を有効にする
+###<a name="localconfigurationmanager-settings-to-enable-signing-validations"></a>LocalConfigurationManager 設定で署名検証を有効にする
 
-####プル
+####<a name="pull"></a>プル
 ノードの LocalConfigurationManager は、その現在の設定に基づき、モジュールと構成の署名を検証します。 既定では、署名検証は無効です。 署名検証は、‘SignatureValidation’ ブロックを下の図のようにノードのメタ構成定義に追加することで有効にできます:
 
 ```PowerShell
@@ -248,7 +246,7 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 
 ![モジュールのエラー出力のサンプル](../images/PullUnisgnedCatalog.png)
 
-####プッシュ
+####<a name="push"></a>プッシュ
 プッシュで配信された構成は、ノードに届く前にその出所で改ざんされていた可能性があります。 ローカル構成マネージャーは、プッシュまたは公開された構成に対して同様の署名検証手順を実行します。
 以下は、プッシュの署名検証の完全例です。
 
@@ -301,10 +299,4 @@ Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 * 署名された MOF ファイルをプッシュしてみます。
 
 ![SignMofFile](../images/PushSignedMof.png)
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

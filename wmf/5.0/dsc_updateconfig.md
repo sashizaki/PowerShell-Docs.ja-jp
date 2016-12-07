@@ -1,4 +1,4 @@
-# DSC 構成のオンデマンド プル
+# <a name="on-demand-pull-of-dsc-configurations"></a>DSC 構成のオンデマンド プル
 
 新しい Update-DscConfiguration コマンドレットは、メタ構成で定義されているプル サーバーからのプルをトリガーします。 この動作のことを、よく '今すぐプル' と呼びます。 
 
@@ -31,7 +31,3 @@ Update-DscConfiguration     -CimSession <CimSession[]>
                             [-Confirm] 
                             [<CommonParameters>]
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

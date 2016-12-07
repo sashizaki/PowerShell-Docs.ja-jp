@@ -1,8 +1,3 @@
-# ノードを複数の構成部分 (部分的な構成) で構成する
+# <a name="configure-node-with-multiple-configuration-fragments-partial-configurations"></a>ノードを複数の構成部分 (部分的な構成) で構成する
 
 WMF 5.0 では、ノードに対して構成ドキュメントをフラグメントとして提供できます。 詳細については、「[部分構成](https://msdn.microsoft.com/powershell/dsc/partialconfigs)」を参照してください。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

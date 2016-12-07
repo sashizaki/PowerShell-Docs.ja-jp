@@ -1,4 +1,4 @@
-# 基本クラスの宣言
+# <a name="declare-base-class"></a>基本クラスの宣言
 Windows PowerShell クラスを別の Windows PowerShell クラスの基本型として宣言できます。
 
 ```PowerShell
@@ -29,7 +29,3 @@ $list.Add(100)
 
 $list[0] # return 100
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

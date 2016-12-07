@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
-translationtype: Human Translation
-ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
-ms.openlocfilehash: 03a9bbfb14c4587d794db2eaadf60cc7a4d4dcdc
-
+ms.openlocfilehash: 0c17cb271441ed20b36176e2c5d8cecdad586e8b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="multiple-selection-list-boxes"></a>複数選択のリスト ボックス
 Windows PowerShell 3.0 と以降のリリースを使用すると、カスタム Windows フォームで複数選択のリスト ボックス コントロールを作成できます。
 
@@ -188,10 +186,4 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 - [Hey Scripting Guy: これらの PowerShell GUI の例が機能しないのはなぜですか。](http://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell Tip of the Week: 複数選択のリスト ボックスなど](http://technet.microsoft.com/library/ff730950.aspx)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

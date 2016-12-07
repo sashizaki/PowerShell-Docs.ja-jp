@@ -1,4 +1,4 @@
-# PowerShell ISE を使ったオーサリングの強化
+# <a name="authoring-improvements-using-powershell-ise"></a>PowerShell ISE を使ったオーサリングの強化
 
 Windows PowerShell ISE での DSC 構成のオーサリングが、はるかに簡単になりました。強化された点は次のとおりです。
 
@@ -8,8 +8,3 @@ Windows PowerShell ISE での DSC 構成のオーサリングが、はるかに�
 - リソース プロパティ値のタブ補完の強化。
 
 **注:** Ctrl+Space を使ってオプションを一覧表示するには、リソース プロパティ値に空の文字列が必要です。 **タブ**を押して、オプションを順番に切り替えます。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_get installedscript
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: f809c5c8f5a28c01c67ee4c4453ecca7796838c4
-
+ms.openlocfilehash: d755ed5dbcee279f943d56832ffd7689e4cc6f04
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Get-InstalledScript
+# <a name="get-installedscript"></a>Get-InstalledScript
 
 コンピューター上のインストールされているスクリプトを取得します。
 
-## 説明
+## <a name="description"></a>説明
 
 Get-InstalledScript コマンドレットは、コンピューター上にインストールされている PowerShell スクリプトを取得します。
 
@@ -32,17 +30,17 @@ Get-InstalledScript コマンドレットは、コンピューター上にイン
   - RequiredVersion パラメーターが指定されていない場合、Get-InstalledScript は指定された最小バージョン以上の最新バージョンのインストールされているスクリプトを返すか、または最新バージョンのスクリプトを返します (最小バージョンが指定されていない場合)。 
   - RequiredVersion パラメーターが指定されている場合、Get-InstalledScript は指定したバージョンに完全に一致するバージョンのインストールされているスクリプトのみを返します。
 
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 
 ```powershell
 Get-Command -Name Get-InstalledScript -Module PowerShellGet -Syntax
 ```
 
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Get-InstalledScript](http://go.microsoft.com/fwlink/?LinkId=619790)
 
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 
@@ -103,10 +101,4 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Scripts
 
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

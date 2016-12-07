@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: ceec1038516ddd4c29df770d14981c0a69437498
-
+ms.openlocfilehash: da02415aaaf0e308abb3a9c96bb19591701e3408
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 付録 2 - カスタムの PowerShell ショートカットの作成
+# <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>付録 2 - カスタムの PowerShell ショートカットの作成
 次の手順では、カスタマイズされたいくつかの便利なオプションを備えた Windows PowerShell へのショートカットの作成方法について説明します。
 
 1.  Powershell.exe へのショートカットを作成します。
@@ -42,10 +40,4 @@ ms.openlocfilehash: ceec1038516ddd4c29df770d14981c0a69437498
 11. コンソールが開いたときに、デスクトップの特定の位置にそのコンソールが表示されるようにする場合は、**[ウィンドウの位置]** セクションの **[システム設定を使う]** チェック ボックスをオフにし、**[ウィンドウの位置]** セクションで、**[左]** ボックスと **[上]** ボックスの値を変更します。
 
 12. **[OK]** をクリックします。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

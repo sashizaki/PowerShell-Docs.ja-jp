@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_find dscresource
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 4ee5433547266e2665e1e33b9f120f505426c8f4
-
+ms.openlocfilehash: afd13e1dd791794d62be4601477bcc77448586c5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Find-DscResource
+# <a name="find-dscresource"></a>Find-DscResource
 
 モジュール内の DSC リソースを検索します。
 
-## 説明
+## <a name="description"></a>説明
 
 Find-DscResource コマンドレットは、登録したリポジトリから、指定した条件と一致するモジュールに含まれている [Desired State Configuration (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) リソースを検索します。
 Find-DscResource は、このコマンドレットが検出した各モジュールに対して PSGetDscResourceInfo オブジェクトを返します。このオブジェクトを Install-Module にパイプすると、このコマンドレットから返されたリソースを含むモジュールをインストールすることができます。
@@ -39,16 +37,16 @@ Desired State Configuration (DSC) リソースは、DSC 構成の構成要素を
 - Find-DscResource では、-Filter パラメーターを使用してリポジトリ固有の検索言語をフィルター処理できます。
 - Find-DscResource では、登録されているリポジトリのすべてまたは一部からモジュール上でフィルター処理できます。
 
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 ```powershell
 Get-Command -Name Find-DscResource -Module PowerShellGet -Syntax
 ```
 
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Find-DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
 
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 ```powershell
 
 # Find a specific DSC Resource
@@ -96,10 +94,4 @@ Find-DscResource -Filter Domain
 Find-DscResource -Tag Azure, DSC
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

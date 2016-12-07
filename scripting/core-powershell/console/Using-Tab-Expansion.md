@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c8730471-bf6a-43b8-ab1d-f9ef5a74f04e
-translationtype: Human Translation
-ms.sourcegitcommit: 27512f637dd44485eee38936fea4723cd17b6218
-ms.openlocfilehash: b67024fb27c08e1079caad891cfc3e621a354b27
-
+ms.openlocfilehash: 8a9ae15003a298862e0b6ca84c8730c947214290
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# タブ拡張の使用
+# <a name="using-tab-expansion"></a>タブ拡張の使用
 コマンド ライン シェルは多くの場合、長いファイルやコマンドの名前を自動補完する手段を備えており、コマンド入力を迅速化したり、ヒントを与えたりします。 Windows PowerShell では、**Tab** キーを押してファイル名やコマンドレット名を入力できます。
 
 > [!NOTE]
@@ -50,10 +48,4 @@ PS> Get-Content C:\windows\actsetup.log
 
 > [!NOTE]
 > タブ拡張プロセスの 1 つの制限は、タブがあると、必ず単語の補完を試みていると解釈されることです。 コマンドの例をコピーして Windows PowerShell コンソールに貼り付ける場合は、サンプルにタブが含まれていないことをご確認ください。タブが含まれていると結果は予測できず、ほぼ意図したとおりにはなりません。
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

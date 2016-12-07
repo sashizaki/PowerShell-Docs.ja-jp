@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 7813185313845b74e2a37dfa4ec6bb109f32f0eb
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Linux 用 DSC の nxUser リソース
+# <a name="dsc-for-linux-nxuser-resource"></a>Linux 用 DSC の nxUser リソース
 
 PowerShell Desired State Configuration (DSC) の **nxUser** リソースは、Linux ノード上でローカル ユーザーを管理するためのメカニズムを備えています。
 
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 nxUser <string> #ResourceName
@@ -37,7 +35,7 @@ nxUser <string> #ResourceName
 }
 ```
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ |  特定の状態を保証するアカウント名を示します。 | 
 |---|---|
@@ -52,7 +50,7 @@ nxUser <string> #ResourceName
 | GroupID| ユーザーのプライマリ グループ ID。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が "ResourceName" で、そのタイプが "ResourceType" である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 
-## 例
+## <a name="example"></a>例
 
 次の例は、ユーザー "monuser" が存在し、グループ "DBusers" のメンバーであることを保証しています。
 
@@ -76,10 +74,4 @@ nxGroup GroupExample{
 }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

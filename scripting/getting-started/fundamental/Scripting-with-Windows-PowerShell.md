@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c425d27a-bb41-4947-8d73-ba5480bc8ee0
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 0148f4631e34e65a4336c5d1d50e313fb6639748
-
+ms.openlocfilehash: f7c9164e09e253e8138820708ba8864841ddfff2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell を使用したスクリプト
+# <a name="scripting-with-windows-powershell"></a>Windows PowerShell を使用したスクリプト
 
 Windows PowerShell® は、システム管理に重点を置いて設計されたタスクベースのコマンド ライン シェルおよびスクリプト言語です。 .NET Framework 上に構築された Windows PowerShell は、IT 技術者およびパワー ユーザーが Windows オペレーティング システムと Windows 上で実行するアプリケーションの管理の自動化を制御するときに役立ちます。
 
@@ -28,10 +26,4 @@ Windows PowerShell には、次に示す機能があります。
 -   ユーザーがファイル システムの移動に使用するのと同じ手法を使用してレジストリおよびその他のデータ ストアを移動できるようにする、オペレーティング システムの簡略化されたコマンドベースのナビゲーションです。
 -   強力なオブジェクト操作機能です。 オブジェクトを直接操作したり、その他のツールやデータベースに送信したりすることができます。
 -   拡張可能なインターフェイスです。 独立系ソフトウェア ベンダーや企業の開発者は、自社のソフトウェアを管理するカスタム ツールとユーティリティをビルドできます。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

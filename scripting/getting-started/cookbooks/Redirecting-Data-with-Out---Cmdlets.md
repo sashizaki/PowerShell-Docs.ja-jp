@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 2a4acd33-041d-43a5-a3e9-9608a4c52b0c
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: e62ae14e4d7334d0cd42681c7e2591692c089187
-
+ms.openlocfilehash: b48cc5fbd5c229d0339a24402e186fe9ef69e97b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Out-* コマンドレットを使用してデータをリダイレクトする
+# <a name="redirecting-data-with-out--cmdlets"></a>Out-* コマンドレットを使用してデータをリダイレクトする
 Windows PowerShell には、データ出力を直接制御できるようにするコマンドレットがいくつかあります。 これらのコマンドレットには、2 つの重要な特性があります。
 
 まず、これらのコマンドレットは、通常、データをいくつかの形式のテキストに変換します。 コマンドレットは、テキスト入力を必要とするシステム コンポーネントにデータを出力するので、変換を実行します。 これは、コマンドレットがオブジェクトを文字列として表現する必要があることを意味します。 したがって、テキストは Windows PowerShell のコンソール ウィンドウに表示される形式に書式設定されます。
@@ -71,7 +69,7 @@ Name    : explorer
 > [!NOTE]
 > すべての **Out** コマンドレットは、コンソール ウィンドウに有効な書式設定 (行の長さの制限を含む) を使用して、テキストとして出力を表示します。
 
-#### コンソール出力のページング (Out-Host)
+#### <a name="paging-console-output-out-host"></a>コンソール出力のページング (Out-Host)
 既定では、Windows PowerShell は、データをホスト ウィンドウに送信します。実際にそのことを実行するのが Out-Host コマンドレットです。 Out-Host コマンドレットの主な用途は、前に説明したようにデータのページングです。 たとえば、次のコマンドは、Out-Host を使用して、Get-Command コマンドレットの出力をページングします。
 
 ```
@@ -95,7 +93,7 @@ default=multi(0)disk(0)rdisk(0)partition(1)\WINDOWS
 ...
 ```
 
-#### 出力の破棄 (Out-Null)
+#### <a name="discarding-output-out-null"></a>出力の破棄 (Out-Null)
 **Out-Null** コマンドレットは、受け取ったすべての入力を直ちに破棄するよう設計されています。 これは、コマンドを実行する副作用として受け取る不要なデータを破棄するのに便利です。 次のコマンドを入力すると、コマンドからは何も返ってきません。
 
 ```
@@ -112,14 +110,14 @@ At line:1 char:12
 + Get-Command  <<<< Is-NotACommand | Out-Null
 ```
 
-#### データの印刷 (Out-Printer)
+#### <a name="printing-data-out-printer"></a>データの印刷 (Out-Printer)
 **Out-Printer** コマンドレットを使用してデータを印刷できます。 **Out-Printer** コマンドレットは、プリンター名を指定しない場合、通常使うプリンターを使用します。 任意の Windows ベースのプリンターを、その表示名を指定して使用できます。 どんな種類のプリンター ポートのマッピングも (実際の物理プリンターの場合でも) 必要ありません。 たとえば、Microsoft Office 文書のイメージング ツールがインストールされている場合、次のように入力して、データをイメージ ファイルに送信できます。
 
 ```
 PS> Get-Command Get-Command | Out-Printer -Name "Microsoft Office Document Image Writer"
 ```
 
-#### データの保存 (Out-File)
+#### <a name="saving-data-out-file"></a>データの保存 (Out-File)
 **Out-File** コマンドレットを使用して、出力をコンソール ウィンドウにではなく、ファイルに送信することができます。 次のコマンド ラインは、プロセスの一覧をファイル **C:\\temp\\processlist.txt** に送信します。
 
 ```
@@ -157,10 +155,4 @@ Get-Command | Out-File -FilePath c:\temp\output.txt -Width 2147483647
 ```
 
 **Out-File** コマンドレットは、ちょうどコンソールに表示されるように出力を保存する場合、最も役立ちます。 出力書式設定をさらに細かく制御するには、より高度なツールが必要です。 次の章で、これらについて、またオブジェクト操作についての詳細を説明します。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

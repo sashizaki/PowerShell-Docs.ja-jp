@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
-translationtype: Human Translation
-ms.sourcegitcommit: 41647fc2b323292e496340f68bc92fd9a997ce0e
-ms.openlocfilehash: 662d0823749c142a716b74164ad57a8612833ccd
-
+ms.openlocfilehash: f35cfa6b547c63fc94c370f21ee83987468a894d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# <a name="creating-net-and-com-objects-newobject"></a>.NET オブジェクトと COM オブジェクトを作成する (New-Object)
+# <a name="creating-net-and-com-objects-new-object"></a>.NET オブジェクトと COM オブジェクトを作成する (New-Object)
 ソフトウェア コンポーネントの中には、さまざまなシステム管理タスクを実行できるようにする .NET Framework や COM インターフェイスを備えているものがあります。 これらのコンポーネントは Windows PowerShell から使用することもでき、コマンドレットだけではできないタスクも実行できます。 Windows PowerShell の初回リリースでは、コマンドレットの多くがリモート コンピューターに対応していません。 ここでは、イベント ログを管理する場合に、.NET Framework の **System.Diagnostics.EventLog** クラスを Windows PowerShell から直接使用して、この制限を回避する方法を紹介します。
 
-### <a name="using-newobject-for-event-log-access"></a>New-Object によるイベント ログへのアクセス
+### <a name="using-new-object-for-event-log-access"></a>New-Object によるイベント ログへのアクセス
 .NET Framework のクラス ライブラリには、イベント ログの管理に使用する **System.Diagnostics.EventLog** というクラスが含まれています。 .NET Framework クラスの新しいインスタンスを作成するには、**New-Object** コマンドレットと **TypeName** パラメーターを使用します。 たとえば、次のコマンドを実行すると、イベント ログの参照が作成されます。
 
 ```
@@ -29,7 +27,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 
 このコマンドによって EventLog クラスのインスタンスは作成されましたが、このインスタンスにはデータがまったく含まれていません。 これは、特定のイベント ログを指定しなかったためです。 実際のイベント ログを取得するにはどうすればよいのでしょうか。
 
-#### <a name="using-constructors-with-newobject"></a>New-Object でのコンストラクターの使用
+#### <a name="using-constructors-with-new-object"></a>New-Object でのコンストラクターの使用
 特定のイベント ログを参照するには、ログの名前を指定する必要があります。 **New-Object** には、**ArgumentList** というパラメーターがあります。 このパラメーターの値として渡した引数は、オブジェクトの特殊な初期化メソッドで使用されます。 オブジェクトを構築 (construct) する目的で使用されることから、このメソッドは*コンストラクター*と呼ばれています。 たとえば、Application ログの参照を取得するには、"Application" という文字列を引数として指定します。
 
 ```
@@ -62,7 +60,7 @@ PS> $AppLog
   16,384      7 OverwriteOlder          2,160 Application
 ```
 
-#### <a name="accessing-a-remote-event-log-with-newobject"></a>New-Object によるリモートのイベント ログへのアクセス
+#### <a name="accessing-a-remote-event-log-with-new-object"></a>New-Object によるリモートのイベント ログへのアクセス
 前のセクションで使用したコマンドは、アクセス先としてローカル コンピューターを想定していました。ローカル コンピューターのイベント ログを取得するのであれば、**Get-EventLog** コマンドレットを使って行うこともできます。 リモート コンピューターの Application ログにアクセスするには、引数として、ログの名前とコンピューター名 (または IP アドレス) の両方を指定する必要があります。
 
 ```
@@ -116,7 +114,7 @@ PS> $RemoteAppLog
      512      7 OverwriteOlder              0 Application
 ```
 
-### <a name="creating-com-objects-with-newobject"></a>New-Object による COM オブジェクトの作成
+### <a name="creating-com-objects-with-new-object"></a>New-Object による COM オブジェクトの作成
 コンポーネント オブジェクト モデル (COM) のコンポーネントを操作するには、**New-Object** を使用します。 一口にコンポーネントと言っても、その種類は Windows Script Host (WSH) に含まれている各種ライブラリから、Internet Explorer のようなほとんどのシステムにインストールされている ActiveX アプリケーションまで多岐にわたります。
 
 **New-Object** では、.NET Framework ランタイム呼び出し可能ラッパーを使って COM オブジェクトを作成します。したがって、COM オブジェクトを呼び出す際には .NET Framework の場合と同じ制限が適用されます。 COM オブジェクトを作成するには、使用する COM クラスのプログラム識別子 (*ProgId*) を **ComObject** パラメーターで指定する必要があります。 COM の使用上の制限や、システム上で利用できる ProgId の調査方法については、このマニュアルの範囲を超えているので詳しく説明しません。しかし、WSH などの環境に存在する、一般によく知られているようなオブジェクトについては、Windows PowerShell 内で使用できます。
@@ -259,7 +257,7 @@ Remove-Variable ie
 > [!NOTE]
 > 参照を削除したときに、ActiveX 実行可能ファイルを終了するか、実行を継続するかに関して、共通の標準は存在しません。 アプリケーションが終了するかどうかは、アプリケーションが可視状態であるか、編集中のドキュメントが存在するか、Windows PowerShell がまだ実行されているかなど、さまざまな条件に依存します。 そのため、Windows PowerShell で使用する ActiveX 実行可能ファイルごとに、終了時の動作をテストしておく必要があります。
 
-### <a name="getting-warnings-about-net-frameworkwrapped-com-objects"></a>.NET Framework によってラップされた COM オブジェクトの警告の取得
+### <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>.NET Framework によってラップされた COM オブジェクトの警告の取得
 COM オブジェクトに、.NET Framework *ランタイム呼び出し可能ラッパー* (RCW) が関連付けられていて、これが **New-Object** で使用されることがあります。 RCW の動作は通常の COM オブジェクトの動作とは異なる場合があるため、**New-Object** には、RCW アクセスに関する警告を取得する **Strict** パラメーターが用意されています。 **Strict** パラメーターを指定し、RCW を使用する COM オブジェクトを作成した場合、次のような警告メッセージが表示されます。
 
 ```
@@ -274,10 +272,4 @@ At line:1 char:17
 ```
 
 オブジェクトは作成されますが、標準の COM オブジェクトではないことを示す警告が表示されます。
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

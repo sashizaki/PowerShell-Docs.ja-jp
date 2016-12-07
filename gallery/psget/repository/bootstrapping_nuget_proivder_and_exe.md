@@ -9,18 +9,16 @@ ms.date: 2016-10-14
 contributor: manikb
 title: bootstrapping_nuget_proivder_and_exe
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 0e0e1287dbe0912e90dfeabee8e22cdf78d9e82a
-
+ms.openlocfilehash: 3ba2289f83f2de5f7be7e4e0cced1988ee17b466
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 単一のプロンプト メッセージを指定した発行操作に対する NuGet プロバイダーと NuGet.exe の両方のブートストラップ、および発行以外の操作に対する NuGet プロバイダーのみのブートストラップ
+# <a name="bootstrap-both-nuget-provider-and-nugetexe-for-publish-operations-with-single-prompt-message-and-bootstrap-only-nuget-provider-for-non-publish-operations"></a>単一のプロンプト メッセージを指定した発行操作に対する NuGet プロバイダーと NuGet.exe の両方のブートストラップ、および発行以外の操作に対する NuGet プロバイダーのみのブートストラップ
 
 NuGet.exe は最新の NuGet プロバイダーから削除されています。 モジュール/スクリプトを発行する場合、PowerShellGet では .nupkg ファイルを作成してリポジトリにプッシュするために NuGet.exe を必要とします。 NuGet プロバイダーは、検索、インストール、更新、保存などの発行以外の操作で必要になります。
 単一のプロンプト メッセージを指定した発行操作に対する NuGet プロバイダーと NuGet.exe の両方のブートストラップ、および発行以外の操作に対する NuGet プロバイダーのみのブートストラップを実行するためのロジックが追加されました。
 
-## NuGet プロバイダーを利用できない場合
+## <a name="when-nuget-provider-is-not-available"></a>NuGet プロバイダーを利用できない場合
 
 ```powershell                                
 PS C:\windows\system32> find-module -Repository dtlgalleryint -verbose -name contoso
@@ -51,7 +49,7 @@ Version    Name                                Type       Repository           D
 2.5        Contoso                             Module     dtlgalleryint        Contoso module
 ```
 
-## 発行操作中に、NuGet プロバイダーを利用でき、NuGet.exe を利用できない場合
+## <a name="when-nuget-provider-is-available-and-nugetexe-is-not-available-during-the-publish-operation"></a>発行操作中に、NuGet プロバイダーを利用でき、NuGet.exe を利用できない場合
 
 ```powershell
 PS C:\windows\system32> Publish-Module -Name Contoso -Repository LocalRepo -Verbose
@@ -75,7 +73,7 @@ VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'C:\LocalGallery'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
                    
-## 発行操作中に、NuGet プロバイダーと NuGet.exe のどちらも利用できない場合
+## <a name="when-both-nuget-provider-and-nugetexe-are-not-available-during-the-publish-operation"></a>発行操作中に、NuGet プロバイダーと NuGet.exe のどちらも利用できない場合
 
 ```powershell
 PS C:\windows\system32> Publish-Module -Name Contoso -Repository LocalRepo -Verbose
@@ -100,10 +98,4 @@ VERBOSE: Installing NuGet provider.
 VERBOSE: Installing NuGet.exe.
 VERBOSE: Successfully published module 'Contoso' to the module publish location 'C:\LocalGallery'. Please allow few minutes for 'Contoso' to show up in the search results.
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

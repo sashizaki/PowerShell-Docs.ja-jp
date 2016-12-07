@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: c3f7c226fcb496e5bb51ba601429c54b43de9d52
-
+ms.openlocfilehash: be0960062182bbce161fdb26340825a7f6360382
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ファイルとフォルダーの操作
+# <a name="working-with-files-and-folders"></a>ファイルとフォルダーの操作
 Windows PowerShell ドライブ間を移動したり、Windows PowerShell ドライブ上の項目を操作したりすることは、Windows の物理ディスク ドライブ上のファイルやフォルダーを操作することと似ています。 このセクションでは、ファイルとフォルダーを操作するための特定のタスクの処理方法について説明します。
 
-### フォルダー内のすべてのファイルとフォルダーの一覧表示
+### <a name="listing-all-the-files-and-folders-within-a-folder"></a>フォルダー内のすべてのファイルとフォルダーの一覧表示
 **Get-ChildItem** を使用することにより、フォルダー内のすべての項目を直接取得することができます。 非表示の項目やシステム項目を表示するには、オプションの **Force** パラメーターを追加します。 たとえば、このコマンドは、Windows PowerShell ドライブ C (Windows の物理ドライブ C と同じ) に直接含まれるコンテンツを表示します。
 
 ```
@@ -38,7 +36,7 @@ Get-ChildItem -Force C:\ -Recurse
 Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -FilterScript {($_.LastWriteTime -gt "2005-10-01") -and ($_.Length -ge 1m) -and ($_.Length -le 10m)}
 ```
 
-### ファイルとフォルダーのコピー
+### <a name="copying-files-and-folders"></a>ファイルとフォルダーのコピー
 コピーは **Copy-Item** を使用して行われます。 次のコマンドは、C:\\boot.ini to C:\\boot.bak にバックアップします。
 
 ```
@@ -71,7 +69,7 @@ Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination c:\temp\text
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile("c:\boot.ini", "c:\boot.bak")
 ```
 
-### ファイルとフォルダーの作成
+### <a name="creating-files-and-folders"></a>ファイルとフォルダーの作成
 新しい項目の作成は、すべての Windows PowerShell プロバイダーで同じ方法で行われます。 Windows PowerShell プロバイダーに複数の種類の項目が含まれている場合 (たとえば、FileSystem Windows PowerShell プロバイダーではディレクトリとファイルが区別されます)、項目の種類を指定する必要があります。
 
 次のコマンドでは、フォルダー C:\\temp\\New Folder が新規作成されます。
@@ -86,7 +84,7 @@ New-Item -Path 'C:\temp\New Folder' -ItemType "directory"
 New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType "file"
 ```
 
-### フォルダー内のすべてのファイルとフォルダーの削除
+### <a name="removing-all-files-and-folders-within-a-folder"></a>フォルダー内のすべてのファイルとフォルダーの削除
 内包されている項目を削除するには、**Remove-Item** を使用します。ただし、その項目に他の何らかの項目が含まれている場合、削除の確認を求められます。 たとえば、他の項目を含むフォルダー C:\\temp\\DeleteMe を削除しようとすると、フォルダーが削除される前に、Windows PowerShell から次のような削除の確認メッセージが表示されます。
 
 ```
@@ -106,7 +104,7 @@ sure you want to continue?
 Remove-Item C:\temp\DeleteMe -Recurse
 ```
 
-### Windows のアクセス可能なドライブとしてのローカル フォルダーのマッピング
+### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Windows のアクセス可能なドライブとしてのローカル フォルダーのマッピング
 **subst** コマンドを使用することにより、ローカル フォルダーをマッピングすることもできます。 次のコマンドは、ローカルの Program Files ディレクトリをルートとするローカル ドライブ P: を作成します。
 
 ```
@@ -115,7 +113,7 @@ subst p: $env:programfiles
 
 ネットワーク ドライブと同様に、**subst** を使用して Windows PowerShell 内でマッピングされたドライブは、直ちに Windows PowerShell シェルに表示されます。
 
-### 配列へのテキスト ファイルの読み込み
+### <a name="reading-a-text-file-into-an-array"></a>配列へのテキスト ファイルの読み込み
 テキスト データの一般的な格納形式の 1 つに、個々の行を個別のデータ要素として扱うファイルを使用する方法があります。 **Get-Content** コマンドレットを使用することにより、1 つのステップでファイル全体を読み取ることができます。以下にその例を示します。
 
 ```
@@ -144,10 +142,4 @@ $Computers = Get-Content -Path C:\temp\DomainMembers.txt
 ```
 
 **$Computers** には、各要素に 1 つのコンピューター名が含まれた配列が格納されます。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

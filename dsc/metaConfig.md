@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 140f60bf7344eae57e2b5d364464bc0b7c1a2220
-ms.openlocfilehash: 5d37938869a71bea0d8a6349e680411b7d0200d9
-
+ms.openlocfilehash: e978ee828fe3c91be52077442c5781b7a20e50be
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ローカル構成マネージャーの構成
+# <a name="configuring-the-local-configuration-manager"></a>ローカル構成マネージャーの構成
 
 > 適用先: Windows PowerShell 5.0
 
@@ -28,7 +26,7 @@ ms.openlocfilehash: 5d37938869a71bea0d8a6349e680411b7d0200d9
 
 > **注**: このトピックは、Windows PowerShell 5.0 で導入された LCM に適用されます。 Windows PowerShell 4.0 での LCM の構成については、「[Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)](metaconfig4.md)」を参照してください。
 
-## LCM 構成の作成と適用
+## <a name="writing-and-enacting-an-lcm-configuration"></a>LCM 構成の作成と適用
 
 LCM を構成するには、特殊な種類の構成を作成して実行します。 LCM 構成を指定するには、DscLocalConfigurationManager 属性を使用します。 LCM をプッシュ モードに設定する単純な構成を次に示します。
 
@@ -57,7 +55,7 @@ LCM 構成には、限定されたリソースのセットに対するブロッ�
 * **ReportServerWeb**: レポートが送信される HTTP プル サーバーを指定します。
 * **PartialConfiguration**: 部分構成を指定します。
 
-## 基本設定
+## <a name="basic-settings"></a>基本設定
 
 プル サーバーと部分構成の指定以外の LCM 構成のすべてのプロパティは、**Settings** ブロックで構成されます。 **Settings** ブロックでは、次のプロパティを使用できます。
 
@@ -79,7 +77,7 @@ LCM 構成には、限定されたリソースのセットに対するブロッ�
 | PartialConfigurations| CimInstance| 実装されていません。 使用しないでください。| 
 | StatusRetentionTimeInDays | UInt32| LCM が現在の構成の状態を保持する日数。| 
 
-## プル サーバー
+## <a name="pull-servers"></a>プル サーバー
 
 プル サーバーは、DSC ファイルの一元管理の場所として使用される OData Web サービスまたは SMB 共有のいずれかです。 LCM 構成では、次の種類のプル サーバーの定義がサポートされています。
 
@@ -89,7 +87,7 @@ LCM 構成には、限定されたリソースのセットに対するブロッ�
 
 プル サーバーのセットアップと使用については、「[DSC Web プル サーバーのセットアップ](pullServer.md)」をご覧ください。
 
-## 構成サーバーのブロック
+## <a name="configuration-server-blocks"></a>構成サーバーのブロック
 
 Web ベースの構成サーバーを定義するには、**ConfigurationRepositoryWeb** ブロックを作成します。 **ConfigurationRepositoryWeb** は次のプロパティを定義します。
 
@@ -108,7 +106,7 @@ SMB ベースの構成サーバーを定義するには、**ConfigurationReposit
 |Credential|MSFT_Credential|SMB 共有への認証に使用される資格情報。|
 |SourcePath|string|SMB 共有のパス。|
 
-## リソース サーバーのブロック
+## <a name="resource-server-blocks"></a>リソース サーバーのブロック
 
 Web ベースのリソース サーバーを定義するには、**ResourceRepositoryWeb** ブロックを作成します。 **ResourceRepositoryWeb** は次のプロパティを定義します。
 
@@ -126,7 +124,7 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 |Credential|MSFT_Credential|SMB 共有への認証に使用される資格情報。|
 |SourcePath|string|SMB 共有のパス。|
 
-## レポート サーバーのブロック
+## <a name="report-server-blocks"></a>レポート サーバーのブロック
 
 レポート サーバーは、OData Web サービスである必要があります。 レポート サーバーを定義するには、**ReportServerWeb** ブロックを作成します。 **ReportServerWeb** は次のプロパティを定義します。
 
@@ -137,7 +135,7 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 |RegistrationKey|string|プル サーバーにノードを指定する GUID。 詳細については、「How to register a node with a DSC pull server (DSC プル サーバーにノードを登録する方法)」を参照してください。|
 |ServerURL|string|構成サーバーの URL。|
 
-## 部分構成
+## <a name="partial-configurations"></a>部分構成
 
 部分構成を定義するには、**PartialConfiguration** ブロックを作成します。 部分構成の詳細については、「[PowerShell Desired State Configuration の部分構成](partialConfigs.md)」をご覧ください。 **PartialConfiguration** は次のプロパティを定義します。
 
@@ -150,23 +148,17 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 |RefreshMode|string|LCM がこの部分構成を取得する方法を指定します。 指定できる値は、__"Disabled"__、__"Push(既定)"__、__"Pull"__ です。 <ul><li>__Disabled__: この部分的な構成が無効になります。</li><li> __Push__: [Publish-DscConfiguration](https://technet.microsoft.com/en-us/library/mt517875.aspx) コマンドレットを呼び出すと、部分構成がノードにプッシュされます。 ノードのすべての部分構成がプッシュされたか、またはサーバーからプルされた後、`Start-DscConfiguration –UseExisting` を呼び出すことによって構成を開始できます。 これは、既定値です。</li><li>__Pull__: プル サーバーから部分構成が定期的にチェックされるようにノードを構成します。 このプロパティが __Pull__ に設定されている場合は、__ConfigurationSource__ プロパティでプル サーバーを指定する必要があります。 プル サーバーの詳細については、「[DSC Web プル サーバーのセットアップ](pullServer.md)」をご覧ください。</li></ul>|
 |ResourceModuleSource|string[]|この部分構成に必要なリソースのダウンロード元となるリソース サーバーの名前の配列。 これらの名前は、**ResourceRepositoryWeb** および **ResourceRepositoryShare** ブロックで以前に定義したリソース サーバーを参照する必要があります。|
 
-## 参照 
+## <a name="see-also"></a>参照 
 
-### 概念
+### <a name="concepts"></a>概念
 [Windows PowerShell Desired State Configuration の概要](overview.md)
  
 [DSC Web プル サーバーのセットアップ](pullServer.md) 
 
 [Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)](metaConfig4.md) 
 
-### その他のリソース
+### <a name="other-resources"></a>その他のリソース
 [Set-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) 
 
 [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md) 
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

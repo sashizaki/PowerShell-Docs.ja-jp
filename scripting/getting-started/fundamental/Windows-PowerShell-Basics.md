@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 6b35f2dd3cf441daa1a92d52435ed0ae350c138a
-
+ms.openlocfilehash: 6644ad379def3853d618dad2c72e7aa97b8242da
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell の基礎
+# <a name="windows-powershell-basics"></a>Windows PowerShell の基礎
 グラフィカル ユーザー インターフェイスでは、ほとんどのコンピューターのユーザーによく知られているいくつかの基本的な概念を使用します。 ユーザーはタスクを実行する際、なじみのあるインターフェイスに依存します。 オペレーティング システムは閲覧可能な項目のグラフィック表示をユーザーに提示しますが、これには通常、特定の機能にアクセスするためのドロップダウン メニューと、コンテキスト特有の機能にアクセスするためのコンテキスト メニューが含まれています。
 
 Windows PowerShell などのコマンド ライン インターフェイス (CLI) にはユーザーを支援するメニューやグラフィカル システムがないため、情報を表示するための別のアプローチを使用する必要があります。 コマンドを使用するには、その名前を把握しておく必要があります。 GUI 環境の機能と等価の複雑なコマンドを入力することはできますが、一般的なコマンドとコマンド パラメーターをよく理解する必要があります。
@@ -32,10 +30,4 @@ Windows PowerShell の設計は、ユーザーが持つ CLI の歴史的知識�
 -   タブ補完の使用
 
 -   Get-Help の使用
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

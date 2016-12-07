@@ -9,30 +9,28 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_search_syntax
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: bb42496bdc9794b8d33dc9869f33771a241d31db
-
+ms.openlocfilehash: 36b551cd6576b1d2a9ca696f2bfdab570ea2523f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ギャラリー検索構文
+# <a name="gallery-search-syntax"></a>ギャラリー検索構文
 
 PowerShell ギャラリーでは単語、フレーズ、キーワード表現を使用して検索結果を絞り込むテキスト検索ボックスが用意されています。
 
-## キーワードで検索
+## <a name="search-by-keywords"></a>キーワードで検索
 
     dsc azure sql
 
 検索では、3 つのキーワードを含む関連ドキュメントを検索すると、最も効果的に一致ドキュメントが返されます。
 
-## フレーズとキーワードを使用して検索
+## <a name="search-using-phrases-and-keywords"></a>フレーズとキーワードを使用して検索
 
     "azure sql" deployment
 
 引用符 ("") の間にフレーズを入力すると、個々のキーワードではなく、特定のフレーズの検索に変わります。
 一致するドキュメントには通常、大文字と小文字のバリエーション (例: "Azure SQL" など) を含む "azure sql" そのままのフレーズを含み、また通常は 'deployment' という単語も含まれます。
 
-## フィールドのフィルター処理
+## <a name="filtering-on-fields"></a>フィールドのフィルター処理
 
 特定の項目 ID (または 'Id'、'id') を検索するか、検索語句の前にフィールド名を付けて他の特定のフィールドを検索します。
 
@@ -40,7 +38,7 @@ PowerShell ギャラリーでは単語、フレーズ、キーワード表現を
 
 [ID とタイトルの間の違いは何ですか。 ID とは、コンソールで使用する名前です。 タイトルとは、検索結果の項目ページの上部に表示される内容です。]
 
-## 例
+## <a name="examples"></a>例
 
     ID:"PSReadline"
     id:"AzureRM.Profile"
@@ -97,10 +95,4 @@ DSC タグのあるすべての項目を検索します。
 は次のクエリと同じものとして解釈されます。
 
     blobs storage
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

@@ -1,4 +1,4 @@
-# モジュール管理用の PowerShellGet コマンドレット
+# <a name="powershellget-cmdlets-for-module-management"></a>モジュール管理用の PowerShellGet コマンドレット
 
 - [Find-DscResource](https://technet.microsoft.com/en-us/library/mt654006.aspx)
 - [Find-Module](https://technet.microsoft.com/en-us/library/dn807167.aspx)
@@ -24,16 +24,16 @@
 - [Update-ScriptFileInfo](https://technet.microsoft.com/en-us/library/mt653991.aspx)
 - [Unregister-PSRepository](https://technet.microsoft.com/en-us/library/dn807161.aspx)
 
-## モジュールの依存関係のインストール サポート、Get-InstalledModule および Uninstall-Module コマンドレット
+## <a name="module-dependency-installation-support-get-installedmodule-and-uninstall-module-cmdlets"></a>モジュールの依存関係のインストール サポート、Get-InstalledModule および Uninstall-Module コマンドレット
 - モジュールの依存関係の作成が Publish-Module コマンドレットに追加されました。 PSModuleInfo の RequiredModules および NestedModules リストは、発行するモジュールの依存関係リストの準備で使用されます。
 - 依存関係のインストール サポートが Install-Module および Update-Module コマンドレットに追加されました。 モジュールの依存関係が既定でインストールされ、更新されます。
 - モジュールの依存関係を結果に含める -IncludeDependencies パラメーターが Find-Module コマンドレットに追加されました。
 - Find-Module、Install-Module、および Update-Module コマンドレットに -MaximumVersion サポートが追加されました。
 - 新しい Get-InstalledModule および Uninstall-Module コマンドレットが追加されました。
 
-## モジュールの依存関係サポートを含む PowerShellGet コマンドレットのデモ:
+## <a name="powershellget-cmdlets-demo-with-module-dependencies-support"></a>モジュールの依存関係サポートを含む PowerShellGet コマンドレットのデモ:
 
-### モジュールの依存関係がリポジトリで使用できることを確認します。
+### <a name="ensure-that-module-dependencies-are-available-on-the-repository"></a>モジュールの依存関係がリポジトリで使用できることを確認します。
 ```powershell
 Find-Module -Repository LocalRepo -Name RequiredModule1,RequiredModule2,RequiredModule3,NestedRequiredModule1,NestedRequiredModule2,NestedRequiredModule3 | Sort-Object -Property Name
 
@@ -47,7 +47,7 @@ Version    Name                     Repository    Description
 2.0        RequiredModule3          LocalRepo     RequiredModule3 module
 ```
 
-### モジュール マニフェストの RequiredModules および NestedModules プロパティで指定されている依存関係があるモジュールを作成します。
+### <a name="create-a-module-with-dependencies-that-are-specified-in-the-requiredmodules-and-nestedmodules-properties-of-its-module-manifest"></a>モジュール マニフェストの RequiredModules および NestedModules プロパティで指定されている依存関係があるモジュールを作成します。
 ```powershell
 $RequiredModules = @('RequiredModule1',
                      @{ModuleName = 'RequiredModule2'; ModuleVersion = '1.5'; },
@@ -61,12 +61,12 @@ New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\TestDepWith
 -NestedModules $NestedRequiredModules -RequiredModules $RequiredModules -ModuleVersion "1.0" -Description "TestDepWithNestedRequiredModules1 module"
 ```
 
-###  依存関係がある TestDepWithNestedRequiredModules1 モジュールの 2 つのバージョン (**"1.0"** と **"2.0"**) をリポジトリに発行します。
+###  <a name="publish-two-versions-10-and-20-of-the-testdepwithnestedrequiredmodules1-module-with-dependencies-to-the-repository"></a>依存関係がある TestDepWithNestedRequiredModules1 モジュールの 2 つのバージョン (**"1.0"** と **"2.0"**) をリポジトリに発行します。
 ```powershell
 Publish-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -NuGetApiKey "MyNuGet-ApiKey-For-LocalRepo"
 ```
 
-###  -IncludeDependencies を指定して、TestDepWithNestedRequiredModules1 モジュールを依存関係と共に検索します。
+###  <a name="find-the-testdepwithnestedrequiredmodules1-module-with-its-dependencies-by-specifying--includedependencies"></a>-IncludeDependencies を指定して、TestDepWithNestedRequiredModules1 モジュールを依存関係と共に検索します。
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo –IncludeDependencies -MaximumVersion "1.0"
 
@@ -81,7 +81,7 @@ Version    Name                                Repository  Description
 2.0        NestedRequiredModule3               LocalRepo   NestedRequiredModule3 module
 ``` 
 
-### Find-Module メタデータを使用してモジュールの依存関係を検索します。
+### <a name="use-find-module-metadata-to-find-the-module-dependencies"></a>Find-Module メタデータを使用してモジュールの依存関係を検索します。
 ```powershell
 $psgetModuleInfo = Find-Module -Repository MSPSGallery -Name ModuleWithDependencies2
 $psgetModuleInfo.Dependencies.ModuleName
@@ -120,7 +120,7 @@ RequiredVersion 2.5
 CanonicalId PowerShellGet:NestedRequiredModule3/2.5#http://psget/psGallery/api/v2/
 ```
 
-###  依存関係を持つ TestDepWithNestedRequiredModules1 モジュールをインストールします。
+###  <a name="install-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>依存関係を持つ TestDepWithNestedRequiredModules1 モジュールをインストールします。
 ```powershell
 Install-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -RequiredVersion "1.0"
 Get-InstalledModule
@@ -136,7 +136,7 @@ Version    Name                    Repository   Description
 1.0        TestDepWithNestedRequiredModules1  LocalRepo    TestDepWithNestedRequiredModules1 module
 ```
 
-###  依存関係を持つ TestDepWithNestedRequiredModules1 モジュールを更新します。
+###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>依存関係を持つ TestDepWithNestedRequiredModules1 モジュールを更新します。
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 
@@ -162,7 +162,7 @@ Version    Name                                Repository  Description
 2.0        TestDepWithNestedRequiredModules1   LocalRepo   TestDepWithNestedRequiredModules1 module
 ```
 
-###  Uninstall-Module コマンドレットを実行して、PowerShellGet を使用してインストールしたモジュールをアンインストールします。
+###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>Uninstall-Module コマンドレットを実行して、PowerShellGet を使用してインストールしたモジュールをアンインストールします。
 削除するモジュールに他のモジュールが依存する場合、PowerShellGet はエラーをスローします。
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
@@ -175,7 +175,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 + FullyQualifiedErrorId : UnableToUninstallAsOtherModulesNeedThisModule,Uninstall-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
 
-## Save-Module コマンドレット
+## <a name="save-module-cmdlet"></a>Save-Module コマンドレット
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
 dir C:\MySavedModuleLocation
@@ -193,7 +193,7 @@ d----- 4/21/2015 5:40 PM RequiredModule2
 d----- 4/21/2015 5:40 PM RequiredModule3
 ```
 
-## Update-ModuleManifest コマンドレット
+## <a name="update-modulemanifest-cmdlet"></a>Update-ModuleManifest コマンドレット
 この新しいコマンドレットを使用して、入力プロパティ値でマニフェスト ファイルを更新します。 このコマンドレットは、Test-ModuleManifest が受け取るすべてのパラメーターを受け取ります。
 
 多数のモジュール作成者は FunctionsToExport、CmdletsToExport などのエクスポートされた値に "\*" を指定します。PowerShell ギャラリーへのモジュールの発行時に、指定されていない関数やコマンドはギャラリーに正しく設定されません。 このため、モジュール作成者はマニフェストを適切な値で更新することをお勧めします。
@@ -277,8 +277,3 @@ PrivateData = @{
 } # End of PrivateData hashtable
 ```
 ***注:*** DscResourcesToExport は、最新の PowerShell バージョン 5.0 でのみサポートされています。 以前の PowerShell バージョンで実行している場合は、フィールドを更新できません。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

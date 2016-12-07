@@ -1,12 +1,10 @@
 ---
 title: "ネットワーク スイッチ マネージャーのコマンドレットの失敗"
 contributor: vaibch
-translationtype: Human Translation
-ms.sourcegitcommit: 34337749a77f4379b841a8478d4e6e3bc97e7ada
-ms.openlocfilehash: 180158033e0c960f73dba66a3d77b15765e3e382
-
+ms.openlocfilehash: e32e31762b665a7e2c6f6938fe494cb6127d4264
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 ネットワーク スイッチ マネージャーのコマンドレットを使用すれば、WSMAN 経由でネットワーク スイッチを管理することができます。 このモジュールのコマンドレットの中には、パイプラインからの値を受け入れられるものがいくつかあります。 WMF 5.1 プレビューの場合、パイプラインからの値を受け入れ可能なコマンドレットは、値がパイプラインを介して渡されていないと、実行に失敗します。
 
 "InputObject" パラメーターが指定されていない場合、コマンドレットは問題なく実行を継続します。
@@ -24,7 +22,7 @@ ms.openlocfilehash: 180158033e0c960f73dba66a3d77b15765e3e382
 - Remove-NetworkSwitchVlan
 - Set-NetworkSwitchVlanProperty
 
-### 解決方法
+### <a name="resolution"></a>解決方法
 InputObject パラメーターの値をパイプラインを介して渡すと、コマンドレットは正常に動作します。 上記のコマンドレットのいくつかの使用例を次に示します。
 
 - Disable-NetworkSwitchEthernetPort
@@ -77,9 +75,3 @@ $properties = @{Caption = "New Caption"}
 $vlan = Get-CimInstance -ClassName CIM_NetworkVlan -Namespace root/interop -CimSession $cimSession | Select-Object -First 1
 $vlan | Set-NetworkSwitchVlanProperty -Property $properties -CimSession $cimSession
 ```
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -1,4 +1,4 @@
-# PowerShellGet による PowerShell スクリプトの検出、インストール、および管理
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>PowerShellGet による PowerShell スクリプトの検出、インストール、および管理
 
 WMF 5.0 RTM リリースでは、PowerShell スクリプト共有機能が PowerShellGet に追加されました。
 次の新しいコマンドレットが PowerShell スクリプトをサポートするために PowerShellGet モジュールに追加されます。
@@ -66,8 +66,3 @@ Function Update-ScriptFileInfo 1.0.0.1 PowerShellGet
 
 **Publish-Script** -LiteralPath &lt;string&gt; \[-NuGetApiKey &lt;string&gt;\] \[-Repository &lt;string&gt;\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-

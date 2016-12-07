@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 31867cc7af96a3d8d527f5906d77bed5206940b4
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Linux 用 DSC の nxPackage リソース
+# <a name="dsc-for-linux-nxpackage-resource"></a>Linux 用 DSC の nxPackage リソース
 
 PowerShell Desired State Configuration (DSC) の **nxPackage** リソースは、Linux ノード上でパッケージを管理するためのメカニズムを備えています。
 
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 nxPackage <string> #ResourceName
@@ -34,7 +32,7 @@ nxPackage <string> #ResourceName
 }
 ```
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ |  説明 | 
 |---|---|
@@ -47,7 +45,7 @@ nxPackage <string> #ResourceName
 | ReturnCode| 想定されるリターン コード。 実際のリターン コードがここで指定される想定される値と一致しない場合、構成はエラーを返します。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 
-## 例
+## <a name="example"></a>例
 
 次の例では、"Yum" パッケージ マネージャーを使用して、Linux コンピューターに "httpd" という名前のパッケージがインストールされるようにしています。
 
@@ -63,10 +61,4 @@ nxPackage httpd
 }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

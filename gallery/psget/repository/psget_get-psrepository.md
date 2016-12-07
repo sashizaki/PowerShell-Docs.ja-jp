@@ -9,32 +9,30 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_get psrepository
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 3d0b67d012528a1ef59d8f5a1b16903d931426a3
-
+ms.openlocfilehash: b1d5172232f0c2916382b6c35093a238f6b2cb4d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Get-PSRepository
+# <a name="get-psrepository"></a>Get-PSRepository
 
 コンピューター上の登録されているリポジトリを取得します。
 
-## 説明
+## <a name="description"></a>説明
 
 Get-PSRepository コマンドレットでは、コンピューター上の現在のユーザーに対して登録されている PowerShell モジュール リポジトリを取得します。
 
 登録されている各リポジトリに対して、Get-PSRepository は PSRepository オブジェクトを返します。これは必要に応じて登録済みのリポジトリの登録を解除するための Unregister-PSRepository にパイプできます。
 
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 ```powershell
 Get-Command -Name Get-PSRepository -Module PowerShellGet -Syntax
 ```
 
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Get-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517127)
 
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 
@@ -66,10 +64,4 @@ PSGallery                 Untrusted            https://www.powershellgallery.com
 Get-PSRepository *Gallery*
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

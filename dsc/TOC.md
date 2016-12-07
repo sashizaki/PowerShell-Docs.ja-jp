@@ -93,8 +93,3 @@
 # その他のリソース
 ## [ホワイトペーパー](whitepapers.md)
 
-
-
-<!--HONumber=Nov16_HO4-->
-
-

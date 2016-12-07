@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 3e1bf444d7657b66422dab3eb8dbeef5e4d581b4
-
+ms.openlocfilehash: e049f49414a79b9de5c05100957ae4dba8d992ce
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ファイル、フォルダー、レジストリ キーの操作
+# <a name="working-with-files-folders-and-registry-keys"></a>ファイル、フォルダー、レジストリ キーの操作
 Windows PowerShell は、名詞の **Item** を使用して Windows PowerShell ドライブで検出された項目を参照します。 Windows PowerShell FileSystem プロバイダーを処理する場合、**Item** は、ファイル、フォルダー、または Windows PowerShell ドライブである可能性があります。 これらの項目を一覧表示して操作することは、ほとんどの管理設定において重要で基本的なタスクであるため、これらのタスクについては詳細に説明します。
 
-### ファイル、フォルダー、およびレジストリ キーの列挙 (Get-ChildItem)
+### <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>ファイル、フォルダー、およびレジストリ キーの列挙 (Get-ChildItem)
 特定の場所から項目のコレクションを取得することは一般的なタスクであるため、**Get-ChildItem** コマンドレットは、特にフォルダーなどのコンテナー内で見つかったすべての項目を返すよう設計されています。
 
 C:\\Windows フォルダー内に直接含まれるすべてのファイルとフォルダーを返す場合は、次のように入力します。
@@ -43,7 +41,7 @@ PS> Get-Command -Name Get-ChildItem -Syntax
 
 これらのパラメーターは混在して利用でき、詳細にカスタマイズされた出力を取得するのに適しています。
 
-#### 含まれるすべての項目の一覧表示 (-Recurse)
+#### <a name="listing-all-contained-items--recurse"></a>含まれるすべての項目の一覧表示 (-Recurse)
 Windows フォルダー内の項目と、サブフォルダー内に含まれる項目の両方を表示するには、**Get-ChildItem** の **Recurse** パラメーターを使用します。 一覧には、Windows フォルダー内のすべて、およびそのサブフォルダー内の項目が表示されます。 たとえば、次のように入力します。
 
 ```
@@ -57,7 +55,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-#### 名前で項目をフィルター処理する (-名前)
+#### <a name="filtering-items-by-name--name"></a>名前で項目をフィルター処理する (-名前)
 項目の名前のみを表示するには、**Get-Childitem** の **Name** パラメーターを使用します。
 
 ```
@@ -68,7 +66,7 @@ assembly
 ...
 ```
 
-#### 強制的に非表示のアイテムを一覧表示する (-Force)
+#### <a name="forcibly-listing-hidden-items--force"></a>強制的に非表示のアイテムを一覧表示する (-Force)
 ファイル エクスプローラーまたは Cmd.exe で通常は非表示の項目は、**Get-ChildItem** コマンドの出力に表示されません。 非表示の項目を表示するには、**Get-ChildItem** の **Force** パラメーターを使用します。 たとえば、次のように入力します。
 
 ```
@@ -77,7 +75,7 @@ Get-ChildItem -Path C:\Windows -Force
 
 このパラメーターが Force と呼ばれるのは、**Get-ChildItem** コマンドの通常の動作を強制的にオーバーライドできるためです。 Force は、コマンドレットが通常は実行しないアクションを強制するために広く使用されるパラメーターですが、システムのセキュリティを侵害するアクションは実行しません。
 
-#### ワイルドカードを使用した項目の名前のマッチング
+#### <a name="matching-item-names-with-wildcards"></a>ワイルドカードを使用した項目の名前のマッチング
 **Get-ChildItem** コマンドは、一覧表示する項目のパスでワイルドカードを受け付けます。
 
 ワイルドカードのマッチングは Windows PowerShell のエンジンによって処理されるため、ワイルドカードを受け入れるすべてのコマンドレットは、同じ表記法を使用し、マッチングの動作も同じになります。 Windows PowerShell のワイルドカードの表記法は、次のとおりです。
@@ -118,7 +116,7 @@ Get-ChildItem -Path C:\Windows\x*
 Get-ChildItem -Path C:\Windows\[xz]*
 ```
 
-#### 項目の除外 (-Exclude)
+#### <a name="excluding-items--exclude"></a>項目の除外 (-Exclude)
 Get-ChildItem の **Exclude** パラメーターを使用して、特定の項目を除外できます。 これにより、単一のステートメントで複雑なフィルター処理を実行できます。
 
 たとえば、System32 フォルダーで Windows タイム サービスの DLL を検索しようとしていて、DLL の名前について覚えているのは、"W" で始まり "32" が含まれている、ということだけだとします。
@@ -127,7 +125,7 @@ Get-ChildItem の **Exclude** パラメーターを使用して、特定の項�
 
 <pre>PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude *[9516]* Directory: Microsoft.PowerShell.Core\FileSystem::C:\WINDOWS\System32 Mode                LastWriteTime     Length Name ----                -------------     ------ ---- -a---        2004-08-04   8:00 AM     174592 w32time.dll -a---        2004-08-04   8:00 AM      22016 w32topl.dll -a---        2004-08-04   8:00 AM     101888 win32spl.dll -a---        2004-08-04   8:00 AM     172032 wldap32.dll -a---        2004-08-04   8:00 AM     264192 wow32.dll -a---        2004-08-04   8:00 AM      82944 ws2_32.dll -a---        2004-08-04   8:00 AM      42496 wsnmp32.dll -a---        2004-08-04   8:00 AM      22528 wsock32.dll -a---        2004-08-04   8:00 AM      18432 wtsapi32.dll</pre>
 
-#### Get-ChildItem パラメーターの混在
+#### <a name="mixing-get-childitem-parameters"></a>Get-ChildItem パラメーターの混在
 同じコマンドの中で、**Get-ChildItem** コマンドレットのパラメーターを複数使用できます。 パラメーターを混在させる前に、ワイルドカードのマッチングを理解しておいてください。 たとえば、次のコマンドは、結果を返しません。
 
 ```
@@ -155,10 +153,4 @@ Mode                LastWriteTime     Length Name
 ----                -------------     ------ ----
 -a---        2004-08-04   8:00 AM     337920 zipfldr.dll
 ```
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

@@ -8,24 +8,22 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "複数のコンピューターの展開と保守"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 784806197a64eb30af1ecea4af55575434ce7b87
-
+ms.openlocfilehash: 8117d0d12c062b460cb7117b54c138c8db5a1d0c
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 複数のコンピューターの展開と保守
+# <a name="multi-machine-deployment-and-maintenance"></a>複数のコンピューターの展開と保守
 この時点で、JEA をローカル システムに何回か展開しています。
 運用環境はおそらく複数のコンピューターで構成されているため、展開プロセスの重要な手順に従って、各コンピューターでこれらを繰り返すことが重要です。
 
-## 大まかな手順:
+## <a name="high-level-steps"></a>大まかな手順:
 1.  モジュールを (ロール機能により) 各ノードにコピーします。
 2.  セッション構成ファイルを各ノードにコピーします。
 3.  セッション構成を使用して `Register-PSSessionConfiguration` を実行します。
 4.  セッション構成とツールキットのコピーを安全な場所に保管します。
 変更を行う際は、"信頼できる唯一の情報源" を採用することをお勧めします。
 
-## スクリプトの例
+## <a name="example-script"></a>スクリプトの例
 配置のスクリプトの例を次に示します。
 これを自身の環境で使用する場合、実際のファイル共有とモジュールの名前とパスを使用する必要があります。
 ```PowerShell
@@ -55,20 +53,14 @@ Invoke-Command –ComputerName 'Node1', 'Node2', 'Node3', 'NodeN' -FilePath 'C:\
 Remove-Item -Path '\\FileShare\JEA\Demo.pssc'
 Remove-Item -Path '\\FileShare\JEA\SomeModule' -Recurse
 ```
-## 機能の変更
+## <a name="modifying-capabilities"></a>機能の変更
 多くのコンピューターを扱う際、一貫した方法で変更を反映させることが重要です。
 JEA に DSC リソースがあれば、環境を同期することができます。
 それまでは、セッション構成のマスター コピーを保持し、変更を加えるたびに再展開することを強くお勧めします。
 
-## 機能の削除
+## <a name="removing-capabilities"></a>機能の削除
 JEA 構成をシステムから削除するには、各コンピューターで次のコマンドを使用します。
 ```PowerShell
 Unregister-PSSessionConfiguration -Name JEADemo
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 
