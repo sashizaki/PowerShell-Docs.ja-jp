@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
-ms.openlocfilehash: 0fe5e7d9679d44bb50c897badf8c6517b95049e2
-
+ms.openlocfilehash: 7e8c0d39d4f49d09acef79d789ee54f158e465f8
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC WindowsProcess リソース
+# <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) の **WindowsProcess** リソースは、ターゲット ノードにプロセスを構成するためのメカニズムを備えています。
 
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 WindowsProcess [string] #ResourceName
@@ -36,7 +34,7 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 |  プロパティ  |  説明   | 
 |---|---| 
 | 引数| プロセスに渡す引数の文字列をそのまま示します。 複数の引数を渡す必要がある場合は、そのすべてをこの文字列内に配置します。| 
@@ -48,10 +46,4 @@ WindowsProcess [string] #ResourceName
 | StandardInputPath| 標準入力の場所を示します。| 
 | StandardOutputPath| 標準出力の書き込み場所を示します。 既存のファイルは上書きされます。| 
 | WorkingDirectory| プロセスの現在の作業ディレクトリとして使用される場所を示します。| 
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

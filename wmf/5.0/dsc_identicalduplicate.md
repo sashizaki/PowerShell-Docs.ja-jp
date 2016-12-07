@@ -1,4 +1,4 @@
-# 構成における同一重複リソースの許容
+# <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a>構成における同一重複リソースの許容
 
 DSC は、構成内で競合するリソース定義を許可せず、処理しません。 競合を解決するのではなく、ただの失敗となります。 複合リソースなどの間で構成の再利用が多く行われるようになるほど、競合は頻繁に発生します。 競合するリソース定義が一致する場合、DSC は賢くこれを許可します。 このリリースにより、同一の定義を持つ複数のリソース インスタンスをサポートするようになりました:
 
@@ -85,7 +85,3 @@ Configuration WebApplication
 ```
 
 この非常に類似した構成は、WindowsFeature FE_IIS と WindowsFeature Worker_IIS リソースが一致せず、競合が発生するようになったため、失敗します。
-
-<!--HONumber=Aug16_HO3-->
-
-

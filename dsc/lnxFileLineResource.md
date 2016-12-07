@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 9196129e79272d8bee717ef8a5d42fb590760a0f
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Linux 用 DSC の nxFileLine リソース
+# <a name="dsc-for-linux-nxfileline-resource"></a>Linux 用 DSC の nxFileLine リソース
 
 PowerShell Desired State Configuration (DSC) の **nxFileLine** リソースは、Linux ノード上で構成ファイルの行を管理するためのメカニズムを備えています。
 
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 nxFileLine <string> #ResourceName
@@ -30,7 +28,7 @@ nxFileLine <string> #ResourceName
 }
 ```
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ |  説明 | 
 |---|---|
@@ -39,7 +37,7 @@ nxFileLine <string> #ResourceName
 | DoesNotContainPattern| ファイルに存在することができない行の正規表現パターン。 ファイルに存在する行のうち、この正規表現に一致する行は、ファイルから削除されます。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 
-## 例
+## <a name="example"></a>例
 
 この例では、**nxFileLine** リソースを使用して、ユーザー monuser が not requiretty に構成されるように `/etc/sudoers` ファイルを構成しています。
 
@@ -53,10 +51,4 @@ nxFileLine DoNotRequireTTY
    DoesNotContainPattern = "Defaults:monuser[ ]+requiretty"
 } 
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

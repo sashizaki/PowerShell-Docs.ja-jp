@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 6b001c12885022006003ef3ffe91b7aede07bd17
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Linux 用 Desired State Configuration の組み込みリソース
+# <a name="built-in-desired-state-configuration-resources-for-linux"></a>Linux 用 Desired State Configuration の組み込みリソース
 
 リソースは、PowerShell Desired State Configuration (DSC) スクリプトの作成に使用できる構成要素です。 Linux 用 DSC には、ファイルとフォルダー、パッケージ、環境変数、サービスとプロセスなど、リソースを構成するための一連の組み込み機能が付属します。
 
-## 組み込みリソース 
+## <a name="built-in-resources"></a>組み込みリソース 
 
 次の表は、これらのリソースや詳細を説明するトピックへのリンクの一覧を示します。
 
@@ -32,9 +30,3 @@ ms.openlocfilehash: 6b001c12885022006003ef3ffe91b7aede07bd17
 * [nxSshAuthorizedKeys リソース](lnxSshAuthorizedKeysResource.md) -- Linux ユーザーの公開 ssh キーを管理します。 
 * [nxUser リソース](lnxUserResource.md) -- ローカル Linux ユーザーを管理します。 
   
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

@@ -8,19 +8,17 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 749c1ca8bc617014dffacecce7d14a55adc38036
-ms.openlocfilehash: 2a17fdd4092adf734398f38bec915d53c1b3e566
-
+ms.openlocfilehash: 574fec8e1f4948021988d8489532d7325277fed6
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="console-improvements-in-wmf-51-preview"></a>WMF 5.1 のコンソール機能強化 (プレビュー)#
 
-# WMF 5.1 のコンソール機能強化 (プレビュー)#
-
-## PowerShell コンソールの機能強化
+## <a name="powershell-console-improvements"></a>PowerShell コンソールの機能強化
 
 コンソールのエクスペリエンスを改善するため、WMF 5.1 の powershell.exe が次のように変更されました。
 
-###VT100 のサポート
+###<a name="vt100-support"></a>VT100 のサポート
 
 Windows 10 では、[VT100 エスケープ シーケンス](https://msdn.microsoft.com/en-us/library/windows/desktop/mt638032(v=vs.85).aspx)のサポートが追加されました。
 PowerShell は、テーブルの幅を計算するとき、特定の VT100 書式指定エスケープ シーケンスを無視します。
@@ -43,20 +41,14 @@ else
 
 VT100 エスケープ シーケンスは、Windows 10 Anniversary 更新以降でのみサポートされることに注意してください。それより前のシステムではサポートされません。   
 
-### PSReadline での vi モードのサポート
+### <a name="vi-mode-support-in-psreadline"></a>PSReadline での vi モードのサポート
 
 [PSReadline](https://github.com/lzybkr/PSReadLine) は、vi モードのサポートを追加します。 vi モードを使用するには、`Set-PSReadline -EditMode vi` を実行します。
 
-### 対話型の入力を使用する stdin のリダイレクト 
+### <a name="redirected-stdin-with-interactive-input"></a>対話型の入力を使用する stdin のリダイレクト 
 
 以前のバージョンでは、stdin がリダイレクトされ、コマンドを対話的に入力するときは、PowerShell を `powershell -File -` で起動する必要がありました。
 
 WMF 5.1 では、この見つけにくいオプションは不要になりました。 `powershell` のようなオプションを何も使わずに PowerShell を起動できます。
 
 PSReadline は現在はリダイレクトされた stdin をサポートせず、リダイレクトされた stdin での組み込みコマンド ライン編集エクスペリエンスは非常に限られたものであることに注意してください (たとえば、方向キーは機能しません)。 PSReadline の将来のリリースではこの問題が対処されるはずです。   
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

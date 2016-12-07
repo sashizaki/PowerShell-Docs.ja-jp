@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 64fb5f37-90a8-4b89-9fc8-c6b8fcc0c7d0
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 6363aff01a6018f1fc3a850c6e40ad96e485f554
-
+ms.openlocfilehash: 818183e7bbaa5b0e05cca4a32e49987525dfa321
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="using-the-windows-powershell-ise"></a>Windows PowerShell ISE の使用
 このドキュメントのトピックでは、Windows PowerShell® Integrated Scripting Environment (ISE) の機能を使用して生産性を向上させる方法について説明します。
 
@@ -33,10 +31,4 @@ ms.openlocfilehash: 6363aff01a6018f1fc3a850c6e40ad96e485f554
 - [Windows PowerShell ISE の操作](../../getting-started/fundamental/Exploring-the-Windows-PowerShell-ISE.md)
 - [Windows PowerShell ISE のアクセシビリティ](../../setup/Accessibility-in-Windows-PowerShell-ISE.md)
 - [Windows PowerShell ISE スクリプト オブジェクト モデル](https://technet.microsoft.com/en-us/library/69b047d0-da79-413e-b948-8e45d05d1f85)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

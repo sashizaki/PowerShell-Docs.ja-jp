@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 0a27a40b995393c41f0496a5f7fa3f56fbd865dd
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC リソース
+# <a name="dsc-resources"></a>DSC リソース
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -26,10 +24,4 @@ Desired State Configuration (DSC) リソースは、DSC 構成の構成要素を
 - [組み込み DSC リソース](builtInResource.md)
 - [カスタム DSC リソースのビルド](authoringResource.md)
 - [Linux 用組み込み DSC リソース](lnxBuiltInResources.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

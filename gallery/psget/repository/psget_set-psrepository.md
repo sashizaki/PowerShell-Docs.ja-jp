@@ -9,30 +9,28 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_set psrepository
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: f53076825f764ff805f2d956eecddbb492f7b694
-
+ms.openlocfilehash: be2c16a79a3e6873c0f7a364092def881d490091
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Set-PSRepository
+# <a name="set-psrepository"></a>Set-PSRepository
 
 Set-PSRepository は登録されたリポジトリの値を設定します。
 
-## 説明
+## <a name="description"></a>説明
 
 Set-PSRepository コマンドレットは登録されたモジュール リポジトリの値を設定します。
 
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 
 ```powershell
 Get-Command -Name Set-PSRepository -Module PowerShellGet -Syntax
 ```
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Set-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517128)
 
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 PS C:\> Register-PSRepository -Name myRepository -SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" -InstallationPolicy Trusted
@@ -51,7 +49,7 @@ myRepository              Untrusted            https://www.myget.org/F/powershel
 ```
 
 
-### スクリプト共有がサポートされている Set-PSRepository コマンドレット
+### <a name="set-psrepository-cmdlet-with-script-sharing-support"></a>スクリプト共有がサポートされている Set-PSRepository コマンドレット
 
 **ScriptSourceLocation** および **ScriptPublishLocation** を PSRepository に追加するには、Set-PSRepository コマンドレットを使用します。
 ```powershell
@@ -74,10 +72,4 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 97bdd8ed6278fc5d45b34adf50ef8a194966ef0c
-
+ms.openlocfilehash: 77960d8876a7b0bc928158a04b26735aa6be517b
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 現在の場所の管理
+# <a name="managing-current-location"></a>現在の場所の管理
 ファイル エクスプローラーでフォルダー システムを移動している場合、通常は特定の作業場所 (現在開いているフォルダー) があります。 現在のフォルダーの項目は、クリックして簡単に操作できます。 Cmd.exe などのコマンド ライン インターフェイスで、特定のファイルと同じフォルダーにいる場合は、ファイルへのパス全体を指定する代わりに、比較的短い形式の名前を指定することでアクセスできます。 現在のディレクトリは、作業ディレクトリと呼ばれます。
 
 Windows PowerShell は、**Location** という名詞を使用して作業ディレクトリを参照し、場所を調べて操作するコマンドレットのファミリを実装しています。
 
-### 現在の場所の取得 (Get-Location)
+### <a name="getting-your-current-location-get-location"></a>現在の場所の取得 (Get-Location)
 現在のディレクトリの場所のパスを判断するには、**Get-Location** コマンドを入力します。
 
 ```
@@ -32,7 +30,7 @@ C:\Documents and Settings\PowerUser
 > [!NOTE]
 > Get-Location コマンドレットは、BASH シェルの **pwd** コマンドと似ています。 Set-Location コマンドレットは、Cmd.exe の **cd** コマンドと似ています。
 
-### 現在の場所の設定 (Set-Location)
+### <a name="setting-your-current-location-set-location"></a>現在の場所の設定 (Set-Location)
 **Get-Location** コマンドは、**Set-Location** コマンドと共に使用されます。 **Set-Location** コマンドでは、現在のディレクトリの場所を指定できます。
 
 ```
@@ -90,7 +88,7 @@ chdir -Path .. -PassThru
 sl -Path HKLM:\SOFTWARE -PassThru
 ```
 
-### 最近使用した場所の保存と呼び出し (Push-Location と Pop-Location)
+### <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>最近使用した場所の保存と呼び出し (Push-Location と Pop-Location)
 場所を変更する場合、これまでいた場所を把握して、以前の場所に戻るにことができるようにしておくと便利です。 Windows PowerShell の **Push-Location** コマンドレットは、これまでいたディレクトリのパスの順序付けされた履歴 ("スタック") を作成し、補完的な **Pop-Location** コマンドレットを使用して、ディレクトリのパスの履歴を戻ることができます。
 
 たとえば、Windows PowerShell は、通常ユーザーのホーム ディレクトリで開始されます。
@@ -171,10 +169,4 @@ Set-Location : Cannot find path 'D:\' because it does not exist.
 ```
 
 コマンド ライン インターフェイスを使用している場合、利用可能な物理ドライブを確認するのにファイル エクスプローラーを使用するのは便利ではありません。 また、ファイル エクスプローラーは、すべての Windows PowerShell ドライブを表示するわけではありません。 Windows PowerShell は、Windows PowerShell ドライブを操作するための一連のコマンドの提供しており、それについては次で説明します。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

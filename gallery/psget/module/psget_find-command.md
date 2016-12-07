@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_find command
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 7d46f02106785b0f94f73e60231fb4623002cfb6
-
+ms.openlocfilehash: 99091130ea89023495e5e3aacafb292f67f2db30
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Find-Command
+# <a name="find-command"></a>Find-Command
 
 モジュール内の PowerShell コマンドを検索します。
 
-## 説明
+## <a name="description"></a>説明
 Find-Command コマンドレットは、コマンドレット、エイリアス、関数、ワークフローなどの PowerShell コマンドを検索します。 Find-Command は、登録されているリポジトリ内のモジュールを検索します。
 このコマンドレットが検索するコマンドごとに、PSGetCommandInfo オブジェクトを返します。 PSGetCommandInfo オブジェクトを Install-Module コマンドレットに渡して、コマンドを含むモジュールをインストールできます。
 
@@ -32,16 +30,16 @@ Find-Command コマンドレットは、コマンドレット、エイリアス�
 - Find-Command では、-Filter パラメーターを使用してリポジトリ固有の検索言語をフィルター処理できます。
 - Find-Command では、登録されているリポジトリのすべてまたは一部からモジュール上でフィルター処理できます。
 
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 ```powershell
 Get-Command -Name Find-Command -Module PowerShellGet -Syntax
 ```
 
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Find-Command](http://go.microsoft.com/fwlink/?LinkId=733636)
 
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 ```powershell
 
 # Find a specific command
@@ -83,10 +81,4 @@ Find-Command -Filter RBAC
 Find-Command -Tag Azure, DSC
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

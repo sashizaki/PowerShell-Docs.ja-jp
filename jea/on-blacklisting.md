@@ -8,13 +8,11 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "ブラックリストへの登録"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 8892e5e08a763fbc66d782bbc9252d1f3a7dcfcf
-
+ms.openlocfilehash: e823cc0b130500fb7ea60e65acf27f90ad3f3802
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-### ブラックリストへの登録
+### <a name="on-blacklisting"></a>ブラックリストへの登録
 JEA を一通り試したら、コマンドをブラックリストに登録できるか気になるかもしれません。
 これはもっともな要求ですが、現時点では次の理由で JEA ではその予定はありません。
 
@@ -32,10 +30,4 @@ JEA を通じて公開するコマンドの機能はご自身で把握してい�
 特定の操作を確実に実行されないようにするには、公開するすべてのコマンドを理解しておくことが不可欠です。
 ホワイトリストまたはブラックリストの使用の有無にかかわらず、ご自身の判断のもと、公開するコマンドを選択してください。
 ブラックリストで公開されるコマンドは管理することが困難なため、JEA は代わりにホワイトリストを使って実装されます。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

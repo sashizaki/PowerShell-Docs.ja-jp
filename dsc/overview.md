@@ -7,24 +7,22 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 1a796658eb30bdf5c37ea3677f94767260a34b45
-
+ms.openlocfilehash: 2dff393684eb46aab6853010cebc76d5ca4b93a8
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell Desired State Configuration の概要 
+# <a name="windows-powershell-desired-state-configuration-overview"></a>Windows PowerShell Desired State Configuration の概要 
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 このトピックでは、Windows PowerShell における Windows PowerShell Desired State Configuration (DSC) 機能について説明します。 このトピックでは、DSC の概要を把握し、DSC を理解して使用するために必要なドキュメント リソースを見つけることができます。
 
-## 機能の説明
+## <a name="feature-description"></a>機能の説明
 DSC は、ソフトウェア サービスの構成データを展開および管理し、これらのサービスの実行環境を管理できる、Windows PowerShell の新しい管理プラットフォームです。
 
 DSC は、ソフトウェア環境をどのように構成するかを宣言によって指定するために使用する、Windows PowerShell の言語拡張、新しい Windows PowerShell コマンドレット、およびリソースのセットを提供します。 また、既存の構成を保守し、管理するための手段も提供します。
 
-## 実際の適用例
+## <a name="practical-applications"></a>実際の適用例
 一連のコンピューター (ターゲット ノードとも呼ばれます) を自動化された方法で構成および管理するために、組み込みの DSC リソースを使用できるシナリオ例を次に示します。
 
 * サーバーの役割と機能の有効化または無効化
@@ -38,7 +36,7 @@ DSC は、ソフトウェア環境をどのように構成するかを宣言に�
 * 望ましい状態からずれた構成の修正
 * 特定のノードでの実際の構成状態の検出
 
-## 主要概念
+## <a name="key-concepts"></a>主要概念
 DSC は、システムの構成、展開、および管理に使用する宣言型プラットフォームです。 次の 3 つの主要なコンポーネントで構成されます。
 
 * [構成](configurations.md)は、リソースのインスタンスを定義および構成する宣言型の PowerShell スクリプトです。 構成を実行すると、DSC (および構成によって呼び出されるリソース) は、構成によってレイアウトされた状態でシステムが存在するように、単に、指定されたことを実現します。 DSC 構成は、べき等でもあります。ローカル構成マネージャー (LCM) によって、構成によって宣言された状態でマシンが構成されることが、継続的に保証されます。
@@ -47,14 +45,8 @@ DSC は、システムの構成、展開、および管理に使用する宣言�
 
 DSC には、構成の作成を許可し、DSC リソースのビルドに役立ち、構成を呼び出して、LCM を管理する、さまざまな新しい言語キーワード、コマンドレット、およびツールも含まれています。 これらのコマンドレットの多くは、Windows 8.1 の PSDesiredStateConfiguration モジュールの一部として含まれています (`Start-DscConfiguration`、`Set-DscLocalConfigurationManager`、および `Get-DscResource` を含む)。 xDscResourceDesigner ([PowerShell ギャラリー](https://www.powershellgallery.com/packages/xDSCResourceDesigner/)にあります) は、DSC リソースの開発を簡略化するためのコマンドレットのコレクションです。
 
-## 参照
+## <a name="see-also"></a>参照
 * [DSC 構成](configurations.md)
 * [DSC リソース](resources.md)
 * [ローカル構成マネージャーの構成](metaConfig.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

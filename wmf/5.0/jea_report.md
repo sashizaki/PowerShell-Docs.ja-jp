@@ -1,4 +1,4 @@
-# JEA のレポート
+# <a name="reporting-on-jea"></a>JEA のレポート
 JEA 構成の状態をレポートするには、次のコマンドを使用できます。
 1.  **Get-PSSessionConfiguration** は、特定のコンピューター上のすべての登録済みエンドポイントの一覧を返します。
 2.  **Get-PSSessionCapability** は、特定のユーザーが特定のエンドポイントで持つ機能についてレポートします。
@@ -32,7 +32,3 @@ Cmdlet          Restart-Service                                    3.0.0.0 Micro
 JEA セッション中にユーザーが行った_操作_についてレポートするには、次のことを行います。
 1. その JEA エンドポイントの "over-the-shoulder" トランスクリプトを有効にして、トランスクリプト ディレクトリで各ユーザーの操作の完全なログを参照します。
 2. PowerShell モジュールのログを有効にし、PowerShell イベント ログを調べます。
-
-<!--HONumber=Aug16_HO3-->
-
-

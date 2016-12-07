@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 6216f3e1a766c57a7549a3e3b4fbe76d043a8a41
-
+ms.openlocfilehash: 5f37f66a34a98a4da28f4e36f115272d44ae5fc4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 変数を使用したオブジェクトの保存
+# <a name="using-variables-to-store-objects"></a>変数を使用したオブジェクトの保存
 Windows PowerShell はオブジェクトを操作します。 Windows PowerShell では変数 (本質的には名前付きのオブジェクト) を作成し、後で使用する出力を保持できます。 他のシェルで変数を使用することに慣れている場合、Windows PowerShell の変数はテキストではなくオブジェクトであることを覚えていてください。
 
 変数は常に最初の文字が $ で指定され、名前には任意の英数字またはアンダースコアを含めることができます。
 
-### 変数の作成
+### <a name="creating-a-variable"></a>変数の作成
 次のように有効な変数名を入力することで、変数を作成できます。
 
 ```
@@ -58,7 +56,7 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {...
 ProviderPath Property   System.String ProviderPath {get;}
 ```
 
-### 変数の操作
+### <a name="manipulating-variables"></a>変数の操作
 Windows PowerShell は変数を操作するいくつかのコマンドを提供します。 次のように入力すると、完全な一覧が読みやすい形式で表示されます。
 
 ```
@@ -87,7 +85,7 @@ Performing operation "Remove Variable" on Target "Name: Error".
 Get-ChildItem variable:
 ```
 
-### Cmd.exe 変数の使用
+### <a name="using-cmdexe-variables"></a>Cmd.exe 変数の使用
 Windows PowerShell は、Cmd.exe ではありませんが、コマンド シェル環境で実行され、Windows のあらゆる環境で使用できるものと同じ変数を使用できます。 これらの変数は **env** という名前のドライブを介して公開されます。 これらの変数を表示するには次のように入力します。
 
 ```
@@ -102,10 +100,4 @@ C:\WINDOWS
 ```
 
 さらに、Windows PowerShell 内から環境変数を作成および変更することもできます。 Windows PowerShell からアクセスされる環境変数は、Windows の他の場所の環境変数に適用される通常の規則に準拠しています。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

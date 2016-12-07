@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
-translationtype: Human Translation
-ms.sourcegitcommit: 641b6b2169824296b459691e67cdb771f3a07294
-ms.openlocfilehash: 63ea621ed8eb31a3be8394d99fd05dc8f663769f
-
+ms.openlocfilehash: 3213279588df19a677940b67fa1752a29a678e36
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell ISE スクリプト オブジェクト モデルの目的
+# <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE スクリプト オブジェクト モデルの目的
   オブジェクトは、Windows PowerShell Integrated Scripting Environment (ISE) のフォームと機能に関連付けられます。 オブジェクト モデル リファレンスは、これらのオブジェクトが公開するメンバー プロパティとメソッドに関する詳細を提供します。 これらのメソッドとプロパティに直接アクセスするためのスクリプトを使用する方法を示す例が提供されています。 スクリプト オブジェクト モデルを使用すると、次のさまざまなタスクが容易になります。
 
-## Windows PowerShell ISE の外観のカスタマイズ
+## <a name="customizing-the-appearance-of-windows-powershell-ise"></a>Windows PowerShell ISE の外観のカスタマイズ
  オブジェクト モデルを使用して、アプリケーションの設定およびオプションを変更することができます。 たとえば、次のように変更できます。
 
 -   エラー、警告、詳細出力、デバッグ出力の色を変更することができます。
@@ -32,7 +30,7 @@ ms.openlocfilehash: 63ea621ed8eb31a3be8394d99fd05dc8f663769f
 
 -   スクリプト ウィンドウと出力ウィンドウが並べて表示されるビューと、スクリプト ウィンドウが出力ウィンドウの上に表示されるビューを切り替えることができます。 コマンド ウィンドウは、出力ウィンドウの上部または下部にドッキングできます。
 
-## Windows PowerShell ISE の機能の拡張
+## <a name="enhancing-the-functionality-of-windows-powershell-ise"></a>Windows PowerShell ISE の機能の拡張
  オブジェクト モデルを使用して、Windows PowerShell ISE の機能を拡張することができます。 たとえば、次のように操作できます。
 
 -   Windows PowerShell ISE 自体のインスタンスを追加して変更します。 たとえば、新しいメニュー項目を追加し、そのメニュー項目をスクリプトにマップして、メニューを変更することができます。
@@ -67,18 +65,12 @@ ms.openlocfilehash: 63ea621ed8eb31a3be8394d99fd05dc8f663769f
 
     -   ファイルを選択します。
 
-## タスクの自動化
+## <a name="automating-tasks"></a>タスクの自動化
  スクリプト オブジェクト モデルを使用して、よく行う操作のキーボード ショートカットを作成することができます。
 
-## 参照
- - [ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md) 
- - [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- - [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+## <a name="see-also"></a>参照
+- [ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md) 
+- [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 
   
-
-
-
-<!--HONumber=Sep16_HO3-->
-
-

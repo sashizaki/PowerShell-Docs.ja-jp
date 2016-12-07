@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 97714d3fa9a1c00fb3d2e79cc873280ca945a840
-ms.openlocfilehash: df6869cdf1d1f6c823704e4de2882e90cb672ad2
-
+ms.openlocfilehash: 1bb0e73a1aae6926040373e017494c2ef5e5fd3e
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC WindowsFeatureSet リソース
+# <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -22,7 +20,7 @@ Windows PowerShell Desired State Configuration (DSC) の **WindowsFeatureSet** �
 
 Windows 機能の数を同じ状態に構成するときにこのリソースを使用します。
 
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 WindowsFeatureSet [string] #ResourceName
@@ -38,7 +36,7 @@ WindowsFeatureSet [string] #ResourceName
 }
 ```
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -50,7 +48,7 @@ WindowsFeatureSet [string] #ResourceName
 | DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 | ソース| 必要に応じて、インストールに使用するソース ファイルの場所を示します。| 
 
-## 例
+## <a name="example"></a>例
 
 次の構成では、**Web-Server** (IIS) 機能、**SMTP Server** 機能、各機能のすべてのサブ機能がインストールされます。
 
@@ -70,10 +68,4 @@ configuration FeatureSetTest
     }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

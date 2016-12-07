@@ -8,12 +8,10 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
-translationtype: Human Translation
-ms.sourcegitcommit: cb3db96ff87078756166df9f90d44d88cdfd155f
-ms.openlocfilehash: 3543503655cc506c4c0f8a7f3d1056c05a66ecba
-
+ms.openlocfilehash: dc85d616aac580effc7170935a3edb35e1a54e04
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>Windows PowerShell ISE でプロファイルを使用する方法
 このトピックでは、Windows PowerShell® Integrated Scripting Environment (ISE) でプロファイルを使用する方法について説明します。 このセクションのタスクを実行する前に、[about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630)) を確認するか、またはコンソール ウィンドウに「`Get-Help about_Profiles`」と入力して **Enter** キーを押すことをお勧めします。
 
@@ -84,10 +82,4 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 ## <a name="see-also"></a>参照
 - [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))
 - [Windows PowerShell ISE の使用](Using-the-Windows-PowerShell-ISE.md)
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

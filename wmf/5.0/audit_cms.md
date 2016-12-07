@@ -1,4 +1,4 @@
-# Cryptographic Message Syntax (CMS) コマンドレット
+# <a name="cryptographic-message-syntax-cms-cmdlets"></a>Cryptographic Message Syntax (CMS) コマンドレット
 
 Cryptographic Message Syntax コマンドレットは、[RFC5652](http://tools.ietf.org/html/rfc5652) で説明されているように暗号によってメッセージを保護するための IETF 標準書式を使用して、コンテンツの暗号化と暗号化解除をサポートします。
 
@@ -82,7 +82,3 @@ Hello World
 ```powershell
 dir -DocumentEncryptionCert
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

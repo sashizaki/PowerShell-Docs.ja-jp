@@ -8,12 +8,10 @@ contributor: kriscv
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 0c136264c9fe4e92771e4423011c2fa959f30e93
 ms.openlocfilehash: 21f26830cdc20a90ce48aa09bc7013d733242ae9
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="install-and-configure-wmf-51-preview"></a>WMF 5.1 のインストールと構成 (プレビュー) #
 
 ## <a name="install-net-46"></a>.Net 4.6 のインストール
@@ -63,10 +61,4 @@ Windows Server 2008 R2 SP1 または Windows 7 SP1 に WMF 5.1 をインスト�
 - [SHA-2 コード署名](https://technet.microsoft.com/en-us/library/security/3033929)用のセキュリティ更新プログラム。 このプログラムは、Windows カタログ ファイル用の新しい PowerShell コマンドレットを使用するときに必要です。 
 
 > **WinRM の依存関係** - Windows PowerShell Desired State Configuration (DSC) は、WinRM に依存します。 WinRM は、Windows Server 2008 R2 および Windows 7 では既定で無効になっています。 WinRM を有効にするには、Windows PowerShell 管理者特権セッションで `Set-WSManQuickConfig` を実行します。
-
-
-
-
-<!--HONumber=Nov16_HO2-->
-
 

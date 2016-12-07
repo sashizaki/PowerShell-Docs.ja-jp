@@ -1,8 +1,3 @@
-# 構成キーワードの WOW64 サポート
+# <a name="wow64-support-for-configuration-keyword"></a>構成キーワードの WOW64 サポート
 
 64 ビット コンピューターの WOW64 で、構成キーワードがサポートされるようになりました。 これは、64 ビット コンピューターで実行されている Windows PowerShell ISE (x86) などの 32 ビット プロセス内で DSC 構成を定義してコンパイルできることを意味します。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

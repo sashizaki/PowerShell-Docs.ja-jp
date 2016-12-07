@@ -8,25 +8,23 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "ロール機能"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 81fd386d58576a8930093b4f18ce36a4ff6cecd0
-ms.openlocfilehash: a3dd4a217f5b1fd80e97adf802c65073ca015bbc
-
+ms.openlocfilehash: d5f6311d74e47f2fa1a93909c244cddf114b0229
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="role-capabilities"></a>ロール機能
 
-# ロール機能
-
-## 概要
+## <a name="overview"></a>概要
 前のセクションで、"RoleDefinitions" フィールドは、どのグループがどのロール機能にアクセスできるかを定義することを説明しました。
 "ロール機能とは何か" と思うかもしれません。
 このセクションでは、その疑問に答えます。  
 
-## PowerShell ロール機能の概要
+## <a name="introducing-powershell-role-capabilities"></a>PowerShell ロール機能の概要
 PowerShell ロール機能は、ユーザーが JEA エンドポイントで "何を" 実行できるかを定義します。
 それらは、表示されるコマンドやアプリケーションなどを示す詳細なホワイトリストです。
 ロール機能は、拡張子が ".psrc" のファイルによって定義されます。
 
-## ロール機能の内容
+## <a name="role-capability-contents"></a>ロール機能の内容
 前に使用したデモ用のロール機能ファイルを調べて変更することから始めます。
 環境全体にセッション構成を展開しているが、ユーザーに公開される機能の変更を求めるフィードバックを受けていると想像してください。
 マシンを再起動する機能を要求しているオペレーターがいます。彼らは、ネットワーク設定に関する情報も取得できることを望んでいます。
@@ -102,7 +100,7 @@ Restart-Service WSearch # This should fail
 Exit-PSSession
 ```
 
-## ロール機能の作成
+## <a name="role-capability-creation"></a>ロール機能の作成
 次のセクションで、AD ヘルプ デスク ユーザー用の JEA エンドポイントを作成します。
 準備として、そのセクションで値を入力するための空白のロール機能ファイルを作成します。
 ロール機能は、セッションの開始時に解決されるように、有効な PowerShell モジュールの "RoleCapabilities" フォルダー内に作成する必要があります。
@@ -133,7 +131,7 @@ New-PSRoleCapabilityFile -Path 'C:\Program Files\WindowsPowerShell\Modules\Conto
 以上で、空白のロール機能ファイルが作成されました。
 これは、次のセクションで使用します。
 
-## 主要概念
+## <a name="key-concepts"></a>主要概念
 **ロール機能 (.psrc)**: ユーザーが JEA エンドポイントで "何を" 実行できるかを定義するファイルです。
 それは、表示されるコマンドやコンソール アプリケーションなどを示す詳細なホワイトリストです。
 PowerShell でロール機能を検出するには、有効な PowerShell モジュールの "RoleCapabilities" フォルダーにそれらを配置する必要があります。
@@ -141,10 +139,4 @@ PowerShell でロール機能を検出するには、有効な PowerShell モジ
 **PowerShell モジュール**: PowerShell 機能のパッケージです。
 PowerShell 関数、コマンドレット、DSC リソース、ロール機能などを含めることができます。
 PowerShell モジュールが自動的に読み込まれるようにするには、`$env:PSModulePath` のパスの下に配置する必要があります。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

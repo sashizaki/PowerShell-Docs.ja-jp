@@ -8,17 +8,15 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "デモ エンドポイントを作り直す"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: d20ea8418cb7389d756de94ea752cf604b8d07af
-ms.openlocfilehash: acd2cfbd038250a26236c875d0e8b03a32cd84f9
-
+ms.openlocfilehash: 4a56272b6f995500d443d441f5e03db85dac6f96
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# デモ エンドポイントを作り直す
+# <a name="remake-the-demo-endpoint"></a>デモ エンドポイントを作り直す
 このセクションでは、前のセクションで使用したデモ エンドポイントの完全なレプリカを生成する方法について説明します。
 ここでは、PowerShell セッション構成とロール機能を含む、JEA を理解するために必要な中心概念について説明します。
 
-## PowerShell セッション構成
+## <a name="powershell-session-configurations"></a>PowerShell セッション構成
 前のセクションで JEA を使用したとき、次のコマンドを実行することから始めました。
 
 ```PowerShell
@@ -41,14 +39,14 @@ Administrator PowerShell プロンプトで次のコマンドを実行するこ�
 Get-PSSessionConfiguration
 ```
 
-## PowerShell セッション構成ファイル
+## <a name="powershell-session-configuration-files"></a>PowerShell セッション構成ファイル
 新しいセッション構成は、新しい *PowerShell セッション構成ファイル*を登録することで作成できます。
 セッション構成ファイルのファイル拡張子は ".pssc" です。
 セッション構成ファイルは、New-PSSessionConfigurationFile コマンドレットを使用して生成できます。
 
 この後、JEA 用の新しいセッション構成を作成して登録します。
 
-## PowerShell セッション構成を生成して変更する
+## <a name="generate-and-modify-your-powershell-session-configuration"></a>PowerShell セッション構成を生成して変更する
 次のコマンドを実行して、PowerShell セッション構成の "スケルトン" ファイルを生成します。
 
 ```PowerShell
@@ -107,7 +105,7 @@ PowerShell トランスクリプトについて詳しくは、[こちらのブ�
 
 最後に、変更を *JEADemo2.pssc* に保存します。
 
-## PowerShell セッション構成を適用する
+## <a name="apply-the-powershell-session-configuration"></a>PowerShell セッション構成を適用する
 
 セッション構成ファイルからエンドポイントを作成するには、ファイルを登録する必要があります。
 これを行うには、次の情報が必要です。
@@ -123,7 +121,7 @@ Register-PSSessionConfiguration -Name 'JEADemo2' -Path "$env:ProgramData\JEAConf
 
 以上で、 JEA エンドポイントが設定されました。
 
-## エンドポイントをテストする
+## <a name="test-out-your-endpoint"></a>エンドポイントをテストする
 「[JEA の使用](using-jea.md)」セクションに示されている手順をもう一度実行して、新しいエンドポイントが意図したとおりに動作していることを確認します。
 `Enter-PSSession` に構成名を指定するときに、新しいエンドポイント名 (JEADemo2) を必ず使用してください。
 
@@ -131,7 +129,7 @@ Register-PSSessionConfiguration -Name 'JEADemo2' -Path "$env:ProgramData\JEAConf
 Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdminCred
 ```
 
-## 主要概念
+## <a name="key-concepts"></a>主要概念
 **PowerShell セッション構成**: *PowerShell エンドポイント* と呼ばれることもあります。これは、ユーザーが接続して PowerShell の機能にアクセスする比喩的な "場所" です。
 `Get-PSSessionConfiguration` を実行することで、システムに登録されているセッション構成を一覧表示できます。
 特別な方法で構成した PowerShell セッション構成を *JEA エンドポイント*と呼ぶことができます。
@@ -149,10 +147,4 @@ JEA エンドポイントでは、このフィールドは RestrictedRemoteServe
 **PowerShell トランスクリプト**: PowerShell セッションの "肩越しの" ビューを含むファイルです。
 TranscriptDirectory フィールドを使用して、JEA セッションのトランスクリプトを生成するように PowerShell を設定できます。
 トランスクリプトについて詳しくは、[こちらのブログ投稿](https://technet.microsoft.com/en-us/magazine/ff687007.aspx)をご覧ください。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

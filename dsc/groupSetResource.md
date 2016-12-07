@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: bf36abde6a3bfff4c2e49868465e089cc886d031
-ms.openlocfilehash: 45fe96c43a834566d398820e3d94e3be923bb385
-
+ms.openlocfilehash: 6e5ea98febfe7541f35a84c37df73df580654340
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC GroupSet リソース
+# <a name="dsc-groupset-resource"></a>DSC GroupSet リソース
 
 > 適用先: Windows PowerShell 5.0
 
@@ -21,7 +19,7 @@ PowerShell Desired State Configuration (DSC) の **GroupSet** リソースは、
 
 このリソースは、複数のグループに対して同じメンバー一覧の追加/削除を行うとき、複数のグループを削除するとき、同じメンバー一覧の複数のグループを追加するときに使用します。
 
-##構文##
+##<a name="syntax"></a>構文##
 ```
 Group [string] #ResourceName
 {
@@ -34,7 +32,7 @@ Group [string] #ResourceName
 }
 ```
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -46,7 +44,7 @@ Group [string] #ResourceName
 | MembersToInclude| このプロパティは、グループの既存のメンバーシップにメンバーを追加するために使用します。 このプロパティの値は、*Domain*\\*UserName* 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**Members** プロパティは使用しないでください。 併用した場合、エラーが発生します。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は DependsOn = "[ResourceType]ResourceName" になります。| 
 
-## 例 1
+## <a name="example-1"></a>例 1
 
 次に、"myGroup" と "myOtherGroup" という 2 つのグループが存在することを保証する例を示します。 
 
@@ -81,11 +79,5 @@ GroupSetTest -ConfigurationData $cd
 ```
 
 >**注:** この例では、わかりやすくするためにプレーン テキストの資格情報を使用しています。 構成 MOF ファイル内の資格情報を暗号化する方法の詳細については、「[MOF ファイルのセキュリティ保護](secureMOF.md)」を参照してください。
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

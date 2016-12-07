@@ -94,8 +94,3 @@
 ### [OData エンドポイントに基づく PowerShell コマンドレットの生成](5.0/odata_overview.md)
 ### [PowerShell を使用したネットワーク スイッチの管理](5.0/networkswitch_overview.md)
 ### [ソフトウェア インベントリ ログ (SIL)](5.0/sil_overview.md)
-
-
-<!--HONumber=Nov16_HO4-->
-
-

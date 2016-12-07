@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 1fe624c2532e44ed675762f3c141934fb4f0b60d
-
+ms.openlocfilehash: 97d97a36830088d6ee1296cda5310e087fc41893
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC リソース メソッドの直接呼び出し
+# <a name="calling-dsc-resource-methods-directly"></a>DSC リソース メソッドの直接呼び出し
 
 >適用先: Windows PowerShell 5.0
 
@@ -25,7 +23,7 @@ ms.openlocfilehash: 1fe624c2532e44ed675762f3c141934fb4f0b60d
 
 リソースのメソッドを直接呼び出す例を次に示します。
 
-## ファイルが存在することを確認します
+## <a name="ensure-a-file-is-present"></a>ファイルが存在することを確認します
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Set -Property @{
@@ -34,7 +32,7 @@ $result = Invoke-DscResource -Name File -Method Set -Property @{
 $result | fl
 ```
 
-## ファイルが存在することをテストします
+## <a name="test-that-a-file-is-present"></a>ファイルが存在することをテストします
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Test -Property @{
@@ -43,7 +41,7 @@ $result = Invoke-DscResource -Name File -Method Test -Property @{
 $result | fl
 ```
 
-## ファイルの内容を取得します
+## <a name="get-the-contents-of-file"></a>ファイルの内容を取得します
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Get -Property @{
@@ -54,14 +52,8 @@ $result.ItemValue | fl
 
 >**注:** 複合リソースのメソッドを直接呼び出すことはできません。 代わりに、複合リソースの基になるリソースのメソッドを呼び出してください。
 
-## 参照
+## <a name="see-also"></a>参照
 - [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md) 
 - [PowerShell クラスを使用したカスタム DSC リソースの記述](authoringResourceClass.md)
 - [DSC リソースのデバッグ](debugResource.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

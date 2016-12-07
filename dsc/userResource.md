@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: 5c7878bdfc8a3f118b569a9e43be6c7e4333ad2c
-
+ms.openlocfilehash: 84ed3408cfef1dbc99f6f3147ae36be09bca67e4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#DSC User リソース#
+#<a name="dsc-user-resource"></a>DSC User リソース#
 
  
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -22,7 +20,7 @@ ms.openlocfilehash: 5c7878bdfc8a3f118b569a9e43be6c7e4333ad2c
 PowerShell Desired State Configuration (DSC) の __User__ リソースは、ターゲット ノード上でローカル ユーザー アカウントを管理するためのメカニズムを備えています。
 
 
-##構文##
+##<a name="syntax"></a>構文##
 
 ```
 User [string] #ResourceName
@@ -40,7 +38,7 @@ User [string] #ResourceName
 }
 ```
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 |  プロパティ  |  説明   | 
 |---|---| 
 | UserName| 特定の状態を保証するアカウント名を示します。| 
@@ -54,7 +52,7 @@ User [string] #ResourceName
 | PasswordNeverExpires| パスワードの有効期限が切れるかどうかを示します。 このアカウントのパスワードの有効期限が切れないようにするにはこのプロパティを __$true__ に設定し、パスワードの有効期限が切れるようにする場合は __$false__ を設定します。 既定値は __$false__ です。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 
-## 例
+## <a name="example"></a>例
 
 ```powershell
 User UserExample
@@ -65,10 +63,4 @@ User UserExample
     DependsOn = “[Group]GroupExample" # Configures GroupExample first
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

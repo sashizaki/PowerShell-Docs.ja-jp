@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: b414a01bcd111143791a5fac77e61ce309a0a5c5
-ms.openlocfilehash: b5de1100450a89796c20a5bbb2e71f7759374b02
-
+ms.openlocfilehash: a8c2094cbef1bb14c4a9082ff78fae78ec0c2e65
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# PowerShell クラスを使用したカスタム DSC リソースの記述
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell クラスを使用したカスタム DSC リソースの記述
 
 > 適用先: Windows PowerShell 5.0
 
@@ -25,7 +23,7 @@ Windows PowerShell 5.0 の PowerShell クラスの導入により、クラスを
 
 DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」をご覧ください。
 
-## クラス リソースのフォルダー構造
+## <a name="folder-structure-for-a-class-resource"></a>クラス リソースのフォルダー構造
 
 PowerShell クラスを使用して DSC カスタム リソースを実装するには、次のフォルダー構造を作成します。 クラスは **MyDscResource.psm1** で定義し、モジュール マニフェストは **MyDscResource.psd1** で定義します。
 
@@ -36,7 +34,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
            MyDscResource.psd1 
 ```
 
-## クラスの作成
+## <a name="create-the-class"></a>クラスの作成
 
 PowerShell クラスを作成するには、class キーワードを使用します。 クラスを DSC リソースとして指定するには、**DscResource()** 属性を使用します。 クラスの名前は、DSC リソースの名前です。
 
@@ -46,7 +44,7 @@ class FileResource {
 }
 ```
 
-### プロパティの宣言
+### <a name="declare-properties"></a>プロパティの宣言
 
 DSC リソースのスキーマは、クラスのプロパティとして定義します。 3 つのプロパティを次のように宣言します。
 
@@ -81,7 +79,7 @@ enum Ensure
 }
 ```
 
-### メソッドの実装
+### <a name="implementing-the-methods"></a>メソッドの実装
 
 **Get()**、**Set()**、および **Test()** メソッドは、スクリプト リソースの **Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** 関数に似ています。
 
@@ -218,7 +216,7 @@ enum Ensure
     }
 ```
 
-### 完全なファイル
+### <a name="the-complete-file"></a>完全なファイル
 完全なクラス ファイルは次のとおりです。
 
 ```powershell
@@ -417,7 +415,7 @@ class FileResource
 ```
 
 
-## マニフェストの作成
+## <a name="create-a-manifest"></a>マニフェストの作成
 
 クラスベースのリソースを DSC エンジンで使用できるようにするには、マニフェスト ファイルに、リソースをエクスポートするようにモジュールに指示する **DscResourcesToExport** ステートメントを含める必要があります。 この例では、マニフェストは次のようになります。
 
@@ -455,7 +453,7 @@ PowerShellVersion = '5.0'
 } 
 ```
 
-## リソースのテスト
+## <a name="test-the-resource"></a>リソースのテスト
 
 既に説明したように、クラスとマニフェスト ファイルをフォルダー構造で保存した後で、新しいリソースを使用する構成を作成できます。 DSC 構成を実行する方法については、「[構成の適用](enactingConfigurations.md)」をご覧ください。 次の構成では、`c:\test\test.txt` のファイルが存在するかどうかを確認し、存在しない場合は、ファイルを `c:\test.txt` からコピーします (構成を実行する前に `c:\test.txt` を作成する必要があります)。
 
@@ -474,13 +472,7 @@ Test
 Start-DscConfiguration -Wait -Force Test
 ```
 
-## 参照
-### 概念
-[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
+## <a name="see-also"></a>参照
+### <a name="concepts"></a>概念
+[Build Custom Windows PowerShell Desired State Configuration Resources (カスタム Windows PowerShell Desired State Configuration のビルド)](authoringResource.md)
 

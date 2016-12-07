@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
 ms.openlocfilehash: 2ba44df5dd6c91371cbbfe95d48184a4ff4a7738
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Linux 用 DSC の nxFile リソース
+# <a name="dsc-for-linux-nxfile-resource"></a>Linux 用 DSC の nxFile リソース
 
 PowerShell Desired State Configuration (DSC) の **nxFile** リソースは、Linux ノード上でファイルとディレクトリを管理するためのメカニズムを備えています。
 
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 nxFile <string> #ResourceName
@@ -39,7 +37,7 @@ nxFile <string> #ResourceName
 }
 ```
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ |  説明 | 
 |---|---|
@@ -56,7 +54,7 @@ nxFile <string> #ResourceName
 | モード| 8 進数またはシンボリック表記で、リソースに必要なアクセス許可を指定します。 (たとえば、777 または rwxrwxrwx)。 シンボリック表記を使用する場合は、ディレクトリまたはファイルを示す最初の文字を指定しないでください。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 
-## 追加情報
+## <a name="additional-information"></a>追加情報
 
 
 Linux と Windows の既定では、テキスト ファイルで異なる改行文字を使用して、これにより、__nxFile__ を使用して Linux コンピューターで一部のファイルを構成すると、予期しない結果が発生することがあります。 予期しない改行文字によって引き起こされる問題を回避しながら Linux ファイルのコンテンツを管理する複数の方法があります。
@@ -134,7 +132,7 @@ nxFile resolvConf
 }
 ```
 
-## 例
+## <a name="example"></a>例
 
 次の例では、ディレクトリ `/opt/mydir` が存在し、指定されたコンテンツを持つファイルがこのディレクトリが存在するようにしています。
 
@@ -161,10 +159,4 @@ nxFile FileExample
 } 
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

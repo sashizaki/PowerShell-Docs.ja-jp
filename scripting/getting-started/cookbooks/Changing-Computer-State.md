@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 1779b9de13a30a43236e24793e5196261a7db77f
-
+ms.openlocfilehash: 60652b67a98179f0dab137e3360766d2e6936d81
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# コンピューターの状態を変更する
+# <a name="changing-computer-state"></a>コンピューターの状態を変更する
 Windows PowerShell でコンピューターをリセットするには、標準のコマンド ライン ツールまたは WMI クラスを使用します。 Windows PowerShell は単にツールを実行するために使用するだけですが、Windows PowerShell でコンピューターの電力状態を変更する手順には、Windows PowerShell での外部ツールの使用方法に関する重要な詳細も含まれています。
 
-### コンピューターをロックする
+### <a name="locking-a-computer"></a>コンピューターをロックする
 一般的に入手可能なツールを使ってコンピューターを直接ロックする唯一の方法は、**user32.dll** の **LockWorkstation()** 関数を呼び出すことです。
 
 ```
@@ -30,7 +28,7 @@ Windows XP の場合など、ユーザーの簡易切り替えが有効なとき
 
 ターミナル サーバーで特定のセッションをシャットダウンするには、**tsshutdn.exe** コマンド ライン ツールを使用します。
 
-### 現在のセッションからログオフする
+### <a name="logging-off-the-current-session"></a>現在のセッションからログオフする
 ローカル システム上でセッションからログオフする場合、いくつかの方法が考えられます。 最も簡単な方法は、リモート デスクトップ/ターミナル サービスのコマンドライン ツールである **logoff.exe** を使用することです (詳細については、Windows PowerShell プロンプトで **logoff /?** と入力してください)。 現在アクティブなセッションからログオフするには、引数を付けずに **logoff** と入力します。
 
 また、**shutdown.exe** ツールにログオフのオプションを指定することもできます。
@@ -47,7 +45,7 @@ shutdown.exe -l
 
 詳細について、および Win32Shutdown メソッドの他の機能については、MSDN の「Win32_OperatingSystem クラスの Win32Shutdown メソッド」をご覧ください。
 
-### コンピューターをシャットダウンまたは再起動する
+### <a name="shutting-down-or-restarting-a-computer"></a>コンピューターをシャットダウンまたは再起動する
 通常、コンピューターのシャットダウンと再起動は同じ種類に属するタスクです。 コンピューターをシャットダウンできるツールであれば、コンピューターを再起動することもできます。逆にコンピューターを再起動できるツールであれば、コンピューターをシャットダウンすることもできます。 Windows PowerShell からコンピューターを簡単に再起動する方法としては、2 とおりの方法があります。 Tsshutdn.exe または Shutdown.exe に適切な引数を指定して実行することです。 詳しい使用方法は、**tsshutdn.exe ?** または **shutdown.exe ?** を実行すると参照できます。
 
 シャットダウン操作と再起動操作は、Windows PowerShell から直接 **Win32_OperatingSystem** を使用して実行することもできます。
@@ -63,10 +61,4 @@ shutdown.exe -l
 ```
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(2)
 ```
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

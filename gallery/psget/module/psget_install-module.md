@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_install module
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 68e7ba36a723b0cb863ed890834855fa5f531240
-
+ms.openlocfilehash: 82e4bb1ec76b1a51e1a99de85bc77a5429d46e26
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Install-Module
+# <a name="install-module"></a>Install-Module
 
 PowerShell モジュールをオンライン リポジトリからローカル コンピューターにインストールします。
 
-## 説明
+## <a name="description"></a>説明
 
 Install-Module コマンドレットは、オンライン ギャラリーから 1 つ以上のモジュールをダウンロードして検証し、ローカル コンピューターの指定したインストール スコープにインストールします。
 
@@ -35,7 +33,7 @@ Install-Module コマンドレットは、指定の条件を満たす 1 つ以�
 - -Force は、インストール済みのモジュールを再インストールします
 - RequiredVersion は、SxS の指定したバージョンを PowerShell バージョン 5.0 以降の既存のバージョンでインストールします。
 
-### スコープ
+### <a name="scope"></a>スコープ
 モジュールのインストール スコープを指定します。 このパラメーターに使用できる値は、AllUsers と CurrentUser です。
 
 既定のインストール スコープは AllUsers です。
@@ -44,7 +42,7 @@ AllUsers スコープでは、モジュールはコンピューターのすべ�
 
 CurrentUser スコープでは、モジュールは "$home\Documents\WindowsPowerShell\Modules" のみにインストールされるので、モジュールを使用できるのは現在のユーザーのみです。
 
-## メモ
+## <a name="notes"></a>メモ
 
 このコマンドレットは、Windows PowerShell 3.0 または今後のリリースの Windows PowerShell、Windows 7 または Windows 2008 R2、および今後のリリースの Windows で機能します。
 
@@ -61,16 +59,16 @@ CurrentUser スコープでは、モジュールは "$home\Documents\WindowsPowe
 悪意のあるコードが含まれているモジュールを実行しないようにするため、インストール済みのモジュールはインストールでは自動的にインポートされません。 セキュリティのベスト プラクティスとして、最初にモジュール内のコマンドレットまたは関数を実行する前に、モジュール コードを評価します。
 
 
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 ```powershell
 Get-Command -Name Install-Module -Module PowerShellGet -Syntax
 ```
 
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Install-Module](http://go.microsoft.com/fwlink/?LinkID=398573)
 
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 
@@ -111,7 +109,7 @@ Install-Module ContosoClient -Force
 Install-Module -Name 
 ```
 
-## パイプライン操作での Install-Module コマンドレット
+## <a name="install-module-cmdlet-in-pipeline-operations"></a>パイプライン操作での Install-Module コマンドレット
 
 ```powershell
 
@@ -138,11 +136,11 @@ Get-InstalledModule
 
 ```
 
-## PowerShell 5.0 以降の Side-by-Side バージョン サポート
+## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>PowerShell 5.0 以降の Side-by-Side バージョン サポート
 
 PowerShellGet は、Windows PowerShell 5.0 以降で実行される Install-Module、Update-Module および Publish-Module の各コマンドレットの Side-by-Side (SxS) モジュール バージョン サポートに対応しています。
 
-### Install-Module の例
+### <a name="install-module-examples"></a>Install-Module の例
 
 ```powershell
 # Install a version of the module
@@ -174,7 +172,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## モジュールを依存関係と共にインストールする
+## <a name="install-module-with-its-dependencies"></a>モジュールを依存関係と共にインストールする
 
 ```powershell
 
@@ -268,7 +266,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## エラー シナリオ
+## <a name="error-scenarios"></a>エラー シナリオ
 
 ```powershell
 
@@ -285,10 +283,4 @@ Install-Module ContosoClient,ContosoServer -RequiredVersion 2.0
 Install-Module ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

@@ -1,4 +1,4 @@
-# PowerShell リポジトリの登録
+# <a name="register-a-powershell-repository"></a>PowerShell リポジトリの登録
 内部リポジトリに対して動作するように PowerShellGet を構成できます。 これは、次の追加コマンドレットを使用して行います。
 - Register-PSRepository: 現在のユーザーのリポジトリを登録します。
 - Unregister-PSRepository: 現在のユーザーの登録済みリポジトリを削除します。
@@ -31,7 +31,3 @@ Install-Module SomeModule
 \#Removing a repository
 Unregister-PSRepository DemoRepo
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

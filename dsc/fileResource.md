@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: df9bb0362e82757ed1580cc4ace27735414a3e6d
-ms.openlocfilehash: 8c8fb7a40c066b048e1a54a741f4953e6b5a47b6
-
+ms.openlocfilehash: ba625f5130e806b3b8e14a0f6ed91fd5a1aabc54
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC ファイル リソース
+# <a name="dsc-file-resource"></a>DSC ファイル リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -22,7 +20,7 @@ Windows PowerShell Desired State Configuration (DSC) の File リソースは、
 >**注:** **MatchSource** プロパティが **$false** (既定値) に送信される場合、最初に構成が適用されるとき、コピー対象のコンテンツがキャッシュされます。 
 >構成の後続のアプリケーションは、**SourcePath** で指定された更新済みのファイルやフォルダーを確認しません。 構成が適用されるたびに **SourcePath** のファイルまたはフォルダーの更新を確認する場合、**MatchSource** を **$true** に設定します。 
 
-## 構文
+## <a name="syntax"></a>構文
 ```
 File [string] #ResourceName
 {
@@ -41,7 +39,7 @@ File [string] #ResourceName
 }
 ```
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -58,7 +56,7 @@ File [string] #ResourceName
 | 種類| 構成されているリソースがディレクトリまたはファイルのいずれであるかを示します。 リソースがディレクトリであることを示すには、このプロパティを "Directory" に設定します。 リソースがファイルであることを示すには、"File" に設定します。 既定値は "File" です。| 
 | MatchSource| 既定値の __$false__ に設定した場合、最初に構成が適用されるときにソース (たとえば、ファイル A、B、および C) 上のファイルが宛先に追加されます。 新しいファイル (D) がソースに追加された場合、構成が後で再適用された場合にも、このファイルは宛先に追加されません。 値が __$true__ の場合、構成が適用されるたびに、後でソースで検出された新しいファイル (この例のファイル D など) が宛先に追加されます。 既定値は **$false** です。| 
 
-## 例
+## <a name="example"></a>例
 
 次の例は、File リソースを使用して、("プル" サーバーなどの) ソース コンピューター上のパス `C:\Users\Public\Documents\DSCDemo\DemoSource` のディレクトリがターゲット ノードにも (すべてのサブディレクトリと共に) 存在することを保証する例を示しています。 また、完了時に確認メッセージもログに書き込まれ、ログ記録操作の前にファイル チェック操作が実行されるようにするステートメントが含まれます。
 
@@ -85,10 +83,4 @@ Configuration FileResourceDemo
     }
 }
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 
