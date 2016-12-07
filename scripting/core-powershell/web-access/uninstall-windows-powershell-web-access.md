@@ -7,12 +7,10 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: d84b13db1fa5f12a7b4f8fa7b9b8cd7fb8fbae9d
-
+ms.openlocfilehash: 9e03bca75eeb6acf3f1433a9baaed0c1674ab1be
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 #  <a name="uninstall-windows-powershell-web-access"></a>Windows PowerShell Web Access をアンインストールする
 
 最終更新日: 2013 年 6 月 24 日
@@ -44,7 +42,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 独自のカスタム Web サイト名を指定した場合は、コマンドに <span class="code">WebsiteName</span> パラメーターを追加し、Web サイト名を指定します。 (既定のアプリケーション **pswa** ではなく) カスタム Web アプリケーションを使用している場合は、コマンドに <span class="code">WebApplicationName</span> パラメーターを追加し、Web アプリケーションの名前を指定します。
 
-#### <a name="to-delete-the-website-and-web-applications-by-using-the-uninstallpswawebapplication-cmdlet"></a>Uninstall-PswaWebApplication コマンドレットを使って Web サイトおよびアプリケーションを削除するには
+#### <a name="to-delete-the-website-and-web-applications-by-using-the-uninstall-pswawebapplication-cmdlet"></a>Uninstall-PswaWebApplication コマンドレットを使って Web サイトおよびアプリケーションを削除するには
 
 1.  次のいずれかを実行して Windows PowerShell セッションを開きます。
 
@@ -215,10 +213,4 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 サードパーティのスクリプトやコード、サードパーティから本 Web サイトへのリンク、あるいは本サイトからサードパーティへのリンクは、マイクロソフトではなく、そのようなコードの所有者によってお客様にライセンス供与されています。 ASP.NET Ajax CDN の使用条件 - http://www.asp.net/ajaxlibrary/CDN.ashx を参照してください。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

@@ -1,18 +1,18 @@
-# 製品の互換性の状態
+# <a name="product-compatibility-status"></a>製品の互換性の状態
 
-## 互換性あり:
+## <a name="compatible"></a>互換性あり:
 > 次のサーバー アプリケーションを実行しているシステムで Windows Management Framework 5.0 を**実行することができます。**
 
 - Microsoft SharePoint Server 2013
 - System Center 2012 Configuration Manager
 
-## テスト未実施:
+## <a name="not-tested"></a>テスト未実施:
 > 次のサーバー アプリケーションを実行しているシステムは Windows Management Framework 5.0 に対して**テストされていません。**
 
 - Microsoft SharePoint Server 2010
 - System Center 2012 Virtual Machine Manager
 
-## 互換性なし:
+## <a name="incompatible"></a>互換性なし:
 > 次のサーバー アプリケーションを実行しているシステムでは Windows Management Framework 5.0 を**実行できません。**
 
 - Microsoft Exchange Server 2013
@@ -21,9 +21,4 @@
 - Microsoft Lync Server 2013
 - Microsoft Lync Server 2010
 - System Center 2012 R2 Service Management Automation
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

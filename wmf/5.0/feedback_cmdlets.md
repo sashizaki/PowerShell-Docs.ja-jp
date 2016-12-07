@@ -1,7 +1,2 @@
-# コミュニティからのフィードバックに基づいて更新されたコマンドレットと新規コマンドレット 
+# <a name="new-and-updated-cmdlets-based-on-community-feedback"></a>コミュニティからのフィードバックに基づいて更新されたコマンドレットと新規コマンドレット 
 [Connect](https://connect.microsoft.com/powershell) 経由で寄せられたコミュニティからのフィードバックに基づいて、Microsoft ではいくつかの新しいユーティリティ コマンドレットを追加し、既存のコマンドレットを更新しました。 Microsoft では、今後もフィードバックを精査し、可能な限り皆様のご要望にお応えしてまいります。
-
-
-<!--HONumber=Aug16_HO3-->
-
-

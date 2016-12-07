@@ -8,19 +8,17 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "JEA の使用"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 88ce340c09efdbb3d81a72fe6113c1187a9152f2
-ms.openlocfilehash: 9db7a5a91d25d459313117da34af63016f03c241
-
+ms.openlocfilehash: 55c8f2d6a8e2bb9f33a3e9af5c3ee94fa5259716
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# JEA の使用
+# <a name="using-jea"></a>JEA の使用
 このセクションの焦点は、*JEA の使用*というエンド ユーザー エクスペリエンスを理解することです。
 「前提条件」セクションで、デモ用の JEA エンドポイントを作成しました。
 このデモを使用して、JEA の動作を示します。
 エンド ユーザー エクスペリエンスを可能にしている操作とファイルについては、このガイドの後半で説明します。
 
-## 管理者以外のユーザーとして JEA を使用する
+## <a name="using-jea-as-a-non-administrator"></a>管理者以外のユーザーとして JEA を使用する
 JEA の動作を示すには、管理者以外のユーザーとして PowerShell リモート処理を使用する必要があります。
 新しい PowerShell ウィンドウで次のコマンドを実行します。   
 
@@ -93,10 +91,4 @@ Exit-PSSession
 ```
 
 これで、リモート PowerShell セッションから切断されます。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

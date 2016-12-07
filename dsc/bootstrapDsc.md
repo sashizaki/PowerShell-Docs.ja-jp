@@ -7,12 +7,10 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7d7e4f9784456c897c4779e2bc275d8dc195a29e
-ms.openlocfilehash: c8920239a3492421b1a5dc39d0ad599083bc466b
-
+ms.openlocfilehash: bf5b3da641facfdfa395aacf0eadcf773b8c4b02
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 >適用先: Windows PowerShell 5.0
 
 >**注:** このトピックで説明されている **DSCAutomationHostEnabled** レジストリ キーは、PowerShell 4.0 では使用できません。
@@ -207,9 +205,3 @@ configuration PullClientBootstrap
 - [DSCAutomationHostEnabled レジストリ キー](DSCAutomationHostEnabled.md)
 - [ローカル構成マネージャー (LCM) の構成](metaConfig.md)
 - [DSC Web プル サーバーのセットアップ](pullServer.md)
-
-
-
-<!--HONumber=Nov16_HO4-->
-
-

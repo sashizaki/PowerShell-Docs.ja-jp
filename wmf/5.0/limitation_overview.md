@@ -36,7 +36,7 @@ SIL を既に実行している Windows Server 2012 R2 に WMF 5.0 をインス�
 
 **解決策:** インストール プロセスでソフトウェア インベントリ ログ機能が誤って停止されるため、WMF のインストール後に Start-SilLogging コマンドレットを 1 回実行します。
 
-<a name="getchilditem-does-not-work-if-literalpath-and-recurse-are-used-together"></a>-LiteralPath と -Recurse を一緒に使用すると Get-ChildItem が機能しない
+<a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>-LiteralPath と -Recurse を一緒に使用すると Get-ChildItem が機能しない
 --------------------------------------------------------------------------
 
 ディレクトリ名に無効なワイルドカードが含まれている場合、-LiteralPath と -Recurse を一緒に使用すると、Get-ChildItem によって期待どおりの結果が生成されません。
@@ -105,8 +105,3 @@ SIL を既に実行している Windows Server 2012 R2 に WMF 5.0 をインス�
       * 編集した Generalize.xml のコピーは C:\ にコピーされたことを想定しています。
 
   10.   この解決策により Generalize.xml が更新されます。 Sysprep を実行して汎用化オプションを有効にしてください。
-
-
-<!--HONumber=Oct16_HO5-->
-
-

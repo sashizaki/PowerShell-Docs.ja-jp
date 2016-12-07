@@ -33,7 +33,7 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 ```
 
 
-<a name="lcm-can-go-into-an-unstable-state-while-using-getdscconfiguration-in-debugmode"></a>Get-DscConfiguration を DebugMode で使用しているときに LCM が不安定な状態になることがある
+<a name="lcm-can-go-into-an-unstable-state-while-using-get-dscconfiguration-in-debugmode"></a>Get-DscConfiguration を DebugMode で使用しているときに LCM が不安定な状態になることがある
 -------------------------------------------------------------------------------
 
 LCM が DebugMode の場合、CTRL + C キーを押して Get-DscConfiguration の処理を停止すると、DSC コマンドレットの大部分が機能しないような不安定な状態になることがあります。
@@ -41,7 +41,7 @@ LCM が DebugMode の場合、CTRL + C キーを押して Get-DscConfiguration �
 **解決策:** Get-DscConfiguration コマンドレットのデバッグ中に CTRL + C キーを押さないようにします。
 
 
-<a name="stopdscconfiguration-may-hang-in-debugmode"></a>Stop-DscConfiguration が DebugMode でハングすることがある
+<a name="stop-dscconfiguration-may-hang-in-debugmode"></a>Stop-DscConfiguration が DebugMode でハングすることがある
 ------------------------------------------------------------------------------------------------------------------------
 LCM が DebugMode の場合、Get-DscConfiguration で開始された操作を停止しようとすると Stop-DscConfiguration がハングする場合があります。
 
@@ -55,27 +55,27 @@ LCM が DebugMode の場合は、DSC リソースから詳細なエラー メッ
 **解決策:** リソースからの詳細なメッセージを表示するには、*DebugMode* を無効にします。
 
 
-<a name="invokedscresource-operations-cannot-be-retrieved-by-getdscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus コマンドレットで Invoke-DscResource 操作を取得できない
+<a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus コマンドレットで Invoke-DscResource 操作を取得できない
 --------------------------------------------------------------------------------------
 Invoke-DscResource コマンドレットを使用してリソースのメソッドを直接呼び出した後、このような操作のレコードを Get-DscConfigurationStatus によって取得することはできません。
 
 **解決策:** なし。
 
 
-<a name="getdscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus でプル サイクル操作がタイプ *Consistency* として返される
+<a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus でプル サイクル操作がタイプ *Consistency* として返される
 ---------------------------------------------------------------------------------
 ノードがプル更新モードに設定されている場合、プル操作を実行するたびに、Get-DscConfigurationStatus コマンドレットで操作のタイプが *Initial* ではなく *Consistency* としてレポートされます。
 
 **解決策:** なし。
 
-<a name="invokedscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Invoke-DscResource コマンドレットで、メッセージが生成された順序で返されない
+<a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Invoke-DscResource コマンドレットで、メッセージが生成された順序で返されない
 ---------------------------------------------------------------------------------
 Invoke-DscResource コマンドレットでは、詳細、警告、およびエラー メッセージは LCM または DSC リソースによって生成された順序で返されません。
 
 **解決策:** なし。
 
 
-<a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invokedscresource"></a>Invoke-DscResource と共に使用すると、DSC リソースを簡単にデバッグできない
+<a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Invoke-DscResource と共に使用すると、DSC リソースを簡単にデバッグできない
 -----------------------------------------------------------------------
 LCM がデバッグ モードで実行されている場合 (詳細については「[DSC リソースのデバッグ](https://msdn.microsoft.com/powershell/dsc/debugresource)」を参照)、Invoke-DscResource コマンドレットはデバッグ用に接続する実行空間に関する情報を提供しません。
 **解決策:** **Get-PSHostProcessInfo**、**Enter-PSHostProcess**、**Get-Runspace**、および **Debug-Runspace** コマンドレットを使用して実行空間を検出して接続し、DSC リソースをデバッグします。
@@ -114,7 +114,7 @@ Debug-Runspace -Id 2
 **解決策:** 異なる部分構成では、同じリソースでも異なる名前を使用します。
 
 
-<a name="startdscconfiguration-useexisting-does-not-work-with-credential"></a>Start-DscConfiguration -UseExisting が -Credential で機能しない
+<a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Start-DscConfiguration -UseExisting が -Credential で機能しない
 ------------------------------------------------------------------
 
 Start-DscConfiguration を -UseExisting パラメーターと共に使用すると、-Credential パラメーターが無視されます。 DSC では、既定のプロセス ID を使用して操作を続行します。 これにより、リモート ノードで処理を続行するために別の資格情報が必要になった場合にエラーが発生します。
@@ -133,14 +133,14 @@ DSC 構成スクリプトでのノード名としての IPv6 アドレスは、�
 **解決策:** なし。
 
 
-<a name="debugging-of-classbased-dsc-resources"></a>クラスベースの DSC リソースのデバッグ
+<a name="debugging-of-class-based-dsc-resources"></a>クラスベースの DSC リソースのデバッグ
 --------------------------------------
 クラスベースの DSC リソースのデバッグは、このリリースではサポートされていません。
 
 **解決策:** なし。
 
 
-<a name="variables-functions-defined-in-script-scope-in-dsc-classbased-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>DSC クラスベース リソースの $script スコープで定義された変数と関数が、DSC リソースへの複数の呼び出しで保持されない 
+<a name="variables-functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>DSC クラスベース リソースの $script スコープで定義された変数と関数が、DSC リソースへの複数の呼び出しで保持されない 
 -------------------------------------------------------------------------------------------------------------------------------------
 
 変数または関数が $script スコープで定義されたクラスベース リソースが構成で使用されている場合、Start-DSCConfiguration への複数の連続した呼び出しは失敗します。
@@ -161,7 +161,7 @@ DSC 構成スクリプトでのノード名としての IPv6 アドレスは、�
 **解決策:** 利用可能な場合は、資格情報プロパティを使用します。 例 ServiceSet および WindowsFeatureSet
 
 
-<a name="getdscresource-syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource -Syntax* が PsDscRunAsCredential correctly を正しく反映しない
+<a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource -Syntax* が PsDscRunAsCredential correctly を正しく反映しない
 -------------------------------------------------------------------------
 リソースで必須とマークされていない場合、またはサポートされていない場合、Get-DscResource -Syntax は PsDscRunAsCredential を正しく反映しません。
 
@@ -173,7 +173,7 @@ DSC 構成スクリプトでのノード名としての IPv6 アドレスは、�
 
 WindowsOptionalFeature DSC リソースは、Windows 7 では使用できません。 このリソースには、Windows 8 以降のリリースの Windows オペレーティング システムで利用可能な DISM コマンドレット、および DISM モジュールが必要です。
 
-<a name="for-classbased-dsc-resources-importdscresource-moduleversion-may-not-work-as-expected"></a>クラス ベースの DSC リソースでは、Import-DscResource -ModuleVersion が正常に動作しない場合があります。   
+<a name="for-class-based-dsc-resources-import-dscresource--moduleversion-may-not-work-as-expected"></a>クラス ベースの DSC リソースでは、Import-DscResource -ModuleVersion が正常に動作しない場合があります。   
 ------------------------------------------------------------------------------------------
 コンパイル ノードにクラス ベースの DSC リソース モジュールが複数ある場合、`Import-DscResource -ModuleVersion` から指定されたバージョンが取得されず、次のコンパイル エラーが発生します。
 
@@ -226,8 +226,3 @@ Configuration $configName
     }
 }
 ```
-
-
-<!--HONumber=Nov16_HO2-->
-
-

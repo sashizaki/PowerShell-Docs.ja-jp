@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 4d8c2392c6a9f59dc5e601308bc08db8c653760e
-
+ms.openlocfilehash: 8480270797960463d438fb47dfaaa9ec297bea0e
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Format コマンドを使用した出力ビューの変更
+# <a name="using-format-commands-to-change-output-view"></a>Format コマンドを使用した出力ビューの変更
 Windows PowerShell には、特定のオブジェクトのプロパティの表示を制御するためのコマンドレットのセットがあります。 すべてのコマンドレットの名前は、動詞 **Format** から始まります。 表示するプロパティを 1 つ以上選択できます。
 
 **Format** コマンドレットとしては、**Format-Wide**、**Format-List**、**Format-Table**、および **Format-Custom** があります。 このユーザー ガイドでは、**Format-Wide**、**Format-List**、および **Format-Table** コマンドレットについてのみ説明します。
@@ -32,7 +30,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 このセクションの残りの部分で、このコマンドの出力の表示の仕方を **Format** コマンドレットを使用して変更する方法について解説します。
 
-### 単一項目出力のための Format-Wide の使用
+### <a name="using-format-wide-for-single-item-output"></a>単一項目出力のための Format-Wide の使用
 **Format-Wide** コマンドレットは、既定では、オブジェクトの既定プロパティのみ表示します。 各オブジェクトに関連付けられている情報が、1 つの列に表示されます。
 
 ```
@@ -49,14 +47,14 @@ PS> Get-Process -Name powershell | Format-Wide -Property Id
 2760                                    3448
 ```
 
-#### 列による Format-Wide 表示の制御
+#### <a name="controlling-format-wide-display-with-column"></a>列による Format-Wide 表示の制御
 **Format-Wide** コマンドレットでは、一度に表示できるプロパティは 1 つだけです。 これは、1 行に要素が 1 つだけ示される単純なリストを表示する場合に便利です。 単純なリスト表示にするには、**Column** パラメーターの値を 1 に設定します。次のように入力します。
 
 ```
 Get-Command Format-Wide -Property Name -Column 1
 ```
 
-### リスト ビューのための Format-List の使用
+### <a name="using-format-list-for-a-list-view"></a>リスト ビューのための Format-List の使用
 **Format-List** コマンドレットは、リストの形式でオブジェクトを表示します。各プロパティはラベル付けされ、別々の行に表示されます。
 
 ```
@@ -90,7 +88,7 @@ StartTime   : 2006-05-24 13:54:28
 Id          : 3448
 ```
 
-#### Format-List でワイルドカードを使用して詳細情報を取得する
+#### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Format-List でワイルドカードを使用して詳細情報を取得する
 **Format-List** コマンドレットでは、その **Property** パラメーターの値としてワイルドカードを使用できます。 こうすることで、詳細情報を表示できます。 多くの場合、オブジェクトには必要以上の情報が含まれています。既定では Windows PowerShell がすべてのプロパティ値は表示しないのはそのためです。 オブジェクトのプロパティをすべて表示するには、**Format-List -Property \&#42;** コマンドを使用します。 次のコマンドは、1 つのプロセスについて 60 行を超える出力を生成します。
 
 ```
@@ -99,7 +97,7 @@ Get-Process -Name powershell | Format-List -Property *
 
 **Format-List** コマンドは詳細の表示に役立ちますが、項目が多数含まれる出力の概要が必要な場合は、より単純な表形式ビューの方がしばしば好都合です。
 
-### 表形式出力のための Format-Table の使用
+### <a name="using-format-table-for-tabular-output"></a>表形式出力のための Format-Table の使用
 プロパティ名を指定せずに **Format-Table** コマンドレットを使用して **Get-Process** コマンドの出力を書式設定した場合は、書式設定を行わない場合とまったく同じ出力になります。 その理由は、ほとんどの Windows PowerShell オブジェクトがそうであるように、プロセスは通常、表形式で表示されるからです。
 
 ```
@@ -111,7 +109,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     332       9    23140        632   141     1.06   3448 powershell
 ```
 
-#### Format-Table 出力の改善 (AutoSize)
+#### <a name="improving-format-table-output-autosize"></a>Format-Table 出力の改善 (AutoSize)
 表形式ビューは比較情報を大量に表示するには便利ですが、データの表示幅が狭すぎる場合は解釈しにくいことがあります。 たとえば、プロセス パス、ID、名前、および会社を表示しようとすると、プロセス パスと会社の列の出力が切り捨てられます。
 
 ```
@@ -160,7 +158,7 @@ Microsoft Corporation C:\Program Files\Windows PowerShell\v1.0\powershell.exe 6
 
 上記の出力では、リストに収まるように ID 列が切り捨てられ、列見出しが重なっています。 列の自動サイズ変更は、常に目的どおりになるとは限りません。
 
-#### Format-Table 出力の列内の折り返し (Wrap)
+#### <a name="wrapping-format-table-output-in-columns-wrap"></a>Format-Table 出力の列内の折り返し (Wrap)
 **Wrap** パラメーターを使用して、長い **Format-Table** データをその表示列内で強制的に折り返すことができます。 **Wrap** パラメーターだけを使用した場合、必ずしも期待どおりにはなりません。同時に **AutoSize** も指定しなければ、既定の設定が使用されるためです。
 
 ```
@@ -202,7 +200,7 @@ C:\Program Files\Windows PowerShell\v1.0\powershell.exe 2836 Microsoft Corporat
                                                              ion
 ```
 
-#### 表出力の整理 (-GroupBy)
+#### <a name="organizing-table-output--groupby"></a>表出力の整理 (-GroupBy)
 表形式出力制御のためのもう一つの便利なパラメーターは、**GroupBy** です。 長い表形式リストは特に、比較しにくい場合があります。 **GroupBy** パラメーターは、プロパティ値に基づいて出力をグループ化します。 たとえば、検査しやすくするために、プロセスを会社別にグループ化できます。この場合、会社の値をプロパティ リストに入れません。
 
 ```
@@ -216,10 +214,4 @@ Name         Id Path
 powershell 1956 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
 powershell 2656 C:\Program Files\Windows PowerShell\v1.0\powershell.exe
 ```
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

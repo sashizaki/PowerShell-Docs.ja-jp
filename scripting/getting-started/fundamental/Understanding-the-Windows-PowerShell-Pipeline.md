@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: d90bf940a1047b629f7b59d239aab50a78748251
-
+ms.openlocfilehash: 34e641329388436074f2d0f05647ec4fa7efdf83
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell パイプラインを理解する
+# <a name="understanding-the-windows-powershell-pipeline"></a>Windows PowerShell パイプラインを理解する
 Windows PowerShell では、パイプ処理をほぼすべての状況で使用できます。 画面にはテキストが表示されますが、コマンド間で受け渡しされる情報はテキストではありません。 パイプの中を流れるデータは、実際にはオブジェクトです。
 
 パイプラインで使う表記は他のシェルで使う表記に似ているため、一見すると、Windows PowerShell で何かが新しく導入されたことがわかりにくい可能性があります。 たとえば、**Out-Host** コマンドレットを使用して、別のコマンドからの出力をページ単位で表示させると、通常のテキストがページごとに分割されて画面上に表示されているだけのように見えます。
@@ -66,10 +64,4 @@ Windows PowerShell では、パイプラインのコマンド間でデータを�
 Windows PowerShell のコマンドから、コンソール ウィンドウに表示されている以上の情報が出力されているとすれば、見えない要素を取得するにはどうすればよいのかという疑問が残ります。 つまり、残りのデータを表示するにはどうすればよいか、 また、Windows PowerShell で通常使用される表示形式とは異なる形式でデータを表示するにはどうすればよいのかという点です。
 
 この章の残りの部分では、特定の Windows PowerShell オブジェクトの構造を調べる方法、特定の項目を選んで見やすいように書式化する方法、この情報を他の出力場所 (ファイルやプリンターなど) に送る方法について説明します。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

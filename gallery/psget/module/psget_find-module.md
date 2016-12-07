@@ -9,16 +9,14 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_find module
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 67542f54cd350bd1d9512eae0a2355b47943c2f2
-
+ms.openlocfilehash: b6fe3ffcbb366ee237acf0304ec4804b93e2b8ad
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Find-Module
+# <a name="find-module"></a>Find-Module
 指定した条件に一致するオンライン ギャラリーからモジュールを検索します。
 
-## 説明
+## <a name="description"></a>説明
 Find-Module は、指定した条件に一致する登録されているリポジトリからモジュールを検出します。
 検出される各モジュールに対し、Find-Module は、モジュールをインストールするための Install-Module に必要に応じてパイプできる PSRepositoryItemInfo オブジェクトを返します。
 
@@ -32,16 +30,16 @@ Find-Module は、指定した条件に一致する登録されているリポ�
 - Find-Module では、-Filter パラメーターを使用してリポジトリ固有の検索言語をフィルター処理できます。
 - Find-Module では、登録されているリポジトリのすべてまたは一部からモジュール上でフィルター処理できます。
 
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 ```powershell
 Get-Command -Name Find-Module -Module PowerShellGet -Syntax
 ```
 
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Find-Module](http://go.microsoft.com/fwlink/?LinkID=398574)
 
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 ```powershell
 # Find a specific module
 Find-Module Azure
@@ -144,10 +142,4 @@ PackageManagementProvider  : NuGet
 AdditionalMetadata         : {downloadCount, description, copyright, FileList...}
 
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

@@ -7,12 +7,10 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 49ddf6faf98a51f7ad5252e9563b1543478ed113
-ms.openlocfilehash: 9090f4be2987b8a56ba4d839f54e05082a8bcfa0
-
+ms.openlocfilehash: 69248223a67c8dbbea421f80b57cb245489fbc4f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="enacting-configurations"></a>構成の適用
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -45,10 +43,4 @@ DSC プル サーバーをオンプレミスで展開する方法の詳細につ
 - [Setting up a web pull server (Web プル サーバーのセットアップ)](pullServer.md)
 - [Setting up an SMB pull server (SMB プル サーバーのセットアップ)](pullServerSMB.md)
 - [Configuring a pull client (プル クライアントの構成)](pullClientConfigID.md)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

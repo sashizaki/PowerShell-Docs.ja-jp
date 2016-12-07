@@ -7,12 +7,10 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 1e7bc38f03dd72fc29d004eb92bf130c416e490a
 ms.openlocfilehash: f7f2699287e76970d0b2565f7bbd45a5d75ac93a
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="using-a-dsc-report-server"></a>DSC レポート サーバーの使用
 
 > 適用先: Windows PowerShell 5.0
@@ -226,10 +224,4 @@ InDesiredState    : True
 - [ローカル構成マネージャーの構成](metaConfig.md)
 - [DSC Web プル サーバーのセットアップ](pullServer.md)
 - [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
-
-
-
-
-<!--HONumber=Nov16_HO3-->
-
 

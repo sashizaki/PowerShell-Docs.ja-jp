@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 01720794aa1d200428c2729463fba92970f9cb56
-ms.openlocfilehash: 716ecd9b14976dd70b69a740850ab53670387956
-
+ms.openlocfilehash: a3f2cf37eb185124d73443bbe42b5fcc82034f15
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 複数のバージョンがあるリソースの使用
+# <a name="using-resources-with-multiple-versions"></a>複数のバージョンがあるリソースの使用
 
 > 適用先: Windows PowerShell 5.0
 
 PowerShell 5.0 では、DSC リソースに複数バージョンを用意することができ、コンピューターにその複数のバージョンをサイド バイ サイドでインストールできます。 これを実装するには、リソース モジュールの複数のバージョンを同じモジュール フォルダーに格納します。
 
-## リソースの複数のバージョンのサイド バイ サイド インストール
+## <a name="installing-multiple-resource-versions-side-by-side"></a>リソースの複数のバージョンのサイド バイ サイド インストール
 
 [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) コマンドレットの **MinimumVersion**、**MaximumVersion**、**RequiredVersion** の各パラメーターを使用すると、インストールするモジュールのバージョンを指定できます。 バージョンを指定せずに **Install-Module** を呼び出すと、最新バージョンがインストールされます。
 
@@ -46,7 +44,7 @@ PowerShell      xCluster                  xFailOverCluster               1.1    
 PowerShell      xCluster                  xFailOverCluster               1.2.0.0    {DomainAdministratorCredential, Name, ...
 ```
 
-## 構成でのリソース バージョンの指定
+## <a name="specifying-a-resource-version-in-a-configuration"></a>構成でのリソース バージョンの指定
 
 コンピューターに複数のリソースがインストールされている場合は、構成でリソースを使用するときに、そのリソースのバージョンを指定する必要があります。 これを行うには、**Import-DscResource** キーワードの **ModuleVersion** パラメーターを指定します。 複数のバージョンがインストールされているリソースのリソース モジュールのバージョンを指定しないと、構成によってエラーが生成されます。
 
@@ -90,13 +88,7 @@ configuration VersionTest
 
 これは PowerShell 5.0 でも動作しますが、PowerShell 5.0 では、**ModuleVersion** パラメーターを使用することをお勧めします。
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 * [DSC 構成](configurations.md)
 * [DSC リソース](resources.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

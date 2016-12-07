@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 83ca45d507e39b77751ac7feb6a7b65ae2834280
 ms.openlocfilehash: e1922008a92f00c9ddab28598735839c25219d24
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC リソースのデバッグ
+# <a name="debugging-dsc-resources"></a>DSC リソースのデバッグ
 
 > 適用先: Windows PowerShell 5.0
 
 PowerShell 5.0 では、構成が適用されているときに DSC リソースをデバッグできる新機能が Desired State Configuraiton (DSC) に導入されました。
 
-## DSC デバッグの有効化
+## <a name="enabling-dsc-debugging"></a>DSC デバッグの有効化
 リソースをデバッグする前に、[Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) コマンドレットを呼び出すことによって、デバッグを有効にする必要があります。 このコマンドレットは、必須パラメーター **BreakAll** を取ります。 
 
 [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) への呼び出しの結果を参照して、デバッグが有効になっていることを確認できます。 次の PowerShell 出力は、デバッグを有効にした結果を示しています。
@@ -43,7 +41,7 @@ PS C:\DebugTest>
 ```
 
 
-## デバッグを有効にした構成の開始
+## <a name="starting-a-configuration-with-debug-enabled"></a>デバッグを有効にした構成の開始
 DSC リソースをデバッグするには、そのリソースを呼び出す構成を開始します。 この例では、"WindowsPowerShellWebAccess" 機能がインストールされていることを確認するために [WindowsFeature](windowsfeatureResource.md) リソースを呼び出す単純な構成を見ていきます。
 
 ```powershell
@@ -85,7 +83,7 @@ Debug-Runspace -Id 9
 ```
 この時点で、LCM はリソースを呼び出し、最初のブレーク ポイントに到達しています。 出力の最後の 3 行は、プロセスに接続し、リソース スクリプトのデバッグを開始する方法を示しています。
 
-## リソース スクリプトのデバッグ
+## <a name="debugging-the-resource-script"></a>リソース スクリプトのデバッグ
 
 PowerShell ISE の新しいインスタンスを開始します。 コンソール ウィンドウで、`Start-DscConfiguration` 出力から出力の最後の 3 行をコマンドとして入力し、`<credentials>` を有効なユーザー資格情報に置き換えます。 次のようなプロンプトが表示されます。
 
@@ -96,20 +94,14 @@ PowerShell ISE の新しいインスタンスを開始します。 コンソー�
 スクリプト ウィンドウが開いてリソース スクリプトが表示され、**Test-TargetResource** 関数の最初の行 (クラスベースのリソースの **Test()** メソッド) でデバッガーが停止します。
 ISE でデバッグ コマンドを使うと、リソース スクリプトをステップ実行したり、変数の値を確認したり、呼び出し履歴を表示したりできます。 PowerShell ISE でのデバッグについての詳細は、「[Windows PowerShell ISE でスクリプトをデバッグする方法](https://technet.microsoft.com/en-us/library/dd819480.aspx)」を参照してください。 リソース スクリプト (またはクラス) のすべての行がブレークポイントとして設定されていることに注意してください。
 
-## DSC デバッグの無効化
+## <a name="disabling-dsc-debugging"></a>DSC デバッグの無効化
 
 [Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)を呼び出した後では、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) を呼び出すたびに構成でデバッガー中断が行われるようになります。 構成を通常どおりに実行できるようにするには、[Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) コマンドレットを呼び出してデバッグを無効化する必要があります。
 
 >**注:** 再起動をしても、LCM のデバッグ状態は変更されません。 デバッグが有効になっている場合、再起動後に構成を開始してもデバッグ中断が行われます。
 
 
-## 参照
+## <a name="see-also"></a>参照
 - [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md) 
 - [PowerShell クラスを使用したカスタム DSC リソースの記述](authoringResourceClass.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

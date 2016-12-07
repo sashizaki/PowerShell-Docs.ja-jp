@@ -8,12 +8,10 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "前提条件"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: ac9231a475ba84e9051bbd06a65f3f20c9e49846
-
+ms.openlocfilehash: 6cd57c2fab63d2184cb5c792b63df99dbd782235
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
 # <a name="prerequisites"></a>前提条件
 
 ## <a name="initial-state"></a>初期状態
@@ -125,10 +123,4 @@ Register-PSSessionConfiguration -Name $sessionName -Path "$env:ProgramData\JEACo
 注: グループ ポリシーを通してシステム全体の PowerShell トランスクリプトを有効にすることもできます。
 
 **以上で、ご使用のコンピューターでデモ エンドポイントが構成され、JEA を使用する準備が整いました。**
-
-
-
-
-<!--HONumber=Nov16_HO1-->
-
 

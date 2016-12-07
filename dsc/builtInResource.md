@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: ea312b4e773cd8b0eceeca123e616957728eb1c6
-
+ms.openlocfilehash: 1cbe3ac8de217d659f717cb960b4b57cb2d4fdd9
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell Desired State Configuration の組み込みリソース
+# <a name="built-in-windows-powershell-desired-state-configuration-resources"></a>Windows PowerShell Desired State Configuration の組み込みリソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -28,13 +26,7 @@ Windows PowerShell Desired State Configuration (DSC) には、一連の組み込
 * [レジストリ リソース](registryResource.md)
 * [スクリプト リソース](scriptResource.md)
 * [サービス リソース](serviceResource.md)
-* [[ユーザー リソース]](userResource.md)
+* [ユーザー リソース](userResource.md)
 * [WindowsFeature リソース](windowsfeatureResource.md)
 * [WindowsProcess リソース](windowsProcessResource.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

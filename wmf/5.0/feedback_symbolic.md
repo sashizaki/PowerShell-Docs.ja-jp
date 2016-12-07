@@ -1,12 +1,12 @@
-# 機能を強化された Item コマンドレットを使ってシンボリック リンクを操作する
+# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>機能を強化された Item コマンドレットを使ってシンボリック リンクを操作する
 
 シンボリック リンクをサポートするために、**\*-Item** コマンドレットや、関連するいくつかのコマンドレットが拡張されました。 シンボリック リンクは、**New-item** を使った簡単な 1 つの行で作成できるようになりました。 Item 関連のコマンドレット (**Remove-item、Get-ChildItem**) は、従来と非常によく似た動作になっています。
 
 新機能の用途を次に示します。
 
-## New-Item
+## <a name="new-item"></a>New-Item
 
-### シンボリック リンク ファイル
+### <a name="symbolic-link-files"></a>シンボリック リンク ファイル
 
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
@@ -20,7 +20,7 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkFile.txt -Value $pshome\p
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
 ```
 
-### シンボリック リンク ディレクトリ
+### <a name="symbolic-link-directories"></a>シンボリック リンク ディレクトリ
 
 ```powershell
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder
@@ -35,21 +35,21 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkDir -Value $pshome
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 ```
 
-### ハード リンク
+### <a name="hard-links"></a>ハード リンク
 
 ```powershell
 New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshome\profile.ps1
 # Same combinations of Path and Name allowed as described above
 ```
 
-### ディレクトリ ジャンクション
+### <a name="directory-junctions"></a>ディレクトリ ジャンクション
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 # Same combinations of Path and Name allowed as described above
 ```
 
-## Get-ChildItem
+## <a name="get-childitem"></a>Get-ChildItem
 
 ```powershell
 # Append link type column to Mode property and display with Get-ChildItem
@@ -100,7 +100,7 @@ SpecialBuild: False
 Language:
 ```
 
-## Remove-Item
+## <a name="remove-item"></a>Remove-Item
 
 ```powershell
 # Works like any other item type
@@ -113,8 +113,3 @@ Remove-Item C:\Temp\MySymLinkDir
 # Removes the files in the target directory and MySymLinkDir
 Remove-Item C:\Temp\MySymLinkDir -Force
 ```
-
-
-<!--HONumber=Aug16_HO3-->
-
-
