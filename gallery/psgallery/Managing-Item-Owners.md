@@ -29,7 +29,7 @@ PowerShell ギャラリーに新しいアイテムを公開すると、そのア
 PowerShell ギャラリーにアイテムを公開した後、アイテムの所有者になるように追加のユーザーを招待することは簡単です。
 
 1. アイテムの現在の所有者になっているアカウントで PowerShell ギャラリーに[ログオン](https://powershellgallery.com/users/account/LogOn)します。
-2. [アイテム] タブを使用し、ユーザーを検索するかクリックして、[**[Manage My Items]**](https://www.powershellgallery.com/account/Packages) (マイ アイテムの管理) をクリックし、アイテム ページに移動します。
+2. [アイテム] タブを使用し、ユーザーを検索するかクリックして、[**[Manage My Items]**](https://www.powershellgallery.com/account/Packages) \(マイ アイテムの管理) をクリックし、アイテム ページに移動します。
 3. アイテムの所有者としてログオンすると、'Manage Owners' (所有者の管理) リンクが左側に表示されるのでそれをクリックします。
 4. 所有者として追加する人のユーザー名を入力し、[追加] をクリックします。
 5. アイテムの所有者になるための招待として、メールが新しい共同所有者に送信されます。
@@ -47,7 +47,7 @@ PowerShell ギャラリーにアイテムを公開した後、アイテムの所
 アイテムに複数の所有者が設定されているとき、そのうちの 1 名を削除するプロセスは単純です。
 
 1. アイテムの現在の所有者になっているアカウントで PowerShell ギャラリーに[ログオン](https://powershellgallery.com/users/account/LogOn)します。
-2. [アイテム] タブを使用し、検索し、ユーザー名、[**[Manage My Items]**](https://www.powershellgallery.com/account/Packages) (マイ アイテムの管理) の順にクリックし、アイテム ページに移動します。
+2. [アイテム] タブを使用し、検索し、ユーザー名、[**[Manage My Items]**](https://www.powershellgallery.com/account/Packages) \(マイ アイテムの管理) の順にクリックし、アイテム ページに移動します。
 3. アイテムの所有者としてログオンすると、「Manage Owners」 (所有者の管理) リンクが左側に表示されるのでそれをクリックします。
 4. 削除する所有者の隣にある [削除] リンクをクリックします。
 
