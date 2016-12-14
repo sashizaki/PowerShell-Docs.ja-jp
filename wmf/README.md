@@ -8,13 +8,11 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: b32cb86b7a18fee929cc81360d81f479571a74c2
-ms.openlocfilehash: a7ef0ddf4d093a89f32f3484dfbef78fb159f0c2
-
+ms.openlocfilehash: eacd33d2a0a92977a3990132e23eef9871a7f0dc
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows Management Framework
+# <a name="windows-management-framework"></a>Windows Management Framework
 
 Windows Management Framework (WMF) は配信メカニズムであり、さまざまな種類の Windows や Windows Server に一貫した管理インターフェイスを提供します。
 WMF をインストールすると、お客様はご利用の環境で OS をシームレスにミックスし、相互運用できます。
@@ -31,7 +29,7 @@ WMF をインストールすると、次の機能が追加または更新され�
 - ソフトウェア インベントリ ログ (SIL)
 - Server Manager CIM Provider
 
-## WMF リリース ノート
+## <a name="wmf-release-notes"></a>WMF リリース ノート
 PowerShell と特定の WMF のその他のコンポーネントのさまざまな拡張に関する詳細については、下のリンクにアクセスし、リリース ノートを参照してください。
 
 
@@ -39,7 +37,7 @@ PowerShell と特定の WMF のその他のコンポーネントのさまざま�
 - [WMF 5.0](5.0/releasenotes.md)
 
 
-## Windows オペレーティング システム全体の WMF 可用性
+## <a name="wmf-availability-across-windows-operating-systems"></a>Windows オペレーティング システム全体の WMF 可用性
 
 >TODO: 列ヘッダーの特定の WMF DLC にリンクを追加する
 
@@ -59,9 +57,3 @@ PowerShell と特定の WMF のその他のコンポーネントのさまざま�
 | Windows XP | | | |  | はい |
 
 >TODO: 上の表の * を説明
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-
