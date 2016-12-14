@@ -8,13 +8,11 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "エンド ツー エンド - Active Directory"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 33e92c7fd6039a1e3f5f784470c7bd0e43a7f030
-ms.openlocfilehash: e7ea3957ce3bbd3ce0fc072a82cd108606f05614
-
+ms.openlocfilehash: 3108f5dad96ef54feb3cf559fae38812ed46849c
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# エンド ツー エンド - Active Directory
+# <a name="end-to-end---active-directory"></a>エンド ツー エンド - Active Directory
 プログラムの適用範囲が拡大されたと思ってください。
 Active Directory の操作を実行するために、ドメイン コントローラーに JEA を追加する必要があります。
 ヘルプ デスクのスタッフは、JEA を使用して、アカウントのロック解除、パスワードのリセット、その他の類似する操作を実行することになります。
@@ -23,13 +21,13 @@ Active Directory の操作を実行するために、ドメイン コントロ�
 それに加えて、公開する必要がある既存の Active Directory スクリプトが多数あります。
 このセクションでは、このタスクを実行するためのセッション構成とロール機能の作成について説明します。
 
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 このセクションの手順を実行するには、ドメイン コントローラーを操作する必要があります。
 ドメイン コントローラーにアクセスしたことがなくても大丈夫です。
 熟知している他のシナリオやロールでの作業を想像しながら、読み進めてください。
 新しいドメイン コントローラーをすぐに設定する場合は、付録の「[ドメイン コントローラーの作成](.\creating-a-domain-controller.md)」を参照してください。
 
-## 新しいロール機能とセッション構成の作成手順
+## <a name="steps-to-make-a-new-role-capability-and-session-configuration"></a>新しいロール機能とセッション構成の作成手順
 
 新しいロール機能の作成は、最初はやっかいな作業に思えるかもしれませんが、それは、次に示す非常に単純な手順に分解することができます。
 
@@ -39,26 +37,26 @@ Active Directory の操作を実行するために、ドメイン コントロ�
 4.  タスクをロール機能ファイルに配置する
 5.  ロール機能を公開するセッション構成を登録する
 
-## 手順 1: 何を公開する必要があるかを識別する
+## <a name="step-1-identify-what-needs-to-be-exposed"></a>手順 1: 何を公開する必要があるかを識別する
 新しいロール機能またはセッション構成を作成する前に、ユーザーが JEA エンドポイントで何を実行する必要があり、それらを PowerShell でどのように実行する必要があるかを、すべて識別する必要があります。
 これには、相当量の要件の収集と調査が伴います。
 このプロセスをどのように進めるかは、組織と目標によって決まります。
 重要なのは、要件の収集と調査を、非常に意味のある作業として実施することです。
 これは、JEA の採用プロセスの中で、最も困難な手順である可能性があります。
 
-### リソースを見つける
+### <a name="find-resources"></a>リソースを見つける
 Active Directory 管理エンドポイントを作成するための調査で利用されている可能性があるオンライン リソースがあります。
--   [Active Directory PowerShell Overview (Active Directory PowerShell の概要)](http://blogs.msdn.com/b/adpowershell/archive/2009/03/05/active-directory-powershell-overview.aspx)
--   [CMD to PowerShell Guide for Active Directory (Active Directory 用 PowerShell コマンド ガイド)](http://blogs.technet.com/b/ashleymcglone/archive/2013/01/02/free-download-cmd-to-powershell-guide-for-ad.aspx)
+-   [Active Directory PowerShell の概要](http://blogs.msdn.com/b/adpowershell/archive/2009/03/05/active-directory-powershell-overview.aspx)
+-   [Active Directory 用 PowerShell コマンド ガイド](http://blogs.technet.com/b/ashleymcglone/archive/2013/01/02/free-download-cmd-to-powershell-guide-for-ad.aspx)
 
-### リストを作成する
+### <a name="make-a-list"></a>リストを作成する
 このセクションの残りの部分で扱う 10 個の操作を次に示します。
 これは単なる例であり、組織の要件によって異なる可能性があることに注意してください。
 
 |操作                                                         |PowerShell コマンド                                             |
 |---------------------------------------------------------------|---------------------------------------------------------------|
 |アカウントのロック解除                                                 |`Unlock-ADAccount`                                             |
-|パスワードのリセット                                                 |`Set-ADAccountPassword` および `Set-ADUser -ChangePasswordAtLogon`|
+|パスワードのリセット                                                 |`Set-ADAccountPassword`、`Set-ADUser -ChangePasswordAtLogon`|
 |ユーザーのタイトルの変更                                          |`Set-ADUser -Title`                                            |  
 |ロックアウト済み、無効化、非アクティブなどの状態になっている AD アカウントの検索 |`Search-ADAccount`                                             |
 |グループへのユーザーの追加                                              |`Add-ADGroupMember -Identity (with whitelist) -Members`        |
@@ -66,7 +64,7 @@ Active Directory 管理エンドポイントを作成するための調査で利
 |ユーザー アカウントの有効化                                          |`Enable-ADAccount`                                             |
 |ユーザー アカウントの無効化                                         |`Disable-ADAccount`                                            |
 
-## 手順 2: 必要に応じてタスクを制限する
+## <a name="step-2-restrict-tasks-as-necessary"></a>手順 2: 必要に応じてタスクを制限する
 
 操作リストができたら、各コマンドの機能を徹底的に検討する必要があります。
 これを行う 2 つの重要な理由があります。
@@ -85,9 +83,9 @@ Active Directory 管理エンドポイントを作成するための調査で利
 
 1.  `Set-ADUser` は、-Title パラメーターが指定された場合のみ実行することを許可する
 
-2.  `Add-ADGroupMember`  と `Remove-ADGroupMember` は、特定のグループでのみ動作する必要がある
+2.  `Add-ADGroupMember` と `Remove-ADGroupMember` は、特定のグループでのみ動作する必要がある
 
-### 手順 3: タスクが JEA で動作することを確認する
+### <a name="step-3-confirm-the-tasks-work-with-jea"></a>手順 3: タスクが JEA で動作することを確認する
 これらのコマンドレットは、制限された JEA 環境では単純に使用できない場合があります。
 JEA は *NoLanguage* モードで実行されますが、このモードは、なによりもユーザーが変数を使用することを禁止します。
 スムーズなエンド ユーザー エクスペリエンスを実現するには、いくつかの事項を確認する必要があります。
@@ -116,7 +114,7 @@ Set-ADAccountPassword -Identity mollyd -NewPassword (Read-Host -Prompt "Specify 
 この方法は、エンド ユーザー エクスペリエンスを単純化し、エラーを防止し、PowerShell の知識が少なくても実行でき、余分な機能を意図せずに公開する可能性を低下させます。
 唯一の欠点は、関数を作成して管理するコストが発生することです。
 
-### 追加情報: モジュールへの関数の追加
+### <a name="aside-adding-a-function-to-your-module"></a>追加情報: モジュールへの関数の追加
 方法 2 を採用する場合は、`Reset-ContosoUserPassword` という名前の PowerShell 関数を記述します。
 この関数は、ユーザーのパスワードをリセットするときに実行する必要があるすべての操作を実行します。
 組織によっては、手の込んだ複雑な操作が必要な場合があります。
@@ -162,7 +160,7 @@ Set-ADUser -Identity $Identity -ChangePasswordAtLogon
 ```
 これで、ユーザーは `Reset-ContosoUserPassword` を簡単に呼び出すことができ、安全なインライン文字列を作成する構文を覚えて置く必要もなくなりました。
 
-## 手順 4: ロール機能ファイルを編集する
+## <a name="step-4-edit-the-role-capability-file"></a>手順 4: ロール機能ファイルを編集する
 「[ロール機能の作成](./role-capabilities.md#role-capability-creation)」セクションで、空のロール機能ファイルを作成しました。
 このセクションでは、このファイルに値を設定します。
 
@@ -199,7 +197,7 @@ VisibleFunctions = 'Reset-ContosoUserPassword'
 3.  一連の使用可能値を簡単に定義できない場合は、ValidatePattern により、正規表現を使って、パラメーター引数を制限できます。
 1 つのパラメーターについて ValidatePattern と ValidateSet の両方を定義することはできません。
 
-## 手順 5: 新しいセッション構成を登録する
+## <a name="step-5-register-a-new-session-configuration"></a>手順 5: 新しいセッション構成を登録する
 次に、ロール機能を JEA_NonAdmin_HelpDesk グループのメンバーに公開する新しいセッション構成ファイルを作成します。
 
 まず、PowerShell ISE に新しい空のセッション構成ファイルを作成して、開きます。
@@ -229,7 +227,7 @@ RoleDefinitions = @{ 'CONTOSO\JEA_NonAdmin_HelpDesk' = @{ RoleCapabilities =  'A
 ```PowerShell
 Register-PSSessionConfiguration -Name ADHelpDesk -Path "$env:ProgramData\JEAConfiguration\HelpDeskDemo.pssc"
 ```
-## テストしてみましょう。
+## <a name="test-it-out"></a>テストしてみましょう。
 管理者以外のユーザー資格情報を取得します。
 ```PowerShell
 $HelpDeskCred = Get-Credential
@@ -259,7 +257,7 @@ Add-ADGroupMember TestGroup -Member OperatorUser -Verbose
 ```PowerShell
 Exit-PSSession
 ```
-## 主要概念
+## <a name="key-concepts"></a>主要概念
 **NoLanguage モード**: PowerShell が NoLanguage モードの場合は、ユーザーが実行できるのはコマンドのみです。言語要素は使用できません。
 詳細を確認するには、`Get-Help about_Language_Modes` を実行してください。
 
@@ -269,10 +267,4 @@ Exit-PSSession
 **ValidateSet/ValidatePattern**: コマンドの公開時に、特定のパラメーターに有効な引数を制限できます。
 ValidateSet は、有効な引数の特定のリストです。
 ValidatePattern は、そのパラメーターの引数が一致する必要のある正規表現です。
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

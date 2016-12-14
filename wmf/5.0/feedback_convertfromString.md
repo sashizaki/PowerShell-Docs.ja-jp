@@ -1,4 +1,4 @@
-# 文字列から構造化オブジェクトを抽出して分析する
+# <a name="extract-and-parse-structured-objects-out-of-string"></a>文字列から構造化オブジェクトを抽出して分析する
 これも、ConvertFrom-String コマンドレットに追加機能を導入します。
 
 -   既定では、エクステント テキスト プロパティを削除します。 これを含めるには、-IncludeExtent パラメーターを指定します。
@@ -8,7 +8,7 @@
 -   新しい -UpdateTemplate パラメーターを使って、学習アルゴリズムの結果をテンプレート ファイル内のコメントに保存します。 これにより、学習プロセス (最も時間のかかる段階) が 1 回限りのコストになります。 エンコードされた学習アルゴリズムを含むテンプレートを使って Convert-String を実行すると、ほぼ瞬時に完了します。
 
 
-文字列コンテンツから構造化オブジェクトを抽出して分析する
+<a name="extract-and-parse-structured-objects-out-of-string-content"></a>文字列コンテンツから構造化オブジェクトを抽出して分析する
 ----------------------------------------------------------
 
 Microsoft は、[Microsoft Research](http://research.microsoft.com/) とのコラボレーションにより、新しい **ConvertFrom-String** コマンドレットを追加しました。
@@ -80,9 +80,4 @@ P1    P2
 > Ana Trujillo...              Ana Trujillo       Redmond  WA Antonio Moreno...            Antonio Moreno     Renton   WA Thomas Hardy...              Thomas Hardy       Seattle  WA Christina Berglund...        Christina Berglund Redmond  WA Hanna Moos...                Hanna Moos         Puyallup WA
 
 抽出されたテキストに追加のデータ操作を行う目的で、**ExtentText** プロパティに、レコードの抽出元から未加工のテキストがキャプチャされます。 この機能にフィードバックを提供したり、例を書き出すのが難しいコンテンツについて相談したりするには、<psdmfb@microsoft.com> までメールでお知らせください。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

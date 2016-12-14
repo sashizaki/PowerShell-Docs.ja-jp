@@ -7,17 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: c915ebd021ed20209bc491505d45cff2ac89f21d
 ms.openlocfilehash: b430e98c7ec287c0efcf2c2e2736253797242904
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# MSFT_DSCLocalConfigurationManager クラスの GetConfigurationStatus メソッド
+# <a name="getconfigurationstatus-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの GetConfigurationStatus メソッド
 
 構成状態の履歴を取得します。
 
-構文
+<a name="syntax"></a>構文
 ------
 
 ```mof
@@ -27,7 +25,7 @@ uint32 GetConfigurationStatus(
 );
 ```
 
-パラメーター
+<a name="parameters"></a>パラメーター
 ----------
 
 *All* \[in\]  
@@ -36,23 +34,23 @@ uint32 GetConfigurationStatus(
 *configurationStatus* \[out\]  
 制御が戻ったとき、設定を定義する **MSFT_DSCConfigurationStatus** クラスの埋め込みインスタンスが含まれます。
 
-## 戻り値
+## <a name="return-value"></a>戻り値
 ------------
 
 成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
 
-## コメント
+## <a name="remarks"></a>コメント
 
 これは静的メソッドです。
 
-## 要件
+## <a name="requirements"></a>要件
 ------------
 >**MOF:** DscCore.mof
 
 >**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
@@ -62,11 +60,5 @@ uint32 GetConfigurationStatus(
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

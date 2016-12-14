@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
-translationtype: Human Translation
-ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
-ms.openlocfilehash: ce74f3c7cb26632269e42dfddb941fee11dcdc87
-
+ms.openlocfilehash: 08df13411c1998b0db6a4af9b8bd2bacca1dc643
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# リスト ボックスから項目を選択する
+# <a name="selecting-items-from-a-list-box"></a>リスト ボックスから項目を選択する
 Windows PowerShell 3.0 以降のリリースを使用すると、ユーザーがリスト ボックス コントロールから項目を選択できるダイアログ ボックスを作成できます。
 
-## リスト ボックス コントロールを作成してそこから項目を選択する
+## <a name="create-a-list-box-control-and-select-items-from-it"></a>リスト ボックス コントロールを作成してそこから項目を選択する
 以下を Windows PowerShell ISE にコピーしてから貼り付け、Windows PowerShell スクリプト (.ps1) として保存します。
 
 ```
@@ -86,11 +84,11 @@ Add-Type -AssemblyName System.Drawing
 
 フォーム クラスのインスタンスを作成したら、このクラスの次の 3 つのプロパティに値を割り当てます。
 
--   **Text。** ウィンドウのタイトルになります。
+-   **Text**。 ウィンドウのタイトルになります。
 
--   **Size。** フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
+-   **Size**。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
 
--   **StartingPosition。** 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。 このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
+-   **StartingPosition**。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。 このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
 
 ```
 $form.Text = "Select a Computer"
@@ -179,14 +177,8 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## 参照
+## <a name="see-also"></a>参照
 - [Hey Scripting Guy: これらの PowerShell GUI の例が機能しないのはなぜですか。](http://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [今週の Windows PowerShell ヒント: リスト ボックスからアイテムを選択する](http://technet.microsoft.com/library/ff730949.aspx)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
+- [Windows PowerShell Tip of the Week: リスト ボックスからアイテムを選択する](http://technet.microsoft.com/library/ff730949.aspx)
 

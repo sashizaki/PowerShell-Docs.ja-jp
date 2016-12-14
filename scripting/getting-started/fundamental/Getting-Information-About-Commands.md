@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 57ccd656e0b869da8aadece97e9bb871764c3f70
-
+ms.openlocfilehash: b91b68f6d7bfee668edc4731f23b21233d9367d5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# コマンドに関する情報の取得
+# <a name="getting-information-about-commands"></a>コマンドに関する情報の取得
 Windows PowerShell の **Get-Command** コマンドレットは、現在のセッションで使用できるすべてのコマンドを取得します。 Windows PowerShell プロンプトで **Get-Command** と入力すると、次のような出力が得られます。
 
 ```
@@ -33,7 +31,7 @@ Cmdlet          Add-Member                      Add-Member [-MemberType] <PS...
 
 **Get-Command** コマンドレットには、各コマンドレットの構文を取得する **Syntax** パラメーターがあります。 Get-help コマンドレットの構文を取得するには、次のコマンドを使用します。
 
-**Get-Command Get-Help -構文**
+**Get-Command Get-Help - 構文**
 
 ```
 Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component <String[]>] [-Functionality <String[]>]
@@ -49,7 +47,7 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
  [-Role <String[]>] [-Parameter <String>] [-Online] [-Verbose] [-Debug] [-ErrorAction <ActionPreference>] [-WarningAction <ActionPreference>] [-ErrorVariable <String>] [-WarningVariable <String>] [-OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-### 使用可能なコマンドの種類の表示
+### <a name="displaying-available-command-types"></a>使用可能なコマンドの種類の表示
 **Get-Command** コマンドは、Windows PowerShell で使用可能なコマンドのすべてを一覧表示しません。 代わりに、**Get-Command** コマンドは、現在のセッションのコマンドレットのみを一覧表示します。 Windows PowerShell は、実際にはその他のいくつかの種類のコマンドをサポートします。 エイリアス、関数、およびスクリプトも Windows PowerShell のコマンドですが、『Windows PowerShell ユーザー ガイド』では詳細に説明していません。 実行可能な外部ファイル、または登録されているファイル タイプのハンドラーを持つ外部ファイルも、コマンドとして分類されます。
 
 セッション内のすべてのコマンドを取得するには、次のように入力します。
@@ -82,10 +80,4 @@ Windows PowerShell の検索パス内のスクリプトを表示するには、�
 ```
 Get-Command -CommandType Script
 ```
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

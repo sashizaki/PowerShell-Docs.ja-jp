@@ -9,13 +9,11 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_moduledependencypopulation
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: a6ace8faebd6f37d3c41ee5a3fef2bda70b8c651
-
+ms.openlocfilehash: 3d89dddf2fc31a9fdb1a57f21baaf757990989c7
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 発行操作中にモジュールの依存関係を準備するためのロジック
+# <a name="logic-for-preparing-the-module-dependencies-during-publish-operation"></a>発行操作中にモジュールの依存関係を準備するためのロジック
 1.  RequiredModules の一部として一覧表示されているモジュールは、依存関係として見なされます。
 2.  NestedModules の一部として一覧表示されているモジュール (モジュール ベースが指定されたモジュール ベースの下にないモジュール) は、依存関係として見なされます。
 
@@ -34,10 +32,4 @@ ms.openlocfilehash: a6ace8faebd6f37d3c41ee5a3fef2bda70b8c651
 *モジュールのインストール時に、上記の準備された依存関係一覧が依存関係のインストールに使用されます。*
 
 *発行操作中にモジュールの依存関係がシステムの $env:PSModulePath で使用可能なことを確認してください。*
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

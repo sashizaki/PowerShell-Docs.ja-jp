@@ -8,25 +8,23 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
-translationtype: Human Translation
-ms.sourcegitcommit: 26d8bc85b78248e15558dbfef72d32cca7de9627
-ms.openlocfilehash: e63809763808836af9f468c2ac55ede42836d6b2
-
+ms.openlocfilehash: 450fca8e190a175995ff91f9b32ee0695af14045
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ISEAddOnTool オブジェクト
+# <a name="the-iseaddontool-object"></a>ISEAddOnTool オブジェクト
   **ISEAddonTool** オブジェクトは、Windows PowerShell ISE に追加の機能を提供する、インストール済みのアドオン ツールを表します。 例としては、**[表示]**、**[コマンド アドオンの表示]** の順にクリックして表示できる**コマンド** ツールです。 このツールには、利用可能なさまざまな **ISEAddOnTool** オブジェクトを操作することでアクセスできます。
 
  各アドオン ツールは、垂直方向のウィンドウまたは水平方向のウィンドウのいずれかと関連付けることができます。 垂直方向のウィンドウは、Windows PowerShell ISE の右端にドッキングされています。 水平方向のウィンドウは、下端にドッキングされています。
 
  Windows PowerShell ISE の各 PowerShell タブには、インストール済みのアドオン ツールの固有のセットを含めることができます。 現在選択しているタブで使用できるツールのコレクション、または [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md) コレクション オブジェクトのいずれかの **PowerShellTab** オブジェクトの同じプロパティのコレクションにアクセスするには、[$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md) および [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-ISEAddOnToolCollection-Object.md) を参照してください。
 
-## メソッド
+## <a name="methods"></a>メソッド
  このクラスのオブジェクトで使用できる Windows PowerShell ISE 固有のメソッドはありません。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
-###  <a name="Control"></a> Control
+###  <a name="a-namecontrola-control"></a><a name="Control"></a> Control
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
  **コントロール** プロパティは、コマンド アドオン ツールの詳細への読み取りアクセスを提供します。
@@ -142,7 +140,7 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 ```
 
-###  <a name="IsVisible"></a> IsVisible
+###  <a name="a-nameisvisiblea-isvisible"></a><a name="IsVisible"></a> IsVisible
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
  割り当てられているウィンドウにアドオン ツールが現在表示されているかどうかを示すブール型プロパティ。 表示されている場合は、**IsVisible** プロパティを **$false** を設定すると、ツールを非表示にすることができます。**IsVisible** プロパティを **$true** に設定すると、PowerShell でアドオン ツールが表示されます。 アドオン ツールを非表示にすると、**CurrentVisibleHorizontalTool** または **CurrentVisibleVerticalTool** オブジェクトからアクセスできなくなるため、これらのオブジェクトのこのプロパティを使用して表示するようにすることはできません。
@@ -155,7 +153,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible=$true
 
 ```
 
-###  <a name="name"></a> 名前
+###  <a name="a-namenamea-name"></a><a name="name"></a> Name
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
  アドオン ツールの名前を取得する読み取り専用プロパティ。
@@ -167,15 +165,9 @@ Commands
 
 ```
 
-## 参照
+## <a name="see-also"></a>参照
 - [ISEAddOnToolCollection オブジェクト](The-ISEAddOnToolCollection-Object.md)
 - [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md)
 - [ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)
-
-
-
-
-<!--HONumber=Sep16_HO4-->
-
 

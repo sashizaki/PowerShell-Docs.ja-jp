@@ -8,24 +8,22 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "ドメイン コントローラーの作成"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: d4a72a7c5883b1d3ba8de3dbc9cfe016a6fb3498
-ms.openlocfilehash: 8473eb668e4da5bab01c2f2b7647cbced413bd22
-
+ms.openlocfilehash: 80b957ed666ca626c6083041cf99c263e2e0dc27
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-### ドメイン コントローラーの作成
+### <a name="creating-a-domain-controller"></a>ドメイン コントローラーの作成
 
 このドキュメントでは、お使いのコンピューターがドメインに参加していることを前提としています。
 現在ドメインに参加していない場合は、このセクションを利用して、DSC を使ってドメイン コントローラーを簡単に立ち上げることができます。
 
-#### 前提条件
+#### <a name="prerequisites"></a>前提条件
 
 1.  コンピューターが内部ネットワークにあること
 2.  コンピューターが、既存のドメインに参加していないこと
 3.  コンピューターが Windows Server 2016 を実行しているか、WMF 5.0 がインストールされていること
 
-#### xActiveDirectory のインストール
+#### <a name="install-xactivedirectory"></a>xActiveDirectory のインストール
 コンピューターにアクティブなインターネット接続がある場合は、管理者特権の PowerShell ウィンドウで次のコマンドを実行します。
 ```PowerShell
 Install-Module xActiveDirectory -Force
@@ -37,9 +35,9 @@ Install-Module xActiveDirectory -Force
 Get-Module xActiveDirectory -ListAvailable
 ```
 
-#### DSC を使用したドメインのセットアップ
+#### <a name="set-up-a-domain-with-dsc"></a>DSC を使用したドメインのセットアップ
 PowerShell で次のスクリプトをコピーして、お使いのコンピューターを新しいドメインのドメイン コントローラーにします。
-**著者のメモ: 指定した資格情報が使用されないという既知の問題があります。  安全のため、ローカルの管理者パスワードを忘れないように。**
+**著者のメモ: 指定した資格情報が使用されないという既知の問題があります。安全のため、ローカルの管理者パスワードを忘れないようにしてください。**
 
 ```PowerShell
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value $env:COMPUTERNAME -Force
@@ -115,7 +113,7 @@ Start-DSCConfiguration -path .\DomainController -ComputerName $env:Computername 
 コンピューターが数回再起動します。
 ドメインが作成されたことを伝える C:\temp.txt というファイルが表示されたら、プロセスは完了しています。
 
-#### ユーザーとグループの設定
+#### <a name="set-up-users-and-groups"></a>ユーザーとグループの設定
 次のコマンドは、ドメインにオペレーターとヘルプデスクのグループ、またそのグループのメンバーである対応する管理者以外のユーザーを設定します。
 ```PowerShell
 # Make Groups
@@ -134,10 +132,4 @@ Enable-ADAccount -Identity $HelpDeskUser
 Add-ADGroupMember -Identity $NonAdminOperatorGroup -Members $OperatorUser
 Add-ADGroupMember -Identity $NonAdminHelpDeskGroup -Members $HelpDeskUser
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

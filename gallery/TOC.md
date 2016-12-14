@@ -23,8 +23,8 @@
 ### [ロール機能を見つける](psget/module/psget_find-rolecapability.md)
 ### [コマンドを見つける](psget/module/psget_find-command.md)
 ### [上書き保存](psget/module/psget_save-module.md)
-### [［インストール］](psget/module/psget_install-module.md)
-### [更新プログラム、更新](psget/module/psget_update-module.md)
+### [インストール](psget/module/psget_install-module.md)
+### [更新](psget/module/psget_update-module.md)
 ### [アンインストール](psget/module/psget_uninstall-module.md)
 ### [インストールされているモジュールを取得する](psget/module/psget_get-installedmodule.md)
 ### [モジュール マニフェストを更新する](psget/module/psget_update-modulemanifest.md)
@@ -33,10 +33,10 @@
 ### [トラブルシューティング](psget/psget_cmdlets_troubleshooting.md)
 
 ## スクリプト
-### [［検索］](psget/script/psget_find-script.md)
+### [検索](psget/script/psget_find-script.md)
 ### [上書き保存](psget/script/psget_save-script.md)
-### [［インストール］](psget/script/psget_install-script.md)
-### [更新プログラム、更新](psget/script/psget_update-script.md)
+### [インストール](psget/script/psget_install-script.md)
+### [更新](psget/script/psget_update-script.md)
 ### [アンインストール](psget/script/psget_uninstall-script.md)
 ### [インストールされているスクリプトを取得する](psget/script/psget_get-installedscript.md)
 ### [メタデータを持つスクリプト ファイルを作成する](psget/script/psget_new-scriptfileinfo.md)
@@ -53,8 +53,3 @@
 ### [リポジトリの登録を解除する](psget/repository/psget_unregister-psrepository.md)
 
 ## [PackageManagement コマンドレット](psget/oneget/PackageManagement_cmdlets.md)
-
-
-<!--HONumber=Sep16_HO2-->
-
-

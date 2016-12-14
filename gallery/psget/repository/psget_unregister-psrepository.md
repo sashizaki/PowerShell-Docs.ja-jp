@@ -9,33 +9,31 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_unregister psrepository
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 7d9c24ebb20756a2f7852692532ac6ec7e558ca9
-
+ms.openlocfilehash: c90710db47dbfdc58e1ca7f84c6d6fd8f04b5109
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Unregister-PSRepository
+# <a name="unregister-psrepository"></a>Unregister-PSRepository
 
 リポジトリの登録を解除します。
 
-## 説明
+## <a name="description"></a>説明
 
 Unregister-PSRepository コマンドレットは現在のユーザーのリポジトリの登録を解除します。
 - PSGallery リポジトリの登録解除と再登録は、エンタープライズ シナリオと切断されたシナリオで許可されています。
-- ユーザーは、実行するだけで PSGallery を再登録できます `Register-PSRepository -Default`
+- ユーザーは、`Register-PSRepository -Default` を実行するだけで PSGallery を再登録できます
 - PSGallery は、Publish-Module と Publish-Script コマンドレット内の既定の発行リポジトリであるため、PSGallery が登録されているリポジトリの一覧で使用できない場合はエラーがスローされます。
 
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 
 ```powershell
 Get-Command -Name Unregister-PSRepository -Module PowerShellGet -Syntax
 ```
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Unregister-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517130)
 
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 Unregister-PSRepository -Name "MyPrivateGallery"
@@ -43,7 +41,7 @@ Unregister-PSRepository -Name "MyPrivateGallery"
 Get-PSRepository exp | Unregister-PSRepository
 ```
 
-### PSGallery リポジトリの登録解除と再登録は、エンタープライズ シナリオと切断されたシナリオで許可されています。
+### <a name="unregistration-and-re-registration-of-the-psgallery-repository-is-allowed-for-an-enterprise-and-disconnected-scenarios"></a>PSGallery リポジトリの登録解除と再登録は、エンタープライズ シナリオと切断されたシナリオで許可されています。
 ```powershell
 
 # Unregister PSGallery repository
@@ -61,10 +59,4 @@ At line:1 char:1
 # Re-register PSGallery repository
 Register-PSRepository -Default
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

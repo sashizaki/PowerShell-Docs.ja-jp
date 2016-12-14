@@ -9,26 +9,24 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_status
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 69df41ae0a9dfd9fb71655cf6334f60f1d39ae94
-
+ms.openlocfilehash: 2e9eed63e0cc6fbf66543ea528581c2728e999c7
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-PowerShell ギャラリーの状態
+<a name="powershell-gallery-status"></a>PowerShell ギャラリーの状態
 =========================
 
 
-## 2016 年 8 月 10 日 - 解決済み: cgadmin@microsoft.com に電子メールを送信できません。
+## <a name="8102016---resolved-unable-to-send-emails-to-cgadminmicrosoftcom"></a>2016 年 8 月 10 日 - 解決: 電子メールを cgadmin@microsoft.com に送信できない
 
-__影響の概要__: 2016 年 8 月 5 日から 2016 年 8 月 10 日までの期間中にお客様は cgadmin@microsoft.com に電子メールを送信することも、[お問い合わせ先] 機能を使用することもできませんでした。  
+__影響の概要__: 2016 年 8 月 5 日から 2016 年 8 月 10 日までの期間中にお客様は cgadmin@microsoft.com, に電子メールを送信することも、[お問い合わせ先] 機能を使用することもできませんでした。  
 __根本的な原因__: エンジニアは、電子メール アカウントの構成の変更に原因があることを突き止めました。  
 __解決策__: エンジニアは、構成の問題を解決するための作業を行いました。  
-__次の手順__: この期間中に [お問い合わせ先] リンクを使用、または cgadmin@microsoft.com にメールを送信したお客様には応答できていませんので、もう一度やり直してください。 ご不便をおかけして申し訳ございませんでした。
+__次の手順__: この期間中に [お問い合わせ先] リンクを使用、または cgadmin@microsoft.com にメールを送信したお客様には応答できていませんので、やり直してください。 ご不便をおかけして申し訳ございませんでした。
 
 
 
-## 2016 年 7 月 13 日 - アイテムのダウンロードに失敗しました
+## <a name="7132016---download-items-failed"></a>2016 年 7 月 13 日 - アイテムのダウンロードに失敗しました
 
 __影響の概要__: 2016 年 7 月 11 日から 2016 年 7 月 13 日までの期間中に一部のお客様で、PowerShell ギャラリーからアイテムをダウンロードする際に問題が発生しました。 この問題は、Install-Module/Install-Script および Save-Module/Save-Script から返された次のエラー メッセージに示されていたようです。
 
@@ -48,7 +46,7 @@ __対応策__: エンジニアは、PowerShell ギャラリーで Azure CDN を�
 __次の手順__: 根本原因を調査し、今後の問題発生を防止するためのソリューションを開発します。
 
 
-## 2016 年 5 月 19 日 - アイテムのダウンロードに失敗しました
+## <a name="5192016---download-items-failed"></a>2016 年 5 月 19 日 - アイテムのダウンロードに失敗しました
 __影響の概要__: 2016 年 5 月 17 日から 2016 年 5 月 19 日までの期間中に一部のお客様で、PowerShell ギャラリーからアイテムをダウンロードする際に問題が発生しました。 この問題は、Install-Module/Install-Script および Save-Module/Save-Script から返された次のエラー メッセージに示されていたようです。
 
 ```PowerShell
@@ -75,10 +73,4 @@ Microsoft.PowerShell.PackageManagement.Cmdlets.SavePackage
 __暫定的な根本原因__: エンジニアは、2016 年 5 月 17 日に PowerShell ギャラリーに展開した Azure コンテンツ配信ネットワーク (CDN) の基になるプロバイダーで障害が発生したことを突き止めました。  
 __対応策__: エンジニアは、PowerShell ギャラリーで Azure CDN を無効にしました。  
 __次の手順__: 根本原因を調査し、今後の問題発生を防止するためのソリューションを開発します。
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

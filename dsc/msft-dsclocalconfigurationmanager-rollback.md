@@ -7,18 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: c915ebd021ed20209bc491505d45cff2ac89f21d
 ms.openlocfilehash: 771a9c7b50aba26f89dbf6b24eb3df67bafeac0a
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-
-# MSFT_DSCLocalConfigurationManager クラスの RollBack メソッド
+# <a name="rollback-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの RollBack メソッド
 
 構成を以前のバージョンにロールバックします。
 
-構文
+<a name="syntax"></a>構文
 ------
 
 ```mof
@@ -27,29 +24,29 @@ uint32 RollBack(
 );
 ```
 
-パラメーター
+<a name="parameters"></a>パラメーター
 ----------
 
 *configurationNumber* \[in\]  
 要求された構成を指定します。 
 
-## 戻り値
+## <a name="return-value"></a>戻り値
 ------------
 
 成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
 
-## コメント
+## <a name="remarks"></a>コメント
 
 これは静的メソッドです。
 
-## 要件
+## <a name="requirements"></a>要件
 ------------
 >**MOF:** DscCore.mof
 
 >**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
@@ -59,11 +56,5 @@ uint32 RollBack(
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

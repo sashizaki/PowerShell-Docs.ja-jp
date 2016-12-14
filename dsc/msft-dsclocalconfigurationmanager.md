@@ -7,19 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 26db4a48af3aa3d6a9a2054fb85da8779626f284
 ms.openlocfilehash: b9cb89bb120151df69e3cb26b50c3a0d15c23711
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# MSFT_DSCLocalConfigurationManager クラス
+# <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラス
 
 構成ファイルの状態を制御し、構成エージェントを使用してその構成を適用するローカル構成マネージャー (LCM)。
 
 次の構文は管理オブジェクト フォーマット (MOF) のコードを単純化したもので、すべての継承されたプロパティを含みます。
 
-## 構文
+## <a name="syntax"></a>構文
 ------
 
 ``` syntax
@@ -29,14 +27,14 @@ class MSFT_DSCLocalConfigurationManager
 };
 ```
 
-## [メンバー]
+## <a name="members"></a>[メンバー]
 -------
 
 **MSFT_DSCLocalConfigurationManager** クラスには次のメンバーがあります。
 
 -   [メソッド][]
 
-### メソッド
+### <a name="methods"></a>メソッド
 
 **MSFT_DSCLocalConfigurationManager** クラスでは、次のメソッドを使用できます。
 
@@ -66,7 +64,7 @@ class MSFT_DSCLocalConfigurationManager
 
  
 
-## 要件
+## <a name="requirements"></a>要件
 ------------
 >**MOF:** DscCore.mof
 
@@ -78,11 +76,5 @@ class MSFT_DSCLocalConfigurationManager
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

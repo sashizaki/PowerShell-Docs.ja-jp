@@ -8,19 +8,17 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 4334a1ff099072c2287af299d65caed3f16032fe
-
+ms.openlocfilehash: 27b9d9c71412a06a8890b56163d0e6acb7ecd1f4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ソフトウェア インストールの操作
+# <a name="working-with-software-installations"></a>ソフトウェア インストールの操作
 Windows インストーラーを使用するように設計されているアプリケーションは、WMI の **Win32_Product** クラスからアクセスできますが、今日使用されているすべてのアプリケーションが Windows インストーラーを使用しているわけではありません。 Windows インストーラーは、インストール可能なアプリケーションを操作するための標準的な手法を最も広範囲に提供しているため、主にこれらのアプリケーションについて説明します。 代替のセットアップ ルーチンを使用するアプリケーションは、通常 Windows インストーラーによって管理されません。 これらのアプリケーションを処理する具体的な方法は、インストーラーのソフトウェアとアプリケーションの開発者によってなされた決定によって異なります。
 
 > [!NOTE]
 > コンピューターにアプリケーションのファイルをコピーすることによってインストールされているアプリケーションは、通常、ここで紹介されている手法を使用してで管理することはできません。 これらのアプリケーションは、「ファイルとフォルダーの操作」セクションで説明した手法を使用することで、ファイルやフォルダーとして管理できます。
 
-### Windows インストーラー アプリケーションを一覧表示する
+### <a name="listing-windows-installer-applications"></a>Windows インストーラー アプリケーションを一覧表示する
 ローカルまたはリモート システムに Windows インストーラーを使用してインストールされているアプリケーションの一覧を表示するには、次の単純な WMI クエリを使用します。
 
 ```
@@ -85,7 +83,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 
 これまでインストールに Windows インストーラーを使用したアプリケーションを検索する方法をいくつか確認しましたが、他のアプリケーションはまだ検討していません。 ほとんどの標準的なアプリケーションはアンインストーラーを Windows に登録するため、Windows レジストリでこれらを検索することで、ローカルで操作できます。
 
-### アンインストール可能なすべてのアプリケーションを一覧表示する
+### <a name="listing-all-uninstallable-applications"></a>アンインストール可能なすべてのアプリケーションを一覧表示する
 システム上のすべてのアプリケーションを検索する確実な方法はありませんが、[プログラム追加と削除] ダイアログ ボックスに表示される一覧ですべてのプログラムを検索することができます。 [プログラム追加と削除] は、次のレジストリ キーでこれらのアプリケーションを検索します。
 
 **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**
@@ -141,7 +139,7 @@ SKC  VC Name                           Property
   0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
 ```
 
-### アプリケーションのインストール
+### <a name="installing-applications"></a>アプリケーションのインストール
 **Win32_Product** クラスを使用して、リモートまたはローカルで、Windows インストーラー パッケージをインストールできます。
 
 > [!NOTE]
@@ -155,7 +153,7 @@ SKC  VC Name                           Property
 
 Windows インストーラー テクノロジを使用しないアプリケーションは、展開の自動化に利用できるアプリケーション固有の方法があります。 展開を自動化するための方法があるかどうかを確認するには、アプリケーションのマニュアルを参照するか、アプリケーション ベンダーのサポート システムを参照してください。 場合によっては、アプリケーション ベンダーが特にインストールの自動化に対応するようアプリケーションを設計していなくても、インストーラー ソフトウェアの製造元が自動化のためのテクニックをいくつか持っていることがあります。
 
-### アプリケーションの削除
+### <a name="removing-applications"></a>アプリケーションの削除
 Windows PowerShell を使用した Windows インストーラー パッケージの削除は、パッケージのインストールとほとんど同じ方法で機能します。 名前に基づいてアンインストールするパッケージを選択する例を以下に示します。場合によっては、**IdentifyingNumber** を使用してフィルター処理した方が簡単になることがあります。
 
 ```
@@ -176,16 +174,10 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue("Displ
 
 ただし、これらの文字列は、Windows PowerShell プロンプトから直接使用するには、いくつか変更が必要な場合があります。
 
-### Windows インストーラー アプリケーションのアップグレード
+### <a name="upgrading-windows-installer-applications"></a>Windows インストーラー アプリケーションのアップグレード
 アプリケーションをアップグレードするには、アプリケーションの名前、およびアプリケーションのアップグレード パッケージのパスを認識している必要があります。 その情報があれば、1 つの Windows PowerShell コマンドを使用してアプリケーションをアップグレードすることができます。
 
 ```
 (Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='OldAppName'").Upgrade(\\AppSrv\dsp\OldAppUpgrade.msi)
 ```
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

@@ -8,13 +8,11 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "このガイドで使用される主要概念"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: 178fea44987b0c457b8e5d23fbe851ee12f03b31
-
+ms.openlocfilehash: 873ab19fdf43ec4ac41cc546aa94b64fbc607984
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# このガイドで使用される主要概念
+# <a name="key-concepts-used-throughout-this-guide"></a>このガイドで使用される主要概念
 **JEA とは**
 
 JEA は PowerShell の[制約付きエンドポイント](http://blogs.technet.com/b/heyscriptingguy/archive/2014/03/31/introduction-to-powershell-endpoints.aspx)の拡張機能で、ロール定義、仮想アカウントなどのいくつかの機能強化を追加することで、管理エンドポイントをさらに簡単に保護できます。
@@ -53,10 +51,4 @@ PowerShell リモート処理について詳しくは、`Get-Help about_Remote` 
 
 **"接続されている" ユーザー**: JEA エンドポイントに接続し、ロールが割り当てられる管理者以外のユーザー。
 このユーザーが実行するすべてのユーザーは、RunAs または仮想アカウントのコンテキストで実行されます。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

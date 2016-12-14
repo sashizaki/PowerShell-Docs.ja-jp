@@ -1,4 +1,4 @@
-# インストール手順
+# <a name="installation-instructions"></a>インストール手順
 
 お使いのオペレーティング システムとアーキテクチャに該当する適切なパッケージをダウンロードします。
 
@@ -39,10 +39,5 @@
 - [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) がインストールされていること。
 
 *WinRM の依存関係:* Windows PowerShell Desired State Configuration (DSC) は、WinRM に依存します。 WinRM は、Windows Server 2008 R2 および Windows 7 では既定で無効になっています。 WinRM を有効にするには、Windows PowerShell 管理者特権セッションで **Set-WSManQuickConfig** を実行します。
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

@@ -7,18 +7,16 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 6477ae8575c83fc24150f9502515ff5b82bc8198
-ms.openlocfilehash: c5ee7f7e7678b60700edb1ab1b66139791ea67c6
-
+ms.openlocfilehash: 3a59f76919c0a63f269ca587d358020825412be4
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# PowerShell Desired State Configuration の概要 #
+# <a name="getting-started-with-powershell-desired-state-configuration"></a>PowerShell Desired State Configuration の概要 #
 
 このガイドでは、PowerShell Desired State Configuration ドキュメントの作成を開始し、マシンに適用する方法について説明します。 PowerShell コマンドレット、モジュール、および関数の基礎知識があることを前提とします。 
 
 
-## 構成の作成 ##
+## <a name="create-a-configuration"></a>構成の作成 ##
 
 [**構成**](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)は、環境について説明するドキュメントです。 環境は "**ノード**" で構成され、ノードは通常、仮想マシンまたは物理マシンです。 
 
@@ -41,7 +39,7 @@ configuration MyFirstConfiguration
 
 }
 ```
-## 構成のパーツ ##
+## <a name="parts-of-a-configuration"></a>構成のパーツ ##
 **Configuration** は、PowerShell 4.0 に追加されたキーワードです。 これは、Desired State Configuration で使用される特別な種類の PowerShell 関数を示します。 この例では、関数の名前は myFirstConfiguration です。 
 
 次の行は、モジュールのインポートと同様のインポート ステートメントです。 これについては後で説明します。
@@ -71,10 +69,4 @@ Start-DscConfiguration -Path ./myFirstConfiguration
 ```powershell
 Start-DscConfiguration -Path ./myFirstConfiguration -Wait
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 

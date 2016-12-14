@@ -1,4 +1,4 @@
-# モジュールの依存関係のインストール
+# <a name="installation-of-module-dependencies"></a>モジュールの依存関係のインストール
 
 Windows PowerShell 5.0 以降で実行される Install-Module、Update-Module、および Publish-Module コマンドレットには、Side-by-Side (SxS) モジュール バージョン サポートがあります。
 また、発行するバージョンを指定する -RequiredVersion パラメーターを Publish-Module コマンドレットに追加しました。 Path パラメーターは、モジュールのベース パスと、バージョン フォルダーをサポートするようになりました。
@@ -67,7 +67,7 @@ ModuleType Version Name ExportedCommands
 Manifest 2.0 ModuleWithDependencies2 {Get-NestedRequiredModule1, Get-NestedRequiredModule2, Get-NestedRequiredModule3, Get-NestedRequiredModule4...}
 ```
 
-**ModuleWithDependencies2 モジュール マニフェスト ファイルの内容:**
+**ModuleWithDependencies2 モジュール マニフェスト ファイルの内容**
 ```powershell
 @{
 \# Version number of this module.
@@ -192,7 +192,3 @@ _------ ---- ---------- -----------
 1.5 ContosoServer LocalRepo ContosoServer module
 2.0 ContosoServer LocalRepo ContosoServer module
 ```
-
-<!--HONumber=Aug16_HO3-->
-
-

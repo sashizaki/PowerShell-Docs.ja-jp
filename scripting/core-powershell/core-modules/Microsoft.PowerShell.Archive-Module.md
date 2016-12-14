@@ -8,28 +8,20 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 71a727b5-49a5-47a9-8034-161c86cf042b
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 249a0ece77a11fd9aa54a6ff4170e44f42b377c9
-
+ms.openlocfilehash: f1c54761db169a3f79efb06124be916185c3fb28
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Microsoft.PowerShell.Archive モジュール
+# <a name="microsoftpowershellarchive-module"></a>Microsoft.PowerShell.Archive モジュール
 このセクションでは、Windows PowerShell **Microsoft.PowerShell.Archive** モジュールと共にインストールされるコマンドレットのヘルプ トピックを紹介しています。 アーカイブ モジュールには、アーカイブまたは ZIP ファイルを作成して抽出するためのコマンドレットが含まれています。
 
-## Microsoft.PowerShell.Archive コマンドレット
+## <a name="microsoftpowershellarchive-cmdlets"></a>Microsoft.PowerShell.Archive コマンドレット
 
 |||
 |-|-|
 |[Compress-Archive](http://technet.microsoft.com/library/dn841358.aspx)|1 つまたは複数の指定したファイルまたはフォルダーをアーカイブ ファイルに圧縮します。|
 |[Expand-Archive](http://technet.microsoft.com/library/dn841359.aspx)|アーカイブ (または ZIP) のコンテンツ ファイルを指定した場所に抽出します。|
 
-## 参照
-[Windows PowerShell のコア モジュール](http://technet.microsoft.com/library/hh847741.aspx)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+## <a name="see-also"></a>参照
+- [Windows PowerShell のコア モジュール](http://technet.microsoft.com/library/hh847741.aspx)
 

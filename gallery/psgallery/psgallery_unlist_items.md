@@ -9,13 +9,11 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_unlist_items
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 95e0bb58eb110a9060615e409cb55fa9231d505f
-
+ms.openlocfilehash: ede07cce7b65b795f48d16cb2862880f84c3eda2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# アイテムをリストから外す
+# <a name="unlisting-items"></a>アイテムをリストから外す
 
 **PowerShell ギャラリーからアイテムを削除するためのオプションが表示されません。**
 
@@ -41,11 +39,5 @@ PowerShell ギャラリーでモジュールやスクリプトなどのアイテ
 - アイテムに機密データが含まれている。
 
 PowerShell ギャラリーの管理者にアイテムの削除依頼を送信するには、アイテム詳細ページにアクセスし、[Contact Support] (サポートに問い合わせる) を選択します。  
-
-
-
-
-
-<!--HONumber=Oct16_HO2-->
 
 

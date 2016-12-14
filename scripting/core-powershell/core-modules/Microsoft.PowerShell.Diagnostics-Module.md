@@ -8,26 +8,18 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: f5aab004-d759-4f8b-9064-a30095ad4257
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 5a404bca8e9435a9eab29b8b4cfa8c336d024c38
-
+ms.openlocfilehash: ad0e67824f654d6fdcb00febf64c2d42378bd6c3
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Microsoft.PowerShell.Diagnostics モジュール
+# <a name="microsoftpowershelldiagnostics-module"></a>Microsoft.PowerShell.Diagnostics モジュール
 このセクションには、**Microsoft.PowerShell.Diagnostics** モジュールのヘルプ トピックが含まれています。 **Microsoft.PowerShell.Diagnostics** モジュールには、イベント ログ、パフォーマンス カウンター、および Event Tracing for Windows (ETW) を管理するコマンドレットが含まれています。 これは Windows PowerShell と共にインストールされます。
 
-## ヘルプ トピック
+## <a name="help-topics"></a>ヘルプ トピック
 [Windows PowerShell 診断コマンドレット](http://go.microsoft.com/fwlink/?LinkID=245858)
 
-## 参照
+## <a name="see-also"></a>参照
 - [Windows PowerShell 5.0](Windows-PowerShell-5.0.md)
 - [Windows PowerShell コア](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
 - [Windows PowerShell を使用したスクリプト](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
-
-
-
-
-<!--HONumber=Nov16_HO4-->
-
 

@@ -8,17 +8,15 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: c3636b45-61aa-4720-85f0-58312c4fc8f9
-translationtype: Human Translation
-ms.sourcegitcommit: 7caac42751c580d588fcf19db7253c8b75d6c865
-ms.openlocfilehash: 7af27dc9bd8e93d1df5258b0d8df8af12726f568
-
+ms.openlocfilehash: 8df8b9bb74eba5921263ad9d802dcece41261f9a
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell SDK のインストール
+# <a name="installing-the-windows-powershell-sdk"></a>Windows PowerShell SDK のインストール
 
 以下のトピックでは、異なるバージョンの Windows に PowerShell SDK をインストールする方法について説明します。
 
-## Windows 8 と Windows Server 2012 での Windows PowerShell 3.0 SDK のインストール
+## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Windows 8 と Windows Server 2012 での Windows PowerShell 3.0 SDK のインストール
 
 Windows PowerShell 3.0 は Windows 8 と Windows Server 2012 で自動的にインストールされます。
 さらに、Windows 8 SDK の一部としての Windows PowerShell 3.0 の参照アセンブリもダウンロードおよびインストールできます。
@@ -32,33 +30,33 @@ Windows PowerShell のサンプル コードもデベロッパー センター�
 Windows PowerShell 2.0 SDK をダウンロードする方法の詳細については、以下をご覧ください。
 (2.0 のサンプル コードは Windows 8 および Windows PowerShell 3.0 と互換性がありますが、Windows PowerShell 2.0 を Windows 8 プラットフォームにインストールすることはできません)。
 
-##Windows 7 と Windows Server 2008 R2 での Windows PowerShell 3.0 SDK のインストール
+##<a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Windows 7 と Windows Server 2008 R2 での Windows PowerShell 3.0 SDK のインストール
 
 Windows 7 と Windows Server 2008 R2 では、PowerShell 2.0 が自動的にインストールされます。
 さらに、これらのシステムに PowerShell 3.0 をインストールできます。
 (詳細については、「[Windows PowerShell のインストール](Installing-Windows-PowerShell.md)」をご覧ください。)
 前述のように、Windows 7 および Windows Server 2008 R2 で Windows 8 SDK をインストールすることもできます。
 
-## Windows 7、Vista、XP、Server 2003、Server 2008 での Windows PowerShell 2.0 SDK のインストール
+## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>Windows 7、Vista、XP、Server 2003、Server 2008 での Windows PowerShell 2.0 SDK のインストール
 
 Windows PowerShell 2.0 SDK は、コマンドレット、プロバイダー、アプリケーションのホストを記述するために必要な参照アセンブリを提供し、コードの記述を開始するときに開始点として使用できる C# サンプル コードを提供します。
 
 この SDK をインストールするには、「[Windows PowerShell 2.0 SDK](http://go.microsoft.com/fwlink/?LinkId=184611)」を参照してください。
 
-## 参照アセンブリ
+## <a name="reference-assemblies"></a>参照アセンブリ
 
 既定では、参照アセンブリは `c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0` にインストールされます。
 
 > **注記**: Windows PowerShell 2.0 のアセンブリに対してコンパイルされるコードは、Windows PowerShell 1.0 のインストールに読み込むことができません。
 >ただし、Windows PowerShell 1.0 のアセンブリに対してコンパイルされるコードは、Windows PowerShell 2.0 のインストールに読み込むことができます。
 
-## サンプル
+## <a name="samples"></a>サンプル
 
 既定では、コード サンプルは `C:\Program Files\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` にインストールされます。
 
 次のセクションでは、各サンプル コードについて簡単に説明します。
 
-## コマンドレット サンプル
+## <a name="cmdlet-samples"></a>コマンドレット サンプル
 **GetProcessSample01**
 
 ローカル コンピューターのすべてのプロセスを取得する簡単なコマンドレットを記述する方法を示します。
@@ -105,7 +103,7 @@ Windows PowerShell 2.0 SDK は、コマンドレット、プロバイダー、�
 
 パラメーター セットの宣言方法、コマンドレットが入力として取得するオブジェクト、既定として使用するパラメーター セットの指定方法を示します。
 
-## リモート処理のサンプル
+## <a name="remoting-samples"></a>リモート処理のサンプル
 
 **RemoteRunspace01**
 
@@ -127,7 +125,7 @@ Windows PowerShell 2.0 SDK は、コマンドレット、プロバイダー、�
 
 既存の .NET クラスを見て、そのクラスのインスタンスと派生クラスのインスタンスがライブ .NET オブジェクトに逆シリアル化 (リハイドレート) されていることを確認する方法を示します。
 
-## イベントのサンプル
+## <a name="event-samples"></a>イベントのサンプル
 
 **Event01**
 
@@ -138,7 +136,7 @@ ObjectEventRegistrationBase から派生させることでイベント登録の�
 リモート コンピューターで生成された Windows PowerShell イベントの通知を受信する方法を示します。
 [Runspace](https://technet.microsoft.com/library/system.management.automation.runspaces.runspace.aspx) クラスで公開された PSEventReceived イベントを使用します。
 
-## アプリケーションのホストのサンプル
+## <a name="hosting-application-samples"></a>アプリケーションのホストのサンプル
 
 **Runspace01**
 
@@ -204,7 +202,7 @@ ObjectEventRegistrationBase から派生させることでイベント登録の�
 
 実行空間プールを使用し、複数のコマンドを同時に実行する方法を示します。
 
-## ホストのサンプル
+## <a name="host-samples"></a>ホストのサンプル
 
 **Host01**
 
@@ -236,7 +234,7 @@ ObjectEventRegistrationBase から派生させることでイベント登録の�
 コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する対話型コンソール ベースのホスト アプリケーションを構築する方法を示します。
 さらに、このサンプルでは、トークナイザー API を使用して、ユーザーが入力したテキストの色を指定します。
 
-## プロバイダーのサンプル
+## <a name="provider-samples"></a>プロバイダーのサンプル
 
 **AccessDBProviderSample01**
 
@@ -271,9 +269,3 @@ Move-Item コマンドレットと Join-Path コマンドレットを呼び出�
 Clear-Content コマンドレット、Get-Content コマンドレット、Set-Content コマンドレットを呼び出すためにコンテナー メソッドを上書きする方法を示します。
 これらのメソッドは、ユーザーがデータ ストア内の項目のコンテンツを管理する必要がある場合に実装する必要があります。
 このサンプルのプロバイダー クラスは [NavigationCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider.aspx) クラスから派生し、[IContentCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.icontentcmdletprovider.aspx) インターフェイスを実装します。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

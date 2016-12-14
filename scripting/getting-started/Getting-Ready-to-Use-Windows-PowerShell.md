@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6dc7052d-cc5a-4220-950f-98f963a2b587
-translationtype: Human Translation
-ms.sourcegitcommit: 416d21d2a2fa3d837eba19b1023e4045a124e23c
-ms.openlocfilehash: 9229df48b00c125e04d0f97536697495d0ca01ed
-
+ms.openlocfilehash: 2564ab148fb1de1cb58ee775d2000d321a1d36c1
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell を使用する準備を行う
+# <a name="getting-ready-to-use-windows-powershell"></a>Windows PowerShell を使用する準備を行う
 Windows PowerShell をインストールして起動したら、次のセットアップ オプションを実行することを検討してください。 これらのタスクは、いつでも実行できます。
 
 -   **ヘルプ ファイルをインストールします。** Windows PowerShell 3.0 に含まれているコマンドレットには、ヘルプ ファイルが付属していません。 ただし、[Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドレットを使うと、最新のヘルプ ファイルをダウンロードしてコンピューターにインストールできます。 ファイルをインストールしたら、[Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) コマンドレットを使ってコマンド ラインに表示します。 詳しくは、「[about_Updatable_Help](https://technet.microsoft.com/en-us/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe)」をご覧ください。
@@ -27,13 +25,7 @@ Windows PowerShell をインストールして起動したら、次のセット�
 
     注: Windows PowerShell 2.0 を実行しているコンピューターでリモート処理が有効になっている場合は、Windows Management Framework 3.0 をインストールした後も、リモート処理は引き続き有効のままです。 ただし、Windows Server 2008 (Windows Server 2008 R2 ではない) では、Windows Management Framework 3.0 をインストールした後に re-enable のリモート処理が必要です。
 
-## 参照
+## <a name="see-also"></a>参照
 - [Windows PowerShell のインストール](../setup/Installing-Windows-PowerShell.md)
 - [Windows PowerShell [ps] の開始](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
 

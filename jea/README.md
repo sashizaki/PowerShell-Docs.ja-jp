@@ -8,20 +8,18 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: README
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 8149f656f0aacbb23cacc8a1a9b45ed59866b92f
-ms.openlocfilehash: 7bb5635832e912b39ec387e8ac93ada24a434ff8
-
+ms.openlocfilehash: b0ef4ff685b82e1a4e9ab83a45736720df7b39a2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Just Enough Administration
+# <a name="just-enough-administration"></a>Just Enough Administration
 Just Enough Administration (JEA) は、PowerShell で管理できるものすべてに対する委任された管理を有効にするセキュリティ テクノロジです。
 JEA を使用すると、以下のことを実行できます。
 - **お使いのコンピューター上の管理者の数を減らします**。このためには、通常のユーザーに代わって特権の必要な操作を実行する仮想アカウントを活用します。
 - **ユーザーが実行できる操作を制限します**。ここでは、ユーザーが実行できるコマンドレット、関数、および外部コマンドを指定できます。
 - "覗き見" トランスクリプションを使用して、**ユーザーの操作を把握します**。このトランスクリプションは、ユーザーがセッション中にどんなコマンドを実行したかを正確に示します。
 
-**これが重要な理由: **  
+**これが重要な理由:**  
 DNS サーバーが Active Directory ドメイン コントローラーと併置された一般的なシナリオについて考えてみます。
 DNS 管理者は、DNS サーバーでの問題を解決するためにローカル管理者特権が必要ですが、そのためには、これらの管理者を高い特権を持つ "Domain Admins" セキュリティ グループのメンバーにする必要があります。
 この方法は、ドメイン全体への制御や、そのコンピューター上のすべてのリソースへのアクセス権を DNS 管理者に効果的に付与します。
@@ -30,7 +28,7 @@ JEA を配置し、DNS 管理者にロールを構成して、これらの管理
 つまり、DNS 管理者に Active Directory への権限を付与しなくても、侵害された DNS キャッシュを修復したり、ファイル システムを参照したり、潜在的に危険性なスクリプトを実行したりできる適切なアクセスを提供できます。
 さらに、JEA セッションが 1 回限りの特権仮想アカウントを使用するように構成されている場合、DNS 管理者は*特権のない*資格情報を使用してサーバーに接続できる一方で、特権のあるコマンドを実行することもできます。
 
-## 可用性
+## <a name="availability"></a>可用性
 JEA は今後の Windows Server 2016 と並行して開発中であり、Windows Management Framework 更新プログラムを通じて以前のバージョンの Windows で使用することができます。
 JEA の現在のリリースは、次のプラットフォームで使用できます。
 
@@ -45,7 +43,7 @@ JEA の現在のリリースは、次のプラットフォームで使用でき�
 \* JEA セッションの仮想アカウントのサポートは、現在 Windows Server 2008 R2 または Windows 7 では利用できません。
 
 
-## エクスペリエンス ガイドの利用
+## <a name="explore-the-experience-guide"></a>エクスペリエンス ガイドの利用
 ここでは、独自の JEA エンドポイントを作成、展開、使用する方法について説明します。
 
 このガイドでは、事前構築された JEA エンドポイントを使用してエンドユーザー エクスペリエンスとはどのようなものかを知ることですばやく作業を開始できます。また、セッション構成やロール機能などの概念の実証に役立つように、エンドポイントを最初から再作成する手順について説明します。
@@ -81,17 +79,11 @@ JEA のすべての操作とインフラストラクチャの監査とレポー�
   -  [コマンドの制限時の考慮事項](considerations-when-limiting-commands.md)  
   -  [ロール機能のよくある落とし穴](common-role-capability-pitfalls.md)
 
-## 独自の JEA エンドポイントの作成を開始する
+## <a name="start-authoring-your-own-jea-endpoints"></a>独自の JEA エンドポイントの作成を開始する
 JEA エンドポイントの作成は簡単です。必要なのは、JEA 対応のシステムとテキスト エディター (PowerShell ISE など) だけです。
 作業開始に役立つヒントは、[`New-PSRoleCapabilityFile -Path <path>`](https://technet.microsoft.com/library/mt631422.aspx) および [`New-PSSessionConfigurationFile -Path <Path>`](https://technet.microsoft.com/library/mt631422.aspx) を使用して、他の引数は使用せずにスケルトン ファイルを作成することです。
 これらのスケルトン ファイルには、すべての適用可能な構成フィールドと、各フィールドの使用目的を説明するコメントが含まれています。
 
 JEA エンドポイントのさらに簡単な作成方法については、[JEA ツールキット ヘルパー](http://blogs.technet.com/b/privatecloud/archive/2015/12/20/introducing-the-updated-jea-helper-tool.aspx)を参照してください。ここに用意された GUI を使用して、セッション構成およびロール機能ファイルを作成できます。
 また、PowerShell ログに基づいたロール機能の生成もサポートされており、ユーザーが業務で通常実行するコマンドで作業を開始することもできます。
-
-
-
-
-<!--HONumber=Aug16_HO5-->
-
 

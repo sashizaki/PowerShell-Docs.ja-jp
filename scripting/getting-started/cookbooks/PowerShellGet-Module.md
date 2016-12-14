@@ -1,33 +1,17 @@
----
-title: "PowerShellGet モジュール"
-ms.date: 2016-05-11
-keywords: "PowerShell, コマンドレット"
-description: 
-ms.topic: article
-author: jpjofre
-manager: dongill
-ms.prod: powershell
-ms.assetid: e4d6867f-a32a-4564-9e43-409babee97a7
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 3093c4c307ff61151946c417d18cde8fe56278bc
 
 ---
+タイトル:  PowerShellGet モジュール ms.date:  2016-05-11 キーワード:  powershell,コマンドレット 説明:  
+ms.topic:  記事 作成者:  jpjofre マネージャー:  dongill ms.prod:  powershell ms.assetid:  e4d6867f-a32a-4564-9e43-409babee97a7
+---
 
-# PowerShellGet モジュール
+# <a name="powershellget-module"></a>PowerShellGet モジュール
 このセクションには、**PowerShellGet** モジュールのヘルプ トピックが含まれています。 **PowerShellGet** モジュールは、Windows PowerShell 5.0 とそれ以降の Windows PowerShell リリースでインストールされます。
 
-## ヘルプ トピック
+## <a name="help-topics"></a>ヘルプ トピック
 [PowerShellGet コマンドレット](http://technet.microsoft.com/library/dn807169.aspx)
 
-## 参照
-[Windows PowerShell 5.0](../../core-powershell/core-modules/Windows-PowerShell-5.0.md)
-[Windows PowerShell コア](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-[Windows PowerShell を使用したスクリプト](../fundamental/Scripting-with-Windows-PowerShell.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+## <a name="see-also"></a>参照
+- [Windows PowerShell 5.0](../../core-powershell/core-modules/Windows-PowerShell-5.0.md)
+- [Windows PowerShell コア](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
+- [Windows PowerShell を使用したスクリプト](../fundamental/Scripting-with-Windows-PowerShell.md)
 

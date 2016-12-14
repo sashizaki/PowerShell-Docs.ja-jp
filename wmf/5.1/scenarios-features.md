@@ -8,17 +8,15 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: a1dde68414fd9754a15adb42642646f87adb0823
-ms.openlocfilehash: 9611a7da48a849b52821ac2890e1ea60441a75e3
-
+ms.openlocfilehash: 92a4657e90c197cbd7d1b11f778809a860092596
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# WMF 5.1 (プレビュー) の新しいシナリオと機能 #
+# <a name="new-scenarios-and-features-in-wmf-51-preview"></a>WMF 5.1 (プレビュー) の新しいシナリオと機能 #
 
 > 注意: この情報は暫定版であり、変更することがあります。
 
-## PowerShell のエディション ##
+## <a name="powershell-editions"></a>PowerShell のエディション ##
 バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
 
 - **デスクトップ エディション:** .NET Framework 上に構築されており、Server Core や Windows Desktop などの Windows の完全エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
@@ -27,14 +25,14 @@ ms.openlocfilehash: 9611a7da48a849b52821ac2890e1ea60441a75e3
 **PowerShell のエディションの使用に関する詳細**
 - [PowerShell の実行エディションを特定する]()
 - [特定の PowerShell バージョンに対するモジュールの互換性を宣言する]()
-- [CompatiblePSEditions で Get-Module の結果をフィルターする]()
+- [CompatiblePSEditions で Get-Module の結果をフィルター処理する]()
 - [互換性のある PowerShell のエディションで実行しない場合はスクリプトを実行させない]()
 
-## カタログ コマンドレット  
+## <a name="catalog-cmdlets"></a>カタログ コマンドレット  
 
 [Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) モジュールに新しいコマンドレットが 2 つ追加されました。Windows カタログ ファイルを生成し、検証するコマンドレットです。  
 
-###New-FileCatalog 
+###<a name="new-filecatalog"></a>New-FileCatalog 
 --------------------------------
 
 New-FileCatalog は、一連のフォルダーやファイルに対して Windows カタログ ファイルを作成します。 このカタログ ファイルには、指定されたパスのすべてのファイルのハッシュが含まれています。 ユーザーは一連のフォルダーと共に、それらのフォルダーを表すカタログ ファイルを配信できます。 カタログ作成時刻以降、フォルダーに変更が加えられたかどうかを検証するとき、この情報が役立ちます。    
@@ -55,7 +53,7 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 カタログ ファイルの整合性を検証するために (上記の例では Pester.cat)、[Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) コマンドレットで署名します。   
 
 
-###Test-FileCatalog 
+###<a name="test-filecatalog"></a>Test-FileCatalog 
 --------------------------------
 
 Test-FileCatalog は、一連のフォルダーを表すカタログを検証します。 
@@ -69,7 +67,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 このコマンドレットは、*カタログ*で見つかったすべてのファイル ハッシュとその相対パスを*ディスク*のそれらと比較します。 ファイル ハッシュとパスの間に不一致が検出された場合、*ValidationFailed* というステータスを返します。 *-Detailed* パラメーターを利用し、この情報をすべて取得できます。 *署名*プロパティには、カタログの署名ステータスも表示されます。これは、カタログ ファイルで [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) コマンドレットを呼び出すことと同じです。 *-FilesToSkip* パラメーターを利用し、検証中にファイルをスキップすることもできます。 
 
 
-## モジュール分析キャッシュ ##
+## <a name="module-analysis-cache"></a>モジュール分析キャッシュ ##
 WMF 5.1 以降の PowerShell では、エクスポートするコマンドなど、モジュールに関するデータのキャッシュに使用されるファイルを制御できます。
 
 既定では、このキャッシュは `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache` ファイルに格納されます。
@@ -96,7 +94,7 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 この環境変数の設定は、現在のプロセスで直ちに有効になります。
 
-##モジュールのバージョンの指定
+##<a name="specifying-module-version"></a>モジュールのバージョンの指定
 
 WMF 5.1 では、`using module` は PowerShell の他のモジュール関連構造と同様に動作します。 以前は、モジュールの特定のバージョンを指定する方法はありませんでした。複数のバージョンが存在する場合、エラーが発生しました。
 
@@ -105,18 +103,12 @@ WMF 5.1 では次のようになります。
 
 * `ModuleSpecification` [ハッシュ テーブル](https://msdn.microsoft.com/en-us/library/jj136290(v=vs.85).aspx)を使用できます。 このハッシュ テーブルの形式は `Get-Module -FullyQualifiedName` と同じです。
 
-**次に例を示します。** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
+**例:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
 * モジュールに複数のバージョンがある場合、PowerShell は**同じ解決ロジック**を `Import-Module` として使用し、エラーを返しません。`Import-Module` および `Import-DscResource` と同じ動作です。
 
 
-##Pester の機能強化
+##<a name="improvements-to-pester"></a>Pester の機能強化
 WMF 5.1 では、PowerShell で出荷される Pester のバージョンが 3.3.5 から 3.4.0 に更新され、コミット https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e が追加されました。Nano Server での Pester の動作を改善します。 
 
 https://github.com/pester/Pester/blob/master/CHANGELOG.md で ChangeLog.md ファイルを調べると、バージョン 3.3.5 から 3.4.0 への変更を確認できます。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

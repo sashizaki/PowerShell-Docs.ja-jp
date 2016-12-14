@@ -8,23 +8,21 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 942d85f8b49282bf888bfcdb55c353073c0e62f3
-
+ms.openlocfilehash: 3cf2d8cea6f99cbc3bd778138c730643bd021268
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell ISE のキーボード ショートカット
+# <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE のキーボード ショートカット
 Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行するには、次のキーボード ショートカットを使用します。 Windows PowerShell ISE は、Windows Server および Windows クライアント オペレーティング システムの一部として提供されていますが、[Windows Management Framework 4.0 のダウンロード パッケージ](http://go.microsoft.com/fwlink/?LinkID=293881)の一部として、前の Windows オペレーティング システムにもインストールできます。
 
-## テキストを編集するためのキーボード ショートカット
+## <a name="keyboard-shortcuts-for-editing-text"></a>テキストを編集するためのキーボード ショートカット
 テキストを編集するときに、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|使用する場所|
 |----------|----------------------|----------|
 |**ヘルプ**|F1|スクリプト ウィンドウ **重要:** Web 上の TechNet ライブラリとダウンロードしたヘルプのどちらを F1 ヘルプとして表示するかを指定できます (Update-Help を参照)。 選ぶには、**[ツール]**、**[オプション]** を順にクリックして、**[全般設定]** タブで **[オンライン コンテンツの代わりにローカル ヘルプ コンテンツを使用する]** をオンまたはオフにします。|
 |**コピー**|CTRL キーを押しながら C|スクリプト ウィンドウ、コマンド ウィンドウ、出力ウィンドウ|
-|**［切り取り］**|CTRL + X|スクリプト ウィンドウ、コマンド ウィンドウ|
+|**切り取り**|CTRL + X|スクリプト ウィンドウ、コマンド ウィンドウ|
 |**アウトラインの展開または折りたたみ**|Ctrl + M|スクリプト ウィンドウ|
 |**スクリプト内を検索**|CTRL + F|スクリプト ウィンドウ|
 |**スクリプト内で次を検索**|F3|スクリプト ウィンドウ|
@@ -34,24 +32,24 @@ Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行�
 |**やり直す**|CTRL + Y|スクリプト ウィンドウ、コマンド ウィンドウ|
 |**スクリプト内で置換**|CTRL + H|スクリプト ウィンドウ|
 |**上書き保存**|Ctrl + S|スクリプト ウィンドウ|
-|**［すべて選択］**|CTRL + A|スクリプト ウィンドウ、コマンド ウィンドウ、出力ウィンドウ|
+|**すべて選択**|CTRL + A|スクリプト ウィンドウ、コマンド ウィンドウ、出力ウィンドウ|
 |**スニペットの表示**|Ctrl キーを押しながら J キーを押します|スクリプト ウィンドウ、コマンド ウィンドウ|
 |**元に戻す**|CTRL + Z|スクリプト ウィンドウ、コマンド ウィンドウ|
 
-## スクリプトを実行するためのキーボード ショートカット
+## <a name="keyboard-shortcuts-for-running-scripts"></a>スクリプトを実行するためのキーボード ショートカット
 スクリプト ウィンドウでスクリプトを実行する場合、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|
 |----------|---------------------|
 |**新規**|Ctrl + N|
-|**［開く］**|Ctrl + O|
+|**開く**|Ctrl + O|
 |**実行**|F5|
 |**選択範囲の実行**|F8|
 |**実行を中止**|CTRL + BREAK コンテキストが明確な場合 (選ばれているテキストがない場合)、CTRL + C を使用できます。|
 |**タブ移動** (次のスクリプトへ)|CTRL + TAB **注意事項:** 次のスクリプトへのタブ移動は、1 つの Windows PowerShell タブが開いている場合、またはスクリプト ウィンドウにフォーカスがあるときに複数の Windows PowerShell タブが開いている場合にだけ有効です。|
 |**タブ移動** (前のスクリプトへ)|CTRL + SHIFT + TAB **メモ:** 前のスクリプトへのタブ移動は、1 つの Windows PowerShell タブが開いている場合、またはスクリプト ウィンドウにフォーカスがあるときに複数の Windows PowerShell タブが開いている場合にだけ有効です。|
 
-## ビューをカスタマイズするためのキーボード ショートカット
+## <a name="keyboard-shortcuts-for-customizing-the-view"></a>ビューをカスタマイズするためのキーボード ショートカット
 次のキーボード ショートカットを使用して、Windows PowerShell ISE のビューをカスタマイズできます。 アプリケーションのすべてのウィンドウから利用可能です。
 
 |操作|キーボード ショートカット|
@@ -60,14 +58,14 @@ Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行�
 |**出力ウィンドウに移動 (v2 のみ)**|CTRL + SHIFT + O|
 |**スクリプト ウィンドウに移動**|CTRL + I|
 |**スクリプト ウィンドウを表示**|CTRL + R|
-|**スクリプト ウィンドウを隠す**|CTRL + R|
+|**スクリプト ウィンドウを非表示にする**|CTRL + R|
 |**スクリプト ウィンドウを上に移動**|CTRL + 1|
 |**スクリプト ウィンドウを右に移動**|CTRL + 2|
 |**スクリプト ウィンドウを最大表示**|CTRL + 3|
 |**拡大**|CTRL + + (プラス記号)|
 |**縮小**|CTRL + - (マイナス記号)|
 
-## スクリプト デバッグ用のキーボード ショートカット
+## <a name="keyboard-shortcuts-for-debugging-scripts"></a>スクリプト デバッグ用のキーボード ショートカット
 スクリプトをデバッグするときに、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|使用する場所|
@@ -79,7 +77,7 @@ Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行�
 |**呼び出し履歴の表示**|CTRL + SHIFT + D|スクリプト ウィンドウ、スクリプトのデバッグ時|
 |**ブレークポイントの一覧表示**|CTRL + SHIFT + L|スクリプト ウィンドウ、スクリプトのデバッグ時|
 |**ブレークポイントの設定/解除**|F9|スクリプト ウィンドウ、スクリプトのデバッグ時|
-|**すべてのブレークポイントを削除**|CTRL + SHIFT + F9|スクリプト ウィンドウ、スクリプトのデバッグ時|
+|**すべてのブレークポイントの削除**|CTRL + SHIFT + F9|スクリプト ウィンドウ、スクリプトのデバッグ時|
 |**デバッガーの停止**|SHIFT + F5|スクリプト ウィンドウ、スクリプトのデバッグ時|
 
 > [!NOTE]
@@ -94,10 +92,10 @@ Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行�
 |**最後のコマンドを繰り返す** (ステップ インまたはステップ オーバーで使用)|Enter|コンソール ウィンドウ、スクリプトのデバッグ時|
 |**呼び出し履歴の表示**|K|コンソール ウィンドウ、スクリプトのデバッグ時|
 |**デバッグの停止**|Q|コンソール ウィンドウ、スクリプトのデバッグ時|
-|**スクリプトの一覧を表示**|L|コンソール ウィンドウ、スクリプトのデバッグ時|
+|**スクリプトの一覧表示**|L|コンソール ウィンドウ、スクリプトのデバッグ時|
 |**コンソールのデバッグ コマンドの表示**|H または ?|コンソール ウィンドウ、スクリプトのデバッグ時|
 
-## Windows PowerShell のタブのキーボード ショートカット
+## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Windows PowerShell のタブのキーボード ショートカット
 Windows PowerShell のタブを使用するときに、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|
@@ -107,7 +105,7 @@ Windows PowerShell のタブを使用するときに、次のキーボード シ
 |**前の PowerShell タブ**|CTRL + SHIFT + TAB。 このショートカットは、Windows PowerShell タブでファイルが開かれていない場合にのみ有効です。|
 |**次の Windows PowerShell タブ**|CTRL + Tab。 このショートカットは、Windows PowerShell タブでファイルが開かれていない場合にのみ有効です。|
 
-## 開始および終了のキーボード ショートカット
+## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>開始および終了のキーボード ショートカット
 次のキーボード ショートカットを使用して、Windows PowerShell コンソール (PowerShell.exe) を起動したり、Windows PowerShell ISE を終了したりできます。
 
 |操作|キーボード ショートカット|
@@ -115,12 +113,6 @@ Windows PowerShell のタブを使用するときに、次のキーボード シ
 |**終了**|Alt + F4|
 |**PowerShell.exe を起動** (Windows PowerShell コンソール)|CTRL + SHIFT + P|
 
-## 参照
-- [PowerShell Magazine: The Complete List of Windows PowerShell ISE Keyboard Shortcuts (PowerShell マガジン: Windows PowerShell ISE のキーボード ショートカットの完全な一覧)](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
+## <a name="see-also"></a>参照
+- [PowerShell マガジン: Windows PowerShell ISE のキーボード ショートカットの完全な一覧](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
 

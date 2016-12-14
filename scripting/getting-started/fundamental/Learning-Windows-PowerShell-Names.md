@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 1dd7dade688b56e3ac544c0562ad6bad4a4284a7
-
+ms.openlocfilehash: 6bd3c3d9b9f05f8ea633ee23fdce7608e985abd7
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell で用いられる名前の習得
+# <a name="learning-windows-powershell-names"></a>Windows PowerShell で用いられる名前の習得
 大半のコマンドライン インターフェイスに共通して言えることは、コマンドやコマンド パラメーターの名前を覚えるために多大な時間と労力が必要であるという点です。 この問題の原因は、決まったパターンがほとんどなく、よく使用するコマンドやパラメーターを暗記する以外に覚える方法がないことです。
 
 新しいコマンドやパラメーターを使用する場合、それまでの知識はあまり役に立たないのが一般的です。新しい名前をその都度探し、覚える必要があります。 個々のインターフェイスが、少数のツールの集まりからしだいに機能を増やして発展していった経緯を考えれば、その体系に一貫性が欠けている理由は明らかです。 各コマンドはそれぞれが独立したツールなので、コマンド名に関してはこのような状況も当然であるように思いがちですが、コマンド名の扱いにはより優れた方法があります。
@@ -27,7 +25,7 @@ ms.openlocfilehash: 1dd7dade688b56e3ac544c0562ad6bad4a4284a7
 
 Windows PowerShell ではこうした類似性を活かして、コマンドレットの意味を理解して使用するために必要な名前の数を減らしました。
 
-### コマンドレットには覚えやすいように "動詞-名詞" 形式の命名規則が使用される
+### <a name="cmdlets-use-verb-noun-names-to-reduce-command-memorization"></a>コマンドレットには覚えやすいように "動詞-名詞" 形式の命名規則が使用される
 Windows PowerShell には "動詞-名詞" 形式の命名規則が使用され、各コマンドレットの名前は、標準的な動詞と特定の名詞をハイフンでつないで表記されます。 ここでいう動詞は必ずしも文法的な動詞とは合致しませんが、Windows PowerShell における特定の動作を表しています。 名詞については、ほぼ文法上の名詞と同じと考えてかまいません。システムを管理する上で重要な、特定の種類のオブジェクトを表します。 実際、名前を動詞と名詞に分けることにより、格段に覚えやすくなります。そのことは、動詞と名詞の例をいくつか考えてみればすぐ理解できます。
 
 名詞は、それだけで目的を特定することは難しいですが、常にコマンドの実行対象を表します。 Windows PowerShell には、**Get-Process**、**Stop-Process**、**Get-Service**、**Stop-Service** などのコマンドがあります。
@@ -76,7 +74,7 @@ CommandType     Name                            Definition
 Function        Clear-Host                      $spaceType = [System.Managem...
 ```
 
-### コマンドレットでは標準的なパラメーターが使用される
+### <a name="cmdlets-use-standard-parameters"></a>コマンドレットでは標準的なパラメーターが使用される
 前述のように、従来のコマンドライン インターフェイスで使用されるコマンドには、通常、パラメーター名の一貫性がありません。 名前そのものが存在しないパラメーターもあります。 仮に名前があったとしても、1 文字または略称で表記されることが多く、すばやく入力できるという利点はありますが、未経験のユーザーには決してわかりすいものではありません。
 
 従来のほとんどのコマンドライン インターフェイスとは異なり、Windows PowerShell では、パラメーターが直接処理されます。パラメーター名の標準化は、開発者に一定の命名規則を推奨すると共に、このように、パラメーターに直接アクセスすることによって実現されます。 このことによって、すべてのコマンドレットが、常に標準に準拠することが保証されるわけではありません。しかし、パラメーター名の標準化を促す効果はあります。
@@ -86,20 +84,14 @@ Function        Clear-Host                      $spaceType = [System.Managem...
 
 以降、標準的なパラメーター名と使用法について、一般的な特徴をいくつか取り上げます。
 
-#### ヘルプ パラメーター (?)
+#### <a name="the-help-parameter-"></a>ヘルプ パラメーター (?)
 すべてのコマンドレットに共通することですが、**-?** パラメーターを指定した場合、コマンドレット自体が実行されるのではなく、 parameter to any cmdlet, the cmdlet is not executed. 対応するコマンドレットのヘルプが Windows PowerShell によって表示されます。
 
-#### 共通パラメーター
+#### <a name="common-parameters"></a>共通パラメーター
 Windows PowerShell には、*共通パラメーター*と呼ばれるパラメーターがいくつか存在します。 コマンドレットに実装された共通パラメーターは Windows PowerShell エンジンによって制御されるため、常に一貫した動作が実現されます。 共通パラメーターには、**WhatIf**、**Confirm**、**Verbose**、**Debug**、**Warn**、**ErrorAction**、**ErrorVariable**、**OutVariable**、**OutBuffer** などがあります。
 
-#### 推奨パラメーター名
+#### <a name="suggested-parameters"></a>推奨パラメーター名
 Windows PowerShell のコア コマンドレットでは、パラメーター名の一貫性が配慮されています。 強制的なものではありませんが、標準化の観点から、パラメーター名には一定の命名規則が推奨されています。
 
 たとえば、コンピューター名を指定するためのパラメーターの名前には、Server、Host、System、Node などではなく、**ComputerName** を使用することが推奨されています。 推奨される重要なパラメーター名には、**Force**、**Exclude**、**Include**、**PassThru**、**Path**、**CaseSensitive** などがあります。
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

@@ -9,13 +9,11 @@ ms.date: 2016-10-14
 contributor: manikb
 title: scriptwithpseditionsupport
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 46efb494303c4cb691d5b58791a156dcc5bc99b9
-
+ms.openlocfilehash: aac38b9a5b133b0b7982e7748e1483a0774599a2
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 互換性のある PowerShell エディションが含まれるスクリプト
+# <a name="script-with-compatible-powershell-editions"></a>互換性のある PowerShell エディションが含まれるスクリプト
 バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
 
 - **デスクトップ エディション:** .NET Framework 上に構築されており、Server Core や Windows Desktop などの Windows の完全エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
@@ -67,13 +65,7 @@ Find-Script -Tag PSEditon_Core
 
 ```
 
-## 詳細情報
-### [PSEditions が含まれるモジュール](../module/modulewithpseditionsupport.md)
-### [PowerShellGallery での PSEditions のサポート](../../psgallery/psgallery_pseditions.md)
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
+## <a name="more-details"></a>詳細情報
+### <a name="modules-with-pseditionsmodulemodulewithpseditionsupportmd"></a>[PSEditions が含まれるモジュール](../module/modulewithpseditionsupport.md)
+### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[PowerShellGallery での PSEditions のサポート](../../psgallery/psgallery_pseditions.md)
 

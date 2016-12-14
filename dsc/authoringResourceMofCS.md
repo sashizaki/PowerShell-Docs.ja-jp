@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 644d08a69a8bb70f49e12c1504aa46c4b57a51fc
-ms.openlocfilehash: 991a324945289b2eff0b706d093b2d345352fb15
-
+ms.openlocfilehash: df330cede5466f4d8da3b4be0057f6a822d15f00
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# C での DSC リソースの作成`#`
+# <a name="authoring-a-dsc-resource-in-c"></a>C`#` での DSC リソースの作成
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -21,10 +19,10 @@ ms.openlocfilehash: 991a324945289b2eff0b706d093b2d345352fb15
 
 C# でコマンドレットとしてリソースを実装すること以外に、MOF スキーマの作成、フォルダー構造の作成、およびカスタム DSC リソースのインポートと使用のプロセスは、「[MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)」で説明されていることと同じです。
 
-## コマンドレットベースのリソースの記述
+## <a name="writing-a-cmdlet-based-resource"></a>コマンドレットベースのリソースの記述
 この例では、テキスト ファイルとその内容を管理する単純なリソースを実装します。
 
-### MOF スキーマの記述
+### <a name="writing-the-mof-schema"></a>MOF スキーマの記述
 
 MOF リソースの定義を次に示します。
 
@@ -38,8 +36,8 @@ class MSFT_XDemoFile : OMI_BaseResource
 };
 ```
 
-### Visual Studio プロジェクトの設定
-#### コマンドレット プロジェクトの設定
+### <a name="setting-up-the-visual-studio-project"></a>Visual Studio プロジェクトの設定
+#### <a name="setting-up-a-cmdlet-project"></a>コマンドレット プロジェクトの設定
 
 1. Visual Studio を開きます。
 1. C# プロジェクトを作成し、名前を指定します。
@@ -48,7 +46,7 @@ class MSFT_XDemoFile : OMI_BaseResource
 1. System.Automation.Management.dll へのアセンブリ参照をプロジェクトに追加します。
 1. リソース名と一致するようにアセンブリ名を変更します。 この例では、アセンブリは **MSFT_XDemoFile** という名前にする必要があります。
 
-### コマンドレット コードの記述
+### <a name="writing-the-cmdlet-code"></a>コマンドレット コードの記述
 
 次の C# コードでは、**Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** コマンドレットを実装します。
 
@@ -266,7 +264,7 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-### リソースの展開
+### <a name="deploying-the-resource"></a>リソースの展開
 
 コンパイル済み dll ファイルは、スクリプトベースのリソースと同様のファイル構造で保存する必要があります。 このリソースのフォルダー構造を次に示します。
 
@@ -281,15 +279,9 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-### 参照
-#### 概念
+### <a name="see-also"></a>参照
+#### <a name="concepts"></a>概念
 [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)
-#### その他のリソース
-[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+#### <a name="other-resources"></a>その他のリソース
+[Windows PowerShell コマンドレットの記述](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
 

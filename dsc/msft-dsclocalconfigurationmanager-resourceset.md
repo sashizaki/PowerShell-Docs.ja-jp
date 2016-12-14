@@ -7,18 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: c915ebd021ed20209bc491505d45cff2ac89f21d
 ms.openlocfilehash: cbc499f293aad941d40fcb720ef53e832c3b1ea8
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-
-# MSFT_DSCLocalConfigurationManager クラスの ResourceSet メソッド
+# <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの ResourceSet メソッド
 
 DSC リソースの **Set** メソッドを直接呼び出します。
 
-構文
+<a name="syntax"></a>構文
 ------
 
 ```mof
@@ -30,7 +27,7 @@ uint32 ResourceSet(
 );
 ```
 
-パラメーター
+<a name="parameters"></a>パラメーター
 ----------
 
 *ResourceType* \[in\]  
@@ -45,23 +42,23 @@ uint32 ResourceSet(
 *RebootRequired* \[out\]  
 ターゲット ノードの再起動が必要な場合、制御が戻るときに、このプロパティは **true** に設定されます。
 
-## 戻り値
+## <a name="return-value"></a>戻り値
 ------------
 
 成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
 
-## コメント
+## <a name="remarks"></a>コメント
 
 これは静的メソッドです。
 
-## 要件
+## <a name="requirements"></a>要件
 ------------
 >**MOF:** DscCore.mof
 
 >**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
@@ -70,11 +67,5 @@ uint32 ResourceSet(
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

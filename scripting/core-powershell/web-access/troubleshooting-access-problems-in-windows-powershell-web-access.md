@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 3d2eb84bf706c935e978e78b84e221f9f68042f8
-
+ms.openlocfilehash: e22fa0d8712321e8b0f61b849d46c0c610049c86
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
+#  <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
 
 最終更新日: 2013 年 6 月 24 日
 
@@ -106,14 +104,14 @@ Windows PowerShell Web Access を使ったリモート コンピューターへ�
 <td><p><em>Server_name</em>\<em>user_name</em>、Localhost\<em>user_name</em>、または .\<em>user_name</em></p></td>
 <td><p><em>Server_name</em>\<em>user_group</em>、Localhost\<em>user_group</em>、または .\<em>user_group</em></p></td>
 <td><p>ゲートウェイ サーバーの完全修飾名または Localhost</p></td>
-<td><p><em>Server_name</em>\<em>computer_group</em>、Localhost\<em>computer_group</em>、または .\<em>computer_group</em></p></td>
+<td><p><em>Server_name</em>\<em>computer_group</em>、Localhost\<em>computer_group</em>、.\<em>computer_group</em></p></td>
 </tr>
 <tr class="even">
 <td><p>ゲートウェイ サーバーがワークグループ内にある場合</p></td>
 <td><p><em>Server_name</em>\<em>user_name</em>、Localhost\<em>user_name</em>、または .\<em>user_name</em></p></td>
-<td><p><em>Server_name</em>\<em>user_group</em>、Localhost\<em>user_group</em>、または .\<em>user_group</em></p></td>
+<td><p><em>Server_name</em>\<em>user_group</em>、Localhost\<em>user_group</em>、.\<em>user_group</em></p></td>
 <td><p>サーバー名</p></td>
-<td><p><em>Server_name</em>\<em>computer_group</em>、Localhost\<em>computer_group</em>、または .\<em>computer_group</em></p></td>
+<td><p><em>Server_name</em>\<em>computer_group</em>、Localhost\<em>computer_group</em>、.\<em>computer_group</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -126,7 +124,7 @@ Windows PowerShell Web Access を使ったリモート コンピューターへ�
 </ul></td>
 </tr>
 <tr class="odd">
-<td><p>承認規則内に、構文 <em>user_name</em>/<em>computer_name ではなくセキュリティ識別子 (SID) が表示される</em> </p></td>
+<td><p>承認規則内に、構文 <em>user_name</em>/<em>computer_name</em>  ではなくセキュリティ識別子 (SID) が表示される</p></td>
 <td><p>規則が有効ではなくなっているか、Active Directory Domain Services のクエリが失敗しています。 以前はワークグループ内にあったゲートウェイ サーバーが後でドメインに参加した場合は通常、承認規則は有効ではありません。</p></td>
 </tr>
 <tr class="even">
@@ -136,7 +134,7 @@ Windows PowerShell Web Access を使ったリモート コンピューターへ�
 </tbody>
 </table>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">参照</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
 <a href="/en-us/library/dn282395(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
 
 ------------------------------------------------------------------------
@@ -145,14 +143,14 @@ Windows PowerShell Web Access を使ったリモート コンピューターへ�
 [Web ベースの Windows PowerShell コンソールの使用](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
 [about_Remote_Requirements](https://technet.microsoft.com/library/dd315349.aspx)
 
-<span>表示:</span> 保護されている継承
+<span>表示:</span> 継承 保護
 
 <span class="stdr-votetitle">このページは役に立ちましたか。</span>
 はい いいえ
 
 その他にご意見はありますか。
 
-<span class="stdr-count"><span class="stdr-charcnt">残り 1500</span> 文字</span> 送信 スキップする
+残り <span class="stdr-count"><span class="stdr-charcnt">1500</span> 文字</span> 送信 スキップする
 
 <span class="stdr-thankyou">ありがとうございました。</span> <span class="stdr-appreciate">ご意見をお送りいただきありがとうございます。</span>
 
@@ -160,9 +158,9 @@ Windows PowerShell Web Access を使ったリモート コンピューターへ�
 
 |
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"> <img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span> サイトのフィードバック</a> サイトのフィードバック
+<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span>サイトのフィードバック</a> サイトのフィードバック
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkCloser">x</a>
+<a href="javascript:void(0)" id="SiteFeedbackLinkCloser">X</a>
 
 お客様のご体験をお聞かせください。
 
@@ -193,10 +191,4 @@ Windows PowerShell Web Access を使ったリモート コンピューターへ�
 
 サードパーティのスクリプトやコード、サードパーティから本 Web サイトへのリンク、あるいは本サイトからサードパーティへのリンクは、マイクロソフトではなく、そのようなコードの所有者によってお客様にライセンス供与されています。 ASP.NET Ajax CDN の使用条件 - http://www.asp.net/ajaxlibrary/CDN.ashx を参照してください。
 <img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
-
-
-
-
-<!--HONumber=Oct16_HO1-->
-
 

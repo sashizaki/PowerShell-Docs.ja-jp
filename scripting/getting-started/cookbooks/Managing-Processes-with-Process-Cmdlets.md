@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
-translationtype: Human Translation
-ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
-ms.openlocfilehash: 3812d0492da1879df50538533740ff857af7b15d
-
+ms.openlocfilehash: 7f7097966aff6ae73b50521b86f932ffdfadf937
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Process コマンドレットによるプロセスの管理
+# <a name="managing-processes-with-process-cmdlets"></a>Process コマンドレットによるプロセスの管理
 Windows PowerShell で Process コマンドレットを使用して、Windows PowerShell のローカル プロセスおよびリモート プロセスを管理できます。
 
-## プロセスの取得 (Get-Process)
+## <a name="getting-processes-get-process"></a>プロセスの取得 (Get-Process)
 ローカル コンピューターで実行されているプロセスを取得するには、パラメーターを指定せずに **Get-Process** を実行します。
 
 特定のプロセスを取得するには、プロセス名またはプロセス ID を指定します。 次のコマンドを実行すると、アイドル状態のプロセスを取得できます。
@@ -103,7 +101,7 @@ Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
     605       9  30668 29800   155 7.11    3052 powershell Server02
 ```
 
-## プロセスの停止 (Stop-Process)
+## <a name="stopping-processes-stop-process"></a>プロセスの停止 (Stop-Process)
 Windows PowerShell では、さまざまな方法でプロセスを一覧表示できますが、プロセスの停止についてはどうでしょうか。
 
 **Stop-Process** コマンドレットでは、停止するプロセスを Name または Id で指定できます。 プロセスを停止できるかどうかは、ユーザーのアクセス許可によって異なります。 停止することのできないプロセスもあります。 たとえば、アイドル状態のプロセスを停止しようとすると、エラーが発生します。
@@ -150,7 +148,7 @@ Stop-Process コマンドレットには、ComputerName パラメーターがあ
 Invoke-Command -ComputerName Server01 {Stop-Process Powershell}
 ```
 
-## 他のすべての Windows PowerShell セッションの停止
+## <a name="stopping-all-other-windows-powershell-sessions"></a>他のすべての Windows PowerShell セッションの停止
 現在のセッションを除いて、実行中のすべての Windows PowerShell セッションを停止できると便利な場合があります。 特定のセッションで大量のリソースが消費されていたり、セッションがアクセスできない状態になっている場合 (リモートから実行されていたり、別のデスクトップ セッションで使用されている場合など)、そのプロセスを直接停止できない場合があります。 しかし、実行中のすべてのセッションを停止しようとすると、現在のセッションまで停止されてしまう可能性があります。
 
 Windows PowerShell の各セッションには、Windows PowerShell プロセスの ID を保持する環境変数 PID が割り当てられます。 $PID と各セッションの ID を照合することによって、異なる ID を持つ Windows PowerShell セッションだけを強制終了できます。 これは、次のパイプライン コマンドで実現できます。また、**PassThru** パラメーターを使用しているため、強制終了されたセッションが一覧表示されます。
@@ -168,19 +166,13 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
     287       9    21044      26928   143     1.02   3672 powershell
 ```
 
-## プロセスの開始、デバッグ、待機
+## <a name="starting-debugging-and-waiting-for-processes"></a>プロセスの開始、デバッグ、待機
 Windows PowerShell には、プロセスを開始 (または再開) するためのコマンドレット、プロセスのデバッグ用コマンドレット、コマンドを実行する前にプロセスが完了するまで待機するためのコマンドレットが用意されています。 これらのコマンドレットについては、各コマンドレットのヘルプ トピックをご覧ください。
 
-## 参照
+## <a name="see-also"></a>参照
 - [Get-Process [m2]](https://technet.microsoft.com/en-us/library/27a05dbd-4b69-48a3-8d55-b295f6225f15)
 - [Stop-Process [m2]](https://technet.microsoft.com/en-us/library/12454238-9881-457a-bde4-fb6cd124deec)
 - [Start-Process](https://technet.microsoft.com/en-us/library/41a7e43c-9bb3-4dc2-8b0c-f6c32962e72c)
 - [Wait-Process](https://technet.microsoft.com/en-us/library/9222af7a-789d-4a09-aa90-09d7c256c799)
 - [Debug-Process](https://technet.microsoft.com/en-us/library/eea1dace-3913-4dbd-b659-5a94a610eee1)
 - [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)
-
-
-
-<!--HONumber=Oct16_HO3-->
-
-

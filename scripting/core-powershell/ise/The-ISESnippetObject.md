@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 04d650aca06977883c029684b37838da01b456aa
-
+ms.openlocfilehash: 5af4891107394981679e38cd0a7fd4c86346dc01
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ISESnippetObject
+# <a name="the-isesnippetobject"></a>ISESnippetObject
   **ISESnippet** オブジェクトは、Microsoft.PowerShell.Host.ISE.ISESnippet クラスのインスタンスです。 **$psISE.CurrentPowerShellTab.Snippets** コレクションのメンバーは、すべて **ISESnippet** オブジェクトの例です。 スニペットを作成する最も簡単な方法として、[New-IseSnippet&#91;PSITPro5_ISE&#93;](https://technet.microsoft.com/en-us/library/0a6339a3-2683-4a8e-8929-90ad9a95c3e0) コマンドレットを使用します。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
-###  <a name="DisplayName"></a> 作成者
+###  <a name="a-namedisplaynamea-author"></a><a name="DisplayName"></a> Author
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
  スニペットの作成者名を取得する読み取り専用プロパティ。
@@ -30,7 +28,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).Author
 
 ```
 
-###  <a name="Action"></a> CodeFragment
+###  <a name="a-nameactiona-codefragment"></a><a name="Action"></a> CodeFragment
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
  エディターに挿入するコード フラグメントを取得する読み取り専用プロパティ。
@@ -41,7 +39,7 @@ $psISE.CurrentPowerShellTab.Snippets.Item(0).CodeFragment
 
 ```
 
-###  <a name="Shortcut"></a> Shortcut
+###  <a name="a-nameshortcuta-shortcut"></a><a name="Shortcut"></a> Shortcut
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
  メニュー項目の Windows ショートカット キーを取得する読み取り専用プロパティ。
@@ -53,16 +51,10 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Al
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-## 参照
+## <a name="see-also"></a>参照
 - [ISESnippetCollection オブジェクト](The-ISESnippetCollection-Object.md) 
 - [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
 - [ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Oct16_HO3-->
-
-

@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_dispute_resolution
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: 6d7015a14f0d0a75bc28e201dceefe6c9c682b31
-
+ms.openlocfilehash: b7a76a6d8746b4a22154f8a8c7dde89d61046116
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 争いの解決
+# <a name="dispute-resolution"></a>争いの解決
 
 この文書は、コミュニティ メンバーが PowerShell ギャラリーの他の発行元との争いを解決する際の推奨プロセスをまとめたものです。
 
-## プロセス
+## <a name="process"></a>プロセス
 
 1. アイテム詳細ページの **[所有者に連絡]** リンクを使用し、争いの相手であるアイテムの所有者に連絡します。
 丁寧かつ明確に問題を説明します。
@@ -28,7 +26,7 @@ ms.openlocfilehash: 6d7015a14f0d0a75bc28e201dceefe6c9c682b31
 PowerShellGallery.com サポート チームが関与し、問題の解決に取り組みます。
 
 
-## 禁止されている使い方
+## <a name="prohibited-use"></a>禁止されている使い方
 
 パブリック PowerShell ギャラリーでは次の項目が禁止されており、話し合いなく至急削除されます。  アイテムが削除された場合、その所有者に通知が届きます。
 
@@ -44,10 +42,4 @@ PowerShellGallery.com サポート チームが関与し、問題の解決に取
 以上の違反項目に該当するアイテムを見つけた場合、アイテム詳細ページの ‘Report Abuse’ (不正報告) リンクをクリックし、報告してください。
 
 **このポリシーは、PowerShell ギャラリーの判断で変更される場合があります。**
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

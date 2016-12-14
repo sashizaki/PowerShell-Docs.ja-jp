@@ -8,18 +8,16 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: 45182af45b2d1510b7ad8e9f2ac35fa5346ddb66
-ms.openlocfilehash: bb7efc55b1c948c349aa778b700e5cb1277b9762
-
+ms.openlocfilehash: 118cb91528824b75e28a1eadaa377a696c67f2dd
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#PowerShell エンジンの機能強化
+#<a name="powershell-engine-improvements"></a>PowerShell エンジンの機能強化
 
 コア PowerShell エンジンに対する以下の機能強化が WMF 5.1 に実装されました。
 
 
-## パフォーマンス ##
+## <a name="performance"></a>パフォーマンス ##
 
 いくつかの重要な部分でパフォーマンスが向上しました。
 
@@ -42,9 +40,3 @@ ms.openlocfilehash: bb7efc55b1c948c349aa778b700e5cb1277b9762
 
 もう 1 つの明らかな変更は、システムにインストールされているモジュールのために PowerShell がエクスポートしたコマンドと他の情報をキャッシュするしくみです。 これまでは、このキャッシュは `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\CommandAnalysis` ディレクトリに保存されていました。 WMF 5.1 では、キャッシュは `$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\ModuleAnalysisCache` ファイル 1 つだけになっています。
 詳細については、「[モジュール分析キャッシュ](scenarios-features.md#module-analysis-cache)」を参照してください。
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

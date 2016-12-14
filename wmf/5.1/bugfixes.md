@@ -8,25 +8,23 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-translationtype: Human Translation
-ms.sourcegitcommit: be3659b02cb1bc58cc13aa9d8f92946b2afa37b1
-ms.openlocfilehash: 8a7774b36f15ff790c31d4c1a8bc69be257b8508
-
+ms.openlocfilehash: d851b0cc9300b9afb027fe9ceb122f246a17e418
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
+# <a name="bug-fixes-in-wmf-51-preview"></a>WMF 5.1 (プレビュー) のバグ修正#
 
-# WMF 5.1 (プレビュー) のバグ修正#
-
-## バグ修正 ##
+## <a name="bug-fixes"></a>バグ修正 ##
 
 WMF 5.1 では、次の重要なバグが修正されました。
 
-### モジュールの自動検出の完全な受け入れ `$env:PSModulePath` ###
+### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>モジュールの自動検出の完全な受け入れ `$env:PSModulePath` ###
 
 モジュールの自動検出 (コマンド呼び出し時に Import-Module を明示的に指定しないモジュールの自動的な読み込み) が、WMF 3 で導入されました。 導入時、PowerShell は `$env:PSModulePath` を使用する前に `$PSHome\Modules` のコマンドを確認していました。
 
 WMF 5.1 では、この動作が `$env:PSModulePath` を完全に受け入れるように変更されています。 これにより、PowerShell によって提供されるコマンド (`Get-ChildItem` など) を定義するユーザー作成のモジュールを、自動的に読み込み、組み込みコマンドを正しくオーバーライドできます。
 
-### ファイルのリダイレクトの非ハードコード化 `-Encoding Unicode` ###
+### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>ファイルのリダイレクトの非ハードコード化 `-Encoding Unicode` ###
 
 PowerShell のこれまでのすべてのバージョンでは、PowerShell が `-Encoding Unicode` を追加していたため、ファイル リダイレクト演算子 (`Get-ChildItem > out.txt` など) によって使用されるファイル エンコードを制御できませんでした。
 
@@ -36,17 +34,17 @@ WMF 5.1 からは、`$PSDefaultParameterValues` を設定することによっ�
 $PSDefaultParameterValues["Out-File:Encoding"] = "Ascii"
 ```
 
-### メンバーへのアクセスでのバグ再発の修正 `System.Reflection.TypeInfo` ###
+### <a name="fixed-a-regression-in-accessing-members-of-systemreflectiontypeinfo"></a>メンバーへのアクセスでのバグ再発の修正 `System.Reflection.TypeInfo` ###
 
 WMF 5.0 で新しく発生したバグにより、`System.Reflection.RuntimeType` のメンバーにアクセスできませんでした (`[int].ImplementedInterfaces` など)。
 WMF 5.1 ではこのバグが修正されています。
 
 
-### COM オブジェクトでのいくつかの問題の修正 ###
+### <a name="fixed-some-issues-with-com-objects"></a>COM オブジェクトでのいくつかの問題の修正 ###
 
 WMF 5.0 では、COM オブジェクト上のメソッドを呼び出して COM オブジェクトのプロパティにアクセスする新しい COM バインダーが導入されました。 この新しいバインダーによりパフォーマンスが大幅に向上しましたが、バグもいくつか含まれていました。WMF 5.1 ではそれが修正されました。
 
-#### 引数の変換が正常に実行されないことがあった ####
+#### <a name="argument-conversions-were-not-always-performed-correctly"></a>引数の変換が正常に実行されないことがあった ####
 
 次に例を示します。
 
@@ -57,7 +55,7 @@ $obj.SendKeys([char]173)
 
 SendKeys メソッドは string を受け取りますが、PowerShell は char を string に変換せず、変換を IDispatch::Invoke に延期していました。このメソッドは VariantChangeType を使用して変換を行います。この例では、結果として、期待される Volume.Mute キーではなくキー "1"、"7"、"3" が送られます。
 
-#### 列挙可能な COM オブジェクトが正しく処理されないことがある ####
+#### <a name="enumerable-com-objects-not-always-handled-correctly"></a>列挙可能な COM オブジェクトが正しく処理されないことがある ####
 
 PowerShell は通常ほとんどの列挙可能なオブジェクトを列挙しますが、WMF 5.0 で発生したバグにより、IEnumerable を実装する COM オブジェクトの列挙が行われませんでした。  たとえば、次のように入力します。
 
@@ -77,10 +75,10 @@ $x = Get-COMDictionary
 
 この変更は、[Connect の問題 1752224](https://connect.microsoft.com/PowerShell/feedback/details/1752224) も解消します。
 
-### `[ordered]` がクラス内で許可されなかった ###
+### <a name="ordered-was-not-allowed-inside-classes"></a>`[ordered]` がクラス内で許可されなかった ###
 
 WMF 5.0 では、クラスで使用されるリテラル形を検証するクラスが導入されました。  
-`[ordered]` はリテラル形のように見えますが、真の .NET 型ではありません。 WMF 5.0 は、クラスの内の `[ordered]` で誤ってエラーを報告しました。
+`[ordered]` はリテラル形のように見えますが、真の .Net 型ではありません。 WMF 5.0 は、クラスの内の `[ordered]` で誤ってエラーを報告しました。
 
 ```
 class CThing
@@ -93,16 +91,10 @@ class CThing
 ```
 
 
-### 複数のバージョンがあるトピックについてのヘルプが機能しない ###
+### <a name="help-on-about-topics-with-multiple-versions-does-not-work"></a>複数のバージョンがあるトピックについてのヘルプが機能しない ###
 
 WMF 5.1 より前では、複数のバージョンのモジュールがインストールされていて、そのすべてがヘルプ トピック (about_PSReadline など) を共有している場合、`help about_PSReadline` は複数のトピックを返し、実際のヘルプを表示する明確な方法はありませんでした。
 
 WMF 5.1 では、最新バージョンのトピックのヘルプを返すことでこれが解決されています。
 
 `Get-Help` では、必要なヘルプのバージョンを指定する方法はありません。 これを回避するには、モジュール ディレクトリに移動し、好みのエディターなどのツールで直接ヘルプを表示します。 
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

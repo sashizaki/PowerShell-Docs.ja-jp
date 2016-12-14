@@ -9,17 +9,15 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psget_publish module
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: e6c526d1074f61154d03b92b6bf6f599976f5936
-ms.openlocfilehash: c62ab4b7ab5266d7285d4c444105f0a8291563c1
-
+ms.openlocfilehash: a21351837d0cc63e56254911a1a436175a2734cd
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Publish-Module
+# <a name="publish-module"></a>Publish-Module
 
 指定したモジュールをローカル コンピューターからオンライン ギャラリーに発行します。
 
-## 説明
+## <a name="description"></a>説明
 
 **Publish-Module** コマンドレットは、ギャラリー内のユーザーのプロファイルの一部として保存された API キーを使用して、NuGet ベースのオンライン ギャラリーにモジュールを発行します。 モジュールの名前、またはモジュールを含むフォルダーへのパスのいずれかでモジュールを発行するように指定できます。
 
@@ -31,16 +29,16 @@ RequiredVersion パラメーターは、発行するモジュールのバージ�
 Path パラメーターは、モジュールのベース パスと、バージョン フォルダーもサポートします。
 Publish-Module コマンドレットの Force スイッチ パラメーターは、プロンプトを表示せずに NuGet.exe をブートストラップします。
 
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 ```powershell
 Get-Command -Name Publish-Module -Module PowerShellGet -Syntax
 ```
 
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Publish-Module](http://go.microsoft.com/fwlink/?LinkID=398575)
 
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 ContosoServer module with different versions to be published.
@@ -72,13 +70,13 @@ _------ ---- ---------- -----------
 2.0 ContosoServer LocalRepo ContosoServer module
 ```
 
-## 依存関係があるモジュールの発行
+## <a name="publishing-a-module-with-dependencies"></a>依存関係があるモジュールの発行
 
-### モジュール マニフェストの RequiredModules プロパティで指定されている依存関係とバージョン範囲を指定してモジュールを作成します。
+### <a name="create-a-module-with-dependencies-and-version-range-specified-in-requiredmodules-property-of-its-module-manifest"></a>モジュール マニフェストの RequiredModules プロパティで指定されている依存関係とバージョン範囲を指定してモジュールを作成します。
 
-**注: **
-  - \* MaximumVersion でのみサポートされ、またバージョン文字列の末尾にある必要もあります。 
-  - \* バージョン オブジェクトで 999999999 に置き換えられます。
+**注:**
+  - \* は MaximumVersion でのみサポートされます。また、バージョン文字列の末尾にある必要があります。 
+  - \* は、バージョン オブジェクトで 999999999 に置き換えられます。
 
 ```powershell
 PS C:\windows\system32> $requiredModules = @( @{ModuleName = 'RequiredModule1'; ModuleVersion = '0.1'; MaximumVersion = '1.9'; }, @{ModuleName = 'RequiredModule2'; MaximumVersion = '1.*'; })
@@ -88,13 +86,13 @@ PS C:\windows\system32> cd C:\MyModules\ModuleWithDependencies
 PS C:\MyModules\ModuleWithDependencies> New-ModuleManifest -Path .\ModuleWithDependencies.psd1 -ModuleVersion 1.0 -RequiredModules $requiredModules -Description 'ModuleWithDependencies demo module'
 ```
 
-### 依存関係を持つ ModuleWithDependencies モジュールをリポジトリに発行します。
+### <a name="publish-modulewithdependencies-module-with-dependencies-to-the-repository"></a>依存関係を持つ ModuleWithDependencies モジュールをリポジトリに発行します。
 
 ```powershell
 PS C:\MyModules\ModuleWithDependencies> Publish-Module -Path C:\MyModules\ModuleWithDependencies -Repository LocalRepo
 ```
 
-### -IncludeDependencies を指定して、ModuleWithDependencies モジュールを依存関係と共に検索します
+### <a name="find-modulewithdependencies-module-with-its-dependencies-by-specifying--includedependencies"></a>-IncludeDependencies を指定して、ModuleWithDependencies モジュールを依存関係と共に検索します
 
 ```powershell
 PS C:\MyModules\ModuleWithDependencies> Find-Module -Name ModuleWithDependencies -Repository LocalRepo -IncludeDependencies
@@ -106,7 +104,7 @@ Version    Name                                Type       Repository           D
 1.5        RequiredModule2                     Module     localrepo            RequiredModule2 module
 ```
 
-### 依存関係を持つ ModuleWithDependencies モジュールをインストールします。
+### <a name="install-the-modulewithdependencies-module-with-dependencies"></a>依存関係を持つ ModuleWithDependencies モジュールをインストールします。
 依存関係のインストール時にバージョン範囲が許可されることに注意してください。
 
 ```powershell
@@ -123,7 +121,7 @@ Version    Name                                Type       Repository           D
 1.5        RequiredModule2                     Module     localrepo            RequiredModule2 module
 ```
 
-### ModuleWithDependencies2 モジュール マニフェスト ファイルの内容
+### <a name="contents-of-modulewithdependencies2-module-manifest-file"></a>ModuleWithDependencies2 モジュール マニフェスト ファイルの内容
 
 ```powershell
 @{
@@ -178,17 +176,11 @@ PrivateData = @{
 ```
 
 
-### 外部依存関係
+### <a name="external-dependencies"></a>外部依存関係
 一部のモジュールの依存関係は外部で管理できます。その場合は、モジュール マニフェストの PSData セクション内の ExternalModuleDependencies エントリに追加する必要があります。
 
 'SnippetPx' をリポジトリで使用できない場合は、以下のエラーがスローされます。
 ```powershell
 Publish-PSArtifactUtility : PowerShellGet cannot resolve the module dependency 'SnippetPx' of the module 'TypePx' on the repository 'LocalRepo'. Verify that the dependent module 'SnippetPx' is available in the repository 'LocalRepo'. If this dependent 'SnippetPx' is managed externally, add it to the ExternalModuleDependencies entry in the PSData section of the module manifest.
 ```
-
-
-
-
-<!--HONumber=Oct16_HO2-->
-
 

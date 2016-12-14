@@ -7,13 +7,11 @@ ms.topic: article
 author: jpjofre
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: b3b97b9dcf01094fe1fadbac355c92df35feaee2
-
+ms.openlocfilehash: edd8614879c1781a065eb76025799893f10cc1ab
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-#  基本的な概念
+#  <a name="fundamental-concepts"></a>基本的な概念
 
 -  [Windows PowerShell について](fundamental/About-Windows-PowerShell.md)
 -  [Windows PowerShell ISE の操作](fundamental/Exploring-the-Windows-PowerShell-ISE.md)
@@ -27,13 +25,7 @@ ms.openlocfilehash: b3b97b9dcf01094fe1fadbac355c92df35feaee2
 -  [使い慣れたコマンド名の使用](fundamental/Using-Familiar-Command-Names.md)
 -  [変数を使用したオブジェクトの保存](fundamental/Using-Variables-to-Store-Objects.md)
 -  [Windows PowerShell を管理に使用する](fundamental/Using-Windows-PowerShell-for-Administration.md)
--  [Windows PowerShell を使用する](fundamental/Using-Windows-PowerShell.md)
+-  [Windows PowerShell の使用](fundamental/Using-Windows-PowerShell.md)
 -  [Windows PowerShell の基礎](fundamental/Windows-PowerShell-Basics.md)
--  [Windows PowerShell Integrated Scripting Environment (ISE) ](fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
+-  [Windows PowerShell Integrated Scripting Environment ISE](fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md)
 

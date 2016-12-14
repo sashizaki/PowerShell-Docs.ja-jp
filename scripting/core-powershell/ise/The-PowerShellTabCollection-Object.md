@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
-translationtype: Human Translation
-ms.sourcegitcommit: 03ac4b90d299b316194f1fa932e7dbf62d4b1c8e
-ms.openlocfilehash: 4456b1e165130fd52249ffdbd7c22ff591061a8e
-
+ms.openlocfilehash: 79edc4e41522b187cd6421be0bd897663b42bb44
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# PowerShellTabCollection オブジェクト
+# <a name="the-powershelltabcollection-object"></a>PowerShellTabCollection オブジェクト
   **PowerShellTab** コレクション オブジェクトは **PowerShellTab** オブジェクトのコレクションです。 個々の **PowerShellTab** オブジェクトは、個別のランタイム環境として機能します。 これは Microsoft.PowerShell.Host.ISE.PowerShellTabs クラスのインスタンスです。 たとえば **$psISE.PowerShellTabs** オブジェクトです。
 
-## メソッド
+## <a name="methods"></a>メソッド
 
-### Add\(\)
+### <a name="add"></a>Add\(\)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  新しい PowerShell タブをコレクションに追加します。 新しく追加されたタブが返されます。
@@ -29,7 +27,7 @@ $NewTab=$psISE.PowerShellTabs.Add()
 $newTab.DisplayName="Brand New Tab"
 ```
 
-### Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
+### <a name="removemicrosoftpowershellhostisepowershelltab-pstab"></a>Remove\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  **psTab** パラメーターにより指定されたタブが削除されます。
@@ -46,7 +44,7 @@ sleep 5
 $psISE.PowerShellTabs.Remove($newTab)
 ```
 
-### SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
+### <a name="setselectedpowershelltabmicrosoftpowershellhostisepowershelltab-pstab"></a>SetSelectedPowerShellTab\(Microsoft.PowerShell.Host.ISE.PowerShellTab psTab\)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  **psTab** パラメーターにより指定された PowerShell タブを選択し、そのタブを現在アクティブな PowerShell タブとして指定します。
@@ -65,16 +63,10 @@ $newTab.DisplayName="Brand New Tab"
 $psISE.PowerShellTabs.SelectedPowerShellTab=$oldtab
 ```
 
-## 参照
- [PowerShellTab オブジェクト](The-PowerShellTab-Object.md) 
- [Windows PowerShell ISE スクリプト オブジェクト モデル](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE オブジェクト モデル リファレンス](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [ISE オブジェクト モデル階層](../ise/The-ISE-Object-Model-Hierarchy.md)
+## <a name="see-also"></a>参照
+- [PowerShellTab オブジェクト](The-PowerShellTab-Object.md) 
+- [Windows PowerShell ISE スクリプト オブジェクト モデル](../ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE オブジェクト モデル リファレンス](../ise/Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [ISE オブジェクト モデルの階層](../ise/The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Aug16_HO3-->
-
-

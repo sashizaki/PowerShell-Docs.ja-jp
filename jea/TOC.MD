@@ -13,8 +13,3 @@
 ###  [ブラックリストへの登録](on-blacklisting.md)  
 ###  [コマンドの制限時の考慮事項](considerations-when-limiting-commands.md)  
 ###  [ロール機能のよくある落とし穴](common-role-capability-pitfalls.md)
-
-
-<!--HONumber=Aug16_HO3-->
-
-

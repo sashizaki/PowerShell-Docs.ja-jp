@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 575ee3b8279ad50920df17ff92d4f65467d83830
-
+ms.openlocfilehash: aaeb83313ea5613bdce1bbc233ce9a4cbe86f530
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ISEAddOnToolCollection オブジェクト
+# <a name="the-iseaddontoolcollection-object"></a>ISEAddOnToolCollection オブジェクト
   **ISEAddOnToolCollection** オブジェクトは、**ISEAddOnTool** オブジェクトのコレクションです。 例としては、**$psISE.CurrentPowerShellTab.VerticalAddOnTools** オブジェクトです。
 
-## メソッド
+## <a name="methods"></a>メソッド
 
-### Add\( Name, ControlType, \[IsVisible\] \)
+### <a name="add-name-controltype-isvisible-"></a>Add\( Name、ControlType、\[IsVisible\] \)
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
  新しいアドオン ツールをコレクションに追加します。 新しく追加されたアドオン ツールが返されます。 このコマンドを実行する前に、ローカル コンピューターにアドオン ツールをインストールし、アセンブリを読み込む必要があります。
@@ -36,7 +34,7 @@ ms.openlocfilehash: 575ee3b8279ad50920df17ff92d4f65467d83830
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 
-### Remove\( Item \)
+### <a name="remove-item-"></a>Remove\( Item \)
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
  コレクションから指定したアドオン ツールを削除します。
@@ -49,7 +47,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 
-### SetSelectedPowerShellTab\( psTab \)
+### <a name="setselectedpowershelltab-pstab-"></a>SetSelectedPowerShellTab\( psTab \)
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
  **psTab** パラメーターが指定する PowerShell タブを選択します。
@@ -62,7 +60,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSoluti
 $newTab.DisplayName="Brand New Tab"
 ```
 
-### Remove\( psTab \)
+### <a name="remove-pstab-"></a>Remove\( psTab \)
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
  **psTab** パラメーターが指定する PowerShell タブを削除します。
@@ -77,16 +75,10 @@ sleep 5
 $psISE.PowerShellTabs.Remove($newTab)
 ```
 
-## 参照
+## <a name="see-also"></a>参照
 - [PowerShellTab オブジェクト](The-PowerShellTab-Object.md) 
 - [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
 - [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
 - [ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Oct16_HO1-->
-
-

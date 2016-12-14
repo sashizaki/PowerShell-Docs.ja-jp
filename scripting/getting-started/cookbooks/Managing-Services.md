@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: 66c2a8c8afab49f16e8ef7d0b5ba3a2a65c92490
-
+ms.openlocfilehash: 9d9566328cac84ae6b450d9dedeb75a37d6dcba5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# サービスの管理
+# <a name="managing-services"></a>サービスの管理
 サービスに関連したさまざまなタスクを実行するために設計された 8 つの主要な Service コマンドレットがあります。 ここでは、サービスの実行状態の一覧表示と変更についてのみ取り上げていますが、**Get-Help \&#42;-Service** でサービスに関連したコマンドレットを一覧表示したり、**Get-Help<Cmdlet-Name>** (**Get-Help New-Service** など) でサービスに関連した各種コマンドレットの情報を検索したりできます。
 
-## サービスの取得
+## <a name="getting-services"></a>サービスの取得
 **Get-Service** コマンドレットを使用して、ローカル コンピューターまたはリモート コンピューター上のサービスを取得できます。 **Get-Process** と同様、パラメーターを指定せずに **Get-Service** コマンドを実行した場合、すべてのサービスが返されます。 アスタリスクをワイルドカードとして使用し、サービスを名前でフィルター処理するには、次のように入力します。
 
 ```
@@ -53,7 +51,7 @@ Get-Service コマンドレットの ComputerName パラメーターを使用し
 Get-Service -ComputerName Server01
 ```
 
-## 必要なサービスおよび依存するサービスの取得
+## <a name="getting-required-and-dependent-services"></a>必要なサービスおよび依存するサービスの取得
 Get-Service コマンドレットには、サービスの管理に非常に便利な 2 つのパラメーターがあります。 DependentServices パラメーターは、そのサービスに依存するサービスを取得します。 RequiredServices パラメーターは、そのサービスが依存しているサービスを取得します。
 
 これらのパラメーターは、Get-Service が返す System.ServiceProcess.ServiceController オブジェクトの DependentServices プロパティと ServicesDependedOn (エイリアス: RequiredServices) プロパティの値を表示するだけですが、コマンドが単純化され、この情報をずっと簡単に取得できるようになります。
@@ -88,7 +86,7 @@ Running  BITS               Background Intelligent Transfer Ser...
 Get-Service -Name * | where {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
 ```
 
-## サービスの停止、開始、一時停止、再開
+## <a name="stopping-starting-suspending-and-restarting-services"></a>サービスの停止、開始、一時停止、再開
 サービスを扱うすべてのコマンドレットは、同じ形式で指定できます。 サービスを一般的な名前 (表示名) で指定できるほか、表示名の一覧を指定したり、ワイルドカードを値として使用したりすることもできます。 印刷スプーラーを停止するには、次のように入力します。
 
 ```
@@ -138,22 +136,16 @@ WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 ```
 
-## サービスのプロパティの設定
+## <a name="setting-service-properties"></a>サービスのプロパティの設定
 Set-Service コマンドレットは、ローカル コンピューターまたはリモート コンピューター上のサービスのプロパティを変更します。 サービスの状態もプロパティの 1 つであるため、このコマンドレットを使用してサービスを開始、停止、一時停止できます。 Set-Service コマンドレットには、サービスのスタートアップの種類を変更できる StartupType パラメーターもあります。
 
 Windows Vista 以降のバージョンの Windows で、Set-Service を使用するには、Windows PowerShell を開く際に [管理者として実行] オプションを指定する必要があります。
 
 詳細については、「[Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)」を参照してください。
 
-## 参照
-[Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
-[Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
-[Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
-[Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
+## <a name="see-also"></a>参照
+- [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
+- [Set-Service [m2]](https://technet.microsoft.com/en-us/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
+- [Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
+- [Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
 

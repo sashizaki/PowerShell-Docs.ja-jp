@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
-translationtype: Human Translation
-ms.sourcegitcommit: f891988cce205b5729d0da6c4ce23da5fbd53b7f
-ms.openlocfilehash: 6fffd6406a7570e06fc4403cd238804ef0f51360
-
+ms.openlocfilehash: f7e27957db90430b4f550e56df18c227b2971a0d
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ユーザー設定の入力ボックスを作成する
+# <a name="creating-a-custom-input-box"></a>ユーザー設定の入力ボックスを作成する
 Windows PowerShell 3.0 以降のリリースで、Microsoft .NET Framework フォーム作成機能を使用してカスタムのグラフィカル入力ボックスをスクリプト化します。
 
-## カスタムのグラフィカル入力ボックスの作成
+## <a name="create-a-custom-graphical-input-box"></a>カスタムのグラフィカル入力ボックスの作成
 以下を Windows PowerShell ISE にコピーしてから貼り付け、Windows PowerShell スクリプト (.ps1) として保存します。
 
 ```
@@ -76,11 +74,11 @@ $form = New-Object System.Windows.Forms.Form
 
 フォーム クラスのインスタンスを作成したら、このクラスの次の 3 つのプロパティに値を割り当てます。
 
--   **Text。** ウィンドウのタイトルになります。
+-   **Text**。 ウィンドウのタイトルになります。
 
--   **Size。** フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
+-   **Size**。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
 
--   **StartingPosition。** 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。 このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
+-   **StartingPosition**。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。 このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
 
 ```
 $form.Text = "Data Entry Form"
@@ -159,14 +157,8 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## 参照
+## <a name="see-also"></a>参照
 - [Hey Scripting Guy: これらの PowerShell GUI の例が機能しないのはなぜですか。](http://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell Tip of the Week: ユーザー設定の入力ボックスを作成する](http://technet.microsoft.com/library/ff730941.aspx)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
 

@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
-translationtype: Human Translation
-ms.sourcegitcommit: fe3d7885b7c031a24a737f58523c8018cfc36146
-ms.openlocfilehash: 43477d0742612f331f74833a1d70e69692b5b8e7
-
+ms.openlocfilehash: a1456065c707e5229fd383a9e39d24f9436d4a99
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ISEMenuItem オブジェクト
+# <a name="the-isemenuitem-object"></a>ISEMenuItem オブジェクト
   **ISEMenuItem** オブジェクトは Microsoft.PowerShell.Host.ISE.ISEMenuItem クラスのインスタンスです。 **[アドオン]** メニューにあるすべてのオブジェクトは、**Microsoft.PowerShell.Host.ISE.ISEMenuItem** クラスのインスタンスです。
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 
-###  <a name="DisplayName"></a> 表示名
+###  <a name="a-namedisplaynamea-displayname"></a><a name="DisplayName"></a> DisplayName
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  メニュー項目の名前を表示する読み取り専用プロパティ。
@@ -32,7 +30,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
 
 ```
 
-###  <a name="Action"></a> 操作
+###  <a name="a-nameactiona-action"></a><a name="Action"></a> Action
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  スクリプトのブロックを取得する読み取り専用プロパティ。 メニュー項目をクリックすると、アクションが呼び出されます。
@@ -47,7 +45,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
 ```
 
-###  <a name="Shortcut"></a> Shortcut
+###  <a name="a-nameshortcuta-shortcut"></a><a name="Shortcut"></a> Shortcut
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  メニュー項目の Windows 入力用ショートカット キーを取得する読み取り専用プロパティ。
@@ -59,7 +57,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Al
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
 ```
 
-###  <a name="Submenus"></a> Submenus
+###  <a name="a-namesubmenusa-submenus"></a><a name="Submenus"></a> Submenus
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  メニュー項目の[サブメニューの一覧](The-ISEMenuItemCollection-Object.md)を取得する読み取り専用プロパティ。
@@ -71,7 +69,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Al
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus
 ```
 
-## スクリプトの例
+## <a name="scripting-example"></a>スクリプトの例
  [アドオン] メニューとそのスクリプト可能なプロパティの使用をさらに理解するには、次のスクリプトの例に目を通してください。
 
 ```
@@ -89,16 +87,10 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 
 ```
 
-## 参照
- [ISEMenuItemCollection オブジェクト](The-ISEMenuItemCollection-Object.md) 
- [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
- [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
- [ISE オブジェクト モデル階層](The-ISE-Object-Model-Hierarchy.md)
+## <a name="see-also"></a>参照
+- [ISEMenuItemCollection オブジェクト](The-ISEMenuItemCollection-Object.md) 
+- [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)
 
   
-
-
-
-<!--HONumber=Oct16_HO1-->
-
-

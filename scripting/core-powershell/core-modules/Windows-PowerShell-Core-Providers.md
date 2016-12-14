@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6e24bf6d-4c70-4edf-956a-1e8e4779ba10
-translationtype: Human Translation
-ms.sourcegitcommit: 6c666e2e23cb74818e37293410dafc9033057733
-ms.openlocfilehash: 39692bf9deda498e05742f0b746af0bd54cb07c3
-
+ms.openlocfilehash: 59b4554c31a95a2d2537a431fccb2d7b67da7e95
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell コア プロバイダー
+# <a name="windows-powershell-core-providers"></a>Windows PowerShell コア プロバイダー
 このセクションには、**Microsoft.PowerShell.Core** モジュールの Windows PowerShell プロバイダーについて説明するヘルプ トピックが含まれています。
 
 Windows PowerShell プロバイダーは .NET プログラムであり、特化されたデータ ストアのデータを Windows PowerShell で利用できるようにします。このデータを簡単に表示し、管理できるようになります。 プロバイダーが公開するデータはファイル システム ドライブのようにドライブに表示されます。 詳細については、「[about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)」を参照してください。
@@ -28,15 +26,9 @@ Windows PowerShell プロバイダーは .NET プログラムであり、特化�
 |[Registry プロバイダー [v3]](https://technet.microsoft.com/en-us/library/d3c8013c-8caa-48d7-9feb-bfef0d95926e)|システム レジストリのキーと値へのアクセスを提供します。|
 |[Variable プロバイダー [v3]](https://technet.microsoft.com/en-us/library/78dbcbbd-7946-4b9b-b75b-146f247f821c)|Windows PowerShell の変数とその値へのアクセスを提供します。|
 
-## 参照
+## <a name="see-also"></a>参照
 - [Certificate プロバイダー [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d)
 - [WSMan プロバイダー [v3]](https://technet.microsoft.com/en-us/library/4c3d8d36-4f7a-4211-996f-64110e4b2eb7)
 - [about_Providers [v4]](https://technet.microsoft.com/en-us/library/2d9b3f32-be78-49ad-a547-21231c803242)
 - [Microsoft.PowerShell.Core モジュール](Microsoft.PowerShell.Core-Module.md)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
 

@@ -8,16 +8,14 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: bc3300e4-9c17-4f00-a621-c8867126e3b3
-translationtype: Human Translation
-ms.sourcegitcommit: 53d9bf77ef39c878d3e729548181d91f01a50ea2
-ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
-
+ms.openlocfilehash: 8e192fa1a1a7b43852296ed23b8729feabc55dc5
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# ISE オブジェクト モデルの階層
+# <a name="the-ise-object-model-hierarchy"></a>ISE オブジェクト モデルの階層
   このトピックでは、Windows PowerShell Integrated Scripting Environment (ISE) の一部であるオブジェクトの階層について説明します。 Windows PowerShell ISE は、Windows PowerShell 3.0 と Windows PowerShell 4.0 に付属しています。 オブジェクトをクリックすると、そのオブジェクトを定義するクラスのリファレンス ドキュメントに移動します。
 
-##  <a name="psISE"></a> **$psISE オブジェクト**
+##  <a name="a-namepsisea-psise-object"></a><a name="psISE"></a> **$psISE Object**
  **$psISE** オブジェクトは、Windows PowerShell ISE オブジェクト階層の[ルート オブジェクト](The-ObjectModelRoot-Object.md)です。 最上位のこのオブジェクトでは、スクリプト作成に次のオブジェクトを使用できます。
 
 -   **[$psISE.CurrentFile](#currentfile)**
@@ -32,14 +30,14 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.PowerShellTabs](#powershelltabs)**
 
-##  <a name="CurrentFile"></a> **[$psISE.CurrentFile](The-ISEFile-Object.md)**
+##  <a name="a-namecurrentfilea-psisecurrentfilethe-isefile-objectmd"></a><a name="CurrentFile"></a> **[$psISE.CurrentFile](The-ISEFile-Object.md)**
  **$psISE.CurrentFile** オブジェクトは [ISEFile](The-ISEFile-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。
 
 -   **[$psISE.CurrentFile.DisplayName](The-ISEFile-Object.md#Displayname)**
 
 -   **[$psISE.CurrentFile.Editor](The-ISEEditor-Object.md)** このオブジェクトは [ISEEditor](The-ISEEditor-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。
 
-    -   **[$psISE.CurrentFile.Editor.CanGoToMatch](The-ISEEditor-Object.md#cangotomatch)**
+    -   **[$psISE.CurrentFile.Editor.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**
 
     -   **[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**
 
@@ -51,9 +49,9 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
     -   **[SelectedText](The-ISEEditor-Object.md#SelectedText)**
 
-    -   **[テキスト](The-ISEEditor-Object.md#Text)**
+    -   **[Text](The-ISEEditor-Object.md#Text)**
 
--   **[エンコード](The-ISEFile-Object.md#Encoding)**
+-   **[Encoding](The-ISEFile-Object.md#Encoding)**
 
 -   **[FullPath](The-ISEFile-Object.md#FullPath)**
 
@@ -61,7 +59,7 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[IsUntitled](The-ISEFile-Object.md#IsUntitled)**
 
-##  <a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
+##  <a name="a-namecurrentpowershelltaba-psisecurrentpowershelltabthe-powershelltab-objectmd"></a><a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
  **$psISE.CurrentPowerShellTab** オブジェクトは [PowerShellTab](The-PowerShellTab-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。
 
 -   **[$psISE.CurrentPowerShellTab.AddOnsMenu](The-ISEMenuItem-Object.md)** オブジェクトは [ISEMenuItem](The-ISEMenuItem-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。
@@ -78,7 +76,7 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.CurrentPowerShellTab.ConsolePane](The-ISEEditor-Object.md)** オブジェクトは [ISEEditor](The-ISEEditor-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。
 
-    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatch](The-ISEEditor-Object.md#cangotomatch)**
+    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**
 
     -   **[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**
 
@@ -90,7 +88,7 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
     -   **[SelectedText](The-ISEEditor-Object.md#SelectedText)**
 
-    -   **[テキスト](The-ISEEditor-Object.md#Text)**
+    -   **[Text](The-ISEEditor-Object.md#Text)**
 
 -   **[$psISE.CurrentPowerShellTab.DisplayName](The-PowerShellTab-Object.md#Displayname)**
 
@@ -118,25 +116,25 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.CurrentPowerShellTab.VisibleVerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
 
-##  <a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
+##  <a name="a-namecurrentvisiblehorizontaltoola-psisecurrentvisiblehorizontaltool"></a><a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
  **$psISE.CurrentVisibleHorizontalTool** オブジェクトは [ISEAddOnTool](The-ISEAddOnTool-Object.md) クラスのインスタンスで、 現在 [Windows PowerShell ISE] ウィンドウの上端にドッキングされているインストール済みのアドオンを表しています。 このオブジェクトでは、スクリプト作成に次のオブジェクトを使用できます。
 
--   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#control)**
+-   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
 
--   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#isvisible)**
+-   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
-##  <a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**
+##  <a name="a-namecurrentvisibleverticaltoola-psisecurrentvisibleverticaltool"></a><a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**
  **$psISE.CurrentVisibleHorizontalTool** オブジェクトは [ISEAddOnTool](The-ISEAddOnTool-Object.md) クラスのインスタンスで、 現在 [Windows PowerShell ISE] ウィンドウの右端にドッキングされているインストール済みのアドオンを表しています。 このオブジェクトでは、スクリプト作成に次のオブジェクトを使用できます。
 
--   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#control)**
+-   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
 
--   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#isvisible)**
+-   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**
 
 -   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
 
-##  <a name="Options"></a> **$psISE.Options**
+##  <a name="a-nameoptionsa-psiseoptions"></a><a name="Options"></a> **$psISE.Options**
  **$psISE.Options** オブジェクトでは、スクリプト作成に次のオブジェクトを使用できます。
 
 -   **[$psISE.Options.AutoSaveMinuteInterval](The-ISEOptions-Object.md#asmi)**
@@ -193,7 +191,7 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.Options.UseEnterToSelectConsolePaneIntellisense](The-ISEOptions-Object.md#uetsicpi)**
 
--   **[$psISE.Options. UseEnterToSelectScriptPaneIntellisense](The-ISEOptions-Object.md#uetsispi)**
+-   **[$psISE.Options.UseEnterToSelectScriptPaneIntellisense](The-ISEOptions-Object.md#uetsispi)**
 
 -   **[$psISE.Options.UseLocalHelp](The-ISEOptions-Object.md#ulh)**
 
@@ -209,16 +207,10 @@ ms.openlocfilehash: 12a47e57d461f1e57cd9c7b20365627378d7e87a
 
 -   **[$psISE.Options.Zoom](The-ISEOptions-Object.md#z)**
 
-##  <a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
+##  <a name="a-namepowershelltabsa-psisepowershelltabsthe-powershelltabcollection-objectmd"></a><a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
  **$psISE.PowerShellTabs** オブジェクトは [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) クラスのインスタンスです。 これは現在開いているすべての PowerShell タブのコレクションで、ローカル コンピューターまたは接続されているリモート コンピューターで利用可能な Windows PowerShell の実行環境を表しています。 コレクション内の個々のメンバーは [PowerShellTab](The-PowerShellTab-Object.md) クラスのインスタンスです。
 
-## 参照
+## <a name="see-also"></a>参照
 - [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
 - [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md)
-
-
-
-
-<!--HONumber=Sep16_HO4-->
-
 

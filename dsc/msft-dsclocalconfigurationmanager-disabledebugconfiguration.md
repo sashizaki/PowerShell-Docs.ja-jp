@@ -7,45 +7,43 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 919438862ca9786447b690d2db10e905da0a7c42
 ms.openlocfilehash: 97ad8a5711d469a80a7a61056d71b7e2b69cfd27
-
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# MSFT_DSCLocalConfigurationManager クラスの DisableDebugConfiguration メソッド
+# <a name="disabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの DisableDebugConfiguration メソッド
 
 DSC リソースのデバッグを無効にします。
 
-構文
+<a name="syntax"></a>構文
 ------
 
 ```mof
 uint32 DisableDebugConfiguration();
 ```
 
-パラメーター
+<a name="parameters"></a>パラメーター
 ----------
 
 このメソッドにはパラメーターはありません。
 
-## 戻り値
+## <a name="return-value"></a>戻り値
 ------------
 
 成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
 
-## コメント
+## <a name="remarks"></a>コメント
 
 これは静的メソッドです。
 
-## 要件
+## <a name="requirements"></a>要件
 ------------
 >**MOF:** DscCore.mof
 
 >**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
@@ -54,11 +52,5 @@ uint32 DisableDebugConfiguration();
 
  
 
-
-
-
-
-
-<!--HONumber=Aug16_HO3-->
 
 

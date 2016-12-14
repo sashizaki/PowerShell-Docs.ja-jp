@@ -7,13 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 62f993e3d3e6ef744fb07920d332d476dfd24fc6
-ms.openlocfilehash: 60085295fa7df6179a81cd98859cd33e6923150f
-
+ms.openlocfilehash: fe905237f5f0672f6e5e0cd399e1b71058417d9c
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# DSC Log リソース 
+# <a name="dsc-log-resource"></a>DSC Log リソース 
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -35,13 +33,13 @@ Log [string] #ResourceName
 
 [DSC イベント ログの場所](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)
 
-## プロパティ
+## <a name="properties"></a>プロパティ
 |  プロパティ  |  説明   | 
 |---|---| 
 | メッセージ| Microsoft-Windows-Desired State Configuration/Analytic イベント ログに書き込むメッセージを示します。| 
 | DependsOn | このログ メッセージが書き込まれる前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 
-## 例
+## <a name="example"></a>例
 
 次の例では、Microsoft-Windows-Desired State Configuration/Analytic イベント ログにメッセージを含める方法を示します。
 
@@ -62,10 +60,4 @@ Configuration logResourceTest
     }
 }
 ```
-
-
-
-
-<!--HONumber=Sep16_HO3-->
-
 

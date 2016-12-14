@@ -8,13 +8,11 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-translationtype: Human Translation
-ms.sourcegitcommit: 3222a0ba54e87b214c5ebf64e587f920d531956a
-ms.openlocfilehash: a031bad99e8aca1d7598f99e157723bf4360cf56
-
+ms.openlocfilehash: bb852b8d5cb5202568a80517074cc8ff6f40ea0f
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# Windows PowerShell ファースト ステップ ガイド
+# <a name="getting-started-with-windows-powershell"></a>Windows PowerShell ファースト ステップ ガイド
 Windows PowerShell は、特にシステム管理者向けに設計された Windows コマンド ライン シェルです。 Windows PowerShell には対話型のプロンプトとスクリプト環境が含まれており、それらを単独で、または組み合わせて使用できます。
 
 テキストを受け入れて返す大部分のシェルとは異なり、Windows PowerShell は .NET Framework の共通言語ランタイム (CLR) と .NET Framework の上に構築されており、.NET Framework オブジェクトを受け入れて返すことができます。 環境のこの根本的な変更により、まったく新しいツールと方法で Windows の管理と構成を行うことができます。
@@ -34,10 +32,4 @@ Windows PowerShell は、シンプルな単一機能のコマンド ライン �
 -   [Windows PowerShell の開始](../setup/Starting-Windows-PowerShell.md)
 
 -   [Windows PowerShell を使用する準備を行う](Getting-Ready-to-Use-Windows-PowerShell.md)
-
-
-
-
-<!--HONumber=Aug16_HO4-->
-
 

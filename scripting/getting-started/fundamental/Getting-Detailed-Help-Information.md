@@ -8,18 +8,16 @@ author: jpjofre
 manager: dongill
 ms.prod: powershell
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-translationtype: Human Translation
-ms.sourcegitcommit: b59186234a513cf34d2615d90643ee749bd60d3f
-ms.openlocfilehash: c38edc68154ccfa9cd76ebdad5a94ddfb4f902c8
-
+ms.openlocfilehash: 983876d805404857392565d4273e4dc38752a094
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# 詳しいヘルプ情報の取得
+# <a name="getting-detailed-help-information"></a>詳しいヘルプ情報の取得
 Windows PowerShell には、Windows PowerShell の概念と言語について説明した詳しいヘルプ トピックが含まれています。 また、各コマンドレットおよびプロバイダーに関するヘルプ トピックや、多くの関数およびスクリプトに関するヘルプ トピックもあります。
 
 これらのヘルプ トピックはコマンド プロンプトで表示でき、Microsoft TechNet ライブラリで最新版のトピックを見ることもできます。 Windows PowerShell Integrated Scripting Environment など、Windows PowerShell をホストする多くのプログラムでは、状況依存のヘルプやコンパイル済みヘルプ ファイル (.chm) などの追加のヘルプ機能が用意されています。
 
-## コマンドレットのヘルプの表示
+## <a name="getting-help-for-cmdlets"></a>コマンドレットのヘルプの表示
 Windows PowerShell のコマンドレットに関するヘルプを表示するには、[Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) コマンドレットを使用します。 たとえば、[Get-ChildItem [m2]](https://technet.microsoft.com/en-us/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) コマンドレットのヘルプを表示するには、次のように入力します。
 
 ```
@@ -82,7 +80,7 @@ get-help get-childitem -examples
 
 作成したコマンドレットに関するヘルプ トピックを記述する方法については、MSDN の「How to Write Cmdlet Help (コマンドレット ヘルプの記述方法)」をご覧ください。
 
-## 概念説明のヘルプの表示
+## <a name="getting-conceptual-help"></a>概念説明のヘルプの表示
 Get-Help コマンドレットでは、Windows PowerShell 言語に関するトピックなど、Windows PowerShell の概念説明トピックの情報も表示されます。 概念説明のヘルプ トピックには、"about_" というプレフィックスが付きます (about_line_editing など)。 概念説明のトピックの名前は、英語バージョン以外の Windows PowerShell でも英語で入力する必要があります。
 
 概念説明のトピックを一覧表示するには、次のように入力します。
@@ -99,7 +97,7 @@ get-help about_command_syntax
 
 Get-Help の *Detailed*、*Parameter*、*Examples* などのパラメーターは、概念説明ヘルプ トピックの表示には効果がありません。
 
-## プロバイダーに関するヘルプの表示
+## <a name="getting-help-about-providers"></a>プロバイダーに関するヘルプの表示
 Get-Help コマンドレットでは、Windows PowerShell プロバイダーに関する情報を表示できます。 プロバイダーのヘルプを取得するには、"Get-Help" に続けてプロバイダー名を入力します。 たとえば、Registry プロバイダーのヘルプを取得するには、次のように入力します。
 
 ```
@@ -114,7 +112,7 @@ get-help -category provider
 
 Get-Help の *Detailed*、*Parameter*、*Examples* などのパラメーターは、プロバイダーに関するヘルプ トピックの表示には効果がありません。
 
-## スクリプトおよび関数に関するヘルプの表示
+## <a name="getting-help-about-scripts-and-functions"></a>スクリプトおよび関数に関するヘルプの表示
 Windows PowerShell の多くのスクリプトおよび関数には、ヘルプ トピックが用意されています。 Get-Help コマンドレットを使用して、スクリプトや関数のヘルプ トピックを表示できます。
 
 関数のヘルプを表示するには、"get-help" に続けて関数名を入力します。 たとえば、Disable-PSRemoting 関数のヘルプを表示するには、次のように入力します。
@@ -135,7 +133,7 @@ get-help c:\ps-test\TestScript.ps1
 
 関数およびスクリプトに関するヘルプ トピックを記述する方法については、「[about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)」、「[about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)」、「[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)」をご覧ください。
 
-## オンライン ヘルプの表示
+## <a name="getting-help-online"></a>オンライン ヘルプの表示
 インターネットに接続している場合、ヘルプを見るための最も良い方法の 1 つは、ヘルプ トピックをオンラインで表示することです。 オンライン トピックは簡単に更新できるため、最新の情報が得られる可能性が高くなります。
 
 オンライン ヘルプを表示するには、Get-Help コマンドレットの *Online* パラメーターを使用します。 Get-Help コマンドレットの *Online* パラメーターは、コマンドレットのヘルプ、関数のヘルプ、スクリプトのヘルプに対してのみ機能します。 概念説明のトピック ("about" ヘルプ) やプロバイダーに関するヘルプ トピックに対しては、*Online* パラメーターを使用できません。 また、この機能はオプションであるため、すべてのコマンドレット、関数、スクリプトのヘルプ トピックに有効なわけではありません。
@@ -172,15 +170,9 @@ Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 
 ヘルプ トピックのオンライン サポートを提供する方法については、「[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)」および MSDN (Microsoft Developer Network) ライブラリの「[How to Write Cmdlet Help (コマンドレット ヘルプの記述方法)](http://go.microsoft.com/fwlink/?LinkID=123415)」(http://go.microsoft.com/fwlink/?LinkID=123415) をご覧ください。
 
-## 参照
+## <a name="see-also"></a>参照
 - [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
 - [about_Scripts](https://technet.microsoft.com/en-us/library/7dc08334-dcfe-450b-b949-0554855623af)
 - [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
 - [Get-Help [m2]](https://technet.microsoft.com/en-us/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
-
-
-
-
-<!--HONumber=Oct16_HO3-->
-
 

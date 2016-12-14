@@ -8,18 +8,16 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-06-22
 title: "JEA のレポート"
 ms.technology: powershell
-translationtype: Human Translation
-ms.sourcegitcommit: 7504fe496a8913718847e45115d126caf4049bef
-ms.openlocfilehash: d867a6462e9fa8b6e16c8c2103899c72b380116c
-
+ms.openlocfilehash: 3e7bd2755281f491bba8a905df018fb2e1cac6ff
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+translationtype: HT
 ---
-
-# JEA のレポート
+# <a name="reporting-on-jea"></a>JEA のレポート
 JEA では権限のないユーザーでも特権コンテキストを実行できるため、ログ記録と監査が極めて重要です。
 このセクションでは、ログ記録とレポートに役立つツールを実行します。
 
-## JEA 操作のレポート
-### Over-the-Shoulder トランスクリプト
+## <a name="reporting-on-jea-actions"></a>JEA 操作のレポート
+### <a name="over-the-shoulder-transcription"></a>Over-the-Shoulder トランスクリプト
 PowerShell セッションで何が行われているかその概要を取得する最も簡単な方法の 1 つとして、入力している人を覗き見ることです。
 使っているコマンド、そのコマンドによる出力がわかります。何も問題はありません。
 または、あったとしても、少なくとも情報を得ることができます。
@@ -31,25 +29,25 @@ PowerShell トランスクリプションは、事後的に同類のビューを
 おわかりのとおり、トランスクリプトは "接続されているユーザー"、RunAs ユーザー、セッションで実行されたコマンドなどを記録します。
 PowerShell トランスクリプションについて詳しくは、[こちらのブログ投稿](http://blogs.msdn.com/b/powershell/archive/2015/06/09/powershell-the-blue-team.aspx)をご覧ください。
 
-### PowerShell イベント ログ
+### <a name="powershell-event-logs"></a>PowerShell イベント ログ
 モジュールのログ記録を有効にした場合、すべての PowerShell アクションも正規の Windows イベント ログに記録されます。
 これはトランスクリプトに比べて多少扱いにくいものの、詳細な情報が提供されるため便利です。
 
 PowerShell の操作ログでは、モジュールのログ記録を有効にしている場合、呼び出された各コマンドがイベント ID 4104 によって記録されます。
 
-### その他のイベント ログ
+### <a name="other-event-logs"></a>その他のイベント ログ
 PowerShell ログおよびトランスクリプトと異なり、他のログ記録メカニズムでは "接続されているユーザー" は取得されません。
 他のログと PowerShell ログの整合性を図るには、これらを相互に関連付ける必要があります。
 
 "Windows リモート管理" 操作ログでは、イベント ID 193 により、接続しているユーザーの SID と名前に加え、RunAs 仮想アカウントの SID が記録されこの関連付けがサポートされます。
 RunAs 仮想アカウントの名前の末尾に、接続しているユーザーのドメインとユーザー名が含まれていることにお気付きかもしれません。
 
-## JEA 構成のレポート
-### Get-PSSessionConfiguration
+## <a name="reporting-on-jea-configuration"></a>JEA 構成のレポート
+### <a name="get-pssessionconfiguration"></a>Get-PSSessionConfiguration
 使用している環境の状態の正確なレポートを取得するために、コンピューターにセットアップした JEA エンドポイントの数を把握しておくことが重要です。
-`Get-PSSessionConfiguration`  を使用できます。
+`Get-PSSessionConfiguration` を使用できます。
 
-### Get-PSSessionCapability
+### <a name="get-pssessioncapability"></a>Get-PSSessionCapability
 JEA エンドポイントを介して特定のユーザーの機能を手動でレポートすることは、非常に複雑になる場合があります。
 いくつかのロール機能の調査が必要になる場合があります。
 幸い、ここでは Get-PSSessionCapability コマンドレットを使用できます。
@@ -58,10 +56,4 @@ JEA エンドポイントを介して特定のユーザーの機能を手動で�
 ```PowerShell
 Get-PSSessionCapability -Username 'CONTOSO\OperatorUser' -ConfigurationName JEADemo
 ```
-
-
-
-
-<!--HONumber=Aug16_HO3-->
-
 
