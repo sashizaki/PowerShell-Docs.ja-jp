@@ -1,15 +1,16 @@
 ---
-title: "Windows PowerShell SDK のインストール"
-ms.date: 2016-05-11
-keywords: "PowerShell, コマンドレット"
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: "PowerShell, コマンドレット"
+ms.date: 2016-12-12
+title: "Windows PowerShell SDK のインストール"
+ms.technology: powershell
 ms.assetid: c3636b45-61aa-4720-85f0-58312c4fc8f9
-ms.openlocfilehash: 8df8b9bb74eba5921263ad9d802dcece41261f9a
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 97c7c509363aa7849dd243271527efbb1a98865f
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Windows PowerShell SDK のインストール
@@ -269,3 +270,4 @@ Move-Item コマンドレットと Join-Path コマンドレットを呼び出�
 Clear-Content コマンドレット、Get-Content コマンドレット、Set-Content コマンドレットを呼び出すためにコンテナー メソッドを上書きする方法を示します。
 これらのメソッドは、ユーザーがデータ ストア内の項目のコンテンツを管理する必要がある場合に実装する必要があります。
 このサンプルのプロバイダー クラスは [NavigationCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider.aspx) クラスから派生し、[IContentCmdletProvider](https://technet.microsoft.com/library/system.management.automation.provider.icontentcmdletprovider.aspx) インターフェイスを実装します。
+

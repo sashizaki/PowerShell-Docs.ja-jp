@@ -1,33 +1,15 @@
 ---
-description: 
-manager: dongill
+manager: carmonm
 ms.topic: article
-author: jpjofre
+author: rpsqrd
+ms.author: ryanpu
 ms.prod: powershell
 keywords: "PowerShell, コマンドレット, JEA"
-ms.date: 2016-06-22
-title: "ブラックリストへの登録"
+ms.date: 2016-12-05
+title: Just Enough Administration
 ms.technology: powershell
-ms.openlocfilehash: e823cc0b130500fb7ea60e65acf27f90ad3f3802
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+redirect_url: https://msdn.microsoft.com/powershell/jea/security-considerations
+ms.openlocfilehash: 845bc704ea19c969b87fdbc1f58ebe58613daba4
+ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
 translationtype: HT
 ---
-### <a name="on-blacklisting"></a>ブラックリストへの登録
-JEA を一通り試したら、コマンドをブラックリストに登録できるか気になるかもしれません。
-これはもっともな要求ですが、現時点では次の理由で JEA ではその予定はありません。
-
-1.  JEA では、オペレーターの操作を、オペレーターが必要なアクションにのみ制限しています。
-ブラックリストは、その対極に位置します。
-
-2.  PowerShell コマンドの設計者は、その設計時に JEA を念頭に置いていませんでした。
-Windows Server 2016 の初期インストール時には、1520 個のコマンドを直ちに使用できるようになります。
-これらのコマンドの脅威モデルには、ユーザーがより特権の高いアカウントとしてコマンドを実行するようになるという可能性は含まれていませんでした。
-たとえば、特定のコマンドでは、設計上のコード インジェクションが許可されます (コア PowerShell モジュールの Add-Type や Invoke-Command など)。
-マイクロソフトは、認識しているコマンドが公開されると JEA により警告を表示できますが、新しい脅威モデルに基づいて Windows の他のすべてのコマンドを再評価することはしていません。
-JEA を通じて公開するコマンドの機能はご自身で把握している必要があります。  
-
-3.  また、JEA がコード インジェクションの脆弱性によりすべてのコマンドをブロックしていても、悪意のあるユーザーがブラックリストに掲載された操作を他の関連するコマンドで実行できなくなるという保証はありません。
-特定の操作を確実に実行されないようにするには、公開するすべてのコマンドを理解しておくことが不可欠です。
-ホワイトリストまたはブラックリストの使用の有無にかかわらず、ご自身の判断のもと、公開するコマンドを選択してください。
-ブラックリストで公開されるコマンドは管理することが困難なため、JEA は代わりにホワイトリストを使って実装されます。
-

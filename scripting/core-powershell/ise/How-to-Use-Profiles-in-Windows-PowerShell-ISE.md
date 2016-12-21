@@ -1,15 +1,16 @@
 ---
-title: "Windows PowerShell ISE でプロファイルを使用する方法"
-ms.date: 2016-05-11
-keywords: "PowerShell, コマンドレット"
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: "PowerShell, コマンドレット"
+ms.date: 2016-12-12
+title: "Windows PowerShell ISE でプロファイルを使用する方法"
+ms.technology: powershell
 ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
-ms.openlocfilehash: dc85d616aac580effc7170935a3edb35e1a54e04
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 8825eb6db73ce6e611f10f116a8d8f923c277b0c
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>Windows PowerShell ISE でプロファイルを使用する方法
