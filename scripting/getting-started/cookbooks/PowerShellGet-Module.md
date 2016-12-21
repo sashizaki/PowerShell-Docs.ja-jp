@@ -1,9 +1,18 @@
-
 ---
-タイトル:  PowerShellGet モジュール ms.date:  2016-05-11 キーワード:  powershell,コマンドレット 説明:  
-ms.topic:  記事 作成者:  jpjofre マネージャー:  dongill ms.prod:  powershell ms.assetid:  e4d6867f-a32a-4564-9e43-409babee97a7
+description: 
+manager: carmonm
+ms.topic: article
+author: jpjofre
+ms.prod: powershell
+keywords: "PowerShell, コマンドレット"
+ms.date: 2016-12-12
+title: "PowerShellGet モジュール"
+ms.technology: powershell
+ms.assetid: e4d6867f-a32a-4564-9e43-409babee97a7
+ms.openlocfilehash: 036319dff3e4c5e957e2f71bbcb57378ac35318f
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
+translationtype: HT
 ---
-
 # <a name="powershellget-module"></a>PowerShellGet モジュール
 このセクションには、**PowerShellGet** モジュールのヘルプ トピックが含まれています。 **PowerShellGet** モジュールは、Windows PowerShell 5.0 とそれ以降の Windows PowerShell リリースでインストールされます。
 

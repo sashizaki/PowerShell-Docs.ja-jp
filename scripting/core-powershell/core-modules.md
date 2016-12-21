@@ -1,14 +1,15 @@
 ---
-title: "コア モジュール"
-ms.date: 2016-05-11
-keywords: "PowerShell, コマンドレット"
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: cd31c0b058a09aca3fd9125a8495f31600924ac1
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: "PowerShell, コマンドレット"
+ms.date: 2016-12-12
+title: "コア モジュール"
+ms.technology: powershell
+ms.openlocfilehash: 0e59c0ff66ead42855fb777cba812274ed1443d4
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 #  <a name="the-powershell-common-modules"></a>PowerShell 共通モジュール
@@ -32,3 +33,4 @@ PowerShell 共通モジュールは、PowerShell の基本的な機能を提供�
 -  [スケジュール済みジョブ モジュール](core-modules/PSScheduledJob-Module.md)
 -  [ScriptAnalyzer モジュール](core-modules/PSScriptAnalyzer-Module.md)
 -  [ユーティリティ モジュール](core-modules/Microsoft.PowerShell.Utility-Module.md)
+

@@ -1,15 +1,16 @@
 ---
-title: "PowerShell.exe コマンドラインのヘルプ"
-ms.date: 2016-05-11
-keywords: "PowerShell, コマンドレット"
 description: 
+manager: carmonm
 ms.topic: article
 author: jpjofre
-manager: dongill
 ms.prod: powershell
+keywords: "PowerShell, コマンドレット"
+ms.date: 2016-12-12
+title: "PowerShell.exe コマンドラインのヘルプ"
+ms.technology: powershell
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: f2a682671bb39de943fac47488e2a1c651423b53
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 609682294c344129f96afd0241116bb19154d19e
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe コマンドラインのヘルプ
@@ -55,7 +56,7 @@ Base 64 エンコード文字列版のコマンドを許可します。 この�
 
 まれに、スイッチ パラメーターにブール値を指定しなければならない場合があります。 **File** パラメーターの値にスイッチ パラメーターのブール値を指定するには、次のように、中かっこでパラメーター名と値を囲みます。`-File .\Get-Script.ps1 {-All:$False}`
 
-### <a name="-inputformat-text-xml"></a>-InputFormat {Text | XML}
+### <a name="-inputformat-text--xml"></a>-InputFormat {Text | XML}
 Windows PowerShell に送信されるデータ形式を記述します。 使用できる値は、"Text" (テキスト文字列) と "XML" (シリアル化された CLIXML 形式) です。
 
 ### <a name="-mta"></a>-Mta
@@ -73,7 +74,7 @@ Windows PowerShell に送信されるデータ形式を記述します。 使用
 ### <a name="-noprofile"></a>-NoProfile
 Windows PowerShell プロファイルを読み込みません。
 
-### <a name="-outputformat-text-xml"></a>-OutputFormat {Text | XML}
+### <a name="-outputformat-text--xml"></a>-OutputFormat {Text | XML}
 Windows PowerShell からの出力の形式を決定します。 使用できる値は、"Text" (テキスト文字列) と "XML" (シリアル化された CLIXML 形式) です。
 
 ### <a name="-psconsolefile-filepath"></a>-PSConsoleFile <FilePath>
