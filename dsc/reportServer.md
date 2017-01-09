@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 81b8a150e35728d35af34b75493f9288c39a411d
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: 17b56a0ce25d3154e21f18269926a0c41aae833b
+ms.sourcegitcommit: d7b28f28a09caa7fa48b0f66c5c437f128ce316f
 translationtype: HT
 ---
 # <a name="using-a-dsc-report-server"></a>DSC レポート サーバーの使用
@@ -94,7 +94,7 @@ PullClientConfig
 
 ## <a name="getting-report-data"></a>レポート データの取得
 
-プル サーバーに送信されたレポートは、サーバー上のデータベースに格納されます。 これらのレポートは、Web サービスを呼び出すことで利用できます。 特定のノードのレポートを取得するには、`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentID= 'MyNodeAgentId')/Reports` の形式でレポート Web サービスに HTTP 要求を送信します。ここで、`MyNodeAgentId` はレポートを取得するノードの AgentId です。 ノードの AgentID を取得するには、そのノードで [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) を呼び出します。
+プル サーバーに送信されたレポートは、サーバー上のデータベースに格納されます。 これらのレポートは、Web サービスを呼び出すことで利用できます。 特定のノードのレポートを取得するには、`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports` の形式でレポート Web サービスに HTTP 要求を送信します。ここで、`MyNodeAgentId` はレポートを取得するノードの AgentId です。 ノードの AgentID を取得するには、そのノードで [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) を呼び出します。
 
 レポートは、JSON オブジェクトの配列として返されます。
 
@@ -104,7 +104,7 @@ PullClientConfig
 function GetReport
 {
     param($AgentId = "$((glcm).AgentId)", $serviceURL = "http://CONTOSO-REPORT:8080/PSDSCPullServer.svc")
-    $requestUri = "$serviceURL/Nodes(AgentID= '$AgentId')/Reports"
+    $requestUri = "$serviceURL/Nodes(AgentId= '$AgentId')/Reports"
     $request = Invoke-WebRequest -Uri $requestUri  -ContentType "application/json;odata=minimalmetadata;streaming=true;charset=utf-8" `
                -UseBasicParsing -Headers @{Accept = "application/json";ProtocolVersion = "2.0"} `
                -ErrorAction SilentlyContinue -ErrorVariable ev
