@@ -1,126 +1,103 @@
 ---
-description: 
-manager: dongill
+manager: carmonm
 ms.topic: article
-author: jpjofre
+author: rpsqrd
+ms.author: ryanpu
 ms.prod: powershell
 keywords: "PowerShell, コマンドレット, JEA"
-ms.date: 2016-06-22
-title: "前提条件"
+ms.date: 2016-12-05
+title: "JEA の前提条件"
 ms.technology: powershell
-ms.openlocfilehash: 6cd57c2fab63d2184cb5c792b63df99dbd782235
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: c709b3692705db327245e4e1b3fde800ac7d57a9
+ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
 translationtype: HT
 ---
 # <a name="prerequisites"></a>前提条件
 
-## <a name="initial-state"></a>初期状態
-このセクションの操作を開始する前に、次の状態になっていることを確認してください。
+> 適用先: Windows PowerShell 5.0
 
-1. システムで JEA が利用可能である。 現在サポートされているオペレーティング システムと必要なダウンロードを[こちら](./README.md)で確認してください。
-2. JEA を試そうとしているコンピューターの管理者権限を持っていること。
-3. コンピューターがドメインに参加していること。
-ドメインがない場合に新しいドメインをサーバー上にすぐにセットアップするには、「[ドメイン コントローラーの作成](#creating-a-domain-controller)」セクションを参照してください。
+Just Enough Administration は、Windows PowerShell 5.0 以降に含まれる機能です。
+このトピックでは、JEA の使用を開始するために満たす必要のある前提条件について説明します。
+
+## <a name="install-jea"></a>JEA のインストール
+JEA は Windows PowerShell 5.0 以降で利用できますが、完全な機能のためには、システムで使用できる最新バージョンの PowerShell をインストールすることをお勧めします。
+次の表では、サポートされている各 OS での JEA の使用可能性を示します。
+
+オペレーティング システム          | JEA の可用性
+--------------------------|------------------------------------------------------
+Windows Server 2016       | プレインストール済み
+Windows Server 2012 R2    | WMF 5.1 のすべての機能
+Windows Server 2012       | WMF 5.1 のすべての機能
+Windows Server 2008 R2    | WMF 5.1 のすべての機能
+Windows 10 1607           | プレインストール済み
+Windows 10 1603、1511     | 制限された機能でプレインストール済み<sup>1</sup>
+Windows 10 1507           | 不可
+Windows 8、8.1            | WMF 5.1 のすべての機能
+Windows 7                 | WMF 5.1 の制限機能<sup>2</sup>
+
+<sup>1</sup> Windows 10 のバージョン 1511 と 1603 では、JEA の次の機能はサポートされません。グループ管理されたサービス アカウントとしての実行、セッション構成での条件付きアクセス規則、ユーザー ドライブ、ローカル ユーザー アカウントへのアクセスの許可。
+これらの機能を使うには、Windows をバージョン 1607 (Anniversary Update) 以降に更新します。
+
+<sup>2</sup> Windows 7 の仮想アカウントを使うように JEA を構成することはできません。
+
+### <a name="check-which-version-of-powershell-is-installed"></a>インストールされている PowerShell のバージョンを確認する
+システムにインストールされている PowerShell のバージョンを確認するには、Windows PowerShell プロンプトで `$PSVersionTable` 変数を調べます。
+
+```powershell
+PS C:\> $PSVersionTable.PSVersion
+
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      14393  1000
+```
+
+*メジャー* バージョンが **5** 以上の場合、JEA を使用できます。
+エクスペリエンスを最善にし、すべての最新機能にアクセスするには、可能な場合は PowerShell バージョン **5.1** にアップグレードすることをお勧めします。
+
+### <a name="install-windows-management-framework"></a>Windows Management Framework をインストールする
+古いバージョンの PowerShell を実行している場合、最新の Windows Management Framework (WMF) 更新プログラムにシステムを更新する必要があります。
+更新パッケージおよび最新の WMF リリース ノートへのリンクは、[ダウンロード センター](https://aka.ms/WMF5)にあります。
+
+すべてのサーバーをアップグレードする前に、WMF とのワークロードの互換性をテストすることを強くお勧めします。
+
+Windows 10 のユーザーは、現在のバージョンの Windows PowerShell を取得するには、最新の機能更新をインストールする必要があります。
 
 ## <a name="enable-powershell-remoting"></a>PowerShell リモート処理を有効にする
-JEA による管理は、PowerShell リモート処理を通して行われます。
-Administrator PowerShell ウィンドウで次のコマンドを実行して、PowerShell リモート処理を有効にし、適切に構成されるようにします。
+PowerShell リモート処理は、JEA 構築の基盤を提供します。
+したがって、JEA を使用する前に、システムで PowerShell リモート処理を有効にし、[適切にセキュリティ保護する](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)必要があります。
 
-```PowerShell
+Windows Server 2012、2012 R2、2016 では、PowerShell リモート処理は既定で有効になります。
+管理者特権の PowerShell ウィンドウで次のコマンドを実行することにより、PowerShell リモート処理を有効にできます。
+
+```powershell
 Enable-PSRemoting
 ```
 
-PowerShell リモート処理に慣れていない場合は、`Get-Help about_Remote` を実行して、重要な基本概念について理解しておくことをお勧めします。
-
-## <a name="identify-your-users-or-groups"></a>ユーザーまたはグループを識別する
-JEA の動作を示すために、このガイド全体で使用する管理者以外のユーザーとグループを識別する必要があります。
-
-既存のドメインを使用している場合は、特権のないユーザーとグループを識別するか、そのようなユーザーとグループをいくつか作成してください。
-これらの管理者以外のユーザーで、JEA にアクセスします。
-スクリプトの一番上に `$NonAdministrator` 変数がある場合は、その変数に選択した管理者以外のユーザーまたはグループを常に割り当ててください。
-
-新しいドメインを最初から作成する場合は、はるかに簡単です。
-付録の「[ユーザーとグループの設定](creating-a-domain-controller.md#set-up-users-and-groups)」セクションに従って、管理者以外のユーザーとグループを作成してください。
-そのセクションに従って作成したグループの既定値は `$NonAdministrator` になります。
-
-## <a name="set-up-maintenance-role-capability-file"></a>メンテナンス ロール機能ファイルの設定
-PowerShell で次のコマンドを実行して、次のセクションで使用するデモ用のロール機能ファイルを作成します。
-このファイルが何をするかについては、このガイドの後半で説明します。
-
-```PowerShell
-# Fields in the role capability
-$MaintenanceRoleCapabilityCreationParams = @{
-    Author = 'Contoso Admin'
-    CompanyName = 'Contoso'
-    VisibleCmdlets = 'Restart-Service'
-    FunctionDefinitions =
-            @{ Name = 'Get-UserInfo'; ScriptBlock = { $PSSenderInfo } }
-}
-
-# Create the demo module, which will contain the maintenance Role Capability File
-New-Item -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo_Module" -ItemType Directory
-New-ModuleManifest -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo_Module\Demo_Module.psd1"
-New-Item -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo_Module\RoleCapabilities" -ItemType Directory
-
-# Create the Role Capability file
-New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\Demo_Module\RoleCapabilities\Maintenance.psrc" @MaintenanceRoleCapabilityCreationParams
-```
-
-## <a name="create-and-register-demo-session-configuration-file"></a>デモ用のセッション構成ファイルを作成して登録する
-次のコマンドを実行して、次のセクションで使用するデモ用のセッション構成ファイルを作成します。
-このファイルが何をするかについては、このガイドの後半で説明します。
-
-```PowerShell
-# Determine domain
-$domain = (Get-CimInstance -ClassName Win32_ComputerSystem).Domain
-
-# Replace with your non-admin group name
-$NonAdministrator = "$domain\JEA_NonAdmin_Operator"
-
-# Specify the settings for this JEA endpoint
-# Note: You will not be able to use a virtual account if you are using WMF 5.0 on Windows 7 or Windows Server 2008 R2
-$JEAConfigParams = @{
-    SessionType = 'RestrictedRemoteServer'
-    RunAsVirtualAccount = $true
-    RoleDefinitions = @{
-        $NonAdministrator = @{ RoleCapabilities = 'Maintenance' }
-    }
-    TranscriptDirectory = "$env:ProgramData\JEAConfiguration\Transcripts"
-}
-
-# Set up a folder for the Session Configuration files
-if (-not (Test-Path "$env:ProgramData\JEAConfiguration"))
-{
-    New-Item -Path "$env:ProgramData\JEAConfiguration" -ItemType Directory
-}
-
-# Specify the name of the JEA endpoint
-$sessionName = 'JEA_Demo'
-
-if (Get-PSSessionConfiguration -Name $sessionName -ErrorAction SilentlyContinue)
-{
-    Unregister-PSSessionConfiguration -Name $sessionName -ErrorAction Stop
-}
-
-New-PSSessionConfigurationFile -Path "$env:ProgramData\JEAConfiguration\JEADemo.pssc" @JEAConfigParams
-
-# Register the session configuration
-Register-PSSessionConfiguration -Name $sessionName -Path "$env:ProgramData\JEAConfiguration\JEADemo.pssc"
-```
-
-## <a name="enable-powershell-module-logging-optional"></a>PowerShell モジュールのログを有効にする (省略可能)
+## <a name="enable-powershell-module-and-script-block-logging-optional"></a>PowerShell モジュールおよびスクリプト ブロック ログを有効にする (省略可能)
 次の手順で、システム上のすべての PowerShell 操作のログを有効にします。
-これは JEA を動作させるために有効にする必要はありませんが、「[JEA のレポート](reporting-on-jea.md)」セクションで役に立ちます。
+PowerShell モジュール ログは JEA には必要ありませんが、ユーザーが実行するコマンドが中央の場所に記録されるように有効にすることを強くお勧めします。
 
-1. ローカル グループ ポリシー エディターを開きます。
-2. "Computer Configuration\Administrative Templates\Windows Components\Windows PowerShell" に移動します。
-3. [モジュール ログを有効にする] をダブルクリックします。
-4. [有効] をクリックします。
-5. [オプション] セクションで、モジュール名の横にある [表示] をクリックします。
-6. ポップアップ ウィンドウに「\*」と入力します。 これは、PowerShell がすべてのモジュールのコマンドを記録することを意味します。
-7. [OK] をクリックしてポリシーを適用します。
+グループ ポリシーを使って、PowerShell モジュール ログ ポリシーを構成できます。
 
-注: グループ ポリシーを通してシステム全体の PowerShell トランスクリプトを有効にすることもできます。
+1. ワークステーションでローカル グループ ポリシー エディターを開くか、Active Directory ドメイン コントローラーのグループ ポリシー管理コンソールでグループ ポリシー オブジェクトを開きます
+2. **[コンピューターの構成]\\[管理用テンプレート]\\[Windows コンポーネント]\\[Windows PowerShell]** に移動します。
+3. **[モジュール ログを有効にする]** をダブルクリックします。
+4. **[有効]** をクリックします。
+5. [オプション] セクションで、モジュール名の横にある **[表示]** をクリックします。
+6. ポップアップ ウィンドウに「**\***」と入力します。 これは、すべてのモジュールのコマンドを記録するよう PowerShell に指示します。
+7. **[OK]** をクリックしてポリシーを設定します。
+8. **[PowerShell スクリプト ブロックのログ記録を有効にする]** をダブルクリックします。
+9. **[有効]** をクリックします。
+10. [OK] をクリックしてポリシーを設定します。
+11. (ドメインに参加しているコンピューターのみ) **gpupdate** を実行するか、グループ ポリシーが更新されたポリシーを処理して設定を適用するのを待ちます
 
-**以上で、ご使用のコンピューターでデモ エンドポイントが構成され、JEA を使用する準備が整いました。**
+グループ ポリシーを通してシステム全体の PowerShell トランスクリプトを有効にすることもできます。
 
+## <a name="next-steps"></a>次の手順
+
+- [ロール機能ファイルを作成する](role-capabilities.md)
+- [セッション構成ファイルを作成する](session-configurations.md)
+
+## <a name="see-also"></a>関連項目
+- [PowerShell リモート処理と WinRM セキュリティに関する追加情報](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
+- [*PowerShell ♥ the Blue Team* のセキュリティに関するブログ投稿](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)

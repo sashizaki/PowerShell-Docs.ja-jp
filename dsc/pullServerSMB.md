@@ -7,15 +7,15 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 35ac9b38086b12fb48844c56a488854f63529e21
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: df994500ce5f46d62f143af07d8ce86dddf44c3e
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>DSC SMB プル サーバーのセットアップ
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
-DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) プル サーバーは、DSC 構成ファイルや DSC リソースを必要なときに ターゲット ノードに提供する SMB ファイル共有です。
+DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) プル サーバーは、DSC 構成ファイルや DSC リソースを必要なときにターゲット ノードに提供する SMB ファイル共有です。
 
 DSC の SMB プル サーバーを使うには、次のことが必要です。
 - PowerShell 4.0 以降を実行しているサーバーに SMB ファイル共有をセットアップする
@@ -135,7 +135,7 @@ Import-DscResource -ModuleName cNtfsAccessControl
 
 >**注:** SMB プル サーバーを使っている場合は、構成 ID を使う必要があります。 構成名は、SMB ではサポートされません。
 
-クライアントに必要なすべてのリソースは、アーカイブ済みの `.zip` ファイルとして SMB 共有フォルダーに配置する必要があります。  
+各リソース モジュールは、圧縮し、`{Module Name}_{Module Version}.zip` というパターンで名前を付ける必要があります。 たとえば、モジュール名が xWebAdminstration で、バージョンが 3.1.2.0 のモジュールでは、'xWebAdministration_3.2.1.0.zip' という名前になります。 各バージョンのモジュールを 1 つの zip ファイルに含める必要があります。 各 zip ファイルには 1 つのバージョンのリソースのみが含まれるので、WMF 5.0 で追加された、単一のディレクトリに複数のモジュール バージョンを入れるモジュール形式はサポートされていません。 このため、プル サーバーで使うための DSC リソース モジュールをパッケージ化する前に、ディレクトリ構造に少しの変更が必要です。 WMF 5.0 の DSC リソースを含むモジュールの既定の形式は、'{モジュール フォルダー}\{モジュールのバージョン}\DscResources\{DSC リソース フォルダー}\' です。 プル サーバー用にパッケージ化する前には、単純に **{モジュールのバージョン}** フォルダーを削除して、'{モジュール フォルダー}\DscResources\{DSC リソース フォルダー}\' というパスにします。 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを SMB 共有フォルダーに置きます。 
 
 ## <a name="creating-the-mof-checksum"></a>MOF チェックサムの作成
 ターゲット ノード上の LCM が構成を検証できるように、構成 MOF ファイルはチェックサム ファイルと組み合わせて使用する必要があります。 チェックサムを作成するには、[New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) コマンドレットを呼び出します。 このコマンドレットは、構成 MOF が存在するフォルダーが指定された **Path** パラメーターを受け取ります。 このコマンドレットは、`ConfigurationMOFName.mof.checksum` という名前でチェックサム ファイルを作成します。ここで、`ConfigurationMOFName` は構成 MOF ファイルの名前です。 指定のフォルダーに複数の構成 MOF ファイルがある場合は、そのフォルダー内の構成ごとにチェックサムが作成されます。
@@ -143,6 +143,67 @@ Import-DscResource -ModuleName cNtfsAccessControl
 チェックサム ファイルは、構成 MOF ファイルと同じディレクトリ (既定では `$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration`) に存在し、拡張子として `.checksum` が付けられた同じ名前である必要があります。
 
 >**注**: 何らかの方法で構成 MOF ファイルを変更した場合は、チェックサム ファイルも作成し直す必要があります。
+
+## <a name="setting-up-a-pull-client-for-smb"></a>SMB のプル クライアントのセットアップ
+
+SMB 共有から構成とリソースの両方または一方をプルするクライアントを設定するには、プル元の共有を指定する **ConfigurationRepositoryShare** ブロックと **ResourceRepositoryShare** ブロックでローカル構成マネージャー (LCM) を構成します。
+
+LCM 構成の詳細については、「[構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)」をご覧ください。
+
+>**注:** わかりやすくする目的で、この例では **PSDscAllowPlainTextPassword** を使用し、**Credential** パラメーターにプレーンテキスト パスワードを渡すようにしています。 資格情報をより安全に渡す方法については、「[構成データでの資格情報オプション](configDataCredentials.md)」を参照してください。
+
+>**注:** リソースをプルするだけであっても、SMB プル サーバーのメタ構成の**設定**ブロックに **ConfigurationID** を指定する必要があります。
+
+```powershell
+$secpasswd = ConvertTo-SecureString “Pass1Word” -AsPlainText -Force
+$mycreds = New-Object System.Management.Automation.PSCredential (“TestUser”, $secpasswd)
+
+[DSCLocalConfigurationManager()]
+configuration SmbCredTest
+{
+    Node $AllNodes.NodeName
+    {
+        Settings
+        {
+            RefreshMode = 'Pull'
+            RefreshFrequencyMins = 30 
+            RebootNodeIfNeeded = $true
+            ConfigurationID    = '16db7357-9083-4806-a80c-ebbaf4acd6c1'
+        }
+         
+         ConfigurationRepositoryShare SmbConfigShare      
+        {
+            SourcePath = '\\WIN-E0TRU6U11B1\DscSmbShare'
+            Credential = $mycreds
+        }
+
+        ResourceRepositoryShare SmbResourceShare
+        {
+            SourcePath = '\\WIN-E0TRU6U11B1\DscSmbShare'
+            Credential = $mycreds
+            
+        }      
+    }
+}
+
+$ConfigurationData = @{
+
+    AllNodes = @(
+
+        @{
+
+            #the "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
+
+            NodeName="localhost"
+
+            PSDscAllowPlainTextPassword = $true
+
+        })
+
+        
+
+}
+```
 
 ## <a name="acknowledgements"></a>謝辞
 

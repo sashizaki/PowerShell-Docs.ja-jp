@@ -1,14 +1,15 @@
 ---
-title: WinRMSecurity
-ms.date: 2016-05-11
-keywords: "PowerShell, コマンドレット"
 description: 
+manager: carmonm
 ms.topic: article
-author: eslesar
-manager: dongill
+author: jpjofre
 ms.prod: powershell
-ms.openlocfilehash: d1a75f4167a2f0af60801f33b79fb07cf7fe9398
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+keywords: "PowerShell, コマンドレット"
+ms.date: 2016-12-12
+title: WinRMSecurity
+ms.technology: powershell
+ms.openlocfilehash: 31b5ec784d394568c462a1e133b501f0a8884f2e
+ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
 translationtype: HT
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell リモート処理のセキュリティに関する考慮事項
@@ -80,30 +81,11 @@ SSL 証明書を NTLM 接続用のサーバーに展開できない場合は、�
 ## <a name="making-the-second-hop"></a>次ホップの実行
 
 PowerShell リモート処理では、既定で、認証に Kerberos (使用可能な場合) または NTLM が使用されます。 このどちらのプロトコルも、資格情報を送信することなく、リモート コンピューターに対して認証を行います。
-これは認証方法としては最も安全ですが、リモート コンピューターにユーザーの資格情報がないため、このリモート コンピューターは、ユーザーに代わって他のコンピューターおよびサービスにアクセスすることはできません。 これは "ダブルホップ" 問題と呼ばれます。
+これは認証方法としては最も安全ですが、リモート コンピューターにユーザーの資格情報がないため、このリモート コンピューターは、ユーザーに代わって他のコンピューターおよびサービスにアクセスすることはできません。 これは "次ホップの問題" と呼ばれます。
 
-この問題を回避する方法はいくつかあります。
+この問題を回避する方法はいくつかあります。 これらの方法およびその長所と短所については、「[PowerShell リモート処理での次ホップの実行](PS-remoting-second-hop.md)」をご覧ください。
 
-### <a name="trust-between-remote-computers"></a>リモート コンピューター間の信頼
 
-*Server2* のリソースについて *Server1* にリモート接続されたユーザーを信頼する場合、そのリソースへのアクセスを *Server1* に明示的に許可できます。
-
-### <a name="use-explicit-credentials-when-accessing-remote-resources"></a>リモート リソースにアクセスする際に明示的な資格情報を使用する
-
-資格情報をリモート リソースに明示的に渡すには、コマンドレットの **Credential** パラメーターを使用します。 たとえば、次のように入力します。
-
-```powershell
-$myCredential = Get-Credential
-New-PSDrive -Name Tools \\Server2\Shared\Tools -Credential $myCredential 
-```
-
-### <a name="credssp"></a>CredSSP
-
-認証に[資格情報のセキュリティ サポート プロバイダー (CredSSP)](https://msdn.microsoft.com/en-us/library/windows/desktop/bb931352.aspx) を使用するには、[New-PSSession](https://technet.microsoft.com/en-us/library/hh849717.aspx) コマンドレットの呼び出しの `Authentication` パラメーター値として "CredSSP" を指定します。 CredSSP は資格情報をプレーン テキストでサーバーに渡すため、これを使用すると資格情報の盗難攻撃にさらされます。 リモート コンピューターが侵害されると、攻撃者はユーザーの資格情報にアクセスできます。 CredSSP は、既定では、クライアント コンピューターとサーバー コンピューターの両方で無効になっています。 CredSSP は、最も信頼性の高い環境でのみ有効にしてください。 たとえば、ドメイン コントローラーは信頼性が高いため、ドメイン コントローラーに接続しているドメイン管理者が有効にすることをお勧めします。
-
-PowerShell リモート処理で CredSSP を使用する場合のセキュリティに関する注意事項の詳細については、「[Accidental Sabotage: Beware of CredSSP (予想外の妨害行為: CredSSP に関する注意事項)](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp)」を参照してください。
-
-資格情報の盗難攻撃の詳細については、「[Mitigating Pass-the-Hash (PtH) Attacks and Other Credential Theft (Pass-the-Hash (PtH) 攻撃とその他の資格情報の盗難の抑制)](https://www.microsoft.com/en-us/download/details.aspx?id=36036)」を参照してください。
 
 
 

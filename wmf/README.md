@@ -1,6 +1,6 @@
 ---
 title: Windows Management Framework (WMF)
-ms.date: 2016-05-16
+ms.date: 2016-12-07
 keywords: "PowerShell、WMF"
 description: 
 ms.topic: article
@@ -8,8 +8,8 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: eacd33d2a0a92977a3990132e23eef9871a7f0dc
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: b652613561655c4cbd63342b0fcc495195f83a80
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
@@ -30,30 +30,28 @@ WMF をインストールすると、次の機能が追加または更新され�
 - Server Manager CIM Provider
 
 ## <a name="wmf-release-notes"></a>WMF リリース ノート
-PowerShell と特定の WMF のその他のコンポーネントのさまざまな拡張に関する詳細については、下のリンクにアクセスし、リリース ノートを参照してください。
 
+PowerShell と特定の WMF のその他のコンポーネントのさまざまな拡張に関する詳細については、下のリンクにアクセスし、リリース ノートを参照してください。
 
 - [WMF 5.1 (プレビュー)](5.1/release-notes.md)
 - [WMF 5.0](5.0/releasenotes.md)
 
-
 ## <a name="wmf-availability-across-windows-operating-systems"></a>Windows オペレーティング システム全体の WMF 可用性
 
->TODO: 列ヘッダーの特定の WMF DLC にリンクを追加する
-
-| オペレーティング システムのバージョン | [WMF 5.1 プレビュー*]() | [WMF 5.0]() | [WMF 4.0]() |  [WMF 3.0]() | [WMF (2.0)]() |
+| オペレーティング システムのバージョン | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
-| Windows Server 2016 | 箱で出荷* | 箱で出荷* |  |  |  |
-| Windows 10 | 箱で出荷* | 箱で出荷*  | | | |  
-| Windows Server 2012 R2| ?? | はい | 箱で出荷 |  |  |
-| Windows 8.1 | ?? | はい |  箱で出荷 |  |  |
-| Windows Server 2012 | ?? | はい | はい |  箱で出荷 | |
+| Windows Server 2016 | 箱で出荷 |  |  |  |  |
+| Windows 10 | 箱で出荷 | 箱で出荷  | | | |  
+| Windows Server 2012 R2| はい | はい | 箱で出荷 |  |  |
+| Windows 8.1 | はい | はい |  箱で出荷 |  |  |
+| Windows Server 2012 | はい | はい | はい |  箱で出荷 | |
 | Windows 8 |  |  |  | 箱で出荷 | |
-| Windows Server 2008 R2 SP1 | ?? | はい | はい |  はい| 箱で出荷 |
-| Windows 7 SP1  | ?? | はい | はい | はい | 箱で出荷 |
+| Windows Server 2008 R2 SP1 | はい | はい | はい |  はい| 箱で出荷 |
+| Windows 7 SP1  | はい | はい | はい | はい | 箱で出荷 |
 | Windows Server 2008 SP2 | | | | はい | はい |
 | Windows Vista | | | | | はい |
 | Windows Server 2003| | | |  | はい |
 | Windows XP | | | |  | はい |
 
->TODO: 上の表の * を説明
+**"箱で出荷"**: `specified WMF` の機能は、示されているバージョンの Windows および Windows Server に付属しています。
+したがって、示されているオペレーティング システムのバージョンには、`specified WMF` をインストールする必要はありません。
