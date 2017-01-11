@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: e978ee828fe3c91be52077442c5781b7a20e50be
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 13ff9acefa048e3b01c64150d67a2f14ec501284
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
 # <a name="configuring-the-local-configuration-manager"></a>ローカル構成マネージャーの構成
@@ -66,7 +66,7 @@ LCM 構成には、限定されたリソースのセットに対するブロッ�
 | ConfigurationMode| string | LCM が実際に構成をターゲット ノードに適用する方法を指定します。 指定できる値は __"ApplyOnly"__、__"ApplyandMonitior"(既定)__、__"ApplyandAutoCorrect"__ です。 <ul><li>__"ApplyOnly"__: DSC によって構成が適用され、その後何も行われません。ただし、ターゲット ノードに新しい構成がプッシュされたか、新しい構成がサーバーからプルされた場合を除きます。 新しい構成を最初に適用した後、DSC では以前に構成した状態からのずれを確認しません。 DSC は成功するまで構成の適用を試みて、成功すると __ApplyOnly__ が有効になります。 </li><li> __"ApplyAndMonitor"__: これは既定値です。 LCM は、新しい構成を適用します。 新しい構成を最初に適用した後、ターゲット ノードが望ましい状態からずれた場合、DSC では、ログで不一致を報告します。 DSC は成功するまで構成の適用を試みて、成功すると __ApplyAndMonitor__ が有効になります。</li><li>__ApplyAndAutoCorrect__: DSC によって新しい構成が適用されます。 新しい構成を最初に適用した後、ターゲット ノードが望ましい状態からずれた場合、DSC では、ログで不一致を報告し、現在の構成を再度適用します。</li></ul>| 
 | ActionAfterReboot| string| 構成の適用中の再起動後の動作を指定します。 指定できる値は __"ContinueConfiguration(default)"__ と __"StopConfiguration"__ です。 <ul><li> __ContinueConfiguration__: コンピューターの再起動後、現在の構成を引き続き適用します。</li><li>__StopConfiguration__: コンピューターの再起動後、現在の構成の適用を停止します。</li></ul>| 
 | RefreshMode| string| LCM が構成を取得する方法を指定します。 指定できる値は、__"Disabled"__、__"Push(既定)"__、__"Pull"__ です。 <ul><li>__"Disabled"__: このノードの DSC 構成が無効になります。</li><li> __"Push"__: [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを呼び出すことによって構成を開始します。 構成は、ノードにすぐに適用されます。 これは、既定値です。</li><li>__Pull:__ プル サーバーから構成が定期的にチェックされるようにノードを構成します。 このプロパティが __Pull__ に設定されている場合は、__ConfigurationRepositoryWeb__ または __ConfigurationRepositoryShare__ ブロックでプル サーバーを指定する必要があります。 プル サーバーの詳細については、「[DSC Web プル サーバーのセットアップ](pullServer.md)」をご覧ください。</li></ul>| 
-| CertificateID| string| 構成へのアクセスの資格情報をセキュリティ保護するために使用される証明書を指定する GUID。 詳細については、「[Want to secure credentials in Windows PowerShell Desired State Configuration? (Windows PowerShell Desired State Configuration で資格情報をセキュリティ保護する)](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)」をご覧ください。| 
+| CertificateID| string| 構成で渡される資格情報をセキュリティで保護するために使用される証明書の拇印。 詳細については、「[Want to secure credentials in Windows PowerShell Desired State Configuration? (Windows PowerShell Desired State Configuration で資格情報をセキュリティ保護する)](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)」をご覧ください。| 
 | ConfigurationID| string| プル モードでプル サーバーから取得する構成ファイルを識別する GUID。 構成 MOF の名前が ConfigurationID.mof の場合、ノードはプル サーバーで構成をプルします。<br> __注:__ このプロパティを設定すると、__RegistrationKey__ を使用したプル サーバーへのノードの登録は機能しません。 詳細については、「[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」をご覧ください。| 
 | RefreshFrequencyMins| Uint32| LCM がプル サーバーをチェックして、更新された構成を取得する時間間隔 (分)。 この値は、LCM がプル モードで構成されていない場合は無視されます。 既定値は 30 です。<br> __注:__ このプロパティの値が __ConfigurationModeFrequencyMins__ プロパティの値の倍数であるか、または __ConfigurationModeFrequencyMins__ プロパティの値がこのプロパティの値の倍数であるか、そのいずれかである必要があります。| 
 | AllowModuleOverwrite| ブール| 構成サーバーからダウンロードされた新しい構成がターゲット ノードの古い構成を上書きできる場合は、__$TRUE__。 それ以外の場合は、$FALSE。| 
@@ -94,7 +94,7 @@ Web ベースの構成サーバーを定義するには、**ConfigurationReposit
 |プロパティ|種類|説明|
 |---|---|---| 
 |AllowUnsecureConnection|ブール|認証なしのノードからサーバーへの接続を許可するには、**$TRUE** に設定します。 認証を要求するには、**$FALSE** に設定します。|
-|CertificateID|string|サーバーへの認証に使用する証明書を表す GUID。|
+|CertificateID|string|サーバーへの認証に使用される証明書の拇印。|
 |ConfigurationNames|String[]|ターゲット ノードによってプルされる構成の名前の配列。 ノードが **RegistrationKey** を使用してプル サーバーに登録されている場合にのみ使用されます。 詳細については、「[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」をご覧ください。|
 |RegistrationKey|string|プル サーバーにノードを登録する GUID。 詳細については、「[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」を参照してください。|
 |ServerURL|string|構成サーバーの URL。|
@@ -113,7 +113,7 @@ Web ベースのリソース サーバーを定義するには、**ResourceRepos
 |プロパティ|種類|説明|
 |---|---|---|
 |AllowUnsecureConnection|ブール|認証なしのノードからサーバーへの接続を許可するには、**$TRUE** に設定します。 認証を要求するには、**$FALSE** に設定します。|
-|CertificateID|string|サーバーへの認証に使用する証明書を表す GUID。|
+|CertificateID|string|サーバーへの認証に使用される証明書の拇印。|
 |RegistrationKey|string|プル サーバーにノードを指定する GUID。 詳細については、「How to register a node with a DSC pull server (DSC プル サーバーにノードを登録する方法)」を参照してください。|
 |ServerURL|string|構成サーバーの URL。|
  
@@ -121,7 +121,7 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 
 |プロパティ|種類|説明|
 |---|---|---|
-|Credential|MSFT_Credential|SMB 共有への認証に使用される資格情報。|
+|Credential|MSFT_Credential|SMB 共有への認証に使用される資格情報。 資格情報を渡す例については、「[DSC SMB プル サーバーのセットアップ](pullServerSMB.md)」をご覧ください。|
 |SourcePath|string|SMB 共有のパス。|
 
 ## <a name="report-server-blocks"></a>レポート サーバーのブロック
@@ -131,7 +131,7 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 |プロパティ|種類|説明|
 |---|---|---| 
 |AllowUnsecureConnection|ブール|認証なしのノードからサーバーへの接続を許可するには、**$TRUE** に設定します。 認証を要求するには、**$FALSE** に設定します。|
-|CertificateID|string|サーバーへの認証に使用する証明書を表す GUID。|
+|CertificateID|string|サーバーへの認証に使用される証明書の拇印。|
 |RegistrationKey|string|プル サーバーにノードを指定する GUID。 詳細については、「How to register a node with a DSC pull server (DSC プル サーバーにノードを登録する方法)」を参照してください。|
 |ServerURL|string|構成サーバーの URL。|
 

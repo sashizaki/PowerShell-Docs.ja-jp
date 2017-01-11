@@ -1,142 +1,275 @@
 ---
-description: 
-manager: dongill
+manager: carmonm
 ms.topic: article
-author: jpjofre
+author: rpsqrd
+ms.author: ryanpu
 ms.prod: powershell
 keywords: "PowerShell, コマンドレット, JEA"
-ms.date: 2016-06-22
-title: "ロール機能"
+ms.date: 2016-12-05
+title: "JEA ロール機能"
 ms.technology: powershell
-ms.openlocfilehash: d5f6311d74e47f2fa1a93909c244cddf114b0229
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: e67b38344e2d1d0d347c7850f2097e31c0945e15
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
-# <a name="role-capabilities"></a>ロール機能
+# <a name="jea-role-capabilities"></a>JEA ロール機能
 
-## <a name="overview"></a>概要
-前のセクションで、"RoleDefinitions" フィールドは、どのグループがどのロール機能にアクセスできるかを定義することを説明しました。
-"ロール機能とは何か" と思うかもしれません。
-このセクションでは、その疑問に答えます。  
+> 適用先: Windows PowerShell 5.0
 
-## <a name="introducing-powershell-role-capabilities"></a>PowerShell ロール機能の概要
-PowerShell ロール機能は、ユーザーが JEA エンドポイントで "何を" 実行できるかを定義します。
-それらは、表示されるコマンドやアプリケーションなどを示す詳細なホワイトリストです。
-ロール機能は、拡張子が ".psrc" のファイルによって定義されます。
+JEA エンドポイントを作成するとき、JEA セッションでユーザーに許可する*操作*を説明する "ロール機能" を 1 つ以上定義する必要があります。
+ロール機能は、.psrc 拡張子を持つ PowerShell データ ファイルです。このファイルには、接続ユーザーが利用できるすべてのコマンドレット、関数、プロバイダー、外部プログラムが列挙されています。
 
-## <a name="role-capability-contents"></a>ロール機能の内容
-前に使用したデモ用のロール機能ファイルを調べて変更することから始めます。
-環境全体にセッション構成を展開しているが、ユーザーに公開される機能の変更を求めるフィードバックを受けていると想像してください。
-マシンを再起動する機能を要求しているオペレーターがいます。彼らは、ネットワーク設定に関する情報も取得できることを望んでいます。
-セキュリティ チームから、制限なしでユーザーに "Restart-Service" の実行を許可することは容認できないという指示を受けています。
-オペレーターが再起動できるサービスを制限する必要があります。
+このトピックでは、JEA ユーザーの PowerShell ロール機能ファイルを作成する方法について説明します。
 
-これらの変更を行うには、管理者として PowerShell ISE を実行し、次のファイルを開くことから始めます。
+## <a name="determine-which-commands-to-allow"></a>許可するコマンドを決定する
 
-```
-C:\Program Files\WindowsPowerShell\Modules\Demo_Module\RoleCapabilities\Maintenance.psrc
-```
+ロール機能ファイルを作成するときの最初の手順は、ロールを割り当てるユーザーに許可する操作を検討することです。
+要件を集めるこのプロセスには時間がかかることがありますが、とても重要なプロセスです。
+ユーザーに使用を許可するコマンドや関数があまりにも少ないと、仕事ができなくなります。
+逆にあまりにも多すぎると、暗黙的な管理者特権により、本来意図した以上の操作が可能になることがあり、セキュリティを弱めることになります。
 
-次に、ファイルの次の行を検索して更新します。
+このプロセスの進め方は、属する組織や目標に依存しますが、次のヒントが役に立つことがあります。
 
-```PowerShell
-# OLD: VisibleCmdlets = 'Restart-Service'
-VisibleCmdlets = 'Restart-Computer',
-                 @{
-                     Name = 'Restart-Service'
-                     Parameters = @{ Name = 'Name'; ValidateSet = 'Spooler' }
-                 },
-                 'NetTCPIP\Get-*'
+1. 仕事を行うためにユーザーが使用しているコマンドを**確認**します。 たとえば、IT スタッフに調査を行ったり、自動化スクリプトを調べたり、PowerShell セッションのトランスクリプトやログを分析したりします。
+2. 可能な限り、コマンド ライン ツールで行っていたことを PowerShell の同じ操作に**更新**し、最良の監査と JEA カスタマイズを実現します。 外部プログラムは、JEA のネイティブ PowerShell コマンドレットまたは関数ほど細かに制約することはできません。
+3. 必要に応じて、コマンドレットの範囲を**制限**し、特定のパラメーターまたはパラメーター値のみを許可します。 これは特に、ユーザーにシステムの一部のみを管理させる場合に重要です。
+4. カスタム関数を**作成**し、複雑なコマンドや JEA では制約が難しいコマンドの代わりに使用します。 複雑なコマンドをラップするか、追加の検証ロジックを適用する単純な関数を利用すれば、管理者やエンドユーザーにとって制御機能がさらに使いやすくなります。
+5. ユーザーや自動化サービスに許可するコマンドの範囲を**テスト**し、必要に応じて調整します。
 
-# OLD: VisibleExternalCommands = 'Item1', 'Item2'
-VisibleExternalCommands = 'C:\Windows\system32\ipconfig.exe'
-```
+JEA セッションのコマンドは、多くの場合、管理者特権で実行されることに注意してください。
+JEA エンドポイントで接続ユーザーのアクセス許可の昇格が許可されないように、コマンドを慎重に選択することが重要です。
+以下は、制約のない状態が許された場合、悪意で使用される可能性があるコマンドの例です。
+このリストですべてを網羅しているわけではありません。最初に注意するべきものとして提示しているにすぎません。
 
-ここには、興味深い例がいくつか含まれています。
+### <a name="examples-of-potentially-dangerous-commands"></a>危険性を含むコマンドの例
 
-1.  オペレーターは -Name パラメーターを指定した場合のみ Restart-Service を使用でき、そのパラメーターの引数として "Spooler" だけを指定できるように、Restart-Service に制限を設定します。
-必要に応じて、"ValidateSet" ではなく "ValidatePattern" を使用する正規表現を使用して、引数を制限することもできます。
+リスク | 例 | 関連するコマンド
+-----|---------|-----------------
+JEA を迂回する管理者特権を接続ユーザーに与える | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`、`Add-LocalGroupMember`、`net.exe`、`dsadd.exe`
+マルウェア、エクスプロイト、防御を迂回するカスタム スクリプトなど、任意のコードを実行する | `Start-Process -FilePath '\\san\share\malware.exe'` | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob`
 
-2.  NetTCPIP モジュールの "Get"動詞を使用するすべてのコマンドを公開しています。
-"Get" コマンドは、通常はシステム状態を変更しないため、これらは比較的安全な操作です。
-とはいえ、JEA を介して公開するすべてのコマンドを注意深く調べることを強く推奨します。
+## <a name="create-a-role-capability-file"></a>ロール機能ファイルを作成する
 
-3.  VisibleExternalCommands を使用する実行可能ファイル (ipconfig) を公開しています。
-このフィールドを使用して、すべての PowerShell スクリプトを公開することもできます。
-重要なのは、似たような名前の (不正の可能性がある) プログラムがユーザーのパスに配置されて代わりに実行されることがないように、外部コマンドの完全パスを常に指定することです。
+[New-PSRoleCapabilityFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSRoleCapabilityFile) コマンドレットで新しい PowerShell ロール機能ファイルを作成できます。
 
-ファイルを保存した後、変更が機能することを確認するために、デモ エンドポイントにもう一度接続します。
-
-```PowerShell
-Enter-PSSession -ComputerName . -ConfigurationName JEADemo2 -Credential $NonAdminCred
-Get-Command
-```
-ロール機能ファイルのみを更新したため、セッション構成を再登録する必要はありません。
-PowerShell は、ユーザーが接続するときに、更新されたロール機能を自動的に検索します。
-ロール機能は、セッションの開始時に読み込まれるため、既存のセッションはロール機能ファイルの更新に影響されません。
-
-次に、Restart-Computer を -WhatIf パラメーターを指定して実行することで、コンピューターを再起動できることを確認します (コンピューターを実際に再起動するのでない限り、このパラメーターを指定します)。
-
-```PowerShell
-Restart-Computer -WhatIf
+```powershell
+New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc
 ```
 
-"Ipconfig" を実行できることを確認します。
+作成したロール機能ファイルはテキスト エディターで開き、ロールに目的のコマンドを許可するように変更できます。
+PowerShell ヘルプ ドキュメントには、ファイルの構成例が含まれています。
 
-```PowerShell
-ipconfig
+### <a name="allowing-powershell-cmdlets-and-functions"></a>PowerShell のコマンドレットと関数を許可する
+
+PowerShell コマンドレットまたは関数の実行権限をユーザーに与えるには、VisbibleCmdlets または VisibleFunctions フィールドにコマンドレットまたは関数の名前を追加します。
+コマンドがコマンドレットであるか、関数であるかわからない場合、`Get-Command <name>` を実行し、出力の "CommandType" プロパティを確認してください。
+
+```powershell
+VisibleCmdlets = 'Restart-Computer', 'Get-NetIPAddress'
 ```
 
-最後に、Restart-Service は Spooler サービスに対してのみ機能することを確認します。
+特定のコマンドレットまたは関数の範囲が必要以上に広いことがあります。
+たとえば、DNS 管理者の場合、DNS サービスを再起動する許可だけが必要になります。
+テナントにセルフサービス管理ツールへのアクセスを許可するマルチテナント環境の場合、テナントが管理できるリソースをそのテナントのリソースに限定するべきです。
+そのような場合、コマンドレットまたは関数から公開するパラメーターを制限できます。
 
-```PowerShell
-Restart-Service Spooler # This should work
-Restart-Service WSearch # This should fail
+```powershell
+
+VisibleCmdlets = @{ Name = 'Restart-Computer'; Parameters = @{ Name = 'Name' }}
+
 ```
 
-操作を終了したら、セッションを終了します。
+さらに進んだシナリオでは、場合によっては、そのようなパラメーターに入力できる値も制限する必要があります。
+ロール機能では、入力可能値のセット、または所与の入力が許可されるかどうかを判断するために評価される正規表現パターンを定義できます。
 
-```PowerShell
-Exit-PSSession
+```powershell
+VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; ValidateSet = 'Dns', 'Spooler' }},
+                 @{ Name = 'Start-Website'; Parameters = @{ Name = 'Name'; ValidatePattern = 'HR_*' }}
 ```
 
-## <a name="role-capability-creation"></a>ロール機能の作成
-次のセクションで、AD ヘルプ デスク ユーザー用の JEA エンドポイントを作成します。
-準備として、そのセクションで値を入力するための空白のロール機能ファイルを作成します。
-ロール機能は、セッションの開始時に解決されるように、有効な PowerShell モジュールの "RoleCapabilities" フォルダー内に作成する必要があります。
+> [!NOTE]
+> 利用できるパラメーターを制限した場合でも、[一般的な PowerShell パラメーター](https://technet.microsoft.com/en-us/library/hh847884.aspx)は常に許可されます。
+> パラメーター フィールドで明示的にリストアップしないでください。
 
-PowerShell モジュールは、本質的には PowerShell 機能のパッケージです。
-PowerShell 関数、コマンドレット、DSC リソース、ロール機能などを含めることができます。
-PowerShell コンソールで `Get-Help about_Modules` を実行することで、モジュールに関する情報を見つけることができます。
+下の表は、表示されるコマンドレットまたは関数をカスタマイズするさまざまな方法をまとめたものです。
+VisibleCmdlets フィールドで下のあらゆる要素を組み合わせることができます。
 
-空白のロール機能ファイルがある新しい PowerShell モジュールを作成するには、次のコマンドを実行します。  
+例                                                                                      | 使用事例
+---------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------
+`'My-Func'` または `@{ Name = 'My-Func' }`                                                       | パラメーターに制限を適用せずに `My-Func` を実行することをユーザーに許可します。
+`'MyModule\My-Func'`                                                                         | パラメーターに制限を適用せずにモジュール `MyModule` から `My-Func` を実行することをユーザーに許可します。
+`'My-*'`                                                                                     | 動詞 `My` でコマンドレットまたは関数を実行することをユーザーに許可します。
+`'*-Func'`                                                                                   | 名詞 `Func` でコマンドレットまたは関数を実行することをユーザーに許可します。
+`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`               | `Param1` パラメーターと `Param2` パラメーターの両方または一方を指定して `My-Func` を実行することをユーザーに許可します。 あらゆる値をパラメーターに指定できます。
+`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | `Param1` パラメーターを指定して `My-Func` を実行することをユーザーに許可します。 "Value1" と "Value2" のみをパラメーターに指定できます。
+`@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | `Param1` パラメーターを指定して `My-Func` を実行することをユーザーに許可します。 "contoso" で始まる値をパラメーターに指定できます。
 
-```PowerShell
-# Create a new folder for the module.
-New-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module' -ItemType Directory
 
-# Add a module manifest to contain metadata for this module.
-New-ModuleManifest -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psd1' -RootModule Contoso_AD_Module.psm1
+> [!WARNING]
+> セキュリティのベスト プラクティスとしては、表示されるコマンドレットまたは関数を定義するときは、ワイルドカードの使用は推奨されません。
+> 代わりに、命名規則が同じ他のコマンドが意図せずに許可されるような状況を回避するために、問題のないコマンドを 1 つずつ明示的にリストアップしてください。
 
-# Create a blank script module. You'll use this for custom functions in the next section.
-New-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\Contoso_AD_Module.psm1' -ItemType File
+ValidatePattern と ValidateSet の両方を同じコマンドレットまたは関数に適用することはできません。
 
-# Create a RoleCapabilities folder in the Contoso_AD_Module folder. PowerShell expects Role Capabilities to be located in a "RoleCapabilities" folder within a module.
-New-Item -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\RoleCapabilities' -ItemType Directory
+適用すると、ValidatePattern が ValidateSet より優先されます。
 
-# Create a blank Role Capability in your RoleCapabilities folder. Running this command without any additional parameters just creates a blank template.
-New-PSRoleCapabilityFile -Path 'C:\Program Files\WindowsPowerShell\Modules\Contoso_AD_Module\RoleCapabilities\ADHelpDesk.psrc'
+ValidatePattern の詳細については、[この「*Hey, Scripting Guy!*](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/)」投稿と [PowerShell 正規表現](https://technet.microsoft.com/en-us/library/hh847880.aspx)参照コンテンツをご覧ください。
+
+### <a name="allowing-external-commands-and-powershell-scripts"></a>外部コマンドと PowerShell スクリプトを許可する
+
+JEA セッションで実行可能ファイルと PowerShell スクリプト (.ps1) を実行することをユーザーに許可するには、VisibleExternalCommands フィールドに各プログラムの完全パスを追加する必要があります。
+
+```powershell
+VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Contoso\Scripts\UpdateITSoftware.ps1'
 ```
 
-以上で、空白のロール機能ファイルが作成されました。
-これは、次のセクションで使用します。
+可能であれば、権限を与える外部実行可能ファイルの代わりに、それに相当する PowerShell コマンドレット/関数を使用することが推奨されます。PowerShell コマンドレット/関数で許可するパラメーターを制御できるためです。
 
-## <a name="key-concepts"></a>主要概念
-**ロール機能 (.psrc)**: ユーザーが JEA エンドポイントで "何を" 実行できるかを定義するファイルです。
-それは、表示されるコマンドやコンソール アプリケーションなどを示す詳細なホワイトリストです。
-PowerShell でロール機能を検出するには、有効な PowerShell モジュールの "RoleCapabilities" フォルダーにそれらを配置する必要があります。
+実行可能ファイルの多くでは、さまざまなパラメーターを指定することで、現在の状態の読み取りとその変更の両方が許可されます。
 
-**PowerShell モジュール**: PowerShell 機能のパッケージです。
-PowerShell 関数、コマンドレット、DSC リソース、ロール機能などを含めることができます。
-PowerShell モジュールが自動的に読み込まれるようにするには、`$env:PSModulePath` のパスの下に配置する必要があります。
+たとえば、ファイル サーバーの管理者ロールで、ローカル コンピューターでホストされているネットワーク共有を確認しなければならないとします。
+確認方法の 1 つは `net share` を使用することです。
+ただし、net.exe の許可はとても危険です。このコマンドを利用すると、`net group Administrators unprivilegedjeauser /add` の管理者特権が簡単に得られる可能性があるからです。
+より良い方法は、[Get-SmbShare](https://technet.microsoft.com/en-us/library/jj635704.aspx) を許可することです。これで同じ結果が得られますが、範囲がはるかに限られます。
 
+JEA セッションで外部コマンドの利用をユーザーに許可するとき、システム上のどこかに置かれている、同じような名前の (悪意のある) プログラムが代わりに実行されないように、実行可能ファイルの完全パスを常に指定してください。
+
+### <a name="allowing-access-to-powershell-providers"></a>PowerShell プロバイダーへのアクセスを許可する
+
+既定で、JEA セッションでは PowerShell プロバイダーを利用できません。
+
+この理由は主に、機密情報や構成設定が接続ユーザーに公開されるリスクを減らすことにあります。
+
+必要なときに、`VisibleProviders` コマンドを利用して PowerShell プロバイダーへのアクセスを許可できます。
+プロバイダーの完全一覧が必要な場合、`Get-PSProvider` を実行してください。
+
+```powershell
+VisibleProviders = 'Registry'
+```
+
+ファイル システム、レジストリ、証明書ストア、その他の機密プロバイダーにアクセスする必要がある単純な作業に関しては、ユーザーの代わりにプロバイダーとやりとりするカスタム関数の記述も検討してください。
+JEA セッションで利用できる関数、コマンドレット、外部プログラムは、JEA と同じ制約の対象になりません。既定では、あらゆるプロバイダーにアクセスできます。
+JEA エンドポイントとの間でファイルのコピーが必要な場合、[ユーザー ドライブ](session-configurations.md#user-drive)の利用も検討してください。
+
+### <a name="creating-custom-functions"></a>カスタム関数を作成する
+
+ロール機能ファイルでカスタム関数を作成し、エンド ユーザーのために複雑なタスクを簡単にできます。
+カスタム関数は、コマンドレット パラメーター値に高度な検証ロジックが必要なときにも便利です。
+**FunctionDefinitions** で次のように単純な関数を記述できます。
+
+```powershell
+VisibleFunctions = 'Get-TopProcess'
+
+FunctionDefinitions = @{
+    Name = 'Get-TopProcess'
+
+    ScriptBlock = {
+        param($Count = 10)
+
+        Get-Process | Sort-Object -Property CPU -Descending | Microsoft.PowerShell.Utility\Select-Object -First $Count
+    }
+}
+```
+
+> [!IMPORTANT]
+> JEA ユーザーが実行できるように、**VisibleFunctions** フィールドにカスタム関数の名前を必ず追加してください。
+
+
+カスタム関数の本文 (スクリプト ブロック) はシステムの既定の言語モードで実行され、JEA の言語制約の対象になりません。
+つまり、関数はファイル システムとレジストリにアクセスし、ロール機能ファイルに表示されないコマンドを実行できます。
+パラメーターを利用するとき、任意コードの実行が許可されないように、`Invoke-Expression` のようなコマンドレットにユーザー入力が直接パイプ処理されないように注意してください。
+
+上記の例では、簡潔な `Select-Object` ではなく、完全修飾モジュール名 (FQMN) `Microsoft.PowerShell.Utility\Select-Object` が使用されています。
+ロール機能ファイルに定義されている関数は、JEA セッションの範囲に入ります。この範囲には、JEA で作成されるプロキシ関数が含まれ、既存のコマンドが制約されます。
+
+Select-Object は、すべての JEA セッションで既定の制約付きコマンドレットであり、オブジェクトで任意プロパティを選択することが禁止されます。
+関数で制約なしの Select-Object を使用するには、FQMN を指定し、完全な実装を明示的に要求する必要があります。
+JEA セッションの制約付きコマンドレットは、関数から呼び出されるとき、PowerShell の[コマンド優先順位](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence)に従い、同じように動作します。
+
+カスタム関数をたくさん記述する場合、[PowerShell スクリプト モジュール](https://msdn.microsoft.com/en-us/library/dd878340(v=vs.85).aspx)に入れると簡単です。
+その後、組み込みやサードパーティのモジュールの場合のように、VisibleFunctions フィールドを利用し、JEA セッションで関数を表示させることができます。
+
+## <a name="place-role-capabilities-in-a-module"></a>モジュールにロール機能を配置する
+
+PowerShell でロール機能ファイルを検出できるようにするには、ファイルを PowerShell モジュールの "RoleCapabilities" フォルダーに保存する必要があります。
+モジュールは `$env:PSModulePath` 環境変数に含まれるあらゆるフォルダーに保存できますが、System32 (組み込みモジュールのために予約されています) や信頼されていない接続ユーザーがファイルを変更できる可能性があるフォルダーには保存しないでください。
+以下の例では、"Program Files" パスに *ContosoJEA* という名前の基本 PowerShell スクリプト モジュールを作成しています。
+
+```powershell
+# Create a folder for the module
+$modulePath = Join-Path $env:ProgramFiles "WindowsPowerShell\Modules\ContosoJEA"
+New-Item -ItemType Directory -Path $modulePath
+
+# Create an empty script module and module manifest. At least one file in the module folder must have the same name as the folder itself.
+New-Item -ItemType File -Path (Join-Path $modulePath "ContosoJEAFunctions.psm1")
+New-ModuleManifest -Path (Join-Path $modulePath "ContosoJEA.psd1") -RootModule "ContosoJEAFunctions.psm1"
+
+# Create the RoleCapabilities folder and copy in the PSRC file
+$rcFolder = Join-Path $modulePath "RoleCapabilities"
+New-Item -ItemType Directory $rcFolder
+Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
+```
+
+PowerShell モジュール、モジュール マニフェスト、PSModulePath 環境変数の詳細については、「[Understanding a PowerShell Module](https://msdn.microsoft.com/en-us/library/dd878324.aspx)」 (PowerShell モジュールの概要) を参照してください。
+
+## <a name="updating-role-capabilities"></a>ロール機能を更新する
+
+
+ロール機能ファイルは変更内容を保存するだけでいつでも更新できます。
+ロール機能の更新後に新しく JEA セッションを起動すると、変更後の機能が反映されます。
+
+そのため、ロール機能フォルダーのアクセスを制御することはとても重要となります。
+ロール機能ファイルを変更できるユーザーは、非常に信頼できる管理者に限定してください。
+信頼されていないユーザーにロール機能ファイルの変更を許可すると、特権を昇格させるコマンドレットの利用を簡単に許可してしまいます。
+
+
+ロール機能へのアクセスを管理者がロックダウンする場合、ローカル システムにロール機能ファイルとそれが含まれるモジュールの読み取りアクセスが与えられるようにします。
+
+## <a name="how-role-capabilities-are-merged"></a>ロール機能を結合する方法
+
+[セッション構成ファイル](session-configurations.md)のロール マッピングにもよりますが、ユーザーが JEA セッションに入るとき、複数のロール機能へのアクセスが与えられます。
+そのとき、JEA では、ロールで許可される、*最も制限の少ない*コマンド セットがユーザーに与えられます。
+
+**VisibleCmdlets と VisibleFunctions**
+
+最も複雑な結合ロジックがコマンドレットと関数に適用され、JEA でそのパラメーターとパラメーター値が制限されます。
+
+ルールは次のようになります。
+
+
+1. あるコマンドレットが 1 つのロールでのみ表示される場合、該当するあらゆるパラメーター制約の下でユーザーに表示されます。
+2. あるコマンドレットが複数のロールで表示されるとき、そのコマンドレットで各ロールに同じ制約が与えられる場合、その制約の下でユーザーに表示されます。
+3. あるコマンドレットが複数のロールで表示されるとき、ロールごとにパラメーター セットが異なる場合、そのコマンドレットとすべてのロールで定義されているすべてのパラメーターがユーザーに表示されます。 1 つのロールにパラメーターの制約がない場合、すべてのパラメーターが許可されます。
+4. あるロールであるコマンドレット パラメーターの検証セットまたは検証パターンが定義されているとき、別のロールでそのパラメーターが許可されるが、パラメーター値が制約されない場合、その検証セットまたはパターンは無視されます。
+5. 複数のロールの同じコマンドレット パラメーターに 1 つの検証セットが定義されている場合、すべての検証セットのすべての値が許可されます。
+6. 複数のロールの同じコマンドレット パラメーターに 1 つの検証パターンが定義されている場合、いずれかのパターンに一致するすべての値が許可されます。
+7. 複数のロールに 1 つの検証セットが定義されているとき、別のロールで、同じコマンドレット パラメーターに 1 つの検証パターンが定義されている場合、その検証セットは無視され、残りの検証パターンにルール (6) が適用されます。
+
+下の表は、このロジックの実際の使用例です。1 つの JEA セッションで、A と B という 2 つのロールが両方とも 1 ユーザーに割り当てられています。
+
+ルール | ロール A VisibleCmdlets                                                                          | ロール B VisibleCmdlets                                                                             | 効果的なユーザー アクセス許可
+-----|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------
+1 で保護されたプロセスとして起動されました    | `Get-Service`                                                                                  | なし                                                                                               | `Get-Service`
+1 で保護されたプロセスとして起動されました    | なし                                                                                            | `Get-Service`                                                                                     | `Get-Service`
+2    | `Get-Service`                                                                                  | `Get-Service`                                                                                     | `Get-Service`
+3    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                             | `Get-Service`                                                                                     | `Get-Service`
+3    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                             | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'Name' }}`                                       | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }, @{ Name = 'Name' }}`
+4    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                                | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`
+5    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DHCP Client' }}`   | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DHCP Client' }}`
+6    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'DNS.*' }}`  | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = '(DNS.*)\|(contoso.*)' }}`
+7    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = '(DNS.*)\|(contoso.*)' }}`
+
+
+
+**VisibleExternalCommands、VisibleAliases、VisibleProviders、ScriptsToProcess**
+
+ロール機能ファイルの他のすべてのフィールドは、許可される外部コマンド、エイリアス、プロバイダー、スタートアップ スクリプトの累積セットに単純に追加されます。
+JEA ユーザーは、1 つのロール機能で使用できるあらゆるコマンド、エイリアス、プロバイダー、スクリプトを利用できます。
+
+あるロール機能からのプロバイダーと別のロール機能からのコマンドレット/関数/コマンドが組み合わされることで、本来の意図とは異なるシステム リソース アクセスが接続ユーザーに与えられるような事態が発生しないように注意してください。
+たとえば、あるロールで `Remove-Item` コマンドレットが許可され、別のロールで `FileSystem` プロバイダーが許可される場合、JEA ユーザーがコンピューター上のファイルを削除する可能性があります。
+効果的なユーザー アクセス許可を確認する方法については、[JEA の監査に関するトピック](audit-and-report.md)に追加情報があります。
+
+## <a name="next-steps"></a>次の手順
+
+- [セッション構成ファイルを作成する](session-configurations.md)

@@ -1,5 +1,5 @@
 ---
-title: "WMF 5.1 (プレビュー) の既知の問題"
+title: "WMF 5.1 の既知の問題"
 ms.date: 2016-07-13
 keywords: PowerShell, DSC, WMF
 description: 
@@ -8,13 +8,13 @@ author: krishna
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: e2f19ed2fa2d2070860438b128513a463d95adae
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 8f1b550e92c3c280b84664e0b1f9695172370522
+ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
 translationtype: HT
 ---
-# <a name="known-issues-in-wmf-51-preview"></a>WMF 5.1 (プレビュー) の既知の問題 #
+# <a name="known-issues-in-wmf-51"></a>WMF 5.1 の既知の問題 #
 
-> 注意: この情報は暫定版であり、変更することがあります。
+> 注意: この情報は変更されることがあります。
 
 ## <a name="starting-powershell-shortcut-as-administrator"></a>PowerShell ショートカットを管理者として起動する
 WMF がインストールされている場合に、管理者としてショートカットから PowerShell を起動しようとすると、"未定義のエラー" メッセージが表示されることがあります。

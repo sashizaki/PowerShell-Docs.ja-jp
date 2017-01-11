@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 64fc906cf0328d7be3aba7d5d6819640b4dcb4fa
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: cec3aaf4e57d1efc3e29880e4a7f078bd1840901
+ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
 translationtype: HT
 ---
 # <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)
@@ -21,7 +21,7 @@ translationtype: HT
 設定または取得できるローカル構成マネージャーのプロパティを次に示します。
  
 * **AllowModuleOverwrite**: 構成サーバーからダウンロードされた新しい構成がターゲット ノードの古い構成を上書きできるかどうかを制御します。 設定可能な値は True および False です。
-* **CertificateID**: 構成へのアクセスの資格情報をセキュリティ保護するために使用される証明書の GUID。 詳細については、「[Want to secure credentials in Windows PowerShell Desired State Configuration? (Windows PowerShell Desired State Configuration で資格情報をセキュリティ保護する)](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)」を参照してください。
+* **CertificateID**: 構成で渡される資格情報をセキュリティで保護するために使用される証明書の拇印。 詳細については、「[Want to secure credentials in Windows PowerShell Desired State Configuration? (Windows PowerShell Desired State Configuration で資格情報をセキュリティ保護する)](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)」を参照してください。
 * **ConfigurationID**: "プル" サーバーとしてセットアップされたサーバーから特定の構成ファイルを取得するために使用する GUID を示します。 この GUID によって、適切な構成ファイルにアクセスできます。
 * **ConfigurationMode**: ローカル構成マネージャーによってターゲット ノードに構成が実際に適用される方法を指定します。 次の値を指定できます。
     - **ApplyOnly**: このオプションを使用すると、DSC によって構成が適用され、その後何も行われません。ただし、ターゲット ノードに直接新しい構成を送信した (プッシュ) 場合や、"プル" サーバーを構成しており、DSC が "プル" サーバーを確認して新しい構成を検出した場合を除きます。 ターゲット ノードの構成のずれが発生した場合、アクションは実行されません。

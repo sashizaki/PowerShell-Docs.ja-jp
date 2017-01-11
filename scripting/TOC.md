@@ -15,6 +15,7 @@
 ### [Windows PowerShell SDK のインストール](setup/Installing-the-Windows-PowerShell-SDK.md)
 ### [セキュリティ](setup/security.md)
 #### [PowerShell リモート処理のセキュリティに関する考慮事項](setup/WinRMSecurity.md)
+#### [PowerShell リモート処理での次ホップの実行](setup/PS-remoting-second-hop.md)
 ### [ユーザー補助](setup/Accessibility-in-Windows-PowerShell-ISE.md)
 
 ## [はじめに](getting-started/Getting-Started-with-Windows-PowerShell.md)
