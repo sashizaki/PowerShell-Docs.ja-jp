@@ -8,8 +8,8 @@ author: jkeithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 15de6aca52624134998b2d08fcfff9e1bcc1af7b
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: 0a499bbfd2517c1f44e41f1096cda0c23b1c3df8
+ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
 translationtype: HT
 ---
 # <a name="windows-management-framework-wmf-51-release-notes"></a>Windows Management Framework (WMF) 5.1 リリース ノート #
@@ -25,7 +25,7 @@ WMF 5.1 には、Windows Server 2016 でリリースされる PowerShell、WMI�
 
 **重要な注意事項:**
 
-- **WMF 5.1 には .NET Framework 4.5 が必要です**。 .NET 4.5 がインストールされていない場合、インストールは成功しますが、主な機能は失敗します。 手順については、トピック「[WMF 5.1 のインストールと構成](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/install-configure)」を参照してください。 
+- **WMF 5.1 には .NET Framework 4.6 が必要です**。 .NET 4.6 がインストールされていない場合、インストールは成功しますが、主な機能は失敗します。 手順については、トピック「[WMF 5.1 のインストールと構成](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/install-configure)」を参照してください。 
 - WMF 5.1 RTM をインストールする前に、WMF 5.1 プレビューをアンインストールする必要があります。
 - WMF 5.1 は、WMF 5.0 または WMF 4.0 の上に直接インストールできます。
 - Windows 7 および Windows Server 2008 R2 の上に WMF 5.1 をインストールする前に、WMF 4.0 をインストールする__必要はありません__。 これは WMF 5.1 プレビュー リリースでの問題でしたが、解決されました。  

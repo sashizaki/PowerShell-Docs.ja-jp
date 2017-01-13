@@ -8,8 +8,8 @@ author: krishna
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 8f1b550e92c3c280b84664e0b1f9695172370522
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: b341f57592feb183eb0e7228cdc08460e370369f
+ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
 translationtype: HT
 ---
 # <a name="known-issues-in-wmf-51"></a>WMF 5.1 の既知の問題 #
@@ -18,7 +18,7 @@ translationtype: HT
 
 ## <a name="starting-powershell-shortcut-as-administrator"></a>PowerShell ショートカットを管理者として起動する
 WMF がインストールされている場合に、管理者としてショートカットから PowerShell を起動しようとすると、"未定義のエラー" メッセージが表示されることがあります。
-管理者以外でショートカットを開きなおすと、その後は管理者でも動作するようになります。
+管理者以外でショートカットを開き直すと、その後は管理者としても動作します。
 
 ## <a name="pester"></a>Pester
 このリリースでは、Nano Server で Pester を利用するとき、2 つの問題に注意する必要があります。
@@ -28,7 +28,7 @@ WMF がインストールされている場合に、管理者としてショー�
 
 ## <a name="operation-validation"></a>操作検証 
 
-* Microsoft.PowerShell.Operation.Validation モジュールの場合、ヘルプ URI が動作しないため、Update-Help は失敗します。
+* Microsoft.PowerShell.Operation.Validation モジュールの場合、ヘルプ URI が動作しないため、Update-Help は失敗する
 
 ## <a name="dsc-after-uninstall-wmf"></a>WMF をアンインストールした後の DSC 
 * WMF をアンインストールしても、構成フォルダーから DSC の MOF ドキュメントは削除されません。 MOF ドキュメントに、以前のシステムで使用できない新しいプロパティが含まれている場合、DSC は正しく機能しません。 この場合は、管理者特権の PowerShell コンソールから次のスクリプトを実行して、DSC の状態をクリーンアップします。

@@ -8,8 +8,8 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-12-05
 title: "JEA セッションの構成"
 ms.technology: powershell
-ms.openlocfilehash: 1d410e345ff31a5f8149810fb9c3b07e92b27e05
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
+ms.openlocfilehash: 32602293afd3a94767682d32a053281ec021cc33
+ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
 translationtype: HT
 ---
 # <a name="jea-session-configurations"></a>JEA セッションの構成
@@ -49,7 +49,9 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 - Get-Help
 - Measure-Object (measure)
 - Out-Default
-- Select-Object (select) PowerShell プロバイダーおよび外部プログラム (実行可能ファイル、スクリプトなど) は使用できません。
+- Select-Object (select)
+
+PowerShell プロバイダーおよび外部プログラム (実行可能ファイル、スクリプトなど) は使用できません。
 
 JEA セッションの構成には他にもいくつかフィールドがあります。
 それについては以下のセクションで説明します。
