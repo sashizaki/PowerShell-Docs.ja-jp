@@ -9,8 +9,8 @@ ms.date: 2016-10-14
 contributor: manikb
 title: modulewithpseditionsupport
 ms.technology: powershell
-ms.openlocfilehash: d502427a3685467bdafb875ea84b9389483746e4
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 042df39b52cfb1cce9a44689ca40b42763321853
+ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
 translationtype: HT
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>互換性のある PowerShell エディションが含まれるモジュール
@@ -40,12 +40,12 @@ SerializationVersion           1.1.0.1
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
-$moduleInfo = Test-ModuleManifest -Path \TestModuleWithEdition.psd1
-$moduleInfo.CompatiblePSEditions
+$ModuleInfo = Test-ModuleManifest -Path .\TestModuleWithEdition.psd1
+$ModuleInfo.CompatiblePSEditions
 Desktop
 Core
 
-$moduleInfo | Get-Member CompatiblePSEditions
+$ModuleInfo | Get-Member CompatiblePSEditions
 
    TypeName: System.Management.Automation.PSModuleInfo
 
@@ -74,7 +74,7 @@ Core
 ## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>モジュールの作成者が、PowerShell エディションのどちらかまたは両方を対象とする 1 つのモジュールを発行することができます。 
 
 1 つのモジュールが、デスクトップとコアの両方のエディションで動作します。そのモジュール内で、作成者は、$PSEdition 変数を使用して、RootModule またはモジュール マニフェストで必要なロジックを追加する必要があります。
-モジュールでは、CoreCLR と FullCLR の両方を対象とするコンパイル済み dll のセットを使用できます。
+モジュールでは、CoreCLR と FullCLR の両方を対象とするコンパイル済み DLL の 2 つのセットを使用できます。
 次に、適切な dll を読み込むためのロジックを含むモジュールをパッケージ化するためのいくつかのオプションを示します。
 
 ### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>オプション 1: PowerShell の複数のバージョンおよび複数のエディションを対象としてパッケージ化する

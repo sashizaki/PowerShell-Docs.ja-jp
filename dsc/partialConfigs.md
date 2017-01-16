@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 5f3d40fe431d026d8d83dfc720d919048c6bf336
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 02f1cc45f30c0892e777a9e05d87f440f628fbf5
+ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
 translationtype: HT
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration の部分構成
@@ -49,10 +49,57 @@ PartialConfigDemo
 
 各部分構成の **RefreshMode** は、"Push" に設定されています。 **PartialConfiguration** ブロックの名前 (この例では "ServiceAccountConfig" と "SharePointConfig") はターゲット ノードにプッシュされる構成の名前と正確に一致する必要があります。
 
-### <a name="publishing-and-starting-push-mode-partial-configurations"></a>プッシュ モードの部分構成の公開および開始
-![PartialConfig フォルダー構造](./images/PartialConfig1.jpg)
+>**注:** 各 **PartialConfiguration** ブロックの名前は、構成スクリプトに指定されているように、構成の実際の名前と一致する必要があります。MOF ファイルの名前ではなく、ターゲット ノードまたは `localhost` の名前でなければなりません。
 
-次に構成ごとに **Publish-DSCConfiguration** を呼び出して、構成ドキュメントを含むフォルダーを Path パラメーターとして渡します。 両方の構成の発行後に、ターゲット ノードで `Start-DSCConfiguration –UseExisting` を呼び出すことができます。
+### <a name="publishing-and-starting-push-mode-partial-configurations"></a>プッシュ モードの部分構成の公開および開始
+
+次に構成ごとに [Publish-DSCConfiguration](/reference/5.0/PSDesiredStateconfiguration/Publish-DscConfiguration.md) を呼び出して、構成ドキュメントを含むフォルダーを **Path** パラメーターとして渡します。 `Publish-DSCConfiguration` は、構成 MOF ファイルをターゲット ノードに配置します。 両方の構成の発行後に、ターゲット ノードで `Start-DSCConfiguration –UseExisting` を呼び出すことができます。
+
+たとえば、オーサリング ノードで以下の構成 MOF ドキュメントをコンパイルした場合は、次のようにします。
+
+```powershell
+PS C:\PartialConfigTest> Get-ChildItem -Recurse
+
+
+    Directory: C:\PartialConfigTest
+
+
+Mode                LastWriteTime         Length Name                                                                                                                                         
+----                -------------         ------ ----                                                                                                                                         
+d-----        8/11/2016   1:55 PM                ServiceAccountConfig                                                                                                                  
+d-----       11/17/2016   4:14 PM                SharePointConfig                                                                                                                                    
+
+
+    Directory: C:\PartialConfigTest\ServiceAccountConfig
+
+
+Mode                LastWriteTime         Length Name                                                                                                                                         
+----                -------------         ------ ----                                                                                                                                         
+-a----        8/11/2016   2:02 PM           2034 TestVM.mof                                                                                                                                
+
+
+    Directory: C:\DscTests\SharePointConfig
+
+
+Mode                LastWriteTime         Length Name                                                                                                                                         
+----                -------------         ------ ----                                                                                                                                         
+-a----       11/17/2016   4:14 PM           1930 TestVM.mof                                                                                                                                     
+```
+
+次のように構成を公開し、実行します。
+
+```powershell
+PS C:\PartialConfigTest> Publish-DscConfiguration .\ServiceAccountConfig -ComputerName 'TestVM'
+PS C:\PartialConfigTest> Publish-DscConfiguration .\SharePointConfig -ComputerName 'TestVM'
+PS C:\PartialConfigTest> Start-Configuration -UseExisting -ComputerName 'TestVM'
+
+Id     Name            PSJobTypeName   State         HasMoreData     Location             Command                  
+--     ----            -------------   -----         -----------     --------             -------                  
+17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
+```
+
+>**注:** 実行するユーザーに対する注意事項:  
+
 
 ## <a name="partial-configurations-in-pull-mode"></a>プル モードでの部分構成
 
