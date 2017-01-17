@@ -16,7 +16,7 @@ translationtype: HT
 
 Windows Management Framework (WMF) は配信メカニズムであり、さまざまな種類の Windows や Windows Server に一貫した管理インターフェイスを提供します。
 WMF をインストールすると、お客様はご利用の環境で OS をシームレスにミックスし、相互運用できます。
-WMF は一部の Windows や Windows Server の管理機能を更新し、以前のバージョン(通常、2 つ前のバージョンまで)の Windows と Windows Server でインストールできます。
+WMF は一部の Windows や Windows Server の管理機能を更新し、以前のバージョン (通常、2 つ前のバージョンまで) の Windows と Windows Server でインストールできます。
 
 WMF をインストールすると、次の機能が追加または更新されます。
 
