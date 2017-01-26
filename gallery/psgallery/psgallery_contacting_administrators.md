@@ -28,6 +28,6 @@ translationtype: HT
 ## <a name="how-to-contact-gallery-administrators"></a>ギャラリーの管理者に問い合わせる方法
 
 1. cgadmin@microsoft.com までメールを送信してください。
-2. アイテムの不正使用について報告する場合、左パネルのアイテム情報の下に [Report Abuse] (不正報告) リンクがあります。
+2. アイテムの不正使用について報告する場合、左パネルのアイテム情報の下に [Report Abuse] \(不正報告) リンクがあります。
 3. その他、ギャラリーに関する一般的な質問がございましたら、[UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell) に送信してください。
 
