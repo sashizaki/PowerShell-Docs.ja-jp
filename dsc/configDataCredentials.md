@@ -223,7 +223,7 @@ In order to suppress the warning, you can add a property named
 for node 'localhost'.
 ```
 
-この例には、次の 2 つの問題があります。
+この例には、次の&2; つの問題があります。
 1.  プレーンテキスト パスワードが推奨されないことを説明するエラー。
 2.  ドメイン資格情報を使用しないよう勧める警告。
 

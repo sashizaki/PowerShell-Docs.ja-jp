@@ -17,7 +17,7 @@ translationtype: HT
 =========================
 
 
-## <a name="12152016---unable-to-send-emails-via-powershellgallery-website"></a>2016 年 12 月 15 日 - PowerShellGallery Web サイトからメールを送信できない
+## <a name="12152016---unable-to-send-emails-via-powershellgallery-website"></a>2016 年&12; 月&15; 日 - PowerShellGallery Web サイトからメールを送信できない
 
 __影響の概要__: 2016 年 12 月 13 日と 2016 年 12 月 15 日に、[Contact Owners (所有者に連絡)]、[Manage Owners (所有者の管理)]、[サポートに連絡]、または [不正使用を報告] から送信されたメッセージが、PowerShell ギャラリーの管理者に届きませんでした。  
 __根本的な原因__: SMTP サーバーでの認証の問題でした。  
@@ -26,7 +26,7 @@ __次の手順__: この間に [Contact Owners (所有者に連絡)]、[Manage O
 
 
 
-## <a name="8102016---resolved-unable-to-send-emails-to-cgadminmicrosoftcom"></a>2016 年 8 月 10 日 - 解決: 電子メールを cgadmin@microsoft.com に送信できない
+## <a name="8102016---resolved-unable-to-send-emails-to-cgadminmicrosoftcom"></a>2016 年&8; 月&10; 日 - 解決: 電子メールを cgadmin@microsoft.com に送信できない
 
 __影響の概要__: 2016 年 8 月 5 日から 2016 年 8 月 10 日までの期間中にお客様は cgadmin@microsoft.com, に電子メールを送信することも、[お問い合わせ先] 機能を使用することもできませんでした。  
 __根本的な原因__: エンジニアは、電子メール アカウントの構成の変更に原因があることを突き止めました。  
@@ -35,7 +35,7 @@ __次の手順__: この期間中に [お問い合わせ先] リンクを使用�
 
 
 
-## <a name="7132016---download-items-failed"></a>2016 年 7 月 13 日 - アイテムのダウンロードに失敗しました
+## <a name="7132016---download-items-failed"></a>2016 年&7; 月&13; 日 - アイテムのダウンロードに失敗しました
 
 __影響の概要__: 2016 年 7 月 11 日から 2016 年 7 月 13 日までの期間中に一部のお客様で、PowerShell ギャラリーからアイテムをダウンロードする際に問題が発生しました。 この問題は、Install-Module/Install-Script および Save-Module/Save-Script から返された次のエラー メッセージに示されていたようです。
 
@@ -55,7 +55,7 @@ __対応策__: エンジニアは、PowerShell ギャラリーで Azure CDN を�
 __次の手順__: 根本原因を調査し、今後の問題発生を防止するためのソリューションを開発します。
 
 
-## <a name="5192016---download-items-failed"></a>2016 年 5 月 19 日 - アイテムのダウンロードに失敗しました
+## <a name="5192016---download-items-failed"></a>2016 年&5; 月&19; 日 - アイテムのダウンロードに失敗しました
 __影響の概要__: 2016 年 5 月 17 日から 2016 年 5 月 19 日までの期間中に一部のお客様で、PowerShell ギャラリーからアイテムをダウンロードする際に問題が発生しました。 この問題は、Install-Module/Install-Script および Save-Module/Save-Script から返された次のエラー メッセージに示されていたようです。
 
 ```PowerShell

@@ -43,7 +43,7 @@ PowerShell プロンプトが `[localhost]: PS>` に変わると、リモート 
 
 JEA セッションは NoLanguage モードで動作するので、PowerShell の一般的な使い方の一部を利用できない場合があることに注意してください。
 たとえば、変数を使ってデータを格納したり、コマンドレットから返されたオブジェクトのプロパティを調べたりすることはできません。
-次の例では、今日 PowerShell を使って NoLanguage モードで動作する同じコマンドを取得する 2 つの方法を示します。
+次の例では、今日 PowerShell を使って NoLanguage モードで動作する同じコマンドを取得する&2; つの方法を示します。
 
 ```powershell
 # Using variables in NoLanguage mode is disallowed, so the following will not work
@@ -116,7 +116,7 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 JEA は、社内ヘルプデスク アプリや Web サイトなどのオートメーション システムやユーザー アプリケーションでも使用できます。
 方法は制約のない PowerShell エンドポイントと対話するアプリの作成と同じですが、JEA ではリモート セッションで実行できるコマンドが制限されることに注意する必要があります。
 
-簡単な 1 回限りのタスクでは、[Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) コマンドを使って一連のコマンドを JEA で実行できます。
+簡単な&1; 回限りのタスクでは、[Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) コマンドを使って一連のコマンドを JEA で実行できます。
 
 ```powershell
 Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Process; Get-Service }
