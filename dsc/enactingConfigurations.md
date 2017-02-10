@@ -15,7 +15,7 @@ translationtype: HT
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
-PowerShell Desired State Configuration (DSC) 構成を適用するには、プッシュ モードとプル モードの 2 つの方法があります。
+PowerShell Desired State Configuration (DSC) 構成を適用するには、プッシュ モードとプル モードの&2; つの方法があります。
 
 ## <a name="push-mode"></a>プッシュ モード
 
