@@ -46,9 +46,9 @@ FireEye は、PowerShell リモート処理セッションによって生成さ�
 
 ## <a name="encryption-and-transport-protocols"></a>暗号化とトランスポート プロトコル
 
-PowerShell リモート処理の接続のセキュリティについては、初期認証と進行中の通信という 2 つの観点から考慮することをお勧めします。 
+PowerShell リモート処理の接続のセキュリティについては、初期認証と進行中の通信という&2; つの観点から考慮することをお勧めします。 
 
-使用されているトランスポート プロトコル (HTTP または HTTPS) に関係なく、PowerShell リモート処理では、常にすべての通信が、初期認証後に、セッションごとの AES 256 対称キーを使用して暗号化されます。
+使用されているトランスポート プロトコル (HTTP または HTTPS) に関係なく、PowerShell リモート処理では、常にすべての通信が、初期認証後に、セッションごとの AES&256; 対称キーを使用して暗号化されます。
     
 ### <a name="initial-authentication"></a>初期認証
 
@@ -75,7 +75,7 @@ SSL 証明書を NTLM 接続用のサーバーに展開できない場合は、�
     
 ### <a name="ongoing-communication"></a>進行中の通信
 
-初期認証が完了すると、[PowerShell リモート処理プロトコル](https://msdn.microsoft.com/en-us/library/dd357801.aspx)によって、進行中の通信はすべて、セッションごとの AES 256 対称キーを使用して暗号化されます。  
+初期認証が完了すると、[PowerShell リモート処理プロトコル](https://msdn.microsoft.com/en-us/library/dd357801.aspx)によって、進行中の通信はすべて、セッションごとの AES&256; 対称キーを使用して暗号化されます。  
 
 
 ## <a name="making-the-second-hop"></a>次ホップの実行

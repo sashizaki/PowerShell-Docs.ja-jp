@@ -1,8 +1,8 @@
 # <a name="format-hex"></a>Format-Hex
-**Format-Hex** を使うと、テキスト データやバイナリ データを 16 進数形式で表示できます。「[Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)」をご覧ください。
+**Format-Hex** を使うと、テキスト データやバイナリ データを&16; 進数形式で表示できます。「[Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)」をご覧ください。
 
 ## <a name="example-1"></a>例 1
-文字列の内容を 16 進形式で表示します。
+文字列の内容を&16; 進形式で表示します。
 
 ```PowerShell
 "This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
