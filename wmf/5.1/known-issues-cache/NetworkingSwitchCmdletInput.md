@@ -1,8 +1,8 @@
 ---
 title: "ネットワーク スイッチ マネージャーのコマンドレットの失敗"
 contributor: vaibch
-ms.openlocfilehash: e32e31762b665a7e2c6f6938fe494cb6127d4264
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 8495d79aec54d93f94e745e2efccb5116ad5d944
+ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
 translationtype: HT
 ---
 ネットワーク スイッチ マネージャーのコマンドレットを使用すれば、WSMAN 経由でネットワーク スイッチを管理することができます。 このモジュールのコマンドレットの中には、パイプラインからの値を受け入れられるものがいくつかあります。 WMF 5.1 プレビューの場合、パイプラインからの値を受け入れ可能なコマンドレットは、値がパイプラインを介して渡されていないと、実行に失敗します。
@@ -30,6 +30,7 @@ InputObject パラメーターの値をパイプラインを介して渡すと�
 $port = Get-CimInstance -Namespace root/interop -ClassName CIM_EthernetPort -CimSession $cimSession | Select-Object -First 1
 $port | Disable-NetworkSwitchEthernetPort -CimSession $cimSession
 ```
+
 - Enable-NetworkSwitchEthernetPort
 ```powershell
 $port = Get-CimInstance -Namespace root/interop -ClassName CIM_EthernetPort -CimSession $cimSession | Select-Object -First 1

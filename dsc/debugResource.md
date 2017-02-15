@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: e1922008a92f00c9ddab28598735839c25219d24
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: bca71e26585b091b839e8560dcf9d400651c476b
+ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
 translationtype: HT
 ---
 # <a name="debugging-dsc-resources"></a>DSC リソースのデバッグ
@@ -20,7 +20,9 @@ PowerShell 5.0 では、構成が適用されているときに DSC リソース
 ## <a name="enabling-dsc-debugging"></a>DSC デバッグの有効化
 リソースをデバッグする前に、[Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) コマンドレットを呼び出すことによって、デバッグを有効にする必要があります。 このコマンドレットは、必須パラメーター **BreakAll** を取ります。 
 
-[Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) への呼び出しの結果を参照して、デバッグが有効になっていることを確認できます。 次の PowerShell 出力は、デバッグを有効にした結果を示しています。
+[Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) への呼び出しの結果を参照して、デバッグが有効になっていることを確認できます。
+
+次の PowerShell 出力は、デバッグを有効にした結果を示しています。
 
 
 ```powershell
@@ -62,7 +64,7 @@ PSWebAccess
 構成をコンパイルした後、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) を呼び出して開始します。 構成は、ローカル構成マネージャー (LCM) が構成の最初のリソースを呼び出したときに停止します。 `-Verbose` および `-Wait` パラメーターを使用した場合、デバッグを開始するために入力する必要がある行が出力に表示されます。
 
 ```powershell
-PS C:\DebugTest> Start-DscConfiguration .\PSWebAccess -Wait -Verbose
+Start-DscConfiguration .\PSWebAccess -Wait -Verbose
 VERBOSE: Perform operation 'Invoke CimMethod' with following parameters, ''methodName' = SendConfigurationApply,'className' = MSFT_DSCLocalConfiguration
 Manager,'namespaceName' = root/Microsoft/Windows/DesiredStateConfiguration'.
 VERBOSE: An LCM method call arrived from computer TEST-SRV with user sid S-1-5-21-2127521184-1604012920-1887927527-108583.
@@ -75,17 +77,17 @@ nfiguration\DscResources\MSFT_RoleResource\MSFT_RoleResource.psm1 in force mode.
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Resource ]  [[WindowsFeature]PSWA]
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Test     ]  [[WindowsFeature]PSWA]
 VERBOSE: [TEST-SRV]:                            [[WindowsFeature]PSWA] Importing the module MSFT_RoleResource in force mode.
-WARNING: [TEST-SRV]:                            [[WindowsFeature]PSWA] Resource is waiting for PowerShell script debugger to attach.  Use the follow
-ing commands to begin debugging this resource script:
+WARNING: [TEST-SRV]:                            [[WindowsFeature]PSWA] Resource is waiting for PowerShell script debugger to attach. 
+Use the following commands to begin debugging this resource script:
 Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
-この時点で、LCM はリソースを呼び出し、最初のブレーク ポイントに到達しています。 出力の最後の 3 行は、プロセスに接続し、リソース スクリプトのデバッグを開始する方法を示しています。
+この時点で、LCM はリソースを呼び出し、最初のブレーク ポイントに到達しています。 出力の最後の&3; 行は、プロセスに接続し、リソース スクリプトのデバッグを開始する方法を示しています。
 
 ## <a name="debugging-the-resource-script"></a>リソース スクリプトのデバッグ
 
-PowerShell ISE の新しいインスタンスを開始します。 コンソール ウィンドウで、`Start-DscConfiguration` 出力から出力の最後の 3 行をコマンドとして入力し、`<credentials>` を有効なユーザー資格情報に置き換えます。 次のようなプロンプトが表示されます。
+PowerShell ISE の新しいインスタンスを開始します。 コンソール ウィンドウで、`Start-DscConfiguration` 出力から出力の最後の&3; 行をコマンドとして入力し、`<credentials>` を有効なユーザー資格情報に置き換えます。 次のようなプロンプトが表示されます。
 
 ```powershell
 [TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
