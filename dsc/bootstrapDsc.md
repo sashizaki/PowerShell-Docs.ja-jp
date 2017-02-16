@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: bf5b3da641facfdfa395aacf0eadcf773b8c4b02
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 38751d62a56dc90ff69fe3ab6e92829fb33edb2b
+ms.sourcegitcommit: a81ffb39f370b95ae802cd054dc4480c9e68cf77
 translationtype: HT
 ---
 >適用先: Windows PowerShell 5.0
@@ -22,7 +22,7 @@ PowerShell 4.0 の初回起動時に、新しい仮想マシンを構成する�
 
 これらの例を実行するには、以下が必要になります。
 
-- 作業する起動可能な VHD。   [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) で、Windows Server 2016 の評価版と共に ISO をダウンロードできます。 「[Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/en-us/library/gg318049.aspx)」 (起動可能な仮想ハード ディスクの作成) で、ISO イメージから VHD を作成する方法に関する手順を参照してください。
+- 作業する起動可能な VHD。 bpt id="p1" xmlns="urn:oasis:names:tc:xliff:document:1.2">  [</bpt>TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) で、Windows Server 2016 の評価版と共に ISO をダウンロードできます。 「[Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/en-us/library/gg318049.aspx)」 (起動可能な仮想ハード ディスクの作成) で、ISO イメージから VHD を作成する方法に関する手順を参照してください。
 - Hyper-V が有効なホスト コンピューター。 詳細については、「[Hyper-V の概要](https://technet.microsoft.com/library/hh831531.aspx)」をご覧ください。
 
 DSC を使用すると、ソフトウェアのインストールと初回起動時のコンピューターの構成を自動化できます。
@@ -32,9 +32,9 @@ DSC を使用すると、ソフトウェアのインストールと初回起動�
 
 初回起動時に DSC を実行しない場合は、[DSCAutomationHostEnabled レジストリ キー](DSCAutomationHostEnabled.md)を 0 に設定します。
 
-- [構成 MOF ドキュメントを VHD に挿入する](##Inject-a-configuration-MOF-document-into-a-VHD)
-- [DSC のメタ構成を VHD に挿入する](##Inject-a-DSC-metaconfiguration-into-a-VHD)
-- [起動時の DSC を無効にする](##Disable-DSC-at-boot-time)
+- 構成 MOF ドキュメントを VHD に挿入する
+- DSC のメタ構成を VHD に挿入する
+- 起動時の DSC を無効にする
 
 >**注:** `Pending.mof` と `MetaConfig.mof` を同時にコンピューターに挿入することができます。
 両方のファイルが存在する場合、`MetaConfig.mof` に指定された設定が優先されます。
