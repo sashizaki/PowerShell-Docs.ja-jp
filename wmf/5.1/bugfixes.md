@@ -8,8 +8,8 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 09316fef0594697a60a1bd4acabf39588f75edc2
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: 8957f4709c95ccb5b72c4fa9b42c9fe9ef93dffe
+ms.sourcegitcommit: 58e5e77050ba32717ce3e31e314f0f25cb7b2979
 translationtype: HT
 ---
 # <a name="bug-fixes-in-wmf-51"></a>WMF 5.1 のバグ修正#
@@ -98,3 +98,16 @@ WMF 5.1 より前では、複数のバージョンのモジュールがインス
 WMF 5.1 では、最新バージョンのトピックのヘルプを返すことでこれが解決されています。
 
 `Get-Help` では、必要なヘルプのバージョンを指定する方法はありません。 これを回避するには、モジュール ディレクトリに移動し、好みのエディターなどのツールで直接ヘルプを表示します。 
+
+### <a name="powershellexe-reading-from-stdin-stopped-working"></a>STDIN からの powershell.exe の読み込みが停止する
+
+ネイティブ アプリから `powershell -command -` を使用して STDIN によるスクリプトで渡される PowerShell を実行していたが、コンソール ホストにほかの変更が加えられたため、これが壊れてしまいました。
+
+https://windowsserver.uservoice.com/forums/301869-powershell/suggestions/15854689-powershell-exe-command-is-broken-on-windows-10
+
+### <a name="powershellexe-creates-spike-in-cpu-usage-on-startup"></a>powershell.exe の起動時に CPU 使用率が急増する
+
+PowerShell は、ログインの遅延を回避するために WMI クエリを使用して、グループ ポリシーから起動したかどうかを確認します。
+WMI クエリによって、最終的にシステムのすべてのプロセスに tzres.mui.dll が挿入されます。これは、WMI の Win32_Process クラスがローカルのタイムゾーン情報を取得しようとするためです。
+結果的に、wmiprvse (WMI プロバイダーのホスト) で、大規模な CPU 使用率の急増が発生します。
+修正プログラムでは、WMI を使用する代わりに、Win32 API 呼び出しを使用して同じ情報を取得します。

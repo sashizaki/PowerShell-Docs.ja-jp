@@ -8,8 +8,8 @@ author: krishna
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: b341f57592feb183eb0e7228cdc08460e370369f
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: 260a3bc443302f2d582f455aafb30ed717d95c84
+ms.sourcegitcommit: cfe32f213819ae76de05da564c3e2c4b7ecfda2f
 translationtype: HT
 ---
 # <a name="known-issues-in-wmf-51"></a>WMF 5.1 の既知の問題 #
@@ -23,8 +23,8 @@ WMF がインストールされている場合に、管理者としてショー�
 ## <a name="pester"></a>Pester
 このリリースでは、Nano Server で Pester を利用するとき、2 つの問題に注意する必要があります。
 
-* Pester 自体にテストを実行すると、FULL CLR と CORE CLR の違いに起因し、エラーが発生します。 具体的には、Validate メソッドが XmlDocument 型で利用できません。 NUnit 出力ログのスキーマの検証を試行するテストが 6 つありますが、これでエラーが発生することが確認されています。 
-* 現在、コード カバレッジの 1 つでエラーが発生します。*WindowsFeature* DSC リソースが Nano Server にないためです。 しかしながら、以上のエラーは一般的に無害であり、無視しても問題ありません。
+* Pester 自体にテストを実行すると、FULL CLR と CORE CLR の違いに起因し、エラーが発生します。 具体的には、Validate メソッドが XmlDocument 型で利用できません。 NUnit 出力ログのスキーマの検証を試行するテストが&6; つありますが、これでエラーが発生することが確認されています。 
+* 現在、コード カバレッジの&1; つでエラーが発生します。*WindowsFeature* DSC リソースが Nano Server にないためです。 しかしながら、以上のエラーは一般的に無害であり、無視しても問題ありません。
 
 ## <a name="operation-validation"></a>操作検証 
 
@@ -41,3 +41,25 @@ WMF がインストールされている場合に、管理者としてショー�
 
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
  ```  
+
+## <a name="jea-virtual-accounts"></a>JEA 仮想アカウント
+WMF 5.0 で仮想アカウントを使用するように構成された JEA エンドポイントおよびセッション構成は、WMF 5.1 へのアップグレード後に仮想アカウントを使用するように構成されません。
+これは、JEA セッションで実行されるコマンドは一時管理者アカウントではなく接続しているユーザーの ID で実行されるため、昇格された特権を必要とするコマンドをユーザーが実行できない可能性があることを意味します。
+仮想アカウントを復元するには、仮想アカウントを使用するすべてのセッション構成を登録解除し、再登録する必要があります。
+
+```powershell
+# Find the JEA endpoint by its name
+$jea = Get-PSSessionConfiguration -Name MyJeaEndpoint
+
+# Copy the cached PSSC file so it can be re-registered
+$pssc = Copy-Item $jea.ConfigFilePath $env:temp -PassThru
+
+# Unregister the current PSSC
+Unregister-PSSessionConfiguration -Name $jea.Name
+
+# Re-register the PSSC
+Register-PSSessionConfiguration -Name $jea.Name -Path $pssc.FullName -Force
+
+# Ensure the access policies remain the same
+Set-PSSessionConfiguration -Name $newjea.Name -SecurityDescriptorSddl $jea.SecurityDescriptorSddl
+```

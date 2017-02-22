@@ -7,13 +7,13 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 02f1cc45f30c0892e777a9e05d87f440f628fbf5
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: fba9b3ed183d82cf532e2431de4a9e2c30243197
+ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
 translationtype: HT
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration の部分構成
 
->適用先: Windows PowerShell 5.0
+>適用先: Windows PowerShell 5.0 以降。
 
 PowerShell 5.0 では、Desired State Configuration (DSC) によって、複数のソースからフラグメントで構成を配信できます。 ターゲット ノード上のローカル構成マネージャー (LCM) によって、フラグメントがまとめられ、1 つの構成として適用されます。 この機能により、チームまたは個人間で構成の制御を共有できます。 たとえば、2 つ以上開発者のチームがサービスで共同作業を行っている場合、それぞれがサービスの自身の一部を管理する構成を作成する可能性があります。 これらの構成は、それぞれ異なるプル サーバーからプルされ、開発の異なる段階で追加される可能性があります。 部分構成では、1 つの構成ドキュメントの編集を調整することなく、さまざまな個人またはチームが構成ノードのさまざまな側面を制御することもできます。 たとえば、1 つのチームが VM とオペレーティング システムの展開を担当し、別のチームがその VM に別のアプリケーションとサービスを展開する場合があります。 部分構成を使用すると、各チームが、不必要に複雑になることなく、独自の構成を作成できます。
 
@@ -53,7 +53,7 @@ PartialConfigDemo
 
 ### <a name="publishing-and-starting-push-mode-partial-configurations"></a>プッシュ モードの部分構成の公開および開始
 
-次に構成ごとに [Publish-DSCConfiguration](/reference/5.0/PSDesiredStateconfiguration/Publish-DscConfiguration.md) を呼び出して、構成ドキュメントを含むフォルダーを **Path** パラメーターとして渡します。 `Publish-DSCConfiguration` は、構成 MOF ファイルをターゲット ノードに配置します。 両方の構成の発行後に、ターゲット ノードで `Start-DSCConfiguration –UseExisting` を呼び出すことができます。
+次に構成ごとに [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) を呼び出して、構成ドキュメントを含むフォルダーを **Path** パラメーターとして渡します。 `Publish-DSCConfiguration` は、構成 MOF ファイルをターゲット ノードに配置します。 両方の構成の発行後に、ターゲット ノードで `Start-DSCConfiguration –UseExisting` を呼び出すことができます。
 
 たとえば、オーサリング ノードで以下の構成 MOF ドキュメントをコンパイルした場合は、次のようにします。
 
@@ -98,8 +98,7 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 17     Job17           Configuratio... Running       True            TestVM            Start-DscConfiguration...
 ```
 
->**注:** 実行するユーザーに対する注意事項:  
-
+>**注: ** [Publish-DSCConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/psdesiredstateconfiguration/publish-dscconfiguration) コマンドレットを実行しているユーザーには、ターゲットノードに対する管理者特権が必要です。
 
 ## <a name="partial-configurations-in-pull-mode"></a>プル モードでの部分構成
 
@@ -194,7 +193,16 @@ PartialConfigDemo
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>プル サーバーでの構成ドキュメントの名前付けおよび配置 (ConfigurationNames)
 
-部分構成ドキュメントは、プル サーバーの `web.config` ファイルで **ConfigurationPath** として指定されたフォルダーに配置する必要があります (通常 `C:\Program Files\WindowsPowerShell\DscService\Configuration`)。 構成ドキュメントは次のように名前を付ける必要があります。_ConfigurationName_ が部分構成の名前である場合、`ConfigurationName.mof` です。 この例では、構成ドキュメントの名前は次のようになります。
+部分構成ドキュメントは、プル サーバーの `web.config` ファイルで **ConfigurationPath** として指定されたフォルダーに配置する必要があります (通常 `C:\Program Files\WindowsPowerShell\DscService\Configuration`)。 
+
+#### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>PowerShell 5.1 のプル サーバーでの構成ドキュメントの名前付け
+
+個々のプル サーバーから部分構成を&1; つだけプルする場合、構成ドキュメントに任意の名前を付けることができます。 プル サーバーから複数の部分構成をプルする場合、構成ドキュメントの名前は `<ConfigurationName>.mof` (_ConfigurationName_ は部分構成の名前)、または `<ConfigurationName>.<NodeName>.mof` (_ConfigurationName_ は部分構成の名前、_NodeName_ はターゲット ノードの名前) のどちらかにすることができます。 これにより、Azure Automation DSC プル サーバーから構成をプルすることができます。
+
+
+#### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>PowerShell 5.0 のプル サーバーでの構成ドキュメントの名前付け
+
+構成ドキュメントは次のように名前を付ける必要があります。_ConfigurationName_ が部分構成の名前である場合、`ConfigurationName.mof` です。 この例では、構成ドキュメントの名前は次のようになります。
 
 ```
 ServiceAccountConfig.mof
@@ -222,7 +230,7 @@ SharePointConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof.checksum
 
 ## <a name="partial-configurations-in-mixed-push-and-pull-modes"></a>プッシュとプルの混在モードでの部分構成
 
-部分構成のプッシュ モードとプル モードを混在させることができます。 つまり、プル サーバーからプルされた部分構成とプッシュされた別の部分構成を持つことができます。 それぞれの部分構成は、前のセクションで説明したように、更新モードに応じて扱います。 たとえば、次のメタ構成では、プル モードのサービス アカウントの部分構成とプッシュ モードの SharePoint 部分構成がある同じ例が記述されています。
+部分構成のプッシュ モードとプル モードを混在させることができます。 つまり、プル サーバーからプルされた部分構成とプッシュされた別の部分構成を持つことができます。 前のセクションで説明したように、それぞれの部分構成に対して更新モードを指定します。 たとえば、次のメタ構成では、プル モードの `ServiceAccountConfig` 部分構成とプッシュ モードの `SharePointConfig` 部分構成がある同じ例が記述されています。
 
 ### <a name="mixed-push-and-pull-modes-using-configurationnames"></a>ConfigurationNames を使用したプッシュとプルの混在モード
 
@@ -301,7 +309,7 @@ configuration PartialConfigDemo
 PartialConfigDemo 
 ```
 
-なお、Settings ブロックで指定されている **RefreshMode** は "Pull" ですが、SharePointConfig 部分構成の **RefreshMode** は "Push" です。
+なお、Settings ブロックで指定されている **RefreshMode** は "Pull" ですが、`SharePointConfig` 部分構成の **RefreshMode** は "Push" です。
 
 それぞれの更新モードの前述の説明に従って、構成 MOF ファイルの名前付けおよび配置を行います。 **Publish-DSCConfiguration** を呼び出して、`SharePointConfig`部分構成を公開し、`ServiceAccountConfig`構成がプル サーバーからプルされることを待機するか、または [Update-DscConfiguration](https://technet.microsoft.com/en-us/library/mt143541(v=wps.630).aspx) を呼び出して強制的に更新します。
 

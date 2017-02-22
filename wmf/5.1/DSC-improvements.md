@@ -8,11 +8,11 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 581d80d476e918a78775291521abfd254703a7b7
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: 1bf1bf914982e0d52e592e6ef421d36b1915b338
+ms.sourcegitcommit: 267688f61dcc76fd685c1c34a6c7bfd9be582046
 translationtype: HT
 ---
-#<a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 の Desired State Configuration (DSC) の機能強化
+# <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 の Desired State Configuration (DSC) の機能強化
 
 ## <a name="dsc-class-resource-improvements"></a>DSC クラス リソースの機能強化
 
@@ -25,7 +25,6 @@ WMF 5.1 で、次の既知の問題を修正しました。
 
 
 ## <a name="dsc-resource-debugging-improvements"></a>DSC リソースのデバッグの機能強化
-
 WMF 5.0 では、PowerShell デバッガーは、クラス ベースのリソース メソッド (Get/Set/Test) で直接停止しませんでした。
 WMF 5.1 では、このデバッガーは、MOF ベースのリソース メソッドと同様に、クラス ベースのリソース メソッドで停止します。
 
@@ -37,7 +36,17 @@ WMF 5.1 では、このデバッガーは、MOF ベースのリソース メソ�
 以前のバージョンの WMF では、ESENT データベースを使用しながら同時に DSC プル サーバーに登録/レポートを要求すると、LCM は登録またはレポートに失敗していました。 そのような場合、プル サーバーのイベント ログに "既に使用されているインスタンス名" というエラーが記録されました。
 これは、マルチスレッド シナリオで ESENT データベースにアクセスするとき、間違ったパターンが使用されることに起因していました。 WMF 5.1 では、この問題は修正されました。 同時登録または同時レポート (ESENT データベースを含む) が WMF 5.1 では正常に機能します。 この問題は ESENT データベースにのみ関連し、OLEDB データベースには関連しません。 
 
-##<a name="pull-partial-configuration-naming-convention"></a>部分構成命名規則のプル
+## <a name="enable-circular-log-on-esent-database-instance"></a>ESENT データベース インスタンスでの循環ログの有効化
+以前のバージョンの DSC-PullServer では、データベース インスタンスが循環ログなしで作成されていたため、ESENT データベース ログ ファイルがプルサーバーのディスク領域を占有していました。 このリリースには、プルサーバーの web.config を使用してインスタンスの循環ログ動作を制御するオプションがあります。 既定では、CircularLogging が TRUE に設定されます。
+```
+<appSettings>
+     <add key="dbprovider" value="ESENT" />
+    <add key="dbconnectionstr" value="C:\Program Files\WindowsPowerShell\DscService\Devices.edb" />
+    <add key="CheckpointDepthMaxKB" value="512" />
+    <add key="UseCircularESENTLogs" value="TRUE" />
+  </appSettings>
+```
+## <a name="pull-partial-configuration-naming-convention"></a>部分構成命名規則のプル
 以前のリリースでは、部分構成の命名規則は、プル サーバー/サービスの MOF ファイル名はローカル構成マネージャー設定に指定されている部分構成名に一致する必要があり、ローカル構成マネージャー設定は MOF ファイルに組み込まれている構成名に一致する必要があるというものでした。 
 
 下のスナップショットを参照してください。
@@ -90,7 +99,7 @@ Configuration PartialOne
 PartialOne
 ```
 
-WMF 5.1 では、プル サーバー/サービスの部分構成の名前を `<ConfigurationName>.<NodeName>.mof` にできます。 さらに、コンピューターがプル サーバー/サービスから 1 つの構成をプルする場合、プル サーバー構成リポジトリの構成ファイルに任意のファイル名を与えることができます。 このように命名規則が柔軟なことから、ノードを部分的に Azure Automation サービスで管理し (ノードの一部の構成が Azure Automation DSC から誘導されます)、部分構成をローカル管理できます。
+WMF 5.1 では、プル サーバー/サービスの部分構成の名前を `<ConfigurationName>.<NodeName>.mof` にできます。 さらに、コンピューターがプル サーバー/サービスから&1; つの構成をプルする場合、プル サーバー構成リポジトリの構成ファイルに任意のファイル名を与えることができます。 このように命名規則が柔軟なことから、ノードを部分的に Azure Automation サービスで管理し (ノードの一部の構成が Azure Automation DSC から誘導されます)、部分構成をローカル管理できます。
 
 以下のメタ構成では、ローカルと Azure Automation サービスの両方で管理されるようにノードが設定されます。
 

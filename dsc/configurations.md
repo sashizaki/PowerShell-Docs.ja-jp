@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 01af336f34928aec63cac7402c1ab20c701579fe
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: f833eed14a30d80b1fcc3a9e5e67811c53096bf5
+ms.sourcegitcommit: a81ffb39f370b95ae802cd054dc4480c9e68cf77
 translationtype: HT
 ---
 # <a name="dsc-configurations"></a>DSC 構成
@@ -30,7 +30,9 @@ Configuration MyDscConfiguration {
             Name = "Bitlocker"
         }
     }
-}
+} 
+
+MyDscConfiguration 
 ```
 
 スクリプトを .ps1 ファイルとして保存します。
@@ -40,8 +42,8 @@ Configuration MyDscConfiguration {
 構成スクリプトは次の部分で構成されます。
 
 - **Configuration** ブロック。 これは、最も外側にあるスクリプト ブロックです。 このブロックを定義するには、**Configuration** キーワードを使用し、名前を指定します。 この場合、構成の名前は "MyDscConfiguration" です。
-- 1 つまたは複数の **Node** ブロック。 これらは、構成するノード (コンピューターまたは VM) を定義します。 上記の構成には、"TEST-PC1" という名前のコンピューターを対象とする 1 つの **Node** ブロックがあります。
-- 1 つまたは複数のリソース ブロック。 ここでは、構成するリソースのプロパティを設定します。 この場合は、それぞれ "WindowsFeature" リソースを呼び出す 2 つのリソース ブロックがあります。
+- 1 つまたは複数の **Node** ブロック。 これらは、構成するノード (コンピューターまたは VM) を定義します。 上記の構成には、"TEST-PC1" という名前のコンピューターを対象とする&1; つの **Node** ブロックがあります。
+- 1 つまたは複数のリソース ブロック。 ここでは、構成するリソースのプロパティを設定します。 この場合は、それぞれ "WindowsFeature" リソースを呼び出す&2; つのリソース ブロックがあります。
 
 **Configuration** ブロック内では、通常 PowerShell 関数内で可能なすべてのことを行うことができます。 たとえば、前の例では、ターゲット コンピューターの名前を構成内でハード コードしなかった場合、ノード名のパラメーターを追加できます。
 
@@ -62,12 +64,14 @@ Configuration MyDscConfiguration {
         }
     }
 }
+
+MyDscConfiguration 
 ```
 
-この例では、[構成のコンパイル時](# Compiling the configuration)にノードの名前を $ComputerName パラメーターとして渡すことで、ノードの名前を指定します。 名前の既定値は "localhost" です。
+この例では、構成のコンパイル時にノードの名前を $ComputerName パラメーターとして渡すことで、ノードの名前を指定します。 名前の既定値は "localhost" です。
 
 ## <a name="compiling-the-configuration"></a>構成のコンパイル
-構成を適用する前に、MOF ドキュメントにコンパイルする必要があります。 そのためには、PowerShell 関数の場合と同じように構成を呼び出します。
+構成を適用する前に、MOF ドキュメントにコンパイルする必要があります。 そのためには、PowerShell 関数の場合と同じように構成を呼び出します。  例の最後の行には構成を呼び出すための構成の名前のみが含まれています。
 >__注:__ 構成を呼び出すには、(他の PowerShell 関数と同様に) 関数がグローバル スコープ内にある必要があります。 そのためには、スクリプトで "ドット ソース" を行うか、F5 キーを使用するか、または ISE で __[スクリプトの実行]__ をクリックして、構成スクリプトを実行します。 スクリプトでドット ソースを行うには、構成を含むスクリプト ファイルの名前が `myConfig.ps1` である場合、`. .\myConfig.ps1` でコマンドを実行します。
 
 構成を呼び出すと、結果は次のようになります。
@@ -119,11 +123,13 @@ Configuration DependsOnExample {
         }
     }
 }
+
+DependsOnExample
 ```
 
 ## <a name="using-new-resources-in-your-configuration"></a>構成での新しいリソースの使用
 前の例を実行した場合、リソースを明示的にインポートしないで使用することについて警告されることがあります。
-今日、DSC には PSDesiredStateConfiguration モジュールの一部として 12 のリソースが付属しています。 外部モジュールの他のリソースが LCM によって認識されるためには、`$env:PSModulePath` に配置する必要があります。 新しいコマンドレット [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) を使用して、どのリソースがシステムにインストールされ、LCM で使用できるかを決定できます。 これらのモジュールが `$env:PSModulePath` に配置され、[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) によって正しく認識された後、構成内に読み込む必要があります。 __Import-DscResource__ は、__Configuration__ ブロック内でのみ認識される動的なキーワードです (つまり、コマンドレットではありません)。 __Import-DscResource__ は、次の 2 つのパラメーターをサポートしています。
+今日、DSC には PSDesiredStateConfiguration モジュールの一部として 12 のリソースが付属しています。 外部モジュールの他のリソースが LCM によって認識されるためには、`$env:PSModulePath` に配置する必要があります。 新しいコマンドレット [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) を使用して、どのリソースがシステムにインストールされ、LCM で使用できるかを決定できます。 これらのモジュールが `$env:PSModulePath` に配置され、[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) によって正しく認識された後、構成内に読み込む必要があります。 __Import-DscResource__ は、__Configuration__ ブロック内でのみ認識される動的なキーワードです (つまり、コマンドレットではありません)。 __Import-DscResource__ は、次の&2; つのパラメーターをサポートしています。
 * __ModuleName__ は、__Import-DscResource__ を使用する場合に推奨される方法です。 これは、インポートするリソースを含むモジュールの名前 (およびモジュール名の文字列配列) を受け取ります。 
 * __Name__ は、インポートするリソースの名前です。 これは、[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) によって "Name" として返されるフレンドリ名ではありませんが、リソース スキーマを定義するときに使用されるクラス名です ([Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) によって __ResourceType__ として返されます)。 
 

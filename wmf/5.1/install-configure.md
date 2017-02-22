@@ -1,64 +1,81 @@
 ---
-title: "WMF 5.1 のインストールと構成 (プレビュー)"
-ms.date: 2016-05-16
+title: "WMF 5.1 のインストールと構成"
+ms.date: 2017-01-18
 keywords: PowerShell, DSC, WMF
 description: 
 ms.topic: article
-contributor: kriscv
-manager: dongill
+contributor: keithb
+manager: carmonm
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 21f26830cdc20a90ce48aa09bc7013d733242ae9
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: 55a2e03385b90c7631d1b0373bf85602aa7d769b
+ms.sourcegitcommit: 267688f61dcc76fd685c1c34a6c7bfd9be582046
 translationtype: HT
 ---
-# <a name="install-and-configure-wmf-51-preview"></a>WMF 5.1 のインストールと構成 (プレビュー) #
+# <a name="install-and-configure-wmf-51"></a>WMF 5.1 のインストールと構成 #
 
-## <a name="install-net-46"></a>.Net 4.6 のインストール
-WMF 5.1. を使用するには、.NET Framework 4.6 をインストールする必要があります。 インストールを行うには、新しいカタログ署名機能を有効にする必要があります。その場合、WMF 5.1 で読み込まれるモジュールとスクリプトの複数の領域が影響を受けます。 
 
-[.NET Framework 4.6 は、サポート技術情報 3045560 として利用できます](https://support.microsoft.com/en-us/kb/3045560)。 インストール手順については、ダウンロード場所で入手できます。
-
-> **注:** .Net 4.6 に関する要件が WMF 5.1 プレビュー インストーラーで検出されないことが既知の問題としてわかっています。このため、.NET 4.6 をインストールする前に WMF 5.1 プレビューをインストールできるようになります。 Microsoft のテストによれば、WMF 5.1 プレビューをインストールした後で、.NET 4.6 をインストールすることはできます。 WMF 5.1 の最終バージョンでは、インストールの前に、この必要条件が満たされているか正確に確認します。 
-
-## <a name="download-and-install-the-wmf-51-preview"></a>WMF 5.1 プレビューのダウンロードとインストール
+## <a name="download-and-install-the-wmf-51-package"></a>WMF 5.1 パッケージのダウンロードとインストール
 
 インストールするオペレーティング システムとアーキテクチャに合わせて WMF 5.1 パッケージをダウンロードします。
 
-| オペレーティング システム       | 前提条件 | パッケージ リンク             |
-|------------------------|---------------|---------------------------|
-| Windows Server 2012 R2 | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) | [Win8.1AndW2K12R2-KB3156422-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823586)|
-| Windows Server 2012    | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) | [W2K12-KB3156423-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823587)|
-| Windows Server 2008 R2 | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) </br> [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) </br> [SHA-2 コード署名](https://technet.microsoft.com/en-us/library/security/3033929)用のセキュリティ更新プログラム | [Win7AndW2K8R2-KB3156424-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823588) |
-| Windows 8.1            | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) | **x64:** [Win8.1AndW2K12R2-KB3156422-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823586) </br> **x86:** [Win8.1-KB3156422-x86.msu](http://go.microsoft.com/fwlink/?LinkID=823589) |
-| Windows 7 SP1          | [.NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) </br> [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855) </br> [SHA-2 コード署名](https://technet.microsoft.com/en-us/library/security/3033929)用のセキュリティ更新プログラム | **x64:** [Win7AndW2K8R2-KB3156424-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823588) </br> **x86:** [Win7-KB3156424-x86.msu](http://go.microsoft.com/fwlink/?LinkID=823590) |
+| オペレーティング システム         | 前提条件       | パッケージ リンク             |
+|------------------------|---------------------|---------------------------|
+| Windows Server 2012 R2 | | [Win8.1AndW2K12R2-KB3191564-x64.msu](https://go.microsoft.com/fwlink/?linkid=839516)|
+| Windows Server 2012     | | [W2K12-KB3191565-x64.msu](https://go.microsoft.com/fwlink/?linkid=839513)|
+| Windows Server 2008 R2 | [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642) | [Win7AndW2K8R2-KB3191566-x64.ZIP](https://go.microsoft.com/fwlink/?linkid=839523) | 
+| Windows 8.1            |  | **x64:** [Win8.1AndW2K12R2-KB3191564-x64.msu](https://go.microsoft.com/fwlink/?linkid=839516) </br> **x86:** [Win8.1-KB3191564-x86.msu](https://go.microsoft.com/fwlink/?linkid=839521) |
+| Windows 7 SP1          | [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642) | **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP](https://go.microsoft.com/fwlink/?linkid=839523) </br> **x86:** [Win7-KB3191566-x86.ZIP](https://go.microsoft.com/fwlink/?linkid=839522)
 
 
-## <a name="install-wmf-51-from-windows-explorer-or-file-explorer-in-windows-server-2012-r2-or-windows-81"></a>Windows エクスプローラー (または Windows Server 2012 R2 または Windows 8.1 ではファイル エクスプローラー) から WMF 5.1 をインストールする
+
+## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>Windows Server 2008 R2 および Windows 7 で WMF 5.1 をインストールする
+
+> **注:** Windows Server 2008 R2 および Windows 7 でのインストール手順は変更されているため、他のパッケージの手順と異なります。 Windows Server 2012 R2、Windows Server 2012、および Windows 8.1 のインストール手順は次のとおりです。
+
+**Windows Server 2008 R2 および Windows 7 で WMF 5.1 をインストールする**
+
+1. ZIP ファイルをダウンロードしたフォルダーに移動します。 
+
+2. ZIP ファイルを右クリックし、[すべて展開...] を選択します。 ZIP ファイルには、MSU ファイルと Install-WMF5.1.PS1 スクリプト ファイルの 2 つのファイルが含まれています。 ZIP ファイルを展開したら、Windows 7 または Windows Server 2008 R2 を実行する任意のコンピューターにコンテンツをコピーすることができます。  
+
+3. ZIP ファイルを展開した後、管理者として PowerShell を開いて、ZIP ファイルのコンテンツを含むフォルダーに  
+移動します。 
+
+4. そのフォルダーの Install-Wmf5.1.ps1 スクリプトを実行して、指示に従います。 このスクリプトはローカル コンピューターの前提条件を確認し、前提条件を満たしている場合に WMF 5.1 をインストールします。 前提条件は次のとおりです。 
+
+Install-WMF5.1.ps1 は Windows Server 2008 R2 および Windows 7 でのインストールの自動化を容易にするため、次のパラメーターを受け取ります。
+
+- AcceptEula: このパラメーターが含まれる場合、使用許諾契約書は自動的に受け入れられ、表示はされません。
+- AllowRestart: このパラメーターは、AcceptEula が指定されている場合にのみ使用できます。 このパラメーターが含まれていて、WMF 5.1 のインストール後に再起動が必要な場合は、インストールが完了した後すぐに、メッセージが表示されることなく再起動が実行されます。 
+
+**Windows Server 2008 R2 SP1 および Windows 7 SP1 での WMF 5.1 の前提条件**
+
+Windows Server 2008 R2 SP1 または Windows 7 SP1 に WMF 5.1 をインストールするには、次を行う必要があります。
+- 最新の Service Pack をインストールする必要があります。
+- WMF 3.0 をインストール**しないでください**。 WMF 3.0 経由で WMF 5.1 をインストールすると、PSModulePath が失われ、これによって他のアプリケーションで障害が発生する場合があります。 WMF 5.1 をインストールする前に WMF 3.0 をアンインストールするか、PSModulePath を保存して、WMF 5.1 のインストールが完了した後に手動で復元する必要があります。 
+- WMF 5.1 には [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642) が必要です。Microsoft .NET Framework 4.5.2 をインストールするには、ダウンロード場所で提供されている手順に従ってください。
+
+**WinRM の依存関係** 
+
+Windows PowerShell Desired State Configuration (DSC) は、WinRM に依存します。 WinRM は、Windows Server 2008 R2 および Windows 7 では既定で無効になっています。 WinRM を有効にするには、Windows PowerShell 管理者特権セッションで `Set-WSManQuickConfig` を実行します。
+
+
+## <a name="install-wmf-51-for-windows-server-2012-r2-windows-server-2012-and-windows-81"></a>Windows Server 2012 R2、Windows Server 2012、および Windows 8.1 で WMF 5.1 をインストールする
+**Windows エクスプローラー (または Windows Server 2012 R2 または Windows 8.1 ではファイル エクスプローラー) からインストールする**
 
 1. MSU ファイルをダウンロードしたフォルダーに移動します。
 
 2. MSU をダブルクリックして実行します。
 
-## <a name="install-wmf-51-from-the-command-prompt"></a>コマンド プロンプトから WMF 5.1 をインストールする##
+**コマンド プロンプトからインストールする**
 
 1. コンピューターのアーキテクチャに適切なパッケージをダウンロードした後、管理者特権 (管理者として実行) を使ってコマンド プロンプト ウィンドウを開きます。 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1 の Server Core インストール オプションで、既定で管理者特権でコマンド プロンプトが開きます。
 
 2. WMF 5.1 のインストール パッケージをダウンロードまたはコピーしたフォルダーにディレクトリを変更します。
 
 3. 次のいずれかのコマンドを実行します。
-    - Windows Server 2012 R2 または Windows 8.1 x64 を実行しているコンピューターの場合は、`Win8.1AndW2K12R2-KB3156422-x64.msu /quiet` を実行します。
-    - Windows Server 2012 を実行しているコンピューターの場合は、`W2K12-KB3156423-x64.msu /quiet` を実行します。
-    - Windows Server 2008 R2 SP1 または Windows 7 SP1 x64 を実行しているコンピューターの場合は、`Win7AndW2K8R2-KB3156424-x64.msu /quiet` を実行します。
-    - Windows 8.1 x86 を実行しているコンピューターの場合は、`Win8.1-KB3156422-x86.msu /quiet` を実行します。
-    - Windows 7 SP1 x86 を実行しているコンピューターの場合は、`Win7-KB3156424-x86.msu /quiet` を実行します。
-
-## <a name="additional-installation-notes-for-windows-server-2008-r2-sp1-and-windows-7-sp1"></a>Windows Server 2008 R2 SP1 および Windows 7 SP1 でのインストールに関する追加の注記##
-Windows Server 2008 R2 SP1 または Windows 7 SP1 に WMF 5.1 をインストールするには、以下をインストールする必要があります。
-- 最新のサービス パック。
-- [WMF 4.0](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
-- WMF 5.1 には、[Microsoft .NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) が必要です。 Microsoft .NET Framework 4.6 をインストールするには、ダウンロード場所で提供されている手順に従ってください。
-- [SHA-2 コード署名](https://technet.microsoft.com/en-us/library/security/3033929)用のセキュリティ更新プログラム。 このプログラムは、Windows カタログ ファイル用の新しい PowerShell コマンドレットを使用するときに必要です。 
-
-> **WinRM の依存関係** - Windows PowerShell Desired State Configuration (DSC) は、WinRM に依存します。 WinRM は、Windows Server 2008 R2 および Windows 7 では既定で無効になっています。 WinRM を有効にするには、Windows PowerShell 管理者特権セッションで `Set-WSManQuickConfig` を実行します。
-
+    - Windows Server 2012 R2 または Windows 8.1 x64 を実行しているコンピューターの場合は、`Win8.1AndW2K12R2-KB3191564-x64.msu /quiet` を実行します。
+    - Windows Server 2012 を実行しているコンピューターの場合は、`W2K12-KB3191565-x64.msu /quiet` を実行します。
+    - Windows 8.1 x86 を実行しているコンピューターの場合は、`Win8.1-KB3191564-x86.msu /quiet` を実行します。
+    

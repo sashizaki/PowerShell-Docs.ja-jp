@@ -8,8 +8,8 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-12-05
 title: "JEA の前提条件"
 ms.technology: powershell
-ms.openlocfilehash: c709b3692705db327245e4e1b3fde800ac7d57a9
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
+ms.openlocfilehash: d463e6cdfeb78a32eab9055b035747928d38e783
+ms.sourcegitcommit: cfe32f213819ae76de05da564c3e2c4b7ecfda2f
 translationtype: HT
 ---
 # <a name="prerequisites"></a>前提条件
@@ -21,14 +21,19 @@ Just Enough Administration は、Windows PowerShell 5.0 以降に含まれる機
 
 ## <a name="install-jea"></a>JEA のインストール
 JEA は Windows PowerShell 5.0 以降で利用できますが、完全な機能のためには、システムで使用できる最新バージョンの PowerShell をインストールすることをお勧めします。
-次の表では、サポートされている各 OS での JEA の使用可能性を示します。
+次の表は、Windows Server での JEA の可用性を示します。
 
-オペレーティング システム          | JEA の可用性
---------------------------|------------------------------------------------------
+サーバーのオペレーティング システム   | JEA の可用性
+--------------------------|--------------------------------
 Windows Server 2016       | プレインストール済み
 Windows Server 2012 R2    | WMF 5.1 のすべての機能
 Windows Server 2012       | WMF 5.1 のすべての機能
 Windows Server 2008 R2    | WMF 5.1 のすべての機能
+
+JEA は、自宅または会社のコンピューターでも使用できます。
+
+クライアントのオペレーティング システム   | JEA の可用性
+--------------------------|-----------------------------------------------------
 Windows 10 1607           | プレインストール済み
 Windows 10 1603、1511     | 制限された機能でプレインストール済み<sup>1</sup>
 Windows 10 1507           | 不可
