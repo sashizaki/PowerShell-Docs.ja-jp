@@ -184,7 +184,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 -   [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールの新しいコマンドレット、Get-Runspace、Debug-Runspace、Get-RunspaceDebug、Enable-RunspaceDebug、および Disable-RunspaceDebug を使用すると、実行空間でのデバッグ オプションを設定して、実行空間でのデバッグを開始、停止できます。 任意の実行空間をデバッグする場合、つまり、Windows PowerShell コンソールまたは Windows PowerShell ISE セッションの既定の実行空間ではない実行空間をデバッグする場合、Windows PowerShell では、スクリプトにブレークポイントを設定し、追加されたブレークポイントを使用して、実行空間スクリプトをデバッグするデバッガーをアタッチするまでスクリプトが実行されないようにすることができます。 実行空間用の Windows PowerShell スクリプト デバッガーに、任意の実行空間に対する入れ子になったデバッグのサポートが追加されました。
 
--   新しい Format-Hex コマンドレットが [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。 Format-Hex を使うと、テキスト データやバイナリ データを 16 進数形式で表示できます。
+-   新しい Format-Hex コマンドレットが [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。 Format-Hex を使うと、テキスト データやバイナリ データを&16; 進数形式で表示できます。
 
 -   Get-Clipboard コマンドレットと Set-Clipboard コマンドレットが、[Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。これらのコマンドレットにより、Windows PowerShell セッションとの間のコンテンツの転送が容易になります。 クリップボードのコマンドレットは、画像、オーディオ ファイル、ファイルのリスト、およびテキストをサポートします。
 
@@ -284,7 +284,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
     -   新しい Get-DscConfigurationStatus コマンドレットは、ターゲット ノードから構成状態に関する高レベルの情報を取得します。 最後の状態、またはすべての構成の状態を取得できます。
 
-    -   新しい Compare-DscConfiguration コマンドレットは、指定した構成を 1 つ以上のターゲット ノードの実際の状態と比較します。
+    -   新しい Compare-DscConfiguration コマンドレットは、指定した構成を&1; つ以上のターゲット ノードの実際の状態と比較します。
 
     -   新しい Publish-DscConfiguration コマンドレットでは、構成の MOF ファイルをターゲット ノードにコピーしますが、その構成は適用しません。 この構成が適用されるのは、次の整合性パス中、または Update-DscConfiguration コマンドレットの実行時です。
 
@@ -341,7 +341,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 -   **Register-ScheduledJob** および **Set-ScheduledJob** で **RunNow** パラメーターを使用できるようになり、**Trigger** パラメーターを使用して直後のジョブ開始日時を設定する必要がなくなりました。
 
--   **Invoke-RestMethod** と **Invoke-WebRequest** で、Headers パラメーターを使用してすべてのヘッダーを設定できるようになりました。 このパラメーターは以前から存在しますが、使用すると例外やエラーが発生する Web コマンドレットのいくつかのパラメーターの 1 つでした。
+-   **Invoke-RestMethod** と **Invoke-WebRequest** で、Headers パラメーターを使用してすべてのヘッダーを設定できるようになりました。 このパラメーターは以前から存在しますが、使用すると例外やエラーが発生する Web コマンドレットのいくつかのパラメーターの&1; つでした。
 
 -   **Get-Module** に、新しいパラメーター **FullyQualifiedName** が追加されました (**ModuleSpecification\[]** 型)。 Get-Module の **FullyQualifiedName** パラメーターを使用すると、モジュール名やバージョンを使用してモジュールを指定でき、オプションとして GUID でも指定できます。
 
@@ -363,7 +363,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 -   **Get-Process** コマンドレットに新しいスイッチ パラメーター **IncludeUserName** が追加されました。
 
--   新しいコマンドレット **Get-FileHash** が追加されました。これは、指定したファイルのファイル ハッシュをいくつかの形式の中から 1 つ返します。
+-   新しいコマンドレット **Get-FileHash** が追加されました。これは、指定したファイルのファイル ハッシュをいくつかの形式の中から&1; つ返します。
 
 -   Windows PowerShell 4.0 では、モジュールが自らのマニフェストの中で **DefaultCommandPrefix** キーを使用している場合、またはユーザーが **Prefix** パラメーターを指定してモジュールをインポートした場合、モジュールの **ExportedCommands** プロパティにモジュール内のコマンドがプレフィックス付きで表示されます。 モジュールで修飾された構文 (ModuleName\\CommandName) を使用してコマンドを実行するときは、コマンド名にプレフィックスを含める必要があります。
 
@@ -529,7 +529,7 @@ Windows PowerShell ワークフローの利点を次に示します。
 
 -   **複数コンピューターの管理。** 数百の管理対象ノードでタスクをワークフローとして同時に実行できます。 Windows PowerShell ワークフローには、**PSComputerName** などの共通管理パラメーターで構成される組み込みライブラリが含まれているため、複数のコンピューターを管理するシナリオに対応できます。
 
--   **複雑なプロセスを 1 つのタスクで実行します。** エンド ツー エンドのシナリオ全体を実装する関連したスクリプトを 1 つのワークフローにまとめることができます。
+-   **複雑なプロセスを&1; つのタスクで実行します。** エンド ツー エンドのシナリオ全体を実装する関連したスクリプトを&1; つのワークフローにまとめることができます。
 
 -   **永続化。**ワークフローは、作成者によって定義された特定の時点で保存 (またはチェックポイントを作成) できるため、ワークフローを最初から再開する代わりに、最後の永続化されたタスク (またはチェックポイント) からワークフローを再開できます。
 
@@ -580,7 +580,7 @@ Windows PowerShell 3.0 は、クライアントとサーバー間の接続が予
 
 インターネットにアクセスできないユーザーやファイアウォールの内側にいるユーザーをサポートするには、新しいコマンドレット [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) を使用して、ファイル共有などのファイル システム ディレクトリにヘルプ ファイルをダウンロードします。 その後、ユーザーは [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドレットを使用して、更新されたヘルプ ファイルをファイル共有から入手します。
 
-[Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドレットを使用してヘルプ ファイルを更新する際は、すべてのサポートされる UI カルチャのすべてのモジュール、または特定のモジュールに対して更新を実行できます。 Windows PowerShell プロファイルに [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドを置くこともできます。 既定では、Windows PowerShell は、モジュールに対するヘルプ ファイルを 1 日に 1 回を超えてダウンロードすることはありません。
+[Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドレットを使用してヘルプ ファイルを更新する際は、すべてのサポートされる UI カルチャのすべてのモジュール、または特定のモジュールに対して更新を実行できます。 Windows PowerShell プロファイルに [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドを置くこともできます。 既定では、Windows PowerShell は、モジュールに対するヘルプ ファイルを&1; 日に&1; 回を超えてダウンロードすることはありません。
 
 Windows 8 および Windows Server 2012 モジュールにはヘルプ ファイルが含まれていません。 最新のヘルプ ファイルをダウンロードするには、`Update-Help` と入力します。 詳細については、`Get-Help` と入力する (パラメーターなし) か、「[about_Updatable_Help](https://technet.microsoft.com/en-us/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe)」を参照してください。
 
@@ -618,7 +618,7 @@ Windows PowerShell 3.0 には、Common Information Model (CIM) のサポート�
 ### <a name="a-namebkmkconfigfileasession-configuration-files"></a><a name="BKMK_ConfigFile"></a>セッション構成ファイル
 Windows PowerShell 3.0 以降では、ファイルを使用してカスタム セッションの構成を設計できます。 新しいセッション構成ファイルでは、そのセッション構成を使用するセッションの環境を決定できます。たとえば、セッションに読み込むモジュール、スクリプト、およびフォーマット ファイル、ユーザーが使用できるコマンドレットおよび言語要素、ユーザーが実行できるモジュールおよびスクリプト、ユーザーが見ることのできる変数を決定します。
 
-ユーザーが特定の 1 つのモジュールからコマンドレットを実行できるだけのセッションを設計できます。あるいは、ユーザーが完全な言語を持ち、すべてのモジュールにアクセスでき、高度なタスクを実行するスクリプトにアクセスできるセッションを設計できます。
+ユーザーが特定の&1; つのモジュールからコマンドレットを実行できるだけのセッションを設計できます。あるいは、ユーザーが完全な言語を持ち、すべてのモジュールにアクセスでき、高度なタスクを実行するスクリプトにアクセスできるセッションを設計できます。
 
 以前のバージョンの Windows PowerShell では、このレベルの制御は、C# プログラムや複雑なスタートアップ スクリプトを作成できる人のみが使用できました。 現在は、コンピューターの Administrators グループのすべてのメンバーが、構成ファイルを使用してセッションの構成をカスタマイズできます。
 
@@ -633,7 +633,7 @@ Windows PowerShell のスケジュール設定されたジョブは、Windows Po
 
 Windows PowerShell のバックグラウンド ジョブと同様、スケジュールされたジョブはバックグラウンドで非同期に実行されます。 スケジュールされたジョブが完了したインスタンスは、[Start-Job](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442) および [Get-Job](https://technet.microsoft.com/en-us/library/1352c534-7193-46ca-9ab1-0c5219a661ad) などのジョブ コマンドレットを使用して管理できます。
 
-タスク スケジューラのタスクと同様、スケジュールされたジョブは 1 回または繰り返し実行したり、特定のアクションまたはイベントへの応答として実行したりできます。 スケジュールされたジョブはタスク スケジューラで表示および管理できます。必要に応じて有効または無効にする、実行する、テンプレートとして使用する、ジョブが開始される条件を設定するなどの操作が可能です。
+タスク スケジューラのタスクと同様、スケジュールされたジョブは&1; 回または繰り返し実行したり、特定のアクションまたはイベントへの応答として実行したりできます。 スケジュールされたジョブはタスク スケジューラで表示および管理できます。必要に応じて有効または無効にする、実行する、テンプレートとして使用する、ジョブが開始される条件を設定するなどの操作が可能です。
 
 さらに、スケジュールされたジョブには、それらのジョブを管理するためのカスタマイズされた一連のコマンドレットがあります。 それらのコマンドレットでは、スケジュールされたジョブの作成、編集、管理、無効化、再有効化を実行したり、スケジュールされたジョブのトリガーを作成したり、スケジュールされたジョブのオプションを設定したりできます。
 
@@ -717,7 +717,7 @@ Windows PowerShell 3.0 は、高度な機能のサポートをモジュールに
 
 7.  [New-ModuleManifest](https://technet.microsoft.com/en-us/library/512adced-f42f-4e88-ba7c-834fc9e5d047) コマンドレットの操作が効率化され、実行時の対話が減りました。
 
-8.  #Requires の新しい **Module** パラメーター。
+8.  &#35;Requires の新しい **Module** パラメーター。
 
 9. [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) コマンドレットが改善され、**MinimumVersion** および **RequiredVersion** の両パラメーターが追加されました。
 
