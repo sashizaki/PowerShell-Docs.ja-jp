@@ -7,17 +7,17 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: f8f8ef06cd79af294bad7bb8cf3d6676ab9a69bc
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: 27d9a259d119099c45d7ecd3a15cd26654071d42
+ms.sourcegitcommit: 26f4e52f3dd008b51b7eae7b634f0216eec6200e
 translationtype: HT
 ---
 # <a name="separating-configuration-and-environment-data"></a>構成データと環境データの分離
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
-組み込みの DSC **ConfigurationData** パラメーターを使用して、構成内で使用可能なデータを定義することができます。 これにより、複数のノードや異なる環境で使用可能な 1 つの構成を作成できます。 たとえば、アプリケーションを開発している場合は、開発環境と運用環境の両方に 1 つの構成を使用し、構成データを使用して各環境のデータを指定することができます。
+組み込みの DSC **ConfigurationData** パラメーターを使用して、構成内で使用可能なデータを定義することができます。 これにより、複数のノードや異なる環境で使用可能な&1; つの構成を作成できます。 たとえば、アプリケーションを開発している場合は、開発環境と運用環境の両方に&1; つの構成を使用し、構成データを使用して各環境のデータを指定することができます。
 
-簡単な例で仕組みを見てみましょう。 一部のノードには **IIS** を、他のノードには **Hyper-V** を存在させる 1 つの構成を作成します。 
+簡単な例で仕組みを見てみましょう。 一部のノードには **IIS** を、他のノードには **Hyper-V** を存在させる&1; つの構成を作成します。 
 
 ```powershell
 Configuration MyDscConfiguration {
@@ -46,7 +46,7 @@ $MyData =
         @{
             NodeName    = 'VM-1'
             Role = 'WebServer'
-        }
+        },
 
         @{
             NodeName    = 'VM-2'
@@ -66,7 +66,7 @@ MyDscConfiguration -ConfigurationData $MyData
 
 DSC 構成は、構成のコンパイル時に指定した **ConfigurationData** という名前のパラメーターを受け取ります。 構成をコンパイルする方法の詳細については、「[DSC 構成](configurations.md)」を参照してください。
 
-**ConfigurationData** パラメーターはハッシュテーブルであり、**AllNodes** という名前のキーが少なくとも 1 つ必要です。 その他のキーを含めることもできます。
+**ConfigurationData** パラメーターはハッシュテーブルであり、**AllNodes** という名前のキーが少なくとも&1; つ必要です。 その他のキーを含めることもできます。
 
 ```powershell
 $MyData = 
@@ -76,7 +76,7 @@ $MyData =
 }
 ```
 
-**AllNodes** キーの値は配列です。 この配列の各要素もハッシュ テーブルであり、**NodeName** という名前のキーが少なくとも 1 つ必要です。
+**AllNodes** キーの値は配列です。 この配列の各要素もハッシュ テーブルであり、**NodeName** という名前のキーが少なくとも&1; つ必要です。
 
 ```powershell
 $MyData = 
@@ -183,7 +183,7 @@ $MyData =
         @{
             NodeName    = 'VM-1'
             FeatureName = 'Web-Server'
-        }
+        },
 
         @{
             NodeName    = 'VM-2'
@@ -201,7 +201,7 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 ## <a name="using-configurationdata-variables-in-a-configuration"></a>構成での ConfigurationData 変数の使用
 
-DSC には、構成スクリプトで使用できる 3 つの特殊な変数 **$AllNodes**、**$Node**、および**$ConfigurationData** が用意されています。
+DSC には、構成スクリプトで使用できる&3; つの特殊な変数 **$AllNodes**、**$Node**、および**$ConfigurationData** が用意されています。
 
 - **$AllNodes** は、**ConfigurationData** で定義されたノードのコレクション全体を参照します。 **.Where()** と **.ForEach()** を使用すると、**AllNodes** コレクションをフィルター処理できます。
 - **Node** は、**.Where()** または **.ForEach()** を使用してフィルター処理された後の **AllNodes** コレクション内にある特定のエントリを参照します。
@@ -209,9 +209,9 @@ DSC には、構成スクリプトで使用できる 3 つの特殊な変数 **$
 
 ## <a name="devops-example"></a>DevOps の例
 
-1 つの構成を使用して Web サイトの開発環境と運用環境の両方を設定する完全な例を見てみましょう。 開発環境では、IIS と SQL Server の両方が 1 つのノードにインストールされています。 運用環境では、IIS と SQL は別々のノードにインストールされています。 .psd1 構成データ ファイルを使用して、この 2 つの異なる環境のデータを指定します。
+1 つの構成を使用して Web サイトの開発環境と運用環境の両方を設定する完全な例を見てみましょう。 開発環境では、IIS と SQL Server の両方が&1; つのノードにインストールされています。 運用環境では、IIS と SQL は別々のノードにインストールされています。 .psd1 構成データ ファイルを使用して、この&2; つの異なる環境のデータを指定します。
 
-### <a name="configuration-data-file"></a>構成データ ファイル
+ ### <a name="configuration-data-file"></a>構成データ ファイル
 
 開発環境と運用環境を、`DevProdEnvData.psd1` という名前のファイルに次のように定義します。
 
@@ -237,7 +237,7 @@ DSC には、構成スクリプトで使用できる 3 つの特殊な変数 **$
             Role            = "Web"
             SiteContents    = "C:\Website\Prod\SiteContents\"
             SitePath        = "\\Prod-IIS\Website\"
-        }
+        },
 
         @{
             NodeName         = "Dev"
@@ -250,23 +250,22 @@ DSC には、構成スクリプトで使用できる 3 つの特殊な変数 **$
     )
 
 }
-
-    )
-
-}
 ```
 
-### <a name="configuration-file"></a>［構成ファイル］
+### <a name="configuration-script-file"></a>構成スクリプト ファイル
 
-次に、構成において、`DevProdEnvData.psd1` に定義したノードを役割別 (`MSSQL`、`Dev`、またはその両方) にフィルター処理し、役割に応じて構成します。 開発環境では 1 つのノードに SQL Server と IIS の両方がありますが、運用環境では、SQL Server と IIS はそれぞれ 2 つの異なるノードにあります。 `SiteContents` プロパティで指定したように、サイトのコンテンツも異なります。
+次に、.ps1 で定義されている構成において、`DevProdEnvData.psd1` に定義したノードを役割別 (`MSSQL`、`Dev`、またはその両方) にフィルター処理し、役割に応じて構成します。 開発環境では&1; つのノードに SQL Server と IIS の両方がありますが、運用環境では、SQL Server と IIS はそれぞれ&2; つの異なるノードにあります。 `SiteContents` プロパティで指定したように、サイトのコンテンツも異なります。
 
 構成スクリプトの最後の行で、`DevProdEnvData.psd1` を `$ConfigurationData` パラメーターとして渡して、構成を呼び出し (MOF ドキュメントに構成をコンパイルし) ます。
+
+>**注:** この構成には、ターゲット ノードにインストールされるモジュール `xSqlPs` と `xWebAdministration` が必要です。
 
 ```powershell
 Configuration MyWebApp
 {
     Import-DscResource -Module PSDesiredStateConfiguration
     Import-DscResource -Module xSqlPs
+    Import-DscResource -Module xWebAdministration
 
     Node $AllNodes.Where{$_.Role -contains "MSSQL"}.Nodename
    {
@@ -289,7 +288,7 @@ Configuration MyWebApp
         }
    }
 
-   Node $AllNodes.Where($_.Role -contains "Web")
+   Node $AllNodes.Where($_.Role -contains "Web").NodeName
    {
         # Install the IIS role
         WindowsFeature IIS
