@@ -42,18 +42,18 @@ PowerShell と特定の WMF のその他のコンポーネントのさまざま�
 
 | オペレーティング システムのバージョン | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
-| Windows Server 2016 | 箱で出荷 |  |  |  |  |
-| Windows 10 | 箱で出荷 | 箱で出荷  | | | |  
-| Windows Server 2012 R2| はい | はい | 箱で出荷 |  |  |
-| Windows 8.1 | はい | はい |  箱で出荷 |  |  |
-| Windows Server 2012 | はい | はい | はい |  箱で出荷 | |
-| Windows 8 |  |  |  | 箱で出荷 | |
-| Windows Server 2008 R2 SP1 | はい | はい | はい |  はい| 箱で出荷 |
-| Windows 7 SP1  | はい | はい | はい | はい | 箱で出荷 |
-| Windows Server 2008 SP2 | | | | はい | はい |
-| Windows Vista | | | | | はい |
-| Windows Server 2003| | | |  | はい |
-| Windows XP | | | |  | はい |
+| Windows Server 2016 | 出荷時にインストール済み |  |  |  |  |
+| Windows 10 | 出荷時にインストール済み | 出荷時にインストール済み  | | | |  
+| Windows Server 2012 R2| 可 | 可 | 出荷時にインストール済み |  |  |
+| Windows 8.1 | 可 | 可 |  出荷時にインストール済み |  |  |
+| Windows Server 2012 | 可 | 可 | 可 |  出荷時にインストール済み | |
+| Windows 8 |  |  |  | 出荷時にインストール済み | |
+| Windows Server 2008 R2 SP1 | 可 | 可 | 可 |  可| 出荷時にインストール済み |
+| Windows 7 SP1  | 可 | 可 | 可 | 可 | 出荷時にインストール済み |
+| Windows Server 2008 SP2 | | | | 可 | 可 |
+| Windows Vista | | | | | 可 |
+| Windows Server 2003| | | |  | 可 |
+| Windows XP | | | |  | 可 |
 
-**"箱で出荷"**: `specified WMF` の機能は、示されているバージョンの Windows および Windows Server に付属しています。
-したがって、示されているオペレーティング システムのバージョンには、`specified WMF` をインストールする必要はありません。
+**"出荷時にインストール済み"**: `指定されたWMF` の機能は、示されているバージョンの Windows および Windows Server に付属しています。
+したがって、示されているオペレーティング システムのバージョンには、`指定されたWMF` をインストールする必要はありません。
