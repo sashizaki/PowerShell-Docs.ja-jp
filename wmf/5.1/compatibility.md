@@ -18,21 +18,21 @@ translationtype: HT
 
 | オペレーティング システムのバージョン | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
-| Windows Server 2016 | 箱で出荷* |  |  |  |  |
-| Windows 10 | 箱で出荷* | 箱で出荷*  | | | |  
-| Windows Server 2012 R2| はい | はい | 箱で出荷 |  |  |
-| Windows 8.1 | はい | はい |  箱で出荷 |  |  |
-| Windows Server 2012 | はい | はい | はい |  箱で出荷 | |
-| Windows 8 |  |  |  | 箱で出荷 | |
-| Windows Server 2008 R2 SP1 | はい | はい | はい |  はい| 箱で出荷 |
-| Windows 7 SP1  | はい | はい | はい | はい | 箱で出荷 |
-| Windows Server 2008 SP2 | | | | はい | はい |
-| Windows Vista | | | | | はい |
-| Windows Server 2003| | | |  | はい |
-| Windows XP | | | |  | はい |
+| Windows Server 2016 | 出荷時にインストール済み* |  |  |  |  |
+| Windows 10 | 出荷時にインストール済み* | 出荷時にインストール済み*  | | | |  
+| Windows Server 2012 R2| 可 | 可 | 出荷時にインストール済み |  |  |
+| Windows 8.1 | 可 | 可 |  出荷時にインストール済み |  |  |
+| Windows Server 2012 | 可 | 可 | 可 |  出荷時にインストール済み | |
+| Windows 8 |  |  |  | 出荷時にインストール済み | |
+| Windows Server 2008 R2 SP1 | 可 | 可 | 可 |  可| 出荷時にインストール済み |
+| Windows 7 SP1  | 可 | 可 | 可 | 可 | 出荷時にインストール済み |
+| Windows Server 2008 SP2 | | | | 可 | 可 |
+| Windows Vista | | | | | 可 |
+| Windows Server 2003| | | |  | 可 |
+| Windows XP | | | |  | 可 |
 
 
-"箱で出荷*" について: WMF 5.0 の機能は元の Windows 10 RTM バージョンに含まれていました。
+"出荷時にインストール済み*" について: WMF 5.0 の機能は元の Windows 10 RTM バージョンに含まれていました。
 WMF 5.1 の機能は Windows Server 2016 と Windows 10 Anniversary Edition に含まれていました。 これらのオペレーティング システム バージョンの場合、更新プログラムは Windows Update 経由で提供されるため、WMF 5.1 は該当しません。
 
 
