@@ -5,11 +5,11 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: "PowerShell, コマンドレット, JEA"
-ms.date: 2016-12-05
+ms.date: 2017-03-07
 title: "JEA の前提条件"
 ms.technology: powershell
-ms.openlocfilehash: d463e6cdfeb78a32eab9055b035747928d38e783
-ms.sourcegitcommit: cfe32f213819ae76de05da564c3e2c4b7ecfda2f
+ms.openlocfilehash: e4ae3ebd0b2c330a76d3183e6c9c1106f769feb3
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="prerequisites"></a>前提条件
@@ -20,6 +20,7 @@ Just Enough Administration は、Windows PowerShell 5.0 以降に含まれる機
 このトピックでは、JEA の使用を開始するために満たす必要のある前提条件について説明します。
 
 ## <a name="install-jea"></a>JEA のインストール
+
 JEA は Windows PowerShell 5.0 以降で利用できますが、完全な機能のためには、システムで使用できる最新バージョンの PowerShell をインストールすることをお勧めします。
 次の表は、Windows Server での JEA の可用性を示します。
 
@@ -46,6 +47,7 @@ Windows 7                 | WMF 5.1 の制限機能<sup>2</sup>
 <sup>2</sup> Windows 7 の仮想アカウントを使うように JEA を構成することはできません。
 
 ### <a name="check-which-version-of-powershell-is-installed"></a>インストールされている PowerShell のバージョンを確認する
+
 システムにインストールされている PowerShell のバージョンを確認するには、Windows PowerShell プロンプトで `$PSVersionTable` 変数を調べます。
 
 ```powershell
@@ -60,6 +62,7 @@ Major  Minor  Build  Revision
 エクスペリエンスを最善にし、すべての最新機能にアクセスするには、可能な場合は PowerShell バージョン **5.1** にアップグレードすることをお勧めします。
 
 ### <a name="install-windows-management-framework"></a>Windows Management Framework をインストールする
+
 古いバージョンの PowerShell を実行している場合、最新の Windows Management Framework (WMF) 更新プログラムにシステムを更新する必要があります。
 更新パッケージおよび最新の WMF リリース ノートへのリンクは、[ダウンロード センター](https://aka.ms/WMF5)にあります。
 
@@ -68,6 +71,7 @@ Major  Minor  Build  Revision
 Windows 10 のユーザーは、現在のバージョンの Windows PowerShell を取得するには、最新の機能更新をインストールする必要があります。
 
 ## <a name="enable-powershell-remoting"></a>PowerShell リモート処理を有効にする
+
 PowerShell リモート処理は、JEA 構築の基盤を提供します。
 したがって、JEA を使用する前に、システムで PowerShell リモート処理を有効にし、[適切にセキュリティ保護する](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)必要があります。
 
@@ -79,6 +83,7 @@ Enable-PSRemoting
 ```
 
 ## <a name="enable-powershell-module-and-script-block-logging-optional"></a>PowerShell モジュールおよびスクリプト ブロック ログを有効にする (省略可能)
+
 次の手順で、システム上のすべての PowerShell 操作のログを有効にします。
 PowerShell モジュール ログは JEA には必要ありませんが、ユーザーが実行するコマンドが中央の場所に記録されるように有効にすることを強くお勧めします。
 
@@ -104,5 +109,6 @@ PowerShell モジュール ログは JEA には必要ありませんが、ユー
 - [セッション構成ファイルを作成する](session-configurations.md)
 
 ## <a name="see-also"></a>関連項目
+
 - [PowerShell リモート処理と WinRM セキュリティに関する追加情報](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ the Blue Team* のセキュリティに関するブログ投稿](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
