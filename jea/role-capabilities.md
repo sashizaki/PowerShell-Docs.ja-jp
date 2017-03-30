@@ -5,18 +5,18 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: "PowerShell, コマンドレット, JEA"
-ms.date: 2016-12-05
+ms.date: 2017-03-07
 title: "JEA ロール機能"
 ms.technology: powershell
-ms.openlocfilehash: e67b38344e2d1d0d347c7850f2097e31c0945e15
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
+ms.openlocfilehash: 49623e69b186fd09679bf7e0186dec3961e719ba
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="jea-role-capabilities"></a>JEA ロール機能
 
 > 適用先: Windows PowerShell 5.0
 
-JEA エンドポイントを作成するとき、JEA セッションでユーザーに許可する*操作*を説明する "ロール機能" を&1; つ以上定義する必要があります。
+JEA エンドポイントを作成するとき、JEA セッションでユーザーに許可する*操作*を説明する "ロール機能" を 1 つ以上定義する必要があります。
 ロール機能は、.psrc 拡張子を持つ PowerShell データ ファイルです。このファイルには、接続ユーザーが利用できるすべてのコマンドレット、関数、プロバイダー、外部プログラムが列挙されています。
 
 このトピックでは、JEA ユーザーの PowerShell ロール機能ファイルを作成する方法について説明します。
@@ -107,7 +107,7 @@ VisibleCmdlets フィールドで下のあらゆる要素を組み合わせる�
 
 > [!WARNING]
 > セキュリティのベスト プラクティスとしては、表示されるコマンドレットまたは関数を定義するときは、ワイルドカードの使用は推奨されません。
-> 代わりに、命名規則が同じ他のコマンドが意図せずに許可されるような状況を回避するために、問題のないコマンドを&1; つずつ明示的にリストアップしてください。
+> 代わりに、命名規則が同じ他のコマンドが意図せずに許可されるような状況を回避するために、問題のないコマンドを 1 つずつ明示的にリストアップしてください。
 
 ValidatePattern と ValidateSet の両方を同じコマンドレットまたは関数に適用することはできません。
 
@@ -128,7 +128,7 @@ VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Co
 実行可能ファイルの多くでは、さまざまなパラメーターを指定することで、現在の状態の読み取りとその変更の両方が許可されます。
 
 たとえば、ファイル サーバーの管理者ロールで、ローカル コンピューターでホストされているネットワーク共有を確認しなければならないとします。
-確認方法の&1; つは `net share` を使用することです。
+確認方法の 1 つは `net share` を使用することです。
 ただし、net.exe の許可はとても危険です。このコマンドを利用すると、`net group Administrators unprivilegedjeauser /add` の管理者特権が簡単に得られる可能性があるからです。
 より良い方法は、[Get-SmbShare](https://technet.microsoft.com/en-us/library/jj635704.aspx) を許可することです。これで同じ結果が得られますが、範囲がはるかに限られます。
 
@@ -236,28 +236,37 @@ PowerShell モジュール、モジュール マニフェスト、PSModulePath �
 
 ルールは次のようになります。
 
-
-1. あるコマンドレットが&1; つのロールでのみ表示される場合、該当するあらゆるパラメーター制約の下でユーザーに表示されます。
+1. あるコマンドレットが 1 つのロールでのみ表示される場合、該当するあらゆるパラメーター制約の下でユーザーに表示されます。
 2. あるコマンドレットが複数のロールで表示されるとき、そのコマンドレットで各ロールに同じ制約が与えられる場合、その制約の下でユーザーに表示されます。
 3. あるコマンドレットが複数のロールで表示されるとき、ロールごとにパラメーター セットが異なる場合、そのコマンドレットとすべてのロールで定義されているすべてのパラメーターがユーザーに表示されます。 1 つのロールにパラメーターの制約がない場合、すべてのパラメーターが許可されます。
 4. あるロールであるコマンドレット パラメーターの検証セットまたは検証パターンが定義されているとき、別のロールでそのパラメーターが許可されるが、パラメーター値が制約されない場合、その検証セットまたはパターンは無視されます。
-5. 複数のロールの同じコマンドレット パラメーターに&1; つの検証セットが定義されている場合、すべての検証セットのすべての値が許可されます。
-6. 複数のロールの同じコマンドレット パラメーターに&1; つの検証パターンが定義されている場合、いずれかのパターンに一致するすべての値が許可されます。
-7. 複数のロールに&1; つの検証セットが定義されているとき、別のロールで、同じコマンドレット パラメーターに&1; つの検証パターンが定義されている場合、その検証セットは無視され、残りの検証パターンにルール (6) が適用されます。
+5. 複数のロールの同じコマンドレット パラメーターに 1 つの検証セットが定義されている場合、すべての検証セットのすべての値が許可されます。
+6. 複数のロールの同じコマンドレット パラメーターに 1 つの検証パターンが定義されている場合、いずれかのパターンに一致するすべての値が許可されます。
+7. 複数のロールに 1 つの検証セットが定義されているとき、別のロールで、同じコマンドレット パラメーターに 1 つの検証パターンが定義されている場合、その検証セットは無視され、残りの検証パターンにルール (6) が適用されます。
 
-下の表は、このロジックの実際の使用例です。1 つの JEA セッションで、A と B という&2; つのロールが両方とも&1; ユーザーに割り当てられています。
+以下には、これらの規則に従ってロールをマージする方法の例を示します。
 
-ルール | ロール A VisibleCmdlets                                                                          | ロール B VisibleCmdlets                                                                             | 効果的なユーザー アクセス許可
------|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|----------------------------
-1 で保護されたプロセスとして起動されました    | `Get-Service`                                                                                  | なし                                                                                               | `Get-Service`
-1 で保護されたプロセスとして起動されました    | なし                                                                                            | `Get-Service`                                                                                     | `Get-Service`
-2    | `Get-Service`                                                                                  | `Get-Service`                                                                                     | `Get-Service`
-3    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                             | `Get-Service`                                                                                     | `Get-Service`
-3    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                             | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'Name' }}`                                       | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }, @{ Name = 'Name' }}`
-4    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`                                | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName' }}`
-5    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DHCP Client' }}`   | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DHCP Client' }}`
-6    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'DNS.*' }}`  | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = '(DNS.*)\|(contoso.*)' }}`
-7    | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'contoso.*' }}` | `@{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = '(DNS.*)\|(contoso.*)' }}`
+```powershell
+# Role A Visible Cmdlets
+$roleA = @{
+    VisibleCmdlets = 'Get-Service',
+                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client' } }
+}
+
+# Role B Visible Cmdlets
+$roleB = @{
+    VisibleCmdlets = @{ Name = 'Get-Service'; Parameters = @{ Name = 'DisplayName'; ValidatePattern = 'DNS.*' } },
+                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
+}
+
+# Resulting permisisons for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
+$mergedAandB = @{
+    VisibleCmdlets = 'Get-Service',
+                     @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
+}
+```
 
 
 

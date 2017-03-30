@@ -1,16 +1,15 @@
 ---
-description: 
-manager: dongill
+manager: carmonm
 ms.topic: article
 author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: "PowerShell, コマンドレット, JEA"
-ms.date: 2016-12-05
+ms.date: 2017-03-07
 title: "Just Enough Administration の概要"
 ms.technology: powershell
-ms.openlocfilehash: 742f88bd130a9bcb577914c842735e8c47ca53e6
-ms.sourcegitcommit: cfe32f213819ae76de05da564c3e2c4b7ecfda2f
+ms.openlocfilehash: 2206ccbbcf5996b1bf8db9a46acab2f18f8020dd
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="just-enough-administration"></a>Just Enough Administration
@@ -18,7 +17,7 @@ translationtype: HT
 Just Enough Administration (JEA) は、PowerShell で管理できるものすべてに対する委任された管理を有効にするセキュリティ テクノロジです。
 JEA を使用すると、以下のことを実行できます。
 
-- **お使いのコンピューター上の管理者の数を減らします**。このためには、通常のユーザーに代わって特権の必要な操作を実行する仮想アカウントを活用します。
+- 通常のユーザーに代わって特権の必要な操作を実行する仮想アカウントまたはグループの管理されたサービス アカウントを活用することによって、**お使いのコンピューター上の管理者の数を減らします。**
 - **ユーザーが実行できる操作を制限します**。ここでは、ユーザーが実行できるコマンドレット、関数、および外部コマンドを指定できます。
 - トランスクリプションとログを使用して、**ユーザーの操作を把握します**。このトランスクリプションとログは、ユーザーがセッション中にどんなコマンドを実行したかを正確に示します。
 
@@ -52,3 +51,7 @@ JEA の使用要件、JEA エンドポイントの作成、使用、監査方法
 - [JEA の使用](using-jea.md) - JEA のさまざまな使用方法について説明します。
 - [セキュリティの考慮事項](security-considerations.md) - JEA 構成オプションのセキュリティ ベスト プラクティスとその意味について確認します。
 - [JEA の監査とレポート](audit-and-report.md) - JEA エンドポイントの監査とレポートの方法について説明します。
+
+## <a name="samples-and-dsc-resource"></a>サンプルと DSC のリソース
+
+JEA 構成の例と JEA DSC リソースは [JEA GitHub リポジトリ](https://github.com/PowerShell/JEA)で確認できます。

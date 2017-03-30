@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 162ae26dec67e8259661bb58c1b713818627220b
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
+ms.openlocfilehash: e6ea0992f90a72da6426d9112950c925ab6cd32b
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="credentials-options-in-configuration-data"></a>構成データでの資格情報オプション
@@ -82,10 +82,8 @@ configuration unencryptedPasswordDemo
             Ensure = "Present"
             MembersToInclude = "User1"
         }
-
     }
 
-    
     Node "TestMachine2"
     {
         # Now we'll use a node-specific password to this machine
@@ -112,7 +110,6 @@ configuration unencryptedPasswordDemo
             Ensure = "Present"
             MembersToInclude = "User2"
         }
-      
     }
 
 }
@@ -160,7 +157,8 @@ Group [String] #ResourceName
 ローカル グループを作成し、メンバーを追加または削除できます。
 `Credential` プロパティと、自動 `PsDscRunAsCredential` プロパティの両方を受け取ります。
 ただし、リソースでは `Credential` プロパティのみが使用されます。
-`PsDscRunAsCredential` の詳細については、[WMF のリリース ノート](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_runas)を参照してください。
+
+`PsDscRunAsCredential`プロパティの詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
 
 ## <a name="example-the-group-resource-credential-property"></a>例: Group リソース資格情報プロパティ
 
@@ -223,7 +221,7 @@ In order to suppress the warning, you can add a property named
 for node 'localhost'.
 ```
 
-この例には、次の&2; つの問題があります。
+この例には、次の 2 つの問題があります。
 1.  プレーンテキスト パスワードが推奨されないことを説明するエラー。
 2.  ドメイン資格情報を使用しないよう勧める警告。
 
@@ -279,7 +277,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 
 **DSC リソースで資格情報を使用する場合、可能な場合は、ドメイン アカウントではなくローカル アカウントを選択します。**
 
-資格情報の `Username` プロパティに ’\' または '@' がある場合、DSC ではその資格情報はドメイン アカウントとして処理されます。
+資格情報の `Username` プロパティに \' または '@' がある場合、DSC ではその資格情報はドメイン アカウントとして処理されます。
 ユーザー名のドメイン部分には、"localhost"、"127.0.0.1"、および "::1" の例外があります。
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser

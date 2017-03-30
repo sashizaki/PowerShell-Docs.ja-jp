@@ -5,11 +5,11 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: "PowerShell, コマンドレット, JEA"
-ms.date: 2016-12-05
+ms.date: 2017-03-08
 title: "JEA セッションの構成"
 ms.technology: powershell
-ms.openlocfilehash: 32602293afd3a94767682d32a053281ec021cc33
-ms.sourcegitcommit: f06ef671c0a646bdd277634da89cc11bc2a78a41
+ms.openlocfilehash: e98214d1777a1530b5a18ac9df1a6185d6d73979
+ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
 translationtype: HT
 ---
 # <a name="jea-session-configurations"></a>JEA セッションの構成
@@ -156,7 +156,7 @@ UserDriveMaximumSize = 524288000
 
 セッション構成ファイルのロールの定義では、*ロール*への*ユーザー*のマッピングを定義します。
 このフィールドに含まれるすべてのユーザーまたはグループには、登録時に JEA エンドポイントへのアクセス許可を自動的に付与されます。
-各ユーザーまたはグループは、ハッシュ テーブルのキーとして含まれるのは&1; 回だけですが、複数のロールを割り当てることができます。
+各ユーザーまたはグループは、ハッシュ テーブルのキーとして含まれるのは 1 回だけですが、複数のロールを割り当てることができます。
 ロール機能の名前は、ロール機能ファイルの名前から .psrc 拡張子を除いたものにする必要があります。
 
 ```powershell
@@ -175,55 +175,13 @@ RoleDefinitions = @{
 システムにおいて同じフラット名で複数のロール機能を使用できる場合、PowerShell は暗黙的な検索順序を使って有効なロール機能ファイルを選びます。
 同じ名前のすべてのロール機能ファイルにアクセスできるようには**なりません**。
 
-JEA ロール機能の検索順序は、`$env:PSModulePath` 内のパスの順序と、親モジュールの名前によって決まります。
-PowerShell での既定のモジュール パスを次に示します。
+JEA は `$env:PSModulePath` 環境変数を使用して、ロール機能ファイルをスキャンするパスを決定します。
+各パス内で、JEA は「RoleCapabilities」サブフォルダを含む有効な PowerShell モジュールを検索します。
+モジュールのインポートと同様に、JEA は同じ名前のカスタム ロール機能よりも Windows に同梱されているロール機能を優先します。
+他のすべての名前付け競合の優先順位は、Windows がディレクトリ内のファイルを列挙する順序 (アルファベット順とは限りません) によって決まります。
+希望するファイル名と一致している、最初に検出されたロール機能ファイルが接続ユーザーに対して使われます。
 
-```powershell
-PS C:\> $env:PSModulePath
-
-
-C:\Users\Alice\Documents\WindowsPowerShell\Modules;C:\Program Files\WindowsPowerShell\Modules;C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\
-```
-
-PSModulePath の一覧で先 (左) に出現するパスの方が、右側のパスより高い優先順位です。
-
-各パス内には、0 個以上の PowerShell モジュールが存在できます。
-ロール機能は、指定した名前に一致するロール機能ファイルを含む最初のモジュールからアルファベット順に選択されます。
-
-この優先順位を次の例で説明します。プラス記号 (+) はフォルダーを示し、マイナス記号 (-) はファイルを示します。
-
-```
-+ C:\Program Files\WindowsPowerShell\Modules
-    + ContosoMaintenance
-        - ContosoMaintenance.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - DnsOperator.psrc
-            - DnsAuditor.psrc
-    + FabrikamModule
-        - FabrikamModule.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - FileServerAdmin.psrc
-
-+ C:\Windows\System32\WindowsPowerShell\v1.0\Modules
-    + BuiltInModule
-        - BuiltInModule.psd1
-        + RoleCapabilities
-            - DnsAdmin.psrc
-            - OtherBuiltinRole.psrc
-```
-
-このシステムには複数のロール機能ファイルがインストールされています。
-セッション構成ファイルが "DnsAdmin" ロールへのユーザー アクセスを提供する場合はどうなるでしょう。
-
-
-有効なロール機能ファイルは、"C:\\Program Files\\WindowsPowerShell\\Modules\\ContosoMaintenance\\RoleCapabilities\\DnsAdmin.psrc" にあるものです。
-
-理由がわからない場合は、優先順位の 2 つの順序を思い出してください。
-
-1. `$env:PSModulePath` 変数では、Program Files フォルダーが System32 フォルダーより前にあるので、Program Files フォルダーのファイルが優先されます。
-2. アルファベット順では、ContosoMaintenance モジュールの方が FabrikamModule より前なので、ContosoMaintenance から DnsAdmin ロールが選択されます。
+2 つ以上のロール機能が同じ名前を共有していると、ロール機能の検索順序は確定的ではないため、コンピューター上のロール機能が固有の名前を持っているか確認することを**強くお勧め**します。
 
 ### <a name="conditional-access-rules"></a>条件付きアクセス規則
 
