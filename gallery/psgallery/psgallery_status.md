@@ -9,20 +9,22 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgallery_status
 ms.technology: powershell
-ms.openlocfilehash: 9bc83e9cf0f8a3f29e9bcc8fd1d578abb2125e20
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
+ms.openlocfilehash: 48f554793d25c2d5ea10bc202489845f4225b2b9
+ms.sourcegitcommit: ba8ed836799ef465e507fa1b8d341ba38459d863
 translationtype: HT
 ---
 <a name="powershell-gallery-status"></a>PowerShell ギャラリーの状態
 =========================
 
-## <a name="03272017---unable-to-see-individual-module-and-script-pages"></a>2017/03/27 - 個々のモジュールとスクリプトのページを見ることができません
+## <a name="03272017---resolved-unable-to-see-individual-module-and-script-pages"></a>2017/03/27 - 解決済み - 個々のモジュールとスクリプトのページを表示できません
 
-__影響の概要__: https://www.powershellgallery.com の個々のモジュールとスクリプト ページへのダイレクト リンクは、現在機能していません。 この問題は現在、すべての地域で報告されています。 また、この問題はすべての PowerShellGet コマンドレット (すなわち、Install-Module、Install-Script、Update-Module、Update-Script、Publish-Module、Publish-Scirpt) に影響を与えますが、引き続き動作します。
+__影響の概要__: https://www.powershellgallery.com の個々のモジュールとスクリプト ページへのダイレクト リンクが破損していました。 この問題はすべての地域で報告されていました。 この問題は、どの PowerShellGet コマンドレットにも影響を与えていませんでした。すなわち、Install-Module、Install-Script、Update-Module、Update-Script、Publish-Module、Publish-Script は引き続き動作していました。
 
 __根本的な原因__: エンジニアは、ページ上にある Facebook などのソーシャル メディア ボタンの表示が原因であることが確認されています。  
 
-__解決策__: エンジニアがこの問題を解決するための修正に取り組んでいます。  
+__解決策__: エンジニアは、Facebook のカウント情報を無効にして問題を解決しました。
+
+__次のステップ__: 内部的な追跡の問題をオープンにし、Facebook API の使用内容を修正しました。
 
 ## <a name="12152016---unable-to-send-emails-via-powershellgallery-website"></a>2016 年 12 月 15 日 - PowerShellGallery Web サイトからメールを送信できない
 

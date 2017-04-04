@@ -9,20 +9,22 @@ ms.date: 2016-10-14
 contributor: manikb
 title: psgalleryint_status
 ms.technology: powershell
-ms.openlocfilehash: a889620aff415146d1808df052ffc43732640ae7
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
+ms.openlocfilehash: 58f06ca061a4f171288e75b30698910c701f1da1
+ms.sourcegitcommit: ba8ed836799ef465e507fa1b8d341ba38459d863
 translationtype: HT
 ---
 <a name="powershell-gallery-status"></a>PowerShell ギャラリーの状態
 =========================
 
-## <a name="03272017---unable-to-see-individual-module-and-script-pages"></a>2017/03/27 - 個々のモジュールとスクリプトのページを見ることができません
+## <a name="03272017---resolved-unable-to-see-individual-module-and-script-pages"></a>2017/03/27 - 解決済み - 個々のモジュールとスクリプトのページを表示できません
 
-__影響の概要__: https://www.powershellgallery.com の個々のモジュールとスクリプト ページへのダイレクト リンクは、現在機能していません。 この問題は現在、すべての地域で報告されています。 また、この問題はすべての PowerShellGet コマンドレット (すなわち、Install-Module、Install-Script、Update-Module、Update-Script、Publish-Module、Publish-Scirpt) に影響を与えますが、引き続き動作します。
+__影響の概要__: https://www.powershellgallery.com の個々のモジュールとスクリプト ページへのダイレクト リンクが破損していました。 この問題はすべての地域で報告されていました。 この問題は、どの PowerShellGet コマンドレットにも影響を与えていませんでした。すなわち、Install-Module、Install-Script、Update-Module、Update-Script、Publish-Module、Publish-Script は引き続き動作していました。
 
 __根本的な原因__: エンジニアは、ページ上にある Facebook などのソーシャル メディア ボタンの表示が原因であることが確認されています。  
 
-__解決策__: エンジニアがこの問題を解決するための修正に取り組んでいます。 
+__解決策__: エンジニアは、Facebook のカウント情報を無効にして問題を解決しました。
+
+__次のステップ__: 内部的な追跡の問題をオープンにし、Facebook API の使用内容を修正しました。
 
 ## <a name="12152016---unable-to-send-emails-via-powershellgallery-website"></a>2016 年 12 月 15 日 - PowerShellGallery Web サイトからメールを送信できない
 
@@ -33,7 +35,7 @@ __次の手順__: この間に [Contact Owners (所有者に連絡)]、[Manage O
 
 
 ## <a name="8102016---resolved-unable-to-send-emails-to-cgadminmicrosoftcom"></a>2016 年 8 月 10 日 - 解決: 電子メールを cgadmin@microsoft.com に送信できない
-__影響の概要__: 2016 年 8 月 5 日から 2016 年 8 月 10 日までの期間中にお客様は cgadmin@microsoft.com に電子メールを送信することも、[お問い合わせ先] 機能を使用することもできませんでした。  
+__影響の概要__: 2016 年 8 月 5 日から 2016 年 8 月 10 日までの期間中、お客様による cgadmin@microsoft.com に電子メールの送信、または [お問い合わせ先] 機能の使用ができませんでした。  
 __根本的な原因__: エンジニアは、電子メール アカウントの構成の変更に原因があることを突き止めました。  
 __解決策__: エンジニアは、構成の問題を解決するための作業を行いました。  
 __次の手順__: この期間中に [お問い合わせ先] リンクを使用、または cgadmin@microsoft.com にメールを送信したお客様には応答できていませんので、やり直してください。 ご不便をおかけして申し訳ございませんでした。

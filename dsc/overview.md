@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: d215289675ee9c2b7121fa3d785549c48733d2e8
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
+ms.openlocfilehash: ec773688540a3f4a2f128f66d311926fd5b9a935
+ms.sourcegitcommit: 6d27d6db5ab0e2d5b6c7229e2e2d2e57915ea22d
 translationtype: HT
 ---
 # <a name="windows-powershell-desired-state-configuration-overview"></a>Windows PowerShell Desired State Configuration の概要 
@@ -18,8 +18,8 @@ translationtype: HT
 DSC は PowerShell による管理プラットフォームであり、IT と開発インフラストラクチャを構成を用いてコードで管理できます。
 
 - DSC を使用するビジネス上の利点の概要については、「[意思決定者向け Desired State Configuration の概要](decisionMaker.md)」をご覧ください。
-- DSC を使用するエンジニアリングの利点の概要については、 [エンジニア向けの Desired State Configuration の概要]DscForEngineers.md をご覧ください。
-- DSC を簡単に使用するには、[DSC クイック スタート]quickStart.md をご覧ください。
+- DSC を使用するエンジニアリングの利点の概要については、[「エンジニア向けの Desired State Configuration の概要」](DscForEngineers.md) をご覧ください。
+- DSC を簡単に使用するには、[「DSC クイック スタート」](quickStart.md) をご覧ください。
 
 ## <a name="key-concepts"></a>主要概念
 
