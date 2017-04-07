@@ -5,11 +5,13 @@
 
 # [構成](configurations.md)
 ## [構成の適用](enactingConfigurations.md)
+## [構成データと環境データの分離](separatingEnvData.md)
 ## [複数のバージョンがあるリソースの使用](sxsResource.md)
 ## [ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)
 ## [ノードの相互依存関係の指定](crossNodeDependencies.md)
 ## [構成データ](configData.md)
 ### [構成データでの資格情報オプション](configDataCredentials.md)
+## [構成を入れ子にする](compositeConfigs.md)
 ## [構成 MOF ファイルのセキュリティ保護](secureMOF.md)
 ## [部分構成](partialConfigs.md)
 ## [DSC 構成のヘルプの作成](configHelp.md)
