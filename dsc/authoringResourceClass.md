@@ -7,8 +7,8 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: a8c2094cbef1bb14c4a9082ff78fae78ec0c2e65
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.openlocfilehash: feec9b9e242ef6f43c272bfeb179d11944d1cb06
+ms.sourcegitcommit: 1002c473b88abb209e4188bb626d93675c3614e2
 translationtype: HT
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell クラスを使用したカスタム DSC リソースの記述
@@ -22,6 +22,8 @@ Windows PowerShell 5.0 の PowerShell クラスの導入により、クラスを
 このトピックでは、指定されたパス内のファイルを管理する **FileResource** という名前の単純なリソースを作成します。
 
 DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」をご覧ください。
+
+>**注:**クラスベースのリソースでは、汎用コレクションはサポートされていません。
 
 ## <a name="folder-structure-for-a-class-resource"></a>クラス リソースのフォルダー構造
 
