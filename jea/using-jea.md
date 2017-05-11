@@ -8,9 +8,11 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2016-12-05
 title: "JEA の使用"
 ms.technology: powershell
-ms.openlocfilehash: 4f1fad1d28b9ced462c392210449d73af325b132
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
-translationtype: HT
+ms.openlocfilehash: 62e5f74d60b2fd09e302ecc12996f97e90b73f2f
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="using-jea"></a>JEA の使用
 
@@ -43,7 +45,7 @@ PowerShell プロンプトが `[localhost]: PS>` に変わると、リモート 
 
 JEA セッションは NoLanguage モードで動作するので、PowerShell の一般的な使い方の一部を利用できない場合があることに注意してください。
 たとえば、変数を使ってデータを格納したり、コマンドレットから返されたオブジェクトのプロパティを調べたりすることはできません。
-次の例では、今日 PowerShell を使って NoLanguage モードで動作する同じコマンドを取得する&2; つの方法を示します。
+次の例では、今日 PowerShell を使って NoLanguage モードで動作する同じコマンドを取得する 2 つの方法を示します。
 
 ```powershell
 # Using variables in NoLanguage mode is disallowed, so the following will not work
@@ -116,7 +118,7 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 JEA は、社内ヘルプデスク アプリや Web サイトなどのオートメーション システムやユーザー アプリケーションでも使用できます。
 方法は制約のない PowerShell エンドポイントと対話するアプリの作成と同じですが、JEA ではリモート セッションで実行できるコマンドが制限されることに注意する必要があります。
 
-簡単な&1; 回限りのタスクでは、[Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) コマンドを使って一連のコマンドを JEA で実行できます。
+簡単な 1 回限りのタスクでは、[Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) コマンドを使って一連のコマンドを JEA で実行できます。
 
 ```powershell
 Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Process; Get-Service }
@@ -134,7 +136,6 @@ C# アプリを作成する場合は、[WSManConnectionInfo](https://msdn.micros
 ```csharp
 
 // using System.Management.Automation;
-
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";
 var creds        = // create a PSCredential object here (https://msdn.microsoft.com/en-us/library/system.management.automation.pscredential(v=vs.85).aspx)
@@ -146,7 +147,6 @@ WSManConnectionInfo connectionInfo = new WSManConnectionInfo(
                     "/wsman",              // WSMan Path
                     string.Format(CultureInfo.InvariantCulture, "http://schemas.microsoft.com/powershell/{0}", configName),  // Connection URI with config name
                     creds);                // Credentials
-
 // Now, use the connection info to create a runspace where you can run the commands
 using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 {
@@ -173,7 +173,7 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 
 ## <a name="using-jea-with-powershell-direct"></a>PowerShell Direct での JEA の使用
 
-Windows 10 および Windows Server 2016 の Hyper-V で提供される [PowerShell Direct](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession) 機能を使うと、Hyper-V 管理者は、仮想マシンが別のネットワーク上にある場合でも、PowerShell で VM を管理できます。
+Windows 10 と Windows Server 2016 の Hyper-V には [PowerShell Direct](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession) 機能があります。Hyper-V 管理者はこの機能を使用して、仮想マシンのネットワーク構成やリモート管理設定に関係なく、PowerShell で仮想マシンを管理できます。
 
 JEA で PowerShell Direct を使うと、Hyper-V 管理者に VM への制限付きアクセスを提供できます。これは、VM へのネットワーク接続が失われ、データ センターの管理者がネットワークの設定を修正する必要がある場合に便利です。
 
@@ -192,4 +192,4 @@ Enter-PSSession -VMId $vm.VMId -ConfigurationName 'NICMaintenance' -Credential '
 Hyper-V 管理者によるシステム管理用に、他の権限を持たない専用のローカル ユーザーを作成することを強くお勧めします。
 制約のない PowerShell を使用する場合など、特権のないユーザーでも Windows コンピューターに既定でログインできることに注意してください。
 これにより、ユーザーは、ファイル システム (の一部) を参照し、OS の環境について詳しく知ることができます。
-Hyper-V 管理者が PowerShell Direct と JEA を使って VM だけにアクセスできるようにするには、Hyper-V 管理者の JEA アカウントへのローカル ログオン権限を禁止します。
+Hyper-V 管理者が PowerShell Direct と JEA を使って VM だけにアクセスできるようにするには、Hyper-V 管理者の JEA アカウントへのローカル ログオン権限を禁止する必要があります。

@@ -5,12 +5,14 @@ author: rpsqrd
 ms.author: ryanpu
 ms.prod: powershell
 keywords: "PowerShell, コマンドレット, JEA"
-ms.date: 2017-03-08
+ms.date: 2017-04-25
 title: "JEA セッションの構成"
 ms.technology: powershell
-ms.openlocfilehash: e98214d1777a1530b5a18ac9df1a6185d6d73979
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: 8773096627217663362e61fb158cc900aea20f43
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="jea-session-configurations"></a>JEA セッションの構成
 
@@ -40,7 +42,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 セッション構成ファイルは、任意のテキスト エディターで開くことができます。
 `-SessionType RestrictedRemoteServer` フィールドは、セッション構成がセキュリティ保護された管理のために JEA によって使われることを示します。
-このようにして構成されたセッションは、[NoLanguage モード](https://technet.microsoft.com/en-us/library/dn433292.aspx)で動作し、次の 8 つの既定のコマンドレット (およびエイリアス) のみを使用できます。
+このようにして構成されたセッションは、[NoLanguage モード](https://technet.microsoft.com/en-us/library/dn433292.aspx)で動作し、次の 8 つの既定のコマンド (およびエイリアス) のみを使用できます。
 
 - Clear-Host (cls、clear)
 - Exit-PSSession (exsn、exit)
@@ -139,7 +141,7 @@ MountUserDrive = $true
 ```
 
 既定では、ユーザー ドライブを使用することで、ユーザーごとに最大 50 MB のデータを格納できます。
-*UserDriveMaxmimumSize* フィールドで、ユーザーが使用できるデータの量を制限できます。
+*UserDriveMaximumSize* フィールドで、ユーザーが使用できるデータの量を制限できます。
 
 ```powershell
 # Enables the user drive with a per-user limit of 500MB (524288000 bytes)
@@ -169,6 +171,15 @@ RoleDefinitions = @{
 
 ユーザーがロール定義の複数のグループに所属している場合、それぞれのロールのアクセス許可を付与されます。
 2 つのロールで同じコマンドレットへのアクセスが許可されている場合、最も制限の少ないパラメーター セットがユーザーに付与されます。
+
+ロール定義フィールドでローカル ユーザーまたはグループを指定する場合は、円記号の前に必ず (*localhost* や *.* ではなく) コンピューター名を指定してください。
+コンピューター名を確認するには、`$env:computername` 変数を調べます。
+
+```powershell
+RoleDefinitions = @{
+    'MyComputerName\MyLocalGroup' = @{ RoleCapabilities = 'DnsAuditor' }
+}
+```
 
 ### <a name="role-capability-search-order"></a>ロール機能の検索順序
 上の例で示されているように、ロール機能はロール機能ファイルのフラット名 (拡張子を除いたファイル名) によって参照されます。

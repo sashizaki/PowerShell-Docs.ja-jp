@@ -7,9 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: ec773688540a3f4a2f128f66d311926fd5b9a935
-ms.sourcegitcommit: 6d27d6db5ab0e2d5b6c7229e2e2d2e57915ea22d
-translationtype: HT
+ms.openlocfilehash: efd15e1cee366ee887d302c7e681f18a93c68080
+ms.sourcegitcommit: ee407927101c3b166cc200a39a6ea786a1c21f95
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="windows-powershell-desired-state-configuration-overview"></a>Windows PowerShell Desired State Configuration の概要 
 
@@ -28,9 +30,9 @@ DSC は、システムの構成、展開、および管理に使用する宣言�
 - [構成](configurations.md)は、リソースのインスタンスを定義および構成する宣言型の PowerShell スクリプトです。
     構成を実行すると、DSC (および構成によって呼び出されるリソース) は、構成によってレイアウトされた状態でシステムが存在するように、単に、指定されたことを実現します。 
     DSC 構成は、べき等でもあります。ローカル構成マネージャー (LCM) によって、構成によって宣言された状態でマシンが構成されることが、継続的に保証されます。
-- リソースは DSC の「指定されたことを実現する」部分です。 リソースには構成のターゲットを指定された状態で保持するコードが含まれています。 
+- [リソース](resources.md)は DSC の "指定されたことを実現する" 部分です。 リソースには構成のターゲットを指定された状態で保持するコードが含まれています。 
     リソースは PowerShell モジュール内に存在し、ファイルまたは Windows プロセスのように汎用的なものをモデル化したり、IIS サーバーまたは Azure で実行されている VM のように具体的なものをモデル化するために作成できます。
-- ローカル構成マネージャー (LCM) は、DSC でのリソースと構成の間の対話を容易にするエンジンです。 
+- [ローカル構成マネージャー (LCM)](metaConfig.md) は、DSC でのリソースと構成の間の対話を容易にするエンジンです。 
     LCM は、リソースによって実装される制御フローを使用してシステムを定期的にポーリングし、構成によって定義された状態が維持されるようにします。 
     システムが状態外の場合、LCM はリソース内のコードに対して呼び出しを行い、構成に従って「指定されたことを実現」します。 
 

@@ -8,9 +8,11 @@ author: keithb
 manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 1bf1bf914982e0d52e592e6ef421d36b1915b338
-ms.sourcegitcommit: 267688f61dcc76fd685c1c34a6c7bfd9be582046
-translationtype: HT
+ms.openlocfilehash: 4c5dfaaf368097c18a2788a9df15632ce116dbbb
+ms.sourcegitcommit: ee407927101c3b166cc200a39a6ea786a1c21f95
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 の Desired State Configuration (DSC) の機能強化
 
@@ -40,7 +42,7 @@ WMF 5.1 では、このデバッガーは、MOF ベースのリソース メソ�
 以前のバージョンの DSC-PullServer では、データベース インスタンスが循環ログなしで作成されていたため、ESENT データベース ログ ファイルがプルサーバーのディスク領域を占有していました。 このリリースには、プルサーバーの web.config を使用してインスタンスの循環ログ動作を制御するオプションがあります。 既定では、CircularLogging が TRUE に設定されます。
 ```
 <appSettings>
-     <add key="dbprovider" value="ESENT" />
+    <add key="dbprovider" value="ESENT" />
     <add key="dbconnectionstr" value="C:\Program Files\WindowsPowerShell\DscService\Devices.edb" />
     <add key="CheckpointDepthMaxKB" value="512" />
     <add key="UseCircularESENTLogs" value="TRUE" />
@@ -99,7 +101,7 @@ Configuration PartialOne
 PartialOne
 ```
 
-WMF 5.1 では、プル サーバー/サービスの部分構成の名前を `<ConfigurationName>.<NodeName>.mof` にできます。 さらに、コンピューターがプル サーバー/サービスから&1; つの構成をプルする場合、プル サーバー構成リポジトリの構成ファイルに任意のファイル名を与えることができます。 このように命名規則が柔軟なことから、ノードを部分的に Azure Automation サービスで管理し (ノードの一部の構成が Azure Automation DSC から誘導されます)、部分構成をローカル管理できます。
+WMF 5.1 では、プル サーバー/サービスの部分構成の名前を `<ConfigurationName>.<NodeName>.mof` にできます。 さらに、コンピューターがプル サーバー/サービスから 1 つの構成をプルする場合、プル サーバー構成リポジトリの構成ファイルに任意のファイル名を与えることができます。 このように命名規則が柔軟なことから、ノードを部分的に Azure Automation サービスで管理し (ノードの一部の構成が Azure Automation DSC から誘導されます)、部分構成をローカル管理できます。
 
 以下のメタ構成では、ローカルと Azure Automation サービスの両方で管理されるようにノードが設定されます。
 
@@ -136,7 +138,7 @@ WMF 5.1 では、プル サーバー/サービスの部分構成の名前を `<C
    }
 
    RegistrationMetaConfig
-   slcm -Path .\RegistrationMetaConfig -Verbose
+   Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
  ```
 
 # <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>PsDscRunAsCredential と DSC 複合リソースを使用する   
@@ -223,7 +225,7 @@ Configuration EnableSignatureValidation
       RegistrationKey = 'd6750ff1-d8dd-49f7-8caf-7471ea9793fc' # Replace this with correct registration key.
     }
     SignatureValidation validations{
-        # By default, LCM will use default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM will use this custom store for retrieving the trusted publishers to validate the content.
+        # By default, LCM uses the default Windows trusted publisher store to validate the certificate chain. If TrustedStorePath property is specified, LCM uses this custom store for retrieving the trusted publishers to validate the content.
         TrustedStorePath = 'Cert:\LocalMachine\DSCStore'            
         SignedItemType = 'Configuration','Module'         # This is a list of DSC artifacts, for which LCM need to verify their digital signature before executing them on the node.       
     }

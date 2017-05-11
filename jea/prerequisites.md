@@ -8,9 +8,11 @@ keywords: "PowerShell, コマンドレット, JEA"
 ms.date: 2017-03-07
 title: "JEA の前提条件"
 ms.technology: powershell
-ms.openlocfilehash: e4ae3ebd0b2c330a76d3183e6c9c1106f769feb3
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: a38c9e948190b9384c62eec3e40758a782c9f72b
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="prerequisites"></a>前提条件
 
@@ -29,22 +31,23 @@ JEA は Windows PowerShell 5.0 以降で利用できますが、完全な機能�
 Windows Server 2016       | プレインストール済み
 Windows Server 2012 R2    | WMF 5.1 のすべての機能
 Windows Server 2012       | WMF 5.1 のすべての機能
-Windows Server 2008 R2    | WMF 5.1 のすべての機能
+Windows Server 2008 R2    | WMF 5.1 の制限された機能<sup>1</sup>
 
 JEA は、自宅または会社のコンピューターでも使用できます。
 
 クライアントのオペレーティング システム   | JEA の可用性
 --------------------------|-----------------------------------------------------
-Windows 10 1607           | プレインストール済み
-Windows 10 1603、1511     | 制限された機能でプレインストール済み<sup>1</sup>
+Windows 10 1607 以降          | プレインストール済み
+Windows 10 1603、1511     | 制限された機能でプレインストール済み<sup>2</sup>
 Windows 10 1507           | 不可
 Windows 8、8.1            | WMF 5.1 のすべての機能
-Windows 7                 | WMF 5.1 の制限機能<sup>2</sup>
+Windows 7                 | WMF 5.1 の制限された機能<sup>1</sup>
 
-<sup>1</sup> Windows 10 のバージョン 1511 と 1603 では、JEA の次の機能はサポートされません。グループ管理されたサービス アカウントとしての実行、セッション構成での条件付きアクセス規則、ユーザー ドライブ、ローカル ユーザー アカウントへのアクセスの許可。
+<sup>1</sup> Windows Server 2008 R2 または Windows 7 で、グループが管理するサービス アカウントを使用するように JEA を構成することはできません。
+仮想アカウントと他の JEA 機能はサポートされています*。*
+
+<sup>2</sup> Windows 10 のバージョン 1511 と 1603 では、JEA の次の機能はサポートされません。グループ管理されたサービス アカウントとしての実行、セッション構成での条件付きアクセス規則、ユーザー ドライブ、ローカル ユーザー アカウントへのアクセスの許可。
 これらの機能を使うには、Windows をバージョン 1607 (Anniversary Update) 以降に更新します。
-
-<sup>2</sup> Windows 7 の仮想アカウントを使うように JEA を構成することはできません。
 
 ### <a name="check-which-version-of-powershell-is-installed"></a>インストールされている PowerShell のバージョンを確認する
 
@@ -98,7 +101,7 @@ PowerShell モジュール ログは JEA には必要ありませんが、ユー
 7. **[OK]** をクリックしてポリシーを設定します。
 8. **[PowerShell スクリプト ブロックのログ記録を有効にする]** をダブルクリックします。
 9. **[有効]** をクリックします。
-10. [OK] をクリックしてポリシーを設定します。
+10. **[OK]** をクリックしてポリシーを設定します。
 11. (ドメインに参加しているコンピューターのみ) **gpupdate** を実行するか、グループ ポリシーが更新されたポリシーを処理して設定を適用するのを待ちます
 
 グループ ポリシーを通してシステム全体の PowerShell トランスクリプトを有効にすることもできます。

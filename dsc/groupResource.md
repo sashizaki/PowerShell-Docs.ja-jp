@@ -7,9 +7,11 @@ ms.topic: article
 author: eslesar
 manager: dongill
 ms.prod: powershell
-ms.openlocfilehash: 12c6ad6f30b4e1b67296289c927e59fd64079675
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: db2a12141ab1eaca73bf958b5a27ef2a356d5b8f
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/08/2017
 ---
 # <a name="dsc-group-resource"></a>DSC グループ リソース
 
@@ -17,18 +19,18 @@ translationtype: HT
 
 PowerShell Desired State Configuration (DSC) の Group リソースは、ターゲット ノード上でローカル グループを管理するためのメカニズムを備えています。
 
-##<a name="syntax"></a>構文##
+## <a name="syntax"></a>構文
 ```
 Group [string] #ResourceName
 {
-    GroupName = [string]
-    [ Credential = [PSCredential] ]
-    [ Description = [string[]] ]
-    [ Ensure = [string] { Absent | Present }  ]
-    [ Members = [string[]] ]
+    GroupName          = [string]
+    [ Credential       = [PSCredential] ]
+    [ Description      = [string[]] ]
+    [ Ensure           = [string] { Absent | Present }  ]
+    [ Members          = [string[]] ]
     [ MembersToExclude = [string[]] ]
     [ MembersToInclude = [string[]] ]
-    [ DependsOn = [string[]] ]
+    [ DependsOn        = [string[]] ]
 }
 ```
 
@@ -37,11 +39,11 @@ Group [string] #ResourceName
 |  プロパティ  |  説明   | 
 |---|---| 
 | GroupName| 特定の状態を保証するグループの名前です。| 
-| Credential| リモート リソースにアクセスするために必要な資格情報です **注**: このアカウントには、ローカル以外のすべてのアカウントをグループに追加する適切な Active Directory アクセス許可が必要です。このアクセス許可がない場合、エラーが発生します。
+| Credential| リモート リソースにアクセスするために必要な資格情報です **注**: このアカウントには、ローカル以外のすべてのアカウントをグループに追加する適切な Active Directory アクセス許可が必要です。このアクセス許可がない場合、ターゲット ノードで構成が実行されると、エラーが発生します。  
 | 説明| グループの説明です。| 
 | Ensure| グループが存在するかどうかを示します。 グループが存在しないことを保証するには、このプロパティを "Absent" に設定します。 グループが存在することを保証するには、"Present" (既定値) に設定します。| 
-| [メンバー]| このプロパティは、現在のグループ メンバーシップを指定したメンバーで置き換えるために使用します。 このプロパティの値は、*Domain*\\*UserName* 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**MembersToExclude** プロパティおよび **MembersToInclude** プロパティは併用しないでください。 併用した場合、エラーが発生します。| 
-| MembersToExclude| このプロパティは、グループの既存のメンバーシップからメンバーを削除するために使用します。 このプロパティの値は、*Domain*\\*UserName* 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**Members** プロパティは使用しないでください。 併用した場合、エラーが発生します。| 
+| [メンバー]| このプロパティは、現在のグループ メンバーシップを指定したメンバーで置き換えるために使用します。 このプロパティの値は、*Domain*\\*UserName* 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**MembersToExclude** プロパティおよび **MembersToInclude** プロパティは併用しないでください。 併用すると、エラーが発生します。| 
+| MembersToExclude| このプロパティは、グループの既存のメンバーシップからメンバーを削除するために使用します。 このプロパティの値は、*Domain*\\*UserName* 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**Members** プロパティは使用しないでください。 併用すると、エラーが発生します。| 
 | MembersToInclude| このプロパティは、グループの既存のメンバーシップにメンバーを追加するために使用します。 このプロパティの値は、*Domain*\\*UserName* 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**Members** プロパティは使用しないでください。 併用した場合、エラーが発生します。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は DependsOn = "[ResourceType]ResourceName" になります。| 
 
@@ -52,7 +54,7 @@ Group [string] #ResourceName
 ```powershell
 Group GroupExample
 {
-    # This will remove TestGroup, if present
+    # This removes TestGroup, if present
     # To create a new group, set Ensure to "Present“
     Ensure = "Absent"
     GroupName = "TestGroup"
@@ -88,3 +90,22 @@ Group AddADUserToLocalAdminGroup
         }
 ```
 
+## <a name="example-3"></a>例 3
+サーバー TigerTeamSource.Contoso.Com 上のローカル グループ TigerTeamAdmins に、特定のドメイン アカウント Contoso\JerryG が含まれないようにする例を次に示します。  
+
+```powershell
+
+Configuration SecureTigerTeamSrouce 
+{
+  Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+  
+  Node TigerTeamSource.Contoso.Com {
+  Group TigerTeamAdmins
+    {
+       GroupName        = 'TigerTeamAdmins'   
+       Ensure           = 'Absent'             
+       MembersToInclude = "Contoso\JerryG"
+    }
+  }
+}
+```

@@ -40,7 +40,7 @@ Header 2
 * "C:\ PS>" でPowerShell のコマンドを始めないでください
 * PowerShell コマンドによって生成される出力は、構文の強調表示がされないようにコメントする必要があります
 * プロパティ名とパラメーター名は**太字**にする必要があります
-
+* PowerShell コマンドレットは "[Pascal Cased](https://en.wikipedia.org/wiki/PascalCase)" です。 動詞と名詞はハイフンで区切ります。
 
 ## <a name="lists"></a>リスト
 

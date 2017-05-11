@@ -1,14 +1,23 @@
-
 ---
-タイトル:   DSCAutomationHostEnabled レジストリ キー ms.date:  2016-05-16 キーワード:  powershell,DSC 説明:  
-ms.topic:  記事 作成者: eslesar マネージャー: dongill ms.prod:  powershell
+title: "DSCAutomationHostEnabled レジストリ キー"
+ms.date: 2016-05-16
+keywords: PowerShell, DSC
+description: 
+ms.topic: article
+author: eslesar
+manager: dongill
+ms.prod: powershell
+ms.openlocfilehash: eb5889668136def1b47a4999374711460a08179c
+ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/08/2017
 ---
-
 >適用先: Windows PowerShell 5.0
 
 # <a name="dscautomationhostenabled-registry-key"></a>DSCAutomationHostEnabled レジストリ キー
 
-DSC は、**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies** の下の **DSCAutomationHostEnabled** というレジストリ キーを使用してコンピューターの起動時に自動的に構成を行います。
+DSC は、**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies** の下の **DSCAutomationHostEnabled** というレジストリ キーを使用してコンピューターの起動時の構成を有効にします。
 DSCAutomationHostEnabled では、次の 3 つのモードがサポートされます。
 
 |  DSCAutomationHostEnabled の値  |  説明   | 
