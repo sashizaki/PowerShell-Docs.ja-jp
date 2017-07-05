@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "Windows PowerShell の重要な概念を理解する"
-ms.technology: powershell
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 00a04da3f463b50c64b18d3bbaf17fc22f1e9e3b
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 1ffcfefcc7ffc7c98ba4d1e3ccc9a59cd9b0baac
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a>Windows PowerShell の重要な概念を理解する
 Windows PowerShell の設計には、多数の異なる環境の概念が取り入れられています。 特定のシェルやプログラミング環境を使ったことのあるユーザーであれば、そのいくつかについては既に使い慣れているかもしれません。しかし、これらすべてに精通しているユーザーはごく一部に限られると思われます。 これらのいくつかの概念について理解することは、シェルの概要を把握するのに役立ちます。

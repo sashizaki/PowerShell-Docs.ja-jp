@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "ISEAddOnTool オブジェクト"
-ms.technology: powershell
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
-ms.openlocfilehash: c1ab4220fdede7cabec99fd2d9dfb39648503f28
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 15f0cdd1425b9f87edeb0404fc385275e4a9d1d8
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool オブジェクト
   **ISEAddonTool** オブジェクトは、Windows PowerShell ISE に追加の機能を提供する、インストール済みのアドオン ツールを表します。 例としては、**[表示]**、**[コマンド アドオンの表示]** の順にクリックして表示できる**コマンド** ツールです。 このツールには、利用可能なさまざまな **ISEAddOnTool** オブジェクトを操作することでアクセスできます。
@@ -25,7 +21,7 @@ translationtype: HT
 
 ## <a name="properties"></a>プロパティ
 
-###  <a name="a-namecontrola-control"></a><a name="Control"></a> Control
+###  <a name="Control"></a> Control
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
  **コントロール** プロパティは、コマンド アドオン ツールの詳細への読み取りアクセスを提供します。
@@ -141,7 +137,7 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 ```
 
-###  <a name="a-nameisvisiblea-isvisible"></a><a name="IsVisible"></a> IsVisible
+###  <a name="IsVisible"></a> IsVisible
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
  割り当てられているウィンドウにアドオン ツールが現在表示されているかどうかを示すブール型プロパティ。 表示されている場合は、**IsVisible** プロパティを **$false** を設定すると、ツールを非表示にすることができます。**IsVisible** プロパティを **$true** に設定すると、PowerShell でアドオン ツールが表示されます。 アドオン ツールを非表示にすると、**CurrentVisibleHorizontalTool** または **CurrentVisibleVerticalTool** オブジェクトからアクセスできなくなるため、これらのオブジェクトのこのプロパティを使用して表示するようにすることはできません。
@@ -154,7 +150,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible=$true
 
 ```
 
-###  <a name="a-namenamea-name"></a><a name="name"></a> Name
+###  <a name="name"></a> Name
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
  アドオン ツールの名前を取得する読み取り専用プロパティ。

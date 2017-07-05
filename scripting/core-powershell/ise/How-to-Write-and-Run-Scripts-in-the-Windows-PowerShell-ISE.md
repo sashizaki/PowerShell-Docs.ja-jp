@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "Windows PowerShell ISE でスクリプトを記述および実行する方法"
-ms.technology: powershell
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 2478db382639ef315574bb7c79faec7cf2ae1c96
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 871a4b6f4575af4f823a6957dc971335497320a4
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Windows PowerShell ISE でスクリプトを記述および実行する方法
 このトピックでは、スクリプト ウィンドウでスクリプトを作成、編集、実行、保存する方法について説明します。
@@ -22,7 +18,7 @@ translationtype: HT
 
 -   [スクリプトを保存する方法](#bkmk_3)
 
-## <a name="a-namebkmk1ahow-to-create-and-run-scripts"></a><a name="bkmk_1"></a>スクリプトを作成して実行する方法
+## <a name="bkmk_1"></a>スクリプトを作成して実行する方法
 Windows PowerShell® ファイルは、スクリプト ウィンドウで開いたり、編集したりできます。 Windows PowerShell® で対象となるファイルの種類は、スクリプト ファイル (.ps1)、スクリプト データ ファイル (.psd1)、スクリプト モジュール ファイル (.psm1) です。 これらのファイルの種類は、スクリプト ウィンドウのエディターで構文が色分けされます。 スクリプト ウィンドウで開くことのできる他の一般的なファイルの種類には、構成ファイル (.ps1xml)、XML ファイル、テキスト ファイルがあります。
 
 > [!NOTE]
@@ -58,7 +54,7 @@ Windows PowerShell® ファイルは、スクリプト ウィンドウで開い�
 ### <a name="to-stop-a-running-script"></a>スクリプトの実行を停止するには
 ツール バーの **[実行を中止]** をクリックするか、CTRL + BREAK キーを押すか、または、**[ファイル]** メニューの **[実行を中止]** をクリックします。 テキストが選択されていない場合は、**CTRL + C** キーを押すと、実行が停止します。テキストが選択されている場合は、**CTRL + C** キーは、選択したテキストのコピー機能にマップされます。
 
-## <a name="a-namebkmk2ahow-to-write-and-edit-text-in-the-script-pane"></a><a name="bkmk_2"></a>スクリプト ウィンドウでテキストを記述して編集する方法
+## <a name="bkmk_2"></a>スクリプト ウィンドウでテキストを記述して編集する方法
 スクリプト ウィンドウでテキストを編集するには、次の手順を実行します。 テキストのコピー、切り取り、貼り付け、検索、置換を実行できます。 最後に実行した操作を元に戻したり、再実行したりできます。 これらのアクションを実行するためのキーボード ショートカットは、すべての Windows アプリケーションで使われているものと同じです。
 
 ### <a name="to-enter-text-in-the-script-pane"></a>スクリプト ウィンドウにテキストを入力するには
@@ -107,7 +103,7 @@ Windows PowerShell® ファイルは、スクリプト ウィンドウで開い�
 ### <a name="to-redo-an-action-in-the-script-pane"></a>スクリプト ウィンドウ内のアクションをやり直すには
 **CTRL + Y** キーを押すか、ツール バーで **[やり直し]** アイコンをクリックするか、または **[編集]** メニューの **[やり直し]** をクリックします。
 
-## <a name="a-namebkmk3ahow-to-save-a-script"></a><a name="bkmk_3"></a>スクリプトを保存する方法
+## <a name="bkmk_3"></a>スクリプトを保存する方法
 スクリプトに名前を付けて保存するには、次の手順を実行します。 変更されてから保存されていないファイルには、スクリプト名の横にアスタリスクが表示されます。 ファイルを保存すると、アスタリスクは消えます。
 
 ### <a name="to-save-a-script"></a>スクリプトを保存するには

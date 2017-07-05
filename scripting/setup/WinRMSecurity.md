@@ -1,16 +1,12 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: WinRMSecurity
-ms.technology: powershell
-ms.openlocfilehash: 31b5ec784d394568c462a1e133b501f0a8884f2e
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: a6adf61517708661e31a7387df5141f3c4f2c020
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell リモート処理のセキュリティに関する考慮事項
 
@@ -46,9 +42,9 @@ FireEye は、PowerShell リモート処理セッションによって生成さ�
 
 ## <a name="encryption-and-transport-protocols"></a>暗号化とトランスポート プロトコル
 
-PowerShell リモート処理の接続のセキュリティについては、初期認証と進行中の通信という&2; つの観点から考慮することをお勧めします。 
+PowerShell リモート処理の接続のセキュリティについては、初期認証と進行中の通信という 2 つの観点から考慮することをお勧めします。 
 
-使用されているトランスポート プロトコル (HTTP または HTTPS) に関係なく、PowerShell リモート処理では、常にすべての通信が、初期認証後に、セッションごとの AES&256; 対称キーを使用して暗号化されます。
+使用されているトランスポート プロトコル (HTTP または HTTPS) に関係なく、PowerShell リモート処理では、常にすべての通信が、初期認証後に、セッションごとの AES 256 対称キーを使用して暗号化されます。
     
 ### <a name="initial-authentication"></a>初期認証
 
@@ -75,7 +71,7 @@ SSL 証明書を NTLM 接続用のサーバーに展開できない場合は、�
     
 ### <a name="ongoing-communication"></a>進行中の通信
 
-初期認証が完了すると、[PowerShell リモート処理プロトコル](https://msdn.microsoft.com/en-us/library/dd357801.aspx)によって、進行中の通信はすべて、セッションごとの AES&256; 対称キーを使用して暗号化されます。  
+初期認証が完了すると、[PowerShell リモート処理プロトコル](https://msdn.microsoft.com/en-us/library/dd357801.aspx)によって、進行中の通信はすべて、セッションごとの AES 256 対称キーを使用して暗号化されます。  
 
 
 ## <a name="making-the-second-hop"></a>次ホップの実行

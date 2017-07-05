@@ -1,16 +1,12 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "セキュリティ"
-ms.technology: powershell
-ms.openlocfilehash: 777cc0c011cf32a633246061da0d362cff698ac8
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 9ed7971d36e14b3db9046da0e899f9758d21ea5c
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="security-module"></a>セキュリティ モジュール
 このセクションには、**Microsoft.PowerShell.Security** モジュールのヘルプ トピックが含まれています。 **Microsoft.PowerShell.Security** モジュールには、[証明書プロバイダー [v3]](https://technet.microsoft.com/en-us/library/3f743541-d0c6-4670-809a-b16fb01f7c4d)、および実行ポリシーを含む Windows PowerShell のセキュリティ機能を管理するコマンドレットが含まれています。 **Microsoft.PowerShell.Security** モジュールは Windows PowerShell でインストールされます。

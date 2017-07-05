@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "ネットワーク関連タスクの実行"
-ms.technology: powershell
 ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
-ms.openlocfilehash: 1c938500da191c2791b3178971cdcea28f57aacd
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 4d7a91595b9d9d637ce915be2c2be9c20879dd8b
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="performing-networking-tasks"></a>ネットワーク関連タスクの実行
 TCP/IP は最も一般的に使用されるネットワーク プロトコルです。そのため、TCP/IP に関連したタスクは、最も低レベルのネットワーク プロトコル管理タスクと言えます。 このセクションでは、Windows PowerShell および WMI を使用して、これらのタスクを実行します。
@@ -31,7 +27,12 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -C
 
 中かっこで囲まれている理由を理解するには、Get-Member コマンドレットを使用して **IPAddress** プロパティを調べます。
 
-<pre>PS> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName . | Get-Member -Name IPAddress TypeName: System.Management.ManagementObject#root\cimv2\Win32_NetworkAdapter Configuration Name      MemberType Definition ----      ---------- ---------- IPAddress Property   System.String[] IPAddress {get;}</pre>
+<pre>PS> Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=TRUE -ComputerName . | Get-Member -Name IPAddress
+TypeName: System.Management.ManagementObject#root\cimv2\Win32_NetworkAdapter
+Configuration
+Name      MemberType Definition
+----      ---------- ----------
+IPAddress Property   System.String[] IPAddress {get;}</pre>
 
 各ネットワーク アダプターの IPAddress プロパティは、実際には配列です。 Definition 列に示されている中かっこは、**IPAddress** が **System.String** 値ではなく、**System.String** 値の配列であることを示しています。
 

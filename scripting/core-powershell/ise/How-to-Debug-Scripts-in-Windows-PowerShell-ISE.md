@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "Windows PowerShell ISE でスクリプトをデバッグする方法"
-ms.technology: powershell
 ms.assetid: 6dc6d8f9-8978-46e9-a92f-169af37e2817
-ms.openlocfilehash: 8574754ccdf4717d29c4076f88d41691501da471
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: db8847e2cc9abeec729ed8d939fc170529a93846
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Windows PowerShell ISE でスクリプトをデバッグする方法
 このトピックでは、Windows PowerShell® Integrated Scripting Environment (ISE) のビジュアル デバッグ機能を使ってローカル コンピューター上でスクリプトをデバッグする方法について説明します。
@@ -21,7 +17,7 @@ translationtype: HT
 [デバッグ中にステップ オーバー、ステップ イン、ステップ アウトする方法](#bkmk_3)
 [デバッグ中に変数の値を表示する方法](#bkmk_4)
 
-## <a name="a-namebkmk1ahow-to-manage-breakpoints"></a><a name="bkmk_1"></a>ブレークポイントを管理する方法
+## <a name="bkmk_1"></a>ブレークポイントを管理する方法
 ブレークポイントは、操作を一時停止するように指定したスクリプト内の位置です。一時停止している間に、変数の現在の状態や、スクリプトが実行されている環境を確認できます。 スクリプトがブレークポイントで一時停止したら、コンソール ウィンドウでコマンドを実行して、スクリプトの状態を確認できます。  変数を出力したり、その他のコマンドを実行したりできます。 また、現在実行しているスクリプトのコンテキストで表示されているすべての変数の値を変更することもできます。 必要な事項を確認した後、スクリプトの操作を再開できます。
 
 Windows PowerShell のデバッグ環境では、次の 3 種類のブレークポイントを設定できます。
@@ -72,7 +68,7 @@ Remove-PSBreakpoint -Id 2
 Get-PSBreakpoint | Remove-PSBreakpoint
 ```
 
-### <a name="a-namebkmkdisableadisable-a-breakpoint"></a><a name="bkmk_disable"></a>ブレークポイントの無効化
+### <a name="bkmk_disable"></a>ブレークポイントの無効化
 ブレークポイントを無効にしても、そのブレークポイントは削除されず、再び有効にするまでの間オフになります。  特定の行のブレークポイントを無効にするには、ブレークポイントを無効にする行を右クリックし、**[ブレークポイントの無効化]** をクリックします。 または、ブレークポイントを無効にする行をクリックしてから、**F9** キーを押すか、**[デバッグ]** メニューの **[ブレークポイントの無効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) コマンドレットを使って、指定した ID のブレークポイントを無効にする方法の例を示しています。
 
 ``` PowerShell
@@ -106,7 +102,7 @@ Enable-PSBreakpoint -Id 0, 1, 5
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
-## <a name="a-namebkmk2ahow-to-manage-a-debugging-session"></a><a name="bkmk_2"></a>デバッグ セッションを管理する方法
+## <a name="bkmk_2"></a>デバッグ セッションを管理する方法
 デバッグを開始する前に、1 つ以上のブレークポイントを設定する必要があります。 ブレークポイントを設定するには、まず、デバッグするスクリプトを保存する必要があります。 ブレークポイントを設定する手順については、「[ブレークポイントを管理する方法](#bkmk_1)」または「[Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420)」をご覧ください。 デバッグを開始した後は、デバッグを停止するまで、スクリプトを編集できません。 1 つ以上のブレークポイントを設定したスクリプトは、実行前に自動的に保存されます。
 
 ### <a name="to-start-debugging"></a>デバッグを開始するには
@@ -123,7 +119,7 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 ### <a name="to-stop-debugging"></a>デバッグを停止するには
 **SHIFT-F5** キーを押すか、**[デバッグ]** メニューの **[デバッガーの停止]** をクリックするか、コンソール ウィンドウで **Q** と入力してから **ENTER** キーを押します。
 
-## <a name="a-namebkmk3ahow-to-step-over-step-into-and-step-out-while-debugging"></a><a name="bkmk_3"></a>デバッグ中にステップ オーバー、ステップ イン、ステップ アウトする方法
+## <a name="bkmk_3"></a>デバッグ中にステップ オーバー、ステップ イン、ステップ アウトする方法
 ステッピングは、一度に 1 つのステートメントを実行するプロセスです。 コードの行で停止し、変数の値とシステムの状態を確認できます。 次の表では、ステップ オーバー、ステップ イン、ステップ アウトなどの一般的なデバッグ タスクについて説明します。
 
 | デバッグ タスク | 説明 | PowerShell ISE で実行する方法 |
@@ -133,7 +129,7 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 | **ステップ アウト** | 現在の関数からステップ アウトし、関数が入れ子になっている場合は 1 つ上のレベルに移動します。 メイン ボディの場合は、スクリプトが最後まで、または次のブレークポイントまで実行されます。 スキップしたステートメントは実行されますが、ステップ スルーされることはありません。 | **SHIFT+F11** キーを押すか、**[デバッグ]** メニューの **[ステップ アウト]** をクリックするか、コンソール ウィンドウに **O** と入力して **ENTER** キーを押します。 |
 | **続行** | 最後まで、または次のブレークポイントまで実行を続けます。 スキップした関数と呼び出しは実行されますが、ステップ スルーされることはありません。 | **F5** キーを押すか、**[デバッグ]** メニューの **[実行/続行]** をクリックするか、コンソール ウィンドウに **C** と入力して **ENTER** キーを押します。 |
 
-## <a name="a-namebkmk4ahow-to-display-the-values-of-variables-while-debugging"></a><a name="bkmk_4"></a>デバッグ中に変数の値を表示する方法
+## <a name="bkmk_4"></a>デバッグ中に変数の値を表示する方法
 コードをステップ スルーするとき、スクリプト内の変数の現在値を表示できます。
 
 ### <a name="to-display-the-values-of-standard-variables"></a>標準変数の値を表示するには

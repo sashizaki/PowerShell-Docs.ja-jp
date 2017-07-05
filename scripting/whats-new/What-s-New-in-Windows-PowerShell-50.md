@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "Windows PowerShell 50 の新機能"
-ms.technology: powershell
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
-ms.openlocfilehash: f5413c0638ff297d4505ba2b25fcbd203f56530d
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: c172ac076d2cd69e8f1876ad47a51c233d8a4afb
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="what39s-new-in-windows-powershell"></a>Windows PowerShell の新機能
 Windows PowerShell® 5.0 には、その用途を拡大し、使いやすさを向上させる重要な機能や、Windows ベースの環境をより簡単かつ包括的に制御および管理できるようにする重要な新しい機能が含まれています。
@@ -33,7 +29,7 @@ Windows PowerShell 5.0 を Windows Server 2012 R2、Windows 8.1 Enterprise ま�
 
 -   [Windows PowerShell 3.0 の新機能](#BKMK_wps3)
 
-## <a name="a-namebkmk3000850awindows-powershell-40-updates-in-november-2014-update-rollup-kb-3000850"></a><a name="BKMK_3000850"></a>2014 年 11 月の更新プログラムのロールアップ (KB 3000850) での Windows PowerShell 4.0 の更新
+## <a name="BKMK_3000850"></a>2014 年 11 月の更新プログラムのロールアップ (KB 3000850) での Windows PowerShell 4.0 の更新
 Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DSC) に対する多くの更新と機能強化が、[Windows RT 8.1、Windows 8.1、Windows Server 2012 R2 の 2014 年 11 月の更新プログラムのロールアップ](https://support.microsoft.com/kb/3000850/) (KB 3000850) で利用可能になりました。 Windows PowerShell で `Get-Hotfix -Id KB3000850` を実行することで、KB 3000850 がシステムにインストールされているかどうかを判断できます。
 
 -   [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) モジュールの既存のコマンドレットの更新
@@ -130,7 +126,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
     -   [アーカイブ リソース](http://technet.microsoft.com/library/dn249917.aspx)が資格情報をサポートするようになりました。
 
-## <a name="a-namebkmknew50anew-features-in-windows-powershell-50"></a><a name="BKMK_new50"></a>Windows PowerShell 5.0 の新機能
+## <a name="BKMK_new50"></a>Windows PowerShell 5.0 の新機能
 
 -   [Windows PowerShell の新機能](#BKMK_newcore)
 
@@ -142,7 +138,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 -   [Windows PowerShell 5.0 での主なバグ修正](#BKMK_5bugfix)
 
-### <a name="a-namebkmknewcoreanew-features-in-windows-powershell"></a><a name="BKMK_newcore"></a>Windows PowerShell の新機能
+### <a name="BKMK_newcore"></a>Windows PowerShell の新機能
 
 -   Windows PowerShell 5.0 以降では、クラスを使用して、他のオブジェクト指向のプログラミング言語に類似した正式な構文とセマンティクスを使用して開発することができます。 **Class**、**Enum** などのキーワードが、新しい機能をサポートするために Windows PowerShell 言語に追加されました。 クラスに関する作業の詳細については、「about_Classes」を参照してください。
 
@@ -184,7 +180,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 -   [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールの新しいコマンドレット、Get-Runspace、Debug-Runspace、Get-RunspaceDebug、Enable-RunspaceDebug、および Disable-RunspaceDebug を使用すると、実行空間でのデバッグ オプションを設定して、実行空間でのデバッグを開始、停止できます。 任意の実行空間をデバッグする場合、つまり、Windows PowerShell コンソールまたは Windows PowerShell ISE セッションの既定の実行空間ではない実行空間をデバッグする場合、Windows PowerShell では、スクリプトにブレークポイントを設定し、追加されたブレークポイントを使用して、実行空間スクリプトをデバッグするデバッガーをアタッチするまでスクリプトが実行されないようにすることができます。 実行空間用の Windows PowerShell スクリプト デバッガーに、任意の実行空間に対する入れ子になったデバッグのサポートが追加されました。
 
--   新しい Format-Hex コマンドレットが [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。 Format-Hex を使うと、テキスト データやバイナリ データを&16; 進数形式で表示できます。
+-   新しい Format-Hex コマンドレットが [Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。 Format-Hex を使うと、テキスト データやバイナリ データを 16 進数形式で表示できます。
 
 -   Get-Clipboard コマンドレットと Set-Clipboard コマンドレットが、[Microsoft.PowerShell.Utility](http://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。これらのコマンドレットにより、Windows PowerShell セッションとの間のコンテンツの転送が容易になります。 クリップボードのコマンドレットは、画像、オーディオ ファイル、ファイルのリスト、およびテキストをサポートします。
 
@@ -228,7 +224,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 -   **$PSVersionTable.PSVersion** の値が 5.0 に更新されました。
 
-### <a name="a-namebkmknewdscanew-features-in-windows-powershell-desired-state-configuration"></a><a name="BKMK_newDSC"></a>Windows PowerShell Desired State Configuration の新機能
+### <a name="BKMK_newDSC"></a>Windows PowerShell Desired State Configuration の新機能
 
 -   Windows PowerShell 言語の機能が強化され、クラスを使用して、Windows PowerShell Desired State Configuration (DSC) のリソースを定義できるようになりました。 Import-DscResource は真の動的キーワードになりました。Windows PowerShell は、DscResource 属性を含むクラスを探して、指定されたモジュールのルート モジュールを解析します。 クラスを使用して DSC リソースを定義できるようになりました。このリソースには、MOF ファイルも、モジュール フォルダー内の DSCResource サブフォルダーも必要ありません。 Windows PowerShell モジュールのファイルには、複数の DSC リソース クラスを含めることができます。
 
@@ -284,7 +280,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
     -   新しい Get-DscConfigurationStatus コマンドレットは、ターゲット ノードから構成状態に関する高レベルの情報を取得します。 最後の状態、またはすべての構成の状態を取得できます。
 
-    -   新しい Compare-DscConfiguration コマンドレットは、指定した構成を&1; つ以上のターゲット ノードの実際の状態と比較します。
+    -   新しい Compare-DscConfiguration コマンドレットは、指定した構成を 1 つ以上のターゲット ノードの実際の状態と比較します。
 
     -   新しい Publish-DscConfiguration コマンドレットでは、構成の MOF ファイルをターゲット ノードにコピーしますが、その構成は適用しません。 この構成が適用されるのは、次の整合性パス中、または Update-DscConfiguration コマンドレットの実行時です。
 
@@ -292,7 +288,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
     -   新しい Update-DscConfiguration コマンドレットは、構成が処理されるようにします。 ローカル構成マネージャーがプル モードの場合は、コマンドレットは、構成を適用する前にプル サーバーから構成を取得します。
 
-### <a name="a-namebkmknewiseanew-features-in-windows-powershell-ise"></a><a name="BKMK_newISE"></a>Windows PowerShell ISE の新機能
+### <a name="BKMK_newISE"></a>Windows PowerShell ISE の新機能
 
 -   Windows PowerShell ISE のローカル コピーでリモートの Windows PowerShell のスクリプトとファイルを編集できるようになりました。この編集を行うには、Enter-PSSession を実行して、編集するファイルを保存しているコンピューター上でリモート セッションを開始し、**PSEdit <path and file name on the remote computer>** を実行します。 この機能を使用すると、Windows PowerShell ISE を実行できない Windows Server の Server Core インストール オプションに保存されている Windows PowerShell ファイルの編集が簡単になります。
 
@@ -302,17 +298,17 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 -   新しいメニュー コマンド、**Break All** (Ctrl+B) は、ローカルとリモートで実行中の両方のスクリプトを中断し、デバッガーに移ります。
 
-### <a name="a-namebkmknewodataanew-features-in-windows-powershell-web-services-management-odata-iis-extension"></a><a name="BKMK_newOData"></a>Windows PowerShell Web サービス (Management OData IIS 拡張機能) の新機能
+### <a name="BKMK_newOData"></a>Windows PowerShell Web サービス (Management OData IIS 拡張機能) の新機能
 
 -   Windows PowerShell 5.0 以降では、新しい [Microsoft.PowerShell.OdataUtils](http://technet.microsoft.com/library/dn818507(v=wps.640).aspx) モジュールにある Export-ODataEndpointProxy コマンドレットを実行すると、指定した OData エンドポイントによって公開される機能に基づいて、Windows PowerShell コマンドレットのセットを生成できます。
 
-### <a name="a-namebkmk5bugfixanotable-bug-fixes-in-windows-powershell-50"></a><a name="BKMK_5bugfix"></a>Windows PowerShell 5.0 での主なバグ修正
+### <a name="BKMK_5bugfix"></a>Windows PowerShell 5.0 での主なバグ修正
 
 -   Windows PowerShell 5.0 には、新しい COM 実装が含まれます。この実装により、COM オブジェクトを操作する場合のパフォーマンスが大幅に向上します。 その効果を示すビデオ デモについては、「[Com_Perf_Improvements](http://1drv.ms/1qu3UPZ)」をご覧ください。
 
 -   Windows PowerShell セッションでの最初のタブ補完に対するパフォーマンスが大幅に改善され、タブ補完に要する時間が 500 ミリ秒近く短縮されました。
 
-## <a name="a-namebkmkwps4anew-features-in-windows-powershell-40"></a><a name="BKMK_wps4"></a>Windows PowerShell 4.0 の新機能
+## <a name="BKMK_wps4"></a>Windows PowerShell 4.0 の新機能
 Windows PowerShell 4.0 には下位互換性があります。 Windows PowerShell 3.0 および Windows PowerShell 2.0 用に設計されたコマンドレット、プロバイダー、モジュール、スナップイン、スクリプト、関数、およびプロファイルは、変更なしで Windows PowerShell 4.0 でも動作します。
 
 Windows PowerShell 4.0 は、既定で Windows® 8.1 と Windows Server 2012 R2 にインストールされています。 Windows 7 SP1 または Windows Server 2008 R2 に Windows PowerShell 4.0 をインストールするには、[Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855) をダウンロードしてインストールします。 Windows Management Framework 4.0 をインストールする前に、ダウンロードの詳細を読み、システム要件がすべて満たされていることを確認してください。
@@ -331,7 +327,7 @@ Windows PowerShell 4.0 は、既定で Windows® 8.1 と Windows Server 2012 R2 
 
 Windows PowerShell 4.0 には、次に示す新機能があります。
 
-### <a name="a-namebkmkcoreanew-features-in-windows-powershell"></a><a name="BKMK_core"></a>Windows PowerShell の新機能
+### <a name="BKMK_core"></a>Windows PowerShell の新機能
 
 -   **Windows PowerShell Desired State Configuration** (DSC) は、ソフトウェア サービスとそれらのサービスが実行される環境に対して構成データのデプロイと管理を実行できる Windows PowerShell 4.0 の新しい管理システムです。 DSC の詳細については、「[Windows PowerShell Desired State Configuration の概要](https://technet.microsoft.com/en-us/library/c134aa32-b085-4656-9a89-955d8ff768d0)」を参照してください。
 
@@ -341,7 +337,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 -   **Register-ScheduledJob** および **Set-ScheduledJob** で **RunNow** パラメーターを使用できるようになり、**Trigger** パラメーターを使用して直後のジョブ開始日時を設定する必要がなくなりました。
 
--   **Invoke-RestMethod** と **Invoke-WebRequest** で、Headers パラメーターを使用してすべてのヘッダーを設定できるようになりました。 このパラメーターは以前から存在しますが、使用すると例外やエラーが発生する Web コマンドレットのいくつかのパラメーターの&1; つでした。
+-   **Invoke-RestMethod** と **Invoke-WebRequest** で、Headers パラメーターを使用してすべてのヘッダーを設定できるようになりました。 このパラメーターは以前から存在しますが、使用すると例外やエラーが発生する Web コマンドレットのいくつかのパラメーターの 1 つでした。
 
 -   **Get-Module** に、新しいパラメーター **FullyQualifiedName** が追加されました (**ModuleSpecification\[]** 型)。 Get-Module の **FullyQualifiedName** パラメーターを使用すると、モジュール名やバージョンを使用してモジュールを指定でき、オプションとして GUID でも指定できます。
 
@@ -363,7 +359,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 -   **Get-Process** コマンドレットに新しいスイッチ パラメーター **IncludeUserName** が追加されました。
 
--   新しいコマンドレット **Get-FileHash** が追加されました。これは、指定したファイルのファイル ハッシュをいくつかの形式の中から&1; つ返します。
+-   新しいコマンドレット **Get-FileHash** が追加されました。これは、指定したファイルのファイル ハッシュをいくつかの形式の中から 1 つ返します。
 
 -   Windows PowerShell 4.0 では、モジュールが自らのマニフェストの中で **DefaultCommandPrefix** キーを使用している場合、またはユーザーが **Prefix** パラメーターを指定してモジュールをインポートした場合、モジュールの **ExportedCommands** プロパティにモジュール内のコマンドがプレフィックス付きで表示されます。 モジュールで修飾された構文 (ModuleName\\CommandName) を使用してコマンドを実行するときは、コマンド名にプレフィックスを含める必要があります。
 
@@ -371,13 +367,13 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 -   **Where()** 演算子の動作が変更されました。 `Collection.Where('property -match name')` は形式 `"Property -CompareOperator Value"` の文字列式を受け入れなくなりました。 ただし、**Where()** 演算子は、スクリプト ブロック形式の文字列式を受け入れます。これは、引き続きサポートされます。
 
-### <a name="a-namebkmkiseanew-features-in-windows-powershell-integrated-scripting-environment-ise"></a><a name="BKMK_ise"></a>Windows PowerShell Integrated Scripting Environment (ISE) の新機能
+### <a name="BKMK_ise"></a>Windows PowerShell Integrated Scripting Environment (ISE) の新機能
 
 -   Windows PowerShell ISE では、Windows PowerShell ワークフローのデバッグとリモート スクリプト デバッグの両方がサポートされます。
 
 -   Windows PowerShell Desired State Configuration のプロバイダーおよび構成に IntelliSense サポートが追加されました。
 
-### <a name="a-namebkmkworkflowanew-features-in-windows-powershell-workflow"></a><a name="BKMK_workflow"></a>Windows PowerShell ワークフローの新機能
+### <a name="BKMK_workflow"></a>Windows PowerShell ワークフローの新機能
 
 -   System Center Orchestrator などで使用されている反復パイプラインのコンテキストで、新しい **PipelineVariable** 共通パラメーターのサポートが追加されました。反復パイプラインとは、ストリーミングを使用することによって散発的に実行するのではなく、コマンドを単純に左から右へと実行するパイプラインです。
 
@@ -393,7 +389,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 -   ワークフロー エンドポイントは、アクティブなセッション、処理中のジョブ、および保留中のジョブがいずれもなくなった時点で、自動的に閉じるようになりました。 この機能は、自動クローズ条件を満たしている場合に、ワークフロー サーバーとして機能しているコンピューターでリソースの節約になります。
 
-### <a name="a-namebkmkpswsanew-features-in-windows-powershell-web-services"></a><a name="BKMK_psws"></a>Windows PowerShell Web サービスの新機能
+### <a name="BKMK_psws"></a>Windows PowerShell Web サービスの新機能
 
 -   コマンドレットの実行中に Windows PowerShell Web サービス (PSWS、Management OData IIS 拡張機能ともいう) でエラーが発生した場合に、より詳細なエラー メッセージが呼び出し元に返されます。 さらに、エラーコードは「[Windows Azure REST API のエラー コードのガイドライン](http://msdn.microsoft.com/library/windowsazure/dd179357.aspx)」に従います。
 
@@ -411,7 +407,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 -   PSWS の今回より前のリリースでは、作成、更新、または削除操作を実行する唯一の方法は、最上位レベルのリソースに対して Post、Put、または Delete を呼び出すことでした。 今回のリリースの PSWS では、Contained Resource 操作という新しい機能で同じ結果を得ることができます。これを使用すると、同じリソースにより間接的に到達し、それらのリソースが含まれているかのようにアクセスできます。
 
-### <a name="a-namebkmkpowwaanew-features-in-windows-powershell-web-access"></a><a name="BKMK_powwa"></a>Windows PowerShell Web Access の新機能
+### <a name="BKMK_powwa"></a>Windows PowerShell Web Access の新機能
 
 -   Web ベースの Windows PowerShell Web Access コンソールで、既存のセッションを切断および再接続できます。 Web ベースのコンソールで **[保存]** ボタンを使用すると、削除せずにセッションを切断し、あとでセッションに再接続できます。
 
@@ -421,7 +417,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 -   1 つのブラウザー セッションで各セッションに対して新しいブラウザー タブを使用することにより、複数の Windows PowerShell Web Access セッションに接続できるようになりました。 Web ベースの Windows PowerShell コンソールで新しいセッションに接続するとき、新しいブラウザー セッションを開く必要がなくなりました。
 
-### <a name="a-namebkmkbugsanotable-bug-fixes-in-windows-powershell-40"></a><a name="BKMK_bugs"></a>Windows PowerShell 4.0 での主なバグ修正
+### <a name="BKMK_bugs"></a>Windows PowerShell 4.0 での主なバグ修正
 
 -   **Get-Counter** で、フランス語エディションの Windows で返されるカウンターにアポストロフィ文字を含められるようになりました。
 
@@ -457,7 +453,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 -   入れ子になったワークフローを定義するワークフローのインポート処理のパフォーマンスが改善され、高速に処理されるようになりました。
 
-## <a name="a-namebkmkwps3anew-features-in-windows-powershell-30"></a><a name="BKMK_wps3"></a>Windows PowerShell 3.0 の新機能
+## <a name="BKMK_wps3"></a>Windows PowerShell 3.0 の新機能
 Windows PowerShell 3.0 には、次に示す新機能があります。
 
 -   [Windows PowerShell ワークフロー](#BKMK_Workflow)
@@ -514,7 +510,7 @@ Windows PowerShell 3.0 には、次に示す新機能があります。
 
 -   [特殊文字の処理の改善](#BKMK_CHAR)
 
-### <a name="a-namebkmkworkflowawindows-powershell-workflow"></a><a name="BKMK_Workflow"></a>Windows PowerShell ワークフロー
+### <a name="BKMK_Workflow"></a>Windows PowerShell ワークフロー
 Windows PowerShell® ワークフローによって、Windows Workflow Foundation の機能を Windows PowerShell で利用できます。 ワークフローは、XAML または Windows PowerShell 言語で記述し、コマンドレットを実行するのとまったく同様に実行できます。 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) コマンドレットはワークフロー コマンドを取得し、[Get-help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) コマンドレットは、ワークフローのヘルプを取得します。
 
 ワークフローは、複数のコンピューターを管理するアクティビティのシーケンスです。これは、実行時間が長く、反復可能な、頻繁に実行できるシーケンスで、並列実行、割り込み、中断、および再起動が可能です。 ワークフローは、ネットワークの停止、Windows の再起動、電源障害などの意図的または偶発的な割り込みから再開できます。
@@ -529,7 +525,7 @@ Windows PowerShell ワークフローの利点を次に示します。
 
 -   **複数コンピューターの管理。** 数百の管理対象ノードでタスクをワークフローとして同時に実行できます。 Windows PowerShell ワークフローには、**PSComputerName** などの共通管理パラメーターで構成される組み込みライブラリが含まれているため、複数のコンピューターを管理するシナリオに対応できます。
 
--   **複雑なプロセスを&1; つのタスクで実行します。** エンド ツー エンドのシナリオ全体を実装する関連したスクリプトを&1; つのワークフローにまとめることができます。
+-   **複雑なプロセスを 1 つのタスクで実行します。** エンド ツー エンドのシナリオ全体を実装する関連したスクリプトを 1 つのワークフローにまとめることができます。
 
 -   **永続化。**ワークフローは、作成者によって定義された特定の時点で保存 (またはチェックポイントを作成) できるため、ワークフローを最初から再開する代わりに、最後の永続化されたタスク (またはチェックポイント) からワークフローを再開できます。
 
@@ -541,21 +537,21 @@ Windows PowerShell ワークフローの利点を次に示します。
 
 -   **ワークフローと接続のスロットル調整。** ワークフローの実行とノードへの接続をスロットルで調整できるため、スケーラビリティと高可用性のシナリオに対応できます。
 
-### <a name="a-namebkmkwebaccessawindows-powershell-web-access"></a><a name="BKMK_WebAccess"></a>Windows PowerShell Web Access
+### <a name="BKMK_WebAccess"></a>Windows PowerShell Web Access
 Windows PowerShell® Web Access は、Windows PowerShell のコマンドとスクリプトをユーザーが Web ベースのコンソールで実行できる Windows Server 2012 の機能です。 Web ベースのコンソールを使用するデバイスでは、Windows PowerShell、リモート管理ソフトウェアまたはブラウザー プラグインをインストールする必要はありません。 必要なのは、適切に構成された Windows PowerShell Web Access ゲートウェイと、JavaScript® をサポートし、Cookie を許可するクライアント デバイスのブラウザーのみです。
 
 詳細については、「[ Windows PowerShell Web Access の展開](http://go.microsoft.com/fwlink/p/?LinkID=221050)」を参照してください。
 
-### <a name="a-namebkmkiseanew-windows-powershell-ise-features"></a><a name="BKMK_ISE"></a>Windows PowerShell ISE の新機能
+### <a name="BKMK_ISE"></a>Windows PowerShell ISE の新機能
 Windows PowerShell 3.0 では、Windows PowerShell® Integrated Scripting Environment (ISE) に多くの新機能が追加されました。たとえば、IntelliSense、Show-Command ウィンドウ、統合されたコンソール ウィンドウ、スニペット、かっこの一致に基づくセクションの展開/折りたたみ、自動保存、最近使った項目の一覧、機能豊富なコピー、ブロックのコピー、および Windows PowerShell スクリプト ワークフローの記述を完全サポートする機能などです。 詳細については、「[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)」を参照してください。
 
-### <a name="a-namebkmknet4asupport-for-microsoft-net-framework-4"></a><a name="BKMK_NET4"></a>Microsoft .NET Framework 4 のサポート
+### <a name="BKMK_NET4"></a>Microsoft .NET Framework 4 のサポート
 Windows PowerShell は、共通言語ランタイム 4.0 を背景にして作成されました。 コマンドレット、スクリプト、およびワークフローの作成者は、新しい Microsoft .NET Framework 4 のクラスを Windows PowerShell で使用できます。たとえば、アプリケーションの互換性と配置、Managed Extensibility Framework、並列コンピューティング、ネットワーク接続、Windows Communication Foundation、および Windows Workflow Foundation があります。
 
-### <a name="a-namebkmkwinpeasupport-for-windows-preinstallation-environment"></a><a name="BKMK_WinPE"></a>Windows プレインストール環境のサポート
+### <a name="BKMK_WinPE"></a>Windows プレインストール環境のサポート
 Windows PowerShell 3.0 は、Windows 8 用の Windows プレインストール環境 (Windows PE) 4.0 に含まれるオプションのコンポーネントです。 Windows PE は、オペレーティング システムのないコンピューターを起動して Windows のインストール用に準備する、最小限のオペレーティング システムです。 Windows PE を使用すると、ハード ドライブのパーティションの作成やフォーマット、ディスク イメージのコンピューターへのコピー、ネットワーク共有からの Windows セットアップの開始などを実行できます。 Windows PowerShell 3.0 は、展開、診断、および復旧のシナリオを管理するために Windows PE で使用できます。
 
-### <a name="a-namebkmkdisconnectedadisconnected-sessions"></a><a name="BKMK_Disconnected"></a>切断されたセッション
+### <a name="BKMK_Disconnected"></a>切断されたセッション
 Windows PowerShell 3.0 以降では、New-PSSession コマンドレットを使用してユーザーが作成した、ユーザーが管理する永続的なセッション ("PSSessions") がリモート コンピューター上に保存されます。 それらのセッションは、作成元のセッションに依存しなくなりました。
 
 セッションで実行されているコマンドを中断せずに、セッションから切断できるようになりました。 セッションを終了したり、コンピューターをシャットダウンしたりできます。 後で、同じまたは異なるコンピューター上の異なるセッションから、元のセッションに再接続できます。
@@ -566,21 +562,21 @@ Windows PowerShell 3.0 以降では、New-PSSession コマンドレットを使�
 
 "切断されたセッション" 機能がサポートされるのは、接続の両端、つまり、開始側 ("クライアント") と終了側 ("サーバー") にある両方のコンピューターで Windows PowerShell 3.0 が実行されている場合のみです。
 
-### <a name="a-namebkmkrobustarobust-session-connectivity"></a><a name="BKMK_Robust"></a>堅牢なセッション接続
+### <a name="BKMK_Robust"></a>堅牢なセッション接続
 Windows PowerShell 3.0 は、クライアントとサーバー間の接続が予期せずに失われた状態を検出すると、自動的に接続を再接続し、実行を再開しようとします。 割り当てられた時間内にクライアントとサーバー間の接続を再確立できなかった場合は、ユーザーに通知され、セッションは切断されます。 再接続を試行している間、Windows PowerShell はユーザーに通知を継続的にフィードバックします。
 
 切断されたセッションが InvokeCommand を使用して開始されたものである場合、Windows PowerShell は、容易に再接続して実行を再開できるようにするために、切断されたセッションのためのジョブを作成します。
 
 これらの機能により、さらに信頼性が高く、再開可能なリモート処理エクスペリエンスが提供されるため、ワークフローなど、堅牢なセッションを必要とする長時間実行されるタスクを実行できます。
 
-### <a name="a-namebkmkuphelpaupdatable-help-system"></a><a name="BKMK_UpHelp"></a>更新可能なヘルプ システム
+### <a name="BKMK_UpHelp"></a>更新可能なヘルプ システム
 モジュール内のコマンドレットに関する更新されたヘルプ ファイルをダウンロードできるようになりました。 [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドレットは、最新のヘルプ ファイルを識別し、それらのファイルをインターネットからダウンロードし、アンパックし、検証し、モジュール用の言語固有の該当するディレクトリにインストールします。
 
 更新されたヘルプ ファイルは、`Get-Help` と入力するだけで使用できます。 Windows または Windows PowerShell を再起動する必要はありません。 $pshome ディレクトリのモジュールのヘルプを更新するには、[管理者として実行] オプションを使用して Windows PowerShell を起動します。
 
 インターネットにアクセスできないユーザーやファイアウォールの内側にいるユーザーをサポートするには、新しいコマンドレット [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) を使用して、ファイル共有などのファイル システム ディレクトリにヘルプ ファイルをダウンロードします。 その後、ユーザーは [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドレットを使用して、更新されたヘルプ ファイルをファイル共有から入手します。
 
-[Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドレットを使用してヘルプ ファイルを更新する際は、すべてのサポートされる UI カルチャのすべてのモジュール、または特定のモジュールに対して更新を実行できます。 Windows PowerShell プロファイルに [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドを置くこともできます。 既定では、Windows PowerShell は、モジュールに対するヘルプ ファイルを&1; 日に&1; 回を超えてダウンロードすることはありません。
+[Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドレットを使用してヘルプ ファイルを更新する際は、すべてのサポートされる UI カルチャのすべてのモジュール、または特定のモジュールに対して更新を実行できます。 Windows PowerShell プロファイルに [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドを置くこともできます。 既定では、Windows PowerShell は、モジュールに対するヘルプ ファイルを 1 日に 1 回を超えてダウンロードすることはありません。
 
 Windows 8 および Windows Server 2012 モジュールにはヘルプ ファイルが含まれていません。 最新のヘルプ ファイルをダウンロードするには、`Update-Help` と入力します。 詳細については、`Get-Help` と入力する (パラメーターなし) か、「[about_Updatable_Help](https://technet.microsoft.com/en-us/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe)」を参照してください。
 
@@ -588,7 +584,7 @@ Windows 8 および Windows Server 2012 モジュールにはヘルプ ファイ
 
 モジュールの作成者は、自分のモジュールに対して更新可能なヘルプをサポートできます。 モジュールにヘルプ ファイルを組み込んでおき、更新可能なヘルプを使用してそれらのヘルプ ファイルを更新することができます。あるいは、ヘルプ ファイルを省略し、更新可能なヘルプを使用してヘルプ ファイルをインストールすることもできます。 更新可能なヘルプのサポートに関する詳細は、MSDN にある「[更新可能なヘルプのサポート](http://go.microsoft.com/FWLink/?LinkID=242129)」を参照してください。
 
-### <a name="a-namebkmkonlineaenhanced-online-help"></a><a name="BKMK_Online"></a>強化されたオンライン ヘルプ
+### <a name="BKMK_Online"></a>強化されたオンライン ヘルプ
 Windows PowerShell のオンライン ヘルプはすべてのユーザーにとって価値のあるリソースですが、更新されたヘルプ ファイルをインストールしない、またはインストールできないユーザーにとっては特に重要です。
 
 Windows PowerShell コマンドレットのオンライン ヘルプを取得するには、次のように入力します。
@@ -612,13 +608,13 @@ Windows PowerShell 3.0 以降では、C# コマンドレットの作成者は、
 
 オンライン ヘルプのサポートに関する詳細は、MSDN にある「[オンライン ヘルプのサポート](http://go.microsoft.com/fwlink/?LinkId=242132)」を参照してください。
 
-### <a name="a-namebkmkcimacim-integration"></a><a name="BKMK_CIM"></a>CIM の統合
+### <a name="BKMK_CIM"></a>CIM の統合
 Windows PowerShell 3.0 には、Common Information Model (CIM) のサポートが組み込まれています。CIM は、システム、ネットワーク、アプリケーション、およびサービスの管理情報について共通の定義を提供するもので、異種システム間での管理情報の交換を可能にします。 Windows PowerShell 3.0 での CIM のサポートには、新規または既存の CIM クラスに基づいて Windows PowerShell コマンドレットを作成する機能、コマンドレットを定義する XML ファイルに基づいてコマンドを作成する機能のほか、CIM .NET Framework API、CIM 管理コマンドレット、および WMI 2.0 プロバイダーのサポートが含まれます。
 
-### <a name="a-namebkmkconfigfileasession-configuration-files"></a><a name="BKMK_ConfigFile"></a>セッション構成ファイル
+### <a name="BKMK_ConfigFile"></a>セッション構成ファイル
 Windows PowerShell 3.0 以降では、ファイルを使用してカスタム セッションの構成を設計できます。 新しいセッション構成ファイルでは、そのセッション構成を使用するセッションの環境を決定できます。たとえば、セッションに読み込むモジュール、スクリプト、およびフォーマット ファイル、ユーザーが使用できるコマンドレットおよび言語要素、ユーザーが実行できるモジュールおよびスクリプト、ユーザーが見ることのできる変数を決定します。
 
-ユーザーが特定の&1; つのモジュールからコマンドレットを実行できるだけのセッションを設計できます。あるいは、ユーザーが完全な言語を持ち、すべてのモジュールにアクセスでき、高度なタスクを実行するスクリプトにアクセスできるセッションを設計できます。
+ユーザーが特定の 1 つのモジュールからコマンドレットを実行できるだけのセッションを設計できます。あるいは、ユーザーが完全な言語を持ち、すべてのモジュールにアクセスでき、高度なタスクを実行するスクリプトにアクセスできるセッションを設計できます。
 
 以前のバージョンの Windows PowerShell では、このレベルの制御は、C# プログラムや複雑なスタートアップ スクリプトを作成できる人のみが使用できました。 現在は、コンピューターの Administrators グループのすべてのメンバーが、構成ファイルを使用してセッションの構成をカスタマイズできます。
 
@@ -626,23 +622,23 @@ Windows PowerShell 3.0 以降では、ファイルを使用してカスタム �
 
 詳細については、「[about_Session_Configuration_Files](https://technet.microsoft.com/en-us/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8)」および「[New-PSSessionConfigurationFile](https://technet.microsoft.com/en-us/library/5f3e3633-6e90-479c-aea9-ba45a1954866)」を参照してください。
 
-### <a name="a-namebkmkscheduledjobascheduled-jobs-and-task-scheduler-integration"></a><a name="BKMK_ScheduledJob"></a>スケジュールされたジョブ、およびタスク スケジューラとの統合
+### <a name="BKMK_ScheduledJob"></a>スケジュールされたジョブ、およびタスク スケジューラとの統合
 Windows PowerShell のバックグラウンド ジョブは、Windows PowerShell およびタスク スケジューラでスケジュールを設定し、管理できるようになりました。
 
 Windows PowerShell のスケジュール設定されたジョブは、Windows PowerShell のバックグラウンド ジョブとタスク スケジューラのタスクを統合した便利なハイブリッドです。
 
 Windows PowerShell のバックグラウンド ジョブと同様、スケジュールされたジョブはバックグラウンドで非同期に実行されます。 スケジュールされたジョブが完了したインスタンスは、[Start-Job](https://technet.microsoft.com/en-us/library/2bc04935-0deb-4ec0-b856-d7290cca6442) および [Get-Job](https://technet.microsoft.com/en-us/library/1352c534-7193-46ca-9ab1-0c5219a661ad) などのジョブ コマンドレットを使用して管理できます。
 
-タスク スケジューラのタスクと同様、スケジュールされたジョブは&1; 回または繰り返し実行したり、特定のアクションまたはイベントへの応答として実行したりできます。 スケジュールされたジョブはタスク スケジューラで表示および管理できます。必要に応じて有効または無効にする、実行する、テンプレートとして使用する、ジョブが開始される条件を設定するなどの操作が可能です。
+タスク スケジューラのタスクと同様、スケジュールされたジョブは 1 回または繰り返し実行したり、特定のアクションまたはイベントへの応答として実行したりできます。 スケジュールされたジョブはタスク スケジューラで表示および管理できます。必要に応じて有効または無効にする、実行する、テンプレートとして使用する、ジョブが開始される条件を設定するなどの操作が可能です。
 
 さらに、スケジュールされたジョブには、それらのジョブを管理するためのカスタマイズされた一連のコマンドレットがあります。 それらのコマンドレットでは、スケジュールされたジョブの作成、編集、管理、無効化、再有効化を実行したり、スケジュールされたジョブのトリガーを作成したり、スケジュールされたジョブのオプションを設定したりできます。
 
 スケジュールされたジョブの詳細については、「[about_Scheduled_Jobs](https://technet.microsoft.com/en-us/library/3b546629-703c-4939-b44f-52dd567bce92)」を参照してください。
 
-### <a name="a-namebkmklangawindows-powershell-language-enhancements"></a><a name="BKMK_Lang"></a>Windows PowerShell 言語の機能強化
+### <a name="BKMK_Lang"></a>Windows PowerShell 言語の機能強化
 Windows PowerShell 3.0 には、言語を単純化し、使いやすくし、一般的なエラーを回避するために設計された多くの機能が含まれます。 強化された機能としては、スカラー オブジェクトに対するプロパティの列挙、カウントや長さのプロパティ、新しいリダイレクト演算子、$Using スコープ修飾子、PSItem 自動変数、柔軟性の高いスクリプトの書式設定、変数の属性、簡略化された属性の引数、数値のコマンド名、Stop-Parsing 演算子、強化された配列スプラッティング、新しいビット演算子、順序付けられた辞書、PSCustomObject のキャスト、および強化されたコメント ベースのヘルプがあります。
 
-### <a name="a-namebkmkcoreanew-core-cmdlets"></a><a name="BKMK_Core"></a>新しいコア コマンドレット
+### <a name="BKMK_Core"></a>新しいコア コマンドレット
 新しいコマンドレットが Windows PowerShell コアのインストールに追加されました。スケジュールされたジョブ、切断されたセッション、CIM 統合、更新可能なヘルプ システムを管理するコマンドレットです。
 
 |||
@@ -676,20 +672,20 @@ Windows PowerShell 3.0 には、言語を単純化し、使いやすくし、一
 |New-CimSessionOption|Update-Help|
 |New-IseSnippet||
 
-### <a name="a-namebkmkprovaimprovements-to-existing-core-cmdlets-and-providers"></a><a name="BKMK_Prov"></a>既存のコア コマンドレットとプロバイダーの向上
+### <a name="BKMK_Prov"></a>既存のコア コマンドレットとプロバイダーの向上
 Windows PowerShell 3.0 には、単純化された構文を含む既存のコマンドレットの新機能と次のコマンドレットの新しいパラメーターが含まれています。Computer コマンドレット、CSV コマンドレット、Get-ChildItem、Get-Command、Get-Content、Get-History、Measure-Object、Security コマンドレット、Select-Object、Select-String、Split-Path、Start-Process、Tee-Object、Test-Connection、Add-Member、および WMI コマンドレット。
 
 また、Windows PowerShell プロバイダーも大幅に機能強化され、Web ホスト用の Secure Socket Layer (SSL) 証明書を管理するための証明書プロバイダーのサポート、資格情報のサポート、およびファイル システム ドライブにおける永続化されたネットワーク ドライブと代替データ ストリームのサポートが改善されました。
 
-### <a name="a-namebkmkremaremote-module-import-and-discovery"></a><a name="BKMK_REM"></a>リモート モジュールのインポートと検出
+### <a name="BKMK_REM"></a>リモート モジュールのインポートと検出
 Windows PowerShell 3.0 では、リモート コンピューター上でのモジュールの検出、インポート、および暗黙的なリモート処理の機能が拡張されました。 Module コマンドレットは、Windows PowerShell のリモート処理を使用してリモート コンピューター上のモジュールを取得し、モジュールをリモートまたはローカル コンピューターにインポートします。 新しい CIM セッションのサポートでは、Windows 以外のコンピューターを管理するために CIM および WMI を使用して、リモート コンピューター上で暗黙的に実行されるコマンドをローカル コンピューターにインポートできます。
 
 詳細については、「[Get-module](https://technet.microsoft.com/en-us/library/2cccd4c4-9a21-4c77-b691-984ee57242e1)」コマンドレットと「[Import-module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade)」コマンドレットのヘルプ トピックを参照してください。
 
-### <a name="a-namebkmktabaenhanced-tab-completion"></a><a name="BKMK_TAB"></a>強化された Tab 補完機能
+### <a name="BKMK_TAB"></a>強化された Tab 補完機能
 Windows PowerShell コンソールの Tab 補完機能では、コマンドレット、パラメーター、パラメーター値、列挙、.NET Framework 型、COM オブジェクト、隠しディレクトリなどの名前が補完されるようになりました。 Tab 補完機能は、新しいパーサーと抽象構文ツリーに基づいて完全に再作成され、インメモリ解析ツリーや行の途中での Tab 補完を含むより多くのシナリオをサポートします。
 
-### <a name="a-namebkmkautoloadamodule-auto-loading"></a><a name="BKMK_AutoLoad"></a>モジュールの自動読み込み
+### <a name="BKMK_AutoLoad"></a>モジュールの自動読み込み
 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) コマンドレットにより、コンピューターにインストールされているすべてのモジュール (現在のセッションでインポートされないモジュールを含む) のすべてのコマンドレットと関数を取得できるようになりました。
 
 必要なコマンドレットを取得したら、何かのモジュールをインポートすることなく、すぐに使用できます。 Windows PowerShell のモジュールは、モジュール内のいずれかのコマンドレットを使用した時点で自動的にインポートされるようになりました。 モジュールを検索したり、それに含まれるコマンドレットを使用するためにインポートしたりする必要がありません。
@@ -700,7 +696,7 @@ Windows PowerShell コンソールの Tab 補完機能では、コマンドレ�
 
 詳細については、「[about_Modules [v4]](https://technet.microsoft.com/en-us/library/94f57429-a539-4aee-bb0d-205cd7e801f9)」、「[about_Preference_Variables [v4]](https://technet.microsoft.com/en-us/library/31344314-be29-4286-b039-afa5460cbe8b)」、および「[Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad)」コマンドレットと「[Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade)」コマンドレットのヘルプ トピックを参照してください。
 
-### <a name="a-namebkmkmodamodule-experience-improvements"></a><a name="BKMK_MOD"></a>モジュールのエクスペリエンスの向上
+### <a name="BKMK_MOD"></a>モジュールのエクスペリエンスの向上
 Windows PowerShell 3.0 は、高度な機能のサポートをモジュールに提供する次のような新機能があります。
 
 1.  個々のモジュールを対象にしたモジュール ログ (LogPipelineExecutionDetails) と、新しい "モジュール ログをオンにする" グループ ポリシー設定。
@@ -721,36 +717,36 @@ Windows PowerShell 3.0 は、高度な機能のサポートをモジュールに
 
 9. [Import-Module](https://technet.microsoft.com/en-us/library/af616c24-e122-4098-930e-1e3ea2080ade) コマンドレットが改善され、**MinimumVersion** および **RequiredVersion** の両パラメーターが追加されました。
 
-### <a name="a-namebkmksimpleasimplified-command-discovery"></a><a name="BKMK_SIMPLE"></a>コマンド検出の単純化
+### <a name="BKMK_SIMPLE"></a>コマンド検出の単純化
 すべてのモジュールをインポートしないでも、現在のセッションで使用可能なコマンドを検出できるようになりました。 Windows PowerShell 3.0 では、インストールされているすべてのモジュールからすべてのコマンドを [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) コマンドレットが取得します。 また、あるコマンドを使用すると。そのコマンドをエクスポートするモジュールがセッションに自動的にインポートされます。
 
 新しい [Show-Command](https://technet.microsoft.com/en-us/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) コマンドレットは、特に初級ユーザー向けに設計されています。 ウィンドウでコマンドを検索できます。 すべてのコマンドを表示するかモジュールによってフィルター処理し、ボタンをクリックしてモジュールをインポートし、テキスト ボックスやドロップダウン リストを使用して有効なコマンドを作成した後、そのコマンドをコピーしたり、このウィンドウを開いたままでコマンドを実行したりできます。
 
-### <a name="a-namebkmklogaimproved-logging-diagnostics-and-group-policy-support"></a><a name="BKMK_LOG"></a>ログ記録、診断、およびグループ ポリシーのサポートの改善
+### <a name="BKMK_LOG"></a>ログ記録、診断、およびグループ ポリシーのサポートの改善
 Windows PowerShell 3.0 において、コマンドとモジュールのログ記録とトレースのサポートが機能強化されました。Windows イベント トレーシング (ETW) ログのサポートが追加され、モジュールの **LogPipelineExecutionDetails** プロパティが編集可能になり、グループ ポリシー設定に "モジュール ログを有効にする" が追加されました。 ログ プロパティを表示すれば、ログの詳細からパラメーター値を取得できるようになりました。
 
-### <a name="a-namebkmkoutaformatting-and-output-improvements"></a><a name="BKMK_OUT"></a>書式設定と出力の向上
+### <a name="BKMK_OUT"></a>書式設定と出力の向上
 書式設定と出力の新たな機能向上により、すべての Windows PowerShell ユーザーの効率が改善されました。 向上した機能には、すべてのストリームの出力リダイレクト、Format.ps1xml ファイルなしで動的に型を追加できる拡張された Update-Type コマンドレット、出力の右端での折り返し、カスタム オブジェクトの既定の書式設定プロパティ、**PSCustomObject** 型、WMI オブジェクトと異種オブジェクトの書式設定の改善、メソッドのオーバーロードを検出する機能のサポートなどがあります。
 
-### <a name="a-namebkmkhostaenhanced-console-host-experience"></a><a name="BKMK_HOST"></a>コンソール ホストのエクスペリエンスの改善
+### <a name="BKMK_HOST"></a>コンソール ホストのエクスペリエンスの改善
 Windows PowerShell コンソール ホスト プログラムは Windows PowerShell 3.0 で新機能が追加され、既定でシングル スレッド アパートメントがサポートされます。 エクスプローラーの新しい [PowerShell で実行] オプションを使用すると、右クリックするだけで、制限なしのセッションでスクリプトを実行できます。 コンソール ホストの起動ロジックが新しくなり、Windows PowerShell を高速で起動できるようになりました。また、新しいフォントを使用すると、使い慣れたコンソールのウィンドウ エクペリエンスにカスタマイズできます。
 
 詳細については、「[about_Run_With_PowerShell](https://technet.microsoft.com/en-us/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb)」を参照してください。
 
-### <a name="a-namebkmkapianew-cmdlet-and-hosting-apis"></a><a name="BKMK_API"></a>新しい Cmdlet API および Hosting API
+### <a name="BKMK_API"></a>新しい Cmdlet API および Hosting API
 新しい Cmdlet API および Hosting API には、公開 Advanced Syntax Tree (AST) API、パイプライン ページング、入れ子になったパイプライン、実行空間プールの Tab 補完、Windows RT のための各 API、Obsolete コマンドレット属性、FunctionInfo オブジェクトの Verb および Noun プロパティが含まれています。
 
-### <a name="a-namebkmkperfaperformance-improvements"></a><a name="BKMK_PERF"></a>パフォーマンスの向上
+### <a name="BKMK_PERF"></a>パフォーマンスの向上
 Windows PowerShell での大幅なパフォーマンスの向上は、.NET Framework 4. の動的言語ランタイム (DLR) 上で構築された新しい言語パーサーの成果です。さらに、ランタイム スクリプトのコンパイルの向上、エンジンの信頼性の向上、および [Get-ChildItem](https://technet.microsoft.com/en-us/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) のアルゴリズム変更によるパフォーマンスの向上 (特にネットワーク共有の検索時) なども貢献しています。
 
-### <a name="a-namebkmkrunasarunas-and-shared-host-support"></a><a name="BKMK_RUNAS"></a>RunAs および共有ホストのサポート
+### <a name="BKMK_RUNAS"></a>RunAs および共有ホストのサポート
 Windows PowerShell 3.0 には、RunAs 機能と共有ホスト機能のサポートが組み込まれました。
 
 *RunAs* 機能は、Windows PowerShell のワークフロー用に設計されたもので、これによりセッション構成のユーザーが共有ユーザー アカウントのアクセス許可で実行するセッションを作成できます。 管理者のアクセス許可が必要な特定のコマンドおよびスクリプトを権限の少ないユーザーが実行できるようになるため、スキルの限られたユーザーを Administrators グループに追加する必要性を削減できます。
 
 **SharedHost** 機能を使用すると、複数のコンピューター上の複数のユーザーがワークフロー セッションに同時に接続して、ワークフローの進行状況をモニターできます。 ユーザーは、1 つのコンピューター上でワークフローを開始した後、別のコンピューター上でそのワークフロー セッションに接続することができ、その際に元のコンピューターからのセッションを切断する必要がありません。 ユーザーは、同じアクセス許可を持ち、同じセッション構成を使用している必要があります。 詳細については、「Windows PowerShell ワークフローについて」の「Windows PowerShell ワークフローの実行」を参照してください。
 
-### <a name="a-namebkmkcharaspecial-character-handling-improvements"></a><a name="BKMK_CHAR"></a>特殊文字の処理の向上
+### <a name="BKMK_CHAR"></a>特殊文字の処理の向上
 Windows PowerShell 3.0 では、特殊文字を正しく解釈して処理する機能が改善されました。パスに含まれる特殊文字を処理する **LiteralPath** パラメーターが、新しい [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545) および [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) コマンドレットを含む、**Path** パラメーターを持つほとんどすべてのコマンドレットで有効になりました。 また、ファイル名やパスに含まれるアクサングラーブ文字 (\`) と角かっこの処理を改善する特別なロジックがパーサーに組み込まれました。
 
 ## <a name="see-also"></a>参照

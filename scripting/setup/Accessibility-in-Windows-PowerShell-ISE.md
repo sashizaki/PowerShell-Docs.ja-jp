@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "Windows PowerShell ISE のアクセシビリティ"
-ms.technology: powershell
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 0c9877e9de958405be7ade4ab6470b1d97b916fc
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 1231271067f32ff888504344bc324b13aade9c33
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE のアクセシビリティ
 このトピックでは、Windows PowerShell® Integrated Scripting Environment (ISE) の役に立つユーザー補助機能について説明します。
@@ -34,7 +30,7 @@ Windows PowerShell ISE は、ハイ コントラスト モードをサポート�
 
 -   テキスト サイズの変更
 
-## <a name="a-namebkmk1ahow-to-change-the-size-and-location-of-the-console-and-script-panes"></a><a name="bkmk_1"></a>コンソール ウィンドウとスクリプト ウィンドウのサイズと場所を変更する方法
+## <a name="bkmk_1"></a>コンソール ウィンドウとスクリプト ウィンドウのサイズと場所を変更する方法
 コンソール ウィンドウとスクリプト ウィンドウのサイズと場所の変更は、次の手順で実行できます。 Windows PowerShell ISE を再び開いたときに、サイズと場所に加えた変更が保持されています。
 
 ### <a name="to-resize-the-script-pane-and-console-pane"></a>スクリプト ウィンドウとコンソール ウィンドウのサイズを変更するには
@@ -56,7 +52,7 @@ Windows PowerShell ISE は、ハイ コントラスト モードをサポート�
 
 -   コンソール ウィンドウを最大表示しているときに、スクリプト ウィンドウを表示するには、タブの行の右端にある **[スクリプト ウィンドウを表示]** アイコンをクリックするか、**[表示]** メニューで **[スクリプト ウィンドウを表示]** メニュー オプションをクリックして選びます。
 
-## <a name="a-namebkmk2akeyboard-shortcuts-for-editing-text"></a><a name="bkmk_2"></a>テキストを編集するためのキーボード ショートカット
+## <a name="bkmk_2"></a>テキストを編集するためのキーボード ショートカット
 テキストを編集するときに、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|使用する場所|
@@ -73,7 +69,7 @@ Windows PowerShell ISE は、ハイ コントラスト モードをサポート�
 |**すべて選択**|CTRL + A|スクリプト ウィンドウ、コンソール ウィンドウ|
 |**元に戻す**|CTRL + Z|スクリプト ウィンドウ、コンソール ウィンドウ|
 
-## <a name="a-namebkmk3akeyboard-shortcuts-for-running-scripts"></a><a name="bkmk_3"></a>スクリプトを実行するためのキーボード ショートカット
+## <a name="bkmk_3"></a>スクリプトを実行するためのキーボード ショートカット
 スクリプト ウィンドウでスクリプトを実行する場合、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|
@@ -86,7 +82,7 @@ Windows PowerShell ISE は、ハイ コントラスト モードをサポート�
 |**タブ移動** (次のスクリプトへ)|CTRL + TAB **メモ:** 次のスクリプトへのタブは、PowerShell タブを 1 つ開いている場合、または PowerShell タブを複数開いている場合にだけ機能します。ただし、フォーカスはスクリプト ウィンドウにあります。|
 |**タブ移動** (前のスクリプトへ)|CTRL + SHIFT + TAB **メモ:** 前のスクリプトへのタブは、PowerShell タブを 1 つだけ開いている場合、または PowerShell タブを複数開いている場合に機能します。フォーカスはスクリプト ウィンドウにあります。|
 
-## <a name="a-namebkmk4akeyboard-shortcuts-for-customizing-the-view"></a><a name="bkmk_4"></a>ビューをカスタマイズするためのキーボード ショートカット
+## <a name="bkmk_4"></a>ビューをカスタマイズするためのキーボード ショートカット
 次のキーボード ショートカットを使用して、Windows PowerShell ISE のビューをカスタマイズできます。 アプリケーションのすべてのウィンドウから利用可能です。
 
 |操作|キーボード ショートカット|
@@ -102,7 +98,7 @@ Windows PowerShell ISE は、ハイ コントラスト モードをサポート�
 |**拡大**|CTRL + + (プラス記号)|
 |**縮小**|CTRL + - (マイナス記号)|
 
-## <a name="a-namebkmk5akeyboard-shortcuts-for-debugging-scripts"></a><a name="bkmk_5"></a>スクリプト デバッグ用のキーボード ショートカット
+## <a name="bkmk_5"></a>スクリプト デバッグ用のキーボード ショートカット
 スクリプトをデバッグするときに、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|使用する場所|
@@ -132,7 +128,7 @@ Windows PowerShell ISE は、ハイ コントラスト モードをサポート�
 |**スクリプトの一覧表示**|L|コンソール ウィンドウ、スクリプトのデバッグ時|
 |**コンソールのデバッグ コマンドの表示**|H または ?|コンソール ウィンドウ、スクリプトのデバッグ時|
 
-## <a name="a-namebkmk6akeyboard-shortcuts-for-windows-powershell-tabs"></a><a name="bkmk_6"></a>Windows PowerShell のタブのキーボード ショートカット
+## <a name="bkmk_6"></a>Windows PowerShell のタブのキーボード ショートカット
 Windows PowerShell のタブを使用するときに、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|
@@ -142,7 +138,7 @@ Windows PowerShell のタブを使用するときに、次のキーボード シ
 |**前の PowerShell タブ**|CTRL + SHIFT + TAB。 このショートカットは、任意の PowerShell タブ上で開いているファイルがない場合にのみ機能します。|
 |**次の Windows PowerShell タブ**|CTRL + Tab。 このショートカットは、任意の PowerShell タブ上で開いているファイルがない場合にのみ機能します。|
 
-## <a name="a-namebkmk7akeyboard-shortcuts-for-starting-and-exiting"></a><a name="bkmk_7"></a>開始および終了のキーボード ショートカット
+## <a name="bkmk_7"></a>開始および終了のキーボード ショートカット
 次のキーボード ショートカットを使用して、Windows PowerShell コンソール (PowerShell.exe) を起動したり、Windows PowerShell ISE を終了したりできます。
 
 |操作|キーボード ショートカット|

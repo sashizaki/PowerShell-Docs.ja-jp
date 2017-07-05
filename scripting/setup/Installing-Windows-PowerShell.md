@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "Windows PowerShell のインストール"
-ms.technology: powershell
 ms.assetid: 6fbb0409-5a54-48ec-95e6-7f8b7d8c4969
-ms.openlocfilehash: fd0336b66312293c434ae2c5ad5a7899c20777ff
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 2b4cdec52dfc98649a81ab2265a204fcdb0bd8d7
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell のインストール
 Windows® 8 と Windows Server® 2012 には、Windows PowerShell 3.0 とその前提条件がすべて含まれています。 システムには、Windows PowerShell 3.0 を使用できないホスト プログラムとの下位互換性のために Windows PowerShell 2.0 エンジンも含まれています。
@@ -32,10 +28,10 @@ Windows® 8 と Windows Server® 2012 には、Windows PowerShell 3.0 とその�
 
 -   [Windows PowerShell 2.0 エンジンのインストール](Installing-the-Windows-PowerShell-2.0-Engine.md)
 
-## <a name="a-namebkmkinstallingonwindows8andwindowsserver2012ainstalling-windows-powershell-on-windows-8-and-windows-server-2012"></a><a name="BKMK_InstallingOnWindows8andWindowsServer2012"></a>Windows 8 と Windows Server 2012 での Windows PowerShell のインストール
+## <a name="BKMK_InstallingOnWindows8andWindowsServer2012"></a>Windows 8 と Windows Server 2012 での Windows PowerShell のインストール
 Windows PowerShell 3.0 は最初からインストールと構成が済んでおり、使用準備が整った状態です。 Windows PowerShell Integrated Scripting Environment (ISE) がインストールされ有効になっています。 Windows PowerShell を開始する方法の詳細については、「[Windows 8 で Windows PowerShell を開始する](https://technet.microsoft.com/en-us/library/d7be1668-8617-4890-ad90-dd9765fbd2c3)」と「[Windows Server 2012 で Windows PowerShell を開始する](https://technet.microsoft.com/library/hh831491.aspx#BKMK_powershell)」をご覧ください。
 
-## <a name="a-namebkmkinstallingonwindows7andwindowsserver2008r2ainstalling-windows-powershell-on-windows-7-and-windows-server-2008-r2"></a><a name="BKMK_InstallingOnWindows7andWindowsServer2008R2"></a>Windows 7 と Windows Server 2008 R2 での Windows PowerShell のインストール
+## <a name="BKMK_InstallingOnWindows7andWindowsServer2008R2"></a>Windows 7 と Windows Server 2008 R2 での Windows PowerShell のインストール
 次に挙げる手順では、Windows 7 Service Pack 1 と Windows Server 2008 R2 Service Pack 1 を実行するコンピューターに Windows PowerShell 3.0 をインストールする方法を説明します。 その下には、Windows Server 2008 R2 の Server Core インストール オプションを使用して実行するコンピューター用に、インストール手順が別に用意されています。
 
 #### <a name="getting-ready-to-install"></a>インストールの準備を行う
@@ -52,7 +48,7 @@ Windows PowerShell 3.0 は最初からインストールと構成が済んでお
 
 Windows PowerShell 3.0 を開始する方法の詳細については、「[以前のバージョンの Windows で Windows PowerShell を開始する](Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md)」をご覧ください。
 
-## <a name="a-namebkmkinstallingonservercoreainstalling-windows-powershell-on-server-core"></a><a name="BKMK_InstallingOnServerCore"></a>Server Core での Windows PowerShell のインストール
+## <a name="BKMK_InstallingOnServerCore"></a>Server Core での Windows PowerShell のインストール
 次に挙げる手順では、Windows Server 2008 R2 Service Pack 1 の Server Core インストール オプションを実行するコンピューターに Windows PowerShell 3.0 をインストールする方法を説明します。
 
 手順の最初の操作では、展開イメージのサービスと管理 (DISM) コマンドを使用して、Server Core 対応 Microsoft .NET Framework 2.0 と Windows PowerShell 2.0 をインストールします。 これらのプログラムは、以降の操作でインストールする Windows Management Framework 3.0 の前提条件です。
@@ -77,7 +73,7 @@ Windows PowerShell 3.0 を開始する方法の詳細については、「[以�
 
 4.  Windows Management Framework 3.0 を Microsoft ダウンロード センター ([http://go.microsoft.com/fwlink/?LinkID=240290](http://go.microsoft.com/fwlink/?LinkID=240290)) からインストールします。
 
-## <a name="a-namebkmkinstallingonwindowsserver2008lhainstalling-windows-powershell-on-windows-server-2008"></a><a name="BKMK_InstallingOnWindowsServer2008LH"></a>Windows Server 2008 での Windows PowerShell のインストール
+## <a name="BKMK_InstallingOnWindowsServer2008LH"></a>Windows Server 2008 での Windows PowerShell のインストール
 次に挙げる手順では、Windows Server 2008 Service Pack 2 を実行するコンピューターに Windows PowerShell 3.0 をインストールする方法を説明します。
 
 Windows Server 2008 システムでは、Windows Management Framework (Windows PowerShell 2.0、KB 968930) が Windows Management Framework 3.0 の前提条件となっています。 "認証の拡張保護" 機能を使用すると、コンピューターを認証転送攻撃から保護したり、リモート セッションの作成時に **UseSSL** パラメーターを使用したりできます。 Windows PowerShell 3.0 と Windows PowerShell 2.0 エンジンをインストールするには、次の手順を実行します。

@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "オブジェクト パイプライン"
-ms.technology: powershell
 ms.assetid: 523d8ae4-d743-47a4-b79a-806130ca688a
-ms.openlocfilehash: 531c3c00ddcc0cc8299875392832fb1dad9f49d8
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 3fa41cc744cf3ab66fc5ef186ead8eb919429a76
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="object-pipeline"></a>オブジェクト パイプライン
 パイプラインは、複数の管を 1 つに継ぎ合わせた管路のような役割を果たします。 パイプラインに沿って移動する項目は、個々の管を通過します。 Windows PowerShell でパイプラインを作成するには、パイプ演算子 (|) を使ってコマンドを接続します。 接続すると、各コマンドの出力が、次のコマンドの入力として使用されるようになります。

@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "Windows PowerShell ドライブの管理"
-ms.technology: powershell
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: aa2e116589d93bc160f697b25666838bbbe5cb6b
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 92fa70785bcaeac2bd75a5ada91f3adff4fa10eb
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell ドライブの管理
 *Windows PowerShell ドライブ*は、Windows PowerShell のファイル システム ドライブのようにアクセスできるデータ格納場所です。 Windows PowerShell プロバイダーは、ファイル システムのドライブ (C: および D: を含む)、レジストリ ドライブ (HKCU: および HKLM:)、および証明書ドライブ (Cert:) など、いくつかのドライブを作成して、独自の Windows PowerShell ドライブを作成できます。 これらのドライブは非常に便利ですが、Windows PowerShell 内でのみ利用可能です。 ファイル エクスプローラーや Cmd.exe など、他の Windows ツールを使用してアクセスすることはできません。
@@ -62,11 +58,20 @@ D          FileSystem    D:\
 
 レジストリ ハイブを表す Windows PowerShell ドライブを表示するには、**PSProvider** パラメーターを使用して、Windows PowerShell Registry プロバイダーによってサポートされる Windows PowerShell ドライブのみを表示します。
 
-<pre>PS> Get-PSDrive -PSProvider Registry Name       Provider      Root                                   CurrentLocation ----       --------      ----                                   --------------- HKCU       Registry      HKEY_CURRENT_USER HKLM       Registry      HKEY_LOCAL_MACHINE</pre>
+<pre>PS> Get-PSDrive -PSProvider Registry
+Name       Provider      Root                                   CurrentLocation
+----       --------      ----                                   ---------------
+HKCU       Registry      HKEY_CURRENT_USER
+HKLM       Registry      HKEY_LOCAL_MACHINE</pre>
 
 また、Windows PowerShell ドライブに標準的な Location コマンドレットを使用することもできます。
 
-<pre>PS> Set-Location HKLM:\SOFTWARE PS> Push-Location .\Microsoft PS> Get-Location Path ---- HKLM:\SOFTWARE\Microsoft</pre>
+<pre>PS> Set-Location HKLM:\SOFTWARE
+PS> Push-Location .\Microsoft
+PS> Get-Location
+Path
+----
+HKLM:\SOFTWARE\Microsoft</pre>
 
 ### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>新しい Windows PowerShell ドライブの追加 (New-PSDrive)
 **New-PSDrive** コマンドを使用して、独自の Windows PowerShell ドライブを追加できます。 **New-PSDrive** コマンドの構文を取得するには、**Get-Command** コマンドに **Syntax** パラメーターを指定して入力します。
@@ -105,7 +110,11 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 
 Windows PowerShell ドライブにより、多数のタスクが簡単になります。 たとえば、Windows レジストリ内の最も重要なキーのいくつかが、極端に長いパスを持っていて、アクセスが煩雑で覚えにくいものがあります。 重要な設定情報が **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion** にあります。 CurrentVersion レジストリ キーの項目を表示して変更するために、次のように入力して、そのキーのルートになる Windows PowerShell ドライブを作成できます。
 
-<pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W indows\CurrentVersion Name       Provider      Root                                   CurrentLocation ----       --------      ----                                   --------------- cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
+<pre>PS> New-PSDrive -Name cvkey -PSProvider Registry -Root HKLM\Software\Microsoft\W
+indows\CurrentVersion
+Name       Provider      Root                                   CurrentLocation
+----       --------      ----                                   ---------------
+cvkey      Registry      HKLM\Software\Microsoft\Windows\...</pre>
 
 **cvkey:** ドライブに場所を移動するには、他のドライブと同様、次のように入力します。
 
@@ -113,7 +122,10 @@ Windows PowerShell ドライブにより、多数のタスクが簡単になり�
 
 または
 
-<pre>PS> Set-Location cvkey: -PassThru Path ---- cvkey:\</pre>
+<pre>PS> Set-Location cvkey: -PassThru
+Path
+----
+cvkey:\</pre>
 
 New-PsDrive コマンドレットが、現在の Windows PowerShell セッションのみに新しいドライブを追加します。 Windows PowerShell ウィンドウを閉じると、新しいドライブは失われます。 Windows PowerShell ドライブを保存するには、Export-Console コマンドレットを使用して、現在の Windows PowerShell セッションをエクスポートし、PowerShell.exe **PSConsoleFile** パラメーターを使用してインポートします。 または、新しいドライブを Windows PowerShell プロファイルに追加します。
 

@@ -1,17 +1,13 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "Windows PowerShell ISE のキーボード ショートカット"
-ms.technology: powershell
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: 7a6c848fe14cfed57e046ab6cf8c576f26b1bf3e
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 21c4b43b1ab94e2b533413362319ec42ac8a15aa
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE のキーボード ショートカット
 Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行するには、次のキーボード ショートカットを使用します。 Windows PowerShell ISE は、Windows Server および Windows クライアント オペレーティング システムの一部として提供されていますが、[Windows Management Framework 4.0 のダウンロード パッケージ](http://go.microsoft.com/fwlink/?LinkID=293881)の一部として、前の Windows オペレーティング システムにもインストールできます。
