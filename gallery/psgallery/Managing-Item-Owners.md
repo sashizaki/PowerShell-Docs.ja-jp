@@ -1,30 +1,33 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,コマンドレット,ギャラリー"
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
 title: "アイテムの所有者を管理する"
-ms.technology: powershell
-ms.openlocfilehash: 36a3a3079bce642b16f0512ead2b0778b43e5d2d
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: fcd538148f9ff1ac96324b567d54d643f1756c93
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="managing-item-owners"></a>アイテムの所有者を管理する
+<a id="managing-item-owners" class="xliff"></a>
+
+# アイテムの所有者を管理する
 
 PowerShell ギャラリーのアイテムの所有権は、そのアイテムをギャラリーに公開した人により定義されます。
 このメタデータは最初のアイテム公開の範囲を超えて管理しなければならないことがあります。つまり、アイテム自体は変更不可でも、所有者メタデータは変更可能にする必要があります。
 
 アイテムの所有者はすべて同等です。 つまり、すべてのアイテムの所有者はアイテムの新しいバージョンを公開できます。 また、すべてのアイテムの所有者は他のアイテムの所有者を削除できます。 ある所有者に他の所有者より大きな権限が与えられることはありません。  
 
-## <a name="setting-an-items-initial-owner"></a>アイテムの最初の所有者を設定する 
+<a id="setting-an-items-initial-owner" class="xliff"></a>
+
+## アイテムの最初の所有者を設定する 
 
 PowerShell ギャラリーに新しいアイテムを公開すると、そのアイテムを公開したユーザーにより最初の所有者が定義されます。 Publish-Module コマンドレットで使用された API キーの所有者によって決定されます。
 
-## <a name="adding-owners"></a>所有者を追加する
+<a id="adding-owners" class="xliff"></a>
+
+## 所有者を追加する
 
 PowerShell ギャラリーにアイテムを公開した後、アイテムの所有者になるように追加のユーザーを招待することは簡単です。
 
@@ -43,7 +46,9 @@ PowerShell ギャラリーにアイテムを公開した後、アイテムの所
 "Authors" メタデータは完全に自由形式のテキストです。"Owners" だけがコントロールされます。
 
 
-## <a name="removing-owners"></a>所有者を削除する
+<a id="removing-owners" class="xliff"></a>
+
+## 所有者を削除する
 アイテムに複数の所有者が設定されているとき、そのうちの 1 名を削除するプロセスは単純です。
 
 1. アイテムの現在の所有者になっているアカウントで PowerShell ギャラリーに[ログオン](https://powershellgallery.com/users/account/LogOn)します。
@@ -53,7 +58,9 @@ PowerShell ギャラリーにアイテムを公開した後、アイテムの所
 
 
 
-## <a name="transferring-item-ownership"></a>アイテムの所有権を譲渡する
+<a id="transferring-item-ownership" class="xliff"></a>
+
+## アイテムの所有権を譲渡する
 ユーザー間でアイテムの所有権を移転するように求めるサポートを依頼されることがありますが、ほとんどの場合、この操作は自分で実行できます。
 ユーザー間での所有権の移転は、単純に上記の 2 つの機能の組み合わせとなります。
 
@@ -66,7 +73,9 @@ PowerShell ギャラリーにアイテムを公開した後、アイテムの所
 * アイテムが間違ったアカウントで公開された
 
 
-## <a name="orphaned-items"></a>孤立したアイテム
+<a id="orphaned-items" class="xliff"></a>
+
+## 孤立したアイテム
 最後になりますが、アイテムの孤立という状況があります。ただし、これは頻繁に発生しません。
 アイテムが孤立し、唯一のアイテムの所有者アカウントでは新しい所有者を追加できません。
 たとえば、次のような例があります。

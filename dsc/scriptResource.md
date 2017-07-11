@@ -1,17 +1,18 @@
 ---
-title: "DSC Script リソース"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 56eb7ef230d84cc5f5679f39e13e2019205c65f5
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "DSC Script リソース"
+ms.openlocfilehash: 81718de0b0c8463189e33e565dc9ff39692dbe8b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-script-resource"></a>DSC Script リソース
+<a id="dsc-script-resource" class="xliff"></a>
+
+# DSC Script リソース
 
  
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -27,7 +28,9 @@ Windows PowerShell Desired State Configuration (DSC) の **Script** リソース
 `GetScript`、`TestScript`、または `SetScript` スクリプト ブロックで構成スクリプトの変数を使用する必要がある場合は、`$using:` スコープを使用します (例については、以下を参照してください)。
 
 
-## <a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+## 構文
 
 ```
 Script [string] #ResourceName
@@ -40,7 +43,9 @@ Script [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+<a id="properties" class="xliff"></a>
+
+## プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -50,7 +55,9 @@ Script [string] #ResourceName
 | Credential| 資格情報が必要な場合、このスクリプトの実行に使用する資格情報を示します。| 
 | DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。
 
-## <a name="example-1"></a>例 1
+<a id="example-1" class="xliff"></a>
+
+## 例 1
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -72,7 +79,9 @@ Configuration ScriptTest
 }
 ```
 
-## <a name="example-2"></a>例 2
+<a id="example-2" class="xliff"></a>
+
+## 例 2
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -84,7 +93,7 @@ Configuration ScriptTest
     {
         GetScript = { 
             $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Result' = "Version: $currentVersion" }
+            return @{ 'Version' = "$currentVersion" }
         }          
         TestScript = { 
             $state = $GetScript

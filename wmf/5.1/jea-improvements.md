@@ -1,20 +1,23 @@
 ---
-title: "Just Enough Administration (JEA) の強化"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC, WMF, JEA
-description: 
-ms.topic: article
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
 contributor: ryanpu
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 1b054b67bfd7b3660bac134bc8b023baf5644507
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+title: "Just Enough Administration (JEA) の強化"
+ms.openlocfilehash: 2811b4deb3f4fca513791c7389ee5f9f877dbfe8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="improvements-to-just-enough-administration-jea"></a>Just Enough Administration (JEA) の強化
+<a id="improvements-to-just-enough-administration-jea" class="xliff"></a>
 
-## <a name="constrained-file-copy-tofrom-jea-endpoints"></a>JEA エンドポイントとの間の制約付きのファイル コピー
+# Just Enough Administration (JEA) の強化
+
+<a id="constrained-file-copy-tofrom-jea-endpoints" class="xliff"></a>
+
+## JEA エンドポイントとの間の制約付きのファイル コピー
 
 JEA エンドポイントとの間でファイルをリモートでコピーできるようになりました。接続ユーザーはシステム上のファイルを*どれでも*コピーできるわけではないので安心することができます。
 これは、接続ユーザー用のユーザー ドライブをマウントするよう PSSC ファイルを構成することによって可能になります。
@@ -47,7 +50,9 @@ Copy-Item -Path User:\SampleFile.txt -Destination . -FromSession $jeasession
 
 ユーザー ドライブに格納されたデータを処理して、ロール機能ファイル内のユーザーがそれらを使用できるようにするためのカスタム関数を作成することができます。
 
-## <a name="support-for-group-managed-service-accounts"></a>グループの管理されたサービス アカウントのサポート
+<a id="support-for-group-managed-service-accounts" class="xliff"></a>
+
+## グループの管理されたサービス アカウントのサポート
 
 場合によって、JEA セッションでユーザーが実行する必要があるタスクは、ローカル コンピューター以外のリソースにアクセスすることが必要な場合があります。
 JEA セッションが仮想アカウントを使用するように構成されている場合、そのようなリソースへのアクセスの試みは、仮想アカウントまたは接続ユーザーからではなく、ローカル コンピューターの ID からのアクセスのように見えます。
@@ -69,7 +74,9 @@ RunAsVirtualAccount = $false
 > 接続ユーザーはすべて同じ gMSA ID を共有することになります。この ID は企業全体を対象とするアクセス許可を持つ場合もあります。
 > gMSA の使用を選択する場合は細心の注意を払ってください。可能であればローカル コンピューターに限定された仮想アカウントを常に優先してください。
 
-## <a name="conditional-access-policies"></a>条件付きのアクセス ポリシー
+<a id="conditional-access-policies" class="xliff"></a>
+
+## 条件付きのアクセス ポリシー
 
 あるユーザーがシステムの管理を目的としてシステムに接続したときにその人が実行できる操作を制限する場合に JEA は便利です。しかし、だれかが JEA を使用できる*タイミング*を制限したい場合はどうするのですか?
 ユーザーが JEA セッションを確立するときに属する必要があるセキュリティ グループを指定できるように、セッション構成ファイル (.pssc) に構成オプションを追加しました。
@@ -91,6 +98,9 @@ RequiredGroups = @{ Or = '2FA-logon', 'smartcard-logon' }
 RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon' }}
 ```
 
-## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>固定: Windows Server 2008 R2 で仮想アカウントがサポートされるようになりました。
+<a id="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2" class="xliff"></a>
+
+## 固定: Windows Server 2008 R2 で仮想アカウントがサポートされるようになりました。
 WMF 5.1 では、Windows Server 2008 R2 で仮想アカウントを使用できるようになりました。これにより、Windows Server 2008 R2 - 2016 にわたり一貫した構成と機能の類似性が提供されます。
 Windows 7 で JEA を使用する場合、仮想アカウントはまだサポートされていません。
+

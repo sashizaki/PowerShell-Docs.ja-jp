@@ -1,4 +1,17 @@
-# <a name="windows-management-framework-wmf-50-rtm-release-notes-overview"></a>Windows 管理フレームワーク (WMF) 5.0 RTM のリリース ノート概要
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: e88ce2d6956a10ec18daf4cd53927385854f9b55
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="windows-management-framework-wmf-50-rtm-release-notes-overview" class="xliff"></a>
+
+# Windows 管理フレームワーク (WMF) 5.0 RTM のリリース ノート概要
 
 Windows 管理フレームワーク (WMF) 5.0 RTM には、WMF 4.0 から更新された機能があります。 WMF 5.0 RTM は **Windows Server 2012 R2**、**Windows Server 2012**、**Windows Server 2008 R2**、**Windows 8.1**、および **Windows 7 SP1** にのみインストールすることができ、次の機能の更新バージョンや導入が含まれています。
 
@@ -13,3 +26,4 @@ Windows 管理フレームワーク (WMF) 5.0 RTM には、WMF 4.0 から更新�
 [WMF 5.0 Production Preview](http://blogs.msdn.com/b/powershell/archive/2015/08/31/windows-management-framework-5-0-production-preview-is-now-available.aspx) は WMF 5.0 RTM に置き換えられました。 WMF 5.0 Production Preview をアンインストールせずに WMF 5.0 RTM をインストールできますが、WMF 5.0 RTM をインストールする前に WMF 5.0 Preview の他の古いリリースをすべてアンインストールする必要があります。
 
 *注:* Windows 10 を実行している場合は、Windows 10 の 11 月の更新プログラム (バージョン 1511) に更新して、WMF 5.0 RTM で利用できる同じ機能セットを取得できます。 Windows 10 システムをまだ更新していない場合は、[スタート] ボタンを選択し、[設定] > [更新とセキュリティ] > [Windows Update] > [更新プログラムのチェック] を選択します。 
+

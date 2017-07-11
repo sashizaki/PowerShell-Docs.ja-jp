@@ -1,17 +1,18 @@
 ---
-title: "DSC レポート サーバーの使用"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 17b56a0ce25d3154e21f18269926a0c41aae833b
-ms.sourcegitcommit: d7b28f28a09caa7fa48b0f66c5c437f128ce316f
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "DSC レポート サーバーの使用"
+ms.openlocfilehash: dd61d6ffff43ac2d1ec663b566e39dfc7d6c6565
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="using-a-dsc-report-server"></a>DSC レポート サーバーの使用
+<a id="using-a-dsc-report-server" class="xliff"></a>
+
+# DSC レポート サーバーの使用
 
 > 適用先: Windows PowerShell 5.0
 
@@ -19,7 +20,9 @@ translationtype: HT
 
 構成の状態に関するレポートをプル サーバーに送信するように、ノードのローカル構成マネージャー (LCM) を構成できます。これにより、プル サーバーに対してクエリを実行してデータを取得できるようになります。 ノードは、構成を確認して適用するたびに、レポート サーバーにレポートを送信します。 これらのレポートは、サーバー上のデータベースに格納され、レポート Web サービスを呼び出すことで取得できます。 各レポートには、適用された構成の内容、構成適用の成否、使用されたリソース、スローされたエラー、開始時刻と終了時刻などの情報が含まれています。
 
-## <a name="configuring-a-node-to-send-reports"></a>レポートを送信するようにするためのノードの構成
+<a id="configuring-a-node-to-send-reports" class="xliff"></a>
+
+## レポートを送信するようにするためのノードの構成
 
 ノードがサーバーにレポートを送信するようにするには、そのノードの LCM 構成で **ReportServerWeb** ブロックを使用します (LCM の構成については、「[ローカル構成マネージャーの構成](metaConfig.md)」を参照)。 ノードのレポート送信先になるサーバーは、Web プル サーバーとしてセットアップする必要があります (SMB 共有にレポートを送信することはできません)。 プル サーバーのセットアップについては、「[DSC Web プル サーバーのセットアップ](pullServer.md)」を参照してください。 レポート サーバーは、ノードが構成をプルしてリソースを取得するのと同じサービスにすることも、別のサービスにすることもできます。
  
@@ -92,7 +95,9 @@ PullClientConfig
 
 >**注:** プル サーバーを設定するとき、Web サービスには任意の名前を指定できますが、**ServerURL** プロパティはサービス名と一致する必要があります。
 
-## <a name="getting-report-data"></a>レポート データの取得
+<a id="getting-report-data" class="xliff"></a>
+
+## レポート データの取得
 
 プル サーバーに送信されたレポートは、サーバー上のデータベースに格納されます。 これらのレポートは、Web サービスを呼び出すことで利用できます。 特定のノードのレポートを取得するには、`http://CONTOSO-REPORT:8080/PSDSCReportServer.svc/Nodes(AgentId= 'MyNodeAgentId')/Reports` の形式でレポート Web サービスに HTTP 要求を送信します。ここで、`MyNodeAgentId` はレポートを取得するノードの AgentId です。 ノードの AgentID を取得するには、そのノードで [Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) を呼び出します。
 
@@ -113,7 +118,9 @@ function GetReport
 }
 ```
     
-## <a name="viewing-report-data"></a>レポート データの表示
+<a id="viewing-report-data" class="xliff"></a>
+
+## レポート データの表示
 
 **GetReport** 関数の結果を変数に設定すると、返される配列の要素に個別のフィールドを表示できます。
 
@@ -220,7 +227,9 @@ InDesiredState    : True
 
 これらの例は、レポート データを使用してどのようなことができるかを理解するためのものです。 PowerShell での JSON の使用方法については、「[Playing with JSON and PowerShell (PowerShell での JSON の使用)](https://blogs.technet.microsoft.com/heyscriptingguy/2015/10/08/playing-with-json-and-powershell/)」を参照してください。
 
-## <a name="see-also"></a>参照
+<a id="see-also" class="xliff"></a>
+
+## 参照
 - [ローカル構成マネージャーの構成](metaConfig.md)
 - [DSC Web プル サーバーのセットアップ](pullServer.md)
 - [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)

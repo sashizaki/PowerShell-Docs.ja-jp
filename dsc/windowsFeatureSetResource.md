@@ -1,17 +1,18 @@
 ---
-title: "DSC WindowsFeatureSet リソース"
-ms.date: 2016-05-24
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: a920e02d891492c170e672db2f0771950dcb758c
-ms.sourcegitcommit: 1002c473b88abb209e4188bb626d93675c3614e2
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "DSC WindowsFeatureSet リソース"
+ms.openlocfilehash: 3cdabc36ef35c2bf912ac54393fe40024a8e8bc0
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet リソース
+<a id="dsc-windowsfeatureset-resource" class="xliff"></a>
+
+# DSC WindowsFeatureSet リソース
 
 > 適用先: Windows PowerShell 5.0
 
@@ -20,7 +21,9 @@ Windows PowerShell Desired State Configuration (DSC) の **WindowsFeatureSet** �
 
 Windows 機能の数を同じ状態に構成するときにこのリソースを使用します。
 
-## <a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+## 構文
 
 ```
 WindowsFeatureSet [string] #ResourceName
@@ -36,7 +39,9 @@ WindowsFeatureSet [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+<a id="properties" class="xliff"></a>
+
+## プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -48,7 +53,9 @@ WindowsFeatureSet [string] #ResourceName
 | DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 | ソース| 必要に応じて、インストールに使用するソース ファイルの場所を示します。| 
 
-## <a name="example"></a>例
+<a id="example" class="xliff"></a>
+
+## 例
 
 次の構成では、**Web-Server** (IIS) 機能、**SMTP Server** 機能、各機能のすべてのサブ機能がインストールされます。
 

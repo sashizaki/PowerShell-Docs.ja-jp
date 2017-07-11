@@ -1,17 +1,18 @@
 ---
-title: "C# での DSC リソースの作成"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: df330cede5466f4d8da3b4be0057f6a822d15f00
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "C# での DSC リソースの作成"
+ms.openlocfilehash: 502a4f42f685642d0966a8ee1ee745902005d61c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="authoring-a-dsc-resource-in-c"></a>C`#` での DSC リソースの作成
+<a id="authoring-a-dsc-resource-in-c" class="xliff"></a>
+
+# C`#` での DSC リソースの作成
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -19,10 +20,14 @@ translationtype: HT
 
 C# でコマンドレットとしてリソースを実装すること以外に、MOF スキーマの作成、フォルダー構造の作成、およびカスタム DSC リソースのインポートと使用のプロセスは、「[MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)」で説明されていることと同じです。
 
-## <a name="writing-a-cmdlet-based-resource"></a>コマンドレットベースのリソースの記述
+<a id="writing-a-cmdlet-based-resource" class="xliff"></a>
+
+## コマンドレットベースのリソースの記述
 この例では、テキスト ファイルとその内容を管理する単純なリソースを実装します。
 
-### <a name="writing-the-mof-schema"></a>MOF スキーマの記述
+<a id="writing-the-mof-schema" class="xliff"></a>
+
+### MOF スキーマの記述
 
 MOF リソースの定義を次に示します。
 
@@ -36,8 +41,12 @@ class MSFT_XDemoFile : OMI_BaseResource
 };
 ```
 
-### <a name="setting-up-the-visual-studio-project"></a>Visual Studio プロジェクトの設定
-#### <a name="setting-up-a-cmdlet-project"></a>コマンドレット プロジェクトの設定
+<a id="setting-up-the-visual-studio-project" class="xliff"></a>
+
+### Visual Studio プロジェクトの設定
+<a id="setting-up-a-cmdlet-project" class="xliff"></a>
+
+#### コマンドレット プロジェクトの設定
 
 1. Visual Studio を開きます。
 1. C# プロジェクトを作成し、名前を指定します。
@@ -46,7 +55,9 @@ class MSFT_XDemoFile : OMI_BaseResource
 1. System.Automation.Management.dll へのアセンブリ参照をプロジェクトに追加します。
 1. リソース名と一致するようにアセンブリ名を変更します。 この例では、アセンブリは **MSFT_XDemoFile** という名前にする必要があります。
 
-### <a name="writing-the-cmdlet-code"></a>コマンドレット コードの記述
+<a id="writing-the-cmdlet-code" class="xliff"></a>
+
+### コマンドレット コードの記述
 
 次の C# コードでは、**Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** コマンドレットを実装します。
 
@@ -264,7 +275,9 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-### <a name="deploying-the-resource"></a>リソースの展開
+<a id="deploying-the-resource" class="xliff"></a>
+
+### リソースの展開
 
 コンパイル済み dll ファイルは、スクリプトベースのリソースと同様のファイル構造で保存する必要があります。 このリソースのフォルダー構造を次に示します。
 
@@ -279,9 +292,15 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-### <a name="see-also"></a>参照
-#### <a name="concepts"></a>概念
+<a id="see-also" class="xliff"></a>
+
+### 参照
+<a id="concepts" class="xliff"></a>
+
+#### 概念
 [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)
-#### <a name="other-resources"></a>その他のリソース
+<a id="other-resources" class="xliff"></a>
+
+#### その他のリソース
 [Windows PowerShell コマンドレットの記述](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
 

@@ -1,4 +1,17 @@
-# <a name="new-built-in-dsc-resources"></a>新しい組み込み DSC リソース
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: ab49a0ae10f9ad32966944a1dcf8125619bde141
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="new-built-in-dsc-resources" class="xliff"></a>
+
+# 新しい組み込み DSC リソース
 
 WMF 5.0 RTM には、4 つの新しい DSC リソースがあります。 
 * WindowsFeatureSet
@@ -8,7 +21,9 @@ WMF 5.0 RTM には、4 つの新しい DSC リソースがあります。
 
 これらのリソースは、1 つのリソース呼び出しを使って複数のインスタンスを構成する簡単な方法を提供します。
 
-## <a name="windowsfeatureset"></a>WindowsFeatureSet
+<a id="windowsfeatureset" class="xliff"></a>
+
+## WindowsFeatureSet
 
 ```powershell
 # Get the syntax of WindowsFeatureSet resource
@@ -26,7 +41,9 @@ WindowsFeatureSet [String] #ResourceName
 }
 ```
 
-## <a name="windowsoptionalfeatureset"></a>WindowsOptionalFeatureSet 
+<a id="windowsoptionalfeatureset" class="xliff"></a>
+
+## WindowsOptionalFeatureSet 
 
 ```powershell
 # Get the syntax of WindowsOptionalFeatureSet resource
@@ -45,7 +62,9 @@ WindowsOptionalFeatureSet [String] #ResourceName
 }
 ```
 
-## <a name="serviceset"></a>ServiceSet 
+<a id="serviceset" class="xliff"></a>
+
+## ServiceSet 
 
 ```powershell
 # Get the syntax of ServiceSet resource
@@ -63,7 +82,9 @@ ServiceSet [String] #ResourceName
 }
 ```
 
-## <a name="processset"></a>ProcessSet 
+<a id="processset" class="xliff"></a>
+
+## ProcessSet 
 
 ```powershell
 # Get the syntax of ProcessSet resource
@@ -81,3 +102,4 @@ ProcessSet [String] #ResourceName
     [WorkingDirectory = [String]]
 }
 ```
+

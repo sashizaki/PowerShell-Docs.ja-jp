@@ -1,23 +1,24 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,コマンドレット,ギャラリー"
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
 title: psgallery_dispute_resolution
-ms.technology: powershell
-ms.openlocfilehash: b7a76a6d8746b4a22154f8a8c7dde89d61046116
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 640d20371a51b08a5627b9beff1bb0ada4f06dd8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dispute-resolution"></a>争いの解決
+<a id="dispute-resolution" class="xliff"></a>
+
+# 争いの解決
 
 この文書は、コミュニティ メンバーが PowerShell ギャラリーの他の発行元との争いを解決する際の推奨プロセスをまとめたものです。
 
-## <a name="process"></a>プロセス
+<a id="process" class="xliff"></a>
+
+## プロセス
 
 1. アイテム詳細ページの **[所有者に連絡]** リンクを使用し、争いの相手であるアイテムの所有者に連絡します。
 丁寧かつ明確に問題を説明します。
@@ -26,7 +27,9 @@ translationtype: HT
 PowerShellGallery.com サポート チームが関与し、問題の解決に取り組みます。
 
 
-## <a name="prohibited-use"></a>禁止されている使い方
+<a id="prohibited-use" class="xliff"></a>
+
+## 禁止されている使い方
 
 パブリック PowerShell ギャラリーでは次の項目が禁止されており、話し合いなく至急削除されます。  アイテムが削除された場合、その所有者に通知が届きます。
 

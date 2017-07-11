@@ -1,23 +1,24 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,コマンドレット,ギャラリー"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_find dscresource
-ms.technology: powershell
-ms.openlocfilehash: afd13e1dd791794d62be4601477bcc77448586c5
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+title: Find-DscResource
+ms.openlocfilehash: 37ba7925d6f73c453126f25e0818b3f8839d3b3b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="find-dscresource"></a>Find-DscResource
+<a id="find-dscresource" class="xliff"></a>
+
+# Find-DscResource
 
 モジュール内の DSC リソースを検索します。
 
-## <a name="description"></a>説明
+<a id="description" class="xliff"></a>
+
+## 説明
 
 Find-DscResource コマンドレットは、登録したリポジトリから、指定した条件と一致するモジュールに含まれている [Desired State Configuration (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) リソースを検索します。
 Find-DscResource は、このコマンドレットが検出した各モジュールに対して PSGetDscResourceInfo オブジェクトを返します。このオブジェクトを Install-Module にパイプすると、このコマンドレットから返されたリソースを含むモジュールをインストールすることができます。
@@ -37,16 +38,22 @@ Desired State Configuration (DSC) リソースは、DSC 構成の構成要素を
 - Find-DscResource では、-Filter パラメーターを使用してリポジトリ固有の検索言語をフィルター処理できます。
 - Find-DscResource では、登録されているリポジトリのすべてまたは一部からモジュール上でフィルター処理できます。
 
-## <a name="cmdlet-syntax"></a>コマンドレット構文
+<a id="cmdlet-syntax" class="xliff"></a>
+
+## コマンドレット構文
 ```powershell
 Get-Command -Name Find-DscResource -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+
+## コマンドレット オンライン ヘルプ リファレンス
 
 [Find-DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
 
-## <a name="example-commands"></a>コマンド例
+<a id="example-commands" class="xliff"></a>
+
+## コマンド例
 ```powershell
 
 # Find a specific DSC Resource

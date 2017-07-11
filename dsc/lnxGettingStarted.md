@@ -1,21 +1,24 @@
 ---
-title: "Linux 用 Desired State Configuration (DSC) の概要"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: c585dc929e85a404aecfb1e9f06daf2dfaf21832
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "Linux 用 Desired State Configuration (DSC) の概要"
+ms.openlocfilehash: 2d4276a0ffcb4fd7b872cbc4771f86cb850c0b83
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux 用 Desired State Configuration (DSC) の概要
+<a id="get-started-with-desired-state-configuration-dsc-for-linux" class="xliff"></a>
+
+# Linux 用 Desired State Configuration (DSC) の概要
 
 このトピックでは、Linux 用 PowerShell Desired State Configuration (DSC) の使用を開始する方法について説明します。 DSC に関する一般的な情報については、「[Windows PowerShell Desired State Configuration の概要](overview.md)」を参照してください。
 
-## <a name="supported-linux-operation-system-versions"></a>サポートされている Linux オペレーティング システム バージョン
+<a id="supported-linux-operation-system-versions" class="xliff"></a>
+
+## サポートされている Linux オペレーティング システム バージョン
 
 Linux 用 DSC では、次の Linux オペレーティング システム バージョンがサポートされています。
 - CentOS 5、6、および 7 (x86/x64)
@@ -36,11 +39,15 @@ Linux 用 DSC では、次の Linux オペレーティング システム バー
 | ctypes| Python CTypes ライブラリ| Python のバージョンに一致する必要があります。| 
 | libcurl| cURL http クライアント ライブラリ| 7.15.1| 
 
-## <a name="installing-dsc-for-linux"></a>Linux 用 DSC のインストール
+<a id="installing-dsc-for-linux" class="xliff"></a>
+
+## Linux 用 DSC のインストール
 
 Linux 用 DSC をインストールする前に、[Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/) をインストールする必要があります。
 
-### <a name="installing-omi"></a>OMI のインストール
+<a id="installing-omi" class="xliff"></a>
+
+### OMI のインストール
 
 Linux 用 Desired State Configuration には、Open Management Infrastructure (OMI) CIM サーバーのバージョン 1.0.8.1 が必要です。 OMI は、Open Group: [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/) からダウンロードできます。
 
@@ -52,7 +59,9 @@ CentOS 7 x64 システムに OMI をインストールするには、次のコ�
 
 `# sudo rpm -Uvh omiserver-1.0.8.ssl_100.rpm`
 
-### <a name="installing-dsc"></a>DSC のインストール
+<a id="installing-dsc" class="xliff"></a>
+
+### DSC のインストール
 
 Linux 用の DSC は、[こちら](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)からダウンロードできます。 
 
@@ -65,11 +74,15 @@ CentOS 7 x64 システムに DSC をインストールするには、次のコ�
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
 
 
-## <a name="using-dsc-for-linux"></a>Linux 用 DSC の使用
+<a id="using-dsc-for-linux" class="xliff"></a>
+
+## Linux 用 DSC の使用
 
 次のセクションでは、Linux コンピューターで DSC 構成を作成し、実行する方法を説明します。
 
-### <a name="creating-a-configuration-mof-document"></a>構成 MOF ドキュメントの作成
+<a id="creating-a-configuration-mof-document" class="xliff"></a>
+
+### 構成 MOF ドキュメントの作成
 
 Linux コンピューターの構成を作成するには、Windows コンピューターの場合と同じように、Windows PowerShell 構成キーワードを使用します。 次の手順では、Windows PowerShell を使用して Linux コンピューターの構成ドキュメントを作成する方法について説明します。
 
@@ -105,7 +118,9 @@ Configuration ExampleConfiguration{
 ExampleConfiguration -OutputPath:"C:\temp" 
 ```
 
-### <a name="push-the-configuration-to-the-linux-computer"></a>Linux コンピューターへの構成のプッシュ
+<a id="push-the-configuration-to-the-linux-computer" class="xliff"></a>
+
+### Linux コンピューターへの構成のプッシュ
 
 構成ドキュメント (MOF ファイル) を Linux コンピューターにプッシュするには、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを使用します。 Linux コンピューターに対してリモートからこのコマンドレットを [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx と共に使用するか、または [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) コマンドレットを使用するためには、CIMSession を使用する必要あります。 Linux コンピューターに CIMSession を作成するには、[New-CimSession](https://technet.microsoft.com/en-us/library/jj590760.aspx) コマンドレットを使用します。
 
@@ -133,11 +148,15 @@ Linux ノードに DSC 構成をプッシュするには、次のコマンドを
 
 `Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
 
-### <a name="distribute-the-configuration-with-a-pull-server"></a>プル サーバーを使用した構成の配布
+<a id="distribute-the-configuration-with-a-pull-server" class="xliff"></a>
+
+### プル サーバーを使用した構成の配布
 
 構成を Linux コンピューターに配布するには、Windows コンピューターの場合と同じく、プル サーバーを使用できます。 プル サーバーを使用する方法の詳細については、「[DSC Web プル サーバーのセットアップ](pullServer.md)」を参照してください。 プル サーバーでの Linux コンピューターの使用に関する追加情報および制限事項については、Linux 用 Desired State Configuration のリリース ノートをご覧ください。
 
-### <a name="working-with-configurations-locally"></a>ローカルでの構成の操作
+<a id="working-with-configurations-locally" class="xliff"></a>
+
+### ローカルでの構成の操作
 
 Linux 用 DSC には、ローカルの Linux コンピューターから構成を操作するためのスクリプトが含まれています。 これらのスクリプトは、`/opt/microsoft/dsc/Scripts` にあり、次のものが含まれています。
 * GetDscConfiguration.py
@@ -176,7 +195,9 @@ Linux 用 DSC には、ローカルの Linux コンピューターから構成�
 
 `# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
-## <a name="powershell-desired-state-configuration-for-linux-log-files"></a>Linux 用 PowerShell Desired State Configuration のログ ファイル
+<a id="powershell-desired-state-configuration-for-linux-log-files" class="xliff"></a>
+
+## Linux 用 PowerShell Desired State Configuration のログ ファイル
 
 Linux 用 DSC のメッセージのために次のログ ファイルが生成されます。
 

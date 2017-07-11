@@ -1,18 +1,18 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
 title: "コミュニティ リソース"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 82e6539484aa11bb370f3011bb12ea51f9d55047
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 1a4b49f0773c7d54b6dbb504a9d44cae7e0ef924
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="community-resources"></a>コミュニティ リソース #
+<a id="community-resources" class="xliff"></a>
+
+# コミュニティ リソース #
 > 注意: この情報は暫定版であり、変更することがあります。
 
 PowerShell チームは製品に関するお客様のフィードバックを歓迎し、ユーザーに対して複数の問い合わせ方法をサポートします。
@@ -32,5 +32,5 @@ GitHub に精通しているユーザーは、[PowerShell GitHub サイト](http
 * [Powershell ドキュメント](https://github.com/PowerShell/powershell-docs): (このコンテンツを含む) すべてのドキュメントが保持されます。 
 * [PowerShell](https://github.com/PowerShell/powershell): PowerShell の将来のバージョンである PowerShell Core の場所です。 これは、機能の推奨事項を提案したり、PowerShell Core の問題を提起したりする場所です。   
 * [PowerShellGet](https://github.com/PowerShell/powershellget): PowerShellGet モジュールおよびコマンドレット用のリポジトリです。
-* [DSCResources](https://github.com/PowerShell/DscResources): PowerShell チームによって管理され、DSC リソース キットで PowerShell ギャラリーに発行される DSC モジュールが含まれます。
+* [DSCResources](https://github.com/PowerShell/DscResources) には PowerShell チームによって管理され、DSC リソース キットで PowerShell ギャラリーに公開される DSC モジュールが含まれます。
 

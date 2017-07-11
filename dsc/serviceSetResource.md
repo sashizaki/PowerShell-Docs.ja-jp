@@ -1,17 +1,18 @@
 ---
-title: "DSC ServiceSet リソース"
-ms.date: 2016-05-23
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 798609d7e1e7d88e7a9f76f5fff12f63c6109c76
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "DSC ServiceSet リソース"
+ms.openlocfilehash: 92fa4a442eb42e89195162b7831f1a96d40b84f5
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-serviceset-resource"></a>DSC ServiceSet リソース
+<a id="dsc-serviceset-resource" class="xliff"></a>
+
+# DSC ServiceSet リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -20,7 +21,9 @@ PowerShell Desired State Configuration (DSC) の **ServiceSet** リソースは�
 
 サービスの数を同じ状態に構成するときにこのリソースを使用します。
 
-## <a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+## 構文
 
 ```
 Service [string] #ResourceName
@@ -36,7 +39,9 @@ Service [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+<a id="properties" class="xliff"></a>
+
+## プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -50,7 +55,9 @@ Service [string] #ResourceName
 
 
 
-## <a name="example"></a>例
+<a id="example" class="xliff"></a>
+
+## 例
 
 次の構成で "Windows オーディオ" サービスと "リモート デスクトップ サービス" サービスが開始します。
 

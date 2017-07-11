@@ -1,19 +1,18 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,コマンドレット,ギャラリー"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
+ms.topic: reference
+keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
 title: scriptwithpseditionsupport
-ms.technology: powershell
-ms.openlocfilehash: aac38b9a5b133b0b7982e7748e1483a0774599a2
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: e6994b994cb15903560f3dd89c21383fb2cd367d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="script-with-compatible-powershell-editions"></a>互換性のある PowerShell エディションが含まれるスクリプト
+<a id="script-with-compatible-powershell-editions" class="xliff"></a>
+
+# 互換性のある PowerShell エディションが含まれるスクリプト
 バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
 
 - **デスクトップ エディション:** .NET Framework 上に構築されており、Server Core や Windows Desktop などの Windows の完全エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
@@ -65,7 +64,13 @@ Find-Script -Tag PSEditon_Core
 
 ```
 
-## <a name="more-details"></a>詳細情報
-### <a name="modules-with-pseditionsmodulemodulewithpseditionsupportmd"></a>[PSEditions が含まれるモジュール](../module/modulewithpseditionsupport.md)
-### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[PowerShellGallery での PSEditions のサポート](../../psgallery/psgallery_pseditions.md)
+<a id="more-details" class="xliff"></a>
+
+## 詳細情報
+<a id="modules-with-pseditionsmodulemodulewithpseditionsupportmd" class="xliff"></a>
+
+### [PSEditions が含まれるモジュール](../module/modulewithpseditionsupport.md)
+<a id="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd" class="xliff"></a>
+
+### [PowerShellGallery での PSEditions のサポート](../../psgallery/psgallery_pseditions.md)
 

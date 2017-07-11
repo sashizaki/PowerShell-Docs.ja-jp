@@ -1,22 +1,24 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
 title: "WMF 5.1 の新しいシナリオと機能"
-ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 1ea650d5dd69251c0407133f649ea8efb1315dd2
-ms.sourcegitcommit: f75fc25411ce6a768596d3438e385c43c4f0bf71
-translationtype: HT
+ms.openlocfilehash: 02c27711c886916da56bb382b1bc0187f1e30805
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 の新しいシナリオと機能 #
+<a id="new-scenarios-and-features-in-wmf-51" class="xliff"></a>
+
+# WMF 5.1 の新しいシナリオと機能 #
 
 > 注意: この情報は暫定版であり、変更することがあります。
 
-## <a name="powershell-editions"></a>PowerShell のエディション ##
+<a id="powershell-editions" class="xliff"></a>
+
+## PowerShell のエディション ##
 バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
 
 - **デスクトップ エディション:** .NET Framework 上に構築されており、Server Core や Windows Desktop などの Windows の完全エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
@@ -28,11 +30,15 @@ translationtype: HT
 - [CompatiblePSEditions で Get-Module の結果をフィルター処理する]()
 - [互換性のある PowerShell のエディションで実行しない場合はスクリプトを実行させない]()
 
-## <a name="catalog-cmdlets"></a>カタログ コマンドレット  
+<a id="catalog-cmdlets" class="xliff"></a>
+
+## カタログ コマンドレット  
 
 [Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) モジュールに新しいコマンドレットが 2 つ追加されました。Windows カタログ ファイルを生成し、検証するコマンドレットです。  
 
-###<a name="new-filecatalog"></a>New-FileCatalog 
+<a id="new-filecatalog" class="xliff"></a>
+
+###New-FileCatalog 
 --------------------------------
 
 New-FileCatalog は、一連のフォルダーやファイルに対して Windows カタログ ファイルを作成します。 このカタログ ファイルには、指定されたパスのすべてのファイルのハッシュが含まれています。 ユーザーは一連のフォルダーと共に、それらのフォルダーを表すカタログ ファイルを配信できます。 カタログ作成時刻以降、フォルダーに変更が加えられたかどうかを検証するとき、この情報が役立ちます。    
@@ -53,7 +59,9 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 カタログ ファイルの整合性を検証するために (上記の例では Pester.cat)、[Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) コマンドレットで署名します。   
 
 
-###<a name="test-filecatalog"></a>Test-FileCatalog 
+<a id="test-filecatalog" class="xliff"></a>
+
+###Test-FileCatalog 
 --------------------------------
 
 Test-FileCatalog は、一連のフォルダーを表すカタログを検証します。 
@@ -67,7 +75,9 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 このコマンドレットは、*カタログ*で見つかったすべてのファイル ハッシュとその相対パスを*ディスク*のそれらと比較します。 ファイル ハッシュとパスの間に不一致が検出された場合、*ValidationFailed* というステータスを返します。 *-Detailed* パラメーターを利用し、この情報をすべて取得できます。 *署名*プロパティには、カタログの署名ステータスも表示されます。これは、カタログ ファイルで [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) コマンドレットを呼び出すことと同じです。 *-FilesToSkip* パラメーターを利用し、検証中にファイルをスキップすることもできます。 
 
 
-## <a name="module-analysis-cache"></a>モジュール分析キャッシュ ##
+<a id="module-analysis-cache" class="xliff"></a>
+
+## モジュール分析キャッシュ ##
 WMF 5.1 以降の PowerShell では、エクスポートするコマンドなど、モジュールに関するデータのキャッシュに使用されるファイルを制御できます。
 
 既定では、このキャッシュは `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache` ファイルに格納されます。
@@ -94,7 +104,9 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 この環境変数の設定は、現在のプロセスで直ちに有効になります。
 
-##<a name="specifying-module-version"></a>モジュールのバージョンの指定
+<a id="specifying-module-version" class="xliff"></a>
+
+##モジュールのバージョンの指定
 
 WMF 5.1 では、`using module` は PowerShell の他のモジュール関連構造と同様に動作します。 以前は、モジュールの特定のバージョンを指定する方法はありませんでした。複数のバージョンが存在する場合、エラーが発生しました。
 
@@ -108,7 +120,10 @@ WMF 5.1 では次のようになります。
 * モジュールに複数のバージョンがある場合、PowerShell は**同じ解決ロジック**を `Import-Module` として使用し、エラーを返しません。`Import-Module` および `Import-DscResource` と同じ動作です。
 
 
-##<a name="improvements-to-pester"></a>Pester の機能強化
+<a id="improvements-to-pester" class="xliff"></a>
+
+##Pester の機能強化
 WMF 5.1 では、PowerShell で出荷される Pester のバージョンが 3.3.5 から 3.4.0 に更新され、コミット https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e が追加されました。Nano Server での Pester の動作を改善します。 
 
 https://github.com/pester/Pester/blob/master/CHANGELOG.md で ChangeLog.md ファイルを調べると、バージョン 3.3.5 から 3.4.0 への変更を確認できます。
+

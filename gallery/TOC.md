@@ -8,6 +8,9 @@
 ### [互換性のある PSEditions が含まれるアイテム](psgallery/psgallery_pseditions.md)
 ### [FileList ビュー](psgallery/psgallery_filelist_feature.md)
 ### [Azure Automation にデプロイする](psgallery/psgallery_deploy_to_azure_automation.md)
+### [PowerShellGallery アカウントの作成](psgallery/psgallery_creating_an_account.md)
+### [アイテムの作成と公開](psgallery/Creating-and-Publishing-an-item.md)
+### [公開に関するガイドラインとベスト プラクティス](psgallery/psgallery-PublishingGuidelines.md)
 ### [アイテムをリストから外す](psgallery/psgallery_unlist_items.md)
 ### [アイテムを削除する](psgallery/Deleting-Items.md)
 ### [アイテムの所有者を管理する](psgallery/Managing-Item-Owners.md)
@@ -15,8 +18,11 @@
 ### [争いの解決](psgallery/psgallery_dispute_resolution.md)
 ### [アイテムの所有者に連絡する](psgallery/psgallery_contacting_item_owners.md)
 ### [管理者に連絡する](psgallery/psgallery_contacting_administrators.md)
+### [ソーシャル メディアやコメントを使用したフィードバックの提供](psgallery/psgallery-SocialMediaFeedback.md)
 
 # [PowerShellGet](psget/overview.md)
+## [PowerShellGet モジュールの取得](psget/get_psget_module.md)
+
 ## モジュール
 ### [モジュールを見つける](psget/module/psget_find-module.md)
 ### [DSC リソースを見つける](psget/module/psget_find-dscresource.md)

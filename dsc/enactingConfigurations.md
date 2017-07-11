@@ -1,23 +1,26 @@
 ---
-title: "構成の適用"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 7059d0a0ac3ad81353d1e758bc24fc236656c199
-ms.sourcegitcommit: 89e7ae30faff5f96641fc72764bdc76e0e257bc2
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "構成の適用"
+ms.openlocfilehash: db82788650186eb82f67b30b24cd45b719bbe314
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="enacting-configurations"></a>構成の適用
+<a id="enacting-configurations" class="xliff"></a>
+
+# 構成の適用
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
-PowerShell Desired State Configuration (DSC) 構成を適用するには、プッシュ モードとプル モードの&2; つの方法があります。
+PowerShell Desired State Configuration (DSC) 構成を適用するには、プッシュ モードとプル モードの 2 つの方法があります。
 
-## <a name="push-mode"></a>プッシュ モード
+<a id="push-mode" class="xliff"></a>
+
+## プッシュ モード
 
 ![プッシュ モード](images/Push.png "プッシュ モードのしくみ")
 
@@ -28,7 +31,9 @@ PowerShell Desired State Configuration (DSC) 構成を適用するには、プ�
 > __注__: 既定では、DSC はバックグラウンド ジョブとして構成を実行します。 構成を対話的に実行するには、__-Wait__ パラメーターを指定して [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) を呼び出します。
 
 
-## <a name="pull-mode"></a>プル モード
+<a id="pull-mode" class="xliff"></a>
+
+## プル モード
 
 ![プル モード](images/Pull.png "プル モードのしくみ")
 

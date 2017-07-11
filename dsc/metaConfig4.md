@@ -1,23 +1,26 @@
 ---
-title: "Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: cec3aaf4e57d1efc3e29880e4a7f078bd1840901
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)"
+ms.openlocfilehash: 2e6e4731bdf6d7de6d13fc7f9b81698a192247e4
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)
+<a id="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm" class="xliff"></a>
+
+# Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 ローカル構成マネージャーは、Windows PowerShell Desired State Configuration (DSC) エンジンです。 すべてのターゲット ノードで実行され、DSC 構成スクリプトに含まれている構成リソースを呼び出します。 このトピックでは、ローカル構成マネージャーのプロパティを一覧表示し、ターゲット ノードでローカル構成マネージャーの設定を変更する方法について説明します。
 
-## <a name="local-configuration-manager-properties"></a>ローカル構成マネージャーのプロパティ
+<a id="local-configuration-manager-properties" class="xliff"></a>
+
+## ローカル構成マネージャーのプロパティ
 設定または取得できるローカル構成マネージャーのプロパティを次に示します。
  
 * **AllowModuleOverwrite**: 構成サーバーからダウンロードされた新しい構成がターゲット ノードの古い構成を上書きできるかどうかを制御します。 設定可能な値は True および False です。
@@ -35,7 +38,9 @@ translationtype: HT
 * **RefreshFrequencyMins**: "プル" サーバーをセットアップするときに使用します。 ローカル構成マネージャーが "プル" サーバーに接続して現在の構成をダウンロードする頻度 (分) を表します。 この値は、ConfigurationModeFrequencyMins と組み合わせて設定することができます。 RefreshMode を PULL に設定すると、ターゲット ノードは RefreshFrequencyMins の設定間隔で "プル" サーバーに接続し、現在の構成をダウンロードします。 その後、ConfigurationModeFrequencyMins の設定間隔で、整合性エンジンがターゲット ノードにダウンロードされた最新の構成を適用します。 RefreshFrequencyMins が ConfigurationModeFrequencyMins の倍数である整数に設定されていない場合は、システムによって切り上げられます。 既定値は 30 です。
 * **RefreshMode**: 設定可能な値は **Push** (既定値) と **Pull** です。 "プッシュ" 構成では、任意のクライアント コンピューターを使用して各ターゲット ノードに構成ファイル配置する必要があります。 "プル" モードでは、ローカル構成マネージャーの "プル" サーバーを構成ファイルに接続およびアクセスするようにセットアップする必要があります。
 
-### <a name="example-of-updating-local-configuration-manager-settings"></a>ローカル構成マネージャー設定の更新の例
+<a id="example-of-updating-local-configuration-manager-settings" class="xliff"></a>
+
+### ローカル構成マネージャー設定の更新の例
 
 次の例に示すように、構成スクリプトのノード ブロックに **LocalConfigurationManager** ブロックを含めることによって、ターゲット ノードのローカル構成マネージャー設定を更新できます。
 

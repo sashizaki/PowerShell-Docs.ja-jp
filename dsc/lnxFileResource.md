@@ -1,21 +1,24 @@
 ---
-title: "Linux 用 DSC の nxFile リソース"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 2ba44df5dd6c91371cbbfe95d48184a4ff4a7738
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "Linux 用 DSC の nxFile リソース"
+ms.openlocfilehash: 14f1ae31a8409b8874d76a91b8b29595e30fbb46
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxfile-resource"></a>Linux 用 DSC の nxFile リソース
+<a id="dsc-for-linux-nxfile-resource" class="xliff"></a>
+
+# Linux 用 DSC の nxFile リソース
 
 PowerShell Desired State Configuration (DSC) の **nxFile** リソースは、Linux ノード上でファイルとディレクトリを管理するためのメカニズムを備えています。
 
-## <a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+## 構文
 
 ```
 nxFile <string> #ResourceName
@@ -37,7 +40,9 @@ nxFile <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+<a id="properties" class="xliff"></a>
+
+## プロパティ
 
 |  プロパティ |  説明 | 
 |---|---|
@@ -54,7 +59,9 @@ nxFile <string> #ResourceName
 | モード| 8 進数またはシンボリック表記で、リソースに必要なアクセス許可を指定します。 (たとえば、777 または rwxrwxrwx)。 シンボリック表記を使用する場合は、ディレクトリまたはファイルを示す最初の文字を指定しないでください。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 
-## <a name="additional-information"></a>追加情報
+<a id="additional-information" class="xliff"></a>
+
+## 追加情報
 
 
 Linux と Windows の既定では、テキスト ファイルで異なる改行文字を使用して、これにより、__nxFile__ を使用して Linux コンピューターで一部のファイルを構成すると、予期しない結果が発生することがあります。 予期しない改行文字によって引き起こされる問題を回避しながら Linux ファイルのコンテンツを管理する複数の方法があります。
@@ -132,7 +139,9 @@ nxFile resolvConf
 }
 ```
 
-## <a name="example"></a>例
+<a id="example" class="xliff"></a>
+
+## 例
 
 次の例では、ディレクトリ `/opt/mydir` が存在し、指定されたコンテンツを持つファイルがこのディレクトリが存在するようにしています。
 

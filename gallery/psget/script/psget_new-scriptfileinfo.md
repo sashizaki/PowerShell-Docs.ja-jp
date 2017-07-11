@@ -1,45 +1,56 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,コマンドレット,ギャラリー"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_new scriptfileinfo
-ms.technology: powershell
-ms.openlocfilehash: d6b8790c3dd7ce366d608ff7bfd083ca12b201fd
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+title: New-ScriptFileInfo
+ms.openlocfilehash: 9aed0e16f2dec3681ca4b58595aae8d4972a3808
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="new-scriptfileinfo"></a>New-ScriptFileInfo
+<a id="new-scriptfileinfo" class="xliff"></a>
+
+# New-ScriptFileInfo
 
 メタデータを持つスクリプト ファイルを作成します。
 
-## <a name="description"></a>説明
+<a id="description" class="xliff"></a>
+
+## 説明
 
 New-ScriptFileInfo コマンドレットは、スクリプトに関するメタデータを含む、PowerShell スクリプト ファイルを作成します。
 
-## <a name="cmdlet-syntax"></a>コマンドレット構文
+<a id="cmdlet-syntax" class="xliff"></a>
+
+## コマンドレット構文
 
 ```powershell
 Get-Command -Name New-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+
+## コマンドレット オンライン ヘルプ リファレンス
 
 [New-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619792)
 
-## <a name="example-commands"></a>コマンド例
+<a id="example-commands" class="xliff"></a>
 
-### <a name="passthru-parameter"></a>PassThru パラメーター
+## コマンド例
+
+<a id="passthru-parameter" class="xliff"></a>
+
+### PassThru パラメーター
 
 ```powershell
 New-ScriptFileInfo -Description "Script file description." -PassThru
 ```
 
-### <a name="new-scriptfileinfo-cmdlet"></a>New-ScriptFileInfo コマンドレット
+<a id="new-scriptfileinfo-cmdlet" class="xliff"></a>
+
+### New-ScriptFileInfo コマンドレット
 New-ScriptFileInfo コマンドレットでは、バージョン、GUID、作成者、説明などのメタデータを含む新しいスクリプト ファイルを作成できます。 
 
 ```powershell

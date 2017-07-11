@@ -1,37 +1,44 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,コマンドレット,ギャラリー"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_test scriptfileinfo
-ms.technology: powershell
-ms.openlocfilehash: 570ad7e878195f36e1d0831c504301bcee647a7d
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+title: Test-ScriptFileInfo
+ms.openlocfilehash: 0f6951b86bba352e33abe91fc76e000b7df75b49
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="test-scriptfileinfo"></a>Test-ScriptFileInfo
+<a id="test-scriptfileinfo" class="xliff"></a>
+
+# Test-ScriptFileInfo
 
 スクリプト ファイルのメタデータのコメント ブロックを検証します。
 
-## <a name="description"></a>説明
+<a id="description" class="xliff"></a>
+
+## 説明
 
 Test-ScriptFileInfo コマンドレットは、Publish-Script コマンドレットで発行されるスクリプトの先頭にあるコメント ブロックを検証します。
 メタデータのコメント ブロックにエラーがある場合は、このコマンドレットはエラーの場所またはエラーの修正方法に関する情報を返します。
 
-## <a name="cmdlet-syntax"></a>コマンドレット構文
+<a id="cmdlet-syntax" class="xliff"></a>
+
+## コマンドレット構文
 
 ```powershell
 Get-Command -Name Test-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+
+## コマンドレット オンライン ヘルプ リファレンス
 
 [Test-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619791)
 
-## <a name="example-commands"></a>コマンド例
+<a id="example-commands" class="xliff"></a>
+
+## コマンド例
 ```powershell
 # Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\ScriptSharingDemo\Demo-Script.ps1 -Description "Script file description goes here"

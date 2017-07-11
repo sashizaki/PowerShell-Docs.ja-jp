@@ -1,19 +1,18 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,コマンドレット,ギャラリー"
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
 title: psgallery_contacting_item_owners
-ms.technology: powershell
-ms.openlocfilehash: 38e902ea64b82e21520417002d3d58e990072bc0
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 3d238ed918fcbd1b87fcc6eabf640ac72dd8fc3e
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="contacting-item-owners"></a>アイテムの所有者に連絡する
+<a id="contacting-item-owners" class="xliff"></a>
+
+# アイテムの所有者に連絡する
 
 特定のアイテムの所有者に連絡するには、アイテム詳細ページに移動します。
 左のメニュー バーに 「Contact Owners」 (所有者に連絡) リンクがあります。

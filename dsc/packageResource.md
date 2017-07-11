@@ -1,23 +1,26 @@
 ---
-title: "DSC Package リソース"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 343bd3c625e2df9f34480ea8065e3039d6069d61
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "DSC Package リソース"
+ms.openlocfilehash: f7bcbd387db422037614feee7c4a00d93b3cec4e
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-package-resource"></a>DSC Package リソース
+<a id="dsc-package-resource" class="xliff"></a>
+
+# DSC Package リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) の **Package** リソースは、Windows インストーラーや setup.exe パッケージなど、ターゲット ノードでパッケージをインストールまたはアンインストールするメカニズムを備えています。
 
-## <a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+## 構文
 
 ```
 Package [string] #ResourceName
@@ -34,7 +37,9 @@ Package [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+<a id="properties" class="xliff"></a>
+
+## プロパティ
 |  プロパティ  |  説明   | 
 |---|---| 
 | 名前| 特定の状態を保証するパッケージの名前を示します。| 
@@ -47,7 +52,9 @@ Package [string] #ResourceName
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は DependsOn = "[ResourceType]ResourceName" になります。| 
 | ReturnCode| 想定されるリターン コードを示します。 実際のリターン コードがここで指定される想定される値と一致しない場合、構成はエラーを返します。| 
 
-## <a name="example"></a>例
+<a id="example" class="xliff"></a>
+
+## 例
 
 この例では、指定されたパスに配置され、指定された製品 ID が割り当てられている .msi インストーラーを実行します。
 

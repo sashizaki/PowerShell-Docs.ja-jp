@@ -1,21 +1,24 @@
 ---
-title: "Linux 用 DSC の nxPackage リソース"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 31867cc7af96a3d8d527f5906d77bed5206940b4
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "Linux 用 DSC の nxPackage リソース"
+ms.openlocfilehash: 11019b1cd12f23b0b498b7cb9a06e02c46c3c279
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxpackage-resource"></a>Linux 用 DSC の nxPackage リソース
+<a id="dsc-for-linux-nxpackage-resource" class="xliff"></a>
+
+# Linux 用 DSC の nxPackage リソース
 
 PowerShell Desired State Configuration (DSC) の **nxPackage** リソースは、Linux ノード上でパッケージを管理するためのメカニズムを備えています。
 
-## <a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+## 構文
 
 ```
 nxPackage <string> #ResourceName
@@ -32,7 +35,9 @@ nxPackage <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+<a id="properties" class="xliff"></a>
+
+## プロパティ
 
 |  プロパティ |  説明 | 
 |---|---|
@@ -45,7 +50,9 @@ nxPackage <string> #ResourceName
 | ReturnCode| 想定されるリターン コード。 実際のリターン コードがここで指定される想定される値と一致しない場合、構成はエラーを返します。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 
-## <a name="example"></a>例
+<a id="example" class="xliff"></a>
+
+## 例
 
 次の例では、"Yum" パッケージ マネージャーを使用して、Linux コンピューターに "httpd" という名前のパッケージがインストールされるようにしています。
 

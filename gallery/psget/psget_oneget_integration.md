@@ -1,21 +1,24 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,コマンドレット,ギャラリー"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
+ms.topic: reference
+keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
 title: psget_oneget_integration
-ms.technology: powershell
-ms.openlocfilehash: afaba610d41d560d2d1196269ee188edd97c48ba
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 093860217c736278a7aede91cad40072efe5c38c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-## <a name="architecture-of-packagemanagement-and-its-relationship-with-powershellget-module"></a>PackageManageme のアーキテクチャおよび PowerShellGet モジュールとの関係。
+<a id="architecture-of-packagemanagement-and-its-relationship-with-powershellget-module" class="xliff"></a>
 
-## <a name="how-to-use-packagemanagement-cmdlets-for-discovering-installing-updating-and-inventory-of-scripts-and-modules-using-powershellget-provider"></a>PowerShellGet プロバイダーを使用したスクリプトとモジュールの検出、インストール、更新、インベントリ用に PackageManagement コマンドレットを使用する方法。
+## PackageManageme のアーキテクチャおよび PowerShellGet モジュールとの関係。
 
-## <a name="pakagemanagement-commands"></a>PakageManagement コマンド
+<a id="how-to-use-packagemanagement-cmdlets-for-discovering-installing-updating-and-inventory-of-scripts-and-modules-using-powershellget-provider" class="xliff"></a>
+
+## PowerShellGet プロバイダーを使用したスクリプトとモジュールの検出、インストール、更新、インベントリ用に PackageManagement コマンドレットを使用する方法。
+
+<a id="pakagemanagement-commands" class="xliff"></a>
+
+## PakageManagement コマンド
 

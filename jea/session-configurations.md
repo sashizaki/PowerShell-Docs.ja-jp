@@ -1,20 +1,18 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: "PowerShell, コマンドレット, JEA"
-ms.date: 2017-04-25
+ms.topic: conceptual
+keywords: "JEA, PowerShell, セキュリティ"
 title: "JEA セッションの構成"
-ms.technology: powershell
-ms.openlocfilehash: 8773096627217663362e61fb158cc900aea20f43
-ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.openlocfilehash: 0a8931ae15caf04a3639ab46f130e5f5b0498d8c
+ms.sourcegitcommit: 0733db9a05e89e6a23f6b52b9edd784fcbe8beec
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 06/22/2017
 ---
-# <a name="jea-session-configurations"></a>JEA セッションの構成
+<a id="jea-session-configurations" class="xliff"></a>
+
+# JEA セッションの構成
 
 > 適用先: Windows PowerShell 5.0
 
@@ -24,7 +22,9 @@ JEA エンドポイントは、PowerShell セッション構成ファイルを�
 
 このトピックでは、PowerShell セッション構成ファイルを作成し、JEA エンドポイントを登録する方法について説明します。
 
-## <a name="create-a-session-configuration-file"></a>セッション構成ファイルを作成する
+<a id="create-a-session-configuration-file" class="xliff"></a>
+
+## セッション構成ファイルを作成する
 
 JEA エンドポイントを登録するには、そのエンドポイントを構成する方法を指定する必要があります。
 ここでは多くのオプションについて考慮する必要がありますが、最も重要なものは、JEA エンドポイントにアクセスできる必要があるユーザー、そのユーザーに割り当てられるロール、JEA が内部で使用する ID、JEA エンドポイントの名前です。
@@ -58,12 +58,16 @@ PowerShell プロバイダーおよび外部プログラム (実行可能ファ�
 JEA セッションの構成には他にもいくつかフィールドがあります。
 それについては以下のセクションで説明します。
 
-### <a name="choose-the-jea-identity"></a>JEA ID を選択する
+<a id="choose-the-jea-identity" class="xliff"></a>
+
+### JEA ID を選択する
 
 バックグラウンドで、接続ユーザーのコマンドの実行中に、JEA は使用する ID (アカウント) が必要です。
 JEA が使う ID をセッション構成ファイルで決定します。
 
-#### <a name="local-virtual-account"></a>ローカル仮想アカウント
+<a id="local-virtual-account" class="xliff"></a>
+
+#### ローカル仮想アカウント
 
 この JEA エンドポイントによってサポートされるすべてのロールがローカル マシンの管理に使われ、ローカル管理者アカウントがコマンドを正常に実行するために十分である場合は、ローカル仮想アカウントを使うように JEA を構成する必要があります。
 仮想アカウントは、特定のユーザーに固有の一時的なアカウントであり、PowerShell セッションの期間中にのみ存在します。
@@ -86,7 +90,9 @@ RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
 
-#### <a name="group-managed-service-account"></a>グループの管理されたサービス アカウント
+<a id="group-managed-service-account" class="xliff"></a>
+
+#### グループの管理されたサービス アカウント
 
 
 JEA ユーザーが他のコンピューターや Web サービスなどのネットワーク リソースにアクセスする必要があるシナリオでは、グループ管理サービス アカウント (gMSA) の方が使うのに適した ID です。
@@ -96,7 +102,7 @@ gMSA アカウントによって提供される権限は、アクセスするリ
 
 ```powershell
 # Configure JEA sessions to use the gMSA account in the local computer's domain with the sAMAccountName of 'MyJEAgMSA'
-GroupManagedServiceAccount = 'MyJEAgMSA'
+GroupManagedServiceAccount = 'Domain\MyJEAgMSA'
 ```
 
 いくつかの理由でネットワーク リソースへのアクセスが必要なときにのみ、gMSA アカウントを使う必要があります。
@@ -109,11 +115,15 @@ GroupManagedServiceAccount = 'MyJEAgMSA'
 > グループ管理されたサービス アカウントは、ドメインに参加しているコンピューターにおいてのみ、Windows PowerShell 5.1 以降だけで使用できます。
 
 
-#### <a name="more-information-about-run-as-users"></a>実行ユーザーに関する詳しい情報
+<a id="more-information-about-run-as-users" class="xliff"></a>
+
+#### 実行ユーザーに関する詳しい情報
 
 実行 ID と、JEA セッションのセキュリティに対する実行 ID の関与の詳細については、「[security considerations](security-considerations.md)」 (JEA のセキュリティに関する考慮事項) をご覧ください。
 
-### <a name="session-transcripts"></a>セッションのトランスクリプト
+<a id="session-transcripts" class="xliff"></a>
+
+### セッションのトランスクリプト
 
 ユーザーのセッションのトランスクリプトを自動的に記録するように、JEA セッション構成ファイルを構成することをお勧めします。
 PowerShell セッションのトランスクリプトには、接続しているユーザー、そのユーザーに割り当てられている実行 ID、そのユーザーによって実行されたコマンドに関する情報が含まれます。
@@ -129,7 +139,9 @@ TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
 トランスクリプトはローカル システム アカウントによってフォルダーに書き込まれるので、アカウントにはこのディレクトリの読み取りと書き込みのアクセス権が必要です。
 標準ユーザーがこのフォルダーにアクセスできてはならず、限られた少数のセキュリティ管理者だけがトランスクリプトを監査するためにフォルダーにアクセスできる必要があります。
 
-### <a name="user-drive"></a>ユーザー ドライブ
+<a id="user-drive" class="xliff"></a>
+
+### ユーザー ドライブ
 
 接続しているユーザーが、コマンドを実行するために、JEA エンドポイントとの間で双方向にファイルをコピーする必要がある場合は、セッション構成ファイルでユーザー ドライブを有効にできます。
 ユーザー ドライブは、接続しているユーザーごとに固有のフォルダーにマップされた [PSDrive](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) です。
@@ -154,7 +166,9 @@ UserDriveMaximumSize = 524288000
 > [!NOTE]
 > ユーザー ドライブを使用できるのは、Windows PowerShell 5.1 以降のみです。
 
-### <a name="role-definitions"></a>ロールの定義
+<a id="role-definitions" class="xliff"></a>
+
+### ロールの定義
 
 セッション構成ファイルのロールの定義では、*ロール*への*ユーザー*のマッピングを定義します。
 このフィールドに含まれるすべてのユーザーまたはグループには、登録時に JEA エンドポイントへのアクセス許可を自動的に付与されます。
@@ -181,7 +195,9 @@ RoleDefinitions = @{
 }
 ```
 
-### <a name="role-capability-search-order"></a>ロール機能の検索順序
+<a id="role-capability-search-order" class="xliff"></a>
+
+### ロール機能の検索順序
 上の例で示されているように、ロール機能はロール機能ファイルのフラット名 (拡張子を除いたファイル名) によって参照されます。
 システムにおいて同じフラット名で複数のロール機能を使用できる場合、PowerShell は暗黙的な検索順序を使って有効なロール機能ファイルを選びます。
 同じ名前のすべてのロール機能ファイルにアクセスできるようには**なりません**。
@@ -194,7 +210,9 @@ JEA は `$env:PSModulePath` 環境変数を使用して、ロール機能ファ�
 
 2 つ以上のロール機能が同じ名前を共有していると、ロール機能の検索順序は確定的ではないため、コンピューター上のロール機能が固有の名前を持っているか確認することを**強くお勧め**します。
 
-### <a name="conditional-access-rules"></a>条件付きアクセス規則
+<a id="conditional-access-rules" class="xliff"></a>
+
+### 条件付きアクセス規則
 
 RoleDefinitions フィールドに含まれるすべてのユーザーとグループは、JEA エンドポイントへのアクセスを自動的に許可されます。
 条件付きアクセス規則を使うと、このアクセスを調整して、ユーザーが割り当てられているロールに影響を与えない別のセキュリティ グループにユーザーが属していることを要求できます。
@@ -219,18 +237,24 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > [!NOTE]
 > 条件付きアクセス規則を使用できるのは、Windows PowerShell 5.1 以降のみです。
 
-### <a name="other-properties"></a>他のプロパティ
+<a id="other-properties" class="xliff"></a>
+
+### 他のプロパティ
 セッション構成ファイルではロール機能ファイルで実行できるすべてのことを実行できますが、接続しているユーザーが別のコマンドにアクセスできるようにする機能だけはありません。
 すべてのユーザーに特定のコマンドレット、関数、またはプロバイダーへのアクセスを許可する場合は、セッション構成ファイルで行うことができます。
 セッション構成ファイルでサポートされているプロパティの一覧については、`Get-Help New-PSSessionConfigurationFile -Full` を実行してください。
 
-## <a name="testing-a-session-configuration-file"></a>セッション構成ファイルのテスト
+<a id="testing-a-session-configuration-file" class="xliff"></a>
+
+## セッション構成ファイルのテスト
 
 [Test-PSSessionConfigurationFile](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) コマンドレットを使って、セッション構成をテストできます。
 テキスト エディターを使って手動で pssc ファイルを編集した場合は、セッション構成ファイルをテストして構文が正しいことを確認することを強くお勧めします。
 セッション構成ファイルがこのテストに合格しない場合、システムに正しく登録することはできません。
 
-## <a name="sample-session-configuration-file"></a>セッション構成ファイルのサンプル
+<a id="sample-session-configuration-file" class="xliff"></a>
+
+## セッション構成ファイルのサンプル
 
 JEA のセッション構成を作成して検証する方法を示す完全な例を次に示します。
 使いやすさと読みやすさのため、作成したロール定義を `$roles` 変数に保存していることに注意してください。
@@ -247,12 +271,17 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\JEACo
 Test-PSSessionConfigurationFile -Path .\JEAConfig.pssc # should yield True
 ```
 
-## <a name="updating-session-configuration-files"></a>セッション構成ファイルの更新
+<a id="updating-session-configuration-files" class="xliff"></a>
+
+## セッション構成ファイルの更新
 
 ロールへのユーザーのマッピングなど、JEA セッション構成のプロパティを変更する必要がある場合は、JEA セッション構成を[登録解除](register-jea.md#unregistering-jea-configurations)してから[再登録](register-jea.md)する必要があります。
 JEA セッション構成を再登録するときは、必要な変更を含む更新された PowerShell セッション構成ファイルを使います。
 
-## <a name="next-steps"></a>次の手順
+<a id="next-steps" class="xliff"></a>
+
+## 次の手順
 
 - [JEA 構成を登録する](register-jea.md)
 - [ロール機能](role-capabilities.md)
+
