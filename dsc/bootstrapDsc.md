@@ -1,28 +1,31 @@
 ---
-title: "DSC を使用した初回起動時の仮想マシンの構成"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 38751d62a56dc90ff69fe3ab6e92829fb33edb2b
-ms.sourcegitcommit: a81ffb39f370b95ae802cd054dc4480c9e68cf77
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "DSC を使用した初回起動時の仮想マシンの構成"
+ms.openlocfilehash: a3592c50fa7f2232538fbec07129fac86c1d00b5
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
 >適用先: Windows PowerShell 5.0
 
 >**注:** このトピックで説明されている **DSCAutomationHostEnabled** レジストリ キーは、PowerShell 4.0 では使用できません。
 PowerShell 4.0 の初回起動時に、新しい仮想マシンを構成する方法については、「[Want to Automatically Configure Your Machines Using DSC at Initial Boot-up?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)」 (初回起動時に DSC を使用して自動的にマシンを構成する方法) をご覧ください。
 
-# <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>DSC を使用した初回起動時の仮想マシンの構成
+<a id="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc" class="xliff"></a>
 
-## <a name="requirements"></a>要件
+# DSC を使用した初回起動時の仮想マシンの構成
+
+<a id="requirements" class="xliff"></a>
+
+## 要件
 
 これらの例を実行するには、以下が必要になります。
 
-- 作業する起動可能な VHD。 bpt id="p1" xmlns="urn:oasis:names:tc:xliff:document:1.2">  [</bpt>TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) で、Windows Server 2016 の評価版と共に ISO をダウンロードできます。 「[Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/en-us/library/gg318049.aspx)」 (起動可能な仮想ハード ディスクの作成) で、ISO イメージから VHD を作成する方法に関する手順を参照してください。
+- 作業する起動可能な VHD。   [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) で、Windows Server 2016 の評価版と共に ISO をダウンロードできます。 「[Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/en-us/library/gg318049.aspx)」 (起動可能な仮想ハード ディスクの作成) で、ISO イメージから VHD を作成する方法に関する手順を参照してください。
 - Hyper-V が有効なホスト コンピューター。 詳細については、「[Hyper-V の概要](https://technet.microsoft.com/library/hh831531.aspx)」をご覧ください。
 
 DSC を使用すると、ソフトウェアのインストールと初回起動時のコンピューターの構成を自動化できます。
@@ -39,7 +42,9 @@ DSC を使用すると、ソフトウェアのインストールと初回起動�
 >**注:** `Pending.mof` と `MetaConfig.mof` を同時にコンピューターに挿入することができます。
 両方のファイルが存在する場合、`MetaConfig.mof` に指定された設定が優先されます。
 
-## <a name="inject-a-configuration-mof-document-into-a-vhd"></a>構成 MOF ドキュメントを VHD に挿入する
+<a id="inject-a-configuration-mof-document-into-a-vhd" class="xliff"></a>
+
+## 構成 MOF ドキュメントを VHD に挿入する
 
 初回起動時に構成を適用するために、コンパイル済みの構成 MOF ドキュメントをその `Pending.mof` ファイルとして VHD に挿入できます。
 **DSCAutomationHostEnabled** レジストリ キーを 2 (既定値) に設定した場合、コンピューターが最初に起動されたときに、DSC では `Pending.mof` で定義された構成を適用します。
@@ -62,7 +67,9 @@ Configuration SampleIISInstall
 }
 ```
 
-### <a name="to-inject-the-configuration-mof-document-on-the-vhd"></a>VHD 上で構成 MOF ドキュメントを挿入するには
+<a id="to-inject-the-configuration-mof-document-on-the-vhd" class="xliff"></a>
+
+### VHD 上で構成 MOF ドキュメントを挿入するには
 
 1. [Mount-VHD](https://technet.microsoft.com/library/hh848551.aspx) コマンドレットを呼び出して、構成を挿入する VHD をマウントします。 たとえば、次のように入力します。
 
@@ -95,7 +102,9 @@ Configuration SampleIISInstall
 7. DSC MOF ドキュメントをインストールした VHD を使用して、VM を作成します。 初回起動が行われ、オペレーティング システムがインストールされると、IIS がインストールされます。
 [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) コマンドレットを呼び出して、これを確認することができます。
 
-## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>DSC のメタ構成を VHD に挿入する
+<a id="inject-a-dsc-metaconfiguration-into-a-vhd" class="xliff"></a>
+
+## DSC のメタ構成を VHD に挿入する
 
 メタ構成 (「[ローカル構成マネージャーの構成](metaConfig.md)」を参照) をその `MetaConfig.mof` ファイルとして VHD に挿入して、コンピューターが初回起動時に構成をプルするように構成することもできます。
 **DSCAutomationHostEnabled** レジストリ キーを 2 (既定値) に設定した場合、コンピューターが最初に起動されたときに、DSC は `MetaConfig.mof` で定義されたメタ構成を LCM に適用します。
@@ -126,7 +135,9 @@ configuration PullClientBootstrap
 }
 ```
 
-### <a name="to-inject-the-metaconfiguration-mof-document-on-the-vhd"></a>VHD 上でメタ構成 MOF ドキュメントを挿入するには
+<a id="to-inject-the-metaconfiguration-mof-document-on-the-vhd" class="xliff"></a>
+
+### VHD 上でメタ構成 MOF ドキュメントを挿入するには
 
 1. [Mount-VHD](https://technet.microsoft.com/library/hh848551.aspx) コマンドレットを呼び出して、メタ構成を挿入する VHD をマウントします。 たとえば、次のように入力します。
 
@@ -164,7 +175,9 @@ configuration PullClientBootstrap
 初回起動が行われ、オペレーティング システムがインストールされると、DSC はプル サーバーから構成をプルして、IIS がインストールされます。
 [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) コマンドレットを呼び出して、これを確認することができます。
 
-## <a name="disable-dsc-at-boot-time"></a>起動時の DSC を無効にする
+<a id="disable-dsc-at-boot-time" class="xliff"></a>
+
+## 起動時の DSC を無効にする
 
 既定では、**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled** キーの値は 2 に設定されます。これにより、コンピューターの状態が保留中または最新の場合に、DSC 構成を実行することを許可します。 初回起動時に構成を実行しない場合は、このキーの値を 0 に設定する必要があります。
 
@@ -199,9 +212,12 @@ configuration PullClientBootstrap
     reg unload HKLM\Vhd
     ```
 
-## <a name="see-also"></a>参照
+<a id="see-also" class="xliff"></a>
+
+## 参照
 
 - [DSC 構成](configurations.md)
 - [DSCAutomationHostEnabled レジストリ キー](DSCAutomationHostEnabled.md)
 - [ローカル構成マネージャー (LCM) の構成](metaConfig.md)
 - [DSC Web プル サーバーのセットアップ](pullServer.md)
+
