@@ -1,41 +1,50 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,コマンドレット,ギャラリー"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_register psrepository
-ms.technology: powershell
-ms.openlocfilehash: aceee6fc411dafb915643996d57c23b5c8b25f53
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+title: Register-PSRepository
+ms.openlocfilehash: 598bfa52fe3508359bbeb4489cc054bc9314b572
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="register-psrepository"></a>Register-PSRepository
+<a id="register-psrepository" class="xliff"></a>
+
+# Register-PSRepository
 
 コンピューター上の登録されているリポジトリを取得します。
 
-## <a name="description"></a>説明
+<a id="description" class="xliff"></a>
+
+## 説明
 
 Register-PSRepository コマンドレットは、PowerShell モジュールのオンライン リポジトリを登録します。 リポジトリを登録すると、Find-Module、Install-Module および Publish-Module の各コマンドレットから参照できます。 登録されているリポジトリは、Find-Module と Install-Module での既定のリポジトリになります。 
 
 登録されているリポジトリはユーザー固有です。 システム全体のコンテキストには登録されません。
 
 
-## <a name="cmdlet-syntax"></a>コマンドレット構文
+<a id="cmdlet-syntax" class="xliff"></a>
+
+## コマンドレット構文
 
 ```powershell
 Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+
+## コマンドレット オンライン ヘルプ リファレンス
 
 [Register-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517129)
 
-## <a name="example-commands"></a>コマンド例
+<a id="example-commands" class="xliff"></a>
 
-### <a name="register-a-powershell-repository"></a>PowerShell リポジトリの登録
+## コマンド例
+
+<a id="register-a-powershell-repository" class="xliff"></a>
+
+### PowerShell リポジトリの登録
 内部リポジトリに対して動作するように PowerShellGet を構成できます。 リポジトリを登録した後、Find-Module および Install-Module を使用して操作できます。
 
 ```powershell
@@ -65,7 +74,9 @@ Unregister-PSRepository DemoRepo
 ```
 
 
-### <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a>スクリプト共有サポートがある Register-PSRepository および Set-PSRepository コマンドレット
+<a id="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support" class="xliff"></a>
+
+### スクリプト共有サポートがある Register-PSRepository および Set-PSRepository コマンドレット
 
 **ScriptSourceLocation** および **ScriptPublishLocation** を PSRepository に追加するには、Register-PSRepository コマンドレットを使用します。
 

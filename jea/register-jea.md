@@ -1,25 +1,27 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: "PowerShell, コマンドレット, JEA"
-ms.date: 2016-12-05
+ms.topic: conceptual
+keywords: "JEA, PowerShell, セキュリティ"
 title: "JEA の構成の登録"
-ms.technology: powershell
-ms.openlocfilehash: 2dcf541f1ed9975a680b31ca5e00e0fbbbddb22e
-ms.sourcegitcommit: b88151841dd44c8ee9296d0855d8b322cbf16076
-translationtype: HT
+ms.openlocfilehash: 0684a1c7acffbccbedab9dba4689611a24c8ae25
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="registering-jea-configurations"></a>JEA の構成の登録
+<a id="registering-jea-configurations" class="xliff"></a>
+
+# JEA の構成の登録
 
 > 適用先: Windows PowerShell 5.0
 
 [ロール機能](role-capabilities.md)と[セッション構成ファイル](session-configurations.md)を作成した後、JEA を使用できるようにする前の最後のステップは、JEA エンドポイントを登録することです。
 このプロセスでは、セッション構成情報をシステムに適用し、ユーザーおよび自動化エンジンがエンドポイントを使用できるようにします。
 
-## <a name="single-machine-configuration"></a>単一コンピューターの構成
+<a id="single-machine-configuration" class="xliff"></a>
+
+## 単一コンピューターの構成
 
 小規模な環境の場合、[Register-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) コマンドレットを使ってセッション構成ファイルを登録することにより、JEA を展開できます。
 
@@ -58,7 +60,9 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 登録が成功すると、[JEA を使用](using-jea.md)できる状態になります。
 セッション構成ファイルは、登録後は使用されないので、いつでも削除できます。
 
-## <a name="multi-machine-configuration-with-dsc"></a>DSC での複数コンピューター構成
+<a id="multi-machine-configuration-with-dsc" class="xliff"></a>
+
+## DSC での複数コンピューター構成
 
 JEA を複数のコンピューターに展開する場合、最も簡単な展開モデルである JEA の [Desired State Configuration](https://msdn.microsoft.com/en-us/powershell/dsc/overview) リソースを使うと、各コンピューターに JEA を迅速かつ一貫して展開できます。
 
@@ -118,7 +122,9 @@ Configuration JEAMaintenance
 DSC リソースを使うと、既定の Microsoft.PowerShell リモート処理エンドポイントを置き換えることもできます。
 これを行うと、リソースは、既定の WinRM ACL (リモート管理ユーザーとローカル管理者グループのメンバーにアクセスを許可します) を持つ "Microsoft.PowerShell.Restricted" という名前のバックアップ非制約エンドポイントを自動的に登録します。
 
-## <a name="unregistering-jea-configurations"></a>JEA の構成の登録解除
+<a id="unregistering-jea-configurations" class="xliff"></a>
+
+## JEA の構成の登録解除
 
 システムの JEA エンドポイントを削除するには、[Unregister-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Unregister-PSSessionConfiguration) コマンドレットを使います。
 JEA エンドポイントの登録を解除すると、新しいユーザーがシステムに新しい JEA セッションを作成できなくなります。
@@ -134,6 +140,9 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 > これにより、他の PowerShell セッション、WMI 呼び出し、一部の管理ツールなど、実行中のほとんどのリモート管理操作が中断されます。
 > 計画されたメンテナンス期間中にのみ、PowerShell エンドポイントの登録を解除してください。
 
-## <a name="next-steps"></a>次の手順
+<a id="next-steps" class="xliff"></a>
+
+## 次の手順
 
 - [JEA エンドポイントをテストする](using-jea.md)
+

@@ -1,5 +1,20 @@
-# <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>OData エンドポイントに基づく PowerShell コマンドレットの生成
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>OData エンドポイントに基づく Windows PowerShell コマンドレットの生成
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: 11891587f59dc8a38e4ce267018160f7f9a28178
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="generate-powershell-cmdlets-based-on-odata-endpoint" class="xliff"></a>
+
+# OData エンドポイントに基づく PowerShell コマンドレットの生成
+<a id="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint" class="xliff"></a>
+
+OData エンドポイントに基づく Windows PowerShell コマンドレットの生成
 --------------------------------------------------------------
 
 **Export-ODataEndpointProxy** は、特定の OData エンドポイントによって公開される機能に基づいて、一連の Windows PowerShell コマンドレットを生成するコマンドレットです。
@@ -40,7 +55,9 @@ ipmo 'C:\Users\user\Generated.psd1'
 -   関連付け
 -   ストリームの引き渡し
 
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>ODataUtils を使用した OData エンドポイントに基づく Windows PowerShell コマンドレットの生成
+<a id="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils" class="xliff"></a>
+
+ODataUtils を使用した OData エンドポイントに基づく Windows PowerShell コマンドレットの生成
 ------------------------------------------------------------------------------
 ODataUtils モジュールにより、OData をサポートする REST エンドポイントから Windows PowerShell コマンドレットを生成できます。 Microsoft.PowerShell.ODataUtils Windows PowerShell モジュールには次の増分拡張があります。
 -   サーバー側エンドポイントからクライアント側への追加情報のチャネル。
@@ -98,3 +115,4 @@ Export-ODataEndpointProxy コマンドレットと、これによって生成さ
 
 Export-ODataEndpointProxy -Uri $endPointUri -OutputModule $generatedProxyModuleDir -Force -AllowUnSecureConnection -Verbose -Headers @{'subscription-key'='XXXX'}
 ```
+

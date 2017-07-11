@@ -1,18 +1,16 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "Web ベースの Windows PowerShell コンソールの使用"
-ms.technology: powershell
-ms.openlocfilehash: ea530d346ec36000da331b287f51d8f732947629
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 48ed1646c00f909c4e950f197f51a30205060ef0
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
-#  <a name="use-the-web-based-windows-powershell-console"></a>Web ベースの Windows PowerShell コンソールの使用
+<a id="use-the-web-based-windows-powershell-console" class="xliff"></a>
+
+#  Web ベースの Windows PowerShell コンソールの使用
 
 最終更新日: 2013 年 6 月 24 日
 
@@ -90,7 +88,9 @@ Web ベースの Windows PowerShell コンソールを使うには、ブラウ�
 
 Windows PowerShell Web Access 管理者は、所属組織の Windows PowerShell Web Access ゲートウェイ Web サイトのアドレスを示す URL を担当者に提供する必要があります。 この Web サイトのアドレスは、既定で https://&lt;server_name&gt;/pswa となっています。 Windows PowerShell Web Access にサインインする前に、管理対象のリモート コンピューターの名前または IP アドレスがわかっていることを確認してください。 また担当者がリモート コンピューターの承認済みユーザーであることと、リモート コンピューターがリモート管理を許可するよう構成されている必要があります。 リモート管理を許可するようコンピューターを構成する方法の詳細については、[Windows PowerShell でのリモート コマンドの有効化および使用](https://technet.microsoft.com/magazine/ff700227.aspx)に関するページを参照してください。 コンピューターを構成してリモート管理を有効にする最も簡単な方法は、Windows PowerShell セッションを管理者特権で開き (**[管理者として実行]**)、コンピューター上で **Enable-PSRemoting -force** コマンドレットを実行することです。
 
-### <a name="to-sign-in-to-windows-powershell-web-access"></a>Windows PowerShell Web Access にサインインするには
+<a id="to-sign-in-to-windows-powershell-web-access" class="xliff"></a>
+
+### Windows PowerShell Web Access にサインインするには
 
 1.  Windows PowerShell Web Access Web サイトをインターネット ブラウザーのウィンドウまたはタブで開きます。
 
@@ -228,7 +228,7 @@ Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Acce
 </tr>
 <tr class="odd">
 <td><p>Ctrl + End</p></td>
-<td><p>コマンドラインの末尾まで削除</p></td>
+<td><p>コマンド ラインの末尾まで削除</p></td>
 </tr>
 <tr class="even">
 <td><p>F1</p></td>
@@ -278,11 +278,9 @@ Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Acce
 </table>
 
 <a href="" id="BKMK_limits"></a>
-
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">
-Web ベース コンソールの制限事項</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Web ベース コンソールの制限事項</span></a>
 
 ------------------------------------------------------------------------
 

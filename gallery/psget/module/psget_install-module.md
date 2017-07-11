@@ -1,23 +1,24 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,コマンドレット,ギャラリー"
-ms.date: 2016-10-14
+ms.date: 2017-06-12
 contributor: manikb
-title: psget_install module
-ms.technology: powershell
-ms.openlocfilehash: 82e4bb1ec76b1a51e1a99de85bc77a5429d46e26
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: reference
+keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+title: Install-Module
+ms.openlocfilehash: 37e07cd32e7b2fd4a7a8e6cab179aecc3251baf3
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="install-module"></a>Install-Module
+<a id="install-module" class="xliff"></a>
+
+# Install-Module
 
 PowerShell モジュールをオンライン リポジトリからローカル コンピューターにインストールします。
 
-## <a name="description"></a>説明
+<a id="description" class="xliff"></a>
+
+## 説明
 
 Install-Module コマンドレットは、オンライン ギャラリーから 1 つ以上のモジュールをダウンロードして検証し、ローカル コンピューターの指定したインストール スコープにインストールします。
 
@@ -33,7 +34,9 @@ Install-Module コマンドレットは、指定の条件を満たす 1 つ以�
 - -Force は、インストール済みのモジュールを再インストールします
 - RequiredVersion は、SxS の指定したバージョンを PowerShell バージョン 5.0 以降の既存のバージョンでインストールします。
 
-### <a name="scope"></a>スコープ
+<a id="scope" class="xliff"></a>
+
+### スコープ
 モジュールのインストール スコープを指定します。 このパラメーターに使用できる値は、AllUsers と CurrentUser です。
 
 既定のインストール スコープは AllUsers です。
@@ -42,7 +45,9 @@ AllUsers スコープでは、モジュールはコンピューターのすべ�
 
 CurrentUser スコープでは、モジュールは "$home\Documents\WindowsPowerShell\Modules" のみにインストールされるので、モジュールを使用できるのは現在のユーザーのみです。
 
-## <a name="notes"></a>メモ
+<a id="notes" class="xliff"></a>
+
+## メモ
 
 このコマンドレットは、Windows PowerShell 3.0 または今後のリリースの Windows PowerShell、Windows 7 または Windows 2008 R2、および今後のリリースの Windows で機能します。
 
@@ -59,16 +64,22 @@ CurrentUser スコープでは、モジュールは "$home\Documents\WindowsPowe
 悪意のあるコードが含まれているモジュールを実行しないようにするため、インストール済みのモジュールはインストールでは自動的にインポートされません。 セキュリティのベスト プラクティスとして、最初にモジュール内のコマンドレットまたは関数を実行する前に、モジュール コードを評価します。
 
 
-## <a name="cmdlet-syntax"></a>コマンドレット構文
+<a id="cmdlet-syntax" class="xliff"></a>
+
+## コマンドレット構文
 ```powershell
 Get-Command -Name Install-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
+<a id="cmdlet-online-help-reference" class="xliff"></a>
+
+## コマンドレット オンライン ヘルプ リファレンス
 
 [Install-Module](http://go.microsoft.com/fwlink/?LinkID=398573)
 
-## <a name="example-commands"></a>コマンド例
+<a id="example-commands" class="xliff"></a>
+
+## コマンド例
 
 ```powershell
 
@@ -109,7 +120,9 @@ Install-Module ContosoClient -Force
 Install-Module -Name 
 ```
 
-## <a name="install-module-cmdlet-in-pipeline-operations"></a>パイプライン操作での Install-Module コマンドレット
+<a id="install-module-cmdlet-in-pipeline-operations" class="xliff"></a>
+
+## パイプライン操作での Install-Module コマンドレット
 
 ```powershell
 
@@ -136,11 +149,15 @@ Get-InstalledModule
 
 ```
 
-## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>PowerShell 5.0 以降の Side-by-Side バージョン サポート
+<a id="side-by-side-version-support-on-powershell-50-or-newer" class="xliff"></a>
+
+## PowerShell 5.0 以降の Side-by-Side バージョン サポート
 
 PowerShellGet は、Windows PowerShell 5.0 以降で実行される Install-Module、Update-Module および Publish-Module の各コマンドレットの Side-by-Side (SxS) モジュール バージョン サポートに対応しています。
 
-### <a name="install-module-examples"></a>Install-Module の例
+<a id="install-module-examples" class="xliff"></a>
+
+### Install-Module の例
 
 ```powershell
 # Install a version of the module
@@ -172,7 +189,9 @@ Version    Name                                Repository           Description
 
 ```
 
-## <a name="install-module-with-its-dependencies"></a>モジュールを依存関係と共にインストールする
+<a id="install-module-with-its-dependencies" class="xliff"></a>
+
+## モジュールを依存関係と共にインストールする
 
 ```powershell
 
@@ -266,7 +285,9 @@ Version    Name                                Repository           Description
 
 ```
 
-## <a name="error-scenarios"></a>エラー シナリオ
+<a id="error-scenarios" class="xliff"></a>
+
+## エラー シナリオ
 
 ```powershell
 

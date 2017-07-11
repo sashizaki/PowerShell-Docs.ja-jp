@@ -1,17 +1,18 @@
 ---
-title: "MOF ファイルのセキュリティ保護"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 395ebe88fcf1f4d79c4eb91bf10c63c82cb1d799
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "MOF ファイルのセキュリティ保護"
+ms.openlocfilehash: 70dec03f3b883eb88661e27c411248b8e1bb2177
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="securing-the-mof-file"></a>MOF ファイルのセキュリティ保護
+<a id="securing-the-mof-file" class="xliff"></a>
+
+# MOF ファイルのセキュリティ保護
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -19,7 +20,9 @@ DSC は、どのような構成が必要であるかをターゲット ノード
 
 >**注:** このトピックでは、暗号化に使用する証明書について説明します。 暗号化には、自己署名証明書で十分です。秘密キーは常に秘密に保たれますし、暗号化はドキュメントの信頼性を意味しないからです。 認証の目的では、自己署名証明書を使用*しないでください*。 認証の目的では、常に信頼された証明機関 (CA) からの証明書を使用する必要があります。
 
-## <a name="prerequisites"></a>前提条件
+<a id="prerequisites" class="xliff"></a>
+
+## 前提条件
 
 DSC 構成のセキュリティ保護に使用される資格情報を正常に暗号化するには、次のものが必要になります。
 
@@ -28,7 +31,9 @@ DSC 構成のセキュリティ保護に使用される資格情報を正常に�
 * **各ターゲット ノードでは、暗号化可能な証明書がそれぞれの個人用ストアに保存されています**。 Windows PowerShell では、ストアへのパスは Cert:\LocalMachine\My です。 このトピックの例では、"ワークステーション認証" テンプレートを使用します。このテンプレートは、その他の証明書テンプレートと共に、[[既定の証明書テンプレート]](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx) にあります。
 * ターゲット ノード以外のコンピューターでこの構成を実行する場合は、**証明書の公開キーをエクスポート**して、構成の実行元であるコンピューターにインポートします。 **公開**キーのみをエクスポートし、秘密キーは安全に保護してください。
 
-## <a name="overall-process"></a>全体的なプロセス
+<a id="overall-process" class="xliff"></a>
+
+## 全体的なプロセス
 
  1. ターゲット ノードごとに証明書のコピーが保持され、構成コンピューターに公開キーと拇印が保持されるように、証明書、キー、および拇印をセットアップします。
  2. 公開キーのパスと拇印が含まれた構成データ ブロックを作成します。
@@ -37,7 +42,9 @@ DSC 構成のセキュリティ保護に使用される資格情報を正常に�
 
 ![Diagram1](images/CredentialEncryptionDiagram1.png)
 
-## <a name="certificate-requirements"></a>証明書の要件
+<a id="certificate-requirements" class="xliff"></a>
+
+## 証明書の要件
 
 資格情報の暗号化を指定するには、公開キー証明書が、DSC 構成の作成に使用されているコンピューターから**信頼された**_ターゲット ノード_で使用可能である必要があります。
 この公開キー証明書を DSC 資格情報の暗号化に使うには、満たす必要のある特定の要件があります。
@@ -54,7 +61,9 @@ DSC 構成のセキュリティ保護に使用される資格情報を正常に�
   
 _ターゲット ノード_にある既存の証明書で、これらの条件を満たしているものがあれば、DSC 資格情報をセキュリティで保護するために使うことができます。
 
-## <a name="certificate-creation"></a>証明書の作成
+<a id="certificate-creation" class="xliff"></a>
+
+## 証明書の作成
 
 必要な暗号化証明書 (公開/秘密キー ペア) を作成して使用するための方法は 2 つあります。
 
@@ -64,7 +73,9 @@ _ターゲット ノード_にある既存の証明書で、これらの条件�
 MOF の証明書の暗号化を解除するための秘密キーが常にターゲット ノードで保持されるため、1 つ目の方法をお勧めします。
 
 
-### <a name="creating-the-certificate-on-the-target-node"></a>ターゲット ノードでの証明書の作成
+<a id="creating-the-certificate-on-the-target-node" class="xliff"></a>
+
+### ターゲット ノードでの証明書の作成
 
 秘密キーは、**ターゲット ノード**で MOF の暗号化解除に使用されるため、秘密に保つ必要があります。そのための最も簡単な方法は、**ターゲット ノード**で秘密キー証明書を作成し、DSC 構成を MOF ファイルに作成するために使用されるコンピューターに**公開キー証明書**をコピーすることです。
 次に例を示します。
@@ -72,7 +83,9 @@ MOF の証明書の暗号化を解除するための秘密キーが常にター�
  2. 公開キー証明書を**ターゲット ノード**にエクスポートします。
  3. 公開キー証明書を**オーサリング ノード**の**マイ**証明書ストアにインポートします。
 
-#### <a name="on-the-target-node-create-and-export-the-certificate"></a>ターゲット ノード: 証明書を作成してエクスポートする
+<a id="on-the-target-node-create-and-export-the-certificate" class="xliff"></a>
+
+#### ターゲット ノード: 証明書を作成してエクスポートする
 >オーサリング ノード: Windows Server 2016 および Windows 10
 
 ```powershell
@@ -117,13 +130,17 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 ```
 エクスポートしたら、```DscPublicKey.cer``` を**オーサリング ノード**にコピーする必要があります。
 
-#### <a name="on-the-authoring-node-import-the-certs-public-key"></a>オーサリング ノード: 証明書の公開キーをインポートする
+<a id="on-the-authoring-node-import-the-certs-public-key" class="xliff"></a>
+
+#### オーサリング ノード: 証明書の公開キーをインポートする
 ```powershell
 # Import to the my store
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-### <a name="creating-the-certificate-on-the-authoring-node"></a>オーサリング ノードでの証明書の作成
+<a id="creating-the-certificate-on-the-authoring-node" class="xliff"></a>
+
+### オーサリング ノードでの証明書の作成
 **オーサリング ノード**で暗号化証明書を作成し、**秘密キー**と共に PFX ファイルとしてエクスポートして、**ターゲット ノード**にインポートすることもできます。
 これは、DSC 資格情報の暗号化を実装するために _Nano Server_ で実行されている現在の手法です。
 PFX はパスワードで保護されていますが、転送中はセキュリティで保護する必要があります。
@@ -134,7 +151,9 @@ PFX はパスワードで保護されていますが、転送中はセキュリ�
  4. 秘密キー証明書を**ターゲット ノード**のルート証明書ストアにインポートします。
    - これはルート ストアに追加されるため、**ターゲット ノード**で信頼されるようになります。
 
-#### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>オーサリング ノード: 証明書を作成してエクスポートする
+<a id="on-the-authoring-node-create-and-export-the-certificate" class="xliff"></a>
+
+#### オーサリング ノード: 証明書を作成してエクスポートする
 >ターゲット ノード: Windows Server 2016 および Windows 10
 
 ```powershell
@@ -187,14 +206,18 @@ $cert | Remove-Item -Force
 Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cert:\LocalMachine\My
 ```
 
-#### <a name="on-the-target-node-import-the-certs-private-key-as-a-trusted-root"></a>ターゲット ノード: 証明書の秘密キーを信頼されたルートとしてインポートする
+<a id="on-the-target-node-import-the-certs-private-key-as-a-trusted-root" class="xliff"></a>
+
+#### ターゲット ノード: 証明書の秘密キーを信頼されたルートとしてインポートする
 ```powershell
 # Import to the root store so that it is trusted
 $mypwd = ConvertTo-SecureString -String "YOUR_PFX_PASSWD" -Force -AsPlainText
 Import-PfxCertificate -FilePath "$env:temp\DscPrivateKey.pfx" -CertStoreLocation Cert:\LocalMachine\Root -Password $mypwd > $null
 ```
 
-## <a name="configuration-data"></a>構成データ
+<a id="configuration-data" class="xliff"></a>
+
+## 構成データ
 
 構成データ ブロックでは、操作対象のターゲット ノード、資格情報を暗号化するかどうか、暗号化の手段、およびその他の情報を定義します。 構成データ ブロックの詳細については、「[Separating Configuration and Environment Data (構成データと環境データの分離)](configData.md)」を参照してください。
 
@@ -228,7 +251,9 @@ $ConfigData= @{
 ```
 
 
-## <a name="configuration-script"></a>構成スクリプト
+<a id="configuration-script" class="xliff"></a>
+
+## 構成スクリプト
 
 構成スクリプト自体では、`PsCredential` パラメーターを使用して、できる限り短時間で資格情報が格納されるようにします。 ここに示した例を実行すると、DSC では資格情報の入力を求め、構成データ ブロック内のターゲット ノードに関連付けられている CertificateFile を使用して MOF ファイルを暗号化します。 このコード例では、ユーザーに対してセキュリティ保護された共有からファイルをコピーしています。
 
@@ -254,7 +279,9 @@ configuration CredentialEncryptionExample
 }
 ```
 
-## <a name="setting-up-decryption"></a>暗号化の解除のセットアップ
+<a id="setting-up-decryption" class="xliff"></a>
+
+## 暗号化の解除のセットアップ
 
 [`Start-DscConfiguration`](https://technet.microsoft.com/en-us/library/dn521623.aspx) が機能するようにするには、各ターゲット ノードのローカル構成マネージャーに対して、どの証明書を使用して資格情報の暗号化を解除するかを指示し、CertificateID リソースを使用して証明書の拇印を検証する必要があります。 この例の関数は、適切なローカル証明書を検出します (使用する証明書が正しく検出されるようにカスタマイズすることが必要になる場合もあります)。
 
@@ -301,11 +328,13 @@ configuration CredentialEncryptionExample
 }
 ```
 
-## <a name="running-the-configuration"></a>構成の実行
+<a id="running-the-configuration" class="xliff"></a>
+
+## 構成の実行
 
 この時点では、構成を実行すると、次の 2 つのファイルが出力されます。
 
- * *.meta.mof ファイル。ローカル コンピューター ストアに格納され拇印で識別される証明書を使用して、資格情報の暗号化を解除するように、ローカル構成マネージャーを構成します。[`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) は、この *.meta.mof ファイルを適用します。
+ * *.meta.mof ファイル。ローカル コンピューター ストアに格納され、拇印で識別される証明書を使用して資格情報の暗号化を解除するように、ローカル構成マネージャーを構成します。 [`Set-DscLocalConfigurationManager`](https://technet.microsoft.com/en-us/library/dn521621.aspx) は、*.meta.mof ファイルに適用されます。
  * 構成を実際に適用する MOF ファイル。 Start-DscConfiguration は、構成を適用します。
 
 次のコマンドがこれらの手順を実施します。
@@ -326,7 +355,9 @@ DSC プル サーバーが利用可能な場合は、DSC プル サーバーを�
 
 DSC プル サーバーを使って DSC 構成を適用する方法の詳細については、「[DSC プル クライアントのセットアップ](pullClient.md)」を参照してください。
 
-## <a name="credential-encryption-module-example"></a>資格情報暗号化モジュールの例
+<a id="credential-encryption-module-example" class="xliff"></a>
+
+## 資格情報暗号化モジュールの例
 
 次に、これらのすべての手順に加え、公開キーをエクスポートおよびコピーするヘルパー コマンドレットが組み込まれた完全な例を示します。
 

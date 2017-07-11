@@ -1,17 +1,18 @@
 ---
-title: "構成名を使用したプル クライアントのセットアップ"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 03db9843209038f7a14b46cf8a27316f1c63a819
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "構成名を使用したプル クライアントのセットアップ"
+ms.openlocfilehash: 9bfcac87300d30a59b66e60ed24add32e2420e21
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="setting-up-a-pull-client-using-configuration-names"></a>構成名を使用したプル クライアントのセットアップ
+<a id="setting-up-a-pull-client-using-configuration-names" class="xliff"></a>
+
+# 構成名を使用したプル クライアントのセットアップ
 
 > 適用先: Windows PowerShell 5.0
 
@@ -73,7 +74,9 @@ Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigNames –Ve
 SMB プル サーバーでは、引き続き **ConfigurationID** を使用する必要があります。
 **ConfigurationID** を使用したプル サーバーの構成については、「[構成 ID を使用したプル クライアントのセットアップ](PullClientConfigNames.md)」を参照してください。
 
-## <a name="resource-and-report-servers"></a>リソースおよびレポート サーバー
+<a id="resource-and-report-servers" class="xliff"></a>
+
+## リソースおよびレポート サーバー
 
 LCM 構成で **ConfigurationRepositoryWeb** ブロックまたは **ConfigurationRepositoryShare** ブロックのみを指定した場合 (前の例はこれに当たります)、プル クライアントは、指定されたサーバーからリソースをプルしますが、そのサーバーに対してレポートは送信しません。
 構成、リソース、およびレポートについて単一のプル サーバーを使うことができますが、レポートをセットアップするために **ReportRepositoryWeb** ブロックを作成する必要があります。
@@ -148,7 +151,10 @@ configuration PullClientConfigNames
 PullClientConfigNames
 ```
 
-## <a name="see-also"></a>参照
+<a id="see-also" class="xliff"></a>
+
+## 参照
 
 * [構成 ID を使用したプル クライアントのセットアップ](PullClientConfigNames.md)
 * [DSC Web プル サーバーのセットアップ](pullServer.md)
+

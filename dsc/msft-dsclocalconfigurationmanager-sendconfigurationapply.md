@@ -1,21 +1,24 @@
 ---
-title: "MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApply メソッド"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 701063dfa37fe4ba8b014cadadd10339b7fd1bf7
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApply メソッド"
+ms.openlocfilehash: 9552fd5b5feb862fbe8ef95a7746776e7fe2f5c8
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApply メソッド
+<a id="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
+
+# MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApply メソッド
 
 構成ドキュメントを管理ノードに送信し、構成エージェントを使用して構成を適用します。
 
-<a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+構文
 ------
 
 ```mof
@@ -25,7 +28,9 @@ uint32 SendConfigurationApply(
 );
 ```
 
-<a name="parameters"></a>パラメーター
+<a id="parameters" class="xliff"></a>
+
+パラメーター
 ----------
 
 *ConfigurationData* \[in\]  
@@ -34,23 +39,31 @@ uint32 SendConfigurationApply(
 *force* \[in\]  
 **true** の場合、構成を強制的に中止します。
 
-## <a name="return-value"></a>戻り値
+<a id="return-value" class="xliff"></a>
+
+## 戻り値
 ------------
 
 成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
 
-## <a name="remarks"></a>コメント
+<a id="remarks" class="xliff"></a>
+
+## コメント
 
 これは静的メソッドです。
 
-## <a name="requirements"></a>要件
+<a id="requirements" class="xliff"></a>
+
+## 要件
 ------------
 >**MOF:** DscCore.mof
 
 >**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## <a name="see-also"></a>関連項目
+<a id="see-also" class="xliff"></a>
+
+## 関連項目
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

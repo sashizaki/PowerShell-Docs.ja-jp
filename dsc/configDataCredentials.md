@@ -1,20 +1,23 @@
 ---
-title: "構成データでの資格情報オプション"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: e6ea0992f90a72da6426d9112950c925ab6cd32b
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "構成データでの資格情報オプション"
+ms.openlocfilehash: 7fadce447c418b229a534e92d12bc2131365a37a
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="credentials-options-in-configuration-data"></a>構成データでの資格情報オプション
+<a id="credentials-options-in-configuration-data" class="xliff"></a>
+
+# 構成データでの資格情報オプション
 >適用先: Windows PowerShell 5.0
 
-## <a name="plain-text-passwords-and-domain-users"></a>プレーンテキスト パスワードとドメイン ユーザー
+<a id="plain-text-passwords-and-domain-users" class="xliff"></a>
+
+## プレーンテキスト パスワードとドメイン ユーザー
 
 暗号化されていない資格情報を含む DSC 構成では、プレーンテキスト パスワードについてのエラー メッセージが生成されます。
 また、DSC では、ドメイン資格情報を使用すると警告が生成されます。
@@ -124,7 +127,9 @@ unencryptedPasswordDemo -ConfigurationData $ConfigurationData
 Start-DscConfiguration ./unencryptedPasswordDemo -verbose -wait -force
 ```
 
-## <a name="handling-credentials-in-dsc"></a>DSC での資格情報の処理
+<a id="handling-credentials-in-dsc" class="xliff"></a>
+
+## DSC での資格情報の処理
 
 DSC 構成リソースは、既定で `Local System` として実行されます。
 ただし、`Package` リソースでソフトウェアを特定のユーザー アカウントでインストールする必要がある場合など、リソースによっては資格情報が必要となることがあります。
@@ -160,7 +165,9 @@ Group [String] #ResourceName
 
 `PsDscRunAsCredential`プロパティの詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
 
-## <a name="example-the-group-resource-credential-property"></a>例: Group リソース資格情報プロパティ
+<a id="example-the-group-resource-credential-property" class="xliff"></a>
+
+## 例: Group リソース資格情報プロパティ
 
 DSC は `Local System` で実行されるため、ローカル ユーザーおよびグループを変更するためのアクセス許可が既にあります。
 追加されたメンバーがローカル アカウントの場合、資格情報は必要ありません。
@@ -170,7 +177,9 @@ Active Directory への匿名クエリは許可されません。
 `Group` リソースの `Credential` プロパティは、Active Directory のクエリに使用されるドメイン アカウントです。
 既定では、ユーザーは Active Directory 内の大部分のオブジェクトを*読み取る*ことができるため、ほとんどの場合これは汎用ユーザー アカウントです。
 
-## <a name="example-configuration"></a>構成の例
+<a id="example-configuration" class="xliff"></a>
+
+## 構成の例
 
 次のコード例では、DSC を使用してローカル グループにドメイン ユーザーを設定します。
 
@@ -225,7 +234,9 @@ for node 'localhost'.
 1.  プレーンテキスト パスワードが推奨されないことを説明するエラー。
 2.  ドメイン資格情報を使用しないよう勧める警告。
 
-## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
+<a id="psdscallowplaintextpassword" class="xliff"></a>
+
+## PsDscAllowPlainTextPassword
 
 最初のエラー メッセージには、ドキュメントの URL があります。
 このリンクでは、[ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) 構造と証明書を使用してパスワードを暗号化する方法を説明しています。
@@ -270,7 +281,9 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 
 **Microsoft では、重大なセキュリティ リスクのため、プレーンテキスト パスワードを使用しないことをお勧めします。**
 
-## <a name="domain-credentials"></a>ドメイン資格情報
+<a id="domain-credentials" class="xliff"></a>
+
+## ドメイン資格情報
 
 構成スクリプト例を (暗号化して、またはしないで) もう一度実行しても、資格情報のドメイン アカウントを使用することは推奨されないという警告が生成されます。
 ローカル アカウントを使用すると、他のサーバーで使用可能なドメイン資格情報が漏えいする可能性がなくなります。
@@ -280,7 +293,9 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 資格情報の `Username` プロパティに \' または '@' がある場合、DSC ではその資格情報はドメイン アカウントとして処理されます。
 ユーザー名のドメイン部分には、"localhost"、"127.0.0.1"、および "::1" の例外があります。
 
-## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
+<a id="psdscallowdomainuser" class="xliff"></a>
+
+## PSDscAllowDomainUser
 
 上記の DSC `Group` リソースの例では、Active Directory ドメインのクエリを実行するにはドメイン アカウントが*必要です*。
 この場合は、次のように `ConfigurationData` ブロックに `PSDscAllowDomainUser` プロパティを追加します。

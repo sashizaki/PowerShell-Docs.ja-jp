@@ -1,4 +1,17 @@
-# <a name="clipboard-cmdlets"></a>クリップボードのコマンドレット
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: 8d5f8cc8c85d584b195483e464e878857629a78e
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="clipboard-cmdlets" class="xliff"></a>
+
+# クリップボードのコマンドレット
 **Get-Clipboard** と **Set-Clipboard** を使うと、Windows PowerShell セッションとの間でコンテンツを容易に転送できるようになります。 たとえば、エクスプローラーを使用して 3 つのファイルをクリップボードにコピーすると (ファイルを選択して `ctrl-c` を押すなど)、そのクリップボードの内容はファイルの一覧として簡単にアクセスできます。
 
 ```powershell 
@@ -19,3 +32,4 @@ Mode LastWriteTime Length Name
 
 
 クリップボードのコマンドレットは、画像、オーディオ ファイル、ファイルのリスト、およびテキストをサポートします。
+

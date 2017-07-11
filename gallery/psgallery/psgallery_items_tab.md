@@ -1,19 +1,18 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,コマンドレット,ギャラリー"
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
 title: psgallery_items_tab
-ms.technology: powershell
-ms.openlocfilehash: 32f28df7318472f34f79c61f19f33016cf73f517
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: 8424c4729436a78fec3fdbb405591fcd3c6bc6a6
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-<a name="items-tab"></a>[項目] タブ
+<a id="items-tab" class="xliff"></a>
+
+[項目] タブ
 ==========
 
 [項目] タブには、PowerShell ギャラリーで利用可能なすべての項目が表示されます。
@@ -24,7 +23,9 @@ PowerShell ギャラリー内のモジュールのみを表示するには、[�
 
 項目の並べ替えにはいくつかの方法があります。
 
-##<a name="filter-by"></a>フィルター条件##
+<a id="filter-by" class="xliff"></a>
+
+##フィルター条件##
 [フィルター条件] のセクションでは、結果をフィルター処理できます。
 * 項目の種類:
     * モジュール
@@ -39,14 +40,18 @@ PowerShell ギャラリー内のモジュールのみを表示するには、[�
 例: [コマンドレット] または [関数] \(またはその両方) をオンにした場合、コマンドレットと関数の両方を含む項目が表示されます。  選択されていない場合、項目は表示されません。  
 同様に、すべてのカテゴリが選択されている場合は、これらのカテゴリのいずれかを含む項目のみが表示されます。 **これらのどのカテゴリにも属していない項目は表示されません。**
 
-##<a name="sort-by"></a>並べ替え条件## 
+<a id="sort-by" class="xliff"></a>
+
+##並べ替え条件## 
 [並べ替え条件] ドロップ ダウンでは、結果を次の条件で並べ替えることができます。
 * [人気度] - 人気度はダウンロード数によって決定します。
 * [A ～ Z] - 項目名のアルファベット順です。
 * [最近使った項目] - 公開日に応じて項目が表示されます。
 
 
-##<a name="search-box"></a>[検索] ボックス##
+<a id="search-box" class="xliff"></a>
+
+##[検索] ボックス##
 [検索] ボックスでは、キーワードで項目を検索することができます。  
 詳細は、「[検索構文](./psgallery_search_syntax.md)」を参照してください。
 

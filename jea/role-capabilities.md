@@ -1,18 +1,18 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: "PowerShell, コマンドレット, JEA"
-ms.date: 2017-03-07
+ms.topic: conceptual
+keywords: "JEA, PowerShell, セキュリティ"
 title: "JEA ロール機能"
-ms.technology: powershell
-ms.openlocfilehash: 49623e69b186fd09679bf7e0186dec3961e719ba
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: 10f5f390daccbb012be6ee7272041e777810ee12
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="jea-role-capabilities"></a>JEA ロール機能
+<a id="jea-role-capabilities" class="xliff"></a>
+
+# JEA ロール機能
 
 > 適用先: Windows PowerShell 5.0
 
@@ -21,7 +21,9 @@ JEA エンドポイントを作成するとき、JEA セッションでユーザ
 
 このトピックでは、JEA ユーザーの PowerShell ロール機能ファイルを作成する方法について説明します。
 
-## <a name="determine-which-commands-to-allow"></a>許可するコマンドを決定する
+<a id="determine-which-commands-to-allow" class="xliff"></a>
+
+## 許可するコマンドを決定する
 
 ロール機能ファイルを作成するときの最初の手順は、ロールを割り当てるユーザーに許可する操作を検討することです。
 要件を集めるこのプロセスには時間がかかることがありますが、とても重要なプロセスです。
@@ -41,14 +43,18 @@ JEA エンドポイントで接続ユーザーのアクセス許可の昇格が�
 以下は、制約のない状態が許された場合、悪意で使用される可能性があるコマンドの例です。
 このリストですべてを網羅しているわけではありません。最初に注意するべきものとして提示しているにすぎません。
 
-### <a name="examples-of-potentially-dangerous-commands"></a>危険性を含むコマンドの例
+<a id="examples-of-potentially-dangerous-commands" class="xliff"></a>
+
+### 危険性を含むコマンドの例
 
 リスク | 例 | 関連するコマンド
 -----|---------|-----------------
 JEA を迂回する管理者特権を接続ユーザーに与える | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`、`Add-LocalGroupMember`、`net.exe`、`dsadd.exe`
 マルウェア、エクスプロイト、防御を迂回するカスタム スクリプトなど、任意のコードを実行する | `Start-Process -FilePath '\\san\share\malware.exe'` | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob`
 
-## <a name="create-a-role-capability-file"></a>ロール機能ファイルを作成する
+<a id="create-a-role-capability-file" class="xliff"></a>
+
+## ロール機能ファイルを作成する
 
 [New-PSRoleCapabilityFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSRoleCapabilityFile) コマンドレットで新しい PowerShell ロール機能ファイルを作成できます。
 
@@ -59,7 +65,9 @@ New-PSRoleCapabilityFile -Path .\MyFirstJEARole.psrc
 作成したロール機能ファイルはテキスト エディターで開き、ロールに目的のコマンドを許可するように変更できます。
 PowerShell ヘルプ ドキュメントには、ファイルの構成例が含まれています。
 
-### <a name="allowing-powershell-cmdlets-and-functions"></a>PowerShell のコマンドレットと関数を許可する
+<a id="allowing-powershell-cmdlets-and-functions" class="xliff"></a>
+
+### PowerShell のコマンドレットと関数を許可する
 
 PowerShell コマンドレットまたは関数の実行権限をユーザーに与えるには、VisbibleCmdlets または VisibleFunctions フィールドにコマンドレットまたは関数の名前を追加します。
 コマンドがコマンドレットであるか、関数であるかわからない場合、`Get-Command <name>` を実行し、出力の "CommandType" プロパティを確認してください。
@@ -115,7 +123,9 @@ ValidatePattern と ValidateSet の両方を同じコマンドレットまたは
 
 ValidatePattern の詳細については、[この「*Hey, Scripting Guy!*](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/)」投稿と [PowerShell 正規表現](https://technet.microsoft.com/en-us/library/hh847880.aspx)参照コンテンツをご覧ください。
 
-### <a name="allowing-external-commands-and-powershell-scripts"></a>外部コマンドと PowerShell スクリプトを許可する
+<a id="allowing-external-commands-and-powershell-scripts" class="xliff"></a>
+
+### 外部コマンドと PowerShell スクリプトを許可する
 
 JEA セッションで実行可能ファイルと PowerShell スクリプト (.ps1) を実行することをユーザーに許可するには、VisibleExternalCommands フィールドに各プログラムの完全パスを追加する必要があります。
 
@@ -134,7 +144,9 @@ VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Co
 
 JEA セッションで外部コマンドの利用をユーザーに許可するとき、システム上のどこかに置かれている、同じような名前の (悪意のある) プログラムが代わりに実行されないように、実行可能ファイルの完全パスを常に指定してください。
 
-### <a name="allowing-access-to-powershell-providers"></a>PowerShell プロバイダーへのアクセスを許可する
+<a id="allowing-access-to-powershell-providers" class="xliff"></a>
+
+### PowerShell プロバイダーへのアクセスを許可する
 
 既定で、JEA セッションでは PowerShell プロバイダーを利用できません。
 
@@ -151,7 +163,9 @@ VisibleProviders = 'Registry'
 JEA セッションで利用できる関数、コマンドレット、外部プログラムは、JEA と同じ制約の対象になりません。既定では、あらゆるプロバイダーにアクセスできます。
 JEA エンドポイントとの間でファイルのコピーが必要な場合、[ユーザー ドライブ](session-configurations.md#user-drive)の利用も検討してください。
 
-### <a name="creating-custom-functions"></a>カスタム関数を作成する
+<a id="creating-custom-functions" class="xliff"></a>
+
+### カスタム関数を作成する
 
 ロール機能ファイルでカスタム関数を作成し、エンド ユーザーのために複雑なタスクを簡単にできます。
 カスタム関数は、コマンドレット パラメーター値に高度な検証ロジックが必要なときにも便利です。
@@ -189,7 +203,9 @@ JEA セッションの制約付きコマンドレットは、関数から呼び�
 カスタム関数をたくさん記述する場合、[PowerShell スクリプト モジュール](https://msdn.microsoft.com/en-us/library/dd878340(v=vs.85).aspx)に入れると簡単です。
 その後、組み込みやサードパーティのモジュールの場合のように、VisibleFunctions フィールドを利用し、JEA セッションで関数を表示させることができます。
 
-## <a name="place-role-capabilities-in-a-module"></a>モジュールにロール機能を配置する
+<a id="place-role-capabilities-in-a-module" class="xliff"></a>
+
+## モジュールにロール機能を配置する
 
 PowerShell でロール機能ファイルを検出できるようにするには、ファイルを PowerShell モジュールの "RoleCapabilities" フォルダーに保存する必要があります。
 モジュールは `$env:PSModulePath` 環境変数に含まれるあらゆるフォルダーに保存できますが、System32 (組み込みモジュールのために予約されています) や信頼されていない接続ユーザーがファイルを変更できる可能性があるフォルダーには保存しないでください。
@@ -212,7 +228,9 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 
 PowerShell モジュール、モジュール マニフェスト、PSModulePath 環境変数の詳細については、「[Understanding a PowerShell Module](https://msdn.microsoft.com/en-us/library/dd878324.aspx)」 (PowerShell モジュールの概要) を参照してください。
 
-## <a name="updating-role-capabilities"></a>ロール機能を更新する
+<a id="updating-role-capabilities" class="xliff"></a>
+
+## ロール機能を更新する
 
 
 ロール機能ファイルは変更内容を保存するだけでいつでも更新できます。
@@ -225,7 +243,9 @@ PowerShell モジュール、モジュール マニフェスト、PSModulePath �
 
 ロール機能へのアクセスを管理者がロックダウンする場合、ローカル システムにロール機能ファイルとそれが含まれるモジュールの読み取りアクセスが与えられるようにします。
 
-## <a name="how-role-capabilities-are-merged"></a>ロール機能を結合する方法
+<a id="how-role-capabilities-are-merged" class="xliff"></a>
+
+## ロール機能を結合する方法
 
 [セッション構成ファイル](session-configurations.md)のロール マッピングにもよりますが、ユーザーが JEA セッションに入るとき、複数のロール機能へのアクセスが与えられます。
 そのとき、JEA では、ロールで許可される、*最も制限の少ない*コマンド セットがユーザーに与えられます。
@@ -279,6 +299,9 @@ JEA ユーザーは、1 つのロール機能で使用できるあらゆるコ�
 たとえば、あるロールで `Remove-Item` コマンドレットが許可され、別のロールで `FileSystem` プロバイダーが許可される場合、JEA ユーザーがコンピューター上のファイルを削除する可能性があります。
 効果的なユーザー アクセス許可を確認する方法については、[JEA の監査に関するトピック](audit-and-report.md)に追加情報があります。
 
-## <a name="next-steps"></a>次の手順
+<a id="next-steps" class="xliff"></a>
+
+## 次の手順
 
 - [セッション構成ファイルを作成する](session-configurations.md)
+

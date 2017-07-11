@@ -1,6 +1,21 @@
-# <a name="known-issues-and-limitations"></a>既知の問題と制限事項
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: e8620cdeb90792e86d091d3e19a169f9dfa690f9
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="known-issues-and-limitations" class="xliff"></a>
 
-<a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>初回使用時に PowerShell のショートカットが壊れている
+# 既知の問題と制限事項
+
+<a id="powershell-shortcuts-are-broken-when-used-for-the-first-time" class="xliff"></a>
+
+初回使用時に PowerShell のショートカットが壊れている
 ------------------------------------------------------------
 
 **解決策:** 次の操作のいずれかを実行します。
@@ -11,7 +26,9 @@
 上記の操作のいずれかを実行すると、PowerShell のショートカットが機能します。 これらの操作は、一度だけ実行する必要があります。
 
 
-<a name="powershell-modules-and-dsc-resources-report-errors-about-executionpolicy-on-windows-7"></a>Windows 7 で PowerShell モジュールと DSC リソースにより ExecutionPolicy についてエラーがレポートされる
+<a id="powershell-modules-and-dsc-resources-report-errors-about-executionpolicy-on-windows-7" class="xliff"></a>
+
+Windows 7 で PowerShell モジュールと DSC リソースにより ExecutionPolicy についてエラーがレポートされる
 -------------------------------------------------------------------------------------
 Windows 7 で PowerShell モジュールと DSC リソースを使用すると、ExecutionPolicy についてレポートされるエラーとなる場合があります。
 
@@ -21,7 +38,9 @@ Windows 7 で PowerShell モジュールと DSC リソースを使用すると�
 Set-ExecutionPolicy RemoteSigned
 ```
 
-<a name="connecting-to-an-old-remote-exchange-endpoint-causes-a-crash"></a>古いリモート Exchange のエンドポイントに接続するとクラッシュが発生する
+<a id="connecting-to-an-old-remote-exchange-endpoint-causes-a-crash" class="xliff"></a>
+
+古いリモート Exchange のエンドポイントに接続するとクラッシュが発生する
 ------------------------------------------------------------
 
 古い Exchange のエンドポイントは、新しいエンドポイントにリダイレクトします。 リダイレクト ロジックに含まれたバグにより、クラッシュが発生します。
@@ -29,14 +48,18 @@ Set-ExecutionPolicy RemoteSigned
 **解決策:** 新しいエンドポイントに直接接続します。
 
 
-<a name="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2"></a>Windows Server 2012 R2 に WMF 5.0 をインストールした後、ソフトウェア インベントリ ログ機能が誤って停止される
+<a id="software-inventory-logging-feature-is-erroneously-stopped-after-wmf-50-installation-on-windows-server-2012-r2" class="xliff"></a>
+
+Windows Server 2012 R2 に WMF 5.0 をインストールした後、ソフトウェア インベントリ ログ機能が誤って停止される
 -------------------------------------------------------------------------------------------------------------
 
 SIL を既に実行している Windows Server 2012 R2 に WMF 5.0 をインストールする場合、インストール後ソフトウェア インベントリ ログ機能が誤って停止されます。
 
 **解決策:** インストール プロセスでソフトウェア インベントリ ログ機能が誤って停止されるため、WMF のインストール後に Start-SilLogging コマンドレットを 1 回実行します。
 
-<a name="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together"></a>-LiteralPath と -Recurse を一緒に使用すると Get-ChildItem が機能しない
+<a id="get-childitem-does-not-work-if--literalpath-and--recurse-are-used-together" class="xliff"></a>
+
+-LiteralPath と -Recurse を一緒に使用すると Get-ChildItem が機能しない
 --------------------------------------------------------------------------
 
 ディレクトリ名に無効なワイルドカードが含まれている場合、-LiteralPath と -Recurse を一緒に使用すると、Get-ChildItem によって期待どおりの結果が生成されません。
@@ -44,7 +67,9 @@ SIL を既に実行している Windows Server 2012 R2 に WMF 5.0 をインス�
 **解決策:** 理想的ではありませんが、現在の対応策では、コマンドレットに依存するのではなく、スクリプトに再帰を実装します。
 
 
-<a name="sysprep-fails-after-wmf-50-installation"></a>WMF 5.0 のインストール後に Sysprep が失敗する
+<a id="sysprep-fails-after-wmf-50-installation" class="xliff"></a>
+
+WMF 5.0 のインストール後に Sysprep が失敗する
 ----------------------------------------
 
 実行中の Windows Server のバージョンによって、この問題の解決策は 2 つあります。
@@ -105,3 +130,4 @@ SIL を既に実行している Windows Server 2012 R2 に WMF 5.0 をインス�
       * 編集した Generalize.xml のコピーは C:\ にコピーされたことを想定しています。
 
   10.   この解決策により Generalize.xml が更新されます。 Sysprep を実行して汎用化オプションを有効にしてください。
+

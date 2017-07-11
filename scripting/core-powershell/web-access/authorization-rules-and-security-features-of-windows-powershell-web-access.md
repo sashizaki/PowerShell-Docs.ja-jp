@@ -1,18 +1,16 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "Windows PowerShell Web Access の承認規則とセキュリティ機能"
-ms.technology: powershell
-ms.openlocfilehash: f2ed4355536ed92048dde66617d36d36958fd75f
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: 706830f618173879185f5b84570fdc7782434d59
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
-# <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Access の承認規則とセキュリティ機能
+<a id="authorization-rules-and-security-features-of-windows-powershell-web-access" class="xliff"></a>
+
+# Windows PowerShell Web Access の承認規則とセキュリティ機能
 
 最終更新日: 2013 年 6 月 24 日
 
@@ -27,7 +25,7 @@ Windows Server® 2012 R2 および Windows Server® 2012 の Windows PowerShell�
 
 Windows PowerShell Web Access をインストールし、ゲートウェイを構成すると、ユーザーがブラウザーでサインイン ページを開けるようになります。ただし、Windows PowerShell Web Access 管理者によってアクセスを明示的に許可されない限りサインインできません。 Windows PowerShell Web Access のアクセス制御は、次の表に示す一連の Windows PowerShell コマンドレットによって管理します。 承認規則の追加と管理に関しては、相当する GUI はありません。 Windows PowerShell Web Access コマンドレットの詳細については、コマンドレット リファレンス トピック「[Windows PowerShell Web Access Cmdlets](https://technet.microsoft.com/library/hh918342.aspx)」(Windows PowerShell Web Access コマンドレット) を参照してください。
 
-管理者は、Windows PowerShell Web Access に 0 個から *n* 個の認証規則を定義できます。 既定のセキュリティは、許容的ではなく制限的なものになります。認証規則がゼロの場合には、すべてのユーザーがすべてのアクセスを禁止されます。
+管理者は、Windows PowerShell Web Access に 0 個から*n* 個の認証規則を定義できます。 既定のセキュリティは、許容的ではなく制限的なものになります。認証規則がゼロの場合には、すべてのユーザーがすべてのアクセスを禁止されます。
 
 Windows Server 2012 R2 の Add-PswaAuthorizationRule および Test-PswaAuthorizationRule に、リモート コンピューターから、またはアクティブな Windows PowerShell Web Access セッション内から Windows PowerShell Web Access 承認規則を追加およびテストできるようにするために、資格情報パラメーターが用意されました。 資格情報パラメーターを持つ他の Windows PowerShell コマンドレットと同様、PSCredential オブジェクトをパラメーターの値として指定できます。 リモート コンピューターに渡す資格情報を含む PSCredential オブジェクトを作成するには、[Get-Credential](https://technet.microsoft.com/library/hh849815.aspx) コマンドレットを実行します。
 
@@ -39,7 +37,7 @@ Windows PowerShell Web Access の認証規則はホワイトリスト方式で�
 </colgroup>
 <thead>
 <tr class="header">
-<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> セキュリティ メモ </span></th>
+<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">セキュリティ メモ</span></th>
 </tr>
 </thead>
 <tbody>
@@ -169,11 +167,9 @@ Windows PowerShell Web Access のセキュリティ モデルは、Web ベース
 </table>
 
 <a href="" id="BKMK_configrules"></a>
-
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">
-承認規則の構成</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">承認規則の構成</span></a>
 
 ------------------------------------------------------------------------
 
@@ -189,7 +185,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 </colgroup>
 <thead>
 <tr class="header">
-<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意 </span></th>
+<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC101471.jpeg" title="System_CAPS_note" alt="System_CAPS_note" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-note" /></span><span class="alertTitle">注意</span></th>
 </tr>
 </thead>
 <tbody>
@@ -199,7 +195,9 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 </tbody>
 </table>
 
-#### <a name="to-add-a-restrictive-authorization-rule"></a>制限的な承認規則を追加するには
+<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
+
+#### 制限的な承認規則を追加するには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
@@ -223,7 +221,9 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
 4.  **Get-PswaAuthorizationRule** コマンドレットまたは **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt; を実行して、規則が作成されていることを確認します。 例: **Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**。
 
-#### <a name="to-remove-an-authorization-rule"></a>承認規則を削除するには
+<a id="to-remove-an-authorization-rule" class="xliff"></a>
+
+#### 承認規則を削除するには
 
 1.  Windows PowerShell セッションが開かれていない場合は、このセクションの[非制限的な承認規則を追加する方法](#BKMK_arar)の手順 1. を参照してください。
 

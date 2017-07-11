@@ -1,6 +1,21 @@
-# <a name="improvements-in-desired-state-configuration-dsc"></a>Desired State Configuration (DSC) の機能強化
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: 6419d45617a76b2e3a8a244d7194c96cb02e6445
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="improvements-in-desired-state-configuration-dsc" class="xliff"></a>
 
-## <a name="dsc-feedback-survey"></a>DSC フィードバックとアンケート   
+# Desired State Configuration (DSC) の機能強化
+
+<a id="dsc-feedback-survey" class="xliff"></a>
+
+## DSC フィードバックとアンケート   
 
 PowerShell の新しい Desired State Configuration 機能や、今回のリリースで導入された新機能をしばらくお使いになった後、簡単な [WMF 5.0 RTM アンケート](https://www.surveymonkey.com/r/SGLQM5W) にご協力いただければ幸いです。製品の品質向上のために活用させていただきます。 新機能に対するフィードバックを送る手段としてこのアンケートをご利用ください。 
 
@@ -9,3 +24,4 @@ PowerShell の新しい Desired State Configuration 機能や、今回のリリ�
 **PSDesiredStateConfiguration モジュールのバージョンが 1.1 に更新**
 
 PsDesiredStateConfiguration モジュールのバージョンが 1.1 に更新されました。 WMF 5.0 Preview Feb 2015 またはそれより前のバージョンでコンパイルした DSC 構成は、PowerShell/WMF 5.0 では機能しません。 
+

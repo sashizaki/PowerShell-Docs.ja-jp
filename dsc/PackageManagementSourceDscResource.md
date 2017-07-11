@@ -1,23 +1,26 @@
 ---
+ms.date: 2017-06-12
+author: eslesar
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "DSC の PackageManagementSource リソース"
-ms.date: 
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
-author: brywang-msft
-manager: kriscv
-ms.prod: powershell
-ms.openlocfilehash: 22e61490e7b3f98335334a2703ec9639cbdaa87e
-ms.sourcegitcommit: 89e7ae30faff5f96641fc72764bdc76e0e257bc2
-translationtype: HT
+ms.openlocfilehash: 80d157aff5bf7685a797baaf6a26215f02473096
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-packagemanagementsource-resource"></a>DSC の PackageManagementSource リソース
+<a id="dsc-packagemanagementsource-resource" class="xliff"></a>
+
+# DSC の PackageManagementSource リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) の **PackageManagementSource** リソースは、ターゲット ノードで Package Management ソースを登録または登録解除するメカニズムを備えています。 **この方法で登録された Package Management ソースは System コンテキストで登録されるため、System アカウントまたは DSC エンジンで使用することができます。** このリソースには **PackageManagement** モジュールが必要です。これは、http://PowerShellGallery.com から入手できます。
 
-## <a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+## 構文
 
 ```
 PSModule [string] #ResourceName
@@ -31,7 +34,9 @@ PSModule [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+<a id="properties" class="xliff"></a>
+
+## プロパティ
 |  プロパティ  |  説明   | 
 |---|---| 
 | 名前| システムで登録または登録解除するパッケージ ソースの名前を指定します。| 
@@ -41,7 +46,9 @@ PSModule [string] #ResourceName
 | SourceUri| パッケージ ソースの URI を指定します。| 
 | SourceCredential| リモート ソースのパッケージへのアクセスを提供します。| 
 
-## <a name="example"></a>例
+<a id="example" class="xliff"></a>
+
+## 例
 
 この例では、**PackageManagementSource** DSC リソースを使用して http://nuget.org パッケージ ソースを登録しています。
 
@@ -58,3 +65,4 @@ Configuration PackageManagementSourceTest
     }
 }
 ```
+

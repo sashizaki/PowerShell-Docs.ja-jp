@@ -1,4 +1,17 @@
-# <a name="cryptographic-message-syntax-cms-cmdlets"></a>Cryptographic Message Syntax (CMS) コマンドレット
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: 9556f0d9a12807cbfe38aaade6798088f051596d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="cryptographic-message-syntax-cms-cmdlets" class="xliff"></a>
+
+# Cryptographic Message Syntax (CMS) コマンドレット
 
 Cryptographic Message Syntax コマンドレットは、[RFC5652](http://tools.ietf.org/html/rfc5652) で説明されているように暗号によってメッセージを保護するための IETF 標準書式を使用して、コンテンツの暗号化と暗号化解除をサポートします。
 
@@ -82,3 +95,4 @@ Hello World
 ```powershell
 dir -DocumentEncryptionCert
 ```
+

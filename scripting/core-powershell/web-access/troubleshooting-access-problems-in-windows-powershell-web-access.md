@@ -1,18 +1,16 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング"
-ms.technology: powershell
-ms.openlocfilehash: 26de977d2c85e26f445eecb1278e6a7278e7dfd6
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: c10e19b177110ff62d44f28b6a523380b55b79e0
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
-#  <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
+<a id="troubleshooting-access-problems-in-windows-powershell-web-access" class="xliff"></a>
+
+#  Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
 
 最終更新日: 2013 年 6 月 24 日
 
@@ -79,7 +77,7 @@ Windows PowerShell Web Access を使ったリモート コンピューターへ�
 <td><p>Internet Explorer セキュリティ強化の構成 (IE ESC) を有効にして、信頼済みサイトの一覧に Windows PowerShell Web Access Web サイトを追加するか、IE ESC を無効にします。 IE ESC は、サーバー マネージャーの <strong>[ローカル サーバー]</strong> ページの <strong>[プロパティ]</strong> タイルで無効にすることができます。</p></td>
 </tr>
 <tr class="even">
-<td><p>ゲートウェイ サーバーが対象のコンピューターであり、ワークグループ内にある場合に、接続しようとすると次のエラー メッセージが表示される: <strong>"承認エラーが発生しました。 対象のコンピューターに接続する権限が与えられているかどうかを確認してください。"</strong></p></td>
+<td><p>ゲートウェイ サーバーが対象のコンピューターであり、ワークグループ内にある場合に、接続しようとすると次のエラー メッセージが表示される: <strong>"承認エラーが発生しました。対象のコンピューターに接続する権限が与えられているかどうかを確認してください。</strong></p></td>
 <td><p>ゲートウェイ サーバーが対象のサーバーでもあり、ワークグループ内にある場合は、次の表に示されているようにユーザー名、コンピューター名、およびユーザー グループ名を指定します。 ドット (.) を単体で使用してコンピューター名を表すことはできません。</p>
 <div>
 <table>
@@ -103,16 +101,16 @@ Windows PowerShell Web Access を使ったリモート コンピューターへ�
 <tr class="odd">
 <td><p>ゲートウェイ サーバーがドメイン内にある場合</p></td>
 <td><p><em>Server_name</em>\<em>user_name</em>、Localhost\<em>user_name</em>、または .\<em>user_name</em></p></td>
-<td><p><em>Server_name</em>\<em>user_group</em>、Localhost\<em>user_group</em>、または .\<em>user_group</em></p></td>
+<td><p><em>Server_name</em>\<em>user_group</em>、Localhost\<em>user_group</em>、または.\<em>user_group</em></p></td>
 <td><p>ゲートウェイ サーバーの完全修飾名または Localhost</p></td>
-<td><p><em>Server_name</em>\<em>computer_group</em>、Localhost\<em>computer_group</em>、.\<em>computer_group</em></p></td>
+<td><p><em>Server_name</em>\<em>computer_group</em>、Localhost\<em>computer_group</em>、または .\<em>computer_group</em></p></td>
 </tr>
 <tr class="even">
 <td><p>ゲートウェイ サーバーがワークグループ内にある場合</p></td>
 <td><p><em>Server_name</em>\<em>user_name</em>、Localhost\<em>user_name</em>、または .\<em>user_name</em></p></td>
-<td><p><em>Server_name</em>\<em>user_group</em>、Localhost\<em>user_group</em>、.\<em>user_group</em></p></td>
+<td><p><em>Server_name</em>\<em>user_group</em>、Localhost\<em>user_group</em>、または .\<em>user_group</em></p></td>
 <td><p>サーバー名</p></td>
-<td><p><em>Server_name</em>\<em>computer_group</em>、Localhost\<em>computer_group</em>、.\<em>computer_group</em></p></td>
+<td><p><em>Server_name</em>\<em>computer_group</em>、Localhost\<em>computer_group</em>、または .\<em>computer_group</em></p></td>
 </tr>
 </tbody>
 </table>

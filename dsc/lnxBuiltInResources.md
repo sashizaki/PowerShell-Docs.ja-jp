@@ -1,21 +1,24 @@
 ---
-title: "Linux 用 Desired State Configuration の組み込みリソース"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 6b001c12885022006003ef3ffe91b7aede07bd17
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "Linux 用 Desired State Configuration の組み込みリソース"
+ms.openlocfilehash: b85f32f7559d89bda566d35462cc613d73424c50
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="built-in-desired-state-configuration-resources-for-linux"></a>Linux 用 Desired State Configuration の組み込みリソース
+<a id="built-in-desired-state-configuration-resources-for-linux" class="xliff"></a>
+
+# Linux 用 Desired State Configuration の組み込みリソース
 
 リソースは、PowerShell Desired State Configuration (DSC) スクリプトの作成に使用できる構成要素です。 Linux 用 DSC には、ファイルとフォルダー、パッケージ、環境変数、サービスとプロセスなど、リソースを構成するための一連の組み込み機能が付属します。
 
-## <a name="built-in-resources"></a>組み込みリソース 
+<a id="built-in-resources" class="xliff"></a>
+
+## 組み込みリソース 
 
 次の表は、これらのリソースや詳細を説明するトピックへのリンクの一覧を示します。
 

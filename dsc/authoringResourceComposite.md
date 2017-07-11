@@ -1,23 +1,26 @@
 ---
-title: "複合リソース: リソースとしての DSC 構成の使用"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 36851c9616cfb9a2fc79925e4187effa913341ad
-ms.sourcegitcommit: c7577f7a1e902a41df6d337e5d85361d1814f90a
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "複合リソース: リソースとしての DSC 構成の使用"
+ms.openlocfilehash: 6c9a878c45a3e999e20dec5766ee8bda409905d3
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>複合リソース: リソースとしての DSC 構成の使用
+<a id="composite-resources-using-a-dsc-configuration-as-a-resource" class="xliff"></a>
+
+# 複合リソース: リソースとしての DSC 構成の使用
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 実際の状況では、構成は多くのさまざまなリソースを呼び出したり、膨大な数のプロパティを設定したりするため、長く複雑になることがあります。 このような複雑さに対処するために、Windows PowerShell Desired State Configuration (DSC) 構成を他の構成のリソースとして使用できます。 これは、複合リソースと呼ばれます。 複合リソースは、パラメーターを受け取る DSC 構成です。 構成のパラメーターは、リソースのプロパティとして機能します。 構成は **.schema.psm1** 拡張子のファイルとして保存され、一般的な DSC リソースの MOF スキーマとリソース スクリプトの両方に代わるものです。DSC リソースの詳細については、[「DSC リソース」](resources.md)を参照してください。
 
-## <a name="creating-the-composite-resource"></a>複合リソースの作成
+<a id="creating-the-composite-resource" class="xliff"></a>
+
+## 複合リソースの作成
 
 この例では、仮想マシンを構成するために多くの既存のリソースを呼び出す構成を作成します。 構成ブロックで設定する値を指定する代わりに、構成では数多くのパラメーターを受け取り、後でそれが構成ブロックで使用されます。
 
@@ -133,7 +136,9 @@ Configuration xVirtualMachine
 }
 ```
 
-### <a name="saving-the-configuration-as-a-composite-resource"></a>複合リソースとしての構成の保存
+<a id="saving-the-configuration-as-a-composite-resource" class="xliff"></a>
+
+### 複合リソースとしての構成の保存
 
 パラメーター化された構成を DSC リソースとして使用するには、他の MOF ベースのリソースに似たディレクトリ構造で保存し、**.schema.psm1** 拡張子を持つ名前を指定します。 この例では、ファイルに **xVirtualMachine.schema.psm1** という名前を付けます。 次の行を含む **xVirtualMachine.psd1** というマニフェストも作成する必要があります。 これは、**MyDscResources.psd1** に加えて **MyDscResources** フォルダーの下に格納されるすべてのリソースのモジュール マニフェストです。
 
@@ -155,7 +160,9 @@ $env: psmodulepath
 
 これで、リソースは Get-DscResource コマンドレットを使用して検出できるようになり、そのプロパティは、そのコマンドレットまたは Windows PowerShell ISE の **Ctrl + Space** キーによるオートコンプリートを使用して検出できるようになります。
 
-## <a name="using-the-composite-resource"></a>複合リソースの使用
+<a id="using-the-composite-resource" class="xliff"></a>
+
+## 複合リソースの使用
 
 次に、複合リソースを呼び出す構成を作成します。 この構成は、xVirtualMachine 複合リソースを呼び出して仮想マシンを作成してから、**xComputer** リソースを呼び出して名前を変更します。
 
@@ -190,8 +197,31 @@ configuration RenameVM
 }
 ```
 
-## <a name="see-also"></a>参照
-### <a name="concepts"></a>概念
+<a id="supporting-psdscrunascredential" class="xliff"></a>
+
+## PsDscRunAsCredential のサポート
+
+>**注:** **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。
+
+**PsDscRunAsCredential** プロパティを [DSC 構成](configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。
+詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
+
+カスタム リソース内からユーザー コンテキストにアクセスするには、自動変数 `$PsDscContext` を使用できます。
+
+たとえば、次のコードは、リソースが詳細出力ストリームに実行しているユーザー コンテキストを記述します。
+
+```powershell
+if (PsDscContext.RunAsUser) {
+    Write-Verbose "User: $PsDscContext.RunAsUser";
+}
+```
+
+<a id="see-also" class="xliff"></a>
+
+## 参照
+<a id="concepts" class="xliff"></a>
+
+### 概念
 * [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)
 * [Windows PowerShell Desired State Configuration の概要](overview.md)
 

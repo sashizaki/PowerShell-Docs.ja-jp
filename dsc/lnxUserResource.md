@@ -1,21 +1,24 @@
 ---
-title: "Linux 用 DSC の nxUser リソース"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 9d27299aca8dee3e0390c9c8fc900832eb7e960c
-ms.sourcegitcommit: b3724fac99e52c712b18c4effbb9ee13711d0238
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "Linux 用 DSC の nxUser リソース"
+ms.openlocfilehash: d708edcee592835ce448752465125d451afbd45b
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxuser-resource"></a>Linux 用 DSC の nxUser リソース
+<a id="dsc-for-linux-nxuser-resource" class="xliff"></a>
+
+# Linux 用 DSC の nxUser リソース
 
 PowerShell Desired State Configuration (DSC) の **nxUser** リソースは、Linux ノード上でローカル ユーザーを管理するためのメカニズムを備えています。
 
-## <a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+## 構文
 
 ```
 nxUser <string> #ResourceName
@@ -34,7 +37,9 @@ nxUser <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+<a id="properties" class="xliff"></a>
+
+## プロパティ
 
 |  プロパティ |  特定の状態を保証するアカウント名を示します。 | 
 |---|---|
@@ -49,7 +54,9 @@ nxUser <string> #ResourceName
 | GroupID| ユーザーのプライマリ グループ ID。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が "ResourceName" で、そのタイプが "ResourceType" である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 
-## <a name="example"></a>例
+<a id="example" class="xliff"></a>
+
+## 例
 
 次の例は、ユーザー "monuser" が存在し、グループ "DBusers" のメンバーであることを保証しています。
 

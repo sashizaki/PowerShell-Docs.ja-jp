@@ -1,18 +1,18 @@
 ---
-manager: carmonm
-ms.topic: article
+ms.date: 2017-06-12
 author: rpsqrd
-ms.author: ryanpu
-ms.prod: powershell
-keywords: "PowerShell, コマンドレット, JEA"
-ms.date: 2017-03-07
+ms.topic: conceptual
+keywords: "JEA, PowerShell, セキュリティ"
 title: "JEA セキュリティの考慮事項"
-ms.technology: powershell
-ms.openlocfilehash: 02384465e3c1b6d9633cc346ba88a2566fea1af1
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.openlocfilehash: f85b342625d4dba0890619ef9680eaccbbde5224
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="jea-security-considerations"></a>JEA セキュリティの考慮事項
+<a id="jea-security-considerations" class="xliff"></a>
+
+# JEA セキュリティの考慮事項
 
 > 適用先: Windows PowerShell 5.0
 
@@ -23,7 +23,9 @@ JEA では管理アクセス許可を直接持たなくても管理コマンド�
 
 このトピックでは、JEA セキュリティ モデルとベスト プラクティスについて詳しく説明します。
 
-## <a name="run-as-account"></a>実行アカウント
+<a id="run-as-account" class="xliff"></a>
+
+## 実行アカウント
 
 各 JEA エンドポイントには、指定の "実行" アカウントが与えられます。このアカウントの下で、接続するユーザーのアクションが実行されます。
 このアカウントは[セッション構成ファイル](session-configurations.md)で構成できます。選択したアカウントは、エンドポイントのセキュリティに大きく関係します。
@@ -81,7 +83,9 @@ gMSA アカウントを使用するように JEA エンドポイントを構成�
 
 JEA エンドポイントでは RunAsCredential を使用しないでください。特定のユーザーまでさかのぼって追跡することが難しく、ユーザーをロールにマッピングできないためです。
 
-## <a name="winrm-endpoint-acl"></a>WinRM エンドポイント ACL
+<a id="winrm-endpoint-acl" class="xliff"></a>
+
+## WinRM エンドポイント ACL
 
 通常の PowerShell リモート処理エンドポイントと同様に、各 JEA エンドポイントに個別のアクセス制御リスト (ACL) が与えられ、WinRM 構成に設定されます。そのリストにより、JEA エンドポイントで認証できるユーザーを制御します。
 構成が不適切な場合、信頼されているユーザーが JEA エンドポイントにアクセスできなかったり、信頼されていないユーザーがアクセスできたりすることがあります。
@@ -115,7 +119,9 @@ CONTOSO\JEA_Lev2 AccessAllowed
 `Get-PSSessionCapability` を実行し、JEA エンドポイントのユーザー アクセス許可を監査できます。
 JEA エンドポイントでユーザーにアクセスを与えるコマンドを監査する方法については、[JEA の監査とレポート](audit-and-report.md)に関する記事を参照してください。
 
-## <a name="least-privilege-roles"></a>最小特権ロール
+<a id="least-privilege-roles" class="xliff"></a>
+
+## 最小特権ロール
 
 JEA ロールを設計するとき、バックグラウンドで実行されている仮想アカウントまたはグループの管理されたサービス アカウントに、多くの場合、ローカル コンピューターを管理するためのアクセスが無制限で与えられることに注意してください。
 JEA ロール機能を利用すれば、特権コンテキストを利用して実行できるコマンドとアプリケーションを制限することで、アカウントの用途を制限できます。
@@ -144,7 +150,9 @@ JEA ロール機能を利用すれば、特権コンテキストを利用して�
 
 ロール機能ではワイルドカードを使用しないでください。[有効なユーザー アクセス許可を定期的に監査](audit-and-report.md#check-effective-rights-for-a-specific-user)し、ユーザーがアクセスできるコマンドを確認してください。
 
-## <a name="jea-does-not-protect-against-admins"></a>JEA で管理者に対する防御がない
+<a id="jea-does-not-protect-against-admins" class="xliff"></a>
+
+## JEA で管理者に対する防御がない
 
 JEA の中心的原則の 1 つは、管理者以外のユーザーに*一部*の管理タスクを許可するというものです。
 JEA には、管理者特権が既に与えられているユーザーに対する防御がありません。
@@ -155,3 +163,4 @@ JEA には、管理者特権が既に与えられているユーザーに対す�
 
 一般的な慣行としては、日常的な保守管理に JEA を利用し、"just in time " (必要なときに必要な許可だけを与える) の特権アクセス管理ソリューションを用意して緊急の場合にのみ一時的にローカル管理者になることをユーザーに許可します。
 ユーザーはシステムの常駐管理者ではなくなるが、必要なときにのみ、管理者特権が与えられます。ワークフローを完了すると、アクセス許可の使用が記録されます。
+

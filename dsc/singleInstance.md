@@ -1,17 +1,18 @@
 ---
-title: "単一インスタンスの DSC リソースを記述する (ベスト プラクティス)"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 4b1e8a6d3fb4feca426a9d7861c40d194e612c22
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "単一インスタンスの DSC リソースを記述する (ベスト プラクティス)"
+ms.openlocfilehash: fe7c50c39ba08e290076ea7a058372ce57898325
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="writing-a-single-instance-dsc-resource-best-practice"></a>単一インスタンスの DSC リソースを記述する (ベスト プラクティス)
+<a id="writing-a-single-instance-dsc-resource-best-practice" class="xliff"></a>
+
+# 単一インスタンスの DSC リソースを記述する (ベスト プラクティス)
 
 >**注:** このトピックでは、構成で単一のインスタンスのみを許可する DSC リソースを定義するためのベスト プラクティスについて説明します。 現在のところ、これを行う組み込みの DSC 機能はありません。 これは将来変更される可能性があります。
 

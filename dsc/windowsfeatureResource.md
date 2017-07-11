@@ -1,23 +1,26 @@
 ---
-title: "DSC WindowsFeature リソース"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 98c39d11122d26502723a302ebd7ad4cff0be35d
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "DSC WindowsFeature リソース"
+ms.openlocfilehash: a3433577a122f6c7e31360e094a089f6ceef77c2
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature リソース
+<a id="dsc-windowsfeature-resource" class="xliff"></a>
+
+# DSC WindowsFeature リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) の **WindowsFeature** リソースは、役割と機能がターゲット ノードで追加または削除されることを保証するためのメカニズムを備えています。
 
-## <a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+## 構文
 
 ```
 WindowsFeature [string] #ResourceName
@@ -32,7 +35,9 @@ WindowsFeature [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+<a id="properties" class="xliff"></a>
+
+## プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -44,7 +49,9 @@ WindowsFeature [string] #ResourceName
 | DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 | ソース| 必要に応じて、インストールに使用するソース ファイルの場所を示します。| 
 
-## <a name="example"></a>例
+<a id="example" class="xliff"></a>
+
+## 例
 ```powershell
 WindowsFeature RoleExample
 {

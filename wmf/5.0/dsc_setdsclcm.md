@@ -1,4 +1,17 @@
-# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a>Set-DscLocalConfigurationManager コマンドレットでの -force パラメーターのサポート
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: 0aff3ff1fe12fbc7acce20cf7c802f58ace77bb9
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter" class="xliff"></a>
+
+# Set-DscLocalConfigurationManager コマンドレットでの -force パラメーターのサポート
 
 Set-DscLocalConfigurationManager コマンドレットに、新しいパラメーターのサポートが追加されました。 これにより、一貫性チェックなどの他の操作がバックグラウンドで実行されている場合でも、すべての実行中の操作が停止するため、コンピューターのメタ構成を確定的にリセットできるようになります。
 
@@ -36,3 +49,4 @@ VERBOSE: \[DEV-10586-465\]: LCM: \[ End Set \] in 0.1410 seconds.
 VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Set-DscLocalConfigurationManager finished in 0.421 seconds.
 ```
+

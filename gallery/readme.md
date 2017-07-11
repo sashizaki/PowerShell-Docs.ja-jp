@@ -1,12 +1,30 @@
-# <a name="the-powershell-gallery"></a>PowerShell ギャラリー
+---
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery, PsGet"
+title: "PowerShell ギャラリー"
+ms.openlocfilehash: 3e324f15b251822163c3ea9b6655767419a5ac4e
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="the-powershell-gallery" class="xliff"></a>
+
+# PowerShell ギャラリー
 
 PowerShell ギャラリーは、PowerShell コンテンツの中央リポジトリです。 ギャラリーには、新しい PowerShell コマンドや Desired State Configuration (DSC) リソースがあります。
 
-# <a name="powershellget-overview"></a>PowerShellGet 概要
+<a id="powershellget-overview" class="xliff"></a>
+
+## PowerShellGet 概要
 
 PowerShellGet モジュールには、https://www.PowerShellGallery.com でモジュール、DSC リソース、ロール機能、スクリプトなどの PowerShell アーティファクトを検索、インストール、更新、公開するためのコマンドレットとその他のプライベート リポジトリが含まれます。
 
-## <a name="getting-started-with-the-gallery"></a>ギャラリーをお使いになる前に
+<a id="getting-started-with-the-gallery" class="xliff"></a>
+
+## ギャラリーをお使いになる前に
 
 ギャラリーからアイテムをインストールするには、PowerShellGet の最新版が必要です。これは、Windows 10、Windows Management Framework (WMF) 5.0、MSI ベースのインストーラー (PowerShell 3 と 4) で利用できます。
 
@@ -24,7 +42,9 @@ PowerShellGet モジュールには、https://www.PowerShellGallery.com でモ�
 
 ギャラリーで PowerShellGet コマンドを使用する方法については、[[はじめに]](psgallery/psgallery_gettingstarted.md) ページを参照してください。 *Update-Help -Module PowerShellGet* を実行し、コマンドのローカル ヘルプをインストールすることもできます。
 
-## <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
+<a id="supported-operating-systems" class="xliff"></a>
+
+## サポートされるオペレーティング システム
 
 **PowerShellGet** モジュールは **PowerShell 3.0 以降**を必要とします。
 
@@ -41,7 +61,9 @@ PowerShellGet モジュールには、https://www.PowerShellGallery.com でモ�
 **PowerShellGet** には、.NET Framework 4.5 以降も必要です。 .NET Framework 4.5 以降を[ここ](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx)からインストールできます。
 
 
-## <a name="got-a-question-have-feedback"></a>ご質問または フィードバックがある場合は、
+<a id="got-a-question-have-feedback" class="xliff"></a>
+
+## ご質問または フィードバックがある場合は、
 
 PowerShell ギャラリーと PowerShellGet の詳細を [[はじめに]](psgallery/psgallery_gettingstarted.md) ページで確認できます。 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell) でご意見とご感想をお寄せください。問題がございましたら、ご報告ください。
 

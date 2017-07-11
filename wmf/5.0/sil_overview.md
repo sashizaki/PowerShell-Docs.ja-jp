@@ -1,6 +1,19 @@
-# <a name="software-inventory-logging-sil"></a>ソフトウェア インベントリ ログ (SIL)
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: 4a2dfd651f1c74e7441e5f5e357c1c26453adc07
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="software-inventory-logging-sil" class="xliff"></a>
 
-**重要: ** *SIL を既に実行している Windows Server 2012 R2 サーバーに WMF 5.0 をインストールする場合は、インストール プロセスでソフトウェア インベントリ ログ機能が誤って停止されるため、WMF をインストールした後に、Start-SilLogging コマンドレットを 1 回 実行する必要があります。*
+# ソフトウェア インベントリ ログ (SIL)
+
+**重要:** *SIL を既に実行している Windows Server 2012 R2 サーバーに WMF 5.0 をインストールする場合は、インストール プロセスでソフトウェア インベントリ ログ機能が誤って停止されるため、WMF をインストールした後に、Start-SilLogging コマンドレットを 1 回 実行する必要があります。*
 
 ソフトウェア インベントリ ログは、Microsoft ソフトウェアに関する正確な情報を取得するための運用コストの削減に役立ちます。この情報は、単一サーバー上にローカルにインストールされた以外のソフトウェアについても、IT 環境内の複数のサーバーをまたいで取得できます (ソフトウェアが IT 環境にインストールされ、実行されている場合)。 1 つを設定すると、集計サーバーにこのデータを転送し、均一な自動プロセスを使用して 1 か所にログ データを収集できます。
 
@@ -9,3 +22,4 @@
 この機能の一部として、データが Microsoft に送信されることはありません。 ソフトウェア インベントリ ログのデータおよび機能は、サーバー ソフトウェアのライセンスされた所有者および管理者のみの使用が意図されています。
 
 ソフトウェア インベントリ ログ コマンドレットの詳細およびドキュメントについては、Windows Server 2012 R2 のオンライン リソース (<http://technet.microsoft.com/library/dn383584.aspx>) をご覧ください。
+

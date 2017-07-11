@@ -1,17 +1,18 @@
 ---
-title: "DSC リソース メソッドの直接呼び出し"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 97d97a36830088d6ee1296cda5310e087fc41893
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "DSC リソース メソッドの直接呼び出し"
+ms.openlocfilehash: ab00e66d526eda244500a41e450c56b0151274ee
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="calling-dsc-resource-methods-directly"></a>DSC リソース メソッドの直接呼び出し
+<a id="calling-dsc-resource-methods-directly" class="xliff"></a>
+
+# DSC リソース メソッドの直接呼び出し
 
 >適用先: Windows PowerShell 5.0
 
@@ -23,7 +24,9 @@ translationtype: HT
 
 リソースのメソッドを直接呼び出す例を次に示します。
 
-## <a name="ensure-a-file-is-present"></a>ファイルが存在することを確認します
+<a id="ensure-a-file-is-present" class="xliff"></a>
+
+## ファイルが存在することを確認します
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Set -Property @{
@@ -32,7 +35,9 @@ $result = Invoke-DscResource -Name File -Method Set -Property @{
 $result | fl
 ```
 
-## <a name="test-that-a-file-is-present"></a>ファイルが存在することをテストします
+<a id="test-that-a-file-is-present" class="xliff"></a>
+
+## ファイルが存在することをテストします
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Test -Property @{
@@ -41,7 +46,9 @@ $result = Invoke-DscResource -Name File -Method Test -Property @{
 $result | fl
 ```
 
-## <a name="get-the-contents-of-file"></a>ファイルの内容を取得します
+<a id="get-the-contents-of-file" class="xliff"></a>
+
+## ファイルの内容を取得します
 
 ```powershell
 $result = Invoke-DscResource -Name File -Method Get -Property @{
@@ -52,7 +59,9 @@ $result.ItemValue | fl
 
 >**注:** 複合リソースのメソッドを直接呼び出すことはできません。 代わりに、複合リソースの基になるリソースのメソッドを呼び出してください。
 
-## <a name="see-also"></a>参照
+<a id="see-also" class="xliff"></a>
+
+## 参照
 - [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md) 
 - [PowerShell クラスを使用したカスタム DSC リソースの記述](authoringResourceClass.md)
 - [DSC リソースのデバッグ](debugResource.md)

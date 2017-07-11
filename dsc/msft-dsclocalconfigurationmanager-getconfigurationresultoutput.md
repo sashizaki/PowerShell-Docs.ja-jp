@@ -1,21 +1,24 @@
 ---
-title: "MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 8f13964dfbbe1cd827c58232a35d1cbacddeed1b
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド"
+ms.openlocfilehash: 09862fd3c19e1e517c9bf5df878113ba3f10d8a6
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド
+<a id="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
+
+# MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド
 
 特定のジョブに関連する構成エージェントの出力を取得します。
 
-<a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+構文
 ------
 
 ```mof
@@ -26,7 +29,9 @@ uint32 GetConfigurationResultOutput(
 );
 ```
 
-<a name="parameters"></a>パラメーター
+<a id="parameters" class="xliff"></a>
+
+パラメーター
 ----------
 
 *jobId* \[in\]  
@@ -38,23 +43,31 @@ uint32 GetConfigurationResultOutput(
 *output* \[out\]  
 指定されたジョブの出力です。
 
-## <a name="return-value"></a>戻り値
+<a id="return-value" class="xliff"></a>
+
+## 戻り値
 ------------
 
 成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
 
-## <a name="remarks"></a>コメント
+<a id="remarks" class="xliff"></a>
+
+## コメント
 
 これは静的メソッドです。
 
-## <a name="requirements"></a>要件
+<a id="requirements" class="xliff"></a>
+
+## 要件
 ------------
 >**MOF:** DscCore.mof
 
 >**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## <a name="see-also"></a>関連項目
+<a id="see-also" class="xliff"></a>
+
+## 関連項目
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

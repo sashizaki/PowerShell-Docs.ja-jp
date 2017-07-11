@@ -1,6 +1,21 @@
-# <a name="powershellget-cmdlets-for-script-management"></a>スクリプト管理用の PowerShellGet コマンドレット
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: 2d56df459a4e09a16ab16c02f7ca2744c779206f
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="powershellget-cmdlets-for-script-management" class="xliff"></a>
 
-## <a name="find-script-cmdlet"></a>Find-Script コマンドレット
+# スクリプト管理用の PowerShellGet コマンドレット
+
+<a id="find-script-cmdlet" class="xliff"></a>
+
+## Find-Script コマンドレット
 Find-Script コマンドレットでは、名前、タグ、フィルター、コマンド名、バージョン範囲、正確なバージョン、すべてのバージョンなどのさまざまな検索条件を使用して、特定またはすべての登録済みリポジトリから、スクリプト ファイルをその依存関係を含めて検出できます。
 
 使用例:
@@ -139,7 +154,9 @@ Workflow {Test-WorkflowFromScript\_Fabrikam-ClientScript}
 Command {Test-FunctionFromScript\_Fabrikam-ClientScript, Test-WorkflowFromScript\_Fabrikam-ClientScript}
 ```
 
-## <a name="save-script-cmdlet"></a>Save-Script コマンドレット
+<a id="save-script-cmdlet" class="xliff"></a>
+
+## Save-Script コマンドレット
 Save-Script コマンドレットでは、指定した場所に保存することによって、スクリプト ファイルを確認できます。
 ```powershell
 \# Save a script file to the specified location for the script analysis
@@ -152,7 +169,9 @@ Version Name Author Description
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
 ```
 
-## <a name="install-script-and-get-installedscript-cmdlets"></a>Install-Script および Get-InstalledScript コマンドレット
+<a id="install-script-and-get-installedscript-cmdlets" class="xliff"></a>
+
+## Install-Script および Get-InstalledScript コマンドレット
 Install-Script コマンドレットでは、特定のスクリプト ファイルをその依存関係と共に、指定したスコープにインストールできます。 既定では、スクリプトは AllUsers スコープにインストールされます。 Get-InstalledScript コマンドレットでは、Install-Script コマンドレットを使用してインストールされたスクリプト ファイルの一覧を取得できます。
 
 使用上の注意: スクリプトがインストールされた後、管理および検索できるようにするため、Install-Script によってスクリプトを格納するための既定のフォルダーが $home\Documents\WindowsPowerShell\Scripts に作成され、PATH 環境変数にそのフォルダーが追加されます。 パスの変更に問題がある場合は、Install-Script ではなく Save-Script を使用します。 Get-InstalledScripts と Uninstall-Script は、Install-Script を使用してシステム上に配置されたスクリプトに対してのみ機能します。
@@ -333,7 +352,9 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-## <a name="update-script-cmdlet"></a>Update-Script コマンドレット
+<a id="update-script-cmdlet" class="xliff"></a>
+
+## Update-Script コマンドレット
 Update-Script コマンドレットでは、Install-Script コマンドレットを使用してインストールされたスクリプト ファイルのインプレース更新ができます。
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
@@ -375,7 +396,9 @@ Version Name Type Repository Description
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
 
-## <a name="uninstall-script-cmdlet"></a>Uninstall-Script コマンドレット
+<a id="uninstall-script-cmdlet" class="xliff"></a>
+
+## Uninstall-Script コマンドレット
 ```powershell
 Uninstall-Script cmdlet lets you to uninstall the installed script files.
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -412,7 +435,9 @@ At C:\\Program Files\\WindowsPowerShell\\Modules\\PowerShellGet\\1.0.0.1\\PSModu
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a>New-ScriptFileInfo および Test-ScriptFileInfo コマンドレット
+<a id="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets" class="xliff"></a>
+
+## New-ScriptFileInfo および Test-ScriptFileInfo コマンドレット
 New-ScriptFileInfo コマンドレットでは、バージョン、GUID、作成者、説明などのメタデータを含む新しいスクリプト ファイルを作成できます。Test-ScriptFileInfo コマンドレットでは、スクリプト ファイルのメタデータを検証および取得できます。
 ```powershell
 \# Create a new script file with minimum required metadata values
@@ -564,7 +589,9 @@ DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
 
-## <a name="update-scriptfileinfo-cmdlet"></a>Update-ScriptFileInfo コマンドレット
+<a id="update-scriptfileinfo-cmdlet" class="xliff"></a>
+
+## Update-ScriptFileInfo コマンドレット
 Update-ScriptFileInfo コマンドレットでは、既存のスクリプト ファイルのメタデータを更新できます。
 ```powershell
 \# Use Update-ScriptFileInfo cmdlet to update the script metadata
@@ -575,7 +602,9 @@ Version Name Author Description
 2.0 Demo-ScriptWithComplet... manikb my new script file
 ```
 
-## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a>スクリプト共有サポートがある Register-PSRepository および Set-PSRepository コマンドレット
+<a id="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support" class="xliff"></a>
+
+## スクリプト共有サポートがある Register-PSRepository および Set-PSRepository コマンドレット
 **ScriptSourceLocation** および **ScriptPublishLocation** を PSRepository に追加するには、Register-PSRepository/Set-PSRepository コマンドレットを使用します。
 ```powershell
 \# Register an GalleryINT repository with Scripts and Modules support
@@ -633,7 +662,9 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 ```
 
-## <a name="publish-script-cmdlet"></a>Publish-Script コマンドレット
+<a id="publish-script-cmdlet" class="xliff"></a>
+
+## Publish-Script コマンドレット
 Publish-Script コマンドレットでは、バージョン、GUID、作成者、説明などの有効なメタデータを含むスクリプト ファイルを発行できます。
 ```powershell
 \# Publish the really basic script file with required metadata

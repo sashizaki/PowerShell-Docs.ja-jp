@@ -1,25 +1,26 @@
 ---
-title: "DSC グループ リソース"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: db2a12141ab1eaca73bf958b5a27ef2a356d5b8f
-ms.sourcegitcommit: 6057e6d22ef8a2095af610e0d681e751366a9773
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "DSC グループ リソース"
+ms.openlocfilehash: 6fb6c5f9593687d7204ff31fddd9bca978ed2707
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-group-resource"></a>DSC グループ リソース
+<a id="dsc-group-resource" class="xliff"></a>
+
+# DSC グループ リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 PowerShell Desired State Configuration (DSC) の Group リソースは、ターゲット ノード上でローカル グループを管理するためのメカニズムを備えています。
 
-## <a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+## 構文
 ```
 Group [string] #ResourceName
 {
@@ -34,7 +35,9 @@ Group [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+<a id="properties" class="xliff"></a>
+
+## プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -47,7 +50,9 @@ Group [string] #ResourceName
 | MembersToInclude| このプロパティは、グループの既存のメンバーシップにメンバーを追加するために使用します。 このプロパティの値は、*Domain*\\*UserName* 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**Members** プロパティは使用しないでください。 併用した場合、エラーが発生します。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は DependsOn = "[ResourceType]ResourceName" になります。| 
 
-## <a name="example-1"></a>例 1
+<a id="example-1" class="xliff"></a>
+
+## 例 1
 
 次の例では、"TestGroup" という名前のグループが存在しないことを保証する方法を示します。 
 
@@ -60,7 +65,9 @@ Group GroupExample
     GroupName = "TestGroup"
 }
 ```
-## <a name="example-2"></a>例 2
+<a id="example-2" class="xliff"></a>
+
+## 例 2
 次の例では、Multi-Machine Lab ビルドの一部として Active Directory ユーザーをローカルの Administrators グループに追加する方法を示します。このビルドでは、ローカル管理者アカウントの PSCredential を既に使用しています。 また、これは (ドメインの昇格後) ドメイン管理者アカウントにも使用されるため、この既存の PSCredential はドメインで利用しやすい資格情報に変換して、ドメイン ユーザーをメンバー サーバー上のローカルの Administrators グループに追加できるようにする必要があります。
 
 ```powershell
@@ -90,7 +97,9 @@ Group AddADUserToLocalAdminGroup
         }
 ```
 
-## <a name="example-3"></a>例 3
+<a id="example-3" class="xliff"></a>
+
+## 例 3
 サーバー TigerTeamSource.Contoso.Com 上のローカル グループ TigerTeamAdmins に、特定のドメイン アカウント Contoso\JerryG が含まれないようにする例を次に示します。  
 
 ```powershell
@@ -109,3 +118,4 @@ Configuration SecureTigerTeamSrouce
   }
 }
 ```
+

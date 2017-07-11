@@ -1,4 +1,17 @@
-# <a name="extract-and-parse-structured-objects-out-of-string"></a>文字列から構造化オブジェクトを抽出して分析する
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="extract-and-parse-structured-objects-out-of-string" class="xliff"></a>
+
+# 文字列から構造化オブジェクトを抽出して分析する
 これも、ConvertFrom-String コマンドレットに追加機能を導入します。
 
 -   既定では、エクステント テキスト プロパティを削除します。 これを含めるには、-IncludeExtent パラメーターを指定します。
@@ -8,7 +21,9 @@
 -   新しい -UpdateTemplate パラメーターを使って、学習アルゴリズムの結果をテンプレート ファイル内のコメントに保存します。 これにより、学習プロセス (最も時間のかかる段階) が 1 回限りのコストになります。 エンコードされた学習アルゴリズムを含むテンプレートを使って Convert-String を実行すると、ほぼ瞬時に完了します。
 
 
-<a name="extract-and-parse-structured-objects-out-of-string-content"></a>文字列コンテンツから構造化オブジェクトを抽出して分析する
+<a id="extract-and-parse-structured-objects-out-of-string-content" class="xliff"></a>
+
+文字列コンテンツから構造化オブジェクトを抽出して分析する
 ----------------------------------------------------------
 
 Microsoft は、[Microsoft Research](http://research.microsoft.com/) とのコラボレーションにより、新しい **ConvertFrom-String** コマンドレットを追加しました。
@@ -17,8 +32,7 @@ Microsoft は、[Microsoft Research](http://research.microsoft.com/) とのコ�
 
 区切り記号による解析では、既定で、入力を空白の位置で分割し、生成されるグループにプロパティ名を割り当てます。 区切り記号は、カスタマイズできます。
 
-> 1 \[C:\\temp\]
-> &gt;&gt; "Hello World" | ConvertFrom-String | Format-Table -Auto
+> 1 \[C:\\temp\] &gt;&gt; "Hello World" | ConvertFrom-String | Format-Table -Auto
 
 P1    P2
 --    --

@@ -1,17 +1,18 @@
 ---
-title: "DSC 構成のヘルプの作成"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 099755bf8dc41adfedf77de451dbcdf390c298e9
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "DSC 構成のヘルプの作成"
+ms.openlocfilehash: bcf5c4b1af3cfd8d2e6376c1b7344c7babcaba9a
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="writing-help-for-dsc-configurations"></a>DSC 構成のヘルプの作成
+<a id="writing-help-for-dsc-configurations" class="xliff"></a>
+
+# DSC 構成のヘルプの作成
 
 >適用先: Windows PowerShell 5.0
 
@@ -61,7 +62,9 @@ configuration HelpSample1
 }
 ```
 
-## <a name="viewing-configuration-help"></a>構成のヘルプの表示
+<a id="viewing-configuration-help" class="xliff"></a>
+
+## 構成のヘルプの表示
 
 構成のヘルプを表示するには、**Get-Help** コマンドレットに関数名を付けて使うか、関数名の後に「`-?`」と入力します。 前の関数を **Get-Help** に渡した場合の出力を次に示します。
 
@@ -92,6 +95,8 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-## <a name="see-also"></a>参照
+<a id="see-also" class="xliff"></a>
+
+## 参照
 * [DSC 構成](configurations.md)
 

@@ -1,12 +1,29 @@
-# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>機能を強化された Item コマンドレットを使ってシンボリック リンクを操作する
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: fbc537cacb8dd58ab989a0bb71cd942cedae844c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="interact-with-symbolic-links-using-improved-item-cmdlets" class="xliff"></a>
+
+# 機能を強化された Item コマンドレットを使ってシンボリック リンクを操作する
 
 シンボリック リンクをサポートするために、**\*-Item** コマンドレットや、関連するいくつかのコマンドレットが拡張されました。 シンボリック リンクは、**New-item** を使った簡単な 1 つの行で作成できるようになりました。 Item 関連のコマンドレット (**Remove-item、Get-ChildItem**) は、従来と非常によく似た動作になっています。
 
 新機能の用途を次に示します。
 
-## <a name="new-item"></a>New-Item
+<a id="new-item" class="xliff"></a>
 
-### <a name="symbolic-link-files"></a>シンボリック リンク ファイル
+## New-Item
+
+<a id="symbolic-link-files" class="xliff"></a>
+
+### シンボリック リンク ファイル
 
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
@@ -20,7 +37,9 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkFile.txt -Value $pshome\p
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
 ```
 
-### <a name="symbolic-link-directories"></a>シンボリック リンク ディレクトリ
+<a id="symbolic-link-directories" class="xliff"></a>
+
+### シンボリック リンク ディレクトリ
 
 ```powershell
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder
@@ -35,21 +54,27 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkDir -Value $pshome
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 ```
 
-### <a name="hard-links"></a>ハード リンク
+<a id="hard-links" class="xliff"></a>
+
+### ハード リンク
 
 ```powershell
 New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshome\profile.ps1
 # Same combinations of Path and Name allowed as described above
 ```
 
-### <a name="directory-junctions"></a>ディレクトリ ジャンクション
+<a id="directory-junctions" class="xliff"></a>
+
+### ディレクトリ ジャンクション
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 # Same combinations of Path and Name allowed as described above
 ```
 
-## <a name="get-childitem"></a>Get-ChildItem
+<a id="get-childitem" class="xliff"></a>
+
+## Get-ChildItem
 
 ```powershell
 # Append link type column to Mode property and display with Get-ChildItem
@@ -100,7 +125,9 @@ SpecialBuild: False
 Language:
 ```
 
-## <a name="remove-item"></a>Remove-Item
+<a id="remove-item" class="xliff"></a>
+
+## Remove-Item
 
 ```powershell
 # Works like any other item type
@@ -113,3 +140,4 @@ Remove-Item C:\Temp\MySymLinkDir
 # Removes the files in the target directory and MySymLinkDir
 Remove-Item C:\Temp\MySymLinkDir -Force
 ```
+

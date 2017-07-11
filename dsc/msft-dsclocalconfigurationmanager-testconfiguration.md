@@ -1,21 +1,24 @@
 ---
-title: "MSFT_DSCLocalConfigurationManager クラスの TestConfiguration メソッド"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 0777467d37e2f5588f9c0ef368148e3bea963a5b
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "MSFT_DSCLocalConfigurationManager クラスの TestConfiguration メソッド"
+ms.openlocfilehash: 8e9986837aaf41b1396a2399c58675bc51b0b708
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの TestConfiguration メソッド
+<a id="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
+
+# MSFT_DSCLocalConfigurationManager クラスの TestConfiguration メソッド
 
 構成ドキュメントを管理ノードに送信し、そのドキュメントに対して現在の構成を検証します。
 
-<a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+構文
 ------
 
 ```mof
@@ -27,7 +30,9 @@ uint32 TestConfiguration(
 );
 ```
 
-<a name="parameters"></a>パラメーター
+<a id="parameters" class="xliff"></a>
+
+パラメーター
 ----------
 
 *configurationData* \[in\]  
@@ -42,23 +47,31 @@ uint32 TestConfiguration(
 *ResourcesNotInDesiredState* \[out\]  
 制御が戻ったとき、目的の状態ではないリソースを指定する、**MSFT_ResourceNotInDesiredState** クラスの埋め込みインスタンスが含まれます。
 
-## <a name="return-value"></a>戻り値
+<a id="return-value" class="xliff"></a>
+
+## 戻り値
 ------------
 
 成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
 
-## <a name="remarks"></a>コメント
+<a id="remarks" class="xliff"></a>
+
+## コメント
 
 これは静的メソッドです。
 
-## <a name="requirements"></a>要件
+<a id="requirements" class="xliff"></a>
+
+## 要件
 ------------
 >**MOF:** DscCore.mof
 
 >**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## <a name="see-also"></a>関連項目
+<a id="see-also" class="xliff"></a>
+
+## 関連項目
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

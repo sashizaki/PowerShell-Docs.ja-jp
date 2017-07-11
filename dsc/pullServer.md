@@ -1,17 +1,18 @@
 ---
-title: "DSC Web プル サーバーのセットアップ"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 6916432b0978cd1cda76a2dab997b10873de5899
-ms.sourcegitcommit: 910f090edd401870fe137553c3db00d562024a4c
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "DSC Web プル サーバーのセットアップ"
+ms.openlocfilehash: ffe5b1ae058b9757def30ad53019a1b61605a42a
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="setting-up-a-dsc-web-pull-server"></a>DSC Web プル サーバーのセットアップ
+<a id="setting-up-a-dsc-web-pull-server" class="xliff"></a>
+
+# DSC Web プル サーバーのセットアップ
 
 > 適用先: Windows PowerShell 5.0
 
@@ -27,7 +28,9 @@ DSC Web プル サーバーは、OData インターフェイスを使用して�
 
 IIS サーバー ロールと DSC サービスを追加するには、サーバー マネージャーで役割と機能の追加ウィザードを使用するか、または PowerShell を使用します。 どちらの手順も、このトピックに含まれているサンプル スクリプトが自動的に処理します。
 
-## <a name="using-the-xwebservice-resource"></a>XWebService リソースの使用
+<a id="using-the-xwebservice-resource" class="xliff"></a>
+
+## XWebService リソースの使用
 Web プル サーバーをセットアップする最も簡単な方法は、xPSDesiredStateConfiguration モジュールに含まれる xWebService リソースを使用することです。 次の手順では、Web サービスをセットアップする構成でリソースを使用する方法について説明します。
 
 1. [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) コマンドレットを呼び出して、**xPSDesiredStateConfiguration** モジュールをインストールします。 **注**: **Install-Module** は、PowerShell 5.0 に含まれている **PowerShellGet** モジュールに含まれています。 「[PackageManagement PowerShell Modules Preview (PackageManagement PowerShell モジュールのプレビュー)](https://www.microsoft.com/en-us/download/details.aspx?id=49186)」で PowerShell 3.0 と 4.0 の **PowerShellGet** モジュールをダウンロードできます。 
@@ -102,7 +105,9 @@ Sample_xDSCPullServer -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301F
 Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
 ```
 
-## <a name="registration-key"></a>登録キー
+<a id="registration-key" class="xliff"></a>
+
+## 登録キー
 サーバーにクライアント ノードを登録して、構成 ID の代わりに構成名を使用できるように、上の構成で作成された登録キーは、`C:\Program Files\WindowsPowerShell\DscService` にある `RegistrationKeys.txt` という名前のファイルに保存されます。 登録キーは、クライアントがプル サーバーに初期登録を行うときに共有シークレットとして機能します。 登録が正常に完了すると、クライアントは、プル サーバーに一意に認証されるために使う自己署名証明書を生成します。 この証明書の拇印がローカルに保存され、プル サーバーの URL に関連付けられます。
 > **注**: 登録キーは、PowerShell 4.0 ではサポートされていません。 
 
@@ -144,22 +149,30 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 
 >**注**: プッシュのシナリオでは、現在のリリースにバグが存在するため、プル サーバーに登録されていないノードについても、メタ構成ファイルで ConfigurationID プロパティを定義する必要があります。 こうすると、V1 プル サーバー プロトコルが強制されるので、登録エラーのメッセージが表示されません。
 
-## <a name="placing-configurations-and-resources"></a>構成とリソースの配置
+<a id="placing-configurations-and-resources" class="xliff"></a>
+
+## 構成とリソースの配置
 
 プル サーバーのセットアップが完了すると、プル サーバーの構成で **ConfigurationPath** プロパティと **ModulePath** プロパティによって定義されているフォルダーは、プルするためにターゲット ノードで使用可能にするモジュールと構成を配置する場所になります。 これらのファイルをプル サーバーが正しく処理するためには、特定の形式である必要があります。 
 
-### <a name="dsc-resource-module-package-format"></a>DSC リソース モジュールのパッケージの形式
+<a id="dsc-resource-module-package-format" class="xliff"></a>
+
+### DSC リソース モジュールのパッケージの形式
 
 各リソース モジュールは、圧縮し、`{Module Name}_{Module Version}.zip` というパターンで名前を付ける必要があります。 たとえば、モジュール名が xWebAdminstration で、バージョンが 3.1.2.0 のモジュールでは、'xWebAdministration_3.2.1.0.zip' という名前になります。 各バージョンのモジュールを 1 つの zip ファイルに含める必要があります。 各 zip ファイルには 1 つのバージョンのリソースのみが含まれるので、WMF 5.0 で追加された、単一のディレクトリに複数のモジュール バージョンを入れるモジュール形式はサポートされていません。 このため、プル サーバーで使うための DSC リソース モジュールをパッケージ化する前に、ディレクトリ構造に少しの変更が必要です。 WMF 5.0 の DSC リソースを含むモジュールの既定の形式は、'{モジュール フォルダー}\{モジュールのバージョン}\DscResources\{DSC リソース フォルダー}\' です。 プル サーバー用にパッケージ化する前には、単純に **{モジュールのバージョン}** フォルダーを削除して、'{モジュール フォルダー}\DscResources\{DSC リソース フォルダー}\' というパスにします。 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを **ModulePath** フォルダーに置きます。
 
 新しく追加したモジュールのチェックサム ファイルを作成するには、`new-dscchecksum {module zip file}` を使用します。
 
-### <a name="configuration-mof-format"></a>構成 MOF の形式 
+<a id="configuration-mof-format" class="xliff"></a>
+
+### 構成 MOF の形式 
 ターゲット ノード上の LCM が構成を検証できるように、構成 MOF ファイルはチェックサム ファイルと組み合わせて使用する必要があります。 チェックサムを作成するには、[New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) コマンドレットを呼び出します。 このコマンドレットは、構成 MOF が存在するフォルダーが指定された **Path** パラメーターを受け取ります。 このコマンドレットは、`ConfigurationMOFName.mof.checksum` という名前でチェックサム ファイルを作成します。ここで、`ConfigurationMOFName` は構成 MOF ファイルの名前です。 指定のフォルダーに複数の構成 MOF ファイルがある場合は、そのフォルダー内の構成ごとにチェックサムが作成されます。 MOF ファイルと、それに関連するチェックサム ファイルは、**ConfigurationPath** フォルダーに配置します。
 
 >**注**: 何らかの方法で構成 MOF ファイルを変更した場合は、チェックサム ファイルも作成し直す必要があります。
 
-## <a name="tooling"></a>ツール
+<a id="tooling" class="xliff"></a>
+
+## ツール
 プル サーバーのセットアップ、検証、管理を簡素化するために、次のツールが、xPSDesiredStateConfiguration モジュールの最新バージョンに例として含まれています。
 1. プル サーバーに使用する DSC リソース モジュールおよび構成ファイルをパッケージ化するために役立つモジュール。 [PublishModulesAndMofsToPullServer.psm1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PublishModulesAndMofsToPullServer.psm1)。 次の例です。
 
@@ -175,7 +188,9 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 1. プル サーバーが正しく構成されていることを検証するスクリプト。 [PullServerSetupTests.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCPullServerSetup/PullServerDeploymentVerificationTest/PullServerSetupTests.ps1)。
 
 
-## <a name="pull-client-configuration"></a>プル クライアントの構成 
+<a id="pull-client-configuration" class="xliff"></a>
+
+## プル クライアントの構成 
 次のトピックでは、プル クライアントのセットアップについて詳しく説明します。
 
 * [構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)
@@ -183,7 +198,9 @@ PullClientConfigID -OutputPath c:\Configs\TargetNodes
 * [部分構成](partialConfigs.md)
 
 
-## <a name="see-also"></a>関連項目
+<a id="see-also" class="xliff"></a>
+
+## 関連項目
 * [Windows PowerShell Desired State Configuration の概要](overview.md)
 * [構成の適用](enactingConfigurations.md)
 * [DSC レポート サーバーの使用](reportServer.md)

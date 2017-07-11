@@ -1,4 +1,17 @@
-# <a name="creating-and-connecting-to-a-jea-endpoint"></a>JEA エンドポイントの作成および接続
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: c3645a6ba83081bd5ac31a13af0f67f6538db22a
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="creating-and-connecting-to-a-jea-endpoint" class="xliff"></a>
+
+# JEA エンドポイントの作成および接続
 JEA エンドポイントを作成するには、特別に構成された PowerShell セッション構成ファイルを作成し、登録する必要があります。このファイルは、**New-PSSessionConfigurationFile** コマンドレットで登録できます。
 
 ```powershell
@@ -130,10 +143,13 @@ JEA セッション構成で使用するには、ロール機能を有効な Pow
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
 ```
 
-## <a name="connect-to-a-jea-endpoint"></a>JEA エンドポイントへの接続
+<a id="connect-to-a-jea-endpoint" class="xliff"></a>
+
+## JEA エンドポイントへの接続
 JEA エンドポイントへの接続は、他の PowerShell エンドポイントへの接続と同じように機能します。  **New-PSSession**、**Invoke-Command**、または **Enter-PSSession** の "ConfigurationName" パラメーターとして JEA エンドポイント名を付けることのみが必要です。
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 JEA セッションに接続した後は、自分がアクセス権を持つロール機能のホワイトリストに登録されたコマンドのみを実行できます。 ロールに許可されていないコマンドを実行しようとすると、エラーが発生します。
+

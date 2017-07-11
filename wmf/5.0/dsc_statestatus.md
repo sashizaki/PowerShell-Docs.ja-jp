@@ -1,4 +1,17 @@
-# <a name="unified-and-consistent-state-and-status-representation"></a>統一された一貫性のある状態とステータスの表現
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: 32f8e20889ddc526def4b925e8d0761a2e851e19
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="unified-and-consistent-state-and-status-representation" class="xliff"></a>
+
+# 統一された一貫性のある状態とステータスの表現
 
 今回のリリースでは、LCM 状態と DSC ステータスのビルドの自動化に対して、一連の拡張機能が加えられました。 これには、統一された一貫性のある状態とステータスの表現、Get-DscConfigurationStatus コマンドレットから返されるステータス オブジェクトの管理しやすい日時プロパティ、Get-DscLocalConfigurationManager コマンドレットから返される拡張された LCM 状態の詳細プロパティが含まれます。
 
@@ -25,8 +38,7 @@ LCM 状態と DSC 操作ステータスの形式を再検討し、次の規則�
 | r、S                            | PendingReboot        | 成功    | $true         | $null                        | r                              |
 | r、F                            | PendingReboot        | 成功    | $true         | $null                        | r                              |
 
-^
-S<sub>i</sub>: 一連のリソースが正常に適用された F<sub>i</sub>: 一連のリソースの適用に失敗した r: 再起動が必要なリソース \*
+^ S<sub>i</sub>: 一連のリソースが正常に適用された F<sub>i</sub>: 一連のリソースの適用に失敗した r: 再起動が必要なリソース \*
 
 ```powershell
 $LCMState = (Get-DscLocalConfigurationManager).LCMState
@@ -38,7 +50,9 @@ $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
 $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
 ```
-## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus コマンドレットの機能拡張
+<a id="enhancement-in-get-dscconfigurationstatus-cmdlet" class="xliff"></a>
+
+## Get-DscConfigurationStatus コマンドレットの機能拡張
 
 このリリースでは、Get-DscConfigurationStatus コマンドレットのいくつかの機能が拡張されました。 以前は、コマンドレットによって返されるオブジェクトの StartDate プロパティは文字列型でした。 今では、Datetime 型になったため、Datetime オブジェクトに備わっているプロパティに基づいて複雑な選択やフィルター処理を実行できるようになりました。
 ```powershell
@@ -80,7 +94,9 @@ Success 11/13/2015 11:20:44 AM Initial True
 Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 ```
 
-## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Get-DscLocalConfigurationManager コマンドレットの機能拡張
+<a id="enhancement-in-get-dsclocalconfigurationmanager-cmdlet" class="xliff"></a>
+
+## Get-DscLocalConfigurationManager コマンドレットの機能拡張
 Get-DscLocalConfigurationManager コマンドレットから返されるオブジェクトに、新しい LCMStateDetail フィールドが追加されました。 このフィールドは、LCMState が "ビジー" の時にデータが設定されます。 これは、次のコマンドレットで取得できます。
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail
@@ -102,3 +118,4 @@ LCM State: Idle,
 LCM State: Busy, LCM is performing a consistency check.
 LCM State: Idle,
 ```
+

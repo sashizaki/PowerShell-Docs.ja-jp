@@ -1,17 +1,18 @@
 ---
-title: "PowerShell クラスを使用したカスタム DSC リソースの記述"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: feec9b9e242ef6f43c272bfeb179d11944d1cb06
-ms.sourcegitcommit: 1002c473b88abb209e4188bb626d93675c3614e2
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "PowerShell クラスを使用したカスタム DSC リソースの記述"
+ms.openlocfilehash: 6e482f45c7d09898d46de20f43dcf16ecf3da7da
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell クラスを使用したカスタム DSC リソースの記述
+<a id="writing-a-custom-dsc-resource-with-powershell-classes" class="xliff"></a>
+
+# PowerShell クラスを使用したカスタム DSC リソースの記述
 
 > 適用先: Windows PowerShell 5.0
 
@@ -25,7 +26,9 @@ DSC リソースの詳細については、「[カスタム Windows PowerShell D
 
 >**注:**クラスベースのリソースでは、汎用コレクションはサポートされていません。
 
-## <a name="folder-structure-for-a-class-resource"></a>クラス リソースのフォルダー構造
+<a id="folder-structure-for-a-class-resource" class="xliff"></a>
+
+## クラス リソースのフォルダー構造
 
 PowerShell クラスを使用して DSC カスタム リソースを実装するには、次のフォルダー構造を作成します。 クラスは **MyDscResource.psm1** で定義し、モジュール マニフェストは **MyDscResource.psd1** で定義します。
 
@@ -36,7 +39,9 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
            MyDscResource.psd1 
 ```
 
-## <a name="create-the-class"></a>クラスの作成
+<a id="create-the-class" class="xliff"></a>
+
+## クラスの作成
 
 PowerShell クラスを作成するには、class キーワードを使用します。 クラスを DSC リソースとして指定するには、**DscResource()** 属性を使用します。 クラスの名前は、DSC リソースの名前です。
 
@@ -46,7 +51,9 @@ class FileResource {
 }
 ```
 
-### <a name="declare-properties"></a>プロパティの宣言
+<a id="declare-properties" class="xliff"></a>
+
+### プロパティの宣言
 
 DSC リソースのスキーマは、クラスのプロパティとして定義します。 3 つのプロパティを次のように宣言します。
 
@@ -81,7 +88,9 @@ enum Ensure
 }
 ```
 
-### <a name="implementing-the-methods"></a>メソッドの実装
+<a id="implementing-the-methods" class="xliff"></a>
+
+### メソッドの実装
 
 **Get()**、**Set()**、および **Test()** メソッドは、スクリプト リソースの **Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** 関数に似ています。
 
@@ -218,7 +227,9 @@ enum Ensure
     }
 ```
 
-### <a name="the-complete-file"></a>完全なファイル
+<a id="the-complete-file" class="xliff"></a>
+
+### 完全なファイル
 完全なクラス ファイルは次のとおりです。
 
 ```powershell
@@ -417,7 +428,9 @@ class FileResource
 ```
 
 
-## <a name="create-a-manifest"></a>マニフェストの作成
+<a id="create-a-manifest" class="xliff"></a>
+
+## マニフェストの作成
 
 クラスベースのリソースを DSC エンジンで使用できるようにするには、マニフェスト ファイルに、リソースをエクスポートするようにモジュールに指示する **DscResourcesToExport** ステートメントを含める必要があります。 この例では、マニフェストは次のようになります。
 
@@ -455,7 +468,9 @@ PowerShellVersion = '5.0'
 } 
 ```
 
-## <a name="test-the-resource"></a>リソースのテスト
+<a id="test-the-resource" class="xliff"></a>
+
+## リソースのテスト
 
 既に説明したように、クラスとマニフェスト ファイルをフォルダー構造で保存した後で、新しいリソースを使用する構成を作成できます。 DSC 構成を実行する方法については、「[構成の適用](enactingConfigurations.md)」をご覧ください。 次の構成では、`c:\test\test.txt` のファイルが存在するかどうかを確認し、存在しない場合は、ファイルを `c:\test.txt` からコピーします (構成を実行する前に `c:\test.txt` を作成する必要があります)。
 
@@ -474,7 +489,54 @@ Test
 Start-DscConfiguration -Wait -Force Test
 ```
 
-## <a name="see-also"></a>参照
-### <a name="concepts"></a>概念
+<a id="supporting-psdscrunascredential" class="xliff"></a>
+
+## PsDscRunAsCredential のサポート
+
+>**注:** **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。
+
+**PsDscRunAsCredential** プロパティを [DSC 構成](configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。
+詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
+
+<a id="require-or-disallow-psdscrunascredential-for-your-resource" class="xliff"></a>
+
+### 使用するリソースに対する PsDscRunAsCredential の要求または却下
+
+**DscResource()** 属性でオプションのパラメーター **RunAsCredential** を指定します。
+このパラメーターには以下の 3 つの値のいずれかを指定します。
+
+- `Optional`**PsDscRunAsCredential** は、このリソースを呼び出す構成ではオプションです。 これは、既定値です。
+- `Mandatory`**PsDscRunAsCredential** は、このリソースを呼び出す構成で使用する必要があります。
+- `NotSupported`このリソースを呼び出す構成には **PsDscRunAsCredential** を使用できません。
+- `Default``Optional` と同じです。
+
+たとえば、次の属性を使用して、ご使用のカスタム リソースが **PsDscRunAsCredential** の使用をサポートしないことを指定します。
+
+```powershell
+[DscResource(RunAsCredential=NotSupported)]
+class FileResource {
+}
+```
+
+<a id="access-the-user-context" class="xliff"></a>
+
+### ユーザー コンテキストへのアクセス
+
+カスタム リソース内からユーザー コンテキストにアクセスするには、自動変数 `$global:PsDscContext` を使用できます。
+
+たとえば、次のコードは、リソースが詳細出力ストリームに実行しているユーザー コンテキストを記述します。
+
+```powershell
+if (PsDscContext.RunAsUser) {
+    Write-Verbose "User: $global:PsDscContext.RunAsUser";
+}
+```
+
+<a id="see-also" class="xliff"></a>
+
+## 参照
+<a id="concepts" class="xliff"></a>
+
+### 概念
 [Build Custom Windows PowerShell Desired State Configuration Resources (カスタム Windows PowerShell Desired State Configuration のビルド)](authoringResource.md)
 

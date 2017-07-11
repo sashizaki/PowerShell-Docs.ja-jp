@@ -1,18 +1,16 @@
 ---
-description: 
-manager: carmonm
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
 title: "Windows PowerShell Web Access のインストールと使用"
-ms.technology: powershell
-ms.openlocfilehash: f2a908b670d1a0aba3ca0912aed0ff7e3c5bba1f
-ms.sourcegitcommit: 8acbf9827ad8f4ef9753f826ecaff58495ca51b0
-translationtype: HT
+ms.openlocfilehash: a860f7c22829da46f0458ea729fa0afd1fe4fb6f
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
-#  <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Access のインストールと使用
+<a id="install-and-use-windows-powershell-web-access" class="xliff"></a>
+
+#  Windows PowerShell Web Access のインストールと使用
 
 最終更新日: 2013 年 11 月 5 日
 
@@ -138,7 +136,9 @@ Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマ�
 
 ------------------------------------------------------------------------
 
-#### <a name="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>Windows PowerShell コマンドレットを使って Windows PowerShell Web Access をインストールするには
+<a id="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets" class="xliff"></a>
+
+#### Windows PowerShell コマンドレットを使って Windows PowerShell Web Access をインストールするには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
@@ -211,7 +211,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 </colgroup>
 <thead>
 <tr class="header">
-<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle"> セキュリティ メモ </span></th>
+<th><span><img src="https://i-technet.sec.s-msft.com/dynimg/IC17938.jpeg" title="System_CAPS_security" alt="System_CAPS_security" id="s-e6f6a65cf14f462597b64ac058dbe1d0-system-media-system-caps-security" /></span><span class="alertTitle">セキュリティ メモ</span></th>
 </tr>
 </thead>
 <tbody>
@@ -225,7 +225,9 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
 -   [正規の証明書を持つ Windows PowerShell Web Access ゲートウェイを Install-PswaWebApplication と IIS Manager を使用して構成するには](#BKMK_gencert)
 
-#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>Install-PswaWebApplication を使って、テスト証明書を使う Windows PowerShell Web Access Web ゲートウェイを構成するには
+<a id="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication" class="xliff"></a>
+
+#### Install-PswaWebApplication を使って、テスト証明書を使う Windows PowerShell Web Access Web ゲートウェイを構成するには
 
 1.  次のいずれかを実行して Windows PowerShell セッションを開きます。
 
@@ -285,7 +287,9 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
     </tbody>
     </table>
 
-#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>正規の証明書を持つ Windows PowerShell Web Access ゲートウェイを Install-PswaWebApplication と IIS Manager を使用して構成するには
+<a id="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager" class="xliff"></a>
+
+#### 正規の証明書を持つ Windows PowerShell Web Access ゲートウェイを Install-PswaWebApplication と IIS Manager を使用して構成するには
 
 1.  次のいずれかを実行して Windows PowerShell セッションを開きます。
 
@@ -352,7 +356,9 @@ Windows PowerShell Web Access をインストールし、ゲートウェイを�
 
 Windows PowerShell Web Access の承認規則とセキュリティの詳細については、「[Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)」を参照してください。
 
-#### <a name="to-add-a-restrictive-authorization-rule"></a>制限的な承認規則を追加するには
+<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
+
+#### 制限的な承認規則を追加するには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
@@ -394,7 +400,9 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 ------------------------------------------------------------------------
 
-#### <a name="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard"></a>役割と機能の追加ウィザードを使って Windows PowerShell Web Access をインストールするには
+<a id="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard" class="xliff"></a>
+
+#### 役割と機能の追加ウィザードを使って Windows PowerShell Web Access をインストールするには
 
 1.  サーバー マネージャーを既に開いている場合は、次の手順に進んでください。 サーバー マネージャーをまだ開いていない場合は、次のいずれかの方法で開きます。
 
@@ -446,7 +454,9 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 -   
 
-#### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>IIS マネージャーを使って既存の Web サイトにゲートウェイを構成するには
+<a id="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website" class="xliff"></a>
+
+#### IIS マネージャーを使って既存の Web サイトにゲートウェイを構成するには
 
 1.  次のいずれかの方法で IIS マネージャー コンソールを開きます。
 
@@ -508,7 +518,9 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
         c:\windows\system32\icacls.exe $authorizationFile
 
-#### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>IIS マネージャーを使用してテスト証明書を持つゲートウェイをルート Web サイトとして構成するには
+<a id="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate" class="xliff"></a>
+
+#### IIS マネージャーを使用してテスト証明書を持つゲートウェイをルート Web サイトとして構成するには
 
 1.  次のいずれかの方法で IIS マネージャー コンソールを開きます。
 
@@ -586,7 +598,9 @@ Windows PowerShell Web Access をインストールし、ゲートウェイを�
 
 Windows PowerShell Web Access の承認規則とセキュリティの詳細については、「[Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)」を参照してください。
 
-#### <a name="to-add-a-restrictive-authorization-rule"></a>制限的な承認規則を追加するには
+<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
+
+#### 制限的な承認規則を追加するには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
@@ -621,7 +635,9 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 運用環境のセキュリティ保護のため、証明機関 (CA) によって署名されている有効な SSL 証明書を常に使用してください。 このセクションの手順では、有効な SSL 証明書を CA から取得して適用する方法について説明します。
 
-### <a name="to-configure-an-ssl-certificate-in-iis-manager"></a>IIS マネージャーで SSL 証明書を構成するには
+<a id="to-configure-an-ssl-certificate-in-iis-manager" class="xliff"></a>
+
+### IIS マネージャーで SSL 証明書を構成するには
 
 1.  IIS マネージャーのツリー ウィンドウで、Windows PowerShell Web Access がインストールされているサーバーを選択します。
 

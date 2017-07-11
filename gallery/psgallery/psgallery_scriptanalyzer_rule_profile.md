@@ -1,19 +1,18 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,コマンドレット,ギャラリー"
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
 title: psgallery_scriptanalyzer_rule_profile
-ms.technology: powershell
-ms.openlocfilehash: 3274b66203044c0ed9fc1135cea7472428eb753e
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.openlocfilehash: b178f198c9643fb39a6499d7e957cfd0d848c52d
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="scriptanazlyer-rule-profile-for-gallery"></a>ギャラリーの ScriptAnazlyer 規則プロファイル
+<a id="scriptanazlyer-rule-profile-for-gallery" class="xliff"></a>
+
+# ギャラリーの ScriptAnazlyer 規則プロファイル
 PowerShell ギャラリーに公開されるアイテムの品質を確保するために、[PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) 規則を実行し、送信されたスクリプトに違反がないか確認します。
 
 ScriptAnalyzer [GitHub ページ](https://github.com/PowerShell/PSScriptAnalyzer/blob/development/Engine/Settings/PSGallery.psd1)で実行されているルールの一覧を参照できます。

@@ -1,21 +1,24 @@
 ---
-title: "MSFT_DSCLocalConfigurationManager クラスの PerformRequiredConfigurationChecks メソッド"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: f9eb975845f6ccabcac80e2591fd987f80f81331
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "MSFT_DSCLocalConfigurationManager クラスの PerformRequiredConfigurationChecks メソッド"
+ms.openlocfilehash: 26110b3920104da7343b8d55cf63440c12accbbc
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの PerformRequiredConfigurationChecks メソッド
+<a id="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
+
+# MSFT_DSCLocalConfigurationManager クラスの PerformRequiredConfigurationChecks メソッド
 
 タスク スケジューラを使用して、整合性チェックを開始します。
 
-<a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+構文
 ------
 
 ```mof
@@ -24,7 +27,9 @@ uint32 PerformRequiredConfigurationChecks(
 );
 ```
 
-<a name="parameters"></a>パラメーター
+<a id="parameters" class="xliff"></a>
+
+パラメーター
 ----------
 
 *Flags* \[in\]  
@@ -37,23 +42,31 @@ uint32 PerformRequiredConfigurationChecks(
 |**4** | 構成は、ノード用のメタ構成で指定されたプル サーバーからプルされる必要があります。 値を **5** にするには、常に **1** と組み合わせる必要があります。 |
 |**8** | レポート サーバーにステータスを送信します。 |
 
-## <a name="return-value"></a>戻り値
+<a id="return-value" class="xliff"></a>
+
+## 戻り値
 ------------
 
 成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
 
-## <a name="remarks"></a>コメント
+<a id="remarks" class="xliff"></a>
+
+## コメント
 
 これは静的メソッドです。
 
-## <a name="requirements"></a>要件
+<a id="requirements" class="xliff"></a>
+
+## 要件
 ------------
 >**MOF:** DscCore.mof
 
 >**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-## <a name="see-also"></a>関連項目
+<a id="see-also" class="xliff"></a>
+
+## 関連項目
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

@@ -1,23 +1,26 @@
 ---
+ms.date: 2017-06-12
+author: eslesar
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "DSC の PackageManagement リソース"
-ms.date: 
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
-author: brywang-msft
-manager: kriscv
-ms.prod: powershell
-ms.openlocfilehash: 33775be230a4e92e22784d991338510510f69889
-ms.sourcegitcommit: 89e7ae30faff5f96641fc72764bdc76e0e257bc2
-translationtype: HT
+ms.openlocfilehash: a984fbf5db561a696d89b60dde8b92096c6e4924
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-packagemanagement-resource"></a>DSC の PackageManagement リソース
+<a id="dsc-packagemanagement-resource" class="xliff"></a>
+
+# DSC の PackageManagement リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) の **PackageManagement** リソースは、ターゲット ノードで Package Management パッケージをインストールまたはアンインストールするメカニズムを備えています。 このリソースには **PackageManagement** モジュールが必要です。これは、http://PowerShellGallery.com から入手できます。
 
-## <a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+## 構文
 
 ```
 PackageManagement [string] #ResourceName
@@ -34,7 +37,9 @@ PackageManagement [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+<a id="properties" class="xliff"></a>
+
+## プロパティ
 |  プロパティ  |  説明   | 
 |---|---| 
 | 名前| インストールまたはアンインストールするパッケージの名前を指定します。| 
@@ -47,14 +52,18 @@ PackageManagement [string] #ResourceName
 | ProviderName| パッケージの検索先となるパッケージ プロバイダー名を指定します。 Get-PackageProvider コマンドレットを実行して、パッケージ プロバイダー名を取得できます。| 
 | AdditionalParameters| ハッシュテーブルとして渡されるプロバイダー固有のパラメーター。 たとえば、NuGet プロバイダーでは DestinationPath のような追加のパラメーターを渡すことができます。| 
 
-## <a name="additional-parameters"></a>追加のパラメーター
+<a id="additional-parameters" class="xliff"></a>
+
+## 追加のパラメーター
 次の表は、AdditionalParameters プロパティのオプションを示しています。
 |  パラメーター  | 説明   | 
 |---|---|
 | DestinationPath| 組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージをインストールするファイルの場所を指定します。|
 | InstallationPolicy| 組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージのソースを信頼するかどうかを決定します。 "Untrusted" または "Trusted" のどちらかです。|
 
-## <a name="example"></a>例
+<a id="example" class="xliff"></a>
+
+## 例
 
 この例では、**PackageManagement** DSC リソースを使用して、**JQuery** NuGet パッケージおよび **GistProvider** PowerShell モジュールをインストールします。 この例では、最初に必要なパッケージのソースが利用できることを確認し、次に **JQuery** および **GistProvider** のパッケージ (それぞれ NuGet と PowerShell) の予期される状態を定義しています。
 
@@ -97,3 +106,4 @@ Configuration PackageTest
     }
 }
 ```
+

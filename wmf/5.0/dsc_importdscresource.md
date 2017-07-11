@@ -1,4 +1,17 @@
-# <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>-ModuleVersion パラメーターをサポートする Import-DscResource キーワード
+---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
+ms.openlocfilehash: b839b476bb4ef7f8d73b158d61f0e8cbc1265e60
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
+---
+<a id="import-dscresource-keyword-supports--moduleversion-parameter" class="xliff"></a>
+
+# -ModuleVersion パラメーターをサポートする Import-DscResource キーワード
 
 DSC 構成を作成するときに使用できる、`Import-DscResource` dynamic キーワードに新しいパラメーターを追加しました。 構成の作成者は、どのモジュール バージョンから DSC リソースを読み込むかを正確に指定できます。 キーワードの新しい構文は次の通りです:
 

@@ -1,17 +1,19 @@
 ---
-title: "DSC GroupSet リソース"
-ms.date: 2016-05-16
-keywords: "powershell、DSC、ビルトイン、リソース"
-description: "ターゲット ノード上のローカル グループを管理するためのメカニズムを備えています。"
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 6e5ea98febfe7541f35a84c37df73df580654340
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+description: "ターゲット ノード上のローカル グループを管理するためのメカニズムを備えています。"
+title: "DSC GroupSet リソース"
+ms.openlocfilehash: 0907a968bfc660adc873c28e8be6572d1d5cb993
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-groupset-resource"></a>DSC GroupSet リソース
+<a id="dsc-groupset-resource" class="xliff"></a>
+
+# DSC GroupSet リソース
 
 > 適用先: Windows PowerShell 5.0
 
@@ -19,7 +21,9 @@ PowerShell Desired State Configuration (DSC) の **GroupSet** リソースは、
 
 このリソースは、複数のグループに対して同じメンバー一覧の追加/削除を行うとき、複数のグループを削除するとき、同じメンバー一覧の複数のグループを追加するときに使用します。
 
-##<a name="syntax"></a>構文##
+<a id="syntax" class="xliff"></a>
+
+##Syntax##
 ```
 Group [string] #ResourceName
 {
@@ -32,7 +36,9 @@ Group [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+<a id="properties" class="xliff"></a>
+
+## プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -44,7 +50,9 @@ Group [string] #ResourceName
 | MembersToInclude| このプロパティは、グループの既存のメンバーシップにメンバーを追加するために使用します。 このプロパティの値は、*Domain*\\*UserName* 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**Members** プロパティは使用しないでください。 併用した場合、エラーが発生します。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は DependsOn = "[ResourceType]ResourceName" になります。| 
 
-## <a name="example-1"></a>例 1
+<a id="example-1" class="xliff"></a>
+
+## 例 1
 
 次に、"myGroup" と "myOtherGroup" という 2 つのグループが存在することを保証する例を示します。 
 

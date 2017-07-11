@@ -1,21 +1,24 @@
 ---
-title: "Linux 用 DSC の nxScript リソース"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 4c575bbf0e0553e19e56bcc6edd605e36586cb94
-ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "Linux 用 DSC の nxScript リソース"
+ms.openlocfilehash: 381d8d214654641a34eeebcb54a81a25d61ee644
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
-# <a name="dsc-for-linux-nxscript-resource"></a>Linux 用 DSC の nxScript リソース
+<a id="dsc-for-linux-nxscript-resource" class="xliff"></a>
+
+# Linux 用 DSC の nxScript リソース
 
 PowerShell Desired State Configuration (DSC) の **nxScript** リソースは、Linux ノード上で Linux スクリプトを実行するためのメカニズムを備えています。
 
-## <a name="syntax"></a>構文
+<a id="syntax" class="xliff"></a>
+
+## 構文
 
 ```
 nxScript <string> #ResourceName
@@ -30,7 +33,9 @@ nxScript <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+<a id="properties" class="xliff"></a>
+
+## プロパティ
 
 |  プロパティ |  説明 | 
 |---|---|
@@ -41,7 +46,9 @@ nxScript <string> #ResourceName
 | グループ| スクリプトを実行するグループ。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 
-## <a name="example"></a>例
+<a id="example" class="xliff"></a>
+
+## 例
 
 次の例では、追加の構成管理を実行するための **nxScript** リソースの使用を示します。
 
