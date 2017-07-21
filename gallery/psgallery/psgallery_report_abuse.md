@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="report-abuse" class="xliff"></a>
+# <a name="report-abuse"></a><span data-ttu-id="0bedc-103">不正報告</span><span class="sxs-lookup"><span data-stu-id="0bedc-103">Report Abuse</span></span>
 
-# 不正報告
-
-以上の違反項目に該当するアイテムを見つけた場合、アイテム詳細ページの **Report Abuse** (不正報告) リンクをクリックし、報告してください。
+<span data-ttu-id="0bedc-104">以上の違反項目に該当するアイテムを見つけた場合、アイテム詳細ページの **Report Abuse** (不正報告) リンクをクリックし、報告してください。</span><span class="sxs-lookup"><span data-stu-id="0bedc-104">If you find a item that is in violation of any of these items, click the **Report Abuse** link on the item details page and submit a report.</span></span>
 

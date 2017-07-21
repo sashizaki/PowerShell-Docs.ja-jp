@@ -10,34 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="set-psrepository" class="xliff"></a>
+# <a name="set-psrepository"></a><span data-ttu-id="98e1b-103">Set-PSRepository</span><span class="sxs-lookup"><span data-stu-id="98e1b-103">Set-PSRepository</span></span>
 
-# Set-PSRepository
+<span data-ttu-id="98e1b-104">Set-PSRepository は登録されたリポジトリの値を設定します。</span><span class="sxs-lookup"><span data-stu-id="98e1b-104">Set-PSRepository sets values for a registered repository.</span></span>
 
-Set-PSRepository は登録されたリポジトリの値を設定します。
+## <a name="description"></a><span data-ttu-id="98e1b-105">説明</span><span class="sxs-lookup"><span data-stu-id="98e1b-105">Description</span></span>
 
-<a id="description" class="xliff"></a>
+<span data-ttu-id="98e1b-106">Set-PSRepository コマンドレットは登録されたモジュール リポジトリの値を設定します。</span><span class="sxs-lookup"><span data-stu-id="98e1b-106">The Set-PSRepository cmdlet sets values for a registered module repository.</span></span>
 
-## 説明
-
-Set-PSRepository コマンドレットは登録されたモジュール リポジトリの値を設定します。
-
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a><span data-ttu-id="98e1b-107">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="98e1b-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Set-PSRepository -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="98e1b-108">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="98e1b-108">Cmdlet online help reference</span></span>
 
-## コマンドレット オンライン ヘルプ リファレンス
+[<span data-ttu-id="98e1b-109">Set-PSRepository</span><span class="sxs-lookup"><span data-stu-id="98e1b-109">Set-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517128)
 
-[Set-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517128)
-
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a><span data-ttu-id="98e1b-110">コマンド例</span><span class="sxs-lookup"><span data-stu-id="98e1b-110">Example commands</span></span>
 
 ```powershell
 PS C:\> Register-PSRepository -Name myRepository -SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" -InstallationPolicy Trusted
@@ -56,11 +46,9 @@ myRepository              Untrusted            https://www.myget.org/F/powershel
 ```
 
 
-<a id="set-psrepository-cmdlet-with-script-sharing-support" class="xliff"></a>
+### <a name="set-psrepository-cmdlet-with-script-sharing-support"></a><span data-ttu-id="98e1b-111">スクリプト共有がサポートされている Set-PSRepository コマンドレット</span><span class="sxs-lookup"><span data-stu-id="98e1b-111">Set-PSRepository cmdlet with script sharing support</span></span>
 
-### スクリプト共有がサポートされている Set-PSRepository コマンドレット
-
-**ScriptSourceLocation** および **ScriptPublishLocation** を PSRepository に追加するには、Set-PSRepository コマンドレットを使用します。
+<span data-ttu-id="98e1b-112">**ScriptSourceLocation** および **ScriptPublishLocation** を PSRepository に追加するには、Set-PSRepository コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="98e1b-112">Use Set-PSRepository cmdlets to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
 ```powershell
 # Add script sharing locations to an existing PSRepository using Set-PSRepository object.
 Set-PSRepository -Name MyGallery `

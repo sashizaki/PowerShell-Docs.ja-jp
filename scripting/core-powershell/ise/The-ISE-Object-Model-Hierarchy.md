@@ -9,205 +9,205 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="the-ise-object-model-hierarchy"></a>ISE オブジェクト モデルの階層
-  このトピックでは、Windows PowerShell Integrated Scripting Environment (ISE) の一部であるオブジェクトの階層について説明します。 Windows PowerShell ISE は、Windows PowerShell 3.0 と Windows PowerShell 4.0 に付属しています。 オブジェクトをクリックすると、そのオブジェクトを定義するクラスのリファレンス ドキュメントに移動します。
+# <a name="the-ise-object-model-hierarchy"></a><span data-ttu-id="2aba3-103">ISE オブジェクト モデルの階層</span><span class="sxs-lookup"><span data-stu-id="2aba3-103">The ISE Object Model Hierarchy</span></span>
+  <span data-ttu-id="2aba3-104">このトピックでは、Windows PowerShell Integrated Scripting Environment (ISE) の一部であるオブジェクトの階層について説明します。</span><span class="sxs-lookup"><span data-stu-id="2aba3-104">This topic shows the hierarchy of objects that are part of Windows PowerShell Integrated Scripting Environment (ISE).</span></span> <span data-ttu-id="2aba3-105">Windows PowerShell ISE は、Windows PowerShell 3.0 と Windows PowerShell 4.0 に付属しています。</span><span class="sxs-lookup"><span data-stu-id="2aba3-105">Windows PowerShell ISE is included in Windows PowerShell 3.0 and in Windows PowerShell 4.0.</span></span> <span data-ttu-id="2aba3-106">オブジェクトをクリックすると、そのオブジェクトを定義するクラスのリファレンス ドキュメントに移動します。</span><span class="sxs-lookup"><span data-stu-id="2aba3-106">Click an object to take you to the reference documentation for the class that defines the object.</span></span>
 
-##  <a name="psISE"></a> **$psISE Object**
- **$psISE** オブジェクトは、Windows PowerShell ISE オブジェクト階層の[ルート オブジェクト](The-ObjectModelRoot-Object.md)です。 最上位のこのオブジェクトでは、スクリプト作成に次のオブジェクトを使用できます。
+##  <span data-ttu-id="2aba3-107"><a name="psISE"></a> **$psISE Object**</span><span class="sxs-lookup"><span data-stu-id="2aba3-107"><a name="psISE"></a> **$psISE Object**</span></span>
+ <span data-ttu-id="2aba3-108">**$psISE** オブジェクトは、Windows PowerShell ISE オブジェクト階層の[ルート オブジェクト](The-ObjectModelRoot-Object.md)です。</span><span class="sxs-lookup"><span data-stu-id="2aba3-108">The **$psISE** object is the [root object](The-ObjectModelRoot-Object.md) of the Windows PowerShell ISE object hierarchy.</span></span> <span data-ttu-id="2aba3-109">最上位のこのオブジェクトでは、スクリプト作成に次のオブジェクトを使用できます。</span><span class="sxs-lookup"><span data-stu-id="2aba3-109">Located at the top level, it makes the following objects available for scripting:</span></span>
 
--   **[$psISE.CurrentFile](#currentfile)**
+-   <span data-ttu-id="2aba3-110">**[$psISE.CurrentFile](#currentfile)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-110">**[$psISE.CurrentFile](#currentfile)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab](#currentpowershelltab)**
+-   <span data-ttu-id="2aba3-111">**[$psISE.CurrentPowerShellTab](#currentpowershelltab)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-111">**[$psISE.CurrentPowerShellTab](#currentpowershelltab)**</span></span>
 
--   **[$psISE.CurrentVisibleHorizontalTool](#CurrentVisibleHorizontalTool)**
+-   <span data-ttu-id="2aba3-112">**[$psISE.CurrentVisibleHorizontalTool](#CurrentVisibleHorizontalTool)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-112">**[$psISE.CurrentVisibleHorizontalTool](#CurrentVisibleHorizontalTool)**</span></span>
 
--   **[$psISE.CurrentVisibleVerticalTool](#CurrentVisibleVerticalTool)**
+-   <span data-ttu-id="2aba3-113">**[$psISE.CurrentVisibleVerticalTool](#CurrentVisibleVerticalTool)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-113">**[$psISE.CurrentVisibleVerticalTool](#CurrentVisibleVerticalTool)**</span></span>
 
--   **[$psISE.Options](#options)**
+-   <span data-ttu-id="2aba3-114">**[$psISE.Options](#options)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-114">**[$psISE.Options](#options)**</span></span>
 
--   **[$psISE.PowerShellTabs](#powershelltabs)**
+-   <span data-ttu-id="2aba3-115">**[$psISE.PowerShellTabs](#powershelltabs)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-115">**[$psISE.PowerShellTabs](#powershelltabs)**</span></span>
 
-##  <a name="CurrentFile"></a> **[$psISE.CurrentFile](The-ISEFile-Object.md)**
- **$psISE.CurrentFile** オブジェクトは [ISEFile](The-ISEFile-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。
+##  <span data-ttu-id="2aba3-116"><a name="CurrentFile"></a> **[$psISE.CurrentFile](The-ISEFile-Object.md)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-116"><a name="CurrentFile"></a> **[$psISE.CurrentFile](The-ISEFile-Object.md)**</span></span>
+ <span data-ttu-id="2aba3-117">**$psISE.CurrentFile** オブジェクトは [ISEFile](The-ISEFile-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。</span><span class="sxs-lookup"><span data-stu-id="2aba3-117">The **$psISE.CurrentFile** object is an instance of the [ISEFile](The-ISEFile-Object.md) class and makes the following objects available for scripting:</span></span>
 
--   **[$psISE.CurrentFile.DisplayName](The-ISEFile-Object.md#Displayname)**
+-   <span data-ttu-id="2aba3-118">**[$psISE.CurrentFile.DisplayName](The-ISEFile-Object.md#Displayname)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-118">**[$psISE.CurrentFile.DisplayName](The-ISEFile-Object.md#Displayname)**</span></span>
 
--   **[$psISE.CurrentFile.Editor](The-ISEEditor-Object.md)** このオブジェクトは [ISEEditor](The-ISEEditor-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。
+-   <span data-ttu-id="2aba3-119">**[$psISE.CurrentFile.Editor](The-ISEEditor-Object.md)** このオブジェクトは [ISEEditor](The-ISEEditor-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。</span><span class="sxs-lookup"><span data-stu-id="2aba3-119">**[$psISE.CurrentFile.Editor](The-ISEEditor-Object.md)**  This object is an instance of the [ISEEditor](The-ISEEditor-Object.md) class and makes the following objects available for scripting:</span></span>
 
-    -   **[$psISE.CurrentFile.Editor.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**
+    -   <span data-ttu-id="2aba3-120">**[$psISE.CurrentFile.Editor.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-120">**[$psISE.CurrentFile.Editor.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**</span></span>
 
-    -   **[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**
+    -   <span data-ttu-id="2aba3-121">**[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-121">**[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**</span></span>
 
-    -   **[CaretLine](The-ISEEditor-Object.md#CaretLine)**
+    -   <span data-ttu-id="2aba3-122">**[CaretLine](The-ISEEditor-Object.md#CaretLine)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-122">**[CaretLine](The-ISEEditor-Object.md#CaretLine)**</span></span>
 
-    -   **[$psISE.CurrentFile.Editor.CaretLineText](The-ISEEditor-Object.md#CaretLineText)**
+    -   <span data-ttu-id="2aba3-123">**[$psISE.CurrentFile.Editor.CaretLineText](The-ISEEditor-Object.md#CaretLineText)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-123">**[$psISE.CurrentFile.Editor.CaretLineText](The-ISEEditor-Object.md#CaretLineText)**</span></span>
 
-    -   **[LineCount](The-ISEEditor-Object.md#LineCount)**
+    -   <span data-ttu-id="2aba3-124">**[LineCount](The-ISEEditor-Object.md#LineCount)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-124">**[LineCount](The-ISEEditor-Object.md#LineCount)**</span></span>
 
-    -   **[SelectedText](The-ISEEditor-Object.md#SelectedText)**
+    -   <span data-ttu-id="2aba3-125">**[SelectedText](The-ISEEditor-Object.md#SelectedText)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-125">**[SelectedText](The-ISEEditor-Object.md#SelectedText)**</span></span>
 
-    -   **[Text](The-ISEEditor-Object.md#Text)**
+    -   <span data-ttu-id="2aba3-126">**[Text](The-ISEEditor-Object.md#Text)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-126">**[Text](The-ISEEditor-Object.md#Text)**</span></span>
 
--   **[Encoding](The-ISEFile-Object.md#Encoding)**
+-   <span data-ttu-id="2aba3-127">**[Encoding](The-ISEFile-Object.md#Encoding)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-127">**[Encoding](The-ISEFile-Object.md#Encoding)**</span></span>
 
--   **[FullPath](The-ISEFile-Object.md#FullPath)**
+-   <span data-ttu-id="2aba3-128">**[FullPath](The-ISEFile-Object.md#FullPath)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-128">**[FullPath](The-ISEFile-Object.md#FullPath)**</span></span>
 
--   **[IsSaved](The-ISEFile-Object.md#IsSaved)**
+-   <span data-ttu-id="2aba3-129">**[IsSaved](The-ISEFile-Object.md#IsSaved)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-129">**[IsSaved](The-ISEFile-Object.md#IsSaved)**</span></span>
 
--   **[IsUntitled](The-ISEFile-Object.md#IsUntitled)**
+-   <span data-ttu-id="2aba3-130">**[IsUntitled](The-ISEFile-Object.md#IsUntitled)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-130">**[IsUntitled](The-ISEFile-Object.md#IsUntitled)**</span></span>
 
-##  <a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**
- **$psISE.CurrentPowerShellTab** オブジェクトは [PowerShellTab](The-PowerShellTab-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。
+##  <span data-ttu-id="2aba3-131"><a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-131"><a name="CurrentPowerShellTab"></a> **[$psISE.CurrentPowerShellTab](The-PowerShellTab-Object.md)**</span></span>
+ <span data-ttu-id="2aba3-132">**$psISE.CurrentPowerShellTab** オブジェクトは [PowerShellTab](The-PowerShellTab-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。</span><span class="sxs-lookup"><span data-stu-id="2aba3-132">The **$psISE.CurrentPowerShellTab** object is an instance of the [PowerShellTab](The-PowerShellTab-Object.md) class and makes the following objects available for scripting:</span></span>
 
--   **[$psISE.CurrentPowerShellTab.AddOnsMenu](The-ISEMenuItem-Object.md)** オブジェクトは [ISEMenuItem](The-ISEMenuItem-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。
+-   <span data-ttu-id="2aba3-133">**[$psISE.CurrentPowerShellTab.AddOnsMenu](The-ISEMenuItem-Object.md)** オブジェクトは [ISEMenuItem](The-ISEMenuItem-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。</span><span class="sxs-lookup"><span data-stu-id="2aba3-133">**[$psISE.CurrentPowerShellTab.AddOnsMenu](The-ISEMenuItem-Object.md)**  This object is an instance of the [ISEMenuItem](The-ISEMenuItem-Object.md) class and makes the following objects available for scripting:</span></span>
 
-    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.Action](The-ISEMenuItem-Object.md#Action)**
+    -   <span data-ttu-id="2aba3-134">**[$psISE.CurrentPowerShellTab.AddOnsMenu.Action](The-ISEMenuItem-Object.md#Action)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-134">**[$psISE.CurrentPowerShellTab.AddOnsMenu.Action](The-ISEMenuItem-Object.md#Action)**</span></span>
 
-    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName](The-ISEMenuItem-Object.md#DisplayName)**
+    -   <span data-ttu-id="2aba3-135">**[$psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName](The-ISEMenuItem-Object.md#DisplayName)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-135">**[$psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName](The-ISEMenuItem-Object.md#DisplayName)**</span></span>
 
-    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.Shortcut](The-ISEMenuItem-Object.md#Shortcut)**
+    -   <span data-ttu-id="2aba3-136">**[$psISE.CurrentPowerShellTab.AddOnsMenu.Shortcut](The-ISEMenuItem-Object.md#Shortcut)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-136">**[$psISE.CurrentPowerShellTab.AddOnsMenu.Shortcut](The-ISEMenuItem-Object.md#Shortcut)**</span></span>
 
-    -   **[$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus](The-ISEMenuItemCollection-Object.md)**
+    -   <span data-ttu-id="2aba3-137">**[$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus](The-ISEMenuItemCollection-Object.md)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-137">**[$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus](The-ISEMenuItemCollection-Object.md)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.CanInvoke](The-PowerShellTab-Object.md#CanExecute)**
+-   <span data-ttu-id="2aba3-138">**[$psISE.CurrentPowerShellTab.CanInvoke](The-PowerShellTab-Object.md#CanExecute)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-138">**[$psISE.CurrentPowerShellTab.CanInvoke](The-PowerShellTab-Object.md#CanExecute)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.ConsolePane](The-ISEEditor-Object.md)** オブジェクトは [ISEEditor](The-ISEEditor-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。
+-   <span data-ttu-id="2aba3-139">**[$psISE.CurrentPowerShellTab.ConsolePane](The-ISEEditor-Object.md)** オブジェクトは [ISEEditor](The-ISEEditor-Object.md) クラスのインスタンスで、スクリプト作成に次のオブジェクトを使用できます。</span><span class="sxs-lookup"><span data-stu-id="2aba3-139">**[$psISE.CurrentPowerShellTab.ConsolePane](The-ISEEditor-Object.md)**  This object is an instance of the [ISEEditor](The-ISEEditor-Object.md) class and makes the following objects available for scripting:</span></span>
 
-    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**
+    -   <span data-ttu-id="2aba3-140">**[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-140">**[$psISE.CurrentPowerShellTab.ConsolePane.CanGoToMatch](The-ISEEditor-Object.md#CanGoToMatch)**</span></span>
 
-    -   **[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**
+    -   <span data-ttu-id="2aba3-141">**[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-141">**[CaretColumn](The-ISEEditor-Object.md#CaretColumn)**</span></span>
 
-    -   **[CaretLine](The-ISEEditor-Object.md#CaretLine)**
+    -   <span data-ttu-id="2aba3-142">**[CaretLine](The-ISEEditor-Object.md#CaretLine)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-142">**[CaretLine](The-ISEEditor-Object.md#CaretLine)**</span></span>
 
-    -   **[$psISE.CurrentPowerShellTab.ConsolePane.CaretLineText](The-ISEEditor-Object.md#CaretLineText)**
+    -   <span data-ttu-id="2aba3-143">**[$psISE.CurrentPowerShellTab.ConsolePane.CaretLineText](The-ISEEditor-Object.md#CaretLineText)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-143">**[$psISE.CurrentPowerShellTab.ConsolePane.CaretLineText](The-ISEEditor-Object.md#CaretLineText)**</span></span>
 
-    -   **[LineCount](The-ISEEditor-Object.md#LineCount)**
+    -   <span data-ttu-id="2aba3-144">**[LineCount](The-ISEEditor-Object.md#LineCount)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-144">**[LineCount](The-ISEEditor-Object.md#LineCount)**</span></span>
 
-    -   **[SelectedText](The-ISEEditor-Object.md#SelectedText)**
+    -   <span data-ttu-id="2aba3-145">**[SelectedText](The-ISEEditor-Object.md#SelectedText)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-145">**[SelectedText](The-ISEEditor-Object.md#SelectedText)**</span></span>
 
-    -   **[Text](The-ISEEditor-Object.md#Text)**
+    -   <span data-ttu-id="2aba3-146">**[Text](The-ISEEditor-Object.md#Text)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-146">**[Text](The-ISEEditor-Object.md#Text)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.DisplayName](The-PowerShellTab-Object.md#Displayname)**
+-   <span data-ttu-id="2aba3-147">**[$psISE.CurrentPowerShellTab.DisplayName](The-PowerShellTab-Object.md#Displayname)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-147">**[$psISE.CurrentPowerShellTab.DisplayName](The-PowerShellTab-Object.md#Displayname)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.ExpandedScript](The-PowerShellTab-Object.md#ExpandedScript)**
+-   <span data-ttu-id="2aba3-148">**[$psISE.CurrentPowerShellTab.ExpandedScript](The-PowerShellTab-Object.md#ExpandedScript)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-148">**[$psISE.CurrentPowerShellTab.ExpandedScript](The-PowerShellTab-Object.md#ExpandedScript)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.Files](The-ISEFileCollection-Object.md)**
+-   <span data-ttu-id="2aba3-149">**[$psISE.CurrentPowerShellTab.Files](The-ISEFileCollection-Object.md)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-149">**[$psISE.CurrentPowerShellTab.Files](The-ISEFileCollection-Object.md)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
+-   <span data-ttu-id="2aba3-150">**[$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-150">**[$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened](The-PowerShellTab-Object.md#HorizontalAddOnToolsPaneOpened)**
+-   <span data-ttu-id="2aba3-151">**[$psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened](The-PowerShellTab-Object.md#HorizontalAddOnToolsPaneOpened)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-151">**[$psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened](The-PowerShellTab-Object.md#HorizontalAddOnToolsPaneOpened)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.Prompt](The-PowerShellTab-Object.md#Prompt)**
+-   <span data-ttu-id="2aba3-152">**[$psISE.CurrentPowerShellTab.Prompt](The-PowerShellTab-Object.md#Prompt)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-152">**[$psISE.CurrentPowerShellTab.Prompt](The-PowerShellTab-Object.md#Prompt)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.ShowCommands](The-PowerShellTab-Object.md#ShowCommands)**
+-   <span data-ttu-id="2aba3-153">**[$psISE.CurrentPowerShellTab.ShowCommands](The-PowerShellTab-Object.md#ShowCommands)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-153">**[$psISE.CurrentPowerShellTab.ShowCommands](The-PowerShellTab-Object.md#ShowCommands)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.Snippets](The-ISESnippetCollection-Object.md)**
+-   <span data-ttu-id="2aba3-154">**[$psISE.CurrentPowerShellTab.Snippets](The-ISESnippetCollection-Object.md)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-154">**[$psISE.CurrentPowerShellTab.Snippets](The-ISESnippetCollection-Object.md)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.StatusText](The-PowerShellTab-Object.md#StatusText)**
+-   <span data-ttu-id="2aba3-155">**[$psISE.CurrentPowerShellTab.StatusText](The-PowerShellTab-Object.md#StatusText)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-155">**[$psISE.CurrentPowerShellTab.StatusText](The-PowerShellTab-Object.md#StatusText)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
+-   <span data-ttu-id="2aba3-156">**[$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-156">**[$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.VerticalAddOnToolsPaneOpened](The-PowerShellTab-Object.md#VerticalAddOnToolsPaneOpened)**
+-   <span data-ttu-id="2aba3-157">**[$psISE.CurrentPowerShellTab.VerticalAddOnToolsPaneOpened](The-PowerShellTab-Object.md#VerticalAddOnToolsPaneOpened)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-157">**[$psISE.CurrentPowerShellTab.VerticalAddOnToolsPaneOpened](The-PowerShellTab-Object.md#VerticalAddOnToolsPaneOpened)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.VisibleHorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
+-   <span data-ttu-id="2aba3-158">**[$psISE.CurrentPowerShellTab.VisibleHorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-158">**[$psISE.CurrentPowerShellTab.VisibleHorizontalAddOnTools](The-ISEAddOnToolCollection-Object.md)**</span></span>
 
--   **[$psISE.CurrentPowerShellTab.VisibleVerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**
+-   <span data-ttu-id="2aba3-159">**[$psISE.CurrentPowerShellTab.VisibleVerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-159">**[$psISE.CurrentPowerShellTab.VisibleVerticalAddOnTools](The-ISEAddOnToolCollection-Object.md)**</span></span>
 
-##  <a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**
- **$psISE.CurrentVisibleHorizontalTool** オブジェクトは [ISEAddOnTool](The-ISEAddOnTool-Object.md) クラスのインスタンスで、 現在 [Windows PowerShell ISE] ウィンドウの上端にドッキングされているインストール済みのアドオンを表しています。 このオブジェクトでは、スクリプト作成に次のオブジェクトを使用できます。
+##  <span data-ttu-id="2aba3-160"><a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**</span><span class="sxs-lookup"><span data-stu-id="2aba3-160"><a name="CurrentVisibleHorizontalTool"></a> **$psISE.CurrentVisibleHorizontalTool**</span></span>
+ <span data-ttu-id="2aba3-161">**$psISE.CurrentVisibleHorizontalTool** オブジェクトは [ISEAddOnTool](The-ISEAddOnTool-Object.md) クラスのインスタンスで、</span><span class="sxs-lookup"><span data-stu-id="2aba3-161">The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](The-ISEAddOnTool-Object.md) class.</span></span> <span data-ttu-id="2aba3-162">現在 [Windows PowerShell ISE] ウィンドウの上端にドッキングされているインストール済みのアドオンを表しています。</span><span class="sxs-lookup"><span data-stu-id="2aba3-162">It represents the installed add-on tool that is currently docked to the top edge of the Windows PowerShell ISE window.</span></span> <span data-ttu-id="2aba3-163">このオブジェクトでは、スクリプト作成に次のオブジェクトを使用できます。</span><span class="sxs-lookup"><span data-stu-id="2aba3-163">This object makes the following objects available for scripting:</span></span>
 
--   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
+-   <span data-ttu-id="2aba3-164">**[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-164">**[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**</span></span>
 
--   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**
+-   <span data-ttu-id="2aba3-165">**[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-165">**[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**</span></span>
 
--   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
+-   <span data-ttu-id="2aba3-166">**[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-166">**[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**</span></span>
 
-##  <a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**
- **$psISE.CurrentVisibleHorizontalTool** オブジェクトは [ISEAddOnTool](The-ISEAddOnTool-Object.md) クラスのインスタンスで、 現在 [Windows PowerShell ISE] ウィンドウの右端にドッキングされているインストール済みのアドオンを表しています。 このオブジェクトでは、スクリプト作成に次のオブジェクトを使用できます。
+##  <span data-ttu-id="2aba3-167"><a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**</span><span class="sxs-lookup"><span data-stu-id="2aba3-167"><a name="CurrentVisibleVerticalTool"></a> **$psISE.CurrentVisibleVerticalTool**</span></span>
+ <span data-ttu-id="2aba3-168">**$psISE.CurrentVisibleHorizontalTool** オブジェクトは [ISEAddOnTool](The-ISEAddOnTool-Object.md) クラスのインスタンスで、</span><span class="sxs-lookup"><span data-stu-id="2aba3-168">The **$psISE.CurrentVisibleHorizontalTool** object is an instance of the [ISEAddOnTool](The-ISEAddOnTool-Object.md) class.</span></span> <span data-ttu-id="2aba3-169">現在 [Windows PowerShell ISE] ウィンドウの右端にドッキングされているインストール済みのアドオンを表しています。</span><span class="sxs-lookup"><span data-stu-id="2aba3-169">It represents the installed add-on tool that is currently docked to the right-hand edge of the Windows PowerShell ISE window.</span></span> <span data-ttu-id="2aba3-170">このオブジェクトでは、スクリプト作成に次のオブジェクトを使用できます。</span><span class="sxs-lookup"><span data-stu-id="2aba3-170">This object makes the following objects available for scripting:</span></span>
 
--   **[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**
+-   <span data-ttu-id="2aba3-171">**[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-171">**[$psISE.CurrentVisibleHorizontalTool.Control](The-ISEAddOnTool-Object.md#Control)**</span></span>
 
--   **[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**
+-   <span data-ttu-id="2aba3-172">**[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-172">**[$psISE.CurrentVisibleHorizontalTool.IsVisible](The-ISEAddOnTool-Object.md#IsVisible)**</span></span>
 
--   **[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**
+-   <span data-ttu-id="2aba3-173">**[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-173">**[$psISE.CurrentVisibleHorizontalTool.Name](The-ISEAddOnTool-Object.md#name)**</span></span>
 
-##  <a name="Options"></a> **$psISE.Options**
- **$psISE.Options** オブジェクトでは、スクリプト作成に次のオブジェクトを使用できます。
+##  <span data-ttu-id="2aba3-174"><a name="Options"></a> **$psISE.Options**</span><span class="sxs-lookup"><span data-stu-id="2aba3-174"><a name="Options"></a> **$psISE.Options**</span></span>
+ <span data-ttu-id="2aba3-175">**$psISE.Options** オブジェクトでは、スクリプト作成に次のオブジェクトを使用できます。</span><span class="sxs-lookup"><span data-stu-id="2aba3-175">The **$psISE.Options** object makes the following objects available for scripting:</span></span>
 
--   **[$psISE.Options.AutoSaveMinuteInterval](The-ISEOptions-Object.md#asmi)**
+-   <span data-ttu-id="2aba3-176">**[$psISE.Options.AutoSaveMinuteInterval](The-ISEOptions-Object.md#asmi)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-176">**[$psISE.Options.AutoSaveMinuteInterval](The-ISEOptions-Object.md#asmi)**</span></span>
 
--   **[$psISE.Options.ConsolePaneBackgroundColor](The-ISEOptions-Object.md#cpbc)**
+-   <span data-ttu-id="2aba3-177">**[$psISE.Options.ConsolePaneBackgroundColor](The-ISEOptions-Object.md#cpbc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-177">**[$psISE.Options.ConsolePaneBackgroundColor](The-ISEOptions-Object.md#cpbc)**</span></span>
 
--   **[$psISE.Options.ConsolePaneTextForegroundColor](The-ISEOptions-Object.md#conpfc)**
+-   <span data-ttu-id="2aba3-178">**[$psISE.Options.ConsolePaneTextForegroundColor](The-ISEOptions-Object.md#conpfc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-178">**[$psISE.Options.ConsolePaneTextForegroundColor](The-ISEOptions-Object.md#conpfc)**</span></span>
 
--   **[$psISE.Options.ConsolePaneTextBackgroundColor](The-ISEOptions-Object.md#conptbc)**
+-   <span data-ttu-id="2aba3-179">**[$psISE.Options.ConsolePaneTextBackgroundColor](The-ISEOptions-Object.md#conptbc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-179">**[$psISE.Options.ConsolePaneTextBackgroundColor](The-ISEOptions-Object.md#conptbc)**</span></span>
 
--   **[$psISE.Options.ConsoleTokenColors](The-ISEOptions-Object.md#contc)**
+-   <span data-ttu-id="2aba3-180">**[$psISE.Options.ConsoleTokenColors](The-ISEOptions-Object.md#contc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-180">**[$psISE.Options.ConsoleTokenColors](The-ISEOptions-Object.md#contc)**</span></span>
 
--   **[$psISE.Options.DebugBackgroundColor](The-ISEOptions-Object.md#dbc)**
+-   <span data-ttu-id="2aba3-181">**[$psISE.Options.DebugBackgroundColor](The-ISEOptions-Object.md#dbc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-181">**[$psISE.Options.DebugBackgroundColor](The-ISEOptions-Object.md#dbc)**</span></span>
 
--   **[$psISE.Options.DebugForegroundColor](The-ISEOptions-Object.md#dfc)**
+-   <span data-ttu-id="2aba3-182">**[$psISE.Options.DebugForegroundColor](The-ISEOptions-Object.md#dfc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-182">**[$psISE.Options.DebugForegroundColor](The-ISEOptions-Object.md#dfc)**</span></span>
 
--   **[$psISE.Options.DefaultOptions](The-ISEOptions-Object.md)**
+-   <span data-ttu-id="2aba3-183">**[$psISE.Options.DefaultOptions](The-ISEOptions-Object.md)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-183">**[$psISE.Options.DefaultOptions](The-ISEOptions-Object.md)**</span></span>
 
--   **[$psISE.Options.ErrorBackgroundColor](The-ISEOptions-Object.md#ebc)**
+-   <span data-ttu-id="2aba3-184">**[$psISE.Options.ErrorBackgroundColor](The-ISEOptions-Object.md#ebc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-184">**[$psISE.Options.ErrorBackgroundColor](The-ISEOptions-Object.md#ebc)**</span></span>
 
--   **[$psISE.Options.ErrorForegroundColor](The-ISEOptions-Object.md#efc)**
+-   <span data-ttu-id="2aba3-185">**[$psISE.Options.ErrorForegroundColor](The-ISEOptions-Object.md#efc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-185">**[$psISE.Options.ErrorForegroundColor](The-ISEOptions-Object.md#efc)**</span></span>
 
--   **[$psISE.Options.FontName](The-ISEOptions-Object.md#fn)**
+-   <span data-ttu-id="2aba3-186">**[$psISE.Options.FontName](The-ISEOptions-Object.md#fn)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-186">**[$psISE.Options.FontName](The-ISEOptions-Object.md#fn)**</span></span>
 
--   **[$psISE.Options.Fontsize](The-ISEOptions-Object.md#fs)**
+-   <span data-ttu-id="2aba3-187">**[$psISE.Options.Fontsize](The-ISEOptions-Object.md#fs)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-187">**[$psISE.Options.Fontsize](The-ISEOptions-Object.md#fs)**</span></span>
 
--   **[$psISE.Options.IntellisenseTimeoutInSeconds](The-ISEOptions-Object.md#itis)**
+-   <span data-ttu-id="2aba3-188">**[$psISE.Options.IntellisenseTimeoutInSeconds](The-ISEOptions-Object.md#itis)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-188">**[$psISE.Options.IntellisenseTimeoutInSeconds](The-ISEOptions-Object.md#itis)**</span></span>
 
--   **[$psISE.Options.MRUCount](The-ISEOptions-Object.md#mc)**
+-   <span data-ttu-id="2aba3-189">**[$psISE.Options.MRUCount](The-ISEOptions-Object.md#mc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-189">**[$psISE.Options.MRUCount](The-ISEOptions-Object.md#mc)**</span></span>
 
--   **[$psISE.Options.ScriptPaneBackgroundColor](The-ISEOptions-Object.md#spbc)**
+-   <span data-ttu-id="2aba3-190">**[$psISE.Options.ScriptPaneBackgroundColor](The-ISEOptions-Object.md#spbc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-190">**[$psISE.Options.ScriptPaneBackgroundColor](The-ISEOptions-Object.md#spbc)**</span></span>
 
--   **[$psISE.Options.ScriptPaneForegroundColor](The-ISEOptions-Object.md#spfc)**
+-   <span data-ttu-id="2aba3-191">**[$psISE.Options.ScriptPaneForegroundColor](The-ISEOptions-Object.md#spfc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-191">**[$psISE.Options.ScriptPaneForegroundColor](The-ISEOptions-Object.md#spfc)**</span></span>
 
--   **[$psISE.Options.SelectedScriptPaneState](The-ISEOptions-Object.md#ssps)**
+-   <span data-ttu-id="2aba3-192">**[$psISE.Options.SelectedScriptPaneState](The-ISEOptions-Object.md#ssps)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-192">**[$psISE.Options.SelectedScriptPaneState](The-ISEOptions-Object.md#ssps)**</span></span>
 
--   **[$psISE.Options.ShowDefaultSnippets](The-ISEOptions-Object.md#sds)**
+-   <span data-ttu-id="2aba3-193">**[$psISE.Options.ShowDefaultSnippets](The-ISEOptions-Object.md#sds)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-193">**[$psISE.Options.ShowDefaultSnippets](The-ISEOptions-Object.md#sds)**</span></span>
 
--   **[$psISE.Options.ShowIntellisenseInConsolePane](The-ISEOptions-Object.md#siicp)**
+-   <span data-ttu-id="2aba3-194">**[$psISE.Options.ShowIntellisenseInConsolePane](The-ISEOptions-Object.md#siicp)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-194">**[$psISE.Options.ShowIntellisenseInConsolePane](The-ISEOptions-Object.md#siicp)**</span></span>
 
--   **[$psISE.Options.ShowIntellisenseInScriptPane](The-ISEOptions-Object.md#siisp)**
+-   <span data-ttu-id="2aba3-195">**[$psISE.Options.ShowIntellisenseInScriptPane](The-ISEOptions-Object.md#siisp)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-195">**[$psISE.Options.ShowIntellisenseInScriptPane](The-ISEOptions-Object.md#siisp)**</span></span>
 
--   **[$psISE.Options.ShowLineNumbers](The-ISEOptions-Object.md#sln)**
+-   <span data-ttu-id="2aba3-196">**[$psISE.Options.ShowLineNumbers](The-ISEOptions-Object.md#sln)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-196">**[$psISE.Options.ShowLineNumbers](The-ISEOptions-Object.md#sln)**</span></span>
 
--   **[$psISE.Options.ShowOutlining](The-ISEOptions-Object.md#so)**
+-   <span data-ttu-id="2aba3-197">**[$psISE.Options.ShowOutlining](The-ISEOptions-Object.md#so)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-197">**[$psISE.Options.ShowOutlining](The-ISEOptions-Object.md#so)**</span></span>
 
--   **[$psISE.Options.ShowToolBar](The-ISEOptions-Object.md#stb)**
+-   <span data-ttu-id="2aba3-198">**[$psISE.Options.ShowToolBar](The-ISEOptions-Object.md#stb)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-198">**[$psISE.Options.ShowToolBar](The-ISEOptions-Object.md#stb)**</span></span>
 
--   **[$psISE.Options.ShowWarningBeforeSavingOnRun](The-ISEOptions-Object.md#swbsor)**
+-   <span data-ttu-id="2aba3-199">**[$psISE.Options.ShowWarningBeforeSavingOnRun](The-ISEOptions-Object.md#swbsor)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-199">**[$psISE.Options.ShowWarningBeforeSavingOnRun](The-ISEOptions-Object.md#swbsor)**</span></span>
 
--   **[$psISE.Options.ShowWarningForDuplicateFiles](The-ISEOptions-Object.md#swfdf)**
+-   <span data-ttu-id="2aba3-200">**[$psISE.Options.ShowWarningForDuplicateFiles](The-ISEOptions-Object.md#swfdf)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-200">**[$psISE.Options.ShowWarningForDuplicateFiles](The-ISEOptions-Object.md#swfdf)**</span></span>
 
--   **[$psISE.Options.TokenColors](The-ISEOptions-Object.md#tc)**
+-   <span data-ttu-id="2aba3-201">**[$psISE.Options.TokenColors](The-ISEOptions-Object.md#tc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-201">**[$psISE.Options.TokenColors](The-ISEOptions-Object.md#tc)**</span></span>
 
--   **[$psISE.Options.UseEnterToSelectConsolePaneIntellisense](The-ISEOptions-Object.md#uetsicpi)**
+-   <span data-ttu-id="2aba3-202">**[$psISE.Options.UseEnterToSelectConsolePaneIntellisense](The-ISEOptions-Object.md#uetsicpi)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-202">**[$psISE.Options.UseEnterToSelectConsolePaneIntellisense](The-ISEOptions-Object.md#uetsicpi)**</span></span>
 
--   **[$psISE.Options.UseEnterToSelectScriptPaneIntellisense](The-ISEOptions-Object.md#uetsispi)**
+-   <span data-ttu-id="2aba3-203">**[$psISE.Options.UseEnterToSelectScriptPaneIntellisense](The-ISEOptions-Object.md#uetsispi)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-203">**[$psISE.Options. UseEnterToSelectScriptPaneIntellisense](The-ISEOptions-Object.md#uetsispi)**</span></span>
 
--   **[$psISE.Options.UseLocalHelp](The-ISEOptions-Object.md#ulh)**
+-   <span data-ttu-id="2aba3-204">**[$psISE.Options.UseLocalHelp](The-ISEOptions-Object.md#ulh)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-204">**[$psISE.Options.UseLocalHelp](The-ISEOptions-Object.md#ulh)**</span></span>
 
--   **[$psISE.Options.VerboseBackgroundColor](The-ISEOptions-Object.md#vbc)**
+-   <span data-ttu-id="2aba3-205">**[$psISE.Options.VerboseBackgroundColor](The-ISEOptions-Object.md#vbc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-205">**[$psISE.Options.VerboseBackgroundColor](The-ISEOptions-Object.md#vbc)**</span></span>
 
--   **[$psISE.Options.VerboseForegroundColor](The-ISEOptions-Object.md#vfc)**
+-   <span data-ttu-id="2aba3-206">**[$psISE.Options.VerboseForegroundColor](The-ISEOptions-Object.md#vfc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-206">**[$psISE.Options.VerboseForegroundColor](The-ISEOptions-Object.md#vfc)**</span></span>
 
--   **[$psISE.Options.WarningBackgroundColor](The-ISEOptions-Object.md#wbc)**
+-   <span data-ttu-id="2aba3-207">**[$psISE.Options.WarningBackgroundColor](The-ISEOptions-Object.md#wbc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-207">**[$psISE.Options.WarningBackgroundColor](The-ISEOptions-Object.md#wbc)**</span></span>
 
--   **[$psISE.Options.WarningForegroundColor](The-ISEOptions-Object.md#wfc)**
+-   <span data-ttu-id="2aba3-208">**[$psISE.Options.WarningForegroundColor](The-ISEOptions-Object.md#wfc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-208">**[$psISE.Options.WarningForegroundColor](The-ISEOptions-Object.md#wfc)**</span></span>
 
--   **[$psISE.Options.XmlTokenColors](The-ISEOptions-Object.md#xtc)**
+-   <span data-ttu-id="2aba3-209">**[$psISE.Options.XmlTokenColors](The-ISEOptions-Object.md#xtc)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-209">**[$psISE.Options.XmlTokenColors](The-ISEOptions-Object.md#xtc)**</span></span>
 
--   **[$psISE.Options.Zoom](The-ISEOptions-Object.md#z)**
+-   <span data-ttu-id="2aba3-210">**[$psISE.Options.Zoom](The-ISEOptions-Object.md#z)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-210">**[$psISE.Options.Zoom](The-ISEOptions-Object.md#z)**</span></span>
 
-##  <a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**
- **$psISE.PowerShellTabs** オブジェクトは [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) クラスのインスタンスです。 これは現在開いているすべての PowerShell タブのコレクションで、ローカル コンピューターまたは接続されているリモート コンピューターで利用可能な Windows PowerShell の実行環境を表しています。 コレクション内の個々のメンバーは [PowerShellTab](The-PowerShellTab-Object.md) クラスのインスタンスです。
+##  <span data-ttu-id="2aba3-211"><a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**</span><span class="sxs-lookup"><span data-stu-id="2aba3-211"><a name="PowerShellTabs"></a> **[$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md)**</span></span>
+ <span data-ttu-id="2aba3-212">**$psISE.PowerShellTabs** オブジェクトは [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) クラスのインスタンスです。</span><span class="sxs-lookup"><span data-stu-id="2aba3-212">The **$psISE.PowerShellTabs** object is an instance of the [PowerShellTabCollection](The-PowerShellTabCollection-Object.md) class.</span></span> <span data-ttu-id="2aba3-213">これは現在開いているすべての PowerShell タブのコレクションで、ローカル コンピューターまたは接続されているリモート コンピューターで利用可能な Windows PowerShell の実行環境を表しています。</span><span class="sxs-lookup"><span data-stu-id="2aba3-213">It is a collection of all the currently open PowerShell tabs that represent the available Windows PowerShell run environments on the local computer or on connected remote computers.</span></span> <span data-ttu-id="2aba3-214">コレクション内の個々のメンバーは [PowerShellTab](The-PowerShellTab-Object.md) クラスのインスタンスです。</span><span class="sxs-lookup"><span data-stu-id="2aba3-214">Each member in the collection is an instance of the [PowerShellTab](The-PowerShellTab-Object.md) class.</span></span>
 
-## <a name="see-also"></a>参照
-- [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md)
+## <a name="see-also"></a><span data-ttu-id="2aba3-215">参照</span><span class="sxs-lookup"><span data-stu-id="2aba3-215">See Also</span></span>
+- [<span data-ttu-id="2aba3-216">Windows PowerShell ISE スクリプト オブジェクト モデル</span><span class="sxs-lookup"><span data-stu-id="2aba3-216">The Windows PowerShell ISE Scripting Object Model</span></span>](The-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [<span data-ttu-id="2aba3-217">Windows PowerShell ISE オブジェクト モデル リファレンス</span><span class="sxs-lookup"><span data-stu-id="2aba3-217">Windows PowerShell ISE Object Model Reference</span></span>](Windows-PowerShell-ISE-Object-Model-Reference.md)
 

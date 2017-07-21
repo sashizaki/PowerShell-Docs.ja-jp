@@ -9,8 +9,6 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="feedback" class="xliff"></a>
-
-# フィードバック
-問題点の報告やフィードバックには、[PowerShell UserVoice のサイト](http://windowsserver.uservoice.com/forums/301869-powershell)をご利用ください。
+# <a name="feedback"></a><span data-ttu-id="5bbf5-102">フィードバック</span><span class="sxs-lookup"><span data-stu-id="5bbf5-102">Feedback</span></span>
+<span data-ttu-id="5bbf5-103">問題点の報告やフィードバックには、[PowerShell UserVoice のサイト](http://windowsserver.uservoice.com/forums/301869-powershell)をご利用ください。</span><span class="sxs-lookup"><span data-stu-id="5bbf5-103">For reporting issues or providing feedback, use the [PowerShell UserVoice site](http://windowsserver.uservoice.com/forums/301869-powershell).</span></span>
 

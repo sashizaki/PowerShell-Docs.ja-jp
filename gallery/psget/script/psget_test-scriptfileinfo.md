@@ -10,35 +10,25 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="test-scriptfileinfo" class="xliff"></a>
+# <a name="test-scriptfileinfo"></a><span data-ttu-id="b29c8-103">Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="b29c8-103">Test-ScriptFileInfo</span></span>
 
-# Test-ScriptFileInfo
+<span data-ttu-id="b29c8-104">スクリプト ファイルのメタデータのコメント ブロックを検証します。</span><span class="sxs-lookup"><span data-stu-id="b29c8-104">Validates the metadata comment block of a script file.</span></span>
 
-スクリプト ファイルのメタデータのコメント ブロックを検証します。
+## <a name="description"></a><span data-ttu-id="b29c8-105">説明</span><span class="sxs-lookup"><span data-stu-id="b29c8-105">Description</span></span>
 
-<a id="description" class="xliff"></a>
+<span data-ttu-id="b29c8-106">Test-ScriptFileInfo コマンドレットは、Publish-Script コマンドレットで発行されるスクリプトの先頭にあるコメント ブロックを検証します。</span><span class="sxs-lookup"><span data-stu-id="b29c8-106">The Test-ScriptFileInfo cmdlet validates the comment block at the beginning of a script that will be published with the Publish-Script cmdlet.</span></span>
+<span data-ttu-id="b29c8-107">メタデータのコメント ブロックにエラーがある場合は、このコマンドレットはエラーの場所またはエラーの修正方法に関する情報を返します。</span><span class="sxs-lookup"><span data-stu-id="b29c8-107">If the metadata comment block has an error, this cmdlet returns information about where the error is located or how to correct it.</span></span>
 
-## 説明
-
-Test-ScriptFileInfo コマンドレットは、Publish-Script コマンドレットで発行されるスクリプトの先頭にあるコメント ブロックを検証します。
-メタデータのコメント ブロックにエラーがある場合は、このコマンドレットはエラーの場所またはエラーの修正方法に関する情報を返します。
-
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a><span data-ttu-id="b29c8-108">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="b29c8-108">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Test-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="b29c8-109">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="b29c8-109">Cmdlet online help reference</span></span>
 
-## コマンドレット オンライン ヘルプ リファレンス
+[<span data-ttu-id="b29c8-110">Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="b29c8-110">Test-ScriptFileInfo</span></span>](http://go.microsoft.com/fwlink/?LinkId=619791)
 
-[Test-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619791)
-
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a><span data-ttu-id="b29c8-111">コマンド例</span><span class="sxs-lookup"><span data-stu-id="b29c8-111">Example commands</span></span>
 ```powershell
 # Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\ScriptSharingDemo\Demo-Script.ps1 -Description "Script file description goes here"

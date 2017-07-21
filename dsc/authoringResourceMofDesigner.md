@@ -10,30 +10,26 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/29/2017
 ---
-<a id="using-the-resource-designer-tool" class="xliff"></a>
+# <a name="using-the-resource-designer-tool"></a><span data-ttu-id="f1310-103">リソース デザイナー ツールの使用</span><span class="sxs-lookup"><span data-stu-id="f1310-103">Using the Resource Designer tool</span></span>
 
-# リソース デザイナー ツールの使用
+> <span data-ttu-id="f1310-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="f1310-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
+<span data-ttu-id="f1310-105">リソース デザイナー ツールは、Windows PowerShell Desired State Configuration (DSC) リソースの作成を簡単にする、**xDscResourceDesigner** モジュールによって公開されている一連のコマンドレットです。</span><span class="sxs-lookup"><span data-stu-id="f1310-105">The Resource Designer tool is a set of cmdlets exposed by the **xDscResourceDesigner** module that make creating Windows PowerShell Desired State Configuration (DSC) resources easier.</span></span> <span data-ttu-id="f1310-106">このリソースのコマンドレットは、MOF スキーマ、スクリプト モジュール、および新しいリソースのディレクトリ構造の作成に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="f1310-106">The cmdlets in this resource help create the MOF schema, the script module, and the directory structure for your new resource.</span></span> <span data-ttu-id="f1310-107">DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f1310-107">For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md).</span></span>
+<span data-ttu-id="f1310-108">このトピックでは、Active Directory ユーザーを管理する DSC リソースを作成します。</span><span class="sxs-lookup"><span data-stu-id="f1310-108">In this topic, we will create a DSC resource that manages Active Directory users.</span></span>
+<span data-ttu-id="f1310-109">[Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) コマンドレットを使用して **xDscResourceDesigner** モジュールをインストールします。</span><span class="sxs-lookup"><span data-stu-id="f1310-109">Use the [Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) cmdlet to install the **xDscResourceDesigner** module.</span></span>
 
-リソース デザイナー ツールは、Windows PowerShell Desired State Configuration (DSC) リソースの作成を簡単にする、**xDscResourceDesigner** モジュールによって公開されている一連のコマンドレットです。 このリソースのコマンドレットは、MOF スキーマ、スクリプト モジュール、および新しいリソースのディレクトリ構造の作成に役立ちます。 DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」を参照してください。
-このトピックでは、Active Directory ユーザーを管理する DSC リソースを作成します。
-[Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) コマンドレットを使用して **xDscResourceDesigner** モジュールをインストールします。
+><span data-ttu-id="f1310-110">**注**: **Install-Module** は、PowerShell 5.0 に含まれている **PowerShellGet** モジュールに含まれています。</span><span class="sxs-lookup"><span data-stu-id="f1310-110">**Note**: **Install-Module** is included in the **PowerShellGet** module, which is included in PowerShell 5.0.</span></span> <span data-ttu-id="f1310-111">「[PackageManagement PowerShell Modules Preview (PackageManagement PowerShell モジュールのプレビュー)](https://www.microsoft.com/en-us/download/details.aspx?id=49186)」で PowerShell 3.0 と 4.0 の **PowerShellGet** モジュールをダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="f1310-111">You can download the **PowerShellGet** module for PowerShell 3.0 and 4.0 at [PackageManagement PowerShell Modules Preview](https://www.microsoft.com/en-us/download/details.aspx?id=49186).</span></span>
 
->**注**: **Install-Module** は、PowerShell 5.0 に含まれている **PowerShellGet** モジュールに含まれています。 「[PackageManagement PowerShell Modules Preview (PackageManagement PowerShell モジュールのプレビュー)](https://www.microsoft.com/en-us/download/details.aspx?id=49186)」で PowerShell 3.0 と 4.0 の **PowerShellGet** モジュールをダウンロードできます。
-
-<a id="creating-resource-properties" class="xliff"></a>
-
-## リソース プロパティの作成
-まず、リソースで公開するプロパティを決定する必要があります。 この例では、次のプロパティを持つ Active Directory ユーザーを定義します。
+## <a name="creating-resource-properties"></a><span data-ttu-id="f1310-112">リソース プロパティの作成</span><span class="sxs-lookup"><span data-stu-id="f1310-112">Creating resource properties</span></span>
+<span data-ttu-id="f1310-113">まず、リソースで公開するプロパティを決定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f1310-113">The first thing we need to do is decide on properties that the resource will expose.</span></span> <span data-ttu-id="f1310-114">この例では、次のプロパティを持つ Active Directory ユーザーを定義します。</span><span class="sxs-lookup"><span data-stu-id="f1310-114">For this example, we will define an Active Directory user with the following properties.</span></span>
  
-パラメーター名  説明
-* **UserName**: ユーザーを一意に識別するキー プロパティです。
-* **Ensure**: ユーザー アカウントが存在するかしないかを指定します。 このパラメーターに使用できる値は 2 つのみです。
-* **DomainCredential**: ユーザーのドメイン パスワードです。
-* **Password**: 必要に応じて構成でユーザー パスワードを変更できるようにするために必要なユーザーのパスワードです。
+<span data-ttu-id="f1310-115">パラメーター名  説明</span><span class="sxs-lookup"><span data-stu-id="f1310-115">Parameter name  Description</span></span>
+* <span data-ttu-id="f1310-116">**UserName**: ユーザーを一意に識別するキー プロパティです。</span><span class="sxs-lookup"><span data-stu-id="f1310-116">**UserName**: Key property that uniquely identifies a user.</span></span>
+* <span data-ttu-id="f1310-117">**Ensure**: ユーザー アカウントが存在するかしないかを指定します。</span><span class="sxs-lookup"><span data-stu-id="f1310-117">**Ensure**: Specifies whether the user account should be Present or Absent.</span></span> <span data-ttu-id="f1310-118">このパラメーターに使用できる値は 2 つのみです。</span><span class="sxs-lookup"><span data-stu-id="f1310-118">This parameter will have only two possible values.</span></span>
+* <span data-ttu-id="f1310-119">**DomainCredential**: ユーザーのドメイン パスワードです。</span><span class="sxs-lookup"><span data-stu-id="f1310-119">**DomainCredential**: The domain password for the user.</span></span>
+* <span data-ttu-id="f1310-120">**Password**: 必要に応じて構成でユーザー パスワードを変更できるようにするために必要なユーザーのパスワードです。</span><span class="sxs-lookup"><span data-stu-id="f1310-120">**Password**: The desired password for the user to allow a configuration to change the user password if necessary.</span></span>
 
-プロパティを作成するには、**New-xDscResourceProperty** コマンドレットを使用します。 次の PowerShell コマンドでは、上記で説明したプロパティを作成します。
+<span data-ttu-id="f1310-121">プロパティを作成するには、**New-xDscResourceProperty** コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="f1310-121">To create the properties, we use the **New-xDscResourceProperty** cmdlet.</span></span> <span data-ttu-id="f1310-122">次の PowerShell コマンドでは、上記で説明したプロパティを作成します。</span><span class="sxs-lookup"><span data-stu-id="f1310-122">The following PowerShell commands create the properties described above.</span></span>
 
 ```powershell
 $UserName = New-xDscResourceProperty –Name UserName -Type String -Attribute Key
@@ -42,19 +38,17 @@ $DomainCredential = New-xDscResourceProperty –Name DomainCredential-Type PSCre
 $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
 
-<a id="create-the-resource" class="xliff"></a>
+## <a name="create-the-resource"></a><span data-ttu-id="f1310-123">リソースの作成</span><span class="sxs-lookup"><span data-stu-id="f1310-123">Create the resource</span></span>
 
-## リソースの作成
-
-リソース プロパティが作成されたので、**New-xDscResource** コマンドレットを呼び出してリソースを作成できます。 **New-xDscResource** コマンドレットは、パラメーターとしてプロパティのリストを受け取ります。 モジュールを作成するパス、新しいリソースの名前、そのリソースが含まれているモジュールの名前も受け取ります。 次の PowerShell コマンドでは、リソースを作成します。
+<span data-ttu-id="f1310-124">リソース プロパティが作成されたので、**New-xDscResource** コマンドレットを呼び出してリソースを作成できます。</span><span class="sxs-lookup"><span data-stu-id="f1310-124">Now that the resource properties have been created, we can call the **New-xDscResource** cmdlet to create the resource.</span></span> <span data-ttu-id="f1310-125">**New-xDscResource** コマンドレットは、パラメーターとしてプロパティのリストを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="f1310-125">The **New-xDscResource** cmdlet takes the list of properties as parameters.</span></span> <span data-ttu-id="f1310-126">モジュールを作成するパス、新しいリソースの名前、そのリソースが含まれているモジュールの名前も受け取ります。</span><span class="sxs-lookup"><span data-stu-id="f1310-126">It also takes the path where the module should be created, the name of the new resource, and the name of the module in which it is contained.</span></span> <span data-ttu-id="f1310-127">次の PowerShell コマンドでは、リソースを作成します。</span><span class="sxs-lookup"><span data-stu-id="f1310-127">The following PowerShell command creates the resource.</span></span>
 
 ```powershell
 New-xDscResource –Name Demo_ADUser –Property $UserName, $Ensure, $DomainCredential, $Password –Path ‘C:\Program Files\WindowsPowerShell\Modules’ –ModuleName Demo_DSCModule
 ```
 
-**New-xDscResource** コマンドレットは、MOF スキーマ、スケルトン リソース スクリプト、新しいリソースに必要なディレクトリ構造、および新しいリソースを公開するモジュールのマニフェストを作成します。
+<span data-ttu-id="f1310-128">**New-xDscResource** コマンドレットは、MOF スキーマ、スケルトン リソース スクリプト、新しいリソースに必要なディレクトリ構造、および新しいリソースを公開するモジュールのマニフェストを作成します。</span><span class="sxs-lookup"><span data-stu-id="f1310-128">The **New-xDscResource** cmdlet creates the MOF schema, a skeleton resource script, the required directory structure for your new resource, and a manifest for the module that exposes the new resource.</span></span>
 
-MOF スキーマ ファイルは、**C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.schema.mof** にあり、その内容は次のとおりです。
+<span data-ttu-id="f1310-129">MOF スキーマ ファイルは、**C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.schema.mof** にあり、その内容は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="f1310-129">The MOF schema file is at **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.schema.mof**, and its contents are as follows.</span></span>
 
 ```
 [ClassVersion("1.0.0.0"), FriendlyName("Demo_ADUser")]
@@ -67,7 +61,7 @@ class Demo_ADUser : OMI_BaseResource
 };
 ```
 
-リソース スクリプトは **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1** にあります。 これには、自分自身を追加する必要があるリソースを実装する実際のロジックは含まれません。 スケルトン スクリプトの内容は次のとおりです。
+<span data-ttu-id="f1310-130">リソース スクリプトは **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1** にあります。</span><span class="sxs-lookup"><span data-stu-id="f1310-130">The resource script is at **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1**.</span></span> <span data-ttu-id="f1310-131">これには、自分自身を追加する必要があるリソースを実装する実際のロジックは含まれません。</span><span class="sxs-lookup"><span data-stu-id="f1310-131">It does not include the actual logic to implement the resource, which you must add yourself.</span></span> <span data-ttu-id="f1310-132">スケルトン スクリプトの内容は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="f1310-132">The contents of the skeleton script are as follows.</span></span>
 
 ```powershell
 function Get-TargetResource
@@ -167,35 +161,25 @@ function Test-TargetResource
 Export-ModuleMember -Function *-TargetResource
 ```
 
-<a id="updating-the-resource" class="xliff"></a>
+## <a name="updating-the-resource"></a><span data-ttu-id="f1310-133">リソースの更新</span><span class="sxs-lookup"><span data-stu-id="f1310-133">Updating the resource</span></span>
 
-## リソースの更新
+<span data-ttu-id="f1310-134">リソースのパラメーター リストを追加または変更する必要がある場合は、**Update-xDscResource** コマンドレットを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="f1310-134">If you need to add or modify the parameter list of the resource, you can call the **Update-xDscResource** cmdlet.</span></span> <span data-ttu-id="f1310-135">コマンドレットは、新しいパラメーター リストでリソースを更新します。</span><span class="sxs-lookup"><span data-stu-id="f1310-135">The cmdlet updates the resource with a new parameter list.</span></span> <span data-ttu-id="f1310-136">リソース スクリプトに既にロジックを追加している場合は、そのまま残ります。</span><span class="sxs-lookup"><span data-stu-id="f1310-136">If you have already added logic in your resource script, it is left intact.</span></span>
 
-リソースのパラメーター リストを追加または変更する必要がある場合は、**Update-xDscResource** コマンドレットを呼び出すことができます。 コマンドレットは、新しいパラメーター リストでリソースを更新します。 リソース スクリプトに既にロジックを追加している場合は、そのまま残ります。
-
-たとえば、リソースにユーザーの最後のログイン時間を追加するとします。 リソースを完全に再作成するのではなく、**New-xDscResourceProperty** を呼び出して新しいプロパティを作成してから **Update-xDscResource** を呼び出し、プロパティ リストに新しいプロパティを追加できます。
+<span data-ttu-id="f1310-137">たとえば、リソースにユーザーの最後のログイン時間を追加するとします。</span><span class="sxs-lookup"><span data-stu-id="f1310-137">For example, suppose you want to include the last log in time for the user in our resource.</span></span> <span data-ttu-id="f1310-138">リソースを完全に再作成するのではなく、**New-xDscResourceProperty** を呼び出して新しいプロパティを作成してから **Update-xDscResource** を呼び出し、プロパティ リストに新しいプロパティを追加できます。</span><span class="sxs-lookup"><span data-stu-id="f1310-138">Rather than writing the resource again completely, you can call the **New-xDscResourceProperty** to create the new property, and then call **Update-xDscResource** and add your new property to the properties list.</span></span>
 
 ```powershell
 $lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Attribute Write –Description “For mapping users to their last log on time”
 Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
 ```
 
-<a id="testing-a-resource-schema" class="xliff"></a>
+## <a name="testing-a-resource-schema"></a><span data-ttu-id="f1310-139">リソース スキーマのテスト</span><span class="sxs-lookup"><span data-stu-id="f1310-139">Testing a resource schema</span></span>
 
-## リソース スキーマのテスト
+<span data-ttu-id="f1310-140">リソース デザイナー ツールは、手動で記述した MOF スキーマの有効性をテストするために使用できる 1 つ以上のコマンドレットを公開します。</span><span class="sxs-lookup"><span data-stu-id="f1310-140">The Resource Designer tool exposes one more cmdlet that can be used to test the validity of a MOF schema that you have written manually.</span></span> <span data-ttu-id="f1310-141">パラメーターとして MOF リソース スキーマのパスを渡して、**Test-xDscSchema** コマンドレットを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="f1310-141">Call the **Test-xDscSchema** cmdlet, passing the path of a MOF resource schema as a parameter.</span></span> <span data-ttu-id="f1310-142">コマンドレットは、スキーマにエラーを出力します。</span><span class="sxs-lookup"><span data-stu-id="f1310-142">The cmdlet will output any errors in the schema.</span></span>
 
-リソース デザイナー ツールは、手動で記述した MOF スキーマの有効性をテストするために使用できる 1 つ以上のコマンドレットを公開します。 パラメーターとして MOF リソース スキーマのパスを渡して、**Test-xDscSchema** コマンドレットを呼び出します。 コマンドレットは、スキーマにエラーを出力します。
+### <a name="see-also"></a><span data-ttu-id="f1310-143">参照</span><span class="sxs-lookup"><span data-stu-id="f1310-143">See Also</span></span>
 
-<a id="see-also" class="xliff"></a>
+#### <a name="concepts"></a><span data-ttu-id="f1310-144">概念</span><span class="sxs-lookup"><span data-stu-id="f1310-144">Concepts</span></span>
+[<span data-ttu-id="f1310-145">Build Custom Windows PowerShell Desired State Configuration Resources (カスタム Windows PowerShell Desired State Configuration のビルド)</span><span class="sxs-lookup"><span data-stu-id="f1310-145">Build Custom Windows PowerShell Desired State Configuration Resources</span></span>](authoringResource.md)
 
-### 参照
-
-<a id="concepts" class="xliff"></a>
-
-#### 概念
-[Build Custom Windows PowerShell Desired State Configuration Resources (カスタム Windows PowerShell Desired State Configuration のビルド)](authoringResource.md)
-
-<a id="other-resources" class="xliff"></a>
-
-#### その他のリソース
-[xDscResourceDesigner モジュール](https://powershellgallery.com/packages/xDscResourceDesigner)
+#### <a name="other-resources"></a><span data-ttu-id="f1310-146">その他のリソース</span><span class="sxs-lookup"><span data-stu-id="f1310-146">Other Resources</span></span>
+[<span data-ttu-id="f1310-147">xDscResourceDesigner モジュール</span><span class="sxs-lookup"><span data-stu-id="f1310-147">xDscResourceDesigner Module</span></span>](https://powershellgallery.com/packages/xDscResourceDesigner)

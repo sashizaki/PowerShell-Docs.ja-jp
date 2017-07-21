@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-for-linux-nxpackage-resource" class="xliff"></a>
+# <a name="dsc-for-linux-nxpackage-resource"></a><span data-ttu-id="1438c-103">Linux 用 DSC の nxPackage リソース</span><span class="sxs-lookup"><span data-stu-id="1438c-103">DSC for Linux nxPackage Resource</span></span>
 
-# Linux 用 DSC の nxPackage リソース
+<span data-ttu-id="1438c-104">PowerShell Desired State Configuration (DSC) の **nxPackage** リソースは、Linux ノード上でパッケージを管理するためのメカニズムを備えています。</span><span class="sxs-lookup"><span data-stu-id="1438c-104">The **nxPackage** resource in PowerShell Desired State Configuration (DSC) provides a mechanism to manage packages on a Linux node.</span></span>
 
-PowerShell Desired State Configuration (DSC) の **nxPackage** リソースは、Linux ノード上でパッケージを管理するためのメカニズムを備えています。
-
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a><span data-ttu-id="1438c-105">構文</span><span class="sxs-lookup"><span data-stu-id="1438c-105">Syntax</span></span>
 
 ```
 nxPackage <string> #ResourceName
@@ -35,26 +31,22 @@ nxPackage <string> #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
+## <a name="properties"></a><span data-ttu-id="1438c-106">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1438c-106">Properties</span></span>
 
-## プロパティ
-
-|  プロパティ |  説明 | 
+|  <span data-ttu-id="1438c-107">プロパティ</span><span class="sxs-lookup"><span data-stu-id="1438c-107">Property</span></span> |  <span data-ttu-id="1438c-108">説明</span><span class="sxs-lookup"><span data-stu-id="1438c-108">Description</span></span> | 
 |---|---|
-| 名前| 特定の状態を保証するパッケージの名前。| 
-| Ensure| パッケージが存在するかどうかを決定します。 パッケージが存在することを保証するには、このプロパティを "Present" に設定します。 パッケージが存在しないことを保証するには、"Absent" に設定します。 既定値は "Present" です。|  
-| PackageManager| サポートされている値は、"yum"、"apt"、および "zypper" です。 パッケージのインストール時に使用するパッケージ マネージャーを指定します。 **FilePath** を指定した場合、その指定したパスを使用してパッケージがインストールされます。 それ以外の場合、パッケージ マネージャーを使用して、事前に構成されているリポジトリからパッケージがインストールされます。 **PackageManager** も **FilePath** も指定しない場合は、システムの既定のパッケージ マネージャーが使用されます。| 
-| ファイル パス| パッケージが存在するファイル パス| 
-| PackageGroup| **$true** の場合、**Name** は **PackageManager** で使用されるパッケージ グループの名前であるものとみなされます。 **PacakgeGroup** は、**FilePath** を指定したときには使用できません。| 
-| 引数| 指定されたとおりにパッケージに渡される引数の文字列。| 
-| ReturnCode| 想定されるリターン コード。 実際のリターン コードがここで指定される想定される値と一致しない場合、構成はエラーを返します。| 
-| DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
+| <span data-ttu-id="1438c-109">名前</span><span class="sxs-lookup"><span data-stu-id="1438c-109">Name</span></span>| <span data-ttu-id="1438c-110">特定の状態を保証するパッケージの名前。</span><span class="sxs-lookup"><span data-stu-id="1438c-110">The name of the package for which you want to ensure a specific state.</span></span>| 
+| <span data-ttu-id="1438c-111">Ensure</span><span class="sxs-lookup"><span data-stu-id="1438c-111">Ensure</span></span>| <span data-ttu-id="1438c-112">パッケージが存在するかどうかを決定します。</span><span class="sxs-lookup"><span data-stu-id="1438c-112">Determines whether to check if the package exists.</span></span> <span data-ttu-id="1438c-113">パッケージが存在することを保証するには、このプロパティを "Present" に設定します。</span><span class="sxs-lookup"><span data-stu-id="1438c-113">Set this property to "Present" to ensure the package exists.</span></span> <span data-ttu-id="1438c-114">パッケージが存在しないことを保証するには、"Absent" に設定します。</span><span class="sxs-lookup"><span data-stu-id="1438c-114">Set it to "Absent" to ensure the package does not exist.</span></span> <span data-ttu-id="1438c-115">既定値は "Present" です。</span><span class="sxs-lookup"><span data-stu-id="1438c-115">The default value is "Present".</span></span>|  
+| <span data-ttu-id="1438c-116">PackageManager</span><span class="sxs-lookup"><span data-stu-id="1438c-116">PackageManager</span></span>| <span data-ttu-id="1438c-117">サポートされている値は、"yum"、"apt"、および "zypper" です。</span><span class="sxs-lookup"><span data-stu-id="1438c-117">Supported values are "yum", "apt", and "zypper".</span></span> <span data-ttu-id="1438c-118">パッケージのインストール時に使用するパッケージ マネージャーを指定します。</span><span class="sxs-lookup"><span data-stu-id="1438c-118">Specifies the package manager to use when installing packages.</span></span> <span data-ttu-id="1438c-119">**FilePath** を指定した場合、その指定したパスを使用してパッケージがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="1438c-119">If **FilePath** is specified, the provided path will be used to install the package.</span></span> <span data-ttu-id="1438c-120">それ以外の場合、パッケージ マネージャーを使用して、事前に構成されているリポジトリからパッケージがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="1438c-120">Otherwise, a Package Manager will be used to install the package from a pre-configured repository.</span></span> <span data-ttu-id="1438c-121">**PackageManager** も **FilePath** も指定しない場合は、システムの既定のパッケージ マネージャーが使用されます。</span><span class="sxs-lookup"><span data-stu-id="1438c-121">If neither **PackageManager** nor **FilePath** are provided, the default package manager for the system will be used.</span></span>| 
+| <span data-ttu-id="1438c-122">ファイル パス</span><span class="sxs-lookup"><span data-stu-id="1438c-122">FilePath</span></span>| <span data-ttu-id="1438c-123">パッケージが存在するファイル パス</span><span class="sxs-lookup"><span data-stu-id="1438c-123">The file path where the package resides</span></span>| 
+| <span data-ttu-id="1438c-124">PackageGroup</span><span class="sxs-lookup"><span data-stu-id="1438c-124">PackageGroup</span></span>| <span data-ttu-id="1438c-125">**$true** の場合、**Name** は **PackageManager** で使用されるパッケージ グループの名前であるものとみなされます。</span><span class="sxs-lookup"><span data-stu-id="1438c-125">If **$true**, the **Name** is expected to be the name of a package group for use with a **PackageManager**.</span></span> <span data-ttu-id="1438c-126">**PacakgeGroup** は、**FilePath** を指定したときには使用できません。</span><span class="sxs-lookup"><span data-stu-id="1438c-126">**PacakgeGroup** is not valid when providing a **FilePath**.</span></span>| 
+| <span data-ttu-id="1438c-127">引数</span><span class="sxs-lookup"><span data-stu-id="1438c-127">Arguments</span></span>| <span data-ttu-id="1438c-128">指定されたとおりにパッケージに渡される引数の文字列。</span><span class="sxs-lookup"><span data-stu-id="1438c-128">A string of arguments that will be passed to the package exactly as provided.</span></span>| 
+| <span data-ttu-id="1438c-129">ReturnCode</span><span class="sxs-lookup"><span data-stu-id="1438c-129">ReturnCode</span></span>| <span data-ttu-id="1438c-130">想定されるリターン コード。</span><span class="sxs-lookup"><span data-stu-id="1438c-130">The expected return code.</span></span> <span data-ttu-id="1438c-131">実際のリターン コードがここで指定される想定される値と一致しない場合、構成はエラーを返します。</span><span class="sxs-lookup"><span data-stu-id="1438c-131">If the actual return code does not match the expected value provided here, the configuration will return an error.</span></span>| 
+| <span data-ttu-id="1438c-132">DependsOn</span><span class="sxs-lookup"><span data-stu-id="1438c-132">DependsOn</span></span> | <span data-ttu-id="1438c-133">このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="1438c-133">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="1438c-134">たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。</span><span class="sxs-lookup"><span data-stu-id="1438c-134">For example, if the **ID** of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>| 
 
-<a id="example" class="xliff"></a>
+## <a name="example"></a><span data-ttu-id="1438c-135">例</span><span class="sxs-lookup"><span data-stu-id="1438c-135">Example</span></span>
 
-## 例
-
-次の例では、"Yum" パッケージ マネージャーを使用して、Linux コンピューターに "httpd" という名前のパッケージがインストールされるようにしています。
+<span data-ttu-id="1438c-136">次の例では、"Yum" パッケージ マネージャーを使用して、Linux コンピューターに "httpd" という名前のパッケージがインストールされるようにしています。</span><span class="sxs-lookup"><span data-stu-id="1438c-136">The following example ensures that the package named "httpd" is installed on a Linux computer, using the “Yum” package manager.</span></span>
 
 ```
 Import-DSCResource -Module nx 

@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
+# <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="d6827-103">MSFT_DSCLocalConfigurationManager クラスの TestConfiguration メソッド</span><span class="sxs-lookup"><span data-stu-id="d6827-103">TestConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-# MSFT_DSCLocalConfigurationManager クラスの TestConfiguration メソッド
+<span data-ttu-id="d6827-104">構成ドキュメントを管理ノードに送信し、そのドキュメントに対して現在の構成を検証します。</span><span class="sxs-lookup"><span data-stu-id="d6827-104">Sends the configuration document to the managed node and verifies the current configuration against the document.</span></span>
 
-構成ドキュメントを管理ノードに送信し、そのドキュメントに対して現在の構成を検証します。
-
-<a id="syntax" class="xliff"></a>
-
-構文
+<a name="syntax"></a><span data-ttu-id="d6827-105">構文</span><span class="sxs-lookup"><span data-stu-id="d6827-105">Syntax</span></span>
 ------
 
 ```mof
@@ -30,51 +26,41 @@ uint32 TestConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-
-パラメーター
+<a name="parameters"></a><span data-ttu-id="d6827-106">パラメーター</span><span class="sxs-lookup"><span data-stu-id="d6827-106">Parameters</span></span>
 ----------
 
-*configurationData* \[in\]  
-構成のための環境データ。
+<span data-ttu-id="d6827-107">*configurationData* \[in\]</span><span class="sxs-lookup"><span data-stu-id="d6827-107">*configurationData* \[in\]</span></span>  
+<span data-ttu-id="d6827-108">構成のための環境データ。</span><span class="sxs-lookup"><span data-stu-id="d6827-108">Environment data for the confuguration.</span></span>
 
-*InDesiredState* \[out\]  
-制御が戻ったとき、管理ノードが構成ドキュメントで指定された状態であるかどうかを示します。
+<span data-ttu-id="d6827-109">*InDesiredState* \[out\]</span><span class="sxs-lookup"><span data-stu-id="d6827-109">*InDesiredState* \[out\]</span></span>  
+<span data-ttu-id="d6827-110">制御が戻ったとき、管理ノードが構成ドキュメントで指定された状態であるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="d6827-110">On return, specifies whether the managed node is in the state specified by the configuration document.</span></span>
 
-*ResourcesInDesiredState* \[out\]  
-制御が戻ったとき、目的の状態にあるリソースを指定する、**MSFT_ResourceInDesiredState** クラスの埋め込みインスタンスが含まれます。
+<span data-ttu-id="d6827-111">*ResourcesInDesiredState* \[out\]</span><span class="sxs-lookup"><span data-stu-id="d6827-111">*ResourcesInDesiredState* \[out\]</span></span>  
+<span data-ttu-id="d6827-112">制御が戻ったとき、目的の状態にあるリソースを指定する、**MSFT_ResourceInDesiredState** クラスの埋め込みインスタンスが含まれます。</span><span class="sxs-lookup"><span data-stu-id="d6827-112">On return, contains an embedded instance of the **MSFT_ResourceInDesiredState** class that specifies resources that are in the desired state.</span></span>
 
-*ResourcesNotInDesiredState* \[out\]  
-制御が戻ったとき、目的の状態ではないリソースを指定する、**MSFT_ResourceNotInDesiredState** クラスの埋め込みインスタンスが含まれます。
+<span data-ttu-id="d6827-113">*ResourcesNotInDesiredState* \[out\]</span><span class="sxs-lookup"><span data-stu-id="d6827-113">*ResourcesNotInDesiredState* \[out\]</span></span>  
+<span data-ttu-id="d6827-114">制御が戻ったとき、目的の状態ではないリソースを指定する、**MSFT_ResourceNotInDesiredState** クラスの埋め込みインスタンスが含まれます。</span><span class="sxs-lookup"><span data-stu-id="d6827-114">On return, contains an embedded instance of the **MSFT_ResourceNotInDesiredState** class that specifies resources that are not in the desired state.</span></span>
 
-<a id="return-value" class="xliff"></a>
-
-## 戻り値
+## <a name="return-value"></a><span data-ttu-id="d6827-115">戻り値</span><span class="sxs-lookup"><span data-stu-id="d6827-115">Return value</span></span>
 ------------
 
-成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
+<span data-ttu-id="d6827-116">成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。</span><span class="sxs-lookup"><span data-stu-id="d6827-116">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
+## <a name="remarks"></a><span data-ttu-id="d6827-117">コメント</span><span class="sxs-lookup"><span data-stu-id="d6827-117">Remarks</span></span>
 
-## コメント
+<span data-ttu-id="d6827-118">これは静的メソッドです。</span><span class="sxs-lookup"><span data-stu-id="d6827-118">This is a static method.</span></span>
 
-これは静的メソッドです。
-
-<a id="requirements" class="xliff"></a>
-
-## 要件
+## <a name="requirements"></a><span data-ttu-id="d6827-119">要件</span><span class="sxs-lookup"><span data-stu-id="d6827-119">Requirements</span></span>
 ------------
->**MOF:** DscCore.mof
+><span data-ttu-id="d6827-120">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="d6827-120">**MOF:** DscCore.mof</span></span>
 
->**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-
-## 関連項目
+><span data-ttu-id="d6827-121">**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="d6827-121">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="d6827-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="d6827-122">See also</span></span>
+
+
+[<span data-ttu-id="d6827-123">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="d6827-123">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

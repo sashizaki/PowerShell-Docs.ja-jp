@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
+# <a name="sendconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="fceb7-103">MSFT_DSCLocalConfigurationManager クラスの SendConfiguration メソッド</span><span class="sxs-lookup"><span data-stu-id="fceb7-103">SendConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-# MSFT_DSCLocalConfigurationManager クラスの SendConfiguration メソッド
+<span data-ttu-id="fceb7-104">構成ドキュメントを管理ノードに送信し、保留中の変更として保存します。</span><span class="sxs-lookup"><span data-stu-id="fceb7-104">Sends the configuration document to the managed node and saves it as a pending change.</span></span>
 
-構成ドキュメントを管理ノードに送信し、保留中の変更として保存します。
-
-<a id="syntax" class="xliff"></a>
-
-構文
+<a name="syntax"></a><span data-ttu-id="fceb7-105">構文</span><span class="sxs-lookup"><span data-stu-id="fceb7-105">Syntax</span></span>
 ------
 
 ```mof
@@ -28,45 +24,35 @@ uint32 SendConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-
-パラメーター
+<a name="parameters"></a><span data-ttu-id="fceb7-106">パラメーター</span><span class="sxs-lookup"><span data-stu-id="fceb7-106">Parameters</span></span>
 ----------
 
-*ConfigurationData* \[in\]  
-構成用の環境データ。
+<span data-ttu-id="fceb7-107">*ConfigurationData* \[in\]</span><span class="sxs-lookup"><span data-stu-id="fceb7-107">*ConfigurationData* \[in\]</span></span>  
+<span data-ttu-id="fceb7-108">構成用の環境データ。</span><span class="sxs-lookup"><span data-stu-id="fceb7-108">The environment data for the configuration.</span></span>
 
-*force* \[in\]  
-**true** の場合、構成を強制的に中止します。
+<span data-ttu-id="fceb7-109">*force* \[in\]</span><span class="sxs-lookup"><span data-stu-id="fceb7-109">*force* \[in\]</span></span>  
+<span data-ttu-id="fceb7-110">**true** の場合、構成を強制的に中止します。</span><span class="sxs-lookup"><span data-stu-id="fceb7-110">**true** to force the configuration to stop.</span></span>
 
-<a id="return-value" class="xliff"></a>
-
-## 戻り値
+## <a name="return-value"></a><span data-ttu-id="fceb7-111">戻り値</span><span class="sxs-lookup"><span data-stu-id="fceb7-111">Return value</span></span>
 ------------
 
-成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
+<span data-ttu-id="fceb7-112">成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。</span><span class="sxs-lookup"><span data-stu-id="fceb7-112">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
+## <a name="remarks"></a><span data-ttu-id="fceb7-113">コメント</span><span class="sxs-lookup"><span data-stu-id="fceb7-113">Remarks</span></span>
 
-## コメント
+<span data-ttu-id="fceb7-114">これは静的メソッドです。</span><span class="sxs-lookup"><span data-stu-id="fceb7-114">This is a static method.</span></span>
 
-これは静的メソッドです。
-
-<a id="requirements" class="xliff"></a>
-
-## 要件
+## <a name="requirements"></a><span data-ttu-id="fceb7-115">要件</span><span class="sxs-lookup"><span data-stu-id="fceb7-115">Requirements</span></span>
 ------------
->**MOF:** DscCore.mof
+><span data-ttu-id="fceb7-116">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="fceb7-116">**MOF:** DscCore.mof</span></span>
 
->**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-
-## 関連項目
+><span data-ttu-id="fceb7-117">**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="fceb7-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="fceb7-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="fceb7-118">See also</span></span>
+
+
+[<span data-ttu-id="fceb7-119">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="fceb7-119">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

@@ -10,29 +10,27 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="wmf-51-operating-system-compatibility" class="xliff"></a>
+# <a name="wmf-51-operating-system-compatibility"></a><span data-ttu-id="d6bda-103">WMF 5.1 オペレーティング システムの互換性</span><span class="sxs-lookup"><span data-stu-id="d6bda-103">WMF 5.1 Operating System Compatibility</span></span> #
 
-# WMF 5.1 オペレーティング システムの互換性 #
+> <span data-ttu-id="d6bda-104">注意: この情報は暫定版であり、変更することがあります。</span><span class="sxs-lookup"><span data-stu-id="d6bda-104">Note: This information is preliminary and subject to change.</span></span>
 
-> 注意: この情報は暫定版であり、変更することがあります。
-
-| オペレーティング システムのバージョン | [WMF 5.1](https://aka.ms/wmf51download) | [WMF 5.0](https://aka.ms/wmf5download) | [WMF 4.0](https://aka.ms/wmf4download) |  [WMF 3.0](https://aka.ms/wmf3download) | [WMF 2.0](https://aka.ms/wmf2download) |
+| <span data-ttu-id="d6bda-105">オペレーティング システムのバージョン</span><span class="sxs-lookup"><span data-stu-id="d6bda-105">Operating System Version</span></span> | [<span data-ttu-id="d6bda-106">WMF 5.1</span><span class="sxs-lookup"><span data-stu-id="d6bda-106">WMF 5.1</span></span>](https://aka.ms/wmf51download) | [<span data-ttu-id="d6bda-107">WMF 5.0</span><span class="sxs-lookup"><span data-stu-id="d6bda-107">WMF 5.0</span></span>](https://aka.ms/wmf5download) | [<span data-ttu-id="d6bda-108">WMF 4.0</span><span class="sxs-lookup"><span data-stu-id="d6bda-108">WMF 4.0</span></span>](https://aka.ms/wmf4download) |  [<span data-ttu-id="d6bda-109">WMF 3.0</span><span class="sxs-lookup"><span data-stu-id="d6bda-109">WMF 3.0</span></span>](https://aka.ms/wmf3download) | [<span data-ttu-id="d6bda-110">WMF 2.0</span><span class="sxs-lookup"><span data-stu-id="d6bda-110">WMF 2.0</span></span>](https://aka.ms/wmf2download) |
 | ------------------------ | ----------- | ----------- | ----------- | ------------ |  ------------- |
-| Windows Server 2016 | 出荷時にインストール済み* |  |  |  |  |
-| Windows 10 | 出荷時にインストール済み* | 出荷時にインストール済み*  | | | |  
-| Windows Server 2012 R2| 可 | 可 | 出荷時にインストール済み |  |  |
-| Windows 8.1 | 可 | 可 |  出荷時にインストール済み |  |  |
-| Windows Server 2012 | 可 | 可 | 可 |  出荷時にインストール済み | |
-| Windows 8 |  |  |  | 出荷時にインストール済み | |
-| Windows Server 2008 R2 SP1 | 可 | 可 | 可 |  可| 出荷時にインストール済み |
-| Windows 7 SP1  | 可 | 可 | 可 | 可 | 出荷時にインストール済み |
-| Windows Server 2008 SP2 | | | | 可 | 可 |
-| Windows Vista | | | | | 可 |
-| Windows Server 2003| | | |  | 可 |
-| Windows XP | | | |  | 可 |
+| <span data-ttu-id="d6bda-111">Windows Server 2016</span><span class="sxs-lookup"><span data-stu-id="d6bda-111">Windows Server 2016</span></span> | <span data-ttu-id="d6bda-112">出荷時にインストール済み*</span><span class="sxs-lookup"><span data-stu-id="d6bda-112">Ships in-box*</span></span> |  |  |  |  |
+| <span data-ttu-id="d6bda-113">Windows 10</span><span class="sxs-lookup"><span data-stu-id="d6bda-113">Windows 10</span></span> | <span data-ttu-id="d6bda-114">出荷時にインストール済み*</span><span class="sxs-lookup"><span data-stu-id="d6bda-114">Ships in-box*</span></span> | <span data-ttu-id="d6bda-115">出荷時にインストール済み*</span><span class="sxs-lookup"><span data-stu-id="d6bda-115">Ships in-box*</span></span>  | | | |  
+| <span data-ttu-id="d6bda-116">Windows Server 2012 R2</span><span class="sxs-lookup"><span data-stu-id="d6bda-116">Windows Server 2012 R2</span></span>| <span data-ttu-id="d6bda-117">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-117">Yes</span></span> | <span data-ttu-id="d6bda-118">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-118">Yes</span></span> | <span data-ttu-id="d6bda-119">出荷時にインストール済み</span><span class="sxs-lookup"><span data-stu-id="d6bda-119">Ships in-box</span></span> |  |  |
+| <span data-ttu-id="d6bda-120">Windows 8.1</span><span class="sxs-lookup"><span data-stu-id="d6bda-120">Windows 8.1</span></span> | <span data-ttu-id="d6bda-121">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-121">Yes</span></span> | <span data-ttu-id="d6bda-122">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-122">Yes</span></span> |  <span data-ttu-id="d6bda-123">出荷時にインストール済み</span><span class="sxs-lookup"><span data-stu-id="d6bda-123">Ships in-box</span></span> |  |  |
+| <span data-ttu-id="d6bda-124">Windows Server 2012</span><span class="sxs-lookup"><span data-stu-id="d6bda-124">Windows Server 2012</span></span> | <span data-ttu-id="d6bda-125">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-125">Yes</span></span> | <span data-ttu-id="d6bda-126">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-126">Yes</span></span> | <span data-ttu-id="d6bda-127">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-127">Yes</span></span> |  <span data-ttu-id="d6bda-128">出荷時にインストール済み</span><span class="sxs-lookup"><span data-stu-id="d6bda-128">Ships in-box</span></span> | |
+| <span data-ttu-id="d6bda-129">Windows 8</span><span class="sxs-lookup"><span data-stu-id="d6bda-129">Windows 8</span></span> |  |  |  | <span data-ttu-id="d6bda-130">出荷時にインストール済み</span><span class="sxs-lookup"><span data-stu-id="d6bda-130">Ships in-box</span></span> | |
+| <span data-ttu-id="d6bda-131">Windows Server 2008 R2 SP1</span><span class="sxs-lookup"><span data-stu-id="d6bda-131">Windows Server 2008 R2 SP1</span></span> | <span data-ttu-id="d6bda-132">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-132">Yes</span></span> | <span data-ttu-id="d6bda-133">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-133">Yes</span></span> | <span data-ttu-id="d6bda-134">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-134">Yes</span></span> |  <span data-ttu-id="d6bda-135">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-135">Yes</span></span>| <span data-ttu-id="d6bda-136">出荷時にインストール済み</span><span class="sxs-lookup"><span data-stu-id="d6bda-136">Ships in-box</span></span> |
+| <span data-ttu-id="d6bda-137">Windows 7 SP1</span><span class="sxs-lookup"><span data-stu-id="d6bda-137">Windows 7 SP1</span></span>  | <span data-ttu-id="d6bda-138">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-138">Yes</span></span> | <span data-ttu-id="d6bda-139">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-139">Yes</span></span> | <span data-ttu-id="d6bda-140">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-140">Yes</span></span> | <span data-ttu-id="d6bda-141">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-141">Yes</span></span> | <span data-ttu-id="d6bda-142">出荷時にインストール済み</span><span class="sxs-lookup"><span data-stu-id="d6bda-142">Ships in-box</span></span> |
+| <span data-ttu-id="d6bda-143">Windows Server 2008 SP2</span><span class="sxs-lookup"><span data-stu-id="d6bda-143">Windows Server 2008 SP2</span></span> | | | | <span data-ttu-id="d6bda-144">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-144">Yes</span></span> | <span data-ttu-id="d6bda-145">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-145">Yes</span></span> |
+| <span data-ttu-id="d6bda-146">Windows Vista</span><span class="sxs-lookup"><span data-stu-id="d6bda-146">Windows Vista</span></span> | | | | | <span data-ttu-id="d6bda-147">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-147">Yes</span></span> |
+| <span data-ttu-id="d6bda-148">Windows Server 2003</span><span class="sxs-lookup"><span data-stu-id="d6bda-148">Windows Server 2003</span></span>| | | |  | <span data-ttu-id="d6bda-149">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-149">Yes</span></span> |
+| <span data-ttu-id="d6bda-150">Windows XP</span><span class="sxs-lookup"><span data-stu-id="d6bda-150">Windows XP</span></span> | | | |  | <span data-ttu-id="d6bda-151">可</span><span class="sxs-lookup"><span data-stu-id="d6bda-151">Yes</span></span> |
 
 
-"出荷時にインストール済み*" について: WMF 5.0 の機能は元の Windows 10 RTM バージョンに含まれていました。
-WMF 5.1 の機能は Windows Server 2016 と Windows 10 Anniversary Edition に含まれていました。 これらのオペレーティング システム バージョンの場合、更新プログラムは Windows Update 経由で提供されるため、WMF 5.1 は該当しません。
+<span data-ttu-id="d6bda-152">"出荷時にインストール済み*" について: WMF 5.0 の機能は元の Windows 10 RTM バージョンに含まれていました。</span><span class="sxs-lookup"><span data-stu-id="d6bda-152">About "Ships in-box*": The features of WMF 5.0 were included in the original Windows 10 RTM version.</span></span>
+<span data-ttu-id="d6bda-153">WMF 5.1 の機能は Windows Server 2016 と Windows 10 Anniversary Edition に含まれていました。</span><span class="sxs-lookup"><span data-stu-id="d6bda-153">The features of WMF 5.1 were included in Windows Server 2016 and Windows 10 Anniversary Edition.</span></span> <span data-ttu-id="d6bda-154">これらのオペレーティング システム バージョンの場合、更新プログラムは Windows Update 経由で提供されるため、WMF 5.1 は該当しません。</span><span class="sxs-lookup"><span data-stu-id="d6bda-154">WMF 5.1 is not applicable for these operating system versions, as the updates are provided via Windows Update.</span></span>
 
 

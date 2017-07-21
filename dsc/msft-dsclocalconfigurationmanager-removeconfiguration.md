@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
+# <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="902d2-103">MSFT_DSCLocalConfigurationManager クラスの RemoveConfiguration メソッド</span><span class="sxs-lookup"><span data-stu-id="902d2-103">RemoveConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-# MSFT_DSCLocalConfigurationManager クラスの RemoveConfiguration メソッド
+<span data-ttu-id="902d2-104">構成ファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="902d2-104">Removes the configuration files.</span></span>
 
-構成ファイルを削除します。
-
-<a id="syntax" class="xliff"></a>
-
-構文
+<a name="syntax"></a><span data-ttu-id="902d2-105">構文</span><span class="sxs-lookup"><span data-stu-id="902d2-105">Syntax</span></span>
 ------
 
 ```mof
@@ -28,51 +24,41 @@ uint32 RemoveConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-
-パラメーター
+<a name="parameters"></a><span data-ttu-id="902d2-106">パラメーター</span><span class="sxs-lookup"><span data-stu-id="902d2-106">Parameters</span></span>
 ----------
 
-*Stage* \[in\]  
-削除する構成ドキュメントを指定します。 次の値が有効です。
+<span data-ttu-id="902d2-107">*Stage* \[in\]</span><span class="sxs-lookup"><span data-stu-id="902d2-107">*Stage* \[in\]</span></span>  
+<span data-ttu-id="902d2-108">削除する構成ドキュメントを指定します。</span><span class="sxs-lookup"><span data-stu-id="902d2-108">Specifies which configuration document to remove.</span></span> <span data-ttu-id="902d2-109">次の値が有効です。</span><span class="sxs-lookup"><span data-stu-id="902d2-109">The following values are valid:</span></span>
 
-|値 |説明 |
+|<span data-ttu-id="902d2-110">値</span><span class="sxs-lookup"><span data-stu-id="902d2-110">Value</span></span> |<span data-ttu-id="902d2-111">説明</span><span class="sxs-lookup"><span data-stu-id="902d2-111">Description</span></span> |
 |:--- |:---|
-|**1** | **現在**の構成ドキュメント (current.mof)。 |
-|**2** | **保留中**の構成ドキュメント (pending.mof)。  |
-|**4** | **以前**の構成ドキュメント (previous.mof)。 |
+|<span data-ttu-id="902d2-112">**1**</span><span class="sxs-lookup"><span data-stu-id="902d2-112">**1**</span></span> | <span data-ttu-id="902d2-113">**現在**の構成ドキュメント (current.mof)。</span><span class="sxs-lookup"><span data-stu-id="902d2-113">The **Current** configuration document (current.mof).</span></span> |
+|<span data-ttu-id="902d2-114">**2**</span><span class="sxs-lookup"><span data-stu-id="902d2-114">**2**</span></span> | <span data-ttu-id="902d2-115">**保留中**の構成ドキュメント (pending.mof)。</span><span class="sxs-lookup"><span data-stu-id="902d2-115">The **Pending** configuration document (pending.mof).</span></span>  |
+|<span data-ttu-id="902d2-116">**4**</span><span class="sxs-lookup"><span data-stu-id="902d2-116">**4**</span></span> | <span data-ttu-id="902d2-117">**以前**の構成ドキュメント (previous.mof)。</span><span class="sxs-lookup"><span data-stu-id="902d2-117">The **Previous** configuration document (previous.mof).</span></span> |
 
-*Force* \[in\]  
-**true** の場合、構成を強制的に削除します。
+<span data-ttu-id="902d2-118">*Force* \[in\]</span><span class="sxs-lookup"><span data-stu-id="902d2-118">*Force* \[in\]</span></span>  
+<span data-ttu-id="902d2-119">**true** の場合、構成を強制的に削除します。</span><span class="sxs-lookup"><span data-stu-id="902d2-119">**true** to force the removal of the configuration.</span></span>
 
-<a id="return-value" class="xliff"></a>
-
-## 戻り値
+## <a name="return-value"></a><span data-ttu-id="902d2-120">戻り値</span><span class="sxs-lookup"><span data-stu-id="902d2-120">Return value</span></span>
 ------------
 
-成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
+<span data-ttu-id="902d2-121">成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。</span><span class="sxs-lookup"><span data-stu-id="902d2-121">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
+## <a name="remarks"></a><span data-ttu-id="902d2-122">コメント</span><span class="sxs-lookup"><span data-stu-id="902d2-122">Remarks</span></span>
 
-## コメント
+<span data-ttu-id="902d2-123">これは静的メソッドです。</span><span class="sxs-lookup"><span data-stu-id="902d2-123">This is a static method.</span></span>
 
-これは静的メソッドです。
-
-<a id="requirements" class="xliff"></a>
-
-## 要件
+## <a name="requirements"></a><span data-ttu-id="902d2-124">要件</span><span class="sxs-lookup"><span data-stu-id="902d2-124">Requirements</span></span>
 ------------
->**MOF:** DscCore.mof
+><span data-ttu-id="902d2-125">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="902d2-125">**MOF:** DscCore.mof</span></span>
 
->**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-
-## 関連項目
+><span data-ttu-id="902d2-126">**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="902d2-126">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="902d2-127">関連項目</span><span class="sxs-lookup"><span data-stu-id="902d2-127">See also</span></span>
+
+
+[<span data-ttu-id="902d2-128">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="902d2-128">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

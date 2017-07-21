@@ -10,17 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-package-resource" class="xliff"></a>
+# <a name="dsc-package-resource"></a><span data-ttu-id="26be2-103">DSC Package リソース</span><span class="sxs-lookup"><span data-stu-id="26be2-103">DSC Package Resource</span></span>
 
-# DSC Package リソース
+> <span data-ttu-id="26be2-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="26be2-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
+<span data-ttu-id="26be2-105">Windows PowerShell Desired State Configuration (DSC) の **Package** リソースは、Windows インストーラーや setup.exe パッケージなど、ターゲット ノードでパッケージをインストールまたはアンインストールするメカニズムを備えています。</span><span class="sxs-lookup"><span data-stu-id="26be2-105">The **Package** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to install or uninstall packages, such as Windows Installer and setup.exe packages, on a target node.</span></span>
 
-Windows PowerShell Desired State Configuration (DSC) の **Package** リソースは、Windows インストーラーや setup.exe パッケージなど、ターゲット ノードでパッケージをインストールまたはアンインストールするメカニズムを備えています。
-
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a><span data-ttu-id="26be2-106">構文</span><span class="sxs-lookup"><span data-stu-id="26be2-106">Syntax</span></span>
 
 ```
 Package [string] #ResourceName
@@ -37,26 +33,22 @@ Package [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-
-## プロパティ
-|  プロパティ  |  説明   | 
+## <a name="properties"></a><span data-ttu-id="26be2-107">プロパティ</span><span class="sxs-lookup"><span data-stu-id="26be2-107">Properties</span></span>
+|  <span data-ttu-id="26be2-108">プロパティ</span><span class="sxs-lookup"><span data-stu-id="26be2-108">Property</span></span>  |  <span data-ttu-id="26be2-109">説明</span><span class="sxs-lookup"><span data-stu-id="26be2-109">Description</span></span>   | 
 |---|---| 
-| 名前| 特定の状態を保証するパッケージの名前を示します。| 
-| パス| パッケージが存在するパスを示します。| 
-| ProductId| パッケージを一意に識別する製品 ID を示します。| 
-| 引数| 指定されたとおりにパッケージに渡される引数の文字列を一覧表示します。| 
-| Credential| リモート ソースのパッケージへのアクセスを提供します。 このプロパティは、パッケージのインストールには使用されません。 パッケージは常に、ローカル システムにインストールされます。| 
-| Ensure| パッケージがインストールされるかどうかを示します。 このプロパティを "Absent" に設定すると、パッケージはインストールされません (またはパッケージがインストールされている場合はアンインストールされます)。 パッケージがインストールされるようにするには、"Present" に設定します (既定値)。| 
-| LogPath| プロバイダーがパッケージをインストールまたはアンインストールするためのログ ファイルを保存する場所の完全パスを示します。| 
-| DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は DependsOn = "[ResourceType]ResourceName" になります。| 
-| ReturnCode| 想定されるリターン コードを示します。 実際のリターン コードがここで指定される想定される値と一致しない場合、構成はエラーを返します。| 
+| <span data-ttu-id="26be2-110">名前</span><span class="sxs-lookup"><span data-stu-id="26be2-110">Name</span></span>| <span data-ttu-id="26be2-111">特定の状態を保証するパッケージの名前を示します。</span><span class="sxs-lookup"><span data-stu-id="26be2-111">Indicates the name of the package for which you want to ensure a specific state.</span></span>| 
+| <span data-ttu-id="26be2-112">パス</span><span class="sxs-lookup"><span data-stu-id="26be2-112">Path</span></span>| <span data-ttu-id="26be2-113">パッケージが存在するパスを示します。</span><span class="sxs-lookup"><span data-stu-id="26be2-113">Indicates the path where the package resides.</span></span>| 
+| <span data-ttu-id="26be2-114">ProductId</span><span class="sxs-lookup"><span data-stu-id="26be2-114">ProductId</span></span>| <span data-ttu-id="26be2-115">パッケージを一意に識別する製品 ID を示します。</span><span class="sxs-lookup"><span data-stu-id="26be2-115">Indicates the product ID that uniquely identifies the package.</span></span>| 
+| <span data-ttu-id="26be2-116">引数</span><span class="sxs-lookup"><span data-stu-id="26be2-116">Arguments</span></span>| <span data-ttu-id="26be2-117">指定されたとおりにパッケージに渡される引数の文字列を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="26be2-117">Lists a string of arguments that will be passed to the package exactly as provided.</span></span>| 
+| <span data-ttu-id="26be2-118">Credential</span><span class="sxs-lookup"><span data-stu-id="26be2-118">Credential</span></span>| <span data-ttu-id="26be2-119">リモート ソースのパッケージへのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="26be2-119">Provides access to the package on a remote source.</span></span> <span data-ttu-id="26be2-120">このプロパティは、パッケージのインストールには使用されません。</span><span class="sxs-lookup"><span data-stu-id="26be2-120">This property is not used to install the package.</span></span> <span data-ttu-id="26be2-121">パッケージは常に、ローカル システムにインストールされます。</span><span class="sxs-lookup"><span data-stu-id="26be2-121">The package is always installed on the local system.</span></span>| 
+| <span data-ttu-id="26be2-122">Ensure</span><span class="sxs-lookup"><span data-stu-id="26be2-122">Ensure</span></span>| <span data-ttu-id="26be2-123">パッケージがインストールされるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="26be2-123">Indicates if the package is installed.</span></span> <span data-ttu-id="26be2-124">このプロパティを "Absent" に設定すると、パッケージはインストールされません (またはパッケージがインストールされている場合はアンインストールされます)。</span><span class="sxs-lookup"><span data-stu-id="26be2-124">Set this property to "Absent" to ensure the package is not installed (or uninstall the package if it is installed).</span></span> <span data-ttu-id="26be2-125">パッケージがインストールされるようにするには、"Present" に設定します (既定値)。</span><span class="sxs-lookup"><span data-stu-id="26be2-125">Set it to "Present" (the default value) to ensure the package is installed.</span></span>| 
+| <span data-ttu-id="26be2-126">LogPath</span><span class="sxs-lookup"><span data-stu-id="26be2-126">LogPath</span></span>| <span data-ttu-id="26be2-127">プロバイダーがパッケージをインストールまたはアンインストールするためのログ ファイルを保存する場所の完全パスを示します。</span><span class="sxs-lookup"><span data-stu-id="26be2-127">Indicates the full path where you want the provider to save a log file to install or uninstall the package.</span></span>| 
+| <span data-ttu-id="26be2-128">DependsOn</span><span class="sxs-lookup"><span data-stu-id="26be2-128">DependsOn</span></span> | <span data-ttu-id="26be2-129">このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="26be2-129">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="26be2-130">たとえば、最初に実行するリソース構成スクリプト ブロックの ID が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は DependsOn = "[ResourceType]ResourceName" になります。</span><span class="sxs-lookup"><span data-stu-id="26be2-130">For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`\`.</span></span>| 
+| <span data-ttu-id="26be2-131">ReturnCode</span><span class="sxs-lookup"><span data-stu-id="26be2-131">ReturnCode</span></span>| <span data-ttu-id="26be2-132">想定されるリターン コードを示します。</span><span class="sxs-lookup"><span data-stu-id="26be2-132">Indicates the expected return code.</span></span> <span data-ttu-id="26be2-133">実際のリターン コードがここで指定される想定される値と一致しない場合、構成はエラーを返します。</span><span class="sxs-lookup"><span data-stu-id="26be2-133">If the actual return code does not match the expected value provided here, the configuration will return an error.</span></span>| 
 
-<a id="example" class="xliff"></a>
+## <a name="example"></a><span data-ttu-id="26be2-134">例</span><span class="sxs-lookup"><span data-stu-id="26be2-134">Example</span></span>
 
-## 例
-
-この例では、指定されたパスに配置され、指定された製品 ID が割り当てられている .msi インストーラーを実行します。
+<span data-ttu-id="26be2-135">この例では、指定されたパスに配置され、指定された製品 ID が割り当てられている .msi インストーラーを実行します。</span><span class="sxs-lookup"><span data-stu-id="26be2-135">This example runs the .msi installer that is located at the specified path and has the specified product ID.</span></span>
 
 ```powershell
 Configuration PackageTest

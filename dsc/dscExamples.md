@@ -10,12 +10,10 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-examples" class="xliff"></a>
+# <a name="dsc-examples"></a><span data-ttu-id="b5334-103">DSC の例</span><span class="sxs-lookup"><span data-stu-id="b5334-103">DSC examples</span></span>
 
-# DSC の例
+<span data-ttu-id="b5334-104">このセクションには、DSC の例が掲載されています。</span><span class="sxs-lookup"><span data-stu-id="b5334-104">This section contains DSC examples:</span></span>
 
-このセクションには、DSC の例が掲載されています。
-
-- [DSC、Pester、Visual Studio Team Services で CI-CD パイプラインを構築する](dscCiCd.md)
-- [構成データと環境データの分離](separatingEnvData.md)
+- [<span data-ttu-id="b5334-105">DSC、Pester、Visual Studio Team Services で CI-CD パイプラインを構築する</span><span class="sxs-lookup"><span data-stu-id="b5334-105">Building a CI-CD pipeline with DSC, Pester, and Visual Studio Team Services</span></span>](dscCiCd.md)
+- [<span data-ttu-id="b5334-106">構成データと環境データの分離</span><span class="sxs-lookup"><span data-stu-id="b5334-106">Separating configuration and environment data</span></span>](separatingEnvData.md)
 

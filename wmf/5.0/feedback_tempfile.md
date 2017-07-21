@@ -9,14 +9,12 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-temporaryfile" class="xliff"></a>
+# <a name="new-temporaryfile"></a><span data-ttu-id="5e25c-102">New-TemporaryFile</span><span class="sxs-lookup"><span data-stu-id="5e25c-102">New-TemporaryFile</span></span>
+<span data-ttu-id="5e25c-103">スクリプトでは、ときおり、一時ファイルを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="5e25c-103">Sometimes in your scripts, you must create a temporary file.</span></span> <span data-ttu-id="5e25c-104">**New-TemporaryFile** コマンドレットを使うと、簡単に作成できます。</span><span class="sxs-lookup"><span data-stu-id="5e25c-104">You can easily do this with the **New-TemporaryFile** cmdlet:</span></span>
 
-# New-TemporaryFile
-スクリプトでは、ときおり、一時ファイルを作成する必要があります。 **New-TemporaryFile** コマンドレットを使うと、簡単に作成できます。
+<span data-ttu-id="5e25c-105">PS C:\\&gt; $tempFile = New-TemporaryFile</span><span class="sxs-lookup"><span data-stu-id="5e25c-105">PS C:\\&gt; $tempFile = New-TemporaryFile</span></span>
 
-PS C:\\&gt; $tempFile = New-TemporaryFile
+<span data-ttu-id="5e25c-106">PS C:\\&gt; $tempFile.FullName</span><span class="sxs-lookup"><span data-stu-id="5e25c-106">PS C:\\&gt; $tempFile.FullName</span></span>
 
-PS C:\\&gt; $tempFile.FullName
-
-C:\\Users\\slee\\AppData\\Local\\Temp\\tmp375.tmp
+<span data-ttu-id="5e25c-107">C:\\Users\\slee\\AppData\\Local\\Temp\\tmp375.tmp</span><span class="sxs-lookup"><span data-stu-id="5e25c-107">C:\\Users\\slee\\AppData\\Local\\Temp\\tmp375.tmp</span></span>
 

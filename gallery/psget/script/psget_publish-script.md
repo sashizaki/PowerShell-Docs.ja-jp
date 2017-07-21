@@ -10,35 +10,25 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="publish-script" class="xliff"></a>
+# <a name="publish-script"></a><span data-ttu-id="032ec-103">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="032ec-103">Publish-Script</span></span>
 
-# Publish-Script
+<span data-ttu-id="032ec-104">Publish-Script コマンドレットでは、指定されたスクリプトをオンライン ギャラリーで公開します。</span><span class="sxs-lookup"><span data-stu-id="032ec-104">The Publish-Script cmdlet publishes the specified script to the online gallery.</span></span>
 
-Publish-Script コマンドレットでは、指定されたスクリプトをオンライン ギャラリーで公開します。
+## <a name="description"></a><span data-ttu-id="032ec-105">説明</span><span class="sxs-lookup"><span data-stu-id="032ec-105">Description</span></span>
 
-<a id="description" class="xliff"></a>
+<span data-ttu-id="032ec-106">Publish-Script コマンドレットでは、バージョン、GUID、作成者、説明などの有効なメタデータを含むスクリプト ファイルを発行できます。Publish-Script コマンドレットの Force スイッチ パラメーターは、プロンプトを表示せずに NuGet.exe をブートストラップします。</span><span class="sxs-lookup"><span data-stu-id="032ec-106">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc. Force switch parameter on Publish-Script cmdlet bootstraps the NuGet.exe without prompting.</span></span>
 
-## 説明
-
-Publish-Script コマンドレットでは、バージョン、GUID、作成者、説明などの有効なメタデータを含むスクリプト ファイルを発行できます。Publish-Script コマンドレットの Force スイッチ パラメーターは、プロンプトを表示せずに NuGet.exe をブートストラップします。
-
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a><span data-ttu-id="032ec-107">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="032ec-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="032ec-108">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="032ec-108">Cmdlet online help reference</span></span>
 
-## コマンドレット オンライン ヘルプ リファレンス
+[<span data-ttu-id="032ec-109">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="032ec-109">Publish-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-[Publish-Script](http://go.microsoft.com/fwlink/?LinkId=619788)
-
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a><span data-ttu-id="032ec-110">コマンド例</span><span class="sxs-lookup"><span data-stu-id="032ec-110">Example commands</span></span>
 
 ```powershell
 # Publish the really basic script file with required metadata

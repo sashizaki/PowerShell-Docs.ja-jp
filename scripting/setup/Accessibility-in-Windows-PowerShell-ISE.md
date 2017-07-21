@@ -9,143 +9,143 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE のアクセシビリティ
-このトピックでは、Windows PowerShell® Integrated Scripting Environment (ISE) の役に立つユーザー補助機能について説明します。
+# <a name="accessibility-in-windows-powershell-ise"></a><span data-ttu-id="bf46e-103">Windows PowerShell ISE のアクセシビリティ</span><span class="sxs-lookup"><span data-stu-id="bf46e-103">Accessibility in Windows PowerShell ISE</span></span>
+<span data-ttu-id="bf46e-104">このトピックでは、Windows PowerShell® Integrated Scripting Environment (ISE) の役に立つユーザー補助機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="bf46e-104">This topic describes the accessibility features of Windows PowerShell® Integrated Scripting Environment (ISE) that you might find helpful.</span></span>
 
-* [コンソール ウィンドウとスクリプト ウィンドウのサイズと場所を変更する方法](#bkmk_1)
-* [テキストを編集するためのキーボード ショートカット](#bkmk_2)
-* [スクリプトを実行するためのキーボード ショートカット](#bkmk_3)
-* [ビューをカスタマイズするためのキーボード ショートカット](#bkmk_4)
-* [スクリプト デバッグ用のキーボード ショートカット](#bkmk_5)
-* [Windows PowerShell のタブのキーボード ショートカット](#bkmk_6)
-* [開始および終了のキーボード ショートカット](#bkmk_7)
+* [<span data-ttu-id="bf46e-105">コンソール ウィンドウとスクリプト ウィンドウのサイズと場所を変更する方法</span><span class="sxs-lookup"><span data-stu-id="bf46e-105">How to change the size and location of the Console and Script Panes</span></span>](#bkmk_1)
+* [<span data-ttu-id="bf46e-106">テキストを編集するためのキーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-106">Keyboard shortcuts for editing text</span></span>](#bkmk_2)
+* [<span data-ttu-id="bf46e-107">スクリプトを実行するためのキーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-107">Keyboard shortcuts for running scripts</span></span>](#bkmk_3)
+* [<span data-ttu-id="bf46e-108">ビューをカスタマイズするためのキーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-108">Keyboard shortcuts for customizing the view</span></span>](#bkmk_4)
+* [<span data-ttu-id="bf46e-109">スクリプト デバッグ用のキーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-109">Keyboard shortcuts for debugging scripts</span></span>](#bkmk_5)
+* [<span data-ttu-id="bf46e-110">Windows PowerShell のタブのキーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-110">Keyboard shortcuts for Windows PowerShell tabs</span></span>](#bkmk_6)
+* [<span data-ttu-id="bf46e-111">開始および終了のキーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-111">Keyboard shortcuts for starting and exiting</span></span>](#bkmk_7)
 
-Microsoft は、あらゆるユーザーの皆様に使いやすい製品とサービスをお届けできるように努めています。 以下のトピックでは、障碍のある方に Windows PowerShell ISE を快適にご利用いただくための機能、製品、およびサービスについて説明します。
+<span data-ttu-id="bf46e-112">Microsoft は、あらゆるユーザーの皆様に使いやすい製品とサービスをお届けできるように努めています。</span><span class="sxs-lookup"><span data-stu-id="bf46e-112">Microsoft is committed to making its products and services easier for everyone to use.</span></span> <span data-ttu-id="bf46e-113">以下のトピックでは、障碍のある方に Windows PowerShell ISE を快適にご利用いただくための機能、製品、およびサービスについて説明します。</span><span class="sxs-lookup"><span data-stu-id="bf46e-113">The following topics provide information about the features, products, and services that make Windows PowerShell ISE more accessible for people with disabilities.</span></span>
 
-Windows PowerShell ISE は、ハイ コントラスト モードをサポートしています。 視覚に障碍のある方のために、ブレークポイントを管理するコマンドレット ([Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6)、[Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420) など) を通じて、ブレークポイント情報をご利用いただけます。 詳しくは、「[Windows PowerShell ISE でスクリプトをデバッグする方法](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md#bkmk_1)」の「ブレークポイントを管理する方法」をご覧ください。 Microsoft Windows のアクセシビリティ機能とユーティリティに加え、Windows PowerShell ISE には、身体に障碍のある方に役立つ次の機能が備わっています。
+<span data-ttu-id="bf46e-114">Windows PowerShell ISE は、ハイ コントラスト モードをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="bf46e-114">Windows PowerShell ISE supports high contrast mode.</span></span> <span data-ttu-id="bf46e-115">視覚に障碍のある方のために、ブレークポイントを管理するコマンドレット ([Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6)、[Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420) など) を通じて、ブレークポイント情報をご利用いただけます。</span><span class="sxs-lookup"><span data-stu-id="bf46e-115">For the visually impaired, breakpoint information is available through the cmdlets for managing breakpoints, such as [Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) and [Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420).</span></span> <span data-ttu-id="bf46e-116">詳しくは、「[Windows PowerShell ISE でスクリプトをデバッグする方法](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md#bkmk_1)」の「ブレークポイントを管理する方法」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="bf46e-116">For more information please see “How to manage breakpoints” in [How to Debug Scripts in the Windows PowerShell ISE](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md#bkmk_1).</span></span> <span data-ttu-id="bf46e-117">Microsoft Windows のアクセシビリティ機能とユーティリティに加え、Windows PowerShell ISE には、身体に障碍のある方に役立つ次の機能が備わっています。</span><span class="sxs-lookup"><span data-stu-id="bf46e-117">In addition to accessibility features and utilities in Microsoft Windows, the following features make Windows PowerShell ISE more accessible for people with disabilities:</span></span>
 
--   キーボード ショートカット
+-   <span data-ttu-id="bf46e-118">キーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-118">Keyboard Shortcuts</span></span>
 
--   構文を色分けした表や、[$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) スクリプト オブジェクトを使用して他のいくつかの色の設定を変更する機能。
+-   <span data-ttu-id="bf46e-119">構文を色分けした表や、[$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) スクリプト オブジェクトを使用して他のいくつかの色の設定を変更する機能。</span><span class="sxs-lookup"><span data-stu-id="bf46e-119">Syntax Coloring Table and the ability to modify several other color settings using the [$psISE.Options](https://technet.microsoft.com/en-us/library/75e2a76f-f3d1-490b-ad5d-e3829946aabb) scripting object.</span></span>
 
--   テキスト サイズの変更
+-   <span data-ttu-id="bf46e-120">テキスト サイズの変更</span><span class="sxs-lookup"><span data-stu-id="bf46e-120">Text Size Change</span></span>
 
-## <a name="bkmk_1"></a>コンソール ウィンドウとスクリプト ウィンドウのサイズと場所を変更する方法
-コンソール ウィンドウとスクリプト ウィンドウのサイズと場所の変更は、次の手順で実行できます。 Windows PowerShell ISE を再び開いたときに、サイズと場所に加えた変更が保持されています。
+## <span data-ttu-id="bf46e-121"><a name="bkmk_1"></a>コンソール ウィンドウとスクリプト ウィンドウのサイズと場所を変更する方法</span><span class="sxs-lookup"><span data-stu-id="bf46e-121"><a name="bkmk_1"></a>How to change the size and location of the Console and Script Panes</span></span>
+<span data-ttu-id="bf46e-122">コンソール ウィンドウとスクリプト ウィンドウのサイズと場所の変更は、次の手順で実行できます。</span><span class="sxs-lookup"><span data-stu-id="bf46e-122">You can use the following steps to change the size and location of the Console Pane and the Script Pane.</span></span> <span data-ttu-id="bf46e-123">Windows PowerShell ISE を再び開いたときに、サイズと場所に加えた変更が保持されています。</span><span class="sxs-lookup"><span data-stu-id="bf46e-123">When you open the Windows PowerShell ISE again, the size and location changes you made will be retained.</span></span>
 
-### <a name="to-resize-the-script-pane-and-console-pane"></a>スクリプト ウィンドウとコンソール ウィンドウのサイズを変更するには
+### <a name="to-resize-the-script-pane-and-console-pane"></a><span data-ttu-id="bf46e-124">スクリプト ウィンドウとコンソール ウィンドウのサイズを変更するには</span><span class="sxs-lookup"><span data-stu-id="bf46e-124">To resize the Script Pane and Console Pane</span></span>
 
-1.  スクリプト ウィンドウとコンソール ウィンドウの間にある境界線の上にマウスのポインターを置いて止めます。
+1.  <span data-ttu-id="bf46e-125">スクリプト ウィンドウとコンソール ウィンドウの間にある境界線の上にマウスのポインターを置いて止めます。</span><span class="sxs-lookup"><span data-stu-id="bf46e-125">Pause the pointer on the split line between the Script Pane and Console Pane.</span></span>
 
-2.  マウスのポインターが両方向矢印に変わったら、境界線をドラッグして、ウィンドウ サイズを変更します。
+2.  <span data-ttu-id="bf46e-126">マウスのポインターが両方向矢印に変わったら、境界線をドラッグして、ウィンドウ サイズを変更します。</span><span class="sxs-lookup"><span data-stu-id="bf46e-126">When the mouse pointer changes to a two-headed arrow, drag the border to change the size of the pane.</span></span>
 
-### <a name="to-move-the-script-pane-and-console-pane"></a>スクリプト ウィンドウとコンソール ウィンドウを移動するには
-次のいずれかの操作を行います。
+### <a name="to-move-the-script-pane-and-console-pane"></a><span data-ttu-id="bf46e-127">スクリプト ウィンドウとコンソール ウィンドウを移動するには</span><span class="sxs-lookup"><span data-stu-id="bf46e-127">To move the Script Pane and Console Pane</span></span>
+<span data-ttu-id="bf46e-128">次のいずれかの操作を行います。</span><span class="sxs-lookup"><span data-stu-id="bf46e-128">Do one of the following:</span></span>
 
--   スクリプト ウィンドウをコンソール ウィンドウの上に移動するには、**CTRL + 1** を押すか、ツール バーの **[スクリプト ウィンドウを上に表示]** アイコンをクリックするか、**[表示]** メニューで **[スクリプト ウィンドウを上に表示]** をクリックします。
+-   <span data-ttu-id="bf46e-129">スクリプト ウィンドウをコンソール ウィンドウの上に移動するには、**CTRL + 1** を押すか、ツール バーの **[スクリプト ウィンドウを上に表示]** アイコンをクリックするか、**[表示]** メニューで **[スクリプト ウィンドウを上に表示]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="bf46e-129">To move the Script Pane above the Console Pane, press **CTRL+1** or, on the toolbar, click the **Show Script Pane Top** icon, or in the **View** menu, click **Show Script Pane Top**.</span></span>
 
--   スクリプト ウィンドウをコンソール ウィンドウの右側に移動するには、**CTRL + 2** を押すか、ツール バーの **[スクリプト ウィンドウを右側に表示]** アイコンをクリックするか、**[表示]** メニューで **[スクリプト ウィンドウを右側に表示]** をクリックします。
+-   <span data-ttu-id="bf46e-130">スクリプト ウィンドウをコンソール ウィンドウの右側に移動するには、**CTRL + 2** を押すか、ツール バーの **[スクリプト ウィンドウを右側に表示]** アイコンをクリックするか、**[表示]** メニューで **[スクリプト ウィンドウを右側に表示]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="bf46e-130">To move the Script Pane to the right of the Console Pane, press **CTRL+2** or, on the toolbar, click the **Show Script Pane Right** icon, or in the **View** menu, click **Show Script Pane Right**.</span></span>
 
--   スクリプト ウィンドウを最大表示するには、**CTRL + 3** を押すか、ツール バーの **[スクリプト ウィンドウを最大表示]** アイコンをクリックするか、**[表示]** メニューで **[スクリプト ウィンドウを最大表示]** をクリックします。
+-   <span data-ttu-id="bf46e-131">スクリプト ウィンドウを最大表示するには、**CTRL + 3** を押すか、ツール バーの **[スクリプト ウィンドウを最大表示]** アイコンをクリックするか、**[表示]** メニューで **[スクリプト ウィンドウを最大表示]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="bf46e-131">To maximize the Script Pane, press **CTRL+3** or, on the toolbar, click the **Show Script Pane Maximized** icon, or in the **View** menu, click **Show Script Pane Maximized**.</span></span>
 
--   コンソール ウィンドウを最大表示し、スクリプト ウィンドウを非表示にするには、タブの行の右端にある **[スクリプト ウィンドウを非表示にします]** アイコンをクリックするか、**[表示]** メニューで **[スクリプト ウィンドウを表示]** メニュー オプションをクリックして選択解除します。
+-   <span data-ttu-id="bf46e-132">コンソール ウィンドウを最大表示し、スクリプト ウィンドウを非表示にするには、タブの行の右端にある **[スクリプト ウィンドウを非表示にします]** アイコンをクリックするか、**[表示]** メニューで **[スクリプト ウィンドウを表示]** メニュー オプションをクリックして選択解除します。</span><span class="sxs-lookup"><span data-stu-id="bf46e-132">To maximize the Console Pane and hide the Script Pane, on the far right edge of the row of tabs, click the **Hide Script Pane** icon, in the **View** menu, click to deselect the **Show Script Pane** menu option.</span></span>
 
--   コンソール ウィンドウを最大表示しているときに、スクリプト ウィンドウを表示するには、タブの行の右端にある **[スクリプト ウィンドウを表示]** アイコンをクリックするか、**[表示]** メニューで **[スクリプト ウィンドウを表示]** メニュー オプションをクリックして選びます。
+-   <span data-ttu-id="bf46e-133">コンソール ウィンドウを最大表示しているときに、スクリプト ウィンドウを表示するには、タブの行の右端にある **[スクリプト ウィンドウを表示]** アイコンをクリックするか、**[表示]** メニューで **[スクリプト ウィンドウを表示]** メニュー オプションをクリックして選びます。</span><span class="sxs-lookup"><span data-stu-id="bf46e-133">To display the Script Pane when the Console Pane is maximized, on the far right edge of the row of tabs, click the **Show Script Pane** icon, or in the **View** menu, click to select the **Show Script Pane** menu option.</span></span>
 
-## <a name="bkmk_2"></a>テキストを編集するためのキーボード ショートカット
-テキストを編集するときに、次のキーボード ショートカットを使用できます。
+## <span data-ttu-id="bf46e-134"><a name="bkmk_2"></a>テキストを編集するためのキーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-134"><a name="bkmk_2"></a>Keyboard shortcuts for editing text</span></span>
+<span data-ttu-id="bf46e-135">テキストを編集するときに、次のキーボード ショートカットを使用できます。</span><span class="sxs-lookup"><span data-stu-id="bf46e-135">You can use the following keyboard shortcuts when you edit text.</span></span>
 
-|操作|キーボード ショートカット|使用する場所|
+|<span data-ttu-id="bf46e-136">操作</span><span class="sxs-lookup"><span data-stu-id="bf46e-136">Action</span></span>|<span data-ttu-id="bf46e-137">キーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-137">Keyboard Shortcuts</span></span>|<span data-ttu-id="bf46e-138">使用する場所</span><span class="sxs-lookup"><span data-stu-id="bf46e-138">Use in</span></span>|
 |----------|----------------------|----------|
-|**コピー**|CTRL キーを押しながら C|スクリプト ウィンドウ、コンソール ウィンドウ|
-|**切り取り**|CTRL + X|スクリプト ウィンドウ、コンソール ウィンドウ|
-|**スクリプト内を検索**|CTRL + F|スクリプト ウィンドウ|
-|**スクリプト内で次を検索**|F3|スクリプト ウィンドウ|
-|**スクリプト内で前を検索**|SHIFT + F3|スクリプト ウィンドウ|
-|**貼り付け**|CTRL + V|スクリプト ウィンドウ、コンソール ウィンドウ|
-|**やり直す**|CTRL + Y|スクリプト ウィンドウ、コンソール ウィンドウ|
-|**スクリプト内で置換**|CTRL + H|スクリプト ウィンドウ|
-|**上書き保存**|Ctrl + S|スクリプト ウィンドウ|
-|**すべて選択**|CTRL + A|スクリプト ウィンドウ、コンソール ウィンドウ|
-|**元に戻す**|CTRL + Z|スクリプト ウィンドウ、コンソール ウィンドウ|
+|<span data-ttu-id="bf46e-139">**コピー**</span><span class="sxs-lookup"><span data-stu-id="bf46e-139">**Copy**</span></span>|<span data-ttu-id="bf46e-140">CTRL キーを押しながら C</span><span class="sxs-lookup"><span data-stu-id="bf46e-140">CTRL+C</span></span>|<span data-ttu-id="bf46e-141">スクリプト ウィンドウ、コンソール ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="bf46e-141">Script Pane, Console Pane</span></span>|
+|<span data-ttu-id="bf46e-142">**切り取り**</span><span class="sxs-lookup"><span data-stu-id="bf46e-142">**Cut**</span></span>|<span data-ttu-id="bf46e-143">CTRL + X</span><span class="sxs-lookup"><span data-stu-id="bf46e-143">CTRL+X</span></span>|<span data-ttu-id="bf46e-144">スクリプト ウィンドウ、コンソール ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="bf46e-144">Script Pane, Console Pane</span></span>|
+|<span data-ttu-id="bf46e-145">**スクリプト内を検索**</span><span class="sxs-lookup"><span data-stu-id="bf46e-145">**Find in Script**</span></span>|<span data-ttu-id="bf46e-146">CTRL + F</span><span class="sxs-lookup"><span data-stu-id="bf46e-146">CTRL+F</span></span>|<span data-ttu-id="bf46e-147">スクリプト ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="bf46e-147">Script Pane</span></span>|
+|<span data-ttu-id="bf46e-148">**スクリプト内で次を検索**</span><span class="sxs-lookup"><span data-stu-id="bf46e-148">**Find Next in Script**</span></span>|<span data-ttu-id="bf46e-149">F3</span><span class="sxs-lookup"><span data-stu-id="bf46e-149">F3</span></span>|<span data-ttu-id="bf46e-150">スクリプト ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="bf46e-150">Script Pane</span></span>|
+|<span data-ttu-id="bf46e-151">**スクリプト内で前を検索**</span><span class="sxs-lookup"><span data-stu-id="bf46e-151">**Find Previous in Script**</span></span>|<span data-ttu-id="bf46e-152">SHIFT + F3</span><span class="sxs-lookup"><span data-stu-id="bf46e-152">SHIFT+F3</span></span>|<span data-ttu-id="bf46e-153">スクリプト ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="bf46e-153">Script Pane</span></span>|
+|<span data-ttu-id="bf46e-154">**貼り付け**</span><span class="sxs-lookup"><span data-stu-id="bf46e-154">**Paste**</span></span>|<span data-ttu-id="bf46e-155">CTRL + V</span><span class="sxs-lookup"><span data-stu-id="bf46e-155">CTRL+V</span></span>|<span data-ttu-id="bf46e-156">スクリプト ウィンドウ、コンソール ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="bf46e-156">Script Pane, Console Pane</span></span>|
+|<span data-ttu-id="bf46e-157">**やり直す**</span><span class="sxs-lookup"><span data-stu-id="bf46e-157">**Redo**</span></span>|<span data-ttu-id="bf46e-158">CTRL + Y</span><span class="sxs-lookup"><span data-stu-id="bf46e-158">CTRL+Y</span></span>|<span data-ttu-id="bf46e-159">スクリプト ウィンドウ、コンソール ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="bf46e-159">Script Pane, Console Pane</span></span>|
+|<span data-ttu-id="bf46e-160">**スクリプト内で置換**</span><span class="sxs-lookup"><span data-stu-id="bf46e-160">**Replace in Script**</span></span>|<span data-ttu-id="bf46e-161">CTRL + H</span><span class="sxs-lookup"><span data-stu-id="bf46e-161">CTRL+H</span></span>|<span data-ttu-id="bf46e-162">スクリプト ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="bf46e-162">Script Pane</span></span>|
+|<span data-ttu-id="bf46e-163">**上書き保存**</span><span class="sxs-lookup"><span data-stu-id="bf46e-163">**Save**</span></span>|<span data-ttu-id="bf46e-164">Ctrl + S</span><span class="sxs-lookup"><span data-stu-id="bf46e-164">CTRL+S</span></span>|<span data-ttu-id="bf46e-165">スクリプト ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="bf46e-165">Script Pane</span></span>|
+|<span data-ttu-id="bf46e-166">**すべて選択**</span><span class="sxs-lookup"><span data-stu-id="bf46e-166">**Select All**</span></span>|<span data-ttu-id="bf46e-167">CTRL + A</span><span class="sxs-lookup"><span data-stu-id="bf46e-167">CTRL+A</span></span>|<span data-ttu-id="bf46e-168">スクリプト ウィンドウ、コンソール ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="bf46e-168">Script Pane, Console Pane</span></span>|
+|<span data-ttu-id="bf46e-169">**元に戻す**</span><span class="sxs-lookup"><span data-stu-id="bf46e-169">**Undo**</span></span>|<span data-ttu-id="bf46e-170">CTRL + Z</span><span class="sxs-lookup"><span data-stu-id="bf46e-170">CTRL+Z</span></span>|<span data-ttu-id="bf46e-171">スクリプト ウィンドウ、コンソール ウィンドウ</span><span class="sxs-lookup"><span data-stu-id="bf46e-171">Script Pane, Console Pane</span></span>|
 
-## <a name="bkmk_3"></a>スクリプトを実行するためのキーボード ショートカット
-スクリプト ウィンドウでスクリプトを実行する場合、次のキーボード ショートカットを使用できます。
+## <span data-ttu-id="bf46e-172"><a name="bkmk_3"></a>スクリプトを実行するためのキーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-172"><a name="bkmk_3"></a>Keyboard shortcuts for running scripts</span></span>
+<span data-ttu-id="bf46e-173">スクリプト ウィンドウでスクリプトを実行する場合、次のキーボード ショートカットを使用できます。</span><span class="sxs-lookup"><span data-stu-id="bf46e-173">You can use the following keyboard shortcuts when you run scripts in the Script Pane.</span></span>
 
-|操作|キーボード ショートカット|
+|<span data-ttu-id="bf46e-174">操作</span><span class="sxs-lookup"><span data-stu-id="bf46e-174">Action</span></span>|<span data-ttu-id="bf46e-175">キーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-175">Keyboard Shortcut</span></span>|
 |----------|---------------------|
-|**新規**|Ctrl + N|
-|**開く**|Ctrl + O|
-|**実行**|F5|
-|**選択範囲の実行**|F8|
-|**実行を中止**|CTRL + BREAK コンテキストが明確な場合 (選ばれているテキストがない場合)、CTRL + C を使用できます。|
-|**タブ移動** (次のスクリプトへ)|CTRL + TAB **メモ:** 次のスクリプトへのタブは、PowerShell タブを 1 つ開いている場合、または PowerShell タブを複数開いている場合にだけ機能します。ただし、フォーカスはスクリプト ウィンドウにあります。|
-|**タブ移動** (前のスクリプトへ)|CTRL + SHIFT + TAB **メモ:** 前のスクリプトへのタブは、PowerShell タブを 1 つだけ開いている場合、または PowerShell タブを複数開いている場合に機能します。フォーカスはスクリプト ウィンドウにあります。|
+|<span data-ttu-id="bf46e-176">**新規**</span><span class="sxs-lookup"><span data-stu-id="bf46e-176">**New**</span></span>|<span data-ttu-id="bf46e-177">Ctrl + N</span><span class="sxs-lookup"><span data-stu-id="bf46e-177">CTRL+N</span></span>|
+|<span data-ttu-id="bf46e-178">**開く**</span><span class="sxs-lookup"><span data-stu-id="bf46e-178">**Open**</span></span>|<span data-ttu-id="bf46e-179">Ctrl + O</span><span class="sxs-lookup"><span data-stu-id="bf46e-179">CTRL+O</span></span>|
+|<span data-ttu-id="bf46e-180">**実行**</span><span class="sxs-lookup"><span data-stu-id="bf46e-180">**Run**</span></span>|<span data-ttu-id="bf46e-181">F5</span><span class="sxs-lookup"><span data-stu-id="bf46e-181">F5</span></span>|
+|<span data-ttu-id="bf46e-182">**選択範囲の実行**</span><span class="sxs-lookup"><span data-stu-id="bf46e-182">**Run Selection**</span></span>|<span data-ttu-id="bf46e-183">F8</span><span class="sxs-lookup"><span data-stu-id="bf46e-183">F8</span></span>|
+|<span data-ttu-id="bf46e-184">**実行を中止**</span><span class="sxs-lookup"><span data-stu-id="bf46e-184">**Stop Execution**</span></span>|<span data-ttu-id="bf46e-185">CTRL + BREAK</span><span class="sxs-lookup"><span data-stu-id="bf46e-185">CTRL+BREAK.</span></span> <span data-ttu-id="bf46e-186">コンテキストが明確な場合 (選ばれているテキストがない場合)、CTRL + C を使用できます。</span><span class="sxs-lookup"><span data-stu-id="bf46e-186">CTRL+C can be used when the context is unambiguous (when there is no text selected).</span></span>|
+|<span data-ttu-id="bf46e-187">**タブ移動** (次のスクリプトへ)</span><span class="sxs-lookup"><span data-stu-id="bf46e-187">**Tab** (to next script)</span></span>|<span data-ttu-id="bf46e-188">CTRL + TAB **メモ:** 次のスクリプトへのタブは、PowerShell タブを 1 つ開いている場合、または PowerShell タブを複数開いている場合にだけ機能します。ただし、フォーカスはスクリプト ウィンドウにあります。</span><span class="sxs-lookup"><span data-stu-id="bf46e-188">CTRL+TAB **Note:** Tab to next script works only when you have a single PowerShell tab open, or when you have more than one PowerShell tab open, but the focus is in the Script Pane.</span></span>|
+|<span data-ttu-id="bf46e-189">**タブ移動** (前のスクリプトへ)</span><span class="sxs-lookup"><span data-stu-id="bf46e-189">**Tab** (to previous script)</span></span>|<span data-ttu-id="bf46e-190">CTRL + SHIFT + TAB **メモ:** 前のスクリプトへのタブは、PowerShell タブを 1 つだけ開いている場合、または PowerShell タブを複数開いている場合に機能します。フォーカスはスクリプト ウィンドウにあります。</span><span class="sxs-lookup"><span data-stu-id="bf46e-190">CTRL+SHIFT+TAB **Note:** Tab to previous script works when you have only one PowerShell tab open, or if you have more  than one PowerShell tab open, and the focus is in the Script Pane.</span></span>|
 
-## <a name="bkmk_4"></a>ビューをカスタマイズするためのキーボード ショートカット
-次のキーボード ショートカットを使用して、Windows PowerShell ISE のビューをカスタマイズできます。 アプリケーションのすべてのウィンドウから利用可能です。
+## <span data-ttu-id="bf46e-191"><a name="bkmk_4"></a>ビューをカスタマイズするためのキーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-191"><a name="bkmk_4"></a>Keyboard shortcuts for customizing the view</span></span>
+<span data-ttu-id="bf46e-192">次のキーボード ショートカットを使用して、Windows PowerShell ISE のビューをカスタマイズできます。</span><span class="sxs-lookup"><span data-stu-id="bf46e-192">You can use the following keyboard shortcuts to customize the view in Windows PowerShell ISE.</span></span> <span data-ttu-id="bf46e-193">アプリケーションのすべてのウィンドウから利用可能です。</span><span class="sxs-lookup"><span data-stu-id="bf46e-193">They are accessible from all the panes in the application.</span></span>
 
-|操作|キーボード ショートカット|
+|<span data-ttu-id="bf46e-194">操作</span><span class="sxs-lookup"><span data-stu-id="bf46e-194">Action</span></span>|<span data-ttu-id="bf46e-195">キーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-195">Keyboard Shortcut</span></span>|
 |----------|---------------------|
-|**コンソール ウィンドウに移動**|CTRL + D|
-|**スクリプト ウィンドウに移動**|CTRL + I|
-|**スクリプト ウィンドウを表示**|CTRL + R|
-|**スクリプト ウィンドウを非表示にする**|CTRL + R|
+|<span data-ttu-id="bf46e-196">**コンソール ウィンドウに移動**</span><span class="sxs-lookup"><span data-stu-id="bf46e-196">**Go to Console Pane**</span></span>|<span data-ttu-id="bf46e-197">CTRL + D</span><span class="sxs-lookup"><span data-stu-id="bf46e-197">CTRL+D</span></span>|
+|<span data-ttu-id="bf46e-198">**スクリプト ウィンドウに移動**</span><span class="sxs-lookup"><span data-stu-id="bf46e-198">**Go to Script Pane**</span></span>|<span data-ttu-id="bf46e-199">CTRL + I</span><span class="sxs-lookup"><span data-stu-id="bf46e-199">CTRL+I</span></span>|
+|<span data-ttu-id="bf46e-200">**スクリプト ウィンドウを表示**</span><span class="sxs-lookup"><span data-stu-id="bf46e-200">**Show Script Pane**</span></span>|<span data-ttu-id="bf46e-201">CTRL + R</span><span class="sxs-lookup"><span data-stu-id="bf46e-201">CTRL+R</span></span>|
+|<span data-ttu-id="bf46e-202">**スクリプト ウィンドウを非表示にする**</span><span class="sxs-lookup"><span data-stu-id="bf46e-202">**Hide Script Pane**</span></span>|<span data-ttu-id="bf46e-203">CTRL + R</span><span class="sxs-lookup"><span data-stu-id="bf46e-203">CTRL+R</span></span>|
 ||
-|**スクリプト ウィンドウを上に移動**|CTRL + 1|
-|**スクリプト ウィンドウを右に移動**|CTRL + 2|
-|**スクリプト ウィンドウを最大表示**|CTRL + 3|
-|**拡大**|CTRL + + (プラス記号)|
-|**縮小**|CTRL + - (マイナス記号)|
+|<span data-ttu-id="bf46e-204">**スクリプト ウィンドウを上に移動**</span><span class="sxs-lookup"><span data-stu-id="bf46e-204">**Move Script Pane Up**</span></span>|<span data-ttu-id="bf46e-205">CTRL + 1</span><span class="sxs-lookup"><span data-stu-id="bf46e-205">CTRL+1</span></span>|
+|<span data-ttu-id="bf46e-206">**スクリプト ウィンドウを右に移動**</span><span class="sxs-lookup"><span data-stu-id="bf46e-206">**Move Script Pane Right**</span></span>|<span data-ttu-id="bf46e-207">CTRL + 2</span><span class="sxs-lookup"><span data-stu-id="bf46e-207">CTRL+2</span></span>|
+|<span data-ttu-id="bf46e-208">**スクリプト ウィンドウを最大表示**</span><span class="sxs-lookup"><span data-stu-id="bf46e-208">**Maximize Script Pane**</span></span>|<span data-ttu-id="bf46e-209">CTRL + 3</span><span class="sxs-lookup"><span data-stu-id="bf46e-209">CTRL+3</span></span>|
+|<span data-ttu-id="bf46e-210">**拡大**</span><span class="sxs-lookup"><span data-stu-id="bf46e-210">**Zoom In**</span></span>|<span data-ttu-id="bf46e-211">CTRL + + (プラス記号)</span><span class="sxs-lookup"><span data-stu-id="bf46e-211">CTRL+PLUS SIGN</span></span>|
+|<span data-ttu-id="bf46e-212">**縮小**</span><span class="sxs-lookup"><span data-stu-id="bf46e-212">**Zoom Out**</span></span>|<span data-ttu-id="bf46e-213">CTRL + - (マイナス記号)</span><span class="sxs-lookup"><span data-stu-id="bf46e-213">CTRL+MINUS SIGN</span></span>|
 
-## <a name="bkmk_5"></a>スクリプト デバッグ用のキーボード ショートカット
-スクリプトをデバッグするときに、次のキーボード ショートカットを使用できます。
+## <span data-ttu-id="bf46e-214"><a name="bkmk_5"></a>スクリプト デバッグ用のキーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-214"><a name="bkmk_5"></a>Keyboard shortcuts for debugging scripts</span></span>
+<span data-ttu-id="bf46e-215">スクリプトをデバッグするときに、次のキーボード ショートカットを使用できます。</span><span class="sxs-lookup"><span data-stu-id="bf46e-215">You can use the following keyboard shortcuts when you debug scripts.</span></span>
 
-|操作|キーボード ショートカット|使用する場所|
+|<span data-ttu-id="bf46e-216">操作</span><span class="sxs-lookup"><span data-stu-id="bf46e-216">Action</span></span>|<span data-ttu-id="bf46e-217">キーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-217">Keyboard Shortcut</span></span>|<span data-ttu-id="bf46e-218">使用する場所</span><span class="sxs-lookup"><span data-stu-id="bf46e-218">Use in</span></span>|
 |----------|---------------------|----------|
-|**実行/続行**|F5|スクリプト ウィンドウ、スクリプトのデバッグ時|
-|**ステップ イン**|F11|スクリプト ウィンドウ、スクリプトのデバッグ時|
-|**ステップ オーバー**|F10|スクリプト ウィンドウ、スクリプトのデバッグ時|
-|**ステップ アウト**|SHIFT + F11|スクリプト ウィンドウ、スクリプトのデバッグ時|
-|**呼び出し履歴の表示**|CTRL + SHIFT + D|スクリプト ウィンドウ、スクリプトのデバッグ時|
-|**ブレークポイントの一覧表示**|CTRL + SHIFT + L|スクリプト ウィンドウ、スクリプトのデバッグ時|
-|**ブレークポイントの設定/解除**|F9|スクリプト ウィンドウ、スクリプトのデバッグ時|
-|**すべてのブレークポイントの削除**|CTRL + SHIFT + F9|スクリプト ウィンドウ、スクリプトのデバッグ時|
-|**デバッガーの停止**|SHIFT + F5|スクリプト ウィンドウ、スクリプトのデバッグ時|
+|<span data-ttu-id="bf46e-219">**実行/続行**</span><span class="sxs-lookup"><span data-stu-id="bf46e-219">**Run/Continue**</span></span>|<span data-ttu-id="bf46e-220">F5</span><span class="sxs-lookup"><span data-stu-id="bf46e-220">F5</span></span>|<span data-ttu-id="bf46e-221">スクリプト ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-221">Script Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-222">**ステップ イン**</span><span class="sxs-lookup"><span data-stu-id="bf46e-222">**Step Into**</span></span>|<span data-ttu-id="bf46e-223">F11</span><span class="sxs-lookup"><span data-stu-id="bf46e-223">F11</span></span>|<span data-ttu-id="bf46e-224">スクリプト ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-224">Script Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-225">**ステップ オーバー**</span><span class="sxs-lookup"><span data-stu-id="bf46e-225">**Step Over**</span></span>|<span data-ttu-id="bf46e-226">F10</span><span class="sxs-lookup"><span data-stu-id="bf46e-226">F10</span></span>|<span data-ttu-id="bf46e-227">スクリプト ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-227">Script Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-228">**ステップ アウト**</span><span class="sxs-lookup"><span data-stu-id="bf46e-228">**Step Out**</span></span>|<span data-ttu-id="bf46e-229">SHIFT + F11</span><span class="sxs-lookup"><span data-stu-id="bf46e-229">SHIFT+F11</span></span>|<span data-ttu-id="bf46e-230">スクリプト ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-230">Script Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-231">**呼び出し履歴の表示**</span><span class="sxs-lookup"><span data-stu-id="bf46e-231">**Display Call Stack**</span></span>|<span data-ttu-id="bf46e-232">CTRL + SHIFT + D</span><span class="sxs-lookup"><span data-stu-id="bf46e-232">CTRL+SHIFT+D</span></span>|<span data-ttu-id="bf46e-233">スクリプト ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-233">Script Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-234">**ブレークポイントの一覧表示**</span><span class="sxs-lookup"><span data-stu-id="bf46e-234">**List Breakpoints**</span></span>|<span data-ttu-id="bf46e-235">CTRL + SHIFT + L</span><span class="sxs-lookup"><span data-stu-id="bf46e-235">CTRL+SHIFT+L</span></span>|<span data-ttu-id="bf46e-236">スクリプト ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-236">Script Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-237">**ブレークポイントの設定/解除**</span><span class="sxs-lookup"><span data-stu-id="bf46e-237">**Toggle Breakpoint**</span></span>|<span data-ttu-id="bf46e-238">F9</span><span class="sxs-lookup"><span data-stu-id="bf46e-238">F9</span></span>|<span data-ttu-id="bf46e-239">スクリプト ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-239">Script Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-240">**すべてのブレークポイントの削除**</span><span class="sxs-lookup"><span data-stu-id="bf46e-240">**Remove All Breakpoints**</span></span>|<span data-ttu-id="bf46e-241">CTRL + SHIFT + F9</span><span class="sxs-lookup"><span data-stu-id="bf46e-241">CTRL+SHIFT+F9</span></span>|<span data-ttu-id="bf46e-242">スクリプト ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-242">Script Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-243">**デバッガーの停止**</span><span class="sxs-lookup"><span data-stu-id="bf46e-243">**Stop Debugger**</span></span>|<span data-ttu-id="bf46e-244">SHIFT + F5</span><span class="sxs-lookup"><span data-stu-id="bf46e-244">SHIFT+F5</span></span>|<span data-ttu-id="bf46e-245">スクリプト ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-245">Script Pane, when debugging a script</span></span>|
 
 > [!NOTE]
-> Windows PowerShell ISE でスクリプトをデバッグする場合は、Windows PowerShell コンソール用に設計されたキーボード ショートカットも使用できます。 それらのショートカットを使用するには、コンソール ウィンドウでショートカットを入力してから Enter キーを押します。
+> <span data-ttu-id="bf46e-246">Windows PowerShell ISE でスクリプトをデバッグする場合は、Windows PowerShell コンソール用に設計されたキーボード ショートカットも使用できます。</span><span class="sxs-lookup"><span data-stu-id="bf46e-246">You can also use the keyboard shortcuts designed for the Windows PowerShell console when you debug scripts in Windows PowerShell ISE.</span></span> <span data-ttu-id="bf46e-247">それらのショートカットを使用するには、コンソール ウィンドウでショートカットを入力してから Enter キーを押します。</span><span class="sxs-lookup"><span data-stu-id="bf46e-247">To use these shortcuts, you must type the shortcut in the Console Pane and press ENTER.</span></span>
 
-|操作|キーボード ショートカット|使用する場所|
+|<span data-ttu-id="bf46e-248">操作</span><span class="sxs-lookup"><span data-stu-id="bf46e-248">Action</span></span>|<span data-ttu-id="bf46e-249">キーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-249">Keyboard Shortcut</span></span>|<span data-ttu-id="bf46e-250">使用する場所</span><span class="sxs-lookup"><span data-stu-id="bf46e-250">Use in</span></span>|
 |----------|---------------------|----------|
-|**続行**|C|コンソール ウィンドウ、スクリプトのデバッグ時|
-|**ステップ イン**|S|コンソール ウィンドウ、スクリプトのデバッグ時|
-|**ステップ オーバー**|V|コンソール ウィンドウ、スクリプトのデバッグ時|
-|**ステップ アウト**|O|コンソール ウィンドウ、スクリプトのデバッグ時|
-|**最後のコマンドを繰り返す** (ステップ インまたはステップ オーバーで使用)|Enter|コンソール ウィンドウ、スクリプトのデバッグ時|
-|**呼び出し履歴の表示**|K|コンソール ウィンドウ、スクリプトのデバッグ時|
-|**デバッグの停止**|Q|コンソール ウィンドウ、スクリプトのデバッグ時|
-|**スクリプトの一覧表示**|L|コンソール ウィンドウ、スクリプトのデバッグ時|
-|**コンソールのデバッグ コマンドの表示**|H または ?|コンソール ウィンドウ、スクリプトのデバッグ時|
+|<span data-ttu-id="bf46e-251">**続行**</span><span class="sxs-lookup"><span data-stu-id="bf46e-251">**Continue**</span></span>|<span data-ttu-id="bf46e-252">C</span><span class="sxs-lookup"><span data-stu-id="bf46e-252">C</span></span>|<span data-ttu-id="bf46e-253">コンソール ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-253">Console Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-254">**ステップ イン**</span><span class="sxs-lookup"><span data-stu-id="bf46e-254">**Step Into**</span></span>|<span data-ttu-id="bf46e-255">S</span><span class="sxs-lookup"><span data-stu-id="bf46e-255">S</span></span>|<span data-ttu-id="bf46e-256">コンソール ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-256">Console Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-257">**ステップ オーバー**</span><span class="sxs-lookup"><span data-stu-id="bf46e-257">**Step Over**</span></span>|<span data-ttu-id="bf46e-258">V</span><span class="sxs-lookup"><span data-stu-id="bf46e-258">V</span></span>|<span data-ttu-id="bf46e-259">コンソール ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-259">Console Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-260">**ステップ アウト**</span><span class="sxs-lookup"><span data-stu-id="bf46e-260">**Step Out**</span></span>|<span data-ttu-id="bf46e-261">O</span><span class="sxs-lookup"><span data-stu-id="bf46e-261">O</span></span>|<span data-ttu-id="bf46e-262">コンソール ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-262">Console Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-263">**最後のコマンドを繰り返す** (ステップ インまたはステップ オーバーで使用)</span><span class="sxs-lookup"><span data-stu-id="bf46e-263">**Repeat Last Command** (for Step Into or Step Over)</span></span>|<span data-ttu-id="bf46e-264">Enter</span><span class="sxs-lookup"><span data-stu-id="bf46e-264">ENTER</span></span>|<span data-ttu-id="bf46e-265">コンソール ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-265">Console Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-266">**呼び出し履歴の表示**</span><span class="sxs-lookup"><span data-stu-id="bf46e-266">**Display Call Stack**</span></span>|<span data-ttu-id="bf46e-267">K</span><span class="sxs-lookup"><span data-stu-id="bf46e-267">K</span></span>|<span data-ttu-id="bf46e-268">コンソール ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-268">Console Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-269">**デバッグの停止**</span><span class="sxs-lookup"><span data-stu-id="bf46e-269">**Stop Debugging**</span></span>|<span data-ttu-id="bf46e-270">Q</span><span class="sxs-lookup"><span data-stu-id="bf46e-270">Q</span></span>|<span data-ttu-id="bf46e-271">コンソール ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-271">Console Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-272">**スクリプトの一覧表示**</span><span class="sxs-lookup"><span data-stu-id="bf46e-272">**List the Script**</span></span>|<span data-ttu-id="bf46e-273">L</span><span class="sxs-lookup"><span data-stu-id="bf46e-273">L</span></span>|<span data-ttu-id="bf46e-274">コンソール ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-274">Console Pane, when debugging a script</span></span>|
+|<span data-ttu-id="bf46e-275">**コンソールのデバッグ コマンドの表示**</span><span class="sxs-lookup"><span data-stu-id="bf46e-275">**Display Console Debugging Commands**</span></span>|<span data-ttu-id="bf46e-276">H または ?</span><span class="sxs-lookup"><span data-stu-id="bf46e-276">H or ?</span></span>|<span data-ttu-id="bf46e-277">コンソール ウィンドウ、スクリプトのデバッグ時</span><span class="sxs-lookup"><span data-stu-id="bf46e-277">Console Pane, when debugging a script</span></span>|
 
-## <a name="bkmk_6"></a>Windows PowerShell のタブのキーボード ショートカット
-Windows PowerShell のタブを使用するときに、次のキーボード ショートカットを使用できます。
+## <span data-ttu-id="bf46e-278"><a name="bkmk_6"></a>Windows PowerShell のタブのキーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-278"><a name="bkmk_6"></a>Keyboard shortcuts for Windows PowerShell tabs</span></span>
+<span data-ttu-id="bf46e-279">Windows PowerShell のタブを使用するときに、次のキーボード ショートカットを使用できます。</span><span class="sxs-lookup"><span data-stu-id="bf46e-279">You can use the following keyboard shortcuts when you use Windows PowerShell tabs.</span></span>
 
-|操作|キーボード ショートカット|
+|<span data-ttu-id="bf46e-280">操作</span><span class="sxs-lookup"><span data-stu-id="bf46e-280">Action</span></span>|<span data-ttu-id="bf46e-281">キーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-281">Keyboard Shortcut</span></span>|
 |----------|---------------------|
-|**PowerShell タブを閉じる**|Ctrl + W|
-|**PowerShell タブの新規作成**|CTRL + T|
-|**前の PowerShell タブ**|CTRL + SHIFT + TAB。 このショートカットは、任意の PowerShell タブ上で開いているファイルがない場合にのみ機能します。|
-|**次の Windows PowerShell タブ**|CTRL + Tab。 このショートカットは、任意の PowerShell タブ上で開いているファイルがない場合にのみ機能します。|
+|<span data-ttu-id="bf46e-282">**PowerShell タブを閉じる**</span><span class="sxs-lookup"><span data-stu-id="bf46e-282">**Close PowerShell Tab**</span></span>|<span data-ttu-id="bf46e-283">Ctrl + W</span><span class="sxs-lookup"><span data-stu-id="bf46e-283">CTRL+W</span></span>|
+|<span data-ttu-id="bf46e-284">**PowerShell タブの新規作成**</span><span class="sxs-lookup"><span data-stu-id="bf46e-284">**New PowerShell Tab**</span></span>|<span data-ttu-id="bf46e-285">CTRL + T</span><span class="sxs-lookup"><span data-stu-id="bf46e-285">CTRL+T</span></span>|
+|<span data-ttu-id="bf46e-286">**前の PowerShell タブ**</span><span class="sxs-lookup"><span data-stu-id="bf46e-286">**Previous PowerShell tab**</span></span>|<span data-ttu-id="bf46e-287">CTRL + SHIFT + TAB。</span><span class="sxs-lookup"><span data-stu-id="bf46e-287">CTRL+SHIFT+TAB.</span></span> <span data-ttu-id="bf46e-288">このショートカットは、任意の PowerShell タブ上で開いているファイルがない場合にのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="bf46e-288">This shortcut works only when no files are open on any PowerShell tab.</span></span>|
+|<span data-ttu-id="bf46e-289">**次の Windows PowerShell タブ**</span><span class="sxs-lookup"><span data-stu-id="bf46e-289">**Next Windows PowerShell tab**</span></span>|<span data-ttu-id="bf46e-290">CTRL + Tab。</span><span class="sxs-lookup"><span data-stu-id="bf46e-290">CTRL+TAB.</span></span> <span data-ttu-id="bf46e-291">このショートカットは、任意の PowerShell タブ上で開いているファイルがない場合にのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="bf46e-291">This shortcut works only when no files are open on any PowerShell tab.</span></span>|
 
-## <a name="bkmk_7"></a>開始および終了のキーボード ショートカット
-次のキーボード ショートカットを使用して、Windows PowerShell コンソール (PowerShell.exe) を起動したり、Windows PowerShell ISE を終了したりできます。
+## <span data-ttu-id="bf46e-292"><a name="bkmk_7"></a>開始および終了のキーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-292"><a name="bkmk_7"></a>Keyboard shortcuts for starting and exiting</span></span>
+<span data-ttu-id="bf46e-293">次のキーボード ショートカットを使用して、Windows PowerShell コンソール (PowerShell.exe) を起動したり、Windows PowerShell ISE を終了したりできます。</span><span class="sxs-lookup"><span data-stu-id="bf46e-293">You can use the following keyboard shortcuts to start the Windows PowerShell console (PowerShell.exe) or to exit Windows PowerShell ISE.</span></span>
 
-|操作|キーボード ショートカット|
+|<span data-ttu-id="bf46e-294">操作</span><span class="sxs-lookup"><span data-stu-id="bf46e-294">Action</span></span>|<span data-ttu-id="bf46e-295">キーボード ショートカット</span><span class="sxs-lookup"><span data-stu-id="bf46e-295">Keyboard Shortcut</span></span>|
 |----------|---------------------|
-|**終了**|Alt + F4|
-|**PowerShell.exe を起動** (Windows PowerShell コンソール)|CTRL + SHIFT + P|
+|<span data-ttu-id="bf46e-296">**終了**</span><span class="sxs-lookup"><span data-stu-id="bf46e-296">**Exit**</span></span>|<span data-ttu-id="bf46e-297">Alt + F4</span><span class="sxs-lookup"><span data-stu-id="bf46e-297">ALT+F4</span></span>|
+|<span data-ttu-id="bf46e-298">**PowerShell.exe を起動** (Windows PowerShell コンソール)</span><span class="sxs-lookup"><span data-stu-id="bf46e-298">**Start PowerShell.exe** (Windows PowerShell console)</span></span>|<span data-ttu-id="bf46e-299">CTRL + SHIFT + P</span><span class="sxs-lookup"><span data-stu-id="bf46e-299">CTRL+SHIFT+P</span></span>|
 
-## <a name="see-also"></a>参照
-- [Windows PowerShell ISE の使用](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+## <a name="see-also"></a><span data-ttu-id="bf46e-300">参照</span><span class="sxs-lookup"><span data-stu-id="bf46e-300">See Also</span></span>
+- [<span data-ttu-id="bf46e-301">Windows PowerShell ISE の使用</span><span class="sxs-lookup"><span data-stu-id="bf46e-301">Using the Windows PowerShell ISE</span></span>](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 

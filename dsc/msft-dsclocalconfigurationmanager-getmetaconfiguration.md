@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="getmetaconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
+# <a name="getmetaconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="8b36b-103">MSFT_DSCLocalConfigurationManager クラスの GetMetaConfiguration メソッド</span><span class="sxs-lookup"><span data-stu-id="8b36b-103">GetMetaConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-# MSFT_DSCLocalConfigurationManager クラスの GetMetaConfiguration メソッド
+<span data-ttu-id="8b36b-104">構成エージェントを制御するために使用するローカル構成マネージャーの設定を取得します。</span><span class="sxs-lookup"><span data-stu-id="8b36b-104">Gets the local Configuration Manager settings that are used to control the Configuration Agent.</span></span>
 
-構成エージェントを制御するために使用するローカル構成マネージャーの設定を取得します。
-
-<a id="syntax" class="xliff"></a>
-
-構文
+<a name="syntax"></a><span data-ttu-id="8b36b-105">構文</span><span class="sxs-lookup"><span data-stu-id="8b36b-105">Syntax</span></span>
 ------
 
 ```mof
@@ -27,42 +23,32 @@ uint32 GetMetaConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-
-パラメーター
+<a name="parameters"></a><span data-ttu-id="8b36b-106">パラメーター</span><span class="sxs-lookup"><span data-stu-id="8b36b-106">Parameters</span></span>
 ----------
 
-*MetaConfiguration* \[out\]  
-制御が戻ったとき、設定を定義する **MSFT_DSCMetaConfiguration** クラスの埋め込みインスタンスが含まれます。
+<span data-ttu-id="8b36b-107">*MetaConfiguration* \[out\]</span><span class="sxs-lookup"><span data-stu-id="8b36b-107">*MetaConfiguration* \[out\]</span></span>  
+<span data-ttu-id="8b36b-108">制御が戻ったとき、設定を定義する **MSFT_DSCMetaConfiguration** クラスの埋め込みインスタンスが含まれます。</span><span class="sxs-lookup"><span data-stu-id="8b36b-108">On return, contains an embedded instance of the **MSFT_DSCMetaConfiguration** class that defines the settings.</span></span>
 
-<a id="return-value" class="xliff"></a>
-
-## 戻り値
+## <a name="return-value"></a><span data-ttu-id="8b36b-109">戻り値</span><span class="sxs-lookup"><span data-stu-id="8b36b-109">Return value</span></span>
 ------------
 
-成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
+<span data-ttu-id="8b36b-110">成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。</span><span class="sxs-lookup"><span data-stu-id="8b36b-110">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
+## <a name="remarks"></a><span data-ttu-id="8b36b-111">コメント</span><span class="sxs-lookup"><span data-stu-id="8b36b-111">Remarks</span></span>
 
-## コメント
+<span data-ttu-id="8b36b-112">これは静的メソッドです。</span><span class="sxs-lookup"><span data-stu-id="8b36b-112">This is a static method.</span></span>
 
-これは静的メソッドです。
-
-<a id="requirements" class="xliff"></a>
-
-## 要件
+## <a name="requirements"></a><span data-ttu-id="8b36b-113">要件</span><span class="sxs-lookup"><span data-stu-id="8b36b-113">Requirements</span></span>
 ------------
->**MOF:** DscCore.mof
+><span data-ttu-id="8b36b-114">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="8b36b-114">**MOF:** DscCore.mof</span></span>
 
->**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-
-## 関連項目
+><span data-ttu-id="8b36b-115">**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="8b36b-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="8b36b-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="8b36b-116">See also</span></span>
+
+
+[<span data-ttu-id="8b36b-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="8b36b-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

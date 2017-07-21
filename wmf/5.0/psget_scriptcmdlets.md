@@ -9,16 +9,12 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershellget-cmdlets-for-script-management" class="xliff"></a>
+# <a name="powershellget-cmdlets-for-script-management"></a><span data-ttu-id="a8a12-102">スクリプト管理用の PowerShellGet コマンドレット</span><span class="sxs-lookup"><span data-stu-id="a8a12-102">PowerShellGet Cmdlets for Script Management</span></span>
 
-# スクリプト管理用の PowerShellGet コマンドレット
+## <a name="find-script-cmdlet"></a><span data-ttu-id="a8a12-103">Find-Script コマンドレット</span><span class="sxs-lookup"><span data-stu-id="a8a12-103">Find-Script cmdlet</span></span>
+<span data-ttu-id="a8a12-104">Find-Script コマンドレットでは、名前、タグ、フィルター、コマンド名、バージョン範囲、正確なバージョン、すべてのバージョンなどのさまざまな検索条件を使用して、特定またはすべての登録済みリポジトリから、スクリプト ファイルをその依存関係を含めて検出できます。</span><span class="sxs-lookup"><span data-stu-id="a8a12-104">Find-Script cmdlet lets you to discover the script files with different search criteria like name, tag, filter, command name, version range, exact version, all versions, including its dependencies and from specific or all registered repositories.</span></span>
 
-<a id="find-script-cmdlet" class="xliff"></a>
-
-## Find-Script コマンドレット
-Find-Script コマンドレットでは、名前、タグ、フィルター、コマンド名、バージョン範囲、正確なバージョン、すべてのバージョンなどのさまざまな検索条件を使用して、特定またはすべての登録済みリポジトリから、スクリプト ファイルをその依存関係を含めて検出できます。
-
-使用例:
+<span data-ttu-id="a8a12-105">使用例:</span><span class="sxs-lookup"><span data-stu-id="a8a12-105">Example usage:</span></span>
 ```powershell
 \# Find a script from the registered repository with ScriptSourceLocation
 Find-Script -Repository GalleryINT -Name Required-Script2
@@ -154,10 +150,8 @@ Workflow {Test-WorkflowFromScript\_Fabrikam-ClientScript}
 Command {Test-FunctionFromScript\_Fabrikam-ClientScript, Test-WorkflowFromScript\_Fabrikam-ClientScript}
 ```
 
-<a id="save-script-cmdlet" class="xliff"></a>
-
-## Save-Script コマンドレット
-Save-Script コマンドレットでは、指定した場所に保存することによって、スクリプト ファイルを確認できます。
+## <a name="save-script-cmdlet"></a><span data-ttu-id="a8a12-106">Save-Script コマンドレット</span><span class="sxs-lookup"><span data-stu-id="a8a12-106">Save-Script cmdlet</span></span>
+<span data-ttu-id="a8a12-107">Save-Script コマンドレットでは、指定した場所に保存することによって、スクリプト ファイルを確認できます。</span><span class="sxs-lookup"><span data-stu-id="a8a12-107">Save-Script cmdlet lets you to review the script file by saving it to a specified location.</span></span>
 ```powershell
 \# Save a script file to the specified location for the script analysis
 \# Piping the Find-Script output to Save-Script cmdlet
@@ -169,12 +163,10 @@ Version Name Author Description
 1.5 Fabrikam-ClientScript manikb Description for the Fabrikam-ClientScript script
 ```
 
-<a id="install-script-and-get-installedscript-cmdlets" class="xliff"></a>
+## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="a8a12-108">Install-Script および Get-InstalledScript コマンドレット</span><span class="sxs-lookup"><span data-stu-id="a8a12-108">Install-Script and Get-InstalledScript cmdlets</span></span>
+<span data-ttu-id="a8a12-109">Install-Script コマンドレットでは、特定のスクリプト ファイルをその依存関係と共に、指定したスコープにインストールできます。</span><span class="sxs-lookup"><span data-stu-id="a8a12-109">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="a8a12-110">既定では、スクリプトは AllUsers スコープにインストールされます。</span><span class="sxs-lookup"><span data-stu-id="a8a12-110">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="a8a12-111">Get-InstalledScript コマンドレットでは、Install-Script コマンドレットを使用してインストールされたスクリプト ファイルの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="a8a12-111">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
 
-## Install-Script および Get-InstalledScript コマンドレット
-Install-Script コマンドレットでは、特定のスクリプト ファイルをその依存関係と共に、指定したスコープにインストールできます。 既定では、スクリプトは AllUsers スコープにインストールされます。 Get-InstalledScript コマンドレットでは、Install-Script コマンドレットを使用してインストールされたスクリプト ファイルの一覧を取得できます。
-
-使用上の注意: スクリプトがインストールされた後、管理および検索できるようにするため、Install-Script によってスクリプトを格納するための既定のフォルダーが $home\Documents\WindowsPowerShell\Scripts に作成され、PATH 環境変数にそのフォルダーが追加されます。 パスの変更に問題がある場合は、Install-Script ではなく Save-Script を使用します。 Get-InstalledScripts と Uninstall-Script は、Install-Script を使用してシステム上に配置されたスクリプトに対してのみ機能します。
+<span data-ttu-id="a8a12-112">使用上の注意: スクリプトがインストールされた後、管理および検索できるようにするため、Install-Script によってスクリプトを格納するための既定のフォルダーが $home\Documents\WindowsPowerShell\Scripts に作成され、PATH 環境変数にそのフォルダーが追加されます。</span><span class="sxs-lookup"><span data-stu-id="a8a12-112">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="a8a12-113">パスの変更に問題がある場合は、Install-Script ではなく Save-Script を使用します。</span><span class="sxs-lookup"><span data-stu-id="a8a12-113">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="a8a12-114">Get-InstalledScripts と Uninstall-Script は、Install-Script を使用してシステム上に配置されたスクリプトに対してのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="a8a12-114">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
 ```powershell
 \# Install locations for scripts:
 \# Default scope is AllUsers.
@@ -230,7 +222,7 @@ InstalledLocation : C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Scripts
 Installed script file is immediately available for usage.
 ```
 
-Get-Command -Name &lt;InstalledScriptFileName&gt; を使用してこれを取得することもできます。 2 つのインストール場所は、指定したスコープの初回使用時に PATH 環境変数に追加されます。
+<span data-ttu-id="a8a12-115">Get-Command -Name &lt;InstalledScriptFileName&gt; を使用してこれを取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="a8a12-115">You can also use Get-Command –Name &lt;InstalledScriptFileName&gt; to get it.</span></span> <span data-ttu-id="a8a12-116">2 つのインストール場所は、指定したスコープの初回使用時に PATH 環境変数に追加されます。</span><span class="sxs-lookup"><span data-stu-id="a8a12-116">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -352,10 +344,8 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-<a id="update-script-cmdlet" class="xliff"></a>
-
-## Update-Script コマンドレット
-Update-Script コマンドレットでは、Install-Script コマンドレットを使用してインストールされたスクリプト ファイルのインプレース更新ができます。
+## <a name="update-script-cmdlet"></a><span data-ttu-id="a8a12-117">Update-Script コマンドレット</span><span class="sxs-lookup"><span data-stu-id="a8a12-117">Update-Script cmdlet</span></span>
+<span data-ttu-id="a8a12-118">Update-Script コマンドレットでは、Install-Script コマンドレットを使用してインストールされたスクリプト ファイルのインプレース更新ができます。</span><span class="sxs-lookup"><span data-stu-id="a8a12-118">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script
@@ -396,9 +386,7 @@ Version Name Type Repository Description
 2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
 ```
 
-<a id="uninstall-script-cmdlet" class="xliff"></a>
-
-## Uninstall-Script コマンドレット
+## <a name="uninstall-script-cmdlet"></a><span data-ttu-id="a8a12-119">Uninstall-Script コマンドレット</span><span class="sxs-lookup"><span data-stu-id="a8a12-119">Uninstall-Script cmdlet</span></span>
 ```powershell
 Uninstall-Script cmdlet lets you to uninstall the installed script files.
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -435,10 +423,8 @@ At C:\\Program Files\\WindowsPowerShell\\Modules\\PowerShellGet\\1.0.0.1\\PSModu
 + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.GetPackage
 ```
 
-<a id="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets" class="xliff"></a>
-
-## New-ScriptFileInfo および Test-ScriptFileInfo コマンドレット
-New-ScriptFileInfo コマンドレットでは、バージョン、GUID、作成者、説明などのメタデータを含む新しいスクリプト ファイルを作成できます。Test-ScriptFileInfo コマンドレットでは、スクリプト ファイルのメタデータを検証および取得できます。
+## <a name="new-scriptfileinfo-and-test-scriptfileinfo-cmdlets"></a><span data-ttu-id="a8a12-120">New-ScriptFileInfo および Test-ScriptFileInfo コマンドレット</span><span class="sxs-lookup"><span data-stu-id="a8a12-120">New-ScriptFileInfo and Test-ScriptFileInfo cmdlets</span></span>
+<span data-ttu-id="a8a12-121">New-ScriptFileInfo コマンドレットでは、バージョン、GUID、作成者、説明などのメタデータを含む新しいスクリプト ファイルを作成できます。Test-ScriptFileInfo コマンドレットでは、スクリプト ファイルのメタデータを検証および取得できます。</span><span class="sxs-lookup"><span data-stu-id="a8a12-121">New-ScriptFileInfo cmdlet lets you to create a new script file with metadata like Version, Guid, Author, and Description, etc. Test-ScriptFileInfo cmdlet lets you to validate and get the script file metadata.</span></span>
 ```powershell
 \# Create a new script file with minimum required metadata values
 New-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Description "Script file description goes here"
@@ -589,10 +575,8 @@ DefinedFunctions : Demo-ScriptFunction
 DefinedWorkflows : Demo-ScriptWorkflow
 ```
 
-<a id="update-scriptfileinfo-cmdlet" class="xliff"></a>
-
-## Update-ScriptFileInfo コマンドレット
-Update-ScriptFileInfo コマンドレットでは、既存のスクリプト ファイルのメタデータを更新できます。
+## <a name="update-scriptfileinfo-cmdlet"></a><span data-ttu-id="a8a12-122">Update-ScriptFileInfo コマンドレット</span><span class="sxs-lookup"><span data-stu-id="a8a12-122">Update-ScriptFileInfo cmdlet</span></span>
+<span data-ttu-id="a8a12-123">Update-ScriptFileInfo コマンドレットでは、既存のスクリプト ファイルのメタデータを更新できます。</span><span class="sxs-lookup"><span data-stu-id="a8a12-123">Update-ScriptFileInfo cmdlet lets you to update the existing script file metadata.</span></span>
 ```powershell
 \# Use Update-ScriptFileInfo cmdlet to update the script metadata
 Update-ScriptFileInfo -Path C:\\ScriptSharingDemo\\Demo-ScriptWithCompletePSScriptInfo.ps1 -Version 2.0
@@ -602,10 +586,8 @@ Version Name Author Description
 2.0 Demo-ScriptWithComplet... manikb my new script file
 ```
 
-<a id="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support" class="xliff"></a>
-
-## スクリプト共有サポートがある Register-PSRepository および Set-PSRepository コマンドレット
-**ScriptSourceLocation** および **ScriptPublishLocation** を PSRepository に追加するには、Register-PSRepository/Set-PSRepository コマンドレットを使用します。
+## <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="a8a12-124">スクリプト共有サポートがある Register-PSRepository および Set-PSRepository コマンドレット</span><span class="sxs-lookup"><span data-stu-id="a8a12-124">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
+<span data-ttu-id="a8a12-125">**ScriptSourceLocation** および **ScriptPublishLocation** を PSRepository に追加するには、Register-PSRepository/Set-PSRepository コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="a8a12-125">Use Register-PSRepository/Set-PSRepository cmdlets to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
 ```powershell
 \# Register an GalleryINT repository with Scripts and Modules support
 Register-PSRepository -Name GalleryINT \`
@@ -662,10 +644,8 @@ ScriptPublishLocation : https://MyGallery.com/api/v2/package/
 ProviderOptions : {}
 ```
 
-<a id="publish-script-cmdlet" class="xliff"></a>
-
-## Publish-Script コマンドレット
-Publish-Script コマンドレットでは、バージョン、GUID、作成者、説明などの有効なメタデータを含むスクリプト ファイルを発行できます。
+## <a name="publish-script-cmdlet"></a><span data-ttu-id="a8a12-126">Publish-Script コマンドレット</span><span class="sxs-lookup"><span data-stu-id="a8a12-126">Publish-Script cmdlet</span></span>
+<span data-ttu-id="a8a12-127">Publish-Script コマンドレットでは、バージョン、GUID、作成者、説明などの有効なメタデータを含むスクリプト ファイルを発行できます。</span><span class="sxs-lookup"><span data-stu-id="a8a12-127">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc.</span></span>
 ```powershell
 \# Publish the really basic script file with required metadata
 Publish-Script -Path C:\\ScriptSharingDemo\\Demo-Script.ps1 -Repository GalleryINT -NuGetApiKey cad91af7-a49c-4026-9570-a4c16564e785 -Verbose

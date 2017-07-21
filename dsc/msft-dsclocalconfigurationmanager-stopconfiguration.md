@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
+# <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="19b51-103">MSFT_DSCLocalConfigurationManager クラスの StopConfiguration メソッド</span><span class="sxs-lookup"><span data-stu-id="19b51-103">StopConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-# MSFT_DSCLocalConfigurationManager クラスの StopConfiguration メソッド
+<span data-ttu-id="19b51-104">進行中の構成の変更を停止します。</span><span class="sxs-lookup"><span data-stu-id="19b51-104">Stops the configuration change that is in progress.</span></span>
 
-進行中の構成の変更を停止します。
-
-<a id="syntax" class="xliff"></a>
-
-構文
+<a name="syntax"></a><span data-ttu-id="19b51-105">構文</span><span class="sxs-lookup"><span data-stu-id="19b51-105">Syntax</span></span>
 ------
 
 ```mof
@@ -27,42 +23,32 @@ uint32 StopConfiguration(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-
-パラメーター
+<a name="parameters"></a><span data-ttu-id="19b51-106">パラメーター</span><span class="sxs-lookup"><span data-stu-id="19b51-106">Parameters</span></span>
 ----------
 
-*force* \[in\]  
-**true** の場合、構成を強制的に中止します。
+<span data-ttu-id="19b51-107">*force* \[in\]</span><span class="sxs-lookup"><span data-stu-id="19b51-107">*force* \[in\]</span></span>  
+<span data-ttu-id="19b51-108">**true** の場合、構成を強制的に中止します。</span><span class="sxs-lookup"><span data-stu-id="19b51-108">**true** to force the configuration to stop.</span></span>
 
-<a id="return-value" class="xliff"></a>
-
-## 戻り値
+## <a name="return-value"></a><span data-ttu-id="19b51-109">戻り値</span><span class="sxs-lookup"><span data-stu-id="19b51-109">Return value</span></span>
 ------------
 
-成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
+<span data-ttu-id="19b51-110">成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。</span><span class="sxs-lookup"><span data-stu-id="19b51-110">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
+## <a name="remarks"></a><span data-ttu-id="19b51-111">コメント</span><span class="sxs-lookup"><span data-stu-id="19b51-111">Remarks</span></span>
 
-## コメント
+<span data-ttu-id="19b51-112">これは静的メソッドです。</span><span class="sxs-lookup"><span data-stu-id="19b51-112">This is a static method.</span></span>
 
-これは静的メソッドです。
-
-<a id="requirements" class="xliff"></a>
-
-## 要件
+## <a name="requirements"></a><span data-ttu-id="19b51-113">要件</span><span class="sxs-lookup"><span data-stu-id="19b51-113">Requirements</span></span>
 ------------
->**MOF:** DscCore.mof
+><span data-ttu-id="19b51-114">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="19b51-114">**MOF:** DscCore.mof</span></span>
 
->**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-
-## 関連項目
+><span data-ttu-id="19b51-115">**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="19b51-115">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="19b51-116">関連項目</span><span class="sxs-lookup"><span data-stu-id="19b51-116">See also</span></span>
+
+
+[<span data-ttu-id="19b51-117">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="19b51-117">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

@@ -9,10 +9,8 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="clipboard-cmdlets" class="xliff"></a>
-
-# クリップボードのコマンドレット
-**Get-Clipboard** と **Set-Clipboard** を使うと、Windows PowerShell セッションとの間でコンテンツを容易に転送できるようになります。 たとえば、エクスプローラーを使用して 3 つのファイルをクリップボードにコピーすると (ファイルを選択して `ctrl-c` を押すなど)、そのクリップボードの内容はファイルの一覧として簡単にアクセスできます。
+# <a name="clipboard-cmdlets"></a><span data-ttu-id="b39a0-102">クリップボードのコマンドレット</span><span class="sxs-lookup"><span data-stu-id="b39a0-102">Clipboard cmdlets</span></span>
+<span data-ttu-id="b39a0-103">**Get-Clipboard** と **Set-Clipboard** を使うと、Windows PowerShell セッションとの間でコンテンツを容易に転送できるようになります。</span><span class="sxs-lookup"><span data-stu-id="b39a0-103">**Get-Clipboard** and **Set-Clipboard** make it easier for you to transfer content to and from a Windows PowerShell session.</span></span> <span data-ttu-id="b39a0-104">たとえば、エクスプローラーを使用して 3 つのファイルをクリップボードにコピーすると (ファイルを選択して `ctrl-c` を押すなど)、そのクリップボードの内容はファイルの一覧として簡単にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="b39a0-104">For example, if you use Windows Explorer to copy three files to the clipboard (by selecting them and pressing `ctrl-c`, for example), you can then easily access the contents of the clipboard as a list of files:</span></span>
 
 ```powershell 
 PS C:\\&gt; Get-Clipboard -Format FileDropList
@@ -31,5 +29,5 @@ Mode LastWriteTime Length Name
 ```
 
 
-クリップボードのコマンドレットは、画像、オーディオ ファイル、ファイルのリスト、およびテキストをサポートします。
+<span data-ttu-id="b39a0-105">クリップボードのコマンドレットは、画像、オーディオ ファイル、ファイルのリスト、およびテキストをサポートします。</span><span class="sxs-lookup"><span data-stu-id="b39a0-105">The Clipboard cmdlets support images, audio files, file lists, and text.</span></span>
 

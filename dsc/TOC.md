@@ -33,10 +33,14 @@
 ### [サービス リソース](serviceResource.md)
 ### [ServiceSet リソース](serviceSetResource.md)
 ### [ユーザー リソース](userResource.md)
+### [WaitForAllResource](waitForAllResource.md)
+### [WaitForAnyResource](waitForAnyResource.md)
+### [WaitForSomeResource](waitForSomeResource.md)
 ### [WindowsFeature リソース](windowsfeatureResource.md)
 ### [WindowsFeatureSet リソース](windowsFeatureSetResource.md)
 ### [WindowsOptionalFeature リソース](windowsOptionalFeatureResource.md)
 ### [WindowsOptionalFeatureSet リソース](windowsOptionalFeatureSetResource.md)
+### [WindowsPackageCab リソース](windowsPackageCabResource.md)
 ### [WindowsProcess リソース](windowsProcessResource.md)
 ## [カスタム リソースの作成](authoringResource.md) 
 ### [MOF ベースのカスタム リソース](authoringResourceMOF.md)
@@ -59,6 +63,10 @@
 ### [構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)
 ## [DSC レポート サーバーの使用](reportServer.md)
 ## [プル サーバーのベスト プラクティス](secureServer.md)
+
+# [DSC の例](dscExamples.md)
+## [DSC、Pester、Visual Studio Team Services で CI/CD パイプラインを構築する](dscCiCd.md)
+## [構成データと環境データの分離](separatingEnvData.md)
 
 # [DSC のトラブルシューティング](troubleshooting.md)
 

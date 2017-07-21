@@ -10,17 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-environment-resource" class="xliff"></a>
+# <a name="dsc-environment-resource"></a><span data-ttu-id="cf824-103">DSC 環境リソース</span><span class="sxs-lookup"><span data-stu-id="cf824-103">DSC Environment Resource</span></span>
 
-# DSC 環境リソース
+> <span data-ttu-id="cf824-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="cf824-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
+<span data-ttu-id="cf824-105">Windows PowerShell Desired State Configuration (DSC) の __Environment__ リソースは、システム環境変数を管理するためのメカニズムを備えています。</span><span class="sxs-lookup"><span data-stu-id="cf824-105">The __Environment__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to manage system environment variables.</span></span>
 
-Windows PowerShell Desired State Configuration (DSC) の __Environment__ リソースは、システム環境変数を管理するためのメカニズムを備えています。
-
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a><span data-ttu-id="cf824-106">構文</span><span class="sxs-lookup"><span data-stu-id="cf824-106">Syntax</span></span>
 ``` mof
 Environment [string] #ResourceName
 {
@@ -32,23 +28,19 @@ Environment [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
+## <a name="properties"></a><span data-ttu-id="cf824-107">プロパティ</span><span class="sxs-lookup"><span data-stu-id="cf824-107">Properties</span></span>
 
-## プロパティ
-
-|  プロパティ  |  説明   | 
+|  <span data-ttu-id="cf824-108">プロパティ</span><span class="sxs-lookup"><span data-stu-id="cf824-108">Property</span></span>  |  <span data-ttu-id="cf824-109">説明</span><span class="sxs-lookup"><span data-stu-id="cf824-109">Description</span></span>   | 
 |---|---| 
-| 名前| 特定の状態を保証する環境変数の名前を示します。| 
-| Ensure| 変数が存在するかどうかを示します。 環境変数が存在しない場合に作成する場合、または環境変数が既に存在する場合にその値が __Value__ プロパティによって提供される値と一致することを保証するには、このプロパティを __Present__ に設定します。 環境変数が存在する場合に削除するには、__Absent__ に設定します。| 
-| パス| 構成されている環境変数を定義します。 環境変数が __Path__ 変数である場合は、このプロパティを __$true__ に設定します。それ以外の場合は、__$false__ に設定します。 既定値は __$false__ です。 構成されている変数が __Path__ 変数である場合は、__Value__ プロパティによって提供される値が既存の値に追加されます。| 
-| DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
-| 値| 環境変数に割り当てる値。| 
+| <span data-ttu-id="cf824-110">名前</span><span class="sxs-lookup"><span data-stu-id="cf824-110">Name</span></span>| <span data-ttu-id="cf824-111">特定の状態を保証する環境変数の名前を示します。</span><span class="sxs-lookup"><span data-stu-id="cf824-111">Indicates the name of the environment variable for which you want to ensure a specific state.</span></span>| 
+| <span data-ttu-id="cf824-112">Ensure</span><span class="sxs-lookup"><span data-stu-id="cf824-112">Ensure</span></span>| <span data-ttu-id="cf824-113">変数が存在するかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="cf824-113">Indicates if a variable exists.</span></span> <span data-ttu-id="cf824-114">環境変数が存在しない場合に作成する場合、または環境変数が既に存在する場合にその値が __Value__ プロパティによって提供される値と一致することを保証するには、このプロパティを __Present__ に設定します。</span><span class="sxs-lookup"><span data-stu-id="cf824-114">Set this property to __Present__ to create the environment variable if it does not exist or to ensure that its value matches what is provided through the __Value__ property if the variable already exists.</span></span> <span data-ttu-id="cf824-115">環境変数が存在する場合に削除するには、__Absent__ に設定します。</span><span class="sxs-lookup"><span data-stu-id="cf824-115">Set it to __Absent__ to delete the variable if it exists.</span></span>| 
+| <span data-ttu-id="cf824-116">パス</span><span class="sxs-lookup"><span data-stu-id="cf824-116">Path</span></span>| <span data-ttu-id="cf824-117">構成されている環境変数を定義します。</span><span class="sxs-lookup"><span data-stu-id="cf824-117">Defines the environment variable that is being configured.</span></span> <span data-ttu-id="cf824-118">環境変数が __Path__ 変数である場合は、このプロパティを __$true__ に設定します。それ以外の場合は、__$false__ に設定します。</span><span class="sxs-lookup"><span data-stu-id="cf824-118">Set this property to __$true__ if the variable is the __Path__ variable; otherwise, set it to __$false__.</span></span> <span data-ttu-id="cf824-119">既定値は __$false__ です。</span><span class="sxs-lookup"><span data-stu-id="cf824-119">The default is __$false__.</span></span> <span data-ttu-id="cf824-120">構成されている変数が __Path__ 変数である場合は、__Value__ プロパティによって提供される値が既存の値に追加されます。</span><span class="sxs-lookup"><span data-stu-id="cf824-120">If the variable being configured is the __Path__ variable, the value provided through the __Value__ property will be appended to the existing value.</span></span>| 
+| <span data-ttu-id="cf824-121">DependsOn</span><span class="sxs-lookup"><span data-stu-id="cf824-121">DependsOn</span></span> | <span data-ttu-id="cf824-122">このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="cf824-122">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="cf824-123">たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。</span><span class="sxs-lookup"><span data-stu-id="cf824-123">For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>| 
+| <span data-ttu-id="cf824-124">値</span><span class="sxs-lookup"><span data-stu-id="cf824-124">Value</span></span>| <span data-ttu-id="cf824-125">環境変数に割り当てる値。</span><span class="sxs-lookup"><span data-stu-id="cf824-125">The value to assign to the environment variable.</span></span>| 
 
-<a id="example" class="xliff"></a>
+## <a name="example"></a><span data-ttu-id="cf824-126">例</span><span class="sxs-lookup"><span data-stu-id="cf824-126">Example</span></span>
 
-## 例
-
-次の例では、__TestEnvironmentVariable__ が存在し、その値が __TestValue__ であることを保証します。 この環境変数が存在しない場合は、作成されます。
+<span data-ttu-id="cf824-127">次の例では、__TestEnvironmentVariable__ が存在し、その値が __TestValue__ であることを保証します。</span><span class="sxs-lookup"><span data-stu-id="cf824-127">The following example ensures that __TestEnvironmentVariable__ is present and it has the value __TestValue__.</span></span> <span data-ttu-id="cf824-128">この環境変数が存在しない場合は、作成されます。</span><span class="sxs-lookup"><span data-stu-id="cf824-128">If it is not present, it creates it.</span></span>
 
 ```powershell
 Environment EnvironmentExample

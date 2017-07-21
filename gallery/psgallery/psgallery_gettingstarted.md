@@ -10,133 +10,113 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/26/2017
 ---
-<a id="get-started-with-the-powershell-gallery" class="xliff"></a>
+# <a name="get-started-with-the-powershell-gallery"></a><span data-ttu-id="df2e6-103">PowerShell ギャラリーの概要</span><span class="sxs-lookup"><span data-stu-id="df2e6-103">Get Started with the PowerShell Gallery</span></span>
 
-# PowerShell ギャラリーの概要
+## <a name="what-is-the-powershell-gallery"></a><span data-ttu-id="df2e6-104">PowerShell ギャラリーとは</span><span class="sxs-lookup"><span data-stu-id="df2e6-104">What is the PowerShell Gallery?</span></span>
 
-<a id="what-is-the-powershell-gallery" class="xliff"></a>
+<span data-ttu-id="df2e6-105">PowerShell ギャラリーは、PowerShell コンテンツの中央リポジトリです。</span><span class="sxs-lookup"><span data-stu-id="df2e6-105">The PowerShell Gallery is the central repository for PowerShell content.</span></span>
+<span data-ttu-id="df2e6-106">ここには、PowerShell コマンドと Desired State Configuration (DSC) リソースを含む、便利な PowerShell モジュールがあります。</span><span class="sxs-lookup"><span data-stu-id="df2e6-106">In it, you can find useful PowerShell modules containing PowerShell commands and Desired State Configuration (DSC) resources.</span></span> <span data-ttu-id="df2e6-107">また、PowerShell スクリプトもあり、その一部には一連のタスクとそのタスクの順序の概要を示す PowerShell ワークフローが含まれています。</span><span class="sxs-lookup"><span data-stu-id="df2e6-107">You can also find PowerShell scripts, some of which may contain PowerShell workflows, and which outline a set of tasks and provide sequencing for those tasks.</span></span>
+<span data-ttu-id="df2e6-108">この項目の一部は Microsoft によって作成されており、その他は PowerShell コミュニティによって作成されています。</span><span class="sxs-lookup"><span data-stu-id="df2e6-108">Some of these items are authored by Microsoft, and others are authored by the PowerShell community.</span></span>
 
-## PowerShell ギャラリーとは
+## <a name="requirements"></a><span data-ttu-id="df2e6-109">要件</span><span class="sxs-lookup"><span data-stu-id="df2e6-109">Requirements</span></span>
 
-PowerShell ギャラリーは、PowerShell コンテンツの中央リポジトリです。
-ここには、PowerShell コマンドと Desired State Configuration (DSC) リソースを含む、便利な PowerShell モジュールがあります。 また、PowerShell スクリプトもあり、その一部には一連のタスクとそのタスクの順序の概要を示す PowerShell ワークフローが含まれています。
-この項目の一部は Microsoft によって作成されており、その他は PowerShell コミュニティによって作成されています。
+<span data-ttu-id="df2e6-110">PowerShell ギャラリーからシステムに項目をダウンロードするには、[PowerShellGet](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) モジュールが必要です。</span><span class="sxs-lookup"><span data-stu-id="df2e6-110">Downloading items from the PowerShell Gallery to your system requires the [PowerShellGet](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) module.</span></span> <span data-ttu-id="df2e6-111">PowerShellGet モジュールは次のいずれかで見つかります。</span><span class="sxs-lookup"><span data-stu-id="df2e6-111">You can find the PowerShellGet module in any of the following.</span></span> <span data-ttu-id="df2e6-112">PowerShell ギャラリーから項目をダウンロードするのにサインインする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="df2e6-112">You do not need to sign in to download items from the PowerShell Gallery.</span></span>
 
-<a id="requirements" class="xliff"></a>
+-   [<span data-ttu-id="df2e6-113">Windows 10</span><span class="sxs-lookup"><span data-stu-id="df2e6-113">Windows 10</span></span>](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409)
+-   [<span data-ttu-id="df2e6-114">Windows Management Framework 5.0</span><span class="sxs-lookup"><span data-stu-id="df2e6-114">Windows Management Framework 5.0</span></span>](http://go.microsoft.com/fwlink/?LinkId=398175)
+-   [<span data-ttu-id="df2e6-115">MSI インストーラー (PowerShell 3 および 4 の場合)</span><span class="sxs-lookup"><span data-stu-id="df2e6-115">MSI Installer (for PowerShell 3 and 4)</span></span>](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
 
-## 要件
-
-PowerShell ギャラリーからシステムに項目をダウンロードするには、[PowerShellGet](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) モジュールが必要です。 PowerShellGet モジュールは次のいずれかで見つかります。 PowerShell ギャラリーから項目をダウンロードするのにサインインする必要はありません。
-
--   [Windows 10](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409)
--   [Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkId=398175)
--   [MSI インストーラー (PowerShell 3 および 4 の場合)](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409)
-
-PowerShellGet では、PowerShell ギャラリーと連携する [NuGet プロバイダー](http://go.microsoft.com/fwlink/?LinkId=722208) も必要です。 PowerShellGet を最初にインストールするときに、NuGet プロバイダーが次の場所にない場合、自動的に NuGet プロバイダーをインストールするよう求められます。
+<span data-ttu-id="df2e6-116">PowerShellGet では、PowerShell ギャラリーと連携する [NuGet プロバイダー](http://go.microsoft.com/fwlink/?LinkId=722208) も必要です。</span><span class="sxs-lookup"><span data-stu-id="df2e6-116">PowerShellGet also requires the [NuGet provider](http://go.microsoft.com/fwlink/?LinkId=722208) to work with the PowerShell Gallery.</span></span> <span data-ttu-id="df2e6-117">PowerShellGet を最初にインストールするときに、NuGet プロバイダーが次の場所にない場合、自動的に NuGet プロバイダーをインストールするよう求められます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-117">You will be prompted to install the NuGet provider automatically upon first use of PowerShellGet if the NuGet provider is not in one of the following locations:</span></span>
 
 - `$env:ProgramFiles\PackageManagement\ProviderAssemblies`
 - `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies`
 
-または、`Install-PackageProvider -Name NuGet -Force` を実行して、NuGet プロバイダーのダウンロードとインストールを自動化できます。
+<span data-ttu-id="df2e6-118">または、`Install-PackageProvider -Name NuGet -Force` を実行して、NuGet プロバイダーのダウンロードとインストールを自動化できます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-118">Or, you can run `Install-PackageProvider -Name NuGet -Force` to automate the download and installation of the NuGet provider.</span></span>
 
   
-NuGet の 2.8.5.201 より前のバージョンがある場合は、以下の PowerShell コマンドレットを呼び出し、NuGet の最新バージョンをインストールして切り替える必要があります。
+<span data-ttu-id="df2e6-119">NuGet の 2.8.5.201 より前のバージョンがある場合は、以下の PowerShell コマンドレットを呼び出し、NuGet の最新バージョンをインストールして切り替える必要があります。</span><span class="sxs-lookup"><span data-stu-id="df2e6-119">If you have a version older than 2.8.5.201 of NuGet, you will need to call the following PowerShell cmdlets to install and switch to the latest version of NuGet.</span></span>
 
 1.  `Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
 2.  `Import-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
-3.  上記のインストール場所から、NuGet の古いバージョンを削除します。
+3.  <span data-ttu-id="df2e6-120">上記のインストール場所から、NuGet の古いバージョンを削除します。</span><span class="sxs-lookup"><span data-stu-id="df2e6-120">Delete the older version of NuGet from the above installed location.</span></span>
 
-詳細については、<http://oneget.org/> をご覧ください。
+<span data-ttu-id="df2e6-121">詳細については、<http://oneget.org/> をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="df2e6-121">For more information, see <http://oneget.org/> .</span></span>
 
   
-注: パッケージの形式が変更されたため、最近更新された項目をインストールするには、PowerShellGet と PackageManagement の最新バージョンに更新することをお勧めします。 PowerShellGet は Windows 10 に含まれています。詳細については、[こちら](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409)をご覧ください。
-PowerShellGet は Windows Management Framework (WMF) 5.0 の一部でもあり、[こちら](http://go.microsoft.com/fwlink/?LinkId=398175)からダウンロードできます。
+<span data-ttu-id="df2e6-122">注: パッケージの形式が変更されたため、最近更新された項目をインストールするには、PowerShellGet と PackageManagement の最新バージョンに更新することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="df2e6-122">Note: Due to changes in packaging formats, we recommend you update to the latest version of PowerShellGet and PackageManagement to install items that have been updated recently.</span></span> <span data-ttu-id="df2e6-123">PowerShellGet は Windows 10 に含まれています。詳細については、[こちら](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="df2e6-123">PowerShellGet is included in Windows 10, which you can learn more about [here](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409).</span></span>
+<span data-ttu-id="df2e6-124">PowerShellGet は Windows Management Framework (WMF) 5.0 の一部でもあり、[こちら](http://go.microsoft.com/fwlink/?LinkId=398175)からダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-124">PowerShellGet is also part of the Windows Management Framework (WMF) 5.0, which you can download [here](http://go.microsoft.com/fwlink/?LinkId=398175).</span></span>
 
-<a id="discovering-items-from-the-powershell-gallery" class="xliff"></a>
+## <a name="discovering-items-from-the-powershell-gallery"></a><span data-ttu-id="df2e6-125">PowerShell ギャラリーでの項目の検出</span><span class="sxs-lookup"><span data-stu-id="df2e6-125">Discovering items from the PowerShell Gallery</span></span>
 
-## PowerShell ギャラリーでの項目の検出
+<span data-ttu-id="df2e6-126">この Web サイトで**検索**コントロールを使用するか、[モジュールとスクリプト] ページを閲覧すると PowerShell ギャラリーの項目が見つかります。</span><span class="sxs-lookup"><span data-stu-id="df2e6-126">You can find items in the PowerShell Gallery by using the **Search** control on this website, or by browsing through the Modules and Scripts pages.</span></span> <span data-ttu-id="df2e6-127">また、[**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) および [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを、アイテムの種類に応じて `-Repository PSGallery` を指定して実行すると、PowerShell ギャラリーからアイテムを検索できます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-127">You can also find items from the PowerShell Gallery by running the [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) and [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlets, depending on the item type, with `-Repository PSGallery`.</span></span>
 
-この Web サイトで**検索**コントロールを使用するか、[モジュールとスクリプト] ページを閲覧すると PowerShell ギャラリーの項目が見つかります。 また、[**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) および [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを、アイテムの種類に応じて `-Repository PSGallery` を指定して実行すると、PowerShell ギャラリーからアイテムを検索できます。
+<span data-ttu-id="df2e6-128">次の [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) および [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) パラメーターを使用すると、ギャラリーからの結果をフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-128">Filtering results from the Gallery can be done by using the following parameters of [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) and [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)</span></span>
 
-次の [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) および [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) パラメーターを使用すると、ギャラリーからの結果をフィルター処理できます。
+- <span data-ttu-id="df2e6-129">名前</span><span class="sxs-lookup"><span data-stu-id="df2e6-129">Name</span></span>
+- <span data-ttu-id="df2e6-130">AllVersions</span><span class="sxs-lookup"><span data-stu-id="df2e6-130">AllVersions</span></span>
+- <span data-ttu-id="df2e6-131">MinimumVersion</span><span class="sxs-lookup"><span data-stu-id="df2e6-131">MinimumVersion</span></span>
+- <span data-ttu-id="df2e6-132">RequiredVersion</span><span class="sxs-lookup"><span data-stu-id="df2e6-132">RequiredVersion</span></span>
+- <span data-ttu-id="df2e6-133">タグ</span><span class="sxs-lookup"><span data-stu-id="df2e6-133">Tag</span></span>
+- <span data-ttu-id="df2e6-134">Includes</span><span class="sxs-lookup"><span data-stu-id="df2e6-134">Includes</span></span>
+- <span data-ttu-id="df2e6-135">DscResource</span><span class="sxs-lookup"><span data-stu-id="df2e6-135">DscResource</span></span>
+- <span data-ttu-id="df2e6-136">RoleCapability</span><span class="sxs-lookup"><span data-stu-id="df2e6-136">RoleCapability</span></span>
+- <span data-ttu-id="df2e6-137">コマンド</span><span class="sxs-lookup"><span data-stu-id="df2e6-137">Command</span></span>
+- <span data-ttu-id="df2e6-138">フィルター</span><span class="sxs-lookup"><span data-stu-id="df2e6-138">Filter</span></span>
 
-- 名前
-- AllVersions
-- MinimumVersion
-- RequiredVersion
-- タグ
-- Includes
-- DscResource
-- RoleCapability
-- コマンド
-- フィルター
+<span data-ttu-id="df2e6-139">ギャラリー内の特定の DSC リソースのみを検出したい場合は、[**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="df2e6-139">If you're only interested in discovering specific DSC resources in the Gallery, you can run the [**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.</span></span>
+<span data-ttu-id="df2e6-140">[**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) では、ギャラリーに含まれている DSC リソースのデータが返されます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-140">[**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) returns data on DSC resources contained in the Gallery.</span></span> <span data-ttu-id="df2e6-141">DSC リソースは常にモジュールの一部として配布されるため、この DSC リソースをインストールする場合も [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="df2e6-141">Because DSC resources are always delivered as part of a module, you still need to run [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) to install those DSC resources.</span></span>
 
-ギャラリー内の特定の DSC リソースのみを検出したい場合は、[**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行します。
-[**Find-DscResource**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) では、ギャラリーに含まれている DSC リソースのデータが返されます。 DSC リソースは常にモジュールの一部として配布されるため、この DSC リソースをインストールする場合も [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を実行する必要があります。
+## <a name="learning-about-items-in-the-powershell-gallery"></a><span data-ttu-id="df2e6-142">PowerShell ギャラリーの項目の詳細</span><span class="sxs-lookup"><span data-stu-id="df2e6-142">Learning about items in the PowerShell Gallery</span></span>
 
-<a id="learning-about-items-in-the-powershell-gallery" class="xliff"></a>
+<span data-ttu-id="df2e6-143">関心のある項目を特定できたら、その詳細を入手することができます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-143">Once you've identified an item you're interested in, you may want to learn more about it.</span></span> <span data-ttu-id="df2e6-144">これは、ギャラリー上で項目の特定のページを調べると見つかります。</span><span class="sxs-lookup"><span data-stu-id="df2e6-144">You can do this by examining that item's specific page on the Gallery.</span></span> <span data-ttu-id="df2e6-145">そのページでは、その項目と共にアップロードされているメタデータをすべて参照することができます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-145">On that page, you'll be able to see all of the metadata uploaded with the item.</span></span> <span data-ttu-id="df2e6-146">この項目のメタデータは項目の作成者が提供するものであり、Microsoft で検証したものではありません。</span><span class="sxs-lookup"><span data-stu-id="df2e6-146">This metadata for an item is provided by the item's author, and is not verified by Microsoft.</span></span> <span data-ttu-id="df2e6-147">項目の所有者は、項目の公開に使用したギャラリーのアカウントと厳密に関連付けられており、[作成者] フィールドよりも信頼性があります。</span><span class="sxs-lookup"><span data-stu-id="df2e6-147">The Owner of the item is strongly tied to the Gallery account used to publish the item, and is more trustworthy than the Author field.</span></span>
 
-## PowerShell ギャラリーの項目の詳細
+<span data-ttu-id="df2e6-148">誠意をもって公開されていると思われない項目が見つかった場合は、その項目のページの **[不正使用を報告]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df2e6-148">If you discover an item that you feel is not published in good faith, click **Report Abuse** on that item's page.</span></span>
 
-関心のある項目を特定できたら、その詳細を入手することができます。 これは、ギャラリー上で項目の特定のページを調べると見つかります。 そのページでは、その項目と共にアップロードされているメタデータをすべて参照することができます。 この項目のメタデータは項目の作成者が提供するものであり、Microsoft で検証したものではありません。 項目の所有者は、項目の公開に使用したギャラリーのアカウントと厳密に関連付けられており、[作成者] フィールドよりも信頼性があります。
+<span data-ttu-id="df2e6-149">[**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を実行している場合、返される PSGetModuleInfo オブジェクトにこのデータが表示されます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-149">If you're running [**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) or [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409), you can view this data in the returned PSGetModuleInfo object.</span></span> <span data-ttu-id="df2e6-150">たとえば、[**Find-Module -Name PSReadLine -Repository PSGallery | Get-Member**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を実行すると、ギャラリーの PSReadLine モジュールにデータが返されます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-150">For example, running [**Find-Module -Name PSReadLine -Repository PSGallery | Get-Member**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) returns data on the PSReadLine module in the Gallery.</span></span>
 
-誠意をもって公開されていると思われない項目が見つかった場合は、その項目のページの **[不正使用を報告]** をクリックします。
+## <a name="downloading-items-from-the-powershell-gallery"></a><span data-ttu-id="df2e6-151">PowerShell ギャラリーでの項目のダウンロード</span><span class="sxs-lookup"><span data-stu-id="df2e6-151">Downloading items from the PowerShell Gallery</span></span>
 
-[**Find-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または [**Find-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を実行している場合、返される PSGetModuleInfo オブジェクトにこのデータが表示されます。 たとえば、[**Find-Module -Name PSReadLine -Repository PSGallery | Get-Member**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を実行すると、ギャラリーの PSReadLine モジュールにデータが返されます。
+<span data-ttu-id="df2e6-152">PowerShell ギャラリーから項目をダウンロードするとき、次のプロセスをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="df2e6-152">We encourage the following process when downloading items from the PowerShell Gallery:</span></span>
 
-<a id="downloading-items-from-the-powershell-gallery" class="xliff"></a>
+### <a name="inspect"></a><span data-ttu-id="df2e6-153">検査</span><span class="sxs-lookup"><span data-stu-id="df2e6-153">Inspect</span></span>
 
-## PowerShell ギャラリーでの項目のダウンロード
+<span data-ttu-id="df2e6-154">検査のためにギャラリーから項目をダウンロードするには、項目の種類に応じて [**Save-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または [**Save-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="df2e6-154">To download an item from the Gallery for inspection, run either the [**Save-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) or [**Save-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet, depending on the item type.</span></span> <span data-ttu-id="df2e6-155">これにより、項目をインストールすることなくローカルに保存し、項目の内容を検査することができます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-155">This lets you save the item locally without installing it, and inspect the item contents.</span></span> <span data-ttu-id="df2e6-156">保存した項目は必ず手動で削除してください。</span><span class="sxs-lookup"><span data-stu-id="df2e6-156">Remember to delete the saved item manually.</span></span>
 
-PowerShell ギャラリーから項目をダウンロードするとき、次のプロセスをお勧めします。
+<span data-ttu-id="df2e6-157">この項目の一部は Microsoft によって作成されており、その他は PowerShell コミュニティによって作成されています。</span><span class="sxs-lookup"><span data-stu-id="df2e6-157">Some of these items are authored by Microsoft, and others are authored by the PowerShell community.</span></span> <span data-ttu-id="df2e6-158">このギャラリーの項目の内容とコードは、インストールする前に確認することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="df2e6-158">Microsoft recommends that you review the contents and code of items on this gallery prior to installation.</span></span>
 
-<a id="inspect" class="xliff"></a>
+<span data-ttu-id="df2e6-159">誠意をもって公開されていると思われない項目が見つかった場合は、その項目のページの **[不正使用を報告]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df2e6-159">If you discover an item that you feel is not published in good faith, click **Report Abuse** on that item's page.</span></span>
 
-### 検査
+### <a name="install"></a><span data-ttu-id="df2e6-160">[インストール]</span><span class="sxs-lookup"><span data-stu-id="df2e6-160">Install</span></span>
 
-検査のためにギャラリーから項目をダウンロードするには、項目の種類に応じて [**Save-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または [**Save-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行します。 これにより、項目をインストールすることなくローカルに保存し、項目の内容を検査することができます。 保存した項目は必ず手動で削除してください。
+<span data-ttu-id="df2e6-161">使用のためにギャラリーから項目をインストールするには、項目の種類に応じて [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="df2e6-161">To install an item from the Gallery for use, run either the [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) or [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet, depending on the item type.</span></span>
 
-この項目の一部は Microsoft によって作成されており、その他は PowerShell コミュニティによって作成されています。 このギャラリーの項目の内容とコードは、インストールする前に確認することをお勧めします。
+<span data-ttu-id="df2e6-162">[**Install-module** ](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) は、既定では `$env:ProgramFiles\WindowsPowerShell\Modules` にモジュールをインストールします。</span><span class="sxs-lookup"><span data-stu-id="df2e6-162">[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installs the module to `$env:ProgramFiles\WindowsPowerShell\Modules` by default.</span></span> <span data-ttu-id="df2e6-163">これには管理者アカウントが必要です。</span><span class="sxs-lookup"><span data-stu-id="df2e6-163">This requires an administrator account.</span></span> <span data-ttu-id="df2e6-164">`-Scope
+CurrentUser` パラメーターを追加する場合は、モジュールは `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-164">If you add the `-Scope
+CurrentUser` parameter, the module is installed to `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` .</span></span>
 
-誠意をもって公開されていると思われない項目が見つかった場合は、その項目のページの **[不正使用を報告]** をクリックします。
+<span data-ttu-id="df2e6-165">[**Install-script** ](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) は、既定では、 `$env:ProgramFiles\WindowsPowerShell\Scripts` にスクリプトをインストールします。</span><span class="sxs-lookup"><span data-stu-id="df2e6-165">[**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installs the script to `$env:ProgramFiles\WindowsPowerShell\Scripts` by default.</span></span> <span data-ttu-id="df2e6-166">これには管理者アカウントが必要です。</span><span class="sxs-lookup"><span data-stu-id="df2e6-166">This requires an administrator account.</span></span> <span data-ttu-id="df2e6-167">`-Scope
+CurrentUser` パラメーターを追加する場合は、スクリプトは `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-167">If you add the `-Scope
+CurrentUser` parameter, the script is installed to `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` .</span></span>
 
-<a id="install" class="xliff"></a>
+<span data-ttu-id="df2e6-168">既定では、 [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) および [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) は最新バージョンのアイテムをインストールします。</span><span class="sxs-lookup"><span data-stu-id="df2e6-168">By default, [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) and [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) installs the most current version of an item.</span></span> <span data-ttu-id="df2e6-169">前のバージョンのアイテムをインストールするには、 `-RequiredVersion` パラメーターを追加します。</span><span class="sxs-lookup"><span data-stu-id="df2e6-169">To install an older version of the item, add the `-RequiredVersion` parameter.</span></span>
 
-### [インストール]
+### <a name="deploy"></a><span data-ttu-id="df2e6-170">展開</span><span class="sxs-lookup"><span data-stu-id="df2e6-170">Deploy</span></span>
 
-使用のためにギャラリーから項目をインストールするには、項目の種類に応じて [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行します。
+<span data-ttu-id="df2e6-171">項目を PowerShell ギャラリーから Azure Automation にデプロイするには、項目の詳細ページで **[Azure Automation にデプロイする]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="df2e6-171">To deploy an item from the PowerShell Gallery to Azure Automation, click **Deploy to Azure Automation** on the item details page.</span></span> <span data-ttu-id="df2e6-172">Azure 管理ポータルにリダイレクトされるため、そこでAzure アカウント資格情報を使用してサインインします。</span><span class="sxs-lookup"><span data-stu-id="df2e6-172">You will be redirected to the Azure Management Portal, where you sign in by using your Azure account credentials.</span></span> <span data-ttu-id="df2e6-173">依存関係のある項目をデプロイすると、すべての依存関係が Azure Automation にデプロイされることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="df2e6-173">Note that deploying items with dependencies will deploy all the dependencies to Azure Automation.</span></span> <span data-ttu-id="df2e6-174">[Azure Automation にデプロイする] ボタンは、**AzureAutomationNotSupported** タグを項目のメタデータに追加すると無効にできます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-174">The 'Deploy to Azure Automation' button can be disabled by adding the **AzureAutomationNotSupported** tag to your item metadata.</span></span>
 
-[**Install-module** ](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) は、既定では `$env:ProgramFiles\WindowsPowerShell\Modules` にモジュールをインストールします。 これには管理者アカウントが必要です。 `-Scope
-CurrentUser` パラメーターを追加する場合は、モジュールは `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` にインストールされます。
+<span data-ttu-id="df2e6-175">Azure Automation の詳細については、[Azure Automation の Web サイト](http://azure.microsoft.com/en-us/services/automation/) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="df2e6-175">To learn more about Azure Automation, see the [Azure Automation website](http://azure.microsoft.com/en-us/services/automation/).</span></span>
 
-[**Install-script** ](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) は、既定では、 `$env:ProgramFiles\WindowsPowerShell\Scripts` にスクリプトをインストールします。 これには管理者アカウントが必要です。 `-Scope
-CurrentUser` パラメーターを追加する場合は、スクリプトは `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` にインストールされます。
+## <a name="updating-items-from-the-powershell-gallery"></a><span data-ttu-id="df2e6-176">PowerShell ギャラリーからの項目の更新</span><span class="sxs-lookup"><span data-stu-id="df2e6-176">Updating items from the PowerShell Gallery</span></span>
 
-既定では、 [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) および [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) は最新バージョンのアイテムをインストールします。 前のバージョンのアイテムをインストールするには、 `-RequiredVersion` パラメーターを追加します。
+<span data-ttu-id="df2e6-177">PowerShell ギャラリーからインストールされたアイテムを更新するには、 [**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または [**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="df2e6-177">To update items installed from the PowerShell Gallery, run either the [**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) or [**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.</span></span> <span data-ttu-id="df2e6-178">パラメーターを追加せずに [**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を実行すると、[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を実行してインストールされた各モジュールが更新されます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-178">When run without any additional parameters, [**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) attempts to update each module installed by running [**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).</span></span>
+<span data-ttu-id="df2e6-179">モジュールを選択して更新するには、`-Name` パラメーターを追加します。</span><span class="sxs-lookup"><span data-stu-id="df2e6-179">To selectively update modules, add the `-Name` parameter.</span></span>
 
-<a id="deploy" class="xliff"></a>
+<span data-ttu-id="df2e6-180">同様に、パラメーターを追加せずに [**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を実行すると、[**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を実行してインストールされた各スクリプトが更新されます。</span><span class="sxs-lookup"><span data-stu-id="df2e6-180">Similarly, when run without any additional parameters, [**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) also attempts to update each script installed by running [**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409).</span></span>
+<span data-ttu-id="df2e6-181">スクリプトを選択して更新するには、`-Name` パラメーターを追加します。</span><span class="sxs-lookup"><span data-stu-id="df2e6-181">To selectively update scripts, add the `-Name` parameter.</span></span>
 
-### 展開
+## <a name="list-items-that-you-have-installed-from-the-powershell-gallery"></a><span data-ttu-id="df2e6-182">PowerShell ギャラリーからインストールした項目の一覧</span><span class="sxs-lookup"><span data-stu-id="df2e6-182">List items that you have installed from the PowerShell Gallery</span></span>
 
-項目を PowerShell ギャラリーから Azure Automation にデプロイするには、項目の詳細ページで **[Azure Automation にデプロイする]** をクリックします。 Azure 管理ポータルにリダイレクトされるため、そこでAzure アカウント資格情報を使用してサインインします。 依存関係のある項目をデプロイすると、すべての依存関係が Azure Automation にデプロイされることに注意してください。 [Azure Automation にデプロイする] ボタンは、**AzureAutomationNotSupported** タグを項目のメタデータに追加すると無効にできます。
+<span data-ttu-id="df2e6-183">PowerShell ギャラリーからどのモジュールをインストールしたかを調べるには、[**Get-InstalledModule**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="df2e6-183">To find out which modules you have installed from the PowerShell Gallery, run the [**Get-InstalledModule**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.</span></span> <span data-ttu-id="df2e6-184">このコマンドは、PowerShell ギャラリーから直接インストールした、システム上にあるモジュールをすべて一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="df2e6-184">This command lists all of the modules you have on your system that were installed directly from the PowerShell Gallery.</span></span>
 
-Azure Automation の詳細については、[Azure Automation の Web サイト](http://azure.microsoft.com/en-us/services/automation/) をご覧ください。
-
-<a id="updating-items-from-the-powershell-gallery" class="xliff"></a>
-
-## PowerShell ギャラリーからの項目の更新
-
-PowerShell ギャラリーからインストールされたアイテムを更新するには、 [**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または [**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行します。 パラメーターを追加せずに [**Update-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を実行すると、[**Install-Module**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を実行してインストールされた各モジュールが更新されます。
-モジュールを選択して更新するには、`-Name` パラメーターを追加します。
-
-同様に、パラメーターを追加せずに [**Update-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を実行すると、[**Install-Script**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を実行してインストールされた各スクリプトが更新されます。
-スクリプトを選択して更新するには、`-Name` パラメーターを追加します。
-
-<a id="list-items-that-you-have-installed-from-the-powershell-gallery" class="xliff"></a>
-
-## PowerShell ギャラリーからインストールした項目の一覧
-
-PowerShell ギャラリーからどのモジュールをインストールしたかを調べるには、[**Get-InstalledModule**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行します。 このコマンドは、PowerShell ギャラリーから直接インストールした、システム上にあるモジュールをすべて一覧表示します。
-
-同様に、PowerShell ギャラリーからどのスクリプトをインストールしたかを調べるには、[**Get-InstalledScript**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行します。 このコマンドは、PowerShell ギャラリーから直接インストールした、システム上にあるスクリプトをすべて一覧表示します。
+<span data-ttu-id="df2e6-185">同様に、PowerShell ギャラリーからどのスクリプトをインストールしたかを調べるには、[**Get-InstalledScript**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="df2e6-185">Similarly, to find out which scripts you have installed from the PowerShell Gallery, run the [**Get-InstalledScript**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) cmdlet.</span></span> <span data-ttu-id="df2e6-186">このコマンドは、PowerShell ギャラリーから直接インストールした、システム上にあるスクリプトをすべて一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="df2e6-186">This command lists all of the scripts you have on your system that were installed directly from the PowerShell Gallery.</span></span>
 

@@ -9,12 +9,10 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershell-script-discovery-install-and-management-with-powershellget" class="xliff"></a>
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a><span data-ttu-id="219dc-102">PowerShellGet による PowerShell スクリプトの検出、インストール、および管理</span><span class="sxs-lookup"><span data-stu-id="219dc-102">PowerShell Script Discovery, Install and Management with PowerShellGet</span></span>
 
-# PowerShellGet による PowerShell スクリプトの検出、インストール、および管理
-
-WMF 5.0 RTM リリースでは、PowerShell スクリプト共有機能が PowerShellGet に追加されました。
-次の新しいコマンドレットが PowerShell スクリプトをサポートするために PowerShellGet モジュールに追加されます。
+<span data-ttu-id="219dc-103">WMF 5.0 RTM リリースでは、PowerShell スクリプト共有機能が PowerShellGet に追加されました。</span><span class="sxs-lookup"><span data-stu-id="219dc-103">PowerShell Script sharing feature got added to the PowerShellGet in the WMF 5.0 RTM release.</span></span>
+<span data-ttu-id="219dc-104">次の新しいコマンドレットが PowerShell スクリプトをサポートするために PowerShellGet モジュールに追加されます。</span><span class="sxs-lookup"><span data-stu-id="219dc-104">The following new cmdlets are added to the PowerShellGet module for supporting the PowerShell Scripts.</span></span>
 ```powershell
 PS C:\\windows\\system32&gt; Get-Command \*script\* -Module PowerShellGet | Sort-Object -Property Noun, Verb
 CommandType Name Version Source
@@ -41,7 +39,7 @@ Function Update-ScriptFileInfo 1.0.0.1 PowerShellGet
 -   **Test-ScriptFileInfo** cmdlet lets you to validate and get the script file metadata.
 ```
 
-スクリプト共有コマンドレットの構文は次のとおりです。
+<span data-ttu-id="219dc-105">スクリプト共有コマンドレットの構文は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="219dc-105">Syntax of script sharing Cmdlets:</span></span>
 ```powershell
 **New-ScriptFileInfo** \[-Path\] &lt;string&gt; -Description &lt;string&gt; \[-Version &lt;version&gt;\] \[-Author &lt;string&gt;\] \[-Guid &lt;guid&gt;\] \[-CompanyName &lt;string&gt;\] \[-Copyright &lt;string&gt;\] \[-RequiredModules &lt;Object\[\]&gt;\] \[-ExternalModuleDependencies &lt;string\[\]&gt;\] \[-RequiredScripts &lt;string\[\]&gt;\] \[-ExternalScriptDependencies &lt;string\[\]&gt;\] \[-Tags &lt;string\[\]&gt;\] \[-ProjectUri &lt;uri&gt;\] \[-LicenseUri &lt;uri&gt;\] \[-IconUri &lt;uri&gt;\] \[-ReleaseNotes &lt;string\[\]&gt;\] \[-PassThru\] \[-Force\] \[-WhatIf\] \[-Confirm\] \[&lt;CommonParameters&gt;\]
 

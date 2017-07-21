@@ -10,43 +10,33 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="get-installedmodule" class="xliff"></a>
+# <a name="get-installedmodule"></a><span data-ttu-id="554cd-103">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="554cd-103">Get-InstalledModule</span></span>
 
-# Get-InstalledModule
+<span data-ttu-id="554cd-104">コンピューター上のインストールされているモジュールを取得します。</span><span class="sxs-lookup"><span data-stu-id="554cd-104">Gets installed modules on a computer.</span></span>
 
-コンピューター上のインストールされているモジュールを取得します。
+## <a name="description"></a><span data-ttu-id="554cd-105">説明</span><span class="sxs-lookup"><span data-stu-id="554cd-105">Description</span></span>
 
-<a id="description" class="xliff"></a>
+<span data-ttu-id="554cd-106">Get-InstalledModule コマンドレットは、Install-Module コマンドレットを使用してインストールされたコンピューター上にインストールされている PowerShell モジュールを取得します。</span><span class="sxs-lookup"><span data-stu-id="554cd-106">The Get-InstalledModule cmdlet gets installed PowerShell modules on a computer which were installed using Install-Module cmdlet.</span></span>
 
-## 説明
+<span data-ttu-id="554cd-107">インストールされている各モジュールに対し、Get-InstalledModule は、インストールされているモジュールをアンインストールするための Uninstall-Module に必要に応じてパイプできる PSRepositoryItemInfo オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="554cd-107">For each installed module, Get-InstalledModule returns a PSRepositoryItemInfo object which can optionally be piped to Uninstall-Module for uninstalling the installed modules.</span></span>
 
-Get-InstalledModule コマンドレットは、Install-Module コマンドレットを使用してインストールされたコンピューター上にインストールされている PowerShell モジュールを取得します。
+- <span data-ttu-id="554cd-108">Get-InstalledModule は、名前、バージョン パラメーターに基づいてインストールされているモジュールをフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="554cd-108">Get-InstalledModule can filter installed modules based on name, version parameters.</span></span>
+- <span data-ttu-id="554cd-109">Get-InstalledModule は、次のバージョン パラメーターでフィルター処理できます。MinimumVersion、MaximumVersion、RequiredVersion、AllVersions。</span><span class="sxs-lookup"><span data-stu-id="554cd-109">Get-InstalledModule can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="554cd-110">これらのパラメーターは、MinmimumVersion と MaximumVersion を除いて、同時に使用できません。</span><span class="sxs-lookup"><span data-stu-id="554cd-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
+  - <span data-ttu-id="554cd-111">これらのバージョン パラメーターは、ワイルドカードを含まない 1 つのモジュール名が指定されている場合にのみ許可されます。</span><span class="sxs-lookup"><span data-stu-id="554cd-111">These version parameters are allowed only with the single module name without any wildcards.</span></span>
+  - <span data-ttu-id="554cd-112">RequiredVersion パラメーターが指定されていない場合、Get-InstalledModule は指定された最小バージョン以上の最新バージョンのインストールされているモジュールを返すか、または最新バージョンのモジュールを返します (最小バージョンが指定されていない場合)。</span><span class="sxs-lookup"><span data-stu-id="554cd-112">If the RequiredVersion parameter is not specified, Get-InstalledModule returns the latest version of the installed module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span> 
+  - <span data-ttu-id="554cd-113">RequiredVersion パラメーターが指定されている場合、Get-InstalledModule は指定したバージョンに完全に一致するバージョンのインストールされているモジュールのみを返します。</span><span class="sxs-lookup"><span data-stu-id="554cd-113">If the RequiredVersion parameter is specified, Get-InstalledModule only returns the version of installed module that exactly matches the specified version.</span></span>
 
-インストールされている各モジュールに対し、Get-InstalledModule は、インストールされているモジュールをアンインストールするための Uninstall-Module に必要に応じてパイプできる PSRepositoryItemInfo オブジェクトを返します。
-
-- Get-InstalledModule は、名前、バージョン パラメーターに基づいてインストールされているモジュールをフィルター処理できます。
-- Get-InstalledModule は、次のバージョン パラメーターでフィルター処理できます。MinimumVersion、MaximumVersion、RequiredVersion、AllVersions。
-  - これらのパラメーターは、MinmimumVersion と MaximumVersion を除いて、同時に使用できません。
-  - これらのバージョン パラメーターは、ワイルドカードを含まない 1 つのモジュール名が指定されている場合にのみ許可されます。
-  - RequiredVersion パラメーターが指定されていない場合、Get-InstalledModule は指定された最小バージョン以上の最新バージョンのインストールされているモジュールを返すか、または最新バージョンのモジュールを返します (最小バージョンが指定されていない場合)。 
-  - RequiredVersion パラメーターが指定されている場合、Get-InstalledModule は指定したバージョンに完全に一致するバージョンのインストールされているモジュールのみを返します。
-
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a><span data-ttu-id="554cd-114">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="554cd-114">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Get-InstalledModule -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="554cd-115">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="554cd-115">Cmdlet online help reference</span></span>
 
-## コマンドレット オンライン ヘルプ リファレンス
+[<span data-ttu-id="554cd-116">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="554cd-116">Get-InstalledModule</span></span>](http://go.microsoft.com/fwlink/?LinkId=526863)
 
-[Get-InstalledModule](http://go.microsoft.com/fwlink/?LinkId=526863)
-
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a><span data-ttu-id="554cd-117">コマンド例</span><span class="sxs-lookup"><span data-stu-id="554cd-117">Example commands</span></span>
 
 ```powershell
 
@@ -110,9 +100,7 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Modules\DJoin\1.
 
 
 
-<a id="installeddate-and-updateddate-properties-in-psgetrepositoryiteminfo-object" class="xliff"></a>
-
-## PSGetRepositoryItemInfo オブジェクトの InstalledDate および UpdatedDate プロパティ
+## <a name="installeddate-and-updateddate-properties-in-psgetrepositoryiteminfo-object"></a><span data-ttu-id="554cd-118">PSGetRepositoryItemInfo オブジェクトの InstalledDate および UpdatedDate プロパティ</span><span class="sxs-lookup"><span data-stu-id="554cd-118">InstalledDate and UpdatedDate properties in PSGetRepositoryItemInfo object</span></span>
 
     During the install operation:
         InstalledDate: current DateTime (Get-Date) value

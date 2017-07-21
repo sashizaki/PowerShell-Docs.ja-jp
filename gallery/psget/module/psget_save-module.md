@@ -10,34 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="save-module" class="xliff"></a>
+# <a name="save-module"></a><span data-ttu-id="b9969-103">Save-Module</span><span class="sxs-lookup"><span data-stu-id="b9969-103">Save-Module</span></span>
 
-# Save-Module
+<span data-ttu-id="b9969-104">モジュールをインストールせずにローカルに保存します。</span><span class="sxs-lookup"><span data-stu-id="b9969-104">Saves a module locally without installing it.</span></span>
 
-モジュールをインストールせずにローカルに保存します。
+## <a name="description"></a><span data-ttu-id="b9969-105">説明</span><span class="sxs-lookup"><span data-stu-id="b9969-105">Description</span></span>
 
-<a id="description" class="xliff"></a>
+<span data-ttu-id="b9969-106">Save-Module コマンドレットは、指定されたリポジトリからローカルでモジュールを保存して検査します。</span><span class="sxs-lookup"><span data-stu-id="b9969-106">The Save-Module cmdlet saves a module locally from the specified repository for inspection.</span></span> <span data-ttu-id="b9969-107">モジュールはインストールされていません。</span><span class="sxs-lookup"><span data-stu-id="b9969-107">The module is not installed.</span></span>
 
-## 説明
-
-Save-Module コマンドレットは、指定されたリポジトリからローカルでモジュールを保存して検査します。 モジュールはインストールされていません。
-
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a><span data-ttu-id="b9969-108">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="b9969-108">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Save-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="b9969-109">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="b9969-109">Cmdlet online help reference</span></span>
 
-## コマンドレット オンライン ヘルプ リファレンス
+[<span data-ttu-id="b9969-110">Save-Module</span><span class="sxs-lookup"><span data-stu-id="b9969-110">Save-Module</span></span>](http://go.microsoft.com/fwlink/?LinkId=531351)
 
-[Save-Module](http://go.microsoft.com/fwlink/?LinkId=531351)
-
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a><span data-ttu-id="b9969-111">コマンド例</span><span class="sxs-lookup"><span data-stu-id="b9969-111">Example commands</span></span>
 
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation

@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="configure-node-with-multiple-configuration-fragments-partial-configurations" class="xliff"></a>
+# <a name="configure-node-with-multiple-configuration-fragments-partial-configurations"></a><span data-ttu-id="ae803-102">ノードを複数の構成部分 (部分的な構成) で構成する</span><span class="sxs-lookup"><span data-stu-id="ae803-102">Configure Node with multiple configuration fragments (partial configurations)</span></span>
 
-# ノードを複数の構成部分 (部分的な構成) で構成する
-
-WMF 5.0 では、ノードに対して構成ドキュメントをフラグメントとして提供できます。 詳細については、「[部分構成](https://msdn.microsoft.com/powershell/dsc/partialconfigs)」を参照してください。
+<span data-ttu-id="ae803-103">WMF 5.0 では、ノードに対して構成ドキュメントをフラグメントとして提供できます。</span><span class="sxs-lookup"><span data-stu-id="ae803-103">WMF 5.0 helps you deliver configuration documents to a node in fragments.</span></span> <span data-ttu-id="ae803-104">詳細については、「[部分構成](https://msdn.microsoft.com/powershell/dsc/partialconfigs)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ae803-104">For more information, see [Partial configurations](https://msdn.microsoft.com/powershell/dsc/partialconfigs).</span></span>
 

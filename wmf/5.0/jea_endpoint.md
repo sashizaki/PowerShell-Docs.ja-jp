@@ -9,16 +9,14 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="creating-and-connecting-to-a-jea-endpoint" class="xliff"></a>
-
-# JEA エンドポイントの作成および接続
-JEA エンドポイントを作成するには、特別に構成された PowerShell セッション構成ファイルを作成し、登録する必要があります。このファイルは、**New-PSSessionConfigurationFile** コマンドレットで登録できます。
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a><span data-ttu-id="9738f-102">JEA エンドポイントの作成および接続</span><span class="sxs-lookup"><span data-stu-id="9738f-102">Creating and Connecting to a JEA Endpoint</span></span>
+<span data-ttu-id="9738f-103">JEA エンドポイントを作成するには、特別に構成された PowerShell セッション構成ファイルを作成し、登録する必要があります。このファイルは、**New-PSSessionConfigurationFile** コマンドレットで登録できます。</span><span class="sxs-lookup"><span data-stu-id="9738f-103">To create a JEA endpoint, you need to create and register a specially-configured PowerShell Session Configuration file, which can be generated with the **New-PSSessionConfigurationFile** cmdlet.</span></span>
 
 ```powershell
 New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc" 
 ```
 
-これにより、次のようなセッション構成ファイルが作成されます。 
+<span data-ttu-id="9738f-104">これにより、次のようなセッション構成ファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="9738f-104">This will create a session configuration file that looks like this:</span></span> 
 ```powershell
 @{
 
@@ -56,20 +54,20 @@ RoleDefinitions = @{
 
 } 
 ```
-JEA エンドポイントを作成する場合は、コマンドの次のパラメーター (およびファイル内の対応するキー) を設定する必要があります。
-1.  SessionType を RestrictedRemoteServer に
-2.  RunAsVirtualAccount を **$true** に
-3.  TranscriptPath を各セッションの後 "over the shoulder" トランスクリプトが保存されるディレクトリに
-4.  RoleDefinitions をどのグループがどの "ロール機能" にアクセスできるかを定義するハッシュテーブルに設定します。  このフィールドでは、このエンドポイントで**どのユーザー**が**どの操作**を実行できるかを定義します。   ロール機能は特別なファイルで、これについては後で説明します。
+<span data-ttu-id="9738f-105">JEA エンドポイントを作成する場合は、コマンドの次のパラメーター (およびファイル内の対応するキー) を設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9738f-105">When creating a JEA endpoint, the following parameters of the command (and corresponding keys in the file) must be set:</span></span>
+1.  <span data-ttu-id="9738f-106">SessionType を RestrictedRemoteServer に</span><span class="sxs-lookup"><span data-stu-id="9738f-106">SessionType to RestrictedRemoteServer</span></span>
+2.  <span data-ttu-id="9738f-107">RunAsVirtualAccount を **$true** に</span><span class="sxs-lookup"><span data-stu-id="9738f-107">RunAsVirtualAccount to **$true**</span></span>
+3.  <span data-ttu-id="9738f-108">TranscriptPath を各セッションの後 "over the shoulder" トランスクリプトが保存されるディレクトリに</span><span class="sxs-lookup"><span data-stu-id="9738f-108">TranscriptPath to the directory where “over the shoulder” transcripts will be saved after each session</span></span>
+4.  <span data-ttu-id="9738f-109">RoleDefinitions をどのグループがどの "ロール機能" にアクセスできるかを定義するハッシュテーブルに設定します。</span><span class="sxs-lookup"><span data-stu-id="9738f-109">RoleDefinitions to a hashtable that defines which groups have access to which “Role Capabilities.”</span></span>  <span data-ttu-id="9738f-110">このフィールドでは、このエンドポイントで**どのユーザー**が**どの操作**を実行できるかを定義します。</span><span class="sxs-lookup"><span data-stu-id="9738f-110">This field defines **who** can do **what** on this endpoint.</span></span>   <span data-ttu-id="9738f-111">ロール機能は特別なファイルで、これについては後で説明します。</span><span class="sxs-lookup"><span data-stu-id="9738f-111">Role Capabilities are special files that will be explained shortly.</span></span>
 
 
-RoleDefinitions フィールドでは、どのグループがどのロール機能にアクセスできるかを定義します。  ロール機能は、接続ユーザーに公開される一連の機能を定義するファイルです。  ロール機能は、**New-PSRoleCapabilityFile** コマンドを使用して作成できます。
+<span data-ttu-id="9738f-112">RoleDefinitions フィールドでは、どのグループがどのロール機能にアクセスできるかを定義します。</span><span class="sxs-lookup"><span data-stu-id="9738f-112">The RoleDefinitions field defines which groups had access to which Role Capabilities.</span></span>  <span data-ttu-id="9738f-113">ロール機能は、接続ユーザーに公開される一連の機能を定義するファイルです。</span><span class="sxs-lookup"><span data-stu-id="9738f-113">A Role Capability is a file that defines a set of capabilities that will be exposed to connecting users.</span></span>  <span data-ttu-id="9738f-114">ロール機能は、**New-PSRoleCapabilityFile** コマンドを使用して作成できます。</span><span class="sxs-lookup"><span data-stu-id="9738f-114">You can create Role Capabilities with the **New-PSRoleCapabilityFile** command.</span></span>
 
 ```powershell
 New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc" 
 ```
 
-これにより、次のようなテンプレート ロール機能が生成されます。
+<span data-ttu-id="9738f-115">これにより、次のようなテンプレート ロール機能が生成されます。</span><span class="sxs-lookup"><span data-stu-id="9738f-115">This will generate a template role capability that looks like this:</span></span>
 ```
 @{
 
@@ -133,23 +131,21 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 } 
 
 ```
-JEA セッション構成で使用するには、ロール機能を有効な PowerShell モジュールとして "RoleCapabilities" という名前のディレクトリに保存する必要があります。 必要に応じて、1 つのモジュールに複数のロール機能ファイルを含めることができます。
+<span data-ttu-id="9738f-116">JEA セッション構成で使用するには、ロール機能を有効な PowerShell モジュールとして "RoleCapabilities" という名前のディレクトリに保存する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9738f-116">To be used by a JEA session configuration, Role Capabilities must be saved as a valid PowerShell module in a directory named “RoleCapabilities”.</span></span> <span data-ttu-id="9738f-117">必要に応じて、1 つのモジュールに複数のロール機能ファイルを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="9738f-117">A module may have multiple role capability files, if desired.</span></span>
 
-ユーザーが JEA セッションに接続するときにどのコマンドレット、関数、エイリアス、およびスクリプトにアクセスできるかの構成を開始するには、コメント アウトされたテンプレートに従ってロール機能ファイルに独自のルールを追加します。 ロール機能を構成する方法の詳細については、完全な[エクスペリエンス ガイド](http://aka.ms/JEA)をご覧ください。
+<span data-ttu-id="9738f-118">ユーザーが JEA セッションに接続するときにどのコマンドレット、関数、エイリアス、およびスクリプトにアクセスできるかの構成を開始するには、コメント アウトされたテンプレートに従ってロール機能ファイルに独自のルールを追加します。</span><span class="sxs-lookup"><span data-stu-id="9738f-118">To start configuring which cmdlets, functions, aliases, and scripts a user may access when connecting to a JEA session, add your own rules to the Role Capability file following the commented out templates.</span></span> <span data-ttu-id="9738f-119">ロール機能を構成する方法の詳細については、完全な[エクスペリエンス ガイド](http://aka.ms/JEA)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="9738f-119">For a deeper look into how you can configure Role Capabilities, check out the full [experience guide](http://aka.ms/JEA).</span></span>
 
-最後に、セッション構成と関連ロール機能のカスタマイズが完了した後、このセッション構成を登録し、**Register-PSSessionConfiguration** を実行してエンドポイントを作成します。
+<span data-ttu-id="9738f-120">最後に、セッション構成と関連ロール機能のカスタマイズが完了した後、このセッション構成を登録し、**Register-PSSessionConfiguration** を実行してエンドポイントを作成します。</span><span class="sxs-lookup"><span data-stu-id="9738f-120">Finally, once you have finished customizing your session configuration and related Role Capabilities, register this session configuration and create the endpoint by running **Register-PSSessionConfiguration**.</span></span>
 
 ```powershell
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
 ```
 
-<a id="connect-to-a-jea-endpoint" class="xliff"></a>
-
-## JEA エンドポイントへの接続
-JEA エンドポイントへの接続は、他の PowerShell エンドポイントへの接続と同じように機能します。  **New-PSSession**、**Invoke-Command**、または **Enter-PSSession** の "ConfigurationName" パラメーターとして JEA エンドポイント名を付けることのみが必要です。
+## <a name="connect-to-a-jea-endpoint"></a><span data-ttu-id="9738f-121">JEA エンドポイントへの接続</span><span class="sxs-lookup"><span data-stu-id="9738f-121">Connect to a JEA Endpoint</span></span>
+<span data-ttu-id="9738f-122">JEA エンドポイントへの接続は、他の PowerShell エンドポイントへの接続と同じように機能します。</span><span class="sxs-lookup"><span data-stu-id="9738f-122">Connecting to a JEA Endpoint works the same way connecting to any other PowerShell endpoint works.</span></span>  <span data-ttu-id="9738f-123">**New-PSSession**、**Invoke-Command**、または **Enter-PSSession** の "ConfigurationName" パラメーターとして JEA エンドポイント名を付けることのみが必要です。</span><span class="sxs-lookup"><span data-stu-id="9738f-123">You simply have to give your JEA endpoint name as the “ConfigurationName” parameter for **New-PSSession**, **Invoke-Command**, or **Enter-PSSession**.</span></span>
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
-JEA セッションに接続した後は、自分がアクセス権を持つロール機能のホワイトリストに登録されたコマンドのみを実行できます。 ロールに許可されていないコマンドを実行しようとすると、エラーが発生します。
+<span data-ttu-id="9738f-124">JEA セッションに接続した後は、自分がアクセス権を持つロール機能のホワイトリストに登録されたコマンドのみを実行できます。</span><span class="sxs-lookup"><span data-stu-id="9738f-124">Once you have connected to the JEA session, you will be limited to running the commands whitelisted in the Role Capabilities that you have access to.</span></span> <span data-ttu-id="9738f-125">ロールに許可されていないコマンドを実行しようとすると、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="9738f-125">If you try to run any command not allowed for your role, you will encounter an error.</span></span>
 

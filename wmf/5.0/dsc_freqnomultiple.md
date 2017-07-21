@@ -9,11 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="frequencies-for-refreshmode-and-configurationmode-dont-need-to-be-multiples-of-each-other" class="xliff"></a>
+# <a name="frequencies-for-refreshmode-and-configurationmode-dont-need-to-be-multiples-of-each-other"></a><span data-ttu-id="fc359-102">RefreshMode と ConfigurationMode の出現頻度は互いの倍数である必要はありません</span><span class="sxs-lookup"><span data-stu-id="fc359-102">Frequencies for RefreshMode and ConfigurationMode don't need to be multiples of each other</span></span>
 
-# RefreshMode と ConfigurationMode の出現頻度は互いの倍数である必要はありません
+<span data-ttu-id="fc359-103">以前のバージョンの DSC では、LCM は `RefreshFrequencyMins` と `ConfigurationModeFrequencyMins` を互いの倍数として処理します。</span><span class="sxs-lookup"><span data-stu-id="fc359-103">In the previous version of DSC, the LCM would treat `RefreshFrequencyMins` and `ConfigurationModeFrequencyMins` as multiples of each other.</span></span> <span data-ttu-id="fc359-104">WMF 5.0 RTM では、これらのプロパティは互いに独立して処理されます。</span><span class="sxs-lookup"><span data-stu-id="fc359-104">In WMF 5.0 RTM, these properties are processed independent of each other.</span></span> 
 
-以前のバージョンの DSC では、LCM は `RefreshFrequencyMins` と `ConfigurationModeFrequencyMins` を互いの倍数として処理します。 WMF 5.0 RTM では、これらのプロパティは互いに独立して処理されます。 
-
-詳細については、「[ローカル構成マネージャーの構成](https://msdn.microsoft.com/powershell/dsc/metaconfig)」を参照してください。
+<span data-ttu-id="fc359-105">詳細については、「[ローカル構成マネージャーの構成](https://msdn.microsoft.com/powershell/dsc/metaconfig)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="fc359-105">For more information, see [Configuring the Local Configuration Manager](https://msdn.microsoft.com/powershell/dsc/metaconfig).</span></span>
 

@@ -10,53 +10,41 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="desired-state-configuration-overview-for-decision-makers" class="xliff"></a>
+# <a name="desired-state-configuration-overview-for-decision-makers"></a><span data-ttu-id="836b4-103">意思決定者向け Desired State Configuration の概要</span><span class="sxs-lookup"><span data-stu-id="836b4-103">Desired State Configuration Overview for Decision Makers</span></span>
 
-# 意思決定者向け Desired State Configuration の概要
+<span data-ttu-id="836b4-104">このドキュメントでは、PowerShell Desired State Configuration (DSC) を使用するビジネス上の利点について説明します。</span><span class="sxs-lookup"><span data-stu-id="836b4-104">This document describes the business benefits of using PowerShell Desired State Configuration (DSC).</span></span> <span data-ttu-id="836b4-105">テクニカル ガイドではありません。</span><span class="sxs-lookup"><span data-stu-id="836b4-105">It is not a technical guide.</span></span>
 
-このドキュメントでは、PowerShell Desired State Configuration (DSC) を使用するビジネス上の利点について説明します。 テクニカル ガイドではありません。
+## <a name="what-is-desired-state-configuration"></a><span data-ttu-id="836b4-106">Desired State Configuration とは</span><span class="sxs-lookup"><span data-stu-id="836b4-106">What Is Desired State Configuration?</span></span>
 
-<a id="what-is-desired-state-configuration" class="xliff"></a>
+<span data-ttu-id="836b4-107">Windows PowerShell Desired State Configuration (DSC) は、オープン スタンダードに基づく、Windows に組み込まれた構成管理プラットフォームです。</span><span class="sxs-lookup"><span data-stu-id="836b4-107">Windows PowerShell Desired State Configuration (DSC) is a configuration management platform built into Windows that is based on open standards.</span></span> <span data-ttu-id="836b4-108">DSC は、展開ライフサイクル (開発、テスト、実稼働前、実稼働) の各段階、およびスケールアウト中に、機能の信頼性と一貫性を維持するために十分な柔軟性があります。</span><span class="sxs-lookup"><span data-stu-id="836b4-108">DSC is flexible enough to function reliably and consistently in each stage of the deployment lifecycle (development, test, pre-production, production), as well as during scale-out.</span></span> 
 
-## Desired State Configuration とは
+<span data-ttu-id="836b4-109">DSC は"[構成](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)"を中心としています。</span><span class="sxs-lookup"><span data-stu-id="836b4-109">DSC centers around "[configurations](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)".</span></span>
+<span data-ttu-id="836b4-110">構成とは、特定の特性を持つコンピューター ("ノード") で構成される環境を説明する読みやすいドキュメントです。</span><span class="sxs-lookup"><span data-stu-id="836b4-110">A configuration is an easy-to-read document that describes an environment made up of computers ("nodes") with specific characteristics.</span></span> <span data-ttu-id="836b4-111">これらの特性は、特定の Windows 機能が有効になっていることを確認するなどの単純な場合や、SharePoint の展開のように複雑な場合があります。</span><span class="sxs-lookup"><span data-stu-id="836b4-111">These characteristics can be as simple as ensuring a specific Windows feature is enabled or as complex as deploying SharePoint.</span></span> 
 
-Windows PowerShell Desired State Configuration (DSC) は、オープン スタンダードに基づく、Windows に組み込まれた構成管理プラットフォームです。 DSC は、展開ライフサイクル (開発、テスト、実稼働前、実稼働) の各段階、およびスケールアウト中に、機能の信頼性と一貫性を維持するために十分な柔軟性があります。 
+<span data-ttu-id="836b4-112">DSC には監視とレポートも組み込まれています。</span><span class="sxs-lookup"><span data-stu-id="836b4-112">DSC also has monitoring and reporting built in.</span></span> <span data-ttu-id="836b4-113">システムが適合しなくなった場合、DSC は警告を生成し、システムを修正するために機能することができます。</span><span class="sxs-lookup"><span data-stu-id="836b4-113">If a system is no longer compliant, DSC can raise an alert and act to correct the system.</span></span> 
 
-DSC は"[構成](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)"を中心としています。
-構成とは、特定の特性を持つコンピューター ("ノード") で構成される環境を説明する読みやすいドキュメントです。 これらの特性は、特定の Windows 機能が有効になっていることを確認するなどの単純な場合や、SharePoint の展開のように複雑な場合があります。 
+## <a name="benefits-of-using-desired-state-configuration"></a><span data-ttu-id="836b4-114">Desired State Configuration を使用する利点</span><span class="sxs-lookup"><span data-stu-id="836b4-114">Benefits of Using Desired State Configuration</span></span>
 
-DSC には監視とレポートも組み込まれています。 システムが適合しなくなった場合、DSC は警告を生成し、システムを修正するために機能することができます。 
+<span data-ttu-id="836b4-115">構成は、簡単に読み取り、保存、および更新できるように設計されています。</span><span class="sxs-lookup"><span data-stu-id="836b4-115">Configurations are designed to be easily read, stored, and updated.</span></span> <span data-ttu-id="836b4-116">構成では、ターゲット デバイスをあるべき状態にするための手順を記述するのではなく、ターゲット デバイスがあるべき状態を宣言します。</span><span class="sxs-lookup"><span data-stu-id="836b4-116">Configurations declare the state target devices should be in, instead of writing instructions for how to put them in that state.</span></span> <span data-ttu-id="836b4-117">これにより、DSC によって構成を学習、導入、実装、および保守するコストが非常に低く抑えられます。</span><span class="sxs-lookup"><span data-stu-id="836b4-117">This makes it much less costly to learn, adopt, implement, and maintain configuration through DSC.</span></span> 
 
-<a id="benefits-of-using-desired-state-configuration" class="xliff"></a>
+<span data-ttu-id="836b4-118">構成を作成することは、複雑な展開手順が "信頼できる唯一の情報源" として 1 つの場所で取得されることを意味します。</span><span class="sxs-lookup"><span data-stu-id="836b4-118">Creating configurations means that complex deployment steps are captured as a "single source of truth" in a single location.</span></span> <span data-ttu-id="836b4-119">これにより、特定の一連のマシンの展開を繰り返す場合にエラーが発生する可能性が大幅に低下します。</span><span class="sxs-lookup"><span data-stu-id="836b4-119">This makes repeated deployments of a specific set of machines much less error-prone.</span></span> <span data-ttu-id="836b4-120">結果として、展開の速度と信頼性が高まります。</span><span class="sxs-lookup"><span data-stu-id="836b4-120">In turn, this makes deployments faster and more reliable.</span></span> <span data-ttu-id="836b4-121">これにより、複雑な展開での迅速なターンアラウンドが実現します。</span><span class="sxs-lookup"><span data-stu-id="836b4-121">This enables quick turnaround on complex deployments.</span></span>
 
-## Desired State Configuration を使用する利点
-
-構成は、簡単に読み取り、保存、および更新できるように設計されています。 構成では、ターゲット デバイスをあるべき状態にするための手順を記述するのではなく、ターゲット デバイスがあるべき状態を宣言します。 これにより、DSC によって構成を学習、導入、実装、および保守するコストが非常に低く抑えられます。 
-
-構成を作成することは、複雑な展開手順が "信頼できる唯一の情報源" として 1 つの場所で取得されることを意味します。 これにより、特定の一連のマシンの展開を繰り返す場合にエラーが発生する可能性が大幅に低下します。 結果として、展開の速度と信頼性が高まります。 これにより、複雑な展開での迅速なターンアラウンドが実現します。
-
-構成は、[PowerShell ギャラリー](https://powershellgallery.com)を介して共有することもできます。 つまり、実行する必要がある作業の一般的なシナリオやベスト プラクティスが既に存在する可能性があります。
+<span data-ttu-id="836b4-122">構成は、[PowerShell ギャラリー](https://powershellgallery.com)を介して共有することもできます。</span><span class="sxs-lookup"><span data-stu-id="836b4-122">Configurations are also shareable via the [PowerShell Gallery](https://powershellgallery.com).</span></span> <span data-ttu-id="836b4-123">つまり、実行する必要がある作業の一般的なシナリオやベスト プラクティスが既に存在する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="836b4-123">This means common scenarios and best practices might already exist for the work you need done.</span></span>
 
 
-<a id="desired-state-configuration-and-devops" class="xliff"></a>
+## <a name="desired-state-configuration-and-devops"></a><span data-ttu-id="836b4-124">Desired State Configuration と DevOps</span><span class="sxs-lookup"><span data-stu-id="836b4-124">Desired State Configuration and DevOps</span></span>
 
-## Desired State Configuration と DevOps
+<span data-ttu-id="836b4-125">[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) は、迅速な展開と反復を可能にする人、テクノロジ、カルチャの組み合わせです。</span><span class="sxs-lookup"><span data-stu-id="836b4-125">[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) is a combination of people, technologies, and culture that allow for rapid deployment and iteration.</span></span> <span data-ttu-id="836b4-126">DSC は、DevOps を意識して設計されました。</span><span class="sxs-lookup"><span data-stu-id="836b4-126">DSC was designed with DevOps in mind.</span></span> <span data-ttu-id="836b4-127">単一の構成によって環境を定義することで、開発者は要件を構成にエンコードし、その構成をソース管理にチェックインでき、運用チームではエラーが発生しやすい手動プロセスを使用する必要なく、コードを簡単に展開できるようになります。</span><span class="sxs-lookup"><span data-stu-id="836b4-127">Having a single configuration define an environment means that developers can encode their requirements into a configuration, check that configuration into source control, and operations teams can easily deploy code without having to go through error-prone manual processes.</span></span> 
 
-[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) は、迅速な展開と反復を可能にする人、テクノロジ、カルチャの組み合わせです。 DSC は、DevOps を意識して設計されました。 単一の構成によって環境を定義することで、開発者は要件を構成にエンコードし、その構成をソース管理にチェックインでき、運用チームではエラーが発生しやすい手動プロセスを使用する必要なく、コードを簡単に展開できるようになります。 
+<span data-ttu-id="836b4-128">構成は[データ ドリブン](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)でもあるため、開発者が関与することなく、運用チームで簡単に環境を特定および変更することができます。</span><span class="sxs-lookup"><span data-stu-id="836b4-128">Configurations are also [data-driven](https://msdn.microsoft.com/en-us/powershell/dsc/configdata), which makes it easier for ops teams to identify and change environments without developer intervention.</span></span> 
 
-構成は[データ ドリブン](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)でもあるため、開発者が関与することなく、運用チームで簡単に環境を特定および変更することができます。 
+## <a name="desired-state-configuration-on--and-off-premises"></a><span data-ttu-id="836b4-129">オンプレミスおよびオフプレミスの Desired State Configuration</span><span class="sxs-lookup"><span data-stu-id="836b4-129">Desired State Configuration On- and Off-Premises</span></span>
 
-<a id="desired-state-configuration-on--and-off-premises" class="xliff"></a>
+<span data-ttu-id="836b4-130">DSC を使用して、オンプレミスとオフプレミスの両方の展開を管理できます。</span><span class="sxs-lookup"><span data-stu-id="836b4-130">DSC can be used to manage both on-premises and off-premises deployments.</span></span> <span data-ttu-id="836b4-131">オンプレミスのソリューションの場合、DSC では[プル サーバー](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver)を使用してマシンの管理を一元化し、それらの状態をレポートできます。</span><span class="sxs-lookup"><span data-stu-id="836b4-131">For on-premises solutions, DSC has a [pull server](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver) that can be used to centralize management of machines and report on their status.</span></span> <span data-ttu-id="836b4-132">クラウド ソリューションの場合、DSC は Windows が使用可能なすべての場所で使用できます。</span><span class="sxs-lookup"><span data-stu-id="836b4-132">For cloud solutions, DSC is usable wherever Windows is usable.</span></span> <span data-ttu-id="836b4-133">Azure では、DSC のレポート作成を一元化する [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/) など、Desired State Configuration に基づいて構築された特定のサービスも提供しています。</span><span class="sxs-lookup"><span data-stu-id="836b4-133">There are also specific offerings from Azure built on Desired State Configuration, such as [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/), which centralizes reporting of DSC.</span></span> 
 
-## オンプレミスおよびオフプレミスの Desired State Configuration
+## <a name="dsc-and-compatibility"></a><span data-ttu-id="836b4-134">DSC と互換性</span><span class="sxs-lookup"><span data-stu-id="836b4-134">DSC and Compatibility</span></span>
 
-DSC を使用して、オンプレミスとオフプレミスの両方の展開を管理できます。 オンプレミスのソリューションの場合、DSC では[プル サーバー](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver)を使用してマシンの管理を一元化し、それらの状態をレポートできます。 クラウド ソリューションの場合、DSC は Windows が使用可能なすべての場所で使用できます。 Azure では、DSC のレポート作成を一元化する [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/) など、Desired State Configuration に基づいて構築された特定のサービスも提供しています。 
+<span data-ttu-id="836b4-135">DSC は Windows Server 2012 R2 で導入されましたが、Windows Management Framework (WMF) パッケージを使用してダウンレベル オペレーティング システムで使用できます。</span><span class="sxs-lookup"><span data-stu-id="836b4-135">Although DSC was introduced in Windows Server 2012 R2, it is available for downlevel operating systems via the Windows Management Framework (WMF) package.</span></span> <span data-ttu-id="836b4-136">WMF の詳細については、[PowerShell のホーム ページ](https://msdn.microsoft.com/en-us/powershell/)をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="836b4-136">More information about the WMF can be found on the [PowerShell homepage](https://msdn.microsoft.com/en-us/powershell/).</span></span> 
 
-<a id="dsc-and-compatibility" class="xliff"></a>
-
-## DSC と互換性
-
-DSC は Windows Server 2012 R2 で導入されましたが、Windows Management Framework (WMF) パッケージを使用してダウンレベル オペレーティング システムで使用できます。 WMF の詳細については、[PowerShell のホーム ページ](https://msdn.microsoft.com/en-us/powershell/)をご覧ください。 
-
-DSC は、Linux の管理にも使用できます。 詳細については、[Linux 用 DSC の概要](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted)に関するページをご覧ください。
+<span data-ttu-id="836b4-137">DSC は、Linux の管理にも使用できます。</span><span class="sxs-lookup"><span data-stu-id="836b4-137">DSC can also be used to manage Linux.</span></span> <span data-ttu-id="836b4-138">詳細については、[Linux 用 DSC の概要](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted)に関するページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="836b4-138">For more information, see [Getting Started with DSC for Linux](https://msdn.microsoft.com/en-us/powershell/dsc/lnxgettingstarted).</span></span>
 

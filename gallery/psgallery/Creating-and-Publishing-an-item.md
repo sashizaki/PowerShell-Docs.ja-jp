@@ -10,104 +10,94 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="creating-and-publishing-an-item" class="xliff"></a>
+# <a name="creating-and-publishing-an-item"></a><span data-ttu-id="906d7-103">アイテムの作成と公開</span><span class="sxs-lookup"><span data-stu-id="906d7-103">Creating and Publishing an Item</span></span> 
+<span data-ttu-id="906d7-104">PowerShell ギャラリーとは、広範な PowerShell ユーザー コミュニティを通じて、安定した PowerShell モジュール、スクリプト、および DSC リソースを公開および共有する場所です。</span><span class="sxs-lookup"><span data-stu-id="906d7-104">The PowerShell Gallery is the place to publish and share stable PowerShell modules, scripts, and DSC resources with the broader PowerShell user community.</span></span>    
 
-# アイテムの作成と公開 
-PowerShell ギャラリーとは、広範な PowerShell ユーザー コミュニティを通じて、安定した PowerShell モジュール、スクリプト、および DSC リソースを公開および共有する場所です。    
+<span data-ttu-id="906d7-105">この記事では、スクリプトまたはモジュールを準備して PowerShell ギャラリーに公開するまでの仕組みと重要な手順について説明します。</span><span class="sxs-lookup"><span data-stu-id="906d7-105">This article covers the mechanics and important steps for preparing a script or module, and publishing it to the PowerShell Gallery.</span></span>
+<span data-ttu-id="906d7-106">[公開ガイドライン](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines)を確認して、公開したアイテムがより多くの PowerShell ギャラリー ユーザーに受け入れられるようにする方法を理解しておくことを強くお勧めします。</span><span class="sxs-lookup"><span data-stu-id="906d7-106">We strongly encourage that you review the [Publishing Guidelines](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines) to understand how to ensure that the items you publish will be more widely accepted by PowerShell Gallery users.</span></span> 
 
-この記事では、スクリプトまたはモジュールを準備して PowerShell ギャラリーに公開するまでの仕組みと重要な手順について説明します。
-[公開ガイドライン](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines)を確認して、公開したアイテムがより多くの PowerShell ギャラリー ユーザーに受け入れられるようにする方法を理解しておくことを強くお勧めします。 
+<span data-ttu-id="906d7-107">アイテムを PowerShell ギャラリーに公開するための最小要件は以下の通りです。</span><span class="sxs-lookup"><span data-stu-id="906d7-107">The minimum requirements to publish an item to the PowerShell Gallery are:</span></span>
 
-アイテムを PowerShell ギャラリーに公開するための最小要件は以下の通りです。
-
-* PowerShell ギャラリー アカウントを持っていて、API キーが関連付けられている
-* 必要なメタデータがアイテムに含まれていることを確認する
-* 事前検証ツールを使用して、アイテムが公開できる状態であることを確認する
-* Publish-Module コマンドおよび Publish-Script コマンドを使用して、アイテムを PowerShell ギャラリーに公開する
-* アイテムに関する質問や懸念事項に答える
+* <span data-ttu-id="906d7-108">PowerShell ギャラリー アカウントを持っていて、API キーが関連付けられている</span><span class="sxs-lookup"><span data-stu-id="906d7-108">Have a PowerShell Gallery account, and the API Key associated with it</span></span>
+* <span data-ttu-id="906d7-109">必要なメタデータがアイテムに含まれていることを確認する</span><span class="sxs-lookup"><span data-stu-id="906d7-109">Ensure Required Metadata is in your item</span></span>
+* <span data-ttu-id="906d7-110">事前検証ツールを使用して、アイテムが公開できる状態であることを確認する</span><span class="sxs-lookup"><span data-stu-id="906d7-110">Use the pre-validation tools to ensure your item is ready to publish</span></span>
+* <span data-ttu-id="906d7-111">Publish-Module コマンドおよび Publish-Script コマンドを使用して、アイテムを PowerShell ギャラリーに公開する</span><span class="sxs-lookup"><span data-stu-id="906d7-111">Publish the item to the PowerShell Gallery using the Publish-Module and Publish-Script commands</span></span>
+* <span data-ttu-id="906d7-112">アイテムに関する質問や懸念事項に答える</span><span class="sxs-lookup"><span data-stu-id="906d7-112">Responding to questions or concerns about your item</span></span>
  
-PowerShell ギャラリーは、PowerShell モジュールおよび PowerShell スクリプトを受け入れます。 ここでスクリプトとは、大規模モジュールの一部ではなく、1 つのファイルである PowerShell スクリプトを意味しています。 
+<span data-ttu-id="906d7-113">PowerShell ギャラリーは、PowerShell モジュールおよび PowerShell スクリプトを受け入れます。</span><span class="sxs-lookup"><span data-stu-id="906d7-113">The PowerShell Gallery accepts PowerShell modules and PowerShell scripts.</span></span> <span data-ttu-id="906d7-114">ここでスクリプトとは、大規模モジュールの一部ではなく、1 つのファイルである PowerShell スクリプトを意味しています。</span><span class="sxs-lookup"><span data-stu-id="906d7-114">When we refer to scripts, we mean a PowerShell script that is a single file, and not part of a larger module.</span></span> 
 
-<a id="powershell-gallery-account-and-api-key" class="xliff"></a>
+## <a name="powershell-gallery-account-and-api-key"></a><span data-ttu-id="906d7-115">PowerShell ギャラリー アカウントと API キー</span><span class="sxs-lookup"><span data-stu-id="906d7-115">PowerShell Gallery Account and API Key</span></span>
+<span data-ttu-id="906d7-116">PowerShell ギャラリー アカウントの設定方法については、「[Creating a PowerShell Gallery Account (PowerShell ギャラリー アカウントを作成する)](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="906d7-116">See [Creating a PowerShell Gallery Account](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account) for how to set up your PowerShell Gallery account.</span></span> 
 
-## PowerShell ギャラリー アカウントと API キー
-PowerShell ギャラリー アカウントの設定方法については、「[Creating a PowerShell Gallery Account (PowerShell ギャラリー アカウントを作成する)](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account)」をご覧ください。 
+<span data-ttu-id="906d7-117">アカウントを作成したら、アイテムの公開に必要な API キーを取得できます。</span><span class="sxs-lookup"><span data-stu-id="906d7-117">Once you have created an account, you can get the API Key needed to publish an item.</span></span>
+<span data-ttu-id="906d7-118">アカウントでサインインすると、PowerShell ギャラリー ページの上部で [Register]\(登録\) の代わりにユーザー名が表示されます。</span><span class="sxs-lookup"><span data-stu-id="906d7-118">After you sign in with the account, your username will be displayed at the top of the PowerShell Gallery pages instead of Register.</span></span> <span data-ttu-id="906d7-119">ユーザー名をクリックすると、[My Account]\(マイ アカウント\) ページに移動します。そこで API キーを確認できます。</span><span class="sxs-lookup"><span data-stu-id="906d7-119">Clicking on your username will take you to the My Account page, where you will find the API Key.</span></span> 
 
-アカウントを作成したら、アイテムの公開に必要な API キーを取得できます。
-アカウントでサインインすると、PowerShell ギャラリー ページの上部で [Register]\(登録\) の代わりにユーザー名が表示されます。 ユーザー名をクリックすると、[My Account]\(マイ アカウント\) ページに移動します。そこで API キーを確認できます。 
+<span data-ttu-id="906d7-120">注: API キーは、ログイン情報およびパスワードと同等にセキュリティ保護する必要があります。</span><span class="sxs-lookup"><span data-stu-id="906d7-120">Note: The API Key must be treated as securely as your login and password.</span></span> <span data-ttu-id="906d7-121">このキーを使用すると、PowerShell ギャラリーで所有しているあらゆるアイテムを、自分だけでなく他のユーザーも更新できます。</span><span class="sxs-lookup"><span data-stu-id="906d7-121">With this key you, or anyone else, can update any item you own in the PowerShell Gallery.</span></span> <span data-ttu-id="906d7-122">キーは定期的に更新することをお勧めします。[My Account]\(マイ アカウント\) ページの [Reset Key]\(キーをリセットする\) を使用して更新できます。</span><span class="sxs-lookup"><span data-stu-id="906d7-122">We recommend updating the key regularly, which can be done using Reset Key on your My Account page.</span></span>
 
-注: API キーは、ログイン情報およびパスワードと同等にセキュリティ保護する必要があります。 このキーを使用すると、PowerShell ギャラリーで所有しているあらゆるアイテムを、自分だけでなく他のユーザーも更新できます。 キーは定期的に更新することをお勧めします。[My Account]\(マイ アカウント\) ページの [Reset Key]\(キーをリセットする\) を使用して更新できます。
+## <a name="required-metadata-for-items-published-to-the-powershell-gallery"></a><span data-ttu-id="906d7-123">PowerShell ギャラリーで公開するアイテムに必要なメタデータ</span><span class="sxs-lookup"><span data-stu-id="906d7-123">Required Metadata for Items Published to the PowerShell Gallery</span></span>
 
-<a id="required-metadata-for-items-published-to-the-powershell-gallery" class="xliff"></a>
+<span data-ttu-id="906d7-124">PowerShell ギャラリーでは、スクリプトまたはモジュールのマニフェストに含まれているメタデータ フィールドから抽出した情報を、ギャラリーのユーザーに提供します。</span><span class="sxs-lookup"><span data-stu-id="906d7-124">The PowerShell Gallery provides information to gallery users drawn from metadata fields that are included in the script or module manifest.</span></span>
+<span data-ttu-id="906d7-125">PowerShell ギャラリーに公開するアイテムを作成または変更するには、アイテムのマニフェストに含める情報についていくつかの要件があります。</span><span class="sxs-lookup"><span data-stu-id="906d7-125">Creating or modifying items for publication to the PowerShell Gallery has a small set of requirements for information supplied in the item manifest.</span></span> <span data-ttu-id="906d7-126">[公開ガイドライン](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines)のアイテム メタデータに関するセクションを確認して、アイテムを使ってユーザーに対して最適な情報を提供する方法を理解することを強くお勧めします。</span><span class="sxs-lookup"><span data-stu-id="906d7-126">We strongly encourage that you review the Item Metadata section of the [Publishing Guidelines](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines) to learn how to provide the best information to users with your items.</span></span> 
 
-## PowerShell ギャラリーで公開するアイテムに必要なメタデータ
+<span data-ttu-id="906d7-127">[New-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/ModuleManifest-Reference) および [New-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo) コマンドレットは、すべてのマニフェスト要素のプレースホルダーが用意されたマニフェスト テンプレートを作成します。</span><span class="sxs-lookup"><span data-stu-id="906d7-127">The [New-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/ModuleManifest-Reference) and [New-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo) cmdlets will create the manifest template for you, with placeholders for all the manifest elements.</span></span> 
 
-PowerShell ギャラリーでは、スクリプトまたはモジュールのマニフェストに含まれているメタデータ フィールドから抽出した情報を、ギャラリーのユーザーに提供します。
-PowerShell ギャラリーに公開するアイテムを作成または変更するには、アイテムのマニフェストに含める情報についていくつかの要件があります。 [公開ガイドライン](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines)のアイテム メタデータに関するセクションを確認して、アイテムを使ってユーザーに対して最適な情報を提供する方法を理解することを強くお勧めします。 
-
-[New-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/ModuleManifest-Reference) および [New-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo) コマンドレットは、すべてのマニフェスト要素のプレースホルダーが用意されたマニフェスト テンプレートを作成します。 
-
-どちらのマニフェストにも、公開に重要な 2 つのセクションがあります。主キー データ、および PrivateData の PSData エリアです。PowerShell モジュール マニフェストにおける主キー データとは、PrivateData セクション外のすべてです。 主キーのセットは、使用している PowerShell のバージョンに関連付けられており、未定義はサポートされません。 PrivateData は新しいキーの追加をサポートしているので、PowerShell ギャラリーに固有の要素は PSData にあります。
+<span data-ttu-id="906d7-128">どちらのマニフェストにも、公開に重要な 2 つのセクションがあります。主キー データ、および PrivateData の PSData エリアです。PowerShell モジュール マニフェストにおける主キー データとは、PrivateData セクション外のすべてです。</span><span class="sxs-lookup"><span data-stu-id="906d7-128">Both manifests have two sections that are important for publishing, the Primary Key Data and PSData area of PrivateData The primary key data in a PowerShell module manifest is everything outside of the PrivateData section.</span></span> <span data-ttu-id="906d7-129">主キーのセットは、使用している PowerShell のバージョンに関連付けられており、未定義はサポートされません。</span><span class="sxs-lookup"><span data-stu-id="906d7-129">The set of primary keys is tied to the version of PowerShell in use, and undefined are not supported.</span></span> <span data-ttu-id="906d7-130">PrivateData は新しいキーの追加をサポートしているので、PowerShell ギャラリーに固有の要素は PSData にあります。</span><span class="sxs-lookup"><span data-stu-id="906d7-130">PrivateData supports adding new keys, so the elements specific to the PowerShell Gallery are in PSData.</span></span>
 
 
-PowerShell ギャラリーに公開するアイテムについて提供する最も重要なマニフェスト要素は次のとおりです。  
+<span data-ttu-id="906d7-131">PowerShell ギャラリーに公開するアイテムについて提供する最も重要なマニフェスト要素は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="906d7-131">Manifest elements that are most important to fill in for item you publish to the PowerShell Gallery are:</span></span>  
 
-* スクリプト名またはモジュール名 - これらは、スクリプトの .PS1 の名前、またはモジュールの .PSD1 の名前から取得されます。
-* バージョン - これは必須の主キーで、形式は SemVer ガイドラインに従う必要があります (詳細についてはベスト プラクティスをご覧ください)。
-* 作成者 - これは必須の主キーで、アイテムに関連付けられる名前を含みます (下記の作成者と所有者をご覧ください)。
-* 説明 - これは必須の主キーで、このアイテムの実行内容と使用にあたっての要件を簡単に説明するのに使用します。
-* ProjectURI - これは強くお勧めする PSData 内の URI フィールドで、アイテムの開発を行う Github リポジトリや同様の場所へのリンクを提供します。
+* <span data-ttu-id="906d7-132">スクリプト名またはモジュール名 - これらは、スクリプトの .PS1 の名前、またはモジュールの .PSD1 の名前から取得されます。</span><span class="sxs-lookup"><span data-stu-id="906d7-132">Script or Module Name - Those are drawn from the names of the .PS1 for a script, or the .PSD1 for a module.</span></span>
+* <span data-ttu-id="906d7-133">バージョン - これは必須の主キーで、形式は SemVer ガイドラインに従う必要があります (詳細についてはベスト プラクティスをご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="906d7-133">Version - this is a required primary key, format should follow SemVer guidelines (see Best Practices for details)</span></span>
+* <span data-ttu-id="906d7-134">作成者 - これは必須の主キーで、アイテムに関連付けられる名前を含みます (下記の作成者と所有者をご覧ください)。</span><span class="sxs-lookup"><span data-stu-id="906d7-134">Author - this is a required primary key, and contains the name to be associated with the item (see Authors and Owners, below)</span></span>
+* <span data-ttu-id="906d7-135">説明 - これは必須の主キーで、このアイテムの実行内容と使用にあたっての要件を簡単に説明するのに使用します。</span><span class="sxs-lookup"><span data-stu-id="906d7-135">Description - this is a required primary key, used to briefly explain what this item does and any requirements for using it</span></span>
+* <span data-ttu-id="906d7-136">ProjectURI - これは強くお勧めする PSData 内の URI フィールドで、アイテムの開発を行う Github リポジトリや同様の場所へのリンクを提供します。</span><span class="sxs-lookup"><span data-stu-id="906d7-136">ProjectURI - this is a strongly recommended URI field in PSData that provides a link to a Github repo or similar location where you do development on the item</span></span>
 
-PowerShell ギャラリーでは、アイテムの作成者と所有者は関連する概念ですが、常に一致するわけではありません。  
-アイテムの所有者とは、PowerShell ギャラリー アカウントを持ち、アイテムを管理するアクセス許可を有するユーザーです。 アイテムを更新できる所有者が多数いることもあります。 所有者は PowerShell ギャラリーからのみ使用されるもので、アイテムがあるシステムから別のシステムにコピーされると失われます。 作成者は、マニフェスト データに組み込まれている文字列のため、常にアイテムに含まれます。 Microsoft 製品からのアイテムに関する推奨事項は次のとおりです。
+<span data-ttu-id="906d7-137">PowerShell ギャラリーでは、アイテムの作成者と所有者は関連する概念ですが、常に一致するわけではありません。</span><span class="sxs-lookup"><span data-stu-id="906d7-137">Authors and Owners of PowerShell Gallery items are related concepts, but do not always match.</span></span>  
+<span data-ttu-id="906d7-138">アイテムの所有者とは、PowerShell ギャラリー アカウントを持ち、アイテムを管理するアクセス許可を有するユーザーです。</span><span class="sxs-lookup"><span data-stu-id="906d7-138">Item Owners are users with PowerShell Gallery accounts that have permission to maintain the item.</span></span> <span data-ttu-id="906d7-139">アイテムを更新できる所有者が多数いることもあります。</span><span class="sxs-lookup"><span data-stu-id="906d7-139">There may be many Owners who can update any item.</span></span> <span data-ttu-id="906d7-140">所有者は PowerShell ギャラリーからのみ使用されるもので、アイテムがあるシステムから別のシステムにコピーされると失われます。</span><span class="sxs-lookup"><span data-stu-id="906d7-140">The Owner is only available from the PowerShell Gallery, and is lost if the item is copied from one system to another.</span></span> <span data-ttu-id="906d7-141">作成者は、マニフェスト データに組み込まれている文字列のため、常にアイテムに含まれます。</span><span class="sxs-lookup"><span data-stu-id="906d7-141">Author is a string that is built into the manifest data, so it is always part of the item.</span></span> <span data-ttu-id="906d7-142">Microsoft 製品からのアイテムに関する推奨事項は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="906d7-142">The recommendations for items from Microsoft products are:</span></span>
 
-* 複数の所有者を設定し、そのうち少なくとも 1 つは、そのアイテムを作成するチームの名前にする。 
-* 作成者は、よく知られているチーム名 (Azure SDK チームなど) または Microsoft Corporation とする。
-
-
-<a id="pre-validate-your-item" class="xliff"></a>
-
-## アイテムを事前検証する
-
-PowerShell ギャラリーにアイテムを公開する前に、コードに対して実行する必要があるツールがいくつかあります。
-
-* PowerShell ギャラリー内にある [PowerShell Script Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/)
-* モジュールには、PowerShell の一部である Test-ModuleManifest
-* スクリプトには、PowerShell Get に付属している Test-ScriptFileInfo
-
-[PowerShell Script Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/) は静的コード分析ツールで、コードをスキャンして、PowerShell のコーディングの基本的なガイドラインを満たしていることを確認します。 このツールはコードに含まれる一般的で重大な問題を特定するもので、アイテムを公開できるようにするために、開発中に定期的に実行する必要があります。 PowerShell Script Analyzer は、エラー、警告、および情報として特定した問題を一覧で提供します。 エラーはすべて、PowerShell ギャラリーに公開する前に対処する必要があります。 警告は確認する必要があり、大半を処理する必要があります。
-PowerShell Script Analyzer は、PowerShell ギャラリーでアイテムが公開または更新されるたびに実行されます。 ギャラリー運用チームは、エラーが検出されると対処のためにアイテムの所有者に連絡します。 
-
-アイテムに含まれるマニフェスト情報が PowerShell ギャラリー インフラストラクチャで読み取れない場合、公開することはできません。 
-[Test-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) は、インストールするとそのモジュールが使用できなくなるような、一般的な問題を検出します。 これはすべてのモジュールについて、PowerShell ギャラリーに公開する前に実行する必要があります。 
-
-同様に、[Test-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_test-scriptfileinfo) はスクリプトに含まれるメタデータを検証するもので、すべてのスクリプト (モジュールとは別に公開された) で、PowerShell ギャラリーに公開する前に実行する必要があります。 
+* <span data-ttu-id="906d7-143">複数の所有者を設定し、そのうち少なくとも 1 つは、そのアイテムを作成するチームの名前にする。</span><span class="sxs-lookup"><span data-stu-id="906d7-143">Have multiple owners, with at least one being the name of the team that produces the item;</span></span> 
+* <span data-ttu-id="906d7-144">作成者は、よく知られているチーム名 (Azure SDK チームなど) または Microsoft Corporation とする。</span><span class="sxs-lookup"><span data-stu-id="906d7-144">Have the Author be a well-known team name (such as Azure SDK Team), or Microsoft Corporation.</span></span>
 
 
-<a id="publishing-items" class="xliff"></a>
+## <a name="pre-validate-your-item"></a><span data-ttu-id="906d7-145">アイテムを事前検証する</span><span class="sxs-lookup"><span data-stu-id="906d7-145">Pre-Validate Your Item</span></span>
 
-## アイテムを公開する
+<span data-ttu-id="906d7-146">PowerShell ギャラリーにアイテムを公開する前に、コードに対して実行する必要があるツールがいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="906d7-146">There are a few tools you need to run against your code before publishing your item to the PowerShell Gallery:</span></span>
 
-PowerShell ギャラリーにアイテムを公開するには、[Publish-Script](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_publish-script) または [Publish-Module](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) を使用する必要があります。
-これらのコマンドは、どちらも以下が必要です。 
+* <span data-ttu-id="906d7-147">PowerShell ギャラリー内にある [PowerShell Script Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/)</span><span class="sxs-lookup"><span data-stu-id="906d7-147">[PowerShell Script Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/), which is in the PowerShell Gallery</span></span>
+* <span data-ttu-id="906d7-148">モジュールには、PowerShell の一部である Test-ModuleManifest</span><span class="sxs-lookup"><span data-stu-id="906d7-148">For modules, Test-ModuleManifest which is part of PowerShell</span></span>
+* <span data-ttu-id="906d7-149">スクリプトには、PowerShell Get に付属している Test-ScriptFileInfo</span><span class="sxs-lookup"><span data-stu-id="906d7-149">For scripts, Test-ScriptFileInfo which comes with PowerShell Get</span></span>
 
-* 公開するアイテムへのパス。 モジュールの場合、モジュールの名前が付いたフォルダーを使用します。 同じモジュールの複数のバージョンを含むフォルダーを指定する場合は、RequiredVersion を指定する必要があります。
-* Nuget API キー。 これは、PowerShell ギャラリーの [My Account]\(マイ アカウント\)ページにある API キーです。
+<span data-ttu-id="906d7-150">[PowerShell Script Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/) は静的コード分析ツールで、コードをスキャンして、PowerShell のコーディングの基本的なガイドラインを満たしていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="906d7-150">[PowerShell Script Analyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer/) is a static code analysis tool that will scan your code to ensure it meets basic PowerShell coding guidelines.</span></span> <span data-ttu-id="906d7-151">このツールはコードに含まれる一般的で重大な問題を特定するもので、アイテムを公開できるようにするために、開発中に定期的に実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="906d7-151">This tool will identify common and critical issues in your code, and should be run regularly during development to help you get your item ready to publish.</span></span> <span data-ttu-id="906d7-152">PowerShell Script Analyzer は、エラー、警告、および情報として特定した問題を一覧で提供します。</span><span class="sxs-lookup"><span data-stu-id="906d7-152">PowerShell Script Analyzer will provide list of issues identified as Errors, Warning, and Information.</span></span> <span data-ttu-id="906d7-153">エラーはすべて、PowerShell ギャラリーに公開する前に対処する必要があります。</span><span class="sxs-lookup"><span data-stu-id="906d7-153">All errors must be addressed before you publish to the PowerShell Gallery.</span></span> <span data-ttu-id="906d7-154">警告は確認する必要があり、大半を処理する必要があります。</span><span class="sxs-lookup"><span data-stu-id="906d7-154">Warnings need to be reviewed, and most should be addressed.</span></span>
+<span data-ttu-id="906d7-155">PowerShell Script Analyzer は、PowerShell ギャラリーでアイテムが公開または更新されるたびに実行されます。</span><span class="sxs-lookup"><span data-stu-id="906d7-155">PowerShell Script Analyzer is run every time an item is published or updated in the PowerShell Gallery.</span></span> <span data-ttu-id="906d7-156">ギャラリー運用チームは、エラーが検出されると対処のためにアイテムの所有者に連絡します。</span><span class="sxs-lookup"><span data-stu-id="906d7-156">The Gallery Operations team will contact item owners to address errors that are found.</span></span> 
 
-コマンド ラインのその他のオプションは、そのほとんどが公開するアイテムのマニフェスト データに含まれるので、コマンドで指定する必要はありません。 
+<span data-ttu-id="906d7-157">アイテムに含まれるマニフェスト情報が PowerShell ギャラリー インフラストラクチャで読み取れない場合、公開することはできません。</span><span class="sxs-lookup"><span data-stu-id="906d7-157">If the manifest information in your item cannot be read by the PowerShell Gallery infrastructure, you will not be able to publish.</span></span> 
+<span data-ttu-id="906d7-158">[Test-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) は、インストールするとそのモジュールが使用できなくなるような、一般的な問題を検出します。</span><span class="sxs-lookup"><span data-stu-id="906d7-158">[Test-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) will catch common problems that would cause the module to not be usable when it is installed.</span></span> <span data-ttu-id="906d7-159">これはすべてのモジュールについて、PowerShell ギャラリーに公開する前に実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="906d7-159">It must be run for every module prior to publishing it to the PowerShell Gallery.</span></span> 
 
-エラーを回避するには、公開の前に、-Whatif -Verbose を使用してコマンドを実行することを強くお勧めします。 これによって、かなりの時間を節約することができます。PowerShell ギャラリーに公開するたびに、アイテムのマニフェスト セクションでバージョン番号を更新する必要があるからです。 
+<span data-ttu-id="906d7-160">同様に、[Test-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_test-scriptfileinfo) はスクリプトに含まれるメタデータを検証するもので、すべてのスクリプト (モジュールとは別に公開された) で、PowerShell ギャラリーに公開する前に実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="906d7-160">Likewise, [Test-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_test-scriptfileinfo) validates the metadata in a script, and must be run on every script (published separate from a module) prior to publishing it to the Powershell Gallery.</span></span> 
 
-たとえば、'Publish-Module -Path ".\MyModule" -RequiredVersion "0.0.1" -NugetAPIKey "GUID" -Whatif -Verbose' 'Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose' のようにします。
 
-出力を注意深く確認し、エラーや警告がない場合は、-Whatif を付けずにコマンドを再実行します。
+## <a name="publishing-items"></a><span data-ttu-id="906d7-161">アイテムを公開する</span><span class="sxs-lookup"><span data-stu-id="906d7-161">Publishing Items</span></span>
 
-PowerShell ギャラリーに公開されるすべてのアイテムは、ウイルスのスキャンが行われ、PowerShell Script Analyzer を使用して分析されます。 その時点で発生した問題は、解決するよう公開者に送り返されます。  
+<span data-ttu-id="906d7-162">PowerShell ギャラリーにアイテムを公開するには、[Publish-Script](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_publish-script) または [Publish-Module](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) を使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="906d7-162">You must use the [Publish-Script](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_publish-script) or [Publish-Module](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) to publish items to the PowerShell Gallery.</span></span>
+<span data-ttu-id="906d7-163">これらのコマンドは、どちらも以下が必要です。</span><span class="sxs-lookup"><span data-stu-id="906d7-163">These commands both require</span></span> 
 
-PowerShell ギャラリーにアイテムを公開したら、アイテムに関するフィードバックがないか注視する必要があります。
+* <span data-ttu-id="906d7-164">公開するアイテムへのパス。</span><span class="sxs-lookup"><span data-stu-id="906d7-164">The path to the item you will publish.</span></span> <span data-ttu-id="906d7-165">モジュールの場合、モジュールの名前が付いたフォルダーを使用します。</span><span class="sxs-lookup"><span data-stu-id="906d7-165">For a module, use the folder named for your module.</span></span> <span data-ttu-id="906d7-166">同じモジュールの複数のバージョンを含むフォルダーを指定する場合は、RequiredVersion を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="906d7-166">If you specify a folder that contains multiple versions of the same module, you must specify RequiredVersion.</span></span>
+* <span data-ttu-id="906d7-167">Nuget API キー。</span><span class="sxs-lookup"><span data-stu-id="906d7-167">A Nuget API key.</span></span> <span data-ttu-id="906d7-168">これは、PowerShell ギャラリーの [My Account]\(マイ アカウント\)ページにある API キーです。</span><span class="sxs-lookup"><span data-stu-id="906d7-168">This is the API key found in the My Account page on the PowerShell Gallery.</span></span>
 
-* 公開に使用したアカウントに関連付けられている電子メール アドレスをチェックするようにします。
-ユーザーおよび PowerShell ギャラリー オペレーション チームは、そのアカウントを使用して、フィードバックや、PowerShell Script Analyzer またはウイルス対策スキャンからの問題を提供します。
-[使用条件](https://www.powershellgallery.com/policies/Terms)に記載されているように、電子メール アカウントが無効である、または、アカウントに深刻な問題が報告されたのに長期間にわたり未解決のままである場合は、アイテムは放棄されたとみなされ、PowerShell ギャラリーから削除されます。  
-* 公開した PowerShell ギャラリー アイテムの各々について、コメントをサブスクライブすることをお勧めします。 こうすると、PowerShell ギャラリーのアイテムに誰かがコメントしたときに通知されます。 LiveFyre でアカウントを作成する必要があるため、この設定はオプションです。     
+<span data-ttu-id="906d7-169">コマンド ラインのその他のオプションは、そのほとんどが公開するアイテムのマニフェスト データに含まれるので、コマンドで指定する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="906d7-169">Most of the other options in the command line should be in the manifest data for the item you are publishing, so you should not need to specify them in the command.</span></span> 
+
+<span data-ttu-id="906d7-170">エラーを回避するには、公開の前に、-Whatif -Verbose を使用してコマンドを実行することを強くお勧めします。</span><span class="sxs-lookup"><span data-stu-id="906d7-170">To avoid errors, it is strongly recommended that you try the commands using -Whatif -Verbose, before publishing.</span></span> <span data-ttu-id="906d7-171">これによって、かなりの時間を節約することができます。PowerShell ギャラリーに公開するたびに、アイテムのマニフェスト セクションでバージョン番号を更新する必要があるからです。</span><span class="sxs-lookup"><span data-stu-id="906d7-171">This will seave considerable time, since every time you publish to the PowerShell Gallery, you must update the version number in the manifest section of the item.</span></span> 
+
+<span data-ttu-id="906d7-172">たとえば、'Publish-Module -Path ".\MyModule" -RequiredVersion "0.0.1" -NugetAPIKey "GUID" -Whatif -Verbose' 'Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose' のようにします。</span><span class="sxs-lookup"><span data-stu-id="906d7-172">Examples would be: 'Publish-Module -Path ".\MyModule" -RequiredVersion "0.0.1" -NugetAPIKey "GUID" -Whatif -Verbose' 'Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose'</span></span>
+
+<span data-ttu-id="906d7-173">出力を注意深く確認し、エラーや警告がない場合は、-Whatif を付けずにコマンドを再実行します。</span><span class="sxs-lookup"><span data-stu-id="906d7-173">Review the output carefully, and if you see no errors or warnings, repeat the command without -Whatif.</span></span>
+
+<span data-ttu-id="906d7-174">PowerShell ギャラリーに公開されるすべてのアイテムは、ウイルスのスキャンが行われ、PowerShell Script Analyzer を使用して分析されます。</span><span class="sxs-lookup"><span data-stu-id="906d7-174">All items that are published to the PowerShell Gallery will be scanned for viruses, and will be analyzed using the PowerShell Script Analyzer.</span></span> <span data-ttu-id="906d7-175">その時点で発生した問題は、解決するよう公開者に送り返されます。</span><span class="sxs-lookup"><span data-stu-id="906d7-175">Any issues that arise at that time will be sent back to the publisher for resolution.</span></span>  
+
+<span data-ttu-id="906d7-176">PowerShell ギャラリーにアイテムを公開したら、アイテムに関するフィードバックがないか注視する必要があります。</span><span class="sxs-lookup"><span data-stu-id="906d7-176">Once you have published an item to the PowerShell Gallery, you will need to watch for feedback on your item.</span></span>
+
+* <span data-ttu-id="906d7-177">公開に使用したアカウントに関連付けられている電子メール アドレスをチェックするようにします。</span><span class="sxs-lookup"><span data-stu-id="906d7-177">Ensure you monitor the email address associated with the account used to publish.</span></span>
+<span data-ttu-id="906d7-178">ユーザーおよび PowerShell ギャラリー オペレーション チームは、そのアカウントを使用して、フィードバックや、PowerShell Script Analyzer またはウイルス対策スキャンからの問題を提供します。</span><span class="sxs-lookup"><span data-stu-id="906d7-178">Users, and the PowerShell Gallery Operations team will provide feedback via that account, including issues from the PSSA or antivirus scans.</span></span>
+<span data-ttu-id="906d7-179">[使用条件](https://www.powershellgallery.com/policies/Terms)に記載されているように、電子メール アカウントが無効である、または、アカウントに深刻な問題が報告されたのに長期間にわたり未解決のままである場合は、アイテムは放棄されたとみなされ、PowerShell ギャラリーから削除されます。</span><span class="sxs-lookup"><span data-stu-id="906d7-179">If the email account is invalid, or if serious issues are reported to the account and left unresolved for a long time, items can be considered abandoned and will be removed from the PowerShell Gallery as described in our [Terms of Use](https://www.powershellgallery.com/policies/Terms).</span></span>  
+* <span data-ttu-id="906d7-180">公開した PowerShell ギャラリー アイテムの各々について、コメントをサブスクライブすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="906d7-180">We recommend you subscribe to Comments for each PowerShell Gallery item you publish.</span></span> <span data-ttu-id="906d7-181">こうすると、PowerShell ギャラリーのアイテムに誰かがコメントしたときに通知されます。</span><span class="sxs-lookup"><span data-stu-id="906d7-181">This allows you to be notified if anyone comments on your items in the PowerShell Gallery.</span></span> <span data-ttu-id="906d7-182">LiveFyre でアカウントを作成する必要があるため、この設定はオプションです。</span><span class="sxs-lookup"><span data-stu-id="906d7-182">This is optional, as it requires creating an account with LiveFyre.</span></span>     
 

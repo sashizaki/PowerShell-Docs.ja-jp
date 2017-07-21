@@ -10,13 +10,9 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershellget-overview" class="xliff"></a>
+# <a name="powershellget-overview"></a><span data-ttu-id="01d6a-103">PowerShellGet 概要</span><span class="sxs-lookup"><span data-stu-id="01d6a-103">PowerShellGet Overview</span></span>
 
-# PowerShellGet 概要
+<span data-ttu-id="01d6a-104">PowerShellGet モジュールには、https://www.PowerShellGallery.com でモジュール、DSC リソース、ロール機能、スクリプトなどの PowerShell アーティファクトを検索、インストール、更新、公開するためのコマンドレットとその他のプライベート リポジトリが含まれます。</span><span class="sxs-lookup"><span data-stu-id="01d6a-104">PowerShellGet module contains cmdlets for discovering, installing, updating and publishing the PowerShell artifacts like Modules, DSC Resources, Role Capabilities and Scripts from the https://www.PowerShellGallery.com and other private repositories.</span></span>
 
-PowerShellGet モジュールには、https://www.PowerShellGallery.com でモジュール、DSC リソース、ロール機能、スクリプトなどの PowerShell アーティファクトを検索、インストール、更新、公開するためのコマンドレットとその他のプライベート リポジトリが含まれます。
-
-<a id="powershellget-cmdlet-referencepsgetcmdletsreferencemd" class="xliff"></a>
-
-## [PowerShellGet コマンドレット リファレンス](./psget_cmdlets_reference.md)
+## <a name="powershellget-cmdlet-referencepsgetcmdletsreferencemd"></a>[<span data-ttu-id="01d6a-105">PowerShellGet コマンドレット リファレンス</span><span class="sxs-lookup"><span data-stu-id="01d6a-105">PowerShellGet cmdlet reference</span></span>](./psget_cmdlets_reference.md)
 

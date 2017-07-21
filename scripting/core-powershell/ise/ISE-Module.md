@@ -9,17 +9,17 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/08/2017
 ---
-# <a name="ise-module"></a>ISE モジュール
-このセクションには、**ISE** モジュールのヘルプ トピックが含まれています。これには、Windows PowerShell Integrated Scripting Environment (ISE) で使用するコマンドなどがあります。 **ISE** モジュールは、Windows PowerShell と共にインストールされます。
+# <a name="ise-module"></a><span data-ttu-id="ddefe-103">ISE モジュール</span><span class="sxs-lookup"><span data-stu-id="ddefe-103">ISE Module</span></span>
+<span data-ttu-id="ddefe-104">このセクションには、**ISE** モジュールのヘルプ トピックが含まれています。これには、Windows PowerShell Integrated Scripting Environment (ISE) で使用するコマンドなどがあります。</span><span class="sxs-lookup"><span data-stu-id="ddefe-104">This section contains the help topics for the **ISE** module, which includes commands that you can use in Windows PowerShell Integrated Scripting Environment (ISE).</span></span> <span data-ttu-id="ddefe-105">**ISE** モジュールは、Windows PowerShell と共にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="ddefe-105">The **ISE** module is installed with Windows PowerShell.</span></span>
 
-## <a name="help-topics"></a>ヘルプ トピック
-[ISE コマンドレット](http://go.microsoft.com/fwlink/?LinkID=254686)
+## <a name="help-topics"></a><span data-ttu-id="ddefe-106">ヘルプ トピック</span><span class="sxs-lookup"><span data-stu-id="ddefe-106">Help Topics</span></span>
+[<span data-ttu-id="ddefe-107">ISE コマンドレット</span><span class="sxs-lookup"><span data-stu-id="ddefe-107">ISE Cmdlets</span></span>](http://go.microsoft.com/fwlink/?LinkID=254686)
 
-## <a name="see-also"></a>参照
-- [about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)
-- [Windows PowerShell 3.0 Integrated Scripting Environment](http://go.microsoft.com/fwlink/?LinkId=254681)
-- [Windows PowerShell 2.0 Integrated Scripting Environment](http://go.microsoft.com/fwlink/?LinkID=238569)
-- [Windows PowerShell 5.0](../core-modules/Windows-PowerShell-5.0.md)
-- [Windows PowerShell コア](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
-- [Windows PowerShell を使用したスクリプト](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
+## <a name="see-also"></a><span data-ttu-id="ddefe-108">参照</span><span class="sxs-lookup"><span data-stu-id="ddefe-108">See Also</span></span>
+- [<span data-ttu-id="ddefe-109">about_Windows_PowerShell_ISE [v3]</span><span class="sxs-lookup"><span data-stu-id="ddefe-109">about_Windows_PowerShell_ISE [v3]</span></span>](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)
+- [<span data-ttu-id="ddefe-110">Windows PowerShell 3.0 Integrated Scripting Environment</span><span class="sxs-lookup"><span data-stu-id="ddefe-110">Windows PowerShell 3.0 Integrated Scripting Environment</span></span>](http://go.microsoft.com/fwlink/?LinkId=254681)
+- [<span data-ttu-id="ddefe-111">Windows PowerShell 2.0 Integrated Scripting Environment</span><span class="sxs-lookup"><span data-stu-id="ddefe-111">Windows PowerShell 2.0 Integrated Scripting Environment</span></span>](http://go.microsoft.com/fwlink/?LinkID=238569)
+- [<span data-ttu-id="ddefe-112">Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="ddefe-112">Windows PowerShell 5.0</span></span>](../core-modules/Windows-PowerShell-5.0.md)
+- [<span data-ttu-id="ddefe-113">Windows PowerShell コア</span><span class="sxs-lookup"><span data-stu-id="ddefe-113">Windows PowerShell Core</span></span>](https://technet.microsoft.com/en-us/library/4b75f1e4-f327-48f3-92ab-bf5435094d41)
+- [<span data-ttu-id="ddefe-114">Windows PowerShell を使用したスクリプト</span><span class="sxs-lookup"><span data-stu-id="ddefe-114">Scripting with Windows PowerShell</span></span>](../../getting-started/fundamental/Scripting-with-Windows-PowerShell.md)
 

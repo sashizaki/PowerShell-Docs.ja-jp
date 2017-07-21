@@ -10,34 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-script" class="xliff"></a>
+# <a name="update-script"></a><span data-ttu-id="14bb8-103">Update-Script</span><span class="sxs-lookup"><span data-stu-id="14bb8-103">Update-Script</span></span>
 
-# Update-Script
+<span data-ttu-id="14bb8-104">Update-Script コマンドレットでは、Install-Script コマンドレットを使用してインストールされたスクリプト ファイルのインプレース更新ができます。</span><span class="sxs-lookup"><span data-stu-id="14bb8-104">Update-Script cmdlet lets you to do in-place update of the script files which were installed using Install-Script cmdlet.</span></span>
 
-Update-Script コマンドレットでは、Install-Script コマンドレットを使用してインストールされたスクリプト ファイルのインプレース更新ができます。
+## <a name="description"></a><span data-ttu-id="14bb8-105">説明</span><span class="sxs-lookup"><span data-stu-id="14bb8-105">Description</span></span>
 
-<a id="description" class="xliff"></a>
+<span data-ttu-id="14bb8-106">Update-Script コマンドレットは、スクリプトの以前のインストール元であるリポジトリから、指定したスクリプトを更新します。</span><span class="sxs-lookup"><span data-stu-id="14bb8-106">The Update-Script cmdlet updates the specified script from the repository from which it was previously installed.</span></span>
 
-## 説明
-
-Update-Script コマンドレットは、スクリプトの以前のインストール元であるリポジトリから、指定したスクリプトを更新します。
-
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a><span data-ttu-id="14bb8-107">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="14bb8-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Update-Script -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="14bb8-108">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="14bb8-108">Cmdlet online help reference</span></span>
 
-## コマンドレット オンライン ヘルプ リファレンス
+[<span data-ttu-id="14bb8-109">Update-Script</span><span class="sxs-lookup"><span data-stu-id="14bb8-109">Update-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619787)
 
-[Update-Script](http://go.microsoft.com/fwlink/?LinkId=619787)
-
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a><span data-ttu-id="14bb8-110">コマンド例</span><span class="sxs-lookup"><span data-stu-id="14bb8-110">Example commands</span></span>
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script

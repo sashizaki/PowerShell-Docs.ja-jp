@@ -10,49 +10,37 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-module" class="xliff"></a>
+# <a name="update-module"></a><span data-ttu-id="3b365-103">Update-Module</span><span class="sxs-lookup"><span data-stu-id="3b365-103">Update-Module</span></span>
 
-# Update-Module
+<span data-ttu-id="3b365-104">指定したモジュールの最新バージョンをオンライン ギャラリーからダウンロードし、ローカル コンピューターにインストールします。</span><span class="sxs-lookup"><span data-stu-id="3b365-104">Downloads and installs the newest version of specified modules from an online gallery to the local computer.</span></span>
 
-指定したモジュールの最新バージョンをオンライン ギャラリーからダウンロードし、ローカル コンピューターにインストールします。
+## <a name="description"></a><span data-ttu-id="3b365-105">説明</span><span class="sxs-lookup"><span data-stu-id="3b365-105">Description</span></span>
 
-<a id="description" class="xliff"></a>
+<span data-ttu-id="3b365-106">Update-Module コマンドレットは、Install-Module を実行してオンライン ギャラリーからインストールした Windows PowerShell モジュールの最新バージョンをローカル コンピューターにインストールします。</span><span class="sxs-lookup"><span data-stu-id="3b365-106">The Update-Module cmdlet installs a newer version of a Windows PowerShell module that was installed from the online gallery by running Install-Module on the local computer.</span></span>
 
-## 説明
+<span data-ttu-id="3b365-107">既定では、必要なバージョンを指定しない限り、オンライン ギャラリーで入手可能な指定のモジュールの最新バージョンがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="3b365-107">By default, the newest version of the specified module available in online gallery is installed, unless you specify a required version.</span></span> <span data-ttu-id="3b365-108">モジュール名を指定して、既存のインストール済みのモジュールを更新できます。更新が必要なモジュールについては、Update-Module が $env:PSModulePath を検索します。</span><span class="sxs-lookup"><span data-stu-id="3b365-108">You can update an existing, installed module by specifying the name of the module; Update-Module searches $env:PSModulePath for the module that you want to update.</span></span>
 
-Update-Module コマンドレットは、Install-Module を実行してオンライン ギャラリーからインストールした Windows PowerShell モジュールの最新バージョンをローカル コンピューターにインストールします。
+<span data-ttu-id="3b365-109">Name パラメーターを指定せずに Update-Module を実行すると、ローカル コンピューターで更新が可能なすべてのモジュールが更新されます。</span><span class="sxs-lookup"><span data-stu-id="3b365-109">Running Update-Module without the Name parameter updates all modules that can be updated on the local computer.</span></span>
 
-既定では、必要なバージョンを指定しない限り、オンライン ギャラリーで入手可能な指定のモジュールの最新バージョンがインストールされます。 モジュール名を指定して、既存のインストール済みのモジュールを更新できます。更新が必要なモジュールについては、Update-Module が $env:PSModulePath を検索します。
+### <a name="notes"></a><span data-ttu-id="3b365-110">メモ</span><span class="sxs-lookup"><span data-stu-id="3b365-110">Notes</span></span>
 
-Name パラメーターを指定せずに Update-Module を実行すると、ローカル コンピューターで更新が可能なすべてのモジュールが更新されます。
-
-<a id="notes" class="xliff"></a>
-
-### メモ
-
-- このコマンドレットは、Windows 7 または Windows 2008 R2 および今後のリリースの Windows での、Windows PowerShell 3.0 または今後のリリースの Windows PowerShell で機能します。
-- Name パラメーターで指定したモジュールが、Install-Module によってインストールされていない場合はエラーが発生します。 Update-Module は、Install-Module を使用してオンライン ギャラリーからインストールしたモジュールについてのみ実行できます。
-- Update-Module が使用中のバイナリを更新しようとすると、問題が発生したプロセスを特定し、プロセスを停止してから Update-Module を再試行するように求めるエラーが返されます。
-- PowerShell 5.0 以降のバージョンでは、Update-Module がモジュールを更新するときに、モジュールの最新 (または指定した) バージョンが追加されるため、古いバージョンと新しいバージョンが同じディレクトリに並んで存在することになります。 これについては、理解しやすいようコマンドの出力例を示します。
+- <span data-ttu-id="3b365-111">このコマンドレットは、Windows 7 または Windows 2008 R2 および今後のリリースの Windows での、Windows PowerShell 3.0 または今後のリリースの Windows PowerShell で機能します。</span><span class="sxs-lookup"><span data-stu-id="3b365-111">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
+- <span data-ttu-id="3b365-112">Name パラメーターで指定したモジュールが、Install-Module によってインストールされていない場合はエラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="3b365-112">If the module that you specify with the Name parameter was not installed by using Install-Module, an error occurs.</span></span> <span data-ttu-id="3b365-113">Update-Module は、Install-Module を使用してオンライン ギャラリーからインストールしたモジュールについてのみ実行できます。</span><span class="sxs-lookup"><span data-stu-id="3b365-113">You can only run Update-Module on modules that you installed from the online gallery by running Install-Module.</span></span>
+- <span data-ttu-id="3b365-114">Update-Module が使用中のバイナリを更新しようとすると、問題が発生したプロセスを特定し、プロセスを停止してから Update-Module を再試行するように求めるエラーが返されます。</span><span class="sxs-lookup"><span data-stu-id="3b365-114">If Update-Module attempts to update binaries that are in use, Update-Module returns an error that identifies the problem processes, and informs the user to retry Update-Module after stopping the processes.</span></span>
+- <span data-ttu-id="3b365-115">PowerShell 5.0 以降のバージョンでは、Update-Module がモジュールを更新するときに、モジュールの最新 (または指定した) バージョンが追加されるため、古いバージョンと新しいバージョンが同じディレクトリに並んで存在することになります。</span><span class="sxs-lookup"><span data-stu-id="3b365-115">On PowerShell 5.0 or newer versions, when Update-Module updates a module, it adds the latest (or specified) version of the module, so the older and newer versions are now side-by-side in the same directory.</span></span> <span data-ttu-id="3b365-116">これについては、理解しやすいようコマンドの出力例を示します。</span><span class="sxs-lookup"><span data-stu-id="3b365-116">It would be useful to say so and to show an example of the output from these commands.</span></span>
 
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a><span data-ttu-id="3b365-117">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="3b365-117">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Update-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="3b365-118">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="3b365-118">Cmdlet online help reference</span></span>
 
-## コマンドレット オンライン ヘルプ リファレンス
-
-[Update-Module](http://go.microsoft.com/fwlink/?LinkID=398576)
+[<span data-ttu-id="3b365-119">Update-Module</span><span class="sxs-lookup"><span data-stu-id="3b365-119">Update-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398576)
 
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a><span data-ttu-id="3b365-120">コマンド例</span><span class="sxs-lookup"><span data-stu-id="3b365-120">Example commands</span></span>
 
 ```powershell
 PS C:\\windows\\system32> Update-Module -Name ContosoServer -RequiredVersion 1.5
@@ -96,9 +84,7 @@ Version Name Repository Description
 ```
 
 
-<a id="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies" class="xliff"></a>
-
-###  依存関係を持つ TestDepWithNestedRequiredModules1 モジュールを更新します。
+###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a><span data-ttu-id="3b365-121">依存関係を持つ TestDepWithNestedRequiredModules1 モジュールを更新します。</span><span class="sxs-lookup"><span data-stu-id="3b365-121">Update the TestDepWithNestedRequiredModules1 module with dependencies.</span></span>
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 

@@ -10,42 +10,30 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="register-psrepository" class="xliff"></a>
+# <a name="register-psrepository"></a><span data-ttu-id="16857-103">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="16857-103">Register-PSRepository</span></span>
 
-# Register-PSRepository
+<span data-ttu-id="16857-104">コンピューター上の登録されているリポジトリを取得します。</span><span class="sxs-lookup"><span data-stu-id="16857-104">Gets the registered repositories on a computer.</span></span>
 
-コンピューター上の登録されているリポジトリを取得します。
+## <a name="description"></a><span data-ttu-id="16857-105">説明</span><span class="sxs-lookup"><span data-stu-id="16857-105">Description</span></span>
 
-<a id="description" class="xliff"></a>
+<span data-ttu-id="16857-106">Register-PSRepository コマンドレットは、PowerShell モジュールのオンライン リポジトリを登録します。</span><span class="sxs-lookup"><span data-stu-id="16857-106">The Register-PSRepository cmdlet registers the online repository for PowerShell modules.</span></span> <span data-ttu-id="16857-107">リポジトリを登録すると、Find-Module、Install-Module および Publish-Module の各コマンドレットから参照できます。</span><span class="sxs-lookup"><span data-stu-id="16857-107">After a repository is registered, you can reference it from the Find-Module, Install-Module, and Publish-Module cmdlets.</span></span> <span data-ttu-id="16857-108">登録されているリポジトリは、Find-Module と Install-Module での既定のリポジトリになります。</span><span class="sxs-lookup"><span data-stu-id="16857-108">The registered repository becomes the default repository in Find-Module and Install-Module.</span></span> 
 
-## 説明
-
-Register-PSRepository コマンドレットは、PowerShell モジュールのオンライン リポジトリを登録します。 リポジトリを登録すると、Find-Module、Install-Module および Publish-Module の各コマンドレットから参照できます。 登録されているリポジトリは、Find-Module と Install-Module での既定のリポジトリになります。 
-
-登録されているリポジトリはユーザー固有です。 システム全体のコンテキストには登録されません。
+<span data-ttu-id="16857-109">登録されているリポジトリはユーザー固有です。</span><span class="sxs-lookup"><span data-stu-id="16857-109">Registered repositories are user-specific.</span></span> <span data-ttu-id="16857-110">システム全体のコンテキストには登録されません。</span><span class="sxs-lookup"><span data-stu-id="16857-110">They are not registered in a system-wide context.</span></span>
 
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a><span data-ttu-id="16857-111">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="16857-111">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="16857-112">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="16857-112">Cmdlet online help reference</span></span>
 
-## コマンドレット オンライン ヘルプ リファレンス
+[<span data-ttu-id="16857-113">Register-PSRepository</span><span class="sxs-lookup"><span data-stu-id="16857-113">Register-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517129)
 
-[Register-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517129)
+## <a name="example-commands"></a><span data-ttu-id="16857-114">コマンド例</span><span class="sxs-lookup"><span data-stu-id="16857-114">Example commands</span></span>
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
-
-<a id="register-a-powershell-repository" class="xliff"></a>
-
-### PowerShell リポジトリの登録
-内部リポジトリに対して動作するように PowerShellGet を構成できます。 リポジトリを登録した後、Find-Module および Install-Module を使用して操作できます。
+### <a name="register-a-powershell-repository"></a><span data-ttu-id="16857-115">PowerShell リポジトリの登録</span><span class="sxs-lookup"><span data-stu-id="16857-115">Register a PowerShell Repository</span></span>
+<span data-ttu-id="16857-116">内部リポジトリに対して動作するように PowerShellGet を構成できます。</span><span class="sxs-lookup"><span data-stu-id="16857-116">You can configure PowerShellGet to work against internal repositories.</span></span> <span data-ttu-id="16857-117">リポジトリを登録した後、Find-Module および Install-Module を使用して操作できます。</span><span class="sxs-lookup"><span data-stu-id="16857-117">After a repository is registered, you can use Find-Module and Install-Module to work with it.</span></span>
 
 ```powershell
 # Register a default repository
@@ -74,11 +62,9 @@ Unregister-PSRepository DemoRepo
 ```
 
 
-<a id="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support" class="xliff"></a>
+### <a name="register-psrepository-and-set-psrepository-cmdlets-with-script-sharing-support"></a><span data-ttu-id="16857-118">スクリプト共有サポートがある Register-PSRepository および Set-PSRepository コマンドレット</span><span class="sxs-lookup"><span data-stu-id="16857-118">Register-PSRepository and Set-PSRepository cmdlets with script sharing support</span></span>
 
-### スクリプト共有サポートがある Register-PSRepository および Set-PSRepository コマンドレット
-
-**ScriptSourceLocation** および **ScriptPublishLocation** を PSRepository に追加するには、Register-PSRepository コマンドレットを使用します。
+<span data-ttu-id="16857-119">**ScriptSourceLocation** および **ScriptPublishLocation** を PSRepository に追加するには、Register-PSRepository コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="16857-119">Use Register-PSRepository cmdlet to add the **ScriptSourceLocation** and **ScriptPublishLocation** to the PSRepository.</span></span>
 
 ```powershell
 

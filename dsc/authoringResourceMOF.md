@@ -10,25 +10,19 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="writing-a-custom-dsc-resource-with-mof" class="xliff"></a>
+# <a name="writing-a-custom-dsc-resource-with-mof"></a><span data-ttu-id="c2c57-103">MOF を使用したカスタム DSC リソースの記述</span><span class="sxs-lookup"><span data-stu-id="c2c57-103">Writing a custom DSC resource with MOF</span></span>
 
-# MOF を使用したカスタム DSC リソースの記述
+> <span data-ttu-id="c2c57-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="c2c57-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
+<span data-ttu-id="c2c57-105">このトピックでは、MOF ファイルで Windows PowerShell Desired State Configuration (DSC) カスタム リソースのスキーマを定義し、Windows PowerShell スクリプト ファイルでリソースを実装します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-105">In this topic, we will define the schema for a Windows PowerShell Desired State Configuration (DSC) custom resource in a MOF file, and implement the resource in a Windows PowerShell script file.</span></span> <span data-ttu-id="c2c57-106">このカスタム リソースは、Web サイトを作成および保守するためのものです。</span><span class="sxs-lookup"><span data-stu-id="c2c57-106">This custom resource is for creating and maintaining a web site.</span></span>
 
-このトピックでは、MOF ファイルで Windows PowerShell Desired State Configuration (DSC) カスタム リソースのスキーマを定義し、Windows PowerShell スクリプト ファイルでリソースを実装します。 このカスタム リソースは、Web サイトを作成および保守するためのものです。
+## <a name="creating-the-mof-schema"></a><span data-ttu-id="c2c57-107">MOF スキーマの作成</span><span class="sxs-lookup"><span data-stu-id="c2c57-107">Creating the MOF schema</span></span>
 
-<a id="creating-the-mof-schema" class="xliff"></a>
+<span data-ttu-id="c2c57-108">スキーマでは、DSC 構成スクリプトによって構成できるリソースのプロパティを定義します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-108">The schema defines the properties of your resource that can be configured by a DSC configuration script.</span></span>
 
-## MOF スキーマの作成
+### <a name="folder-structure-for-a-mof-resource"></a><span data-ttu-id="c2c57-109">MOF リソースのフォルダー構造</span><span class="sxs-lookup"><span data-stu-id="c2c57-109">Folder structure for a MOF resource</span></span>
 
-スキーマでは、DSC 構成スクリプトによって構成できるリソースのプロパティを定義します。
-
-<a id="folder-structure-for-a-mof-resource" class="xliff"></a>
-
-### MOF リソースのフォルダー構造
-
-MOF スキーマを使用して DSC カスタム リソースを実装するには、次のフォルダー構造を作成します。 MOF スキーマは Demo_IISWebsite.schema.mof ファイルで定義し、リソース スクリプトは Demo_IISWebsite.psm1 で定義します。 必要に応じて、モジュール マニフェスト (psd1) ファイルを作成できます。
+<span data-ttu-id="c2c57-110">MOF スキーマを使用して DSC カスタム リソースを実装するには、次のフォルダー構造を作成します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-110">To implement a DSC custom resource with a MOF schema, create the following folder structure.</span></span> <span data-ttu-id="c2c57-111">MOF スキーマは Demo_IISWebsite.schema.mof ファイルで定義し、リソース スクリプトは Demo_IISWebsite.psm1 で定義します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-111">The MOF schema is defined in the file Demo_IISWebsite.schema.mof, and the resource script is defined in Demo_IISWebsite.psm1.</span></span> <span data-ttu-id="c2c57-112">必要に応じて、モジュール マニフェスト (psd1) ファイルを作成できます。</span><span class="sxs-lookup"><span data-stu-id="c2c57-112">Optionally, you can create a module manifest (psd1) file.</span></span>
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -40,13 +34,11 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
                 |- Demo_IISWebsite.schema.mof (file, required)
 ```
 
-最上位のフォルダーの下に DSCResources という名前のフォルダーを作成し、各リソースのフォルダーにリソースと同じ名前を付ける必要があります。
+<span data-ttu-id="c2c57-113">最上位のフォルダーの下に DSCResources という名前のフォルダーを作成し、各リソースのフォルダーにリソースと同じ名前を付ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2c57-113">Note that it is necessary to create a folder named DSCResources under the top-level folder, and that the folder for each resource must have the same name as the resource.</span></span>
 
-<a id="the-contents-of-the-mof-file" class="xliff"></a>
+### <a name="the-contents-of-the-mof-file"></a><span data-ttu-id="c2c57-114">MOF ファイルの内容</span><span class="sxs-lookup"><span data-stu-id="c2c57-114">The contents of the MOF file</span></span>
 
-### MOF ファイルの内容
-
-カスタム Web サイト リソースに使用できる MOF ファイルの例を次に示します。 この例に従うには、このスキーマをファイルに保存し、ファイルの名前は *Demo_IISWebsite.schema.mof* にします。
+<span data-ttu-id="c2c57-115">カスタム Web サイト リソースに使用できる MOF ファイルの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-115">Following is an example MOF file that can be used for a custom website resource.</span></span> <span data-ttu-id="c2c57-116">この例に従うには、このスキーマをファイルに保存し、ファイルの名前は *Demo_IISWebsite.schema.mof* にします。</span><span class="sxs-lookup"><span data-stu-id="c2c57-116">To follow this example, save this schema to a file, and call the file *Demo_IISWebsite.schema.mof*.</span></span>
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("Website")]
@@ -63,26 +55,24 @@ class Demo_IISWebsite : OMI_BaseResource
 };
 ```
 
-前のコードについて、次のことに注意してください。
+<span data-ttu-id="c2c57-117">前のコードについて、次のことに注意してください。</span><span class="sxs-lookup"><span data-stu-id="c2c57-117">Note the following about the previous code:</span></span>
 
-* `FriendlyName` では、DSC 構成スクリプトでこのカスタム リソースを参照するために使用できる名前を定義します。 この例では、`Website` は、組み込みのアーカイブ リソースのフレンドリ名 `Archive` に相当します。
-* カスタム リソース用に定義するクラスは、`OMI_BaseResource` から派生する必要があります。
-* プロパティの型修飾子 `[Key]` は、このプロパティがリソース インスタンスを一意に識別することを示します。 1 つ以上の `[Key]` プロパティが必要です。
-* `[Required]` 修飾子は、プロパティが必須であることを示します (このリソースを使用する構成スクリプトで値を指定する必要があります)。
-* `[write]` 修飾子は、構成スクリプトでカスタム リソースを使用するときにこのプロパティが省略可能であることを示します。 `[read]` 修飾子は、プロパティが構成では設定できず、報告のみを目的とするとを示します。
-* `Values` は、プロパティに割り当てることのできる値を `ValueMap` で定義されている値の一覧に制限します。 詳細については、「[ValueMap and Value Qualifiers (ValueMap 修飾子と Value 修飾子)](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx)」を参照してください。
-* 組み込みの DSC リソースとの一貫したスタイルを維持する方法として、値 `Present` と `Absent` を持つ `Ensure` というプロパティをリソースに含めることをお勧めします。
-* カスタム リソースのスキーマ ファイルには、`classname.schema.mof` のように名前を付けます。ここで、`classname` はスキーマ定義内の `class` キーワードに続く識別子です。
+* <span data-ttu-id="c2c57-118">`FriendlyName` では、DSC 構成スクリプトでこのカスタム リソースを参照するために使用できる名前を定義します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-118">`FriendlyName` defines the name you can use to refer to this custom resource in DSC configuration scripts.</span></span> <span data-ttu-id="c2c57-119">この例では、`Website` は、組み込みのアーカイブ リソースのフレンドリ名 `Archive` に相当します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-119">In this example, `Website` is equivalent to the friendly name `Archive` for the built-in Archive resource.</span></span>
+* <span data-ttu-id="c2c57-120">カスタム リソース用に定義するクラスは、`OMI_BaseResource` から派生する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2c57-120">The class you define for your custom resource must derive from `OMI_BaseResource`.</span></span>
+* <span data-ttu-id="c2c57-121">プロパティの型修飾子 `[Key]` は、このプロパティがリソース インスタンスを一意に識別することを示します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-121">The type qualifier, `[Key]`, on a property indicates that this property will uniquely identify the resource instance.</span></span> <span data-ttu-id="c2c57-122">1 つ以上の `[Key]` プロパティが必要です。</span><span class="sxs-lookup"><span data-stu-id="c2c57-122">At least one `[Key]` property is required.</span></span>
+* <span data-ttu-id="c2c57-123">`[Required]` 修飾子は、プロパティが必須であることを示します (このリソースを使用する構成スクリプトで値を指定する必要があります)。</span><span class="sxs-lookup"><span data-stu-id="c2c57-123">The `[Required]` qualifier indicates that the property is required (a value must be specified in any configuration script that uses this resource).</span></span>
+* <span data-ttu-id="c2c57-124">`[write]` 修飾子は、構成スクリプトでカスタム リソースを使用するときにこのプロパティが省略可能であることを示します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-124">The `[write]` qualifier indicates that this property is optional when using the custom resource in a configuration script.</span></span> <span data-ttu-id="c2c57-125">`[read]` 修飾子は、プロパティが構成では設定できず、報告のみを目的とするとを示します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-125">The `[read]` qualifier indicates that a property cannot be set by a configuration, and is for reporting purposes only.</span></span>
+* <span data-ttu-id="c2c57-126">`Values` は、プロパティに割り当てることのできる値を `ValueMap` で定義されている値の一覧に制限します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-126">`Values` restricts the values that can be assigned to the property to the list of values defined in `ValueMap`.</span></span> <span data-ttu-id="c2c57-127">詳細については、「[ValueMap and Value Qualifiers (ValueMap 修飾子と Value 修飾子)](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c2c57-127">For more information, see [ValueMap and Value Qualifiers](https://msdn.microsoft.com/library/windows/desktop/aa393965.aspx).</span></span>
+* <span data-ttu-id="c2c57-128">組み込みの DSC リソースとの一貫したスタイルを維持する方法として、値 `Present` と `Absent` を持つ `Ensure` というプロパティをリソースに含めることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c2c57-128">Including a property called `Ensure` with values `Present` and `Absent` in your resource is recommended as a way to maintain a consistent style with built-in DSC resources.</span></span>
+* <span data-ttu-id="c2c57-129">カスタム リソースのスキーマ ファイルには、`classname.schema.mof` のように名前を付けます。ここで、`classname` はスキーマ定義内の `class` キーワードに続く識別子です。</span><span class="sxs-lookup"><span data-stu-id="c2c57-129">Name the schema file for your custom resource as follows: `classname.schema.mof`, where `classname` is the identifier that follows the `class` keyword in your schema definition.</span></span>
 
-<a id="writing-the-resource-script" class="xliff"></a>
+### <a name="writing-the-resource-script"></a><span data-ttu-id="c2c57-130">リソース スクリプトの作成</span><span class="sxs-lookup"><span data-stu-id="c2c57-130">Writing the resource script</span></span>
 
-### リソース スクリプトの作成
+<span data-ttu-id="c2c57-131">リソース スクリプトでは、リソースのロジックを実装します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-131">The resource script implements the logic of the resource.</span></span> <span data-ttu-id="c2c57-132">このモジュールでは、**Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** という 3 つの関数を含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2c57-132">In this module, you must include three functions called **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource**.</span></span> <span data-ttu-id="c2c57-133">3 つのすべての関数は、リソース用に作成した MOF スキーマで定義されている一連のプロパティと同じパラメーター セットを受け取る必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2c57-133">All three functions must take a parameter set that is identical to the set of properties defined in the MOF schema that you created for your resource.</span></span> <span data-ttu-id="c2c57-134">このドキュメントでは、この一連のプロパティを "リソース プロパティ" と呼びます。</span><span class="sxs-lookup"><span data-stu-id="c2c57-134">In this document, this set of properties is referred to as the “resource properties.”</span></span> <span data-ttu-id="c2c57-135">これらの 3 つの関数は、<ResourceName>.psm1 というファイルに格納します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-135">Store these three functions in a file called <ResourceName>.psm1.</span></span> <span data-ttu-id="c2c57-136">次の例では、関数は Demo_IISWebsite.psm1 というファイルに格納されます。</span><span class="sxs-lookup"><span data-stu-id="c2c57-136">In the following example, the functions are stored in a file called Demo_IISWebsite.psm1.</span></span>
 
-リソース スクリプトでは、リソースのロジックを実装します。 このモジュールでは、**Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** という 3 つの関数を含める必要があります。 3 つのすべての関数は、リソース用に作成した MOF スキーマで定義されている一連のプロパティと同じパラメーター セットを受け取る必要があります。 このドキュメントでは、この一連のプロパティを "リソース プロパティ" と呼びます。 これらの 3 つの関数は、<ResourceName>.psm1 というファイルに格納します。 次の例では、関数は Demo_IISWebsite.psm1 というファイルに格納されます。
+> <span data-ttu-id="c2c57-137">**注**: リソースに対して同じ構成スクリプトを複数回実行する場合は、エラーが発生しないこと、および、リソースの状態が、スクリプトを 1 回実行したときと同じに保たれることが必要となります。</span><span class="sxs-lookup"><span data-stu-id="c2c57-137">**Note**: When you run the same configuration script on your resource more than once, you should receive no errors and the resource should remain in the same state as running the script once.</span></span> <span data-ttu-id="c2c57-138">これを実現するには、**Get-TargetResource** と **Test-TargetResource** 関数によってリソースが変更されないようにし、シーケンス内で同じパラメーター値を使用して **Set-TargetResource** 関数を複数回呼び出した場合に、1 回呼び出した場合と常に同じ結果になるようにします。</span><span class="sxs-lookup"><span data-stu-id="c2c57-138">To accomplish this, ensure that your **Get-TargetResource** and **Test-TargetResource** functions leave the resource unchanged, and that invoking the **Set-TargetResource** function more than once in a sequence with the same parameter values is always equivalent to invoking it once.</span></span>
 
-> **注**: リソースに対して同じ構成スクリプトを複数回実行する場合は、エラーが発生しないこと、および、リソースの状態が、スクリプトを 1 回実行したときと同じに保たれることが必要となります。 これを実現するには、**Get-TargetResource** と **Test-TargetResource** 関数によってリソースが変更されないようにし、シーケンス内で同じパラメーター値を使用して **Set-TargetResource** 関数を複数回呼び出した場合に、1 回呼び出した場合と常に同じ結果になるようにします。
-
-**Get-TargetResource** 関数の実装では、パラメーターとして指定されたキー リソース プロパティ値を使用して、指定されたリソース インスタンスの状態を確認します。 この関数は、キーとしてすべてのリソース プロパティを、対応する値としてこれらのプロパティの実際の値を一覧表示するハッシュ テーブルを返す必要があります。 コードの例は次のとおりです。
+<span data-ttu-id="c2c57-139">**Get-TargetResource** 関数の実装では、パラメーターとして指定されたキー リソース プロパティ値を使用して、指定されたリソース インスタンスの状態を確認します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-139">In the **Get-TargetResource** function implementation, use the key resource property values that are provided as parameters to check the status of the specified resource instance.</span></span> <span data-ttu-id="c2c57-140">この関数は、キーとしてすべてのリソース プロパティを、対応する値としてこれらのプロパティの実際の値を一覧表示するハッシュ テーブルを返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2c57-140">This function must return a hash table that lists all the resource properties as keys and the actual values of these properties as the corresponding values.</span></span> <span data-ttu-id="c2c57-141">コードの例は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="c2c57-141">The following code provides an example.</span></span>
 
 ```powershell
 # DSC uses the Get-TargetResource function to fetch the status of the resource instance specified in the parameters for the target machine
@@ -133,13 +123,13 @@ function Get-TargetResource
 }
 ```
 
-構成スクリプトでリソース プロパティに指定されている値に応じて、**Set-TargetResource** は次のいずれかを実行する必要があります。
+<span data-ttu-id="c2c57-142">構成スクリプトでリソース プロパティに指定されている値に応じて、**Set-TargetResource** は次のいずれかを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2c57-142">Depending on the values that are specified for the resource properties in the configuration script, the **Set-TargetResource** must do one of the following:</span></span>
 
-* 新しい Web サイトの作成
-* 既存の Web サイトの更新
-* 既存の Web サイトの削除
+* <span data-ttu-id="c2c57-143">新しい Web サイトの作成</span><span class="sxs-lookup"><span data-stu-id="c2c57-143">Create a new website</span></span>
+* <span data-ttu-id="c2c57-144">既存の Web サイトの更新</span><span class="sxs-lookup"><span data-stu-id="c2c57-144">Update an existing website</span></span>
+* <span data-ttu-id="c2c57-145">既存の Web サイトの削除</span><span class="sxs-lookup"><span data-stu-id="c2c57-145">Delete an existing website</span></span>
 
-これを次の例に示します。
+<span data-ttu-id="c2c57-146">これを次の例に示します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-146">The following example illustrates this.</span></span>
 
 ```powershell
 # The Set-TargetResource function is used to create, delete or configure a website on the target machine. 
@@ -176,9 +166,9 @@ function Set-TargetResource
 }
 ```
 
-最後に、**Test-TargetResource** 関数は、**Get-TargetResource** および **Set-TargetResource** と同じパラメーター セットを受け取る必要があります。 **Test-TargetResource** の実装で、キー パラメーターで指定されているリソース インスタンスの状態を確認します。 リソース インスタンスの実際の状態がパラメーター セットで指定された値と一致しない場合は、**$false** を返します。 それ以外の場合は、**$true**  を返します。
+<span data-ttu-id="c2c57-147">最後に、**Test-TargetResource** 関数は、**Get-TargetResource** および **Set-TargetResource** と同じパラメーター セットを受け取る必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2c57-147">Finally, the **Test-TargetResource** function must take the same parameter set as **Get-TargetResource** and **Set-TargetResource**.</span></span> <span data-ttu-id="c2c57-148">**Test-TargetResource** の実装で、キー パラメーターで指定されているリソース インスタンスの状態を確認します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-148">In your implementation of **Test-TargetResource**, check the status of the resource instance that is specified in the key parameters.</span></span> <span data-ttu-id="c2c57-149">リソース インスタンスの実際の状態がパラメーター セットで指定された値と一致しない場合は、**$false** を返します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-149">If the actual status of the resource instance does not match the values specified in the parameter set, return **$false**.</span></span> <span data-ttu-id="c2c57-150">それ以外の場合は、**$true**  を返します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-150">Otherwise, return **$true**.</span></span>
 
-次のコードでは、**Test-TargetResource** 関数を実装します。
+<span data-ttu-id="c2c57-151">次のコードでは、**Test-TargetResource** 関数を実装します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-151">The following code implements the **Test-TargetResource** function.</span></span>
 
 ```powershell
 function Test-TargetResource
@@ -225,15 +215,13 @@ $result
 }
 ```
 
-**注**: 簡単にデバッグするには、前の 3 つの関数の実装で **Write-Verbose** コマンドレットを使用します。 
->このコマンドレットは、テキストを詳細メッセージ ストリームに書き込みます。 
->既定では、詳細メッセージ ストリームは表示されません。表示するには、**$VerbosePreference** 変数の値を変更するか、DSC コマンドレットで **Verbose** パラメーターを使用します。
+<span data-ttu-id="c2c57-152">**注**: 簡単にデバッグするには、前の 3 つの関数の実装で **Write-Verbose** コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-152">**Note**: For easier debugging, use the **Write-Verbose** cmdlet in your implementation of the previous three functions.</span></span> 
+><span data-ttu-id="c2c57-153">このコマンドレットは、テキストを詳細メッセージ ストリームに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="c2c57-153">This cmdlet writes text to the verbose message stream.</span></span> 
+><span data-ttu-id="c2c57-154">既定では、詳細メッセージ ストリームは表示されません。表示するには、**$VerbosePreference** 変数の値を変更するか、DSC コマンドレットで **Verbose** パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-154">By default, the verbose message stream is not displayed, but you can display it by changing the value of the **$VerbosePreference** variable or by using the **Verbose** parameter in the DSC cmdlets = new.</span></span>
 
-<a id="creating-the-module-manifest" class="xliff"></a>
+### <a name="creating-the-module-manifest"></a><span data-ttu-id="c2c57-155">モジュール マニフェストの作成</span><span class="sxs-lookup"><span data-stu-id="c2c57-155">Creating the module manifest</span></span>
 
-### モジュール マニフェストの作成
-
-最後に、**New-ModuleManifest** コマンドレットを使用して、カスタム リソース モジュールの <ResourceName>.psd1 ファイルを定義します。 このコマンドレットを呼び出すときに、前のセクションで説明したスクリプト モジュール (.psm1) ファイルを参照します。 **Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** をエクスポートする関数の一覧に含めます。 マニフェスト ファイルの例を次に示します。
+<span data-ttu-id="c2c57-156">最後に、**New-ModuleManifest** コマンドレットを使用して、カスタム リソース モジュールの <ResourceName>.psd1 ファイルを定義します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-156">Finally, use the **New-ModuleManifest** cmdlet to define a <ResourceName>.psd1 file for your custom resource module.</span></span> <span data-ttu-id="c2c57-157">このコマンドレットを呼び出すときに、前のセクションで説明したスクリプト モジュール (.psm1) ファイルを参照します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-157">When you invoke this cmdlet, reference the script module (.psm1) file described in the previous section.</span></span> <span data-ttu-id="c2c57-158">**Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** をエクスポートする関数の一覧に含めます。</span><span class="sxs-lookup"><span data-stu-id="c2c57-158">Include **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** in the list of functions to export.</span></span> <span data-ttu-id="c2c57-159">マニフェスト ファイルの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-159">Following is an example manifest file.</span></span>
 
 ```powershell
 # Module manifest for module 'Demo.IIS.Website'
@@ -287,18 +275,16 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 }
 ```
 
-<a id="supporting-psdscrunascredential" class="xliff"></a>
+## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="c2c57-160">PsDscRunAsCredential のサポート</span><span class="sxs-lookup"><span data-stu-id="c2c57-160">Supporting PsDscRunAsCredential</span></span>
 
-## PsDscRunAsCredential のサポート
+><span data-ttu-id="c2c57-161">**注:** **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="c2c57-161">**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
 
->**注:** **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。
+<span data-ttu-id="c2c57-162">**PsDscRunAsCredential** プロパティを [DSC 構成](configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。</span><span class="sxs-lookup"><span data-stu-id="c2c57-162">The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
+<span data-ttu-id="c2c57-163">詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c2c57-163">For more information, see [Running DSC with user credentials](runAsUser.md).</span></span>
 
-**PsDscRunAsCredential** プロパティを [DSC 構成](configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。
-詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
+<span data-ttu-id="c2c57-164">カスタム リソース内からユーザー コンテキストにアクセスするには、自動変数 `$PsDscContext` を使用できます。</span><span class="sxs-lookup"><span data-stu-id="c2c57-164">To access the user context from within a custom resource, you can use the automatic variable `$PsDscContext`.</span></span>
 
-カスタム リソース内からユーザー コンテキストにアクセスするには、自動変数 `$PsDscContext` を使用できます。
-
-たとえば、次のコードは、リソースが詳細出力ストリームに実行しているユーザー コンテキストを記述します。
+<span data-ttu-id="c2c57-165">たとえば、次のコードは、リソースが詳細出力ストリームに実行しているユーザー コンテキストを記述します。</span><span class="sxs-lookup"><span data-stu-id="c2c57-165">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
 
 ```powershell
 if (PsDscContext.RunAsUser) {

@@ -10,50 +10,40 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="find-dscresource" class="xliff"></a>
+# <a name="find-dscresource"></a><span data-ttu-id="98d2a-103">Find-DscResource</span><span class="sxs-lookup"><span data-stu-id="98d2a-103">Find-DscResource</span></span>
 
-# Find-DscResource
+<span data-ttu-id="98d2a-104">モジュール内の DSC リソースを検索します。</span><span class="sxs-lookup"><span data-stu-id="98d2a-104">Finds DSC Resources in modules.</span></span>
 
-モジュール内の DSC リソースを検索します。
+## <a name="description"></a><span data-ttu-id="98d2a-105">説明</span><span class="sxs-lookup"><span data-stu-id="98d2a-105">Description</span></span>
 
-<a id="description" class="xliff"></a>
+<span data-ttu-id="98d2a-106">Find-DscResource コマンドレットは、登録したリポジトリから、指定した条件と一致するモジュールに含まれている [Desired State Configuration (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) リソースを検索します。</span><span class="sxs-lookup"><span data-stu-id="98d2a-106">The Find-DscResource cmdlet finds [Desired State Configuration (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) resources contained in modules that match the specified criteria from registered repositories.</span></span>
+<span data-ttu-id="98d2a-107">Find-DscResource は、このコマンドレットが検出した各モジュールに対して PSGetDscResourceInfo オブジェクトを返します。このオブジェクトを Install-Module にパイプすると、このコマンドレットから返されたリソースを含むモジュールをインストールすることができます。</span><span class="sxs-lookup"><span data-stu-id="98d2a-107">For each module that this cmdlet finds, Find-DscResource returns a PSGetDscResourceInfo object that you can pipe to Install-Module to install the modules containing the resources that this cmdlet returns.</span></span>
 
-## 説明
+<span data-ttu-id="98d2a-108">DSC は、ソフトウェア サービスの構成データを展開および管理し、これらのサービスの実行環境を管理できる、Windows PowerShell の新しい管理プラットフォームです。</span><span class="sxs-lookup"><span data-stu-id="98d2a-108">DSC is a new management platform in Windows PowerShell that enables deploying and managing configuration data for software services and managing the environment in which these services run.</span></span>
 
-Find-DscResource コマンドレットは、登録したリポジトリから、指定した条件と一致するモジュールに含まれている [Desired State Configuration (DSC)](https://msdn.microsoft.com/en-us/PowerShell/dsc/overview) リソースを検索します。
-Find-DscResource は、このコマンドレットが検出した各モジュールに対して PSGetDscResourceInfo オブジェクトを返します。このオブジェクトを Install-Module にパイプすると、このコマンドレットから返されたリソースを含むモジュールをインストールすることができます。
+<span data-ttu-id="98d2a-109">Desired State Configuration (DSC) リソースは、DSC 構成の構成要素を提供します。</span><span class="sxs-lookup"><span data-stu-id="98d2a-109">Desired State Configuration (DSC) Resources provide the building blocks for a DSC configuration.</span></span> <span data-ttu-id="98d2a-110">リソースは、構成 (スキーマ) 可能なプロパティを公開し、また、指定されたことを実現するためにローカル構成マネージャー (LCM) が呼び出す PowerShell スクリプト関数が含まれています。</span><span class="sxs-lookup"><span data-stu-id="98d2a-110">A resource exposes properties that can be configured (schema) and contains the PowerShell script functions that the Local Configuration Manager (LCM) calls to "make it so".</span></span>
 
-DSC は、ソフトウェア サービスの構成データを展開および管理し、これらのサービスの実行環境を管理できる、Windows PowerShell の新しい管理プラットフォームです。
+<span data-ttu-id="98d2a-111">リソースでは、ファイルのように汎用的なものをモデル化したり、IIS サーバー設定のように具体的なものをモデル化したりできます。</span><span class="sxs-lookup"><span data-stu-id="98d2a-111">A resource can model something as generic as a file or as specific as an IIS server setting.</span></span> <span data-ttu-id="98d2a-112">リソースなどのグループは、DSC モジュールに結合されます。DSC モジュールでは、リソースの使用目的を識別するためのメタデータが含まれている移植可能な構造にすべての必須ファイルが編成されます。</span><span class="sxs-lookup"><span data-stu-id="98d2a-112">Groups of like resources are combined in to a DSC Module, which organizes all the required files in to a structure that is portable and includes metadata to identify how the resources are intended to be used.</span></span>
 
-Desired State Configuration (DSC) リソースは、DSC 構成の構成要素を提供します。 リソースは、構成 (スキーマ) 可能なプロパティを公開し、また、指定されたことを実現するためにローカル構成マネージャー (LCM) が呼び出す PowerShell スクリプト関数が含まれています。
+- <span data-ttu-id="98d2a-113">Find-DscResource は、次のバージョン パラメーターでフィルター処理できます。MinimumVersion、RequiredVersion、AllVersions。</span><span class="sxs-lookup"><span data-stu-id="98d2a-113">Find-DscResource can filter with version parameters: MinimumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="98d2a-114">これらのパラメーターは同時に指定できません。</span><span class="sxs-lookup"><span data-stu-id="98d2a-114">These parameters are mutually exclusive.</span></span>
+  - <span data-ttu-id="98d2a-115">これらのバージョン パラメーターは、ワイルドカードを含まない 1 つのモジュール名が指定されている場合にのみ許可されます。</span><span class="sxs-lookup"><span data-stu-id="98d2a-115">These version parameters are allowed only with the single module name without any wildcards.</span></span>
+  - <span data-ttu-id="98d2a-116">RequiredVersion パラメーターが指定されていない場合、Find-DscResource は指定された最小バージョン以上の最新バージョンのモジュールを返すか、または最新バージョンのモジュールを返します (最小バージョンが指定されていない場合)。</span><span class="sxs-lookup"><span data-stu-id="98d2a-116">If the RequiredVersion parameter is not specified, Find-DscResource returns the latest version of the module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span>
+  - <span data-ttu-id="98d2a-117">RequiredVersion パラメーターが指定されている場合、Find-DscResource は指定したバージョンに完全に一致するバージョンのモジュールのみを返します。</span><span class="sxs-lookup"><span data-stu-id="98d2a-117">If the RequiredVersion parameter is specified, Find-DscResource only returns the version of the module that exactly matches the specified version.</span></span>
+- <span data-ttu-id="98d2a-118">Find-DscResource では、-Tag パラメーターを使用してモジュールのメタデータをフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="98d2a-118">Find-DscResource can filter on module metadata with the -Tag parameter</span></span>
+- <span data-ttu-id="98d2a-119">Find-DscResource では、-Filter パラメーターを使用してリポジトリ固有の検索言語をフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="98d2a-119">Find-DscResource can filter on repository-specific search language with the -Filter parameter.</span></span>
+- <span data-ttu-id="98d2a-120">Find-DscResource では、登録されているリポジトリのすべてまたは一部からモジュール上でフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="98d2a-120">Find-DscResource can filter on modules from all or few of the registered repositories.</span></span>
 
-リソースでは、ファイルのように汎用的なものをモデル化したり、IIS サーバー設定のように具体的なものをモデル化したりできます。 リソースなどのグループは、DSC モジュールに結合されます。DSC モジュールでは、リソースの使用目的を識別するためのメタデータが含まれている移植可能な構造にすべての必須ファイルが編成されます。
-
-- Find-DscResource は、次のバージョン パラメーターでフィルター処理できます。MinimumVersion、RequiredVersion、AllVersions。
-  - これらのパラメーターは同時に指定できません。
-  - これらのバージョン パラメーターは、ワイルドカードを含まない 1 つのモジュール名が指定されている場合にのみ許可されます。
-  - RequiredVersion パラメーターが指定されていない場合、Find-DscResource は指定された最小バージョン以上の最新バージョンのモジュールを返すか、または最新バージョンのモジュールを返します (最小バージョンが指定されていない場合)。
-  - RequiredVersion パラメーターが指定されている場合、Find-DscResource は指定したバージョンに完全に一致するバージョンのモジュールのみを返します。
-- Find-DscResource では、-Tag パラメーターを使用してモジュールのメタデータをフィルター処理できます。
-- Find-DscResource では、-Filter パラメーターを使用してリポジトリ固有の検索言語をフィルター処理できます。
-- Find-DscResource では、登録されているリポジトリのすべてまたは一部からモジュール上でフィルター処理できます。
-
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a><span data-ttu-id="98d2a-121">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="98d2a-121">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Find-DscResource -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="98d2a-122">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="98d2a-122">Cmdlet online help reference</span></span>
 
-## コマンドレット オンライン ヘルプ リファレンス
+[<span data-ttu-id="98d2a-123">Find-DscResource</span><span class="sxs-lookup"><span data-stu-id="98d2a-123">Find-DscResource</span></span>](http://go.microsoft.com/fwlink/?LinkId=517196)
 
-[Find-DscResource](http://go.microsoft.com/fwlink/?LinkId=517196)
-
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a><span data-ttu-id="98d2a-124">コマンド例</span><span class="sxs-lookup"><span data-stu-id="98d2a-124">Example commands</span></span>
 ```powershell
 
 # Find a specific DSC Resource

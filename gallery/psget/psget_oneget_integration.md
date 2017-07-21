@@ -10,15 +10,9 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="architecture-of-packagemanagement-and-its-relationship-with-powershellget-module" class="xliff"></a>
+## <a name="architecture-of-packagemanagement-and-its-relationship-with-powershellget-module"></a><span data-ttu-id="6e7d8-103">PackageManageme のアーキテクチャおよび PowerShellGet モジュールとの関係。</span><span class="sxs-lookup"><span data-stu-id="6e7d8-103">Architecture of PackageManagement and its relationship with PowerShellGet module.</span></span>
 
-## PackageManageme のアーキテクチャおよび PowerShellGet モジュールとの関係。
+## <a name="how-to-use-packagemanagement-cmdlets-for-discovering-installing-updating-and-inventory-of-scripts-and-modules-using-powershellget-provider"></a><span data-ttu-id="6e7d8-104">PowerShellGet プロバイダーを使用したスクリプトとモジュールの検出、インストール、更新、インベントリ用に PackageManagement コマンドレットを使用する方法。</span><span class="sxs-lookup"><span data-stu-id="6e7d8-104">How to use PackageManagement cmdlets for discovering, installing, updating and inventory of scripts and modules using PowerShellGet provider.</span></span>
 
-<a id="how-to-use-packagemanagement-cmdlets-for-discovering-installing-updating-and-inventory-of-scripts-and-modules-using-powershellget-provider" class="xliff"></a>
-
-## PowerShellGet プロバイダーを使用したスクリプトとモジュールの検出、インストール、更新、インベントリ用に PackageManagement コマンドレットを使用する方法。
-
-<a id="pakagemanagement-commands" class="xliff"></a>
-
-## PakageManagement コマンド
+## <a name="pakagemanagement-commands"></a><span data-ttu-id="6e7d8-105">PakageManagement コマンド</span><span class="sxs-lookup"><span data-stu-id="6e7d8-105">PakageManagement Commands</span></span>
 

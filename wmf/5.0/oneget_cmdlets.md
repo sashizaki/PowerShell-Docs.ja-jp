@@ -9,34 +9,30 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="packagemanagement-cmdlets" class="xliff"></a>
+# <a name="packagemanagement-cmdlets"></a><span data-ttu-id="b7456-102">PackageManagement コマンドレット</span><span class="sxs-lookup"><span data-stu-id="b7456-102">PackageManagement Cmdlets</span></span>
+<span data-ttu-id="b7456-103">これは、ソフトウェアの検出、インストール、およびインベントリ (SDII) をサポートする PackageManagement の中核となります。</span><span class="sxs-lookup"><span data-stu-id="b7456-103">This is the core of PackageManagement to support software discovery, installation, and inventory (SDII).</span></span> <span data-ttu-id="b7456-104">次の操作のコマンドレットを試してください。</span><span class="sxs-lookup"><span data-stu-id="b7456-104">Try out the cmdlets for these operations:</span></span>
+-   <span data-ttu-id="b7456-105">Find-Package</span><span class="sxs-lookup"><span data-stu-id="b7456-105">Find-Package</span></span>
+-   <span data-ttu-id="b7456-106">Find-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="b7456-106">Find-PackageProvider</span></span>
+-   <span data-ttu-id="b7456-107">Get-Package</span><span class="sxs-lookup"><span data-stu-id="b7456-107">Get-Package</span></span>
+-   <span data-ttu-id="b7456-108">Get-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="b7456-108">Get-PackageProvider</span></span>
+-   <span data-ttu-id="b7456-109">Get-PackageSource</span><span class="sxs-lookup"><span data-stu-id="b7456-109">Get-PackageSource</span></span>
+-   <span data-ttu-id="b7456-110">Import-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="b7456-110">Import-PackageProvider</span></span>
+-   <span data-ttu-id="b7456-111">Install-Package</span><span class="sxs-lookup"><span data-stu-id="b7456-111">Install-Package</span></span>
+-   <span data-ttu-id="b7456-112">Install-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="b7456-112">Install-PackageProvider</span></span>
+-   <span data-ttu-id="b7456-113">Register-PackageSource</span><span class="sxs-lookup"><span data-stu-id="b7456-113">Register-PackageSource</span></span>
+-   <span data-ttu-id="b7456-114">Save-Package</span><span class="sxs-lookup"><span data-stu-id="b7456-114">Save-Package</span></span>
+-   <span data-ttu-id="b7456-115">Set-PackageSource</span><span class="sxs-lookup"><span data-stu-id="b7456-115">Set-PackageSource</span></span>
+-   <span data-ttu-id="b7456-116">Uninstall-Package</span><span class="sxs-lookup"><span data-stu-id="b7456-116">Uninstall-Package</span></span>
+-   <span data-ttu-id="b7456-117">Unregister-PackageSource</span><span class="sxs-lookup"><span data-stu-id="b7456-117">Unregister-PackageSource</span></span>
 
-# PackageManagement コマンドレット
-これは、ソフトウェアの検出、インストール、およびインベントリ (SDII) をサポートする PackageManagement の中核となります。 次の操作のコマンドレットを試してください。
--   Find-Package
--   Find-PackageProvider
--   Get-Package
--   Get-PackageProvider
--   Get-PackageSource
--   Import-PackageProvider
--   Install-Package
--   Install-PackageProvider
--   Register-PackageSource
--   Save-Package
--   Set-PackageSource
--   Uninstall-Package
--   Unregister-PackageSource
-
-PackageManagement は PowerShell モジュールであるため、次のことを行って PackageManagement 自体を更新できます。
+<span data-ttu-id="b7456-118">PackageManagement は PowerShell モジュールであるため、次のことを行って PackageManagement 自体を更新できます。</span><span class="sxs-lookup"><span data-stu-id="b7456-118">As PackageManagement is a PowerShell module, you can do the following to update PackageManagement itself:</span></span>
 ```powershell
 PS C:\> Install-Module PackageManagement –Force
 ```
-この場合、PowerShell セッションを再入力して、PackageManagement の新しいバージョンに切り替える必要があります。
+<span data-ttu-id="b7456-119">この場合、PowerShell セッションを再入力して、PackageManagement の新しいバージョンに切り替える必要があります。</span><span class="sxs-lookup"><span data-stu-id="b7456-119">In this case, you will have to re-enter PowerShell session to switch to the new version of PackageManagement.</span></span>
 
-<a id="find-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890709aspx" class="xliff"></a>
-
-## [Find-Package コマンドレット](https://technet.microsoft.com/en-us/library/dn890709.aspx)
-このコマンドレットでは、読み込まれたパッケージ プロバイダーを使用して、利用可能なパッケージ ソース内のソフトウェア パッケージを検出できます。
+## <a name="find-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890709aspx"></a>[<span data-ttu-id="b7456-120">Find-Package コマンドレット</span><span class="sxs-lookup"><span data-stu-id="b7456-120">Find-Package Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890709.aspx)
+<span data-ttu-id="b7456-121">このコマンドレットでは、読み込まれたパッケージ プロバイダーを使用して、利用可能なパッケージ ソース内のソフトウェア パッケージを検出できます。</span><span class="sxs-lookup"><span data-stu-id="b7456-121">This cmdlet allows discovery of software packages in available package sources using loaded package providers.</span></span>
 ```powershell
 # Find all available Windows PowerShell module packages from galleries registered
 # with PowerShellGet provider
@@ -55,12 +51,10 @@ Find-Package -Name jquery –Provider NuGet -Source http://www.nuget.org/api/v2/
 Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nuget.org
 ```
 
-<a id="find-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676544aspx" class="xliff"></a>
+## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676544aspx"></a>[<span data-ttu-id="b7456-122">Find-PackageProvider コマンドレット</span><span class="sxs-lookup"><span data-stu-id="b7456-122">Find-PackageProvider Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/mt676544.aspx)
+<span data-ttu-id="b7456-123">Find-PackageProvider コマンドレットは、PowerShellGet に登録されているパッケージ ソースで利用できる一致する PackageManagement プロバイダーを検索します。</span><span class="sxs-lookup"><span data-stu-id="b7456-123">The Find-PackageProvider cmdlet finds matching PackageManagement providers that are available in package sources registered with PowerShellGet.</span></span> <span data-ttu-id="b7456-124">これらは、Install-PackageProvider コマンドレットを使用したインストールに使用可能なパッケージ プロバイダーです。</span><span class="sxs-lookup"><span data-stu-id="b7456-124">These are package providers available for installation with the Install-PackageProvider cmdlet.</span></span> <span data-ttu-id="b7456-125">既定では、これには 'PackageManagement' および 'Provider' タグの付いた PowerShell ギャラリーで利用できるモジュールが含まれます。</span><span class="sxs-lookup"><span data-stu-id="b7456-125">By default, this includes modules available in the PowerShell Gallery with the 'PackageManagement' and 'Provider' Tags.</span></span> 
 
-## [Find-PackageProvider コマンドレット](https://technet.microsoft.com/en-us/library/mt676544.aspx)
-Find-PackageProvider コマンドレットは、PowerShellGet に登録されているパッケージ ソースで利用できる一致する PackageManagement プロバイダーを検索します。 これらは、Install-PackageProvider コマンドレットを使用したインストールに使用可能なパッケージ プロバイダーです。 既定では、これには 'PackageManagement' および 'Provider' タグの付いた PowerShell ギャラリーで利用できるモジュールが含まれます。 
-
-Find-PackageProvider は、PackageManagement Azure BLOB ストアで利用できる一致する PackageManagement プロバイダーも検索します。このストアでは、これらを検索しインストールするために PackageManagement boostrapper プロバイダーを使用します。
+<span data-ttu-id="b7456-126">Find-PackageProvider は、PackageManagement Azure BLOB ストアで利用できる一致する PackageManagement プロバイダーも検索します。このストアでは、これらを検索しインストールするために PackageManagement boostrapper プロバイダーを使用します。</span><span class="sxs-lookup"><span data-stu-id="b7456-126">Find-PackageProvider also finds matching PackageManagement providers that are available in the PackageManagement azure blob store where we use the PackageManagement boostrapper provider for finding and installing them.</span></span>
 ```powershell
 #Find all available package providers in PackageManagement azure blob store as well as in PowerShellGallery.com
 Find-PackageProvider
@@ -72,10 +66,8 @@ Find-PackageProvider -Name "Nuget" -AllVersions
 Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 ```
 
-<a id="get-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890704aspx" class="xliff"></a>
-
-## [Get-Package コマンドレット](https://technet.microsoft.com/en-us/library/dn890704.aspx)
-このコマンドレットは、PackageManagement を使用してインストールされたすべてのソフトウェア パッケージの一覧を返します。
+## <a name="get-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890704aspx"></a>[<span data-ttu-id="b7456-127">Get-Package コマンドレット</span><span class="sxs-lookup"><span data-stu-id="b7456-127">Get-Package Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890704.aspx)
+<span data-ttu-id="b7456-128">このコマンドレットは、PackageManagement を使用してインストールされたすべてのソフトウェア パッケージの一覧を返します。</span><span class="sxs-lookup"><span data-stu-id="b7456-128">This cmdlet returns a list of all software packages that have been installed using PackageManagement.</span></span>
 ```powershell
 # Get all the packages installed by Programs provider
 Get-Package –Provider Programs
@@ -85,10 +77,8 @@ Get-Package –Provider Programs
 Get-Package –Provider NuGet -Destination c:\test
 ```
 
-<a id="get-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890703aspx" class="xliff"></a>
-
-## [Get-PackageProvider コマンドレット](https://technet.microsoft.com/en-us/library/dn890703.aspx)
-読み込まれ、ローカル コンピューターで使用できる状態のパッケージ プロバイダーは、このコマンドレットを使用してインベントリすることができます。
+## <a name="get-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890703aspx"></a>[<span data-ttu-id="b7456-129">Get-PackageProvider コマンドレット</span><span class="sxs-lookup"><span data-stu-id="b7456-129">Get-PackageProvider Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890703.aspx)
+<span data-ttu-id="b7456-130">読み込まれ、ローカル コンピューターで使用できる状態のパッケージ プロバイダーは、このコマンドレットを使用してインベントリすることができます。</span><span class="sxs-lookup"><span data-stu-id="b7456-130">Package providers that are loaded and ready to be used on the local machine can be inventoried by using the cmdlet.</span></span>
 ```powershell
 # Get all currently loaded package providers
 Get-PackageProvider
@@ -97,10 +87,8 @@ Get-PackageProvider
 Get-PackageProvider -ListAvailable
 ```
 
-<a id="get-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890705aspx" class="xliff"></a>
-
-## [Get-PackageSource コマンドレット](https://technet.microsoft.com/en-us/library/dn890705.aspx)
-このコマンドレットは、パッケージ プロバイダーに登録されているパッケージ ソースの一覧を取得します。
+## <a name="get-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890705aspx"></a>[<span data-ttu-id="b7456-131">Get-PackageSource コマンドレット</span><span class="sxs-lookup"><span data-stu-id="b7456-131">Get-PackageSource Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890705.aspx)
+<span data-ttu-id="b7456-132">このコマンドレットは、パッケージ プロバイダーに登録されているパッケージ ソースの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="b7456-132">This cmdlet gets a list of package sources that are registered for a package provider.</span></span>
 ```powershelll
 # Get all package sources
 Get-PackageSource
@@ -109,10 +97,8 @@ Get-PackageSource
 Get-PackageSource –ProviderName PowerShellGet
 ```
 
-<a id="import-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676545aspx" class="xliff"></a>
-
-## [Import-PackageProvider コマンドレット](https://technet.microsoft.com/en-us/library/mt676545.aspx)
-このコマンドレットは、PackageManagement パッケージ プロバイダーを現在のセッションに追加します。
+## <a name="import-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676545aspx"></a>[<span data-ttu-id="b7456-133">Import-PackageProvider コマンドレット</span><span class="sxs-lookup"><span data-stu-id="b7456-133">Import-PackageProvider Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/mt676545.aspx)
+<span data-ttu-id="b7456-134">このコマンドレットは、PackageManagement パッケージ プロバイダーを現在のセッションに追加します。</span><span class="sxs-lookup"><span data-stu-id="b7456-134">This cmdlet adds Package Management package providers to the current session.</span></span>
 ```powershell
 # Import a package provider from the local machine
 Import-PackageProvider –Name MyProvider
@@ -133,11 +119,9 @@ Import-PackageProvider –Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose
 Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 ```
 
-<a id="-install-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890711aspx" class="xliff"></a>
+##<a name="-install-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890711aspx"></a>[<span data-ttu-id="b7456-135">Install-Package コマンドレット</span><span class="sxs-lookup"><span data-stu-id="b7456-135"> Install-Package Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890711.aspx)
 
-##[Install-Package コマンドレット](https://technet.microsoft.com/en-us/library/dn890711.aspx)
-
-このコマンドレットでは、読み込まれたパッケージ プロバイダーを使用して、利用可能なパッケージ ソース内のソフトウェア パッケージをインストールできます。
+<span data-ttu-id="b7456-136">このコマンドレットでは、読み込まれたパッケージ プロバイダーを使用して、利用可能なパッケージ ソース内のソフトウェア パッケージをインストールできます。</span><span class="sxs-lookup"><span data-stu-id="b7456-136">This cmdlet allows installation of software packages in available package sources using loaded package providers.</span></span>
 ```powershell
 # Install a package by name.
 # NuGet provider requires us to provide the dynamic parameter destination path
@@ -149,10 +133,8 @@ Install-Package -Name jquery -Source nuget.org -Destination c:\test
 Find-Package -Name jquery –Provider NuGet | Install-Package -Destination c:\test
 ```
 
-<a id="install-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676543aspx" class="xliff"></a>
-
-## [Install-PackageProvider コマンドレット](https://technet.microsoft.com/en-us/library/mt676543.aspx)
-このコマンドレットは、1 つ以上の PackageManagement パッケージ プロバイダーをインストールします。
+## <a name="install-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676543aspx"></a>[<span data-ttu-id="b7456-137">Install-PackageProvider コマンドレット</span><span class="sxs-lookup"><span data-stu-id="b7456-137">Install-PackageProvider Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/mt676543.aspx)
+<span data-ttu-id="b7456-138">このコマンドレットは、1 つ以上の PackageManagement パッケージ プロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="b7456-138">This cmdlet installs one or more Package Management package providers.</span></span>
 ```powershell
 # Install a package provider from the PowerShell Gallery
 Install-PackageProvider –Name "Gistprovider" -Verbose
@@ -168,19 +150,15 @@ Find-PackageProvider –Name "Gistprovider" | Install-PackageProvider -Verbose
 Install-PackageProvider –Name Gistprovider –Verbose –Scope CurrentUser
 ```
 
-<a id="register-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890701aspx" class="xliff"></a>
-
-## [Register-PackageSource コマンドレット](https://technet.microsoft.com/en-us/library/dn890701.aspx)
-このコマンドレットは、指定したパッケージ プロバイダーのパッケージ ソースを追加します。
-各 PackageManagement プロバイダーには、1 つまたは複数のソフトウェア ソースまたはリポジトリがある場合があります。 PackageManagement は、ソースを追加/削除/照会する PowerShell コマンドレットを提供します。 たとえば、NuGet プロバイダーのパッケージ ソースを登録できます。
+## <a name="register-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890701aspx"></a>[<span data-ttu-id="b7456-139">Register-PackageSource コマンドレット</span><span class="sxs-lookup"><span data-stu-id="b7456-139">Register-PackageSource Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890701.aspx)
+<span data-ttu-id="b7456-140">このコマンドレットは、指定したパッケージ プロバイダーのパッケージ ソースを追加します。</span><span class="sxs-lookup"><span data-stu-id="b7456-140">This cmdlet adds a package source for a specified package provider.</span></span>
+<span data-ttu-id="b7456-141">各 PackageManagement プロバイダーには、1 つまたは複数のソフトウェア ソースまたはリポジトリがある場合があります。</span><span class="sxs-lookup"><span data-stu-id="b7456-141">Each PackageManagement provider may have one or multiple software sources, or repositories.</span></span> <span data-ttu-id="b7456-142">PackageManagement は、ソースを追加/削除/照会する PowerShell コマンドレットを提供します。</span><span class="sxs-lookup"><span data-stu-id="b7456-142">PackageManagement provides PowerShell cmdlets to add/remove/query the source.</span></span> <span data-ttu-id="b7456-143">たとえば、NuGet プロバイダーのパッケージ ソースを登録できます。</span><span class="sxs-lookup"><span data-stu-id="b7456-143">For example, you can register a package source for the NuGet provider:</span></span>
 ```powershell
 Register-PackageSource -Name "NugetSource" -Location "http://www.nuget.org/api/v2" –ProviderName nuget
 ```
 
-<a id="save-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890708aspx" class="xliff"></a>
-
-## [Save-Package コマンドレット](https://technet.microsoft.com/en-us/library/dn890708.aspx)
-このコマンドレットは、パッケージをインストールせずにローカル コンピューターに保存します。
+## <a name="save-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890708aspx"></a>[<span data-ttu-id="b7456-144">Save-Package コマンドレット</span><span class="sxs-lookup"><span data-stu-id="b7456-144">Save-Package Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890708.aspx)
+<span data-ttu-id="b7456-145">このコマンドレットは、パッケージをインストールせずにローカル コンピューターに保存します。</span><span class="sxs-lookup"><span data-stu-id="b7456-145">This cmdlet saves packages to the local computer without installing them.</span></span>
 ```powershell
 # Saves jquery package to c:\test using NuGetProvider
 # Notes that the -Path parameter must point to an existing location
@@ -191,19 +169,15 @@ Find-Package -Name jquery -Source http://www.nuget.org/api/v2/ | Save-Package -P
 Find-Package -source c:\test
 ```
 
-<a id="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx" class="xliff"></a>
-
-## [Set-PackageSource コマンドレット](https://technet.microsoft.com/en-us/library/dn890710.aspx)
-このコマンドレットは、既存のパッケージ ソースに関する情報を変更します。 
+## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[<span data-ttu-id="b7456-146">Set-PackageSource コマンドレット</span><span class="sxs-lookup"><span data-stu-id="b7456-146">Set-PackageSource Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890710.aspx)
+<span data-ttu-id="b7456-147">このコマンドレットは、既存のパッケージ ソースに関する情報を変更します。</span><span class="sxs-lookup"><span data-stu-id="b7456-147">This cmdlet changes information about an existing package source.</span></span> 
 ```powershell
 #Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By #running Set-PackageSource, you can change the source name and location.
 Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2 
 ```
 
-<a id="uninstall-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890702aspx" class="xliff"></a>
-
-## [Uninstall-Package コマンドレット](https://technet.microsoft.com/en-us/library/dn890702.aspx)
-このコマンドレットは、ローカル コンピューターにインストールされているパッケージをアンインストールします。
+## <a name="uninstall-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890702aspx"></a>[<span data-ttu-id="b7456-148">Uninstall-Package コマンドレット</span><span class="sxs-lookup"><span data-stu-id="b7456-148">Uninstall-Package Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890702.aspx)
+<span data-ttu-id="b7456-149">このコマンドレットは、ローカル コンピューターにインストールされているパッケージをアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="b7456-149">This cmdlet uninstalls packages installed on the local computer.</span></span>
 ```powershell
 # Uninstall jquery using nuget
 Uninstall-Package -Name jquery –Provider NuGet -Destination c:\test
@@ -212,9 +186,7 @@ Uninstall-Package -Name jquery –Provider NuGet -Destination c:\test
 Get-Package -Name jquery –Provider NuGet -Destination c:\test | Uninstall-Package
 ```
 
-<a id="unregister-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890707aspx" class="xliff"></a>
-
-## [Unregister-PackageSource コマンドレット](https://technet.microsoft.com/en-us/library/dn890707.aspx)
+## <a name="unregister-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890707aspx"></a>[<span data-ttu-id="b7456-150">Unregister-PackageSource コマンドレット</span><span class="sxs-lookup"><span data-stu-id="b7456-150">Unregister-PackageSource Cmdlet</span></span>](https://technet.microsoft.com/en-us/library/dn890707.aspx)
 ```powershell
 # Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.
 Unregister-PackageSource  -Name "NugetSource"

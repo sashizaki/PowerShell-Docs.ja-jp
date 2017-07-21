@@ -9,35 +9,27 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="product-compatibility-status" class="xliff"></a>
+# <a name="product-compatibility-status"></a><span data-ttu-id="b365e-102">製品の互換性の状態</span><span class="sxs-lookup"><span data-stu-id="b365e-102">Product Compatibility Status</span></span>
 
-# 製品の互換性の状態
+## <a name="compatible"></a><span data-ttu-id="b365e-103">互換性あり:</span><span class="sxs-lookup"><span data-stu-id="b365e-103">Compatible:</span></span>
+> <span data-ttu-id="b365e-104">次のサーバー アプリケーションを実行しているシステムで Windows Management Framework 5.0 を**実行することができます。**</span><span class="sxs-lookup"><span data-stu-id="b365e-104">Systems that are running the following server applications **can run** Windows Management Framework 5.0:</span></span>
 
-<a id="compatible" class="xliff"></a>
+- <span data-ttu-id="b365e-105">Microsoft SharePoint Server 2013</span><span class="sxs-lookup"><span data-stu-id="b365e-105">Microsoft SharePoint Server 2013</span></span>
+- <span data-ttu-id="b365e-106">System Center 2012 Configuration Manager</span><span class="sxs-lookup"><span data-stu-id="b365e-106">System Center 2012 Configuration Manager</span></span>
 
-## 互換性あり:
-> 次のサーバー アプリケーションを実行しているシステムで Windows Management Framework 5.0 を**実行することができます。**
+## <a name="not-tested"></a><span data-ttu-id="b365e-107">テスト未実施:</span><span class="sxs-lookup"><span data-stu-id="b365e-107">Not Tested:</span></span>
+> <span data-ttu-id="b365e-108">次のサーバー アプリケーションを実行しているシステムは Windows Management Framework 5.0 に対して**テストされていません。**</span><span class="sxs-lookup"><span data-stu-id="b365e-108">Systems that are running the following server applications **have not tested** against Windows Management Framework 5.0:</span></span>
 
-- Microsoft SharePoint Server 2013
-- System Center 2012 Configuration Manager
+- <span data-ttu-id="b365e-109">Microsoft SharePoint Server 2010</span><span class="sxs-lookup"><span data-stu-id="b365e-109">Microsoft SharePoint Server 2010</span></span>
+- <span data-ttu-id="b365e-110">System Center 2012 Virtual Machine Manager</span><span class="sxs-lookup"><span data-stu-id="b365e-110">System Center 2012 Virtual Machine Manager</span></span>
 
-<a id="not-tested" class="xliff"></a>
+## <a name="incompatible"></a><span data-ttu-id="b365e-111">互換性なし:</span><span class="sxs-lookup"><span data-stu-id="b365e-111">Incompatible:</span></span>
+> <span data-ttu-id="b365e-112">次のサーバー アプリケーションを実行しているシステムでは Windows Management Framework 5.0 を**実行できません。**</span><span class="sxs-lookup"><span data-stu-id="b365e-112">Systems that are running the following server applications **should not run** Windows Management Framework 5.0:</span></span>
 
-## テスト未実施:
-> 次のサーバー アプリケーションを実行しているシステムは Windows Management Framework 5.0 に対して**テストされていません。**
-
-- Microsoft SharePoint Server 2010
-- System Center 2012 Virtual Machine Manager
-
-<a id="incompatible" class="xliff"></a>
-
-## 互換性なし:
-> 次のサーバー アプリケーションを実行しているシステムでは Windows Management Framework 5.0 を**実行できません。**
-
-- Microsoft Exchange Server 2013
-- Microsoft Exchange Server 2010 SP3
-- Skype for Business Server 2015
-- Microsoft Lync Server 2013
-- Microsoft Lync Server 2010
-- System Center 2012 R2 Service Management Automation
+- <span data-ttu-id="b365e-113">Microsoft Exchange Server 2013</span><span class="sxs-lookup"><span data-stu-id="b365e-113">Microsoft Exchange Server 2013</span></span>
+- <span data-ttu-id="b365e-114">Microsoft Exchange Server 2010 SP3</span><span class="sxs-lookup"><span data-stu-id="b365e-114">Microsoft Exchange Server 2010 SP3</span></span>
+- <span data-ttu-id="b365e-115">Skype for Business Server 2015</span><span class="sxs-lookup"><span data-stu-id="b365e-115">Skype for Business Server 2015</span></span>
+- <span data-ttu-id="b365e-116">Microsoft Lync Server 2013</span><span class="sxs-lookup"><span data-stu-id="b365e-116">Microsoft Lync Server 2013</span></span>
+- <span data-ttu-id="b365e-117">Microsoft Lync Server 2010</span><span class="sxs-lookup"><span data-stu-id="b365e-117">Microsoft Lync Server 2010</span></span>
+- <span data-ttu-id="b365e-118">System Center 2012 R2 Service Management Automation</span><span class="sxs-lookup"><span data-stu-id="b365e-118">System Center 2012 R2 Service Management Automation</span></span>
 

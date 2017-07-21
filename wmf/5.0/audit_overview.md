@@ -9,11 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="audit-powershell-usage-using-transcription-and-logging" class="xliff"></a>
+# <a name="audit-powershell-usage-using-transcription-and-logging"></a><span data-ttu-id="f049e-102">トランスクリプションおよびログを使用した PowerShell の使用状況の監査</span><span class="sxs-lookup"><span data-stu-id="f049e-102">Audit PowerShell Usage using Transcription and Logging</span></span>
 
-# トランスクリプションおよびログを使用した PowerShell の使用状況の監査
-
-- [強化されたトランスクリプション オプション](audit_transcript.md)
-- [スクリプトのトレースとログ](audit_script.md)
-- [Cryptographic Message Syntax (CMS) コマンドレット](audit_cms.md)
+- [<span data-ttu-id="f049e-103">強化されたトランスクリプション オプション</span><span class="sxs-lookup"><span data-stu-id="f049e-103">Enhanced Transcription Options</span></span>](audit_transcript.md)
+- [<span data-ttu-id="f049e-104">スクリプトのトレースとログ</span><span class="sxs-lookup"><span data-stu-id="f049e-104">Script Tracing and Logging</span></span>](audit_script.md)
+- [<span data-ttu-id="f049e-105">Cryptographic Message Syntax (CMS) コマンドレット</span><span class="sxs-lookup"><span data-stu-id="f049e-105">Cryptographic Message Syntax (CMS) cmdlets</span></span>](audit_cms.md)
 

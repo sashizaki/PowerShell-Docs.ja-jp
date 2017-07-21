@@ -10,24 +10,22 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="built-in-windows-powershell-desired-state-configuration-resources" class="xliff"></a>
+# <a name="built-in-windows-powershell-desired-state-configuration-resources"></a><span data-ttu-id="623d1-103">Windows PowerShell Desired State Configuration の組み込みリソース</span><span class="sxs-lookup"><span data-stu-id="623d1-103">Built-In Windows PowerShell Desired State Configuration Resources</span></span>
 
-# Windows PowerShell Desired State Configuration の組み込みリソース
+> <span data-ttu-id="623d1-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="623d1-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
+<span data-ttu-id="623d1-105">Windows PowerShell Desired State Configuration (DSC) には、一連の組み込み構成リソースが付属しています。</span><span class="sxs-lookup"><span data-stu-id="623d1-105">Windows PowerShell Desired State Configuration (DSC) comes with a set of built-in configuration resources.</span></span> <span data-ttu-id="623d1-106">次の表は、これらのリソースや詳細を説明するトピックへのリンクのアルファベット順の一覧を示します。</span><span class="sxs-lookup"><span data-stu-id="623d1-106">The following table provides an alphabetical list of these resources and links to topics that describe them in detail.</span></span> <span data-ttu-id="623d1-107">追加のリソースを作成する必要がある場合は、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="623d1-107">If you need to create additional resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)</span></span>
 
-Windows PowerShell Desired State Configuration (DSC) には、一連の組み込み構成リソースが付属しています。 次の表は、これらのリソースや詳細を説明するトピックへのリンクのアルファベット順の一覧を示します。 追加のリソースを作成する必要がある場合は、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」を参照してください。
-
-* [アーカイブ リソース](archiveResource.md)
-* [環境リソース](environmentResource.md)
-* [ファイル リソース](fileResource.md)
-* [グループ リソース](groupResource.md)
-* [ログ リソース](logResource.md)
-* [パッケージ リソース](packageResource.md)
-* [レジストリ リソース](registryResource.md)
-* [スクリプト リソース](scriptResource.md)
-* [サービス リソース](serviceResource.md)
-* [ユーザー リソース](userResource.md)
-* [WindowsFeature リソース](windowsfeatureResource.md)
-* [WindowsProcess リソース](windowsProcessResource.md)
+* [<span data-ttu-id="623d1-108">アーカイブ リソース</span><span class="sxs-lookup"><span data-stu-id="623d1-108">Archive Resource</span></span>](archiveResource.md)
+* [<span data-ttu-id="623d1-109">環境リソース</span><span class="sxs-lookup"><span data-stu-id="623d1-109">Environment Resource</span></span>](environmentResource.md)
+* [<span data-ttu-id="623d1-110">ファイル リソース</span><span class="sxs-lookup"><span data-stu-id="623d1-110">File Resource</span></span>](fileResource.md)
+* [<span data-ttu-id="623d1-111">グループ リソース</span><span class="sxs-lookup"><span data-stu-id="623d1-111">Group Resource</span></span>](groupResource.md)
+* [<span data-ttu-id="623d1-112">ログ リソース</span><span class="sxs-lookup"><span data-stu-id="623d1-112">Log Resource</span></span>](logResource.md)
+* [<span data-ttu-id="623d1-113">パッケージ リソース</span><span class="sxs-lookup"><span data-stu-id="623d1-113">Package Resource</span></span>](packageResource.md)
+* [<span data-ttu-id="623d1-114">レジストリ リソース</span><span class="sxs-lookup"><span data-stu-id="623d1-114">Registry Resource</span></span>](registryResource.md)
+* [<span data-ttu-id="623d1-115">スクリプト リソース</span><span class="sxs-lookup"><span data-stu-id="623d1-115">Script Resource</span></span>](scriptResource.md)
+* [<span data-ttu-id="623d1-116">サービス リソース</span><span class="sxs-lookup"><span data-stu-id="623d1-116">Service Resource</span></span>](serviceResource.md)
+* [<span data-ttu-id="623d1-117">ユーザー リソース</span><span class="sxs-lookup"><span data-stu-id="623d1-117">User Resource</span></span>](userResource.md)
+* [<span data-ttu-id="623d1-118">WindowsFeature リソース</span><span class="sxs-lookup"><span data-stu-id="623d1-118">WindowsFeature Resource</span></span>](windowsfeatureResource.md)
+* [<span data-ttu-id="623d1-119">WindowsProcess リソース</span><span class="sxs-lookup"><span data-stu-id="623d1-119">WindowsProcess Resource</span></span>](windowsProcessResource.md)
 

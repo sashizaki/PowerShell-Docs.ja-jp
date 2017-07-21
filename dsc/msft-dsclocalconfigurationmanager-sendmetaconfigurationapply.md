@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
+# <a name="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="d07a2-103">MSFT_DSCLocalConfigurationManager クラスの SendMetaConfigurationApply メソッド</span><span class="sxs-lookup"><span data-stu-id="d07a2-103">SendMetaConfigurationApply method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-# MSFT_DSCLocalConfigurationManager クラスの SendMetaConfigurationApply メソッド
+<span data-ttu-id="d07a2-104">構成エージェントを制御するために使用するローカル構成マネージャーの設定を設定します。</span><span class="sxs-lookup"><span data-stu-id="d07a2-104">Sets the Local Configuration Manager settings that are used to control the Configuration Agent.</span></span>
 
-構成エージェントを制御するために使用するローカル構成マネージャーの設定を設定します。
-
-<a id="syntax" class="xliff"></a>
-
-構文
+<a name="syntax"></a><span data-ttu-id="d07a2-105">構文</span><span class="sxs-lookup"><span data-stu-id="d07a2-105">Syntax</span></span>
 ------
 
 ```mof
@@ -28,45 +24,35 @@ uint32 SendMetaConfigurationApply(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-
-パラメーター
+<a name="parameters"></a><span data-ttu-id="d07a2-106">パラメーター</span><span class="sxs-lookup"><span data-stu-id="d07a2-106">Parameters</span></span>
 ----------
 
-*ConfigurationData* \[in\]  
-構成用の環境データ。
+<span data-ttu-id="d07a2-107">*ConfigurationData* \[in\]</span><span class="sxs-lookup"><span data-stu-id="d07a2-107">*ConfigurationData* \[in\]</span></span>  
+<span data-ttu-id="d07a2-108">構成用の環境データ。</span><span class="sxs-lookup"><span data-stu-id="d07a2-108">The environment data for the configuration.</span></span>
 
-*force* \[in\]  
-**true** の場合、構成を強制的に中止します。
+<span data-ttu-id="d07a2-109">*force* \[in\]</span><span class="sxs-lookup"><span data-stu-id="d07a2-109">*force* \[in\]</span></span>  
+<span data-ttu-id="d07a2-110">**true** の場合、構成を強制的に中止します。</span><span class="sxs-lookup"><span data-stu-id="d07a2-110">**true** to force the configuration to stop.</span></span>
 
-<a id="return-value" class="xliff"></a>
-
-## 戻り値
+## <a name="return-value"></a><span data-ttu-id="d07a2-111">戻り値</span><span class="sxs-lookup"><span data-stu-id="d07a2-111">Return value</span></span>
 ------------
 
-成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
+<span data-ttu-id="d07a2-112">成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。</span><span class="sxs-lookup"><span data-stu-id="d07a2-112">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
+## <a name="remarks"></a><span data-ttu-id="d07a2-113">コメント</span><span class="sxs-lookup"><span data-stu-id="d07a2-113">Remarks</span></span>
 
-## コメント
+<span data-ttu-id="d07a2-114">これは静的メソッドです。</span><span class="sxs-lookup"><span data-stu-id="d07a2-114">This is a static method.</span></span>
 
-これは静的メソッドです。
-
-<a id="requirements" class="xliff"></a>
-
-## 要件
+## <a name="requirements"></a><span data-ttu-id="d07a2-115">要件</span><span class="sxs-lookup"><span data-stu-id="d07a2-115">Requirements</span></span>
 ------------
->**MOF:** DscCore.mof
+><span data-ttu-id="d07a2-116">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="d07a2-116">**MOF:** DscCore.mof</span></span>
 
->**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-
-## 関連項目
+><span data-ttu-id="d07a2-117">**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="d07a2-117">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="d07a2-118">関連項目</span><span class="sxs-lookup"><span data-stu-id="d07a2-118">See also</span></span>
+
+
+[<span data-ttu-id="d07a2-119">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="d07a2-119">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

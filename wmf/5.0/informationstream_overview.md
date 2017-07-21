@@ -9,11 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="information-stream" class="xliff"></a>
+# <a name="information-stream"></a><span data-ttu-id="89d82-102">情報ストリーム</span><span class="sxs-lookup"><span data-stu-id="89d82-102">Information Stream</span></span>
 
-# 情報ストリーム
-
-新しい構造化された情報ストリームは、スクリプトとそのホストの間で構造化データを転送するために利用できます。 **Write-Host** が更新され、情報ストリームに送った出力をキャプチャしたり、サイレント状態にしたりできるようになりました。 新しい **Write-Information** コマンドレット (およびそれに対応する WriteInformation API) を共通パラメーター **-InformationVariable** および **-InformationAction** と一緒に使うと、柔軟性と機能が向上します。
+<span data-ttu-id="89d82-103">新しい構造化された情報ストリームは、スクリプトとそのホストの間で構造化データを転送するために利用できます。</span><span class="sxs-lookup"><span data-stu-id="89d82-103">A new structured Information stream can now be used to transmit structured data between a script and its host.</span></span> <span data-ttu-id="89d82-104">**Write-Host** が更新され、情報ストリームに送った出力をキャプチャしたり、サイレント状態にしたりできるようになりました。</span><span class="sxs-lookup"><span data-stu-id="89d82-104">**Write-Host** has also been updated to emit its output to the Information stream where you can now capture or silence it.</span></span> <span data-ttu-id="89d82-105">新しい **Write-Information** コマンドレット (およびそれに対応する WriteInformation API) を共通パラメーター **-InformationVariable** および **-InformationAction** と一緒に使うと、柔軟性と機能が向上します。</span><span class="sxs-lookup"><span data-stu-id="89d82-105">The new **Write-Information** cmdlet (along with a corresponding WriteInformation API) used with **-InformationVariable** and **-InformationAction** common parameters enables more flexibility and capability.</span></span>
 
 ```powershell
 PS C:\Users\demo> ## Here's a typical PowerShell script

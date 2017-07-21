@@ -9,21 +9,15 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="interact-with-symbolic-links-using-improved-item-cmdlets" class="xliff"></a>
+# <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a><span data-ttu-id="9e19e-102">機能を強化された Item コマンドレットを使ってシンボリック リンクを操作する</span><span class="sxs-lookup"><span data-stu-id="9e19e-102">Interact with Symbolic links using improved Item cmdlets</span></span>
 
-# 機能を強化された Item コマンドレットを使ってシンボリック リンクを操作する
+<span data-ttu-id="9e19e-103">シンボリック リンクをサポートするために、**\*-Item** コマンドレットや、関連するいくつかのコマンドレットが拡張されました。</span><span class="sxs-lookup"><span data-stu-id="9e19e-103">To support symbolic links, **\*-Item** and a few related cmdlets have been extended.</span></span> <span data-ttu-id="9e19e-104">シンボリック リンクは、**New-item** を使った簡単な 1 つの行で作成できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="9e19e-104">Now you can create symbolic links in a single, simple line with **New-Item**.</span></span> <span data-ttu-id="9e19e-105">Item 関連のコマンドレット (**Remove-item、Get-ChildItem**) は、従来と非常によく似た動作になっています。</span><span class="sxs-lookup"><span data-stu-id="9e19e-105">You’ll notice that the Item-related cmdlets (**Remove-Item, Get-ChildItem**) behave very similarly to before.</span></span>
 
-シンボリック リンクをサポートするために、**\*-Item** コマンドレットや、関連するいくつかのコマンドレットが拡張されました。 シンボリック リンクは、**New-item** を使った簡単な 1 つの行で作成できるようになりました。 Item 関連のコマンドレット (**Remove-item、Get-ChildItem**) は、従来と非常によく似た動作になっています。
+<span data-ttu-id="9e19e-106">新機能の用途を次に示します。</span><span class="sxs-lookup"><span data-stu-id="9e19e-106">The following shows some use cases of the new capabilities:</span></span>
 
-新機能の用途を次に示します。
+## <a name="new-item"></a><span data-ttu-id="9e19e-107">New-Item</span><span class="sxs-lookup"><span data-stu-id="9e19e-107">NEW-ITEM</span></span>
 
-<a id="new-item" class="xliff"></a>
-
-## New-Item
-
-<a id="symbolic-link-files" class="xliff"></a>
-
-### シンボリック リンク ファイル
+### <a name="symbolic-link-files"></a><span data-ttu-id="9e19e-108">シンボリック リンク ファイル</span><span class="sxs-lookup"><span data-stu-id="9e19e-108">SYMBOLIC LINK FILES</span></span>
 
 ```powershell
 # Create a new symbolic link file named MySymLinkFile.txt in C:\Temp which links to $pshome\profile.ps1
@@ -37,9 +31,7 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkFile.txt -Value $pshome\p
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkFile.txt -Value $pshome\profile.ps1
 ```
 
-<a id="symbolic-link-directories" class="xliff"></a>
-
-### シンボリック リンク ディレクトリ
+### <a name="symbolic-link-directories"></a><span data-ttu-id="9e19e-109">シンボリック リンク ディレクトリ</span><span class="sxs-lookup"><span data-stu-id="9e19e-109">SYMBOLIC LINK DIRECTORIES</span></span>
 
 ```powershell
 # Create a new symbolic link directory named MySymLinkDir in C:\Temp which links to the $pshome folder
@@ -54,27 +46,21 @@ New-Item -ItemType SymbolicLink -Path C:\Temp\MySymLinkDir -Value $pshome
 New-Item -ItemType SymbolicLink -Name C:\Temp\MySymLinkDir -Value $pshome
 ```
 
-<a id="hard-links" class="xliff"></a>
-
-### ハード リンク
+### <a name="hard-links"></a><span data-ttu-id="9e19e-110">ハード リンク</span><span class="sxs-lookup"><span data-stu-id="9e19e-110">HARD LINKS</span></span>
 
 ```powershell
 New-Item -ItemType HardLink -Path C:\Temp -Name MyHardLinkFile.txt -Value $pshome\profile.ps1
 # Same combinations of Path and Name allowed as described above
 ```
 
-<a id="directory-junctions" class="xliff"></a>
-
-### ディレクトリ ジャンクション
+### <a name="directory-junctions"></a><span data-ttu-id="9e19e-111">ディレクトリ ジャンクション</span><span class="sxs-lookup"><span data-stu-id="9e19e-111">DIRECTORY JUNCTIONS</span></span>
 
 ```powershell
 New-Item -ItemType Junction -Path C:\Temp\MyJunctionDir -Value $pshome
 # Same combinations of Path and Name allowed as described above
 ```
 
-<a id="get-childitem" class="xliff"></a>
-
-## Get-ChildItem
+## <a name="get-childitem"></a><span data-ttu-id="9e19e-112">Get-ChildItem</span><span class="sxs-lookup"><span data-stu-id="9e19e-112">GET-CHILDITEM</span></span>
 
 ```powershell
 # Append link type column to Mode property and display with Get-ChildItem
@@ -125,9 +111,7 @@ SpecialBuild: False
 Language:
 ```
 
-<a id="remove-item" class="xliff"></a>
-
-## Remove-Item
+## <a name="remove-item"></a><span data-ttu-id="9e19e-113">Remove-Item</span><span class="sxs-lookup"><span data-stu-id="9e19e-113">REMOVE-ITEM</span></span>
 
 ```powershell
 # Works like any other item type

@@ -9,10 +9,8 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="updates-to-fileinfo-object" class="xliff"></a>
-
-# FileInfo オブジェクトの更新
-ファイルのバージョン情報は、特にファイルにパッチが適用された場合に、解釈を間違えやすいデータです。 今回の WMF 5.0 リリースでは、FileInfo オブジェクトに新しいスクリプト プロパティとして **FileVersionRaw** および **ProductVersionRaw** が追加されました。 powershell.exe に対して表示されるプロパティを次に示します ($pid は PowerShell プロセスの ID であるとします)。
+# <a name="updates-to-fileinfo-object"></a><span data-ttu-id="eeba5-102">FileInfo オブジェクトの更新</span><span class="sxs-lookup"><span data-stu-id="eeba5-102">Updates to FileInfo object</span></span>
+<span data-ttu-id="eeba5-103">ファイルのバージョン情報は、特にファイルにパッチが適用された場合に、解釈を間違えやすいデータです。</span><span class="sxs-lookup"><span data-stu-id="eeba5-103">File version information can be misleading, particularly in cases where the file was patched.</span></span> <span data-ttu-id="eeba5-104">今回の WMF 5.0 リリースでは、FileInfo オブジェクトに新しいスクリプト プロパティとして **FileVersionRaw** および **ProductVersionRaw** が追加されました。</span><span class="sxs-lookup"><span data-stu-id="eeba5-104">This release of WMF 5.0 adds new **FileVersionRaw** and **ProductVersionRaw** script properties to FileInfo objects.</span></span> <span data-ttu-id="eeba5-105">powershell.exe に対して表示されるプロパティを次に示します ($pid は PowerShell プロセスの ID であるとします)。</span><span class="sxs-lookup"><span data-stu-id="eeba5-105">Here are the properties as displayed for powershell.exe (assuming $pid is the ID of the PowerShell process):</span></span>
 
 ```powershell
 PS C:\> Get-Process -Id $pid -FileVersionInfo | fl *version* -Force

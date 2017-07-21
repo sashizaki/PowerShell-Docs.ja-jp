@@ -10,44 +10,32 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-modulemanifest" class="xliff"></a>
+# <a name="update-modulemanifest"></a><span data-ttu-id="c982a-103">Update-ModuleManifest</span><span class="sxs-lookup"><span data-stu-id="c982a-103">Update-ModuleManifest</span></span>
+<span data-ttu-id="c982a-104">モジュール マニフェスト ファイルを更新します。</span><span class="sxs-lookup"><span data-stu-id="c982a-104">Updates a module manifest file.</span></span>
 
-# Update-ModuleManifest
-モジュール マニフェスト ファイルを更新します。
+## <a name="description"></a><span data-ttu-id="c982a-105">説明</span><span class="sxs-lookup"><span data-stu-id="c982a-105">Description</span></span>
 
-<a id="description" class="xliff"></a>
+<span data-ttu-id="c982a-106">Update-ModuleManifest コマンドレットは、モジュール マニフェスト (.psd1) ファイルを更新します。</span><span class="sxs-lookup"><span data-stu-id="c982a-106">The Update-ModuleManifest cmdlet updates a module manifest (.psd1) file.</span></span>
 
-## 説明
+### <a name="notes"></a><span data-ttu-id="c982a-107">メモ</span><span class="sxs-lookup"><span data-stu-id="c982a-107">Notes</span></span>
+    - <span data-ttu-id="c982a-108">DscResourcesToExport は、最新の PowerShell バージョン 5.0 でのみサポートされています。</span><span class="sxs-lookup"><span data-stu-id="c982a-108">DscResourcesToExport is only supported on the latest PowerShell version 5.0.</span></span> <span data-ttu-id="c982a-109">これよりも低いバージョンの PowerShell で実行する場合は、このフィールドを更新できません。</span><span class="sxs-lookup"><span data-stu-id="c982a-109">We won’t be able to update the field if you are running on lower versions of PowerShell.</span></span>
 
-Update-ModuleManifest コマンドレットは、モジュール マニフェスト (.psd1) ファイルを更新します。
-
-<a id="notes" class="xliff"></a>
-
-### メモ
-    - DscResourcesToExport は、最新の PowerShell バージョン 5.0 でのみサポートされています。 これよりも低いバージョンの PowerShell で実行する場合は、このフィールドを更新できません。
-
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a><span data-ttu-id="c982a-110">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="c982a-110">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Update-ModuleManifest -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="c982a-111">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="c982a-111">Cmdlet online help reference</span></span>
 
-## コマンドレット オンライン ヘルプ リファレンス
+[<span data-ttu-id="c982a-112">Update-ModuleManifest</span><span class="sxs-lookup"><span data-stu-id="c982a-112">Update-ModuleManifest</span></span>](http://go.microsoft.com/fwlink/?LinkId=619311)
 
-[Update-ModuleManifest](http://go.microsoft.com/fwlink/?LinkId=619311)
+## <a name="example-commands"></a><span data-ttu-id="c982a-113">コマンド例</span><span class="sxs-lookup"><span data-stu-id="c982a-113">Example commands</span></span>
 
-<a id="example-commands" class="xliff"></a>
+<span data-ttu-id="c982a-114">この新しいコマンドレットを使用して、入力プロパティ値でマニフェスト ファイルを更新します。</span><span class="sxs-lookup"><span data-stu-id="c982a-114">This new cmdlet is used to help update manifest file with input property values.</span></span> <span data-ttu-id="c982a-115">このコマンドレットは、New-ModuleManifest が受け取るすべてのパラメーターを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="c982a-115">It takes all parameters that New-ModuleManifest does.</span></span>
 
-## コマンド例
+<span data-ttu-id="c982a-116">多数のモジュール作成者は FunctionsToExport、CmdletsToExport などのエクスポートされた値に "\*" を指定します。PowerShell ギャラリーへのモジュールの発行時に、指定されていない関数やコマンドはギャラリーに正しく設定されません。</span><span class="sxs-lookup"><span data-stu-id="c982a-116">We notice that a lot of module authors would like to specify “\*” in exported values such as FunctionsToExport, CmdletsToExport, etc. During module publishing to PowerShell Gallery, unspecified functions and commands will not be populated properly onto the Gallery.</span></span> <span data-ttu-id="c982a-117">このため、モジュール作成者はマニフェストを適切な値で更新することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="c982a-117">Therefore, we suggest module authors update their manifests with proper values.</span></span>
 
-この新しいコマンドレットを使用して、入力プロパティ値でマニフェスト ファイルを更新します。 このコマンドレットは、New-ModuleManifest が受け取るすべてのパラメーターを受け取ります。
-
-多数のモジュール作成者は FunctionsToExport、CmdletsToExport などのエクスポートされた値に "\*" を指定します。PowerShell ギャラリーへのモジュールの発行時に、指定されていない関数やコマンドはギャラリーに正しく設定されません。 このため、モジュール作成者はマニフェストを適切な値で更新することをお勧めします。
-
-プロパティをエクスポートしたモジュールがある場合は、Update-ModuleManifest によって、エクスポートされた関数、コマンドレット、変数などの情報を指定されたマニフェスト ファイルに入力します。
+<span data-ttu-id="c982a-118">プロパティをエクスポートしたモジュールがある場合は、Update-ModuleManifest によって、エクスポートされた関数、コマンドレット、変数などの情報を指定されたマニフェスト ファイルに入力します。</span><span class="sxs-lookup"><span data-stu-id="c982a-118">If you have modules that have exported properties, Update-ModuleManifest will fill the specified manifest file with information from exported functions, cmdlets, variables etc:</span></span>
 ```powershell
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 @{
@@ -71,7 +59,7 @@ AliasesToExport = '*'
 }
 ```
 
-Update-ModuleManifest の後:
+<span data-ttu-id="c982a-119">Update-ModuleManifest の後:</span><span class="sxs-lookup"><span data-stu-id="c982a-119">After Update-ModuleManifest:</span></span>
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
 Get-Content -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1"
@@ -96,13 +84,13 @@ CmdletsToExport = 'Test-PSGetTestCmdlet'
 }
 ```
 
-各モジュールに、関連付けられているメタデータ フィールドもあります。 PowrShell ギャラリーでメタデータを正しく表示するためには、Update-ModuleManifest を使用して PrivateData でこれらのフィールドに入力できます。
+<span data-ttu-id="c982a-120">各モジュールに、関連付けられているメタデータ フィールドもあります。</span><span class="sxs-lookup"><span data-stu-id="c982a-120">For each module, there are also metadata fields associated with it.</span></span> <span data-ttu-id="c982a-121">PowrShell ギャラリーでメタデータを正しく表示するためには、Update-ModuleManifest を使用して PrivateData でこれらのフィールドに入力できます。</span><span class="sxs-lookup"><span data-stu-id="c982a-121">In order to display metadata properly on PowrShell Gallery, you can use Update-ModuleManifest to populate those fields under PrivateData.</span></span>
 
 ```powershell
 Update-ModuleManifest -Path "C:\Temp\PSGTEST-TestPackageMetadata\2.5\PSGTEST-TestPackageMetadata.psd1" -Tags "Tag1" -LicenseUri "http://license.com" -ProjectUri "http://project.com" -IconUri "http://icon.com" -ReleaseNotes "Test module"
 ```
 
-マニフェスト ファイル テンプレートからの PrivateData ハッシュ テーブルには、次のプロパティがあります
+<span data-ttu-id="c982a-122">マニフェスト ファイル テンプレートからの PrivateData ハッシュ テーブルには、次のプロパティがあります</span><span class="sxs-lookup"><span data-stu-id="c982a-122">PrivateData hashtable from the manifest file template has the following properties</span></span>
 
 ```powershell
 # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.

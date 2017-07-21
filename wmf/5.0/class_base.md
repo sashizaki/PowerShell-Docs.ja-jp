@@ -9,10 +9,8 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="declare-base-class" class="xliff"></a>
-
-# 基本クラスの宣言
-Windows PowerShell クラスを別の Windows PowerShell クラスの基本型として宣言できます。
+# <a name="declare-base-class"></a><span data-ttu-id="c597f-102">基本クラスの宣言</span><span class="sxs-lookup"><span data-stu-id="c597f-102">Declare Base Class</span></span>
+<span data-ttu-id="c597f-103">Windows PowerShell クラスを別の Windows PowerShell クラスの基本型として宣言できます。</span><span class="sxs-lookup"><span data-stu-id="c597f-103">You can declare a Windows PowerShell class as a base type for another Windows PowerShell class.</span></span>
 
 ```PowerShell
 class bar
@@ -28,7 +26,7 @@ class baz : bar {}
 [baz]::new().foo() # return 100500
 ```
 
-既存の .NET Framework 型を基本クラスとして使用することもできます。
+<span data-ttu-id="c597f-104">既存の .NET Framework 型を基本クラスとして使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="c597f-104">You can also use existing .NET Framework types as base classes:</span></span>
 
 ```PowerShell
 class MyIntList : system.collections.generic.list[int]

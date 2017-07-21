@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
+# <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="ea079-103">MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApplyAsync メソッド</span><span class="sxs-lookup"><span data-stu-id="ea079-103">SendConfigurationApplyAsync method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-# MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApplyAsync メソッド
+<span data-ttu-id="ea079-104">構成ドキュメントを管理ノードに非同期的に送信し、構成エージェントを使用して構成を適用します。</span><span class="sxs-lookup"><span data-stu-id="ea079-104">Sends the configuration document asynchronously to the managed node and uses the Configuration Agent to apply the configuration.</span></span>
 
-構成ドキュメントを管理ノードに非同期的に送信し、構成エージェントを使用して構成を適用します。
-
-<a id="syntax" class="xliff"></a>
-
-構文
+<a name="syntax"></a><span data-ttu-id="ea079-105">構文</span><span class="sxs-lookup"><span data-stu-id="ea079-105">Syntax</span></span>
 ------
 
 ```mof
@@ -29,48 +25,38 @@ uint32 SendConfigurationApplyAsync(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-
-パラメーター
+<a name="parameters"></a><span data-ttu-id="ea079-106">パラメーター</span><span class="sxs-lookup"><span data-stu-id="ea079-106">Parameters</span></span>
 ----------
 
-*ConfigurationData* \[in\]  
-構成用の環境データ。
+<span data-ttu-id="ea079-107">*ConfigurationData* \[in\]</span><span class="sxs-lookup"><span data-stu-id="ea079-107">*ConfigurationData* \[in\]</span></span>  
+<span data-ttu-id="ea079-108">構成用の環境データ。</span><span class="sxs-lookup"><span data-stu-id="ea079-108">The environment data for the configuration.</span></span>
 
-*force* \[in\]  
-**true** の場合、構成を強制的に中止します。
+<span data-ttu-id="ea079-109">*force* \[in\]</span><span class="sxs-lookup"><span data-stu-id="ea079-109">*force* \[in\]</span></span>  
+<span data-ttu-id="ea079-110">**true** の場合、構成を強制的に中止します。</span><span class="sxs-lookup"><span data-stu-id="ea079-110">**true** to force the configuration to stop.</span></span>
 
-*jobId* \[in\]  
-構成を送信するジョブの ID です。
+<span data-ttu-id="ea079-111">*jobId* \[in\]</span><span class="sxs-lookup"><span data-stu-id="ea079-111">*jobId* \[in\]</span></span>  
+<span data-ttu-id="ea079-112">構成を送信するジョブの ID です。</span><span class="sxs-lookup"><span data-stu-id="ea079-112">The ID of the job for which to send the configuration.</span></span>
 
-<a id="return-value" class="xliff"></a>
-
-## 戻り値
+## <a name="return-value"></a><span data-ttu-id="ea079-113">戻り値</span><span class="sxs-lookup"><span data-stu-id="ea079-113">Return value</span></span>
 ------------
 
-成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
+<span data-ttu-id="ea079-114">成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。</span><span class="sxs-lookup"><span data-stu-id="ea079-114">Returns zero on success; otherwise returns an error code.</span></span>
 
-<a id="remarks" class="xliff"></a>
+## <a name="remarks"></a><span data-ttu-id="ea079-115">コメント</span><span class="sxs-lookup"><span data-stu-id="ea079-115">Remarks</span></span>
 
-## コメント
+<span data-ttu-id="ea079-116">これは静的メソッドです。</span><span class="sxs-lookup"><span data-stu-id="ea079-116">This is a static method.</span></span>
 
-これは静的メソッドです。
-
-<a id="requirements" class="xliff"></a>
-
-## 要件
+## <a name="requirements"></a><span data-ttu-id="ea079-117">要件</span><span class="sxs-lookup"><span data-stu-id="ea079-117">Requirements</span></span>
 ------------
->**MOF:** DscCore.mof
+><span data-ttu-id="ea079-118">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="ea079-118">**MOF:** DscCore.mof</span></span>
 
->**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
-
-
-<a id="see-also" class="xliff"></a>
-
-## 関連項目
+><span data-ttu-id="ea079-119">**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="ea079-119">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="ea079-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="ea079-120">See also</span></span>
+
+
+[<span data-ttu-id="ea079-121">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="ea079-121">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
 
 
  

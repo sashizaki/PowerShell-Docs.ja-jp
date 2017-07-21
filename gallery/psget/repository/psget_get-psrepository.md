@@ -10,36 +10,26 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="get-psrepository" class="xliff"></a>
+# <a name="get-psrepository"></a><span data-ttu-id="f5c90-103">Get-PSRepository</span><span class="sxs-lookup"><span data-stu-id="f5c90-103">Get-PSRepository</span></span>
 
-# Get-PSRepository
+<span data-ttu-id="f5c90-104">コンピューター上の登録されているリポジトリを取得します。</span><span class="sxs-lookup"><span data-stu-id="f5c90-104">Gets the registered repositories on a computer.</span></span>
 
-コンピューター上の登録されているリポジトリを取得します。
+## <a name="description"></a><span data-ttu-id="f5c90-105">説明</span><span class="sxs-lookup"><span data-stu-id="f5c90-105">Description</span></span>
 
-<a id="description" class="xliff"></a>
+<span data-ttu-id="f5c90-106">Get-PSRepository コマンドレットでは、コンピューター上の現在のユーザーに対して登録されている PowerShell モジュール リポジトリを取得します。</span><span class="sxs-lookup"><span data-stu-id="f5c90-106">The Get-PSRepository cmdlet gets PowerShell module repositories that are registered for the current user on a computer.</span></span>
 
-## 説明
+<span data-ttu-id="f5c90-107">登録されている各リポジトリに対して、Get-PSRepository は PSRepository オブジェクトを返します。これは必要に応じて登録済みのリポジトリの登録を解除するための Unregister-PSRepository にパイプできます。</span><span class="sxs-lookup"><span data-stu-id="f5c90-107">For each registered repository, Get-PSRepository returns a PSRepository object which can optionally be piped to Unregister-PSRepository for unregistering a registered repository.</span></span>
 
-Get-PSRepository コマンドレットでは、コンピューター上の現在のユーザーに対して登録されている PowerShell モジュール リポジトリを取得します。
-
-登録されている各リポジトリに対して、Get-PSRepository は PSRepository オブジェクトを返します。これは必要に応じて登録済みのリポジトリの登録を解除するための Unregister-PSRepository にパイプできます。
-
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a><span data-ttu-id="f5c90-108">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="f5c90-108">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Get-PSRepository -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="f5c90-109">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="f5c90-109">Cmdlet online help reference</span></span>
 
-## コマンドレット オンライン ヘルプ リファレンス
+[<span data-ttu-id="f5c90-110">Get-PSRepository</span><span class="sxs-lookup"><span data-stu-id="f5c90-110">Get-PSRepository</span></span>](http://go.microsoft.com/fwlink/?LinkID=517127)
 
-[Get-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517127)
-
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a><span data-ttu-id="f5c90-111">コマンド例</span><span class="sxs-lookup"><span data-stu-id="f5c90-111">Example commands</span></span>
 
 ```powershell
 
