@@ -165,7 +165,7 @@ get-help add-computer
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-ヘルプ トピックのオンライン サポートを提供する方法については、「[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)」および MSDN (Microsoft Developer Network) ライブラリの「[How to Write Cmdlet Help (コマンドレット ヘルプの記述方法)](http://go.microsoft.com/fwlink/?LinkID=123415)」(http://go.microsoft.com/fwlink/?LinkID=123415) をご覧ください。
+ヘルプ トピックのオンライン サポートを提供する方法については、「[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)」および MSDN (Microsoft Developer Network) ライブラリの「[How to Write Cmdlet Help (コマンドレット ヘルプの記述方法)](http://go.microsoft.com/fwlink/?LinkID=123415)」\(http://go.microsoft.com/fwlink/?LinkID=123415) をご覧ください。
 
 ## <a name="see-also"></a>参照
 - [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)
