@@ -1,29 +1,12 @@
-## <a name="microsoft-open-source-code-of-conduct"></a>Microsoft オープン ソース倫理規定
+<span data-ttu-id="6f9c4-101">[![ビルドの状態](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)</span><span class="sxs-lookup"><span data-stu-id="6f9c4-101">[![Build status](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)</span></span>
 
-このプロジェクトは [Microsoft オープン ソース論理規定](https://opensource.microsoft.com/codeofconduct/)を採用しています。
-詳細については[論理規定についてのよくある質問](https://opensource.microsoft.com/codeofconduct/faq/)をご覧ください。また、追加の質問やコメントがある場合は[opencode@microsoft.com](mailto:opencode@microsoft.com)にお問い合わせください。
+# <a name="powershell-documentation"></a><span data-ttu-id="6f9c4-102">PowerShell ドキュメント</span><span class="sxs-lookup"><span data-stu-id="6f9c4-102">PowerShell Documentation</span></span>
 
-[![ビルドの状態](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)
+<span data-ttu-id="6f9c4-103">PowerShell-Docs へようこそ。PowerShell-Docs は、[MSDN で入手できる](https://msdn.microsoft.com/powershell/dsc/overview)公式の Windows PowerShell ドキュメントが格納されている場所です。</span><span class="sxs-lookup"><span data-stu-id="6f9c4-103">Welcome to the PowerShell-Docs repository, housing the official Windows PowerShell documentation [available on MSDN](https://msdn.microsoft.com/powershell/dsc/overview).</span></span> 
 
-# <a name="powershell-documentation"></a>PowerShell ドキュメント
+> <span data-ttu-id="6f9c4-104">**注**: 現在、このリポジトリは PowerShell [Desired State Configuration (DSC)](https://msdn.microsoft.com/en-us/powershell/dsc/overview) のコンテンツおよび [Windows Management Framework (WMF) のリリース ノート](https://msdn.microsoft.com/en-us/powershell/wmf/releasenotes)専用です。</span><span class="sxs-lookup"><span data-stu-id="6f9c4-104">**Note**: Currently, this repository is intended only for PowerShell [Desired State Configuration (DSC)](https://msdn.microsoft.com/en-us/powershell/dsc/overview) content and [Windows Management Framework (WMF) release notes](https://msdn.microsoft.com/en-us/powershell/wmf/releasenotes).</span></span> <span data-ttu-id="6f9c4-105">今後、このリポジトリはさらに幅広い PowerShell ドキュメントにまで広げる予定です。</span><span class="sxs-lookup"><span data-stu-id="6f9c4-105">In the future, the repo will be expanded to include a wider range of PowerShell documentation.</span></span> 
 
-PowerShell-Docs レポジトリへようこそ。PowerShell-Docs は、公式の Windows PowerShell ドキュメントが格納されている場所です。 
+## <a name="contributing"></a><span data-ttu-id="6f9c4-106">投稿</span><span class="sxs-lookup"><span data-stu-id="6f9c4-106">Contributing</span></span>
 
-## <a name="repository-structure"></a>リポジトリの構造
-このリポジトリ内の各フォルダーは [MSDN](https://msdn.microsoft.com/en-us/powershell) で公開されています。 フォルダーは次の PowerShell アセットに対応しています。
-* [/dsc/](https://msdn.microsoft.com/en-us/powershell/dsc/) は Desired State Configuration の機能に関するフォルダーです
-* [/gallery/](https://msdn.microsoft.com/powershell/gallery) は [PowerShell ギャラリー](https://www.powershellgallery.com/)に関するフォルダーです
-* [/jea/](https://msdn.microsoft.com/powershell/jea/) は Just Enough Administration の機能に関するフォルダーです
-* [/reference/](https://msdn.microsoft.com/powershell/reference/)はバージョン 2.0、3.0、4.0、5.0、5.1、6.0 などの異なるバージョン間での PowerShell モジュールの参照に関するフォルダーです
-  * この内容は将来、`Get-Help` コマンドレットで取得するようになります
-* [/scripting/](https://msdn.microsoft.com/en-us/powershell/scripting/) は一般的なPowerShell リファレンス コンテンツに関するフォルダーです
-* [/wmf](https://msdn.microsoft.com/en-us/powershell/wmf/readme) には Windows Management Framework のリリース ノートと Windows の以前のバージョンに対して PowerShell の新しいバージョンを配布するために使用されるパッケージが含まれています。 
-
-
-
-## <a name="contributing"></a>投稿
-
-[pull 要求](https://help.github.com/articles/using-pull-requests/)を使用して、積極的に投稿をこのリポジトリの*ステージング* ブランチに結合しています。 コミュニティが投稿を自由に使用できるように、pull 要求を送信する前に[投稿の使用許諾契約に署名](https://cla.microsoft.com/)する必要があります。
-投稿の詳細については、[投稿ガイド](CONTRIBUTING.md)を参照してください。
-コントリビューションを作成する前にレビューを行うドラフトの[スタイル ガイド](./STYLE.md)があります。
-異なるバージョン間で一貫性のあるドキュメントを保つため、問題とプル要求のテンプレートを使用してください。 
+<span data-ttu-id="6f9c4-107">[pull 要求](https://help.github.com/articles/using-pull-requests/)を使用して、積極的に投稿をこのリポジトリの*ステージング* ブランチに結合しています。</span><span class="sxs-lookup"><span data-stu-id="6f9c4-107">We actively merge contributions into this repository via [pull request](https://help.github.com/articles/using-pull-requests/) into the *staging* branch.</span></span> <span data-ttu-id="6f9c4-108">コミュニティが投稿を自由に使用できるように、pull 要求を送信する前に[投稿の使用許諾契約に署名](https://cla.microsoft.com/)する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6f9c4-108">Please note that before you submit a pull request you must [sign a Contribution License Agreement](https://cla.microsoft.com/) to ensure that the community is free to use your submissions.</span></span>
+<span data-ttu-id="6f9c4-109">投稿の詳細については、[投稿ガイド](CONTRIBUTING.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="6f9c4-109">For more information on contributing, read our [contributions guide](CONTRIBUTING.md).</span></span>

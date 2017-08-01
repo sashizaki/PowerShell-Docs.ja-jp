@@ -1,81 +1,65 @@
 ---
-title: "WMF 5.1 のインストールと構成"
-ms.date: 2017-01-18
+title: "WMF 5.1 のインストールと構成 (プレビュー)"
+ms.date: 2016-05-16
 keywords: PowerShell, DSC, WMF
 description: 
 ms.topic: article
-contributor: keithb
-manager: carmonm
+contributor: kriscv
+manager: dongill
 ms.prod: powershell
 ms.technology: WMF
-ms.openlocfilehash: 55a2e03385b90c7631d1b0373bf85602aa7d769b
-ms.sourcegitcommit: 267688f61dcc76fd685c1c34a6c7bfd9be582046
-translationtype: HT
+ms.openlocfilehash: 21f26830cdc20a90ce48aa09bc7013d733242ae9
+ms.sourcegitcommit: c732e3ee6d2e0e9cd8c40105d6fbfd4d207b730d
+ms.translationtype: HT
+ms.contentlocale: ja-JP
 ---
-# <a name="install-and-configure-wmf-51"></a>WMF 5.1 のインストールと構成 #
+# <a name="install-and-configure-wmf-51-preview"></a><span data-ttu-id="d01bc-103">WMF 5.1 のインストールと構成 (プレビュー)</span><span class="sxs-lookup"><span data-stu-id="d01bc-103">Install and Configure WMF 5.1 (Preview)</span></span> #
+
+## <a name="install-net-46"></a><span data-ttu-id="d01bc-104">.Net 4.6 のインストール</span><span class="sxs-lookup"><span data-stu-id="d01bc-104">Install .Net 4.6</span></span>
+<span data-ttu-id="d01bc-105">WMF 5.1. を使用するには、.NET Framework 4.6 をインストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d01bc-105">You must install the .NET Framework 4.6 to use WMF 5.1.</span></span> <span data-ttu-id="d01bc-106">インストールを行うには、新しいカタログ署名機能を有効にする必要があります。その場合、WMF 5.1 で読み込まれるモジュールとスクリプトの複数の領域が影響を受けます。</span><span class="sxs-lookup"><span data-stu-id="d01bc-106">This is required to enable the new catalog-signing features, which impacts several areas of module and script loading in WMF 5.1.</span></span> 
+
+<span data-ttu-id="d01bc-107">[.NET Framework 4.6 は、サポート技術情報 3045560 として利用できます](https://support.microsoft.com/en-us/kb/3045560)。</span><span class="sxs-lookup"><span data-stu-id="d01bc-107">The [.NET Framework 4.6 is available as KB 3045560](https://support.microsoft.com/en-us/kb/3045560).</span></span> <span data-ttu-id="d01bc-108">インストール手順については、ダウンロード場所で入手できます。</span><span class="sxs-lookup"><span data-stu-id="d01bc-108">Install instructions are available at the download location.</span></span>
+
+> <span data-ttu-id="d01bc-109">**注:** .Net 4.6 に関する要件が WMF 5.1 プレビュー インストーラーで検出されないことが既知の問題としてわかっています。このため、.NET 4.6 をインストールする前に WMF 5.1 プレビューをインストールできるようになります。</span><span class="sxs-lookup"><span data-stu-id="d01bc-109">**Note:** It is a known issue that .NET 4.6 requirement is not detected by the WMF 5.1 Preview installer, so you will be able to install WMF 5.1 Preview before installing .NET 4.6.</span></span> <span data-ttu-id="d01bc-110">Microsoft のテストによれば、WMF 5.1 プレビューをインストールした後で、.NET 4.6 をインストールすることはできます。</span><span class="sxs-lookup"><span data-stu-id="d01bc-110">Our testing has shown that you can install .NET 4.6 after installing the WMF 5.1 Preview.</span></span> <span data-ttu-id="d01bc-111">WMF 5.1 の最終バージョンでは、インストールの前に、この必要条件が満たされているか正確に確認します。</span><span class="sxs-lookup"><span data-stu-id="d01bc-111">The final version of WMF 5.1 will correctly check this prerequisite requirement before installing.</span></span> 
+
+## <a name="download-and-install-the-wmf-51-preview"></a><span data-ttu-id="d01bc-112">WMF 5.1 プレビューのダウンロードとインストール</span><span class="sxs-lookup"><span data-stu-id="d01bc-112">Download and install the WMF 5.1 Preview</span></span>
+
+<span data-ttu-id="d01bc-113">インストールするオペレーティング システムとアーキテクチャに合わせて WMF 5.1 パッケージをダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="d01bc-113">Download the WMF 5.1 package for the operating system and architecture you wish to install it on:</span></span>
+
+| <span data-ttu-id="d01bc-114">オペレーティング システム</span><span class="sxs-lookup"><span data-stu-id="d01bc-114">Operating System</span></span>       | <span data-ttu-id="d01bc-115">前提条件</span><span class="sxs-lookup"><span data-stu-id="d01bc-115">Prerequisites</span></span> | <span data-ttu-id="d01bc-116">パッケージ リンク</span><span class="sxs-lookup"><span data-stu-id="d01bc-116">Package Links</span></span>             |
+|------------------------|---------------|---------------------------|
+| <span data-ttu-id="d01bc-117">Windows Server 2012 R2</span><span class="sxs-lookup"><span data-stu-id="d01bc-117">Windows Server 2012 R2</span></span> | [<span data-ttu-id="d01bc-118">.NET Framework 4.6</span><span class="sxs-lookup"><span data-stu-id="d01bc-118">.NET Framework 4.6</span></span>](https://support.microsoft.com/en-us/kb/3045560) | [<span data-ttu-id="d01bc-119">Win8.1AndW2K12R2-KB3156422-x64.msu</span><span class="sxs-lookup"><span data-stu-id="d01bc-119">Win8.1AndW2K12R2-KB3156422-x64.msu</span></span>](http://go.microsoft.com/fwlink/?LinkID=823586)|
+| <span data-ttu-id="d01bc-120">Windows Server 2012</span><span class="sxs-lookup"><span data-stu-id="d01bc-120">Windows Server 2012</span></span>    | [<span data-ttu-id="d01bc-121">.NET Framework 4.6</span><span class="sxs-lookup"><span data-stu-id="d01bc-121">.NET Framework 4.6</span></span>](https://support.microsoft.com/en-us/kb/3045560) | [<span data-ttu-id="d01bc-122">W2K12-KB3156423-x64.msu</span><span class="sxs-lookup"><span data-stu-id="d01bc-122">W2K12-KB3156423-x64.msu</span></span>](http://go.microsoft.com/fwlink/?LinkID=823587)|
+| <span data-ttu-id="d01bc-123">Windows Server 2008 R2</span><span class="sxs-lookup"><span data-stu-id="d01bc-123">Windows Server 2008 R2</span></span> | [<span data-ttu-id="d01bc-124">.NET Framework 4.6</span><span class="sxs-lookup"><span data-stu-id="d01bc-124">.NET Framework 4.6</span></span>](https://support.microsoft.com/en-us/kb/3045560) </br> [<span data-ttu-id="d01bc-125">WMF 4.0</span><span class="sxs-lookup"><span data-stu-id="d01bc-125">WMF 4.0</span></span>](http://www.microsoft.com/en-us/download/details.aspx?id=40855) </br> <span data-ttu-id="d01bc-126">[SHA-2 コード署名](https://technet.microsoft.com/en-us/library/security/3033929)用のセキュリティ更新プログラム</span><span class="sxs-lookup"><span data-stu-id="d01bc-126">Security update for [SHA-2 Code Signing](https://technet.microsoft.com/en-us/library/security/3033929)</span></span> | [<span data-ttu-id="d01bc-127">Win7AndW2K8R2-KB3156424-x64.msu</span><span class="sxs-lookup"><span data-stu-id="d01bc-127">Win7AndW2K8R2-KB3156424-x64.msu</span></span>](http://go.microsoft.com/fwlink/?LinkID=823588) |
+| <span data-ttu-id="d01bc-128">Windows 8.1</span><span class="sxs-lookup"><span data-stu-id="d01bc-128">Windows 8.1</span></span>            | [<span data-ttu-id="d01bc-129">.NET Framework 4.6</span><span class="sxs-lookup"><span data-stu-id="d01bc-129">.NET Framework 4.6</span></span>](https://support.microsoft.com/en-us/kb/3045560) | <span data-ttu-id="d01bc-130">**x64:** [Win8.1AndW2K12R2-KB3156422-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823586)</span><span class="sxs-lookup"><span data-stu-id="d01bc-130">**x64:** [Win8.1AndW2K12R2-KB3156422-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823586)</span></span> </br> <span data-ttu-id="d01bc-131">**x86:** [Win8.1-KB3156422-x86.msu](http://go.microsoft.com/fwlink/?LinkID=823589)</span><span class="sxs-lookup"><span data-stu-id="d01bc-131">**x86:** [Win8.1-KB3156422-x86.msu](http://go.microsoft.com/fwlink/?LinkID=823589)</span></span> |
+| <span data-ttu-id="d01bc-132">Windows 7 SP1</span><span class="sxs-lookup"><span data-stu-id="d01bc-132">Windows 7 SP1</span></span>          | [<span data-ttu-id="d01bc-133">.NET Framework 4.6</span><span class="sxs-lookup"><span data-stu-id="d01bc-133">.NET Framework 4.6</span></span>](https://support.microsoft.com/en-us/kb/3045560) </br> [<span data-ttu-id="d01bc-134">WMF 4.0</span><span class="sxs-lookup"><span data-stu-id="d01bc-134">WMF 4.0</span></span>](http://www.microsoft.com/en-us/download/details.aspx?id=40855) </br> <span data-ttu-id="d01bc-135">[SHA-2 コード署名](https://technet.microsoft.com/en-us/library/security/3033929)用のセキュリティ更新プログラム</span><span class="sxs-lookup"><span data-stu-id="d01bc-135">Security update for [SHA-2 Code Signing](https://technet.microsoft.com/en-us/library/security/3033929)</span></span> | <span data-ttu-id="d01bc-136">**x64:** [Win7AndW2K8R2-KB3156424-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823588)</span><span class="sxs-lookup"><span data-stu-id="d01bc-136">**x64:** [Win7AndW2K8R2-KB3156424-x64.msu](http://go.microsoft.com/fwlink/?LinkID=823588)</span></span> </br> <span data-ttu-id="d01bc-137">**x86:** [Win7-KB3156424-x86.msu](http://go.microsoft.com/fwlink/?LinkID=823590)</span><span class="sxs-lookup"><span data-stu-id="d01bc-137">**x86:** [Win7-KB3156424-x86.msu](http://go.microsoft.com/fwlink/?LinkID=823590)</span></span> |
 
 
-## <a name="download-and-install-the-wmf-51-package"></a>WMF 5.1 パッケージのダウンロードとインストール
+## <a name="install-wmf-51-from-windows-explorer-or-file-explorer-in-windows-server-2012-r2-or-windows-81"></a><span data-ttu-id="d01bc-138">Windows エクスプローラー (または Windows Server 2012 R2 または Windows 8.1 ではファイル エクスプローラー) から WMF 5.1 をインストールする</span><span class="sxs-lookup"><span data-stu-id="d01bc-138">Install WMF 5.1 from Windows Explorer (or File Explorer in Windows Server 2012 R2 or Windows 8.1)</span></span>
 
-インストールするオペレーティング システムとアーキテクチャに合わせて WMF 5.1 パッケージをダウンロードします。
+1. <span data-ttu-id="d01bc-139">MSU ファイルをダウンロードしたフォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="d01bc-139">Navigate to the folder into which you downloaded the MSU file.</span></span>
 
-| オペレーティング システム         | 前提条件       | パッケージ リンク             |
-|------------------------|---------------------|---------------------------|
-| Windows Server 2012 R2 | | [Win8.1AndW2K12R2-KB3191564-x64.msu](https://go.microsoft.com/fwlink/?linkid=839516)|
-| Windows Server 2012     | | [W2K12-KB3191565-x64.msu](https://go.microsoft.com/fwlink/?linkid=839513)|
-| Windows Server 2008 R2 | [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642) | [Win7AndW2K8R2-KB3191566-x64.ZIP](https://go.microsoft.com/fwlink/?linkid=839523) | 
-| Windows 8.1            |  | **x64:** [Win8.1AndW2K12R2-KB3191564-x64.msu](https://go.microsoft.com/fwlink/?linkid=839516) </br> **x86:** [Win8.1-KB3191564-x86.msu](https://go.microsoft.com/fwlink/?linkid=839521) |
-| Windows 7 SP1          | [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642) | **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP](https://go.microsoft.com/fwlink/?linkid=839523) </br> **x86:** [Win7-KB3191566-x86.ZIP](https://go.microsoft.com/fwlink/?linkid=839522)
+2. <span data-ttu-id="d01bc-140">MSU をダブルクリックして実行します。</span><span class="sxs-lookup"><span data-stu-id="d01bc-140">Double-click the MSU to run it.</span></span>
 
+## <a name="install-wmf-51-from-the-command-prompt"></a><span data-ttu-id="d01bc-141">コマンド プロンプトから WMF 5.1 をインストールする</span><span class="sxs-lookup"><span data-stu-id="d01bc-141">Install WMF 5.1 from the Command Prompt</span></span>##
 
+1. <span data-ttu-id="d01bc-142">コンピューターのアーキテクチャに適切なパッケージをダウンロードした後、管理者特権 (管理者として実行) を使ってコマンド プロンプト ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="d01bc-142">After downloading the correct package for your computer's architecture, open a Command Prompt window with elevated user rights (Run as Administrator).</span></span> <span data-ttu-id="d01bc-143">Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1 の Server Core インストール オプションで、既定で管理者特権でコマンド プロンプトが開きます。</span><span class="sxs-lookup"><span data-stu-id="d01bc-143">On the Server Core installation options of Windows Server 2012 R2, Windows Server 2012, or Windows Server 2008 R2 SP1, Command Prompt opens with elevated user rights by default.</span></span>
 
-## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>Windows Server 2008 R2 および Windows 7 で WMF 5.1 をインストールする
+2. <span data-ttu-id="d01bc-144">WMF 5.1 のインストール パッケージをダウンロードまたはコピーしたフォルダーにディレクトリを変更します。</span><span class="sxs-lookup"><span data-stu-id="d01bc-144">Change directories to the folder into which you have downloaded or copied the WMF 5.1 installation package.</span></span>
 
-> **注:** Windows Server 2008 R2 および Windows 7 でのインストール手順は変更されているため、他のパッケージの手順と異なります。 Windows Server 2012 R2、Windows Server 2012、および Windows 8.1 のインストール手順は次のとおりです。
+3. <span data-ttu-id="d01bc-145">次のいずれかのコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="d01bc-145">Run one of the following commands:</span></span>
+    - <span data-ttu-id="d01bc-146">Windows Server 2012 R2 または Windows 8.1 x64 を実行しているコンピューターの場合は、`Win8.1AndW2K12R2-KB3156422-x64.msu /quiet` を実行します。</span><span class="sxs-lookup"><span data-stu-id="d01bc-146">On computers that are running Windows Server 2012 R2 or Windows 8.1 x64, run `Win8.1AndW2K12R2-KB3156422-x64.msu /quiet`.</span></span>
+    - <span data-ttu-id="d01bc-147">Windows Server 2012 を実行しているコンピューターの場合は、`W2K12-KB3156423-x64.msu /quiet` を実行します。</span><span class="sxs-lookup"><span data-stu-id="d01bc-147">On computers that are running Windows Server 2012, run `W2K12-KB3156423-x64.msu /quiet`.</span></span>
+    - <span data-ttu-id="d01bc-148">Windows Server 2008 R2 SP1 または Windows 7 SP1 x64 を実行しているコンピューターの場合は、`Win7AndW2K8R2-KB3156424-x64.msu /quiet` を実行します。</span><span class="sxs-lookup"><span data-stu-id="d01bc-148">On computers that are running Windows Server 2008 R2 SP1 or Windows 7 SP1 x64, run `Win7AndW2K8R2-KB3156424-x64.msu /quiet`.</span></span>
+    - <span data-ttu-id="d01bc-149">Windows 8.1 x86 を実行しているコンピューターの場合は、`Win8.1-KB3156422-x86.msu /quiet` を実行します。</span><span class="sxs-lookup"><span data-stu-id="d01bc-149">On computers that are running Windows 8.1 x86, run `Win8.1-KB3156422-x86.msu /quiet`.</span></span>
+    - <span data-ttu-id="d01bc-150">Windows 7 SP1 x86 を実行しているコンピューターの場合は、`Win7-KB3156424-x86.msu /quiet` を実行します。</span><span class="sxs-lookup"><span data-stu-id="d01bc-150">On computers that are running Windows 7 SP1 x86, run `Win7-KB3156424-x86.msu /quiet`.</span></span>
 
-**Windows Server 2008 R2 および Windows 7 で WMF 5.1 をインストールする**
+## <a name="additional-installation-notes-for-windows-server-2008-r2-sp1-and-windows-7-sp1"></a><span data-ttu-id="d01bc-151">Windows Server 2008 R2 SP1 および Windows 7 SP1 でのインストールに関する追加の注記</span><span class="sxs-lookup"><span data-stu-id="d01bc-151">Additional Installation Notes for Windows Server 2008 R2 SP1 and Windows 7 SP1</span></span>##
+<span data-ttu-id="d01bc-152">Windows Server 2008 R2 SP1 または Windows 7 SP1 に WMF 5.1 をインストールするには、以下をインストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d01bc-152">Installation of WMF 5.1 on either Windows Server 2008 R2 SP1 or Windows 7 SP1, require the installation of:</span></span>
+- <span data-ttu-id="d01bc-153">最新のサービス パック。</span><span class="sxs-lookup"><span data-stu-id="d01bc-153">Latest service pack.</span></span>
+- [<span data-ttu-id="d01bc-154">WMF 4.0</span><span class="sxs-lookup"><span data-stu-id="d01bc-154">WMF 4.0</span></span>](http://www.microsoft.com/en-us/download/details.aspx?id=40855)
+- <span data-ttu-id="d01bc-155">WMF 5.1 には、[Microsoft .NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560) が必要です。</span><span class="sxs-lookup"><span data-stu-id="d01bc-155">WMF 5.1 requires [Microsoft .NET Framework 4.6](https://support.microsoft.com/en-us/kb/3045560).</span></span> <span data-ttu-id="d01bc-156">Microsoft .NET Framework 4.6 をインストールするには、ダウンロード場所で提供されている手順に従ってください。</span><span class="sxs-lookup"><span data-stu-id="d01bc-156">You can install Microsoft .NET Framework 4.6 by following the instructions at the download location.</span></span>
+- <span data-ttu-id="d01bc-157">[SHA-2 コード署名](https://technet.microsoft.com/en-us/library/security/3033929)用のセキュリティ更新プログラム。</span><span class="sxs-lookup"><span data-stu-id="d01bc-157">Security update for [SHA-2 Code Signing](https://technet.microsoft.com/en-us/library/security/3033929).</span></span> <span data-ttu-id="d01bc-158">このプログラムは、Windows カタログ ファイル用の新しい PowerShell コマンドレットを使用するときに必要です。</span><span class="sxs-lookup"><span data-stu-id="d01bc-158">This is needed to use new PowerShell cmdlets for Windows catalog files.</span></span> 
 
-1. ZIP ファイルをダウンロードしたフォルダーに移動します。 
+> <span data-ttu-id="d01bc-159">**WinRM の依存関係** - Windows PowerShell Desired State Configuration (DSC) は、WinRM に依存します。</span><span class="sxs-lookup"><span data-stu-id="d01bc-159">**WinRM Dependency** - Windows PowerShell Desired State Configuration (DSC) depends on WinRM.</span></span> <span data-ttu-id="d01bc-160">WinRM は、Windows Server 2008 R2 および Windows 7 では既定で無効になっています。</span><span class="sxs-lookup"><span data-stu-id="d01bc-160">WinRM is not enabled by default on Windows Server 2008 R2 and Windows 7.</span></span> <span data-ttu-id="d01bc-161">WinRM を有効にするには、Windows PowerShell 管理者特権セッションで `Set-WSManQuickConfig` を実行します。</span><span class="sxs-lookup"><span data-stu-id="d01bc-161">Run `Set-WSManQuickConfig`, in a Windows PowerShell elevated session, to enable WinRM.</span></span>
 
-2. ZIP ファイルを右クリックし、[すべて展開...] を選択します。 ZIP ファイルには、MSU ファイルと Install-WMF5.1.PS1 スクリプト ファイルの 2 つのファイルが含まれています。 ZIP ファイルを展開したら、Windows 7 または Windows Server 2008 R2 を実行する任意のコンピューターにコンテンツをコピーすることができます。  
-
-3. ZIP ファイルを展開した後、管理者として PowerShell を開いて、ZIP ファイルのコンテンツを含むフォルダーに  
-移動します。 
-
-4. そのフォルダーの Install-Wmf5.1.ps1 スクリプトを実行して、指示に従います。 このスクリプトはローカル コンピューターの前提条件を確認し、前提条件を満たしている場合に WMF 5.1 をインストールします。 前提条件は次のとおりです。 
-
-Install-WMF5.1.ps1 は Windows Server 2008 R2 および Windows 7 でのインストールの自動化を容易にするため、次のパラメーターを受け取ります。
-
-- AcceptEula: このパラメーターが含まれる場合、使用許諾契約書は自動的に受け入れられ、表示はされません。
-- AllowRestart: このパラメーターは、AcceptEula が指定されている場合にのみ使用できます。 このパラメーターが含まれていて、WMF 5.1 のインストール後に再起動が必要な場合は、インストールが完了した後すぐに、メッセージが表示されることなく再起動が実行されます。 
-
-**Windows Server 2008 R2 SP1 および Windows 7 SP1 での WMF 5.1 の前提条件**
-
-Windows Server 2008 R2 SP1 または Windows 7 SP1 に WMF 5.1 をインストールするには、次を行う必要があります。
-- 最新の Service Pack をインストールする必要があります。
-- WMF 3.0 をインストール**しないでください**。 WMF 3.0 経由で WMF 5.1 をインストールすると、PSModulePath が失われ、これによって他のアプリケーションで障害が発生する場合があります。 WMF 5.1 をインストールする前に WMF 3.0 をアンインストールするか、PSModulePath を保存して、WMF 5.1 のインストールが完了した後に手動で復元する必要があります。 
-- WMF 5.1 には [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642) が必要です。Microsoft .NET Framework 4.5.2 をインストールするには、ダウンロード場所で提供されている手順に従ってください。
-
-**WinRM の依存関係** 
-
-Windows PowerShell Desired State Configuration (DSC) は、WinRM に依存します。 WinRM は、Windows Server 2008 R2 および Windows 7 では既定で無効になっています。 WinRM を有効にするには、Windows PowerShell 管理者特権セッションで `Set-WSManQuickConfig` を実行します。
-
-
-## <a name="install-wmf-51-for-windows-server-2012-r2-windows-server-2012-and-windows-81"></a>Windows Server 2012 R2、Windows Server 2012、および Windows 8.1 で WMF 5.1 をインストールする
-**Windows エクスプローラー (または Windows Server 2012 R2 または Windows 8.1 ではファイル エクスプローラー) からインストールする**
-
-1. MSU ファイルをダウンロードしたフォルダーに移動します。
-
-2. MSU をダブルクリックして実行します。
-
-**コマンド プロンプトからインストールする**
-
-1. コンピューターのアーキテクチャに適切なパッケージをダウンロードした後、管理者特権 (管理者として実行) を使ってコマンド プロンプト ウィンドウを開きます。 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1 の Server Core インストール オプションで、既定で管理者特権でコマンド プロンプトが開きます。
-
-2. WMF 5.1 のインストール パッケージをダウンロードまたはコピーしたフォルダーにディレクトリを変更します。
-
-3. 次のいずれかのコマンドを実行します。
-    - Windows Server 2012 R2 または Windows 8.1 x64 を実行しているコンピューターの場合は、`Win8.1AndW2K12R2-KB3191564-x64.msu /quiet` を実行します。
-    - Windows Server 2012 を実行しているコンピューターの場合は、`W2K12-KB3191565-x64.msu /quiet` を実行します。
-    - Windows 8.1 x86 を実行しているコンピューターの場合は、`Win8.1-KB3191564-x86.msu /quiet` を実行します。
-    

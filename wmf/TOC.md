@@ -12,7 +12,6 @@
 ## [インストールと構成](5.1/install-configure.md)
 ## [既知の問題](5.1/known-issues.md)
 ## [互換性](5.1/Compatibility.md)
-## [製品の互換性](5.1/productincompat.md)
 
 # [WMF 5.0](5.0/releasenotes.md)
 ## [インストールの詳細](5.0/requirements.md)
