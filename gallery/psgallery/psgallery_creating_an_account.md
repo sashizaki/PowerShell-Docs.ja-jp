@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="creating-a-powershell-gallery-account" class="xliff"></a>
-
-## PowerShell ギャラリー アカウントを作成する
+## <a name="creating-a-powershell-gallery-account"></a>PowerShell ギャラリー アカウントを作成する
 
 PowerShell ギャラリー アカウントは、PowerShell ギャラリーに何らかのアイテムを公開する前に登録する必要があります。 PowerShell ギャラリー アカウントは、Azure Active Directory のメールが有効なアカウント、または Microsoft のメール アカウント (ドメインが outlook.com、hotmail.com など) に紐付けられている必要があります。
 
@@ -27,9 +25,7 @@ Azure Active Directory アカウントを使用する場合は、次のページ
 注: このアカウント名は、一度作成すると変更できません。  
 これに関連するその他の詳細については、「[アイテムの所有者を管理する](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners)」をご覧ください。
 
-<a id="recommended-practices-for-powershell-gallery-accounts" class="xliff"></a>
-
-## PowerShell ギャラリー アカウントの推奨プラクティス
+## <a name="recommended-practices-for-powershell-gallery-accounts"></a>PowerShell ギャラリー アカウントの推奨プラクティス
 
 PowerShell ギャラリー アカウントで使用されるメール アカウントを積極的に監視することが重要です。
 PowerShell ギャラリー アイテムの所有者とのやりとりはすべて、ご利用の PowerShell ギャラリー アカウントに関連付けられたアドレスでのメールで行われます。
