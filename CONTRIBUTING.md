@@ -1,92 +1,92 @@
-# <a name="contributing-to-powershell-documentation"></a>PowerShell ドキュメントへの投稿
+# <a name="contributing-to-powershell-documentation"></a><span data-ttu-id="f63e1-101">PowerShell ドキュメントへの投稿</span><span class="sxs-lookup"><span data-stu-id="f63e1-101">Contributing to PowerShell Documentation</span></span>
 
-PowerShell ドキュメントに興味をお持ちいただきありがとうございます。 ここでは、このサイトのテクニカル ドキュメントに投稿する方法について説明します。
+<span data-ttu-id="f63e1-102">PowerShell ドキュメントに興味をお持ちいただきありがとうございます。</span><span class="sxs-lookup"><span data-stu-id="f63e1-102">Thank you for your interest in PowerShell documentation!</span></span> <span data-ttu-id="f63e1-103">ここでは、このサイトのテクニカル ドキュメントに投稿する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-103">See below for details on how you can contribute to our technical documentation.</span></span>
 
->Git と GitHub を初めて使用する際の全般的な情報については、[GitHub のヘルプ](https://help.github.com/)を参照してください。 
+><span data-ttu-id="f63e1-104">Git と GitHub を初めて使用する際の全般的な情報については、[GitHub のヘルプ](https://help.github.com/)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f63e1-104">For general information about getting started with Git and GitHub, see [GitHub Help](https://help.github.com/).</span></span> 
 
-## <a name="sign-a-cla"></a>CLA に署名する
+## <a name="sign-a-cla"></a><span data-ttu-id="f63e1-105">CLA に署名する</span><span class="sxs-lookup"><span data-stu-id="f63e1-105">Sign a CLA</span></span>
 
-PowerShell リポジトリに投稿する前に、[Microsoft Contribution Licensing Agreement (CLA)](https://cla.microsoft.com/) に署名する必要があります。 これまでに PowerShell リポジトリに投稿したことがある場合、 署名は既に完了しています。
+<span data-ttu-id="f63e1-106">PowerShell リポジトリに投稿する前に、[Microsoft Contribution Licensing Agreement (CLA)](https://cla.microsoft.com/) に署名する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f63e1-106">Before you can contribute to any PowerShell repositories, you must [sign a Microsoft Contribution Licensing Agreement (CLA)](https://cla.microsoft.com/).</span></span> <span data-ttu-id="f63e1-107">これまでに PowerShell リポジトリに投稿したことがある場合、</span><span class="sxs-lookup"><span data-stu-id="f63e1-107">If you've already contributed to PowerShell repositories in the past, congratulations!</span></span> <span data-ttu-id="f63e1-108">署名は既に完了しています。</span><span class="sxs-lookup"><span data-stu-id="f63e1-108">You've already completed this step.</span></span>
 
-## <a name="providing-feedback-on-powershell-documentation"></a>PowerShell ドキュメントにフィードバックを提供する
+## <a name="providing-feedback-on-powershell-documentation"></a><span data-ttu-id="f63e1-109">PowerShell ドキュメントにフィードバックを提供する</span><span class="sxs-lookup"><span data-stu-id="f63e1-109">Providing feedback on PowerShell documentation</span></span>
 
-エラーの指摘、変更の提案、新しいトピックの依頼を行うには、[PowerShell-Docs リポジトリの問題に関するページ](https://github.com/PowerShell/PowerShell-Docs/issues)で[問題を作成](https://help.github.com/articles/creating-an-issue/)します。
+<span data-ttu-id="f63e1-110">エラーの指摘、変更の提案、新しいトピックの依頼を行うには、[PowerShell-Docs リポジトリの問題に関するページ](https://github.com/PowerShell/PowerShell-Docs/issues)で[問題を作成](https://help.github.com/articles/creating-an-issue/)します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-110">You can point out errors, suggest changes, or request new topics by [creating an issue](https://help.github.com/articles/creating-an-issue/) on the [PowerShell-Docs repository issues page](https://github.com/PowerShell/PowerShell-Docs/issues).</span></span>
 
-問題は PowerShell ドキュメント チームのメンバーが定期的に確認し、重要度の判定、割り当て、対応を適宜行います。
+<span data-ttu-id="f63e1-111">問題は PowerShell ドキュメント チームのメンバーが定期的に確認し、重要度の判定、割り当て、対応を適宜行います。</span><span class="sxs-lookup"><span data-stu-id="f63e1-111">Issues are reviewed regularly by members of the PowerShell documentation team, and are triaged, assigned, and addressed accordingly.</span></span>
 
-## <a name="writing-powershell-documentation"></a>PowerShell ドキュメントを執筆する
+## <a name="writing-powershell-documentation"></a><span data-ttu-id="f63e1-112">PowerShell ドキュメントを執筆する</span><span class="sxs-lookup"><span data-stu-id="f63e1-112">Writing PowerShell documentation</span></span>
 
-PowerShell に貢献する最も簡単な方法の 1 つは、ドキュメントを執筆および編集することです。 GitHub でホストされているすべてのドキュメントは、[GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/) を使用して執筆されています。
+<span data-ttu-id="f63e1-113">PowerShell に貢献する最も簡単な方法の 1 つは、ドキュメントを執筆および編集することです。</span><span class="sxs-lookup"><span data-stu-id="f63e1-113">One of the easiest ways to contribute to PowerShell is by helping to write and edit documentation.</span></span> <span data-ttu-id="f63e1-114">GitHub でホストされているすべてのドキュメントは、[GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/) を使用して執筆されています。</span><span class="sxs-lookup"><span data-stu-id="f63e1-114">All of our documentation hosted on GitHub is written using [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/).</span></span>
 
-## <a name="making-minor-edits-to-existing-topics"></a>既存のトピックに関する軽微な編集
+## <a name="making-minor-edits-to-existing-topics"></a><span data-ttu-id="f63e1-115">既存のトピックに関する軽微な編集</span><span class="sxs-lookup"><span data-stu-id="f63e1-115">Making minor edits to existing topics</span></span>
 
-[既存のファイルを編集](https://help.github.com/articles/editing-files-in-another-user-s-repository/)するには、そのページを開き、[Edit] (編集) ボタンをクリックします。 GitHub では、変更を加えたリポジトリの変更者用のフォークが自動的に作成されます。 変更が完了したら、編集を保存し、[PowerShell-Docs リポジトリ](https://github.com/PowerShell/PowerShell-Docs)の*ステージング* ブランチに [pull 要求](https://help.github.com/articles/creating-a-pull-request/)を送信してください。 pull 要求を作成すると、PowerShell ドキュメント チームのメンバーが変更を確認してから、*ステージング* ブランチに結合します。
+<span data-ttu-id="f63e1-116">[既存のファイルを編集](https://help.github.com/articles/editing-files-in-another-user-s-repository/)するには、そのページを開き、[Edit] (編集) ボタンをクリックします。</span><span class="sxs-lookup"><span data-stu-id="f63e1-116">To [edit an existing file](https://help.github.com/articles/editing-files-in-another-user-s-repository/), simply navigate to it and click the "Edit" button.</span></span> <span data-ttu-id="f63e1-117">GitHub では、変更を加えたリポジトリの変更者用のフォークが自動的に作成されます。</span><span class="sxs-lookup"><span data-stu-id="f63e1-117">GitHub will automatically create your own fork of our repository where you can make your changes.</span></span> <span data-ttu-id="f63e1-118">変更が完了したら、編集を保存し、[PowerShell-Docs リポジトリ](https://github.com/PowerShell/PowerShell-Docs)の*ステージング* ブランチに [pull 要求](https://help.github.com/articles/creating-a-pull-request/)を送信してください。</span><span class="sxs-lookup"><span data-stu-id="f63e1-118">Once you're finished, save your edits and submit a [pull request](https://help.github.com/articles/creating-a-pull-request/) to the *staging* branch of the [PowerShell-Docs](https://github.com/PowerShell/PowerShell-Docs) repository.</span></span> <span data-ttu-id="f63e1-119">pull 要求を作成すると、PowerShell ドキュメント チームのメンバーが変更を確認してから、*ステージング* ブランチに結合します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-119">After your pull request is created, someone on the PowerShell documentation team will review your changes before merging them into the *staging* branch.</span></span>
 
-## <a name="making-major-edits-to-existing-topics"></a>既存のトピックに関する大幅な編集
+## <a name="making-major-edits-to-existing-topics"></a><span data-ttu-id="f63e1-120">既存のトピックに関する大幅な編集</span><span class="sxs-lookup"><span data-stu-id="f63e1-120">Making major edits to existing topics</span></span>
 
-既存の記事に対する大幅な編集、画像の追加または変更、または新しい記事の投稿には、GitHub フォークを手動で作成してから、ローカル コンピューターにフォークのクローンをダウンロードする必要があります。 フォークは、ユーザーの GitHub アカウントに作成されるメイン リポジトリの GitHub ベースのレプリカです。フォークによって、単独で使用できる作業用コピーが作成されます。 pull 要求は自分のフォークから作成します。 同様に、クローンは、リポジトリのローカルベースのレプリカです。この場合はフォークのクローンになります。 クローンによって、Git リポジトリをオフラインで使用できるようになります。また、より強力なネイティブ ソフトウェアやツールを使用できます。
+<span data-ttu-id="f63e1-121">既存の記事に対する大幅な編集、画像の追加または変更、または新しい記事の投稿には、GitHub フォークを手動で作成してから、ローカル コンピューターにフォークのクローンをダウンロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="f63e1-121">If you are making substantial changes to an existing article, adding or changing images, or contributing a new article, you will need to manually create your GitHub fork, then clone the fork down to your local computer.</span></span> <span data-ttu-id="f63e1-122">フォークは、ユーザーの GitHub アカウントに作成されるメイン リポジトリの GitHub ベースのレプリカです。フォークによって、単独で使用できる作業用コピーが作成されます。</span><span class="sxs-lookup"><span data-stu-id="f63e1-122">A fork is a GitHub-based replica of the main repository, under your GitHub account, which provides you with a working copy which you can use in isolation.</span></span> <span data-ttu-id="f63e1-123">pull 要求は自分のフォークから作成します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-123">You will create pull requests from your fork.</span></span> <span data-ttu-id="f63e1-124">同様に、クローンは、リポジトリのローカルベースのレプリカです。この場合はフォークのクローンになります。</span><span class="sxs-lookup"><span data-stu-id="f63e1-124">Similarly, a clone is a local-based replica of the repository which, in this case, will be a clone of your fork.</span></span> <span data-ttu-id="f63e1-125">クローンによって、Git リポジトリをオフラインで使用できるようになります。また、より強力なネイティブ ソフトウェアやツールを使用できます。</span><span class="sxs-lookup"><span data-stu-id="f63e1-125">The clone allows you to work on Git repositories offline, and using more powerful native software/tools.</span></span>
 
-既存のドキュメントに大幅な編集を加える場合のワークフローを次に示します。
+<span data-ttu-id="f63e1-126">既存のドキュメントに大幅な編集を加える場合のワークフローを次に示します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-126">Here is the workflow for making major edits to existing documentation:</span></span>
 
-1. [PowerShell-Docs リポジトリ](https://github.com/PowerShell/PowerShell-Docs)の[フォークを作成](https://help.github.com/articles/fork-a-repo/)します。
-2. ローカル コンピューターに[フォークのクローンを作成](https://help.github.com/articles/cloning-a-repository/)します。
-3. 複製されたリポジトリに新しいローカル ブランチを作成します。
-4. マークダウン エディターで、更新するファイルに変更を加えます。 
-   一般的に使用されているマークダウン エディターについては、以下を参照してください。
-5. フォークに[ローカル ブランチをプッシュします](https://help.github.com/articles/pushing-to-a-remote/)。
-6. [PowerShell-Docs](https://github.com/PowerShell/PowerShell-Docs) リポジトリの*ステージング* ブランチに [pull 要求を作成](https://help.github.com/articles/creating-a-pull-request/)します。
+1. <span data-ttu-id="f63e1-127">[PowerShell-Docs リポジトリ](https://github.com/PowerShell/PowerShell-Docs)の[フォークを作成](https://help.github.com/articles/fork-a-repo/)します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-127">[Create a fork](https://help.github.com/articles/fork-a-repo/) of the [PowerShell-Docs](https://github.com/PowerShell/PowerShell-Docs) repository.</span></span>
+2. <span data-ttu-id="f63e1-128">ローカル コンピューターに[フォークのクローンを作成](https://help.github.com/articles/cloning-a-repository/)します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-128">[Create a clone of your fork](https://help.github.com/articles/cloning-a-repository/) on your local computer.</span></span>
+3. <span data-ttu-id="f63e1-129">複製されたリポジトリに新しいローカル ブランチを作成します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-129">Create a new local branch in your cloned repository.</span></span>
+4. <span data-ttu-id="f63e1-130">マークダウン エディターで、更新するファイルに変更を加えます。</span><span class="sxs-lookup"><span data-stu-id="f63e1-130">Make changes to the file(s) you want to update in a Markdown editor.</span></span> 
+   <span data-ttu-id="f63e1-131">一般的に使用されているマークダウン エディターについては、以下を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f63e1-131">See below for commonly used Markdown editors.</span></span>
+5. <span data-ttu-id="f63e1-132">フォークに[ローカル ブランチをプッシュします](https://help.github.com/articles/pushing-to-a-remote/)。</span><span class="sxs-lookup"><span data-stu-id="f63e1-132">[Push your local branch](https://help.github.com/articles/pushing-to-a-remote/) to your fork.</span></span>
+6. <span data-ttu-id="f63e1-133">[PowerShell-Docs](https://github.com/PowerShell/PowerShell-Docs) リポジトリの*ステージング* ブランチに [pull 要求を作成](https://help.github.com/articles/creating-a-pull-request/)します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-133">[Create a pull request](https://help.github.com/articles/creating-a-pull-request/) to the *staging* branch of the [PowerShell-Docs](https://github.com/PowerShell/PowerShell-Docs) repository.</span></span>
 
-## <a name="creating-new-topics"></a>新しいトピックを作成する
+## <a name="creating-new-topics"></a><span data-ttu-id="f63e1-134">新しいトピックを作成する</span><span class="sxs-lookup"><span data-stu-id="f63e1-134">Creating new topics</span></span>
 
-新しいドキュメントを投稿する場合は、重複するドキュメントを投稿しないように、まず ["in progress" (進行中) とタグが付けられている問題](https://github.com/PowerShell/PowerShell-Docs/labels/in%20progress)を確認します。
-投稿予定の内容で執筆中のユーザーがいないと考えられる場合:
+<span data-ttu-id="f63e1-135">新しいドキュメントを投稿する場合は、重複するドキュメントを投稿しないように、まず ["in progress" (進行中) とタグが付けられている問題](https://github.com/PowerShell/PowerShell-Docs/labels/in%20progress)を確認します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-135">If you want to contribute new documentation, first check for [issues tagged as "in progress"](https://github.com/PowerShell/PowerShell-Docs/labels/in%20progress) to make sure you're not duplicating efforts.</span></span>
+<span data-ttu-id="f63e1-136">投稿予定の内容で執筆中のユーザーがいないと考えられる場合:</span><span class="sxs-lookup"><span data-stu-id="f63e1-136">If no one seems to be working on what you have planned:</span></span>
 
-* 新しい問題を開き、(PowerShell 組織のメンバーである場合は) "in progress" (進行中) とラベルを付けます。または、コメントとして "in progress" (進行中) と追加して、執筆中であることを他のユーザーに示します。
-* 既存のトピックに大幅な編集を加える場合は、前述のワークフローに従います。
-* `TOC.md` トピック (各ドキュメント セットのトップ レベル フォルダーにあります) を編集して、新しいトピックを目次に追加します。 
-  目次に新しいトピックを追加する場所を決定し、適切なレベルの見出しを追加し、自分のトピック (`[My topic title](relative path to my topic)`) へのリンクを設定します。
+* <span data-ttu-id="f63e1-137">新しい問題を開き、(PowerShell 組織のメンバーである場合は) "in progress" (進行中) とラベルを付けます。または、コメントとして "in progress" (進行中) と追加して、執筆中であることを他のユーザーに示します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-137">Open a new issue and label it as "in progress" (if you are a member of the PowerShell organization) or add "in progress" as a comment to tell others what you're working on</span></span>
+* <span data-ttu-id="f63e1-138">既存のトピックに大幅な編集を加える場合は、前述のワークフローに従います。</span><span class="sxs-lookup"><span data-stu-id="f63e1-138">Follow the same workflow as described above for making major edits to existing topics.</span></span>
+* <span data-ttu-id="f63e1-139">`TOC.md` トピック (各ドキュメント セットのトップ レベル フォルダーにあります) を編集して、新しいトピックを目次に追加します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-139">Edit the `TOC.md` topic (located in the top-level folder for each documentation set) to add your new topics to the table of contents.</span></span> 
+  <span data-ttu-id="f63e1-140">目次に新しいトピックを追加する場所を決定し、適切なレベルの見出しを追加し、自分のトピック (`[My topic title](relative path to my topic)`) へのリンクを設定します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-140">Determine where your new topic belongs in the table of contents, and add a heading of the appropriate level, with a link to your topic (`[My topic title](relative path to my topic)`).</span></span>
 
-## <a name="markdown-editors"></a>マークダウン エディター
+## <a name="markdown-editors"></a><span data-ttu-id="f63e1-141">マークダウン エディター</span><span class="sxs-lookup"><span data-stu-id="f63e1-141">Markdown editors</span></span>
 
-次のようなマークダウン エディターを利用できます。
+<span data-ttu-id="f63e1-142">次のようなマークダウン エディターを利用できます。</span><span class="sxs-lookup"><span data-stu-id="f63e1-142">Here are some Markdown editors you can try out:</span></span>
 
-* [Visual Studio Code](https://code.visualstudio.com)
-* [Markdown Pad](http://markdownpad.com/)
-* [Atom](https://atom.io/)
-* [Sublime Text](http://www.sublimetext.com/)
+* [<span data-ttu-id="f63e1-143">Visual Studio Code</span><span class="sxs-lookup"><span data-stu-id="f63e1-143">Visual Studio Code</span></span>](https://code.visualstudio.com)
+* [<span data-ttu-id="f63e1-144">Markdown Pad</span><span class="sxs-lookup"><span data-stu-id="f63e1-144">Markdown Pad</span></span>](http://markdownpad.com/)
+* [<span data-ttu-id="f63e1-145">Atom</span><span class="sxs-lookup"><span data-stu-id="f63e1-145">Atom</span></span>](https://atom.io/)
+* [<span data-ttu-id="f63e1-146">Sublime Text</span><span class="sxs-lookup"><span data-stu-id="f63e1-146">Sublime Text</span></span>](http://www.sublimetext.com/)
 
 
-## <a name="github-flavored-markdown-gfm"></a>GitHub Flavored Markdown (GFM)
+## <a name="github-flavored-markdown-gfm"></a><span data-ttu-id="f63e1-147">GitHub Flavored Markdown (GFM)</span><span class="sxs-lookup"><span data-stu-id="f63e1-147">GitHub Flavored Markdown (GFM)</span></span>
 
-このリポジトリのすべての記事は、[GitHub Flavored Markdown (GFM)](https://help.github.com/articles/github-flavored-markdown/) を使用しています。
+<span data-ttu-id="f63e1-148">このリポジトリのすべての記事は、[GitHub Flavored Markdown (GFM)](https://help.github.com/articles/github-flavored-markdown/) を使用しています。</span><span class="sxs-lookup"><span data-stu-id="f63e1-148">All of the articles in this repository use [GitHub Flavored Markdown (GFM)](https://help.github.com/articles/github-flavored-markdown/).</span></span>
 
-GFM には、次のような基本的な構文があります。
+<span data-ttu-id="f63e1-149">GFM には、次のような基本的な構文があります。</span><span class="sxs-lookup"><span data-stu-id="f63e1-149">Some of the basic GFM syntax includes:</span></span>
 
-* **改行と段落:**マークダウンには、HTML の `<br />` または `<p />` 要素がありません。 新しい段落は、2 つのテキスト ブロック間に空行を挿入して指定します。
+* <span data-ttu-id="f63e1-150">**改行と段落:**マークダウンには、HTML の `<br />` または `<p />` 要素がありません。</span><span class="sxs-lookup"><span data-stu-id="f63e1-150">**Line breaks vs. paragraphs:** In Markdown there is no HTML `<br />` or `<p />` element.</span></span> <span data-ttu-id="f63e1-151">新しい段落は、2 つのテキスト ブロック間に空行を挿入して指定します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-151">Instead, a new paragraph is designated by an empty line between two blocks of text.</span></span>
 
-> **注**: 差分と履歴のコマンドライン出力を簡易化するために、各文末に 1 行を追加してください。
-差分と履歴のコマンドライン出力はすべての PowerShell-Docs で採用されていませんが、時間をかけて取り組む予定です。 ご協力いただけると助かります。 
+> <span data-ttu-id="f63e1-152">**注**: 差分と履歴のコマンドライン出力を簡易化するために、各文末に 1 行を追加してください。</span><span class="sxs-lookup"><span data-stu-id="f63e1-152">**Note**: Please add a single newline after each sentence to simplify the command-line output of diffs and history.</span></span>
+<span data-ttu-id="f63e1-153">差分と履歴のコマンドライン出力はすべての PowerShell-Docs で採用されていませんが、時間をかけて取り組む予定です。</span><span class="sxs-lookup"><span data-stu-id="f63e1-153">This is not currently adopted across all of PowerShell-Docs, but we will be working towards it over time.</span></span> <span data-ttu-id="f63e1-154">ご協力いただけると助かります。</span><span class="sxs-lookup"><span data-stu-id="f63e1-154">Feel free to help out.</span></span> 
 
-* **斜体:** HTML の `<em>some text</em>` 要素は `*some text*` と記述します。
-* **太字:** HTML の `<strong>some text</strong>` 要素は `**some text**` と記述します。
-* **見出し:** HTML の見出しは、行頭に `#` を使用して指定します。 
-  `#` 文字の番号は、見出しの階層レベルに対応します (`#` = `<h1>`、`###` = ```<h3>``` など)。
-* **番号付きリスト:** 番号付き (順序付き) リストを作成するには、行頭に `1. ` を指定します。  
-  1 つの list 要素内に複数の要素が必要な場合は、list の形式を次のように指定します。
+* <span data-ttu-id="f63e1-155">**斜体:** HTML の `<em>some text</em>` 要素は `*some text*` と記述します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-155">**Italics:** The HTML `<em>some text</em>` element is written as `*some text*`</span></span>
+* <span data-ttu-id="f63e1-156">**太字:** HTML の `<strong>some text</strong>` 要素は `**some text**` と記述します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-156">**Bold:** The HTML `<strong>some text</strong>` element is written as `**some text**`</span></span>
+* <span data-ttu-id="f63e1-157">**見出し:** HTML の見出しは、行頭に `#` を使用して指定します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-157">**Headings:** HTML headings are designated using `#` characters at the start of the line.</span></span> 
+  <span data-ttu-id="f63e1-158">`#` 文字の番号は、見出しの階層レベルに対応します (`#` = `<h1>`、`###` = ```<h3>``` など)。</span><span class="sxs-lookup"><span data-stu-id="f63e1-158">The number of `#` characters corresponds to the hierarchical level of the heading (for example, `#` = `<h1>` and `###` = ```<h3>```).</span></span>
+* <span data-ttu-id="f63e1-159">**番号付きリスト:** 番号付き (順序付き) リストを作成するには、行頭に `1. ` を指定します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-159">**Numbered lists:** To make a numbered (ordered) list start the line with `1. `.</span></span>  
+  <span data-ttu-id="f63e1-160">1 つの list 要素内に複数の要素が必要な場合は、list の形式を次のように指定します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-160">If you want multiple elements within a single list element, format your list as follows:</span></span>
 ```        
 1.  For the first element (like this one), insert a tab stop after the 1. 
 
     To include a second element (like this one), insert a line break after the first and align indentations.
 ```
-この出力を取得する場合:
+<span data-ttu-id="f63e1-161">この出力を取得する場合:</span><span class="sxs-lookup"><span data-stu-id="f63e1-161">to get this output:</span></span>
 
-1.  (この例のように) 最初の要素の場合、1 の後にタブ ストップを挿入します。 
+1.  <span data-ttu-id="f63e1-162">(この例のように) 最初の要素の場合、1 の後にタブ ストップを挿入します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-162">For the first element (like this one), insert a tab stop after the 1.</span></span> 
 
-    (この例のように) 2 つ目の要素を含めるには、1 つ目の要素の後に改行を挿入し、インデントを合わせます。
+    <span data-ttu-id="f63e1-163">(この例のように) 2 つ目の要素を含めるには、1 つ目の要素の後に改行を挿入し、インデントを合わせます。</span><span class="sxs-lookup"><span data-stu-id="f63e1-163">To include a second element (like this one), insert a line break after the first and align indentations.</span></span>
 
-* **箇条書きリスト:** 箇条書き (順序なし) リストは、`1. ` を `* `、`- `、または `+ ` と置き換える点を除き、順序付きリストとほぼ同じです。 複数要素のリストは、順序付きリストと同様に機能します。
-* **リンク:** ハイパーリンクの構文は `[visible link text](link URL)` です。
-* **同じドキュメントセット内の別のトピックへのリンク:** ドキュメントセットは、このリポジトリのトップ レベル フォルダーです ("dsc"、"scripting" など)。
-    同じドキュメントセット内のトピックへのハイパーリンクを設定する構文は、`[topic title](relative path to topic)` です。 
-    詳細については、「[Relative links in READMEs](https://help.github.com/articles/relative-links-in-readmes/)」(README の相対リンク) を参照してください。 
-    別のトップ レベル フォルダーにあるトピックへのリンクを設定するには、前述のように、公開済みページの URL を使用します。
+* <span data-ttu-id="f63e1-164">**箇条書きリスト:** 箇条書き (順序なし) リストは、`1. ` を `* `、`- `、または `+ ` と置き換える点を除き、順序付きリストとほぼ同じです。</span><span class="sxs-lookup"><span data-stu-id="f63e1-164">**Bulleted lists:** Bulleted (unordered) lists are almost identical to ordered lists except that the `1. ` is replaced with either `* `, `- `, or `+ `.</span></span> <span data-ttu-id="f63e1-165">複数要素のリストは、順序付きリストと同様に機能します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-165">Multiple element lists work the same way as with ordered lists.</span></span>
+* <span data-ttu-id="f63e1-166">**リンク:** ハイパーリンクの構文は `[visible link text](link URL)` です。</span><span class="sxs-lookup"><span data-stu-id="f63e1-166">**Links:** The syntax for a hyperlink is `[visible link text](link URL)`.</span></span>
+* <span data-ttu-id="f63e1-167">**同じドキュメントセット内の別のトピックへのリンク:** ドキュメントセットは、このリポジトリのトップ レベル フォルダーです ("dsc"、"scripting" など)。</span><span class="sxs-lookup"><span data-stu-id="f63e1-167">**Link to another topic within the same docset:** A docset is a top-level folder in this repository (for example, "dsc", "scripting").</span></span>
+    <span data-ttu-id="f63e1-168">同じドキュメントセット内のトピックへのハイパーリンクを設定する構文は、`[topic title](relative path to topic)` です。</span><span class="sxs-lookup"><span data-stu-id="f63e1-168">The syntax for a hyperlink to a topic within the same docset is `[topic title](relative path to topic)`.</span></span> 
+    <span data-ttu-id="f63e1-169">詳細については、「[Relative links in READMEs](https://help.github.com/articles/relative-links-in-readmes/)」(README の相対リンク) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f63e1-169">For more information, see [Relative links in READMEs](https://help.github.com/articles/relative-links-in-readmes/).</span></span> 
+    <span data-ttu-id="f63e1-170">別のトップ レベル フォルダーにあるトピックへのリンクを設定するには、前述のように、公開済みページの URL を使用します。</span><span class="sxs-lookup"><span data-stu-id="f63e1-170">To link to a topic in a different top-level folder, use the URL of the published page, as described above.</span></span>
