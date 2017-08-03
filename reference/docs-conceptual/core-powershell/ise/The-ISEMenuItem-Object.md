@@ -1,0 +1,93 @@
+---
+ms.date: 2017-06-05
+keywords: "PowerShell, コマンドレット"
+title: "ISEMenuItem オブジェクト"
+ms.assetid: a16660bd-0aee-46fd-ac17-3f022165d089
+ms.openlocfilehash: 33de866d706ec2b0894c5bfe49e07fee142b95c0
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
+---
+# <a name="the-isemenuitem-object"></a>ISEMenuItem オブジェクト
+  **ISEMenuItem** オブジェクトは Microsoft.PowerShell.Host.ISE.ISEMenuItem クラスのインスタンスです。 **[アドオン]** メニューにあるすべてのオブジェクトは、**Microsoft.PowerShell.Host.ISE.ISEMenuItem** クラスのインスタンスです。
+
+## <a name="properties"></a>プロパティ
+
+###  <a name="DisplayName"></a> DisplayName
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
+
+ メニュー項目の名前を表示する読み取り専用プロパティ。
+
+```
+# Get the display name of the Add-ons menu item
+$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
+$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
+$psISE.CurrentPowerShellTab.AddOnsMenu.DisplayName
+
+```
+
+###  <a name="Action"></a> Action
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
+
+ スクリプトのブロックを取得する読み取り専用プロパティ。 メニュー項目をクリックすると、アクションが呼び出されます。
+
+```
+# Get the action associated with the first submenu item.
+$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
+$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
+$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action
+
+# Invoke the script associated with the first submenu item 
+$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Action.Invoke()
+```
+
+###  <a name="Shortcut"></a> Shortcut
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
+
+ メニュー項目の Windows 入力用ショートカット キーを取得する読み取り専用プロパティ。
+
+```
+# Get the shortcut for the first submenu item.
+$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
+$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
+$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus[0].Shortcut
+```
+
+###  <a name="Submenus"></a> Submenus
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
+
+ メニュー項目の[サブメニューの一覧](The-ISEMenuItemCollection-Object.md)を取得する読み取り専用プロパティ。
+
+```
+# List the submenus of the Add-ons menu
+$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
+$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P")
+$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus
+```
+
+## <a name="scripting-example"></a>スクリプトの例
+ [アドオン] メニューとそのスクリプト可能なプロパティの使用をさらに理解するには、次のスクリプトの例に目を通してください。
+
+```
+
+# This is a scripting example that shows the use of the Add-ons menu.
+# Clear the Add-ons menu if any entries currently exist
+$psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Clear()
+
+# Add an Add-ons menu item with an shortcut and fast access key.
+# Note the use of “_”  as opposed to the “&” for mapping to the fast access key letter for the menu item.
+$menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("_Process",{get-process},"Alt+P") 
+# Add a nested menu - a parent and a child submenu item. 
+$parentAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.SubMenus.Add("Parent",$null,$null) 
+$parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
+
+```
+
+## <a name="see-also"></a>参照
+- [ISEMenuItemCollection オブジェクト](The-ISEMenuItemCollection-Object.md) 
+- [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)
+
+  
