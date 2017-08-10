@@ -1,209 +1,206 @@
 ---
-ms.date:  2017-06-05
-keywords:  powershell,cmdlet
-title:  The ISEEditor Object
-ms.assetid:  0101daf8-4e31-4e4c-ab89-01d95dcb8f46
+ms.date: 2017-06-05
+keywords: "PowerShell, コマンドレット"
+title: "ISEEditor オブジェクト"
+ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
+ms.openlocfilehash: 41f2a6f7684275ad9d6d967ea67b64ca02c1c100
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
+# <a name="the-iseeditor-object"></a>ISEEditor オブジェクト
+  **ISEEditor** オブジェクトは、Microsoft.PowerShell.Host.ISE.ISEEditor クラスのインスタンスです。 コンソール ウィンドウは **ISEEditor** オブジェクトです。 各 [ISEFile](The-ISEFile-Object.md) オブジェクトには、関連付けられている **ISEEditor** オブジェクトがあります。 次のセクションでは、**ISEEditor** オブジェクトのメソッドとプロパティについて説明します。
 
-# The ISEEditor Object
-  An **ISEEditor** object is an instance of the Microsoft.PowerShell.Host.ISE.ISEEditor class. The Console pane is an **ISEEditor** object. Each [ISEFile](The-ISEFile-Object.md) object has an associated **ISEEditor** object. The following sections list the methods and properties of an **ISEEditor** object.
+## <a name="methods"></a>メソッド
 
-## Methods
+### <a name="clear"></a>Clear\(\)
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
 
-### Clear\(\)
-  Supported in Windows PowerShell ISE 2.0 and later. 
+ エディター内のテキストをクリアします。
 
- Clears the text in the editor.
-
-```powershell
+```PowerShell
 # Clears the text in the Console pane.
 $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 ```
 
-### EnsureVisible\(int lineNumber\)
-  Supported in Windows PowerShell ISE 2.0 and later. 
+### <a name="ensurevisibleint-linenumber"></a>EnsureVisible\(int lineNumber\)
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- Scrolls the editor so that the line that corresponds to the specified **lineNumber** parameter value is visible. It throws an exception if the specified line number is outside the range of 1,last line number, which defines the valid line numbers.
+ 指定した **lineNumber** パラメーターの値に対応する行が表示されるようにエディターをスクロールします。 指定した行番号が 1 から最後の行番号までの有効な行番号を定義する範囲を超えた場合、例外がスローされます。
 
  **lineNumber**
- The number of the line that is to be made visible.
+ 表示させる行の番号。
 
-```powershell
+```PowerShell
 # Scrolls the text in the Script pane so that the fifth line is in view. 
 $psISE.CurrentFile.Editor.EnsureVisible(5)
 ```
 
-### Focus\(\)
-  Supported in Windows PowerShell ISE 2.0 and later. 
+### <a name="focus"></a>Focus\(\)
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- Sets the focus to the editor.
+ エディターにフォーカスを設定します。
 
-```powershell
+```PowerShell
 # Sets focus to the Console pane. 
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
 
-### GetLineLength\(int lineNumber \)
-  Supported in Windows PowerShell ISE 2.0 and later. 
+### <a name="getlinelengthint-linenumber-"></a>GetLineLength\(int lineNumber \)
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- Gets the line length as an integer for the line that is specified by the line number.
+ 行番号で指定される行の整数として行の長さを取得します。
 
  **lineNumber**
- The number of the line of which to get the length.
+ 長さを取得する対象の行の番号。
 
  **Returns**
- The line length for the line at the specified line number.
+ 指定した行番号にある行の長さ。
 
-```powershell
+```PowerShell
 # Gets the length of the first line in the text of the Command pane. 
 $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
 
-### GoToMatch\(\)
-  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
+### <a name="gotomatch"></a>GoToMatch\(\)
+  Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
- Moves the caret to the matching character if the **CanGoToMatch** property of the editor object is **$true**, which occurs when the caret is immediately before an opening parenthesis, bracket, or brace - \(,\[,{ - or immediately after a closing parenthesis, bracket, or brace - \),\],}.  The caret is placed before an opening character or after a closing character. If the **CanGoToMatch** property is **$false**, then this method does nothing. See [CanGoToMatch](#cangotomatch).
+ エディター オブジェクトの **CanGoToMatch** プロパティが **$true** の場合、一致する文字にカーソルを移動します。これは、カーソルが始めかっこ \(、始め角かっこ \[、始め波かっこ { の直前または終わりかっこ \)、終わり角かっこ \]、終わり波かっこ } の直後にある場合に発生します。  カーソルは、開始文字の前または終了文字の後に配置されます。 **CanGoToMatch** プロパティが **$false** の場合、このメソッドでは何も実行されません。 [CanGoToMatch](#cangotomatch) を参照してください。
 
-```powershell
+```PowerShell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
 ```
 
-### InsertText\( text \)
-  Supported in Windows PowerShell ISE 2.0 and later. 
+### <a name="inserttext-text-"></a>InsertText\( text \)
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- Replaces the selection with text or inserts text at the current caret position.
+ 選択範囲をテキストに置き換えるか、現在のカーソル位置でテキストを挿入します。
 
- **text** - String
- The text to insert.
+ **text** - 文字列。挿入するテキスト。
 
- See the [Scripting Example](#example) later in this topic.
+ 後述の「[スクリプト例](#example)」を参照してください。
 
-### Select\( startLine, startColumn, endLine, endColumn \)
-  Supported in Windows PowerShell ISE 2.0 and later. 
+### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- Selects the text from the **startLine**, **startColumn**, **endLine**, and **endColumn** parameters.
+ **startLine**、**startColumn**、**endLine**、**endColumn** パラメーターからテキストを選択します。
 
- **startLine** - Integer
- The line where the selection starts.
+ **startLine** - 整数。選択範囲が開始する行。
 
- **startColumn** - Integer
- The column within the start line where the selection starts.
+ **startColumn** - 整数。選択範囲が開始する開始行内の列。
 
- **endLine** - Integer
- The line where the selection ends.
+ **endLine** - 整数。選択範囲が終了する行。
 
- **endColumn** - Integer
- The column within the end line where the selection ends.
+ **endColumn** - 整数。選択範囲が終了する終了行内の列。
 
- See the  [Scripting Example](#example) later in this topic.
+ 後述の「[スクリプト例](#example)」を参照してください。
 
-### SelectCaretLine\(\)
-  Supported in Windows PowerShell ISE 2.0 and later. 
+### <a name="selectcaretline"></a>SelectCaretLine\(\)
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- Selects the entire line of text that currently contains the caret.
+ 現在カーソルがある行のテキスト全体を選択します。
 
-```powershell
+```PowerShell
 # First, set the caret position on line 5.
 $psISE.CurrentFile.Editor.SetCaretPosition(5,1) 
 # Now select that entire line of text
 $psISE.CurrentFile.Editor.SelectCaretLine()
 ```
 
-### SetCaretPosition\( lineNumber, columnNumber \)
-  Supported in Windows PowerShell ISE 2.0 and later. 
+### <a name="setcaretposition-linenumber-columnnumber-"></a>SetCaretPosition\( lineNumber, columnNumber \)
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- Sets the caret position at the line number and the column number. It throws an exception if either the caret line number  or the caret column number  are out of their respective valid ranges.
+ 行番号および列番号でカーソル位置を設定します。 カーソル行番号またはカーソル列番号のいずれかがそれぞれの有効な範囲外である場合、例外をスローします。
 
- **lineNumber** - Integer
- The caret line number.
+ **lineNumber** - 整数。カーソル行番号。
 
- **columnNumber** - Integer
- The caret column number.
+ **columnNumber** - 整数。カーソル列番号。
 
-```powershell
+```PowerShell
 # Set the CaretPosition.
 $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 ```
 
-### ToggleOutliningExpansion\(\)
-  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
+### <a name="toggleoutliningexpansion"></a>ToggleOutliningExpansion\(\)
+  Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
- Causes all the outline sections to expand or collapse.
+ すべてのアウトライン セクションの展開または折りたたみが行われます。
 
-```powershell
+```PowerShell
 # Toggle the outlining expansion
 $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ```
 
-## Properties
+## <a name="properties"></a>プロパティ
 
 ###  <a name="CanGoToMatch"></a> CanGoToMatch
-  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
+  Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
- The read-only Boolean property to indicate whether the caret is next to a parenthesis, bracket, or brace - \(\), \[\], {}. If the caret is immediately before the opening character or immediately after the closing character of a pair, then this property value is **$true**. Otherwise, it is **$false**.
+ カーソルがかっこ、角かっこ、または波かっこ (\(\)、\[\]、{}) の横にあるかどうかを示す読み取り専用のブール型プロパティ。 カーソルがかっこの始め文字の直前またはかっこの終わり文字の直後にある場合、このプロパティの値は **$true** です。 それ以外の場合は **$false** です。
 
-```powershell
+```PowerShell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
 $psISE.CurrentFile.Editor.CanGoToMatch
 ```
 
 ###  <a name="CaretColumn"></a> CaretColumn
-  Supported in Windows PowerShell ISE 2.0 and later. 
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- The read-only property that gets the column number that corresponds to the position of the caret.
+ カーソルの位置に対応する列番号を取得する読み取り専用プロパティ。
 
-```powershell
+```PowerShell
 # Get the CaretColumn.
 $psISE.CurrentFile.Editor.CaretColumn
 ```
 
 ###  <a name="CaretLine"></a> CaretLine
-  Supported in Windows PowerShell ISE 2.0 and later. 
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- The read-only property that gets the number of the line that contains the caret.
+ カーソルのある行の番号を取得する読み取り専用のプロパティ。
 
-```powershell
+```PowerShell
 # Get the CaretLine.
 $psISE.CurrentFile.Editor.CaretLine
 ```
 
 ###  <a name="CaretLineText"></a> CaretLineText
-  Supported in Windows PowerShell ISE 2.0 and later. 
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- The read-only property that gets the complete line of text that contains the caret.
+ カーソルのある行のテキスト全体を取得する読み取り専用のプロパティ。
 
-```powershell
+```PowerShell
 # Get all of the text on the line that contains the caret.
 $psISE.CurrentFile.Editor.CaretLineText
 ```
 
 ###  <a name="LineCount"></a> LineCount
-  Supported in Windows PowerShell ISE 2.0 and later. 
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- The read-only property that gets the line count from the editor.
+ エディターから行数を取得する読み取り専用のプロパティ。
 
-```powershell
+```PowerShell
 # Get the LineCount.
 $psISE.CurrentFile.Editor.LineCount
 ```
 
 ###  <a name="SelectedText"></a> SelectedText
-  Supported in Windows PowerShell ISE 2.0 and later. 
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- The read-only property that gets the selected text from the editor.
+ エディターから選択テキストを取得する読み取り専用のプロパティ。
 
- See the  [Scripting Example](#example) later in this topic.
+ 後述の「[スクリプト例](#example)」を参照してください。
 
 ###  <a name="Text"></a> Text
-  Supported in Windows PowerShell ISE 2.0 and later. 
+  Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- The read/write property that gets or sets the text in the editor.
+ エディターでテキストを取得または設定する読み取り/書き込みのプロパティ。
 
- See the [Scripting Example](#example) later in this topic.
+ 後述の「[スクリプト例](#example)」を参照してください。
 
-##  <a name="example"></a> Scripting Example
+##  <a name="example"></a>スクリプトの例
 
-```powershell
+```PowerShell
 # This illustrates how you can use the length of a line to
 # select the entire line and shows how you can make it lowercase. 
 # You must run this in the Console pane. It will not run in the Script pane.
@@ -230,11 +227,11 @@ $myEditor.Clear()
 $myEditor.InsertText($selection.ToLower())
 ```
 
-## See Also
-- [The ISEFile Object](The-ISEFile-Object.md) 
-- [The PowerShellTab Object](The-PowerShellTab-Object.md) 
-- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
-- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
+## <a name="see-also"></a>参照
+- [ISEFile オブジェクト](The-ISEFile-Object.md) 
+- [PowerShellTab オブジェクト](The-PowerShellTab-Object.md) 
+- [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)
 
   

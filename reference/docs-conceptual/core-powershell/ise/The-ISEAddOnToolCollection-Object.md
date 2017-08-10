@@ -1,72 +1,70 @@
 ---
-ms.date:  2017-06-05
-keywords:  powershell,cmdlet
-title:  The ISEAddOnToolCollection Object
-ms.assetid:  634eab89-0845-4016-974b-361b09bb8f7b
+ms.date: 2017-06-05
+keywords: "PowerShell, コマンドレット"
+title: "ISEAddOnToolCollection オブジェクト"
+ms.assetid: 634eab89-0845-4016-974b-361b09bb8f7b
+ms.openlocfilehash: 09088c9e7307a26b86e82f2dc10d2648213c6bd2
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
+# <a name="the-iseaddontoolcollection-object"></a>ISEAddOnToolCollection オブジェクト
+  **ISEAddOnToolCollection** オブジェクトは、**ISEAddOnTool** オブジェクトのコレクションです。 例としては、**$psISE.CurrentPowerShellTab.VerticalAddOnTools** オブジェクトです。
 
-# The ISEAddOnToolCollection Object
-  The **ISEAddOnToolCollection** object is a collection of **ISEAddOnTool** objects. An example is the **$psISE.CurrentPowerShellTab.VerticalAddOnTools** object.
+## <a name="methods"></a>メソッド
 
-## Methods
+### <a name="add-name-controltype-isvisible-"></a>Add\( Name、ControlType、\[IsVisible\] \)
+  Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
-### Add\( Name, ControlType, \[IsVisible\] \)
-  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
+ 新しいアドオン ツールをコレクションに追加します。 新しく追加されたアドオン ツールが返されます。 このコマンドを実行する前に、ローカル コンピューターにアドオン ツールをインストールし、アセンブリを読み込む必要があります。
 
- Adds a new add-on tool to the collection. It returns the newly added add-on tool. Before you run this command, you must install the add-on tool on the local computer and load the assembly.
+ **Name** - Windows PowerShell ISE に追加するアドオン ツールの表示名を指定する文字列。
 
- **Name** - String
- Specifies the display name of the add-on tool that is added to Windows PowerShell ISE.
+ **ControlType** - 追加するコントロールを指定する種類。
 
- **ControlType** -Type
- Specifies the control that is added.
+ **\[IsVisible\]** - 省略可能なブール値は、**$true** に設定すると、アドオン ツールが、関連付けられているツール ウィンドウに直ちに表示されます。
 
- **\[IsVisible\]** - optional Boolean
- If set to **$true**, the add-on tool is immediately visible in the associated tool pane.
-
-```powershell
+```PowerShell
 # Load a DLL with an add-on and then add it to the ISE
 [reflection.assembly]::LoadFile("c:\test\ISESimpleSolution\ISESimpleSolution.dll")
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 
-### Remove\( Item \)
-  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
+### <a name="remove-item-"></a>Remove\( Item \)
+  Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
- Removes the specified add-on tool from the collection.
+ コレクションから指定したアドオン ツールを削除します。
 
- **Item** - Microsoft.PowerShell.Host.ISE.ISEAddOnTool
- Specifies the object to be removed from Windows PowerShell ISE.
+ **Item** - Microsoft.PowerShell.Host.ISE.ISEAddOnTool Windows PowerShell ISE から削除するオブジェクトを指定します。
 
-```powershell
+```PowerShell
 # Load a DLL with an add-on and then add it to the ISE
 [reflection.assembly]::LoadFile("c:\test\ISESimpleSolution\ISESimpleSolution.dll")
 $psISE.CurrentPowerShellTab.VerticalAddOnTools.Add("Solutions", [ISESimpleSolution.Solution], $true)
 ```
 
-### SetSelectedPowerShellTab\( psTab \)
-  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
+### <a name="setselectedpowershelltab-pstab-"></a>SetSelectedPowerShellTab\( psTab \)
+  Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
- Selects the PowerShell tab that the **psTab** parameter specifies.
+ **psTab** パラメーターが指定する PowerShell タブを選択します。
 
- **psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab
- The PowerShell tab to select.
+ **psTab** - PowerShell タブが選択するMicrosoft.PowerShell.Host.ISE.PowerShellTab。
 
-```powershell
+```PowerShell
       $newTab = $psISE.PowerShellTabs.Add()
 # Change the DisplayName of the new PowerShell tab. 
 $newTab.DisplayName="Brand New Tab"
 ```
 
-### Remove\( psTab \)
-  Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions. 
+### <a name="remove-pstab-"></a>Remove\( psTab \)
+  Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
- Removes the PowerShell tab that the **psTab** parameter specifies.
+ **psTab** パラメーターが指定する PowerShell タブを削除します。
 
- **psTab** - Microsoft.PowerShell.Host.ISE.PowerShellTab
- The PowerShell tab to remove.
+ **psTab** - PowerShell タブが削除する Microsoft.PowerShell.Host.ISE.PowerShellTab。
 
-```powershell
+```PowerShell
 $newTab = $psISE.PowerShellTabs.Add()
 Change the DisplayName of the new PowerShell tab. 
 $newTab.DisplayName="This tab will go away in 5 seconds" 
@@ -74,10 +72,10 @@ sleep 5
 $psISE.PowerShellTabs.Remove($newTab)
 ```
 
-## See Also
-- [The PowerShellTab Object](The-PowerShellTab-Object.md) 
-- [The Windows PowerShell ISE Scripting Object Model](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
-- [Windows PowerShell ISE Object Model Reference](Windows-PowerShell-ISE-Object-Model-Reference.md) 
-- [The ISE Object Model Hierarchy](The-ISE-Object-Model-Hierarchy.md)
+## <a name="see-also"></a>参照
+- [PowerShellTab オブジェクト](The-PowerShellTab-Object.md) 
+- [Windows PowerShell ISE スクリプト オブジェクト モデル](The-Windows-PowerShell-ISE-Scripting-Object-Model.md) 
+- [Windows PowerShell ISE オブジェクト モデル リファレンス](Windows-PowerShell-ISE-Object-Model-Reference.md) 
+- [ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)
 
   

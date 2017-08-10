@@ -1,133 +1,81 @@
 ---
-ms.date:  2017-06-05
-keywords:  powershell,cmdlet
-title:  PowerShell.exe Command Line Help
-ms.assetid:  1ab7b93b-6785-42c6-a1c9-35ff686a958f
+ms.date: 2017-06-05
+keywords: "PowerShell, コマンドレット"
+title: "Windows PowerShell ISE でプロファイルを使用する方法"
+ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
+ms.openlocfilehash: 45d0187504ff2dc8f45824bf50aad39e55f7a224
+ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/08/2017
 ---
+# <a name="how-to-use-profiles-in-windows-powershell-ise"></a>Windows PowerShell ISE でプロファイルを使用する方法
+このトピックでは、Windows PowerShell® Integrated Scripting Environment (ISE) でプロファイルを使用する方法について説明します。 このセクションのタスクを実行する前に、[about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630)) を確認するか、またはコンソール ウィンドウに「`Get-Help about_Profiles`」と入力して **Enter** キーを押すことをお勧めします。
 
-# PowerShell.exe Command-Line Help
-Starts a Windows PowerShell session. You can use PowerShell.exe to start a Windows PowerShell session from the command line of another tool, such as Cmd.exe, or use it at the Windows PowerShell command line to start a new session. Use the parameters to customize the session.
-
-## Syntax
-
-```
-PowerShell[.exe]
-       [-EncodedCommand <Base64EncodedCommand>]
-       [-ExecutionPolicy <ExecutionPolicy>]
-       [-InputFormat {Text | XML}] 
-       [-Mta]
-       [-NoExit]
-       [-NoLogo]
-       [-NonInteractive] 
-       [-NoProfile] 
-       [-OutputFormat {Text | XML}] 
-       [-PSConsoleFile <FilePath> | -Version <Windows PowerShell version>]
-       [-Sta]
-       [-WindowStyle <style>]
-       [-File <FilePath> [<Args>]]
-       [-Command { - | <script-block> [-args <arg-array>]
-                     | <string> [<CommandParameters>] } ]
-
-PowerShell[.exe] -Help | -? | /?
-```
-
-## Parameters
-
-### -EncodedCommand <Base64EncodedCommand>
-Accepts a base-64-encoded string version of a command. Use this parameter to submit commands to Windows PowerShell that require complex quotation marks or curly braces.
-
-### -ExecutionPolicy <ExecutionPolicy>
-Sets the default execution policy for the current session and saves it in the $env:PSExecutionPolicyPreference environment variable. This parameter does not change the Windows PowerShell execution policy that is set in the registry. For information about Windows PowerShell execution policies, including a list of valid values, see about_Execution_Policies (http://go.microsoft.com/fwlink/?LinkID=135170).
-
-### -File <FilePath> \[<Parameters>]
-Runs the specified script in the local scope ("dot-sourced"), so that the functions and variables that the script creates are available in the current session. Enter the script file path and any parameters. **File** must be the last parameter in the command, because all characters typed after the **File** parameter name are interpreted as the script file path followed by the script parameters and their values.
-
-You can include the parameters of a script, and parameter values, in the value of the **File** parameter. For example: `-File .\Get-Script.ps1 -Domain Central`
-Note that parameters passed to the script are passed as literal strings (after interpretation by the current shell).
-For example, if you are in cmd.exe and want to pass an environment variable value, you would use the cmd.exe syntax: `powershell -File .\test.ps1 -Sample %windir%`
-If you were to use PowerShell syntax, then in this example your script would receive the literal "$env:windir" and not the value of that environmental variable: `powershell -File .\test.ps1 -Sample $env:windir`
-
-Typically, the switch parameters of a script are either included or omitted. For example, the following command uses the **All** parameter of the Get-Script.ps1 script file: `-File .\Get-Script.ps1 -All`
-
-### \-InputFormat {Text | XML}
-Describes the format of data sent to Windows PowerShell. Valid values are "Text" (text strings) or "XML" (serialized CLIXML format).
-
-### -Mta
-Starts Windows PowerShell using a multi-threaded apartment. This parameter is introduced in Windows PowerShell 3.0. In Windows PowerShell 3.0, single-threaded apartment (STA) is the default. In Windows PowerShell 2.0, multi-threaded apartment (MTA) is the default.
-
-### -NoExit
-Does not exit after running startup commands.
-
-### -NoLogo
-Hides the copyright banner at startup.
-
-### -NonInteractive
-Does not present an interactive prompt to the user.
-
-### -NoProfile
-Does not load the Windows PowerShell profile.
-
-### -OutputFormat {Text | XML}
-Determines how output from Windows PowerShell is formatted. Valid values are "Text" (text strings) or "XML" (serialized CLIXML format).
-
-### -PSConsoleFile <FilePath>
-Loads the specified Windows PowerShell console file. Enter the path and name of the console file. To create a console file, use the [Export-Console](https://technet.microsoft.com/en-us/library/4bab1c02-9e61-4aaf-9957-11d1934ef4ef) cmdlet in Windows PowerShell.
-
-### -Sta
-Starts Windows PowerShell using a single-threaded apartment. In Windows PowerShell 3.0, single-threaded apartment (STA) is the default. In Windows PowerShell 2.0, multi-threaded apartment (MTA) is the default.
-
-### -Version <Windows PowerShell Version>
-Starts the specified version of Windows PowerShell. The version that you specify must be installed on the system. If Windows PowerShell 3.0 is installed on the computer, valid values are "2.0" and "3.0". The default value is "3.0".
-
-If Windows PowerShell 3.0 is not installed, the only valid value is "2.0". Other values are ignored.
-
-For more information, see "Installing Windows PowerShell" in the [Getting Started with Windows PowerShell [OLD MSDN]](https://technet.microsoft.com/en-us/library/69555d95-b481-43e1-86e7-b46d68b3e2dd).
-
-### -WindowStyle <Window style>
-Sets the window style for the session. Valid values are Normal, Minimized, Maximized and Hidden.
-
-### -Command
-Executes the specified commands (and any parameters) as though they were typed at the Windows PowerShell command prompt, and then exits, unless the NoExit parameter is specified.
-Essentially, any text after `-Command` is sent as a single command line to PowerShell (this is different from how `-File` handles parameters sent to a script).
-
-The value of Command can be "-", a string. or a script block. If the value of Command is "-", the command text is read from standard input.
-
-Script blocks must be enclosed in braces ({}). You can specify a script block only when running PowerShell.exe in Windows PowerShell. The results of the script are returned to the parent shell as deserialized XML objects, not live objects.
-
-If the value of Command is a string, **Command** must be the last parameter in the command, because any characters typed after the command are interpreted as the command arguments.
-
-To write a string that runs a Windows PowerShell command, use the format:
-
-```
-"& {<command>}"
-```
-
-where the quotation marks indicate a string and the invoke operator (&) causes the command to be executed.
-
-### -Help, -?, /?
-Shows this message. If you are typing a PowerShell.exe command in Windows PowerShell, prepend the command parameters with a hyphen (-), not a forward slash (/). You can use either a hyphen or forward slash in Cmd.exe.
+プロファイルは、新しいセッションを開始するときに自動的に実行される Windows PowerShell ISE スクリプトです。  Windows PowerShell ISE 用に 1 つ以上の Windows PowerShell プロファイルを作成すると、Windows PowerShell または Windows PowerShell ISE 環境の構成に、自分の用途に合わせて変数、エイリアス、関数、色やフォントの設定などを追加するために利用できます。 プロファイルは、開始するすべての Windows PowerShell ISE セッションに影響を与えます。
 
 > [!NOTE]
-> Troubleshooting Note: In Windows PowerShell 2.0, starting some programs in the Windows PowerShell console fails with a LastExitCode of 0xc0000142.
+> スクリプトの実行やプロファイルの読み込みが可能かどうかは、Windows PowerShell の実行ポリシーによって決まります。 既定の実行ポリシーは "Restricted" で、プロファイルを含め、すべてのスクリプトが実行されないようにします。 "Restricted" ポリシーを使う場合は、プロファイルを読み込めません。 実行ポリシーの詳細については、「[about_Execution_Policies [v4]](https://technet.microsoft.com/library/347708dc-1515-4d74-978b-8334603472e6(v=wps.630))」をご覧ください。
 
-## EXAMPLES
+## <a name="selecting-a-profile-to-use-in-the-windows-powershell-ise"></a>Windows PowerShell ISE で使うプロファイルの選択
+Windows PowerShell ISE は、現在のユーザーとすべてのユーザーのプロファイルをサポートしています。 また、すべてのホストに適用される Windows PowerShell プロファイルもサポートしています。
 
+使用するプロファイルは、Windows PowerShell と Windows PowerShell ISE の使用方法によって決まります。
+
+-   Windows PowerShell を実行するために Windows PowerShell ISE のみを使う場合は、すべての項目を ISE 固有のプロファイルの 1 つに保存します。たとえば、Windows PowerShell ISE 用の CurrentUserCurrentHost プロファイルや、Windows PowerShell ISE 用の AllUsersCurrentHost プロファイルです。
+
+-   Windows PowerShell を実行するために複数のホスト プログラムを使う場合は、関数、エイリアス、変数、コマンドをすべてのホスト プログラムに影響を与えるプロファイルに保存します。たとえば、CurrentUserAllHosts プロファイルや、AllUsersAllHosts プロファイルです。また、色やフォントのカスタマイズのような ISE 固有の機能は、Windows PowerShell ISE 用の CurrentUserCurrentHost プロファイルか、Windows PowerShell ISE 用の AllUsersCurrentHost プロファイルに保存します。
+
+Windows PowerShell ISE で作成して利用できるプロファイルは次のとおりです。 各プロファイルは、それぞれ特定のパスに保存されます。
+
+| プロファイルの種類 | プロファイルのパス |
+| --- | --- |
+| **現在のユーザー、PowerShell ISE**| `$PROFILE.CurrentUserCurrentHost`、または `$PROFILE` |
+| **すべてのユーザー、PowerShell ISE**| `$PROFILE.AllUsersCurrentHost` |
+| **現在のユーザー、すべてのホスト**| `$PROFILE.CurrentUserAllHosts` |
+| **すべてのユーザー、すべてのホスト** | `$PROFILE.AllUsersAllHosts` |
+
+## <a name="to-create-a-new-profile"></a>新しいプロファイルを作成するには
+"現在のユーザー、Windows PowerShell ISE" の新しいプロファイルを作成するには、次のコマンドを実行します。
+
+```PowerShell
+if (!(Test-Path -Path $PROFILE )) 
+{ New-Item -Type File -Path $PROFILE -Force }
 ```
-PowerShell -PSConsoleFile sqlsnapin.psc1
 
-PowerShell -Version 2.0 -NoLogo -InputFormat text -OutputFormat XML
+"すべてのユーザー、Windows PowerShell ISE" の新しいプロファイルを作成するには、次のコマンドを実行します。
 
-PowerShell -Command "Get-EventLog -LogName security"
-
-# in an existing PowerShell session that understands the curly braces mean a script block
-PowerShell -Command {Get-EventLog -LogName security}
-
-PowerShell -Command "& {Get-EventLog -LogName security}"
-
-# To use the -EncodedCommand parameter:
-$command = "dir 'c:\program files' "
-$bytes = [System.Text.Encoding]::Unicode.GetBytes($command)
-$encodedCommand = [Convert]::ToBase64String($bytes)
-powershell.exe -encodedCommand $encodedCommand
+```PowerShell
+if (!(Test-Path -Path $PROFILE.AllUsersCurrentHost)) 
+{ New-Item -Type File -Path $PROFILE.AllUsersCurrentHost -Force }
 ```
 
+"現在のユーザー、すべてのホスト" の新しいプロファイルを作成するには、次のコマンドを実行します。
+
+```PowerShell
+if (!(Test-Path -Path $PROFILE.CurrentUserAllHosts)) 
+{ New-Item -Type File -Path $PROFILE.CurrentUserAllHosts -Force }
+```
+
+"すべてのユーザー、すべてのホスト" の新しいプロファイルを作成するには、次のように入力します。
+
+```PowerShell
+if (!(Test-Path -Path $PROFILE.AllUsersAllHosts)) 
+{ New-Item -Type File -Path $PROFILE.AllUsersAllHosts -Force }
+```
+
+## <a name="to-edit-a-profile"></a>プロファイルを編集するには
+
+1.  プロファイルを開くには、編集するプロファイルを設定した変数を指定してコマンド psedit を実行します。 たとえば、"現在のユーザー、Windows PowerShell ISE" のプロファイルを開くには、「`psEdit $PROFILE`」と入力します。
+
+2.  プロファイルに、いくつかの項目を追加します。 たとえば、次の例のように入力します。
+
+    -   コンソール ウィンドウの既定の背景色を青に変更するには、プロファイル ファイルに「`$psISE.Options.OutputPaneBackground = 'blue'`」と入力します。 $psISE 変数について詳しくは、「[Windows PowerShell ISE オブジェクト モデル リファレンス](#windows-powershell-ise-object-model-reference)」をご覧ください。
+
+    -   フォント サイズを 20 に変更するには、プロファイル ファイルに「`$psISE.Options.FontSize =20`」と入力します。
+
+3.  プロファイル ファイルを保存するには、**[ファイル]** メニューの **[保存]** をクリックします。 Windows PowerShell ISE を次に開いた時点で、カスタマイズの内容が適用されます。
+
+## <a name="see-also"></a>参照
+- [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))
+- [Windows PowerShell ISE の使用](Using-the-Windows-PowerShell-ISE.md)
