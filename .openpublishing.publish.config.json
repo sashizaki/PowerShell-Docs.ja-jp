@@ -8,6 +8,7 @@
       "build_source_folder": "dsc",
       "build_output_subfolder": "dsc",
       "locale": "ja-jp",
+       "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -22,6 +23,7 @@
       "build_source_folder": "gallery",
       "build_output_subfolder": "gallery",
       "locale": "ja-jp",
+       "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -36,6 +38,7 @@
       "build_source_folder": "jea",
       "build_output_subfolder": "jea",
       "locale": "ja-jp",
+       "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
@@ -50,6 +53,7 @@
       "build_source_folder": "reference",
       "build_output_subfolder": "reference",
       "locale": "ja-jp",
+       "version": 0,
       "open_to_public_contributors": false,
       "type_mapping": {
         "Conceptual": "Content",
@@ -76,6 +80,7 @@
       "build_source_folder": "wmf",
       "build_output_subfolder": "wmf",
       "locale": "ja-jp",
+       "version": 0,
       "open_to_public_contributors": true,
       "type_mapping": {
         "Conceptual": "Content",
