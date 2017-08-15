@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: "PowerShell, コマンドレット"
 title: "ワークフロー ガイド"
 ms.openlocfilehash: 9eb5ae1d665ed6e4319ede62e7f7a27e6ce5b04f
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="psworkflow-module"></a>PSWorkflow モジュール
 このセクションには、**PSWorkflow** モジュールのヘルプ トピックが含まれています。これには、Windows PowerShell ワークフロー機能をサポートするコマンドレットなどがあります。 **PSWorkflow** モジュールは、Windows PowerShell と共にインストールされます。

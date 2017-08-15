@@ -1,21 +1,19 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: JKeithB
 ms.topic: reference
 keywords: "WMF, PowerShell, セットアップ"
-ms.openlocfilehash: 28da6d12d3f7a59777425e1cc4531a609a793ddb
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 7817769c3fc060a51c833b7469f7b556b9b40e87
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="call-base-class-method" class="xliff"></a>
-
-# 基本クラス メソッドの呼び出し
+# <a name="call-base-class-method"></a>基本クラス メソッドの呼び出し
 
 サブクラスで既存のメソッドをオーバーライドすることができます。 そのためには、同じ名前およびシグネチャを使用してメソッドを宣言します。
 
-```PowerShell
+```powershell
 class baseClass
 {
     [int]foo() {return 100500}
@@ -31,7 +29,7 @@ class childClass1 : baseClass
 
 オーバーライドされた実装から基本クラス メソッドを呼び出すには、呼び出し時に基本クラスにキャストします ([baseClass]$this)。
 
-```PowerShell
+```powershell
 class childClass2 : baseClass
 {
     [int]foo()
@@ -45,7 +43,7 @@ class childClass2 : baseClass
 
 すべての PowerShell メソッドは仮想です。 オーバーライドの場合と同じ構文を使用して、サブクラスで非仮想 .NET メソッドを非表示にできます。同じ名前およびシグネチャを持つメソッドを宣言するだけです。
 
-```PowerShell
+```powershell
 class MyIntList : system.collections.generic.list[int]
 {
     # Add is final in system.collections.generic.list

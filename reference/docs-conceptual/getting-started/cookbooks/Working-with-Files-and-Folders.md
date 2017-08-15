@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: "PowerShell, コマンドレット"
 title: "ファイルとフォルダーの操作"
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
 ms.openlocfilehash: 73773df9f018c396c9c4237a40f2e9d2c841464e
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="working-with-files-and-folders"></a>ファイルとフォルダーの操作
 Windows PowerShell ドライブ間を移動したり、Windows PowerShell ドライブ上の項目を操作したりすることは、Windows の物理ディスク ドライブ上のファイルやフォルダーを操作することと似ています。 このセクションでは、ファイルとフォルダーを操作するための特定のタスクの処理方法について説明します。

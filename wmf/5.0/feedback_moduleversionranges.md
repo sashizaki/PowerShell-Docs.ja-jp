@@ -1,20 +1,18 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: JKeithB
 ms.topic: reference
 keywords: "WMF, PowerShell, セットアップ"
-ms.openlocfilehash: b64464eb2b4dd87ebe716e159fb916ac328b3b37
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: fa972b68015d9b6e14508ccda562cfa5ebd632ac
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="modules-support-for-declaring-version-ranges-1-etc" class="xliff"></a>
-
-# バージョン範囲 (1. * など) の宣言をサポートするモジュール
+# <a name="modules-support-for-declaring-version-ranges-1-etc"></a>バージョン範囲 (1. * など) の宣言をサポートするモジュール
 **-MinimumVersion** と **-MaximumVersion** を組み合わせて使うと、特定の範囲のモジュールを取得/インポートできるようになりました。 また、このパラメーターは **.*** もサポートしています。 このパラメーターの動作を次の例で示します。
 
-```PowerShell
+```powershell
 Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:
 
 PS C:\> Import-Module psreadline -Verbose -MinimumVersion 1.0 -MaximumVersion 1.2.*

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: "PowerShell, コマンドレット"
 title: "その他の役に立つスクリプティング オブジェクト"
 ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
 ms.openlocfilehash: 8334d0b346e59dea3643a93bf52b780b361d1945
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="other-useful-scripting-objects"></a>その他の役に立つスクリプティング オブジェクト
   次のオブジェクトは、Windows PowerShell ISE で追加のスクリプト機能を提供します。 これらのオブジェクトは **$psISE** 階層の一部ではありません。

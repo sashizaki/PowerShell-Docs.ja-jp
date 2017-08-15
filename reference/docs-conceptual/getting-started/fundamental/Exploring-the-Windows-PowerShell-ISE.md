@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell ISE の操作"
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
 ms.openlocfilehash: 979209d4b200728b7e78e341bb9595741d2b8e68
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Windows PowerShell ISE の操作
 Windows PowerShell® Integrated Scripting Environment (ISE) を使用すると、コマンドやスクリプトを作成、実行、デバッグできます。 Windows PowerShell ISE は、メニュー バー、Windows PowerShell タブ、ツール バー、スクリプト タブ、スクリプト ウィンドウ、コンソール ウィンドウ、ステータス バー、文字サイズ スライダー、状況依存のヘルプで構成されています。

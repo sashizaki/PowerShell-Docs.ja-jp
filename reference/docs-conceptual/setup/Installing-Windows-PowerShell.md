@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell のインストール"
 ms.assetid: 6fbb0409-5a54-48ec-95e6-7f8b7d8c4969
 ms.openlocfilehash: 2b4cdec52dfc98649a81ab2265a204fcdb0bd8d7
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell のインストール
 Windows® 8 と Windows Server® 2012 には、Windows PowerShell 3.0 とその前提条件がすべて含まれています。 システムには、Windows PowerShell 3.0 を使用できないホスト プログラムとの下位互換性のために Windows PowerShell 2.0 エンジンも含まれています。

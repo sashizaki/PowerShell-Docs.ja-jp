@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: "PowerShell, コマンドレット"
 title: ".NET オブジェクトと COM オブジェクトを作成する (New-Object)"
 ms.assetid: 2057b113-efeb-465e-8b44-da2f20dbf603
 ms.openlocfilehash: 534e1a9a759d67cfc62ce658a7abddf02f767212
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>.NET オブジェクトと COM オブジェクトを作成する (New-Object)
 ソフトウェア コンポーネントの中には、さまざまなシステム管理タスクを実行できるようにする .NET Framework や COM インターフェイスを備えているものがあります。 これらのコンポーネントは Windows PowerShell から使用することもでき、コマンドレットだけではできないタスクも実行できます。 Windows PowerShell の初回リリースでは、コマンドレットの多くがリモート コンピューターに対応していません。 ここでは、イベント ログを管理する場合に、.NET Framework の **System.Diagnostics.EventLog** クラスを Windows PowerShell から直接使用して、この制限を回避する方法を紹介します。

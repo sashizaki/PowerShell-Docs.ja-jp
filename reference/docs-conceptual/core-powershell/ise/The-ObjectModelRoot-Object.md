@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: "PowerShell, コマンドレット"
 title: "ObjectModelRoot オブジェクト"
 ms.assetid: 13fcf7ee-b18f-4499-a2b4-ccfc4484cd88
 ms.openlocfilehash: 7684ccb2ca785fae539aa919e36823c1e5b86cec
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-objectmodelroot-object"></a>ObjectModelRoot オブジェクト
   Windows PowerShell® Integrated Scripting Environment (ISE) のプリンシパル ルート オブジェクトである **$PsISE** オブジェクトは、Microsoft.PowerShell.Host.ISE.ObjectModelRoot クラスのインスタンスです。 このトピックでは、**ObjectModelRoot** オブジェクトのプロパティについて説明します。

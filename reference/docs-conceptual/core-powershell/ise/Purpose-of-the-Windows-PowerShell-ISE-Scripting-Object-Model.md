@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell ISE スクリプト オブジェクト モデルの目的"
 ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
 ms.openlocfilehash: 65535948d681ec63c6cc36583c6d145cfa19b937
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE スクリプト オブジェクト モデルの目的
   オブジェクトは、Windows PowerShell Integrated Scripting Environment (ISE) のフォームと機能に関連付けられます。 オブジェクト モデル リファレンスは、これらのオブジェクトが公開するメンバー プロパティとメソッドに関する詳細を提供します。 これらのメソッドとプロパティに直接アクセスするためのスクリプトを使用する方法を示す例が提供されています。 スクリプト オブジェクト モデルを使用すると、次のさまざまなタスクが容易になります。

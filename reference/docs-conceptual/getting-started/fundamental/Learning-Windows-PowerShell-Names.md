@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell で用いられる名前の習得"
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
 ms.openlocfilehash: 28c821c4a617b6ac775dbdda8ade3d15c3f218c3
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="learning-windows-powershell-names"></a>Windows PowerShell で用いられる名前の習得
 大半のコマンドライン インターフェイスに共通して言えることは、コマンドやコマンド パラメーターの名前を覚えるために多大な時間と労力が必要であるという点です。 この問題の原因は、決まったパターンがほとんどなく、よく使用するコマンドやパラメーターを暗記する以外に覚える方法がないことです。

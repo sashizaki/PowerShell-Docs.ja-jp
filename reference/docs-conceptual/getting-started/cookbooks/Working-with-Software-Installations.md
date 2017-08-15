@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: "PowerShell, コマンドレット"
 title: "ソフトウェア インストールの操作"
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
 ms.openlocfilehash: 2078376a8be19c9ff8ecc44183eb89f14bc388ed
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="working-with-software-installations"></a>ソフトウェア インストールの操作
 Windows インストーラーを使用するように設計されているアプリケーションは、WMI の **Win32_Product** クラスからアクセスできますが、今日使用されているすべてのアプリケーションが Windows インストーラーを使用しているわけではありません。 Windows インストーラーは、インストール可能なアプリケーションを操作するための標準的な手法を最も広範囲に提供しているため、主にこれらのアプリケーションについて説明します。 代替のセットアップ ルーチンを使用するアプリケーションは、通常 Windows インストーラーによって管理されません。 これらのアプリケーションを処理する具体的な方法は、インストーラーのソフトウェアとアプリケーションの開発者によってなされた決定によって異なります。

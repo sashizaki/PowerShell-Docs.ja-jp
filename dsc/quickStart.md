@@ -1,35 +1,29 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "Desired State Configuration クイック スタート"
-ms.openlocfilehash: 64c9cea7d65d0723e76c205aea104c3ec9423c1d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e8a73296827297bab3229392c4193fed940c53bf
+ms.sourcegitcommit: 46feddbc753523f464f139b5d272794620072fc8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 08/02/2017
 ---
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
-<a id="desired-state-configuration-quick-start" class="xliff"></a>
-
-# Desired State Configuration クイック スタート
+# <a name="desired-state-configuration-quick-start"></a>Desired State Configuration クイック スタート
 
 この演習では、Desired State Configuration (DSC) の構成の作成と適用について最初から最後まで説明します。
 これから使用するサンプルでは、サーバーの `Web-Server` (IIS) 機能が有効になっており、そのサーバのディレクトリ `intetpub\wwwroot` に「Hello World」サンプルのコンテンツが存在することを確認します。
 
-DSC の概要としくみついては、「[意思決定者向け Desired State Configuration の概要](DscForEngineers.md)」をご覧ください。
+DSC の概要としくみついては、「[意思決定者向け Desired State Configuration の概要](decisionMaker.md)」をご覧ください。
 
-<a id="requirements" class="xliff"></a>
-
-## 要件
+## <a name="requirements"></a>要件
 
 このサンプルを実行するには、Windows Server 2012 以降と PowerShell 4.0 以降が動作しているコンピューターが必要です。
 
-<a id="write-and-place-the-indexhtm-file" class="xliff"></a>
-
-## index.htm ファイルを記述し、配置する
+## <a name="write-and-place-the-indexhtm-file"></a>index.htm ファイルを記述し、配置する
 
 最初に、Web サイトのコンテンツとして使用する HTML ファイルを作成します。
 
@@ -46,9 +40,7 @@ DSC の概要としくみついては、「[意思決定者向け Desired State 
 
 これを先ほど作成した `test` フォルダに `index.htm` というファイル名でこのファイルを保存します。 
 
-<a id="write-the-configuration" class="xliff"></a>
-
-## 構成を記述する
+## <a name="write-the-configuration"></a>構成を記述する
 
 [DSC 構成](configurations.md)は 1 つまたは複数のターゲット コンピューター (ノード) を構成する方法を定義する特別な PowerShell 関数です。
 
@@ -66,7 +58,7 @@ Configuration WebsiteTest {
         # The first resource block ensures that the Web-Server (IIS) feature is enabled.
         WindowsFeature WebServer {
             Ensure = "Present"
-            Name =  "Web-Server"
+            Name   = "Web-Server"
         }
 
         # The second resource block ensures that the website content copied to the website root folder.
@@ -76,7 +68,7 @@ Configuration WebsiteTest {
             DestinationPath = 'c:\inetpub\wwwroot'
         }
     }
-} 
+}
 ```
 
 このファイルを `WebsiteTest.ps1` として保存します。
@@ -88,9 +80,7 @@ Configuration WebsiteTest {
 構成は 2 つの[リソース](resources.md) ([WindowsFeature](windowsFeatureResource.md) と[ファイル](fileResource.md)) を呼び出します。
 リソースは、ターゲット ノードが構成によって定義された状態になっているか確認します。
 
-<a id="compile-the-configuration" class="xliff"></a>
-
-## 構成をコンパイルする
+## <a name="compile-the-configuration"></a>構成をコンパイルする
 
 DSC 構成をノードに適用するには、最初にコンパイルを行い、MOF ファイルを出力する必要があります。
 これを行うには、構成を関数のように実行します。
@@ -107,21 +97,20 @@ WebsiteTest
 Directory: C:\ConfigurationTest\WebsiteTest
 
 
-Mode                LastWriteTime         Length Name                                                                                                                                                       
-----                -------------         ------ ----                                                                                                                                                       
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
 -a----        3/13/2017   5:20 PM           2746 localhost.mof
 ```
 
 最初の行では、コンソールで利用可能な構成関数を作成します。
 2 行目では構成を実行します。
 その結果、現在のフォルダのサブ フォルダとして `WebsiteTest` という名前の新しいフォルダが作成されます。
-`WebsiteTest` フォルダーには、`localhost.mof` という名前のファイルが含まれています。 これは後にターゲット ノードに適用できるファイルです。
+`WebsiteTest` フォルダーには、`localhost.mof` という名前のファイルが含まれています。
+これは後にターゲット ノードに適用できるファイルです。
 
-<a id="apply-the-configuration" class="xliff"></a>
+## <a name="apply-the-configuration"></a>構成を適用する
 
-## 構成を適用する
-
-コンパイル済みの MOF があるため、[Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration.md) コマンドレットを呼び出すことで、ターゲット ノード (今回の場合はローカル コンピューター) に構成を適用できます。
+コンパイル済みの MOF があるため、[Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration) コマンドレットを呼び出すことで、ターゲット ノード (今回の場合はローカル コンピューター) に構成を適用できます。
 
 `Start-DscConfiguration` コマンドレットから DSC のエンジンである [Local Configuration Manager (LCM)](metaConfig.md) に対して構成の適用を指示します。
 LCM はDSC リソースを呼び出し、構成を適用します。
@@ -132,17 +121,14 @@ PowerShell コンソールで構成が保存されているフォルダーに移
 Start-DscConfiguration .\WebsiteTest
 ```
 
-<a id="test-the-configuration" class="xliff"></a>
+## <a name="test-the-configuration"></a>構成をテストする
 
-## 構成をテストする
+[Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) コマンドレットを呼び出すことで、構成の適用が正しく行われたか確認できます。 
 
-[Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus.md) コマンドレットを呼び出すことで、構成の適用が正しく行われたか確認できます。 
+今回の場合は、Web ブラウザーで `http://localhost/` を参照することで、結果を直接テストすることもできます。
+この例の最初の手順として、作成した「Hello World」 HTML ページが表示されます。
 
-今回の場合は、Web ブラウザーで `http://localhost/` を参照することで、結果を直接テストすることもできます。 この例の最初の手順として、作成した「Hello World」 HTML ページが表示されます。
-
-<a id="next-steps" class="xliff"></a>
-
-## 次の手順
+## <a name="next-steps"></a>次の手順
 
 - 「[DSC 構成](configurations.md)」で DSC 構成の詳細を確認する。
 - 「[DSC リソース](resources.md)」で利用可能な DSC リソースとカスタム DSC リソースの作成方法を確認する。

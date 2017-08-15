@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-06-05T00:00:00.000Z
 keywords: "PowerShell, コマンドレット"
 title: "サービスの管理"
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
 ms.openlocfilehash: 9fd6c8bcfecc99756188409629ddf94b880aab91
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="managing-services"></a>サービスの管理
 サービスに関連したさまざまなタスクを実行するために設計された 8 つの主要な Service コマンドレットがあります。 ここでは、サービスの実行状態の一覧表示と変更についてのみ取り上げていますが、**Get-Help \&#42;-Service** でサービスに関連したコマンドレットを一覧表示したり、**Get-Help<Cmdlet-Name>** (**Get-Help New-Service** など) でサービスに関連した各種コマンドレットの情報を検索したりできます。

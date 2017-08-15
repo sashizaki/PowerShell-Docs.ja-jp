@@ -1,18 +1,16 @@
 ---
-ms.date: 2017-06-12
+ms.date: 2017-06-12T00:00:00.000Z
 author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "ノードの相互依存関係の指定"
-ms.openlocfilehash: dcdf9f8ef4b74d23bd083767db2cc4aafc0ee83b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 885c130fb050629aac4c072e18a147d77b9deb8f
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 07/27/2017
 ---
-<a id="specifying-cross-node-dependencies" class="xliff"></a>
-
-# ノードの相互依存関係の指定
+# <a name="specifying-cross-node-dependencies"></a>ノードの相互依存関係の指定
 
 > 適用先: Windows PowerShell 5.0
 
@@ -22,9 +20,7 @@ DSC には、**WaitForAll**、**WaitForAny**、**WaitForSome** などの特別�
 * **WaitForAny**: **NodeName** プロパティで定義されているターゲット ノードの少なくとも 1 つで、指定されたリソースが目的の状態である場合に成功します。
 * **WaitForSome**: **NodeName** プロパティのほか、**NodeCount** プロパティも指定します。 リソースは、**NodeName** プロパティで定義されたノードの最小数 (**NodeCount** で指定) で目的の状態になった場合に成功します。 
 
-<a id="using-waitforxxxx-resources" class="xliff"></a>
-
-## WaitForXXXX リソースの使用
+## <a name="using-waitforxxxx-resources"></a>WaitForXXXX リソースの使用
 
 **WaitForXXXX** リソースを使用するには、待機する DSC リソースとノードを指定する、そのリソースの種類のリソース ブロックを作成します。 その後、構成の他のリソース ブロックで **DependsOn** プロパティを使用して、**WaitForXXXX** ノードで指定されている条件が成功するのを待ちます。
 
@@ -36,7 +32,7 @@ Configuration JoinDomain
 {
     Import-DscResource -Module xComputerManagement, xActiveDirectory
 
-    Node myPC
+    Node myDC
     {
         WindowsFeature InstallAD
         {
@@ -80,9 +76,7 @@ Configuration JoinDomain
 
 >**注:** 既定では、WaitForXXX リソースは 1 回試行してから失敗します。 これは必須ではありませんが、通常は、再試行の間隔と回数を指定することをお勧めします。
 
-<a id="see-also" class="xliff"></a>
-
-## 参照
+## <a name="see-also"></a>参照
 * [DSC 構成](configurations.md)
 * [DSC リソース](resources.md)
 * [ローカル構成マネージャーの構成](metaConfig.md)
