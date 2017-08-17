@@ -3,14 +3,12 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell Web Access のインストールと使用"
 ms.openlocfilehash: a860f7c22829da46f0458ea729fa0afd1fe4fb6f
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
-<a id="install-and-use-windows-powershell-web-access" class="xliff"></a>
-
-#  Windows PowerShell Web Access のインストールと使用
+#  <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Access のインストールと使用
 
 最終更新日: 2013 年 11 月 5 日
 
@@ -36,7 +34,7 @@ Windows PowerShell Web Access をインストールして構成する前に、�
 
 次の図は、Windows PowerShell Web Access のしくみを示しています。
 
-<span><img src="https://i-technet.sec.s-msft.com/dynimg/IC564303.jpeg" title="Windows PowerShell Web Access diagram" alt="Windows PowerShell Web Access diagram" id="ee15fa8f-ce13-49e5-933d-514f6d60a2b1" /></span>
+<span><img src="https://i-technet.sec.s-msft.com/dynimg/IC564303.jpeg" title="Windows PowerShell Web Access の図" alt="Windows PowerShell Web Access diagram" id="ee15fa8f-ce13-49e5-933d-514f6d60a2b1" /></span>
 
 このトピックの内容:
 
@@ -52,8 +50,8 @@ Windows PowerShell Web Access をインストールして構成する前に、�
 
 <a href="" id="BKMK_reqs"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Windows PowerShell Web Access の実行に関する要件</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_0" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Windows PowerShell Web Access の実行に関する要件</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_0" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 
@@ -63,8 +61,8 @@ Windows PowerShell Web Access により、リモート ユーザーは Web ブ�
 
 <a href="" id="BKMK_browser"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">ブラウザーとクライアント デバイスのサポート</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">ブラウザーとクライアント デバイスのサポート</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 
@@ -72,7 +70,7 @@ Windows PowerShell Web Access は次のインターネット ブラウザーを�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">サポート対象のデスクトップ コンピューター ブラウザー</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">サポート対象のデスクトップ コンピューター ブラウザー</span></a>
 
 ------------------------------------------------------------------------
 
@@ -88,7 +86,7 @@ Windows PowerShell Web Access は次のインターネット ブラウザーを�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">最低限のテストを実施済みのモバイル デバイスまたはブラウザー</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">最低限のテストを実施済みのモバイル デバイスまたはブラウザー</span></a>
 
 ------------------------------------------------------------------------
 
@@ -102,7 +100,7 @@ Windows PowerShell Web Access は次のインターネット ブラウザーを�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">ブラウザーの要件</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">ブラウザーの要件</span></a>
 
 ------------------------------------------------------------------------
 
@@ -116,8 +114,8 @@ Web ベースの Windows PowerShell コンソールを使うには、ブラウ�
 
 <a href="" id="BKMK_recm"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">推奨される (クイック) デプロイ</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">推奨する (クイック) 展開</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 
@@ -132,13 +130,11 @@ Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマ�
 <a href="" id="BKMK_step1"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 1: Windows PowerShell Web Access をインストールする</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 1: Windows PowerShell Web Access をインストールする</span></a>
 
 ------------------------------------------------------------------------
 
-<a id="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets" class="xliff"></a>
-
-#### Windows PowerShell コマンドレットを使って Windows PowerShell Web Access をインストールするには
+#### <a name="to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets"></a>Windows PowerShell コマンドレットを使って Windows PowerShell Web Access をインストールするには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
@@ -197,7 +193,7 @@ Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマ�
 <a href="" id="BKMK_step2"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 2: ゲートウェイを構成する</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 2: ゲートウェイを構成する</span></a>
 
 ------------------------------------------------------------------------
 
@@ -225,9 +221,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
 -   [正規の証明書を持つ Windows PowerShell Web Access ゲートウェイを Install-PswaWebApplication と IIS Manager を使用して構成するには](#BKMK_gencert)
 
-<a id="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication" class="xliff"></a>
-
-#### Install-PswaWebApplication を使って、テスト証明書を使う Windows PowerShell Web Access Web ゲートウェイを構成するには
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>Install-PswaWebApplication を使って、テスト証明書を使う Windows PowerShell Web Access Web ゲートウェイを構成するには
 
 1.  次のいずれかを実行して Windows PowerShell セッションを開きます。
 
@@ -287,9 +281,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
     </tbody>
     </table>
 
-<a id="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager" class="xliff"></a>
-
-#### 正規の証明書を持つ Windows PowerShell Web Access ゲートウェイを Install-PswaWebApplication と IIS Manager を使用して構成するには
+#### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>正規の証明書を持つ Windows PowerShell Web Access ゲートウェイを Install-PswaWebApplication と IIS Manager を使用して構成するには
 
 1.  次のいずれかを実行して Windows PowerShell セッションを開きます。
 
@@ -345,10 +337,12 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
     </tbody>
     </table>
 
-<a href="" id="BKMK_step3"></a>
+<a href="" id="BKMK_step3">
+</a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 3: 制限的な承認規則を構成する</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="
+折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 3: 制限的な承認規則を構成する</span></a>
 
 ------------------------------------------------------------------------
 
@@ -356,9 +350,7 @@ Windows PowerShell Web Access をインストールし、ゲートウェイを�
 
 Windows PowerShell Web Access の承認規則とセキュリティの詳細については、「[Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)」を参照してください。
 
-<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
-
-#### 制限的な承認規則を追加するには
+#### <a name="to-add-a-restrictive-authorization-rule"></a>制限的な承認規則を追加するには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
@@ -386,8 +378,8 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 <a href="" id="BKMK_custom"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">カスタム デプロイ</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">カスタム展開</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 
@@ -396,13 +388,11 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 <a href="" id="BKMK_custom1"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 1: Windows PowerShell Web Access をインストールする</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 1: Windows PowerShell Web Access をインストールする</span></a>
 
 ------------------------------------------------------------------------
 
-<a id="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard" class="xliff"></a>
-
-#### 役割と機能の追加ウィザードを使って Windows PowerShell Web Access をインストールするには
+#### <a name="to-install-windows-powershell-web-access-by-using-the-add-roles-and-features-wizard"></a>役割と機能の追加ウィザードを使って Windows PowerShell Web Access をインストールするには
 
 1.  サーバー マネージャーを既に開いている場合は、次の手順に進んでください。 サーバー マネージャーをまだ開いていない場合は、次のいずれかの方法で開きます。
 
@@ -442,7 +432,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 2: ゲートウェイを構成する</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 2: ゲートウェイを構成する</span></a>
 
 ------------------------------------------------------------------------
 
@@ -454,9 +444,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 -   
 
-<a id="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website" class="xliff"></a>
-
-#### IIS マネージャーを使って既存の Web サイトにゲートウェイを構成するには
+#### <a name="to-use-iis-manager-to-configure-the-gateway-in-an-existing-website"></a>IIS マネージャーを使って既存の Web サイトにゲートウェイを構成するには
 
 1.  次のいずれかの方法で IIS マネージャー コンソールを開きます。
 
@@ -518,9 +506,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
         c:\windows\system32\icacls.exe $authorizationFile
 
-<a id="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate" class="xliff"></a>
-
-#### IIS マネージャーを使用してテスト証明書を持つゲートウェイをルート Web サイトとして構成するには
+#### <a name="to-use-iis-manager-to-configure-the-gateway-as-a-root-website-with-a-test-certificate"></a>IIS マネージャーを使用してテスト証明書を持つゲートウェイをルート Web サイトとして構成するには
 
 1.  次のいずれかの方法で IIS マネージャー コンソールを開きます。
 
@@ -590,7 +576,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 3: 制限的な承認規則を構成する</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 3: 制限的な承認規則を構成する</span></a>
 
 ------------------------------------------------------------------------
 
@@ -598,9 +584,7 @@ Windows PowerShell Web Access をインストールし、ゲートウェイを�
 
 Windows PowerShell Web Access の承認規則とセキュリティの詳細については、「[Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)」を参照してください。
 
-<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
-
-#### 制限的な承認規則を追加するには
+#### <a name="to-add-a-restrictive-authorization-rule"></a>制限的な承認規則を追加するには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
@@ -628,16 +612,14 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 <a href="" id="BKMK_configcert"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">正規の証明書を構成する</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">正規の証明書を構成する</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 
 運用環境のセキュリティ保護のため、証明機関 (CA) によって署名されている有効な SSL 証明書を常に使用してください。 このセクションの手順では、有効な SSL 証明書を CA から取得して適用する方法について説明します。
 
-<a id="to-configure-an-ssl-certificate-in-iis-manager" class="xliff"></a>
-
-### IIS マネージャーで SSL 証明書を構成するには
+### <a name="to-configure-an-ssl-certificate-in-iis-manager"></a>IIS マネージャーで SSL 証明書を構成するには
 
 1.  IIS マネージャーのツリー ウィンドウで、Windows PowerShell Web Access がインストールされているサーバーを選択します。
 
@@ -659,15 +641,15 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 <a href="" id="BKMK_using"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Web ベースの Windows PowerShell コンソールの使用</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_5" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Web ベースの Windows PowerShell コンソールの使用</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_5" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 
 このトピックの説明に従って Windows PowerShell Web Access のインストールとゲートウェイ構成が完了したら、Web ベースの Windows PowerShell コンソールを使えるようになります。 Web ベース コンソールの概要については、「[Web ベースの Windows PowerShell コンソールの使用](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)」を参照してください。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
-<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_6" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
+<a href="/en-us/library/hh831611(v=ws.11).aspx#Anchor_6" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 

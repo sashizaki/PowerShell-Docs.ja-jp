@@ -3,14 +3,12 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Web ベースの Windows PowerShell コンソールの使用"
 ms.openlocfilehash: 48ed1646c00f909c4e950f197f51a30205060ef0
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
-<a id="use-the-web-based-windows-powershell-console" class="xliff"></a>
-
-#  Web ベースの Windows PowerShell コンソールの使用
+#  <a name="use-the-web-based-windows-powershell-console"></a>Web ベースの Windows PowerShell コンソールの使用
 
 最終更新日: 2013 年 6 月 24 日
 
@@ -37,7 +35,7 @@ Windows PowerShell Web Access は次のインターネット ブラウザーを�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">サポート対象のデスクトップ コンピューター ブラウザー</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">サポート対象のデスクトップ コンピューター ブラウザー</span></a>
 
 ------------------------------------------------------------------------
 
@@ -53,7 +51,7 @@ Windows PowerShell Web Access は次のインターネット ブラウザーを�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">最低限のテストを実施済みのモバイル デバイスまたはブラウザー</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">最低限のテストを実施済みのモバイル デバイスまたはブラウザー</span></a>
 
 ------------------------------------------------------------------------
 
@@ -67,7 +65,7 @@ Windows PowerShell Web Access は次のインターネット ブラウザーを�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">ブラウザーの要件</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">ブラウザーの要件</span></a>
 
 ------------------------------------------------------------------------
 
@@ -81,16 +79,14 @@ Web ベースの Windows PowerShell コンソールを使うには、ブラウ�
 
 <a href="" id="BKMK_sign"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Windows PowerShell Web Access へのサインイン</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Windows PowerShell Web Access へのサインイン</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 
 Windows PowerShell Web Access 管理者は、所属組織の Windows PowerShell Web Access ゲートウェイ Web サイトのアドレスを示す URL を担当者に提供する必要があります。 この Web サイトのアドレスは、既定で https://&lt;server_name&gt;/pswa となっています。 Windows PowerShell Web Access にサインインする前に、管理対象のリモート コンピューターの名前または IP アドレスがわかっていることを確認してください。 また担当者がリモート コンピューターの承認済みユーザーであることと、リモート コンピューターがリモート管理を許可するよう構成されている必要があります。 リモート管理を許可するようコンピューターを構成する方法の詳細については、[Windows PowerShell でのリモート コマンドの有効化および使用](https://technet.microsoft.com/magazine/ff700227.aspx)に関するページを参照してください。 コンピューターを構成してリモート管理を有効にする最も簡単な方法は、Windows PowerShell セッションを管理者特権で開き (**[管理者として実行]**)、コンピューター上で **Enable-PSRemoting -force** コマンドレットを実行することです。
 
-<a id="to-sign-in-to-windows-powershell-web-access" class="xliff"></a>
-
-### Windows PowerShell Web Access にサインインするには
+### <a name="to-sign-in-to-windows-powershell-web-access"></a>Windows PowerShell Web Access にサインインするには
 
 1.  Windows PowerShell Web Access Web サイトをインターネット ブラウザーのウィンドウまたはタブで開きます。
 
@@ -128,8 +124,8 @@ Windows PowerShell Web Access 管理者は、所属組織の Windows PowerShell 
 
 <a href="" id="BKMK_timeout"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">サインアウトとタイムアウト</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">サインアウトとタイムアウト</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 
@@ -159,8 +155,8 @@ Windows PowerShell Web Access 管理者は、所属組織の Windows PowerShell 
 
 <a href="" id="BKMK_web"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Web ベースの Windows PowerShell コンソールにおける相違点</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Web ベースの Windows PowerShell コンソールにおける相違点</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 
@@ -168,7 +164,7 @@ Windows PowerShell Web Access にサインインすると、Web ベースの Win
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">PowerShell.exe との機能面の相違点</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">PowerShell.exe との機能面の相違点</span></a>
 
 ------------------------------------------------------------------------
 
@@ -208,7 +204,7 @@ Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Acce
 </tr>
 <tr class="even">
 <td><p>Alt + Space、e、k</p></td>
-<td><p>Select text to be copied from the screen bufferコピーするテキストを画面バッファーから選択</p></td>
+<td><p>コピーするテキストを画面バッファーから選択</p></td>
 </tr>
 <tr class="odd">
 <td><p>Alt + Space、e、p</p></td>
@@ -280,7 +276,7 @@ Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Acce
 <a href="" id="BKMK_limits"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Web ベース コンソールの制限事項</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">Web ベース コンソールの制限事項</span></a>
 
 ------------------------------------------------------------------------
 
@@ -333,8 +329,8 @@ Windows PowerShell のホスト機能の大部分は Windows PowerShell Web Acce
 
         コンソール ビューをカスタマイズするその他の例については、[Windows PowerShell チームのブログ](http://blogs.msdn.com/b/powershell/)を参照してください。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
-<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
+<a href="/en-us/library/hh831417(v=ws.11).aspx#Anchor_4" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 

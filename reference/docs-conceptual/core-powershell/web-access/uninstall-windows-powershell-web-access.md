@@ -3,10 +3,10 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell Web Access のアンインストール"
 ms.openlocfilehash: 7231d5eadceda8e3b28d9a81c2b5dcbe43680ff2
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 #  <a name="uninstall-windows-powershell-web-access"></a>Windows PowerShell Web Access をアンインストールする
 
@@ -24,8 +24,8 @@ Windows Server 2012 R2 または Windows Server 2012 のいずれかを実行し
 
 Windows PowerShell Web Access の実行に必要なため、Windows PowerShell Web Access をアンインストールしても、自動インストールされた IIS その他の機能はアンインストールされません。 アンインストール プロセスでは、Windows PowerShell Web Access が依存する機能はそのまま残されるため、必要に応じて手動でアンインストールしてください。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">推奨の (クイック) アンインストール</span></a>
-<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">推奨する (クイック) アンインストール</span></a>
+<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 
@@ -33,7 +33,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 1: Web アプリケーションを削除する</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 1: Web アプリケーションを削除する</span></a>
 
 ------------------------------------------------------------------------
 
@@ -57,7 +57,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 2: Windows PowerShell Web Access をアンインストールする</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 2: Windows PowerShell Web Access をアンインストールする</span></a>
 
 ------------------------------------------------------------------------
 
@@ -83,8 +83,8 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 3.  削除が完了したら、Windows PowerShell Web Access が削除されていることを確認します。これには、サーバー マネージャーの **[すべてのサーバー]** ページを開き、機能を削除したサーバーを選択して、選択したサーバーのページで **[役割と機能]** タイルを表示します。 また、選択したサーバーを対象として <span class="code">Get-WindowsFeature</span> コマンドレット (Get-WindowsFeature -ComputerName &lt;*computer_name*&gt;) を実行し、サーバーにインストールされている役割と機能の一覧を表示することもできます。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">カスタム アンインストール</span></a>
-<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">カスタム アンインストール</span></a>
+<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するに右クリックする"></a>
 
 ------------------------------------------------------------------------
 
@@ -92,7 +92,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 1: Web アプリケーションを削除する</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 1: Web アプリケーションを削除する</span></a>
 
 ------------------------------------------------------------------------
 
@@ -132,7 +132,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 2: Windows PowerShell Web Access をアンインストールする</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">手順 2: Windows PowerShell Web Access をアンインストールする</span></a>
 
 ------------------------------------------------------------------------
 
@@ -154,8 +154,8 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 6.  **[削除オプションの確認]** ページで、**[削除]** をクリックします。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
-<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
+<a href="/en-us/library/dn282396(v=ws.11).aspx#Anchor_3" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 

@@ -4,10 +4,10 @@ keywords: "PowerShell, コマンドレット"
 title: "PowerShellTab オブジェクト"
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
 ms.openlocfilehash: d4e9374202d352a30b3eb46bcf1e4e40dea49822
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab オブジェクト
   **PowerShellTab** オブジェクトは、Windows PowerShell ランタイム環境を表します。
@@ -40,8 +40,7 @@ $psise.PowerShellTabs[1].Invoke({dir})
 
  **Script** - System.Management.Automation.ScriptBlock または文字列。実行するスクリプト ブロック。
 
- **\[useNewScope\]** - 省略可能なブール値で、既定は **$true**
- です。**$true** に設定されると、そのコマンドを実行する新しいスコープが作成されます。 コマンドで指定されている [PowerShell] タブのランタイム環境は変更されません。
+ **\[useNewScope\]** - 省略可能なブール値で、既定は **$true** です。**$true** に設定されると、そのコマンドを実行する新しいスコープが作成されます。 コマンドで指定されている [PowerShell] タブのランタイム環境は変更されません。
 
  **\[millisecondsTimeout\]** - **500** を既定値とする省略可能な整数。
 指定した時間内にコマンドが完了しない場合、コマンドによって **TimeoutException** が生成され、"処理がタイムアウトになりました。" というメッセージが表示されます。

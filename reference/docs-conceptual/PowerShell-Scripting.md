@@ -2,15 +2,15 @@
 ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "PowerShell スクリプト"
-ms.openlocfilehash: 4e27f81bd06f0994a86ffa3bd23e8fa6f4fe344d
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 98b95339fb30ee95a006d10d68e266ed8243cd68
+ms.sourcegitcommit: 289fe8fbf8ff48ca8999aca10aebd3af44bf9b23
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/07/2017
 ---
 #  <a name="powershell"></a>PowerShell
 
-Windows PowerShell は、システム管理者とパワーユーザー向けに .NET Framework 上に構築されたタスクベースのコマンドライン シェルとスクリプト言語であり、複数のオペレーティング システム (Linux、OSX、Unix、Windows) の管理とこれらのオペレーティング システム上で実行されるアプリケーションに関連するプロセスを迅速に自動化するものです。
+Windows PowerShell は、システム管理者とパワーユーザー向けに .NET Framework 上に構築されたタスクベースのコマンドライン シェルとスクリプト言語であり、複数のオペレーティング システム (Linux、macOS、Unix、Windows) の管理とこれらのオペレーティング システム上で実行されるアプリケーションに関連するプロセスを迅速に自動化するものです。
 
 ###  <a name="powershell-is-now-open-source"></a>PowerShell は現在、オープン ソースです
 

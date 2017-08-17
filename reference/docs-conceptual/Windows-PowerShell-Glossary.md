@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell 用語集"
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 9b8ff47a568b8a71cc51f50b3f3ba5ad3dab1ad1
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 48e5d832ead720c8bc7753c94f757ddb21846fc9
+ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/08/2017
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell 用語集
 
@@ -15,11 +15,11 @@ ms.lasthandoff: 06/08/2017
 |用語|定義|
 |--------|--------------|
 |バイナリ モジュール|ルート モジュールがバイナリ モジュール ファイル (.dll) である Windows PowerShell モジュール。 バイナリ モジュールにはモジュール マニフェストが含まれる場合と、含まれない場合があります。|
-|共有パラメーター|Windows PowerShell エンジンによってすべてのコマンドレットおよび高度な関数に追加されるパラメーター。|
+|共有パラメーター|Windows PowerShell エンジンによってすべてのコマンドレット、高度な関数、およびワークフローに追加されるパラメーター。|
 |ドット ソース|Windows PowerShell では、コマンドの前にドットとスペースを入力することによってコマンドを開始すること。 ドット ソースのコマンドは、新しいスコープではなく、現在のスコープで実行されます。 コマンドが作成するすべての変数、エイリアス、関数、またはドライブは、現在のスコープで作成され、コマンドが完了すると使用できるようになります。|
 |動的モジュール|メモリ内にのみ存在するモジュール。 New-Module コマンドレットと Import-PSSession コマンドレットは動的モジュールを作成します。|
 |動的パラメーター|Windows PowerShell コマンドレット、関数、または特定の条件下のスクリプトに追加されるパラメーター。 コマンドレット、関数、プロバイダー、およびスクリプトは動的パラメーターを追加できます。|
-|書式設定ファイル|拡張子が .format.ps1xml で、Windows PowerShell がどのように .NET Framework 型に基づいてオブジェクを表示するかを定義する Windows PowerShell XML ファイル。|
+|書式設定ファイル|拡張子が .format.ps1xml で、Windows PowerShell がどのように .NET Framework 型に基づいてオブジェクオを表示するかを定義する Windows PowerShell XML ファイル。|
 |グローバル セッション状態|Windows PowerShell セッションのユーザーがアクセスできるデータを含むセッション状態。|
 |ホスト|Windows PowerShell エンジンがユーザーとの通信に使用するインターフェイス。 たとえば、ホストは Windows PowerShell とユーザー間でプロンプトが処理される方法を指定します。|
 |ホスト アプリケーション|Windows PowerShell エンジンをそのプロセスに読み込み、操作を実行するのに使用するプログラム。|

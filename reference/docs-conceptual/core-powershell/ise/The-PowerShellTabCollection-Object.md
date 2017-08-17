@@ -4,10 +4,10 @@ keywords: "PowerShell, コマンドレット"
 title: "PowerShellTabCollection オブジェクト"
 ms.assetid: 81f4bf4a-83bf-415e-8378-1703792fbb58
 ms.openlocfilehash: dcdc16ae126453b6ade64917ac4950cc05e5f8ad
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-powershelltabcollection-object"></a>PowerShellTabCollection オブジェクト
   **PowerShellTab** コレクション オブジェクトは **PowerShellTab** オブジェクトのコレクションです。 個々の **PowerShellTab** オブジェクトは、個別のランタイム環境として機能します。 これは Microsoft.PowerShell.Host.ISE.PowerShellTabs クラスのインスタンスです。 たとえば **$psISE.PowerShellTabs** オブジェクトです。
@@ -29,8 +29,7 @@ $newTab.DisplayName="Brand New Tab"
 
  **psTab** パラメーターにより指定されたタブが削除されます。
 
- **psTab**
- 削除する PowerShell タブ。
+ **psTab** 削除する PowerShell タブ。
 
 ```
 
@@ -46,8 +45,7 @@ $psISE.PowerShellTabs.Remove($newTab)
 
  **psTab** パラメーターにより指定された PowerShell タブを選択し、そのタブを現在アクティブな PowerShell タブとして指定します。
 
- **psTab**
- 選択する PowerShell タブ。
+ **psTab** 選択する PowerShell タブ。
 
 ```
 # Save the current tab in a variable and rename it

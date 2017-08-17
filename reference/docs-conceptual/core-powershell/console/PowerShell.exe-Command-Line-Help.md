@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "PowerShell.exe コマンドラインのヘルプ"
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: 9c56f09ac186b0c3a64cce6700740ca1ba6abd06
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: 4a14223dd024d967810a90dec10e416e4e35d6a2
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe コマンドラインのヘルプ
 Windows PowerShell セッションを開始します。 PowerShell.exe を使用して、Cmd.exe などの別のツールのコマンド ラインから Windows PowerShell セッションを起動したり、PowerShell.exe を Windows PowerShell コマンド ラインで使用して、新しいセッションを開始したりすることができます。 パラメーターを使用して、セッションをカスタマイズします。
@@ -46,13 +46,12 @@ Base 64 エンコード文字列版のコマンドを許可します。 この�
 ### <a name="-file-filepath-parameters"></a>-File <FilePath> \[<Parameters>]
 スクリプトで作成される関数と変数を現在のセッションで使用できるように、指定したスクリプトをローカル スコープ ("ドット ソース形式") で実行します。 スクリプト ファイルのパスと (存在する場合) パラメーターを入力します。 **File** はコマンド内の最後のパラメーターにする必要があります。これは、**File** パラメーター名の後に入力されるすべての文字が、スクリプト ファイルのパス、およびその後に続くスクリプト パラメーターとその値として解釈されるためです。
 
-**File** パラメーターの値には、スクリプトのパラメーターとパラメーター値を含めることができます。 たとえば次のようになります。`-File .\Get-Script.ps1 -Domain Central`
+**File** パラメーターの値には、スクリプトのパラメーターとパラメーター値を含めることができます。 例: `-File .\Get-Script.ps1 -Domain Central`スクリプトに渡されるパラメーターは、リテラル文字列として渡されます (現在のシェルによる解釈の後で)。
+たとえば、cmd.exe で環境変数値を渡す場合は、次の cmd.exe 構文を使用します: `powershell -File .\test.ps1 -Sample %windir%` PowerShell 構文を使用するとしたら、この例では、リテラル "$env:windir" を受け取り、その環境変数の値は受け取りません: `powershell -File .\test.ps1 -Sample $env:windir`
 
 通常、スクリプトのスイッチ パラメーターは、含めるか省略するかのいずれかです。 たとえば、次のコマンドは、Get-Script.ps1 スクリプト ファイルの **All** パラメーターを使用します。`-File .\Get-Script.ps1 -All`
 
-まれに、スイッチ パラメーターにブール値を指定しなければならない場合があります。 **File** パラメーターの値にスイッチ パラメーターのブール値を指定するには、次のように、中かっこでパラメーター名と値を囲みます。`-File .\Get-Script.ps1 {-All:$False}`
-
-### <a name="-inputformat-text--xml"></a>-InputFormat {Text | XML}
+### <a name="-inputformat-text--xml"></a>\-InputFormat {Text | XML}
 Windows PowerShell に送信されるデータ形式を記述します。 使用できる値は、"Text" (テキスト文字列) と "XML" (シリアル化された CLIXML 形式) です。
 
 ### <a name="-mta"></a>-Mta
@@ -91,6 +90,7 @@ Windows PowerShell 3.0 がコンピューターにインストールされてい
 
 ### <a name="-command"></a>-Command
 Windows PowerShell のコマンド プロンプトに入力された場合と同様に、指定されたコマンド (および任意のパラメーター) を実行します。NoExit パラメーターが指定されていない場合は、そのまま終了します。
+基本的に、`-Command` の後の任意のテキストは、単一のコマンドラインとして PowerShell に送信されます (これは、`-File` がスクリプトに送信されるパラメーターを処理する方法とは異なります)。
 
 Command の値には、"-"、文字列、またはスクリプト ブロックを指定できます。 またはスクリプト ブロックを指定できます。 Command の値が "-" の場合、コマンド テキストは標準入力から読み取られます。
 

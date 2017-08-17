@@ -4,10 +4,10 @@ keywords: "PowerShell, コマンドレット"
 title: "ISEMenuItemCollection オブジェクト"
 ms.assetid: 0c0f5484-3320-408e-8534-5bd1c8e48512
 ms.openlocfilehash: 7ce9132021d4d5e755503e0adb355beb388a625a
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection オブジェクト
   **ISEMenuItemCollection** オブジェクトは、**ISEMenuItem** オブジェクトのコレクションです。 これは Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection クラスのインスタンスです。 例としては、Windows PowerShell® Integrated Scripting Environment (ISE) の **アドオン** メニューをカスタマイズするために使用される **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** オブジェクトです。
@@ -19,17 +19,13 @@ ms.lasthandoff: 06/08/2017
 
  メニュー項目をコレクションに追加します。
 
- **DisplayName**
-追加するメニューの表示名。
+ **DisplayName** 追加するメニューの表示名。
 
- **Action**
- このメニュー項目に関連付けられるアクションを指定する **System.Management.Automation.ScriptBlock** オブジェクト。
+ **Action** このメニュー項目に関連付けられるアクションを指定する **System.Management.Automation.ScriptBlock** オブジェクト。
 
- **Shortcut**
-アクションのキーボード ショートカット。
+ **Shortcut** アクションのキーボード ショートカット。
 
- **Returns**
-追加した ISEMenuItem オブジェクト。
+ **Returns** 追加した ISEMenuItem オブジェクト。
 
 ```
 # Create an Add-ons menu with an fast access key and a shortcut.

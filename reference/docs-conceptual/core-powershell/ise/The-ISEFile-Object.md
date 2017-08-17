@@ -4,10 +4,10 @@ keywords: "PowerShell, コマンドレット"
 title: "ISEFile オブジェクト"
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ms.openlocfilehash: 0e1c09c4a92868448d76cc7b4954d250773ce2f2
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-isefile-object"></a>ISEFile オブジェクト
   **ISEFile** オブジェクトは、Windows PowerShell® Integrated Scripting Environment (ISE) のファイルを表します。 これは Microsoft.PowerShell.Host.ISE.ISEFile クラスのインスタンスです。 このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。 **$PsISE.CurrentFile** と、PowerShell タブのファイル コレクション内のファイルは、Microsoft.PowerShell.Host.ISE.ISEFile クラスのすべてのインスタンスです。
@@ -19,8 +19,7 @@ ms.lasthandoff: 06/08/2017
 
  ファイルをディスクに保存します。
 
- **\[saveEncoding\]** - 省略可能な [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
-。保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
+ **\[saveEncoding\]** - 省略可能な [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)。保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
 
  **例外**
  -   **System.IO.IOException**: ファイルを保存できませんでした。
@@ -45,8 +44,7 @@ $myfile.Encoding
 
  **filename** - ファイルを保存するために使用する名前の文字列。
 
- **\[saveEncoding\]** - 省略可能な [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)
-。保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
+ **\[saveEncoding\]** - 省略可能な [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)。保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
 
  **例外**
  -   **System.ArgumentNullException**: **filename** パラメーターが null です。

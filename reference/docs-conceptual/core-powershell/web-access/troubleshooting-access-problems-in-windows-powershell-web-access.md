@@ -3,14 +3,12 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング"
 ms.openlocfilehash: c10e19b177110ff62d44f28b6a523380b55b79e0
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
-<a id="troubleshooting-access-problems-in-windows-powershell-web-access" class="xliff"></a>
-
-#  Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
+#  <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
 
 最終更新日: 2013 年 6 月 24 日
 
@@ -133,8 +131,8 @@ Windows PowerShell Web Access を使ったリモート コンピューターへ�
 </tbody>
 </table>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
-<a href="/en-us/library/dn282395(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
+<a href="/en-us/library/dn282395(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 

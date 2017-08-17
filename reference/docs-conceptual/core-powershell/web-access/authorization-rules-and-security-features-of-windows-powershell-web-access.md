@@ -3,14 +3,12 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell Web Access の承認規則とセキュリティ機能"
 ms.openlocfilehash: 706830f618173879185f5b84570fdc7782434d59
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
-<a id="authorization-rules-and-security-features-of-windows-powershell-web-access" class="xliff"></a>
-
-# Windows PowerShell Web Access の承認規則とセキュリティ機能
+# <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Access の承認規則とセキュリティ機能
 
 最終更新日: 2013 年 6 月 24 日
 
@@ -113,7 +111,7 @@ Windows PowerShell Web Access の認証規則はホワイトリスト方式で�
 <a href="" id="BKMK_sec"></a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">セキュリティ</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">セキュリティ</span></a>
 
 ------------------------------------------------------------------------
 
@@ -166,10 +164,12 @@ Windows PowerShell Web Access のセキュリティ モデルは、Web ベース
 </tbody>
 </table>
 
-<a href="" id="BKMK_configrules"></a>
+<a href="" id="BKMK_configrules">
+</a>
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">承認規則の構成</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="
+折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">承認規則の構成</span></a>
 
 ------------------------------------------------------------------------
 
@@ -195,9 +195,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 </tbody>
 </table>
 
-<a id="to-add-a-restrictive-authorization-rule" class="xliff"></a>
-
-#### 制限的な承認規則を追加するには
+#### <a name="to-add-a-restrictive-authorization-rule"></a>制限的な承認規則を追加するには
 
 1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
@@ -221,9 +219,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
 4.  **Get-PswaAuthorizationRule** コマンドレットまたは **Test-PswaAuthorizationRule -UserName &lt;domain\\user | computer\\user&gt; -ComputerName** &lt;computer_name&gt; を実行して、規則が作成されていることを確認します。 例: **Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214**。
 
-<a id="to-remove-an-authorization-rule" class="xliff"></a>
-
-#### 承認規則を削除するには
+#### <a name="to-remove-an-authorization-rule"></a>承認規則を削除するには
 
 1.  Windows PowerShell セッションが開かれていない場合は、このセクションの[非制限的な承認規則を追加する方法](#BKMK_arar)の手順 1. を参照してください。
 
@@ -251,10 +247,12 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
     </tbody>
     </table>
 
-<a href="" id="BKMK_others"></a>
+<a href="" id="BKMK_others">
+</a>
 ####
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">承認規則のその他のシナリオの例</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="
+折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">承認規則のその他のシナリオの例</span></a>
 
 ------------------------------------------------------------------------
 
@@ -316,7 +314,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">複数サイトでの 1 セットの承認規則の使用</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">複数サイトでの 1 セットの承認規則の使用</span></a>
 
 ------------------------------------------------------------------------
 
@@ -326,8 +324,8 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
 <a href="" id="BKMK_sesmgmt"></a>
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">セッションの管理</span></a>
-<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">セッション管理</span></a>
+<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 
@@ -337,7 +335,7 @@ Windows PowerShell Web Access では、ユーザーが同時に接続できる�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">サインイン ページに既定のパラメーターを設定する</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">サインイン ページに既定のパラメーターを設定する</span></a>
 
 ------------------------------------------------------------------------
 
@@ -358,7 +356,7 @@ Windows PowerShell Web Access ゲートウェイを Windows Server 2012 R2 で�
 
 ###
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">タイムアウトと計画外の切断</span></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">タイムアウトと計画外の切断</span></a>
 
 ------------------------------------------------------------------------
 
@@ -368,8 +366,8 @@ Windows Server 2012 R2 で実行する Windows PowerShell Web Access では、�
 
 ゲートウェイ サーバーが Windows Server 2012 R2 を実行している場合の Windows PowerShell Web Access では、ユーザーは保存されているセッションに再接続できますが、ネットワーク エラー、予期しないシャットダウン、または他のエラーによるセッションの切断が発生した場合、ユーザーはゲートウェイ管理者によって指定されたタイムアウト期間が経過するまでは、保存されているセッションを表示または再接続できません。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="Collapse"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
-<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="Right-click to copy and share the link for this section"></a>
+<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
+<a href="/en-us/library/dn282394(v=ws.11).aspx#Anchor_2" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
 
 ------------------------------------------------------------------------
 

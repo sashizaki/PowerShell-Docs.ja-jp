@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "ISEEditor オブジェクト"
 ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-ms.openlocfilehash: 41f2a6f7684275ad9d6d967ea67b64ca02c1c100
-ms.sourcegitcommit: 598b7835046577841aea2211d613bb8513271a8b
+ms.openlocfilehash: c4effde470a7a76a21f983b172f0af651dfc5d11
+ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/08/2017
+ms.lasthandoff: 08/03/2017
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor オブジェクト
   **ISEEditor** オブジェクトは、Microsoft.PowerShell.Host.ISE.ISEEditor クラスのインスタンスです。 コンソール ウィンドウは **ISEEditor** オブジェクトです。 各 [ISEFile](The-ISEFile-Object.md) オブジェクトには、関連付けられている **ISEEditor** オブジェクトがあります。 次のセクションでは、**ISEEditor** オブジェクトのメソッドとプロパティについて説明します。
@@ -19,7 +19,7 @@ ms.lasthandoff: 06/08/2017
 
  エディター内のテキストをクリアします。
 
-```PowerShell
+```powershell
 # Clears the text in the Console pane.
 $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 ```
@@ -29,10 +29,9 @@ $psISE.CurrentPowerShellTab.ConsolePane.Clear()
 
  指定した **lineNumber** パラメーターの値に対応する行が表示されるようにエディターをスクロールします。 指定した行番号が 1 から最後の行番号までの有効な行番号を定義する範囲を超えた場合、例外がスローされます。
 
- **lineNumber**
- 表示させる行の番号。
+ **lineNumber** 表示させる行の番号。
 
-```PowerShell
+```powershell
 # Scrolls the text in the Script pane so that the fifth line is in view. 
 $psISE.CurrentFile.Editor.EnsureVisible(5)
 ```
@@ -42,7 +41,7 @@ $psISE.CurrentFile.Editor.EnsureVisible(5)
 
  エディターにフォーカスを設定します。
 
-```PowerShell
+```powershell
 # Sets focus to the Console pane. 
 $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 ```
@@ -52,13 +51,11 @@ $psISE.CurrentPowerShellTab.ConsolePane.Focus()
 
  行番号で指定される行の整数として行の長さを取得します。
 
- **lineNumber**
- 長さを取得する対象の行の番号。
+ **lineNumber** 長さを取得する対象の行の番号。
 
- **Returns**
- 指定した行番号にある行の長さ。
+ **Returns** 指定した行番号にある行の長さ。
 
-```PowerShell
+```powershell
 # Gets the length of the first line in the text of the Command pane. 
 $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ```
@@ -68,7 +65,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  エディター オブジェクトの **CanGoToMatch** プロパティが **$true** の場合、一致する文字にカーソルを移動します。これは、カーソルが始めかっこ \(、始め角かっこ \[、始め波かっこ { の直前または終わりかっこ \)、終わり角かっこ \]、終わり波かっこ } の直後にある場合に発生します。  カーソルは、開始文字の前または終了文字の後に配置されます。 **CanGoToMatch** プロパティが **$false** の場合、このメソッドでは何も実行されません。 [CanGoToMatch](#cangotomatch) を参照してください。
 
-```PowerShell
+```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
 ```
 
@@ -101,7 +98,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  現在カーソルがある行のテキスト全体を選択します。
 
-```PowerShell
+```powershell
 # First, set the caret position on line 5.
 $psISE.CurrentFile.Editor.SetCaretPosition(5,1) 
 # Now select that entire line of text
@@ -117,7 +114,7 @@ $psISE.CurrentFile.Editor.SelectCaretLine()
 
  **columnNumber** - 整数。カーソル列番号。
 
-```PowerShell
+```powershell
 # Set the CaretPosition.
 $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 ```
@@ -127,7 +124,7 @@ $psISE.CurrentFile.Editor.SetCaretPosition(5,1)
 
  すべてのアウトライン セクションの展開または折りたたみが行われます。
 
-```PowerShell
+```powershell
 # Toggle the outlining expansion
 $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ```
@@ -139,7 +136,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
  カーソルがかっこ、角かっこ、または波かっこ (\(\)、\[\]、{}) の横にあるかどうかを示す読み取り専用のブール型プロパティ。 カーソルがかっこの始め文字の直前またはかっこの終わり文字の直後にある場合、このプロパティの値は **$true** です。 それ以外の場合は **$false** です。
 
-```PowerShell
+```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
 $psISE.CurrentFile.Editor.CanGoToMatch
 ```
@@ -149,7 +146,7 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 
  カーソルの位置に対応する列番号を取得する読み取り専用プロパティ。
 
-```PowerShell
+```powershell
 # Get the CaretColumn.
 $psISE.CurrentFile.Editor.CaretColumn
 ```
@@ -159,7 +156,7 @@ $psISE.CurrentFile.Editor.CaretColumn
 
  カーソルのある行の番号を取得する読み取り専用のプロパティ。
 
-```PowerShell
+```powershell
 # Get the CaretLine.
 $psISE.CurrentFile.Editor.CaretLine
 ```
@@ -169,7 +166,7 @@ $psISE.CurrentFile.Editor.CaretLine
 
  カーソルのある行のテキスト全体を取得する読み取り専用のプロパティ。
 
-```PowerShell
+```powershell
 # Get all of the text on the line that contains the caret.
 $psISE.CurrentFile.Editor.CaretLineText
 ```
@@ -179,7 +176,7 @@ $psISE.CurrentFile.Editor.CaretLineText
 
  エディターから行数を取得する読み取り専用のプロパティ。
 
-```PowerShell
+```powershell
 # Get the LineCount.
 $psISE.CurrentFile.Editor.LineCount
 ```
@@ -200,7 +197,7 @@ $psISE.CurrentFile.Editor.LineCount
 
 ##  <a name="example"></a>スクリプトの例
 
-```PowerShell
+```powershell
 # This illustrates how you can use the length of a line to
 # select the entire line and shows how you can make it lowercase. 
 # You must run this in the Console pane. It will not run in the Script pane.
