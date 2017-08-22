@@ -4,15 +4,13 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
 title: "アイテムの作成と公開"
-ms.openlocfilehash: e71381d1a3efda73832fab6189bda26cee411d9e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b6bcd3e923b77ad7d19a1d92aeb78222bff7ea7e
+ms.sourcegitcommit: e08f036021e9f115dbb52c697941706cc4ee51dd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 08/15/2017
 ---
-<a id="creating-and-publishing-an-item" class="xliff"></a>
-
-# アイテムの作成と公開 
+# <a name="creating-and-publishing-an-item"></a>アイテムの作成と公開 
 PowerShell ギャラリーとは、広範な PowerShell ユーザー コミュニティを通じて、安定した PowerShell モジュール、スクリプト、および DSC リソースを公開および共有する場所です。    
 
 この記事では、スクリプトまたはモジュールを準備して PowerShell ギャラリーに公開するまでの仕組みと重要な手順について説明します。
@@ -28,9 +26,7 @@ PowerShell ギャラリーとは、広範な PowerShell ユーザー コミュ�
  
 PowerShell ギャラリーは、PowerShell モジュールおよび PowerShell スクリプトを受け入れます。 ここでスクリプトとは、大規模モジュールの一部ではなく、1 つのファイルである PowerShell スクリプトを意味しています。 
 
-<a id="powershell-gallery-account-and-api-key" class="xliff"></a>
-
-## PowerShell ギャラリー アカウントと API キー
+## <a name="powershell-gallery-account-and-api-key"></a>PowerShell ギャラリー アカウントと API キー
 PowerShell ギャラリー アカウントの設定方法については、「[Creating a PowerShell Gallery Account (PowerShell ギャラリー アカウントを作成する)](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account)」をご覧ください。 
 
 アカウントを作成したら、アイテムの公開に必要な API キーを取得できます。
@@ -38,9 +34,7 @@ PowerShell ギャラリー アカウントの設定方法については、「[C
 
 注: API キーは、ログイン情報およびパスワードと同等にセキュリティ保護する必要があります。 このキーを使用すると、PowerShell ギャラリーで所有しているあらゆるアイテムを、自分だけでなく他のユーザーも更新できます。 キーは定期的に更新することをお勧めします。[My Account]\(マイ アカウント\) ページの [Reset Key]\(キーをリセットする\) を使用して更新できます。
 
-<a id="required-metadata-for-items-published-to-the-powershell-gallery" class="xliff"></a>
-
-## PowerShell ギャラリーで公開するアイテムに必要なメタデータ
+## <a name="required-metadata-for-items-published-to-the-powershell-gallery"></a>PowerShell ギャラリーで公開するアイテムに必要なメタデータ
 
 PowerShell ギャラリーでは、スクリプトまたはモジュールのマニフェストに含まれているメタデータ フィールドから抽出した情報を、ギャラリーのユーザーに提供します。
 PowerShell ギャラリーに公開するアイテムを作成または変更するには、アイテムのマニフェストに含める情報についていくつかの要件があります。 [公開ガイドライン](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines)のアイテム メタデータに関するセクションを確認して、アイテムを使ってユーザーに対して最適な情報を提供する方法を理解することを強くお勧めします。 
@@ -65,9 +59,7 @@ PowerShell ギャラリーでは、アイテムの作成者と所有者は関連
 * 作成者は、よく知られているチーム名 (Azure SDK チームなど) または Microsoft Corporation とする。
 
 
-<a id="pre-validate-your-item" class="xliff"></a>
-
-## アイテムを事前検証する
+## <a name="pre-validate-your-item"></a>アイテムを事前検証する
 
 PowerShell ギャラリーにアイテムを公開する前に、コードに対して実行する必要があるツールがいくつかあります。
 
@@ -84,9 +76,7 @@ PowerShell Script Analyzer は、PowerShell ギャラリーでアイテムが公
 同様に、[Test-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_test-scriptfileinfo) はスクリプトに含まれるメタデータを検証するもので、すべてのスクリプト (モジュールとは別に公開された) で、PowerShell ギャラリーに公開する前に実行する必要があります。 
 
 
-<a id="publishing-items" class="xliff"></a>
-
-## アイテムを公開する
+## <a name="publishing-items"></a>アイテムを公開する
 
 PowerShell ギャラリーにアイテムを公開するには、[Publish-Script](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_publish-script) または [Publish-Module](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) を使用する必要があります。
 これらのコマンドは、どちらも以下が必要です。 
