@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12T00:00:00.000Z
+ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: "WMF, PowerShell, セットアップ"
 title: "WMF 5.1 の新しいシナリオと機能"
-ms.openlocfilehash: 7340fb38a2f6992bb922a81ee2227754252899d7
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: 430781c5c9a59fc544db4f94098313ae1e9cf610
+ms.sourcegitcommit: a6ee6e64d369ecf82c730411bed9750278fdb5c1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 08/18/2017
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 の新しいシナリオと機能 #
 
@@ -99,7 +99,7 @@ WMF 5.1 では、`using module` は PowerShell の他のモジュール関連構
 
 WMF 5.1 では次のようになります。
 
-* `ModuleSpecification` [ハッシュ テーブル](https://msdn.microsoft.com/en-us/library/jj136290(v=vs.85).aspx)を使用できます。 このハッシュ テーブルの形式は `Get-Module -FullyQualifiedName` と同じです。
+* [ModuleSpecification コンストラクター (Hashtable)](https://msdn.microsoft.com/library/jj136290) を使用できます。 このハッシュ テーブルの形式は `Get-Module -FullyQualifiedName` と同じです。
 
 **例:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
