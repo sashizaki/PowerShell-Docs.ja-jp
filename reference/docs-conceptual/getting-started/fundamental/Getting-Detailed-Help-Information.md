@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "詳しいヘルプ情報の取得"
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 3260b5ec0a91749d3b7b126412137aa9d603ef0e
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: c786ce089073abccdf186dc1d9e8ee383f83655d
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="getting-detailed-help-information"></a>詳しいヘルプ情報の取得
 Windows PowerShell には、Windows PowerShell の概念と言語について説明した詳しいヘルプ トピックが含まれています。 また、各コマンドレットおよびプロバイダーに関するヘルプ トピックや、多くの関数およびスクリプトに関するヘルプ トピックもあります。
@@ -75,7 +75,7 @@ get-help get-childitem -parameter *
 get-help get-childitem -examples
 ```
 
-作成したコマンドレットに関するヘルプ トピックを記述する方法については、MSDN の「How to Write Cmdlet Help (コマンドレット ヘルプの記述方法)」をご覧ください。
+作成したコマンドレットに関するヘルプ トピックを記述する方法については、MSDN ライブラリの「[How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)」 (コマンドレット ヘルプの記述方法) をご覧ください。
 
 ## <a name="getting-conceptual-help"></a>概念説明のヘルプの表示
 Get-Help コマンドレットでは、Windows PowerShell 言語に関するトピックなど、Windows PowerShell の概念説明トピックの情報も表示されます。 概念説明のヘルプ トピックには、"about_" というプレフィックスが付きます (about_line_editing など)。 概念説明のトピックの名前は、英語バージョン以外の Windows PowerShell でも英語で入力する必要があります。
@@ -165,7 +165,7 @@ get-help add-computer
 Online version: http://go.microsoft.com/fwlink/?LinkID=135194
 ```
 
-ヘルプ トピックのオンライン サポートを提供する方法については、「[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)」および MSDN (Microsoft Developer Network) ライブラリの [「How to Write Cmdlet Help (コマンドレット ヘルプの記述方法)」](http://go.microsoft.com/fwlink/?LinkID=123415)\(http://go.microsoft.com/fwlink/?LinkID=123415) をご覧ください。
+ヘルプ トピックのオンライン サポートを提供する方法については、「[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)」と MSDN ライブラリの [「How to Write Cmdlet Help」](https://go.microsoft.com/fwlink/?LinkID=123415) (コマンドレット ヘルプの記述方法) をご覧ください。
 
 ## <a name="see-also"></a>参照
 - [about_Functions [m2]](https://technet.microsoft.com/en-us/library/61d40692-5300-4de9-a9b5-bae31815e105)

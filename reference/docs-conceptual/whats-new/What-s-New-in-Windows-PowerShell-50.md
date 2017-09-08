@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell 50 の新機能"
 ms.assetid: 1476722e-947e-425d-a86c-50037488dc6e
-ms.openlocfilehash: c172ac076d2cd69e8f1876ad47a51c233d8a4afb
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 24860f34f6e2ef655befd9916a651dd0274b2620
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="what39s-new-in-windows-powershell"></a>Windows PowerShell の新機能
 Windows PowerShell® 5.0 には、その用途を拡大し、使いやすさを向上させる重要な機能や、Windows ベースの環境をより簡単かつ包括的に制御および管理できるようにする重要な新しい機能が含まれています。
@@ -15,19 +15,19 @@ Windows PowerShell® 5.0 には、その用途を拡大し、使いやすさを�
 Windows PowerShell 5.0 には下位互換性があります。 Windows PowerShell 4.0、Windows PowerShell 3.0、Windows PowerShell 2.0 用に設計されたコマンドレット、プロバイダー、モジュール、スナップイン、スクリプト、関数、およびプロファイルは、全般的に変更なしで Windows PowerShell 5.0 でも動作します。
 
 # <a name="installing-windows-powershell"></a>Windows PowerShell のインストール
-Windows PowerShell 5.0 は、Windows Server® 2016 Technical Preview および Windows 10® に既定でインストールされています。 
+Windows PowerShell 5.0 は、Windows Server® 2016 Technical Preview と Windows 10® に既定でインストールされています。 
 
 Windows PowerShell 5.0 を Windows Server 2012 R2、Windows 8.1 Enterprise または Windows 8.1 Pro にインストールするには、[Windows Management Framework 5.0](http://aka.ms/wmf5download) をダウンロードしてインストールします。 Windows Management Framework 5.0 をインストールする前に、ダウンロードの詳細を読み、システム要件がすべて満たされていることを確認してください。
 
 ## <a name="in-this-topic"></a>このトピックの内容
 
--   [KB 3000850 の Windows PowerShell 4.0 DSC の更新プログラム](#BKMK_3000850)
+-   [KB 3000850 の Windows PowerShell 4.0 DSC の更新プログラム]()
 
--   [Windows PowerShell 5.0 の新機能](#BKMK_new50)
+-   [Windows PowerShell 5.0 の新機能]()
 
--   [Windows PowerShell 4.0 の新機能](#BKMK_wps4)
+-   [Windows PowerShell 4.0 の新機能]()
 
--   [Windows PowerShell 3.0 の新機能](#BKMK_wps3)
+-   [Windows PowerShell 3.0 の新機能]()
 
 ## <a name="BKMK_3000850"></a>2014 年 11 月の更新プログラムのロールアップ (KB 3000850) での Windows PowerShell 4.0 の更新
 Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DSC) に対する多くの更新と機能強化が、[Windows RT 8.1、Windows 8.1、Windows Server 2012 R2 の 2014 年 11 月の更新プログラムのロールアップ](https://support.microsoft.com/kb/3000850/) (KB 3000850) で利用可能になりました。 Windows PowerShell で `Get-Hotfix -Id KB3000850` を実行することで、KB 3000850 がシステムにインストールされているかどうかを判断できます。
@@ -128,15 +128,15 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 ## <a name="BKMK_new50"></a>Windows PowerShell 5.0 の新機能
 
--   [Windows PowerShell の新機能](#BKMK_newcore)
+-   [Windows PowerShell の新機能]()
 
--   [Windows PowerShell Desired State Configuration の新機能](#BKMK_newDSC)
+-   [Windows PowerShell Desired State Configuration の新機能]()
 
--   [Windows PowerShell ISE の新機能](#BKMK_newISE)
+-   [Windows PowerShell ISE の新機能]()
 
--   [Windows PowerShell Web サービスの新機能](#BKMK_newOData)
+-   [Windows PowerShell Web サービスの新機能]()
 
--   [Windows PowerShell 5.0 での主なバグ修正](#BKMK_5bugfix)
+-   [Windows PowerShell 5.0 での主なバグ修正]()
 
 ### <a name="BKMK_newcore"></a>Windows PowerShell の新機能
 
@@ -311,19 +311,19 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 ## <a name="BKMK_wps4"></a>Windows PowerShell 4.0 の新機能
 Windows PowerShell 4.0 には下位互換性があります。 Windows PowerShell 3.0 および Windows PowerShell 2.0 用に設計されたコマンドレット、プロバイダー、モジュール、スナップイン、スクリプト、関数、およびプロファイルは、変更なしで Windows PowerShell 4.0 でも動作します。
 
-Windows PowerShell 4.0 は、既定で Windows® 8.1 と Windows Server 2012 R2 にインストールされています。 Windows 7 SP1 または Windows Server 2008 R2 に Windows PowerShell 4.0 をインストールするには、[Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855) をダウンロードしてインストールします。 Windows Management Framework 4.0 をインストールする前に、ダウンロードの詳細を読み、システム要件がすべて満たされていることを確認してください。
+Windows PowerShell 4.0 は、既定で WindowsÂ® 8.1 と Windows Server 2012 R2 にインストールされています。 Windows 7 SP1 または Windows Server 2008 R2 に Windows PowerShell 4.0 をインストールするには、[Windows Management Framework 4.0](http://www.microsoft.com/download/details.aspx?id=40855) をダウンロードしてインストールします。 Windows Management Framework 4.0 をインストールする前に、ダウンロードの詳細を読み、システム要件がすべて満たされていることを確認してください。
 
--   [Windows PowerShell の新機能](#BKMK_core)
+-   [Windows PowerShell の新機能]()
 
--   [Windows PowerShell Integrated Scripting Environment (ISE) の新機能](#BKMK_ise)
+-   [Windows PowerShell Integrated Scripting Environment (ISE) の新機能]()
 
--   [Windows PowerShell ワークフローの新機能](#BKMK_workflow)
+-   [Windows PowerShell ワークフローの新機能]()
 
--   [Windows PowerShell Web サービスの新機能](#BKMK_psws)
+-   [Windows PowerShell Web サービスの新機能]()
 
--   [Windows PowerShell Web Access の新機能](#BKMK_powwa)
+-   [Windows PowerShell Web Access の新機能]()
 
--   [Windows PowerShell 4.0 での主なバグ修正](#BKMK_bugs)
+-   [Windows PowerShell 4.0 での主なバグ修正]()
 
 Windows PowerShell 4.0 には、次に示す新機能があります。
 
@@ -411,7 +411,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 -   Web ベースの Windows PowerShell Web Access コンソールで、既存のセッションを切断および再接続できます。 Web ベースのコンソールで **[保存]** ボタンを使用すると、削除せずにセッションを切断し、あとでセッションに再接続できます。
 
--   サインイン ページに既定のパラメーターを表示できます。 既定のパラメーターを表示するには、サインイン ページの **[オプションの接続設定]** 領域に表示されるすべての設定に対して、**web.config** という名前のファイルに値を構成します。 **web.config** ファイルを使用すると、2 次資格情報と代替資格情報を除くすべてのオプションの接続設定を構成できます。
+-   サインイン ページに既定のパラメーターを表示できます。 既定のパラメーターを表示するには、サインイン ページの **[オプションの接続設定]** 領域に表示されるすべての設定に対して、**web.config** という名前のファイルに値を構成します。**web.config** ファイルを使用すると、2 次資格情報と代替資格情報を除くすべてのオプションの接続設定を構成できます。
 
 -   Windows Server 2012 R2 で、Windows PowerShell Web Access の承認規則をリモートで管理できます。 **Add-PswaAuthorizationRule** および **Test-PswaAuthorizationRule** コマンドレットに、管理者がリモート コンピューターから、または Windows PowerShell Web Access セッションで承認規則を管理できるようにするために Credential パラメーターが用意されました。
 
@@ -456,62 +456,62 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 ## <a name="BKMK_wps3"></a>Windows PowerShell 3.0 の新機能
 Windows PowerShell 3.0 には、次に示す新機能があります。
 
--   [Windows PowerShell ワークフロー](#BKMK_Workflow)
+-   [Windows PowerShell ワークフロー]()
 
--   [Windows PowerShell Web Access](#BKMK_WebAccess)
+-   [Windows PowerShell Web Access]()
 
--   [Windows PowerShell ISE の新機能](#BKMK_ISE)
+-   [Windows PowerShell ISE の新機能]()
 
--   [Microsoft .NET Framework 4.0 のサポート](#BKMK_NET4)
+-   [Microsoft .NET Framework 4.0 のサポート]()
 
--   [Windows プレインストール環境のサポート](#BKMK_WinPE)
+-   [Windows プレインストール環境のサポート]()
 
--   [切断されたセッション](#BKMK_Disconnected)
+-   [切断されたセッション]()
 
--   [堅牢なセッション接続](#BKMK_Robust)
+-   [堅牢なセッション接続]()
 
--   [更新可能なヘルプ システム](#BKMK_UpHelp)
+-   [更新可能なヘルプ システム]()
 
--   [強化されたオンライン ヘルプ](#BKMK_Online)
+-   [強化されたオンライン ヘルプ]()
 
--   [CIM の統合](#BKMK_CIM)
+-   [CIM の統合]()
 
--   [セッション構成ファイル](#BKMK_ConfigFile)
+-   [セッション構成ファイル]()
 
--   [スケジュールされたジョブ、およびタスク スケジューラとの統合](#BKMK_ScheduledJob)
+-   [スケジュールされたジョブ、およびタスク スケジューラとの統合]()
 
--   [Windows PowerShell 言語の機能強化](#BKMK_Lang)
+-   [Windows PowerShell 言語の機能強化]()
 
--   [新しいコア コマンドレット](#BKMK_Core)
+-   [新しいコア コマンドレット]()
 
--   [既存のコア コマンドレットとプロバイダーの機能強化](#BKMK_Prov)
+-   [既存のコア コマンドレットとプロバイダーの機能強化]()
 
--   [リモート モジュールのインポートと検出](#BKMK_REM)
+-   [リモート モジュールのインポートと検出]()
 
--   [強化された Tab 補完機能](#BKMK_TAB)
+-   [強化された Tab 補完機能]()
 
--   [モジュールの自動読み込み](#BKMK_AutoLoad)
+-   [モジュールの自動読み込み]()
 
--   [モジュールのエクスペリエンスの改善](#BKMK_MOD)
+-   [モジュールのエクスペリエンスの改善]()
 
--   [コマンド検出の単純化](#BKMK_SIMPLE)
+-   [コマンド検出の単純化]()
 
--   [ログ記録、診断、およびグループ ポリシーのサポートの改善](#BKMK_LOG)
+-   [ログ記録、診断、およびグループ ポリシーのサポートの改善]()
 
--   [書式設定と出力の機能強化](#BKMK_OUT)
+-   [書式設定と出力の機能強化]()
 
--   [コンソール ホストのエクスペリエンスの改善](#BKMK_HOST)
+-   [コンソール ホストのエクスペリエンスの改善]()
 
--   [新しい Cmdlet API および Hosting API](#BKMK_API)
+-   [新しい Cmdlet API および Hosting API]()
 
--   [パフォーマンスの向上](#BKMK_PERF)
+-   [パフォーマンスの向上]()
 
--   [RunAs および共有ホストのサポート](#BKMK_RUNAS)
+-   [RunAs および共有ホストのサポート]()
 
--   [特殊文字の処理の改善](#BKMK_CHAR)
+-   [特殊文字の処理の改善]()
 
 ### <a name="BKMK_Workflow"></a>Windows PowerShell ワークフロー
-Windows PowerShell® ワークフローによって、Windows Workflow Foundation の機能を Windows PowerShell で利用できます。 ワークフローは、XAML または Windows PowerShell 言語で記述し、コマンドレットを実行するのとまったく同様に実行できます。 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) コマンドレットはワークフロー コマンドを取得し、[Get-help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) コマンドレットは、ワークフローのヘルプを取得します。
+Windows PowerShellÂ® ワークフローによって、Windows Workflow Foundation の機能を Windows PowerShell で利用できます。 ワークフローは、XAML または Windows PowerShell 言語で記述し、コマンドレットを実行するのとまったく同様に実行できます。 [Get-Command](https://technet.microsoft.com/en-us/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) コマンドレットはワークフロー コマンドを取得し、[Get-help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) コマンドレットは、ワークフローのヘルプを取得します。
 
 ワークフローは、複数のコンピューターを管理するアクティビティのシーケンスです。これは、実行時間が長く、反復可能な、頻繁に実行できるシーケンスで、並列実行、割り込み、中断、および再起動が可能です。 ワークフローは、ネットワークの停止、Windows の再起動、電源障害などの意図的または偶発的な割り込みから再開できます。
 
@@ -538,18 +538,18 @@ Windows PowerShell ワークフローの利点を次に示します。
 -   **ワークフローと接続のスロットル調整。** ワークフローの実行とノードへの接続をスロットルで調整できるため、スケーラビリティと高可用性のシナリオに対応できます。
 
 ### <a name="BKMK_WebAccess"></a>Windows PowerShell Web Access
-Windows PowerShell® Web Access は、Windows PowerShell のコマンドとスクリプトをユーザーが Web ベースのコンソールで実行できる Windows Server 2012 の機能です。 Web ベースのコンソールを使用するデバイスでは、Windows PowerShell、リモート管理ソフトウェアまたはブラウザー プラグインをインストールする必要はありません。 必要なのは、適切に構成された Windows PowerShell Web Access ゲートウェイと、JavaScript® をサポートし、Cookie を許可するクライアント デバイスのブラウザーのみです。
+Windows PowerShell Web Access は、Windows PowerShell のコマンドとスクリプトをユーザーが Web ベースのコンソールで実行できる Windows Server 2012 の機能です。 Web ベースのコンソールを使用するデバイスでは、Windows PowerShell、リモート管理ソフトウェアまたはブラウザー プラグインをインストールする必要はありません。 必要なのは、適切に構成された Windows PowerShell Web Access ゲートウェイと、JavaScript® をサポートし、Cookie を許可するクライアント デバイスのブラウザーのみです。
 
 詳細については、「[ Windows PowerShell Web Access の展開](http://go.microsoft.com/fwlink/p/?LinkID=221050)」を参照してください。
 
 ### <a name="BKMK_ISE"></a>Windows PowerShell ISE の新機能
-Windows PowerShell 3.0 では、Windows PowerShell® Integrated Scripting Environment (ISE) に多くの新機能が追加されました。たとえば、IntelliSense、Show-Command ウィンドウ、統合されたコンソール ウィンドウ、スニペット、かっこの一致に基づくセクションの展開/折りたたみ、自動保存、最近使った項目の一覧、機能豊富なコピー、ブロックのコピー、および Windows PowerShell スクリプト ワークフローの記述を完全サポートする機能などです。 詳細については、「[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)」を参照してください。
+Windows PowerShell 3.0 では、 Windows PowerShell Integrated Scripting Environment (ISE) に多くの新機能が追加されました。たとえば、IntelliSense、Show-Command ウィンドウ、統合されたコンソール ウィンドウ、スニペット、かっこの一致に基づくセクションの展開/折りたたみ、自動保存、最近使った項目の一覧、機能豊富なコピー、ブロックのコピー、および Windows PowerShell スクリプト ワークフローの記述を完全サポートする機能などの多くの新しい機能です。 詳細については、「[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/en-us/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)」を参照してください。
 
 ### <a name="BKMK_NET4"></a>Microsoft .NET Framework 4 のサポート
 Windows PowerShell は、共通言語ランタイム 4.0 を背景にして作成されました。 コマンドレット、スクリプト、およびワークフローの作成者は、新しい Microsoft .NET Framework 4 のクラスを Windows PowerShell で使用できます。たとえば、アプリケーションの互換性と配置、Managed Extensibility Framework、並列コンピューティング、ネットワーク接続、Windows Communication Foundation、および Windows Workflow Foundation があります。
 
 ### <a name="BKMK_WinPE"></a>Windows プレインストール環境のサポート
-Windows PowerShell 3.0 は、Windows 8 用の Windows プレインストール環境 (Windows PE) 4.0 に含まれるオプションのコンポーネントです。 Windows PE は、オペレーティング システムのないコンピューターを起動して Windows のインストール用に準備する、最小限のオペレーティング システムです。 Windows PE を使用すると、ハード ドライブのパーティションの作成やフォーマット、ディスク イメージのコンピューターへのコピー、ネットワーク共有からの Windows セットアップの開始などを実行できます。 Windows PowerShell 3.0 は、展開、診断、および復旧のシナリオを管理するために Windows PE で使用できます。
+Windows PowerShell 3.0 は、Windows 8 用の Windows プレインストール環境 (Windows PE) 4.0 に含まれるオプションのコンポーネントです。 Windows PE は、オペレーティング システムのないコンピューターを起動して Windows のインストール用に準備する、最小限のオペレーティング システムです。 Windows PE を使用すると、ハード ドライブのパーティションの作成やフォーマット、ディスク イメージのコンピューターへのコピー、ネットワーク共有からの Windows セットアップの開始などを実行できます。 Windows PowerShell 3.0 は、展開、診断、および復旧のシナリオを管理するために Windows PE で使用できます。
 
 ### <a name="BKMK_Disconnected"></a>切断されたセッション
 Windows PowerShell 3.0 以降では、New-PSSession コマンドレットを使用してユーザーが作成した、ユーザーが管理する永続的なセッション ("PSSessions") がリモート コンピューター上に保存されます。 それらのセッションは、作成元のセッションに依存しなくなりました。

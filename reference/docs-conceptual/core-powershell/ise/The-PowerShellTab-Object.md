@@ -3,18 +3,18 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "PowerShellTab オブジェクト"
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
-ms.openlocfilehash: d4e9374202d352a30b3eb46bcf1e4e40dea49822
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 482984272b2f1be027cf2be49bdfa2c6e2c52070
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab オブジェクト
   **PowerShellTab** オブジェクトは、Windows PowerShell ランタイム環境を表します。
 
 ## <a name="methods"></a>メソッド
 
-###  <a name="invoke"></a> Invoke\( Script \)
+### <a name="invoke-script-"></a>Invoke\( Script \)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  指定したスクリプトを [PowerShell] タブで実行します。
@@ -52,7 +52,7 @@ $psISE.PowerShellTabs.SetSelectedPowerShellTab($psISE.PowerShellTabs[0])
 
 # Invoke a simple command on the other tab, in its own scope
 $psISE.PowerShellTabs[1].InvokeSynchronous('$x=1',$false)
-# You can switch to the other tab and type “$x” to see that the value is saved there.
+# You can switch to the other tab and type â€œ$xâ€ to see that the value is saved there.
 
 # This example sets a value in the other tab (in a different scope) 
 # and returns it through the pipeline to this tab to store in $a
@@ -67,7 +67,7 @@ measure-command {$psISE.PowerShellTabs[1].InvokeSynchronous("sleep 10",$false,50
 
 ## <a name="properties"></a>プロパティ
 
-###  <a name="AddOnsMenu"></a> AddOnsMenu
+### <a name="addonsmenu"></a>AddOnsMenu
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  [PowerShell] タブのアドオン メニューを取得する読み取り専用のプロパティです。
@@ -85,10 +85,10 @@ $parentAdded.SubMenus.Add("_Dir",{dir},"Alt+D")
 $psISE.CurrentPowerShellTab.AddOnsMenu
 ```
 
-###  <a name="CanExecute"></a> CanInvoke
+### <a name="caninvoke"></a>CanInvoke
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- スクリプトを [Invoke( Script )](#invoke) メソッドで呼び出すことが可能な場合は **$true** を返す、読み取り専用のブール型プロパティです。
+ スクリプトを [Invoke( Script )]() メソッドで呼び出すことが可能な場合は **$true** を返す、読み取り専用のブール型プロパティです。
 
 ```
 # CanInvoke will be false if the PowerShell
@@ -104,7 +104,7 @@ $secondTab.CanInvoke
 
 ```
 
-###  <a name="Commandpane"></a> Consolepane
+### <a name="consolepane"></a>Consolepane
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。  Windows PowerShell ISE 2.0 では、このパラメータの名前は **CommandPane** でした。
 
  コンソール ウィンドウの [editor](../ise/The-ISEEditor-Object.md) オブジェクトを取得する読み取り専用のプロパティです。
@@ -115,10 +115,10 @@ $psISE.CurrentPowerShellTab.ConsolePane
 
 ```
 
-###  <a name="Displayname"></a> DisplayName
+### <a name="displayname"></a>表示名
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- [PowerShell] タブに表示されるテキストを取得または設定する読み取り/書き込みプロパティです。 既定では、タブ名は "PowerShell #" となり、「#」には番号が入ります。
+ [PowerShell] タブに表示されるテキストを取得または設定する読み取り/書き込みプロパティです。既定では、タブ名は "PowerShell #" となり、「#」には番号が入ります。
 
 ```
 $newTab = $psise.PowerShellTabs.Add()
@@ -126,7 +126,7 @@ $newTab = $psise.PowerShellTabs.Add()
 $newTab.DisplayName="Brand New Tab"
 ```
 
-###  <a name="ExpandedScript"></a> ExpandedScript
+### <a name="expandedscript"></a>ExpandedScript
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  スクリプト ウィンドウが展開されているか非表示かどうかを特定する読み取り/書き込みブール型プロパティです。
@@ -137,7 +137,7 @@ $PSise.CurrentPowerShellTab.ExpandedScript=!$PSise.CurrentPowerShellTab.Expanded
 
 ```
 
-###  <a name="Files"></a> Files
+### <a name="files"></a>ファイル
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  [PowerShell] タブで開かれている[スクリプト ファイルのコレクション](../ise/The-ISEFileCollection-Object.md)を取得する読み取り専用のプロパティです。
@@ -149,7 +149,7 @@ $newFile.Editor.Text = "a`r`nb"
 $newFile.Editor.LineCount
 ```
 
-###  <a name="Output"></a> Output
+### <a name="output"></a>出力
   この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。  Windows PowerShell ISE 2.0 より後のバージョンでは、**ConsolePane** オブジェクトを同じ目的で使用できます。
 
  現在の[エディター](../ise/The-ISEEditor-Object.md)の出力ウィンドウが取得する読み取り専用のプロパティです。
@@ -159,7 +159,7 @@ $newFile.Editor.LineCount
 $psise.CurrentPowerShellTab.output.clear()
 ```
 
-###  <a name="Prompt"></a> Prompt
+### <a name="prompt"></a>ダイアログを表示する
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  現在のプロンプト テキストを取得する読み取り専用のプロパティです。 注: **Prompt** 関数は、ユーザーのプロファイルで上書きできます。 結果が単純な文字列以外の場合、このプロパティは何も返しません。
@@ -169,7 +169,7 @@ $psise.CurrentPowerShellTab.output.clear()
 $psISE.CurrentPowerShellTab.Prompt
 ```
 
-###  <a name="ShowCommands"></a> ShowCommands
+### <a name="showcommands"></a>ShowCommands
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
  コマンド ウィンドウが現在表示されているかどうかを示す読み取り/書き込みプロパティです。
@@ -181,7 +181,7 @@ $a = $psISE.CurrentPowerShellTab.ShowCommands
 if (!$a) {$psISE.CurrentPowerShellTab.ShowCommands=$True}
 ```
 
-###  <a name="StatusText"></a> StatusText
+### <a name="statustext"></a>StatusText
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  **PowerShellTab** ステータス テキストを取得する読み取り専用のプロパティです。
@@ -191,17 +191,17 @@ if (!$a) {$psISE.CurrentPowerShellTab.ShowCommands=$True}
 $psISE.CurrentPowerShellTab.StatusText
 ```
 
-###  <a name="HorizontalAddOnToolsPaneOpened"></a> HorizontalAddOnToolsPaneOpened
+### <a name="horizontaladdontoolspaneopened"></a>HorizontalAddOnToolsPaneOpened
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
- 水平方向のアドオン ツール ウィンドウが現在開いているかどうかを示す読み取り専用のプロパティです。
+ 水平方向のアドオン ツール ウィンドウが現在開いているかどうかを示す読み取り 専用のプロパティです。
 
 ```
 # Gets the current state of the horizontal Add-ons tool pane. 
 $psISE.CurrentPowerShellTab.HorizontalAddOnToolsPaneOpened
 ```
 
-###  <a name="VerticalAddOnToolsPaneOpened"></a> **VerticalAddOnToolsPaneOpened**
+### <a name="verticaladdontoolspaneopened"></a>VerticalAddOnToolsPaneOpened
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
  垂直方向のアドオン ツール ウィンドウが現在開いているかどうかを示す読み取り専用のプロパティです。

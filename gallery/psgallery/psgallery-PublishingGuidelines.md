@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
 description: "パブリッシャー向けのガイドライン"
 title: "PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス"
-ms.openlocfilehash: 394e69e189761f3c5a4bb54dfa8df15c4ab240d6
-ms.sourcegitcommit: e63f09c005b6bbf39c3c001944f307c2b155765b
+ms.openlocfilehash: 85486c409382472420a67fc124bd07a30486cb62
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/11/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -69,9 +69,9 @@ PSScriptAnalyzer でエラーが報告された場合、おそらくユーザー
 アイテムにドキュメントが含まれていない場合、アイテムの中身と使用方法を理解するには代わりにコードを読まなければならないため、ほとんどのユーザーに敬遠されてしまいます。
 PowerShell のアイテムと合わせてドキュメントを提供する方法に関する次のような記事が MSDN に掲載されています。
 
-* 「[How to Write Cmdlet Help (コマンドレット ヘルプの書き方)](https://msdn.microsoft.com/en-us/library/aa965353(VS.85).aspx)」内のヘルプの提供に関するガイドライン
+* 「[How to Write Cmdlet Help (コマンドレット ヘルプの書き方)](https://go.microsoft.com/fwlink/?LinkID=123415)」内のヘルプの提供に関するガイドライン
 * コマンドレット ヘルプの作成。コマンドレット ヘルプは、すべての PowerShell スクリプト、関数、コマンドレットを理解するために最適な手段です。
-  コマンドレット ヘルプの作成方法の詳細については、まず MSDN (Microsoft Developer Network) ライブラリの「[How to Write Cmdlet Help (コマンドレット ヘルプの書き方)](http://go.microsoft.com/fwlink/?LinkID=123415)」をご覧ください。
+  コマンドレット ヘルプの作成方法の詳細については、まず MSDN ライブラリの「[How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)」 (コマンドレット ヘルプの書き方) をご覧ください。
   スクリプト内にヘルプを追加する方法については、「[About Comment Based Help (コメント ベースのヘルプの概要)](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help)」をご覧ください。
 * また、多くのモジュールには、テキスト形式のドキュメント (MarkDown ファイルなど) が含まれています。
   MarkDown 形式が頻繁に使用されている GitHub にプロジェクト サイトを設置する場合、この方法は特に役立ちます。

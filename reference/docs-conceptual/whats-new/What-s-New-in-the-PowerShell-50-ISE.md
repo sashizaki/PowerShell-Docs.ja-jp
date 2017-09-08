@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "PowerShell 50 ISE の新機能"
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: e772c31ae407e73a96364ffedf98057760037836
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: d816d717752579c79477daa35e7c0b15e944a6b7
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE の新機能
 このトピックでは、各バージョンの Windows PowerShell® Integrated Scripting Environment (ISE) に導入された新機能と更新された機能について説明します。
@@ -22,16 +22,16 @@ Windows PowerShell ISE の概要については、[Windows PowerShell Integrated
 
 |機能|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-|**[IntelliSense](#BKMK_Intellisense)**|X|X||
-|**[スニペット](#bkmk_snippets)**|X|X||
-|**[アドオン ツール](#BKMK_AddOnTools)**|X|X||
-|**[再起動マネージャーと自動保存](#BKMK_RestartMgr)**|X|X||
-|**[コンソール ウィンドウ](#BKMK_ConsolePane)**|X|X||
-|**[最近使用した一覧](#BKMK_MRU)**|X|X||
-|**[コマンド ライン スイッチ](#BKMK_CommandLine)**|X|X||
-|**[エディターの新機能](#BKMK_NewEditorFeatures)**|X|X||
-|**[新しいヘルプ ビューアー ウィンドウ](#BKMK_NewHelpViewer)**|X|X||
-|**[Show-Command コマンドレット](#BKMK_ShowCommand)**|X|X||
+|**[IntelliSense]()**|X|X||
+|**[スニペット]()**|X|X||
+|**[アドオン ツール]()**|X|X||
+|**[再起動マネージャーと自動保存]()**|X|X||
+|**[コンソール ウィンドウ]()**|X|X||
+|**[最近使用した一覧]()**|X|X||
+|**[コマンド ライン スイッチ]()**|X|X||
+|**[エディターの新機能]()**|X|X||
+|**[新しいヘルプ ビューアー ウィンドウ]()**|X|X||
+|**[Show-Command コマンドレット]()**|X|X||
 
 ### <a name="BKMK_Intellisense"></a>IntelliSense
 **ISE 3.0 に追加**

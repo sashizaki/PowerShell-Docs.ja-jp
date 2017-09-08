@@ -1,191 +1,141 @@
 ---
-ms.date: 2017-06-05
+ms.date: 2017-08-23
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング"
-ms.openlocfilehash: c10e19b177110ff62d44f28b6a523380b55b79e0
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 08a9fd286ed8a40e9423deb7d29dc0a8ecf8e5b1
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
-#  <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
+# <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
 
-最終更新日: 2013 年 6 月 24 日
+更新: 2013 年 6 月 24 日 (改訂: 2017 年 8 月 23 日)
 
 適用対象: Windows Server 2012 R2、Windows Server 2012
 
-<a href="" id="BKMK_trouble"></a>
+次のセクションでは、Windows PowerShell Web Access を利用したリモート コンピューターへの接続で発生する可能性がある一般的な問題とその問題の解決案を提示します。
 
-------------------------------------------------------------------------
+## <a name="sign-in-failure"></a>サインイン エラー
 
-Windows PowerShell Web Access を使ったリモート コンピューターへの接続を試行する場合に発生する可能性がある一般的な問題と、問題解決のための推奨事項を次の表に示します。
+エラー発生の原因として以下が考えられます。
 
-<table>
-<colgroup>
-<col width="50%" />
-<col width="50%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><p>問題</p></th>
-<th><p>考えられる原因と解決策</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>サインイン エラー</p></td>
-<td><p>エラー発生の原因として以下が考えられます。</p>
-<ul>
-<li><p>コンピューターまたはリモート コンピューターの特定のセッション構成に対するユーザー アクセスを許可する承認規則が存在しない。 Windows PowerShell Web Access では制限的なセキュリティを採用しているため、承認規則を使ってリモート コンピューターへのアクセス権をユーザーに明示的に付与する必要があります。 承認規則の作成の詳細については、「<a href="https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx">Windows PowerShell Web Access の承認規則とセキュリティ機能</a>」を参照してください。</p></li>
-<li><p>ユーザーによる対象コンピューターへのアクセスが承認されていない。 これはアクセス制御リスト (ACL) によって決定されます。 詳細については、「<a href="https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx">Web ベースの Windows PowerShell コンソールの使用</a>」の「Windows PowerShell Web Access へのサインイン」または <a href="https://msdn.microsoft.com/library/windows/desktop/ee706585.aspx">Windows PowerShell チームのブログ</a>を参照してください。</p>
-<ul>
-<li><p>Windows PowerShell のリモート管理が対象コンピューター上で有効になっていない。 ユーザーが接続しようとしているコンピューターでリモート管理が有効になっていることを確認してください。 詳細については、Windows PowerShell の About ヘルプ トピックの「<a href="https://technet.microsoft.com/library/dd315349.aspx">about_Remote_Requirements</a>」にある、「リモート処理用にコンピューターを構成する方法」を参照してください。</p></li>
-</ul></li>
-</ul></td>
-</tr>
-<tr class="even">
-<td><p>ユーザーが Internet Explorer ウィンドウで Windows PowerShell Web Access にサインインしようとすると、<strong>[内部サーバー エラー]</strong> ページが表示されるか、Internet Explorer が応答しなくなる。 この問題は Internet Explorer に限られている。</p></td>
-<td><p>この問題は、ユーザーがサインイン時に指定したドメイン名に漢字が含まれていた場合や、ゲートウェイ サーバー名に 1 つ以上の漢字が含まれている場合に発生します。 ユーザーがこの問題に対処するには、<a href="http://ie.microsoft.com/testdrive/info/downloads/Default.html">Internet Explorer 10 をインストールおよび実行</a>し、次の手順を行う必要があります。</p>
-<ol>
-<li><p>Internet Explorer の <strong>[ドキュメント モード]</strong> 設定を <strong>[IE10 標準]</strong> に変更します。</p>
-<ol>
-<li><p><strong>F12</strong> キーを押して開発者ツール コンソールを開きます。</p></li>
-<li><p>Internet Explorer 10 で、<strong>[ブラウザー モード]</strong> をクリックし、<strong>[Internet Explorer 10]</strong> をクリックします。</p></li>
-<li><p><strong>[ドキュメント モード]</strong>、<strong>[IE10 標準]</strong> の順にクリックします。</p></li>
-<li><p>もう一度 <strong>F12</strong> キーを押して開発者ツール コンソールを閉じます。</p></li>
-</ol></li>
-<li><p>自動プロキシ構成を無効にします。</p>
-<ol>
-<li><p>Internet Explorer 10 で、<strong>[ツール]</strong>、<strong>[インターネット オプション]</strong> の順にクリックします。</p></li>
-<li><p><strong>[インターネット オプション]</strong> ダイアログ ボックスの <strong>[接続]</strong> タブで、<strong>[LAN の設定]</strong> をクリックします。</p></li>
-<li><p><strong>[設定を自動的に検出する]</strong> チェック ボックスをオフにします。 <strong>[OK]</strong> をクリックし、もう一度 <strong>[OK]</strong> をクリックして、<strong>[インターネット オプション]</strong> ダイアログ ボックスを閉じます。</p></li>
-</ol></li>
-</ol></td>
-</tr>
-<tr class="odd">
-<td><p>リモートのワークグループ コンピューターに接続できない</p></td>
-<td><p>対象のコンピューターがワークグループ メンバーである場合、次の構文を使ってユーザー名を入力し、コンピューターにサインインします: &lt;<em>workgroup_name</em>&gt;\&lt;<em>user_name</em>&gt;</p></td>
-</tr>
-<tr class="even">
-<td><p>ロールがインストールされているにもかかわらず Web サーバー (IIS) 管理ツールが見つからない</p></td>
-<td><p><span class="code">Install-windowsfeature</span> コマンドレットを使用して Windows PowerShell Web Access をインストールした場合、 <span class="code">IncludeManagementTools</span> パラメーターをコマンドレットに追加しない限り、管理ツールはインストールされません。 例については、「<a href="https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx">Windows PowerShell Web Access のインストールと使用</a>」の「Windows PowerShell コマンドレットを使って Windows PowerShell Web Access をインストールするには」を参照してください。 ゲートウェイ サーバーを対象とする役割と機能の追加ウィザードのセッションでツールを選択することで、IIS マネージャー コンソールとその他の必要な IIS 管理ツールを追加できます。 役割および機能の追加ウィザードは、サーバー マネージャー内で開きます。</p></td>
-</tr>
-<tr class="odd">
-<td><p>Windows PowerShell Web Access Web サイトにアクセスできない</p></td>
-<td><p>Internet Explorer セキュリティ強化の構成 (IE ESC) を有効にして、信頼済みサイトの一覧に Windows PowerShell Web Access Web サイトを追加するか、IE ESC を無効にします。 IE ESC は、サーバー マネージャーの <strong>[ローカル サーバー]</strong> ページの <strong>[プロパティ]</strong> タイルで無効にすることができます。</p></td>
-</tr>
-<tr class="even">
-<td><p>ゲートウェイ サーバーが対象のコンピューターであり、ワークグループ内にある場合に、接続しようとすると次のエラー メッセージが表示される: <strong>"承認エラーが発生しました。対象のコンピューターに接続する権限が与えられているかどうかを確認してください。</strong></p></td>
-<td><p>ゲートウェイ サーバーが対象のサーバーでもあり、ワークグループ内にある場合は、次の表に示されているようにユーザー名、コンピューター名、およびユーザー グループ名を指定します。 ドット (.) を単体で使用してコンピューター名を表すことはできません。</p>
-<div>
-<table>
-<colgroup>
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-<col width="20%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><p>シナリオ</p></th>
-<th><p>UserName パラメーター</p></th>
-<th><p>UserGroup パラメーター</p></th>
-<th><p>ComputerName パラメーター</p></th>
-<th><p>ComputerGroup パラメーター</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><p>ゲートウェイ サーバーがドメイン内にある場合</p></td>
-<td><p><em>Server_name</em>\<em>user_name</em>、Localhost\<em>user_name</em>、または .\<em>user_name</em></p></td>
-<td><p><em>Server_name</em>\<em>user_group</em>、Localhost\<em>user_group</em>、または.\<em>user_group</em></p></td>
-<td><p>ゲートウェイ サーバーの完全修飾名または Localhost</p></td>
-<td><p><em>Server_name</em>\<em>computer_group</em>、Localhost\<em>computer_group</em>、または .\<em>computer_group</em></p></td>
-</tr>
-<tr class="even">
-<td><p>ゲートウェイ サーバーがワークグループ内にある場合</p></td>
-<td><p><em>Server_name</em>\<em>user_name</em>、Localhost\<em>user_name</em>、または .\<em>user_name</em></p></td>
-<td><p><em>Server_name</em>\<em>user_group</em>、Localhost\<em>user_group</em>、または .\<em>user_group</em></p></td>
-<td><p>サーバー名</p></td>
-<td><p><em>Server_name</em>\<em>computer_group</em>、Localhost\<em>computer_group</em>、または .\<em>computer_group</em></p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>次のいずれかの形式の資格情報を使用して、対象コンピューターとしてゲートウェイ サーバーにサインインします。</p>
-<ul>
-<li><p><em>Server_name</em>\<em>user_name</em></p></li>
-<li><p>Localhost\<em>user_name</em></p></li>
-<li><p>.\<em>user_name</em></p></li>
-</ul></td>
-</tr>
-<tr class="odd">
-<td><p>承認規則内に、構文 <em>user_name</em>/<em>computer_name</em>  ではなくセキュリティ識別子 (SID) が表示される</p></td>
-<td><p>規則が有効ではなくなっているか、Active Directory Domain Services のクエリが失敗しています。 以前はワークグループ内にあったゲートウェイ サーバーが後でドメインに参加した場合は通常、承認規則は有効ではありません。</p></td>
-</tr>
-<tr class="even">
-<td><p>ドメインを伴う IPv6 アドレスとして承認規則内で指定されている対象コンピューターにサインインできない。</p></td>
-<td><p>承認規則では、ドメイン名形式の IPv6 アドレスがサポートされていません。 IPv6 アドレスを使用して対象コンピューターを指定するには、承認規則内で元の (コロンを含む) IPv6 アドレスを使用します。 Windows PowerShell Web Access のサインイン ページでは、ドメイン名形式の IPv6 アドレスも数値形式の (コロンを含む) IPv6 アドレスも対象コンピューター名としてサポートされていますが、承認規則内では異なります。 IPv6 アドレスの詳細については、<a href="https://technet.microsoft.com/library/cc781672.aspx">IPv6 の動作のしくみに関するページ</a>を参照してください。</p></td>
-</tr>
-</tbody>
-</table>
+- コンピューターまたはリモート コンピューターの特定のセッション構成に対するユーザー アクセスを許可する承認規則が存在しない。
 
-<a href="javascript:void(0)" class="LW_CollapsibleArea_TitleAhref" title="折りたたみ"><span class="cl_CollapsibleArea_expanding LW_CollapsibleArea_Img"></span><span class="LW_CollapsibleArea_Title">関連項目</span></a>
-<a href="/en-us/library/dn282395(v=ws.11).aspx#Anchor_1" class="LW_CollapsibleArea_Anchor_Img" title="このセクションに対するリンクをコピーおよび共有するには右クリックする"></a>
+  Windows PowerShell Web Access では制限的なセキュリティを採用しているため、承認規則を使ってリモート コンピューターへのアクセス権をユーザーに明示的に付与する必要があります。
 
-------------------------------------------------------------------------
+  承認規則の作成の詳細については、「[Windows PowerShell Web Access の承認規則とセキュリティ機能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)」を参照してください。
 
-[Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
-[Web ベースの Windows PowerShell コンソールの使用](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-[about_Remote_Requirements](https://technet.microsoft.com/library/dd315349.aspx)
+- ユーザーによる対象コンピューターへのアクセスが承認されていない。 これはアクセス制御リスト (ACL) によって決定されます。
 
-<span>表示:</span> 継承 保護
+  詳細については、「[Windows PowerShell Web Access へのサインイン](use-the-web-based-windows-powershell-console.md#signing-in-to-windows-powershell-web-access)」か Windows PowerShell チーム ブログを参照してください。
 
-<span class="stdr-votetitle">このページは役に立ちましたか。</span>
-はい いいえ
+- Windows PowerShell のリモート管理が対象コンピューター上で有効になっていない。
 
-その他にご意見はありますか。
+  ユーザーが接続しようとしているコンピューターでリモート管理が有効になっていることを確認してください。
 
-残り <span class="stdr-count"><span class="stdr-charcnt">1500</span> 文字</span> 送信 スキップする
+  詳細については、「[リモート処理用にコンピューターを構成する方法](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting)」を参照してください。
 
-<span class="stdr-thankyou">ありがとうございました。</span> <span class="stdr-appreciate">ご意見をお送りいただきありがとうございます。</span>
+## <a name="internal-server-error"></a>内部サーバー エラー
 
-[プロファイル (個人情報) の管理](https://social.technet.microsoft.com/profile)
+ユーザーが Internet Explorer ウィンドウで Windows PowerShell Web Access にサインインしようとすると、**[内部サーバー エラー]** ページが表示されるか、*Internet Explorer* が応答しなくなる。
 
-|
+この問題は Internet Explorer に限られている。
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkOpener"><span id="FeedbackButton" class="FeedbackButton clip20x21"><img src="https://i-technet.sec.s-msft.com/Areas/Epx/Content/Images/ImageSprite.png?v=635975720914499532" alt="Site Feedback" id="feedBackImg" class="cl_footer_feedback_icon" /> </span>サイトのフィードバック</a> サイトのフィードバック
+### <a name="possible-cause"></a>考えられる原因
 
-<a href="javascript:void(0)" id="SiteFeedbackLinkCloser">X</a>
+この問題は、ユーザーがサインイン時に指定したドメイン名に漢字が含まれていた場合や、ゲートウェイ サーバー名に 1 つ以上の漢字が含まれている場合に発生します。
 
-お客様のご体験をお聞かせください。
+#### <a name="workaround"></a>回避策
 
-ページはすばやく表示されましたか?
+1. [Internet Explorer 10 をインストールし、実行します](http://ie.microsoft.com/testdrive/info/downloads/Default.html)。
+1. Internet Explorer の **[ドキュメント モード]** 設定を *[IE10 標準]* に変更します。
+   1. **F12** キーを押して開発者ツール コンソールを開きます。
+   1. Internet Explorer 10 で、**[ブラウザー モード]** をクリックし、*[Internet Explorer 10]* をクリックします。
+   1. **[ドキュメント モード]**、*[IE10 標準]* の順にクリックします。
+   1. もう一度 **F12** キーを押して開発者ツール コンソールを閉じます。
+1. Internet Explorer 10 の自動プロキシ構成を無効にします。
+   1. **[ツール]**、 **[インターネット オプション]**の順にクリックします。
+   1. **[インターネット オプション]** ダイアログ ボックスの **[接続]** タブで、**[LAN の設定]** をクリックします。
+   1. **[設定を自動的に検出する]** チェック ボックスをオフにします。 **[OK]** をクリックし、もう一度 **[OK]** をクリックして、*[インターネット オプション]* ダイアログ ボックスを閉じます。
 
-<span> はい<span> </span></span> <span> いいえ<span> </span></span>
+## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>リモートのワークグループ コンピューターに接続できない
 
-ページのデザインは気に入りましたか?
+対象のコンピューターがワークグループ メンバーである場合、次の構文を使ってユーザー名を入力し、コンピューターにサインインします: `<workgroup_name>\<user_name>`
 
-<span> はい<span> </span></span> <span> いいえ<span> </span></span>
+## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>ロールがインストールされているにもかかわらず Web サーバー (IIS) 管理ツールが見つからない
 
-詳しくお聞かせください。
+`Install-WindowsFeature` コマンドレットを使って Windows PowerShell Web Access をインストールした場合、コマンドレットに `-IncludeManagementTools` パラメーターを追加しない限り管理ツールはインストールされません。
 
--   [Flash ニュースレター](https://technet.microsoft.com/cc543196.aspx)
--   |
--   [お問い合わせ先](https://technet.microsoft.com/cc512759.aspx)
--   |
--   [プライバシーに関する声明](https://privacy.microsoft.com/privacystatement)
--   |
--   [使用条件](https://technet.microsoft.com/cc300389.aspx)
--   |
--   [商標](https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/)
--   |
+例については、「[Windows PowerShell コマンドレットを使って Windows PowerShell Web Access をインストールするには](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets)」を参照してください。
 
-© 2016 Microsoft
+ゲートウェイ サーバーを対象とする**役割と機能の追加ウィザード**のセッションでツールを選択することで、IIS マネージャー コンソールとその他の必要な IIS 管理ツールを追加できます。
+役割および機能の追加ウィザードは、サーバー マネージャー内で開きます。
 
-© 2016 Microsoft
+## <a name="windows-powershell-web-access-website-is-not-accessible"></a>Windows PowerShell Web Access Web サイトにアクセスできない
 
-サードパーティのスクリプトやコード、サードパーティから本 Web サイトへのリンク、あるいは本サイトからサードパーティへのリンクは、マイクロソフトではなく、そのようなコードの所有者によってお客様にライセンス供与されています。 ASP.NET Ajax CDN の使用条件 - http://www.asp.net/ajaxlibrary/CDN.ashx を参照してください。
-<img src="https://m.webtrends.com/dcsjwb9vb00000c932fd0rjc7_5p3t/njs.gif?dcsuri=/nojavascript&amp;WT.js=No" alt="DCSIMG" id="Img1" width="1" height="1" />
+Internet Explorer セキュリティ強化の構成 (IE ESC) を有効にして、信頼済みサイトの一覧に Windows PowerShell Web Access Web サイトを追加できます。
 
+セキュリティ上の理由からお勧めはできませんが、IE ESC を無効にするという方法もあります。
+IE ESC は、サーバー マネージャーの [ローカル サーバー] ページの [プロパティ] タイルで無効にすることができます。
+
+## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>"承認エラーが発生しました。 対象のコンピューターに接続する権限が与えられているかどうかを確認してください。"
+
+ゲートウェイ サーバーが対象のコンピューターであり、ワークグループ内にある場合に、接続しようとすると上記のエラー メッセージが表示される。
+
+ゲートウェイ サーバーが対象のサーバーでもあり、ワークグループ内にある場合は、ユーザー名、コンピューター名、ユーザー グループ名を指定します。
+ドット (.) を単体で使用してコンピューター名を表すことはできません。
+
+### <a name="scenarios-and-proper-values"></a>シナリオと適切な値
+
+#### <a name="all-cases"></a>すべてのケース
+
+パラメーター | 値
+-- | --
+UserName | Server\_name\\user\_name<br/>Localhost\\user\_name<br/>.\\user\_name
+UserGroup | Server\_name\\user\_group<br/>Localhost\\user\_group<br/>.\\user\_group
+ComputerGroup | Server\_name\\computer\_group<br/>Localhost\\computer\_group<br/>.\\computer\_group
+
+#### <a name="gateway-server-is-in-a-domain"></a>ゲートウェイ サーバーがドメイン内にある場合
+
+パラメーター | 値
+-- | --
+ComputerName | ゲートウェイ サーバーの完全修飾名または Localhost
+
+#### <a name="gateway-server-is-in-a-workgroup"></a>ゲートウェイ サーバーがワークグループ内にある場合
+
+パラメーター | 値
+-- | --
+ComputerName | サーバー名
+
+### <a name="gateway-credentials"></a>ゲートウェイの資格情報
+
+次のいずれかの形式の資格情報を使用して、対象コンピューターとしてゲートウェイ サーバーにサインインします。
+
+- Server\_name\\user\_name
+- Localhost\\user\_name
+- .\\user\_name
+
+## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>セキュリティ識別子 (SID) が認証規則に表示される
+
+承認規則内に、構文 user\_name/computer\_name ではなくセキュリティ識別子 (SID) が表示される
+
+規則が有効ではなくなっているか、Active Directory Domain Services のクエリが失敗しています。
+以前はワークグループ内にあったゲートウェイ サーバーが後でドメインに参加した場合は通常、承認規則は有効ではありません。
+
+## <a name="cannot-sign-in-with-rule-as-an-ipv6-address-with-a-domain"></a>規則の IPv6 アドレスにドメインが含まれるとき、サインインできない
+
+ドメインを伴う IPv6 アドレスとして承認規則内で指定されている対象コンピューターにサインインできない。
+
+承認規則では、ドメイン名形式の IPv6 アドレスがサポートされていません。
+
+IPv6 アドレスを使用して対象コンピューターを指定するには、承認規則内で元の (コロンを含む) IPv6 アドレスを使用します。
+Windows PowerShell Web Access のサインイン ページでは、ドメイン名形式の IPv6 アドレスも数値形式の (コロンを含む) IPv6 アドレスも対象コンピューター名としてサポートされていますが、承認規則内では異なります。 
+
+IPv6 アドレスの詳細については、[IPv6 の動作のしくみに関するページ](https://technet.microsoft.com/en-us/library/cc781672(v=ws.10).aspx)を参照してください。
+
+## <a name="see-also"></a>参照
+
+- [Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
+- [Web ベースの Windows PowerShell コンソールの使用](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
+- [about_Remote_Requirements](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements)

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "オブジェクトの構造を表示する (Get-member)"
 ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
-ms.openlocfilehash: eaa6cc44ecab04c76b90418115f388f6ff30e437
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 618f34bca7bfb76ce5d48ada642a687e279c8aad
+ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 08/31/2017
 ---
 # <a name="viewing-object-structure-get-member"></a>オブジェクトの構造を表示する (Get-member)
 オブジェクトは、Windows PowerShell において非常に中心的な役割を担っているため、任意のオブジェクトの種類で動作するよう設計されたネイティブ コマンドがいくつかあります。 最も重要なコマンドは、**Get-Member** コマンドです。
@@ -37,7 +37,7 @@ add_Disposed                   Method         System.Void add_Disposed(Event...
 ...
 ```
 
-表示する要素をフィルター処理することで、この長い情報の一覧をより使いやすくできます。 **Get-Member** コマンドを使用すると、プロパティであるメンバーのみを一覧表示できます。 プロパティにはいくつかの形式があります。 **Get-MemberMemberType** パラメーターを値 **Properties** に設定すると、コマンドレットはすべての種類のプロパティを表示します。 結果の一覧はこれでもまだ非常に長いですが、より管理しやすくなります。
+表示する要素をフィルター処理することで、この長い情報の一覧をより使いやすくできます。 **Get-Member** コマンドを使用すると、プロパティであるメンバーのみを一覧表示できます。 プロパティにはいくつかの形式があります。 **Get-Member MemberType** パラメーターを値 **Properties** に設定すると、コマンドレットはすべての種類のプロパティを表示します。 結果の一覧はこれでもまだ非常に長いですが、より管理しやすくなります。
 
 ```
 PS> Get-Process | Get-Member -MemberType Properties
@@ -65,7 +65,7 @@ Path                       ScriptProperty System.Object Path {get=$this.Main...
 プロセスには、60 を超えるプロパティがあります。 Windows PowerShell では、既知のオブジェクトのほんの一部のプロパティしか表示されません。これは、すべてを表示すると管理が困難なほどの大量の情報が生成されるためです。
 
 > [!NOTE]
-> Windows PowerShell は、.format.ps1xml で終わる名前を持つ XML ファイルに保存されている情報を使用して、オブジェクトの種類を表示する方法を決定します。 プロセス オブジェクトの書式設定データは、.NET System.Diagnostics.Process オブジェクトであり、PowerShellCore.format.ps1xml に保存されます。
+> Windows PowerShell は、.format.ps1xml で終わる名前を持つ XML ファイルに保存されている情報を使用して、オブジェクトの種類を表示する方法を決定します。 プロセス オブジェクトの書式設定データは、.NET System.Diagnostics.Process オブジェクトであり、DotNetTypes.format.ps1xml に保存されます。
 
 Windows PowerShell が既定で表示する以外のプロパティを確認する必要がある場合は、出力データを自分で書式設定する必要があります。 これは、書式設定コマンドレットを使用して行えます。
 
