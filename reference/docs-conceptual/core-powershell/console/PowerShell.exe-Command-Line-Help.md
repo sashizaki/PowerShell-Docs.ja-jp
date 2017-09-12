@@ -3,18 +3,18 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "PowerShell.exe コマンドラインのヘルプ"
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: 4a14223dd024d967810a90dec10e416e4e35d6a2
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: b2236decb3295ee5b543f72f083e516c91fa4b5f
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe コマンドラインのヘルプ
 Windows PowerShell セッションを開始します。 PowerShell.exe を使用して、Cmd.exe などの別のツールのコマンド ラインから Windows PowerShell セッションを起動したり、PowerShell.exe を Windows PowerShell コマンド ラインで使用して、新しいセッションを開始したりすることができます。 パラメーターを使用して、セッションをカスタマイズします。
 
 ## <a name="syntax"></a>構文
 
-```
+```syntax
 PowerShell[.exe]
        [-EncodedCommand <Base64EncodedCommand>]
        [-ExecutionPolicy <ExecutionPolicy>]

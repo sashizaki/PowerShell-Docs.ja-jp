@@ -1,13 +1,12 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell ISE の紹介"
-ms.assetid: a0de70ca-909a-4807-94d1-6da86e5b52a0
-ms.openlocfilehash: 61d31fc2555d91bc7872d7b90cfb1f2a9832ff9c
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 75242c20548e2e83397867214417a48806c897ec
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="introducing-the-windows-powershell-ise"></a>Windows PowerShell ISE の紹介
 Windows PowerShell Integrated Scripting Environment (ISE) は、Windows PowerShell のホスト アプリケーションです。 Windows PowerShell ISE では、複数行の編集、タブ補完、構文の色分け、選択的な実行、状況依存ヘルプ、右から左へ記述する言語のサポートが可能な単一の Windows ベースのグラフィック ユーザー インターフェイス内で、コマンドの実行や、スクリプトの作成、テスト、およびデバッグを実行することができます。
@@ -15,17 +14,17 @@ Windows PowerShell Integrated Scripting Environment (ISE) は、Windows PowerShe
 
 Windows PowerShell ISE の新機能をお試しください。
 
--   複数行の編集: [コマンド] ウィンドウで現在の行の下に空白行を挿入するには、SHIFT キーを押しながら ENTER キーを押します。
+- 複数行の編集: [コマンド] ウィンドウで現在の行の下に空白行を挿入するには、SHIFT キーを押しながら ENTER キーを押します。
 
--   選択的な実行: スクリプトの一部を実行するには、実行するテキストを選んで、**[スクリプトの実行]** ボタンをクリックします。 または、F5 キーを押します。
+- 選択的な実行: スクリプトの一部を実行するには、実行するテキストを選んで、**[スクリプトの実行]** ボタンをクリックします。 または、F5 キーを押します。
 
--   状況依存ヘルプ: **Invoke-Item** と入力し、F1 キーを押します。 ヘルプ ファイルの **Invoke-Item** コマンドレットに関するヘルプ トピックが開きます。
+- 状況依存ヘルプ: **Invoke-Item** と入力し、F1 キーを押します。 ヘルプ ファイルの **Invoke-Item** コマンドレットに関するヘルプ トピックが開きます。
 
 Windows PowerShell ISE では、外観の一部をカスタマイズすることができます。 また、独自の Windows PowerShell プロファイルも持ち、Windows PowerShell ISE で使用する関数、エイリアス、変数、およびコマンドを格納できます。
 
 ### <a name="to-start-the-windows-powershell-ise"></a>Windows PowerShell ISE を開始するには
 
-1.  次のいずれかの操作を行います。
+1. 次のいずれかの操作を行います。
 
     -   **[スタート]** をクリックして **[すべてのプログラム]** をポイントし、**[Windows PowerShell V2]** をポイントして **[Windows PowerShell ISE]** をクリックします。
 
@@ -33,5 +32,5 @@ Windows PowerShell ISE では、外観の一部をカスタマイズすること
 
 ### <a name="to-get-help-in-the-windows-powershell-ise"></a>Windows PowerShell ISE のヘルプを利用するには
 
--   **[ヘルプ]** メニューで、**[Windows PowerShell ヘルプ]** をクリックします。 または、F1 キーを押します。 開いたファイルは、Get-Help コマンドレットから利用できるすべてのヘルプを含む、Windows PowerShell ISE と Windows PowerShell について説明しています。
+- **[ヘルプ]** メニューで、**[Windows PowerShell ヘルプ]** をクリックします。 または、F1 キーを押します。 開いたファイルは、Get-Help コマンドレットから利用できるすべてのヘルプを含む、Windows PowerShell ISE と Windows PowerShell について説明しています。
 

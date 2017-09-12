@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell 2.0 エンジンを開始する"
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 15f578e2fbf0b10afa307cde0a32123a8026a282
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 2e5c13cafdfd9fbe479fcad8ac81725cbd7ac3d9
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 エンジンを開始する
 このセクションでは、Windows PowerShell 2.0 エンジンがインストールされている Windows 8.1、Windows Server 2012 R2、Windows 8、Windows Server 2012、および Windows PowerShell 2.0、Windows PowerShell 3.0、Windows PowerShell 4.0 がインストールされているその他のシステムで、Windows PowerShell 2.0 エンジンを開始する方法について説明します。
@@ -39,7 +39,7 @@ PowerShell.exe -Version 2
 
 #### <a name="to-start-a-remote-windows-powershell-20-session"></a>リモートの Windows PowerShell 2.0 セッションを開始するには
 
-1.  Windows PowerShell 2.0 エンジンを必要とするセッション構成を作成するには、**PSVersion** パラメーターに値 "2.0" を指定して [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) コマンドレットを使用します。 接続の "サーバー側" (受信側) にあるコンピューターでこのコマンドを実行します。
+1. Windows PowerShell 2.0 エンジンを必要とするセッション構成を作成するには、**PSVersion** パラメーターに値 "2.0" を指定して [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) コマンドレットを使用します。 接続の "サーバー側" (受信側) にあるコンピューターでこのコマンドを実行します。
 
     次のサンプル コマンドは、Server01 コンピューター上に PS2 セッション構成を作成します。 このコマンドを実行するには、**[管理者として実行]** オプションを使用して Windows PowerShell 4.0 または Windows PowerShell 3.0 を起動します。
 
@@ -47,7 +47,7 @@ PowerShell.exe -Version 2
     Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
     ```
 
-2.  PS2 セッション構成を使用する Server01 コンピューターでセッションを作成するには、リモート セッションを作成するコマンドレット ([New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) コマンドレットなど) の **ConfigurationName** パラメーターを使用します。
+2. PS2 セッション構成を使用する Server01 コンピューターでセッションを作成するには、リモート セッションを作成するコマンドレット ([New-PSSession](https://technet.microsoft.com/en-us/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) コマンドレットなど) の **ConfigurationName** パラメーターを使用します。
 
     セッション構成を使用するセッションを開始すると、Windows PowerShell 2.0 エンジンが自動的にセッションに読み込まれます。
 

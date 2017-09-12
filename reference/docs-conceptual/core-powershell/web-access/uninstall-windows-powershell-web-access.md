@@ -2,13 +2,13 @@
 ms.date: 2017-08-23
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell Web Access のアンインストール"
-ms.openlocfilehash: 6b75eadb7264d7478fb3c9bc2b2ff355772ef4c2
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 7c71a245be244c1883598cdcddbf35e43c0fc7b0
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="uninstall-windows-powershell-web-access"></a>Windows PowerShell Web Access をアンインストールする
+# <a name="uninstall-windows-powershell-web-access"></a>Windows PowerShell Web Access をアンインストールする
 
 最終更新日: 2013 年 6 月 24 日
 
@@ -55,7 +55,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>手順 2: コマンドレットを利用し、Windows PowerShell Web Access をアンインストールする
 
-1.  次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。 セッションを既に開いている場合は、次の手順に進んでください。
+1. 次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。 セッションを既に開いている場合は、次の手順に進んでください。
 
     -   Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
 

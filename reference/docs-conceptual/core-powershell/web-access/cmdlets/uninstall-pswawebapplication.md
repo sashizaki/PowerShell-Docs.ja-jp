@@ -8,21 +8,21 @@ keywords: "PowerShell, コマンドレット"
 ms.date: 2016-12-12
 title: uninstall pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: 64d546427e44d7bd284da8f682a7218afbadd0ad
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 5fe608b3bfbb90f842f16c1f5a8c51879589cf6d
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
+# <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
 
-##  <a name="synopsis"></a>概要
+## <a name="synopsis"></a>概要
 
 Windows PowerShell® Web アプリケーションをアンインストールします。
 
 ## <a name="syntax"></a>構文
 
-###  <a name="default"></a>既定
+### <a name="default"></a>既定
 ```
 Uninstall-PswaWebApplication [[-WebApplicationName] <String> ] [-DeleteTestCertificate] [-WebSiteName <String> ] [-Confirm] [-WhatIf] [ <CommonParameters>]
 ```
@@ -140,10 +140,10 @@ Uninstall-PswaWebApplication -DeleteTestCertificate
 Uninstall-PswaWebApplication -WebApplicationName TestApplication -WebsiteName MySite -DeleteTestCertificate
 ```
 
-##  <a name="related-topics"></a>関連トピック
+## <a name="related-topics"></a>関連トピック
 
--  [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
--  [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
--  [Install-PswaWebApplication](install-pswawebapplication.md)
--  [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
--  [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)
+- [Add-PswaAuthorizationRule](add-pswaauthorizationrule.md)
+- [Get-PswaAuthorizationRule](get-pswaauthorizationrule.md)
+- [Install-PswaWebApplication](install-pswawebapplication.md)
+- [Remove-PswaAuthorizationRule](remove-pswaauthorizationrule.md)
+- [Test-PswaAuthorizationRule](test-pswaauthorizationrule.md)

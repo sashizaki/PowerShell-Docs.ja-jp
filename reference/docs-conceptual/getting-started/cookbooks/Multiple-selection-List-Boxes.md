@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "複数選択のリスト ボックス"
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
-ms.openlocfilehash: 85167ea25044f0ee587dc817460e8f13869be4bd
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 122014888bc5cf93c1c709b9d534d572037f5ffe
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="multiple-selection-list-boxes"></a>複数選択のリスト ボックス
 Windows PowerShell 3.0 と以降のリリースを使用すると、カスタム Windows フォームで複数選択のリスト ボックス コントロールを作成できます。
@@ -79,11 +79,11 @@ $form = New-Object System.Windows.Forms.Form
 
 フォーム クラスのインスタンスを作成したら、このクラスの次の 3 つのプロパティに値を割り当てます。
 
--   **Text**。 ウィンドウのタイトルになります。
+- **Text**。 ウィンドウのタイトルになります。
 
--   **Size**。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
+- **Size**。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
 
--   **StartingPosition**。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。 このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
+- **StartingPosition**。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。 このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
 
 ```
 $form.Text = "Data Entry Form"

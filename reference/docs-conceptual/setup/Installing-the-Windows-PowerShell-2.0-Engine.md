@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell 2.0 エンジンのインストール"
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
-ms.openlocfilehash: 37a300d2f0517a819f520c44f0eb92e168444890
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: ff6c2b52b8948472ace3ee35cd4c6aa2dbf46c25
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 エンジンのインストール
 このトピックでは、Windows PowerShell 2.0 エンジンのインストール方法について説明します。
@@ -25,46 +25,46 @@ Windows 8.1 と Windows 8 では、Windows PowerShell 2.0 エンジンの機能�
 
 #### <a name="to-turn-on-net-framework-35"></a>.NET Framework 3.5 をオンにするには
 
-1.  **[スタート]** 画面で、「**Windows の機能**」と入力します。
+1. **[スタート]** 画面で、「**Windows の機能**」と入力します。
 
-2.  **アプリ** バーで、**[設定]** をクリックしてから、**[Windows の機能の有効化または無効化]** をクリックします。
+2. **アプリ** バーで、**[設定]** をクリックしてから、**[Windows の機能の有効化または無効化]** をクリックします。
 
-3.  **[Windows の機能]** ボックスで、**[.NET Framework 3.5 (.NET 2.0 および 3.0 を含む)]** をオンにします。
+3. **[Windows の機能]** ボックスで、**[.NET Framework 3.5 (.NET 2.0 および 3.0 を含む)]** をオンにします。
 
     **[.NET Framework 3.5 (.NET 2.0 および 3.0 を含む)]** を選択すると、ボックスが塗りつぶされて、機能の一部のみが選択された状態になります。 Windows PowerShell 2.0 エンジンの場合はこの状態で十分です。
 
 #### <a name="to-turn-the-windows-powershell-20-engine-on-and-off"></a>Windows PowerShell 2.0 エンジンをオンまたはオフにするには
 
-1.  **[スタート]** 画面で、「**Windows の機能**」と入力します。
+1. **[スタート]** 画面で、「**Windows の機能**」と入力します。
 
-2.  **アプリ** バーで、**[設定]** をクリックしてから、**[Windows の機能の有効化または無効化]** をクリックします。
+2. **アプリ** バーで、**[設定]** をクリックしてから、**[Windows の機能の有効化または無効化]** をクリックします。
 
-3.  **[Windows の機能]** ボックスで、[**Windows PowerShell 2.0**] ノードを展開し、[**Windows PowerShell 2.0** エンジン] ボックスをクリックして、オンまたはオフにします。
+3. **[Windows の機能]** ボックスで、[**Windows PowerShell 2.0**] ノードを展開し、[**Windows PowerShell 2.0** エンジン] ボックスをクリックして、オンまたはオフにします。
 
 ## <a name="on-windows-server-2012-r2-and-windows-server-2012"></a>Windows Server 2012 R2 または Windows Server 2012
 次の手順を実行して、Windows PowerShell 2.0 エンジンと Microsoft .NET Framework 3.5 の機能を追加します。 Windows PowerShell 2.0 エンジンには最低でも Microsoft .NET Framework 2.0.50727 が必要です。 この要件は Microsoft .NET Framework 3.5 で満たされます。
 
 #### <a name="to-add-the-net-framework-35-feature"></a>.NET Framework 3.5 の機能を追加するには
 
-1.  **サーバー マネージャー**で、**[管理]** メニューから **[役割と機能の追加]** を選びます。
+1. **サーバー マネージャー**で、**[管理]** メニューから **[役割と機能の追加]** を選びます。
 
     または、**サーバー マネージャー**で、**[すべてのサーバー]** をクリックし、サーバー名を右クリックしてから、**[役割と機能の追加]** を選びます。
 
-2.  **[インストールの種類]** ページで **[役割ベースまたは機能ベースのインストール]** を選びます。
+2. **[インストールの種類]** ページで **[役割ベースまたは機能ベースのインストール]** を選びます。
 
-3.  **[機能]** ページで、**[.NET 3.5 Framework 機能]** ノードを展開し、**[.NET Framework 3.5 (.NET 2.0 および 3.0 を含む)]** を選びます。
+3. **[機能]** ページで、**[.NET 3.5 Framework 機能]** ノードを展開し、**[.NET Framework 3.5 (.NET 2.0 および 3.0 を含む)]** を選びます。
 
     このノードの下にあるその他のオプションは、Windows PowerShell 2.0 エンジンには必要ありません。
 
 #### <a name="to-add-the-windows-powershell-20-engine-feature"></a>Windows PowerShell 2.0 エンジンの機能を追加するには
 
--   **サーバー マネージャー**で、**[管理]** メニューから **[役割と機能の追加]** を選びます。
+- **サーバー マネージャー**で、**[管理]** メニューから **[役割と機能の追加]** を選びます。
 
     または、**サーバー マネージャー**で、**[すべてのサーバー]** をクリックし、サーバー名を右クリックしてから、**[役割と機能の追加]** を選びます。
 
--   **[インストールの種類]** ページで **[役割ベースまたは機能ベースのインストール]** を選びます。
+- **[インストールの種類]** ページで **[役割ベースまたは機能ベースのインストール]** を選びます。
 
--   **[機能]** ページで、**[Windows PowerShell (インストール済み)]** ノードを展開し、**[Windows PowerShell 2.0 エンジン]** を選択します。
+- **[機能]** ページで、**[Windows PowerShell (インストール済み)]** ノードを展開し、**[Windows PowerShell 2.0 エンジン]** を選択します。
 
 Windows PowerShell 2.0 エンジンの開始に関する情報については、「[Windows PowerShell 2.0 エンジンの開始](Starting-the-Windows-PowerShell-2.0-Engine.md)」を参照してください。
 

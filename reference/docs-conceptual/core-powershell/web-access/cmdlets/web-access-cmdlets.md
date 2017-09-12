@@ -8,13 +8,13 @@ keywords: "PowerShell, コマンドレット"
 ms.date: 2016-12-12
 title: "Web Access のコマンドレット"
 ms.technology: powershell
-ms.openlocfilehash: ac8717c2aa97d0482b4d88f1b57d621d7ff47535
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: daebe2fe2cbccaf8d3f41d265d23dc45d3bb99b6
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
-#  <a name="windows-powershell-web-access-cmdlets"></a>Windows PowerShell Web Access のコマンドレット
+# <a name="windows-powershell-web-access-cmdlets"></a>Windows PowerShell Web Access のコマンドレット
 
 このリファレンスでは、Windows PowerShell® Web Access 固有のコマンドレットの説明と構文について情報を提供します。 コマンドレットの先頭の動詞に基づいて、アルファベット順に記載しています。
 
@@ -54,13 +54,13 @@ IIS から Windows PowerShell Web アプリケーションをアンインスト�
 
 詳細については、次のコマンドレットを実行してください。
 
--  `Get-Help `*&lt;コマンドレット名&gt;*` -Detailed`
--  `Get-Help `*&lt;コマンドレット名&gt;*` -Examples`
--  `Get-Help `*&lt;コマンドレット名&gt;*` -Full`
+- `Get-Help `*&lt;コマンドレット名&gt;*` -Detailed`
+- `Get-Help `*&lt;コマンドレット名&gt;*` -Examples`
+- `Get-Help `*&lt;コマンドレット名&gt;*` -Full`
 
 ### <a name="more-information"></a>詳細情報
 
 PowerShell Web Access の詳細については、以下を参照してください。
 
--   [Windows PowerShell Web Access のインストールと使用](../install-and-use-windows-powershell-web-access.md)
+- [Windows PowerShell Web Access のインストールと使用](../install-and-use-windows-powershell-web-access.md)
 

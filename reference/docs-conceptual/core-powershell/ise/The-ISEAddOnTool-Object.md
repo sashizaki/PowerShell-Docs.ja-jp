@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "ISEAddOnTool オブジェクト"
 ms.assetid: ce84d8bc-07ba-41f6-bdde-d6f3fddcd1e3
-ms.openlocfilehash: 15f0cdd1425b9f87edeb0404fc385275e4a9d1d8
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: fe2a0f59c937ecd727a628f4baf9d44506d13c72
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool オブジェクト
   **ISEAddonTool** オブジェクトは、Windows PowerShell ISE に追加の機能を提供する、インストール済みのアドオン ツールを表します。 例としては、**[表示]**、**[コマンド アドオンの表示]** の順にクリックして表示できる**コマンド** ツールです。 このツールには、利用可能なさまざまな **ISEAddOnTool** オブジェクトを操作することでアクセスできます。
@@ -21,7 +21,7 @@ ms.lasthandoff: 08/03/2017
 
 ## <a name="properties"></a>プロパティ
 
-###  <a name="Control"></a> Control
+### <a name="control"></a>Control
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
  **コントロール** プロパティは、コマンド アドオン ツールの詳細への読み取りアクセスを提供します。
@@ -137,10 +137,10 @@ Dispatcher                  : System.Windows.Threading.Dispatcher
 
 ```
 
-###  <a name="IsVisible"></a> IsVisible
+### <a name="isvisible"></a>IsVisible
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
- 割り当てられているウィンドウにアドオン ツールが現在表示されているかどうかを示すブール型プロパティ。 表示されている場合は、**IsVisible** プロパティを **$false** を設定すると、ツールを非表示にすることができます。**IsVisible** プロパティを **$true** に設定すると、PowerShell でアドオン ツールが表示されます。 アドオン ツールを非表示にすると、**CurrentVisibleHorizontalTool** または **CurrentVisibleVerticalTool** オブジェクトからアクセスできなくなるため、これらのオブジェクトのこのプロパティを使用して表示するようにすることはできません。
+ 割り当てられているウィンドウにアドオン ツールが現在表示されているかどうかを示すブール型プロパティ。 表示されている場合は、**IsVisible** プロパティを **$false** を設定すると、ツールを非表示にすることができます。**IsVisible** プロパティを **$true** に設定すると、PowerShell でアドオン ツールが表示されます。アドオン ツールを非表示にすると、**CurrentVisibleHorizontalTool** または **CurrentVisibleVerticalTool** オブジェクトからアクセスできなくなるため、これらのオブジェクトのこのプロパティを使用して表示するようにすることはできません。
 
 ```
 # Hide the current tool in the vertical tool pane
@@ -150,7 +150,7 @@ $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible=$true
 
 ```
 
-###  <a name="name"></a> Name
+### <a name="name"></a>名前
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
  アドオン ツールの名前を取得する読み取り専用プロパティ。

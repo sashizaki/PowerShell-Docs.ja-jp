@@ -2,12 +2,11 @@
 ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "ISEEditor オブジェクト"
-ms.assetid: 0101daf8-4e31-4e4c-ab89-01d95dcb8f46
-ms.openlocfilehash: e2ddb0de1089c832f130e1f5c7c8dcb199aca2fa
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 149eda44fea5b02324442970324e3010015e7ae5
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor オブジェクト
   **ISEEditor** オブジェクトは、Microsoft.PowerShell.Host.ISE.ISEEditor クラスのインスタンスです。 コンソール ウィンドウは **ISEEditor** オブジェクトです。 各 [ISEFile](The-ISEFile-Object.md) オブジェクトには、関連付けられている **ISEEditor** オブジェクトがあります。 次のセクションでは、**ISEEditor** オブジェクトのメソッドとプロパティについて説明します。
@@ -63,7 +62,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 ### <a name="gotomatch"></a>GoToMatch\(\)
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
- エディター オブジェクトの **CanGoToMatch** プロパティが **$true** の場合、一致する文字にカーソルを移動します。これは、カーソルが始めかっこ \(、始め角かっこ \[、始め波かっこ { の直前または終わりかっこ \)、終わり角かっこ \]、終わり波かっこ } の直後にある場合に発生します。  カーソルは、開始文字の前または終了文字の後に配置されます。 **CanGoToMatch** プロパティが **$false** の場合、このメソッドでは何も実行されません。 [CanGoToMatch]() を参照してください。
+ エディター オブジェクトの **CanGoToMatch** プロパティが **$true** の場合、一致する文字にカーソルを移動します。これは、カーソルが始めかっこ \(、始め角かっこ \[、始め波かっこ { の直前または終わりかっこ \)、終わり角かっこ \]、終わり波かっこ } の直後にある場合に発生します。  カーソルは、開始文字の前または終了文字の後に配置されます。 **CanGoToMatch** プロパティが **$false** の場合、このメソッドでは何も実行されません。
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace.
@@ -76,7 +75,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **text** - 文字列。挿入するテキスト。
 
- 後述の「[スクリプト例]()」を参照してください。
+ 後述の「[スクリプト例](#-scripting-example)」を参照してください。
 
 ### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
@@ -91,7 +90,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **endColumn** - 整数。選択範囲が終了する終了行内の列。
 
- 後述の「[スクリプト例]()」を参照してください。
+ 後述の「[スクリプト例](#-scripting-example)」を参照してください。
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
@@ -131,7 +130,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 
 ## <a name="properties"></a>プロパティ
 
-###  <a name="CanGoToMatch"></a> CanGoToMatch
+### <a name="cangotomatch"></a>CanGoToMatch
   Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 
 
  カーソルがかっこ、角かっこ、または波かっこ (\(\)、\[\]、{}) の横にあるかどうかを示す読み取り専用のブール型プロパティ。 カーソルがかっこの始め文字の直前またはかっこの終わり文字の直後にある場合、このプロパティの値は **$true** です。 それ以外の場合は **$false** です。
@@ -141,7 +140,7 @@ $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 $psISE.CurrentFile.Editor.CanGoToMatch
 ```
 
-###  <a name="CaretColumn"></a> CaretColumn
+### <a name="caretcolumn"></a>CaretColumn
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  カーソルの位置に対応する列番号を取得する読み取り専用プロパティ。
@@ -151,7 +150,7 @@ $psISE.CurrentFile.Editor.CanGoToMatch
 $psISE.CurrentFile.Editor.CaretColumn
 ```
 
-###  <a name="CaretLine"></a> CaretLine
+### <a name="caretline"></a>CaretLine
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  カーソルのある行の番号を取得する読み取り専用のプロパティ。
@@ -161,7 +160,7 @@ $psISE.CurrentFile.Editor.CaretColumn
 $psISE.CurrentFile.Editor.CaretLine
 ```
 
-###  <a name="CaretLineText"></a> CaretLineText
+### <a name="caretlinetext"></a>CaretLineText
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  カーソルのある行のテキスト全体を取得する読み取り専用のプロパティ。
@@ -171,7 +170,7 @@ $psISE.CurrentFile.Editor.CaretLine
 $psISE.CurrentFile.Editor.CaretLineText
 ```
 
-###  <a name="LineCount"></a> LineCount
+### <a name="linecount"></a>LineCount
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  エディターから行数を取得する読み取り専用のプロパティ。
@@ -181,21 +180,21 @@ $psISE.CurrentFile.Editor.CaretLineText
 $psISE.CurrentFile.Editor.LineCount
 ```
 
-###  <a name="SelectedText"></a> SelectedText
+### <a name="selectedtext"></a>SelectedText
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  エディターから選択テキストを取得する読み取り専用のプロパティ。
 
- 後述の「[スクリプト例]()」を参照してください。
+ 後述の「[スクリプト例](#-scripting-example)」を参照してください。
 
-###  <a name="Text"></a> Text
+### <a name="text"></a>テキスト
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  エディターでテキストを取得または設定する読み取り/書き込みのプロパティ。
 
- 後述の「[スクリプト例]()」を参照してください。
+ 後述の「[スクリプト例](#-scripting-example)」を参照してください。
 
-##  <a name="example"></a>スクリプトの例
+## <a name="scripting-example"></a>スクリプトの例
 
 ```powershell
 # This illustrates how you can use the length of a line to

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "グラフィカルな日付の選択を作成する"
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
-ms.openlocfilehash: 5cb952264092d345945318968cf0b3028b11f3e9
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 7be72be7e9732737f00b15b6b2b83adcca4393ae
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="creating-a-graphical-date-picker"></a>グラフィカルな日付の選択を作成する
 ユーザーが日付を選択できる、グラフィカルな予定表スタイルのコントロールを備えたフォームを作成するには、Windows PowerShell 3.0 以降のリリースを使用します。
@@ -65,11 +65,11 @@ $form = New-Object Windows.Forms.Form
 
 フォーム クラスのインスタンスを作成したら、このクラスの次の 3 つのプロパティに値を割り当てます。
 
--   **Text**。 ウィンドウのタイトルになります。
+- **Text**。 ウィンドウのタイトルになります。
 
--   **Size**。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 243 ピクセル、高さ 230 ピクセルのフォームが作成されます。
+- **Size**。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 243 ピクセル、高さ 230 ピクセルのフォームが作成されます。
 
--   **StartingPosition**。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。 このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
+- **StartingPosition**。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。 このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
 
 ```
 $form.Text = "Select a Date" 

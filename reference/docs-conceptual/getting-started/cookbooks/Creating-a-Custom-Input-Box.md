@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "ユーザー設定の入力ボックスを作成する"
 ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
-ms.openlocfilehash: 52f2556267af1e53ee823868f64138e67673beba
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 94172102fb81a9b31b7e84188f3e60a372e9cba2
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="creating-a-custom-input-box"></a>ユーザー設定の入力ボックスを作成する
 Windows PowerShell 3.0 以降のリリースで、Microsoft .NET Framework フォーム作成機能を使用してカスタムのグラフィカル入力ボックスをスクリプト化します。
@@ -71,11 +71,11 @@ $form = New-Object System.Windows.Forms.Form
 
 フォーム クラスのインスタンスを作成したら、このクラスの次の 3 つのプロパティに値を割り当てます。
 
--   **Text**。 ウィンドウのタイトルになります。
+- **Text**。 ウィンドウのタイトルになります。
 
--   **Size**。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
+- **Size**。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
 
--   **StartingPosition**。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。 このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
+- **StartingPosition**。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。 このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
 
 ```
 $form.Text = "Data Entry Form"

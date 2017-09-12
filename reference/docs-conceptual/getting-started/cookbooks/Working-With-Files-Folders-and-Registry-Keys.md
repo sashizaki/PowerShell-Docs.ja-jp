@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "ファイル、フォルダー、レジストリ キーの操作"
 ms.assetid: e6cf87aa-b5f8-48d5-a75a-7cb7ecb482dc
-ms.openlocfilehash: 2bae8d6931c84bee4aa30a43742acd052b82d079
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 22a2390686659033bfd8b02a151b3397cfd46a22
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>ファイル、フォルダー、レジストリ キーの操作
 Windows PowerShell は、名詞の **Item** を使用して Windows PowerShell ドライブで検出された項目を参照します。 Windows PowerShell FileSystem プロバイダーを処理する場合、**Item** は、ファイル、フォルダー、または Windows PowerShell ドライブである可能性があります。 これらの項目を一覧表示して操作することは、ほとんどの管理設定において重要で基本的なタスクであるため、これらのタスクについては詳細に説明します。
@@ -77,11 +77,11 @@ Get-ChildItem -Path C:\Windows -Force
 
 ワイルドカードのマッチングは Windows PowerShell のエンジンによって処理されるため、ワイルドカードを受け入れるすべてのコマンドレットは、同じ表記法を使用し、マッチングの動作も同じになります。 Windows PowerShell のワイルドカードの表記法は、次のとおりです。
 
--   アスタリスク (\*) は、任意の文字の 0 個以上の出現と一致します。
+- アスタリスク (\*) は、任意の文字の 0 個以上の出現と一致します。
 
--   疑問符 (?) は、厳密に 1 つの文字と一致します。
+- 疑問符 (?) は、厳密に 1 つの文字と一致します。
 
--   左角かっこ (\[) 文字および右角かっこ (]) は、一致する文字のセットを囲みます。
+- 左角かっこ (\[) 文字および右角かっこ (]) は、一致する文字のセットを囲みます。
 
 ここでは、ワイルドカードを指定するとどのように機能するか、例を示します。
 

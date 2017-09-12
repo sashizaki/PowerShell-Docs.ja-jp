@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell ISE でプロファイルを使用する方法"
 ms.assetid: 0219626a-6da5-4acc-b630-d058e8b29cc6
-ms.openlocfilehash: 6b16291b7025928a307380cbae75fcdbdb51a73d
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: f959aeb91eecc8056c91c56162ea9bff53537be9
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="how-to-use-profiles-in-windows-powershell-ise"></a>Windows PowerShell ISE でプロファイルを使用する方法
 このトピックでは、Windows PowerShell® Integrated Scripting Environment (ISE) でプロファイルを使用する方法について説明します。 このセクションのタスクを実行する前に、[about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630)) を確認するか、またはコンソール ウィンドウに「`Get-Help about_Profiles`」と入力して **Enter** キーを押すことをお勧めします。
@@ -22,9 +22,9 @@ Windows PowerShell ISE は、現在のユーザーとすべてのユーザーの
 
 使用するプロファイルは、Windows PowerShell と Windows PowerShell ISE の使用方法によって決まります。
 
--   Windows PowerShell を実行するために Windows PowerShell ISE のみを使う場合は、すべての項目を ISE 固有のプロファイルの 1 つに保存します。たとえば、Windows PowerShell ISE 用の CurrentUserCurrentHost プロファイルや、Windows PowerShell ISE 用の AllUsersCurrentHost プロファイルです。
+- Windows PowerShell を実行するために Windows PowerShell ISE のみを使う場合は、すべての項目を ISE 固有のプロファイルの 1 つに保存します。たとえば、Windows PowerShell ISE 用の CurrentUserCurrentHost プロファイルや、Windows PowerShell ISE 用の AllUsersCurrentHost プロファイルです。
 
--   Windows PowerShell を実行するために複数のホスト プログラムを使う場合は、関数、エイリアス、変数、コマンドをすべてのホスト プログラムに影響を与えるプロファイルに保存します。たとえば、CurrentUserAllHosts プロファイルや、AllUsersAllHosts プロファイルです。また、色やフォントのカスタマイズのような ISE 固有の機能は、Windows PowerShell ISE 用の CurrentUserCurrentHost プロファイルか、Windows PowerShell ISE 用の AllUsersCurrentHost プロファイルに保存します。
+- Windows PowerShell を実行するために複数のホスト プログラムを使う場合は、関数、エイリアス、変数、コマンドをすべてのホスト プログラムに影響を与えるプロファイルに保存します。たとえば、CurrentUserAllHosts プロファイルや、AllUsersAllHosts プロファイルです。また、色やフォントのカスタマイズのような ISE 固有の機能は、Windows PowerShell ISE 用の CurrentUserCurrentHost プロファイルか、Windows PowerShell ISE 用の AllUsersCurrentHost プロファイルに保存します。
 
 Windows PowerShell ISE で作成して利用できるプロファイルは次のとおりです。 各プロファイルは、それぞれ特定のパスに保存されます。
 
@@ -66,15 +66,15 @@ if (!(Test-Path -Path $PROFILE.AllUsersAllHosts))
 
 ## <a name="to-edit-a-profile"></a>プロファイルを編集するには
 
-1.  プロファイルを開くには、編集するプロファイルを設定した変数を指定してコマンド psedit を実行します。 たとえば、"現在のユーザー、Windows PowerShell ISE" のプロファイルを開くには、「`psEdit $PROFILE`」と入力します。
+1. プロファイルを開くには、編集するプロファイルを設定した変数を指定してコマンド psedit を実行します。 たとえば、"現在のユーザー、Windows PowerShell ISE" のプロファイルを開くには、「`psEdit $PROFILE`」と入力します。
 
-2.  プロファイルに、いくつかの項目を追加します。 たとえば、次の例のように入力します。
+2. プロファイルに、いくつかの項目を追加します。 たとえば、次の例のように入力します。
 
-    -   コンソール ウィンドウの既定の背景色を青に変更するには、プロファイル ファイルに「`$psISE.Options.OutputPaneBackground = 'blue'`」と入力します。 $psISE 変数について詳しくは、「[Windows PowerShell ISE オブジェクト モデル リファレンス]()」をご覧ください。
+    -   コンソール ウィンドウの既定の背景色を青に変更するには、プロファイル ファイルに「`$psISE.Options.OutputPaneBackground = 'blue'`」と入力します。 $psISE 変数について詳しくは、「[Windows PowerShell ISE オブジェクト モデル リファレンス](The-ISE-Object-Model-Hierarchy.md)」をご覧ください。
 
     -   フォント サイズを 20 に変更するには、プロファイル ファイルに「`$psISE.Options.FontSize =20`」と入力します。
 
-3.  プロファイル ファイルを保存するには、**[ファイル]** メニューの **[保存]** をクリックします。 Windows PowerShell ISE を次に開いた時点で、カスタマイズの内容が適用されます。
+3. プロファイル ファイルを保存するには、**[ファイル]** メニューの **[保存]** をクリックします。 Windows PowerShell ISE を次に開いた時点で、カスタマイズの内容が適用されます。
 
 ## <a name="see-also"></a>参照
 - [about_Profiles [v4]](https://technet.microsoft.com/library/e1d9e30a-70cc-4f36-949f-fc7cd96b4054(v=wps.630))

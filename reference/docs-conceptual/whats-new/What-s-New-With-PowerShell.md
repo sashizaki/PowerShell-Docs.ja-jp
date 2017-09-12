@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "PowerShell の新機能"
-ms.openlocfilehash: 146b6cbfb5903874d27872711369d517ade67a93
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: cfac61258fed00e369256e7061e440cccf43055f
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="what39s-new-with-powershell"></a>PowerShell の新機能
 Windows PowerShell® 5.0 には、その用途を拡大し、使いやすさを向上させる重要な機能や、Windows ベースの環境をより簡単かつ包括的に制御および管理できるようにする重要な新しい機能が含まれています。  Desired State Configuration、セキュリティ、パフォーマンス、リモート処理、および言語拡張機能に関して重要な強化が行われています。
@@ -17,13 +17,13 @@ Windows PowerShell 5.0 は、既定で Windows Server® 2016 と Windows® 10 �
 
 ## <a name="in-this-topic"></a>このトピックの内容
 
--   [PowerShell 5.0 の新しい機能](What-s-New-in-Windows-PowerShell-50.md)
+- [PowerShell 5.0 の新しい機能](What-s-New-in-Windows-PowerShell-50.md)
 
--   [PowerShell ISE 5.0 の新しい機能](What-s-New-in-the-PowerShell-50-ISE.md)
+- [PowerShell ISE 5.0 の新しい機能](What-s-New-in-the-PowerShell-50-ISE.md)
 
 <!--
--   New features in Windows PowerShell 4.0
+- New features in Windows PowerShell 4.0
 
--   New features in Windows PowerShell 3.0
+- New features in Windows PowerShell 3.0
 -->
 
