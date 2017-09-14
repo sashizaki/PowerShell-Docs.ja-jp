@@ -2,11 +2,11 @@
 ms.date: 2017-06-27
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell Web Access の承認規則とセキュリティ機能"
-ms.openlocfilehash: 4b076ca1ecdab293f3acadc466d39ba3e7a6444f
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Access の承認規則とセキュリティ機能
 
@@ -14,7 +14,7 @@ ms.lasthandoff: 08/31/2017
 
 適用対象: Windows Server 2012 R2、Windows Server 2012
 
-Windows Server® 2012 R2 と Windows Server® 2012 の Windows PowerShell® Web Access のセキュリティ モデルには制限があります。
+Windows Server 2012 R2 および Windows Server 2012 の Windows PowerShell Web Access のセキュリティ モデルには制限があります。
 ユーザーが Windows PowerShell Web Access ゲートウェイにサインインし、Web ベースの Windows PowerShell コンソールを使用するには、アクセス許可が明示的に付与されている必要があります。
 
 ## <a name="configuring-authorization-rules-and-site-security"></a>承認規則とサイト セキュリティの構成
@@ -45,10 +45,10 @@ Windows PowerShell Web Access の最も安全な構成方法は、制約付き�
 これらの規則は、対象コンピューター上のアクセス制御リスト (ACL) とは別に、Web アクセスに対する追加のセキュリティ層として機能します。
 以降のセクションでは、セキュリティについてさらに詳しく説明します。
 
-先に説明したセキュリティ層のいずれかを通過できない場合、ユーザーのブラウザー ウィンドウに通常の "アクセス拒否" メッセージが表示されます。
+先に説明したセキュリティ層のいずれかを通過できない場合、ユーザーのブラウザー ウィンドウに通常の 'アクセス拒否' メッセージが表示されます。
 ゲートウェイ サーバーには詳細なセキュリティ情報が記録されますが、エンド ユーザーに対しては、通過したセキュリティ層の数や、サインインまたは認証のエラーが発生した具体的な層などの情報は表示されません。
 
-承認規則の構成方法の詳細については、このトピックの「[承認規則の構成]()」を参照してください。
+承認規則の構成方法の詳細については、このトピックの「[承認規則の構成](#configuring-authorization-rules-and-site-security)」を参照してください。
 
 ### <a name="security"></a>セキュリティ
 
@@ -62,17 +62,17 @@ IIS のベスト プラクティスと、サービス拒否攻撃を阻止する
 
 |レベル|層|
 |-|-|
-|1 で保護されたプロセスとして起動されました|[IIS Web サーバーのセキュリティ機能]()|
-|2|[Windows PowerShell Web Access のフォーム ベースのゲートウェイ認証]()|
-|3|[Windows PowerShell Web Access の承認規則]()|
-|4|[対象コンピューターでの認証と承認規則]()|
+|1 で保護されたプロセスとして起動されました|[IIS Web サーバーのセキュリティ機能](#iis-web-server-security-features)|
+|2|[Windows PowerShell Web Access のフォーム ベースのゲートウェイ認証](#windows-powershell-web-access-forms-based-gateway-authentication)|
+|3|[Windows PowerShell Web Access の承認規則](#windows-powershell-web-access-authorization-rules)|
+|4|[対象コンピューターでの認証と承認規則](#target-authentication-and-authorization-rules)|
 
 各層に関する詳細は次の見出しの下にあります。
 
 #### <a name="iis-web-server-security-features"></a>IIS Web サーバーのセキュリティ機能
 
 Windows PowerShell Web Access のユーザーは、常にゲートウェイでユーザー名とパスワードを入力し、アカウントを認証する必要があります。
-ただし Windows PowerShell Web Access 管理者は、クライアント証明書による認証をオプションで有効または無効にすることができます (テスト証明書を有効にする方法と、その後、本物の証明書を構成する方法については、「[Windows PowerShell Web Access のインストールと使用]()」を参照してください)。
+ただし Windows PowerShell Web Access 管理者は、クライアント証明書による認証をオプションで有効または無効にすることができます (テスト証明書を有効にする方法と、その後、本物の証明書を構成する方法については、「[Install and Use Windows PowerShell Web Access](install-and-use-windows-powershell-web-access.md)」(Windows PowerShell Web Access のインストールと使用) を参照してください)。
 
 オプションのクライアント証明書機能は、Web サーバー (IIS) 構成の一環として、ユーザー名とパスワードに加えて有効なクライアント証明書の所有をエンド ユーザーに要求します。
 クライアント証明書の層が有効になっている場合、Windows PowerShell Web Access のサインイン ページは、サインイン資格情報を評価する前に、有効な証明書の提示を求めるメッセージをユーザーに表示します。
@@ -89,7 +89,7 @@ Windows PowerShell Web Access のサインイン ページは、一連の資格�
 ユーザーがその他の資格情報を提示しない場合、ゲートウェイへの接続に使われるプライマリのユーザー名とパスワードが、対象コンピューターへの接続にも使われます。
 
 要求された資格情報は Windows PowerShell Web Access ゲートウェイで認証されます。
-これらの資格情報は、ローカルの Windows PowerShell Web Access ゲートウェイ サーバーまたは Active Directory® の有効なユーザー アカウントである必要があります。
+これらの資格情報は、ローカルの Windows PowerShell Web Access ゲートウェイ サーバーまたは Active Directory の有効なユーザー アカウントである必要があります。
 
 #### <a name="windows-powershell-web-access-authorization-rules"></a>Windows PowerShell Web Access の承認規則
 
@@ -129,7 +129,7 @@ Windows PowerShell Web Access コマンドレットでは、ワイルドカー�
 
 > **注意**
 >
-> 承認規則を使ってユーザーのアクセスを許可し Windows PowerShell Web Access 環境のセキュリティ保護を実現するその他のさまざまな方法については、このトピックの「[承認規則のその他のシナリオの例]()」を参照してください。
+> 承認規則を使ってユーザーのアクセスを許可し Windows PowerShell Web Access 環境のセキュリティ保護を実現するその他のさまざまな方法については、このトピックの「[承認規則のその他のシナリオの例](#other-authorization-rule-scenario-examples)」を参照してください。
 
 #### <a name="to-add-a-restrictive-authorization-rule"></a>制限的な承認規則を追加するには
 
@@ -160,7 +160,7 @@ Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -
 
 #### <a name="to-remove-an-authorization-rule"></a>承認規則を削除するには
 
-1. Windows PowerShell セッションが開かれていない場合は、このセクションの[非制限的な承認規則を追加する方法]()の手順 1 を参照してください。
+1. Windows PowerShell セッションが開かれていない場合は、このセクションの[非制限的な承認規則を追加する方法](#to-add-a-restrictive-authorization-rule)の手順 1 を参照してください。
 
 2. 次のように入力して **Enter** キーを押します。*rule ID* には削除する規則の一意の ID 番号を指定します。
 
@@ -181,9 +181,9 @@ Remove-PswaAuthorizationRule -ID <rule ID>
 
 - 管理者が、制限付き実行空間を指定して、**PswaEndpoint** というエンドポイントを作成します。 その後管理者が **\*,\*,PswaEndpoint** という規則を作成し、このエンドポイントをその他のコンピューターに配布します。 この規則によって、エンドポイント **PswaEndpoint** を持つすべてのコンピューターにすべてのユーザーがアクセスできるようになります。 規則セットにこの承認規則だけ定義されている場合、このエンドポイントを持たないコンピューターにはアクセスできません。
 
--   制限付き実行空間を指定して **PswaEndpoint** というエンドポイントを作成した後は、アクセスを特定のユーザーに制限します。 管理者は **Level1Support** というユーザー グループを作成し、**Level1Support,\*,PswaEndpoint** という規則を定義します。 この規則によって、**Level1Support** グループのすべてのユーザーが、**PswaEndpoint** 構成を持つコンピューターにアクセスできるようになります。 同様に、アクセスを特定のコンピューターに制限することも可能です。
+- 制限付き実行空間を指定して **PswaEndpoint** というエンドポイントを作成した後は、アクセスを特定のユーザーに制限します。 管理者は **Level1Support** というユーザー グループを作成し、**Level1Support,\*,PswaEndpoint** という規則を定義します。 この規則によって、**Level1Support** グループのすべてのユーザーが、**PswaEndpoint** 構成を持つコンピューターにアクセスできるようになります。 同様に、アクセスを特定のコンピューターに制限することも可能です。
 
--   管理者は、その他のユーザーよりも権限の強いアクセスを特定のユーザーに許可することができます。 たとえば、管理者が、**Admins** と **BasicSupport** という 2 つのユーザー グループを作成します。 管理者はさらに、制限付き実行空間を指定して **PswaEndpoint** というエンドポイントを作成し、**Admins,\*,\*** と **BasicSupport,\*,PswaEndpoint** という 2 つの規則を定義します。 最初の規則は、**Admin** グループのすべてのユーザーにすべてのコンピューターへのアクセスを許可します。2 つ目の規則は、**BasicSupport** グループに、**PswaEndpoint** を持つコンピューターだけに対するアクセスを許可します。
+- 管理者は、その他のユーザーよりも権限の強いアクセスを特定のユーザーに許可することができます。 たとえば、管理者が、**Admins** と **BasicSupport** という 2 つのユーザー グループを作成します。 管理者はさらに、制限付き実行空間を指定して **PswaEndpoint** というエンドポイントを作成し、**Admins,\*,\*** と **BasicSupport,\*,PswaEndpoint** という 2 つの規則を定義します。 最初の規則は、**Admin** グループのすべてのユーザーにすべてのコンピューターへのアクセスを許可します。2 つ目の規則は、**BasicSupport** グループに、**PswaEndpoint** を持つコンピューターだけに対するアクセスを許可します。
 
 - 管理者がプライベートなテスト環境をセットアップして、すべての承認済みネットワーク ユーザーに、通常アクセスが許可されるネットワーク内のすべてのコンピューターに対するアクセスと、通常アクセスが許可されるすべてのセッション構成に対するアクセスを許可します。 これはプライベートなテスト環境であるため、管理者が作成する承認規則は安全ではありません。
   - 管理者は `Add-PswaAuthorizationRule * * *`コマンドレットを実行します。ここで使われているワイルドカード文字 **\*** は、すべてのコンピューター、すべてのユーザー、すべてのセッション構成をそれぞれ示します。
@@ -209,7 +209,7 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal -computerName srv1.con
 
   >**注**:
   >
-  >ゲートウェイ コンピューターと対象コンピューターが別々のワークグループまたはドメインにある場合は、2 つのワークグループ コンピューター間、2 つのドメイン間、またはワークグループとドメインの間で、信頼関係を確立する必要があります。 Windows PowerShell Web Access の承認規則コマンドレットを使用してこの関係を構成することはできません。 承認規則では、コンピューター間の信頼関係は定義されません。承認規則では、特定の対象コンピューターとセッション構成に接続できるようにユーザーを承認することしかできません。 異なるドメイン間で信頼関係を構成する方法の詳細については、[ドメインおよびフォレストの信頼の作成に関するページ](https://technet.microsoft.com/library/cc794775.aspx")を参照してください。 信頼されたホストの一覧にワークグループ コンピューターを追加する方法の詳細については、「[サーバー マネージャーによるリモート管理](href="https://technet.microsoft.com/library/dd759202.aspx)」を参照してください。
+  >ゲートウェイ コンピューターと対象コンピューターが別々のワークグループまたはドメインにある場合は、2 つのワークグループ コンピューター間、2 つのドメイン間、またはワークグループとドメインの間で、信頼関係を確立する必要があります。 Windows PowerShell Web Access の承認規則コマンドレットを使用してこの関係を構成することはできません。 承認規則では、コンピューター間の信頼関係は定義されません。承認規則では、特定の対象コンピューターとセッション構成に接続できるようにユーザーを承認することしかできません。 異なるドメイン間で信頼関係を構成する方法の詳細については、[ドメインおよびフォレストの信頼の作成に関するページ](https://technet.microsoft.com/library/cc794775.aspx")を参照してください。 信頼されたホストの一覧にワークグループ コンピューターを追加する方法の詳細については、「[サーバー マネージャーによるリモート管理](https://technet.microsoft.com/library/dd759202.aspx)」を参照してください。
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>1 セットの承認規則の複数サイトでの使用
 

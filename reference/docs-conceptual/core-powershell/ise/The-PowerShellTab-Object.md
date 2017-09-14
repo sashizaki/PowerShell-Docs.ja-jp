@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "PowerShellTab オブジェクト"
 ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
-ms.openlocfilehash: 482984272b2f1be027cf2be49bdfa2c6e2c52070
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 15d9a7474e4c2cf2a9ff8edb88802106489cdba1
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 09/08/2017
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab オブジェクト
   **PowerShellTab** オブジェクトは、Windows PowerShell ランタイム環境を表します。
@@ -20,7 +20,7 @@ ms.lasthandoff: 08/31/2017
  指定したスクリプトを [PowerShell] タブで実行します。
 
 > [!NOTE]
->  このメソッドは、その他の [PowerShell] タブでのみ機能し、実行元となる [PowerShell] タブでは機能しません。 このコマンドはオブジェクトや値を返しません。 このコードによって変数が変更されると、その変更はコマンドが呼び出されたタブで保持されます。
+> このメソッドは、その他の [PowerShell] タブでのみ機能し、実行元となる [PowerShell] タブでは機能しません。 このコマンドはオブジェクトや値を返しません。 このコードによって変数が変更されると、その変更はコマンドが呼び出されたタブで保持されます。
 
  **Script** - System.Management.Automation.ScriptBlock または文字列。実行するスクリプト ブロック。
 
@@ -36,7 +36,7 @@ $psise.PowerShellTabs[1].Invoke({dir})
  指定したスクリプトを [PowerShell] タブで実行します。
 
 > [!NOTE]
->  このメソッドは、その他の [PowerShell] タブでのみ機能し、実行元となる [PowerShell] タブでは機能しません。 スクリプト ブロックが実行され、スクリプトから返される値はコマンドを呼び出した実行環境に返されます。 コマンドが **millesecondsTimeout** の値で指定した時間内に完了しない場合、コマンドが失敗して例外 "処理がタイムアウトになりました。" が発生します。
+> このメソッドは、その他の [PowerShell] タブでのみ機能し、実行元となる [PowerShell] タブでは機能しません。 スクリプト ブロックが実行され、スクリプトから返される値はコマンドを呼び出した実行環境に返されます。 コマンドが **millesecondsTimeout** の値で指定した時間内に完了しない場合、コマンドが失敗して例外 "処理がタイムアウトになりました。" が発生します。
 
  **Script** - System.Management.Automation.ScriptBlock または文字列。実行するスクリプト ブロック。
 
@@ -52,7 +52,7 @@ $psISE.PowerShellTabs.SetSelectedPowerShellTab($psISE.PowerShellTabs[0])
 
 # Invoke a simple command on the other tab, in its own scope
 $psISE.PowerShellTabs[1].InvokeSynchronous('$x=1',$false)
-# You can switch to the other tab and type â€œ$xâ€ to see that the value is saved there.
+# You can switch to the other tab and type 'œ$x' to see that the value is saved there.
 
 # This example sets a value in the other tab (in a different scope) 
 # and returns it through the pipeline to this tab to store in $a
@@ -88,7 +88,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 ### <a name="caninvoke"></a>CanInvoke
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
- スクリプトを [Invoke( Script )]() メソッドで呼び出すことが可能な場合は **$true** を返す、読み取り専用のブール型プロパティです。
+ スクリプトを [Invoke( Script )](#invoke-script-) メソッドで呼び出すことが可能な場合は **$true** を返す、読み取り専用のブール型プロパティです。
 
 ```
 # CanInvoke will be false if the PowerShell

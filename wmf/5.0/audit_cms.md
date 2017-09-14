@@ -3,17 +3,15 @@ ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: "WMF, PowerShell, セットアップ"
-ms.openlocfilehash: 9556f0d9a12807cbfe38aaade6798088f051596d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 60055b6755a31397c49686ea9ee1a69ada3516de
+ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 09/08/2017
 ---
-<a id="cryptographic-message-syntax-cms-cmdlets" class="xliff"></a>
+# <a name="cryptographic-message-syntax-cms-cmdlets"></a>Cryptographic Message Syntax (CMS) コマンドレット
 
-# Cryptographic Message Syntax (CMS) コマンドレット
-
-Cryptographic Message Syntax コマンドレットは、[RFC5652](http://tools.ietf.org/html/rfc5652) で説明されているように暗号によってメッセージを保護するための IETF 標準書式を使用して、コンテンツの暗号化と暗号化解除をサポートします。
+Cryptographic Message Syntax コマンドレットは、[RFC5652](https://tools.ietf.org/html/rfc5652) で説明されているように暗号によってメッセージを保護するための IETF 標準書式を使用して、コンテンツの暗号化と暗号化解除をサポートします。
 
 ```powershell
 Get-CmsMessage [-Content] <string>
@@ -30,7 +28,7 @@ Unprotect-CmsMessage [-LiteralPath] <string> [[-To] <CmsMessageRecipient[]>] [-I
 
 CMS 暗号化標準では、公開キー暗号化が実装されます。公開キー暗号化では、コンテンツの暗号化に使用されるキー (*公開キー*) とコンテンツの暗号化解除に使用されるキー (*秘密キー*) が区別されます。
 
-公開キーは広く共有でき、機密性の高いデータではありません。 いずれかのコンテンツがこの公開キーで暗号化された場合、秘密キーのみが暗号化を解除できます。 公開キー暗号化の詳細については、<http://en.wikipedia.org/wiki/Public-key_cryptography> をご覧ください。
+公開キーは広く共有でき、機密性の高いデータではありません。 いずれかのコンテンツがこの公開キーで暗号化された場合、秘密キーのみが暗号化を解除できます。 公開キー暗号化の詳細については、「[公開鍵暗号](https://en.wikipedia.org/wiki/Public-key_cryptography)」を参照してください。
 
 PowerShell で認識されるためには、暗号化証明書に、データ暗号化証明書として識別するための ('Code Signing'、'Encrypted Mail' の識別子のような) 一意のキー使用法識別子 (EKU) が必要です。
 
