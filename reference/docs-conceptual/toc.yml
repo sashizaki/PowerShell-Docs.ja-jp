@@ -1,232 +1,90 @@
-- name: PowerShell スクリプト
+- name: 概念のドキュメント
   href: PowerShell-Scripting.md
   items:
-    - name: PowerShell の新機能
-      href: whats-new/What-s-New-With-PowerShell.md
-      items:
-        - name: PowerShell v5.0
-          href: whats-new/What-s-New-in-Windows-PowerShell-50.md
-        - name: PowerShell 5.0 ISE
-          href: whats-new/What-s-New-in-the-PowerShell-50-ISE.md
-    - name: セットアップ
-      href: setup/setup-reference.md
-      items:
-        - name: PowerShell のシステム要件
-          href: setup/Windows-PowerShell-System-Requirements.md
-        - name: PowerShell のインストール
-          href: setup/Installing-Windows-PowerShell.md
-        - name: PowerShell の開始
-          href: setup/Starting-Windows-PowerShell.md
-          items:
-            - name: 32 ビット版の PowerShell の開始
-              href: setup/Starting-the-32-Bit-Version-of-Windows-PowerShell.md
-            - name: 以前の Windows バージョンでの PowerShell の開始
-              href: setup/Starting-Windows-PowerShell-on-Earlier-Versions-of-Windows.md
-        - name: Windows PowerShell 2.0 エンジンのインストール
-          href: setup/Installing-the-Windows-PowerShell-2.0-Engine.md
-        - name: Windows PowerShell 2.0 エンジンの開始
-          href: setup/Starting-the-Windows-PowerShell-2.0-Engine.md
-        - name: Windows PowerShell SDK のインストール
-          href: setup/Installing-the-Windows-PowerShell-SDK.md
-        - name: セキュリティ
-          href: setup/security.md
-          items:
-            - name: PowerShell リモート処理のセキュリティに関する考慮事項
-              href: setup/WinRMSecurity.md
-            - name: PowerShell リモート処理での次ホップの実行
-              href: setup/PS-remoting-second-hop.md
-        - name: ユーザー補助
-          href: setup/Accessibility-in-Windows-PowerShell-ISE.md
-    - name: はじめに
-      href: getting-started/Getting-Started-with-Windows-PowerShell.md
-      items:
-        - name: PowerShell を学習するための基本的なセットアップ
-          href: getting-started/Getting-Ready-to-Use-Windows-PowerShell.md
-        - name: 基本的な概念
-          href: getting-started/fundamental-concepts.md
-          items:
-            - name: PowerShell の基礎
-              href: getting-started/fundamental/Windows-PowerShell-Basics.md
-            - name: 詳しいヘルプ情報の取得
-              href: getting-started/fundamental/Getting-Detailed-Help-Information.md
-            - name: Windows PowerShell ISE の操作
-              href: getting-started/fundamental/Exploring-the-Windows-PowerShell-ISE.md
-            - name: コマンドに関する情報の取得
-              href: getting-started/fundamental/Getting-Information-About-Commands.md
-            - name: PowerShell で用いられる名前の習得
-              href: getting-started/fundamental/Learning-Windows-PowerShell-Names.md
-            - name: Windows PowerShell を管理に使用する
-              href: getting-started/fundamental/Using-Windows-PowerShell-for-Administration.md
-            - name: 変数を使用したオブジェクトの保存
-              href: getting-started/fundamental/Using-Variables-to-Store-Objects.md
-            - name: Windows PowerShell について
-              href: getting-started/fundamental/About-Windows-PowerShell.md
-            - name: Windows PowerShell Integrated Scripting Environment (ISE)
-              href: getting-started/fundamental/Windows-PowerShell-Integrated-Scripting-Environment--ISE-.md
-            - name: Windows PowerShell の重要な概念を理解する (ISE)
-              href: getting-started/fundamental/Understanding-Important-Windows-PowerShell-Concepts.md
-            - name: PowerShell パイプラインを理解する
-              href: getting-started/fundamental/Understanding-the-Windows-PowerShell-Pipeline.md
-            - name: 使い慣れたコマンド名の使用
-              href: getting-started/fundamental/Using-Familiar-Command-Names.md
-            - name: オブジェクト パイプライン
-              href: getting-started/fundamental/Object-Pipeline.md
-            - name: Windows PowerShell を使用したスクリプト
-              href: getting-started/fundamental/Scripting-with-Windows-PowerShell.md
-            - name: Windows PowerShell を使用する
-              href: getting-started/fundamental/Using-Windows-PowerShell.md
-        - name: 基本的なクックブック
-          href: getting-started/basic-cookbooks.md
-          items:
-            - name: コンピューターの状態を変更する
-              href: getting-started/cookbooks/Changing-Computer-State.md
-            - name: コンピューターに関する情報の収集
-              href: getting-started/cookbooks/Collecting-Information-About-Computers.md
-            - name: 互換性のあるエイリアス
-              href: getting-started/cookbooks/Appendix-1---Compatibility-Aliases.md
-            - name: .NET オブジェクトと COM オブジェクトを作成する (New-Object)
-              href: getting-started/cookbooks/Creating-.NET-and-COM-Objects--New-Object-.md
-            - name: ユーザー設定の入力ボックスを作成する
-              href: getting-started/cookbooks/Creating-a-Custom-Input-Box.md
-            - name: カスタムの PowerShell ショートカットの作成
-              href: getting-started/cookbooks/Appendix-2---Creating-a-Custom-PowerShell-Shortcut.md
-            - name: グラフィカルな日付の選択を作成する
-              href: getting-started/cookbooks/Creating-a-Graphical-Date-Picker.md
-            - name: WMI オブジェクトの取得 (Get-WmiObject)
-              href: getting-started/cookbooks/Getting-WMI-Objects--Get-WmiObject-.md
-            - name: Process コマンドレットによるプロセスの管理
-              href: getting-started/cookbooks/Managing-Processes-with-Process-Cmdlets.md
-            - name: サービスの管理
-              href: getting-started/cookbooks/Managing-Services.md
-            - name: Windows PowerShell ドライブの管理
-              href: getting-started/cookbooks/Managing-Windows-PowerShell-Drives.md
-            - name: 現在の場所の管理
-              href: getting-started/cookbooks/Managing-Current-Location.md
-            - name: 項目を直接操作する
-              href: getting-started/cookbooks/Manipulating-Items-Directly.md
-            - name: 複数選択のリスト ボックス
-              href: getting-started/cookbooks/Multiple-selection-List-Boxes.md
-            - name: その他の役に立つスクリプティング オブジェクト
-              href: getting-started/cookbooks/Other-Useful-Scripting-Objects.md
-            - name: ネットワーク関連タスクの実行
-              href: getting-started/cookbooks/Performing-Networking-Tasks.md
-            - name: PowerShell Get モジュール
-              href: getting-started/cookbooks/PowerShellGet-Module.md
-            - name: Out-* コマンドレットを使用してデータをリダイレクトする
-              href: getting-started/cookbooks/Redirecting-Data-with-Out---Cmdlets.md
-            - name: パイプラインからオブジェクトを削除する (Where-Object)
-              href: getting-started/cookbooks/Removing-Objects-from-the-Pipeline--Where-Object-.md
-            - name: 複数のオブジェクトのタスクを繰り返す (ForEach-Object)
-              href: getting-started/cookbooks/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md
-            - name: リスト ボックスから項目を選択する
-              href: getting-started/cookbooks/Selecting-Items-from-a-List-Box.md
-            - name: オブジェクトの一部を選択する (Select-Object)
-              href: getting-started/cookbooks/Selecting-Parts-of-Objects--Select-Object-.md
-            - name: オブジェクトの並べ替え
-              href: getting-started/cookbooks/Sorting-Objects.md
-            - name: Format コマンドを使用した出力ビューの変更
-              href: getting-started/cookbooks/Using-Format-Commands-to-Change-Output-View.md
-            - name: 静的なクラスとメソッドの使用
-              href: getting-started/cookbooks/Using-Static-Classes-and-Methods.md
-            - name: オブジェクトの構造を表示する (Get-member)
-              href: getting-started/cookbooks/Viewing-Object-Structure--Get-Member-.md
-            - name: ファイル、フォルダー、レジストリ キーの操作
-              href: getting-started/cookbooks/Working-With-Files-Folders-and-Registry-Keys.md
-            - name: ファイルとフォルダーの操作
-              href: getting-started/cookbooks/Working-with-Files-and-Folders.md
-            - name: オブジェクトの操作
-              href: getting-started/cookbooks/Working-with-Objects.md
-            - name: プリンターの操作
-              href: getting-started/cookbooks/Working-with-Printers.md
-            - name: レジストリ エントリの操作
-              href: getting-started/cookbooks/Working-with-Registry-Entries.md
-            - name: レジストリ キーの操作
-              href: getting-started/cookbooks/Working-with-Registry-Keys.md
-            - name: ソフトウェア インストールの操作
-              href: getting-started/cookbooks/Working-with-Software-Installations.md
-        - name: さらに詳しく
-          href: getting-started/more-powershell-learning.md
     - name: 一般的な PowerShell
       href: core-powershell/core-powershell.md
       items:
-        - name: Integrated Scripting Environment (ISE)
-          href: core-powershell/ise-guide.md
-          items:
-            - name: ISE オブジェクト モデル リファレンス
-              href: core-powershell/ise/Windows-PowerShell-ISE-Object-Model-Reference.md
-            - name: ISE スクリプティング オブジェクト モデル
-              href: core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md
-            - name: Windows PowerShell ISE の使用
-              href: core-powershell/ise/Using-the-Windows-PowerShell-ISE.md
-            - name: ISE ファイル オブジェクト
-              href: core-powershell/ise/The-ISEFile-Object.md
-            - name: ISE オプション オブジェクト
-              href: core-powershell/ise/The-ISEOptions-Object.md
-            - name: ISE スニペット コレクション オブジェクト
-              href: core-powershell/ise/The-ISESnippetCollection-Object.md
-            - name: ISE スニペット オブジェクト
-              href: core-powershell/ise/The-ISESnippetObject.md
-            - name: ISO オブジェクト モデルのルート オブジェクト
-              href: core-powershell/ise/The-ObjectModelRoot-Object.md
-            - name: PowerShell ISE で PowerShell タブを作成する方法
-              href: core-powershell/ise/How-to-Create-a-PowerShell-Tab-in-Windows-PowerShell-ISE.md
-            - name: PowerShell ISE でスクリプトをデバッグする方法
-              href: core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md
-            - name: PowerShell ISE でプロファイルを使用する方法
-              href: core-powershell/ise/How-to-Use-Profiles-in-Windows-PowerShell-ISE.md
-            - name: PowerShell ISE でコンソール ウィンドウを使用する方法
-              href: core-powershell/ise/How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md
-            - name: スクリプト ウィンドウとコンソール ウィンドウでタブ補完を使用する方法
-              href: core-powershell/ise/How-to-Use-Tab-Completion-in-the-Script-Pane-and-Console-Pane.md
-            - name: Windows PowerShell ISE でスクリプトを記述および実行する方法
-              href: core-powershell/ise/How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md
-            - name: PowerShell ISE の紹介
-              href: core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md
-            - name: ISE モジュール
-              href: core-powershell/ise/ISE-Module.md
-            - name: PowerShell ISE のキーボード ショートカット
-              href: core-powershell/ise/Keyboard-Shortcuts-for-the-Windows-PowerShell-ISE.md
-            - name: PowerShell タブ オブジェクト
-              href: core-powershell/ise/The-PowerShellTab-Object.md
-            - name: PowerShell タブ コレクション オブジェクト
-              href: core-powershell/ise/The-PowerShellTabCollection-Object.md
-            - name: PowerShell ISE スクリプト オブジェクト モデルの目的
-              href: core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md
-            - name: ISE オブジェクト モデルの階層
-              href: core-powershell/ise/The-ISE-Object-Model-Hierarchy.md
-            - name: ISE アドオン ツール オブジェクト
-              href: core-powershell/ise/The-ISEAddOnTool-Object.md
-            - name: ISE アドオン ツール コレクション オブジェクト
-              href: core-powershell/ise/The-ISEAddOnToolCollection-Object.md
-            - name: ISE エディター オブジェクト
-              href: core-powershell/ise/The-ISEEditor-Object.md
-            - name: ISE ファイル コレクション オブジェクト
-              href: core-powershell/ise/The-ISEFileCollection-Object.md
-            - name: ISE メニュー項目オブジェクト
-              href: core-powershell/ise/The-ISEMenuItem-Object.md
-            - name: ISE メニュー項目コレクション オブジェクト
-              href: core-powershell/ise/The-ISEMenuItemCollection-Object.md
         - name: コンソール
-          href: core-powershell/console-guide.md
+          href: ''
           items:
-            - name: コンソール コマンド ライン リファレンス
-              href: core-powershell/console/PowerShell.exe-Command-Line-Help.md
+            - name: PowerShell.exe コマンド ラインのヘルプ
+              href: core-powershell/console/powershell.exe-command-line-help.md
             - name: タブ拡張の使用
-              href: core-powershell/console/Using-Tab-Expansion.md
-        - name: リモート コマンドの実行
-          href: core-powershell/Running-Remote-Commands.md
-        - name: ワークフロー
-          href: core-powershell/workflows-guide.md
+              href: core-powershell/console/using-tab-expansion.md
+        - name: コンソール ガイド
+          href: core-powershell/console-guide.md
+        - name: ISE
+          href: ise/introducing-the-windows-powershell-ise.md
           items:
-            - name: ワークフロー モジュール
-              href: core-powershell/workflows/PSWorkflow-Module.md
-            - name: ワークフロー ユーティリティ モジュール
-              href: core-powershell/workflows/PSWorkflowUtility-Module.md
-        - name: Web アクセス
+            - name: Windows PowerShell ISE で PowerShell タブを作成する方法
+              href: core-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+            - name: Windows PowerShell ISE でスクリプトをデバッグする方法
+              href: core-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+            - name: Windows PowerShell ISE でプロファイルを使用する方法
+              href: core-powershell/ise/how-to-use-profiles-in-windows-powershell-ise.md
+            - name: スクリプト ウィンドウとコンソール ウィンドウでタブ補完を使用する方法
+              href: core-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+            - name: Windows PowerShell ISE でコンソール ウィンドウを使用する方法
+              href: core-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE でスクリプトを記述および実行する方法
+              href: core-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE の概要
+              href: core-powershell/ise/introducing-the-windows-powershell-ise.md
+            - name: ISE モジュール
+              href: core-powershell/ise/ise-module.md
+            - name: Windows PowerShell ISE のキーボード ショートカット
+              href: core-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE スクリプト オブジェクト モデルの目的
+              href: core-powershell/ise/purpose-of-the-windows-powershell-ise-scripting-object-model.md
+            - name: ISEAddOnToolCollection オブジェクト
+              href: core-powershell/ise/the-iseaddontoolcollection-object.md
+            - name: ISEAddOnTool オブジェクト
+              href: core-powershell/ise/the-iseaddontool-object.md
+            - name: ISEEditor オブジェクト
+              href: core-powershell/ise/the-iseeditor-object.md
+            - name: ISEFileCollection オブジェクト
+              href: core-powershell/ise/the-isefilecollection-object.md
+            - name: ISEFile オブジェクト
+              href: core-powershell/ise/the-isefile-object.md
+            - name: ISEMenuItemCollection オブジェクト
+              href: core-powershell/ise/the-isemenuitemcollection-object.md
+            - name: ISEMenuItem オブジェクト
+              href: core-powershell/ise/the-isemenuitem-object.md
+            - name: ISE オブジェクト モデルの階層
+              href: core-powershell/ise/the-ise-object-model-hierarchy.md
+            - name: ISEOptions オブジェクト
+              href: core-powershell/ise/the-iseoptions-object.md
+            - name: ISESnippetCollection オブジェクト
+              href: core-powershell/ise/the-isesnippetcollection-object.md
+            - name: ISESnippet オブジェクト
+              href: core-powershell/ise/the-isesnippetobject.md
+            - name: ObjectModelRoot オブジェクト
+              href: core-powershell/ise/the-objectmodelroot-object.md
+            - name: PowerShellTabCollection オブジェクト
+              href: core-powershell/ise/the-powershelltabcollection-object.md
+            - name: PowerShellTab オブジェクト
+              href: core-powershell/ise/the-powershelltab-object.md
+            - name: Windows PowerShell ISE スクリプト オブジェクト モデル
+              href: core-powershell/ise/the-windows-powershell-ise-scripting-object-model.md
+            - name: Windows PowerShell ISE の使用
+              href: core-powershell/ise/using-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE オブジェクト モデルのリファレンス
+              href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
+        - name: ISE ガイド
+          href: core-powershell/ise-guide.md
+        - name: リモート コマンドの実行
+          href: core-powershell/running-remote-commands.md
+        - name: Web Access
+          href: ''
+        - name: Web Access
           href: core-powershell/web-access.md
           items:
             - name: Windows PowerShell Web Access の承認規則とセキュリティ機能
               href: core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
+            - name: コマンドレット
+              href: ''
+            - name: イメージ
+              href: ''
             - name: Windows PowerShell Web Access のインストールと使用
               href: core-powershell/web-access/install-and-use-windows-powershell-web-access.md
             - name: Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
@@ -235,5 +93,160 @@
               href: core-powershell/web-access/uninstall-windows-powershell-web-access.md
             - name: Web ベースの Windows PowerShell コンソールの使用
               href: core-powershell/web-access/use-the-web-based-windows-powershell-console.md
-    - name: PowerShell 用語集
-      href: Windows-PowerShell-Glossary.md
+        - name: ワークフロー ガイド
+          href: core-powershell/workflows-guide.md
+    - name: はじめに
+      href: ''
+      items:
+        - name: 基本的なクックブック
+          href: getting-started/basic-cookbooks.md
+        - name: クックブック
+          href: ''
+          items:
+            - name: 付録 1 --- 互換性のあるエイリアス
+              href: getting-started/cookbooks/appendix-1---compatibility-aliases.md
+            - name: 付録 2 --- カスタムの PowerShell ショートカットの作成
+              href: getting-started/cookbooks/appendix-2---creating-a-custom-powershell-shortcut.md
+            - name: 基本的なクックブックのリファレンス
+              href: getting-started/cookbooks/basic-cookbooks-reference.md
+            - name: コンピューターの状態の変更
+              href: getting-started/cookbooks/changing-computer-state.md
+            - name: コンピューターに関する情報の収集
+              href: getting-started/cookbooks/collecting-information-about-computers.md
+            - name: .NET オブジェクトと COM オブジェクトの作成 (New-Object)
+              href: getting-started/cookbooks/creating-.net-and-com-objects--new-object-.md
+            - name: ユーザー設定の入力ボックスの作成
+              href: getting-started/cookbooks/creating-a-custom-input-box.md
+            - name: グラフィカルな日付の選択の作成
+              href: getting-started/cookbooks/creating-a-graphical-date-picker.md
+            - name: WMI オブジェクトの取得 (Get-WmiObject)
+              href: getting-started/cookbooks/getting-wmi-objects--get-wmiobject-.md
+            - name: 現在の場所の管理
+              href: getting-started/cookbooks/managing-current-location.md
+            - name: Process コマンドレットによるプロセスの管理
+              href: getting-started/cookbooks/managing-processes-with-process-cmdlets.md
+            - name: サービスの管理
+              href: getting-started/cookbooks/managing-services.md
+            - name: Windows PowerShell ドライブの管理
+              href: getting-started/cookbooks/managing-windows-powershell-drives.md
+            - name: 項目の直接操作
+              href: getting-started/cookbooks/manipulating-items-directly.md
+            - name: 複数選択のリスト ボックス
+              href: getting-started/cookbooks/multiple-selection-list-boxes.md
+            - name: その他の役に立つスクリプト オブジェクト
+              href: getting-started/cookbooks/other-useful-scripting-objects.md
+            - name: ネットワーク関連タスクの実行
+              href: getting-started/cookbooks/performing-networking-tasks.md
+            - name: Out-- コマンドレットによるデータのリダイレクト
+              href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
+            - name: パイプラインからオブジェクトを削除する (Where-Object)
+              href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
+            - name: 複数のオブジェクトのタスクを繰り返す (ForEach-Object)
+              href: getting-started/cookbooks/repeating-a-task-for-multiple-objects--foreach-object-.md
+            - name: リスト ボックスから項目を選択する
+              href: getting-started/cookbooks/selecting-items-from-a-list-box.md
+            - name: オブジェクトの一部を選択する (Select-Object)
+              href: getting-started/cookbooks/selecting-parts-of-objects--select-object-.md
+            - name: オブジェクトの並べ替え
+              href: getting-started/cookbooks/sorting-objects.md
+            - name: Format コマンドを使用した出力ビューの変更
+              href: getting-started/cookbooks/using-format-commands-to-change-output-view.md
+            - name: 静的なクラスとメソッドの使用
+              href: getting-started/cookbooks/using-static-classes-and-methods.md
+            - name: オブジェクトの構造を表示する (Get-Member)
+              href: getting-started/cookbooks/viewing-object-structure--get-member-.md
+            - name: ファイルとフォルダーの操作
+              href: getting-started/cookbooks/working-with-files-and-folders.md
+            - name: ファイル、フォルダー、レジストリ キーの操作
+              href: getting-started/cookbooks/working-with-files-folders-and-registry-keys.md
+            - name: オブジェクトの操作
+              href: getting-started/cookbooks/working-with-objects.md
+            - name: プリンターの操作
+              href: getting-started/cookbooks/working-with-printers.md
+            - name: レジストリ エントリの操作
+              href: getting-started/cookbooks/working-with-registry-entries.md
+            - name: レジストリ キーの操作
+              href: getting-started/cookbooks/working-with-registry-keys.md
+            - name: ソフトウェア インストールの操作
+              href: getting-started/cookbooks/working-with-software-installations.md
+        - name: 基本事項
+          href: ''
+          items:
+            - name: Windows PowerShell について
+              href: getting-started/fundamental/about-windows-powershell.md
+            - name: Windows PowerShell ISE の操作
+              href: getting-started/fundamental/exploring-the-windows-powershell-ise.md
+            - name: 詳しいヘルプ情報の取得
+              href: getting-started/fundamental/getting-detailed-help-information.md
+            - name: コマンドに関する情報の取得
+              href: getting-started/fundamental/getting-information-about-commands.md
+            - name: Windows PowerShell で用いられる名前について
+              href: getting-started/fundamental/learning-windows-powershell-names.md
+            - name: オブジェクト パイプライン
+              href: getting-started/fundamental/object-pipeline.md
+            - name: Windows PowerShell を使用したスクリプト
+              href: getting-started/fundamental/scripting-with-windows-powershell.md
+            - name: Windows PowerShell の重要な概念を理解する
+              href: getting-started/fundamental/understanding-important-windows-powershell-concepts.md
+            - name: Windows-PowerShell パイプラインを理解する
+              href: getting-started/fundamental/understanding-the-windows-powershell-pipeline.md
+            - name: 使い慣れたコマンド名の使用
+              href: getting-started/fundamental/using-familiar-command-names.md
+            - name: 変数を使用したオブジェクトの保存
+              href: getting-started/fundamental/using-variables-to-store-objects.md
+            - name: Windows PowerShell の使用
+              href: getting-started/fundamental/using-windows-powershell.md
+            - name: Windows PowerShell を管理に使用する
+              href: getting-started/fundamental/using-windows-powershell-for-administration.md
+            - name: Windows PowerShell の基礎
+              href: getting-started/fundamental/windows-powershell-basics.md
+            - name: Windows PowerShell Integrated Scripting Environment (ISE)
+              href: getting-started/fundamental/windows-powershell-integrated-scripting-environment--ise-.md
+        - name: 基本的な概念
+          href: getting-started/fundamental-concepts.md
+        - name: Windows PowerShell を使用するための準備
+          href: getting-started/getting-ready-to-use-windows-powershell.md
+        - name: Windows PowerShell ファースト ステップ ガイド
+          href: getting-started/getting-started-with-windows-powershell.md
+        - name: Windows PowerShell の詳細情報
+          href: getting-started/more-powershell-learning.md
+        - name: 概念を理解するためのリファレンス
+          href: getting-started/understanding-concepts-reference.md
+    - name: セットアップ
+      href: ''
+      items:
+        - name: Windows PowerShell ISE のアクセシビリティ
+          href: setup/accessibility-in-windows-powershell-ise.md
+        - name: Windows PowerShell 2.0 エンジンのインストール
+          href: setup/installing-the-windows-powershell-2.0-engine.md
+        - name: Windows PowerShell SDK のインストール
+          href: setup/installing-the-windows-powershell-sdk.md
+        - name: Windows PowerShell のインストール
+          href: setup/installing-windows-powershell.md
+        - name: PowerShell リモート処理による次ホップ
+          href: setup/ps-remoting-second-hop.md
+        - name: セットアップのリファレンス
+          href: setup/setup-reference.md
+        - name: 32 ビット 版の Windows PowerShell を起動する
+          href: setup/starting-the-32-bit-version-of-windows-powershell.md
+        - name: Windows PowerShell 2.0 エンジンを起動する
+          href: setup/starting-the-windows-powershell-2.0-engine.md
+        - name: Windows PowerShell を起動する
+          href: setup/starting-windows-powershell.md
+        - name: 以前のバージョンの Windows で Windows PowerShell を起動する
+          href: setup/starting-windows-powershell-on-earlier-versions-of-windows.md
+        - name: Windows PowerShell のシステム要件
+          href: setup/windows-powershell-system-requirements.md
+        - name: WinRMSecurity
+          href: setup/winrmsecurity.md
+    - name: 新機能
+      href: ''
+      items:
+        - name: PowerShell 5.0 ISE の新機能
+          href: whats-new/what-s-new-in-the-powershell-50-ise.md
+        - name: Windows PowerShell 5.0 の新機能
+          href: whats-new/what-s-new-in-windows-powershell-50.md
+        - name: PowerShell の新機能
+          href: whats-new/what-s-new-with-powershell.md
+    - name: Windows PowerShell 用語集
+      href: windows-powershell-glossary.md
