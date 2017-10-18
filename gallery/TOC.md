@@ -19,6 +19,8 @@
 ### [アイテムの所有者に連絡する](psgallery/psgallery_contacting_item_owners.md)
 ### [管理者に連絡する](psgallery/psgallery_contacting_administrators.md)
 ### [ソーシャル メディアやコメントを使用したフィードバックの提供](psgallery/psgallery-SocialMediaFeedback.md)
+### [項目の詳細に表示されるライセンス同意リクエスト](psgallery/psgallery_requires_license_acceptance.md)
+### [Azure Automation へのデプロイに表示されるライセンス同意リクエスト](psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md)
 
 # [PowerShellGet](psget/overview.md)
 ## [PowerShellGet モジュールの取得](psget/get_psget_module.md)
@@ -36,6 +38,7 @@
 ### [モジュール マニフェストを更新する](psget/module/psget_update-modulemanifest.md)
 ### [公開](psget/module/psget_publish-module.md)
 ### [PSEditions が含まれるモジュール](psget/module/modulewithpseditionsupport.md)
+### [ライセンスへの同意が必要なモジュール](psget/module/RequireLicenseAcceptance.md)
 ### [トラブルシューティング](psget/psget_cmdlets_troubleshooting.md)
 
 ## スクリプト
@@ -50,6 +53,7 @@
 ### [スクリプト ファイル メタデータを更新する](psget/script/psget_update-scriptfileinfo.md)
 ### [公開](psget/script/psget_publish-script.md)
 ### [PSEditions のスクリプト](psget/script/scriptwithpseditionsupport.md)
+### [スクリプトのライセンス同意リクエスト](psget/script/script_RequireLicenseAcceptance.md)
 
 ## リポジトリ管理
 ### [NuGet プロバイダーと NuGet.exe をブートストラップする](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
