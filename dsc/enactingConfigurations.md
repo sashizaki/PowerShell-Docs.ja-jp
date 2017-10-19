@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
-author: eslesar
+ms.date: 2017-10-16
+author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "構成の適用"
-ms.openlocfilehash: db3a999f3e413ebb88e79f5ec04a7449db543030
-ms.sourcegitcommit: 46feddbc753523f464f139b5d272794620072fc8
+ms.openlocfilehash: f9f8889439e43d540b50b68ef13e8e088b8cadd3
+ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2017
+ms.lasthandoff: 10/16/2017
 ---
 # <a name="enacting-configurations"></a>構成の適用
 
@@ -18,30 +18,37 @@ PowerShell Desired State Configuration (DSC) 構成を適用するには、プ�
 
 ## <a name="push-mode"></a>プッシュ モード
 
-![プッシュ モード](images/Push.png "プッシュ モードのしくみ")
+![プッシュ モード](images/pushModel.png "プッシュ モードのしくみ")
 
 プッシュ モードは、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを呼び出してターゲット ノードに構成を適用するユーザー アクティビティを示します。
 
-構成を作成し、コンパイルした後、プッシュ モードで適用するには、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを呼び出し、コマンドレットの -Path パラメーターを構成 MOF が配置されているパスに設定します。 たとえば、構成 MOF が `C:\DSC\Configurations\localhost.mof` にある場合は、`Start-DscConfiguration -Path 'C:\DSC\Configurations'` というコマンドを使用してローカル コンピューターに適用します。
+構成を作成し、コンパイルした後、プッシュ モードで適用するには、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを呼び出し、コマンドレットの -Path パラメーターを構成 MOF が配置されているパスに設定します。
+たとえば、構成 MOF が `C:\DSC\Configurations\localhost.mof` にある場合は、`Start-DscConfiguration -Path 'C:\DSC\Configurations'` というコマンドを使用してローカル コンピューターに適用します。
 
 > __注__: 既定では、DSC はバックグラウンド ジョブとして構成を実行します。 構成を対話的に実行するには、__-Wait__ パラメーターを指定して [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) を呼び出します。
 
-
 ## <a name="pull-mode"></a>プル モード
 
-![プル モード](images/Pull.png "プル モードのしくみ")
+![プル モード](images/pullModel.png "プル モードのしくみ")
 
-プル モードでは、プル クライアントはリモート プル サーバーから Desired State Configuration を取得するように構成されます。 同様に、プル サーバーは、DSC サービスをホストするようにセットアップされ、プル クライアントに必要な構成とリソースを使用してプロビジョニングされています。 それぞれのプル クライアントには、ノードの構成に対して定期的なコンプライアンス チェックを実行するタスクがスケジュールされています。 イベントが最初にトリガーされたとき、プル クライアント上のローカル構成マネージャー (LCM) によって、LCM で指定された構成を取得するためのプル サーバーへの要求が行われます。 プル サーバーにその構成が存在し、最初の検証チェックに合格した場合、構成はプル クライアントに送信され、LCM によって実行されます。
+プル モードでは、プル クライアントはリモート プル サービスから Desired State Configuration を取得するように構成されます。
+同様に、プル サービスは、DSC サービスをホストするようにセットアップされ、プル クライアントに必要な構成とリソースを使用してプロビジョニングされています。
+それぞれのプル クライアントには、ノードの構成に対して定期的なコンプライアンス チェックを実行するイベントがスケジュールされています。
+イベントが最初にトリガーされたとき、プル クライアント上のローカル構成マネージャー (LCM) によって、LCM で指定された構成を取得するためのプル サービスへの要求が行われます。
+プル サービスにその構成が存在し、最初の検証チェックに合格した場合、構成はプル クライアントにダウンロードされ、LCM によって実行されます。
 
-LCM はクライアントが構成に準拠しているかどうかを、LCM の **ConfigurationModeFrequencyMins** プロパティで指定された間隔で定期的にチェックします。 LCM はプル サーバーで更新された構成を、LCM の **RefreshModeFrequency** プロパティで指定された間隔で定期的にチェックします。 LCM の構成の詳細については、「[ローカル構成マネージャーの構成](metaConfig.md)」を参照してください。
+LCM はクライアントが構成に準拠しているかどうかを、LCM の **ConfigurationModeFrequencyMins** プロパティで指定された間隔で定期的にチェックします。
+LCM はプル サービスで更新された構成を、LCM の **RefreshModeFrequency** プロパティで指定された間隔で定期的にチェックします。
+LCM の構成の詳細については、「[ローカル構成マネージャーの構成](metaConfig.md)」を参照してください。
 
-DSC プル サーバーのセットアップについては、「[DSC Web プル サーバーのセットアップ](pullServer.md)」を参照してください。
+プル サービスをホストするための推奨ソリューションは、DSC クラウド サービスである [Azure Automation](https://azure.microsoft.com/en-us/services/automation/) です。
+これはホスト型ソリューションであり、管理とレポートをグラフィカルに行い、管理を一元化できます。
 
-オンライン サービスを利用してプル サーバー機能をホストする場合は、「[Azure Automation DSC の概要](https://azure.microsoft.com/en-us/documentation/articles/automation-dsc-overview/)」を参照してください。
+Windows Server でのプル サービスのセットアップについては、「[DSC Web プル サーバーのセットアップ](pullServer.md)」を参照してください。
+ただし、この実装では機能が制限されており、統合の一部を "ユーザー自身で" 行う必要があることに注意してください。
 
-次のトピックでは、プル サーバーとクライアントをセットアップする方法について説明します。
+次のトピックでは、プル サービスとクライアントについて説明します。
 
-- [Setting up a web pull server (Web プル サーバーのセットアップ)](pullServer.md)
+- [Azure Automation DSC の概要](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
 - [Setting up an SMB pull server (SMB プル サーバーのセットアップ)](pullServerSMB.md)
 - [Configuring a pull client (プル クライアントの構成)](pullClientConfigID.md)
-

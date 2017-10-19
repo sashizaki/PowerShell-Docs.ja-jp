@@ -1,20 +1,37 @@
 ---
-description: 
-manager: carolz
-ms.topic: article
-author: jpjofre
-ms.prod: powershell
-keywords: "powershell,コマンドレット,ギャラリー"
-ms.date: 2016-10-14
-contributor: manikb
+ms.date: 2017-06-12
+contributor: JKeithB
+ms.topic: conceptual
+keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
 title: psgallery_status
-ms.technology: powershell
-ms.openlocfilehash: a260b9b696b41947fbbb789fd165dfe4bdac1dc3
-ms.sourcegitcommit: 214b8442f05618d078837889cbb6a30b42c01edb
-translationtype: HT
+ms.openlocfilehash: af6111d3c511273571bd978c6d0e7447726c2917
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/13/2017
 ---
 <a name="powershell-gallery-status"></a>PowerShell ギャラリーの状態
 =========================
+## <a name="10102017---powershell-gallery-unavailable-for-2-hours-101017"></a>2017/10/10 - PowerShell ギャラリーが 2017/10/10 に 2 時間にわたり利用不能に
+
+__影響の概要__: PowerShell ギャラリーで 2017 年 10 月 10 日午後 5 時頃 (PDT) から長時間にわたって待機時間が大幅に増加し、接続障害が断続的に発生しました。 この問題の解決にあたり、午後 10 時頃 (PDT) から 2 時間にわたってサイトがオフラインとなりました。 サイトは、2017 年 10 月 11 日午前 0 時の直前に復旧されました。 
+ 
+__根本原因__: 待機時間が増加した根本原因は現在も調査中です。
+
+__解決策__: 直接的な問題への対応のため、Web サービスをオフラインにして復元する必要がありました。 
+
+__次のステップ__: 本来の問題の根本原因を調査中です。
+
+## <a name="06012017---deploy-to-azure-automation-currently-unavailable"></a>2017/06/01 - Azure Automation へのデプロイが現在使用できない
+
+__影響の概要__: PowerShell ギャラリーからの Azure Automation に関係する項目のデプロイは現在使用できません。  Azure Automation 内の PowerShell ギャラリーからのアイテムのインポートは引き続き使用できます。  
+ 
+__根本原因__: 他のアイテムに依存関係があり、Azure Automation に以前にデプロイされているアイテムは、Azure Automation にはデプロイされません。 エンジニアは、Azure Automation への機能的なデプロイに関係するアイテムのために ARM テンプレートを生成する方法の問題点を確認しました。
+
+__解決策__: エンジニアが問題の解決に取り組んでいます。  現在のユーザーの回避策は、Azure Automation 内の PowerShell ギャラリーからアイテムをインポートすることです。 
+
+__次のステップ__: エンジニアは、まもなく修正プログラムをリリースします。  それまでは、お勧めした回避策をご使用ください。 
+
 
 ## <a name="04112017---users-unable-to-log-in-with-azure-active-directory-aad-accounts"></a>2017/04/11 - ユーザーが Azure Active Directory (AAD) アカウントでログインできません
 
@@ -58,7 +75,7 @@ __次の手順__: この期間中に [お問い合わせ先] リンクを使用�
 
 __影響の概要__: 2016 年 7 月 11 日から 2016 年 7 月 13 日までの期間中に一部のお客様で、PowerShell ギャラリーからアイテムをダウンロードする際に問題が発生しました。 この問題は、Install-Module/Install-Script および Save-Module/Save-Script から返された次のエラー メッセージに示されていたようです。
 
-```PowerShell
+```powershell
 PS C:\> Install-Module xStorage 
 PackageManagement\Install-Package : Package 'xStorage' failed to be installed because: 
 End of Central Directory record could not be found. At C:\Program 
@@ -77,7 +94,7 @@ __次の手順__: 根本原因を調査し、今後の問題発生を防止す�
 ## <a name="5192016---download-items-failed"></a>2016 年 5 月 19 日 - アイテムのダウンロードに失敗しました
 __影響の概要__: 2016 年 5 月 17 日から 2016 年 5 月 19 日までの期間中に一部のお客様で、PowerShell ギャラリーからアイテムをダウンロードする際に問題が発生しました。 この問題は、Install-Module/Install-Script および Save-Module/Save-Script から返された次のエラー メッセージに示されていたようです。
 
-```PowerShell
+```powershell
 VERBOSE: Hash for package 'AzureRM.OperationalInsights' does not match hash provided from the server.
 VERBOSE: InstallPackageLocal' - name='AzureRM.OperationalInsights', version='1.0.8',
 destination='C:\Users\jbritt\AppData\Local\Temp\2\1741355729'

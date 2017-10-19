@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "Linux 用 Desired State Configuration (DSC) の概要"
-ms.openlocfilehash: 9dbc4c22cff9df4028c5655cdfba3bb1aac1bb90
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: f88167cd039077574c3a84aa07ba78186adfa181
+ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 10/16/2017
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux 用 Desired State Configuration (DSC) の概要
 
@@ -37,11 +37,11 @@ Linux 用 DSC では、次の Linux オペレーティング システム バー
 
 ## <a name="installing-dsc-for-linux"></a>Linux 用 DSC のインストール
 
-Linux 用 DSC をインストールする前に、[Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/) をインストールする必要があります。
+Linux 用 DSC をインストールする前に、[Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi) をインストールする必要があります。
 
 ### <a name="installing-omi"></a>OMI のインストール
 
-Linux 用 Desired State Configuration には、Open Management Infrastructure (OMI) CIM サーバーのバージョン 1.0.8.1 が必要です。 OMI は、Open Group: [Open Management Infrastructure (OMI)](https://collaboration.opengroup.org/omi/) からダウンロードできます。
+Linux 用 Desired State Configuration には、Open Management Infrastructure (OMI) CIM サーバーの 1.0.8.1 以降のバージョンが必要です。 OMI は、Open Group: [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi) からダウンロードできます。
 
 OMI をインストールするには、Linux システムに適したパッケージ (.rpm または .deb)、OpenSSL バージョンに適したパッケージ (ssl_098 または ssl_100)、およびアーキテクチャに適したパッケージ (x86/x64) をインストールします。 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server、および Oracle Linux には、RPM パッケージが適しています。 Debian GNU/Linux および Ubuntu Server には、DEB パッケージが適しています。 OpenSSL 0.9.8 がインストールされているコンピューターには ssl_098 パッケージが適し、OpenSSL 1.0 がインストールされているコンピューターには ssl_100 パッケージが適しています。
 
@@ -106,7 +106,7 @@ ExampleConfiguration -OutputPath:"C:\temp"
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>Linux コンピューターへの構成のプッシュ
 
-構成ドキュメント (MOF ファイル) を Linux コンピューターにプッシュするには、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを使用します。 Linux コンピューターに対してリモートからこのコマンドレットを [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379).aspx と共に使用するか、または [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) コマンドレットを使用するためには、CIMSession を使用する必要あります。 Linux コンピューターに CIMSession を作成するには、[New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) コマンドレットを使用します。
+構成ドキュメント (MOF ファイル) を Linux コンピューターにプッシュするには、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを使用します。 Linux コンピューターに対してリモートからこのコマンドレットを [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) と共に使用するか、または [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) コマンドレットを使用するためには、CIMSession を使用する必要あります。 Linux コンピューターに CIMSession を作成するには、[New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) コマンドレットを使用します。
 
 次のコードは、Linux 用 DSC の CIMSession を作成する方法を示しています。
 
