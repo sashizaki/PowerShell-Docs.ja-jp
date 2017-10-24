@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "リモート コマンドの実行"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: c3bf002e7a3daa5afc8219dd846145808eef3c9b
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 5cf9690b8fe4549a99186f172cb6f0de156a4dea
+ms.sourcegitcommit: c5251755c4442487f99ff74fadf7e37bbf039089
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/18/2017
 ---
 # <a name="running-remote-commands"></a>リモート コマンドの実行
 1 つの Windows PowerShell コマンドを使用し、1 台から数百台のコンピューターでコマンドを実行できます。 Windows PowerShell は、WMI、RPC、WS-Management など、さまざまなテクノロジを使用してリモート コンピューティングをサポートします。
@@ -16,26 +16,16 @@ ms.lasthandoff: 09/08/2017
 多くの Windows PowerShell コマンドレットは、1 台以上のリモート コンピューターのデータの収集や設定の変更が可能な ComputerName パラメーターを持っています。 Windows PowerShell がサポートするすべての Windows オペレーティング システムのさまざまな通信テクノロジや多くの作業を、特別な構成なしで利用します。
 
 これらのコマンドレットには、次のものがあります。
-
-- [Restart-Computer](https://technet.microsoft.com/en-us/library/dd315301.aspx)
-
-- [Test-Connection](https://technet.microsoft.com/en-us/library/dd315259.aspx)
-
-- [Clear-EventLog](https://technet.microsoft.com/en-us/library/dd347552.aspx)
-
-- [Get-EventLog](https://technet.microsoft.com/en-us/library/dd315250.aspx)
-
-- [Get-HotFix](https://technet.microsoft.com/en-us/library/e1ef636f-5170-4675-b564-199d9ef6f101)
-
- -   [Get-Process](https://technet.microsoft.com/en-us/library/dd347630.aspx)
-
-- [Get-Service](https://technet.microsoft.com/en-us/library/dd347591.aspx)
-
-- [Set-Service](https://technet.microsoft.com/en-us/library/dd315324.aspx)
-
-- [Get-WinEvent](https://technet.microsoft.com/en-us/library/dd315358.aspx)
-
-- [Get-WmiObject](https://technet.microsoft.com/en-us/library/dd315295.aspx)
+* [Restart-Computer](https://go.microsoft.com/fwlink/?LinkId=821625)
+* [Test-Connection](https://go.microsoft.com/fwlink/?LinkId=821646)
+* [Clear-EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
+* [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
+* [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
+  - [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
+* [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
+* [Set-Service](https://go.microsoft.com/fwlink/?LinkId=821633)
+* [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
+* [Get-WmiObject](https://go.microsoft.com/fwlink/?LinkId=821595)
 
 通常、特別な構成なしでリモート処理をサポートするコマンドレットは、ComputerName パラメーターを指定し、Session パラメーター必要はありません。 セッションでこれらのコマンドレットを見つけるには、次のように入力します。
 
@@ -51,7 +41,8 @@ Windows PowerShell のリモート処理を使用するには、リモート管�
 Windows PowerShell のリモート処理を構成した後は、多くのリモート処理の戦略が使用可能になります。 このドキュメントの残りの部分では、その一部だけを取り上げます。 詳細については、[リモート コマンドに関するページ](https://technet.microsoft.com/en-us/library/dd347744.aspx)と[リモート コマンドの FAQ に関するページ](https://technet.microsoft.com/en-us/library/dd347744.aspx)をご覧ください。
 
 ### <a name="start-an-interactive-session"></a>対話型セッションの開始
-1 台のリモート コンピューターとの対話型セッションを開始するには、[Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx) コマンドレットを使用します。 たとえば、Server01 リモート コンピューターと対話型セッションを開始するには、次のように入力します。
+1 台のリモート コンピューターとの対話型セッションを開始するには、[Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477) コマンドレットを使用します。
+たとえば、Server01 リモート コンピューターと対話型セッションを開始するには、次のように入力します。
 
 ```
 Enter-PSSession Server01
@@ -65,11 +56,11 @@ Enter-PSSession Server01
 Exit-PSSession
 ```
 
-Enter-PSSession コマンドレットと Exit-PSSession コマンドレットの詳細については、「[Enter-PSSession](https://technet.microsoft.com/en-us/library/dd315384.aspx)」と「[Exit-PSSession](https://technet.microsoft.com/en-us/library/dd315322.aspx)」を参照してください。
+Enter-PSSession コマンドレットと Exit-PSSession コマンドレットの詳細については、「[Enter-PSSession](https://go.microsoft.com/fwlink/?LinkId=821477)」と「[Exit-PSSession](https://go.microsoft.com/fwlink/?LinkID=821478)」を参照してください。
 
 ### <a name="run-a-remote-command"></a>リモート コマンドの実行
-1 台以上のリモート コンピューターでいずれかのコマンドを実行するには、[Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx) コマンドレットを使用します。
-たとえば、[Get-UICulture](https://technet.microsoft.com/en-us/library/dd347742.aspx) コマンドをリモート コンピューター Server01 と Server02 で実行するには、次のように入力します。
+1 台以上のリモート コンピューターでいずれかのコマンドを実行するには、[Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493) コマンドレットを使用します。
+たとえば、[Get-UICulture](https://go.microsoft.com/fwlink/?LinkId=821806) コマンドをリモート コンピューター Server01 と Server02 で実行するには、次のように入力します。
 
 ```
 Invoke-Command -ComputerName Server01, Server02 -ScriptBlock {Get-UICulture}
@@ -83,7 +74,7 @@ LCID    Name     DisplayName               PSComputerName
 1033    en-US    English (United States)   server01.corp.fabrikam.com
 1033    en-US    English (United States)   server02.corp.fabrikam.com
 ```
-Invoke-Command コマンドレットの詳細については、「[Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)」を参照してください。
+Invoke-Command コマンドレットの詳細については、「[Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)」を参照してください。
 
 ### <a name="run-a-script"></a>スクリプトの実行
 1 台以上のリモート コンピューターでスクリプトを実行するには、Invoke-Command コマンドレットの FilePath パラメーターを使用します。 スクリプトがローカル コンピューターでアクセス可能でなければなりません。 結果はローカル コンピューターに返されます。
@@ -94,7 +85,7 @@ Invoke-Command コマンドレットの詳細については、「[Invoke-Comman
 Invoke-Command -ComputerName Server01, Server02 -FilePath c:\Scripts\DiskCollect.ps1
 ```
 
-Invoke-Command コマンドレットの詳細については、「[Invoke-Command](https://technet.microsoft.com/en-us/library/dd347578.aspx)」を参照してください。
+Invoke-Command コマンドレットの詳細については、「[Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)」を参照してください。
 
 ### <a name="establish-a-persistent-connection"></a>永続的な接続の確立
 データを共有する一連の関連コマンドを実行するには、リモート コンピューターでセッションを作成し、Invoke-Command コマンドレットを使用して作成したセッションでコマンドを実行します。 リモート セッションを作成するには、New-PSSession コマンドレットを使用します。
@@ -127,8 +118,8 @@ WSMan プロバイダーの詳細については、「[WSMan Provider (WSMan プ
 
 詳細については、次のドキュメントをご覧ください。
 - [about_Remote のよく寄せられる質問](https://technet.microsoft.com/en-us/library/dd315359.aspx)
-- [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/dd819496.aspx)
-- [Import-PSSession](https://technet.microsoft.com/en-us/library/dd347575.aspx) 
+- [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
+- [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 
 リモート処理のエラーに関するヘルプは、「[about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/dd347642.aspx)」をご覧ください。
 
@@ -139,9 +130,8 @@ WSMan プロバイダーの詳細については、「[WSMan Provider (WSMan プ
 - [about_Remote_Troubleshooting](https://technet.microsoft.com/en-us/library/2f890148-8578-49ed-85ea-79a489dd6317)
 - [about_PSSessions](https://technet.microsoft.com/en-us/library/7a9b4e0e-fa1b-47b0-92f6-6e2995d70acb)
 - [about_WS-Management_Cmdlets](https://technet.microsoft.com/en-us/library/6ed3370a-ea10-45a5-9493-696aeace27ed)
-- [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)
-- [Import-PSSession](https://technet.microsoft.com/en-us/library/048c115e-a6fb-4e0d-8cea-c5ca24630c9d)
-- [New-PSSession](https://technet.microsoft.com/en-us/library/59452f12-a11d-4558-99ea-e6ca6ad5ffd3)
-- [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/af68867a-d201-4b19-a1de-594015ed8a25)
+- [Invoke-Command](https://go.microsoft.com/fwlink/?LinkId=821493)
+- [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
+- [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
+- [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [WSMan プロバイダー](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
-
