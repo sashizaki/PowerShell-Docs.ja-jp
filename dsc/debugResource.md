@@ -1,15 +1,14 @@
 ---
-title: "DSC リソースのデバッグ"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: bca71e26585b091b839e8560dcf9d400651c476b
-ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "DSC リソースのデバッグ"
+ms.openlocfilehash: 944eca3d9f21d7e06d128caf19e4aebacc5c0b26
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="debugging-dsc-resources"></a>DSC リソースのデバッグ
 
@@ -83,11 +82,11 @@ Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
-この時点で、LCM はリソースを呼び出し、最初のブレーク ポイントに到達しています。 出力の最後の&3; 行は、プロセスに接続し、リソース スクリプトのデバッグを開始する方法を示しています。
+この時点で、LCM はリソースを呼び出し、最初のブレーク ポイントに到達しています。 出力の最後の 3 行は、プロセスに接続し、リソース スクリプトのデバッグを開始する方法を示しています。
 
 ## <a name="debugging-the-resource-script"></a>リソース スクリプトのデバッグ
 
-PowerShell ISE の新しいインスタンスを開始します。 コンソール ウィンドウで、`Start-DscConfiguration` 出力から出力の最後の&3; 行をコマンドとして入力し、`<credentials>` を有効なユーザー資格情報に置き換えます。 次のようなプロンプトが表示されます。
+PowerShell ISE の新しいインスタンスを開始します。 コンソール ウィンドウで、`Start-DscConfiguration` 出力から出力の最後の 3 行をコマンドとして入力し、`<credentials>` を有効なユーザー資格情報に置き換えます。 次のようなプロンプトが表示されます。
 
 ```powershell
 [TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
