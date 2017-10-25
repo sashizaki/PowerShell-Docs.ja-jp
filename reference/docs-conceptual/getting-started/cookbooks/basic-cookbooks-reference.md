@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Cookbooks の基本リファレンス"
-ms.openlocfilehash: a745048eb47a983fa90616ccbd58184080706096
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: d6f0bf97c9491f1a4c9ba13aae837c17860aa6c7
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="basic-cookbooks-reference"></a>Cookbooks の基本リファレンス
 
@@ -26,7 +26,6 @@ ms.lasthandoff: 09/08/2017
 - [複数選択のリスト ボックス](Multiple-selection-List-Boxes.md)
 - [その他の役に立つスクリプティング オブジェクト](Other-Useful-Scripting-Objects.md)
 - [ネットワーク関連タスクの実行](Performing-Networking-Tasks.md)
-- [PowerShellGet モジュール](PowerShellGet-Module.md)
 - [Out   コマンドレットを使用してデータをリダイレクトする](Redirecting-Data-with-Out---Cmdlets.md)
 - [パイプラインからオブジェクトを削除する  Where Object](Removing-Objects-from-the-Pipeline--Where-Object-.md)
 - [複数のオブジェクトのタスクを繰り返す  ForEach Object](Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)

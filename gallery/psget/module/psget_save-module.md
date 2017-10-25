@@ -10,34 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="save-module" class="xliff"></a>
-
-# Save-Module
+# <a name="save-module"></a>Save-Module
 
 モジュールをインストールせずにローカルに保存します。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 Save-Module コマンドレットは、指定されたリポジトリからローカルでモジュールを保存して検査します。 モジュールはインストールされていません。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 ```powershell
 Get-Command -Name Save-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Save-Module](http://go.microsoft.com/fwlink/?LinkId=531351)
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation

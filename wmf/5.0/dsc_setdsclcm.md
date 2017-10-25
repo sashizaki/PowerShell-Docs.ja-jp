@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter" class="xliff"></a>
-
-# Set-DscLocalConfigurationManager コマンドレットでの -force パラメーターのサポート
+# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a>Set-DscLocalConfigurationManager コマンドレットでの -force パラメーターのサポート
 
 Set-DscLocalConfigurationManager コマンドレットに、新しいパラメーターのサポートが追加されました。 これにより、一貫性チェックなどの他の操作がバックグラウンドで実行されている場合でも、すべての実行中の操作が停止するため、コンピューターのメタ構成を確定的にリセットできるようになります。
 

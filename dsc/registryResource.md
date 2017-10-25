@@ -10,17 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/26/2017
 ---
-<a id="dsc-registry-resource" class="xliff"></a>
-
-# DSC Registry リソース
+# <a name="dsc-registry-resource"></a>DSC Registry リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) の **Registry** リソースは、ターゲット ノードでレジストリ キーと値を管理するためのメカニズムを備えています。
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 Registry [string] #ResourceName
@@ -36,9 +32,7 @@ Registry [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-
-## プロパティ
+## <a name="properties"></a>プロパティ
 |  プロパティ  |  説明   | 
 |---|---| 
 | キー| 特定の状態を確認するレジストリ キーのパスを示します。 このパスには、ハイブを含める必要があります。| 
@@ -66,9 +60,7 @@ Registry [string] #ResourceName
 
 <li>展開可能な文字列 (REG_EXPAND_SZ)</li></ul>
 
-<a id="example" class="xliff"></a>
-
-## 例
+## <a name="example"></a>例
 次の例では、"ExampleKey" という名前のキーが **HKEY\_LOCAL\_MACHINE** ハイブに存在していることを確認します。
 ```powershell
 Configuration RegistryTest

@@ -10,36 +10,26 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="get-psrepository" class="xliff"></a>
-
-# Get-PSRepository
+# <a name="get-psrepository"></a>Get-PSRepository
 
 コンピューター上の登録されているリポジトリを取得します。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 Get-PSRepository コマンドレットでは、コンピューター上の現在のユーザーに対して登録されている PowerShell モジュール リポジトリを取得します。
 
 登録されている各リポジトリに対して、Get-PSRepository は PSRepository オブジェクトを返します。これは必要に応じて登録済みのリポジトリの登録を解除するための Unregister-PSRepository にパイプできます。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 ```powershell
 Get-Command -Name Get-PSRepository -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Get-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517127)
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 

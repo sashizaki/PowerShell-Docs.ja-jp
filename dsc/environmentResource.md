@@ -10,17 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-environment-resource" class="xliff"></a>
-
-# DSC 環境リソース
+# <a name="dsc-environment-resource"></a>DSC 環境リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) の __Environment__ リソースは、システム環境変数を管理するためのメカニズムを備えています。
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 ``` mof
 Environment [string] #ResourceName
 {
@@ -32,9 +28,7 @@ Environment [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -44,9 +38,7 @@ Environment [string] #ResourceName
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 | 値| 環境変数に割り当てる値。| 
 
-<a id="example" class="xliff"></a>
-
-## 例
+## <a name="example"></a>例
 
 次の例では、__TestEnvironmentVariable__ が存在し、その値が __TestValue__ であることを保証します。 この環境変数が存在しない場合は、作成されます。
 

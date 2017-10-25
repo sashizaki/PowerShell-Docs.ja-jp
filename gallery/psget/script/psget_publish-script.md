@@ -10,35 +10,25 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="publish-script" class="xliff"></a>
-
-# Publish-Script
+# <a name="publish-script"></a>Publish-Script
 
 Publish-Script コマンドレットでは、指定されたスクリプトをオンライン ギャラリーで公開します。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 Publish-Script コマンドレットでは、バージョン、GUID、作成者、説明などの有効なメタデータを含むスクリプト ファイルを発行できます。Publish-Script コマンドレットの Force スイッチ パラメーターは、プロンプトを表示せずに NuGet.exe をブートストラップします。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Publish-Script](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 # Publish the really basic script file with required metadata

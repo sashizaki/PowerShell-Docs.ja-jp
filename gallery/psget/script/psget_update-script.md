@@ -10,34 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-script" class="xliff"></a>
-
-# Update-Script
+# <a name="update-script"></a>Update-Script
 
 Update-Script コマンドレットでは、Install-Script コマンドレットを使用してインストールされたスクリプト ファイルのインプレース更新ができます。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 Update-Script コマンドレットは、スクリプトの以前のインストール元であるリポジトリから、指定したスクリプトを更新します。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 
 ```powershell
 Get-Command -Name Update-Script -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Update-Script](http://go.microsoft.com/fwlink/?LinkId=619787)
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 ```powershell
 Install-Script -Name Fabrikam-Script -RequiredVersion 1.0 -Repository GalleryINT -Scope
 Get-InstalledScript -Name Fabrikam-Script

@@ -1,21 +1,21 @@
 ---
-ms.date: 2017-06-12T00:00:00.000Z
+ms.date: 2017-06-12
 author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "Desired State Configuration クイック スタート"
-ms.openlocfilehash: e8a73296827297bab3229392c4193fed940c53bf
-ms.sourcegitcommit: 46feddbc753523f464f139b5d272794620072fc8
+ms.openlocfilehash: 295a78f3fd85464239d51d7be0defa04d2344689
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/02/2017
+ms.lasthandoff: 10/13/2017
 ---
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 # <a name="desired-state-configuration-quick-start"></a>Desired State Configuration クイック スタート
 
 この演習では、Desired State Configuration (DSC) の構成の作成と適用について最初から最後まで説明します。
-これから使用するサンプルでは、サーバーの `Web-Server` (IIS) 機能が有効になっており、そのサーバのディレクトリ `intetpub\wwwroot` に「Hello World」サンプルのコンテンツが存在することを確認します。
+これから使用するサンプルでは、サーバーの `Web-Server` (IIS) 機能が有効になっており、そのサーバのディレクトリ `intepub\wwwroot` に「Hello World」サンプルのコンテンツが存在することを確認します。
 
 DSC の概要としくみついては、「[意思決定者向け Desired State Configuration の概要](decisionMaker.md)」をご覧ください。
 

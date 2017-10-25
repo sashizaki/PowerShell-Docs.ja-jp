@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dispute-resolution" class="xliff"></a>
-
-# 争いの解決
+# <a name="dispute-resolution"></a>争いの解決
 
 この文書は、コミュニティ メンバーが PowerShell ギャラリーの他の発行元との争いを解決する際の推奨プロセスをまとめたものです。
 
-<a id="process" class="xliff"></a>
-
-## プロセス
+## <a name="process"></a>プロセス
 
 1. アイテム詳細ページの **[所有者に連絡]** リンクを使用し、争いの相手であるアイテムの所有者に連絡します。
 丁寧かつ明確に問題を説明します。
@@ -27,9 +23,7 @@ ms.lasthandoff: 06/12/2017
 PowerShellGallery.com サポート チームが関与し、問題の解決に取り組みます。
 
 
-<a id="prohibited-use" class="xliff"></a>
-
-## 禁止されている使い方
+## <a name="prohibited-use"></a>禁止されている使い方
 
 パブリック PowerShell ギャラリーでは次の項目が禁止されており、話し合いなく至急削除されます。  アイテムが削除された場合、その所有者に通知が届きます。
 

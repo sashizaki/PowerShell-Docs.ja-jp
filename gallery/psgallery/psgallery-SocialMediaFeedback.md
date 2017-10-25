@@ -10,18 +10,14 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="providing-feedback-via-social-media-or-comments" class="xliff"></a>
-
-# ソーシャル メディアやコメントを使用したフィードバックの提供
+# <a name="providing-feedback-via-social-media-or-comments"></a>ソーシャル メディアやコメントを使用したフィードバックの提供
 
 PowerShell ギャラリーでは、ユーザーがアイテムへのパブリック フィードバックを提供する 2 つの方法がサポートされています。
 
 * 左端のリンクを使用して、Facebook、LinkedIn、Twitter などのソーシャル メディア サイト内でアイテムを "共有" する。
 * コメント機能を使用してユーザーがアイテムへのコメントを投稿し、作成者は公開しているアイテムへのコメントを確認する。
 
-<a id="social-media-feedback" class="xliff"></a>
-
-## ソーシャル メディア フィードバック
+## <a name="social-media-feedback"></a>ソーシャル メディア フィードバック
 PowerShell ギャラリー内にある各アイテムのページの左側には、Facebook、LinkedIn、Twitter のリンクがあります。   
 これらのリンクをクリックすることでソーシャル メディア サイトが開き、アイテムへのリンクをすぐに共有できます。
 
@@ -31,9 +27,7 @@ PowerShell ギャラリー内にある各アイテムのページの左側には
 これにより、アイテムが共有された回数のみが表示されるため、他のユーザーからは "いいね!" と評価されたアイテムであると解釈されます。
 
 
-<a id="comments" class="xliff"></a>
-
-## 備考
+## <a name="comments"></a>備考
 PowerShell ギャラリーでは LiveFyre サービスを使用しており、ユーザーはアイテムに対するコメントを追加できます。
 推奨したいものやフィードバックがあるユーザーはこの機能を使用することで、アイテムのページを訪れる人が見ることのできるフィードバックを提供できます。
 アイテムの所有者はこのフィードバックをフォローして、コメントが投稿されたときに通知されるように設定できます。 

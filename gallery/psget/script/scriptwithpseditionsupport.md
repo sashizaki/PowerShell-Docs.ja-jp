@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="script-with-compatible-powershell-editions" class="xliff"></a>
-
-# 互換性のある PowerShell エディションが含まれるスクリプト
+# <a name="script-with-compatible-powershell-editions"></a>互換性のある PowerShell エディションが含まれるスクリプト
 バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
 
 - **デスクトップ エディション:** .NET Framework 上に構築されており、Server Core や Windows Desktop などの Windows の完全エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
@@ -64,13 +62,7 @@ Find-Script -Tag PSEditon_Core
 
 ```
 
-<a id="more-details" class="xliff"></a>
-
-## 詳細情報
-<a id="modules-with-pseditionsmodulemodulewithpseditionsupportmd" class="xliff"></a>
-
-### [PSEditions が含まれるモジュール](../module/modulewithpseditionsupport.md)
-<a id="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd" class="xliff"></a>
-
-### [PowerShellGallery での PSEditions のサポート](../../psgallery/psgallery_pseditions.md)
+## <a name="more-details"></a>詳細情報
+### <a name="modules-with-pseditionsmodulemodulewithpseditionsupportmd"></a>[PSEditions が含まれるモジュール](../module/modulewithpseditionsupport.md)
+### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[PowerShellGallery での PSEditions のサポート](../../psgallery/psgallery_pseditions.md)
 

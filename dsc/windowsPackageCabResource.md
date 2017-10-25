@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-windowspackagecab-resource" class="xliff"></a>
-
-# DSC WindowsPackageCab リソース
+# <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab リソース
 
 > 適用先: Windows PowerShell 5.1 以降
 
@@ -21,9 +19,7 @@ Windows PowerShell Desired State Configuration (DSC) の **WindowsPackageCab** �
 ターゲット ノードには DISM PowerShell モジュールをインストールする必要があります。 詳細については、「[Use DISM in Windows PowerShell (Windows PowerShell の DISM の使用)](https://msdn.microsoft.com/en-us/windows/hardware/commercialize/manufacture/desktop/use-dism-in-windows-powershell-s14)」を参照してください。 
 
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 {
@@ -35,9 +31,7 @@ Windows PowerShell Desired State Configuration (DSC) の **WindowsPackageCab** �
 }
 ```
 
-<a id="properties" class="xliff"></a>
-
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -47,9 +41,7 @@ Windows PowerShell Desired State Configuration (DSC) の **WindowsPackageCab** �
 | LogPath| プロバイダーがパッケージをインストールまたはアンインストールするためのログ ファイルを保存する場所の完全パスを示します。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は DependsOn = "[ResourceType]ResourceName" になります。| 
 
-<a id="example" class="xliff"></a>
-
-## 例
+## <a name="example"></a>例
 
 次の例の構成は入力パラメーターを必要とし、`$Name` パラメーターで指定された .cab ファイルが確実にインストールされます。
 

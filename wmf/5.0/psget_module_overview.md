@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershell-module-discovery-install-and-inventory-with-powershellget" class="xliff"></a>
-
-# PowerShellGet による PowerShell モジュールの検出、インストール、およびインベントリ
+# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a>PowerShellGet による PowerShell モジュールの検出、インストール、およびインベントリ
  
 このリリースの WMF には PowerShellGet が含まれています。
 -   Find-Module では、-Tag パラメーターを使用してモジュールのメタデータをフィルター処理できます。
@@ -20,9 +18,7 @@ ms.lasthandoff: 06/12/2017
 -   Find-DscResource では、リポジトリ内の個々の DSC リソースを検出できます。
 -   NuGet によるファイル共有からのインストールおよびファイル共有への発行のサポート
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 ```powershell
 \# Find all modules with tags Azure or DSC
 Find-Module -Tag Azure, DSC
@@ -57,9 +53,7 @@ Find-Module -Filter Cookbook -Repository PSGallery
 Find-Module -Filter RBAC -Repository PSGallery
 ```
 
-<a id="new-features-in-powershellget" class="xliff"></a>
-
-## PowerShellGet の新機能
+## <a name="new-features-in-powershellget"></a>PowerShellGet の新機能
 -   Windows PowerShell 5.0 以降の Side-by-Side バージョン サポート
 -   モジュールの依存関係のインストール サポート
 -   次の 3 つの新しいコマンドレット

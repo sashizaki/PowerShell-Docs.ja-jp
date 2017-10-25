@@ -9,13 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="class-based-dsc-resources" class="xliff"></a>
+# <a name="class-based-dsc-resources"></a>クラスベースの DSC リソース
 
-# クラスベースの DSC リソース
-
-<a id="defining-dsc-resources-with-classes" class="xliff"></a>
-
-## クラスでの DSC リソースの定義
+## <a name="defining-dsc-resources-with-classes"></a>クラスでの DSC リソースの定義
 
 フィードバックに基づいて、クラスベースの DSC リソースのオーサリングを簡略化し、わかりやすくしました。 クラスベースの DSC リソースとコマンドレット DSC リソース プロバイダーの主な相違点は次のとおりです。
 

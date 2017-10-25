@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershellget-cmdlet-reference" class="xliff"></a>
-
-# PowerShellGet コマンドレット リファレンス
+# <a name="powershellget-cmdlet-reference"></a>PowerShellGet コマンドレット リファレンス
 
 - [Register-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517129)
 - [Get-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517127)

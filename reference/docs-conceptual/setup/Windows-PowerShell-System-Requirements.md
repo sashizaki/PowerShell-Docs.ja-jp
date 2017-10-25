@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell のシステム要件"
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 13ec699d39400b6698b6220c28cd12d06b5e681e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 33824eac4de28de97990ffa1ea2500e61e03e847
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell のシステム要件
 このトピックでは、Windows PowerShell 3.0、Windows PowerShell 4.0、および Windows PowerShell 5.0 のシステム要件の一覧や、Windows PowerShell Integrated Scripting Environment (ISE)、CIM コマンド、ワークフローなどの特殊な機能の一覧を示します。
@@ -19,15 +19,15 @@ Windows PowerShell 5.0 は、次のバージョンの Windows で実行できま
 
 - Windows Server 2016 (既定でインストール済み)
 
-- Windows Server 2012 R2 では、[Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) をインストールして Windows PowerShell 5.0 を実行します
+- Windows Server 2012 R2 では、[Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) をインストールして Windows PowerShell 5.0 を実行します
 
-- Windows Server 2012 では、[Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) をインストールして Windows PowerShell 5.0 を実行します
+- Windows Server 2012 では、[Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) をインストールして Windows PowerShell 5.0 を実行します
 
-- Windows Server 2008 R2 (Service Pack 1 適用済み) では、[Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) をインストールして Windows PowerShell 5.0 を実行します
+- Windows Server 2008 R2 (Service Pack 1 適用済み) では、[Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) をインストールして Windows PowerShell 5.0 を実行します
 
 - Windows 8.1
 
-- Windows 7 (Service Pack 1 適用済み) では、[Windows Management Framework 5.0](http://go.microsoft.com/fwlink/?LinkID=242919) をインストールして Windows PowerShell 5.0 を実行します
+- Windows 7 (Service Pack 1 適用済み) では、[Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) をインストールして Windows PowerShell 5.0 を実行します
 
 Windows PowerShell 4.0 は、次のバージョンの Windows で実行できます。
 
@@ -35,9 +35,9 @@ Windows PowerShell 4.0 は、次のバージョンの Windows で実行できま
 
 - Windows Server 2012 R2 (既定でインストール済み)
 
-- Windows® 7 (Service Pack 1 適用済み) では、[Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) をインストールして Windows PowerShell 4.0 を実行します
+- Windows® 7 (Service Pack 1 適用済み) では、[Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) をインストールして Windows PowerShell 4.0 を実行します
 
-- Windows Server® 2008 R2 (Service Pack 1 適用済み) では、[Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkId=293881) をインストールして Windows PowerShell 4.0 を実行します
+- Windows Server® 2008 R2 (Service Pack 1 適用済み) では、[Windows Management Framework 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) をインストールして Windows PowerShell 4.0 を実行します
 
 Windows PowerShell 3.0 は、次のバージョンの Windows で実行できます。
 
@@ -45,11 +45,11 @@ Windows PowerShell 3.0 は、次のバージョンの Windows で実行できま
 
 - Windows Server 2012 (既定でインストール済み)
 
-- Windows® 7 (Service Pack 1 適用済み) では、[Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) をインストールして Windows PowerShell 3.0 を実行します
+- Windows® 7 (Service Pack 1 適用済み) では、[Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) をインストールして Windows PowerShell 3.0 を実行します
 
-- Windows Server® 2008 R2 (Service Pack 1 適用済み) では、[Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) をインストールして Windows PowerShell 3.0 を実行します
+- Windows Server® 2008 R2 (Service Pack 1 適用済み) では、[Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) をインストールして Windows PowerShell 3.0 を実行します
 
-- Windows Server 2008 (Service Pack 2 適用済み) では、[Windows Management Framework 3.0](http://www.microsoft.com/download/details.aspx?id=34595) をインストールして Windows PowerShell 3.0 を実行します
+- Windows Server 2008 (Service Pack 2 適用済み) では、[Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) をインストールして Windows PowerShell 3.0 を実行します
 
 ## <a name="microsoft-net-framework-requirements"></a>Microsoft .NET Framework の要件
 Windows PowerShell 5.0 には Microsoft .NET Framework 4.5 のフル インストールが必要です。 Windows 8.1 と Windows Server 2012 R2 には、既定で Microsoft .NET Framework 4.5 が付属しています。
@@ -83,19 +83,19 @@ Windows PowerShell はグラフィカル ユーザー インターフェイス�
 
 - コマンドレット
 
-    1.  [Out-GridView](https://technet.microsoft.com/en-us/library/70915a86-d753-464e-8349-cba02316154c)
+    1.  [Out-GridView](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/out-gridview)
 
-    2.  [Show-Command](https://technet.microsoft.com/en-us/library/65bba50b-91a8-49d5-80a2-a30fc684ba41)
+    2.  [Show-Command](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Show-Command)
 
-    3.  [Show-ControlPanelItem](https://technet.microsoft.com/en-us/library/0685d42c-37cc-498f-acf6-0ecfeb0cb162)
+    3.  [Show-ControlPanelItem](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
 
-    4.  [Show-EventLog](https://technet.microsoft.com/en-us/library/a3b0f5ad-0438-42c7-915b-d1b4793a431c)
+    4.  [Show-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
 
 - パラメーター
 
-    1.  [Get-Help](https://technet.microsoft.com/en-us/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) コマンドレットの **ShowWindow** パラメーター。
+    1.  [Get-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Get-Help) コマンドレットの **ShowWindow** パラメーター。
 
-    2.  [Register-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) と [Set-PSSessionConfiguration](https://technet.microsoft.com/en-us/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) コマンドレットの **ShowSecurityDescriptorUI** パラメーター。
+    2.  [Register-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) と [Set-PSSessionConfiguration](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration) コマンドレットの **ShowSecurityDescriptorUI** パラメーター。
 
 ## <a name="windows-powershell-engine-requirements"></a>Windows PowerShell Engine の要件
 Windows PowerShell 4.0 は、Windows PowerShell 3.0 および Windows PowerShell 2.0 との下位互換性を保つように設計されています。 Windows PowerShell 2.0 と Windows PowerShell 3.0 用に記述されたコマンドレット、プロバイダー、スナップイン、モジュール、スクリプトは、未変更のまま Windows PowerShell 4.0 で実行できます。
@@ -111,18 +111,18 @@ Windows PowerShell 2.0、Windows PowerShell 3.0、および Windows PowerShell 4
 
 - [バックグラウンド インテリジェント転送サービス (BITS) のコマンドレット](http://go.microsoft.com/fwlink/?LinkId=257514)
 
-- [Get-EventLog](https://technet.microsoft.com/en-us/library/b4985b11-82bf-487d-928d-becd96fc0419)
+- [Get-EventLog](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-EventLog)
 
-- [Get-WinEvent](https://technet.microsoft.com/en-us/library/5fe94870-ed6b-4ce2-9500-93846cc65c95)
+- [Get-WinEvent](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent)
 
-- [Save-Help](https://technet.microsoft.com/en-us/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa)
+- [Save-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Save-Help)
 
-- [Update-Help](https://technet.microsoft.com/en-us/library/93e1d870-ace6-432b-8778-8920291d7545)
+- [Update-Help](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Core/Update-Help)
 
 また、**WinRM** サービスは Windows PE に存在しません。
 
 ## <a name="see-also"></a>参照
 - [Windows PowerShell ファースト ステップ ガイド](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 - [Windows PowerShell のインストール](Installing-Windows-PowerShell.md)
-- [Windows PowerShell の開始](https://technet.microsoft.com/en-us/library/8ec8c2d7-8e7c-4722-a3d2-498fe5739a8e)
+- [Windows PowerShell の開始](Starting-Windows-PowerShell.md)
 

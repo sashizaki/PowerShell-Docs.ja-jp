@@ -10,40 +10,28 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="uninstall-module" class="xliff"></a>
-
-# Uninstall-Module
+# <a name="uninstall-module"></a>Uninstall-Module
 
 PowerShellGet コマンドレットを使用してインストールされたモジュールをアンインストールします。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 Uninstall-Module コマンドレットは、ローカル コンピューターから指定されたモジュールをアンインストールします。 モジュールに他のモジュールが依存している場合は、アンインストールできません。
 Uninstall-Module コマンドレットは、アンインストールされるモジュールが使用中かどうかも検証します。 モジュールが使用中の場合、エラーがスローされます。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 ```powershell
 Get-Command -Name Uninstall-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Uninstall-Module](http://go.microsoft.com/fwlink/?LinkId=526864)
 
 
-<a id="example-commands" class="xliff"></a>
+## <a name="example-commands"></a>コマンド例
 
-## コマンド例
-
-<a id="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget" class="xliff"></a>
-
-###  Uninstall-Module コマンドレットを実行して、PowerShellGet を使用してインストールしたモジュールをアンインストールします。
+###  <a name="run-the-uninstall-module-cmdlet-to-uninstall-a-module-that-you-installed-by-using-powershellget"></a>Uninstall-Module コマンドレットを実行して、PowerShellGet を使用してインストールしたモジュールをアンインストールします。
 削除するモジュールに他のモジュールが依存する場合、PowerShellGet はエラーをスローします。
 ```powershell
 Get-InstalledModule -Name RequiredModule1 | Uninstall-Module
@@ -56,9 +44,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\PSGet.psm1:1303 char
 + FullyQualifiedErrorId : UnableToUninstallAsOtherModulesNeedThisModule,Uninstall-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
 
-<a id="uninstalling-a-module-when-some-other-modules-have-a-dependency-on-it" class="xliff"></a>
-
-### モジュールに他のモジュールが依存している場合にアンインストールします。
+### <a name="uninstalling-a-module-when-some-other-modules-have-a-dependency-on-it"></a>モジュールに他のモジュールが依存している場合にアンインストールします。
 
 ```powershell
 Uninstall-Module SnippetPx
@@ -73,18 +59,14 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.3\PSModule.psm
    kageManagement.Cmdlets.UninstallPackage
 ```
 
-<a id="you-can-override-this-by-specify--force-option-on-uninstall-module-cmdlet" class="xliff"></a>
-
-### これは、Uninstall-Module コマンドレットに -Force オプションを指定するとオーバーライドできます。
+### <a name="you-can-override-this-by-specify--force-option-on-uninstall-module-cmdlet"></a>これは、Uninstall-Module コマンドレットに -Force オプションを指定するとオーバーライドできます。
 **注:** この方法は勧められていません。 この操作によって、他のモジュールが中断されます。
 
 ```powershell
 Uninstall-Module SnippetPx -Force
 ```
 
-<a id="uninstall-a-module-which-is-already-in-use" class="xliff"></a>
-
-### 既に使用中のモジュールをアンインストールします。
+### <a name="uninstall-a-module-which-is-already-in-use"></a>既に使用中のモジュールをアンインストールします。
 
 ```powershell
 Get-InstalledModule TypePx,SnippetPx
@@ -95,9 +77,7 @@ Version    Name                                Repository           Description
 1.0.5.18   SnippetPx                           PSGallery            The SnippetPx module enhances the snippet experi...
 ```
 
-<a id="uninstall-snippetpx-fails-due-to-the-dependent-module" class="xliff"></a>
-
-### SnippetPx のアンインストールは、依存モジュールがあるため失敗します。
+### <a name="uninstall-snippetpx-fails-due-to-the-dependent-module"></a>SnippetPx のアンインストールは、依存モジュールがあるため失敗します。
 
 ```powershell
 Uninstall-Module SnippetPx
@@ -114,9 +94,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
    kageManagement.Cmdlets.UninstallPackage
 ```
 
-<a id="uninstall-typepx-then-uninstall-the-snippetpx" class="xliff"></a>
-
-### TypePx をアンインストールしてから、SnippetPx をアンインストールします。
+### <a name="uninstall-typepx-then-uninstall-the-snippetpx"></a>TypePx をアンインストールしてから、SnippetPx をアンインストールします。
 
 ```powershell
 Uninstall-Module TypePx
@@ -135,9 +113,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
 ```
 
 
-<a id="for-a-module-name-which-is-not-installed-using-powershellget-cmdlets" class="xliff"></a>
-
-### PowerShellGet コマンドレットを使用してインストールされていないモジュール名の場合
+### <a name="for-a-module-name-which-is-not-installed-using-powershellget-cmdlets"></a>PowerShellGet コマンドレットを使用してインストールされていないモジュール名の場合
 
 ```powershell
 Uninstall-Module SnipptPx

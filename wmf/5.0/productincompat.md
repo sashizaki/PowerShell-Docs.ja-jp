@@ -9,29 +9,21 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="product-compatibility-status" class="xliff"></a>
+# <a name="product-compatibility-status"></a>製品の互換性の状態
 
-# 製品の互換性の状態
-
-<a id="compatible" class="xliff"></a>
-
-## 互換性あり:
+## <a name="compatible"></a>互換性あり:
 > 次のサーバー アプリケーションを実行しているシステムで Windows Management Framework 5.0 を**実行することができます。**
 
 - Microsoft SharePoint Server 2013
 - System Center 2012 Configuration Manager
 
-<a id="not-tested" class="xliff"></a>
-
-## テスト未実施:
+## <a name="not-tested"></a>テスト未実施:
 > 次のサーバー アプリケーションを実行しているシステムは Windows Management Framework 5.0 に対して**テストされていません。**
 
 - Microsoft SharePoint Server 2010
 - System Center 2012 Virtual Machine Manager
 
-<a id="incompatible" class="xliff"></a>
-
-## 互換性なし:
+## <a name="incompatible"></a>互換性なし:
 > 次のサーバー アプリケーションを実行しているシステムでは Windows Management Framework 5.0 を**実行できません。**
 
 - Microsoft Exchange Server 2013

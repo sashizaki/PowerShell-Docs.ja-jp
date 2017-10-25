@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="specifying-cross-node-dependencies" class="xliff"></a>
-
-# ノードの相互依存関係の指定
+# <a name="specifying-cross-node-dependencies"></a>ノードの相互依存関係の指定
 
 組み込みの WaitFor\* リソース (`WaitForAll`、`WaitForAny`、`WaitForSome`) を使えば、コンピューター間の依存関係を外部の指揮なしで構成の実行中に指定できます。 
 

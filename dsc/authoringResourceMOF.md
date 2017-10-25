@@ -10,23 +10,17 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="writing-a-custom-dsc-resource-with-mof" class="xliff"></a>
-
-# MOF を使用したカスタム DSC リソースの記述
+# <a name="writing-a-custom-dsc-resource-with-mof"></a>MOF を使用したカスタム DSC リソースの記述
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 このトピックでは、MOF ファイルで Windows PowerShell Desired State Configuration (DSC) カスタム リソースのスキーマを定義し、Windows PowerShell スクリプト ファイルでリソースを実装します。 このカスタム リソースは、Web サイトを作成および保守するためのものです。
 
-<a id="creating-the-mof-schema" class="xliff"></a>
-
-## MOF スキーマの作成
+## <a name="creating-the-mof-schema"></a>MOF スキーマの作成
 
 スキーマでは、DSC 構成スクリプトによって構成できるリソースのプロパティを定義します。
 
-<a id="folder-structure-for-a-mof-resource" class="xliff"></a>
-
-### MOF リソースのフォルダー構造
+### <a name="folder-structure-for-a-mof-resource"></a>MOF リソースのフォルダー構造
 
 MOF スキーマを使用して DSC カスタム リソースを実装するには、次のフォルダー構造を作成します。 MOF スキーマは Demo_IISWebsite.schema.mof ファイルで定義し、リソース スクリプトは Demo_IISWebsite.psm1 で定義します。 必要に応じて、モジュール マニフェスト (psd1) ファイルを作成できます。
 
@@ -42,9 +36,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
 
 最上位のフォルダーの下に DSCResources という名前のフォルダーを作成し、各リソースのフォルダーにリソースと同じ名前を付ける必要があります。
 
-<a id="the-contents-of-the-mof-file" class="xliff"></a>
-
-### MOF ファイルの内容
+### <a name="the-contents-of-the-mof-file"></a>MOF ファイルの内容
 
 カスタム Web サイト リソースに使用できる MOF ファイルの例を次に示します。 この例に従うには、このスキーマをファイルに保存し、ファイルの名前は *Demo_IISWebsite.schema.mof* にします。
 
@@ -74,9 +66,7 @@ class Demo_IISWebsite : OMI_BaseResource
 * 組み込みの DSC リソースとの一貫したスタイルを維持する方法として、値 `Present` と `Absent` を持つ `Ensure` というプロパティをリソースに含めることをお勧めします。
 * カスタム リソースのスキーマ ファイルには、`classname.schema.mof` のように名前を付けます。ここで、`classname` はスキーマ定義内の `class` キーワードに続く識別子です。
 
-<a id="writing-the-resource-script" class="xliff"></a>
-
-### リソース スクリプトの作成
+### <a name="writing-the-resource-script"></a>リソース スクリプトの作成
 
 リソース スクリプトでは、リソースのロジックを実装します。 このモジュールでは、**Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** という 3 つの関数を含める必要があります。 3 つのすべての関数は、リソース用に作成した MOF スキーマで定義されている一連のプロパティと同じパラメーター セットを受け取る必要があります。 このドキュメントでは、この一連のプロパティを "リソース プロパティ" と呼びます。 これらの 3 つの関数は、<ResourceName>.psm1 というファイルに格納します。 次の例では、関数は Demo_IISWebsite.psm1 というファイルに格納されます。
 
@@ -229,9 +219,7 @@ $result
 >このコマンドレットは、テキストを詳細メッセージ ストリームに書き込みます。 
 >既定では、詳細メッセージ ストリームは表示されません。表示するには、**$VerbosePreference** 変数の値を変更するか、DSC コマンドレットで **Verbose** パラメーターを使用します。
 
-<a id="creating-the-module-manifest" class="xliff"></a>
-
-### モジュール マニフェストの作成
+### <a name="creating-the-module-manifest"></a>モジュール マニフェストの作成
 
 最後に、**New-ModuleManifest** コマンドレットを使用して、カスタム リソース モジュールの <ResourceName>.psd1 ファイルを定義します。 このコマンドレットを呼び出すときに、前のセクションで説明したスクリプト モジュール (.psm1) ファイルを参照します。 **Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** をエクスポートする関数の一覧に含めます。 マニフェスト ファイルの例を次に示します。
 
@@ -287,9 +275,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 }
 ```
 
-<a id="supporting-psdscrunascredential" class="xliff"></a>
-
-## PsDscRunAsCredential のサポート
+## <a name="supporting-psdscrunascredential"></a>PsDscRunAsCredential のサポート
 
 >**注:** **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。
 

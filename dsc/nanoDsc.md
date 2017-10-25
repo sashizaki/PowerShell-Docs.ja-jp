@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="using-dsc-on-nano-server" class="xliff"></a>
-
-# DSC on Nano Server の使用
+# <a name="using-dsc-on-nano-server"></a>DSC on Nano Server の使用
 
 > 適用先: Windows PowerShell 5.0
 
@@ -25,9 +23,7 @@ New-NanoServerImage -Edition Standard -DeploymentType Guest -MediaPath f:\ -Base
 Nano Server のインストールと使用、および PowerShell リモート処理による Nano Server の管理方法については、「[Getting Started with Nano Server (Nano Server の概要)](https://technet.microsoft.com/en-us/library/mt126167.aspx)」を参照してください。
 
 
-<a id="dsc-features-available-on-nano-server" class="xliff"></a>
-
-## Nano Server で使用できる DSC 機能
+## <a name="dsc-features-available-on-nano-server"></a>Nano Server で使用できる DSC 機能
 
  Nano Server でサポートされる API のセットは、通常版の Windows Server と比べると限定的であるため、当面の間、DSC on Nano Server では、すべての SKU で DSC が動作する、完全に機能するパリティを利用できません。 DSC on Nano Server は現在開発中であり、まだ完全な機能ではありません。
  
@@ -116,9 +112,7 @@ Nano Server のインストールと使用、および PowerShell リモート�
   * [User](userResource.md)
   
 
-<a id="dsc-features-not-available-on-nano-server" class="xliff"></a>
-
-## Nano Server で使用できない DSC 機能
+## <a name="dsc-features-not-available-on-nano-server"></a>Nano Server で使用できない DSC 機能
 
 現在、Nano Server で使用できない DSC 機能は次のとおりです。
 
@@ -126,14 +120,10 @@ Nano Server のインストールと使用、および PowerShell リモート�
 * プル サーバー - 現在、Nano Server でプル サーバーをセットアップすることはできません
 * 動作する機能の一覧に含まれていないもの
 
-<a id="using-custom-dsc-resources-on-nano-server" class="xliff"></a>
-
-## Nano Server でのカスタム DSC リソースの使用
+## <a name="using-custom-dsc-resources-on-nano-server"></a>Nano Server でのカスタム DSC リソースの使用
  
 Nano Server で使用できる Windows API と CLR ライブラリは限定されているため、完全な CLR バージョンの Windows で動作する DSC は、必ずしも Nano Server で動作するとは限りません。 DSC カスタム リソースを運用環境に展開する前に、エンド ツー エンドのテストを完了してください。
 
-<a id="see-also" class="xliff"></a>
-
-## 参照
+## <a name="see-also"></a>参照
 - [Nano Server の概要](https://technet.microsoft.com/en-us/library/mt126167.aspx)
 

@@ -10,17 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="modules-with-compatible-powershell-editions" class="xliff"></a>
-
-# 互換性のある PowerShell エディションが含まれるモジュール
+# <a name="modules-with-compatible-powershell-editions"></a>互換性のある PowerShell エディションが含まれるモジュール
 バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
 
 - **デスクトップ エディション:** .NET Framework 上に構築されており、Server Core や Windows Desktop などの Windows の完全エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
 - **コア エディション:** .NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
 
-<a id="the-running-edition-of-powershell-is-shown-in-the-psedition-property-of-psversiontable" class="xliff"></a>
-
-## PowerShell の実行中のエディションが $PSVersionTable の PSEdition プロパティに表示されます。
+## <a name="the-running-edition-of-powershell-is-shown-in-the-psedition-property-of-psversiontable"></a>PowerShell の実行中のエディションが $PSVersionTable の PSEdition プロパティに表示されます。
 ```powershell
 $PSVersionTable
 
@@ -36,9 +32,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-<a id="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later" class="xliff"></a>
-
-## モジュールの作成者は、CompatiblePSEditions モジュール マニフェスト キーを使用して、モジュールが 1 つ以上の PowerShell エディションと互換性があることを宣言できます。 このキーは、PowerShell 5.1 以降でのみサポートされます。
+## <a name="module-authors-can-declare-their-modules-to-be-compatible-with-one-or-more-powershell-editions-using-the-compatiblepseditions-module-manifest-key-this-key-is-only-supported-on-powershell-51-or-later"></a>モジュールの作成者は、CompatiblePSEditions モジュール マニフェスト キーを使用して、モジュールが 1 つ以上の PowerShell エディションと互換性があることを宣言できます。 このキーは、PowerShell 5.1 以降でのみサポートされます。
 *注*: CompatiblePSEditions キーを使用してモジュール マニフェストを指定した後は、古いバージョンの PowerShell でもインポートできます。
 
 ```powershell
@@ -74,21 +68,15 @@ Core
 
 ```
 
-<a id="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core" class="xliff"></a>
-
-## モジュールの作成者が、PowerShell エディションのどちらかまたは両方を対象とする 1 つのモジュールを発行することができます。 
+## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>モジュールの作成者が、PowerShell エディションのどちらかまたは両方を対象とする 1 つのモジュールを発行することができます。 
 
 1 つのモジュールが、デスクトップとコアの両方のエディションで動作します。そのモジュール内で、作成者は、$PSEdition 変数を使用して、RootModule またはモジュール マニフェストで必要なロジックを追加する必要があります。
 モジュールでは、CoreCLR と FullCLR の両方を対象とするコンパイル済み DLL の 2 つのセットを使用できます。
 次に、適切な dll を読み込むためのロジックを含むモジュールをパッケージ化するためのいくつかのオプションを示します。
 
-<a id="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell" class="xliff"></a>
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>オプション 1: PowerShell の複数のバージョンおよび複数のエディションを対象としてパッケージ化する
 
-### オプション 1: PowerShell の複数のバージョンおよび複数のエディションを対象としてパッケージ化する
-
-<a id="module-folder-contents" class="xliff"></a>
-
-#### モジュール フォルダーの内容
+#### <a name="module-folder-contents"></a>モジュール フォルダーの内容
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
 - Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
 - PSScriptAnalyzer.psd1
@@ -107,9 +95,7 @@ Core
 - Settings\ScriptingStyle.psd1
 - Settings\ScriptSecurity.psd1
 
-<a id="contents-of-psscriptanalyzerpsd1-file" class="xliff"></a>
-
-#### PSScriptAnalyzer.psd1 ファイルの内容
+#### <a name="contents-of-psscriptanalyzerpsd1-file"></a>PSScriptAnalyzer.psd1 ファイルの内容
 
 ```powershell
 @{
@@ -127,9 +113,7 @@ ModuleVersion = '1.6.1'
 }
 ```
 
-<a id="contents-of-psscriptanalyzerpsm1-file" class="xliff"></a>
-
-#### PSScriptAnalyzer.psm1 ファイルの内容
+#### <a name="contents-of-psscriptanalyzerpsm1-file"></a>PSScriptAnalyzer.psm1 ファイルの内容
 以下のロジックは、現在のエディションまたはバージョンに応じて必要なアセンブリを読み込みます。
 
 ```powershell
@@ -166,9 +150,7 @@ $PSModule.OnRemove = {
 
 ```
 
-<a id="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules" class="xliff"></a>
-
-### オプション 2: PSD1 ファイルで $PSEdition 変数を使用して適切な DLL と入れ子になった/必要なモジュールを読み込む
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>オプション 2: PSD1 ファイルで $PSEdition 変数を使用して適切な DLL と入れ子になった/必要なモジュールを読み込む
 
 PS 5.1 以降では、$PSEdition グローバル変数をモジュール マニフェスト ファイル内で使用できます。
 この変数を使用すると、モジュールの作成者が、モジュール マニフェスト ファイル内で条件値を指定できます。 $PSEdition 変数は、制限された言語モードまたはデータ セクション内で参照できます。 
@@ -176,9 +158,7 @@ PS 5.1 以降では、$PSEdition グローバル変数をモジュール マニ�
 *注*: CompatiblePSEditions キーまたは $PSEdition 変数を使用してモジュール マニフェストを指定した後は、古いバージョンの PowerShell でもインポートできます。
 
 
-<a id="sample-module-manifest-file-with-compatiblepseditions-key" class="xliff"></a>
-
-#### CompatiblePSEditions キーを使用するサンプルのモジュール マニフェスト ファイル
+#### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a>CompatiblePSEditions キーを使用するサンプルのモジュール マニフェスト ファイル
 
 ```powershell
 @{ 
@@ -213,9 +193,7 @@ else # Desktop
 }
 ```
 
-<a id="module-contents" class="xliff"></a>
-
-#### モジュールの内容
+#### <a name="module-contents"></a>モジュールの内容
 
 ```powershell
 
@@ -246,9 +224,7 @@ Mode                LastWriteTime         Length Name
 -a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl                                                                      
 ```
 
-<a id="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditoncore" class="xliff"></a>
-
-## PowerShell ギャラリー ユーザーは、PSEdition_Desktop および PSEditon_Core タグを使用して特定の PowerShell エディションでサポートされているモジュールの一覧を表示できます。
+## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditoncore"></a>PowerShell ギャラリー ユーザーは、PSEdition_Desktop および PSEditon_Core タグを使用して特定の PowerShell エディションでサポートされているモジュールの一覧を表示できます。
 PSEdition_Desktop および PSEditon_Core タグがないモジュールは、PowerShell Desktop エディションで正常に動作すると見なされます。
 
 ```powershell
@@ -262,16 +238,8 @@ Find-Module -Tag PSEditon_Core
 ```
 
 
-<a id="more-details" class="xliff"></a>
-
-## 詳細情報
-<a id="scripts-with-pseditionsscriptscriptwithpseditionsupportmd" class="xliff"></a>
-
-### [PSEditions のスクリプト](../script/scriptwithpseditionsupport.md)
-<a id="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd" class="xliff"></a>
-
-### [PowerShellGallery での PSEditions のサポート](../../psgallery/psgallery_pseditions.md)
-<a id="update-module-manifest-psgetupdate-modulemanifestmd" class="xliff"></a>
-
-### [モジュール マニフェストを更新する] (./psget_update-modulemanifest.md)
+## <a name="more-details"></a>詳細情報
+### <a name="scripts-with-pseditionsscriptscriptwithpseditionsupportmd"></a>[PSEditions のスクリプト](../script/scriptwithpseditionsupport.md)
+### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[PowerShellGallery での PSEditions のサポート](../../psgallery/psgallery_pseditions.md)
+### <a name="update-module-manifest-psgetupdate-modulemanifestmd"></a>[モジュール マニフェストを更新する] (./psget_update-modulemanifest.md)
 

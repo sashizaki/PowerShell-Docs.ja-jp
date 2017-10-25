@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="script-tracing-and-logging" class="xliff"></a>
-
-# スクリプトのトレースとログ
+# <a name="script-tracing-and-logging"></a>スクリプトのトレースとログ
 
 Windows PowerShell には、コマンドレットの呼び出しをログに記録する **LogPipelineExecutionDetails** グループ ポリシー設定が既に備えられていますが、PowerShell のスクリプト言語には、ログへの記録や監査の対象とする可能性がある機能が数多く含まれています。 新しい詳細スクリプト トレース機能では、システムで使用される Windows PowerShell スクリプトの詳細な追跡や分析を有効にすることができます。 詳細なスクリプト トレースを有効にすると、Windows PowerShell はすべてのスクリプト ブロックを ETW イベント ログ **Microsoft-Windows-PowerShell/Operational** に記録します。 スクリプト ブロックによって別のスクリプト ブロックが作成される場合 (たとえば、文字列で Invoke-Expression コマンドレットを呼び出すスクリプト)、その結果として得られるスクリプト ブロックも記録されます。
 

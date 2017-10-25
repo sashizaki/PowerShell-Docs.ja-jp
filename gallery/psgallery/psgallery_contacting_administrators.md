@@ -10,13 +10,9 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="contact-gallery-administrators" class="xliff"></a>
+# <a name="contact-gallery-administrators"></a>ギャラリーの管理者に問い合わせる
 
-# ギャラリーの管理者に問い合わせる
-
-<a id="when-to-contact-gallery-administrators" class="xliff"></a>
-
-## ギャラリーの管理者への問い合わせが必要な状況
+## <a name="when-to-contact-gallery-administrators"></a>ギャラリーの管理者への問い合わせが必要な状況
 
 次の状況では、ギャラリーの管理者にお問い合わせください。
 
@@ -26,9 +22,7 @@ ms.lasthandoff: 06/12/2017
 4. アイテム名に関して他のユーザーに異議があるが、他のユーザーに連絡を取る方法では解決できない。
 5. ギャラリーのアイテムに関してギャラリーの管理者から連絡があり、返答したい。
 
-<a id="how-to-contact-gallery-administrators" class="xliff"></a>
-
-## ギャラリーの管理者に問い合わせる方法
+## <a name="how-to-contact-gallery-administrators"></a>ギャラリーの管理者に問い合わせる方法
 
 1. 電子メールをお送りください: cgadmin@microsoft.com。
 2. アイテムの不正使用について報告する場合、左パネルのアイテム情報の下に [Report Abuse] \(不正報告) リンクがあります。

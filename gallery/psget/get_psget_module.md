@@ -10,27 +10,19 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="get-powershellget-module" class="xliff"></a>
-
-PowerShellGet モジュールの取得
+<a name="get-powershellget-module"></a>PowerShellGet モジュールの取得
 ========================
 
-<a id="powershellget-is-an-in-box-module-in-the-following-releases" class="xliff"></a>
-
-### PowerShellGet は、以下のリリースではインボックス モジュールである
+### <a name="powershellget-is-an-in-box-module-in-the-following-releases"></a>PowerShellGet は、以下のリリースではインボックス モジュールである
 - [Windows 10](https://www.microsoft.com/en-us/windows/get-windows-10) 以降
 - [Windows Server 2016](https://technet.microsoft.com/en-us/windows-server-docs/get-started/windows-server-2016) 以降
 - [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) 以降
 - [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
 
-<a id="get-powershellget-module-for-powershell-versions-30-and-40" class="xliff"></a>
-
-### PowerShell バージョン 3.0 および 4.0 用の PowerShellGet モジュールの取得
+### <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a>PowerShell バージョン 3.0 および 4.0 用の PowerShellGet モジュールの取得
 - [PackageManagement MSI](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409) 
 
-<a id="get-the-latest-version-from-powershell-gallery" class="xliff"></a>
-
-### PowerShell ギャラリーからの最新バージョンの取得
+### <a name="get-the-latest-version-from-powershell-gallery"></a>PowerShell ギャラリーからの最新バージョンの取得
 
 - PowerShellGet を更新する前には、最新の Nuget プロバイダーをインストールする必要があります。 そのためには、PowerShell セッションで、管理者特権で次のコマンドを実行します。
 ```powershell
@@ -38,9 +30,7 @@ Install-PackageProvider Nuget –Force
 Exit
 ```
 
-<a id="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget" class="xliff"></a>
-
-#### PowerShell 5.0 (またはそれ以降) のシステムには、最新の PowerShellGet をインストール可能 
+#### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a>PowerShell 5.0 (またはそれ以降) のシステムには、最新の PowerShellGet をインストール可能 
 - Windows 10、Windows Server 2016、WMF 5.0 または 5.1 がインストールされたシステム、PowerShell 6 を使用するシステムでこれを実行するには、管理者特権で PowerShell セッションから、次のコマンドを実行します。
 ```powershell
 Install-Module –Name PowerShellGet –Force
@@ -53,9 +43,7 @@ Update-Module -Name PowerShellGet
 Exit
 ```
 
-<a id="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpgomicrosoftcomfwlinklinkid746217clcid0x409" class="xliff"></a>
-
-#### [PackageManagement MSI](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409) をインストールした PowerShell 3 または PowerShell 4 を実行しているシステムの場合
+#### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpgomicrosoftcomfwlinklinkid746217clcid0x409"></a>[PackageManagement MSI](http://go.microsoft.com/fwlink/?LinkID=746217&clcid=0x409) をインストールした PowerShell 3 または PowerShell 4 を実行しているシステムの場合
 
 - 管理者特権で、PowerShell セッションから PowerShellGet のコマンドレットを使用して、ローカル ディレクトリにモジュールを保存します。
 

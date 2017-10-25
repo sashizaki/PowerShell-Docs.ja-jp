@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-module" class="xliff"></a>
-
-# Update-Module
+# <a name="update-module"></a>Update-Module
 
 指定したモジュールの最新バージョンをオンライン ギャラリーからダウンロードし、ローカル コンピューターにインストールします。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 Update-Module コマンドレットは、Install-Module を実行してオンライン ギャラリーからインストールした Windows PowerShell モジュールの最新バージョンをローカル コンピューターにインストールします。
 
@@ -26,9 +22,7 @@ Update-Module コマンドレットは、Install-Module を実行してオンラ
 
 Name パラメーターを指定せずに Update-Module を実行すると、ローカル コンピューターで更新が可能なすべてのモジュールが更新されます。
 
-<a id="notes" class="xliff"></a>
-
-### メモ
+### <a name="notes"></a>メモ
 
 - このコマンドレットは、Windows 7 または Windows 2008 R2 および今後のリリースの Windows での、Windows PowerShell 3.0 または今後のリリースの Windows PowerShell で機能します。
 - Name パラメーターで指定したモジュールが、Install-Module によってインストールされていない場合はエラーが発生します。 Update-Module は、Install-Module を使用してオンライン ギャラリーからインストールしたモジュールについてのみ実行できます。
@@ -36,23 +30,17 @@ Name パラメーターを指定せずに Update-Module を実行すると、ロ
 - PowerShell 5.0 以降のバージョンでは、Update-Module がモジュールを更新するときに、モジュールの最新 (または指定した) バージョンが追加されるため、古いバージョンと新しいバージョンが同じディレクトリに並んで存在することになります。 これについては、理解しやすいようコマンドの出力例を示します。
 
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 ```powershell
 Get-Command -Name Update-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Update-Module](http://go.microsoft.com/fwlink/?LinkID=398576)
 
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 PS C:\\windows\\system32> Update-Module -Name ContosoServer -RequiredVersion 1.5
@@ -96,9 +84,7 @@ Version Name Repository Description
 ```
 
 
-<a id="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies" class="xliff"></a>
-
-###  依存関係を持つ TestDepWithNestedRequiredModules1 モジュールを更新します。
+###  <a name="update-the-testdepwithnestedrequiredmodules1-module-with-dependencies"></a>依存関係を持つ TestDepWithNestedRequiredModules1 モジュールを更新します。
 ```powershell
 Find-Module -Name TestDepWithNestedRequiredModules1 -Repository LocalRepo -AllVersions
 

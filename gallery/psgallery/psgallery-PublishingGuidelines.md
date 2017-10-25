@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
 description: "パブリッシャー向けのガイドライン"
 title: "PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス"
-ms.openlocfilehash: 85486c409382472420a67fc124bd07a30486cb62
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 882a33c00cc024ad2bbb05a3283e058a61035e3a
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -32,12 +32,11 @@ PowerShell ギャラリーへのアイテムの公開の仕組みについては
 * ドキュメントとサンプルを含める
 * フィードバックに素早く対応する
 * スクリプトではなくモジュールを提供する
-* バージョン管理に関する SemVer ガイドラインに従う
 * プロジェクト サイトへのリンクを提供する
 * モジュールにテストを含める
 * ライセンス条項を含めるか、ライセンス条項へのリンクを提供する (またはその両方)
 * コードに署名する
-* バージョン管理に関する SemVer ガイドラインに従う
+* バージョン管理に関する [SemVer](http://semver.org/) ガイドラインに従う
 * 一般的な PowerShell ギャラリー タグに関する記事で説明されている一般的なタグを使用する
 * ローカル リポジトリを使用して公開に関するテストを行う
 

@@ -10,16 +10,12 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershell-engine-improvements" class="xliff"></a>
-
-#PowerShell エンジンの機能強化
+#<a name="powershell-engine-improvements"></a>PowerShell エンジンの機能強化
 
 コア PowerShell エンジンに対する以下の機能強化が WMF 5.1 に実装されました。
 
 
-<a id="performance" class="xliff"></a>
-
-## パフォーマンス ##
+## <a name="performance"></a>パフォーマンス ##
 
 いくつかの重要な部分でパフォーマンスが向上しました。
 

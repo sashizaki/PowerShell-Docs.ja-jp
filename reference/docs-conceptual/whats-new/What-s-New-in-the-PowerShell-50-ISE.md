@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "PowerShell 50 ISE の新機能"
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 1e315351d0e5dde146881b0e6527c38e59777a1e
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 89dcc905ce200d06029e148c9675269e6f518fa3
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE の新機能
 このトピックでは、各バージョンの Windows PowerShell Integrated Scripting Environment (ISE) に導入された新機能と更新された機能について説明します。
@@ -22,16 +22,16 @@ Windows PowerShell ISE の概要については、[Windows PowerShell Integrated
 
 |機能|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
 |--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-|**[IntelliSense]()**|X|X||
-|**[スニペット]()**|X|X||
-|**[アドオン ツール]()**|X|X||
-|**[再起動マネージャーと自動保存]()**|X|X||
-|**[コンソール ウィンドウ]()**|X|X||
-|**[最近使用した一覧]()**|X|X||
-|**[コマンド ライン スイッチ]()**|X|X||
-|**[エディターの新機能]()**|X|X||
-|**[新しいヘルプ ビューアー ウィンドウ]()**|X|X||
-|**[Show-Command コマンドレット]()**|X|X||
+|**[IntelliSense](#intellisense)**|X|X||
+|**[スニペット](#snippets)**|X|X||
+|**[アドオン ツール](#add-on-tools)**|X|X||
+|**[再起動マネージャーと自動保存](#restart-manager-and-auto-save)**|X|X||
+|**[最近使用した一覧](#most-recently-used-list)**|X|X||
+|**[コンソール ウィンドウ](#console-pane)**|X|X||
+|**[コマンド ライン スイッチ](#command-line-switches)**|X|X||
+|**[エディターの新機能](#new-editor-features)**|X|X||
+|**[新しいヘルプ ビューアー ウィンドウ](#new-help-viewer-window)**|X|X||
+|**[Show-Command コマンドレット](#show-command-cmdlet)**|X|X||
 
 ### <a name="intellisense"></a>IntelliSense
 **ISE 3.0 に追加**

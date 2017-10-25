@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "基本的な Cookbooks"
-ms.openlocfilehash: 275bd60f4731d789ccff07d687a1a66f7ae03c8a
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: f100d7a1680358b9cb2463e6c5b90cd7243412e0
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="basic-cookbooks-referencecookbooksbasic-cookbooks-referencemd"></a>[Cookbooks の基本リファレンス](cookbooks/basic-cookbooks-reference.md)
 
@@ -26,7 +26,6 @@ ms.lasthandoff: 09/08/2017
 - [複数選択のリスト ボックス](cookbooks/Multiple-selection-List-Boxes.md)
 - [その他の役に立つスクリプティング オブジェクト](cookbooks/Other-Useful-Scripting-Objects.md)
 - [ネットワーク関連タスクの実行](cookbooks/Performing-Networking-Tasks.md)
-- [PowerShellGet モジュール](cookbooks/PowerShellGet-Module.md)
 - [Out   コマンドレットを使用してデータをリダイレクトする](cookbooks/Redirecting-Data-with-Out---Cmdlets.md)
 - [パイプラインからオブジェクトを削除する  Where Object](cookbooks/Removing-Objects-from-the-Pipeline--Where-Object-.md)
 - [複数のオブジェクトのタスクを繰り返す  ForEach Object](cookbooks/Repeating-a-Task-for-Multiple-Objects--ForEach-Object-.md)

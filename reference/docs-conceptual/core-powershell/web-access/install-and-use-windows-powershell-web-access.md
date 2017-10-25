@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell Web Access のインストールと使用"
-ms.openlocfilehash: a4b812e2aa32450bc68f761e7b85e8f2ee2b34ee
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 63e25fa2b1fc7c0a2b57763e337c25ece17a3296
+ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 10/13/2017
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Access のインストールと使用
 
@@ -58,10 +58,10 @@ Windows PowerShell Web Access は次のインターネット ブラウザーを�
 
 ### <a name="minimally-tested-mobile-devices-or-browsers"></a>最低限のテストを実施済みのモバイル デバイスまたはブラウザー
 
-- Windows Phone 7 と 7.5
-- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
+- Windows Phone 7 および 7.5
+- Google Android WebKit 3.1 Browser Android 2.2.1 (Kernel 2.6)
 - Apple Safari for iPhone operating system 5.0.1
-- Apple Safari for iPad 2 オペレーティング システム 5.0.1
+- Apple Safari for iPad 2 operating system 5.0.1
 
 ### <a name="browser-requirements"></a>ブラウザーの要件
 

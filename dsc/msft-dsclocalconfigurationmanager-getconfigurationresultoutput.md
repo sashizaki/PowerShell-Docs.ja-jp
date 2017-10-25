@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class" class="xliff"></a>
-
-# MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド
+# <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド
 
 特定のジョブに関連する構成エージェントの出力を取得します。
 
-<a id="syntax" class="xliff"></a>
-
-構文
+<a name="syntax"></a>構文
 ------
 
 ```mof
@@ -29,9 +25,7 @@ uint32 GetConfigurationResultOutput(
 );
 ```
 
-<a id="parameters" class="xliff"></a>
-
-パラメーター
+<a name="parameters"></a>パラメーター
 ----------
 
 *jobId* \[in\]  
@@ -43,31 +37,23 @@ uint32 GetConfigurationResultOutput(
 *output* \[out\]  
 指定されたジョブの出力です。
 
-<a id="return-value" class="xliff"></a>
-
-## 戻り値
+## <a name="return-value"></a>戻り値
 ------------
 
 成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
 
-<a id="remarks" class="xliff"></a>
-
-## コメント
+## <a name="remarks"></a>コメント
 
 これは静的メソッドです。
 
-<a id="requirements" class="xliff"></a>
-
-## 要件
+## <a name="requirements"></a>要件
 ------------
 >**MOF:** DscCore.mof
 
 >**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 
-<a id="see-also" class="xliff"></a>
-
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)

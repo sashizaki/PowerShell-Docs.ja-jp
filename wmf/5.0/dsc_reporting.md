@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="report-configuration-status-to-central-location" class="xliff"></a>
-
-# 構成の状態を中央の場所にレポートする
+# <a name="report-configuration-status-to-central-location"></a>構成の状態を中央の場所にレポートする
 
 DSC 構成の状態について詳細な情報を、DSC サービスを実行しているサーバーに送信できます。 
 

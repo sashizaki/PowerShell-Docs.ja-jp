@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="network-switch-management-with-powershell" class="xliff"></a>
-
-# PowerShell を使用したネットワーク スイッチの管理
+# <a name="network-switch-management-with-powershell"></a>PowerShell を使用したネットワーク スイッチの管理
 
 **Get-NetworkSwitchEthernetPort** コマンドレットはインスタンスで次の追加情報を返します。
 
@@ -20,9 +18,7 @@ ms.lasthandoff: 06/12/2017
 - AccessVLAN: アクセス モードでこのポートに関連付けられた VLAN の ID
 - TrunkedVLANList: トランク モードでこのポートに関連付けられた VLAN の ID 一覧
 
-<a id="fundamental-network-switch-management-with-windows-powershell" class="xliff"></a>
-
-## Windows PowerShell を使用した基本的なネットワーク スイッチの管理
+## <a name="fundamental-network-switch-management-with-windows-powershell"></a>Windows PowerShell を使用した基本的なネットワーク スイッチの管理
 
 WMF 5.0 で導入されたネットワーク スイッチのコマンドレットを使用すると、Windows Server 2012 R2 ロゴ認定を受けたネットワーク スイッチに、スイッチ、仮想 LAN (VLAN)、および基本的なレイヤー 2 ネットワーク スイッチ ポートの構成を適用することができます。 Microsoft では、[データセンター アブストラクション](http://technet.microsoft.com/en-us/cloud/dal.aspx) レイヤー (DAL) のビジョンをサポートし、この領域において顧客とパートナーにもたらされる価値を示すことに努めています。 これらのコマンドレットを使用して、次のことを実行できます。
 

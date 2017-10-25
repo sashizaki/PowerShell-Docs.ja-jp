@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="get-installedscript" class="xliff"></a>
-
-# Get-InstalledScript
+# <a name="get-installedscript"></a>Get-InstalledScript
 
 コンピューター上のインストールされているスクリプトを取得します。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 Get-InstalledScript コマンドレットは、コンピューター上にインストールされている PowerShell スクリプトを取得します。
 
@@ -31,23 +27,17 @@ Get-InstalledScript コマンドレットは、コンピューター上にイン
   - RequiredVersion パラメーターが指定されていない場合、Get-InstalledScript は指定された最小バージョン以上の最新バージョンのインストールされているスクリプトを返すか、または最新バージョンのスクリプトを返します (最小バージョンが指定されていない場合)。 
   - RequiredVersion パラメーターが指定されている場合、Get-InstalledScript は指定したバージョンに完全に一致するバージョンのインストールされているスクリプトのみを返します。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 
 ```powershell
 Get-Command -Name Get-InstalledScript -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Get-InstalledScript](http://go.microsoft.com/fwlink/?LinkId=619790)
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 

@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershell-script-discovery-install-and-management-with-powershellget" class="xliff"></a>
-
-# PowerShellGet による PowerShell スクリプトの検出、インストール、および管理
+# <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>PowerShellGet による PowerShell スクリプトの検出、インストール、および管理
 
 WMF 5.0 RTM リリースでは、PowerShell スクリプト共有機能が PowerShellGet に追加されました。
 次の新しいコマンドレットが PowerShell スクリプトをサポートするために PowerShellGet モジュールに追加されます。

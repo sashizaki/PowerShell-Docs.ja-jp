@@ -9,13 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="separation-of-node-and-configuration-ids" class="xliff"></a>
+# <a name="separation-of-node-and-configuration-ids"></a>ノード ID と構成 ID の分離
 
-# ノード ID と構成 ID の分離
-
-<a id="overview" class="xliff"></a>
-
-## 概要
+## <a name="overview"></a>概要
 
 プル モードで DSC を使う場合の柔軟性を高め、簡素化するために、今回のリリースでいくつかの機能が追加されました。 これらの機能は、複数のノードに構成を容易にセットアップして展開できる柔軟性と同時に、各ノードの状態を追跡して情報を個別にレポートできる機能も実現します。 追加された機能は次のとおりです。
 

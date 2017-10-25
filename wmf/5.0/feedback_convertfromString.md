@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="extract-and-parse-structured-objects-out-of-string" class="xliff"></a>
-
-# 文字列から構造化オブジェクトを抽出して分析する
+# <a name="extract-and-parse-structured-objects-out-of-string"></a>文字列から構造化オブジェクトを抽出して分析する
 これも、ConvertFrom-String コマンドレットに追加機能を導入します。
 
 -   既定では、エクステント テキスト プロパティを削除します。 これを含めるには、-IncludeExtent パラメーターを指定します。
@@ -21,9 +19,7 @@ ms.lasthandoff: 06/12/2017
 -   新しい -UpdateTemplate パラメーターを使って、学習アルゴリズムの結果をテンプレート ファイル内のコメントに保存します。 これにより、学習プロセス (最も時間のかかる段階) が 1 回限りのコストになります。 エンコードされた学習アルゴリズムを含むテンプレートを使って Convert-String を実行すると、ほぼ瞬時に完了します。
 
 
-<a id="extract-and-parse-structured-objects-out-of-string-content" class="xliff"></a>
-
-文字列コンテンツから構造化オブジェクトを抽出して分析する
+<a name="extract-and-parse-structured-objects-out-of-string-content"></a>文字列コンテンツから構造化オブジェクトを抽出して分析する
 ----------------------------------------------------------
 
 Microsoft は、[Microsoft Research](http://research.microsoft.com/) とのコラボレーションにより、新しい **ConvertFrom-String** コマンドレットを追加しました。

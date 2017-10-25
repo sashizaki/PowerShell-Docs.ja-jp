@@ -10,16 +10,12 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="getting-started-with-powershell-desired-state-configuration" class="xliff"></a>
-
-# PowerShell Desired State Configuration の概要 #
+# <a name="getting-started-with-powershell-desired-state-configuration"></a>PowerShell Desired State Configuration の概要 #
 
 このガイドでは、PowerShell Desired State Configuration ドキュメントの作成を開始し、マシンに適用する方法について説明します。 PowerShell コマンドレット、モジュール、および関数の基礎知識があることを前提とします。 
 
 
-<a id="create-a-configuration" class="xliff"></a>
-
-## 構成の作成 ##
+## <a name="create-a-configuration"></a>構成の作成 ##
 
 [**構成**](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)は、環境について説明するドキュメントです。 環境は "**ノード**" で構成され、ノードは通常、仮想マシンまたは物理マシンです。 
 
@@ -42,9 +38,7 @@ configuration MyFirstConfiguration
 
 }
 ```
-<a id="parts-of-a-configuration" class="xliff"></a>
-
-## 構成のパーツ ##
+## <a name="parts-of-a-configuration"></a>構成のパーツ ##
 **Configuration** は、PowerShell 4.0 に追加されたキーワードです。 これは、Desired State Configuration で使用される特別な種類の PowerShell 関数を示します。 この例では、関数の名前は myFirstConfiguration です。 
 
 次の行は、モジュールのインポートと同様のインポート ステートメントです。 これについては後で説明します。

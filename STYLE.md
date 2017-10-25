@@ -1,11 +1,7 @@
-<a id="style-guide-for-powershell-docs" class="xliff"></a>
-
-# PowerShell ドキュメントのスタイル ガイド
+# <a name="style-guide-for-powershell-docs"></a>PowerShell ドキュメントのスタイル ガイド
 
 
-<a id="titlesheadings" class="xliff"></a>
-
-## タイトルと見出し
+## <a name="titlesheadings"></a>タイトルと見出し
 
 * タイトルと見出し (\# によって先頭に追加されたものすべて) の後は必ず改行します
 * タイトルの最初の文字やそのタイトル内の固有名詞のみを大文字にしてください。
@@ -13,9 +9,7 @@
 * リファレンス コンテンツを編集するときは、ビルド エラーの原因となるため、H2 を platyPS で規定し、追加または削除しないでください。
 * (= または \- スタイルヘッダではなく) \# スタイル ヘッダのみを使用してください。
 
-<a id="correct" class="xliff"></a>
-
-### 正
+### <a name="correct"></a>正
 
 ```
 # Header 1
@@ -26,9 +20,7 @@
 
 ```
 
-<a id="incorrect" class="xliff"></a>
-
-### 誤
+### <a name="incorrect"></a>誤
 
 ```
 Header 1
@@ -40,9 +32,7 @@ Header 2
 ### Header 3
 ```
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 
 * 段落でコマンドレットについて説明するときは、\`を使用してコマンドレットを強調表示します
   * 正しい例: この `Write-Host` コマンドレットで可能なのは ...
@@ -62,25 +52,19 @@ Header 2
 * プロパティ名とパラメーター名は**太字**にする必要があります
 * PowerShell コマンドレットは "[Pascal Cased](https://en.wikipedia.org/wiki/PascalCase)" です。 動詞と名詞はハイフンで区切ります。
 
-<a id="lists" class="xliff"></a>
-
-## リスト
+## <a name="lists"></a>リスト
 
 * リストの項目にピリオドをつけないでください。(リストの項目が複数の文を含む場合は除く)
 * リストに複数の文が含まれている場合は、主要なアイデアの下にヘッダー 3/4/5 を使うことを (適用できる場合は) 検討してください
 
-<a id="links" class="xliff"></a>
-
-## リンク
+## <a name="links"></a>リンク
 
 * リンクは常にマークダウンの構文 `[friendlyname](url)` を使用してマークします
 * リンクはわかりやすい名称 (できれば最もふさわしいリンクページのタイトル) にする必要があります
   * **例外**: マイクロソフト以外のサイトのリンクは、URL のみが必要です
 * 下部にある「関連リンク」セクションのすべての項目は、ハイパーリンクにする必要があります。 
 
-<a id="line-breaks" class="xliff"></a>
-
-## 改行
+## <a name="line-breaks"></a>改行
 
 * セマンティックの改行を含める必要があります
 * 各行を 100 文字に制限する必要があります (項目を開く: これを検証するためのツール)

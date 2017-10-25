@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-serviceset-resource" class="xliff"></a>
-
-# DSC ServiceSet リソース
+# <a name="dsc-serviceset-resource"></a>DSC ServiceSet リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -21,9 +19,7 @@ PowerShell Desired State Configuration (DSC) の **ServiceSet** リソースは�
 
 サービスの数を同じ状態に構成するときにこのリソースを使用します。
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 Service [string] #ResourceName
@@ -39,9 +35,7 @@ Service [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -55,9 +49,7 @@ Service [string] #ResourceName
 
 
 
-<a id="example" class="xliff"></a>
-
-## 例
+## <a name="example"></a>例
 
 次の構成で "Windows オーディオ" サービスと "リモート デスクトップ サービス" サービスが開始します。
 

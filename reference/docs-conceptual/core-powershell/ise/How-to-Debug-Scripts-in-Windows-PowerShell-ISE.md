@@ -2,13 +2,14 @@
 ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell ISE でスクリプトをデバッグする方法"
-ms.openlocfilehash: d1019801833e840f3a231f371da1b8d0e5a387b0
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 0ec520dfcba5e4562258256570f140e618e77cdb
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Windows PowerShell ISE でスクリプトをデバッグする方法
+
 このトピックでは、Windows PowerShell Integrated Scripting Environment (ISE) のビジュアル デバッグ機能を使ってローカル コンピューター上でスクリプトをデバッグする方法について説明します。
 
 ## <a name="how-to-manage-breakpoints"></a>ブレークポイントを管理する方法
@@ -35,6 +36,7 @@ Set-PSBreakpoint -Script sample.ps1 -Variable Server
 ```
 
 ### <a name="list-all-breakpoints"></a>すべてのブレークポイントの一覧を表示
+
 現在の Windows PowerShell セッションで設定されているすべてのブレークポイントを表示します。
 
 **[デバッグ]** メニューの **[ブレークポイントの一覧を表示]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) コマンドレットを使ってすべてのブレークポイントの一覧を表示する方法の例を示しています。

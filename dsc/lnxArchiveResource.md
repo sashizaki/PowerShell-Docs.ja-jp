@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-for-linux-nxarchive-resource" class="xliff"></a>
-
-# Linux 用 DSC の nxArchive リソース
+# <a name="dsc-for-linux-nxarchive-resource"></a>Linux 用 DSC の nxArchive リソース
 
 PowerShell Desired State Configuration (DSC) の **nxArchive** リソースは、Linux ノード上の特定のパスでアーカイブ (.tar、.zip) ファイルをアンパックするメカニズムを備えています。
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 nxArchive <string> #ResourceName
@@ -32,9 +28,7 @@ nxArchive <string> #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ |  説明 | 
 |---|---|
@@ -45,9 +39,7 @@ nxArchive <string> #ResourceName
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 | Ensure| アーカイブのコンテンツが **Destination** に存在するかどうかを決定します。 コンテンツが存在することを保証するには、このプロパティを "Present" に設定します。 コンテンツが存在しないことを保証するには、"Absent" に設定します。 既定値は "Present" です。| 
 
-<a id="example" class="xliff"></a>
-
-## 例
+## <a name="example"></a>例
 
 次の例は、**nxArchive** リソースを使用して、`website.tar` というアーカイブ ファイルのコンテンツが指定した宛先に存在し、抽出されていることを保証する方法を示します。
 

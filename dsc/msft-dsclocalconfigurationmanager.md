@@ -10,17 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="msftdsclocalconfigurationmanager-class" class="xliff"></a>
-
-# MSFT_DSCLocalConfigurationManager クラス
+# <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラス
 
 構成ファイルの状態を制御し、構成エージェントを使用してその構成を適用するローカル構成マネージャー (LCM)。
 
 次の構文は管理オブジェクト フォーマット (MOF) のコードを単純化したもので、すべての継承されたプロパティを含みます。
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 ------
 
 ``` syntax
@@ -30,18 +26,14 @@ class MSFT_DSCLocalConfigurationManager
 };
 ```
 
-<a id="members" class="xliff"></a>
-
-## [メンバー]
+## <a name="members"></a>[メンバー]
 -------
 
 **MSFT_DSCLocalConfigurationManager** クラスには次のメンバーがあります。
 
 -   [メソッド][]
 
-<a id="methods" class="xliff"></a>
-
-### メソッド
+### <a name="methods"></a>メソッド
 
 **MSFT_DSCLocalConfigurationManager** クラスでは、次のメソッドを使用できます。
 
@@ -71,9 +63,7 @@ class MSFT_DSCLocalConfigurationManager
 
  
 
-<a id="requirements" class="xliff"></a>
-
-## 要件
+## <a name="requirements"></a>要件
 ------------
 >**MOF:** DscCore.mof
 

@@ -10,18 +10,14 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-service-resource" class="xliff"></a>
-
-# DSC Service リソース
+# <a name="dsc-service-resource"></a>DSC Service リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 
 PowerShell Desired State Configuration (DSC) の **Service** リソースは、ターゲット ノード上でサービスを管理するためのメカニズムを備えています。
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 Service [string] #ResourceName
@@ -39,9 +35,7 @@ Service [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -56,9 +50,7 @@ Service [string] #ResourceName
 | Ensure | ターゲット サービスがシステムに存在するかどうかを示します。 ターゲット サービスが存在しないようにするには、このプロパティを **[Absent]** に設定します。 ターゲットが存在するようにするには、**[Present]** (既定値) に設定します。|
 | パス | 新しいサービスのバイナリ ファイルのパスを示します。| 
 
-<a id="example" class="xliff"></a>
-
-## 例
+## <a name="example"></a>例
 
 ```powershell
 configuration ServiceTest

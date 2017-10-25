@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="frequencies-for-refreshmode-and-configurationmode-dont-need-to-be-multiples-of-each-other" class="xliff"></a>
-
-# RefreshMode と ConfigurationMode の出現頻度は互いの倍数である必要はありません
+# <a name="frequencies-for-refreshmode-and-configurationmode-dont-need-to-be-multiples-of-each-other"></a>RefreshMode と ConfigurationMode の出現頻度は互いの倍数である必要はありません
 
 以前のバージョンの DSC では、LCM は `RefreshFrequencyMins` と `ConfigurationModeFrequencyMins` を互いの倍数として処理します。 WMF 5.0 RTM では、これらのプロパティは互いに独立して処理されます。 
 

@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="installation-instructions" class="xliff"></a>
-
-# インストール手順
+# <a name="installation-instructions"></a>インストール手順
 
 お使いのオペレーティング システムとアーキテクチャに該当する適切なパッケージをダウンロードします。
 

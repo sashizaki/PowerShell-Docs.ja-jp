@@ -2,11 +2,11 @@
 ms.date: 2017-08-23
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell Web Access のアンインストール"
-ms.openlocfilehash: 7c71a245be244c1883598cdcddbf35e43c0fc7b0
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: b6e6a2374e6b4b2be8742019c5f1e4d5b5d1abe3
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Windows PowerShell Web Access をアンインストールする
 
@@ -20,10 +20,8 @@ ms.lasthandoff: 09/08/2017
 
 開始する前に、Web サイトを削除することを Web ベース コンソールのユーザーに通知してください。
 
-
-ゲートウェイ サーバーから Windows PowerShell Web Access をアンインストールする前に、`Uninstall-PswaWebApplication` コマンドレットを実行して Web サイトおよび Windows PowerShell Web Access Web アプリケーションを削除するか、IIS マネージャーの手順「[IIS マネージャーを使って Windows PowerShell Web Access Web サイトおよびアプリケーションを削除するには]()」を実行します。
-
-Windows PowerShell Web Access の実行に必要なため、Windows PowerShell Web Access をアンインストールしても、自動インストールされた IIS その他の機能はアンインストールされません。 アンインストール プロセスでは、Windows PowerShell Web Access が依存する機能はそのまま残されるため、必要に応じて手動でアンインストールしてください。
+Windows PowerShell Web Access の実行に必要なため、Windows PowerShell Web Access をアンインストールしても、自動インストールされた IIS その他の機能はアンインストールされません。
+アンインストール プロセスでは、Windows PowerShell Web Access が依存する機能はそのまま残されるため、必要に応じて手動でアンインストールしてください。
 
 ## <a name="recommended-quick-uninstallation"></a>推奨の (クイック) アンインストール
 

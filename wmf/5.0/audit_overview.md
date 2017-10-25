@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="audit-powershell-usage-using-transcription-and-logging" class="xliff"></a>
-
-# トランスクリプションおよびログを使用した PowerShell の使用状況の監査
+# <a name="audit-powershell-usage-using-transcription-and-logging"></a>トランスクリプションおよびログを使用した PowerShell の使用状況の監査
 
 - [強化されたトランスクリプション オプション](audit_transcript.md)
 - [スクリプトのトレースとログ](audit_script.md)

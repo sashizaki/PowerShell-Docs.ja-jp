@@ -10,34 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="set-psrepository" class="xliff"></a>
-
-# Set-PSRepository
+# <a name="set-psrepository"></a>Set-PSRepository
 
 Set-PSRepository は登録されたリポジトリの値を設定します。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 Set-PSRepository コマンドレットは登録されたモジュール リポジトリの値を設定します。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 
 ```powershell
 Get-Command -Name Set-PSRepository -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Set-PSRepository](http://go.microsoft.com/fwlink/?LinkID=517128)
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 PS C:\> Register-PSRepository -Name myRepository -SourceLocation "https://www.myget.org/F/powershellgetdemo/api/v2" -InstallationPolicy Trusted
@@ -56,9 +46,7 @@ myRepository              Untrusted            https://www.myget.org/F/powershel
 ```
 
 
-<a id="set-psrepository-cmdlet-with-script-sharing-support" class="xliff"></a>
-
-### スクリプト共有がサポートされている Set-PSRepository コマンドレット
+### <a name="set-psrepository-cmdlet-with-script-sharing-support"></a>スクリプト共有がサポートされている Set-PSRepository コマンドレット
 
 **ScriptSourceLocation** および **ScriptPublishLocation** を PSRepository に追加するには、Set-PSRepository コマンドレットを使用します。
 ```powershell

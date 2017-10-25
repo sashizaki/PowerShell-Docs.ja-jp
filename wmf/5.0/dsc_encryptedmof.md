@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="mof-documents-are-encrypted-by-default" class="xliff"></a>
-
-# MOF ドキュメントは既定で暗号化されます
+# <a name="mof-documents-are-encrypted-by-default"></a>MOF ドキュメントは既定で暗号化されます
 
 構成ドキュメントには、機密情報が含まれます。 以前のバージョンの DSC では、構成内の資格情報を保護するために、証明書を配布し、管理する必要がありました。 多くの場合、これは管理上大きな負担となり、多くの作業を行ったとしても、一部の構成情報が保護されないままでした。 
 

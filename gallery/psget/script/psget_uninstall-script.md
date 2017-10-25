@@ -10,34 +10,24 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="uninstall-script" class="xliff"></a>
-
-# Uninstall-Script
+# <a name="uninstall-script"></a>Uninstall-Script
 
 PowerShellGet を使用してインストールされたスクリプト ファイルをアンインストールします。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 Uninstall-Script コマンドレットは、オンライン リポジトリからインストールされた指定したスクリプト ファイルをアンインストールします。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 
 ```powershell
 Get-Command -Name Uninstall-Script -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Uninstall-Script](http://go.microsoft.com/fwlink/?LinkId=619789)
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 Get-InstalledScript | Uninstall-Script -WhatIf

@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="just-enough-administration" class="xliff"></a>
-
-# Just Enough Administration
+# <a name="just-enough-administration"></a>Just Enough Administration
 
 Just Enough Administration (JEA) は、PowerShell で管理できるものすべてに対する委任された管理を有効にするセキュリティ テクノロジです。
 JEA を使用すると、以下のことを実行できます。
@@ -38,9 +36,7 @@ JEA を利用すると、DNS 管理者に管理エンドポイントを構成し
 さらに、JEA セッションが一時的な特権仮想アカウントを使用するように構成されている場合、DNS 管理者は*管理者以外の*資格情報を使用してサーバーに接続できる一方で、一般的には管理者特権を必要とするコマンドも実行できます。
 この機能により、幅広い特権が与えられたローカル/ドメイン管理者ロールからユーザーを削除し、代わりに、各コンピューターでユーザーに許可する操作を慎重に制御できます。
 
-<a id="get-started-with-jea" class="xliff"></a>
-
-## JEA の使用を開始する
+## <a name="get-started-with-jea"></a>JEA の使用を開始する
 
 現在、Windows Server 2016 か Windows 10 を実行しているあらゆるコンピューターで JEA の使用を開始できます。
 JEA は、Windows Management Framework の更新プログラムがインストールしてある以前のオペレーティング システムでも実行できます。
@@ -54,9 +50,7 @@ JEA の使用要件、JEA エンドポイントの作成、使用、監査方法
 - [セキュリティの考慮事項](security-considerations.md) - JEA 構成オプションのセキュリティ ベスト プラクティスとその意味について確認します。
 - [JEA の監査とレポート](audit-and-report.md) - JEA エンドポイントの監査とレポートの方法について説明します。
 
-<a id="samples-and-dsc-resource" class="xliff"></a>
-
-## サンプルと DSC のリソース
+## <a name="samples-and-dsc-resource"></a>サンプルと DSC のリソース
 
 JEA 構成の例と JEA DSC リソースは [JEA GitHub リポジトリ](https://github.com/PowerShell/JEA)で確認できます。
 

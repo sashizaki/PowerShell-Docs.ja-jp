@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="creating-and-connecting-to-a-jea-endpoint" class="xliff"></a>
-
-# JEA エンドポイントの作成および接続
+# <a name="creating-and-connecting-to-a-jea-endpoint"></a>JEA エンドポイントの作成および接続
 JEA エンドポイントを作成するには、特別に構成された PowerShell セッション構成ファイルを作成し、登録する必要があります。このファイルは、**New-PSSessionConfigurationFile** コマンドレットで登録できます。
 
 ```powershell
@@ -143,9 +141,7 @@ JEA セッション構成で使用するには、ロール機能を有効な Pow
 Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
 ```
 
-<a id="connect-to-a-jea-endpoint" class="xliff"></a>
-
-## JEA エンドポイントへの接続
+## <a name="connect-to-a-jea-endpoint"></a>JEA エンドポイントへの接続
 JEA エンドポイントへの接続は、他の PowerShell エンドポイントへの接続と同じように機能します。  **New-PSSession**、**Invoke-Command**、または **Enter-PSSession** の "ConfigurationName" パラメーターとして JEA エンドポイント名を付けることのみが必要です。
 
 ```powershell

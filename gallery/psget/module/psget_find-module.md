@@ -10,14 +10,10 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="find-module" class="xliff"></a>
-
-# Find-Module
+# <a name="find-module"></a>Find-Module
 指定した条件に一致するオンライン ギャラリーからモジュールを検索します。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 Find-Module は、指定した条件に一致する登録されているリポジトリからモジュールを検出します。
 検出される各モジュールに対し、Find-Module は、モジュールをインストールするための Install-Module に必要に応じてパイプできる PSRepositoryItemInfo オブジェクトを返します。
 
@@ -31,22 +27,16 @@ Find-Module は、指定した条件に一致する登録されているリポ�
 - Find-Module では、-Filter パラメーターを使用してリポジトリ固有の検索言語をフィルター処理できます。
 - Find-Module では、登録されているリポジトリのすべてまたは一部からモジュール上でフィルター処理できます。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 ```powershell
 Get-Command -Name Find-Module -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Find-Module](http://go.microsoft.com/fwlink/?LinkID=398574)
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 ```powershell
 # Find a specific module
 Find-Module Azure

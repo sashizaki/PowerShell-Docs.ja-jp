@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="update-scriptfileinfo" class="xliff"></a>
-
-# Update-ScriptFileInfo
+# <a name="update-scriptfileinfo"></a>Update-ScriptFileInfo
 
 Update-ScriptFileInfo コマンドレットでは、既存のスクリプト ファイルのメタデータを更新できます。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 Update-ScriptFileInfo コマンドレットは、スクリプトの情報を更新します。
 - Update-ScriptFileInfo コマンドレットは、スクリプト ファイルが New-ScriptFileInfo コマンドレットを使用して作成された場合、または有効な PSScriptInfo コメントを指定して作成された場合に、そのメタデータを更新します。
@@ -26,22 +22,16 @@ Update-ScriptFileInfo コマンドレットは、スクリプトの情報を更�
 - –Force が指定されている場合は、New-ScriptFileInfo コマンドレットを使用して作成されていない既存のスクリプト ファイルにメタデータを追加します。
 - Test-ScriptFileInfo が解析エラーで失敗する場合は、既存のスクリプト ファイルの前にメタデータを追加すると、"メタデータを既存のファイルに追加できません。New-ScriptFileInfo コマンドレットを使用して作成されていない既存のスクリプト ファイルにメタデータを追加するには、new-scriptfileinfo コマンドレットを使用できます。" というようなエラーがスローされます。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 
 ```powershell
 Get-Command -Name Update-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Update-Script](http://go.microsoft.com/fwlink/?LinkId=619793)
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 # Use Update-ScriptFileInfo cmdlet to update the script metadata
@@ -55,9 +45,7 @@ Version Name Author Description
 ```
 
 
-<a id="adding-the-script-metadata-to-the-existing-script-file" class="xliff"></a>
-
-### 既存のスクリプト ファイルへのスクリプト メタデータの追加
+### <a name="adding-the-script-metadata-to-the-existing-script-file"></a>既存のスクリプト ファイルへのスクリプト メタデータの追加
 
 ```powershell
 PS C:\WINDOWS\system32> New-ScriptFileInfo -Description "Script file description." -PassThru

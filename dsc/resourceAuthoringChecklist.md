@@ -10,13 +10,9 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="resource-authoring-checklist" class="xliff"></a>
-
-# リソース作成のチェックリスト
+# <a name="resource-authoring-checklist"></a>リソース作成のチェックリスト
 このチェックリストは、新しい DSC リソースを作成するときのベスト プラクティスの一覧です。
-<a id="resource-module-contains-psd1-file-and-schemamof-for-every-resource" class="xliff"></a>
-
-## リソース モジュールにすべてのリソースの .psd1 ファイルと schema.mof が含まれている 
+## <a name="resource-module-contains-psd1-file-and-schemamof-for-every-resource"></a>リソース モジュールにすべてのリソースの .psd1 ファイルと schema.mof が含まれている 
 リソースが正しい構造であり、必要なすべてのファイルが含まれていることを確認します。 すべてのリソース モジュールには .psd1 ファイルが含まれている必要があり、すべて非複合リソースには .schema.mof ファイルが含まれている必要があります。 スキーマが含まれていないリソースは **Get-DscResource** によって一覧表示されず、ユーザーは ISE でこれらのモジュールに対してコードを記述するときに IntelliSense を使用できません。 [xPSDesiredStateConfiguration リソース モジュール](https://github.com/PowerShell/xPSDesiredStateConfiguration)の一部である xRemoteFile リソースのディレクトリ構造は、次のようになります。
 
 
@@ -35,9 +31,7 @@ xPSDesiredStateConfiguration
     xPSDesiredStateConfiguration.psd1
 ```
 
-<a id="resource-and-schema-are-correct" class="xliff"></a>
-
-## リソースとスキーマが正しい ##
+## <a name="resource-and-schema-are-correct"></a>リソースとスキーマが正しい ##
 リソース スキーマ (*.schema.mof) ファイルを確認します。 [DSC リソース デザイナー](https://www.powershellgallery.com/packages/xDSCResourceDesigner/)をスキーマの開発と試験に利用できます。 次のことを確認します。
 - プロパティの型が正しい (たとえば、数値を受け入れるプロパティには文字列を使用せず、UInt32 またはその他の数値型を代わりに使用する必要があります)
 - プロパティの属性が正しく指定されている ([key]、[required]、[write]、[read])
@@ -69,9 +63,7 @@ Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-<a id="resource-loads-without-errors" class="xliff"></a>
-
-## リソースがエラーなしで読み込まれる ##
+## <a name="resource-loads-without-errors"></a>リソースがエラーなしで読み込まれる ##
 リソース モジュールを正常に読み込めるか確認します。
 これは、手動で実行する (`Import-Module <resource_module> -force ` を実行してエラーが発生しないことを確認する) か、自動テストを作成して実行することができます。 後者の場合は、テスト ケースで次の構造に従うことができます。
 ```powershell
@@ -81,9 +73,7 @@ If ($error.count –ne 0) {
     Throw “Module was not imported correctly. Errors returned: $error”
 }
 ```
-<a id="resource-is-idempotent-in-the-positive-case" class="xliff"></a>
-
-## 正の場合、リソースはべき等である 
+## <a name="resource-is-idempotent-in-the-positive-case"></a>正の場合、リソースはべき等である 
 DSC リソースの基本的な特性の 1 つにべき等性があります。 つまり、そのリソースを含む DSC 構成を複数回適用したとき、常に同じ結果が得られます。 たとえば、次の File リソースを含む構成を作成するとします。
 ```powershell
 File file {
@@ -95,9 +85,7 @@ File file {
 リソースがべき等であることを確認するには、リソースを直接テストする場合は **Set-TargetResource** を繰り返し呼び出し、エンド ツー エンド テストを実行する場合は **Start-DscConfiguration** を複数回呼び出します。 実行するたびに結果が同じである必要があります。 
 
 
-<a id="test-user-modification-scenario" class="xliff"></a>
-
-## ユーザー変更シナリオのテスト ##
+## <a name="test-user-modification-scenario"></a>ユーザー変更シナリオのテスト ##
 コンピューターの状態を変更し、DSC を再実行することで、**Set-TargetResource** と **Test-TargetResource** が適切に機能することを確認できます。 実行する手順を次に示します。
 1.  目的の状態でないリソースで開始します。
 2.  リソースで構成を実行します。
@@ -113,36 +101,24 @@ File file {
 
 Get-TargetResource は、リソースの現在の状態の詳細を返す必要があります。 構成を適用した後に Get-DscConfiguration を呼び出し、出力がマシンの現在の状態を正しく反映していることを検証することによってテストします。 この領域の問題は Start-DscConfiguration の呼び出し時には出現しないため、個別にテストすることが重要です。
 
-<a id="call-getsettest-targetresource-functions-directly" class="xliff"></a>
-
-## **Get/Set/Test-TargetResource** 関数を直接呼び出す ##
+## <a name="call-getsettest-targetresource-functions-directly"></a>**Get/Set/Test-TargetResource** 関数を直接呼び出す ##
 
 リソースに実装されている **Get/Set/Test-TargetResource** 関数をテストするには、それらを直接呼び出し、期待どおりに動作することを確認します。
 
-<a id="verify-end-to-end-using-start-dscconfiguration" class="xliff"></a>
-
-## **Start-DscConfiguration** を使用してエンド ツー エンドで確認する ##
+## <a name="verify-end-to-end-using-start-dscconfiguration"></a>**Start-DscConfiguration** を使用してエンド ツー エンドで確認する ##
 
 直接呼び出すことによって **Get/Set/Test-TargetResource** 関数をテストすることは重要ですが、この方法ですべての問題が検出されるわけではありません。 テストにおいては、**Start-DscConfiguration** やプル サーバーの使用に関する部分を重視する必要があります。 これはユーザーが実際にリソースを使用する方法であり、この種類のテストの重要性を過小評価しないようにしてください。 可能性がある問題の種類:
 - DSC エージェントはサービスとして実行されるため、資格情報またはセッションの動作が異なる可能性があります。  機能は必ずエンド ツー エンドでテストしてください。
 - **Start-DscConfiguration** によるエラー出力は、**Set-TargetResource** 関数を直接呼び出したときに表示されるものとは異なる場合があります。
 
-<a id="test-compatability-on-all-dsc-supported-platforms" class="xliff"></a>
-
-## すべての DSC 対応プラットフォームで互換性を試験する ##
+## <a name="test-compatability-on-all-dsc-supported-platforms"></a>すべての DSC 対応プラットフォームで互換性を試験する ##
 リソースは、DSC がサポートされているすべてのプラットフォーム (Windows Server 2008 R2 以降) で動作する必要があります。 DSC の最新バージョンを取得するには、OS に最新の WMF (Windows Management Framework) をインストールします。 リソースがこれらのプラットフォームの一部で動作しないことが意図的である場合は、特定のエラー メッセージが返される必要があります。 また、リソースで、呼び出すコマンドレットが特定のマシン上に存在するかどうかがチェックされることも確認します。 Windows Server 2012 には、WMF がインストールされていても Windows Server 2008R2では使用できない多数の新しいコマンドレットが追加されています。 
 
-<a id="verify-on-windows-client-if-applicable" class="xliff"></a>
-
-## (該当する場合) Windows クライアントで確認する ##
+## <a name="verify-on-windows-client-if-applicable"></a>(該当する場合) Windows クライアントで確認する ##
 非常に一般的なテスト不足の 1 つは、Windows のサーバー バージョンでのみリソースを検証することです。 多くのリソースはクライアント SKU でも動作するように設計されているため、その場合は、これらのプラットフォームでも必ずテストします。 
-<a id="get-dscresource-lists-the-resource" class="xliff"></a>
-
-## Get-DscResource でリソースが一覧表示される ##
+## <a name="get-dscresource-lists-the-resource"></a>Get-DscResource でリソースが一覧表示される ##
 モジュールを展開した後、Get-DscResource を呼び出すと、結果として他のリソースが一覧表示される必要があります。 一覧にリソースが見つからない場合は、そのリソースの schema.mof ファイルが存在することを確認します。 
-<a id="resource-module-contains-examples" class="xliff"></a>
-
-## リソース モジュールに例が含まれている ##
+## <a name="resource-module-contains-examples"></a>リソース モジュールに例が含まれている ##
 他のユーザーが使い方を理解できるように質の高いサンプルを作成します。 多くのユーザーはサンプル コードをドキュメントとして扱うため、特に、このことは重要です。 
 - 最初に、モジュールに含める例を決定する必要があります。少なくとも、リソースの最も重要なユース ケースを反映する必要があります。
 - エンド ツー エンドのシナリオで連携して動作する必要がある複数のリソースがモジュールに含まれる場合、基本的なエンド ツー エンドの例を最初に配置することをお勧めします。
@@ -200,9 +176,7 @@ Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg"
 - 各例で、実行内容を示す簡単な説明と、パラメーターの意味を記述します。 
 - リソースのほとんどの重要なシナリオが例でカバーされていることを確認し、不足がない場合は、すべてが実行され、マシンを目的の状態にすることを検証します。  
 
-<a id="error-messages-are-easy-to-understand-and-help-users-solve-problems" class="xliff"></a>
-
-## エラー メッセージは、わかりやすく、ユーザーが問題を解決するために役立つものである ##
+## <a name="error-messages-are-easy-to-understand-and-help-users-solve-problems"></a>エラー メッセージは、わかりやすく、ユーザーが問題を解決するために役立つものである ##
 優れたエラー メッセージとは、次のようなものです。
 - 存在する: エラー メッセージに関する最大の問題は、存在しないことがよくあるということです。メッセージが必ず存在するようにします。 
 - わかりやすい: 人間が判読できる、明瞭なエラー コード。
@@ -210,9 +184,7 @@ Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg"
 - 建設的である: 問題を解決する方法を助言します。
 - 礼儀正しい: ユーザーを非難したり、見下したりしません。エラーはリソース機能を直接実行したときに返されるものとは異なる可能性があるため、エンド ツー エンドのシナリオで (**Start-DscConfiguration** を使用して) エラーを確認します。 
 
-<a id="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs" class="xliff"></a>
-
-## ログ メッセージは、わかりやすく、有益な情報が含まれている (-verbose、-debug、および ETW ログを含む) ##
+## <a name="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs"></a>ログ メッセージは、わかりやすく、有益な情報が含まれている (-verbose、-debug、および ETW ログを含む) ##
 リソースによって出力されるログがわかりやすく、ユーザーにとって価値のあるものであることを確認します。 リソースは、ユーザーに役立つ可能性のあるすべての情報を出力する必要がありますが、常にログが多い方がよいとは限りません。 冗長性および付加価値を提供しないデータを出力することは避ける必要があります。求めている情報を探して何百ものログ エントリを確認する必要がないようにします。 もちろん、ログを出力しないことはこの問題に対する適切な解決策ではありません。 
 
 テストする場合は、詳細ログとデバッグ ログ (**Start-DscConfiguration** を -verbose および -debug スイッチを適切に指定して実行する)、および ETW ログも分析する必要があります。 DSC ETW ログを確認するには、イベント ビューアーに移動し、次のフォルダーを開きます。Applications and Services- Microsoft - Windows - Desired State Configuration。  既定では稼動チャネルがありますが、構成を実行する前に分析チャネルとデバッグ チャネルを有効にします。 分析/デバッグ チャネルを有効にするには、次のスクリプトを実行できます。
@@ -229,9 +201,7 @@ if($statusEnabled -eq $log.IsEnabled)
 }     
 Invoke-Expression $commandToExecute 
 ```
-<a id="resource-implementation-does-not-contain-hardcoded-paths" class="xliff"></a>
-
-## リソースの実装にハードコードされたパスが含まれていない ##
+## <a name="resource-implementation-does-not-contain-hardcoded-paths"></a>リソースの実装にハードコードされたパスが含まれていない ##
 リソースの実装にハードコードされたパスがないことを確認します (特に、それらが言語 (en-us) を想定する場合、または使用できるシステム変数がある場合)。
 リソースが特定のパスにアクセスする必要がある場合、パスは他のコンピューターでは異なる可能性があるため、パスをハードコーディングする代わりに環境変数を使用します。
 
@@ -247,13 +217,9 @@ $programFilesPath = "C:\Program Files (x86)"
 $tempPath = Join-Path $env:temp "MyResource"
 $programFilesPath = ${env:ProgramFiles(x86)} 
 ```
-<a id="resource-implementation-does-not-contain-user-information" class="xliff"></a>
-
-## リソースの実装にユーザー情報が含まれていない ##
+## <a name="resource-implementation-does-not-contain-user-information"></a>リソースの実装にユーザー情報が含まれていない ##
 コード内に電子メール名、アカウント情報、または、ユーザーの名前がないことを確認します。
-<a id="resource-was-tested-with-validinvalid-credentials" class="xliff"></a>
-
-## リソースが有効/無効な資格情報を使用してテストされている ##
+## <a name="resource-was-tested-with-validinvalid-credentials"></a>リソースが有効/無効な資格情報を使用してテストされている ##
 リソースが資格情報をパラメーターとして受け取る場合:
 - ローカル システム (またはリモート リソースのコンピューター アカウント) にアクセスがない場合に、リソースが動作することを確認します。
 - Get、Set、および Test に指定された資格情報でリソースが動作することを検証します。 
@@ -262,26 +228,18 @@ $programFilesPath = ${env:ProgramFiles(x86)}
   - DFS 共有。
   - SAMBA 共有 (Linux をサポートする場合)。
 
-<a id="resource-does-not-require-interactive-input" class="xliff"></a>
-
-## リソースには対話型の入力は不要です。 ##
+## <a name="resource-does-not-require-interactive-input"></a>リソースには対話型の入力は不要です。 ##
 **Get/Set/Test-TargetResource** 関数は自動的に実行される必要があり、実行のいずれの段階でもユーザーの入力を待機することはできません (たとえば、これらの関数内で **Get-Credential** を使用することはできません)。 ユーザーの入力を提供する必要がある場合は、コンパイル フェーズ中にパラメーターとして構成に渡す必要があります。 
-<a id="resource-functionality-was-thoroughly-tested" class="xliff"></a>
-
-## リソース機能が十分にテストされている ##
+## <a name="resource-functionality-was-thoroughly-tested"></a>リソース機能が十分にテストされている ##
 このチェックリストには、テストする必要がある重要な項目や見落とされがちな項目が含まれています。 一連のテスト (テストするリソースに固有であり、ここに記載されていない、主に機能のテスト) があります。 負のテスト ケースを忘れないでください。 
-<a id="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script" class="xliff"></a>
-
-## ベスト プラクティス: リソース モジュールに、ResourceDesignerTests.ps1 スクリプトを含む Test フォルダーが含まれている ##
+## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>ベスト プラクティス: リソース モジュールに、ResourceDesignerTests.ps1 スクリプトを含む Test フォルダーが含まれている ##
 リソース モジュール内に "Test" フォルダーを作成し、ResourceDesignerTests.ps1 ファイルを作成し、指定したモジュール内のすべてのリソースに対して **Test-xDscResource** と **Test-xDscSchema** を使用してテストを追加することをお勧めします。 この方法で、指定したモジュールのすべてのリソースのスキーマをすばやく検証し、発行する前にサニティ チェックを実行できます。
 xRemoteFile の場合、ResourceTests.ps1 は次のように単純になります。
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof 
 ```
-<a id="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema" class="xliff"></a>
-
-##ベスト プラクティス: リソース フォルダーにスキーマを生成するためのリソース デザイナー スクリプトが含まれている ##
+##<a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>ベスト プラクティス: リソース フォルダーにスキーマを生成するためのリソース デザイナー スクリプトが含まれている ##
 各リソースに、リソースの mof スキーマを生成する、リソース デザイナー スクリプトを含める必要があります。 このファイルは、<ResourceName>\ResourceDesignerScripts に配置し、Generate<ResourceName>Schema.ps1 という名前を付ける必要があります。xRemoteFile リソースの場合、このファイルの名前は GenerateXRemoteFileSchema.ps1 となり、次の内容が含まれます。
 ```powershell 
 $DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
@@ -294,9 +252,7 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile 
 ```
-<a id="best-practice-resource-supports--whatif" class="xliff"></a>
-
-## ベスト プラクティス: リソースによる -whatif のサポート ##
+## <a name="best-practice-resource-supports--whatif"></a>ベスト プラクティス: リソースによる -whatif のサポート ##
 リソースが "危険な" 操作を実行する場合は、-whatif 機能を実装することをお勧めします。 完了したら、whatif スイッチを使用しないでコマンドが実行された場合にどのようなことが発生するかについて、whatif 出力で正しく記述されていることを確認します。
 また、-whatif スイッチが存在する場合は、その操作が実行されない (ノードの状態の変更は行われない) ことも確認します。 たとえば、File リソースをテストすると仮定します。 "test" の内容を持つファイル "test.txt" を作成する単純な構成を次に示します。
 ```powershell

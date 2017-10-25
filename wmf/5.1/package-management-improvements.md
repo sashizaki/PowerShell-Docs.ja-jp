@@ -11,18 +11,12 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="improvements-to-package-management-in-wmf-51" class="xliff"></a>
+# <a name="improvements-to-package-management-in-wmf-51"></a>WMF 5.1# のパッケージ管理の機能強化
 
-# WMF 5.1# のパッケージ管理の機能強化
-
-<a id="improvements-in-packagemanagement" class="xliff"></a>
-
-## パッケージ管理の機能強化 ##
+## <a name="improvements-in-packagemanagement"></a>パッケージ管理の機能強化 ##
 WMF 5.1 で行われた修正: 
 
-<a id="version-alias" class="xliff"></a>
-
-### バージョン エイリアス
+### <a name="version-alias"></a>バージョン エイリアス
 
 **シナリオ**: パッケージ P1 のバージョン 1.0 および 2.0 がシステムにインストールされていて、バージョン 1.0 をアンインストールしたい場合、`Uninstall-Package -Name P1 -Version 1.0` を実行し、このコマンドレットを実行するとバージョン 1.0 がアンインストールされるものと期待します。 しかし、結果はバージョン 2.0 がアンインストールされます。  
     
@@ -30,9 +24,7 @@ WMF 5.1 で行われた修正:
     
 **解決策**: PackageManagement (別名 OneGet) および PowerShellGet で `-Version` エイリアス全体を削除しました 。 
 
-<a id="multiple-prompts-for-bootstrapping-the-nuget-provider" class="xliff"></a>
-
-### NuGet プロバイダーのブートストラップに対する複数のプロンプト
+### <a name="multiple-prompts-for-bootstrapping-the-nuget-provider"></a>NuGet プロバイダーのブートストラップに対する複数のプロンプト
 
 **シナリオ**: `Find-Module`、`Install-Module` または他の PackageManagement コマンドレットをコンピューターで初めて実行すると、PackageManagement は NuGet プロバイダーをブートストラップしようとします。 これは、PowerShellGet プロバイダーは PowerShell モジュールをダウンロードするために NuGet プロバイダーも使用するためです。 そのとき、PackageManagement は NuGet プロバイダーをインストールする許可をユーザーに求めます。 ユーザーがブートストラップに対して "はい" を選択すると、最新バージョンの NuGet プロバイダーがインストールされます。 
     
@@ -43,9 +35,7 @@ WMF 5.1 で行われた修正:
 この問題を回避策することもできます。古いバージョンの NuGet プロバイダー (NuGet-Anycpu.exe) が存在する場合は、$env:ProgramFiles\PackageManagement\ProviderAssemblies または $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies から手動で削除します。
 
 
-<a id="support-for-packagemanagement-on-computers-with-intranet-access-only" class="xliff"></a>
-
-### イントラネット アクセスのみのコンピューターでの PackageManagement のサポート
+### <a name="support-for-packagemanagement-on-computers-with-intranet-access-only"></a>イントラネット アクセスのみのコンピューターでの PackageManagement のサポート
 
 **シナリオ**: エンタープライズのシナリオで、ユーザーはイントラネットのみでインターネット アクセスのない環境で作業しています。 PackageManagement は WMF 5.0 でこのケースをサポートしていませんでした。
 
@@ -60,24 +50,18 @@ WMF 5.1 で行われた修正:
 3. イントラネット コンピューターがアクセスできるフォルダーまたはネットワーク共有の場所にバイナリをコピーし、`Install-PackageProvider -Name NuGet -Source <Path to folder>` を使用して NuGet プロバイダーをインストールします。
 
 
-<a id="event-logging-improvements" class="xliff"></a>
-
-### イベント ログの機能強化
+### <a name="event-logging-improvements"></a>イベント ログの機能強化
 
 パッケージをインストールすると、コンピューターの状態が変化します。 WMF 5.1 の PackageManagement は、`Install-Package`、`Uninstall-Package`、`Save-Package` アクティビティのイベントを Windows イベント ログに記録するようになりました。 イベント ログは PowerShell の場合と同じで、`Microsoft-Windows-PowerShell, Operational` です。
 
-<a id="support-for-basic-authentication" class="xliff"></a>
-
-### 基本認証のサポート
+### <a name="support-for-basic-authentication"></a>基本認証のサポート
 
 WMF 5.1 の PackageManagement は、基本認証を必要とするリポジトリからのパッケージの検索とインストールをサポートします。 `Find-Package` および `Install-Package` コマンドレットに資格情報を渡すことができます。 たとえば、次のように入力します。
 
 ``` PowerShell
 Find-Package -Source <SourceWithCredential> -Credential (Get-Credential)
 ```
-<a id="support-for-using-packagemanagement-behind-a-proxy" class="xliff"></a>
-
-### プロキシの背後での PackageManagement の使用のサポート
+### <a name="support-for-using-packagemanagement-behind-a-proxy"></a>プロキシの背後での PackageManagement の使用のサポート
 
 WMF 5.1 の PackageManagement は、新しいプロキシ パラメーター `-ProxyCredential` と `-Proxy` を受け取るようになりました。 これらのパラメーターを使用すると、プロキシの URL と資格情報を PackageManagement コマンドレットに対して指定できます。 既定では、システムのプロキシ設定が使用されます。 たとえば、次のように入力します。
 

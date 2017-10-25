@@ -10,17 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="using-jea" class="xliff"></a>
-
-# JEA の使用
+# <a name="using-jea"></a>JEA の使用
 
 > 適用先: Windows PowerShell 5.0
 
 このトピックでは、JEA エンドポイントに接続して使うさまざまな方法について説明します。
 
-<a id="using-jea-interactively" class="xliff"></a>
-
-## JEA を対話的に使う
+## <a name="using-jea-interactively"></a>JEA を対話的に使う
 
 JEA の構成をテストする場合、またはユーザーが実行する単純なタスクがある場合は、通常の PowerShell リモート処理セッションと同じ方法で JEA を使用できます。
 複雑なリモート処理タスクの場合は、代わりに[暗黙的なリモート処理](#using-jea-with-implicit-remoting)を使って、データ オブジェクトをローカルに操作することをユーザーに許可することで、ユーザーが容易にタスクを実行できるようにすることをお勧めします。
@@ -64,9 +60,7 @@ Start-VM -VMName 'SQL01'
 
 この方法が難しくなるさらに複雑なコマンド呼び出しの場合は、[暗黙的なリモート処理](#using-jea-with-implicit-remoting)を使うか、または必要な機能をラップする[カスタム関数の作成](role-capabilities.md#creating-custom-functions)を検討します。
 
-<a id="using-jea-with-implicit-remoting" class="xliff"></a>
-
-## 暗黙的なリモート処理での JEA の使用
+## <a name="using-jea-with-implicit-remoting"></a>暗黙的なリモート処理での JEA の使用
 
 PowerShell がサポートする代替リモート処理モデルでは、ローカル コンピューター上のリモート コンピューターからプロキシ コマンドレットをインポートして、ローカル コマンドの場合と同じように対話できます。
 これは暗黙的なリモート処理と呼ばれ、[この *Hey, Scripting Guy!* ブログ投稿](https://blogs.technet.microsoft.com/heyscriptingguy/2013/09/08/remoting-the-implicit-way/)でわかりやすく説明されています。
@@ -115,9 +109,7 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 また、[Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession) を使って、暗黙的なリモート処理からプロキシされたコマンドレットを保持することもできます。
 暗黙的なリモート処理の詳細については、[Import-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) および [Import-Module](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/import-module) のヘルプ ドキュメントをご覧ください。
 
-<a id="using-jea-programatically" class="xliff"></a>
-
-## JEA のプログラムでの使用
+## <a name="using-jea-programatically"></a>JEA のプログラムでの使用
 
 JEA は、社内ヘルプデスク アプリや Web サイトなどのオートメーション システムやユーザー アプリケーションでも使用できます。
 方法は制約のない PowerShell エンドポイントと対話するアプリの作成と同じですが、JEA ではリモート セッションで実行できるコマンドが制限されることに注意する必要があります。
@@ -175,9 +167,7 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 }
 ```
 
-<a id="using-jea-with-powershell-direct" class="xliff"></a>
-
-## PowerShell Direct での JEA の使用
+## <a name="using-jea-with-powershell-direct"></a>PowerShell Direct での JEA の使用
 
 Windows 10 と Windows Server 2016 の Hyper-V には [PowerShell Direct](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession) 機能があります。Hyper-V 管理者はこの機能を使用して、仮想マシンのネットワーク構成やリモート管理設定に関係なく、PowerShell で仮想マシンを管理できます。
 

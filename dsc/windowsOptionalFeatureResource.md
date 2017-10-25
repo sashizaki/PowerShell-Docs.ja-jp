@@ -10,17 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/26/2017
 ---
-<a id="dsc-windowsoptionalfeature-resource" class="xliff"></a>
-
-# DSC WindowsOptionalFeature リソース
+# <a name="dsc-windowsoptionalfeature-resource"></a>DSC WindowsOptionalFeature リソース
 
 > 適用先: Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) の **WindowsOptionalFeature** リソースは、オプション機能をターゲット ノードで有効にするためのメカニズムを備えています。
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 WindowsOptionalFeature [string] #ResourceName
@@ -37,9 +33,7 @@ WindowsOptionalFeature [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 

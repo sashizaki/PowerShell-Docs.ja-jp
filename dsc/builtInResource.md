@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="built-in-windows-powershell-desired-state-configuration-resources" class="xliff"></a>
-
-# Windows PowerShell Desired State Configuration の組み込みリソース
+# <a name="built-in-windows-powershell-desired-state-configuration-resources"></a>Windows PowerShell Desired State Configuration の組み込みリソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 

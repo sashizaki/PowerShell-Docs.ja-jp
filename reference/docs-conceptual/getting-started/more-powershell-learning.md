@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "PowerShell の詳細情報"
-ms.openlocfilehash: c1bc3c25c34aa4501eae15fb2b4f629a77e90006
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 32d7006010a4808a77d9800ec77c4352213d12b9
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="more-powershell-learning"></a>PowerShell の詳細情報
 
@@ -18,8 +18,8 @@ PowerShell の詳細に関する他の情報源
 
 - [Windows PowerShell チーム ブログ](http://blogs.msdn.com/b/powershell/)。 Windows PowerShell 製品チームから直接学ぶのに最適なリソースです。
 - [Windows PowerShell カスタマー コネクション](http://Connect.Microsoft.com/PowerShell)。 Windows PowerShell チームに対して提案したり、フィードバックやバグ情報を送信したりします。 コードのバグ、ドキュメントのバグ、またはローカライズ (翻訳) のバグについての情報を送信できます。
-- [Hey, Scripting Guy!ブログ](http://www.scriptingguys.com/blog) では、毎日新しいコンテンツが公開され、常に Microsoft ブログ全体の 5 位以内にランク付けされています。 記事はシナリオに基づいており、魅力的で活気のある書き方で書かれています。
-- 「[PowerShell について学ぶ](http://www.scriptingguys.com/learnpowershell)」ページは、TechNet スクリプト センターにおける Windows PowerShell の拠点です。 このページでは、Microsoft Scripting Guy Ed Wilson 氏による一連の初心者向けビデオ セッションを主催しています。 また、Windows PowerShell のクイズ、コミュニティ コンテンツへのリンクなども含まれています。
+- [Hey, Scripting Guy!ブログ](https://blogs.technet.microsoft.com/heyscriptingguy/) では、毎日新しいコンテンツが公開され、常に Microsoft ブログ全体の 5 位以内にランク付けされています。 記事はシナリオに基づいており、魅力的で活気のある書き方で書かれています。
+- 「[PowerShell について学ぶ](https://blogs.technet.microsoft.com/heyscriptingguy/2015/01/04/weekend-scripter-the-best-ways-to-learn-powershell/)」ページは、TechNet スクリプト センターにおける Windows PowerShell の拠点です。 このページでは、Microsoft Scripting Guy Ed Wilson 氏による一連の初心者向けビデオ セッションを主催しています。 また、Windows PowerShell のクイズ、コミュニティ コンテンツへのリンクなども含まれています。
 - Windows PowerShell の使用に関する質問はありませんか。 [Scripting Guys 公式フォーラム](http://social.technet.microsoft.com/forums/itcg/threads/)で同様の関心を持つ多数の他のユーザーとつながってください。
 - [Microsoft スクリプト センター](https://technet.microsoft.com/scriptcenter)。 [スクリプト センター リポジトリ](http://gallery.technet.microsoft.com/scriptcenter/)など、多数の役立つ Windows PowerShell のリソースのポータルです。 スクリプトを学ぶのに最も良い方法の 1 つは、実際の使用例を見ることです。 Windows PowerShell の数千のスクリプトを検索してください。いずれもすぐに評価でき、ニーズに合わせて適応できる状態になっています。
 - Windows PowerShell ユーザー コミュニティに参加してください。 [スクリプト センター コミュニティ ページ](https://technet.microsoft.com/scriptcenter/hh182567.aspx)を参照してください。ここには多数の Windows PowerShell ユーザーのグループがあります。お客様に近いものが 1 つはあるでしょう。 また、Microsoft Scripting Guy のコミュニティ活動を最新の情報に維持できます。

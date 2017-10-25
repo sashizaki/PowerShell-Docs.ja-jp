@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-temporaryfile" class="xliff"></a>
-
-# New-TemporaryFile
+# <a name="new-temporaryfile"></a>New-TemporaryFile
 スクリプトでは、ときおり、一時ファイルを作成する必要があります。 **New-TemporaryFile** コマンドレットを使うと、簡単に作成できます。
 
 PS C:\\&gt; $tempFile = New-TemporaryFile

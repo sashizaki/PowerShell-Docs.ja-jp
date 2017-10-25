@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/29/2017
 ---
-<a id="using-the-resource-designer-tool" class="xliff"></a>
-
-# リソース デザイナー ツールの使用
+# <a name="using-the-resource-designer-tool"></a>リソース デザイナー ツールの使用
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -22,9 +20,7 @@ ms.lasthandoff: 06/29/2017
 
 >**注**: **Install-Module** は、PowerShell 5.0 に含まれている **PowerShellGet** モジュールに含まれています。 「[PackageManagement PowerShell Modules Preview (PackageManagement PowerShell モジュールのプレビュー)](https://www.microsoft.com/en-us/download/details.aspx?id=49186)」で PowerShell 3.0 と 4.0 の **PowerShellGet** モジュールをダウンロードできます。
 
-<a id="creating-resource-properties" class="xliff"></a>
-
-## リソース プロパティの作成
+## <a name="creating-resource-properties"></a>リソース プロパティの作成
 まず、リソースで公開するプロパティを決定する必要があります。 この例では、次のプロパティを持つ Active Directory ユーザーを定義します。
  
 パラメーター名  説明
@@ -42,9 +38,7 @@ $DomainCredential = New-xDscResourceProperty –Name DomainCredential-Type PSCre
 $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
 
-<a id="create-the-resource" class="xliff"></a>
-
-## リソースの作成
+## <a name="create-the-resource"></a>リソースの作成
 
 リソース プロパティが作成されたので、**New-xDscResource** コマンドレットを呼び出してリソースを作成できます。 **New-xDscResource** コマンドレットは、パラメーターとしてプロパティのリストを受け取ります。 モジュールを作成するパス、新しいリソースの名前、そのリソースが含まれているモジュールの名前も受け取ります。 次の PowerShell コマンドでは、リソースを作成します。
 
@@ -167,9 +161,7 @@ function Test-TargetResource
 Export-ModuleMember -Function *-TargetResource
 ```
 
-<a id="updating-the-resource" class="xliff"></a>
-
-## リソースの更新
+## <a name="updating-the-resource"></a>リソースの更新
 
 リソースのパラメーター リストを追加または変更する必要がある場合は、**Update-xDscResource** コマンドレットを呼び出すことができます。 コマンドレットは、新しいパラメーター リストでリソースを更新します。 リソース スクリプトに既にロジックを追加している場合は、そのまま残ります。
 
@@ -180,22 +172,14 @@ $lastLogon = New-xDscResourceProperty –Name LastLogon –Type Hashtable –Att
 Update-xDscResource –Name ‘Demo_ADUser’ –Property $UserName, $Ensure, $DomainCredential, $Password, $lastLogon -Force
 ```
 
-<a id="testing-a-resource-schema" class="xliff"></a>
-
-## リソース スキーマのテスト
+## <a name="testing-a-resource-schema"></a>リソース スキーマのテスト
 
 リソース デザイナー ツールは、手動で記述した MOF スキーマの有効性をテストするために使用できる 1 つ以上のコマンドレットを公開します。 パラメーターとして MOF リソース スキーマのパスを渡して、**Test-xDscSchema** コマンドレットを呼び出します。 コマンドレットは、スキーマにエラーを出力します。
 
-<a id="see-also" class="xliff"></a>
+### <a name="see-also"></a>参照
 
-### 参照
-
-<a id="concepts" class="xliff"></a>
-
-#### 概念
+#### <a name="concepts"></a>概念
 [Build Custom Windows PowerShell Desired State Configuration Resources (カスタム Windows PowerShell Desired State Configuration のビルド)](authoringResource.md)
 
-<a id="other-resources" class="xliff"></a>
-
-#### その他のリソース
+#### <a name="other-resources"></a>その他のリソース
 [xDscResourceDesigner モジュール](https://powershellgallery.com/packages/xDscResourceDesigner)

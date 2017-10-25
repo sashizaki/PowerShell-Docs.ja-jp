@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="report-abuse" class="xliff"></a>
-
-# 不正報告
+# <a name="report-abuse"></a>不正報告
 
 以上の違反項目に該当するアイテムを見つけた場合、アイテム詳細ページの **Report Abuse** (不正報告) リンクをクリックし、報告してください。
 

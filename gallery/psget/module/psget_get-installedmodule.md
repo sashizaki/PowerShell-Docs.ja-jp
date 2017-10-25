@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="get-installedmodule" class="xliff"></a>
-
-# Get-InstalledModule
+# <a name="get-installedmodule"></a>Get-InstalledModule
 
 コンピューター上のインストールされているモジュールを取得します。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 Get-InstalledModule コマンドレットは、Install-Module コマンドレットを使用してインストールされたコンピューター上にインストールされている PowerShell モジュールを取得します。
 
@@ -31,22 +27,16 @@ Get-InstalledModule コマンドレットは、Install-Module コマンドレッ
   - RequiredVersion パラメーターが指定されていない場合、Get-InstalledModule は指定された最小バージョン以上の最新バージョンのインストールされているモジュールを返すか、または最新バージョンのモジュールを返します (最小バージョンが指定されていない場合)。 
   - RequiredVersion パラメーターが指定されている場合、Get-InstalledModule は指定したバージョンに完全に一致するバージョンのインストールされているモジュールのみを返します。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 ```powershell
 Get-Command -Name Get-InstalledModule -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Get-InstalledModule](http://go.microsoft.com/fwlink/?LinkId=526863)
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 
@@ -110,9 +100,7 @@ InstalledLocation          : C:\Program Files\WindowsPowerShell\Modules\DJoin\1.
 
 
 
-<a id="installeddate-and-updateddate-properties-in-psgetrepositoryiteminfo-object" class="xliff"></a>
-
-## PSGetRepositoryItemInfo オブジェクトの InstalledDate および UpdatedDate プロパティ
+## <a name="installeddate-and-updateddate-properties-in-psgetrepositoryiteminfo-object"></a>PSGetRepositoryItemInfo オブジェクトの InstalledDate および UpdatedDate プロパティ
 
     During the install operation:
         InstalledDate: current DateTime (Get-Date) value

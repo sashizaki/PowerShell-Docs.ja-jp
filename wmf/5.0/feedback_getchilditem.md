@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="get-childitem-has--depth-parameter" class="xliff"></a>
-
-# Get-ChildItem の -Depth パラメーター
+# <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem の -Depth パラメーター
 **Get-ChildItem** に追加された **–Depth** パラメーターを **–Recurse** と一緒に使うと、再帰を制限できます。
 
 PS C:\\Users\\slee\\Downloads\\Example&gt; Get-ChildItem -Recurse -Depth 0

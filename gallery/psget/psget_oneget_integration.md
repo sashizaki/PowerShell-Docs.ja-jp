@@ -10,15 +10,9 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="architecture-of-packagemanagement-and-its-relationship-with-powershellget-module" class="xliff"></a>
+## <a name="architecture-of-packagemanagement-and-its-relationship-with-powershellget-module"></a>PackageManageme のアーキテクチャおよび PowerShellGet モジュールとの関係。
 
-## PackageManageme のアーキテクチャおよび PowerShellGet モジュールとの関係。
+## <a name="how-to-use-packagemanagement-cmdlets-for-discovering-installing-updating-and-inventory-of-scripts-and-modules-using-powershellget-provider"></a>PowerShellGet プロバイダーを使用したスクリプトとモジュールの検出、インストール、更新、インベントリ用に PackageManagement コマンドレットを使用する方法。
 
-<a id="how-to-use-packagemanagement-cmdlets-for-discovering-installing-updating-and-inventory-of-scripts-and-modules-using-powershellget-provider" class="xliff"></a>
-
-## PowerShellGet プロバイダーを使用したスクリプトとモジュールの検出、インストール、更新、インベントリ用に PackageManagement コマンドレットを使用する方法。
-
-<a id="pakagemanagement-commands" class="xliff"></a>
-
-## PakageManagement コマンド
+## <a name="pakagemanagement-commands"></a>PakageManagement コマンド
 

@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="how-to-resolve-warning-package-your-package-name-failed-to-download-issue" class="xliff"></a>
-
-## "警告: パッケージ 'パッケージ名' をダウンロードできませんでした" 問題を解決する方法
+## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>"警告: パッケージ 'パッケージ名' をダウンロードできませんでした" 問題を解決する方法
 
 
 

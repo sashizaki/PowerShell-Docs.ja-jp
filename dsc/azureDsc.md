@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="using-dsc-on-microsoft-azure" class="xliff"></a>
-
-# Microsoft Azure での DSC の使用
+# <a name="using-dsc-on-microsoft-azure"></a>Microsoft Azure での DSC の使用
 
 Microsoft Azure の Desired State Configuration (DSC) は、[Azure Desired State Configuration 拡張機能ハンドラー](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-dsc-overview)および [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) によってサポートされています。
 
-<a id="azure-desired-state-configuration-extension-handler" class="xliff"></a>
-
-## Azure Desired State Configuration 拡張機能ハンドラー
+## <a name="azure-desired-state-configuration-extension-handler"></a>Azure Desired State Configuration 拡張機能ハンドラー
 
 Azure DSC 拡張機能を使用すると、Microsoft Azure でホストされている VM を DSC で管理することができます。 詳細については、次のトピックを参照してください。
 
@@ -26,9 +22,7 @@ Azure DSC 拡張機能を使用すると、Microsoft Azure でホストされて
 - [Azure Resource Manager テンプレートを使用した Windows VMSS および Desired State Configuration](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-dsc-template)
 - [資格情報を Azure DSC 拡張機能ハンドラーに渡す](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-extensions-dsc-credentials)
 
-<a id="azure-automation-dsc" class="xliff"></a>
-
-## Azure Automation DSC
+## <a name="azure-automation-dsc"></a>Azure Automation DSC
 
 [Azure Automation サービス](https://azure.microsoft.com/services/automation/) を使用すると、DSC 構成、リソース、管理対象ノードを Azure 内で管理することができます。 詳細については、次のトピックを参照してください。
 

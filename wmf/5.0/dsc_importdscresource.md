@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="import-dscresource-keyword-supports--moduleversion-parameter" class="xliff"></a>
-
-# -ModuleVersion パラメーターをサポートする Import-DscResource キーワード
+# <a name="import-dscresource-keyword-supports--moduleversion-parameter"></a>-ModuleVersion パラメーターをサポートする Import-DscResource キーワード
 
 DSC 構成を作成するときに使用できる、`Import-DscResource` dynamic キーワードに新しいパラメーターを追加しました。 構成の作成者は、どのモジュール バージョンから DSC リソースを読み込むかを正確に指定できます。 キーワードの新しい構文は次の通りです:
 

@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="writing-a-single-instance-dsc-resource-best-practice" class="xliff"></a>
-
-# 単一インスタンスの DSC リソースを記述する (ベスト プラクティス)
+# <a name="writing-a-single-instance-dsc-resource-best-practice"></a>単一インスタンスの DSC リソースを記述する (ベスト プラクティス)
 
 >**注:** このトピックでは、構成で単一のインスタンスのみを許可する DSC リソースを定義するためのベスト プラクティスについて説明します。 現在のところ、これを行う組み込みの DSC 機能はありません。 これは将来変更される可能性があります。
 

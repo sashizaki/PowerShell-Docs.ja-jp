@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="building-a-continuous-integration-and-continuous-deplyoment-pipeline-with-dsc" class="xliff"></a>
-
-# DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築
+# <a name="building-a-continuous-integration-and-continuous-deplyoment-pipeline-with-dsc"></a>DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築
 
 この例では、PowerShell、DSC、Pester、および Visual Studio Team Foundation Server (TFS) を使用して継続的インテグレーション/継続的配置 (CI/CD) パイプラインを構築する方法を示します。
 
@@ -20,9 +18,7 @@ ms.lasthandoff: 06/12/2017
 
 自動の CI/CD パイプラインでは、ソフトウェアをより早く、より確実に更新できるため、すべてのコードをテストして、コードの最新のビルドを常に使用可能な状態にします。
 
-<a id="prerequisites" class="xliff"></a>
-
-## 前提条件
+## <a name="prerequisites"></a>前提条件
 
 この例を使用するには、以下について理解している必要があります。
 
@@ -31,15 +27,11 @@ ms.lasthandoff: 06/12/2017
 - [Pester](https://github.com/pester/Pester) テスト フレームワーク
 - [Team Foundation Server](https://www.visualstudio.com/tfs/)
 
-<a id="what-you-will-need" class="xliff"></a>
-
-## 必要なもの
+## <a name="what-you-will-need"></a>必要なもの
 
 この例をビルドして実行するには、コンピューター複数台と仮想マシン、またはそのいずれかを含む環境が必要です。
 
-<a id="client" class="xliff"></a>
-
-### クライアント
+### <a name="client"></a>クライアント
 
 この例を設定して実行する、すべての作業を行うコンピューターです。
 
@@ -48,16 +40,12 @@ ms.lasthandoff: 06/12/2017
 - https://github.com/PowerShell/Demo_CI から複製したローカルの git リポジトリ
 - [Visual Studio Code](https://code.visualstudio.com/) などのテキスト エディター
 
-<a id="tfssrv1" class="xliff"></a>
-
-### TFSSrv1
+### <a name="tfssrv1"></a>TFSSrv1
 
 TFS サーバーをホストするコンピューター。ビルドを定義してリリースします。
 このコンピューターには、[Team Foundation Server 2017](https://www.visualstudio.com/tfs/) がインストールされている必要があります。
 
-<a id="buildagent" class="xliff"></a>
-
-### BuildAgent
+### <a name="buildagent"></a>BuildAgent
 
 プロジェクトをビルドする Windows ビルド エージェントを実行するコンピューター。
 このコンピューターには、Windows ビルド エージェントがインストールされ実行されている必要があります。
@@ -65,23 +53,17 @@ Windows ビルド エージェントをインストールし実行する方法�
 
 また、このコンピューターには `xDnsServer` と `xNetworking` の両方の DSC モジュールをインストールする必要があります。
 
-<a id="testagent1" class="xliff"></a>
-
-### TestAgent1
+### <a name="testagent1"></a>TestAgent1
 
 この例において、DSC 構成で DNS サーバーとして構成されるコンピューターです。
 このコンピューターでは、[Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) が実行されている必要があります。
 
-<a id="testagent2" class="xliff"></a>
-
-### TestAgent2
+### <a name="testagent2"></a>TestAgent2
 
 この例で構成する Web サイトをホストするコンピューターです。
 このコンピューターでは、[Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) が実行されている必要があります。 
 
-<a id="add-the-code-to-tfs" class="xliff"></a>
-
-## TFS にコードを追加する
+## <a name="add-the-code-to-tfs"></a>TFS にコードを追加する
 
 まず TFS で Git リポジトリを作成し、クライアント コンピューターのローカル リポジトリからコードをインポートします。
 クライアント コンピューターに Demo_CI リポジトリを複製済みでない場合は、この時点で次の git コマンドを実行してください。
@@ -107,16 +89,12 @@ Windows ビルド エージェントをインストールし実行する方法�
 >**注:** この例では Git リポジトリの `ci-cd-example` ブランチのコードを使用しています。
 >このブランチを TFS プロジェクトの既定ブランチとし、また作成する CI/CD トリガーに必ず指定してください。
 
-<a id="understanding-the-code" class="xliff"></a>
-
-## コードを理解する
+## <a name="understanding-the-code"></a>コードを理解する
 
 ビルドおよび配置パイプラインを作成する前に、コードの一部を見て何が起きているかを理解しましょう。
 クライアント コンピューターで、使い慣れたテキスト エディターを開き、Demo_CI Git リポジトリのルートに移動します。
 
-<a id="the-dsc-configuration" class="xliff"></a>
-
-### DSC 構成
+### <a name="the-dsc-configuration"></a>DSC 構成
 
 ファイル `DNSServer.ps1` を開きます (ローカルの Demo_CI リポジトリのルート `./InfraDNS/Configs/DNSServer.ps1` から)。
 
@@ -184,9 +162,7 @@ CI を行う場合、ノード情報は環境によって変わることがあ�
 2 つの `xDnsRecord` ブロックが、構成データの配列を反復処理する `foreach` ループ内にラップされていることに注意してください。
 繰り返しますが、構成データは `DevEnv.ps1` スクリプトで作成されます。これは次に見ていきます。
 
-<a id="configuration-data" class="xliff"></a>
-
-### 構成データ
+### <a name="configuration-data"></a>構成データ
 
 `DevEnv.ps1` ファイル (ローカルの Demo_CI リポジトリのルート `./InfraDNS/DevEnv.ps1` から) は、ハッシュ テーブル内の環境固有の構成データを指定し、そのハッシュ テーブルを `New-DscConfigurationDataDocument` 関数の呼び出しに渡します。これは `DscPipelineTools.psm`(`./Assets/DscPipelineTools/DscPipelineTools.psm1`) で定義されています。
 
@@ -221,9 +197,7 @@ Return New-DscConfigurationDataDocument -RawEnvData $DevEnvironment -OutputPath 
 
 ここでは、`RawEnvData` パラメーターのみを使用します。
 
-<a id="the-psake-build-script" class="xliff"></a>
-
-### psake ビルド スクリプト
+### <a name="the-psake-build-script"></a>psake ビルド スクリプト
 
 `Build.ps1` (Demo_CI リポジトリのルート `./InfraDNS/Build.ps1` から) で定義されている [psake](https://github.com/psake/psake) ビルド スクリプトでは、ビルドの一部となるタスクを定義します。
 また、各タスクが依存する他のタスクも定義します。 psake スクリプトは、呼び出されると、指定されたタスク (またはタスクが指定されていない場合は `Default` という名前のタスク) が実行され、すべての依存関係も実行されること (これは再帰的で、依存関係の依存関係を実行する) を確認します。
@@ -262,114 +236,80 @@ TFS でこの例のビルド定義を作成する場合、psake スクリプト 
 
 ビルド スクリプトでは、次のタスクを定義します。
 
-<a id="generateenvironmentfiles" class="xliff"></a>
-
-#### GenerateEnvironmentFiles
+#### <a name="generateenvironmentfiles"></a>GenerateEnvironmentFiles
 
 `DevEnv.ps1` を実行し、構成データ ファイルを生成します。
 
-<a id="installmodules" class="xliff"></a>
-
-#### InstallModules
+#### <a name="installmodules"></a>InstallModules
 
 `DNSServer.ps1` 構成に必要なモジュールをインストールします。
 
-<a id="scriptanalysis" class="xliff"></a>
-
-#### ScriptAnalysis
+#### <a name="scriptanalysis"></a>ScriptAnalysis
 
 [PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) を呼び出します。
 
-<a id="unittests" class="xliff"></a>
-
-#### UnitTests
+#### <a name="unittests"></a>UnitTests
 
 [Pester](https://github.com/pester/Pester/wiki) 単体テストを実行します。
 
-<a id="compileconfigs" class="xliff"></a>
-
-#### CompileConfigs
+#### <a name="compileconfigs"></a>CompileConfigs
 
 `GenerateEnvironmentFiles` タスクによって生成された構成データを使用して、構成 (`DNSServer.ps1`) をコンパイルして MOF ファイルにします。
 
-<a id="clean" class="xliff"></a>
-
-#### Clean
+#### <a name="clean"></a>Clean
 
 例に使用するフォルダーを作成し、以前の実行によるテスト結果、構成データ ファイル、およびモジュールを削除します。
 
-<a id="the-psake-deploy-script" class="xliff"></a>
-
-### psake 配置スクリプト
+### <a name="the-psake-deploy-script"></a>psake 配置スクリプト
 
 `Deploy.ps1` (Demo_CI リポジトリのルート `./InfraDNS/Deploy.ps1` から) で定義されている [psake](https://github.com/psake/psake) 配置スクリプトでは、構成を配置して実行するタスクを定義します。
 
 `Deploy.ps1` では以下のタスクを定義します。
 
-<a id="deploymodules" class="xliff"></a>
-
-#### DeployModules
+#### <a name="deploymodules"></a>DeployModules
 
 `TestAgent1` で PowerShell セッションを開始し、構成に必要な DSC リソースを含むモジュールをインストールします。
 
-<a id="deployconfigs" class="xliff"></a>
-
-#### DeployConfigs
+#### <a name="deployconfigs"></a>DeployConfigs
 
 [Start-DscConfiguration](/reference/5.1/PSDesiredStateConfiguration/Start-DscConfiguration.md) コマンドレットを呼び出して、`TestAgent1` で構成を実行します。
 
-<a id="integrationtests" class="xliff"></a>
-
-#### IntegrationTests
+#### <a name="integrationtests"></a>IntegrationTests
 
 [Pester](https://github.com/pester/Pester/wiki) 統合テストを実行します。
 
-<a id="acceptancetests" class="xliff"></a>
-
-#### AcceptanceTests
+#### <a name="acceptancetests"></a>AcceptanceTests
 
 [Pester](https://github.com/pester/Pester/wiki) 受け入れテストを実行します。
 
-<a id="clean" class="xliff"></a>
-
-#### Clean
+#### <a name="clean"></a>Clean
 
 以前の実行でインストールされたすべてのモジュールを削除し、テスト結果フォルダーが存在することを確認します。
 
-<a id="test-scripts" class="xliff"></a>
-
-### テスト スクリプト
+### <a name="test-scripts"></a>テスト スクリプト
 
 受け入れテスト、統合テスト、および単体テストは、`Tests` フォルダー (Demo_CI リポジトリのルート `./InfraDNS/Tests` から) 内のスクリプトで定義されており、それぞれのフォルダーにある `DNSServer.tests.ps1` という名前のファイル内にあります。
 
 テスト スクリプトは [Pester](https://github.com/pester/Pester/wiki) 構文および [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) 構文を使用しています。
 
-<a id="unit-tests" class="xliff"></a>
-
-#### 単体テスト
+#### <a name="unit-tests"></a>単体テスト
 
 単体テストでは、DSC 構成自体をテストして、構成が実行時に期待通りに動作することを確認します。
 単体テスト スクリプトは [Pester](https://github.com/pester/Pester/wiki) を使用しています。
 
-<a id="integration-tests" class="xliff"></a>
-
-#### 統合テスト
+#### <a name="integration-tests"></a>統合テスト
 
 統合テストでは、システムの構成をテストして、他のコンポーネントと統合したときにシステムが期待通りに構成されることを確認します。 これらのテストは、DSC で構成した後、ターゲット ノードで実行します。
 統合テスト スクリプトは [Pester](https://github.com/pester/Pester/wiki) 構文と [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) 構文を組み合わせて使用しています。
 
-<a id="acceptance-tests" class="xliff"></a>
-
-#### 受け入れテスト
+#### <a name="acceptance-tests"></a>受け入れテスト
 
 受け入れテストではシステムをテストして、期待通りに動作することを確認します。
 たとえば、Web ページにクエリが実行されたときに、適切な情報が返されるかどうかをテストします。
 実際のシナリオをテストするために、これらのテストはターゲット ノードからリモートで実行します。
 統合テスト スクリプトは [Pester](https://github.com/pester/Pester/wiki) 構文と [PoshSpec](https://github.com/Ticketmaster/poshspec/wiki/Introduction) 構文を組み合わせて使用しています。
 
-<a id="define-the-build" class="xliff"></a>
-
-## ビルドを定義する
+## <a name="define-the-build"></a>ビルドを定義する
 
 コードを TFS にアップロードして内容を確認したので、ビルドを定義しましょう。
 
@@ -385,9 +325,7 @@ TFS でこの例のビルド定義を作成する場合、psake スクリプト 
 
 これらのビルド ステップを追加したら、各ステップのプロパティを次のように編集します。
 
-<a id="powershell-script" class="xliff"></a>
-
-### PowerShell スクリプト
+### <a name="powershell-script"></a>PowerShell スクリプト
 
 1. **[型]** プロパティを `File Path` に設定します。
 1. **[スクリプト パス]** プロパティを `initiate.ps1` に設定します。
@@ -395,9 +333,7 @@ TFS でこの例のビルド定義を作成する場合、psake スクリプト 
 
 このビルド ステップは `initiate.ps1` ファイルを実行し、psake ビルド スクリプトを呼び出します。
 
-<a id="publish-test-results" class="xliff"></a>
-
-### テスト結果の公開
+### <a name="publish-test-results"></a>テスト結果の公開
 
 1. **[テスト結果の形式]** を `NUnit` に設定します。
 1. **[テスト結果ファイル]** を `InfraDNS/Tests/Results/*.xml` に設定します。
@@ -406,9 +342,7 @@ TFS でこの例のビルド定義を作成する場合、psake スクリプト 
 
 このビルド ステップでは、先ほど確認した Pester スクリプトでの単体テストを実行し、その結果を `InfraDNS/Tests/Results/*.xml` フォルダーに格納します。
 
-<a id="copy-files" class="xliff"></a>
-
-### ファイルのコピー
+### <a name="copy-files"></a>ファイルのコピー
 
 1. 以下の行すべてを、**[内容]** に追加します。
 
@@ -423,18 +357,14 @@ TFS でこの例のビルド定義を作成する場合、psake スクリプト 
 
 このステップでは、ビルドおよびテスト スクリプトをステージング ディレクトリにコピーし、次のステップでビルド成果物として公開できるようにします。
 
-<a id="publish-artifact" class="xliff"></a>
-
-### 成果物の公開
+### <a name="publish-artifact"></a>成果物の公開
 
 1. **[発行するためのパス]** を `$(Build.ArtifactStagingDirectory)\` に設定します。
 1. **[成果物名]** を `Deploy` に設定します。
 1. **[成果物の種類]** を `Server` に設定します。
 1. **[コントロール オプション]** で `Enabled` を選択します。
 
-<a id="enable-continuous-integration" class="xliff"></a>
-
-## 継続的インテグレーションを有効にする
+## <a name="enable-continuous-integration"></a>継続的インテグレーションを有効にする
 
 git リポジトリの `ci-cd-example` ブランチに変更がチェックインされたときにプロジェクトがビルドを開始するように、トリガーを設定します。
 
@@ -446,9 +376,7 @@ git リポジトリの `ci-cd-example` ブランチに変更がチェックイ�
 
 これで、TFS git リポジトリに何らかの変更があると、自動ビルドがトリガーされます。
 
-<a id="create-the-release-definition" class="xliff"></a>
-
-## リリース定義を作成する
+## <a name="create-the-release-definition"></a>リリース定義を作成する
 
 リリース定義を作成して、コードのチェックインが行われるたびにプロジェクトが開発環境に展開されるようにしてみましょう。
 
@@ -464,43 +392,33 @@ git リポジトリの `ci-cd-example` ブランチに変更がチェックイ�
 
 ステップを次のように編集します。
 
-<a id="powershell-script" class="xliff"></a>
-
-### PowerShell スクリプト
+### <a name="powershell-script"></a>PowerShell スクリプト
 
 1. **[スクリプト パス]** フィールドを `$(Build.DefinitionName)\Deploy\initiate.ps1"` に設定します。
 1. **[引数]** フィールドを `-fileName Deploy` に設定します。
 
-<a id="first-publish-test-results" class="xliff"></a>
-
-### 1 つめのテスト結果の公開
+### <a name="first-publish-test-results"></a>1 つめのテスト結果の公開
 
 1. **[テスト結果の形式]** フィールドとして `NUnit` を選択します。
 1. **[テスト結果ファイル]** フィールドを `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml` に設定します。
 1. **[テスト実行のタイトル]** を `Integration` に設定します。
 1. **[コントロール オプション]** で、**[常に実行する]** を選択します。
 
-<a id="second-publish-test-results" class="xliff"></a>
-
-### 2 つめのテスト結果の公開
+### <a name="second-publish-test-results"></a>2 つめのテスト結果の公開
 
 1. **[テスト結果の形式]** フィールドとして `NUnit` を選択します。
 1. **[テスト結果ファイル]** フィールドを `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml` に設定します。
 1. **[テスト実行のタイトル]** を `Acceptance` に設定します。
 1. **[コントロール オプション]** で、**[常に実行する]** を選択します。
 
-<a id="verify-your-results" class="xliff"></a>
-
-## 結果を確認する
+## <a name="verify-your-results"></a>結果を確認する
 
 これで、`ci-cd-example` ブランチの変更を TFS にプッシュするたび、新しいビルドが開始されます。
 ビルドが正常に完了すると、新しい配置がトリガーされます。
 
 クライアント コンピューターでブラウザーを開いて `www.contoso.com` に移動して、配置結果を確認できます。
 
-<a id="next-steps" class="xliff"></a>
-
-## 次の手順
+## <a name="next-steps"></a>次の手順
 
 この例では、URL `www.contoso.com` が `TestAgent2` に解決されるように DNS サーバー `TestAgent1` を構成していますが、Web サイトの配置は実際には行いません。
 それを行うためのスケルトンは、`WebApp` フォルダー下のリポジトリで提供されています。

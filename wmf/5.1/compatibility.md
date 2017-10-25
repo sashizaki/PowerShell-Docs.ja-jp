@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="wmf-51-operating-system-compatibility" class="xliff"></a>
-
-# WMF 5.1 オペレーティング システムの互換性 #
+# <a name="wmf-51-operating-system-compatibility"></a>WMF 5.1 オペレーティング システムの互換性 #
 
 > 注意: この情報は暫定版であり、変更することがあります。
 

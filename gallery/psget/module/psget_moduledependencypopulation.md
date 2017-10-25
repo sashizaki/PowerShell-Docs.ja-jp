@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="logic-for-preparing-the-module-dependencies-during-publish-operation" class="xliff"></a>
-
-# 発行操作中にモジュールの依存関係を準備するためのロジック
+# <a name="logic-for-preparing-the-module-dependencies-during-publish-operation"></a>発行操作中にモジュールの依存関係を準備するためのロジック
 1.  RequiredModules の一部として一覧表示されているモジュールは、依存関係として見なされます。
 2.  NestedModules の一部として一覧表示されているモジュール (モジュール ベースが指定されたモジュール ベースの下にないモジュール) は、依存関係として見なされます。
 

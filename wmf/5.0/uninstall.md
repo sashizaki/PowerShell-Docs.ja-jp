@@ -9,13 +9,9 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="uninstallation-instructions" class="xliff"></a>
+# <a name="uninstallation-instructions"></a>アンインストール手順
 
-# アンインストール手順
-
-<a id="using-command-prompt" class="xliff"></a>
-
-## コマンド プロンプトを使用
+## <a name="using-command-prompt"></a>コマンド プロンプトを使用
 1.  **コマンド プロンプト**を開きます。
 2.  [Windows Update スタンドアロン ランチャー](https://support.microsoft.com/en-us/kb/934307)を次のように実行します。
 
@@ -32,9 +28,7 @@ Windows Server 2008 R2 SP1 および Windows 7 SP1:
 wusa /uninstall /kb:3134760
 ```
 
-<a id="using-control-panel" class="xliff"></a>
-
-## コントロール パネルを使用
+## <a name="using-control-panel"></a>コントロール パネルを使用
 1.  **[コントロール パネル]** を開きます。
 2.  **[プログラム]** を開き、**[プログラムのアンインストール]** を開きます。
 3.  **[インストールされた更新プログラムを表示]** をクリックします。

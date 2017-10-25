@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="community-resources" class="xliff"></a>
-
-# コミュニティ リソース #
+# <a name="community-resources"></a>コミュニティ リソース #
 > 注意: この情報は暫定版であり、変更することがあります。
 
 PowerShell チームは製品に関するお客様のフィードバックを歓迎し、ユーザーに対して複数の問い合わせ方法をサポートします。

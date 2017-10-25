@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-windowsfeatureset-resource" class="xliff"></a>
-
-# DSC WindowsFeatureSet リソース
+# <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet リソース
 
 > 適用先: Windows PowerShell 5.0
 
@@ -21,9 +19,7 @@ Windows PowerShell Desired State Configuration (DSC) の **WindowsFeatureSet** �
 
 Windows 機能の数を同じ状態に構成するときにこのリソースを使用します。
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 WindowsFeatureSet [string] #ResourceName
@@ -39,9 +35,7 @@ WindowsFeatureSet [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -53,9 +47,7 @@ WindowsFeatureSet [string] #ResourceName
 | DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 | ソース| 必要に応じて、インストールに使用するソース ファイルの場所を示します。| 
 
-<a id="example" class="xliff"></a>
-
-## 例
+## <a name="example"></a>例
 
 次の構成では、**Web-Server** (IIS) 機能、**SMTP Server** 機能、各機能のすべてのサブ機能がインストールされます。
 

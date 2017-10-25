@@ -10,18 +10,14 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="prerequisites" class="xliff"></a>
-
-# 前提条件
+# <a name="prerequisites"></a>前提条件
 
 > 適用先: Windows PowerShell 5.0
 
 Just Enough Administration は、Windows PowerShell 5.0 以降に含まれる機能です。
 このトピックでは、JEA の使用を開始するために満たす必要のある前提条件について説明します。
 
-<a id="install-jea" class="xliff"></a>
-
-## JEA のインストール
+## <a name="install-jea"></a>JEA のインストール
 
 JEA は Windows PowerShell 5.0 以降で利用できますが、完全な機能のためには、システムで使用できる最新バージョンの PowerShell をインストールすることをお勧めします。
 次の表は、Windows Server での JEA の可用性を示します。
@@ -49,9 +45,7 @@ Windows 7                 | WMF 5.1 の制限された機能<sup>1</sup>
 <sup>2</sup> Windows 10 のバージョン 1511 と 1603 では、JEA の次の機能はサポートされません。グループ管理されたサービス アカウントとしての実行、セッション構成での条件付きアクセス規則、ユーザー ドライブ、ローカル ユーザー アカウントへのアクセスの許可。
 これらの機能を使うには、Windows をバージョン 1607 (Anniversary Update) 以降に更新します。
 
-<a id="check-which-version-of-powershell-is-installed" class="xliff"></a>
-
-### インストールされている PowerShell のバージョンを確認する
+### <a name="check-which-version-of-powershell-is-installed"></a>インストールされている PowerShell のバージョンを確認する
 
 システムにインストールされている PowerShell のバージョンを確認するには、Windows PowerShell プロンプトで `$PSVersionTable` 変数を調べます。
 
@@ -66,9 +60,7 @@ Major  Minor  Build  Revision
 *メジャー* バージョンが **5** 以上の場合、JEA を使用できます。
 エクスペリエンスを最善にし、すべての最新機能にアクセスするには、可能な場合は PowerShell バージョン **5.1** にアップグレードすることをお勧めします。
 
-<a id="install-windows-management-framework" class="xliff"></a>
-
-### Windows Management Framework をインストールする
+### <a name="install-windows-management-framework"></a>Windows Management Framework をインストールする
 
 古いバージョンの PowerShell を実行している場合、最新の Windows Management Framework (WMF) 更新プログラムにシステムを更新する必要があります。
 更新パッケージおよび最新の WMF リリース ノートへのリンクは、[ダウンロード センター](https://aka.ms/WMF5)にあります。
@@ -77,9 +69,7 @@ Major  Minor  Build  Revision
 
 Windows 10 のユーザーは、現在のバージョンの Windows PowerShell を取得するには、最新の機能更新をインストールする必要があります。
 
-<a id="enable-powershell-remoting" class="xliff"></a>
-
-## PowerShell リモート処理を有効にする
+## <a name="enable-powershell-remoting"></a>PowerShell リモート処理を有効にする
 
 PowerShell リモート処理は、JEA 構築の基盤を提供します。
 したがって、JEA を使用する前に、システムで PowerShell リモート処理を有効にし、[適切にセキュリティ保護する](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)必要があります。
@@ -91,9 +81,7 @@ Windows Server 2012、2012 R2、2016 では、PowerShell リモート処理は�
 Enable-PSRemoting
 ```
 
-<a id="enable-powershell-module-and-script-block-logging-optional" class="xliff"></a>
-
-## PowerShell モジュールおよびスクリプト ブロック ログを有効にする (省略可能)
+## <a name="enable-powershell-module-and-script-block-logging-optional"></a>PowerShell モジュールおよびスクリプト ブロック ログを有効にする (省略可能)
 
 次の手順で、システム上のすべての PowerShell 操作のログを有効にします。
 PowerShell モジュール ログは JEA には必要ありませんが、ユーザーが実行するコマンドが中央の場所に記録されるように有効にすることを強くお勧めします。
@@ -114,16 +102,12 @@ PowerShell モジュール ログは JEA には必要ありませんが、ユー
 
 グループ ポリシーを通してシステム全体の PowerShell トランスクリプトを有効にすることもできます。
 
-<a id="next-steps" class="xliff"></a>
-
-## 次の手順
+## <a name="next-steps"></a>次の手順
 
 - [ロール機能ファイルを作成する](role-capabilities.md)
 - [セッション構成ファイルを作成する](session-configurations.md)
 
-<a id="see-also" class="xliff"></a>
-
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 - [PowerShell リモート処理と WinRM セキュリティに関する追加情報](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ the Blue Team* のセキュリティに関するブログ投稿](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)

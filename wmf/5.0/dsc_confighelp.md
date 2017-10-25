@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="help-support-for-dsc-configurations" class="xliff"></a>
-
-# DSC 構成に関するヘルプ サポート
+# <a name="help-support-for-dsc-configurations"></a>DSC 構成に関するヘルプ サポート
 
 DSC 構成内のコメント ベースのヘルプを使用して、`-?` を使った構成関数を呼び出すときのその構成の使用方法に関するヘルプを利用できるようになりました。  
 

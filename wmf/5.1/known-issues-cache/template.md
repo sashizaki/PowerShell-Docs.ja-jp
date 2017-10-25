@@ -12,14 +12,10 @@ ms.lasthandoff: 06/12/2017
 ---
 >注: わかりやすいタイトルと簡単な説明を提供します
 
-<a id="example-erroneous-executionpolicy-errors" class="xliff"></a>
-
-## 例: Erroneous ExecutionPolicy エラー ##
+## <a name="example-erroneous-executionpolicy-errors"></a>例: Erroneous ExecutionPolicy エラー ##
 Windows 7 で PowerShell モジュールと DSC リソースを使用すると、ExecutionPolicy についてレポートされるエラーとなる場合があります。
 
-<a id="resolution" class="xliff"></a>
-
-### 解決方法
+### <a name="resolution"></a>解決方法
 
 解決するには、管理者特権の PowerShell セッション (管理者として実行) で、次のコマンドを実行して **ExecutionPolicy** を **RemoteSigned** に設定します。
 

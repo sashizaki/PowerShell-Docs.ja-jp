@@ -9,12 +9,8 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="generate-powershell-cmdlets-based-on-odata-endpoint" class="xliff"></a>
-
-# OData エンドポイントに基づく PowerShell コマンドレットの生成
-<a id="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint" class="xliff"></a>
-
-OData エンドポイントに基づく Windows PowerShell コマンドレットの生成
+# <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>OData エンドポイントに基づく PowerShell コマンドレットの生成
+<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>OData エンドポイントに基づく Windows PowerShell コマンドレットの生成
 --------------------------------------------------------------
 
 **Export-ODataEndpointProxy** は、特定の OData エンドポイントによって公開される機能に基づいて、一連の Windows PowerShell コマンドレットを生成するコマンドレットです。
@@ -55,9 +51,7 @@ ipmo 'C:\Users\user\Generated.psd1'
 -   関連付け
 -   ストリームの引き渡し
 
-<a id="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils" class="xliff"></a>
-
-ODataUtils を使用した OData エンドポイントに基づく Windows PowerShell コマンドレットの生成
+<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>ODataUtils を使用した OData エンドポイントに基づく Windows PowerShell コマンドレットの生成
 ------------------------------------------------------------------------------
 ODataUtils モジュールにより、OData をサポートする REST エンドポイントから Windows PowerShell コマンドレットを生成できます。 Microsoft.PowerShell.ODataUtils Windows PowerShell モジュールには次の増分拡張があります。
 -   サーバー側エンドポイントからクライアント側への追加情報のチャネル。

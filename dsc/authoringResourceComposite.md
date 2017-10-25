@@ -10,17 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="composite-resources-using-a-dsc-configuration-as-a-resource" class="xliff"></a>
-
-# 複合リソース: リソースとしての DSC 構成の使用
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>複合リソース: リソースとしての DSC 構成の使用
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 実際の状況では、構成は多くのさまざまなリソースを呼び出したり、膨大な数のプロパティを設定したりするため、長く複雑になることがあります。 このような複雑さに対処するために、Windows PowerShell Desired State Configuration (DSC) 構成を他の構成のリソースとして使用できます。 これは、複合リソースと呼ばれます。 複合リソースは、パラメーターを受け取る DSC 構成です。 構成のパラメーターは、リソースのプロパティとして機能します。 構成は **.schema.psm1** 拡張子のファイルとして保存され、一般的な DSC リソースの MOF スキーマとリソース スクリプトの両方に代わるものです。DSC リソースの詳細については、[「DSC リソース」](resources.md)を参照してください。
 
-<a id="creating-the-composite-resource" class="xliff"></a>
-
-## 複合リソースの作成
+## <a name="creating-the-composite-resource"></a>複合リソースの作成
 
 この例では、仮想マシンを構成するために多くの既存のリソースを呼び出す構成を作成します。 構成ブロックで設定する値を指定する代わりに、構成では数多くのパラメーターを受け取り、後でそれが構成ブロックで使用されます。
 
@@ -136,9 +132,7 @@ Configuration xVirtualMachine
 }
 ```
 
-<a id="saving-the-configuration-as-a-composite-resource" class="xliff"></a>
-
-### 複合リソースとしての構成の保存
+### <a name="saving-the-configuration-as-a-composite-resource"></a>複合リソースとしての構成の保存
 
 パラメーター化された構成を DSC リソースとして使用するには、他の MOF ベースのリソースに似たディレクトリ構造で保存し、**.schema.psm1** 拡張子を持つ名前を指定します。 この例では、ファイルに **xVirtualMachine.schema.psm1** という名前を付けます。 次の行を含む **xVirtualMachine.psd1** というマニフェストも作成する必要があります。 これは、**MyDscResources.psd1** に加えて **MyDscResources** フォルダーの下に格納されるすべてのリソースのモジュール マニフェストです。
 
@@ -160,9 +154,7 @@ $env: psmodulepath
 
 これで、リソースは Get-DscResource コマンドレットを使用して検出できるようになり、そのプロパティは、そのコマンドレットまたは Windows PowerShell ISE の **Ctrl + Space** キーによるオートコンプリートを使用して検出できるようになります。
 
-<a id="using-the-composite-resource" class="xliff"></a>
-
-## 複合リソースの使用
+## <a name="using-the-composite-resource"></a>複合リソースの使用
 
 次に、複合リソースを呼び出す構成を作成します。 この構成は、xVirtualMachine 複合リソースを呼び出して仮想マシンを作成してから、**xComputer** リソースを呼び出して名前を変更します。
 
@@ -197,9 +189,7 @@ configuration RenameVM
 }
 ```
 
-<a id="supporting-psdscrunascredential" class="xliff"></a>
-
-## PsDscRunAsCredential のサポート
+## <a name="supporting-psdscrunascredential"></a>PsDscRunAsCredential のサポート
 
 >**注:** **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。
 
@@ -216,12 +206,8 @@ if (PsDscContext.RunAsUser) {
 }
 ```
 
-<a id="see-also" class="xliff"></a>
-
-## 参照
-<a id="concepts" class="xliff"></a>
-
-### 概念
+## <a name="see-also"></a>参照
+### <a name="concepts"></a>概念
 * [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)
 * [Windows PowerShell Desired State Configuration の概要](overview.md)
 

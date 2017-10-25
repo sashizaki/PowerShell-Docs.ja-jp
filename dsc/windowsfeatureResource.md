@@ -10,17 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-windowsfeature-resource" class="xliff"></a>
-
-# DSC WindowsFeature リソース
+# <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) の **WindowsFeature** リソースは、役割と機能がターゲット ノードで追加または削除されることを保証するためのメカニズムを備えています。
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 WindowsFeature [string] #ResourceName
@@ -35,9 +31,7 @@ WindowsFeature [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -49,9 +43,7 @@ WindowsFeature [string] #ResourceName
 | DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 | ソース| 必要に応じて、インストールに使用するソース ファイルの場所を示します。| 
 
-<a id="example" class="xliff"></a>
-
-## 例
+## <a name="example"></a>例
 ```powershell
 WindowsFeature RoleExample
 {

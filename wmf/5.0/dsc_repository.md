@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="separation-of-configuration-resource-and-report-repositories" class="xliff"></a>
-
-# 構成、リソース、およびレポートのリポジトリの分離
+# <a name="separation-of-configuration-resource-and-report-repositories"></a>構成、リソース、およびレポートのリポジトリの分離
 
 今回のリリースでは、1 つ以上の DSC プル サーバーに対してプルおよびレポートするために必要な十分の柔軟性が提供されます。 各エンドポイントは別々に定義できるため、構成を 1 つの場所からプルし、リソースは別の場所からプルし、レポートはさらに別の場所に送るように定義できます。 
 

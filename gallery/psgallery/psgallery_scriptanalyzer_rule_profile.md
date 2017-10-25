@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="scriptanazlyer-rule-profile-for-gallery" class="xliff"></a>
-
-# ギャラリーの ScriptAnazlyer 規則プロファイル
+# <a name="scriptanazlyer-rule-profile-for-gallery"></a>ギャラリーの ScriptAnazlyer 規則プロファイル
 PowerShell ギャラリーに公開されるアイテムの品質を確保するために、[PSScriptAnalyzer](https://github.com/PowerShell/PSScriptAnalyzer) 規則を実行し、送信されたスクリプトに違反がないか確認します。
 
 ScriptAnalyzer [GitHub ページ](https://github.com/PowerShell/PSScriptAnalyzer/blob/development/Engine/Settings/PSGallery.psd1)で実行されているルールの一覧を参照できます。

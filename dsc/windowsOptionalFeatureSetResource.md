@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/26/2017
 ---
-<a id="dsc-windowsoptionalfeatureset-resource" class="xliff"></a>
-
-# DSC WindowsOptionalFeatureSet リソース
+# <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet リソース
 
 > 適用先: Windows PowerShell 5.0
 
@@ -20,9 +18,7 @@ Windows PowerShell Desired State Configuration (DSC) の **WindowsOptionalFeatur
 
 Windows のオプション機能の数を同じ状態に構成するときにこのリソースを使用します。
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 WindowsOptionalFeature [string] #ResourceName
@@ -39,9 +35,7 @@ WindowsOptionalFeature [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 

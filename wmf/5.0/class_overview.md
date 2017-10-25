@@ -9,15 +9,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="creating-custom-types-using-powershell-classes" class="xliff"></a>
-
-# PowerShell クラスを使用したカスタム型の作成
+# <a name="creating-custom-types-using-powershell-classes"></a>PowerShell クラスを使用したカスタム型の作成
 
 他のオブジェクト指向プログラミング言語に似た、公式的な構文とセマンティクスを使用することによって、クラスと他のユーザー定義型を定義するための PowerShell 言語を改善しました。 開発者や IT プロフェッショナルがより広範なユース ケースで PowerShell を採用できるようにし、PowerShell アーティファクト (DSC リソースなど) の開発を簡素化し、管理面の対応を促進することがその目標です。
 
-<a id="supported-scenarios-in-this-release" class="xliff"></a>
-
-## このリリースでサポートされるシナリオ
+## <a name="supported-scenarios-in-this-release"></a>このリリースでサポートされるシナリオ
 
 -   PowerShell 言語を使用して DSC リソースとその関連する型を定義する
 -   クラス、プロパティ、メソッドなどの使い慣れたオブジェクト指向プログラミングの構成要素を使用して PowerShell でカスタム型を定義する

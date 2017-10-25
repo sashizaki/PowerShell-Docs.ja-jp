@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="authoring-improvements-using-powershell-ise" class="xliff"></a>
-
-# PowerShell ISE を使ったオーサリングの強化
+# <a name="authoring-improvements-using-powershell-ise"></a>PowerShell ISE を使ったオーサリングの強化
 
 Windows PowerShell ISE での DSC 構成のオーサリングが、はるかに簡単になりました。強化された点は次のとおりです。
 

@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="configure-dsc-lcm-with-new-meta-configuration-attribute" class="xliff"></a>
-
-# 新しいメタ構成属性による DSC LCM の構成
+# <a name="configure-dsc-lcm-with-new-meta-configuration-attribute"></a>新しいメタ構成属性による DSC LCM の構成
 
 `DscLocalConfigurationManager` 属性では、メタ構成として構成ブロックを指定します。その構成ブロックを使って DSC ローカル構成マネージャーが構成されます。 
 

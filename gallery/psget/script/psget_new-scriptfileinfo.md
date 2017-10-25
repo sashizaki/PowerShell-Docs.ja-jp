@@ -10,47 +10,33 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="new-scriptfileinfo" class="xliff"></a>
-
-# New-ScriptFileInfo
+# <a name="new-scriptfileinfo"></a>New-ScriptFileInfo
 
 メタデータを持つスクリプト ファイルを作成します。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 New-ScriptFileInfo コマンドレットは、スクリプトに関するメタデータを含む、PowerShell スクリプト ファイルを作成します。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 
 ```powershell
 Get-Command -Name New-ScriptFileInfo -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [New-ScriptFileInfo](http://go.microsoft.com/fwlink/?LinkId=619792)
 
-<a id="example-commands" class="xliff"></a>
+## <a name="example-commands"></a>コマンド例
 
-## コマンド例
-
-<a id="passthru-parameter" class="xliff"></a>
-
-### PassThru パラメーター
+### <a name="passthru-parameter"></a>PassThru パラメーター
 
 ```powershell
 New-ScriptFileInfo -Description "Script file description." -PassThru
 ```
 
-<a id="new-scriptfileinfo-cmdlet" class="xliff"></a>
-
-### New-ScriptFileInfo コマンドレット
+### <a name="new-scriptfileinfo-cmdlet"></a>New-ScriptFileInfo コマンドレット
 New-ScriptFileInfo コマンドレットでは、バージョン、GUID、作成者、説明などのメタデータを含む新しいスクリプト ファイルを作成できます。 
 
 ```powershell

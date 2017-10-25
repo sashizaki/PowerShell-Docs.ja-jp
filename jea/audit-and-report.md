@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="auditing-and-reporting-on-jea" class="xliff"></a>
-
-# JEA の監査とレポート
+# <a name="auditing-and-reporting-on-jea"></a>JEA の監査とレポート
 
 > 適用先: Windows PowerShell 5.0
 
@@ -21,9 +19,7 @@ JEA エンドポイントに適切なユーザーがアクセスしているこ�
 
 このトピックでは、JEA エンドポイントを監査するさまざまな方法について説明します。
 
-<a id="find-registered-jea-sessions-on-a-machine" class="xliff"></a>
-
-## コンピューターに登録されている JEA セッションを見つける
+## <a name="find-registered-jea-sessions-on-a-machine"></a>コンピューターに登録されている JEA セッションを見つける
 
 コンピューターに登録されている JEA セッションを確認するには、[Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) コマンドレットを使用します。
 
@@ -52,9 +48,7 @@ $jea = Get-PSSessionConfiguration -Name 'JEAMaintenance'
 $jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{ Name = 'Role Capabilities'; Expression = { $_.Value.RoleCapabilities } }
 ```
 
-<a id="find-available-role-capabilities-on-the-machine" class="xliff"></a>
-
-## コンピューターで利用できるロール機能を見つける
+## <a name="find-available-role-capabilities-on-the-machine"></a>コンピューターで利用できるロール機能を見つける
 
 有効な PowerShell モジュール内の "RoleCapabilities" フォルダーに保存されている場合、ロール機能ファイルは JEA のみで利用されます。
 利用可能なモジュールの一覧を検索することで、コンピューターで利用できるすべてのロール機能を見つけることができます。
@@ -79,9 +73,7 @@ function Find-LocalRoleCapability {
 > [!NOTE]
 > この関数の結果の順序は、必ずしも、複数のロール機能で同じ名前が共有されているときのロール機能の選択順に一致しません。
 
-<a id="check-effective-rights-for-a-specific-user" class="xliff"></a>
-
-## 特定のユーザーに対して有効な権限を確認する
+## <a name="check-effective-rights-for-a-specific-user"></a>特定のユーザーに対して有効な権限を確認する
 
 JEA エンドポイントを設定したら、JEA セッションで特定のユーザーが利用できるコマンドを確認することが推奨されます。
 ユーザーが現在のグループ メンバーシップで JEA セッションを開始するのであれば、[Get-PSSessionCapability](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Get-PSSessionCapability) を利用し、ユーザーに該当するすべてのコマンドを列挙できます。
@@ -95,9 +87,7 @@ Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\A
 一般的に、Just-In-Time の特権アクセス (必要なときに必要な許可を与える) 管理システムを利用し、セキュリティ グループに一時的に属することをユーザーに許可する場合がそれに該当します。
 仕事を行うために必要な最小限のコマンドだけが与えられるように、ユーザーとロール (と各ロールのコンテンツ) のマッピングを常に注意深く評価してください。
 
-<a id="powershell-event-logs" class="xliff"></a>
-
-## PowerShell イベント ログ
+## <a name="powershell-event-logs"></a>PowerShell イベント ログ
 
 システムでモジュールやスクリプト ブロックのログ記録を有効にしている場合、ユーザーが JEA セッションで実行したコマンドごとに、Windows イベント ログでイベントを検索できます。
 イベントを検索するには、Windows イベント ビューアーを起動し、**Microsoft-Windows-PowerShell/Operational** イベント ログに移動し、イベント ID が **4104** のイベントを探します。
@@ -106,9 +96,7 @@ Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\A
 JEA セッションの場合、これには **ConnectedUser** と **RunAsUser** に関する重要な情報が含まれます。ConnectedUser は JEA セッションを実行した実際のユーザーであり、RunAsUser はコマンドの実行に利用されたアカウント JEA を識別します。
 アプリケーション イベント ログには、RunAsUser により行われた変更が表示されます。そのため、トランスクリプトまたはモジュール/スクリプトのログ記録を有効にしておくことが、コマンドの呼び出しをユーザーにさかのぼって追跡するために重要です。
 
-<a id="application-event-logs" class="xliff"></a>
-
-## アプリケーション イベント ログ
+## <a name="application-event-logs"></a>アプリケーション イベント ログ
 
 外部のアプリケーションやサービスと情報を交換する JEA セッションでコマンドを実行すると、そのようなアプリケーションやサービスでは、独自のイベント ログにイベントが記録されることがあります。
 PowerShell のログやトランスクリプトとは異なり、他のログ記録メカニズムでは、JEA セッションの接続ユーザーが記録されず、代わりに、仮想実行ユーザーかグループの管理されたサービス アカウントのみが記録されます。
@@ -117,9 +105,7 @@ PowerShell のログやトランスクリプトとは異なり、他のログ記
 アプリケーション イベント ログの実行ユーザーと接続ユーザーを比較するとき、WinRM ログも役に立ちます。
 **Microsoft-Windows-Windows Remote Management/Operational** ログのイベント ID **193** では、JEA セッションが作成されるたびに、接続ユーザーと実行ユーザーの両方に対して、セキュリティ識別子 (SID) とアカウント名が記録されます。
 
-<a id="session-transcripts" class="xliff"></a>
-
-## セッションのトランスクリプト
+## <a name="session-transcripts"></a>セッションのトランスクリプト
 
 ユーザー セッションごとにトランスクリプトを作成するように JEA を構成した場合、すべてのユーザーのアクションのテキスト コピーが指定のフォルダーに保存されます。
 
@@ -161,9 +147,7 @@ Running  Dns                DNS Server
 各コマンドの出力も CommandInvocation をトリガーします (通常は Out-Default に)。 Out-Default の InputObject は、コマンドから返される PowerShell オブジェクトです。
 そのオブジェクトの詳細が数行下に出力されています。ユーザーに表示される内容と同様のものが表示されます。
 
-<a id="see-also" class="xliff"></a>
-
-## 関連項目
+## <a name="see-also"></a>関連項目
 
 - [JEA セッションでユーザー アクションを監査する](audit-and-report.md)
 - [*PowerShell ♥ the Blue Team* のセキュリティに関するブログ投稿](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)

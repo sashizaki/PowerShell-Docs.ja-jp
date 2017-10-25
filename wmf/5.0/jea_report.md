@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="reporting-on-jea" class="xliff"></a>
-
-# JEA のレポート
+# <a name="reporting-on-jea"></a>JEA のレポート
 JEA 構成の状態をレポートするには、次のコマンドを使用できます。
 1.  **Get-PSSessionConfiguration** は、特定のコンピューター上のすべての登録済みエンドポイントの一覧を返します。
 2.  **Get-PSSessionCapability** は、特定のユーザーが特定のエンドポイントで持つ機能についてレポートします。

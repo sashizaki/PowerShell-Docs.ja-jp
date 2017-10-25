@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="direct-access-to-dsc-resource-methods" class="xliff"></a>
-
-# DSC リソース メソッドへの直接アクセス
+# <a name="direct-access-to-dsc-resource-methods"></a>DSC リソース メソッドへの直接アクセス
 
 
 DSC リソースとそのメソッド (Get、Set、Test) に直接アクセスできるように、[Invoke-DscResource](https://technet.microsoft.com/en-us/library/mt517869.aspx) コマンドレットが追加されました。 これは、DSC リソースを活用することを希望するサード パーティが使用できます。

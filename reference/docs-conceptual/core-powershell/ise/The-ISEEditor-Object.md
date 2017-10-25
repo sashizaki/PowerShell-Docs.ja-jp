@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "ISEEditor オブジェクト"
-ms.openlocfilehash: 149eda44fea5b02324442970324e3010015e7ae5
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: c593eeebf0b9a94769841efd2aa78f84a3829ca5
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor オブジェクト
   **ISEEditor** オブジェクトは、Microsoft.PowerShell.Host.ISE.ISEEditor クラスのインスタンスです。 コンソール ウィンドウは **ISEEditor** オブジェクトです。 各 [ISEFile](The-ISEFile-Object.md) オブジェクトには、関連付けられている **ISEEditor** オブジェクトがあります。 次のセクションでは、**ISEEditor** オブジェクトのメソッドとプロパティについて説明します。
@@ -75,7 +75,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **text** - 文字列。挿入するテキスト。
 
- 後述の「[スクリプト例](#-scripting-example)」を参照してください。
+ 後述の「[スクリプト例](#scripting-example)」を参照してください。
 
 ### <a name="select-startline-startcolumn-endline-endcolumn-"></a>Select\( startLine, startColumn, endLine, endColumn \)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
@@ -90,7 +90,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
  **endColumn** - 整数。選択範囲が終了する終了行内の列。
 
- 後述の「[スクリプト例](#-scripting-example)」を参照してください。
+ 後述の「[スクリプト例](#scripting-example)」を参照してください。
 
 ### <a name="selectcaretline"></a>SelectCaretLine\(\)
   Windows PowerShell ISE 2.0 以降でサポートされています。 
@@ -185,14 +185,14 @@ $psISE.CurrentFile.Editor.LineCount
 
  エディターから選択テキストを取得する読み取り専用のプロパティ。
 
- 後述の「[スクリプト例](#-scripting-example)」を参照してください。
+ 後述の「[スクリプト例](#scripting-example)」を参照してください。
 
 ### <a name="text"></a>テキスト
   Windows PowerShell ISE 2.0 以降でサポートされています。 
 
  エディターでテキストを取得または設定する読み取り/書き込みのプロパティ。
 
- 後述の「[スクリプト例](#-scripting-example)」を参照してください。
+ 後述の「[スクリプト例](#scripting-example)」を参照してください。
 
 ## <a name="scripting-example"></a>スクリプトの例
 

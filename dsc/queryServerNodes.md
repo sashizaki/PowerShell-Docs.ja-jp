@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-function-to-query-node-information-from-pull-server" class="xliff"></a>
-
-# プル サーバーからノード情報を照会するための DSC 関数
+# <a name="dsc-function-to-query-node-information-from-pull-server"></a>プル サーバーからノード情報を照会するための DSC 関数
 
 ```powershell
 function QueryNodeInformation

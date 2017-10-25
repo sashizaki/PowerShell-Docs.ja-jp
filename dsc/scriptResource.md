@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-script-resource" class="xliff"></a>
-
-# DSC Script リソース
+# <a name="dsc-script-resource"></a>DSC Script リソース
 
  
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
@@ -28,9 +26,7 @@ Windows PowerShell Desired State Configuration (DSC) の **Script** リソース
 `GetScript`、`TestScript`、または `SetScript` スクリプト ブロックで構成スクリプトの変数を使用する必要がある場合は、`$using:` スコープを使用します (例については、以下を参照してください)。
 
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 Script [string] #ResourceName
@@ -43,9 +39,7 @@ Script [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ  |  説明   | 
 |---|---| 
@@ -55,9 +49,7 @@ Script [string] #ResourceName
 | Credential| 資格情報が必要な場合、このスクリプトの実行に使用する資格情報を示します。| 
 | DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。
 
-<a id="example-1" class="xliff"></a>
-
-## 例 1
+## <a name="example-1"></a>例 1
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -79,9 +71,7 @@ Configuration ScriptTest
 }
 ```
 
-<a id="example-2" class="xliff"></a>
-
-## 例 2
+## <a name="example-2"></a>例 2
 ```powershell
 $version = Get-Content 'version.txt'
 

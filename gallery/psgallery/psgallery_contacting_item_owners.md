@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="contacting-item-owners" class="xliff"></a>
-
-# アイテムの所有者に連絡する
+# <a name="contacting-item-owners"></a>アイテムの所有者に連絡する
 
 特定のアイテムの所有者に連絡するには、アイテム詳細ページに移動します。
 左のメニュー バーに 「Contact Owners」 (所有者に連絡) リンクがあります。

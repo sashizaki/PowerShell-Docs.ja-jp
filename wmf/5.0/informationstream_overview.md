@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="information-stream" class="xliff"></a>
-
-# 情報ストリーム
+# <a name="information-stream"></a>情報ストリーム
 
 新しい構造化された情報ストリームは、スクリプトとそのホストの間で構造化データを転送するために利用できます。 **Write-Host** が更新され、情報ストリームに送った出力をキャプチャしたり、サイレント状態にしたりできるようになりました。 新しい **Write-Information** コマンドレット (およびそれに対応する WriteInformation API) を共通パラメーター **-InformationVariable** および **-InformationAction** と一緒に使うと、柔軟性と機能が向上します。
 

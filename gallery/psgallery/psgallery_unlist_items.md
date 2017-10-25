@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="unlisting-items" class="xliff"></a>
-
-# アイテムをリストから外す
+# <a name="unlisting-items"></a>アイテムをリストから外す
 
 **PowerShell ギャラリーからアイテムを削除するためのオプションが表示されません。**
 

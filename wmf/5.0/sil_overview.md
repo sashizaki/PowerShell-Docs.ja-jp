@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="software-inventory-logging-sil" class="xliff"></a>
-
-# ソフトウェア インベントリ ログ (SIL)
+# <a name="software-inventory-logging-sil"></a>ソフトウェア インベントリ ログ (SIL)
 
 **重要:** *SIL を既に実行している Windows Server 2012 R2 サーバーに WMF 5.0 をインストールする場合は、インストール プロセスでソフトウェア インベントリ ログ機能が誤って停止されるため、WMF をインストールした後に、Start-SilLogging コマンドレットを 1 回 実行する必要があります。*
 

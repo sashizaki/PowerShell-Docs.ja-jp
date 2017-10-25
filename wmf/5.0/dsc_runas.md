@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="automatic-runas-support-for-dsc-resources" class="xliff"></a>
-
-# DSC リソースの自動 RunAs サポート
+# <a name="automatic-runas-support-for-dsc-resources"></a>DSC リソースの自動 RunAs サポート
 
 WMF 5.0 には、`PsDscRunAsCredential` プロパティを使うことにより、資格情報の指定されたセットの下で**任意の** DSC リソースを実行するためのサポートが含まれています。 
 

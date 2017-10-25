@@ -10,13 +10,9 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="powershellget-overview" class="xliff"></a>
-
-# PowerShellGet 概要
+# <a name="powershellget-overview"></a>PowerShellGet 概要
 
 PowerShellGet モジュールには、https://www.PowerShellGallery.com でモジュール、DSC リソース、ロール機能、スクリプトなどの PowerShell アーティファクトを検索、インストール、更新、公開するためのコマンドレットとその他のプライベート リポジトリが含まれます。
 
-<a id="powershellget-cmdlet-referencepsgetcmdletsreferencemd" class="xliff"></a>
-
-## [PowerShellGet コマンドレット リファレンス](./psget_cmdlets_reference.md)
+## <a name="powershellget-cmdlet-referencepsgetcmdletsreferencemd"></a>[PowerShellGet コマンドレット リファレンス](./psget_cmdlets_reference.md)
 

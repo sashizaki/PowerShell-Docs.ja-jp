@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-configurations" class="xliff"></a>
-
-# DSC 構成
+# <a name="dsc-configurations"></a>DSC 構成
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -38,9 +36,7 @@ MyDscConfiguration
 
 スクリプトを .ps1 ファイルとして保存します。
 
-<a id="configuration-syntax" class="xliff"></a>
-
-## 構成構文
+## <a name="configuration-syntax"></a>構成構文
 
 構成スクリプトは次の部分で構成されます。
 
@@ -73,9 +69,7 @@ MyDscConfiguration
 
 この例では、構成のコンパイル時にノードの名前を **ComputerName** パラメーターとして渡すことで、ノードの名前を指定します。 名前の既定値は "localhost" です。
 
-<a id="compiling-the-configuration" class="xliff"></a>
-
-## 構成のコンパイル
+## <a name="compiling-the-configuration"></a>構成のコンパイル
 
 構成を適用する前に、MOF ドキュメントにコンパイルする必要があります。 そのためには、PowerShell 関数の場合と同じように構成を呼び出します。  
 例の最後の行には構成を呼び出すための構成の名前のみが含まれています。
@@ -122,9 +116,7 @@ Mode                LastWriteTime         Length Name
 -a----       10/23/2015   4:32 PM           2842 MyTestNode.mof
 ```      
 
-<a id="using-dependson" class="xliff"></a>
-
-## DependsOn の使用
+## <a name="using-dependson"></a>DependsOn の使用
 
 **DependsOn** は便利な DSC キーワードです。 通常 (必ずしも常にではありませんが)、DSC では、構成内で出現する順序でリソースが適用されます。 ただし、**DependsOn** でどのリソースが他のリソースに依存するかを指定すると、リソース インスタンスが定義されている順序に関係なく、LCM によってリソースが正しい順序で適用されます。 たとえば、構成で、**User** リソースのインスタンスが **Group** インスタンスの存在に依存することを指定できます。
 
@@ -148,9 +140,7 @@ Configuration DependsOnExample {
 DependsOnExample
 ```
 
-<a id="using-new-resources-in-your-configuration" class="xliff"></a>
-
-## 構成での新しいリソースの使用
+## <a name="using-new-resources-in-your-configuration"></a>構成での新しいリソースの使用
 
 前の例を実行した場合、リソースを明示的にインポートしないで使用することについて警告されることがあります。
 今日、DSC には PSDesiredStateConfiguration モジュールの一部として 12 のリソースが付属しています。 外部モジュールの他のリソースが LCM によって認識されるためには、`$env:PSModulePath` に配置する必要があります。 新しいコマンドレット [Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) を使用して、どのリソースがシステムにインストールされ、LCM で使用できるかを決定できます。 これらのモジュールが `$env:PSModulePath` に配置され、[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) によって正しく認識された後、構成内に読み込む必要があります。 
@@ -159,9 +149,7 @@ DependsOnExample
 - **ModuleName** は、**Import-DscResource** を使用する場合に推奨される方法です。 これは、インポートするリソースを含むモジュールの名前 (およびモジュール名の文字列配列) を受け取ります。 
 - **Name** は、インポートするリソースの名前です。 これは、[Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) によって "Name" として返されるフレンドリ名ではありませんが、リソース スキーマを定義するときに使用されるクラス名です ([Get-DscResource](https://technet.microsoft.com/en-us/library/dn521625.aspx) によって **ResourceType** として返されます)。 
 
-<a id="see-also" class="xliff"></a>
-
-## 参照
+## <a name="see-also"></a>参照
 * [Windows PowerShell Desired State Configuration の概要](overview.md)
 * [DSC リソース](resources.md)
 * [ローカル構成マネージャーの構成](metaConfig.md)

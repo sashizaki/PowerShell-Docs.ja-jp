@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="find-script" class="xliff"></a>
-
-# Find-Script
+# <a name="find-script"></a>Find-Script
 
 指定した条件に一致するオンライン ギャラリーから PowerShell スクリプト ファイルを検索します。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 Find-Script は、指定した条件に一致する登録されているリポジトリからスクリプト ファイルを検出します。
 検出される各スクリプトに対し、Find-Script は、スクリプトをインストールするための Install-Scrip に必要に応じてパイプできる PSRepositoryItemInfo オブジェクトを返します。
@@ -36,23 +32,17 @@ Find-Script コマンドレットでは、名前、タグ、フィルター、�
 
 **注:** 登録されている PSRepository には有効な ScriptSourceLocation が指定されている必要があります。 Set-PSRepository を使用して、ScriptSourceLocation 値を設定できます。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 
 ```powershell
 Get-Command -Name Find-Script -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Find-Script](http://go.microsoft.com/fwlink/?LinkId=619785)
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 # Find a script from the registered repository with ScriptSourceLocation

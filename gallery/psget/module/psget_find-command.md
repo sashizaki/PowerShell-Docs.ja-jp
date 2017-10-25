@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="find-command" class="xliff"></a>
-
-# Find-Command
+# <a name="find-command"></a>Find-Command
 
 モジュール内の PowerShell コマンドを検索します。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 Find-Command コマンドレットは、コマンドレット、エイリアス、関数、ワークフローなどの PowerShell コマンドを検索します。 Find-Command は、登録されているリポジトリ内のモジュールを検索します。
 このコマンドレットが検索するコマンドごとに、PSGetCommandInfo オブジェクトを返します。 PSGetCommandInfo オブジェクトを Install-Module コマンドレットに渡して、コマンドを含むモジュールをインストールできます。
 
@@ -31,22 +27,16 @@ Find-Command コマンドレットは、コマンドレット、エイリアス�
 - Find-Command では、-Filter パラメーターを使用してリポジトリ固有の検索言語をフィルター処理できます。
 - Find-Command では、登録されているリポジトリのすべてまたは一部からモジュール上でフィルター処理できます。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 ```powershell
 Get-Command -Name Find-Command -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Find-Command](http://go.microsoft.com/fwlink/?LinkId=733636)
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 ```powershell
 
 # Find a specific command

@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="setting-up-a-pull-client-using-configuration-names" class="xliff"></a>
-
-# 構成名を使用したプル クライアントのセットアップ
+# <a name="setting-up-a-pull-client-using-configuration-names"></a>構成名を使用したプル クライアントのセットアップ
 
 > 適用先: Windows PowerShell 5.0
 
@@ -74,9 +72,7 @@ Set-DSCLocalConfigurationManager localhost –Path .\PullClientConfigNames –Ve
 SMB プル サーバーでは、引き続き **ConfigurationID** を使用する必要があります。
 **ConfigurationID** を使用したプル サーバーの構成については、「[構成 ID を使用したプル クライアントのセットアップ](PullClientConfigNames.md)」を参照してください。
 
-<a id="resource-and-report-servers" class="xliff"></a>
-
-## リソースおよびレポート サーバー
+## <a name="resource-and-report-servers"></a>リソースおよびレポート サーバー
 
 LCM 構成で **ConfigurationRepositoryWeb** ブロックまたは **ConfigurationRepositoryShare** ブロックのみを指定した場合 (前の例はこれに当たります)、プル クライアントは、指定されたサーバーからリソースをプルしますが、そのサーバーに対してレポートは送信しません。
 構成、リソース、およびレポートについて単一のプル サーバーを使うことができますが、レポートをセットアップするために **ReportRepositoryWeb** ブロックを作成する必要があります。
@@ -151,9 +147,7 @@ configuration PullClientConfigNames
 PullClientConfigNames
 ```
 
-<a id="see-also" class="xliff"></a>
-
-## 参照
+## <a name="see-also"></a>参照
 
 * [構成 ID を使用したプル クライアントのセットアップ](PullClientConfigNames.md)
 * [DSC Web プル サーバーのセットアップ](pullServer.md)

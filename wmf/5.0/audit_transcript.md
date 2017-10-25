@@ -9,9 +9,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="enhanced-transcription-options" class="xliff"></a>
-
-# 強化されたトランスクリプション オプション
+# <a name="enhanced-transcription-options"></a>強化されたトランスクリプション オプション
 
 Windows PowerShell トランスクリプションが強化され、コンソール ホスト (powershell.exe) だけでなく、すべてのホスト アプリケーション (Windows PowerShell ISE など) に適用されるようになりました。
 

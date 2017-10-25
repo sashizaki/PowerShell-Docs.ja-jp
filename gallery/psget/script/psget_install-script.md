@@ -10,16 +10,12 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="install-script" class="xliff"></a>
-
-# Install-Script
+# <a name="install-script"></a>Install-Script
 
 PowerShell スクリプト ファイルをオンライン リポジトリからローカル コンピューターにインストールします。
 
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 Install-Script コマンドレットは、リポジトリからスクリプトのペイロードを取得して、ペイロードが有効な PowerShell スクリプトであることを確認し、スクリプト ファイルを指定したインストール場所にコピーします。
 
@@ -42,9 +38,7 @@ Install-Script コマンドレットは、指定の条件を満たす 1 つ以�
 
 ワイルドカードは、Install-Module、Save-Module、Uninstall-Module、Install-Script、Save-Script、Uninstall-Script の各コマンドレットの -Name ではサポートされていません。
 
-<a id="scope" class="xliff"></a>
-
-### スコープ
+### <a name="scope"></a>スコープ
 モジュールのインストール スコープを指定します。 このパラメーターに使用できる値は、AllUsers と CurrentUser です。
 
 既定のインストール スコープは AllUsers です。
@@ -59,9 +53,7 @@ CurrentUser スコープでは、モジュールは "$home\Documents\WindowsPowe
 AllUsers スコープは、すべてのユーザーがスクリプトを使用できるように、スクリプトを %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts にインストールするように指定します。 CurrentUser スコープは、現在のユーザーのみがスクリプトを使用できるように、スクリプトを $home\Documents\WindowsPowerShell\Scripts にインストールするように指定します。
 
 
-<a id="nopathupdate" class="xliff"></a>
-
-## NoPathUpdate
+## <a name="nopathupdate"></a>NoPathUpdate
 
 - Install-Script コマンドレットの NoPathUpdate スイッチ パラメーターは、PATH 環境変数にスクリプトのインストール場所を追加するためのプロンプトをバイパスします。
 - 指定したコマンド WITH –NoPathUpdate を使用すると、プロンプトは表示されず、PATH NOT も更新されません (ここでは強制は無視できます)。
@@ -70,9 +62,7 @@ AllUsers スコープは、すべてのユーザーがスクリプトを使用�
 - これのすべては、指定したスコープで Install-Script が最初に使用されたときのみに適用されます。
 
 
-<a id="notes" class="xliff"></a>
-
-## メモ
+## <a name="notes"></a>メモ
 
 このコマンドレットは、Windows PowerShell 3.0 または今後のリリースの Windows PowerShell、Windows 7 または Windows 2008 R2、および今後のリリースの Windows で機能します。
 
@@ -89,23 +79,17 @@ AllUsers スコープは、すべてのユーザーがスクリプトを使用�
 悪意のあるコードが含まれているモジュールを実行しないようにするため、インストール済みのモジュールはインストールでは自動的にインポートされません。 セキュリティのベスト プラクティスとして、最初にモジュール内のコマンドレットまたは関数を実行する前に、モジュール コードを評価します。
 
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 
 ```powershell
 Get-Command -Name Install-Script -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Install-Script](http://go.microsoft.com/fwlink/?LinkId=619784)
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 
 ```powershell
 
@@ -487,9 +471,7 @@ The scripts install location 'C:\Program Files\WindowsPowerShell\Scripts' is req
 
 ```
 
-<a id="install-script-cmdlet-in-pipeline-operations" class="xliff"></a>
-
-## パイプライン操作での Install-Script コマンドレット
+## <a name="install-script-cmdlet-in-pipeline-operations"></a>パイプライン操作での Install-Script コマンドレット
 
 ```powershell
 
@@ -516,15 +498,11 @@ Get-InstalledModule
 
 ```
 
-<a id="side-by-side-version-support-on-powershell-50-or-newer" class="xliff"></a>
-
-## PowerShell 5.0 以降の Side-by-Side バージョン サポート
+## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a>PowerShell 5.0 以降の Side-by-Side バージョン サポート
 
 PowerShellGet は、Windows PowerShell 5.0 以降で実行される Install-Script、Update-Script、Publish-Script の各コマンドレットの Side-by-Side (SxS) モジュール バージョン サポートに対応しています。
 
-<a id="install-script-examples" class="xliff"></a>
-
-### Install-Script の例
+### <a name="install-script-examples"></a>Install-Script の例
 
 ```powershell
 # Install a version of the module
@@ -556,9 +534,7 @@ Version    Name                                Repository           Description
 
 ```
 
-<a id="install-module-with-its-dependencies" class="xliff"></a>
-
-## モジュールを依存関係と共にインストールする
+## <a name="install-module-with-its-dependencies"></a>モジュールを依存関係と共にインストールする
 
 ```powershell
 
@@ -652,9 +628,7 @@ Version    Name                                Repository           Description
 
 ```
 
-<a id="error-scenarios" class="xliff"></a>
-
-## エラー シナリオ
+## <a name="error-scenarios"></a>エラー シナリオ
 
 ```powershell
 
@@ -672,9 +646,7 @@ Install-Script ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
 
-<a id="installing-a-script-with-dependent-scripts-and-modules" class="xliff"></a>
-
-## 依存スクリプトとモジュールと共にスクリプトをインストールする
+## <a name="installing-a-script-with-dependent-scripts-and-modules"></a>依存スクリプトとモジュールと共にスクリプトをインストールする
 
 ```powershell
 # Installing a script with dependent scripts and modules
@@ -747,9 +719,7 @@ Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
 Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
 ```
 
-<a id="install-script-and-get-installedscript-cmdlets" class="xliff"></a>
-
-## Install-Script および Get-InstalledScript コマンドレット
+## <a name="install-script-and-get-installedscript-cmdlets"></a>Install-Script および Get-InstalledScript コマンドレット
 Install-Script コマンドレットでは、特定のスクリプト ファイルをその依存関係と共に、指定したスコープにインストールできます。 既定では、スクリプトは AllUsers スコープにインストールされます。 Get-InstalledScript コマンドレットでは、Install-Script コマンドレットを使用してインストールされたスクリプト ファイルの一覧を取得できます。
 
 使用上の注意: スクリプトがインストールされた後、管理および検索できるようにするため、Install-Script によってスクリプトを格納するための既定のフォルダーが $home\Documents\WindowsPowerShell\Scripts に作成され、PATH 環境変数にそのフォルダーが追加されます。 パスの変更に問題がある場合は、Install-Script ではなく Save-Script を使用します。 Get-InstalledScripts と Uninstall-Script は、Install-Script を使用してシステム上に配置されたスクリプトに対してのみ機能します。

@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-for-linux-nxgroup-resource" class="xliff"></a>
-
-# Linux 用 DSC の nxGroup リソース
+# <a name="dsc-for-linux-nxgroup-resource"></a>Linux 用 DSC の nxGroup リソース
 
 PowerShell Desired State Configuration (DSC) の **nxGroup** リソースは、Linux ノード上でローカル グループを管理するためのメカニズムを備えています。
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 
 ```powershell
 nxGroup <string> #ResourceName
@@ -33,9 +29,7 @@ nxGroup <string> #ResourceName
 
 ```
 
-<a id="properties" class="xliff"></a>
-
-## プロパティ
+## <a name="properties"></a>プロパティ
 
 |  プロパティ |  説明 | 
 |---|---|
@@ -47,9 +41,7 @@ nxGroup <string> #ResourceName
 | PreferredGroupID| 可能であれば、グループ id を指定の値に設定します。 そのグループ id が現在使用中である場合は、次に使用可能なグループ id が使用されます。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
 
-<a id="example" class="xliff"></a>
-
-## 例
+## <a name="example"></a>例
 
 次の例では、ユーザー "monuser" が存在し、グループ "DBusers" のメンバーであることを保証しています。
 

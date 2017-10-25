@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="find-rolecapability" class="xliff"></a>
-
-# Find-RoleCapability
+# <a name="find-rolecapability"></a>Find-RoleCapability
 
 モジュール内のロール機能を検索します。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 Find-RoleCapability コマンドレットは、モジュール内の PowerShell ロール機能を検索します。 Find-RoleCapability は、登録されているリポジトリ内のモジュールを検索します。 このコマンドレットが検索するロール機能ごとに、PSGetRoleCapabilityInfo オブジェクトを返します。 PSGetRoleCapabilityInfo オブジェクトを Install-Module コマンドレットに渡して、ロール機能を含むモジュールをインストールできます。
 PowerShell ロール機能は、Just Enough Administration (JEA) エンドポイントでユーザーが利用できるコマンド、アプリケーションなどを定義します。 ロール機能は、拡張子が .psrc のファイルによって定義されます。
 
@@ -31,22 +27,16 @@ PowerShell ロール機能は、Just Enough Administration (JEA) エンドポイ
 - Find-RoleCapability では、-Filter パラメーターを使用してリポジトリ固有の検索言語をフィルター処理できます。
 - Find-RoleCapability では、登録されているリポジトリのすべてまたは一部からモジュール上でフィルター処理できます。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 ```powershell
 Get-Command -Name Find-RoleCapability -Module PowerShellGet -Syntax
 ```
 
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Find-RoleCapability](http://go.microsoft.com/fwlink/?LinkId=718029)
 
-<a id="example-commands" class="xliff"></a>
-
-## コマンド例
+## <a name="example-commands"></a>コマンド例
 ```powershell
 
 # Find a specific role capability

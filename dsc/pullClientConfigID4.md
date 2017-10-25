@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="setting-up-a-pull-client-using-configuration-id-in-powershell-40" class="xliff"></a>
-
-# PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ
+# <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -47,14 +45,10 @@ SimpleMetaConfigurationForPull -Output "."
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
 
-<a id="configuration-id" class="xliff"></a>
-
-## 構成 ID
+## <a name="configuration-id"></a>構成 ID
 このスクリプトは、LCM の **ConfigurationID** プロパティをこの目的で以前に作成した GUID に設定します (GUID を作成するには、**New-Guid** コマンドレットを使用します)。 **ConfigurationID** は、LCM がプル サーバーで適切な構成を検索する場合に使用します。 プル サーバー上の構成 MOF ファイルは、`ConfigurationID.mof` という名前にする必要があります。ここで、*ConfigurationID* はターゲット ノードの LCM の **ConfigurationID** プロパティの値です。
 
-<a id="pulling-from-an-smb-server" class="xliff"></a>
-
-## SMB サーバーからプルする
+## <a name="pulling-from-an-smb-server"></a>SMB サーバーからプルする
 
 プル サーバーを、Web サービスではなく SMB ファイル共有としてセットアップするには、**WebDownLoadManager** ではなく **DscFileDownloadManager** を指定します。
 **DscFileDownloadManager** は、**ServerUrl** の代わりに **SourcePath** プロパティを取ります。 次のスクリプトは、"CONTOSO-SERVER" という名前のサーバーの "SmbDscShare" という名前の SMB 共有から構成をプルするように LCM を構成します。
@@ -77,9 +71,7 @@ Configuration SimpleMetaConfigurationForPull
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-<a id="see-also" class="xliff"></a>
-
-## 参照
+## <a name="see-also"></a>参照
 
 - [DSC Web プル サーバーのセットアップ](pullServer.md)
 - [DSC SMB プル サーバーのセットアップ](pullServerSMB.md)

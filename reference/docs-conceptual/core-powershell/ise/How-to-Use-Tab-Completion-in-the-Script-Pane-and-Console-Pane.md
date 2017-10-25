@@ -1,5 +1,5 @@
 ---
-ms.date: 2017-06-05T00:00:00.000Z
+ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "スクリプト ウィンドウとコンソール ウィンドウでタブ補完を使用する方法"
 ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84

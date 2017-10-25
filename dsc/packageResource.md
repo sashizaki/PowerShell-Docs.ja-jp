@@ -10,17 +10,13 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-package-resource" class="xliff"></a>
-
-# DSC Package リソース
+# <a name="dsc-package-resource"></a>DSC Package リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) の **Package** リソースは、Windows インストーラーや setup.exe パッケージなど、ターゲット ノードでパッケージをインストールまたはアンインストールするメカニズムを備えています。
 
-<a id="syntax" class="xliff"></a>
-
-## 構文
+## <a name="syntax"></a>構文
 
 ```
 Package [string] #ResourceName
@@ -37,9 +33,7 @@ Package [string] #ResourceName
 }
 ```
 
-<a id="properties" class="xliff"></a>
-
-## プロパティ
+## <a name="properties"></a>プロパティ
 |  プロパティ  |  説明   | 
 |---|---| 
 | 名前| 特定の状態を保証するパッケージの名前を示します。| 
@@ -52,9 +46,7 @@ Package [string] #ResourceName
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は DependsOn = "[ResourceType]ResourceName" になります。| 
 | ReturnCode| 想定されるリターン コードを示します。 実際のリターン コードがここで指定される想定される値と一致しない場合、構成はエラーを返します。| 
 
-<a id="example" class="xliff"></a>
-
-## 例
+## <a name="example"></a>例
 
 この例では、指定されたパスに配置され、指定された製品 ID が割り当てられている .msi インストーラーを実行します。
 

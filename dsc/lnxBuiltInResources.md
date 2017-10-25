@@ -10,15 +10,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="built-in-desired-state-configuration-resources-for-linux" class="xliff"></a>
-
-# Linux 用 Desired State Configuration の組み込みリソース
+# <a name="built-in-desired-state-configuration-resources-for-linux"></a>Linux 用 Desired State Configuration の組み込みリソース
 
 リソースは、PowerShell Desired State Configuration (DSC) スクリプトの作成に使用できる構成要素です。 Linux 用 DSC には、ファイルとフォルダー、パッケージ、環境変数、サービスとプロセスなど、リソースを構成するための一連の組み込み機能が付属します。
 
-<a id="built-in-resources" class="xliff"></a>
-
-## 組み込みリソース 
+## <a name="built-in-resources"></a>組み込みリソース 
 
 次の表は、これらのリソースや詳細を説明するトピックへのリンクの一覧を示します。
 

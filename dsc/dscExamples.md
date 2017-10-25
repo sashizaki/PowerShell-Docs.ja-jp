@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="dsc-examples" class="xliff"></a>
-
-# DSC の例
+# <a name="dsc-examples"></a>DSC の例
 
 このセクションには、DSC の例が掲載されています。
 

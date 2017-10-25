@@ -9,15 +9,11 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="improvements-in-powershell-script-debugging" class="xliff"></a>
-
-# PowerShell スクリプト デバッグの強化
+# <a name="improvements-in-powershell-script-debugging"></a>PowerShell スクリプト デバッグの強化
 
 デバッガーの動作を向上させるため、PowerShell 5.0 では多くの点が強化されています。
 
-<a id="break-all" class="xliff"></a>
-
-## すべて中断
+## <a name="break-all"></a>すべて中断
 
 PowerShell コンソールと Windows PowerShell ISE では、実行中のスクリプトに対してデバッガー中断が可能になりました。 これは、ローカルとリモートの両方のセッションに適用されます。
 
@@ -25,9 +21,7 @@ PowerShell コンソールと Windows PowerShell ISE では、実行中のスク
 
 ISE では、**Ctrl+B** を押すか、**[デバッグ] -> [すべて中断]** メニュー コマンドを使います。
 
-<a id="remote-debugging-and-remote-file-editing-in-windows-powershell-ise" class="xliff"></a>
-
-## Windows PowerShell ISE でのリモートによるデバッグとファイル編集
+## <a name="remote-debugging-and-remote-file-editing-in-windows-powershell-ise"></a>Windows PowerShell ISE でのリモートによるデバッグとファイル編集
 
 Windows PowerShell ISE では、PSEdit コマンドを実行することにより、リモート セッションでファイルを開いて編集できるようになりました。
 たとえば、次のように、リモート セッションでコマンド ラインからファイルを開いて編集できます。
@@ -39,15 +33,11 @@ Windows PowerShell ISE では、PSEdit コマンドを実行することによ�
 また、ブレークポイントにヒットしたときに、Windows PowerShell ISE で自動的に開くリモート ファイルを編集して変更を保存できるようになりました。
 今後は、リモート コンピューターで実行しているスクリプト ファイルをデバッグし、エラー修正のためにファイルを編集し、変更したスクリプトを再実行することができます。
 
-<a id="advanced-script-debugging" class="xliff"></a>
-
-## 高度なスクリプトのデバッグ
+## <a name="advanced-script-debugging"></a>高度なスクリプトのデバッグ
 
 新しい高度なデバッグ機能では、Windows PowerShell を読み込んだローカル コンピューターのプロセスにアタッチし、そのプロセス内の任意の実行空間をデバッグできます。
 
-<a id="runspace-debugging" class="xliff"></a>
-
-### 実行空間のデバッグ
+### <a name="runspace-debugging"></a>実行空間のデバッグ
 
 プロセス内の現在の実行空間を一覧表示し、その実行空間に Windows PowerShell コンソールや ISE デバッガーをアタッチしてスクリプト デバッグを実行するための、新しいコマンドレットが追加されました。
 
@@ -57,9 +47,7 @@ Windows PowerShell ISE では、PSEdit コマンドを実行することによ�
 -   Disable-RunspaceDebug
 -   Get-RunspaceDebug
 
-<a id="attach-to-process-hosting-powershell" class="xliff"></a>
-
-### PowerShell をホストしているプロセスにアタッチする
+### <a name="attach-to-process-hosting-powershell"></a>PowerShell をホストしているプロセスにアタッチする
 
 Windows PowerShell が読み込まれているすべてのコンピューター プロセスにアタッチできるようになりました。 これを行うには、プロセスを使って対話型セッションに入ります。これは、Enter-PSSession コマンドレットを実行して、対話型リモート セッションに入る方法と似ています。
 

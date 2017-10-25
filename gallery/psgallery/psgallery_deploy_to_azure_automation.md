@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="deploy-to-azure-automation" class="xliff"></a>
-
-Azure Automation にデプロイする
+<a name="deploy-to-azure-automation"></a>Azure Automation にデプロイする
 ===========================
 
 項目の詳細ページの [Azure Automation にデプロイする] ボタンでは、PowerShell ギャラリーから Azure Automation に項目がデプロイされます。

@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "PowerShell スクリプト"
-ms.openlocfilehash: 33e5ff3c84b6b34a3072a32165187a8bb811605c
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 8d2386dc49c59a106ecdddf0feabe3344834a86d
+ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 09/29/2017
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -46,7 +46,6 @@ PowerShell ベースのソース コードは現在、GitHub で入手可能で�
 ## <a name="common-powershellcore-powershellcore-powershellmd"></a>[一般的な PowerShell](core-powershell/core-powershell.md)
 このセクションには、PowerShell の参考資料がすべて含まれています。  
 このセクションの内容:
-- [PowerShell 共通モジュール](core-powershell/core-modules.md)
 - [PowerShell Integrated Scripting Environment \(ISE\)](core-powershell/ise-guide.md)
 - [PowerShell コンソール ウィンドウ](core-powershell/console-guide.md)
 - [PowerShell リモート管理](core-powershell/Running-Remote-Commands.md)

@@ -10,47 +10,33 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="save-script" class="xliff"></a>
-
-# Save-Script
+# <a name="save-script"></a>Save-Script
 
 Save-Script コマンドレットでは、指定した場所に保存することによって、スクリプト ファイルを確認できます。
 
-<a id="description" class="xliff"></a>
-
-## 説明
+## <a name="description"></a>説明
 
 Save-Script コマンドレットは指定したスクリプトを保存します。
 
-<a id="cmdlet-syntax" class="xliff"></a>
-
-## コマンドレット構文
+## <a name="cmdlet-syntax"></a>コマンドレット構文
 
 ```powershell
 Get-Command -Name Save-Script -Module PowerShellGet -Syntax
 ```
-<a id="cmdlet-online-help-reference" class="xliff"></a>
-
-## コマンドレット オンライン ヘルプ リファレンス
+## <a name="cmdlet-online-help-reference"></a>コマンドレット オンライン ヘルプ リファレンス
 
 [Save-Script](http://go.microsoft.com/fwlink/?LinkId=619786)
 
-<a id="example-commands" class="xliff"></a>
+## <a name="example-commands"></a>コマンド例
 
-## コマンド例
-
-<a id="example-1-save-a-script-from-a-repository" class="xliff"></a>
-
-### 例 1: リポジトリからスクリプトを保存する
+### <a name="example-1-save-a-script-from-a-repository"></a>例 1: リポジトリからスクリプトを保存する
 このコマンドは、最新バージョンのスクリプト Fabrikam-ClientScript を GalleryINT リポジトリからローカル フォルダー C:\ScriptSharingDemo に保存します
 
 ```powershell
 Save-Script -Name Fabrikam-ClientScript -Repository GalleryINT -Path C:\ScriptSharingDemo
 ```
 
-<a id="example-2-save-a-version-of-a-script-by-piping-from-the-find-script-cmdlet" class="xliff"></a>
-
-### 例 2: Find-Script コマンドレットからパイプして、スクリプトのバージョンを保存する
+### <a name="example-2-save-a-version-of-a-script-by-piping-from-the-find-script-cmdlet"></a>例 2: Find-Script コマンドレットからパイプして、スクリプトのバージョンを保存する
 
 最初のコマンドで、リポジトリ GalleryINT からバージョン 1.5 の Fabrikam-ClientScript を検索して、フォルダー C:\ScriptSharingDemo に保存します
 

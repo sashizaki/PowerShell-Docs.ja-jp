@@ -10,9 +10,7 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="deleting-items" class="xliff"></a>
-
-# アイテムを削除する
+# <a name="deleting-items"></a>アイテムを削除する
 
 PowerShell ギャラリーでは、アイテムを完全に削除することはできません。アイテムの依存関係がなくなるためです。
 

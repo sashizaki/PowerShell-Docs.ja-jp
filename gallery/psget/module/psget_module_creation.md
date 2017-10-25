@@ -10,12 +10,8 @@ ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 06/12/2017
 ---
-<a id="when-to-include-a-project-site-license-url-custom-icon" class="xliff"></a>
-
-## プロジェクト サイト、ライセンス URL、カスタム アイコンを含めるタイミングはいつですか。
+## <a name="when-to-include-a-project-site-license-url-custom-icon"></a>プロジェクト サイト、ライセンス URL、カスタム アイコンを含めるタイミングはいつですか。
 
 
-<a id="what-is-minimum-powershell-version" class="xliff"></a>
-
-## 最小の PowerShel バージョンは何ですか。
+## <a name="what-is-minimum-powershell-version"></a>最小の PowerShel バージョンは何ですか。
 
