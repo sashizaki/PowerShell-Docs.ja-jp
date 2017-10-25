@@ -1,21 +1,21 @@
 ---
-title: "ユーザーの資格情報を指定して DSC を実行する"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 5436b047052f522e930e60925aef1de2f5e81fcb
-ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "ユーザーの資格情報を指定して DSC を実行する"
+ms.openlocfilehash: f15b2e4bfb888e2f3646a33cc0191e33a7ebb8ab
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="running-dsc-with-user-credentials"></a>ユーザーの資格情報を指定して DSC を実行する 
 
 > 適用先: Windows PowerShell 5.0、Windows PowerShell 5.1
 
-資格情報のセットを指定して DSC リソースを実行するには、構成の中で自動 **PsDscRunAsCredential** プロパティを使います。 既定では、DSC はシステム アカウントとして各リソースを実行します。 時には、ユーザーとして実行することが必要な場合があります。たとえば、特定のユーザー コンテキストで MSI パッケージをインストールする場合や、ユーザーのレジストリ キーを設定する場合、ユーザーの特定のローカル ディレクトリにアクセスする場合、ネットワーク共有にアクセスする場合などです。
+資格情報のセットを指定して DSC リソースを実行するには、構成の中で自動 **PsDscRunAsCredential** プロパティを使います。 既定では、DSC はシステム アカウントとして各リソースを実行します。
+時には、ユーザーとして実行することが必要な場合があります。たとえば、特定のユーザー コンテキストで MSI パッケージをインストールする場合や、ユーザーのレジストリ キーを設定する場合、ユーザーの特定のローカル ディレクトリにアクセスする場合、ネットワーク共有にアクセスする場合などです。
 
 すべての DSC リソースには、任意のユーザー資格情報に設定できる **PsDscRunAsCredential** プロパティがあります ([PSCredential](https://msdn.microsoft.com/en-us/library/ms572524(v=VS.85).aspx) オブジェクト)。
 資格情報は、構成内でプロパティの値としてハードコーディングするか、[Get-Credential](https://technet.microsoft.com/en-us/library/hh849815.aspx) に対して値を設定することができます。後者の場合は、構成のコンパイル時に資格情報を入力するように求めるプロンプトが表示されます (構成のコンパイルの詳細については、[構成](configurations.md)に関する記事を参照してください)。
@@ -28,7 +28,7 @@ translationtype: HT
 次の例では、**Get-Credential** を使って、ユーザーに資格情報を入力するようにプロンプトが出ます。 また、[Registry](registryResource.md) リソースを使って、Windows のコマンド プロンプト ウィンドウの背景色を指定するレジストリ キーを変更します。
 
 ```powershell
-Configuration ChangeCmdBackGroundColor    
+Configuration ChangeCmdBackGroundColor
 {
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
@@ -45,7 +45,7 @@ Configuration ChangeCmdBackGroundColor
             Hex                  = $true
             PsDscRunAsCredential = Get-Credential
         }
-    }                   
+    }
 }
 
 $configData = @{

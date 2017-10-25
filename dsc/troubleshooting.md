@@ -1,15 +1,14 @@
 ---
-title: "DSC のトラブルシューティング"
-ms.date: 2016-05-16
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: dongill
-ms.prod: powershell
-ms.openlocfilehash: 6b506abf2508a8ba182af9c3362fcc408785d058
-ms.sourcegitcommit: a3966253a165d193a42b43b9430a4dc76988f82f
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "DSC のトラブルシューティング"
+ms.openlocfilehash: 9b1266b9c8923474005760ef78b05d570efdde37
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="troubleshooting-dsc"></a>DSC のトラブルシューティング
 
@@ -33,7 +32,7 @@ Windows PowerShell Desired State Configuration (DSC) は、WinRM に依存しま
 次のパラメーター セットは、最後の構成の実行状況に関する情報を返します。
 
 ```powershell
-Get-DscConfigurationStatus     [-CimSession <CimSession[]>] 
+Get-DscConfigurationStatus  [-CimSession <CimSession[]>] 
                             [-ThrottleLimit <int>] 
                             [-AsJob] 
                             [<CommonParameters>]
@@ -41,7 +40,7 @@ Get-DscConfigurationStatus     [-CimSession <CimSession[]>]
 次のパラメーター セットは、以前のすべての構成の実行状況に関する情報を返します。
 
 ```powershell
-Get-DscConfigurationStatus     -All 
+Get-DscConfigurationStatus  -All 
                             [-CimSession <CimSession[]>] 
                             [-ThrottleLimit <int>] 
                             [-AsJob] 
@@ -55,30 +54,30 @@ PS C:\> $Status = Get-DscConfigurationStatus
 
 PS C:\> $Status
 
-Status         StartDate                Type            Mode    RebootRequested        NumberOfResources
-------        ---------                ----            ----    ---------------        -----------------
-Failure        11/24/2015  3:44:56     Consistency        Push    True                36
+Status      StartDate               Type            Mode    RebootRequested     NumberOfResources
+------      ---------               ----            ----    ---------------     -----------------
+Failure     11/24/2015  3:44:56     Consistency     Push    True                36
 
 PS C:\> $Status.ResourcesNotInDesiredState
 
-ConfigurationName        :    MyService
-DependsOn                :    
-ModuleName                :    PSDesiredStateConfiguration
-ModuleVersion            :    1.1
-PsDscRunAsCredential    :    
-ResourceID                 :    [File]ServiceDll
-SourceInfo                :    c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
-DurationInSeconds        :    0.19
-Error                    :    SourcePath must be accessible for current configuration. The related file/directory is:
+ConfigurationName       :   MyService
+DependsOn               :   
+ModuleName              :   PSDesiredStateConfiguration
+ModuleVersion           :   1.1
+PsDscRunAsCredential    :   
+ResourceID              :   [File]ServiceDll
+SourceInfo              :   c:\git\CustomerService\Configs\MyCustomService.ps1::5::34::File
+DurationInSeconds       :   0.19
+Error                   :   SourcePath must be accessible for current configuration. The related file/directory is:
                             \\Server93\Shared\contosoApp.dll. The related ResourceID is [File]ServiceDll
-FinalState                :    
-InDesiredState             :    False
-InitialState             :    
-InstanceName            :    ServiceDll
-RebootRequested            :    False
-ReosurceName            :    File
-StartDate                :    11/24/2015  3:44:56
-PSComputerName            :
+FinalState              :   
+InDesiredState          :   False
+InitialState            :   
+InstanceName            :   ServiceDll
+RebootRequested         :   False
+ReosurceName            :   File
+StartDate               :   11/24/2015  3:44:56
+PSComputerName          :
 ```
 
 ## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>スクリプトが実行されない: DSC ログを使用したスクリプト エラーの診断
@@ -99,7 +98,7 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} : 
 ```
 
-上に示すように、DSC のプライマリ ログ名は **Microsoft->Windows->DSC** です (簡略化のため、Windows の下にあるその他のログ名は表示していません)。 完全なログ名を作成するには、プライマリ名にチャネル名を追加します。 DSC エンジンは、主に&3; 種類のログに書き込みます。[操作ログ、分析ログ、およびデバッグ ログ](https://technet.microsoft.com/library/cc722404.aspx)です。 分析ログとデバッグ ログは既定でオフになっているため、それらをイベント ビューアーで有効にする必要があります。 これを行うには、Windows PowerShell で「Show-EventLog」と入力するか、または、**[スタート]** ボタンをクリックし、**[コントロール パネル]**、**[管理ツール]**、**[イベント ビューアー]** の順にクリックして、イベント ビューアーを開きます。 イベント ビューアーの **[表示]** メニューで、**[分析およびデバッグ ログの表示]** をクリックします。 分析チャネルのログ名は **Microsoft-Windows-Dsc/Analytic** で、デバッグ チャネルのログ名は **Microsoft-Windows-Dsc/Debug** です。 次の例に示すように、[wevtutil](https://technet.microsoft.com/library/cc732848.aspx) ユーティリティを使用してログを有効にすることもできます。
+上に示すように、DSC のプライマリ ログ名は **Microsoft->Windows->DSC** です (簡略化のため、Windows の下にあるその他のログ名は表示していません)。 完全なログ名を作成するには、プライマリ名にチャネル名を追加します。 DSC エンジンは、主に 3 種類のログに書き込みます。[操作ログ、分析ログ、およびデバッグ ログ](https://technet.microsoft.com/library/cc722404.aspx)です。 分析ログとデバッグ ログは既定でオフになっているため、それらをイベント ビューアーで有効にする必要があります。 これを行うには、Windows PowerShell で「Show-EventLog」と入力するか、または、**[スタート]** ボタンをクリックし、**[コントロール パネル]**、**[管理ツール]**、**[イベント ビューアー]** の順にクリックして、イベント ビューアーを開きます。 イベント ビューアーの **[表示]** メニューで、**[分析およびデバッグ ログの表示]** をクリックします。 分析チャネルのログ名は **Microsoft-Windows-Dsc/Analytic** で、デバッグ チャネルのログ名は **Microsoft-Windows-Dsc/Debug** です。 次の例に示すように、[wevtutil](https://technet.microsoft.com/library/cc732848.aspx) ユーティリティを使用してログを有効にすることもできます。
 
 ```powershell
 wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
@@ -107,7 +106,7 @@ wevtutil.exe set-log “Microsoft-Windows-Dsc/Analytic” /q:true /e:true
 
 ## <a name="what-do-dsc-logs-contain"></a>DSC ログに含まれる内容
 
-DSC ログは、メッセージの重要度に基づいて&3; つのログ チャネルに分割されています。 DSC の操作ログにはすべてのエラー メッセージが含まれ、問題の識別に使用できます。 分析ログには、より大量のイベントが含まれ、エラーがどこで発生したかを識別できます。 このチャネルには、詳細メッセージも含まれます (ある場合)。 デバッグ ログには、エラーがどのように発生したかを理解するのに役立つログが含まれています。 DSC イベント メッセージは、すべてのイベント メッセージの先頭が、DSC 操作を一意に表すジョブ ID になるように構成されています。 次の例では、DSC 操作ログに記録された最初のイベントからメッセージを取得しようとしています。
+DSC ログは、メッセージの重要度に基づいて 3 つのログ チャネルに分割されています。 DSC の操作ログにはすべてのエラー メッセージが含まれ、問題の識別に使用できます。 分析ログには、より大量のイベントが含まれ、エラーがどこで発生したかを識別できます。 このチャネルには、詳細メッセージも含まれます (ある場合)。 デバッグ ログには、エラーがどのように発生したかを理解するのに役立つログが含まれています。 DSC イベント メッセージは、すべてのイベント メッセージの先頭が、DSC 操作を一意に表すジョブ ID になるように構成されています。 次の例では、DSC 操作ログに記録された最初のイベントからメッセージを取得しようとしています。
 
 ```powershell
 PS C:\> $AllDscOpEvents = Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
@@ -117,7 +116,7 @@ Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 Consistency engine was run successfully. 
 ```
 
-DSC イベントは、ユーザーが&1; つの DSC ジョブからイベントを集計できるように特定の構造に記録されます。 その構造は次のとおりです。
+DSC イベントは、ユーザーが 1 つの DSC ジョブからイベントを集計できるように特定の構造に記録されます。 その構造は次のとおりです。
 
 **ジョブ ID: <Guid>**
 **<Event Message>**
@@ -185,7 +184,7 @@ TimeCreated                     Id LevelDisplayName Message
 12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...       
 ```
 
-[Where-Object](https://technet.microsoft.com/library/ee177028.aspx) を使用して変数 `$SeparateDscOperations` 内のデータを抽出できます。 次に、DSC のトラブルシューティングに役立つデータを抽出する&5; つのシナリオを示します。
+[Where-Object](https://technet.microsoft.com/library/ee177028.aspx) を使用して変数 `$SeparateDscOperations` 内のデータを抽出できます。 次に、DSC のトラブルシューティングに役立つデータを抽出する 5 つのシナリオを示します。
 
 ### <a name="1-operations-failures"></a>1: 操作エラー
 
@@ -198,7 +197,7 @@ Count Name                      Group
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
 ```
 
-### <a name="2-details-of-operations-run-in-the-last-half-hour"></a>2: 過去&30; 分間に実行された操作の詳細
+### <a name="2-details-of-operations-run-in-the-last-half-hour"></a>2: 過去 30 分間に実行された操作の詳細
 
 それぞれの Windows イベントのプロパティである `TimeCreated` は、イベントが作成された時刻を示します。 このプロパティを特定の日付/時刻オブジェクトと比較すると、すべてのイベントをフィルター処理できます。
 
@@ -266,11 +265,11 @@ TimeCreated                     Id LevelDisplayName Message
 
 ## <a name="using-xdscdiagnostics-to-analyze-dsc-logs"></a>xDscDiagnostics を使用した DSC ログの分析
 
-**xDscDiagnostics** は、コンピューター上の DSC 障害の分析に役立つ複数の関数で構成される PowerShell モジュールです。 これらの関数は、過去の DSC 操作からのすべてのローカル イベント、またはリモート コンピューター上の DSC イベントの識別に役立ちます (有効な資格情報を使用)。 ここでは、開始から終了まで&1; 回の一意の DSC 実行を定義するために、DSC 操作という用語を使用します。 たとえば、`Test-DscConfiguration` は独立した DSC 操作です。 同様に、DSC の他のすべてのコマンドレット (`Get-DscConfiguration` や `Start-DscConfiguration` など) をそれぞれ別の DSC 操作として識別できます。 この関数は、[xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics) で説明されています。 ヘルプを参照するには、`Get-Help <cmdlet name>` を実行します。
+**xDscDiagnostics** は、コンピューター上の DSC 障害の分析に役立つ複数の関数で構成される PowerShell モジュールです。 これらの関数は、過去の DSC 操作からのすべてのローカル イベント、またはリモート コンピューター上の DSC イベントの識別に役立ちます (有効な資格情報を使用)。 ここでは、開始から終了まで 1 回の一意の DSC 実行を定義するために、DSC 操作という用語を使用します。 たとえば、`Test-DscConfiguration` は独立した DSC 操作です。 同様に、DSC の他のすべてのコマンドレット (`Get-DscConfiguration` や `Start-DscConfiguration` など) をそれぞれ別の DSC 操作として識別できます。 この関数は、[xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics) で説明されています。 ヘルプを参照するには、`Get-Help <cmdlet name>` を実行します。
 
 ### <a name="getting-details-of-dsc-operations"></a>DSC 操作の詳細の取得 
 
-`Get-xDscOperation` 関数は、1 台以上のコンピューターで実行される DSC 操作の結果を検索し、それぞれの DSC 操作で生成されたイベントのコレクションが含まれているオブジェクトを返すことができます。 たとえば、次の出力では、3 つのコマンドが実行されました。 1 つ目のコマンドは成功し、他の&2; つのコマンドは失敗しました。 これらの結果が `Get-xDscOperation` の出力にまとめられています。
+`Get-xDscOperation` 関数は、1 台以上のコンピューターで実行される DSC 操作の結果を検索し、それぞれの DSC 操作で生成されたイベントのコレクションが含まれているオブジェクトを返すことができます。 たとえば、次の出力では、3 つのコマンドが実行されました。 1 つ目のコマンドは成功し、他の 2 つのコマンドは失敗しました。 これらの結果が `Get-xDscOperation` の出力にまとめられています。
 
 ```powershell
 PS C:\DiagnosticsTest> Get-xDscOperation
@@ -598,7 +597,7 @@ LocalConfigurationManager
 } 
 ```
 
-上記のスクリプトを再度実行すると、ファイルの内容が毎回異なるものになります。 (`Get-DscConfiguration` を実行して確認できます)。 次に、さらに&2; つの実行の結果を示します (実際にスクリプトを実行した結果は異なる場合があります)。
+上記のスクリプトを再度実行すると、ファイルの内容が毎回異なるものになります。 (`Get-DscConfiguration` を実行して確認できます)。 次に、さらに 2 つの実行の結果を示します (実際にスクリプトを実行した結果は異なる場合があります)。
 
 ```powershell
 PS C:\> Get-DscConfiguration -CimSession (New-CimSession localhost)

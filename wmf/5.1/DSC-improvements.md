@@ -1,18 +1,14 @@
 ---
+ms.date: 2017-06-12
+author: JKeithB
+ms.topic: reference
+keywords: "WMF, PowerShell, セットアップ"
 title: "WMF 5.1 の DSC 機能強化"
-ms.date: 2016-07-13
-keywords: PowerShell, DSC, WMF
-description: 
-ms.topic: article
-author: keithb
-manager: dongill
-ms.prod: powershell
-ms.technology: WMF
-ms.openlocfilehash: 4c5dfaaf368097c18a2788a9df15632ce116dbbb
-ms.sourcegitcommit: ee407927101c3b166cc200a39a6ea786a1c21f95
+ms.openlocfilehash: ce897dab2344455453e9bf2d0b5a897f9abb4392
+ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/08/2017
+ms.lasthandoff: 07/27/2017
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 の Desired State Configuration (DSC) の機能強化
 
@@ -59,7 +55,7 @@ WMF 5.1 では、このデバッガーは、MOF ベースのリソース メソ�
 
 •   サンプルの部分構成定義 
 
-```PowerShell
+```powershell
 Configuration PartialOne
 {
     Node('localhost')
@@ -86,7 +82,7 @@ Azure Automation サービス名により、MOF ファイルが `<ConfigurationN
 
 これで、Azure Automation サービスから部分構成をプルできなくなりました。
 
-```PowerShell
+```powershell
 Configuration PartialOne
 {
     Node('localhost')
@@ -105,7 +101,7 @@ WMF 5.1 では、プル サーバー/サービスの部分構成の名前を `<C
 
 以下のメタ構成では、ローカルと Azure Automation サービスの両方で管理されるようにノードが設定されます。
 
-```PowerShell
+```powershell
   [DscLocalConfigurationManager()]
    Configuration RegistrationMetaConfig
    {
@@ -209,7 +205,7 @@ DSC では、プル サーバーから管理対象コンピューターに構成
 ####<a name="pull"></a>プル
 ノードの LocalConfigurationManager は、その現在の設定に基づき、モジュールと構成の署名を検証します。 既定では、署名検証は無効です。 署名検証は、‘SignatureValidation’ ブロックを下の図のようにノードのメタ構成定義に追加することで有効にできます:
 
-```PowerShell
+```powershell
 [DSCLocalConfigurationManager()]
 Configuration EnableSignatureValidation
 {
@@ -263,7 +259,7 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 
 * ノードで署名検証を有効にします。
 
-```PowerShell
+```powershell
 [DSCLocalConfigurationManager()]
 Configuration EnableSignatureValidation
 {
@@ -282,7 +278,7 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 ``` 
 * サンプル構成ファイルを作成します。
 
-```PowerShell
+```powershell
 # Sample configuration
 Configuration Test
 {
@@ -298,7 +294,7 @@ Test
 
 * 署名のない構成ファイルをノードにプッシュしてみます。 
 
-```PowerShell
+```powershell
 Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
 ``` 
 ![ErrorUnsignedMofPushed](../images/PushUnsignedMof.png)

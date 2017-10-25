@@ -1,15 +1,14 @@
 ---
-title: "構成データと環境データの分離"
-ms.date: 2016-03-31
-keywords: PowerShell, DSC
-description: 
-ms.topic: article
+ms.date: 2017-06-12
 author: eslesar
-manager: carmonm
-ms.prod: powershell
-ms.openlocfilehash: b20aa1f15253ba948c3aa7cf46686c8d206a3a6f
-ms.sourcegitcommit: 65250232157bb1c742d7d385933b8abc24a570fb
-translationtype: HT
+ms.topic: conceptual
+keywords: "DSC, PowerShell, 構成, セットアップ"
+title: "構成データと環境データの分離"
+ms.openlocfilehash: df3cfea08419c37716b408fdbd6b43e78be2331c
+ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 06/12/2017
 ---
 # <a name="separating-configuration-and-environment-data"></a>構成データと環境データの分離
 
@@ -250,11 +249,11 @@ Mode                LastWriteTime         Length Name
 `NonNodeData` は予約語ではなく、ここでの追加キーにこのように名前を付けただけです。
 
 追加キーへのアクセスには、特殊な変数 **$ConfigurationData** を使用します。
-この例では `ConfigFileContents` は、次の行を使用してアクセスします。これは `File` リソース ブロック内です。
+この例では `ConfigFileContents` は、次の行を使用してアクセスします。
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
- in the `File` resource block.
+ これは `File` リソース ブロック内です。
 
 
 ```powershell
@@ -314,3 +313,4 @@ configuration WebsiteConfig
 - [構成データの使用](configData.md)
 - [構成データでの資格情報オプション](configDataCredentials.md)
 - [DSC 構成](configurations.md)
+
