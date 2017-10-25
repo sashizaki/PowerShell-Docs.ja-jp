@@ -136,6 +136,6 @@ ms.lasthandoff: 08/31/2017
 
 ## <a name="see-also"></a><span data-ttu-id="44cd5-192">参照</span><span class="sxs-lookup"><span data-stu-id="44cd5-192">See Also</span></span>
 
-- [<span data-ttu-id="44cd5-193">Windows PowerShell Web Access の承認規則とセキュリティ機能</span><span class="sxs-lookup"><span data-stu-id="44cd5-193">Authorization Rules and Security Features of Windows PowerShell Web Access</span></span>](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
-- [<span data-ttu-id="44cd5-194">Web ベースの Windows PowerShell コンソールの使用</span><span class="sxs-lookup"><span data-stu-id="44cd5-194">Use the Web-based Windows PowerShell Console</span></span>](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
+- <span data-ttu-id="44cd5-193">[Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)</span><span class="sxs-lookup"><span data-stu-id="44cd5-193">[Authorization Rules and Security Features of Windows PowerShell Web Access](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)</span></span>
+- <span data-ttu-id="44cd5-194">[Web ベースの Windows PowerShell コンソールの使用](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)</span><span class="sxs-lookup"><span data-stu-id="44cd5-194">[Use the Web-based Windows PowerShell Console](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)</span></span>
 - [<span data-ttu-id="44cd5-195">about_Remote_Requirements</span><span class="sxs-lookup"><span data-stu-id="44cd5-195">about_Remote_Requirements</span></span>](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
