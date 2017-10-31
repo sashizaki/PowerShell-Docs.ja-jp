@@ -60,7 +60,7 @@ Windows Server 2008 R2 SP1 システムと Windows 7 SP1 システムには、�
 これらのすべての問題を、WMF 4.0 パッケージで修正しました。 したがって、Windows Server 2008 R2 SP1 および Windows 7 SP1 に WMF 5.0 をインストールするには、WMF 4.0 が前提条件になります。 WMF 5.0 にアップグレードする前に WMF 4.0 をインストールしなかった場合に発生する可能性のある問題を下に示します。
 
 - Windows 7 SP1 および Windows Server 2008 R2 SP1 で、WMF 3.0 または WMF 5.0 (前提条件の WMF 4.0 がインストールされていない場合) をアンインストールすると、転送されたイベント ログが利用できなくなり、イベント ビューアーに EventCollector ログが表示されなくなります ([KB2809215](https://support.microsoft.com/en-us/kb/2809215))。
-- **Windows 7 SP1 および Windows Server 2008 R2 SP1 で、組み込みの PowerShell 2.0 から直接 WMF 5.0 にアップグレードした場合 ([KB2872035](https://support.microsoft.com/en-us/kb/2872035))、または WMF 3.0 から WMF 5.0 にアップグレードした場合 ([KB2872047](https://support.microsoft.com/en-us/kb/2872047))、PSModulePath 環境変数に対するカスタマイズが既定値にリセットされます。
+- *PSModulePath* Windows 7 SP1 および Windows Server 2008 R2 SP1 で、組み込みの PowerShell 2.0 から直接 WMF 5.0 にアップグレードした場合 ([KB2872035](https://support.microsoft.com/en-us/kb/2872035))、または WMF 3.0 から WMF 5.0 にアップグレードした場合 ([KB2872047](https://support.microsoft.com/en-us/kb/2872047))、PSModulePath 環境変数に対するカスタマイズが既定値にリセットされます。
 
 **WinRM の依存関係**
 
