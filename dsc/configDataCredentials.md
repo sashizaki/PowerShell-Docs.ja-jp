@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "構成データでの資格情報オプション"
-ms.openlocfilehash: ec4eeb8e519158b2bf929b949e381cdba54f8928
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: 94ff541fc517254ef2876c424307513eaf1d362a
+ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 10/25/2017
 ---
 # <a name="credentials-options-in-configuration-data"></a>構成データでの資格情報オプション
 >適用先: Windows PowerShell 5.0
@@ -21,7 +21,7 @@ ms.lasthandoff: 07/27/2017
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
->**注:** プレーンテキスト パスワードを使うと安全ではありません。 このトピックで後述する手法を使って資格情報をセキュリティ保護することをお勧めします。
+>**注**: <p>暗号化されていないプレーンテキスト パスワードを格納/送信するのは一般的には安全ではありません。 このトピックで後述する手法を使って資格情報をセキュリティ保護することをお勧めします。</p> <p>Azure Automation DSC サービスでは、構成でコンパイルされ、安全に格納される資格情報を一元的に管理することができます。  詳細について、「[DSC 構成のコンパイル/資格情報資産](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)」を参照してください。</p>
 
 プレーンテキストの資格情報を渡す例を次に示します。
 
@@ -129,10 +129,11 @@ DSC 構成リソースは、既定で `Local System` として実行されます
 ただし、`Package` リソースでソフトウェアを特定のユーザー アカウントでインストールする必要がある場合など、リソースによっては資格情報が必要となることがあります。
 
 以前のリソースでは、ハード コードされた `Credential` プロパティ名使用してこのことに対処していました。
-WMF 5.0 では、すべてのリソースに対して自動 `PsDscRunAsCredential` プロパティが追加されました。 `PsDscRunAsCredential` の使用の詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
+WMF 5.0 では、すべてのリソースに対して自動 `PsDscRunAsCredential` プロパティが追加されました。
+`PsDscRunAsCredential` の使用の詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
 新しいリソースおよびカスタム リソースでは、資格情報の独自のプロパティを作成する代わりに、この自動プロパティを使用できます。
 
-*一部のリソースは特定の理由のために複数の資格情報を使用するように設計されており、それらのリソースには独自の資格情報プロパティがあることに注意してください。*
+>**注**: 一部のリソースは特定の理由のために複数の資格情報を使用するように設計されており、それらのリソースには独自の資格情報プロパティがあることに注意してください。
 
 リソースの使用可能な資格情報プロパティを検索するには、ISE で `Get-DscResource -Name ResourceName -Syntax` または Intellisense を使用します (`CTRL+SPACE`)。
 
@@ -265,9 +266,10 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
-*`NodeName` にアスタリスクは指定できません。特定のノード名が必須です。*
+>**注**: `NodeName`にアスタリスクは指定できません。特定のノード名が必須です。
 
 **Microsoft では、重大なセキュリティ リスクのため、プレーンテキスト パスワードを使用しないことをお勧めします。**
+例外は Azure Automation DSC サービスを使用するときで、データが常に暗号化されて格納されるためです (送信中、サービスの一時停止中、ノードの一時停止中)。
 
 ## <a name="domain-credentials"></a>ドメイン資格情報
 
@@ -298,4 +300,3 @@ $cd = @{
 ```
 
 これで、構成スクリプトによってエラーや警告なしで MOF ファイルが生成されます。
-
