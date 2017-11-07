@@ -5,11 +5,11 @@ ms.topic: reference
 keywords: "WMF, PowerShell, セットアップ"
 contributor: keithb
 title: "WMF 5.1 のインストールと構成"
-ms.openlocfilehash: ea9b2fb184f2dd9a8e7a09c3a36278087f795172
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: 74c19d2eb04b77b1e2b1c8d8977f9b4db6e94e4f
+ms.sourcegitcommit: 9910675e8758042b5949c99b381a926d2b4e8c21
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 11/03/2017
 ---
 # <a name="install-and-configure-wmf-51"></a>WMF 5.1 のインストールと構成 #
 
@@ -53,7 +53,8 @@ Install-WMF5.1.ps1 は Windows Server 2008 R2 および Windows 7 でのイン�
 Windows Server 2008 R2 SP1 または Windows 7 SP1 に WMF 5.1 をインストールするには、次を行う必要があります。
 - 最新の Service Pack をインストールする必要があります。
 - WMF 3.0 をインストール**しないでください**。 WMF 3.0 経由で WMF 5.1 をインストールすると、PSModulePath が失われ、これによって他のアプリケーションで障害が発生する場合があります。 WMF 5.1 をインストールする前に WMF 3.0 をアンインストールするか、PSModulePath を保存して、WMF 5.1 のインストールが完了した後に手動で復元する必要があります。 
-- WMF 5.1 には [.NET Framework 4.5.2](https://www.microsoft.com/en-ca/download/details.aspx?id=42642) 以上が必要です。Microsoft .NET Framework 4.5.2 をインストールするには、ダウンロード場所で提供されている手順に従ってください。
+- WMF 5.1には少なくとも [.NET Framework 4.5.2 ](https://www.microsoft.com/en-ca/download/details.aspx?id=42642)が必要です。
+Microsoft .NET Framework 4.5.2 をインストールするには、ダウンロード場所で提供されている手順に従ってください。
 
 **WinRM の依存関係** 
 
