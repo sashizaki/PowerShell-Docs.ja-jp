@@ -4,13 +4,13 @@ author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築"
-ms.openlocfilehash: 6d21faef6e58068456c6c454b4d50b7a9415850b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 60b41c5d279560d0121372e593879fe03cd52f7a
+ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 11/07/2017
 ---
-# <a name="building-a-continuous-integration-and-continuous-deplyoment-pipeline-with-dsc"></a>DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築
+# <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築
 
 この例では、PowerShell、DSC、Pester、および Visual Studio Team Foundation Server (TFS) を使用して継続的インテグレーション/継続的配置 (CI/CD) パイプラインを構築する方法を示します。
 
@@ -381,8 +381,8 @@ git リポジトリの `ci-cd-example` ブランチに変更がチェックイ�
 リリース定義を作成して、コードのチェックインが行われるたびにプロジェクトが開発環境に展開されるようにしてみましょう。
 
 これを行うには、既に作成したビルド定義 `InfraDNS` に関連付けられた新しいリリース定義を追加します。
-必ず **[継続的配置]** を選択し、新しいビルドが完了したらすぐに新しいリリースがトリガーされるようにして 
-([How to: Work with release definitions (方法: リリース定義の作業)](https://www.visualstudio.com/en-us/docs/build/actions/work-with-release-definitions))、次のように構成します。
+必ず **[継続的配置]** を選択し、新しいビルドが完了したらいつでも新しいリリースがトリガーされるようにして 
+(「[How to: Work with release definitions」](https://www.visualstudio.com/en-us/docs/build/actions/work-with-release-definitions) (方法: リリース定義の作業) を参照)、次のように構成します。
 
 リリース定義に以下のステップを追加します。
 
