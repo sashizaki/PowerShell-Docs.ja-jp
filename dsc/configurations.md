@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "DSC 構成"
-ms.openlocfilehash: 3fdee72d5701433a3903697c5a0a32b112136592
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b0868a276dbf5cdb566ce1f35a96b3372cf49be1
+ms.sourcegitcommit: 60c6f9d8cf316e6d5b285854e6e5641ac7648f3f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 11/17/2017
 ---
 # <a name="dsc-configurations"></a>DSC 構成
 
@@ -31,7 +31,6 @@ Configuration MyDscConfiguration {
     }
 } 
 
-MyDscConfiguration 
 ```
 
 スクリプトを .ps1 ファイルとして保存します。
@@ -64,7 +63,6 @@ Configuration MyDscConfiguration {
     }
 }
 
-MyDscConfiguration 
 ```
 
 この例では、構成のコンパイル時にノードの名前を **ComputerName** パラメーターとして渡すことで、ノードの名前を指定します。 名前の既定値は "localhost" です。
@@ -99,7 +97,7 @@ MyDscConfiguration
     Directory: C:\users\default\Documents\DSC Configurations\MyDscConfiguration
 Mode                LastWriteTime         Length Name                                                                                              
 ----                -------------         ------ ----                                                                                         
--a----       10/23/2015   4:32 PM           2842 TEST-PC1.mof
+-a----       10/23/2015   4:32 PM           2842 localhost.mof
 ```  
 
 2 番目の例のように構成でパラメーターを受け取る場合は、コンパイル時に指定する必要があります。 その場合、次のようになります。
@@ -137,7 +135,6 @@ Configuration DependsOnExample {
     }
 }
 
-DependsOnExample
 ```
 
 ## <a name="using-new-resources-in-your-configuration"></a>構成での新しいリソースの使用
