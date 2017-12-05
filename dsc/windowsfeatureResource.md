@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "DSC WindowsFeature リソース"
-ms.openlocfilehash: a3433577a122f6c7e31360e094a089f6ceef77c2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b4f50cb9ee172600b1811175e9cf67f6a7ed2d55
+ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 11/28/2017
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature リソース
 
@@ -35,7 +35,7 @@ WindowsFeature [string] #ResourceName
 
 |  プロパティ  |  説明   | 
 |---|---| 
-| 名前| 追加または削除されることを保証する役割または機能の名前を示します。 これは、[Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) コマンドレットからの __Name__ プロパティと同じものであり、役割または機能の表示名ではありません。| 
+| 名前| 追加または削除されることを保証する役割または機能の名前を示します。 これは、[Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) コマンドレットからの __Name__ プロパティと同じものであり、役割または機能の表示名ではありません。| 
 | Credential| 役割または機能の追加や削除に使用する資格情報を示します。| 
 | Ensure| 役割または機能が追加されるかどうかを示します。 役割または機能が追加されることを保証するには、このプロパティを "Present" に設定します。役割または機能が削除されることを保証するには、このプロパティを "Absent" に設定します。| 
 | IncludeAllSubFeature| __Name__ プロパティで指定した機能の状態を使用して必要なすべてのサブ機能の状態を保証するには、このプロパティを __$true__ に設定します。| 
