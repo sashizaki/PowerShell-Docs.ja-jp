@@ -1,6 +1,13 @@
-.md--- ms.date:  2017-06-05 キーワード:  powershell,コマンドレット タイトル:  概念の理解に関するリファレンス
 ---
-
+ms.date: 2017-06-05
+keywords: "PowerShell, コマンドレット"
+title: "概念の理解に関するリファレンス"
+ms.openlocfilehash: 0a155b502be35463a30833e08e679d707c39592c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 12/05/2017
+---
 # <a name="understanding-concepts"></a>概念について
 
 *  PowerShell のオブジェクト  

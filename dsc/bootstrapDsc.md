@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "DSC を使用した初回起動時の仮想マシンの構成"
-ms.openlocfilehash: a3592c50fa7f2232538fbec07129fac86c1d00b5
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c793e36eb9caa194104f9dda2aa1d335b21b676c
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
 >適用先: Windows PowerShell 5.0
 
@@ -21,7 +21,7 @@ PowerShell 4.0 の初回起動時に、新しい仮想マシンを構成する�
 
 これらの例を実行するには、以下が必要になります。
 
-- 作業する起動可能な VHD。   [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) で、Windows Server 2016 の評価版と共に ISO をダウンロードできます。 「[Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/en-us/library/gg318049.aspx)」 (起動可能な仮想ハード ディスクの作成) で、ISO イメージから VHD を作成する方法に関する手順を参照してください。
+- 作業する起動可能な VHD。 [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) で、Windows Server 2016 の評価版と共に ISO をダウンロードできます。 「[Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/en-us/library/gg318049.aspx)」 (起動可能な仮想ハード ディスクの作成) で、ISO イメージから VHD を作成する方法に関する手順を参照してください。
 - Hyper-V が有効なホスト コンピューター。 詳細については、「[Hyper-V の概要](https://technet.microsoft.com/library/hh831531.aspx)」をご覧ください。
 
 DSC を使用すると、ソフトウェアのインストールと初回起動時のコンピューターの構成を自動化できます。
@@ -83,7 +83,7 @@ Configuration SampleIISInstall
 [Move-Item](https://technet.microsoft.comlibrary/hh849852.aspx) コマンドレットを使用して、`Pending.mof` に名前を変更し、VHD の適切な場所にそのファイルを移動します。 たとえば、次のように入力します。
 
     ```powershell
-        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\Sytem32\Configuration\Pending.mof
+        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
     ```
 6. [Dismount-VHD](https://technet.microsoft.com/library/hh848562.aspx) コマンドレットを呼び出して、VHD のマウントを解除します。 たとえば、次のように入力します。
 
