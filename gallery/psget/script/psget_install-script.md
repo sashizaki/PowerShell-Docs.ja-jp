@@ -4,92 +4,82 @@ contributor: manikb
 ms.topic: reference
 keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
 title: Install-Script
-ms.openlocfilehash: 4c3fd9393ccb7ee5c3b010f1114b6596a74fdee2
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 9ce4125329ea2a38f27f9305b169c7fcf3e9df42
+ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 12/05/2017
 ---
-# <a name="install-script"></a><span data-ttu-id="69d2b-103">Install-Script</span><span class="sxs-lookup"><span data-stu-id="69d2b-103">Install-Script</span></span>
+# <a name="install-script"></a><span data-ttu-id="1946f-103">Install-Script</span><span class="sxs-lookup"><span data-stu-id="1946f-103">Install-Script</span></span>
 
-<span data-ttu-id="69d2b-104">PowerShell スクリプト ファイルをオンライン リポジトリからローカル コンピューターにインストールします。</span><span class="sxs-lookup"><span data-stu-id="69d2b-104">Installs the PowerShell script files from online repositories to the local computer.</span></span>
+<span data-ttu-id="1946f-104">PowerShell スクリプト ファイルをオンライン リポジトリからローカル コンピューターにインストールします。</span><span class="sxs-lookup"><span data-stu-id="1946f-104">Installs the PowerShell script files from online repositories to the local computer.</span></span>
 
+## <a name="description"></a><span data-ttu-id="1946f-105">説明</span><span class="sxs-lookup"><span data-stu-id="1946f-105">Description</span></span>
 
-## <a name="description"></a><span data-ttu-id="69d2b-105">説明</span><span class="sxs-lookup"><span data-stu-id="69d2b-105">Description</span></span>
+<span data-ttu-id="1946f-106">Install-Script コマンドレットは、オンライン ギャラリーから 1 つ以上のスクリプトを検索してダウンロードし、検証して、ローカル コンピューターの指定したインストール スコープにインストールします。</span><span class="sxs-lookup"><span data-stu-id="1946f-106">The Install-Script cmdlet finds and downloads one or more scripts from an online gallery, validates and installs them on the local computer to the specified installation scope.</span></span>
 
-<span data-ttu-id="69d2b-106">Install-Script コマンドレットは、リポジトリからスクリプトのペイロードを取得して、ペイロードが有効な PowerShell スクリプトであることを確認し、スクリプト ファイルを指定したインストール場所にコピーします。</span><span class="sxs-lookup"><span data-stu-id="69d2b-106">The Install-Script cmdlet acquires a script payload from a repository, verifies that the payload is a valid PowerShell script, and copies the script file to a specified installation location.</span></span>
+<span data-ttu-id="1946f-107">スコープが定義されていない場合、または Scope パラメーターの値が AllUsers である場合は、スクリプトは %systemdrive%:\Program Files\WindowsPowerShell\scripts にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="1946f-107">When no scope is defined, or when the value of the Scope parameter is AllUsers, the script is installed to %systemdrive%:\Program Files\WindowsPowerShell\scripts.</span></span> <span data-ttu-id="1946f-108">Scope の値が CurrentUser の場合は、スクリプトは $home\Documents\WindowsPowerShell\scripts にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="1946f-108">When the value of Scope is CurrentUser, the script is installed to $home\Documents\WindowsPowerShell\scripts.</span></span>
 
-<span data-ttu-id="69d2b-107">Install-Script が操作する既定のリポジトリは、Register-PSRepository、Set-PSRepository、Unregister-PSRepository、Get-PSRepository の各コマンドレットを使用して構成できます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-107">The default repositories Install-Script operates against are configurable through the Register-PSRepository, Set-PSRepository, Unregister-PSRepository, and Get-PSRepository cmdlets.</span></span> <span data-ttu-id="69d2b-108">複数のリポジトリを操作の対象にする場合、Install-Script はエラーが発生することなく最初のリポジトリから指定した検索条件 (名前、MinimumVersion、または MaximumVersion) と一致する最初のスクリプトをインストールします。</span><span class="sxs-lookup"><span data-stu-id="69d2b-108">When operating against multiple repositories, Install-Script installs the first script that matches the specified search criteria (Name, MinimumVersion, or MaximumVersion) from the first repository without any error.</span></span>
+<span data-ttu-id="1946f-109">指定したスクリプトの最小バージョンのみに基づいて、結果をフィルター処理することができます。</span><span class="sxs-lookup"><span data-stu-id="1946f-109">You can filter your results based on minimum and exact versions of specified scripts.</span></span>
 
+<span data-ttu-id="1946f-110">重要な注意事項:</span><span class="sxs-lookup"><span data-stu-id="1946f-110">Some important notes:</span></span>
+- <span data-ttu-id="1946f-111">スクリプトは、インストールされている 1 つのファイルです。</span><span class="sxs-lookup"><span data-stu-id="1946f-111">Scripts are installed single files.</span></span> <span data-ttu-id="1946f-112">そのため、スクリプトのコピーは 1 つだけインストールされ、スクリプトの複数のバージョンをシステムに同時にインストールすることはできません。</span><span class="sxs-lookup"><span data-stu-id="1946f-112">As a result, only one copy of a script is installed, and multiple versions of scripts cannot be installed side-by-side on a system.</span></span> 
+- <span data-ttu-id="1946f-113">スクリプトは、Install-Script の実行時にインストールされる、外部モジュールの依存関係を定義する場合があります。</span><span class="sxs-lookup"><span data-stu-id="1946f-113">Scripts may define dependencies on external modules, which will  be installed when Install-Script is run.</span></span>
+- <span data-ttu-id="1946f-114">**"信頼されていません" のプロンプト:** 信頼されていないリポジトリからスクリプトをインストールするには、ユーザーの同意が必要です。</span><span class="sxs-lookup"><span data-stu-id="1946f-114">**Untrusted prompt:** User acceptance is required for installing the scripts from an untrusted repository.</span></span>
+- <span data-ttu-id="1946f-115">RequiredVersion は、SxS の指定したバージョンを PowerShell バージョン 5.0 以降の既存のバージョンでインストールします。</span><span class="sxs-lookup"><span data-stu-id="1946f-115">RequiredVersion installs the specified version in SxS with existing versions on PowerShell version 5.0 or newer.</span></span>
 
-<span data-ttu-id="69d2b-109">Install-Script コマンドレットは、オンライン ギャラリーから 1 つ以上のモジュールをダウンロードして検証し、ローカル コンピューターの指定したインストール スコープにインストールします。</span><span class="sxs-lookup"><span data-stu-id="69d2b-109">Install-Script cmdlet downloads one or more modules from an online gallery, validates and installs them on the local computer to the specified installation scope.</span></span>
+<span data-ttu-id="1946f-116">ワイルドカードは、Install-Script、Save-Script、Uninstall-Script の各コマンドレットの -Name ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="1946f-116">Wildcards are not supported in -Name on Install-Script, Save-Script, and Uninstall-Script cmdlets.</span></span>
 
-<span data-ttu-id="69d2b-110">Install-Script コマンドレットは、指定の条件を満たす 1 つ以上のモジュールをオンライン ギャラリーから取得して、検索結果が有効なモジュールであることを確認し、モジュール フォルダーをインストールの場所にコピーします。</span><span class="sxs-lookup"><span data-stu-id="69d2b-110">The Install-Script cmdlet gets one or more modules that meet specified criteria from an online gallery, verifies that search results are valid modules, and copies module folders to the installation location.</span></span>
+### <a name="scope"></a><span data-ttu-id="1946f-117">スコープ</span><span class="sxs-lookup"><span data-stu-id="1946f-117">Scope</span></span>
+<span data-ttu-id="1946f-118">スクリプトのインストール スコープを指定します。</span><span class="sxs-lookup"><span data-stu-id="1946f-118">Specifies the installation scope of the script.</span></span> <span data-ttu-id="1946f-119">このパラメーターに使用できる値は、AllUsers と CurrentUser です。</span><span class="sxs-lookup"><span data-stu-id="1946f-119">The acceptable values for this parameter are: AllUsers and CurrentUser.</span></span>
 
-<span data-ttu-id="69d2b-111">スコープが定義されていない場合、または Scope パラメーターの値が AllUsers である場合は、モジュールは %systemdrive%:\Program Files\WindowsPowerShell\Modules にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-111">When no scope is defined, or when the value of the Scope parameter is AllUsers, the module is installed to %systemdrive%:\Program Files\WindowsPowerShell\Modules.</span></span> <span data-ttu-id="69d2b-112">Scope の値が CurrentUser の場合は、モジュールは $home\Documents\WindowsPowerShell\Modules にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-112">When the value of Scope is CurrentUser, the module is installed to $home\Documents\WindowsPowerShell\Modules.</span></span>
+<span data-ttu-id="1946f-120">既定のインストール スコープは AllUsers です。</span><span class="sxs-lookup"><span data-stu-id="1946f-120">The default installation scope is AllUsers.</span></span>
 
-<span data-ttu-id="69d2b-113">指定したモジュールの最小バージョンのみに基づいて、結果をフィルター処理することができます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-113">You can filter your results based on minimum and exact versions of specified modules.</span></span>
+<span data-ttu-id="1946f-121">AllUsers スコープでは、スクリプトはコンピューターのすべてのユーザーがアクセス可能な場所 "$env:SystemDrive\Program Files\WindowsPowerShell\scripts" にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="1946f-121">The AllUsers scope lets scripts be installed in a location that is accessible to all users of the computer, that is, "$env:SystemDrive\Program Files\WindowsPowerShell\scripts".</span></span>
 
-- <span data-ttu-id="69d2b-114">PowerShell スクリプト ファイルの Side-by-Side バージョン サポートはありません</span><span class="sxs-lookup"><span data-stu-id="69d2b-114">No Side-by-side version support for PowerShell Script files</span></span>
-- <span data-ttu-id="69d2b-115">スクリプト依存関係のインストール サポート</span><span class="sxs-lookup"><span data-stu-id="69d2b-115">Script dependency installation support</span></span>
-- <span data-ttu-id="69d2b-116">**"信頼されていません" のプロンプト:** 信頼されていないリポジトリからモジュールをインストールするには、ユーザーの同意が必要です。</span><span class="sxs-lookup"><span data-stu-id="69d2b-116">**Untrusted prompt:** User acceptance is required for installing the modules from an untrusted repository.</span></span>
-- <span data-ttu-id="69d2b-117">-Force は、インストール済みのモジュールを再インストールします</span><span class="sxs-lookup"><span data-stu-id="69d2b-117">-Force reinstalls the installed module</span></span>
-- <span data-ttu-id="69d2b-118">RequiredVersion は、SxS の指定したバージョンを PowerShell バージョン 5.0 以降の既存のバージョンでインストールします。</span><span class="sxs-lookup"><span data-stu-id="69d2b-118">RequiredVersion installs the specified version in SxS with existing versions on PowerShell version 5.0 or newer.</span></span>
-
-<span data-ttu-id="69d2b-119">ワイルドカードは、Install-Module、Save-Module、Uninstall-Module、Install-Script、Save-Script、Uninstall-Script の各コマンドレットの -Name ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="69d2b-119">Wildcards are not supported in -Name on Install-Module, Save-Module, Uninstall-Module, Install-Script, Save-Script, and Uninstall-Script cmdlets.</span></span>
-
-### <a name="scope"></a><span data-ttu-id="69d2b-120">スコープ</span><span class="sxs-lookup"><span data-stu-id="69d2b-120">Scope</span></span>
-<span data-ttu-id="69d2b-121">モジュールのインストール スコープを指定します。</span><span class="sxs-lookup"><span data-stu-id="69d2b-121">Specifies the installation scope of the module.</span></span> <span data-ttu-id="69d2b-122">このパラメーターに使用できる値は、AllUsers と CurrentUser です。</span><span class="sxs-lookup"><span data-stu-id="69d2b-122">The acceptable values for this parameter are: AllUsers and CurrentUser.</span></span>
-
-<span data-ttu-id="69d2b-123">既定のインストール スコープは AllUsers です。</span><span class="sxs-lookup"><span data-stu-id="69d2b-123">The default installation scope is AllUsers.</span></span>
-
-<span data-ttu-id="69d2b-124">AllUsers スコープでは、モジュールはコンピューターのすべてのユーザーがアクセス可能な場所 "$env:SystemDrive\Program Files\WindowsPowerShell\Modules" にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-124">The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer, that is, "$env:SystemDrive\Program Files\WindowsPowerShell\Modules".</span></span>
-
-<span data-ttu-id="69d2b-125">CurrentUser スコープでは、モジュールは "$home\Documents\WindowsPowerShell\Modules" のみにインストールされるので、モジュールを使用できるのは現在のユーザーのみです。</span><span class="sxs-lookup"><span data-stu-id="69d2b-125">The CurrentUser scope lets modules be installed only to "$home\Documents\WindowsPowerShell\Modules", so that the module is available only to the current user.</span></span>
+<span data-ttu-id="1946f-122">CurrentUser スコープでは、スクリプトは "$home\Documents\WindowsPowerShell\scripts" のみにインストールされるので、スクリプトを使用できるのは現在のユーザーのみです。</span><span class="sxs-lookup"><span data-stu-id="1946f-122">The CurrentUser scope lets scripts be installed only to "$home\Documents\WindowsPowerShell\scripts", so that the script is available only to the current user.</span></span>
 
 
-<span data-ttu-id="69d2b-126">スクリプトのインストール スコープを指定します。</span><span class="sxs-lookup"><span data-stu-id="69d2b-126">Specifies the installation scope of the script.</span></span> <span data-ttu-id="69d2b-127">有効な値は、AllUsers と CurrentUser です。</span><span class="sxs-lookup"><span data-stu-id="69d2b-127">Valid values are: AllUsers and CurrentUser.</span></span> <span data-ttu-id="69d2b-128">既定の値は CurrentUser です。</span><span class="sxs-lookup"><span data-stu-id="69d2b-128">The default is CurrentUser.</span></span>
+<span data-ttu-id="1946f-123">スクリプトのインストール スコープを指定します。</span><span class="sxs-lookup"><span data-stu-id="1946f-123">Specifies the installation scope of the script.</span></span> <span data-ttu-id="1946f-124">有効な値は、AllUsers と CurrentUser です。</span><span class="sxs-lookup"><span data-stu-id="1946f-124">Valid values are: AllUsers and CurrentUser.</span></span> <span data-ttu-id="1946f-125">既定の値は CurrentUser です。</span><span class="sxs-lookup"><span data-stu-id="1946f-125">The default is CurrentUser.</span></span>
 
-<span data-ttu-id="69d2b-129">AllUsers スコープは、すべてのユーザーがスクリプトを使用できるように、スクリプトを %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts にインストールするように指定します。</span><span class="sxs-lookup"><span data-stu-id="69d2b-129">The AllUsers scope specifies to install a script to %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts so that the script is available to all users.</span></span> <span data-ttu-id="69d2b-130">CurrentUser スコープは、現在のユーザーのみがスクリプトを使用できるように、スクリプトを $home\Documents\WindowsPowerShell\Scripts にインストールするように指定します。</span><span class="sxs-lookup"><span data-stu-id="69d2b-130">The CurrentUser scope specifies to install the script in $home\Documents\WindowsPowerShell\Scripts so that the script is available only to the current user.</span></span>
-
-
-## <a name="nopathupdate"></a><span data-ttu-id="69d2b-131">NoPathUpdate</span><span class="sxs-lookup"><span data-stu-id="69d2b-131">NoPathUpdate</span></span>
-
-- <span data-ttu-id="69d2b-132">Install-Script コマンドレットの NoPathUpdate スイッチ パラメーターは、PATH 環境変数にスクリプトのインストール場所を追加するためのプロンプトをバイパスします。</span><span class="sxs-lookup"><span data-stu-id="69d2b-132">NoPathUpdate switch parameter on Install-Script cmdlet bypasses the prompt for adding the script install location to the PATH environment variable.</span></span>
-- <span data-ttu-id="69d2b-133">指定したコマンド WITH –NoPathUpdate を使用すると、プロンプトは表示されず、PATH NOT も更新されません (ここでは強制は無視できます)。</span><span class="sxs-lookup"><span data-stu-id="69d2b-133">Any use of the command WITH –NoPathUpdate specified will result in no prompt and the PATH NOT being updated (force is ignorable here).</span></span>
-- <span data-ttu-id="69d2b-134">–NoPathUpdate を指定しない -Force の場合、プロンプトは表示されませんが、PATH は更新されます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-134">-Force without –NoPathUpdate will result in no prompt and the PATH will be updated.</span></span>
-- <span data-ttu-id="69d2b-135">–Force も –NoPathUpdate のどちらも指定しない場合は、ユーザーにプロンプトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-135">If neither –Force or –NoPathUpdate are specified, the user will see the prompt.</span></span>
-- <span data-ttu-id="69d2b-136">これのすべては、指定したスコープで Install-Script が最初に使用されたときのみに適用されます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-136">All of this only applies the first time Install-Script is used in a given scope.</span></span>
+<span data-ttu-id="1946f-126">AllUsers スコープは、すべてのユーザーがスクリプトを使用できるように、スクリプトを %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts にインストールするように指定します。</span><span class="sxs-lookup"><span data-stu-id="1946f-126">The AllUsers scope specifies to install a script to %systemdrive%:\ProgramFiles\WindowsPowerShell\Scripts so that the script is available to all users.</span></span> <span data-ttu-id="1946f-127">CurrentUser スコープは、現在のユーザーのみがスクリプトを使用できるように、スクリプトを $home\Documents\WindowsPowerShell\Scripts にインストールするように指定します。</span><span class="sxs-lookup"><span data-stu-id="1946f-127">The CurrentUser scope specifies to install the script in $home\Documents\WindowsPowerShell\Scripts so that the script is available only to the current user.</span></span>
 
 
-## <a name="notes"></a><span data-ttu-id="69d2b-137">メモ</span><span class="sxs-lookup"><span data-stu-id="69d2b-137">Notes</span></span>
+## <a name="nopathupdate"></a><span data-ttu-id="1946f-128">NoPathUpdate</span><span class="sxs-lookup"><span data-stu-id="1946f-128">NoPathUpdate</span></span>
 
-<span data-ttu-id="69d2b-138">このコマンドレットは、Windows PowerShell 3.0 または今後のリリースの Windows PowerShell、Windows 7 または Windows 2008 R2、および今後のリリースの Windows で機能します。</span><span class="sxs-lookup"><span data-stu-id="69d2b-138">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
-
-<span data-ttu-id="69d2b-139">インストールされているモジュールをインポートできない場合 (つまり、同じ名前の.psm1、.psd1 または .dll がフォルダー内にない場合)、Force パラメーターをコマンドに追加しない限り、インストールは失敗します。</span><span class="sxs-lookup"><span data-stu-id="69d2b-139">If an installed module cannot be imported (that is, if it does not have a .psm1, .psd1, or .dll of the same name within the folder), installation fails unless you add the Force parameter to your command.</span></span>
-
-<span data-ttu-id="69d2b-140">コンピューター上のモジュールのバージョンが Name パラメーターに指定された値と一致しているときに、MinimumVersion または RequiredVersion パラメーターを追加していない場合は、そのモジュールをインストールせずに Install-Script スクリプトが警告なしで続行されます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-140">If a version of the module on the computer matches the value specified for the Name parameter, and you have not added the MinimumVersion or RequiredVersion parameter, Install-Script silently continues without installing that module.</span></span> <span data-ttu-id="69d2b-141">MinimumVersion または RequiredVersion パラメーターが指定されているときに、既存のモジュールがそのパラメーターの値と一致しない場合は、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="69d2b-141">If the MinimumVersion or RequiredVersion parameters are specified, and the existing module does not match the values in that parameter, then an error occurs.</span></span> <span data-ttu-id="69d2b-142">具体的には、現在インストールされているモジュールのバージョンが MinimumVersion パラメーターの値よりも低い、または RequiredVersion パラメーターの値と等しくない場合、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="69d2b-142">To be more specific: if the version of the currently-installed module is either lower than the value of the MinimumVersion parameter, or not equal to the value of the RequiredVersion parameter, an error occurs.</span></span> <span data-ttu-id="69d2b-143">インストールされているモジュールのバージョンが MinimumVersion パラメーターの値より大きい、または RequiredVersion パラメーターの値と等しい場合は、そのモジュールをインストールせずに Install-Script スクリプトが警告なしで続行されます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-143">If the version of the installed module is greater than the value of the MinimumVersion parameter, or equal to the value of the RequiredVersion parameter, Install-Script silently continues without installing that module.</span></span>
-
-<span data-ttu-id="69d2b-144">指定した名前に一致するモジュールがオンライン ギャラリーに存在しない場合、Install-Module はエラーを返します。</span><span class="sxs-lookup"><span data-stu-id="69d2b-144">Install-Script returns an error if no module exists in the online gallery that matches the specified name.</span></span>
-
-<span data-ttu-id="69d2b-145">複数のモジュールをインストールするには、モジュール名の配列をコンマで区切って指定します。</span><span class="sxs-lookup"><span data-stu-id="69d2b-145">To install multiple modules, specify an array of the module names, separated by commas.</span></span> <span data-ttu-id="69d2b-146">複数のモジュール名を指定する場合は、MinimumVersion または RequiredVersion を追加できません。</span><span class="sxs-lookup"><span data-stu-id="69d2b-146">You cannot add MinimumVersion or RequiredVersion if you specify multiple module names.</span></span>
-
-<span data-ttu-id="69d2b-147">既定では、Windows PowerShell Desired State Configuration (DSC) リソースをインストール中に混乱しないように、モジュールは Program Files フォルダーにインストールされます。複数の PSGetItemInfo オブジェクトを Install-Script にパイプすることができます。これは、複数のモジュールを 1 つのコマンドでインストールするよう指定するための別の方法です。</span><span class="sxs-lookup"><span data-stu-id="69d2b-147">By default, modules are installed to the Program Files folder, to prevent confusion when you are installing Windows PowerShell Desired State Configuration (DSC) resources.You can pipe multiple PSGetItemInfo objects to Install-Script; this is another way of specifying multiple modules to install in a single command.</span></span>
-
-<span data-ttu-id="69d2b-148">悪意のあるコードが含まれているモジュールを実行しないようにするため、インストール済みのモジュールはインストールでは自動的にインポートされません。</span><span class="sxs-lookup"><span data-stu-id="69d2b-148">To help prevent running modules that contain malicious code, installed modules are not automatically imported by installation.</span></span> <span data-ttu-id="69d2b-149">セキュリティのベスト プラクティスとして、最初にモジュール内のコマンドレットまたは関数を実行する前に、モジュール コードを評価します。</span><span class="sxs-lookup"><span data-stu-id="69d2b-149">As a security best practice, evaluate module code before running any cmdlets or functions in a module for the first time.</span></span>
+- <span data-ttu-id="1946f-129">Install-Script コマンドレットの NoPathUpdate スイッチ パラメーターは、PATH 環境変数にスクリプトのインストール場所を追加するためのプロンプトをバイパスします。</span><span class="sxs-lookup"><span data-stu-id="1946f-129">NoPathUpdate switch parameter on Install-Script cmdlet bypasses the prompt for adding the script install location to the PATH environment variable.</span></span>
+- <span data-ttu-id="1946f-130">指定したコマンド WITH –NoPathUpdate を使用すると、プロンプトは表示されず、PATH NOT も更新されません (ここでは強制は無視できます)。</span><span class="sxs-lookup"><span data-stu-id="1946f-130">Any use of the command WITH –NoPathUpdate specified will result in no prompt and the PATH NOT being updated (force is ignorable here).</span></span>
+- <span data-ttu-id="1946f-131">–NoPathUpdate を指定しない -Force の場合、プロンプトは表示されませんが、PATH は更新されます。</span><span class="sxs-lookup"><span data-stu-id="1946f-131">-Force without –NoPathUpdate will result in no prompt and the PATH will be updated.</span></span>
+- <span data-ttu-id="1946f-132">–Force も –NoPathUpdate のどちらも指定しない場合は、ユーザーにプロンプトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="1946f-132">If neither –Force or –NoPathUpdate are specified, the user will see the prompt.</span></span>
+- <span data-ttu-id="1946f-133">これのすべては、指定したスコープで Install-Script が最初に使用されたときのみに適用されます。</span><span class="sxs-lookup"><span data-stu-id="1946f-133">All of this only applies the first time Install-Script is used in a given scope.</span></span>
 
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="69d2b-150">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="69d2b-150">Cmdlet syntax</span></span>
+## <a name="notes"></a><span data-ttu-id="1946f-134">メモ</span><span class="sxs-lookup"><span data-stu-id="1946f-134">Notes</span></span>
+
+<span data-ttu-id="1946f-135">このコマンドレットは、Windows 7 または Windows 2008 R2 および今後のリリースの Windows での、Windows PowerShell 3.0 または今後のリリースの Windows PowerShell で機能します。</span><span class="sxs-lookup"><span data-stu-id="1946f-135">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
+
+<span data-ttu-id="1946f-136">コンピューター上のスクリプトのバージョンが Name パラメーターに指定された値と一致しているときに、MinimumVersion または RequiredVersion パラメーターを追加していない場合は、そのスクリプトをインストールせずに Install-Script スクリプトが警告なしで続行されます。</span><span class="sxs-lookup"><span data-stu-id="1946f-136">If a version of the script on the computer matches the value specified for the Name parameter, and you have not added the MinimumVersion or RequiredVersion parameter, Install-Script silently continues without installing that script.</span></span> <span data-ttu-id="1946f-137">MinimumVersion または RequiredVersion パラメーターが指定されているときに、既存のスクリプトがそのパラメーターの値と一致しない場合は、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="1946f-137">If the MinimumVersion or RequiredVersion parameters are specified, and the existing script does not match the values in that parameter, then an error occurs.</span></span> <span data-ttu-id="1946f-138">具体的には、現在インストールされているスクリプトのバージョンが MinimumVersion パラメーターの値よりも低い、または RequiredVersion パラメーターの値と等しくない場合、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="1946f-138">To be more specific: if the version of the currently-installed script is either lower than the value of the MinimumVersion parameter, or not equal to the value of the RequiredVersion parameter, an error occurs.</span></span> <span data-ttu-id="1946f-139">インストールされているスクリプトのバージョンが MinimumVersion パラメーターの値より大きい、または RequiredVersion パラメーターの値と等しい場合は、そのスクリプトをインストールせずに Install-Script スクリプトが警告なしで続行されます。</span><span class="sxs-lookup"><span data-stu-id="1946f-139">If the version of the installed script is greater than the value of the MinimumVersion parameter, or equal to the value of the RequiredVersion parameter, Install-Script silently continues without installing that script.</span></span>
+
+<span data-ttu-id="1946f-140">指定した名前に一致するスクリプトがオンライン ギャラリーに存在しない場合、Install-Script はエラーを返します。</span><span class="sxs-lookup"><span data-stu-id="1946f-140">Install-Script returns an error if no script exists in the online gallery that matches the specified name.</span></span>
+
+<span data-ttu-id="1946f-141">複数のスクリプトをインストールするには、スクリプト名の配列をコンマで区切って指定します。</span><span class="sxs-lookup"><span data-stu-id="1946f-141">To install multiple scripts, specify an array of the script names, separated by commas.</span></span> <span data-ttu-id="1946f-142">複数のスクリプト名を指定する場合は、MinimumVersion または RequiredVersion を追加できません。</span><span class="sxs-lookup"><span data-stu-id="1946f-142">You cannot add MinimumVersion or RequiredVersion if you specify multiple script names.</span></span>
+
+<span data-ttu-id="1946f-143">既定では、スクリプトは [Program Files] フォルダーにインストールされます。</span><span class="sxs-lookup"><span data-stu-id="1946f-143">By default, scripts are installed to the Program Files folder.</span></span> <span data-ttu-id="1946f-144">複数の PSGetItemInfo オブジェクトを Install-Script にパイプすることができます。この方法でも 1 つのコマンドでインストールするための複数のスクリプトを指定できます。</span><span class="sxs-lookup"><span data-stu-id="1946f-144">You can pipe multiple PSGetItemInfo objects to Install-Script; this is another way of specifying multiple scripts to install in a single command.</span></span>
+
+<span data-ttu-id="1946f-145">悪意のあるコードが含まれているスクリプトを実行しないようにするため、インストール済みのスクリプトはインストールでは自動的にインポートされません。</span><span class="sxs-lookup"><span data-stu-id="1946f-145">To help prevent running scripts that contain malicious code, installed scripts are not automatically imported by installation.</span></span> <span data-ttu-id="1946f-146">セキュリティのベスト プラクティスとして、最初にスクリプト内のコマンドレットまたは関数を実行する前に、スクリプト コードを評価します。</span><span class="sxs-lookup"><span data-stu-id="1946f-146">As a security best practice, evaluate script code before running any cmdlets or functions in a script for the first time.</span></span>
+
+
+## <a name="cmdlet-syntax"></a><span data-ttu-id="1946f-147">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="1946f-147">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Install-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="69d2b-151">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="69d2b-151">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="1946f-148">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="1946f-148">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="69d2b-152">Install-Script</span><span class="sxs-lookup"><span data-stu-id="69d2b-152">Install-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619784)
+[<span data-ttu-id="1946f-149">Install-Script</span><span class="sxs-lookup"><span data-stu-id="1946f-149">Install-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619784)
 
-## <a name="example-commands"></a><span data-ttu-id="69d2b-153">コマンド例</span><span class="sxs-lookup"><span data-stu-id="69d2b-153">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="1946f-150">コマンド例</span><span class="sxs-lookup"><span data-stu-id="1946f-150">Example commands</span></span>
 
 ```powershell
 
@@ -283,7 +273,7 @@ Get-InstalledScript
 
 ```
 
-<span data-ttu-id="69d2b-154">Get-Command -Name <InstalledScriptFileName> を使用してこれを取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-154">You can also use Get-Command –Name <InstalledScriptFileName> to get it.</span></span> <span data-ttu-id="69d2b-155">2 つのインストール場所は、指定したスコープの初回使用時に PATH 環境変数に追加されます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-155">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
+<span data-ttu-id="1946f-151">Get-Command -Name <InstalledScriptFileName> を使用してこれを取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="1946f-151">You can also use Get-Command –Name <InstalledScriptFileName> to get it.</span></span> <span data-ttu-id="1946f-152">2 つのインストール場所は、指定したスコープの初回使用時に PATH 環境変数に追加されます。</span><span class="sxs-lookup"><span data-stu-id="1946f-152">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
@@ -297,42 +287,46 @@ ExternalScript Required-Script2.ps1 C:\\Users\\manikb\\Documents\\WindowsPowerSh
 
 ```powershell
 
-# Install a module by name
-Install-Script -Name MyDscModule
+# Install a script by name
+Install-Script -Name MyDscscript
 
-# Install multiple modules
+# Install multiple scripts
 Install-Script ContosoClient,ContosoServer
 
-# Install a module using its minimum version
+# Install a script using its minimum version
 Install-Script -Name ContosoServer -MinimumVersion 1.0
 
-# Install a specific version of a module
+# Install a specific version of a script
 Install-Script -Name ContosoServer -RequiredVersion 1.1.3
 
-# Install the latest version of a module to $home\Documents\WindowsPowerShell\Modules.
+# Install a specific prerelease version of a script
+Install-Script -Name ContosoServer -RequiredVersion 1.1.3-alpha -AllowPrerelease
+
+# Install the latest version of a script to $home\Documents\WindowsPowerShell\scripts.
 Install-Script -Name ContosoServer -Scope CurrentUser
 
-# if a module is already available under $env:PSModulePath, below command fails with 'ModuleAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
+# if a script is already available under $env:PSModulePath, below command fails with 'scriptAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
 Install-Script ContosoServer -RequiredVersion 1.5
 
-# if a module is already available under $env:PSModulePath, below command fails with 'ModuleAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
+# if a script is already available under $env:PSModulePath, below command fails with 'scriptAlreadyInstalled,Install-Package,Microsoft.PowerShell.PackageManagement.Cmdlets.InstallPackage'
 Install-Script ContosoServer -MinimumVersion 2.5
 
-# Install multiple modules from multiple registered repositories
+# Install multiple scripts from multiple registered repositories
 Install-Script ContosoClient,ContosoServer -Repository PSGallery, PrivatePSGallery
 
-# Install a module with -WhatIf
+# Install a script with -WhatIf
 Install-Script ContosoClient -WhatIf
 
-# Install a module with -Confirm. A prompt will be displayed to confirm the installation.
+# Install a script with -Confirm. A prompt will be displayed to confirm the installation.
 Install-Script ContosoClient -WhatIf
 
-# -Force option reinstalls the installed module
+# -Force option reinstalls the installed script
 Install-Script ContosoClient -Force
 
-# Install a module with dependencies
-Install-Script -Name 
+# Install a script with dependencies
+Install-Script -Name ContosoClient
 
+# Install a script 
 
 # Install a script from the registered repository with ScriptSourceLocation
 Install-Script Connect-AzureVM
@@ -471,164 +465,31 @@ The scripts install location 'C:\Program Files\WindowsPowerShell\Scripts' is req
 
 ```
 
-## <a name="install-script-cmdlet-in-pipeline-operations"></a><span data-ttu-id="69d2b-156">パイプライン操作での Install-Script コマンドレット</span><span class="sxs-lookup"><span data-stu-id="69d2b-156">Install-Script cmdlet in pipeline operations</span></span>
+## <a name="install-script-cmdlet-in-pipeline-operations"></a><span data-ttu-id="1946f-153">パイプライン操作での Install-Script コマンドレット</span><span class="sxs-lookup"><span data-stu-id="1946f-153">Install-Script cmdlet in pipeline operations</span></span>
 
 ```powershell
 
-# Find a module and install it
+# Find a script and install it
 Find-Script -Name "MyDSC*" | Install-Script
 
-# Find a module and install it to the CurrentUser scope
+# Find a script and install it to the CurrentUser scope
 Find-Script -Name "MyDSC*" | Install-Script -Scope CurrentUser
 
 # Find commands by name and install them
 # The first command finds the specified commands in the INT repository, and then uses the pipeline operator to pass them to Install-Script to install them.
-# The second command uses Get-InstalledModule to verify the modules from the prior command are installed.
+# The second command uses Get-Installedscript to verify the scripts from the prior command are installed.
 Find-Command -Repository "INT" -Name Get-ContosoClient,Get-ContosoServer | Install-Script
-Get-InstalledModule
-
-# This command finds the resource named MyResource and passes it to the Install-Script cmdlet by using the pipeline operator. The Install-Script cmdlet installs the module for the resource. 
-# If you pipe multiple resources to the Install-Script cmdlet from the same module, Install-Script attempts to install the module only once. 
-Find-DscResource -Name "MyResource" | Install-Script
-Get-InstalledModule
+Get-Installedscript
 
 # Find multiple role capabilities and install them
 Find-RoleCapability -Name MyJeaRole, Maintenance | Install-Script
-Get-InstalledModule
+Get-Installedscript
 
 ```
 
-## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a><span data-ttu-id="69d2b-157">PowerShell 5.0 以降の Side-by-Side バージョン サポート</span><span class="sxs-lookup"><span data-stu-id="69d2b-157">Side-by-Side Version Support on PowerShell 5.0 or newer</span></span>
-
-<span data-ttu-id="69d2b-158">PowerShellGet は、Windows PowerShell 5.0 以降で実行される Install-Script、Update-Script、Publish-Script の各コマンドレットの Side-by-Side (SxS) モジュール バージョン サポートに対応しています。</span><span class="sxs-lookup"><span data-stu-id="69d2b-158">PowerShellGet supports the side-by-side (SxS) module version support in Install-Script, Update-Script, and Publish-Script cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
-
-### <a name="install-script-examples"></a><span data-ttu-id="69d2b-159">Install-Script の例</span><span class="sxs-lookup"><span data-stu-id="69d2b-159">Install-Script examples</span></span>
-
-```powershell
-# Install a version of the module
-Install-Script -Name PSScriptAnalyzer -RequiredVersion 1.1.0 -Repository PSGallery
-Get-Script -ListAvailable -Name PSScriptAnalyzer | Format-List Name,Version,ModuleBase
-
-Name : PSScriptAnalyzer
-Version : 1.1.0
-ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
-
-# Install another version of the module in Side-by-Side with already installed version.
-Install-Script -Name PSScriptAnalyzer -RequiredVersion 1.1.1 -Repository PSGallery
-Get-Script -ListAvailable -Name PSScriptAnalyzer | Format-List Name,Version,ModuleBase
-
-Name       : PSScriptAnalyzer 
-Version    : 1.1.1
-ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.1
-Name       : PSScriptAnalyzer
-Version    : 1.1.0
-ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
-
-# Get all versions of an installed module
-Get-InstalledModule -Name PSScriptAnalyzer -AllVersions
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-1.1.0      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis...
-1.1.1      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis...
 
 
-```
-
-## <a name="install-module-with-its-dependencies"></a><span data-ttu-id="69d2b-160">モジュールを依存関係と共にインストールする</span><span class="sxs-lookup"><span data-stu-id="69d2b-160">Install module with its dependencies</span></span>
-
-```powershell
-
-# Find a module
-Find-Module -Name TypePx -Repository PSGallery
-
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-2.0.1.20   TypePx                              PSGallery            The TypePx module adds properties and methods to the m...
-
-# Find a module and its dependencies
-Find-Module -Name TypePx -Repository PSGallery -IncludeDependencies
-
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-2.0.1.20   TypePx                              PSGallery            The TypePx module adds properties and methods to the m...
-1.0.5.18   SnippetPx                           PSGallery            The SnippetPx module enhances the snippet experience i...
-
-# Discover the dependencies list without adding -IncludeDependencies
-$result = Find-Module -Name TypePx -Repository PSGallery
-$result.Dependencies
-
-Name                           Value
-----                           -----
-Name                           SnippetPx
-CanonicalId                    powershellget:SnippetPx/#https://www.powershellgallery.com/api/v2/
-
-
-# Now install the module along with its dependencies
-Install-Script -Name TypePx -Repository PSGallery -Verbose
-
-VERBOSE: Repository details, Name = 'PSGallery', Location = 'https://www.powershellgallery.com/api/v2/'; IsTrusted =
-'False'; IsRegistered = 'True'.
-VERBOSE: Using the provider 'PowerShellGet' for searching packages.
-VERBOSE: Using the specified source names : 'PSGallery'.
-VERBOSE: Getting the provider object for the PackageManagement Provider 'NuGet'.
-VERBOSE: The specified Location is 'https://www.powershellgallery.com/api/v2/' and PackageManagementProvider is
-'NuGet'.
-VERBOSE: Searching repository 'https://www.powershellgallery.com/api/v2/FindPackagesById()?id='TypePx'' for ''.
-VERBOSE: Total package yield:'1' for the specified package 'TypePx'.
-VERBOSE: Performing the operation "Install-Script" on target "Version '2.0.1.20' of module 'TypePx'".
-
-Untrusted repository
-You are installing the modules from an untrusted repository. If you trust this repository, change its
-InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure you want to install the modules from
-'PSGallery'?
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): Y
-VERBOSE: The installation scope is specified to be 'AllUsers'.
-VERBOSE: The specified module will be installed in 'C:\Program Files\WindowsPowerShell\Modules'.
-VERBOSE: The specified Location is 'NuGet' and PackageManagementProvider is 'NuGet'.
-VERBOSE: Downloading module 'TypePx' with version '2.0.1.20' from the repository
-'https://www.powershellgallery.com/api/v2/'.
-VERBOSE: Searching repository 'https://www.powershellgallery.com/api/v2/FindPackagesById()?id='TypePx'' for ''.
-VERBOSE: Searching repository 'https://www.powershellgallery.com/api/v2/FindPackagesById()?id='SnippetPx'' for ''.
-VERBOSE: InstallPackage' - name='SnippetPx',
-version='1.0.5.18',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: DownloadPackage' - name='SnippetPx',
-version='1.0.5.18',destination='C:\Users\manikb\AppData\Local\Temp\1027042896\SnippetPx\SnippetPx.nupkg',
-uri='https://www.powershellgallery.com/api/v2/package/SnippetPx/1.0.5.18'
-VERBOSE: Downloading 'https://www.powershellgallery.com/api/v2/package/SnippetPx/1.0.5.18'.
-VERBOSE: Completed downloading 'https://www.powershellgallery.com/api/v2/package/SnippetPx/1.0.5.18'.
-VERBOSE: Completed downloading 'SnippetPx'.
-VERBOSE: Hash for package 'SnippetPx' does not match hash provided from the server.
-VERBOSE: InstallPackageLocal' - name='SnippetPx',
-version='1.0.5.18',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: InstallPackage' - name='TypePx',
-version='2.0.1.20',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: DownloadPackage' - name='TypePx',
-version='2.0.1.20',destination='C:\Users\manikb\AppData\Local\Temp\1027042896\TypePx\TypePx.nupkg',
-uri='https://www.powershellgallery.com/api/v2/package/TypePx/2.0.1.20'
-VERBOSE: Downloading 'https://www.powershellgallery.com/api/v2/package/TypePx/2.0.1.20'.
-VERBOSE: Completed downloading 'https://www.powershellgallery.com/api/v2/package/TypePx/2.0.1.20'.
-VERBOSE: Completed downloading 'TypePx'.
-VERBOSE: Hash for package 'TypePx' does not match hash provided from the server.
-VERBOSE: InstallPackageLocal' - name='TypePx',
-version='2.0.1.20',destination='C:\Users\manikb\AppData\Local\Temp\1027042896'
-VERBOSE: Installing the dependency module 'SnippetPx' with version '1.0.5.18' for the module 'TypePx'.
-VERBOSE: Module 'SnippetPx' was installed successfully to path 'C:\Program
-Files\WindowsPowerShell\Modules\SnippetPx\1.0.5.18'.
-VERBOSE: Module 'TypePx' was installed successfully to path 'C:\Program
-Files\WindowsPowerShell\Modules\TypePx\2.0.1.20'.
-
-
-# Get the installed modules
-Get-InstalledModule
-
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-1.0.5.18   SnippetPx                           PSGallery            The SnippetPx module enhances the snippet experience i...
-2.0.1.20   TypePx                              PSGallery            The TypePx module adds properties and methods to the m...
-
-```
-
-## <a name="error-scenarios"></a><span data-ttu-id="69d2b-161">エラー シナリオ</span><span class="sxs-lookup"><span data-stu-id="69d2b-161">Error scenarios</span></span>
+## <a name="error-scenarios"></a><span data-ttu-id="1946f-154">エラー シナリオ</span><span class="sxs-lookup"><span data-stu-id="1946f-154">Error scenarios</span></span>
 
 ```powershell
 
@@ -646,83 +507,10 @@ Install-Script ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
 
-## <a name="installing-a-script-with-dependent-scripts-and-modules"></a><span data-ttu-id="69d2b-162">依存スクリプトとモジュールと共にスクリプトをインストールする</span><span class="sxs-lookup"><span data-stu-id="69d2b-162">Installing a script with dependent scripts and modules</span></span>
+## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="1946f-155">Install-Script および Get-InstalledScript コマンドレット</span><span class="sxs-lookup"><span data-stu-id="1946f-155">Install-Script and Get-InstalledScript cmdlets</span></span>
+<span data-ttu-id="1946f-156">Install-Script コマンドレットでは、特定のスクリプト ファイルをその依存関係と共に、指定したスコープにインストールできます。</span><span class="sxs-lookup"><span data-stu-id="1946f-156">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="1946f-157">既定では、スクリプトは AllUsers スコープにインストールされます。</span><span class="sxs-lookup"><span data-stu-id="1946f-157">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="1946f-158">Get-InstalledScript コマンドレットでは、Install-Script コマンドレットを使用してインストールされたスクリプト ファイルの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="1946f-158">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
 
-```powershell
-# Installing a script with dependent scripts and modules
-Find-Script -Repository GalleryINT -Name Script-WithDependencies2 -IncludeDependencies
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
-2.5 RequiredModule1 Module GalleryINT RequiredModule1 module
-2.5 RequiredModule2 Module GalleryINT RequiredModule2 module
-2.5 RequiredModule3 Module GalleryINT RequiredModule3 module
-2.0 RequiredModule4 Module GalleryINT RequiredModule4 module
-1.5 RequiredModule5 Module GalleryINT RequiredModule5 module
-2.5 Required-Script1 Script GalleryINT Description for the Required-Script1 script
-2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
-2.5 Required-Script3 Script GalleryINT Description for the Required-Script3 script
-
-Get-InstalledScript
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.0 Required-Script3 Script GalleryINT Description for the Required-Script3 script
-1.0 Demo-Script Script LocalRepo1 Script file description goes here
-2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
-Get-InstalledModule
-Install-Script -Repository GalleryINT -Name Script-WithDependencies2 -Scope CurrentUser
-Get-InstalledScript
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.0 Required-Script3 Script GalleryINT Description for the Required-Script3 script
-1.0 Demo-Script Script LocalRepo1 Script file description goes here
-2.5 Required-Script1 Script GalleryINT Description for the Required-Script1 script
-2.5 Required-Script2 Script GalleryINT Description for the Required-Script2 script
-2.0 Script-WithDependencies2 Script GalleryINT Description for the Script-WithDependencies2 script
-Get-InstalledModule
-Version Name Type Repository Description
-------- ---- ---- ---------- -----------
-2.5 RequiredModule1 Module GalleryINT RequiredModule1 module
-2.5 RequiredModule2 Module GalleryINT RequiredModule2 module
-2.5 RequiredModule3 Module GalleryINT RequiredModule3 module
-2.0 RequiredModule4 Module GalleryINT RequiredModule4 module
-1.5 RequiredModule5 Module GalleryINT RequiredModule5 module
-
-# Contents of Script-WithDependencies2 file.
-<#PSScriptInfo
-.VERSION 2.0
-.GUID 90082fa1-0b84-49fb-a00e-0a624fbb6584
-.AUTHOR manikb
-.COMPANYNAME Microsoft Corporation
-.COPYRIGHT (c) 2015 Microsoft Corporation. All rights reserved.
-.TAGS Tag1 Tag2 Tag-Script-WithDependencies2-2.0
-.LICENSEURI http://script-withdependencies2.com/license
-.PROJECTURI http://script-withdependencies2.com/
-.ICONURI http://script-withdependencies2.com/icon
-.EXTERNALMODULEDEPENDENCIES
-.REQUIREDSCRIPTS Required-Script1,Required-Script2,Required-Script3
-.EXTERNALSCRIPTDEPENDENCIES
-.RELEASENOTES
-Script-WithDependencies2 release notes
-#>
-#Requires -Module RequiredModule1
-#Requires -Module @{ModuleName = 'RequiredModule2'; ModuleVersion = '2.0'}
-#Requires -Module @{RequiredVersion = '2.5'; ModuleName = 'RequiredModule3'}
-#Requires -Module @{ModuleVersion = '1.1'; ModuleName = 'RequiredModule4'; MaximumVersion = '2.0'}
-#Requires -Module @{MaximumVersion = '1.5'; ModuleName = 'RequiredModule5'}
-<#
-.DESCRIPTION
-Description for the Script-WithDependencies2 script
-#>
-Param()
-Function Test-FunctionFromScript\_Script-WithDependencies2 { Get-Date }
-Workflow Test-WorkflowFromScript\_Script-WithDependencies2 { Get-Date }
-```
-
-## <a name="install-script-and-get-installedscript-cmdlets"></a><span data-ttu-id="69d2b-163">Install-Script および Get-InstalledScript コマンドレット</span><span class="sxs-lookup"><span data-stu-id="69d2b-163">Install-Script and Get-InstalledScript cmdlets</span></span>
-<span data-ttu-id="69d2b-164">Install-Script コマンドレットでは、特定のスクリプト ファイルをその依存関係と共に、指定したスコープにインストールできます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-164">Install-Script cmdlet lets you to install a specific script file along with its dependencies to the specified scope.</span></span> <span data-ttu-id="69d2b-165">既定では、スクリプトは AllUsers スコープにインストールされます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-165">By default, scripts are installed to the AllUsers scope.</span></span> <span data-ttu-id="69d2b-166">Get-InstalledScript コマンドレットでは、Install-Script コマンドレットを使用してインストールされたスクリプト ファイルの一覧を取得できます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-166">Get-InstalledScript cmdlet lets you to get the list of script files which were installed using Install-Script cmdlet.</span></span>
-
-<span data-ttu-id="69d2b-167">使用上の注意: スクリプトがインストールされた後、管理および検索できるようにするため、Install-Script によってスクリプトを格納するための既定のフォルダーが $home\Documents\WindowsPowerShell\Scripts に作成され、PATH 環境変数にそのフォルダーが追加されます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-167">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="69d2b-168">パスの変更に問題がある場合は、Install-Script ではなく Save-Script を使用します。</span><span class="sxs-lookup"><span data-stu-id="69d2b-168">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="69d2b-169">Get-InstalledScripts と Uninstall-Script は、Install-Script を使用してシステム上に配置されたスクリプトに対してのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="69d2b-169">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
+<span data-ttu-id="1946f-159">使用上の注意: スクリプトがインストールされた後、管理および検索できるようにするため、Install-Script によってスクリプトを格納するための既定のフォルダーが $home\Documents\WindowsPowerShell\Scripts に作成され、PATH 環境変数にそのフォルダーが追加されます。</span><span class="sxs-lookup"><span data-stu-id="1946f-159">Use note: To allow management and locating of scripts once they are installed, Install-script will create a default folder for storing scripts at $home\Documents\WindowsPowerShell\Scripts, and add that folder to your PATH environment.</span></span> <span data-ttu-id="1946f-160">パスの変更に問題がある場合は、Install-Script ではなく Save-Script を使用します。</span><span class="sxs-lookup"><span data-stu-id="1946f-160">If modifying the path is a concern, use Save-Script instead of Install-Script.</span></span> <span data-ttu-id="1946f-161">Get-InstalledScripts と Uninstall-Script は、Install-Script を使用してシステム上に配置されたスクリプトに対してのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="1946f-161">Get-InstalledScripts and Uninstall-Script can only work with scripts placed on the system using Install-Script.</span></span>
 ```powershell
 # Install locations for scripts:
 # Default scope is AllUsers.
@@ -778,7 +566,7 @@ InstalledLocation : C:\\Users\\manikb\\Documents\\WindowsPowerShell\\Scripts
 Installed script file is immediately available for usage.
 ```
 
-<span data-ttu-id="69d2b-170">Get-Command -Name <InstalledScriptFileName> を使用してこれを取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-170">You can also use Get-Command –Name <InstalledScriptFileName> to get it.</span></span> <span data-ttu-id="69d2b-171">2 つのインストール場所は、指定したスコープの初回使用時に PATH 環境変数に追加されます。</span><span class="sxs-lookup"><span data-stu-id="69d2b-171">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
+<span data-ttu-id="1946f-162">Get-Command -Name <InstalledScriptFileName> を使用してこれを取得することもできます。</span><span class="sxs-lookup"><span data-stu-id="1946f-162">You can also use Get-Command –Name <InstalledScriptFileName> to get it.</span></span> <span data-ttu-id="1946f-163">2 つのインストール場所は、指定したスコープの初回使用時に PATH 環境変数に追加されます。</span><span class="sxs-lookup"><span data-stu-id="1946f-163">Two install locations are added to the PATH environment variable on first use of a specified scope.</span></span>
 ```powershell
 $env:Path -split ';'| Where-Object {$\_} | Select-Object -Last 2
 C:\\Program Files\\WindowsPowerShell\\Scripts
