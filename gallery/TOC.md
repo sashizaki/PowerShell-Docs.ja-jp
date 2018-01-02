@@ -39,6 +39,7 @@
 ### [公開](psget/module/psget_publish-module.md)
 ### [PSEditions が含まれるモジュール](psget/module/modulewithpseditionsupport.md)
 ### [ライセンスへの同意が必要なモジュール](psget/module/RequireLicenseAcceptance.md)
+### [プレリリース バージョン](psget/module/PreReleaseModule.md)
 ### [トラブルシューティング](psget/psget_cmdlets_troubleshooting.md)
 
 ## スクリプト
@@ -54,7 +55,7 @@
 ### [公開](psget/script/psget_publish-script.md)
 ### [PSEditions のスクリプト](psget/script/scriptwithpseditionsupport.md)
 ### [スクリプトのライセンス同意リクエスト](psget/script/script_RequireLicenseAcceptance.md)
-
+### [プレリリース バージョン](psget/script/PreReleaseScript.md)
 ## リポジトリ管理
 ### [NuGet プロバイダーと NuGet.exe をブートストラップする](psget/repository/bootstrapping_nuget_proivder_and_exe.md)
 ### [リポジトリを登録する](psget/repository/psget_register-psrepository.md)
