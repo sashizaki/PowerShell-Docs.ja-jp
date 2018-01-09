@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "PowerShell リモート処理での次ホップの実行"
-ms.openlocfilehash: f3b8280819e43bd67bd608ffd0ba9484c2bbc26c
-ms.sourcegitcommit: 4102ecc35d473211f50a453f6ae3fbea31cb3428
+ms.openlocfilehash: 2518409369a75a49b975b9b944320c1878819421
+ms.sourcegitcommit: 1a0a0928c1e3cae4e8df8d79b0737bd7ed6b4e47
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2017
+ms.lasthandoff: 12/21/2017
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>PowerShell リモート処理での次ホップの実行
 
@@ -256,12 +256,12 @@ JEA については、「[Just Enough Administration](https://docs.microsoft.com
 - 特別なサーバー構成は必要ありません。
 - WMF 2.0 以降を実行する任意のサーバーで動作します。
 
-## <a name="cons"></a>短所
+### <a name="cons"></a>短所
 
 - 面倒なコード技法が必要です。
 - WMF 2.0 を実行している場合は、リモート セッションに引数を渡すために異なる構文が必要です。
 
-## <a name="example"></a>例
+### <a name="example"></a>例
 
 **Invoke-Command** スクリプト ブロックで資格情報を渡す方法の例を次に示します。
 
