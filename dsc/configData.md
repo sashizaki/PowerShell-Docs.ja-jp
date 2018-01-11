@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "構成データの使用"
-ms.openlocfilehash: a70cd8f0f6c24eb02743b02d198cebcc3d775756
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 60c6c2d5694a03275e1a08522bdcf4b1bc5bb068
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>DSC で構成データを使用する
 
@@ -187,7 +187,7 @@ DSC には、構成スクリプトで使用できる 3 つの特殊な変数 **$
 ## <a name="using-non-node-data"></a>ノード外のデータを使用する
 
 上記の例でわかるように、**ConfigurationData** ハッシュテーブルには、必須の **AllNodes** キーだけでなく、複数のキーを含めることができます。
-このトピックの例では、追加ノードを 1 つだけ追加し、`NonNodeData` という名前をつけました。 実際は、定義できる追加のキーの数に制限はなく、名前も自由に設定できます。
+このトピックの例では、追加ノードを 1 つだけ使用し、`NonNodeData` という名前を付けました。 実際は、定義できる追加のキーの数に制限はなく、名前も自由に設定できます。
 
 ノード以外のデータを使用する例は、「[構成データと環境データの分離](separatingEnvData.md)」をご覧ください。
 

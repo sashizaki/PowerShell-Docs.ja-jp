@@ -4,11 +4,11 @@ author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "ローカル構成マネージャーの構成"
-ms.openlocfilehash: 98470f45ca7c11ea63d68da7dec9fcd844f06192
-ms.sourcegitcommit: 9a5da3f739b1eebb81ede58bd4fc8037bad87224
+ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
+ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2017
+ms.lasthandoff: 12/12/2017
 ---
 # <a name="configuring-the-local-configuration-manager"></a>ローカル構成マネージャーの構成
 
@@ -73,11 +73,11 @@ LCM 構成には、限定されたリソースのセットに対するブロッ�
 
 |  プロパティ  |  種類  |  説明   |
 |----------- |------- |--------------- |
-| ActionAfterReboot| string| 構成の適用中の再起動後の動作を指定します。 指定できる値は __"ContinueConfiguration"__ と __"StopConfiguration"__ です。 <ul><li> __ContinueConfiguration__: コンピューターの再起動後、現在の構成を引き続き適用します。 これは既定値です。</li><li>__StopConfiguration__: コンピューターの再起動後、現在の構成の適用を停止します。</li></ul>|
+| ActionAfterReboot| string| 構成の適用中の再起動後の動作を指定します。 指定できる値は __"ContinueConfiguration"__ と __"StopConfiguration"__ です。 <ul><li> __ContinueConfiguration__: コンピューターの再起動後、現在の構成を引き続き適用します。 これは、既定値です。</li><li>__StopConfiguration__: コンピューターの再起動後、現在の構成の適用を停止します。</li></ul>|
 | AllowModuleOverwrite| ブール| プル サービスからダウンロードされた新しい構成でのターゲット ノードの古い構成の上書きを許可する場合は、__$TRUE__。 それ以外の場合は、$FALSE。|
 | CertificateID| string| 構成で渡される資格情報をセキュリティで保護するために使用される証明書の拇印。 詳細については、「[Want to secure credentials in Windows PowerShell Desired State Configuration? (Windows PowerShell Desired State Configuration で資格情報をセキュリティ保護する)](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)」をご覧ください。 <br> __注:__ Azure Automation DSC プル サービスを使用している場合、このプロパティは自動で管理されます。|
 | ConfigurationDownloadManagers| CimInstance[]| 使われていません。 構成プル サービスのエンドポイントを定義するには、__ConfigurationRepositoryWeb__ ブロックと __ConfigurationRepositoryShare__ ブロックを使用します。|
-| ConfigurationID| string| 旧バージョンのプル サービスとの互換性用。 プル サービスから取得する構成ファイルを識別する GUID。 構成 MOF の名前が ConfigurationID.mof の場合、ノードはプル サービスで構成をプルします。<br> __注:__ このプロパティを設定した場合、__RegistrationKey__ を使用してプル サービスへノードを登録することはできません。 詳細については、「[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」をご覧ください。|
+| ConfigurationID| string| 旧バージョンのプル サービスとの互換性用。 プル サービスから取得する構成ファイルを識別する GUID。 構成 MOF の名前が ConfigurationID.mof の場合、ノードはプル サービスで構成をプルします。<br> __注:__ このプロパティを設定した場合、__RegistrationKey__ を使用してプル サービスへノードを登録することはできません。 詳細については、「[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」を参照してください。|
 | ConfigurationMode| string | LCM が実際に構成をターゲット ノードに適用する方法を指定します。 指定できる値は __"ApplyOnly"__、__"ApplyandMonitior"__、__"ApplyandAutoCorrect"__ です。 <ul><li>__ApplyOnly__: DSC によって構成が適用され、その後何も行われません。ただし、ターゲット ノードに新しい構成がプッシュされたか、新しい構成がサービスからプルされた場合を除きます。 新しい構成を最初に適用した後、DSC では以前に構成した状態からのずれを確認しません。 DSC は成功するまで構成の適用を試みて、成功すると __ApplyOnly__ が有効になります。 </li><li> __"ApplyAndMonitor"__: これは既定値です。 LCM は、新しい構成を適用します。 新しい構成を最初に適用した後、ターゲット ノードが望ましい状態からずれた場合、DSC では、ログで不一致を報告します。 DSC は成功するまで構成の適用を試みて、成功すると __ApplyAndMonitor__ が有効になります。</li><li>__ApplyAndAutoCorrect__: DSC によって新しい構成が適用されます。 新しい構成を最初に適用した後、ターゲット ノードが望ましい状態からずれた場合、DSC では、ログで不一致を報告し、現在の構成を再度適用します。</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| 現在の構成がチェックおよび適用される頻度 (分単位) ConfigurationMode プロパティが ApplyOnly に設定されている場合、このプロパティは無視されます。 既定値は 15 です。|
 | DebugMode| string| 指定できる値は __None__、__ForceModuleImport__、および __All__ です。 <ul><li>キャッシュされたリソースを使用する場合は、__None__ に設定します。 これが既定値であり、運用シナリオではこの値を使う必要があります。</li><li>__ForceModuleImport__ に設定すると、以前に読み込まれ、キャッシュされた DSC リソース モジュールも LCM によって再読み込みされます。 これは、使用時に各モジュールが再読み込みされるため、DSC 操作のパフォーマンスに影響します。 通常、リソースのデバッグ中には、この値を使用します</li><li>このリリースでは、__All__ は、__ForceModuleImport__ と同じです。</li></ul> |
@@ -106,7 +106,7 @@ LCM 構成では、次の種類のプル サービス エンドポイントを�
 
 **推奨されるソリューション**であり、最も多くの機能を使用できる選択肢は [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started) です。
 
-Azure サービスでは、プライベート データセンター内にあるオンプレミス ノードと、パブリック クラウド （Azure や AWS など) 内にあるノードのどちらも管理できます。
+Azure サービスでは、プライベート データセンター内にあるオンプレミス ノードと、パブリック クラウド (Azure や AWS など) 内にあるノードのどちらも管理できます。
 インターネットへのサーバーの直接接続が許可されないプライベート環境の場合は、公開されている Azure の IP 範囲 ([Azure データセンターの IP 範囲](https://www.microsoft.com/en-us/download/details.aspx?id=41653)に関するページを参照) のみに送信トラフィックを制限することを検討してください。
 
 現時点で Windows Server 上のプル サービスでは利用できないオンライン サービスの機能は以下のとおりです。
@@ -133,8 +133,8 @@ Web ベースの構成サーバーを定義するには、**ConfigurationReposit
 |---|---|---| 
 |AllowUnsecureConnection|ブール|認証なしのノードからサーバーへの接続を許可するには、**$TRUE** に設定します。 認証を要求するには、**$FALSE** に設定します。|
 |CertificateID|string|サーバーへの認証に使用される証明書の拇印。|
-|ConfigurationNames|String[]|ターゲット ノードによってプルされる構成の名前の配列。 ノードが **RegistrationKey** を使用してプル サービスに登録されている場合にのみ使用します。 詳細については、「[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」をご覧ください。|
-|RegistrationKey|string|プル サービスにノードを登録する GUID。 詳細については、「[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」をご覧ください。|
+|ConfigurationNames|String[]|ターゲット ノードによってプルされる構成の名前の配列。 ノードが **RegistrationKey** を使用してプル サービスに登録されている場合にのみ使用します。 詳細については、「[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」を参照してください。|
+|RegistrationKey|string|プル サービスにノードを登録する GUID。 詳細については、「[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」を参照してください。|
 |ServerURL|string|構成サービスの URL。|
 
 オンプレミス ノードの ConfigurationRepositoryWeb 値の設定を簡単に行うサンプル スクリプトが用意されています。「[DSC メタ構成の生成](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)」を参照してください。

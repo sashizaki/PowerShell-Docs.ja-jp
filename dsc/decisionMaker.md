@@ -4,11 +4,11 @@ author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "意思決定者向け Desired State Configuration の概要"
-ms.openlocfilehash: e39ab5138b20653e46ac35fa32b99d268f96b2df
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 1800acfa9edae4f65e34db380ff719ad4c034921
+ms.sourcegitcommit: 60f06a06c2fce63024f3f4cbd7657b1dfe7fcb1a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 01/03/2018
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>意思決定者向け Desired State Configuration の概要
 
@@ -34,7 +34,7 @@ DSC には監視とレポートも組み込まれています。 システムが
 
 ## <a name="desired-state-configuration-and-devops"></a>Desired State Configuration と DevOps
 
-[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) は、迅速な展開と反復を可能にする人、テクノロジ、カルチャの組み合わせです。 DSC は、DevOps を意識して設計されました。 単一の構成によって環境を定義することで、開発者は要件を構成にエンコードし、その構成をソース管理にチェックインでき、運用チームではエラーが発生しやすい手動プロセスを使用する必要なく、コードを簡単に展開できるようになります。 
+[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) とは、内部や外部に関わらず、エンド ユーザーに価値を提供することに重点を置いた、迅速な展開と反復を可能にする人、プロセス、そしてツールが組み合わされたものです。 DSC は、DevOps を意識して設計されました。 単一の構成によって環境を定義することで、開発者は要件を構成にエンコードし、その構成をソース管理にチェックインでき、運用チームではエラーが発生しやすい手動プロセスを使用する必要なく、コードを簡単に展開できるようになります。 
 
 構成は[データ ドリブン](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)でもあるため、開発者が関与することなく、運用チームで簡単に環境を特定および変更することができます。 
 
