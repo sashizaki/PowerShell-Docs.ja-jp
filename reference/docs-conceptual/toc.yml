@@ -72,8 +72,17 @@
               href: core-powershell/ise/windows-powershell-ise-object-model-reference.md
         - name: ISE ガイド
           href: core-powershell/ise-guide.md
+        - name: Visual Studio Code
+          items:
+            - name: Visual Studio Code の使用
+              href: core-powershell/vscode/using-vscode.md
         - name: リモート コマンドの実行
           href: core-powershell/running-remote-commands.md
+          items:
+            - name: SSH 経由の PowerShell リモート処理
+              href: core-powershell/SSH-Remoting-in-PowerShell-Core.md
+            - name: PowerShell Core の WS-Management (WSMan) リモート処理
+              href: core-powershell/WSMan-Remoting-in-PowerShell-Core.md
         - name: Web アクセス
           href: core-powershell/web-access.md
           items:
@@ -129,7 +138,7 @@
               href: getting-started/cookbooks/other-useful-scripting-objects.md
             - name: ネットワーク関連タスクの実行
               href: getting-started/cookbooks/performing-networking-tasks.md
-            - name: Out-* コマンドレットを使用したデータのリダイレクト
+            - name: Out コマンドレットを使用したデータのリダイレクト
               href: getting-started/cookbooks/redirecting-data-with-out---cmdlets.md
             - name: パイプラインからオブジェクトを削除する (Where-Object)
               href: getting-started/cookbooks/removing-objects-from-the-pipeline--where-object-.md
@@ -207,6 +216,10 @@
     - name: セットアップ
       href: ''
       items:
+        - name: Windows への PowerShell Core のインストール
+          href: setup/Installing-PowerShell-Core-on-Windows.md
+        - name: macOS および Linux への PowerShell Core のインストール
+          href: setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
         - name: Windows PowerShell ISE のアクセシビリティ
           href: setup/accessibility-in-windows-powershell-ise.md
         - name: Windows PowerShell 2.0 エンジンのインストール
@@ -221,7 +234,7 @@
           href: setup/setup-reference.md
         - name: 32 ビット版の Windows PowerShell を起動する
           href: setup/starting-the-32-bit-version-of-windows-powershell.md
-        - name: Windows PowerShell 2.0 エンジンを開始する
+        - name: Windows PowerShell 2.0 エンジンの開始
           href: setup/starting-the-windows-powershell-2.0-engine.md
         - name: Windows PowerShell の開始
           href: setup/starting-windows-powershell.md
@@ -234,11 +247,15 @@
     - name: 新機能
       href: ''
       items:
-        - name: PowerShell 50 ISE の新機能
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
-        - name: Windows PowerShell 50 の新機能
-          href: whats-new/what-s-new-in-windows-powershell-50.md
         - name: PowerShell の新機能
           href: whats-new/what-s-new-with-powershell.md
+        - name: Windows PowerShell 5.0 の新機能
+          href: whats-new/what-s-new-in-windows-powershell-50.md
+        - name: PowerShell 5.0 ISE の新機能
+          href: whats-new/what-s-new-in-the-powershell-50-ise.md
+        - name: PowerShell Core 6.0 の新機能
+          href: whats-new/what-s-new-in-powershell-core-60.md
+    - name: PowerShell Core のサポート ライフサイクル
+      href: PowerShell-Core-Support.md
     - name: 用語集
       href: windows-powershell-glossary.md
