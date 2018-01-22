@@ -3,25 +3,37 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "リモート コマンドの実行"
 ms.assetid: d6938b56-7dc8-44ba-b4d4-cd7b169fd74d
-ms.openlocfilehash: 5cf9690b8fe4549a99186f172cb6f0de156a4dea
-ms.sourcegitcommit: c5251755c4442487f99ff74fadf7e37bbf039089
+ms.openlocfilehash: 43f07abd642e7de235647fa151537c46ebe86cae
+ms.sourcegitcommit: 6aed37d7f0c9652ae09bb8c11928da7e4783ed7f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2017
+ms.lasthandoff: 01/10/2018
 ---
 # <a name="running-remote-commands"></a>リモート コマンドの実行
+
 1 つの Windows PowerShell コマンドを使用し、1 台から数百台のコンピューターでコマンドを実行できます。 Windows PowerShell は、WMI、RPC、WS-Management など、さまざまなテクノロジを使用してリモート コンピューティングをサポートします。
+
+## <a name="remoting-in-powershell-core"></a>PowerShell Core のリモート処理
+
+PowerShell Core は Windows、macOS、Linux で使える PowerShell の新しいバージョンです。WMI、WS-Management、SSH リモート処理に対応しています。
+(RPC のサポートは終了しました。)
+
+設定方法については、次をご覧ください。
+
+* [PowerShell Core での SSH リモート処理][ssh-remoting]
+* [PowerShell Core での WinRM リモート処理][winrm-remoting]
 
 ## <a name="remoting-without-configuration"></a>設定をしないリモート処理
 多くの Windows PowerShell コマンドレットは、1 台以上のリモート コンピューターのデータの収集や設定の変更が可能な ComputerName パラメーターを持っています。 Windows PowerShell がサポートするすべての Windows オペレーティング システムのさまざまな通信テクノロジや多くの作業を、特別な構成なしで利用します。
 
 これらのコマンドレットには、次のものがあります。
+
 * [Restart-Computer](https://go.microsoft.com/fwlink/?LinkId=821625)
 * [Test-Connection](https://go.microsoft.com/fwlink/?LinkId=821646)
 * [Clear-EventLog](https://go.microsoft.com/fwlink/?LinkId=821568)
 * [Get-EventLog](https://go.microsoft.com/fwlink/?LinkId=821585)
 * [Get-HotFix](https://go.microsoft.com/fwlink/?LinkId=821586)
-  - [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
+* [Get-Process](https://go.microsoft.com/fwlink/?linkid=821590)
 * [Get-Service](https://go.microsoft.com/fwlink/?LinkId=821593)
 * [Set-Service](https://go.microsoft.com/fwlink/?LinkId=821633)
 * [Get-WinEvent](https://go.microsoft.com/fwlink/?linkid=821529)
@@ -135,3 +147,6 @@ WSMan プロバイダーの詳細については、「[WSMan Provider (WSMan プ
 - [New-PSSession](https://go.microsoft.com/fwlink/?LinkId=821498)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [WSMan プロバイダー](https://technet.microsoft.com/en-us/library/66fe1241-e08f-49ca-832f-a84c33ca8735)
+
+[wsman-remoting]: WSMan-Remoting-in-PowerShell-Core.md
+[ssh-resmoting]: SSH-Remoting-in-PowerShell-Core.md
