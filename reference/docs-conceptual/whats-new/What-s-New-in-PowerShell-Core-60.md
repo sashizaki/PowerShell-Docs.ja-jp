@@ -13,7 +13,7 @@ Windows PowerShell では、.NET Framework ランタイムを使用して PowerS
 
 .NET Core と .NET Framework の間で共有される API は、[.NET Standard][] の一部として定義されています。
 
-これが PowerShell Core と Windows PowerShell の間のモジュール/スクリプトの互換性に与える影響の詳細については、「[Windows PowerShell との後方互換性][#backwards-compatibility-with-windows-powershell]」を参照してください。
+これが PowerShell Core と Windows PowerShell の間のモジュール/スクリプトの互換性に与える影響の詳細については、「[Windows PowerShell との後方互換性](#backwards-compatibility-with-windows-powershell)。
 
 ## <a name="support-for-macos-and-linux"></a>macOS と Linux のサポート
 

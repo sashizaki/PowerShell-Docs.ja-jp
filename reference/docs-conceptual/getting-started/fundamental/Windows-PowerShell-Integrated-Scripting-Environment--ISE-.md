@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: Windows PowerShell Integrated Scripting Environment (ISE)
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 6bddb953a7f17e220f92d357eb59dfedc5496272
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 66f36371cbb8ad8523aa1e1e3cd791cc692194c9
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE)
 Windows PowerShell Integrated Scripting Environment (ISE) は、Windows PowerShell エンジンと言語の 2 つのホストのうちの 1 つです。 それを使って、Windows PowerShell コンソールでは使用できない方法でテスト スクリプトを記述し、実行できます。 ISE は、構文の色指定、タブ補完、IntelliSense、視覚的なデバッグ機能、状況依存のヘルプを追加します。
@@ -63,5 +63,5 @@ Windows と Windows Server の各バージョンには、Windows PowerShell と 
 > Windows PowerShell ISE にはグラフィカル ユーザー インターフェイスが必要なため、Windows Server の [Server Core] オプションでは実行できません。
 
 ## <a name="see-also"></a>関連項目
-- [Windows PowerShell Integrated Scripting Environment の使用](Using-the-Windows-PowerShell-ISE.md)
+- [Windows PowerShell Integrated Scripting Environment の使用](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 

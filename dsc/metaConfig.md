@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-10-11
-author: eslesar;mgreenegit
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "ローカル構成マネージャーの構成"
-ms.openlocfilehash: 6ca527aae263637bbca5a064e0d770fe9384d679
-ms.sourcegitcommit: ea01285a3aa7818d67d4761fbd8793b9b66bd5f7
+ms.openlocfilehash: 947bc17347204f6f15a24f83b449582afe65a4ee
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/12/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>ローカル構成マネージャーの構成
 
@@ -46,7 +45,7 @@ configuration LCMConfig
             RefreshMode = 'Push'
         }
     }
-} 
+}
 ```
 
 LCM に設定を適用する手順は、DSC 構成を適用する場合と同様です。
@@ -106,7 +105,7 @@ LCM 構成では、次の種類のプル サービス エンドポイントを�
 
 **推奨されるソリューション**であり、最も多くの機能を使用できる選択肢は [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started) です。
 
-Azure サービスでは、プライベート データセンター内にあるオンプレミス ノードと、パブリック クラウド (Azure や AWS など) 内にあるノードのどちらも管理できます。
+Azure サービスでは、プライベート データセンター内にあるオンプレミス ノードと、パブリック クラウド （Azure や AWS など) 内にあるノードのどちらも管理できます。
 インターネットへのサーバーの直接接続が許可されないプライベート環境の場合は、公開されている Azure の IP 範囲 ([Azure データセンターの IP 範囲](https://www.microsoft.com/en-us/download/details.aspx?id=41653)に関するページを参照) のみに送信トラフィックを制限することを検討してください。
 
 現時点で Windows Server 上のプル サービスでは利用できないオンライン サービスの機能は以下のとおりです。
@@ -130,7 +129,7 @@ Web ベースの構成サーバーを定義するには、**ConfigurationReposit
 **ConfigurationRepositoryWeb** は次のプロパティを定義します。
 
 |プロパティ|種類|説明|
-|---|---|---| 
+|---|---|---|
 |AllowUnsecureConnection|ブール|認証なしのノードからサーバーへの接続を許可するには、**$TRUE** に設定します。 認証を要求するには、**$FALSE** に設定します。|
 |CertificateID|string|サーバーへの認証に使用される証明書の拇印。|
 |ConfigurationNames|String[]|ターゲット ノードによってプルされる構成の名前の配列。 ノードが **RegistrationKey** を使用してプル サービスに登録されている場合にのみ使用します。 詳細については、「[構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)」を参照してください。|
@@ -191,7 +190,7 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 **PartialConfiguration** は次のプロパティを定義します。
 
 |プロパティ|種類|説明|
-|---|---|---| 
+|---|---|---|
 |ConfigurationSource|string[]|**ConfigurationRepositoryWeb** および **ConfigurationRepositoryShare** ブロックで以前に定義した、部分構成をプルする構成サーバーの名前の配列。|
 |DependsOn|string{}|この部分構成が適用される前に完了する必要があるその他の構成の名前の一覧。|
 |説明|string|部分構成を記述するために使用するテキスト。|
@@ -201,11 +200,11 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 
 __注:__ 部分構成は Azure Automation DSC でサポートされていますが、各 Automation アカウントからプルできる構成はノードごとに 1 つだけです。
 
-## <a name="see-also"></a>参照 
+## <a name="see-also"></a>参照
 
 ### <a name="concepts"></a>概念
 [Desired State Configuration の概要](overview.md)
- 
+
 [Azure Automation DSC の使用](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
 
 ### <a name="other-resources"></a>その他のリソース

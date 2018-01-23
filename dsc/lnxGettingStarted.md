@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "Linux 用 Desired State Configuration (DSC) の概要"
-ms.openlocfilehash: fd4820d27de5958a325032ca3fc202a521c131b4
-ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
+ms.openlocfilehash: 4fd8460bc5d2564cab291904b60a1a0c26c3e5a7
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux 用 Desired State Configuration (DSC) の概要
 
@@ -19,8 +18,8 @@ ms.lasthandoff: 10/25/2017
 Linux 用 DSC では、次の Linux オペレーティング システム バージョンがサポートされています。
 - CentOS 5、6、および 7 (x86/x64)
 - Debian GNU/Linux 6、7、および 8 (x86/x64)
-- Oracle Linux 5、6、および 7 (x86/x64)
-- Red Hat Enterprise Linux Server 5、6、および 7 (x86/x64)
+- Oracle Linux 5、6 および 7 (x86/x64)
+- Red Hat Enterprise Linux Server 5、6 および 7 (x86/x64)
 - SUSE Linux Enterprise Server 10、11、および 12 (x86/x64)
 - Ubuntu Server 12.04 LTS、14.04 LTS、および 16.04 LTS (x86/x64)
 

@@ -1,14 +1,13 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "構成データでの資格情報オプション"
-ms.openlocfilehash: 94ff541fc517254ef2876c424307513eaf1d362a
-ms.sourcegitcommit: 28e71b0ae868014523631fec3f5417de751944f3
+ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2017
+ms.lasthandoff: 01/17/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>構成データでの資格情報オプション
 >適用先: Windows PowerShell 5.0
@@ -21,7 +20,10 @@ ms.lasthandoff: 10/25/2017
 * **PsDscAllowPlainTextPassword**
 * **PsDscAllowDomainUser**
 
->**注**: <p>暗号化されていないプレーンテキスト パスワードを格納/送信するのは一般的には安全ではありません。 このトピックで後述する手法を使って資格情報をセキュリティ保護することをお勧めします。</p> <p>Azure Automation DSC サービスでは、構成でコンパイルされ、安全に格納される資格情報を一元的に管理することができます。  詳細について、「[DSC 構成のコンパイル/資格情報資産](https://docs.microsoft.com/en-in/azure/automation/automation-dsc-compile#credential-assets)」を参照してください。</p>
+> [!NOTE]
+> 暗号化されていないプレーンテキスト パスワードを格納/送信するのは一般的には安全ではありません。 このトピックで後述する手法を使って資格情報をセキュリティ保護することをお勧めします。
+> Azure Automation DSC サービスでは、構成でコンパイルされ、安全に格納される資格情報を一元的に管理することができます。
+> 詳細について、「[DSC 構成のコンパイル/資格情報資産](/azure/automation/automation-dsc-compile#credential-assets)」を参照してください。
 
 プレーンテキストの資格情報を渡す例を次に示します。
 
@@ -133,7 +135,8 @@ WMF 5.0 では、すべてのリソースに対して自動 `PsDscRunAsCredentia
 `PsDscRunAsCredential` の使用の詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
 新しいリソースおよびカスタム リソースでは、資格情報の独自のプロパティを作成する代わりに、この自動プロパティを使用できます。
 
->**注**: 一部のリソースは特定の理由のために複数の資格情報を使用するように設計されており、それらのリソースには独自の資格情報プロパティがあることに注意してください。
+> [!NOTE]
+> 一部のリソースは特定の理由のために複数の資格情報を使用するように設計されており、それらのリソースには独自の資格情報プロパティがあることに注意してください。
 
 リソースの使用可能な資格情報プロパティを検索するには、ISE で `Get-DscResource -Name ResourceName -Syntax` または Intellisense を使用します (`CTRL+SPACE`)。
 
@@ -222,8 +225,8 @@ for node 'localhost'.
 ```
 
 この例には、次の 2 つの問題があります。
-1.  プレーンテキスト パスワードが推奨されないことを説明するエラー。
-2.  ドメイン資格情報を使用しないよう勧める警告。
+1. プレーンテキスト パスワードが推奨されないことを説明するエラー。
+2. ドメイン資格情報を使用しないよう勧める警告。
 
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
@@ -266,9 +269,11 @@ $cred = Get-Credential -UserName contoso\genericuser -Message "Password please"
 DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 ```
 
->**注**: `NodeName`にアスタリスクは指定できません。特定のノード名が必須です。
+> [!NOTE]
+> `NodeName` にアスタリスクは指定できません。特定のノード名が必須です。
 
 **Microsoft では、重大なセキュリティ リスクのため、プレーンテキスト パスワードを使用しないことをお勧めします。**
+
 例外は Azure Automation DSC サービスを使用するときで、データが常に暗号化されて格納されるためです (送信中、サービスの一時停止中、ノードの一時停止中)。
 
 ## <a name="domain-credentials"></a>ドメイン資格情報
