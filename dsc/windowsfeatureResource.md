@@ -1,22 +1,21 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "DSC WindowsFeature リソース"
-ms.openlocfilehash: b4f50cb9ee172600b1811175e9cf67f6a7ed2d55
-ms.sourcegitcommit: cd5a1f054cbf9eb95c5242a995f9741e031ddb24
+ms.openlocfilehash: 3dd4a9c6f11b0c76054ca3e95796cab8e709a7c6
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="dsc-windowsfeature-resource"></a><span data-ttu-id="5a083-103">DSC WindowsFeature リソース</span><span class="sxs-lookup"><span data-stu-id="5a083-103">DSC WindowsFeature Resource</span></span>
+# <a name="dsc-windowsfeature-resource"></a><span data-ttu-id="488d4-103">DSC WindowsFeature リソース</span><span class="sxs-lookup"><span data-stu-id="488d4-103">DSC WindowsFeature Resource</span></span>
 
-> <span data-ttu-id="5a083-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="5a083-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="488d4-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="488d4-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="5a083-105">Windows PowerShell Desired State Configuration (DSC) の **WindowsFeature** リソースは、役割と機能がターゲット ノードで追加または削除されることを保証するためのメカニズムを備えています。</span><span class="sxs-lookup"><span data-stu-id="5a083-105">The **WindowsFeature** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to ensure that roles and features are added or removed on a target node.</span></span>
+<span data-ttu-id="488d4-105">Windows PowerShell Desired State Configuration (DSC) の **WindowsFeature** リソースは、役割と機能がターゲット ノードで追加または削除されることを保証するためのメカニズムを備えています。</span><span class="sxs-lookup"><span data-stu-id="488d4-105">The **WindowsFeature** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to ensure that roles and features are added or removed on a target node.</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="5a083-106">構文</span><span class="sxs-lookup"><span data-stu-id="5a083-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="488d4-106">構文</span><span class="sxs-lookup"><span data-stu-id="488d4-106">Syntax</span></span>
 
 ```
 WindowsFeature [string] #ResourceName
@@ -31,19 +30,19 @@ WindowsFeature [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="5a083-107">プロパティ</span><span class="sxs-lookup"><span data-stu-id="5a083-107">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="488d4-107">プロパティ</span><span class="sxs-lookup"><span data-stu-id="488d4-107">Properties</span></span>
 
-|  <span data-ttu-id="5a083-108">プロパティ</span><span class="sxs-lookup"><span data-stu-id="5a083-108">Property</span></span>  |  <span data-ttu-id="5a083-109">説明</span><span class="sxs-lookup"><span data-stu-id="5a083-109">Description</span></span>   | 
+|  <span data-ttu-id="488d4-108">プロパティ</span><span class="sxs-lookup"><span data-stu-id="488d4-108">Property</span></span>  |  <span data-ttu-id="488d4-109">説明</span><span class="sxs-lookup"><span data-stu-id="488d4-109">Description</span></span>   | 
 |---|---| 
-| <span data-ttu-id="5a083-110">名前</span><span class="sxs-lookup"><span data-stu-id="5a083-110">Name</span></span>| <span data-ttu-id="5a083-111">追加または削除されることを保証する役割または機能の名前を示します。</span><span class="sxs-lookup"><span data-stu-id="5a083-111">Indicates the name of the role or feature that you want to ensure is added or removed.</span></span> <span data-ttu-id="5a083-112">これは、[Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) コマンドレットからの __Name__ プロパティと同じものであり、役割または機能の表示名ではありません。</span><span class="sxs-lookup"><span data-stu-id="5a083-112">This is the same as the __Name__ property from the [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) cmdlet, and not the display name of the role or feature.</span></span>| 
-| <span data-ttu-id="5a083-113">Credential</span><span class="sxs-lookup"><span data-stu-id="5a083-113">Credential</span></span>| <span data-ttu-id="5a083-114">役割または機能の追加や削除に使用する資格情報を示します。</span><span class="sxs-lookup"><span data-stu-id="5a083-114">Indicates the credentials to use to add or remove the role or feature.</span></span>| 
-| <span data-ttu-id="5a083-115">Ensure</span><span class="sxs-lookup"><span data-stu-id="5a083-115">Ensure</span></span>| <span data-ttu-id="5a083-116">役割または機能が追加されるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="5a083-116">Indicates if the role or feature is added.</span></span> <span data-ttu-id="5a083-117">役割または機能が追加されることを保証するには、このプロパティを "Present" に設定します。役割または機能が削除されることを保証するには、このプロパティを "Absent" に設定します。</span><span class="sxs-lookup"><span data-stu-id="5a083-117">To ensure that the role or feature is added, set this property to "Present" To ensure that the role or feature is removed, set the property to "Absent".</span></span>| 
-| <span data-ttu-id="5a083-118">IncludeAllSubFeature</span><span class="sxs-lookup"><span data-stu-id="5a083-118">IncludeAllSubFeature</span></span>| <span data-ttu-id="5a083-119">__Name__ プロパティで指定した機能の状態を使用して必要なすべてのサブ機能の状態を保証するには、このプロパティを __$true__ に設定します。</span><span class="sxs-lookup"><span data-stu-id="5a083-119">Set this property to __$true__ to ensure the state of all required subfeatures with the state of the feature you specify with the __Name__ property.</span></span>| 
-| <span data-ttu-id="5a083-120">LogPath</span><span class="sxs-lookup"><span data-stu-id="5a083-120">LogPath</span></span>| <span data-ttu-id="5a083-121">リソース プロバイダーの操作を記録するログ ファイルへのパスを示します。</span><span class="sxs-lookup"><span data-stu-id="5a083-121">Indicates the path to a log file where you want the resource provider to log the operation.</span></span>| 
-| <span data-ttu-id="5a083-122">DependsOn</span><span class="sxs-lookup"><span data-stu-id="5a083-122">DependsOn</span></span>| <span data-ttu-id="5a083-123">このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="5a083-123">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="5a083-124">たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。</span><span class="sxs-lookup"><span data-stu-id="5a083-124">For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>| 
-| <span data-ttu-id="5a083-125">ソース</span><span class="sxs-lookup"><span data-stu-id="5a083-125">Source</span></span>| <span data-ttu-id="5a083-126">必要に応じて、インストールに使用するソース ファイルの場所を示します。</span><span class="sxs-lookup"><span data-stu-id="5a083-126">Indicates the location of the source file to use for installation, if necessary.</span></span>| 
+| <span data-ttu-id="488d4-110">名前</span><span class="sxs-lookup"><span data-stu-id="488d4-110">Name</span></span>| <span data-ttu-id="488d4-111">追加または削除されることを保証する役割または機能の名前を示します。</span><span class="sxs-lookup"><span data-stu-id="488d4-111">Indicates the name of the role or feature that you want to ensure is added or removed.</span></span> <span data-ttu-id="488d4-112">これは、[Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) コマンドレットからの __Name__ プロパティと同じものであり、役割または機能の表示名ではありません。</span><span class="sxs-lookup"><span data-stu-id="488d4-112">This is the same as the __Name__ property from the [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) cmdlet, and not the display name of the role or feature.</span></span>| 
+| <span data-ttu-id="488d4-113">Credential</span><span class="sxs-lookup"><span data-stu-id="488d4-113">Credential</span></span>| <span data-ttu-id="488d4-114">役割または機能の追加や削除に使用する資格情報を示します。</span><span class="sxs-lookup"><span data-stu-id="488d4-114">Indicates the credentials to use to add or remove the role or feature.</span></span>| 
+| <span data-ttu-id="488d4-115">Ensure</span><span class="sxs-lookup"><span data-stu-id="488d4-115">Ensure</span></span>| <span data-ttu-id="488d4-116">役割または機能が追加されるかどうかを示します。</span><span class="sxs-lookup"><span data-stu-id="488d4-116">Indicates if the role or feature is added.</span></span> <span data-ttu-id="488d4-117">役割または機能が追加されることを保証するには、このプロパティを "Present" に設定します。役割または機能が削除されることを保証するには、このプロパティを "Absent" に設定します。</span><span class="sxs-lookup"><span data-stu-id="488d4-117">To ensure that the role or feature is added, set this property to "Present" To ensure that the role or feature is removed, set the property to "Absent".</span></span>| 
+| <span data-ttu-id="488d4-118">IncludeAllSubFeature</span><span class="sxs-lookup"><span data-stu-id="488d4-118">IncludeAllSubFeature</span></span>| <span data-ttu-id="488d4-119">__Name__ プロパティで指定した機能の状態を使用して必要なすべてのサブ機能の状態を保証するには、このプロパティを __$true__ に設定します。</span><span class="sxs-lookup"><span data-stu-id="488d4-119">Set this property to __$true__ to ensure the state of all required subfeatures with the state of the feature you specify with the __Name__ property.</span></span>| 
+| <span data-ttu-id="488d4-120">LogPath</span><span class="sxs-lookup"><span data-stu-id="488d4-120">LogPath</span></span>| <span data-ttu-id="488d4-121">リソース プロバイダーの操作を記録するログ ファイルへのパスを示します。</span><span class="sxs-lookup"><span data-stu-id="488d4-121">Indicates the path to a log file where you want the resource provider to log the operation.</span></span>| 
+| <span data-ttu-id="488d4-122">DependsOn</span><span class="sxs-lookup"><span data-stu-id="488d4-122">DependsOn</span></span>| <span data-ttu-id="488d4-123">このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="488d4-123">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="488d4-124">たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。</span><span class="sxs-lookup"><span data-stu-id="488d4-124">For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>| 
+| <span data-ttu-id="488d4-125">ソース</span><span class="sxs-lookup"><span data-stu-id="488d4-125">Source</span></span>| <span data-ttu-id="488d4-126">必要に応じて、インストールに使用するソース ファイルの場所を示します。</span><span class="sxs-lookup"><span data-stu-id="488d4-126">Indicates the location of the source file to use for installation, if necessary.</span></span>| 
 
-## <a name="example"></a><span data-ttu-id="5a083-127">例</span><span class="sxs-lookup"><span data-stu-id="5a083-127">Example</span></span>
+## <a name="example"></a><span data-ttu-id="488d4-127">例</span><span class="sxs-lookup"><span data-stu-id="488d4-127">Example</span></span>
 ```powershell
 WindowsFeature RoleExample
 {

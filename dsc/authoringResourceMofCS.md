@@ -1,29 +1,28 @@
 ---
 ms.date: 2017-06-12
-author: eslesar
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "C# での DSC リソースの作成"
-ms.openlocfilehash: c1dc97d4e05499d03450d6172d9674b06a674393
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 2fc6b8c127bca29e8f66fc7bd8d2828fdfe39f3c
+ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 01/17/2018
 ---
-# <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="7461a-103">C# での DSC リソースの作成</span><span class="sxs-lookup"><span data-stu-id="7461a-103">Authoring a DSC resource in C#</span></span>
+# <a name="authoring-a-dsc-resource-in-c"></a><span data-ttu-id="811de-103">C# での DSC リソースの作成</span><span class="sxs-lookup"><span data-stu-id="811de-103">Authoring a DSC resource in C#</span></span>
 
-> <span data-ttu-id="7461a-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="7461a-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="811de-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="811de-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="7461a-105">通常、Windows PowerShell Desired State Configuration (DSC) カスタム リソースは、PowerShell スクリプトで実装されます。</span><span class="sxs-lookup"><span data-stu-id="7461a-105">Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script.</span></span> <span data-ttu-id="7461a-106">ただし、C# でコマンドレットを記述して、DSC カスタム リソースの機能を実装することもできます。</span><span class="sxs-lookup"><span data-stu-id="7461a-106">However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#.</span></span> <span data-ttu-id="7461a-107">C# でのコマンドレットの記述の概要については、「[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](https://technet.microsoft.com/en-us/library/dd878294.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7461a-107">For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](https://technet.microsoft.com/en-us/library/dd878294.aspx).</span></span>
+<span data-ttu-id="811de-105">通常、Windows PowerShell Desired State Configuration (DSC) カスタム リソースは、PowerShell スクリプトで実装されます。</span><span class="sxs-lookup"><span data-stu-id="811de-105">Typically, a Windows PowerShell Desired State Configuration (DSC) custom resource is implemented in a PowerShell script.</span></span> <span data-ttu-id="811de-106">ただし、C# でコマンドレットを記述して、DSC カスタム リソースの機能を実装することもできます。</span><span class="sxs-lookup"><span data-stu-id="811de-106">However, you can also implement the functionality of a DSC custom resource by writing cmdlets in C#.</span></span> <span data-ttu-id="811de-107">C# でのコマンドレットの記述の概要については、「[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](https://technet.microsoft.com/en-us/library/dd878294.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="811de-107">For an introduction on writing cmdlets in C#, see [Writing a Windows PowerShell Cmdlet](https://technet.microsoft.com/en-us/library/dd878294.aspx).</span></span>
 
-<span data-ttu-id="7461a-108">C# でコマンドレットとしてリソースを実装すること以外に、MOF スキーマの作成、フォルダー構造の作成、およびカスタム DSC リソースのインポートと使用のプロセスは、「[MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)」で説明されていることと同じです。</span><span class="sxs-lookup"><span data-stu-id="7461a-108">Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).</span></span>
+<span data-ttu-id="811de-108">C# でコマンドレットとしてリソースを実装すること以外に、MOF スキーマの作成、フォルダー構造の作成、およびカスタム DSC リソースのインポートと使用のプロセスは、「[MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)」で説明されていることと同じです。</span><span class="sxs-lookup"><span data-stu-id="811de-108">Aside from implementing the resource in C# as cmdlets, the process of creating the MOF schema, creating the folder structure, importing and using your custom DSC resource are the same as described in [Writing a custom DSC resource with MOF](authoringResourceMOF.md).</span></span>
 
-## <a name="writing-a-cmdlet-based-resource"></a><span data-ttu-id="7461a-109">コマンドレットベースのリソースの記述</span><span class="sxs-lookup"><span data-stu-id="7461a-109">Writing a cmdlet-based resource</span></span>
-<span data-ttu-id="7461a-110">この例では、テキスト ファイルとその内容を管理する単純なリソースを実装します。</span><span class="sxs-lookup"><span data-stu-id="7461a-110">For this example, we will implement a simple resource that manages a text file and its contents.</span></span>
+## <a name="writing-a-cmdlet-based-resource"></a><span data-ttu-id="811de-109">コマンドレットベースのリソースの記述</span><span class="sxs-lookup"><span data-stu-id="811de-109">Writing a cmdlet-based resource</span></span>
+<span data-ttu-id="811de-110">この例では、テキスト ファイルとその内容を管理する単純なリソースを実装します。</span><span class="sxs-lookup"><span data-stu-id="811de-110">For this example, we will implement a simple resource that manages a text file and its contents.</span></span>
 
-### <a name="writing-the-mof-schema"></a><span data-ttu-id="7461a-111">MOF スキーマの記述</span><span class="sxs-lookup"><span data-stu-id="7461a-111">Writing the MOF schema</span></span>
+### <a name="writing-the-mof-schema"></a><span data-ttu-id="811de-111">MOF スキーマの記述</span><span class="sxs-lookup"><span data-stu-id="811de-111">Writing the MOF schema</span></span>
 
-<span data-ttu-id="7461a-112">MOF リソースの定義を次に示します。</span><span class="sxs-lookup"><span data-stu-id="7461a-112">The following is the MOF resource definition.</span></span>
+<span data-ttu-id="811de-112">MOF リソースの定義を次に示します。</span><span class="sxs-lookup"><span data-stu-id="811de-112">The following is the MOF resource definition.</span></span>
 
 ```
 [ClassVersion("1.0.0"), FriendlyName("xDemoFile")]
@@ -35,19 +34,19 @@ class MSFT_XDemoFile : OMI_BaseResource
 };
 ```
 
-### <a name="setting-up-the-visual-studio-project"></a><span data-ttu-id="7461a-113">Visual Studio プロジェクトの設定</span><span class="sxs-lookup"><span data-stu-id="7461a-113">Setting up the Visual Studio project</span></span>
-#### <a name="setting-up-a-cmdlet-project"></a><span data-ttu-id="7461a-114">コマンドレット プロジェクトの設定</span><span class="sxs-lookup"><span data-stu-id="7461a-114">Setting up a cmdlet project</span></span>
+### <a name="setting-up-the-visual-studio-project"></a><span data-ttu-id="811de-113">Visual Studio プロジェクトの設定</span><span class="sxs-lookup"><span data-stu-id="811de-113">Setting up the Visual Studio project</span></span>
+#### <a name="setting-up-a-cmdlet-project"></a><span data-ttu-id="811de-114">コマンドレット プロジェクトの設定</span><span class="sxs-lookup"><span data-stu-id="811de-114">Setting up a cmdlet project</span></span>
 
-1. <span data-ttu-id="7461a-115">Visual Studio を開きます。</span><span class="sxs-lookup"><span data-stu-id="7461a-115">Open Visual Studio.</span></span>
-1. <span data-ttu-id="7461a-116">C# プロジェクトを作成し、名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="7461a-116">Create a C# project and provide the name.</span></span>
-1. <span data-ttu-id="7461a-117">使用可能なプロジェクト テンプレートから **[クラス ライブラリ]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="7461a-117">Select **Class Library** from the available project templates.</span></span>
-1. <span data-ttu-id="7461a-118">**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="7461a-118">Click **Ok**.</span></span>
-1. <span data-ttu-id="7461a-119">System.Automation.Management.dll へのアセンブリ参照をプロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="7461a-119">Add an assembly reference to System.Automation.Management.dll to your project.</span></span>
-1. <span data-ttu-id="7461a-120">リソース名と一致するようにアセンブリ名を変更します。</span><span class="sxs-lookup"><span data-stu-id="7461a-120">Change the assembly name to match the resource name.</span></span> <span data-ttu-id="7461a-121">この例では、アセンブリは **MSFT_XDemoFile** という名前にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="7461a-121">In this case, the assembly should be named **MSFT_XDemoFile**.</span></span>
+1. <span data-ttu-id="811de-115">Visual Studio を開きます。</span><span class="sxs-lookup"><span data-stu-id="811de-115">Open Visual Studio.</span></span>
+1. <span data-ttu-id="811de-116">C# プロジェクトを作成し、名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="811de-116">Create a C# project and provide the name.</span></span>
+1. <span data-ttu-id="811de-117">使用可能なプロジェクト テンプレートから **[クラス ライブラリ]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="811de-117">Select **Class Library** from the available project templates.</span></span>
+1. <span data-ttu-id="811de-118">**[OK]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="811de-118">Click **Ok**.</span></span>
+1. <span data-ttu-id="811de-119">System.Automation.Management.dll へのアセンブリ参照をプロジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="811de-119">Add an assembly reference to System.Automation.Management.dll to your project.</span></span>
+1. <span data-ttu-id="811de-120">リソース名と一致するようにアセンブリ名を変更します。</span><span class="sxs-lookup"><span data-stu-id="811de-120">Change the assembly name to match the resource name.</span></span> <span data-ttu-id="811de-121">この例では、アセンブリは **MSFT_XDemoFile** という名前にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="811de-121">In this case, the assembly should be named **MSFT_XDemoFile**.</span></span>
 
-### <a name="writing-the-cmdlet-code"></a><span data-ttu-id="7461a-122">コマンドレット コードの記述</span><span class="sxs-lookup"><span data-stu-id="7461a-122">Writing the cmdlet code</span></span>
+### <a name="writing-the-cmdlet-code"></a><span data-ttu-id="811de-122">コマンドレット コードの記述</span><span class="sxs-lookup"><span data-stu-id="811de-122">Writing the cmdlet code</span></span>
 
-<span data-ttu-id="7461a-123">次の C# コードでは、**Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** コマンドレットを実装します。</span><span class="sxs-lookup"><span data-stu-id="7461a-123">The following C# code implements the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** cmdlets.</span></span>
+<span data-ttu-id="811de-123">次の C# コードでは、**Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** コマンドレットを実装します。</span><span class="sxs-lookup"><span data-stu-id="811de-123">The following C# code implements the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** cmdlets.</span></span>
 
 ```C#
 
@@ -263,9 +262,9 @@ namespace cSharpDSCResourceExample
 }
 ```
 
-### <a name="deploying-the-resource"></a><span data-ttu-id="7461a-124">リソースの展開</span><span class="sxs-lookup"><span data-stu-id="7461a-124">Deploying the resource</span></span>
+### <a name="deploying-the-resource"></a><span data-ttu-id="811de-124">リソースの展開</span><span class="sxs-lookup"><span data-stu-id="811de-124">Deploying the resource</span></span>
 
-<span data-ttu-id="7461a-125">コンパイル済み dll ファイルは、スクリプトベースのリソースと同様のファイル構造で保存する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7461a-125">The compiled dll file should be saved in a file structure similar to a script-based resource.</span></span> <span data-ttu-id="7461a-126">このリソースのフォルダー構造を次に示します。</span><span class="sxs-lookup"><span data-stu-id="7461a-126">The following is the folder structure for this resource.</span></span>
+<span data-ttu-id="811de-125">コンパイル済み dll ファイルは、スクリプトベースのリソースと同様のファイル構造で保存する必要があります。</span><span class="sxs-lookup"><span data-stu-id="811de-125">The compiled dll file should be saved in a file structure similar to a script-based resource.</span></span> <span data-ttu-id="811de-126">このリソースのフォルダー構造を次に示します。</span><span class="sxs-lookup"><span data-stu-id="811de-126">The following is the folder structure for this resource.</span></span>
 
 ```
 $env: psmodulepath (folder)
@@ -278,9 +277,9 @@ $env: psmodulepath (folder)
                 |- MSFT_XDemoFile.schema.mof (file, required)
 ```
 
-### <a name="see-also"></a><span data-ttu-id="7461a-127">参照</span><span class="sxs-lookup"><span data-stu-id="7461a-127">See Also</span></span>
-#### <a name="concepts"></a><span data-ttu-id="7461a-128">概念</span><span class="sxs-lookup"><span data-stu-id="7461a-128">Concepts</span></span>
-[<span data-ttu-id="7461a-129">MOF を使用したカスタム DSC リソースの記述</span><span class="sxs-lookup"><span data-stu-id="7461a-129">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
-#### <a name="other-resources"></a><span data-ttu-id="7461a-130">その他のリソース</span><span class="sxs-lookup"><span data-stu-id="7461a-130">Other Resources</span></span>
-[<span data-ttu-id="7461a-131">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="7461a-131">Writing a Windows PowerShell Cmdlet</span></span>](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
+### <a name="see-also"></a><span data-ttu-id="811de-127">参照</span><span class="sxs-lookup"><span data-stu-id="811de-127">See Also</span></span>
+#### <a name="concepts"></a><span data-ttu-id="811de-128">概念</span><span class="sxs-lookup"><span data-stu-id="811de-128">Concepts</span></span>
+[<span data-ttu-id="811de-129">MOF を使用したカスタム DSC リソースの記述</span><span class="sxs-lookup"><span data-stu-id="811de-129">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
+#### <a name="other-resources"></a><span data-ttu-id="811de-130">その他のリソース</span><span class="sxs-lookup"><span data-stu-id="811de-130">Other Resources</span></span>
+[<span data-ttu-id="811de-131">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="811de-131">Writing a Windows PowerShell Cmdlet</span></span>](https://msdn.microsoft.com/en-us/library/dd878294.aspx)
 
