@@ -234,7 +234,7 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 - PowerShell が特定の OS で実行されているかどうかを判断するために、新しく 3 つの自動変数 (`$IsWindows`、`$IsMacOs`、`$IsLinux`) を追加しました。
 - PowerShell Core のバナーに `GitCommitId` を追加します。
   バージョンを取得するために PowerShell を起動してすぐに `$PSVersionTable` を実行する必要がなくなりました。 (#3916) (@iSazonov に感謝)
-- 起動時刻の前に必要ないくつかの設定を格納するために、`$PSHome` の `PowerShellProperties.json` という JSON 構成ファイルを追加します (`ExecutionPolicy` など)。
+- 起動時刻の前に必要ないくつかの設定を格納するために、`$PSHome` の `powershell.config.json` という JSON 構成ファイルを追加します (`ExecutionPolicy` など)。
 - Windows EXE の実行中はパイプラインをブロックしません。
 - COM コレクションの列挙が有効になりました。 (#4553)
 

@@ -11,6 +11,7 @@
 ### [PowerShellGallery アカウントの作成](psgallery/psgallery_creating_an_account.md)
 ### [アイテムの作成と公開](psgallery/Creating-and-Publishing-an-item.md)
 ### [公開に関するガイドラインとベスト プラクティス](psgallery/psgallery-PublishingGuidelines.md)
+### [アイテムのマニフェストとギャラリーの UI](psgallery/psgallery_ItemManifestAffectingUI.md)
 ### [アイテムをリストから外す](psgallery/psgallery_unlist_items.md)
 ### [アイテムを削除する](psgallery/Deleting-Items.md)
 ### [アイテムの所有者を管理する](psgallery/Managing-Item-Owners.md)
