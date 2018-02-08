@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell の基礎"
 ms.assetid: 6b3cbbc8-060c-4877-b00b-7300dbbe4e28
-ms.openlocfilehash: 7b5cdfce876aa7d5559fe772379829011b275a02
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: bd17786d2d8690b89a2d107e0da98ee45f5b2ff7
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/03/2018
 ---
 # <a name="windows-powershell-basics"></a>Windows PowerShell の基礎
 グラフィカル ユーザー インターフェイスでは、ほとんどのコンピューターのユーザーによく知られているいくつかの基本的な概念を使用します。 ユーザーはタスクを実行する際、なじみのあるインターフェイスに依存します。 オペレーティング システムは閲覧可能な項目のグラフィック表示をユーザーに提示しますが、これには通常、特定の機能にアクセスするためのドロップダウン メニューと、コンテキスト特有の機能にアクセスするためのコンテキスト メニューが含まれています。
@@ -18,13 +18,10 @@ Windows PowerShell などのコマンド ライン インターフェイス (CLI
 
 Windows PowerShell の設計は、ユーザーが持つ CLI の歴史的知識を生かすものです。 この章では、Windows PowerShell について素早く学習するために使用できる基本的なツールと概念を説明します。 具体的な内容を次に示します。
 
-- Get-Command の使用
+- [Get-Command](/powershell/module/Microsoft.PowerShell.Core/get-command) の使用
 
-- Cmd.exe および UNIX コマンドの使用
+- [Cmd.exe](/windows-server/administration/windows-commands/cmd) および [UNIX コマンド](/windows/wsl/reference)の使用
 
-- 外部コマンドの使用
+- [Tab-Completion の使用](../../core-powershell/console/using-tab-expansion.md)
 
-- タブ補完の使用
-
-- Get-Help の使用
-
+- [Get-Help の使用](./getting-detailed-help-information.md)
