@@ -4,10 +4,10 @@ keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell ISE スクリプト オブジェクト モデル"
 ms.assetid: 69b047d0-da79-413e-b948-8e45d05d1f85
 ms.openlocfilehash: 705378c927fcd8d38c2a697584aad771d7bd6c49
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 02/08/2018
 ---
 # <a name="the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE スクリプト オブジェクト モデル
   Windows PowerShell® Integrated Scripting Environment (ISE) は、Windows PowerShell ISE の外観および機能のさまざまな側面を操作する Windows PowerShell スクリプトを記述できるようにする、基になるスクリプティング オブジェクト モデルによってその機能を公開します。 スクリプティング オブジェクト、スクリプティング オブジェクトのプロパティ、およびそのメソッドは、この用途専用で定義されます。
