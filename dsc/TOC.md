@@ -108,7 +108,7 @@
 
 # DSC プル モデル
 
-## [Setting up a web pull server (Web プル サーバーのセットアップ)](pullServer.md)
+## [DSC プル サービス](pullServer.md)
 
 ## [DSC SMB プル サーバーのセットアップ](pullServerSMB.md)
 
