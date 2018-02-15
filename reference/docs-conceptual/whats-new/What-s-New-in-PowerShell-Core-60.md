@@ -93,23 +93,23 @@ ZIP パッケージを使用して、PowerShell を依存関係と見なすア�
 > 既定では、Windows 上の MSI ベースのインストーラーはインプレース アップデート インストールを行います。
 >
 
-## <a name="renamed-powershellexe-to-pwshexe"></a>`powershell(.exe)` から `pwsh(.exe)` への名前変更
+## <a name="renamed-powershellexe-to-pwshexe"></a>`powershell(.exe)` から `pwsh(.exe)` への名称変更
 
 PowerShell Core のバイナリ名が `powershell(.exe)` から `pwsh(.exe)` に変更されました。
-この変更により、Windows PowerShell と PowerShell Core のサイド バイ サイドのインストールをサポートするために、ユーザーがコンピューター上で PowerShell Core を実行する場合に決定的な方法が提供されます。
+この変更により、Windows PowerShell と PowerShell Core のサイド バイ サイドのインストールをサポートするために、ユーザーがコンピューター上で PowerShell Core を実行する決定的な方法が提供されます。
 また、`pwsh` は短いため、入力しやすくなります。
 
-`powershell.exe` から `pwsh(.exe)` への変更以外の変更点は次のとおりです。
+`powershell.exe` から `pwsh(.exe)` への追加の変更点は次のとおりです。
 
 - 最初の位置指定パラメーターが `-Command` から `-File` に変更されました。
-  この変更により、Windows 以外のプラットフォームの PowerShell 以外のシェルから実行されている PowerShell スクリプトの `#!` (シバンともいう) 使用方法が修正されます。
-  これは、`-File` を指定せずに `pwsh foo.ps1` または `pwsh fooScript` のようなコマンドを実行できることも意味します。
-  ただし、この変更では、`pwsh.exe -Command Get-Command` などのコマンドの実行を試みる場合に `-c` または `-Command` を明示的に指定する必要があります。 (#4019)
-- PowerShell Core は `-i` (または `-Interactive`) スイッチを受け入れ、対話型シェルを示します。 (# 3558) これにより、Unix プラットフォームで既定のシェルとして PowerShell を使用できるようになります。
+  この変更により、Windows 以外のプラットフォームの PowerShell 以外のシェルから実行されている PowerShell スクリプトの `#!` (シバンともいいます) の使用方法が修正されます。
+  これは、`-File` を指定せずに `pwsh foo.ps1` または `pwsh fooScript` のようにコマンドを実行できることも意味します。
+  ただし、この変更によって、`pwsh.exe -Command Get-Command` などのコマンドを実行しようとする場合は `-c` または `-Command` を明示的に指定する必要があります。 (#4019)
+- PowerShell Core は対話型シェルであることを示すために `-i` (または `-Interactive`) スイッチを受け入れました。 (# 3558) これにより、Unix プラットフォームで既定のシェルとして PowerShell を使用できるようになります。
 - パラメーターの `-importsystemmodules` と `-psconsoleFile` を `pwsh.exe` から削除しました。 (#4995)
 - 他のネイティブ ツールに合わせて `pwsh -version` と `pwsh.exe` の組み込みヘルプを変更しました。 (#4958 & #4931) (@iSazonov に感謝)
 - `-File` と `-Command` の無効な引数エラー メッセージと終了コードの Unix 標準への準拠 (#4573)
-- Windows の `-WindowStyle` パラメーターを追加しました。 (#4573) 同様に、Windows 以外のプラットフォームのパッケージ ベースのインストール更新はインプレース更新となります。
+- Windows で `-WindowStyle` パラメーターを追加しました。 (#4573) 同様に、Windows 以外のプラットフォームでのパッケージ ベースのインストールはインプレースアップデートとなります。
 
 ## <a name="backwards-compatibility-with-windows-powershell"></a>Windows PowerShell との後方互換性
 
