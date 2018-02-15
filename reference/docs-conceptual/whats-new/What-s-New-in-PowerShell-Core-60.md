@@ -90,7 +90,7 @@ ZIP パッケージを使用して、PowerShell を依存関係と見なすア�
 また、サイド バイ サイドでは、スクリプトを必要な特定のバージョンにピン留めできるため、後方互換性が有効になります。
 
 > [!NOTE]
-> 既定では、Windows 上の MSI ベースのインストーラーはインプレース更新インストールを行います。
+> 既定では、Windows 上の MSI ベースのインストーラーはインプレース アップデート インストールを行います。
 >
 
 ## <a name="renamed-powershellexe-to-pwshexe"></a>`powershell(.exe)` から `pwsh(.exe)` への名前変更
