@@ -42,7 +42,7 @@ PowerShell では、次のように、macOS と Linux が正式にサポート�
 - Raspbian (Stretch)
 
 Windows 以外のシステムでより適切に機能するように、PowerShell Core 6.0 には多くの変更が行われました。
-これらのいくつかは重大な変更であり、Windows にも影響します。
+これらのいくつかは破壊的変更であり、Windows にも影響します。
 その他の変更は、PowerShell Core の Windows 以外のインストールにのみ存在するか適用されます。
 
 - Unix プラットフォームでのネイティブ コマンドのグロビング サポートを追加しました。
@@ -331,10 +331,10 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 - `Select-Object` の `-ExcludeProperty` と `-ExpandProperty` で引数のオートコンプリートを有効にします。 (#3443) (@iSazonov に感謝)
 - ネイティブ コンプリーターに対する `native.exe --<tab>` 呼び出しを行うために、Tab 補完機能のバグを修正します。 (#3633) (@powercode に感謝)
 
-## <a name="breaking-changes"></a>重大な変更
+## <a name="breaking-changes"></a>破壊的変更
 
-PowerShell Core 6.0 には多くの重大な変更が導入されています。
-その詳細については、[PowerShell Core 6.0 の重大な変更][breaking-changes]に関するページを参照してください。
+PowerShell Core 6.0 には多くの破壊的変更が導入されています。
+その詳細については、[PowerShell Core 6.0 の破壊的変更][breaking-changes]に関するページを参照してください。
 
 ## <a name="debugging"></a>デバッグ
 
