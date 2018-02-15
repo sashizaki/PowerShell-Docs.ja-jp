@@ -2,54 +2,60 @@
 ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "PowerShell スクリプト"
-ms.openlocfilehash: 8d2386dc49c59a106ecdddf0feabe3344834a86d
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 9214b9e40ff6c181f921f89ef78406af20c30e5f
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="powershell"></a>PowerShell
 
-Windows PowerShell は、システム管理者とパワーユーザー向けに .NET Framework 上に構築されたタスクベースのコマンドライン シェルとスクリプト言語であり、複数のオペレーティング システム (Linux、macOS、Unix、Windows) の管理とこれらのオペレーティング システム上で実行されるアプリケーションに関連するプロセスを迅速に自動化するものです。
+PowerShell は、システム管理者とパワーユーザー向けに .NET Framework 上に構築されたタスクベースのコマンドライン シェルとスクリプト言語であり、複数のオペレーティング システム (Linux、macOS、Unix、Windows) の管理とこれらのオペレーティング システム上で実行されるアプリケーションに関連するプロセスを迅速に自動化するものです。
 
-### <a name="powershell-is-now-open-source"></a>PowerShell は現在、オープン ソースです
+## <a name="powershell-is-open-source"></a>PowerShell はオープン ソースです
 
-PowerShell ベースのソース コードは現在、GitHub で入手可能であり、コミュニティ投稿が可能です。[PowerShell](https://github.com/powershell/powershell) を参照してください。
+PowerShell ベースのソース コードは現在、GitHub で入手可能であり、コミュニティ投稿が可能です。 [GitHub の PowerShell のソース](https://github.com/powershell/powershell)を参照してください。
 
 「[PowerShell を入手](https://github.com/PowerShell/PowerShell#get-powershell)」で必要なものから開始できます。
 または、「[はじめに](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)」からクイック ツアーを開始します。
 
-> **注:**  
-> GitHub の PowerShell に関するすべてのリンクから、GitHub に移動できます。
+## <a name="powershell-design-goals"></a>PowerShell の設計目標
+Windows PowerShell は、従来からの問題を排除し、新しい機能を追加することにより、コマンド ラインおよびスクリプト環境を改善することを目的として設計されています。
 
-# <a name="documentation"></a>ドキュメント
+### <a name="discoverability"></a>機能の見つけやすさ
+Windows PowerShell では、簡単にその機能を見つけられます。 たとえば、Windows サービスを表示したり変更したりするコマンドレットの一覧を検索するには、次のように入力します。
 
-ドキュメント コレクションは、4 つの主要なセクションに分かれています。
+```
+Get-Command *-Service
+```
 
-## <a name="whats-new-with-powershellwhats-newwhat-s-new-with-powershellmd"></a>[PowerShell の新機能](whats-new/What-s-New-With-PowerShell.md)
-このセクションには、製品に関するすべてのお知らせがバージョン別およびリリース別に記載されています。
+タスクを実行するコマンドレットが見つかったら、Get-Help コマンドレットを使用して、コマンドレットの詳細を確認することができます。 たとえば、Get-Service コマンドレットのヘルプを表示するには、次のように入力します。
 
-## <a name="powershell-setupsetupsetup-referencemd"></a>[PowerShell のセットアップ](setup/setup-reference.md)
-このセクションには、すべてのサポートされている環境において、PowerShell のすべてのバージョンをインストールするために必要な情報がすべて記載されています。  
+```
+Get-Help Get-Service
+```
+ほとんどのコマンドレットでは、操作を加えてから表示用のテキストに変換できるオブジェクトが出力されます。 そのコマンドレットの出力を完全に理解するには、Get-Member コマンドレットにその出力をパイプ処理します。 たとえば、次のコマンドは、Get-Service コマンドレットによって出力されるオブジェクトのメンバーについての情報を表示します。
 
-さらに、セキュリティ、アクセシビリティ、リモート アクセスと管理、ワークフロー、および Web アクセスの構成方法も記載されています。
+```
+Get-Service | Get-Member
+```
 
-## <a name="getting-started-with-powershellgetting-startedgetting-started-with-windows-powershellmd"></a>[PowerShell ファースト ステップ ガイド](getting-started/Getting-Started-with-Windows-PowerShell.md)
-このセクションでは、PowerShell を初めて使うユーザーがこの製品を使用するために必要なすべての情報が提供されます。  
-このセクションの内容
-- PowerShell をセットアップして「PowerShell ファースト ステップ ガイド」で示されているすべてのコードとコマンド スニペットを実行および試行するのに必要なステップを示す [Windows PowerShell を使用する準備を行う](getting-started/Getting-Ready-to-Use-Windows-PowerShell.md)。
-- PowerShell の説明および PowerShell の使用にあたって必要な基本的概念を示す「[基本的な概念](getting-started/fundamental-concepts.md)」ガイド。
-- PowerShell の基礎を説明する一連の [&lt;概念&gt;を理解する](getting-started/understanding-concepts-reference.md) トピック。
-- ファイル、ファイル システム、レジストリ、プロセス、サービスのような日常的なサブジェクトに関する標準的なタスクを実行するレシピを提供する、一連の「[&lt;使用方法&gt;の基本的なクックブック](getting-started/cookbooks/basic-cookbooks-reference.md)」トピック。
-- [PowerShell について学習する](getting-started/more-powershell-learning.md) ためのその他のソースへの精選されたガイド。
+### <a name="consistency"></a>Consistency
+システム管理は複雑な作業になる場合があります。一貫性のあるインターフェースを備えたツールを使用することで、システム管理に特有の複雑な作業を制御しやすくなります。 残念ながら、コマンド ライン ツールもスクリプト可能な COM オブジェクトも一貫性に優れてはいません。
 
-## <a name="common-powershellcore-powershellcore-powershellmd"></a>[一般的な PowerShell](core-powershell/core-powershell.md)
-このセクションには、PowerShell の参考資料がすべて含まれています。  
-このセクションの内容:
-- [PowerShell Integrated Scripting Environment \(ISE\)](core-powershell/ise-guide.md)
-- [PowerShell コンソール ウィンドウ](core-powershell/console-guide.md)
-- [PowerShell リモート管理](core-powershell/Running-Remote-Commands.md)
-- [PowerShell ワークフロー](core-powershell/workflows-guide.md)
-- [PowerShell Web Access ](core-powershell/web-access.md)
-- [PowerShell 用語集](Windows-PowerShell-Glossary.md)
+Windows PowerShell の持つ一貫性は、その主要な利点の 1 つです。 たとえば、Sort-Object コマンドレットの使用法を習得すると、その知識を使用して、あらゆるコマンドレットの出力を並べ替えることができます。 コマンドレットごとに異なる並べ替えルーチンを習得する必要はありません。
 
+さらに、コマンドレットの開発者は、コマンドレットの並べ替え機能を設計する必要はありません。 Windows PowerShell は、基本的な機能を備えたフレームワークをコマンドレット開発者に提供し、インターフェイスの多くの側面について一貫性が維持されるよう開発者に強制します。 このフレームワークにより、通常は開発者に委ねられる選択の一部が減ることになりますが、その代わり、堅牢かつ使いやすいコマンドレットの開発がより簡単に実行できるようになります。
+
+### <a name="interactive-and-scripting-environments"></a>対話型環境とスクリプト環境
+Windows PowerShell は、対話型環境とスクリプト環境を組み合わせた環境であり、コマンド ライン ツールと COM オブジェクトへのアクセスを提供するだけでなく、.NET Framework クラス ライブラリ (FCL) の強力な機能を使用できるようにします。
+
+この環境は Windows コマンド プロンプトを改良したもので、複数のコマンド ライン ツールを備えた対話型環境を提供します。 またそれは、Windows Script Host (WSH) スクリプトを改良したものでもあります。WSH では、さまざまなコマンドライン ツールや COM オートメーション オブジェクトを利用できますが、対話型の環境は用意されていません。
+
+Windows PowerShell では、これらのすべての機能へのアクセスを統合することで、対話型環境のユーザーとスクリプト作成者の作業能力を向上させ、システム管理をより容易に行うことができます。
+
+### <a name="object-orientation"></a>オブジェクト指向
+Windows PowerShell との対話はコマンドをテキストで入力して行いますが、Windows PowerShell は、テキストではなくオブジェクトに基づいています。 コマンドの出力は、オブジェクトです。 出力されたオブジェクトは、別のコマンドの入力として渡すことができます。 その結果、Windows PowerShell は、新しい強力なコマンド ライン パラダイムを導入すると同時に、他のシェルを利用してきたユーザーにとって使い慣れたインターフェイスを提供することができます。 Windows PowerShell では、テキストではなくオブジェクトを渡せるようにすることで、コマンド間でデータを送信するという概念が拡張されています。
+
+### <a name="easy-transition-to-scripting"></a>スクリプトへの移行が容易
+Windows PowerShell では、対話的なコマンドの入力から、それを基にしたスクリプトの作成および実行に容易に移行できます。 Windows PowerShell コマンド プロンプトでコマンドを入力することにより、タスクを実行するコマンドを見つけることができます。 見つかったコマンドはトランスクリプト (履歴) に保存し、後でスクリプトとして使用するためにファイルにコピーできます。

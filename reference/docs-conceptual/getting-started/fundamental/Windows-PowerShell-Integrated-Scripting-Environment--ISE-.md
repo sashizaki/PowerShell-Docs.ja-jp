@@ -3,26 +3,31 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: Windows PowerShell Integrated Scripting Environment (ISE)
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: 66f36371cbb8ad8523aa1e1e3cd791cc692194c9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6a2d2bada2d8d6a1d5bedffc7b1b28fe9472544a
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE)
+
 Windows PowerShell Integrated Scripting Environment (ISE) は、Windows PowerShell エンジンと言語の 2 つのホストのうちの 1 つです。 それを使って、Windows PowerShell コンソールでは使用できない方法でテスト スクリプトを記述し、実行できます。 ISE は、構文の色指定、タブ補完、IntelliSense、視覚的なデバッグ機能、状況依存のヘルプを追加します。
 
 ISE を使用することにより、コンソール ウィンドウでコマンドを実行できるだけでなく、スクリプトのソース コードと ISE に接続できる他のツールを同時に表示するのに使用できるウィンドウもサポートします。 同時に複数のスクリプト ウィンドウを開くこともできます。これは、他のスクリプトまたはモジュールで定義された関数を使用するスクリプトをデバッグする際に特に便利です。
 
 ## <a name="whats-new"></a>新機能
+
 最新のリリースの PowerShell で ISE に追加されたいくつかの機能を次に示します。
 
 ### <a name="added-in-powershell-30-windows-server-2012-windows-8"></a>PowerShell 3.0 に追加 (Windows Server 2012、Windows 8)
+
 **IntelliSense** は、文字を入力するときに、一致するコマンドレット、パラメーター、パラメーター値、ファイル、またはフォルダーのメニューを表示することによって、自動的にコマンドを完成させます。
 
 **スニペット**は、記述するスクリプトに簡単に挿入できるコードの短いセクションです。 便利なスニペットのコレクションがあらかじめ用意されており、**New-Snippet** コマンドレットを使ってさらに追加できます。
 
-ISE に機能を追加する**アドオン ツール**は、[Windows PowerShell ISE スクリプト オブジェクト モデル](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)と対話するコードを記述することによって作成できます。 これらのツールは、タブ形式のウィンドウにコントロールを表示するか、バックグラウンドで非表示で動作します。 **コマンド** アドオンは良い例で、3.0 以降に含まれ、使用可能なコマンドの一覧とそれぞれのヘルプを表示します。
+ISE に機能を追加する**アドオン ツール**は、[Windows PowerShell ISE スクリプト オブジェクト モデル](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)と対話するコードを記述することによって作成できます。
+
+これらのツールは、タブ形式のウィンドウにコントロールを表示するか、バックグラウンドで非表示で動作します。 **コマンド** アドオンは良い例で、3.0 以降に含まれ、使用可能なコマンドの一覧とそれぞれのヘルプを表示します。
 
 **再起動マネージャーと自動保存**は、クラッシュや予期せぬ再起動による作業の損失を回避するために、2 分ごとにスクリプトを自動的に保存します。
 
@@ -51,17 +56,16 @@ ISE に機能を追加する**アドオン ツール**は、[Windows PowerShell 
 - **ブロック選択**。 テキストのブロック型の塊を選択するには、Alt キーを押したままマウスでスクリプト ウィンドウ内のテキストを選択するか、または **Alt + Shift + 方向キー**を押します。
 
 ### <a name="added-in-powershell-20-windows-server-2008-r2-windows-7"></a>PowerShell 2.0 に追加 (Windows Server 2008 R2、Windows 7)
+
 ISE が PowerShell v2.0 に導入されました。
 
 ## <a name="requirements-for-running-the-windows-powershell-ise"></a>Windows PowerShell ISE の実行に関する要件
-ISE は、Windows PowerShell v2.0 以降を実行できるすべての Windows コンピューターで使用できます。
-Windows と Windows Server の各バージョンには、Windows PowerShell と ISE のいずれかのバージョンが含まれますが、Windows Management Framework をインストールすることによって、使用可能な最新のバージョンにアップグレードできます。
-この検索を実行して使用可能な最新のバージョンを検索します: [ダウンロード](http://www.microsoft.com/en-us/search/DownloadResults.aspx?q=%22windows%20management%20framework%22%20PowerShell&sortby=Relevancy~Descending)。
-「プレビュー」というラベルが付いたすべてのエントリはプレリリース コードであり、完全な機能ではないことに注意してください。
+
+ISE は、Windows PowerShell v2.0 以降を実行できるすべての Windows コンピューターで使用できます。 Windows と Windows Server の各バージョンには、Windows PowerShell と ISE のいずれかのバージョンが含まれますが、Windows Management Framework (WMF) をインストールすることによって、使用可能な最新のバージョンにアップグレードできます。 詳細については、[WMF](/powershell/wmf/readme) のドキュメントを参照してください。
 
 > [!NOTE]
 > Windows PowerShell ISE にはグラフィカル ユーザー インターフェイスが必要なため、Windows Server の [Server Core] オプションでは実行できません。
 
 ## <a name="see-also"></a>関連項目
-- [Windows PowerShell Integrated Scripting Environment の使用](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
+[Windows PowerShell ISE スクリプト オブジェクト モデルの目的](../../core-powershell/ise/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)

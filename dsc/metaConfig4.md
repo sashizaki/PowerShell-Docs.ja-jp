@@ -2,16 +2,18 @@
 ms.date: 2017-10-12
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)"
-ms.openlocfilehash: 6ff8fa75f8ed33dc8da5285373ec1f3858cfa917
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+title: "以前のバージョンの Windows PowerShell でローカル構成マネージャーを構成する"
+ms.openlocfilehash: 65eb2a8d5a99e977cf2f3dbd726240ec2d5a6142
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 02/09/2018
 ---
-# <a name="windows-powershell-40-desired-state-configuration-local-configuration-manager-lcm"></a>Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)
+# <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a>以前のバージョンの Windows PowerShell でローカル構成マネージャーを構成する
 
 >適用先: Windows PowerShell 4.0
+
+**Windows PowerShell 5.0 以降に関連する情報については、「[ローカル構成マネージャーの構成](metaConfig.md)」を参照してください。**
 
 ローカル構成マネージャーは、Windows PowerShell Desired State Configuration (DSC) エンジンです。
 すべてのターゲット ノードで実行され、DSC 構成スクリプトに含まれている構成リソースを呼び出します。

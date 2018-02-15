@@ -3,11 +3,11 @@ ms.date: 2017-10-11
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "ローカル構成マネージャーの構成"
-ms.openlocfilehash: 81434b57e453ba7b64cc32dffdf309da16ef8882
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+ms.openlocfilehash: b8e0749cf2f67e395e9fd8eaf9cde33b97c0cb67
+ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 02/09/2018
 ---
 # <a name="configuring-the-local-configuration-manager"></a>ローカル構成マネージャーの構成
 
@@ -25,8 +25,8 @@ LCM は、すべてのターゲット ノード上で実行され、ノードに
 特殊な種類の構成を使用して、これらの各動作を指定するように LCM を構成します。
 ここでは、LCM を構成する方法について説明します。
 
-> **注**: このトピックは、Windows PowerShell 5.0 で導入された LCM に適用されます。
-Windows PowerShell 4.0 での LCM の構成については、「[Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)](metaconfig4.md)」を参照してください。
+Windows PowerShell 5.0 には、ローカル構成マネージャーを管理するための新しい設定が導入されました。
+Windows PowerShell 4.0 で LCM を構成する方法については、[以前のバージョンの Windows PowerShell でのローカル構成マネージャーの構成](metaconfig4.md)に関するページを参照してください。
 
 ## <a name="writing-and-enacting-an-lcm-configuration"></a>LCM 構成の作成と適用
 
@@ -90,38 +90,13 @@ LCM 構成には、限定されたリソースのセットに対するブロッ�
 
 ## <a name="pull-service"></a>プル サービス
 
-DSC 設定では、リモートの場所から構成およびモジュールをプルしこの場所へレポート データを公開することで、ノードを管理できます。
-現在選択できるプル サービスは以下のとおりです。
-
-- Azure Automation Desired State Configuration サービス
-- Windows Server で実行されるプル サービス インスタンス
-- SMB 共有 (レポート データの公開はサポートされません)
-
 LCM 構成では、次の種類のプル サービス エンドポイントを定義できます。
 
 - **構成サーバー**: DSC 構成のリポジトリ。 **ConfigurationRepositoryWeb** (Web ベースのサーバーの場合) ブロックと **ConfigurationRepositoryShare** (SMB ベースのサーバーの場合) ブロックを使用して、構成サーバーを定義します。
 - **リソース サーバー**: PowerShell モジュールとしてパッケージ化された DSC リソースのリポジトリ。 **ResourceRepositoryWeb** (Web ベースのサーバーの場合) ブロックと **ResourceRepositoryShare** (SMB ベースのサーバーの場合) ブロックを使用して、リソース サーバーを定義します。
 - **レポート サーバー**: DSC がレポート データを送信するサービス。 **ReportServerWeb** ブロックを使用して、レポート サーバーを定義します。 レポート サーバーは、Web サービスである必要があります。
 
-**推奨されるソリューション**であり、最も多くの機能を使用できる選択肢は [Azure Automation DSC](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started) です。
-
-Azure サービスでは、プライベート データセンター内にあるオンプレミス ノードと、パブリック クラウド (Azure や AWS など) 内にあるノードのどちらも管理できます。
-インターネットへのサーバーの直接接続が許可されないプライベート環境の場合は、公開されている Azure の IP 範囲 ([Azure データセンターの IP 範囲](https://www.microsoft.com/en-us/download/details.aspx?id=41653)に関するページを参照) のみに送信トラフィックを制限することを検討してください。
-
-現時点で Windows Server 上のプル サービスでは利用できないオンライン サービスの機能は以下のとおりです。
-- 転送中および保存中のすべてのデータの暗号化
-- クライアント証明書の自動作成および管理
-- [パスワード/資格情報](https://docs.microsoft.com/en-us/azure/automation/automation-credentials) または[変数](https://docs.microsoft.com/en-us/azure/automation/automation-variables) (サーバー名や接続文字列など) を一元管理するためのシークレット ストア
-- [LCM 構成](metaConfig.md#basic-settings)ノードの一元管理
-- クライアント ノードへ構成を一元的に割り当てる
-- 運用環境への適用前に "カナリア グループ" へ構成の変更をリリースしてテストする
-- グラフィカル レポート
-  - きめ細かな DSC リソース レベルでの状態の詳細
-  - クライアント マシンからの詳細なエラー メッセージによるトラブルシューティング
-- [Azure Log Analytics との統合](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-diagnostics)によるアラートとタスクの自動化、およびレポートとアラート用の Android/iOS アプリ
-
-または、Windows Server での HTTP プル サービスのセットアップと使用について、「[DSC Web プル サーバーのセットアップ](pullServer.md)」を参照してください。
-この実装では、ローカル データベースへの構成/モジュールの保存およびレポート データの記録という基本機能のみに制限されていることに注意してください。
+プル サービスの詳細については、[Desired State Configuration プル サービス](pullServer.md)に関するページを参照してください。
 
 ## <a name="configuration-server-blocks"></a>構成サーバーのブロック
 
