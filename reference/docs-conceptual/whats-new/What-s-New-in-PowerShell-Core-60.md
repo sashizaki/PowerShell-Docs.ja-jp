@@ -312,7 +312,7 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 - `Get-Help` からサポートされていない `-ShowWindow` スイッチを削除します。 (#4903)
 - 返される配列要素に区切り文字が含まれないように `Get-Content -Delimiter` を修正します。(#3706) (@mklement0 に感謝)
 - `Meta`、`Charset`、`Transitional` パラメーターを `ConvertTo-HTML` に追加します。(#4184) (@ergo3114 に感謝)
-- `Get-ComputerInfo` 結果に `WindowsUBR` および `WindowsVersion` プロパティを追加します。
+- `Get-ComputerInfo` の結果に `WindowsUBR` および `WindowsVersion` プロパティを追加します。
 - `-Group` パラメーターを `Get-Verb` に追加します。
 - `ShouldProcess` のサポートを `New-FileCatalog` と `Test-FileCatalog` に追加します (`-WhatIf` と `-Confirm` を修正)。 (#3074) (@iSazonov に感謝)
 - `-WhatIf` スイッチを `Start-Process` コマンドレットに追加します。(#4735) (@sarithsutha に感謝)
@@ -341,10 +341,10 @@ PowerShell Core 6.0 には多くの破壊的変更が導入されています。
 - `Invoke-Command -ComputerName` でのリモート ステップイン デバッグをサポートします。 (#3015)
 - PowerShell Core でのバインダー デバッグ ログを有効にします。
 
-## <a name="filesystem-updates"></a>FileSystem の更新
+## <a name="filesystem-updates"></a>ファイルシステムの更新
 
 - UNC パスからの FileSystem プロバイダーの使用を有効にします。 ($4998)
-- `Split-Path` で UNC ルートを使用できるようになりました。
+- UNC ルートで `Split-Path` が使用できるようになりました。
 - 引数なしの `cd` が `cd ~` として動作するようになりました。
 - 260 文字を超えるパスを使用できるように PowerShell Core を修正しました。 (#3960)
 
@@ -363,7 +363,7 @@ PowerShell Core 内の多くのバグの修正も行いました。
 
 このテレメトリをオプトアウトする場合は、単に `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` を削除します。
 このファイルを削除すると、PowerShell を初めて実行する前であっても、すべてのテレメトリがバイパスされます。
-[コミュニティ ダッシュボード][community-dashboard]のテレメトリから収集される、このテレメトリ データと洞察を公開することも予定しています。
+[コミュニティ ダッシュボード][community-dashboard]のテレメトリから収集される、このテレメトリ データとインサイトを公開することも予定しています。
 このデータの使用方法の詳細については、こちらの[ブログの投稿][telemetry-blog]を参照してください。
 
 [github]: https://github.com/PowerShell/PowerShell
