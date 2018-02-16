@@ -277,9 +277,9 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 - `ConvertTo-Json` 出力でよりわかりやすいフォーマッタを使用します。 (#2787) (@kittholland に感謝)
 - `ConvertTo-Json` に `Jobject` のシリアル化サポートを追加します。 (#5141)
 - 完全な JSON 文字列を一緒に構築する、パイプラインからの文字列配列の逆シリアル化を行うために `ConvertFrom-Json` を修正します。
-  この修正により、改行で JSON 解析が中断される場合があります。 (#3823)
+  これにより、改行で JSON 解析が中断される場合があるのを修正します。 (#3823)
 - `System.Array` に定義されている `AliasProperty "Count"` を削除します。
-  これにより、一部の `Count` 出力の無関係な `ConvertFrom-Json` プロパティが削除されます。 (#3231) (@PetSerAl に感謝)
+  これにより、いくつかの `ConvertFrom-Json` の出力で無関係な `Count` プロパティが削除されます。 (#3231) (@PetSerAl に感謝)
 
 ### <a name="csv-cmdlets"></a>CSV のコマンドレット
 
