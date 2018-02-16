@@ -361,8 +361,8 @@ PowerShell Core 内の多くのバグの修正も行いました。
   - OS のプラットフォーム (`$PSVersionTable.OSDescription`)
   - PowerShell の正確なバージョン (`$PSVersionTable.GitCommitId`)
 
-このテレメトリをオプトアウトする場合は、単に `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` を削除します。
-このファイルを削除すると、PowerShell を初めて実行する前であっても、すべてのテレメトリがバイパスされます。
+このテレメトリをオプトアウトする場合は、単に `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` を削除するか、 `POWERSHELL_TELEMETRY_OPTOUT` 環境変数を作り、 `true` 、 `1` 、 `yes` いずれかの値にしてください。  
+このファイルを削除するか環境変数を作成すると、PowerShell を初めて実行する前であっても、すべてのテレメトリがバイパスされます。
 [コミュニティ ダッシュボード][community-dashboard]のテレメトリから収集される、このテレメトリ データとインサイトを公開することも予定しています。
 このデータの使用方法の詳細については、こちらの[ブログの投稿][telemetry-blog]を参照してください。
 
