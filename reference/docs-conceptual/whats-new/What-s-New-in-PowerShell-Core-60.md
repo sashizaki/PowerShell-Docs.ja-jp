@@ -289,12 +289,12 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 
 ### <a name="service-cmdlets"></a>サービスのコマンドレット
 
-- プロパティの `UserName`、`Description`、`DelayedAutoStart`、`BinaryPathName`、`StartupType` を、`Get-Service` によって返される `ServiceController` オブジェクトに追加します。 (#4907) (@joandrsn に感謝)
+- `Get-Service` によって返される `ServiceController` オブジェクトに `UserName`、`Description`、`DelayedAutoStart`、`BinaryPathName`、`StartupType` プロパティを追加します。 (#4907) (@joandrsn に感謝)
 - `Set-Service` コマンドで資格情報を設定するための機能を追加します。 (#4844) (@joandrsn に感謝)
 
 ### <a name="other-cmdlets"></a>その他のコマンドレット
 
-- リンク ループを確認し、必要に応じて symlink をトラバースする `-FollowSymlink` という `Get-ChildItem` にパラメーターを追加します。 (#4020)
+- リンク ループを確認し、必要に応じて symlink をトラバースする `-FollowSymlink` というパラメーターを `Get-ChildItem` に追加します。 (#4020)
 - `CSharpVersion7` をサポートするために `Add-Type` を更新します。 (#3933) (@iSazonov に感謝)
 - より優れたソリューションが見つかるまでサポートされていない API を使用するため、`Microsoft.PowerShell.LocalAccounts` モジュールを削除します。 (#4302)
 - より優れたソリューションが見つかるまでサポートされていない API を使用するため、`Microsoft.PowerShell.Diagnostics` の `*-Counter` コマンドレットを削除します。 (#4303)
