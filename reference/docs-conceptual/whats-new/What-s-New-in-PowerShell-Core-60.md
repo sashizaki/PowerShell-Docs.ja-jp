@@ -234,7 +234,7 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 - PowerShell が特定の OS で実行されているかどうかを判断するために、新しく 3 つの自動変数 (`$IsWindows`、`$IsMacOs`、`$IsLinux`) を追加しました。
 - PowerShell Core のバナーに `GitCommitId` を追加します。
   バージョンを取得するために PowerShell を起動してすぐに `$PSVersionTable` を実行する必要がなくなりました。 (#3916) (@iSazonov に感謝)
-- 起動時刻の前に必要ないくつかの設定を格納するために、`$PSHome` の `powershell.config.json` という JSON 構成ファイルを追加します (`ExecutionPolicy` など)。
+- 起動前に必要ないくつかの設定  (`ExecutionPolicy` など) を格納するために、`$PSHome` に `powershell.config.json` という JSON 構成ファイルを追加します。
 - Windows EXE の実行中はパイプラインをブロックしません。
 - COM コレクションの列挙が有効になりました。 (#4553)
 
@@ -252,8 +252,8 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 - Web コマンドレットにコンテンツ ヘッダーのサポートを追加します。 (#4494 と #4640) (@markekraus に感謝)
 - Web コマンドレットに複数のリンク ヘッダー サポートを追加します。 (#5265) (@markekraus に感謝)
 - Web コマンドレットでの Link ヘッダーの改ページのサポート (#3828)
-  - `Invoke-WebRequest` では、応答に Link ヘッダーが含まれている場合、URL と `rel` 属性を表す Dictionary として RelationLink プロパティを作成し、開発者が使いやすいように URL が絶対 URL になるようにします。
-  - `Invoke-RestMethod` では、応答に Link ヘッダーが含まれている場合、`-FollowRelLink` スイッチを公開し、存在しなくなるか、省略可能な `-MaximumFollowRelLink` パラメーター値にヒットするまで、`next` `rel` リンクに自動的に従うようにします。
+  - `Invoke-WebRequest` では、レスポンスに Link ヘッダーが含まれている場合、URL と `rel` 属性を表す Dictionary として RelationLink プロパティを作成し、開発者が使いやすいように URL を絶対 URL にします。
+  - `Invoke-RestMethod` では、レスポンスに Link ヘッダーが含まれている場合、`-FollowRelLink` スイッチを公開し、 Link ヘッダーが存在しなくなるか、省略可能な `-MaximumFollowRelLink` パラメーター値に到達するまで、`next` `rel` リンクに自動的に従うようにします。
 - 標準以外のメソッドの動詞で使用できるように、Web コマンドレットに `-CustomMethod` パラメーターを追加します。 (#3142) (@Lee303 に感謝)
 - Web コマンドレットに `SslProtocol` サポートを追加します。 (#5329) (@markekraus に感謝)
 - Web コマンドレットにマルチパートのサポートを追加します。 (#4782) (@markekraus に感謝)
@@ -265,11 +265,11 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
   - 3 つのオプション (Basic、OAuth、Bearer) を提供する `-Authentication` を追加します。
   - OAuth および Bearer オプションのベアラー トークンを取得するために、`-Token` を追加します。
   - HTTPS ではなく、任意のトランスポート スキームに対して指定される認証をバイパスするために、`-AllowUnencryptedAuthentication` を追加します。
-- 応答ヘッダーのキャプチャを有効にするために、`Invoke-RestMethod` に `-ResponseHeadersVariable` を追加します。 (#4888) (@markekraus に感謝)
-- 応答ステータス コードが成功でない場合は例外に HTTP 応答を含めるように、Web コマンドレットを修正します。 (#3201)
-- Web コマンドレット `UserAgent` を `WindowsPowerShell` から `PowerShell` に変更します。 (#4914) (@markekraus に感謝)
+- レスポンスヘッダーのキャプチャを有効にするために、`Invoke-RestMethod` に `-ResponseHeadersVariable` を追加します。 (#4888) (@markekraus に感謝)
+- レスポンスステータス コードが成功でない場合は例外に HTTP レスポンスを含めるように、Web コマンドレットを修正します。 (#3201)
+- Web コマンドレットの `UserAgent` を `WindowsPowerShell` から `PowerShell` に変更します。 (#4914) (@markekraus に感謝)
 - 明示的な `ContentType` 検出を `Invoke-RestMethod` に追加します。(#4692)
-- 標準以外の User-Agent ヘッダーを操作するために、Web コマンドレット `-SkipHeaderValidation` を修正します。 (#4479 および #4512) (@markekraus に感謝)
+- 標準以外の User-Agent ヘッダーを扱うために、Web コマンドレットの `-SkipHeaderValidation` を修正します。 (#4479 および #4512) (@markekraus に感謝)
 
 ### <a name="json-cmdlets"></a>JSON コマンドレット
 
