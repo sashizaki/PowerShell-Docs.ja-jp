@@ -42,7 +42,7 @@ PowerShell では、次のように、macOS と Linux が正式にサポート�
 - Raspbian (Stretch)
 
 Windows 以外のシステムでより適切に機能するように、PowerShell Core 6.0 には多くの変更が行われました。
-これらのいくつかは破壊的変更であり、Windows にも影響します。
+これらのいくつかは重大な変更であり、Windows にも影響します。
 その他の変更は、PowerShell Core の Windows 以外のインストールにのみ存在するか適用されます。
 
 - Unix プラットフォームでのネイティブ コマンドのグロビング サポートを追加しました。
@@ -90,10 +90,10 @@ ZIP パッケージを使用して、PowerShell を依存関係と見なすア�
 また、サイド バイ サイドでは、スクリプトを必要な特定のバージョンにピン留めできるため、後方互換性が有効になります。
 
 > [!NOTE]
-> 既定では、Windows 上の MSI ベースのインストーラーはインプレース アップデート インストールを行います。
+> 既定では、Windows 上の MSI ベースのインストーラーはインプレース更新インストールを行います。
 >
 
-## <a name="renamed-powershellexe-to-pwshexe"></a>`powershell(.exe)` から `pwsh(.exe)` への名称変更
+## <a name="renamed-powershellexe-to-pwshexe"></a>`powershell(.exe)` から `pwsh(.exe)` への名前変更
 
 PowerShell Core のバイナリ名が `powershell(.exe)` から `pwsh(.exe)` に変更されました。
 この変更により、Windows PowerShell と PowerShell Core のサイド バイ サイドのインストールをサポートするために、ユーザーがコンピューター上で PowerShell Core を実行する決定的な方法が提供されます。
@@ -103,13 +103,13 @@ PowerShell Core のバイナリ名が `powershell(.exe)` から `pwsh(.exe)` に
 
 - 最初の位置指定パラメーターが `-Command` から `-File` に変更されました。
   この変更により、Windows 以外のプラットフォームの PowerShell 以外のシェルから実行されている PowerShell スクリプトの `#!` (シバンともいいます) の使用方法が修正されます。
-  これは、`-File` を指定せずに `pwsh foo.ps1` または `pwsh fooScript` のようにコマンドを実行できることも意味します。
+  これは、`-File` を指定せずに `pwsh foo.ps1` または `pwsh fooScript` のようなコマンドを実行できることも意味します。 
   ただし、この変更によって、`pwsh.exe -Command Get-Command` などのコマンドを実行しようとする場合は `-c` または `-Command` を明示的に指定する必要があります。 (#4019)
-- PowerShell Core は対話型シェルであることを示すために `-i` (または `-Interactive`) スイッチを受け入れました。 (# 3558) これにより、Unix プラットフォームで既定のシェルとして PowerShell を使用できるようになります。
+- PowerShell Core は `-i` (または `-Interactive`) スイッチを受け入れ、対話型シェルを示します。 (# 3558) これにより、Unix プラットフォームで既定のシェルとして PowerShell を使用できるようになります。 
 - パラメーターの `-importsystemmodules` と `-psconsoleFile` を `pwsh.exe` から削除しました。 (#4995)
 - 他のネイティブ ツールに合わせて `pwsh -version` と `pwsh.exe` の組み込みヘルプを変更しました。 (#4958 & #4931) (@iSazonov に感謝)
 - `-File` と `-Command` の無効な引数エラー メッセージと終了コードの Unix 標準への準拠 (#4573)
-- Windows で `-WindowStyle` パラメーターを追加しました。 (#4573) 同様に、Windows 以外のプラットフォームでのパッケージ ベースのインストールはインプレースアップデートとなります。
+- Windows の `-WindowStyle` パラメーターを追加しました。 (#4573) 同様に、Windows 以外のプラットフォームのパッケージ ベースのインストール更新はインプレース更新となります。
 
 ## <a name="backwards-compatibility-with-windows-powershell"></a>Windows PowerShell との後方互換性
 
@@ -121,7 +121,7 @@ PowerShell Core には、.NET Framework DLL の依存関係を検索するため
 .NET Standard の詳細については、[.NET ブログ][]、この [YouTube][] ビデオ、および GitHub のこの [FAQ][] を参照してください。
 
 PowerShell 言語と "組み込み" モジュール (`Microsoft.PowerShell.Management`、`Microsoft.PowerShell.Utility` など) が Windows PowerShell の場合と同じように機能するように最善を尽くしました。
-多くの場合、コミュニティの助力とともに、これらのコマンドレットに新しい機能とバグの修正が追加されています。
+多くの場合、コミュニティを利用して、これらのコマンドレットに新しい機能とバグの修正が追加されています。
 場合によっては、基になる .NET レイヤーとの依存関係がないため、機能が削除されているか、使用できなくなっています。
 
 Windows の一部として出荷されるモジュールのほとんど (`DnsClient`、`Hyper-V`、`NetTCPIP`、`Storage` など) と、Azure と Office を含むその他の Microsoft 製品はまだ .NET Core には*明示的に*移植されていません。
@@ -265,8 +265,8 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
   - 3 つのオプション (Basic、OAuth、Bearer) を提供する `-Authentication` を追加します。
   - OAuth および Bearer オプションのベアラー トークンを取得するために、`-Token` を追加します。
   - HTTPS ではなく、任意のトランスポート スキームに対して指定される認証をバイパスするために、`-AllowUnencryptedAuthentication` を追加します。
-- レスポンスヘッダーのキャプチャを有効にするために、`Invoke-RestMethod` に `-ResponseHeadersVariable` を追加します。 (#4888) (@markekraus に感謝)
-- レスポンスステータス コードが成功でない場合は例外に HTTP レスポンスを含めるように、Web コマンドレットを修正します。 (#3201)
+- 応答ヘッダーのキャプチャを有効にするために、`Invoke-RestMethod` に `-ResponseHeadersVariable` を追加します。 (#4888) (@markekraus に感謝) 
+- 応答ステータス コードが成功でない場合は例外に HTTP 応答を含めるように、Web コマンドレットを修正します。 (#3201) 
 - Web コマンドレットの `UserAgent` を `WindowsPowerShell` から `PowerShell` に変更します。 (#4914) (@markekraus に感謝)
 - 明示的な `ContentType` 検出を `Invoke-RestMethod` に追加します。(#4692)
 - 標準以外の User-Agent ヘッダーを扱うために、Web コマンドレットの `-SkipHeaderValidation` を修正します。 (#4479 および #4512) (@markekraus に感謝)
@@ -331,10 +331,10 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 - `Select-Object` の `-ExcludeProperty` と `-ExpandProperty` で引数のオートコンプリートを有効にします。 (#3443) (@iSazonov に感謝)
 - ネイティブ コンプリーターに対する `native.exe --<tab>` 呼び出しを行うために、Tab 補完機能のバグを修正します。 (#3633) (@powercode に感謝)
 
-## <a name="breaking-changes"></a>破壊的変更
+## <a name="breaking-changes"></a>重大な変更
 
-PowerShell Core 6.0 には多くの破壊的変更が導入されています。
-その詳細については、[PowerShell Core 6.0 の破壊的変更][breaking-changes]に関するページを参照してください。
+PowerShell Core 6.0 には多くの重大な変更が導入されています。 
+その詳細については、[PowerShell Core 6.0 の重大な変更][breaking-changes]に関するページを参照してください。 
 
 ## <a name="debugging"></a>デバッグ
 
@@ -363,7 +363,7 @@ PowerShell Core 内の多くのバグの修正も行いました。
 
 このテレメトリをオプトアウトする場合は、単に `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` を削除するか、 `POWERSHELL_TELEMETRY_OPTOUT` 環境変数を作り、 `true` 、 `1` 、 `yes` いずれかの値にしてください。  
 このファイルを削除するか環境変数を作成すると、PowerShell を初めて実行する前であっても、すべてのテレメトリがバイパスされます。
-[コミュニティ ダッシュボード][community-dashboard]のテレメトリから収集される、このテレメトリ データとインサイトを公開することも予定しています。
+[コミュニティ ダッシュボード][community-dashboard]のテレメトリから収集される、このテレメトリ データと洞察を公開することも予定しています。 
 このデータの使用方法の詳細については、こちらの[ブログの投稿][telemetry-blog]を参照してください。
 
 [github]: https://github.com/PowerShell/PowerShell
