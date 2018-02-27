@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell 用語集"
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 48e5d832ead720c8bc7753c94f757ddb21846fc9
-ms.sourcegitcommit: ced46469e064736eeb1f5608abbc792ec69bdc92
+ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/08/2017
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell 用語集
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 08/08/2017
 |ホスト|Windows PowerShell エンジンがユーザーとの通信に使用するインターフェイス。 たとえば、ホストは Windows PowerShell とユーザー間でプロンプトが処理される方法を指定します。|
 |ホスト アプリケーション|Windows PowerShell エンジンをそのプロセスに読み込み、操作を実行するのに使用するプログラム。|
 |入力処理メソッド|コマンドが入力として受信するレコードを処理するのに使用できるメソッド。 入力処理メソッドには、BeginProcessing メソッド、ProcessRecord メソッド、EndProcessing メソッド、および StopProcessing メソッドが含まれます。|
-|マニフェスト モジュール|マニフェストがあり、ModulesToProcess キーが空の Windows PowerShell モジュール。|
+|マニフェスト モジュール|マニフェストがあり、RootModule キーが空の Windows PowerShell モジュール。|
 |モジュール マニフェスト|モジュールのコンテンツを説明し、モジュールが処理される方法を制御する Windows PowerShell データ ファイル (.psd1)。|
 |モジュール セッション状態|Windows PowerShell モジュールのパブリック データとプライベート データを含むセッション状態。 このセッション状態のプライベート データは、Windows PowerShell セッションのユーザーは使用できません。|
 |終了しないエラー|Windows PowerShell でのコマンドの処理の継続が停止しないエラー。|
@@ -33,7 +33,7 @@ ms.lasthandoff: 08/08/2017
 |パイプ|Windows PowerShell で、前のコマンドの結果を、入力としてパイプラインの次のコマンドに送信するためのもの。|
 |パイプライン|パイプライン演算子 (&#124;) (ASCII 124) によって接続された一連のコマンド。 各パイプライン演算子は、前のコマンドの結果を入力として次のコマンドに送信します。|
 |PSSession|ユーザーによって作成され、管理され、閉じられる Windows PowerShell セッションの一種。|
-|ルート モジュール|モジュール マニフェスト内の ModuleToProcess キーで指定されたモジュール。|
+|ルート モジュール|モジュール マニフェスト内の RootModule キーで指定されたモジュール。|
 |実行空間|Windows PowerShell で、パイプラン内の各コマンドが実行される操作環境。|
 |スクリプト ブロック|Windows PowerShell プログラミング言語で、1 つの単位として使用できるステートメントまたは表現のコレクション。 スクリプト ブロックは引数を受け取り、値を返すことができます。|
 |スクリプト モジュール|ルート モジュールがスクリプト モジュール ファイル (.psm1) である Windows PowerShell モジュール。 スクリプト モジュールにはモジュール マニフェストが含まれる場合と、含まれない場合があります。|
@@ -45,7 +45,7 @@ ms.lasthandoff: 08/08/2017
 |型ファイル|拡張子が .ps1xml で、Microsoft .NET Framework 型のプロパティを Windows PowerShell で拡張する Windows PowerShell XML ファイル。|
 |動詞|Windows PowerShell コマンドレット名でハイフンの前に使用される単語。 動詞はコマンドレットが実行するアクションを説明します。|
 |Windows PowerShell|IT 管理者に包括的な制御とシステム管理タスクの自動化を提供するコマンド ライン シェルとタスク ベースのスクリプト技術。|
-|Windows PowerShell コマンド|アクションを実行させるパイプライン内の要素。 Windows PowerShell コマンドは、キーボードで入力されるか、プログラムで呼び出されます。|
+|Windows PowerShell コマンド|アクションを実行させるパイプライン内の要素。Windows PowerShell コマンドは、キーボードで入力されるか、プログラムで呼び出されます。|
 |Windows PowerShell データ ファイル|.psd1 ファイル名拡張子を持つテキスト ファイル。 Windows PowerShell では、モジュール マニフェスト データの格納や、スクリプトの国際化のための翻訳された文字列の格納など、さまざまな目的でデータ ファイルを使用します。|
 |Windows PowerShell ドライブ|データ ストアに直接アクセスできる仮想ドライブ。 Windows PowerShell プロバイダーによって定義されるか、コマンド ラインで作成されます。 コマンド ラインで作成されたドライブは、セッション固有のドライブであり、セッションが閉じられたときに失われます。|
 |Windows PowerShell Integrated Scripting Environment (ISE)|Windows PowerShell ホスト アプリケーション。分かりやすくて、構文がカラーで表記された、ユニコード準拠の環境で、コマンドを実行し、スクリプトを書き、テストし、デバッグすることができます。|

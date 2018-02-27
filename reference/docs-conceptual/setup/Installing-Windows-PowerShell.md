@@ -2,25 +2,16 @@
 ms.date: 2017-08-09
 keywords: "powershell, コマンドレット, ダウンロード, インストール, セットアップ, windows 10, windows 8.1, windows 8.0, windows 7"
 title: "Windows PowerShell のインストール"
-ms.openlocfilehash: ec8f09087a5c5f2e7ea6237faa01ea3f447ad1f3
-ms.sourcegitcommit: 755d7bc0740573d73613cedcf79981ca3dc81c5e
+ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
+ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/09/2018
+ms.lasthandoff: 02/19/2018
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell のインストール
+既定では、Windows PowerShell は、Windows 7 SP1 および Windows Server 2008 R2 SP1 以降のすべての Windows にインストールされています。
 
-既定では、PowerShell は、Windows 7 SP1 および Windows Server 2008 R2 SP1 以降のすべての Windows にインストールされています。
-
-**PowerShell 6** (ベータ) をインストールする Linux、macOS、および Windows のユーザーは、自分のマシンで次の操作を行う必要があります。
-
-1. [GitHub](https://github.com/powershell/powershell#get-powershell) から特定の OS とバージョン用の PowerShell を取得します
-1. インストール手順に従って操作します
-  - [Linux](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md)
-  - [macOS](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md)
-  - [Windows](https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi)
-
-PowerShell 6 は、Docker でも利用できます。[Docker のインストール](https://github.com/PowerShell/PowerShell/tree/master/docker)手順を参照してください。
+PowerShell 6 以降を使う場合は、Windows PowerShell ではなく PowerShell Core をインストールする必要があります。 詳細については、「[Windows への PowerShell Core のインストール](Installing-PowerShell-Core-on-Windows.md)」を参照してください。
 
 ## <a name="finding-powershell-in-windows-10-81-80-and-7"></a>Windows 10、8.1、8.0、7 で PowerShell を見つける
 
@@ -65,7 +56,7 @@ GUI なしの Windows Server のエディションは **Core** エディショ�
 
 ## <a name="how-to-check-the-version-of-powershell"></a>PowerShell のバージョンを確認する方法
 
-インストールした PowerShell のバージョンを確認するには、PowerShell コンソール (または ISE) を起動し、「`$PSVersionTable`」と入力して **Enter** キーを押します。
+インストールした PowerShell のバージョンを確認するには、PowerShell コンソール (または ISE) を起動し、「`$PSVersionTable`」と入力して **Enter** キーを押します。 `PSVersion` の値を探します。
 
 ## <a name="upgrading-existing-windows-powershell"></a>既存の Windows PowerShell をアップグレードする
 
