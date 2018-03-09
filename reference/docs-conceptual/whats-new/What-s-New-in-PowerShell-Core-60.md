@@ -96,7 +96,7 @@ ZIP パッケージを使用して、PowerShell を依存関係と見なすア�
 ## <a name="renamed-powershellexe-to-pwshexe"></a>`powershell(.exe)` から `pwsh(.exe)` への名前変更
 
 PowerShell Core のバイナリ名が `powershell(.exe)` から `pwsh(.exe)` に変更されました。
-この変更により、Windows PowerShell と PowerShell Core のサイド バイ サイドのインストールをサポートするために、ユーザーがコンピューター上で PowerShell Core を実行する決定的な方法が提供されます。
+この変更により、Windows PowerShell と PowerShell Core のサイド バイ サイドのインストールをサポートするために、ユーザーがコンピューター上で PowerShell Core を実行する決定論的な方法が提供されます。
 また、`pwsh` は短いため、入力しやすくなります。
 
 `powershell.exe` から `pwsh(.exe)` への追加の変更点は次のとおりです。
@@ -153,7 +153,7 @@ Docker と PowerShell Core の詳細については、GitHub の「[Docker][]」
 
 ## <a name="ssh-based-powershell-remoting"></a>SSH ベースの PowerShell リモート処理
 
-PowerShell リモート処理プロトコル (PSRP) が、従来の WinRM ベースの PSRP に加えて、Secure Shell プロトコル (SSH) でも機能するようになりました。
+PowerShell リモート処理プロトコル (PSRP) が、従来の WinRM ベースの PSRP に加えて、Secure Shell (SSH) プロトコルでも機能するようになりました。
 
 これは、`Enter-PSSession` や `New-PSSession` などのコマンドレットを使用し、SSH を使用して認証できることを意味します。
 OpenSSH ベースの SSH サーバーにサブシステムとして PowerShell を登録するだけで、従来の `PSSession` セマンティクスで既存の SSH ベースの認証メカニズム (パスワードや秘密キーなど) を使用できます。
@@ -252,8 +252,8 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 - Web コマンドレットにコンテンツ ヘッダーのサポートを追加します。 (#4494 と #4640) (@markekraus に感謝)
 - Web コマンドレットに複数のリンク ヘッダー サポートを追加します。 (#5265) (@markekraus に感謝)
 - Web コマンドレットでのリンク ヘッダーの改ページのサポート (#3828)
-  - `Invoke-WebRequest` では、レスポンスにリンク ヘッダーが含まれている場合、URL と `rel` 属性を表す Dictionary として RelationLink プロパティを作成し、開発者が使いやすいように URL を絶対 URL にします。
-  - `Invoke-RestMethod` では、レスポンスにリンク ヘッダーが含まれている場合、`-FollowRelLink` スイッチを公開し、リンク ヘッダーが存在しなくなるか、省略可能な `-MaximumFollowRelLink` パラメーター値に到達するまで、`next` `rel` リンクに自動的に従うようにします。
+  - `Invoke-WebRequest` では、応答にリンク ヘッダーが含まれている場合、URL と `rel` 属性を表す Dictionary として RelationLink プロパティを作成し、開発者が使いやすいように URL を絶対 URL にします。
+  - `Invoke-RestMethod` では、応答にリンク ヘッダーが含まれている場合、`-FollowRelLink` スイッチを公開し、リンク ヘッダーが存在しなくなるか、省略可能な `-MaximumFollowRelLink` パラメーター値に到達するまで、`next` `rel` リンクに自動的に従うようにします。
 - 標準以外のメソッドの動詞で使用できるように、Web コマンドレットに `-CustomMethod` パラメーターを追加します。 (#3142) (@Lee303 に感謝)
 - Web コマンドレットに `SslProtocol` サポートを追加します。 (#5329) (@markekraus に感謝)
 - Web コマンドレットにマルチパートのサポートを追加します。 (#4782) (@markekraus に感謝)
@@ -265,7 +265,7 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
   - 3 つのオプション (Basic、OAuth、Bearer) を提供する `-Authentication` を追加します。
   - OAuth および Bearer オプションのベアラー トークンを取得するために、`-Token` を追加します。
   - HTTPS ではなく、任意のトランスポート スキームに対して指定される認証をバイパスするために、`-AllowUnencryptedAuthentication` を追加します。
-- レスポンス ヘッダーのキャプチャを有効にするために、`Invoke-RestMethod` に `-ResponseHeadersVariable` を追加します。 (#4888) (@markekraus に感謝) 
+- 応答ヘッダーのキャプチャを有効にするために、`Invoke-RestMethod` に `-ResponseHeadersVariable` を追加します。 (#4888) (@markekraus に感謝) 
 - レスポンス ステータス コードが成功でない場合は例外に HTTP レスポンスを含めるように、Web コマンドレットを修正します。 (#3201) 
 - Web コマンドレットの `UserAgent` を `WindowsPowerShell` から `PowerShell` に変更します。 (#4914) (@markekraus に感謝)
 - 明示的な `ContentType` 検出を `Invoke-RestMethod` に追加します。(#4692)
