@@ -1,0 +1,128 @@
+- name: 概要
+  href: readme.md
+  items:
+    - name: ギャラリー
+      items:
+        - name: はじめに
+          href: psgallery/psgallery_gettingstarted.md
+        - name: 正常性の状態
+          href: psgallery/psgallery_status.md
+        - name: ギャラリーに関してよく寄せられる質問
+          href: psgallery/psgallery_faqs.md
+        - name: '[Gallery Items] (ギャラリー アイテム) タブ'
+          href: psgallery/psgallery_items_tab.md
+        - name: ギャラリー検索構文
+          href: psgallery/psgallery_search_syntax.md
+        - name: 互換性のある PSEditions が含まれるアイテム
+          href: psgallery/psgallery_pseditions.md
+        - name: FileList ビュー
+          href: psgallery/psgallery_filelist_feature.md
+        - name: Azure Automation にデプロイする
+          href: psgallery/psgallery_deploy_to_azure_automation.md
+        - name: PowerShellGallery アカウントの作成
+          href: psgallery/psgallery_creating_an_account.md
+        - name: アイテムの作成と公開
+          href: psgallery/Creating-and-Publishing-an-item.md
+        - name: 公開に関するガイドラインとベスト プラクティス
+          href: psgallery/psgallery-PublishingGuidelines.md
+        - name: アイテムのマニフェストとギャラリーの UI
+          href: psgallery/psgallery_ItemManifestAffectingUI.md
+        - name: アイテムをリストから外す
+          href: psgallery/psgallery_unlist_items.md
+        - name: アイテムを削除する
+          href: psgallery/Deleting-Items.md
+        - name: アイテムの所有者を管理する
+          href: psgallery/Managing-Item-Owners.md
+        - name: 不正報告
+          href: psgallery/psgallery_report_abuse.md
+        - name: 争いの解決
+          href: psgallery/psgallery_dispute_resolution.md
+        - name: アイテムの所有者に連絡する
+          href: psgallery/psgallery_contacting_item_owners.md
+        - name: 管理者に連絡する
+          href: psgallery/psgallery_contacting_administrators.md
+        - name: ソーシャル メディアやコメントを使用したフィードバックの提供
+          href: psgallery/psgallery-SocialMediaFeedback.md
+        - name: 項目の詳細に表示されるライセンス同意リクエスト
+          href: psgallery/psgallery_requires_license_acceptance.md
+        - name: Azure Automation へのデプロイに表示されるライセンス同意リクエスト
+          href: psgallery/psgallery_deploy_to_azure_automation_requireLicenseAcceptance.md
+- name: PowerShellGet
+  href: psget/overview.md
+  items:
+    - name: PowerShellGet モジュールの取得
+      href: psget/get_psget_module.md
+    - name: モジュール
+      items:
+        - name: モジュールを見つける
+          href: psget/module/psget_find-module.md
+        - name: DSC リソースを見つける
+          href: psget/module/psget_find-dscresource.md
+        - name: ロール機能を見つける
+          href: psget/module/psget_find-rolecapability.md
+        - name: コマンドを見つける
+          href: psget/module/psget_find-command.md
+        - name: 上書き保存
+          href: psget/module/psget_save-module.md
+        - name: ［インストール］
+          href: psget/module/psget_install-module.md
+        - name: 更新プログラム、更新
+          href: psget/module/psget_update-module.md
+        - name: アンインストール
+          href: psget/module/psget_uninstall-module.md
+        - name: インストールされているモジュールを取得する
+          href: psget/module/psget_get-installedmodule.md
+        - name: モジュール マニフェストを更新する
+          href: psget/module/psget_update-modulemanifest.md
+        - name: 公開
+          href: psget/module/psget_publish-module.md
+        - name: PSEditions が含まれるモジュール
+          href: psget/module/modulewithpseditionsupport.md
+        - name: ライセンスへの同意が必要なモジュール
+          href: psget/module/RequireLicenseAcceptance.md
+        - name: プレリリース バージョン
+          href: psget/module/PreReleaseModule.md
+        - name: トラブルシューティング
+          href: psget/psget_cmdlets_troubleshooting.md
+    - name: スクリプト
+      items:
+        - name: ［検索］
+          href: psget/script/psget_find-script.md
+        - name: 上書き保存
+          href: psget/script/psget_save-script.md
+        - name: ［インストール］
+          href: psget/script/psget_install-script.md
+        - name: 更新プログラム、更新
+          href: psget/script/psget_update-script.md
+        - name: アンインストール
+          href: psget/script/psget_uninstall-script.md
+        - name: インストールされているスクリプトを取得する
+          href: psget/script/psget_get-installedscript.md
+        - name: メタデータを持つスクリプト ファイルを作成する
+          href: psget/script/psget_new-scriptfileinfo.md
+        - name: スクリプト ファイル メタデータをテストする
+          href: psget/script/psget_test-scriptfileinfo.md
+        - name: スクリプト ファイル メタデータを更新する
+          href: psget/script/psget_update-scriptfileinfo.md
+        - name: 公開
+          href: psget/script/psget_publish-script.md
+        - name: PSEditions のスクリプト
+          href: psget/script/scriptwithpseditionsupport.md
+        - name: スクリプトのライセンス同意リクエスト
+          href: psget/script/script_RequireLicenseAcceptance.md
+        - name: プレリリース バージョン
+          href: psget/script/PreReleaseScript.md
+    - name: リポジトリ管理
+      items:
+        - name: NuGet プロバイダーと NuGet.exe をブートストラップする
+          href: psget/repository/bootstrapping_nuget_proivder_and_exe.md
+        - name: リポジトリを登録する
+          href: psget/repository/psget_register-psrepository.md
+        - name: 登録されているリポジトリを一覧表示する
+          href: psget/repository/psget_get-psrepository.md
+        - name: 登録されているリポジトリを変更する
+          href: psget/repository/psget_set-psrepository.md
+        - name: リポジトリの登録を解除する
+          href: psget/repository/psget_unregister-psrepository.md
+    - name: PackageManagement コマンドレット
+      href: psget/oneget/PackageManagement_cmdlets.md
