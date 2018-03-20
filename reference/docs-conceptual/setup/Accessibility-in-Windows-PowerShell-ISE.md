@@ -3,11 +3,11 @@ ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell ISE のアクセシビリティ"
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 505ec3aca84b5ad0b9d58a1ec84d80e3aa86db7a
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 7f758a46bdc722482b9e8a9baaff0a075f64ece9
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE のアクセシビリティ
 このトピックでは、Windows PowerShell Integrated Scripting Environment (ISE) の役に立つアクセシビリティ機能について説明します。
@@ -22,7 +22,7 @@ ms.lasthandoff: 09/29/2017
 
 Microsoft は、あらゆるユーザーの皆様に使いやすい製品とサービスをお届けできるように努めています。 以下のトピックでは、障碍のある方に Windows PowerShell ISE を快適にご利用いただくための機能、製品、およびサービスについて説明します。
 
-Windows PowerShell ISE は、ハイ コントラスト モードをサポートしています。 視覚に障碍のある方のために、ブレークポイントを管理するコマンドレット ([Get-PSBreakpoint](https://technet.microsoft.com/en-us/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6)、[Set-PSBreakpoint](https://technet.microsoft.com/en-us/library/6afd5d2c-a285-4796-8607-3cbf49471420) など) を通じて、ブレークポイント情報をご利用いただけます。 詳しくは、「[Windows PowerShell ISE でスクリプトをデバッグする方法](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)」の「ブレークポイントを管理する方法」をご覧ください。 Microsoft Windows のアクセシビリティ機能とユーティリティに加え、Windows PowerShell ISE には、身体に障碍のある方に役立つ次の機能が備わっています。
+Windows PowerShell ISE は、ハイ コントラスト モードをサポートしています。 視覚に障碍のある方のために、ブレークポイントを管理するコマンドレット ([Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6)、[Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420) など) を通じて、ブレークポイント情報をご利用いただけます。 詳しくは、「[Windows PowerShell ISE でスクリプトをデバッグする方法](../core-powershell/ise/How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)」の「ブレークポイントを管理する方法」をご覧ください。 Microsoft Windows のアクセシビリティ機能とユーティリティに加え、Windows PowerShell ISE には、身体に障碍のある方に役立つ次の機能が備わっています。
 
 - キーボード ショートカット
 

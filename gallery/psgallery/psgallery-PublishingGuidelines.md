@@ -5,11 +5,11 @@ ms.topic: conceptual
 keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
 description: "パブリッシャー向けのガイドライン"
 title: "PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス"
-ms.openlocfilehash: 882a33c00cc024ad2bbb05a3283e058a61035e3a
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 25bbe31bcc805808c311829598e3c29991f72aad
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 10/13/2017
 PowerShell ギャラリーの良質なアイテムを作成する上で大事なこと、オプションのマニフェスト設定で最も重要なこと、初期のレビュー担当者や [PowerShell Script Analyzer](https://aka.ms/psscriptanalyzer) からのフィードバックに基づいたコードの改善、モジュールのバージョン管理、ドキュメント、共有済みアイテムのテストと使用方法のサンプルなどに関するガイドラインを以下に示します。
 このドキュメントの大部分は、[高品質な DSC リソース モジュール](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md)を公開するためのガイドラインを基にしています。
 
-PowerShell ギャラリーへのアイテムの公開の仕組みについては、「[アイテムの作成と公開](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/creating-and-publishing-an-item)」をご覧ください。
+PowerShell ギャラリーへのアイテムの公開の仕組みについては、「[アイテムの作成と公開](https://msdn.microsoft.com/powershell/gallery/psgallery/creating-and-publishing-an-item)」をご覧ください。
 
 このガイドラインについてのフィードバックをお寄せください。 フィードバックをお送りいただく場合は、Microsoft の [GitHub ドキュメント リポジトリ](https://github.com/powershell/powershell-docs/) で Issue を作成してください。
 
@@ -71,7 +71,7 @@ PowerShell のアイテムと合わせてドキュメントを提供する方法
 * 「[How to Write Cmdlet Help (コマンドレット ヘルプの書き方)](https://go.microsoft.com/fwlink/?LinkID=123415)」内のヘルプの提供に関するガイドライン
 * コマンドレット ヘルプの作成。コマンドレット ヘルプは、すべての PowerShell スクリプト、関数、コマンドレットを理解するために最適な手段です。
   コマンドレット ヘルプの作成方法の詳細については、まず MSDN ライブラリの「[How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)」 (コマンドレット ヘルプの書き方) をご覧ください。
-  スクリプト内にヘルプを追加する方法については、「[About Comment Based Help (コメント ベースのヘルプの概要)](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help)」をご覧ください。
+  スクリプト内にヘルプを追加する方法については、「[About Comment Based Help (コメント ベースのヘルプの概要)](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help)」をご覧ください。
 * また、多くのモジュールには、テキスト形式のドキュメント (MarkDown ファイルなど) が含まれています。
   MarkDown 形式が頻繁に使用されている GitHub にプロジェクト サイトを設置する場合、この方法は特に役立ちます。
   [GitHub 用の Markdown](https://help.github.com/categories/writing-on-github/) を使用することをお勧めします。

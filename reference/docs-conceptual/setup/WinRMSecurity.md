@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: WinRMSecurity
-ms.openlocfilehash: 65cf12466c9dc8fc8b77d79b0d63a6ae61e64d60
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 0522844fded847a3fd45c1b3890a141357edb2b2
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell リモート処理のセキュリティに関する考慮事項
 
@@ -14,7 +14,7 @@ PowerShell リモート処理は、Windows システムの管理に推奨され�
 
 ## <a name="what-is-powershell-remoting"></a>PowerShell リモート処理とは
 
-PowerShell リモート処理は、[Windows リモート管理 (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426.aspx) を使用しています。これは、ユーザーがリモート コンピューター上で PowerShell コマンドを実行できるように、Microsoft によって [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) プロトコルが実装されたものです。 PowerShell リモート処理の使用方法の詳細については、「[リモート コマンドの実行](https://technet.microsoft.com/en-us/library/dd819505.aspx)」を参照してください。
+PowerShell リモート処理は、[Windows リモート管理 (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx) を使用しています。これは、ユーザーがリモート コンピューター上で PowerShell コマンドを実行できるように、Microsoft によって [Web Services for Management (WS-Management)](http://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) プロトコルが実装されたものです。 PowerShell リモート処理の使用方法の詳細については、「[リモート コマンドの実行](https://technet.microsoft.com/library/dd819505.aspx)」を参照してください。
 
 PowerShell リモート処理は、コマンドレットの **ComputerName** パラメーターを使用してリモート コンピューターでコマンドを実行することとは異なります。この場合は、基盤となるプロトコルとしてリモート プロシージャ コール (RPC) が使用されています。
 
@@ -33,7 +33,7 @@ PowerShell リモート処理 (および WinRM) は、次のポートをリッ�
 
 ## <a name="process-isolation"></a>プロセスの分離
 
-PowerShell リモート処理では、コンピューター間の通信に [Windows リモート管理 (WinRM)](https://msdn.microsoft.com/en-us/library/windows/desktop/aa384426) を使用します。 WinRM は Network Service アカウントでサービスとして実行されており、ユーザー アカウントとして実行される分離プロセスを生成して、PowerShell インスタンスをホストします。 1 ユーザーとして実行されている PowerShell のインスタンスは、別のユーザーとして PowerShell のインスタンスを実行しているプロセスにアクセスすることはできません。
+PowerShell リモート処理では、コンピューター間の通信に [Windows リモート管理 (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) を使用します。 WinRM は Network Service アカウントでサービスとして実行されており、ユーザー アカウントとして実行される分離プロセスを生成して、PowerShell インスタンスをホストします。 1 ユーザーとして実行されている PowerShell のインスタンスは、別のユーザーとして PowerShell のインスタンスを実行しているプロセスにアクセスすることはできません。
 
 ## <a name="event-logs-generated-by-powershell-remoting"></a>PowerShell リモート処理によって生成されたイベント ログ
 
@@ -50,10 +50,10 @@ PowerShell リモート処理の接続のセキュリティについては、初
 
 認証では、サーバーに対するクライアントの ID と、理想的にはクライアントに対するサーバーを確認します。
     
-クライアントがコンピューター名 (server01 や server01.contoso.com など) を使用してドメイン サーバーに接続する場合、既定の認証プロトコルは [Kerberos](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378747.aspx) です。
+クライアントがコンピューター名 (server01 や server01.contoso.com など) を使用してドメイン サーバーに接続する場合、既定の認証プロトコルは [Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx) です。
 Kerberos では、再利用可能な資格情報を送信しなくても、ユーザー ID とサーバー ID の両方が保証されます。
 
-クライアントが IP アドレスを使用してドメイン サーバーに接続する場合、またはワークグループ サーバーに接続する場合は、Kerberos 認証を使用できません。 その場合は、PowerShell リモート処理は [NTLM 認証プロトコル](https://msdn.microsoft.com/en-us/library/windows/desktop/aa378749.aspx)を利用します。 NTLM 認証プロトコルでは、委任可能な資格情報を送信しなくてもユーザー ID が保証されます。 NTLM プロトコルは、ユーザー ID を証明するために、クライアントとサーバーの両方でユーザーのパスワードからセッション キーを計算することを要求します。パスワード自体は交換しません。 サーバーは、通常ユーザーのパスワードを知らないため、ドメイン コントローラーと通信します。ドメイン コントローラーがユーザーのパスワードを知っていて、サーバー用にセッション キーを計算します。 
+クライアントが IP アドレスを使用してドメイン サーバーに接続する場合、またはワークグループ サーバーに接続する場合は、Kerberos 認証を使用できません。 その場合は、PowerShell リモート処理は [NTLM 認証プロトコル](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx)を利用します。 NTLM 認証プロトコルでは、委任可能な資格情報を送信しなくてもユーザー ID が保証されます。 NTLM プロトコルは、ユーザー ID を証明するために、クライアントとサーバーの両方でユーザーのパスワードからセッション キーを計算することを要求します。パスワード自体は交換しません。 サーバーは、通常ユーザーのパスワードを知らないため、ドメイン コントローラーと通信します。ドメイン コントローラーがユーザーのパスワードを知っていて、サーバー用にセッション キーを計算します。 
       
 一方、NTLM プロトコルでは、サーバー ID が保証されません。 ドメインに参加しているコンピューターのコンピューター アカウントにアクセスできる攻撃者は、認証に NTLM を使用するプロトコルと同様にドメイン コントローラーを呼び出して NTLM セッション キーを計算することで、サーバーになりすます場合があります。
 

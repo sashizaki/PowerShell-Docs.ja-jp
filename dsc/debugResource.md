@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "DSC リソースのデバッグ"
-ms.openlocfilehash: 35eb990705bab8190172df899c64c9f34452aa4b
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c9534deb755e2d3ce59dbb44e55b58b59af2e7f4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="debugging-dsc-resources"></a>DSC リソースのデバッグ
 
@@ -16,9 +16,9 @@ ms.lasthandoff: 01/17/2018
 PowerShell 5.0 では、構成が適用されているときに DSC リソースをデバッグできる新機能が Desired State Configuraiton (DSC) に導入されました。
 
 ## <a name="enabling-dsc-debugging"></a>DSC デバッグの有効化
-リソースをデバッグする前に、[Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx) コマンドレットを呼び出すことによって、デバッグを有効にする必要があります。 このコマンドレットは、必須パラメーター **BreakAll** を取ります。 
+リソースをデバッグする前に、[Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) コマンドレットを呼び出すことによって、デバッグを有効にする必要があります。 このコマンドレットは、必須パラメーター **BreakAll** を取ります。 
 
-[Get-DscLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) への呼び出しの結果を参照して、デバッグが有効になっていることを確認できます。
+[Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) への呼び出しの結果を参照して、デバッグが有効になっていることを確認できます。
 
 次の PowerShell 出力は、デバッグを有効にした結果を示しています。
 
@@ -59,7 +59,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-構成をコンパイルした後、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) を呼び出して開始します。 構成は、ローカル構成マネージャー (LCM) が構成の最初のリソースを呼び出したときに停止します。 `-Verbose` および `-Wait` パラメーターを使用した場合、デバッグを開始するために入力する必要がある行が出力に表示されます。
+構成をコンパイルした後、[Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) を呼び出して開始します。 構成は、ローカル構成マネージャー (LCM) が構成の最初のリソースを呼び出したときに停止します。 `-Verbose` および `-Wait` パラメーターを使用した場合、デバッグを開始するために入力する必要がある行が出力に表示されます。
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -96,7 +96,7 @@ ISE でデバッグ コマンドを使うと、リソース スクリプトを�
 
 ## <a name="disabling-dsc-debugging"></a>DSC デバッグの無効化
 
-[Enable-DscDebug](https://technet.microsoft.com/en-us/library/mt517870.aspx)を呼び出した後では、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) を呼び出すたびに構成でデバッガー中断が行われるようになります。 構成を通常どおりに実行できるようにするには、[Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) コマンドレットを呼び出してデバッグを無効化する必要があります。
+[Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx)を呼び出した後では、[Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) を呼び出すたびに構成でデバッガー中断が行われるようになります。 構成を通常どおりに実行できるようにするには、[Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) コマンドレットを呼び出してデバッグを無効化する必要があります。
 
 >**注:** 再起動をしても、LCM のデバッグ状態は変更されません。 デバッグが有効になっている場合、再起動後に構成を開始してもデバッグ中断が行われます。
 

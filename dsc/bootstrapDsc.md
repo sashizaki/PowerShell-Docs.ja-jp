@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "DSC を使用した初回起動時の仮想マシンの構成"
-ms.openlocfilehash: 76c990ee7c98ea47d1fc3d7bd955ce6a993e28a6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 >適用先: Windows PowerShell 5.0
 
@@ -20,7 +20,7 @@ PowerShell 4.0 の初回起動時に、新しい仮想マシンを構成する�
 
 これらの例を実行するには、以下が必要になります。
 
-- 作業する起動可能な VHD。 [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) で、Windows Server 2016 の評価版と共に ISO をダウンロードできます。 「[Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/en-us/library/gg318049.aspx)」 (起動可能な仮想ハード ディスクの作成) で、ISO イメージから VHD を作成する方法に関する手順を参照してください。
+- 作業する起動可能な VHD。 [TechNet Evaluation Center](https://www.microsoft.com/evalcenter/evaluate-windows-server-2016) で、Windows Server 2016 の評価版と共に ISO をダウンロードできます。 「[Creating Bootable Virtual Hard Disks](https://technet.microsoft.com/library/gg318049.aspx)」 (起動可能な仮想ハード ディスクの作成) で、ISO イメージから VHD を作成する方法に関する手順を参照してください。
 - Hyper-V が有効なホスト コンピューター。 詳細については、「[Hyper-V の概要](https://technet.microsoft.com/library/hh831531.aspx)」をご覧ください。
 
 DSC を使用すると、ソフトウェアのインストールと初回起動時のコンピューターの構成を自動化できます。

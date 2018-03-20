@@ -2,11 +2,11 @@
 ms.date: 2017-06-27
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell Web Access の承認規則とセキュリティ機能"
-ms.openlocfilehash: 6b50fdc0f2854d8af6147432fed1a155d26f57e7
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 19e4aa1bb55178ec2634af0771afe2db5db3423c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Access の承認規則とセキュリティ機能
 
@@ -24,7 +24,7 @@ Windows PowerShell Web Access のアクセス制御は、次の表に示す一�
 承認規則の追加と管理に関しては、相当する GUI はありません。
 「[Windows PowerShell Web Access のコマンドレット](cmdlets/web-access-cmdlets.md)」を参照してください。
 
-管理者は、Windows PowerShell Web Access に 0 個から*n* 個の認証規則を定義できます。
+管理者は、Windows PowerShell Web Access に 0 個から *n* 個の認証規則を定義できます。
 既定のセキュリティは、許容的ではなく制限的なものになります。認証規則がゼロの場合には、すべてのユーザーがすべてのアクセスを禁止されます。
 
 Windows Server 2012 R2 の [Add-PswaAuthorizationRule と](cmdlets/add-pswaauthorizationrule.md) [Test-PswaAuthorizationRule](cmdlets/test-pswaauthorizationrule.md) に、リモート コンピューターから、またはアクティブな Windows PowerShell Web Access セッション内から Windows PowerShell Web Access 承認規則を追加し、テストできるようにするために、資格情報パラメーターが用意されました。
@@ -32,7 +32,7 @@ Windows Server 2012 R2 の [Add-PswaAuthorizationRule と](cmdlets/add-pswaautho
 リモート コンピューターに渡す資格情報を含む PSCredential オブジェクトを作成するには、[Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) コマンドレットを実行します。
 
 Windows PowerShell Web Access の認証規則はホワイトリスト方式です。
-各規則は、ユーザー、対象コンピューター、および指定された対象コンピューターにおける特定の Windows PowerShell [セッション構成](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (エンドポイントまたは_実行空間_とも呼ばれます) の間に許可される接続を定義したものです。
+各規則は、ユーザー、対象コンピューター、および指定された対象コンピューターにおける特定の Windows PowerShell [セッション構成](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations) (エンドポイントまたは_実行空間_とも呼ばれます) の間に許可される接続を定義したものです。
 **実行空間**の説明については、「[Beginning Use of PowerShell Runspaces](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)」 (PowerShell 実行空間の使用を開始する) を参照してください。
 
 > **セキュリティ メモ**
@@ -103,7 +103,7 @@ Windows PowerShell Web Access のサインイン ページは、一連の資格�
 Windows PowerShell Web Access におけるセキュリティの最後の層は、対象コンピューター独自のセキュリティ構成です。
 Windows PowerShell Web Access 経由で対象コンピューターを操作する Windows PowerShell Web ベース コンソールを実行するには、ユーザーは、対象コンピューターと Windows PowerShell Web Access の承認規則でアクセス権を適切に構成する必要があります。
 
-この層は、ユーザーが [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) または [New-PSSession](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/new-pssession) コマンドレットを実行して Windows PowerShell から対象コンピューターへのリモート Windows PowerShell セッション作成を試みた場合に、試行された接続を評価するのと同じセキュリティ メカニズムを提供します。
+この層は、ユーザーが [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Enter-PSSession) または [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/new-pssession) コマンドレットを実行して Windows PowerShell から対象コンピューターへのリモート Windows PowerShell セッション作成を試みた場合に、試行された接続を評価するのと同じセキュリティ メカニズムを提供します。
 
 既定では、Windows PowerShell Web Access は、ゲートウェイと対象コンピューター両方での認証に、プライマリのユーザー名とパスワードを使います。
 Web ベースのサインイン ページでは、**[オプションの接続設定]** というセクションで、必要に応じて対象コンピューターに対する別の資格情報を提示するためのオプションをユーザーに提供しています。

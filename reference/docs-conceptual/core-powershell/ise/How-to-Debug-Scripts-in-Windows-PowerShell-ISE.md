@@ -2,11 +2,11 @@
 ms.date: 2017-06-05
 keywords: "PowerShell, コマンドレット"
 title: "Windows PowerShell ISE でスクリプトをデバッグする方法"
-ms.openlocfilehash: 0ec520dfcba5e4562258256570f140e618e77cdb
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: d37fb6cdcd5782cf8eff89c2b124b7c81fdaca71
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Windows PowerShell ISE でスクリプトをデバッグする方法
 
@@ -42,7 +42,7 @@ Set-PSBreakpoint -Script sample.ps1 -Variable Server
 **[デバッグ]** メニューの **[ブレークポイントの一覧を表示]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) コマンドレットを使ってすべてのブレークポイントの一覧を表示する方法の例を示しています。
 
 ``` PowerShell
-# This command lists all breakpoints in the current session. 
+# This command lists all breakpoints in the current session.
 Get-PSBreakpoint
 ```
 
@@ -82,7 +82,7 @@ Disable-PSBreakpoint -Id 0
 ブレークポイントを無効にしても、そのブレークポイントは削除されず、再び有効にするまでの間オフになります。  現在のセッション内のすべてのブレークポイントを無効にするには、**[デバッグ]** メニューの **[すべてのブレークポイントの無効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) コマンドレットを使ってすべてのブレークポイントを無効にする方法の例を示しています。
 
 ``` PowerShell
-# This command disables all breakpoints in the current session. 
+# This command disables all breakpoints in the current session.
 # You can abbreviate this command as: "gbp | dbp".
 Get-PSBreakpoint | Disable-PSBreakpoint
 ```
@@ -99,13 +99,13 @@ Enable-PSBreakpoint -Id 0, 1, 5
 現在のセッション内で定義されたすべてのブレークポイントを有効にするには、**[デバッグ]** メニューの **[すべてのブレークポイントを有効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) コマンドレットを使ってすべてのブレークポイントを有効にする方法の例を示しています。
 
 ``` PowerShell
-# This command enables all breakpoints in the current session. 
+# This command enables all breakpoints in the current session.
 # You can abbreviate the command by using their aliases: "gbp | ebp".
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
 ## <a name="how-to-manage-a-debugging-session"></a>デバッグ セッションを管理する方法
-デバッグを開始する前に、1 つ以上のブレークポイントを設定する必要があります。 ブレークポイントを設定するには、まず、デバッグするスクリプトを保存する必要があります。 ブレークポイントを設定する手順については、「[ブレークポイントを管理する方法](#how-to-manage-breakpoints)」または「[Set-PSBreakpoint](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/set-psbreakpoint)」をご覧ください。 デバッグを開始した後は、デバッグを停止するまで、スクリプトを編集できません。 1 つ以上のブレークポイントを設定したスクリプトは、実行前に自動的に保存されます。
+デバッグを開始する前に、1 つ以上のブレークポイントを設定する必要があります。 ブレークポイントを設定するには、まず、デバッグするスクリプトを保存する必要があります。 ブレークポイントを設定する手順については、「[ブレークポイントを管理する方法](#how-to-manage-breakpoints)」または「[Set-PSBreakpoint](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint)」をご覧ください。 デバッグを開始した後は、デバッグを停止するまで、スクリプトを編集できません。 1 つ以上のブレークポイントを設定したスクリプトは、実行前に自動的に保存されます。
 
 ### <a name="to-start-debugging"></a>デバッグを開始するには
 **F5** キーを押すか、ツールバーの **[スクリプトを実行]** アイコンをクリックするか、**[デバッグ]** メニューの **[実行/続行]** をクリックします。 スクリプトは、最初のブレークポイントを検出するまで実行されます。 ブレークポイントを検出した位置で操作が一時停止し、一時停止した行が強調表示されます。
@@ -174,5 +174,4 @@ C:\ps-test\MyScript.ps1
 ```
 
 ## <a name="see-also"></a>参照
-- [Windows PowerShell ISE の使用](Using-the-Windows-PowerShell-ISE.md)
-
+- [Windows PowerShell ISE の操作](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

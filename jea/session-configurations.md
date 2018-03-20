@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "JEA, PowerShell, セキュリティ"
 title: "JEA セッションの構成"
-ms.openlocfilehash: 0a8931ae15caf04a3639ab46f130e5f5b0498d8c
-ms.sourcegitcommit: 0733db9a05e89e6a23f6b52b9edd784fcbe8beec
+ms.openlocfilehash: c475a90a59d91b074f954cfb656b00142444c052
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/22/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-session-configurations"></a>JEA セッションの構成
 
@@ -38,7 +38,7 @@ New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -Path .\MyJEA
 
 セッション構成ファイルは、任意のテキスト エディターで開くことができます。
 `-SessionType RestrictedRemoteServer` フィールドは、セッション構成がセキュリティ保護された管理のために JEA によって使われることを示します。
-このようにして構成されたセッションは、[NoLanguage モード](https://technet.microsoft.com/en-us/library/dn433292.aspx)で動作し、次の 8 つの既定のコマンド (およびエイリアス) のみを使用できます。
+このようにして構成されたセッションは、[NoLanguage モード](https://technet.microsoft.com/library/dn433292.aspx)で動作し、次の 8 つの既定のコマンド (およびエイリアス) のみを使用できます。
 
 - Clear-Host (cls、clear)
 - Exit-PSSession (exsn、exit)
@@ -128,7 +128,7 @@ TranscriptDirectory = 'C:\ProgramData\JEAConfiguration\Transcripts'
 ### <a name="user-drive"></a>ユーザー ドライブ
 
 接続しているユーザーが、コマンドを実行するために、JEA エンドポイントとの間で双方向にファイルをコピーする必要がある場合は、セッション構成ファイルでユーザー ドライブを有効にできます。
-ユーザー ドライブは、接続しているユーザーごとに固有のフォルダーにマップされた [PSDrive](https://msdn.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) です。
+ユーザー ドライブは、接続しているユーザーごとに固有のフォルダーにマップされた [PSDrive](https://msdn.microsoft.com/powershell/scripting/getting-started/cookbooks/managing-windows-powershell-drives) です。
 このフォルダーは、ユーザーがシステムとの間でファイルをコピーするための場所として機能します。完全なファイル システムへのアクセス権は与えられず、FileSystem プロバイダーは公開されません。
 ユーザー ドライブの内容は、ネットワーク接続が中断される場合に備えて、セッションの間は保持されます。
 

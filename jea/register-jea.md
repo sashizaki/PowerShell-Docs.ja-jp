@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "JEA, PowerShell, セキュリティ"
 title: "JEA の構成の登録"
-ms.openlocfilehash: 0684a1c7acffbccbedab9dba4689611a24c8ae25
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: d6b007fed97be6470bfe4cf4d42f72cb4edc3a45
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="registering-jea-configurations"></a>JEA の構成の登録
 
@@ -19,7 +19,7 @@ ms.lasthandoff: 06/12/2017
 
 ## <a name="single-machine-configuration"></a>単一コンピューターの構成
 
-小規模な環境の場合、[Register-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) コマンドレットを使ってセッション構成ファイルを登録することにより、JEA を展開できます。
+小規模な環境の場合、[Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) コマンドレットを使ってセッション構成ファイルを登録することにより、JEA を展開できます。
 
 作業を開始する前に、次の前提条件を満たしていることを確認してください。
 - 1 つ以上のロールが作成されて、有効な PowerShell モジュールの "RoleCapabilities" フォルダーに配置されていること。
@@ -28,7 +28,7 @@ ms.lasthandoff: 06/12/2017
 
 JEA エンドポイントの名前を選ぶ必要もあります。
 ユーザーが JEA を使ってシステムに接続するときに、JEA エンドポイントの名前が必要になります。
-[Get-PSSessionConfiguration](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) コマンドレットを使って、システム上の既存のエンドポイントの名前を確認できます。
+[Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) コマンドレットを使って、システム上の既存のエンドポイントの名前を確認できます。
 "microsoft" で始まるエンドポイントは、通常、Windows に付属しています。
 "microsoft.powershell" エンドポイントは、リモート PowerShell エンドポイントに接続するときに使われる既定のエンドポイントです。
 

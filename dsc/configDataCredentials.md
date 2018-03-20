@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "構成データでの資格情報オプション"
-ms.openlocfilehash: 15cdb29127d9774c58e1d6518bbba56273e7defd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6ddf82c2b63309255ec3187d650677a6c3c2afb0
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="credentials-options-in-configuration-data"></a>構成データでの資格情報オプション
 >適用先: Windows PowerShell 5.0
@@ -156,7 +156,7 @@ Group [String] #ResourceName
 }
 ```
 
-この例では、`PSDesiredStateConfiguration` 組み込み DSC リソース モジュールの [Group](https://msdn.microsoft.com/en-us/powershell/dsc/groupresource) リソースを使用します。
+この例では、`PSDesiredStateConfiguration` 組み込み DSC リソース モジュールの [Group](https://msdn.microsoft.com/powershell/dsc/groupresource) リソースを使用します。
 ローカル グループを作成し、メンバーを追加または削除できます。
 `Credential` プロパティと、自動 `PsDscRunAsCredential` プロパティの両方を受け取ります。
 ただし、リソースでは `Credential` プロパティのみが使用されます。
@@ -231,7 +231,7 @@ for node 'localhost'.
 ## <a name="psdscallowplaintextpassword"></a>PsDscAllowPlainTextPassword
 
 最初のエラー メッセージには、ドキュメントの URL があります。
-このリンクでは、[ConfigurationData](https://msdn.microsoft.com/en-us/powershell/dsc/configdata) 構造と証明書を使用してパスワードを暗号化する方法を説明しています。
+このリンクでは、[ConfigurationData](https://msdn.microsoft.com/powershell/dsc/configdata) 構造と証明書を使用してパスワードを暗号化する方法を説明しています。
 証明書と DSC の詳細については、[この投稿をご覧ください](http://aka.ms/certs4dsc)。
 
 プレーンテキスト パスワードを強制的に使用するには、次のようにリソースの構成データ セクションに `PsDscAllowPlainTextPassword` キーワードが必要です。

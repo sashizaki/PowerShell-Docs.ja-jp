@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "PowerShell Desired State Configuration の概要"
-ms.openlocfilehash: 856528f1e52eafa8b2c93b825a60376a0d64cab2
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 04404696bef128805e4f1c191711eaab33cf7e4c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="getting-started-with-powershell-desired-state-configuration"></a>PowerShell Desired State Configuration の概要 #
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 01/17/2018
 
 ## <a name="create-a-configuration"></a>構成の作成 ##
 
-[**構成**](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)は、環境について説明するドキュメントです。 環境は "**ノード**" で構成され、ノードは通常、仮想マシンまたは物理マシンです。 
+[**構成**](https://msdn.microsoft.com/powershell/dsc/configurations)は、環境について説明するドキュメントです。 環境は "**ノード**" で構成され、ノードは通常、仮想マシンまたは物理マシンです。 
 
 構成には、さまざまな形式があります。 新しい構成を作成する最も簡単な方法は、.ps1 (PowerShell スクリプト) ファイルを作成することです。 これを行うには、任意のエディターを開きます。 PowerShell ISE では DSC がネイティブに認識されるため、適切な選択です。 以下を PS1 として保存します。
 
@@ -44,9 +44,9 @@ configuration MyFirstConfiguration
 
 "Node" では、この構成が機能するマシン名を定義します。 この構成はローカルで編集されますが、構成はリモート ノードに到達し、それらを構成できます。 
 
-ノードには、マシン名または IP アドレスを指定できます。 1 つの構成ドキュメントに複数のノードを指定できます。 [構成データ](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)を使用して、同じ構成を複数のノードに適用することもできます。 この場合、ノードは "localhost" であり、ローカル コンピューターを意味します。 
+ノードには、マシン名または IP アドレスを指定できます。 1 つの構成ドキュメントに複数のノードを指定できます。 [構成データ](https://msdn.microsoft.com/powershell/dsc/configdata)を使用して、同じ構成を複数のノードに適用することもできます。 この場合、ノードは "localhost" であり、ローカル コンピューターを意味します。 
 
-次の項目は、[**リソース**](https://msdn.microsoft.com/en-us/powershell/dsc/resources)です。 リソースは、構成の構成要素です。 各リソースは、マシンの 1 つの側面の実装ロジックを定義するモジュールです。 PowerShell で **Get-DscResource** を実行して、コンピューター上のすべてのリソースを表示できます。 この構成の 2 行目にある **Import-DscResource** を含む構成で使用するには、リソースがローカル コンピューター上に存在し、インポートされている必要があります。 
+次の項目は、[**リソース**](https://msdn.microsoft.com/powershell/dsc/resources)です。 リソースは、構成の構成要素です。 各リソースは、マシンの 1 つの側面の実装ロジックを定義するモジュールです。 PowerShell で **Get-DscResource** を実行して、コンピューター上のすべてのリソースを表示できます。 この構成の 2 行目にある **Import-DscResource** を含む構成で使用するには、リソースがローカル コンピューター上に存在し、インポートされている必要があります。 
 
 **構成の適用**
 

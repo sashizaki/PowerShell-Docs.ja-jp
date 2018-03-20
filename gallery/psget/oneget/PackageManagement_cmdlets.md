@@ -4,11 +4,11 @@ contributor: manikb
 ms.topic: reference
 keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
 title: PackageManagement_cmdlets
-ms.openlocfilehash: aca4f461ff0e51aa812f8219c74bd7d85d1e7b2d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 92dcebfc79bdb123e3ab3c56fc1af1f793bcb1e3
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement コマンドレット
 これは、ソフトウェアの検出、インストール、およびインベントリ (SDII) をサポートする PackageManagement の中核となります。 次の操作のコマンドレットを試してください。
@@ -32,7 +32,7 @@ PS C:\> Install-Module PackageManagement –Force
 ```
 この場合、PowerShell セッションを再入力して、PackageManagement の新しいバージョンに切り替える必要があります。
 
-## <a name="find-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890709aspx"></a>[Find-Package コマンドレット](https://technet.microsoft.com/en-us/library/dn890709.aspx)
+## <a name="find-package-cmdlethttpstechnetmicrosoftcomlibrarydn890709aspx"></a>[Find-Package コマンドレット](https://technet.microsoft.com/library/dn890709.aspx)
 このコマンドレットでは、読み込まれたパッケージ プロバイダーを使用して、利用可能なパッケージ ソース内のソフトウェア パッケージを検出できます。
 ```powershell
 # Find all available Windows PowerShell module packages from galleries registered
@@ -52,7 +52,7 @@ Find-Package -Name jquery –Provider NuGet -Source http://www.nuget.org/api/v2/
 Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nuget.org
 ```
 
-## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomen-uslibrarymt676544aspx"></a>[Find-PackageProvider コマンドレット](https://technet.microsoft.com/en-us/library/mt676544.aspx)
+## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomlibrarymt676544aspx"></a>[Find-PackageProvider コマンドレット](https://technet.microsoft.com/library/mt676544.aspx)
 Find-PackageProvider コマンドレットは、PowerShellGet に登録されているパッケージ ソースで利用できる一致する PackageManagement プロバイダーを検索します。 これらは、Install-PackageProvider コマンドレットを使用したインストールに使用可能なパッケージ プロバイダーです。 既定では、これには 'PackageManagement' および 'Provider' タグの付いた PowerShell ギャラリーで利用できるモジュールが含まれます。 
 
 Find-PackageProvider は、PackageManagement Azure BLOB ストアで利用できる一致する PackageManagement プロバイダーも検索します。このストアでは、これらを検索しインストールするために PackageManagement boostrapper プロバイダーを使用します。
@@ -73,7 +73,7 @@ Install-PackageProvider -Source C:\sharedfolder\Providers\ -Name nuget -force
     
 ```
 
-## <a name="get-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890704aspx"></a>[Get-Package コマンドレット](https://technet.microsoft.com/en-us/library/dn890704.aspx)
+## <a name="get-package-cmdlethttpstechnetmicrosoftcomlibrarydn890704aspx"></a>[Get-Package コマンドレット](https://technet.microsoft.com/library/dn890704.aspx)
 このコマンドレットは、PackageManagement を使用してインストールされたすべてのソフトウェア パッケージの一覧を返します。
 ```powershell
 # Get all the packages installed by Programs provider

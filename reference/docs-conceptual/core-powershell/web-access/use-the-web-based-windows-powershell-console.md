@@ -2,15 +2,15 @@
 ms.date: 2017-08-23
 keywords: "PowerShell, コマンドレット"
 title: "Web ベースの Windows PowerShell コンソールの使用"
-ms.openlocfilehash: 31ab17f1a1ea1353abc6f770285a2dca70da446d
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Web ベースの Windows PowerShell コンソールの使用
 
-最終更新日: 2013 年 6 月 24 日
+最終更新日 : 2013 年 6 月 24 日
 
 適用対象: Windows Server 2012 R2、Windows Server 2012
 
@@ -58,7 +58,7 @@ Windows PowerShell Web Access 管理者は、所属組織の Windows PowerShell 
 
 Windows PowerShell Web Access にサインインする前に、管理対象のリモート コンピューターの名前または IP アドレスがわかっていることを確認してください。
 また担当者がリモート コンピューターの承認済みユーザーであることと、リモート コンピューターがリモート管理を許可するよう構成されている必要があります。
-リモート管理を許可するようコンピューターを構成する方法の詳細については、[Windows PowerShell でのリモート コマンドの有効化および使用](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enable-psremoting)に関するページを参照してください。
+リモート管理を許可するようコンピューターを構成する方法の詳細については、[Windows PowerShell でのリモート コマンドの有効化および使用](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting)に関するページを参照してください。
 
 コンピューターを構成してリモート管理を有効にする最も簡単な方法は、Windows PowerShell セッションを管理者特権で開き (**[管理者として実行]**)、コンピューター上で **Enable-PSRemoting -force** コマンドレットを実行することです。
 
@@ -74,7 +74,7 @@ Windows PowerShell Web Access にサインインする前に、管理対象の�
     > - 対象のコンピューターがゲートウェイ サーバーの場合、"コンピューター名" フィールドに `localhost` を指定できます。
     > - 対象のコンピューターがゲートウェイ サーバーで、そのゲートウェイ サーバーがワークグループに含まれている場合、"ユーザー名" フィールドには `<workgroup name>\<user_name>` を使用する必要があります。 "コンピューター名" フィールドには `localhost` を使用できます。
 
-1. **[オプションの接続設定]** セクションは、管理対象のリモート コンピューターの承認要件に関連しています。 オプションの接続設定に相当するパラメーターの詳細については、[Enter-PSSession](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession) コマンドレットのヘルプを参照してください。
+1. **[オプションの接続設定]** セクションは、管理対象のリモート コンピューターの承認要件に関連しています。 オプションの接続設定に相当するパラメーターの詳細については、[Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession) コマンドレットのヘルプを参照してください。
 
     通常、Windows PowerShell Web Access ゲートウェイの通過に使う資格情報は、管理対象のリモート コンピューターが認識する資格情報と同じです。 ただし、手順 2. で指定したリモート コンピューターを別の資格情報を使って管理する場合、**[オプションの接続設定]** セクションを展開して、別の資格情報を入力します。 それ以外の場合、手順 6. に進みます。
 

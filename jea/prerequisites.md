@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "JEA, PowerShell, セキュリティ"
 title: "JEA の前提条件"
-ms.openlocfilehash: 75d5db2ba446df1d461050d187dc1495a22fef18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: e6ee16e34eb9f1f0b2f3601c1aa9e90ab4f785f1
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="prerequisites"></a>前提条件
 
@@ -72,7 +72,7 @@ Windows 10 のユーザーは、現在のバージョンの Windows PowerShell �
 ## <a name="enable-powershell-remoting"></a>PowerShell リモート処理を有効にする
 
 PowerShell リモート処理は、JEA 構築の基盤を提供します。
-したがって、JEA を使用する前に、システムで PowerShell リモート処理を有効にし、[適切にセキュリティ保護する](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)必要があります。
+したがって、JEA を使用する前に、システムで PowerShell リモート処理を有効にし、[適切にセキュリティ保護する](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)必要があります。
 
 Windows Server 2012、2012 R2、2016 では、PowerShell リモート処理は既定で有効になります。
 管理者特権の PowerShell ウィンドウで次のコマンドを実行することにより、PowerShell リモート処理を有効にできます。
@@ -109,6 +109,6 @@ PowerShell モジュール ログは JEA には必要ありませんが、ユー
 
 ## <a name="see-also"></a>関連項目
 
-- [PowerShell リモート処理と WinRM セキュリティに関する追加情報](https://msdn.microsoft.com/en-us/powershell/scripting/setup/winrmsecurity)
+- [PowerShell リモート処理と WinRM セキュリティに関する追加情報](https://msdn.microsoft.com/powershell/scripting/setup/winrmsecurity)
 - [*PowerShell ♥ the Blue Team* のセキュリティに関するブログ投稿](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
 

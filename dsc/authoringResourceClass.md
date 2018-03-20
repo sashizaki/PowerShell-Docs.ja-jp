@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "PowerShell クラスを使用したカスタム DSC リソースの記述"
-ms.openlocfilehash: b24351a49ca11dac4687efdce39d400bfd00f399
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 53757f965c51fee699409b5a8ecda802dda9801f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell クラスを使用したカスタム DSC リソースの記述
 
@@ -69,7 +69,7 @@ DSC リソースのスキーマは、クラスのプロパティとして定義�
 - **DscProperty(NotConfigurable)**: プロパティは読み取り専用です。 この属性でマークされたプロパティは、構成で設定できませんが、**Get()** メソッド (存在する場合) によって設定されます。
 - **DscProperty()**: プロパティは構成可能ですが、必須ではありません。
 
-**$Path** プロパティと **$SourcePath** プロパティは、両方とも文字列です。 **$CreationTime** は、[DateTime](https://technet.microsoft.com/en-us/library/system.datetime.aspx) プロパティです。 **$Ensure** プロパティは、次のように定義された列挙型です。
+**$Path** プロパティと **$SourcePath** プロパティは、両方とも文字列です。 **$CreationTime** は、[DateTime](https://technet.microsoft.com/library/system.datetime.aspx) プロパティです。 **$Ensure** プロパティは、次のように定義された列挙型です。
 
 ```powershell
 enum Ensure 

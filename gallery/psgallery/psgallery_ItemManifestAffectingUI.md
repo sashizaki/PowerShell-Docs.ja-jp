@@ -2,8 +2,8 @@
 
 このトピックでは、マニフェストを PowerShell ギャラリー公開用に変更し、PowerShellGet コマンドレットの機能や PowerShell ギャラリー UI に反映させる方法の概要を発行者向けに説明します。 このコンテンツは、変更が表示される場所ごとに編成されており、中央のセクションから始まり、その後左側のナビゲーション領域に移動します。 タグについて説明する詳細セクションがあり、そこでは重要なタグやよく使用されるタグの一部を紹介します。 マニフェストの例を示す次の 2 つのトピックがあります。 
 
-* モジュールについては、[モジュール マニフェストの更新](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/psget_update-modulemanifest)に関するトピックをご覧ください。
-* スクリプトについては、[メタデータを持つスクリプト ファイルの作成](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo)に関するトピックをご覧ください。
+* モジュールについては、[モジュール マニフェストの更新](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)に関するトピックをご覧ください。
+* スクリプトについては、[メタデータを持つスクリプト ファイルの作成](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)に関するトピックをご覧ください。
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>マニフェストによって制御される PowerShell ギャラリー機能の要素
 

@@ -4,11 +4,11 @@ contributor: JKeithB
 ms.topic: conceptual
 keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery, PsGet"
 title: "PowerShell ギャラリー"
-ms.openlocfilehash: 9fe341e4b297764321f3b3f07caca8ef4b8b40e0
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: 7389ce8286c515b0bfc25f32634a482b060cb74c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="the-powershell-gallery"></a>PowerShell ギャラリー
 
@@ -50,7 +50,7 @@ PowerShellGet モジュールには、[PowerShell ギャラリー](https://www.P
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** には、.NET Framework 4.5 以降も必要です。 .NET Framework 4.5 以降を[ここ](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx)からインストールできます。
+**PowerShellGet** には、.NET Framework 4.5 以降も必要です。 .NET Framework 4.5 以降を[ここ](https://msdn.microsoft.com/library/5a4x27ek.aspx)からインストールできます。
 
 
 ## <a name="got-a-question-have-feedback"></a>ご質問または フィードバックがある場合は、

@@ -4,11 +4,11 @@ author: rpsqrd
 ms.topic: conceptual
 keywords: "JEA, PowerShell, セキュリティ"
 title: "JEA ロール機能"
-ms.openlocfilehash: 10f5f390daccbb012be6ee7272041e777810ee12
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 083cab3b44348168fe20e8355f5076b28be78702
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="jea-role-capabilities"></a>JEA ロール機能
 
@@ -86,7 +86,7 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 ```
 
 > [!NOTE]
-> 利用できるパラメーターを制限した場合でも、[一般的な PowerShell パラメーター](https://technet.microsoft.com/en-us/library/hh847884.aspx)は常に許可されます。
+> 利用できるパラメーターを制限した場合でも、[一般的な PowerShell パラメーター](https://technet.microsoft.com/library/hh847884.aspx)は常に許可されます。
 > パラメーター フィールドで明示的にリストアップしないでください。
 
 下の表は、表示されるコマンドレットまたは関数をカスタマイズするさまざまな方法をまとめたものです。
@@ -111,7 +111,7 @@ ValidatePattern と ValidateSet の両方を同じコマンドレットまたは
 
 適用すると、ValidatePattern が ValidateSet より優先されます。
 
-ValidatePattern の詳細については、[この「*Hey, Scripting Guy!*](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/)」投稿と [PowerShell 正規表現](https://technet.microsoft.com/en-us/library/hh847880.aspx)参照コンテンツをご覧ください。
+ValidatePattern の詳細については、[この「*Hey, Scripting Guy!*](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/)」投稿と [PowerShell 正規表現](https://technet.microsoft.com/library/hh847880.aspx)参照コンテンツをご覧ください。
 
 ### <a name="allowing-external-commands-and-powershell-scripts"></a>外部コマンドと PowerShell スクリプトを許可する
 
@@ -128,7 +128,7 @@ VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Co
 たとえば、ファイル サーバーの管理者ロールで、ローカル コンピューターでホストされているネットワーク共有を確認しなければならないとします。
 確認方法の 1 つは `net share` を使用することです。
 ただし、net.exe の許可はとても危険です。このコマンドを利用すると、`net group Administrators unprivilegedjeauser /add` の管理者特権が簡単に得られる可能性があるからです。
-より良い方法は、[Get-SmbShare](https://technet.microsoft.com/en-us/library/jj635704.aspx) を許可することです。これで同じ結果が得られますが、範囲がはるかに限られます。
+より良い方法は、[Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) を許可することです。これで同じ結果が得られますが、範囲がはるかに限られます。
 
 JEA セッションで外部コマンドの利用をユーザーに許可するとき、システム上のどこかに置かれている、同じような名前の (悪意のある) プログラムが代わりに実行されないように、実行可能ファイルの完全パスを常に指定してください。
 

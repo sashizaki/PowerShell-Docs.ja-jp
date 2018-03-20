@@ -3,14 +3,14 @@ ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: "WMF, PowerShell, セットアップ"
-ms.openlocfilehash: 6e0493a75e02efd81e833760f941f98566235efe
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: c8ad7c6c6ec992c8b6891ff657536797164562a8
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="format-hex"></a>Format-Hex
-**Format-Hex** を使うと、テキスト データやバイナリ データを 16 進数形式で表示できます。「[Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)」をご覧ください。
+**Format-Hex** を使うと、テキスト データやバイナリ データを 16 進数形式で表示できます。「[Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)」をご覧ください。
 
 ## <a name="example-1"></a>例 1
 文字列の内容を 16 進形式で表示します。

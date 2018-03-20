@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "プル サーバーのベスト プラクティス"
-ms.openlocfilehash: 045f98475d6182b329ecf048038a98e933684a82
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="pull-server-best-practices"></a>プル サーバーのベスト プラクティス
 
@@ -24,7 +24,7 @@ ms.lasthandoff: 01/17/2018
 ## <a name="abstract"></a>概要
 
 このドキュメントは、Windows PowerShell Desired State Configuration プル サーバーの実装を計画しているすべてのユーザー向けの公式なガイダンスを提供するためのものです。 プル サーバーは単純なサービスで、数分で展開できる必要があります。 このドキュメントは展開で使用できる技術的な操作方法に関するガイダンスを提供するものですが、ベスト プラクティスと、展開の前に考慮すべきことを参照する場合にも役立ちます。
-読者は DSC と、DSC 展開に含まれるコンポーネントの説明で使用される用語の基礎をよく理解している必要があります。 詳細については、「[Windows PowerShell Desired State Configuration の概要](https://technet.microsoft.com/en-us/library/dn249912.aspx)」を参照してください。
+読者は DSC と、DSC 展開に含まれるコンポーネントの説明で使用される用語の基礎をよく理解している必要があります。 詳細については、「[Windows PowerShell Desired State Configuration の概要](https://technet.microsoft.com/library/dn249912.aspx)」を参照してください。
 DSC はクラウドと共に進化することを想定しているため、プル サーバーを含む基礎技術にも進化と、新機能の導入が求められます。 このドキュメントには、以前のリリースへの参照と、先進的な設計を促進する将来を見据えたソリューションへの参照を提供する付録にバージョン テーブルが含まれています。
 
 このドキュメントの主な 2 つのセクションは次のとおりです。
@@ -43,7 +43,7 @@ Windows PowerShell には、宣言構成を作成および管理するために�
 ### <a name="pull-server-role"></a>プル サーバーの役割  
 プル サーバーでは、ターゲット ノードにアクセス可能な構成を格納する中央サービスが提供されます。
  
-プル サーバーの役割は、Web サーバー インスタンスまたは SMB ファイル共有のいずれかとして展開することができます。 Web サーバー機能には OData インターフェイスが含まれており、構成の適用時に成功または失敗の確認を報告するターゲット ノードの機能もオプションで含めることができます。 この機能は、多数のターゲット ノードが存在する環境で役立ちます。 プル サーバーをポイントするようにターゲット ノード (クライアントとも呼ばれる) を構成した後で、最新の構成データと必要なすべてのスクリプトがダウンロードされ、適用されます。 これは、1 回限りの展開として、またはプル サーバーを大規模な変更を管理するための重要な資産とする再発ジョブとして行われる場合があります。 詳細については、「[Windows PowerShell Desired State Configuration プル サーバー](https://technet.microsoft.com/en-us/library/dn249913.aspx)」および「[DSC Web プル サーバーのセットアップ](https://technet.microsoft.com/en-us/library/dn249913.aspx)」を参照してください。
+プル サーバーの役割は、Web サーバー インスタンスまたは SMB ファイル共有のいずれかとして展開することができます。 Web サーバー機能には OData インターフェイスが含まれており、構成の適用時に成功または失敗の確認を報告するターゲット ノードの機能もオプションで含めることができます。 この機能は、多数のターゲット ノードが存在する環境で役立ちます。 プル サーバーをポイントするようにターゲット ノード (クライアントとも呼ばれる) を構成した後で、最新の構成データと必要なすべてのスクリプトがダウンロードされ、適用されます。 これは、1 回限りの展開として、またはプル サーバーを大規模な変更を管理するための重要な資産とする再発ジョブとして行われる場合があります。 詳細については、「[Windows PowerShell Desired State Configuration プル サーバー](https://technet.microsoft.com/library/dn249913.aspx)」および「[DSC Web プル サーバーのセットアップ](https://technet.microsoft.com/library/dn249913.aspx)」を参照してください。
 
 ## <a name="configuration-planning"></a>構成計画
 

@@ -3,11 +3,11 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "意思決定者向け Desired State Configuration の概要"
-ms.openlocfilehash: cbde5d22f9cf118485a0302e53ee0a75eb4b8843
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 42335d674bd23a109ad8f818d3e22ef221884ca7
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>意思決定者向け Desired State Configuration の概要
 
@@ -17,7 +17,7 @@ ms.lasthandoff: 01/17/2018
 
 Windows PowerShell Desired State Configuration (DSC) は、オープン スタンダードに基づく、Windows に組み込まれた構成管理プラットフォームです。 DSC は、展開ライフサイクル (開発、テスト、実稼働前、実稼働) の各段階、およびスケールアウト中に、機能の信頼性と一貫性を維持するために十分な柔軟性があります。 
 
-DSC は"[構成](https://msdn.microsoft.com/en-us/powershell/dsc/configurations)"を中心としています。
+DSC は"[構成](https://msdn.microsoft.com/powershell/dsc/configurations)"を中心としています。
 構成とは、特定の特性を持つコンピューター ("ノード") で構成される環境を説明する読みやすいドキュメントです。 これらの特性は、特定の Windows 機能が有効になっていることを確認するなどの単純な場合や、SharePoint の展開のように複雑な場合があります。 
 
 DSC には監視とレポートも組み込まれています。 システムが適合しなくなった場合、DSC は警告を生成し、システムを修正するために機能することができます。 
@@ -35,11 +35,11 @@ DSC には監視とレポートも組み込まれています。 システムが
 
 [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) とは、内部や外部に関わらず、エンド ユーザーに価値を提供することに重点を置いた、迅速な展開と反復を可能にする人、プロセス、そしてツールが組み合わされたものです。 DSC は、DevOps を意識して設計されました。 単一の構成によって環境を定義することで、開発者は要件を構成にエンコードし、その構成をソース管理にチェックインでき、運用チームではエラーが発生しやすい手動プロセスを使用する必要なく、コードを簡単に展開できるようになります。 
 
-構成は[データ ドリブン](https://msdn.microsoft.com/en-us/powershell/dsc/configdata)でもあるため、開発者が関与することなく、運用チームで簡単に環境を特定および変更することができます。 
+構成は[データ ドリブン](https://msdn.microsoft.com/powershell/dsc/configdata)でもあるため、開発者が関与することなく、運用チームで簡単に環境を特定および変更することができます。 
 
 ## <a name="desired-state-configuration-on--and-off-premises"></a>オンプレミスおよびオフプレミスの Desired State Configuration
 
-DSC を使用して、オンプレミスとオフプレミスの両方の展開を管理できます。 オンプレミスのソリューションの場合、DSC では[プル サーバー](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver)を使用してマシンの管理を一元化し、それらの状態をレポートできます。 クラウド ソリューションの場合、DSC は Windows が使用可能なすべての場所で使用できます。 Azure では、DSC のレポート作成を一元化する [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/) など、Desired State Configuration に基づいて構築された特定のサービスも提供しています。 
+DSC を使用して、オンプレミスとオフプレミスの両方の展開を管理できます。 オンプレミスのソリューションの場合、DSC では[プル サーバー](https://msdn.microsoft.com/powershell/dsc/pullserver)を使用してマシンの管理を一元化し、それらの状態をレポートできます。 クラウド ソリューションの場合、DSC は Windows が使用可能なすべての場所で使用できます。 Azure では、DSC のレポート作成を一元化する [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/) など、Desired State Configuration に基づいて構築された特定のサービスも提供しています。 
 
 ## <a name="dsc-and-compatibility"></a>DSC と互換性
 
