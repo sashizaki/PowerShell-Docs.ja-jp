@@ -3,23 +3,23 @@ ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
 keywords: "WMF, PowerShell, セットアップ"
-ms.openlocfilehash: 6e0493a75e02efd81e833760f941f98566235efe
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+ms.openlocfilehash: c8ad7c6c6ec992c8b6891ff657536797164562a8
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="format-hex"></a><span data-ttu-id="14cea-102">Format-Hex</span><span class="sxs-lookup"><span data-stu-id="14cea-102">Format-Hex</span></span>
-<span data-ttu-id="14cea-103">**Format-Hex** を使うと、テキスト データやバイナリ データを 16 進数形式で表示できます。「[Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="14cea-103">**Format-Hex** lets you view text or binary data in hexadecimal format; see [Format-Hex](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span></span>
+# <a name="format-hex"></a><span data-ttu-id="2fae4-102">Format-Hex</span><span class="sxs-lookup"><span data-stu-id="2fae4-102">Format-Hex</span></span>
+<span data-ttu-id="2fae4-103">**Format-Hex** を使うと、テキスト データやバイナリ データを 16 進数形式で表示できます。「[Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="2fae4-103">**Format-Hex** lets you view text or binary data in hexadecimal format; see [Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span></span>
 
-## <a name="example-1"></a><span data-ttu-id="14cea-104">例 1</span><span class="sxs-lookup"><span data-stu-id="14cea-104">Example 1</span></span>
-<span data-ttu-id="14cea-105">文字列の内容を 16 進形式で表示します。</span><span class="sxs-lookup"><span data-stu-id="14cea-105">View the contents of a string in hexadecimal format.</span></span>
+## <a name="example-1"></a><span data-ttu-id="2fae4-104">例 1</span><span class="sxs-lookup"><span data-stu-id="2fae4-104">Example 1</span></span>
+<span data-ttu-id="2fae4-105">文字列の内容を 16 進形式で表示します。</span><span class="sxs-lookup"><span data-stu-id="2fae4-105">View the contents of a string in hexadecimal format.</span></span>
 
 ```powershell
 "This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 ```
 
-<span data-ttu-id="14cea-106">出力</span><span class="sxs-lookup"><span data-stu-id="14cea-106">Outputs</span></span>
+<span data-ttu-id="2fae4-106">出力</span><span class="sxs-lookup"><span data-stu-id="2fae4-106">Outputs</span></span>
 ```
 PS C:\> This is a very long line to force the line folding in Format-Hex cmdlet" | Format-Hex
 

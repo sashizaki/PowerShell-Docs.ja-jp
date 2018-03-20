@@ -3,19 +3,19 @@ ms.date: 2017-06-12
 ms.topic: conceptual
 keywords: "DSC, PowerShell, 構成, セットアップ"
 title: "DSC 構成のヘルプの作成"
-ms.openlocfilehash: c868fa0565baff833423db090a5d62824ab4cad8
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: c5d499ec887829c864c0f63f64af2d0a7738220b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
-# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="221dc-103">DSC 構成のヘルプの作成</span><span class="sxs-lookup"><span data-stu-id="221dc-103">Writing help for DSC configurations</span></span>
+# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="8cd81-103">DSC 構成のヘルプの作成</span><span class="sxs-lookup"><span data-stu-id="8cd81-103">Writing help for DSC configurations</span></span>
 
-><span data-ttu-id="221dc-104">適用先: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="221dc-104">Applies To: Windows Windows PowerShell 5.0</span></span>
+><span data-ttu-id="8cd81-104">適用先: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="8cd81-104">Applies To: Windows Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="221dc-105">DSC 構成では、コメント ベースのヘルプを使用できます。</span><span class="sxs-lookup"><span data-stu-id="221dc-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="221dc-106">ユーザーは、構成関数に `-?` を付けて呼び出すか、[Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) コマンドレットを使用することで、ヘルプにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="221dc-106">Users can access the help by calling the configuration function with `-?`, or by using the [Get-Help](https://technet.microsoft.com/en-us/library/hh849696.aspx) cmdlet.</span></span> <span data-ttu-id="221dc-107">PowerShell のコメント ベースのヘルプの詳細については、「[about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="221dc-107">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](https://technet.microsoft.com/en-us/library/hh847834.aspx).</span></span>
+<span data-ttu-id="8cd81-105">DSC 構成では、コメント ベースのヘルプを使用できます。</span><span class="sxs-lookup"><span data-stu-id="8cd81-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="8cd81-106">ユーザーは、構成関数に `-?` を付けて呼び出すか、[Get-Help](https://technet.microsoft.com/library/hh849696.aspx) コマンドレットを使用することで、ヘルプにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="8cd81-106">Users can access the help by calling the configuration function with `-?`, or by using the [Get-Help](https://technet.microsoft.com/library/hh849696.aspx) cmdlet.</span></span> <span data-ttu-id="8cd81-107">PowerShell のコメント ベースのヘルプの詳細については、「[about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="8cd81-107">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](https://technet.microsoft.com/library/hh847834.aspx).</span></span>
 
-<span data-ttu-id="221dc-108">次の例では、構成のコメント ベースのヘルプを含むスクリプトを示します。</span><span class="sxs-lookup"><span data-stu-id="221dc-108">The following example shows a script that contains a configuration and comment-based help for it:</span></span>
+<span data-ttu-id="8cd81-108">次の例では、構成のコメント ベースのヘルプを含むスクリプトを示します。</span><span class="sxs-lookup"><span data-stu-id="8cd81-108">The following example shows a script that contains a configuration and comment-based help for it:</span></span>
 
 ```powershell
 <#
@@ -59,9 +59,9 @@ configuration HelpSample1
 }
 ```
 
-## <a name="viewing-configuration-help"></a><span data-ttu-id="221dc-109">構成のヘルプの表示</span><span class="sxs-lookup"><span data-stu-id="221dc-109">Viewing configuration help</span></span>
+## <a name="viewing-configuration-help"></a><span data-ttu-id="8cd81-109">構成のヘルプの表示</span><span class="sxs-lookup"><span data-stu-id="8cd81-109">Viewing configuration help</span></span>
 
-<span data-ttu-id="221dc-110">構成のヘルプを表示するには、**Get-Help** コマンドレットに関数名を付けて使うか、関数名の後に「`-?`」と入力します。</span><span class="sxs-lookup"><span data-stu-id="221dc-110">To view the help for a configuration, use the **Get-Help** cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="221dc-111">前の関数を **Get-Help** に渡した場合の出力を次に示します。</span><span class="sxs-lookup"><span data-stu-id="221dc-111">The following is the output of the previous function when passed to **Get-Help**:</span></span>
+<span data-ttu-id="8cd81-110">構成のヘルプを表示するには、**Get-Help** コマンドレットに関数名を付けて使うか、関数名の後に「`-?`」と入力します。</span><span class="sxs-lookup"><span data-stu-id="8cd81-110">To view the help for a configuration, use the **Get-Help** cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="8cd81-111">前の関数を **Get-Help** に渡した場合の出力を次に示します。</span><span class="sxs-lookup"><span data-stu-id="8cd81-111">The following is the output of the previous function when passed to **Get-Help**:</span></span>
 
 ```powershell
 PS C:\> Get-Help HelpSample1
@@ -90,6 +90,6 @@ REMARKS
     For technical information, type: "get-help HelpSample1 -full".
 ```
 
-## <a name="see-also"></a><span data-ttu-id="221dc-112">参照</span><span class="sxs-lookup"><span data-stu-id="221dc-112">See Also</span></span>
-* [<span data-ttu-id="221dc-113">DSC 構成</span><span class="sxs-lookup"><span data-stu-id="221dc-113">DSC Configurations</span></span>](configurations.md)
+## <a name="see-also"></a><span data-ttu-id="8cd81-112">参照</span><span class="sxs-lookup"><span data-stu-id="8cd81-112">See Also</span></span>
+* [<span data-ttu-id="8cd81-113">DSC 構成</span><span class="sxs-lookup"><span data-stu-id="8cd81-113">DSC Configurations</span></span>](configurations.md)
 
