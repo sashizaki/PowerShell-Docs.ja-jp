@@ -4,13 +4,13 @@ author: JKeithB
 ms.topic: reference
 keywords: "WMF, PowerShell, セットアップ"
 ms.openlocfilehash: fa972b68015d9b6e14508ccda562cfa5ebd632ac
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
-ms.translationtype: HT
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 03/20/2018
 ---
 # <a name="modules-support-for-declaring-version-ranges-1-etc"></a>バージョン範囲 (1. * など) の宣言をサポートするモジュール
-**-MinimumVersion** と **-MaximumVersion** を組み合わせて使うと、特定の範囲のモジュールを取得/インポートできるようになりました。 また、このパラメーターは **.*** もサポートしています。 このパラメーターの動作を次の例で示します。
+**-MinimumVersion** と **-MaximumVersion** を組み合わせて使うと、特定の範囲のモジュールを取得/インポートできるようになりました。 パラメーターをサポートしても * *. * * *。 このパラメーターの動作を次の例で示します。
 
 ```powershell
 Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:
