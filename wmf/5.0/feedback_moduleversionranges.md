@@ -9,8 +9,8 @@ ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 03/20/2018
 ---
-# <a name="modules-support-for-declaring-version-ranges-1-etc"></a><span data-ttu-id="5fbd2-102">バージョン範囲 (1. \* など) の宣言をサポートするモジュール</span><span class="sxs-lookup"><span data-stu-id="5fbd2-102">Modules support for declaring version ranges (1.\*, etc)</span></span>
-<span data-ttu-id="5fbd2-103">**-MinimumVersion** と **-MaximumVersion** を組み合わせて使うと、特定の範囲のモジュールを取得/インポートできるようになりました。</span><span class="sxs-lookup"><span data-stu-id="5fbd2-103">Combined with **-MinimumVersion**, **-MaximumVersion** now allows user to get/import module within specific range.</span></span> <span data-ttu-id="5fbd2-104">パラメーターをサポートしても \* \*. \* \* \*。</span><span class="sxs-lookup"><span data-stu-id="5fbd2-104">The parameter also support \*\*.\*\*\*.</span></span> <span data-ttu-id="5fbd2-105">このパラメーターの動作を次の例で示します。</span><span class="sxs-lookup"><span data-stu-id="5fbd2-105">The following example shows how it works:</span></span>
+# <a name="modules-support-for-declaring-version-ranges-1-etc"></a><span data-ttu-id="f1417-102">バージョン範囲 (1. \* など) の宣言をサポートするモジュール</span><span class="sxs-lookup"><span data-stu-id="f1417-102">Modules support for declaring version ranges (1.\*, etc)</span></span>
+<span data-ttu-id="f1417-103">**-MinimumVersion** と **-MaximumVersion** を組み合わせて使うと、特定の範囲のモジュールを取得/インポートできるようになりました。</span><span class="sxs-lookup"><span data-stu-id="f1417-103">Combined with **-MinimumVersion**, **-MaximumVersion** now allows user to get/import module within specific range.</span></span> <span data-ttu-id="f1417-104">パラメーターをサポートしても **.**\*。</span><span class="sxs-lookup"><span data-stu-id="f1417-104">The parameter also support \*\*.\*\*\*.</span></span> <span data-ttu-id="f1417-105">このパラメーターの動作を次の例で示します。</span><span class="sxs-lookup"><span data-stu-id="f1417-105">The following example shows how it works:</span></span>
 
 ```powershell
 Now, you can combine **-MinimumVersion** and **-MaximumVersion** to import module within specific range:
