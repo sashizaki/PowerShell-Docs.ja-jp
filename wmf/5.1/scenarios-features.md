@@ -2,20 +2,20 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, PowerShell, セットアップ"
-title: "WMF 5.1 の新しいシナリオと機能"
-ms.openlocfilehash: 430781c5c9a59fc544db4f94098313ae1e9cf610
-ms.sourcegitcommit: a6ee6e64d369ecf82c730411bed9750278fdb5c1
+keywords: WMF, PowerShell, セットアップ
+title: WMF 5.1 の新しいシナリオと機能
+ms.openlocfilehash: da3dfb2243c00e3faf637d3dbcb70016cfabb011
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/18/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 の新しいシナリオと機能 #
 
 > 注意: この情報は暫定版であり、変更することがあります。
 
 ## <a name="powershell-editions"></a>PowerShell のエディション ##
-バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
+PowerShell は、バージョン 5.1 以降、機能セットとプラットフォーム互換性が異なるさまざまなエディションが提供されるようになりました。
 
 - **デスクトップ エディション:** .NET Framework 上に構築されており、Server Core や Windows Desktop などの Windows の完全エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
 - **コア エディション:** .NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
@@ -28,7 +28,7 @@ ms.lasthandoff: 08/18/2017
 
 ## <a name="catalog-cmdlets"></a>カタログ コマンドレット  
 
-[Microsoft.PowerShell.Security](https://technet.microsoft.com/en-us/library/hh847877.aspx) モジュールに新しいコマンドレットが 2 つ追加されました。Windows カタログ ファイルを生成し、検証するコマンドレットです。  
+[Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) モジュールに新しいコマンドレットが 2 つ追加されました。Windows カタログ ファイルを生成し、検証するコマンドレットです。  
 
 ###<a name="new-filecatalog"></a>New-FileCatalog 
 --------------------------------
@@ -62,7 +62,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 
 ![](../images/TestFileCatalog.jpg)
 
-このコマンドレットは、*カタログ*で見つかったすべてのファイル ハッシュとその相対パスを*ディスク*のそれらと比較します。 ファイル ハッシュとパスの間に不一致が検出された場合、*ValidationFailed* というステータスを返します。 *-Detailed* パラメーターを利用し、この情報をすべて取得できます。 *署名*プロパティには、カタログの署名ステータスも表示されます。これは、カタログ ファイルで [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) コマンドレットを呼び出すことと同じです。 *-FilesToSkip* パラメーターを利用し、検証中にファイルをスキップすることもできます。 
+このコマンドレットは、*カタログ*で見つかったすべてのファイル ハッシュとその相対パスを*ディスク*のそれらと比較します。 ファイル ハッシュとパスの間に不一致が検出された場合、*ValidationFailed* というステータスを返します。 *-Detailed* パラメーターを利用し、この情報をすべて取得できます。 *署名*プロパティには、カタログの署名ステータスも表示されます。これは、カタログ ファイルで [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) コマンドレットを呼び出すことと同じです。 *-FilesToSkip* パラメーターを利用し、検証中にファイルをスキップすることもできます。 
 
 
 ## <a name="module-analysis-cache"></a>モジュール分析キャッシュ ##
@@ -109,5 +109,5 @@ WMF 5.1 では次のようになります。
 ##<a name="improvements-to-pester"></a>Pester の機能強化
 WMF 5.1 では、PowerShell で出荷される Pester のバージョンが 3.3.5 から 3.4.0 に更新され、コミット https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e が追加されました。Nano Server での Pester の動作を改善します。 
 
-https://github.com/pester/Pester/blob/master/CHANGELOG.md で ChangeLog.md ファイルを調べると、バージョン 3.3.5 から 3.4.0 への変更を確認できます。
+バージョン 3.3.5 から 3.4.0 の変更点については、https://github.com/pester/Pester/blob/master/CHANGELOG.md の ChangeLog.md ファイルを参照してください。
 

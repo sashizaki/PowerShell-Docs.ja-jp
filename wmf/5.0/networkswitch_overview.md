@@ -2,12 +2,12 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, PowerShell, セットアップ"
-ms.openlocfilehash: 80852bf750700d549de24e150ffd89ac55b7bf88
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, PowerShell, セットアップ
+ms.openlocfilehash: 4868cf657f678ee43a6c92d5ee286e9ddb490964
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="network-switch-management-with-powershell"></a>PowerShell を使用したネットワーク スイッチの管理
 
@@ -20,7 +20,7 @@ ms.lasthandoff: 06/12/2017
 
 ## <a name="fundamental-network-switch-management-with-windows-powershell"></a>Windows PowerShell を使用した基本的なネットワーク スイッチの管理
 
-WMF 5.0 で導入されたネットワーク スイッチのコマンドレットを使用すると、Windows Server 2012 R2 ロゴ認定を受けたネットワーク スイッチに、スイッチ、仮想 LAN (VLAN)、および基本的なレイヤー 2 ネットワーク スイッチ ポートの構成を適用することができます。 Microsoft では、[データセンター アブストラクション](http://technet.microsoft.com/en-us/cloud/dal.aspx) レイヤー (DAL) のビジョンをサポートし、この領域において顧客とパートナーにもたらされる価値を示すことに努めています。 これらのコマンドレットを使用して、次のことを実行できます。
+WMF 5.0 で導入されたネットワーク スイッチのコマンドレットを使用すると、Windows Server 2012 R2 ロゴ認定を受けたネットワーク スイッチに、スイッチ、仮想 LAN (VLAN)、および基本的なレイヤー 2 ネットワーク スイッチ ポートの構成を適用することができます。 Microsoft では、[データセンター アブストラクション](http://technet.microsoft.com/cloud/dal.aspx) レイヤー (DAL) のビジョンをサポートし、この領域において顧客とパートナーにもたらされる価値を示すことに努めています。 これらのコマンドレットを使用して、次のことを実行できます。
 
 - 次のようなグローバル スイッチ構成:
     - ホスト名の設定
@@ -69,5 +69,5 @@ PS> Get-Command *-NetworkSwitch*
 | Function    | Set-NetworkSwitchVlanProperty             | NetworkSwitch |
 ```
 
-詳細については、Jeffrey Snover の WMF 5.0 Preview について通知するブログ投稿 (<http://blogs.technet.com/b/windowsserver/archive/2014/04/03/windows-management-framework-v5-preview.aspx>) をご覧ください。
+詳細については、Jeffrey Snover の WMF 5.0 Preview に関するお知らせのブログ投稿 (<http://blogs.technet.com/b/windowsserver/archive/2014/04/03/windows-management-framework-v5-preview.aspx>) を参照してください。
 

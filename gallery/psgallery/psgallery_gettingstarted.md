@@ -2,13 +2,13 @@
 ms.date: 2017-06-12
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: psgallery_gettingstarted
-ms.openlocfilehash: d13c23cd6f9cce433cd3fe1ad5f2d00e3ef0527c
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>PowerShell ギャラリーの概要
 
@@ -40,7 +40,7 @@ NuGet の 2.8.5.201 より前のバージョンがある場合は、以下の Po
 2.  `Import-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
 3.  上記のインストール場所から、NuGet の古いバージョンを削除します。
 
-詳細については、<http://oneget.org/> をご覧ください。
+詳細については、「<http://oneget.org/>」を参照してください。
 
   
 注: パッケージの形式が変更されたため、最近更新された項目をインストールするには、PowerShellGet と PackageManagement の最新バージョンに更新することをお勧めします。 PowerShellGet は Windows 10 に含まれています。詳細については、[こちら](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409)をご覧ください。
@@ -103,7 +103,7 @@ CurrentUser` パラメーターを追加する場合は、スクリプトは `$e
 
 項目を PowerShell ギャラリーから Azure Automation にデプロイするには、項目の詳細ページで **[Azure Automation にデプロイする]** をクリックします。 Azure 管理ポータルにリダイレクトされるため、そこでAzure アカウント資格情報を使用してサインインします。 依存関係のある項目をデプロイすると、すべての依存関係が Azure Automation にデプロイされることに注意してください。 [Azure Automation にデプロイする] ボタンは、**AzureAutomationNotSupported** タグを項目のメタデータに追加すると無効にできます。
 
-Azure Automation の詳細については、[Azure Automation の Web サイト](http://azure.microsoft.com/en-us/services/automation/) をご覧ください。
+Azure Automation の詳細については、[Azure Automation の Web サイト](http://azure.microsoft.com/services/automation/) をご覧ください。
 
 ## <a name="updating-items-from-the-powershell-gallery"></a>PowerShell ギャラリーからの項目の更新
 

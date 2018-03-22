@@ -1,13 +1,13 @@
 ---
 ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "Windows PowerShell ISE でスクリプトを記述および実行する方法"
+keywords: PowerShell, コマンドレット
+title: Windows PowerShell ISE でスクリプトを記述および実行する方法
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: dd3055df8c84195f0145b1a058f1d17c9c382f33
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 77d8ae81cb03f03b3b5d044e6503bbb23cb5b771
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Windows PowerShell ISE でスクリプトを記述および実行する方法
 このトピックでは、スクリプト ウィンドウでスクリプトを作成、編集、実行、保存する方法について説明します。
@@ -16,7 +16,7 @@ ms.lasthandoff: 09/08/2017
 Windows PowerShell ファイルは、スクリプト ウィンドウで開いたり、編集したりできます。 Windows PowerShell で対象となるファイルの種類は、スクリプト ファイル (.ps1)、スクリプト データ ファイル (.psd1)、スクリプト モジュール ファイル (.psm1) です。 これらのファイルの種類は、スクリプト ウィンドウのエディターで構文が色分けされます。 スクリプト ウィンドウで開くことのできる他の一般的なファイルの種類には、構成ファイル (.ps1xml)、XML ファイル、テキスト ファイルがあります。
 
 > [!NOTE]
-> Windows PowerShell の実行ポリシーによって、スクリプトの実行や、Windows PowerShell のプロファイルと構成ファイルの読み込みを実行できるかどうかが決まります。 既定の実行ポリシー Restricted では、すべてのスクリプトの実行とプロファイルの読み込みが防止されます。 プロファイルの、読み込みと使用を許可するように実行ポリシーを変更する方法については、「[Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/en-us/library/5690a0e1-495b-4e63-8280-65ead7bf01ab)」と「[about_Signing [v4]](https://technet.microsoft.com/en-us/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d)」をご覧ください。
+> Windows PowerShell の実行ポリシーによって、スクリプトの実行や、Windows PowerShell のプロファイルと構成ファイルの読み込みを実行できるかどうかが決まります。 既定の実行ポリシー Restricted では、すべてのスクリプトの実行とプロファイルの読み込みが防止されます。 プロファイルの、読み込みと使用を許可するように実行ポリシーを変更する方法については、「[Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/library/5690a0e1-495b-4e63-8280-65ead7bf01ab)」と「[about_Signing [v4]](https://technet.microsoft.com/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d)」をご覧ください。
 
 ### <a name="to-create-a-new-script-file"></a>新しいスクリプト ファイルを作成するには
 ツール バーの **[新規作成]**、または **[ファイル]** メニューの **[新規作成]** をクリックします。 作成されたファイルは、現在の PowerShell タブの下に新しいファイル タブとして表示されます。PowerShell のタブは、少なくとも 1 つのタブが存在する場合にのみ表示されることにご注意ください。 既定では種類のスクリプトのファイル (.ps1) が作成されますが、そのファイルに新しい名前や拡張子を指定して保存できます。 同じ PowerShell タブ内に複数のスクリプト ファイルを作成できます。
@@ -109,7 +109,7 @@ Windows PowerShell ファイルは、スクリプト ウィンドウで開いた
 
 2. **[ファイル名]** ボックスに、ファイルの名前を入力します。
 
-3. **[ファイルの種類]** ボックスで、ファイルの種類を選びます。 たとえば、**[ファイルの種類]** ボックスで、[PowerShell スクリプト (\*.ps1)] を選びます。
+3. **[ファイルの種類]** ボックスで、ファイルの種類を選びます。 たとえば、**[ファイルの種類]** ボックスで、[PowerShell スクリプト (\*.ps1)] を選択します。
 
 4. **[保存]** をクリックします。
 
@@ -139,5 +139,4 @@ Windows PowerShell ISE では、次のエンコード オプションをサポ�
 Windows PowerShell ISE では、Windows PowerShell ISE の [保存] または [名前を付けて保存] コマンドを使った場合でも、他のエディターによって作成されたスクリプトのエンコードは変更しません。
 
 ## <a name="see-also"></a>参照
-- [Windows PowerShell ISE の使用](Using-the-Windows-PowerShell-ISE.md)
-
+- [Windows PowerShell ISE の操作](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

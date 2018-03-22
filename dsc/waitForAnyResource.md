@@ -1,13 +1,13 @@
 ---
 ms.date: 2017-06-12
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "DSC WaitForAny リソース"
-ms.openlocfilehash: 795c005c67c196ef9afb08af790fe2a1695392ec
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: DSC WaitForAny リソース
+ms.openlocfilehash: 43922dbcccb6d06d7d9edfcf16ce4eb107e9d4e6
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-waitforany-resource"></a>DSC WaitForAny リソース
 
@@ -36,7 +36,7 @@ WaitForAny [string] #ResourceName
 
 |  プロパティ  |  説明   | 
 |---|---| 
-| ResourceName| 依存するリソースの名前。| 
+| ResourceName| 依存するリソースの名前。 このリソースが別の構成に属している場合は、"[__リソースの種類__]__リソース名__::[__構成名__]::[__構成名__]" という形式で名前を指定してください。| 
 | NodeName| 依存するリソースのターゲット ノード。| 
 | RetryIntervalSec| 再試行するまでの秒数。 最小値は 1 です。| 
 | RetryCount| 再試行の回数の最大数。| 

@@ -1,19 +1,19 @@
 ---
 ms.date: 2017-06-12
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "DSC SMB プル サーバーのセットアップ"
-ms.openlocfilehash: 427dc8d858bd12e420fbde03b33a66f33cd654dc
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: DSC SMB プル サーバーのセットアップ
+ms.openlocfilehash: ff3faeb1952e6116cf97b1aaf8f125d8931dd35e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>DSC SMB プル サーバーのセットアップ
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
-DSC [SMB](https://technet.microsoft.com/en-us/library/hh831795.aspx) プル サーバーは、DSC 構成ファイルと DSC リソースを必要なときにターゲット ノードに提供する SMB ファイル共有をホストするコンピューターです。
+DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) プル サーバーは、DSC 構成ファイルと DSC リソースを必要なときにターゲット ノードに提供する SMB ファイル共有をホストするコンピューターです。
 
 DSC の SMB プル サーバーを使うには、次のことが必要です。
 - PowerShell 4.0 以降を実行しているサーバーに SMB ファイル共有をセットアップする
@@ -25,7 +25,7 @@ SMB ファイル共有を設定する方法はいくつかありますが、こ�
 
 ### <a name="install-the-xsmbshare-resource"></a>xSmbShare リソースをインストールする
 
-[Install-Module](https://technet.microsoft.com/en-us/library/dn807162.aspx) コマンドレットを呼び出して **xSmbShare** モジュールをインストールします。
+[Install-Module](https://technet.microsoft.com/library/dn807162.aspx) コマンドレットを呼び出して **xSmbShare** モジュールをインストールします。
 >**注**: **Install-Module** は、PowerShell 5.0 に含まれている **PowerShellGet** モジュールに含まれています。 「[PackageManagement PowerShell Modules Preview (PackageManagement PowerShell モジュールのプレビュー)](https://www.microsoft.com/en-us/download/details.aspx?id=49186)」で PowerShell 3.0 と 4.0 の **PowerShellGet** モジュールをダウンロードできます。 **xSmbShare** に含まれる DSC リソース **xSmbShare** を使うと、SMB ファイル共有を作成できます。
 
 ### <a name="create-the-directory-and-file-share"></a>ディレクトリとファイル共有を作成する
@@ -208,7 +208,7 @@ $ConfigurationData = @{
 次の方々に感謝します。
 
 - DSC で SMB を使用することに関する Mike F. Robbins 氏の投稿を、このトピックの内容として参考にしました。 彼のブログは [Mike F Robbins](http://mikefrobbins.com/) にあります。
-- **cNtfsAccessControl** モジュールを作成した Serge Nikalaichyk 氏。 このモジュールのソースは、https://github.com/SNikalaichyk/cNtfsAccessControl にあります。
+- **cNtfsAccessControl** モジュールを作成した Serge Nikalaichyk 氏。 このモジュールのソースは https://github.com/SNikalaichyk/cNtfsAccessControl にあります。
 
 ## <a name="see-also"></a>関連項目
 - [Windows PowerShell Desired State Configuration の概要](overview.md)

@@ -2,13 +2,13 @@
 ms.date: 2017-06-12
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
-title: "PowerShell ギャラリー アカウントを作成する"
-ms.openlocfilehash: e21575320f220c1ba7ecd9bd464a814b3ebf49d9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
+title: PowerShell ギャラリー アカウントを作成する
+ms.openlocfilehash: 5af38884d819cb9c600a061109233614bd33666f
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 ## <a name="creating-a-powershell-gallery-account"></a>PowerShell ギャラリー アカウントを作成する
 
@@ -23,7 +23,7 @@ Azure Active Directory アカウントを使用する場合は、次のページ
 ログインすると、PowerShell ギャラリーで使用するユーザー名を入力するよう求めるメッセージが表示されます。 リンクされている利用規約とプライバシー ポリシーを確認したら、ユーザー名を入力して [登録] をクリックします。
 
 注: このアカウント名は、一度作成すると変更できません。  
-これに関連するその他の詳細については、「[アイテムの所有者を管理する](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners)」をご覧ください。
+これに関連するその他の詳細については、「[アイテムの所有者を管理する](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners)」をご覧ください。
 
 ## <a name="recommended-practices-for-powershell-gallery-accounts"></a>PowerShell ギャラリー アカウントの推奨プラクティス
 
@@ -35,5 +35,5 @@ PowerShell ギャラリーに公開を行う組織が、その目的で Outlook.
 多くの場合、そのアカウントは定期的に監視されません。 こうした場合のベスト プラクティスは、Outlook の転送機能を使用して、アイテム所有者の監視対象となる別のアカウント (通常は組織内のアカウント) にメールを送信することです。
 
 1 つのアイテムに複数の所有者が関連付けられている場合、PowerShell ギャラリーから発生するやりとりはすべて、すべての所有者に送信されます。
-アイテムへの所有者の追加について詳しくは、「[アイテムの所有者を管理する](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners)」をご覧ください。 
+アイテムへの所有者の追加について詳しくは、「[アイテムの所有者を管理する](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners)」をご覧ください。 
 

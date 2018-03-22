@@ -1,13 +1,13 @@
 ---
 ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "PowerShell 50 ISE の新機能"
+keywords: PowerShell, コマンドレット
+title: PowerShell 50 ISE の新機能
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 89dcc905ce200d06029e148c9675269e6f518fa3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 9fd25a4759602bebf2b5df2c17d0c816a15e5e2b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE の新機能
 このトピックでは、各バージョンの Windows PowerShell Integrated Scripting Environment (ISE) に導入された新機能と更新された機能について説明します。
@@ -15,7 +15,7 @@ ms.lasthandoff: 09/29/2017
 ## <a name="feature-description"></a>機能の説明
 Windows PowerShell ISE は、グラフィカルで直感的な環境でスクリプトおよびモジュールを記述、実行、テストすることができるホスト アプリケーションです。 構文の色分け、タブ補完、視覚的なデバッグ機能、Unicode 準拠、状況依存のヘルプなどの主要な機能により、多彩なスクリプトの操作性が提供されます。
 
-Windows PowerShell ISE の概要については、[Windows PowerShell Integrated Scripting Environment の概要](https://technet.microsoft.com/en-us/library/3c1892c2-bf84-4cb6-af26-1f453be9e671)に関するページを参照してください。
+Windows PowerShell ISE の概要については、[Windows PowerShell Integrated Scripting Environment の概要](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671)に関するページを参照してください。
 
 ## <a name="new-and-changed-functionality-in-windows-powershell-ise"></a>Windows PowerShell ISE の新機能と変更された機能
 次の表に、Windows PowerShell における Windows PowerShell ISE のこのリリースの新機能と変更された機能を示します。
@@ -222,7 +222,7 @@ Show-Command は Windows PowerShell ISE 3.0 の新機能です。
 ## <a name="see-also"></a>関連項目
 Windows PowerShell での Windows PowerShell ISE の使用に関する詳細については、次のリンクを参照してください。
 
-- [Windows PowerShell Integrated Scripting Environment の使用](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
+- [Windows PowerShell Integrated Scripting Environment の探索](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
 - [TechNet Wiki の ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
 - [スクリプト センター](http://technet.microsoft.com/scriptcenter/default)
 

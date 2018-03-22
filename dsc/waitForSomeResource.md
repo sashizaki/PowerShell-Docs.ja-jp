@@ -1,13 +1,13 @@
 ---
 ms.date: 2017-06-12
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "DSC WaitForSome リソース"
-ms.openlocfilehash: cbe16c543f0eeb62dbe1fb439af2f9147f1bc210
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: DSC WaitForSome リソース
+ms.openlocfilehash: 8b0ad0dbd31816cc673c7f77945927987e90e08b
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome リソース
 
@@ -40,12 +40,12 @@ WaitForSome [String] #ResourceName
 |---|---| 
 | NodeCount| このリソースが成功するために、目的の状態にする必要があるノードの最小数。|
 | NodeName| 依存するリソースのターゲット ノード。| 
-| ResourceName| 依存するリソースの名前。| 
+| ResourceName| 依存するリソースの名前。 このリソースが別の構成に属している場合は、"[__リソースの種類__]__リソース名__::[__構成名__]::[__構成名__]" という形式で名前を指定してください。| 
 | RetryIntervalSec| 再試行するまでの秒数。 最小値は 1 です。| 
 | RetryCount| 再試行の回数の最大数。| 
 | ThrottleLimit| 同時に接続するコンピューターの数。 既定では、new-cimsession の既定値です。| 
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。|
-| PsDscRunAsCredential | [ユーザーの資格情報を指定した DSC の使用](https://docs.microsoft.com/en-us/powershell/dsc/runasuser)に関するページを参照してください。 |
+| PsDscRunAsCredential | [ユーザーの資格情報を指定した DSC の使用](https://docs.microsoft.com/powershell/dsc/runasuser)に関するページを参照してください。 |
 
 
 ## <a name="example"></a>例

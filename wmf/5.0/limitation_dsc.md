@@ -2,12 +2,12 @@
 ms.date: 2017-06-12
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, PowerShell, セットアップ"
-ms.openlocfilehash: f39328b240a36deb40d484c4aedb889cee91dc8d
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, PowerShell, セットアップ
+ms.openlocfilehash: ad1d19eeb70a19cd3d1493b9a09b115af755feb4
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Desired State Configuration (DSC) の既知の問題と制限事項
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 06/12/2017
 
 WMF 4.0 および WMF 5.0 Preview リリースでは、DSC の構成内で 121 文字を超える長さのパスワードを使用できません。 DSC では、長い強力なパスワードが必要な場合でも、短いパスワードを使用する必要がありました。 この重要な変更により、DSC 構成で任意の長さのパスワードを使用できます。
 
-**解決策:** データの暗号化またはキーの暗号化のキーの使用法と、ドキュメントの暗号化拡張キー使用法 (1.3.6.1.4.1.311.80.1) を含む証明書を再作成します。 Technet 記事 <https://technet.microsoft.com/en-us/library/dn807171.aspx> に詳細な情報が記載されています。
+**解決策:** データの暗号化またはキーの暗号化のキーの使用法と、ドキュメントの暗号化拡張キー使用法 (1.3.6.1.4.1.311.80.1) を含む証明書を再作成します。 Technet の記事 <https://technet.microsoft.com/library/dn807171.aspx> に詳しい説明があります。
 
 
 <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>WMF 5.0 RTM をインストールした後、DSC のコマンドレットが失敗することがある

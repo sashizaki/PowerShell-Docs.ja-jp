@@ -2,13 +2,13 @@
 ms.date: 2017-06-12
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: psgallery_faqs
-ms.openlocfilehash: 80aaaa5e50e1bd85b93df721a4859e3020d1f315
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: b856c44f3733d4a7c236d901edb391091d9d546e
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="frequently-asked-questions"></a>AppLocker: Frequently Asked Questions (AppLocker: よく寄せられる質問)
 
@@ -18,7 +18,7 @@ PowerShell モジュールは、いくつかの PowerShell 機能を含む再利
 
 ## <a name="what-is-a-powershell-script"></a>PowerShell スクリプトとは何ですか。
 
-PowerShell スクリプトとは、再利用と共有を可能にするため、.ps1 ファイルに保存される一連のコマンドです。 PowerShell ワークフローは PowerShell スクリプトでもあり、一連のタスクとそのタスクの順序の概要を示します。 詳細については、「[PowerShell ファースト ステップ ガイド](https://technet.microsoft.com/en-us/library/jj134242.aspx)」を参照してください。
+PowerShell スクリプトとは、再利用と共有を可能にするため、.ps1 ファイルに保存される一連のコマンドです。 PowerShell ワークフローは PowerShell スクリプトでもあり、一連のタスクとそのタスクの順序の概要を示します。 詳細については、「[PowerShell ファースト ステップ ガイド](https://technet.microsoft.com/library/jj134242.aspx)」を参照してください。
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>PowerShell スクリプトと PowerShell モジュールの違いは何ですか。
 
@@ -39,7 +39,7 @@ PowerShell スクリプトとは、再利用と共有を可能にするため、
 
 このエラーは、次の理由で発生することがあります。
 
-- **指定された API キーが無効。**
+- **指定された API キーが無効である。**
      自分のアカウントから有効な API キーを指定したことを確認します。 API キーを取得するには、プロファイル ページを表示します。
 - **指定された項目名を所有していない。**
      自分の API キーが正しいことを確認できた場合、使用しようとしているものと同じ名前の項目が既に存在すると考えられます。 項目が所有者によってリストから外されている場合は、検索結果には表示されません。 同じ名前の項目が既に存在するかどうかを確認するには、ブラウザーを開き、項目の詳細ページ: `https://www.powershellgallery.com/packages/<itemName>` に移動します。 たとえば、`https://www.powershellgallery.com/packages/pester` に直接移動すると、Pester モジュールの詳細ページが表示され、リストから外されているかどうかがわかります。 競合する項目が既に存在し、リストから外されている場合は、次のようにできます。
@@ -48,7 +48,7 @@ PowerShell スクリプトとは、再利用と共有を可能にするため、
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>昨日はサインインできましたが、個人アカウントにサインインできないのはなぜですか。
 
-ギャラリー アカウントがプライマリ電子メールのエイリアスの変更に対応していないことに注意してください。 詳細については、「[Microsoft アカウントのエイリアスを管理する](https://windows.microsoft.com/en-us/windows/outlook/add-alias-account)」を参照してください。
+ギャラリー アカウントがプライマリ電子メールのエイリアスの変更に対応していないことに注意してください。 詳細については、「[Microsoft アカウントのエイリアスを管理する](https://windows.microsoft.com/windows/outlook/add-alias-account)」を参照してください。
 
 ## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>[項目] タブの [カテゴリ] チェックボックスをすべてオンにすると、ギャラリーの項目がすべて表示されなくなるのはなぜですか。
 
@@ -156,7 +156,7 @@ PackageManagement パッケージ プロバイダー層では、PSModule パッ�
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** には、.NET Framework 4.5 以降も必要です。 .NET Framework 4.5 以降を[ここ](https://msdn.microsoft.com/en-us/library/5a4x27ek.aspx)からインストールできます。
+**PowerShellGet** には、.NET Framework 4.5 以降も必要です。 .NET Framework 4.5 以降を[ここ](https://msdn.microsoft.com/library/5a4x27ek.aspx)からインストールできます。
 
 ## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>将来的に公開される項目の名前を予約することはできますか。
 

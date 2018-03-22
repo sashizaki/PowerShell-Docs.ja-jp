@@ -1,12 +1,12 @@
 ---
 ms.date: 2017-08-23
-keywords: "PowerShell, コマンドレット"
-title: "Windows PowerShell Web Access のインストールと使用"
-ms.openlocfilehash: 63e25fa2b1fc7c0a2b57763e337c25ece17a3296
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+keywords: PowerShell, コマンドレット
+title: Windows PowerShell Web Access のインストールと使用
+ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
+ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 03/15/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Access のインストールと使用
 
@@ -29,7 +29,7 @@ Windows PowerShell Web Access のセットアップおよび構成プロセス�
 1. [制限的な承認規則を構成する](#configure-a-restrictive-authorization-rule)
 
 Windows PowerShell Web Access をインストールして構成する前に、このガイドをすべて読むことをお勧めします。このガイドでは、Windows PowerShell Web Access のインストール、セキュリティによる保護、およびアンインストールを行うための手順を説明しています。
-「[Web ベースの Windows PowerShell コンソールの使用](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)」トピックでは、Web ベースのコンソールにサインインする方法と、Web ベースの Windows PowerShell コンソールと **powershell.exe** コンソールの制限と相違点について説明しています。 Web ベースのコンソールのエンド ユーザーは「[Web ベースの Windows PowerShell コンソールの使用](use-the-web-based-windows-powershell-console.md)」をお読みください。このガイドをこれ以上読む必要はありません。
+「[Web ベースの Windows PowerShell コンソールの使用](https://technet.microsoft.com/library/hh831417(v=ws.11).aspx)」トピックでは、Web ベースのコンソールにサインインする方法と、Web ベースの Windows PowerShell コンソールと **powershell.exe** コンソールの制限と相違点について説明しています。 Web ベースのコンソールのエンド ユーザーは「[Web ベースの Windows PowerShell コンソールの使用](use-the-web-based-windows-powershell-console.md)」をお読みください。このガイドをこれ以上読む必要はありません。
 
 このトピックは IIS Web サーバーの操作に関する詳しいガイドを提供するものではありません。このトピックでは、Windows PowerShell Web Access ゲートウェイの構成に必要な手順だけを説明します。 IIS での Web サイトの構成とセキュリティ保護については、「関連項目」セクションの IIS に関するドキュメント リソースを参照してください。
 
@@ -216,7 +216,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
     - Windows の**スタート**画面で、**[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
 
-2. セッション構成を使用してユーザー アクセスを制限するためのオプション手順: 規則内で使用するセッション構成が既に存在することを確認します。 まだ作成されていない場合は、「[about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations)」に記載されているセッション構成の作成手順を使用してください。
+2. セッション構成を使用してユーザー アクセスを制限するためのオプション手順: 規則内で使用するセッション構成が既に存在することを確認します。 まだ作成されていない場合は、「[about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations)」に記載されているセッション構成の作成手順を使用してください。
 
 3. 次のように入力して **Enter** キーを押します。
 
@@ -388,7 +388,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 2. ![セキュリティ メモ](images/SecurityNote.jpeg) セッションの構成を使用してユーザー アクセスを制限するための手順 (省略可能):
 
-    既に存在する規則の中で使用するセッションの構成を確認します。 まだ作成されていない場合は、「[about_Session_Configuration_Files](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_session_configurations)」に記載されているセッション構成の作成手順を使用してください。
+    既に存在する規則の中で使用するセッションの構成を確認します。 まだ作成されていない場合は、「[about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations)」に記載されているセッション構成の作成手順を使用してください。
 
 3. 次のように入力して **Enter** キーを押します。
 
