@@ -1,7 +1,7 @@
 ---
 ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "Windows PowerShell ファースト ステップ ガイド"
+keywords: PowerShell, コマンドレット
+title: Windows PowerShell ファースト ステップ ガイド
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
 ms.openlocfilehash: 93a4d4a6bc0ebef6b6af7f7f8af59dec865bcfa3
 ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
