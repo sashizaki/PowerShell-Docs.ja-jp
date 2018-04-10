@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, PowerShell, セットアップ"
-ms.openlocfilehash: 510e1baa2933932cfd4c3bcb4e0973f3eb8095f3
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: WMF, PowerShell, セットアップ
+ms.openlocfilehash: 7e24bb4ee4d0658b0619f7f008e3740f647f124f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="system-requirements"></a>システム要件
 
@@ -55,7 +55,7 @@ ms.lasthandoff: 03/15/2018
 Windows Server 2008 R2 SP1 システムと Windows 7 SP1 システムには、組み込みの PowerShell 2.0、WinRM、および WMI があります。 これらの組み込みコンポーネントを更新する WMF 3.0 パッケージと WMF 4.0 パッケージは、Windows Server 2008 R2 SP1 および Windows 7 SP1 のリリース後にリリースされました。 WMF 3.0 パッケージと WMF 4.0 パッケージのインストール/アンインストールでは、次のアップグレード パスでいくつかの問題が見つかりました。
 
 - 組み込み --> WMF 4.0
-- 組み込み --> WMF 3.0 --> WMF4.0 
+- 組み込み --> WMF 3.0 --> WMF4.0
 
 これらのすべての問題を、WMF 4.0 パッケージで修正しました。 したがって、Windows Server 2008 R2 SP1 および Windows 7 SP1 に WMF 5.0 をインストールするには、WMF 4.0 が前提条件になります。 WMF 5.0 にアップグレードする前に WMF 4.0 をインストールしなかった場合に発生する可能性のある問題を下に示します。
 
@@ -96,4 +96,3 @@ wusa /uninstall /kb:3134760
 3.  **[インストールされた更新プログラムを表示]** をクリックします。
 
 4.  インストールされた更新プログラムの一覧から **[Windows Management Framework 5.0]** を選択します。 これは *KB3134758*、*KB3134759*、または *KB3134760* に対応しています。 **[アンインストール]** をクリックします。
-
