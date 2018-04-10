@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "静的なクラスとメソッドの使用"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: 静的なクラスとメソッドの使用
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: fe41c7d6b45564e7b5bc2b922a18587c9745e26d
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-static-classes-and-methods"></a>静的なクラスとメソッドの使用
 .NET Framework のクラスの中には、**New-Object** では作成できないものもあります。 たとえば、**New-Object** で **System.Environment** オブジェクトや **System.Math** オブジェクトを作成しようとすると、次のようなエラー メッセージが表示されます。
@@ -18,6 +18,7 @@ New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Environment.
 At line:1 char:11
 + New-Object  <<<< System.Environment
+
 PS> New-Object System.Math
 New-Object : Constructor not found. Cannot find an appropriate constructor for
 type System.Math.
@@ -88,6 +89,7 @@ TickCount                               ExitCode
 これで、System.Environment から、必要なプロパティを選んで表示できます。
 
 #### <a name="displaying-static-properties-of-systemenvironment"></a>System.Environment の静的プロパティの表示
+
 System.Environment の場合はプロパティも静的です。通常のプロパティとは異なる方法で指定する必要があります。 操作の対象が静的メソッドまたは静的プロパティであることを Windows PowerShell に伝えるには **::** を使用します。 Windows PowerShell の起動に使ったコマンドを表示するには、次のように入力して、**CommandLine** プロパティを確認します。
 
 ```
@@ -113,6 +115,7 @@ False
 ```
 
 ### <a name="doing-math-with-systemmath"></a>System.Math による数学的演算の実行
+
 System.Math 静的クラスは、数学的演算を行うのに役立ちます。 **System.Math** の重要なメンバーのほとんどはメソッドであり、**Get-Member** を使って表示できます。
 
 > [!NOTE]
@@ -181,4 +184,3 @@ PS> [System.Math]::Truncate(9.3)
 PS> [System.Math]::Truncate(-9.3)
 -9
 ```
-

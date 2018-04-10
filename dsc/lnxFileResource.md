@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "Linux 用 DSC の nxFile リソース"
-ms.openlocfilehash: 7ee8a37ee63a70b1c8c69dc79dfbc77c1f583234
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, PowerShell, 構成, セットアップ
+title: Linux 用 DSC の nxFile リソース
+ms.openlocfilehash: 41b5ebde299c47b38d7a6e7f71607332b24ca0e4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxfile-resource"></a>Linux 用 DSC の nxFile リソース
 
@@ -37,20 +37,20 @@ nxFile <string> #ResourceName
 
 ## <a name="properties"></a>プロパティ
 
-|  プロパティ |  説明 | 
+|  プロパティ |  説明 |
 |---|---|
-| DestinationPath| ファイルまたはディレクトリの状態を保証する場所を指定します。| 
-| SourcePath| ファイルまたはフォルダー リソースのコピー元のパスを指定します。 このパスはローカル パスまたは `http/https/ftp` URL です。 リモート `http/https/ftp` URL は、**Type** プロパティの値が file の場合にのみサポートされます。| 
-| Ensure| ファイルが存在するかどうかを決定します。 ファイルが存在することを保証するには、このプロパティを "Present" に設定します。 ファイルが存在しないことを保証するには、"Absent" に設定します。 既定値は "Present" です。| 
-| 種類| 構成されるリソースがディレクトリまたはファイルのいずれであるかを指定します。 リソースがディレクトリであることを示すには、このプロパティを "directory" に設定します。 リソースがファイルであることを示すには、"file" に設定します。 既定値は "file" です。| 
-| 内容| 特定の文字列など、ファイルの内容を指定します。| 
-| チェックサム| 2 つのファイルが同じであるかどうかを決定するときに使用するタイプを定義します。 **Checksum** が指定されていない場合、ファイルまたはディレクトリ名のみが比較に使用されます。 値は、"ctime"、"mtime"、または "md5" です。| 
-| Recurse| サブディレクトリが含まれるかどうかを示します。 サブディレクトリを含めるようにするには、このプロパティを **$true** に設定します。 既定値は **$false** です。 **注:** このプロパティは、**Type** プロパティが directory に設定されている場合にのみ有効です。| 
-| Force| 特定のファイル操作 (ファイルの上書き、空でないディレクトリの削除など) によって、エラーが発生します。 **Force** プロパティを使用すると、このようなエラーが上書きされます。 既定値は **$false** です。| 
-| リンク| シンボリック リンクの目的の動作を指定します。 シンボリック リンクに従い、処理の対象をリンクのターゲットにするには、このプロパティを "follow" に設定します (たとえば、 リンクではなくファイルをコピーします)。 処理の対象をリンクにするには、このプロパティを "manage" に設定します (たとえば、 リンク自体をコピーします)。 シンボリック リンクを無視するには、このプロパティを "ignore" に設定します。| 
-| グループ| ファイルまたはディレクトリを所有する**グループ**の名前。| 
-| モード| 8 進数またはシンボリック表記で、リソースに必要なアクセス許可を指定します。 (たとえば、777 または rwxrwxrwx)。 シンボリック表記を使用する場合は、ディレクトリまたはファイルを示す最初の文字を指定しないでください。| 
-| DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
+| DestinationPath| ファイルまたはディレクトリの状態を保証する場所を指定します。|
+| SourcePath| ファイルまたはフォルダー リソースのコピー元のパスを指定します。 このパスはローカル パスまたは `http/https/ftp` URL です。 リモート `http/https/ftp` URL は、**Type** プロパティの値が file の場合にのみサポートされます。|
+| Ensure| ファイルが存在するかどうかを決定します。 ファイルが存在することを保証するには、このプロパティを "Present" に設定します。 ファイルが存在しないことを保証するには、"Absent" に設定します。 既定値は "Present" です。|
+| 種類| 構成されるリソースがディレクトリまたはファイルのいずれであるかを指定します。 リソースがディレクトリであることを示すには、このプロパティを "directory" に設定します。 リソースがファイルであることを示すには、"file" に設定します。 既定値は "file" です。|
+| 内容| 特定の文字列など、ファイルの内容を指定します。|
+| チェックサム| 2 つのファイルが同じであるかどうかを決定するときに使用するタイプを定義します。 **Checksum** が指定されていない場合、ファイルまたはディレクトリ名のみが比較に使用されます。 値は、"ctime"、"mtime"、または "md5" です。|
+| Recurse| サブディレクトリが含まれるかどうかを示します。 サブディレクトリを含めるようにするには、このプロパティを **$true** に設定します。 既定値は **$false** です。 **注:** このプロパティは、**Type** プロパティが directory に設定されている場合にのみ有効です。|
+| Force| 特定のファイル操作 (ファイルの上書き、空でないディレクトリの削除など) によって、エラーが発生します。 **Force** プロパティを使用すると、このようなエラーが上書きされます。 既定値は **$false** です。|
+| リンク| シンボリック リンクの目的の動作を指定します。 シンボリック リンクに従い、処理の対象をリンクのターゲットにするには、このプロパティを "follow" に設定します (たとえば、 リンクではなくファイルをコピーします)。 処理の対象をリンクにするには、このプロパティを "manage" に設定します (たとえば、 リンク自体をコピーします)。 シンボリック リンクを無視するには、このプロパティを "ignore" に設定します。|
+| グループ| ファイルまたはディレクトリを所有する**グループ**の名前。|
+| モード| 8 進数またはシンボリック表記で、リソースに必要なアクセス許可を指定します。 (たとえば、777 または rwxrwxrwx)。 シンボリック表記を使用する場合は、ディレクトリまたはファイルを示す最初の文字を指定しないでください。|
+| DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。|
 
 ## <a name="additional-information"></a>追加情報
 
@@ -67,11 +67,11 @@ nxFile resolvConf
 {
     SourcePath = "http://10.185.85.11/conf/resolv.conf"
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
-    
+
 }
-        
+
 }
 ```
 
@@ -89,7 +89,7 @@ $Contents = Get-Content C:\temp\resolv.conf
 nxFile resolvConf
 {
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
     Contents = "$Contents"
 }
@@ -122,10 +122,10 @@ $Contents = LinuxString $Contents
 nxFile resolvConf
 {
     DestinationPath = "/etc/resolv.conf"
-    Mode = "644"        
+    Mode = "644"
     Type = "file"
     Contents = $Contents
-    
+
 }
 }
 ```
@@ -135,7 +135,7 @@ nxFile resolvConf
 次の例では、ディレクトリ `/opt/mydir` が存在し、指定されたコンテンツを持つファイルがこのディレクトリが存在するようにしています。
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 Node $node {
 nxFile DirectoryExample
@@ -151,10 +151,9 @@ nxFile FileExample
     Destinationpath = "/opt/mydir/myfile"
     Contents=@"
 #!/bin/bash`necho "hello world"`n
-"@ 
+"@
     Mode = “755”
     DependsOn = "[nxFile]DirectoryExample"
-} 
+}
 }
 ```
-

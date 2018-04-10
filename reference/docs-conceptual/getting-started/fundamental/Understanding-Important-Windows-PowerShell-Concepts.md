@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "Windows PowerShell の重要な概念を理解する"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: Windows PowerShell の重要な概念を理解する
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 1ffcfefcc7ffc7c98ba4d1e3ccc9a59cd9b0baac
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 07ceaa2f3e6a192c6281cb4c99aed4c3f66afc7e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a>Windows PowerShell の重要な概念を理解する
 Windows PowerShell の設計には、多数の異なる環境の概念が取り入れられています。 特定のシェルやプログラミング環境を使ったことのあるユーザーであれば、そのいくつかについては既に使い慣れているかもしれません。しかし、これらすべてに精通しているユーザーはごく一部に限られると思われます。 これらのいくつかの概念について理解することは、シェルの概要を把握するのに役立ちます。
@@ -20,7 +20,7 @@ Windows PowerShell の設計には、多数の異なる環境の概念が取り�
 ### <a name="the-command-family-is-extensible"></a>拡張可能なコマンド ファミリ
 Cmd.exe などのインターフェイスには、組み込みのコマンド セットを直接拡張する手段が存在しません。 外部のコマンドライン ツールを作成して Cmd.exe で実行することはできますが、外部のツールには、ヘルプを統合することができないなど、サービス上の制約があります。また、Cmd.exe では、それらが正しいコマンドであるかどうかを自動的に判別することはできません。
 
-Windows PowerShell のネイティブのバイナリ コマンドは*コマンドレット*と呼ばれ、ユーザーが自由に拡張できます。コマンドレットを独自に作成し、スナップインを使用して Windows PowerShell に追加できます。 Windows PowerShell *スナップイン*は、他のインターフェイスのバイナリ ツールと同じようにコンパイルされています。 これらを使用することにより、新しいコマンドレットだけでなく、Windows PowerShell プロバイダーをシェルに追加することもできます。
+Windows PowerShell のネイティブのバイナリ コマンドは*コマンドレット*と呼ばれ、ユーザーが自由に拡張できます。コマンドレットを独自に作成し、スナップインを使用して Windows PowerShell に追加できます。Windows PowerShell *スナップイン*は、他のインターフェイスのバイナリ ツールと同じようにコンパイルされています。 これらを使用することにより、新しいコマンドレットだけでなく、Windows PowerShell プロバイダーをシェルに追加することもできます。
 
 Windows PowerShell の内部コマンドが*コマンドレット*と呼ばれているのは、こうした特殊な性質によるものです。
 
@@ -43,4 +43,3 @@ Windows PowerShell でコマンドを入力すると、入力したすべての�
 Windows PowerShell は .NET Framework をベースとしているため、Windows PowerShell の構文とキーワードは C# プログラミング言語に非常に似ています。 C# 言語に興味がある方は、Windows PowerShell の使い方を覚えることにより、C# の習得にもつながります。
 
 C# プログラマではないユーザーにとって、この類似性は特に重要な意味を持ちません。 しかし、C# に精通している場合は、この類似性のおかげで Windows PowerShell の使い方を覚えるのはとても簡単です。
-

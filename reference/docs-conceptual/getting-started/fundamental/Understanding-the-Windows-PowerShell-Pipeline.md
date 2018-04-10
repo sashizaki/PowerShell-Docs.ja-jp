@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "Windows PowerShell パイプラインを理解する"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: Windows PowerShell パイプラインを理解する
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 6d152e52d2fcfb9dd592eb9ac40500615f2186cb
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: c3f1d17432cf3a77c0f5ecae137a4233a28a19d7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a>Windows PowerShell パイプラインを理解する
 Windows PowerShell では、パイプ処理をほぼすべての状況で使用できます。 画面にはテキストが表示されますが、コマンド間で受け渡しされる情報はテキストではありません。 パイプの中を流れるデータは、実際にはオブジェクトです。
@@ -61,4 +61,3 @@ Windows PowerShell では、パイプラインのコマンド間でデータを�
 Windows PowerShell のコマンドから、コンソール ウィンドウに表示されている以上の情報が出力されているとすれば、見えない要素を取得するにはどうすればよいのかという疑問が残ります。 つまり、残りのデータを表示するにはどうすればよいか、 また、Windows PowerShell で通常使用される表示形式とは異なる形式でデータを表示するにはどうすればよいのかという点です。
 
 この章の残りの部分では、特定の Windows PowerShell オブジェクトの構造を調べる方法、特定の項目を選んで見やすいように書式化する方法、この情報を他の出力場所 (ファイルやプリンターなど) に送る方法について説明します。
-

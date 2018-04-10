@@ -1,25 +1,28 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "ソフトウェア インストールの操作"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: ソフトウェア インストールの操作
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: 2078376a8be19c9ff8ecc44183eb89f14bc388ed
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: bb97ad37c4295351c0fc2e3c6e1209c8dd673f06
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="working-with-software-installations"></a>ソフトウェア インストールの操作
+
 Windows インストーラーを使用するように設計されているアプリケーションは、WMI の **Win32_Product** クラスからアクセスできますが、今日使用されているすべてのアプリケーションが Windows インストーラーを使用しているわけではありません。 Windows インストーラーは、インストール可能なアプリケーションを操作するための標準的な手法を最も広範囲に提供しているため、主にこれらのアプリケーションについて説明します。 代替のセットアップ ルーチンを使用するアプリケーションは、通常 Windows インストーラーによって管理されません。 これらのアプリケーションを処理する具体的な方法は、インストーラーのソフトウェアとアプリケーションの開発者によってなされた決定によって異なります。
 
 > [!NOTE]
 > コンピューターにアプリケーションのファイルをコピーすることによってインストールされているアプリケーションは、通常、ここで紹介されている手法を使用してで管理することはできません。 これらのアプリケーションは、「ファイルとフォルダーの操作」セクションで説明した手法を使用することで、ファイルやフォルダーとして管理できます。
 
 ### <a name="listing-windows-installer-applications"></a>Windows インストーラー アプリケーションを一覧表示する
+
 ローカルまたはリモート システムに Windows インストーラーを使用してインストールされているアプリケーションの一覧を表示するには、次の単純な WMI クエリを使用します。
 
 ```
 PS> Get-WmiObject -Class Win32_Product -ComputerName .
+
 IdentifyingNumber : {7131646D-CD3C-40F4-97B9-CD9E4E6262EF}
 Name              : Microsoft .NET Framework 2.0
 Vendor            : Microsoft Corporation
@@ -31,6 +34,7 @@ Win32_Product オブジェクトのすべてのプロパティを画面に表示
 
 ```
 PS> Get-WmiObject -Class Win32_Product -ComputerName . | Where-Object -FilterScript {$_.Name -eq "Microsoft .NET Framework 2.0"} | Format-List -Property *
+
 Name              : Microsoft .NET Framework 2.0
 Version           : 2.0.50727
 InstallState      : 5
@@ -47,13 +51,13 @@ Vendor            : Microsoft Corporation
 
 または、**Get-WmiObject Filter** パラメーターを使用して、Microsoft .NET Framework 2.0 のみを選択できます。 このコマンドで使用されているフィルターは WMI フィルターであるため、Windows PowerShell の構文ではなく、WMI クエリ言語 (WQL) 構文を使用します。 代わりに、
 
-```
+```powershell
 Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='Microsoft .NET Framework 2.0'"| Format-List -Property *
 ```
 
 WQL クエリは、スペースや等号など、Windows PowerShell で特別な意味を持つ文字を頻繁に使用することに注意してください。 このため、フィルターのパラメーターの値は、常に引用符で囲むのが安全です。 また、読みやすさは向上しませんが、Windows PowerShell のエスケープ文字であるバックティック (\`) を使用することもできます。 次のコマンドは前のコマンドと同等で、同様の結果を返しますが、フィルター文字列全体を引用符で囲むのではなく、バックティックを使用して説くス文字をエスケープします。
 
-```
+```powershell
 Get-WmiObject -Class Win32_Product -ComputerName . -Filter Name`=`'Microsoft` .NET` Framework` 2.0`' | Format-List -Property *
 ```
 
@@ -74,13 +78,14 @@ IdentifyingNumber : {FCE65C4E-B0E8-4FBD-AD16-EDCBE6CD591F}
 
 最後に、インストールされたアプリケーションの名前のみを検索するには、単純な **Format-Wide** ステートメントにより、出力が簡略化されます。
 
-```
+```powershell
 Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 ```
 
 これまでインストールに Windows インストーラーを使用したアプリケーションを検索する方法をいくつか確認しましたが、他のアプリケーションはまだ検討していません。 ほとんどの標準的なアプリケーションはアンインストーラーを Windows に登録するため、Windows レジストリでこれらを検索することで、ローカルで操作できます。
 
 ### <a name="listing-all-uninstallable-applications"></a>アンインストール可能なすべてのアプリケーションを一覧表示する
+
 システム上のすべてのアプリケーションを検索する確実な方法はありませんが、[プログラム追加と削除] ダイアログ ボックスに表示される一覧ですべてのプログラムを検索することができます。 [プログラム追加と削除] は、次のレジストリ キーでこれらのアプリケーションを検索します。
 
 **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**
@@ -88,7 +93,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 また、このキーを確認してアプリケーションを検索することもできます。 Uninstall キーを簡単に表示できるように、このレジストリの場所に Windows PowerShell ドライブをマップできます。
 
 ```
-PS> New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall    
+PS> New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
 
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
@@ -107,7 +112,7 @@ PS> (Get-ChildItem -Path Uninstall:).Count
 
 **Get-ChildItem** をはじめとするさまざまな方法を利用して、アプリケーションの一覧を詳細に検索できます。 アプリケーションの一覧を取得して、**$UninstallableApplications** 変数に保存するには、次のコマンドを使用します。
 
-```
+```powershell
 $UninstallableApplications = Get-ChildItem -Path Uninstall:
 ```
 
@@ -118,8 +123,8 @@ Uninstall の下のレジストリ キーにレジストリ エントリの値�
 
 たとえば、Uninstall キーの下でアプリケーションの表示名を検索するには、次のコマンドを使用します。
 
-```
-PS> Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue("DisplayName") }
+```powershell
+Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue('DisplayName') }
 ```
 
 これらの値が一意である保証はありません。 次の例では、インストールされている 2 つの項目が "Windows Media エンコーダー 9 シリーズ" として表示されます。
@@ -137,6 +142,7 @@ SKC  VC Name                           Property
 ```
 
 ### <a name="installing-applications"></a>アプリケーションのインストール
+
 **Win32_Product** クラスを使用して、リモートまたはローカルで、Windows インストーラー パッケージをインストールできます。
 
 > [!NOTE]
@@ -144,37 +150,38 @@ SKC  VC Name                           Property
 
 リモートでインストールする場合は、WMI のサブシステムが Windows PowerShell のパスを認識しないため、.msi パッケージへのパスを指定するのに、汎用名前付け規則 (UNC) のネットワーク パスを使用します。 たとえば、リモート コンピューター PC01 のネットワーク共有 \\\\AppServ\\dsp にある NewPackage.msi パッケージをインストールするには、Windows PowerShell プロンプトで次のコマンドを入力します。
 
-```
-(Get-WMIObject -ComputerName PC01 -List | Where-Object -FilterScript {$_.Name -eq "Win32_Product"}).Install(\\AppSrv\dsp\NewPackage.msi)
+```powershell
+(Get-WMIObject -ComputerName PC01 -List | Where-Object -FilterScript {$_.Name -eq 'Win32_Product'}).Install(\\AppSrv\dsp\NewPackage.msi)
 ```
 
 Windows インストーラー テクノロジを使用しないアプリケーションは、展開の自動化に利用できるアプリケーション固有の方法があります。 展開を自動化するための方法があるかどうかを確認するには、アプリケーションのマニュアルを参照するか、アプリケーション ベンダーのサポート システムを参照してください。 場合によっては、アプリケーション ベンダーが特にインストールの自動化に対応するようアプリケーションを設計していなくても、インストーラー ソフトウェアの製造元が自動化のためのテクニックをいくつか持っていることがあります。
 
 ### <a name="removing-applications"></a>アプリケーションの削除
+
 Windows PowerShell を使用した Windows インストーラー パッケージの削除は、パッケージのインストールとほとんど同じ方法で機能します。 名前に基づいてアンインストールするパッケージを選択する例を以下に示します。場合によっては、**IdentifyingNumber** を使用してフィルター処理した方が簡単になることがあります。
 
-```
+```powershell
 (Get-WmiObject -Class Win32_Product -Filter "Name='ILMerge'" -ComputerName . ).Uninstall()
 ```
 
 他のアプリケーションの削除は、ローカルで実行する場合でも、それほど単純ではありません。 **UninstallString** プロパティを抽出することで、これらのアプリケーションに対するコマンド ラインのアンインストール文字列を検索できます。 このメソッドは、Windows インストーラー アプリケーションや Uninstall キーの下に表示される古いプログラムに対して機能します。
 
-```
-Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue("UninstallString") }
+```powershell
+Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue('UninstallString') }
 ```
 
 必要であれば、出力を表示名でフィルター処理できます。
 
-```
-Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue("DisplayName") -like "Win*"} | ForEach-Object -Process { $_.GetValue("UninstallString") }
+```powershell
+Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('DisplayName') -like 'Win*'} | ForEach-Object -Process { $_.GetValue('UninstallString') }
 ```
 
 ただし、これらの文字列は、Windows PowerShell プロンプトから直接使用するには、いくつか変更が必要な場合があります。
 
 ### <a name="upgrading-windows-installer-applications"></a>Windows インストーラー アプリケーションのアップグレード
+
 アプリケーションをアップグレードするには、アプリケーションの名前、およびアプリケーションのアップグレード パッケージのパスを認識している必要があります。 その情報があれば、1 つの Windows PowerShell コマンドを使用してアプリケーションをアップグレードすることができます。
 
-```
+```powershell
 (Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='OldAppName'").Upgrade(\\AppSrv\dsp\OldAppUpgrade.msi)
 ```
-

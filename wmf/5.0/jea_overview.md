@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, PowerShell, セットアップ"
-ms.openlocfilehash: 4e0c1638bf10e57580a463c46595ac9bc142a5b4
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, PowerShell, セットアップ
+ms.openlocfilehash: 847bd978b0a8ad8daf26d37ee8759f88fba67f31
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="just-enough-administration-jea"></a>管理 Just Enough (JEA)
+# <a name="just-enough-administration-jea"></a>Just Enough Administration (JEA)
 Just Enough Administration は、PowerShell のリモート処理によるロールベースの管理を可能にする WMF 5.0 の新機能です。  非管理者が特定のコマンド、スクリプト、および実行可能ファイルを管理者として実行できるようにすることで、既存の制約付きエンドポイント インフラストラクチャを拡張します。  これにより、環境における完全な権限を持つ管理者の数を削減し、セキュリティを向上させることができます。  JEA は PowerShell で管理するすべてのものに有効です。PowerShell で管理できるものは、JEA によって、より安全に管理できます。  Just Enough Administration の詳細については、[エクスペリエンス ガイド](http://aka.ms/JEA)をご覧ください。
 
 従来の制約付きのエンドポイントとは異なり、JEA は強力で構成が容易です。  JEA のユーザー機能は詳細に制御でき、特定のコマンドに指定できるパラメーター セットや値も制限できます。 ユーザーの操作は、管理者操作を実行する権限を持つ 1 回限りの仮想アカウントのコンテキストで実行されます。  ユーザーが起動するコマンドは、セキュリティの監査ログに記録されます。
@@ -19,4 +19,3 @@ JEA は、特別に構成された制約付きエンドポイントをユーザ�
 1. これらのエンドポイントに接続するユーザーは、このリモート セッションの間にのみ存在する特権仮想アカウントとして実行します。  既定では、この仮想アカウントは、ビルトイン Administrator グループ、およびドメイン コントローラーのドメインの Administrator のメンバーです (注: これらのアクセス許可は構成可能です)。 1 人のユーザーとして接続し、特権を持つ別のユーザーとして実行することで、権限のないユーザーに対して、システム上の管理者権限を与えることなく、特定の管理タスクの実行を許可できます。
 2. エンドポイントはロックダウンされています。  これは、PowerShell が言語なしのモードで実行されることを意味します。  特定のコマンド、スクリプト、および実行可能ファイルのみがユーザーに表示されます。
 3. 接続している別のユーザーには、グループのメンバーシップに基づいて、一連の異なる機能が表示されます。  同じエンドポイントで、さまざまなロールにさまざまな機能を提供できます。
-

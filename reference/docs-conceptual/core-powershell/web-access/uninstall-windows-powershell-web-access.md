@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
-keywords: "PowerShell, コマンドレット"
-title: "Windows PowerShell Web Access のアンインストール"
-ms.openlocfilehash: b6e6a2374e6b4b2be8742019c5f1e4d5b5d1abe3
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.date: 08/23/2017
+keywords: PowerShell, コマンドレット
+title: Windows PowerShell Web Access のアンインストール
+ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Windows PowerShell Web Access をアンインストールする
 
@@ -29,7 +29,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 - Windows PowerShell Web Access Web アプリケーション
 - と Windows PowerShell Web Access 機能
- 
+
 の両方をアンインストールできます。
 
 ### <a name="step-1-delete-the-web-application-using-cmdlets"></a>手順 1: コマンドレットを利用して Web アプリケーションを削除する
@@ -96,9 +96,9 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 > ![警告](images/SecurityNote.jpeg)**注**:
 >
-> アンインストールでは証明書は削除されません。 
+> アンインストールでは証明書は削除されません。
 >
-> 自己署名証明書を作成している場合、または使用したテスト証明書を削除する場合は、IIS マネージャーで証明書を削除できます。 
+> 自己署名証明書を作成している場合、または使用したテスト証明書を削除する場合は、IIS マネージャーで証明書を削除できます。
 
 ### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>手順 2: 役割と機能の削除ウィザードを使って Windows PowerShell Web Access をアンインストールする
 

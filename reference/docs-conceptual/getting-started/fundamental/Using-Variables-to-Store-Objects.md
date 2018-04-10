@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "変数を使用したオブジェクトの保存"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: 変数を使用したオブジェクトの保存
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: 9a95d421fa2686608a565987c16fecc41c3c6d20
-ms.sourcegitcommit: f069ff0689006fece768f178c10e3e3eeaee09f0
+ms.openlocfilehash: e52f0a344d0ad13db42b34bed912d584c99b0e30
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-variables-to-store-objects"></a>変数を使用したオブジェクトの保存
 PowerShell ではオブジェクトを操作します。 PowerShell では、変数 (本質的には名前付きのオブジェクト) を作成し、後で使用するために出力を保持できます。 他のシェルで変数を使用することに慣れている場合、PowerShell の変数はテキストではなくオブジェクトであることに注意してください。
@@ -97,4 +97,3 @@ C:\WINDOWS
 ```
 
 さらに、PowerShell 内から環境変数を作成および変更することもできます。 Windows PowerShell からアクセスされる環境変数は、Windows の他の場所の環境変数に適用される通常の規則に準拠しています。
-

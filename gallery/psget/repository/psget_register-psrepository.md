@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: Register-PSRepository
-ms.openlocfilehash: badac5dc1157bbfa79058630c5c2f260d2151bd8
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.openlocfilehash: 7a7d1bf56a87161f6ec735399b15b19f317282b6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="register-psrepository"></a>Register-PSRepository
 
@@ -16,7 +16,7 @@ ms.lasthandoff: 09/29/2017
 
 ## <a name="description"></a>説明
 
-Register-PSRepository コマンドレットは、PowerShell モジュールのオンライン リポジトリを登録します。 リポジトリを登録すると、Find-Module、Install-Module および Publish-Module の各コマンドレットから参照できます。 登録されているリポジトリは、Find-Module と Install-Module での既定のリポジトリになります。 
+Register-PSRepository コマンドレットは、PowerShell モジュールのオンライン リポジトリを登録します。 リポジトリを登録すると、Find-Module、Install-Module および Publish-Module の各コマンドレットから参照できます。 登録されているリポジトリは、Find-Module と Install-Module での既定のリポジトリになります。
 
 登録されているリポジトリはユーザー固有です。 システム全体のコンテキストには登録されません。
 
@@ -33,7 +33,8 @@ Get-Command -Name Register-PSRepository -Module PowerShellGet -Syntax
 ## <a name="example-commands"></a>コマンド例
 
 ### <a name="register-a-powershell-repository"></a>PowerShell リポジトリの登録
-内部リポジトリに対して動作するように PowerShellGet を構成できます。 リポジトリを登録した後、Find-Module および Install-Module を使用して操作できます。
+内部リポジトリに対して動作するように PowerShellGet を構成できます。
+リポジトリを登録した後、Find-Module および Install-Module を使用して操作できます。
 
 ```powershell
 # Register a default repository
@@ -114,4 +115,3 @@ ScriptPublishLocation : https://customgallery.cloudapp.net/api/v2/package/
 ProviderOptions : {}
 
 ```
-

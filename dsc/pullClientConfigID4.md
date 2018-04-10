@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ"
-ms.openlocfilehash: 2449a4ddfea5c0ee7096ad7478e80166eb095bbe
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ
+ms.openlocfilehash: 7074d842b7b99ef3fb6498b6dbc1e561b14caf16
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a>PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ
 
@@ -18,28 +18,28 @@ ms.lasthandoff: 01/17/2018
 次のスクリプトは、"PullServer" という名前のサーバーから構成をプルするように LCM を構成します。
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "WebDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "http://PullServer:8080/PSDSCPullServer/PSDSCPullServer.svc"; AllowUnsecureConnection = “TRUE”}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-このスクリプトでは、**DownloadManagerCustomData** がプル サーバーの URL を渡し、(この例の場合) セキュリティ保護されていない接続を許可します。 
+このスクリプトでは、**DownloadManagerCustomData** がプル サーバーの URL を渡し、(この例の場合) セキュリティ保護されていない接続を許可します。
 
 このスクリプトを実行すると、**SimpleMetaConfigurationForPull** という名前の新しい出力フォルダーが作成され、そこにメタ構成 MOF ファイルが格納されます。
 
-構成を適用するには、**ComputerName** ("localhost" を使用) と **Path** (ターゲット ノードの localhost.meta.mof ファイルの場所へのパス) のパラメーターを指定した **Set-DscLocalConfigurationManager** を使用します。 たとえば、次のように入力します。 
+構成を適用するには、**ComputerName** ("localhost" を使用) と **Path** (ターゲット ノードの localhost.meta.mof ファイルの場所へのパス) のパラメーターを指定した **Set-DscLocalConfigurationManager** を使用します。 たとえば、次のように入力します。
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
@@ -53,20 +53,20 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 **DscFileDownloadManager** は、**ServerUrl** の代わりに **SourcePath** プロパティを取ります。 次のスクリプトは、"CONTOSO-SERVER" という名前のサーバーの "SmbDscShare" という名前の SMB 共有から構成をプルするように LCM を構成します。
 
 ```powershell
-Configuration SimpleMetaConfigurationForPull 
-{ 
-    LocalConfigurationManager 
-    { 
+Configuration SimpleMetaConfigurationForPull
+{
+    LocalConfigurationManager
+    {
         ConfigurationID = "1C707B86-EF8E-4C29-B7C1-34DA2190AE24";
         RefreshMode = "PULL";
         DownloadManagerName = "DscFileDownloadManager";
         RebootNodeIfNeeded = $true;
         RefreshFrequencyMins = 30;
-        ConfigurationModeFrequencyMins = 30; 
+        ConfigurationModeFrequencyMins = 30;
         ConfigurationMode = "ApplyAndAutoCorrect";
         DownloadManagerCustomData = @{ServerUrl = "\\CONTOSO-SERVER\SmbDscShare"}
-    } 
-} 
+    }
+}
 SimpleMetaConfigurationForPull -Output "."
 ```
 
@@ -74,4 +74,3 @@ SimpleMetaConfigurationForPull -Output "."
 
 - [DSC Web プル サーバーのセットアップ](pullServer.md)
 - [DSC SMB プル サーバーのセットアップ](pullServerSMB.md)
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "DSC WindowsFeature リソース"
-ms.openlocfilehash: 3dd4a9c6f11b0c76054ca3e95796cab8e709a7c6
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: DSC WindowsFeature リソース
+ms.openlocfilehash: e22f40d5a30b470bc322bd7fa3a065e6806d5cd5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature リソース
 
@@ -32,23 +32,22 @@ WindowsFeature [string] #ResourceName
 
 ## <a name="properties"></a>プロパティ
 
-|  プロパティ  |  説明   | 
-|---|---| 
-| 名前| 追加または削除されることを保証する役割または機能の名前を示します。 これは、[Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) コマンドレットからの __Name__ プロパティと同じものであり、役割または機能の表示名ではありません。| 
-| Credential| 役割または機能の追加や削除に使用する資格情報を示します。| 
-| Ensure| 役割または機能が追加されるかどうかを示します。 役割または機能が追加されることを保証するには、このプロパティを "Present" に設定します。役割または機能が削除されることを保証するには、このプロパティを "Absent" に設定します。| 
-| IncludeAllSubFeature| __Name__ プロパティで指定した機能の状態を使用して必要なすべてのサブ機能の状態を保証するには、このプロパティを __$true__ に設定します。| 
-| LogPath| リソース プロバイダーの操作を記録するログ ファイルへのパスを示します。| 
-| DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
-| ソース| 必要に応じて、インストールに使用するソース ファイルの場所を示します。| 
+|  プロパティ  |  説明   |
+|---|---|
+| 名前| 追加または削除されることを保証する役割または機能の名前を示します。 これは、[Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) コマンドレットからの __Name__ プロパティと同じものであり、役割または機能の表示名ではありません。|
+| Credential| 役割または機能の追加や削除に使用する資格情報を示します。|
+| Ensure| 役割または機能が追加されるかどうかを示します。 役割または機能が追加されることを保証するには、このプロパティを "Present" に設定します。役割または機能が削除されることを保証するには、このプロパティを "Absent" に設定します。|
+| IncludeAllSubFeature| __Name__ プロパティで指定した機能の状態を使用して必要なすべてのサブ機能の状態を保証するには、このプロパティを __$true__ に設定します。|
+| LogPath| リソース プロバイダーの操作を記録するログ ファイルへのパスを示します。|
+| DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。|
+| ソース| 必要に応じて、インストールに使用するソース ファイルの場所を示します。|
 
 ## <a name="example"></a>例
 ```powershell
 WindowsFeature RoleExample
 {
-    Ensure = "Present" 
+    Ensure = "Present"
     # Alternatively, to ensure the role is uninstalled, set Ensure to "Absent"
-    Name = "Web-Server" # Use the Name property from Get-WindowsFeature  
+    Name = "Web-Server" # Use the Name property from Get-WindowsFeature
 }
 ```
-

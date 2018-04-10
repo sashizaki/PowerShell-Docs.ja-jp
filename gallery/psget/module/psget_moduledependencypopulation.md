@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: psget_moduledependencypopulation
-ms.openlocfilehash: 126cd65ac35a31f4118474bc36dac1836ec0f22e
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: c4c9f203e9c526ff532c2388acb6334515d66934
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="logic-for-preparing-the-module-dependencies-during-publish-operation"></a>発行操作中にモジュールの依存関係を準備するためのロジック
 1.  RequiredModules の一部として一覧表示されているモジュールは、依存関係として見なされます。
@@ -29,4 +29,3 @@ ms.lasthandoff: 06/12/2017
 *モジュールのインストール時に、上記の準備された依存関係一覧が依存関係のインストールに使用されます。*
 
 *発行操作中にモジュールの依存関係がシステムの $env:PSModulePath で使用可能なことを確認してください。*
-

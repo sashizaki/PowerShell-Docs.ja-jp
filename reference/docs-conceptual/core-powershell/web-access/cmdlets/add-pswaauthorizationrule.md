@@ -1,17 +1,17 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
-keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
+keywords: PowerShell, コマンドレット
+ms.date: 12/12/2016
 title: add pswaauthorizationrule
 ms.technology: powershell
 schema: 2.0.0
-ms.openlocfilehash: 71954fc115daee4c05662d11baa2bc6a0a417896
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 07ddd4df6a776f3ef6763242f8682747b9b97061
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
@@ -62,7 +62,7 @@ Active Directory ドメインに参加していないコンピューターの場
 
 この規則がアクセス権を付与している Active Directory Domain Services (AD DS) のコンピューター グループまたはローカル グループの名前を指定します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | true                                 |
@@ -75,7 +75,7 @@ Active Directory ドメインに参加していないコンピューターの場
 
 この規則がアクセス権を付与しているコンピューター名を指定します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | true                                 |
@@ -88,7 +88,7 @@ Active Directory ドメインに参加していないコンピューターの場
 
 この規則がアクセス権を付与している Windows PowerShell セッション構成 (実行空間とも呼ばれます) の名前を指定します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | true                                 |
@@ -101,7 +101,7 @@ Active Directory ドメインに参加していないコンピューターの場
 
 Windows PowerShell Web Access 承認規則の変更に使用するユーザー アカウントの **PSCredential** オブジェクトを指定します。 このパラメーターを追加しない場合、現在ログオンしているユーザー アカウントがコマンドレットにより使用されます。 承認規則をリモートから追加するために必要な **PSCredential** オブジェクトを取得するには、[Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential) コマンドレットを実行します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | false                                |
@@ -115,7 +115,7 @@ Windows PowerShell Web Access 承認規則の変更に使用するユーザー �
 ユーザーに確認を求めずに、直ちにコマンドを実行します。
 なお、単純な、または短いコンピューター名 (ドメイン名ではない名前、完全修飾されていない名前など) を入力した場合にも確認が求められます。 確認はセキュリティ上の理由で必要です。そのため、コンピューターがワークグループに参加している場合にのみ、コンピューターの追加に単純な名前を使用できます。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | false                                |
@@ -128,7 +128,7 @@ Windows PowerShell Web Access 承認規則の変更に使用するユーザー �
 
 この規則のフレンドリ名を指定します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | false                                |
@@ -141,7 +141,7 @@ Windows PowerShell Web Access 承認規則の変更に使用するユーザー �
 
 この規則がアクセス権を付与している AD DS またはローカル グループ内の 1 つまたは複数のユーザー グループ名を指定します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | true                                 |
@@ -155,7 +155,7 @@ Windows PowerShell Web Access 承認規則の変更に使用するユーザー �
 この規則がアクセス権を付与している 1 つまたは複数のコンピューター名を指定します。 ユーザー名には、ゲートウェイ コンピューター上のローカル ユーザー アカウント、または AD DS のユーザーを指定できます。
 形式は、`domain\user` または `computer\user` です。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | true                                 |
@@ -217,9 +217,9 @@ Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user
 この例は、プロパティ名を指定して、すべてのパラメーターがすべてのパイプラインの値を取得する方法を示しています。
 
 ````PowerShell
-$o = New-Object -TypeName PSObject | 
-    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru | 
-    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru | 
+$o = New-Object -TypeName PSObject |
+    Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
+    Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
     Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell

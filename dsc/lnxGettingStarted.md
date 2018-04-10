@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "Linux 用 Desired State Configuration (DSC) の概要"
-ms.openlocfilehash: 4fd8460bc5d2564cab291904b60a1a0c26c3e5a7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: Linux 用 Desired State Configuration (DSC) の概要
+ms.openlocfilehash: b2f35ebe84dfd9f68ca07e7630534be59f8a1aa3
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux 用 Desired State Configuration (DSC) の概要
 
@@ -25,14 +25,14 @@ Linux 用 DSC では、次の Linux オペレーティング システム バー
 
 次の表では、Linux 用 DSC で必要なパッケージの依存関係について説明します。
 
-|  必須パッケージ |  説明 |  最小バージョン | 
+|  必須パッケージ |  説明 |  最小バージョン |
 |---|---|---|
-| glibc| GNU ライブラリ| 2...4 - 31.30| 
-| python| Python| 2.4 - 3.4| 
-| omiserver| Open Management Infrastructure (オープン管理インフラストラクチャ)| 1.0.8.1| 
-| openssl| OpenSSL ライブラリ| 0.9.8 または 1.0| 
-| ctypes| Python CTypes ライブラリ| Python のバージョンに一致する必要があります。| 
-| libcurl| cURL http クライアント ライブラリ| 7.15.1| 
+| glibc| GNU ライブラリ| 2...4 - 31.30|
+| python| Python| 2.4 - 3.4|
+| omiserver| Open Management Infrastructure (オープン管理インフラストラクチャ)| 1.0.8.1|
+| openssl| OpenSSL ライブラリ| 0.9.8 または 1.0|
+| ctypes| Python CTypes ライブラリ| Python のバージョンに一致する必要があります。|
+| libcurl| cURL http クライアント ライブラリ| 7.15.1|
 
 ## <a name="installing-dsc-for-linux"></a>Linux 用 DSC のインストール
 
@@ -52,12 +52,12 @@ CentOS 7 x64 システムに OMI をインストールするには、次のコ�
 
 ### <a name="installing-dsc"></a>DSC のインストール
 
-Linux 用の DSC は、[こちら](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)からダウンロードできます。 
+Linux 用の DSC は、[こちら](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)からダウンロードできます。
 
 DSC をインストールするには、Linux システムに適したパッケージ (.rpm または .deb)、OpenSSL バージョンに適したパッケージ (ssl_098 または ssl_100)、およびアーキテクチャに適したパッケージ (x86/x64) をインストールします。 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server、および Oracle Linux には、RPM パッケージが適しています。 Debian GNU/Linux および Ubuntu Server には、DEB パッケージが適しています。 OpenSSL 0.9.8 がインストールされているコンピューターには ssl_098 パッケージが適し、OpenSSL 1.0 がインストールされているコンピューターには ssl_100 パッケージが適しています。
 
 > **注**: インストールされている OpenSSL のバージョンを調べるには、コマンド openssl version を実行します。
- 
+
 CentOS 7 x64 システムに DSC をインストールするには、次のコマンドを実行します。
 
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
@@ -74,10 +74,10 @@ Linux コンピューターの構成を作成するには、Windows コンピュ
 1. nx モジュールのインポート nx Windows PowerShell モジュールには Linux 用 DSC の組み込みリソースのスキーマが含まれており、このモジュールをローカル コンピューターにインストールし、構成にインポートする必要があります。
 
     - nx モジュールをインストールするには、nx モジュール ディレクトリを `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` または `$PSHOME\Modules` にコピーします。 nx モジュールは、Linux 用 DSC のインストール パッケージ (MSI) に含まれています。 構成に nx モジュールをインポートするには、__Import-DSCResource__ コマンドを使用します。
-    
+
 ```powershell
 Configuration ExampleConfiguration{
-   
+
     Import-DSCResource -Module nx
 
 }
@@ -86,9 +86,9 @@ Configuration ExampleConfiguration{
 
 ```powershell
 Configuration ExampleConfiguration{
-   
+
     Import-DscResource -Module nx
- 
+
     Node  "linuxhost.contoso.com"{
     nxFile ExampleFile {
 
@@ -100,7 +100,7 @@ Configuration ExampleConfiguration{
 
     }
 }
-ExampleConfiguration -OutputPath:"C:\temp" 
+ExampleConfiguration -OutputPath:"C:\temp"
 ```
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>Linux コンピューターへの構成のプッシュ
@@ -117,8 +117,8 @@ $Credential = Get-Credential -UserName:"root" -Message:"Enter Password:"
 #$opt = New-CimSessionOption -UseSsl:$true -SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl:$true 
-$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90 
+$opt = New-CimSessionOption -UseSsl:$true
+$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
 ```
 
 > **注**:
@@ -162,7 +162,7 @@ Linux 用 DSC には、ローカルの Linux コンピューターから構成�
 
 `# sudo ./RemoveModule.py cnx_Resource`
 
-* StartDscLocalConfigurationManager.py 
+* StartDscLocalConfigurationManager.py
 
  構成 MOF ファイルをコンピューターに適用します。 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットに似ています。 適用する構成 MOF へのパスが必要です。
 
@@ -182,4 +182,3 @@ Linux 用 DSC のメッセージのために次のログ ファイルが生成�
 |---|---|---|
 |omiserver.log|/var/opt/omi/log|OMI CIM サーバーの操作に関連するメッセージ。|
 |dsc.log|/var/opt/omi/log|ローカル構成マネージャー (LCM) と DSC リソースの操作に関連するメッセージ。|
-

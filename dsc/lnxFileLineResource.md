@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "Linux 用 DSC の nxFileLine リソース"
-ms.openlocfilehash: 281f08c1dbf42372762a2b1b9838427b910ea791
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: Linux 用 DSC の nxFileLine リソース
+ms.openlocfilehash: 798bfa4150996622c33c77d6a5aa3be4af342f1b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-for-linux-nxfileline-resource"></a>Linux 用 DSC の nxFileLine リソース
 
@@ -28,25 +28,24 @@ nxFileLine <string> #ResourceName
 
 ## <a name="properties"></a>プロパティ
 
-|  プロパティ |  説明 | 
+|  プロパティ |  説明 |
 |---|---|
-| ファイル パス| ターゲット ノード上の行を管理するファイルの完全パス。| 
-| ContainsLine| ファイルに行が存在するようにします。 ファイルに行が存在しない場合、この行がファイルに追加されます。 **ContainsLine** は必須ですが、必要ない場合は空の文字列 (`ContainsLine = ‘’``) に設定することができます。| 
-| DoesNotContainPattern| ファイルに存在することができない行の正規表現パターン。 ファイルに存在する行のうち、この正規表現に一致する行は、ファイルから削除されます。| 
-| DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
+| ファイル パス| ターゲット ノード上の行を管理するファイルの完全パス。|
+| ContainsLine| ファイルに行が存在するようにします。 ファイルに行が存在しない場合、この行がファイルに追加されます。 **ContainsLine** は必須ですが、必要ない場合は空の文字列 (`ContainsLine = ‘’``) に設定することができます。|
+| DoesNotContainPattern| ファイルに存在することができない行の正規表現パターン。 ファイルに存在する行のうち、この正規表現に一致する行は、ファイルから削除されます。|
+| DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの **ID** が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。|
 
 ## <a name="example"></a>例
 
 この例では、**nxFileLine** リソースを使用して、ユーザー monuser が not requiretty に構成されるように `/etc/sudoers` ファイルを構成しています。
 
 ```
-Import-DSCResource -Module nx 
+Import-DSCResource -Module nx
 
 nxFileLine DoNotRequireTTY
 {
    FilePath = “/etc/sudoers”
    ContainsLine = 'Defaults:monuser !requiretty'
    DoesNotContainPattern = "Defaults:monuser[ ]+requiretty"
-} 
+}
 ```
-

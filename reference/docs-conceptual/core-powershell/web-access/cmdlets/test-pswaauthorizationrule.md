@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
-keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
+keywords: PowerShell, コマンドレット
+ms.date: 12/12/2016
 title: test pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: fb2937397616160c70b056e412e42fb8ff4c2f27
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: ed6d56b2f3c4ee4ac410cdaadda312bffe506ee9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="test-pswaauthorizationrule"></a>Test-PswaAuthorizationRule
 
@@ -47,7 +47,7 @@ Test-PswaAuthorizationRule [-UserName] <String> [-ConnectionUri] <Uri> [[-Config
 
 テストするコンピューターの名前を指定します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | true                                 |
@@ -60,7 +60,7 @@ Test-PswaAuthorizationRule [-UserName] <String> [-ConnectionUri] <Uri> [[-Config
 
 テストする Windows PowerShell セッション構成 (エンドポイント、実行空間とも呼ばれます) の名前を指定します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | false                                |
@@ -73,7 +73,7 @@ Test-PswaAuthorizationRule [-UserName] <String> [-ConnectionUri] <Uri> [[-Config
 
 テストする接続 URI を指定します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | true                                 |
@@ -86,7 +86,7 @@ Test-PswaAuthorizationRule [-UserName] <String> [-ConnectionUri] <Uri> [[-Config
 
 Windows PowerShell Web Access 承認規則のテストに使用するユーザー アカウントの **PSCredential** オブジェクトを指定します。 このパラメーターを追加しない場合、現在ログオンしているユーザー アカウントがコマンドレットにより使用されます。 承認規則をリモートからテストするために必要な **PSCredential** オブジェクトを取得するには、[Get-Credential](http://go.microsoft.com/fwlink/?LinkID=293936) コマンドレットを実行します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | false                                |
@@ -99,7 +99,7 @@ Windows PowerShell Web Access 承認規則のテストに使用するユーザ�
 
 テストする規則のサブセットを指定します。 このパラメーターを指定しない場合、すべての承認規則に対してテストが実行されます。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | false                                |
@@ -112,7 +112,7 @@ Windows PowerShell Web Access 承認規則のテストに使用するユーザ�
 
 テストするユーザーの名前を指定します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | true                                 |

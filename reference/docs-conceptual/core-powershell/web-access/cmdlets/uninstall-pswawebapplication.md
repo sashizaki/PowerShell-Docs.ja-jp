@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
-keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
+keywords: PowerShell, コマンドレット
+ms.date: 12/12/2016
 title: uninstall pswawebapplication
 ms.technology: powershell
-ms.openlocfilehash: cc54c94426d754ff2d3bf658e3e92083f02cd6c7
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 139c8358a24e54dec630f8c78737728330ba4aa2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-pswawebapplication"></a>Uninstall-PswaWebApplication
 
@@ -36,7 +36,7 @@ Uninstall-PswaWebApplication [[-WebApplicationName] <String> ] [-DeleteTestCerti
 **Install\_PswaWebApplication** コマンドレット (**UseTestCertificate** パラメーターを指定) で作成されたテスト証明書の削除を指定します。
 **Install-PswaWebApplication** コマンドレットで作成されたテスト証明書と同じ名前のテスト証明書のみが削除されます。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | false                                |
@@ -49,7 +49,7 @@ Uninstall-PswaWebApplication [[-WebApplicationName] <String> ] [-DeleteTestCerti
 
 アンインストールする Web アプリケーションの名前を指定します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | false                                |
@@ -62,7 +62,7 @@ Uninstall-PswaWebApplication [[-WebApplicationName] <String> ] [-DeleteTestCerti
 
 Web アプリケーションがインストールされている Web サイトの名前を指定します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | false                                |
@@ -75,7 +75,7 @@ Web アプリケーションがインストールされている Web サイト�
 
 コマンドレットを実行する前に、ユーザーに確認を求めます。
 
-|||  
+|||
 |-|-|
 | 必須?                            | false                                |
 | 位置は?                            | 名前付き                                |
@@ -88,7 +88,7 @@ Web アプリケーションがインストールされている Web サイト�
 コマンドレットを実行するとどのような結果になるかを表示します。
 コマンドレットは実行されません。
 
-|||  
+|||
 |-|-|
 | 必須?                            | false                                |
 | 位置は?                            | 名前付き                                |

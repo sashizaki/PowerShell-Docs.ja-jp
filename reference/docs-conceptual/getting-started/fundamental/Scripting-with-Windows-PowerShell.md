@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "Windows PowerShell を使用したスクリプト"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: Windows PowerShell を使用したスクリプト
 ms.assetid: c425d27a-bb41-4947-8d73-ba5480bc8ee0
-ms.openlocfilehash: 693d1bb9329dbb280453fc16738eda63c466e156
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 9bb420a3d725d3fa925b79452bbbcc542bf9f4db
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="scripting-with-windows-powershell"></a>Windows PowerShell を使用したスクリプト
 
@@ -23,4 +23,3 @@ Windows PowerShell には、次に示す機能があります。
 - ユーザーがファイル システムの移動に使用するのと同じ手法を使用してレジストリおよびその他のデータ ストアを移動できるようにする、オペレーティング システムの簡略化されたコマンドベースのナビゲーションです。
 - 強力なオブジェクト操作機能です。 オブジェクトを直接操作したり、その他のツールやデータベースに送信したりすることができます。
 - 拡張可能なインターフェイスです。 独立系ソフトウェア ベンダーや企業の開発者は、自社のソフトウェアを管理するカスタム ツールとユーティリティをビルドできます。
-

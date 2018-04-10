@@ -1,23 +1,25 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
-title: "アイテムの所有者を管理する"
-ms.openlocfilehash: fcd538148f9ff1ac96324b567d54d643f1756c93
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
+title: アイテムの所有者を管理する
+ms.openlocfilehash: e550b74ebde00cfbb154dbf4fb1fa4ae0582e029
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-item-owners"></a>アイテムの所有者を管理する
 
 PowerShell ギャラリーのアイテムの所有権は、そのアイテムをギャラリーに公開した人により定義されます。
 このメタデータは最初のアイテム公開の範囲を超えて管理しなければならないことがあります。つまり、アイテム自体は変更不可でも、所有者メタデータは変更可能にする必要があります。
 
-アイテムの所有者はすべて同等です。 つまり、すべてのアイテムの所有者はアイテムの新しいバージョンを公開できます。 また、すべてのアイテムの所有者は他のアイテムの所有者を削除できます。 ある所有者に他の所有者より大きな権限が与えられることはありません。  
+アイテムの所有者はすべて同等です。
+つまり、すべてのアイテムの所有者はアイテムの新しいバージョンを公開できます。 また、すべてのアイテムの所有者は他のアイテムの所有者を削除できます。
+ある所有者に他の所有者より大きな権限が与えられることはありません。
 
-## <a name="setting-an-items-initial-owner"></a>アイテムの最初の所有者を設定する 
+## <a name="setting-an-items-initial-owner"></a>アイテムの最初の所有者を設定する
 
 PowerShell ギャラリーに新しいアイテムを公開すると、そのアイテムを公開したユーザーにより最初の所有者が定義されます。 Publish-Module コマンドレットで使用された API キーの所有者によって決定されます。
 
@@ -78,4 +80,3 @@ Microsoft がアイテムの所有権を確認するためのプロセスを進�
 アイテムの所有者であることが確認された場合、アイテムの 「Manage Owners」 (所有者の管理) リンクを使用し、所有者になるための招待を送信します。
 この措置は所有者であることが確認された場合にのみ行われ、そのプロセスは状況によって変わります。
 多くの場合、Microsoft はアイテムのプロジェクト URL を利用し、プロジェクトの所有者に連絡を取る方法を模索します。Twitter、メール、その他の方法を利用することもあります。
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "JEA, PowerShell, セキュリティ"
-title: "JEA セキュリティの考慮事項"
-ms.openlocfilehash: 69bbe50fb1a7580c32d657a0f084cc80c28825c7
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: JEA, PowerShell, セキュリティ
+title: JEA セキュリティの考慮事項
+ms.openlocfilehash: 1b83a73c047b056a4cc094d7e4b0bbf31f75f53a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="jea-security-considerations"></a>JEA セキュリティの考慮事項
 
@@ -153,4 +153,3 @@ JEA には、管理者特権が既に与えられているユーザーに対す�
 
 一般的な慣行としては、日常的な保守管理に JEA を利用し、"just in time " (必要なときに必要な許可だけを与える) の特権アクセス管理ソリューションを用意して緊急の場合にのみ一時的にローカル管理者になることをユーザーに許可します。
 ユーザーはシステムの常駐管理者ではなくなるが、必要なときにのみ、管理者特権が与えられます。ワークフローを完了すると、アクセス許可の使用が記録されます。
-

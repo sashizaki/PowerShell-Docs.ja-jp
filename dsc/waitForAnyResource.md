@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC WaitForAny リソース
-ms.openlocfilehash: 43922dbcccb6d06d7d9edfcf16ce4eb107e9d4e6
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 3d73c16397d9a18805184e6a5bb8561483144898
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-waitforany-resource"></a>DSC WaitForAny リソース
 
@@ -26,7 +26,7 @@ WaitForAny [string] #ResourceName
     ResourceName = [string]
     NodeName = [string]
     [ RetryIntervalSec = [Uint64] ]
-    [ RetryCount = [Uint32] ] 
+    [ RetryCount = [Uint32] ]
     [ ThrottleLimit = [Uint32]]
     [ DependsOn = [string[]] ]
 }
@@ -34,17 +34,16 @@ WaitForAny [string] #ResourceName
 
 ## <a name="properties"></a>プロパティ
 
-|  プロパティ  |  説明   | 
-|---|---| 
-| ResourceName| 依存するリソースの名前。 このリソースが別の構成に属している場合は、"[__リソースの種類__]__リソース名__::[__構成名__]::[__構成名__]" という形式で名前を指定してください。| 
-| NodeName| 依存するリソースのターゲット ノード。| 
-| RetryIntervalSec| 再試行するまでの秒数。 最小値は 1 です。| 
-| RetryCount| 再試行の回数の最大数。| 
-| ThrottleLimit| 同時に接続するコンピューターの数。 既定では、new-cimsession の既定値です。| 
+|  プロパティ  |  説明   |
+|---|---|
+| ResourceName| 依存するリソースの名前。 このリソースが別の構成に属している場合は、"[__リソースの種類__]__リソース名__::[__構成名__]::[__構成名__]" という形式で名前を指定してください。|
+| NodeName| 依存するリソースのターゲット ノード。|
+| RetryIntervalSec| 再試行するまでの秒数。 最小値は 1 です。|
+| RetryCount| 再試行の回数の最大数。|
+| ThrottleLimit| 同時に接続するコンピューターの数。 既定では、new-cimsession の既定値です。|
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。|
 
 
 ## <a name="example"></a>例
 
 このリソースを使用する方法の例は、「[ノードの相互依存関係の指定](crossNodeDependencies.md)」を参照してください。
-

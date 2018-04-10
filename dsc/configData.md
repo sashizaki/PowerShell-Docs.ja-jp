@@ -1,106 +1,112 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "構成データの使用"
-ms.openlocfilehash: b56a3f970b0b5121585dc4ed2f32da3243b980bd
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: 構成データの使用
+ms.openlocfilehash: 19544494a547a06d87701b38585844cb11d03e33
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>DSC で構成データを使用する
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
-組み込みの DSC **ConfigurationData** パラメーターを使用して、構成内で使用可能なデータを定義することができます。 これにより、複数のノードや異なる環境で使用可能な 1 つの構成を作成できます。 たとえば、アプリケーションを開発している場合は、開発環境と運用環境の両方に 1 つの構成を使用し、構成データを使用して各環境のデータを指定することができます。
+組み込みの DSC **ConfigurationData** パラメーターを使用して、構成内で使用可能なデータを定義することができます。
+これにより、複数のノードや異なる環境で使用可能な 1 つの構成を作成できます。
+たとえば、アプリケーションを開発している場合は、開発環境と運用環境の両方に 1 つの構成を使用し、構成データを使用して各環境のデータを指定することができます。
 
-このトピックでは、**ConfigurationData** ハッシュテーブルの構造について説明します。 構成データの使用方法の例については、「[構成データと環境データの分離](separatingEnvData.md)」をご覧ください。
+このトピックでは、**ConfigurationData** ハッシュテーブルの構造について説明します。
+構成データの使用方法の例については、「[構成データと環境データの分離](separatingEnvData.md)」をご覧ください。
 
 ## <a name="the-configurationdata-common-parameter"></a>共通の ConfigurationData パラメーター
 
-DSC 構成では、**ConfigurationData** という共通パラメーターを使用します。このパラメーターは、構成をコンパイルするときに指定します。 構成をコンパイルする方法の詳細については、「[DSC 構成](configurations.md)」を参照してください。
+DSC 構成では、**ConfigurationData** という共通パラメーターを使用します。このパラメーターは、構成をコンパイルするときに指定します。
+構成をコンパイルする方法の詳細については、「[DSC 構成](configurations.md)」を参照してください。
 
-**ConfigurationData** パラメーターはハッシュテーブルであり、**AllNodes** という名前のキーが少なくとも 1 つ必要です。 その他のキーを 1 つ以上含めることもできます。
+**ConfigurationData** パラメーターはハッシュテーブルであり、**AllNodes** という名前のキーが少なくとも 1 つ必要です。
+その他のキーを 1 つ以上含めることもできます。
 
 >**注:**このトピックの例では、(**AllNodes** というキーではなく) `NonNodeData` という追加のキーを 1 つしか使用していませんが、追加するキーの数に制限はなく、名前も自由に付けることができます。
 
 ```powershell
-$MyData = 
+$MyData =
 @{
     AllNodes = @()
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
 **AllNodes** キーの値は配列です。 この配列の各要素もハッシュ テーブルであり、**NodeName** という名前のキーが少なくとも 1 つ必要です。
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName = "VM-1"
         },
 
- 
+
         @{
             NodeName = "VM-2"
         },
 
- 
+
         @{
             NodeName = "VM-3"
         }
     );
 
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
 各ハッシュテーブルには他のキーを追加することもできます。
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName = "VM-1"
             Role     = "WebServer"
         },
 
- 
+
         @{
             NodeName = "VM-2"
             Role     = "SQLServer"
         },
 
- 
+
         @{
             NodeName = "VM-3"
             Role     = "WebServer"
         }
     );
 
-    NonNodeData = ""   
+    NonNodeData = ""
 }
 ```
 
-すべてのノードにプロパティを適用するには、**AllNodes** 配列に **NodeName** が `*` のメンバーを作成します。 たとえば、すべてのノードに `LogPath` プロパティを適用するには、次のように入力します。
+すべてのノードにプロパティを適用するには、**AllNodes** 配列に **NodeName** が `*` のメンバーを作成します。
+たとえば、すべてのノードに `LogPath` プロパティを適用するには、次のように入力します。
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName     = "*"
             LogPath      = "C:\Logs"
         },
 
- 
+
         @{
             NodeName     = "VM-1"
             Role         = "WebServer"
@@ -108,13 +114,13 @@ $MyData =
             SiteName     = "Website1"
         },
 
- 
+
         @{
             NodeName     = "VM-2"
             Role         = "SQLServer"
         },
 
- 
+
         @{
             NodeName     = "VM-3"
             Role         = "WebServer"
@@ -129,7 +135,8 @@ $MyData =
 
 ## <a name="defining-the-configurationdata-hashtable"></a>ConfigurationData ハッシュテーブルの定義
 
-**ConfigurationData** は、(これまでの例のように) 構成として同じスクリプト ファイル内に変数として定義するか、または別個の `.psd1` ファイル内に定義することができます。 **ConfigurationData** を `.psd1` ファイル内で定義するには、構成データを表すハッシュテーブルのみが含まれるファイルを作成します。
+**ConfigurationData** は、(これまでの例のように) 構成として同じスクリプト ファイル内に変数として定義するか、または別個の `.psd1` ファイル内に定義することができます。
+**ConfigurationData** を `.psd1` ファイル内で定義するには、構成データを表すハッシュテーブルのみが含まれるファイルを作成します。
 
 たとえば、次の内容を含む `MyData.psd1` という名前のファイルを作成します。
 
@@ -186,11 +193,11 @@ DSC には、構成スクリプトで使用できる 3 つの特殊な変数 **$
 ## <a name="using-non-node-data"></a>ノード外のデータを使用する
 
 上記の例でわかるように、**ConfigurationData** ハッシュテーブルには、必須の **AllNodes** キーだけでなく、複数のキーを含めることができます。
-このトピックの例では、追加ノードを 1 つだけ使用し、`NonNodeData` という名前を付けました。 実際は、定義できる追加のキーの数に制限はなく、名前も自由に設定できます。
+このトピックの例では、追加ノードを 1 つだけ使用し、`NonNodeData` という名前を付けました。
+実際は、定義できる追加のキーの数に制限はなく、名前も自由に設定できます。
 
 ノード以外のデータを使用する例は、「[構成データと環境データの分離](separatingEnvData.md)」をご覧ください。
 
 ## <a name="see-also"></a>参照
 - [構成データでの資格情報オプション](configDataCredentials.md)
 - [DSC 構成](configurations.md)
-

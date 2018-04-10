@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: PackageManagement_cmdlets
-ms.openlocfilehash: 92dcebfc79bdb123e3ab3c56fc1af1f793bcb1e3
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 59dd025e01bf7a86aa70272e845ed7fbdc0974e9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="packagemanagement-cmdlets"></a>PackageManagement コマンドレット
 これは、ソフトウェアの検出、インストール、およびインベントリ (SDII) をサポートする PackageManagement の中核となります。 次の操作のコマンドレットを試してください。
@@ -53,7 +53,7 @@ Find-Package -Name jquery –Provider NuGet –RequiredVersion 2.1.4 -Source nug
 ```
 
 ## <a name="find-packageprovider-cmdlethttpstechnetmicrosoftcomlibrarymt676544aspx"></a>[Find-PackageProvider コマンドレット](https://technet.microsoft.com/library/mt676544.aspx)
-Find-PackageProvider コマンドレットは、PowerShellGet に登録されているパッケージ ソースで利用できる一致する PackageManagement プロバイダーを検索します。 これらは、Install-PackageProvider コマンドレットを使用したインストールに使用可能なパッケージ プロバイダーです。 既定では、これには 'PackageManagement' および 'Provider' タグの付いた PowerShell ギャラリーで利用できるモジュールが含まれます。 
+Find-PackageProvider コマンドレットは、PowerShellGet に登録されているパッケージ ソースで利用できる一致する PackageManagement プロバイダーを検索します。 これらは、Install-PackageProvider コマンドレットを使用したインストールに使用可能なパッケージ プロバイダーです。 既定では、これには 'PackageManagement' および 'Provider' タグの付いた PowerShell ギャラリーで利用できるモジュールが含まれます。
 
 Find-PackageProvider は、PackageManagement Azure BLOB ストアで利用できる一致する PackageManagement プロバイダーも検索します。このストアでは、これらを検索しインストールするために PackageManagement boostrapper プロバイダーを使用します。
 ```powershell
@@ -70,7 +70,7 @@ Find-PackageProvider -Name "Gistprovider" -Source "PSGallery"
 
 Find-PackageProvider -Source  C:\sharedfolder\Providers\
 Install-PackageProvider -Source C:\sharedfolder\Providers\ -Name nuget -force
-    
+
 ```
 
 ## <a name="get-package-cmdlethttpstechnetmicrosoftcomlibrarydn890704aspx"></a>[Get-Package コマンドレット](https://technet.microsoft.com/library/dn890704.aspx)
@@ -125,7 +125,7 @@ Get-PackageProvider –ListAvailable
 Import-PackageProvider –Name "Nuget" -RequiredVersion "2.8.5.201" -Verbose
 Import-PackageProvider –Name MyProvider –RequiredVersion xxxx -force
 
-As of the Windows Server Technical Preview(TP5), Install-PackageProvider does install as well as import the provider. Hence after you run find-packageprovider and install-packageprovider, the provider should be ready to use 
+As of the Windows Server Technical Preview(TP5), Install-PackageProvider does install as well as import the provider. Hence after you run find-packageprovider and install-packageprovider, the provider should be ready to use
 ```
 
 ##<a name="-install-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890711aspx"></a>[Install-Package コマンドレット](https://technet.microsoft.com/en-us/library/dn890711.aspx)
@@ -179,10 +179,10 @@ Find-Package -source c:\test
 ```
 
 ## <a name="set-packagesource-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890710aspx"></a>[Set-PackageSource コマンドレット](https://technet.microsoft.com/en-us/library/dn890710.aspx)
-このコマンドレットは、既存のパッケージ ソースに関する情報を変更します。 
+このコマンドレットは、既存のパッケージ ソースに関する情報を変更します。
 ```powershell
 #Set-PackageSource changes the values for a source that has already been registered by running the Register-PackageSource cmdlet. By #running Set-PackageSource, you can change the source name and location.
-Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2 
+Set-PackageSource  -Name nuget.org -Location  http://www.nuget.org/api/v2 -NewName nuget2 -NewLocation https://www.nuget.org/api/v2
 ```
 
 ## <a name="uninstall-package-cmdlethttpstechnetmicrosoftcomen-uslibrarydn890702aspx"></a>[Uninstall-Package コマンドレット](https://technet.microsoft.com/en-us/library/dn890702.aspx)
@@ -200,4 +200,3 @@ Get-Package -Name jquery –Provider NuGet -Destination c:\test | Uninstall-Pack
 # Unregister a package source for the NuGet provider. You can use command Unregister-PackageSource, to disconnect with a repository, and Get-PackageSource, to discover what the repositories are associated with that provider.
 Unregister-PackageSource  -Name "NugetSource"
 ```
-

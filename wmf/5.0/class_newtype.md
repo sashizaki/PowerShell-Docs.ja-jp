@@ -1,21 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, PowerShell, セットアップ"
-ms.openlocfilehash: c7318552969c44f3b79f82efd71e6a72bfabef6b
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, PowerShell, セットアップ
+ms.openlocfilehash: 85e9206ffef76fb4bd7714d847888e6e5bbcc4ec
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 の新しい言語機能 
+# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 の新しい言語機能
 
 PowerShell 5.0 では、Windows PowerShell に次の新しい言語要素が導入されています。
 
 ## <a name="class-keyword"></a>class キーワード
 
-**class** キーワードでは新しいクラスを定義します。 これは、真の .NET Framework 型です。 クラス メンバーはパブリックですが、モジュール スコープ内でのみパブリックです。
+**class** キーワードでは新しいクラスを定義します。 これは、真の .NET Framework 型です。
+クラス メンバーはパブリックですが、モジュール スコープ内でのみパブリックです。
 型名を文字列として参照することはできません (たとえば、`New-Object` は機能しません)。このリリースでは、クラスが定義されているスクリプトまたはモジュール ファイルの外で type リテラル (`[MyClass]` など) を使用することはできません。
 
 ```powershell
@@ -64,11 +65,11 @@ PowerShell では、**DscResource** 属性を含むクラスを探して、指�
 
 ## <a name="implementingassembly"></a>ImplementingAssembly
 
-新しいフィールド **ImplementingAssembly** が ModuleInfo に追加されました。 これは、スクリプトでクラスが定義されている場合はスクリプト モジュールに作成された動的アセンブリに設定されるか、またはバイナリ モジュールの読み込み済みアセンブリに設定されます。 ModuleType = Manifest の場合は設定されません。 
+新しいフィールド **ImplementingAssembly** が ModuleInfo に追加されました。 これは、スクリプトでクラスが定義されている場合はスクリプト モジュールに作成された動的アセンブリに設定されるか、またはバイナリ モジュールの読み込み済みアセンブリに設定されます。 ModuleType = Manifest の場合は設定されません。
 
 **ImplementingAssembly** フィールドのリフレクションでは、モジュール内のリソースが検出されます。 これは、PowerShell または他の管理言語で記述されたリソースを検出できることを意味します。
 
-初期化子を含むフィールド:      
+初期化子を含むフィールド:
 
 ```powershell
 [int] $i = 5
@@ -86,11 +87,11 @@ static [int] $count = 0
 $s = "hello"
 ```
 
-すべてのメンバーはパブリックです。 
+すべてのメンバーはパブリックです。
 
 ## <a name="constructors-and-instantiation"></a>コンストラクターとインスタンス化
 
-Windows PowerShell クラスはコンストラクターを持つことができます。コンストラクターはクラスと同じ名前を持ちます。 コンストラクターはオーバーロードできます。 静的コンストラクターがサポートされています。 初期化式を持つプロパティは、コンストラクター内のコードを実行する前に初期化されます。 静的プロパティは、静的コンストラクターの本体の前に初期化され、インスタンスのプロパティは、非静的コンストラクターの本体の前に初期化されます。 現時点では、(C\# 構文 ": this()" のような) 別のコンストラクターからコンストラクターを呼び出す構文はありません。 対応策は、一般的な Init メソッドを定義することです。 
+Windows PowerShell クラスはコンストラクターを持つことができます。コンストラクターはクラスと同じ名前を持ちます。 コンストラクターはオーバーロードできます。 静的コンストラクターがサポートされています。 初期化式を持つプロパティは、コンストラクター内のコードを実行する前に初期化されます。 静的プロパティは、静的コンストラクターの本体の前に初期化され、インスタンスのプロパティは、非静的コンストラクターの本体の前に初期化されます。 現時点では、(C\# 構文 ": this()" のような) 別のコンストラクターからコンストラクターを呼び出す構文はありません。 対応策は、一般的な Init メソッドを定義することです。
 
 このリリースでクラスをインスタンス化する方法を次に示します。
 
@@ -151,12 +152,12 @@ class MyClass
 
 ```powershell
 $b = [MyClass]::new()
-$b.DoSomething(42) 
+$b.DoSomething(42)
 ```
 
 オーバーロードされたメソッド、つまり、既存のメソッドと同じ名前を持つが、指定した値によって区別されるメソッドもサポートされています。
 
-## <a name="properties"></a>プロパティ 
+## <a name="properties"></a>プロパティ
 
 すべてのプロパティはパブリックです。 プロパティには、改行文字かセミコロンが必要です。 オブジェクトの種類が指定されていない場合、プロパティの型はオブジェクトです。
 
@@ -210,7 +211,8 @@ $v -eq $d # true
 
 ## <a name="end-to-end-example"></a>エンド ツー エンドの例
 
-次の例では、HTML 動的スタイル シート言語 (DSL) を実装するいくつかの新しいカスタム クラスを作成します。 次に、モジュールのスコープの外部では型を使用できないため、この例では見出しスタイルやテーブルなど、要素クラスの一部として特定の要素型を作成するヘルパー関数を追加します。
+次の例では、HTML 動的スタイル シート言語 (DSL) を実装するいくつかの新しいカスタム クラスを作成します。
+次に、モジュールのスコープの外部では型を使用できないため、この例では見出しスタイルやテーブルなど、要素クラスの一部として特定の要素型を作成するヘルパー関数を追加します。
 
 ```powershell
 # Classes that define the structure of the document
@@ -220,7 +222,7 @@ class Html
     [string] $docType
     [HtmlHead] $Head
     [Element[]] $Body
-    
+
     [string] Render()
     {
         $text = "<html>`n<head>`n"
@@ -334,4 +336,3 @@ function Style
 #
 function Html ([HTML] $doc) { return $doc }
 ```
-

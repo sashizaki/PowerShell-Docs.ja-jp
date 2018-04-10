@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: psgallery_deploy_to_azure_automation
-ms.openlocfilehash: 223acbcc2f6cd4f15e1ee55d3f2f68df851cd902
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 8da4eabead6a419dc0c01c74335c06bf8be25d0c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 <a name="deploy-to-azure-automation"></a>Azure Automation にデプロイする
 ===========================
@@ -27,4 +27,3 @@ ms.lasthandoff: 03/15/2018
 [Azure Automation にデプロイする] ボタンは、AzureAutomationNotSupported タグを項目のメタデータに追加すると無効にできます。
 
 Azure Automation の詳細については、Azure Automation の Web サイト [Azure Automation の Web サイト](http://azure.microsoft.com/services/automation/) をご覧ください。
-

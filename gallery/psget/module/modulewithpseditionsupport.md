@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: modulewithpseditionsupport
-ms.openlocfilehash: 8a762ddf307f47ecec8d2a63098e75cde97c391f
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: cc4ab8d41d4c6aace72cbeeabcf510fab6d3a999
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>互換性のある PowerShell エディションが含まれるモジュール
 バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
@@ -68,7 +68,7 @@ Core
 
 ```
 
-## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>モジュールの作成者が、PowerShell エディションのどちらかまたは両方を対象とする 1 つのモジュールを発行することができます。 
+## <a name="module-authors-can-publish-a-single-module-targeting-to-either-or-both-powershell-editions-desktop-and-core"></a>モジュールの作成者が、PowerShell エディションのどちらかまたは両方を対象とする 1 つのモジュールを発行することができます。
 
 1 つのモジュールが、デスクトップとコアの両方のエディションで動作します。そのモジュール内で、作成者は、$PSEdition 変数を使用して、RootModule またはモジュール マニフェストで必要なロジックを追加する必要があります。
 モジュールでは、CoreCLR と FullCLR の両方を対象とするコンパイル済み DLL の 2 つのセットを使用できます。
@@ -77,18 +77,18 @@ Core
 ### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>オプション 1: PowerShell の複数のバージョンおよび複数のエディションを対象としてパッケージ化する
 
 #### <a name="module-folder-contents"></a>モジュール フォルダーの内容
-- Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
+- Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - PSScriptAnalyzer.psd1
 - PSScriptAnalyzer.psm1
 - ScriptAnalyzer.format.ps1xml
 - ScriptAnalyzer.types.ps1xml
-- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
+- coreclr\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - en-US\about_PSScriptAnalyzer.help.txt
 - en-US\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll-Help.xml
-- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll 
-- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll 
+- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.BuiltinRules.dll
+- PSv3\Microsoft.Windows.PowerShell.ScriptAnalyzer.dll
 - Settings\CmdletDesign.psd1
 - Settings\DSC.psd1
 - Settings\ScriptFunctions.psd1
@@ -99,7 +99,7 @@ Core
 
 ```powershell
 @{
- 
+
 # Author of this module
 Author = 'Microsoft Corporation'
 
@@ -137,7 +137,7 @@ else
 {
     if ($PSVersionTable.PSVersion -lt [Version]'5.0') {
         $binaryModuleRoot = Join-Path -Path $PSModuleRoot -ChildPath 'PSv3'
-    }    
+    }
 }
 
 $binaryModulePath = Join-Path -Path $binaryModuleRoot -ChildPath 'Microsoft.Windows.PowerShell.ScriptAnalyzer.dll'
@@ -146,14 +146,14 @@ $binaryModule = Import-Module -Name $binaryModulePath -PassThru
 # When the module is unloaded, remove the nested binary module that was loaded with it
 $PSModule.OnRemove = {
     Remove-Module -ModuleInfo $binaryModule
-} 
+}
 
 ```
 
 ### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>オプション 2: PSD1 ファイルで $PSEdition 変数を使用して適切な DLL と入れ子になった/必要なモジュールを読み込む
 
 PS 5.1 以降では、$PSEdition グローバル変数をモジュール マニフェスト ファイル内で使用できます。
-この変数を使用すると、モジュールの作成者が、モジュール マニフェスト ファイル内で条件値を指定できます。 $PSEdition 変数は、制限された言語モードまたはデータ セクション内で参照できます。 
+この変数を使用すると、モジュールの作成者が、モジュール マニフェスト ファイル内で条件値を指定できます。 $PSEdition 変数は、制限された言語モードまたはデータ セクション内で参照できます。
 
 *注*: CompatiblePSEditions キーまたは $PSEdition 変数を使用してモジュール マニフェストを指定した後は、古いバージョンの PowerShell でもインポートできます。
 
@@ -161,9 +161,9 @@ PS 5.1 以降では、$PSEdition グローバル変数をモジュール マニ�
 #### <a name="sample-module-manifest-file-with-compatiblepseditions-key"></a>CompatiblePSEditions キーを使用するサンプルのモジュール マニフェスト ファイル
 
 ```powershell
-@{ 
+@{
 # - - -
- 
+
 # Script module or binary module file associated with this manifest.
 RootModule = if($PSEdition -eq 'Core')
 {
@@ -173,10 +173,10 @@ else # Desktop
 {
 'clr\MyFullClrRM.dll'
 }
- 
+
 # Supported PSEditions
 CompatiblePSEditions = 'Desktop', 'Core'
- 
+
 # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
 NestedModules = if($PSEdition -eq 'Core')
 {
@@ -188,7 +188,7 @@ else # Desktop
 'clr\MyFullClrNM1.dll',
 'clr\MyFullClrNM2.dll'
 }
- 
+
 # -- - -
 }
 ```
@@ -198,30 +198,30 @@ else # Desktop
 ```powershell
 
 PS C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions> dir -Recurse
- 
+
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
- 
-Mode                LastWriteTime         Length Name                                                                                
-----                -------------         ------ ----                                                                                
-d-----         7/5/2016   1:37 PM                clr                                                                                 
-d-----         7/5/2016   1:36 PM                coreclr                                                                             
--a----         7/5/2016   1:34 PM           4906 ModuleWithEditions.psd1                                                             
- 
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+d-----         7/5/2016   1:37 PM                clr
+d-----         7/5/2016   1:36 PM                coreclr
+-a----         7/5/2016   1:34 PM           4906 ModuleWithEditions.psd1
+
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\clr
- 
-Mode                LastWriteTime         Length Name                                                                                
-----                -------------         ------ ----                                                                                
--a----         7/5/2016   1:35 PM              0 MyFullClrNM1.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyFullClrNM2.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyFullClrRM.dl                                                                      
- 
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         7/5/2016   1:35 PM              0 MyFullClrNM1.dll
+-a----         7/5/2016   1:35 PM              0 MyFullClrNM2.dll
+-a----         7/5/2016   1:35 PM              0 MyFullClrRM.dl
+
     Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\coreclr
- 
-Mode                LastWriteTime         Length Name                                                                                
-----                -------------         ------ ----                                                                                
--a----         7/5/2016   1:35 PM              0 MyCoreClrNM1.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyCoreClrNM2.dll                                                                    
--a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl                                                                      
+
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----         7/5/2016   1:35 PM              0 MyCoreClrNM1.dll
+-a----         7/5/2016   1:35 PM              0 MyCoreClrNM2.dll
+-a----         7/5/2016   1:35 PM              0 MyCoreClrRM.dl
 ```
 
 ## <a name="powershell-gallery-users-can-find-the-list-of-modules-supported-on-a-specific-powershell-edition-using-tags-pseditiondesktop-and-pseditioncore"></a>PowerShell ギャラリー ユーザーは、PSEdition_Desktop および PSEdition_Core タグを使用して特定の PowerShell エディションでサポートされているモジュールの一覧を表示できます。
@@ -242,4 +242,3 @@ Find-Module -Tag PSEditon_Core
 ### <a name="scripts-with-pseditionsscriptscriptwithpseditionsupportmd"></a>[PSEditions のスクリプト](../script/scriptwithpseditionsupport.md)
 ### <a name="pseditions-support-on-powershellgallerypsgallerypsgallerypseditionsmd"></a>[PowerShellGallery での PSEditions のサポート](../../psgallery/psgallery_pseditions.md)
 ### <a name="update-module-manifest-psgetupdate-modulemanifestmd"></a>[モジュール マニフェストを更新する] (./psget_update-modulemanifest.md)
-

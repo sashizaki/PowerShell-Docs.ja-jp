@@ -1,22 +1,22 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, PowerShell, セットアップ"
-ms.openlocfilehash: c3645a6ba83081bd5ac31a13af0f67f6538db22a
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, PowerShell, セットアップ
+ms.openlocfilehash: 9065315ef39129e6a28234d972fe350fd5e7e11d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>JEA エンドポイントの作成および接続
 JEA エンドポイントを作成するには、特別に構成された PowerShell セッション構成ファイルを作成し、登録する必要があります。このファイルは、**New-PSSessionConfigurationFile** コマンドレットで登録できます。
 
 ```powershell
-New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc" 
+New-PSSessionConfigurationFile -SessionType RestrictedRemoteServer -TranscriptDirectory "C:\ProgramData\JEATranscripts" -RunAsVirtualAccount -RoleDefinitions @{ 'CONTOSO\NonAdmin_Operators' = @{ RoleCapabilities = 'Maintenance' }} -Path "$env:ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
-これにより、次のようなセッション構成ファイルが作成されます。 
+これにより、次のようなセッション構成ファイルが作成されます。
 ```powershell
 @{
 
@@ -52,7 +52,7 @@ RoleDefinitions = @{
     'CONTOSO\NonAdmin_Operators' = @{
         'RoleCapabilities' = 'Maintenance' } }
 
-} 
+}
 ```
 JEA エンドポイントを作成する場合は、コマンドの次のパラメーター (およびファイル内の対応するキー) を設定する必要があります。
 1.  SessionType を RestrictedRemoteServer に
@@ -64,7 +64,7 @@ JEA エンドポイントを作成する場合は、コマンドの次のパラ�
 RoleDefinitions フィールドでは、どのグループがどのロール機能にアクセスできるかを定義します。  ロール機能は、接続ユーザーに公開される一連の機能を定義するファイルです。  ロール機能は、**New-PSRoleCapabilityFile** コマンドを使用して作成できます。
 
 ```powershell
-New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc" 
+New-PSRoleCapabilityFile -Path "$env:ProgramFiles\WindowsPowerShell\Modules\DemoModule\RoleCapabilities\Maintenance.psrc"
 ```
 
 これにより、次のようなテンプレート ロール機能が生成されます。
@@ -128,7 +128,7 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # Assemblies to load when applied to a session
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
-} 
+}
 
 ```
 JEA セッション構成で使用するには、ロール機能を有効な PowerShell モジュールとして "RoleCapabilities" という名前のディレクトリに保存する必要があります。 必要に応じて、1 つのモジュールに複数のロール機能ファイルを含めることができます。
@@ -138,7 +138,7 @@ JEA セッション構成で使用するには、ロール機能を有効な Pow
 最後に、セッション構成と関連ロール機能のカスタマイズが完了した後、このセッション構成を登録し、**Register-PSSessionConfiguration** を実行してエンドポイントを作成します。
 
 ```powershell
-Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc" 
+Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfiguration\Demo.pssc"
 ```
 
 ## <a name="connect-to-a-jea-endpoint"></a>JEA エンドポイントへの接続
@@ -148,4 +148,3 @@ JEA エンドポイントへの接続は、他の PowerShell エンドポイン�
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
 JEA セッションに接続した後は、自分がアクセス権を持つロール機能のホワイトリストに登録されたコマンドのみを実行できます。 ロールに許可されていないコマンドを実行しようとすると、エラーが発生します。
-

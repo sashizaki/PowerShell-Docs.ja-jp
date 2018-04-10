@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "JEA, PowerShell, セキュリティ"
-title: "JEA の使用"
-ms.openlocfilehash: f0c22bf0f823b9fafa203e7f98049a6a6b3b7c05
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: JEA, PowerShell, セキュリティ
+title: JEA の使用
+ms.openlocfilehash: 8a6fb2682cf82de8dd20a8699178d4abde4954c2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="using-jea"></a>JEA の使用
 
@@ -103,7 +103,7 @@ $jeaDefaultCmdlets = 'Clear-Host', 'Exit-PSSession', 'Get-Command', 'Get-FormatD
 $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notcontains $_ }
 
 # Import only commands explicitly added in role capabilities and prefix each imported cmdlet with "JEA"
-Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands 
+Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
 また、[Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession) を使って、暗黙的なリモート処理からプロキシされたコマンドレットを保持することもできます。
@@ -189,4 +189,3 @@ Hyper-V 管理者によるシステム管理用に、他の権限を持たない
 制約のない PowerShell を使用する場合など、特権のないユーザーでも Windows コンピューターに既定でログインできることに注意してください。
 これにより、ユーザーは、ファイル システム (の一部) を参照し、OS の環境について詳しく知ることができます。
 Hyper-V 管理者が PowerShell Direct と JEA を使って VM だけにアクセスできるようにするには、Hyper-V 管理者の JEA アカウントへのローカル ログオン権限を禁止する必要があります。
-

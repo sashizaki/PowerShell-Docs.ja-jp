@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
-keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
+keywords: PowerShell, コマンドレット
+ms.date: 12/12/2016
 title: remove pswaauthorizationrule
 ms.technology: powershell
-ms.openlocfilehash: 4d039e7e00f87bc7aebb89217251edbbb5c3f5be
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 28dbfe84827d6ccb99dce1ebb520cae66dc8c50e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="remove-pswaauthorizationrule"></a>Remove-PswaAuthorizationRule
 
@@ -40,7 +40,7 @@ Remove-PswaAuthorizationRule [-Rule] <PswaAuthorizationRule[]> [-Force] [-Confir
 
 ユーザーの確認を求めずにコマンドレットを実行します。 既定では、コマンドレットにより続行前に確認が求められます。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | false                                |
@@ -53,7 +53,7 @@ Remove-PswaAuthorizationRule [-Rule] <PswaAuthorizationRule[]> [-Force] [-Confir
 
 削除する 1 つまたは複数の規則の識別子 (ID) を指定します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | true                                 |
@@ -66,7 +66,7 @@ Remove-PswaAuthorizationRule [-Rule] <PswaAuthorizationRule[]> [-Force] [-Confir
 
 削除する規則を指定します。
 
-|||  
+|||
 |-|-|
 | エイリアス                              | なし                                 |
 | 必須?                            | true                                 |
@@ -79,7 +79,7 @@ Remove-PswaAuthorizationRule [-Rule] <PswaAuthorizationRule[]> [-Force] [-Confir
 
 コマンドレットを実行する前に、ユーザーに確認を求めます。
 
-|||  
+|||
 |-|-|
 | 必須?                            | false                                |
 | 位置は?                            | 名前付き                                |
@@ -91,7 +91,7 @@ Remove-PswaAuthorizationRule [-Rule] <PswaAuthorizationRule[]> [-Force] [-Confir
 
 コマンドレットを実行するとどのような結果になるかを表示します。 コマンドレットは実行されません。
 
-|||  
+|||
 |-|-|
 | 必須?                            | false                                |
 | 位置は?                            | 名前付き                                |

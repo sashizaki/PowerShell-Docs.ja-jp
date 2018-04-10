@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, PowerShell, セットアップ"
-title: "WMF 5.1 リリース ノート"
-ms.openlocfilehash: fa3d9a3563ecf1bfc76d82b027641d19c9a4ff4e
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: WMF, PowerShell, セットアップ
+title: WMF 5.1 リリース ノート
+ms.openlocfilehash: eb22267c1af28a9fcdd049c76d363fff687f6167
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-management-framework-wmf-51-release-notes"></a>Windows Management Framework (WMF) 5.1 リリース ノート #
 
@@ -27,6 +27,4 @@ WMF 5.1 は、Windows 7、Windows 8.1、Windows Server 2008 R2、Windows Server 
 - **WMF 5.1 には .NET Framework 4.5.2** (またはそれ以上) が必要です。 .NET 4.5.2 (またはそれ以上) がインストールされていない場合、インストールは成功しますが、主な機能は失敗します。 手順については、トピック「[WMF 5.1 のインストールと構成](https://msdn.microsoft.com/powershell/wmf/5.1/install-configure)」を参照してください。
 - WMF 5.1 RTM をインストールする前に、WMF 5.1 プレビューをアンインストールする必要があります。
 - WMF 5.1 は、WMF 5.0 または WMF 4.0 の上に直接インストールできます。
-- Windows 7 および Windows Server 2008 R2 の上に WMF 5.1 をインストールする前に、WMF 4.0 をインストールする__必要はありません__。 これは WMF 5.1 プレビュー リリースでの問題でしたが、解決されました。  
-
-
+- Windows 7 および Windows Server 2008 R2 の上に WMF 5.1 をインストールする前に、WMF 4.0 をインストールする__必要はありません__。 これは WMF 5.1 プレビュー リリースでの問題でしたが、解決されました。

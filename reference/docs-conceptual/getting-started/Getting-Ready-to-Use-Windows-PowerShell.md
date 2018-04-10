@@ -1,18 +1,18 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "Windows PowerShell を使用する準備を行う"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: Windows PowerShell を使用する準備を行う
 ms.assetid: 6dc7052d-cc5a-4220-950f-98f963a2b587
-ms.openlocfilehash: de09c74e938f11a130864b1620d6c169006a27be
-ms.sourcegitcommit: 4807ab554d55fdee499980835bcc279368b1df68
+ms.openlocfilehash: 5e095984286ff89958dc0a4e3d27e40eae5b2c5e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a>Windows PowerShell を使用する準備を行う
 Windows PowerShell をインストールして起動したら、次のセットアップ オプションを実行することを検討してください。 これらのタスクは、いつでも実行できます。
 
-- **ヘルプ ファイルをインストールします。** Windows PowerShell 3.0 に含まれているコマンドレットには、ヘルプ ファイルが付属していません。 ただし、[Update-Help](/powershell/module/microsoft.powershell.core/update-help) コマンドレットを使うと、最新のヘルプ ファイルをダウンロードしてコンピューターにインストールできます。 ファイルをインストールしたら、[Get-Help](/powershell/module/microsoft.powershell.core/get-help) コマンドレットを使ってコマンド ラインに表示します。 詳しくは、「[about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_execution_policies)」をご覧ください。
+- **ヘルプ ファイルをインストールします。** Windows PowerShell 3.0 に含まれているコマンドレットには、ヘルプ ファイルが付属していません。 ただし、[Update-Help](/powershell/module/microsoft.powershell.core/update-help) コマンドレットを使うと、最新のヘルプ ファイルをダウンロードしてコンピューターにインストールできます。 ファイルをインストールしたら、[Get-Help](/powershell/module/microsoft.powershell.core/get-help) コマンドレットを使ってコマンド ラインに表示します。 詳しくは、「[about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_updatable_help)」をご覧ください。
 
     ヘルプ ファイルをインストールしない場合でも、ヘルプ トピックをオンラインで読むことができます。 特定のコマンドレットのオンライン バージョンのヘルプ トピックを見つけるには、「`Get-Help <CmdletName> -Online`」と入力します。 Windows PowerShell のヘルプ トピックを参照する場合は、[PowerShell のドキュメント](/powershell/scripting)を参照してください。
 
@@ -25,4 +25,3 @@ Windows PowerShell をインストールして起動したら、次のセット�
 ## <a name="see-also"></a>参照
 - [Windows PowerShell のインストール](../setup/Installing-Windows-PowerShell.md)
 - [Windows PowerShell の開始](/powershell/scripting/setup/starting-windows-powershell)
-

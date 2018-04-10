@@ -1,16 +1,16 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "PowerShell の詳細情報"
-ms.openlocfilehash: 32d7006010a4808a77d9800ec77c4352213d12b9
-ms.sourcegitcommit: 3720ce4efb6735694cfb53a1b793d949af5d1bc5
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: PowerShell の詳細情報
+ms.openlocfilehash: bed263df0ff52ec687bc7a644470f0397d0106ff
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/29/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="more-powershell-learning"></a>PowerShell の詳細情報
 
-PowerShell の詳細に関する他の情報源  
+PowerShell の詳細に関する他の情報源
 
 ## <a name="resources-for-windows-powershell-users"></a>Windows PowerShell ユーザー向けのリソース
 
@@ -51,4 +51,3 @@ PowerShell の詳細に関する他の情報源
 
 - [Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595)。 リファレンス コンテンツを提供します。
 - [Windows PowerShell プログラマー ガイド](http://go.microsoft.com/fwlink/p/?LinkID=89596)。 チュートリアルを提供します。 これには、Windows PowerShell の基本概念についての情報も含まれます。
-

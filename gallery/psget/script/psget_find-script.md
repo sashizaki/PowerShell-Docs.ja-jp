@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: Find-Script
-ms.openlocfilehash: df62a9934d8013d37bd0083c03f90fa7fa05ac0c
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: 1f5076d94015c0b1041591144f1f0fe36819204b
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="find-script"></a>Find-Script
 
@@ -24,7 +24,7 @@ Find-Script コマンドレットでは、名前、タグ、フィルター、�
 - Find-Script は、次のバージョン パラメーターでフィルター処理できます。MinimumVersion、MaximumVersion、RequiredVersion、AllVersions。
   - これらのパラメーターは、MinmimumVersion と MaximumVersion を除いて、同時に使用できません。
   - これらのバージョン パラメーターは、ワイルドカードを含まない 1 つのスクリプト名が指定されている場合にのみ許可されます。
-  - RequiredVersion パラメーターが指定されていない場合、Find-Script は指定された最小バージョン以上の最新バージョンのスクリプトを返すか、または最新バージョンのスクリプトを返します (最小バージョンが指定されていない場合)。 
+  - RequiredVersion パラメーターが指定されていない場合、Find-Script は指定された最小バージョン以上の最新バージョンのスクリプトを返すか、または最新バージョンのスクリプトを返します (最小バージョンが指定されていない場合)。
   - RequiredVersion パラメーターが指定されている場合、Find-Script は指定したバージョンに完全に一致するバージョンのスクリプトのみを返します。
 - Find-Script では、-Tag パラメーターを使用してスクリプトのメタデータをフィルター処理できます。
 - Find-Script では、-Filter パラメーターを使用してリポジトリ固有の検索言語をフィルター処理できます。
@@ -61,7 +61,7 @@ Find-Script -Name *Azure*
 # Find all versions of a script
 Find-Script -Name Connect-O365 -AllVersions
 
-# Find a script with -MinimumVersion. 
+# Find a script with -MinimumVersion.
 # With MinimumVersion we can find a script whose version is greate than or equal to the specified MinimumVersion value.
 Find-Script Connect-O365 -MinimumVersion 1.4
 
@@ -155,4 +155,3 @@ Cmdlet                         {}
 
 
 ```
-

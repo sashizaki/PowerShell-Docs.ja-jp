@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: rpsqrd
 ms.topic: conceptual
-keywords: "JEA, PowerShell, セキュリティ"
-title: "JEA の監査とレポート"
-ms.openlocfilehash: 57148bc3753bdd751bfa21fc3198aca3f8654849
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: JEA, PowerShell, セキュリティ
+title: JEA の監査とレポート
+ms.openlocfilehash: 7fc670c77b5fbf9bce8fb55dd99a2f9a984100d2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="auditing-and-reporting-on-jea"></a>JEA の監査とレポート
 
@@ -144,11 +144,11 @@ Running  Dns                DNS Server
 各 CommandInvocation の後ろに ParameterBindings が続きます。これは、コマンドと共に指定された各パラメーターとその値に関する情報です。
 上記の例では、"Get-Service" コマンドレットでパラメーター "Name" に値 "Dns" が指定されていることを確認できます。
 
-各コマンドの出力も CommandInvocation をトリガーします (通常は Out-Default に)。 Out-Default の InputObject は、コマンドから返される PowerShell オブジェクトです。
+各コマンドの出力も CommandInvocation をトリガーします (通常は Out-Default に)。
+Out-Default の InputObject は、コマンドから返される PowerShell オブジェクトです。
 そのオブジェクトの詳細が数行下に出力されています。ユーザーに表示される内容と同様のものが表示されます。
 
 ## <a name="see-also"></a>関連項目
 
 - [JEA セッションでユーザー アクションを監査する](audit-and-report.md)
 - [*PowerShell ♥ the Blue Team* のセキュリティに関するブログ投稿](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
-

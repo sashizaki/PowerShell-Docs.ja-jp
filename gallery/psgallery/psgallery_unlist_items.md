@@ -1,27 +1,28 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: psgallery_unlist_items
-ms.openlocfilehash: 8fa09c77e144f14bf0fd3493dff7650897100715
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: af48f2ca889dcc101d466e40f2ecbe0cdf62c066
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="unlisting-items"></a>アイテムをリストから外す
 
 **PowerShell ギャラリーからアイテムを削除するためのオプションが表示されません。**
 
-PowerShell ギャラリーでは、ユーザーがアイテムを完全削除することはできません。 それにより、他のユーザーが既存のアイテムを活用しても、その依存性が壊されることがありません。 たとえば、Pester モジュールは Azure モジュールに依存しているとき、Azure モジュールをギャラリーから削除すると、Pester モジュールを使用できなくなります。
+PowerShell ギャラリーでは、ユーザーがアイテムを完全削除することはできません。
+それにより、他のユーザーが既存のアイテムを活用しても、その依存性が壊されることがありません。
+たとえば、Pester モジュールは Azure モジュールに依存しているとき、Azure モジュールをギャラリーから削除すると、Pester モジュールを使用できなくなります。
 
 そこで、アイテムを削除する代わりに、アイテムをリストから外します。
 
 **PowerShell ギャラリーのアイテムをリストから外すとは、どのような行為ですか。**
 
-PowerShell ギャラリーでモジュールやスクリプトなどのアイテムをリストから外すと、そのアイテムは [アイテム] タブから削除されます。
-また、リストから外されたアイテムは検索バーで検索できなくなります。
+PowerShell ギャラリーでモジュールやスクリプトなどのアイテムをリストから外すと、そのアイテムは [アイテム] タブから削除されます。また、リストから外されたアイテムは検索バーで検索できなくなります。
 リストから外されたアイテムをダウンロードする唯一の方法は、アイテムの正確な名前とバージョンを指定することです。
 以上のような理由から、アイテムをリストから外しても、そのアイテムに依存する他のモジュールやスクリプトがなくなることはありません。
 
@@ -35,6 +36,4 @@ PowerShell ギャラリーでモジュールやスクリプトなどのアイテ
 - アイテムに有害なコンテンツが含まれている。
 - アイテムに機密データが含まれている。
 
-PowerShell ギャラリーの管理者にアイテムの削除依頼を送信するには、アイテム詳細ページにアクセスし、[Contact Support] \(サポートに問い合わせる) を選択します。  
-
-
+PowerShell ギャラリーの管理者にアイテムの削除依頼を送信するには、アイテム詳細ページにアクセスし、[Contact Support] \(サポートに問い合わせる) を選択します。

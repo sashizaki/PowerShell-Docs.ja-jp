@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "DSC WindowsProcess リソース"
-ms.openlocfilehash: ec77209637d574a0e530f4cce283e1ad98701cdb
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: DSC WindowsProcess リソース
+ms.openlocfilehash: 236a48fd4449a96f2297c152bce65253dd2fd08d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess リソース
 
@@ -33,15 +33,14 @@ WindowsProcess [string] #ResourceName
 ```
 
 ## <a name="properties"></a>プロパティ
-|  プロパティ  |  説明   | 
-|---|---| 
-| 引数| プロセスに渡す引数の文字列をそのまま示します。 複数の引数を渡す必要がある場合は、そのすべてをこの文字列内に配置します。| 
-| パス| プロセスの実行可能ファイルのパス。 これが実行可能ファイルの名前の場合 (完全修飾パスではない)、DSC リソースは環境**パス**変数 (`$env:Path`) を検索し、ファイルを見つけます。 このプロパティの値が完全修飾パスの場合、DSC は**パス**環境変数でファイルを探すことはせず、パスが存在しない場合はエラーをスローします。 相対パスは指定できません。| 
-| Credential| プロセスを開始するための資格情報を示します。| 
-| Ensure| プロセスが存在するかどうかを示します。 プロセスが存在することを保証するには、このプロパティを "Present" に設定します。 それ以外の場合は、"Absent" に設定します。 既定は "Present" です。| 
-| DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は DependsOn = "[ResourceType]ResourceName" になります。| 
-| StandardErrorPath| 標準エラーを書き込むディレクトリ パスを示します。 既存のファイルは上書きされます。| 
-| StandardInputPath| 標準入力の場所を示します。| 
-| StandardOutputPath| 標準出力の書き込み場所を示します。 既存のファイルは上書きされます。| 
-| WorkingDirectory| プロセスの現在の作業ディレクトリとして使用される場所を示します。| 
-
+|  プロパティ  |  説明   |
+|---|---|
+| 引数| プロセスに渡す引数の文字列をそのまま示します。 複数の引数を渡す必要がある場合は、そのすべてをこの文字列内に配置します。|
+| パス| プロセスの実行可能ファイルのパス。 これが実行可能ファイルの名前の場合 (完全修飾パスではない)、DSC リソースは環境**パス**変数 (`$env:Path`) を検索し、ファイルを見つけます。 このプロパティの値が完全修飾パスの場合、DSC は**パス**環境変数でファイルを探すことはせず、パスが存在しない場合はエラーをスローします。 相対パスは指定できません。|
+| Credential| プロセスを開始するための資格情報を示します。|
+| Ensure| プロセスが存在するかどうかを示します。 プロセスが存在することを保証するには、このプロパティを "Present" に設定します。 それ以外の場合は、"Absent" に設定します。 既定は "Present" です。|
+| DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は DependsOn = "[ResourceType]ResourceName" になります。|
+| StandardErrorPath| 標準エラーを書き込むディレクトリ パスを示します。 既存のファイルは上書きされます。|
+| StandardInputPath| 標準入力の場所を示します。|
+| StandardOutputPath| 標準出力の書き込み場所を示します。 既存のファイルは上書きされます。|
+| WorkingDirectory| プロセスの現在の作業ディレクトリとして使用される場所を示します。|

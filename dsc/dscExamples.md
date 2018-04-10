@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "DSC の例"
-ms.openlocfilehash: c96422f7097e046fed1a51954d1e6305a830f988
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: DSC の例
+ms.openlocfilehash: 03e7dc4683c987a8435371ea539d32caa44f7a8e
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-examples"></a>DSC の例
 
@@ -15,4 +15,3 @@ ms.lasthandoff: 01/17/2018
 
 - [DSC、Pester、Visual Studio Team Services で CI-CD パイプラインを構築する](dscCiCd.md)
 - [構成データと環境データの分離](separatingEnvData.md)
-

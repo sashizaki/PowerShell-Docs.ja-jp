@@ -1,22 +1,25 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "サービスの管理"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: サービスの管理
 ms.assetid: 7a410e4d-514b-4813-ba0c-0d8cef88df31
-ms.openlocfilehash: 1e83566b1cb3c0c9c3c78a5877e52552ee51b0e9
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: f3231d1922568e552534f3d3face3864d1610d65
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-services"></a>サービスの管理
+
 サービスに関連したさまざまなタスクを実行するために設計された 8 つの主要な Service コマンドレットがあります。 ここでは、サービスの実行状態の一覧表示と変更についてのみ取り上げていますが、**Get-Help \&#42;-Service** でサービスに関連したコマンドレットを一覧表示したり、**Get-Help<Cmdlet-Name>** (**Get-Help New-Service** など) でサービスに関連した各種コマンドレットの情報を検索したりできます。
 
 ## <a name="getting-services"></a>サービスの取得
+
 **Get-Service** コマンドレットを使用して、ローカル コンピューターまたはリモート コンピューター上のサービスを取得できます。 **Get-Process** と同様、パラメーターを指定せずに **Get-Service** コマンドを実行した場合、すべてのサービスが返されます。 アスタリスクをワイルドカードとして使用し、サービスを名前でフィルター処理するには、次のように入力します。
 
 ```
 PS> Get-Service -Name se*
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  seclogon           Secondary Logon
@@ -28,6 +31,7 @@ Stopped  ServiceLayer       ServiceLayer
 
 ```
 PS> Get-Service -DisplayName se*
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  lanmanserver       Server
@@ -35,7 +39,9 @@ Running  SamSs              Security Accounts Manager
 Running  seclogon           Secondary Logon
 Stopped  ServiceLayer       ServiceLayer
 Running  wscsvc             Security Center
+
 PS> Get-Service -DisplayName ServiceLayer,Server
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  lanmanserver       Server
@@ -44,11 +50,12 @@ Stopped  ServiceLayer       ServiceLayer
 
 Get-Service コマンドレットの ComputerName パラメーターを使用して、リモート コンピューター上のサービスを取得できます。 ComputerName パラメーターには複数の値およびワイルドカード文字を使用できるため、1 つのコマンドで複数のコンピューター上のサービスを取得できます。 たとえば、次のコマンドでは、Server01 リモート コンピューター上のサービスを取得できます。
 
-```
+```powershell
 Get-Service -ComputerName Server01
 ```
 
 ## <a name="getting-required-and-dependent-services"></a>必要なサービスおよび依存するサービスの取得
+
 Get-Service コマンドレットには、サービスの管理に非常に便利な 2 つのパラメーターがあります。 DependentServices パラメーターは、そのサービスに依存するサービスを取得します。 RequiredServices パラメーターは、そのサービスが依存しているサービスを取得します。
 
 これらのパラメーターは、Get-Service が返す System.ServiceProcess.ServiceController オブジェクトの DependentServices プロパティと ServicesDependedOn (エイリアス: RequiredServices) プロパティの値を表示するだけですが、コマンドが単純化され、この情報をずっと簡単に取得できるようになります。
@@ -57,6 +64,7 @@ Get-Service コマンドレットには、サービスの管理に非常に便�
 
 ```
 PS> Get-Service -Name LanmanWorkstation -RequiredServices
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  MRxSmb20           SMB 2.0 MiniRedirector
@@ -69,6 +77,7 @@ Running  NSI                Network Store Interface Service
 
 ```
 PS> Get-Service -Name LanmanWorkstation -DependentServices
+
 Status   Name               DisplayName
 ------   ----               -----------
 Running  SessionEnv         Terminal Services Configuration
@@ -79,26 +88,26 @@ Running  BITS               Background Intelligent Transfer Ser...
 
 また、依存関係を持つサービスをすべて取得することもできます。 次のコマンドは、それを実行した後、Format-Table コマンドレットを使用して、コンピューター上のサービスの Status、Name、RequiredServices、DependentServices の各プロパティを表示します。
 
-```
-Get-Service -Name * | where {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
+```powershell
+Get-Service -Name * | Where-Object {$_.RequiredServices -or $_.DependentServices} | Format-Table -Property Status, Name, RequiredServices, DependentServices -auto
 ```
 
 ## <a name="stopping-starting-suspending-and-restarting-services"></a>サービスの停止、開始、一時停止、再開
 サービスを扱うすべてのコマンドレットは、同じ形式で指定できます。 サービスを一般的な名前 (表示名) で指定できるほか、表示名の一覧を指定したり、ワイルドカードを値として使用したりすることもできます。 印刷スプーラーを停止するには、次のように入力します。
 
-```
+```powershell
 Stop-Service -Name spooler
 ```
 
 停止した印刷スプーラーを開始するには、次のように入力します。
 
-```
+```powershell
 Start-Service -Name spooler
 ```
 
 印刷スプーラーを一時停止するには、次のように入力します。
 
-```
+```powershell
 Suspend-Service -Name spooler
 ```
 
@@ -106,6 +115,7 @@ Suspend-Service -Name spooler
 
 ```
 PS> Restart-Service -Name spooler
+
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 PS>
@@ -117,6 +127,7 @@ PS>
 
 ```
 PS> Get-Service | Where-Object -FilterScript {$_.CanStop} | Restart-Service
+
 WARNING: Waiting for service 'Computer Browser (Browser)' to finish stopping...
 WARNING: Waiting for service 'Computer Browser (Browser)' to finish stopping...
 Restart-Service : Cannot stop service 'Logical Disk Manager (dmserver)' because
@@ -129,11 +140,12 @@ WARNING: Waiting for service 'Print Spooler (Spooler)' to finish starting...
 
 サービスを扱うこれらのコマンドレットには ComputerName パラメーターはありませんが、Invoke-Command コマンドレットを使用すれば、これらのコマンドレットをリモート コンピューター上で実行できます。 たとえば、次のコマンドでは、Server01 リモート コンピューター上のスプーラー サービスを再起動できます。
 
-```
+```powershell
 Invoke-Command -ComputerName Server01 {Restart-Service Spooler}
 ```
 
 ## <a name="setting-service-properties"></a>サービスのプロパティの設定
+
 Set-Service コマンドレットは、ローカル コンピューターまたはリモート コンピューター上のサービスのプロパティを変更します。 サービスの状態もプロパティの 1 つであるため、このコマンドレットを使用してサービスを開始、停止、一時停止できます。 Set-Service コマンドレットには、サービスのスタートアップの種類を変更できる StartupType パラメーターもあります。
 
 Windows Vista 以降のバージョンの Windows で、Set-Service を使用するには、Windows PowerShell を開く際に [管理者として実行] オプションを指定する必要があります。
@@ -141,8 +153,8 @@ Windows Vista 以降のバージョンの Windows で、Set-Service を使用す
 詳細については、「[Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)」を参照してください。
 
 ## <a name="see-also"></a>参照
+
 - [Get-Service [m2]](https://technet.microsoft.com/en-us/library/0a09cb22-0a1c-4a79-9851-4e53075f9cf6)
 - [Set-Service [m2]](https://technet.microsoft.com/library/b71e29ed-372b-4e32-a4b7-5eb6216e56c3)
 - [Restart-Service [m2]](https://technet.microsoft.com/en-us/library/45acf50d-2277-4523-baf7-ce7ced977d0f)
 - [Suspend-Service [m2]](https://technet.microsoft.com/en-us/library/c8492b87-0e21-4faf-8054-3c83c2ec2826)
-

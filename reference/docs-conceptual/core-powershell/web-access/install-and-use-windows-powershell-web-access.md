@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
+ms.date: 08/23/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access のインストールと使用
-ms.openlocfilehash: 2ad7a701dbb464088d6ed47d49a8dc3fb9b911f8
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 8f140e73ce833fd1cfadbe1d8ee0fe0bb2d08873
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Access のインストールと使用
 
@@ -97,7 +97,7 @@ Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマ�
    >**![注](images/note.jpeg) 注**
    >
    >Windows PowerShell のコマンドレットを使って Windows PowerShell Web Access をインストールする場合、Web サーバー (IIS) の管理ツールは既定では追加されません。 Windows PowerShell Web Access ゲートウェイと同じサーバーに管理ツールをインストールする場合、`-IncludeManagementTools` パラメーターをインストール コマンドに追加します (この手順でも追加しています)。 Windows PowerShell Web Access の Web サイトをリモート コンピューターから管理する場合は、ゲートウェイの管理元となるコンピューターに [Remote Server Administration Tools for Windows 8.1](http://go.microsoft.com/fwlink/?LinkID=304145) または [Remote Server Administration Tools for Windows 8](http://go.microsoft.com/fwlink/p/?LinkID=238560) をインストールすることで、IIS マネージャー スナップインをインストールします。
-   
+
    オフライン VHD に役割や機能をインストールするには、`-ComputerName` パラメーターと `-VHD` パラメーターの両方を追加する必要があります。 `-ComputerName` パラメーターには VHD のマウント先のサーバー名が格納され、`-VHD` パラメーターには指定したサーバー上の VHD ファイルへのパスが格納されます。
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -VHD <path> -ComputerName <computer_name> -IncludeManagementTools -Restart`
@@ -115,8 +115,8 @@ Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマ�
 Windows PowerShell Web Access の Web アプリケーションの構成を完了するには、`Install-PswaWebApplication` コマンドレットを実行するか、IIS マネージャーの GUI ベースの構成手順を実行します。 既定では、コマンドレットによって **pswa** Web アプリケーション (および専用の **pswa_pool** というアプリケーション プール) が **[既定の Web サイト]** コンテナーにインストールされ、IIS マネージャーで確認できます。必要な場合、コマンドレットに指定して Web アプリケーションの既定のサイト コンテナーを変更できます。 IIS マネージャーは、ポート番号や Secure Sockets Layer (SSL) 証明書の変更など、Web アプリケーションで利用できる構成オプションを提供します。
 
 >**![セキュリティに関する注意](images/securitynote.jpeg) セキュリティに関する注意**
-> 
->管理者には、CA によって署名された有効な証明書を使うようゲートウェイを構成することを強くお勧めします。 
+>
+>管理者には、CA によって署名された有効な証明書を使うようゲートウェイを構成することを強くお勧めします。
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-test-certificate-by-using-install-pswawebapplication"></a>Install-PswaWebApplication を使って、テスト証明書を使う Windows PowerShell Web Access Web ゲートウェイを構成するには
 
@@ -148,8 +148,8 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
 この例では、Windows PowerShell Web Access の最終的な Web サイトは https://\<*server_name*\>/myWebApp になります。
 
->**![注](images/note.jpeg) 注** 
-> 
+>**![注](images/note.jpeg) 注**
+>
 >サインインできるのは、承認規則の追加によって Web サイトへのアクセスが許可されたユーザーだけです。 詳細については、「[制限的な承認規則を構成する](#configure-a-restrictive-authorization-rule)」と「[Windows PowerShell Web Access の承認規則とセキュリティ機能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)」を参照してください。
 
 #### <a name="to-configure-the-windows-powershell-web-access-gateway-with-a-genuine-certificate-by-using-install-pswawebapplication-and-iis-manager"></a>正規の証明書を持つ Windows PowerShell Web Access ゲートウェイを Install-PswaWebApplication と IIS Manager を使用して構成するには
@@ -197,9 +197,9 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
     ブラウザー ウィンドウで **https://\<server_name\>/pswa** を開くと Windows PowerShell Web Access にアクセスできます。
 
->**![注](images/note.jpeg) 注** 
-> 
->サインインできるのは、承認規則の追加によって Web サイトへのアクセスが許可されたユーザーだけです。 
+>**![注](images/note.jpeg) 注**
+>
+>サインインできるのは、承認規則の追加によって Web サイトへのアクセスが許可されたユーザーだけです。
 >詳細については、このトピックの「[制限的な承認規則を構成する](#configure-a-restrictive-authorization-rule)」と「[Windows PowerShell Web Access の承認規則とセキュリティ機能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)」を参照してください。
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>制限的な承認規則を構成する
@@ -223,7 +223,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
    `Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>`
 
    この承認規則により、特定のユーザー 1 人が、通常アクセスが許可されているネットワーク上の 1 つのコンピューターにアクセスして、このユーザーが通常必要とするスクリプトとコマンドレットに制限された特定の 1 つのセッション構成にアクセスできるようになります。
-   
+
    次の例では、`JSmith` ドメインの `Contoso` というユーザーに、`Contoso_214` というコンピューターを管理し、`NewAdminsOnly` というセッション構成を使うためのアクセス権が付与されます。
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
@@ -258,7 +258,7 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 6. .NET Framework 4.5 や Web サーバー (IIS) の役割サービスなど、必要な機能の追加を求めるメッセージが表示されます。 必要な機能を追加して続行します。
 
-    >**![注](images/note.jpeg) 注** 
+    >**![注](images/note.jpeg) 注**
     >
     >Windows PowerShell Web Access を使って役割および機能の追加ウィザードをインストールすると、IIS マネージャー スナップインを含む Web サーバー (IIS) もインストールされます。 このスナップインとその他の IIS 管理ツールは、役割および機能の追加ウィザードを使う場合に既定でインストールされます。 後の手順で説明する Windows PowerShell コマンドレットを使って Windows PowerShell Web Access をインストールする場合、これらの管理ツールは既定では追加されません。
 
@@ -296,7 +296,10 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
 10. ![](images/SecurityNote.jpeg) セキュリティ手順 (省略可能):
 
-    ツリー ウィンドウで Web サイトが選択された状態で、コンテンツ ウィンドウの **[SSL 設定]** をダブルクリックします。 **[SSL が必要]** を選択して、**[操作]** ウィンドウで **[適用]** をクリックします。 必要に応じて、**[SSL 設定]** ウィンドウを使って、Windows PowerShell Web Access の Web サイトに接続するユーザーに対してクライアント証明書の所有を要求できます。 クライアント証明書により、クライアント デバイスのユーザーの ID を検証できます。 クライアント証明書の要求によって Windows PowerShell Web Access のセキュリティを強化する方法の詳細については、このトピックの「[Windows PowerShell Web Access の承認規則とセキュリティ機能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)」を参照してください。
+    ツリー ウィンドウで Web サイトが選択された状態で、コンテンツ ウィンドウの **[SSL 設定]** をダブルクリックします。
+**[SSL が必要]** を選択して、**[操作]** ウィンドウで **[適用]** をクリックします。
+必要に応じて、**[SSL 設定]** ウィンドウを使って、Windows PowerShell Web Access の Web サイトに接続するユーザーに対してクライアント証明書の所有を要求できます。 クライアント証明書により、クライアント デバイスのユーザーの ID を検証できます。
+クライアント証明書の要求によって Windows PowerShell Web Access のセキュリティを強化する方法の詳細については、このトピックの「[Windows PowerShell Web Access の承認規則とセキュリティ機能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)」を参照してください。
 
 11. クライアント デバイスでブラウザー セッションを開きます。 サポートされるブラウザーとデバイスの詳細については、このトピックの「[ブラウザーとクライアント デバイスのサポート](#browser-and-client-device-support)」を参照してください。
 
@@ -304,9 +307,9 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
     ブラウザーには Windows PowerShell Web Access コンソールのサインイン ページが表示されます。
 
-    >**![注](images/note.jpeg) 注** 
-    > 
-    >サインインできるのは、承認規則の追加によって Web サイトへのアクセスが許可されたユーザーだけです。 
+    >**![注](images/note.jpeg) 注**
+    >
+    >サインインできるのは、承認規則の追加によって Web サイトへのアクセスが許可されたユーザーだけです。
     >詳細については、このトピックの「[制限的な承認規則を構成する](#configure-a-restrictive-authorization-rule)」と「[Windows PowerShell Web Access の承認規則とセキュリティ機能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)」を参照してください。
 
 13. 管理者特権で開かれた ([管理者として実行]) Windows PowerShell セッションで、次のスクリプトを実行します。*application_pool_name* は、手順 3. で作成したアプリケーション プールの名前です。これによって承認ファイルへのアクセス権がアプリケーション プールに付与されます。
@@ -367,9 +370,9 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
     ルート Web サイトは Windows PowerShell Web Access フォルダーを参照しているため、**https://\<*gateway_server_name*\>** を開くと、ブラウザーには Windows PowerShell Web Access のサインイン ページが表示されます。 URL に **/pswa** を追加する必要はありません。
 
-    >**![注](images/note.jpeg) 注** 
-    > 
-    >サインインできるのは、承認規則の追加によって Web サイトへのアクセスが許可されたユーザーだけです。 
+    >**![注](images/note.jpeg) 注**
+    >
+    >サインインできるのは、承認規則の追加によって Web サイトへのアクセスが許可されたユーザーだけです。
     >詳細については、このトピックの「[制限的な承認規則を構成する](#configure-a-restrictive-authorization-rule)」と「[Windows PowerShell Web Access の承認規則とセキュリティ機能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)」を参照してください。
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>制限的な承認規則を構成する
@@ -394,13 +397,13 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
         Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
-    この承認規則により、特定のユーザー 1 人が、通常アクセスが許可されているネットワーク上の 1 つのコンピューターにアクセスして、このユーザーが通常必要とするスクリプトとコマンドレットに制限された特定の 1 つのセッション構成にアクセスできるようになります。 
-    
+    この承認規則により、特定のユーザー 1 人が、通常アクセスが許可されているネットワーク上の 1 つのコンピューターにアクセスして、このユーザーが通常必要とするスクリプトとコマンドレットに制限された特定の 1 つのセッション構成にアクセスできるようになります。
+
     次の例では、`JSmith` ドメインの `Contoso` というユーザーに、`Contoso_214` というコンピューターを管理し、`NewAdminsOnly` というセッション構成を使うためのアクセス権が付与されます。
 
         Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4. `Get-PswaAuthorizationRule` コマンドレットまたは `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>` を実行して、規則が作成されたことを検証します。 
+4. `Get-PswaAuthorizationRule` コマンドレットまたは `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>` を実行して、規則が作成されたことを検証します。
 
     たとえば、`Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214` のように指定します。
 

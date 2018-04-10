@@ -1,45 +1,44 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, PowerShell, セットアップ"
-ms.openlocfilehash: f2ddde78f436e6f03f521a9a8246dbda93e7a57a
-ms.sourcegitcommit: a5c0795ca6ec9332967bff9c151a8572feb1a53a
+keywords: WMF, PowerShell, セットアップ
+ms.openlocfilehash: 27f8fab6a72e7f3a3f510f5a9e503bbfb8a8f618
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/27/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="on-demand-pull-of-dsc-configurations"></a>DSC 構成のオンデマンド プル
 
-新しい Update-DscConfiguration コマンドレットは、メタ構成で定義されているプル サーバーからのプルをトリガーします。 この動作のことを、よく '今すぐプル' と呼びます。 
+新しい Update-DscConfiguration コマンドレットは、メタ構成で定義されているプル サーバーからのプルをトリガーします。 この動作のことを、よく '今すぐプル' と呼びます。
 
 
 トリガーされたプルは、通常の頻度でトリガーされるプルとまったく同様に動作します。
 
-1. 現在の構成のチェックサムが、プル サーバー上の構成のチェックサムと比較されます。 
-2. この 2 つが同一の場合は、構成を適用せずに、正常に終了します。 
+1. 現在の構成のチェックサムが、プル サーバー上の構成のチェックサムと比較されます。
+2. この 2 つが同一の場合は、構成を適用せずに、正常に終了します。
 3. この 2 つが異なる場合は、構成がプル サーバーからダウンロードされ、適用されます。
 
 **注:** メタ構成で RefreshMode = 'Push' の場合は、コマンドレットからエラーが返されます。そのため、ターゲット ノードが 'Push' モードの場合は常に、このコマンドレットは何も実行しません。
 
 ```powershell
-Update-DscConfiguration     [[-ComputerName] <string[]>] 
+Update-DscConfiguration     [[-ComputerName] <string[]>]
                             [-Wait]
-                            [-Force] 
-                            [-JobName <string>] 
-                            [-Credential<pscredential>] 
-                            [-ThrottleLimit <int>] 
-                            [-WhatIf] 
-                            [-Confirm] 
+                            [-Force]
+                            [-JobName <string>]
+                            [-Credential<pscredential>]
+                            [-ThrottleLimit <int>]
+                            [-WhatIf]
+                            [-Confirm]
                             [<CommonParameters>]
 
-Update-DscConfiguration     -CimSession <CimSession[]> 
-                            [-Wait] 
-                            [-Force] 
-                            [-JobName <string>] 
+Update-DscConfiguration     -CimSession <CimSession[]>
+                            [-Wait]
+                            [-Force]
+                            [-JobName <string>]
                             [-ThrottleLimit <int>]
-                            [-WhatIf] 
-                            [-Confirm] 
+                            [-WhatIf]
+                            [-Confirm]
                             [<CommonParameters>]
 ```
-

@@ -67,7 +67,7 @@ PowerShell Core のサポートが他の製品モジュールに適用される�
 最初に、PowerShell ギャラリーから `WindowsPSModulePath` モジュールをインストールします。
 
 ```powershell
-# Add `-Scope CurrentUser` if you're installing as non-admin 
+# Add `-Scope CurrentUser` if you're installing as non-admin
 Install-Module WindowsPSModulePath -Force
 ```
 

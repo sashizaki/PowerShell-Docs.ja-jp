@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery, PsGet"
-title: "PowerShell ギャラリー"
-ms.openlocfilehash: 7389ce8286c515b0bfc25f32634a482b060cb74c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: ギャラリー, PowerShell, コマンドレット, PSGallery, PsGet
+title: PowerShell ギャラリー
+ms.openlocfilehash: 9519b8bcca9f43419a33db380c3b852e9bb354ac
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="the-powershell-gallery"></a>PowerShell ギャラリー
 
@@ -56,4 +56,3 @@ PowerShellGet モジュールには、[PowerShell ギャラリー](https://www.P
 ## <a name="got-a-question-have-feedback"></a>ご質問または フィードバックがある場合は、
 
 PowerShell ギャラリーと PowerShellGet の詳細を [[はじめに]](psgallery/psgallery_gettingstarted.md) ページで確認できます。 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell) でご意見とご感想をお寄せください。問題がございましたら、ご報告ください。
-

@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGallery"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: psgallery_search_syntax
-ms.openlocfilehash: 409ae607557af760f9cec4e3c54f39e51b5fac18
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 337b4b1e702994fcbc456eb31a2d8632f5220d09
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="gallery-search-syntax"></a>ギャラリー検索構文
 
@@ -49,7 +49,7 @@ ID フィールドで "AzureRM.Profile" のある項目を検索する別の方�
 'Id' フィルターは部分文字列の一致のため、次のように検索した場合、
 
     Id:"azure"
-    
+
 'AzureRM.Profile' と 'Azure.Storage' のような結果が得られます。
 
 また、1 つのフィールドで複数のキーワードを検索することもできます。 または、フィールドを組み合わせて一致させます。
@@ -71,7 +71,7 @@ DSC タグのあるすべての項目を検索します。
     Functions:"Update-AzureRM"
 
 指定したコマンドレットのあるすべての項目を検索します。
-    
+
     Cmdlets:"Get-AzureRmEnvironment"
 
 指定した DSC リソース名のあるすべての項目を検索します。
@@ -88,8 +88,7 @@ DSC タグのあるすべての項目を検索します。
 最後に、'commands' など、サポートされていないフィールドを使用すると、単に無視され、すべてのフィールドが検索されます。 そのため、次のクエリ
 
     commands:blobs storage
-    
+
 は次のクエリと同じものとして解釈されます。
 
     blobs storage
-

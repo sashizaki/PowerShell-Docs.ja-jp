@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-23
-keywords: "PowerShell, コマンドレット"
-title: "Web ベースの Windows PowerShell コンソールの使用"
-ms.openlocfilehash: a6c9812253309ba1225141cfd48d0f1c8b8785b5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.date: 08/23/2017
+keywords: PowerShell, コマンドレット
+title: Web ベースの Windows PowerShell コンソールの使用
+ms.openlocfilehash: 3ef2b39279745ffe78fa928247e8a1fb76519ba0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Web ベースの Windows PowerShell コンソールの使用
 
@@ -18,15 +18,18 @@ Windows PowerShell Web Access を利用すると、セキュリティで保護�
 
 Windows PowerShell コンソールは Web ブラウザーで実行されるため、さまざまなクライアント デバイス (Web ブラウザーが動作するほとんどのデバイス) で開くことができます。
 
-Web ベースの Windows PowerShell コンソールは、サインイン プロセスでユーザーが指定するリモート コンピューターを対象としています。 
+Web ベースの Windows PowerShell コンソールは、サインイン プロセスでユーザーが指定するリモート コンピューターを対象としています。
 
 このトピックでは、Windows PowerShell Web Access の Web ベース コンソールにサインインして使用を開始する方法について説明します。
 
-Windows PowerShell の使用方法や、コマンドレットまたはスクリプトの実行方法はこのトピックの対象外です。 Windows PowerShell およびスクリプト リソースの使用方法の詳細については、このトピックの最後にある「[関連項目](#see-also)」セクションを参照してください。
+Windows PowerShell の使用方法や、コマンドレットまたはスクリプトの実行方法はこのトピックの対象外です。
+Windows PowerShell およびスクリプト リソースの使用方法の詳細については、このトピックの最後にある「[関連項目](#see-also)」セクションを参照してください。
 
 ## <a name="supported-browsers-and-client-devices"></a>サポートされているブラウザーとクライアント デバイス
 
-Windows PowerShell Web Access は次のインターネット ブラウザーをサポートします。 モバイル ブラウザーは公式にはサポートされていませんが、それらの多くが Web ベースの Windows PowerShell コンソールを実行できるようです。 その他のブラウザーも、Cookie の許可、JavaScript の実行、および HTTPS Web サイトの実行に対応している場合は動作すると思われますが、公式にはテストされていません。
+Windows PowerShell Web Access は次のインターネット ブラウザーをサポートします。
+モバイル ブラウザーは公式にはサポートされていませんが、それらの多くが Web ベースの Windows PowerShell コンソールを実行できるようです。
+その他のブラウザーも、Cookie の許可、JavaScript の実行、および HTTPS Web サイトの実行に対応している場合は動作すると思われますが、公式にはテストされていません。
 
 ### <a name="supported-desktop-computer-browsers"></a>サポート対象のデスクトップ コンピューター ブラウザー
 

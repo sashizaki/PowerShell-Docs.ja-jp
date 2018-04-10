@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, PowerShell, セットアップ"
-ms.openlocfilehash: e8620cdeb90792e86d091d3e19a169f9dfa690f9
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, PowerShell, セットアップ
+ms.openlocfilehash: 306241bc5ec854c0e2ed835009a79b21fc249f14
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="known-issues-and-limitations"></a>既知の問題と制限事項
 
@@ -63,23 +63,23 @@ SIL を既に実行している Windows Server 2012 R2 に WMF 5.0 をインス�
 **解決策:**
 - **Windows Server 2008 R2** を実行するシステムの場合
   1. 管理者として PowerShell を開きます。
-  2. 次のコマンドを実行します。 
-  
+  2. 次のコマンドを実行します。
+
   ```powershell
     Set-SilLogging –TargetUri https://BlankTarget –CertificateThumbprint 0123456789
   ```
   3. 予想されるとおりにコマンドを実行してエラーを無視します。
-  
+
   ```powershell
     Publish-SilData
    ```
   4. \Windows\System32\Logfiles\SIL\ ディレクトリ内のファイルを削除します。
-  
+
   ```powershell
     Remove-Item -Recurse $env:SystemRoot\System32\Logfiles\SIL\
   ```
   5. 使用可能な重要な Windows 更新プログラムをすべてをインストールし、通常どおりに Sysyprep の操作を開始します。
-  
+
 - **Windows Server 2012** を実行するシステムの場合
   1.    Sysprep を取得するサーバーに WMF 5.0 をインストールした後、管理者としてログインします。
   2.    \Windows\System32\Sysprep\ActionFiles\ ディレクトリから Windows ディレクトリ以外の場所 (例: C:\) に Generize.xml をコピーします。
@@ -96,24 +96,23 @@ SIL を既に実行している Windows Server 2012 R2 に WMF 5.0 をインス�
   7.    次のコマンドを実行し、System32 フォルダーで Generalize.xml ファイルの所有権を取得します。
 
     ```
-    Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+    Takeown /f C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
     ```
 
   8.    次のコマンドを実行し、ファイルの適切なアクセス許可を設定します。
 
     ```
-    Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F 
+    Cacls C:\Windows\System32\ Sysprep\ActionFiles\Generalize.xml /G `<AdministratorUserName>`:F
     ```
-      * 確認のプロンプトで [はい] と回答します。 
+      * 確認のプロンプトで [はい] と回答します。
       * なお `<AdministratorUserName>` をコンピューター管理者のユーザー名に置き換える必要があります。 たとえば、"Administrator" にします。
-      
+
   9.    次のコマンドを使用して、Sysprep ディレクトリに保存した編集済みファイルをコピーします。
 
     ```
-    xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml 
+    xcopy C:\Generalize.xml C:\Windows\System32\Sysprep\ActionFiles\Generalize.xml
     ```
       * [はい] と回答して上書きします (上書きの確認メッセージが表示されない場合は、入力されたパスを再確認してください)。
       * 編集した Generalize.xml のコピーは C:\ にコピーされたことを想定しています。
 
   10.   この解決策により Generalize.xml が更新されます。 Sysprep を実行して汎用化オプションを有効にしてください。
-

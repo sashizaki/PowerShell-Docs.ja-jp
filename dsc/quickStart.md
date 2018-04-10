@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "Desired State Configuration クイック スタート"
-ms.openlocfilehash: e21017f24db8c90229063895c1a7e4c6f0546d0c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: Desired State Configuration クイック スタート
+ms.openlocfilehash: 25bcd46bbf62a6ebb727519a65732377363e68c0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -37,7 +37,7 @@ DSC の概要としくみついては、「[意思決定者向け Desired State 
 </body>
 ```
 
-これを先ほど作成した `test` フォルダに `index.htm` というファイル名でこのファイルを保存します。 
+これを先ほど作成した `test` フォルダに `index.htm` というファイル名でこのファイルを保存します。
 
 ## <a name="write-the-configuration"></a>構成を記述する
 
@@ -122,7 +122,7 @@ Start-DscConfiguration .\WebsiteTest
 
 ## <a name="test-the-configuration"></a>構成をテストする
 
-[Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) コマンドレットを呼び出すことで、構成の適用が正しく行われたか確認できます。 
+[Get-DscConfigurationStatus](/reference/5.1/PSDesiredStateConfiguration/Get-DscConfigurationStatus) コマンドレットを呼び出すことで、構成の適用が正しく行われたか確認できます。
 
 今回の場合は、Web ブラウザーで `http://localhost/` を参照することで、結果を直接テストすることもできます。
 この例の最初の手順として、作成した「Hello World」 HTML ページが表示されます。
@@ -132,6 +132,3 @@ Start-DscConfiguration .\WebsiteTest
 - 「[DSC 構成](configurations.md)」で DSC 構成の詳細を確認する。
 - 「[DSC リソース](resources.md)」で利用可能な DSC リソースとカスタム DSC リソースの作成方法を確認する。
 - 「[PowerShell ギャラリー](https://www.powershellgallery.com/)」で DSC の構成とリソースを検索する。
-
-
-

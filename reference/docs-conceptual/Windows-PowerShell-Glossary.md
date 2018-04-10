@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "Windows PowerShell 用語集"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: Windows PowerShell 用語集
 ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: 872ceb342cc72477c5142ce28a9b3b66e32bb84f
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell 用語集
 
@@ -55,4 +55,3 @@ ms.lasthandoff: 02/19/2018
 |Windows PowerShell スクリプト ファイル|.ps1 拡張子を持ち、Windows PowerShell 言語で記述されたスクリプトを含むファイル。|
 |Windows PowerShell スナップイン|Windows PowerShell 環境に追加できるコマンドレット、プロバイダー、および Microsoft .NET Framework の型のセットを定義するリソース。|
 |Windows PowerShell ワークフロー|ワークフローとは、時間のかかるタスクを実行する手順や、複数のデバイスや管理対象ノード間で複数の手順の調整を必要とする手順をプログラミングで連結した手順のシーケンスです。 Windows PowerShell ワークフローを使用することで、IT 担当者や開発者は、マルチデバイス管理アクティビティのシーケンス (ワークフロー内の 1 つのタスク) をワークフローとして作成できます。 Windows PowerShell ワークフローを使用すると、Windows PowerShell スクリプトと XAML ファイルの両方をワークフローとして適応し実行できます。|
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "カスタム Windows PowerShell Desired State Configuration のビルド"
-ms.openlocfilehash: 4751bcaab1996ee3164bd2a2f430c3b188712860
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: カスタム Windows PowerShell Desired State Configuration のビルド
+ms.openlocfilehash: 7da4741a773d40da75c6ef667c35f86e1bae74bf
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="build-custom-windows-powershell-desired-state-configuration-resources"></a>カスタム Windows PowerShell Desired State Configuration のビルド
 
@@ -24,4 +24,3 @@ DSC リソースは、Windows PowerShell モジュールです。 モジュー�
 * [PowerShell クラスを使用したカスタム DSC リソースの記述](authoringResourceClass.md)
 * [複合リソース: リソースとしての DSC 構成の使用](authoringResourceComposite.md)
 * [リソース デザイナー ツールの使用](authoringResourceMofDesigner.md)
-

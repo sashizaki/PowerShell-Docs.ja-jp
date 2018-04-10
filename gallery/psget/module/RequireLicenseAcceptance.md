@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-09
+ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: RequireLicenseAcceptance
-ms.openlocfilehash: 260ccc1ee52d09a640e88203c5644f20f9723d6f
-ms.sourcegitcommit: cd66d4f49ea762a31887af2c72d087b219ddbe10
+ms.openlocfilehash: d78f8cb7f84869880e9a88a0f0407d18dc5c64cb
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/11/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="modules-requiring-license-acceptance"></a>ライセンスへの同意が必要なモジュール
 
@@ -17,7 +17,7 @@ ms.lasthandoff: 10/11/2017
 ## <a name="publish-requirements-for-modules"></a>モジュールの発行要件
 
 ユーザーにライセンスへの同意を求めるモジュールでは、次の要件を満たす必要があります。
-    
+
 - モジュール マニフェストの PSData セクションに「RequireLicenseAcceptance = $True」と記載する。
 - モジュールのルート ディレクトリに license.txt ファイルを含める。
 - モジュール マニフェストにライセンス URI を記載する。
@@ -31,13 +31,13 @@ ms.lasthandoff: 10/11/2017
     - **Save-Module:** ユーザーのシステムにモジュールがコピーされます。
     - **Install-Module:** (スコープに基づいて) ユーザーのシステムの適切なフォルダーにモジュールがコピーされます。
     - **Update-Module:** モジュールが更新されます。
-  - ライセンスを拒否した場合: 
+  - ライセンスを拒否した場合:
     - 操作は取り消されます。
 - すべてのコマンドレットで、ライセンスへの同意が必要であることを示すメタデータ (requireLicenseAcceptance およびフォーマット バージョン) があるか確認されます。
   - クライアントのフォーマット バージョンが 2.0 よりも前の場合、操作は失敗し、クライアントを更新するように求められます。
   - 2.0 以前のフォーマット バージョンを使用してモジュールが発行されている場合、requireLicenseAcceptance フラグは無視されます。
 
-    
+
  ## <a name="module-dependencies"></a>モジュールの依存関係
 - インストール/保存/更新操作中、依存モジュール (目的のモジュールに依存する別のモジュール) でライセンスへの同意が求められる場合、上記のライセンスへの同意が必要になります。
 - 該当するモジュールのバージョンがシステムへインストール済みであるとローカル カタログに記載されている場合、このライセンス チェックは省略されます。
@@ -59,7 +59,7 @@ PrivateData = @{
         # Flag to indicate whether the module requires explicit user acceptance
         RequireLicenseAcceptance = $true
     } # End of PSData hashtable
-    
+
  } # End of PrivateData hashtable
 ```
 次のコマンドでは、マニフェスト ファイルを更新して RequireLicenseAcceptance フラグを True に設定します。
@@ -78,7 +78,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 
 ```
 次のコマンドでは、license.txt ファイルのライセンスが表示され、このライセンスに同意するように求められます。
@@ -117,7 +117,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
 ### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>例 6: -AcceptLicense を使用してライセンスへの同意が必要な依存関係があるモジュールをインストールする
@@ -147,7 +147,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 次のコマンドでは、license.txt ファイルのライセンスが表示され、このライセンスに同意するように求められます。
 
@@ -172,7 +172,7 @@ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software.
 
 Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
-[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"): 
+[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 次のコマンドでは、license.txt ファイルのライセンスが表示され、このライセンスに同意するように求められます。
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "DSC Registry リソース"
-ms.openlocfilehash: 1e73e4275c0d9db5d8fac7641514ea8190f719ca
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: DSC Registry リソース
+ms.openlocfilehash: fcd24b1dd729dbb0abd697a4a628dce01fdd5422
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-registry-resource"></a>DSC Registry リソース
 
@@ -32,16 +32,16 @@ Registry [string] #ResourceName
 ```
 
 ## <a name="properties"></a>プロパティ
-|  プロパティ  |  説明   | 
-|---|---| 
-| キー| 特定の状態を確認するレジストリ キーのパスを示します。 このパスには、ハイブを含める必要があります。| 
-| ValueName| レジストリ値の名前を示します。 レジストリ キーを追加または削除するには、ValueType または ValueData を指定せずに、このプロパティを空の文字列で指定します。 レジストリ キーの既定値を変更または削除するには、ValueType または ValueData を指定し、このプロパティを空の文字列で指定します。| 
-| Ensure| キーと値が存在するかどうかを示します。 それらが存在することを保証するには、このプロパティを "Present" に設定します。 それらが存在しないことを保証するには、このプロパティを "Absent" に設定します。 既定値は "Present" です。| 
-| Force| 指定のレジストリ キーが存在する場合、__Force__ はそのキーを新しい値で上書きします。 レジストリ キーをサブキーと共に削除する場合は、これが __$true__ である必要があります。| 
-| Hex| 16 進形式でデータを表現するかどうかを示します。 指定した場合、DWORD/QWORD 値データが 16 進形式で表示されます。 その他の種類に対しては無効です。 既定値は __$false__ です。| 
-| DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。| 
-| ValueData| レジストリ値のデータ。| 
-| ValueType| 値の種類を示します。 サポートされている型は次のとおりです。 
+|  プロパティ  |  説明   |
+|---|---|
+| キー| 特定の状態を確認するレジストリ キーのパスを示します。 このパスには、ハイブを含める必要があります。|
+| ValueName| レジストリ値の名前を示します。 レジストリ キーを追加または削除するには、ValueType または ValueData を指定せずに、このプロパティを空の文字列で指定します。 レジストリ キーの既定値を変更または削除するには、ValueType または ValueData を指定し、このプロパティを空の文字列で指定します。|
+| Ensure| キーと値が存在するかどうかを示します。 それらが存在することを保証するには、このプロパティを "Present" に設定します。 それらが存在しないことを保証するには、このプロパティを "Absent" に設定します。 既定値は "Present" です。|
+| Force| 指定のレジストリ キーが存在する場合、__Force__ はそのキーを新しい値で上書きします。 レジストリ キーをサブキーと共に削除する場合は、これが __$true__ である必要があります。|
+| Hex| 16 進形式でデータを表現するかどうかを示します。 指定した場合、DWORD/QWORD 値データが 16 進形式で表示されます。 その他の種類に対しては無効です。 既定値は __$false__ です。|
+| DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。|
+| ValueData| レジストリ値のデータ。|
+| ValueType| 値の種類を示します。 サポートされている型は次のとおりです。
 <ul><li>文字列 (REG_SZ)</li>
 
 
@@ -76,6 +76,3 @@ Configuration RegistryTest
 
 >**注:** **HKEY\_CURRENT\_USER** レジストリ設定を変更するには、構成がシステムとしてではなくユーザーの資格情報で実行されている必要があります。
 >**PsDscRunAsCredential** プロパティを使用すれば、構成に対してユーザー資格情報を指定できます。 例については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
-
-
-

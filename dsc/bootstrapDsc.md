@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "DSC を使用した初回起動時の仮想マシンの構成"
-ms.openlocfilehash: ff06aafa6db49d93a9b42e38ac7c3e9a11657bd5
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, PowerShell, 構成, セットアップ
+title: DSC を使用した初回起動時の仮想マシンの構成
+ms.openlocfilehash: e6ff83b9a09f93277904c80e8e52f3db5e818739
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 >適用先: Windows PowerShell 5.0
 
@@ -90,7 +90,8 @@ Configuration SampleIISInstall
     Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
     ```
 
-7. DSC MOF ドキュメントをインストールした VHD を使用して、VM を作成します。 初回起動が行われ、オペレーティング システムがインストールされると、IIS がインストールされます。
+7. DSC MOF ドキュメントをインストールした VHD を使用して、VM を作成します。
+初回起動が行われ、オペレーティング システムがインストールされると、IIS がインストールされます。
 [Get-WindowsFeature](https://technet.microsoft.com/library/jj205469.aspx) コマンドレットを呼び出して、これを確認することができます。
 
 ## <a name="inject-a-dsc-metaconfiguration-into-a-vhd"></a>DSC のメタ構成を VHD に挿入する
@@ -203,4 +204,3 @@ configuration PullClientBootstrap
 - [DSCAutomationHostEnabled レジストリ キー](DSCAutomationHostEnabled.md)
 - [ローカル構成マネージャー (LCM) の構成](metaConfig.md)
 - [DSC Web プル サーバーのセットアップ](pullServer.md)
-

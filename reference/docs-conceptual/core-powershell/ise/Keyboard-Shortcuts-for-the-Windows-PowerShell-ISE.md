@@ -1,18 +1,20 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "Windows PowerShell ISE のキーボード ショートカット"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: Windows PowerShell ISE のキーボード ショートカット
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: 21c4b43b1ab94e2b533413362319ec42ac8a15aa
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: e17fee4cf0cc8ac7aa0bb36acde3b452919312d0
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE のキーボード ショートカット
+
 Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行するには、次のキーボード ショートカットを使用します。 Windows PowerShell ISE は、Windows Server および Windows クライアント オペレーティング システムの一部として提供されていますが、[Windows Management Framework 4.0 のダウンロード パッケージ](http://go.microsoft.com/fwlink/?LinkID=293881)の一部として、前の Windows オペレーティング システムにもインストールできます。
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>テキストを編集するためのキーボード ショートカット
+
 テキストを編集するときに、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|使用する場所|
@@ -34,6 +36,7 @@ Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行�
 |**元に戻す**|CTRL + Z|スクリプト ウィンドウ、コマンド ウィンドウ|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>スクリプトを実行するためのキーボード ショートカット
+
 スクリプト ウィンドウでスクリプトを実行する場合、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|
@@ -47,6 +50,7 @@ Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行�
 |**タブ移動** (前のスクリプトへ)|CTRL + SHIFT + TAB **メモ:** 前のスクリプトへのタブ移動は、1 つの Windows PowerShell タブが開いている場合、またはスクリプト ウィンドウにフォーカスがあるときに複数の Windows PowerShell タブが開いている場合にだけ有効です。|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>ビューをカスタマイズするためのキーボード ショートカット
+
 次のキーボード ショートカットを使用して、Windows PowerShell ISE のビューをカスタマイズできます。 アプリケーションのすべてのウィンドウから利用可能です。
 
 |操作|キーボード ショートカット|
@@ -63,6 +67,7 @@ Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行�
 |**縮小**|CTRL + - (マイナス記号)|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>スクリプト デバッグ用のキーボード ショートカット
+
 スクリプトをデバッグするときに、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|使用する場所|
@@ -93,6 +98,7 @@ Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行�
 |**コンソールのデバッグ コマンドの表示**|H または ?|コンソール ウィンドウ、スクリプトのデバッグ時|
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Windows PowerShell のタブのキーボード ショートカット
+
 Windows PowerShell のタブを使用するときに、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|
@@ -103,6 +109,7 @@ Windows PowerShell のタブを使用するときに、次のキーボード シ
 |**次の Windows PowerShell タブ**|CTRL + Tab。 このショートカットは、Windows PowerShell タブでファイルが開かれていない場合にのみ有効です。|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>開始および終了のキーボード ショートカット
+
 次のキーボード ショートカットを使用して、Windows PowerShell コンソール (PowerShell.exe) を起動したり、Windows PowerShell ISE を終了したりできます。
 
 |操作|キーボード ショートカット|
@@ -111,5 +118,5 @@ Windows PowerShell のタブを使用するときに、次のキーボード シ
 |**PowerShell.exe を起動** (Windows PowerShell コンソール)|CTRL + SHIFT + P|
 
 ## <a name="see-also"></a>参照
-- [PowerShell マガジン: Windows PowerShell ISE のキーボード ショートカットの完全な一覧](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
 
+- [PowerShell マガジン: Windows PowerShell ISE のキーボード ショートカットの完全な一覧](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)

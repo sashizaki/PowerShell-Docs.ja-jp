@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: JKeithB
 ms.topic: conceptual
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: psgallery_gettingstarted
-ms.openlocfilehash: 2117712b0081db4a21f8480b458a499ed84dc512
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 599b148e141ba4205a7c774581e737a5d54bfae1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>PowerShell ギャラリーの概要
 
@@ -33,7 +33,7 @@ PowerShellGet では、PowerShell ギャラリーと連携する [NuGet プロ�
 
 または、`Install-PackageProvider -Name NuGet -Force` を実行して、NuGet プロバイダーのダウンロードとインストールを自動化できます。
 
-  
+
 NuGet の 2.8.5.201 より前のバージョンがある場合は、以下の PowerShell コマンドレットを呼び出し、NuGet の最新バージョンをインストールして切り替える必要があります。
 
 1.  `Install-PackageProvider NuGet -MinimumVersion '2.8.5.201' -Force`
@@ -42,7 +42,7 @@ NuGet の 2.8.5.201 より前のバージョンがある場合は、以下の Po
 
 詳細については、「<http://oneget.org/>」を参照してください。
 
-  
+
 注: パッケージの形式が変更されたため、最近更新された項目をインストールするには、PowerShellGet と PackageManagement の最新バージョンに更新することをお勧めします。 PowerShellGet は Windows 10 に含まれています。詳細については、[こちら](http://go.microsoft.com/fwlink/?LinkID=624830&clcid=0x409)をご覧ください。
 PowerShellGet は Windows Management Framework (WMF) 5.0 の一部でもあり、[こちら](http://go.microsoft.com/fwlink/?LinkId=398175)からダウンロードできます。
 
@@ -118,4 +118,3 @@ PowerShell ギャラリーからインストールされた項目を更新する
 PowerShell ギャラリーからどのモジュールをインストールしたかを調べるには、[Get-InstalledModule](https://go.microsoft.com/fwlink/?LinkId=526863) コマンドレットを実行します。 このコマンドは、PowerShell ギャラリーから直接インストールした、システム上にあるモジュールをすべて一覧表示します。
 
 同様に、PowerShell ギャラリーからどのスクリプトをインストールしたかを調べるには、[Get-InstalledScript](https://go.microsoft.com/fwlink/?LinkId=619790) コマンドレットを実行します。 このコマンドは、PowerShell ギャラリーから直接インストールした、システム上にあるスクリプトをすべて一覧表示します。
-

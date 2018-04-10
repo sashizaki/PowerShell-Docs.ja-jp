@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "Windows PowerShell ISE のアクセシビリティ"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: Windows PowerShell ISE のアクセシビリティ
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
-ms.openlocfilehash: 7f758a46bdc722482b9e8a9baaff0a075f64ece9
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 65d159905660f4f3e025b385626679e02a785fd7
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE のアクセシビリティ
+
 このトピックでは、Windows PowerShell Integrated Scripting Environment (ISE) の役に立つアクセシビリティ機能について説明します。
 
 * [コンソール ウィンドウとスクリプト ウィンドウのサイズと場所を変更する方法](#how-to-change-the-size-and-location-of-the-console-and-script-panes)
@@ -31,6 +32,7 @@ Windows PowerShell ISE は、ハイ コントラスト モードをサポート�
 - テキスト サイズの変更
 
 ## <a name="how-to-change-the-size-and-location-of-the-console-and-script-panes"></a>コンソール ウィンドウとスクリプト ウィンドウのサイズと場所を変更する方法
+
 コンソール ウィンドウとスクリプト ウィンドウのサイズと場所の変更は、次の手順で実行できます。 Windows PowerShell ISE を再び開いたときに、サイズと場所に加えた変更が保持されています。
 
 ### <a name="to-resize-the-script-pane-and-console-pane"></a>スクリプト ウィンドウとコンソール ウィンドウのサイズを変更するには
@@ -40,6 +42,7 @@ Windows PowerShell ISE は、ハイ コントラスト モードをサポート�
 2. マウスのポインターが両方向矢印に変わったら、境界線をドラッグして、ウィンドウ サイズを変更します。
 
 ### <a name="to-move-the-script-pane-and-console-pane"></a>スクリプト ウィンドウとコンソール ウィンドウを移動するには
+
 次のいずれかの操作を行います。
 
 - スクリプト ウィンドウをコンソール ウィンドウの上に移動するには、**CTRL + 1** を押すか、ツール バーの **[スクリプト ウィンドウを上に表示]** アイコンをクリックするか、**[表示]** メニューで **[スクリプト ウィンドウを上に表示]** をクリックします。
@@ -53,6 +56,7 @@ Windows PowerShell ISE は、ハイ コントラスト モードをサポート�
 - コンソール ウィンドウを最大表示しているときに、スクリプト ウィンドウを表示するには、タブの行の右端にある **[スクリプト ウィンドウを表示]** アイコンをクリックするか、**[表示]** メニューで **[スクリプト ウィンドウを表示]** メニュー オプションをクリックして選びます。
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>テキストを編集するためのキーボード ショートカット
+
 テキストを編集するときに、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|使用する場所|
@@ -70,6 +74,7 @@ Windows PowerShell ISE は、ハイ コントラスト モードをサポート�
 |**元に戻す**|CTRL + Z|スクリプト ウィンドウ、コンソール ウィンドウ|
 
 ## <a name="keyboard-shortcuts-for-running-scripts"></a>スクリプトを実行するためのキーボード ショートカット
+
 スクリプト ウィンドウでスクリプトを実行する場合、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|
@@ -83,6 +88,7 @@ Windows PowerShell ISE は、ハイ コントラスト モードをサポート�
 |**タブ移動** (前のスクリプトへ)|CTRL + SHIFT + TAB **メモ:** 前のスクリプトへのタブは、PowerShell タブを 1 つだけ開いている場合、または PowerShell タブを複数開いている場合に機能します。フォーカスはスクリプト ウィンドウにあります。|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>ビューをカスタマイズするためのキーボード ショートカット
+
 次のキーボード ショートカットを使用して、Windows PowerShell ISE のビューをカスタマイズできます。 アプリケーションのすべてのウィンドウから利用可能です。
 
 |操作|キーボード ショートカット|
@@ -99,6 +105,7 @@ Windows PowerShell ISE は、ハイ コントラスト モードをサポート�
 |**縮小**|CTRL + - (マイナス記号)|
 
 ## <a name="keyboard-shortcuts-for-debugging-scripts"></a>スクリプト デバッグ用のキーボード ショートカット
+
 スクリプトをデバッグするときに、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|使用する場所|
@@ -130,6 +137,7 @@ Windows PowerShell ISE は、ハイ コントラスト モードをサポート�
 |**コンソールのデバッグ コマンドの表示**|H または ?|コンソール ウィンドウ、スクリプトのデバッグ時|
 
 ## <a name="keyboard-shortcuts-for-windows-powershell-tabs"></a>Windows PowerShell のタブのキーボード ショートカット
+
 Windows PowerShell のタブを使用するときに、次のキーボード ショートカットを使用できます。
 
 |操作|キーボード ショートカット|
@@ -140,6 +148,7 @@ Windows PowerShell のタブを使用するときに、次のキーボード シ
 |**次の Windows PowerShell タブ**|CTRL + Tab。 このショートカットは、任意の PowerShell タブ上で開いているファイルがない場合にのみ機能します。|
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>開始および終了のキーボード ショートカット
+
 次のキーボード ショートカットを使用して、Windows PowerShell コンソール (PowerShell.exe) を起動したり、Windows PowerShell ISE を終了したりできます。
 
 |操作|キーボード ショートカット|
@@ -148,5 +157,5 @@ Windows PowerShell のタブを使用するときに、次のキーボード シ
 |**PowerShell.exe を起動** (Windows PowerShell コンソール)|CTRL + SHIFT + P|
 
 ## <a name="see-also"></a>参照
-- [Windows PowerShell ISE の使用](../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
+- [Windows PowerShell ISE の紹介](../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)

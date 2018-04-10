@@ -1,24 +1,27 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "Process コマンドレットによるプロセスの管理"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: Process コマンドレットによるプロセスの管理
 ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
-ms.openlocfilehash: 3786fb77167746d6a477dffdd4ea13e863c99964
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: d6d7daa810dce2d476566e4d30f03cc95bf730e6
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="managing-processes-with-process-cmdlets"></a>Process コマンドレットによるプロセスの管理
+
 Windows PowerShell で Process コマンドレットを使用して、Windows PowerShell のローカル プロセスおよびリモート プロセスを管理できます。
 
 ## <a name="getting-processes-get-process"></a>プロセスの取得 (Get-Process)
+
 ローカル コンピューターで実行されているプロセスを取得するには、パラメーターを指定せずに **Get-Process** を実行します。
 
 特定のプロセスを取得するには、プロセス名またはプロセス ID を指定します。 次のコマンドを実行すると、アイドル状態のプロセスを取得できます。
 
 ```
 PS> Get-Process -id 0
+
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
       0       0        0         16     0               0 Idle
@@ -28,6 +31,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 ```
 PS> Get-Process -Id 99
+
 Get-Process : No process with process ID 99 was found.
 At line:1 char:12
 + Get-Process  <<<< -Id 99
@@ -39,6 +43,7 @@ Get-Process コマンドレットの Name パラメーターを使用すると�
 
 ```
 PS> Get-Process -Name ex*
+
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     234       7     5572      12484   134     2.98   1684 EXCEL
@@ -50,7 +55,8 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 **Get-Process** の Name パラメーターには、複数の値を指定することもできます。
 
 ```
-PS> Get-Process -Name exp*,power* 
+PS> Get-Process -Name exp*,power*
+
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     540      15    35172      48148   141    88.44    408 explorer
@@ -61,6 +67,7 @@ Get-Process の ComputerName パラメーターを使用すると、リモート
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server02
+
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     258       8    29772      38636   130            3700 powershell
@@ -72,6 +79,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 
 ```
 PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | Format-Table -Property ID, ProcessName, MachineName
+
   Id ProcessName MachineName
   -- ----------- -----------
 3700 powershell  Server01
@@ -79,17 +87,17 @@ PS> Get-Process -Name PowerShell -ComputerName localhost, Server01, Server01 | F
 5816 powershell  localhost
 ```
 
-より複雑なこのコマンドは、Get-Process の標準の表示に MachineName プロパティを追加します。 アクサン グラーブ文字 (\`) (ASCII 96) は、Windows PowerShell の連結文字です。
+より複雑なこのコマンドは、Get-Process の標準の表示に MachineName プロパティを追加します。
 
 ```
-get-process powershell -computername localhost, Server01, Server02 | format-table -property Handles, `
-                    @{Label="NPM(K)";Expression={[int]($_.NPM/1024)}}, `
-                    @{Label="PM(K)";Expression={[int]($_.PM/1024)}}, `
-                    @{Label="WS(K)";Expression={[int]($_.WS/1024)}}, `
-                    @{Label="VM(M)";Expression={[int]($_.VM/1MB)}}, `
-                    @{Label="CPU(s)";Expression={if ($_.CPU -ne $()` 
-                    {$_.CPU.ToString("N")}}}, `                                                                         
-                    Id, ProcessName, MachineName -auto
+PS> Get-Process powershell -ComputerName localhost, Server01, Server02 |
+    Format-Table -Property Handles,
+        @{Label="NPM(K)";Expression={[int]($_.NPM/1024)}},
+        @{Label="PM(K)";Expression={[int]($_.PM/1024)}},
+        @{Label="WS(K)";Expression={[int]($_.WS/1024)}},
+        @{Label="VM(M)";Expression={[int]($_.VM/1MB)}},
+        @{Label="CPU(s)";Expression={if ($_.CPU -ne $() {$_.CPU.ToString("N")}}},
+        Id, ProcessName, MachineName -auto
 
 Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
 -------  ------  ----- ----- ----- ------  -- -----------  -----------
@@ -99,6 +107,7 @@ Handles  NPM(K)  PM(K) WS(K) VM(M) CPU(s)  Id ProcessName  MachineName
 ```
 
 ## <a name="stopping-processes-stop-process"></a>プロセスの停止 (Stop-Process)
+
 Windows PowerShell では、さまざまな方法でプロセスを一覧表示できますが、プロセスの停止についてはどうでしょうか。
 
 **Stop-Process** コマンドレットでは、停止するプロセスを Name または Id で指定できます。 プロセスを停止できるかどうかは、ユーザーのアクセス許可によって異なります。 停止することのできないプロセスもあります。 たとえば、アイドル状態のプロセスを停止しようとすると、エラーが発生します。
@@ -129,30 +138,31 @@ Performing operation "Stop-Process" on Target "taskmgr (4072)".
 
 オブジェクトのフィルター処理コマンドレットを使用すれば、複雑なプロセス操作を行うこともできます。 Process オブジェクトには、応答がない場合に True を返す Responding プロパティがあります。したがって、次のコマンドを使用すると、応答のないアプリケーションをすべて停止できます。
 
-```
+```powershell
 Get-Process | Where-Object -FilterScript {$_.Responding -eq $false} | Stop-Process
 ```
 
 他の状況でも、これと同じアプローチを使用できます。 たとえば、あるアプリケーションを起動すると、補助的なアプリケーションが自動的に実行され、通知領域に表示されるとします。 このとき、ターミナル サービスのセッションで補助的なアプリケーションが正しく起動しないことがわかりました。しかし、物理的なコンピューター コンソールで実行されているセッションでは起動したままにしておく必要があります。 物理的なコンピューター デスクトップに関連付けられたセッションには、常にセッション ID として 0 が割り当てられます。したがって、**Where-Object** およびプロセスの **SessionId** を使用することで、その他のセッションに属するプロセスのすべてのインスタンスを停止できます。
 
-```
+```powershell
 Get-Process -Name BadApp | Where-Object -FilterScript {$_.SessionId -neq 0} | Stop-Process
 ```
 
 Stop-Process コマンドレットには、ComputerName パラメーターがありません。 そのため、リモート コンピューター上でプロセスを停止するコマンドを実行するには、Invoke-Command コマンドレットを使用します。 たとえば、リモート コンピューター Server01 上で PowerShell プロセスを停止するには、次のように入力します。
 
-```
+```powershell
 Invoke-Command -ComputerName Server01 {Stop-Process Powershell}
 ```
 
 ## <a name="stopping-all-other-windows-powershell-sessions"></a>他のすべての Windows PowerShell セッションの停止
+
 現在のセッションを除いて、実行中のすべての Windows PowerShell セッションを停止できると便利な場合があります。 特定のセッションで大量のリソースが消費されていたり、セッションがアクセスできない状態になっている場合 (リモートから実行されていたり、別のデスクトップ セッションで使用されている場合など)、そのプロセスを直接停止できない場合があります。 しかし、実行中のすべてのセッションを停止しようとすると、現在のセッションまで停止されてしまう可能性があります。
 
-Windows PowerShell の各セッションには、Windows PowerShell プロセスの ID を保持する環境変数 PID が割り当てられます。 $PID と各セッションの ID を照合することによって、異なる ID を持つ Windows PowerShell セッションだけを強制終了できます。 これは、次のパイプライン コマンドで実現できます。また、**PassThru** パラメーターを使用しているため、強制終了されたセッションが一覧表示されます。
+Windows PowerShell の各セッションには、Windows PowerShell プロセスの ID を保持する環境変数 PID が割り当てられます。 $PID と各セッションの ID を照合することによって、異なる ID を持つ Windows PowerShell セッションだけを強制終了できます。これは、次のパイプライン コマンドで実現できます。また、**PassThru** パラメーターを使用しているため、強制終了されたセッションが一覧表示されます。
 
 ```
-PS> Get-Process -Name powershell | Where-Object -FilterScript {$_.Id -ne $PID} | Stop-Process -
-PassThru
+PS> Get-Process -Name powershell | Where-Object -FilterScript {$_.Id -ne $PID} | Stop-Process -PassThru
+
 Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 -------  ------    -----      ----- -----   ------     -- -----------
     334       9    23348      29136   143     1.03    388 powershell
@@ -164,13 +174,14 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 ```
 
 ## <a name="starting-debugging-and-waiting-for-processes"></a>プロセスの開始、デバッグ、待機
+
 Windows PowerShell には、プロセスを開始 (または再開) するためのコマンドレット、プロセスのデバッグ用コマンドレット、コマンドを実行する前にプロセスが完了するまで待機するためのコマンドレットが用意されています。 これらのコマンドレットについては、各コマンドレットのヘルプ トピックをご覧ください。
 
 ## <a name="see-also"></a>参照
+
 - [Get-Process [m2]](https://technet.microsoft.com/en-us/library/27a05dbd-4b69-48a3-8d55-b295f6225f15)
 - [Stop-Process [m2]](https://technet.microsoft.com/en-us/library/12454238-9881-457a-bde4-fb6cd124deec)
 - [Start-Process](https://technet.microsoft.com/en-us/library/41a7e43c-9bb3-4dc2-8b0c-f6c32962e72c)
 - [Wait-Process](https://technet.microsoft.com/en-us/library/9222af7a-789d-4a09-aa90-09d7c256c799)
 - [Debug-Process](https://technet.microsoft.com/en-us/library/eea1dace-3913-4dbd-b659-5a94a610eee1)
 - [Invoke-Command](https://technet.microsoft.com/en-us/library/22fd98ba-1874-492e-95a5-c069467b8462)
-

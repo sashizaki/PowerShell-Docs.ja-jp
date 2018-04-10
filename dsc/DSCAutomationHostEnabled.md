@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "DSCAutomationHostEnabled レジストリ キー"
-ms.openlocfilehash: c58b7a8f2485ff02f09763749a3de8a75f882d19
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: DSCAutomationHostEnabled レジストリ キー
+ms.openlocfilehash: 9fd71120b4959a7b14094922b453b05b217f3736
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 >適用先: Windows PowerShell 5.0
 
@@ -16,8 +16,8 @@ ms.lasthandoff: 01/17/2018
 DSC は、**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies** の下の **DSCAutomationHostEnabled** というレジストリ キーを使用してコンピューターの起動時の構成を有効にします。
 DSCAutomationHostEnabled では、次の 3 つのモードがサポートされます。
 
-|  DSCAutomationHostEnabled の値  |  説明   | 
-|---|---| 
+|  DSCAutomationHostEnabled の値  |  説明   |
+|---|---|
 0 | 起動時にコンピューターの構成を行いません。 |
 1 で保護されたプロセスとして起動されました | 起動時にコンピューターの構成を行います。 |
 2 | コンピューターの構成は、DSC の状態が保留中または最新の場合にのみ行います。 これは、既定値です。 |
@@ -25,5 +25,3 @@ DSCAutomationHostEnabled では、次の 3 つのモードがサポートされ�
 ## <a name="see-also"></a>参照
 
 この機能を使用して初回起動時に構成を実行する方法の例については、「[DSC を使用した初回起動時の仮想マシンの構成](bootstrapDsc.md)」をご覧ください。
-
-

@@ -1,12 +1,12 @@
 ---
-ms.date: 2017-08-09
-keywords: "powershell, コマンドレット, ダウンロード, インストール, セットアップ, windows 10, windows 8.1, windows 8.0, windows 7"
-title: "Windows PowerShell のインストール"
-ms.openlocfilehash: dffb6ec11ce265ebc4e6bc91f631650e1af5868d
-ms.sourcegitcommit: 05d576cf107780fa52b2db4a042816be40b00fbc
+ms.date: 08/09/2017
+keywords: powershell, コマンドレット, ダウンロード, インストール, セットアップ, windows 10, windows 8.1, windows 8.0, windows 7
+title: Windows PowerShell のインストール
+ms.openlocfilehash: 320b271ce49768f8865c79c5c72749befe306fa4
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/19/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell のインストール
 既定では、Windows PowerShell は、Windows 7 SP1 および Windows Server 2008 R2 SP1 以降のすべての Windows にインストールされています。
@@ -45,7 +45,8 @@ GUI なしの Windows Server のエディションは **Core** エディショ�
 
 すべての Core エディションで、サーバーにログインすると、Windows コマンド プロンプト ウィンドウが表示されます。
 
-「`powershell`」と入力して **Enter** キーを押し、コマンド プロンプト セッション内で PowerShell を開始します。 「`exit`」と入力して PowerShell セッションを終了し、コマンド プロンプトに戻ります。
+「`powershell`」と入力して **Enter** キーを押し、コマンド プロンプト セッション内で PowerShell を開始します。
+「`exit`」と入力して PowerShell セッションを終了し、コマンド プロンプトに戻ります。
 
 ### <a name="windows-server-desktop-editions"></a>Windows Server Desktop エディション
 

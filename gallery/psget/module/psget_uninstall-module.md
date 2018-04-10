@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: Uninstall-Module
-ms.openlocfilehash: 3c4d8faa63aba6b4434d42a19a219baf84122591
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 90f26e64a8a6bc95faf444b1d3ce82a8e3bbefc1
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="uninstall-module"></a>Uninstall-Module
 
@@ -16,7 +16,8 @@ PowerShellGet コマンドレットを使用してインストールされたモ
 
 ## <a name="description"></a>説明
 
-Uninstall-Module コマンドレットは、ローカル コンピューターから指定されたモジュールをアンインストールします。 モジュールに他のモジュールが依存している場合は、アンインストールできません。
+Uninstall-Module コマンドレットは、ローカル コンピューターから指定されたモジュールをアンインストールします。
+モジュールに他のモジュールが依存している場合は、アンインストールできません。
 Uninstall-Module コマンドレットは、アンインストールされるモジュールが使用中かどうかも検証します。 モジュールが使用中の場合、エラーがスローされます。
 
 ## <a name="cmdlet-syntax"></a>コマンドレット構文
@@ -126,4 +127,3 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PSModule.psm
    , Exception
     + FullyQualifiedErrorId : NoMatchFound,Microsoft.PowerShell.PackageManagement.Cmdlets.UninstallPackage
 ```
-

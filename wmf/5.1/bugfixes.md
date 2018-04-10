@@ -1,14 +1,14 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, PowerShell, セットアップ"
-title: "WMF 5.1 のバグ修正"
-ms.openlocfilehash: 137095f50f9f926d3488ff9c1ce8270ddbda63eb
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+keywords: WMF, PowerShell, セットアップ
+title: WMF 5.1 のバグ修正
+ms.openlocfilehash: dfd9ead447edfe9b7bdae23be14785df4b182bbc
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="bug-fixes-in-wmf-51"></a>WMF 5.1 のバグ修正
 
@@ -18,9 +18,11 @@ WMF 5.1 では、次の重要なバグが修正されました。
 
 ### <a name="module-auto-discovery-fully-honors-envpsmodulepath"></a>モジュールの自動検出の完全な受け入れ `$env:PSModulePath` ###
 
-モジュールの自動検出 (コマンド呼び出し時に Import-Module を明示的に指定しないモジュールの自動的な読み込み) が、WMF 3 で導入されました。 導入時、PowerShell は `$env:PSModulePath` を使用する前に `$PSHome\Modules` のコマンドを確認していました。
+モジュールの自動検出 (コマンド呼び出し時に Import-Module を明示的に指定しないモジュールの自動的な読み込み) が、WMF 3 で導入されました。
+導入時、PowerShell は `$env:PSModulePath` を使用する前に `$PSHome\Modules` のコマンドを確認していました。
 
-WMF 5.1 では、この動作が `$env:PSModulePath` を完全に受け入れるように変更されています。 これにより、PowerShell によって提供されるコマンド (`Get-ChildItem` など) を定義するユーザー作成のモジュールを、自動的に読み込み、組み込みコマンドを正しくオーバーライドできます。
+WMF 5.1 では、この動作が `$env:PSModulePath` を完全に受け入れるように変更されています。
+これにより、PowerShell によって提供されるコマンド (`Get-ChildItem` など) を定義するユーザー作成のモジュールを、自動的に読み込み、組み込みコマンドを正しくオーバーライドできます。
 
 ### <a name="file-redirection-no-longer-hard-codes--encoding-unicode"></a>ファイルのリダイレクトの非ハードコード化 `-Encoding Unicode` ###
 
@@ -40,7 +42,8 @@ WMF 5.1 ではこのバグが修正されています。
 
 ### <a name="fixed-some-issues-with-com-objects"></a>COM オブジェクトでのいくつかの問題の修正 ###
 
-WMF 5.0 では、COM オブジェクト上のメソッドを呼び出して COM オブジェクトのプロパティにアクセスする新しい COM バインダーが導入されました。 この新しいバインダーによりパフォーマンスが大幅に向上しましたが、バグもいくつか含まれていました。WMF 5.1 ではそれが修正されました。
+WMF 5.0 では、COM オブジェクト上のメソッドを呼び出して COM オブジェクトのプロパティにアクセスする新しい COM バインダーが導入されました。
+この新しいバインダーによりパフォーマンスが大幅に向上しましたが、バグもいくつか含まれていました。WMF 5.1 ではそれが修正されました。
 
 #### <a name="argument-conversions-were-not-always-performed-correctly"></a>引数の変換が正常に実行されないことがあった ####
 
@@ -75,8 +78,9 @@ $x = Get-COMDictionary
 
 ### <a name="ordered-was-not-allowed-inside-classes"></a>`[ordered]` がクラス内で許可されなかった ###
 
-WMF 5.0 では、クラスで使用されるリテラル形を検証するクラスが導入されました。  
-`[ordered]` はリテラル形のように見えますが、真の .Net 型ではありません。 WMF 5.0 は、クラスの内の `[ordered]` で誤ってエラーを報告しました。
+WMF 5.0 では、クラスで使用されるリテラル形を検証するクラスが導入されました。
+`[ordered]` はリテラル形のように見えますが、真の .Net 型ではありません。
+WMF 5.0 は、クラスの内の `[ordered]` で誤ってエラーを報告しました。
 
 ```
 class CThing
@@ -95,7 +99,8 @@ WMF 5.1 より前では、複数のバージョンのモジュールがインス
 
 WMF 5.1 では、最新バージョンのトピックのヘルプを返すことでこれが解決されています。
 
-`Get-Help` では、必要なヘルプのバージョンを指定する方法はありません。 これを回避するには、モジュール ディレクトリに移動し、好みのエディターなどのツールで直接ヘルプを表示します。 
+`Get-Help` では、必要なヘルプのバージョンを指定する方法はありません。
+これを回避するには、モジュール ディレクトリに移動し、好みのエディターなどのツールで直接ヘルプを表示します。
 
 ### <a name="powershellexe-reading-from-stdin-stopped-working"></a>STDIN からの powershell.exe の読み込みが停止する
 
@@ -109,4 +114,3 @@ PowerShell は、ログインの遅延を回避するために WMI クエリを�
 WMI クエリによって、最終的にシステムのすべてのプロセスに tzres.mui.dll が挿入されます。これは、WMI の Win32_Process クラスがローカルのタイムゾーン情報を取得しようとするためです。
 結果的に、wmiprvse (WMI プロバイダーのホスト) で、大規模な CPU 使用率の急増が発生します。
 修正プログラムでは、WMI を使用する代わりに、Win32 API 呼び出しを使用して同じ情報を取得します。
-

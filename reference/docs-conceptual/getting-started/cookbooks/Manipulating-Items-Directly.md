@@ -1,15 +1,16 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "項目を直接操作する"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: 項目を直接操作する
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: d9aa95dcb0da2e8203cbe32d64b95bf33d914166
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 688f9194bd16793331325999c69e88df3e94c976
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="manipulating-items-directly"></a>項目を直接操作する
+
 ファイル システムのドライブ内のファイルやフォルダー、Windows PowerShell レジストリ ドライブのレジストリ キーなど、Windows PowerShell のドライブに表示される要素は、Windows PowerShell の*項目*と呼ばれます。 項目を操作するためのコマンドレットは、名前に **Item** という名詞の部分があります。
 
 **Get-Command -Noun Item** コマンドの出力では、Windows PowerShell 項目のコマンドレットが 9 個あることが示されています。
@@ -31,6 +32,7 @@ Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
 ### <a name="creating-new-items-new-item"></a>新しい項目の作成 (New-Item)
+
 ファイル システムで新しい項目を作成するには、**New-Item** コマンドレットを使用します。 項目のパスを指定した **Path** パラメーターと、"file" または "directory" という値を指定した **ItemType** パラメーターを組み込みます。
 
 たとえば、C:\\Temp ディレクトリに "New.Directory" という名前の新しいディレクトリを作成するには、次のように入力します。
@@ -73,6 +75,7 @@ SKC  VC Name                           Property
 レジストリ パスを入力するときは、Windows PowerShell のドライブ名 HKLM: と HKCU: に、必ずコロン (**:**) を含めます。 コロンがないと、Windows PowerShell では、パス内のドライブ名を認識しません。
 
 ### <a name="why-registry-values-are-not-items"></a>レジストリ値が項目ではない理由
+
 **Get-ChildItem** コマンドレットを使用してレジストリ キーの項目を検索する場合は、実際のレジストリ エントリやその値は表示されません。
 
 たとえば、レジストリ キー **HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Run** には通常、システムの起動時に実行するアプリケーションを表すいくつかのレジストリ エントリが含まれます。
@@ -81,6 +84,7 @@ SKC  VC Name                           Property
 
 ```
 PS> Get-ChildItem HKLM:\Software\Microsoft\Windows\CurrentVersion\Run
+
    Hive: Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\Software\Micros
 oft\Windows\CurrentVersion\Run
 SKC  VC Name                           Property
@@ -91,10 +95,11 @@ SKC  VC Name                           Property
 レジストリ エントリを項目として処理することは便利ですが、レジストリ エントリへのパスを一意な方法で指定できません。 パスの表記法では、**Run** という名前のレジストリ サブキーと、**Run** サブキーの **(Default)** レジストリ エントリを区別しません。 さらに、レジストリ エントリの名前にバックスラッシュ (**\\**) を含めることができるので、レジストリ エントリが項目の場合、**Windows\\CurrentVersion\\Run** という名前のレジストリ エントリとそのパスに配置されているサブキーとを、パスの表記法を使用して区別することはできません。
 
 ### <a name="renaming-existing-items-rename-item"></a>既存の項目の名前を変更する (Rename-Item)
+
 ファイルまたはフォルダーの名前を変更するには、**Rename-Item** コマンドレットを使用します。 次のコマンドは、**file1.txt** ファイルの名前を **fileOne.txt** に変更します。
 
-```
-PS> Rename-Item -Path C:\temp\New.Directory\file1.txt fileOne.txt
+```powershell
+Rename-Item -Path C:\temp\New.Directory\file1.txt fileOne.txt
 ```
 
 **Rename-Item** コマンドレットは、ファイルまたはフォルダーの名前を変更できますが、項目を移動することはできません。 次のコマンドは、New.Directory ディレクトリから Temp ディレクトリにファイルを移動しようとするため失敗します。
@@ -107,6 +112,7 @@ At line:1 char:12
 ```
 
 ### <a name="moving-items-move-item"></a>項目の移動 (Move-Item)
+
 ファイルまたはフォルダーを移動するには、**Move-Item** コマンドレットを使用します。
 
 たとえば、次のコマンドは、New.Directory ディレクトリを C:\\temp ディレクトリから C: ドライブのルートに移動します。 項目が移動されたことを確認するには、**Move-Item** コマンドレットの **PassThru** パラメーターを含めます。 **Passthru** を指定しないと、**Move-Item** コマンドレットで結果は表示されません。
@@ -122,12 +128,13 @@ d----        2006-05-18  12:14 PM            New.Directory
 ```
 
 ### <a name="copying-items-copy-item"></a>項目のコピー (Copy-Item)
+
 他のシェルでのコピー操作を使い慣れている場合は、Windows PowerShell の **Copy-Item** コマンドレットの動作が普通ではないように思える可能性があります。 1 つの場所から別の場所に項目をコピーする場合、Copy-Item は既定ではその内容をコピーしません。
 
 たとえば、**New.Directory** ディレクトリを C: ドライブから C:\\temp ディレクトリにコピーすると、コマンドは成功しますが、New.Directory ディレクトリのファイルはコピーされません。
 
-```
-PS> Copy-Item -Path C:\New.Directory -Destination C:\temp
+```powershell
+Copy-Item -Path C:\New.Directory -Destination C:\temp
 ```
 
 **C:\\temp\\New.Directory** の内容を表示すると、ファイルが含まれていないことがわかります。
@@ -145,6 +152,7 @@ PS>
 
 ```
 PS> Copy-Item -Path C:\New.Directory -Destination C:\temp -Recurse -Force -Passthru
+
     Directory: Microsoft.Windows PowerShell.Core\FileSystem::C:\temp
 
 Mode                LastWriteTime     Length Name
@@ -159,6 +167,7 @@ Mode                LastWriteTime     Length Name
 ```
 
 ### <a name="deleting-items-remove-item"></a>項目の削除 (Remove-Item)
+
 ファイルおよびフォルダーを削除するには、**Remove-Item** コマンドレットを使用します。 **Remove-Item** など、元に戻せない重要な変更が可能な Windows PowerShell コマンドレットでは、コマンドを入力したときに確認のプロンプトを表示することがあります。 たとえば、**New.Directory** フォルダーを削除しようとする場合、フォルダーにファイルが含まれているため、コマンドの確認が求められます。
 
 ```
@@ -174,26 +183,26 @@ specified. If you continue, all children will be removed with the item. Are you
 
 **[はい]** が既定の応答であるので、フォルダーとファイルを削除するには、**Enter** キーを押します。 確認せずにフォルダーを削除するには、**-Recurse** パラメーターを使用します。
 
-```
-PS> Remove-Item C:\temp\New.Directory -Recurse
+```powershell
+Remove-Item C:\temp\New.Directory -Recurse
 ```
 
 ### <a name="executing-items-invoke-item"></a>項目の実行 (Invoke-Item)
+
 Windows PowerShell は、**Invoke-Item** コマンドレットを使用して、ファイルまたはフォルダーの既定のアクションを実行します。 この既定のアクションは、レジストリの既定のアプリケーション ハンドラーによって決定されます。効果はファイル エクスプローラー内で項目をダブルクリックする場合と同じです。
 
 たとえば、次のコマンドを実行するとします。
 
-```
-PS> Invoke-Item C:\WINDOWS
+```powershell
+Invoke-Item C:\WINDOWS
 ```
 
 C:\\Windows にあるエクスプローラー ウィンドウが、C:\\Windows のフォルダーをダブルクリックしたときのように表示されます。
 
 Windows Vista より前のシステムで **Boot.ini** ファイルを起動する場合:
 
-```
-PS> Invoke-Item C:\boot.ini
+```powershell
+Invoke-Item C:\boot.ini
 ```
 
 .ini のファイル タイプがメモ帳と関連付けられている場合、boot.ini ファイルはメモ帳で開きます。
-
