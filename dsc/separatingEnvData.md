@@ -1,43 +1,44 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "構成データと環境データの分離"
-ms.openlocfilehash: 18b18d805ac248b29526862591df5f0ff785937b
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, PowerShell, 構成, セットアップ
+title: 構成データと環境データの分離
+ms.openlocfilehash: c89e26105611eae59a926be1432079913c40671f
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="separating-configuration-and-environment-data"></a><span data-ttu-id="4ad20-103">構成データと環境データの分離</span><span class="sxs-lookup"><span data-stu-id="4ad20-103">Separating configuration and environment data</span></span>
+# <a name="separating-configuration-and-environment-data"></a><span data-ttu-id="6c1cc-103">構成データと環境データの分離</span><span class="sxs-lookup"><span data-stu-id="6c1cc-103">Separating configuration and environment data</span></span>
 
-><span data-ttu-id="4ad20-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="4ad20-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+><span data-ttu-id="6c1cc-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="6c1cc-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="4ad20-105">構成データを使用して、DSC 構成で使用するデータを構成自体と切り離しておくと便利です。</span><span class="sxs-lookup"><span data-stu-id="4ad20-105">It can be useful to separate the data used in a DSC configuration from the configuration itself by using configuration data.</span></span>
-<span data-ttu-id="4ad20-106">そうすることにより、複数の環境に 1 つの構成を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="4ad20-106">By doing this, you can use a single configuration for multiple environments.</span></span>
+<span data-ttu-id="6c1cc-105">構成データを使用して、DSC 構成で使用するデータを構成自体と切り離しておくと便利です。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-105">It can be useful to separate the data used in a DSC configuration from the configuration itself by using configuration data.</span></span>
+<span data-ttu-id="6c1cc-106">そうすることにより、複数の環境に 1 つの構成を使用することができます。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-106">By doing this, you can use a single configuration for multiple environments.</span></span>
 
-<span data-ttu-id="4ad20-107">たとえば、アプリケーションを開発している場合は、開発環境と運用環境の両方に 1 つの構成を使用し、構成データを使用して各環境のデータを指定することができます。</span><span class="sxs-lookup"><span data-stu-id="4ad20-107">For example, if you are developing an application, you can use one configuration for both development and production environments, and use configuration data to specify data for each environment.</span></span>
+<span data-ttu-id="6c1cc-107">たとえば、アプリケーションを開発している場合は、開発環境と運用環境の両方に 1 つの構成を使用し、構成データを使用して各環境のデータを指定することができます。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-107">For example, if you are developing an application, you can use one configuration for both development and production environments, and use configuration data to specify data for each environment.</span></span>
 
-## <a name="what-is-configuration-data"></a><span data-ttu-id="4ad20-108">構成データとは</span><span class="sxs-lookup"><span data-stu-id="4ad20-108">What is configuration data?</span></span>
+## <a name="what-is-configuration-data"></a><span data-ttu-id="6c1cc-108">構成データとは</span><span class="sxs-lookup"><span data-stu-id="6c1cc-108">What is configuration data?</span></span>
 
-<span data-ttu-id="4ad20-109">構成データはハッシュ テーブルで定義されるデータで、その構成をコンパイルするときに DSC 構成に渡されます。</span><span class="sxs-lookup"><span data-stu-id="4ad20-109">Configuration data is data that is defined in a hashtable and passed to a DSC configuration when you compile that configuration.</span></span>
+<span data-ttu-id="6c1cc-109">構成データはハッシュ テーブルで定義されるデータで、その構成をコンパイルするときに DSC 構成に渡されます。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-109">Configuration data is data that is defined in a hashtable and passed to a DSC configuration when you compile that configuration.</span></span>
 
-<span data-ttu-id="4ad20-110">**ConfigurationData** ハッシュ テーブルの詳細については、[構成データの使用](configData.md)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="4ad20-110">For a detailed description of the **ConfigurationData** hashtable, see [Using configuration data](configData.md).</span></span>
+<span data-ttu-id="6c1cc-110">**ConfigurationData** ハッシュ テーブルの詳細については、[構成データの使用](configData.md)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-110">For a detailed description of the **ConfigurationData** hashtable, see [Using configuration data](configData.md).</span></span>
 
-## <a name="a-simple-example"></a><span data-ttu-id="4ad20-111">簡単な例</span><span class="sxs-lookup"><span data-stu-id="4ad20-111">A simple example</span></span>
+## <a name="a-simple-example"></a><span data-ttu-id="6c1cc-111">簡単な例</span><span class="sxs-lookup"><span data-stu-id="6c1cc-111">A simple example</span></span>
 
-<span data-ttu-id="4ad20-112">簡単な例で仕組みを見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="4ad20-112">Let's look at a very simple example to see how this works.</span></span> <span data-ttu-id="4ad20-113">一部のノードには **IIS** を、他のノードには **Hyper-V** を存在させる 1 つの構成を作成します。</span><span class="sxs-lookup"><span data-stu-id="4ad20-113">We'll create a single configuration that ensures that **IIS** is present on some nodes, and that **Hyper-V** is present on others:</span></span> 
+<span data-ttu-id="6c1cc-112">簡単な例で仕組みを見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-112">Let's look at a very simple example to see how this works.</span></span>
+<span data-ttu-id="6c1cc-113">一部のノードには **IIS** を、他のノードには **Hyper-V** を存在させる 1 つの構成を作成します。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-113">We'll create a single configuration that ensures that **IIS** is present on some nodes, and that **Hyper-V** is present on others:</span></span>
 
 ```powershell
 Configuration MyDscConfiguration {
-    
+
     Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
     {
         WindowsFeature IISInstall {
             Ensure = 'Present'
             Name   = 'Web-Server'
         }
-        
+
     }
     Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
@@ -48,7 +49,7 @@ Configuration MyDscConfiguration {
     }
 }
 
-$MyData = 
+$MyData =
 @{
     AllNodes =
     @(
@@ -67,29 +68,29 @@ $MyData =
 MyDscConfiguration -ConfigurationData $MyData
 ```
 
-<span data-ttu-id="4ad20-114">このスクリプトの最後の行は、**ConfigurationData** パラメーターの値として `$MyData` を渡して、構成をコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="4ad20-114">The last line in this script compiles the configuration, passing `$MyData` as the value **ConfigurationData** parameter.</span></span>
+<span data-ttu-id="6c1cc-114">このスクリプトの最後の行は、**ConfigurationData** パラメーターの値として `$MyData` を渡して、構成をコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-114">The last line in this script compiles the configuration, passing `$MyData` as the value **ConfigurationData** parameter.</span></span>
 
-<span data-ttu-id="4ad20-115">その結果、2 つの MOF ファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="4ad20-115">The result is that two MOF files are created:</span></span>
+<span data-ttu-id="6c1cc-115">その結果、2 つの MOF ファイルが作成されます。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-115">The result is that two MOF files are created:</span></span>
 
 ```
     Directory: C:\DscTests\MyDscConfiguration
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:09 PM           1968 VM-1.mof                                                                                                                
--a----        3/31/2017   5:09 PM           1970 VM-2.mof  
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:09 PM           1968 VM-1.mof
+-a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
- 
-<span data-ttu-id="4ad20-116">`$MyData` が、それぞれ独自の `NodeName` と `Role` を持つ、2 つの異なるノードを指定します。</span><span class="sxs-lookup"><span data-stu-id="4ad20-116">`$MyData` specifies two different nodes, each with its own `NodeName` and `Role`.</span></span> <span data-ttu-id="4ad20-117">構成は、`$MyData` (具体的には `$AllNodes`) から取得したノードのコレクションを集めることで動的に**ノード** ブロックを作成し、そのコレクションを `Role` プロパティと突き合わせてフィルタ―処理します。</span><span class="sxs-lookup"><span data-stu-id="4ad20-117">The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection against the `Role` property..</span></span>
 
-## <a name="using-configuration-data-to-define-development-and-production-environments"></a><span data-ttu-id="4ad20-118">構成データを使用して、開発および運用環境を定義する</span><span class="sxs-lookup"><span data-stu-id="4ad20-118">Using configuration data to define development and production environments</span></span>
+<span data-ttu-id="6c1cc-116">`$MyData` が、それぞれ独自の `NodeName` と `Role` を持つ、2 つの異なるノードを指定します。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-116">`$MyData` specifies two different nodes, each with its own `NodeName` and `Role`.</span></span> <span data-ttu-id="6c1cc-117">構成は、`$MyData` (具体的には `$AllNodes`) から取得したノードのコレクションを集めることで動的に**ノード** ブロックを作成し、そのコレクションを `Role` プロパティと突き合わせてフィルタ―処理します。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-117">The configuration dynamically creates **Node** blocks by taking the collection of nodes it gets from `$MyData` (specifically, `$AllNodes`) and filters that collection against the `Role` property..</span></span>
 
-<span data-ttu-id="4ad20-119">1 つの構成を使用して Web サイトの開発環境と運用環境の両方を設定する完全な例を見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="4ad20-119">Let's look at a complete example that uses a single configuration to set up both development and production environments of a website.</span></span> <span data-ttu-id="4ad20-120">開発環境では、IIS と SQL Server の両方が 1 つのノードにインストールされています。</span><span class="sxs-lookup"><span data-stu-id="4ad20-120">In the development environment, both IIS and SQL Server are installed on a single nodes.</span></span> <span data-ttu-id="4ad20-121">運用環境では、IIS と SQL は別々のノードにインストールされています。</span><span class="sxs-lookup"><span data-stu-id="4ad20-121">In the production environment, IIS and SQL Server are installed on separate nodes.</span></span> <span data-ttu-id="4ad20-122">.psd1 構成データ ファイルを使用して、この 2 つの異なる環境のデータを指定します。</span><span class="sxs-lookup"><span data-stu-id="4ad20-122">We'll use a configuration data .psd1 file to specify the data for the two different environments.</span></span>
+## <a name="using-configuration-data-to-define-development-and-production-environments"></a><span data-ttu-id="6c1cc-118">構成データを使用して、開発および運用環境を定義する</span><span class="sxs-lookup"><span data-stu-id="6c1cc-118">Using configuration data to define development and production environments</span></span>
 
- ### <a name="configuration-data-file"></a><span data-ttu-id="4ad20-123">構成データ ファイル</span><span class="sxs-lookup"><span data-stu-id="4ad20-123">Configuration data file</span></span>
+<span data-ttu-id="6c1cc-119">1 つの構成を使用して Web サイトの開発環境と運用環境の両方を設定する完全な例を見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-119">Let's look at a complete example that uses a single configuration to set up both development and production environments of a website.</span></span> <span data-ttu-id="6c1cc-120">開発環境では、IIS と SQL Server の両方が 1 つのノードにインストールされています。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-120">In the development environment, both IIS and SQL Server are installed on a single nodes.</span></span> <span data-ttu-id="6c1cc-121">運用環境では、IIS と SQL は別々のノードにインストールされています。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-121">In the production environment, IIS and SQL Server are installed on separate nodes.</span></span> <span data-ttu-id="6c1cc-122">.psd1 構成データ ファイルを使用して、この 2 つの異なる環境のデータを指定します。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-122">We'll use a configuration data .psd1 file to specify the data for the two different environments.</span></span>
 
-<span data-ttu-id="4ad20-124">開発環境と運用環境を、`DevProdEnvData.psd1` という名前のファイルに次のように定義します。</span><span class="sxs-lookup"><span data-stu-id="4ad20-124">We'll define the development and production environment data in a file namd `DevProdEnvData.psd1` as follows:</span></span>
+ ### <a name="configuration-data-file"></a><span data-ttu-id="6c1cc-123">構成データ ファイル</span><span class="sxs-lookup"><span data-stu-id="6c1cc-123">Configuration data file</span></span>
+
+<span data-ttu-id="6c1cc-124">開発環境と運用環境を、`DevProdEnvData.psd1` という名前のファイルに次のように定義します。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-124">We'll define the development and production environment data in a file namd `DevProdEnvData.psd1` as follows:</span></span>
 
 ```powershell
 @{
@@ -126,15 +127,17 @@ Mode                LastWriteTime         Length Name
 }
 ```
 
-### <a name="configuration-script-file"></a><span data-ttu-id="4ad20-125">構成スクリプト ファイル</span><span class="sxs-lookup"><span data-stu-id="4ad20-125">Configuration script file</span></span>
+### <a name="configuration-script-file"></a><span data-ttu-id="6c1cc-125">構成スクリプト ファイル</span><span class="sxs-lookup"><span data-stu-id="6c1cc-125">Configuration script file</span></span>
 
-<span data-ttu-id="4ad20-126">次に、`.ps1` で定義されている構成において、`DevProdEnvData.psd1` に定義したノードを役割別 (`MSSQL`、`Dev`、またはその両方) にフィルター処理し、役割に応じて構成します。</span><span class="sxs-lookup"><span data-stu-id="4ad20-126">Now, in the configuration, which is defined in a `.ps1` file, we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both), and configure them accordingly.</span></span> <span data-ttu-id="4ad20-127">開発環境では 1 つのノードに SQL Server と IIS の両方がありますが、運用環境では、SQL Server と IIS はそれぞれ 2 つの異なるノードにあります。</span><span class="sxs-lookup"><span data-stu-id="4ad20-127">The development environment has both the SQL Server and IIS on one node, while the production environment has them on two different nodes.</span></span> <span data-ttu-id="4ad20-128">`SiteContents` プロパティで指定したように、サイトのコンテンツも異なります。</span><span class="sxs-lookup"><span data-stu-id="4ad20-128">The site contents is also different, as specified by the `SiteContents` properties.</span></span>
+<span data-ttu-id="6c1cc-126">次に、`.ps1` で定義されている構成において、`DevProdEnvData.psd1` に定義したノードを役割別 (`MSSQL`、`Dev`、またはその両方) にフィルター処理し、役割に応じて構成します。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-126">Now, in the configuration, which is defined in a `.ps1` file, we filter the nodes we defined in `DevProdEnvData.psd1` by their role (`MSSQL`, `Dev`, or both), and configure them accordingly.</span></span>
+<span data-ttu-id="6c1cc-127">開発環境では 1 つのノードに SQL Server と IIS の両方がありますが、運用環境では、SQL Server と IIS はそれぞれ 2 つの異なるノードにあります。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-127">The development environment has both the SQL Server and IIS on one node, while the production environment has them on two different nodes.</span></span>
+<span data-ttu-id="6c1cc-128">`SiteContents` プロパティで指定したように、サイトのコンテンツも異なります。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-128">The site contents is also different, as specified by the `SiteContents` properties.</span></span>
 
-<span data-ttu-id="4ad20-129">構成スクリプトの最後の行で、`DevProdEnvData.psd1` を `$ConfigurationData` パラメーターとして渡して、構成を呼び出し (MOF ドキュメントに構成をコンパイルし) ます。</span><span class="sxs-lookup"><span data-stu-id="4ad20-129">At the end of the configuration script, we call the configuration (compile it into a MOF document), passing `DevProdEnvData.psd1` as the `$ConfigurationData` parameter.</span></span>
+<span data-ttu-id="6c1cc-129">構成スクリプトの最後の行で、`DevProdEnvData.psd1` を `$ConfigurationData` パラメーターとして渡して、構成を呼び出し (MOF ドキュメントに構成をコンパイルし) ます。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-129">At the end of the configuration script, we call the configuration (compile it into a MOF document), passing `DevProdEnvData.psd1` as the `$ConfigurationData` parameter.</span></span>
 
-><span data-ttu-id="4ad20-130">**注:** この構成には、ターゲット ノードにインストールされるモジュール `xSqlPs` と `xWebAdministration` が必要です。</span><span class="sxs-lookup"><span data-stu-id="4ad20-130">**Note:** This configuration requires the modules `xSqlPs` and `xWebAdministration` to be installed on the target node.</span></span>
+><span data-ttu-id="6c1cc-130">**注:** この構成には、ターゲット ノードにインストールされるモジュール `xSqlPs` と `xWebAdministration` が必要です。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-130">**Note:** This configuration requires the modules `xSqlPs` and `xWebAdministration` to be installed on the target node.</span></span>
 
-<span data-ttu-id="4ad20-131">`MyWebApp.ps1` という名前のファイルで構成を定義しましょう。</span><span class="sxs-lookup"><span data-stu-id="4ad20-131">Let's define the configuration in a file named `MyWebApp.ps1`:</span></span>
+<span data-ttu-id="6c1cc-131">`MyWebApp.ps1` という名前のファイルで構成を定義しましょう。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-131">Let's define the configuration in a file named `MyWebApp.ps1`:</span></span>
 
 ```powershell
 Configuration MyWebApp
@@ -147,7 +150,7 @@ Configuration MyWebApp
    {
         # Install prerequisites
         WindowsFeature installdotNet35
-        {            
+        {
             Ensure      = "Present"
             Name        = "Net-Framework-Core"
             Source      = "c:\software\sxs"
@@ -182,7 +185,7 @@ Configuration MyWebApp
         }
 
         # Stop the default website
-        xWebsite DefaultSite 
+        xWebsite DefaultSite
         {
             Ensure       = 'Present'
             Name         = 'Default Web Site'
@@ -203,7 +206,7 @@ Configuration MyWebApp
             Type            = 'Directory'
             DependsOn       = '[WindowsFeature]AspNet45'
 
-        }       
+        }
 
 
         # Create the new Website
@@ -226,70 +229,70 @@ Configuration MyWebApp
 MyWebApp -ConfigurationData DevProdEnvData.psd1
 ```
 
-<span data-ttu-id="4ad20-132">この構成を実行すると、3 つの MOF ファイルが作成されます (**AllNodes** 配列内の名付けられたエントリごとに 1 つ)。</span><span class="sxs-lookup"><span data-stu-id="4ad20-132">When you run this configuration, three MOF files are created (one for each named entry in the **AllNodes** array):</span></span>
+<span data-ttu-id="6c1cc-132">この構成を実行すると、3 つの MOF ファイルが作成されます (**AllNodes** 配列内の名付けられたエントリごとに 1 つ)。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-132">When you run this configuration, three MOF files are created (one for each named entry in the **AllNodes** array):</span></span>
 
 ```
     Directory: C:\DscTests\MyWebApp
 
 
-Mode                LastWriteTime         Length Name                                                                                                                    
-----                -------------         ------ ----                                                                                                                    
--a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof                                                                                                            
--a----        3/31/2017   5:47 PM           6994 Dev.mof                                                                                                                 
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a----        3/31/2017   5:47 PM           2944 Prod-SQL.mof
+-a----        3/31/2017   5:47 PM           6994 Dev.mof
 -a----        3/31/2017   5:47 PM           5338 Prod-IIS.mof
 ```
 
-## <a name="using-non-node-data"></a><span data-ttu-id="4ad20-133">ノード外のデータを使用する</span><span class="sxs-lookup"><span data-stu-id="4ad20-133">Using non-node data</span></span>
+## <a name="using-non-node-data"></a><span data-ttu-id="6c1cc-133">ノード外のデータを使用する</span><span class="sxs-lookup"><span data-stu-id="6c1cc-133">Using non-node data</span></span>
 
-<span data-ttu-id="4ad20-134">ノードに固有ではないデータの **ConfigurationData** ハッシュ テーブルに追加キーを追加できます。</span><span class="sxs-lookup"><span data-stu-id="4ad20-134">You can add additional keys to the **ConfigurationData** hashtable for data that is not specific to a node.</span></span>
-<span data-ttu-id="4ad20-135">次の構成では、2 つの Web サイトが存在するようにします。</span><span class="sxs-lookup"><span data-stu-id="4ad20-135">The following configuration ensures the presence of two websites.</span></span>
-<span data-ttu-id="4ad20-136">それぞれの Web サイトのデータは **AllNodes** 配列に定義されています。</span><span class="sxs-lookup"><span data-stu-id="4ad20-136">Data for each website are defined in the **AllNodes** array.</span></span>
-<span data-ttu-id="4ad20-137">ファイル `Config.xml` は両方の Web サイトに使用されるので、それを追加キーで `NonNodeData` という名前で定義します。</span><span class="sxs-lookup"><span data-stu-id="4ad20-137">The file `Config.xml` is used for both websites, so we define it in an additional key with the name `NonNodeData`.</span></span>
-<span data-ttu-id="4ad20-138">追加キーは必要な数だけ設定でき、名前の付け方も自由です。</span><span class="sxs-lookup"><span data-stu-id="4ad20-138">Note that you can have as many additional keys as you want, and you can name them anything you want.</span></span>
-<span data-ttu-id="4ad20-139">`NonNodeData` は予約語ではなく、ここでの追加キーにこのように名前を付けただけです。</span><span class="sxs-lookup"><span data-stu-id="4ad20-139">`NonNodeData` is not a reserved word, it is just what we decided to name the additional key.</span></span>
+<span data-ttu-id="6c1cc-134">ノードに固有ではないデータの **ConfigurationData** ハッシュ テーブルに追加キーを追加できます。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-134">You can add additional keys to the **ConfigurationData** hashtable for data that is not specific to a node.</span></span>
+<span data-ttu-id="6c1cc-135">次の構成では、2 つの Web サイトが存在するようにします。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-135">The following configuration ensures the presence of two websites.</span></span>
+<span data-ttu-id="6c1cc-136">それぞれの Web サイトのデータは **AllNodes** 配列に定義されています。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-136">Data for each website are defined in the **AllNodes** array.</span></span>
+<span data-ttu-id="6c1cc-137">ファイル `Config.xml` は両方の Web サイトに使用されるので、それを追加キーで `NonNodeData` という名前で定義します。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-137">The file `Config.xml` is used for both websites, so we define it in an additional key with the name `NonNodeData`.</span></span>
+<span data-ttu-id="6c1cc-138">追加キーは必要な数だけ設定でき、名前の付け方も自由です。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-138">Note that you can have as many additional keys as you want, and you can name them anything you want.</span></span>
+<span data-ttu-id="6c1cc-139">`NonNodeData` は予約語ではなく、ここでの追加キーにこのように名前を付けただけです。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-139">`NonNodeData` is not a reserved word, it is just what we decided to name the additional key.</span></span>
 
-<span data-ttu-id="4ad20-140">追加キーへのアクセスには、特殊な変数 **$ConfigurationData** を使用します。</span><span class="sxs-lookup"><span data-stu-id="4ad20-140">You access additional keys by using the special variable **$ConfigurationData**.</span></span>
-<span data-ttu-id="4ad20-141">この例では `ConfigFileContents` は、次の行を使用してアクセスします。</span><span class="sxs-lookup"><span data-stu-id="4ad20-141">In this example, `ConfigFileContents` is accessed with the line:</span></span>
+<span data-ttu-id="6c1cc-140">追加キーへのアクセスには、特殊な変数 **$ConfigurationData** を使用します。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-140">You access additional keys by using the special variable **$ConfigurationData**.</span></span>
+<span data-ttu-id="6c1cc-141">この例では `ConfigFileContents` は、次の行を使用してアクセスします。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-141">In this example, `ConfigFileContents` is accessed with the line:</span></span>
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
- <span data-ttu-id="4ad20-142">これは `File` リソース ブロック内です。</span><span class="sxs-lookup"><span data-stu-id="4ad20-142">in the `File` resource block.</span></span>
+ <span data-ttu-id="6c1cc-142">これは `File` リソース ブロック内です。</span><span class="sxs-lookup"><span data-stu-id="6c1cc-142">in the `File` resource block.</span></span>
 
 
 ```powershell
-$MyData = 
+$MyData =
 @{
-    AllNodes = 
+    AllNodes =
     @(
         @{
             NodeName           = “*”
             LogPath            = “C:\Logs”
         },
- 
+
         @{
             NodeName = “VM-1”
             SiteContents = “C:\Site1”
             SiteName = “Website1”
         },
- 
-        
+
+
         @{
             NodeName = “VM-2”;
             SiteContents = “C:\Site2”
             SiteName = “Website2”
         }
     );
- 
-    NonNodeData = 
+
+    NonNodeData =
     @{
         ConfigFileContents = (Get-Content C:\Template\Config.xml)
-     }   
-} 
- 
+     }
+}
+
 configuration WebsiteConfig
 {
     Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
- 
+
     node $AllNodes.NodeName
     {
         xWebsite Site
@@ -298,19 +301,18 @@ configuration WebsiteConfig
             PhysicalPath = $Node.SiteContents
             Ensure       = “Present”
         }
- 
+
         File ConfigFile
         {
             DestinationPath = $Node.SiteContents + “\\config.xml”
             Contents = $ConfigurationData.NonNodeData.ConfigFileContents
         }
     }
-} 
+}
 ```
 
 
-## <a name="see-also"></a><span data-ttu-id="4ad20-143">参照</span><span class="sxs-lookup"><span data-stu-id="4ad20-143">See Also</span></span>
-- [<span data-ttu-id="4ad20-144">構成データの使用</span><span class="sxs-lookup"><span data-stu-id="4ad20-144">Using configuration data</span></span>](configData.md)
-- [<span data-ttu-id="4ad20-145">構成データでの資格情報オプション</span><span class="sxs-lookup"><span data-stu-id="4ad20-145">Credentials Options in Configuration Data</span></span>](configDataCredentials.md)
-- [<span data-ttu-id="4ad20-146">DSC 構成</span><span class="sxs-lookup"><span data-stu-id="4ad20-146">DSC Configurations</span></span>](configurations.md)
-
+## <a name="see-also"></a><span data-ttu-id="6c1cc-143">参照</span><span class="sxs-lookup"><span data-stu-id="6c1cc-143">See Also</span></span>
+- [<span data-ttu-id="6c1cc-144">構成データの使用</span><span class="sxs-lookup"><span data-stu-id="6c1cc-144">Using configuration data</span></span>](configData.md)
+- [<span data-ttu-id="6c1cc-145">構成データでの資格情報オプション</span><span class="sxs-lookup"><span data-stu-id="6c1cc-145">Credentials Options in Configuration Data</span></span>](configDataCredentials.md)
+- [<span data-ttu-id="6c1cc-146">DSC 構成</span><span class="sxs-lookup"><span data-stu-id="6c1cc-146">DSC Configurations</span></span>](configurations.md)

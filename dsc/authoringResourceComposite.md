@@ -1,23 +1,23 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "複合リソース: リソースとしての DSC 構成の使用"
-ms.openlocfilehash: 1d5fb89eb9845820de8543f388ddb6aaeaaa3e44
-ms.sourcegitcommit: 18e3bfae83ffe282d3fd1a45f5386f3b7250f0c0
+keywords: DSC, PowerShell, 構成, セットアップ
+title: '複合リソース: リソースとしての DSC 構成の使用'
+ms.openlocfilehash: c89293fdbe9bc054a47cc6974b6bd0471f727f46
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a><span data-ttu-id="f175b-103">複合リソース: リソースとしての DSC 構成の使用</span><span class="sxs-lookup"><span data-stu-id="f175b-103">Composite resources: Using a DSC configuration as a resource</span></span>
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a><span data-ttu-id="cf684-103">複合リソース: リソースとしての DSC 構成の使用</span><span class="sxs-lookup"><span data-stu-id="cf684-103">Composite resources: Using a DSC configuration as a resource</span></span>
 
-> <span data-ttu-id="f175b-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="f175b-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="cf684-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="cf684-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="f175b-105">実際の状況では、構成は多くのさまざまなリソースを呼び出したり、膨大な数のプロパティを設定したりするため、長く複雑になることがあります。</span><span class="sxs-lookup"><span data-stu-id="f175b-105">In real-world situations, configurations can become long and complex, calling many different resources and setting a vast number of properties.</span></span> <span data-ttu-id="f175b-106">このような複雑さに対処するために、Windows PowerShell Desired State Configuration (DSC) 構成を他の構成のリソースとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="f175b-106">To help address this complexity, you can use a Windows PowerShell Desired State Configuration (DSC) configuration as a resource for other configurations.</span></span> <span data-ttu-id="f175b-107">これは、複合リソースと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="f175b-107">We call this a composite resource.</span></span> <span data-ttu-id="f175b-108">複合リソースは、パラメーターを受け取る DSC 構成です。</span><span class="sxs-lookup"><span data-stu-id="f175b-108">A composite resource is a DSC configuration that takes parameters.</span></span> <span data-ttu-id="f175b-109">構成のパラメーターは、リソースのプロパティとして機能します。</span><span class="sxs-lookup"><span data-stu-id="f175b-109">The parameters of the configuration act as the properties of the resource.</span></span> <span data-ttu-id="f175b-110">構成は **.schema.psm1** 拡張子のファイルとして保存され、一般的な DSC リソースの MOF スキーマとリソース スクリプトの両方に代わるものです。DSC リソースの詳細については、[「DSC リソース」](resources.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f175b-110">The configuration is saved as a file with a **.schema.psm1** extension, and takes the place of both the MOF schema and the resource script in a typical DSC resource (for more information about DSC resources, see [Windows PowerShell Desired State Configuration Resources](resources.md).</span></span>
+<span data-ttu-id="cf684-105">実際の状況では、構成は多くのさまざまなリソースを呼び出したり、膨大な数のプロパティを設定したりするため、長く複雑になることがあります。</span><span class="sxs-lookup"><span data-stu-id="cf684-105">In real-world situations, configurations can become long and complex, calling many different resources and setting a vast number of properties.</span></span> <span data-ttu-id="cf684-106">このような複雑さに対処するために、Windows PowerShell Desired State Configuration (DSC) 構成を他の構成のリソースとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="cf684-106">To help address this complexity, you can use a Windows PowerShell Desired State Configuration (DSC) configuration as a resource for other configurations.</span></span> <span data-ttu-id="cf684-107">これは、複合リソースと呼ばれます。</span><span class="sxs-lookup"><span data-stu-id="cf684-107">We call this a composite resource.</span></span> <span data-ttu-id="cf684-108">複合リソースは、パラメーターを受け取る DSC 構成です。</span><span class="sxs-lookup"><span data-stu-id="cf684-108">A composite resource is a DSC configuration that takes parameters.</span></span> <span data-ttu-id="cf684-109">構成のパラメーターは、リソースのプロパティとして機能します。</span><span class="sxs-lookup"><span data-stu-id="cf684-109">The parameters of the configuration act as the properties of the resource.</span></span> <span data-ttu-id="cf684-110">構成は **.schema.psm1** 拡張子のファイルとして保存され、一般的な DSC リソースの MOF スキーマとリソース スクリプトの両方に代わるものです。DSC リソースの詳細については、[「DSC リソース」](resources.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cf684-110">The configuration is saved as a file with a **.schema.psm1** extension, and takes the place of both the MOF schema and the resource script in a typical DSC resource (for more information about DSC resources, see [Windows PowerShell Desired State Configuration Resources](resources.md).</span></span>
 
-## <a name="creating-the-composite-resource"></a><span data-ttu-id="f175b-111">複合リソースの作成</span><span class="sxs-lookup"><span data-stu-id="f175b-111">Creating the composite resource</span></span>
+## <a name="creating-the-composite-resource"></a><span data-ttu-id="cf684-111">複合リソースの作成</span><span class="sxs-lookup"><span data-stu-id="cf684-111">Creating the composite resource</span></span>
 
-<span data-ttu-id="f175b-112">この例では、仮想マシンを構成するために多くの既存のリソースを呼び出す構成を作成します。</span><span class="sxs-lookup"><span data-stu-id="f175b-112">In our example, we create a configuration that invokes a number of existing resources to configure virtual machines.</span></span> <span data-ttu-id="f175b-113">構成ブロックで設定する値を指定する代わりに、構成では数多くのパラメーターを受け取り、後でそれが構成ブロックで使用されます。</span><span class="sxs-lookup"><span data-stu-id="f175b-113">Instead of specifying the values to be set in configuration blocks, the configuration takes a number of parameters that are then used in the configuration blocks.</span></span>
+<span data-ttu-id="cf684-112">この例では、仮想マシンを構成するために多くの既存のリソースを呼び出す構成を作成します。</span><span class="sxs-lookup"><span data-stu-id="cf684-112">In our example, we create a configuration that invokes a number of existing resources to configure virtual machines.</span></span> <span data-ttu-id="cf684-113">構成ブロックで設定する値を指定する代わりに、構成では数多くのパラメーターを受け取り、後でそれが構成ブロックで使用されます。</span><span class="sxs-lookup"><span data-stu-id="cf684-113">Instead of specifying the values to be set in configuration blocks, the configuration takes a number of parameters that are then used in the configuration blocks.</span></span>
 
 ```powershell
 Configuration xVirtualMachine
@@ -131,15 +131,15 @@ Configuration xVirtualMachine
 }
 ```
 
-### <a name="saving-the-configuration-as-a-composite-resource"></a><span data-ttu-id="f175b-114">複合リソースとしての構成の保存</span><span class="sxs-lookup"><span data-stu-id="f175b-114">Saving the configuration as a composite resource</span></span>
+### <a name="saving-the-configuration-as-a-composite-resource"></a><span data-ttu-id="cf684-114">複合リソースとしての構成の保存</span><span class="sxs-lookup"><span data-stu-id="cf684-114">Saving the configuration as a composite resource</span></span>
 
-<span data-ttu-id="f175b-115">パラメーター化された構成を DSC リソースとして使用するには、他の MOF ベースのリソースに似たディレクトリ構造で保存し、**.schema.psm1** 拡張子を持つ名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="f175b-115">To use the parameterized configuration as a DSC resource, save it in a directory structure like that of any other MOF-based resource, and name it with a **.schema.psm1** extension.</span></span> <span data-ttu-id="f175b-116">この例では、ファイルに **xVirtualMachine.schema.psm1** という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="f175b-116">For this example, we’ll name the file **xVirtualMachine.schema.psm1**.</span></span> <span data-ttu-id="f175b-117">次の行を含む **xVirtualMachine.psd1** というマニフェストも作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="f175b-117">You also need to create a manifest named **xVirtualMachine.psd1** that contains the following line.</span></span> <span data-ttu-id="f175b-118">これは、**MyDscResources.psd1** に加えて **MyDscResources** フォルダーの下に格納されるすべてのリソースのモジュール マニフェストです。</span><span class="sxs-lookup"><span data-stu-id="f175b-118">Note that this is in addition to **MyDscResources.psd1**, the module manifest for all resources under the **MyDscResources** folder.</span></span>
+<span data-ttu-id="cf684-115">パラメーター化された構成を DSC リソースとして使用するには、他の MOF ベースのリソースに似たディレクトリ構造で保存し、**.schema.psm1** 拡張子を持つ名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="cf684-115">To use the parameterized configuration as a DSC resource, save it in a directory structure like that of any other MOF-based resource, and name it with a **.schema.psm1** extension.</span></span> <span data-ttu-id="cf684-116">この例では、ファイルに **xVirtualMachine.schema.psm1** という名前を付けます。</span><span class="sxs-lookup"><span data-stu-id="cf684-116">For this example, we’ll name the file **xVirtualMachine.schema.psm1**.</span></span> <span data-ttu-id="cf684-117">次の行を含む **xVirtualMachine.psd1** というマニフェストも作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cf684-117">You also need to create a manifest named **xVirtualMachine.psd1** that contains the following line.</span></span> <span data-ttu-id="cf684-118">これは、**MyDscResources.psd1** に加えて **MyDscResources** フォルダーの下に格納されるすべてのリソースのモジュール マニフェストです。</span><span class="sxs-lookup"><span data-stu-id="cf684-118">Note that this is in addition to **MyDscResources.psd1**, the module manifest for all resources under the **MyDscResources** folder.</span></span>
 
 ```powershell
 RootModule = 'xVirtualMachine.schema.psm1'
 ```
 
-<span data-ttu-id="f175b-119">完了すると、フォルダー構造は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="f175b-119">When you are done, the folder structure should be as follows.</span></span>
+<span data-ttu-id="cf684-119">完了すると、フォルダー構造は次のようになります。</span><span class="sxs-lookup"><span data-stu-id="cf684-119">When you are done, the folder structure should be as follows.</span></span>
 
 ```
 $env: psmodulepath
@@ -151,18 +151,18 @@ $env: psmodulepath
                 |- xVirtualMachine.schema.psm1
 ```
 
-<span data-ttu-id="f175b-120">これで、リソースは Get-DscResource コマンドレットを使用して検出できるようになり、そのプロパティは、そのコマンドレットまたは Windows PowerShell ISE の **Ctrl + Space** キーによるオートコンプリートを使用して検出できるようになります。</span><span class="sxs-lookup"><span data-stu-id="f175b-120">The resource is now discoverable by using the Get-DscResource cmdlet, and its properties are discoverable by either that cmdlet or by using **Ctrl+Space** auto-complete in the Windows PowerShell ISE.</span></span>
+<span data-ttu-id="cf684-120">これで、リソースは Get-DscResource コマンドレットを使用して検出できるようになり、そのプロパティは、そのコマンドレットまたは Windows PowerShell ISE の **Ctrl + Space** キーによるオートコンプリートを使用して検出できるようになります。</span><span class="sxs-lookup"><span data-stu-id="cf684-120">The resource is now discoverable by using the Get-DscResource cmdlet, and its properties are discoverable by either that cmdlet or by using **Ctrl+Space** auto-complete in the Windows PowerShell ISE.</span></span>
 
-## <a name="using-the-composite-resource"></a><span data-ttu-id="f175b-121">複合リソースの使用</span><span class="sxs-lookup"><span data-stu-id="f175b-121">Using the composite resource</span></span>
+## <a name="using-the-composite-resource"></a><span data-ttu-id="cf684-121">複合リソースの使用</span><span class="sxs-lookup"><span data-stu-id="cf684-121">Using the composite resource</span></span>
 
-<span data-ttu-id="f175b-122">次に、複合リソースを呼び出す構成を作成します。</span><span class="sxs-lookup"><span data-stu-id="f175b-122">Next we create a configuration that calls the composite resource.</span></span> <span data-ttu-id="f175b-123">この構成は、xVirtualMachine 複合リソースを呼び出して仮想マシンを作成してから、**xComputer** リソースを呼び出して名前を変更します。</span><span class="sxs-lookup"><span data-stu-id="f175b-123">This configuration calls the xVirtualMachine composite resource to create a virtual machine, and then calls the **xComputer** resource to rename it.</span></span>
+<span data-ttu-id="cf684-122">次に、複合リソースを呼び出す構成を作成します。</span><span class="sxs-lookup"><span data-stu-id="cf684-122">Next we create a configuration that calls the composite resource.</span></span> <span data-ttu-id="cf684-123">この構成は、xVirtualMachine 複合リソースを呼び出して仮想マシンを作成してから、**xComputer** リソースを呼び出して名前を変更します。</span><span class="sxs-lookup"><span data-stu-id="cf684-123">This configuration calls the xVirtualMachine composite resource to create a virtual machine, and then calls the **xComputer** resource to rename it.</span></span>
 
 ```powershell
 
 configuration RenameVM
 {
 
-    Import-DscResource -Module TestCompositeResource
+    Import-DscResource -Module xVirtualMachine
     Node localhost
     {
         xVirtualMachine VM
@@ -188,16 +188,16 @@ configuration RenameVM
 }
 ```
 
-## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="f175b-124">PsDscRunAsCredential のサポート</span><span class="sxs-lookup"><span data-stu-id="f175b-124">Supporting PsDscRunAsCredential</span></span>
+## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="cf684-124">PsDscRunAsCredential のサポート</span><span class="sxs-lookup"><span data-stu-id="cf684-124">Supporting PsDscRunAsCredential</span></span>
 
-><span data-ttu-id="f175b-125">**注:** **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="f175b-125">**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
+><span data-ttu-id="cf684-125">**注:** **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="cf684-125">**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
 
-<span data-ttu-id="f175b-126">**PsDscRunAsCredential** プロパティを [DSC 構成](configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。</span><span class="sxs-lookup"><span data-stu-id="f175b-126">The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
-<span data-ttu-id="f175b-127">詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="f175b-127">For more information, see [Running DSC with user credentials](runAsUser.md).</span></span>
+<span data-ttu-id="cf684-126">**PsDscRunAsCredential** プロパティを [DSC 構成](configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。</span><span class="sxs-lookup"><span data-stu-id="cf684-126">The **PsDscRunAsCredential** property can be used in [DSC configurations](configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
+<span data-ttu-id="cf684-127">詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="cf684-127">For more information, see [Running DSC with user credentials](runAsUser.md).</span></span>
 
-<span data-ttu-id="f175b-128">カスタム リソース内からユーザー コンテキストにアクセスするには、自動変数 `$PsDscContext` を使用できます。</span><span class="sxs-lookup"><span data-stu-id="f175b-128">To access the user context from within a custom resource, you can use the automatic variable `$PsDscContext`.</span></span>
+<span data-ttu-id="cf684-128">カスタム リソース内からユーザー コンテキストにアクセスするには、自動変数 `$PsDscContext` を使用できます。</span><span class="sxs-lookup"><span data-stu-id="cf684-128">To access the user context from within a custom resource, you can use the automatic variable `$PsDscContext`.</span></span>
 
-<span data-ttu-id="f175b-129">たとえば、次のコードは、リソースが詳細出力ストリームに実行しているユーザー コンテキストを記述します。</span><span class="sxs-lookup"><span data-stu-id="f175b-129">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
+<span data-ttu-id="cf684-129">たとえば、次のコードは、リソースが詳細出力ストリームに実行しているユーザー コンテキストを記述します。</span><span class="sxs-lookup"><span data-stu-id="cf684-129">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
 
 ```powershell
 if ($PsDscContext.RunAsUser) {
@@ -205,8 +205,7 @@ if ($PsDscContext.RunAsUser) {
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="f175b-130">参照</span><span class="sxs-lookup"><span data-stu-id="f175b-130">See Also</span></span>
-### <a name="concepts"></a><span data-ttu-id="f175b-131">概念</span><span class="sxs-lookup"><span data-stu-id="f175b-131">Concepts</span></span>
-* [<span data-ttu-id="f175b-132">MOF を使用したカスタム DSC リソースの記述</span><span class="sxs-lookup"><span data-stu-id="f175b-132">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
-* [<span data-ttu-id="f175b-133">Windows PowerShell Desired State Configuration の概要</span><span class="sxs-lookup"><span data-stu-id="f175b-133">Get Started with Windows PowerShell Desired State Configuration</span></span>](overview.md)
-
+## <a name="see-also"></a><span data-ttu-id="cf684-130">参照</span><span class="sxs-lookup"><span data-stu-id="cf684-130">See Also</span></span>
+### <a name="concepts"></a><span data-ttu-id="cf684-131">概念</span><span class="sxs-lookup"><span data-stu-id="cf684-131">Concepts</span></span>
+* [<span data-ttu-id="cf684-132">MOF を使用したカスタム DSC リソースの記述</span><span class="sxs-lookup"><span data-stu-id="cf684-132">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
+* [<span data-ttu-id="cf684-133">Windows PowerShell Desired State Configuration の概要</span><span class="sxs-lookup"><span data-stu-id="cf684-133">Get Started with Windows PowerShell Desired State Configuration</span></span>](overview.md)

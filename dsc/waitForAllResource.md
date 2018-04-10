@@ -1,24 +1,24 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC WaitForAll リソース
-ms.openlocfilehash: 2b6d9e11acd429eecb30926316d1033331524edc
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 7cb2fc134f4391de0e5df2cd719902097bf2ebf5
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="dsc-waitforall-resource"></a><span data-ttu-id="b7c25-103">DSC WaitForAll リソース</span><span class="sxs-lookup"><span data-stu-id="b7c25-103">DSC WaitForAll Resource</span></span>
+# <a name="dsc-waitforall-resource"></a><span data-ttu-id="b2d2a-103">DSC WaitForAll リソース</span><span class="sxs-lookup"><span data-stu-id="b2d2a-103">DSC WaitForAll Resource</span></span>
 
-> <span data-ttu-id="b7c25-104">適用先: Windows PowerShell 5.0 以降</span><span class="sxs-lookup"><span data-stu-id="b7c25-104">Applies To: Windows PowerShell 5.0 and later</span></span>
+> <span data-ttu-id="b2d2a-104">適用先: Windows PowerShell 5.0 以降</span><span class="sxs-lookup"><span data-stu-id="b2d2a-104">Applies To: Windows PowerShell 5.0 and later</span></span>
 
-<span data-ttu-id="b7c25-105">**WaitForAll** Desired State Configuration (DSC) リソースを [DSC 構成](configurations.md)のノード ブロック内で使用して、他のノードの構成の依存関係を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="b7c25-105">The **WaitForAll** Desired State Configuration (DSC) resource can be used within a node block in a [DSC configuration](configurations.md) to specify dependencies on configurations on other nodes.</span></span>
+<span data-ttu-id="b2d2a-105">**WaitForAll** Desired State Configuration (DSC) リソースを [DSC 構成](configurations.md)のノード ブロック内で使用して、他のノードの構成の依存関係を指定することができます。</span><span class="sxs-lookup"><span data-stu-id="b2d2a-105">The **WaitForAll** Desired State Configuration (DSC) resource can be used within a node block in a [DSC configuration](configurations.md) to specify dependencies on configurations on other nodes.</span></span>
 
-<span data-ttu-id="b7c25-106">このリソースは、**ResourceName** プロパティで指定されたリソースが、 **NodeName** プロパティで定義されたすべてのターゲット ノードで目的の状態になった場合に成功します。</span><span class="sxs-lookup"><span data-stu-id="b7c25-106">This resource succeeds if if the resource specified by the **ResourceName** property is in the desired state on all target nodes defined in the **NodeName** property.</span></span>
+<span data-ttu-id="b2d2a-106">このリソースは、**ResourceName** プロパティで指定されたリソースが、 **NodeName** プロパティで定義されたすべてのターゲット ノードで目的の状態になった場合に成功します。</span><span class="sxs-lookup"><span data-stu-id="b2d2a-106">This resource succeeds if if the resource specified by the **ResourceName** property is in the desired state on all target nodes defined in the **NodeName** property.</span></span>
 
 
-## <a name="syntax"></a><span data-ttu-id="b7c25-107">構文</span><span class="sxs-lookup"><span data-stu-id="b7c25-107">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="b2d2a-107">構文</span><span class="sxs-lookup"><span data-stu-id="b2d2a-107">Syntax</span></span>
 
 ```
 WaitForAll [string] #ResourceName
@@ -26,25 +26,24 @@ WaitForAll [string] #ResourceName
     ResourceName = [string]
     NodeName = [string]
     [ RetryIntervalSec = [Uint64] ]
-    [ RetryCount = [Uint32] ] 
+    [ RetryCount = [Uint32] ]
     [ ThrottleLimit = [Uint32]]
     [ DependsOn = [string[]] ]
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="b7c25-108">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b7c25-108">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="b2d2a-108">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b2d2a-108">Properties</span></span>
 
-|  <span data-ttu-id="b7c25-109">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b7c25-109">Property</span></span>  |  <span data-ttu-id="b7c25-110">説明</span><span class="sxs-lookup"><span data-stu-id="b7c25-110">Description</span></span>   | 
-|---|---| 
-| <span data-ttu-id="b7c25-111">ResourceName</span><span class="sxs-lookup"><span data-stu-id="b7c25-111">ResourceName</span></span>| <span data-ttu-id="b7c25-112">依存するリソースの名前。</span><span class="sxs-lookup"><span data-stu-id="b7c25-112">The resource name to depend on.</span></span> <span data-ttu-id="b7c25-113">このリソースが別の構成に属している場合は、"[__リソースの種類__]__リソース名__::[__構成名__]::[__構成名__]" という形式で名前を指定してください。</span><span class="sxs-lookup"><span data-stu-id="b7c25-113">If this resource belongs to a different configuration, format the name as "[__ResourceType__]__ResourceName__::[__ConfigurationName__]::[__ConfigurationName__]"</span></span>| 
-| <span data-ttu-id="b7c25-114">NodeName</span><span class="sxs-lookup"><span data-stu-id="b7c25-114">NodeName</span></span>| <span data-ttu-id="b7c25-115">依存するリソースのターゲット ノード。</span><span class="sxs-lookup"><span data-stu-id="b7c25-115">The target nodes of the resource to depend on.</span></span>| 
-| <span data-ttu-id="b7c25-116">RetryIntervalSec</span><span class="sxs-lookup"><span data-stu-id="b7c25-116">RetryIntervalSec</span></span>| <span data-ttu-id="b7c25-117">再試行するまでの秒数。</span><span class="sxs-lookup"><span data-stu-id="b7c25-117">The number of seconds before retrying.</span></span> <span data-ttu-id="b7c25-118">最小値は 1 です。</span><span class="sxs-lookup"><span data-stu-id="b7c25-118">Minimum is 1.</span></span>| 
-| <span data-ttu-id="b7c25-119">RetryCount</span><span class="sxs-lookup"><span data-stu-id="b7c25-119">RetryCount</span></span>| <span data-ttu-id="b7c25-120">再試行の回数の最大数。</span><span class="sxs-lookup"><span data-stu-id="b7c25-120">The maximum number of times to retry.</span></span>| 
-| <span data-ttu-id="b7c25-121">ThrottleLimit</span><span class="sxs-lookup"><span data-stu-id="b7c25-121">ThrottleLimit</span></span>| <span data-ttu-id="b7c25-122">同時に接続するコンピューターの数。</span><span class="sxs-lookup"><span data-stu-id="b7c25-122">Number of machines to connect simultaneously.</span></span> <span data-ttu-id="b7c25-123">既定では、new-cimsession の既定値です。</span><span class="sxs-lookup"><span data-stu-id="b7c25-123">Default is new-cimsession default.</span></span>| 
-| <span data-ttu-id="b7c25-124">DependsOn</span><span class="sxs-lookup"><span data-stu-id="b7c25-124">DependsOn</span></span> | <span data-ttu-id="b7c25-125">このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="b7c25-125">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="b7c25-126">たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。</span><span class="sxs-lookup"><span data-stu-id="b7c25-126">For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
+|  <span data-ttu-id="b2d2a-109">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b2d2a-109">Property</span></span>  |  <span data-ttu-id="b2d2a-110">説明</span><span class="sxs-lookup"><span data-stu-id="b2d2a-110">Description</span></span>   |
+|---|---|
+| <span data-ttu-id="b2d2a-111">ResourceName</span><span class="sxs-lookup"><span data-stu-id="b2d2a-111">ResourceName</span></span>| <span data-ttu-id="b2d2a-112">依存するリソースの名前。</span><span class="sxs-lookup"><span data-stu-id="b2d2a-112">The resource name to depend on.</span></span> <span data-ttu-id="b2d2a-113">このリソースが別の構成に属している場合は、"[__リソースの種類__]__リソース名__::[__構成名__]::[__構成名__]" という形式で名前を指定してください。</span><span class="sxs-lookup"><span data-stu-id="b2d2a-113">If this resource belongs to a different configuration, format the name as "[__ResourceType__]__ResourceName__::[__ConfigurationName__]::[__ConfigurationName__]"</span></span>|
+| <span data-ttu-id="b2d2a-114">NodeName</span><span class="sxs-lookup"><span data-stu-id="b2d2a-114">NodeName</span></span>| <span data-ttu-id="b2d2a-115">依存するリソースのターゲット ノード。</span><span class="sxs-lookup"><span data-stu-id="b2d2a-115">The target nodes of the resource to depend on.</span></span>|
+| <span data-ttu-id="b2d2a-116">RetryIntervalSec</span><span class="sxs-lookup"><span data-stu-id="b2d2a-116">RetryIntervalSec</span></span>| <span data-ttu-id="b2d2a-117">再試行するまでの秒数。</span><span class="sxs-lookup"><span data-stu-id="b2d2a-117">The number of seconds before retrying.</span></span> <span data-ttu-id="b2d2a-118">最小値は 1 です。</span><span class="sxs-lookup"><span data-stu-id="b2d2a-118">Minimum is 1.</span></span>|
+| <span data-ttu-id="b2d2a-119">RetryCount</span><span class="sxs-lookup"><span data-stu-id="b2d2a-119">RetryCount</span></span>| <span data-ttu-id="b2d2a-120">再試行の回数の最大数。</span><span class="sxs-lookup"><span data-stu-id="b2d2a-120">The maximum number of times to retry.</span></span>|
+| <span data-ttu-id="b2d2a-121">ThrottleLimit</span><span class="sxs-lookup"><span data-stu-id="b2d2a-121">ThrottleLimit</span></span>| <span data-ttu-id="b2d2a-122">同時に接続するコンピューターの数。</span><span class="sxs-lookup"><span data-stu-id="b2d2a-122">Number of machines to connect simultaneously.</span></span> <span data-ttu-id="b2d2a-123">既定では、new-cimsession の既定値です。</span><span class="sxs-lookup"><span data-stu-id="b2d2a-123">Default is new-cimsession default.</span></span>|
+| <span data-ttu-id="b2d2a-124">DependsOn</span><span class="sxs-lookup"><span data-stu-id="b2d2a-124">DependsOn</span></span> | <span data-ttu-id="b2d2a-125">このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="b2d2a-125">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="b2d2a-126">たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。</span><span class="sxs-lookup"><span data-stu-id="b2d2a-126">For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>|
 
 
-## <a name="example"></a><span data-ttu-id="b7c25-127">例</span><span class="sxs-lookup"><span data-stu-id="b7c25-127">Example</span></span>
+## <a name="example"></a><span data-ttu-id="b2d2a-127">例</span><span class="sxs-lookup"><span data-stu-id="b2d2a-127">Example</span></span>
 
-<span data-ttu-id="b7c25-128">このリソースを使用する方法の例は、「[ノードの相互依存関係の指定](crossNodeDependencies.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b7c25-128">For an example of how to use this resource, see [Specifying cross-node dependencies](crossNodeDependencies.md)</span></span>
-
+<span data-ttu-id="b2d2a-128">このリソースを使用する方法の例は、「[ノードの相互依存関係の指定](crossNodeDependencies.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="b2d2a-128">For an example of how to use this resource, see [Specifying cross-node dependencies](crossNodeDependencies.md)</span></span>

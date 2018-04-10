@@ -1,42 +1,42 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: Find-Module
-ms.openlocfilehash: 65c466909c007ed08c3fa978f78483983b00ba73
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: 03dff4454a31638df564568ef51eec158685c8e9
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="find-module"></a><span data-ttu-id="55d37-103">Find-Module</span><span class="sxs-lookup"><span data-stu-id="55d37-103">Find-Module</span></span>
-<span data-ttu-id="55d37-104">指定した条件に一致するオンライン ギャラリーからモジュールを検索します。</span><span class="sxs-lookup"><span data-stu-id="55d37-104">Finds modules from an online gallery that match specified criteria.</span></span>
+# <a name="find-module"></a><span data-ttu-id="05dfa-103">Find-Module</span><span class="sxs-lookup"><span data-stu-id="05dfa-103">Find-Module</span></span>
+<span data-ttu-id="05dfa-104">指定した条件に一致するオンライン ギャラリーからモジュールを検索します。</span><span class="sxs-lookup"><span data-stu-id="05dfa-104">Finds modules from an online gallery that match specified criteria.</span></span>
 
-## <a name="description"></a><span data-ttu-id="55d37-105">説明</span><span class="sxs-lookup"><span data-stu-id="55d37-105">Description</span></span>
-<span data-ttu-id="55d37-106">Find-Module は、指定した条件に一致する登録されているリポジトリからモジュールを検出します。</span><span class="sxs-lookup"><span data-stu-id="55d37-106">Find-Module discovers the modules from registered repositories that matches the specified criteria.</span></span>
-<span data-ttu-id="55d37-107">検出される各モジュールに対し、Find-Module は、モジュールをインストールするための Install-Module に必要に応じてパイプできる PSRepositoryItemInfo オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="55d37-107">For each module found, Find-Module returns a PSRepositoryItemInfo object which can optionally be piped to Install-Module for installing the modules.</span></span>
+## <a name="description"></a><span data-ttu-id="05dfa-105">説明</span><span class="sxs-lookup"><span data-stu-id="05dfa-105">Description</span></span>
+<span data-ttu-id="05dfa-106">Find-Module は、指定した条件に一致する登録されているリポジトリからモジュールを検出します。</span><span class="sxs-lookup"><span data-stu-id="05dfa-106">Find-Module discovers the modules from registered repositories that matches the specified criteria.</span></span>
+<span data-ttu-id="05dfa-107">検出される各モジュールに対し、Find-Module は、モジュールをインストールするための Install-Module に必要に応じてパイプできる PSRepositoryItemInfo オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="05dfa-107">For each module found, Find-Module returns a PSRepositoryItemInfo object which can optionally be piped to Install-Module for installing the modules.</span></span>
 
-- <span data-ttu-id="55d37-108">Find-Module では、-Command、-DscResource、RoleCapability、-Includes パラメーターを使用してモジュールのコンテンツに基づいてフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="55d37-108">Find-Module can filter based on module contents with the -Command, -DscResource, -RoleCapability and -Includes parameters.</span></span>
-- <span data-ttu-id="55d37-109">Find-Module は、次のバージョン パラメーターでフィルター処理できます。MinimumVersion、MaximumVersion、RequiredVersion、AllVersions。</span><span class="sxs-lookup"><span data-stu-id="55d37-109">Find-Module can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
-  - <span data-ttu-id="55d37-110">これらのパラメーターは、MinmimumVersion と MaximumVersion を除いて、同時に使用できません。</span><span class="sxs-lookup"><span data-stu-id="55d37-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
-  - <span data-ttu-id="55d37-111">これらのバージョン パラメーターは、ワイルドカードを含まない 1 つのモジュール名が指定されている場合にのみ許可されます。</span><span class="sxs-lookup"><span data-stu-id="55d37-111">These version parameters are allowed only with the single module name without any wildcards.</span></span>
-  - <span data-ttu-id="55d37-112">RequiredVersion パラメーターが指定されていない場合、Find-Module は指定された最小バージョン以上の最新バージョンのモジュールを返すか、または最新バージョンのモジュールを返します (最小バージョンが指定されていない場合)。</span><span class="sxs-lookup"><span data-stu-id="55d37-112">If the RequiredVersion parameter is not specified, Find-Module returns the latest version of the module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span> 
-  - <span data-ttu-id="55d37-113">RequiredVersion パラメーターが指定されている場合、Find-Module は指定したバージョンに完全に一致するバージョンのモジュールのみを返します。</span><span class="sxs-lookup"><span data-stu-id="55d37-113">If the RequiredVersion parameter is specified, Find-Module only returns the version of module that exactly matches the specified version.</span></span>
-- <span data-ttu-id="55d37-114">Find-Module では、-Tag パラメーターを使用してモジュールのメタデータをフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="55d37-114">Find-Module can filter on module metadata with the -Tag parameter</span></span>
-- <span data-ttu-id="55d37-115">Find-Module では、-Filter パラメーターを使用してリポジトリ固有の検索言語をフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="55d37-115">Find-Module can filter on repository-specific search language with the -Filter parameter.</span></span>
-- <span data-ttu-id="55d37-116">Find-Module では、登録されているリポジトリのすべてまたは一部からモジュール上でフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="55d37-116">Find-Module can filter on modules from all or few of the registered repositories.</span></span>
+- <span data-ttu-id="05dfa-108">Find-Module では、-Command、-DscResource、RoleCapability、-Includes パラメーターを使用してモジュールのコンテンツに基づいてフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="05dfa-108">Find-Module can filter based on module contents with the -Command, -DscResource, -RoleCapability and -Includes parameters.</span></span>
+- <span data-ttu-id="05dfa-109">Find-Module は、次のバージョン パラメーターでフィルター処理できます。MinimumVersion、MaximumVersion、RequiredVersion、AllVersions。</span><span class="sxs-lookup"><span data-stu-id="05dfa-109">Find-Module can filter with version parameters: MinimumVersion, MaximumVersion, RequiredVersion, AllVersions.</span></span>
+  - <span data-ttu-id="05dfa-110">これらのパラメーターは、MinmimumVersion と MaximumVersion を除いて、同時に使用できません。</span><span class="sxs-lookup"><span data-stu-id="05dfa-110">These parameters are mutually exclusive, except MinmimumVersion and MaximumVersion.</span></span>
+  - <span data-ttu-id="05dfa-111">これらのバージョン パラメーターは、ワイルドカードを含まない 1 つのモジュール名が指定されている場合にのみ許可されます。</span><span class="sxs-lookup"><span data-stu-id="05dfa-111">These version parameters are allowed only with the single module name without any wildcards.</span></span>
+  - <span data-ttu-id="05dfa-112">RequiredVersion パラメーターが指定されていない場合、Find-Module は指定された最小バージョン以上の最新バージョンのモジュールを返すか、または最新バージョンのモジュールを返します (最小バージョンが指定されていない場合)。</span><span class="sxs-lookup"><span data-stu-id="05dfa-112">If the RequiredVersion parameter is not specified, Find-Module returns the latest version of the module that is equal to or greater than the minimum version specified or the latest version of the module if no minimum version is specified.</span></span>
+  - <span data-ttu-id="05dfa-113">RequiredVersion パラメーターが指定されている場合、Find-Module は指定したバージョンに完全に一致するバージョンのモジュールのみを返します。</span><span class="sxs-lookup"><span data-stu-id="05dfa-113">If the RequiredVersion parameter is specified, Find-Module only returns the version of module that exactly matches the specified version.</span></span>
+- <span data-ttu-id="05dfa-114">Find-Module では、-Tag パラメーターを使用してモジュールのメタデータをフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="05dfa-114">Find-Module can filter on module metadata with the -Tag parameter</span></span>
+- <span data-ttu-id="05dfa-115">Find-Module では、-Filter パラメーターを使用してリポジトリ固有の検索言語をフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="05dfa-115">Find-Module can filter on repository-specific search language with the -Filter parameter.</span></span>
+- <span data-ttu-id="05dfa-116">Find-Module では、登録されているリポジトリのすべてまたは一部からモジュール上でフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="05dfa-116">Find-Module can filter on modules from all or few of the registered repositories.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="55d37-117">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="55d37-117">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="05dfa-117">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="05dfa-117">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Find-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="55d37-118">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="55d37-118">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="05dfa-118">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="05dfa-118">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="55d37-119">Find-Module</span><span class="sxs-lookup"><span data-stu-id="55d37-119">Find-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398574)
+[<span data-ttu-id="05dfa-119">Find-Module</span><span class="sxs-lookup"><span data-stu-id="05dfa-119">Find-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398574)
 
-## <a name="example-commands"></a><span data-ttu-id="55d37-120">コマンド例</span><span class="sxs-lookup"><span data-stu-id="55d37-120">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="05dfa-120">コマンド例</span><span class="sxs-lookup"><span data-stu-id="05dfa-120">Example commands</span></span>
 ```powershell
 # Find a specific module
 Find-Module Azure
@@ -54,7 +54,7 @@ Find-Module -Name AzureRM*
 # Find all versions of a module
 Find-Module -Name PSReadline -AllVersions
 
-# Find a module with -MinimumVersion. 
+# Find a module with -MinimumVersion.
 # With MinimumVersion we can find a module whose version is greate than or equal to the specified MinimumVersion value.
 Find-Module -Name PSReadline -MinimumVersion 1.0.0.12
 
@@ -142,4 +142,3 @@ PackageManagementProvider  : NuGet
 AdditionalMetadata         : {downloadCount, description, copyright, FileList...}
 
 ```
-

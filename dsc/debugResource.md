@@ -1,26 +1,27 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "DSC リソースのデバッグ"
-ms.openlocfilehash: c9534deb755e2d3ce59dbb44e55b58b59af2e7f4
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, PowerShell, 構成, セットアップ
+title: DSC リソースのデバッグ
+ms.openlocfilehash: 6a1f4b04a11185c2cfe9be26324bd66ed13ca7dd
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="debugging-dsc-resources"></a><span data-ttu-id="125dc-103">DSC リソースのデバッグ</span><span class="sxs-lookup"><span data-stu-id="125dc-103">Debugging DSC resources</span></span>
+# <a name="debugging-dsc-resources"></a><span data-ttu-id="64893-103">DSC リソースのデバッグ</span><span class="sxs-lookup"><span data-stu-id="64893-103">Debugging DSC resources</span></span>
 
-> <span data-ttu-id="125dc-104">適用先: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="125dc-104">Applies To: Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="64893-104">適用先: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="64893-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="125dc-105">PowerShell 5.0 では、構成が適用されているときに DSC リソースをデバッグできる新機能が Desired State Configuraiton (DSC) に導入されました。</span><span class="sxs-lookup"><span data-stu-id="125dc-105">In PowerShell 5.0, a new feature was introduced in Desired State Configuraiton (DSC) that allows you to debug a DSC resource as a configuration is being applied.</span></span>
+<span data-ttu-id="64893-105">PowerShell 5.0 では、構成が適用されているときに DSC リソースをデバッグできる新機能が Desired State Configuraiton (DSC) に導入されました。</span><span class="sxs-lookup"><span data-stu-id="64893-105">In PowerShell 5.0, a new feature was introduced in Desired State Configuraiton (DSC) that allows you to debug a DSC resource as a configuration is being applied.</span></span>
 
-## <a name="enabling-dsc-debugging"></a><span data-ttu-id="125dc-106">DSC デバッグの有効化</span><span class="sxs-lookup"><span data-stu-id="125dc-106">Enabling DSC debugging</span></span>
-<span data-ttu-id="125dc-107">リソースをデバッグする前に、[Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) コマンドレットを呼び出すことによって、デバッグを有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="125dc-107">Before you can debug a resource, you have to enable debugging by calling the [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet.</span></span> <span data-ttu-id="125dc-108">このコマンドレットは、必須パラメーター **BreakAll** を取ります。</span><span class="sxs-lookup"><span data-stu-id="125dc-108">This cmdlet takes a mandatory parameter, **BreakAll**.</span></span> 
+## <a name="enabling-dsc-debugging"></a><span data-ttu-id="64893-106">DSC デバッグの有効化</span><span class="sxs-lookup"><span data-stu-id="64893-106">Enabling DSC debugging</span></span>
+<span data-ttu-id="64893-107">リソースをデバッグする前に、[Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) コマンドレットを呼び出すことによって、デバッグを有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="64893-107">Before you can debug a resource, you have to enable debugging by calling the [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx) cmdlet.</span></span>
+<span data-ttu-id="64893-108">このコマンドレットは、必須パラメーター **BreakAll** を取ります。</span><span class="sxs-lookup"><span data-stu-id="64893-108">This cmdlet takes a mandatory parameter, **BreakAll**.</span></span>
 
-<span data-ttu-id="125dc-109">[Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) への呼び出しの結果を参照して、デバッグが有効になっていることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="125dc-109">You can verify that debugging has been enabled by looking at the result of a call to [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).</span></span>
+<span data-ttu-id="64893-109">[Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) への呼び出しの結果を参照して、デバッグが有効になっていることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="64893-109">You can verify that debugging has been enabled by looking at the result of a call to [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx).</span></span>
 
-<span data-ttu-id="125dc-110">次の PowerShell 出力は、デバッグを有効にした結果を示しています。</span><span class="sxs-lookup"><span data-stu-id="125dc-110">The following PowerShell output shows the result of enabling debugging:</span></span>
+<span data-ttu-id="64893-110">次の PowerShell 出力は、デバッグを有効にした結果を示しています。</span><span class="sxs-lookup"><span data-stu-id="64893-110">The following PowerShell output shows the result of enabling debugging:</span></span>
 
 
 ```powershell
@@ -41,8 +42,9 @@ PS C:\DebugTest>
 ```
 
 
-## <a name="starting-a-configuration-with-debug-enabled"></a><span data-ttu-id="125dc-111">デバッグを有効にした構成の開始</span><span class="sxs-lookup"><span data-stu-id="125dc-111">Starting a configuration with debug enabled</span></span>
-<span data-ttu-id="125dc-112">DSC リソースをデバッグするには、そのリソースを呼び出す構成を開始します。</span><span class="sxs-lookup"><span data-stu-id="125dc-112">To debug a DSC resource, you start a configuration that calls that resource.</span></span> <span data-ttu-id="125dc-113">この例では、"WindowsPowerShellWebAccess" 機能がインストールされていることを確認するために [WindowsFeature](windowsfeatureResource.md) リソースを呼び出す単純な構成を見ていきます。</span><span class="sxs-lookup"><span data-stu-id="125dc-113">For this example, we'll look at a simple configuration that calls the [WindowsFeature](windowsfeatureResource.md) resource to ensure that the "WindowsPowerShellWebAccess" feature is installed:</span></span>
+## <a name="starting-a-configuration-with-debug-enabled"></a><span data-ttu-id="64893-111">デバッグを有効にした構成の開始</span><span class="sxs-lookup"><span data-stu-id="64893-111">Starting a configuration with debug enabled</span></span>
+<span data-ttu-id="64893-112">DSC リソースをデバッグするには、そのリソースを呼び出す構成を開始します。</span><span class="sxs-lookup"><span data-stu-id="64893-112">To debug a DSC resource, you start a configuration that calls that resource.</span></span>
+<span data-ttu-id="64893-113">この例では、"WindowsPowerShellWebAccess" 機能がインストールされていることを確認するために [WindowsFeature](windowsfeatureResource.md) リソースを呼び出す単純な構成を見ていきます。</span><span class="sxs-lookup"><span data-stu-id="64893-113">For this example, we'll look at a simple configuration that calls the [WindowsFeature](windowsfeatureResource.md) resource to ensure that the "WindowsPowerShellWebAccess" feature is installed:</span></span>
 
 ```powershell
 Configuration PSWebAccess
@@ -59,7 +61,9 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
-<span data-ttu-id="125dc-114">構成をコンパイルした後、[Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) を呼び出して開始します。</span><span class="sxs-lookup"><span data-stu-id="125dc-114">After compiling the configuration, start it by calling [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).</span></span> <span data-ttu-id="125dc-115">構成は、ローカル構成マネージャー (LCM) が構成の最初のリソースを呼び出したときに停止します。</span><span class="sxs-lookup"><span data-stu-id="125dc-115">The configuration will stop when the Local Configuration Manager (LCM) calls into the first resource in the configuration.</span></span> <span data-ttu-id="125dc-116">`-Verbose` および `-Wait` パラメーターを使用した場合、デバッグを開始するために入力する必要がある行が出力に表示されます。</span><span class="sxs-lookup"><span data-stu-id="125dc-116">If you use the `-Verbose` and `-Wait` parameters, the output displays the lines you need to enter to start debugging.</span></span>
+<span data-ttu-id="64893-114">構成をコンパイルした後、[Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) を呼び出して開始します。</span><span class="sxs-lookup"><span data-stu-id="64893-114">After compiling the configuration, start it by calling [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx).</span></span>
+<span data-ttu-id="64893-115">構成は、ローカル構成マネージャー (LCM) が構成の最初のリソースを呼び出したときに停止します。</span><span class="sxs-lookup"><span data-stu-id="64893-115">The configuration will stop when the Local Configuration Manager (LCM) calls into the first resource in the configuration.</span></span>
+<span data-ttu-id="64893-116">`-Verbose` および `-Wait` パラメーターを使用した場合、デバッグを開始するために入力する必要がある行が出力に表示されます。</span><span class="sxs-lookup"><span data-stu-id="64893-116">If you use the `-Verbose` and `-Wait` parameters, the output displays the lines you need to enter to start debugging.</span></span>
 
 ```powershell
 Start-DscConfiguration .\PSWebAccess -Wait -Verbose
@@ -68,40 +72,44 @@ Manager,'namespaceName' = root/Microsoft/Windows/DesiredStateConfiguration'.
 VERBOSE: An LCM method call arrived from computer TEST-SRV with user sid S-1-5-21-2127521184-1604012920-1887927527-108583.
 VERBOSE: An LCM method call arrived from computer TEST-SRV with user sid S-1-5-21-2127521184-1604012920-1887927527-108583.
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Set      ]
-WARNING: [TEST-SRV]:                            [DSCEngine] Warning LCM is in Debug 'ResourceScriptBreakAll' mode.  Resource script processing will 
+WARNING: [TEST-SRV]:                            [DSCEngine] Warning LCM is in Debug 'ResourceScriptBreakAll' mode.  Resource script processing will
 be stopped to wait for PowerShell script debugger to attach.
 VERBOSE: [TEST-SRV]:                            [DSCEngine] Importing the module C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateCo
 nfiguration\DscResources\MSFT_RoleResource\MSFT_RoleResource.psm1 in force mode.
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Resource ]  [[WindowsFeature]PSWA]
 VERBOSE: [TEST-SRV]: LCM:  [ Start  Test     ]  [[WindowsFeature]PSWA]
 VERBOSE: [TEST-SRV]:                            [[WindowsFeature]PSWA] Importing the module MSFT_RoleResource in force mode.
-WARNING: [TEST-SRV]:                            [[WindowsFeature]PSWA] Resource is waiting for PowerShell script debugger to attach. 
+WARNING: [TEST-SRV]:                            [[WindowsFeature]PSWA] Resource is waiting for PowerShell script debugger to attach.
 Use the following commands to begin debugging this resource script:
 Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
-<span data-ttu-id="125dc-117">この時点で、LCM はリソースを呼び出し、最初のブレーク ポイントに到達しています。</span><span class="sxs-lookup"><span data-stu-id="125dc-117">At this point, the LCM has called the resource, and come to the first break point.</span></span> <span data-ttu-id="125dc-118">出力の最後の 3 行は、プロセスに接続し、リソース スクリプトのデバッグを開始する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="125dc-118">The last three lines in the output show you how to attach to the process and start debugging the resource script.</span></span>
+<span data-ttu-id="64893-117">この時点で、LCM はリソースを呼び出し、最初のブレーク ポイントに到達しています。</span><span class="sxs-lookup"><span data-stu-id="64893-117">At this point, the LCM has called the resource, and come to the first break point.</span></span>
+<span data-ttu-id="64893-118">出力の最後の 3 行は、プロセスに接続し、リソース スクリプトのデバッグを開始する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="64893-118">The last three lines in the output show you how to attach to the process and start debugging the resource script.</span></span>
 
-## <a name="debugging-the-resource-script"></a><span data-ttu-id="125dc-119">リソース スクリプトのデバッグ</span><span class="sxs-lookup"><span data-stu-id="125dc-119">Debugging the resource script</span></span>
+## <a name="debugging-the-resource-script"></a><span data-ttu-id="64893-119">リソース スクリプトのデバッグ</span><span class="sxs-lookup"><span data-stu-id="64893-119">Debugging the resource script</span></span>
 
-<span data-ttu-id="125dc-120">PowerShell ISE の新しいインスタンスを開始します。</span><span class="sxs-lookup"><span data-stu-id="125dc-120">Start a new instance of the PowerShell ISE.</span></span> <span data-ttu-id="125dc-121">コンソール ウィンドウで、`Start-DscConfiguration` 出力から出力の最後の 3 行をコマンドとして入力し、`<credentials>` を有効なユーザー資格情報に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="125dc-121">In the console pane, enter the last three lines of output from the `Start-DscConfiguration` output as commands, replacing `<credentials>` with valid user credentials.</span></span> <span data-ttu-id="125dc-122">次のようなプロンプトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="125dc-122">You should now see a prompt that looks similar to:</span></span>
+<span data-ttu-id="64893-120">PowerShell ISE の新しいインスタンスを開始します。</span><span class="sxs-lookup"><span data-stu-id="64893-120">Start a new instance of the PowerShell ISE.</span></span>
+<span data-ttu-id="64893-121">コンソール ウィンドウで、`Start-DscConfiguration` 出力から出力の最後の 3 行をコマンドとして入力し、`<credentials>` を有効なユーザー資格情報に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="64893-121">In the console pane, enter the last three lines of output from the `Start-DscConfiguration` output as commands, replacing `<credentials>` with valid user credentials.</span></span>
+<span data-ttu-id="64893-122">次のようなプロンプトが表示されます。</span><span class="sxs-lookup"><span data-stu-id="64893-122">You should now see a prompt that looks similar to:</span></span>
 
 ```powershell
 [TEST-SRV]: [DBG]: [Process:9000]: [RemoteHost]: PS C:\DebugTest>>
 ```
 
-<span data-ttu-id="125dc-123">スクリプト ウィンドウが開いてリソース スクリプトが表示され、**Test-TargetResource** 関数の最初の行 (クラスベースのリソースの **Test()** メソッド) でデバッガーが停止します。</span><span class="sxs-lookup"><span data-stu-id="125dc-123">The resource script will open in the script pane, and the debugger is stopped at the first line of the **Test-TargetResource** function (the **Test()** method of a class-based resource).</span></span>
-<span data-ttu-id="125dc-124">ISE でデバッグ コマンドを使うと、リソース スクリプトをステップ実行したり、変数の値を確認したり、呼び出し履歴を表示したりできます。</span><span class="sxs-lookup"><span data-stu-id="125dc-124">Now you can use the debug commands in the ISE to step through the resource script, look at variable values, view the call stack, and so on.</span></span> <span data-ttu-id="125dc-125">PowerShell ISE でのデバッグについての詳細は、「[Windows PowerShell ISE でスクリプトをデバッグする方法](https://technet.microsoft.com/en-us/library/dd819480.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="125dc-125">For information about debugging in the PowerShell ISE, see [How to Debug Scripts in Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/dd819480.aspx).</span></span> <span data-ttu-id="125dc-126">リソース スクリプト (またはクラス) のすべての行がブレークポイントとして設定されていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="125dc-126">Remember that every line in the resource script (or class) is set as a break point.</span></span>
+<span data-ttu-id="64893-123">スクリプト ウィンドウが開いてリソース スクリプトが表示され、**Test-TargetResource** 関数の最初の行 (クラスベースのリソースの **Test()** メソッド) でデバッガーが停止します。</span><span class="sxs-lookup"><span data-stu-id="64893-123">The resource script will open in the script pane, and the debugger is stopped at the first line of the **Test-TargetResource** function (the **Test()** method of a class-based resource).</span></span>
+<span data-ttu-id="64893-124">ISE でデバッグ コマンドを使うと、リソース スクリプトをステップ実行したり、変数の値を確認したり、呼び出し履歴を表示したりできます。</span><span class="sxs-lookup"><span data-stu-id="64893-124">Now you can use the debug commands in the ISE to step through the resource script, look at variable values, view the call stack, and so on.</span></span>
+<span data-ttu-id="64893-125">PowerShell ISE でのデバッグについての詳細は、「[Windows PowerShell ISE でスクリプトをデバッグする方法](https://technet.microsoft.com/en-us/library/dd819480.aspx)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="64893-125">For information about debugging in the PowerShell ISE, see [How to Debug Scripts in Windows PowerShell ISE](https://technet.microsoft.com/en-us/library/dd819480.aspx).</span></span>
+<span data-ttu-id="64893-126">リソース スクリプト (またはクラス) のすべての行がブレークポイントとして設定されていることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="64893-126">Remember that every line in the resource script (or class) is set as a break point.</span></span>
 
-## <a name="disabling-dsc-debugging"></a><span data-ttu-id="125dc-127">DSC デバッグの無効化</span><span class="sxs-lookup"><span data-stu-id="125dc-127">Disabling DSC debugging</span></span>
+## <a name="disabling-dsc-debugging"></a><span data-ttu-id="64893-127">DSC デバッグの無効化</span><span class="sxs-lookup"><span data-stu-id="64893-127">Disabling DSC debugging</span></span>
 
-<span data-ttu-id="125dc-128">[Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx)を呼び出した後では、[Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) を呼び出すたびに構成でデバッガー中断が行われるようになります。</span><span class="sxs-lookup"><span data-stu-id="125dc-128">After calling [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx), all calls to [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) will result in the configuration breaking into the debugger.</span></span> <span data-ttu-id="125dc-129">構成を通常どおりに実行できるようにするには、[Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) コマンドレットを呼び出してデバッグを無効化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="125dc-129">To allow configurations to run normally, you must disable debugging by calling the [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet.</span></span>
+<span data-ttu-id="64893-128">[Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx)を呼び出した後では、[Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) を呼び出すたびに構成でデバッガー中断が行われるようになります。</span><span class="sxs-lookup"><span data-stu-id="64893-128">After calling [Enable-DscDebug](https://technet.microsoft.com/library/mt517870.aspx), all calls to [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) will result in the configuration breaking into the debugger.</span></span> <span data-ttu-id="64893-129">構成を通常どおりに実行できるようにするには、[Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) コマンドレットを呼び出してデバッグを無効化する必要があります。</span><span class="sxs-lookup"><span data-stu-id="64893-129">To allow configurations to run normally, you must disable debugging by calling the [Disable-DscDebug](https://technet.microsoft.com/en-us/library/mt517872.aspx) cmdlet.</span></span>
 
-><span data-ttu-id="125dc-130">**注:** 再起動をしても、LCM のデバッグ状態は変更されません。</span><span class="sxs-lookup"><span data-stu-id="125dc-130">**Note:** Rebooting does not change the debug state of the LCM.</span></span> <span data-ttu-id="125dc-131">デバッグが有効になっている場合、再起動後に構成を開始してもデバッグ中断が行われます。</span><span class="sxs-lookup"><span data-stu-id="125dc-131">If debugging is enabled, starting a configuration will still break into the debugger after a reboot.</span></span>
+><span data-ttu-id="64893-130">**注:** 再起動をしても、LCM のデバッグ状態は変更されません。</span><span class="sxs-lookup"><span data-stu-id="64893-130">**Note:** Rebooting does not change the debug state of the LCM.</span></span> <span data-ttu-id="64893-131">デバッグが有効になっている場合、再起動後に構成を開始してもデバッグ中断が行われます。</span><span class="sxs-lookup"><span data-stu-id="64893-131">If debugging is enabled, starting a configuration will still break into the debugger after a reboot.</span></span>
 
 
-## <a name="see-also"></a><span data-ttu-id="125dc-132">参照</span><span class="sxs-lookup"><span data-stu-id="125dc-132">See Also</span></span>
-- [<span data-ttu-id="125dc-133">MOF を使用したカスタム DSC リソースの記述</span><span class="sxs-lookup"><span data-stu-id="125dc-133">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md) 
-- [<span data-ttu-id="125dc-134">PowerShell クラスを使用したカスタム DSC リソースの記述</span><span class="sxs-lookup"><span data-stu-id="125dc-134">Writing a custom DSC resource with PowerShell classes</span></span>](authoringResourceClass.md)
-
+## <a name="see-also"></a><span data-ttu-id="64893-132">参照</span><span class="sxs-lookup"><span data-stu-id="64893-132">See Also</span></span>
+- [<span data-ttu-id="64893-133">MOF を使用したカスタム DSC リソースの記述</span><span class="sxs-lookup"><span data-stu-id="64893-133">Writing a custom DSC resource with MOF</span></span>](authoringResourceMOF.md)
+- [<span data-ttu-id="64893-134">PowerShell クラスを使用したカスタム DSC リソースの記述</span><span class="sxs-lookup"><span data-stu-id="64893-134">Writing a custom DSC resource with PowerShell classes</span></span>](authoringResourceClass.md)

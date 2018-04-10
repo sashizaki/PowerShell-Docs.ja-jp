@@ -1,34 +1,34 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: Publish-Script
-ms.openlocfilehash: 0d2fd87645d2286e87e68198844adce8909739cb
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+ms.openlocfilehash: 6e273a4bacd2bf150a6fa6c4436c3c34f41078ad
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="publish-script"></a><span data-ttu-id="032ec-103">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="032ec-103">Publish-Script</span></span>
+# <a name="publish-script"></a><span data-ttu-id="f0073-103">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="f0073-103">Publish-Script</span></span>
 
-<span data-ttu-id="032ec-104">Publish-Script コマンドレットでは、指定されたスクリプトをオンライン ギャラリーで公開します。</span><span class="sxs-lookup"><span data-stu-id="032ec-104">The Publish-Script cmdlet publishes the specified script to the online gallery.</span></span>
+<span data-ttu-id="f0073-104">Publish-Script コマンドレットでは、指定されたスクリプトをオンライン ギャラリーで公開します。</span><span class="sxs-lookup"><span data-stu-id="f0073-104">The Publish-Script cmdlet publishes the specified script to the online gallery.</span></span>
 
-## <a name="description"></a><span data-ttu-id="032ec-105">説明</span><span class="sxs-lookup"><span data-stu-id="032ec-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="f0073-105">説明</span><span class="sxs-lookup"><span data-stu-id="f0073-105">Description</span></span>
 
-<span data-ttu-id="032ec-106">Publish-Script コマンドレットでは、バージョン、GUID、作成者、説明などの有効なメタデータを含むスクリプト ファイルを発行できます。Publish-Script コマンドレットの Force スイッチ パラメーターは、プロンプトを表示せずに NuGet.exe をブートストラップします。</span><span class="sxs-lookup"><span data-stu-id="032ec-106">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc. Force switch parameter on Publish-Script cmdlet bootstraps the NuGet.exe without prompting.</span></span>
+<span data-ttu-id="f0073-106">Publish-Script コマンドレットでは、バージョン、GUID、作成者、説明などの有効なメタデータを含むスクリプト ファイルを発行できます。Publish-Script コマンドレットの Force スイッチ パラメーターは、プロンプトを表示せずに NuGet.exe をブートストラップします。</span><span class="sxs-lookup"><span data-stu-id="f0073-106">Publish-Script cmdlet lets you to publish your script file with valid metadata like Version, Guid, Author, and Description, etc. Force switch parameter on Publish-Script cmdlet bootstraps the NuGet.exe without prompting.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="032ec-107">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="032ec-107">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="f0073-107">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="f0073-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Publish-Script -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="032ec-108">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="032ec-108">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="f0073-108">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="f0073-108">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="032ec-109">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="032ec-109">Publish-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619788)
+[<span data-ttu-id="f0073-109">Publish-Script</span><span class="sxs-lookup"><span data-stu-id="f0073-109">Publish-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619788)
 
-## <a name="example-commands"></a><span data-ttu-id="032ec-110">コマンド例</span><span class="sxs-lookup"><span data-stu-id="032ec-110">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="f0073-110">コマンド例</span><span class="sxs-lookup"><span data-stu-id="f0073-110">Example commands</span></span>
 
 ```powershell
 # Publish the really basic script file with required metadata
@@ -75,4 +75,3 @@ PackageManagementProvider : NuGet
 AdditionalMetadata : {description, developmentDependency, tags, PackageManagementProvider...}
 
 ```
-

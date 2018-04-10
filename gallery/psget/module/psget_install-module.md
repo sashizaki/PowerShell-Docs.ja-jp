@@ -1,71 +1,71 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: Install-Module
-ms.openlocfilehash: c066f4b34a03206cc0f31e9d40144fd719d9e305
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: 960e3a85a0f915dd9da00f6456550a335c619cea
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="install-module"></a><span data-ttu-id="4a066-103">Install-Module</span><span class="sxs-lookup"><span data-stu-id="4a066-103">Install-Module</span></span>
+# <a name="install-module"></a><span data-ttu-id="34bac-103">Install-Module</span><span class="sxs-lookup"><span data-stu-id="34bac-103">Install-Module</span></span>
 
-<span data-ttu-id="4a066-104">PowerShell モジュールをオンライン リポジトリからローカル コンピューターにインストールします。</span><span class="sxs-lookup"><span data-stu-id="4a066-104">Installs the PowerShell modules from online repositories to the local computer.</span></span>
+<span data-ttu-id="34bac-104">PowerShell モジュールをオンライン リポジトリからローカル コンピューターにインストールします。</span><span class="sxs-lookup"><span data-stu-id="34bac-104">Installs the PowerShell modules from online repositories to the local computer.</span></span>
 
-## <a name="description"></a><span data-ttu-id="4a066-105">説明</span><span class="sxs-lookup"><span data-stu-id="4a066-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="34bac-105">説明</span><span class="sxs-lookup"><span data-stu-id="34bac-105">Description</span></span>
 
-<span data-ttu-id="4a066-106">Install-Module コマンドレットは、オンライン ギャラリーから 1 つ以上のモジュールをダウンロードして検証し、ローカル コンピューターの指定したインストール スコープにインストールします。</span><span class="sxs-lookup"><span data-stu-id="4a066-106">Install-Module cmdlet downloads one or more modules from an online gallery, validates and installs them on the local computer to the specified installation scope.</span></span>
+<span data-ttu-id="34bac-106">Install-Module コマンドレットは、オンライン ギャラリーから 1 つ以上のモジュールをダウンロードして検証し、ローカル コンピューターの指定したインストール スコープにインストールします。</span><span class="sxs-lookup"><span data-stu-id="34bac-106">Install-Module cmdlet downloads one or more modules from an online gallery, validates and installs them on the local computer to the specified installation scope.</span></span>
 
-<span data-ttu-id="4a066-107">Install-Module コマンドレットは、指定の条件を満たす 1 つ以上のモジュールをオンライン ギャラリーから取得して、検索結果が有効なモジュールであることを確認し、モジュール フォルダーをインストールの場所にコピーします。</span><span class="sxs-lookup"><span data-stu-id="4a066-107">The Install-Module cmdlet gets one or more modules that meet specified criteria from an online gallery, verifies that search results are valid modules, and copies module folders to the installation location.</span></span>
+<span data-ttu-id="34bac-107">Install-Module コマンドレットは、指定の条件を満たす 1 つ以上のモジュールをオンライン ギャラリーから取得して、検索結果が有効なモジュールであることを確認し、モジュール フォルダーをインストールの場所にコピーします。</span><span class="sxs-lookup"><span data-stu-id="34bac-107">The Install-Module cmdlet gets one or more modules that meet specified criteria from an online gallery, verifies that search results are valid modules, and copies module folders to the installation location.</span></span>
 
-<span data-ttu-id="4a066-108">スコープが定義されていない場合、または Scope パラメーターの値が AllUsers である場合は、モジュールは %systemdrive%:\Program Files\WindowsPowerShell\Modules にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="4a066-108">When no scope is defined, or when the value of the Scope parameter is AllUsers, the module is installed to %systemdrive%:\Program Files\WindowsPowerShell\Modules.</span></span> <span data-ttu-id="4a066-109">Scope の値が CurrentUser の場合は、モジュールは $home\Documents\WindowsPowerShell\Modules にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="4a066-109">When the value of Scope is CurrentUser, the module is installed to $home\Documents\WindowsPowerShell\Modules.</span></span>
+<span data-ttu-id="34bac-108">スコープが定義されていない場合、または Scope パラメーターの値が AllUsers である場合は、モジュールは %systemdrive%:\Program Files\WindowsPowerShell\Modules にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="34bac-108">When no scope is defined, or when the value of the Scope parameter is AllUsers, the module is installed to %systemdrive%:\Program Files\WindowsPowerShell\Modules.</span></span> <span data-ttu-id="34bac-109">Scope の値が CurrentUser の場合は、モジュールは $home\Documents\WindowsPowerShell\Modules にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="34bac-109">When the value of Scope is CurrentUser, the module is installed to $home\Documents\WindowsPowerShell\Modules.</span></span>
 
-<span data-ttu-id="4a066-110">指定したモジュールの最小バージョンのみに基づいて、結果をフィルター処理することができます。</span><span class="sxs-lookup"><span data-stu-id="4a066-110">You can filter your results based on minimum and exact versions of specified modules.</span></span>
+<span data-ttu-id="34bac-110">指定したモジュールの最小バージョンのみに基づいて、結果をフィルター処理することができます。</span><span class="sxs-lookup"><span data-stu-id="34bac-110">You can filter your results based on minimum and exact versions of specified modules.</span></span>
 
-- <span data-ttu-id="4a066-111">Windows PowerShell 5.0 以降の Side-by-Side バージョン サポート</span><span class="sxs-lookup"><span data-stu-id="4a066-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
-- <span data-ttu-id="4a066-112">モジュールの依存関係のインストール サポート</span><span class="sxs-lookup"><span data-stu-id="4a066-112">Module dependency installation support</span></span>
-- <span data-ttu-id="4a066-113">**"信頼されていません" のプロンプト:**信頼されていないリポジトリからモジュールをインストールするには、ユーザーの同意が必要です。</span><span class="sxs-lookup"><span data-stu-id="4a066-113">**Untrusted prompt:**User acceptance is required for installing the modules from an untrusted repository.</span></span>
-- <span data-ttu-id="4a066-114">-Force は、インストール済みのモジュールを再インストールします</span><span class="sxs-lookup"><span data-stu-id="4a066-114">-Force reinstalls the installed module</span></span>
-- <span data-ttu-id="4a066-115">RequiredVersion は、SxS の指定したバージョンを PowerShell バージョン 5.0 以降の既存のバージョンでインストールします。</span><span class="sxs-lookup"><span data-stu-id="4a066-115">RequiredVersion installs the specified version in SxS with existing versions on PowerShell version 5.0 or newer.</span></span>
+- <span data-ttu-id="34bac-111">Windows PowerShell 5.0 以降の Side-by-Side バージョン サポート</span><span class="sxs-lookup"><span data-stu-id="34bac-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
+- <span data-ttu-id="34bac-112">モジュールの依存関係のインストール サポート</span><span class="sxs-lookup"><span data-stu-id="34bac-112">Module dependency installation support</span></span>
+- <span data-ttu-id="34bac-113">**"信頼されていません" のプロンプト:**信頼されていないリポジトリからモジュールをインストールするには、ユーザーの同意が必要です。</span><span class="sxs-lookup"><span data-stu-id="34bac-113">**Untrusted prompt:**User acceptance is required for installing the modules from an untrusted repository.</span></span>
+- <span data-ttu-id="34bac-114">-Force は、インストール済みのモジュールを再インストールします</span><span class="sxs-lookup"><span data-stu-id="34bac-114">-Force reinstalls the installed module</span></span>
+- <span data-ttu-id="34bac-115">RequiredVersion は、SxS の指定したバージョンを PowerShell バージョン 5.0 以降の既存のバージョンでインストールします。</span><span class="sxs-lookup"><span data-stu-id="34bac-115">RequiredVersion installs the specified version in SxS with existing versions on PowerShell version 5.0 or newer.</span></span>
 
-### <a name="scope"></a><span data-ttu-id="4a066-116">スコープ</span><span class="sxs-lookup"><span data-stu-id="4a066-116">Scope</span></span>
-<span data-ttu-id="4a066-117">モジュールのインストール スコープを指定します。</span><span class="sxs-lookup"><span data-stu-id="4a066-117">Specifies the installation scope of the module.</span></span> <span data-ttu-id="4a066-118">このパラメーターに使用できる値は、AllUsers と CurrentUser です。</span><span class="sxs-lookup"><span data-stu-id="4a066-118">The acceptable values for this parameter are: AllUsers and CurrentUser.</span></span>
+### <a name="scope"></a><span data-ttu-id="34bac-116">スコープ</span><span class="sxs-lookup"><span data-stu-id="34bac-116">Scope</span></span>
+<span data-ttu-id="34bac-117">モジュールのインストール スコープを指定します。</span><span class="sxs-lookup"><span data-stu-id="34bac-117">Specifies the installation scope of the module.</span></span> <span data-ttu-id="34bac-118">このパラメーターに使用できる値は、AllUsers と CurrentUser です。</span><span class="sxs-lookup"><span data-stu-id="34bac-118">The acceptable values for this parameter are: AllUsers and CurrentUser.</span></span>
 
-<span data-ttu-id="4a066-119">既定のインストール スコープは AllUsers です。</span><span class="sxs-lookup"><span data-stu-id="4a066-119">The default installation scope is AllUsers.</span></span>
+<span data-ttu-id="34bac-119">既定のインストール スコープは AllUsers です。</span><span class="sxs-lookup"><span data-stu-id="34bac-119">The default installation scope is AllUsers.</span></span>
 
-<span data-ttu-id="4a066-120">AllUsers スコープでは、モジュールはコンピューターのすべてのユーザーがアクセス可能な場所 "$env:SystemDrive\Program Files\WindowsPowerShell\Modules" にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="4a066-120">The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer, that is, "$env:SystemDrive\Program Files\WindowsPowerShell\Modules".</span></span>
+<span data-ttu-id="34bac-120">AllUsers スコープでは、モジュールはコンピューターのすべてのユーザーがアクセス可能な場所 "$env:SystemDrive\Program Files\WindowsPowerShell\Modules" にインストールされます。</span><span class="sxs-lookup"><span data-stu-id="34bac-120">The AllUsers scope lets modules be installed in a location that is accessible to all users of the computer, that is, "$env:SystemDrive\Program Files\WindowsPowerShell\Modules".</span></span>
 
-<span data-ttu-id="4a066-121">CurrentUser スコープでは、モジュールは "$home\Documents\WindowsPowerShell\Modules" のみにインストールされるので、モジュールを使用できるのは現在のユーザーのみです。</span><span class="sxs-lookup"><span data-stu-id="4a066-121">The CurrentUser scope lets modules be installed only to "$home\Documents\WindowsPowerShell\Modules", so that the module is available only to the current user.</span></span>
+<span data-ttu-id="34bac-121">CurrentUser スコープでは、モジュールは "$home\Documents\WindowsPowerShell\Modules" のみにインストールされるので、モジュールを使用できるのは現在のユーザーのみです。</span><span class="sxs-lookup"><span data-stu-id="34bac-121">The CurrentUser scope lets modules be installed only to "$home\Documents\WindowsPowerShell\Modules", so that the module is available only to the current user.</span></span>
 
-## <a name="notes"></a><span data-ttu-id="4a066-122">メモ</span><span class="sxs-lookup"><span data-stu-id="4a066-122">Notes</span></span>
+## <a name="notes"></a><span data-ttu-id="34bac-122">メモ</span><span class="sxs-lookup"><span data-stu-id="34bac-122">Notes</span></span>
 
-<span data-ttu-id="4a066-123">このコマンドレットは、Windows PowerShell 3.0 または今後のリリースの Windows PowerShell、Windows 7 または Windows 2008 R2、および今後のリリースの Windows で機能します。</span><span class="sxs-lookup"><span data-stu-id="4a066-123">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
+<span data-ttu-id="34bac-123">このコマンドレットは、Windows PowerShell 3.0 または今後のリリースの Windows PowerShell、Windows 7 または Windows 2008 R2、および今後のリリースの Windows で機能します。</span><span class="sxs-lookup"><span data-stu-id="34bac-123">This cmdlet runs on Windows PowerShell 3.0 or later releases of Windows PowerShell, on Windows 7 or Windows 2008 R2 and later releases of Windows.</span></span>
 
-<span data-ttu-id="4a066-124">インストールされているモジュールをインポートできない場合 (つまり、同じ名前の.psm1、.psd1 または .dll がフォルダー内にない場合)、Force パラメーターをコマンドに追加しない限り、インストールは失敗します。</span><span class="sxs-lookup"><span data-stu-id="4a066-124">If an installed module cannot be imported (that is, if it does not have a .psm1, .psd1, or .dll of the same name within the folder), installation fails unless you add the Force parameter to your command.</span></span>
+<span data-ttu-id="34bac-124">インストールされているモジュールをインポートできない場合 (つまり、同じ名前の.psm1、.psd1 または .dll がフォルダー内にない場合)、Force パラメーターをコマンドに追加しない限り、インストールは失敗します。</span><span class="sxs-lookup"><span data-stu-id="34bac-124">If an installed module cannot be imported (that is, if it does not have a .psm1, .psd1, or .dll of the same name within the folder), installation fails unless you add the Force parameter to your command.</span></span>
 
-<span data-ttu-id="4a066-125">コンピューター上のモジュールのバージョンが Name パラメーターに指定された値と一致しているときに、MinimumVersion または RequiredVersion パラメーターを追加していない場合は、そのモジュールをインストールせずに Install-Module スクリプトが警告なしで続行されます。</span><span class="sxs-lookup"><span data-stu-id="4a066-125">If a version of the module on the computer matches the value specified for the Name parameter, and you have not added the MinimumVersion or RequiredVersion parameter, Install-Module silently continues without installing that module.</span></span> <span data-ttu-id="4a066-126">MinimumVersion または RequiredVersion パラメーターが指定されているときに、既存のモジュールがそのパラメーターの値と一致しない場合は、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="4a066-126">If the MinimumVersion or RequiredVersion parameters are specified, and the existing module does not match the values in that parameter, then an error occurs.</span></span> <span data-ttu-id="4a066-127">具体的には、現在インストールされているモジュールのバージョンが MinimumVersion パラメーターの値よりも低い、または RequiredVersion パラメーターの値と等しくない場合、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="4a066-127">To be more specific: if the version of the currently-installed module is either lower than the value of the MinimumVersion parameter, or not equal to the value of the RequiredVersion parameter, an error occurs.</span></span> <span data-ttu-id="4a066-128">インストールされているモジュールのバージョンが MinimumVersion パラメーターの値より大きい、または RequiredVersion パラメーターの値と等しい場合は、そのモジュールをインストールせずに Install-Module スクリプトが警告なしで続行されます。</span><span class="sxs-lookup"><span data-stu-id="4a066-128">If the version of the installed module is greater than the value of the MinimumVersion parameter, or equal to the value of the RequiredVersion parameter, Install-Module silently continues without installing that module.</span></span>
+<span data-ttu-id="34bac-125">コンピューター上のモジュールのバージョンが Name パラメーターに指定された値と一致しているときに、MinimumVersion または RequiredVersion パラメーターを追加していない場合は、そのモジュールをインストールせずに Install-Module スクリプトが警告なしで続行されます。</span><span class="sxs-lookup"><span data-stu-id="34bac-125">If a version of the module on the computer matches the value specified for the Name parameter, and you have not added the MinimumVersion or RequiredVersion parameter, Install-Module silently continues without installing that module.</span></span> <span data-ttu-id="34bac-126">MinimumVersion または RequiredVersion パラメーターが指定されているときに、既存のモジュールがそのパラメーターの値と一致しない場合は、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="34bac-126">If the MinimumVersion or RequiredVersion parameters are specified, and the existing module does not match the values in that parameter, then an error occurs.</span></span> <span data-ttu-id="34bac-127">具体的には、現在インストールされているモジュールのバージョンが MinimumVersion パラメーターの値よりも低い、または RequiredVersion パラメーターの値と等しくない場合、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="34bac-127">To be more specific: if the version of the currently-installed module is either lower than the value of the MinimumVersion parameter, or not equal to the value of the RequiredVersion parameter, an error occurs.</span></span> <span data-ttu-id="34bac-128">インストールされているモジュールのバージョンが MinimumVersion パラメーターの値より大きい、または RequiredVersion パラメーターの値と等しい場合は、そのモジュールをインストールせずに Install-Module スクリプトが警告なしで続行されます。</span><span class="sxs-lookup"><span data-stu-id="34bac-128">If the version of the installed module is greater than the value of the MinimumVersion parameter, or equal to the value of the RequiredVersion parameter, Install-Module silently continues without installing that module.</span></span>
 
-<span data-ttu-id="4a066-129">指定した名前に一致するモジュールがオンライン ギャラリーに存在しない場合、Install-Module はエラーを返します。</span><span class="sxs-lookup"><span data-stu-id="4a066-129">Install-Module returns an error if no module exists in the online gallery that matches the specified name.</span></span>
+<span data-ttu-id="34bac-129">指定した名前に一致するモジュールがオンライン ギャラリーに存在しない場合、Install-Module はエラーを返します。</span><span class="sxs-lookup"><span data-stu-id="34bac-129">Install-Module returns an error if no module exists in the online gallery that matches the specified name.</span></span>
 
-<span data-ttu-id="4a066-130">複数のモジュールをインストールするには、モジュール名の配列をコンマで区切って指定します。</span><span class="sxs-lookup"><span data-stu-id="4a066-130">To install multiple modules, specify an array of the module names, separated by commas.</span></span> <span data-ttu-id="4a066-131">複数のモジュール名を指定する場合は、MinimumVersion または RequiredVersion を追加できません。</span><span class="sxs-lookup"><span data-stu-id="4a066-131">You cannot add MinimumVersion or RequiredVersion if you specify multiple module names.</span></span>
+<span data-ttu-id="34bac-130">複数のモジュールをインストールするには、モジュール名の配列をコンマで区切って指定します。</span><span class="sxs-lookup"><span data-stu-id="34bac-130">To install multiple modules, specify an array of the module names, separated by commas.</span></span> <span data-ttu-id="34bac-131">複数のモジュール名を指定する場合は、MinimumVersion または RequiredVersion を追加できません。</span><span class="sxs-lookup"><span data-stu-id="34bac-131">You cannot add MinimumVersion or RequiredVersion if you specify multiple module names.</span></span>
 
-<span data-ttu-id="4a066-132">既定では、Windows PowerShell Desired State Configuration (DSC) リソースをインストール中に混乱しないように、モジュールは Program Files フォルダーにインストールされます。複数の PSGetItemInfo オブジェクトを Install-Module にパイプすることができます。これは、複数のモジュールを 1 つのコマンドでインストールするよう指定するための別の方法です。</span><span class="sxs-lookup"><span data-stu-id="4a066-132">By default, modules are installed to the Program Files folder, to prevent confusion when you are installing Windows PowerShell Desired State Configuration (DSC) resources.You can pipe multiple PSGetItemInfo objects to Install-Module; this is another way of specifying multiple modules to install in a single command.</span></span>
+<span data-ttu-id="34bac-132">既定では、Windows PowerShell Desired State Configuration (DSC) リソースをインストール中に混乱しないように、モジュールは Program Files フォルダーにインストールされます。複数の PSGetItemInfo オブジェクトを Install-Module にパイプすることができます。これは、複数のモジュールを 1 つのコマンドでインストールするよう指定するための別の方法です。</span><span class="sxs-lookup"><span data-stu-id="34bac-132">By default, modules are installed to the Program Files folder, to prevent confusion when you are installing Windows PowerShell Desired State Configuration (DSC) resources.You can pipe multiple PSGetItemInfo objects to Install-Module; this is another way of specifying multiple modules to install in a single command.</span></span>
 
-<span data-ttu-id="4a066-133">悪意のあるコードが含まれているモジュールを実行しないようにするため、インストール済みのモジュールはインストールでは自動的にインポートされません。</span><span class="sxs-lookup"><span data-stu-id="4a066-133">To help prevent running modules that contain malicious code, installed modules are not automatically imported by installation.</span></span> <span data-ttu-id="4a066-134">セキュリティのベスト プラクティスとして、最初にモジュール内のコマンドレットまたは関数を実行する前に、モジュール コードを評価します。</span><span class="sxs-lookup"><span data-stu-id="4a066-134">As a security best practice, evaluate module code before running any cmdlets or functions in a module for the first time.</span></span>
+<span data-ttu-id="34bac-133">悪意のあるコードが含まれているモジュールを実行しないようにするため、インストール済みのモジュールはインストールでは自動的にインポートされません。</span><span class="sxs-lookup"><span data-stu-id="34bac-133">To help prevent running modules that contain malicious code, installed modules are not automatically imported by installation.</span></span> <span data-ttu-id="34bac-134">セキュリティのベスト プラクティスとして、最初にモジュール内のコマンドレットまたは関数を実行する前に、モジュール コードを評価します。</span><span class="sxs-lookup"><span data-stu-id="34bac-134">As a security best practice, evaluate module code before running any cmdlets or functions in a module for the first time.</span></span>
 
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="4a066-135">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="4a066-135">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="34bac-135">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="34bac-135">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Install-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="4a066-136">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="4a066-136">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="34bac-136">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="34bac-136">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="4a066-137">Install-Module</span><span class="sxs-lookup"><span data-stu-id="4a066-137">Install-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398573)
+[<span data-ttu-id="34bac-137">Install-Module</span><span class="sxs-lookup"><span data-stu-id="34bac-137">Install-Module</span></span>](http://go.microsoft.com/fwlink/?LinkID=398573)
 
-## <a name="example-commands"></a><span data-ttu-id="4a066-138">コマンド例</span><span class="sxs-lookup"><span data-stu-id="4a066-138">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="34bac-138">コマンド例</span><span class="sxs-lookup"><span data-stu-id="34bac-138">Example commands</span></span>
 
 ```powershell
 
@@ -109,10 +109,10 @@ Install-Module ContosoClient -WhatIf
 Install-Module ContosoClient -Force
 
 # Install a module with dependencies
-Install-Module -Name 
+Install-Module -Name
 ```
 
-## <a name="install-module-cmdlet-in-pipeline-operations"></a><span data-ttu-id="4a066-139">パイプライン操作での Install-Module コマンドレット</span><span class="sxs-lookup"><span data-stu-id="4a066-139">Install-Module cmdlet in pipeline operations</span></span>
+## <a name="install-module-cmdlet-in-pipeline-operations"></a><span data-ttu-id="34bac-139">パイプライン操作での Install-Module コマンドレット</span><span class="sxs-lookup"><span data-stu-id="34bac-139">Install-Module cmdlet in pipeline operations</span></span>
 
 ```powershell
 
@@ -128,8 +128,8 @@ Find-Module -Name "MyDSC*" | Install-Module -Scope CurrentUser
 Find-Command -Repository "INT" -Name Get-ContosoClient,Get-ContosoServer | Install-Module
 Get-InstalledModule
 
-# This command finds the resource named MyResource and passes it to the Install-Module cmdlet by using the pipeline operator. The Install-Module cmdlet installs the module for the resource. 
-# If you pipe multiple resources to the Install-Module cmdlet from the same module, Install-Module attempts to install the module only once. 
+# This command finds the resource named MyResource and passes it to the Install-Module cmdlet by using the pipeline operator. The Install-Module cmdlet installs the module for the resource.
+# If you pipe multiple resources to the Install-Module cmdlet from the same module, Install-Module attempts to install the module only once.
 Find-DscResource -Name "MyResource" | Install-Module
 Get-InstalledModule
 
@@ -139,11 +139,11 @@ Get-InstalledModule
 
 ```
 
-## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a><span data-ttu-id="4a066-140">PowerShell 5.0 以降の Side-by-Side バージョン サポート</span><span class="sxs-lookup"><span data-stu-id="4a066-140">Side-by-Side Version Support on PowerShell 5.0 or newer</span></span>
+## <a name="side-by-side-version-support-on-powershell-50-or-newer"></a><span data-ttu-id="34bac-140">PowerShell 5.0 以降の Side-by-Side バージョン サポート</span><span class="sxs-lookup"><span data-stu-id="34bac-140">Side-by-Side Version Support on PowerShell 5.0 or newer</span></span>
 
-<span data-ttu-id="4a066-141">PowerShellGet は、Windows PowerShell 5.0 以降で実行される Install-Module、Update-Module および Publish-Module の各コマンドレットの Side-by-Side (SxS) モジュール バージョン サポートに対応しています。</span><span class="sxs-lookup"><span data-stu-id="4a066-141">PowerShellGet supports the side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
+<span data-ttu-id="34bac-141">PowerShellGet は、Windows PowerShell 5.0 以降で実行される Install-Module、Update-Module および Publish-Module の各コマンドレットの Side-by-Side (SxS) モジュール バージョン サポートに対応しています。</span><span class="sxs-lookup"><span data-stu-id="34bac-141">PowerShellGet supports the side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
 
-### <a name="install-module-examples"></a><span data-ttu-id="4a066-142">Install-Module の例</span><span class="sxs-lookup"><span data-stu-id="4a066-142">Install-Module examples</span></span>
+### <a name="install-module-examples"></a><span data-ttu-id="34bac-142">Install-Module の例</span><span class="sxs-lookup"><span data-stu-id="34bac-142">Install-Module examples</span></span>
 
 ```powershell
 # Install a version of the module
@@ -158,7 +158,7 @@ ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
 Install-Module -Name PSScriptAnalyzer -RequiredVersion 1.1.1 -Repository PSGallery
 Get-Module -ListAvailable -Name PSScriptAnalyzer | Format-List Name,Version,ModuleBase
 
-Name       : PSScriptAnalyzer 
+Name       : PSScriptAnalyzer
 Version    : 1.1.1
 ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.1
 Name       : PSScriptAnalyzer
@@ -169,13 +169,13 @@ ModuleBase : C:\Program Files\WindowsPowerShell\Modules\PSScriptAnalyzer\1.1.0
 Get-InstalledModule -Name PSScriptAnalyzer -AllVersions
 Version    Name                                Repository           Description
 -------    ----                                ----------           -----------
-1.1.0      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis... 
+1.1.0      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis...
 1.1.1      PSScriptAnalyzer                    PSGallery            PSScriptAnalyzer provides script analysis...
 
 
 ```
 
-## <a name="install-module-with-its-dependencies"></a><span data-ttu-id="4a066-143">モジュールを依存関係と共にインストールする</span><span class="sxs-lookup"><span data-stu-id="4a066-143">Install module with its dependencies</span></span>
+## <a name="install-module-with-its-dependencies"></a><span data-ttu-id="34bac-143">モジュールを依存関係と共にインストールする</span><span class="sxs-lookup"><span data-stu-id="34bac-143">Install module with its dependencies</span></span>
 
 ```powershell
 
@@ -269,7 +269,7 @@ Version    Name                                Repository           Description
 
 ```
 
-## <a name="error-scenarios"></a><span data-ttu-id="4a066-144">エラー シナリオ</span><span class="sxs-lookup"><span data-stu-id="4a066-144">Error scenarios</span></span>
+## <a name="error-scenarios"></a><span data-ttu-id="34bac-144">エラー シナリオ</span><span class="sxs-lookup"><span data-stu-id="34bac-144">Error scenarios</span></span>
 
 ```powershell
 
@@ -286,4 +286,3 @@ Install-Module ContosoClient,ContosoServer -RequiredVersion 2.0
 Install-Module ContosoClient,ContosoServer -MinimumVersion 2.0
 
 ```
-

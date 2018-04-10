@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: Save-Module
-ms.openlocfilehash: acea38b0eebc58dafda0ab58b91dc6a70ffffd3b
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: c9078afb03dc074ee3831c2c395c0f1e6c4ffa38
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="save-module"></a><span data-ttu-id="bf7bd-103">Save-Module</span><span class="sxs-lookup"><span data-stu-id="bf7bd-103">Save-Module</span></span>
+# <a name="save-module"></a><span data-ttu-id="270ba-103">Save-Module</span><span class="sxs-lookup"><span data-stu-id="270ba-103">Save-Module</span></span>
 
-<span data-ttu-id="bf7bd-104">モジュールをインストールせずにローカルに保存します。</span><span class="sxs-lookup"><span data-stu-id="bf7bd-104">Saves a module locally without installing it.</span></span>
+<span data-ttu-id="270ba-104">モジュールをインストールせずにローカルに保存します。</span><span class="sxs-lookup"><span data-stu-id="270ba-104">Saves a module locally without installing it.</span></span>
 
-## <a name="description"></a><span data-ttu-id="bf7bd-105">説明</span><span class="sxs-lookup"><span data-stu-id="bf7bd-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="270ba-105">説明</span><span class="sxs-lookup"><span data-stu-id="270ba-105">Description</span></span>
 
-<span data-ttu-id="bf7bd-106">Save-Module コマンドレットは、指定されたリポジトリからローカルでモジュールを保存して検査します。</span><span class="sxs-lookup"><span data-stu-id="bf7bd-106">The Save-Module cmdlet saves a module locally from the specified repository for inspection.</span></span> <span data-ttu-id="bf7bd-107">モジュールはインストールされていません。</span><span class="sxs-lookup"><span data-stu-id="bf7bd-107">The module is not installed.</span></span>
+<span data-ttu-id="270ba-106">Save-Module コマンドレットは、指定されたリポジトリからローカルでモジュールを保存して検査します。</span><span class="sxs-lookup"><span data-stu-id="270ba-106">The Save-Module cmdlet saves a module locally from the specified repository for inspection.</span></span> <span data-ttu-id="270ba-107">モジュールはインストールされていません。</span><span class="sxs-lookup"><span data-stu-id="270ba-107">The module is not installed.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="bf7bd-108">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="bf7bd-108">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="270ba-108">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="270ba-108">Cmdlet syntax</span></span>
 ```powershell
 Get-Command -Name Save-Module -Module PowerShellGet -Syntax
 ```
 
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="bf7bd-109">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="bf7bd-109">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="270ba-109">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="270ba-109">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="bf7bd-110">Save-Module</span><span class="sxs-lookup"><span data-stu-id="bf7bd-110">Save-Module</span></span>](http://go.microsoft.com/fwlink/?LinkId=531351)
+[<span data-ttu-id="270ba-110">Save-Module</span><span class="sxs-lookup"><span data-stu-id="270ba-110">Save-Module</span></span>](http://go.microsoft.com/fwlink/?LinkId=531351)
 
-## <a name="example-commands"></a><span data-ttu-id="bf7bd-111">コマンド例</span><span class="sxs-lookup"><span data-stu-id="bf7bd-111">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="270ba-111">コマンド例</span><span class="sxs-lookup"><span data-stu-id="270ba-111">Example commands</span></span>
 
 ```powershell
 Save-Module -Repository MSPSGallery -Name ModuleWithDependencies2 -Path C:\MySavedModuleLocation
@@ -64,4 +64,3 @@ Install-Module -Name ContosoServer -Path C:\MySavedModuleLocation -AllowPrerelea
 
 
 ```
-

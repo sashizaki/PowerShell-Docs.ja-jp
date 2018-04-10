@@ -1,33 +1,33 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 contributor: manikb
 ms.topic: reference
-keywords: "ギャラリー, PowerShell, コマンドレット, PSGet"
+keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: Uninstall-Script
-ms.openlocfilehash: 41f2b88ee81cf9f8c1a8c415ed658f29f4f08c3b
-ms.sourcegitcommit: 58371abe9db4b9a0e4e1eb82d39a9f9e187355f9
+ms.openlocfilehash: 3d35235d001063784226dbbdb60595c5efee928d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2017
+ms.lasthandoff: 04/09/2018
 ---
-# <a name="uninstall-script"></a><span data-ttu-id="fb057-103">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="fb057-103">Uninstall-Script</span></span>
+# <a name="uninstall-script"></a><span data-ttu-id="d2ee4-103">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="d2ee4-103">Uninstall-Script</span></span>
 
-<span data-ttu-id="fb057-104">PowerShellGet を使用してインストールされたスクリプト ファイルをアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="fb057-104">Uninstalls a script file which was installed using PowerShellGet.</span></span>
+<span data-ttu-id="d2ee4-104">PowerShellGet を使用してインストールされたスクリプト ファイルをアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="d2ee4-104">Uninstalls a script file which was installed using PowerShellGet.</span></span>
 
-## <a name="description"></a><span data-ttu-id="fb057-105">説明</span><span class="sxs-lookup"><span data-stu-id="fb057-105">Description</span></span>
+## <a name="description"></a><span data-ttu-id="d2ee4-105">説明</span><span class="sxs-lookup"><span data-stu-id="d2ee4-105">Description</span></span>
 
-<span data-ttu-id="fb057-106">Uninstall-Script コマンドレットは、オンライン リポジトリからインストールされた指定したスクリプト ファイルをアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="fb057-106">The Uninstall-Script cmdlet uninstalls the specified script files which were installed from the online repository.</span></span>
+<span data-ttu-id="d2ee4-106">Uninstall-Script コマンドレットは、オンライン リポジトリからインストールされた指定したスクリプト ファイルをアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="d2ee4-106">The Uninstall-Script cmdlet uninstalls the specified script files which were installed from the online repository.</span></span>
 
-## <a name="cmdlet-syntax"></a><span data-ttu-id="fb057-107">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="fb057-107">Cmdlet syntax</span></span>
+## <a name="cmdlet-syntax"></a><span data-ttu-id="d2ee4-107">コマンドレット構文</span><span class="sxs-lookup"><span data-stu-id="d2ee4-107">Cmdlet syntax</span></span>
 
 ```powershell
 Get-Command -Name Uninstall-Script -Module PowerShellGet -Syntax
 ```
-## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="fb057-108">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="fb057-108">Cmdlet online help reference</span></span>
+## <a name="cmdlet-online-help-reference"></a><span data-ttu-id="d2ee4-108">コマンドレット オンライン ヘルプ リファレンス</span><span class="sxs-lookup"><span data-stu-id="d2ee4-108">Cmdlet online help reference</span></span>
 
-[<span data-ttu-id="fb057-109">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="fb057-109">Uninstall-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619789)
+[<span data-ttu-id="d2ee4-109">Uninstall-Script</span><span class="sxs-lookup"><span data-stu-id="d2ee4-109">Uninstall-Script</span></span>](http://go.microsoft.com/fwlink/?LinkId=619789)
 
-## <a name="example-commands"></a><span data-ttu-id="fb057-110">コマンド例</span><span class="sxs-lookup"><span data-stu-id="fb057-110">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="d2ee4-110">コマンド例</span><span class="sxs-lookup"><span data-stu-id="d2ee4-110">Example commands</span></span>
 
 ```powershell
 Get-InstalledScript | Uninstall-Script -WhatIf
@@ -73,4 +73,3 @@ VERBOSE: Performing the operation "Uninstall-Script" on target "Version '2.5.0-a
 VERBOSE: Successfully uninstalled the script 'Required-Script1' from script base 'C:\Users\manikb\Documents\WindowsPowerShell\Scripts'.
 
 ```
-
