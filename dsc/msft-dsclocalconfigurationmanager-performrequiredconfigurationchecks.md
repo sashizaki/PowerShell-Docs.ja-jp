@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "MSFT_DSCLocalConfigurationManager クラスの PerformRequiredConfigurationChecks メソッド"
-ms.openlocfilehash: 687c92f2dac5e8855731713e81390ac67615231e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: MSFT_DSCLocalConfigurationManager クラスの PerformRequiredConfigurationChecks メソッド
+ms.openlocfilehash: 9cc4384088fcc39b09979b8ae4d023fc46307b13
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの PerformRequiredConfigurationChecks メソッド
 
@@ -25,8 +25,7 @@ uint32 PerformRequiredConfigurationChecks(
 <a name="parameters"></a>パラメーター
 ----------
 
-*Flags* \[in\]  
-実行する整合性チェックの種類を指定するビットマスク。 次の値が有効です。これらの値はビット単位の **OR** 演算で組み合わせることもできます。
+*Flags* \[in\] 実行する整合性チェックの種類を指定するビットマスク。 次の値が有効です。これらの値はビット単位の **OR** 演算で組み合わせることもできます。
 
 |値 |説明 |
 |:--- |:---|
@@ -55,11 +54,3 @@ uint32 PerformRequiredConfigurationChecks(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

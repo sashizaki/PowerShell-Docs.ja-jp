@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "プル サーバーのベスト プラクティス"
-ms.openlocfilehash: 3d0ab969b7a0de9d428becc4b9bdb124a7a44c2c
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, PowerShell, 構成, セットアップ
+title: プル サーバーのベスト プラクティス
+ms.openlocfilehash: 7de523ad16aee77d87ec4d3334d296997020aa19
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="pull-server-best-practices"></a>プル サーバーのベスト プラクティス
 
@@ -17,8 +17,8 @@ ms.lasthandoff: 03/15/2018
 
 | |ドキュメント情報|
 |:---|:---|
-作成者 | Michael Greene  
-校閲者 | Ben Gelens、Ravikanth Chaganti、Aleksandar Nikolic  
+作成者 | Michael Greene
+校閲者 | Ben Gelens、Ravikanth Chaganti、Aleksandar Nikolic
 公開済み | 2015 年 4 月
 
 ## <a name="abstract"></a>概要
@@ -31,8 +31,8 @@ DSC はクラウドと共に進化することを想定しているため、プ�
 
  - 構成計画
  - インストール ガイド
- 
-### <a name="versions-of-the-windows-management-framework"></a>Windows Management Framework のバージョン 
+
+### <a name="versions-of-the-windows-management-framework"></a>Windows Management Framework のバージョン
 このドキュメントの情報は、Windows Management Framework 5.0 に適用するためのものです。 プル サーバーの展開と操作で WMF 5.0 は必要ありませんが、このドキュメントではバージョン 5.0 に焦点を合わせています。
 
 ### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell の必要な状態の構成
@@ -40,10 +40,11 @@ Desired State Configuration (DSC) は、Common Information Model (CIM) を記述
 
 Windows PowerShell には、宣言構成を作成および管理するために使用できる Desired State Configuration の一連の言語拡張が用意されています。
 
-### <a name="pull-server-role"></a>プル サーバーの役割  
+### <a name="pull-server-role"></a>プル サーバーの役割
 プル サーバーでは、ターゲット ノードにアクセス可能な構成を格納する中央サービスが提供されます。
- 
-プル サーバーの役割は、Web サーバー インスタンスまたは SMB ファイル共有のいずれかとして展開することができます。 Web サーバー機能には OData インターフェイスが含まれており、構成の適用時に成功または失敗の確認を報告するターゲット ノードの機能もオプションで含めることができます。 この機能は、多数のターゲット ノードが存在する環境で役立ちます。 プル サーバーをポイントするようにターゲット ノード (クライアントとも呼ばれる) を構成した後で、最新の構成データと必要なすべてのスクリプトがダウンロードされ、適用されます。 これは、1 回限りの展開として、またはプル サーバーを大規模な変更を管理するための重要な資産とする再発ジョブとして行われる場合があります。 詳細については、「[Windows PowerShell Desired State Configuration プル サーバー](https://technet.microsoft.com/library/dn249913.aspx)」および「[DSC Web プル サーバーのセットアップ](https://technet.microsoft.com/library/dn249913.aspx)」を参照してください。
+
+プル サーバーの役割は、Web サーバー インスタンスまたは SMB ファイル共有のいずれかとして展開することができます。 Web サーバー機能には OData インターフェイスが含まれており、構成の適用時に成功または失敗の確認を報告するターゲット ノードの機能もオプションで含めることができます。 この機能は、多数のターゲット ノードが存在する環境で役立ちます。
+プル サーバーをポイントするようにターゲット ノード (クライアントとも呼ばれる) を構成した後で、最新の構成データと必要なすべてのスクリプトがダウンロードされ、適用されます。 これは、1 回限りの展開として、またはプル サーバーを大規模な変更を管理するための重要な資産とする再発ジョブとして行われる場合があります。 詳細については、「[Windows PowerShell Desired State Configuration プル サーバー](https://technet.microsoft.com/library/dn249913.aspx)」および「[DSC Web プル サーバーのセットアップ](https://technet.microsoft.com/library/dn249913.aspx)」を参照してください。
 
 ## <a name="configuration-planning"></a>構成計画
 
@@ -59,7 +60,9 @@ Windows Update からの最新コンテンツのインストールに加え、DS
 
 ### <a name="wmf"></a>WMF
 
-Windows Server 2012 R2 には、DSC サービスという機能が含まれています。 DSC サービス機能では、OData エンドポイントをサポートするバイナリを含む、プル サーバー機能が提供されます。 WMF は Windows Server に含まれており、Windows Server のリリースに応じて迅速に更新されます。 [新しいバージョンの WMF 5.0](http://aka.ms/wmf5latest) には、DSC サービス機能の更新プログラムが含まれる場合があります。 そのため、WMF の最新リリースをダウンロードし、リリース ノートを確認し、リリースに DSC サービス機能の更新プログラムが含まれるかどうか判断することをお勧めします。 さらに、更新プログラムまたはシナリオの設計が安定状態であるか実験状態であるかを示すリリース ノートのセクションを確認する必要もあります。 アジャイル リリース サイクルを可能にするために、個々の機能を安定したものとして宣言することができます。これにより、WMF がプレビューでリリースされている間でも、機能は運用環境で使用する準備ができていることが示されます。
+Windows Server 2012 R2 には、DSC サービスという機能が含まれています。 DSC サービス機能では、OData エンドポイントをサポートするバイナリを含む、プル サーバー機能が提供されます。
+WMF は Windows Server に含まれており、Windows Server のリリースに応じて迅速に更新されます。 [新しいバージョンの WMF 5.0](http://aka.ms/wmf5latest) には、DSC サービス機能の更新プログラムが含まれる場合があります。 そのため、WMF の最新リリースをダウンロードし、リリース ノートを確認し、リリースに DSC サービス機能の更新プログラムが含まれるかどうか判断することをお勧めします。 さらに、更新プログラムまたはシナリオの設計が安定状態であるか実験状態であるかを示すリリース ノートのセクションを確認する必要もあります。
+アジャイル リリース サイクルを可能にするために、個々の機能を安定したものとして宣言することができます。これにより、WMF がプレビューでリリースされている間でも、機能は運用環境で使用する準備ができていることが示されます。
 WMF リリースで既に更新されている他の機能は、次のとおりです (詳細については、WMF リリース ノートを参照)。
 
  - Windows PowerShell、Windows PowerShell Integrated Scripting Environment (ISE)
@@ -77,7 +80,7 @@ WMF リリースで既に更新されている他の機能は、次のとおり�
 Install-Module xPSDesiredStateConfiguration
 ```
 
-**PowerShellGet** モジュールの場合、次の場所にモジュールがダウンロードされます。 
+**PowerShellGet** モジュールの場合、次の場所にモジュールがダウンロードされます。
 
 `C:\Program Files\Windows PowerShell\Modules`
 
@@ -93,10 +96,7 @@ Windows Server 2012 R2 のインストール ファイルにアクセスでき�
 
 物理サーバーと仮想サーバーの両方でプル サーバーの展開がサポートされます。 プル サーバーのサイズ要件は、Windows Server 2012 R2 の要件と一致します。
 
-CPU: 1.4 GHz 64 ビット プロセッサ  
-メモリ: 512 MB  
-ディスク領域: 32 GB  
-ネットワーク: Gigabit Ethernet Adapter  
+CPU: 1.4 GHz 64 ビット プロセッサ、メモリ: 512 MB、ディスク領域: 32 GB、ネットワーク: ギガビット イーサネット アダプター
 
 計画タスク|
 ---|
@@ -107,15 +107,22 @@ CPU: 1.4 GHz 64 ビット プロセッサ
 
 ### <a name="accounts"></a>[アカウント]
 
-プル サーバー インスタンスを展開する場合、サービス アカウントの要件はありません。 ただし、ローカル ユーザー アカウントのコンテキストで Web サイトを実行できるシナリオがあります。 たとえば、Web サイト コンテンツの記憶域共有にアクセスする必要があり、記憶域共有をホストしているデバイスまたは Windows Server がドメインに参加していない場合などです。
+プル サーバー インスタンスを展開する場合、サービス アカウントの要件はありません。
+ただし、ローカル ユーザー アカウントのコンテキストで Web サイトを実行できるシナリオがあります。
+たとえば、Web サイト コンテンツの記憶域共有にアクセスする必要があり、記憶域共有をホストしているデバイスまたは Windows Server がドメインに参加していない場合などです。
 
 ### <a name="dns-records"></a>DNS レコード
 
-プル サーバー環境で動作するようにクライアントを構成する際に使用するサーバー名が必要になります。 テスト環境では、通常、サーバーのホスト名が使用されます。DNS 名前解決が使用できない場合には、サーバーの IP アドレスを使用できます。 運用環境、または運用環境の展開を表すためのラボ環境では、DNS CNAME レコードを作成することをお勧めします。
+プル サーバー環境で動作するようにクライアントを構成する際に使用するサーバー名が必要になります。
+テスト環境では、通常、サーバーのホスト名が使用されます。DNS 名前解決が使用できない場合には、サーバーの IP アドレスを使用できます。
+運用環境、または運用環境の展開を表すためのラボ環境では、DNS CNAME レコードを作成することをお勧めします。
 
-DNS CNAME では、ホスト (A) レコードを参照する別名を作成できます。 追加の名前レコードの目的は、後で変更が必要になった場合に備えて柔軟性を高めることです。 CNAME はクライアント構成の分離に役立ちます。したがって、プル サーバーの置換や追加などの、サーバー環境の変更に合わせて、クライアント構成を変更する必要はありません。
+DNS CNAME では、ホスト (A) レコードを参照する別名を作成できます。
+追加の名前レコードの目的は、後で変更が必要になった場合に備えて柔軟性を高めることです。
+CNAME はクライアント構成の分離に役立ちます。したがって、プル サーバーの置換や追加などの、サーバー環境の変更に合わせて、クライアント構成を変更する必要はありません。
 
-DNS レコードの名前を選択する場合は、ソリューションのアーキテクチャに注意してください。 負荷分散を使用する場合、HTTPS 経由でトラフィックを保護するために使用される証明書で DNS レコードと同じ名前を共有する必要があります。 
+DNS レコードの名前を選択する場合は、ソリューションのアーキテクチャに注意してください。
+負荷分散を使用する場合、HTTPS 経由でトラフィックを保護するために使用される証明書で DNS レコードと同じ名前を共有する必要があります。
 
 シナリオ |ベスト プラクティス
 :---|:---
@@ -134,7 +141,8 @@ CNAME レコードとして何を要求しますか?|
 
 ### <a name="public-key-infrastructure"></a>公開キー基盤
 
-今日では、ほとんどの組織で、転送時にネットワーク トラフィック (特に、サーバーの構成方法などの機密データを含むトラフィック) を検証および/または暗号化する必要があります。 クリア テキストでのクライアント要求を容易にする HTTP を使用してプル サーバーを展開できますが、HTTPS を使用してトラフィックをセキュリティで保護することをお勧めします。 DSC リソースの **xPSDesiredStateConfiguration** で一連のパラメーターを指定して、HTTPS を使用するようにサービスを構成することができます。
+今日では、ほとんどの組織で、転送時にネットワーク トラフィック (特に、サーバーの構成方法などの機密データを含むトラフィック) を検証および/または暗号化する必要があります。
+クリア テキストでのクライアント要求を容易にする HTTP を使用してプル サーバーを展開できますが、HTTPS を使用してトラフィックをセキュリティで保護することをお勧めします。 DSC リソースの **xPSDesiredStateConfiguration** で一連のパラメーターを指定して、HTTPS を使用するようにサービスを構成することができます。
 
 プル サーバーの HTTPS トラフィックをセキュリティで保護する証明書の要件は、その他の HTTPS Web サイトのセキュリティ保護と違いはありません。 Windows Server 証明書サービスの **Web サーバー** テンプレートには必要な機能が揃っています。
 
@@ -149,9 +157,11 @@ CNAME レコードとして何を要求しますか?|
 
 ### <a name="choosing-an-architecture"></a>アーキテクチャの選択
 
-プル サーバーは、IIS でホストされている Web サービス、または SMB ファイル共有を使用して展開できます。 ほとんどの場合、提供される Web サービス オプションを使用することで、柔軟性が増します。 HTTPS トラフィックではネットワーク境界をスキャンすることは珍しいことではありませんが、ネットワーク間の SMB トラフィックは多くの場合、フィルター処理されるか、ブロックされます。 Web サービスでは、一元的に確認できるようにクライアントがサーバーに状態をレポートするメカニズムを提供する Conformance Server または Web Reporting Manager (このドキュメントの今後のバージョンに両方のトピックが含まれる予定) を含めるオプションも提供されます。 SMB では、ポリシーで Web サーバーを利用しないように指示されている環境や、Web サーバー役割は好ましくないとする他の環境要件に対するオプションを提供します。 いずれの場合も、必ず、トラフィックの署名と暗号化に関する要件を評価してください。 HTTPS、SMB 署名、および IPSEC ポリシーはすべて、考慮に値するオプションです。
+プル サーバーは、IIS でホストされている Web サービス、または SMB ファイル共有を使用して展開できます。 ほとんどの場合、提供される Web サービス オプションを使用することで、柔軟性が増します。 HTTPS トラフィックではネットワーク境界をスキャンすることは珍しいことではありませんが、ネットワーク間の SMB トラフィックは多くの場合、フィルター処理されるか、ブロックされます。 Web サービスでは、一元的に確認できるようにクライアントがサーバーに状態をレポートするメカニズムを提供する Conformance Server または Web Reporting Manager (このドキュメントの今後のバージョンに両方のトピックが含まれる予定) を含めるオプションも提供されます。
+SMB では、ポリシーで Web サーバーを利用しないように指示されている環境や、Web サーバー役割は好ましくないとする他の環境要件に対するオプションを提供します。
+いずれの場合も、必ず、トラフィックの署名と暗号化に関する要件を評価してください。 HTTPS、SMB 署名、および IPSEC ポリシーはすべて、考慮に値するオプションです。
 
-#### <a name="load-balancing"></a>負荷分散  
+#### <a name="load-balancing"></a>負荷分散
 Web サービスと対話するクライアントは、単一の応答で返される情報を要求します。 順次要求は必要ありません。したがって、負荷分散プラットフォームで任意の時点で単一サーバーでのセッションが維持されるようにする必要はありません。
 
 計画タスク|
@@ -166,11 +176,11 @@ Web サービスと対話するクライアントは、単一の応答で返さ�
 
 ### <a name="staging-configurations-and-modules-on-the-pull-server"></a>プル サーバーのステージング構成およびモジュール
 
-構成計画の一環として、プル サーバーでホストされる DSC モジュールと構成について考慮する必要があります。 構成計画のために、コンテンツを準備し、プル サーバーに展開する方法について、基本的に理解することが重要です。 
+構成計画の一環として、プル サーバーでホストされる DSC モジュールと構成について考慮する必要があります。 構成計画のために、コンテンツを準備し、プル サーバーに展開する方法について、基本的に理解することが重要です。
 
-今後、このセクションは追加され、DSC プル サーバー用の運用ガイドに含まれる予定です。  このガイドでは、時間の経過と共に自動的にモジュールと構成を管理する日常的なプロセスについて説明します。 
+今後、このセクションは追加され、DSC プル サーバー用の運用ガイドに含まれる予定です。  このガイドでは、時間の経過と共に自動的にモジュールと構成を管理する日常的なプロセスについて説明します。
 
-#### <a name="dsc-modules"></a>DSC モジュール  
+#### <a name="dsc-modules"></a>DSC モジュール
 構成を要求するクライアントには、必須の DSC モジュールが必要になります。 プル サーバーの機能は、クライアントへの DSC モジュールのオンデマンド配布を自動化するものです。 初めてプル サーバーを展開する場合 (おそらく、ラボまたは概念実証として)、PowerShell ギャラリーや DSC モジュールの PowerShell.org GitHub リポジトリなどのパブリック リポジトリから使用可能な DSC モジュールに依存する可能性があります。
 
 PowerShell ギャラリーなどの信頼できるオンライン リソースの場合でも、パブリック リポジトリからダウンロードされるすべてのモジュールを、PowerShell の使用経験があり、運用環境で使用する前にモジュールを使用する環境に関する知識がある担当者が確認する必要があります。 このタスクの実行時に、ドキュメントやスクリプト例などの削除可能な追加ペイロードをモジュールで確認することをお勧めします。 これにより、サーバーからクライアントへのネットワークを介したモジュールのダウンロード時に、最初の要求でのクライアントごとのネットワーク帯域幅を減らせます。
@@ -194,7 +204,8 @@ DSC モジュールの確認担当者は誰ですか?|
 
 #### <a name="dsc-configurations"></a>DSC 構成
 
-プル サーバーの目的は、クライアント ノードに DSC 構成を配布するための一元的なメカニズムを提供することです。 構成は、MOF ドキュメントとしてサーバーに格納されます。 各ドキュメントには、一意の GUID で名前が付けられます。 クライアントは、プル サーバーに接続するように構成されている場合、要求する必要がある構成の GUID も付与されます。 GUID による構成を参照するこのシステムはグローバルな一意性を保証し、柔軟であるため、構成をノード単位で適用でき、また、同じ構成である必要がある多くのサーバーにまたがる役割構成として適用できます。
+プル サーバーの目的は、クライアント ノードに DSC 構成を配布するための一元的なメカニズムを提供することです。 構成は、MOF ドキュメントとしてサーバーに格納されます。
+各ドキュメントには、一意の GUID で名前が付けられます。 クライアントは、プル サーバーに接続するように構成されている場合、要求する必要がある構成の GUID も付与されます。 GUID による構成を参照するこのシステムはグローバルな一意性を保証し、柔軟であるため、構成をノード単位で適用でき、また、同じ構成である必要がある多くのサーバーにまたがる役割構成として適用できます。
 
 #### <a name="guids"></a>GUID
 
@@ -289,26 +300,26 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 #      * Automatically load certificate from Certificate Authority
 #      * Locate Modules and Configuration data on remote SMB share
 #      * Manage state of default websites in IIS
-    
+
 param (
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
         [System.String] $ServerName,
         [System.String] $DomainName,
         [System.String] $CARootName,
         [System.String] $CAServerFQDN,
         [System.String] $CertSubject,
         [System.String] $SMBShare,
-        [Parameter(Mandatory=$true)] 
-        [ValidateNotNullorEmpty()] 
+        [Parameter(Mandatory=$true)]
+        [ValidateNotNullorEmpty()]
         [PsCredential] $Credential
     )
-    
+
 Configuration PullServer {
     Import-DscResource -ModuleName xPSDesiredStateConfiguration, xWebAdministration, xCertificate, xComputerManagement
     Node localhost
     {
-            
+
         # Configure the server to automatically corret configuration drift including reboots if needed.
         LocalConfigurationManager
         {
@@ -316,14 +327,14 @@ Configuration PullServer {
             RebootNodeifNeeded = $node.RebootNodeifNeeded
             CertificateId = $node.Thumbprint
         }
-    
+
         # Remove all GUI interfaces so the server has minimum running footprint.
         WindowsFeature ServerCore
         {
             Ensure = 'Absent'
             Name = 'User-Interfaces-Infra'
         }
-    
+
         # Set the server name and if needed, join a domain. If not joining a domain, remove the DomainName parameter.
         xComputer DomainJoin
         {
@@ -331,7 +342,7 @@ Configuration PullServer {
             DomainName = $Node.DomainName
             Credential = $Node.Credential
         }
-    
+
         # The next series of settings disable SSL and enable TLS, for environments where that is required by policy.
         Registry TLS1_2ServerEnabled
         {
@@ -373,14 +384,14 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
-    
+
         # Install the Windows Server DSC Service feature
         WindowsFeature DSCServiceFeature
         {
             Ensure = 'Present'
             Name = 'DSC-Service'
         }
-    
+
         # If using a certificate from a local Active Directory Enterprise Root Certificate Authority, complete a request and install the certificate
         xCertReq SSLCert
         {
@@ -390,7 +401,7 @@ Configuration PullServer {
             AutoRenew = $Node.AutoRenew
             Credential = $Node.Credential
         }
-    
+
         # Use the DSC resource to simplify deployment of the web service.  You might also consider modifying the default port, possibly leveraging port 443 in environments where that is enforced as a standard.
         xDSCWebService PSDSCPullServer
         {
@@ -405,10 +416,10 @@ Configuration PullServer {
             State = 'Started'
             DependsOn = '[WindowsFeature]DSCServiceFeature'
         }
-    
+
         # Validate web config file contains current DB settings
         xWebConfigKeyValue CorrectDBProvider
-        { 
+        {
             ConfigSection = 'AppSettings'
             Key = 'dbprovider'
             Value = 'System.Data.OleDb'
@@ -416,17 +427,17 @@ Configuration PullServer {
             DependsOn = '[xDSCWebService]PSDSCPullServer'
         }
         xWebConfigKeyValue CorrectDBConnectionStr
-        { 
+        {
             ConfigSection = 'AppSettings'
             Key = 'dbconnectionstr'
             Value = 'Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Program Files\WindowsPowerShell\DscService\Devices.mdb;'
             WebsitePath = 'IIS:\sites\PSDSCPullServer'
             DependsOn = '[xDSCWebService]PSDSCPullServer'
         }
-    
+
         # Stop the default website
-        xWebsite StopDefaultSite  
-        { 
+        xWebsite StopDefaultSite
+        {
             Ensure = 'Present'
             Name = 'Default Web Site'
             State = 'Stopped'
@@ -456,8 +467,8 @@ $configData = @{
 PullServer -ConfigurationData $configData -OutputPath 'C:\PullServerConfig\'
 Set-DscLocalConfigurationManager -ComputerName localhost -Path 'C:\PullServerConfig\'
 Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
-    
-# .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share' 
+
+# .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share'
 ```
 
 
@@ -468,7 +479,7 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 function Verify-DSCPullServer ($fqdn) {
     ([xml](invoke-webrequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
 }
-Verify-DSCPullServer 'INSERT SERVER FQDN' 
+Verify-DSCPullServer 'INSERT SERVER FQDN'
 
 Expected Result:
 Action
@@ -485,14 +496,14 @@ Configuration PullClient {
     $ID,
     $Server
     )
-        LocalConfigurationManager 
-                { 
+        LocalConfigurationManager
+                {
                     ConfigurationID = $ID;
                     RefreshMode = 'PULL';
                     DownloadManagerName = 'WebDownloadManager';
                     RebootNodeIfNeeded = $true;
                     RefreshFrequencyMins = 30;
-                    ConfigurationModeFrequencyMins = 15; 
+                    ConfigurationModeFrequencyMins = 15;
                     ConfigurationMode = 'ApplyAndAutoCorrect';
                     DownloadManagerCustomData = @{ServerUrl = "http://"+$Server+":8080/PSDSCPullServer.svc"; AllowUnsecureConnection = $true}
                 }
@@ -504,13 +515,13 @@ Set-DscLocalConfigurationManager -ComputerName 'Localhost' -Path 'C:\DSCConfig\'
 
 ## <a name="additional-references-snippets-and-examples"></a>その他の参照情報、スニペット、および例
 
-この例では、テストのためにクライアント接続 (WMF5 が必要) を手動で開始する方法を示します。 
+この例では、テストのためにクライアント接続 (WMF5 が必要) を手動で開始する方法を示します。
 
 ```powershell
 Update-DSCConfiguration –Wait -Verbose
 ```
 
-CNAME レコードを DNS ゾーンに追加する場合は、[Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) コマンドレットを使用します。 
+CNAME レコードを DNS ゾーンに追加する場合は、[Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) コマンドレットを使用します。
 
 [チェックサムを作成し、SMB プル サーバーに DSC MOF を公開する](http://bit.ly/1E46BhI) PowerShell 関数では必要なチェックサムが自動的に生成されてから、MOF 構成とチェックサムの両方のファイルが SMB プル サーバーにコピーされます。
 
@@ -518,10 +529,7 @@ CNAME レコードを DNS ゾーンに追加する場合は、[Add-DnsServerReso
 
 データ ファイルは、OData Web サービスを含む、プル サーバーの展開時に情報を作成するために格納されます。 ファイルの種類は、以下の説明のとおり、オペレーティング システムによって異なります。
 
- - **Windows Server 2012**  
-ファイルの種類は常に .mdb になります。
- - **Windows Server 2012 R2**  
-構成で .mdb が指定されていない限り、ファイルの種類は既定で .edb になります。
+ - **Windows Server 2012** ファイルの種類は常に .mdb になります。
+ - **Windows Server 2012 R2** 構成で .mdb が指定されていない限り、ファイルの種類は既定で .edb になります。
 
 プル サーバーをインストールするための[スクリプトの詳細な例](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts)では、ファイルの種類によって発生する可能性のあるエラーを防ぐために web.config ファイル設定を自動的に制御する方法の例も示されます。
-

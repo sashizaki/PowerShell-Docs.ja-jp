@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "MSFT_DSCLocalConfigurationManager クラスの GetConfigurationStatus メソッド"
-ms.openlocfilehash: a41e7a15fc935c2cd5fd4cb66d0ab13509d5d4e0
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: MSFT_DSCLocalConfigurationManager クラスの GetConfigurationStatus メソッド
+ms.openlocfilehash: dde4ac003b346018561481e05ca7374475f9ff1d
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getconfigurationstatus-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの GetConfigurationStatus メソッド
 
@@ -26,11 +26,9 @@ uint32 GetConfigurationStatus(
 <a name="parameters"></a>パラメーター
 ----------
 
-*All* \[in\]  
-**true** の場合、コンピューターで実行中のすべての構成 (構成の適用や整合性チェックも含む) についての情報が返されます
+*All* \[in\] **true** の場合、コンピューターで実行中のすべての構成 (構成の適用や整合性チェックも含む) についての情報が返されます。
 
-*configurationStatus* \[out\]  
-制御が戻ったとき、設定を定義する **MSFT_DSCConfigurationStatus** クラスの埋め込みインスタンスが含まれます。
+*configurationStatus* \[out\] 制御が戻ったとき、設定を定義する **MSFT_DSCConfigurationStatus** クラスの埋め込みインスタンスが含まれます。
 
 ## <a name="return-value"></a>戻り値
 ------------
@@ -52,11 +50,3 @@ uint32 GetConfigurationStatus(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

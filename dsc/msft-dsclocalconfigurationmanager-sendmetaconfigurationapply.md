@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "MSFT_DSCLocalConfigurationManager クラスの SendMetaConfigurationApply メソッド"
-ms.openlocfilehash: 350555220757b1939b1de34ab423e963635eb53c
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: MSFT_DSCLocalConfigurationManager クラスの SendMetaConfigurationApply メソッド
+ms.openlocfilehash: ab82b239ddfdb4075d9440cd66343266b3c08eda
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの SendMetaConfigurationApply メソッド
 
@@ -26,11 +26,9 @@ uint32 SendMetaConfigurationApply(
 <a name="parameters"></a>パラメーター
 ----------
 
-*ConfigurationData* \[in\]  
-構成用の環境データ。
+*ConfigurationData* \[in\] 構成用の環境データ。
 
-*force* \[in\]  
-**true** の場合、構成を強制的に中止します。
+*force* \[in\] **true** の場合、構成を強制的に中止します。
 
 ## <a name="return-value"></a>戻り値
 ------------
@@ -52,11 +50,3 @@ uint32 SendMetaConfigurationApply(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

@@ -1,30 +1,35 @@
 ---
-ms.date: 2017-06-05
+ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell ISE でスクリプトを記述および実行する方法
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 77d8ae81cb03f03b3b5d044e6503bbb23cb5b771
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: 4b8a9c0c3a710f3b3b9b6077c3c84e174a141db2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Windows PowerShell ISE でスクリプトを記述および実行する方法
+
 このトピックでは、スクリプト ウィンドウでスクリプトを作成、編集、実行、保存する方法について説明します。
 
 ## <a name="how-to-create-and-run-scripts"></a>スクリプトを作成して実行する方法
+
 Windows PowerShell ファイルは、スクリプト ウィンドウで開いたり、編集したりできます。 Windows PowerShell で対象となるファイルの種類は、スクリプト ファイル (.ps1)、スクリプト データ ファイル (.psd1)、スクリプト モジュール ファイル (.psm1) です。 これらのファイルの種類は、スクリプト ウィンドウのエディターで構文が色分けされます。 スクリプト ウィンドウで開くことのできる他の一般的なファイルの種類には、構成ファイル (.ps1xml)、XML ファイル、テキスト ファイルがあります。
 
 > [!NOTE]
 > Windows PowerShell の実行ポリシーによって、スクリプトの実行や、Windows PowerShell のプロファイルと構成ファイルの読み込みを実行できるかどうかが決まります。 既定の実行ポリシー Restricted では、すべてのスクリプトの実行とプロファイルの読み込みが防止されます。 プロファイルの、読み込みと使用を許可するように実行ポリシーを変更する方法については、「[Set-ExecutionPolicy[PSITPro5_Security]](https://technet.microsoft.com/library/5690a0e1-495b-4e63-8280-65ead7bf01ab)」と「[about_Signing [v4]](https://technet.microsoft.com/library/fcbdd3b9-0b9f-4734-b5c7-e0dcc304fa1d)」をご覧ください。
 
 ### <a name="to-create-a-new-script-file"></a>新しいスクリプト ファイルを作成するには
+
 ツール バーの **[新規作成]**、または **[ファイル]** メニューの **[新規作成]** をクリックします。 作成されたファイルは、現在の PowerShell タブの下に新しいファイル タブとして表示されます。PowerShell のタブは、少なくとも 1 つのタブが存在する場合にのみ表示されることにご注意ください。 既定では種類のスクリプトのファイル (.ps1) が作成されますが、そのファイルに新しい名前や拡張子を指定して保存できます。 同じ PowerShell タブ内に複数のスクリプト ファイルを作成できます。
 
 ### <a name="to-open-an-existing-script"></a>既存のスクリプトを開くには
+
 ツール バーの **[開く]**、または **[ファイル]** メニューの **[開く]** をクリックします。 **[開く]** ダイアログ ボックスで、開くファイルを選びます。 開いたファイルが新しいタブに表示されます。
 
 ### <a name="to-close-a-script-tab"></a>スクリプト タブを閉じるには
+
 閉じるスクリプトのスクリプト タブをクリックし、次のいずれかの操作を実行します。
 
 1. スクリプト タブの **[閉じる]** アイコン (X) をクリックします。
@@ -34,9 +39,11 @@ Windows PowerShell ファイルは、スクリプト ウィンドウで開いた
 ファイルが最後に保存されてから変更された場合は、ファイルを保存するか破棄するかを選ぶメッセージが表示されます。
 
 ### <a name="to-display-the-file-path"></a>ファイル パスを表示するには
+
 ファイル タブのファイル名をポイントします。 スクリプト ファイルへの完全修飾パスがヒントに表示されます。
 
 ### <a name="to-run-a-script"></a>スクリプトを実行するには
+
 ツール バーの **[スクリプトを実行]**、または **[ファイル]** メニューの **[実行]** をクリックします。
 
 ### <a name="to-run-a-portion-of-a-script"></a>スクリプトの一部を実行するには
@@ -46,9 +53,11 @@ Windows PowerShell ファイルは、スクリプト ウィンドウで開いた
 2. **[ファイル]** メニューの **[選択項目を実行]**、またはツール バーの **[選択項目を実行]** をクリックします。
 
 ### <a name="to-stop-a-running-script"></a>スクリプトの実行を停止するには
+
 ツール バーの **[実行を中止]** をクリックするか、CTRL + BREAK キーを押すか、または、**[ファイル]** メニューの **[実行を中止]** をクリックします。 テキストが選択されていない場合は、**CTRL + C** キーを押すと、実行が停止します。テキストが選択されている場合は、**CTRL + C** キーは、選択したテキストのコピー機能にマップされます。
 
 ## <a name="how-to-write-and-edit-text-in-the-script-pane"></a>スクリプト ウィンドウでテキストを記述して編集する方法
+
 スクリプト ウィンドウでテキストを編集するには、次の手順を実行します。 テキストのコピー、切り取り、貼り付け、検索、置換を実行できます。 最後に実行した操作を元に戻したり、再実行したりできます。 これらのアクションを実行するためのキーボード ショートカットは、すべての Windows アプリケーションで使われているものと同じです。
 
 ### <a name="to-enter-text-in-the-script-pane"></a>スクリプト ウィンドウにテキストを入力するには
@@ -68,7 +77,8 @@ Windows PowerShell ファイルは、スクリプト ウィンドウで開いた
 3. カーソルより前の場所にあるテキストを検索するには、**SHIFT + F3** キーを押すか、または**[編集]** メニューの **[スクリプト内で前を検索]** をクリックします。
 
 ### <a name="to-find-and-replace-text-in-the-script-pane"></a>スクリプト ウィンドウでテキストを検索して置換するには
-**CTRL + H** キーを押すか、または**[編集]** メニューの **[スクリプト内で置換]** をクリックします。 検索するテキストと、見つかったテキストを置換するテキストの両方を入力してから、**Enter** キーを押します。
+
+**Ctrl キーを押しながら H キー**を押すか、または**[編集]** メニューの **[スクリプト内で置換]** をクリックします。 検索するテキストと、見つかったテキストを置換するテキストの両方を入力してから、**Enter** キーを押します。
 
 ### <a name="to-go-to-a-particular-line-of-text-in-the-script-pane"></a>スクリプト ウィンドウ内のテキストの特定の行に移動するには
 
@@ -89,18 +99,23 @@ Windows PowerShell ファイルは、スクリプト ウィンドウで開いた
 2. **CTRL + X** キーを押すか、ツール バーで **[切り取り]** アイコンをクリックするか、または **[編集]** メニューの **[切り取り]** をクリックします。
 
 ### <a name="to-paste-text-into-the-script-pane"></a>スクリプト ウィンドウにテキストを貼り付けるには
+
 **CTRL + V** キーを押すか、ツール バーで **[貼り付け]** アイコンをクリックするか、または **[編集]** メニューの **[貼り付け]** をクリックします。
 
 ### <a name="to-undo-an-action-in-the-script-pane"></a>スクリプト ウィンドウ内のアクションを元に戻すには
+
 **CTRL + Z** キーを押すか、ツール バーで **[元に戻す]** アイコンをクリックするか、または **[編集]** メニューの **[元に戻す]** をクリックします。
 
 ### <a name="to-redo-an-action-in-the-script-pane"></a>スクリプト ウィンドウ内のアクションをやり直すには
+
 **CTRL + Y** キーを押すか、ツール バーで **[やり直し]** アイコンをクリックするか、または **[編集]** メニューの **[やり直し]** をクリックします。
 
 ## <a name="how-to-save-a-script"></a>スクリプトを保存する方法
+
 スクリプトに名前を付けて保存するには、次の手順を実行します。 変更されてから保存されていないファイルには、スクリプト名の横にアスタリスクが表示されます。 ファイルを保存すると、アスタリスクは消えます。
 
 ### <a name="to-save-a-script"></a>スクリプトを保存するには
+
 **CTRL + S** キーを押すか、ツール バーで **[保存]** アイコンをクリックするか、または **[ファイル]** メニューの **[保存]** をクリックします。
 
 ### <a name="to-save-and-name-a-script"></a>スクリプトに名前を付けて保存するには
@@ -114,24 +129,25 @@ Windows PowerShell ファイルは、スクリプト ウィンドウで開いた
 4. **[保存]** をクリックします。
 
 ### <a name="to-save-a-script-in-ascii-encoding"></a>ASCII エンコードでスクリプトを保存するには
+
 既定では、Windows PowerShell ISE は新しいスクリプト ファイル (.ps1)、スクリプト データ ファイル (.psd1)、スクリプト モジュール ファイル (.psm1) を Unicode (BigEndianUnicode) として保存します。ASCII (ANSI) など、別のエンコードでスクリプトを保存するには、[$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) オブジェクトの **Save** または **SaveAs** メソッドを使用します。
 
 次のコマンドでは、新しいスクリプトを MyScript.ps1 という名前の ASCII エンコードで保存します。
 
-```
-$psise.CurrentFile.SaveAs("MyScript.ps1", [System.Text.Encoding]::ASCII)
+```powershell
+$psISE.CurrentFile.SaveAs("MyScript.ps1", [System.Text.Encoding]::ASCII)
 ```
 
 次のコマンドでは、現在のスクリプト ファイルと同じ名前の ASCII エンコードのファイルに置き換えます。
 
-```
-$psise.CurrentFile.Save([System.Text.Encoding]::ASCII)
+```powershell
+$psISE.CurrentFile.Save([System.Text.Encoding]::ASCII)
 ```
 
 次のコマンドでは、現在のファイルのエンコードを取得します。
 
-```
-$psise.CurrentFile.encoding
+```powershell
+$psISE.CurrentFile.encoding
 ```
 
 Windows PowerShell ISE では、次のエンコード オプションをサポートしています: ASCII、BigEndianUnicode、Unicode、UTF32、UTF7、UTF8、既定値。 既定値オプションの値は、システムによって異なります。
@@ -139,4 +155,5 @@ Windows PowerShell ISE では、次のエンコード オプションをサポ�
 Windows PowerShell ISE では、Windows PowerShell ISE の [保存] または [名前を付けて保存] コマンドを使った場合でも、他のエディターによって作成されたスクリプトのエンコードは変更しません。
 
 ## <a name="see-also"></a>参照
+
 - [Windows PowerShell ISE の操作](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

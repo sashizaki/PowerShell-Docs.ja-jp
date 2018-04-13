@@ -1,15 +1,15 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, PowerShell, セットアップ"
+keywords: WMF, PowerShell, セットアップ
 contributor: ryanpu
-title: "Just Enough Administration (JEA) の強化"
-ms.openlocfilehash: 2811b4deb3f4fca513791c7389ee5f9f877dbfe8
-ms.sourcegitcommit: 75f70c7df01eea5e7a2c16f9a3ab1dd437a1f8fd
+title: Just Enough Administration (JEA) の強化
+ms.openlocfilehash: c80472fa4372331bf2cf9ab0b7513021354d1408
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Just Enough Administration (JEA) の強化
 
@@ -93,4 +93,3 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>固定: Windows Server 2008 R2 で仮想アカウントがサポートされるようになりました。
 WMF 5.1 では、Windows Server 2008 R2 で仮想アカウントを使用できるようになりました。これにより、Windows Server 2008 R2 - 2016 にわたり一貫した構成と機能の類似性が提供されます。
 Windows 7 で JEA を使用する場合、仮想アカウントはまだサポートされていません。
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "MSFT_DSCLocalConfigurationManager クラスの ResourceSet メソッド"
-ms.openlocfilehash: 3486ef559102929f8d05994a4bf6e45d49a0c140
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+keywords: DSC, PowerShell, 構成, セットアップ
+title: MSFT_DSCLocalConfigurationManager クラスの ResourceSet メソッド
+ms.openlocfilehash: b5f437a123bd38df21f30d11e71d2c3b36bc9f3a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの ResourceSet メソッド
 
@@ -28,17 +28,13 @@ uint32 ResourceSet(
 <a name="parameters"></a>パラメーター
 ----------
 
-*ResourceType* \[in\]  
-呼び出すリソースの名前。
+*ResourceType* \[in\] 呼び出すリソースの名前。
 
-*ModuleName* \[in\]  
-呼び出すリソースを含むモジュールの名前。
+*ModuleName* \[in\] 呼び出すリソースを含むモジュールの名前。
 
-*resourceProperty* \[in\]  
-ハッシュ テーブルで、リソースのプロパティ名と値を、それぞれキーと値として指定します。 リソースのプロパティと種類を検出するには、[Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) コマンドレットを使用します。
+*resourceProperty* \[in\] ハッシュ テーブルで、リソースのプロパティ名と値を、それぞれキーと値として指定します。 リソースのプロパティと種類を検出するには、[Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) コマンドレットを使用します。
 
-*RebootRequired* \[out\]  
-ターゲット ノードの再起動が必要な場合、制御が戻るときに、このプロパティは **true** に設定されます。
+*RebootRequired* \[out\] ターゲット ノードの再起動が必要な場合、制御が戻るときに、このプロパティは **true** に設定されます。
 
 ## <a name="return-value"></a>戻り値
 ------------
@@ -60,10 +56,3 @@ uint32 ResourceSet(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
- 
-
- 
-
-
-

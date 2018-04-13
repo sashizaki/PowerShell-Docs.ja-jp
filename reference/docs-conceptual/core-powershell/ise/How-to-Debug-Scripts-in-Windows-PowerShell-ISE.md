@@ -1,18 +1,19 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "Windows PowerShell ISE でスクリプトをデバッグする方法"
-ms.openlocfilehash: d37fb6cdcd5782cf8eff89c2b124b7c81fdaca71
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: Windows PowerShell ISE でスクリプトをデバッグする方法
+ms.openlocfilehash: b7af2de83a3f796a2057514e36ad8b74367e8ce2
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Windows PowerShell ISE でスクリプトをデバッグする方法
 
-このトピックでは、Windows PowerShell Integrated Scripting Environment (ISE) のビジュアル デバッグ機能を使ってローカル コンピューター上でスクリプトをデバッグする方法について説明します。
+この記事では、Windows PowerShell Integrated Scripting Environment (ISE) のビジュアル デバッグ機能を使ってローカル コンピューター上でスクリプトをデバッグする方法について説明します。
 
 ## <a name="how-to-manage-breakpoints"></a>ブレークポイントを管理する方法
+
 ブレークポイントは、操作を一時停止するように指定したスクリプト内の位置です。一時停止している間に、変数の現在の状態や、スクリプトが実行されている環境を確認できます。 スクリプトがブレークポイントで一時停止したら、コンソール ウィンドウでコマンドを実行して、スクリプトの状態を確認できます。  変数を出力したり、その他のコマンドを実行したりできます。 また、現在実行しているスクリプトのコンテキストで表示されているすべての変数の値を変更することもできます。 必要な事項を確認した後、スクリプトの操作を再開できます。
 
 Windows PowerShell のデバッグ環境では、次の 3 種類のブレークポイントを設定できます。
@@ -26,11 +27,12 @@ Windows PowerShell のデバッグ環境では、次の 3 種類のブレーク�
 この 3 種類のうち、行のブレークポイントだけは、Windows PowerShell ISE デバッグ環境で、メニューやキーボード ショートカットを使って設定できます。 他の 2 つの種類のブレークポイントは、コンソール ウィンドウから [Set-PSBreakpoint ](https://technet.microsoft.com/library/88d2d9ad-17dc-44ae-99aa-f841125b9dc8) コマンドレットを使って設定できます。 このセクションでは、Windows PowerShell ISE でメニューが使用可能な場合は使用してデバッグ作業を実行する方法と、スクリプトを使用してさまざまなコマンドをコンソール ウィンドウから実行する方法を説明します。
 
 ### <a name="to-set-a-breakpoint"></a>ブレークポイントを設定するには
+
 ブレークポイントをスクリプトに設定するには、まずブレークポイントを保存する必要があります。 行のブレークポイントを設定する行を右クリックしてから、**[ブレークポイントの設定/解除]** をクリックします。 または、行のブレークポイントを設定する行をクリックしてから、**F9** キーを押すか、**[デバッグ]** メニューの **[ブレークポイントの設定/解除]** をクリックします。
 
 次のスクリプトは、コンソール ウィンドウから [Set-PSBreakpoint](https://technet.microsoft.com/library/6afd5d2c-a285-4796-8607-3cbf49471420) コマンドレットを使って変数のブレークポイントを設定する方法の例を示しています。
 
-``` PowerShell
+```powershell
 # This command sets a breakpoint on the Server variable in the Sample.ps1 script.
 Set-PSBreakpoint -Script sample.ps1 -Variable Server
 ```
@@ -41,7 +43,7 @@ Set-PSBreakpoint -Script sample.ps1 -Variable Server
 
 **[デバッグ]** メニューの **[ブレークポイントの一覧を表示]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Get-PSBreakpoint](https://technet.microsoft.com/library/0bf48936-00ab-411c-b5e0-9b10a812a3c6) コマンドレットを使ってすべてのブレークポイントの一覧を表示する方法の例を示しています。
 
-``` PowerShell
+```powershell
 # This command lists all breakpoints in the current session.
 Get-PSBreakpoint
 ```
@@ -55,73 +57,84 @@ Get-PSBreakpoint
 または、ブレークポイントを解除する行をクリックして、**[デバッグ]** メニューの **[ブレークポイントの設定/解除]** をクリックします。
 次のスクリプトは、コンソール ウィンドウから [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) コマンドレットを使って、指定した ID のブレークポイントを解除する方法の例を示しています。
 
-``` PowerShell
+```powershell
 # This command deletes the breakpoint with breakpoint ID 2.
 Remove-PSBreakpoint -Id 2
 ```
 
 ### <a name="remove-all-breakpoints"></a>すべてのブレークポイントの削除
+
 現在のセッション内で定義されたすべてのブレークポイントを削除するには、**[デバッグ]** メニューの **[すべてのブレークポイントを削除]** をクリックします。
 
 次のスクリプトは、コンソール ウィンドウから [Remove-PSBreakpoint](https://technet.microsoft.com/library/4c877a80-0ea0-4790-9281-88c08ef0ddd6) コマンドレットを使ってすべてのブレークポイントを削除する方法の例を示しています。
 
-``` PowerShell
+```powershell
 # This command deletes all of the breakpoints in the current session.
 Get-PSBreakpoint | Remove-PSBreakpoint
 ```
 
 ### <a name="disable-a-breakpoint"></a>ブレークポイントの無効化
+
 ブレークポイントを無効にしても、そのブレークポイントは削除されず、再び有効にするまでの間オフになります。  特定の行のブレークポイントを無効にするには、ブレークポイントを無効にする行を右クリックし、**[ブレークポイントの無効化]** をクリックします。 または、ブレークポイントを無効にする行をクリックしてから、**F9** キーを押すか、**[デバッグ]** メニューの **[ブレークポイントの無効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) コマンドレットを使って、指定した ID のブレークポイントを無効にする方法の例を示しています。
 
-``` PowerShell
+```powershell
 # This command disables the breakpoint with breakpoint ID 0.
 Disable-PSBreakpoint -Id 0
 ```
 
 ### <a name="disable-all-breakpoints"></a>すべてのブレークポイントの無効化
+
 ブレークポイントを無効にしても、そのブレークポイントは削除されず、再び有効にするまでの間オフになります。  現在のセッション内のすべてのブレークポイントを無効にするには、**[デバッグ]** メニューの **[すべてのブレークポイントの無効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Disable-PSBreakpoint](https://technet.microsoft.com/library/d4974e9b-0aaa-4e20-b87f-f599a413e4e8) コマンドレットを使ってすべてのブレークポイントを無効にする方法の例を示しています。
 
-``` PowerShell
+```powershell
 # This command disables all breakpoints in the current session.
 # You can abbreviate this command as: "gbp | dbp".
 Get-PSBreakpoint | Disable-PSBreakpoint
 ```
 
 ### <a name="enable-a-breakpoint"></a>ブレークポイントの有効化
+
 特定の行のブレークポイントを有効にするには、ブレークポイントを有効にする行を右クリックし、**[ブレークポイントの有効化]** をクリックします。 または、ブレークポイントを有効にする行をクリックしてから、**F9** キーを押すか、**[デバッグ]** メニューの **[ブレークポイントの有効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) コマンドレットを使って特定のブレークポイントを有効にする方法の例を示しています。
 
-``` PowerShell
+```powershell
 # This command enables breakpoints with breakpoint IDs 0, 1, and 5.
 Enable-PSBreakpoint -Id 0, 1, 5
 ```
 
 ### <a name="enable-all-breakpoints"></a>すべてのブレークポイントの有効化
+
 現在のセッション内で定義されたすべてのブレークポイントを有効にするには、**[デバッグ]** メニューの **[すべてのブレークポイントを有効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Enable-PSBreakpoint](https://technet.microsoft.com/library/739e1091-3b3f-405f-a428-bec7543e5df0) コマンドレットを使ってすべてのブレークポイントを有効にする方法の例を示しています。
 
-``` PowerShell
+```powershell
 # This command enables all breakpoints in the current session.
 # You can abbreviate the command by using their aliases: "gbp | ebp".
 Get-PSBreakpoint | Enable-PSBreakpoint
 ```
 
 ## <a name="how-to-manage-a-debugging-session"></a>デバッグ セッションを管理する方法
+
 デバッグを開始する前に、1 つ以上のブレークポイントを設定する必要があります。 ブレークポイントを設定するには、まず、デバッグするスクリプトを保存する必要があります。 ブレークポイントを設定する手順については、「[ブレークポイントを管理する方法](#how-to-manage-breakpoints)」または「[Set-PSBreakpoint](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/set-psbreakpoint)」をご覧ください。 デバッグを開始した後は、デバッグを停止するまで、スクリプトを編集できません。 1 つ以上のブレークポイントを設定したスクリプトは、実行前に自動的に保存されます。
 
 ### <a name="to-start-debugging"></a>デバッグを開始するには
+
 **F5** キーを押すか、ツールバーの **[スクリプトを実行]** アイコンをクリックするか、**[デバッグ]** メニューの **[実行/続行]** をクリックします。 スクリプトは、最初のブレークポイントを検出するまで実行されます。 ブレークポイントを検出した位置で操作が一時停止し、一時停止した行が強調表示されます。
 
 ### <a name="to-continue-debugging"></a>デバッグを続行するには
+
 **F5** キーを押すか、ツールバーの **[スクリプトを実行]** アイコンをクリックするか、**[デバッグ]** メニューの **[実行/続行]** をクリックするか、コンソール ウィンドウで **C** と入力してから **Enter** キーを押します。 これにより、次のブレークポイントまで、またはこれ以上ブレークポイントが検出されない場合は、スクリプトの最後までスクリプトの実行が継続されます。
 
 ### <a name="to-view-the-call-stack"></a>呼び出し履歴を表示するには
+
 呼び出し履歴には、スクリプト内で現在実行中の位置が表示されます。 スクリプトが別の関数によって呼び出された関数で実行されている場合、そのことは画面の出力に行が追加されることによって示されます。 一番下の行には、元のスクリプトと、関数が呼び出された行が表示されます。 その上の行には、別の関数が呼び出された場合に、その関数と、関数が呼び出された行が表示されます。  一番上の行には、ブレークポイントが設定されている、現在の行の現在のコンテキストが表示されます。
 
 一時停止中に現在の呼び出し履歴を表示するには、**CTRL + SHIFT + D** キーを押すか、**[デバッグ]** メニューの **[呼び出し履歴の表示]** をクリックするか、コンソール ウィンドウで **K** と入力してから **ENTER** キーを押します。
 
 ### <a name="to-stop-debugging"></a>デバッグを停止するには
+
 **SHIFT-F5** キーを押すか、**[デバッグ]** メニューの **[デバッガーの停止]** をクリックするか、コンソール ウィンドウで **Q** と入力してから **ENTER** キーを押します。
 
 ## <a name="how-to-step-over-step-into-and-step-out-while-debugging"></a>デバッグ中にステップ オーバー、ステップ イン、ステップ アウトする方法
+
 ステッピングは、一度に 1 つのステートメントを実行するプロセスです。 コードの行で停止し、変数の値とシステムの状態を確認できます。 次の表では、ステップ オーバー、ステップ イン、ステップ アウトなどの一般的なデバッグ タスクについて説明します。
 
 | デバッグ タスク | 説明 | PowerShell ISE で実行する方法 |
@@ -132,9 +145,11 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 | **続行** | 最後まで、または次のブレークポイントまで実行を続けます。 スキップした関数と呼び出しは実行されますが、ステップ スルーされることはありません。 | **F5** キーを押すか、**[デバッグ]** メニューの **[実行/続行]** をクリックするか、コンソール ウィンドウに **C** と入力して **ENTER** キーを押します。 |
 
 ## <a name="how-to-display-the-values-of-variables-while-debugging"></a>デバッグ中に変数の値を表示する方法
+
 コードをステップ スルーするとき、スクリプト内の変数の現在値を表示できます。
 
 ### <a name="to-display-the-values-of-standard-variables"></a>標準変数の値を表示するには
+
 以下の方法のうちのいずれか 1 つを使用します。
 
 - スクリプト ウィンドウで、変数にマウスのカーソルを合わせると、ツール ヒントとしてその変数の値が表示されます。
@@ -144,6 +159,7 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 ISE のすべてのウィンドウは、常に同じスコープ内にあります。 そのため、スクリプトをデバッグしている間は、コンソール ウィンドウに入力したコマンドはスクリプト スコープで実行されます。 これにより、コンソール ウィンドウを使って、スクリプト内でのみ定義されている変数の値を調べたり、スクリプト内でのみ定義されている関数を呼び出したりできます。
 
 ### <a name="to-display-the-values-of-automatic-variables"></a>自動変数の値を表示するには
+
 上記の方法を使えば、スクリプトのデバッグ中にほとんどすべての変数の値を表示できます。 ただし、これらの方法は、次の自動変数に対しては機能しません。
 
 - $_
@@ -164,14 +180,18 @@ ISE のすべてのウィンドウは、常に同じスコープ内にありま�
 
 たとえば、$MyInvocation 変数の値を表示するには、スクリプト内でその値を新しい変数 ($scriptname など) に割り当ててから、マウスのカーソルを合わせるか、$scriptname 変数を入力します。
 
-``` PowerShell
-#In MyScript.ps1
+```powershell
+# In C:\ps-test\MyScript.ps1
 $scriptname = $MyInvocation.MyCommand.Path
+```
 
-#In the Console Pane:
-C:\ps-test> $scriptname
+```output
+# In the Console Pane:
+PS> .\MyScript.ps1
+PS> $scriptname
 C:\ps-test\MyScript.ps1
 ```
 
 ## <a name="see-also"></a>参照
+
 - [Windows PowerShell ISE の操作](../../getting-started/fundamental/exploring-the-windows-powershell-ise.md)

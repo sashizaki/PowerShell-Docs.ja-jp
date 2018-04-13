@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "MSFT_DSCLocalConfigurationManager クラスの TestConfiguration メソッド"
-ms.openlocfilehash: 04f0f3146473dc71f492086449d9dce5467c55db
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: MSFT_DSCLocalConfigurationManager クラスの TestConfiguration メソッド
+ms.openlocfilehash: 7815d458a9a67639a31c917510097212d104eb8a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの TestConfiguration メソッド
 
@@ -28,17 +28,13 @@ uint32 TestConfiguration(
 <a name="parameters"></a>パラメーター
 ----------
 
-*configurationData* \[in\]  
-構成のための環境データ。
+*configurationData* \[in\] 構成のための環境データ。
 
-*InDesiredState* \[out\]  
-制御が戻ったとき、管理ノードが構成ドキュメントで指定された状態であるかどうかを示します。
+*InDesiredState* \[out\] 制御が戻ったとき、管理ノードが構成ドキュメントで指定された状態であるかどうかを示します。
 
-*ResourcesInDesiredState* \[out\]  
-制御が戻ったとき、目的の状態にあるリソースを指定する、**MSFT_ResourceInDesiredState** クラスの埋め込みインスタンスが含まれます。
+*ResourcesInDesiredState* \[out\] 制御が戻ったとき、目的の状態にあるリソースを指定する、**MSFT_ResourceInDesiredState** クラスの埋め込みインスタンスが含まれます。
 
-*ResourcesNotInDesiredState* \[out\]  
-制御が戻ったとき、目的の状態ではないリソースを指定する、**MSFT_ResourceNotInDesiredState** クラスの埋め込みインスタンスが含まれます。
+*ResourcesNotInDesiredState* \[out\] 制御が戻ったとき、目的の状態ではないリソースを指定する、**MSFT_ResourceNotInDesiredState** クラスの埋め込みインスタンスが含まれます。
 
 ## <a name="return-value"></a>戻り値
 ------------
@@ -60,11 +56,3 @@ uint32 TestConfiguration(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

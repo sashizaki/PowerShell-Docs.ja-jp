@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApplyAsync メソッド"
-ms.openlocfilehash: e680d510aaac097f4f0de80660274230e028ed45
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApplyAsync メソッド
+ms.openlocfilehash: 7ff821a277a548869862741551ee9897e417ea45
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApplyAsync メソッド
 
@@ -27,14 +27,11 @@ uint32 SendConfigurationApplyAsync(
 <a name="parameters"></a>パラメーター
 ----------
 
-*ConfigurationData* \[in\]  
-構成用の環境データ。
+*ConfigurationData* \[in\] 構成用の環境データ。
 
-*force* \[in\]  
-**true** の場合、構成を強制的に中止します。
+*force* \[in\] **true** の場合、構成を強制的に中止します。
 
-*jobId* \[in\]  
-構成を送信するジョブの ID です。
+*jobId* \[in\] 構成を送信するジョブの ID です。
 
 ## <a name="return-value"></a>戻り値
 ------------
@@ -56,11 +53,3 @@ uint32 SendConfigurationApplyAsync(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

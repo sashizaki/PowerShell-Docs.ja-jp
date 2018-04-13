@@ -1,16 +1,16 @@
 ---
 description: Azure の Desired State Configuration (DSC) 拡張機能のバージョン履歴について説明します。
-ms.date: 2018-03-14
+ms.date: 03/14/2018
 ms.topic: conceptual
 keywords: dsc, powershell, azure, 拡張機能
 title: Azure DSC 拡張機能のバージョン履歴
 author: DCtheGeek
 ms.author: dacoulte
-ms.openlocfilehash: e324ff9db2aff36a7e13c3a222e3c50f6f1c5d39
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
+ms.openlocfilehash: a183137dde302811874bd5466c35bccebca5d128
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration 拡張機能のバージョン履歴
 
@@ -38,9 +38,9 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
   - WMF 4.0
 - **環境**
   - Azure
-- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano の場合は、DSC ロールが VM にインストールされます。
+- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
-  - 最近、Github が TLS 1.2 に移行されてから、Azure Marketplace で入手できる DIY Resource Manager テンプレートを使用して VM を Azure Automation DSC にオンボードすることができなくなりました。また DSC 拡張機能を使用して Github でホストされている構成を取得できなくなりました。 拡張機能を展開する際に、次のようなエラーが表示されます。
+  - 最近、GitHub が TLS 1.2 に移行されてから、Azure Marketplace で入手できる DIY Resource Manager テンプレートを使用して VM を Azure Automation DSC にオンボードすることができなくなりました。また DSC 拡張機能を使用して GitHub でホストされている構成を取得できなくなりました。 拡張機能を展開する際に、次のようなエラーが表示されます。
 
     ```json
     {
@@ -101,7 +101,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Windows クライアント 7/8.1/10、Nano Server
 - **WMF のサポート:** WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
 - **環境:** Azure
-- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano の場合は、DSC ロールが VM にインストールされます。
+- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - ポータルの UI と Resource Manager テンプレートで DSC Azure Automation を使いやすくなるバグ修正と改善。  詳細については、DSC 拡張機能ドキュメントの「[既定の構成スクリプト](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/extensions-dsc-overview#default-configuration-script)」を参照してください。
 
@@ -111,7 +111,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Windows クライアント 7/8.1/10、Nano Server
 - **WMF のサポート:** WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
 - **環境:** Azure
-- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano の場合は、DSC ロールが VM にインストールされます。
+- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - テレメトリの改善。
 
@@ -121,7 +121,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Windows クライアント 7/8.1/10、Nano Server
 - **WMF のサポート:** WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
 - **環境:** Azure
-- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano の場合は、DSC ロールが VM にインストールされます。
+- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - いくつかのバグ修正とその他の軽微な改善が加えられました。
 
@@ -131,7 +131,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Nano Server
 - **WMF のサポート:** WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
 - **環境:** Azure
-- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano の場合は、DSC ロールが VM にインストールされます。
+- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - VM UUID と DSC エージェント ID を拡張機能のメタデータとして公開します。 その他の軽微な改善が加えられました。
 
@@ -141,7 +141,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Nano Server
 - **WMF のサポート:** WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
 - **環境:** Azure
-- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano の場合は、DSC ロールが VM にインストールされます。
+- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - 多数のバグ修正とその他の改善が加えられました。
 
@@ -151,7 +151,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Nano Server
 - **WMF のサポート:** WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
 - **環境:** Azure
-- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano の場合は、DSC ロールが VM にインストールされます。
+- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - DSC 拡張機能は WMF 5.1 をサポートするようになりました。
   - その他の軽微な改善が加えられました。
@@ -162,7 +162,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Nano Server
 - **WMF のサポート:** WMF 5.1 Preview、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
 - **環境:** Azure
-- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano の場合は、DSC ロールが VM にインストールされます。
+- **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - Nano Server で DSC 拡張機能を使用できるようになりました。 このバージョンには、Nano Server でこの拡張機能を実行するためのコードの変更が含まれています。
   - その他の軽微な改善が加えられました。

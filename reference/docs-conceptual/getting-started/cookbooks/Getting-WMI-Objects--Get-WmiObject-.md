@@ -1,20 +1,22 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "WMI オブジェクトの取得 (Get-WmiObject)"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: WMI オブジェクトの取得 (Get-WmiObject)
 ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
-ms.openlocfilehash: fbaac2797dd62eb03a2be581b3b5f8be6dafc0ad
-ms.sourcegitcommit: d6ab9ab5909ed59cce4ce30e29457e0e75c7ac12
+ms.openlocfilehash: 67922426ae3f13ef5f4c70bc70bb3ce1594d3d05
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/08/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a>WMI オブジェクトの取得 (Get-WmiObject)
 
 ## <a name="getting-wmi-objects-get-wmiobject"></a>WMI オブジェクトの取得 (Get-WmiObject)
+
 Windows Management Instrumentation (WMI) は、Windows システム管理のための中核となるテクノロジであり、幅広い種類の情報を一貫した方法で公開します。 WMI によって可能になるタスクが非常に多いことから、WMI オブジェクトにアクセスするための Windows PowerShell コマンドレットである **Get-WmiObject** は、実際の作業を行うための最も便利なコマンドレットの 1 つと言えます。 ここでは、Get-WmiObject を使って WMI オブジェクトにアクセスする方法と、WMI オブジェクトを使って特定の作業を行う方法について説明します。
 
 ### <a name="listing-wmi-classes"></a>WMI クラスの一覧を取得する
+
 WMI のほとんどのユーザーが直面する最初の問題は、WMI で何ができるかを調べることです。 WMI クラスは、管理できるリソースを記述しています。 何百もの WMI クラスがあり、その中には数十個のプロパティを持つクラスもあります。
 
 この問題に対処するため、**Get-WmiObject** では WMI を探索可能にしました。 ローカル コンピューター上で使える WMI クラスの一覧を取得するには、次のように入力します。
@@ -48,7 +50,7 @@ __ProviderRegistration                  __ObjectProviderRegistration
 
 また、ローカル システムに接続するときに、コンピューター名を含めることもできます。 ローカル コンピューターの名前、IP アドレス (またはループバック アドレス 127.0.0.1)、WMI スタイル '.' をコンピューター名として使うことができます。 IP アドレスが 192.168.1.90 で、Admin01 という名前のコンピューターで Windows PowerShell を実行している場合、次のコマンドはそのコンピューターのすべての WMI クラスの一覧を返します。
 
-```
+```powershell
 Get-WmiObject -List
 Get-WmiObject -List -ComputerName .
 Get-WmiObject -List -ComputerName Admin01
@@ -68,6 +70,7 @@ __Provider                              __Win32Provider
 ```
 
 ### <a name="displaying-wmi-class-details"></a>WMI クラスの詳細を表示する
+
 WMI クラスの名前がわかっている場合は、その名前を使って情報をすぐに取得できます。 たとえば、コンピューターに関する情報を取得するためによく使われる WMI クラスの 1 つに、**Win32_OperatingSystem** があります。
 
 ```
@@ -83,7 +86,7 @@ Version         : 5.1.2600
 
 ここでは、すべてのパラメーターを示しましたが、このコマンドはもっと簡潔に表現できます。 **ComputerName** パラメーターは、ローカル システムに接続するときには必要ありません。 最も一般的なケースを示し、このパラメーターを思い出してもらうために使いました。 **Namespace** の既定値は root/cimv2 であるため、これも省略できます。 最後に、ほとんどのコマンドレットでは、共通のパラメーターの名前を省略できます。 Get-WmiObject の場合、最初のパラメーターに名前が指定されていないときには、Windows PowerShell はそれを **Class** パラメーターとして扱います。 したがって、先ほどのコマンドは、次のように入力することもできました。
 
-```
+```powershell
 Get-WmiObject Win32_OperatingSystem
 ```
 
@@ -105,6 +108,7 @@ BuildNumber                               Property   System.String BuildNumb...
 ```
 
 #### <a name="displaying-non-default-properties-with-format-cmdlets"></a>既定以外のプロパティを Format コマンドレットで表示する
+
 **Win32_OperatingSystem** クラスに含まれている情報のうち、既定では表示されない情報を表示するには、**Format** コマンドレットを使います。 たとえば、利用可能なメモリのデータを表示するには、次のように入力します。
 
 ```
@@ -129,4 +133,3 @@ FreePhysicalMemory     : 301876
 FreeVirtualMemory      : 2056724
 FreeSpaceInPagingFiles : 1556644
 ```
-

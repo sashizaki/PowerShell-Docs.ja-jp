@@ -1,30 +1,34 @@
 ---
-ms.date: 2017-06-05
-keywords: "PowerShell, コマンドレット"
-title: "Windows PowerShell ISE の操作"
+ms.date: 06/05/2017
+keywords: PowerShell, コマンドレット
+title: Windows PowerShell ISE の操作
 ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
-ms.openlocfilehash: 979209d4b200728b7e78e341bb9595741d2b8e68
-ms.sourcegitcommit: 74255f0b5f386a072458af058a15240140acb294
+ms.openlocfilehash: 059651f159fb2636a93167709134788e90d062b8
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2017
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Windows PowerShell ISE の操作
+
 Windows PowerShell® Integrated Scripting Environment (ISE) を使用すると、コマンドやスクリプトを作成、実行、デバッグできます。 Windows PowerShell ISE は、メニュー バー、Windows PowerShell タブ、ツール バー、スクリプト タブ、スクリプト ウィンドウ、コンソール ウィンドウ、ステータス バー、文字サイズ スライダー、状況依存のヘルプで構成されています。
 
 > [!NOTE]
 > Windows PowerShell ISE 3.0 以降、コマンド ウィンドウと出力ウィンドウは、単一のコンソール ウィンドウに統合されました。
 
 ## <a name="menu-bar"></a>メニュー バー
-メニュー バーには、**[ファイル]**、**[編集]**、**[表示]**、**[ツール]**、**[デバッグ]**、**[アドオン]**、**[ヘルプ]** の各メニューがあります。 メニューのボタンを使用すると、スクリプトの記述と実行、および Windows PowerShell ISE でのコマンドの実行に関連したタスクを実行できます。 さらに、[Windows PowerShell ISE スクリプト オブジェクト モデル](../../core-powershell/ise/The-Windows-PowerShell-ISE-Scripting-Object-Model.md)を使用する特定のスクリプトを実行すれば、[アドオン ツール](../../core-powershell/ise/The-ISEAddOnTool-Object.md)をメニュー バーに配置することもできます。
+
+メニュー バーには、**[ファイル]**、**[編集]**、**[表示]**、**[ツール]**、**[デバッグ]**、**[アドオン]**、**[ヘルプ]** の各メニューがあります。 メニューのボタンを使用すると、スクリプトの記述と実行、および Windows PowerShell ISE でのコマンドの実行に関連したタスクを実行できます。 さらに、[ISE オブジェクト モデルの階層](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)を使用するスクリプトを実行して、[アドオン ツール](../../core-powershell/ise/The-ISEAddOnTool-Object.md)をメニュー バーに配置することもできます。
 
 > [!NOTE]
 > Windows PowerShell ISE 2.0 には、**[ツール]** と **[アドオン]** メニューはありませんでした。
 
 ## <a name="windows-powershell-tabs"></a>Windows PowerShell タブ
+
 Windows PowerShell タブは、Windows PowerShell スクリプトが動作する環境です。 Windows PowerShell ISE で新しい Windows PowerShell タブを開いて、ローカル コンピューターまたはリモート コンピューターに別個の環境を作成することができます。 最大 8 つの PowerShell タブを同時に開くことができます。
 
 ## <a name="toolbar"></a>ツール バー
+
 ツール バーには次のボタンがあります。
 
 |ボタン|機能|
@@ -39,7 +43,7 @@ Windows PowerShell タブは、Windows PowerShell スクリプトが動作する
 |**元に戻す**|実行した直前のアクションを元に戻します。|
 |**やり直す**|元に戻した直前のアクションを実行します。|
 |**スクリプトを実行**|スクリプトを実行します。|
-|**選択項目を実行**|スクリプトの選んだ部分を実行します。|
+|**選択範囲の実行**|スクリプトの選んだ部分を実行します。|
 |**実行を中止**|実行中のスクリプトを中止します。|
 |**リモート PowerShell タブの新規作成**|リモート コンピューターにセッションを確立する PowerShell タブを新規作成します。 ダイアログ ボックスが表示され、リモート接続を確立するために必要な詳細情報を入力するように求められます。|
 |**PowerShell.exe を起動**|PowerShell コンソールを開きます。|
@@ -48,28 +52,35 @@ Windows PowerShell タブは、Windows PowerShell スクリプトが動作する
 |**スクリプト ウィンドウを最大表示**|スクリプト ウィンドウを最大表示します。|
 
 ## <a name="script-tab"></a>スクリプト タブ
+
 編集中のスクリプトの名前を表示します。 スクリプト タブをクリックして、編集するスクリプトを選択できます。
 
 スクリプト タブをポイントすると、スクリプト ファイルへの完全修飾パスがヒントに表示されます。
 
 ## <a name="script-pane"></a>スクリプト ウィンドウ
+
 スクリプトを作成して実行することができます。 スクリプト ウィンドウでは、既存のスクリプトを開いたり、編集および実行したりできます。
 
 ## <a name="output-pane"></a>出力ウィンドウ
+
 実行したコマンドおよびスクリプトの結果が表示されます。 出力ウィンドウの内容をコピーおよびクリアすることもできます。
 
 ## <a name="command-pane"></a>コマンド ウィンドウ
+
 コマンドを記述できます。 コマンド ウィンドウでは、1 行のコマンドまたは複数行のコマンドを実行できます。 SHIFT キーを押しながら ENTER キーを押すことで、改行を挿入し、複数行のコマンドを入力できます。最後の行の後で Enter キーを押すと、複数行のコマンドが実行されます。 コマンド ウィンドウの上部に表示されるプロンプトには、現在の作業ディレクトリへのパスが表示されます。
 
 ## <a name="status-bar"></a>ステータス バー
+
 実行したコマンドおよびスクリプトが完了しているかどうかを確認できます。 ステータス バーは、画面の最下部に表示されます。 エラー メッセージの選んだ部分がステータス バーに表示されます。
 
 ## <a name="text-size-slider"></a>文字サイズ スライダー
+
 画面の文字のサイズを拡大または縮小することができます。
 
 ## <a name="help"></a>ヘルプ
+
 Windows PowerShell ISE のヘルプは、Web 上の TechNet ライブラリで利用できます。 ヘルプを開くには、**[ヘルプ]** メニューの **[Windows PowerShell ISE ヘルプ]** をクリックするか、F1 キーを押します。これは、スクリプト ウィンドウまたはコンソール ウィンドウでコマンドレット名の上にカーソルがある場合を除き、どこからでも実行できます。 **[ヘルプ]** メニューからは、Update-Help コマンドレットを実行することや、コマンド ウィンドウを表示することもできます。コマンド ウィンドウは、コマンドレットのすべてのパラメーターを示したり、使いやすいフォームにパラメーターを入力できるようにしたりして、コマンドの作成を助けます。
 
 ## <a name="see-also"></a>参照
-- [Windows PowerShell ISE の使用](../../core-powershell/ise/Using-the-Windows-PowerShell-ISE.md)
 
+- [Windows PowerShell ISE の紹介](../../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)

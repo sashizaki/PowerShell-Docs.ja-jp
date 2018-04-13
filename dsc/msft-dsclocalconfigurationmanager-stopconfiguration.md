@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "MSFT_DSCLocalConfigurationManager クラスの StopConfiguration メソッド"
-ms.openlocfilehash: 66d00cb40750e91e4b369a2e8cebb449697406d9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: MSFT_DSCLocalConfigurationManager クラスの StopConfiguration メソッド
+ms.openlocfilehash: dadb6912af2e4450381958ed465799056da49946
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの StopConfiguration メソッド
 
@@ -25,8 +25,7 @@ uint32 StopConfiguration(
 <a name="parameters"></a>パラメーター
 ----------
 
-*force* \[in\]  
-**true** の場合、構成を強制的に中止します。
+*force* \[in\] **true** の場合、構成を強制的に中止します。
 
 ## <a name="return-value"></a>戻り値
 ------------
@@ -48,11 +47,3 @@ uint32 StopConfiguration(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

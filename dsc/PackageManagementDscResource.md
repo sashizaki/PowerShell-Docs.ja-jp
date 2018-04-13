@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "DSC の PackageManagement リソース"
-ms.openlocfilehash: 4cd7625af7ed0bb3fe971c826ac2075841cdfdc5
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: DSC の PackageManagement リソース
+ms.openlocfilehash: e6eea9f0bae42e131976dacb9813da759ff31239
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC の PackageManagement リソース
 
@@ -33,21 +33,21 @@ PackageManagement [string] #ResourceName
 ```
 
 ## <a name="properties"></a>プロパティ
-|  プロパティ  |  説明   | 
-|---|---| 
-| 名前| インストールまたはアンインストールするパッケージの名前を指定します。| 
-| ソース| パッケージのあるパッケージ ソースの名前を指定します。 これは、URI、または Register-PackageSource または PackageManagementSource の DSC リソースに登録されたソースのどちらかになります。 DSC リソース MSFT_PackageManagementSource にもパッケージ リソースを登録できます。| 
-| Ensure| パッケージをインストールまたはアンインストールするかどうかを決定します。| 
-| RequiredVersion| インストールするパッケージの正確なバージョンを指定します。 このパラメーターを指定しない場合、MaximumVersion パラメーターで指定された最大バージョンも満たす、パッケージで利用可能な最新バージョンがこの DSC リソースによってインストールされます。| 
-| MinimumVersion| インストールするパッケージで許容される最小バージョンを指定します。 このパラメーターを追加しない場合、MaximumVersion パラメーターで指定された最大バージョンも満たす、パッケージで利用可能な最新バージョンがこの DSC リソースによってインストールされます。| 
-| MaximumVersion| インストールするパッケージで許容される最大バージョンを指定します。 このパラメーターを指定しない場合、この DSC リソースではパッケージで利用可能な最も高い数字のバージョンがインストールされます。| 
-| SourceCredential | 指定したパッケージ プロバイダーまたはソースのパッケージをインストールする権限を持つユーザー アカウントを指定します。| 
-| ProviderName| パッケージの検索先となるパッケージ プロバイダー名を指定します。 Get-PackageProvider コマンドレットを実行して、パッケージ プロバイダー名を取得できます。| 
-| AdditionalParameters| ハッシュテーブルとして渡されるプロバイダー固有のパラメーター。 たとえば、NuGet プロバイダーでは DestinationPath のような追加のパラメーターを渡すことができます。| 
+|  プロパティ  |  説明   |
+|---|---|
+| 名前| インストールまたはアンインストールするパッケージの名前を指定します。|
+| ソース| パッケージのあるパッケージ ソースの名前を指定します。 これは、URI、または Register-PackageSource または PackageManagementSource の DSC リソースに登録されたソースのどちらかになります。 DSC リソース MSFT_PackageManagementSource にもパッケージ リソースを登録できます。|
+| Ensure| パッケージをインストールまたはアンインストールするかどうかを決定します。|
+| RequiredVersion| インストールするパッケージの正確なバージョンを指定します。 このパラメーターを指定しない場合、MaximumVersion パラメーターで指定された最大バージョンも満たす、パッケージで利用可能な最新バージョンがこの DSC リソースによってインストールされます。|
+| MinimumVersion| インストールするパッケージで許容される最小バージョンを指定します。 このパラメーターを追加しない場合、MaximumVersion パラメーターで指定された最大バージョンも満たす、パッケージで利用可能な最新バージョンがこの DSC リソースによってインストールされます。|
+| MaximumVersion| インストールするパッケージで許容される最大バージョンを指定します。 このパラメーターを指定しない場合、この DSC リソースではパッケージで利用可能な最も高い数字のバージョンがインストールされます。|
+| SourceCredential | 指定したパッケージ プロバイダーまたはソースのパッケージをインストールする権限を持つユーザー アカウントを指定します。|
+| ProviderName| パッケージの検索先となるパッケージ プロバイダー名を指定します。 Get-PackageProvider コマンドレットを実行して、パッケージ プロバイダー名を取得できます。|
+| AdditionalParameters| ハッシュテーブルとして渡されるプロバイダー固有のパラメーター。 たとえば、NuGet プロバイダーでは DestinationPath のような追加のパラメーターを渡すことができます。|
 
 ## <a name="additional-parameters"></a>追加のパラメーター
 次の表は、AdditionalParameters プロパティのオプションを示しています。
-|  パラメーター  | 説明   | 
+|  パラメーター  | 説明   |
 |---|---|
 | DestinationPath| 組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージをインストールするファイルの場所を指定します。|
 | InstallationPolicy| 組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージのソースを信頼するかどうかを決定します。 "Untrusted" または "Trusted" のどちらかです。|
@@ -58,41 +58,40 @@ PackageManagement [string] #ResourceName
 
 ```powershell
 Configuration PackageTest
-{    
-    PackageManagementSource SourceRepository 
-    { 
-        Ensure      = "Present" 
-        Name        = "MyNuget" 
-        ProviderName= "Nuget" 
-        SourceUri   = "http://nuget.org/api/v2/"   
-        InstallationPolicy ="Trusted" 
-    }    
-    
-    PackageManagementSource PSGallery 
-    { 
-        Ensure      = "Present" 
-        Name        = "psgallery" 
-        ProviderName= "PowerShellGet" 
-        SourceUri   = "https://www.powershellgallery.com/api/v2/"   
-        InstallationPolicy ="Trusted" 
-    } 
-          
-    PackageManagement NugetPackage 
-    { 
-        Ensure               = "Present"  
+{
+    PackageManagementSource SourceRepository
+    {
+        Ensure      = "Present"
+        Name        = "MyNuget"
+        ProviderName= "Nuget"
+        SourceUri   = "http://nuget.org/api/v2/"
+        InstallationPolicy ="Trusted"
+    }
+
+    PackageManagementSource PSGallery
+    {
+        Ensure      = "Present"
+        Name        = "psgallery"
+        ProviderName= "PowerShellGet"
+        SourceUri   = "https://www.powershellgallery.com/api/v2/"
+        InstallationPolicy ="Trusted"
+    }
+
+    PackageManagement NugetPackage
+    {
+        Ensure               = "Present"
         Name                 = "JQuery"
         AdditionalParameters = "$env:HomeDrive\nuget"
-        RequiredVersion      = "2.0.1" 
-        DependsOn            = "[PackageManagementSource]SourceRepository" 
+        RequiredVersion      = "2.0.1"
+        DependsOn            = "[PackageManagementSource]SourceRepository"
     }
-    
-    PackageManagement PSModule 
-    { 
-        Ensure               = "Present"  
+
+    PackageManagement PSModule
+    {
+        Ensure               = "Present"
         Name                 = "gistprovider"
         Source               = "PSGallery"
-        DependsOn            = "[PackageManagementSource]PSGallery" 
+        DependsOn            = "[PackageManagementSource]PSGallery"
     }
 }
 ```
-

@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "MSFT_DSCLocalConfigurationManager クラスの RemoveConfiguration メソッド"
-ms.openlocfilehash: fed45836293adedbce18f01cfe53cdfa1a474975
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: MSFT_DSCLocalConfigurationManager クラスの RemoveConfiguration メソッド
+ms.openlocfilehash: e0ae8a50212b70841d210d7b2d666a2855218d1a
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="removeconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの RemoveConfiguration メソッド
 
@@ -26,8 +26,7 @@ uint32 RemoveConfiguration(
 <a name="parameters"></a>パラメーター
 ----------
 
-*Stage* \[in\]  
-削除する構成ドキュメントを指定します。 次の値が有効です。
+*Stage* \[in\] 削除する構成ドキュメントを指定します。 次の値が有効です。
 
 |値 |説明 |
 |:--- |:---|
@@ -35,8 +34,7 @@ uint32 RemoveConfiguration(
 |**2** | **保留中**の構成ドキュメント (pending.mof)。  |
 |**4** | **以前**の構成ドキュメント (previous.mof)。 |
 
-*Force* \[in\]  
-**true** の場合、構成を強制的に削除します。
+*Force* \[in\] **true** の場合、構成を強制的に削除します。
 
 ## <a name="return-value"></a>戻り値
 ------------
@@ -58,11 +56,3 @@ uint32 RemoveConfiguration(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

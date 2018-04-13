@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 author: JKeithB
 ms.topic: reference
-keywords: "WMF, PowerShell, セットアップ"
-ms.openlocfilehash: 3413672e73705252225300a853c10a514500baa2
-ms.sourcegitcommit: 99227f62dcf827354770eb2c3e95c5cf6a3118b4
-ms.translationtype: MT
+keywords: WMF, PowerShell, セットアップ
+ms.openlocfilehash: cedda61241df4965fe5db723f03e3497f046fa44
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>文字列から構造化オブジェクトを抽出して分析する
 これも、ConvertFrom-String コマンドレットに追加機能を導入します。
@@ -67,7 +67,7 @@ P1    P2
 
     Renton, WA
 
-   
+
 
 抽出するデータを中かっこで囲み、それに任意の名前を付けます。 **Name** プロパティ (およびそれに関連付けられている他のプロパティ) は複数回出現するので、アスタリスク (\*) を使って、この結果を (1 つのレコードに一連のプロパティを抽出するのではなく) 複数のレコードに抽出することを指定します。
 
@@ -89,5 +89,4 @@ P1    P2
 > ----------                     ----               ----     -----
 > Ana Trujillo...              Ana Trujillo       Redmond  WA Antonio Moreno...            Antonio Moreno     Renton   WA Thomas Hardy...              Thomas Hardy       Seattle  WA Christina Berglund...        Christina Berglund Redmond  WA Hanna Moos...                Hanna Moos         Puyallup WA
 
-抽出されたテキストに追加のデータ操作を行う目的で、**ExtentText** プロパティに、レコードの抽出元から未加工のテキストがキャプチャされます。 この機能にフィードバックを提供するか、例の書き込みに問題があるコンテンツを共有するには、電子メール<psdmfb@microsoft.com>です。
-
+抽出されたテキストに追加のデータ操作を行う目的で、**ExtentText** プロパティに、レコードの抽出元から未加工のテキストがキャプチャされます。 この機能にフィードバックを提供したり、例を書き出すのが難しいコンテンツについて相談したりするには、<psdmfb@microsoft.com> までメールでお知らせください。

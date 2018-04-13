@@ -1,19 +1,20 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築"
-ms.openlocfilehash: 5f7583fb93b69bbe4103b34b79b3a859c9cee8a9
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築
+ms.openlocfilehash: a3803a8e6fe6ff1b93758a73ccd54754d7bb2a84
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築
 
 この例では、PowerShell、DSC、Pester、および Visual Studio Team Foundation Server (TFS) を使用して継続的インテグレーション/継続的配置 (CI/CD) パイプラインを構築する方法を示します。
 
-パイプラインを構築して構成したら、それを使用してDNS サーバーおよび関連付けられたホスト レコードを完全に配置、構成、テストできます。 このプロセスでは、開発環境で使用されるパイプラインの最初の部分をシミュレートします。
+パイプラインを構築して構成したら、それを使用してDNS サーバーおよび関連付けられたホスト レコードを完全に配置、構成、テストできます。
+このプロセスでは、開発環境で使用されるパイプラインの最初の部分をシミュレートします。
 
 自動の CI/CD パイプラインでは、ソフトウェアをより早く、より確実に更新できるため、すべてのコードをテストして、コードの最新のビルドを常に使用可能な状態にします。
 
@@ -36,7 +37,7 @@ ms.lasthandoff: 01/17/2018
 
 クライアント コンピューターは Windows コンピューターで、以下がインストールされている必要があります。
 - [Git](https://git-scm.com/)
-- https://github.com/PowerShell/Demo_CI から複製したローカルの git リポジトリ
+- https://github.com/PowerShell/Demo_CI から複製されたローカル Git リポジトリ
 - [Visual Studio Code](https://code.visualstudio.com/) などのテキスト エディター
 
 ### <a name="tfssrv1"></a>TFSSrv1
@@ -60,7 +61,7 @@ Windows ビルド エージェントをインストールし実行する方法�
 ### <a name="testagent2"></a>TestAgent2
 
 この例で構成する Web サイトをホストするコンピューターです。
-このコンピューターでは、[Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) が実行されている必要があります。 
+このコンピューターでは、[Windows Server 2016](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) が実行されている必要があります。
 
 ## <a name="add-the-code-to-tfs"></a>TFS にコードを追加する
 
@@ -156,7 +157,8 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 CI を行う場合、ノード情報は環境によって変わることがあるため、ノードの定義に構成データを使用することは重要です。構成データを使用すれば、構成コードを変更することなく、ノード情報を簡単に変更できます。
 
-最初のリソース ブロックでは、構成で [WindowsFeature](windowsFeatureResource.md) を呼び出し、DNS 機能が有効になっていることを確認します。 それに続くリソース ブロックでは、[xDnsServer](https://github.com/PowerShell/xDnsServer) モジュールからリソースを呼び出し、プライマリ ゾーンと DNS レコードを構成します。
+最初のリソース ブロックでは、構成で [WindowsFeature](windowsFeatureResource.md) を呼び出し、DNS 機能が有効になっていることを確認します。
+それに続くリソース ブロックでは、[xDnsServer](https://github.com/PowerShell/xDnsServer) モジュールからリソースを呼び出し、プライマリ ゾーンと DNS レコードを構成します。
 
 2 つの `xDnsRecord` ブロックが、構成データの配列を反復処理する `foreach` ループ内にラップされていることに注意してください。
 繰り返しますが、構成データは `DevEnv.ps1` スクリプトで作成されます。これは次に見ていきます。
@@ -199,7 +201,8 @@ Return New-DscConfigurationDataDocument -RawEnvData $DevEnvironment -OutputPath 
 ### <a name="the-psake-build-script"></a>psake ビルド スクリプト
 
 `Build.ps1` (Demo_CI リポジトリのルート `./InfraDNS/Build.ps1` から) で定義されている [psake](https://github.com/psake/psake) ビルド スクリプトでは、ビルドの一部となるタスクを定義します。
-また、各タスクが依存する他のタスクも定義します。 psake スクリプトは、呼び出されると、指定されたタスク (またはタスクが指定されていない場合は `Default` という名前のタスク) が実行され、すべての依存関係も実行されること (これは再帰的で、依存関係の依存関係を実行する) を確認します。
+また、各タスクが依存する他のタスクも定義します。
+psake スクリプトは、呼び出されると、指定されたタスク (またはタスクが指定されていない場合は `Default` という名前のタスク) が実行され、すべての依存関係も実行されること (これは再帰的で、依存関係の依存関係を実行する) を確認します。
 
 この例では、`Default` タスクを以下のように定義します。
 
@@ -422,10 +425,3 @@ git リポジトリの `ci-cd-example` ブランチに変更がチェックイ�
 この例では、URL `www.contoso.com` が `TestAgent2` に解決されるように DNS サーバー `TestAgent1` を構成していますが、Web サイトの配置は実際には行いません。
 それを行うためのスケルトンは、`WebApp` フォルダー下のリポジトリで提供されています。
 提供されるスタブを使用して、psake スクリプト、Pester テスト、DSC 構成を作成し、自分の Web サイトを配置することができます。
-
-
-
-
-
-
-

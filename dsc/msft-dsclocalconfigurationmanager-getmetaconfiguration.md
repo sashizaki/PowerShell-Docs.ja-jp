@@ -1,13 +1,13 @@
 ---
-ms.date: 2017-06-12
+ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: "DSC, PowerShell, 構成, セットアップ"
-title: "MSFT_DSCLocalConfigurationManager クラスの GetMetaConfiguration メソッド"
-ms.openlocfilehash: 695be4ee6490567295fda0cc44635870362d24b8
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+keywords: DSC, PowerShell, 構成, セットアップ
+title: MSFT_DSCLocalConfigurationManager クラスの GetMetaConfiguration メソッド
+ms.openlocfilehash: ddc016402239bcdea060a717fbac9ab7ea42698c
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="getmetaconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの GetMetaConfiguration メソッド
 
@@ -25,8 +25,7 @@ uint32 GetMetaConfiguration(
 <a name="parameters"></a>パラメーター
 ----------
 
-*MetaConfiguration* \[out\]  
-制御が戻ったとき、設定を定義する **MSFT_DSCMetaConfiguration** クラスの埋め込みインスタンスが含まれます。
+*MetaConfiguration* \[out\] 制御が戻ったとき、設定を定義する **MSFT_DSCMetaConfiguration** クラスの埋め込みインスタンスが含まれます。
 
 ## <a name="return-value"></a>戻り値
 ------------
@@ -48,11 +47,3 @@ uint32 GetMetaConfiguration(
 
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
-
-
- 
-
- 
-
-
-

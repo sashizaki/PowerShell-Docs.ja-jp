@@ -1,16 +1,16 @@
 ---
-description: 
+description: ''
 ms.topic: article
 ms.prod: powershell
-keywords: "PowerShell, コマンドレット"
-ms.date: 2016-12-12
-title: "Web Access のコマンドレット"
+keywords: PowerShell, コマンドレット
+ms.date: 12/12/2016
+title: Web Access のコマンドレット
 ms.technology: powershell
-ms.openlocfilehash: 54821c318b165461ec613678a39c4e3b500dfd0e
-ms.sourcegitcommit: a444406120e5af4e746cbbc0558fe89a7e78aef6
+ms.openlocfilehash: 6930fd6a08de69078576fb0d0fbabb04e05d0814
+ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/17/2018
+ms.lasthandoff: 04/09/2018
 ---
 # <a name="windows-powershell-web-access-cmdlets"></a>Windows PowerShell Web Access のコマンドレット
 
@@ -46,9 +46,7 @@ IIS から Windows PowerShell Web アプリケーションをアンインスト�
 >
 > `Get-Command –Module PowerShellWebAccess` コマンドレットを使用します。
 
-コマンドレットの詳細、構文などの情を取得するには、  
-`Get-Help `*&lt;コマンドレット名&gt;*を使用します。  
-この*&lt;コマンドレット名&gt;*は、調べるコマンドレットの名前です。
+いずれかのコマンドレット、またはその構文の詳細について知るには、`Get-Help `*&lt;cmdlet name&gt;* コマンドレットを使用します。この *&lt;cmdlet name&gt;* には、調べたいコマンドレット名を指定します。
 
 詳細については、次のコマンドレットを実行してください。
 
@@ -61,4 +59,3 @@ IIS から Windows PowerShell Web アプリケーションをアンインスト�
 PowerShell Web Access の詳細については、以下を参照してください。
 
 - [Windows PowerShell Web Access のインストールと使用](../install-and-use-windows-powershell-web-access.md)
-
