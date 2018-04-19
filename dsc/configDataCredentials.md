@@ -283,7 +283,7 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 
 **DSC リソースで資格情報を使用する場合、可能な場合は、ドメイン アカウントではなくローカル アカウントを選択します。**
 
-資格情報の `Username` プロパティに \' または '@' がある場合、DSC ではその資格情報はドメイン アカウントとして処理されます。
+資格情報の `Username` プロパティに \' または '\@' がある場合、DSC ではその資格情報はドメイン アカウントとして処理されます。
 ユーザー名のドメイン部分には、"localhost"、"127.0.0.1"、および "::1" の例外があります。
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
