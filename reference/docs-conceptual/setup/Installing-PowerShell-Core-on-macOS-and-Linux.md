@@ -588,10 +588,10 @@ brew cask install powershell
 
 ```sh
 brew update
-brew cask reinstall powershell
+brew cask upgrade powershell
 ```
 
-> 注: [Cask のこの問題](https://github.com/caskroom/homebrew-cask/issues/29301)に起因し、現在のところ、アップグレードには再インストールが必要になります。
+> 注: 上記のコマンドは PowerShell (pwsh) ホストから呼び出すことができますが、その場合、アップグレードを完了するには、PowerShell シェルを終了し、再入力して、$PSVersionTable に表示される値を更新する必要があります。
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/

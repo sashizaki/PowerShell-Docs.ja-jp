@@ -3,15 +3,18 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC レポート サーバーの使用
-ms.openlocfilehash: e239414dc30c7458c509392792d4775d04f2311a
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 49e022d3c3c1e117eac4cb3c874ca8dcfe628237
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="using-a-dsc-report-server"></a>DSC レポート サーバーの使用
 
 > 適用先: Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能が提供される予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
 
 >**注:** このトピックで説明しているレポート サーバーは、PowerShell 4.0 では使用できません。
 

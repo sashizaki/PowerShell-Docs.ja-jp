@@ -3,15 +3,18 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成名を使用したプル クライアントのセットアップ
-ms.openlocfilehash: dd0526b118b404854b1e9b445ca50bdaafdd01c7
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7c8f204cc646e52ad5e953d6c7ad9e4e906d8a5b
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="setting-up-a-pull-client-using-configuration-names"></a>構成名を使用したプル クライアントのセットアップ
 
 > 適用先: Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能が提供される予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
 
 各ターゲット ノードに対し、プル モードを使用するように指示し、プル サーバーに接続して構成を取得するための URL を指定する必要があります。
 これを行うには、必要な情報を備えるようにローカル構成マネージャー (LCM) を構成する必要があります。

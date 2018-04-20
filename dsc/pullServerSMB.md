@@ -1,17 +1,20 @@
 ---
-ms.date: 06/12/2017
+ms.date: 04/11/2018
 ms.topic: conceptual
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC SMB プル サーバーのセットアップ
-ms.openlocfilehash: e9228c050d6f496e30e94404a564ed2e425a5412
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: e4e313746e95af86c5d17a8de0549451b1399b6c
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>DSC SMB プル サーバーのセットアップ
 
 >適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
+
+> [!IMPORTANT]
+> プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能が提供される予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
 
 DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) プル サーバーは、DSC 構成ファイルと DSC リソースを必要なときにターゲット ノードに提供する SMB ファイル共有をホストするコンピューターです。
 

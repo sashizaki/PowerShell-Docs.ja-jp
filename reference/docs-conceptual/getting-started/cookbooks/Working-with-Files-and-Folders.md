@@ -3,28 +3,28 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: ファイルとフォルダーの操作
 ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: e47ea00c9d90d7e04a7af0cb1348849410a6e357
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 6b1fcd438570c8708aa87e4b213f33474921d5f8
+ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/16/2018
 ---
 # <a name="working-with-files-and-folders"></a>ファイルとフォルダーの操作
 
-Windows PowerShell ドライブ間を移動したり、Windows PowerShell ドライブ上の項目を操作したりすることは、Windows の物理ディスク ドライブ上のファイルやフォルダーを操作することと似ています。 このセクションでは、ファイルとフォルダーを操作するための特定のタスクの処理方法について説明します。
+Windows PowerShell ドライブ間を移動したり、Windows PowerShell ドライブ上の項目を操作したりすることは、Windows の物理ディスク ドライブ上のファイルやフォルダーを操作することと似ています。 このセクションでは、PowerShell を使用して特定のファイルとフォルダーを操作するタスクについて説明します。
 
 ### <a name="listing-all-the-files-and-folders-within-a-folder"></a>フォルダー内のすべてのファイルとフォルダーの一覧表示
 
 **Get-ChildItem** を使用することにより、フォルダー内のすべての項目を直接取得することができます。 非表示の項目やシステム項目を表示するには、オプションの **Force** パラメーターを追加します。 たとえば、このコマンドは、Windows PowerShell ドライブ C (Windows の物理ドライブ C と同じ) に直接含まれるコンテンツを表示します。
 
 ```powershell
-Get-ChildItem -Force C:\
+Get-ChildItem -Path C:\ -Force
 ```
 
 このコマンドは、Cmd.exe の **DIR** コマンドや UNIX シェルの **ls** を使用したときと同様に、直接含まれている項目のみを一覧表示します。 内包されている項目を表示するには、**Recurse** パラメーターも指定する必要があります。 (完了までにかなりの時間がかかることがあります。)C ドライブ上のすべての項目を一覧表示するには、次のように入力します。
 
 ```powershell
-Get-ChildItem -Force C:\ -Recurse
+Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
 **Get-ChildItem** は、**Path**、**Filter**、**Include**、**Exclude** の各パラメーターを使用して項目をフィルター処理できますが、通常、これらは名前にのみ基づいています。 **Where-Object** を使用することにより、項目の他のプロパティに基づいた複雑なフィルター処理を実行できます。
@@ -40,13 +40,13 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 コピーは **Copy-Item** を使用して行われます。 次のコマンドは、C:\\boot.ini to C:\\boot.bak にバックアップします。
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
 ```
 
-コピー先のファイルが既に存在する場合、コピー操作は失敗します。 既存のコピー先ファイルを上書きするには、Force パラメーターを使用します。
+コピー先のファイルが既に存在する場合、コピー操作は失敗します。 既存のコピー先ファイルを上書きするには、**Force** パラメーターを使用します。
 
 ```powershell
-Copy-Item -Path c:\boot.ini -Destination c:\boot.bak -Force
+Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
 ```
 
 このコマンドは、コピー先が読み取り専用である場合にも使用できます。
@@ -54,19 +54,19 @@ Copy-Item -Path c:\boot.ini -Destination c:\boot.bak -Force
 フォルダーのコピーも同様に動作します。 次のコマンドでは、フォルダー C:\\temp\\test1 を新しいフォルダー c:\\temp\\DeleteMe に再帰的にコピーします。
 
 ```powershell
-Copy-Item C:\temp\test1 -Recurse c:\temp\DeleteMe
+Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 ```
 
 選択した項目をコピーすることもできます。 次のコマンドでは、c:\\data 内の任意の場所に格納されているすべての .txt ファイルを c:\\temp\\text にコピーします。
 
 ```powershell
-Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination c:\temp\text
+Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
 ファイル システムのコピー操作には、他のツールを使用することもできます。 XCOPY、ROBOCOPY、および COM オブジェクト (**Scripting.FileSystemObject** など) はすべて Windows PowerShell で動作します。 たとえば、Windows Script Host の **Scripting.FileSystem COM** クラスを使用して、C:\\boot.ini to C:\\boot.bak にバックアップするには、次のように入力します。
 
 ```powershell
-(New-Object -ComObject Scripting.FileSystemObject).CopyFile('c:\boot.ini', 'c:\boot.bak')
+(New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
 ```
 
 ### <a name="creating-files-and-folders"></a>ファイルとフォルダーの作成
@@ -90,7 +90,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 内包されている項目を削除するには、**Remove-Item** を使用します。ただし、その項目に他の何らかの項目が含まれている場合、削除の確認を求められます。 たとえば、他の項目を含むフォルダー C:\\temp\\DeleteMe を削除しようとすると、フォルダーが削除される前に、Windows PowerShell から次のような削除の確認メッセージが表示されます。
 
 ```
-Remove-Item C:\temp\DeleteMe
+Remove-Item -Path C:\temp\DeleteMe
 
 Confirm
 The item at C:\temp\DeleteMe has children and the -recurse parameter was not
@@ -103,7 +103,7 @@ sure you want to continue?
 内包されている項目ごとに削除の確認が行われないようにする場合は、**Recurse** パラメーターを使用します。
 
 ```powershell
-Remove-Item C:\temp\DeleteMe -Recurse
+Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
 ### <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Windows のアクセス可能なドライブとしてのローカル フォルダーのマッピング
