@@ -369,7 +369,7 @@ sudo yum remove powershell
 
 ## <a name="opensuse-422"></a>OpenSUSE 42.2
 
-> **注:**PowerShell Core をインストールすると、`zypper` から次のエラーが報告されることがあります。
+> **注:** PowerShell Core をインストールすると、`zypper` から次のエラーが報告されることがあります。
 >
 > ```text
 > Problem: nothing provides libcurl needed by powershell-6.0.1-1.rhel.7.x86_64
