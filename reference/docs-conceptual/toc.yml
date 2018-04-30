@@ -9,10 +9,12 @@
           items:
             - name: Windows への PowerShell Core のインストール
               href: setup/Installing-PowerShell-Core-on-Windows.md
-            - name: macOS および Linux への PowerShell Core のインストール
-              href: setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
+            - name: Linux への PowerShell Core のインストール
+              href: setup/Installing-PowerShell-Core-on-Linux.md
+            - name: macOS への PowerShell Core のインストール
+              href: setup/Installing-PowerShell-Core-on-macOS.md
             - name: ARM 上の PowerShell Core
-              href: PowerShell-Core-on-ARM.md
+              href: setup/PowerShell-Core-on-ARM.md
         - name: Windows PowerShell
           href: ''
           items:
@@ -137,15 +139,15 @@
         - name: Web アクセス
           href: ''
           items:
-            - name: Windows PowerShell Web Access の承認規則とセキュリティ機能
+            - name: 承認規則とセキュリティ機能
               href: core-powershell/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
-            - name: Windows PowerShell Web Access のインストールと使用
+            - name: インストール
               href: core-powershell/web-access/install-and-use-windows-powershell-web-access.md
-            - name: Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
+            - name: アクセスに関する問題のトラブルシューティング
               href: core-powershell/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
             - name: Windows PowerShell Web Access のアンインストール
               href: core-powershell/web-access/uninstall-windows-powershell-web-access.md
-            - name: Web ベースの Windows PowerShell コンソールの使用
+            - name: Web ベースの PowerShell コンソールの使用
               href: core-powershell/web-access/use-the-web-based-windows-powershell-console.md
         - name: ワークフロー ガイド
           href: core-powershell/workflows-guide.md
