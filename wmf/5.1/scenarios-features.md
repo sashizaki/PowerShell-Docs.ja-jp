@@ -4,33 +4,35 @@ author: JKeithB
 ms.topic: reference
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 の新しいシナリオと機能
-ms.openlocfilehash: f0e50fc87208d6ee9edba9c660b9243621f02bb4
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 8edea99731df44349c8bcff113a8163ba5401ccd
+ms.sourcegitcommit: a9aa5e8d0fab0cbb3e4e6cff0e3ca8c0339ab4e6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 04/27/2018
 ---
-# <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 の新しいシナリオと機能 #
+# <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 の新しいシナリオと機能
 
 > 注意: この情報は暫定版であり、変更することがあります。
 
-## <a name="powershell-editions"></a>PowerShell のエディション ##
+## <a name="powershell-editions"></a>PowerShell のエディション
+
 PowerShell は、バージョン 5.1 以降、機能セットとプラットフォーム互換性が異なるさまざまなエディションが提供されるようになりました。
 
 - **デスクトップ エディション:** .NET Framework 上に構築されており、Server Core や Windows Desktop などの Windows の完全エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
 - **コア エディション:** .NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
 
 **PowerShell のエディションの使用に関する詳細**
-- [PowerShell の実行エディションを特定する]()
-- [特定の PowerShell バージョンに対するモジュールの互換性を宣言する]()
-- [CompatiblePSEditions で Get-Module の結果をフィルター処理する]()
-- [互換性のある PowerShell のエディションで実行しない場合はスクリプトを実行させない]()
+
+- [$PSVersionTable を使用して PowerShell の実行エディションを特定する](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
+- [PSEdition パラメーターを使用して CompatiblePSEditions で Get-Module の結果をフィルター処理する](/powershell/module/microsoft.powershell.core/get-module)
+- [互換性のある PowerShell のエディションで実行しない場合はスクリプトを実行させない](/powershell/gallery/psget/script/scriptwithpseditionsupport)
+- [特定の PowerShell バージョンに対するモジュールの互換性を宣言する](/powershell/gallery/psget/module/modulewithpseditionsupport)
 
 ## <a name="catalog-cmdlets"></a>カタログ コマンドレット
 
-[Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh847877.aspx) モジュールに新しいコマンドレットが 2 つ追加されました。Windows カタログ ファイルを生成し、検証するコマンドレットです。
+[Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) モジュールに新しいコマンドレットが 2 つ追加されました。Windows カタログ ファイルを生成し、検証するコマンドレットです。
 
-###<a name="new-filecatalog"></a>New-FileCatalog
+### <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
 
 New-FileCatalog は、一連のフォルダーやファイルに対して Windows カタログ ファイルを作成します。
@@ -41,6 +43,7 @@ New-FileCatalog は、一連のフォルダーやファイルに対して Window
 ```powershell
 New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersion <int>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
+
 カタログ バージョン 1 と 2 がサポートされています。
 バージョン 1 は SHA1 ハッシュ アルゴリズムを使用して、バージョン 2 は SHA256 ハッシュ アルゴリズムを使用してファイル ハッシュを作成します。
 *Windows Server 2008 R2* と *Windows 7* はカタログ バージョン 2 に対応していません。
@@ -56,8 +59,7 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 
 カタログ ファイルの整合性を検証するために (上記の例では Pester.cat)、[Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) コマンドレットで署名します。
 
-
-###<a name="test-filecatalog"></a>Test-FileCatalog
+### <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
 
 Test-FileCatalog は、一連のフォルダーを表すカタログを検証します。
@@ -74,8 +76,8 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 *署名*プロパティには、カタログの署名ステータスも表示されます。これは、カタログ ファイルで [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) コマンドレットを呼び出すことと同じです。
 *-FilesToSkip* パラメーターを利用し、検証中にファイルをスキップすることもできます。
 
+## <a name="module-analysis-cache"></a>モジュール分析キャッシュ
 
-## <a name="module-analysis-cache"></a>モジュール分析キャッシュ ##
 WMF 5.1 以降の PowerShell では、エクスポートするコマンドなど、モジュールに関するデータのキャッシュに使用されるファイルを制御できます。
 
 既定では、このキャッシュは `${env:LOCALAPPDATA}\Microsoft\Windows\PowerShell\ModuleAnalysisCache` ファイルに格納されます。
@@ -106,23 +108,22 @@ $env:PSDisableModuleAnalysisCacheCleanup = 1
 
 この環境変数の設定は、現在のプロセスで直ちに有効になります。
 
-##<a name="specifying-module-version"></a>モジュールのバージョンの指定
+## <a name="specifying-module-version"></a>モジュールのバージョンの指定
 
 WMF 5.1 では、`using module` は PowerShell の他のモジュール関連構造と同様に動作します。
 以前は、モジュールの特定のバージョンを指定する方法はありませんでした。複数のバージョンが存在する場合、エラーが発生しました。
 
-
 WMF 5.1 では次のようになります。
 
-* [ModuleSpecification コンストラクター (Hashtable)](https://msdn.microsoft.com/library/jj136290) を使用できます。
+- [ModuleSpecification コンストラクター (Hashtable)](https://msdn.microsoft.com/library/jj136290) を使用できます。
 このハッシュ テーブルの形式は `Get-Module -FullyQualifiedName` と同じです。
 
 **例:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
 
-* モジュールに複数のバージョンがある場合、PowerShell は**同じ解決ロジック**を `Import-Module` として使用し、エラーを返しません。`Import-Module` および `Import-DscResource` と同じ動作です。
+- モジュールに複数のバージョンがある場合、PowerShell は**同じ解決ロジック**を `Import-Module` として使用し、エラーを返しません。`Import-Module` および `Import-DscResource` と同じ動作です。
 
+## <a name="improvements-to-pester"></a>Pester の機能強化
 
-##<a name="improvements-to-pester"></a>Pester の機能強化
 WMF 5.1 では、PowerShell で出荷される Pester のバージョンが 3.3.5 から 3.4.0 に更新され、コミット https://github.com/pester/Pester/pull/484/commits/3854ae8a1f215b39697ac6c2607baf42257b102e が追加されました。Nano Server での Pester の動作を改善します。
 
 バージョン 3.3.5 から 3.4.0 の変更点については、https://github.com/pester/Pester/blob/master/CHANGELOG.md の ChangeLog.md ファイルを参照してください。

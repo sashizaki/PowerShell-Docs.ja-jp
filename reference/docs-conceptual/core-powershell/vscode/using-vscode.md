@@ -8,7 +8,8 @@ Windows で Visual Studio Code を使用する場合、Windows 10 を使用し�
 開始する前に、システムに PowerShell があることを確認してください。
 Windows、macOS、および Linux 上の最近のワークロードに対しては、次を参照してください。
 
-- [macOS および Linux への PowerShell Core のインストール][install-pscore-linux]
+- [Linux への PowerShell Core のインストール][install-pscore-linux]
+- [macOS への PowerShell Core のインストール][install-pscore-macos]
 - [Windows への PowerShell Core のインストール][install-pscore-windows]
 
 従来の Windows PowerShell ワークロードに対しては、「[Windows PowerShell のインストール][install-winps]」を参照してください。
@@ -171,7 +172,8 @@ Visual Studio Code 用の PowerShell の拡張機能を使用開始するのに�
 - [Visual Studio Code での PowerShell スクリプトのデバッグ – パート 2][debugging-part2]
 
 [ise]: ../ise-guide.md
-[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-macOS-and-Linux.md
+[install-pscore-linux]:  ../../setup/Installing-PowerShell-Core-on-Linux.md
+[install-pscore-macos]:  ../../setup/Installing-PowerShell-Core-on-macOS.md
 [install-pscore-windows]: ../../setup/Installing-PowerShell-Core-on-Windows.md
 [install-winps]: ../../setup/Installing-Windows-PowerShell.md
 [ps-extension]:https://blogs.msdn.microsoft.com/cdndevs/2015/12/11/visual-studio-code-powershell-extension/
