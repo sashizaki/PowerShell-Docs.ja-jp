@@ -34,30 +34,40 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
 
 ## <a name="setup-on-windows-machine"></a>Windows コンピューターでのセットアップ
 
-1. [Windows 向けの最新版 PowerShell Core をインストールする][]
+1. [Windows 向け PowerShell Core] の最新版をインストールします
     - New-PSSession のパラメーター セットを見れば、SSH リモート処理に対応しているか確認できます
+
     ```powershell
     PS> Get-Command New-PSSession -syntax
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
+
 1. GitHub から最新の [Win32 OpenSSH] ビルドをインストールします (インストール方法は[ここ]で確認できます)
 1. Win32 OpenSSH をインストールした場所で sshd_config ファイルを編集します
     - パスワード認証が有効になっていることを確認します
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - PowerShell サブシステム エントリを追加し、自分が使用するバージョンのパスに `c:/program files/powershell/6.0.0/pwsh.exe` を変更します
-    ```none
+
+    ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
     ```
+
     - 必要であればキー認証を有効にします
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. sshd サービスを再起動します
+
     ```powershell
     Restart-Service sshd
     ```
+
 1. OpenSSH がインストールされているパスをパス環境変数に追加します
     - `C:\Program Files\OpenSSH\` の行に沿ったものになります
     - これで ssh.exe の場所が認識されます
@@ -66,24 +76,33 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
 
 1. GitHub から最新の [PowerShell for Linux] ビルドをインストールします
 1. 必要に応じて [Ubuntu SSH] をインストールします
+
     ```bash
     sudo apt install openssh-client
     sudo apt install openssh-server
     ```
+
 1. /etc/ssh で sshd_config ファイルを編集します
     - パスワード認証が有効になっていることを確認します
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - PowerShell サブシステム エントリを追加します
-    ```none
+
+    ```
     Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
     ```
+
     - 必要であればキー認証を有効にします
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. sshd サービスを再起動します
+
     ```bash
     sudo service sshd restart
     ```
@@ -98,22 +117,31 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
       - 適切なユーザーにアクセスを許可します
 1. `/private/etc/ssh/sshd_config` で `sshd_config` ファイルを編集します
     - お気に入りのエディターを使用します
+
     ```bash
     sudo nano /private/etc/ssh/sshd_config
     ```
+
     - パスワード認証が有効になっていることを確認します
-    ```none
+
+    ```
     PasswordAuthentication yes
     ```
+
     - PowerShell サブシステム エントリを追加します
-    ```none
+
+    ```
     Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
     ```
+
     - 必要であればキー認証を有効にします
-    ```none
+
+    ```
     PubkeyAuthentication yes
     ```
+
 1. sshd サービスを再起動します
+
     ```bash
     sudo launchctl stop com.openssh.sshd
     sudo launchctl start com.openssh.sshd
@@ -213,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo コマンドは、Linux コンピューターへのリモート セッションでは機能しません。
 
-[PowerShell for Windows]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[Windows 向け PowerShell Core]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH
 [ここ]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [PowerShell for Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[PowerShell for MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#macos-1012
+[PowerShell for MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
