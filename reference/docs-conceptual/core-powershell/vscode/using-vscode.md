@@ -25,7 +25,7 @@ Windows、macOS、および Linux 上の最近のワークロードに対して�
 > [!IMPORTANT]
 > macOS で、PowerShell の拡張機能用が正常に動作するには、OpenSSL をインストールする必要があります。
 > これには、[Homebrew](http://brew.sh/) をインストールして、`brew install openssl` を実行するのが最も簡単です。
-> これで、PowerShell の拡張機能を正常に読み込めるようになります。
+> これで、VS Code を使用して PowerShell 拡張機能を正常に読み込むことができます。
 
 - **Windows**: 「[Running VS Code on Windows](https://code.visualstudio.com/docs/setup/windows)」 (Windows 上での VS コードの実行) ページのインストール手順に従います。
 
@@ -58,7 +58,7 @@ Windows、macOS、および Linux 上の最近のワークロードに対して�
 Visual Studio Code で PowerShell の特定のインストール バージョンを使用する場合、ユーザー設定ファイルに新しい変数を追加する必要があります。
 
 1. **[ファイル]、[基本設定]、[設定]** の順にクリックします。
-1. 2 つの編集ウィンドウが表示されます。
+1. 2 つのエディター ウィンドウが表示されます。
    一番右側のウィンドウの (`settings.json`)、2 つの中かっこ (`{` と `}`) の間に、OS に適した設定を追加し、*<version>* をインストール済みの PowerShell のバージョンに置き換えます。
 
   ```json
@@ -96,7 +96,7 @@ Visual Studio Code には、次の構成設定をお勧めします。
 
 Visual Studio Code バージョン 1.9 以降では、PowerShell スクリプトを含むフォルダーを開かずに PowerShell スクリプトをデバッグできます。
 単純に、**[ファイル]、[ファイルを開く]** の順にクリックして PowerShell スクリプト ファイルを開き、行にブレークポイントを設定し (F9 キーを押す)、F5 キーを押してデバッグを開始します。
-[Debug actions]\(デバッグ アクション\) ウィンドウが表示されます。これでは、デバッガーを中断したり、デバッグをステップ実行したり、再開したり、停止できます。
+[Debug actions]\(デバッグ アクション\) ウィンドウが表示されます。ここでは、デバッガーを中断したり、デバッグのステップ実行、再開、停止を行ったりすることができます。
 
 ### <a name="workspace-debugging"></a>ワークスペースを使用したデバッグ
 
