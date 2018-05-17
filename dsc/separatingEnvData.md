@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データと環境データの分離
-ms.openlocfilehash: c89e26105611eae59a926be1432079913c40671f
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 3308b83555b3a917e2aa993efcbfa0b946e44048
+ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/10/2018
 ---
 # <a name="separating-configuration-and-environment-data"></a>構成データと環境データの分離
 
@@ -90,7 +90,7 @@ Mode                LastWriteTime         Length Name
 
  ### <a name="configuration-data-file"></a>構成データ ファイル
 
-開発環境と運用環境を、`DevProdEnvData.psd1` という名前のファイルに次のように定義します。
+開発環境と運用環境のデータを、`DevProdEnvData.psd1` という名前のファイルに次のように定義します。
 
 ```powershell
 @{
