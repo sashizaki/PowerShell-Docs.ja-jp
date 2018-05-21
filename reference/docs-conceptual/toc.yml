@@ -154,14 +154,20 @@
     - name: 新機能
       href: ''
       items:
-        - name: PowerShell の新機能
-          href: whats-new/what-s-new-with-powershell.md
-        - name: Windows PowerShell 5.0 の新機能
-          href: whats-new/what-s-new-in-windows-powershell-50.md
-        - name: PowerShell 5.0 ISE の新機能
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
         - name: PowerShell Core 6.0 の新機能
           href: whats-new/what-s-new-in-powershell-core-60.md
+          items:
+            - name: PowerShell Core 6.0 の破壊的変更
+              href: whats-new/breaking-changes-ps6.md
+            - name: PowerShell Core 6.0 の既知の問題
+              href: whats-new/known-issues-ps6.md
+        - name: PowerShell 5.0 の新機能
+          href: whats-new/what-s-new-with-powershell.md
+          items:
+            - name: Windows PowerShell 5.0 の新機能
+              href: whats-new/what-s-new-in-windows-powershell-50.md
+            - name: PowerShell 5.0 ISE の新機能
+              href: whats-new/what-s-new-in-the-powershell-50-ise.md
     - name: PowerShell Core のサポート ライフサイクル
       href: PowerShell-Core-Support.md
     - name: 詳細情報
