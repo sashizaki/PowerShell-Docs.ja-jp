@@ -1,19 +1,18 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MSFT_DSCLocalConfigurationManager クラスの ResourceGet メソッド
-ms.openlocfilehash: 3fd7ae54eb3ae782156dc4619ee0b6905dfb1212
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 30cbaa907d4dc3a921c9e5fe61ffddc5d61c2347
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="fea08-103">MSFT_DSCLocalConfigurationManager クラスの ResourceGet メソッド</span><span class="sxs-lookup"><span data-stu-id="fea08-103">ResourceGet method of the MSFT_DSCLocalConfigurationManager class</span></span>
+# <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="dde24-103">MSFT_DSCLocalConfigurationManager クラスの ResourceGet メソッド</span><span class="sxs-lookup"><span data-stu-id="dde24-103">ResourceGet method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-<span data-ttu-id="fea08-104">DSC リソースの **Get** メソッドを直接呼び出します。</span><span class="sxs-lookup"><span data-stu-id="fea08-104">Directly calls the **Get** method of a DSC resource.</span></span>
+<span data-ttu-id="dde24-104">DSC リソースの **Get** メソッドを直接呼び出します。</span><span class="sxs-lookup"><span data-stu-id="dde24-104">Directly calls the **Get** method of a DSC resource.</span></span>
 
-<a name="syntax"></a><span data-ttu-id="fea08-105">構文</span><span class="sxs-lookup"><span data-stu-id="fea08-105">Syntax</span></span>
+<a name="syntax"></a><span data-ttu-id="dde24-105">構文</span><span class="sxs-lookup"><span data-stu-id="dde24-105">Syntax</span></span>
 ------
 
 ```mof
@@ -25,34 +24,34 @@ uint32 ResourceGet(
 );
 ```
 
-<a name="parameters"></a><span data-ttu-id="fea08-106">パラメーター</span><span class="sxs-lookup"><span data-stu-id="fea08-106">Parameters</span></span>
+<a name="parameters"></a><span data-ttu-id="dde24-106">パラメーター</span><span class="sxs-lookup"><span data-stu-id="dde24-106">Parameters</span></span>
 ----------
 
-<span data-ttu-id="fea08-107">*ResourceType* \[in\] 呼び出すリソースの名前。</span><span class="sxs-lookup"><span data-stu-id="fea08-107">*ResourceType* \[in\] The name of the resource to call.</span></span>
+<span data-ttu-id="dde24-107">*ResourceType* \[in\] 呼び出すリソースの名前。</span><span class="sxs-lookup"><span data-stu-id="dde24-107">*ResourceType* \[in\] The name of the resource to call.</span></span>
 
-<span data-ttu-id="fea08-108">*ModuleName* \[in\] 呼び出すリソースを含むモジュールの名前。</span><span class="sxs-lookup"><span data-stu-id="fea08-108">*ModuleName* \[in\] The name of the module that contains the resource to call.</span></span>
+<span data-ttu-id="dde24-108">*ModuleName* \[in\] 呼び出すリソースを含むモジュールの名前。</span><span class="sxs-lookup"><span data-stu-id="dde24-108">*ModuleName* \[in\] The name of the module that contains the resource to call.</span></span>
 
-<span data-ttu-id="fea08-109">*resourceProperty* \[in\] ハッシュ テーブルで、リソースのプロパティ名と値を、それぞれキーと値として指定します。</span><span class="sxs-lookup"><span data-stu-id="fea08-109">*resourceProperty* \[in\] Specifies the resource property name and its value in a hash table as key and value, respectively.</span></span> <span data-ttu-id="fea08-110">リソースのプロパティと種類を検出するには、[Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="fea08-110">Use the [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) cmdlet to discover resource properties and their types.</span></span>
+<span data-ttu-id="dde24-109">*resourceProperty* \[in\] ハッシュ テーブルで、リソースのプロパティ名と値を、それぞれキーと値として指定します。</span><span class="sxs-lookup"><span data-stu-id="dde24-109">*resourceProperty* \[in\] Specifies the resource property name and its value in a hash table as key and value, respectively.</span></span> <span data-ttu-id="dde24-110">リソースのプロパティと種類を検出するには、[Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="dde24-110">Use the [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) cmdlet to discover resource properties and their types.</span></span>
 
-<span data-ttu-id="fea08-111">*configurations* \[out\] 制御が戻ったとき、その構成の埋め込みインスタンスが含まれます。</span><span class="sxs-lookup"><span data-stu-id="fea08-111">*configurations* \[out\] On return, contains an embedded instance of the configurations.</span></span>
+<span data-ttu-id="dde24-111">*configurations* \[out\] 制御が戻ったとき、その構成の埋め込みインスタンスが含まれます。</span><span class="sxs-lookup"><span data-stu-id="dde24-111">*configurations* \[out\] On return, contains an embedded instance of the configurations.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="fea08-112">戻り値</span><span class="sxs-lookup"><span data-stu-id="fea08-112">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="dde24-112">戻り値</span><span class="sxs-lookup"><span data-stu-id="dde24-112">Return value</span></span>
 ------------
 
-<span data-ttu-id="fea08-113">成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。</span><span class="sxs-lookup"><span data-stu-id="fea08-113">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="dde24-113">成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。</span><span class="sxs-lookup"><span data-stu-id="dde24-113">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="fea08-114">コメント</span><span class="sxs-lookup"><span data-stu-id="fea08-114">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="dde24-114">コメント</span><span class="sxs-lookup"><span data-stu-id="dde24-114">Remarks</span></span>
 
-<span data-ttu-id="fea08-115">これは静的メソッドです。</span><span class="sxs-lookup"><span data-stu-id="fea08-115">This is a static method.</span></span>
+<span data-ttu-id="dde24-115">これは静的メソッドです。</span><span class="sxs-lookup"><span data-stu-id="dde24-115">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="fea08-116">要件</span><span class="sxs-lookup"><span data-stu-id="fea08-116">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="dde24-116">要件</span><span class="sxs-lookup"><span data-stu-id="dde24-116">Requirements</span></span>
 ------------
-><span data-ttu-id="fea08-117">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="fea08-117">**MOF:** DscCore.mof</span></span>
+><span data-ttu-id="dde24-117">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="dde24-117">**MOF:** DscCore.mof</span></span>
 
-><span data-ttu-id="fea08-118">**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="fea08-118">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
-
-
-## <a name="see-also"></a><span data-ttu-id="fea08-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="fea08-119">See also</span></span>
+><span data-ttu-id="dde24-118">**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="dde24-118">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[<span data-ttu-id="fea08-120">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="fea08-120">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="dde24-119">関連項目</span><span class="sxs-lookup"><span data-stu-id="dde24-119">See also</span></span>
+
+
+[<span data-ttu-id="dde24-120">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="dde24-120">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)

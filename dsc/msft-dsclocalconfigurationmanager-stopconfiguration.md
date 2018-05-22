@@ -1,19 +1,18 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MSFT_DSCLocalConfigurationManager クラスの StopConfiguration メソッド
-ms.openlocfilehash: dadb6912af2e4450381958ed465799056da49946
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: aaed29cb81e2079c4673b621b81c52e109aa7b48
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="05255-103">MSFT_DSCLocalConfigurationManager クラスの StopConfiguration メソッド</span><span class="sxs-lookup"><span data-stu-id="05255-103">StopConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
+# <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a><span data-ttu-id="b9700-103">MSFT_DSCLocalConfigurationManager クラスの StopConfiguration メソッド</span><span class="sxs-lookup"><span data-stu-id="b9700-103">StopConfiguration method of the MSFT_DSCLocalConfigurationManager class</span></span>
 
-<span data-ttu-id="05255-104">進行中の構成の変更を停止します。</span><span class="sxs-lookup"><span data-stu-id="05255-104">Stops the configuration change that is in progress.</span></span>
+<span data-ttu-id="b9700-104">進行中の構成の変更を停止します。</span><span class="sxs-lookup"><span data-stu-id="b9700-104">Stops the configuration change that is in progress.</span></span>
 
-<a name="syntax"></a><span data-ttu-id="05255-105">構文</span><span class="sxs-lookup"><span data-stu-id="05255-105">Syntax</span></span>
+<a name="syntax"></a><span data-ttu-id="b9700-105">構文</span><span class="sxs-lookup"><span data-stu-id="b9700-105">Syntax</span></span>
 ------
 
 ```mof
@@ -22,28 +21,28 @@ uint32 StopConfiguration(
 );
 ```
 
-<a name="parameters"></a><span data-ttu-id="05255-106">パラメーター</span><span class="sxs-lookup"><span data-stu-id="05255-106">Parameters</span></span>
+<a name="parameters"></a><span data-ttu-id="b9700-106">パラメーター</span><span class="sxs-lookup"><span data-stu-id="b9700-106">Parameters</span></span>
 ----------
 
-<span data-ttu-id="05255-107">*force* \[in\] **true** の場合、構成を強制的に中止します。</span><span class="sxs-lookup"><span data-stu-id="05255-107">*force* \[in\] **true** to force the configuration to stop.</span></span>
+<span data-ttu-id="b9700-107">*force* \[in\] **true** の場合、構成を強制的に中止します。</span><span class="sxs-lookup"><span data-stu-id="b9700-107">*force* \[in\] **true** to force the configuration to stop.</span></span>
 
-## <a name="return-value"></a><span data-ttu-id="05255-108">戻り値</span><span class="sxs-lookup"><span data-stu-id="05255-108">Return value</span></span>
+## <a name="return-value"></a><span data-ttu-id="b9700-108">戻り値</span><span class="sxs-lookup"><span data-stu-id="b9700-108">Return value</span></span>
 ------------
 
-<span data-ttu-id="05255-109">成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。</span><span class="sxs-lookup"><span data-stu-id="05255-109">Returns zero on success; otherwise returns an error code.</span></span>
+<span data-ttu-id="b9700-109">成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。</span><span class="sxs-lookup"><span data-stu-id="b9700-109">Returns zero on success; otherwise returns an error code.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="05255-110">コメント</span><span class="sxs-lookup"><span data-stu-id="05255-110">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="b9700-110">コメント</span><span class="sxs-lookup"><span data-stu-id="b9700-110">Remarks</span></span>
 
-<span data-ttu-id="05255-111">これは静的メソッドです。</span><span class="sxs-lookup"><span data-stu-id="05255-111">This is a static method.</span></span>
+<span data-ttu-id="b9700-111">これは静的メソッドです。</span><span class="sxs-lookup"><span data-stu-id="b9700-111">This is a static method.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="05255-112">要件</span><span class="sxs-lookup"><span data-stu-id="05255-112">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="b9700-112">要件</span><span class="sxs-lookup"><span data-stu-id="b9700-112">Requirements</span></span>
 ------------
-><span data-ttu-id="05255-113">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="05255-113">**MOF:** DscCore.mof</span></span>
+><span data-ttu-id="b9700-113">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="b9700-113">**MOF:** DscCore.mof</span></span>
 
-><span data-ttu-id="05255-114">**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="05255-114">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
-
-
-## <a name="see-also"></a><span data-ttu-id="05255-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="05255-115">See also</span></span>
+><span data-ttu-id="b9700-114">**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="b9700-114">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
 
 
-[<span data-ttu-id="05255-116">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="05255-116">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
+## <a name="see-also"></a><span data-ttu-id="b9700-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="b9700-115">See also</span></span>
+
+
+[<span data-ttu-id="b9700-116">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="b9700-116">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)

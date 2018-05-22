@@ -1,15 +1,14 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, PowerShell, 構成, セットアップ
 title: プル サーバーからノード情報を照会するための DSC 関数
-ms.openlocfilehash: 5c10eefe9ded4fe6339c4e6252cc189bcd793978
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 069fc79a79fbd5f75bcce27f7f0bd95af0d7b1ad
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="dsc-function-to-query-node-information-from-pull-server"></a><span data-ttu-id="e06d7-103">プル サーバーからノード情報を照会するための DSC 関数</span><span class="sxs-lookup"><span data-stu-id="e06d7-103">DSC function to query node information from pull server.</span></span>
+# <a name="dsc-function-to-query-node-information-from-pull-server"></a><span data-ttu-id="43504-103">プル サーバーからノード情報を照会するための DSC 関数</span><span class="sxs-lookup"><span data-stu-id="43504-103">DSC function to query node information from pull server.</span></span>
 
 ```powershell
 function QueryNodeInformation
@@ -38,9 +37,9 @@ Param (
 }
 ```
 
-<span data-ttu-id="e06d7-104">`Uri` パラメーターをプル サーバーの URI に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="e06d7-104">Replace the `Uri` parameter with the URI for your pull server.</span></span> <span data-ttu-id="e06d7-105">ノードの情報を XML 形式にする場合は、`ContentType` を `application/xml` に設定します。</span><span class="sxs-lookup"><span data-stu-id="e06d7-105">If you want the node information in XML format, set `ContentType` to `application/xml`.</span></span>
+<span data-ttu-id="43504-104">`Uri` パラメーターをプル サーバーの URI に置き換えます。</span><span class="sxs-lookup"><span data-stu-id="43504-104">Replace the `Uri` parameter with the URI for your pull server.</span></span> <span data-ttu-id="43504-105">ノードの情報を XML 形式にする場合は、`ContentType` を `application/xml` に設定します。</span><span class="sxs-lookup"><span data-stu-id="43504-105">If you want the node information in XML format, set `ContentType` to `application/xml`.</span></span>
 
-<span data-ttu-id="e06d7-106">`$json` パラメーターからノード情報を取得するには、以下を使用します。</span><span class="sxs-lookup"><span data-stu-id="e06d7-106">To retrieve the node information from the `$json` parameter, use the following:</span></span>
+<span data-ttu-id="43504-106">`$json` パラメーターからノード情報を取得するには、以下を使用します。</span><span class="sxs-lookup"><span data-stu-id="43504-106">To retrieve the node information from the `$json` parameter, use the following:</span></span>
 
 ```powershell
 $json = QueryNodeInformation –Uri http://localhost:7070/PSDSCComplianceServer.svc/Status

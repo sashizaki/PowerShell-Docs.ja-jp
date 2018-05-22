@@ -1,24 +1,22 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: 82b8046d5cbb47300f090ce2ffbf3c279ed19458
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 9efc640dfda7e08e59d2c56746facd9658b1f9de
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
-# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a><span data-ttu-id="59840-102">PowerShellGet による PowerShell モジュールの検出、インストール、およびインベントリ</span><span class="sxs-lookup"><span data-stu-id="59840-102">PowerShell Module Discovery, Install and Inventory with PowerShellGet</span></span>
+# <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a><span data-ttu-id="72af3-102">PowerShellGet による PowerShell モジュールの検出、インストール、およびインベントリ</span><span class="sxs-lookup"><span data-stu-id="72af3-102">PowerShell Module Discovery, Install and Inventory with PowerShellGet</span></span>
 
-<span data-ttu-id="59840-103">このリリースの WMF には PowerShellGet が含まれています。</span><span class="sxs-lookup"><span data-stu-id="59840-103">PowerShellGet is included in this release of WMF:</span></span>
--   <span data-ttu-id="59840-104">Find-Module では、-Tag パラメーターを使用してモジュールのメタデータをフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="59840-104">Find-Module can filter on module metadata with the -Tag parameter</span></span>
--   <span data-ttu-id="59840-105">Find-Module では、-Filter パラメーターを使用してリポジトリ固有の検索言語をフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="59840-105">Find-Module can filter on repository-specific search language with the -Filter parameter</span></span>
--   <span data-ttu-id="59840-106">Find-Module では、-Command、-DscResource、および -Includes パラメーターを使用してモジュールのコンテンツに基づいてフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="59840-106">Find-Module can filter based on module contents with the -Command, -DscResource, and -Includes parameters</span></span>
--   <span data-ttu-id="59840-107">Find-DscResource では、リポジトリ内の個々の DSC リソースを検出できます。</span><span class="sxs-lookup"><span data-stu-id="59840-107">Find-DscResource allows discovery of individual DSC resources in repositories</span></span>
--   <span data-ttu-id="59840-108">NuGet によるファイル共有からのインストールおよびファイル共有への発行のサポート</span><span class="sxs-lookup"><span data-stu-id="59840-108">Support for installing from and publishing to file shares with NuGet</span></span>
+<span data-ttu-id="72af3-103">このリリースの WMF には PowerShellGet が含まれています。</span><span class="sxs-lookup"><span data-stu-id="72af3-103">PowerShellGet is included in this release of WMF:</span></span>
+-   <span data-ttu-id="72af3-104">Find-Module では、-Tag パラメーターを使用してモジュールのメタデータをフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="72af3-104">Find-Module can filter on module metadata with the -Tag parameter</span></span>
+-   <span data-ttu-id="72af3-105">Find-Module では、-Filter パラメーターを使用してリポジトリ固有の検索言語をフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="72af3-105">Find-Module can filter on repository-specific search language with the -Filter parameter</span></span>
+-   <span data-ttu-id="72af3-106">Find-Module では、-Command、-DscResource、および -Includes パラメーターを使用してモジュールのコンテンツに基づいてフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="72af3-106">Find-Module can filter based on module contents with the -Command, -DscResource, and -Includes parameters</span></span>
+-   <span data-ttu-id="72af3-107">Find-DscResource では、リポジトリ内の個々の DSC リソースを検出できます。</span><span class="sxs-lookup"><span data-stu-id="72af3-107">Find-DscResource allows discovery of individual DSC resources in repositories</span></span>
+-   <span data-ttu-id="72af3-108">NuGet によるファイル共有からのインストールおよびファイル共有への発行のサポート</span><span class="sxs-lookup"><span data-stu-id="72af3-108">Support for installing from and publishing to file shares with NuGet</span></span>
 
-## <a name="example-commands"></a><span data-ttu-id="59840-109">コマンド例</span><span class="sxs-lookup"><span data-stu-id="59840-109">Example commands</span></span>
+## <a name="example-commands"></a><span data-ttu-id="72af3-109">コマンド例</span><span class="sxs-lookup"><span data-stu-id="72af3-109">Example commands</span></span>
 ```powershell
 \# Find all modules with tags Azure or DSC
 Find-Module -Tag Azure, DSC
@@ -53,10 +51,10 @@ Find-Module -Filter Cookbook -Repository PSGallery
 Find-Module -Filter RBAC -Repository PSGallery
 ```
 
-## <a name="new-features-in-powershellget"></a><span data-ttu-id="59840-110">PowerShellGet の新機能</span><span class="sxs-lookup"><span data-stu-id="59840-110">New features in PowerShellGet</span></span>
--   <span data-ttu-id="59840-111">Windows PowerShell 5.0 以降の Side-by-Side バージョン サポート</span><span class="sxs-lookup"><span data-stu-id="59840-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
--   <span data-ttu-id="59840-112">モジュールの依存関係のインストール サポート</span><span class="sxs-lookup"><span data-stu-id="59840-112">Module dependency installation support</span></span>
--   <span data-ttu-id="59840-113">次の 3 つの新しいコマンドレット</span><span class="sxs-lookup"><span data-stu-id="59840-113">Three new cmdlets</span></span>
-    -   <span data-ttu-id="59840-114">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="59840-114">Get-InstalledModule</span></span>
-    -   <span data-ttu-id="59840-115">Uninstall-Module</span><span class="sxs-lookup"><span data-stu-id="59840-115">Uninstall-Module</span></span>
-    -   <span data-ttu-id="59840-116">Save-Module</span><span class="sxs-lookup"><span data-stu-id="59840-116">Save-Module</span></span>
+## <a name="new-features-in-powershellget"></a><span data-ttu-id="72af3-110">PowerShellGet の新機能</span><span class="sxs-lookup"><span data-stu-id="72af3-110">New features in PowerShellGet</span></span>
+-   <span data-ttu-id="72af3-111">Windows PowerShell 5.0 以降の Side-by-Side バージョン サポート</span><span class="sxs-lookup"><span data-stu-id="72af3-111">Side-by-side version support on Windows PowerShell 5.0 or newer</span></span>
+-   <span data-ttu-id="72af3-112">モジュールの依存関係のインストール サポート</span><span class="sxs-lookup"><span data-stu-id="72af3-112">Module dependency installation support</span></span>
+-   <span data-ttu-id="72af3-113">次の 3 つの新しいコマンドレット</span><span class="sxs-lookup"><span data-stu-id="72af3-113">Three new cmdlets</span></span>
+    -   <span data-ttu-id="72af3-114">Get-InstalledModule</span><span class="sxs-lookup"><span data-stu-id="72af3-114">Get-InstalledModule</span></span>
+    -   <span data-ttu-id="72af3-115">Uninstall-Module</span><span class="sxs-lookup"><span data-stu-id="72af3-115">Uninstall-Module</span></span>
+    -   <span data-ttu-id="72af3-116">Save-Module</span><span class="sxs-lookup"><span data-stu-id="72af3-116">Save-Module</span></span>

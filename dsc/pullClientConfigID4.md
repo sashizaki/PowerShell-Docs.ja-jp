@@ -1,21 +1,20 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ
-ms.openlocfilehash: 7074d842b7b99ef3fb6498b6dbc1e561b14caf16
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: f9bea92f1a2dce94792d72e03bef884d2729f3c0
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
-# <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a><span data-ttu-id="ab00a-103">PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ</span><span class="sxs-lookup"><span data-stu-id="ab00a-103">Setting up a pull client using configuration ID in PowerShell 4.0</span></span>
+# <a name="setting-up-a-pull-client-using-configuration-id-in-powershell-40"></a><span data-ttu-id="1dbb7-103">PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ</span><span class="sxs-lookup"><span data-stu-id="1dbb7-103">Setting up a pull client using configuration ID in PowerShell 4.0</span></span>
 
-><span data-ttu-id="ab00a-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="ab00a-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+><span data-ttu-id="1dbb7-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="1dbb7-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="ab00a-105">各ターゲット ノードに対し、プル モードを使用するように指示し、プル サーバーに接続して構成を取得するための URL を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ab00a-105">Each target node has to be told to use pull mode and given the URL where it can contact the pull server to get configurations.</span></span> <span data-ttu-id="ab00a-106">これを行うには、必要な情報を備えるようにローカル構成マネージャー (LCM) を構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ab00a-106">To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information.</span></span> <span data-ttu-id="ab00a-107">LCM を構成するには、"メタ構成" と呼ばれる特殊な種類の構成を作成します。</span><span class="sxs-lookup"><span data-stu-id="ab00a-107">To configure the LCM, you create a special type of configuration known as a "metaconfiguration".</span></span> <span data-ttu-id="ab00a-108">LCM の構成の詳細については、「[Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)](metaConfig4.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="ab00a-108">For more information about configuring the LCM, see [Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager](metaConfig4.md)</span></span>
+<span data-ttu-id="1dbb7-105">各ターゲット ノードに対し、プル モードを使用するように指示し、プル サーバーに接続して構成を取得するための URL を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-105">Each target node has to be told to use pull mode and given the URL where it can contact the pull server to get configurations.</span></span> <span data-ttu-id="1dbb7-106">これを行うには、必要な情報を備えるようにローカル構成マネージャー (LCM) を構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-106">To do this, you have to configure the Local Configuration Manager (LCM) with the necessary information.</span></span> <span data-ttu-id="1dbb7-107">LCM を構成するには、"メタ構成" と呼ばれる特殊な種類の構成を作成します。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-107">To configure the LCM, you create a special type of configuration known as a "metaconfiguration".</span></span> <span data-ttu-id="1dbb7-108">LCM の構成の詳細については、「[Windows PowerShell 4.0 Desired State Configuration のローカル構成マネージャー (LCM)](metaConfig4.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-108">For more information about configuring the LCM, see [Windows PowerShell 4.0 Desired State Configuration Local Configuration Manager](metaConfig4.md)</span></span>
 
-<span data-ttu-id="ab00a-109">次のスクリプトは、"PullServer" という名前のサーバーから構成をプルするように LCM を構成します。</span><span class="sxs-lookup"><span data-stu-id="ab00a-109">The following script configures the LCM to pull configurations from a server named "PullServer":</span></span>
+<span data-ttu-id="1dbb7-109">次のスクリプトは、"PullServer" という名前のサーバーから構成をプルするように LCM を構成します。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-109">The following script configures the LCM to pull configurations from a server named "PullServer":</span></span>
 
 ```powershell
 Configuration SimpleMetaConfigurationForPull
@@ -35,22 +34,22 @@ Configuration SimpleMetaConfigurationForPull
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-<span data-ttu-id="ab00a-110">このスクリプトでは、**DownloadManagerCustomData** がプル サーバーの URL を渡し、(この例の場合) セキュリティ保護されていない接続を許可します。</span><span class="sxs-lookup"><span data-stu-id="ab00a-110">In the script, **DownloadManagerCustomData** passes the URL of the pull server and (for this example) allows an unsecured connection.</span></span>
+<span data-ttu-id="1dbb7-110">このスクリプトでは、**DownloadManagerCustomData** がプル サーバーの URL を渡し、(この例の場合) セキュリティ保護されていない接続を許可します。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-110">In the script, **DownloadManagerCustomData** passes the URL of the pull server and (for this example) allows an unsecured connection.</span></span>
 
-<span data-ttu-id="ab00a-111">このスクリプトを実行すると、**SimpleMetaConfigurationForPull** という名前の新しい出力フォルダーが作成され、そこにメタ構成 MOF ファイルが格納されます。</span><span class="sxs-lookup"><span data-stu-id="ab00a-111">After this script runs, it creates a new output folder called **SimpleMetaConfigurationForPull** and puts a metaconfiguration MOF file there.</span></span>
+<span data-ttu-id="1dbb7-111">このスクリプトを実行すると、**SimpleMetaConfigurationForPull** という名前の新しい出力フォルダーが作成され、そこにメタ構成 MOF ファイルが格納されます。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-111">After this script runs, it creates a new output folder called **SimpleMetaConfigurationForPull** and puts a metaconfiguration MOF file there.</span></span>
 
-<span data-ttu-id="ab00a-112">構成を適用するには、**ComputerName** ("localhost" を使用) と **Path** (ターゲット ノードの localhost.meta.mof ファイルの場所へのパス) のパラメーターを指定した **Set-DscLocalConfigurationManager** を使用します。</span><span class="sxs-lookup"><span data-stu-id="ab00a-112">To apply the configuration, use **Set-DscLocalConfigurationManager** with parameters for **ComputerName** (use “localhost”) and **Path** (the path to the location of the target node’s localhost.meta.mof file).</span></span> <span data-ttu-id="ab00a-113">たとえば、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="ab00a-113">For example:</span></span>
+<span data-ttu-id="1dbb7-112">構成を適用するには、**ComputerName** ("localhost" を使用) と **Path** (ターゲット ノードの localhost.meta.mof ファイルの場所へのパス) のパラメーターを指定した **Set-DscLocalConfigurationManager** を使用します。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-112">To apply the configuration, use **Set-DscLocalConfigurationManager** with parameters for **ComputerName** (use “localhost”) and **Path** (the path to the location of the target node’s localhost.meta.mof file).</span></span> <span data-ttu-id="1dbb7-113">たとえば、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-113">For example:</span></span>
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path . –Verbose.
 ```
 
-## <a name="configuration-id"></a><span data-ttu-id="ab00a-114">構成 ID</span><span class="sxs-lookup"><span data-stu-id="ab00a-114">Configuration ID</span></span>
-<span data-ttu-id="ab00a-115">このスクリプトは、LCM の **ConfigurationID** プロパティをこの目的で以前に作成した GUID に設定します (GUID を作成するには、**New-Guid** コマンドレットを使用します)。</span><span class="sxs-lookup"><span data-stu-id="ab00a-115">The script sets the **ConfigurationID** property of the LCM to a GUID that had been previously created for this purpose (you can create a GUID by using the **New-Guid** cmdlet).</span></span> <span data-ttu-id="ab00a-116">**ConfigurationID** は、LCM がプル サーバーで適切な構成を検索する場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="ab00a-116">The **ConfigurationID** is what the LCM uses to find the appropriate configuration on the pull server.</span></span> <span data-ttu-id="ab00a-117">プル サーバー上の構成 MOF ファイルは、`ConfigurationID.mof` という名前にする必要があります。ここで、*ConfigurationID* はターゲット ノードの LCM の **ConfigurationID** プロパティの値です。</span><span class="sxs-lookup"><span data-stu-id="ab00a-117">The configuration MOF file on the pull server must be named `ConfigurationID.mof`, where *ConfigurationID* is the value of the **ConfigurationID** property of the target node's LCM.</span></span>
+## <a name="configuration-id"></a><span data-ttu-id="1dbb7-114">構成 ID</span><span class="sxs-lookup"><span data-stu-id="1dbb7-114">Configuration ID</span></span>
+<span data-ttu-id="1dbb7-115">このスクリプトは、LCM の **ConfigurationID** プロパティをこの目的で以前に作成した GUID に設定します (GUID を作成するには、**New-Guid** コマンドレットを使用します)。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-115">The script sets the **ConfigurationID** property of the LCM to a GUID that had been previously created for this purpose (you can create a GUID by using the **New-Guid** cmdlet).</span></span> <span data-ttu-id="1dbb7-116">**ConfigurationID** は、LCM がプル サーバーで適切な構成を検索する場合に使用します。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-116">The **ConfigurationID** is what the LCM uses to find the appropriate configuration on the pull server.</span></span> <span data-ttu-id="1dbb7-117">プル サーバー上の構成 MOF ファイルは、`ConfigurationID.mof` という名前にする必要があります。ここで、*ConfigurationID* はターゲット ノードの LCM の **ConfigurationID** プロパティの値です。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-117">The configuration MOF file on the pull server must be named `ConfigurationID.mof`, where *ConfigurationID* is the value of the **ConfigurationID** property of the target node's LCM.</span></span>
 
-## <a name="pulling-from-an-smb-server"></a><span data-ttu-id="ab00a-118">SMB サーバーからプルする</span><span class="sxs-lookup"><span data-stu-id="ab00a-118">Pulling from an SMB server</span></span>
+## <a name="pulling-from-an-smb-server"></a><span data-ttu-id="1dbb7-118">SMB サーバーからプルする</span><span class="sxs-lookup"><span data-stu-id="1dbb7-118">Pulling from an SMB server</span></span>
 
-<span data-ttu-id="ab00a-119">プル サーバーを、Web サービスではなく SMB ファイル共有としてセットアップするには、**WebDownLoadManager** ではなく **DscFileDownloadManager** を指定します。</span><span class="sxs-lookup"><span data-stu-id="ab00a-119">If the pull server is set up as an SMB file share, rather than a web service, you specify the **DscFileDownloadManager** rather than the **WebDownLoadManager**.</span></span>
-<span data-ttu-id="ab00a-120">**DscFileDownloadManager** は、**ServerUrl** の代わりに **SourcePath** プロパティを取ります。</span><span class="sxs-lookup"><span data-stu-id="ab00a-120">The **DscFileDownloadManager** takes a **SourcePath** property instead of **ServerUrl**.</span></span> <span data-ttu-id="ab00a-121">次のスクリプトは、"CONTOSO-SERVER" という名前のサーバーの "SmbDscShare" という名前の SMB 共有から構成をプルするように LCM を構成します。</span><span class="sxs-lookup"><span data-stu-id="ab00a-121">The following script configures the LCM to pull configurations from an SMB share named "SmbDscShare" on a server named "CONTOSO-SERVER":</span></span>
+<span data-ttu-id="1dbb7-119">プル サーバーを、Web サービスではなく SMB ファイル共有としてセットアップするには、**WebDownLoadManager** ではなく **DscFileDownloadManager** を指定します。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-119">If the pull server is set up as an SMB file share, rather than a web service, you specify the **DscFileDownloadManager** rather than the **WebDownLoadManager**.</span></span>
+<span data-ttu-id="1dbb7-120">**DscFileDownloadManager** は、**ServerUrl** の代わりに **SourcePath** プロパティを取ります。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-120">The **DscFileDownloadManager** takes a **SourcePath** property instead of **ServerUrl**.</span></span> <span data-ttu-id="1dbb7-121">次のスクリプトは、"CONTOSO-SERVER" という名前のサーバーの "SmbDscShare" という名前の SMB 共有から構成をプルするように LCM を構成します。</span><span class="sxs-lookup"><span data-stu-id="1dbb7-121">The following script configures the LCM to pull configurations from an SMB share named "SmbDscShare" on a server named "CONTOSO-SERVER":</span></span>
 
 ```powershell
 Configuration SimpleMetaConfigurationForPull
@@ -70,7 +69,7 @@ Configuration SimpleMetaConfigurationForPull
 SimpleMetaConfigurationForPull -Output "."
 ```
 
-## <a name="see-also"></a><span data-ttu-id="ab00a-122">参照</span><span class="sxs-lookup"><span data-stu-id="ab00a-122">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1dbb7-122">参照</span><span class="sxs-lookup"><span data-stu-id="1dbb7-122">See Also</span></span>
 
-- [<span data-ttu-id="ab00a-123">DSC Web プル サーバーのセットアップ</span><span class="sxs-lookup"><span data-stu-id="ab00a-123">Setting up a DSC web pull server</span></span>](pullServer.md)
-- [<span data-ttu-id="ab00a-124">DSC SMB プル サーバーのセットアップ</span><span class="sxs-lookup"><span data-stu-id="ab00a-124">Setting up a DSC SMB pull server</span></span>](pullServerSMB.md)
+- [<span data-ttu-id="1dbb7-123">DSC Web プル サーバーのセットアップ</span><span class="sxs-lookup"><span data-stu-id="1dbb7-123">Setting up a DSC web pull server</span></span>](pullServer.md)
+- [<span data-ttu-id="1dbb7-124">DSC SMB プル サーバーのセットアップ</span><span class="sxs-lookup"><span data-stu-id="1dbb7-124">Setting up a DSC SMB pull server</span></span>](pullServerSMB.md)
