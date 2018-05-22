@@ -1,14 +1,12 @@
 ---
 ms.date: 06/12/2017
-author: rpsqrd
-ms.topic: conceptual
 keywords: JEA, PowerShell, セキュリティ
 title: JEA セキュリティの考慮事項
-ms.openlocfilehash: 1b83a73c047b056a4cc094d7e4b0bbf31f75f53a
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 46ea5cc3e9bc7b6759524aa466e900950a6dee26
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="jea-security-considerations"></a>JEA セキュリティの考慮事項
 

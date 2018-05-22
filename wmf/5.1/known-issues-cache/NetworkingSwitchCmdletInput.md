@@ -1,15 +1,14 @@
 ---
 ms.date: 06/12/2017
-author: JKeithB
-ms.topic: reference
 keywords: WMF, PowerShell, セットアップ
+ms.topic: conceptual
 contributor: vaibch
 title: ネットワーク スイッチ マネージャーのコマンドレットの失敗
-ms.openlocfilehash: 626809513e7a8f1aa2c47a48c74e69ca4077f598
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 197a25411a82e5d256a9420706535d5411991f1b
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 ネットワーク スイッチ マネージャーのコマンドレットを使用すれば、WSMAN 経由でネットワーク スイッチを管理することができます。
 このモジュールのコマンドレットの中には、パイプラインからの値を受け入れられるものがいくつかあります。

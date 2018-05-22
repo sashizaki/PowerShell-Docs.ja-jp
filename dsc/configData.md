@@ -1,13 +1,12 @@
 ---
 ms.date: 06/12/2017
-ms.topic: conceptual
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データの使用
-ms.openlocfilehash: 19544494a547a06d87701b38585844cb11d03e33
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: d42c43fddb54050adcbac949e7f67f3b41b540f1
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="using-configuration-data-in-dsc"></a>DSC で構成データを使用する
 
@@ -28,7 +27,7 @@ DSC 構成では、**ConfigurationData** という共通パラメーターを使
 **ConfigurationData** パラメーターはハッシュテーブルであり、**AllNodes** という名前のキーが少なくとも 1 つ必要です。
 その他のキーを 1 つ以上含めることもできます。
 
->**注:**このトピックの例では、(**AllNodes** というキーではなく) `NonNodeData` という追加のキーを 1 つしか使用していませんが、追加するキーの数に制限はなく、名前も自由に付けることができます。
+>**注:** このトピックの例では、(**AllNodes** というキーではなく) `NonNodeData` という追加のキーを 1 つしか使用していませんが、追加するキーの数に制限はなく、名前も自由に付けることができます。
 
 ```powershell
 $MyData =
@@ -184,7 +183,7 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 ## <a name="using-configurationdata-variables-in-a-configuration"></a>構成での ConfigurationData 変数の使用
 
-DSC には、構成スクリプトで使用できる 3 つの特殊な変数 **$AllNodes**、**$Node**、および**$ConfigurationData** が用意されています。
+DSC には、構成スクリプトで使用できる 3 つの特殊な変数 **$AllNodes**、**$Node**、および **$ConfigurationData** が用意されています。
 
 - **$AllNodes** は、**ConfigurationData** で定義されたノードのコレクション全体を参照します。 **.Where()** と **.ForEach()** を使用すると、**AllNodes** コレクションをフィルター処理できます。
 - **Node** は、**.Where()** または **.ForEach()** を使用してフィルター処理された後の **AllNodes** コレクション内にある特定のエントリを参照します。

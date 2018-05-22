@@ -1,14 +1,12 @@
 ---
 ms.date: 06/12/2017
-author: rpsqrd
-ms.topic: conceptual
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の前提条件
-ms.openlocfilehash: 92a74d89a0e982e9f45e69d92b261756de33c038
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: a5cf5519b30b24d44c12bdeedcf4cd763e2edbde
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
 ---
 # <a name="prerequisites"></a>前提条件
 
@@ -40,7 +38,7 @@ Windows 8、8.1            | WMF 5.1 のすべての機能
 Windows 7                 | WMF 5.1 の制限された機能<sup>1</sup>
 
 <sup>1</sup> Windows Server 2008 R2 または Windows 7 で、グループが管理するサービス アカウントを使用するように JEA を構成することはできません。
-仮想アカウントと他の JEA 機能はサポートされています*。*
+仮想アカウントと他の JEA 機能はサポートされています *。*
 
 <sup>2</sup> Windows 10 のバージョン 1511 と 1603 では、JEA の次の機能はサポートされません。グループ管理されたサービス アカウントとしての実行、セッション構成での条件付きアクセス規則、ユーザー ドライブ、ローカル ユーザー アカウントへのアクセスの許可。
 これらの機能を使うには、Windows をバージョン 1607 (Anniversary Update) 以降に更新します。

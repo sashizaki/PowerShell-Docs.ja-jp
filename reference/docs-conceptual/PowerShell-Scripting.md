@@ -2,11 +2,11 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: PowerShell スクリプト
-ms.openlocfilehash: 3304ecc3129b710a003725715803a03b68f79b45
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 7de5a3f3149d8d464b34101d94a5f9430d9b0f23
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/17/2018
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -25,18 +25,18 @@ Windows PowerShell は、従来からの問題を排除し、新しい機能を�
 ### <a name="discoverability"></a>機能の見つけやすさ
 Windows PowerShell では、簡単にその機能を見つけられます。 たとえば、Windows サービスを表示したり変更したりするコマンドレットの一覧を検索するには、次のように入力します。
 
-```
+```powershell
 Get-Command *-Service
 ```
 
 タスクを実行するコマンドレットが見つかったら、Get-Help コマンドレットを使用して、コマンドレットの詳細を確認することができます。 たとえば、Get-Service コマンドレットのヘルプを表示するには、次のように入力します。
 
-```
+```powershell
 Get-Help Get-Service
 ```
 ほとんどのコマンドレットでは、操作を加えてから表示用のテキストに変換できるオブジェクトが出力されます。 そのコマンドレットの出力を完全に理解するには、Get-Member コマンドレットにその出力をパイプ処理します。 たとえば、次のコマンドは、Get-Service コマンドレットによって出力されるオブジェクトのメンバーについての情報を表示します。
 
-```
+```powershell
 Get-Service | Get-Member
 ```
 
