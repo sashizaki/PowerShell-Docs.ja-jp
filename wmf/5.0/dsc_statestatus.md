@@ -1,11 +1,11 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: 272843efb68c42105af6eb88ad6a95b581da47ae
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7b4e4dbeaf9c3c48e7b2dfc74435dfa2cd9c7ea7
+ms.sourcegitcommit: 735ccab3fb3834ccd8559fab6700b798e8e5ffbf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
+ms.lasthandoff: 05/25/2018
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>統一された一貫性のある状態とステータスの表現
 
@@ -21,7 +21,7 @@ LCM 状態と DSC 操作ステータスの形式を再検討し、次の規則�
 
 次の表は、いくつかの一般的なシナリオでのプロパティに関連した状態とステータスの結果を示しています。
 
-| **シナリオ**                    | **LCMState\***       | **状態** | **Reboot Requested**  | **ResourcesInDesiredState**  | **ResourcesNotInDesiredState** |
+| シナリオ                    | LCMState       | 状態 | Reboot Requested  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
 | S**^**                          | アイドル                 | 成功    | $false        | S                            | $null                          |
 | F**^**                          | PendingConfiguration | 障害    | $false        | $null                        | F                              |
@@ -46,11 +46,13 @@ $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
 $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
 ```
+
 ## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus コマンドレットの機能拡張
 
 このリリースでは、Get-DscConfigurationStatus コマンドレットのいくつかの機能が拡張されました。 以前は、コマンドレットによって返されるオブジェクトの StartDate プロパティは文字列型でした。 今では、Datetime 型になったため、Datetime オブジェクトに備わっているプロパティに基づいて複雑な選択やフィルター処理を実行できるようになりました。
+
 ```powershell
-(Get-DscConfigurationStatus).StartDate | fl \*
+(Get-DscConfigurationStatus).StartDate | fl *
 DateTime : Friday, November 13, 2015 1:39:44 PM
 Date : 11/13/2015 12:00:00 AM
 Day : 13
@@ -68,14 +70,16 @@ Year : 2015
 ```
 
 今日と同じ曜日に発生したすべての DSC 操作レコードを返す例を次に示します。
+
 ```powershell
-(Get-DscConfigurationStatus –All) | where { $\_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
+(Get-DscConfigurationStatus –All) | where { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
 ノードの構成を変更しない操作 (つまり、読み取り専用の操作) のレコードは除外されます。 そのため、Get-DscConfigurationStatus コマンドレットから返されるオブジェクトに Test-DscConfiguration 操作と Get-DscConfiguration 操作が混入されなくなりました。
 メタ構成の設定操作のレコードが Get-DscConfigurationStatus コマンドレットの戻り値に追加されます。
 
 次の例は、Get-DscConfigurationStatus –All コマンドレットから返される結果を示しています。
+
 ```powershell
 All configuration operations:
 
@@ -89,12 +93,15 @@ Success 11/13/2015 11:20:44 AM LocalConfigurationManager False
 ```
 
 ## <a name="enhancement-in-get-dsclocalconfigurationmanager-cmdlet"></a>Get-DscLocalConfigurationManager コマンドレットの機能拡張
+
 Get-DscLocalConfigurationManager コマンドレットから返されるオブジェクトに、新しい LCMStateDetail フィールドが追加されました。 このフィールドは、LCMState が "ビジー" の時にデータが設定されます。 これは、次のコマンドレットで取得できます。
+
 ```powershell
 (Get-DscLocalConfigurationManager).LCMStateDetail
 ```
 
 リモート ノードで 2 回のリブートを必要とする構成を継続的に監視した場合の出力の例を次に示します。
+
 ```powershell
 Start a configuration that requires two reboots
 
