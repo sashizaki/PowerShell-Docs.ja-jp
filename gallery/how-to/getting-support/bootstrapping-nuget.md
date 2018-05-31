@@ -1,6 +1,14 @@
-
 ---
-ms.date :  2017/6/12 共同作成者:  manikb ms.topic:  参照キーワード:  ギャラリー, PowerShell, コマンドレット, PSGet タイトル:  NuGet のブートストラップ
+ms.date: 06/12/2017
+contributor: manikb
+keywords: ギャラリー, PowerShell, コマンドレット, PSGet
+title: NuGet のブートストラップ
+ms.openlocfilehash: f707e23737361ee7f82a16150402c9e719ee0ae1
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221801"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>NuGet プロバイダーと NuGet.exe をブートストラップする
 

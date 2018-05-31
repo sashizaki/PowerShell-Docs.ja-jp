@@ -1,14 +1,14 @@
 ---
 ms.date: 06/12/2017
 contributor: JKeithB
-ms.topic: conceptual
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
-title: psgallery_faqs
-ms.openlocfilehash: 83954908acdab716cb938881b3ee80badaa1c6e1
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+title: PowerShell ギャラリーに関してよく寄せられる質問
+ms.openlocfilehash: e377e71cf5eeb1f8b73430cc0b97527eac970cff
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190436"
 ---
 # <a name="frequently-asked-questions"></a>AppLocker: Frequently Asked Questions (AppLocker: よく寄せられる質問)
 

@@ -1,16 +1,14 @@
 ---
-description: ''
-ms.topic: article
-ms.prod: powershell
+ms.topic: reference
 keywords: PowerShell, コマンドレット
 ms.date: 12/12/2016
-title: Web Access のコマンドレット
-ms.technology: powershell
-ms.openlocfilehash: 6930fd6a08de69078576fb0d0fbabb04e05d0814
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+title: PowerShell Web Access のコマンドレット
+ms.openlocfilehash: 34a7a01f154b2e43416dfe8ea43d4d8e937816d9
+ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188022"
 ---
 # <a name="windows-powershell-web-access-cmdlets"></a>Windows PowerShell Web Access のコマンドレット
 

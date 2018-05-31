@@ -1,14 +1,4 @@
----
-ms.date: 06/12/2017
-contributor: JKeithB
-ms.topic: conceptual
-keywords: ギャラリー, PowerShell, コマンドレット, PSGallery, PsGet
-title: PowerShell ギャラリー
-ms.openlocfilehash: cffb2f0182ffe9072f9fbbc7f4cdfcf28de276db
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
+ and --- ms.date:  06/12/2017 共同作成者:  JKeithB キーワード:  ギャラリー,powershell,コマンドレット,psgallery,psget タイトル:  PowerShell ギャラリー
 ---
 # <a name="the-powershell-gallery"></a>PowerShell ギャラリー
 
@@ -28,9 +18,9 @@ PowerShellGet モジュールには、[PowerShell ギャラリー](https://www.P
 
 ## <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
 
-**PowerShellGet** モジュールは **PowerShell 3.0 以降**を必要とします。
+**PowerShellGet** モジュールは、**Windows PowerShell 3.0 以降**、または **PowerShell Core 6.0 以降**を必要とします。
 
-そのため、**PowerShellGet** は次のいずれかのオペレーティング システムを必要とします。
+**Windows PowerShell** の適切なバージョンは、次のオペレーティング システムに対して利用できます。
 
 - Windows 10
 - Windows 8.1 Pro
@@ -41,6 +31,10 @@ PowerShellGet モジュールには、[PowerShell ギャラリー](https://www.P
 - Windows Server 2008 R2 SP1
 
 **PowerShellGet** には、.NET Framework 4.5 以降も必要です。 .NET Framework 4.5 以降を[ここ](https://msdn.microsoft.com/library/5a4x27ek.aspx)からインストールできます。
+
+**PowerShell Core** では多数のオペレーティング システムがサポートされます。 完全な一覧については、[この記事](https://blogs.msdn.microsoft.com/powershell/2018/01/10/powershell-core-6-0-generally-available-ga-and-supported/)をご覧ください。
+
+ギャラリーでホストされているモジュールの多くは、さまざまな OS をサポートしており、追加の要件があります。 詳細については、モジュールのドキュメントをご覧ください。
 
 ## <a name="got-a-question-have-feedback"></a>ご質問または フィードバックがある場合は、
 
