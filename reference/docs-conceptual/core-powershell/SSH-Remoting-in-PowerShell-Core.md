@@ -34,7 +34,7 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
 
 ## <a name="setup-on-windows-machine"></a>Windows コンピューターでのセットアップ
 
-1. [Windows 向け PowerShell Core] の最新版をインストールします
+1. [Windows 向け PowerShell コア] の最新版をインストールします
     - New-PSSession のパラメーター セットを見れば、SSH リモート処理に対応しているか確認できます
 
     ```powershell
@@ -74,7 +74,7 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) コンピューターでのセットアップ
 
-1. GitHub から最新の [PowerShell for Linux] ビルドをインストールします
+1. GitHub から最新の [Linux 向け PowerShell] ビルドをインストールします
 1. 必要に応じて [Ubuntu SSH] をインストールします
 
     ```bash
@@ -109,7 +109,7 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
 
 ## <a name="setup-on-macos-machine"></a>MacOS コンピューターでのセットアップ
 
-1. 最新の [PowerShell for MacOS] ビルドをインストールします
+1. 最新の [MacOS 向け PowerShell] ビルドをインストールします
     - 次の手順で SSH リモート処理が有効になっていることを確認します
       - `System Preferences` を開きます
       - `Sharing` をクリックします
@@ -131,7 +131,7 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
     - PowerShell サブシステム エントリを追加します
 
     ```
-    Subsystem powershell /usr/local/bin/powershell -sshs -NoLogo -NoProfile
+    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
     ```
 
     - 必要であればキー認証を有効にします
@@ -241,9 +241,9 @@ GitCommitId                    v6.0.0-alpha.17
 
 1. sudo コマンドは、Linux コンピューターへのリモート セッションでは機能しません。
 
-[Windows 向け PowerShell Core]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
+[Windows 向け PowerShell コア]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/windows.md#msi
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
 [ここ]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
-[PowerShell for Linux]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
+[Linux 向け PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/linux.md#ubuntu-1404
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
-[PowerShell for MacOS]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
+[MacOS 向け PowerShell]: https://github.com/PowerShell/PowerShell/blob/master/docs/installation/macos.md#macos-1012
