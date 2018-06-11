@@ -3,21 +3,22 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: パイプラインからオブジェクトを削除する (Where-Object)
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 2d89defdb1b234a9d0021fc06e1f05a95bb1bce9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 46f210e1418098f4809174cd975ab8d783580285
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/04/2018
+ms.locfileid: "34753840"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>パイプラインからオブジェクトを削除する (Where-Object)
 
 Windows PowerShell では、考えていた数よりも多くのオブジェクトが生成され、パイプラインに渡されることがよくあります。 **Format** コマンドレットを使用して、特定のオブジェクトのプロパティを指定し、表示することができます。しかし、これはオブジェクト全体を表示から削除するという問題には役立ちません。 パイプラインの終了前に、オブジェクトをフィルタリングすることによって、最初に生成されたオブジェクトのサブセット上でのみアクションを実行できます。
 
-Windows PowerShell には、**Where-Object** コマンドレットがあります。それを使用すると、パイプラインの各オブジェクトをテストし、特定のテスト条件を満たしている場合にのみ、オブジェクトをパイプラインに沿って渡すことが可能になります。 テストを通過しなかったオブジェクトは、パイプラインから削除されます。 テスト条件は、**Where-ObjectFilterScript** パラメーターの値として指定します。
+Windows PowerShell には、`Where-Object` コマンドレットがあります。これを使用すると、パイプラインの各オブジェクトをテストし、特定のテスト条件を満たしている場合にのみ、オブジェクトをパイプラインに沿って渡すことができます。 テストを通過しなかったオブジェクトは、パイプラインから削除されます。 テスト条件は、`Where-Object` **FilterScript** パラメーターの値として指定します。
 
 ### <a name="performing-simple-tests-with-where-object"></a>Where-Object を使用して単純なテストを実行する
 
-**FilterScript** の値は、true または false に評価される*スクリプト ブロック* - (中かっこ {} で囲まれた Windows PowerShell コマンドの 1 つ以上のコマンド) です。 これらのスクリプト ブロックはごく単純にすることができますが、作成するには別の Windows PowerShell の概念である比較演算子について知っておく必要があります。 比較演算子は、演算子の両辺のアイテムを比較します。 比較演算子は、'-' 文字で始まり、名前が続きます。 基本的な比較演算子は、ほとんどの種類のオブジェクトで機能します。 より高度な比較演算子の中には、テキストまたは配列でのみ機能するものもあります。
+**FilterScript** の値は、true または false に評価される*スクリプト ブロック* - (中かっこ {} で囲まれた 1 つまたは複数の Windows PowerShell コマンド) です。 これらのスクリプト ブロックはごく単純にすることができますが、作成するには別の Windows PowerShell の概念である比較演算子について知っておく必要があります。 比較演算子は、演算子の両辺のアイテムを比較します。 比較演算子は、'-' 文字で始まり、名前が続きます。 基本的な比較演算子は、ほとんどの種類のオブジェクトで機能します。 より高度な比較演算子の中には、テキストまたは配列でのみ機能するものもあります。
 
 > [!NOTE]
 > 既定では、テキストで使用する場合、Windows PowerShell の比較演算子は大文字小文字を区別しません。
