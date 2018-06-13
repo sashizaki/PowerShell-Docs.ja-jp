@@ -2,11 +2,12 @@
 ms.date: 06/27/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access の承認規則とセキュリティ機能
-ms.openlocfilehash: 0e765ae90661a054ca9bae71d0f6d449cccb185d
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 1b4d4339efda78a5cb719921a9cb06881d119930
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483136"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Access の承認規則とセキュリティ機能
 
@@ -112,7 +113,7 @@ Web ベースのサインイン ページでは、**[オプションの接続設
 承認規則を使って、特定のセッション構成に対するユーザーのアクセスを許可することができます。
 担当者は、Windows PowerShell Web Access 用の_制限付き実行空間_またはセッション構成を作成し、特定のユーザーが特定のセッション構成だけにアクセスできるようにして、それらのユーザーを Windows PowerShell Web Access にサインインさせることができます。
 アクセス制御リスト (ACL) を使って特定のエンドポイントにアクセスできるユーザーを決定できることに加えて、このセクションで説明する承認規則を使用すると、エンドポイントへのアクセスを特定のユーザーにさらに制限することができます。
-制限付き実行空間の詳細については、[制約付き実行空間の作成](https://msdn.microsoft.com/en-us/library/dn614668)に関するページを参照してください。
+制限付き実行空間の詳細については、[制約付き実行空間の作成](https://msdn.microsoft.com/library/dn614668)に関するページを参照してください。
 
 ### <a name="configuring-authorization-rules"></a>承認規則の構成
 
@@ -122,7 +123,7 @@ Web ベースのサインイン ページでは、**[オプションの接続設
 
 カスタム セッション構成を使用することで、特定のユーザーに対して Windows PowerShell Web Access の制限付き実行空間内でのみ作業することを許可する場合、カスタム セッション構成は、これらが参照される承認規則を追加する前に作成してください。
 Windows PowerShell Web Access コマンドレットを使用してカスタム セッション構成を作成することはできません。
-カスタム セッション構成の作成方法の詳細については、「[about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files)」を参照してください。
+カスタム セッション構成の作成方法の詳細については、「[about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files)」を参照してください。
 
 Windows PowerShell Web Access コマンドレットでは、ワイルドカード文字としてアスタリスク(\*) を使用できます。
 文字列内のワイルドカード文字はサポートされていません。アスタリスクは、プロパティ (ユーザー、コンピューター、セッション構成) ごとに 1 つ使うことができます。
@@ -142,7 +143,7 @@ Windows PowerShell Web Access コマンドレットでは、ワイルドカー�
 2. セッションの構成を使用してユーザー アクセスを制限するための手順 (**省略可能**):
 
     使用を希望するセッション構成が規則に既に存在することを確認します。
-まだ作成されていない場合は、「[about_Session_Configuration_Files](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files)」に記載されているセッション構成の作成手順を使用してください。
+まだ作成されていない場合は、「[about_Session_Configuration_Files](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configuration_files)」に記載されているセッション構成の作成手順を使用してください。
 
 3. この承認規則により、特定のユーザー 1 人が、通常アクセスが許可されているネットワーク上の 1 つのコンピューターにアクセスして、このユーザーが通常必要とするスクリプトとコマンドレットに制限された特定の 1 つのセッション構成にアクセスできるようになります。 次のように入力して **Enter** キーを押します。
 
@@ -253,6 +254,6 @@ Windows Server 2012 R2 で実行する Windows PowerShell Web Access では、�
 
 ## <a name="see-also"></a>参照
 
-- [Windows PowerShell Web Access のインストールと使用](https://technet.microsoft.com/en-us/library/hh831611(v=ws.11).aspx)
+- [Windows PowerShell Web Access のインストールと使用](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
 - [about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
 - [Windows PowerShell Web Access のコマンドレット](cmdlets/web-access-cmdlets.md)

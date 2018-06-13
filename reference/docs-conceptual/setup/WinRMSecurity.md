@@ -2,11 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: WinRMSecurity
-ms.openlocfilehash: e390a84b6f7a1932afdad84c7b09ce7da2ec5370
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 43e77067e301cdf1b792cb0d24b72ee0abb3349a
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482949"
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell リモート処理のセキュリティに関する考慮事項
 
@@ -71,7 +72,7 @@ SSL 証明書を NTLM 接続用のサーバーに展開できない場合は、�
 
 ### <a name="ongoing-communication"></a>進行中の通信
 
-初期認証が完了すると、[PowerShell リモート処理プロトコル](https://msdn.microsoft.com/en-us/library/dd357801.aspx)によって、進行中の通信はすべて、セッションごとの AES 256 対称キーを使用して暗号化されます。
+初期認証が完了すると、[PowerShell リモート処理プロトコル](https://msdn.microsoft.com/library/dd357801.aspx)によって、進行中の通信はすべて、セッションごとの AES 256 対称キーを使用して暗号化されます。
 
 
 ## <a name="making-the-second-hop"></a>次ホップの実行
