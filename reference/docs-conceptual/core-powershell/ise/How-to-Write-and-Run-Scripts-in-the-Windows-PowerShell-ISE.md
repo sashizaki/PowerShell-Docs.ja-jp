@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell ISE でスクリプトを記述および実行する方法
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
-ms.openlocfilehash: 4b8a9c0c3a710f3b3b9b6077c3c84e174a141db2
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 4d7c5352ef1dac6f63a50433676068f83a920db5
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34483119"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Windows PowerShell ISE でスクリプトを記述および実行する方法
 
@@ -70,15 +71,15 @@ Windows PowerShell ファイルは、スクリプト ウィンドウで開いた
 
 ### <a name="to-find-text-in-the-script-pane"></a>スクリプト ウィンドウでテキストを検索するには
 
-1. 任意の場所にあるテキストを検索するには、**CTRL + F** キーを押すか、または**[編集]** メニューの **[スクリプト内を検索]** をクリックします。
+1. 任意の場所にあるテキストを検索するには、**CTRL + F** キーを押すか、または **[編集]** メニューの **[スクリプト内を検索]** をクリックします。
 
-2. カーソルより後の場所にあるテキストを検索するには、**F3** キーを押すか、または**[編集]** メニューの **[スクリプト内で次を検索]** をクリックします。
+2. カーソルより後の場所にあるテキストを検索するには、**F3** キーを押すか、または **[編集]** メニューの **[スクリプト内で次を検索]** をクリックします。
 
-3. カーソルより前の場所にあるテキストを検索するには、**SHIFT + F3** キーを押すか、または**[編集]** メニューの **[スクリプト内で前を検索]** をクリックします。
+3. カーソルより前の場所にあるテキストを検索するには、**SHIFT + F3** キーを押すか、または **[編集]** メニューの **[スクリプト内で前を検索]** をクリックします。
 
 ### <a name="to-find-and-replace-text-in-the-script-pane"></a>スクリプト ウィンドウでテキストを検索して置換するには
 
-**Ctrl キーを押しながら H キー**を押すか、または**[編集]** メニューの **[スクリプト内で置換]** をクリックします。 検索するテキストと、見つかったテキストを置換するテキストの両方を入力してから、**Enter** キーを押します。
+**Ctrl キーを押しながら H キー**を押すか、または **[編集]** メニューの **[スクリプト内で置換]** をクリックします。 検索するテキストと、見つかったテキストを置換するテキストの両方を入力してから、**Enter** キーを押します。
 
 ### <a name="to-go-to-a-particular-line-of-text-in-the-script-pane"></a>スクリプト ウィンドウ内のテキストの特定の行に移動するには
 
@@ -130,7 +131,7 @@ Windows PowerShell ファイルは、スクリプト ウィンドウで開いた
 
 ### <a name="to-save-a-script-in-ascii-encoding"></a>ASCII エンコードでスクリプトを保存するには
 
-既定では、Windows PowerShell ISE は新しいスクリプト ファイル (.ps1)、スクリプト データ ファイル (.psd1)、スクリプト モジュール ファイル (.psm1) を Unicode (BigEndianUnicode) として保存します。ASCII (ANSI) など、別のエンコードでスクリプトを保存するには、[$psISE.CurrentFile](https://technet.microsoft.com/en-us/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) オブジェクトの **Save** または **SaveAs** メソッドを使用します。
+既定では、Windows PowerShell ISE は新しいスクリプト ファイル (.ps1)、スクリプト データ ファイル (.psd1)、スクリプト モジュール ファイル (.psm1) を Unicode (BigEndianUnicode) として保存します。ASCII (ANSI) など、別のエンコードでスクリプトを保存するには、[$psISE.CurrentFile](https://technet.microsoft.com/library/bc3300e4-9c17-4f00-a621-c8867126e3b3#CurrentFile) オブジェクトの **Save** または **SaveAs** メソッドを使用します。
 
 次のコマンドでは、新しいスクリプトを MyScript.ps1 という名前の ASCII エンコードで保存します。
 

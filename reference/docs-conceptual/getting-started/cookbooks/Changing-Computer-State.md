@@ -3,11 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: コンピューターの状態を変更する
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: 3d3983c6d9e9b11db62bd71805da51be83331fdb
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c659ad54325b0f7305f882e1cb9607062abad6a4
+ms.sourcegitcommit: 2ffb9fa92129c2001379ca2c17646466721f7165
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
+ms.lasthandoff: 06/09/2018
+ms.locfileid: "35251519"
 ---
 # <a name="changing-computer-state"></a>コンピューターの状態を変更する
 
@@ -49,16 +50,16 @@ shutdown.exe -l
 
 通常、コンピューターのシャットダウンと再起動は同じ種類に属するタスクです。 コンピューターをシャットダウンできるツールであれば、コンピューターを再起動することもできます。逆にコンピューターを再起動できるツールであれば、コンピューターをシャットダウンすることもできます。 Windows PowerShell からコンピューターを簡単に再起動する方法としては、2 とおりの方法があります。 Tsshutdn.exe または Shutdown.exe に適切な引数を指定して実行することです。 詳しい使用方法は、**tsshutdn.exe ?** または **shutdown.exe ?** を実行すると参照できます。
 
-シャットダウン操作と再起動操作は、Windows PowerShell から直接 **Win32_OperatingSystem** を使用して実行することもできます。
+シャットダウン操作と再起動操作は、Windows PowerShell から直接実行することもできます。
 
-コンピューターをシャットダウンするには、**1** フラグを指定して Win32Shutdown メソッドを使用します。
+コンピューターをシャットダウンするには、restart-computer コマンドを使用します
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(1)
+stop-computer
 ```
 
-オペレーティング システムを再起動するには、**2** フラグを指定して Win32Shutdown メソッドを使用します。
+オペレーティング システムを再起動するには、restart-computer コマンドを使用します
 
 ```powershell
-(Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(2)
+restart-computer
 ```

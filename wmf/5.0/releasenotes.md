@@ -1,13 +1,16 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: eb3be6ef8a0fb8e611178206cbc817ac34b40f3e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a6366e18b4b6478bfab89475bc6975e6491da9f7
+ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
+ms.lasthandoff: 06/07/2018
+ms.locfileid: "34482864"
 ---
 # <a name="windows-management-framework-wmf-50-rtm-release-notes-overview"></a>Windows 管理フレームワーク (WMF) 5.0 RTM のリリース ノート概要
+
+**WMF 5.0 は、WMF 5.1 に優先されます。WMF 5.0 を所有するユーザーがサポートを受けるには、WMF 5.1 にアップグレードする必要があります。[WMF 5.1 のインストール指示](../5.1/install-configure.md)** に従ってください
 
 Windows 管理フレームワーク (WMF) 5.0 RTM には、WMF 4.0 から更新された機能があります。 WMF 5.0 RTM は **Windows Server 2012 R2**、**Windows Server 2012**、**Windows Server 2008 R2**、**Windows 8.1**、および **Windows 7 SP1** にのみインストールすることができ、次の機能の更新バージョンや導入が含まれています。
 
