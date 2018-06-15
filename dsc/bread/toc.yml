@@ -1,6 +1,6 @@
 - name: PowerShell
   tocHref: /powershell/
-  topicHref: /powershell/index
+  topicHref: /powershell
   items:
     - name: 必要な状態の構成
       tocHref: /powershell/dsc/
