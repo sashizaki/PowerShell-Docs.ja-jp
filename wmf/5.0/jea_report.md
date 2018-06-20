@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218724"
 ---
 # <a name="reporting-on-jea"></a><span data-ttu-id="bdea7-102">JEA のレポート</span><span class="sxs-lookup"><span data-stu-id="bdea7-102">Reporting on JEA</span></span>
 <span data-ttu-id="bdea7-103">JEA 構成の状態をレポートするには、次のコマンドを使用できます。</span><span class="sxs-lookup"><span data-stu-id="bdea7-103">In order to report on the state of your JEA configuration, you can use:</span></span>

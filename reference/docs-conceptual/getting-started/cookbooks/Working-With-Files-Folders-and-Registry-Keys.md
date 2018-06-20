@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952309"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a><span data-ttu-id="68174-103">ファイル、フォルダー、レジストリ キーの操作</span><span class="sxs-lookup"><span data-stu-id="68174-103">Working With Files, Folders and Registry Keys</span></span>
 

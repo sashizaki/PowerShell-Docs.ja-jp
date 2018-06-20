@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953584"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a><span data-ttu-id="e2eaa-103">Windows PowerShell ISE の新機能</span><span class="sxs-lookup"><span data-stu-id="e2eaa-103">What&#39;s New in the Windows PowerShell ISE</span></span>
 <span data-ttu-id="e2eaa-104">このトピックでは、各バージョンの Windows PowerShell Integrated Scripting Environment (ISE) に導入された新機能と更新された機能について説明します。</span><span class="sxs-lookup"><span data-stu-id="e2eaa-104">This topic explains the new and updated features that have been introduced in versions of Windows PowerShell  Integrated Scripting Environment (ISE).</span></span>

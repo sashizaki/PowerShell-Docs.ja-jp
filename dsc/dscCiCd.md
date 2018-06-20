@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34190555"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a><span data-ttu-id="ca772-103">DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築</span><span class="sxs-lookup"><span data-stu-id="ca772-103">Building a Continuous Integration and Continuous Deployment pipeline with DSC</span></span>
 

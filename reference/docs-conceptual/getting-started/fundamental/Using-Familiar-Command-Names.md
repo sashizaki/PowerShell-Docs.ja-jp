@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952683"
 ---
 # <a name="using-familiar-command-names"></a><span data-ttu-id="d6012-103">使い慣れたコマンド名の使用</span><span class="sxs-lookup"><span data-stu-id="d6012-103">Using Familiar Command Names</span></span>
 <span data-ttu-id="d6012-104">Windows PowerShell では、*エイリアス*というメカニズムにより、ユーザーは代替名でコマンドを表せます。</span><span class="sxs-lookup"><span data-stu-id="d6012-104">Using a mechanism called *aliasing*, Windows PowerShell allows users to refer to commands by alternate names.</span></span> <span data-ttu-id="d6012-105">エイリアスがあることで、他のシェルの経験のあるユーザーは、既に知っている一般的なコマンド名を再使用して、Windows PowerShell でも同様の操作を行えます。</span><span class="sxs-lookup"><span data-stu-id="d6012-105">Aliasing allows users with experience in other shells to reuse common command names that they already know to perform similar operations in Windows PowerShell.</span></span> <span data-ttu-id="d6012-106">Windows PowerShell のエイリアスについて詳しくは解説しませんが、Windows PowerShell の入門段階でもエイリアスを使用できます。</span><span class="sxs-lookup"><span data-stu-id="d6012-106">Although we will not discuss Windows PowerShell aliases in detail, you can still use them as you get started with Windows PowerShell.</span></span>

@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219370"
 ---
 # <a name="community-resources"></a><span data-ttu-id="6c393-103">コミュニティ リソース</span><span class="sxs-lookup"><span data-stu-id="6c393-103">Community Resources</span></span> #
 > <span data-ttu-id="6c393-104">注意: この情報は暫定版であり、変更することがあります。</span><span class="sxs-lookup"><span data-stu-id="6c393-104">Note: This information is preliminary and subject to change.</span></span>

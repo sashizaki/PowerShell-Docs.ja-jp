@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187104"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a><span data-ttu-id="f39b2-102">PowerShell スクリプト デバッグの強化</span><span class="sxs-lookup"><span data-stu-id="f39b2-102">Improvements in PowerShell Script Debugging</span></span>
 

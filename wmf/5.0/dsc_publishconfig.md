@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225676"
 ---
 # <a name="deliver-a-configuration-document-without-applying"></a><span data-ttu-id="ef8d7-102">適用することなく構成ドキュメントを提供する</span><span class="sxs-lookup"><span data-stu-id="ef8d7-102">Deliver a configuration document without applying</span></span>
 

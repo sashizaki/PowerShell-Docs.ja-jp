@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30948212"
 ---
 # <a name="object-pipeline"></a><span data-ttu-id="7d764-103">オブジェクト パイプライン</span><span class="sxs-lookup"><span data-stu-id="7d764-103">Object Pipeline</span></span>
 <span data-ttu-id="7d764-104">パイプラインは、複数の管を 1 つに継ぎ合わせた管路のような役割を果たします。</span><span class="sxs-lookup"><span data-stu-id="7d764-104">Pipelines act like a series of connected segments of pipe.</span></span> <span data-ttu-id="7d764-105">パイプラインに沿って移動する項目は、個々の管を通過します。</span><span class="sxs-lookup"><span data-stu-id="7d764-105">Items moving along the pipeline pass through each segment.</span></span> <span data-ttu-id="7d764-106">Windows PowerShell でパイプラインを作成するには、パイプ演算子 (|) を使ってコマンドを接続します。</span><span class="sxs-lookup"><span data-stu-id="7d764-106">To create a pipeline in Windows PowerShell, you connect commands together with the pipe operator "|".</span></span> <span data-ttu-id="7d764-107">接続すると、各コマンドの出力が、次のコマンドの入力として使用されるようになります。</span><span class="sxs-lookup"><span data-stu-id="7d764-107">The output of each command is used as input to the next command.</span></span>

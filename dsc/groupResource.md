@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222073"
 ---
 # <a name="dsc-group-resource"></a><span data-ttu-id="3f85b-103">DSC グループ リソース</span><span class="sxs-lookup"><span data-stu-id="3f85b-103">DSC Group Resource</span></span>
 

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222006"
 ---
 # <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a><span data-ttu-id="a3b7a-102">機能を強化された Item コマンドレットを使ってシンボリック リンクを操作する</span><span class="sxs-lookup"><span data-stu-id="a3b7a-102">Interact with Symbolic links using improved Item cmdlets</span></span>
 

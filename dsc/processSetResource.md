@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189926"
 ---
 # <a name="dsc-windowsprocess-resource"></a><span data-ttu-id="87395-103">DSC WindowsProcess リソース</span><span class="sxs-lookup"><span data-stu-id="87395-103">DSC WindowsProcess Resource</span></span>
 

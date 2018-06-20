@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954332"
 ---
 # <a name="using-windows-powershell-for-administration"></a><span data-ttu-id="fcea8-103">Windows PowerShell を管理に使用する</span><span class="sxs-lookup"><span data-stu-id="fcea8-103">Using Windows PowerShell for Administration</span></span>
 <span data-ttu-id="fcea8-104">Windows PowerShell の基本的目標は、より良く、より簡単なシステム管理を、対話式でもスクリプトでも提供することです。</span><span class="sxs-lookup"><span data-stu-id="fcea8-104">The fundamental goal of Windows PowerShell is providing better, easier administrative control over systems, either interactively or from script.</span></span> <span data-ttu-id="fcea8-105">この章では、Windows システムの管理に関する多くの問題への Windows PowerShell を使用した解決策を取り上げます。</span><span class="sxs-lookup"><span data-stu-id="fcea8-105">This chapter walks through solutions to many specific problems in administering Windows systems with Windows PowerShell.</span></span> <span data-ttu-id="fcea8-106">Windows PowerShell ユーザー ガイドではスクリプトや関数について取り上げませんでしたが、後からスクリプトや関数で解決策を利用することができます。</span><span class="sxs-lookup"><span data-stu-id="fcea8-106">Although we have not talked about scripts or functions in the Windows PowerShell User's Guide, the solutions can be used from scripts or as functions later.</span></span> <span data-ttu-id="fcea8-107">問題の解決策の一部として、関数を含んだ例を示します。</span><span class="sxs-lookup"><span data-stu-id="fcea8-107">We will show examples that include functions as part of the solution to solve problems.</span></span>

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222175"
 ---
 # <a name="powershell-module-discovery-install-and-inventory-with-powershellget"></a><span data-ttu-id="72af3-102">PowerShellGet による PowerShell モジュールの検出、インストール、およびインベントリ</span><span class="sxs-lookup"><span data-stu-id="72af3-102">PowerShell Module Discovery, Install and Inventory with PowerShellGet</span></span>
 

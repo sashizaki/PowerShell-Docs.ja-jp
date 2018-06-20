@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952785"
 ---
 # <a name="using-format-commands-to-change-output-view"></a><span data-ttu-id="339bc-103">Format コマンドを使用した出力ビューの変更</span><span class="sxs-lookup"><span data-stu-id="339bc-103">Using Format Commands to Change Output View</span></span>
 

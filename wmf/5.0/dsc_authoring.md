@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218248"
 ---
 # <a name="authoring-improvements-using-powershell-ise"></a><span data-ttu-id="07096-102">PowerShell ISE を使ったオーサリングの強化</span><span class="sxs-lookup"><span data-stu-id="07096-102">Authoring Improvements using PowerShell ISE</span></span>
 

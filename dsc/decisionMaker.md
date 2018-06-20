@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189875"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a><span data-ttu-id="4736b-103">意思決定者向け Desired State Configuration の概要</span><span class="sxs-lookup"><span data-stu-id="4736b-103">Desired State Configuration Overview for Decision Makers</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188480"
 ---
 # <a name="enacting-configurations"></a><span data-ttu-id="f2ba7-103">構成の適用</span><span class="sxs-lookup"><span data-stu-id="f2ba7-103">Enacting configurations</span></span>
 

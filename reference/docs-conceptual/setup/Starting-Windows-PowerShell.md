@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953125"
 ---
 # <a name="starting-windows-powershell"></a><span data-ttu-id="03e25-103">Windows PowerShell の開始</span><span class="sxs-lookup"><span data-stu-id="03e25-103">Starting Windows PowerShell</span></span>
 <span data-ttu-id="03e25-104">PowerShell は、複数のホストに埋め込まれているスクリプト エンジン dll です。</span><span class="sxs-lookup"><span data-stu-id="03e25-104">PowerShell is a scripting engine dll which is embedded into multiple hosts.</span></span>  <span data-ttu-id="03e25-105">開始するホストとして最も一般的なものは、対話型コマンド ラインの PowerShell.exe および対話型スクリプト環境の PowerShell_ISE.exe です。</span><span class="sxs-lookup"><span data-stu-id="03e25-105">The most common host you will start are the interactive command line PowerShell.exe and the Interactive Scripting Environment PowerShell_ISE.exe.</span></span>

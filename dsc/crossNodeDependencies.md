@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218622"
 ---
 # <a name="specifying-cross-node-dependencies"></a><span data-ttu-id="f183a-103">ノードの相互依存関係の指定</span><span class="sxs-lookup"><span data-stu-id="f183a-103">Specifying cross-node dependencies</span></span>
 

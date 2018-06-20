@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225693"
 ---
 # <a name="modules-support-for-declaring-version-ranges-1-etc"></a><span data-ttu-id="a3efb-102">バージョン範囲 (1. \* など) の宣言をサポートするモジュール</span><span class="sxs-lookup"><span data-stu-id="a3efb-102">Modules support for declaring version ranges (1.\*, etc)</span></span>
 <span data-ttu-id="a3efb-103">**-MinimumVersion** と **-MaximumVersion** を組み合わせて使うと、特定の範囲のモジュールを取得/インポートできるようになりました。</span><span class="sxs-lookup"><span data-stu-id="a3efb-103">Combined with **-MinimumVersion**, **-MaximumVersion** now allows user to get/import module within specific range.</span></span> <span data-ttu-id="a3efb-104">パラメーターは **.**\* もサポートしています。</span><span class="sxs-lookup"><span data-stu-id="a3efb-104">The parameter also support **.**\*.</span></span> <span data-ttu-id="a3efb-105">このパラメーターの動作を次の例で示します。</span><span class="sxs-lookup"><span data-stu-id="a3efb-105">The following example shows how it works:</span></span>

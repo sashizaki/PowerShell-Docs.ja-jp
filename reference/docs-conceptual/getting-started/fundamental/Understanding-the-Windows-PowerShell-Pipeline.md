@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951071"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a><span data-ttu-id="26470-103">Windows PowerShell パイプラインを理解する</span><span class="sxs-lookup"><span data-stu-id="26470-103">Understanding the Windows PowerShell Pipeline</span></span>
 <span data-ttu-id="26470-104">Windows PowerShell では、パイプ処理をほぼすべての状況で使用できます。</span><span class="sxs-lookup"><span data-stu-id="26470-104">Piping works virtually everywhere in Windows PowerShell.</span></span> <span data-ttu-id="26470-105">画面にはテキストが表示されますが、コマンド間で受け渡しされる情報はテキストではありません。</span><span class="sxs-lookup"><span data-stu-id="26470-105">Although you see text on the screen, Windows PowerShell does not pipe text between commands.</span></span> <span data-ttu-id="26470-106">パイプの中を流れるデータは、実際にはオブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="26470-106">Instead, it pipes objects.</span></span>

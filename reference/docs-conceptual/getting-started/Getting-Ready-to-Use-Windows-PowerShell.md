@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950969"
 ---
 # <a name="getting-ready-to-use-windows-powershell"></a><span data-ttu-id="7c215-103">Windows PowerShell を使用する準備を行う</span><span class="sxs-lookup"><span data-stu-id="7c215-103">Getting Ready to Use Windows PowerShell</span></span>
 <span data-ttu-id="7c215-104">Windows PowerShell をインストールして起動したら、次のセットアップ オプションを実行することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="7c215-104">When Windows PowerShell is installed and started, consider the following setup options.</span></span> <span data-ttu-id="7c215-105">これらのタスクは、いつでも実行できます。</span><span class="sxs-lookup"><span data-stu-id="7c215-105">You can perform these tasks at any time.</span></span>

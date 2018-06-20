@@ -9,6 +9,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188685"
 ---
 <span data-ttu-id="ddec9-103">ネットワーク スイッチ マネージャーのコマンドレットを使用すれば、WSMAN 経由でネットワーク スイッチを管理することができます。</span><span class="sxs-lookup"><span data-stu-id="ddec9-103">The Network Switch Manager cmdlets can be used to manage network switches over WSMAN.</span></span>
 <span data-ttu-id="ddec9-104">このモジュールのコマンドレットの中には、パイプラインからの値を受け入れられるものがいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="ddec9-104">A few cmdlets of this module are capable of accepting values from pipelines.</span></span>

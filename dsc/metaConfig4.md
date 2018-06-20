@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189382"
 ---
 # <a name="configuring-the-local-configuration-manager-in-previous-versions-of-windows-powershell"></a><span data-ttu-id="ad905-103">以前のバージョンの Windows PowerShell でローカル構成マネージャーを構成する</span><span class="sxs-lookup"><span data-stu-id="ad905-103">Configuring the Local Configuration Manager in Previous Versions of Windows PowerShell</span></span>
 

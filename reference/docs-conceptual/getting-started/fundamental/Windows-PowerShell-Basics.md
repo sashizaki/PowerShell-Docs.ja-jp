@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30950536"
 ---
 # <a name="windows-powershell-basics"></a><span data-ttu-id="563b0-103">Windows PowerShell の基礎</span><span class="sxs-lookup"><span data-stu-id="563b0-103">Windows PowerShell Basics</span></span>
 <span data-ttu-id="563b0-104">グラフィカル ユーザー インターフェイスでは、ほとんどのコンピューターのユーザーによく知られているいくつかの基本的な概念を使用します。</span><span class="sxs-lookup"><span data-stu-id="563b0-104">Graphical user interfaces use some basic concepts that are well known to most computer users.</span></span> <span data-ttu-id="563b0-105">ユーザーはタスクを実行する際、なじみのあるインターフェイスに依存します。</span><span class="sxs-lookup"><span data-stu-id="563b0-105">Users rely on the familiarity of those interfaces to accomplish tasks.</span></span> <span data-ttu-id="563b0-106">オペレーティング システムは閲覧可能な項目のグラフィック表示をユーザーに提示しますが、これには通常、特定の機能にアクセスするためのドロップダウン メニューと、コンテキスト特有の機能にアクセスするためのコンテキスト メニューが含まれています。</span><span class="sxs-lookup"><span data-stu-id="563b0-106">Operating systems present users with a graphical representation of items that can be browsed, usually with drop-down menus for accessing specific functionality and context menus for accessing context-specific functionality.</span></span>

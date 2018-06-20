@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951394"
 ---
 # <a name="the-isefile-object"></a><span data-ttu-id="aa5d2-103">ISEFile オブジェクト</span><span class="sxs-lookup"><span data-stu-id="aa5d2-103">The ISEFile Object</span></span>
 

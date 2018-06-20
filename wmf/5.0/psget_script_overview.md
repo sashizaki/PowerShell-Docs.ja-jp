@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219584"
 ---
 # <a name="powershell-script-discovery-install-and-management-with-powershellget"></a><span data-ttu-id="2ee1f-102">PowerShellGet による PowerShell スクリプトの検出、インストール、および管理</span><span class="sxs-lookup"><span data-stu-id="2ee1f-102">PowerShell Script Discovery, Install and Management with PowerShellGet</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34189960"
 ---
 # <a name="resource-authoring-checklist"></a><span data-ttu-id="ac25e-103">リソース作成のチェックリスト</span><span class="sxs-lookup"><span data-stu-id="ac25e-103">Resource authoring checklist</span></span>
 <span data-ttu-id="ac25e-104">このチェックリストは、新しい DSC リソースを作成するときのベスト プラクティスの一覧です。</span><span class="sxs-lookup"><span data-stu-id="ac25e-104">This checklist is a list of best practices when authoring a new DSC Resource.</span></span>

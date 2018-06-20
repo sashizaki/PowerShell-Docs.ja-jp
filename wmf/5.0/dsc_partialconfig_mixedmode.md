@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218027"
 ---
 # <a name="support-for-mixed-refreshmode"></a><span data-ttu-id="4bed0-102">RefreshMode の混在のサポート</span><span class="sxs-lookup"><span data-stu-id="4bed0-102">Support for mixed RefreshMode</span></span>
 

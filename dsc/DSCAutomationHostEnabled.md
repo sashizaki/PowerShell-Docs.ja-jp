@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221971"
 ---
 ><span data-ttu-id="48b28-103">適用先: Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="48b28-103">Applies to: Windows PowerShell 5.0</span></span>
 

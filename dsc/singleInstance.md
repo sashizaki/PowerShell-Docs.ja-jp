@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218367"
 ---
 # <a name="writing-a-single-instance-dsc-resource-best-practice"></a><span data-ttu-id="6d4d5-103">単一インスタンスの DSC リソースを記述する (ベスト プラクティス)</span><span class="sxs-lookup"><span data-stu-id="6d4d5-103">Writing a single-instance DSC resource (best practice)</span></span>
 

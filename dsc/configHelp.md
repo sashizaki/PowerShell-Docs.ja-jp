@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34222665"
 ---
 # <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="af651-103">DSC 構成のヘルプの作成</span><span class="sxs-lookup"><span data-stu-id="af651-103">Writing help for DSC configurations</span></span>
 

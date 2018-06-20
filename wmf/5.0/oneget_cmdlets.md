@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221955"
 ---
 # <a name="packagemanagement-cmdlets"></a><span data-ttu-id="aa7b0-102">PackageManagement コマンドレット</span><span class="sxs-lookup"><span data-stu-id="aa7b0-102">PackageManagement Cmdlets</span></span>
 <span data-ttu-id="aa7b0-103">これは、ソフトウェアの検出、インストール、およびインベントリ (SDII) をサポートする PackageManagement の中核となります。</span><span class="sxs-lookup"><span data-stu-id="aa7b0-103">This is the core of PackageManagement to support software discovery, installation, and inventory (SDII).</span></span> <span data-ttu-id="aa7b0-104">次の操作のコマンドレットを試してください。</span><span class="sxs-lookup"><span data-stu-id="aa7b0-104">Try out the cmdlets for these operations:</span></span>

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188287"
 ---
 # <a name="separation-of-node-and-configuration-ids"></a><span data-ttu-id="9496c-102">ノード ID と構成 ID の分離</span><span class="sxs-lookup"><span data-stu-id="9496c-102">Separation of Node and Configuration IDs</span></span>
 

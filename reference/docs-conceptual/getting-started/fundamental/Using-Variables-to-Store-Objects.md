@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953329"
 ---
 # <a name="using-variables-to-store-objects"></a><span data-ttu-id="d3941-103">変数を使用したオブジェクトの保存</span><span class="sxs-lookup"><span data-stu-id="d3941-103">Using Variables to Store Objects</span></span>
 <span data-ttu-id="d3941-104">PowerShell ではオブジェクトを操作します。</span><span class="sxs-lookup"><span data-stu-id="d3941-104">PowerShell works with objects.</span></span> <span data-ttu-id="d3941-105">PowerShell では、変数 (本質的には名前付きのオブジェクト) を作成し、後で使用するために出力を保持できます。</span><span class="sxs-lookup"><span data-stu-id="d3941-105">PowerShell lets you create variables, essentially named objects, to preserve output for later use.</span></span> <span data-ttu-id="d3941-106">他のシェルで変数を使用することに慣れている場合、PowerShell の変数はテキストではなくオブジェクトであることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="d3941-106">If you are used to working with variables in other shells remember that PowerShell variables are objects, not text.</span></span>

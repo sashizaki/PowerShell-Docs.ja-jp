@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34221823"
 ---
 # <a name="separation-of-configuration-resource-and-report-repositories"></a><span data-ttu-id="192c3-102">構成、リソース、およびレポートのリポジトリの分離</span><span class="sxs-lookup"><span data-stu-id="192c3-102">Separation of Configuration, Resource and Report Repositories</span></span>
 

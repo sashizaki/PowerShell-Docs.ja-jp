@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219550"
 ---
 # <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a><span data-ttu-id="3c885-102">OData エンドポイントに基づく PowerShell コマンドレットの生成</span><span class="sxs-lookup"><span data-stu-id="3c885-102">Generate PowerShell Cmdlets based on OData Endpoint</span></span>
 <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a><span data-ttu-id="3c885-103">OData エンドポイントに基づく Windows PowerShell コマンドレットの生成</span><span class="sxs-lookup"><span data-stu-id="3c885-103">Generate Windows PowerShell cmdlets based on an OData endpoint</span></span>

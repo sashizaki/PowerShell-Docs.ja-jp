@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218214"
 ---
 # <a name="format-hex"></a><span data-ttu-id="74ad7-102">Format-Hex</span><span class="sxs-lookup"><span data-stu-id="74ad7-102">Format-Hex</span></span>
 <span data-ttu-id="74ad7-103">**Format-Hex** を使うと、テキスト データやバイナリ データを 16 進数形式で表示できます。「[Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="74ad7-103">**Format-Hex** lets you view text or binary data in hexadecimal format; see [Format-Hex](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/format-hex)</span></span>

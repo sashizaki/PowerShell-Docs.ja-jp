@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949266"
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a><span data-ttu-id="f42c1-103">付録 2 - カスタムの PowerShell ショートカットの作成</span><span class="sxs-lookup"><span data-stu-id="f42c1-103">Appendix 2 - Creating a Custom PowerShell Shortcut</span></span>
 

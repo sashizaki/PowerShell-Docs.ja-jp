@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225727"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a><span data-ttu-id="6f998-102">PowerShell クラスを使用したカスタム型の作成</span><span class="sxs-lookup"><span data-stu-id="6f998-102">Creating Custom Types using PowerShell Classes</span></span>
 

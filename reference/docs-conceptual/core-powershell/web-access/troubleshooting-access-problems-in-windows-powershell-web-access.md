@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953448"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a><span data-ttu-id="2469f-103">Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="2469f-103">Troubleshooting Access Problems in Windows PowerShell Web Access</span></span>
 
@@ -55,7 +56,7 @@ ms.lasthandoff: 04/09/2018
    1. <span data-ttu-id="2469f-128">**[ドキュメント モード]**、*[IE10 標準]* の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="2469f-128">Click **Document Mode**, and then click *IE10* standards.</span></span>
    1. <span data-ttu-id="2469f-129">もう一度 **F12** キーを押して開発者ツール コンソールを閉じます。</span><span class="sxs-lookup"><span data-stu-id="2469f-129">Press **F12** again to close the Developer Tools console.</span></span>
 1. <span data-ttu-id="2469f-130">Internet Explorer 10 の自動プロキシ構成を無効にします。</span><span class="sxs-lookup"><span data-stu-id="2469f-130">Disable automatic proxy configuration in Internet Explorer 10.</span></span>
-   1. <span data-ttu-id="2469f-131">**[ツール]**、 **[インターネット オプション]**の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="2469f-131">Click **Tools**, and then click **Internet Options**.</span></span>
+   1. <span data-ttu-id="2469f-131">**[ツール]**、 **[インターネット オプション]** の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="2469f-131">Click **Tools**, and then click **Internet Options**.</span></span>
    1. <span data-ttu-id="2469f-132">**[インターネット オプション]** ダイアログ ボックスの **[接続]** タブで、**[LAN の設定]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="2469f-132">In the **Internet Options** dialog box, on the **Connections** tab, click **LAN settings**.</span></span>
    1. <span data-ttu-id="2469f-133">**[設定を自動的に検出する]** チェック ボックスをオフにします。</span><span class="sxs-lookup"><span data-stu-id="2469f-133">Clear the **Automatically detect settings** check box.</span></span> <span data-ttu-id="2469f-134">**[OK]** をクリックし、もう一度 **[OK]** をクリックして、*[インターネット オプション]* ダイアログ ボックスを閉じます。</span><span class="sxs-lookup"><span data-stu-id="2469f-134">Click **OK**, and then click **OK** again to close the *Internet Options* dialog box.</span></span>
 

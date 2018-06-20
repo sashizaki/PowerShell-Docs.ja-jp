@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951870"
 ---
 # <a name="managing-windows-powershell-drives"></a><span data-ttu-id="5d871-103">Windows PowerShell ドライブの管理</span><span class="sxs-lookup"><span data-stu-id="5d871-103">Managing Windows PowerShell Drives</span></span>
 

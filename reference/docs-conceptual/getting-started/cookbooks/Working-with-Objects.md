@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949657"
 ---
 # <a name="working-with-objects"></a><span data-ttu-id="f21f7-103">オブジェクトの操作</span><span class="sxs-lookup"><span data-stu-id="f21f7-103">Working with Objects</span></span>
 

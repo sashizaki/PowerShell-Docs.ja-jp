@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218095"
 ---
 # <a name="archive-cmdlets"></a><span data-ttu-id="b4c21-102">アーカイブのコマンドレット</span><span class="sxs-lookup"><span data-stu-id="b4c21-102">Archive cmdlets</span></span>
 

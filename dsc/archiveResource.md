@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219472"
 ---
 # <a name="dsc-archive-resource"></a><span data-ttu-id="88a69-103">DSC Archive リソース</span><span class="sxs-lookup"><span data-stu-id="88a69-103">DSC Archive Resource</span></span>
 

@@ -7,6 +7,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34186945"
 ---
 # <a name="using-the-resource-designer-tool"></a><span data-ttu-id="1d6d8-103">リソース デザイナー ツールの使用</span><span class="sxs-lookup"><span data-stu-id="1d6d8-103">Using the Resource Designer tool</span></span>
 

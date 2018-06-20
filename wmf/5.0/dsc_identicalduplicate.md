@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34187540"
 ---
 # <a name="allowing-for-identical-duplicate-resources-in-a-configuration"></a><span data-ttu-id="710ff-102">構成における同一重複リソースの許容</span><span class="sxs-lookup"><span data-stu-id="710ff-102">Allowing for Identical Duplicate Resources in a Configuration</span></span>
 
