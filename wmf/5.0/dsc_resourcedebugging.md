@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/16/2018
+ms.locfileid: "34188470"
 ---
 # <a name="dsc-resource-script-debugging"></a>DSC リソース スクリプトのデバッグ
 

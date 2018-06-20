@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952785"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Format コマンドを使用した出力ビューの変更
 

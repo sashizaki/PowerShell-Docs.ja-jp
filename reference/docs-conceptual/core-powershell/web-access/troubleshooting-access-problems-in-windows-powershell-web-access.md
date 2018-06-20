@@ -7,6 +7,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953448"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
 
@@ -55,7 +56,7 @@ ms.lasthandoff: 04/09/2018
    1. **[ドキュメント モード]**、*[IE10 標準]* の順にクリックします。
    1. もう一度 **F12** キーを押して開発者ツール コンソールを閉じます。
 1. Internet Explorer 10 の自動プロキシ構成を無効にします。
-   1. **[ツール]**、 **[インターネット オプション]**の順にクリックします。
+   1. **[ツール]**、 **[インターネット オプション]** の順にクリックします。
    1. **[インターネット オプション]** ダイアログ ボックスの **[接続]** タブで、**[LAN の設定]** をクリックします。
    1. **[設定を自動的に検出する]** チェック ボックスをオフにします。 **[OK]** をクリックし、もう一度 **[OK]** をクリックして、*[インターネット オプション]* ダイアログ ボックスを閉じます。
 

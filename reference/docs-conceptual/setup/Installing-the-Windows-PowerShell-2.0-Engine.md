@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952343"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 エンジンのインストール
 このトピックでは、Windows PowerShell 2.0 エンジンのインストール方法について説明します。

@@ -8,6 +8,7 @@ ms.sourcegitcommit: ece1794c94be4880a2af5a2605ed4721593643b6
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/16/2018
+ms.locfileid: "31201021"
 ---
 # <a name="working-with-files-and-folders"></a>ファイルとフォルダーの操作
 

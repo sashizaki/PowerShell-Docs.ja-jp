@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225693"
 ---
 # <a name="modules-support-for-declaring-version-ranges-1-etc"></a>バージョン範囲 (1. * など) の宣言をサポートするモジュール
 **-MinimumVersion** と **-MaximumVersion** を組み合わせて使うと、特定の範囲のモジュールを取得/インポートできるようになりました。 パラメーターは **.**\* もサポートしています。 このパラメーターの動作を次の例で示します。

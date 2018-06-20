@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30954842"
 ---
 # <a name="creating-a-graphical-date-picker"></a>グラフィカルな日付の選択を作成する
 

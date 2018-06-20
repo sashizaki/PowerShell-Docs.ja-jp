@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953475"
 ---
 # <a name="learning-windows-powershell-names"></a>Windows PowerShell で用いられる名前の習得
 大半のコマンドライン インターフェイスに共通して言えることは、コマンドやコマンド パラメーターの名前を覚えるために多大な時間と労力が必要であるという点です。 この問題の原因は、決まったパターンがほとんどなく、よく使用するコマンドやパラメーターを暗記する以外に覚える方法がないことです。

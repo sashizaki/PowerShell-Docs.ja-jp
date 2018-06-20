@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225472"
 ---
 # <a name="audit-powershell-usage-using-transcription-and-logging"></a>トランスクリプションおよびログを使用した PowerShell の使用状況の監査
 

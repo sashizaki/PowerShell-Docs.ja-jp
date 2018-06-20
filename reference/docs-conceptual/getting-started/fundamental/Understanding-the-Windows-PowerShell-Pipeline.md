@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951071"
 ---
 # <a name="understanding-the-windows-powershell-pipeline"></a>Windows PowerShell パイプラインを理解する
 Windows PowerShell では、パイプ処理をほぼすべての状況で使用できます。 画面にはテキストが表示されますが、コマンド間で受け渡しされる情報はテキストではありません。 パイプの中を流れるデータは、実際にはオブジェクトです。

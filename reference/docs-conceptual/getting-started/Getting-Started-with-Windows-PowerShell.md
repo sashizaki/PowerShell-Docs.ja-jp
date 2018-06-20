@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30949487"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Windows PowerShell ファースト ステップ ガイド
 Windows PowerShell は、特にシステム管理者向けに設計された Windows コマンド ライン シェルです。 Windows PowerShell には対話型のプロンプトとスクリプト環境が含まれており、それらを単独で、または組み合わせて使用できます。

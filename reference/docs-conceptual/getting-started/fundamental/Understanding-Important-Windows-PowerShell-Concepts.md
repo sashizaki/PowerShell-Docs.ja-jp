@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30951088"
 ---
 # <a name="understanding-important-windows-powershell-concepts"></a>Windows PowerShell の重要な概念を理解する
 Windows PowerShell の設計には、多数の異なる環境の概念が取り入れられています。 特定のシェルやプログラミング環境を使ったことのあるユーザーであれば、そのいくつかについては既に使い慣れているかもしれません。しかし、これらすべてに精通しているユーザーはごく一部に限られると思われます。 これらのいくつかの概念について理解することは、シェルの概要を把握するのに役立ちます。

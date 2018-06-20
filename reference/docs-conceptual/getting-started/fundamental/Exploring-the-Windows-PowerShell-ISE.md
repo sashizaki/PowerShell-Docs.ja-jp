@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952275"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Windows PowerShell ISE の操作
 

@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30953329"
 ---
 # <a name="using-variables-to-store-objects"></a>変数を使用したオブジェクトの保存
 PowerShell ではオブジェクトを操作します。 PowerShell では、変数 (本質的には名前付きのオブジェクト) を作成し、後で使用するために出力を保持できます。 他のシェルで変数を使用することに慣れている場合、PowerShell の変数はテキストではなくオブジェクトであることに注意してください。

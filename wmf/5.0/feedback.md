@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34218826"
 ---
 # <a name="feedback"></a>フィードバック
 問題点の報告やフィードバックには、[PowerShell UserVoice のサイト](http://windowsserver.uservoice.com/forums/301869-powershell)をご利用ください。

@@ -6,6 +6,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34225523"
 ---
 # <a name="report-configuration-status-to-central-location"></a>構成の状態を中央の場所にレポートする
 

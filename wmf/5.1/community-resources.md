@@ -8,6 +8,7 @@ ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 05/17/2018
+ms.locfileid: "34219370"
 ---
 # <a name="community-resources"></a>コミュニティ リソース #
 > 注意: この情報は暫定版であり、変更することがあります。

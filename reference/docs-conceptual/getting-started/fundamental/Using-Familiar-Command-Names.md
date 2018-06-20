@@ -8,6 +8,7 @@ ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 04/09/2018
+ms.locfileid: "30952683"
 ---
 # <a name="using-familiar-command-names"></a>使い慣れたコマンド名の使用
 Windows PowerShell では、*エイリアス*というメカニズムにより、ユーザーは代替名でコマンドを表せます。 エイリアスがあることで、他のシェルの経験のあるユーザーは、既に知っている一般的なコマンド名を再使用して、Windows PowerShell でも同様の操作を行えます。 Windows PowerShell のエイリアスについて詳しくは解説しませんが、Windows PowerShell の入門段階でもエイリアスを使用できます。
