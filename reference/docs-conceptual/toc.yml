@@ -13,7 +13,7 @@
               href: setup/Installing-PowerShell-Core-on-Linux.md
             - name: macOS への PowerShell Core のインストール
               href: setup/Installing-PowerShell-Core-on-macOS.md
-            - name: ARM 上の PowerShell Core
+            - name: ARM への PowerShell Core のインストール
               href: setup/PowerShell-Core-on-ARM.md
         - name: Windows PowerShell
           href: ''
