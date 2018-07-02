@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 の新しいシナリオと機能
-ms.openlocfilehash: 77b439e61c5802f8ddbc4a0f39923cc8c0c36fe9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
+ms.sourcegitcommit: 50b66cada6943784b8d3c103cebc3c1e3e286a16
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190317"
+ms.lasthandoff: 06/28/2018
+ms.locfileid: "37090365"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 の新しいシナリオと機能
 
@@ -25,12 +25,12 @@ PowerShell は、バージョン 5.1 以降、機能セットとプラットフ�
 
 - [$PSVersionTable を使用して PowerShell の実行エディションを特定する](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [PSEdition パラメーターを使用して CompatiblePSEditions で Get-Module の結果をフィルター処理する](/powershell/module/microsoft.powershell.core/get-module)
-- [互換性のある PowerShell のエディションで実行しない場合はスクリプトを実行させない](/powershell/gallery/psget/script/scriptwithpseditionsupport)
-- [特定の PowerShell バージョンに対するモジュールの互換性を宣言する](/powershell/gallery/psget/module/modulewithpseditionsupport)
+- [互換性のある PowerShell のエディションで実行しない場合はスクリプトを実行させない](/powershell/gallery/concepts/script-psedition-support)
+- [特定の PowerShell バージョンに対するモジュールの互換性を宣言する](/powershell/gallery/concepts/module-psedition-support)
 
 ## <a name="catalog-cmdlets"></a>カタログ コマンドレット
 
-[Microsoft.PowerShell.Security](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.security) モジュールに新しいコマンドレットが 2 つ追加されました。Windows カタログ ファイルを生成し、検証するコマンドレットです。
+[Microsoft.PowerShell.Security](/powershell/module/microsoft.powershell.security) モジュールに新しいコマンドレットが 2 つ追加されました。Windows カタログ ファイルを生成し、検証するコマンドレットです。
 
 ### <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
@@ -57,7 +57,7 @@ New-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-CatalogVersio
 
 ![](../images/CatalogFile2.jpg)
 
-カタログ ファイルの整合性を検証するために (上記の例では Pester.cat)、[Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) コマンドレットで署名します。
+カタログ ファイルの整合性を検証するために (上記の例では Pester.cat)、[Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) コマンドレットで署名します。
 
 ### <a name="test-filecatalog"></a>Test-FileCatalog
 --------------------------------
@@ -73,7 +73,7 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 このコマンドレットは、*カタログ*で見つかったすべてのファイル ハッシュとその相対パスを*ディスク*のそれらと比較します。
 ファイル ハッシュとパスの間に不一致が検出された場合、*ValidationFailed* というステータスを返します。
 *-Detailed* パラメーターを利用し、この情報をすべて取得できます。
-*署名*プロパティには、カタログの署名ステータスも表示されます。これは、カタログ ファイルで [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) コマンドレットを呼び出すことと同じです。
+*署名*プロパティには、カタログの署名ステータスも表示されます。これは、カタログ ファイルで [Get-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Get-AuthenticodeSignature) コマンドレットを呼び出すことと同じです。
 *-FilesToSkip* パラメーターを利用し、検証中にファイルをスキップすることもできます。
 
 ## <a name="module-analysis-cache"></a>モジュール分析キャッシュ
@@ -115,7 +115,7 @@ WMF 5.1 では、`using module` は PowerShell の他のモジュール関連構
 
 WMF 5.1 では次のようになります。
 
-- [ModuleSpecification コンストラクター (Hashtable)](https://msdn.microsoft.com/library/jj136290) を使用できます。
+- [ModuleSpecification コンストラクター (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_) を使用できます。
 このハッシュ テーブルの形式は `Get-Module -FullyQualifiedName` と同じです。
 
 **例:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`
