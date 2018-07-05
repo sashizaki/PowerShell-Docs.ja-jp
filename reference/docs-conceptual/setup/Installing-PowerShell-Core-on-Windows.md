@@ -12,7 +12,7 @@ MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi`
 インストールするとスタート メニューにショートカットが表示されます。
 
 - パッケージは、既定で `$env:ProgramFiles\PowerShell\<version>` にインストールされます。
-- PowerShell は、スタート メニューまたは `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` から起動できます。
+- PowerShell は、スタート メニューまたは  `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` から起動できます。
 
 ### <a name="prerequisites"></a>前提条件
 
@@ -140,8 +140,4 @@ CoreCLR のアーティファクトから PowerShell Core をインストール�
 3. zip ファイルを `bin` ディレクトリに抽出します
 4. `./bin/pwsh.exe`
 
-<!-- [download-center]: TODO -->
-[releases]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+<!-- [download-center]: TODO --> [リリース]: https://github.com/PowerShell/PowerShell/releases [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
