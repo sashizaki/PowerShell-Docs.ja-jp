@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データの使用
-ms.openlocfilehash: d42c43fddb54050adcbac949e7f67f3b41b540f1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 9b0b213e2d71bfdb473fd98f8080de5c874c70e2
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189688"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940380"
 ---
 # <a name="using-configuration-data-in-dsc"></a>DSC で構成データを使用する
 
->適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 組み込みの DSC **ConfigurationData** パラメーターを使用して、構成内で使用可能なデータを定義することができます。
 これにより、複数のノードや異なる環境で使用可能な 1 つの構成を作成できます。
@@ -28,7 +28,8 @@ DSC 構成では、**ConfigurationData** という共通パラメーターを使
 **ConfigurationData** パラメーターはハッシュテーブルであり、**AllNodes** という名前のキーが少なくとも 1 つ必要です。
 その他のキーを 1 つ以上含めることもできます。
 
->**注:** このトピックの例では、(**AllNodes** というキーではなく) `NonNodeData` という追加のキーを 1 つしか使用していませんが、追加するキーの数に制限はなく、名前も自由に付けることができます。
+> [!NOTE]
+> このトピックの例では、(**AllNodes** というキーではなく) `NonNodeData` という追加のキーを 1 つしか使用していませんが、追加するキーの数に制限はなく、名前も自由に付けることができます。
 
 ```powershell
 $MyData =
@@ -188,6 +189,7 @@ DSC には、構成スクリプトで使用できる 3 つの特殊な変数 **$
 
 - **$AllNodes** は、**ConfigurationData** で定義されたノードのコレクション全体を参照します。 **.Where()** と **.ForEach()** を使用すると、**AllNodes** コレクションをフィルター処理できます。
 - **Node** は、**.Where()** または **.ForEach()** を使用してフィルター処理された後の **AllNodes** コレクション内にある特定のエントリを参照します。
+  - これらのメソッドの詳細については、「[about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)」を参照してください。
 - **ConfigurationData** は、構成のコンパイル時にパラメーターとして渡されるハッシュ テーブル全体を参照します。
 
 ## <a name="using-non-node-data"></a>ノード外のデータを使用する
@@ -199,5 +201,6 @@ DSC には、構成スクリプトで使用できる 3 つの特殊な変数 **$
 ノード以外のデータを使用する例は、「[構成データと環境データの分離](separatingEnvData.md)」をご覧ください。
 
 ## <a name="see-also"></a>参照
+
 - [構成データでの資格情報オプション](configDataCredentials.md)
 - [DSC 構成](configurations.md)

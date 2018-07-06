@@ -1,14 +1,14 @@
 ---
 description: Azure の Desired State Configuration (DSC) 拡張機能のバージョン履歴について説明します。
-ms.date: 05/09/2018
+ms.date: 06/21/2018
 keywords: dsc, powershell, azure, 拡張機能
 title: Azure DSC 拡張機能のバージョン履歴
-ms.openlocfilehash: 81dfcf81bd8f8685a0c8c81cd07bc5447e1abf94
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 25248288291b9bf8efe6ce1eef203a552cd17736
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189943"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940329"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration 拡張機能のバージョン履歴
 
@@ -16,12 +16,12 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 
 この記事では、Azure DSC VM 拡張機能の各バージョンに関する情報、サポートする環境、新しい機能や変更に関するコメントや注意事項について説明します。
 
-## <a name="latest-versions"></a>最新バージョン
+## <a name="latest-version"></a>最新バージョン
 
 ### <a name="version-276"></a>バージョン 2.76
 
 - **リリース日:**
-  - 2018 年 5 月 9 日
+  - 2018 年 5 月 9 日 (Azure) | 2018 年 6 月 21 日 (Azure 中国、Azure Government)
 - **OS のサポート:**
   - Windows Server 2016
   - Windows Server 2012 R2
@@ -36,30 +36,11 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
   - WMF 4.0
 - **環境**
   - Azure
+  - Azure 中国
+  - Azure Government
 - **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - 副状態やその他の軽微なバグ修正に関する拡張メタデータが改善されました。
-
-### <a name="version-219"></a>バージョン 2.19
-
-- **リリース日:**
-  - 2016 年 6 月 3 日
-- **OS のサポート:**
-  - Windows Server 2016 Technical Preview
-  - Windows Server 2012 R2
-  - Windows Server 2012
-  - Windows Server 2008 R2 SP1
-- **WMF のサポート:**
-  - WMF 5.0 RTM
-  - WMF 4.0 Update
-  - WMF 4.0
-- **環境**
-  - Azure
-  - Azure 中国
-  - Azure Government
-- **備考:** このバージョンでは、Windows Server 2016 Technical Preview に含まれる DSC を使用しています。他の OS の場合は、[Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます (WMF をインストールするには再起動が必要です)。
-- **新機能:**
-  - DSC 拡張機能が Azure 中国に搭載されました。 このバージョンには、主に Azure 中国上でこの拡張機能を実行するための修正が含まれています。
 
 ## <a name="supported-versions"></a>のサポートされているバージョン
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築
-ms.openlocfilehash: ce0f2ed79f5f96a1c38e0beaf32529aba7538963
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: faeef5022cbd984cab0620b69db19de8b84cca0e
+ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190555"
+ms.lasthandoff: 06/26/2018
+ms.locfileid: "36940346"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築
 
@@ -36,6 +36,7 @@ ms.locfileid: "34190555"
 この例を設定して実行する、すべての作業を行うコンピューターです。
 
 クライアント コンピューターは Windows コンピューターで、以下がインストールされている必要があります。
+
 - [Git](https://git-scm.com/)
 - https://github.com/PowerShell/Demo_CI から複製されたローカル Git リポジトリ
 - [Visual Studio Code](https://code.visualstudio.com/) などのテキスト エディター
@@ -73,21 +74,22 @@ Windows ビルド エージェントをインストールし実行する方法�
 1. クライアント コンピューターで、Web ブラウザーから TFS サーバーに移動します。
 1. TFS で、[新しいチーム プロジェクトを作成](https://www.visualstudio.com/en-us/docs/setup-admin/create-team-project)し、Demo_CI という名前にします。
 
-    **バージョン コントロール** が **Git** に設定されていることを確認します。
+   **バージョン コントロール** が **Git** に設定されていることを確認します。
 1. クライアント コンピューターで、次のコマンドを使用して、いま TFS で作成したリポジトリにリモートを追加します。
 
-    `git remote add tfs <YourTFSRepoURL>`
+   `git remote add tfs <YourTFSRepoURL>`
 
-    ここで `<YourTFSRepoURL>` は、前の手順で作成した TFS リポジトリのクローン URL です。
+   ここで `<YourTFSRepoURL>` は、前の手順で作成した TFS リポジトリのクローン URL です。
 
-    この URL の場所がわからない場合は、「[Clone an existing Git repo (既存の Git リポジトリを複製する)](https://www.visualstudio.com/en-us/docs/git/tutorial/clone)」をご覧ください。
+   この URL の場所がわからない場合は、「[Clone an existing Git repo (既存の Git リポジトリを複製する)](https://www.visualstudio.com/en-us/docs/git/tutorial/clone)」をご覧ください。
 1. 次のコマンドで、ローカル リポジトリから TFS リポジトリにコードをプッシュします。
 
-    `git push tfs --all`
+   `git push tfs --all`
 1. TFS リポジトリが Demo_CI のコードで設定されます。
 
->**注:** この例では Git リポジトリの `ci-cd-example` ブランチのコードを使用しています。
->このブランチを TFS プロジェクトの既定ブランチとし、また作成する CI/CD トリガーに必ず指定してください。
+> [!NOTE]
+> この例では Git リポジトリの `ci-cd-example` ブランチのコードを使用しています。
+> このブランチを TFS プロジェクトの既定ブランチとし、また作成する CI/CD トリガーに必ず指定してください。
 
 ## <a name="understanding-the-code"></a>コードを理解する
 
@@ -154,6 +156,8 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 ```
 
 これは、`DevEnv.ps1` スクリプトによって作成された[構成データ](configData.md)内で、`DNSServer` の役割を持つものとして定義されたすべてのノードを検索します。
+
+`Where` メソッドの詳細については、「[about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)」を参照してください。
 
 CI を行う場合、ノード情報は環境によって変わることがあるため、ノードの定義に構成データを使用することは重要です。構成データを使用すれば、構成コードを変更することなく、ノード情報を簡単に変更できます。
 
@@ -348,12 +352,12 @@ TFS でこの例のビルド定義を作成する場合、psake スクリプト 
 
 1. 以下の行すべてを、**[内容]** に追加します。
 
-    ```
-    initiate.ps1
-    **\deploy.ps1
-    **\Acceptance\**
-    **\Integration\**
-    ```
+   ```
+   initiate.ps1
+   **\deploy.ps1
+   **\Acceptance\**
+   **\Integration\**
+   ```
 
 1. **TargetFolder** を `$(Build.ArtifactStagingDirectory)\` に設定します。
 

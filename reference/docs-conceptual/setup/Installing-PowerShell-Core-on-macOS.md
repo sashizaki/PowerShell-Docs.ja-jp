@@ -36,8 +36,7 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> 上記のコマンドは PowerShell (pwsh) ホストから呼び出すことができますが、その場合、PowerShell シェルを終了し、再起動して、アップグレードを完了し、
-> $PSVersionTable に表示される値を更新する必要があります。
+> 上記のコマンドは PowerShell (pwsh) ホストから呼び出すことができますが、その場合、アップグレードを完了するには、PowerShell シェルを終了し、再起動して、$PSVersionTable に表示される値を更新する必要があります。
 
 [brew]: http://brew.sh/
 [cask]: https://caskroom.github.io/
@@ -98,7 +97,7 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 
 ## <a name="paths"></a>パス
 
-* `$PSHOME` は `/opt/microsoft/powershell/6.0.0/` です
+* `$PSHOME` は `/usr/local/microsoft/powershell/6.0.2/` です
 * ユーザー プロファイルは `~/.config/powershell/profile.ps1` から読み込まれます
 * 既定のプロファイルは `$PSHOME/profile.ps1` から読み込まれます
 * ユーザー モジュールは `~/.local/share/powershell/Modules` から読み込まれます
@@ -112,7 +111,7 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 PowerShell は、macOS の [XDG ベース ディレクトリ仕様][xdg-bds]を尊重しています。
 
 macOS は BSD から派生しているので、プレフィックスに `/opt` ではなく `/usr/local` が使用されます。
-そのため、`$PSHOME` は `/usr/local/microsoft/powershell/6.0.0/` です。シンボリックリンクは `/usr/local/bin/pwsh` にあります。
+そのため、`$PSHOME` は `/usr/local/microsoft/powershell/6.0.2/` です。シンボリックリンクは `/usr/local/bin/pwsh` にあります。
 
 [リリース]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
