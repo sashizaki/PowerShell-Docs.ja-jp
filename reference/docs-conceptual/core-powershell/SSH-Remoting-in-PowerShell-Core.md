@@ -42,7 +42,7 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
     New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
     ```
 
-1. GitHub から最新の [Win32 OpenSSH] ビルドをインストールします ([インストール]方法はここで確認できます)
+1. GitHub から最新の [Win32 OpenSSH] ビルドをインストールします (インストール方法は[ここ]で確認できます)
 1. Win32 OpenSSH をインストールした場所で sshd_config ファイルを編集します
     - パスワード認証が有効になっていることを確認します
 
@@ -54,6 +54,22 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
 
     ```
     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+    ```
+    
+    > [!NOTE]
+    OpenSSH for Windows にバグがあり、サブシステムの実行可能ファイルのパスでスペースが機能しません。
+    この問題の詳細については、GitHub の[こちらのページ](https://github.com/PowerShell/Win32-OpenSSH/issues/784)を参照してください。
+    
+    解決策の 1 つは、次のようにスペースが含まれていない PowerShell インストール ディレクトリへのシンボリック リンクを作成することです。
+    
+    ```powershell
+    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+    ```
+
+    次に、それを以下のようにサブシステムに入力します。
+ 
+    ```
+    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
     ```
 
     - 必要であればキー認証を有効にします
@@ -245,5 +261,5 @@ GitCommitId                    v6.0.0-alpha.17
 [Linux 向け PowerShell Core]: ../setup/installing-powershell-core-on-linux.md#ubuntu-1404
 [MacOS 向け PowerShell Core]: ../setup/installing-powershell-core-on-macos.md
 [Win32 OpenSSH]: https://github.com/PowerShell/Win32-OpenSSH/releases
-[インストール]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
+[ここ]: https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH
 [Ubuntu SSH]: https://help.ubuntu.com/lts/serverguide/openssh-server.html
