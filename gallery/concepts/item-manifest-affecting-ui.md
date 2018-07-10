@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: PowerShell ギャラリー UI に影響を与えるアイテム マニフェストの値
-ms.openlocfilehash: 39522396b179c54b981e6292cddacec27b32506c
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34048492"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893479"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell ギャラリー UI に影響を与えるアイテム マニフェストの値
 
@@ -16,8 +16,8 @@ ms.locfileid: "34048492"
 このコンテンツは、変更が表示される場所ごとに編成されており、中央のセクションから始まり、その後左側のナビゲーション領域に移動します。 タグについて説明する詳細セクションがあり、そこでは重要なタグやよく使用されるタグの一部を紹介します。
 マニフェストの例を示す次の 2 つのトピックがあります。
 
-- モジュールについては、[モジュール マニフェストの更新](https://docs.microsoft.com/powershell/gallery/psget/module/psget_update-modulemanifest)に関するトピックをご覧ください。
-- スクリプトについては、[メタデータを持つスクリプト ファイルの作成](https://docs.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo)に関するトピックをご覧ください。
+- モジュールについては、[モジュール マニフェストの更新](/powershell/module/powershellget/Update-ModuleManifest)に関するトピックをご覧ください。
+- スクリプトについては、[メタデータを持つスクリプト ファイルの作成](/powershell/module/powershellget/New-ScriptFileInfo)に関するトピックをご覧ください。
 
 ## <a name="powershell-gallery-feature-elements-controlled-by-the-manifest"></a>マニフェストによって制御される PowerShell ギャラリー機能の要素
 
@@ -27,11 +27,11 @@ UI 要素がモジュール マニフェストによって制御されるか、�
 | UI 要素 | 説明 | モジュール | スクリプト |
 | --- | --- | --- | --- |
 | **タイトル** | ギャラリーに公開されるアイテムの名前です  | いいえ | いいえ |
-| **バージョン** | 表示されるバージョンはメタデータ内のバージョン文字列で、指定されている場合、プレリリースです。 モジュール マニフェストでのバージョンの基本部分は、ModuleVersion です。 スクリプトの場合、.VERSION として指定されます。 プレリリース バージョンの文字列が指定されている場合、その文字列は、モジュールでは ModuleVersion に追加され、スクリプトでは .VERSION の一部として指定されます。 [モジュール](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/prereleasemodule)や[スクリプト](https://docs.microsoft.com/en-us/powershell/gallery/psget/script/prereleasescript)でプレリリースの文字列を指定するためのドキュメントがあります。 | 可 | 可 |
+| **バージョン** | 表示されるバージョンはメタデータ内のバージョン文字列で、指定されている場合、プレリリースです。 モジュール マニフェストでのバージョンの基本部分は、ModuleVersion です。 スクリプトの場合、.VERSION として指定されます。 プレリリース バージョンの文字列が指定されている場合、その文字列は、モジュールでは ModuleVersion に追加され、スクリプトでは .VERSION の一部として指定されます。 [モジュール](/powershell/gallery/concepts/module-prerelease-support)や[スクリプト](/powershell/gallery/concepts/script-prerelease-support)でプレリリースの文字列を指定するためのドキュメントがあります。 | 可 | 可 |
 | **説明** | モジュール マニフェストでの説明です。スクリプト ファイル マニフェストでは .DESCRIPTION となります。 | 可 | 可 |
-| **ライセンス同意リクエスト** | モジュールはユーザーのライセンス同意をリクエストできます。そのためには、モジュール マニフェストを RequireLicenseAcceptance = $true に変更し、LicenseURI を指定し、モジュール フォルダーのルートに license.txt ファイルを置きます。 詳細な情報については、「[ライセンス同意リクエスト](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_requires_license_acceptance)」のトピックで説明しています。 | 可 | いいえ |
+| **ライセンス同意リクエスト** | モジュールはユーザーのライセンス同意をリクエストできます。そのためには、モジュール マニフェストを RequireLicenseAcceptance = $true に変更し、LicenseURI を指定し、モジュール フォルダーのルートに license.txt ファイルを置きます。 詳細な情報については、「[ライセンス同意リクエスト](/powershell/gallery/how-to/working-with-items/items-that-require-license-acceptance)」のトピックで説明しています。 | 可 | いいえ |
 | **リリース ノート** | モジュールの場合、この情報は PSData\PrivateData の ReleaseNotes セクションから取得されます。 スクリプト マニフェストでは、.RELEASENOTES 要素です。 | 可 | 可 |
-| **所有者** | 所有者は、アイテムを更新できる PowerShell ギャラリー内のユーザーの一覧です。 アイテム マニフェストには、所有者の一覧は含まれていません。 他のドキュメントで、[アイテムの所有者を管理する](https://docs.microsoft.com/en-us/powershell/gallery/psgallery/managing-item-owners)方法について説明しています。 | いいえ | いいえ |
+| **所有者** | 所有者は、アイテムを更新できる PowerShell ギャラリー内のユーザーの一覧です。 アイテム マニフェストには、所有者の一覧は含まれていません。 他のドキュメントで、[アイテムの所有者を管理する](/powershell/gallery/how-to/publishing-items/managing-item-owners)方法について説明しています。 | いいえ | いいえ |
 | **作成者** | これは、モジュール マニフェストに作成者として指定されます。スクリプト マニフェストでは .AUTHOR として指定されます。 [作成者] フィールドは、アイテムに関連する会社や組織を指定する場合によく使用されます。 | 可 | 可 |
 | **著作権** | モジュール マニフェストの [著作権] フィールドです。スクリプト マニフェストでは .COPYRIGHT です。 | 可 | 可 |
 | **FileList** | PowerShell ギャラリーへの公開時に、パッケージからこのファイル一覧が取得されます。 マニフェストの情報で制御することはできません。 注: PowerShell ギャラリーで各アイテムと共に表示される追加の .nuspec ファイルがあります。これは、システムにアイテムをインストールした後には存在しません。 これはアイテムの Nuget パッケージ マニフェストであり、無視してかまいません。 | いいえ | いいえ |
@@ -41,7 +41,7 @@ UI 要素がモジュール マニフェストによって制御されるか、�
 | **DSC リソース** | PowerShell バージョン 5.0 以降で使用されるモジュールの場合、これはマニフェストの DscResourcesToExport で指定されます。 モジュールが PowerShell 4 で使用される場合には、DSCResourcesToExport はサポート対象外のマニフェスト キーであるため、使用できません  (PowerShell 4 以前には DSC が提供されていませんでした)。 | 可 | いいえ |
 | **ワークフロー** | ワークフローは PowerShell ギャラリーにスクリプトとして公開され、コードにワークフローとして指定されます (例については、[Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) に関するページをご覧ください)。 これは、マニフェストによって制御されません。 | いいえ | いいえ |
 | **ロール機能** | PowerShell ギャラリーに公開されたモジュールに 1 つ以上のロール機能 (.psrc) ファイルが含まれる場合に表示されます。このファイルは JEA で使用されます。 [ロール機能](https://docs.microsoft.com/en-us/powershell/jea/role-capabilities)の詳細については、JEA のドキュメントをご覧ください。 | 可 | いいえ |
-| **PowerShell のエディション** | スクリプト マニフェストまたはモジュール マニフェスト内で指定されます。 PowerShell 5.0 で使用するように設計されたモジュールの場合は、タグを使用して制御されます。 デスクトップの場合には PSEdition_Desktop タグを使用し、コアの場合には PSEdition_Core タグを使用します。 PowerShell 5.1 以降でのみ使用されるモジュールの場合には、メイン マニフェストに CompatiblePSEditions キーが存在します。 詳細については [PowerShell Get のドキュメント](https://docs.microsoft.com/en-us/powershell/gallery/psget/module/modulewithpseditionsupport)で、PS のエディションの機能について確認してください。 | 可 | 可 |
+| **PowerShell のエディション** | スクリプト マニフェストまたはモジュール マニフェスト内で指定されます。 PowerShell 5.0 で使用するように設計されたモジュールの場合は、タグを使用して制御されます。 デスクトップの場合には PSEdition_Desktop タグを使用し、コアの場合には PSEdition_Core タグを使用します。 PowerShell 5.1 以降でのみ使用されるモジュールの場合には、メイン マニフェストに CompatiblePSEditions キーが存在します。 詳細については [PowerShell Get のドキュメント](/powershell/gallery/concepts/module-psedition-support)で、PS のエディションの機能について確認してください。 | 可 | 可 |
 | **依存関係** | 依存関係は、モジュール マニフェストの RequiredModules かスクリプト マニフェストの #Requires –Module (name) のいずれかで宣言される、PowerShell ギャラリー内のモジュールです。 | 可 | 可 |
 | **Powershell の最小バージョン** | これは、モジュール マニフェストの PowerShellVersion で指定できます。 | 可 | いいえ |
 | **バージョン履歴** | バージョン履歴は、モジュールに加えられた更新を PowerShell ギャラリーに反映します。 削除機能を使用してアイテムのバージョンを非表示にしている場合、アイテムの所有者以外には、アイテムのバージョンはバージョン履歴に表示されません。 | いいえ | いいえ |
@@ -83,7 +83,6 @@ PowerShell ギャラリーと PowerShellGet コマンドレットが独自に扱
 参考に、2017 年 12 月 14 日の時点で最もよく使用されるタグの一部を次に示します。
 場合によっては、そのタグと比べて似てはいるが最適とは言えないような候補が表示されることもあります。
 お勧めの方法は優先タグを使用することです。そうすると、ノイズが軽減され、利用者にとってより望ましい検索結果が返されます。
-
 
 | **優先タグ** | **代替タグと注意事項** |
 | --- | --- |

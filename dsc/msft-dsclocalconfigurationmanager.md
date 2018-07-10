@@ -2,23 +2,22 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MSFT_DSCLocalConfigurationManager クラス
-ms.openlocfilehash: 615f2998b11a0a927d3868d852e0d408f500c86d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 7f6aaf209601e99b0120407eb301d32fcfda9eb8
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188837"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892275"
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラス
 
 構成ファイルの状態を制御し、構成エージェントを使用してその構成を適用するローカル構成マネージャー (LCM)。
 
-次の構文は管理オブジェクト フォーマット (MOF) のコードを単純化したもので、すべての継承されたプロパティを含みます。
+次の構文はマネージド オブジェクト フォーマット (MOF) のコードを単純化したもので、すべての継承されたプロパティを含みます。
 
 ## <a name="syntax"></a>構文
-------
 
-``` syntax
+```
 [ClassVersion("1.0.0"), dynamic, provider("dsccore"), AMENDMENT]
 class MSFT_DSCLocalConfigurationManager
 {
@@ -26,11 +25,10 @@ class MSFT_DSCLocalConfigurationManager
 ```
 
 ## <a name="members"></a>[メンバー]
--------
 
 **MSFT_DSCLocalConfigurationManager** クラスには次のメンバーがあります。
 
--   [メソッド][]
+- [メソッド][]
 
 ### <a name="methods"></a>メソッド
 
@@ -58,12 +56,8 @@ class MSFT_DSCLocalConfigurationManager
 | [StopConfiguration](msft-dsclocalconfigurationmanager-stopconfiguration.md)| 進行中の構成を停止します。|
 | [TestConfiguration](msft-dsclocalconfigurationmanager-testconfiguration.md)| 構成ドキュメントを管理ノードに送信し、そのドキュメントに対して現在の構成を検証します。|
 
-
-
-
-
 ## <a name="requirements"></a>要件
-------------
->**MOF:** DscCore.mof
 
->**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
+
+**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration

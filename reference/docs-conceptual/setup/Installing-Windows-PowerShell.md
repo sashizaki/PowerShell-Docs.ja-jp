@@ -2,14 +2,15 @@
 ms.date: 08/09/2017
 keywords: powershell, コマンドレット, ダウンロード, インストール, セットアップ, windows 10, windows 8.1, windows 8.0, windows 7
 title: Windows PowerShell のインストール
-ms.openlocfilehash: 89f0f689ebfcd34dd4c8ec3824ec8ab4bddc34d9
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: e703d3444b1d661c482b314781cf9a1cb16ef7ed
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483000"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893523"
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell のインストール
+
 既定では、Windows PowerShell は、Windows 7 SP1 および Windows Server 2008 R2 SP1 以降のすべての Windows にインストールされています。
 
 PowerShell 6 以降を使う場合は、Windows PowerShell ではなく PowerShell Core をインストールする必要があります。 詳細については、「[Windows への PowerShell Core のインストール](Installing-PowerShell-Core-on-Windows.md)」を参照してください。
@@ -74,19 +75,20 @@ Windows 8.1<br/>Windows Server 2012 R2 | - | インストール済み | [WMF 5.0
 Windows 8<br/>Windows Server 2012 | インストール済み | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) | [WMF 4.0](https://www.microsoft.com/en-us/download/details.aspx?id=40855) | [WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) | [WMF 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616)
 
-> **注 1**:
-  >>
-  >> 自動更新を有効にしている Windows 10 の最初のリリースでは、PowerShell はバージョン 5.0 から 5.1 に更新されます。
-  >>
-  >> 元のバージョンの Windows 10 が Windows Update によって更新されない場合、PowerShell のバージョンは 5.0 です。
+> [!NOTE]
+>
+> 自動更新を有効にしている Windows 10 の最初のリリースでは、PowerShell はバージョン 5.0 から 5.1 に更新されます。
+>
+> 元のバージョンの Windows 10 が Windows Update によって更新されない場合、PowerShell のバージョンは 5.0 です。
 
 ## <a name="need-azure-powershell"></a>Azure PowerShell が必要な場合
 
-**Azure PowerShell** を探している場合は、「[Overview of Azure PowerShell](https://docs.microsoft.com/powershell/azure)」 (Azure PowerShell の概要) から開始することができます。
+**Azure PowerShell** を探している場合は、「[Overview of Azure PowerShell](/powershell/azure/overview)」 (Azure PowerShell の概要) から開始することができます。
 
-その他にも、[Azure PowerShell のインストールと構成](https://docs.microsoft.com/powershell/azure/install-azurerm-ps)が必要な場合があります
+その他にも、[Azure PowerShell のインストールと構成](/powershell/azure/install-azurerm-ps)が必要な場合があります
 
 ## <a name="see-also"></a>参照
 
-- [Windows PowerShell のシステム要件](Windows-PowerShell-System-Requirements.md)
-- [Windows PowerShell の開始](Starting-Windows-PowerShell.md)
+[Windows PowerShell のシステム要件](Windows-PowerShell-System-Requirements.md)
+
+[Windows PowerShell の開始](Starting-Windows-PowerShell.md)

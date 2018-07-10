@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: 争いの解決
-ms.openlocfilehash: 2a291773ae9391e417e14c4ec0b75379e0bf4640
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a3a3b160366dc17f2fe0d1721d275387700e71e4
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221835"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892345"
 ---
 # <a name="dispute-resolution"></a>争いの解決
 
@@ -17,11 +17,11 @@ ms.locfileid: "34221835"
 ## <a name="process"></a>プロセス
 
 1. アイテム詳細ページの **[所有者に連絡]** リンクを使用し、争いの相手であるアイテムの所有者に連絡します。
-丁寧かつ明確に問題を説明します。
+   丁寧かつ明確に問題を説明します。
 2. PowerShell ギャラリーの管理者に知らせる目的で、メッセージのコピーを [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) に送信します。
 3. 最大 30 日待って解決しなければ、[cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) に再通知します。
-PowerShellGallery.com サポート チームが関与し、問題の解決に取り組みます。
 
+PowerShellGallery.com サポート チームが関与し、問題の解決に取り組みます。
 
 ## <a name="prohibited-use"></a>禁止されている使い方
 
@@ -32,9 +32,8 @@ PowerShellGallery.com サポート チームが関与し、問題の解決に取
 - 著作権の侵害またはライセンス違反
 - 法律で禁じられたコンテンツ
 - 使う予定とするが、実際には使わないアイテム名の "占拠"。 生産性のないコンテンツを含むアイテムの公開もこれに該当します。
-コードを公開して先に進むか、実際に製品を出荷する者に名前を譲ってください。
+  コードを公開して先に進むか、実際に製品を出荷する者に名前を譲ってください。
 - 本来の設計意図ではない行為をギャラリーで行うこと
-
 
 以上の違反項目に該当するアイテムを見つけた場合、アイテム詳細ページの ‘Report Abuse’ (不正報告) リンクをクリックし、報告してください。
 

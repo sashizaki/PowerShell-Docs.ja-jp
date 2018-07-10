@@ -2,19 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MSFT_DSCLocalConfigurationManager クラスの PerformRequiredConfigurationChecks メソッド
-ms.openlocfilehash: c3fdaa23875815b1cf5cbf0b6e21c633e00664aa
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: b92eefb7fbea6d96afa31f6b802ba10fe20d4103
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186696"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893231"
 ---
 # <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの PerformRequiredConfigurationChecks メソッド
 
 タスク スケジューラを使用して、整合性チェックを開始します。
 
-<a name="syntax"></a>構文
-------
+## <a name="syntax"></a>構文
 
 ```mof
 uint32 PerformRequiredConfigurationChecks(
@@ -22,8 +21,7 @@ uint32 PerformRequiredConfigurationChecks(
 );
 ```
 
-<a name="parameters"></a>パラメーター
-----------
+## <a name="parameters"></a>パラメーター
 
 *Flags* \[in\] 実行する整合性チェックの種類を指定するビットマスク。 次の値が有効です。これらの値はビット単位の **OR** 演算で組み合わせることもできます。
 
@@ -35,7 +33,6 @@ uint32 PerformRequiredConfigurationChecks(
 |**8** | レポート サーバーにステータスを送信します。 |
 
 ## <a name="return-value"></a>戻り値
-------------
 
 成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
 
@@ -44,13 +41,11 @@ uint32 PerformRequiredConfigurationChecks(
 これは静的メソッドです。
 
 ## <a name="requirements"></a>要件
-------------
->**MOF:** DscCore.mof
 
->**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
+**MOF:** DscCore.mof
 
+**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
-
 
 [**MSFT_DSCLocalConfigurationManager**](msft-dsclocalconfigurationmanager.md)
