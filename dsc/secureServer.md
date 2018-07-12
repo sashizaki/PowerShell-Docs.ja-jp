@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: プル サーバーのベスト プラクティス
-ms.openlocfilehash: 1efc016df6882fa962f59dfd3e53eaa6d6b0c121
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 04ad6940f443bc23d5e2347952b2d173aceac408
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190300"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893452"
 ---
 # <a name="pull-server-best-practices"></a>プル サーバーのベスト プラクティス
 
->適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
+適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能が提供される予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
+> プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
 
 概要: このドキュメントは、ソリューションを準備するエンジニアを支援するプロセスと拡張機能を示すためのものです。 ベスト プラクティスに関する推奨事項は、将来を見据えた安定したものにするために、お客様によって確認され、製品チームによって検証されたベスト プラクティスの詳細を示す必要があります。
 
@@ -27,27 +27,32 @@ ms.locfileid: "34190300"
 ## <a name="abstract"></a>概要
 
 このドキュメントは、Windows PowerShell Desired State Configuration プル サーバーの実装を計画しているすべてのユーザー向けの公式なガイダンスを提供するためのものです。 プル サーバーは単純なサービスで、数分で展開できる必要があります。 このドキュメントは展開で使用できる技術的な操作方法に関するガイダンスを提供するものですが、ベスト プラクティスと、展開の前に考慮すべきことを参照する場合にも役立ちます。
-読者は DSC と、DSC 展開に含まれるコンポーネントの説明で使用される用語の基礎をよく理解している必要があります。 詳細については、「[Windows PowerShell Desired State Configuration の概要](https://technet.microsoft.com/library/dn249912.aspx)」を参照してください。
+読者は DSC と、DSC 展開に含まれるコンポーネントの説明で使用される用語の基礎をよく理解している必要があります。 詳細については、「[Windows PowerShell Desired State Configuration の概要](/powershell/dsc/overview)」を参照してください。
 DSC はクラウドと共に進化することを想定しているため、プル サーバーを含む基礎技術にも進化と、新機能の導入が求められます。 このドキュメントには、以前のリリースへの参照と、先進的な設計を促進する将来を見据えたソリューションへの参照を提供する付録にバージョン テーブルが含まれています。
 
 このドキュメントの主な 2 つのセクションは次のとおりです。
 
- - 構成計画
- - インストール ガイド
+- 構成計画
+- インストール ガイド
 
 ### <a name="versions-of-the-windows-management-framework"></a>Windows Management Framework のバージョン
+
 このドキュメントの情報は、Windows Management Framework 5.0 に適用するためのものです。 プル サーバーの展開と操作で WMF 5.0 は必要ありませんが、このドキュメントではバージョン 5.0 に焦点を合わせています。
 
 ### <a name="windows-powershell-desired-state-configuration"></a>Windows PowerShell の必要な状態の構成
-Desired State Configuration (DSC) は、Common Information Model (CIM) を記述するために管理オブジェクト フォーマット (MOF) という業界構文を使用して、構成データの展開と管理を可能にする管理プラットフォームです。 オープン ソース プロジェクトの Open Management Infrastructure (OMI) は、Linux とネットワーク ハードウェア オペレーティング システムを含むプラットフォーム全体でこれらの標準をさらに開発するために存在します。 詳細については、[MOF 仕様にリンクされている DMTF ページ](http://dmtf.org/standards/cim)、および [OMI のドキュメントとソース](https://collaboration.opengroup.org/omi/documents.php)を参照してください。
+
+Desired State Configuration (DSC) は、Common Information Model (CIM) を記述するためにマネージド オブジェクト フォーマット (MOF) という業界構文を使用して、構成データの展開と管理を可能にする管理プラットフォームです。 オープン ソース プロジェクトの Open Management Infrastructure (OMI) は、Linux とネットワーク ハードウェア オペレーティング システムを含むプラットフォーム全体でこれらの標準をさらに開発するために存在します。 詳細については、[MOF 仕様にリンクされている DMTF ページ](https://www.dmtf.org/standards/cim)、および [OMI のドキュメントとソース](https://collaboration.opengroup.org/omi/documents.php)を参照してください。
 
 Windows PowerShell には、宣言構成を作成および管理するために使用できる Desired State Configuration の一連の言語拡張が用意されています。
 
 ### <a name="pull-server-role"></a>プル サーバーの役割
+
 プル サーバーでは、ターゲット ノードにアクセス可能な構成を格納する中央サービスが提供されます。
 
 プル サーバーの役割は、Web サーバー インスタンスまたは SMB ファイル共有のいずれかとして展開することができます。 Web サーバー機能には OData インターフェイスが含まれており、構成の適用時に成功または失敗の確認を報告するターゲット ノードの機能もオプションで含めることができます。 この機能は、多数のターゲット ノードが存在する環境で役立ちます。
-プル サーバーをポイントするようにターゲット ノード (クライアントとも呼ばれる) を構成した後で、最新の構成データと必要なすべてのスクリプトがダウンロードされ、適用されます。 これは、1 回限りの展開として、またはプル サーバーを大規模な変更を管理するための重要な資産とする再発ジョブとして行われる場合があります。 詳細については、「[Windows PowerShell Desired State Configuration プル サーバー](https://technet.microsoft.com/library/dn249913.aspx)」および「[DSC Web プル サーバーのセットアップ](https://technet.microsoft.com/library/dn249913.aspx)」を参照してください。
+プル サーバーをポイントするようにターゲット ノード (クライアントとも呼ばれる) を構成した後で、最新の構成データと必要なすべてのスクリプトがダウンロードされ、適用されます。 これは、1 回限りの展開として、またはプル サーバーを大規模な変更を管理するための重要な資産とする再発ジョブとして行われる場合があります。 詳細については、「[Windows PowerShell Desired State Configuration プル サーバー](/powershell/dsc/pullServer)」および
+
+「[Push and Pull Configuration Modes](/powershell/dsc/pullServer)」(構成モードのプッシュとプル) をご覧ください。
 
 ## <a name="configuration-planning"></a>構成計画
 
@@ -64,20 +69,20 @@ Windows Update からの最新コンテンツのインストールに加え、DS
 ### <a name="wmf"></a>WMF
 
 Windows Server 2012 R2 には、DSC サービスという機能が含まれています。 DSC サービス機能では、OData エンドポイントをサポートするバイナリを含む、プル サーバー機能が提供されます。
-WMF は Windows Server に含まれており、Windows Server のリリースに応じて迅速に更新されます。 [新しいバージョンの WMF 5.0](http://aka.ms/wmf5latest) には、DSC サービス機能の更新プログラムが含まれる場合があります。 そのため、WMF の最新リリースをダウンロードし、リリース ノートを確認し、リリースに DSC サービス機能の更新プログラムが含まれるかどうか判断することをお勧めします。 さらに、更新プログラムまたはシナリオの設計が安定状態であるか実験状態であるかを示すリリース ノートのセクションを確認する必要もあります。
+WMF は Windows Server に含まれており、Windows Server のリリースに応じて迅速に更新されます。 [新しいバージョンの WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=54616) には、DSC サービス機能の更新プログラムが含まれる場合があります。 そのため、WMF の最新リリースをダウンロードし、リリース ノートを確認し、リリースに DSC サービス機能の更新プログラムが含まれるかどうか判断することをお勧めします。 さらに、更新プログラムまたはシナリオの設計が安定状態であるか実験状態であるかを示すリリース ノートのセクションを確認する必要もあります。
 アジャイル リリース サイクルを可能にするために、個々の機能を安定したものとして宣言することができます。これにより、WMF がプレビューでリリースされている間でも、機能は運用環境で使用する準備ができていることが示されます。
 WMF リリースで既に更新されている他の機能は、次のとおりです (詳細については、WMF リリース ノートを参照)。
 
- - Windows PowerShell、Windows PowerShell Integrated Scripting Environment (ISE)
- - Windows PowerShell Web サービス (Management OData IIS 拡張機能)
- - Windows PowerShell Desired State Configuration (DSC)
- - Windows Remote Management (WinRM)、Windows Management Instrumentation (WMI)
+- Windows PowerShell、Windows PowerShell Integrated Scripting Environment (ISE)
+- Windows PowerShell Web サービス (Management OData IIS 拡張機能)
+- Windows PowerShell Desired State Configuration (DSC)
+- Windows Remote Management (WinRM)、Windows Management Instrumentation (WMI)
 
 ### <a name="dsc-resource"></a>DSC リソース
 
 プル サーバーの展開は、DSC 構成スクリプトを使用してサービスをプロビジョニングすることで簡略化できます。 このドキュメントには、運用準備ができているサーバー ノードの展開で使用できる構成スクリプトが含まれています。 構成スクリプトを使用するには、Windows Server に含まれていない DSC モジュールが必要になります。 必要なモジュール名は**xPSDesiredStateConfiguration** で、DSC リソースの **xDscWebService** が含まれます。 xPSDesiredStateConfiguration モジュールは[こちら](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d)からダウンロードできます。
 
-**PowerShellGet** モジュールから **Install-Module** コマンドレットを使用します。
+**PowerShellGet** モジュールから `Install-Module` コマンドレットを使用します。
 
 ```powershell
 Install-Module xPSDesiredStateConfiguration
@@ -132,7 +137,7 @@ DNS レコードの名前を選択する場合は、ソリューションのア�
 テスト環境 |可能であれば、計画された運用環境を再現します。 サーバーのホスト名は簡単な構成に適しています。 DNS が利用できない場合は、ホスト名の代わりに IP アドレスを使用することができます。|
 単一ノードの展開 |サーバーのホスト名をポイントする DNS CNAME レコードを作成します。|
 
-詳細については、[Windows Server での DNS ラウンド ロビンの構成](https://technet.microsoft.com/en-us/library/cc787484(v=ws.10).aspx)に関するページを参照してください。
+詳細については、[Windows Server での DNS ラウンド ロビンの構成](/previous-versions/windows/it-pro/windows-server-2003/cc787484(v=ws.10))に関するページを参照してください。
 
 計画タスク|
 ---|
@@ -165,6 +170,7 @@ SMB では、ポリシーで Web サーバーを利用しないように指示�
 いずれの場合も、必ず、トラフィックの署名と暗号化に関する要件を評価してください。 HTTPS、SMB 署名、および IPSEC ポリシーはすべて、考慮に値するオプションです。
 
 #### <a name="load-balancing"></a>負荷分散
+
 Web サービスと対話するクライアントは、単一の応答で返される情報を要求します。 順次要求は必要ありません。したがって、負荷分散プラットフォームで任意の時点で単一サーバーでのセッションが維持されるようにする必要はありません。
 
 計画タスク|
@@ -184,6 +190,7 @@ Web サービスと対話するクライアントは、単一の応答で返さ�
 今後、このセクションは追加され、DSC プル サーバー用の運用ガイドに含まれる予定です。  このガイドでは、時間の経過と共に自動的にモジュールと構成を管理する日常的なプロセスについて説明します。
 
 #### <a name="dsc-modules"></a>DSC モジュール
+
 構成を要求するクライアントには、必須の DSC モジュールが必要になります。 プル サーバーの機能は、クライアントへの DSC モジュールのオンデマンド配布を自動化するものです。 初めてプル サーバーを展開する場合 (おそらく、ラボまたは概念実証として)、PowerShell ギャラリーや DSC モジュールの PowerShell.org GitHub リポジトリなどのパブリック リポジトリから使用可能な DSC モジュールに依存する可能性があります。
 
 PowerShell ギャラリーなどの信頼できるオンライン リソースの場合でも、パブリック リポジトリからダウンロードされるすべてのモジュールを、PowerShell の使用経験があり、運用環境で使用する前にモジュールを使用する環境に関する知識がある担当者が確認する必要があります。 このタスクの実行時に、ドキュメントやスクリプト例などの削除可能な追加ペイロードをモジュールで確認することをお勧めします。 これにより、サーバーからクライアントへのネットワークを介したモジュールのダウンロード時に、最初の要求でのクライアントごとのネットワーク帯域幅を減らせます。
@@ -191,7 +198,7 @@ PowerShell ギャラリーなどの信頼できるオンライン リソース�
 各モジュールは、モジュール ペイロードを含む、ModuleName_Version.zip という名前の特定の形式の ZIP ファイルにパッケージ化する必要があります。 ファイルをサーバーにコピーしたら、チェックサム ファイルを作成する必要があります。 クライアントがサーバーに接続されると、DSC モジュールのコンテンツが公開後に変更されていないことを確認するためにチェックサムが使用されます。
 
 ```powershell
-New-DscCheckSum -ConfigurationPath .\ -OutPath .\
+New-DscChecksum -ConfigurationPath .\ -OutPath .\
 ```
 
 計画タスク|
@@ -214,10 +221,10 @@ DSC モジュールの確認担当者は誰ですか?|
 
 構成 GUID の計画についても、プル サーバー展開を検討する際に考慮する必要があります。 GUID の処理方法に関する特定の要件はありませんが、プロセスは環境ごとに一意である可能性があります。 プロセスは、単純なものから複雑なものまでさまざまです。たとえば、セントラルに格納されている CSV ファイル、単純な SQL テーブル、CMDB、別のツールまたはソフトウェア ソリューションとの統合が必要な複雑なソリューションなどです。 2 つの一般的な方法を以下に示します。
 
- - **サーバーごとに GUID を割り当てる** — 確実にすべてのサーバー構成が個別に制御されるようにします。 これにより、正確に更新が行われ、少数のサーバーを含む環境で適切に機能します。
- - **サーバーの役割ごとに GUID を割り当てる** — Web サーバーなど、同じ機能を実行するすべてのサーバーで同じ GUID を使用して、必要な構成データを参照します。  多くのサーバーで同じ GUID を共有している場合、それらすべてのサーバーは、構成の変更と同時に更新されることに注意してください。
+- **サーバーごとに GUID を割り当てる** — 確実にすべてのサーバー構成が個別に制御されるようにします。 これにより、正確に更新が行われ、少数のサーバーを含む環境で適切に機能します。
+- **サーバーの役割ごとに GUID を割り当てる** — Web サーバーなど、同じ機能を実行するすべてのサーバーで同じ GUID を使用して、必要な構成データを参照します。  多くのサーバーで同じ GUID を共有している場合、それらすべてのサーバーは、構成の変更と同時に更新されることに注意してください。
 
-GUID は、使用環境でのサーバーの展開と構成方法に関する情報を得るために悪意のあるユーザーによって利用される可能性があるため、機密データとして扱う必要があります。 詳細については、「[Securely allocating GUIDs in PowerShell Desired State Configuration Pull Mode](http://blogs.msdn.com/b/powershell/archive/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode.aspx)」 (PowerShell Desired State Configuration プル モードでの安全な GUID の割り当て) を参照してください。
+  GUID は、使用環境でのサーバーの展開と構成方法に関する情報を得るために悪意のあるユーザーによって利用される可能性があるため、機密データとして扱う必要があります。 詳細については、「[Securely allocating GUIDs in PowerShell Desired State Configuration Pull Mode](https://blogs.msdn.microsoft.com/powershell/2014/12/31/securely-allocating-guids-in-powershell-desired-state-configuration-pull-mode/)」 (PowerShell Desired State Configuration プル モードでの安全な GUID の割り当て) を参照してください。
 
 計画タスク|
 ---|
@@ -243,7 +250,6 @@ $PSVersionTable.PSVersion
 可能であれば、Windows Management Framework を最新バージョンにアップグレードしてください。
 次に、以下のコマンドを使用して、`xPsDesiredStateConfiguration` モジュールをダウンロードします。
 
-
 ```powershell
 Install-Module xPSDesiredStateConfiguration
 ```
@@ -251,14 +257,13 @@ Install-Module xPSDesiredStateConfiguration
 モジュールをダウンロードする前に、コマンドによって承認が求められます。
 
 ### <a name="installation-and-configuration-scripts"></a>インストールおよび構成スクリプト
--
 
 DSC プル サーバーを展開する最適な方法は、DSC 構成スクリプトを使用することです。 このドキュメントでは、DSC Web サービスのみを構成する基本設定と、DSC Web サービスを含む Windows Server エンド ツー エンドを構成する詳細設定の両方を含むスクリプトを示します。
 
 注: 現時点では、`xPSDesiredStateConfiguation` DSC モジュールでは、サーバーのロケールとして EN-US を設定する必要があります。
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Windows Server 2012 の基本構成
--------------------------------------------
+
 ```powershell
 # This is a very basic Configuration to deploy a pull server instance in a lab environment on Windows Server 2012.
 
@@ -355,6 +360,7 @@ Configuration PullServer {
             ValueData = 1
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ServerDisabledByDefault
         {
             Ensure = 'Present'
@@ -363,6 +369,7 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ClientEnabled
         {
             Ensure = 'Present'
@@ -371,6 +378,7 @@ Configuration PullServer {
             ValueData = 1
             ValueType = 'Dword'
         }
+
         Registry TLS1_2ClientDisabledByDefault
         {
             Ensure = 'Present'
@@ -379,6 +387,7 @@ Configuration PullServer {
             ValueData = 0
             ValueType = 'Dword'
         }
+
         Registry SSL2ServerDisabled
         {
             Ensure = 'Present'
@@ -449,6 +458,7 @@ Configuration PullServer {
         }
     }
 }
+
 $configData = @{
     AllNodes = @(
         @{
@@ -467,6 +477,7 @@ $configData = @{
             }
         )
     }
+
 PullServer -ConfigurationData $configData -OutputPath 'C:\PullServerConfig\'
 Set-DscLocalConfigurationManager -ComputerName localhost -Path 'C:\PullServerConfig\'
 Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
@@ -474,16 +485,18 @@ Start-DscConfiguration -Wait -Force -Verbose -Path 'C:\PullServerConfig\'
 # .\Script.ps1 -ServerName web1 -domainname 'test.pha' -carootname 'test-dc01-ca' -caserverfqdn 'dc01.test.pha' -certsubject 'CN=service.test.pha' -smbshare '\\sofs1.test.pha\share'
 ```
 
-
 ### <a name="verify-pull-server-functionality"></a>プル サーバーの機能を確認する
 
 ```powershell
 # This function is meant to simplify a check against a DSC pull server. If you do not use the default service URL, you will need to adjust accordingly.
 function Verify-DSCPullServer ($fqdn) {
-    ([xml](invoke-webrequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
+    ([xml](Invoke-WebRequest "https://$($fqdn):8080/psdscpullserver.svc" | % Content)).service.workspace.collection.href
 }
-Verify-DSCPullServer 'INSERT SERVER FQDN'
 
+Verify-DSCPullServer 'INSERT SERVER FQDN'
+```
+
+```output
 Expected Result:
 Action
 Module
@@ -511,28 +524,28 @@ Configuration PullClient {
                     DownloadManagerCustomData = @{ServerUrl = "http://"+$Server+":8080/PSDSCPullServer.svc"; AllowUnsecureConnection = $true}
                 }
 }
+
 PullClient -ID 'INSERTGUID' -Server 'INSERTSERVER' -Output 'C:\DSCConfig\'
 Set-DscLocalConfigurationManager -ComputerName 'Localhost' -Path 'C:\DSCConfig\' -Verbose
 ```
-
 
 ## <a name="additional-references-snippets-and-examples"></a>その他の参照情報、スニペット、および例
 
 この例では、テストのためにクライアント接続 (WMF5 が必要) を手動で開始する方法を示します。
 
 ```powershell
-Update-DSCConfiguration –Wait -Verbose
+Update-DscConfiguration –Wait -Verbose
 ```
 
 CNAME レコードを DNS ゾーンに追加する場合は、[Add-DnsServerResourceRecordName](http://bit.ly/1G1H31L) コマンドレットを使用します。
 
-[チェックサムを作成し、SMB プル サーバーに DSC MOF を公開する](http://bit.ly/1E46BhI) PowerShell 関数では必要なチェックサムが自動的に生成されてから、MOF 構成とチェックサムの両方のファイルが SMB プル サーバーにコピーされます。
+[チェックサムを作成し、SMB プル サーバーに DSC MOF を公開する](https://gallery.technet.microsoft.com/scriptcenter/PowerShell-Function-to-3bc4b7f0) PowerShell 関数では必要なチェックサムが自動的に生成されてから、MOF 構成とチェックサムの両方のファイルが SMB プル サーバーにコピーされます。
 
 ## <a name="appendix---understanding-odata-service-data-file-types"></a>付録 - ODATA サービス データ ファイルの種類の理解
 
 データ ファイルは、OData Web サービスを含む、プル サーバーの展開時に情報を作成するために格納されます。 ファイルの種類は、以下の説明のとおり、オペレーティング システムによって異なります。
 
- - **Windows Server 2012** ファイルの種類は常に .mdb になります。
- - **Windows Server 2012 R2** 構成で .mdb が指定されていない限り、ファイルの種類は既定で .edb になります。
+- **Windows Server 2012** ファイルの種類は常に .mdb になります。
+- **Windows Server 2012 R2** 構成で .mdb が指定されていない限り、ファイルの種類は既定で .edb になります。
 
 プル サーバーをインストールするための[スクリプトの詳細な例](https://github.com/mgreenegit/Whitepapers/blob/Dev/PullServerCPIG.md#installation-and-configuration-scripts)では、ファイルの種類によって発生する可能性のあるエラーを防ぐために web.config ファイル設定を自動的に制御する方法の例も示されます。

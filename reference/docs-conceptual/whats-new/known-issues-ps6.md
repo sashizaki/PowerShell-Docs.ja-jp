@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell、コア
 title: PowerShell 6.0 の既知の問題
-ms.openlocfilehash: 6ad1bcaf1de06f204b57eb8ce23b3053ba4a5b38
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
+ms.openlocfilehash: 7fa6b9935ae75b62df72609b8a9ec16246b1c610
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309613"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893690"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 の既知の問題
 
@@ -55,7 +55,7 @@ Linux/macOS でのグロビングのエクスペリエンス改善に関する�
 
 Linux/macOS での PowerShell は .NET Core を使用しています。これは、Microsoft Windows の完全な .NET Framework のサブセットです。 これは重要です。なぜなら、PowerShell では、ベースとなるフレームワークの型、メソッドなどに対する直接アクセスが提供されるためです。このため、フレームワークの違いが原因で、Windows で動作するスクリプトが Windows 以外のプラットフォームでは動作しない場合があります。 .NET Core Framework について詳しくは、<https://dotnetfoundation.org/net-core> をご覧ください
 
-[.NET Standard 2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/) の出現により、完全な .NET Framework に存在する従来の型やメソッドの多くが、.NET Core 2.0 で復活します。 つまり、従来の Windows PowerShell モジュールの多くを、変更なしで PowerShell Core に読み込むことができるようになります。 .NET Standard 2.0 に関連する作業については、[こちら](https://github.com/PowerShell/PowerShell/projects/4)をご覧ください。
+[.NET Standard2.0](https://blogs.msdn.microsoft.com/dotnet/2016/09/26/introducing-net-standard/) の出現により、完全な .NET Framework に存在する従来の型やメソッドの多くが、.NET Core 2.0 で復活します。 つまり、従来の Windows PowerShell モジュールの多くを、変更なしで PowerShell Core に読み込むことができるようになります。 .NET Standard 2.0 に関連する作業については、[こちら](https://github.com/PowerShell/PowerShell/projects/4)をご覧ください。
 
 ### <a name="redirection-issues"></a>リダイレクトの問題
 
@@ -64,14 +64,17 @@ Linux/macOS での PowerShell は .NET Core を使用しています。これは
 
 ファイルのコンテンツをパイプラインに書き込むには、`Get-Content` を使用します。
 
-リダイレクトされた出力には、既定の UTF-8 エンコードを使用する場合、Unicode バイト オーダー マーク (BOM) が含まれます。 BOM を予期しないユーティリティを操作する場合や、ファイルに追加する場合、BOM によって問題が発生します。 ASCII テキストを書き込むには、`-Encoding Ascii` を使用します (Unicode ではないため、BOM を含みません)。 (注: すべてのプラットフォームにおける PowerShell Core のエンコードのエクスペリエンス改善に関するフィードバックについては、[RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) をご覧ください。 現在 BOM なしの UTF-8 のサポートに取り組んでおり、全プラットフォームのさまざまなコマンドレットに対してエンコードの既定値が変更される可能性があります。
+リダイレクトされた出力には、既定の UTF-8 エンコードを使用する場合、Unicode バイト オーダー マーク (BOM) が含まれます。 BOM を予期しないユーティリティを操作する場合や、ファイルに追加する場合、BOM によって問題が発生します。 ASCII テキストを書き込むには、`-Encoding Ascii` を使用します (Unicode ではないため、BOM を含みません)。
+
+> [!Note]
+> すべてのプラットフォームにおける PowerShell Core のエンコードのエクスペリエンス改善に関するフィードバックについては、[RFC0020](https://github.com/PowerShell/PowerShell-RFC/issues/71) をご覧ください。 現在 BOM なしの UTF-8 のサポートに取り組んでおり、全プラットフォームのさまざまなコマンドレットに対してエンコードの既定値が変更される可能性があります。
 
 ### <a name="job-control"></a>ジョブ制御
 
 Linux/macOS での PowerShell では、ジョブ制御はサポートされていません。
 `fg` コマンドと `bg` コマンドは使用できません。
 
-当面の間は、すべてのプラットフォームで動作する [PowerShell ジョブ](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_jobs)を使用できます。
+当面の間は、すべてのプラットフォームで動作する [PowerShell ジョブ](/powershell/module/microsoft.powershell.core/about/about_jobs)を使用できます。
 
 ### <a name="remoting-support"></a>リモート処理のサポート
 
@@ -87,7 +90,7 @@ WSMan ベースのリモート処理に向けた作業は、[psl-omi-provider](h
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`､`exec`、PowerShell
 
-PowerShell では、ほとんどのコマンドがメモリ内で実行されるため (Python や Ruby のように)、PowerShell の組み込み要素と共に sudo を直接使用することはできません。(もちろん、sudo から `powershell` を実行することはできます。)PowerShell 内から sudo と共に PowerShell コマンドレットを実行する必要がある場合は (例: `sudo Set-Date 8/18/2016`)、`sudo powershell Set-Date 8/18/2016` とします。 同様に、PowerShell の組み込み要素を直接実行することはできません。 代わりに、`exec powershell item_to_exec` とする必要があります。
+PowerShell では、ほとんどのコマンドがメモリ内で実行されるため (Python や Ruby のように)、PowerShell の組み込み要素と共に sudo を直接使用することはできません。(もちろん、sudo から `powershell` を実行することはできます。)PowerShell 内から sudo と共に PowerShell コマンドレット (例: `sudo `Set-Date` 8/18/2016`) を実行する必要がある場合は、`sudo powershell `Set-Date` 8/18/2016` とします。 同様に、PowerShell の組み込み要素を直接実行することはできません。 代わりに、`exec powershell item_to_exec` とする必要があります。
 
 現在、この問題は #3232 の一部として追跡されています。
 
@@ -99,45 +102,13 @@ PowerShell では、ほとんどのコマンドがメモリ内で実行される
 
 Linux/macOS での PowerShell で動作しないことが知られているコマンドを、次の表に一覧表示します。
 
-<table>
-<th>コマンド</th><th>動作状態</th><th>メモ</th>
-<tr>
-<td>Get-Service、New-Service、Restart-Service、Resume-Service、Set-Service、Start-Service、Stop-Service、Suspend-Service
-<td>使用できません。
-<td>これらのコマンドは認識されません。 将来のリリースで修正する必要があります。
-</tr>
-<tr>
-<td>Get-Acl、Set-Acl
-<td>使用できません。
-<td>これらのコマンドは認識されません。 将来のリリースで修正する必要があります。
-</tr>
-<tr>
-<td>Get-AuthenticodeSignature、Set-AuthenticodeSignature
-<td>使用できません。
-<td>これらのコマンドは認識されません。 将来のリリースで修正する必要があります。
-</tr>
-<tr>
-<td>Wait-Process
-<td>使用できますが、正常に動作しません。 <td>たとえば、`Start-Process gvim -PassThru | Wait-Process` は動作しません。プロセスの待機に失敗します。
-</tr>
-<tr>
-<td>Register-PSSessionConfiguration、Unregister-PSSessionConfiguration、Get-PSSessionConfiguration
-<td>使用できますが、動作しません。
-<td>コマンドが動作していないことを示すエラー メッセージが書き込まれます。 これらは、将来のリリースで修正する必要があります。
-</tr>
-<tr>
-<td>Get-Event、New-Event、Register-EngineEvent、Register-WmiEvent、Remove-Event、Unregister-Event
-<td>使用できますが、イベント ソースを使用できません。
-<td>PowerShell のイベント処理コマンドは存在はしますが、各コマンドで使用されるイベント ソース (System.Timers.Timer など) のほとんどが Linux では使用できません。そのため、アルファ版リリースではこれらのコマンドは役に立ちません。
-</tr>
-<tr>
-<td>Set-ExecutionPolicy
-<td>使用できますが、動作しません。
-<td>このプラットフォームでサポートされていないことを示すメッセージが返されます。 実行ポリシーとは、ユーザーに重点を置いた "安全ベルト" であり、ユーザーがコストの高いミスをすることを回避します。 これはセキュリティ境界ではありません。
-</tr>
-<tr>
-<td>New-PSSessionOption、New-PSTransportOption
-<td>使用できますが、New-PSSession が動作しません。
-<td>現在、New-PSSession が動作するので、New-PSSessionOption と New-PSTransportOption は動作が確認されていません。
-</tr>
-</table>
+|コマンド |動作状態 | メモ|
+|---------|------------------|------|
+|`Get-Service`、`New-Service`、`Restart-Service`、`Resume-Service`、`Set-Service`、`Start-Service`、`Stop-Service`、`Suspend-Service`|使用できません。|これらのコマンドは認識されません。 将来のリリースで修正する必要があります。|
+|`Get-Acl`、`Set-Acl`|使用できません。|これらのコマンドは認識されません。 将来のリリースで修正する必要があります。|
+|`Get-AuthenticodeSignature`、`Set-AuthenticodeSignature`|使用できません。|これらのコマンドは認識されません。 将来のリリースで修正する必要があります。|
+|`Wait-Process`|使用できますが、正常に動作しません。 |たとえば、`Start-Process gvim -PassThru | Wait-Process` は動作しません。プロセスの待機に失敗します。|
+|`Register-PSSessionConfiguration`、`Unregister-PSSessionConfiguration`、`Get-PSSessionConfiguration`|使用できますが、動作しません。|コマンドが動作していないことを示すエラー メッセージが書き込まれます。 これらは、将来のリリースで修正する必要があります。|
+|`Get-Event`、`New-Event`、`Register-EngineEvent`、`Register-WmiEvent`、`Remove-Event`、`Unregister-Event`|使用できますが、イベント ソースを使用できません。|PowerShell のイベント処理コマンドは存在はしますが、各コマンドで使用されるイベント ソース (System.Timers.Timer など) のほとんどが Linux では使用できません。そのため、アルファ版リリースではこれらのコマンドは役に立ちません。|
+|`Set-ExecutionPolicy`|使用できますが、動作しません。|このプラットフォームでサポートされていないことを示すメッセージが返されます。 実行ポリシーとは、ユーザーに重点を置いた "安全ベルト" であり、ユーザーがコストの高いミスをすることを回避します。 これはセキュリティ境界ではありません。|
+|`New-PSSessionOption`、`New-PSTransportOption`|使用できますが、`New-PSSession` が機能しません。|`New-PSSession` が動作するようになったため、`New-PSSessionOption` と `New-PSTransportOption` の動作は現在確認されていません。|

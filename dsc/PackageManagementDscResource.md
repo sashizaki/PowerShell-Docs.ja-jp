@@ -2,18 +2,18 @@
 ms.date: 06/20/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC の PackageManagement リソース
-ms.openlocfilehash: 3d52934b130d59acee4d7f8a92da2c743c1eb305
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34753789"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892503"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC の PackageManagement リソース
 
-> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0、Windows PowerShell 5.1
+適用先: Windows PowerShell 4.0、Windows PowerShell 5.0、Windows PowerShell 5.1
 
-Windows PowerShell Desired State Configuration (DSC) の **PackageManagement** リソースは、ターゲット ノードで Package Management パッケージをインストールまたはアンインストールするメカニズムを備えています。 このリソースには **PackageManagement** モジュールが必要です。これは、http://PowerShellGallery.com から入手できます。
+Windows PowerShell Desired State Configuration (DSC) の **PackageManagement** リソースは、ターゲット ノードで Package Management パッケージをインストールまたはアンインストールするメカニズムを備えています。 このリソースには **PackageManagement** モジュールが必要です。これは、[http://PowerShellGallery.com](http://PowerShellGallery.com) から入手できます。
 
 > [!IMPORTANT]
 > **PackageManagement** モジュールは、次のプロパティ情報が適切であるようにバージョン 1.1.7.0 以降である必要があります。

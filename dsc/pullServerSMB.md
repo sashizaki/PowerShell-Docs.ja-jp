@@ -2,23 +2,24 @@
 ms.date: 04/11/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC SMB プル サーバーのセットアップ
-ms.openlocfilehash: 92c03c99afd612fa2b5475e8c26991ff080584e9
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1eac6c51aeca3ed573ba8fa27188103436004920
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189671"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892867"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>DSC SMB プル サーバーのセットアップ
 
->適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
+適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能が提供される予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
+> プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
 
-DSC [SMB](https://technet.microsoft.com/library/hh831795.aspx) プル サーバーは、DSC 構成ファイルと DSC リソースを必要なときにターゲット ノードに提供する SMB ファイル共有をホストするコンピューターです。
+DSC [SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) プル サーバーは、DSC 構成ファイルと DSC リソースを必要なときにターゲット ノードに提供する SMB ファイル共有をホストするコンピューターです。
 
 DSC の SMB プル サーバーを使うには、次のことが必要です。
+
 - PowerShell 4.0 以降を実行しているサーバーに SMB ファイル共有をセットアップする
 - SMB 共有からプルするための、PowerShell 4.0 以降を実行しているクライアントを構成する
 
@@ -28,31 +29,34 @@ SMB ファイル共有を設定する方法はいくつかありますが、こ�
 
 ### <a name="install-the-xsmbshare-resource"></a>xSmbShare リソースをインストールする
 
-[Install-Module](https://technet.microsoft.com/library/dn807162.aspx) コマンドレットを呼び出して **xSmbShare** モジュールをインストールします。
->**注**: **Install-Module** は、PowerShell 5.0 に含まれている **PowerShellGet** モジュールに含まれています。 「[PackageManagement PowerShell Modules Preview (PackageManagement PowerShell モジュールのプレビュー)](https://www.microsoft.com/en-us/download/details.aspx?id=49186)」で PowerShell 3.0 と 4.0 の **PowerShellGet** モジュールをダウンロードできます。 **xSmbShare** に含まれる DSC リソース **xSmbShare** を使うと、SMB ファイル共有を作成できます。
+[Install-Module](/powershell/module/PowershellGet/Install-Module) コマンドレットを呼び出して **xSmbShare** モジュールをインストールします。
+
+> [!NOTE]
+> `Install-Module` は、PowerShell 5.0 に含まれている **PowerShellGet** モジュールに含まれています。 「[PackageManagement PowerShell Modules Preview (PackageManagement PowerShell モジュールのプレビュー)](https://www.microsoft.com/en-us/download/details.aspx?id=49186)」で PowerShell 3.0 と 4.0 の **PowerShellGet** モジュールをダウンロードできます。
+> **xSmbShare** に含まれる DSC リソース **xSmbShare** を使うと、SMB ファイル共有を作成できます。
 
 ### <a name="create-the-directory-and-file-share"></a>ディレクトリとファイル共有を作成する
 
 次の構成では、[File](fileResource.md) リソースを使って共有するディレクトリを作成し、**xSmbShare** リソースを使って SMB 共有をセットアップします。
 
 ```powershell
-Configuration SmbShare {
+Configuration SmbShare
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Import-DscResource -ModuleName xSmbShare
 
-Import-DscResource -ModuleName PSDesiredStateConfiguration
-Import-DscResource -ModuleName xSmbShare
+    Node localhost
+    {
 
-    Node localhost {
-
-        File CreateFolder {
-
+        File CreateFolder
+        {
             DestinationPath = 'C:\DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
-
         }
 
-        xSMBShare CreateShare {
-
+        xSMBShare CreateShare
+        {
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
             FullAccess = 'admininstrator'
@@ -60,40 +64,36 @@ Import-DscResource -ModuleName xSmbShare
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
-
         }
-
     }
-
 }
 ```
 
 ディレクトリ `C:\DscSmbShare` がまだ存在しない場合は、構成によって作成され、そのディレクトリが SMB ファイル共有として使用されます。 **FullAccess** を、ファイル共有で書き込みまたは削除を行う必要のあるすべてのアカウントに付与してください。また、**ReadAccess** を、ファイル共有から構成や DSC リソースを取得するすべてのクライアント ノードに付与する必要があります (これは、DSC が既定ではシステム アカウントとして実行されるので、コンピューター自体もファイル共有にアクセスする必要があるためです)。
-
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>ファイル システムにプル クライアントへのアクセス権限を付与する
 
 クライアント ノードに **ReadAccess** を与えると、そのノードは SMB 共有にアクセスできるようになりますが、その共有内のファイルやフォルダーにはアクセスできません。 クライアント ノードに、SMB 共有のフォルダーやサブフォルダーに対するアクセス権限を明示的に許可する必要があります。 DSC でこれを行うには、[cNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) モジュールに含まれている **cNtfsPermissionEntry** リソースを使用して追加します。 次の構成では、プル クライアントに ReadAndExecute アクセスを付与する **cNtfsPermissionEntry** ブロックを追加します。
 
 ```powershell
-Configuration DSCSMB {
+Configuration DSCSMB
+{
+    Import-DscResource -ModuleName PSDesiredStateConfiguration
+    Import-DscResource -ModuleName xSmbShare
+    Import-DscResource -ModuleName cNtfsAccessControl
 
-Import-DscResource -ModuleName PSDesiredStateConfiguration
-Import-DscResource -ModuleName xSmbShare
-Import-DscResource -ModuleName cNtfsAccessControl
+    Node localhost
+    {
 
-    Node localhost {
-
-        File CreateFolder {
-
+        File CreateFolder
+        {
             DestinationPath = 'DscSmbShare'
             Type = 'Directory'
             Ensure = 'Present'
-
         }
 
-        xSMBShare CreateShare {
-
+        xSMBShare CreateShare
+        {
             Name = 'DscSmbShare'
             Path = 'DscSmbShare'
             FullAccess = 'administrator'
@@ -101,30 +101,25 @@ Import-DscResource -ModuleName cNtfsAccessControl
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
             DependsOn = '[File]CreateFolder'
-
         }
 
-        cNtfsPermissionEntry PermissionSet1 {
-
-        Ensure = 'Present'
-        Path = 'C:\DSCSMB'
-        Principal = 'myDomain\Contoso-Server$'
-        AccessControlInformation = @(
-            cNtfsAccessControlInformation
-            {
-                AccessControlType = 'Allow'
-                FileSystemRights = 'ReadAndExecute'
-                Inheritance = 'ThisFolderSubfoldersAndFiles'
-                NoPropagateInherit = $false
-            }
-        )
-        DependsOn = '[File]CreateFolder'
-
+        cNtfsPermissionEntry PermissionSet1
+        {
+            Ensure = 'Present'
+            Path = 'C:\DSCSMB'
+            Principal = 'myDomain\Contoso-Server$'
+            AccessControlInformation = @(
+                cNtfsAccessControlInformation
+                {
+                    AccessControlType = 'Allow'
+                    FileSystemRights = 'ReadAndExecute'
+                    Inheritance = 'ThisFolderSubfoldersAndFiles'
+                    NoPropagateInherit = $false
+                }
+            )
+            DependsOn = '[File]CreateFolder'
         }
-
-
     }
-
 }
 ```
 
@@ -132,20 +127,23 @@ Import-DscResource -ModuleName cNtfsAccessControl
 
 クライアント ノードがプルする必要のある構成 MOF ファイルや DSC リソースを SMB 共有フォルダーに保存します。
 
-すべての構成 MOF ファイルは、_ConfigurationID_.mof という名前である必要があります。ここで、_ConfigurationID_ はターゲット ノードの LCM の **ConfigurationID** プロパティの値です。 プル クライアントの設定の詳細については、「[構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)」を参照してください。
+すべての構成 MOF ファイルは、*ConfigurationID*.mof という名前である必要があります。ここで、*ConfigurationID* はターゲット ノードの LCM の **ConfigurationID** プロパティの値です。 プル クライアントの設定の詳細については、「[構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)」を参照してください。
 
->**注:** SMB プル サーバーを使っている場合は、構成 ID を使う必要があります。 構成名は、SMB ではサポートされません。
+> [!NOTE]
+> SMB プル サーバーを使っている場合は、構成 ID を使う必要があります。 構成名は、SMB ではサポートされません。
 
-各リソース モジュールは、圧縮し、`{Module Name}_{Module Version}.zip` というパターンで名前を付ける必要があります。 たとえば、モジュール名が xWebAdminstration で、バージョンが 3.1.2.0 のモジュールでは、'xWebAdministration_3.2.1.0.zip' という名前になります。 各バージョンのモジュールを 1 つの zip ファイルに含める必要があります。 各 zip ファイルには 1 つのバージョンのリソースのみが含まれるので、WMF 5.0 で追加された、単一のディレクトリに複数のモジュール バージョンを入れるモジュール形式はサポートされていません。 このため、プル サーバーで使うための DSC リソース モジュールをパッケージ化する前に、ディレクトリ構造に少しの変更が必要です。 WMF 5.0 の DSC リソースを含むモジュールの既定の形式は、'{モジュール フォルダー}\{モジュールのバージョン}\DscResources\{DSC リソース フォルダー}\' です。 プル サーバー用にパッケージ化する前には、単純に **{モジュールのバージョン}** フォルダーを削除して、'{モジュール フォルダー}\DscResources\{DSC リソース フォルダー}\' というパスにします。 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを SMB 共有フォルダーに置きます。
+各リソース モジュールは、圧縮し、`{Module Name}_{Module Version}.zip` というパターンで名前を付ける必要があります。 たとえば、モジュール名が xWebAdminstration で、バージョンが 3.1.2.0 のモジュールでは、'xWebAdministration_3.2.1.0.zip' という名前になります。 各バージョンのモジュールを 1 つの zip ファイルに含める必要があります。 各 zip ファイルには 1 つのバージョンのリソースのみが含まれるので、WMF 5.0 で追加された、単一のディレクトリに複数のモジュール バージョンを入れるモジュール形式はサポートされていません。 このため、プル サーバーで使うための DSC リソース モジュールをパッケージ化する前に、ディレクトリ構造に少しの変更が必要です。 WMF 5.0 の DSC リソースを含むモジュールの既定の形式は、`{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\` です。 プル サーバー用にパッケージ化する前に、パスが `{Module Folder}\DscResources\{DSC Resource Folder}\` になるように単純に `{Module version}` フォルダーを削除します。 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを SMB 共有フォルダーに置きます。
 
 ## <a name="creating-the-mof-checksum"></a>MOF チェックサムの作成
+
 ターゲット ノード上の LCM が構成を検証できるように、構成 MOF ファイルはチェックサム ファイルと組み合わせて使用する必要があります。
-チェックサムを作成するには、[New-DSCCheckSum](https://technet.microsoft.com/en-us/library/dn521622.aspx) コマンドレットを呼び出します。 このコマンドレットは、構成 MOF が存在するフォルダーが指定された **Path** パラメーターを受け取ります。 このコマンドレットは、`ConfigurationMOFName.mof.checksum` という名前でチェックサム ファイルを作成します。ここで、`ConfigurationMOFName` は構成 MOF ファイルの名前です。
+チェックサムを作成するには、[New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) コマンドレットを呼び出します。 このコマンドレットは、構成 MOF が存在するフォルダーが指定された `Path` パラメーターを受け取ります。 このコマンドレットは、`ConfigurationMOFName.mof.checksum` という名前でチェックサム ファイルを作成します。ここで、`ConfigurationMOFName` は構成 MOF ファイルの名前です。
 指定のフォルダーに複数の構成 MOF ファイルがある場合は、そのフォルダー内の構成ごとにチェックサムが作成されます。
 
 チェックサム ファイルは、構成 MOF ファイルと同じディレクトリ (既定では `$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration`) に存在し、拡張子として `.checksum` が付けられた同じ名前である必要があります。
 
->**注**: 何らかの方法で構成 MOF ファイルを変更した場合は、チェックサム ファイルも作成し直す必要があります。
+> [!NOTE]
+> 何らかの方法で構成 MOF ファイルを変更した場合は、チェックサム ファイルも作成し直す必要があります。
 
 ## <a name="setting-up-a-pull-client-for-smb"></a>SMB のプル クライアントのセットアップ
 
@@ -153,9 +151,10 @@ SMB 共有から構成とリソースの両方または一方をプルするク�
 
 LCM 構成の詳細については、「[構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)」をご覧ください。
 
->**注:** わかりやすくする目的で、この例では **PSDscAllowPlainTextPassword** を使用し、**Credential** パラメーターにプレーンテキスト パスワードを渡すようにしています。 資格情報をより安全に渡す方法については、「[構成データでの資格情報オプション](configDataCredentials.md)」を参照してください。
-
->**注:** リソースをプルするだけであっても、SMB プル サーバーのメタ構成の**設定**ブロックに **ConfigurationID** を指定する必要があります。
+> [!NOTE]
+> わかりやすくする目的で、この例では **PSDscAllowPlainTextPassword** を使用し、**Credential** パラメーターにプレーンテキスト パスワードを渡すようにしています。 資格情報をより安全に渡す方法については、「[構成データでの資格情報オプション](configDataCredentials.md)」を参照してください。
+>
+> リソースをプルするだけであっても、SMB プル サーバーのメタ構成の**設定**ブロックに **ConfigurationID** を指定する**必要があります**。
 
 ```powershell
 $secpasswd = ConvertTo-SecureString “Pass1Word” -AsPlainText -Force
@@ -190,21 +189,12 @@ configuration SmbCredTest
 }
 
 $ConfigurationData = @{
-
     AllNodes = @(
-
         @{
-
             #the "*" means "all nodes named in ConfigData" so we don't have to repeat ourselves
-
             NodeName="localhost"
-
             PSDscAllowPlainTextPassword = $true
-
         })
-
-
-
 }
 ```
 
@@ -213,9 +203,12 @@ $ConfigurationData = @{
 次の方々に感謝します。
 
 - DSC で SMB を使用することに関する Mike F. Robbins 氏の投稿を、このトピックの内容として参考にしました。 彼のブログは [Mike F Robbins](http://mikefrobbins.com/) にあります。
-- **cNtfsAccessControl** モジュールを作成した Serge Nikalaichyk 氏。 このモジュールのソースは https://github.com/SNikalaichyk/cNtfsAccessControl にあります。
+- **cNtfsAccessControl** モジュールを作成した Serge Nikalaichyk 氏。 このモジュールのソースは [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl) にあります。
 
 ## <a name="see-also"></a>関連項目
-- [Windows PowerShell Desired State Configuration の概要](overview.md)
-- [構成の適用](enactingConfigurations.md)
-- [構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)
+
+[Windows PowerShell Desired State Configuration の概要](overview.md)
+
+[構成の適用](enactingConfigurations.md)
+
+[構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)

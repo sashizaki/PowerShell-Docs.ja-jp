@@ -2,28 +2,28 @@
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 のコンソール機能強化
-ms.openlocfilehash: fb689002caf42203d760f11acc64e52cfa681069
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a8e82e2f973916c2ed5007eba90ee6f2b7a9a769
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189314"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892928"
 ---
-# <a name="console-improvements-in-wmf-51"></a>WMF 5.1# のコンソール機能強化
+# <a name="console-improvements-in-wmf-51"></a>WMF 5.1 のコンソール機能強化
 
 ## <a name="powershell-console-improvements"></a>PowerShell コンソールの機能強化
 
 コンソールのエクスペリエンスを改善するため、WMF 5.1 の powershell.exe が次のように変更されました。
 
-###<a name="vt100-support"></a>VT100 のサポート
+### <a name="vt100-support"></a>VT100 のサポート
 
-Windows 10 では、[VT100 エスケープ シーケンス](https://msdn.microsoft.com/en-us/library/windows/desktop/mt638032(v=vs.85).aspx)のサポートが追加されました。
+Windows 10 では、[VT100 エスケープ シーケンス](/windows/console/console-virtual-terminal-sequences)のサポートが追加されました。
 PowerShell は、テーブルの幅を計算するとき、特定の VT100 書式指定エスケープ シーケンスを無視します。
 
 また、PowerShell に追加された新しい API を書式指定コードで使用すると、VT100 がサポートされているかどうかを判定できます。
 たとえば、次のように入力します。
 
-```
+```powershell
 if ($host.UI.SupportsVirtualTerminal)
 {
     $esc = [char]0x1b
@@ -34,7 +34,8 @@ else
     "A default hello"
 }
 ```
-これは、Select-String からの一致を強調表示するために使用できる完全な[例](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7)です。
+
+これは、`Select-String` からの一致を強調表示するために使用できる完全な[例](https://gist.github.com/lzybkr/dcb973dccd54900b67783c48083c28f7)です。
 例を `MatchInfo.format.ps1xml` という名前のファイルに保存した後、使用するには、プロファイルまたはその他の場所で、`Update-FormatData -Prepend MatchInfo.format.ps1xml` を実行します。
 
 VT100 エスケープ シーケンスは、Windows 10 Anniversary 更新以降でのみサポートされることに注意してください。それより前のシステムではサポートされません。

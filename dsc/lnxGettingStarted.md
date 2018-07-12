@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 Desired State Configuration (DSC) の概要
-ms.openlocfilehash: 0534cede979eb2917adb608dba622539fe4bdc45
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d5a4a17fbcffbbbd6df3dd902dbd104769b7d17e
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189433"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37893598"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux 用 Desired State Configuration (DSC) の概要
 
@@ -16,6 +16,7 @@ ms.locfileid: "34189433"
 ## <a name="supported-linux-operation-system-versions"></a>サポートされている Linux オペレーティング システム バージョン
 
 Linux 用 DSC では、次の Linux オペレーティング システム バージョンがサポートされています。
+
 - CentOS 5、6、および 7 (x86/x64)
 - Debian GNU/Linux 6、7、および 8 (x86/x64)
 - Oracle Linux 5、6 および 7 (x86/x64)
@@ -44,7 +45,8 @@ Linux 用 Desired State Configuration には、Open Management Infrastructure (O
 
 OMI をインストールするには、Linux システムに適したパッケージ (.rpm または .deb)、OpenSSL バージョンに適したパッケージ (ssl_098 または ssl_100)、およびアーキテクチャに適したパッケージ (x86/x64) をインストールします。 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server、および Oracle Linux には、RPM パッケージが適しています。 Debian GNU/Linux および Ubuntu Server には、DEB パッケージが適しています。 OpenSSL 0.9.8 がインストールされているコンピューターには ssl_098 パッケージが適し、OpenSSL 1.0 がインストールされているコンピューターには ssl_100 パッケージが適しています。
 
-> **注**: インストールされている OpenSSL のバージョンを調べるには、コマンド `openssl version` を実行します。
+> [!NOTE]
+> インストールされている OpenSSL のバージョンを調べるには、コマンド `openssl version` を実行します。
 
 CentOS 7 x64 システムに OMI をインストールするには、次のコマンドを実行します。
 
@@ -52,16 +54,16 @@ CentOS 7 x64 システムに OMI をインストールするには、次のコ�
 
 ### <a name="installing-dsc"></a>DSC のインストール
 
-Linux 用の DSC は、[こちら](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/latest)からダウンロードできます。
+Linux 用の DSC は、[こちら](https://github.com/Microsoft/PowerShell-DSC-for-Linux/releases/tag/v1.1.1-294)からダウンロードできます。
 
 DSC をインストールするには、Linux システムに適したパッケージ (.rpm または .deb)、OpenSSL バージョンに適したパッケージ (ssl_098 または ssl_100)、およびアーキテクチャに適したパッケージ (x86/x64) をインストールします。 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server、および Oracle Linux には、RPM パッケージが適しています。 Debian GNU/Linux および Ubuntu Server には、DEB パッケージが適しています。 OpenSSL 0.9.8 がインストールされているコンピューターには ssl_098 パッケージが適し、OpenSSL 1.0 がインストールされているコンピューターには ssl_100 パッケージが適しています。
 
-> **注**: インストールされている OpenSSL のバージョンを調べるには、コマンド openssl version を実行します。
+> [!NOTE]
+> インストールされている OpenSSL のバージョンを調べるには、コマンド openssl version を実行します。
 
 CentOS 7 x64 システムに DSC をインストールするには、次のコマンドを実行します。
 
 `# sudo rpm -Uvh dsc-1.0.0-254.ssl_100.x64.rpm`
-
 
 ## <a name="using-dsc-for-linux"></a>Linux 用 DSC の使用
 
@@ -73,39 +75,41 @@ Linux コンピューターの構成を作成するには、Windows コンピュ
 
 1. nx モジュールのインポート nx Windows PowerShell モジュールには Linux 用 DSC の組み込みリソースのスキーマが含まれており、このモジュールをローカル コンピューターにインストールし、構成にインポートする必要があります。
 
-    - nx モジュールをインストールするには、nx モジュール ディレクトリを `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` または `$PSHOME\Modules` にコピーします。 nx モジュールは、Linux 用 DSC のインストール パッケージ (MSI) に含まれています。 構成に nx モジュールをインポートするには、__Import-DSCResource__ コマンドを使用します。
+   - nx モジュールをインストールするには、nx モジュール ディレクトリを `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` または `$PSHOME\Modules` にコピーします。 nx モジュールは、Linux 用 DSC のインストール パッケージ (MSI) に含まれています。 構成に nx モジュールをインポートするには、`Import-DSCResource` コマンドを使用します。
 
-```powershell
-Configuration ExampleConfiguration{
+   ```powershell
+   Configuration ExampleConfiguration{
 
     Import-DSCResource -Module nx
 
-}
-```
+   }
+   ```
+
 2. 構成を定義し、構成ドキュメントを生成します。
 
-```powershell
-Configuration ExampleConfiguration{
+   ```powershell
+   Configuration ExampleConfiguration
+   {
+        Import-DscResource -Module nx
 
-    Import-DscResource -Module nx
+        Node  "linuxhost.contoso.com"
+        {
+            nxFile ExampleFile 
+            {
+                DestinationPath = "/tmp/example"
+                Contents = "hello world `n"
+                Ensure = "Present"
+                Type = "File"
+            }
+        }
+   }
 
-    Node  "linuxhost.contoso.com"{
-    nxFile ExampleFile {
-
-        DestinationPath = "/tmp/example"
-        Contents = "hello world `n"
-        Ensure = "Present"
-        Type = "File"
-    }
-
-    }
-}
-ExampleConfiguration -OutputPath:"C:\temp"
-```
+   ExampleConfiguration -OutputPath:"C:\temp"
+   ```
 
 ### <a name="push-the-configuration-to-the-linux-computer"></a>Linux コンピューターへの構成のプッシュ
 
-構成ドキュメント (MOF ファイル) を Linux コンピューターにプッシュするには、[Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットを使用します。 Linux コンピューターに対してリモートからこのコマンドレットを [Get-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407379.aspx) と共に使用するか、または [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) コマンドレットを使用するためには、CIMSession を使用する必要あります。 Linux コンピューターに CIMSession を作成するには、[New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) コマンドレットを使用します。
+構成ドキュメント (MOF ファイル) を Linux コンピューターにプッシュするには、[Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Start-DscConfiguration) コマンドレットを使用します。 Linux コンピューターに対してリモートからこのコマンドレットを [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) と共に使用するか、または [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) コマンドレットを使用するためには、CIMSession を使用する必要あります。 Linux コンピューターに CIMSession を作成するには、[New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) コマンドレットを使用します。
 
 次のコードは、Linux 用 DSC の CIMSession を作成する方法を示しています。
 
@@ -121,11 +125,11 @@ $opt = New-CimSessionOption -UseSsl:$true
 $Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
 ```
 
-> **注**:
-* "プッシュ" モードの場合、ユーザーの資格情報は Linux コンピューターの root ユーザーである必要があります。
-* Linux 用 DSC では SSL/TLS 接続のみがサポートされているため、New-CimSession を使用するときは、-UseSSL パラメーターを $true に設定する必要があります。
-* OMI (DSC 用) で使用される SSL 証明書は、pemfile プロパティと keyfile プロパティを使用して `/opt/omi/etc/omiserver.conf` ファイルに指定します。
-[New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) コマンドレットを実行している Windows コンピューターでこの証明書が信頼されていない場合は、`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true` の各 CIMSession オプションを使用して証明書の検証を無視することを選択できます。
+> [!NOTE]
+> "プッシュ" モードの場合、ユーザーの資格情報は Linux コンピューターの root ユーザーである必要があります。
+> Linux 用 DSC では SSL/TLS 接続のみがサポートされているため、`New-CimSession` を使用するときは、–UseSSL パラメーターを $true に設定する必要があります。
+> OMI (DSC 用) で使用される SSL 証明書は、pemfile プロパティと keyfile プロパティを使用して `/opt/omi/etc/omiserver.conf` ファイルに指定します。
+> [New-CimSession](http://go.microsoft.com/fwlink/?LinkId=227967) コマンドレットを実行している Windows コンピューターでこの証明書が信頼されていない場合は、`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true` の各 CIMSession オプションを使用して証明書の検証を無視することを選択できます。
 
 Linux ノードに DSC 構成をプッシュするには、次のコマンドを実行します。
 
@@ -138,39 +142,40 @@ Linux ノードに DSC 構成をプッシュするには、次のコマンドを
 ### <a name="working-with-configurations-locally"></a>ローカルでの構成の操作
 
 Linux 用 DSC には、ローカルの Linux コンピューターから構成を操作するためのスクリプトが含まれています。 これらのスクリプトは、`/opt/microsoft/dsc/Scripts` にあり、次のものが含まれています。
-* GetDscConfiguration.py
 
- コンピューターに適用される現在の構成を返します。 Windows PowerShell コマンドレットである Get-DscConfiguration に似ています。
+- GetDscConfiguration.py
+
+コンピューターに適用される現在の構成を返します。 Windows PowerShell コマンドレットの `Get-DscConfiguration` コマンドレットに似ています。
 
 `# sudo ./GetDscConfiguration.py`
 
-* GetDscLocalConfigurationManager.py
+- GetDscLocalConfigurationManager.py
 
- コンピューターに適用される現在のメタ構成を返します。 [Get-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn407378.aspx) コマンドレットに似ています。
+コンピューターに適用される現在のメタ構成を返します。 [Get-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) コマンドレットに似ています。
 
 `# sudo ./GetDscLocalConfigurationManager.py`
 
-* InstallModule.py
+- InstallModule.py
 
- カスタムの DSC リソース モジュールをインストールします。 モジュール共有オブジェクト ライブラリおよびスキーマ MOF ファイルが含まれている .zip ファイルへのパスが必要です。
+カスタムの DSC リソース モジュールをインストールします。 モジュール共有オブジェクト ライブラリおよびスキーマ MOF ファイルが含まれている .zip ファイルへのパスが必要です。
 
 `# sudo ./InstallModule.py /tmp/cnx_Resource.zip`
 
-* RemoveModule.py
+- RemoveModule.py
 
- カスタムの DSC リソース モジュールを削除します。 削除するモジュールの名前が必要です。
+カスタムの DSC リソース モジュールを削除します。 削除するモジュールの名前が必要です。
 
 `# sudo ./RemoveModule.py cnx_Resource`
 
-* StartDscLocalConfigurationManager.py
+- StartDscLocalConfigurationManager.py
 
- 構成 MOF ファイルをコンピューターに適用します。 [Start-DscConfiguration](https://technet.microsoft.com/en-us/library/dn521623.aspx) コマンドレットに似ています。 適用する構成 MOF へのパスが必要です。
+構成 MOF ファイルをコンピューターに適用します。 [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Start-DscConfiguration) コマンドレットに似ています。 適用する構成 MOF へのパスが必要です。
 
 `# sudo ./StartDscLocalConfigurationManager.py –configurationmof /tmp/localhost.mof`
 
-* SetDscLocalConfigurationManager.py
+- SetDscLocalConfigurationManager.py
 
- メタ構成 MOF ファイルをコンピューターに適用します。 [Set-DSCLocalConfigurationManager](https://technet.microsoft.com/en-us/library/dn521621.aspx) コマンドレットに似ています。 適用するメタ構成 MOF へのパスが必要です。
+メタ構成 MOF ファイルをコンピューターに適用します。 [Set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) コマンドレットに似ています。 適用するメタ構成 MOF へのパスが必要です。
 
 `# sudo ./SetDscLocalConfigurationManager.py –configurationmof /tmp/localhost.meta.mof`
 
@@ -180,5 +185,5 @@ Linux 用 DSC のメッセージのために次のログ ファイルが生成�
 
 |ログ ファイル|Directory|説明|
 |---|---|---|
-|omiserver.log|/var/opt/omi/log|OMI CIM サーバーの操作に関連するメッセージ。|
-|dsc.log|/var/opt/omi/log|ローカル構成マネージャー (LCM) と DSC リソースの操作に関連するメッセージ。|
+|**omiserver.log**|`/var/opt/omi/log`|OMI CIM サーバーの操作に関連するメッセージ。|
+|**dsc.log**|`/var/opt/omi/log`|ローカル構成マネージャー (LCM) と DSC リソースの操作に関連するメッセージ。|

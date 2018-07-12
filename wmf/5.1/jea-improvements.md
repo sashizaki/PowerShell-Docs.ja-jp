@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 contributor: ryanpu
 title: Just Enough Administration (JEA) の強化
-ms.openlocfilehash: 47a58a6fae9f3a41ec527ec1f77ac1c196336669
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 79271e77a539764e7a18842efd919413cdc8ab9f
+ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222419"
+ms.lasthandoff: 07/06/2018
+ms.locfileid: "37892721"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Just Enough Administration (JEA) の強化
 
@@ -18,7 +18,7 @@ ms.locfileid: "34222419"
 JEA エンドポイントとの間でファイルをリモートでコピーできるようになりました。接続ユーザーはシステム上のファイルを*どれでも*コピーできるわけではないので安心することができます。
 これは、接続ユーザー用のユーザー ドライブをマウントするよう PSSC ファイルを構成することによって可能になります。
 ユーザー ドライブは、各接続ユーザーに固有の新しい PSDrive であり、複数のセッションにわたって保持されます。
-Copy-Item を使用して JEA セッションとの間でファイルのコピーを行うと、該当するユーザー ドライブへのアクセスしか許可しないように制約が課せられます。
+`Copy-Item` を使用して JEA セッションとの間でファイルのコピーを行うと、該当するユーザー ドライブへのアクセスしか許可しないように制約が課せられます。
 その他の PSDrive ファイルへのコピーを試みると失敗します。
 
 JEA セッションの構成ファイルで、ユーザー ドライブを設定するには、次の新しいフィールドを使用します。
@@ -30,7 +30,7 @@ UserDriveMaximumSize = 10485760    # 10 MB
 
 ユーザー ドライブをバッキングするフォルダーが "`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`" に作成されます。
 
-ユーザー ドライブを公開するように構成された JEA エンドポイントとの間で、ユーザー ドライブを使用してファイルのコピーを行うには、Copy-Item で `-ToSession` および `-FromSession` パラメーターを使用します。
+ユーザー ドライブを公開するように構成された JEA エンドポイントとの間で、ユーザー ドライブを使用してファイルのコピーを行うには、`Copy-Item` で `-ToSession` および `-FromSession` パラメーターを使用します。
 
 ```powershell
 # Connect to the JEA endpoint
@@ -64,7 +64,8 @@ GroupManagedServiceAccount = 'myGMSAforJEA'
 RunAsVirtualAccount = $false
 ```
 
-> **注:** グループの管理されたサービス アカウントでは、仮想アカウントの分離または限定的な範囲を許容していません。
+> [!NOTE]
+> グループの管理されたサービス アカウントでは、仮想アカウントの分離または限定的な範囲を許容していません。
 > 接続ユーザーはすべて同じ gMSA ID を共有することになります。この ID は企業全体を対象とするアクセス許可を持つ場合もあります。
 > gMSA の使用を選択する場合は細心の注意を払ってください。可能であればローカル コンピューターに限定された仮想アカウントを常に優先してください。
 
@@ -91,5 +92,6 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 ```
 
 ## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>固定: Windows Server 2008 R2 で仮想アカウントがサポートされるようになりました。
+
 WMF 5.1 では、Windows Server 2008 R2 で仮想アカウントを使用できるようになりました。これにより、Windows Server 2008 R2 - 2016 にわたり一貫した構成と機能の類似性が提供されます。
 Windows 7 で JEA を使用する場合、仮想アカウントはまだサポートされていません。
