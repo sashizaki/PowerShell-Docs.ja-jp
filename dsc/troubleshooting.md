@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC のトラブルシューティング
-ms.openlocfilehash: c08f91b514aae438578fa278228fe5ec879a4012
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1e8bfdf3540e65e3be94bf6a9b04e7d3b14ff044
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190011"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094070"
 ---
 # <a name="troubleshooting-dsc"></a>DSC のトラブルシューティング
 
@@ -24,10 +24,10 @@ Windows PowerShell Desired State Configuration (DSC) は、WinRM に依存しま
 [Get-DscConfigurationStatus](https://technet.microsoft.com/library/mt517868.aspx) コマンドレットは、ターゲット ノードから構成状態に関する情報を取得します。
 構成の実行が成功したかどうかについての基本情報を含む、リッチ オブジェクトが返されます。 オブジェクトを調べ、次に挙げるような構成の実行に関する詳細を知ることができます:
 
-* 失敗したすべてのリソース
-* 再起動を要求したすべてのリソース
-* 構成の実行時のメタ構成の設定
-* など
+- 失敗したすべてのリソース
+- 再起動を要求したすべてのリソース
+- 構成の実行時のメタ構成の設定
+- など
 
 次のパラメーター セットは、最後の構成の実行状況に関する情報を返します。
 
@@ -118,8 +118,8 @@ Consistency engine was run successfully.
 
 DSC イベントは、ユーザーが 1 つの DSC ジョブからイベントを集計できるように特定の構造に記録されます。 その構造は次のとおりです。
 
-**ジョブ ID: <Guid>**
-**<Event Message>**
+**ジョブ ID: \<Guid\>**
+**\<イベント メッセージ\>**
 
 ## <a name="gathering-events-from-a-single-dsc-operation"></a>1 つの DSC 操作からのイベントの収集
 
@@ -281,7 +281,6 @@ ComputerName   SequenceId TimeCreated           Result   JobID                  
 SRV1   1          6/23/2016 9:37:52 AM  Failure  9701aadf-395e-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   2          6/23/2016 9:36:54 AM  Failure  7e8e2d6e-395c-11e6-9165-00155d390509  {@{Message=; TimeC...
 SRV1   3          6/23/2016 9:36:54 AM  Success  af72c6aa-3960-11e6-9165-00155d390509  {@{Message=Operati...
-
 ```
 
 また、`Newest` パラメーターを使用して最近の操作の結果のみを表示するように指定することもできます。
@@ -618,10 +617,13 @@ onlyProperty                            PSComputerName
 ## <a name="see-also"></a>参照
 
 ### <a name="reference"></a>参照先
-* [DSC Log Resource (DSC ログ リソース)](logResource.md)
+
+- [DSC Log Resource (DSC ログ リソース)](logResource.md)
 
 ### <a name="concepts"></a>概念
-* [Build Custom Windows PowerShell Desired State Configuration Resources (カスタム Windows PowerShell Desired State Configuration のビルド)](authoringResource.md)
+
+- [Build Custom Windows PowerShell Desired State Configuration Resources (カスタム Windows PowerShell Desired State Configuration のビルド)](authoringResource.md)
 
 ### <a name="other-resources"></a>その他のリソース
-* [Windows PowerShell Desired State Configuration Cmdlets (Windows PowerShell Desired State Configuration のコマンドレット)](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
+
+- [Windows PowerShell Desired State Configuration Cmdlets (Windows PowerShell Desired State Configuration のコマンドレット)](https://technet.microsoft.com/library/dn521624(v=wps.630).aspx)
