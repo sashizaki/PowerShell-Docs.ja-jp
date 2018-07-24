@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access のインストールと使用
-ms.openlocfilehash: d60670954d6ab6998e905382383d60ead1129d31
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: c14da421e372f6c4c4f203b16bbd37f28a9ba255
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893758"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094264"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Access のインストールと使用
 
@@ -333,29 +333,29 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
 
    - Windows の**スタート**画面で、**インターネット インフォメーション サービス (IIS) マネージャー**という名前の任意の一部を入力します。 **[アプリ]** の結果に表示されたショートカットをクリックします。
 
-2. IIS マネージャーのツリー ウィンドウで、Windows PowerShell Web Access がインストールされているサーバーのノードを展開し、**[サイト]** フォルダーを表示させます。 **[サイト]** フォルダーを選択します。
+1. IIS マネージャーのツリー ウィンドウで、Windows PowerShell Web Access がインストールされているサーバーのノードを展開し、**[サイト]** フォルダーを表示させます。 **[サイト]** フォルダーを選択します。
 
-3. **[操作]** ウィンドウで **[Web サイトの追加]** をクリックします。
+1. **[操作]** ウィンドウで **[Web サイトの追加]** をクリックします。
 
-4. Web サイトの名前 (**Windows PowerShell Web Access** など) を入力します。
+1. Web サイトの名前 (**Windows PowerShell Web Access** など) を入力します。
 
-5. 新しい Web サイト用のアプリケーション プールが自動で作成されます。 別のアプリケーション プールを使うには、**[選択]** をクリックして、新しい Web サイトに関連付けるアプリケーション プールを選択します。 **[アプリケーション プールの選択]** ダイアログ ボックスで別のアプリケーション プールを選択し、**[OK]** をクリックします。
+1. 新しい Web サイト用のアプリケーション プールが自動で作成されます。 別のアプリケーション プールを使うには、**[選択]** をクリックして、新しい Web サイトに関連付けるアプリケーション プールを選択します。 **[アプリケーション プールの選択]** ダイアログ ボックスで別のアプリケーション プールを選択し、**[OK]** をクリックします。
 
-6. **[物理パス]** テキスト ボックスで、%*windir*%/Web/PowerShellWebAccess/wwwroot に移動します。
+1. **[物理パス]** テキスト ボックスで、%*windir*%/Web/PowerShellWebAccess/wwwroot に移動します。
 
-7. **[バインド]** 領域の **[種類]** フィールドで、**[https]** を選択します。
+1. **[バインド]** 領域の **[種類]** フィールドで、**[https]** を選択します。
 
-8. 別のサイトまたはアプリケーションがまだ使っていないポート番号を Web サイトに割り当てます。 未使用のポートを調べるには、コマンド プロンプト ウィンドウで **netstat** コマンドを実行します。 既定のポート番号は 443 です。
+1. 別のサイトまたはアプリケーションがまだ使っていないポート番号を Web サイトに割り当てます。 未使用のポートを調べるには、コマンド プロンプト ウィンドウで **netstat** コマンドを実行します。 既定のポート番号は 443 です。
 
    別の Web サイトが既に 443 を使っている場合、またはポート番号を変更するセキュリティ上の理由がある場合は、既定のポートを変更します。 選択したポートを、ゲートウェイ サーバー上で実行されている別の Web サイトが使っている場合は、**[Web サイトの追加]** ダイアログ ボックスで **[OK]** をクリックすると警告が表示されます。 Windows PowerShell Web Access を実行するには未使用のポートを使う必要があります。
 
-9. 組織の必要に応じて、組織またはユーザーがわかりやすいホスト名を指定します (**www.contoso.com** など)。 **[OK]** をクリックします。
+1. 組織の必要に応じて、組織またはユーザーがわかりやすいホスト名を指定します (**www.contoso.com** など)。 **[OK]** をクリックします。
 
-10. 運用環境のセキュリティ保護を強化するため、CA によって署名された有効な証明書を提供することを強くお勧めします。 ユーザーは HTTPS Web サイトを経由しないと Windows PowerShell Web Access に接続できないため、SSL 証明書は必ず提供する必要があります。 証明書の取得方法の詳細については、このトピックの「[IIS マネージャーで SSL 証明書を構成するには](#to-configure-an-ssl-certificate-in-iis-Manager)」を参照してください。
+1. 運用環境のセキュリティ保護を強化するため、CA によって署名された有効な証明書を提供することを強くお勧めします。 ユーザーは HTTPS Web サイトを経由しないと Windows PowerShell Web Access に接続できないため、SSL 証明書は必ず提供する必要があります。 証明書の取得方法の詳細については、このトピックの「[IIS マネージャーで SSL 証明書を構成するには](#to-configure-an-ssl-certificate-in-iis-Manager)」を参照してください。
 
-11. **[OK]** をクリックして **[Web サイトの追加]** ダイアログ ボックスを閉じます。
+1. **[OK]** をクリックして **[Web サイトの追加]** ダイアログ ボックスを閉じます。
 
-12. 管理者特権で開かれた ([管理者として実行]) Windows PowerShell セッションで、次のスクリプトを実行します。*application_pool_name* は、手順 4. で作成したアプリケーション プールの名前です。これによって承認ファイルへのアクセス権がアプリケーション プールに付与されます。
+1. 管理者特権で開かれた ([管理者として実行]) Windows PowerShell セッションで、次のスクリプトを実行します。_application_pool_name_ は、手順 4. で作成したアプリケーション プールの名前です。これによって承認ファイルへのアクセス権がアプリケーション プールに付与されます。
 
     ```    
     $applicationPoolName = "<application_pool_name>"
@@ -369,11 +369,11 @@ Windows PowerShell Web Access ゲートウェイは、サーバー マネージ�
     c:\windows\system32\icacls.exe $authorizationFile
     ```
 
-13. IIS マネージャーのツリー ウィンドウで新しい Web サイトが選択された状態で、 **[操作]** ウィンドウの **[開始]** をクリックすると、Web サイトが開設されます。
+1. IIS マネージャーのツリー ウィンドウで新しい Web サイトが選択された状態で、 **[操作]** ウィンドウの **[開始]** をクリックすると、Web サイトが開設されます。
 
-14. クライアント デバイスでブラウザー セッションを開きます。 サポートされるブラウザーとデバイスの詳細については、このドキュメントの「[ブラウザーとクライアント デバイスのサポート](#browser-and-client-device-support)」を参照してください。
+1. クライアント デバイスでブラウザー セッションを開きます。 サポートされるブラウザーとデバイスの詳細については、このドキュメントの「[ブラウザーとクライアント デバイスのサポート](#browser-and-client-device-support)」を参照してください。
 
-15. 新しい Windows PowerShell Web Access の Web サイトを開きます。
+1. 新しい Windows PowerShell Web Access の Web サイトを開きます。
 
     ルート Web サイトは Windows PowerShell Web Access フォルダーを参照しているため、**https://\<*gateway_server_name*\>** を開くと、ブラウザーには Windows PowerShell Web Access のサインイン ページが表示されます。 URL に **/pswa** を追加する必要はありません。
 
@@ -396,11 +396,11 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
    - Windows の**スタート**画面で、**[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
 
-2. ![セキュリティ メモ](images/SecurityNote.jpeg) セッションの構成を使用してユーザー アクセスを制限するための手順 (省略可能):
+1. ![セキュリティ メモ](images/SecurityNote.jpeg) セッションの構成を使用してユーザー アクセスを制限するための手順 (省略可能):
 
    既に存在する規則の中で使用するセッションの構成を確認します。 まだ作成されていない場合は、「[about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations)」に記載されているセッション構成の作成手順を使用してください。
 
-3. 次のように入力して **Enter** キーを押します。
+1. 次のように入力して **Enter** キーを押します。
 
    Add-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName <computer_name> -ConfigurationName <session_configuration_name>
 
@@ -410,7 +410,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
    Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly
 
-4. `Get-PswaAuthorizationRule` コマンドレットまたは `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>` を実行して、規則が作成されたことを検証します。
+1. `Get-PswaAuthorizationRule` コマンドレットまたは `Test-PswaAuthorizationRule -UserName '<domain\user>' -ComputerName <computer-name>` を実行して、規則が作成されたことを検証します。
 
    たとえば、`Test-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214` のように指定します。
 
@@ -424,9 +424,9 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
 1. IIS マネージャーのツリー ウィンドウで、Windows PowerShell Web Access がインストールされているサーバーを選択します。
 
-2. コンテンツ ウィンドウで **[サーバー証明書]** をダブルクリックします。
+1. コンテンツ ウィンドウで **[サーバー証明書]** をダブルクリックします。
 
-3. **[操作]** ウィンドウで、次のいずれかを実行します。 IIS でサーバー証明書を構成する方法の詳細については、「[IIS 7 でサーバー証明書を構成する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))」を参照してください。
+1. **[操作]** ウィンドウで、次のいずれかを実行します。 IIS でサーバー証明書を構成する方法の詳細については、「[IIS 7 でサーバー証明書を構成する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))」を参照してください。
 
    - **[インポート]** をクリックして、ネットワーク内の場所にある既存の有効な証明書をインポートします。
 
@@ -436,11 +436,11 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
    - **[自己署名証明書を作成する]** をクリックして証明書を作成します。この証明書はすぐに使うことができ、必要な場合は後でCAが署名できます。 自己署名証明書にわかりやすい名前を指定します (**Windows PowerShell Web Access** など)。 これは、安全と見なされない、プライベートなテスト環境にのみ推奨されるオプションです。
 
-4. 証明書を作成または取得した後、IIS マネージャーのツリー ウィンドウで、証明書を適用する Web サイト (**[既定の Web サイト]** など) を選択して、**[操作]** ウィンドウの **[バインド]** をクリックします。
+1. 証明書を作成または取得した後、IIS マネージャーのツリー ウィンドウで、証明書を適用する Web サイト (**[既定の Web サイト]** など) を選択して、**[操作]** ウィンドウの **[バインド]** をクリックします。
 
-5. **[サイト バインドの追加]** ダイアログ ボックスで、サイトの **[https]** バインドを追加します (表示されていない場合)。 自己署名証明書を使っていない場合、手順 3. のホスト名を指定します。 自己署名証明書を使っている場合、この手順は必要ありません。
+1. **[サイト バインドの追加]** ダイアログ ボックスで、サイトの **[https]** バインドを追加します (表示されていない場合)。 自己署名証明書を使っていない場合、手順 3. のホスト名を指定します。 自己署名証明書を使っている場合、この手順は必要ありません。
 
-6. 手順 3. で取得または作成した証明書を選択して、**[OK]** をクリックします。
+1. 手順 3. で取得または作成した証明書を選択して、**[OK]** をクリックします。
 
 ## <a name="using-the-web-based-windows-powershell-console"></a>Web ベースの Windows PowerShell コンソールの使用
 

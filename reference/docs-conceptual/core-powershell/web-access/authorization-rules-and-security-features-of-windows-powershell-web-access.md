@@ -1,13 +1,13 @@
 ---
 ms.date: 06/27/2017
-keywords: powershell,コマンドレット
+keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access の承認規則とセキュリティ機能
-ms.openlocfilehash: a3a743d83ae3e387ee51056042c98753104e925e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 14bb18cfc5d9826523a239aede42307a7688eaf5
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893724"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39094247"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Access の承認規則とセキュリティ機能
 
@@ -163,9 +163,8 @@ Get-PswaAuthorizationRule `
 
 - 管理者がプライベートなテスト環境をセットアップして、すべての承認済みネットワーク ユーザーに、通常アクセスが許可されるネットワーク内のすべてのコンピューターに対するアクセスと、通常アクセスが許可されるすべてのセッション構成に対するアクセスを許可します。 これはプライベートなテスト環境であるため、管理者が作成する承認規則は安全ではありません。 - 管理者は `Add-PswaAuthorizationRule * * *` コマンドレットを実行します。ここで使われているワイルドカード文字 **\*** は、すべてのコンピューター、すべてのユーザー、すべてのセッション構成をそれぞれ示します。 - この規則は `Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *` と同等です。
 
-  >[!NOTE]
-  >
-  >この規則は、Windows PowerShell Web Access が提供する承認規則によるセキュリティ層をバイパスするものであり、セキュリティ保護された環境には推奨されません。
+  > [!NOTE]
+  > この規則は、Windows PowerShell Web Access が提供する承認規則によるセキュリティ層をバイパスするものであり、セキュリティ保護された環境には推奨されません。
 
 - 管理者は、ワークグループとドメインの両方が含まれている環境で、対象コンピューターへの接続をユーザーに許可する必要があります。ワークグループ コンピューターは、ドメイン内の対象コンピューターに接続するために使用されることがあります。ドメイン内のコンピューターは、ワークグループ内の対象コンピューターに接続するために使用されることがあります。 ワークグループ内にはゲートウェイ サーバー *PswaServer* があり、ドメイン内には対象コンピューター *srv1.contoso.com* があります。 ユーザー *Chris* は、ワークグループ ゲートウェイ サーバーと対象コンピューターの両方で承認されているローカル ユーザーです。 ワークグループ サーバー上のユーザー名は *chrisLocal*、対象コンピューター上のユーザー名は *contoso\\chris* です。 Chris に srv1.contoso.com へのアクセスを承認するには、管理者は以下の規則を追加する必要があります。
 
@@ -180,10 +179,9 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
 
 1. *server_name*\\*user_name* の形式のユーザー名を承認規則に追加することによる、ワークグループ ゲートウェイ サーバーでの認証
 
-2. サインイン ページの **[オプションの接続設定]** で指定された別の資格情報を使用することによる、対象コンピューターでの認証
+1. サインイン ページの **[オプションの接続設定]** で指定された別の資格情報を使用することによる、対象コンピューターでの認証
 
    > [!NOTE]
-   >
    > ゲートウェイ コンピューターと対象コンピューターが別々のワークグループまたはドメインにある場合は、2 つのワークグループ コンピューター間、2 つのドメイン間、またはワークグループとドメインの間で、信頼関係を確立する必要があります。 Windows PowerShell Web Access の承認規則コマンドレットを使用してこの関係を構成することはできません。 承認規則では、コンピューター間の信頼関係は定義されません。承認規則では、特定の対象コンピューターとセッション構成に接続できるようにユーザーを承認することしかできません。 異なるドメイン間で信頼関係を構成する方法の詳細については、[ドメインおよびフォレストの信頼の作成に関するページ](https://technet.microsoft.com/library/cc794775.aspx")を参照してください。
    > 信頼されたホストの一覧にワークグループ コンピューターを追加する方法の詳細については、「[サーバー マネージャーによるリモート管理](https://technet.microsoft.com/library/dd759202.aspx)」を参照してください。
 

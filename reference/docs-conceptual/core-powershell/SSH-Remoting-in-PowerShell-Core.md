@@ -46,8 +46,8 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. [インストール] の手順を使用して、GitHub から最新の [Win32 OpenSSH] ビルドをインストールします
-3. Win32 OpenSSH をインストールした場所で sshd_config ファイルを編集します
+1. [インストール] の手順を使用して、GitHub から最新の [Win32 OpenSSH] ビルドをインストールします
+1. Win32 OpenSSH をインストールした場所で sshd_config ファイルを編集します
    - パスワード認証が有効になっていることを確認します
 
    ```
@@ -59,8 +59,8 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
     ```
 
     > [!NOTE]
-    OpenSSH for Windows にバグがあり、サブシステムの実行可能ファイルのパスでスペースが機能しません。
-    この問題の詳細については、GitHub の[こちらのページ](https://github.com/PowerShell/Win32-OpenSSH/issues/784)を参照してください。
+    > OpenSSH for Windows にバグがあり、サブシステムの実行可能ファイルのパスでスペースが機能しません。
+    > この問題の詳細については、GitHub の[こちらのページ](https://github.com/PowerShell/Win32-OpenSSH/issues/784)を参照してください。
 
     解決策の 1 つは、次のようにスペースが含まれていない PowerShell インストール ディレクトリへのシンボリック リンクを作成することです。
 
@@ -84,27 +84,27 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
    PubkeyAuthentication yes
    ```
 
-4. sshd サービスを再起動します
+1. sshd サービスを再起動します
 
    ```powershell
    Restart-Service sshd
    ```
 
-5. OpenSSH がインストールされているパスをパス環境変数に追加します
+1. OpenSSH がインストールされているパスをパス環境変数に追加します
    - `C:\Program Files\OpenSSH\` の行に沿ったものになります
    - これで ssh.exe の場所が認識されます
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) コンピューターでのセットアップ
 
 1. GitHub から最新の [Linux 向け PowerShell Core] ビルドをインストールします
-2. 必要に応じて [Ubuntu SSH] をインストールします
+1. 必要に応じて [Ubuntu SSH] をインストールします
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-3. /etc/ssh で sshd_config ファイルを編集します
+1. /etc/ssh で sshd_config ファイルを編集します
    - パスワード認証が有効になっていることを確認します
 
    ```
@@ -123,7 +123,7 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
    PubkeyAuthentication yes
    ```
 
-4. sshd サービスを再起動します
+1. sshd サービスを再起動します
 
    ```bash
    sudo service sshd restart
@@ -137,7 +137,7 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
      - `Sharing` をクリックします
      - `Remote Login` が `Remote Login: On` になっていることを確認します
      - 適切なユーザーにアクセスを許可します
-2. `/private/etc/ssh/sshd_config` で `sshd_config` ファイルを編集します
+1. `/private/etc/ssh/sshd_config` で `sshd_config` ファイルを編集します
    - お気に入りのエディターを使用します
 
      ```bash
@@ -162,7 +162,7 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
      PubkeyAuthentication yes
      ```
 
-3. sshd サービスを再起動します
+1. sshd サービスを再起動します
 
    ```bash
    sudo launchctl stop com.openssh.sshd
