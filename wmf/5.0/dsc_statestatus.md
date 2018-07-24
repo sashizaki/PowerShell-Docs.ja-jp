@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: 0e8d0cb1e4afa7bc791d45bfb0b981654cb09ed5
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: b279d388754c5ee42215f21317f7b3d8089b7608
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892571"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093883"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>統一された一貫性のある状態とステータスの表現
 
@@ -15,11 +15,11 @@ ms.locfileid: "37892571"
 LCM 状態と DSC 操作ステータスの形式を再検討し、次の規則に従って統合されました。
 
 1. 未処理のリソースは、LCM 状態と DSC ステータスに影響を与えません。
-2. LCM は、再起動を要求するリソースに到達すると、リソースの処理を停止します。
-3. 再起動を要求するリソースは、再起動が実際に発生するまで、必要な状態になりません。
-4. 失敗したリソースを検出した場合は、そのリソースに依存していない限り、LCM は他のリソースの処理を続けます。
-5. `Get-DscConfigurationStatus` コマンドレットによって返される状態の全体は、すべてのリソースのステータスのスーパー セットです。
-6. PendingReboot 状態は、PendingConfiguration 状態のスーパーセットです。
+1. LCM は、再起動を要求するリソースに到達すると、リソースの処理を停止します。
+1. 再起動を要求するリソースは、再起動が実際に発生するまで、必要な状態になりません。
+1. 失敗したリソースを検出した場合は、そのリソースに依存していない限り、LCM は他のリソースの処理を続けます。
+1. `Get-DscConfigurationStatus` コマンドレットによって返される状態の全体は、すべてのリソースのステータスのスーパー セットです。
+1. PendingReboot 状態は、PendingConfiguration 状態のスーパーセットです。
 
    次の表は、いくつかの一般的なシナリオでのプロパティに関連した状態とステータスの結果を示しています。
 

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell Desired State Configuration の部分構成
-ms.openlocfilehash: 1f5ec5bd5055ccc3d83a60712aebe635f2548828
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 6d344b666421aba5745945f6148570e4c8229c1a
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893003"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093934"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration の部分構成
 
@@ -217,7 +217,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>プル サーバーでの構成ドキュメントの名前付けおよび配置 (ConfigurationID)
 
-部分構成ドキュメントは、プル サーバーの `web.config` ファイルで **ConfigurationPath** として指定されたフォルダーに配置する必要があります (通常 `C:\Program Files\WindowsPowerShell\DscService\Configuration`)。 構成ドキュメントは次のように名前を付ける必要があります。*ConfigurationName*. *ConfigurationID8`.mof`。ここで *ConfigurationName* は部分構成の名前であり、*ConfigurationID* はターゲット ノードの LCM で定義されている構成 ID です。 この例では、構成ドキュメントの名前は次のようになります。
+部分構成ドキュメントは、プル サーバーの `web.config` ファイルで **ConfigurationPath** として指定されたフォルダーに配置する必要があります (通常 `C:\Program Files\WindowsPowerShell\DscService\Configuration`)。 構成ドキュメントは次のように名前を付ける必要があります。_ConfigurationName_. *ConfigurationID8`.mof`。ここで _ConfigurationName_ は部分構成の名前であり、_ConfigurationID_ はターゲット ノードの LCM で定義されている構成 ID です。 この例では、構成ドキュメントの名前は次のようになります。
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -330,7 +330,6 @@ Configuration ServiceAccountConfig
 
     Import-DscResource -ModuleName PSDesiredStateConfiguration
 
-
     Node localhost
     {
         Group LocalAdmins
@@ -340,7 +339,6 @@ Configuration ServiceAccountConfig
                                   'admins@example.domain'
             Ensure              = 'Present'
             Credential          = $Credential
-
         }
 
         WindowsFeature Telnet
@@ -351,7 +349,6 @@ Configuration ServiceAccountConfig
     }
 }
 ServiceAccountConfig
-
 ```
 
 ## <a name="example-sharepointconfig-partial-configuration"></a>SharePointConfig 部分構成の例

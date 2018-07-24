@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データでの資格情報オプション
-ms.openlocfilehash: 2c6685f3b6992537d1652f172cf926b85dd634c6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 12bb8d8ce5fc4685e583e74d411b098320ac4fd4
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190045"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093679"
 ---
 # <a name="credentials-options-in-configuration-data"></a>構成データでの資格情報オプション
 >適用先: Windows PowerShell 5.0
@@ -273,8 +273,6 @@ DomainCredentialExample -DomainCredential $cred -ConfigurationData $cd
 > `NodeName` にアスタリスクは指定できません。特定のノード名が必須です。
 
 **Microsoft では、重大なセキュリティ リスクのため、プレーンテキスト パスワードを使用しないことをお勧めします。**
-
-例外は Azure Automation DSC サービスを使用するときで、データが常に暗号化されて格納されるためです (送信中、サービスの一時停止中、ノードの一時停止中)。
 
 ## <a name="domain-credentials"></a>ドメイン資格情報
 

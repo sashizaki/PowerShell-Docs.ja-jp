@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC ProcessSet リソース
-ms.openlocfilehash: 412cf1076996126f0d9b7a9a8ebbc9bdb7ecf377
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: d18d2c96239abd83cea735e0fbce198d0456cea6
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189926"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093992"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess リソース
 
@@ -33,6 +33,7 @@ WindowsProcess [string] #ResourceName
 ```
 
 ## <a name="properties"></a>プロパティ
+
 |  プロパティ  |  説明   |
 |---|---|
 | 引数| 現状のままプロセスに渡す引数の文字列。 複数の引数を渡す必要がある場合は、そのすべてをこの文字列内に配置します。|

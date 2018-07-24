@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: 66db78cfb136f22cad9078d7113dad085ee667a5
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: e4910e95a417da61661aaddd98b2dc7da9f98a3d
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188430"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093720"
 ---
 # <a name="creating-and-connecting-to-a-jea-endpoint"></a>JEA エンドポイントの作成および接続
 JEA エンドポイントを作成するには、特別に構成された PowerShell セッション構成ファイルを作成し、登録する必要があります。このファイルは、**New-PSSessionConfigurationFile** コマンドレットで登録できます。
@@ -128,8 +128,8 @@ Copyright = '(c) 2015 Administrator. All rights reserved.'
 # AssembliesToLoad = 'System.Web', 'System.OtherAssembly, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a'
 
 }
-
 ```
+
 JEA セッション構成で使用するには、ロール機能を有効な PowerShell モジュールとして "RoleCapabilities" という名前のディレクトリに保存する必要があります。 必要に応じて、1 つのモジュールに複数のロール機能ファイルを含めることができます。
 
 ユーザーが JEA セッションに接続するときにどのコマンドレット、関数、エイリアス、およびスクリプトにアクセスできるかの構成を開始するには、コメント アウトされたテンプレートに従ってロール機能ファイルに独自のルールを追加します。 ロール機能を構成する方法の詳細については、完全な[エクスペリエンス ガイド](http://aka.ms/JEA)をご覧ください。
@@ -141,9 +141,11 @@ Register-PSSessionConfiguration -Name Maintenance -Path "C:\ProgramData\JEAConfi
 ```
 
 ## <a name="connect-to-a-jea-endpoint"></a>JEA エンドポイントへの接続
+
 JEA エンドポイントへの接続は、他の PowerShell エンドポイントへの接続と同じように機能します。  **New-PSSession**、**Invoke-Command**、または **Enter-PSSession** の "ConfigurationName" パラメーターとして JEA エンドポイント名を付けることのみが必要です。
 
 ```powershell
 Enter-PSSession -ConfigurationName Maintenance -ComputerName localhost
 ```
+
 JEA セッションに接続した後は、自分がアクセス権を持つロール機能のホワイトリストに登録されたコマンドのみを実行できます。 ロールに許可されていないコマンドを実行しようとすると、エラーが発生します。

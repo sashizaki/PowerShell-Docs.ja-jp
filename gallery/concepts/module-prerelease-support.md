@@ -3,12 +3,12 @@ ms.date: 09/26/2017
 contributor: keithb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: プレリリース モジュールのバージョン
-ms.openlocfilehash: 2a4fcd40353450e5ba03910984c5a05772a93d0d
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 371aae7eed4afe341755133c5ee2d356cd5876e0
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189841"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093781"
 ---
 # <a name="prerelease-module-versions"></a>プレリリース モジュールのバージョン
 
@@ -108,7 +108,6 @@ C:\windows\system32> Get-InstalledModule TestPackage
 Version         Name                                Repository           Description
 -------         ----                                ----------           -----------
 1.9.0-alpha     TestPackage                         PSGallery            Package used to validate changes to the PowerShe...
-
 ```
 
 プレリリースが指定されているかどうかの違いしかない、モジュールのバージョンの同時インストールはサポートされません。 PowerShellGet を使用してモジュールをインストールすると、ModuleVersion を使用してフォルダー名が作成され、同じモジュールの異なるバージョンが同時にインストールされます。 Prerelease 文字列のない ModuleVersion がフォルダー名で使用されます。 ユーザーが MyModule バージョン 2.5.0-alpha をインストールすると、MyModule\2.5.0 フォルダーにインストールされます。 その後、ユーザーが 2.5.0-beta をインストールすると、2.5.0-beta バージョンがフォルダー MyModule\2.5.0 の内容を__上書き__します。 この方法の 1 つの利点が、実稼働可能バージョンのインストール後にプレリリース バージョンをアンインストールする必要がないことです。 以下の例は、予想すべき内容を示します。
