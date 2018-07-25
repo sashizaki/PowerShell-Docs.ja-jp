@@ -31,24 +31,47 @@ Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポ�
 
 ## <a name="supported-platforms"></a>サポートされているプラットフォーム
 
-PowerShell Core は次のプラットフォームで公式サポートされています。
+お使いの PowerShell Core のバージョンが公式にサポートされているプラットフォームを確認するには、次の表をご覧ください。
 
-* Windows 7、8.1、10
-* Windows Server 2008 R2、2012 R2、2016
-* [Windows Server 半期チャネル][semi-annual]
-* Ubuntu 14.04、16.04、17.04
-* Debian 8.7 以降および 9
-* CentOS 7
-* Red Hat Enterprise Linux 7
-* OpenSUSE 42.2
-* Fedora 27、28
-* macOS 10.12 以降
+また、弊社のコミュニティでも一部のプラットフォームに向けたパッケージを提供していますが、これらは正式にはサポートされていません。
+これらのパッケージは、表の中で `Community` とマークされています。
 
-弊社のコミュニティでは、次のプラットフォーム用のパッケージも提供していますが、正式にはサポートされていません。
+`Experimental` としてリストされているプラットフォームは、正式にはサポートされていませんが、実験とフィードバックのために使用することができます。
 
-* Arch Linux
-* Kali Linux
-* AppImage (複数の Linux プラットフォームで機能)
+|                                                   | 6.0         | 6.1         |
+|---------------------------------------------------|:-----------:|:-----------:|
+| Windows 7、8.1、10                            | サポート   | サポート   |
+| Windows Server 2008 R2、2012 R2、2016             | サポート   | サポート   |
+| [Windows Server 半期チャネル][semi-annual] | サポート   | サポート   |
+| Ubuntu 14.04 および 16.04                           | サポート   | サポート   |
+| Ubuntu 17.10、および 18.04                           |             | サポート   |
+| Debian 8.7 以降および 9                                | サポート   | サポート   |
+| CentOS 7                                          | サポート   | サポート   |
+| Red Hat Enterprise Linux 7                        | サポート   | サポート   |
+| OpenSUSE 42.2                                     | サポート   | サポート   |
+| Fedora 27                                         | サポート   | サポート   |
+| Fedora 28                                         |             | サポート   |
+| macOS 10.12 以降                                      | サポート   | サポート   |
+| Arch                                              | コミュニティ   | コミュニティ   |
+| Raspbian                                          | Experimental| コミュニティ   |
+| Kali                                              | コミュニティ   | コミュニティ   |
+| AppImage (複数の Linux プラットフォームで機能)     | コミュニティ   | コミュニティ   |
+
+## <a name="platform-which-are-out-of-support"></a>サポート対象外のプラットフォーム
+
+プラットフォームのバージョンが、プラットフォームの所有者によって定義された有効期限を迎えると、PowerShell Core もまたそのプラットフォームのバージョンをサポートしなくなります。 アクセスする必要があるユーザーは引き続き以前にリリースされたパッケージを利用できますが、公式のサポートと更新プログラムはどんな種類のものも提供されなくなります。
+
+そのため、次のバージョンのサポートはディストリビューションの所有者によって終了され、現在はサポートされていません。
+
+| OS       | バージョン | 有効期限切れ                                                                                 |
+|----------|---------|---------------------------------------------------------------------------------------------|
+| Fedora   | 26      | [2018 年 5 月](https://fedoramagazine.org/fedora-26-end-life/)                                  |
+| Fedora   | 25      | [2017 年 12 月](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 24      | [2017 年 8 月](https://fedoramagazine.org/fedora-24-eol/)                                    |
+| openSUSE | 42.2    | [2018 年 1 月](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| openSUSE | 42.1    | [2017 年 5 月](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
+| Ubuntu   | 17.04   | [2018 年 1 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 16.10   | [2017 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
 
 ## <a name="notes-on-licensing"></a>ライセンスに関する注意事項
 

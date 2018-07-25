@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: PowerShell ギャラリー UI に影響を与えるアイテム マニフェストの値
-ms.openlocfilehash: fd5e48f8cc36795742ae597fc7715f7377605b6f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 00350d3558e2bfa487fb116304956ffa7291ee05
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893479"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093975"
 ---
 # <a name="item-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell ギャラリー UI に影響を与えるアイテム マニフェストの値
 
@@ -84,65 +84,67 @@ PowerShell ギャラリーと PowerShellGet コマンドレットが独自に扱
 場合によっては、そのタグと比べて似てはいるが最適とは言えないような候補が表示されることもあります。
 お勧めの方法は優先タグを使用することです。そうすると、ノイズが軽減され、利用者にとってより望ましい検索結果が返されます。
 
-| **優先タグ** | **代替タグと注意事項** |
+| 優先タグ | 代替タグと注意事項 |
 | --- | --- |
-| **Azure** |  |
-| **DSC** | DesiredStateConfiguration は長すぎるため推奨されません |
-| **ResourceManager** | ARM は、プロセッサのグループを表す場合に使用します。Azure Resource Manager には使用しないでください | **DSCResourceKit** |  |
-| **SQL** |  |
-| **AWS** |  |
-| **DSCResource** |  |
-| **Automation** |  |
-| **REST** |  |
-| **ActiveDirectory** | AD はそれ自体が現在使用されていません  |
-| **SQLServer** |  |
-| **DBA** |  |
-| **セキュリティ** | Defense は精度が低くなります |
-| **Database** | Databases (複数) は推奨されません |
-| **DevOps** |  |
-| **Windows** |  |
-| **Build** |  |
-| **Deployment** | Deploy の使用頻度はやや低めです |
-| **Cloud** |  |
-| **GIT** |  |
-| **Test** | Testing は推奨されません |
-| **VersionControl** | Version はこれよりも頻繁に使用されますが、精度が低くなります  |
-| **Logging** | Logging はアクションとしての使用が推奨されます |
-| **Log** | Log は物としての使用が推奨されます |
-| **Backup** |  |
-| **IaaS** |  |
-| **Linux** |  |
-| **IIS** |  |
-| **AzureAutomation** |  |
-| **Storage** |  |
-| **GitHub** |  |
-| **Json** |  |
-| **Exchange** |  |
-| **Network** | Networking も同様ですが、使用頻度は低めです |
-| **SharePoint** |  |
-| **Reporting** | Reporting はアクションで、Report は物です |
-| **Report** | Report は物です |
-| **WinRM** |  |
-| **Monitoring** |  |
-| **VSTS** |  |
-| **Excel** |  |
-| **Google** |  |
-| **Color** |  |
-| **DNS** |  |
-| **Office365** | Office と綴ることをお勧めします。 O365 はこれより短いですが、使用頻度は低めです | **Gitlab** |  |
-| **Pester** |  |
-| **AzureAD** |  |
-| **HTML** |  |
-| **Hyper-V** | HyperV は、タグとしてはこれほど一般的ではありません |
-| **Configuration** |  |
-| **ChatOps** |  |
-| **PackageManagement** |  |
-| **WMI** |  |
-| **Firewall** |  |
-| **Docker** |  |
-| **Appveyor** |  |
-| **AzureRm** | AzureRM モジュールで主に使用されます |
-| **Zip** |  |
-| **MSI** |  |
-| **Mac** |  |
-| **PoshBot** |  |
+| Azure |  |
+| DSC | DesiredStateConfiguration は長すぎるため推奨されません |
+| ResourceManager | ARM は、プロセッサのグループを表す場合に使用します。Azure Resource Manager には使用しないでください |
+| DSCResourceKit |  |
+| SQL |  |
+| AWS |  |
+| DSCResource |  |
+| 自動化 |  |
+| REST |  |
+| ActiveDirectory | AD はそれ自体が現在使用されていません  |
+| SQLServer |  |
+| DBA |  |
+| セキュリティ | Defense は精度が低くなります |
+| データベース | Databases (複数) は推奨されません |
+| DevOps |  |
+| Windows |  |
+| Build |  |
+| 展開 | Deploy の使用頻度はやや低めです |
+| クラウド |  |
+| GIT |  |
+| Server1 | Testing は推奨されません |
+| VersionControl | Version はこれよりも頻繁に使用されますが、精度が低くなります  |
+| ログ | Logging はアクションとしての使用が推奨されます |
+| ログ | Log は物としての使用が推奨されます |
+| 予備 |  |
+| IaaS |  |
+| Linux |  |
+| IIS |  |
+| AzureAutomation |  |
+| 記憶域 |  |
+| GitHub |  |
+| Json |  |
+| Exchange |  |
+| ネットワーク | Networking も同様ですが、使用頻度は低めです |
+| SharePoint |  |
+| レポート | Reporting はアクションで、Report は物です |
+| レポート | Report は物です |
+| WinRM |  |
+| 監視 |  |
+| VSTS |  |
+| Excel |  |
+| Google |  |
+| Color |  |
+| DNS |  |
+| Office365 | Office と綴ることをお勧めします。 O365 はこれより短いですが、使用頻度は低めです |
+| Gitlab |  |
+| Pester |  |
+| AzureAD |  |
+| HTML |  |
+| Hyper-V | HyperV は、タグとしてはこれほど一般的ではありません |
+| 構成 |  |
+| ChatOps |  |
+| PackageManagement |  |
+| WMI に関するページ |  |
+| ファイアウォール |  |
+| Docker |  |
+| Appveyor |  |
+| AzureRm | AzureRM モジュールで主に使用されます |
+| Zip |  |
+| MSI |  |
+| Mac |  |
+| PoshBot |  |

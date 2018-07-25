@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 contributor: ryanpu
 title: Just Enough Administration (JEA) の強化
-ms.openlocfilehash: 79271e77a539764e7a18842efd919413cdc8ab9f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: a9a8a0fd2b726ded33aa07c205292efd7148f3f0
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892721"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093621"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Just Enough Administration (JEA) の強化
 
@@ -50,7 +50,7 @@ Copy-Item -Path User:\SampleFile.txt -Destination . -FromSession $jeasession
 
 場合によって、JEA セッションでユーザーが実行する必要があるタスクは、ローカル コンピューター以外のリソースにアクセスすることが必要な場合があります。
 JEA セッションが仮想アカウントを使用するように構成されている場合、そのようなリソースへのアクセスの試みは、仮想アカウントまたは接続ユーザーからではなく、ローカル コンピューターの ID からのアクセスのように見えます。
-グループの管理されたサービス アカウント TP5 では、[グループの管理されたサービス アカウント](https://technet.microsoft.com/en-us/library/jj128431(v=ws.11\).aspx) というコンテキストの下で JEA の実行をサポートするようにしたことで、ドメイン ID を使用したネットワーク リソースへのアクセスが簡単になりました。
+TP5 では、[[グループの管理されたサービス アカウント]](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj128431\(v=ws.11\)) というコンテキストの下で JEA の実行をサポートするようにしたことで、ドメイン ID を使ってネットワーク リソースにアクセスすることがずっと簡単になりました。
 
 JEA セッションを、gMSA アカウントの下で実行されるように構成するには、PSSC ファイルで次の新しいキーを使用します。
 

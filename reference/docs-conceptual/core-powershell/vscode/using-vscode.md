@@ -58,8 +58,8 @@ Windows、macOS、および Linux 上の最近のワークロードに対して�
 Visual Studio Code で PowerShell の特定のインストール バージョンを使用する場合、ユーザー設定ファイルに新しい変数を追加する必要があります。
 
 1. **[ファイル]、[基本設定]、[設定]** の順にクリックします。
-2. 2 つのエディター ウィンドウが表示されます。
-   一番右側のウィンドウの (`settings.json`)、2 つの中かっこ (`{` と `}`) の間に、OS に適した設定を追加し、*<version>* をインストール済みの PowerShell のバージョンに置き換えます。
+1. 2 つのエディター ウィンドウが表示されます。
+   一番右側のウィンドウの (`settings.json`)、2 つの中かっこ (`{` と `}`) の間のどこかに、OS に適した以下の設定を追加し、**\<バージョン\>** をインストール済みの PowerShell のバージョンに置き換えます。
 
    ```json
     // On Windows:
@@ -72,8 +72,8 @@ Visual Studio Code で PowerShell の特定のインストール バージョン
     "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
    ```
 
-3. 設定を希望の PowerShell の実行可能ファイルへのパスに置き換えます。
-4. 設定ファイルを保存し、Visual Studio Code を再起動します。
+1. 設定を希望の PowerShell の実行可能ファイルへのパスに置き換えます。
+1. 設定ファイルを保存し、Visual Studio Code を再起動します。
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Visual Studio Code の構成設定
 

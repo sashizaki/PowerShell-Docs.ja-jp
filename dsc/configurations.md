@@ -2,36 +2,34 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC 構成
-ms.openlocfilehash: d98bf0e85c12103d9b1eeded155bab1af364bd4c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 171068acb51f44e31c81e63f6640222ef71bee38
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188447"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093696"
 ---
 # <a name="dsc-configurations"></a>DSC 構成
 
->適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 DSC 構成は、特殊な関数を定義する PowerShell スクリプトです。
 構成を定義するには、PowerShell キーワード **Configuration** を使用します。
 
 ```powershell
 Configuration MyDscConfiguration {
-
     Node "TEST-PC1" {
         WindowsFeature MyFeatureInstance {
-            Ensure = "Present"
-            Name =  "RSAT"
+            Ensure = 'Present'
+            Name = 'RSAT'
         }
         WindowsFeature My2ndFeatureInstance {
-            Ensure = "Present"
-            Name = "Bitlocker"
+            Ensure = 'Present'
+            Name = 'Bitlocker'
         }
     }
 }
 MyDscConfiguration
-
 ```
 
 スクリプトを .ps1 ファイルとして保存します。
@@ -48,23 +46,21 @@ MyDscConfiguration
 
 ```powershell
 Configuration MyDscConfiguration {
-
     param(
-        [string[]]$ComputerName="localhost"
+        [string[]]$ComputerName='localhost'
     )
     Node $ComputerName {
         WindowsFeature MyFeatureInstance {
-            Ensure = "Present"
-            Name =  "RSAT"
+            Ensure = 'Present'
+            Name = 'RSAT'
         }
         WindowsFeature My2ndFeatureInstance {
-            Ensure = "Present"
-            Name = "Bitlocker"
+            Ensure = 'Present'
+            Name = 'Bitlocker'
         }
     }
 }
 MyDscConfiguration -ComputerName $ComputerName
-
 ```
 
 この例では、構成のコンパイル時にノードの名前を **ComputerName** パラメーターとして渡すことで、ノードの名前を指定します。 名前の既定値は "localhost" です。
@@ -75,19 +71,21 @@ MyDscConfiguration -ComputerName $ComputerName
 そのためには、PowerShell 関数の場合と同じように構成を呼び出します。
 例の最後の行には構成を呼び出すための構成の名前のみが含まれています。
 
->**注:** 構成を呼び出すには、(他の PowerShell 関数と同様に) 関数がグローバル スコープ内にある必要があります。
->そのためには、スクリプトで "ドット ソース" を行うか、F5 キーを使用するか、または ISE で **[スクリプトの実行]** をクリックして、構成スクリプトを実行します。
->スクリプトでドット ソースを行うには、構成を含むスクリプト ファイルの名前が `myConfig.ps1` である場合、`. .\myConfig.ps1` でコマンドを実行します。
+> [!NOTE]
+> 構成を呼び出すには、(他の PowerShell 関数と同様に) 関数がグローバル スコープ内にある必要があります。
+> そのためには、スクリプトで "ドット ソース" を行うか、F5 キーを使用するか、または ISE で **[スクリプトの実行]** をクリックして、構成スクリプトを実行します。
+> スクリプトでドット ソースを行うには、構成を含むスクリプト ファイルの名前が `myConfig.ps1` である場合、`. .\myConfig.ps1` でコマンドを実行します。
 
 構成を呼び出すと、結果は次のようになります。
 
 - すべての変数が解決されます
 - 構成と同じ名前のフォルダーが現在のディレクトリ内に作成されます。
 - _NodeName_.mof という名前のファイルが新しいディレクトリ内に作成されます。_NodeName_ は、構成のターゲット ノードの名前です。
-    複数のノードがある場合は、ノードごとに MOF ファイルが作成されます。
+  複数のノードがある場合は、ノードごとに MOF ファイルが作成されます。
 
->**注**: MOF ファイルには、ターゲット ノードのすべての構成情報が含まれています。 このため、このファイルをセキュリティ保護することが重要です。
->詳細については、「[MOF ファイルのセキュリティ保護](secureMOF.md)」を参照してください。
+> [!NOTE]
+> MOF ファイルには、ターゲット ノードのすべての構成情報が含まれています。 このため、このファイルをセキュリティ保護することが重要です。
+> 詳細については、「[MOF ファイルのセキュリティ保護](secureMOF.md)」を参照してください。
 
 上記の最初の構成をコンパイルすると、次のフォルダー構造となります。
 
@@ -127,19 +125,18 @@ Mode                LastWriteTime         Length Name
 Configuration DependsOnExample {
     Node Test-PC1 {
         Group GroupExample {
-            Ensure = "Present"
-            GroupName = "TestGroup"
+            Ensure = 'Present'
+            GroupName = 'TestGroup'
         }
 
         User UserExample {
-            Ensure = "Present"
-            UserName = "TestUser"
-            FullName = "TestUser"
-            DependsOn = "[Group]GroupExample"
+            Ensure = 'Present'
+            UserName = 'TestUser'
+            FullName = 'TestUser'
+            DependsOn = '[Group]GroupExample'
         }
     }
 }
-
 ```
 
 ## <a name="using-new-resources-in-your-configuration"></a>構成での新しいリソースの使用
@@ -151,10 +148,12 @@ Configuration DependsOnExample {
 これらのモジュールが `$env:PSModulePath` に配置され、[Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) によって正しく認識された後、構成内に読み込む必要があります。
 **Import-DscResource** は、**Configuration** ブロック内でのみ認識される動的なキーワードです (つまり、コマンドレットではありません)。
 **Import-DscResource** は、次の 2 つのパラメーターをサポートしています。
+
 - **ModuleName** は、**Import-DscResource** を使用する場合に推奨される方法です。 これは、インポートするリソースを含むモジュールの名前 (およびモジュール名の文字列配列) を受け取ります。
 - **Name** は、インポートするリソースの名前です。 これは、[Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) によって "Name" として返されるフレンドリ名ではありませんが、リソース スキーマを定義するときに使用されるクラス名です ([Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) によって **ResourceType** として返されます)。
 
 ## <a name="see-also"></a>参照
-* [Windows PowerShell Desired State Configuration の概要](overview.md)
-* [DSC リソース](resources.md)
-* [ローカル構成マネージャーの構成](metaConfig.md)
+
+- [Windows PowerShell Desired State Configuration の概要](overview.md)
+- [DSC リソース](resources.md)
+- [ローカル構成マネージャーの構成](metaConfig.md)

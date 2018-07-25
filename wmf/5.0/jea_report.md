@@ -1,19 +1,22 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: 7982acc111e95b4167f948314f176d53f39d3620
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2fb2e4b0c40322b5ec78fabede22a7e3ecbbd2aa
+ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34218724"
+ms.lasthandoff: 07/17/2018
+ms.locfileid: "39093764"
 ---
 # <a name="reporting-on-jea"></a>JEA のレポート
+
 JEA 構成の状態をレポートするには、次のコマンドを使用できます。
-1.  **Get-PSSessionConfiguration** は、特定のコンピューター上のすべての登録済みエンドポイントの一覧を返します。
-2.  **Get-PSSessionCapability** は、特定のユーザーが特定のエンドポイントで持つ機能についてレポートします。
+
+1. **Get-PSSessionConfiguration** は、特定のコンピューター上のすべての登録済みエンドポイントの一覧を返します。
+1. **Get-PSSessionCapability** は、特定のユーザーが特定のエンドポイントで持つ機能についてレポートします。
 
 次に、**Get-PSSessionCapability** の例を示します。
+
 ```powershell
 Get-PSSessionCapability -ConfigurationName Maintenance -Username "CONTOSO\JohnDoe"
 
@@ -35,8 +38,6 @@ Function        Measure-Object
 Function        Out-Default
 Function        Select-Object
 Cmdlet          Restart-Service                                    3.0.0.0 Microsof...
-
-
 ```
 
 JEA セッション中にユーザーが行った_操作_についてレポートするには、次のことを行います。
