@@ -3,24 +3,20 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: NuGet のブートストラップ
-ms.openlocfilehash: 2d321097fda201c0d8f843b2194a161eceabe4e1
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: e82fe7bec2e6b7a321fb173cdf9a54c5a97d5f18
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094019"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267849"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>NuGet プロバイダーと NuGet.exe をブートストラップする
 
-NuGet.exe は最新の NuGet プロバイダーには含まれていません。
-モジュールまたはスクリプトのいずれかの公開操作には、バイナリ実行可能ファイルの NuGet.exe が PowerShellGet で必要です。
-それ以外のすべての操作 (*検索*、*インストール*、*保存*、*アンインストール*など) では、NuGet プロバイダーのみを必要とします。
-PowerShellGet には、NuGet プロバイダーと NuGet.exe の結合ブートストラップ、または NuGet プロバイダーのみのブートストラップのいずれかを処理するロジックが含まれます。
-どちらの場合も、プロンプト メッセージは 1 つしか表示されません。
-マシンがインターネットに接続されていない場合、ユーザーまたは管理者は、切断されたマシンに NuGet プロバイダーまたは NuGet.exe ファイルの信頼されたインスタンスをコピーする必要があります。
+NuGet.exe は最新の NuGet プロバイダーには含まれていません。 モジュールまたはスクリプトのいずれかの公開操作には、バイナリ実行可能ファイルの NuGet.exe が PowerShellGet で必要です。 それ以外のすべての操作 (*検索*、*インストール*、*保存*、*アンインストール*など) では、NuGet プロバイダーのみを必要とします。
+PowerShellGet には、NuGet プロバイダーと NuGet.exe の結合ブートストラップ、または NuGet プロバイダーのみのブートストラップのいずれかを処理するロジックが含まれます。 どちらの場合も、プロンプト メッセージは 1 つしか表示されません。 マシンがインターネットに接続されていない場合、ユーザーまたは管理者は、切断されたマシンに NuGet プロバイダーまたは NuGet.exe ファイルの信頼されたインスタンスをコピーする必要があります。
 
 > [!NOTE]
-> バージョン 6 以降では、NuGet プロバイダーは PowerShell のインストールに含まれています。 [http://github.com/powershell/powershell](http://github.com/powershell/powershell)
+> バージョン 6 以降では、NuGet プロバイダーは PowerShell のインストールに含まれています。
 
 ## <a name="resolving-error-when-the-nuget-provider-has-not-been-installed-on-a-machine-that-is-internet-connected"></a>インターネット接続されているマシンに NuGet プロバイダーがインストールされていない場合のエラーを解決する
 
@@ -123,15 +119,11 @@ VERBOSE: Successfully published module 'Contoso' to the module publish location 
 
 ## <a name="manually-bootstrapping-the-nuget-provider-on-a-machine-that-is-not-connected-to-the-internet"></a>インターネットに接続されていないマシンで NuGet プロバイダーを手動でブートストラップする
 
-上記のプロセスは、マシンがインターネットに接続されていて、共有の場所にあるファイルをダウンロードできることが前提となっています。
-この前提条件を満たせない場合は、唯一の方法として、上記のプロセスに従ってマシンをブートストラップしてから、オフラインの信頼されたプロセスを使用して、分離されたノードにプロバイダーを手動でコピーします。
-このシナリオで最も一般的なユース ケースは、分離された環境のサポートでプライベート ギャラリーが使用可能な場合です。
+上記のプロセスは、マシンがインターネットに接続されていて、共有の場所にあるファイルをダウンロードできることが前提となっています。 この前提条件を満たせない場合は、唯一の方法として、上記のプロセスに従ってマシンをブートストラップしてから、オフラインの信頼されたプロセスを使用して、分離されたノードにプロバイダーを手動でコピーします。 このシナリオで最も一般的なユース ケースは、分離された環境のサポートでプライベート ギャラリーが使用可能な場合です。
 
 上記のプロセスに従ってインターネットに接続されたマシンをブートストラップすると、次の場所にプロバイダー ファイルが保存されます。
 
-```
-C:\Program Files\PackageManagement\ProviderAssemblies\
-```
+`C:\Program Files\PackageManagement\ProviderAssemblies\`
 
 NuGet プロバイダーのフォルダーまたはファイルの構造は、次のようになります (バージョン番号は異なる場合があります)。
 
@@ -147,11 +139,9 @@ NuGet
 
 NuGet.exe プロバイダーを手動でブートストラップするプロセスの他に、マシンで `Publish-Module` または `Publish-Script` コマンドレットを使用してプライベート ギャラリーにモジュールまたはスクリプトを公開する場合に、NuGet.exe のバイナリ実行可能ファイルが必要になります。
 
-このシナリオで最も一般的なユース ケースは、分離された環境のサポートでプライベート ギャラリーが使用可能な場合です。
-NuGet.exe ファイルを取得する方法は 2 つあります。
+このシナリオで最も一般的なユース ケースは、分離された環境のサポートでプライベート ギャラリーが使用可能な場合です。 NuGet.exe ファイルを取得する方法は 2 つあります。
 
-1 つは、インターネット接続されているマシンをブートストラップしてから、信頼されたプロセスを使用してオンラインのマシンにファイルをコピーする方法です。
-インターネット接続されているマシンをブートストラップすると、次の 2 つのフォルダーのいずれかに NuGet.exe バイナリが配置されます。
+1 つは、インターネット接続されているマシンをブートストラップしてから、信頼されたプロセスを使用してオンラインのマシンにファイルをコピーする方法です。 インターネット接続されているマシンをブートストラップすると、次の 2 つのフォルダーのいずれかに NuGet.exe バイナリが配置されます。
 
 `Publish-Module` または `Publish-Script` コマンドレットが、昇格されたアクセス許可で (管理者として) 実行された場合:
 
@@ -165,9 +155,7 @@ $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-2 つ目は、NuGet.Org の Web サイト ([https://dist.nuget.org/index.html](https://www.nuget.org/downloads)) から NuGet.exe をダウンロードする方法です。運用環境のマシンで使用する NugGet のバージョンを選択するときに、2.8.5.208 よりも新しく、"推奨" の表記があるバージョンであることを確認してください。
-ブラウザーを使用してダウンロードした場合、ファイルのブロックを解除することを忘れないようにしてください。
-この操作は `Unblock-File` コマンドレットを使用して実行できます。
+2 つ目は、NuGet.Org の Web サイト ([https://dist.nuget.org/index.html](https://www.nuget.org/downloads)) から NuGet.exe をダウンロードする方法です。運用環境のマシンで使用する NugGet のバージョンを選択するときに、2.8.5.208 よりも新しく、"推奨" の表記があるバージョンであることを確認してください。 ブラウザーを使用してダウンロードした場合、ファイルのブロックを解除することを忘れないようにしてください。 この操作は `Unblock-File` コマンドレットを使用して実行できます。
 
 どちらの場合も、NuGet.exe ファイルを `$env:path` の任意の場所にコピーできますが、通常は次の場所にコピーします。
 

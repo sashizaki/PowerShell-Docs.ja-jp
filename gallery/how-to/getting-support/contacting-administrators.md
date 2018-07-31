@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: ギャラリーの管理者に問い合わせる
-ms.openlocfilehash: c919848e93a1f061ac0bf7dec8ef568e41212ef7
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 71c8aa15ac0c6ec57e7e1bfe3cb20cac7e2c6b29
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093823"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268655"
 ---
 # <a name="contact-gallery-administrators"></a>ギャラリーの管理者に問い合わせる
 
@@ -24,6 +24,6 @@ ms.locfileid: "39093823"
 
 ## <a name="how-to-contact-gallery-administrators"></a>ギャラリーの管理者に問い合わせる方法
 
-1. 電子メールをお送りください: <cgadmin@microsoft.com>。
+1. 電子メールをお送りください: cgadmin@microsoft.com。
 2. アイテムの不正使用について報告する場合、左パネルのアイテム情報の下に [Report Abuse] \(不正報告) リンクがあります。
 3. その他、ギャラリーに関する一般的な質問がございましたら、[UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell) に送信してください。

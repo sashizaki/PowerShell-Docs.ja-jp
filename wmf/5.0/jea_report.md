@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: 2fb2e4b0c40322b5ec78fabede22a7e3ecbbd2aa
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: cd3338ae305896e282056a871974e5f899ef6ff5
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093764"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268580"
 ---
 # <a name="reporting-on-jea"></a>JEA のレポート
 
 JEA 構成の状態をレポートするには、次のコマンドを使用できます。
 
 1. **Get-PSSessionConfiguration** は、特定のコンピューター上のすべての登録済みエンドポイントの一覧を返します。
-1. **Get-PSSessionCapability** は、特定のユーザーが特定のエンドポイントで持つ機能についてレポートします。
+2. **Get-PSSessionCapability** は、特定のユーザーが特定のエンドポイントで持つ機能についてレポートします。
 
 次に、**Get-PSSessionCapability** の例を示します。
 
@@ -41,5 +41,6 @@ Cmdlet          Restart-Service                                    3.0.0.0 Micro
 ```
 
 JEA セッション中にユーザーが行った_操作_についてレポートするには、次のことを行います。
+
 1. その JEA エンドポイントの "over-the-shoulder" トランスクリプトを有効にして、トランスクリプト ディレクトリで各ユーザーの操作の完全なログを参照します。
 2. PowerShell モジュールのログを有効にし、PowerShell イベント ログを調べます。
