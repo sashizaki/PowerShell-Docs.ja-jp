@@ -4,19 +4,28 @@ PowerShell Core は、macOS 10.12 以降をサポートしています。
 すべてのパッケージは GitHub [リリース][] ページにあります。
 パッケージがインストールされたら、ターミナルから `pwsh` を実行します。
 
-### <a name="installation-via-homebrew-on-macos-1012"></a>Homebrew による macOS 10.12 へのインストール
+### <a name="installation-via-homebrew-on-macos-1012"></a>Homebrew による macOS 10.12 以降へのインストール
 
 [Homebrew][brew] は、macOS 用の推奨されるパッケージ マネージャーです。
-`brew` コマンドが見つからない場合、[指示][brew]に従い、Homebrew をインストールする必要があります。
+ターミナル ウィンドウで「`brew`」と入力して Homebrew を実行します。  `brew` コマンドが見つからない場合、[指示][brew]に従い、Homebrew をインストールする必要があります。
 
-Homebrew をインストールすると、PowerShell のインストールが簡単になります。
-最初に [Homebrew-Cask][cask] をインストールします。その後、たくさんのパッケージをインストールできます。
-
+> [!NOTE]
+> 過去に Homebrew をインストールした場合は、'brew update-reset' && 'brew update' を実行することを常にお勧めします。
 ```sh
-brew tap caskroom/cask
+brew update-reset
+brew update
 ```
 
-これで PowerShell をインストールできます。
+> Homebrew の古いバージョンはタップ 'caskroom/cask' を使用していましたが、これは非推奨になり、'homebrew/cask' に移行されています。  詳しくは、「[Homebrew-cask][cask]」をご覧ください。 現在のタップの一覧を表示するには、'brew tap' コマンドを使用します。  'caskroom/cask' が表示される場合は、'brew update' を使用して Homebrew にタップを移行させることができます。
+
+```sh
+brew tap
+brew update
+```
+
+Homebrew をインストールまたは更新すると、PowerShell のインストールが簡単になります。
+
+PowerShell をインストールするには:
 
 ```sh
 brew cask install powershell
@@ -26,6 +35,11 @@ brew cask install powershell
 
 ```sh
 pwsh
+```
+
+PowerShell を終了して bash に戻るには、'exit' コマンドを使用します。 
+```sh
+exit
 ```
 
 新しいバージョンの PowerShell がリリースされたら、Homebrew の式を更新し、PowerShell をアップグレードしてください。
@@ -38,8 +52,45 @@ brew cask upgrade powershell
 > [!NOTE]
 > 上記のコマンドは PowerShell (pwsh) ホストから呼び出すことができますが、その場合、アップグレードを完了するには、PowerShell シェルを終了し、再起動して、$PSVersionTable に表示される値を更新する必要があります。
 
-[brew]: http://brew.sh/
-[cask]: https://caskroom.github.io/
+### <a name="installing-preview-via-homebrew-on-macos-1012"></a>macOS 10.12 以降での Homebrew によるプレビューのインストール
+
+[Homebrew][brew] は、macOS 用の推奨されるパッケージ マネージャーです。
+ターミナル ウィンドウで「`brew`」と入力して Homebrew を実行します。  `brew` コマンドが見つからない場合、[指示][brew]に従い、Homebrew をインストールする必要があります。
+
+> [!NOTE]
+> 過去に Homebrew をインストールした場合は、'brew update-reset' && 'brew update' を実行することを常にお勧めします。
+```sh
+brew update-reset
+brew update
+```
+
+次に、`versions` cask リポジトリをタップしてプレビュー パッケージを取得する必要があります。
+
+```sh
+brew tap homebrew/cask-versions
+```
+
+PowerShell のプレビューをインストールするには:
+
+```sh
+brew cask install powershell-preview
+```
+
+最後に、インストールが正常に動作していることを確認します。
+
+```sh
+pwsh-preview
+```
+
+新しいバージョンの PowerShell がリリースされたら、Homebrew の式を更新し、PowerShell プレビューをアップグレードします。
+
+```sh
+brew update
+brew cask upgrade powershell-preview
+```
+
+> [!NOTE]
+> 上記のコマンドは PowerShell (pwsh) ホストから呼び出すことができますが、その場合、アップグレードを完了するには、PowerShell シェルを終了し、再起動して、$PSVersionTable に表示される値を更新する必要があります。
 
 ### <a name="installation-via-direct-download"></a>直接ダウンロードによるインストール
 
@@ -113,5 +164,15 @@ PowerShell は、macOS の [XDG ベース ディレクトリ仕様][xdg-bds]を�
 macOS は BSD から派生しているので、プレフィックスに `/opt` ではなく `/usr/local` が使用されます。
 そのため、`$PSHOME` は `/usr/local/microsoft/powershell/6.0.2/` です。シンボリックリンクは `/usr/local/bin/pwsh` にあります。
 
+## <a name="additional-resources"></a>その他の情報
+
+* [Homebrew Web][brew]
+* [Homebrew Github リポジトリ][GitHub]
+* [Homebrew-Cask][cask]
+
+
+[brew]: http://brew.sh/
+[GitHub]: https://github.com/Homebrew
+[Cask]: https://github.com/Homebrew/homebrew-cask
 [リリース]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

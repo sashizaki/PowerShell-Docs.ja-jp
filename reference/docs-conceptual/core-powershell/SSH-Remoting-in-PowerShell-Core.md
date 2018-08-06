@@ -3,14 +3,9 @@
 
 ## <a name="overview"></a>概要
 
-PowerShell リモート処理では通常、接続交渉とデータ転送に WinRM が使用されます。
-Linux プラットフォームと Windows プラットフォームの両方で利用できるようになったこと、真にマルチプラットフォームな PowerShell リモート処理が可能になることから、このリモート処理の実装には SSH が選択されました。
-ただし、WinRM は PowerShell リモート セッションのために堅牢なホスティング モデルも提供します。これは、この実装では現在のところ提供されません。
-つまり、PowerShell リモート エンドポイント構成と JEA (Just Enough Administration) はこの実装ではまだサポートされていません。
+PowerShell リモート処理では通常、接続交渉とデータ転送に WinRM が使用されます。 Linux プラットフォームと Windows プラットフォームの両方で利用できるようになったこと、真にマルチプラットフォームな PowerShell リモート処理が可能になることから、このリモート処理の実装には SSH が選択されました。 ただし、WinRM は PowerShell リモート セッションのために堅牢なホスティング モデルも提供します。これは、この実装では現在のところ提供されません。 つまり、PowerShell リモート エンドポイント構成と JEA (Just Enough Administration) はこの実装ではまだサポートされていません。
 
-PowerShell SSH リモート処理では、Windows コンピューターと Linux コンピューターの間で基本的な PowerShell セッションをリモート処理できます。
-これは、SSH サブシステムとしてターゲット コンピューター上に PowerShell ホスティング プロセスを作成することで行われます。
-エンドポイント構成と JEA に対応するために、最終的には、これは WinRM の動作に似た、より一般的なホスティング モデルに変わります。
+PowerShell SSH リモート処理では、Windows コンピューターと Linux コンピューターの間で基本的な PowerShell セッションをリモート処理できます。 これは、SSH サブシステムとしてターゲット コンピューター上に PowerShell ホスティング プロセスを作成することで行われます。 エンドポイント構成と JEA に対応するために、最終的には、これは WinRM の動作に似た、より一般的なホスティング モデルに変わります。
 
 現在、`New-PSSession`、`Enter-PSSession`、`Invoke-Command` コマンドレットには、この新しいリモート処理接続を簡単にする新しいパラメーター セットがあります。
 
@@ -18,24 +13,18 @@ PowerShell SSH リモート処理では、Windows コンピューターと Linux
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-この新しいパラメーター セットはおそらく変更されますが、現在、SSH PSSessions を作成し、コマンド ラインから対話したり、コマンドやスクリプトを呼び出したりできます。
-HostName パラメーターでターゲット コンピューターを指定し、UserName でユーザー名を与えることができます。
-PowerShell コマンド ラインで対話的にコマンドレットを実行するとき、パスワードが求められます。
-ただし、SSH キー認証を利用し、KeyFilePath パラメーターで秘密鍵のファイル パスを指定することもできます。
+この新しいパラメーター セットはおそらく変更されますが、現在、SSH PSSessions を作成し、コマンド ラインから対話したり、コマンドやスクリプトを呼び出したりできます。 HostName パラメーターでターゲット コンピューターを指定し、UserName でユーザー名を与えることができます。 PowerShell コマンド ラインで対話的にコマンドレットを実行するとき、パスワードが求められます。 ただし、SSH キー認証を利用し、KeyFilePath パラメーターで秘密鍵のファイル パスを指定することもできます。
 
 ## <a name="general-setup-information"></a>一般的なセットアップ情報
 
-SSH はあらゆるコンピューターにインストールする必要があります。
-コンピューターとの間でリモート処理を行うには、クライアント (`ssh.exe`) とサーバー (`sshd.exe`) の両方をインストールする必要があります。
-Windows の場合、[Win32 OpenSSH from GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases) をインストールする必要があります。
-Linux の場合、お使いのプラットフォームに適した SSH (sshd サーバーを含む) をインストールする必要があります。
-SSH リモート処理機能を備えた最近の PowerShell ビルドまたはパッケージを GitHub から入手する必要もあります。
-SSH サブシステムはリモート コンピューター上で PowerShell プロセスを確立するために使用されます。SSH サーバーをそれに合わせて構成する必要があります。
-また、パスワード認証と、任意で、キーに基づく認証を有効にする必要があります。
+SSH はあらゆるコンピューターにインストールする必要があります。 コンピューターとの間でリモート処理を行うには、クライアント (`ssh.exe`) とサーバー (`sshd.exe`) の両方をインストールする必要があります。 Windows の場合、[Win32 OpenSSH from GitHub](https://github.com/PowerShell/Win32-OpenSSH/releases) をインストールする必要があります。
+Linux の場合、お使いのプラットフォームに適した SSH (sshd サーバーを含む) をインストールする必要があります。 SSH リモート処理機能を備えた最近の PowerShell ビルドまたはパッケージを GitHub から入手する必要もあります。
+SSH サブシステムはリモート コンピューター上で PowerShell プロセスを確立するために使用されます。SSH サーバーをそれに合わせて構成する必要があります。 また、パスワード認証と、任意で、キーに基づく認証を有効にする必要があります。
 
 ## <a name="setup-on-windows-machine"></a>Windows コンピューターでのセットアップ
 
 1. [Windows 向け PowerShell Core] の最新版をインストールします
+
    - `New-PSSession` のパラメーター セットを見れば、SSH リモート処理に対応しているか確認できます
 
    ```powershell
@@ -46,65 +35,68 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-1. [インストール] の手順を使用して、GitHub から最新の [Win32 OpenSSH] ビルドをインストールします
-1. Win32 OpenSSH をインストールした場所で sshd_config ファイルを編集します
+2. [インストール] の手順を使用して、GitHub から最新の [Win32 OpenSSH] ビルドをインストールします
+3. Win32 OpenSSH をインストールした場所で sshd_config ファイルを編集します
+
    - パスワード認証が有効になっていることを確認します
 
-   ```
-   PasswordAuthentication yes
-   ```
+     ```
+     PasswordAuthentication yes
+     ```
 
-    ```
-    Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
-    ```
+     ```
+     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
-    > [!NOTE]
-    > OpenSSH for Windows にバグがあり、サブシステムの実行可能ファイルのパスでスペースが機能しません。
-    > この問題の詳細については、GitHub の[こちらのページ](https://github.com/PowerShell/Win32-OpenSSH/issues/784)を参照してください。
+     > [!NOTE]
+     > OpenSSH for Windows にバグがあり、サブシステムの実行可能ファイルのパスでスペースが機能しません。
+     > この問題の詳細については、GitHub の[こちらのページ](https://github.com/PowerShell/Win32-OpenSSH/issues/784)を参照してください。
 
-    解決策の 1 つは、次のようにスペースが含まれていない PowerShell インストール ディレクトリへのシンボリック リンクを作成することです。
+     解決策の 1 つは、次のようにスペースが含まれていない PowerShell インストール ディレクトリへのシンボリック リンクを作成することです。
 
-    ```powershell
-    mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
-    ```
+     ```powershell
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.0"
+     ```
 
-    次に、それを以下のようにサブシステムに入力します。
+     次に、それを以下のようにサブシステムに入力します。
 
-    ```
-    Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
-    ```
+     ```
+     Subsystem    powershell c:\pwsh\pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
-   ```
-   Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
-   ```
+     ```
+     Subsystem    powershell c:/program files/powershell/6.0.0/pwsh.exe -sshs -NoLogo -NoProfile
+     ```
 
    - 必要であればキー認証を有効にします
 
-   ```
-   PubkeyAuthentication yes
-   ```
+     ```
+     PubkeyAuthentication yes
+     ```
 
-1. sshd サービスを再起動します
+4. sshd サービスを再起動します
 
    ```powershell
    Restart-Service sshd
    ```
 
-1. OpenSSH がインストールされているパスをパス環境変数に追加します
+5. OpenSSH がインストールされているパスをパス環境変数に追加します
+
    - `C:\Program Files\OpenSSH\` の行に沿ったものになります
    - これで ssh.exe の場所が認識されます
 
 ## <a name="setup-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) コンピューターでのセットアップ
 
 1. GitHub から最新の [Linux 向け PowerShell Core] ビルドをインストールします
-1. 必要に応じて [Ubuntu SSH] をインストールします
+2. 必要に応じて [Ubuntu SSH] をインストールします
 
    ```bash
    sudo apt install openssh-client
    sudo apt install openssh-server
    ```
 
-1. /etc/ssh で sshd_config ファイルを編集します
+3. /etc/ssh で sshd_config ファイルを編集します
+
    - パスワード認証が有効になっていることを確認します
 
    ```
@@ -123,7 +115,7 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
    PubkeyAuthentication yes
    ```
 
-1. sshd サービスを再起動します
+4. sshd サービスを再起動します
 
    ```bash
    sudo service sshd restart
@@ -132,12 +124,15 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
 ## <a name="setup-on-macos-machine"></a>MacOS コンピューターでのセットアップ
 
 1. 最新の [MacOS 向け PowerShell Core] ビルドをインストールします
+
    - 次の手順で SSH リモート処理が有効になっていることを確認します
      - `System Preferences` を開きます
      - `Sharing` をクリックします
      - `Remote Login` が `Remote Login: On` になっていることを確認します
      - 適切なユーザーにアクセスを許可します
-1. `/private/etc/ssh/sshd_config` で `sshd_config` ファイルを編集します
+
+2. `/private/etc/ssh/sshd_config` で `sshd_config` ファイルを編集します
+
    - お気に入りのエディターを使用します
 
      ```bash
@@ -162,7 +157,7 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
      PubkeyAuthentication yes
      ```
 
-1. sshd サービスを再起動します
+3. sshd サービスを再起動します
 
    ```bash
    sudo launchctl stop com.openssh.sshd
@@ -171,10 +166,7 @@ SSH サブシステムはリモート コンピューター上で PowerShell プ
 
 ## <a name="powershell-remoting-example"></a>PowerShell リモート処理の例
 
-リモート処理をテストする最も簡単な方法は、1 台のコンピューターでそれを試すことです。
-今回、ある Linux ボックス上の同じコンピューターにリモート セッションを行います。
-コマンド プロンプトから PowerShell コマンドレットを使用している点に注目してください。SSH のプロンプトから、ホスト コンピューターを確認するように求められます。また、パスワードも求められます。
-ホスト名を変えるだけで、同じことを Windows コンピューターで行い、そのコンピューターで、また、離れているコンピューター間でリモート処理が機能していることを確認できます。
+リモート処理をテストする最も簡単な方法は、1 台のコンピューターでそれを試すことです。 今回、ある Linux ボックス上の同じコンピューターにリモート セッションを行います。 コマンド プロンプトから PowerShell コマンドレットを使用している点に注目してください。SSH のプロンプトから、ホスト コンピューターを確認するように求められます。また、パスワードも求められます。 ホスト名を変えるだけで、同じことを Windows コンピューターで行い、そのコンピューターで、また、離れているコンピューター間でリモート処理が機能していることを確認できます。
 
 ```powershell
 #
@@ -301,7 +293,7 @@ GitCommitId                    v6.0.0-alpha.17
 
 ### <a name="known-issues"></a>の既知の問題
 
-- sudo コマンドは、Linux コンピューターへのリモート セッションでは機能しません。
+sudo コマンドは、Linux コンピューターへのリモート セッションでは機能しません。
 
 ## <a name="see-also"></a>参照
 

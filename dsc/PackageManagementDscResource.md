@@ -2,12 +2,12 @@
 ms.date: 06/20/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC の PackageManagement リソース
-ms.openlocfilehash: 281aee13eb005f00b23c97870eaefaa332d9c232
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 18cbbfe0715c82dcfdf4a5fb6ee36ee814e43d3b
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892503"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268094"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC の PackageManagement リソース
 
@@ -39,8 +39,8 @@ PackageManagement [string] #ResourceName
 
 ## <a name="properties"></a>プロパティ
 
-|  プロパティ  |  説明   |
-|---|---|
+| プロパティ | 説明 |
+| --- | --- |
 | 名前| インストールまたはアンインストールするパッケージの名前を指定します。|
 | AdditionalParameters| `Get-Package -AdditionalArguments` に渡されるパラメーターのプロバイダー固有のハッシュ テーブル。 たとえば、NuGet プロバイダーでは DestinationPath のような追加のパラメーターを渡すことができます。|
 | Ensure| パッケージをインストールまたはアンインストールするかどうかを決定します。|
@@ -54,10 +54,11 @@ PackageManagement [string] #ResourceName
 ## <a name="additional-parameters"></a>追加のパラメーター
 
 次の表は、AdditionalParameters プロパティのオプションを示しています。
-|  パラメーター  | 説明   |
-|---|---|
+
+| パラメーター | 説明 |
+| --- | --- |
 | DestinationPath| 組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージをインストールするファイルの場所を指定します。|
-| InstallationPolicy| 組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージのソースを信頼するかどうかを決定します。 "Untrusted" または "Trusted" のどちらかです。|
+| InstallationPolicy| 組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージのソースを信頼するかどうかを決定します。 `Untrusted` または `Trusted` のどちらかです。|
 
 ## <a name="example"></a>例
 

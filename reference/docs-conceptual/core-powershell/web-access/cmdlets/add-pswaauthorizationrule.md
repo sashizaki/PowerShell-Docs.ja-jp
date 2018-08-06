@@ -1,21 +1,21 @@
 ---
 ms.topic: reference
-keywords: powershell,コマンドレット
+keywords: PowerShell, コマンドレット
 ms.date: 12/12/2016
 title: Add-PswaAuthorizationRule
 schema: 2.0.0
-ms.openlocfilehash: a8904ac36f7fd9fe3c649ad4ca709a98c31b63c3
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: bcf897730881551ec16ce970de6a1330961b67e6
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39094230"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268267"
 ---
 # <a name="add-pswaauthorizationrule"></a>Add-PswaAuthorizationRule
 
 ## <a name="synopsis"></a>概要
 
-Windows PowerShell® Web Access 承認規則のセットに新しい承認規則を追加します。
+Windows PowerShell Web Access 承認規則のセットに新しい承認規則を追加します。
 
 ## <a name="syntax"></a>構文
 
@@ -45,12 +45,11 @@ Add-PswaAuthorizationRule [-UserName] <String[]> [-ComputerName] <String> [-Conf
 
 ## <a name="description"></a>説明
 
-**Add-PswaAuthorizationRule** コマンドレットは、Windows PowerShell® Web Access 承認規則のセットに新しい承認規則を追加します。
+**Add-PswaAuthorizationRule** コマンドレットは、Windows PowerShell(r) Web Access 承認規則のセットに新しい承認規則を追加します。
 
 この規則には、ユーザー、コンピューター、Windows PowerShell エンドポイントを指定する必要があります。 個々のユーザー アカウント名、コンピューター名、またはグループを指定して、ユーザーとコンピューターの両方を指定できます。
 
-Active Directory ドメインに参加しているコンピューターの場合、このコマンドレットは、コンピューターのセキュリティ識別子 (SID) を使用して規則を作成します。
-そのため、サインイン ページの **[コンピューター名]** フィールドに、短い名前、完全修飾ドメイン名 (FQDN)、または IP アドレスを使用できます。
+Active Directory ドメインに参加しているコンピューターの場合、このコマンドレットは、コンピューターのセキュリティ識別子 (SID) を使用して規則を作成します。 そのため、サインイン ページの **[コンピューター名]** フィールドに、短い名前、完全修飾ドメイン名 (FQDN)、または IP アドレスを使用できます。
 
 Active Directory ドメインに参加していないコンピューターの場合、このコマンドレットは、管理者が指定したコンピューター名を使用して規則を作成します。 このコンピューターに正常に接続するには、規則に指定されているとおりのコンピューター名をエンド ユーザーが正確に入力する必要があります。
 
@@ -66,12 +65,12 @@ Active Directory ドメインに参加していないコンピューターの場
 
 |||
 |-|-|
-| エイリアス                              | なし                                 |
-| 必須?                            | true                                 |
-| 位置は?                            | 名前付き                                |
-| 既定値                        | なし                                 |
-| パイプライン入力を許可する               | True (ByPropertyName)                |
-| ワイルドカード文字を許可する          | false                                |
+| エイリアス                     | なし                  |
+| 必須?                   | true                  |
+| 位置は?                   | 名前付き                 |
+| 既定値               | なし                  |
+| パイプライン入力を許可する      | True (ByPropertyName) |
+| ワイルドカード文字を許可する | false                 |
 
 ### <a name="-computername-string"></a>-ComputerName \<String\>
 
@@ -79,12 +78,12 @@ Active Directory ドメインに参加していないコンピューターの場
 
 |||
 |-|-|
-| エイリアス                              | なし                                 |
-| 必須?                            | true                                 |
-| 位置は?                            | 名前付き                                |
-| 既定値                        | なし                                 |
-| パイプライン入力を許可する               | True (ByPropertyName)                |
-| ワイルドカード文字を許可する          | false                                |
+| エイリアス                     | なし                  |
+| 必須?                   | true                  |
+| 位置は?                   | 名前付き                 |
+| 既定値               | なし                  |
+| パイプライン入力を許可する      | True (ByPropertyName) |
+| ワイルドカード文字を許可する | false                 |
 
 ### <a name="-configurationname-string"></a>-ConfigurationName \<String\>
 
@@ -92,12 +91,12 @@ Active Directory ドメインに参加していないコンピューターの場
 
 |||
 |-|-|
-| エイリアス                              | なし                                 |
-| 必須?                            | true                                 |
-| 位置は?                            | 名前付き                                |
-| 既定値                        | なし                                 |
-| パイプライン入力を許可する               | True (ByPropertyName)                |
-| ワイルドカード文字を許可する          | false                                |
+| エイリアス                     | なし                  |
+| 必須?                   | true                  |
+| 位置は?                   | 名前付き                 |
+| 既定値               | なし                  |
+| パイプライン入力を許可する      | True (ByPropertyName) |
+| ワイルドカード文字を許可する | false                 |
 
 ### <a name="-credential--pscredential"></a>-Credential  \<PSCredential\>
 
@@ -105,17 +104,16 @@ Windows PowerShell Web Access 承認規則の変更に使用するユーザー �
 
 |||
 |-|-|
-| エイリアス                              | なし                                 |
-| 必須?                            | false                                |
-| 位置は?                            | 名前付き                                |
-| 既定値                        | なし                                 |
-| パイプライン入力を許可する               | false                                |
-| ワイルドカード文字を許可する          | false                                |
+| エイリアス                     | なし  |
+| 必須?                   | false |
+| 位置は?                   | 名前付き |
+| 既定値               | なし  |
+| パイプライン入力を許可する      | false |
+| ワイルドカード文字を許可する | false |
 
 ### <a name="-force"></a>-Force
 
-ユーザーに確認を求めずに、直ちにコマンドを実行します。
-なお、単純な、または短いコンピューター名 (ドメイン名ではない名前、完全修飾されていない名前など) を入力した場合にも確認が求められます。 確認はセキュリティ上の理由で必要です。そのため、コンピューターがワークグループに参加している場合にのみ、コンピューターの追加に単純な名前を使用できます。
+ユーザーに確認せずに、直ちにコマンドを実行します。 なお、単純な、または短いコンピューター名 (ドメイン名ではない名前、完全修飾されていない名前など) を入力した場合にも確認が求められます。 確認はセキュリティ上の理由で必要です。そのため、コンピューターがワークグループに参加している場合にのみ、コンピューターの追加に単純な名前を使用できます。
 
 |||
 |-|-|
@@ -154,8 +152,7 @@ Windows PowerShell Web Access 承認規則の変更に使用するユーザー �
 
 ### <a name="-username-string"></a>-UserName \<String\[\]\>
 
-この規則がアクセス権を付与している 1 つまたは複数のコンピューター名を指定します。 ユーザー名には、ゲートウェイ コンピューター上のローカル ユーザー アカウント、または AD DS のユーザーを指定できます。
-形式は、`domain\user` または `computer\user` です。
+この規則がアクセス権を付与している 1 つまたは複数のコンピューター名を指定します。 ユーザー名には、ゲートウェイ コンピューター上のローカル ユーザー アカウント、または AD DS のユーザーを指定できます。 形式は、`domain\user` または `computer\user` です。
 
 |||
 |-|-|
@@ -168,7 +165,9 @@ Windows PowerShell Web Access 承認規則の変更に使用するユーザー �
 
 ###  <a name="commonparameters"></a>\<CommonParameters\>
 
-このコマンドレットは、-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer、および -OutVariable という共通パラメーターをサポートします。
+このコマンドレットでは、
+
+-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer、および -OutVariable といった一般的なパラメーターをサポートします。
 詳細については、「[about_CommonParameters](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_commonparameters)」を参照してください。
 
 ## <a name="inputs"></a>入力
@@ -194,9 +193,9 @@ Windows PowerShell Web Access 承認規則の変更に使用するユーザー �
 この例では、_srv2_ 上の _SMAdmins_ グループのユーザーについて、セッション構成に _PSWAEndpoint_ (制限付き実行空間) のアクセス権を付与しています。
 
 > [!NOTE]
-> このコンピューター名は完全修飾ドメイン名 (FQDN) にする必要があります。 管理者は制限付きセッション構成または実行空間を定義します。実行空間とは、エンド ユーザーが実行できるコマンドレットおよびタスクの制限された範囲です。 制限付き実行空間を定義すると、ユーザーは、許可されている Windows PowerShell® 実行空間内にない他のコンピューターにアクセスできなくなります。そのため、接続のセキュリティが強固になります。 セッション構成の詳細については、「[about_Session_Configurations](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_session_configurations)」または「[Windows PowerShell Web Access の展開](../install-and-use-windows-powershell-web-access.md)」を参照してください。
+> このコンピューター名は完全修飾ドメイン名 (FQDN) にする必要があります。 管理者は制限付きセッション構成または実行空間を定義します。実行空間とは、エンド ユーザーが実行できるコマンドレットおよびタスクの制限された範囲です。 制限付き実行空間を定義すると、ユーザーは、許可されている Windows PowerShell(r) 実行空間内にない他のコンピューターにアクセスできなくなります。そのため、接続のセキュリティが強固になります。 セッション構成の詳細については、「[about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_session_configurations)」または「[Windows PowerShell Web Access のインストールと使用](../install-and-use-windows-powershell-web-access.md)」を参照してください。
 
-```PowerShell
+```powershell
 Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\SMAdmins -ConfigurationName PSWAEndpoint
 ```
 
@@ -204,8 +203,8 @@ Add-PswaAuthorizationRule -ComputerName srv2.contoso.com -UserGroupName contoso\
 
 この例では、既定の Windows PowerShell セッション構成 (`Microsoft.PowerShell`) に対するアクセス権を、ユーザー名が `contoso\user1`、`contoso\user2`、`contoso\user3` であるユーザーの *srv2* に付与します。 このコマンドレットは、3 つの規則を作成します (1 人 1 規則)。
 
-```PowerShell
-Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user3 –ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
+```powershell
+Add-PswaAuthorizationRule -UserName contoso\user1, contoso\user2, contoso\user3 -ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
 ```
 
 ### <a name="example-3"></a>例 3
@@ -213,18 +212,18 @@ Add-PswaAuthorizationRule –UserName contoso\user1, contoso\user2, contoso\user
 この例は、パイプラインを使用してユーザー名値を入力する方法を示しています。
 
 ```powershell
-"contoso\user1","contoso\user2" | Add-pswaAuthorizationRule –ComputerName srv2.contoso.com –ConfigurationName Microsoft.PowerShell
+"contoso\user1","contoso\user2" | Add-pswaAuthorizationRule -ComputerName srv2.contoso.com -ConfigurationName Microsoft.PowerShell
 ```
 
 ### <a name="example-4"></a>例 4
 
 この例は、プロパティ名を指定して、すべてのパラメーターがすべてのパイプラインの値を取得する方法を示しています。
 
-````PowerShell
+````powershell
 $o = New-Object -TypeName PSObject |
     Add-Member -Type NoteProperty -Name "UserName" -Value "contoso\user1" -PassThru |
     Add-Member -Type NoteProperty -Name "ComputerName" -Value "srv2.contoso.com" -PassThru |
-    Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" –PassThru
+    Add-Member -Type NoteProperty -Name "ConfigurationName" -Value "Microsoft.PowerShell" -PassThru
 
 $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Microsoft.PowerShell
 ````
@@ -236,19 +235,18 @@ $o | Add-PswaAuthorizationRule -UserName contoso\user1 -ConfigurationName Micros
 この例は、ゲートウェイがワークグループ内にあり、対象コンピューターがドメイン内にあるシナリオを示しています。 承認規則はゲートウェイ上のローカル ユーザーに適用されます。 Windows PowerShell Web Access のサインイン ページで、正常に認証するには、ユーザーが **[オプションの接続設定]** 領域で、2 つ目の資格情報を提供する必要があります。 ゲートウェイ サーバーでは、複数セットの資格情報が使用され、*srv1.contoso.com* という対象コンピューターでユーザーの認証に使用されます。
 
 ````powershell
-Add-PswaAuthorizationRule –UserName PswaServer\ChrisLocal –ComputerName srv1.contoso.com –ConfigurationName Microsoft.PowerShell
+Add-PswaAuthorizationRule -UserName PswaServer\ChrisLocal -ComputerName srv1.contoso.com -ConfigurationName Microsoft.PowerShell
 ````
 
 ### <a name="example-6"></a>例 6
 
-この例では、すべてのコンピューターですべてのエンドポイントに対するアクセス権をすべてのユーザーに許可します。
-これで、基本的に承認規則がオフになります。
+この例では、すべてのコンピューターですべてのエンドポイントに対するアクセス権をすべてのユーザーに許可します。 これで、基本的に承認規則がオフになります。
 
 > [!NOTE]
 > `*` ワイルド カード文字の使用は、セキュリティが重要な展開には推奨されません。また、テスト環境のみで使用するか、セキュリティを緩和できる展開でのみ使用してください。
 
-````PowerShell
-Add-PswaAuthorizationRule –UserName * -ComputerName * -ConfigurationName *
+````powershell
+Add-PswaAuthorizationRule -UserName * -ComputerName * -ConfigurationName *
 ````
 
 ## <a name="see-also"></a>参照

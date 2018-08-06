@@ -48,7 +48,7 @@ Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポ�
 | Debian 8.7 以降および 9                                | サポート   | サポート   |
 | CentOS 7                                          | サポート   | サポート   |
 | Red Hat Enterprise Linux 7                        | サポート   | サポート   |
-| OpenSUSE 42.2                                     | サポート   | サポート   |
+| OpenSUSE 42.3                                     | サポート   | サポート   |
 | Fedora 27                                         | サポート   | サポート   |
 | Fedora 28                                         |             | サポート   |
 | macOS 10.12 以降                                      | サポート   | サポート   |

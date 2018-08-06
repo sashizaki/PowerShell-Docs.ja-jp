@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: b279d388754c5ee42215f21317f7b3d8089b7608
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: bed1186c10082bbdac7249503bf623678f13fccd
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093883"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39267941"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>統一された一貫性のある状態とステータスの表現
 
@@ -15,40 +15,41 @@ ms.locfileid: "39093883"
 LCM 状態と DSC 操作ステータスの形式を再検討し、次の規則に従って統合されました。
 
 1. 未処理のリソースは、LCM 状態と DSC ステータスに影響を与えません。
-1. LCM は、再起動を要求するリソースに到達すると、リソースの処理を停止します。
-1. 再起動を要求するリソースは、再起動が実際に発生するまで、必要な状態になりません。
-1. 失敗したリソースを検出した場合は、そのリソースに依存していない限り、LCM は他のリソースの処理を続けます。
-1. `Get-DscConfigurationStatus` コマンドレットによって返される状態の全体は、すべてのリソースのステータスのスーパー セットです。
-1. PendingReboot 状態は、PendingConfiguration 状態のスーパーセットです。
+2. LCM は、再起動を要求するリソースに到達すると、リソースの処理を停止します。
+3. 再起動を要求するリソースは、再起動が実際に発生するまで、必要な状態になりません。
+4. 失敗したリソースを検出した場合は、そのリソースに依存していない限り、LCM は他のリソースの処理を続けます。
+5. `Get-DscConfigurationStatus` コマンドレットによって返される状態の全体は、すべてのリソースのステータスのスーパー セットです。
+6. PendingReboot 状態は、PendingConfiguration 状態のスーパーセットです。
 
-   次の表は、いくつかの一般的なシナリオでのプロパティに関連した状態とステータスの結果を示しています。
+次の表は、いくつかの一般的なシナリオでのプロパティに関連した状態とステータスの結果を示しています。
 
-   | シナリオ                    | LCMState       | 状態 | Reboot Requested  | ResourcesInDesiredState  | ResourcesNotInDesiredState |
-   |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
-   | S**^**                          | アイドル                 | 成功    | $false        | S                            | $null                          |
-   | F**^**                          | PendingConfiguration | 障害    | $false        | $null                        | F                              |
-   | S、F                             | PendingConfiguration | 障害    | $false        | S                            | F                              |
-   | F、S                             | PendingConfiguration | 障害    | $false        | S                            | F                              |
-   | S<sub>1</sub>、F、S<sub>2</sub> | PendingConfiguration | 障害    | $false        | S<sub>1</sub>、S<sub>2</sub> | F                              |
-   | F<sub>1</sub>、S、F<sub>2</sub> | PendingConfiguration | 障害    | $false        | S                            | F<sub>1</sub>、F<sub>2</sub>   |
-   | S、r                            | PendingReboot        | 成功    | $true         | S                            | r                              |
-   | F、r                            | PendingReboot        | 障害    | $true         | $null                        | F、r                           |
-   | r、S                            | PendingReboot        | 成功    | $true         | $null                        | r                              |
-   | r、F                            | PendingReboot        | 成功    | $true         | $null                        | r                              |
+| シナリオ                        | LCMState             | 状態     | Reboot Requested | ResourcesInDesiredState   | ResourcesNotInDesiredState |
+|---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
+| S**^**                          | アイドル                 | 成功    | $false        | S                            | $null                          |
+| F**^**                          | PendingConfiguration | 障害    | $false        | $null                        | F                              |
+| S、F                             | PendingConfiguration | 障害    | $false        | S                            | F                              |
+| F、S                             | PendingConfiguration | 障害    | $false        | S                            | F                              |
+| S<sub>1</sub>、F、S<sub>2</sub> | PendingConfiguration | 障害    | $false        | S<sub>1</sub>、S<sub>2</sub> | F                              |
+| F<sub>1</sub>、S、F<sub>2</sub> | PendingConfiguration | 障害    | $false        | S                            | F<sub>1</sub>、F<sub>2</sub>   |
+| S、r                            | PendingReboot        | 成功    | $true         | S                            | r                              |
+| F、r                            | PendingReboot        | 障害    | $true         | $null                        | F、r                           |
+| r、S                            | PendingReboot        | 成功    | $true         | $null                        | r                              |
+| r、F                            | PendingReboot        | 成功    | $true         | $null                        | r                              |
 
-   ^
-   S<sub>i</sub>: 一連のリソースが正常に適用された F<sub>i</sub>: 一連のリソースの適用に失敗した r: 再起動が必要なリソース \*
+- S<sub>i</sub>: 一連のリソースが正常に適用された
+- F<sub>i</sub>: 一連のリソースの適用に失敗した
+- r: 再起動が必要なリソース
 
-   ```powershell
-   $LCMState = (Get-DscLocalConfigurationManager).LCMState
-   $Status = (Get-DscConfigurationStatus).Status
+```powershell
+$LCMState = (Get-DscLocalConfigurationManager).LCMState
+$Status = (Get-DscConfigurationStatus).Status
 
-   $RebootRequested = (Get-DscConfigurationStatus).RebootRequested
+$RebootRequested = (Get-DscConfigurationStatus).RebootRequested
 
-   $ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
+$ResourcesInDesiredState = (Get-DscConfigurationStatus).ResourcesInDesiredState
 
-   $ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
-   ```
+$ResourcesNotInDesiredState = (Get-DscConfigurationStatus).ResourcesNotInDesiredState
+```
 
 ## <a name="enhancement-in-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus コマンドレットの機能拡張
 
@@ -56,20 +57,21 @@ LCM 状態と DSC 操作ステータスの形式を再検討し、次の規則�
 
 ```powershell
 (Get-DscConfigurationStatus).StartDate | Format-List *
-DateTime : Friday, November 13, 2015 1:39:44 PM
-Date : 11/13/2015 12:00:00 AM
-Day : 13
-DayOfWeek : Friday
-DayOfYear : 317
-Hour : 13
-Kind : Local
+
+DateTime    : Friday, November 13, 2015 1:39:44 PM
+Date        : 11/13/2015 12:00:00 AM
+Day         : 13
+DayOfWeek   : Friday
+DayOfYear   : 317
+Hour        : 13
+Kind        : Local
 Millisecond : 886
-Minute : 39
-Month : 11
-Second : 44
-Ticks : 635830187848860000
-TimeOfDay : 13:39:44.8860000
-Year : 2015
+Minute      : 39
+Month       : 11
+Second      : 44
+Ticks       : 635830187848860000
+TimeOfDay   : 13:39:44.8860000
+Year        : 2015
 ```
 
 今日と同じ曜日に発生したすべての DSC 操作レコードを返す例を次に示します。
@@ -78,10 +80,9 @@ Year : 2015
 (Get-DscConfigurationStatus –All) | Where-Object { $_.startdate.dayofweek -eq (Get-Date).DayOfWeek }
 ```
 
-ノードの構成を変更しない操作 (つまり、読み取り専用の操作) のレコードは除外されます。 そのため、`Test-DscConfiguration` と `Get-DscConfiguration` は、`Get-DscConfigurationStatus` コマンドレットから返されるオブジェクトで効果的に操作できるようになりました。
-メタ構成の設定操作のレコードが `Get-DscConfigurationStatus` コマンドレットの戻り値に追加されます。
+ノードの構成を変更しない操作 (つまり、読み取り専用の操作) のレコードは除外されます。 そのため、`Test-DscConfiguration` と `Get-DscConfiguration` は、`Get-DscConfigurationStatus` コマンドレットから返されるオブジェクトで効果的に操作できるようになりました。 メタ構成の設定操作のレコードが `Get-DscConfigurationStatus` コマンドレットの戻り値に追加されます。
 
-次の例は、`Get-DscConfigurationStatus` –All コマンドレットから返される結果を示しています。
+次の例では、`Get-DscConfigurationStatus –All` コマンドレットから返される結果を示します。
 
 ```output
 All configuration operations:

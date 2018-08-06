@@ -3,18 +3,18 @@ ms.topic: reference
 keywords: PowerShell, コマンドレット
 ms.date: 12/12/2016
 title: Install-PswaWebApplication
-ms.openlocfilehash: 68455d9490f7d5c33c1a928ac262a76a78ad7128
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 29e074b75eeb387640831229c63142e6dd5e991a
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189603"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268301"
 ---
 # <a name="install-pswawebapplication"></a>Install-PswaWebApplication
 
 ## <a name="synopsis"></a>概要
 
-IIS で Windows PowerShell® Web Access Web アプリケーションを構成します。
+IIS で Windows PowerShell Web Access Web アプリケーションを構成します。
 
 ## <a name="syntax"></a>構文
 
@@ -25,7 +25,8 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 
 ## <a name="description"></a>説明
 
-**Install-PswaWebApplication** コマンドレットは、Windows PowerShell Web Access Web アプリケーションを構成します。 このコマンドレットは、Web アプリケーションをインストールし、そのアプリケーションを Web サイトと関連付けます。また、必要に応じて **useTestCertificate** パラメーターを使用してテスト SSL 証明書を作成することもできます。 セキュリティ上の理由から、Web 管理者は運用環境にテスト証明書を使用しないでください。
+**Install-PswaWebApplication** コマンドレットは、Windows PowerShell Web Access Web アプリケーションを構成します。
+このコマンドレットは、Web アプリケーションをインストールし、そのアプリケーションを Web サイトと関連付けます。また、必要に応じて **useTestCertificate** パラメーターを使用してテスト SSL 証明書を作成することもできます。 セキュリティ上の理由から、Web 管理者は運用環境にテスト証明書を使用しないでください。
 
 ## <a name="parameters"></a>パラメータ
 
@@ -42,7 +43,7 @@ Install-PswaWebApplication [[-WebApplicationName] <String> ] [-UseTestCertificat
 | パイプライン入力を許可する               | false                                |
 | ワイルドカード文字を許可する          | false                                |
 
-### <a name="-webapplicationnameltstringgt"></a>-WebApplicationName&lt;String&gt;
+### <a name="-webapplicationname"></a>-WebApplicationName
 
 Web アプリケーションの名前を指定します。 これは Windows PowerShell Web Access URL の末尾の部分に表示されます。
 
@@ -55,7 +56,7 @@ Web アプリケーションの名前を指定します。 これは Windows Pow
 | パイプライン入力を許可する               | false                                |
 | ワイルドカード文字を許可する          | false                                |
 
-### <a name="-websitenameltstringgt"></a>-WebSiteName&lt;String&gt;
+### <a name="-websitename"></a>-WebSiteName
 
 この Windows PowerShell Web Access Web アプリケーションをインストールする Web サーバー (IIS) Web サイトの名前を指定します。
 
@@ -95,8 +96,7 @@ Web アプリケーションの名前を指定します。 これは Windows Pow
 
 ### <a name="ltcommonparametersgt"></a>&lt;CommonParameters&gt;
 
-このコマンドレットは、-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer、および -OutVariable という共通パラメーターをサポートします。
-詳細については、「[about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216)」を参照してください。
+このコマンドレットは、-Verbose、-Debug、-ErrorAction、-ErrorVariable、-OutBuffer、および -OutVariable という共通パラメーターをサポートします。 詳細については、「[about_CommonParameters](http://go.microsoft.com/fwlink/p/?LinkID=113216)」を参照してください。
 
 ## <a name="inputs"></a>入力
 
