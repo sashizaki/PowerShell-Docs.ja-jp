@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Log リソース
-ms.openlocfilehash: fade94efd8133ae0172737e4bb1aed89fc0f97d9
-ms.sourcegitcommit: 77f62a55cac8c13d69d51eef5fade18f71d66955
+ms.openlocfilehash: 50fd6cd31ba426108830fcf124a767318060a95d
+ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/17/2018
-ms.locfileid: "39093478"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39268434"
 ---
-# <a name="dsc-log-resource"></a><span data-ttu-id="4d35e-103">DSC Log リソース</span><span class="sxs-lookup"><span data-stu-id="4d35e-103">DSC Log Resource</span></span>
+# <a name="dsc-log-resource"></a><span data-ttu-id="6204e-103">DSC Log リソース</span><span class="sxs-lookup"><span data-stu-id="6204e-103">DSC Log Resource</span></span>
 
-> <span data-ttu-id="4d35e-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="4d35e-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+<span data-ttu-id="6204e-104">_適用対象: Windows PowerShell 4.0、Windows PowerShell 5.0_</span><span class="sxs-lookup"><span data-stu-id="6204e-104">_Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0_</span></span>
 
-<span data-ttu-id="4d35e-105">Windows PowerShell Desired State Configuration (DSC) の __Log__ リソースは、Microsoft-Windows-Desired State Configuration/Analytic イベント ログにメッセージを書き込むためのメカニズムを備えています。</span><span class="sxs-lookup"><span data-stu-id="4d35e-105">The __Log__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to write messages to the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>
+<span data-ttu-id="6204e-105">Windows PowerShell Desired State Configuration (DSC) の __Log__ リソースは、Microsoft-Windows-Desired State Configuration/Analytic イベント ログにメッセージを書き込むためのメカニズムを備えています。</span><span class="sxs-lookup"><span data-stu-id="6204e-105">The __Log__ resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to write messages to the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>
 
 ```
 Syntax
@@ -26,21 +26,21 @@ Log [string] #ResourceName
 ```
 
 > [!NOTE]
-> <span data-ttu-id="4d35e-106">既定では、DSC の操作ログのみが有効になります。</span><span class="sxs-lookup"><span data-stu-id="4d35e-106">By default only the Operational logs for DSC are enabled.</span></span> <span data-ttu-id="4d35e-107">分析ログを利用または表示するには、最初にそれを有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="4d35e-107">Before the Analytic log will be available or visible, it must be enabled.</span></span> <span data-ttu-id="4d35e-108">詳細については、「[DSC イベント ログの場所](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4d35e-108">For more information, see [Where are DSC Event Logs?](https://msdn.microsoft.com/en-us/powershell/dsc/troubleshooting#where-are-dsc-event-logs).</span></span>
+> <span data-ttu-id="6204e-106">既定では、DSC の操作ログのみが有効になります。</span><span class="sxs-lookup"><span data-stu-id="6204e-106">By default only the Operational logs for DSC are enabled.</span></span> <span data-ttu-id="6204e-107">分析ログを利用または表示するには、最初にそれを有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="6204e-107">Before the Analytic log will be available or visible, it must be enabled.</span></span> <span data-ttu-id="6204e-108">詳細については、「[DSC イベント ログの場所](troubleshooting.md#where-are-dsc-event-logs)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="6204e-108">For more information, see [Where are DSC Event Logs?](troubleshooting.md#where-are-dsc-event-logs).</span></span>
 
-## <a name="properties"></a><span data-ttu-id="4d35e-109">プロパティ</span><span class="sxs-lookup"><span data-stu-id="4d35e-109">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="6204e-109">プロパティ</span><span class="sxs-lookup"><span data-stu-id="6204e-109">Properties</span></span>
 
-|  <span data-ttu-id="4d35e-110">プロパティ</span><span class="sxs-lookup"><span data-stu-id="4d35e-110">Property</span></span>  |  <span data-ttu-id="4d35e-111">説明</span><span class="sxs-lookup"><span data-stu-id="4d35e-111">Description</span></span>   |
-|---|---|
-| <span data-ttu-id="4d35e-112">メッセージ</span><span class="sxs-lookup"><span data-stu-id="4d35e-112">Message</span></span>| <span data-ttu-id="4d35e-113">Microsoft-Windows-Desired State Configuration/Analytic イベント ログに書き込むメッセージを示します。</span><span class="sxs-lookup"><span data-stu-id="4d35e-113">Indicates the message you want to write to the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>|
-| <span data-ttu-id="4d35e-114">DependsOn</span><span class="sxs-lookup"><span data-stu-id="4d35e-114">DependsOn</span></span> | <span data-ttu-id="4d35e-115">このログ メッセージが書き込まれる前に、他のリソースの構成を実行する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="4d35e-115">Indicates that the configuration of another resource must run before this log message gets written.</span></span> <span data-ttu-id="4d35e-116">たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = '[ResourceType]ResourceName'` になります。</span><span class="sxs-lookup"><span data-stu-id="4d35e-116">For example, if the ID of the resource configuration script block that you want to run first is __ResourceName__ and its type is __ResourceType__, the syntax for using this property is `DependsOn = '[ResourceType]ResourceName'`.</span></span>|
+| <span data-ttu-id="6204e-110">プロパティ</span><span class="sxs-lookup"><span data-stu-id="6204e-110">Property</span></span> | <span data-ttu-id="6204e-111">説明</span><span class="sxs-lookup"><span data-stu-id="6204e-111">Description</span></span> |
+| --- | --- |
+| <span data-ttu-id="6204e-112">メッセージ</span><span class="sxs-lookup"><span data-stu-id="6204e-112">Message</span></span>| <span data-ttu-id="6204e-113">Microsoft-Windows-Desired State Configuration/Analytic イベント ログに書き込むメッセージを示します。</span><span class="sxs-lookup"><span data-stu-id="6204e-113">Indicates the message you want to write to the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>|
+| <span data-ttu-id="6204e-114">DependsOn</span><span class="sxs-lookup"><span data-stu-id="6204e-114">DependsOn</span></span> | <span data-ttu-id="6204e-115">このログ メッセージが書き込まれる前に、他のリソースの構成を実行する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="6204e-115">Indicates that the configuration of another resource must run before this log message gets written.</span></span> <span data-ttu-id="6204e-116">たとえば、最初に実行するリソース構成スクリプト ブロックの ID が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = '[ResourceType]ResourceName'` になります。</span><span class="sxs-lookup"><span data-stu-id="6204e-116">For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = '[ResourceType]ResourceName'`.</span></span>|
 
-## <a name="example"></a><span data-ttu-id="4d35e-117">例</span><span class="sxs-lookup"><span data-stu-id="4d35e-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="6204e-117">例</span><span class="sxs-lookup"><span data-stu-id="6204e-117">Example</span></span>
 
-<span data-ttu-id="4d35e-118">次の例では、Microsoft-Windows-Desired State Configuration/Analytic イベント ログにメッセージを含める方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4d35e-118">The following example shows how to include a message in the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>
+<span data-ttu-id="6204e-118">次の例では、Microsoft-Windows-Desired State Configuration/Analytic イベント ログにメッセージを含める方法を示します。</span><span class="sxs-lookup"><span data-stu-id="6204e-118">The following example shows how to include a message in the Microsoft-Windows-Desired State Configuration/Analytic event log.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="4d35e-119">このリソースが構成されている状態で [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) を実行すると、常に **$false** が返されます。</span><span class="sxs-lookup"><span data-stu-id="4d35e-119">If you run [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) with this resource configured, it will always return **$false**.</span></span>
+> <span data-ttu-id="6204e-119">このリソースが構成されている状態で [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) を実行すると、常に **$false** が返されます。</span><span class="sxs-lookup"><span data-stu-id="6204e-119">If you run [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) with this resource configured, it will always return **$false**.</span></span>
 
 ```powershell
 Configuration logResourceTest
