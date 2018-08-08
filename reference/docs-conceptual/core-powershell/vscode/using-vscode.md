@@ -1,3 +1,14 @@
+---
+title: PowerShell 開発のための Visual Studio Code の使用
+description: PowerShell 開発のための Visual Studio Code の使用
+ms.date: 08/06/2018
+ms.openlocfilehash: f8e1e9af257037fc7bd74549e4197c9a1695e952
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587433"
+---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell 開発のための Visual Studio Code の使用
 
 Visual Studio Code は、[PowerShell ISE] に加え[ise]、PowerShell でも十分にサポートされています。
