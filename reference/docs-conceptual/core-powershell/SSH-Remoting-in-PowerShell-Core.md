@@ -1,4 +1,14 @@
-
+---
+title: SSH 経由の PowerShell リモート処理
+description: SSH を使用した PowerShell Core のリモート処理
+ms.date: 08/06/2018
+ms.openlocfilehash: 27a8fc5623796a270a2ea67aa550c9a0998e766b
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587501"
+---
 # <a name="powershell-remoting-over-ssh"></a>SSH 経由の PowerShell リモート処理
 
 ## <a name="overview"></a>概要

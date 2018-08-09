@@ -1,8 +1,19 @@
+---
+title: Linux への PowerShell Core のインストール
+description: さまざまな Linux ディストリビューションへの PowerShell Core のインストールに関する情報
+ms.date: 08/06/2018
+ms.openlocfilehash: a6b0e3003f84ea6dc99cffcc7edf1b5b6963aa21
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587450"
+---
 # <a name="installing-powershell-core-on-linux"></a>Linux への PowerShell Core のインストール
 
-[Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 17.10][u17]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[OpenSUSE 42.3][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora]、[Arch Linux][arch] をサポートしています。
+[Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 18.10][u18]、[Debian 8][deb8]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[OpenSUSE 42.3][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora]、[Arch Linux][arch] をサポートしています。
 
-公式にサポートしていない Linux ディストリビューションの場合、[PowerShell AppImage][lai] を利用できます。
+公式にサポートしていない Linux ディストリビューションの場合、[PowerShell Snap パッケージ][snap]を利用できます。
 また、Linux [`tar.gz` アーカイブ][tar]で直接、PowerShell バイナリを展開できます。ただし、場合によっては、OS に基づいて依存関係を別の手順で設定する必要があります。
 
 すべてのパッケージは GitHub [リリース][] ページにあります。
@@ -10,7 +21,7 @@
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
-[u17]: #ubuntu-1710
+[u18]: #ubuntu-1810
 [u18]: #ubuntu-1804
 [deb8]: #debian-8
 [deb9]: #debian-9
@@ -19,7 +30,7 @@
 [opensuse]: #opensuse-423
 [fedora]: #fedora
 [arch]: #arch-linux
-[lai]: #linux-appimage
+[snap]: #snap-package
 [tar]: #binary-archives
 
 ## <a name="installing-preview-releases"></a>プレビュー リリースのインストール
@@ -132,56 +143,6 @@ sudo apt-get install -f
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1710"></a>Ubuntu 17.10
-
-> [!NOTE]
-> Ubuntu 17.04 のサポートは `6.1.0-preview.2` 以降に追加されました。
-
-### <a name="installation-via-package-repository---ubuntu-1710"></a>パッケージ リポジトリによるインストール - Ubuntu 17.10
-
-Linux 向け PowerShell Core はパッケージ リポジトリに公開され、インストール (と更新) が簡単です。
-この方法を使用することをお勧めします。
-
-```sh
-# Import the public repository GPG keys
-curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-
-# Register the Microsoft Ubuntu repository
-sudo curl -o /etc/apt/sources.list.d/microsoft.list https://packages.microsoft.com/config/ubuntu/17.10/prod.list
-
-# Update the list of products
-sudo apt-get update
-
-# Install PowerShell
-sudo apt-get install -y powershell
-
-# Start PowerShell
-pwsh
-```
-
-スーパーユーザーとして Microsoft リポジトリを一度登録すれば、その後は `sudo apt-get upgrade powershell` を使用する更新だけが必要になります。
-
-### <a name="installation-via-direct-download---ubuntu-1710"></a>直接ダウンロードによるインストール - Ubuntu 17.10
-
-[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell_6.0.2-1.ubuntu.17.10_amd64.deb` をダウンロードします。
-
-次にターミナルで次を実行します。
-
-```sh
-sudo dpkg -i powershell_6.0.2-1.ubuntu.17.10_amd64.deb
-sudo apt-get install -f
-```
-
-> [!NOTE]
-> `dpkg -i` コマンドは依存関係が満たされずに失敗します。
-> 次のコマンド `apt-get install -f` でこれらの問題は解決され、PowerShell パッケージの構成が完了します。
-
-### <a name="uninstallation---ubuntu-1710"></a>アンインストール - Ubuntu 17.10
-
-```sh
-sudo apt-get remove powershell
-```
-
 ## <a name="ubuntu-1804"></a>Ubuntu 18.04
 
 > [!NOTE]
@@ -231,6 +192,14 @@ sudo apt-get install -f
 ```sh
 sudo apt-get remove powershell
 ```
+
+## <a name="ubuntu-1810"></a>Ubuntu 18.10
+
+> [!NOTE]
+> Ubuntu 18.10 のサポートは `6.1.0-preview.3` 以降に追加されました。
+> 18.10 はデイリー ビルドであるため、コミュニティのサポートのみです。
+
+18.10 へのインストールは `snapd` を使用してサポートされます。 完全な手順については、「[Snap パッケージ][snap]」を参照してください。
 
 ## <a name="debian-8"></a>Debian 8
 
@@ -550,6 +519,33 @@ AUR からパッケージをインストールする方法については、[Arc
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
+
+## <a name="snap-package"></a>Snap パッケージ
+
+### <a name="getting-snapd"></a>Snapd の取得
+
+Snap を実行するには、`snapd` が必要です。  `snapd` がインストールされているかどうかを確認するには、[こちらの手順](https://docs.snapcraft.io/core/install)を使用してください。
+
+### <a name="installation-via-snap"></a>Snap を使用したインストール
+
+Linux 向け PowerShell Core は [Snap ストア](https://snapcraft.io/store)に公開されるため、インストール (と更新) が簡単です。
+この方法を使用することをお勧めします。
+
+```sh
+# Install PowerShell
+sudo snap install powershell-preview --classic
+
+# Start PowerShell
+pwsh-preview
+```
+
+Snap のインストールが自動的にアップグレードされた後も、`sudo snap refresh powershell-preview` を使用してアップグレードをトリガーすることができます。
+
+### <a name="uninstallation"></a>アンインストール
+
+```sh
+sudo snap remove powershell-preview
+```
 
 ## <a name="linux-appimage"></a>Linux AppImage
 

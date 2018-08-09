@@ -1,3 +1,14 @@
+---
+title: PowerShell Core 6.0 の新機能
+description: PowerShell Core 6.0 でリリースされた新機能と変更
+ms.date: 08/06/2018
+ms.openlocfilehash: f0cddad223528cd0f2b4f392faeb6e08e1050c51
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587246"
+---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 の新機能
 
 [PowerShell Core 6.0][github] は、異機種混合環境とハイブリッド クラウド用に構築されたオープン ソースのクロスプラットフォーム (Windows、macOS、Linux) である、PowerShell の新しいエディションです。

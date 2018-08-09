@@ -1,3 +1,14 @@
+---
+title: PowerShell Core のサポート ライフサイクル
+description: PowerShell Core のサポートを管理するポリシー
+ms.date: 08/06/2018
+ms.openlocfilehash: 2e0ca1b9c133e6f316a40aff13365d0489059165
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587161"
+---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core のサポート ライフサイクル
 
 PowerShell Core は、Windows PowerShell とは別に出荷され、インストールされ、構成される別個のツール セットであり、コンポーネント セットです。
@@ -44,7 +55,8 @@ Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポ�
 | Windows Server 2008 R2、2012 R2、2016             | サポート   | サポート   |
 | [Windows Server 半期チャネル][semi-annual] | サポート   | サポート   |
 | Ubuntu 14.04 および 16.04                           | サポート   | サポート   |
-| Ubuntu 17.10、および 18.04                           |             | サポート   |
+| Ubuntu 18.04                                      |             | サポート   |
+| Ubuntu 18.10 (Snap パッケージを使用)                   |             | コミュニティ   |
 | Debian 8.7 以降および 9                                | サポート   | サポート   |
 | CentOS 7                                          | サポート   | サポート   |
 | Red Hat Enterprise Linux 7                        | サポート   | サポート   |
@@ -56,6 +68,10 @@ Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポ�
 | Raspbian                                          | Experimental| コミュニティ   |
 | Kali                                              | コミュニティ   | コミュニティ   |
 | AppImage (複数の Linux プラットフォームで機能)     | コミュニティ   | コミュニティ   |
+| [Snap パッケージ](https://snapcraft.io/powershell)   | 注を参照    | 注を参照    |
+
+> [!NOTE]
+> Snap パッケージは、一定期間、試験段階になります。  その後、Snap で新しいサポートの問題が発生しないことが確認されたら、お客様がパッケージを実行しているディストリビューションをサポートがフォローします。
 
 ## <a name="platform-which-are-out-of-support"></a>サポート対象外のプラットフォーム
 
@@ -65,13 +81,14 @@ Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポ�
 
 | OS       | バージョン | 有効期限切れ                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 26      | [2018 年 5 月](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| Fedora   | 25      | [2017 年 12 月](https://fedoramagazine.org/fedora-25-end-life/)                             |
 | Fedora   | 24      | [2017 年 8 月](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| openSUSE | 42.2    | [2018 年 1 月](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
+| Fedora   | 25      | [2017 年 12 月](https://fedoramagazine.org/fedora-25-end-life/)                             |
+| Fedora   | 26      | [2018 年 5 月](https://fedoramagazine.org/fedora-26-end-life/)                                  |
 | openSUSE | 42.1    | [2017 年 5 月](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| Ubuntu   | 17.04   | [2018 年 1 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| openSUSE | 42.2    | [2018 年 1 月](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
 | Ubuntu   | 16.10   | [2017 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
+| Ubuntu   | 17.04   | [2018 年 1 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
+| Ubuntu   | 17.10   | [2018 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
 
 ## <a name="notes-on-licensing"></a>ライセンスに関する注意事項
 
