@@ -1,14 +1,14 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: パイプラインからオブジェクトを削除する (Where-Object)
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 46f210e1418098f4809174cd975ab8d783580285
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34753840"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587144"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>パイプラインからオブジェクトを削除する (Where-Object)
 
@@ -38,7 +38,7 @@ Windows PowerShell には、`Where-Object` コマンドレットがあります�
 |-contains|[内容]|1,2,3 -contains 1|
 |-notcontains|[次の値を含まない]|1,2,3 -notcontains 4|
 
-Where-Object スクリプト ブロックは、パイプライン中の現在のオブジェクトを参照するために、特殊変数 '$_' を使用します。 次に挙げるのは、その働きを示す例です。 数値の一覧があり、3 未満の値だけを返したい場合、Where-Object を使用して、次のように入力して数値を抽出できます。
+Where-Object スクリプト ブロックは、パイプライン中の現在のオブジェクトを参照するために、特殊変数 `$_` を使用します。 次に挙げるのは、その働きを示す例です。 数値の一覧があり、3 未満の値だけを返したい場合、Where-Object を使用して、次のように入力して数値を抽出できます。
 
 ```
 PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
@@ -48,7 +48,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 
 ### <a name="filtering-based-on-object-properties"></a>オブジェクトのプロパティに基づくフィルタリング
 
-$_ は、現在のパイプライン オブジェクトを参照するので、テストのためにそのプロパティにアクセスできます。
+`$_` は、現在のパイプライン オブジェクトを参照するので、テストのためにそのプロパティにアクセスできます。
 
 例として、WMI の Win32_SystemDriver クラスを取り上げます。 特定のシステムには、何百ものシステム ドライバーが存在する可能性がありますが、関心を向けるのは、現在実行中のシステム ドライバーなど、システム ドライバーの特定のセットだけの場合があります。 Get-Member を使用して、Win32_SystemDriver メンバーを表示する場合 (**Get-WmiObject -Class Win32_SystemDriver | Get-Member -MemberType Property**)、関連するプロパティは State に、ドライバーが実行中であればその値は "Running" になります。 システム ドライバーをフィルタリングして、次のように入力して実行中のドライバーのみを選択できます。
 

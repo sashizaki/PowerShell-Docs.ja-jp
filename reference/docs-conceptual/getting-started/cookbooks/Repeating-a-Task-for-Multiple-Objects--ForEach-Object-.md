@@ -3,16 +3,16 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: 複数のオブジェクトのタスクを繰り返す (ForEach-Object)
 ms.assetid: 6697a12d-2470-4ed6-b5bb-c35e5d525eb6
-ms.openlocfilehash: 8b8002af3ade0905421760ce29cdc84b084236e9
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: 64d85edad4a6931b2376b95b6d1f5b4d5194399f
+ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30954281"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39587263"
 ---
 # <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>複数のオブジェクトのタスクを繰り返す (ForEach-Object)
 
-**ForEach-Object** コマンドレットは、現在のパイプライン オブジェクトのスクリプト ブロックと $_ 記述子を使用して、パイプライン内の各オブジェクトのコマンドを実行できるようにします。 これは、いくつかの複雑なタスクを実行するために使用できます。
+**ForEach-Object** コマンドレットは、現在のパイプライン オブジェクトのスクリプト ブロックと `$_` 記述子を使用して、パイプライン内の各オブジェクトのコマンドを実行できるようにします。 これは、いくつかの複雑なタスクを実行するために使用できます。
 
 これが有用な状況の 1 つは、データをさらに有効活用するよう操作する場合です。 たとえば、WMI からの Win32_LogicalDisk クラスは、各ローカル ディスクの空き領域の情報を返すのに使用できます。 データはバイト単位で返されますが、次のように、読み取るのは困難です。
 
