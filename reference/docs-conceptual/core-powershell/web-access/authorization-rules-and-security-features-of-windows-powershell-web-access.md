@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access の承認規則とセキュリティ機能
-ms.openlocfilehash: 07b85a3c7bced58b9ee8db401f0339ba6011bc96
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: e9bed3900263a51b1b8236a3c3430154a5d11886
+ms.sourcegitcommit: 31a221d982305c7f999b1afeb15e3629e9620de8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268349"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43133082"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Access の承認規則とセキュリティ機能
 
@@ -144,7 +144,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
    ```
    Get-PswaAuthorizationRule `
       -RuleName <rule-name> | Remove-PswaAuthorizationRule
-  ```
+   ```
 
 > [!NOTE]
 > 指定した承認規則を削除するかどうかを確認するメッセージは表示されず、**Enter** キーを押すと規則が削除されます。 `Remove-PswaAuthorizationRule` コマンドレットを実行する前に、削除する承認規則が正しいことを必ず確認してください。
