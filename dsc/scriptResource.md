@@ -1,31 +1,21 @@
 ---
-ms.date: 06/12/2017
+ms.date: 08/24/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Script リソース
-ms.openlocfilehash: 1163d454972d8ee519d1c55b77bb85979faf3536
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189450"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43133895"
 ---
-# <a name="dsc-script-resource"></a><span data-ttu-id="256c9-103">DSC Script リソース</span><span class="sxs-lookup"><span data-stu-id="256c9-103">DSC Script Resource</span></span>
+# <a name="dsc-script-resource"></a><span data-ttu-id="d51db-103">DSC Script リソース</span><span class="sxs-lookup"><span data-stu-id="d51db-103">DSC Script Resource</span></span>
 
+> <span data-ttu-id="d51db-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.x</span><span class="sxs-lookup"><span data-stu-id="d51db-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.x</span></span>
 
-> <span data-ttu-id="256c9-104">適用先: Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="256c9-104">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+<span data-ttu-id="d51db-105">Windows PowerShell Desired State Configuration (DSC) の **Script** リソースは、ターゲット ノードで Windows PowerShell スクリプトのブロックを実行するためのメカニズムを備えています。</span><span class="sxs-lookup"><span data-stu-id="d51db-105">The **Script** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to run Windows PowerShell script blocks on target nodes.</span></span> <span data-ttu-id="d51db-106">**Script** リソースでは、該当の DSC 状態の操作を実行するために定義したスクリプト ブロックを含む `GetScript`、`SetScript`、および `TestScript` プロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="d51db-106">The **Script** resource uses `GetScript`, `SetScript`, and `TestScript` properties that contain script blocks you define to perform the corresponding DSC state operations.</span></span>
 
-<span data-ttu-id="256c9-105">Windows PowerShell Desired State Configuration (DSC) の **Script** リソースは、ターゲット ノードで Windows PowerShell スクリプトのブロックを実行するためのメカニズムを備えています。</span><span class="sxs-lookup"><span data-stu-id="256c9-105">The **Script** resource in Windows PowerShell Desired State Configuration (DSC) provides a mechanism to run Windows PowerShell script blocks on target nodes.</span></span> <span data-ttu-id="256c9-106">`Script` リソースには、`GetScript`、`SetScript`、`TestScript` プロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="256c9-106">The `Script` resource has `GetScript`, `SetScript`, and `TestScript` properties.</span></span> <span data-ttu-id="256c9-107">このプロパティは、各ターゲット ノードに対して実行されるスクリプト ブロックに設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="256c9-107">These properties should be set to script blocks that will run on each target node.</span></span>
-
-<span data-ttu-id="256c9-108">`GetScript` スクリプト ブロックは、現在のノードの状態を表すハッシュ テーブルを返します。</span><span class="sxs-lookup"><span data-stu-id="256c9-108">The `GetScript` script block should return a hashtable representing the state of the current node.</span></span> <span data-ttu-id="256c9-109">ハッシュ テーブルに入るキーは 1 つだけです (`Result`)。値の型は `String` になります。</span><span class="sxs-lookup"><span data-stu-id="256c9-109">The hashtable must only contain one key `Result` and the value must be of type `String`.</span></span> <span data-ttu-id="256c9-110">何も返す必要はありません。</span><span class="sxs-lookup"><span data-stu-id="256c9-110">It is not required to return anything.</span></span> <span data-ttu-id="256c9-111">DSC は、このスクリプト ブロックの出力を処理しません。</span><span class="sxs-lookup"><span data-stu-id="256c9-111">DSC doesn't do anything with the output of this script block.</span></span>
-
-<span data-ttu-id="256c9-112">`TestScript` スクリプト ブロックは、現在のノードを変更する必要があるかどうかを判定します。</span><span class="sxs-lookup"><span data-stu-id="256c9-112">The `TestScript` script block should determine if the current node needs to be modified.</span></span> <span data-ttu-id="256c9-113">ノードが最新の場合は `$true` を返します。</span><span class="sxs-lookup"><span data-stu-id="256c9-113">It should return `$true` if the node is up-to-date.</span></span> <span data-ttu-id="256c9-114">ノードの構成が最新ではなく、`SetScript` スクリプト ブロックで更新する必要がある場合は、`$false` が返されます。</span><span class="sxs-lookup"><span data-stu-id="256c9-114">It should return `$false` if the node's configuration is out-of-date and should be updated by the `SetScript` script block.</span></span> <span data-ttu-id="256c9-115">`TestScript` スクリプト ブロックは DSC によって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="256c9-115">The `TestScript` script block is called by DSC.</span></span>
-
-<span data-ttu-id="256c9-116">`SetScript` スクリプト ブロックはノードを変更します。</span><span class="sxs-lookup"><span data-stu-id="256c9-116">The `SetScript` script block should modify the node.</span></span> <span data-ttu-id="256c9-117">これは、`TestScript` ブロックから `$false` が返された場合に DSC によって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="256c9-117">It is called by DSC if the `TestScript` block return `$false`.</span></span>
-
-<span data-ttu-id="256c9-118">`GetScript`、`TestScript`、または `SetScript` スクリプト ブロックで構成スクリプトの変数を使用する必要がある場合は、`$using:` スコープを使用します (例については、以下を参照してください)。</span><span class="sxs-lookup"><span data-stu-id="256c9-118">If you need to use variables from your configuration script in the `GetScript`, `TestScript`, or `SetScript` script blocks, use the `$using:` scope (see below for an example).</span></span>
-
-
-## <a name="syntax"></a><span data-ttu-id="256c9-119">構文</span><span class="sxs-lookup"><span data-stu-id="256c9-119">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="d51db-107">構文</span><span class="sxs-lookup"><span data-stu-id="d51db-107">Syntax</span></span>
 
 ```
 Script [string] #ResourceName
@@ -38,37 +28,68 @@ Script [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a><span data-ttu-id="256c9-120">プロパティ</span><span class="sxs-lookup"><span data-stu-id="256c9-120">Properties</span></span>
+> [!NOTE]
+> <span data-ttu-id="d51db-108">`GetScript`、`TestScript`、および `SetScript` ブロックは、文字列として格納されます。</span><span class="sxs-lookup"><span data-stu-id="d51db-108">The `GetScript`, `TestScript`, and `SetScript` blocks are stored as strings.</span></span>
 
-|  <span data-ttu-id="256c9-121">プロパティ</span><span class="sxs-lookup"><span data-stu-id="256c9-121">Property</span></span>  |  <span data-ttu-id="256c9-122">説明</span><span class="sxs-lookup"><span data-stu-id="256c9-122">Description</span></span>   |
-|---|---|
-| <span data-ttu-id="256c9-123">GetScript</span><span class="sxs-lookup"><span data-stu-id="256c9-123">GetScript</span></span>| <span data-ttu-id="256c9-124">[Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) コマンドレットを呼び出すと実行される Windows PowerShell スクリプトのブロックを提供します。</span><span class="sxs-lookup"><span data-stu-id="256c9-124">Provides a block of Windows PowerShell script that runs when you invoke the [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) cmdlet.</span></span> <span data-ttu-id="256c9-125">このブロックでは、ハッシュ テーブルを返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="256c9-125">This block must return a hashtable.</span></span> <span data-ttu-id="256c9-126">ハッシュ テーブルに入るキーは 1 つだけです (**結果**)。値の型は**文字列**になります。</span><span class="sxs-lookup"><span data-stu-id="256c9-126">The hashtable must only contain one key **Result** and the value must be of type **String**.</span></span>|
-| <span data-ttu-id="256c9-127">SetScript</span><span class="sxs-lookup"><span data-stu-id="256c9-127">SetScript</span></span>| <span data-ttu-id="256c9-128">Windows PowerShell スクリプトのブロックを提供します。</span><span class="sxs-lookup"><span data-stu-id="256c9-128">Provides a block of Windows PowerShell script.</span></span> <span data-ttu-id="256c9-129">[Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) コマンドレットを呼び出すと、**TestScript** ブロックが最初に実行されます。</span><span class="sxs-lookup"><span data-stu-id="256c9-129">When you invoke the [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet, the **TestScript** block runs first.</span></span> <span data-ttu-id="256c9-130">**TestScript** ブロックが **$false** を返した場合は、**SetScript** ブロックが実行されます。</span><span class="sxs-lookup"><span data-stu-id="256c9-130">If the **TestScript** block returns **$false**, the **SetScript** block will run.</span></span> <span data-ttu-id="256c9-131">**TestScript** ブロックが **$true** を返した場合は、**SetScript** ブロックが実行されません。</span><span class="sxs-lookup"><span data-stu-id="256c9-131">If the **TestScript** block returns **$true**, the **SetScript** block will not run.</span></span>|
-| <span data-ttu-id="256c9-132">TestScript</span><span class="sxs-lookup"><span data-stu-id="256c9-132">TestScript</span></span>| <span data-ttu-id="256c9-133">Windows PowerShell スクリプトのブロックを提供します。</span><span class="sxs-lookup"><span data-stu-id="256c9-133">Provides a block of Windows PowerShell script.</span></span> <span data-ttu-id="256c9-134">[Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) コマンドレットを呼び出すと、このブロックが実行されます。</span><span class="sxs-lookup"><span data-stu-id="256c9-134">When you invoke the [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) cmdlet, this block runs.</span></span> <span data-ttu-id="256c9-135">これが **$false** を返した場合は、SetScript ブロックが実行されます。</span><span class="sxs-lookup"><span data-stu-id="256c9-135">If it returns **$false**, the SetScript block will run.</span></span> <span data-ttu-id="256c9-136">これが **$true** を返した場合は、SetScript ブロックが実行されません。</span><span class="sxs-lookup"><span data-stu-id="256c9-136">If it returns **$true**, the SetScript block will not run.</span></span> <span data-ttu-id="256c9-137">[Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) コマンドレットを呼び出すと、**TestScript** ブロックも実行されます。</span><span class="sxs-lookup"><span data-stu-id="256c9-137">The **TestScript** block also runs when you invoke the [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) cmdlet.</span></span> <span data-ttu-id="256c9-138">ただし、この場合、TestScript ブロックがどのような値を返すかに関係なく、**SetScript** ブロックは実行されません。</span><span class="sxs-lookup"><span data-stu-id="256c9-138">However, in this case, the **SetScript** block will not run, no matter what value the TestScript block returns.</span></span> <span data-ttu-id="256c9-139">**TestScript** ブロックは、実際の構成が現在の Desired State Configuration と一致する場合には True を返す必要があり、一致しない場合には False を返す必要があります </span><span class="sxs-lookup"><span data-stu-id="256c9-139">The **TestScript** block must return True if the actual configuration matches the current desired state configuration, and False if it does not match.</span></span> <span data-ttu-id="256c9-140">(現在の Desired State Configuration は DSC を使用しているノードに適用された最後の構成です)。</span><span class="sxs-lookup"><span data-stu-id="256c9-140">(The current desired state configuration is the last configuration enacted on the node that is using DSC.)</span></span>|
-| <span data-ttu-id="256c9-141">Credential</span><span class="sxs-lookup"><span data-stu-id="256c9-141">Credential</span></span>| <span data-ttu-id="256c9-142">資格情報が必要な場合、このスクリプトの実行に使用する資格情報を示します。</span><span class="sxs-lookup"><span data-stu-id="256c9-142">Indicates the credentials to use for running this script, if credentials are required.</span></span>|
-| <span data-ttu-id="256c9-143">DependsOn</span><span class="sxs-lookup"><span data-stu-id="256c9-143">DependsOn</span></span>| <span data-ttu-id="256c9-144">このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="256c9-144">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="256c9-145">たとえば、最初に実行するリソース構成スクリプト ブロックの ID が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。</span><span class="sxs-lookup"><span data-stu-id="256c9-145">For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>
+## <a name="properties"></a><span data-ttu-id="d51db-109">プロパティ</span><span class="sxs-lookup"><span data-stu-id="d51db-109">Properties</span></span>
 
-## <a name="example-1"></a><span data-ttu-id="256c9-146">例 1</span><span class="sxs-lookup"><span data-stu-id="256c9-146">Example 1</span></span>
+|<span data-ttu-id="d51db-110">プロパティ</span><span class="sxs-lookup"><span data-stu-id="d51db-110">Property</span></span>|<span data-ttu-id="d51db-111">説明</span><span class="sxs-lookup"><span data-stu-id="d51db-111">Description</span></span>|
+|--------|-----------|
+|<span data-ttu-id="d51db-112">GetScript</span><span class="sxs-lookup"><span data-stu-id="d51db-112">GetScript</span></span>|<span data-ttu-id="d51db-113">ノードの現在の状態を返すスクリプト ブロック。</span><span class="sxs-lookup"><span data-stu-id="d51db-113">A script block that returns the current state of the Node.</span></span>|
+|<span data-ttu-id="d51db-114">SetScript</span><span class="sxs-lookup"><span data-stu-id="d51db-114">SetScript</span></span>|<span data-ttu-id="d51db-115">ノードが目的の状態になっていない場合に、コンプライアンスを適用するために DSC が使用するスクリプト ブロック。</span><span class="sxs-lookup"><span data-stu-id="d51db-115">A script block that DSC uses to enforce compliance when the Node is not in the desired state.</span></span>|
+|<span data-ttu-id="d51db-116">TestScript</span><span class="sxs-lookup"><span data-stu-id="d51db-116">TestScript</span></span>|<span data-ttu-id="d51db-117">ノードが目的の状態になっているかどうかを判定するスクリプト ブロック。</span><span class="sxs-lookup"><span data-stu-id="d51db-117">A script block that determines if the Node is in the desired state.</span></span>|
+|<span data-ttu-id="d51db-118">Credential</span><span class="sxs-lookup"><span data-stu-id="d51db-118">Credential</span></span>| <span data-ttu-id="d51db-119">資格情報が必要な場合、このスクリプトの実行に使用する資格情報を示します。</span><span class="sxs-lookup"><span data-stu-id="d51db-119">Indicates the credentials to use for running this script, if credentials are required.</span></span>|
+|<span data-ttu-id="d51db-120">DependsOn</span><span class="sxs-lookup"><span data-stu-id="d51db-120">DependsOn</span></span>| <span data-ttu-id="d51db-121">このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。</span><span class="sxs-lookup"><span data-stu-id="d51db-121">Indicates that the configuration of another resource must run before this resource is configured.</span></span> <span data-ttu-id="d51db-122">たとえば、最初に実行するリソース構成スクリプト ブロックの ID が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。</span><span class="sxs-lookup"><span data-stu-id="d51db-122">For example, if the ID of the resource configuration script block that you want to run first is **ResourceName** and its type is **ResourceType**, the syntax for using this property is `DependsOn = "[ResourceType]ResourceName"`.</span></span>
+
+### <a name="getscript"></a><span data-ttu-id="d51db-123">GetScript</span><span class="sxs-lookup"><span data-stu-id="d51db-123">GetScript</span></span>
+
+<span data-ttu-id="d51db-124">DSC は `GetScript` からの出力を使用しません。</span><span class="sxs-lookup"><span data-stu-id="d51db-124">DSC does not use the output from `GetScript`.</span></span> <span data-ttu-id="d51db-125">[Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) コマンドレットは `GetScript` を実行して、ノードの現在の状態を取得します。</span><span class="sxs-lookup"><span data-stu-id="d51db-125">The [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) cmdlet executes the `GetScript` to retrieve a node's current state.</span></span> <span data-ttu-id="d51db-126">戻り値は `GetScript` からは必要とされません。</span><span class="sxs-lookup"><span data-stu-id="d51db-126">A return value is not required from `GetScript`.</span></span> <span data-ttu-id="d51db-127">戻り値を指定した場合は、値が `String` の **Result** キーを含む `hashtable` になっている必要があります。</span><span class="sxs-lookup"><span data-stu-id="d51db-127">If you specify a return value, it must be a `hashtable` containing a **Result** key whose value is a `String`.</span></span>
+
+### <a name="testscript"></a><span data-ttu-id="d51db-128">TestScript</span><span class="sxs-lookup"><span data-stu-id="d51db-128">TestScript</span></span>
+
+<span data-ttu-id="d51db-129">`TestScript` は、`SetScript` が実行される必要があるかどうかを判定するために、DSC によって実行されます。</span><span class="sxs-lookup"><span data-stu-id="d51db-129">The `TestScript` is executed by DSC to determine if the `SetScript` should be run.</span></span> <span data-ttu-id="d51db-130">`TestScript` から `$false` が返された場合、DSC は `SetScript` を実行して、ノードを目的の状態に戻します。</span><span class="sxs-lookup"><span data-stu-id="d51db-130">If the `TestScript` returns `$false`, DSC executes the `SetScript` to bring the node back to the desired state.</span></span> <span data-ttu-id="d51db-131">`boolean` 値を返す必要があります。</span><span class="sxs-lookup"><span data-stu-id="d51db-131">It must return a `boolean` value.</span></span> <span data-ttu-id="d51db-132">結果が `$true` の場合、ノードが準拠しており `SetScript` が実行されるべきではないことを示します。</span><span class="sxs-lookup"><span data-stu-id="d51db-132">A result of `$true` indicates that the node is compliant and `SetScript` should not executed.</span></span>
+
+<span data-ttu-id="d51db-133">[Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) コマンドレットでは、`TestScript` を実行して、**Script** リソースに準拠しているノードを取得します。</span><span class="sxs-lookup"><span data-stu-id="d51db-133">The [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) cmdlet, executes the `TestScript` to retrieve the nodes compliance with the  **Script** resources.</span></span> <span data-ttu-id="d51db-134">ただし、この場合は、`TestScript` ブロックによって返される値に関わらず、`SetScript` は実行されません。</span><span class="sxs-lookup"><span data-stu-id="d51db-134">However, in this case, the `SetScript` does not run, no matter what the `TestScript` block returns.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="d51db-135">`TestScript` からの出力はすべて、戻り値の一部です。</span><span class="sxs-lookup"><span data-stu-id="d51db-135">All output from your `TestScript` is part of its return value.</span></span> <span data-ttu-id="d51db-136">PowerShell は、抑制されていない出力を非ゼロとして解釈します。これは、ノードの状態に関係なく、`TestScript` は `$true` を返すことを意味します。</span><span class="sxs-lookup"><span data-stu-id="d51db-136">PowerShell interprets unsuppressed output as non-zero, which means that your `TestScript` will return `$true` regardless of your node's state.</span></span>
+> <span data-ttu-id="d51db-137">これにより、誤検知という予期しない結果となり、トラブルシューティングの際に困難が生じます。</span><span class="sxs-lookup"><span data-stu-id="d51db-137">This results in unpredictable results, false positives, and causes difficulty during troubleshooting.</span></span>
+
+### <a name="setscript"></a><span data-ttu-id="d51db-138">SetScript</span><span class="sxs-lookup"><span data-stu-id="d51db-138">SetScript</span></span>
+
+<span data-ttu-id="d51db-139">`SetScript` はノードを変更して、目的の状態を適用します。</span><span class="sxs-lookup"><span data-stu-id="d51db-139">The `SetScript` modifies the node to enfore the desired state.</span></span> <span data-ttu-id="d51db-140">これは、`TestScript` スクリプト ブロックから `$false` が返された場合に、DSC によって呼び出されます。</span><span class="sxs-lookup"><span data-stu-id="d51db-140">It is called by DSC if the `TestScript` script block returns `$false`.</span></span> <span data-ttu-id="d51db-141">`SetScript` には、戻り値はありません。</span><span class="sxs-lookup"><span data-stu-id="d51db-141">The `SetScript` should have no return value.</span></span>
+
+## <a name="examples"></a><span data-ttu-id="d51db-142">例</span><span class="sxs-lookup"><span data-stu-id="d51db-142">Examples</span></span>
+
+### <a name="example-1-write-sample-text-using-a-script-resource"></a><span data-ttu-id="d51db-143">例 1: Script リソースを使用して、サンプル テキストを作成する</span><span class="sxs-lookup"><span data-stu-id="d51db-143">Example 1: Write sample text using a Script resource</span></span>
+
+<span data-ttu-id="d51db-144">この例では、各ノード上の `C:\TempFolder\TestFile.txt` の有無についてテストします。</span><span class="sxs-lookup"><span data-stu-id="d51db-144">This example tests for the existence of `C:\TempFolder\TestFile.txt` on each node.</span></span> <span data-ttu-id="d51db-145">このファイルがない場合は、`SetScript` を使用してファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="d51db-145">If it does not exist, it creates it using the `SetScript`.</span></span> <span data-ttu-id="d51db-146">`GetScript` はファイルのコンテンツを返し、その戻り値は使用されません。</span><span class="sxs-lookup"><span data-stu-id="d51db-146">The `GetScript` returns the contents of the file, and its return value is not used.</span></span>
+
 ```powershell
 Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script ScriptExample
+    Node localhost
     {
-        SetScript =
+        Script ScriptExample
         {
-            $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
-            $sw.WriteLine("Some sample string")
-            $sw.Close()
+            SetScript = {
+                $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
+                $sw.WriteLine("Some sample string")
+                $sw.Close()
+            }
+            TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
+            GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
         }
-        TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-        GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
     }
 }
 ```
 
-## <a name="example-2"></a><span data-ttu-id="256c9-147">例 2</span><span class="sxs-lookup"><span data-stu-id="256c9-147">Example 2</span></span>
+### <a name="example-2-compare-version-information-using-a-script-resource"></a><span data-ttu-id="d51db-147">例 2: Script リソースを使用してバージョン情報を比較する</span><span class="sxs-lookup"><span data-stu-id="d51db-147">Example 2: Compare version information using a Script resource</span></span>
+
+<span data-ttu-id="d51db-148">この例は、オーサリング コンピューター上のテキスト ファイルから *compliant* バージョン情報を取得して、これを `$version` 変数に格納します。</span><span class="sxs-lookup"><span data-stu-id="d51db-148">This example retrieves the *compliant* version information from a text file on the authoring computer and stores it in the `$version` variable.</span></span> <span data-ttu-id="d51db-149">ノードの MOF ファイルを生成するときに、各スクリプト ブロックの `$using:version` 変数は、DSC によって `$version` 変数の値に置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="d51db-149">When generating the node's MOF file, DSC replaces the `$using:version` variables in each script block with the value of the `$version` variable.</span></span> <span data-ttu-id="d51db-150">実行時に *compliant* バージョンが各ノード上のテキスト ファイルに格納され、以降の実行で比較され更新されます。</span><span class="sxs-lookup"><span data-stu-id="d51db-150">During execution, the *compliant* version is stored in a text file on each Node and compared and updated on subsequent executions.</span></span>
+
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -76,27 +97,30 @@ Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script UpdateConfigurationVersion
+    Node localhost
     {
-        GetScript = {
-            $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Result' = "$currentVersion" }
-        }
-        TestScript = {
-            $state = $GetScript
-            if( $state['Result'] -eq $using:version )
-            {
-                Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
-                return $true
+        Script UpdateConfigurationVersion
+        {
+            GetScript = {
+                $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+                return @{ 'Result' = "$currentVersion" }
             }
-            Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
-            return $false
-        }
-        SetScript = {
-            $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            TestScript = {
+                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                $state = [scriptblock]::Create($GetScript).Invoke()
+
+                if( $state['Result'] -eq $using:version )
+                {
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    return $true
+                }
+                Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+                return $false
+            }
+            SetScript = {
+                $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            }
         }
     }
 }
 ```
-
-<span data-ttu-id="256c9-148">このリソースは、構成のバージョンをテキスト ファイルに書き込んでいます。</span><span class="sxs-lookup"><span data-stu-id="256c9-148">This resource is writing the configuration's version to a text file.</span></span> <span data-ttu-id="256c9-149">このバージョンはクライアント コンピューターで利用できますが、いずれのノードでも使用できないため、PowerShell の `using` スコープを指定して、`Script` リソースのスクリプト ブロックそれぞれに渡す必要があります。</span><span class="sxs-lookup"><span data-stu-id="256c9-149">This version is available on the client computer, but isn't on any of the nodes, so it has to be passed to each of the `Script` resource's script blocks with PowerShell's `using` scope.</span></span> <span data-ttu-id="256c9-150">ノードの MOF ファイルを生成すると、`$version` 変数の値は、クライアント コンピューター上のテキスト ファイルから読み取られます。</span><span class="sxs-lookup"><span data-stu-id="256c9-150">When generating the node's MOF file, the value of the `$version` variable is read from a text file on the client computer.</span></span> <span data-ttu-id="256c9-151">各スクリプト ブロックの `$using:version` 変数は、DSC によって `$version` 変数の値に置き換えられます。</span><span class="sxs-lookup"><span data-stu-id="256c9-151">DSC replaces the `$using:version` variables in each script block with the value of the `$version` variable.</span></span>

@@ -1,175 +1,182 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: PowerShell, コマンドレット
 title: 詳しいヘルプ情報の取得
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483034"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134036"
 ---
-# <a name="getting-detailed-help-information"></a><span data-ttu-id="b4de5-103">詳しいヘルプ情報の取得</span><span class="sxs-lookup"><span data-stu-id="b4de5-103">Getting Detailed Help Information</span></span>
-<span data-ttu-id="b4de5-104">Windows PowerShell には、Windows PowerShell の概念と言語について説明した詳しいヘルプ トピックが含まれています。</span><span class="sxs-lookup"><span data-stu-id="b4de5-104">Windows PowerShell includes detailed Help topics that explain Windows PowerShell concepts and the Windows PowerShell language.</span></span> <span data-ttu-id="b4de5-105">また、各コマンドレットおよびプロバイダーに関するヘルプ トピックや、多くの関数およびスクリプトに関するヘルプ トピックもあります。</span><span class="sxs-lookup"><span data-stu-id="b4de5-105">There are also Help topics for each cmdlet and provider and Help topics for many functions and scripts.</span></span>
+# <a name="getting-detailed-help-information"></a><span data-ttu-id="4b1a4-103">詳しいヘルプ情報の取得</span><span class="sxs-lookup"><span data-stu-id="4b1a4-103">Getting detailed help information</span></span>
 
-<span data-ttu-id="b4de5-106">これらのヘルプ トピックはコマンド プロンプトで表示でき、Microsoft TechNet ライブラリで最新版のトピックを見ることもできます。</span><span class="sxs-lookup"><span data-stu-id="b4de5-106">You can display these Help topics at the command prompt or view the most recently updated versions of these topics in the Microsoft TechNet Library.</span></span> <span data-ttu-id="b4de5-107">Windows PowerShell Integrated Scripting Environment など、Windows PowerShell をホストする多くのプログラムでは、状況依存のヘルプやコンパイル済みヘルプ ファイル (.chm) などの追加のヘルプ機能が用意されています。</span><span class="sxs-lookup"><span data-stu-id="b4de5-107">Many programs that host Windows PowerShell, such as Windows PowerShell Integrated Scripting Environment, provide additional Help features, such as context-sensitive Help and compiled Help file (.chm).</span></span>
+<span data-ttu-id="4b1a4-104">PowerShell には、PowerShell の概念と言語について説明した詳しいヘルプ記事があります。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-104">PowerShell includes detailed Help articles that explain PowerShell concepts and the PowerShell language.</span></span> <span data-ttu-id="4b1a4-105">また、各コマンドレットおよびプロバイダーに関するヘルプ記事や、多くの関数およびスクリプトに関するヘルプ記事もあります。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-105">There are also Help articles for each cmdlet and provider and for many functions and scripts.</span></span>
 
-## <a name="getting-help-for-cmdlets"></a><span data-ttu-id="b4de5-108">コマンドレットのヘルプの表示</span><span class="sxs-lookup"><span data-stu-id="b4de5-108">Getting Help for Cmdlets</span></span>
-<span data-ttu-id="b4de5-109">Windows PowerShell のコマンドレットに関するヘルプを表示するには、[Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-109">To get Help about Windows PowerShell cmdlets, use the [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) cmdlet.</span></span> <span data-ttu-id="b4de5-110">たとえば、[Get-ChildItem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) コマンドレットのヘルプを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-110">For example, to get Help for the [Get-ChildItem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) cmdlet, type:</span></span>
+<span data-ttu-id="4b1a4-106">これらのヘルプ記事はコマンド プロンプトで表示でき、[PowerShell](/powershell/scripting/powershell-scripting) ドキュメント オンラインでこれらの記事の最新版を確認することもできます。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-106">You can display these Help articles at the command prompt or view the most recently updated versions of these articles in the [PowerShell](/powershell/scripting/powershell-scripting) documentation online.</span></span>
 
-```
-get-help get-childitem
-```
+## <a name="getting-help-for-cmdlets"></a><span data-ttu-id="4b1a4-107">コマンドレットのヘルプの表示</span><span class="sxs-lookup"><span data-stu-id="4b1a4-107">Getting help for cmdlets</span></span>
 
-<span data-ttu-id="b4de5-111">または</span><span class="sxs-lookup"><span data-stu-id="b4de5-111">or</span></span>
+<span data-ttu-id="4b1a4-108">PowerShell のコマンドレットに関するヘルプを表示するには、[Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-108">To get Help about PowerShell cmdlets, use the [Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) cmdlet.</span></span> <span data-ttu-id="4b1a4-109">たとえば、`Get-ChildItem` コマンドレットのヘルプを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-109">For example, to get Help for the `Get-ChildItem` cmdlet, type:</span></span>
 
-```
-get-childitem -?
+```powershell
+Get-Help Get-ChildItem
 ```
 
-<span data-ttu-id="b4de5-112">Get-Help コマンドレットに関するヘルプも表示できます。</span><span class="sxs-lookup"><span data-stu-id="b4de5-112">You can even get Help about the Get-Help cmdlet.</span></span> <span data-ttu-id="b4de5-113">たとえば、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-113">For example:</span></span>
+<span data-ttu-id="4b1a4-110">または</span><span class="sxs-lookup"><span data-stu-id="4b1a4-110">or</span></span>
 
-```
-get-help get-help
-```
-
-<span data-ttu-id="b4de5-114">セッションのすべてのコマンドレットのヘルプ トピックの一覧を表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-114">To get a list of all the cmdlet Help topics in your session, type:</span></span>
-
-```
-get-help -category cmdlet
+```powershell
+Get-ChildItem -?
 ```
 
-<span data-ttu-id="b4de5-115">各ヘルプ トピックを 1 ページずつ表示するには、**help** 関数、またはそのエイリアスである **man** を使用します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-115">To display one page of each Help topic at a time, use the **help** function or its alias **man**.</span></span> <span data-ttu-id="b4de5-116">たとえば、Get-ChildItem コマンドレットのヘルプを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-116">For example, to display Help for the Get-ChildItem cmdlet, type</span></span>
+<span data-ttu-id="4b1a4-111">Get-Help コマンドレットに関するヘルプも表示できます。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-111">You can even get Help about the Get-Help cmdlet.</span></span> <span data-ttu-id="4b1a4-112">たとえば、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-112">For example:</span></span>
 
-```
-man get-childitem
-```
-
-<span data-ttu-id="b4de5-117">または</span><span class="sxs-lookup"><span data-stu-id="b4de5-117">or</span></span>
-
-```
-help get-childitem
+```powershell
+Get-Help Get-Help
 ```
 
-<span data-ttu-id="b4de5-118">パラメーターの説明や使用例など、コマンドレット、関数、またはスクリプトに関する詳細情報を表示するには、Get-Help コマンドレットの *Detailed* パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-118">To display detailed information about a cmdlet, function, or script, including descriptions of its parameters and examples of its use, use the *Detailed* parameter of the Get-Help cmdlet.</span></span> <span data-ttu-id="b4de5-119">たとえば、Get-ChildItem コマンドレットに関する詳細情報を表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-119">For example, to get detailed information about the Get-ChildItem cmdlet, type:</span></span>
+<span data-ttu-id="4b1a4-113">セッションのすべてのコマンドレットのヘルプ記事の一覧を表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-113">To get a list of all the cmdlet Help articles in your session, type:</span></span>
 
-```
-get-help get-childitem -detailed
-```
-
-<span data-ttu-id="b4de5-120">ヘルプ トピックのすべての内容を表示するには、Get-Help コマンドレットの *Full* パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-120">To display all content in the Help topic, use the *Full* parameter of the Get-Help cmdlet.</span></span> <span data-ttu-id="b4de5-121">たとえば、Get-ChildItem コマンドレットのヘルプ トピックの内容をすべて表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-121">For example, to display all content in the Help topic for the Get-ChildItem cmdlet, type:</span></span>
-
-```
-get-help get-childitem -full
+```powershell
+Get-Help -Category Cmdlet
 ```
 
-<span data-ttu-id="b4de5-122">コマンドレットのパラメーターに関する詳しいヘルプを表示するには、Get-Help コマンドレットの *Parameter* パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-122">To get detailed Help about the parameters of a cmdlet, use the *Parameter* parameter of the Get-Help cmdlet.</span></span> <span data-ttu-id="b4de5-123">たとえば、Get-ChildItem コマンドレットのすべてのパラメーターの詳しいヘルプを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-123">For example, to get detailed Help for all of the parameters of the Get-ChildItem cmdlet, type:</span></span>
+<span data-ttu-id="4b1a4-114">各ヘルプ記事を 1 ページずつ表示するには、`help` 関数またはそのエイリアスである `man` を使用します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-114">To display one page of each Help article at a time, use the `help` function or its alias `man`.</span></span>
+<span data-ttu-id="4b1a4-115">たとえば、`Get-ChildItem` コマンドレットのヘルプを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-115">For example, to display Help for the `Get-ChildItem` cmdlet, type</span></span>
 
-```
-get-help get-childitem -parameter *
-```
-
-<span data-ttu-id="b4de5-124">ヘルプ トピック内の例だけを表示するには、Get-Help の *Example* パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-124">To display only the examples in a Help topic, use the *Example* parameter of the Get-Help.</span></span> <span data-ttu-id="b4de5-125">たとえば、Get-ChildItem コマンドレットのヘルプ トピック内の例のみを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-125">For example, to display only the examples in the Help topic for the Get-ChildItem cmdlet, type:</span></span>
-
-```
-get-help get-childitem -examples
+```powershell
+man Get-ChildItem
 ```
 
-<span data-ttu-id="b4de5-126">作成したコマンドレットに関するヘルプ トピックを記述する方法については、MSDN ライブラリの「[How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)」 (コマンドレット ヘルプの記述方法) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b4de5-126">For information about how to write Help topics for the cmdlets that you write, see [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.</span></span>
+<span data-ttu-id="4b1a4-116">または</span><span class="sxs-lookup"><span data-stu-id="4b1a4-116">or</span></span>
 
-## <a name="getting-conceptual-help"></a><span data-ttu-id="b4de5-127">概念説明のヘルプの表示</span><span class="sxs-lookup"><span data-stu-id="b4de5-127">Getting Conceptual Help</span></span>
-<span data-ttu-id="b4de5-128">Get-Help コマンドレットでは、Windows PowerShell 言語に関するトピックなど、Windows PowerShell の概念説明トピックの情報も表示されます。</span><span class="sxs-lookup"><span data-stu-id="b4de5-128">The Get-Help cmdlet also displays information about conceptual topics in Windows PowerShell, including topics about the Windows PowerShell language.</span></span> <span data-ttu-id="b4de5-129">概念説明のヘルプ トピックには、"about_" というプレフィックスが付きます (about_line_editing など)。</span><span class="sxs-lookup"><span data-stu-id="b4de5-129">Conceptual Help topics begin with the "about_" prefix, such as about_line_editing.</span></span> <span data-ttu-id="b4de5-130">概念説明のトピックの名前は、英語バージョン以外の Windows PowerShell でも英語で入力する必要があります。</span><span class="sxs-lookup"><span data-stu-id="b4de5-130">(The name of the conceptual topic must be entered in English even on non-English versions of Windows PowerShell.)</span></span>
-
-<span data-ttu-id="b4de5-131">概念説明のトピックを一覧表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-131">To display a list of conceptual topics, type:</span></span>
-
-```
-get-help about_*
+```powershell
+help Get-ChildItem
 ```
 
-<span data-ttu-id="b4de5-132">特定のヘルプ トピックを表示するには、次のように、トピック名を入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-132">To display a particular Help topic, type the topic name, for example:</span></span>
+<span data-ttu-id="4b1a4-117">詳細な情報を表示するには、`Get-Help` コマンドレットの **Detailed** パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-117">To display detailed information, use the **Detailed** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="4b1a4-118">たとえば、`Get-ChildItem` コマンドレットに関する詳細情報を表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-118">For example, to get detailed information about the `Get-ChildItem` cmdlet, type:</span></span>
 
-```
-get-help about_command_syntax
-```
-
-<span data-ttu-id="b4de5-133">Get-Help の *Detailed*、*Parameter*、*Examples* などのパラメーターは、概念説明ヘルプ トピックの表示には効果がありません。</span><span class="sxs-lookup"><span data-stu-id="b4de5-133">The parameters of Get-Help, such as *Detailed*, *Parameter*, and *Examples*, have no effect on the display of conceptual Help topics.</span></span>
-
-## <a name="getting-help-about-providers"></a><span data-ttu-id="b4de5-134">プロバイダーに関するヘルプの表示</span><span class="sxs-lookup"><span data-stu-id="b4de5-134">Getting Help About Providers</span></span>
-<span data-ttu-id="b4de5-135">Get-Help コマンドレットでは、Windows PowerShell プロバイダーに関する情報を表示できます。</span><span class="sxs-lookup"><span data-stu-id="b4de5-135">The Get-Help cmdlet displays information about Windows PowerShell providers.</span></span> <span data-ttu-id="b4de5-136">プロバイダーのヘルプを取得するには、"Get-Help" に続けてプロバイダー名を入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-136">To get Help for a provider, type "Get-Help" followed by the provider name.</span></span> <span data-ttu-id="b4de5-137">たとえば、Registry プロバイダーのヘルプを取得するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-137">For example, to get Help for the Registry provider, type:</span></span>
-
-```
-get-help registry
+```powershell
+Get-Help Get-ChildItem -Detailed
 ```
 
-<span data-ttu-id="b4de5-138">セッションのすべてのプロバイダーのヘルプ トピックの一覧を表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-138">To get a list of all the provider Help topics in your session, type</span></span>
+<span data-ttu-id="4b1a4-119">ヘルプ記事のすべての内容を表示するには、`Get-Help` コマンドレットの **Full** パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-119">To display all content in the Help article, use the **Full** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="4b1a4-120">たとえば、`Get-ChildItem` コマンドレットのヘルプ記事の内容をすべて表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-120">For example, to display all content in the Help article for the `Get-ChildItem` cmdlet, type:</span></span>
 
-```
-get-help -category provider
-```
-
-<span data-ttu-id="b4de5-139">Get-Help の *Detailed*、*Parameter*、*Examples* などのパラメーターは、プロバイダーに関するヘルプ トピックの表示には効果がありません。</span><span class="sxs-lookup"><span data-stu-id="b4de5-139">The parameters of Get-Help, such as *Detailed*, *Parameter*, and *Examples*, have no effect on the display of provider Help topics.</span></span>
-
-## <a name="getting-help-about-scripts-and-functions"></a><span data-ttu-id="b4de5-140">スクリプトおよび関数に関するヘルプの表示</span><span class="sxs-lookup"><span data-stu-id="b4de5-140">Getting Help About Scripts and Functions</span></span>
-<span data-ttu-id="b4de5-141">Windows PowerShell の多くのスクリプトおよび関数には、ヘルプ トピックが用意されています。</span><span class="sxs-lookup"><span data-stu-id="b4de5-141">Many scripts and functions in Windows PowerShell have Help topics.</span></span> <span data-ttu-id="b4de5-142">Get-Help コマンドレットを使用して、スクリプトや関数のヘルプ トピックを表示できます。</span><span class="sxs-lookup"><span data-stu-id="b4de5-142">Use the Get-Help cmdlet to display the Help topics for scripts and functions.</span></span>
-
-<span data-ttu-id="b4de5-143">関数のヘルプを表示するには、"get-help" に続けて関数名を入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-143">To display the Help for a function, type "get-help" followed by the function name.</span></span> <span data-ttu-id="b4de5-144">たとえば、Disable-PSRemoting 関数のヘルプを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-144">For example, to get Help for the Disable-PSRemoting function, type:</span></span>
-
-```
-get-help disable-psremoting
+```powershell
+Get-Help Get-ChildItem -Full
 ```
 
-<span data-ttu-id="b4de5-145">スクリプトのヘルプを表示するには、スクリプト ファイルへの完全修飾パスを入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-145">To display the Help for a script, type the fully qualified path to the script file.</span></span> <span data-ttu-id="b4de5-146">スクリプトのパスが Path 環境変数に含まれている場合は、コマンドからパスを省略できます。</span><span class="sxs-lookup"><span data-stu-id="b4de5-146">If the script is in a path that is listed in the Path environment variable, you can omit the path from the command.</span></span>
+<span data-ttu-id="4b1a4-121">コマンドレットのパラメーターに関する詳しいヘルプを表示するには、`Get-Help` コマンドレットの **Parameter** パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-121">To get detailed Help about the parameters of a cmdlet, use the **Parameter** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="4b1a4-122">たとえば、`Get-ChildItem` コマンドレットのすべてのパラメーターの詳しいヘルプを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-122">For example, to get detailed Help for all of the parameters of the `Get-ChildItem` cmdlet, type:</span></span>
 
-<span data-ttu-id="b4de5-147">たとえば、"TestScript.ps1" という名前のスクリプトが C:\\PS-Test ディレクトリに格納されている場合、このスクリプトのヘルプ トピックを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-147">For example, if you have a script called "TestScript.ps1" in your C:\\PS-Test directory, to display the Help topic for the script, type:</span></span>
-
-```
-get-help c:\ps-test\TestScript.ps1
+```powershell
+Get-Help Get-ChildItem -Parameter *
 ```
 
-<span data-ttu-id="b4de5-148">*Detailed*、*Full*、*Examples*、*Parameter* など、コマンドレットのヘルプを表示するためにデザインされているパラメーターは、スクリプトのヘルプや関数のヘルプにも使用できます。</span><span class="sxs-lookup"><span data-stu-id="b4de5-148">The parameters that were designed for displaying cmdlet Help, such as *Detailed*, *Full*, *Examples*, and *Parameter*, work for script Help and function Help, too.</span></span> <span data-ttu-id="b4de5-149">ただし、"get-help \*" を入力してすべてのヘルプを表示した場合、関数およびスクリプトのヘルプは表示されません。</span><span class="sxs-lookup"><span data-stu-id="b4de5-149">However, when you display all Help, by typing "get-help \*", Help for functions and scripts does not appear.</span></span>
+<span data-ttu-id="4b1a4-123">ヘルプ記事内の例だけを表示するには、`Get-Help` の **Example** パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-123">To display only the examples in a Help article, use the **Examples** parameter of the `Get-Help`.</span></span>
+<span data-ttu-id="4b1a4-124">たとえば、`Get-ChildItem ` コマンドレットのヘルプ記事の例だけを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-124">For example, to display only the examples in the Help article for the `Get-ChildItem `cmdlet, type:</span></span>
 
-<span data-ttu-id="b4de5-150">関数およびスクリプトに関するヘルプ トピックを記述する方法については、「[about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)」、「[about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)」、「[about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b4de5-150">For information about writing Help topics for your functions and scripts, see [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105), [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af), and [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf).</span></span>
-
-## <a name="getting-help-online"></a><span data-ttu-id="b4de5-151">オンライン ヘルプの表示</span><span class="sxs-lookup"><span data-stu-id="b4de5-151">Getting Help Online</span></span>
-<span data-ttu-id="b4de5-152">インターネットに接続している場合、ヘルプを見るための最も良い方法の 1 つは、ヘルプ トピックをオンラインで表示することです。</span><span class="sxs-lookup"><span data-stu-id="b4de5-152">If you are connected to the Internet, one of the best ways to get Help is to view the Help topics online.</span></span> <span data-ttu-id="b4de5-153">オンライン トピックは簡単に更新できるため、最新の情報が得られる可能性が高くなります。</span><span class="sxs-lookup"><span data-stu-id="b4de5-153">Because online topics are easy to update, they are likely to provide the most current content.</span></span>
-
-<span data-ttu-id="b4de5-154">オンライン ヘルプを表示するには、Get-Help コマンドレットの *Online* パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-154">To get Help online, try the *Online* parameter of the Get-Help cmdlet.</span></span> <span data-ttu-id="b4de5-155">Get-Help コマンドレットの *Online* パラメーターは、コマンドレットのヘルプ、関数のヘルプ、スクリプトのヘルプに対してのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-155">The *Online* parameter of the Get-Help cmdlet works only for cmdlet Help, function Help, and script Help.</span></span> <span data-ttu-id="b4de5-156">概念説明のトピック ("about" ヘルプ) やプロバイダーに関するヘルプ トピックに対しては、*Online* パラメーターを使用できません。</span><span class="sxs-lookup"><span data-stu-id="b4de5-156">You cannot use the *Online* parameter with conceptual (About) topics or provider Help topics.</span></span> <span data-ttu-id="b4de5-157">また、この機能はオプションであるため、すべてのコマンドレット、関数、スクリプトのヘルプ トピックに有効なわけではありません。</span><span class="sxs-lookup"><span data-stu-id="b4de5-157">Also, because this feature is optional, it does not work for every cmdlet, function, or script Help topic.</span></span>
-
-<span data-ttu-id="b4de5-158">ただし、プロバイダーのヘルプ トピックや概念説明 ("about" ヘルプ) トピックも含め、Windows PowerShell に付属するすべてのヘルプ トピックが、Microsoft TechNet ライブラリの [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116) セクションからオンラインで参照できるようになっています。</span><span class="sxs-lookup"><span data-stu-id="b4de5-158">However, all the Help topics that come with Windows PowerShell, including provider Help and conceptual (About) Help topics, are available online in the [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116) section of the Microsoft TechNet Library.</span></span>
-
-<span data-ttu-id="b4de5-159">Get-Help コマンドレットの *Online* パラメーターを使用するには、次のコマンド形式を使用します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-159">To use the *Online* parameter of the Get-Help cmdlet, use the following command format.</span></span>
-
-```
-get-help <command-name> -online
+```powershell
+Get-Help Get-ChildItem -Examples
 ```
 
-<span data-ttu-id="b4de5-160">たとえば、Get-ChildItem コマンドレットのヘルプ トピックのオンライン バージョンを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-160">For example, to get the online version of the Help topic about the Get-ChildItem cmdlet, type:</span></span>
+<span data-ttu-id="4b1a4-125">作成したコマンドレットに関するヘルプ記事を記述する方法については、「[How to Write Cmdlet Help](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets)」(コマンドレット ヘルプの記述方法) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-125">For information about how to write Help articles for the cmdlets that you write, see [How to Write Cmdlet Help](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets).</span></span>
 
-```
-get-help get-childitem -online
-```
+## <a name="getting-conceptual-help"></a><span data-ttu-id="4b1a4-126">概念説明のヘルプの表示</span><span class="sxs-lookup"><span data-stu-id="4b1a4-126">Getting conceptual help</span></span>
 
-<span data-ttu-id="b4de5-161">ヘルプ トピックのオンライン バージョンが存在する場合には、既定のブラウザーにそのトピックが表示されます。</span><span class="sxs-lookup"><span data-stu-id="b4de5-161">If an online version of the Help topic is available, it will open in your default browser.</span></span>
+<span data-ttu-id="4b1a4-127">`Get-Help` コマンドレットでは、PowerShell 言語に関する記事など、PowerShell の概念説明の記事の情報も表示されます。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-127">The `Get-Help` cmdlet also displays information about conceptual articles in PowerShell, including articles about the PowerShell language.</span></span> <span data-ttu-id="4b1a4-128">概念説明のヘルプ記事には、"about_" というプレフィックスが付きます (about_line_editing など)。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-128">Conceptual Help articles begin with the "about_" prefix, such as about_line_editing.</span></span> <span data-ttu-id="4b1a4-129">概念説明の記事の名前は、英語バージョン以外の PowerShell でも英語で入力する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-129">(The name of the conceptual article must be entered in English even on non-English versions of PowerShell.)</span></span>
 
-<span data-ttu-id="b4de5-162">あるへルプ トピックに対してオンライン ヘルプがサポートされている場合、そのヘルプ トピックのインターネット アドレス (URL) を表示することもできます。</span><span class="sxs-lookup"><span data-stu-id="b4de5-162">If online Help is supported for a Help topic, you can also view the Internet address (URL) of the Help topic.</span></span> <span data-ttu-id="b4de5-163">インターネット アドレスは、ヘルプ トピックの「関連リンク」セクションに表示されます。</span><span class="sxs-lookup"><span data-stu-id="b4de5-163">The Internet address appears in the Related Links section of a Help topic.</span></span>
+<span data-ttu-id="4b1a4-130">概念説明の記事を一覧表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-130">To display a list of conceptual articles, type:</span></span>
 
-<span data-ttu-id="b4de5-164">たとえば、Add-Computer コマンドレットのオンライン ヘルプ トピックの URL を表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-164">For example, to see the URL for the online version of the Add-Computer cmdlet, type:</span></span>
-
-```
-get-help add-computer
+```powershell
+Get-Help about_*
 ```
 
-<span data-ttu-id="b4de5-165">トピックの「関連リンク」セクションの最初の行を次に示します。</span><span class="sxs-lookup"><span data-stu-id="b4de5-165">The first line in the Related Links section of the topic is shown below.</span></span>
+<span data-ttu-id="4b1a4-131">特定のヘルプ記事を表示するには、次のように記事の名前を入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-131">To display a particular Help article, type the article name, for example:</span></span>
 
+```powershell
+Get-Help about_command_syntax
 ```
-Online version: http://go.microsoft.com/fwlink/?LinkID=135194
+
+<span data-ttu-id="4b1a4-132">**Detailed**、**Parameter**、**Examples** などの `Get-Help` のパラメーターは、概念説明のヘルプ記事の表示には効果がありません。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-132">The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of conceptual Help articles.</span></span>
+
+## <a name="getting-help-about-providers"></a><span data-ttu-id="4b1a4-133">プロバイダーに関するヘルプの表示</span><span class="sxs-lookup"><span data-stu-id="4b1a4-133">Getting help about providers</span></span>
+
+<span data-ttu-id="4b1a4-134">`Get-Help` コマンドレットでは、PowerShell プロバイダーに関する情報を表示できます。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-134">The `Get-Help` cmdlet displays information about PowerShell providers.</span></span> <span data-ttu-id="4b1a4-135">プロバイダーのヘルプを取得するには、`Get-Help` に続けてプロバイダー名を入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-135">To get Help for a provider, type `Get-Help` followed by the provider name.</span></span> <span data-ttu-id="4b1a4-136">たとえば、Registry プロバイダーのヘルプを取得するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-136">For example, to get Help for the Registry provider, type:</span></span>
+
+```powershell
+Get-Help registry
 ```
 
-<span data-ttu-id="b4de5-166">ヘルプ トピックのオンライン サポートを提供する方法については、「[about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)」と MSDN ライブラリの [「How to Write Cmdlet Help」](https://go.microsoft.com/fwlink/?LinkID=123415) (コマンドレット ヘルプの記述方法) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="b4de5-166">For information about how to provide online support for your Help topics, see [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf), and see [How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415) in the MSDN library.</span></span>
+<span data-ttu-id="4b1a4-137">セッションのすべてのプロバイダーのヘルプ記事の一覧を表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-137">To get a list of all the provider Help articles in your session, type</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="b4de5-167">参照</span><span class="sxs-lookup"><span data-stu-id="b4de5-167">See Also</span></span>
-- <span data-ttu-id="b4de5-168">[about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)</span><span class="sxs-lookup"><span data-stu-id="b4de5-168">[about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)</span></span>
-- [<span data-ttu-id="b4de5-169">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="b4de5-169">about_Scripts</span></span>](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [<span data-ttu-id="b4de5-170">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="b4de5-170">about_Comment_Based_Help</span></span>](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-- <span data-ttu-id="b4de5-171">[Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)</span><span class="sxs-lookup"><span data-stu-id="b4de5-171">[Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)</span></span>
+```powershell
+Get-Help -Category provider
+```
+
+<span data-ttu-id="4b1a4-138">**Detailed**、**Parameter**、**Examples** などの `Get-Help` のパラメーターは、プロバイダー ヘルプ記事の表示には効果がありません。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-138">The parameters of `Get-Help`, such as **Detailed**, **Parameter**, and **Examples**, have no effect on the display of provider Help articles.</span></span>
+
+## <a name="getting-help-about-scripts-and-functions"></a><span data-ttu-id="4b1a4-139">スクリプトおよび関数に関するヘルプの表示</span><span class="sxs-lookup"><span data-stu-id="4b1a4-139">Getting help about scripts and functions</span></span>
+
+<span data-ttu-id="4b1a4-140">PowerShell の多くのスクリプトおよび関数には、ヘルプ記事が用意されています。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-140">Many scripts and functions in PowerShell have Help articles.</span></span> <span data-ttu-id="4b1a4-141">`Get-Help` コマンドレットを使用して、スクリプトや関数のヘルプ記事を表示します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-141">Use the `Get-Help` cmdlet to display the Help articles for scripts and functions.</span></span>
+
+<span data-ttu-id="4b1a4-142">関数のヘルプを表示するには、`Get-Help` に続けて関数名を入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-142">To display the Help for a function, type `Get-Help` followed by the function name.</span></span> <span data-ttu-id="4b1a4-143">たとえば、`Disable-PSRemoting` 関数のヘルプを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-143">For example, to get Help for the `Disable-PSRemoting` function, type:</span></span>
+
+```powershell
+Get-Help Disable-PSRemoting
+```
+
+<span data-ttu-id="4b1a4-144">スクリプトのヘルプを表示するには、スクリプト ファイルへのパスを入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-144">To display the Help for a script, type the path to the script file.</span></span> <span data-ttu-id="4b1a4-145">スクリプトが Path 環境変数に一覧表示されたパスにない場合は、完全修飾パスを使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-145">If the script is not in a path listed in the Path environment variable, you must use the fully qualified path.</span></span>
+
+<span data-ttu-id="4b1a4-146">たとえば、"TestScript.ps1" という名前のスクリプトが C:\\PS-Test ディレクトリに格納されている場合、このスクリプトのヘルプ記事を表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-146">For example, if you have a script called "TestScript.ps1" in your C:\\PS-Test directory, to display the Help article for the script, type:</span></span>
+
+```powershell
+Get-Help c:\ps-test\TestScript.ps1
+```
+
+<span data-ttu-id="4b1a4-147">コマンドレットのヘルプを表示するように設計されたパラメーターは、スクリプトと関数のヘルプにも有効です。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-147">The parameters that are designed for displaying cmdlet Help work for script and function Help, too.</span></span> <span data-ttu-id="4b1a4-148">ただし、`Get-Help *` を実行している場合、スクリプトと関数のヘルプは表示されません。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-148">However, help for functions and scripts is not shown when you run `Get-Help *`.</span></span>
+
+<span data-ttu-id="4b1a4-149">関数とスクリプトのヘルプ記事の記述については、次の記事を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-149">For information about writing Help articles for your functions and scripts, see the following articles:</span></span>
+
+- [<span data-ttu-id="4b1a4-150">about_Functions</span><span class="sxs-lookup"><span data-stu-id="4b1a4-150">about_Functions</span></span>](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [<span data-ttu-id="4b1a4-151">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="4b1a4-151">about_Scripts</span></span>](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [<span data-ttu-id="4b1a4-152">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="4b1a4-152">about_Comment_Based_Help</span></span>](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+
+## <a name="getting-help-online"></a><span data-ttu-id="4b1a4-153">オンラインでのヘルプの表示</span><span class="sxs-lookup"><span data-stu-id="4b1a4-153">Getting help online</span></span>
+
+<span data-ttu-id="4b1a4-154">オンラインでのヘルプ記事の表示は、ヘルプを表示するための最善の方法の 1 つです。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-154">Viewing the Help articles online is one of the best ways to get help.</span></span> <span data-ttu-id="4b1a4-155">オンラインの記事は、より簡単に最新のコンテンツに更新して提供できます。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-155">Online articles are easier to update and provide the most current content.</span></span>
+
+<span data-ttu-id="4b1a4-156">オンライン ヘルプを表示するには、`Get-Help` コマンドレットの **Online** パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-156">To get Help online, use the **Online** parameter of the `Get-Help` cmdlet.</span></span> <span data-ttu-id="4b1a4-157">プロバイダー ヘルプや概念説明 (About) のヘルプ記事など、PowerShell に付属しているすべてのヘルプ記事は、[PowerShell](/powershell/scripting/powershell-scripting) ドキュメントでオンラインから利用できます。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-157">All the Help articles that come with PowerShell, including provider Help and conceptual (About) Help articles, are available online in the [PowerShell](/powershell/scripting/powershell-scripting) documentation.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="4b1a4-158">概念説明の記事 (about_*) やプロバイダー ヘルプの記事では、\*\*Online*\* パラメーターを使用できません。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-158">You can't use the **Online** parameter with conceptual (about_\*) or provider Help articles.</span></span>
+> <span data-ttu-id="4b1a4-159">オンライン ヘルプはオプションであるため、すべてのコマンドレット、関数、またはスクリプトで有効なわけではありません。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-159">Online help is optional, so it does not work for every cmdlet, function, or script.</span></span>
+
+<span data-ttu-id="4b1a4-160">たとえば、`Get-ChildItem` コマンドレットのヘルプ記事のオンライン バージョンを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-160">For example, to get the online version of the Help article about the `Get-ChildItem` cmdlet, type:</span></span>
+
+```powershell
+Get-Help Get-ChildItem -Online
+```
+
+<span data-ttu-id="4b1a4-161">PowerShell では、既定のブラウザーで記事を開きます。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-161">PowerShell opens the article in your default browser.</span></span> <span data-ttu-id="4b1a4-162">あるへルプ記事のオンライン ヘルプがサポートされている場合は、そのヘルプ記事の URL を表示することもできます。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-162">If online Help is supported for a Help article, you can also view the URL of the Help article.</span></span> <span data-ttu-id="4b1a4-163">URL は、ヘルプ記事の「関連リンク」セクションに表示されます。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-163">The URL appears in the Related Links section of a Help article.</span></span>
+
+<span data-ttu-id="4b1a4-164">たとえば、Add-Computer コマンドレットのオンライン ヘルプ トピックの URL を表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-164">For example, to see the URL for the online version of the Add-Computer cmdlet, type:</span></span>
+
+```powershell
+Get-Help Add-Computer
+```
+
+<span data-ttu-id="4b1a4-165">記事の「関連リンク」セクションの最初の行を次に示します。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-165">The first line in the Related Links section of the article is shown below.</span></span>
+
+```Output
+Online version: http://go.microsoft.com/fwlink/?LinkId=821564
+```
+
+<span data-ttu-id="4b1a4-166">ヘルプ記事のオンライン サポートを提供する方法については、[about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="4b1a4-166">For information about how to provide online support for your Help articles, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="4b1a4-167">関連項目</span><span class="sxs-lookup"><span data-stu-id="4b1a4-167">See also</span></span>
+
+- [<span data-ttu-id="4b1a4-168">about_Functions</span><span class="sxs-lookup"><span data-stu-id="4b1a4-168">about_Functions</span></span>](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [<span data-ttu-id="4b1a4-169">about_Scripts</span><span class="sxs-lookup"><span data-stu-id="4b1a4-169">about_Scripts</span></span>](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [<span data-ttu-id="4b1a4-170">about_Comment_Based_Help</span><span class="sxs-lookup"><span data-stu-id="4b1a4-170">about_Comment_Based_Help</span></span>](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+- [<span data-ttu-id="4b1a4-171">Get-Help</span><span class="sxs-lookup"><span data-stu-id="4b1a4-171">Get-Help</span></span>](/powershell/module/microsoft.powershell.core/get-help)
