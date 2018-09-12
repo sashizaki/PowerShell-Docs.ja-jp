@@ -1,175 +1,182 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: PowerShell, コマンドレット
 title: 詳しいヘルプ情報の取得
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 29c24af3f688f9388893044952442910e793842d
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483034"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43134036"
 ---
 # <a name="getting-detailed-help-information"></a>詳しいヘルプ情報の取得
-Windows PowerShell には、Windows PowerShell の概念と言語について説明した詳しいヘルプ トピックが含まれています。 また、各コマンドレットおよびプロバイダーに関するヘルプ トピックや、多くの関数およびスクリプトに関するヘルプ トピックもあります。
 
-これらのヘルプ トピックはコマンド プロンプトで表示でき、Microsoft TechNet ライブラリで最新版のトピックを見ることもできます。 Windows PowerShell Integrated Scripting Environment など、Windows PowerShell をホストする多くのプログラムでは、状況依存のヘルプやコンパイル済みヘルプ ファイル (.chm) などの追加のヘルプ機能が用意されています。
+PowerShell には、PowerShell の概念と言語について説明した詳しいヘルプ記事があります。 また、各コマンドレットおよびプロバイダーに関するヘルプ記事や、多くの関数およびスクリプトに関するヘルプ記事もあります。
+
+これらのヘルプ記事はコマンド プロンプトで表示でき、[PowerShell](/powershell/scripting/powershell-scripting) ドキュメント オンラインでこれらの記事の最新版を確認することもできます。
 
 ## <a name="getting-help-for-cmdlets"></a>コマンドレットのヘルプの表示
-Windows PowerShell のコマンドレットに関するヘルプを表示するには、[Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2) コマンドレットを使用します。 たとえば、[Get-ChildItem [m2]](https://technet.microsoft.com/library/4b270d63-c995-45b8-b5b4-3f8887efbfcc) コマンドレットのヘルプを表示するには、次のように入力します。
 
-```
-get-help get-childitem
+PowerShell のコマンドレットに関するヘルプを表示するには、[Get-Help](/powershell/module/microsoft.powershell.core/Get-Help) コマンドレットを使用します。 たとえば、`Get-ChildItem` コマンドレットのヘルプを表示するには、次のように入力します。
+
+```powershell
+Get-Help Get-ChildItem
 ```
 
 または
 
-```
-get-childitem -?
+```powershell
+Get-ChildItem -?
 ```
 
 Get-Help コマンドレットに関するヘルプも表示できます。 たとえば、次のように入力します。
 
-```
-get-help get-help
-```
-
-セッションのすべてのコマンドレットのヘルプ トピックの一覧を表示するには、次のように入力します。
-
-```
-get-help -category cmdlet
+```powershell
+Get-Help Get-Help
 ```
 
-各ヘルプ トピックを 1 ページずつ表示するには、**help** 関数、またはそのエイリアスである **man** を使用します。 たとえば、Get-ChildItem コマンドレットのヘルプを表示するには、次のように入力します。
+セッションのすべてのコマンドレットのヘルプ記事の一覧を表示するには、次のように入力します。
 
+```powershell
+Get-Help -Category Cmdlet
 ```
-man get-childitem
+
+各ヘルプ記事を 1 ページずつ表示するには、`help` 関数またはそのエイリアスである `man` を使用します。
+たとえば、`Get-ChildItem` コマンドレットのヘルプを表示するには、次のように入力します。
+
+```powershell
+man Get-ChildItem
 ```
 
 または
 
-```
-help get-childitem
-```
-
-パラメーターの説明や使用例など、コマンドレット、関数、またはスクリプトに関する詳細情報を表示するには、Get-Help コマンドレットの *Detailed* パラメーターを使用します。 たとえば、Get-ChildItem コマンドレットに関する詳細情報を表示するには、次のように入力します。
-
-```
-get-help get-childitem -detailed
+```powershell
+help Get-ChildItem
 ```
 
-ヘルプ トピックのすべての内容を表示するには、Get-Help コマンドレットの *Full* パラメーターを使用します。 たとえば、Get-ChildItem コマンドレットのヘルプ トピックの内容をすべて表示するには、次のように入力します。
+詳細な情報を表示するには、`Get-Help` コマンドレットの **Detailed** パラメーターを使用します。 たとえば、`Get-ChildItem` コマンドレットに関する詳細情報を表示するには、次のように入力します。
 
-```
-get-help get-childitem -full
-```
-
-コマンドレットのパラメーターに関する詳しいヘルプを表示するには、Get-Help コマンドレットの *Parameter* パラメーターを使用します。 たとえば、Get-ChildItem コマンドレットのすべてのパラメーターの詳しいヘルプを表示するには、次のように入力します。
-
-```
-get-help get-childitem -parameter *
+```powershell
+Get-Help Get-ChildItem -Detailed
 ```
 
-ヘルプ トピック内の例だけを表示するには、Get-Help の *Example* パラメーターを使用します。 たとえば、Get-ChildItem コマンドレットのヘルプ トピック内の例のみを表示するには、次のように入力します。
+ヘルプ記事のすべての内容を表示するには、`Get-Help` コマンドレットの **Full** パラメーターを使用します。 たとえば、`Get-ChildItem` コマンドレットのヘルプ記事の内容をすべて表示するには、次のように入力します。
 
-```
-get-help get-childitem -examples
+```powershell
+Get-Help Get-ChildItem -Full
 ```
 
-作成したコマンドレットに関するヘルプ トピックを記述する方法については、MSDN ライブラリの「[How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)」 (コマンドレット ヘルプの記述方法) をご覧ください。
+コマンドレットのパラメーターに関する詳しいヘルプを表示するには、`Get-Help` コマンドレットの **Parameter** パラメーターを使用します。 たとえば、`Get-ChildItem` コマンドレットのすべてのパラメーターの詳しいヘルプを表示するには、次のように入力します。
+
+```powershell
+Get-Help Get-ChildItem -Parameter *
+```
+
+ヘルプ記事内の例だけを表示するには、`Get-Help` の **Example** パラメーターを使用します。
+たとえば、`Get-ChildItem ` コマンドレットのヘルプ記事の例だけを表示するには、次のように入力します。
+
+```powershell
+Get-Help Get-ChildItem -Examples
+```
+
+作成したコマンドレットに関するヘルプ記事を記述する方法については、「[How to Write Cmdlet Help](/powershell/developer/help/writing-help-for-windows-powershell-cmdlets)」(コマンドレット ヘルプの記述方法) を参照してください。
 
 ## <a name="getting-conceptual-help"></a>概念説明のヘルプの表示
-Get-Help コマンドレットでは、Windows PowerShell 言語に関するトピックなど、Windows PowerShell の概念説明トピックの情報も表示されます。 概念説明のヘルプ トピックには、"about_" というプレフィックスが付きます (about_line_editing など)。 概念説明のトピックの名前は、英語バージョン以外の Windows PowerShell でも英語で入力する必要があります。
 
-概念説明のトピックを一覧表示するには、次のように入力します。
+`Get-Help` コマンドレットでは、PowerShell 言語に関する記事など、PowerShell の概念説明の記事の情報も表示されます。 概念説明のヘルプ記事には、"about_" というプレフィックスが付きます (about_line_editing など)。 概念説明の記事の名前は、英語バージョン以外の PowerShell でも英語で入力する必要があります。
 
-```
-get-help about_*
-```
+概念説明の記事を一覧表示するには、次のように入力します。
 
-特定のヘルプ トピックを表示するには、次のように、トピック名を入力します。
-
-```
-get-help about_command_syntax
+```powershell
+Get-Help about_*
 ```
 
-Get-Help の *Detailed*、*Parameter*、*Examples* などのパラメーターは、概念説明ヘルプ トピックの表示には効果がありません。
+特定のヘルプ記事を表示するには、次のように記事の名前を入力します。
+
+```powershell
+Get-Help about_command_syntax
+```
+
+**Detailed**、**Parameter**、**Examples** などの `Get-Help` のパラメーターは、概念説明のヘルプ記事の表示には効果がありません。
 
 ## <a name="getting-help-about-providers"></a>プロバイダーに関するヘルプの表示
-Get-Help コマンドレットでは、Windows PowerShell プロバイダーに関する情報を表示できます。 プロバイダーのヘルプを取得するには、"Get-Help" に続けてプロバイダー名を入力します。 たとえば、Registry プロバイダーのヘルプを取得するには、次のように入力します。
 
-```
-get-help registry
-```
+`Get-Help` コマンドレットでは、PowerShell プロバイダーに関する情報を表示できます。 プロバイダーのヘルプを取得するには、`Get-Help` に続けてプロバイダー名を入力します。 たとえば、Registry プロバイダーのヘルプを取得するには、次のように入力します。
 
-セッションのすべてのプロバイダーのヘルプ トピックの一覧を表示するには、次のように入力します。
-
-```
-get-help -category provider
+```powershell
+Get-Help registry
 ```
 
-Get-Help の *Detailed*、*Parameter*、*Examples* などのパラメーターは、プロバイダーに関するヘルプ トピックの表示には効果がありません。
+セッションのすべてのプロバイダーのヘルプ記事の一覧を表示するには、次のように入力します。
+
+```powershell
+Get-Help -Category provider
+```
+
+**Detailed**、**Parameter**、**Examples** などの `Get-Help` のパラメーターは、プロバイダー ヘルプ記事の表示には効果がありません。
 
 ## <a name="getting-help-about-scripts-and-functions"></a>スクリプトおよび関数に関するヘルプの表示
-Windows PowerShell の多くのスクリプトおよび関数には、ヘルプ トピックが用意されています。 Get-Help コマンドレットを使用して、スクリプトや関数のヘルプ トピックを表示できます。
 
-関数のヘルプを表示するには、"get-help" に続けて関数名を入力します。 たとえば、Disable-PSRemoting 関数のヘルプを表示するには、次のように入力します。
+PowerShell の多くのスクリプトおよび関数には、ヘルプ記事が用意されています。 `Get-Help` コマンドレットを使用して、スクリプトや関数のヘルプ記事を表示します。
 
-```
-get-help disable-psremoting
-```
+関数のヘルプを表示するには、`Get-Help` に続けて関数名を入力します。 たとえば、`Disable-PSRemoting` 関数のヘルプを表示するには、次のように入力します。
 
-スクリプトのヘルプを表示するには、スクリプト ファイルへの完全修飾パスを入力します。 スクリプトのパスが Path 環境変数に含まれている場合は、コマンドからパスを省略できます。
-
-たとえば、"TestScript.ps1" という名前のスクリプトが C:\\PS-Test ディレクトリに格納されている場合、このスクリプトのヘルプ トピックを表示するには、次のように入力します。
-
-```
-get-help c:\ps-test\TestScript.ps1
+```powershell
+Get-Help Disable-PSRemoting
 ```
 
-*Detailed*、*Full*、*Examples*、*Parameter* など、コマンドレットのヘルプを表示するためにデザインされているパラメーターは、スクリプトのヘルプや関数のヘルプにも使用できます。 ただし、"get-help \*" を入力してすべてのヘルプを表示した場合、関数およびスクリプトのヘルプは表示されません。
+スクリプトのヘルプを表示するには、スクリプト ファイルへのパスを入力します。 スクリプトが Path 環境変数に一覧表示されたパスにない場合は、完全修飾パスを使用する必要があります。
 
-関数およびスクリプトに関するヘルプ トピックを記述する方法については、「[about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)」、「[about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)」、「[about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)」をご覧ください。
+たとえば、"TestScript.ps1" という名前のスクリプトが C:\\PS-Test ディレクトリに格納されている場合、このスクリプトのヘルプ記事を表示するには、次のように入力します。
 
-## <a name="getting-help-online"></a>オンライン ヘルプの表示
-インターネットに接続している場合、ヘルプを見るための最も良い方法の 1 つは、ヘルプ トピックをオンラインで表示することです。 オンライン トピックは簡単に更新できるため、最新の情報が得られる可能性が高くなります。
-
-オンライン ヘルプを表示するには、Get-Help コマンドレットの *Online* パラメーターを使用します。 Get-Help コマンドレットの *Online* パラメーターは、コマンドレットのヘルプ、関数のヘルプ、スクリプトのヘルプに対してのみ機能します。 概念説明のトピック ("about" ヘルプ) やプロバイダーに関するヘルプ トピックに対しては、*Online* パラメーターを使用できません。 また、この機能はオプションであるため、すべてのコマンドレット、関数、スクリプトのヘルプ トピックに有効なわけではありません。
-
-ただし、プロバイダーのヘルプ トピックや概念説明 ("about" ヘルプ) トピックも含め、Windows PowerShell に付属するすべてのヘルプ トピックが、Microsoft TechNet ライブラリの [Windows PowerShell](http://go.microsoft.com/fwlink/?LinkID=107116) セクションからオンラインで参照できるようになっています。
-
-Get-Help コマンドレットの *Online* パラメーターを使用するには、次のコマンド形式を使用します。
-
-```
-get-help <command-name> -online
+```powershell
+Get-Help c:\ps-test\TestScript.ps1
 ```
 
-たとえば、Get-ChildItem コマンドレットのヘルプ トピックのオンライン バージョンを表示するには、次のように入力します。
+コマンドレットのヘルプを表示するように設計されたパラメーターは、スクリプトと関数のヘルプにも有効です。 ただし、`Get-Help *` を実行している場合、スクリプトと関数のヘルプは表示されません。
 
+関数とスクリプトのヘルプ記事の記述については、次の記事を参照してください。
+
+- [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+
+## <a name="getting-help-online"></a>オンラインでのヘルプの表示
+
+オンラインでのヘルプ記事の表示は、ヘルプを表示するための最善の方法の 1 つです。 オンラインの記事は、より簡単に最新のコンテンツに更新して提供できます。
+
+オンライン ヘルプを表示するには、`Get-Help` コマンドレットの **Online** パラメーターを使用します。 プロバイダー ヘルプや概念説明 (About) のヘルプ記事など、PowerShell に付属しているすべてのヘルプ記事は、[PowerShell](/powershell/scripting/powershell-scripting) ドキュメントでオンラインから利用できます。
+
+> [!NOTE]
+> 概念説明の記事 (about_*) やプロバイダー ヘルプの記事では、**Online** パラメーターを使用できません。
+> オンライン ヘルプはオプションであるため、すべてのコマンドレット、関数、またはスクリプトで有効なわけではありません。
+
+たとえば、`Get-ChildItem` コマンドレットのヘルプ記事のオンライン バージョンを表示するには、次のように入力します。
+
+```powershell
+Get-Help Get-ChildItem -Online
 ```
-get-help get-childitem -online
-```
 
-ヘルプ トピックのオンライン バージョンが存在する場合には、既定のブラウザーにそのトピックが表示されます。
-
-あるへルプ トピックに対してオンライン ヘルプがサポートされている場合、そのヘルプ トピックのインターネット アドレス (URL) を表示することもできます。 インターネット アドレスは、ヘルプ トピックの「関連リンク」セクションに表示されます。
+PowerShell では、既定のブラウザーで記事を開きます。 あるへルプ記事のオンライン ヘルプがサポートされている場合は、そのヘルプ記事の URL を表示することもできます。 URL は、ヘルプ記事の「関連リンク」セクションに表示されます。
 
 たとえば、Add-Computer コマンドレットのオンライン ヘルプ トピックの URL を表示するには、次のように入力します。
 
-```
-get-help add-computer
-```
-
-トピックの「関連リンク」セクションの最初の行を次に示します。
-
-```
-Online version: http://go.microsoft.com/fwlink/?LinkID=135194
+```powershell
+Get-Help Add-Computer
 ```
 
-ヘルプ トピックのオンライン サポートを提供する方法については、「[about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)」と MSDN ライブラリの [「How to Write Cmdlet Help」](https://go.microsoft.com/fwlink/?LinkID=123415) (コマンドレット ヘルプの記述方法) をご覧ください。
+記事の「関連リンク」セクションの最初の行を次に示します。
 
-## <a name="see-also"></a>参照
-- [about_Functions [m2]](https://technet.microsoft.com/library/61d40692-5300-4de9-a9b5-bae31815e105)
-- [about_Scripts](https://technet.microsoft.com/library/7dc08334-dcfe-450b-b949-0554855623af)
-- [about_Comment_Based_Help](https://technet.microsoft.com/library/99a81ccc-21a0-49ec-a1b3-9efe2b4c0bbf)
-- [Get-Help [m2]](https://technet.microsoft.com/library/2d7fe1b4-0025-4580-a911-d81922dd6cd2)
+```Output
+Online version: http://go.microsoft.com/fwlink/?LinkId=821564
+```
+
+ヘルプ記事のオンライン サポートを提供する方法については、[about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help) を参照してください。
+
+## <a name="see-also"></a>関連項目
+
+- [about_Functions](/powershell/module/microsoft.powershell.core/about/about_functions)
+- [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts)
+- [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)
+- [Get-Help](/powershell/module/microsoft.powershell.core/get-help)

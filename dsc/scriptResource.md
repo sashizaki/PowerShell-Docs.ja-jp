@@ -1,29 +1,19 @@
 ---
-ms.date: 06/12/2017
+ms.date: 08/24/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Script リソース
-ms.openlocfilehash: 1163d454972d8ee519d1c55b77bb85979faf3536
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
+ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189450"
+ms.lasthandoff: 08/28/2018
+ms.locfileid: "43133895"
 ---
 # <a name="dsc-script-resource"></a>DSC Script リソース
 
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.x
 
-> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
-
-Windows PowerShell Desired State Configuration (DSC) の **Script** リソースは、ターゲット ノードで Windows PowerShell スクリプトのブロックを実行するためのメカニズムを備えています。 `Script` リソースには、`GetScript`、`SetScript`、`TestScript` プロパティがあります。 このプロパティは、各ターゲット ノードに対して実行されるスクリプト ブロックに設定する必要があります。
-
-`GetScript` スクリプト ブロックは、現在のノードの状態を表すハッシュ テーブルを返します。 ハッシュ テーブルに入るキーは 1 つだけです (`Result`)。値の型は `String` になります。 何も返す必要はありません。 DSC は、このスクリプト ブロックの出力を処理しません。
-
-`TestScript` スクリプト ブロックは、現在のノードを変更する必要があるかどうかを判定します。 ノードが最新の場合は `$true` を返します。 ノードの構成が最新ではなく、`SetScript` スクリプト ブロックで更新する必要がある場合は、`$false` が返されます。 `TestScript` スクリプト ブロックは DSC によって呼び出されます。
-
-`SetScript` スクリプト ブロックはノードを変更します。 これは、`TestScript` ブロックから `$false` が返された場合に DSC によって呼び出されます。
-
-`GetScript`、`TestScript`、または `SetScript` スクリプト ブロックで構成スクリプトの変数を使用する必要がある場合は、`$using:` スコープを使用します (例については、以下を参照してください)。
-
+Windows PowerShell Desired State Configuration (DSC) の **Script** リソースは、ターゲット ノードで Windows PowerShell スクリプトのブロックを実行するためのメカニズムを備えています。 **Script** リソースでは、該当の DSC 状態の操作を実行するために定義したスクリプト ブロックを含む `GetScript`、`SetScript`、および `TestScript` プロパティを使用します。
 
 ## <a name="syntax"></a>構文
 
@@ -38,37 +28,68 @@ Script [string] #ResourceName
 }
 ```
 
+> [!NOTE]
+> `GetScript`、`TestScript`、および `SetScript` ブロックは、文字列として格納されます。
+
 ## <a name="properties"></a>プロパティ
 
-|  プロパティ  |  説明   |
-|---|---|
-| GetScript| [Get-DscConfiguration](https://technet.microsoft.com/library/dn407379.aspx) コマンドレットを呼び出すと実行される Windows PowerShell スクリプトのブロックを提供します。 このブロックでは、ハッシュ テーブルを返す必要があります。 ハッシュ テーブルに入るキーは 1 つだけです (**結果**)。値の型は**文字列**になります。|
-| SetScript| Windows PowerShell スクリプトのブロックを提供します。 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) コマンドレットを呼び出すと、**TestScript** ブロックが最初に実行されます。 **TestScript** ブロックが **$false** を返した場合は、**SetScript** ブロックが実行されます。 **TestScript** ブロックが **$true** を返した場合は、**SetScript** ブロックが実行されません。|
-| TestScript| Windows PowerShell スクリプトのブロックを提供します。 [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) コマンドレットを呼び出すと、このブロックが実行されます。 これが **$false** を返した場合は、SetScript ブロックが実行されます。 これが **$true** を返した場合は、SetScript ブロックが実行されません。 [Test-DscConfiguration](https://technet.microsoft.com/en-us/library/dn407382.aspx) コマンドレットを呼び出すと、**TestScript** ブロックも実行されます。 ただし、この場合、TestScript ブロックがどのような値を返すかに関係なく、**SetScript** ブロックは実行されません。 **TestScript** ブロックは、実際の構成が現在の Desired State Configuration と一致する場合には True を返す必要があり、一致しない場合には False を返す必要があります  (現在の Desired State Configuration は DSC を使用しているノードに適用された最後の構成です)。|
-| Credential| 資格情報が必要な場合、このスクリプトの実行に使用する資格情報を示します。|
-| DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。
+|プロパティ|説明|
+|--------|-----------|
+|GetScript|ノードの現在の状態を返すスクリプト ブロック。|
+|SetScript|ノードが目的の状態になっていない場合に、コンプライアンスを適用するために DSC が使用するスクリプト ブロック。|
+|TestScript|ノードが目的の状態になっているかどうかを判定するスクリプト ブロック。|
+|Credential| 資格情報が必要な場合、このスクリプトの実行に使用する資格情報を示します。|
+|DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。
 
-## <a name="example-1"></a>例 1
+### <a name="getscript"></a>GetScript
+
+DSC は `GetScript` からの出力を使用しません。 [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration) コマンドレットは `GetScript` を実行して、ノードの現在の状態を取得します。 戻り値は `GetScript` からは必要とされません。 戻り値を指定した場合は、値が `String` の **Result** キーを含む `hashtable` になっている必要があります。
+
+### <a name="testscript"></a>TestScript
+
+`TestScript` は、`SetScript` が実行される必要があるかどうかを判定するために、DSC によって実行されます。 `TestScript` から `$false` が返された場合、DSC は `SetScript` を実行して、ノードを目的の状態に戻します。 `boolean` 値を返す必要があります。 結果が `$true` の場合、ノードが準拠しており `SetScript` が実行されるべきではないことを示します。
+
+[Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Test-DscConfiguration) コマンドレットでは、`TestScript` を実行して、**Script** リソースに準拠しているノードを取得します。 ただし、この場合は、`TestScript` ブロックによって返される値に関わらず、`SetScript` は実行されません。
+
+> [!NOTE]
+> `TestScript` からの出力はすべて、戻り値の一部です。 PowerShell は、抑制されていない出力を非ゼロとして解釈します。これは、ノードの状態に関係なく、`TestScript` は `$true` を返すことを意味します。
+> これにより、誤検知という予期しない結果となり、トラブルシューティングの際に困難が生じます。
+
+### <a name="setscript"></a>SetScript
+
+`SetScript` はノードを変更して、目的の状態を適用します。 これは、`TestScript` スクリプト ブロックから `$false` が返された場合に、DSC によって呼び出されます。 `SetScript` には、戻り値はありません。
+
+## <a name="examples"></a>例
+
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>例 1: Script リソースを使用して、サンプル テキストを作成する
+
+この例では、各ノード上の `C:\TempFolder\TestFile.txt` の有無についてテストします。 このファイルがない場合は、`SetScript` を使用してファイルを作成します。 `GetScript` はファイルのコンテンツを返し、その戻り値は使用されません。
+
 ```powershell
 Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script ScriptExample
+    Node localhost
     {
-        SetScript =
+        Script ScriptExample
         {
-            $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
-            $sw.WriteLine("Some sample string")
-            $sw.Close()
+            SetScript = {
+                $sw = New-Object System.IO.StreamWriter("C:\TempFolder\TestFile.txt")
+                $sw.WriteLine("Some sample string")
+                $sw.Close()
+            }
+            TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
+            GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
         }
-        TestScript = { Test-Path "C:\TempFolder\TestFile.txt" }
-        GetScript = { @{ Result = (Get-Content C:\TempFolder\TestFile.txt) } }
     }
 }
 ```
 
-## <a name="example-2"></a>例 2
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>例 2: Script リソースを使用してバージョン情報を比較する
+
+この例は、オーサリング コンピューター上のテキスト ファイルから *compliant* バージョン情報を取得して、これを `$version` 変数に格納します。 ノードの MOF ファイルを生成するときに、各スクリプト ブロックの `$using:version` 変数は、DSC によって `$version` 変数の値に置き換えられます。 実行時に *compliant* バージョンが各ノード上のテキスト ファイルに格納され、以降の実行で比較され更新されます。
+
 ```powershell
 $version = Get-Content 'version.txt'
 
@@ -76,27 +97,30 @@ Configuration ScriptTest
 {
     Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
 
-    Script UpdateConfigurationVersion
+    Node localhost
     {
-        GetScript = {
-            $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
-            return @{ 'Result' = "$currentVersion" }
-        }
-        TestScript = {
-            $state = $GetScript
-            if( $state['Result'] -eq $using:version )
-            {
-                Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
-                return $true
+        Script UpdateConfigurationVersion
+        {
+            GetScript = {
+                $currentVersion = Get-Content (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+                return @{ 'Result' = "$currentVersion" }
             }
-            Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
-            return $false
-        }
-        SetScript = {
-            $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            TestScript = {
+                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                $state = [scriptblock]::Create($GetScript).Invoke()
+
+                if( $state['Result'] -eq $using:version )
+                {
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    return $true
+                }
+                Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+                return $false
+            }
+            SetScript = {
+                $using:version | Set-Content -Path (Join-Path -Path $env:SYSTEMDRIVE -ChildPath 'version.txt')
+            }
         }
     }
 }
 ```
-
-このリソースは、構成のバージョンをテキスト ファイルに書き込んでいます。 このバージョンはクライアント コンピューターで利用できますが、いずれのノードでも使用できないため、PowerShell の `using` スコープを指定して、`Script` リソースのスクリプト ブロックそれぞれに渡す必要があります。 ノードの MOF ファイルを生成すると、`$version` 変数の値は、クライアント コンピューター上のテキスト ファイルから読み取られます。 各スクリプト ブロックの `$using:version` 変数は、DSC によって `$version` 変数の値に置き換えられます。

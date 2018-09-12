@@ -1,14 +1,14 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/14/2018
 keywords: PowerShell, コマンドレット
 title: PowerShell.exe コマンドラインのヘルプ
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: 60b6a7e310821a4092b0972b7abbdae0e2d5f738
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c7f35511e876e8e5189d8a2b949555603d43f731
+ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952581"
+ms.lasthandoff: 08/21/2018
+ms.locfileid: "43133163"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe コマンドラインのヘルプ
 
@@ -45,16 +45,13 @@ Base 64 エンコード文字列版のコマンドを許可します。 複雑�
 
 ### <a name="-executionpolicy-executionpolicy"></a>-ExecutionPolicy <ExecutionPolicy>
 
-現在のセッションの既定の実行ポリシーを設定し、$env:PSExecutionPolicyPreference 環境変数に保存します。 このパラメーターを指定しても、レジストリで設定された PowerShell の実行ポリシーが変更されるわけではありません。 有効な値の一覧など、PowerShell 実行ポリシーについては、「[about_Execution_Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies)」を参照してください。
+現在のセッションの既定の実行ポリシーを設定し、$env:PSExecutionPolicyPreference 環境変数に保存します。 このパラメーターは、レジストリに設定された PowerShell 実行ポリシーを変更しません。 有効な値の一覧など、PowerShell 実行ポリシーについては、「[about_Execution_Policies](/powershell/module/microsoft.powershell.core/about/about_execution_policies)」を参照してください。
 
 ### <a name="-file-filepath-parameters"></a>-File <FilePath> \[<Parameters>]
 
-スクリプトで作成される関数と変数を現在のセッションで使用できるように、指定したスクリプトをローカル スコープ ("ドット ソース形式") で実行します。 スクリプト ファイルのパスと (存在する場合) パラメーターを入力します。 **File** はコマンド内の最後のパラメーターにする必要があります。これは、**File** パラメーター名の後に入力されるすべての文字が、スクリプト ファイルのパス、およびその後に続くスクリプト パラメーターとその値として解釈されるためです。
+スクリプトで作成される関数と変数を現在のセッションで使用できるように、指定したスクリプトをローカル スコープ ("ドット ソース形式") で実行します。 スクリプト ファイルのパスと (存在する場合) パラメーターを入力します。 **File** は、コマンド内の最後のパラメーターにする必要があります。 **-File** パラメーターの後に入力されたすべての値は、スクリプト ファイルのパスとそのスクリプトに渡されるパラメーターとして解釈されます。
 
-**File** パラメーターの値には、スクリプトのパラメーターとパラメーター値を含めることができます。 例: `-File .\Get-Script.ps1 -Domain Central`スクリプトに渡されるパラメーターは、リテラル文字列として渡されます (現在のシェルによる解釈の後で)。
-たとえば、cmd.exe で環境変数値を渡す場合は、次の cmd.exe 構文を使用します: `powershell -File .\test.ps1 -Sample %windir%` PowerShell 構文を使用するとしたら、この例では、リテラル "$env:windir" を受け取り、その環境変数の値は受け取りません: `powershell -File .\test.ps1 -Sample $env:windir`
-
-通常、スクリプトのスイッチ パラメーターは、含めるか省略するかのいずれかです。 たとえば、次のコマンドは、Get-Script.ps1 スクリプト ファイルの **All** パラメーターを使用します。`-File .\Get-Script.ps1 -All`
+スクリプトに渡されるパラメーターは、(現在のシェルによる解釈の後で) リテラル文字列として渡されます。 たとえば、cmd.exe で環境変数値を渡す場合は、cmd.exe 構文 `powershell -File .\test.ps1 -Sample %windir%` を使用します。この例では、スクリプトはリテラル文字列 `$env:windir` を受け取り、その環境変数の値 `powershell -File .\test.ps1 -Sample $env:windir` は受け取りません。
 
 ### <a name="-inputformat-text--xml"></a>\-InputFormat {Text | XML}
 
@@ -96,18 +93,18 @@ PowerShell からの出力の形式を決定します。 使用できる値は�
 
 指定したバージョンの PowerShell を起動します。 指定するバージョンがシステムにインストールされている必要があります。 PowerShell 3.0 がコンピューターにインストールされている場合、有効な値は "2.0" と "3.0" です。 既定値は "3.0" です。
 
-PowerShell 3.0 がコンピューターにインストールされていない場合、有効な値は "2.0" のみです。 他の値は無視されます。
+PowerShell 3.0 がインストールされていない場合、有効な値は "2.0" のみです。 他の値は無視されます。
 
-詳細については「[Windows PowerShell のインストール](../../setup/installing-windows-powershell.md)」を参照してください。
+詳しくは、「[Windows PowerShell のインストール](../../setup/installing-windows-powershell.md)」をご覧ください。
 
 ### <a name="-windowstyle-window-style"></a>-WindowStyle <Window style>
 
-セッションのウィンドウ スタイルを設定します。 使用できる値は、Normal、Minimized、Maximized、Hidden です。
+セッションのウィンドウ スタイルを設定します。 使用できる値は、Normal、Minimized、Maximized、および Hidden です。
 
 ### <a name="-command"></a>-Command
 
-PowerShell のコマンド プロンプトに入力された場合と同様に、指定されたコマンド (および任意のパラメーター) を実行します。NoExit パラメーターが指定されていない場合は、そのまま終了します。
-基本的に、`-Command` の後の任意のテキストは、単一のコマンドラインとして PowerShell に送信されます (これは、`-File` がスクリプトに送信されるパラメーターを処理する方法とは異なります)。
+PowerShell のコマンド プロンプトに入力された場合と同様に、指定されたコマンド (任意のパラメーターを付与する) を実行します。 実行後は、`-NoExit` パラメーターが指定されていない限り、PowerShell は終了します。
+`-Command` の後にある任意のテキストは、単一のコマンド ラインとして PowerShell に送信されます。 これは、`-File` がスクリプトに送信されたパラメーターを処理する方法とは異なります。
 
 Command の値には、"-"、文字列、またはスクリプト ブロックを指定できます。 またはスクリプト ブロックを指定できます。 Command の値が "-" の場合、コマンド テキストは標準入力から読み取られます。
 
@@ -121,11 +118,11 @@ PowerShell コマンドを実行する文字列を書き込むには、次の形
 "& {<command>}"
 ```
 
-引用符によりこれが文字列であることを示し、呼び出し演算子 (&) によりコマンドが実行されます。
+引用符は文字列であることを示し、呼び出し演算子 (&) によってコマンドが実行されます。
 
 ### <a name="-help---"></a>-Help、-?、/?
 
-このメッセージを表示します。 PowerShell で PowerShell.exe のコマンドを入力している場合、コマンド パラメーターの前にスラッシュ (/) ではなくハイフン (-) を入力してください。 Cmd.exe では、ハイフンとスラッシュのいずれかを使用できます。
+Powershell.exe の構文を示します。 PowerShell で PowerShell.exe のコマンドを入力している場合、コマンド パラメーターの前にスラッシュ (/) ではなくハイフン (-) を入力してください。 Cmd.exe では、ハイフンとスラッシュのいずれかを使用できます。
 
 > [!NOTE]
 > トラブルシューティング上の注意: PowerShell 2.0 では、一部のプログラムを Windows PowerShell コンソールで開始すると、LastExitCode 0xc0000142 で失敗します。

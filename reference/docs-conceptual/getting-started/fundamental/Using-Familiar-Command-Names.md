@@ -1,23 +1,24 @@
 ---
-ms.date: 06/05/2017
+ms.date: 08/27/2018
 keywords: PowerShell, コマンドレット
 title: 使い慣れたコマンド名の使用
 ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: 37fc6dfad5a2f1363254744141dcab1e13aa5066
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
+ms.openlocfilehash: c5665f64fd832eb9c807f413a8e879f63db7f8c6
+ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952683"
+ms.lasthandoff: 08/31/2018
+ms.locfileid: "43353251"
 ---
 # <a name="using-familiar-command-names"></a>使い慣れたコマンド名の使用
-Windows PowerShell では、*エイリアス*というメカニズムにより、ユーザーは代替名でコマンドを表せます。 エイリアスがあることで、他のシェルの経験のあるユーザーは、既に知っている一般的なコマンド名を再使用して、Windows PowerShell でも同様の操作を行えます。 Windows PowerShell のエイリアスについて詳しくは解説しませんが、Windows PowerShell の入門段階でもエイリアスを使用できます。
 
-エイリアスは、ユーザーが入力したコマンド名を別のコマンドに関連付けます。 たとえば、出力ウィンドウをクリアする **Clear-Host** という内部関数が Windows PowerShell にあります。 **cls** または **clear** のどちらかのコマンドをコマンド プロンプトで入力すると、Windows PowerShell はそれを **Clear-Host** 関数のエイリアスであると解釈し、**Clear-Host** 関数を実行します。
+PowerShell では、代替名でコマンドを参照するエイリアスをサポートしています。 エイリアスがあることで、他のシェルの経験があるユーザーは、既に知っている一般的なコマンド名を PowerShell のほぼ同じ操作に利用できます。
 
-この機能は、ユーザーが Windows PowerShell を習得するうえで役立ちます。 何よりもまず、Cmd.exe および UNIX ユーザーのほとんどは、幅広いレパートリーのコマンドの名前を既に知っています。相当する Windows PowerShell コマンドがまったく同じ結果を生成するとは限りませんが、形の上ではほぼ同じです。したがって、ユーザーは Windows PowerShell での名前を最初に覚えなくても、既に知っているコマンド名を使用できます。 第 2 に、別のシェルを既に使い慣れているユーザーが新しいシェルを習得する際に感じるフラストレーションの主な原因は、"指が覚えていること" によって引き起こされるエラーです。 Cmd.exe を長年使用しているユーザーであれば、画面が出力でいっぱいになったために画面をクリーンアップしたい場合は、無意識に **cls** コマンドを入力して ENTER キーを押すでしょう。 Windows PowerShell に **Clear-Host** 関数のエイリアスがなければ、"**'cls' is not recognized as a cmdlet, function, operable program, or script file.**" というエラー メッセージが表示されるだけで、 出力をクリアするにはどうすればよいかまったく分からないまま置き去りにされてしまいます。
+エイリアスは、新しい名前を別のコマンドに関連付けます。 たとえば、PowerShell には、出力ウィンドウをクリアする `Clear-Host` という内部関数があります。 コマンド プロンプトに `cls` または `clear` エイリアスのどちらかを入力できます。 PowerShell はこれらのエイリアスを解釈して、`Clear-Host` 関数を実行します。
 
-Windows PowerShell 内で使用できる一般的な Cmd.exe および UNIX コマンドの簡潔な一覧を次に示します。
+この機能は、ユーザーが PowerShell を習得するうえで役立ちます。 最初に、ほとんどの **cmd.exe** および Unix ユーザーには、既に名前を知っているコマンドのレパートリーが多数あります。 同等の PowerShell のコマンドでは、同一の結果が得られない場合があります。 しかし、十分に近い結果になるので、PowerShell のコマンド名を知らなくてもユーザーが既知のコマンドを利用することは可能です。 新しいコマンド シェルを習得するうえで、"指が覚えている" ことはもう 1 つの主なストレス要因になります。 長年にわたって **cmd.exe** を使用してきた場合、画面をクリアするには、反射的に `cls` コマンドを入力してしまうでしょう。 `Clear-Host` のエイリアスがなければ、エラー メッセージを受け取ってしまい、出力をクリアするにはどうすればいいかわからないでしょう。
+
+PowerShell で使用できる一般的な **cmd.exe** および UNIX コマンドのいくつかを次の一覧に示します。
 
 |||||
 |-|-|-|-|
@@ -30,29 +31,54 @@ Windows PowerShell 内で使用できる一般的な Cmd.exe および UNIX コ�
 |del|lp|r|write|
 |diff|ls|ren||
 
-これらのコマンドのいずれかを無意識に使っていたことに気づいたが、Windows PowerShell ネイティブ コマンドの実名を知りたいという場合は、**Get-Alias** コマンドを使用できます。
+`Get-Alias` コマンドレットでは、エイリアスに関連付けられたネイティブな PowerShell コマンドの実際の名前が表示されます。
 
-```
+```powershell
 PS> Get-Alias cls
-
-CommandType     Name                            Definition
------------     ----                            ----------
-Alias           cls                             Clear-Host
 ```
 
-Windows PowerShell ユーザー ガイドでは一般に、例を読みやすくするために、エイリアスの使用は避けています。 しかし、早い段階でエイリアスについて詳しく知ることは、別のソースにある Windows PowerShell コードの不特定のスニペットを扱う場合や、独自のエイリアスを定義する場合にも役立ちます。 このセクションの残りの部分で、標準エイリアスについて、および独自のエイリアスを定義する方法について説明します。
-
-### <a name="interpreting-standard-aliases"></a>標準エイリアスの解釈
-他のインターフェイスとの名前の互換性を目的とした上記のエイリアスとは異なり、Windows PowerShell に組み込まれたエイリアスは一般に、簡潔さを目的に設計されています。 こうした短い名前はすばやく入力できますが、何を表しているかが分かっていなければ、意味を読み取ることはできません。
-
-Windows PowerShell では、一般的な動詞および名詞を表す省略名に基づいた標準エイリアスのセットを定義することで、明確さと簡潔さの妥協を図っています。 これにより、一般的なコマンドレットについて、省略名でその意味を読み取ることができるエイリアスのコア セットが可能になっています。 たとえば、標準エイリアスでは、動詞 **Get** は **g** に、動詞 **Set** は **s** に、名詞 **Item** は **i** に、名詞 **Location** は **l** に、名詞 Command は **cm** にそれぞれ省略されます。
-
-どういうことになるか簡単な例で説明します。 Get-Item の標準エイリアスは、Get の **g** と Item の **i** の組み合わせから、**gi** になっています。 Set-Item の標準エイリアスは、Set の **s** と Item の **i** の組み合わせから、**si** になっています。 Get-Location の標準エイリアスは、Get の **g** と Location の **l** の組み合わせから、**gl** になっています。 Set-Location の標準エイリアスは、Set の **s** と Location の **l** の組み合わせから、**sl** になっています。 Get-Command の標準エイリアスは、Get の **g** と Command の **cm** の組み合わせから、**gcm** になっています。 Set-Command コマンドレットはありませんが、あるとすれば、その標準エイリアスは、Set の **s** と Command の **cm** から **scm** になると推測できます。 さらに、Windows PowerShell エイリアスを使い慣れたユーザーであれば、**scm** を目にしたら、そのエイリアスは Set-Command を表していると推測できるでしょう。
-
-### <a name="creating-new-aliases"></a>新しいエイリアスの作成
-Set-Alias コマンドレットを使用して、独自のエイリアスを作成できます。 たとえば、次のステートメントは、「標準エイリアスの解釈」で説明した標準コマンドレット エイリアスを作成します。
-
+```Output
+CommandType     Name                               Version    Source
+-----------     ----                               -------    ------
+Alias           cls -> Clear-Host
 ```
+
+## <a name="interpreting-standard-aliases"></a>標準エイリアスの解釈
+
+前述したエイリアスは、他のコマンド シェルとの名前の互換性を目的として設計されていました。
+PowerShell に組み込まれているほとんどのエイリアスは、簡略化を目的として設計されています。 名前が短いほど入力は簡単になりますが、エイリアスが何を参照しているかを把握していない場合、読みにくくなります。
+
+PowerShell のエイリアスでは、わかりやすさと簡潔さのバランスを取る試みがなされています。 PowerShell では、一般的な名詞と動詞に対して、標準となる一連のエイリアスを使用しています。
+
+たとえば、次のような省略形があります。
+
+| 名詞または動詞 | 省略形 |
+|--------------|--------------|
+| 取得          | g            |
+| 設定          | s            |
+| 項目         | i            |
+| インストール先     | l            |
+| コマンド      | cm           |
+| エイリアス        | al           |
+
+以下のエイリアスは、省略名を知っていれば理解できます。
+
+| コマンドレット名    | エイリアス |
+|----------------|-------|
+| `Get-Item `    | gi    |
+| `Set-Item`     | si    |
+| `Get-Location` | gl    |
+| `Set-Location` | sl    |
+| `Get-Command`  | gcm   |
+| `Get-Alias`    | gal   |
+
+PowerShell のエイリアスを使い慣れたら、**sal** エイリアスは `Set-Alias` を参照していると簡単に推測できるようになります。
+
+## <a name="creating-new-aliases"></a>新しいエイリアスの作成
+
+`Set-Alias` コマンドレットを使用して、独自のエイリアスを作成できます。 たとえば、次のステートメントは、前述した標準のコマンドレットのエイリアスを作成します。
+
+```powershell
 Set-Alias -Name gi -Value Get-Item
 Set-Alias -Name si -Value Set-Item
 Set-Alias -Name gl -Value Get-Location
@@ -60,7 +86,8 @@ Set-Alias -Name sl -Value Set-Location
 Set-Alias -Name gcm -Value Get-Command
 ```
 
-Windows PowerShell はこうしたコマンドを起動時に内部で使用しますが、これらのエイリアスは変更できません。 これらのコマンドのいずれかを実際に実行しようとすると、エイリアスは変更できないことを示すエラーが表示されます。 たとえば、次のように入力します。
+PowerShell では、起動時に類似のコマンドを内部で使用しますが、これらのエイリアスは変更できません。
+これらのコマンドのいずれかを実行しようとすると、エイリアスを変更できないことを示すエラーが表示されます。 たとえば、次のように入力します。
 
 ```
 PS> Set-Alias -Name gi -Value Get-Item
