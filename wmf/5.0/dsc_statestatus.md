@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: bed1186c10082bbdac7249503bf623678f13fccd
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: ff2c2bd7369893d72db001ecabf63991ded0bfd5
+ms.sourcegitcommit: ac20e0faaa37142e9c6e4507a21df2f4a3fdbece
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39267941"
+ms.lasthandoff: 09/10/2018
+ms.locfileid: "44339873"
 ---
 # <a name="unified-and-consistent-state-and-status-representation"></a>統一された一貫性のある状態とステータスの表現
 
@@ -25,8 +25,8 @@ LCM 状態と DSC 操作ステータスの形式を再検討し、次の規則�
 
 | シナリオ                        | LCMState             | 状態     | Reboot Requested | ResourcesInDesiredState   | ResourcesNotInDesiredState |
 |---------------------------------|----------------------|------------|---------------|------------------------------|--------------------------------|
-| S**^**                          | アイドル                 | 成功    | $false        | S                            | $null                          |
-| F**^**                          | PendingConfiguration | 障害    | $false        | $null                        | F                              |
+| S<sub>i</sub>                   | アイドル                 | 成功    | $false        | S                            | $null                          |
+| F<sub>i</sub>                   | PendingConfiguration | 障害    | $false        | $null                        | F                              |
 | S、F                             | PendingConfiguration | 障害    | $false        | S                            | F                              |
 | F、S                             | PendingConfiguration | 障害    | $false        | S                            | F                              |
 | S<sub>1</sub>、F、S<sub>2</sub> | PendingConfiguration | 障害    | $false        | S<sub>1</sub>、S<sub>2</sub> | F                              |
