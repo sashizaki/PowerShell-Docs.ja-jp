@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の構成の登録
-ms.openlocfilehash: cda899b20378b0183a3d88ecfd593aaf7356e967
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 2c4a8f64c966903a6eb8fcabe4cd25ae7f98b2c4
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34188515"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522856"
 ---
 # <a name="registering-jea-configurations"></a>JEA の構成の登録
 
@@ -57,7 +57,7 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 
 ## <a name="multi-machine-configuration-with-dsc"></a>DSC での複数コンピューター構成
 
-JEA を複数のコンピューターに展開する場合、最も簡単な展開モデルである JEA の [Desired State Configuration](https://msdn.microsoft.com/en-us/powershell/dsc/overview) リソースを使うと、各コンピューターに JEA を迅速かつ一貫して展開できます。
+JEA を複数のコンピューターに展開する場合、最も簡単な展開モデルである JEA の [Desired State Configuration](https://msdn.microsoft.com/powershell/dsc/overview) リソースを使うと、各コンピューターに JEA を迅速かつ一貫して展開できます。
 
 DSC で JEA を展開するには、次の前提条件が満たされていることを確認する必要があります。
 - 1 つまたは複数のロール機能が作成され、有効な PowerShell モジュールに追加されていること。
@@ -110,7 +110,7 @@ Configuration JEAMaintenance
 }
 ```
 
-その後、[ローカル構成マネージャーを直接呼び出す](https://msdn.microsoft.com/en-us/powershell/dsc/metaconfig)ことにより、または[プル サーバーの構成](https://msdn.microsoft.com/en-us/powershell/dsc/pullserver)を更新することにより、この構成をシステムに適用できます。
+その後、[ローカル構成マネージャーを直接呼び出す](https://msdn.microsoft.com/powershell/dsc/metaconfig)ことにより、または[プル サーバーの構成](https://msdn.microsoft.com/powershell/dsc/pullserver)を更新することにより、この構成をシステムに適用できます。
 
 DSC リソースを使うと、既定の Microsoft.PowerShell リモート処理エンドポイントを置き換えることもできます。
 これを行うと、リソースは、既定の WinRM ACL (リモート管理ユーザーとローカル管理者グループのメンバーにアクセスを許可します) を持つ "Microsoft.PowerShell.Restricted" という名前のバックアップ非制約エンドポイントを自動的に登録します。

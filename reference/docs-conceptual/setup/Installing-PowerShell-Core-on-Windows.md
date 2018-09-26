@@ -2,12 +2,12 @@
 title: Windows への PowerShell Core のインストール
 description: Windows への PowerShell Core のインストールに関する情報
 ms.date: 08/06/2018
-ms.openlocfilehash: 84c158b97519194888cf031c57a2a4634120c456
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 595f12efd060406264a1a4efb9d54035da06ffe3
+ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587120"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557180"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Windows への PowerShell Core のインストール
 
@@ -56,7 +56,7 @@ Windows IoT には既に Windows PowerShell が付属しており、PowerShell C
    # change the destination to however you had partitioned it with sufficient
    # space for the zip and the unzipped contents
    # the path should be local to the device
-   Copy-Item .\PowerShell-6.0.2-win-arm32.zip -Destination u:\users\administrator\Downloads -ToSession $s
+   Copy-Item .\PowerShell-6.1.0-win-arm32.zip -Destination u:\users\administrator\Downloads -ToSession $s
    ```
 
 3. デバイスに接続してアーカイブを展開します
@@ -64,13 +64,13 @@ Windows IoT には既に Windows PowerShell が付属しており、PowerShell C
    ```powershell
    Enter-PSSession $s
    cd u:\users\administrator\downloads
-   Expand-Archive .\PowerShell-6.0.2-win-arm32.zip
+   Expand-Archive .\PowerShell-6.1.0-win-arm32.zip
    ```
 
 4. PowerShell Core 6 へのリモート処理を設定します
 
    ```powershell
-   cd .\PowerShell-6.0.2-win-arm32
+   cd .\PowerShell-6.1.0-win-arm32
    # Be sure to use the -PowerShellHome parameter otherwise it'll try to create a new
    # endpoint with Windows PowerShell 5.1
    .\Install-PowerShellRemoting.ps1 -PowerShellHome .
@@ -81,7 +81,7 @@ Windows IoT には既に Windows PowerShell が付属しており、PowerShell C
 
    ```powershell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
-   Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.6.0.2
+   Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.6.1.0
    ```
 
 ## <a name="deploying-on-nano-server"></a>Nano Server への展開

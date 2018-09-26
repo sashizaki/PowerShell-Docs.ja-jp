@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: JEA, PowerShell, セキュリティ
 title: JEA セッションの構成
-ms.openlocfilehash: 3e5a663be8e7aba09a2592c278224cd892c89a20
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190096"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522963"
 ---
 # <a name="jea-session-configurations"></a>JEA セッションの構成
 
@@ -221,7 +221,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 
 ## <a name="testing-a-session-configuration-file"></a>セッション構成ファイルのテスト
 
-[Test-PSSessionConfigurationFile](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) コマンドレットを使って、セッション構成をテストできます。
+[Test-PSSessionConfigurationFile](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-pssessionconfigurationfile) コマンドレットを使って、セッション構成をテストできます。
 テキスト エディターを使って手動で pssc ファイルを編集した場合は、セッション構成ファイルをテストして構文が正しいことを確認することを強くお勧めします。
 セッション構成ファイルがこのテストに合格しない場合、システムに正しく登録することはできません。
 

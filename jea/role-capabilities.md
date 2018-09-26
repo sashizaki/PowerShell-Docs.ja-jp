@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: JEA, PowerShell, セキュリティ
 title: JEA ロール機能
-ms.openlocfilehash: 0531baa284e66a42a162329ea20ecfdca6d0b526
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190538"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522943"
 ---
 # <a name="jea-role-capabilities"></a>JEA ロール機能
 
@@ -108,7 +108,7 @@ VisibleCmdlets フィールドで下のあらゆる要素を組み合わせる�
 
 ValidatePattern と ValidateSet の両方を同じコマンドレットまたは関数に適用することはできません。
 
-適用すると、ValidatePattern が ValidateSet より優先されます。
+適用すると、ValidatePattern が ValidateSet をオーバーライドします。
 
 ValidatePattern の詳細については、[この「*Hey, Scripting Guy!*](https://blogs.technet.microsoft.com/heyscriptingguy/2011/01/11/validate-powershell-parameters-before-running-the-script/)」投稿と [PowerShell 正規表現](https://technet.microsoft.com/library/hh847880.aspx)参照コンテンツをご覧ください。
 
@@ -181,9 +181,9 @@ FunctionDefinitions = @{
 
 Select-Object は、すべての JEA セッションで既定の制約付きコマンドレットであり、オブジェクトで任意プロパティを選択することが禁止されます。
 関数で制約なしの Select-Object を使用するには、FQMN を指定し、完全な実装を明示的に要求する必要があります。
-JEA セッションの制約付きコマンドレットは、関数から呼び出されるとき、PowerShell の[コマンド優先順位](https://msdn.microsoft.com/en-us/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence)に従い、同じように動作します。
+JEA セッションの制約付きコマンドレットは、関数から呼び出されるとき、PowerShell の[コマンド優先順位](https://msdn.microsoft.com/powershell/reference/3.0/microsoft.powershell.core/about/about_command_precedence)に従い、同じように動作します。
 
-カスタム関数をたくさん記述する場合、[PowerShell スクリプト モジュール](https://msdn.microsoft.com/en-us/library/dd878340(v=vs.85).aspx)に入れると簡単です。
+カスタム関数をたくさん記述する場合、[PowerShell スクリプト モジュール](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx)に入れると簡単です。
 その後、組み込みやサードパーティのモジュールの場合のように、VisibleFunctions フィールドを利用し、JEA セッションで関数を表示させることができます。
 
 ## <a name="place-role-capabilities-in-a-module"></a>モジュールにロール機能を配置する
@@ -207,7 +207,7 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-PowerShell モジュール、モジュール マニフェスト、PSModulePath 環境変数の詳細については、「[Understanding a PowerShell Module](https://msdn.microsoft.com/en-us/library/dd878324.aspx)」 (PowerShell モジュールの概要) を参照してください。
+PowerShell モジュール、モジュール マニフェスト、PSModulePath 環境変数の詳細については、「[Understanding a PowerShell Module](https://msdn.microsoft.com/library/dd878324.aspx)」 (PowerShell モジュールの概要) を参照してください。
 
 ## <a name="updating-role-capabilities"></a>ロール機能を更新する
 

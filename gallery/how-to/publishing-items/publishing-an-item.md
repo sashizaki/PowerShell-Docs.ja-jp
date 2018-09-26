@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: アイテムの作成と公開
-ms.openlocfilehash: 7c2a2be6986bf65c168d7c3960366fac4ee31301
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: c5027c5fb357bb187611880ba75610a8f33074e0
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189535"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522975"
 ---
 # <a name="creating-and-publishing-an-item"></a>アイテムの作成と公開
 
 PowerShell ギャラリーとは、広範な PowerShell ユーザー コミュニティを通じて、安定した PowerShell モジュール、スクリプト、および DSC リソースを公開および共有する場所です。
 
 この記事では、スクリプトまたはモジュールを準備して PowerShell ギャラリーに公開するまでの仕組みと重要な手順について説明します。
-[公開ガイドライン](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines)を確認して、公開したアイテムがより多くの PowerShell ギャラリー ユーザーに受け入れられるようにする方法を理解しておくことを強くお勧めします。
+[公開ガイドライン](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery-PublishingGuidelines)を確認して、公開したアイテムがより多くの PowerShell ギャラリー ユーザーに受け入れられるようにする方法を理解しておくことを強くお勧めします。
 
 アイテムを PowerShell ギャラリーに公開するための最小要件は以下の通りです。
 
@@ -30,7 +30,7 @@ PowerShell ギャラリーは、PowerShell モジュールおよび PowerShell �
 
 ## <a name="powershell-gallery-account-and-api-key"></a>PowerShell ギャラリー アカウントと API キー
 
-PowerShell ギャラリー アカウントの設定方法については、「[Creating a PowerShell Gallery Account (PowerShell ギャラリー アカウントを作成する)](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery_creating_an_account)」をご覧ください。
+PowerShell ギャラリー アカウントの設定方法については、「[Creating a PowerShell Gallery Account (PowerShell ギャラリー アカウントを作成する)](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery_creating_an_account)」をご覧ください。
 
 アカウントを作成したら、アイテムの公開に必要な API キーを取得できます。
 アカウントでサインインすると、PowerShell ギャラリー ページの上部で [Register]\(登録\) の代わりにユーザー名が表示されます。
@@ -44,9 +44,9 @@ PowerShell ギャラリー アカウントの設定方法については、「[C
 
 PowerShell ギャラリーでは、スクリプトまたはモジュールのマニフェストに含まれているメタデータ フィールドから抽出した情報を、ギャラリーのユーザーに提供します。
 PowerShell ギャラリーに公開するアイテムを作成または変更するには、アイテムのマニフェストに含める情報についていくつかの要件があります。
-[公開ガイドライン](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/psgallery-PublishingGuidelines)のアイテム メタデータに関するセクションを確認して、アイテムを使ってユーザーに対して最適な情報を提供する方法を理解することを強くお勧めします。
+[公開ガイドライン](https://msdn.microsoft.com/powershell/gallery/psgallery/psgallery-PublishingGuidelines)のアイテム メタデータに関するセクションを確認して、アイテムを使ってユーザーに対して最適な情報を提供する方法を理解することを強くお勧めします。
 
-[New-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/ModuleManifest-Reference) および [New-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_new-scriptfileinfo) コマンドレットは、すべてのマニフェスト要素のプレースホルダーが用意されたマニフェスト テンプレートを作成します。
+[New-ModuleManifest](https://msdn.microsoft.com/powershell/gallery/psget/module/ModuleManifest-Reference) および [New-ScriptFileInfo](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_new-scriptfileinfo) コマンドレットは、すべてのマニフェスト要素のプレースホルダーが用意されたマニフェスト テンプレートを作成します。
 
 どちらのマニフェストにも、公開に重要な 2 つのセクションがあります。主キー データ、および PrivateData の PSData エリアです。PowerShell モジュール マニフェストにおける主キー データとは、PrivateData セクション外のすべてです。
 主キーのセットは、使用している PowerShell のバージョンに関連付けられており、未定義はサポートされません。
@@ -86,14 +86,14 @@ PowerShell Script Analyzer は、PowerShell ギャラリーでアイテムが公
 ギャラリー運用チームは、エラーが検出されると対処のためにアイテムの所有者に連絡します。
 
 アイテムに含まれるマニフェスト情報が PowerShell ギャラリー インフラストラクチャで読み取れない場合、公開することはできません。
-[Test-ModuleManifest](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) は、インストールするとそのモジュールが使用できなくなるような、一般的な問題を検出します。 これはすべてのモジュールについて、PowerShell ギャラリーに公開する前に実行する必要があります。
+[Test-ModuleManifest](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/test-modulemanifest) は、インストールするとそのモジュールが使用できなくなるような、一般的な問題を検出します。 これはすべてのモジュールについて、PowerShell ギャラリーに公開する前に実行する必要があります。
 
-同様に、[Test-ScriptFileInfo](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_test-scriptfileinfo) はスクリプトに含まれるメタデータを検証するもので、すべてのスクリプト (モジュールとは別に公開された) で、PowerShell ギャラリーに公開する前に実行する必要があります。
+同様に、[Test-ScriptFileInfo](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_test-scriptfileinfo) はスクリプトに含まれるメタデータを検証するもので、すべてのスクリプト (モジュールとは別に公開された) で、PowerShell ギャラリーに公開する前に実行する必要があります。
 
 
 ## <a name="publishing-items"></a>アイテムを公開する
 
-PowerShell ギャラリーにアイテムを公開するには、[Publish-Script](https://msdn.microsoft.com/en-us/powershell/gallery/psget/script/psget_publish-script) または [Publish-Module](https://msdn.microsoft.com/en-us/powershell/gallery/psget/module/psget_publish-module) を使用する必要があります。
+PowerShell ギャラリーにアイテムを公開するには、[Publish-Script](https://msdn.microsoft.com/powershell/gallery/psget/script/psget_publish-script) または [Publish-Module](https://msdn.microsoft.com/powershell/gallery/psget/module/psget_publish-module) を使用する必要があります。
 これらのコマンドは、どちらも以下が必要です。
 
 - 公開するアイテムへのパス。 モジュールの場合、モジュールの名前が付いたフォルダーを使用します。 同じモジュールの複数のバージョンを含むフォルダーを指定する場合は、RequiredVersion を指定する必要があります。

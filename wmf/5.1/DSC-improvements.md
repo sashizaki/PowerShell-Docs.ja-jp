@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 の DSC 機能強化
-ms.openlocfilehash: 32bdde6d43d17cc76c454fe10b00097753a9eebe
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
+ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309544"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523044"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 の Desired State Configuration (DSC) の機能強化
 
@@ -154,7 +154,7 @@ Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
 
 ## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>PsDscRunAsCredential と DSC 複合リソースを使用する
 
-[*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) と DSC [複合](https://msdn.microsoft.com/en-us/powershell/dsc/authoringresourcecomposite)リソースが使用できるようになりました。
+[*PsDscRunAsCredential*](https://msdn.microsoft.com/cs-cz/powershell/dsc/runasuser) と DSC [複合](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite)リソースが使用できるようになりました。
 
 構成内で複合リソースを使用するとき、PsDscRunAsCredential の値を指定できるようになりました。
 指定されると、すべてのリソースが複合リソース内で RunAs ユーザーとして実行されます。
@@ -162,7 +162,7 @@ Set-DscLocalConfigurationManager -Path .\RegistrationMetaConfig -Verbose
 RunAs 資格情報が複合リソース階層のあらゆるレベルに配信されます。
 複合リソース内の何らかのリソースにより PsDscRunAsCredential の独自の値が指定される場合、構成コンパイル中に結合エラーが発生します。
 
-この例は、PSDesiredStateConfiguration モジュールに含まれている [WindowsFeatureSet](https://msdn.microsoft.com/en-us/powershell/wmf/dsc_newresources) 複合リソースの利用を示しています。
+この例は、PSDesiredStateConfiguration モジュールに含まれている [WindowsFeatureSet](https://msdn.microsoft.com/powershell/wmf/dsc_newresources) 複合リソースの利用を示しています。
 
 ```powershell
 Configuration InstallWindowsFeature
@@ -197,7 +197,7 @@ InstallWindowsFeature -ConfigurationData $configData
 
 ## <a name="dsc-module-and-configuration-signing-validations"></a>DSC のモジュールと構成の署名検証
 
-DSC では、プル サーバーから管理対象コンピューターに構成とモジュールが配信されます。
+DSC では、プル サーバーからマネージド コンピューターに構成とモジュールが配信されます。
 プル サーバーが侵害された場合、攻撃者はプル サーバーで構成とモジュールを改ざんし、すべての管理対象ノードに配信し、侵害する可能性があります。
 
 WMF 5.1 では、DSC はカタログ ファイルと構成 (.MOF) ファイルのデジタル署名の検証に対応しています。

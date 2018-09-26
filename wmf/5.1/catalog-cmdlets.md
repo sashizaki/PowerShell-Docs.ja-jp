@@ -3,16 +3,16 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: カタログ コマンドレット
-ms.openlocfilehash: 7eaca09667af0eb5d719f23e987bb112e8514978
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: ec5fc866fe27a894b23b93d3ea46ad9c0cba288e
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189069"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522890"
 ---
 # <a name="catalog-cmdlets"></a>カタログ コマンドレット
 
-[Microsoft.Powershell.Secuity](https://technet.microsoft.com/en-us/library/hh847877.aspx) モジュールに新しいコマンドレットが 2 つ追加されました。Windows カタログ ファイルを生成し、検証するコマンドレットです。
+[Microsoft.Powershell.Secuity](https://technet.microsoft.com/library/hh847877.aspx) モジュールに新しいコマンドレットが 2 つ追加されました。Windows カタログ ファイルを生成し、検証するコマンドレットです。
 
 ## <a name="new-filecatalog"></a>New-FileCatalog
 --------------------------------
@@ -49,5 +49,5 @@ Test-FileCatalog [-CatalogFilePath] <string> [[-Path] <string[]>] [-Detailed] [-
 ![](../images/TestFileCatalog.jpg)
 
 このコマンドレットは、カタログ ファイル内で見つかったすべてのファイルとその相対パスのハッシュを、ディスクに保存されているものと比較します。 ファイル ハッシュとパスの間に不一致が検出された場合、`ValidationFailed` というステータスを返します。
-`Detailed` スイッチを利用し、この情報をすべて取得できます。 カタログの署名ステータスは、`Signature` フィールドとして表示されます。これは、カタログ ファイルで [Get-AuthenticodeSignature](https://technet.microsoft.com/en-us/library/hh849805.aspx) コマンドレットを呼び出すことと同じです。
+`Detailed` スイッチを利用し、この情報をすべて取得できます。 カタログの署名ステータスは、`Signature` フィールドとして表示されます。これは、カタログ ファイルで [Get-AuthenticodeSignature](https://technet.microsoft.com/library/hh849805.aspx) コマンドレットを呼び出すことと同じです。
 `FilesToSkip` パラメーターを利用し、検証中にファイルをスキップすることもできます。

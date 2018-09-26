@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の使用
-ms.openlocfilehash: 891e4be4c3fadceeff5ede7ac5cab04a5f80e5c1
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 539d280aff0b2656a5e9c710acfa468057753027
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190079"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522992"
 ---
 # <a name="using-jea"></a>JEA の使用
 
@@ -106,14 +106,14 @@ Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredComman
 ```
 
 また、[Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession) を使って、暗黙的なリモート処理からプロキシされたコマンドレットを保持することもできます。
-暗黙的なリモート処理の詳細については、[Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) および [Import-Module](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/import-module) のヘルプ ドキュメントをご覧ください。
+暗黙的なリモート処理の詳細については、[Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) および [Import-Module](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/import-module) のヘルプ ドキュメントをご覧ください。
 
 ## <a name="using-jea-programatically"></a>JEA のプログラムでの使用
 
 JEA は、社内ヘルプデスク アプリや Web サイトなどのオートメーション システムやユーザー アプリケーションでも使用できます。
 方法は制約のない PowerShell エンドポイントと対話するアプリの作成と同じですが、JEA ではリモート セッションで実行できるコマンドが制限されることに注意する必要があります。
 
-簡単な 1 回限りのタスクでは、[Invoke-Command](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/invoke-command) コマンドを使って一連のコマンドを JEA で実行できます。
+簡単な 1 回限りのタスクでは、[Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) コマンドを使って一連のコマンドを JEA で実行できます。
 
 ```powershell
 Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Process; Get-Service }
@@ -126,14 +126,14 @@ $allowedCommands = Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'J
 $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Format-Table Name, Parameters
 ```
 
-C# アプリを作成する場合は、[WSManConnectionInfo](https://msdn.microsoft.com/en-us/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) オブジェクトで構成名を指定することにより、JEA セッションに接続する PowerShell 実行空間を作成できます。
+C# アプリを作成する場合は、[WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) オブジェクトで構成名を指定することにより、JEA セッションに接続する PowerShell 実行空間を作成できます。
 
 ```csharp
 
 // using System.Management.Automation;
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";
-var creds        = // create a PSCredential object here (https://msdn.microsoft.com/en-us/library/system.management.automation.pscredential(v=vs.85).aspx)
+var creds        = // create a PSCredential object here (https://msdn.microsoft.com/library/system.management.automation.pscredential(v=vs.85).aspx)
 
 WSManConnectionInfo connectionInfo = new WSManConnectionInfo(
                     false,                 // Use SSL
@@ -168,7 +168,7 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 
 ## <a name="using-jea-with-powershell-direct"></a>PowerShell Direct での JEA の使用
 
-Windows 10 と Windows Server 2016 の Hyper-V には [PowerShell Direct](https://msdn.microsoft.com/en-us/virtualization/hyperv_on_windows/user_guide/vmsession) 機能があります。Hyper-V 管理者はこの機能を使用して、仮想マシンのネットワーク構成やリモート管理設定に関係なく、PowerShell で仮想マシンを管理できます。
+Windows 10 と Windows Server 2016 の Hyper-V には [PowerShell Direct](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/vmsession) 機能があります。Hyper-V 管理者はこの機能を使用して、仮想マシンのネットワーク構成やリモート管理設定に関係なく、PowerShell で仮想マシンを管理できます。
 
 JEA で PowerShell Direct を使うと、Hyper-V 管理者に VM への制限付きアクセスを提供できます。これは、VM へのネットワーク接続が失われ、データ センターの管理者がネットワークの設定を修正する必要がある場合に便利です。
 

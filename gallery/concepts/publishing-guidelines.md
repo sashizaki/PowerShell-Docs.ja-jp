@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 description: パブリッシャー向けのガイドライン
 title: PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
-ms.openlocfilehash: 3aca76f8904c7eb64e5c96ae4f0f26014e0d2609
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 11207a312f916506f855c0e6e292752f72fc04c1
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190334"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523032"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -172,12 +172,12 @@ PowerShell では、コード署名について 2 つの主な検証方法がサ
 - モジュールへのカタログ署名
 
 PowerShell ファイルに署名することで、実行するコードが信頼できる作成元で作成されており、変更されていないことを確実に保証できます。
-PowerShell スクリプト ファイルへの署名方法の詳細については、「[About Signing (署名について)](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_signing)」をご覧ください。
+PowerShell スクリプト ファイルへの署名方法の詳細については、「[About Signing (署名について)](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_signing)」をご覧ください。
 署名はすべての .PS1 ファイルに追加することができ、スクリプトのロード時に PowerShell により検証されます。
-[実行ポリシー](https://msdn.microsoft.com/en-us/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) コマンドレットを使用して、署名済みのスクリプトのみが使用されるように PowerShell を制限できます。
+[実行ポリシー](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) コマンドレットを使用して、署名済みのスクリプトのみが使用されるように PowerShell を制限できます。
 
 モジュールへのカタログ署名は、バージョン 5.1 で PowerShell に追加された機能です。
-モジュールへの署名方法については、「[カタログ コマンドレット](https://msdn.microsoft.com/en-us/powershell/wmf/5.1/catalog-cmdlets)」をご覧ください。
+モジュールへの署名方法については、「[カタログ コマンドレット](https://msdn.microsoft.com/powershell/wmf/5.1/catalog-cmdlets)」をご覧ください。
 カタログ署名は、モジュール内の全ファイルのハッシュ値を含むカタログ ファイルを作成してそのファイルに署名することで行います。
 PowerShellGet の publish-module、install-module、save-module、update-module の各コマンドレットにより、署名が有効であることがチェックされ、各アイテムのハッシュ値がカタログに記載されているものと一致するか確認されます。
 システムに旧バージョンのモジュールがインストールされている場合、新バージョンの署名機関がインストール済みのものと一致することが install-module によって確認されます。
