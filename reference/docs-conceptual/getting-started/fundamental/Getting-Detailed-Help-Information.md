@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell, コマンドレット
 title: 詳しいヘルプ情報の取得
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 88f0357b935a7c75df07d667e3f2f2d0e493f89d
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: d2578604ec7c01c0b2734bd180e1babaca58b153
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134036"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851274"
 ---
 # <a name="getting-detailed-help-information"></a>詳しいヘルプ情報の取得
 
@@ -149,7 +149,7 @@ Get-Help c:\ps-test\TestScript.ps1
 オンライン ヘルプを表示するには、`Get-Help` コマンドレットの **Online** パラメーターを使用します。 プロバイダー ヘルプや概念説明 (About) のヘルプ記事など、PowerShell に付属しているすべてのヘルプ記事は、[PowerShell](/powershell/scripting/powershell-scripting) ドキュメントでオンラインから利用できます。
 
 > [!NOTE]
-> 概念説明の記事 (about_*) やプロバイダー ヘルプの記事では、**Online** パラメーターを使用できません。
+> 概念説明の記事 (about_\*) やプロバイダー ヘルプの記事では、**Online** パラメーターを使用できません。
 > オンライン ヘルプはオプションであるため、すべてのコマンドレット、関数、またはスクリプトで有効なわけではありません。
 
 たとえば、`Get-ChildItem` コマンドレットのヘルプ記事のオンライン バージョンを表示するには、次のように入力します。
