@@ -3,16 +3,20 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーの概要
-ms.openlocfilehash: 83974698152e75efac66ea725a9c220486676d6f
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 39998df1a2bf9363dd008dc96a802157c8d691d7
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190164"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523058"
 ---
 # <a name="get-started-with-the-powershell-gallery"></a>PowerShell ギャラリーの概要
 
-PowerShell ギャラリーからシステムに項目をダウンロードするには、[PowerShellGet](/powershell/module/powershellget) モジュールが必要です。 PowerShellGet モジュールは次のいずれかで見つかります。 PowerShell ギャラリーから項目をダウンロードするのにサインインする必要はありません。
+PowerShell ギャラリーからアイテムをインストールする適切な方法は、[PowerShellGet](/powershell/module/powershellget) モジュールでコマンドレットを使用することです。 PowerShell ギャラリーから項目をダウンロードするのにサインインする必要はありません。
+
+> [!NOTE]
+> PowerShell ギャラリーから直接パッケージをダウンロードすることもできますが、この方法はお勧めできません。 詳細については、「[パッケージの手動ダウンロード](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/how-to/working-with-items/manual-download.md)」を参照してください。  
+
 
 ## <a name="discovering-items-from-the-powershell-gallery"></a>PowerShell ギャラリーでの項目の検出
 
@@ -40,7 +44,8 @@ DSC リソースは常にモジュールの一部として配布されるため�
 
 誠意をもって公開されていると思われない項目が見つかった場合は、その項目のページの **[不正使用を報告]** をクリックします。
 
-[Find-Module][] または [Find-Script][] を実行している場合、返される PSGetModuleInfo オブジェクトにこのデータが表示されます。 たとえば、`Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` を実行すると、ギャラリーの PSReadLine モジュールのデータが返されます。
+[Find-Module][] または [Find-Script][] を実行している場合、返される PSGetModuleInfo オブジェクトにこのデータが表示されます。 たとえば、`Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` を実行すると、
+ギャラリーの PSReadLine モジュールのデータが返されます。
 
 ## <a name="downloading-items-from-the-powershell-gallery"></a>PowerShell ギャラリーでの項目のダウンロード
 

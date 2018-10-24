@@ -1,13 +1,13 @@
 ---
 ms.date: 08/23/2017
-keywords: powershell,コマンドレット
+keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access のインストールと使用
-ms.openlocfilehash: 8fa965ff30cd9e0b688bcc46d01d843a0f1c2e0b
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268417"
+ms.lasthandoff: 10/09/2018
+ms.locfileid: "48851326"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Access のインストールと使用
 
@@ -92,8 +92,7 @@ Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマ�
    > Windows PowerShell 3.0 と 4.0 では、サーバー マネージャー コマンドレット モジュールに含まれるコマンドレットを実行する前に、そのモジュールを Windows PowerShell セッションにインポートする必要はありません。 モジュールは、モジュールに含まれるコマンドレットを初めて実行するときに自動的にインポートされます。
    > また、Windows PowerShell のコマンドレットでは、大文字と小文字は区別されません。
 
-1. 次のように入力して **Enter** キーを押します。*computer_name* は、Windows PowerShell Web Access をインストールするリモート コンピューターの名前です (必要な場合)。 
-             `-Restart` パラメーターによって、対象サーバーが自動的に再起動されます (必要な場合)。
+1. 次のように入力して **Enter** キーを押します。*computer_name* は、Windows PowerShell Web Access をインストールするリモート コンピューターの名前です (必要な場合)。 `-Restart` パラメーターによって、対象サーバーが自動的に再起動されます (必要な場合)。
 
    `Install-WindowsFeature -Name WindowsPowerShellWebAccess -ComputerName <computer_name> -IncludeManagementTools -Restart`
 
@@ -110,8 +109,7 @@ Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマ�
 
 ### <a name="configure-the-gateway"></a>ゲートウェイを構成する
 
-**Install-PswaWebApplication** コマンドレットを使うと Windows PowerShell Web Access を簡単に構成できます。 
-          `UseTestCertificate` パラメーターを `Install-PswaWebApplication` コマンドレットに追加することで、テスト用の自己署名 SSL 証明書をインストールできますが、これは安全ではありません。運用環境のセキュリティ保護のため、常に証明機関 (CA) によって署名された有効な SSL 証明書を使ってください。 管理者は IIS マネージャー コンソールを使ってテスト証明書を任意の署名済み証明書に置き換えることができます。
+**Install-PswaWebApplication** コマンドレットを使うと Windows PowerShell Web Access を簡単に構成できます。 `UseTestCertificate` パラメーターを `Install-PswaWebApplication` コマンドレットに追加することで、テスト用の自己署名 SSL 証明書をインストールできますが、これは安全ではありません。運用環境のセキュリティ保護のため、常に証明機関 (CA) によって署名された有効な SSL 証明書を使ってください。 管理者は IIS マネージャー コンソールを使ってテスト証明書を任意の署名済み証明書に置き換えることができます。
 
 Windows PowerShell Web Access の Web アプリケーションの構成を完了するには、`Install-PswaWebApplication` コマンドレットを実行するか、IIS マネージャーの GUI ベースの構成手順を実行します。
 既定では、コマンドレットによって **pswa** Web アプリケーション (および専用の **pswa_pool** というアプリケーション プール) が **[既定の Web サイト]** コンテナーにインストールされ、IIS マネージャーで確認できます。必要な場合、コマンドレットに指定して Web アプリケーションの既定のサイト コンテナーを変更できます。 IIS マネージャーは、ポート番号や Secure Sockets Layer (SSL) 証明書の変更など、Web アプリケーションで利用できる構成オプションを提供します。
@@ -158,8 +156,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
    `Install-PswaWebApplication`
 
-   コマンドレットの実行により次のゲートウェイ設定が構成されます。 これらの設定は、必要に応じて IIS マネージャー コンソールで変更できます。 
-             `WebsiteName` コマンドレットの `WebApplicationName` および `Install-PswaWebApplication` パラメーターの値を指定することも可能です。
+   コマンドレットの実行により次のゲートウェイ設定が構成されます。 これらの設定は、必要に応じて IIS マネージャー コンソールで変更できます。 `WebsiteName` コマンドレットの `WebApplicationName` および `Install-PswaWebApplication` パラメーターの値を指定することも可能です。
 
    - Path: /pswa
    - ApplicationPool: pswa_pool
@@ -330,7 +327,7 @@ Windows PowerShell Web Access をインストールした後、IIS Manager で�
 
    別の Web サイトが既に 443 を使っている場合、またはポート番号を変更するセキュリティ上の理由がある場合は、既定のポートを変更します。 選択したポートを、ゲートウェイ サーバー上で実行されている別の Web サイトが使っている場合は、**[Web サイトの追加]** ダイアログ ボックスで **[OK]** をクリックすると警告が表示されます。 Windows PowerShell Web Access を実行するには未使用のポートを使う必要があります。
 
-1. 組織の必要に応じて、組織またはユーザーがわかりやすいホスト名を指定します (**www.contoso.com** など)。 **[OK]** をクリックします。
+1. 組織の必要に応じて、組織またはユーザーにわかるホスト名を指定します (**`www.contoso.com`** など)。 **[OK]** をクリックします。
 
 1. 運用環境のセキュリティ保護を強化するため、CA によって署名された有効な証明書を提供することを強くお勧めします。 ユーザーは HTTPS Web サイトを経由しないと Windows PowerShell Web Access に接続できないため、SSL 証明書は必ず提供する必要があります。 証明書の取得方法の詳細については、このトピックの「[IIS マネージャーで SSL 証明書を構成するには](#to-configure-an-ssl-certificate-in-iis-Manager)」を参照してください。
 
@@ -409,7 +406,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
    - **[インポート]** をクリックして、ネットワーク内の場所にある既存の有効な証明書をインポートします。
    - **[証明書の要求の作成]** をクリックして、[VeriSign](http://www.verisign.com/)、[Thawte](https://www.thawte.com/)、[GeoTrust](https://www.geotrust.com/) などの CA に証明書を要求します。 証明書の共通名が要求のホスト ヘッダーと一致している必要があります。
 
-     たとえば、クライアントのブラウザーが http://www.contoso.com/ を要求する場合、共通名も http://www.contoso.com/ でなければなりません。 これは、証明書を使う Windows PowerShell Web Access ゲートウェイを提供する場合に最も安全かつ推奨されるオプションです。
+     たとえば、クライアントのブラウザーが `http://www.contoso.com/` を要求する場合、共通名も `http://www.contoso.com/` でなければなりません。 これは、証明書を使う Windows PowerShell Web Access ゲートウェイを提供する場合に最も安全かつ推奨されるオプションです。
 
    - **[自己署名証明書を作成する]** をクリックして証明書を作成します。この証明書はすぐに使うことができ、必要な場合は後でCAが署名できます。 自己署名証明書にわかりやすい名前を指定します (**Windows PowerShell Web Access** など)。 これは、安全と見なされない、プライベートなテスト環境にのみ推奨されるオプションです。
 

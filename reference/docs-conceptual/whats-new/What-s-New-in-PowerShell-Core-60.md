@@ -2,12 +2,12 @@
 title: PowerShell Core 6.0 の新機能
 description: PowerShell Core 6.0 でリリースされた新機能と変更
 ms.date: 08/06/2018
-ms.openlocfilehash: f0cddad223528cd0f2b4f392faeb6e08e1050c51
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
+ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587246"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46289244"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 の新機能
 
@@ -80,7 +80,7 @@ Linux では、PowerShell は、ユビキタス ログ ソリューションで�
   - 履歴保存パスは `~/.local/share/powershell/PSReadline/ConsoleHost_history.txt` にあります。
   - ユーザー モジュール パスは `~/.local/share/powershell/Modules` にあります。
 - Unix では、コロン文字を含むファイルとフォルダーの名前がサポートされます。 (#4959)
-- コンマを含むスクリプトの名前または完全パスがサポートされます。 (#4136) (@TimCurwick に感謝)
+- コンマを含むスクリプトの名前または完全パスがサポートされます。 (#4136) ([@TimCurwick](https://github.com/TimCurwick) に感謝)
 - ナビゲーション コマンドレットのワイルドカードの展開を抑制するために `-LiteralPath` が使用されるタイミングを検出します。 (#5038)
 - *nix `ls -R` や Windows の `DIR /S` ネイティブ コマンドのように動作するよう `Get-ChildItem` を更新しました。
   `Get-ChildItem` では、再帰的検索時に発生するシンボリック リンクを返し、これらのリンク先のディレクトリは検索しなくなりました。 (#3780)
@@ -118,7 +118,7 @@ PowerShell Core のバイナリ名が `powershell(.exe)` から `pwsh(.exe)` に
   ただし、この変更では、`pwsh.exe -Command Get-Command` などのコマンドの実行を試みる場合に `-c` または `-Command` を明示的に指定する必要があります。 (#4019)
 - PowerShell Core は `-i` (または `-Interactive`) スイッチを受け入れ、対話型シェルを示します。 (# 3558) これにより、Unix プラットフォームで既定のシェルとして PowerShell を使用できるようになります。
 - パラメーターの `-importsystemmodules` と `-psconsoleFile` を `pwsh.exe` から削除しました。 (#4995)
-- 他のネイティブ ツールに合わせて `pwsh -version` と `pwsh.exe` の組み込みヘルプを変更しました。 (#4958 & #4931) (@iSazonov に感謝)
+- 他のネイティブ ツールに合わせて `pwsh -version` と `pwsh.exe` の組み込みヘルプを変更しました。 (#4958 および #4931) ([@iSazonov](https://github.com/iSazonov) に感謝)
 - `-File` と `-Command` の無効な引数エラー メッセージと終了コードの Unix 標準への準拠 (#4573)
 - Windows の `-WindowStyle` パラメーターを追加しました。 (#4573) 同様に、Windows 以外のプラットフォームのパッケージ ベースのインストール更新はインプレース更新となります。
 
@@ -214,21 +214,21 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 
 ## <a name="semantic-versioning"></a>セマンティック バージョニング
 
-- `SemanticVersion` に `SemVer 2.0` との互換性を持たせました。 (#5037) (@iSazonov に感謝)
-- SemVer に合わせて `New-ModuleManifest` の既定の `ModuleVersion` を `0.0.1` に変更しました。 (#4842) (@LDSpits に感謝)
-- `System.Management.Automation.SemanticVersion` の型のアクセラレータとして `semver` を追加しました。 (#4142) (@oising に感謝)
+- `SemanticVersion` に `SemVer 2.0` との互換性を持たせました。 (#5037) ([@iSazonov](https://github.com/iSazonov) に感謝)
+- SemVer に合わせて `New-ModuleManifest` の既定の `ModuleVersion` を `0.0.1` に変更しました。 (#4842) ([@LDSpits](https://github.com/LDSpits) に感謝)
+- `System.Management.Automation.SemanticVersion` の型のアクセラレータとして `semver` を追加しました。 (#4142) ([@oising](https://github.com/oising) に感謝)
 - `SemanticVersion` インスタンスと、`Major` と `Minor` のバージョン値のみで構築される `Version` インスタンスを比較できるようになりました。
 
 ## <a name="language-updates"></a>言語の更新
 
-- ユーザーが Unicode 文字を引数、文字列、または変数名として使用できるように、Unicode エスケープ解析を実装します。 (#3958) (@rkeithhill に感謝)
+- ユーザーが Unicode 文字を引数、文字列、または変数名として使用できるように、Unicode エスケープ解析を実装します。 (#3958) ([@rkeithhill](https://github.com/rkeithhill) に感謝)
 - ESC の新しいエスケープ文字 (`` `e``) を追加しました。
-- 列挙型を文字列に変換するサポートを追加しました。(#4318) (@KirkMunro に感謝)
+- 列挙型を文字列に変換するサポートを追加しました。(#4318) ([@KirkMunro](https://github.com/KirkMunro) に感謝)
 - ジェネリック コレクションへの単一の要素配列のキャストを修正しました。 (#3170)
-- `'a'..'z'` が 'a' から 'z' までの文字を返すように、`..` 演算子に文字範囲のオーバーロードを追加しました。 (#5026) (@IISResetMe に感謝)
+- `'a'..'z'` が 'a' から 'z' までの文字を返すように、`..` 演算子に文字範囲のオーバーロードを追加しました。 (#5026) ([@IISResetMe](https://github.com/IISResetMe) に感謝)
 - 読み取り専用の変数を上書きしないように変数代入を修正しました。
 - スクリプト コマンドレットをドットで表す場合に、'DottedScopes' に自動変数のローカルをプッシュします。(#4709)
-- 分割演算子で 'Singleline, Multiline' オプションを使用できるようにします。(#4721) (@iSazonov に感謝)
+- 分割演算子で 'Singleline, Multiline' オプションを使用できるようにします。(#4721) ([@iSazonov](https://github.com/iSazonov) に感謝)
 
 ## <a name="engine-updates"></a>エンジンの更新
 
@@ -240,13 +240,13 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
   - `Platform`: これは `[System.Environment]::OSVersion.Platform` によって返されます。Windows では `Win32NT` に、macOs では `Unix` に、Linux では `Unix` に設定されます。
 - `$PSVersionTable` から `BuildVersion` プロパティを削除しました。
   このプロパティは、Windows のビルド バージョンに強く関連付けられていました。
-  代わりに、`GitCommitId` を使用して、PowerShell Core の正確なビルド バージョンを取得することをお勧めします。 (#3877) (@iSazonov に感謝)
+  代わりに、`GitCommitId` を使用して、PowerShell Core の正確なビルド バージョンを取得することをお勧めします。 (#3877) ([@iSazonov](https://github.com/iSazonov) に感謝)
 - `$PSVersionTable` から `ClrVersion` プロパティを削除しました。
   このプロパティは .NET Core には適しておらず、PowerShell に適用できない特定のレガシー用にのみ .NET Core で保持されました。
 - PowerShell が特定の OS で実行されているかどうかを判断するために、新しく 3 つの自動変数 (`$IsWindows`、`$IsMacOs`、`$IsLinux`) を追加しました。
 - PowerShell Core のバナーに `GitCommitId` を追加します。
-  バージョンを取得するために PowerShell を起動してすぐに `$PSVersionTable` を実行する必要がなくなりました。 (#3916) (@iSazonov に感謝)
-- 起動時刻の前に必要ないくつかの設定を格納するために、`$PSHome` の `powershell.config.json` という JSON 構成ファイルを追加します (`ExecutionPolicy` など)。
+  バージョンを取得するために PowerShell を起動してすぐに `$PSVersionTable` を実行する必要がなくなりました。 (#3916) ([@iSazonov](https://github.com/iSazonov) に感謝)
+- 起動前に必要ないくつかの設定 (`ExecutionPolicy` など) を格納するために、`$PSHome` に `powershell.config.json` という JSON 構成ファイルを追加します。
 - Windows EXE の実行中はパイプラインをブロックしません。
 - COM コレクションの列挙が有効になりました。 (#4553)
 
@@ -255,95 +255,95 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 ### <a name="new-cmdlets"></a>新しいコマンドレット
 
 - `Get-Uptime` を `Microsoft.PowerShell.Utility` に追加します。
-- `Remove-Alias` コマンドを追加します。 (#5143) (@PowershellNinja に感謝)
-- `Remove-Service` を管理モジュールに追加します。 (#4858) (@joandrsn に感謝)
+- `Remove-Alias` コマンドを追加します。 (#5143) ([@PowershellNinja](https://github.com/PowershellNinja) に感謝)
+- `Remove-Service` を管理モジュールに追加します。 (#4858) ([@joandrsn](https://github.com/joandrsn) に感謝)
 
 ### <a name="web-cmdlets"></a>Web コマンドレット
 
-- Web コマンドレットの証明書認証サポートを追加します。 (#4646) (@markekraus に感謝)
-- Web コマンドレットにコンテンツ ヘッダーのサポートを追加します。 (#4494 と #4640) (@markekraus に感謝)
-- Web コマンドレットに複数のリンク ヘッダー サポートを追加します。 (#5265) (@markekraus に感謝)
-- Web コマンドレットでの Link ヘッダーの改ページのサポート (#3828)
+- Web コマンドレットの証明書認証サポートを追加します。 (#4646) ([@markekraus](https://github.com/markekraus) に感謝)
+- Web コマンドレットにコンテンツ ヘッダーのサポートを追加します。 (#4494 および #4640) ([@markekraus](https://github.com/markekraus) に感謝)
+- Web コマンドレットに複数のリンク ヘッダー サポートを追加します。 (#5265) ([@markekraus](https://github.com/markekraus) に感謝)
+- Web コマンドレットでのリンク ヘッダーの改ページのサポート (#3828)
   - `Invoke-WebRequest` では、応答にリンク ヘッダーが含まれている場合、URL と `rel` 属性を表す Dictionary として RelationLink プロパティを作成し、開発者が使いやすいように URL を絶対 URL にします。
   - `Invoke-RestMethod` では、応答に Link ヘッダーが含まれている場合、`-FollowRelLink` スイッチを公開し、存在しなくなるか、省略可能な `-MaximumFollowRelLink` パラメーター値にヒットするまで、`next` `rel` リンクに自動的に従うようにします。
-- 標準以外のメソッドの動詞で使用できるように、Web コマンドレットに `-CustomMethod` パラメーターを追加します。 (#3142) (@Lee303 に感謝)
-- Web コマンドレットに `SslProtocol` サポートを追加します。 (#5329) (@markekraus に感謝)
-- Web コマンドレットにマルチパートのサポートを追加します。 (#4782) (@markekraus に感謝)
-- システム全体のプロキシ設定が無視されるように、Web コマンドレットに `-NoProxy` を追加します。 (#3447) (@TheFlyingCorpse に感謝)
-- Web コマンドレットのユーザー エージェントで OS プラットフォームがレポートされるようになりました。(#4937) (@LDSpits に感謝)
+- 標準以外のメソッドの動詞で使用できるように、Web コマンドレットに `-CustomMethod` パラメーターを追加します。 (#3142) ([@Lee303](https://github.com/Lee303) に感謝)
+- Web コマンドレットに `SslProtocol` サポートを追加します。 (#5329) ([@markekraus](https://github.com/markekraus) に感謝)
+- Web コマンドレットにマルチパートのサポートを追加します。 (#4782) ([@markekraus](https://github.com/markekraus) に感謝)
+- システム全体のプロキシ設定が無視されるように、Web コマンドレットに `-NoProxy` を追加します。 (#3447) ([@TheFlyingCorpse](https://github.com/TheFlyingCorpse) に感謝)
+- Web コマンドレットのユーザー エージェントで OS プラットフォームがレポートされるようになりました。(#4937) ([@LDSpits](https://github.com/LDSpits) に感謝)
 - ヘッダー値を検証せずにヘッダーを追加できるように、Web コマンドレットに `-SkipHeaderValidation` スイッチを追加します。 (#4085)
 - 必要に応じて、Web コマンドレットでサーバーの HTTPS 証明書を検証しないようにすることができます。
-- Web コマンドレットに認証パラメーターを追加します。 (#5052) (@markekraus に感謝)
+- Web コマンドレットに認証パラメーターを追加します。 (#5052) ([@markekraus](https://github.com/markekraus) に感謝)
   - 3 つのオプション (Basic、OAuth、Bearer) を提供する `-Authentication` を追加します。
   - OAuth および Bearer オプションのベアラー トークンを取得するために、`-Token` を追加します。
   - HTTPS ではなく、任意のトランスポート スキームに対して指定される認証をバイパスするために、`-AllowUnencryptedAuthentication` を追加します。
-- 応答ヘッダーのキャプチャを有効にするために、`Invoke-RestMethod` に `-ResponseHeadersVariable` を追加します。 (#4888) (@markekraus に感謝)
+- 応答ヘッダーのキャプチャを有効にするために、`Invoke-RestMethod` に `-ResponseHeadersVariable` を追加します。 (#4888) ([@markekraus](https://github.com/markekraus) に感謝)
 - 応答ステータス コードが成功でない場合は例外に HTTP 応答を含めるように、Web コマンドレットを修正します。 (#3201)
-- Web コマンドレット `UserAgent` を `WindowsPowerShell` から `PowerShell` に変更します。 (#4914) (@markekraus に感謝)
+- Web コマンドレットの `UserAgent` を `WindowsPowerShell` から `PowerShell` に変更します。 (#4914) ([@markekraus](https://github.com/markekraus) に感謝)
 - 明示的な `ContentType` 検出を `Invoke-RestMethod` に追加します。(#4692)
-- 標準以外の User-Agent ヘッダーを操作するために、Web コマンドレット `-SkipHeaderValidation` を修正します。 (#4479 および #4512) (@markekraus に感謝)
+- 標準以外の User-Agent ヘッダーを扱うために、Web コマンドレットの `-SkipHeaderValidation` を修正します。 (#4479 および #4512) ([@markekraus](https://github.com/markekraus) に感謝)
 
 ### <a name="json-cmdlets"></a>JSON コマンドレット
 
-- 代わりに `Hashtable` を返すように `ConvertFrom-Json` に `-AsHashtable` を追加します。 (#5043) (@bergmeister に感謝)
+- 代わりに `Hashtable` を返すように `ConvertFrom-Json` に `-AsHashtable` を追加します。 (#5043) ([@bergmeister](https://github.com/bergmeister) に感謝)
 - `ConvertTo-Json` 出力でよりわかりやすいフォーマッタを使用します。 (#2787) (@kittholland に感謝)
 - `ConvertTo-Json` に `Jobject` のシリアル化サポートを追加します。 (#5141)
 - 完全な JSON 文字列を一緒に構築する、パイプラインからの文字列配列の逆シリアル化を行うために `ConvertFrom-Json` を修正します。
   この修正により、改行で JSON 解析が中断される場合があります。 (#3823)
 - `System.Array` に定義されている `AliasProperty "Count"` を削除します。
-  これにより、一部の `Count` 出力の無関係な `ConvertFrom-Json` プロパティが削除されます。 (#3231) (@PetSerAl に感謝)
+  これにより、いくつかの `ConvertFrom-Json` の出力で無関係な `Count` プロパティが削除されます。 (#3231) ([@PetSerAl](https://github.com/PetSerAl) に感謝)
 
 ### <a name="csv-cmdlets"></a>CSV のコマンドレット
 
-- `Import-Csv` と `ConvertFrom-Csv` の `PSTypeName` サポートを追加します。 (#5389) (@markekraus に感謝)
-- `Import-Csv` で行区切り文字として `CR`、`LF`、`CRLF` を使用できるようにします。 (#5363) (@iSazonov に感謝)
-- `Export-Csv` と `ConvertTo-Csv` で `-NoTypeInformation` を既定値にします。 (#5164) (@markekraus に感謝)
+- `Import-Csv` と `ConvertFrom-Csv` の `PSTypeName` サポートを追加します。 (#5389) ([@markekraus](https://github.com/markekraus) に感謝)
+- `Import-Csv` で行区切り文字として `CR`、`LF`、`CRLF` を使用できるようにします。 (#5363) ([@iSazonov](https://github.com/iSazonov) に感謝)
+- `Export-Csv` と `ConvertTo-Csv` で `-NoTypeInformation` を既定値にします。 (#5164) ([@markekraus](https://github.com/markekraus) に感謝)
 
 ### <a name="service-cmdlets"></a>サービスのコマンドレット
 
-- プロパティの `UserName`、`Description`、`DelayedAutoStart`、`BinaryPathName`、`StartupType` を、`Get-Service` によって返される `ServiceController` オブジェクトに追加します。 (#4907) (@joandrsn に感謝)
-- `Set-Service` コマンドで資格情報を設定するための機能を追加します。 (#4844) (@joandrsn に感謝)
+- `Get-Service` によって返される `ServiceController` オブジェクトに `UserName`、`Description`、`DelayedAutoStart`、`BinaryPathName`、`StartupType` プロパティを追加します。 (#4907) ([@joandrsn](https://github.com/joandrsn) に感謝)
+- `Set-Service` コマンドで資格情報を設定するための機能を追加します。 (#4844) ([@joandrsn](https://github.com/joandrsn) に感謝)
 
 ### <a name="other-cmdlets"></a>その他のコマンドレット
 
 - リンク ループを確認し、必要に応じて symlink をトラバースする `-FollowSymlink` という `Get-ChildItem` にパラメーターを追加します。 (#4020)
-- `CSharpVersion7` をサポートするために `Add-Type` を更新します。 (#3933) (@iSazonov に感謝)
+- `CSharpVersion7` をサポートするために `Add-Type` を更新します。 (#3933) ([@iSazonov](https://github.com/iSazonov) に感謝)
 - より優れたソリューションが見つかるまでサポートされていない API を使用するため、`Microsoft.PowerShell.LocalAccounts` モジュールを削除します。 (#4302)
 - より優れたソリューションが見つかるまでサポートされていない API を使用するため、`Microsoft.PowerShell.Diagnostics` の `*-Counter` コマンドレットを削除します。 (#4303)
 - `Invoke-Item -Path <folder>` のサポートを追加します。 (#4262)
-- ファイル名拡張子とファイル名の残りの部分の間のパスを分割できるように、`Split-Path` に `-Extension` および `-LeafBase` スイッチを追加します。 (#2721) (@powercode に感謝)
+- ファイル名拡張子とファイル名の残りの部分の間のパスを分割できるように、`Split-Path` に `-Extension` および `-LeafBase` スイッチを追加します。 (#2721) ([@powercode](https://github.com/powercode) に感謝)
 - Top/Bottom N Sort のために `Sort-Object` にパラメーターの `-Top` と `-Bottom` を追加します。
-- `CodeProperty "Parent"` を `System.Diagnostics.Process` に追加して、プロセスの親プロセスを公開します。 (#2850) (@powercode に感謝)
+- `CodeProperty "Parent"` を `System.Diagnostics.Process` に追加して、プロセスの親プロセスを公開します。 (#2850) ([@powercode](https://github.com/powercode) に感謝)
 - `Get-Process` のメモリ列で、KB ではなく MB を使用します。
-- `Out-String` の `-NoNewLine` スイッチを追加します。 (#5056) (@raghav710 に感謝)
+- `Out-String` の `-NoNewLine` スイッチを追加します。 (#5056) ([@raghav710](https://github.com/raghav710) に感謝)
 - `Move-Item` コマンドレットで `-Include`、`-Exclude`、`-Filter` のパラメーターを受け入れます。 (#3878)
 - `Remove-Item` のレジストリ パスで `*` を使用できるようにします。 (#4866)
 - `-Title` を `Get-Credential` に追加して、プラットフォーム間のプロンプト エクスペリエンスを統合します。
 - `-TimeOut` パラメーターを `Test-Connection` に追加します。 (#2492)
 - `Get-AuthenticodeSignature` コマンドレットで、ファイルの署名タイムスタンプを取得できるようになりました。 (#4061)
 - `Get-Help` からサポートされていない `-ShowWindow` スイッチを削除します。 (#4903)
-- 返される配列要素に区切り文字が含まれないように `Get-Content -Delimiter` を修正します。(#3706) (@mklement0 に感謝)
-- `Meta`、`Charset`、`Transitional` パラメーターを `ConvertTo-HTML` に追加します。(#4184) (@ergo3114 に感謝)
-- `Get-ComputerInfo` 結果に `WindowsUBR` および `WindowsVersion` プロパティを追加します。
+- 返される配列要素に区切り文字が含まれないように `Get-Content -Delimiter` を修正します。(#3706) ([@mklement0](https://github.com/mklement0) に感謝)
+- `Meta`、`Charset`、`Transitional` パラメーターを `ConvertTo-HTML` に追加します。(#4184) ([@ergo3114](https://github.com/ergo3114) に感謝)
+- `Get-ComputerInfo` の結果に `WindowsUBR` および `WindowsVersion` プロパティを追加します。
 - `-Group` パラメーターを `Get-Verb` に追加します。
-- `ShouldProcess` のサポートを `New-FileCatalog` と `Test-FileCatalog` に追加します (`-WhatIf` と `-Confirm` を修正)。 (#3074) (@iSazonov に感謝)
-- `-WhatIf` スイッチを `Start-Process` コマンドレットに追加します。(#4735) (@sarithsutha に感謝)
+- `ShouldProcess` のサポートを `New-FileCatalog` と `Test-FileCatalog` に追加します (`-WhatIf` と `-Confirm` を修正)。 (#3074) ([@iSazonov](https://github.com/iSazonov) に感謝)
+- `-WhatIf` スイッチを `Start-Process` コマンドレットに追加します。(#4735) ([@sarithsutha](https://github.com/sarithsutha) に感謝)
 - `ValidateNotNullOrEmpty` を多くの既存のパラメーターに追加します。
 
 ## <a name="tab-completion"></a>Tab 補完機能
 
-- ランタイム変数の値に基づいて、Tab 補完機能の型推論を改善しました。 (#2744) (@powercode に感謝)これにより、次のような場合に Tab 補完機能が有効になります。
+- ランタイム変数の値に基づいて、Tab 補完機能の型推論を改善しました。 (#2744) ([@powercode](https://github.com/powercode) に感謝)これにより、次のような場合に Tab 補完機能が有効になります。
 
   ```powershell
   $p = Get-Process
   $p | Foreach-Object Prio<tab>
   ```
 
-- `Select-Object` の `-Property` にハッシュテーブルの Tab 補完機能を追加します。 (#3625) (@powercode に感謝)
-- `Select-Object` の `-ExcludeProperty` と `-ExpandProperty` で引数のオートコンプリートを有効にします。 (#3443) (@iSazonov に感謝)
-- ネイティブ コンプリーターに対する `native.exe --<tab>` 呼び出しを行うために、Tab 補完機能のバグを修正します。 (#3633) (@powercode に感謝)
+- `Select-Object` の `-Property` にハッシュテーブルの Tab 補完機能を追加します。 (#3625) ([@powercode](https://github.com/powercode) に感謝)
+- `Select-Object` の `-ExcludeProperty` と `-ExpandProperty` で引数のオートコンプリートを有効にします。 (#3443) ([@iSazonov](https://github.com/iSazonov) に感謝)
+- ネイティブ コンプリーターに対する `native.exe --<tab>` 呼び出しを行うために、Tab 補完機能のバグを修正します。 (#3633) ([@powercode](https://github.com/powercode) に感謝)
 
-## <a name="breaking-changes"></a>重大な変更
+## <a name="breaking-changes"></a>破壊的変更
 
 PowerShell Core 6.0 には多くの重大な変更が導入されています。
 その詳細については、[PowerShell Core 6.0 の重大な変更][breaking-changes]に関するページを参照してください。
@@ -373,14 +373,14 @@ PowerShell Core 内の多くのバグの修正も行いました。
   - OS のプラットフォーム (`$PSVersionTable.OSDescription`)
   - PowerShell の正確なバージョン (`$PSVersionTable.GitCommitId`)
 
-このテレメトリをオプトアウトする場合は、単に `$PSHome\DELETE_ME_TO_DISABLE_CONSOLEHOST_TELEMETRY` を削除するか、または `POWERSHELL_TELEMETRY_OPTOUT` 環境変数を作成して値を `true`、`1`、または `yes` のいずれかに設定します。
-このファイルを削除するか変数を作成すると、PowerShell を初めて実行する前であっても、すべてのテレメトリがバイパスされます。
+このテレメトリをオプトアウトする場合は、単に `POWERSHELL_TELEMETRY_OPTOUT` 環境変数を作成して値を `true`、`1`、または `yes` のいずれかに設定します。
+この変数を作成すると、PowerShell を初めて実行する前であっても、すべてのテレメトリがバイパスされます。
 [コミュニティ ダッシュボード][community-dashboard]のテレメトリから収集される、このテレメトリ データと洞察を公開することも予定しています。
 このデータの使用方法の詳細については、こちらの[ブログの投稿][telemetry-blog]を参照してください。
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/
-[.NET Standard]: https://docs.microsoft.com/en-us/dotnet/standard/net-standard
+[.NET Standard]: https://docs.microsoft.com/dotnet/standard/net-standard
 [os_log]: https://developer.apple.com/documentation/os/logging
 [Syslog]: https://en.wikipedia.org/wiki/Syslog
 [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md

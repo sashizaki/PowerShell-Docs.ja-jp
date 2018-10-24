@@ -2,16 +2,16 @@
 ms.date: 08/09/2018
 keywords: インストール、windows、linux、macOS、ARM、raspbian
 title: PowerShell のインストール
-ms.openlocfilehash: 24c40723e8f0218b3192d3d844762f774adf9c29
-ms.sourcegitcommit: 7d135f5fcb0eacab9862cfa64c4e42448b258f34
+ms.openlocfilehash: b89f11c36459bd0b03693d89ae3ff6f1327ea755
+ms.sourcegitcommit: b235c58b34d23317076540631f5cf83f1f309c0d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/10/2018
-ms.locfileid: "40027634"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45557092"
 ---
 # <a name="installing-various-versions-of-powershell"></a>PowerShell のさまざまなバージョンのインストール
 
-長年にわたって、多くの PowerShell がリリースされてきました。 最初の Windows PowerShell は .NET Framework 上にビルドされていて、Windows システム上でしか動作しませんでした。 現在のリリースでは、PowerShell Core はランタイムとして .NET Core 2.0 を使用します。 PowerShell Core は、Windows、macOS、Linux のプラットフォームをサポートしています。
+長年にわたって、多くの PowerShell がリリースされてきました。 最初の Windows PowerShell は .NET Framework 上にビルドされていて、Windows システム上でしか動作しませんでした。 現在のリリースでは、PowerShell Core はランタイムとして .NET Core 2.x を使用します。 PowerShell Core は、Windows、macOS、Linux のプラットフォームをサポートしています。
 
 ## <a name="windows-powershell"></a>Windows PowerShell
 

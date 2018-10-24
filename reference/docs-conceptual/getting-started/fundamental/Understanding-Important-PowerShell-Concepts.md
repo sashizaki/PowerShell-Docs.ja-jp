@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell, コマンドレット
 title: PowerShell の重要な概念を理解する
 ms.assetid: 3e601e38-4520-4578-a48d-b6779f1d35ee
-ms.openlocfilehash: 577ea0764a172e1821bc492417d8b4e546e31b0b
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: fad64563d1a7a6abd4f0e430331f81f91f43d312
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353196"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48850999"
 ---
 # <a name="understanding-important-powershell-concepts"></a>PowerShell の重要な概念を理解する
 
@@ -23,7 +23,7 @@ PowerShell の設計には、多数の異なる環境の概念が取り入れら
 
 ## <a name="the-command-family-is-extensible"></a>拡張可能なコマンド ファミリ
 
-**cmd.exe** などのインターフェイスには、組み込みのコマンド セットを直接拡張する手段が存在しません。 **cmd.exe** で実行される外部のコマンドライン ツールを作成できます。 しかし、これらの外部ツールには、ヘルプの統合などのサービスがありません。 これらの外部ツールが有効なコマンドであることを、**cmd.exe** は自動認識しません。
+**cmd.exe** などのインターフェイスには、組み込みのコマンド セットを直接拡張する手段がありません。 **cmd.exe** で実行される外部のコマンドライン ツールを作成できます。 しかし、これらの外部ツールには、ヘルプの統合などのサービスがありません。 これらの外部ツールが有効なコマンドであることを、**cmd.exe** は自動認識しません。
 
 PowerShell のネイティブ コマンドは、*cmdlet* と呼ばれます (「コマンドレット」と発音されます)。 コンパイルされたコードまたはスクリプトを使用して、独自のコマンドレット モジュールと関数を作成できます。 モジュールは、シェルにコマンドレットとプロバイダーを追加できます。 また、PowerShell では、UNIX のシェル スクリプトや **cmd.exe** のバッチ ファイルに似たスクリプトもサポートしています。
 

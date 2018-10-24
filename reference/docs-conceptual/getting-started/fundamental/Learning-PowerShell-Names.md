@@ -3,12 +3,12 @@ ms.date: 08/24/2018
 keywords: PowerShell, コマンドレット
 title: PowerShell で用いられる名前の習得
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 44c66488a20c38d8528c92d753f6b32dda5a2dcb
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
+ms.openlocfilehash: a4f7e12c2b30e8ae6d1cf5a125d613d2d7558c34
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353268"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851257"
 ---
 # <a name="learning-powershell-names"></a>PowerShell で用いられる名前の習得
 
@@ -92,7 +92,8 @@ Get-Command -Name Clear-Host
 
 ### <a name="the-help-parameter-"></a>ヘルプ パラメーター (?)
 
-任意のコマンドレットで `-Help` または `-?` パラメーターを指定した場合、PowerShell はコマンドレットのヘルプを表示します。 コマンドレットは実行されません。
+任意のコマンドレットで `-?` パラメーターを指定すると、PowerShell によりコマンドレットのヘルプが表示されます。
+コマンドレットは実行されません。
 
 ### <a name="common-parameters"></a>共通パラメーター
 

@@ -2,12 +2,12 @@
 title: SSH 経由の PowerShell リモート処理
 description: SSH を使用した PowerShell Core のリモート処理
 ms.date: 08/14/2018
-ms.openlocfilehash: 1de034d667aa9a377e5460e7eb474402c690cb42
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
+ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133158"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851239"
 ---
 # <a name="powershell-remoting-over-ssh"></a>SSH 経由の PowerShell リモート処理
 
@@ -35,7 +35,7 @@ Linux の場合、お使いのプラットフォームに適した SSH (sshd サ
 
 ## <a name="set-up-on-windows-machine"></a>Windows コンピューターでのセットアップ
 
-1. [Windows 向け PowerShell Core] の最新版をインストールします
+1. [Windows 向け PowerShell Core](../setup/installing-powershell-core-on-windows.md#msi) の最新版をインストールします
 
    - `New-PSSession` のパラメーター セットを見れば、SSH リモート処理に対応しているか確認できます
 
@@ -47,7 +47,7 @@ Linux の場合、お使いのプラットフォームに適した SSH (sshd サ
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. [インストール] の手順を使用して、GitHub から最新の [Win32 OpenSSH] ビルドをインストールします
+2. GitHub から最新の [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) ビルドをインストールします ([インストール](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)方法はここで確認できます)
 3. Win32 OpenSSH をインストールした場所で sshd_config ファイルを編集します
 
    - パスワード認証が有効になっていることを確認します
@@ -91,8 +91,8 @@ Linux の場合、お使いのプラットフォームに適した SSH (sshd サ
 
 ## <a name="set-up-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) コンピューターでのセットアップ
 
-1. GitHub から最新の [Linux 向け PowerShell Core] ビルドをインストールします
-2. 必要に応じて [Ubuntu SSH] をインストールします
+1. GitHub から最新の [Linux 向け PowerShell Core](../setup/installing-powershell-core-on-linux.md#ubuntu-1404) ビルドをインストールします
+2. 必要に応じて [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) をインストールします
 
    ```bash
    sudo apt install openssh-client
@@ -127,7 +127,7 @@ Linux の場合、お使いのプラットフォームに適した SSH (sshd サ
 
 ## <a name="set-up-on-macos-machine"></a>MacOS コンピューターでのセットアップ
 
-1. 最新の [MacOS 向け PowerShell Core] ビルドをインストールします
+1. 最新の [MacOS 向け PowerShell Core](../setup/installing-powershell-core-on-macos.md) ビルドをインストールします
 
    - 次の手順で SSH リモート処理が有効になっていることを確認します
      - `System Preferences` を開きます
@@ -167,6 +167,14 @@ Linux の場合、お使いのプラットフォームに適した SSH (sshd サ
    sudo launchctl stop com.openssh.sshd
    sudo launchctl start com.openssh.sshd
    ```
+
+## <a name="authentication"></a>認証
+
+SSH を使用する PowerShell リモート処理では、SSH クライアントと SSH サービスの間の認証交換に依存し、認証スキーム自体は何も実装されません。
+つまり、多要素認証などの構成されている認証スキームはすべて SSH によって処理され、PowerShell とは独立しています。
+たとえば、セキュリティ強化のため、公開キー認証に加えて 1 回限りのパスワードを要求するように、SSH サービスを構成できます。
+多要素認証の構成については、このドキュメントでは説明されていません。
+多要素認証を正しく構成し、PowerShell リモート処理での使用を試みる前に PowerShell の外部での動作を検証する方法については、SSH のドキュメントをご覧ください。
 
 ## <a name="powershell-remoting-example"></a>PowerShell リモート処理の例
 
@@ -308,7 +316,5 @@ sudo コマンドは、Linux コンピューターへのリモート セッシ�
 [MacOS 向け PowerShell Core](../setup/installing-powershell-core-on-macos.md)
 
 [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases)
-
-[インストール](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

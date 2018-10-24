@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 description: パブリッシャー向けのガイドライン
 title: PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
-ms.openlocfilehash: 11207a312f916506f855c0e6e292752f72fc04c1
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 2ddeae9fdb33a58f97bfeb66079541bb7c5791b1
+ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523032"
+ms.lasthandoff: 10/08/2018
+ms.locfileid: "48851171"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -39,6 +39,7 @@ PowerShell ギャラリーへのアイテムの公開の仕組みについては
 - バージョン管理に関する [SemVer](http://semver.org/) ガイドラインに従う
 - 一般的な PowerShell ギャラリー タグに関する記事で説明されている一般的なタグを使用する
 - ローカル リポジトリを使用して公開に関するテストを行う
+- PowerShellGet を使用して公開する
 
 これらのベスト プラクティスのそれぞれについて、以下のセクションで簡単に説明します。
 
@@ -215,6 +216,12 @@ PowerShell ギャラリーへのエンドツーエンドの公開プロセスを
 テストの公開に関する追加のポイント: PowerShell ギャラリーに公開したアイテムはオペレーション チームの支援がなければ、削除できません。オペレーション チームは、公開するアイテムに何も依存していないことを確認します。
 そのため、弊社では PowerShell ギャラリーをテストの対象としてサポートしておらず、テストを行っている公開元に問い合わせします。
 
+## <a name="use-powershellget-to-publish"></a>PowerShellGet を使用して公開する
+
+パブリッシャーには、PowerShell ギャラリーを使用するときは Publish-Module および Publish-Script コマンドレットを使用することを強くお勧めします。 PowerShellGet は、PowerShell ギャラリーに公開することで、インストールについての重要な詳細情報を覚えておく必要をなくすために作成されました。 パブリッシャーは、PowerShellGet をスキップして NuGet クライアントを使用したり、Publish-Module の代わりに PackageManagement コマンドレットを使用したりすることがあります。 簡単に見落としてしまう詳細な設定がいくつもあり、その結果さまざまなサポート要求が発生します。
+
+Publish-Module または Publish-Script を使用できない理由がある場合は、ご連絡ください。 PowerShellGet の GitHub リポジトリにイシューを登録し、NuGet または PackageManagement を選択することになった詳細な理由をご記入ください。 
+
 ## <a name="recommended-workflow"></a>推奨ワークフロー
 
 PowerShell ギャラリーにアイテムを公開する上で最も効果的と考えられる方法を次に示します。
@@ -229,3 +236,4 @@ PowerShell ギャラリーにアイテムを公開する上で最も効果的と
 - アイテムのコード署名を行うかどうかを決定する
 - プロジェクトが運用環境で使用できるようになったと思われる場合は、1.0.0 バージョンを PowerShell ギャラリーに公開する
 - 引き続きフィードバックを収集し、ユーザーの意見に基づいてコードを反復開発する
+

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 Desired State Configuration (DSC) の概要
-ms.openlocfilehash: d5a4a17fbcffbbbd6df3dd902dbd104769b7d17e
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: d436fc3b451efb8a12dfdc44909824934b5fcbe4
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893598"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45523030"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux 用 Desired State Configuration (DSC) の概要
 
@@ -75,7 +75,7 @@ Linux コンピューターの構成を作成するには、Windows コンピュ
 
 1. nx モジュールのインポート nx Windows PowerShell モジュールには Linux 用 DSC の組み込みリソースのスキーマが含まれており、このモジュールをローカル コンピューターにインストールし、構成にインポートする必要があります。
 
-   - nx モジュールをインストールするには、nx モジュール ディレクトリを `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` または `$PSHOME\Modules` にコピーします。 nx モジュールは、Linux 用 DSC のインストール パッケージ (MSI) に含まれています。 構成に nx モジュールをインポートするには、`Import-DSCResource` コマンドを使用します。
+   - nx モジュールをインストールするには、nx モジュール ディレクトリを `$env:USERPROFILE\Documents\WindowsPowerShell\Modules\` または `$PSHOME\Modules` にコピーします。 nx モジュールは、Linux 用 DSC のインストール パッケージに含まれています。 構成に nx モジュールをインポートするには、`Import-DSCResource` コマンドを使用します。
 
    ```powershell
    Configuration ExampleConfiguration{

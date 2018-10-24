@@ -1,42 +1,35 @@
 ---
-ms.date: 06/12/2017
+ms.date: 09/11/2018
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリー アカウントを作成する
-ms.openlocfilehash: 4a44b51967ea8acdd331f6b3c682fc5884bd2f54
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 08d18310d9e18b00bd9e22efcc552dfd29f8982c
+ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219567"
+ms.lasthandoff: 09/13/2018
+ms.locfileid: "45522838"
 ---
-## <a name="creating-a-powershell-gallery-account"></a>PowerShell ギャラリー アカウントを作成する
+# <a name="creating-a-powershell-gallery-account"></a>PowerShell ギャラリー アカウントを作成する
 
-PowerShell ギャラリー アカウントは、PowerShell ギャラリーに何らかのアイテムを公開する前に登録する必要があります。
-PowerShell ギャラリー アカウントは、Azure Active Directory のメールが有効なアカウント、または Microsoft のメール アカウント (ドメインが outlook.com、hotmail.com など) に紐付けられている必要があります。
+PowerShell ギャラリーに何らかのアイテムを公開する前に、PowerShell ギャラリー アカウントを作成する必要があります。
+PowerShell ギャラリー アカウントは、電子メール対応のログイン アカウントにリンクする必要があります。 このアカウントには、Azure Active Directory アカウントまたは outlook.com や hotmail.com の電子メール アカウントのような Microsoft ID を指定できます。
 
-PowerShell ギャラリー アカウントを作成するには、https://PowerShellGallery.com にアクセスして [Register]\(登録\) をクリックしてください (下の図をご覧ください)。
+PowerShell ギャラリー アカウントを作成するには、[https://PowerShellGallery.com](https://PowerShellGallery.com) にアクセスして、次の図のように、**[サインイン]** をクリックします。
 
-![新規アカウントの作成](../../Images/CreatingAccount-Register.png)
+![新規アカウントの作成](../../Images/CreateAccount-Register.png)
 
-Azure Active Directory アカウントを使用する場合は、次のページで [職場または学校アカウント] を選択し、ご利用のアカウントでログインします。
-Microsoft アカウント (Outlook.com や Hotmail.com などのドメイン) を使用する場合、[個人アカウント] を選択してログインします。
+Azure Active Directory アカウントを使用するには、**[職場または学校アカウント]** を選択し、ご利用のアカウントでサインインします。 Microsoft ID を使用するには、**[個人用アカウント]** を選択してサインインします。
 
-ログインすると、PowerShell ギャラリーで使用するユーザー名を入力するよう求めるメッセージが表示されます。
-リンクされている利用規約とプライバシー ポリシーを確認したら、ユーザー名を入力して [登録] をクリックします。
+次に、PowerShell ギャラリーで使用するユーザー名を作成するように求められます。 利用規約とプライバシー ポリシーを確認したら、ユーザー名を入力して **[登録]** をクリックします。
 
-注: このアカウント名は、一度作成すると変更できません。
-これに関連するその他の詳細については、「[アイテムの所有者を管理する](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners)」をご覧ください。
+> [!NOTE]
+> アカウント名は、一度作成すると変更できません。 詳細については、「[アイテムの所有者を管理する](managing-item-owners.md)」を参照してください。
 
 ## <a name="recommended-practices-for-powershell-gallery-accounts"></a>PowerShell ギャラリー アカウントの推奨プラクティス
 
-PowerShell ギャラリー アカウントで使用されるメール アカウントを積極的に監視することが重要です。
-PowerShell ギャラリー アイテムの所有者とのやりとりはすべて、ご利用の PowerShell ギャラリー アカウントに関連付けられたアドレスでのメールで行われます。
-Microsoft からアイテムの所有者に連絡がとれない場合、特定の状況下では、運用チームにアイテムの削除を求めることがあります。
+PowerShell ギャラリー アカウントで使用される電子メール アカウントを積極的に監視することが重要です。 この電子メール アドレスは、PowerShell ギャラリー アイテムの所有者とのすべての通信で使用されます。 PowerShell ギャラリーの運用チームがアイテムの所有者に連絡がとれない場合、アイテムを削除するよう求められる場合があります。
 
-PowerShell ギャラリーに公開を行う組織が、その目的で Outlook.com や別の Microsoft アカウントのドメインを使用して一意のアカウントを作成することは頻繁にあります。
-多くの場合、そのアカウントは定期的に監視されません。
-こうした場合のベスト プラクティスは、Outlook の転送機能を使用して、アイテム所有者の監視対象となる別のアカウント (通常は組織内のアカウント) にメールを送信することです。
+PowerShell ギャラリーに公開を行う組織が、その目的で一意の外部アカウントを作成することは頻繁にあります。 電子メールの転送を使用して、組織内のアドレスに通知を転送することをお勧めします。
 
-1 つのアイテムに複数の所有者が関連付けられている場合、PowerShell ギャラリーから発生するやりとりはすべて、すべての所有者に送信されます。
-アイテムへの所有者の追加について詳しくは、「[アイテムの所有者を管理する](https://msdn.microsoft.com/powershell/gallery/psgallery/managing-item-owners)」をご覧ください。
+1 つのアイテムに複数の所有者が関連付けられている場合は、PowerShell ギャラリーのすべての通知がすべての所有者に送信されます。 詳細については、「[アイテムの所有者を管理する](managing-item-owners.md)」を参照してください。

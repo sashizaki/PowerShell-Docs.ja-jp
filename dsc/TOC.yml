@@ -1,223 +1,232 @@
+items:
 - name: 概要
   href: overview.md
   items:
-    - name: 意思決定者向け Desired State Configuration の概要
-      href: decisionMaker.md
-    - name: エンジニア向けの Desired State Configuration の概要
-      href: DscForEngineers.md
-    - name: DSC クイック スタート
-      href: quickStart.md
+  - name: 意思決定者向け Desired State Configuration の概要
+    href: decisionMaker.md
+  - name: エンジニア向けの Desired State Configuration の概要
+    href: DscForEngineers.md
+  - name: DSC クイック スタート
+    href: quickStart.md
 - name: 構成
   href: configurations.md
   items:
-    - name: 構成の適用
-      href: enactingConfigurations.md
-    - name: 構成データと環境データの分離
-      href: separatingEnvData.md
-    - name: 複数のバージョンがあるリソースの使用
-      href: sxsResource.md
-    - name: ユーザーの資格情報を指定して DSC を実行する
-      href: runAsUser.md
-    - name: ノードの相互依存関係の指定
-      href: crossNodeDependencies.md
-    - name: 構成データ
-      href: configData.md
-      items:
-        - name: 構成データでの資格情報オプション
-          href: configDataCredentials.md
-    - name: 構成を入れ子にする
-      href: compositeConfigs.md
-    - name: 構成 MOF ファイルのセキュリティ保護
-      href: secureMOF.md
-    - name: 部分構成
-      href: partialConfigs.md
-    - name: DSC 構成のヘルプの作成
-      href: configHelp.md
-    - name: DSC を使用した初回起動時の仮想マシンの構成
-      href: bootstrapDsc.md
-      items:
-        - name: DSCAutomationHostEnabled レジストリ キー
-          href: DSCAutomationHostEnabled.md
+  - name: 構成の適用
+    href: enactingConfigurations.md
+  - name: 構成データと環境データの分離
+    href: separatingEnvData.md
+  - name: 複数のバージョンがあるリソースの使用
+    href: sxsResource.md
+  - name: ユーザーの資格情報を指定して DSC を実行する
+    href: runAsUser.md
+  - name: ノードの相互依存関係の指定
+    href: crossNodeDependencies.md
+  - name: 構成データ
+    href: configData.md
+    items:
+    - name: 構成データでの資格情報オプション
+      href: configDataCredentials.md
+  - name: 構成を入れ子にする
+    href: compositeConfigs.md
+  - name: 構成 MOF ファイルのセキュリティ保護
+    href: secureMOF.md
+  - name: 部分構成
+    href: partialConfigs.md
+  - name: DSC 構成のヘルプの作成
+    href: configHelp.md
+  - name: DSC を使用した初回起動時の仮想マシンの構成
+    href: bootstrapDsc.md
+    items:
+    - name: DSCAutomationHostEnabled レジストリ キー
+      href: DSCAutomationHostEnabled.md
 - name: 参照情報
   href: resources.md
   items:
-    - name: 組み込みリソース
-      href: builtInResource.md
+  - name: 組み込みリソース
+    href: builtInResource.md
+    items:
+    - name: アーカイブ リソース
+      href: archiveResource.md
+    - name: 環境リソース
+      href: environmentResource.md
+    - name: ファイル リソース
+      href: fileResource.md
+    - name: グループ リソース
+      href: groupResource.md
+    - name: GroupSet リソース
+      href: groupSetResource.md
+    - name: ログ リソース
+      href: logResource.md
+    - name: パッケージ リソース
+      href: packageResource.md
+    - name: ProcessSet リソース
+      href: processSetResource.md
+    - name: レジストリ リソース
+      href: registryResource.md
+    - name: スクリプト リソース
+      href: scriptResource.md
+    - name: サービス リソース
+      href: serviceResource.md
+    - name: ServiceSet リソース
+      href: serviceSetResource.md
+    - name: '[ユーザー リソース]'
+      href: userResource.md
+    - name: WaitForAllResource
+      href: waitForAllResource.md
+    - name: WaitForAnyResource
+      href: waitForAnyResource.md
+    - name: WaitForSomeResource
+      href: waitForSomeResource.md
+    - name: WindowsFeature リソース
+      href: windowsfeatureResource.md
+    - name: WindowsFeatureSet リソース
+      href: windowsFeatureSetResource.md
+    - name: WindowsOptionalFeature リソース
+      href: windowsOptionalFeatureResource.md
+    - name: WindowsOptionalFeatureSet リソース
+      href: windowsOptionalFeatureSetResource.md
+    - name: WindowsPackageCab リソース
+      href: windowsPackageCabResource.md
+    - name: WindowsProcess リソース
+      href: windowsProcessResource.md
+  - name: カスタム リソースの作成
+    href: authoringResource.md
+    items:
+    - name: MOF ベースのカスタム リソース
+      href: authoringResourceMOF.md
       items:
-        - name: アーカイブ リソース
-          href: archiveResource.md
-        - name: 環境リソース
-          href: environmentResource.md
-        - name: ファイル リソース
-          href: fileResource.md
-        - name: グループ リソース
-          href: groupResource.md
-        - name: GroupSet リソース
-          href: groupSetResource.md
-        - name: ログ リソース
-          href: logResource.md
-        - name: パッケージ リソース
-          href: packageResource.md
-        - name: ProcessSet リソース
-          href: processSetResource.md
-        - name: レジストリ リソース
-          href: registryResource.md
-        - name: スクリプト リソース
-          href: scriptResource.md
-        - name: サービス リソース
-          href: serviceResource.md
-        - name: ServiceSet リソース
-          href: serviceSetResource.md
-        - name: '[ユーザー リソース]'
-          href: userResource.md
-        - name: WaitForAllResource
-          href: waitForAllResource.md
-        - name: WaitForAnyResource
-          href: waitForAnyResource.md
-        - name: WaitForSomeResource
-          href: waitForSomeResource.md
-        - name: WindowsFeature リソース
-          href: windowsfeatureResource.md
-        - name: WindowsFeatureSet リソース
-          href: windowsFeatureSetResource.md
-        - name: WindowsOptionalFeature リソース
-          href: windowsOptionalFeatureResource.md
-        - name: WindowsOptionalFeatureSet リソース
-          href: windowsOptionalFeatureSetResource.md
-        - name: WindowsPackageCab リソース
-          href: windowsPackageCabResource.md
-        - name: WindowsProcess リソース
-          href: windowsProcessResource.md
-    - name: カスタム リソースの作成
-      href: authoringResource.md
-      items:
-        - name: MOF ベースのカスタム リソース
-          href: authoringResourceMOF.md
-          items:
-            - name: 'C# での MOF ベースのリソース'
-              href: authoringResourceMofCS.md
-        - name: クラスに基づくカスタム リソース
-          href: authoringResourceClass.md
-        - name: 複合リソース
-          href: authoringResourceComposite.md
-        - name: 単一インスタンスの DSC リソースを記述する (ベスト プラクティス)
-          href: singleInstance.md
-        - name: リソース作成のチェックリスト
-          href: resourceAuthoringChecklist.md
-    - name: DSC リソースのデバッグ
-      href: debugResource.md
-    - name: DSC リソース メソッドの直接呼び出し
-      href: directCallResource.md
+      - name: C# での MOF ベースのリソース
+        href: authoringResourceMofCS.md
+    - name: クラスに基づくカスタム リソース
+      href: authoringResourceClass.md
+    - name: 複合リソース
+      href: authoringResourceComposite.md
+    - name: 合成とコラボレーションのための高度な DSC の作成
+      href: authoringAdvanced.md
+    - name: 単一インスタンスの DSC リソースを記述する (ベスト プラクティス)
+      href: singleInstance.md
+    - name: リソース作成のチェックリスト
+      href: resourceAuthoringChecklist.md
+  - name: DSC リソースのデバッグ
+    href: debugResource.md
+  - name: DSC リソース メソッドの直接呼び出し
+    href: directCallResource.md
 - name: ローカル構成マネージャー
   items:
-    - name: ローカル構成マネージャー (LCM) の構成
-      href: metaConfig.md
-    - name: PowerShell 4.0 での LCM の構成
-      href: metaConfig4.md
+  - name: ローカル構成マネージャー (LCM) の構成
+    href: metaConfig.md
+  - name: PowerShell 4.0 での LCM の構成
+    href: metaConfig4.md
 - name: DSC プル モデル
   items:
-    - name: DSC プル サービス
-      href: pullServer.md
-    - name: DSC SMB プル サーバーのセットアップ
-      href: pullServerSMB.md
-    - name: プル クライアントのセットアップ
-      href: pullClient.md
-      items:
-        - name: 構成名を使用したプル クライアントのセットアップ
-          href: pullClientConfigNames.md
-        - name: 構成 ID を使用したプル クライアントのセットアップ
-          href: pullClientConfigID.md
-    - name: DSC レポート サーバーの使用
-      href: reportServer.md
-    - name: プル サーバーのベスト プラクティス
-      href: secureServer.md
+  - name: DSC プル サービス
+    href: pullServer.md
+  - name: DSC SMB プル サーバーのセットアップ
+    href: pullServerSMB.md
+  - name: プル クライアントのセットアップ
+    href: pullClient.md
+    items:
+    - name: 構成名を使用したプル クライアントのセットアップ
+      href: pullClientConfigNames.md
+    - name: 構成 ID を使用したプル クライアントのセットアップ
+      href: pullClientConfigID.md
+  - name: DSC レポート サーバーの使用
+    href: reportServer.md
+  - name: プル サーバーのベスト プラクティス
+    href: secureServer.md
 - name: DSC の例
   href: dscExamples.md
   items:
-    - name: DSC、Pester、Visual Studio Team Services で CI/CD パイプラインを構築する
-      href: dscCiCd.md
-    - name: 構成データと環境データの分離
-      href: separatingEnvData.md
+  - name: DSC、Pester、Visual Studio Team Services で CI/CD パイプラインを構築する
+    href: dscCiCd.md
+  - name: 構成データと環境データの分離
+    href: separatingEnvData.md
 - name: DSC のトラブルシューティング
   href: troubleshooting.md
 - name: DSC on Nano Server の使用
   href: nanoDsc.md
 - name: Linux での DSC
   items:
-    - name: Linux 用 DSC の概要
-      href: lnxGettingStarted.md
-    - name: Linux 用組み込みリソース
-      href: lnxBuiltInResources.md
-      items:
-        - name: nxArchive リソース
-          href: lnxArchiveResource.md
-        - name: nxEnvironment リソース
-          href: lnxEnvironmentResource.md
-        - name: nxFile リソース
-          href: lnxFileResource.md
-        - name: nxFileLine リソース
-          href: lnxFileLineResource.md
-        - name: nxGroup リソース
-          href: lnxGroupResource.md
-        - name: nxPackage リソース
-          href: lnxPackageResource.md
-        - name: nxScript リソース
-          href: lnxScriptResource.md
-        - name: nxService リソース
-          href: lnxServiceResource.md
-        - name: nxSshAuthorizedKeys リソース
-          href: lnxSshAuthorizedKeysResource.md
-        - name: nxUser リソース
-          href: lnxUserResource.md
+  - name: Linux 用 DSC の概要
+    href: lnxGettingStarted.md
+  - name: Linux 用組み込みリソース
+    href: lnxBuiltInResources.md
+    items:
+    - name: nxArchive リソース
+      href: lnxArchiveResource.md
+    - name: nxEnvironment リソース
+      href: lnxEnvironmentResource.md
+    - name: nxFile リソース
+      href: lnxFileResource.md
+    - name: nxFileLine リソース
+      href: lnxFileLineResource.md
+    - name: nxGroup リソース
+      href: lnxGroupResource.md
+    - name: nxPackage リソース
+      href: lnxPackageResource.md
+    - name: nxScript リソース
+      href: lnxScriptResource.md
+    - name: nxService リソース
+      href: lnxServiceResource.md
+    - name: nxSshAuthorizedKeys リソース
+      href: lnxSshAuthorizedKeysResource.md
+    - name: nxUser リソース
+      href: lnxUserResource.md
 - name: Microsoft Azure での DSC の使用
   href: azureDsc.md
   items:
-    - name: DSC 拡張機能の履歴
-      href: azureDscexthistory.md
+  - name: DSC 拡張機能の履歴
+    href: azureDscexthistory.md
 - name: DSC MOF の参照
   items:
-    - name: MSFT_DSCLocalConfigurationManager クラス
-      href: msft-dsclocalconfigurationmanager.md
-      items:
-        - name: MSFT_DSCLocalConfigurationManager クラスの ApplyConfiguration メソッド
-          href: msft-dsclocalconfigurationmanager-applyconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの DisableDebugConfiguration メソッド
-          href: msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの EnableDebugConfiguration メソッド
-          href: msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの GetConfiguration メソッド
-          href: msft-dsclocalconfigurationmanager-getconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド
-          href: msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの GetConfigurationStatus メソッド
-          href: msft-dsclocalconfigurationmanager-getconfigurationstatus.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの GetMetaConfiguration メソッド
-          href: msft-dsclocalconfigurationmanager-getmetaconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの PerformRequiredConfigurationChecks メソッド
-          href: msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの RemoveConfiguration メソッド
-          href: msft-dsclocalconfigurationmanager-removeconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの ResourceGet メソッド
-          href: msft-dsclocalconfigurationmanager-resourceget.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの ResourceSet メソッド
-          href: msft-dsclocalconfigurationmanager-resourceset.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの ResourceTest メソッド
-          href: msft-dsclocalconfigurationmanager-resourcetest.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの RollBack メソッド
-          href: msft-dsclocalconfigurationmanager-rollback.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの SendConfiguration メソッド
-          href: msft-dsclocalconfigurationmanager-sendconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApply メソッド
-          href: msft-dsclocalconfigurationmanager-sendconfigurationapply.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApplyAsync メソッド
-          href: msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの SendMetaConfigurationApply メソッド
-          href: msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの StopConfiguration メソッド
-          href: msft-dsclocalconfigurationmanager-stopconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの TestConfiguration メソッド
-          href: msft-dsclocalconfigurationmanager-testconfiguration.md
+  - name: MSFT_DSCLocalConfigurationManager クラス
+    href: msft-dsclocalconfigurationmanager.md
+    items:
+    - name: MSFT_DSCLocalConfigurationManager クラスの ApplyConfiguration メソッド
+      href: msft-dsclocalconfigurationmanager-applyconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの DisableDebugConfiguration メソッド
+      href: msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの EnableDebugConfiguration メソッド
+      href: msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの GetConfiguration メソッド
+      href: msft-dsclocalconfigurationmanager-getconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド
+      href: msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの GetConfigurationStatus メソッド
+      href: msft-dsclocalconfigurationmanager-getconfigurationstatus.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの GetMetaConfiguration メソッド
+      href: msft-dsclocalconfigurationmanager-getmetaconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの PerformRequiredConfigurationChecks メソッド
+      href: msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの RemoveConfiguration メソッド
+      href: msft-dsclocalconfigurationmanager-removeconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの ResourceGet メソッド
+      href: msft-dsclocalconfigurationmanager-resourceget.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの ResourceSet メソッド
+      href: msft-dsclocalconfigurationmanager-resourceset.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの ResourceTest メソッド
+      href: msft-dsclocalconfigurationmanager-resourcetest.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの RollBack メソッド
+      href: msft-dsclocalconfigurationmanager-rollback.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの SendConfiguration メソッド
+      href: msft-dsclocalconfigurationmanager-sendconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApply メソッド
+      href: msft-dsclocalconfigurationmanager-sendconfigurationapply.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApplyAsync メソッド
+      href: msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの SendMetaConfigurationApply メソッド
+      href: msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの StopConfiguration メソッド
+      href: msft-dsclocalconfigurationmanager-stopconfiguration.md
+    - name: MSFT_DSCLocalConfigurationManager クラスの TestConfiguration メソッド
+      href: msft-dsclocalconfigurationmanager-testconfiguration.md
 - name: その他のリソース
   items:
-    - name: ホワイトペーパー
-      href: whitepapers.md
+  - name: ホワイトペーパー
+    href: whitepapers.md
+ms.openlocfilehash: d8c8af17c36b543dccda07172a04f253e533abe1
+ms.sourcegitcommit: aa41249f153bbc6e11667ade60c878980c15abc6
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 09/14/2018
+ms.locfileid: "45611507"

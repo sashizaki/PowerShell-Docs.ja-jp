@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: PowerShell の詳細情報
-ms.openlocfilehash: b0e17a6894468696365e5a553e6ffccfaa8eb499
-ms.sourcegitcommit: e9ad4d85fd7eb72fb5bc37f6ca3ae1282ae3c6d7
+ms.openlocfilehash: 17f96620bbb483ca580d351584d5650a6734b876
+ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/10/2018
-ms.locfileid: "34047851"
+ms.lasthandoff: 09/18/2018
+ms.locfileid: "46289210"
 ---
 # <a name="more-powershell-learning"></a>PowerShell の詳細情報
 
@@ -17,29 +17,30 @@ PowerShell の詳細に関する他の情報源
 
 コマンド ラインで使用可能なヘルプに加え、次のリソースには、Windows PowerShell を実行するユーザー向けの詳細情報があります。
 
-- [Windows PowerShell チーム ブログ](http://blogs.msdn.com/b/powershell/)。 Windows PowerShell 製品チームから直接学ぶのに最適なリソースです。
-- [Windows PowerShell カスタマー コネクション](http://Connect.Microsoft.com/PowerShell)。 Windows PowerShell チームに対して提案したり、フィードバックやバグ情報を送信したりします。 コードのバグ、ドキュメントのバグ、またはローカライズ (翻訳) のバグについての情報を送信できます。
+- [Windows PowerShell チーム ブログ](https://blogs.msdn.microsoft.com/powershell/)。 Windows PowerShell 製品チームから直接学ぶのに最適なリソースです。
 - [Hey, Scripting Guy!ブログ](https://blogs.technet.microsoft.com/heyscriptingguy/) では、毎日新しいコンテンツが公開され、常に Microsoft ブログ全体の 5 位以内にランク付けされています。 記事はシナリオに基づいており、魅力的で活気のある書き方で書かれています。
 - 「[PowerShell について学ぶ](https://blogs.technet.microsoft.com/heyscriptingguy/2015/01/04/weekend-scripter-the-best-ways-to-learn-powershell/)」ページは、TechNet スクリプト センターにおける Windows PowerShell の拠点です。 このページでは、Microsoft Scripting Guy Ed Wilson 氏による一連の初心者向けビデオ セッションを主催しています。 また、Windows PowerShell のクイズ、コミュニティ コンテンツへのリンクなども含まれています。
-- Windows PowerShell の使用に関する質問はありませんか。 [Scripting Guys 公式フォーラム](http://social.technet.microsoft.com/forums/itcg/threads/)で同様の関心を持つ多数の他のユーザーとつながってください。
-- [Microsoft スクリプト センター](https://technet.microsoft.com/scriptcenter)。 [スクリプト センター リポジトリ](http://gallery.technet.microsoft.com/scriptcenter/)など、多数の役立つ Windows PowerShell のリソースのポータルです。 スクリプトを学ぶのに最も良い方法の 1 つは、実際の使用例を見ることです。 Windows PowerShell の数千のスクリプトを検索してください。いずれもすぐに評価でき、ニーズに合わせて適応できる状態になっています。
-- Windows PowerShell ユーザー コミュニティに参加してください。 [スクリプト センター コミュニティ ページ](https://technet.microsoft.com/scriptcenter/hh182567.aspx)を参照してください。ここには多数の Windows PowerShell ユーザーのグループがあります。お客様に近いものが 1 つはあるでしょう。 また、Microsoft Scripting Guy のコミュニティ活動を最新の情報に維持できます。
+- Windows PowerShell の使用に関する質問はありませんか。 [TechNet の PowerShell に関するフォーラム](https://social.technet.microsoft.com/Forums/home?forum=winserverpowershell)で同様の関心を持つ多数の他のユーザーとつながってください。
 
 ## <a name="video-training"></a>ビデオ トレーニング
 
 ### <a name="microsoft-virtual-academy"></a>Microsoft Virtual Academy
+
 - [PowerShell 3.0 のジャンプ スタートのファースト ステップ ガイド](https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-30-jump-start-8276)
-- [PowerShell 3.0 の高度なツールとスクリプトのジャンプ スタート](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8231)
+- [PowerShell 3.0 の高度なツールとスクリプトのジャンプ スタート](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8277)
 
 ### <a name="script-center-learn"></a>スクリプト センターの詳細情報
+
 #### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>Windows PowerShell Essentials for the Busy Admin シリーズ
-- [PowerShell 'SmowerShell' — Windows PowerShell について理解する理由 &#40;パート1&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [パイプラインからの情報 — 趣味と実益を兼ねた Windows PowerShell コマンドの使用方法 &#40;パート 2&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [唯一のプロバイダー?というわけではありません — Windows PowerShell プロバイダーの概要 &#40;パート 3&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [主要イベント — Windows PowerShell のイベント ログ &#40;パート 4&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [リモートを超える可能性 — Windows PowerShell を使用したリモート デスクトップ管理 &#40;パート 5&#41;](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
+
+- [PowerShell 'SmowerShell' — Windows PowerShell について理解する理由パート 1](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
+- [パイプラインからの情報 — 趣味と実益を兼ねた Windows PowerShell コマンドの使用方法パート 2](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
+- [唯一のプロバイダー?というわけではありません — Windows PowerShell プロバイダーの概要パート 3](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
+- [主要イベント — Windows PowerShell のイベント ログ パート 4](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
+- [リモートを超える可能性 — Windows PowerShell を使用したリモート デスクトップ管理パート 5](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
 
 #### <a name="learn-it-now-before-its-an-emergency"></a>緊急時に備えた情報
+
 - [Windows PowerShell: 緊急時に備えた情報 - パート 1](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
 - [Windows PowerShell: 緊急時に備えた情報 - パート 2](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
 - [Windows PowerShell: 緊急時に備えた情報 - パート 3](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
