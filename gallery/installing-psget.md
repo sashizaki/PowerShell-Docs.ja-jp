@@ -3,25 +3,25 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: PowerShellGet のインストール
-ms.openlocfilehash: c385f7fbf6b688a11face9c3ebf4e6475a7b4c33
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 5c51cb1c7ea2538cc5f8503ce6c5d80edda70e15
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893962"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002225"
 ---
 # <a name="installing-powershellget"></a>PowerShellGet のインストール
 
 ## <a name="powershellget-is-an-in-box-module-in-the-following-releases"></a>PowerShellGet は、以下のリリースではインボックス モジュールである
 
-- [Windows 10](https://www.microsoft.com/en-us/windows) 以降
+- [Windows 10](https://www.microsoft.com/windows) 以降
 - [Windows Server 2016](/windows-server/windows-server) 以降
-- [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) 以降
+- [Windows Management Framework (WMF) 5.0](https://www.microsoft.com/download/details.aspx?id=50395) 以降
 - [PowerShell 6](https://github.com/PowerShell/PowerShell/releases)
 
 ## <a name="get-powershellget-module-for-powershell-versions-30-and-40"></a>PowerShell バージョン 3.0 および 4.0 用の PowerShellGet モジュールの取得
 
-- [PackageManagement MSI](https://www.microsoft.com/en-us/download/details.aspx?id=51451)
+- [PackageManagement MSI](https://www.microsoft.com/download/details.aspx?id=51451)
 
 ## <a name="get-the-latest-version-from-powershell-gallery"></a>PowerShell ギャラリーからの最新バージョンの取得
 
@@ -48,7 +48,7 @@ ms.locfileid: "37893962"
   Exit
   ```
 
-### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpswwwmicrosoftcomen-usdownloaddetailsaspxid51451"></a>[PackageManagement MSI](https://www.microsoft.com/en-us/download/details.aspx?id=51451) をインストールした PowerShell 3 または PowerShell 4 を実行しているシステムの場合
+### <a name="for-systems-running-powershell-3-or-powershell-4-that-have-installed-the-packagemanagement-msihttpswwwmicrosoftcomdownloaddetailsaspxid51451"></a>[PackageManagement MSI](https://www.microsoft.com/download/details.aspx?id=51451) をインストールした PowerShell 3 または PowerShell 4 を実行しているシステムの場合
 
 - 管理者特権で、PowerShell セッションから PowerShellGet のコマンドレットを使用して、ローカル ディレクトリにモジュールを保存します。
 

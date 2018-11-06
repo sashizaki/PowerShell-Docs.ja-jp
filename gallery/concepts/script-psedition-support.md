@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: 互換性のある PowerShell エディションが含まれるスクリプト
-ms.openlocfilehash: 2313131fe17dcd9508db514883ae3dcb837fb07e
-ms.sourcegitcommit: 01ac77cd0b00e4e5e964504563a9212e8002e5e0
+ms.openlocfilehash: fcfe670a0a9ee71427b4a8adaaf3d612411941f7
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/07/2018
-ms.locfileid: "39587212"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002413"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>互換性のある PowerShell エディションが含まれるスクリプト
 
@@ -67,4 +67,4 @@ Find-Script -Tag PSEdition_Core
 ## <a name="more-details"></a>詳細情報
 
 - [PSEditions が含まれるモジュール](module-psedition-support.md)
-- [PowerShellGallery での PSEditions のサポート](../how-to/finding-items/searching-by-psedition.md)
+- [PowerShellGallery での PSEditions のサポート](../how-to/finding-packages/searching-by-psedition.md)

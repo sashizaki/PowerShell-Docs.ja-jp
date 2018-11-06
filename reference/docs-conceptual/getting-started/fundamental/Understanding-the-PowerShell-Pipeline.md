@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell, コマンドレット
 title: PowerShell パイプラインの概要
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 3ee03f001668fb24ff9be1ea6ecb3817e319d0ee
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: fc7c7f57bdce458185a0f5bdb8bc1fbbd81d0d61
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134138"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002857"
 ---
 # <a name="understanding-pipelines"></a>パイプラインの概要
 
@@ -61,7 +61,7 @@ d-----        8/23/2018   5:07 PM                catroot2
 
 また、表示する完全なページが準備できると、`Out-Host` コマンドレットに処理が転送されるため、ページングによって CPU 使用率が低下します。 パイプライン内で先行するコマンドレットは、次のページの出力が利用可能になるまで、実行を一時停止します。
 
-この時間差は、PowerShell で使用される CPU およびメモリを監視する Windows タスク マネージャーで確認できます。 コマンド `Get-ChildItem C:\\Windows -Recurse` を実行します。 `Get-ChildItem C:\\Windows -Recurse | Out-Host -Paging` を使って、このコマンドに対する CPU とメモリの使用量を比較します。
+この時間差は、PowerShell で使用される CPU およびメモリを監視する Windows タスク マネージャーで確認できます。 コマンド `Get-ChildItem C:\Windows -Recurse` を実行します。 `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging` を使って、このコマンドに対する CPU とメモリの使用量を比較します。
 
 ## <a name="objects-in-the-pipeline"></a>パイプライン内のオブジェクト
 
