@@ -4,29 +4,29 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 description: パブリッシャー向けのガイドライン
 title: PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
-ms.openlocfilehash: 2ddeae9fdb33a58f97bfeb66079541bb7c5791b1
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 7e9eca8d3372ddf0b94ab42e125991b857456551
+ms.sourcegitcommit: aa1129cc2b0ae6e18918b2b0ea70c74915ed019b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851171"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50235407"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
-このトピックでは、PowerShell ギャラリーでのマニフェスト データの処理方法に基づいて、また多数の PowerShell ギャラリー ユーザーからのフィードバックに基づいて、PowerShell ギャラリーに公開したアイテムがユーザーに広く受け入れられ、高い価値をもたらすことができるように、Microsoft チームが行っている推奨の手順をご説明します。
-このガイドラインに従ってアイテムを公開すると、そのアイテムは信用されてインストールされやすくなるとともに、より多くのユーザーに興味を持ってもらうことができます。
+このトピックでは、PowerShell ギャラリーでのマニフェスト データの処理方法に基づいて、また多くの PowerShell ギャラリー ユーザーからのフィードバックに基づいて、PowerShell ギャラリーに公開したパッケージが確実にユーザーに広く受け入れられ、高い価値をもたらすことができるように、Microsoft チームが行っている推奨の手順をご説明します。
+このガイドラインに従ってパッケージを公開すると、そのパッケージは信用されてインストールされやすくなるとともに、より多くのユーザーに興味を持ってもらうことができます。
 
-PowerShell ギャラリーの良質なアイテムを作成する上で大事なこと、オプションのマニフェスト設定で最も重要なこと、初期のレビュー担当者や [PowerShell Script Analyzer](https://aka.ms/psscriptanalyzer) からのフィードバックに基づいたコードの改善、モジュールのバージョン管理、ドキュメント、共有済みアイテムのテストと使用方法のサンプルなどに関するガイドラインを以下に示します。
+PowerShell ギャラリーの良質なパッケージを作成する上で大事なこと、オプションのマニフェスト設定で最も重要なこと、初期のレビュー担当者や [PowerShell Script Analyzer](https://aka.ms/psscriptanalyzer) からのフィードバックに基づいたコードの改善、モジュールのバージョン管理、ドキュメント、共有済みパッケージのテストと使用方法のサンプルなどに関するガイドラインを以下に示します。
 このドキュメントの大部分は、[高品質な DSC リソース モジュール](https://github.com/PowerShell/DscResources/blob/master/HighQualityModuleGuidelines.md)を公開するためのガイドラインを基にしています。
 
-PowerShell ギャラリーへのアイテムの公開の仕組みについては、「[アイテムの作成と公開](https://msdn.microsoft.com/powershell/gallery/psgallery/creating-and-publishing-an-item)」をご覧ください。
+PowerShell ギャラリーへのパッケージの公開の仕組みについては、[パッケージの作成と公開](/powershell/gallery/how-to/publishing-packages/publishing-a-package)に関するページをご覧ください。
 
-このガイドラインについてのフィードバックをお寄せください。 フィードバックをお送りいただく場合は、Microsoft の [GitHub ドキュメント リポジトリ](https://github.com/powershell/powershell-docs/) で Issue を作成してください。
+このガイドラインについてのフィードバックをお寄せください。 フィードバックをお送りいただく場合は、Microsoft の [GitHub ドキュメント リポジトリ](https://github.com/powershell/powershell-docs/issues) で Issue を作成してください。
 
-## <a name="best-practices-for-publishing-items"></a>アイテムの公開に関するベスト プラクティス
+## <a name="best-practices-for-publishing-packages"></a>パッケージの公開に関するベスト プラクティス
 
 以下に、PowerShell ギャラリーのアイテムのユーザーが重要と考えるベスト プラクティスを、名目上の優先度順に並べて示します。
-アイテムは、以下のガイドラインに準拠していると、ユーザーにダウンロードされ使用される可能性がかなり高くなります。
+パッケージは、以下のガイドラインに準拠していると、ユーザーにダウンロードされ使用される可能性がかなり高くなります。
 
 - PSScriptAnalyzer を使用する
 - ドキュメントとサンプルを含める
@@ -48,7 +48,7 @@ PowerShell ギャラリーへのアイテムの公開の仕組みについては
 [PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) は、PowerShell コードに対応した無料の静的コード分析ツールです。
 PSScriptAnalyzer では PowerShell のコードで頻繁に見られる問題が特定され、多くの場合、問題の推奨解決方法も示されます。
 このツールの使用は簡単であり、問題はエラー (重大であり対処が必須)、警告 (確認が必要であり対処した方がよい)、情報 (ベスト プラクティスの観点からチェックに値する) に分類されます。
-PowerShell ギャラリーに公開したアイテムはすべて PSScriptAnalyzer によりスキャンされます。エラーがある場合には所有者に報告されるので、対処を行ってください。
+PowerShell ギャラリーに公開したパッケージはすべて PSScriptAnalyzer によりスキャンされます。エラーがある場合には所有者に報告されるので、対処を行ってください。
 
 `-Recurse` と `-Severity` として警告を指定して、`Invoke-ScriptAnalyzer` を実行することをお勧めします。
 
@@ -57,27 +57,27 @@ PowerShell ギャラリーに公開したアイテムはすべて PSScriptAnalyz
 - すべてのエラーを修正するか、ドキュメントに記載する
 - すべての警告を確認し、必要に応じて対処する
 
-PowerShell ギャラリーからアイテムを取得したユーザーには、PSScriptAnalyzer を実行してすべてのエラーと警告を確認することが強く推奨されています。
-PSScriptAnalyzer でエラーが報告された場合、おそらくユーザーはアイテムの所有者に問い合わせるでしょう。
-エラーのフラグが付けられているアイテムのコードをそのままにしておかなければならない理由がある場合は、その旨をドキュメントに追加することで、同じ質問を何度も受けるのを回避できます。
+PowerShell ギャラリーからパッケージを取得したユーザーには、PSScriptAnalyzer を実行してすべてのエラーと警告を確認することが強く推奨されています。
+PSScriptAnalyzer によってエラーが報告された場合、おそらくユーザーはパッケージの所有者に問い合わせます。
+エラーのフラグが付けられているパッケージのコードをそのままにしておかなければならない理由がある場合は、その旨をドキュメントに追加することで、同じ質問を何度も受けるのを回避できます。
 
 ## <a name="include-documentation-and-examples"></a>ドキュメントとサンプルを含める
 
 ユーザーに共有コードを確実に活用してもらう一番の方法は、ドキュメントとサンプルを用意することです。
 
-ドキュメントは、PowerShell ギャラリーに公開するアイテムに含めておくと非常に役立ちます。
-アイテムにドキュメントが含まれていない場合、アイテムの中身と使用方法を理解するには代わりにコードを読まなければならないため、ほとんどのユーザーに敬遠されてしまいます。
-PowerShell のアイテムと合わせてドキュメントを提供する方法に関する次のような記事が MSDN に掲載されています。
+ドキュメントは、PowerShell ギャラリーに公開するパッケージに含めておくと非常に役立ちます。
+パッケージにドキュメントが含まれていない場合、パッケージの中身と使用方法を理解するには代わりにコードを読まなければならないため、ほとんどのユーザーに敬遠されてしまいます。
+PowerShell のパッケージと合わせてドキュメントを提供する方法に関する次のような記事が用意されています。
 
 - 「[How to Write Cmdlet Help (コマンドレット ヘルプの書き方)](https://go.microsoft.com/fwlink/?LinkID=123415)」内のヘルプの提供に関するガイドライン
 - コマンドレット ヘルプの作成。コマンドレット ヘルプは、すべての PowerShell スクリプト、関数、コマンドレットを理解するために最適な手段です。
-  コマンドレット ヘルプの作成方法の詳細については、まず MSDN ライブラリの「[How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)」 (コマンドレット ヘルプの書き方) をご覧ください。
-  スクリプト内にヘルプを追加する方法については、「[About Comment Based Help (コメント ベースのヘルプの概要)](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_comment_based_help)」をご覧ください。
+  コマンドレット ヘルプの作成方法については、「[How to Write Cmdlet Help](https://go.microsoft.com/fwlink/?LinkID=123415)」 (コマンドレット ヘルプの書き方) をご覧ください。
+  スクリプト内にヘルプを追加する方法については、「[About Comment Based Help (コメント ベースのヘルプの概要)](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)」をご覧ください。
 - また、多くのモジュールには、テキスト形式のドキュメント (MarkDown ファイルなど) が含まれています。
   MarkDown 形式が頻繁に使用されている GitHub にプロジェクト サイトを設置する場合、この方法は特に役立ちます。
   [GitHub 用の Markdown](https://help.github.com/categories/writing-on-github/) を使用することをお勧めします。
 
-サンプルでは、アイテムの用途をユーザーに説明します。
+サンプルでは、パッケージの用途をユーザーに説明します。
 多くの開発者は、使用方法を確認する場合、ドキュメントの前にサンプルを見ると述べています。
 基本的な使い方に加えて実際の使用例のシミュレーションを示し、コードに適切なコメントを付けると最適なサンプルになります。
 PowerShell ギャラリーに公開するモジュールのサンプルは、モジュールのルートの下の Examples フォルダーに配置することをお勧めします。
@@ -87,16 +87,16 @@ PowerShell ギャラリーに公開するモジュールのサンプルは、モ
 
 ## <a name="respond-to-feedback"></a>フィードバックに対応する
 
-アイテム所有者としてフィードバックに適切に対応すると、コミュニティでの評価が高くなります。
-建設的なフィードバックを提供してくれるユーザーは、アイテムに高い関心を持っており改善の手助けをしてくれますので、必ず対応しましょう。
+パッケージ所有者としてフィードバックに適切に対応すると、コミュニティでの評価が高くなります。
+建設的なフィードバックを提供してくれるユーザーは、パッケージに高い関心を持っており改善の手助けをしてくれますので、そのようなユーザーには対応することが重要です。
 
 PowerShell ギャラリーでフィードバックを行う方法は 2 つあります。
 
-- 所有者への連絡: この方法では、ユーザーはアイテムの所有者にメールを送信できます。 アイテムの所有者は、PowerShell ギャラリーアイテムで使用しているメール アドレスをチェックし、寄せられた問題に対応することが推奨されます。 この方法の 1 つのデメリットは、問い合わせをしたユーザーと所有者しか会話を見られないため、所有者は同じ質問に何度も答えなければならない可能性があることです。
-- コメント: アイテムのページの最下部には [Comment]\(コメント\) フィールドがあります。
+- 所有者への連絡: この方法では、ユーザーはパッケージの所有者にメールを送信できます。 パッケージの所有者は、PowerShell ギャラリー パッケージで使用されているメール アドレスをチェックし、寄せられた問題に対応することが重要です。 この方法の 1 つのデメリットは、問い合わせをしたユーザーと所有者しか会話を見られないため、所有者は同じ質問に何度も答えなければならない可能性があることです。
+- コメント: パッケージのページの最下部にはコメント フィールドがあります。
   この方法のメリットは、他のユーザーもコメントと回答を確認できるため、同一の質問に答えなければならない回数を少なくできることです。
-  アイテムの所有者には、各アイテムに寄せられたコメントを Follow (フォロー) することが強く推奨されます。
-フォロー方法の詳細については、「[Providing Feedback via Social Media or Comments (ソーシャル メディアやコメントを使用したフィードバックの提供)](../how-to/working-with-items/social-media-feedback.md)」をご覧ください。
+  パッケージの所有者には、各パッケージに寄せられたコメントをフォローすることが強く推奨されます。
+フォロー方法の詳細については、「[Providing Feedback via Social Media or Comments (ソーシャル メディアやコメントを使用したフィードバックの提供)](../how-to/working-with-packages/social-media-feedback.md)」をご覧ください。
 
 フィードバックに建設的に対応すると、コミュニティで高い評価を得られます。
 この報告の機会を利用して、必要に応じて詳細情報を求めたり、回避策を提示したり、更新によって問題が修正されるかどうかを確認したりしましょう。
@@ -109,7 +109,7 @@ PowerShell ギャラリーでフィードバックを行う方法は 2 つあり
 問題は、PowerShell ギャラリーではスクリプトは単一のファイルとなり、個別のドキュメントやサンプル、テストを提供できないことです。
 
 PowerShell モジュールはフォルダー構造となっており、複数のフォルダーやファイルをパッケージ内に含めることができます。
-こうしたモジュールの構造であれば、ベスト プラクティスとして示したコマンドレット ヘルプ、ドキュメント、サンプル、テストなどのアイテムも含めることができます。
+こうしたモジュールの構造であれば、ベスト プラクティスとして示したコマンドレット ヘルプ、ドキュメント、サンプル、テストなどのパッケージも含めることができます。
 最大のデメリットは、モジュール内のスクリプトを公開し関数として使用する必要があることです。
 モジュールの作成方法については、「[Writing a Windows PowerShell Module (Windows PowerShell モジュールの作成)](http://go.microsoft.com/fwlink/?LinkId=144916)」をご覧ください。
 
@@ -123,9 +123,9 @@ DSC 構成のベスト プラクティスとして、ドキュメント、サン
 
 ## <a name="provide-a-link-to-a-project-site"></a>プロジェクト サイトへのリンクを提供する
 
-プロジェクト サイトは、パブリッシャーとパブリッシャーの PowerShell ギャラリー アイテムのユーザーが直接やりとりできる場所です。
-プロジェクト サイトではアイテムの情報をより簡単に得られるため、このサイトを備えたアイテムの方がユーザーに選ばれやすくなります。
-PowerShell ギャラリーのアイテムの多くは GitHub で開発されていますが、専用の Web サイトを持つ組織が提供しているものもあります。
+プロジェクト サイトは、パブリッシャーとパブリッシャーの PowerShell ギャラリー パッケージのユーザーが直接やりとりできる場所です。
+プロジェクト サイトではパッケージの情報をより簡単に得られるため、このサイトを備えたパッケージの方がユーザーに選ばれやすくなります。
+PowerShell ギャラリーのパッケージの多くは GitHub で開発されていますが、専用の Web サイトを持つ組織が提供しているものもあります。
 こうしたサイトのそれぞれがプロジェクト サイトとなります。
 
 リンクを追加するには、次のようにマニフェストの PSData セクションに ProjectURI を記載します。
@@ -133,7 +133,7 @@ PowerShell ギャラリーのアイテムの多くは GitHub で開発されて�
         # A URL to the main website for this project.
         ProjectUri = 'https://github.com/powershell/powershell'
 
-ProjectURI が記載されている場合、PowerShell ギャラリーではアイテム ページの左側にプロジェクト サイトへのリンクが表示されます。
+ProjectURI が記載されている場合、PowerShell ギャラリーではパッケージ ページの左側にプロジェクト サイトへのリンクが表示されます。
 
 ## <a name="include-tests"></a>テストを含める
 
@@ -148,7 +148,7 @@ Pester は [GitHub](https://github.com/Pester/Pester) と [PowerShell ギャラ�
 
 ## <a name="include-andor-link-to-license-terms"></a>ライセンス条項を含めるか、ライセンス条項へのリンクを提供する (またはその両方)
 
-PowerShell ギャラリーに公開するすべてのアイテムについて、ライセンス条項を指定するか、「[Terms of Use (使用条件)](https://www.powershellgallery.com/policies/Terms)」の「Exhibit A (別紙 A)」に記載されているライセンスで拘束する必要があります。
+PowerShell ギャラリーに公開するすべてのパッケージについて、ライセンス条項を指定するか、[使用条件](https://www.powershellgallery.com/policies/Terms)に関するページの「Exhibit A」 (別紙 A) に記載されているライセンスで拘束する必要があります。
 別のライセンスを指定する最適な方法は、PSData の LicenseURI を利用してライセンスへのリンクを提供することです。
 サンプルは、推奨されるマニフェスト フィールドに関するトピックに記載されています。
 
@@ -165,7 +165,7 @@ PrivateData = @{
 
 ## <a name="sign-your-code"></a>コードに署名する
 
-コードに署名することで、アイテムの公開者について、またユーザーが取得したコードのコピーは公開者が公開したものに間違いないということを、ユーザーに対して最も確実に保証できます。
+コードに署名することで、パッケージの公開者について、またユーザーが取得したコードのコピーは公開者が公開したものに間違いないということを、ユーザーに対して最も確実に保証できます。
 コードへの一般的な署名方法の詳細については、「[Introduction to Code Signing (コード署名の概要)](http://go.microsoft.com/fwlink/?LinkId=106296)」をご覧ください。
 PowerShell では、コード署名について 2 つの主な検証方法がサポートされています。
 
@@ -173,24 +173,24 @@ PowerShell では、コード署名について 2 つの主な検証方法がサ
 - モジュールへのカタログ署名
 
 PowerShell ファイルに署名することで、実行するコードが信頼できる作成元で作成されており、変更されていないことを確実に保証できます。
-PowerShell スクリプト ファイルへの署名方法の詳細については、「[About Signing (署名について)](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_signing)」をご覧ください。
+PowerShell スクリプト ファイルへの署名方法の詳細については、「[About Signing (署名について)](/powershell/module/microsoft.powershell.core/about/about_signing)」をご覧ください。
 署名はすべての .PS1 ファイルに追加することができ、スクリプトのロード時に PowerShell により検証されます。
-[実行ポリシー](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/about/about_execution_policies) コマンドレットを使用して、署名済みのスクリプトのみが使用されるように PowerShell を制限できます。
+[実行ポリシー](/powershell/module/microsoft.powershell.core/about/about_execution_policies) コマンドレットを使用して、署名済みのスクリプトのみが使用されるように PowerShell を制限できます。
 
 モジュールへのカタログ署名は、バージョン 5.1 で PowerShell に追加された機能です。
-モジュールへの署名方法については、「[カタログ コマンドレット](https://msdn.microsoft.com/powershell/wmf/5.1/catalog-cmdlets)」をご覧ください。
+モジュールへの署名方法については、「[カタログ コマンドレット](/powershell/wmf/5.1/catalog-cmdlets)」をご覧ください。
 カタログ署名は、モジュール内の全ファイルのハッシュ値を含むカタログ ファイルを作成してそのファイルに署名することで行います。
-PowerShellGet の publish-module、install-module、save-module、update-module の各コマンドレットにより、署名が有効であることがチェックされ、各アイテムのハッシュ値がカタログに記載されているものと一致するか確認されます。
+PowerShellGet の publish-module、install-module、save-module、update-module の各コマンドレットにより、署名が確実に有効であることがチェックされ、各パッケージのハッシュ値がカタログに記載されているものと一致するか確認されます。
 システムに旧バージョンのモジュールがインストールされている場合、新バージョンの署名機関がインストール済みのものと一致することが install-module によって確認されます。
 カタログ署名は、スクリプト ファイルへの署名と併用できますが、代わりになるものではありません。 PowerShell では、モジュールのロード時にカタログ署名の検証は行われません。
 
 ## <a name="follow-semver-guidelines-for-versioning"></a>バージョン管理に関する SemVer ガイドラインに従う
 
 [SemVer](http://semver.org/) は、変更内容を簡単に判別できるようにする、バージョンの構造化と変更の方法を定めた一般的な規則です。
-マニフェスト データには、アイテムのバージョンを含める必要があります。
+マニフェスト データには、ご利用のパッケージのバージョンを含める必要があります。
 
 - バージョンは 0.1.1 や 4.11.192 のように、3 つの数字ブロックをピリオドで区切って構造化する
-- "0" から始まるバージョンはアイテムがまだ運用環境に対応していないことを示す。先頭の数字のみを使用する場合は、"0" から始める必要がある
+- "0" から始まるバージョンはパッケージがまだ運用環境に対応していないことを示す。先頭の数字のみを使用する場合は、"0" から始める必要がある
 - 先頭の数字の変更 (1.9.9999 から 2.0.0) は、バージョン間で重大な変更が行われたことを示す
 - 2 番目の数字の変更 (1.01 から 1.02) は、モジュールへの新しいコマンドレットの追加など、機能レベルでの変更を示す
 - 3 番目の数字の変更は、パラメーターの新規追加、サンプルの更新、テストの新規追加など、小規模な変更を示す
@@ -213,18 +213,22 @@ PowerShell ギャラリーへのエンドツーエンドの公開プロセスを
 
 これらのソリューションでは、Register-PSRepository を使用して、新しい "リポジトリ" を定義します。これは、Publish-Module の -Repository プロパティで使用します。
 
-テストの公開に関する追加のポイント: PowerShell ギャラリーに公開したアイテムはオペレーション チームの支援がなければ、削除できません。オペレーション チームは、公開するアイテムに何も依存していないことを確認します。
+テストの公開に関する追加のポイント: PowerShell ギャラリーに公開したパッケージはオペレーション チームの支援がなければ、削除できません。公開するパッケージに何も依存していないことがオペレーション チームによって確認されます。
 そのため、弊社では PowerShell ギャラリーをテストの対象としてサポートしておらず、テストを行っている公開元に問い合わせします。
 
 ## <a name="use-powershellget-to-publish"></a>PowerShellGet を使用して公開する
 
-パブリッシャーには、PowerShell ギャラリーを使用するときは Publish-Module および Publish-Script コマンドレットを使用することを強くお勧めします。 PowerShellGet は、PowerShell ギャラリーに公開することで、インストールについての重要な詳細情報を覚えておく必要をなくすために作成されました。 パブリッシャーは、PowerShellGet をスキップして NuGet クライアントを使用したり、Publish-Module の代わりに PackageManagement コマンドレットを使用したりすることがあります。 簡単に見落としてしまう詳細な設定がいくつもあり、その結果さまざまなサポート要求が発生します。
+パブリッシャーには、PowerShell ギャラリーを使用するときは Publish-Module および Publish-Script コマンドレットを使用することを強くお勧めします。
+PowerShellGet は、PowerShell ギャラリーからのインストールおよび PowerShell ギャラリーへの公開についての重要な詳細情報を覚えておかなくても済むように作成されました。
+パブリッシャーは、PowerShellGet をスキップして NuGet クライアントを使用したり、Publish-Module の代わりに PackageManagement コマンドレットを使用したりすることがあります。
+簡単に見落としてしまう詳細な設定がいくつもあり、その結果さまざまなサポート要求が発生します。
 
-Publish-Module または Publish-Script を使用できない理由がある場合は、ご連絡ください。 PowerShellGet の GitHub リポジトリにイシューを登録し、NuGet または PackageManagement を選択することになった詳細な理由をご記入ください。 
+Publish-Module または Publish-Script を使用できない理由がある場合は、ご連絡ください。
+PowerShellGet の GitHub リポジトリにイシューを登録し、NuGet または PackageManagement を選択することになった詳細な理由をご記入ください。
 
 ## <a name="recommended-workflow"></a>推奨ワークフロー
 
-PowerShell ギャラリーにアイテムを公開する上で最も効果的と考えられる方法を次に示します。
+PowerShell ギャラリーにパッケージを公開する上で最も効果的と考えられる方法を次に示します。
 
 - 初期の開発はオープンソースのプロジェクト サイトで行う。 PowerShell チームでは Github を使用しています。
 - レビュー担当者と [PowerShell Script Analyzer](https://aka.ms/psscriptanalyzer) からのフィードバックを活用してコードを安定化させる
@@ -233,7 +237,7 @@ PowerShell ギャラリーにアイテムを公開する上で最も効果的と
 - PowerShell ギャラリーには安定版またはアルファ リリースを公開し、必ずドキュメントとプロジェクト サイトへのリンクを記載する
 - プロジェクト サイトでフィードバックを集めてコードを反復開発し、安定した更新版を PowerShell ギャラリーに公開する
 - プロジェクトとモジュールにサンプルと Pester テストを追加する
-- アイテムのコード署名を行うかどうかを決定する
+- パッケージのコード署名を行うかどうかを決定する
 - プロジェクトが運用環境で使用できるようになったと思われる場合は、1.0.0 バージョンを PowerShell ギャラリーに公開する
 - 引き続きフィードバックを収集し、ユーザーの意見に基づいてコードを反復開発する
 

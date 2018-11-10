@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC WaitForAny リソース
-ms.openlocfilehash: c9700c908f8601db85f9c922445969a34b59d453
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 39100f0fc52092c54bbecab55e3ef3dfabb4c70e
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34186713"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50226051"
 ---
 # <a name="dsc-waitforany-resource"></a>DSC WaitForAny リソース
 
@@ -15,7 +15,7 @@ ms.locfileid: "34186713"
 
 **WaitForSome** Desired State Configuration (DSC) リソースを [DSC 構成](configurations.md)のノード ブロック内で使用して、他のノードの構成の依存関係を指定することができます。
 
-このリソースは **ResourceName** プロパティで指定されたリソースが、 **NodeName** プロパティで定義された任意のターゲット ノードで目的の状態になった場合に成功します。
+このリソースは、**ResourceName** プロパティで指定されたリソースが、**NodeName** プロパティで定義された任意のターゲット ノードで目的の状態になった場合に成功します。
 
 
 ## <a name="syntax"></a>構文

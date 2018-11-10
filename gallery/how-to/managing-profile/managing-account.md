@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーのアカウント設定
-ms.openlocfilehash: dd7b8b3a99b5b7fbfec5d7f82b81dd6d5cfb906c
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523152"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002788"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell ギャラリーのアカウント設定
 
@@ -34,7 +34,7 @@ PowerShell ギャラリーには、次のアカウント設定が用意されて
 PowerShell ギャラリーには、次の通知オプションが用意されています。
 
 - Users can contact me through the PowerShell Gallery\(ユーザーが PowerShell ギャラリーを通じて連絡できるようにする\)
-- Notify me when an item is pushed to the PowerShell Gallery using my account\(自分のアカウントを使用して PowerShell ギャラリーにアイテムがプッシュされたときに通知を受け取る\)
+- Notify me when an item is pushed to the PowerShell Gallery using my account\(自分のアカウントを使用して PowerShell ギャラリーにパッケージがプッシュされたときに通知を受け取る\)
 
 ![電子メール アドレスの変更](../../Images/PSGallery_AccountEmailOptions.png)
 

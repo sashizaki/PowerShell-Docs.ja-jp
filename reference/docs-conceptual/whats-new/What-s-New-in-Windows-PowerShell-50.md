@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: powershell,コマンドレット
+keywords: PowerShell, コマンドレット
 title: Windows PowerShell 5.0 の新機能
-ms.openlocfilehash: f5a27c0541e21b379f88b318cbe09a0344c1b372
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 7a2ef581f2cd867b35533597d4942fd5bfc94570
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483187"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225813"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 の新機能
 Windows PowerShell 5.0 には、その用途を拡大し、使いやすさを向上させる重要な機能や、Windows ベースの環境をより簡単かつ包括的に制御および管理できるようにする重要な新しい機能が含まれています。
@@ -582,7 +582,7 @@ Windows PowerShell 3.0 以降では、ファイルを使用してカスタム �
 
 セッション構成ファイルを作成するには、[New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) コマンドレットを使用します。 セッション構成ファイルをセッション構成に適用するには、[Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) コマンドレットまたは [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) コマンドレットを使用します。
 
-詳細については、「[about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8)」および「[New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866)」を参照してください。
+詳細については、「[about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-5.0)」および「[New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866)」を参照してください。
 
 ### <a name="scheduled-jobs-and-task-scheduler-integration"></a>スケジュールされたジョブ、およびタスク スケジューラとの統合
 Windows PowerShell のバックグラウンド ジョブは、Windows PowerShell およびタスク スケジューラでスケジュールを設定し、管理できるようになりました。
@@ -656,7 +656,7 @@ Windows PowerShell コンソールの Tab 補完機能では、コマンドレ�
 
 モジュールの自動インポートの有効/無効の切り替えや構成を行うには、**$PSModuleAutoLoadingPreference** ユーザー設定変数を使用します。
 
-詳細については、「[about_Modules [v4]](https://technet.microsoft.com/library/94f57429-a539-4aee-bb0d-205cd7e801f9)」、「[about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b)」、および「[Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad)」コマンドレットと「[Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade)」コマンドレットのヘルプ トピックを参照してください。
+詳細については、「[about_Modules ](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-5.0)」、「[about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b)」、および「[Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad)」コマンドレットと「[Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade)」コマンドレットのヘルプ トピックを参照してください。
 
 ### <a name="module-experience-improvements"></a>モジュールのエクスペリエンスの改善
 Windows PowerShell 3.0 は、高度な機能のサポートをモジュールに提供する次のような新機能があります。

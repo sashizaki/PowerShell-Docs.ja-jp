@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の構成の登録
-ms.openlocfilehash: 2c4a8f64c966903a6eb8fcabe4cd25ae7f98b2c4
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 160aa95283da57a10aad5fdd4043adb1354a5db5
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522856"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002908"
 ---
 # <a name="registering-jea-configurations"></a>JEA の構成の登録
 
 > 適用先: Windows PowerShell 5.0
 
-[ロール機能](role-capabilities.md)と[セッション構成ファイル](session-configurations.md)を作成した後、JEA を使用できるようにする前の最後のステップは、JEA エンドポイントを登録することです。
-このプロセスでは、セッション構成情報をシステムに適用し、ユーザーおよび自動化エンジンがエンドポイントを使用できるようにします。
+[ロール機能](role-capabilities.md)と[セッション構成ファイル](session-configurations.md)を作成した後、JEA を使用できるようにする前の最後の手順は、JEA エンドポイントを登録することです。
+システムに JEA エンドポイントを登録すると、ユーザーおよび自動化エンジンでエンドポイントが使用できるようになります。
 
 ## <a name="single-machine-configuration"></a>単一コンピューターの構成
 
@@ -26,7 +26,7 @@ ms.locfileid: "45522856"
 - JEA 構成を登録するユーザーに、システムに対する管理者権限があること。
 
 JEA エンドポイントの名前を選ぶ必要もあります。
-ユーザーが JEA を使ってシステムに接続するときに、JEA エンドポイントの名前が必要になります。
+ユーザーが JEA を使ってシステムに接続するときに、JEA エンドポイントの名前が必要です。
 [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) コマンドレットを使って、システム上の既存のエンドポイントの名前を確認できます。
 "microsoft" で始まるエンドポイントは、通常、Windows に付属しています。
 "microsoft.powershell" エンドポイントは、リモート PowerShell エンドポイントに接続するときに使われる既定のエンドポイントです。
@@ -48,12 +48,12 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 ```
 
 > [!WARNING]
-> 上記のコマンドは、システム上の WinRM サービスを再起動します。
+> 上記のコマンドでは、システム上の WinRM サービスが再起動します。
 > これにより、すべての PowerShell リモート処理セッションおよび実行中の DSC 構成が終了されます。
 > 業務の中断を防ぐため、コマンドを実行する前に、運用環境のコンピューターをオフラインにすることをお勧めします。
 
 登録が成功すると、[JEA を使用](using-jea.md)できる状態になります。
-セッション構成ファイルは、登録後は使用されないので、いつでも削除できます。
+セッション構成ファイルは、エンドポイントの登録後は使用されないので、いつでも削除できます。
 
 ## <a name="multi-machine-configuration-with-dsc"></a>DSC での複数コンピューター構成
 
@@ -113,7 +113,7 @@ Configuration JEAMaintenance
 その後、[ローカル構成マネージャーを直接呼び出す](https://msdn.microsoft.com/powershell/dsc/metaconfig)ことにより、または[プル サーバーの構成](https://msdn.microsoft.com/powershell/dsc/pullserver)を更新することにより、この構成をシステムに適用できます。
 
 DSC リソースを使うと、既定の Microsoft.PowerShell リモート処理エンドポイントを置き換えることもできます。
-これを行うと、リソースは、既定の WinRM ACL (リモート管理ユーザーとローカル管理者グループのメンバーにアクセスを許可します) を持つ "Microsoft.PowerShell.Restricted" という名前のバックアップ非制約エンドポイントを自動的に登録します。
+これを行うと、リソースにより、既定の WinRM ACL (リモート管理ユーザーとローカル管理者グループのメンバーにアクセスを許可する) を持つ "Microsoft.PowerShell.Restricted" という名前のバックアップ非制約エンドポイントが自動的に登録されます。
 
 ## <a name="unregistering-jea-configurations"></a>JEA の構成の登録解除
 

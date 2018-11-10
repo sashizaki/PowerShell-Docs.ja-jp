@@ -2,12 +2,12 @@
 title: PowerShell 開発のための Visual Studio Code の使用
 description: PowerShell 開発のための Visual Studio Code の使用
 ms.date: 08/06/2018
-ms.openlocfilehash: 8fbaba826624199d06fe4fdc785998e0135d7fe7
-ms.sourcegitcommit: 59727f71dc204785a1bcdedc02716d8340a77aeb
+ms.openlocfilehash: 9c06ce72c39d08e75fcb7e5cf9d5f92ae5dd8ed9
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/28/2018
-ms.locfileid: "43134102"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225796"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell 開発のための Visual Studio Code の使用
 
@@ -124,12 +124,11 @@ Visual Studio Code バージョン 1.9 以降では、PowerShell スクリプト
 - デバッガーでの対話型セッションの起動
 - PowerShell ホスト手順へのデバッガーのアタッチ
 
-  デバッグ用の構成ファイルを作成するには、次の手順に従います。
+デバッグ用の構成ファイルを作成するには、次の手順に従います。
 
   1. **Ctrl + Shift + D** (Mac の場合は **Cmd + Shift + D**) と押して、**[デバッグ]** ビューを開きます。
   2. ツールバーの **[構成]** 歯車アイコンキーを押します。
-  3. Visual Studio Code により、**[環境の選択]** が求められます。
-  **[PowerShell]** を選択します。
+  3. Visual Studio Code により、**[環境の選択]** が求められます。 **[PowerShell]** を選択します。
 
   これを行うときに、Visual Studio Code によってワークスペース フォルダーのルートに、".vscode\launch.json" のディレクトリとファイルが作成されます。
   ここにデバッグ構成が格納されます。 ファイルが Git リポジトリにある場合は、通常は launch.json ファイルをコミットしたいでしょう。
@@ -171,9 +170,7 @@ Visual Studio Code バージョン 1.9 以降では、PowerShell スクリプト
 
   デバッグ構成が確立されると、**[デバッグ]** ビューのツールバーのデバッグ構成ドロップダウンから、デバッグ セッションで使用する構成を選択できます。
 
-  Visual Studio Code 用の PowerShell の拡張機能を使用開始するのに便利なブログを、次にいくつか示します。
-
-Visual Studio Code:
+Visual Studio Code 用の PowerShell の拡張機能を使用開始するのに便利なブログを、次にいくつか示します。
 
 - [PowerShell 拡張機能][ps-extension]
 - [Visual Studio Code での PowerShell スクリプトの記述およびデバッグ][debug]

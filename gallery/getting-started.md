@@ -3,24 +3,24 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーの概要
-ms.openlocfilehash: 39998df1a2bf9363dd008dc96a802157c8d691d7
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: 85b0a754aba25d850dc918024419318554f92b33
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523058"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225677"
 ---
-# <a name="get-started-with-the-powershell-gallery"></a>PowerShell ギャラリーの概要
+# <a name="getting-started-with-the-powershell-gallery"></a>PowerShell ギャラリーの概要
 
-PowerShell ギャラリーからアイテムをインストールする適切な方法は、[PowerShellGet](/powershell/module/powershellget) モジュールでコマンドレットを使用することです。 PowerShell ギャラリーから項目をダウンロードするのにサインインする必要はありません。
+PowerShell ギャラリーからパッケージをインストールする適切な方法は、[PowerShellGet](/powershell/module/powershellget) モジュールでコマンドレットを使用することです。 PowerShell ギャラリーから項目をダウンロードするのにサインインする必要はありません。
 
 > [!NOTE]
-> PowerShell ギャラリーから直接パッケージをダウンロードすることもできますが、この方法はお勧めできません。 詳細については、「[パッケージの手動ダウンロード](https://msdn.microsoft.com/en-us/powershell/gallery/psgallery/how-to/working-with-items/manual-download.md)」を参照してください。  
+> PowerShell ギャラリーから直接パッケージをダウンロードすることもできますが、この方法はお勧めできません。
+> 詳細については、「[パッケージの手動ダウンロード](/powershell/gallery/how-to/working-with-packages/manual-download)」を参照してください。
 
+## <a name="discovering-packages-from-the-powershell-gallery"></a>PowerShell ギャラリーでのパッケージの検出
 
-## <a name="discovering-items-from-the-powershell-gallery"></a>PowerShell ギャラリーでの項目の検出
-
-この Web サイトで**検索**コントロールを使用するか、[モジュールとスクリプト] ページを閲覧すると PowerShell ギャラリーの項目が見つかります。 また、[Find-Module][] および [Find-Script][] コマンドレットを、アイテムの種類に応じて `-Repository PSGallery` を指定して実行すると、PowerShell ギャラリーからアイテムを検索できます。
+この Web サイトで**検索**コントロールを使用するか、[モジュールとスクリプト] ページを閲覧すると PowerShell ギャラリーのパッケージが見つかります。 また、[Find-Module][] および [Find-Script][] コマンドレットを、パッケージの種類に応じて `-Repository PSGallery` を指定して実行すると、PowerShell ギャラリーからパッケージを検索できます。
 
 次のパラメーターを使用すると、ギャラリーからの結果をフィルター処理できます。
 
@@ -38,31 +38,31 @@ PowerShell ギャラリーからアイテムをインストールする適切な
 ギャラリー内の特定の DSC リソースのみを検出したい場合は、[Find-DscResource] コマンドレットを実行します。 Find-DscResource では、ギャラリーに含まれている DSC リソースのデータが返されます。
 DSC リソースは常にモジュールの一部として配布されるため、この DSC リソースをインストールする場合も [Install-Module][] を実行する必要があります。
 
-## <a name="learning-about-items-in-the-powershell-gallery"></a>PowerShell ギャラリーの項目の詳細
+## <a name="learning-about-packages-in-the-powershell-gallery"></a>PowerShell ギャラリーのパッケージの詳細
 
-関心のある項目を特定できたら、その詳細を入手することができます。 これは、ギャラリー上で項目の特定のページを調べると見つかります。 そのページでは、その項目と共にアップロードされているメタデータをすべて参照することができます。 この項目のメタデータは項目の作成者が提供するものであり、Microsoft で検証したものではありません。 項目の所有者は、項目の公開に使用したギャラリーのアカウントと厳密に関連付けられており、[作成者] フィールドよりも信頼性があります。
+関心のあるパッケージを特定できたら、その詳細を入手することができます。 これは、ギャラリー上でパッケージの特定のページを調べると見つかります。 そのページでは、そのパッケージと共にアップロードされているメタデータをすべて参照することができます。 このメタデータはパッケージの作成者が提供するものであり、Microsoft で検証したものではありません。 パッケージの所有者は、パッケージの公開に使用したギャラリーのアカウントと厳密に関連付けられており、[作成者] フィールドよりも信頼性があります。
 
-誠意をもって公開されていると思われない項目が見つかった場合は、その項目のページの **[不正使用を報告]** をクリックします。
+誠意をもって公開されていると思われないパッケージが見つかった場合は、そのパッケージのページの **[不正使用を報告]** をクリックします。
 
 [Find-Module][] または [Find-Script][] を実行している場合、返される PSGetModuleInfo オブジェクトにこのデータが表示されます。 たとえば、`Find-Module -Name PSReadLine -Repository PSGallery |Get-Member` を実行すると、
 ギャラリーの PSReadLine モジュールのデータが返されます。
 
-## <a name="downloading-items-from-the-powershell-gallery"></a>PowerShell ギャラリーでの項目のダウンロード
+## <a name="downloading-packages-from-the-powershell-gallery"></a>PowerShell ギャラリーでのパッケージのダウンロード
 
-PowerShell ギャラリーから項目をダウンロードするとき、次のプロセスをお勧めします。
+PowerShell ギャラリーからパッケージをダウンロードするとき、次のプロセスをお勧めします。
 
 ### <a name="inspect"></a>検査
 
-検査のためにギャラリーから項目をダウンロードするには、項目の種類に応じて [Save-Module][] または [Save-Script][] コマンドレットを実行します。 これにより、項目をインストールすることなくローカルに保存し、項目の内容を検査することができます。 保存した項目は必ず手動で削除してください。
+検査のためにギャラリーからパッケージをダウンロードするには、パッケージの種類に応じて [Save-Module][] または [Save-Script][] コマンドレットを実行します。 これにより、パッケージをインストールすることなくローカルに保存し、パッケージの内容を検査することができます。 保存したパッケージは必ず手動で削除してください。
 
-この項目の一部は Microsoft によって作成されており、その他は PowerShell コミュニティによって作成されています。
-このギャラリーの項目の内容とコードは、インストールする前に確認することをお勧めします。
+このパッケージの一部は Microsoft によって作成されており、その他は PowerShell コミュニティによって作成されています。
+このギャラリーのパッケージの内容とコードは、インストールする前に確認することをお勧めします。
 
-誠意をもって公開されていると思われない項目が見つかった場合は、その項目のページの **[不正使用を報告]** をクリックします。
+誠意をもって公開されていると思われないパッケージが見つかった場合は、そのパッケージのページの **[不正使用を報告]** をクリックします。
 
 ### <a name="install"></a>[インストール]
 
-使用のためにギャラリーから項目をインストールするには、項目の種類に応じて [Install-Module][] または [Install-Script][] コマンドレットを実行します。
+使用のためにギャラリーからパッケージをインストールするには、パッケージの種類に応じて [Install-Module][] または [Install-Script][] コマンドレットを実行します。
 
 [Install-Module][] は、既定では `$env:ProgramFiles\WindowsPowerShell\Modules` にモジュールをインストールします。
 これには管理者アカウントが必要です。 `-Scope CurrentUser` パラメーターを追加する場合は、モジュールは `$env:USERPROFILE\Documents\WindowsPowerShell\Modules` にインストールされます。
@@ -70,22 +70,22 @@ PowerShell ギャラリーから項目をダウンロードするとき、次の
 [Install-Script][] は、既定では `$env:ProgramFiles\WindowsPowerShell\Scripts` にスクリプトをインストールします。
 これには管理者アカウントが必要です。 `-Scope CurrentUser` パラメーターを追加する場合は、スクリプトは `$env:USERPROFILE\Documents\WindowsPowerShell\Scripts` にインストールされます。
 
-既定では、[Install-Module][] および [Install-Script][] は項目の最新バージョンをインストールします。
-前のバージョンのアイテムをインストールするには、 `-RequiredVersion` パラメーターを追加します。
+既定では、[Install-Module][] および [Install-Script][] は最新バージョンのパッケージをインストールします。
+前のバージョンのパッケージをインストールするには、`-RequiredVersion` パラメーターを追加します。
 
 ### <a name="deploy"></a>展開
 
-項目を PowerShell ギャラリーから Azure Automation にデプロイするには、項目の詳細ページで **[Azure Automation にデプロイする]** をクリックします。 Azure 管理ポータルにリダイレクトされるため、そこでAzure アカウント資格情報を使用してサインインします。 依存関係のある項目をデプロイすると、すべての依存関係が Azure Automation にデプロイされることに注意してください。 [Azure Automation にデプロイする] ボタンは、**AzureAutomationNotSupported** タグを項目のメタデータに追加すると無効にできます。
+パッケージを PowerShell ギャラリーから Azure Automation にデプロイするには、パッケージの詳細ページで **[Azure Automation にデプロイする]** をクリックします。 Azure 管理ポータルにリダイレクトされるため、そこで Azure アカウント資格情報を使用してサインインします。 依存関係のあるパッケージをデプロイすると、すべての依存関係が Azure Automation にデプロイされることに注意してください。 [Azure Automation にデプロイする] ボタンは、**AzureAutomationNotSupported** タグをパッケージのメタデータに追加すると無効にできます。
 
 Azure Automation の詳細については、[Azure Automation](/azure/automation) のドキュメントをご覧ください。
 
-## <a name="updating-items-from-the-powershell-gallery"></a>PowerShell ギャラリーからの項目の更新
+## <a name="updating-packages-from-the-powershell-gallery"></a>PowerShell ギャラリーからのパッケージの更新
 
-PowerShell ギャラリーからインストールされたアイテムを更新するには、[Update-Module][] または [Update-Script][] コマンドレットを実行します。 パラメーターを追加せずに [Update-Module][] を実行すると、[Install-Module][] を実行してインストールされた各モジュールが更新されます。 モジュールを選択して更新するには、`-Name` パラメーターを追加します。
+PowerShell ギャラリーからインストールされたパッケージを更新するには、[Update-Module][] または [Update-Script][] コマンドレットを実行します。 パラメーターを追加せずに [Update-Module][] を実行すると、[Install-Module][] を実行してインストールされた各モジュールが更新されます。 モジュールを選択して更新するには、`-Name` パラメーターを追加します。
 
 同様に、パラメーターを追加せずに [Update-Script][] を実行すると、[Install-Script][] を実行してインストールされた各スクリプトが更新されます。 スクリプトを選択して更新するには、`-Name` パラメーターを追加します。
 
-## <a name="list-items-that-you-have-installed-from-the-powershell-gallery"></a>PowerShell ギャラリーからインストールした項目の一覧
+## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>PowerShell ギャラリーからインストールしたパッケージの一覧
 
 PowerShell ギャラリーからどのモジュールをインストールしたかを調べるには、[Get-InstalledModule][] コマンドレットを実行します。 このコマンドは、PowerShell ギャラリーから直接インストールした、システム上にあるモジュールをすべて一覧表示します。
 

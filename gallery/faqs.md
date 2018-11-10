@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーに関してよく寄せられる質問
-ms.openlocfilehash: e377e71cf5eeb1f8b73430cc0b97527eac970cff
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3fa52892ce50491c040251baae8b4ae4ee3dcba0
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190436"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002874"
 ---
 # <a name="frequently-asked-questions"></a>AppLocker: Frequently Asked Questions (AppLocker: よく寄せられる質問)
 
@@ -29,30 +29,30 @@ PowerShell スクリプトとは、再利用と共有を可能にするため、
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>どのようにして PowerShell ギャラリーに公開できますか。
 
-項目を PowerShell ギャラリーに公開するには、ギャラリーにアカウントを登録する必要があります。 これは、登録時に提供される NuGetApiKey が項目の公開に必要になるためです。 登録するには、個人、職場、または学校のアカウントを使用して PowerShell ギャラリーにサインインします。 初めてサインインするときは、1 回限りの登録処理が必要です。 その後、NuGetApiKey キーをプロファイル ページで使用できるようになります。
+パッケージを PowerShell ギャラリーに公開するには、ギャラリーにアカウントを登録する必要があります。 これは、登録時に提供される NuGetApiKey がパッケージの公開に必要になるためです。 登録するには、個人、職場、または学校のアカウントを使用して PowerShell ギャラリーにサインインします。 初めてサインインするときは、1 回限りの登録処理が必要です。 その後、NuGetApiKey キーをプロファイル ページで使用できるようになります。
 
-ギャラリーに登録したら、[Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを使用して項目をギャラリーに公開します。 これらのコマンドレットを実行する方法の詳細については、[公開] タブにアクセスするか、[Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) および [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) のドキュメントを参照してください。
+ギャラリーに登録したら、[Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを使用してパッケージをギャラリーに公開します。 これらのコマンドレットを実行する方法の詳細については、[公開] タブにアクセスするか、[Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) および [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) のドキュメントを参照してください。
 
-**アイテムのインストールまたは保存にギャラリーに登録またはサインインする必要はありません。**
+**パッケージをインストールまたは保存するためにギャラリーに登録またはサインインする必要はありません。**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-an-item-to-the-powershell-gallery-what-does-that-mean"></a>PowerShell ギャラリーに項目を公開しようとして、"要求を処理できませんでした。 '指定した API キーが無効か、指定したパッケージへのアクセス許可がありません。' リモート サーバーがエラーを返しました: (403) 許可されていません" というエラーを受信しました。 これは何を意味しますか。
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>PowerShell ギャラリーに項目を公開しようとして、"要求を処理できませんでした。 '指定した API キーが無効か、指定したパッケージへのアクセス許可がありません。' リモート サーバーがエラーを返しました: (403) 許可されていません" というエラーを受信しました。 これは何を意味しますか。
 
 このエラーは、次の理由で発生することがあります。
 
 - **指定された API キーが無効である。**
      自分のアカウントから有効な API キーを指定したことを確認します。 API キーを取得するには、プロファイル ページを表示します。
-- **指定された項目名を所有していない。**
-     自分の API キーが正しいことを確認できた場合、使用しようとしているものと同じ名前の項目が既に存在すると考えられます。 項目が所有者によってリストから外されている場合は、検索結果には表示されません。 同じ名前の項目が既に存在するかどうかを確認するには、ブラウザーを開き、項目の詳細ページ: `https://www.powershellgallery.com/packages/<itemName>` に移動します。 たとえば、`https://www.powershellgallery.com/packages/pester` に直接移動すると、Pester モジュールの詳細ページが表示され、リストから外されているかどうかがわかります。 競合する項目が既に存在し、リストから外されている場合は、次のようにできます。
-    - 別の項目名を選択する。
-    - 既存の項目の所有者に問い合わせる。
+- **指定されたパッケージ名を所有していない。**
+     自分の API キーが正しいことを確認できた場合、使用しようとしているものと同じ名前のパッケージが既に存在すると考えられます。 パッケージが所有者によってリストから外されている場合は、検索結果には表示されません。 同じ名前のパッケージが既に存在するかどうかを確認するには、ブラウザーを開き、パッケージの詳細ページ (`https://www.powershellgallery.com/packages/<packageName>`) に移動します。 たとえば、`https://www.powershellgallery.com/packages/pester` に直接移動すると、Pester モジュールの詳細ページが表示され、リストから外されているかどうかがわかります。 競合するパッケージが既に存在し、リストから外されている場合は、次のようにできます。
+    - 別のパッケージ名を選択する。
+    - 既存のパッケージの所有者に問い合わせる。
 
 ## <a name="why-cant-i-sign-in-with-my-personal-account-but-i-could-sign-in-yesterday"></a>昨日はサインインできましたが、個人アカウントにサインインできないのはなぜですか。
 
 ギャラリー アカウントがプライマリ電子メールのエイリアスの変更に対応していないことに注意してください。 詳細については、「[Microsoft アカウントのエイリアスを管理する](https://windows.microsoft.com/windows/outlook/add-alias-account)」を参照してください。
 
-## <a name="why-dont-i-see-all-the-gallery-items-when-i-select-all-the-category-checkboxes-on-the-items-tab"></a>[項目] タブの [カテゴリ] チェックボックスをすべてオンにすると、ギャラリーの項目がすべて表示されなくなるのはなぜですか。
+## <a name="why-dont-i-see-all-the-gallery-packages-when-i-select-all-the-category-checkboxes-on-the-packages-tab"></a>パッケージ タブの [カテゴリ] チェックボックスをすべてオンにすると、ギャラリーのパッケージがすべて表示されなくなるのはなぜですか。
 
-[カテゴリ] チェックボックスをオンにすることは、"このカテゴリの項目をすべて表示したい" ということを意味します。 選択したカテゴリの項目のみが表示されます。 同様に、[カテゴリ] チェックボックスをすべてオンにすることは、"任意のカテゴリの項目をすべて表示したい" ということを意味します。 ただし、ギャラリーの一部の項目は、一覧に表示されているどのカテゴリにも属さないため、結果には表示されなくなります。 ギャラリー内のすべての項目を表示するには、すべての [カテゴリ] のチェックをオフにするか、[項目] タブを再度選択します。
+[カテゴリ] チェックボックスをオンにすることは、"このカテゴリのパッケージをすべて表示したい" ということを意味します。 選択したカテゴリのパッケージのみが表示されます。 同様に、[カテゴリ] チェックボックスをすべてオンにすることは、"任意のカテゴリのパッケージをすべて表示したい" ということを意味します。 しかし、ギャラリーの一部のパッケージは、一覧に表示されているどのカテゴリにも属さないため、結果には表示されなくなります。 ギャラリー内のすべてのパッケージを表示するには、すべての [カテゴリ] のチェックを外すか、パッケージ タブを再度選択します。
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>モジュールを PowerShell ギャラリーに公開するための要件は何ですか。
 
@@ -82,7 +82,7 @@ PowerShell スクリプトのどの種類 (スクリプトまたはワークフ�
 
 ## <a name="how-do-i-search"></a>どのように検索しますか。
 
-検索したいものをテキスト ボックスに入力します。 たとえば、Azure SQL に関連するモジュールを検索する場合は、「azure sql」と入力します。 検索エンジンが、タイトル、説明、全体のメタデータを含め、公開されているすべての項目からこれらのキーワードを検索します。 次に、重み付けされた品質スコアに基づき、もっとも近い一致が表示されます。 また、次のフィールドについて、検索クエリで field:"value" 構文を使用して、特定のフィールドを検索することもできます。
+検索したいものをテキスト ボックスに入力します。 たとえば、Azure SQL に関連するモジュールを検索する場合は、「azure sql」と入力します。 検索エンジンによって、タイトル、説明、全体のメタデータを含む、公開されているすべてのパッケージでこれらのキーワードが検索されます。 次に、重み付けされた品質スコアに基づき、もっとも近い一致が表示されます。 また、次のフィールドについて、検索クエリで field:"value" 構文を使用して、特定のフィールドを検索することもできます。
 
 - タグ
 - 関数
@@ -112,7 +112,7 @@ PowerShell モジュールという用語は、実際の機能を実装するフ
 
 PackageManagement はどのパッケージ マネージャーでも機能する一般的なインターフェイスです。 最終的には、PowerShell モジュール、MSI、Ruby gem、NuGet パッケージ、Perl モジュールのどれを扱っていても、その検索とインストールには、PackageManagement のコマンド(Find-Package および Install-Package) を使用できる必要があります。 PackageManagement では、PackageManagement に差し込まれるそれぞれのパッケージ マネージャーのパッケージ プロバイダーを指定することによってこれを実行します。 プロバイダーは、実際の作業をすべて行います。リポジトリからコンテンツをフェッチし、そのコンテンツをローカルにインストールします。 多くの場合、パッケージ プロバイダーは、指定したパッケージの種類の既存のパッケージ マネージャー ツールを単にラップするだけです。
 
-PowerShellGet は PowerShell 項目のパッケージ マネージャーです。 PackageManagement を介して PowerShellGet 機能を公開する PSModule パッケージ プロバイダーがあります。 このため、[Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または Install-Package -Provider PSModule を実行して、PowerShell ギャラリーからモジュールをインストールすることができます。 [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) および [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を含む特定の PowerShellGet 機能には、PackageManagement コマンドではアクセスできません。
+PowerShellGet は PowerShell パッケージのパッケージ マネージャーです。 PackageManagement を介して PowerShellGet 機能を公開する PSModule パッケージ プロバイダーがあります。 このため、[Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または Install-Package -Provider PSModule を実行して、PowerShell ギャラリーからモジュールをインストールすることができます。 [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) および [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を含む特定の PowerShellGet 機能には、PackageManagement コマンドではアクセスできません。
 
 つまり、PowerShellGet はPowerShell コンテンツのプレミアム パッケージ管理エクスペリエンスにのみ重点を置いています。 PackageManagement は、単一の一般的なツール セットによるすべてのパッケージ管理エクスペリエンスの公開に重点を置いています。 この回答では不十分な場合は、このドキュメントの下部にある「**PackageManagement は実際に PowerShellGet にどのように関連しているでしょうか。**」のセクションに詳しい回答があります。
 
@@ -158,14 +158,14 @@ PackageManagement パッケージ プロバイダー層では、PSModule パッ�
 
 **PowerShellGet** には、.NET Framework 4.5 以降も必要です。 .NET Framework 4.5 以降を[ここ](https://msdn.microsoft.com/library/5a4x27ek.aspx)からインストールできます。
 
-## <a name="is-it-possible-to-reserve-names-for-items-that-will-be-published-in-future"></a>将来的に公開される項目の名前を予約することはできますか。
+## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>将来的に公開されるパッケージの名前を予約することはできますか。
 
-項目名をとっておくことはできません。 既存の項目より、その名前が自分の項目に適していると思われる場合は、[項目の所有者に問い合わせてみてください](./how-to/working-with-items/contacting-item-owners.md)。 2、3 週間連絡がない場合は、サポートに連絡いただければ PowerShell Gallery チームが調査にあたります。
+パッケージ名をとっておくことはできません。 既存のパッケージより、その名前が自分のパッケージに適していると思われる場合は、[パッケージの所有者に問い合わせてみてください](./how-to/working-with-packages/contacting-package-owners.md)。 2、3 週間連絡がない場合は、サポートに連絡いただければ PowerShell Gallery チームが調査にあたります。
 
-## <a name="how-do-i-claim-ownership-for-items-"></a>項目の所有権はどのように主張できますか。
+## <a name="how-do-i-claim-ownership-for-packages"></a>パッケージの所有権はどのように主張できますか。
 
-詳細については、「[PowerShellGallery.com で項目の所有者を管理する](./how-to/publishing-items/managing-item-owners.md)」を参照してください。
+詳細については、[PowerShellGallery.com でのパッケージ所有者の管理](./how-to/publishing-packages/managing-package-owners.md)に関するページを参照してください。
 
-## <a name="how-do-i-deal-with-an-item-owner-who-is-violating-my-item-license"></a>自分の項目ライセンスを侵害している項目所有者にはどう対処しますか。
+## <a name="how-do-i-deal-with-a-package-owner-who-is-violating-my-package-license"></a>自分のパッケージ ライセンスを侵害しているパッケージ所有者にはどう対処しますか。
 
-その項目所有者とその他の項目所有者の間で生じる論争については、PowerShell コミュニティでの解決をお勧めします。  [争いの解決プロセス](./how-to/getting-support/dispute-resolution.md)を用意しておりますので、PowerShellGallery.com の管理者が仲裁に入る前に確認してください。
+そのパッケージ所有者とその他のパッケージ所有者の間で生じる争いについては、PowerShell コミュニティでの解決をお勧めします。  [争いの解決プロセス](./how-to/getting-support/dispute-resolution.md)を用意しておりますので、PowerShellGallery.com の管理者が仲裁に入る前に確認してください。

@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell、コア
 title: PowerShell 6.0 の既知の問題
-ms.openlocfilehash: e3e718be903ff2223064d5790d3d0fe554ef04cd
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268004"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49450998"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 の既知の問題
 
@@ -90,9 +90,9 @@ WSMan ベースのリモート処理に向けた作業は、[psl-omi-provider](h
 
 ### <a name="sudo-exec-and-powershell"></a>`sudo`､`exec`、PowerShell
 
-PowerShell では、ほとんどのコマンドがメモリ内で実行されるため (Python や Ruby のように)、PowerShell の組み込み要素と共に sudo を直接使用することはできません。(もちろん、sudo から `powershell` を実行することはできます。)PowerShell 内から sudo と共に PowerShell コマンドレット (例: `sudo `Set-Date` 8/18/2016`) を実行する必要がある場合は、`sudo powershell `Set-Date` 8/18/2016` とします。 同様に、PowerShell の組み込み要素を直接実行することはできません。 代わりに、`exec powershell item_to_exec` とする必要があります。
+PowerShell では、ほとんどのコマンドがメモリ内で実行されるため (Python や Ruby のように)、PowerShell の組み込み要素と共に sudo を直接使用することはできません。(もちろん、sudo から `pwsh` を実行することはできます。)PowerShell 内から sudo と共に PowerShell コマンドレットを実行する必要がある場合は (例: `sudo Set-Date 8/18/2016`)、`sudo pwsh Set-Date 8/18/2016` とします。 同様に、PowerShell の組み込み要素を直接実行することはできません。 代わりに、`exec pwsh item_to_exec` とする必要があります。
 
-現在、この問題は #3232 の一部として追跡されています。
+現在、この問題は [#3232](https://github.com/PowerShell/PowerShell/issues/3232) の一部として追跡されています。
 
 ### <a name="missing-cmdlets"></a>なくなったコマンドレット
 

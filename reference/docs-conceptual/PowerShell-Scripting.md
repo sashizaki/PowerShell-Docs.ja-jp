@@ -2,17 +2,17 @@
 ms.date: 08/27/2018
 keywords: PowerShell, コマンドレット
 title: PowerShell スクリプト
-ms.openlocfilehash: 8a152ab338d42f861b7ff38de44d68db14262abb
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 07925ce8dcafd33970a703c9b241bf6f76f88d10
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851188"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451032"
 ---
 # <a name="powershell"></a>PowerShell
 
 PowerShell は、.NET 上に構築されたタスクベースのコマンド ライン シェルおよびスクリプト言語です。
-PowerShell によって、システム管理者およびパワー ユーザーは、オペレーティング システム (Linux、macOS、および Windows) とプロセスを管理するタスクを迅速に自動化できます。
+PowerShell は、システム管理者およびパワー ユーザーが、オペレーティング システム (Linux、macOS、および Windows) とプロセスを管理するタスクを迅速に自動化するのに役立ちます。
 
 PowerShell コマンドを使用すると、コマンド ラインからコンピューターを管理できます。 PowerShell プロバイダーを使用すると、レジストリや証明書ストアなどのデータ ストアに、ファイル システムにアクセスする場合と同じくらい簡単にアクセスできます。 PowerShell には、豊富な式パーサーと、完全に開発されたスクリプト言語があります。
 

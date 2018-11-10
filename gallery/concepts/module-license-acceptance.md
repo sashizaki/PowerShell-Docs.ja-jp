@@ -3,18 +3,18 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: ライセンスへの同意が必要なモジュール
-ms.openlocfilehash: 93f92f6e83bcf18a40c3d89eb39a154e16ca5063
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893112"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002669"
 ---
 # <a name="modules-requiring-license-acceptance"></a>ライセンスへの同意が必要なモジュール
 
 ## <a name="synopsis"></a>概要
 
-モジュールの発行元によっては、法務部門から顧客に対し、PowerShell ギャラリーのモジュールをインストールする前にライセンスに明示的に同意するよう求める場合があります。 ユーザーが直接的か別のアイテムとの依存関係としてかにかかわらず、PowerShellGet を使用してモジュールのインストール、更新、または保存を行うときに、そのモジュールでユーザーにライセンスへの同意が求められている場合、ユーザーはライセンスに同意することを明示的に指定する必要があります。この指定を行わない場合、操作は失敗します。
+モジュールの発行元によっては、法務部門から顧客に対し、PowerShell ギャラリーのモジュールをインストールする前にライセンスに明示的に同意するよう求める場合があります。 ユーザーが、直接的か別のパッケージとの依存関係としてかにかかわらず、PowerShellGet を使用してモジュールのインストール、更新、または保存を行うときに、そのモジュールでユーザーにライセンスへの同意が求められている場合、ユーザーはライセンスに同意することを示す必要があります。そうしないと、操作は失敗します。
 
 ## <a name="publish-requirements-for-modules"></a>モジュールの発行要件
 
@@ -43,7 +43,7 @@ ms.locfileid: "37893112"
 
 - インストール/保存/更新操作中、依存モジュール (目的のモジュールに依存する別のモジュール) でライセンスへの同意が求められる場合、上記のライセンスへの同意が必要になります。
 - 該当するモジュールのバージョンがシステムへインストール済みであるとローカル カタログに記載されている場合、このライセンス チェックは省略されます。
-- インストール/保存/更新操作中、依存モジュールでライセンスが必要とされ、ライセンスへの同意が行われなかった場合、操作は失敗し、インストール/保存/更新が失敗したアイテムに対して通常の処理が行われます。
+- インストール/保存/更新操作中、依存モジュールでライセンスが必要とされ、ライセンスへの同意が行われなかった場合、操作は失敗し、インストール/保存/更新が失敗したパッケージに対して通常の処理が行われます。
 
 ## <a name="impact-on--force"></a>-Force に対する影響
 
@@ -219,6 +219,6 @@ Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 
 [スクリプトのライセンス同意リクエスト](./script-license-acceptance.md)
 
-[PowerShellGallery でのライセンス同意リクエストのサポート](../how-to/working-with-items/items-that-require-license-acceptance.md)
+[PowerShellGallery でのライセンス同意リクエストのサポート](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
 
-[Azure Automation へのデプロイで表示されるライセンス同意リクエスト](../how-to/working-with-items/deploy-to-azure-automation.md)
+[Azure Automation へのデプロイで表示されるライセンス同意リクエスト](../how-to/working-with-packages/deploy-to-azure-automation.md)

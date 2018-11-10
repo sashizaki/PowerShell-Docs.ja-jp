@@ -3,21 +3,21 @@ ms.date: 10/17/2017
 contributor: keithb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: プレリリース バージョンのスクリプト
-ms.openlocfilehash: 14ae1968e5ee73260b6eae05b11185069d047e93
-ms.sourcegitcommit: c3f1a83b59484651119630f3089aa51b6e7d4c3c
+ms.openlocfilehash: 4e7eab682008ed57163c51fe3a61a744b347bef2
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39268468"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002737"
 ---
 # <a name="prerelease-versions-of-scripts"></a>プレリリース バージョンのスクリプト
 
-バージョン 1.6.0 より、PowerShellGet および PowerShell ギャラリーで 1.0.0 以降のバージョンをプレリリースとしてタグ付けできるようになりました。 この機能より前は、プレリリース項目は 0 で始まるバージョンに制限されていました。 この機能の目的は、PowerShell バージョン 3 以降、または既存のバージョンの PowerShellGet との後方互換性を失わずに [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) のバージョン管理規則に対してより優れたサポートを提供することです。 このトピックでは、スクリプトに固有の機能に焦点を当てています。 モジュールの同等の機能は、「[Prerelease Module Versions](module-prerelease-support.md)」(プレリリース モジュールのバージョン) のトピックにあります。 これらの機能を使用して、パブリッシャーはスクリプトをバージョン 2.5.0-alpha と識別し、プレリリース バージョンより優先される実稼働可能なバージョン 2.5.0 を後からリリースすることができます。
+バージョン 1.6.0 より、PowerShellGet および PowerShell ギャラリーで 1.0.0 以降のバージョンをプレリリースとしてタグ付けできるようになりました。 この機能より前では、プレリリース パッケージは 0 で始まるバージョンに制限されていました。 この機能の目的は、PowerShell バージョン 3 以降、または既存のバージョンの PowerShellGet との後方互換性を失わずに [SemVer v1.0.0](http://semver.org/spec/v1.0.0.html) のバージョン管理規則に対してより優れたサポートを提供することです。 このトピックでは、スクリプトに固有の機能に焦点を当てています。 モジュールの同等の機能は、「[Prerelease Module Versions](module-prerelease-support.md)」(プレリリース モジュールのバージョン) のトピックにあります。 これらの機能を使用して、パブリッシャーはスクリプトをバージョン 2.5.0-alpha と識別し、プレリリース バージョンより優先される実稼働可能なバージョン 2.5.0 を後からリリースすることができます。
 
 大まかには、プレリリースのスクリプト機能には次のようなものがあります。
 
-- スクリプト マニフェストのバージョン文字列に PrereleaseString サフィックスを追加します。 スクリプトが PowerShell ギャラリーに発行されると、このデータがマニフェストから抽出され、プレリリース項目を識別するために使用されます。
-- プレリリース項目を取得するには、-AllowPrerelease フラグを Find-Script、Install-Script、Update-Script、Save-Script の PowerShellGet コマンドに追加する必要があります。 フラグが指定されていないと、プレリリース項目が表示されません。
+- スクリプト マニフェストのバージョン文字列に PrereleaseString サフィックスを追加します。 スクリプトが PowerShell ギャラリーに発行されると、このデータがマニフェストから抽出され、プレリリース パッケージを識別するために使用されます。
+- プレリリース パッケージを取得するには、-AllowPrerelease フラグを Find-Script、Install-Script、Update-Script、Save-Script の PowerShellGet コマンドに追加する必要があります。 フラグが指定されていないと、プレリリース パッケージが表示されません。
 - Find-Script、Get-InstalledScript、および PowerShell ギャラリーに表示されるスクリプト バージョンには 2.5.0-alpha のように PrereleaseString が表示されます。
 
 この機能の詳細については後述します。
@@ -54,9 +54,9 @@ ms.locfileid: "39268468"
 
 PowerShell ギャラリーに発行すると、既定により、発行されているスクリプトのバージョンが必ず PowerShell ギャラリーにある以前に発行されているバージョンよりも後のバージョンになります。 パブリッシャーは 2.5.0-alpha のバージョンを 2.5.0-beta、または 2.5.0 (プレリリースのサフィックスなし) に更新することができます。
 
-## <a name="finding-and-acquiring-prerelease-items-using-powershellget-commands"></a>PowerShellGet コマンドを使用してプレリリース項目を検索および取得する
+## <a name="finding-and-acquiring-prerelease-packages-using-powershellget-commands"></a>PowerShellGet コマンドを使用してプレリリース パッケージを検索および取得する
 
-Find-Script、Install-Script、Update-Script、Save-Script の PowerShellGet コマンドを使用してプレリリース項目を操作するには、-AllowPrerelease フラグを追加する必要があります。 -AllowPrerelease が指定されていると、プレリリース項目が存在する場合にはその項目が含まれます。 -AllowPrerelease フラグが指定されていないと、プレリリース項目が表示されません。
+Find-Script、Install-Script、Update-Script、Save-Script の PowerShellGet コマンドを使用してプレリリース パッケージを操作するには、-AllowPrerelease フラグを追加する必要があります。 -AllowPrerelease が指定されていると、プレリリース パッケージが存在する場合にはそのパッケージが含まれます。 -AllowPrerelease フラグが指定されていないと、プレリリース パッケージが表示されません。
 
 PowerShellGet スクリプトのコマンドで、これに対する例外が Get-InstalledScript です。場合によっては Uninstall-Script も含まれます。
 

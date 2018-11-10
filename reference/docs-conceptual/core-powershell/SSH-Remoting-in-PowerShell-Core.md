@@ -2,12 +2,12 @@
 title: SSH 経由の PowerShell リモート処理
 description: SSH を使用した PowerShell Core のリモート処理
 ms.date: 08/14/2018
-ms.openlocfilehash: 84c3896fe28847beb03e930f933bb4a9dfad397f
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.openlocfilehash: 842e67e96661bca8be54aab33cbc11aa23dbd1c0
+ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851239"
+ms.lasthandoff: 10/19/2018
+ms.locfileid: "49451067"
 ---
 # <a name="powershell-remoting-over-ssh"></a>SSH 経由の PowerShell リモート処理
 
@@ -15,7 +15,7 @@ ms.locfileid: "48851239"
 
 PowerShell リモート処理では通常、接続交渉とデータ転送に WinRM が使用されます。 SSH が Linux および Windows のプラットフォームで利用可能になり、実際のマルチプラットフォームの PowerShell リモート処理を実行できます。
 
-WinRM は PowerShell リモート処理セッションに堅牢なホスティング モデルを提供します。 この実装の SSH ベースのリモート処理では現在、リモート エンドポイント構成および JEA (Just Enough Administration) をサポートしていません。
+WinRM は PowerShell リモート処理セッションに堅牢なホスティング モデルを提供します。 SSH ベースのリモート処理では現在、リモート エンドポイント構成および JEA (Just Enough Administration) はサポートされていません。
 
 SSH リモート処理では、Windows コンピューターと Linux コンピューターの間で基本的な PowerShell セッションをリモート処理できます。 SSH リモート処理で、SSH サブシステムとしてターゲット コンピューター上に PowerShell ホスティング プロセスを作成します。
 最終的には、エンドポイント構成と JEA をサポートするために、WinRM とほぼ同じ一般的なホスティング モデルが実装される予定です。
@@ -48,7 +48,7 @@ Linux の場合、お使いのプラットフォームに適した SSH (sshd サ
    ```
 
 2. GitHub から最新の [Win32 OpenSSH](https://github.com/PowerShell/Win32-OpenSSH/releases) ビルドをインストールします ([インストール](https://github.com/PowerShell/Win32-OpenSSH/wiki/Install-Win32-OpenSSH)方法はここで確認できます)
-3. Win32 OpenSSH をインストールした場所で sshd_config ファイルを編集します
+3. `%ProgramData%\ssh` にある sshd_config ファイルを編集します。
 
    - パスワード認証が有効になっていることを確認します
 
@@ -57,7 +57,7 @@ Linux の場合、お使いのプラットフォームに適した SSH (sshd サ
      ```
 
      ```
-     Subsystem    powershell c:/program files/powershell/6.0.4/pwsh.exe -sshs -NoLogo -NoProfile
+     Subsystem    powershell c:/program files/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
      ```
 
      > [!NOTE]
@@ -66,7 +66,7 @@ Linux の場合、お使いのプラットフォームに適した SSH (sshd サ
      解決策の 1 つは、次のようにスペースが含まれていない PowerShell インストール ディレクトリへのシンボリック リンクを作成することです。
 
      ```powershell
-     mklink /D c:\pwsh "C:\Program Files\PowerShell\6.0.4"
+     mklink /D c:\pwsh "C:\Program Files\PowerShell\6"
      ```
 
      次に、それを以下のようにサブシステムに入力します。

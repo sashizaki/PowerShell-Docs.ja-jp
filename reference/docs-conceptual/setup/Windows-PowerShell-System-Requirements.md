@@ -3,22 +3,44 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell のシステム要件
 ms.assetid: 6d1d3c75-3be4-4fc9-8805-ca9b2c454d42
-ms.openlocfilehash: 74c65a97a30227997c48a23c42b0431189f9ed76
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
+ms.openlocfilehash: 5e1fdb9cb4f10fd71c2d2daf693cb359fddcc5bc
+ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483051"
+ms.lasthandoff: 10/25/2018
+ms.locfileid: "50002720"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell のシステム要件
-このトピックでは、Windows PowerShell 3.0、Windows PowerShell 4.0、および Windows PowerShell 5.0 のシステム要件の一覧や、Windows PowerShell Integrated Scripting Environment (ISE)、CIM コマンド、ワークフローなどの特殊な機能の一覧を示します。
+このトピックでは、Windows PowerShell 3.0、Windows PowerShell 4.0、Windows PowerShell 5.0、および Windows PowerShell 5.1 のシステム要件の一覧や、Windows PowerShell Integrated Scripting Environment (ISE)、CIM コマンド、ワークフローなどの特殊な機能の一覧を示します。
 
 Windows® 8.1 および Windows Server® 2012 R2 には、必要なプログラムがすべて付属しています。 このトピックは、以前のリリースの Windows のユーザー向けです。
 
 ## <a name="operating-system-requirements"></a>オペレーティング システムの要件
-Windows PowerShell 5.0 は、次のバージョンの Windows で実行できます。
+Windows PowerShell 5.1 は、次のバージョンの Windows で実行されます。
+
+- Windows Server 2019 (既定でインストール済み)
 
 - Windows Server 2016 (既定でインストール済み)
+
+- Windows Server 2012 R2 では、[Windows Management Framework 5.1](https://aka.ms/wmf5download) をインストールして Windows PowerShell 5.1 を実行します
+
+- Windows Server 2012 では、[Windows Management Framework 5.1](https://aka.ms/wmf5download) をインストールして Windows PowerShell 5.0 を実行します
+
+- Windows Server 2008 R2 (Service Pack 1 適用済み) では、[Windows Management Framework 5.1](https://aka.ms/wmf5download) をインストールして Windows PowerShell 5.1 を実行します
+
+- Windows 10 バージョン 1607 以降 - 既定でインストール済み
+
+- Windows 10 バージョン 1507、1511 - [Windows Management Framework 5.1](https://aka.ms/wmf5download) をインストールして Windows PowerShell 5.1 を実行します
+
+- Windows 8.1 では、[Windows Management Framework 5.1](https://aka.ms/wmf5download) をインストールして Windows PowerShell 5.1 を実行します
+
+- Windows 7 (Service Pack 1 適用済み) では、[Windows Management Framework 5.1](https://aka.ms/wmf5download) をインストールして Windows PowerShell 5.1 を実行します
+
+Windows PowerShell 5.0 (Windows PowerShell 5.1 が優先) は、次のバージョンの Windows で実行されます。
+
+- Windows Server 2019 (上位バージョンが既定でインストール済み)
+
+- Windows Server 2016 (上位バージョンが既定でインストール済み)
 
 - Windows Server 2012 R2 では、[Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) をインストールして Windows PowerShell 5.0 を実行します
 
@@ -26,7 +48,11 @@ Windows PowerShell 5.0 は、次のバージョンの Windows で実行できま
 
 - Windows Server 2008 R2 (Service Pack 1 適用済み) では、[Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) をインストールして Windows PowerShell 5.0 を実行します
 
-- Windows 8.1
+- Windows 10 バージョン 1607 以降 - (上位バージョンが既定でインストール済み)
+
+- Windows 10 バージョン 1507、1511 - 既定でインストール済み
+
+- Windows 8.1 では、[Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) をインストールして Windows PowerShell 5.0 を実行します
 
 - Windows 7 (Service Pack 1 適用済み) では、[Windows Management Framework 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=50395) をインストールして Windows PowerShell 5.0 を実行します
 
@@ -53,6 +79,8 @@ Windows PowerShell 3.0 は、次のバージョンの Windows で実行できま
 - Windows Server 2008 (Service Pack 2 適用済み) では、[Windows Management Framework 3.0](https://www.microsoft.com/en-us/download/details.aspx?id=34595) をインストールして Windows PowerShell 3.0 を実行します
 
 ## <a name="microsoft-net-framework-requirements"></a>Microsoft .NET Framework の要件
+Windows PowerShell 5.1 には Microsoft .NET Framework 4.5 のフル インストールが必要です。 Windows 8.1 と Windows Server 2012 R2 には、既定で Microsoft .NET Framework 4.5 が付属しています。
+
 Windows PowerShell 5.0 には Microsoft .NET Framework 4.5 のフル インストールが必要です。 Windows 8.1 と Windows Server 2012 R2 には、既定で Microsoft .NET Framework 4.5 が付属しています。
 
 Windows PowerShell 4.0 には Microsoft .NET Framework 4.5 のフル インストールが必要です。 Windows 8.1 と Windows Server 2012 R2 には、既定で Microsoft .NET Framework 4.5 が付属しています。
