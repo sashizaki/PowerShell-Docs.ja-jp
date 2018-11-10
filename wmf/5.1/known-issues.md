@@ -3,37 +3,37 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 の既知の問題
-ms.openlocfilehash: 74e5a6763a8a780000bf876f34caa9646a2a416a
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: e59ea1b9a5282eb5727a37ce605c71724a219827
+ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892139"
+ms.lasthandoff: 10/30/2018
+ms.locfileid: "50225847"
 ---
-# <a name="known-issues-in-wmf-51"></a><span data-ttu-id="bf302-103">WMF 5.1 の既知の問題</span><span class="sxs-lookup"><span data-stu-id="bf302-103">Known Issues in WMF 5.1</span></span>
+# <a name="known-issues-in-wmf-51"></a><span data-ttu-id="c2e8f-103">WMF 5.1 の既知の問題</span><span class="sxs-lookup"><span data-stu-id="c2e8f-103">Known Issues in WMF 5.1</span></span>
 
 > [!Note]
-> <span data-ttu-id="bf302-104">この情報は変更されることがあります。</span><span class="sxs-lookup"><span data-stu-id="bf302-104">This information is subject to change.</span></span>
+> <span data-ttu-id="c2e8f-104">この情報は変更されることがあります。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-104">This information is subject to change.</span></span>
 
-## <a name="starting-powershell-shortcut-as-administrator"></a><span data-ttu-id="bf302-105">PowerShell ショートカットを管理者として起動する</span><span class="sxs-lookup"><span data-stu-id="bf302-105">Starting PowerShell shortcut as Administrator</span></span>
+## <a name="starting-powershell-shortcut-as-administrator"></a><span data-ttu-id="c2e8f-105">PowerShell ショートカットを管理者として起動する</span><span class="sxs-lookup"><span data-stu-id="c2e8f-105">Starting PowerShell shortcut as Administrator</span></span>
 
-<span data-ttu-id="bf302-106">WMF がインストールされている場合に、管理者としてショートカットから PowerShell を起動しようとすると、"未定義のエラー" メッセージが表示されることがあります。</span><span class="sxs-lookup"><span data-stu-id="bf302-106">Upon installing WMF, if you try to start PowerShell as administrator from the shortcut, you may get an "Unspecified error" message.</span></span>
-<span data-ttu-id="bf302-107">管理者以外でショートカットを開き直すと、その後は管理者としても動作します。</span><span class="sxs-lookup"><span data-stu-id="bf302-107">Reopen the shortcut as non-administrator and the shortcut now works even as administrator.</span></span>
+<span data-ttu-id="c2e8f-106">WMF がインストールされている場合に、管理者としてショートカットから PowerShell を起動しようとすると、"未定義のエラー" メッセージが表示されることがあります。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-106">Upon installing WMF, if you try to start PowerShell as administrator from the shortcut, you may get an "Unspecified error" message.</span></span>
+<span data-ttu-id="c2e8f-107">管理者以外でショートカットを開き直すと、その後は管理者としても動作します。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-107">Reopen the shortcut as non-administrator and the shortcut now works even as administrator.</span></span>
 
-## <a name="pester"></a><span data-ttu-id="bf302-108">Pester</span><span class="sxs-lookup"><span data-stu-id="bf302-108">Pester</span></span>
+## <a name="pester"></a><span data-ttu-id="c2e8f-108">Pester</span><span class="sxs-lookup"><span data-stu-id="c2e8f-108">Pester</span></span>
 
-<span data-ttu-id="bf302-109">このリリースでは、Nano Server で Pester を利用するとき、2 つの問題に注意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bf302-109">In this release, there are two issues you should be aware of when using Pester on Nano Server:</span></span>
+<span data-ttu-id="c2e8f-109">このリリースでは、Nano Server で Pester を利用するとき、2 つの問題に注意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-109">In this release, there are two issues you should be aware of when using Pester on Nano Server:</span></span>
 
-- <span data-ttu-id="bf302-110">Pester 自体にテストを実行すると、FULL CLR と CORE CLR の違いに起因し、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="bf302-110">Running tests against Pester itself can result in some failures because of differences between FULL CLR and CORE CLR.</span></span> <span data-ttu-id="bf302-111">具体的には、Validate メソッドが XmlDocument 型で利用できません。</span><span class="sxs-lookup"><span data-stu-id="bf302-111">In particular, the Validate method is not available on the XmlDocument type.</span></span> <span data-ttu-id="bf302-112">NUnit 出力ログのスキーマの検証を試行するテストが 6 つありますが、これでエラーが発生することが確認されています。</span><span class="sxs-lookup"><span data-stu-id="bf302-112">Six tests which attempt to validate the schema of the NUnit output logs are known to fail.</span></span>
-- <span data-ttu-id="bf302-113">現在、コード カバレッジの 1 つでエラーが発生します。*WindowsFeature* DSC リソースが Nano Server にないためです。</span><span class="sxs-lookup"><span data-stu-id="bf302-113">One Code Coverage test fails currently because the *WindowsFeature* DSC Resource does not exist in Nano Server.</span></span> <span data-ttu-id="bf302-114">しかしながら、以上のエラーは一般的に無害であり、無視しても問題ありません。</span><span class="sxs-lookup"><span data-stu-id="bf302-114">However, these failures are generally benign and can safely be ignored.</span></span>
+- <span data-ttu-id="c2e8f-110">Pester 自体にテストを実行すると、FULL CLR と CORE CLR の違いに起因し、エラーが発生します。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-110">Running tests against Pester itself can result in some failures because of differences between FULL CLR and CORE CLR.</span></span> <span data-ttu-id="c2e8f-111">具体的には、Validate メソッドが XmlDocument 型で利用できません。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-111">In particular, the Validate method is not available on the XmlDocument type.</span></span> <span data-ttu-id="c2e8f-112">NUnit 出力ログのスキーマの検証を試行するテストが 6 つありますが、これでエラーが発生することが確認されています。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-112">Six tests which attempt to validate the schema of the NUnit output logs are known to fail.</span></span>
+- <span data-ttu-id="c2e8f-113">現在、コード カバレッジの 1 つでエラーが発生します。*WindowsFeature* DSC リソースが Nano Server にないためです。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-113">One Code Coverage test fails currently because the *WindowsFeature* DSC Resource does not exist in Nano Server.</span></span> <span data-ttu-id="c2e8f-114">しかしながら、以上のエラーは一般的に無害であり、無視しても問題ありません。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-114">However, these failures are generally benign and can safely be ignored.</span></span>
 
-## <a name="operation-validation"></a><span data-ttu-id="bf302-115">操作検証</span><span class="sxs-lookup"><span data-stu-id="bf302-115">Operation Validation</span></span>
+## <a name="operation-validation"></a><span data-ttu-id="c2e8f-115">操作検証</span><span class="sxs-lookup"><span data-stu-id="c2e8f-115">Operation Validation</span></span>
 
-- <span data-ttu-id="bf302-116">Microsoft.PowerShell.Operation.Validation モジュールの場合、ヘルプ URI が動作しないため、`Update-Help` は失敗する</span><span class="sxs-lookup"><span data-stu-id="bf302-116">`Update-Help` fails for Microsoft.PowerShell.Operation.Validation module due to non-working help URI</span></span>
+- <span data-ttu-id="c2e8f-116">Microsoft.PowerShell.Operation.Validation モジュールの場合、ヘルプ URI が動作しないため、`Update-Help` は失敗する</span><span class="sxs-lookup"><span data-stu-id="c2e8f-116">`Update-Help` fails for Microsoft.PowerShell.Operation.Validation module due to non-working help URI</span></span>
 
-## <a name="dsc-after-uninstall-wmf"></a><span data-ttu-id="bf302-117">WMF をアンインストールした後の DSC</span><span class="sxs-lookup"><span data-stu-id="bf302-117">DSC after uninstall WMF</span></span>
+## <a name="dsc-after-uninstall-wmf"></a><span data-ttu-id="c2e8f-117">WMF をアンインストールした後の DSC</span><span class="sxs-lookup"><span data-stu-id="c2e8f-117">DSC after uninstall WMF</span></span>
 
-- <span data-ttu-id="bf302-118">WMF をアンインストールしても、構成フォルダーから DSC の MOF ドキュメントは削除されません。</span><span class="sxs-lookup"><span data-stu-id="bf302-118">Uninstalling WMF does not delete DSC MOF documents from the configuration folder.</span></span> <span data-ttu-id="bf302-119">MOF ドキュメントに、以前のシステムで使用できない新しいプロパティが含まれている場合、DSC は正しく機能しません。</span><span class="sxs-lookup"><span data-stu-id="bf302-119">DSC won't work properly if the MOF documents contain newer properties which are not available on the older systems.</span></span> <span data-ttu-id="bf302-120">この場合は、管理者特権の PowerShell コンソールから次のスクリプトを実行して、DSC の状態をクリーンアップします。</span><span class="sxs-lookup"><span data-stu-id="bf302-120">In this case, run the following script from elevated PowerShell console to to clean up the DSC states.</span></span>
+- <span data-ttu-id="c2e8f-118">WMF をアンインストールしても、構成フォルダーから DSC の MOF ドキュメントは削除されません。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-118">Uninstalling WMF does not delete DSC MOF documents from the configuration folder.</span></span> <span data-ttu-id="c2e8f-119">MOF ドキュメントに、以前のシステムで使用できない新しいプロパティが含まれている場合、DSC は正しく機能しません。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-119">DSC won't work properly if the MOF documents contain newer properties which are not available on the older systems.</span></span> <span data-ttu-id="c2e8f-120">この場合は、管理者特権の PowerShell コンソールから次のスクリプトを実行して、DSC の状態をクリーンアップします。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-120">In this case, run the following script from elevated PowerShell console to clean up the DSC states.</span></span>
 
   ```powershell
     $PreviousDSCStates = @("$env:windir\system32\configuration\*.mof",
@@ -44,11 +44,11 @@ ms.locfileid: "37892139"
     $PreviousDSCStates | Remove-Item -ErrorAction SilentlyContinue -Verbose
   ```
 
-## <a name="jea-virtual-accounts"></a><span data-ttu-id="bf302-121">JEA 仮想アカウント</span><span class="sxs-lookup"><span data-stu-id="bf302-121">JEA Virtual Accounts</span></span>
+## <a name="jea-virtual-accounts"></a><span data-ttu-id="c2e8f-121">JEA 仮想アカウント</span><span class="sxs-lookup"><span data-stu-id="c2e8f-121">JEA Virtual Accounts</span></span>
 
-<span data-ttu-id="bf302-122">WMF 5.0 で仮想アカウントを使用するように構成された JEA エンドポイントおよびセッション構成は、WMF 5.1 へのアップグレード後に仮想アカウントを使用するように構成されません。</span><span class="sxs-lookup"><span data-stu-id="bf302-122">JEA endpoints and session configurations configured to use virtual accounts in WMF 5.0 will not be configured to use a virtual account after upgrading to WMF 5.1.</span></span>
-<span data-ttu-id="bf302-123">これは、JEA セッションで実行されるコマンドは一時管理者アカウントではなく接続しているユーザーの ID で実行されるため、昇格された特権を必要とするコマンドをユーザーが実行できない可能性があることを意味します。</span><span class="sxs-lookup"><span data-stu-id="bf302-123">This means that commands run in JEA sessions will run under the connecting user's identity instead of a temporary administrator account, potentially preventing the user from running commands which require elevated privileges.</span></span>
-<span data-ttu-id="bf302-124">仮想アカウントを復元するには、仮想アカウントを使用するすべてのセッション構成を登録解除し、再登録する必要があります。</span><span class="sxs-lookup"><span data-stu-id="bf302-124">To restore the virtual accounts, you need to unregister and re-register any session configurations that use virtual accounts.</span></span>
+<span data-ttu-id="c2e8f-122">WMF 5.0 で仮想アカウントを使用するように構成された JEA エンドポイントおよびセッション構成は、WMF 5.1 へのアップグレード後に仮想アカウントを使用するように構成されません。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-122">JEA endpoints and session configurations configured to use virtual accounts in WMF 5.0 will not be configured to use a virtual account after upgrading to WMF 5.1.</span></span>
+<span data-ttu-id="c2e8f-123">これは、JEA セッションで実行されるコマンドは一時管理者アカウントではなく接続しているユーザーの ID で実行されるため、昇格された特権を必要とするコマンドをユーザーが実行できない可能性があることを意味します。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-123">This means that commands run in JEA sessions will run under the connecting user's identity instead of a temporary administrator account, potentially preventing the user from running commands which require elevated privileges.</span></span>
+<span data-ttu-id="c2e8f-124">仮想アカウントを復元するには、仮想アカウントを使用するすべてのセッション構成を登録解除し、再登録する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2e8f-124">To restore the virtual accounts, you need to unregister and re-register any session configurations that use virtual accounts.</span></span>
 
 ```powershell
 # Find the JEA endpoint by its name
