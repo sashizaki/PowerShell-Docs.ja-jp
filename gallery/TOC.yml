@@ -7,9 +7,9 @@ items:
   href: getting-started.md
 - name: 方法
   items:
-  - name: ギャラリーでのアイテムの検索
+  - name: ギャラリーのパッケージの検索
     items:
-    - name: アイテムの検索
+    - name: パッケージの検索
       href: how-to/finding-packages/search-syntax.md
     - name: PSEdition による検索
       href: how-to/finding-packages/searching-by-psedition.md
@@ -17,17 +17,17 @@ items:
       href: how-to/finding-packages/filtering-packages.md
   - name: ギャラリーへの公開
     items:
-    - name: アイテムの作成と公開
+    - name: パッケージの作成と公開
       href: how-to/publishing-packages/publishing-a-package.md
     - name: PowerShellGallery アカウントの作成
       href: how-to/publishing-packages/creating-an-account.md
-    - name: アイテムをリストから外す
+    - name: パッケージをリストから外す
       href: how-to/publishing-packages/unlisting-packages.md
-    - name: アイテムを削除する
+    - name: パッケージを削除する
       href: how-to/publishing-packages/deleting-packages.md
-    - name: アイテムの所有者を管理する
+    - name: パッケージの所有者を管理する
       href: how-to/publishing-packages/managing-package-owners.md
-  - name: アイテムの操作
+  - name: パッケージを操作する
     items:
     - name: FileList ビュー
       href: how-to/working-with-packages/filelist-view.md
@@ -35,9 +35,9 @@ items:
       href: how-to/working-with-packages/deploy-to-azure-automation.md
     - name: パッケージの手動ダウンロード
       href: how-to/working-with-packages/manual-download.md
-    - name: ライセンス同意が必要なアイテム
+    - name: ライセンス同意が必要なパッケージ
       href: how-to/working-with-packages/packages-that-require-license-acceptance.md
-    - name: アイテムの所有者に連絡する
+    - name: パッケージの所有者に連絡する
       href: how-to/working-with-packages/contacting-package-owners.md
     - name: ソーシャル メディアやコメントを使用したフィードバックの提供
       href: how-to/working-with-packages/social-media-feedback.md
@@ -47,11 +47,13 @@ items:
       href: how-to/managing-profile/managing-account.md
     - name: API キーの管理
       href: how-to/managing-profile/creating-apikeys.md
+  - name: ローカルの PowerShellGet リポジトリの操作
+    href: how-to/working-with-local-psrepositories.md
 - name: 概念
   items:
   - name: 公開に関するガイドラインとベスト プラクティス
     href: concepts/publishing-guidelines.md
-  - name: アイテムのマニフェストとギャラリーの UI
+  - name: パッケージのマニフェストとギャラリーの UI
     href: concepts/package-manifest-affecting-ui.md
   - name: 特定の PSEditions の必須化
     items:
@@ -65,7 +67,7 @@ items:
       href: concepts/script-license-acceptance.md
     - name: モジュールでのライセンス同意の必須化
       href: concepts/module-license-acceptance.md
-  - name: アイテムをプレリリースとして定義する
+  - name: パッケージをプレリリースとして定義する
     items:
     - name: モジュールをプレリリースとして定義する
       href: concepts/module-prerelease-support.md
@@ -91,9 +93,9 @@ items:
   href: faqs.md
 - name: PowerShellGet コマンドレット
   href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 386e86b4a27ea840cc688b47f597e845f041af60
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 123607d3ce1139511ee0006b9ec6ed2e9ae99010
+ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002327"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51619128"
