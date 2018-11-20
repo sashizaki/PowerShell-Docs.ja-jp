@@ -2,19 +2,19 @@
 ms.date: 04/11/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC プル サービス
-ms.openlocfilehash: 057da50843e79ae31eef4fea1fa58e882a9d1ace
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: HT
+ms.openlocfilehash: 2ef48b88cc9e14da452e0d19e5a0f43fc8a95ab2
+ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189994"
+ms.lasthandoff: 11/14/2018
+ms.locfileid: "51619162"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration プル サービス
 
 > 適用先: Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能が提供される予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
+> プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
 
 ローカル構成マネージャーは、プル サービス ソリューションで一元管理できます。
 この方法を使用する場合、管理対象のノードはサービスに登録され、LCM 設定で構成が割り当てられます。
@@ -88,71 +88,71 @@ Web プル サーバーをセットアップする最も簡単な方法は、**x
 1. 登録キーとして使う GUID を選択します。 PowerShell を使って GUID を生成するには、PS プロンプトに「``` [guid]::newGuid()```」または「```New-Guid```」と入力し、Enter キーを押します。 このキーは、登録時にクライアント ノードによって認証のために共有キーとして使用されます。 詳細については、この後の「登録キー」セクションを参照してください。
 1. PowerShell ISE で、次の構成スクリプトを起動 (F5) します (このスクリプトは、**xPSDesiredStateConfiguration** モジュールの Example フォルダーに Sample_xDscWebServiceRegistration.ps1 として存在します)。 このスクリプトは、プル サーバーをセットアップします。
 
-```powershell
-configuration Sample_xDscWebServiceRegistration
-{
-    param
-    (
-        [string[]]$NodeName = 'localhost',
-
-        [ValidateNotNullOrEmpty()]
-        [string] $certificateThumbPrint,
-
-        [Parameter(HelpMessage='This should be a string with enough entropy (randomness) to protect the registration of clients to the pull server.  We will use new GUID by default.')]
-        [ValidateNotNullOrEmpty()]
-        [string] $RegistrationKey   # A guid that clients use to initiate conversation with pull server
-    )
-
-    Import-DSCResource -ModuleName xPSDesiredStateConfiguration
-
-    Node $NodeName
+    ```powershell
+    configuration Sample_xDscWebServiceRegistration
     {
-        WindowsFeature DSCServiceFeature
-        {
-            Ensure = "Present"
-            Name   = "DSC-Service"
-        }
+        param
+        (
+            [string[]]$NodeName = 'localhost',
 
-        xDscWebService PSDSCPullServer
-        {
-            Ensure                  = "Present"
-            EndpointName            = "PSDSCPullServer"
-            Port                    = 8080
-            PhysicalPath            = "$env:SystemDrive\inetpub\PSDSCPullServer"
-            CertificateThumbPrint   = $certificateThumbPrint
-            ModulePath              = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules"
-            ConfigurationPath       = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration"
-            State                   = "Started"
-            DependsOn               = "[WindowsFeature]DSCServiceFeature"
-            RegistrationKeyPath     = "$env:PROGRAMFILES\WindowsPowerShell\DscService"
-            AcceptSelfSignedCertificates = $true
-            Enable32BitAppOnWin64   = $false
-        }
+            [ValidateNotNullOrEmpty()]
+            [string] $certificateThumbPrint,
 
-        File RegistrationKeyFile
+            [Parameter(HelpMessage='This should be a string with enough entropy (randomness) to protect the registration of clients to the pull server.  We will use new GUID by default.')]
+            [ValidateNotNullOrEmpty()]
+            [string] $RegistrationKey   # A guid that clients use to initiate conversation with pull server
+        )
+
+        Import-DSCResource -ModuleName xPSDesiredStateConfiguration
+
+        Node $NodeName
         {
-            Ensure          = 'Present'
-            Type            = 'File'
-            DestinationPath = "$env:ProgramFiles\WindowsPowerShell\DscService\RegistrationKeys.txt"
-            Contents        = $RegistrationKey
+            WindowsFeature DSCServiceFeature
+            {
+                Ensure = "Present"
+                Name   = "DSC-Service"
+            }
+
+            xDscWebService PSDSCPullServer
+            {
+                Ensure                  = "Present"
+                EndpointName            = "PSDSCPullServer"
+                Port                    = 8080
+                PhysicalPath            = "$env:SystemDrive\inetpub\PSDSCPullServer"
+                CertificateThumbPrint   = $certificateThumbPrint
+                ModulePath              = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Modules"
+                ConfigurationPath       = "$env:PROGRAMFILES\WindowsPowerShell\DscService\Configuration"
+                State                   = "Started"
+                DependsOn               = "[WindowsFeature]DSCServiceFeature"
+                RegistrationKeyPath     = "$env:PROGRAMFILES\WindowsPowerShell\DscService"
+                AcceptSelfSignedCertificates = $true
+                Enable32BitAppOnWin64   = $false
+            }
+
+            File RegistrationKeyFile
+            {
+                Ensure          = 'Present'
+                Type            = 'File'
+                DestinationPath = "$env:ProgramFiles\WindowsPowerShell\DscService\RegistrationKeys.txt"
+                Contents        = $RegistrationKey
+            }
         }
     }
-}
-```
+    ```
 
 1. 構成を実行します。このとき、SSL 証明書の拇印を **certificateThumbPrint** パラメーターとして渡し、GUID 登録キーを **RegistrationKey** パラメーターとして渡します。
 
-```powershell
-# To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
-# and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
-dir Cert:\LocalMachine\my
+    ```powershell
+    # To find the Thumbprint for an installed SSL certificate for use with the pull server list all certificates in your local store
+    # and then copy the thumbprint for the appropriate certificate by reviewing the certificate subjects
+    dir Cert:\LocalMachine\my
 
-# Then include this thumbprint when running the configuration
-Sample_xDSCPullServer -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301FAE9CCC' -RegistrationKey '140a952b-b9d6-406b-b416-e0f759c9c0e4' -OutputPath c:\Configs\PullServer
+    # Then include this thumbprint when running the configuration
+    Sample_xDscWebServiceRegistration -certificateThumbprint 'A7000024B753FA6FFF88E966FD6E19301FAE9CCC' -RegistrationKey '140a952b-b9d6-406b-b416-e0f759c9c0e4' -OutputPath c:\Configs\PullServer
 
-# Run the compiled configuration to make the target node a DSC Pull Server
-Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
-```
+    # Run the compiled configuration to make the target node a DSC Pull Server
+    Start-DscConfiguration -Path c:\Configs\PullServer -Wait -Verbose
+    ```
 
 #### <a name="registration-key"></a>登録キー
 
