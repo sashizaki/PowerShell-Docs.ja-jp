@@ -3,12 +3,12 @@ ms.date: 08/14/2018
 keywords: PowerShell, コマンドレット
 title: PowerShell.exe コマンドラインのヘルプ
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
-ms.openlocfilehash: c7f35511e876e8e5189d8a2b949555603d43f731
-ms.sourcegitcommit: 56b9be8503a5a1342c0b85b36f5ba6f57c281b63
-ms.translationtype: HT
+ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
+ms.sourcegitcommit: 03c7672ee72698fe88a73e99702ceaadf87e702f
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/21/2018
-ms.locfileid: "43133163"
+ms.lasthandoff: 11/15/2018
+ms.locfileid: "51691832"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe コマンドラインのヘルプ
 
@@ -51,7 +51,10 @@ Base 64 エンコード文字列版のコマンドを許可します。 複雑�
 
 スクリプトで作成される関数と変数を現在のセッションで使用できるように、指定したスクリプトをローカル スコープ ("ドット ソース形式") で実行します。 スクリプト ファイルのパスと (存在する場合) パラメーターを入力します。 **File** は、コマンド内の最後のパラメーターにする必要があります。 **-File** パラメーターの後に入力されたすべての値は、スクリプト ファイルのパスとそのスクリプトに渡されるパラメーターとして解釈されます。
 
-スクリプトに渡されるパラメーターは、(現在のシェルによる解釈の後で) リテラル文字列として渡されます。 たとえば、cmd.exe で環境変数値を渡す場合は、cmd.exe 構文 `powershell -File .\test.ps1 -Sample %windir%` を使用します。この例では、スクリプトはリテラル文字列 `$env:windir` を受け取り、その環境変数の値 `powershell -File .\test.ps1 -Sample $env:windir` は受け取りません。
+スクリプトに渡されるパラメーターは、(現在のシェルによる解釈の後で) リテラル文字列として渡されます。 たとえば、cmd.exe でし、環境変数の値を渡す、場合は、cmd.exe 構文を使用します。 `powershell.exe -File .\test.ps1 -TestParam %windir%`
+
+これに対しを実行している`powershell.exe -File .\test.ps1 -TestParam $env:windir`リテラル文字列を受信するスクリプトの結果を cmd.exe で`$env:windir`を現在の cmd.exe シェルに特別な意味を持たないためです。
+`$env:windir`の環境変数の参照スタイル_できます_内で使用する、`-Command`パラメーター、PowerShell コードとして解釈されますがありますので。
 
 ### <a name="-inputformat-text--xml"></a>\-InputFormat {Text | XML}
 
@@ -103,22 +106,31 @@ PowerShell 3.0 がインストールされていない場合、有効な値は "
 
 ### <a name="-command"></a>-Command
 
-PowerShell のコマンド プロンプトに入力された場合と同様に、指定されたコマンド (任意のパラメーターを付与する) を実行します。 実行後は、`-NoExit` パラメーターが指定されていない限り、PowerShell は終了します。
-`-Command` の後にある任意のテキストは、単一のコマンド ラインとして PowerShell に送信されます。 これは、`-File` がスクリプトに送信されたパラメーターを処理する方法とは異なります。
+PowerShell のコマンド プロンプトに入力された場合と同様に、指定されたコマンド (任意のパラメーターを付与する) を実行します。
+実行後、PowerShell を終了しない限り、 **NoExit**パラメーターを指定します。
+`-Command` の後にある任意のテキストは、単一のコマンド ラインとして PowerShell に送信されます。
+これは、`-File` がスクリプトに送信されたパラメーターを処理する方法とは異なります。
 
-Command の値には、"-"、文字列、またはスクリプト ブロックを指定できます。 またはスクリプト ブロックを指定できます。 Command の値が "-" の場合、コマンド テキストは標準入力から読み取られます。
+値`-Command`は、"-"、文字列、またはスクリプト ブロック。
+コマンドの結果は、XML の逆シリアル化されたオブジェクト、いないライブ オブジェクトとして親シェルに返されます。
 
-スクリプト ブロックは中かっこ ({}) で囲む必要があります。 スクリプト ブロックを指定できるのは、PowerShell.exe を PowerShell で実行する場合だけです。 スクリプトの結果は、ライブ オブジェクトとしてではなく、逆シリアル化された XML オブジェクトとして親シェルに返されます。
+場合の値`-Command`が"-"、コマンド テキストが標準の入力から読み取られます。
 
-Command の値が文字列の場合、**Command** はコマンドの最後のパラメーターでなければなりません。コマンドの後に入力された文字は、コマンド引数として解釈されるためです。
+ときの値`-Command`文字列**コマンド**_する必要があります_最後のコマンドは、コマンド引数として解釈されます後に任意の文字が入力されたため、指定されたパラメーターします。
 
-PowerShell コマンドを実行する文字列を書き込むには、次の形式を使用します。
+**コマンド**パラメーターに渡される値を認識できる場合にのみ実行するためのスクリプト ブロックを受け入れる`-Command`ScriptBlock 型として。
+これは_のみ_PowerShell.exe を PowerShell の別のホストから実行するときに使用します。
+既存の変数、式から返されたまたは、PowerShell によって解析された型を含めることがスクリプト ブロックを中かっこで囲まれたリテラルのスクリプト ブロックとしてホスト`{}`PowerShell.exe へ渡される前に、します。
 
-```powershell
+Cmd.exe ではありませんようなものとしてスクリプト ブロック (またはスクリプト ブロックの型) ために渡される値**コマンド**は_常に_文字列であります。
+文字列の中のスクリプト ブロックを記述することができますが、実行されているのではなくの動作は正確に、一般的な PowerShell プロンプトで入力したかのように元に戻すをブロック スクリプトの内容を印刷します。
+
+渡される文字列`-Command`のでスクリプト ブロックの中かっこは多くの場合、最初に cmd.exe から実行する場合でも、PowerShell としてに実行されます。
+文字列内で定義されているインライン スクリプト ブロックを実行する、[呼び出し演算子](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-)`&`ことができます。
+
+```console
 "& {<command>}"
 ```
-
-引用符は文字列であることを示し、呼び出し演算子 (&) によってコマンドが実行されます。
 
 ### <a name="-help---"></a>-Help、-?、/?
 
