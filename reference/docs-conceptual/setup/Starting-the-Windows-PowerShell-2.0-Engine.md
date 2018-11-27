@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell 2.0 エンジンの開始
 ms.assetid: edafc2fa-7576-49c2-bbba-9336f4bcfc28
-ms.openlocfilehash: 618745ff4865dd046acf46487e87c3ca0e324f95
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: b600c1f5ea122df9bd53132ccc8edbbc6fa1e9f6
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34482966"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320790"
 ---
 # <a name="starting-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 エンジンの開始
 
@@ -22,7 +22,7 @@ Windows PowerShell 2.0 エンジンを必要とする多くのプログラムは
 
 Windows PowerShell 2.0 エンジンを起動する前に、Windows PowerShell 2.0 エンジンと Microsoft .NET Framework 3.5 Service Pack 1 を有効にします。 方法については、「[Windows PowerShell のインストール](Installing-Windows-PowerShell.md)」をご覧ください。
 
-[Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) または Windows Management Framework 3.0 がインストールされているシステムには、すべての必要なコンポーネントが揃っています。 これ以上の構成は必要ありません。 [Windows Management Framework 4.0](http://go.microsoft.com/fwlink/?LinkID=293881) または Windows Management Framework 3.0 のインストール方法の詳細については、「[Windows PowerShell のインストール](Installing-Windows-PowerShell.md)」をご覧ください。
+Windows Management Framework 4.0 または Windows Management Framework 3.0 がインストールされているシステムには、すべての必要なコンポーネントが揃っています。 これ以上の構成は必要ありません。 [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881) または Windows Management Framework 3.0 のインストール方法の詳細については、「[Windows PowerShell のインストール](Installing-Windows-PowerShell.md)」をご覧ください。
 
 ## <a name="how-to-start-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 エンジンを起動する方法
 

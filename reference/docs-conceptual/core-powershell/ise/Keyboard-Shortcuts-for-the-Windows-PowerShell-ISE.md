@@ -3,16 +3,16 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell ISE のキーボード ショートカット
 ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: e17fee4cf0cc8ac7aa0bb36acde3b452919312d0
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953822"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320807"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE のキーボード ショートカット
 
-Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行するには、次のキーボード ショートカットを使用します。 Windows PowerShell ISE は、Windows Server および Windows クライアント オペレーティング システムの一部として提供されていますが、[Windows Management Framework 4.0 のダウンロード パッケージ](http://go.microsoft.com/fwlink/?LinkID=293881)の一部として、前の Windows オペレーティング システムにもインストールできます。
+Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行するには、次のキーボード ショートカットを使用します。 Windows PowerShell ISE は、Windows Server および Windows クライアント オペレーティング システムの一部として提供されていますが、[Windows Management Framework 4.0 のダウンロード パッケージ](https://go.microsoft.com/fwlink/?LinkID=293881)の一部として、前の Windows オペレーティング システムにもインストールできます。
 
 ## <a name="keyboard-shortcuts-for-editing-text"></a>テキストを編集するためのキーボード ショートカット
 
@@ -120,4 +120,4 @@ Windows PowerShell のタブを使用するときに、次のキーボード シ
 
 ## <a name="see-also"></a>参照
 
-- [PowerShell マガジン: Windows PowerShell ISE のキーボード ショートカットの完全な一覧](http://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
+- [PowerShell マガジン: Windows PowerShell ISE のキーボード ショートカットの完全な一覧](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
