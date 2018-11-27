@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Integrated Scripting Environment (ISE)
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: d116ec107c2d07e9fd55ee974008b3636b4ab049
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30952071"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320518"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE)
 
@@ -62,7 +62,7 @@ ISE が PowerShell v2.0 に導入されました。
 
 ## <a name="requirements-for-running-the-windows-powershell-ise"></a>Windows PowerShell ISE の実行に関する要件
 
-ISE は、Windows PowerShell v2.0 以降を実行できるすべての Windows コンピューターで使用できます。 Windows と Windows Server の各バージョンには、Windows PowerShell と ISE のいずれかのバージョンが含まれますが、Windows Management Framework (WMF) をインストールすることによって、使用可能な最新のバージョンにアップグレードできます。 詳細については、[WMF](/powershell/wmf/readme) のドキュメントを参照してください。
+ISE は、Windows PowerShell v2.0 以降を実行できるすべての Windows コンピューターで使用できます。 Windows と Windows Server の各バージョンには、Windows PowerShell と ISE のいずれかのバージョンが含まれますが、Windows Management Framework (WMF) をインストールすることによって、使用可能な最新のバージョンにアップグレードできます。 詳細については、[WMF](/powershell/wmf) のドキュメントを参照してください。
 
 > [!NOTE]
 > Windows PowerShell ISE にはグラフィカル ユーザー インターフェイスが必要なため、Windows Server の [Server Core] オプションでは実行できません。

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: ISEFile オブジェクト
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
-ms.openlocfilehash: 276e8f04a827e18999b5b3ecb08f47de4f4b23b1
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30951394"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320875"
 ---
 # <a name="the-isefile-object"></a>ISEFile オブジェクト
 
@@ -22,7 +22,7 @@ Windows PowerShell ISE 2.0 以降でサポートされています。
 
 ファイルをディスクに保存します。
 
-**\[saveEncoding\]** - 省略可能な [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)。保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
+**\[saveEncoding\]** - 省略可能な [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)。保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
 
 ### <a name="exceptions"></a>例外
 
@@ -48,7 +48,7 @@ Windows PowerShell ISE 2.0 以降でサポートされています。
 
 **filename** - ファイルを保存するために使用する名前の文字列。
 
-**\[saveEncoding\]** - 省略可能な [System.Text.Encoding](http://msdn.microsoft.com/library/system.text.encoding.aspx)。保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
+**\[saveEncoding\]** - 省略可能な [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)。保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
 
 ### <a name="exceptions"></a>例外
 

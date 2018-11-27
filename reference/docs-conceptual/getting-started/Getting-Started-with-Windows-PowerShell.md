@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell ファースト ステップ ガイド
 ms.assetid: b0e2ad92-875f-421d-b612-f624e644aa69
-ms.openlocfilehash: d8f1a416c1618040311ec0ea3b98b28aa432bcf1
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: 8a158427d319e43ec011898fe4e1826d48d5b951
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30949487"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320841"
 ---
 # <a name="getting-started-with-windows-powershell"></a>Windows PowerShell ファースト ステップ ガイド
 Windows PowerShell は、特にシステム管理者向けに設計された Windows コマンド ライン シェルです。 Windows PowerShell には対話型のプロンプトとスクリプト環境が含まれており、それらを単独で、または組み合わせて使用できます。
@@ -28,5 +28,3 @@ Windows PowerShell は、シンプルな単一機能のコマンド ライン �
 - [Windows PowerShell のインストール](../setup/Installing-Windows-PowerShell.md)
 
 - [Windows PowerShell の開始](../setup/Starting-Windows-PowerShell.md)
-
-- [Windows PowerShell を使用する準備を行う](Getting-Ready-to-Use-Windows-PowerShell.md)

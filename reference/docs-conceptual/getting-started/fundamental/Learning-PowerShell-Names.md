@@ -3,16 +3,16 @@ ms.date: 08/24/2018
 keywords: PowerShell, コマンドレット
 title: PowerShell で用いられる名前の習得
 ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: a4f7e12c2b30e8ae6d1cf5a125d613d2d7558c34
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: 6ed1f99513f00c174147876e1982c0d12869cacb
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851257"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320484"
 ---
 # <a name="learning-powershell-names"></a>PowerShell で用いられる名前の習得
 
-大半のコマンドライン インターフェイスに共通して言えることは、コマンドやパラメーターの名前を覚えるために多大な時間と労力が必要であるという点です。 問題は、パターン化されているものが少ししかないことです。 定期的に使う必要があるコマンドとパラメーターを覚えるための唯一の方法は、記憶することです。
+大半のコマンドライン インターフェイスに共通して言えることは、コマンドやパラメーターの名前を覚えるために多大な時間と労力が必要であるという点です。 問題は、パターン化されているものが少ししかないことです。 記憶が、唯一の方法については、コマンドとパラメーターを定期的に使用する必要があります。
 
 新しいコマンドやパラメーターを使用する場合は、必ず既に備えている知識を活用できるわけではありません。 新しい名前を検索して調べる必要があります。 従来は、コマンドライン インターフェイスは小規模なツール セットから始まって、そこに増補していくことで拡張されました。 このことから、標準的な構造が存在しない理由は容易にわかります。
 各コマンドは別個のツールなので、このことは、コマンド名にとっては理に適っているようです。 PowerShell は、コマンド名を扱いやすい方法を備えています。

@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: PowerShell の詳細情報
-ms.openlocfilehash: 17f96620bbb483ca580d351584d5650a6734b876
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
-ms.translationtype: HT
+ms.openlocfilehash: da9dfeca3d2d2cfadf6ace0aa98007d16a548aae
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289210"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320416"
 ---
 # <a name="more-powershell-learning"></a>PowerShell の詳細情報
 
@@ -33,23 +33,23 @@ PowerShell の詳細に関する他の情報源
 
 #### <a name="windows-powershell-essentials-for-the-busy-admin-series"></a>Windows PowerShell Essentials for the Busy Admin シリーズ
 
-- [PowerShell 'SmowerShell' — Windows PowerShell について理解する理由パート 1](http://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
-- [パイプラインからの情報 — 趣味と実益を兼ねた Windows PowerShell コマンドの使用方法パート 2](http://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
-- [唯一のプロバイダー?というわけではありません — Windows PowerShell プロバイダーの概要パート 3](http://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
-- [主要イベント — Windows PowerShell のイベント ログ パート 4](http://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
-- [リモートを超える可能性 — Windows PowerShell を使用したリモート デスクトップ管理パート 5](http://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
+- [PowerShell 'SmowerShell' — Windows PowerShell について理解する理由パート 1](https://dlbmodigital.microsoft.com/webcasts/wmv/23976_Dnl_L.wmv)
+- [パイプラインからの情報 — 趣味と実益を兼ねた Windows PowerShell コマンドの使用方法パート 2](https://dlbmodigital.microsoft.com/webcasts/wmv/23977_Dnl_L.wmv)
+- [唯一のプロバイダー?というわけではありません — Windows PowerShell プロバイダーの概要パート 3](https://dlbmodigital.microsoft.com/webcasts/wmv/23978_Dnl_L.wmv)
+- [主要イベント — Windows PowerShell のイベント ログ パート 4](https://dlbmodigital.microsoft.com/webcasts/wmv/23979_Dnl_L.wmv)
+- [リモートを超える可能性 — Windows PowerShell を使用したリモート デスクトップ管理パート 5](https://dlbmodigital.microsoft.com/webcasts/wmv/23980_Dnl_L.wmv)
 
 #### <a name="learn-it-now-before-its-an-emergency"></a>緊急時に備えた情報
 
-- [Windows PowerShell: 緊急時に備えた情報 - パート 1](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
-- [Windows PowerShell: 緊急時に備えた情報 - パート 2](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
-- [Windows PowerShell: 緊急時に備えた情報 - パート 3](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
-- [Windows PowerShell: 緊急時に備えた情報 - パート 4](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
-- [Windows PowerShell: 緊急時に備えた情報 - パート 5](http://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
+- [Windows PowerShell: 緊急時に備えた情報 - パート 1](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481530_Dnl_L.wmv)
+- [Windows PowerShell: 緊急時に備えた情報 - パート 2](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481542_Dnl_L.wmv)
+- [Windows PowerShell: 緊急時に備えた情報 - パート 3](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481548_Dnl_L.wmv)
+- [Windows PowerShell: 緊急時に備えた情報 - パート 4](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481552_Dnl_L.wmv)
+- [Windows PowerShell: 緊急時に備えた情報 - パート 5](https://dlbmodigital.microsoft.com/webcasts/wmv/1032481554_Dnl_L.wmv)
 
 ## <a name="resources-for-windows-powershell-developers"></a>Windows PowerShell 開発者向けのリソース
 
 次のリソースでは、開発者が独自の Windows PowerShell モジュール、関数、コマンドレット、プロバイダー、ホストするアプリケーションを作成するために役立つ情報を提供しています。
 
-- [Windows PowerShell SDK](http://go.microsoft.com/fwlink/p/?LinkID=89595)。 リファレンス コンテンツを提供します。
-- [Windows PowerShell プログラマー ガイド](http://go.microsoft.com/fwlink/p/?LinkID=89596)。 チュートリアルを提供します。 これには、Windows PowerShell の基本概念についての情報も含まれます。
+- [Windows PowerShell SDK](https://go.microsoft.com/fwlink/p/?LinkID=89595)。 リファレンス コンテンツを提供します。
+- [Windows PowerShell プログラマー ガイド](https://go.microsoft.com/fwlink/p/?LinkID=89596)。 チュートリアルを提供します。 これには、Windows PowerShell の基本概念についての情報も含まれます。

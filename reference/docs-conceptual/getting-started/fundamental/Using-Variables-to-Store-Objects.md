@@ -3,17 +3,17 @@ ms.date: 08/27/2018
 keywords: PowerShell, コマンドレット
 title: 変数を使用したオブジェクトの保存
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: f4254199facb914c68a487b281b30070c35550a1
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
-ms.translationtype: HT
+ms.openlocfilehash: d166ec58dc658c1b134030c9a9592249ee40d4f5
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353220"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320960"
 ---
 # <a name="using-variables-to-store-objects"></a>変数を使用したオブジェクトの保存
 
 PowerShell ではオブジェクトを操作します。 PowerShell では、変数として認識される名前付きオブジェクトを作成できます。
-変数名には、アンダースコア文字と任意の英数字を含めることができます。 PowerShell で使用される場合、変数は常に、\$ 文字の後ろに変数名を追加して指定されます。
+変数名には、アンダー スコア、および任意の英数字を含めることができます。 PowerShell で使用される場合、変数は常に、\$ 文字の後ろに変数名を追加して指定されます。
 
 ## <a name="creating-a-variable"></a>変数の作成
 

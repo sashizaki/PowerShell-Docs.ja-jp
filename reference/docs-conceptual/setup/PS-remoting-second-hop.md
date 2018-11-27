@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: PowerShell リモート処理での次ホップの実行
-ms.openlocfilehash: 1d24473178bc50321a81ebf1115a20f17078844f
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: 06ca43e3e0524d89ec6f66f6553c4c75072beaf3
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483017"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320705"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>PowerShell リモート処理での次ホップの実行
 
@@ -24,7 +24,7 @@ ms.locfileid: "34483017"
 
 認証に[資格情報のセキュリティ サポート プロバイダー (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) を使用できます。 CredSSP はリモート サーバー (_ServerB_) に資格情報をキャッシュするため、これを使用すると資格情報の盗難攻撃にさらされます。 リモート コンピューターが侵害されると、攻撃者はユーザーの資格情報にアクセスできます。 CredSSP は、既定では、クライアント コンピューターとサーバー コンピューターの両方で無効になっています。 CredSSP は、最も信頼性の高い環境でのみ有効にしてください。 たとえば、ドメイン コントローラーは信頼性が高いため、ドメイン コントローラーに接続しているドメイン管理者が有効にすることをお勧めします。
 
-PowerShell リモート処理で CredSSP を使用する場合のセキュリティに関する注意事項の詳細については、「[Accidental Sabotage: Beware of CredSSP (予想外の妨害行為: CredSSP に関する注意事項)](http://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp)」を参照してください。
+PowerShell リモート処理で CredSSP を使用する場合のセキュリティに関する注意事項の詳細については、「[Accidental Sabotage: Beware of CredSSP (予想外の妨害行為: CredSSP に関する注意事項)](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp)」を参照してください。
 
 資格情報の盗難攻撃の詳細については、「[Mitigating Pass-the-Hash (PtH) Attacks and Other Credential Theft (Pass-the-Hash (PtH) 攻撃とその他の資格情報の盗難の抑制)](https://www.microsoft.com/en-us/download/details.aspx?id=36036)」を参照してください。
 
@@ -210,9 +210,9 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 ### <a name="information-on-resource-based-kerberos-constrained-delegation"></a>リソースに基づく Kerberos の制約付き委任についての情報
 
 - [Kerberos 認証の新機能](https://technet.microsoft.com/library/hh831747.aspx)
-- [Windows Server 2012 による Kerberos の制約付き委任の処理方法、第 1 部](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
-- [Windows Server 2012 による Kerberos の制約付き委任の処理方法、第 2 部](http://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
-- [統合 Windows 認証での Azure Active Directory アプリケーション プロキシ展開に対する Kerberos の制約付き委任の概要](http://aka.ms/kcdpaper)
+- [Windows Server 2012 による Kerberos の制約付き委任の処理方法、第 1 部](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
+- [Windows Server 2012 による Kerberos の制約付き委任の処理方法、第 2 部](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
+- [統合 Windows 認証での Azure Active Directory アプリケーション プロキシ展開に対する Kerberos の制約付き委任の概要](https://aka.ms/kcdpaper)
 - [[MS-ADA2]: Active Directory スキーマ属性 M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
 - [[MS-SFU]: Kerberos プロトコル拡張: Service for User および制約付き委任プロトコルの 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
 - [リソースに基づく Kerberos の制約付き委任](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)

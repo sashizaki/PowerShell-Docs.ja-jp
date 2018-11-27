@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell, コマンドレット
 title: Web ベースの Windows PowerShell コンソールの使用
-ms.openlocfilehash: 5d29a6f97fddf4b329fcc7097cf7d40d47d22cca
-ms.sourcegitcommit: 01d6985ed190a222e9da1da41596f524f607a5bc
-ms.translationtype: HT
+ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/07/2018
-ms.locfileid: "34483153"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320654"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Web ベースの Windows PowerShell コンソールの使用
 
@@ -169,7 +169,7 @@ Alt + F7 | コマンド履歴の一覧を消去
 
     Windows PowerShell Web Access を使って新しいセッションを作成または操作しようとすると、ダブルホップ (最初の接続から 2 つ目のコンピューターに接続すること) の制限が発生します。 Windows PowerShell Web Access はリモートの実行空間を使いますが、現時点では、リモートの実行空間から 2 つ目のコンピューターへのリモート接続の確立を **PowerShell.exe** がサポートしていません。 たとえば、**Enter-PSSession** コマンドレットを使って既存の接続から 2 つ目のリモート コンピューターに接続しようとすると、"ネットワーク リソースを取得できません" など、さまざまなエラーが発生します。
 
-    ダブルホップのエラーを避けるには、管理者が組織のネットワーク環境に CredSSP 認証を構成する必要があります。 CredSSP 認証の構成方法の詳細については、Microsoft Web サイトの [CredSSP による次ホップのリモート処理](http://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx)に関するページを参照してください。 2 つ目のリモート コンピューターを管理する場合、明示的な資格情報を提供することも可能です。暗黙的な資格情報の場合、次ホップが許可される可能性が低くなります。
+    ダブルホップのエラーを避けるには、管理者が組織のネットワーク環境に CredSSP 認証を構成する必要があります。 CredSSP 認証の構成方法の詳細については、Microsoft Web サイトの [CredSSP による次ホップのリモート処理](https://blogs.msdn.com/b/powershell/archive/2008/06/05/credssp-for-second-hop-remoting-part-i-domain-account.aspx)に関するページを参照してください。 2 つ目のリモート コンピューターを管理する場合、明示的な資格情報を提供することも可能です。暗黙的な資格情報の場合、次ホップが許可される可能性が低くなります。
 
 - リモート処理
 
@@ -224,12 +224,12 @@ Alt + F7 | コマンド履歴の一覧を消去
 
         同じ方法でコンソールの高さを変更できます。
 
-        コンソール ビューをカスタマイズするその他の例については、[Windows PowerShell チームのブログ](http://blogs.msdn.com/b/powershell/)を参照してください。
+        コンソール ビューをカスタマイズするその他の例については、[Windows PowerShell チームのブログ](https://blogs.msdn.com/b/powershell/)を参照してください。
 
 ## <a name="see-also"></a>参照
 
 - [Windows PowerShell コマンドレット リファレンス](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
 - [Microsoft TechNet の Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
-- [TechNet スクリプト センター リポジトリ](http://gallery.technet.microsoft.com/scriptcenter)
+- [TechNet スクリプト センター リポジトリ](https://gallery.technet.microsoft.com/scriptcenter)
 - [スクリプト センター - Hey, Scripting Guy!](https://technet.microsoft.com/scriptcenter)
-- [Windows PowerShell チーム ブログ](http://blogs.msdn.com/b/powershell/)
+- [Windows PowerShell チーム ブログ](https://blogs.msdn.com/b/powershell/)

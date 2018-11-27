@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access のインストールと使用
-ms.openlocfilehash: d718d9b286a8a2189f44f10983cdc0061e41d4b9
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2018
-ms.locfileid: "48851326"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320688"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Access のインストールと使用
 
@@ -25,7 +25,7 @@ Windows Server 2012 で初めて導入された Windows PowerShell Web Access �
 
 Windows PowerShell Web Access のセットアップおよび構成プロセスは、次の 3 つの手順で構成されます。
 
-1. [Windows PowerShell Web Access をインストールする](#install-windows-powershell-web-access)
+1. [Windows PowerShell Web Access をインストールする](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [ゲートウェイを構成する](#configure-the-gateway)
 1. [制限的な承認規則を構成する](#configure-a-restrictive-authorization-rule)
 
@@ -75,7 +75,7 @@ Web ベースの Windows PowerShell コンソールを使うには、ブラウ�
 
 Windows PowerShell Web Access ゲートウェイは、Windows PowerShell コマンドレットを使用するか、サーバー マネージャーから開く役割および機能の追加ウィザードを使用して、Windows Server 2012 R2 または Windows Server 2012 を実行中のサーバーにインストールできます。 クイック インストールと構成では、このセクションで説明する Windows PowerShell コマンドレットを使用します。
 
-1. [Windows PowerShell Web Access をインストールする](#install-Windows-powershell-web-access)
+1. [Windows PowerShell Web Access をインストールする](#install-windows-powershell-web-access-using-powershell-cmdlets)
 1. [ゲートウェイを構成する](#configure-the-gateway)
 1. [制限的な承認規則を構成する](#configure-a-restrictive-authorization-rule)
 
@@ -189,7 +189,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
 ### <a name="configure-a-restrictive-authorization-rule"></a>制限的な承認規則を構成する
 
-Windows PowerShell Web Access をインストールし、ゲートウェイを構成すると、ユーザーがブラウザーでサインイン ページを開けるようになります。ただし、Windows PowerShell Web Access 管理者によってアクセスを明示的に許可されない限りサインインできません。 Windows PowerShell Web Access のアクセス制御は、次の表に示す一連の Windows PowerShell コマンドレットによって管理します。 承認規則の追加と管理に関しては、相当する GUI はありません。 Windows PowerShell Web Access コマンドレットの詳細については、コマンドレット リファレンス トピック「[Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md)」(Windows PowerShell Web Access コマンドレット) を参照してください。
+Windows PowerShell Web Access をインストールし、ゲートウェイを構成すると、ユーザーがブラウザーでサインイン ページを開けるようになります。ただし、Windows PowerShell Web Access 管理者によってアクセスを明示的に許可されない限りサインインできません。 Windows PowerShell Web Access のアクセス制御は、次の表に示す一連の Windows PowerShell コマンドレットによって管理します。 承認規則の追加と管理に関しては、相当する GUI はありません。 Windows PowerShell Web Access コマンドレットの詳細については、コマンドレット リファレンス トピック「[Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)」(Windows PowerShell Web Access コマンドレット) を参照してください。
 
 Windows PowerShell Web Access の承認規則とセキュリティの詳細については、「[Windows PowerShell Web Access の承認規則とセキュリティ機能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)」を参照してください。
 
@@ -360,7 +360,7 @@ Windows PowerShell Web Access をインストールした後、IIS Manager で�
 
 ### <a name="configuring-a-restrictive-authorization-rule"></a>制限的な承認規則の構成
 
-Windows PowerShell Web Access をインストールし、ゲートウェイを構成すると、ユーザーがブラウザーでサインイン ページを開けるようになります。ただし、Windows PowerShell Web Access 管理者によってアクセスを明示的に許可されない限りサインインできません。 Windows PowerShell Web Access のアクセス制御は、次の表に示す一連の Windows PowerShell コマンドレットによって管理します。 承認規則の追加と管理に関しては、相当する GUI はありません。 Windows PowerShell Web Access コマンドレットの詳細については、コマンドレット リファレンス トピック「[Windows PowerShell Web Access Cmdlets](cmdlets/web-access-cmdlets.md)」(Windows PowerShell Web Access コマンドレット) を参照してください。
+Windows PowerShell Web Access をインストールし、ゲートウェイを構成すると、ユーザーがブラウザーでサインイン ページを開けるようになります。ただし、Windows PowerShell Web Access 管理者によってアクセスを明示的に許可されない限りサインインできません。 Windows PowerShell Web Access のアクセス制御は、次の表に示す一連の Windows PowerShell コマンドレットによって管理します。 承認規則の追加と管理に関しては、相当する GUI はありません。 Windows PowerShell Web Access コマンドレットの詳細については、コマンドレット リファレンス トピック「[Windows PowerShell Web Access Cmdlets](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)」(Windows PowerShell Web Access コマンドレット) を参照してください。
 
 Windows PowerShell Web Access の承認規則とセキュリティの詳細については、「[Windows PowerShell Web Access の承認規則とセキュリティ機能](authorization-rules-and-security-features-of-windows-powershell-web-access.md)」を参照してください。
 
@@ -404,7 +404,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 1. **[操作]** ウィンドウで、次のいずれかを実行します。 IIS でサーバー証明書を構成する方法の詳細については、「[IIS 7 でサーバー証明書を構成する](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732230(v=ws.10))」を参照してください。
 
    - **[インポート]** をクリックして、ネットワーク内の場所にある既存の有効な証明書をインポートします。
-   - **[証明書の要求の作成]** をクリックして、[VeriSign](http://www.verisign.com/)、[Thawte](https://www.thawte.com/)、[GeoTrust](https://www.geotrust.com/) などの CA に証明書を要求します。 証明書の共通名が要求のホスト ヘッダーと一致している必要があります。
+   - **[証明書の要求の作成]** をクリックして、[VeriSign](https://www.verisign.com/)、[Thawte](https://www.thawte.com/)、[GeoTrust](https://www.geotrust.com/) などの CA に証明書を要求します。 証明書の共通名が要求のホスト ヘッダーと一致している必要があります。
 
      たとえば、クライアントのブラウザーが `http://www.contoso.com/` を要求する場合、共通名も `http://www.contoso.com/` でなければなりません。 これは、証明書を使う Windows PowerShell Web Access ゲートウェイを提供する場合に最も安全かつ推奨されるオプションです。
 

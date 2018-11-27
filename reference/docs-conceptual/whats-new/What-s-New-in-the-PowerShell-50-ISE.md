@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: PowerShell 50 ISE の新機能
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: 35b825cfa6ea720d0af3537c5d1b16c5ececb701
-ms.sourcegitcommit: cf195b090b3223fa4917206dfec7f0b603873cdf
-ms.translationtype: HT
+ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2018
-ms.locfileid: "30953584"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320586"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE の新機能
 このトピックでは、各バージョンの Windows PowerShell Integrated Scripting Environment (ISE) に導入された新機能と更新された機能について説明します。
@@ -63,7 +63,7 @@ Windows PowerShell 3.0 以降でスニペットを使用するには、**[編集
 ### <a name="add-on-tools"></a>アドオン ツール
 **PowerShell 3.0 に追加**
 
-Windows PowerShell ISE では、アドオン ツールをサポートしています。アドオン ツールとは、オブジェクト モデルを使用して追加される Windows Presentation Foundation (WPF) コントロールです。 アドオン ツールは、垂直方向のウィンドウまたは水平方向のウィンドウとしてコンソール内に表示できます。 1 つのウィンドウ内に複数のアドオン ツールがある場合は、タブ形式のコントロールとして表示されます。 また、サード パーティ製のアドオン ツールも追加または削除できます。 アドオン ツールのインポート方法または削除方法の詳細については、「[Windows PowerShell ISE の操作](http://technet.microsoft.com/library/cc732148.aspx)」を参照してください。
+Windows PowerShell ISE では、アドオン ツールをサポートしています。アドオン ツールとは、オブジェクト モデルを使用して追加される Windows Presentation Foundation (WPF) コントロールです。 アドオン ツールは、垂直方向のウィンドウまたは水平方向のウィンドウとしてコンソール内に表示できます。 1 つのウィンドウ内に複数のアドオン ツールがある場合は、タブ形式のコントロールとして表示されます。 また、サード パーティ製のアドオン ツールも追加または削除できます。 アドオン ツールのインポート方法または削除方法の詳細については、「[Windows PowerShell ISE の操作](https://technet.microsoft.com/library/cc732148.aspx)」を参照してください。
 
 **この変更の利点**
 
@@ -224,5 +224,5 @@ Show-Command は Windows PowerShell ISE 3.0 の新機能です。
 Windows PowerShell での Windows PowerShell ISE の使用に関する詳細については、次のリンクを参照してください。
 
 - [Windows PowerShell Integrated Scripting Environment の探索](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
-- [TechNet Wiki の ISE](http://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
-- [スクリプト センター](http://technet.microsoft.com/scriptcenter/default)
+- [TechNet Wiki の ISE](https://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
+- [スクリプト センター](https://technet.microsoft.com/scriptcenter/default)

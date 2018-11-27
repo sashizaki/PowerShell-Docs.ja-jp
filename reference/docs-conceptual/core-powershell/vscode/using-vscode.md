@@ -2,12 +2,12 @@
 title: PowerShell 開発のための Visual Studio Code の使用
 description: PowerShell 開発のための Visual Studio Code の使用
 ms.date: 08/06/2018
-ms.openlocfilehash: 9c06ce72c39d08e75fcb7e5cf9d5f92ae5dd8ed9
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
-ms.translationtype: HT
+ms.openlocfilehash: 6433a875c233283f94d70c7acd7d394c73029b6d
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225796"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320450"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell 開発のための Visual Studio Code の使用
 
@@ -35,7 +35,7 @@ Windows、macOS、および Linux 上の最近のワークロードに対して�
 
   > [!IMPORTANT]
   > macOS で、PowerShell の拡張機能用が正常に動作するには、OpenSSL をインストールする必要があります。
-  > これには、[Homebrew](http://brew.sh/) をインストールして、`brew install openssl` を実行するのが最も簡単です。
+  > これには、[Homebrew](https://brew.sh/) をインストールして、`brew install openssl` を実行するのが最も簡単です。
   > これで、VS Code を使用して PowerShell 拡張機能を正常に読み込むことができます。
 
 - **Windows**: 「[Running VS Code on Windows](https://code.visualstudio.com/docs/setup/windows)」 (Windows 上での VS コードの実行) ページのインストール手順に従います。

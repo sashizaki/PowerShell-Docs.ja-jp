@@ -2,12 +2,12 @@
 title: Windows への PowerShell Core のインストール
 description: Windows への PowerShell Core のインストールに関する情報
 ms.date: 08/06/2018
-ms.openlocfilehash: 2b21908c38796117308f2ac1219db00ff9086408
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: ba159a69df7e117e90e21dd26228b61146260475
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48850981"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320893"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Windows への PowerShell Core のインストール
 
@@ -99,7 +99,7 @@ Nano Server は "ヘッドレス" OS です。 コア バイナリを展開す�
 1. お好みの zip ユーティリティを使用して、マウントされた Nano Server イメージ内のディレクトリにパッケージを解凍します。
 2. イメージをマウント解除し、ブートします。
 3. Windows PowerShell のインボックス インスタンスに接続します。
-4. 「[別のインスタンスのテクニック](#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)」の、リモート エンドポイントを作成する手順に従います。
+4. 「[別のインスタンスのテクニック](../core-powershell/wsman-remoting-in-powershell-core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)」の、リモート エンドポイントを作成する手順に従います。
 
 ### <a name="online-deployment-of-powershell-core"></a>オンラインでの PowerShell Core の展開
 
