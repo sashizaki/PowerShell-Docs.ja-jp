@@ -3,35 +3,35 @@ ms.date: 08/27/2018
 keywords: PowerShell, コマンドレット
 title: 変数を使用したオブジェクトの保存
 ms.assetid: b1688d73-c173-491e-9ba6-6d0c1cc852de
-ms.openlocfilehash: f4254199facb914c68a487b281b30070c35550a1
-ms.sourcegitcommit: c170a1608d20d3c925d79c35fa208f650d014146
-ms.translationtype: HT
+ms.openlocfilehash: d166ec58dc658c1b134030c9a9592249ee40d4f5
+ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/31/2018
-ms.locfileid: "43353220"
+ms.lasthandoff: 11/27/2018
+ms.locfileid: "52320960"
 ---
-# <a name="using-variables-to-store-objects"></a><span data-ttu-id="18b6a-103">変数を使用したオブジェクトの保存</span><span class="sxs-lookup"><span data-stu-id="18b6a-103">Using variables to store objects</span></span>
+# <a name="using-variables-to-store-objects"></a><span data-ttu-id="6da2d-103">変数を使用したオブジェクトの保存</span><span class="sxs-lookup"><span data-stu-id="6da2d-103">Using variables to store objects</span></span>
 
-<span data-ttu-id="18b6a-104">PowerShell ではオブジェクトを操作します。</span><span class="sxs-lookup"><span data-stu-id="18b6a-104">PowerShell works with objects.</span></span> <span data-ttu-id="18b6a-105">PowerShell では、変数として認識される名前付きオブジェクトを作成できます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-105">PowerShell lets you create named objects known as variables.</span></span>
-<span data-ttu-id="18b6a-106">変数名には、アンダースコア文字と任意の英数字を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-106">Variables names can include the underscore character can any alphanumeric characters.</span></span> <span data-ttu-id="18b6a-107">PowerShell で使用される場合、変数は常に、\$ 文字の後ろに変数名を追加して指定されます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-107">When used in PowerShell, a variable is always specified using the \$ character followed by variable name.</span></span>
+<span data-ttu-id="6da2d-104">PowerShell ではオブジェクトを操作します。</span><span class="sxs-lookup"><span data-stu-id="6da2d-104">PowerShell works with objects.</span></span> <span data-ttu-id="6da2d-105">PowerShell では、変数として認識される名前付きオブジェクトを作成できます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-105">PowerShell lets you create named objects known as variables.</span></span>
+<span data-ttu-id="6da2d-106">変数名には、アンダー スコア、および任意の英数字を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-106">Variable names can include the underscore character and any alphanumeric characters.</span></span> <span data-ttu-id="6da2d-107">PowerShell で使用される場合、変数は常に、\$ 文字の後ろに変数名を追加して指定されます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-107">When used in PowerShell, a variable is always specified using the \$ character followed by variable name.</span></span>
 
-## <a name="creating-a-variable"></a><span data-ttu-id="18b6a-108">変数の作成</span><span class="sxs-lookup"><span data-stu-id="18b6a-108">Creating a variable</span></span>
+## <a name="creating-a-variable"></a><span data-ttu-id="6da2d-108">変数の作成</span><span class="sxs-lookup"><span data-stu-id="6da2d-108">Creating a variable</span></span>
 
-<span data-ttu-id="18b6a-109">次のように有効な変数名を入力することで、変数を作成できます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-109">You can create a variable by typing a valid variable name:</span></span>
+<span data-ttu-id="6da2d-109">次のように有効な変数名を入力することで、変数を作成できます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-109">You can create a variable by typing a valid variable name:</span></span>
 
 ```
 PS> $loc
 PS>
 ```
 
-<span data-ttu-id="18b6a-110">`$loc` に値がないため、この例では結果を返しません。</span><span class="sxs-lookup"><span data-stu-id="18b6a-110">This example returns no result because `$loc` doesn't have a value.</span></span> <span data-ttu-id="18b6a-111">変数の作成と値の割り当てを同一の手順で行うことができます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-111">You can create a variable and assign it a value in the same step.</span></span> <span data-ttu-id="18b6a-112">PowerShell では、変数が存在しない場合にのみ、変数を作成します。</span><span class="sxs-lookup"><span data-stu-id="18b6a-112">PowerShell only creates the variable if it doesn't exist.</span></span>
-<span data-ttu-id="18b6a-113">それ以外の場合、指定された値を既存の変数に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-113">Otherwise, it assigns the specified value to the existing variable.</span></span> <span data-ttu-id="18b6a-114">次の例では、変数 `$loc` に現在の場所を格納します。</span><span class="sxs-lookup"><span data-stu-id="18b6a-114">The following example stores the current location in the variable `$loc`:</span></span>
+<span data-ttu-id="6da2d-110">`$loc` に値がないため、この例では結果を返しません。</span><span class="sxs-lookup"><span data-stu-id="6da2d-110">This example returns no result because `$loc` doesn't have a value.</span></span> <span data-ttu-id="6da2d-111">変数の作成と値の割り当てを同一の手順で行うことができます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-111">You can create a variable and assign it a value in the same step.</span></span> <span data-ttu-id="6da2d-112">PowerShell では、変数が存在しない場合にのみ、変数を作成します。</span><span class="sxs-lookup"><span data-stu-id="6da2d-112">PowerShell only creates the variable if it doesn't exist.</span></span>
+<span data-ttu-id="6da2d-113">それ以外の場合、指定された値を既存の変数に割り当てます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-113">Otherwise, it assigns the specified value to the existing variable.</span></span> <span data-ttu-id="6da2d-114">次の例では、変数 `$loc` に現在の場所を格納します。</span><span class="sxs-lookup"><span data-stu-id="6da2d-114">The following example stores the current location in the variable `$loc`:</span></span>
 
 ```powershell
 $loc = Get-Location
 ```
 
-<span data-ttu-id="18b6a-115">このコマンドを入力した場合、PowerShell では出力を表示しません。</span><span class="sxs-lookup"><span data-stu-id="18b6a-115">PowerShell displays no output when you type this command.</span></span> <span data-ttu-id="18b6a-116">PowerShell は 'Get-Location' の出力を `$loc` に送信します。</span><span class="sxs-lookup"><span data-stu-id="18b6a-116">PowerShell sends the output of 'Get-Location' to `$loc`.</span></span> <span data-ttu-id="18b6a-117">PowerShell では、割り当てもリダイレクトもされていないデータが、画面に送信されます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-117">In PowerShell, data that isn't assigned or redirected is sent to the screen.</span></span> <span data-ttu-id="18b6a-118">次のように `$loc` を入力すると、現在の場所が表示されます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-118">Typing `$loc` shows your current location:</span></span>
+<span data-ttu-id="6da2d-115">このコマンドを入力した場合、PowerShell では出力を表示しません。</span><span class="sxs-lookup"><span data-stu-id="6da2d-115">PowerShell displays no output when you type this command.</span></span> <span data-ttu-id="6da2d-116">PowerShell は 'Get-Location' の出力を `$loc` に送信します。</span><span class="sxs-lookup"><span data-stu-id="6da2d-116">PowerShell sends the output of 'Get-Location' to `$loc`.</span></span> <span data-ttu-id="6da2d-117">PowerShell では、割り当てもリダイレクトもされていないデータが、画面に送信されます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-117">In PowerShell, data that isn't assigned or redirected is sent to the screen.</span></span> <span data-ttu-id="6da2d-118">次のように `$loc` を入力すると、現在の場所が表示されます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-118">Typing `$loc` shows your current location:</span></span>
 
 ```
 PS> $loc
@@ -41,7 +41,7 @@ Path
 C:\temp
 ```
 
-<span data-ttu-id="18b6a-119">`Get-Member` を使用して変数の内容に関する情報を表示できます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-119">You can use `Get-Member` to display information about the contents of variables.</span></span> <span data-ttu-id="18b6a-120">`Get-Member` は、`Get-Location` からの出力と同様に、`$loc` が **PathInfo** オブジェクトであることを示しています。</span><span class="sxs-lookup"><span data-stu-id="18b6a-120">`Get-Member` shows you that `$loc` is a **PathInfo** object, just like the output from `Get-Location`:</span></span>
+<span data-ttu-id="6da2d-119">`Get-Member` を使用して変数の内容に関する情報を表示できます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-119">You can use `Get-Member` to display information about the contents of variables.</span></span> <span data-ttu-id="6da2d-120">`Get-Member` は、`Get-Location` からの出力と同様に、`$loc` が **PathInfo** オブジェクトであることを示しています。</span><span class="sxs-lookup"><span data-stu-id="6da2d-120">`Get-Member` shows you that `$loc` is a **PathInfo** object, just like the output from `Get-Location`:</span></span>
 
 ```powershell
 PS> $loc | Get-Member -MemberType Property
@@ -56,47 +56,47 @@ Provider     Property   System.Management.Automation.ProviderInfo Provider {...
 ProviderPath Property   System.String ProviderPath {get;}
 ```
 
-## <a name="manipulating-variables"></a><span data-ttu-id="18b6a-121">変数の操作</span><span class="sxs-lookup"><span data-stu-id="18b6a-121">Manipulating variables</span></span>
+## <a name="manipulating-variables"></a><span data-ttu-id="6da2d-121">変数の操作</span><span class="sxs-lookup"><span data-stu-id="6da2d-121">Manipulating variables</span></span>
 
-<span data-ttu-id="18b6a-122">PowerShell には変数を操作するためのコマンドがいくつか用意されています。</span><span class="sxs-lookup"><span data-stu-id="18b6a-122">PowerShell provides several commands to manipulate variables.</span></span> <span data-ttu-id="18b6a-123">次のように入力すると、完全な一覧が読みやすい形式で表示されます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-123">You can see a complete listing in a readable form by typing:</span></span>
+<span data-ttu-id="6da2d-122">PowerShell には変数を操作するためのコマンドがいくつか用意されています。</span><span class="sxs-lookup"><span data-stu-id="6da2d-122">PowerShell provides several commands to manipulate variables.</span></span> <span data-ttu-id="6da2d-123">次のように入力すると、完全な一覧が読みやすい形式で表示されます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-123">You can see a complete listing in a readable form by typing:</span></span>
 
 ```powershell
 Get-Command -Noun Variable | Format-Table -Property Name,Definition -AutoSize -Wrap
 ```
 
-<span data-ttu-id="18b6a-124">また、PowerShell では、複数のシステム定義変数を作成します。</span><span class="sxs-lookup"><span data-stu-id="18b6a-124">PowerShell also creates several system-defined variables.</span></span> <span data-ttu-id="18b6a-125">`Remove-Variable` コマンドレットを使用して、現在のセッションから、PowerShell によって制御されない変数を削除できます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-125">You can use the `Remove-Variable` cmdlet to remove variables, which are not controlled by PowerShell, from the current session.</span></span> <span data-ttu-id="18b6a-126">すべての変数をクリアするには、次のコマンドを入力します。</span><span class="sxs-lookup"><span data-stu-id="18b6a-126">Type the following command to clear all variables:</span></span>
+<span data-ttu-id="6da2d-124">また、PowerShell では、複数のシステム定義変数を作成します。</span><span class="sxs-lookup"><span data-stu-id="6da2d-124">PowerShell also creates several system-defined variables.</span></span> <span data-ttu-id="6da2d-125">`Remove-Variable` コマンドレットを使用して、現在のセッションから、PowerShell によって制御されない変数を削除できます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-125">You can use the `Remove-Variable` cmdlet to remove variables, which are not controlled by PowerShell, from the current session.</span></span> <span data-ttu-id="6da2d-126">すべての変数をクリアするには、次のコマンドを入力します。</span><span class="sxs-lookup"><span data-stu-id="6da2d-126">Type the following command to clear all variables:</span></span>
 
 ```powershell
 Remove-Variable -Name * -Force -ErrorAction SilentlyContinue
 ```
 
-<span data-ttu-id="18b6a-127">前のコマンドを実行した後、`Get-Variable` コマンドレットでは PowerShell システム変数を表示します。</span><span class="sxs-lookup"><span data-stu-id="18b6a-127">After running the previous command, the `Get-Variable` cmdlet shows the PowerShell system variables.</span></span>
+<span data-ttu-id="6da2d-127">前のコマンドを実行した後、`Get-Variable` コマンドレットでは PowerShell システム変数を表示します。</span><span class="sxs-lookup"><span data-stu-id="6da2d-127">After running the previous command, the `Get-Variable` cmdlet shows the PowerShell system variables.</span></span>
 
-<span data-ttu-id="18b6a-128">また、PowerShell では、変数ドライブも作成します。</span><span class="sxs-lookup"><span data-stu-id="18b6a-128">PowerShell also creates a variable drive.</span></span> <span data-ttu-id="18b6a-129">次の例を使用して、変数ドライブを使ってすべての PowerShell 変数を表示します。</span><span class="sxs-lookup"><span data-stu-id="18b6a-129">Use the following example to display all PowerShell variables using the variable drive:</span></span>
+<span data-ttu-id="6da2d-128">また、PowerShell では、変数ドライブも作成します。</span><span class="sxs-lookup"><span data-stu-id="6da2d-128">PowerShell also creates a variable drive.</span></span> <span data-ttu-id="6da2d-129">次の例を使用して、変数ドライブを使ってすべての PowerShell 変数を表示します。</span><span class="sxs-lookup"><span data-stu-id="6da2d-129">Use the following example to display all PowerShell variables using the variable drive:</span></span>
 
 ```powershell
 Get-ChildItem variable:
 ```
 
-## <a name="using-cmdexe-variables"></a><span data-ttu-id="18b6a-130">cmd.exe 変数の使用</span><span class="sxs-lookup"><span data-stu-id="18b6a-130">Using cmd.exe variables</span></span>
+## <a name="using-cmdexe-variables"></a><span data-ttu-id="6da2d-130">cmd.exe 変数の使用</span><span class="sxs-lookup"><span data-stu-id="6da2d-130">Using cmd.exe variables</span></span>
 
-<span data-ttu-id="18b6a-131">PowerShell では、**cmd.exe** など、任意の Windows プロセスに利用できる同じ環境変数を使用できます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-131">PowerShell can use the same environment variables available to any Windows process, including **cmd.exe**.</span></span> <span data-ttu-id="18b6a-132">これらの変数は `env:` という名前のドライブ経由で公開されます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-132">These variables are exposed through a drive named `env:`.</span></span> <span data-ttu-id="18b6a-133">これらの変数を表示するには、次のコマンドを入力します。</span><span class="sxs-lookup"><span data-stu-id="18b6a-133">You can view these variables by typing the following command:</span></span>
+<span data-ttu-id="6da2d-131">PowerShell では、**cmd.exe** など、任意の Windows プロセスに利用できる同じ環境変数を使用できます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-131">PowerShell can use the same environment variables available to any Windows process, including **cmd.exe**.</span></span> <span data-ttu-id="6da2d-132">これらの変数は `env:` という名前のドライブ経由で公開されます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-132">These variables are exposed through a drive named `env:`.</span></span> <span data-ttu-id="6da2d-133">これらの変数を表示するには、次のコマンドを入力します。</span><span class="sxs-lookup"><span data-stu-id="6da2d-133">You can view these variables by typing the following command:</span></span>
 
 ```powershell
 Get-ChildItem env:
 ```
 
-<span data-ttu-id="18b6a-134">標準の `*-Variable` コマンドレットは、環境変数を操作するように設計されていません。</span><span class="sxs-lookup"><span data-stu-id="18b6a-134">The standard `*-Variable` cmdlets aren't designed to work with environment variables.</span></span> <span data-ttu-id="18b6a-135">環境変数は、`env:` ドライブ プレフィックスを使用してアクセスされます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-135">Environment variables are accessed using the `env:` drive prefix.</span></span> <span data-ttu-id="18b6a-136">たとえば、**cmd.exe** の **%SystemRoot%** 変数には、オペレーティング システムのルート ディレクトリ名が含まれます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-136">For example, the **%SystemRoot%** variable in **cmd.exe** contains the operating system's root directory name.</span></span> <span data-ttu-id="18b6a-137">PowerShell では、`$env:SystemRoot` を使用して同じ値にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="18b6a-137">In PowerShell, you use `$env:SystemRoot` to access the same value.</span></span>
+<span data-ttu-id="6da2d-134">標準の `*-Variable` コマンドレットは、環境変数を操作するように設計されていません。</span><span class="sxs-lookup"><span data-stu-id="6da2d-134">The standard `*-Variable` cmdlets aren't designed to work with environment variables.</span></span> <span data-ttu-id="6da2d-135">環境変数は、`env:` ドライブ プレフィックスを使用してアクセスされます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-135">Environment variables are accessed using the `env:` drive prefix.</span></span> <span data-ttu-id="6da2d-136">たとえば、**cmd.exe** の **%SystemRoot%** 変数には、オペレーティング システムのルート ディレクトリ名が含まれます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-136">For example, the **%SystemRoot%** variable in **cmd.exe** contains the operating system's root directory name.</span></span> <span data-ttu-id="6da2d-137">PowerShell では、`$env:SystemRoot` を使用して同じ値にアクセスします。</span><span class="sxs-lookup"><span data-stu-id="6da2d-137">In PowerShell, you use `$env:SystemRoot` to access the same value.</span></span>
 
 ```
 PS> $env:SystemRoot
 C:\WINDOWS
 ```
 
-<span data-ttu-id="18b6a-138">さらに、PowerShell 内から環境変数を作成および変更することもできます。</span><span class="sxs-lookup"><span data-stu-id="18b6a-138">You can also create and modify environment variables from within PowerShell.</span></span> <span data-ttu-id="18b6a-139">PowerShell の環境変数は、オペレーティング システムの他の場所で使用される環境変数と同じ規則に従います。</span><span class="sxs-lookup"><span data-stu-id="18b6a-139">Environment variables in PowerShell follow the same rules for environment variables used elsewhere in the operating system.</span></span> <span data-ttu-id="18b6a-140">次の例では、新しい環境変数を作成します。</span><span class="sxs-lookup"><span data-stu-id="18b6a-140">The following example creates a new environment variable:</span></span>
+<span data-ttu-id="6da2d-138">さらに、PowerShell 内から環境変数を作成および変更することもできます。</span><span class="sxs-lookup"><span data-stu-id="6da2d-138">You can also create and modify environment variables from within PowerShell.</span></span> <span data-ttu-id="6da2d-139">PowerShell の環境変数は、オペレーティング システムの他の場所で使用される環境変数と同じ規則に従います。</span><span class="sxs-lookup"><span data-stu-id="6da2d-139">Environment variables in PowerShell follow the same rules for environment variables used elsewhere in the operating system.</span></span> <span data-ttu-id="6da2d-140">次の例では、新しい環境変数を作成します。</span><span class="sxs-lookup"><span data-stu-id="6da2d-140">The following example creates a new environment variable:</span></span>
 
 ```powershell
 $env:LIB_PATH='/usr/local/lib'
 ```
 
-<span data-ttu-id="18b6a-141">必須ではありませんが、環境変数名には、すべて大文字を使用するのが一般的です。</span><span class="sxs-lookup"><span data-stu-id="18b6a-141">Though not required, is it common for environment variable names to use all uppercase letters.</span></span>
+<span data-ttu-id="6da2d-141">必須ではありませんが、環境変数名には、すべて大文字を使用するのが一般的です。</span><span class="sxs-lookup"><span data-stu-id="6da2d-141">Though not required, is it common for environment variable names to use all uppercase letters.</span></span>
