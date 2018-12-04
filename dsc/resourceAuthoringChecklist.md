@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: リソース作成のチェックリスト
-ms.openlocfilehash: 91942a174bc6f38fa77c1925dc3c690ecf2ab34b
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
-ms.translationtype: HT
+ms.openlocfilehash: 2b6e972776dba4ecc6fd1ab5c21361d653e1a469
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893557"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742841"
 ---
 # <a name="resource-authoring-checklist"></a>リソース作成のチェックリスト
 
@@ -85,7 +85,7 @@ If ($error.count –ne 0) {
 
 ## <a name="resource-is-idempotent-in-the-positive-case"></a>正の場合、リソースはべき等である
 
-DSC リソースの基本的な特性の 1 つにべき等性があります。 つまり、そのリソースを含む DSC 構成を複数回適用したとき、常に同じ結果が得られます。 たとえば、次の File リソースを含む構成を作成するとします。
+DSC リソースの基本的な特性の 1 つは、冪等性です。 つまり、そのリソースを含む DSC 構成を複数回適用したとき、常に同じ結果が得られます。 たとえば、次の File リソースを含む構成を作成するとします。
 
 ```powershell
 File file {

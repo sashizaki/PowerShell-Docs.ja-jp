@@ -3,22 +3,23 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: ギャラリー検索構文
-ms.openlocfilehash: 9aadb6771c85845cc3fa05cb56f0194b060d1c1b
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: aabcaa1f1b5b641ab5033c9ba2e358477c84a23b
+ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003777"
+ms.lasthandoff: 12/01/2018
+ms.locfileid: "52742858"
 ---
 # <a name="gallery-search-syntax"></a>ギャラリー検索構文
 
-PowerShell ギャラリーでは単語、フレーズ、キーワード表現を使用して検索結果を絞り込むテキスト検索ボックスが用意されています。
+使用して、PowerShell ギャラリーを検索することができます、 [PowerShell ギャラリーの web サイト](https://www.powershellgallery.com/)します。
+PowerShell ギャラリーの web サイトでは、検索結果を絞り込むために単語、フレーズ、キーワード表現を使用できるテキストの検索ボックスを提供します。
 
 ## <a name="search-by-keywords"></a>キーワードで検索
 
     dsc azure sql
 
-検索では、3 つのキーワードを含む関連ドキュメントを検索すると、最も効果的に一致ドキュメントが返されます。
+検索は、3 つのキーワードを含む関連ドキュメントを検索して一致するドキュメントを返すを試行します。
 
 ## <a name="search-using-phrases-and-keywords"></a>フレーズとキーワードを使用して検索
 
@@ -37,10 +38,9 @@ PowerShell ギャラリーでは単語、フレーズ、キーワード表現を
 
 ## <a name="examples"></a>例
 
-    ID:"PSReadline"
-    id:"AzureRM.Profile"
-
-ID フィールドの "PSReadline" または "AzureRM.Profile" のあるパッケージをそれぞれ検索するとします。
+    ID:PSReadline
+    
+"PSReadline"を含む ID を持つパッケージを検索します。
 
     Id:"AzureRM.Profile"
 
@@ -50,40 +50,35 @@ ID フィールドで "AzureRM.Profile" のあるパッケージを検索する�
 
     Id:"azure"
 
-'AzureRM.Profile' と 'Azure.Storage' のような結果が得られます。
+これにより、結果を含む AzureRM.Profile' と 'azure.storage' します。
 
-また、1 つのフィールドで複数のキーワードを検索することもできます。 または、フィールドを組み合わせて一致させます。
+また、1 つのフィールドで複数のキーワードを検索することもできます。 
 
     id:azure tags:intellisense
-    id:azure id:storage
 
-また、フレーズ検索も行うことができます。
+二重引用符を使用して句の検索を実行できます。
 
     id:"azure.storage"
 
-
 DSC タグのあるすべてのパッケージを検索します。
 
-    Tags:"DSC"
+    Tags:DSC
 
 指定した関数のあるすべてのパッケージを検索します。
 
-    Functions:"Update-AzureRM"
+    Functions:Get-TreeSize
 
 指定したコマンドレットのあるすべてのパッケージを検索します。
 
-    Cmdlets:"Get-AzureRmEnvironment"
+    Cmdlets:Get-AzureRmEnvironment
 
 指定した DSC リソース名のあるすべてのパッケージを検索します。
 
-    DscResources:"xArchive"
+    DscResources:xArchive
 
 指定した PowerShellVersion のあるすべてのパッケージを検索します
 
-    PowerShellVersion:"5.0"
-    PowerShellVersion:"3.0"
-    PowerShellVersion:"2.0"
-
+    PowerShellVersion:2.0
 
 最後に、'commands' など、サポートされていないフィールドを使用すると、単に無視され、すべてのフィールドが検索されます。 そのため、次のクエリ
 
