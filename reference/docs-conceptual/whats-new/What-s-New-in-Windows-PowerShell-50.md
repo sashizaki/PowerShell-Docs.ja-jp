@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell 5.0 の新機能
-ms.openlocfilehash: 78304b0eac6e58e43bffc3abb7059a1e4b02de23
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
+ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
+ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320722"
+ms.lasthandoff: 12/06/2018
+ms.locfileid: "52978897"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 の新機能
 Windows PowerShell 5.0 には、その用途を拡大し、使いやすさを向上させる重要な機能や、Windows ベースの環境をより簡単かつ包括的に制御および管理できるようにする重要な新しい機能が含まれています。
@@ -38,9 +38,9 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
   - [New-DscChecksum](https://technet.microsoft.com/library/dn521622.aspx) が UNC パスをサポートするようになりました。
 
 - [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) モジュールの新しいコマンドレット
-  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx): オンデマンド プル サーバー チェックを実行します。
-  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx): 既に実行されている構成を停止します。
-  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx): さまざまな段階 (保留中、以前、または現在) の構成に関するドキュメントを削除できます。
+  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx)オンデマンド プル サーバー チェックを実行します。
+  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx)既に実行されている構成を停止します。
+  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx)さまざまな段階 (保留中、以前、または現在) で構成ドキュメントを削除できます。
 
 - 言語の機能強化
   - DependsOn が複合リソースをサポートするようになりました。
@@ -64,10 +64,10 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 - スケーラビリティの向上
   - LocalConfigurationManager リソースに新しいプロパティ、**ActionAfterReboot** が追加されました。
-    - ContinueConfiguration (既定値): ターゲット ノードの再起動後に、構成を自動的に再開します。
-    - StopConfiguration: ノードの再起動後、構成を自動的に再開しません。
+    - ContinueConfiguration (既定値):構成は、ターゲット ノードの再起動後に自動的に再開します。
+    - StopConfigurationノードの再起動後、構成が自動的に再開されることはできません。
   - 整合性の実行をプル操作よりも頻繁に行えるようになりました。また、その逆も可能です。
-  - バージョン管理のサポート: DSC が新しいクライアント ([WMF 5.0](https://aka.ms/wmf5download) に含まれる) で生成されたドキュメントを認識できるようになりました。
+  - バージョン管理をサポートします。DSC 新しいクライアントで生成されたドキュメントを認識できるようになりました (に含まれている[WMF 5.0](https://aka.ms/wmf5download))。
 
 - エラー防止の向上
   - 構成が適用される前に、モジュールのバージョンが適用されるようになりました。
@@ -132,9 +132,9 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 - 新しい状態、AtBreakpoint が Windows PowerShell ジョブに追加されました。 AtBreakpoint 状態は、ジョブがブレークポイントの設定を含むスクリプトを実行し、スクリプトがブレークポイントにヒットした場合に適用されます。 ジョブがデバッグ ブレークポイントで停止したら、Debug-Job コマンドレットを実行して、ジョブをデバッグする必要があります。
 - Windows PowerShell 5.0 では、$PSModulePath の同一フォルダーにある 1 つの Windows PowerShell モジュールの複数のバージョンに対するサポートを実装しています。 RequiredVersion プロパティが ModuleSpecification クラスに追加され、必要なバージョンのモジュールを取得できるようになりました。このプロパティは、ModuleVersion プロパティとは相互に排他的です。 RequiredVersion が、Get-Module、Import-Module、および Remove-Module コマンドレットの FullyQualifiedName パラメーターの値の一部としてサポートされるようになりました。
 - Test-ModuleManifest コマンドレットを実行して、モジュール バージョンを検証できるようになりました。
-- Get-Command コマンドレットの結果が、バージョン列に表示されるようになりました。新しい Version プロパティが CommandInfo クラスに追加されました。 Get-Command では、同じモジュールの複数のバージョンからのコマンドが表示されます。 Version プロパティは、CmdletInfo の派生クラスの一部 (CmdletInfo と ApplicationInfo) でもあります。
+- Get-Command コマンドレットの結果が、バージョン列に表示されるようになりました。新しい Version プロパティが CommandInfo クラスに追加されました。 Get-Command では、同じモジュールの複数のバージョンからのコマンドが表示されます。 Version プロパティは、CmdletInfo の派生クラスの一部でもです。CmdletInfo と ApplicationInfo します。
 - Get-Command に、ShowCommand の情報を PSObject として返す新しいパラメーター、-ShowCommandInfo が追加されました。 これは、Windows PowerShell リモート処理を使用して、Windows PowerShell ISE で Show-Command を実行する場合に、特に便利な機能です。 Microsoft.PowerShell.Utility モジュールの既存の Get-SerializedCommand 関数は、-ShowCommandInfo に置き換えられます。ただし、Get-SerializedCommand スクリプトは、ダウンレベルのスクリプトをサポートするために引き続き使用できます。
-- 新しい Get-ItemPropertyValue コマンドレットでは、ドット表記を使用せずにプロパティの値を取得できます。 たとえば、Windows PowerShell の以前のリリースでは、PowerShellEngine レジストリ キーの Application Base プロパティの値を取得するには、**(Get-ItemProperty -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase).ApplicationBase** を実行します。 Windows PowerShell 5.0 以降では、**Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase** を実行できます。
+- 新しい Get-ItemPropertyValue コマンドレットでは、ドット表記を使用せずにプロパティの値を取得できます。 たとえば、Windows PowerShell の以前のリリースでは、PowerShellEngine レジストリ キーの Application Base プロパティの値を取得するには、次のコマンドを実行できます。**(Get-itemproperty-Path HKLM:\\ソフトウェア\\Microsoft\\PowerShell\\3\\PowerShellEngine-ApplicationBase という名前)。ApplicationBase**します。 Windows PowerShell 5.0 以降では、**Get-ItemPropertyValue -Path HKLM:\\SOFTWARE\\Microsoft\\PowerShell\\3\\PowerShellEngine -Name ApplicationBase** を実行できます。
 - Windows PowerShell コンソールでは、Windows PowerShell ISE と同じ方法の構文の色分けを使用するようになりました。
 - 新しい NetworkSwitch モジュールには、スイッチ、仮想 LAN (VLAN)、および基本的なレイヤー 2 ネットワーク スイッチ ポートの構成を、Windows Server 2012 R2 ロゴ認定を受けたネットワーク スイッチに適用できるコマンドレットが含まれます。
 - FullyQualifiedName パラメーターが、Import-Module コマンドレットと Remove-Module コマンドレットに追加され、1 つのモジュールの複数のバージョンの保存をサポートします。
@@ -221,7 +221,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 - **Passthru** パラメーターが **Enable-JobTrigger** および **Disable-JobTrigger** コマンドレットに追加されました。 Passthru パラメーターを使用すると、実行するコマンドによって作成または変更されるすべてのオブジェクトが表示されます。
 - **Add-Computer** および **Remove-Computer** コマンドレットにワークグループを指定するパラメーターの名前が整合性のあるものになりました。 どちらのコマンドレットでも、パラメーター **WorkgroupName** を使用します。
 - 新しい共通パラメーター **PipelineVariable** が追加されました。 PipelineVariable を使用すると、パイプされたコマンド (またはパイプされたコマンドの一部) の結果を変数として保存し、パイプラインの残りの部分に引き渡すことができます。
-- メソッド構文を使用したコレクションのフィルター処理がサポートされるようになりました。 Where() または Where-Object の構文に似た簡潔なメソッド呼び出しの形式を使用して、オブジェクトのコレクションをフィルター処理できます。 次に例を示します: (Get-Process).where({$_.Name -match 'powershell'})
+- メソッド構文を使用したコレクションのフィルター処理がサポートされるようになりました。 Where() または Where-Object の構文に似た簡潔なメソッド呼び出しの形式を使用して、オブジェクトのコレクションをフィルター処理できます。 次に例を示します。(Get-Process).where({$_.Name -match 'powershell'})
 - **Get-Process** コマンドレットに新しいスイッチ パラメーター **IncludeUserName** が追加されました。
 - 新しいコマンドレット **Get-FileHash** が追加されました。これは、指定したファイルのファイル ハッシュをいくつかの形式の中から 1 つ返します。
 - Windows PowerShell 4.0 では、モジュールが自らのマニフェストの中で **DefaultCommandPrefix** キーを使用している場合、またはユーザーが **Prefix** パラメーターを指定してモジュールをインポートした場合、モジュールの **ExportedCommands** プロパティにモジュール内のコマンドがプレフィックス付きで表示されます。 モジュールで修飾された構文 (ModuleName\\CommandName) を使用してコマンドを実行するときは、コマンド名にプレフィックスを含める必要があります。
@@ -410,7 +410,7 @@ Windows PowerShell 3.0 以降では、C# コマンドレットの作成者は、
 
 さらに、**HelpUri** の値は、コマンドレットの XML ベースのヘルプ ファイルにある最初の関連リンク内や、関数内のコメント ベースのヘルプにある .Link ディレクティブにも組み込めます。
 
-オンライン ヘルプのサポートに関する詳細は、MSDN にある「[オンライン ヘルプのサポート](https://go.microsoft.com/fwlink/?LinkId=242132)」を参照してください。
+オンライン ヘルプのサポートに関する詳細については、次を参照してください。[オンライン ヘルプのサポート](/powershell/developer/module/supporting-online-help)、Microsoft のドキュメント。
 
 ### <a name="cim-integration"></a>CIM の統合
 
@@ -481,7 +481,7 @@ Windows PowerShell 3.0 には、言語を単純化し、使いやすくし、一
 |New-CimSessionOption|Update-Help|
 |New-IseSnippet||
 
-### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>既存のコア コマンドレットと ProvidersWindows PowerShell 3.0 の機能強化には、簡略化された構文と、次のコマンドレットの新しいパラメーターを含む既存のコマンドレットの新機能が含まれています Computer コマンドレット、CSV コマンドレット、Get-childitem、Get-command、。Get-content、Get-history、Measure-object、Security コマンドレット、Select-object、Select-string、Split-path、Start-process、Tee-object、Test-connection、Add-member、および WMI コマンドレット。
+### <a name="improvements-to-existing-core-cmdlets-and-providerswindows-powershell-30-includes-new-features-for-existing-cmdlets-including-the-simplified-syntax-and-new-parameters-for-the-following-cmdlets-computer-cmdlets-csv-cmdlets-get-childitem-get-command-get-content-get-history-measure-object-security-cmdlets-select-object-select-string-split-path-start-process-tee-object-test-connection-add-member-and-wmi-cmdlets"></a>既存のコア コマンドレットと ProvidersWindows PowerShell 3.0 の機能強化には、簡略化された構文と、次のコマンドレットの新しいパラメーターを含む既存のコマンドレットの新機能が含まれています。Computer コマンドレット、CSV コマンドレット、Get-ChildItem、Get-Command、Get-Content、Get-History、Measure-Object、Security コマンドレット、Select-Object、Select-String、Split-Path、Start-Process、Tee-Object、Test-Connection、Add-Member、および WMI コマンドレット。
 
 また、Windows PowerShell プロバイダーも大幅に機能強化され、Web ホスト用の Secure Socket Layer (SSL) 証明書を管理するための証明書プロバイダーのサポート、資格情報のサポート、およびファイル システム ドライブにおける永続化されたネットワーク ドライブと代替データ ストリームのサポートが改善されました。
 
