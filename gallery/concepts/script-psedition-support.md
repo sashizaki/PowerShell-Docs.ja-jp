@@ -3,20 +3,20 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: 互換性のある PowerShell エディションが含まれるスクリプト
-ms.openlocfilehash: fcfe670a0a9ee71427b4a8adaaf3d612411941f7
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
-ms.translationtype: HT
+ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002413"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655278"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>互換性のある PowerShell エディションが含まれるスクリプト
 
 バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
 
-- **デスクトップ エディション:** .NET Framework 上に構築されており、Server Core や Windows Desktop などの Windows の完全エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
+- Desktop Edition.NET Framework 上に構築され、スクリプトおよび Server Core などの Windows と Windows デスクトップの完全エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。
 
-- **コア エディション:** .NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
+- **コア エディション:**.NET Core 上に構築され、スクリプトおよび Nano Server などの Windows や Windows IoT の縮小エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。
 
 PowerShell の実行中のエディションが $PSVersionTable の PSEdition プロパティに表示されます。
 
@@ -67,4 +67,4 @@ Find-Script -Tag PSEdition_Core
 ## <a name="more-details"></a>詳細情報
 
 - [PSEditions が含まれるモジュール](module-psedition-support.md)
-- [PowerShellGallery での PSEditions のサポート](../how-to/finding-packages/searching-by-psedition.md)
+- [PowerShellGallery での PSEditions のサポート](../how-to/finding-packages/searching-by-compatibility.md)
