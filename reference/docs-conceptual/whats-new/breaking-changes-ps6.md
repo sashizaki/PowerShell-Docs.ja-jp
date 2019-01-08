@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell、core
 title: PowerShell Core 6.0 の重要な変更
-ms.openlocfilehash: 60ce7a1676403bb08b57bf852ba725acde86a30c
-ms.sourcegitcommit: 2d9cf1ccb9a653db7726a408ebcb65530dcb1522
-ms.translationtype: HT
+ms.openlocfilehash: d477a9b27e8d5df6653ee40f8b606879b60a80c7
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2018
-ms.locfileid: "34309616"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655448"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell Core 6.0 の重要な変更
 
@@ -19,7 +19,7 @@ ms.locfileid: "34309616"
 
 .NET Core では Windows Workflow Foundation がサポートされていないため、PowerShell Core の PowerShell ワークフローのサポートを終了します。
 
-今後、PowerShell ワークフローを必要としない、PowerShell 言語でのネイティブの並列処理と同時実行が可能になる予定です。
+今後、PowerShell ワークフローを必要としない、PowerShell 言語でのネイティブの並列処理とコンカレンシーが可能になる予定です。
 
 [workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
@@ -271,3 +271,4 @@ Web コマンドレットの基となる .NET API が `System.Net.Http.HttpClien
 - `System.Net.ServicePointManager` 設定は使用できなくなります。
 - 現在、macOS では、証明書を使用した認証は使用できません。
 - `http://` URI 経由で `-Credential` を使用するとエラーになります。 `https://` URI を使用するか、または `-AllowUnencryptedAuthentication`パラメーターを指定してエラーを回避してください。
+- `-MaximumRedirection` リダイレクトの試行が最後のリダイレクトの結果を返す代わりに、指定された制限を超えたときに今すぐ終了エラーが生成されます。

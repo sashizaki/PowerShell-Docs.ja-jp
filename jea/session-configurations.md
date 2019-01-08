@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: JEA, PowerShell, セキュリティ
 title: JEA セッションの構成
-ms.openlocfilehash: bdf3659357045203d90e8083613e51cce657da1a
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
-ms.translationtype: HT
+ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522963"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655465"
 ---
 # <a name="jea-session-configurations"></a>JEA セッションの構成
 
-> 適用先: Windows PowerShell 5.0
+> 適用先:Windows PowerShell 5.0
 
 JEA エンドポイントは、PowerShell セッション構成ファイルを特定の方法で作成して登録することにより、システムに登録されます。
 セッションの構成によって、"*誰が*" JEA エンドポイントを使用でき、どのロールにアクセスできるかが決まります。
@@ -80,6 +80,8 @@ RunAsVirtualAccount = $true
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+> [!NOTE]
+> 仮想アカウントは、ローカル サーバーのセキュリティ ポリシーでサービスとしてログオンを一時的に付与されます。  指定 VirtualAccountGroups のいずれかが既に許可されている場合、ポリシーでは、この権限を個々 の仮想アカウントが不要になった追加され、ポリシーから削除します。  これは、ドメイン コント ローラーのセキュリティ ポリシーのリビジョンが密接に監査対象のドメイン コント ローラーなどのシナリオで役立ちます。  これは、2018 年 11 月に Windows Server 2016 または後でプログラムのロールアップと 2019 年 1 月に Windows Server 2019 または後でプログラムのロールアップでは使用のみ。
 
 #### <a name="group-managed-service-account"></a>グループの管理されたサービス アカウント
 
