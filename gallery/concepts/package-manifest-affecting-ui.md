@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: PowerShell ギャラリー UI に影響を与えるパッケージ マニフェストの値
-ms.openlocfilehash: 63f5055dff6de404343f80be81a1c786147c0e33
-ms.sourcegitcommit: e76665315fd928bf85210778f1fea2be15264fea
-ms.translationtype: HT
+ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
+ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50225830"
+ms.lasthandoff: 12/20/2018
+ms.locfileid: "53655347"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell ギャラリー UI に影響を与えるパッケージ マニフェストの値
 
@@ -99,9 +99,9 @@ PowerShell ギャラリーと PowerShellGet コマンドレットが独自に扱
 | GIT |  |
 | Server1 | Testing は推奨されません |
 | VersionControl | Version はこれよりも頻繁に使用されますが、精度が低くなります  |
-| ログ | Logging はアクションとしての使用が推奨されます |
+| ログ記録 | Logging はアクションとしての使用が推奨されます |
 | ログ | Log は物としての使用が推奨されます |
-| 予備 |  |
+| バックアップ |  |
 | IaaS |  |
 | Linux |  |
 | IIS |  |
@@ -137,5 +137,5 @@ PowerShell ギャラリーと PowerShellGet コマンドレットが独自に扱
 | AzureRm | AzureRM モジュールで主に使用されます |
 | Zip |  |
 | MSI |  |
-| Mac |  |
+| MacOS |  |
 | PoshBot |  |
