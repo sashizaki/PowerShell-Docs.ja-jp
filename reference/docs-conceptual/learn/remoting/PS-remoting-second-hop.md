@@ -43,7 +43,7 @@ PowerShell リモート処理用に CredSSP を有効にして使う方法の例
 
 Kerberos の無制限の委任を使って、次ホップを実行することもできます。 ただし、この方法では、委任された資格情報が使われる場所を制御することはできません。
 
->**注:****[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳細については、次を参照してください。[セキュリティ フォーカス。'アカウントが機密性の高い and cannot be delegated' を特権アカウントの analysing](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)と[Kerberos 認証のツールと設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**注:** **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳細については、次を参照してください。[セキュリティ フォーカス。'アカウントが機密性の高い and cannot be delegated' を特権アカウントの analysing](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)と[Kerberos 認証のツールと設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### <a name="pros"></a>長所
 
@@ -58,7 +58,7 @@ Kerberos の無制限の委任を使って、次ホップを実行すること�
 
 従来の (リソースに基づかない) 制約付き委任を使って、次ホップを実行できます。
 
->**注:****[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳細については、次を参照してください。[セキュリティ フォーカス。'アカウントが機密性の高い and cannot be delegated' を特権アカウントの analysing](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)と[Kerberos 認証のツールと設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**注:** **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳細については、次を参照してください。[セキュリティ フォーカス。'アカウントが機密性の高い and cannot be delegated' を特権アカウントの analysing](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)と[Kerberos 認証のツールと設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### <a name="pros"></a>長所
 
@@ -76,7 +76,7 @@ Kerberos の無制限の委任を使って、次ホップを実行すること�
 リソースに基づく Kerberos の制約付き委任 (Windows Server 2012 で導入) を使って、リソースが存在するサーバー オブジェクトでの資格情報の委任を構成します。
 上で説明した次ホップのシナリオでは、_ServerC_ を構成して、受け入れる委任された資格情報の委任元を指定します。
 
->**注:****[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳細については、次を参照してください。[セキュリティ フォーカス。'アカウントが機密性の高い and cannot be delegated' を特権アカウントの analysing](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)と[Kerberos 認証のツールと設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**注:** **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳細については、次を参照してください。[セキュリティ フォーカス。'アカウントが機密性の高い and cannot be delegated' を特権アカウントの analysing](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)と[Kerberos 認証のツールと設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
 
 ### <a name="pros"></a>長所
 

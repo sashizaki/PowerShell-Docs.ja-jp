@@ -190,7 +190,7 @@ configuration RenameVM
 
 ## <a name="supporting-psdscrunascredential"></a>PsDscRunAsCredential のサポート
 
->**注:****PsDscRunAsCredential** PowerShell 5.0 以降ではサポートされています。
+>**注:** **PsDscRunAsCredential** PowerShell 5.0 以降ではサポートされています。
 
 **PsDscRunAsCredential** プロパティを [DSC 構成](../configurations/configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。
 詳細については、「[ユーザーの資格情報を指定して DSC を実行する](../configurations/runAsUser.md)」を参照してください。
