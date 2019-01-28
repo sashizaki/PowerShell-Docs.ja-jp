@@ -53,7 +53,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
   > **ConfigurationID** を使用したプル サーバーの構成については、「[構成 ID を使用したプル クライアントのセットアップ](pullClientConfigId.md)」を参照してください。
 
 - **ConfigurationNames** プロパティは、クライアント ノード用の構成の名前を指定する配列です。
-  >**注:****ConfigurationNames** に複数の値を指定する場合、構成に **PartialConfiguration** ブロックも指定する必要があります。
+  >**注:** **ConfigurationNames** に複数の値を指定する場合、構成に **PartialConfiguration** ブロックも指定する必要があります。
   >部分構成の詳細については、「[PowerShell Desired State Configuration の部分構成](partialConfigs.md)」を参照してください。
 
 ```powershell
