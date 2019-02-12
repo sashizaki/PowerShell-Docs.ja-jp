@@ -1,21 +1,21 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: 76aa4a372602d78e013b2138eb6409304a4dfb76
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: HT
+ms.openlocfilehash: ac17333145fd8bd05aea7d32b13d95fdd0421504
+ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34190062"
+ms.lasthandoff: 02/07/2019
+ms.locfileid: "55887567"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Desired State Configuration (DSC) の既知の問題と制限事項
 
-<a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>重要な変更: WMF 5.0 RTM をインストールした後、DSC 構成でパスワードの暗号化/暗号化の解除に使用される証明書が機能しない場合がある
+<a name="breaking-change-certificates-used-to-encryptdecrypt-passwords-in-dsc-configurations-may-not-work-after-installing-wmf-50-rtm"></a>重大な変更。WMF 5.0 RTM をインストールした後は DSC 構成でパスワードの暗号化/暗号化解除に使用される証明書が機能しません。
 --------------------------------------------------------------------------------------------------------------------------------
 
 WMF 4.0 および WMF 5.0 Preview リリースでは、DSC の構成内で 121 文字を超える長さのパスワードを使用できません。 DSC では、長い強力なパスワードが必要な場合でも、短いパスワードを使用する必要がありました。 この重要な変更により、DSC 構成で任意の長さのパスワードを使用できます。
 
-**解決策:** データの暗号化またはキーの暗号化のキーの使用法と、ドキュメントの暗号化拡張キー使用法 (1.3.6.1.4.1.311.80.1) を含む証明書を再作成します。 Technet の記事 <https://technet.microsoft.com/library/dn807171.aspx> に詳しい説明があります。
+**解決策:** データの暗号化またはキーの暗号化キーの使用状況、およびドキュメントの暗号化拡張キー使用法 (1.3.6.1.4.1.311.80.1) を持つ証明書を再作成します。 Technet の記事 <https://technet.microsoft.com/library/dn807171.aspx> に詳しい説明があります。
 
 
 <a name="dsc-cmdlets-may-fail-after-installing-wmf-50-rtm"></a>WMF 5.0 RTM をインストールした後、DSC のコマンドレットが失敗することがある
@@ -48,21 +48,21 @@ Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof
 
 LCM が DebugMode の場合、CTRL + C キーを押して Get-DscConfiguration の処理を停止すると、DSC コマンドレットの大部分が機能しないような不安定な状態になることがあります。
 
-**解決策:** Get-DscConfiguration コマンドレットのデバッグ中に CTRL + C キーを押さないようにします。
+**解決策:** しない Get-dscconfiguration コマンドレットのデバッグ中に ctrl キーを押しながら C キーを押します。
 
 
-<a name="stop-dscconfiguration-may-hang-in-debugmode"></a>Stop-DscConfiguration が DebugMode でハングすることがある
+<a name="stop-dscconfiguration-may-not-respond-in-debugmode"></a>Stop-dscconfiguration が DebugMode で応答しない可能性があります。
 ------------------------------------------------------------------------------------------------------------------------
-LCM が DebugMode の場合、Get-DscConfiguration で開始された操作を停止しようとすると Stop-DscConfiguration がハングする場合があります。
+Stop-dscconfiguration が Get-dscconfiguration で開始操作を停止しようとする際に応答しない LCM が DebugMode の場合は、
 
-**解決策:** Get-DscConfiguration で開始された操作のデバッグを「[DSC リソースのデバッグ](https://msdn.microsoft.com/powershell/dsc/debugresource)」セクションの説明に従って終了します。
+**解決策:** セクションで説明したように、Get-dscconfiguration で開始された操作のデバッグを終了 '[デバッグ DSC リソース](https://msdn.microsoft.com/powershell/dsc/debugresource)'。
 
 
 <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>DebugMode で詳細なエラー メッセージが表示されない
 -----------------------------------------------------------------------------------
 LCM が DebugMode の場合は、DSC リソースから詳細なエラー メッセージが表示されません。
 
-**解決策:** リソースからの詳細なメッセージを表示するには、*DebugMode* を無効にします。
+**解決策:** 無効にする*DebugMode*リソースから詳細なメッセージを表示するには
 
 
 <a name="invoke-dscresource-operations-cannot-be-retrieved-by-get-dscconfigurationstatus-cmdlet"></a>Get-DscConfigurationStatus コマンドレットで Invoke-DscResource 操作を取得できない
@@ -88,7 +88,7 @@ Invoke-DscResource コマンドレットでは、詳細、警告、およびエ�
 <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Invoke-DscResource と共に使用すると、DSC リソースを簡単にデバッグできない
 -----------------------------------------------------------------------
 LCM がデバッグ モードで実行されている場合 (詳細については「[DSC リソースのデバッグ](https://msdn.microsoft.com/powershell/dsc/debugresource)」を参照)、Invoke-DscResource コマンドレットはデバッグ用に接続する実行空間に関する情報を提供しません。
-**解決策:** **Get-PSHostProcessInfo**、**Enter-PSHostProcess**、**Get-Runspace**、および **Debug-Runspace** コマンドレットを使用して実行空間を検出して接続し、DSC リソースをデバッグします。
+**解決策:** コマンドレットを使用して実行空間へのアタッチを見つけて**Get-pshostprocessinfo**、 **Enter-pshostprocess** 、 **Get-runspace**と**Debug-runspace** DSC リソースをデバッグします。
 
 ```powershell
 # Find all the processes hosting PowerShell
@@ -121,7 +121,7 @@ Debug-Runspace -Id 2
 
 1 つのノード上に展開される複数の部分構成では、リソース名が同一であることが実行時エラーの原因となります。
 
-**解決策:** 異なる部分構成では、同じリソースでも異なる名前を使用します。
+**解決策:** 別の部分構成で同じリソースでも異なる名前を使用します。
 
 
 <a name="start-dscconfiguration-useexisting-does-not-work-with--credential"></a>Start-DscConfiguration -UseExisting が -Credential で機能しない
@@ -129,7 +129,7 @@ Debug-Runspace -Id 2
 
 Start-DscConfiguration を -UseExisting パラメーターと共に使用すると、-Credential パラメーターが無視されます。 DSC では、既定のプロセス ID を使用して操作を続行します。 これにより、リモート ノードで処理を続行するために別の資格情報が必要になった場合にエラーが発生します。
 
-**解決策:** リモート DSC 操作に CIM セッションを使用します。
+**解決策:** リモートの DSC 操作に CIM セッションを使用します。
 ```powershell
 $session = New-CimSession -ComputerName $node -Credential $credential
 Start-DscConfiguration -UseExisting -CimSession $session
@@ -155,7 +155,7 @@ DSC 構成スクリプトでのノード名としての IPv6 アドレスは、�
 
 変数または関数が $script スコープで定義されたクラスベース リソースが構成で使用されている場合、Start-DSCConfiguration への複数の連続した呼び出しは失敗します。
 
-**解決策:** すべての変数と関数を DSC リソース クラス自体で定義します。 $script スコープの変数や関数を使用しません。
+**解決策:** DSC リソース クラス自体では、すべての変数と関数を定義します。 $script スコープの変数や関数を使用しません。
 
 
 <a name="dsc-resource-debugging-when-a-resource-is-using-psdscrunascredential"></a>リソースが PSDscRunAsCredential を使用している場合の DSC リソースのデバッグ
@@ -168,7 +168,7 @@ DSC 構成スクリプトでのノード名としての IPv6 アドレスは、�
 <a name="psdscrunascredential-is-not-supported-for-dsc-composite-resources"></a>PsDscRunAsCredential が DSC 複合リソースでサポートされない
 ----------------------------------------------------------------
 
-**解決策:** 利用可能な場合は、資格情報プロパティを使用します。 例 ServiceSet および WindowsFeatureSet
+**解決策:** 使用可能な場合は、資格情報のプロパティを使用します。 例 ServiceSet および WindowsFeatureSet
 
 
 <a name="get-dscresource--syntax-does-not-reflect-psdscrunascredential-correctly"></a>*Get-DscResource -Syntax* が PsDscRunAsCredential correctly を正しく反映しない
@@ -196,7 +196,7 @@ At C:\Windows\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
     + FullyQualifiedErrorId : PSInvalidOperationException,ImportClassResourcesFromModule
 ```
 
-**解決策:** 次のように `RequiredVersion` キーを指定して `-ModuleName` に *ModuleSpecification* オブジェクトを定義することで、必要なバージョンをインポートします。
+**解決策:** 定義することで、必要なバージョンをインポート、 *ModuleSpecification*オブジェクトを`-ModuleName`で`RequiredVersion`次のように指定したキー。
 ``` PowerShell
 Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'}
 ```
@@ -209,7 +209,7 @@ Import-DscResource -ModuleName @{ModuleName='MyModuleName';RequiredVersion='1.2'
 $env:windir\system32\config\systemprofile\AppData\Local\Microsoft\Windows\PowerShell\CommandAnalysis
 ```
 
-**解決方法 2:** 構成の最後に *CommandAnalysis* フォルダーをクリーンアップするように DSC 構成を変更します。
+**解決方法 2:** クリーンアップする DSC 構成の変更、 *CommandAnalysis*構成の最後にあるフォルダーです。
 ``` PowerShell
 Configuration $configName
 {
