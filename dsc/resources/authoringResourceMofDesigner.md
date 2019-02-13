@@ -3,30 +3,30 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: リソース デザイナー ツールの使用
 ms.openlocfilehash: 3fd2f06cf46602ee30dd34f8e7bd77d3c92b808f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402542"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681431"
 ---
 # <a name="using-the-resource-designer-tool"></a>リソース デザイナー ツールの使用
 
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 リソース デザイナー ツールは、Windows PowerShell Desired State Configuration (DSC) リソースの作成を簡単にする、**xDscResourceDesigner** モジュールによって公開されている一連のコマンドレットです。 このリソースのコマンドレットは、MOF スキーマ、スクリプト モジュール、および新しいリソースのディレクトリ構造の作成に役立ちます。 DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」を参照してください。
 このトピックでは、Active Directory ユーザーを管理する DSC リソースを作成します。
 [Install-Module](/powershell/module/PowershellGet/Install-Module) コマンドレットを使用して **xDscResourceDesigner** モジュールをインストールします。
 
->**注**:**Install-module**に含まれている、 **PowerShellGet**モジュールは、PowerShell 5.0 に含まれています。 「[PackageManagement PowerShell Modules Preview (PackageManagement PowerShell モジュールのプレビュー)](https://www.microsoft.com/en-us/download/details.aspx?id=49186)」で PowerShell 3.0 と 4.0 の **PowerShellGet** モジュールをダウンロードできます。
+>**注**: **Install-Module** は、PowerShell 5.0 に含まれている **PowerShellGet** モジュールに含まれています。 「[PackageManagement PowerShell Modules Preview (PackageManagement PowerShell モジュールのプレビュー)](https://www.microsoft.com/en-us/download/details.aspx?id=49186)」で PowerShell 3.0 と 4.0 の **PowerShellGet** モジュールをダウンロードできます。
 
 ## <a name="creating-resource-properties"></a>リソース プロパティの作成
 まず、リソースで公開するプロパティを決定する必要があります。 この例では、次のプロパティを持つ Active Directory ユーザーを定義します。
 
 パラメーター名  説明
-* .**user**nameユーザーを一意に識別するキーのプロパティ。
-* Ensure存在しないか、ユーザー アカウントが存在するかどうかを指定します。 このパラメーターに使用できる値は 2 つのみです。
-* **DomainCredential**:ユーザーのドメインのパスワード。
-* Password必要な場合は、ユーザーのパスワードを変更する構成を許可するユーザーの必要なパスワード。
+* **UserName**: ユーザーを一意に識別するキー プロパティです。
+* **Ensure**: ユーザー アカウントが存在するかしないかを指定します。 このパラメーターに使用できる値は 2 つのみです。
+* **DomainCredential**: ユーザーのドメイン パスワードです。
+* **Password**: 必要に応じて構成でユーザー パスワードを変更できるようにするために必要なユーザーのパスワードです。
 
 プロパティを作成するには、**New-xDscResourceProperty** コマンドレットを使用します。 次の PowerShell コマンドでは、上記で説明したプロパティを作成します。
 

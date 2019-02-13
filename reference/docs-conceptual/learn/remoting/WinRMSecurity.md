@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: WinRMSecurity
 ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402541"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55682611"
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell リモート処理のセキュリティに関する考慮事項
 
@@ -23,14 +23,14 @@ PowerShell リモート処理は、コマンドレットの **ComputerName** パ
 
 PowerShell リモート処理 (および WinRM) は、次のポートをリッスンします。
 
-- ［HTTP］:5985
-- HTTPS :5986
+- HTTP: 5985
+- HTTPS: 5986
 
 既定では、PowerShell リモート処理で許可されている接続は、Administrators グループのメンバーからのもののみです。 セッションはユーザーのコンテキストで開始されるため、PowerShell リモート処理を介して接続されている間は、個々のユーザーとグループに適用されているオペレーティング システムのアクセス制御がすべて、そのセッションに引き続き適用されます。
 
 プライベート ネットワークの場合、PowerShell リモート処理の既定の Windows ファイアウォール規則はすべての接続を受け入れます。 パブリック ネットワークの場合、既定の Windows ファイアウォール規則で許可されるのは、同じサブネット内からの PowerShell リモート処理接続のみです。 パブリック ネットワーク上のすべての接続に対して PowerShell リモート処理を可能にするには、その規則を明示的に変更する必要があります。
 
->警告パブリック ネットワークのファイアウォール規則は、可能性のある悪意のある外部接続の試行からコンピューターを保護します。 この規則を削除する際は注意してください。
+>**警告:** パブリック ネットワークのファイアウォール規則は、悪意のある外部接続からコンピューターを保護することを目的としています。 この規則を削除する際は注意してください。
 
 ## <a name="process-isolation"></a>プロセスの分離
 

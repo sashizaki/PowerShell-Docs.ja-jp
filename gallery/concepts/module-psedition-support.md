@@ -4,18 +4,18 @@ contributor: manikb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: 互換性のある PowerShell エディションが含まれるモジュール
 ms.openlocfilehash: bda924393d37ea1596fbf0d813c10cbdea33c218
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655329"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55680316"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>互換性のある PowerShell エディションが含まれるモジュール
 
 バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
 
-- Desktop Edition.NET Framework 上に構築され、スクリプトおよび Server Core などの Windows と Windows デスクトップの完全エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。
-- **コア エディション:**.NET Core 上に構築され、スクリプトおよび Nano Server などの Windows や Windows IoT の縮小エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。
+- **デスクトップ エディション:** .NET Framework 上に構築されており、Server Core や Windows Desktop などの Windows の完全エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
+- **コア エディション:** .NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
 
 PowerShell の実行中のエディションが `$PSVersionTable` の PSEdition プロパティに表示されます。
 
@@ -96,7 +96,7 @@ Core
 
 1 つのモジュールが、デスクトップとコアの両方のエディションで動作します。そのモジュール内で、作成者は、$PSEdition 変数を使用して、RootModule またはモジュール マニフェストで必要なロジックを追加する必要があります。 モジュールでは、CoreCLR と FullCLR の両方を対象とするコンパイル済み DLL の 2 つのセットを使用できます。 次に、適切な dll を読み込むためのロジックを含むモジュールをパッケージ化するためのいくつかのオプションを示します。
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>オプション 1:複数のバージョンと PowerShell の複数のエディションを対象とするためのモジュールをパッケージ化
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>オプション 1: PowerShell の複数のバージョンおよび複数のエディションを対象としてパッケージ化する
 
 モジュール フォルダーの内容
 
@@ -174,7 +174,7 @@ $PSModule.OnRemove = {
 }
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>オプション 2:PSD1 ファイルで $PSEdition 変数を使用して、適切な Dll と入れ子になった/必要なモジュールを読み込む
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>オプション 2: PSD1 ファイルで $PSEdition 変数を使用して適切な DLL と入れ子になった/必要なモジュールを読み込む
 
 PS 5.1 以降では、$PSEdition グローバル変数をモジュール マニフェスト ファイル内で使用できます。 この変数を使用すると、モジュールの作成者が、モジュール マニフェスト ファイル内で条件値を指定できます。 $PSEdition 変数は、制限された言語モードまたはデータ セクション内で参照できます。
 

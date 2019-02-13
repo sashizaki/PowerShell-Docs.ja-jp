@@ -2,16 +2,16 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: ローカル構成マネージャーの構成
-ms.openlocfilehash: c3ced2376c7d99477c40ae078dcecd775538b350
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402661"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681491"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>ローカル構成マネージャーの構成
 
-> 適用先:Windows PowerShell 5.0
+> 適用先: Windows PowerShell 5.0
 
 ローカル構成マネージャー (LCM) は、Desired State Configuration (DSC) のエンジンです。
 LCM は、すべてのターゲット ノード上で実行され、ノードに送信される構成の解析と適用を担当します。
@@ -77,16 +77,27 @@ LCM 構成には、限定されたリソースのセットに対するブロッ�
 | CertificateID| string| 構成で渡される資格情報をセキュリティで保護するために使用される証明書の拇印。 詳細については、「[Want to secure credentials in Windows PowerShell Desired State Configuration? (Windows PowerShell Desired State Configuration で資格情報をセキュリティ保護する)](http://blogs.msdn.com/b/powershell/archive/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration.aspx)」をご覧ください。 <br> __注:__ Azure Automation DSC プル サービスを使用している場合、このプロパティは自動で管理されます。|
 | ConfigurationDownloadManagers| CimInstance[]| 使われていません。 構成プル サービスのエンドポイントを定義するには、__ConfigurationRepositoryWeb__ ブロックと __ConfigurationRepositoryShare__ ブロックを使用します。|
 | ConfigurationID| string| 旧バージョンのプル サービスとの互換性用。 プル サービスから取得する構成ファイルを識別する GUID。 構成 MOF の名前が ConfigurationID.mof の場合、ノードはプル サービスで構成をプルします。<br> __注:__ このプロパティを設定した場合、__RegistrationKey__ を使用してプル サービスへノードを登録することはできません。 詳細については、「[構成名を使用したプル クライアントのセットアップ](../pull-server/pullClientConfigNames.md)」を参照してください。|
-| ConfigurationMode| string | LCM が実際に構成をターゲット ノードに適用する方法を指定します。 指定できる値は __"ApplyOnly"__、__"ApplyAndMonitior"__、__"ApplyAndAutoCorrect"__ です。 <ul><li>__ApplyOnly__: DSC によって構成が適用され、その後何も行われません。ただし、ターゲット ノードに新しい構成がプッシュされたか、新しい構成がサービスからプルされた場合を除きます。 新しい構成を最初に適用した後、DSC では以前に構成した状態からのずれを確認しません。 DSC は成功するまで構成の適用を試みて、成功すると __ApplyOnly__ が有効になります。 </li><li> __ApplyAndMonitor__:これは、既定値です。 LCM は、新しい構成を適用します。 新しい構成を最初に適用した後、ターゲット ノードが望ましい状態からずれた場合、DSC では、ログで不一致を報告します。 DSC は成功するまで構成の適用を試みて、成功すると __ApplyAndMonitor__ が有効になります。</li><li>__ApplyAndAutoCorrect__: DSC によって新しい構成が適用されます。 新しい構成を最初に適用した後、ターゲット ノードが望ましい状態からずれた場合、DSC では、ログで不一致を報告し、現在の構成を再度適用します。</li></ul>|
+| ConfigurationMode| string | LCM が実際に構成をターゲット ノードに適用する方法を指定します。 指定できる値は __"ApplyOnly"__、__"ApplyAndMonitior"__、__"ApplyAndAutoCorrect"__ です。 <ul><li>__ApplyOnly__: DSC によって構成が適用され、その後何も行われません。ただし、ターゲット ノードに新しい構成がプッシュされたか、新しい構成がサービスからプルされた場合を除きます。 新しい構成を最初に適用した後、DSC では以前に構成した状態からのずれを確認しません。 DSC は成功するまで構成の適用を試みて、成功すると __ApplyOnly__ が有効になります。 </li><li> __"ApplyAndMonitor"__: これは既定値です。 LCM は、新しい構成を適用します。 新しい構成を最初に適用した後、ターゲット ノードが望ましい状態からずれた場合、DSC では、ログで不一致を報告します。 DSC は成功するまで構成の適用を試みて、成功すると __ApplyAndMonitor__ が有効になります。</li><li>__ApplyAndAutoCorrect__: DSC によって新しい構成が適用されます。 新しい構成を最初に適用した後、ターゲット ノードが望ましい状態からずれた場合、DSC では、ログで不一致を報告し、現在の構成を再度適用します。</li></ul>|
 | ConfigurationModeFrequencyMins| UInt32| 現在の構成がチェックおよび適用される頻度 (分単位) ConfigurationMode プロパティが ApplyOnly に設定されている場合、このプロパティは無視されます。 既定値は 15 です。|
 | DebugMode| string| 指定できる値は __None__、__ForceModuleImport__、および __All__ です。 <ul><li>キャッシュされたリソースを使用する場合は、__None__ に設定します。 これが既定値であり、運用シナリオではこの値を使う必要があります。</li><li>__ForceModuleImport__ に設定すると、以前に読み込まれ、キャッシュされた DSC リソース モジュールも LCM によって再読み込みされます。 これは、使用時に各モジュールが再読み込みされるため、DSC 操作のパフォーマンスに影響します。 通常、リソースのデバッグ中には、この値を使用します</li><li>このリリースでは、__All__ は、__ForceModuleImport__ と同じです。</li></ul> |
-| RebootNodeIfNeeded| ブール| 再起動が必要な構成が適用された後にノードを自動的に再起動するには、これを __$true__ に設定します。 設定しない場合は、再起動が必要な構成のノードを手動で再起動する必要があります。 既定値は __$false__ です。 DSC 以外 (Windows インストーラーなど) で再起動の条件が有効化されている場合にこの設定を使用するには、この設定を [xPendingReboot](https://github.com/powershell/xpendingreboot) モジュールと併用します。|
+| RebootNodeIfNeeded| ブール| これを設定`$true`リソースを使用して、ノードを再起動するように、`$global:DSCMachineStatus`フラグ。 設定しない場合は、再起動が必要な構成のノードを手動で再起動する必要があります。 既定値は `$false` です。 DSC 以外 (Windows インストーラーなど) で再起動の条件が有効化されている場合にこの設定を使用するには、この設定を [xPendingReboot](https://github.com/powershell/xpendingreboot) モジュールと併用します。|
 | RefreshMode| string| LCM が構成を取得する方法を指定します。 指定できる値は、__"Disabled"__、__"Push"__、__"Pull"__ です。 <ul><li>__"Disabled"__: このノードの DSC 構成が無効になります。</li><li> __"Push"__: [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを呼び出すことによって構成を開始します。 構成は、ノードにすぐに適用されます。 これは、既定値です。</li><li>__Pull:__ プル サービスまたは SMB パスで構成を定期的にチェックするようにノードを構成します。 このプロパティを __Pull__ に設定する場合、__ConfigurationRepositoryWeb__ ブロックまたは __ConfigurationRepositoryShare__ ブロックで HTTP (サービス) または SMB (共有) パスを指定する必要があります。</li></ul>|
 | RefreshFrequencyMins| Uint32| LCM がプル サービスをチェックして最新の構成を取得する時間間隔 (分)。 この値は、LCM がプル モードで構成されていない場合は無視されます。 既定値は 30 です。|
 | ReportManagers| CimInstance[]| 使われていません。 プル サービスへデータをレポートするエンドポイントを定義するには、__ReportServerWeb__ ブロックを使用します。|
 | ResourceModuleManagers| CimInstance[]| 使われていません。 プル サービスの HTTP エンドポイントまたは SMB パスを定義するには、__ResourceRepositoryWeb__ ブロックまたは __ResourceRepositoryShare__ ブロックをそれぞれ使用します。|
 | PartialConfigurations| CimInstance| 実装されていません。 使用しないでください。|
 | StatusRetentionTimeInDays | UInt32| LCM が現在の構成の状態を保持する日数。|
+
+> [!NOTE]
+> LCM が開始、 **ConfigurationModeFrequencyMins**サイクルに基づいて。
+>
+> - 使用して新しい metaconfig を適用します。 `Set-DscLocalConfigurationManager`
+> - コンピューターの再起動
+>
+> タイマーのプロセスが発生した任意の条件と 30 秒、サイクル内で検出されると、クラッシュが再起動されます。
+> 同時実行操作は、サイクルを遅れる可能性がありますから開始して、この操作の期間が構成済みのサイクルの頻度を超えた場合、次のタイマーは開始されません。
+>
+> 例ではの metaconfig は 15 分間のプル頻度で構成され、プルは、t1 に発生します。  ノードは、16 分の作業を完了できません。  最初のサイクルは 15 分間は無視され、T1 + 15 + 15 で [次へ] のプルが実行されます。
 
 ## <a name="pull-service"></a>プル サービス
 
@@ -111,7 +122,7 @@ Web ベースの構成サーバーを定義するには、**ConfigurationReposit
 |RegistrationKey|string|プル サービスにノードを登録する GUID。 詳細については、「[構成名を使用したプル クライアントのセットアップ](../pull-server/pullClientConfigNames.md)」を参照してください。|
 |ServerURL|string|構成サービスの URL。|
 
-オンプレミス ノードの ConfigurationRepositoryWeb 値の設定を簡単に行うサンプル スクリプトが用意されています。「[DSC メタ構成の生成](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)」を参照してください。
+オンプレミス ノードの ConfigurationRepositoryWeb 値の設定を簡単に行うサンプル スクリプトが用意されています。「[DSC メタ構成の生成](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)」を参照してください。
 
 SMB ベースの構成サーバーを定義するには、**ConfigurationRepositoryShare** ブロックを作成します。
 **ConfigurationRepositoryShare** は次のプロパティを定義します。
@@ -133,7 +144,7 @@ Web ベースのリソース サーバーを定義するには、**ResourceRepos
 |RegistrationKey|string|プル サービスにノードを指定する GUID。|
 |ServerURL|string|構成サーバーの URL。|
 
-オンプレミス ノードの ResourceRepositoryWeb 値の設定を簡単に行うサンプル スクリプトが用意されています。「[DSC メタ構成の生成](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)」を参照してください。
+オンプレミス ノードの ResourceRepositoryWeb 値の設定を簡単に行うサンプル スクリプトが用意されています。「[DSC メタ構成の生成](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)」を参照してください。
 
 SMB ベースのリソース サーバーを定義するには、**ResourceRepositoryShare** ブロックを作成します。
 **ResourceRepositoryShare** は次のプロパティを定義します。
@@ -156,7 +167,7 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 |RegistrationKey|string|プル サービスにノードを指定する GUID。|
 |ServerURL|string|構成サーバーの URL。|
 
-オンプレミス ノードの ReportServerWeb 値の設定を簡単に行うサンプル スクリプトが用意されています。「[DSC メタ構成の生成](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)」を参照してください。
+オンプレミス ノードの ReportServerWeb 値の設定を簡単に行うサンプル スクリプトが用意されています。「[DSC メタ構成の生成](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)」を参照してください。
 
 ## <a name="partial-configurations"></a>部分構成
 
@@ -170,7 +181,7 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 |DependsOn|string{}|この部分構成が適用される前に完了する必要があるその他の構成の名前の一覧。|
 |説明|string|部分構成を記述するために使用するテキスト。|
 |ExclusiveResources|string[]|この部分構成に固有のリソースの配列。|
-|RefreshMode|string|LCM がこの部分構成を取得する方法を指定します。 指定できる値は、__"Disabled"__、__"Push"__、__"Pull"__ です。 <ul><li>__Disabled__: この部分的な構成が無効になります。</li><li> __Push__: [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) コマンドレットを呼び出すと、部分構成がノードにプッシュされます。 ノードのすべての部分構成がプッシュされたか、またはサービスからプルされた後、`Start-DscConfiguration –UseExisting` を呼び出すことで構成を開始できます。 これは、既定値です。</li><li>__Pull__: プル サービスで部分構成を定期的にチェックするようにノードを構成します。 このプロパティを __Pull__ に設定する場合、__ConfigurationSource__ プロパティでプル サービスを指定する必要があります。 Azure Automation プル サービスの詳細については、「[Azure Automation DSC Overview](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)」を参照してください。</li></ul>|
+|RefreshMode|string|LCM がこの部分構成を取得する方法を指定します。 指定できる値は、__"Disabled"__、__"Push"__、__"Pull"__ です。 <ul><li>__Disabled__: この部分的な構成が無効になります。</li><li> __Push__: [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration) コマンドレットを呼び出すと、部分構成がノードにプッシュされます。 ノードのすべての部分構成がプッシュされたか、またはサービスからプルされた後、`Start-DscConfiguration –UseExisting` を呼び出すことで構成を開始できます。 これは、既定値です。</li><li>__Pull__: プル サービスで部分構成を定期的にチェックするようにノードを構成します。 このプロパティを __Pull__ に設定する場合、__ConfigurationSource__ プロパティでプル サービスを指定する必要があります。 Azure Automation プル サービスの詳細については、「[Azure Automation DSC Overview](https://docs.microsoft.com/azure/automation/automation-dsc-overview)」を参照してください。</li></ul>|
 |ResourceModuleSource|string[]|この部分構成に必要なリソースのダウンロード元となるリソース サーバーの名前の配列。 これらの名前では、**ResourceRepositoryWeb** ブロックおよび **ResourceRepositoryShare** ブロックで以前に定義したサービス エンドポイントを参照する必要があります。|
 
 __注:__ 部分構成は Azure Automation DSC でサポートされていますが、各 Automation アカウントからプルできる構成はノードごとに 1 つだけです。
@@ -180,7 +191,7 @@ __注:__ 部分構成は Azure Automation DSC でサポートされています�
 ### <a name="concepts"></a>概念
 [Desired State Configuration の概要](../overview/overview.md)
 
-[Azure Automation DSC の使用](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-getting-started)
+[Azure Automation DSC の使用](https://docs.microsoft.com/azure/automation/automation-dsc-getting-started)
 
 ### <a name="other-resources"></a>その他のリソース
 

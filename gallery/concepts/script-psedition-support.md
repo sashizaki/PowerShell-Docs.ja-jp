@@ -4,19 +4,19 @@ contributor: manikb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: 互換性のある PowerShell エディションが含まれるスクリプト
 ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655278"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681420"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>互換性のある PowerShell エディションが含まれるスクリプト
 
 バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
 
-- Desktop Edition.NET Framework 上に構築され、スクリプトおよび Server Core などの Windows と Windows デスクトップの完全エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。
+- **デスクトップ エディション:** .NET Framework 上に構築されており、Server Core や Windows Desktop などの Windows の完全エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
 
-- **コア エディション:**.NET Core 上に構築され、スクリプトおよび Nano Server などの Windows や Windows IoT の縮小エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。
+- **コア エディション:** .NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
 
 PowerShell の実行中のエディションが $PSVersionTable の PSEdition プロパティに表示されます。
 

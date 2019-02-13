@@ -2,12 +2,12 @@
 ms.date: 06/12/2018
 keywords: WMF, PowerShell, セットアップ
 title: Windows Management Framework (WMF)
-ms.openlocfilehash: 17011f88c364cb56a0c87f092873ccd99db450bc
-ms.sourcegitcommit: 68093cc12a7a22c53d11ce7d33c18622921a0dd1
-ms.translationtype: HT
+ms.openlocfilehash: f279f975527dc198dd9b47ca1dc4258f54fafef5
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/26/2018
-ms.locfileid: "36943608"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679996"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 
@@ -37,6 +37,7 @@ PowerShell と特定の WMF のその他のコンポーネントのさまざま�
 
 |オペレーティング システムのバージョン  |[WMF 5.1][] |[WMF 5.0][] |[WMF 4.0][] |[WMF 3.0][]  |[WMF 2.0][] |
 |--------------------------|------------|------------|------------|-------------|------------|
+|Windows Server 2019       |出荷時にインストール済み|            |            |             |            |
 |Windows Server 2016       |出荷時にインストール済み|            |            |             |            |
 |Windows 10                |出荷時にインストール済み|出荷時にインストール済み|            |             |            |
 |Windows Server 2012 R2    |可         |可         |出荷時にインストール済み|             |            |

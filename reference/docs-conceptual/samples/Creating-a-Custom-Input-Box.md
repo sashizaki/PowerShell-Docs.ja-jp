@@ -4,11 +4,11 @@ keywords: PowerShell, コマンドレット
 title: ユーザー設定の入力ボックスを作成する
 ms.assetid: 0b12e56c-299f-40ee-afbf-d30d23ed2565
 ms.openlocfilehash: 2d04ad6df65cdb4ff13d136dea47bbba6a01f3a2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402229"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681910"
 ---
 # <a name="creating-a-custom-input-box"></a>ユーザー設定の入力ボックスを作成する
 
@@ -66,7 +66,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-最初に、スクリプトは次の 2 つの .NET Framework クラスを読み込みます。**System.Drawing** と **System.Windows.Forms** です。 次に、.NET Framework クラス **System.Windows.Forms.Form** の新しいインスタンスを開始します。これにより、コントロールの追加を開始する空白のフォームまたはウィンドウが作成されます。
+このスクリプトは 2 つの .NET Framework クラス、つまり **System.Drawing** と **System.Windows.Forms** を最初に読み込みます。 次に、.NET Framework クラス **System.Windows.Forms.Form** の新しいインスタンスを開始します。これにより、コントロールの追加を開始する空白のフォームまたはウィンドウが作成されます。
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form

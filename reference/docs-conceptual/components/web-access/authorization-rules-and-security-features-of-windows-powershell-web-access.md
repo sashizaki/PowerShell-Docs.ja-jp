@@ -2,18 +2,18 @@
 ms.date: 06/27/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access の承認規則とセキュリティ機能
-ms.openlocfilehash: 95c61d3a0431cda9dee738d1c9f5ec843c1209f3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402766"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681261"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Access の承認規則とセキュリティ機能
 
-更新:2013 年 6 月 24 日
+最終更新日: 2013 年 6 月 24 日
 
-適用先:Windows Server 2012 R2、Windows Server 2012
+適用対象: Windows Server 2012 R2、Windows Server 2012
 
 Windows Server 2012 R2 および Windows Server 2012 の Windows PowerShell Web Access のセキュリティ モデルには制限があります。 ユーザーが Windows PowerShell Web Access ゲートウェイにサインインし、Web ベースの Windows PowerShell コンソールを使用するには、アクセス許可が明示的に付与されている必要があります。
 
@@ -30,7 +30,7 @@ Windows PowerShell Web Access の認証規則はホワイトリスト方式で�
 **実行空間**の説明については、「[PowerShell 実行空間の使用を開始する) を参照してください](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)」
 
 > [!IMPORTANT]
-> アクセスを許可されるためにユーザーが従う必要がある規則は 1 つだけです。 1 つのコンピューターに対する全言語でのアクセス、または Windows PowerShell リモート管理コマンドレットだけに対するアクセスを許可されているユーザーは、Web ベース コンソールから、最初の対象コンピューターに接続されているその他のコンピューターにログオン (ホップ) できます。 Windows PowerShell Web Access の最も安全な構成方法は、制約付きセッション構成に対するアクセスだけを許可し、通常リモートでの実行が必要になる特定のタスクを完了できるようにする方法です。
+> アクセスを許可されるためにユーザーが従う必要がある規則は 1 つだけです。 1 つのコンピューターに対する全言語でのアクセス、または Windows PowerShell リモート管理コマンドレットだけに対するアクセスを許可されているユーザーは、Web ベース コンソールから、最初のターゲット コンピューターに接続されているその他のコンピューターにログオン (ホップ) できます。 Windows PowerShell Web Access の最も安全な構成方法は、制約付きセッション構成に対するアクセスだけを許可し、通常リモートでの実行が必要になる特定のタスクを完了できるようにする方法です。
 
 [Windows PowerShell Web Access コマンドレット](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)で参照されるコマンドレットにより作成される一連のアクセス規則を利用し、Windows PowerShell Web Access ゲートウェイでユーザーを承認できます。 これらの規則は、対象コンピューター上のアクセス制御リスト (ACL) とは別に、Web アクセスに対する追加のセキュリティ層として機能します。 以降のセクションでは、セキュリティについてさらに詳しく説明します。
 
@@ -40,7 +40,7 @@ Windows PowerShell Web Access の認証規則はホワイトリスト方式で�
 
 ### <a name="security"></a>セキュリティ
 
-Windows PowerShell Web Access のセキュリティ モデルは、Web ベース コンソールのエンド ユーザーと対象コンピューターの間に 4 つの層を構成します。 Windows PowerShell Web Access 管理者は、IIS マネージャー コンソールで構成を追加することで、セキュリティ層をさらに追加できます。 IIS マネージャー コンソールで Web サイトを保護する方法について詳しくは、「[Web サーバーのセキュリティを構成する (IIS7)](https://technet.microsoft.com/library/cc731278)」をご覧ください。
+Windows PowerShell Web Access のセキュリティ モデルは、Web ベース コンソールのエンド ユーザーとターゲット コンピューターの間に 4 つの層を構成します。 Windows PowerShell Web Access 管理者は、IIS マネージャー コンソールで構成を追加することで、セキュリティ層をさらに追加できます。 IIS マネージャー コンソールで Web サイトを保護する方法について詳しくは、「[Web サーバーのセキュリティを構成する (IIS7)](https://technet.microsoft.com/library/cc731278)」をご覧ください。
 
 IIS のベスト プラクティスと、サービス拒否攻撃を阻止する方法の詳細については、[DoS/サービス拒否攻撃阻止のベスト プラクティスに関するページ](https://technet.microsoft.com/library/cc750213)を参照してください。
 管理者は、市販の認証ソフトウェアを購入してインストールすることも可能です。
@@ -66,24 +66,24 @@ Windows PowerShell Web Access のユーザーは、常にゲートウェイで�
 
 #### <a name="windows-powershell-web-access-forms-based-gateway-authentication"></a>Windows PowerShell Web Access のフォーム ベースのゲートウェイ認証
 
-Windows PowerShell Web Access のサインイン ページは、一連の資格情報 (ユーザー名とパスワード) を要求すると共に、対象コンピューターに対する別の資格情報を提示するためのオプションをユーザーに提供します。
-ユーザーがその他の資格情報を提示しない場合、ゲートウェイへの接続に使われるプライマリのユーザー名とパスワードが、対象コンピューターへの接続にも使われます。
+Windows PowerShell Web Access のサインイン ページは、一連の資格情報 (ユーザー名とパスワード) を要求すると共に、ターゲット コンピューターに対する別の資格情報を提示するためのオプションをユーザーに提供します。
+ユーザーがその他の資格情報を提示しない場合、ゲートウェイへの接続に使われるプライマリのユーザー名とパスワードが、ターゲット コンピューターへの接続にも使われます。
 
 要求された資格情報は Windows PowerShell Web Access ゲートウェイで認証されます。 これらの資格情報は、ローカルの Windows PowerShell Web Access ゲートウェイ サーバーまたは Active Directory の有効なユーザー アカウントである必要があります。
 
 #### <a name="windows-powershell-web-access-authorization-rules"></a>Windows PowerShell Web Access の承認規則
 
-ゲートウェイでユーザーが認証されると、Windows PowerShell Web Access が承認規則を確認して、要求された対象コンピューターへのアクセスがユーザーに許可されているかどうかを検証します。 問題なく承認されると、ユーザーの資格情報が対象コンピューターに渡されます。
+ゲートウェイでユーザーが認証されると、Windows PowerShell Web Access が承認規則を確認して、要求されたターゲット コンピューターへのアクセスがユーザーに許可されているかどうかを検証します。 問題なく承認されると、ユーザーの資格情報がターゲット コンピューターに渡されます。
 
-これらの規則の評価は常にゲートウェイでのユーザー認証の後で実行され、その後、対象コンピューターでユーザー認証を実行できるようになります。
+これらの規則の評価は常にゲートウェイでのユーザー認証の後で実行され、その後、ターゲット コンピューターでユーザー認証を実行できるようになります。
 
 #### <a name="target-authentication-and-authorization-rules"></a>対象コンピューターでの認証と承認規則
 
-Windows PowerShell Web Access におけるセキュリティの最後の層は、対象コンピューター独自のセキュリティ構成です。 Windows PowerShell Web Access 経由で対象コンピューターを操作する Windows PowerShell Web ベース コンソールを実行するには、ユーザーは、対象コンピューターと Windows PowerShell Web Access の承認規則でアクセス権を適切に構成する必要があります。
+Windows PowerShell Web Access におけるセキュリティの最後の層は、ターゲット コンピューター独自のセキュリティ構成です。 Windows PowerShell Web Access 経由でターゲット コンピューターを操作する Windows PowerShell Web ベース コンソールを実行するには、ユーザーは、ターゲット コンピューターと Windows PowerShell Web Access の承認規則でアクセス権を適切に構成する必要があります。
 
-この層は、ユーザーが [Enter-PSSession](/powershell/module/microsoft.powershell.core/Enter-PSSession) または [New-PSSession](/powershell/module/microsoft.powershell.core/new-pssession) コマンドレットを実行して Windows PowerShell から対象コンピューターへのリモート Windows PowerShell セッション作成を試みた場合に、試行された接続を評価するのと同じセキュリティ メカニズムを提供します。
+この層は、ユーザーが [Enter-PSSession](/powershell/module/microsoft.powershell.core/Enter-PSSession) または [New-PSSession](/powershell/module/microsoft.powershell.core/new-pssession) コマンドレットを実行して Windows PowerShell からターゲット コンピューターへのリモート Windows PowerShell セッション作成を試みた場合に、試行された接続を評価するのと同じセキュリティ メカニズムを提供します。
 
-既定では、Windows PowerShell Web Access は、ゲートウェイと対象コンピューター両方での認証に、プライマリのユーザー名とパスワードを使います。 Web ベースのサインイン ページでは、**[オプションの接続設定]** というセクションで、必要に応じて対象コンピューターに対する別の資格情報を提示するためのオプションをユーザーに提供しています。 ユーザーがその他の資格情報を提示しない場合、ゲートウェイへの接続に使われるプライマリのユーザー名とパスワードが、対象コンピューターへの接続にも使われます。
+既定では、Windows PowerShell Web Access は、ゲートウェイとターゲット コンピューター両方での認証に、プライマリのユーザー名とパスワードを使います。 Web ベースのサインイン ページでは、**[オプションの接続設定]** というセクションで、必要に応じてターゲット コンピューターに対する別の資格情報を提示するためのオプションをユーザーに提供しています。 ユーザーがその他の資格情報を提示しない場合、ゲートウェイへの接続に使われるプライマリのユーザー名とパスワードが、ターゲット コンピューターへの接続にも使われます。
 
 承認規則を使って、特定のセッション構成に対するユーザーのアクセスを許可することができます。 担当者は、Windows PowerShell Web Access 用の_制限付き実行空間_またはセッション構成を作成し、特定のユーザーが特定のセッション構成だけにアクセスできるようにして、それらのユーザーを Windows PowerShell Web Access にサインインさせることができます。 アクセス制御リスト (ACL) を使って特定のエンドポイントにアクセスできるユーザーを決定できることに加えて、このセクションで説明する承認規則を使用すると、エンドポイントへのアクセスを特定のユーザーにさらに制限することができます。 制限付き実行空間の詳細については、[制約付き実行空間の作成](https://msdn.microsoft.com/library/dn614668)に関するページを参照してください。
 
@@ -165,20 +165,20 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
   > [!NOTE]
   > この規則は、Windows PowerShell Web Access が提供する承認規則によるセキュリティ層をバイパスするものであり、セキュリティ保護された環境には推奨されません。
 
-- 管理者は、ワークグループとドメインの両方が含まれている環境で、対象コンピューターへの接続をユーザーに許可する必要があります。ワークグループ コンピューターは、ドメイン内の対象コンピューターに接続するために使用されることがあります。ドメイン内のコンピューターは、ワークグループ内の対象コンピューターに接続するために使用されることがあります。 ワークグループ内にはゲートウェイ サーバー *PswaServer* があり、ドメイン内には対象コンピューター *srv1.contoso.com* があります。 ユーザー *Chris* は、ワークグループ ゲートウェイ サーバーと対象コンピューターの両方で承認されているローカル ユーザーです。 ワークグループ サーバー上のユーザー名は *chrisLocal*、対象コンピューター上のユーザー名は *contoso\\chris* です。 Chris に srv1.contoso.com へのアクセスを承認するには、管理者は以下の規則を追加する必要があります。
+- 管理者は、ワークグループとドメインの両方が含まれている環境で、対象コンピューターへの接続をユーザーに許可する必要があります。ワークグループ コンピューターは、ドメイン内の対象コンピューターに接続するために使用されることがあります。ドメイン内のコンピューターは、ワークグループ内の対象コンピューターに接続するために使用されることがあります。 ワークグループ内にはゲートウェイ サーバー *PswaServer* があり、ドメイン内にはターゲット コンピューター *srv1.contoso.com* があります。 ユーザー *Chris* は、ワークグループ ゲートウェイ サーバーとターゲット コンピューターの両方で承認されているローカル ユーザーです。 ワークグループ サーバー上のユーザー名は *chrisLocal*、ターゲット コンピューター上のユーザー名は *contoso\\chris* です。 Chris に srv1.contoso.com へのアクセスを承認するには、管理者は以下の規則を追加する必要があります。
 
 ```powershell
 Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
    -computerName srv1.contoso.com -configurationName Microsoft.PowerShell
 ```
 
-この規則例では、Chris がゲートウェイ サーバーで認証され、Chris による *srv1* へのアクセスが承認されます。 サインイン ページで、Chris は 2 番目の資格情報 (*contoso\\chris*) を **[オプションの接続設定]** に指定する必要があります。 ゲートウェイ サーバーでは、対象コンピューター (*srv1.contoso.com*) で Chris を認証するために、追加の資格情報が使用されます。
+この規則例では、Chris がゲートウェイ サーバーで認証され、Chris による *srv1* へのアクセスが承認されます。 サインイン ページで、Chris は 2 番目の資格情報 (*contoso\\chris*) を **[オプションの接続設定]** に指定する必要があります。 ゲートウェイ サーバーでは、ターゲット コンピューター (*srv1.contoso.com*) で Chris を認証するために、追加の資格情報が使用されます。
 
-このシナリオでは、Windows PowerShell Web Access が対象コンピューターへの接続に成功するのは、次の動作に成功し、1 つ以上の承認規則で許可された場合のみです。
+このシナリオでは、Windows PowerShell Web Access がターゲット コンピューターへの接続に成功するのは、次の動作に成功し、1 つ以上の承認規則で許可された場合のみです。
 
 1. *server_name*\\*user_name* の形式のユーザー名を承認規則に追加することによる、ワークグループ ゲートウェイ サーバーでの認証
 
-2. サインイン ページの **[オプションの接続設定]** で指定された別の資格情報を使用することによる、対象コンピューターでの認証
+2. サインイン ページの **[オプションの接続設定]** で指定された別の資格情報を使用することによる、ターゲット コンピューターでの認証
 
    > [!NOTE]
    > ゲートウェイ コンピューターと対象コンピューターが別々のワークグループまたはドメインにある場合は、2 つのワークグループ コンピューター間、2 つのドメイン間、またはワークグループとドメインの間で、信頼関係を確立する必要があります。 Windows PowerShell Web Access の承認規則コマンドレットを使用してこの関係を構成することはできません。 承認規則では、コンピューター間の信頼関係は定義されません。承認規則では、特定の対象コンピューターとセッション構成に接続できるようにユーザーを承認することしかできません。 異なるドメイン間で信頼関係を構成する方法の詳細については、[ドメインおよびフォレストの信頼の作成に関するページ](https://technet.microsoft.com/library/cc794775.aspx)を参照してください。
@@ -186,13 +186,13 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>1 セットの承認規則の複数サイトでの使用
 
-承認規則は 1 つの XML ファイルに格納されます。 既定では、XML ファイルのパス名は `%windir%\Web\PowershellWebAccess\data\AuthorizationRules.xml` です。
+承認規則は 1 つの XML ファイルに格納されます。 既定では、XML ファイルのパス名は `$env:windir\Web\PowershellWebAccess\data\AuthorizationRules.xml` です。
 
-承認規則 XML ファイルのパスは、**powwa.config** ファイルに格納されます。このファイルは `%windir%\Web\PowershellWebAccess\data` にあります。 管理者は、**powwa.config** に記述されている既定パスへの参照を、設定や要件に合わせて柔軟に変更することができます。 管理者がファイルの場所を変更できるので、構成上の必要に応じて、複数の Windows PowerShell Web Access ゲートウェイが同じ承認規則を使うことができるようになります。
+承認規則 XML ファイルのパスは、**powwa.config** ファイルに格納されます。このファイルは `$env:windir\Web\PowershellWebAccess\data` にあります。 管理者は、**powwa.config** に記述されている既定パスへの参照を、設定や要件に合わせて柔軟に変更することができます。 管理者がファイルの場所を変更できるので、構成上の必要に応じて、複数の Windows PowerShell Web Access ゲートウェイが同じ承認規則を使うことができるようになります。
 
 ## <a name="session-management"></a>セッションの管理
 
-Windows PowerShell Web Access では、ユーザーが同時に接続できるセッションは既定で 3 つまでに制限されています。 Web アプリケーションの **web.config** ファイルを IIS マネージャーで編集することで、ユーザーごとにサポートされるセッションの数を変更できます。 **web.config** ファイルへのパスは `$Env:Windir\Web\PowerShellWebAccess\wwwroot\Web.config` です。
+Windows PowerShell Web Access では、ユーザーが同時に接続できるセッションは既定で 3 つまでに制限されています。 Web アプリケーションの **web.config** ファイルを IIS マネージャーで編集することで、ユーザーごとにサポートされるセッションの数を変更できます。 **web.config** ファイルへのパスは `$env:windir\Web\PowerShellWebAccess\wwwroot\Web.config` です。
 
 何らかの設定が編集された場合、IIS Web サーバーの既定の構成によってアプリケーション プールが再起動します。 たとえば **web.config** ファイルが編集された場合、アプリケーション プールが再起動します。 **Windows PowerShell Web Access** はインメモリ セッション状態を使うため、アプリケーション プールの再起動によって、**Windows PowerShell Web Access** セッションにサインインしているユーザーのセッションは切断されます。
 
