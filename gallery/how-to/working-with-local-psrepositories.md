@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery, PsGet
 title: ローカル PSRepositories の操作
 ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: 91786b03704fbd2d185f674df0bc67faddfb6288
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/14/2018
-ms.locfileid: "51619207"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55682671"
 ---
 # <a name="working-with-local-powershellget-repositories"></a>ローカルの PowerShellGet リポジトリの操作
 
@@ -23,7 +23,7 @@ PowerShell ギャラリー以外の PowerShellGet モジュール サポート �
 
 ## <a name="local-repository-types"></a>ローカル リポジトリの種類
 
-ローカル PSRepository を作成する 2 つの方法があります。 NuGet サーバーまたはファイル共有。 各種は、長所と短所があります。
+ローカル PSRepository を作成する 2 つの方法はあります。NuGet のサーバーまたはファイル共有。 各種は、長所と短所があります。
 
 NuGet サーバー
 

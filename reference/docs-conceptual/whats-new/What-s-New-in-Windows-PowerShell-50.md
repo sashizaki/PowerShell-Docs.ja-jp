@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell 5.0 の新機能
-ms.openlocfilehash: 9bd18b37b53890713faeeabc634876e5f48725da
-ms.sourcegitcommit: 7ed6ff9a3ce0b8b485d12dc2f5107c23d4b6e68b
+ms.openlocfilehash: 06088e4a974ed4fb2a245fb9acfa780710a8ccc4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52978897"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55682850"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 の新機能
 Windows PowerShell 5.0 には、その用途を拡大し、使いやすさを向上させる重要な機能や、Windows ベースの環境をより簡単かつ包括的に制御および管理できるようにする重要な新しい機能が含まれています。
@@ -140,7 +140,8 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 - FullyQualifiedName パラメーターが、Import-Module コマンドレットと Remove-Module コマンドレットに追加され、1 つのモジュールの複数のバージョンの保存をサポートします。
 - Save-Help、Update-Help、Import-PSSession、Export-PSSession、および Get-Command に、ModuleSpecification 型の新しいパラメーター、FullyQualifiedModule が追加されました。 このパラメーターを追加して、完全修飾名でモジュールを指定します。
 - **$PSVersionTable.PSVersion** の値が 5.0 に更新されました。
-
+- WMF 5.0 (PowerShell 5.0) が含まれています、 **Pester**モジュール。  Pester は PowerShell のテスト フレームワークの単位です。 スクリプトのテストを作成することができます、いくつかの単純な使いキーワードを提供します。 
+ 
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration の新機能
 
 - Windows PowerShell 言語の機能が強化され、クラスを使用して、Windows PowerShell Desired State Configuration (DSC) のリソースを定義できるようになりました。 Import-DscResource は真の動的キーワードになりました。Windows PowerShell は、DscResource 属性を含むクラスを探して、指定されたモジュールのルート モジュールを解析します。 クラスを使用して DSC リソースを定義できるようになりました。このリソースには、MOF ファイルも、モジュール フォルダー内の DSCResource サブフォルダーも必要ありません。 Windows PowerShell モジュールのファイルには、複数の DSC リソース クラスを含めることができます。
@@ -177,7 +178,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Windows PowerShell ISE の新機能
 
-- Windows PowerShell ISE のローカル コピーでリモートの Windows PowerShell のスクリプトとファイルを編集できるようになりました。この編集を行うには、Enter-PSSession を実行して、編集するファイルを保存しているコンピューター上でリモート セッションを開始し、**PSEdit <path and file name on the remote computer>** を実行します。 この機能を使用すると、Windows PowerShell ISE を実行できない Windows Server の Server Core インストール オプションに保存されている Windows PowerShell ファイルの編集が簡単になります。
+- 編集するファイルを格納しているコンピューターでリモート セッションを開始するには、Enter-pssession を実行しを実行して、Windows PowerShell ISE のローカル コピーでリモートの Windows PowerShell スクリプトとファイルを編集することができますようになりました**PSEdit \<、リモート コンピューター上のパスとファイル名\>** します。 この機能を使用すると、Windows PowerShell ISE を実行できない Windows Server の Server Core インストール オプションに保存されている Windows PowerShell ファイルの編集が簡単になります。
 - Start-Transcript コマンドレットが Windows PowerShell ISE でサポートされるようになりました。
 - Windows PowerShell ISE でリモート スクリプトをデバッグできるようになりました。
 - 新しいメニュー コマンド、**Break All** (Ctrl+B) は、ローカルとリモートで実行中の両方のスクリプトを中断し、デバッガーに移ります。
@@ -221,7 +222,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 - **Passthru** パラメーターが **Enable-JobTrigger** および **Disable-JobTrigger** コマンドレットに追加されました。 Passthru パラメーターを使用すると、実行するコマンドによって作成または変更されるすべてのオブジェクトが表示されます。
 - **Add-Computer** および **Remove-Computer** コマンドレットにワークグループを指定するパラメーターの名前が整合性のあるものになりました。 どちらのコマンドレットでも、パラメーター **WorkgroupName** を使用します。
 - 新しい共通パラメーター **PipelineVariable** が追加されました。 PipelineVariable を使用すると、パイプされたコマンド (またはパイプされたコマンドの一部) の結果を変数として保存し、パイプラインの残りの部分に引き渡すことができます。
-- メソッド構文を使用したコレクションのフィルター処理がサポートされるようになりました。 Where() または Where-Object の構文に似た簡潔なメソッド呼び出しの形式を使用して、オブジェクトのコレクションをフィルター処理できます。 次に例を示します。(Get-Process).where({$_.Name -match 'powershell'})
+- メソッド構文を使用したコレクションのフィルター処理がサポートされるようになりました。 Where() または Where-Object の構文に似た簡潔なメソッド呼び出しの形式を使用して、オブジェクトのコレクションをフィルター処理できます。 次に例を示します: (Get-Process).where({$_.Name -match 'powershell'})
 - **Get-Process** コマンドレットに新しいスイッチ パラメーター **IncludeUserName** が追加されました。
 - 新しいコマンドレット **Get-FileHash** が追加されました。これは、指定したファイルのファイル ハッシュをいくつかの形式の中から 1 つ返します。
 - Windows PowerShell 4.0 では、モジュールが自らのマニフェストの中で **DefaultCommandPrefix** キーを使用している場合、またはユーザーが **Prefix** パラメーターを指定してモジュールをインポートした場合、モジュールの **ExportedCommands** プロパティにモジュール内のコマンドがプレフィックス付きで表示されます。 モジュールで修飾された構文 (ModuleName\\CommandName) を使用してコマンドを実行するときは、コマンド名にプレフィックスを含める必要があります。
@@ -315,7 +316,7 @@ Windows PowerShell 3.0 には、次に示す新機能があります。
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell ワークフロー
 
-Windows PowerShell ワークフローによって、Windows Workflow Foundation の機能を Windows PowerShell で利用できます。 ワークフローは、XAML または Windows PowerShell 言語で記述し、コマンドレットを実行するのとまったく同様に実行できます。 [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) コマンドレットはワークフロー コマンドを取得し、[Get-help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) コマンドレットは、ワークフローのヘルプを取得します。
+Windows PowerShell ワークフローによって、Windows Workflow Foundation の機能を Windows PowerShell で利用できます。 ワークフローは、XAML または Windows PowerShell 言語で記述し、コマンドレットを実行するのとまったく同様に実行できます。 [Get-command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad)コマンドレットは、ワークフローのコマンドを取得します。 および[Get-help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a)コマンドレットは、ワークフローのヘルプを取得します。
 
 ワークフローは、複数のコンピューターを管理するアクティビティのシーケンスです。これは、実行時間が長く、反復可能な、頻繁に実行できるシーケンスで、並列実行、割り込み、中断、および再起動が可能です。 ワークフローは、ネットワークの停止、Windows の再起動、電源障害などの意図的または偶発的な割り込みから再開できます。
 

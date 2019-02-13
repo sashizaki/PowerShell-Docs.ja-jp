@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: PowerShell、コア
 title: PowerShell 6.0 の既知の問題
 ms.openlocfilehash: ce40a1925e564fbd2c661e70ec36d3842d915dfe
-ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49450998"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681510"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 の既知の問題
 

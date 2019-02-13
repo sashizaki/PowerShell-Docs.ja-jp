@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 の新機能
 description: PowerShell Core 6.1 でリリースされた新機能と変更
 ms.date: 09/13/2018
-ms.openlocfilehash: 4e39780a0ff446993005bba6284741f3b4b02549
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
-ms.translationtype: HT
+ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851309"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55682320"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 の新機能
 
@@ -37,7 +37,7 @@ Windows 互換機能パックにより、PowerShell Core では **Windows 10 Oct
 
 ## <a name="support-for-application-whitelisting"></a>アプリケーション ホワイトリストのサポート
 
-PowerShell Core 6.1 では、Windows PowerShell 5.1 と同じように、[AppLocker](https://docs.microsoft.com/en-us/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) および [Device Guard](https://docs.microsoft.com/en-us/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) のアプリケーション ホワイトリストをサポートします。
+PowerShell Core 6.1 では、Windows PowerShell 5.1 と同じように、[AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) および [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) のアプリケーション ホワイトリストをサポートします。
 アプリケーション ホワイトリストを使用すると、PowerShell の[制約付き言語モード](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)で実行できるバイナリを細かく制御できます。
 
 ## <a name="performance-improvements"></a>パフォーマンスの向上
@@ -209,7 +209,7 @@ PowerShell と Hyper-V の機能である [PowerShell Direct](/virtualization/hy
 
 `Enable-PSRemoting` では、2 つのリモート処理セッション構成が作成されるようになりました。
 
-- PowerShell のメジャー バージョン用のセッション構成。 たとえば、`PowerShell.6` などです。 このエンドポイントは、"システム全体" の PowerShell 6 セッション構成として、すべてのマイナー バージョン更新で利用できます。
+- PowerShell のメジャー バージョン用のセッション構成。 たとえば、`PowerShell.6` のように指定します。 このエンドポイントは、"システム全体" の PowerShell 6 セッション構成として、すべてのマイナー バージョン更新で利用できます。
 - 1 つのバージョンに固有のセッション構成。たとえば、`PowerShell.6.1.0` などです。
 
 この動作は、同じコンピューターに PowerShell 6 の複数のバージョンをインストールしてアクセスできるようにしたい場合に便利です。

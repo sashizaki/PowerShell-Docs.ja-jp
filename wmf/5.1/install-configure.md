@@ -5,11 +5,11 @@ keywords: WMF, PowerShell, セットアップ
 contributor: keithb
 title: WMF 5.1 のインストールと構成
 ms.openlocfilehash: e5c7968744a442b4be9f1e43a45e91429a6d6165
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34189348"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55680349"
 ---
 # <a name="install-and-configure-wmf-51"></a>WMF 5.1 のインストールと構成 #
 
@@ -50,8 +50,8 @@ ZIP ファイルを展開したら、Windows 7 または Windows Server 2008 R2 
 
 Install-WMF5.1.ps1 は Windows Server 2008 R2 および Windows 7 でのインストールの自動化を容易にするため、次のパラメーターを受け取ります。
 
-- AcceptEula: このパラメーターが含まれる場合、使用許諾契約書は自動的に受け入れられ、表示はされません。
-- AllowRestart: このパラメーターは、AcceptEula が指定されている場合にのみ使用できます。 このパラメーターが含まれていて、WMF 5.1 のインストール後に再起動が必要な場合は、インストールが完了した後すぐに、メッセージが表示されることなく再起動が実行されます。
+- AcceptEulaこのパラメーターが含まれると、使用許諾契約書は自動的に受け入れは表示されません。
+- AllowRestart:このパラメーターは、AcceptEula が指定されている場合にのみ使用できます。 このパラメーターが含まれていて、WMF 5.1 のインストール後に再起動が必要な場合は、インストールが完了した後すぐに、メッセージが表示されることなく再起動が実行されます。
 
 **Windows Server 2008 R2 SP1 および Windows 7 SP1 での WMF 5.1 の前提条件**
 

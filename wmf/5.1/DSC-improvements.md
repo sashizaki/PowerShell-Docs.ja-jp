@@ -4,11 +4,11 @@ ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 の DSC 機能強化
 ms.openlocfilehash: 92f82d62550e105a187fd7c0c58b49367c646a7e
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45523044"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55679629"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 の Desired State Configuration (DSC) の機能強化
 
@@ -206,12 +206,12 @@ WMF 5.1 では、DSC はカタログ ファイルと構成 (.MOF) ファイル�
 ### <a name="how-to-sign-configuration-and-module"></a>構成とモジュールに署名する方法
 
 ***
-* 構成ファイル (.MOF): 既存の PowerShell コマンドレット [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) が拡張され、MOF ファイルの署名に対応しています。
-* モジュール: モジュールの署名は、次の手順を利用し、対応するモジュール カタログに署名することで完了します:
-    1. カタログ ファイルの作成: カタログ ファイルには、暗号法のハッシュまたは拇印の集まりが含まれています。
+* 構成ファイル (します。Mof):既存の PowerShell コマンドレット[Set-authenticodesignature](https://technet.microsoft.com/library/hh849819.aspx) MOF ファイルの署名をサポートするように拡張します。
+* モジュールモジュールの署名は、次の手順を使用して、対応するモジュール カタログに署名することで行われます。
+    1. カタログ ファイルを作成します。カタログ ファイルには、暗号ハッシュまたは拇印のコレクションが含まれています。
        拇印はそれぞれ、モジュールに含まれるファイルに対応します。
        新しいコマンドレット [New-FileCatalog](https://technet.microsoft.com/library/cc732148.aspx) が追加され、ユーザーは自分のモジュールのカタログ ファイルを作成できます。
-    2. カタログ ファイルの署名: [Set-AuthenticodeSignature](https://technet.microsoft.com/library/hh849819.aspx) を利用し、カタログ ファイルに署名します。
+    2. カタログ ファイルを署名します。使用[Set-authenticodesignature](https://technet.microsoft.com/library/hh849819.aspx)カタログ ファイルに署名します。
     3. モジュール フォルダー内にカタログ ファイルを配置します。
 慣例では、モジュール カタログ ファイルは、モジュールと同じ名前のモジュール フォルダーの下に配置する必要があります。
 

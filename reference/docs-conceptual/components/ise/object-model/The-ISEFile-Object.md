@@ -4,11 +4,11 @@ keywords: PowerShell, コマンドレット
 title: ISEFile オブジェクト
 ms.assetid: 1c6d91f3-c556-42a2-a017-79b6b7b4b7db
 ms.openlocfilehash: 24549720b8bc35435882533b0eb138de432ede65
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403013"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55680396"
 ---
 # <a name="the-isefile-object"></a>ISEFile オブジェクト
 
@@ -26,7 +26,7 @@ Windows PowerShell ISE 2.0 以降でサポートされています。
 
 ### <a name="exceptions"></a>例外
 
-- **System.IO.IOException**:ファイルを保存できませんでした。
+- **System.IO.IOException**: ファイルを保存できませんでした。
 
 ```powershell
 # Save the file using the default encoding (UTF8)
@@ -54,7 +54,7 @@ Windows PowerShell ISE 2.0 以降でサポートされています。
 
 - **System.ArgumentNullException**:**Filename**パラメーターが null です。
 - **System.ArgumentException**:**Filename**パラメーターが空です。
-- **System.IO.IOException**:ファイルを保存できませんでした。
+- **System.IO.IOException**: ファイルを保存できませんでした。
 
 ```powershell
 # Save the file with a full path and name.

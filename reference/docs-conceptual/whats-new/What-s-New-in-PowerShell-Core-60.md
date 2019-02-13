@@ -3,11 +3,11 @@ title: PowerShell Core 6.0 の新機能
 description: PowerShell Core 6.0 でリリースされた新機能と変更
 ms.date: 08/06/2018
 ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: 59e568ac9fa8ba28e2c96932b7c84d4a855fed2f
-ms.translationtype: HT
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "46289244"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55680820"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 の新機能
 
@@ -65,7 +65,7 @@ Windows 以外のシステムでより適切に機能するように、PowerShel
 - Unix プラットフォームで大文字と小文字を区別しないパターン マッチングをサポートするために `Get-Help` を修正しました。 (#3852)
 - パッケージに `powershell` man ページが追加されました。
 
-### <a name="logging"></a>ログ
+### <a name="logging"></a>ログ記録
 
 macOS では、PowerShell はネイティブ `os_log` API を使用して、Apple の[統合ログシステム][os_log]にログを記録します。
 Linux では、PowerShell は、ユビキタス ログ ソリューションである [Syslog][] を使用します。
@@ -274,7 +274,7 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 - ヘッダー値を検証せずにヘッダーを追加できるように、Web コマンドレットに `-SkipHeaderValidation` スイッチを追加します。 (#4085)
 - 必要に応じて、Web コマンドレットでサーバーの HTTPS 証明書を検証しないようにすることができます。
 - Web コマンドレットに認証パラメーターを追加します。 (#5052) ([@markekraus](https://github.com/markekraus) に感謝)
-  - 3 つのオプション (Basic、OAuth、Bearer) を提供する `-Authentication` を追加します。
+  - 追加`-Authentication`3 つのオプションを提供します。Basic、OAuth および Bearer。
   - OAuth および Bearer オプションのベアラー トークンを取得するために、`-Token` を追加します。
   - HTTPS ではなく、任意のトランスポート スキームに対して指定される認証をバイパスするために、`-AllowUnencryptedAuthentication` を追加します。
 - 応答ヘッダーのキャプチャを有効にするために、`Invoke-RestMethod` に `-ResponseHeadersVariable` を追加します。 (#4888) ([@markekraus](https://github.com/markekraus) に感謝)
