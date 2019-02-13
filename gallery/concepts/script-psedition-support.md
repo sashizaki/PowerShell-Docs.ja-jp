@@ -4,21 +4,21 @@ contributor: manikb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: 互換性のある PowerShell エディションが含まれるスクリプト
 ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655278"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681420"
 ---
-# <a name="script-with-compatible-powershell-editions"></a><span data-ttu-id="577ad-103">互換性のある PowerShell エディションが含まれるスクリプト</span><span class="sxs-lookup"><span data-stu-id="577ad-103">Script with compatible PowerShell editions</span></span>
+# <a name="script-with-compatible-powershell-editions"></a><span data-ttu-id="e9565-103">互換性のある PowerShell エディションが含まれるスクリプト</span><span class="sxs-lookup"><span data-stu-id="e9565-103">Script with compatible PowerShell editions</span></span>
 
-<span data-ttu-id="577ad-104">バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。</span><span class="sxs-lookup"><span data-stu-id="577ad-104">Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.</span></span>
+<span data-ttu-id="e9565-104">バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。</span><span class="sxs-lookup"><span data-stu-id="e9565-104">Starting with version 5.1, PowerShell is available in different editions which denote varying feature sets and platform compatibility.</span></span>
 
-- <span data-ttu-id="577ad-105">Desktop Edition.NET Framework 上に構築され、スクリプトおよび Server Core などの Windows と Windows デスクトップの完全エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。</span><span class="sxs-lookup"><span data-stu-id="577ad-105">**Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules targeting versions of PowerShell running on full footprint editions of Windows such as Server Core and Windows Desktop.</span></span>
+- <span data-ttu-id="e9565-105">**デスクトップ エディション:** .NET Framework 上に構築されており、Server Core や Windows Desktop などの Windows の完全エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。</span><span class="sxs-lookup"><span data-stu-id="e9565-105">**Desktop Edition:** Built on .NET Framework and provides compatibility with scripts and modules targeting versions of PowerShell running on full footprint editions of Windows such as Server Core and Windows Desktop.</span></span>
 
-- <span data-ttu-id="577ad-106">**コア エディション:**.NET Core 上に構築され、スクリプトおよび Nano Server などの Windows や Windows IoT の縮小エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。</span><span class="sxs-lookup"><span data-stu-id="577ad-106">**Core Edition:** Built on .NET Core and provides compatibility with scripts and modules targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano Server and Windows IoT.</span></span>
+- <span data-ttu-id="e9565-106">**コア エディション:** .NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。</span><span class="sxs-lookup"><span data-stu-id="e9565-106">**Core Edition:** Built on .NET Core and provides compatibility with scripts and modules targeting versions of PowerShell running on reduced footprint editions of Windows such as Nano Server and Windows IoT.</span></span>
 
-<span data-ttu-id="577ad-107">PowerShell の実行中のエディションが $PSVersionTable の PSEdition プロパティに表示されます。</span><span class="sxs-lookup"><span data-stu-id="577ad-107">The running edition of PowerShell is shown in the PSEdition property of $PSVersionTable.</span></span>
+<span data-ttu-id="e9565-107">PowerShell の実行中のエディションが $PSVersionTable の PSEdition プロパティに表示されます。</span><span class="sxs-lookup"><span data-stu-id="e9565-107">The running edition of PowerShell is shown in the PSEdition property of $PSVersionTable.</span></span>
 
 ```powershell
 $PSVersionTable
@@ -35,7 +35,7 @@ PSRemotingProtocolVersion      2.3
 SerializationVersion           1.1.0.1
 ```
 
-<span data-ttu-id="577ad-108">スクリプト作成者は、`#requires` ステートメントで PSEdition パラメーターを使用することにより、PowerShell の互換性のあるエディションで実行されていない場合に、スクリプトの実行を回避できます。</span><span class="sxs-lookup"><span data-stu-id="577ad-108">Script authors can prevent a script from executing unless it is run on a compatible edition of PowerShell using the PSEdition parameter on a `#requires` statement.</span></span>
+<span data-ttu-id="e9565-108">スクリプト作成者は、`#requires` ステートメントで PSEdition パラメーターを使用することにより、PowerShell の互換性のあるエディションで実行されていない場合に、スクリプトの実行を回避できます。</span><span class="sxs-lookup"><span data-stu-id="e9565-108">Script authors can prevent a script from executing unless it is run on a compatible edition of PowerShell using the PSEdition parameter on a `#requires` statement.</span></span>
 
 ```powershell
 Set-Content C:\script.ps1 -Value "#requires -PSEdition Core
@@ -53,8 +53,8 @@ At line:1 char:1
     + FullyQualifiedErrorId : ScriptRequiresUnmatchedPSEdition
 ```
 
-<span data-ttu-id="577ad-109">PowerShell Gallery ユーザーは、PowerShell の特定のエディションでサポートされているスクリプトの一覧を検索できます。</span><span class="sxs-lookup"><span data-stu-id="577ad-109">PowerShell Gallery users can find the list of scripts supported on a specific PowerShell Edition.</span></span>
-<span data-ttu-id="577ad-110">PSEdition_Desktop および PSEdition_Core タグがないスクリプトは、PowerShell Desktop エディションで正常に動作するものと見なされます。</span><span class="sxs-lookup"><span data-stu-id="577ad-110">Scripts without PSEdition_Desktop and PSEdition_Core tags are considered to work fine on PowerShell Desktop edition.</span></span>
+<span data-ttu-id="e9565-109">PowerShell Gallery ユーザーは、PowerShell の特定のエディションでサポートされているスクリプトの一覧を検索できます。</span><span class="sxs-lookup"><span data-stu-id="e9565-109">PowerShell Gallery users can find the list of scripts supported on a specific PowerShell Edition.</span></span>
+<span data-ttu-id="e9565-110">PSEdition_Desktop および PSEdition_Core タグがないスクリプトは、PowerShell Desktop エディションで正常に動作するものと見なされます。</span><span class="sxs-lookup"><span data-stu-id="e9565-110">Scripts without PSEdition_Desktop and PSEdition_Core tags are considered to work fine on PowerShell Desktop edition.</span></span>
 
 ```powershell
 # Find scripts supported on PowerShell Desktop edition
@@ -64,7 +64,7 @@ Find-Script -Tag PSEdition_Desktop
 Find-Script -Tag PSEdition_Core
 ```
 
-## <a name="more-details"></a><span data-ttu-id="577ad-111">詳細情報</span><span class="sxs-lookup"><span data-stu-id="577ad-111">More details</span></span>
+## <a name="more-details"></a><span data-ttu-id="e9565-111">詳細情報</span><span class="sxs-lookup"><span data-stu-id="e9565-111">More details</span></span>
 
-- [<span data-ttu-id="577ad-112">PSEditions が含まれるモジュール</span><span class="sxs-lookup"><span data-stu-id="577ad-112">Modules with PSEditions</span></span>](module-psedition-support.md)
-- [<span data-ttu-id="577ad-113">PowerShellGallery での PSEditions のサポート</span><span class="sxs-lookup"><span data-stu-id="577ad-113">PSEditions support on PowerShellGallery</span></span>](../how-to/finding-packages/searching-by-compatibility.md)
+- [<span data-ttu-id="e9565-112">PSEditions が含まれるモジュール</span><span class="sxs-lookup"><span data-stu-id="e9565-112">Modules with PSEditions</span></span>](module-psedition-support.md)
+- [<span data-ttu-id="e9565-113">PowerShellGallery での PSEditions のサポート</span><span class="sxs-lookup"><span data-stu-id="e9565-113">PSEditions support on PowerShellGallery</span></span>](../how-to/finding-packages/searching-by-compatibility.md)
