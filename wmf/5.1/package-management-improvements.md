@@ -4,12 +4,12 @@ ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 contributor: jianyunt, quoctruong
 title: WMF 5.1 のパッケージ管理の機能強化
-ms.openlocfilehash: 1ebd574bd98a056de634ac688244813c1947618e
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
-ms.translationtype: HT
+ms.openlocfilehash: adcddcc94022f4961f3dd23c2cd56f2a8720049b
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187461"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55682561"
 ---
 # <a name="improvements-to-package-management-in-wmf-51"></a>WMF 5.1# のパッケージ管理の機能強化
 
@@ -30,7 +30,7 @@ WMF 5.1 で行われた修正:
 
 ただし、古いバージョンの NuGet プロバイダーがコンピューターにインストールされている場合があり、古いバージョンの NuGet が PowerShell セッションに最初に読み込まれることがあります (PackageManagement での競合状態)。 ただし、PowerShellGet が動作するには新しいバージョンの NuGet プロバイダーが必要なので、PowerShellGet は PackageManagement に NuGet プロバイダーのブートストラップを再び要求します。 これにより、NuGet プロバイダーのブートストラップで複数のプロンプトが表示されます。
 
-**解決策**: WMF 5.1 では、PackageManagement は、NuGet プロバイダーのブートストラップに対して複数のプロンプトが表示されるのを避けるため、NuGet プロバイダーの最新バージョンを読み込むようになっています。
+**解決策**:WMF5.1 では、PackageManagement は NuGet プロバイダーのブートス トラップに対して複数のプロンプトを回避するために、NuGet プロバイダーの最新バージョンを読み込みます。
 
 この問題を回避策することもできます。古いバージョンの NuGet プロバイダー (NuGet-Anycpu.exe) が存在する場合は、$env:ProgramFiles\PackageManagement\ProviderAssemblies または $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies から手動で削除します。
 
@@ -41,7 +41,7 @@ WMF 5.1 で行われた修正:
 
 **シナリオ**: WMF 5.0 の PackageManagement は、イントラネット アクセスしかない (インターネットにアクセスできない) コンピューターをサポートしませんでした。
 
-**解決策**: WMF 5.1 では、以下のようにして、イントラネット接続のみのコンピューターで PackageManagement を使用できます。
+**解決策**:WMF 5.1 では、以下の PackageManagement を使用するイントラネットのコンピューターを許可する手順を実行できます。
 
 1. インターネットに接続できる別のコンピューターで、`Install-PackageProvider -Name NuGet` を使用して、NuGet プロバイダーをダウンロードします。
 
