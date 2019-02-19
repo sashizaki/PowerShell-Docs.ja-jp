@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: PowerShell リモート処理での次ホップの実行
-ms.openlocfilehash: 06ca43e3e0524d89ec6f66f6553c4c75072beaf3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 1b6e5ad53346324adc7be2d013e154c8600afa4f
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402597"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265588"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>PowerShell リモート処理での次ホップの実行
 
@@ -24,7 +24,7 @@ ms.locfileid: "53402597"
 
 認証に[資格情報のセキュリティ サポート プロバイダー (CredSSP)](https://msdn.microsoft.com/library/windows/desktop/bb931352.aspx) を使用できます。 CredSSP はリモート サーバー (_ServerB_) に資格情報をキャッシュするため、これを使用すると資格情報の盗難攻撃にさらされます。 リモート コンピューターが侵害されると、攻撃者はユーザーの資格情報にアクセスできます。 CredSSP は、既定では、クライアント コンピューターとサーバー コンピューターの両方で無効になっています。 CredSSP は、最も信頼性の高い環境でのみ有効にしてください。 たとえば、ドメイン コントローラーは信頼性が高いため、ドメイン コントローラーに接続しているドメイン管理者が有効にすることをお勧めします。
 
-PowerShell リモート処理用に CredSSP を使用する場合のセキュリティに関する注意事項の詳細については、次を参照してください[偶発的な Sabotage:。CredSSP の](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp)します。
+PowerShell リモート処理で CredSSP を使用する場合のセキュリティに関する注意事項の詳細については、「[Accidental Sabotage: Beware of CredSSP (予想外の妨害行為: CredSSP に関する注意事項)](https://www.powershellmagazine.com/2014/03/06/accidental-sabotage-beware-of-credssp)」を参照してください。
 
 資格情報の盗難攻撃の詳細については、「[Mitigating Pass-the-Hash (PtH) Attacks and Other Credential Theft (Pass-the-Hash (PtH) 攻撃とその他の資格情報の盗難の抑制)](https://www.microsoft.com/en-us/download/details.aspx?id=36036)」を参照してください。
 
@@ -43,7 +43,7 @@ PowerShell リモート処理用に CredSSP を有効にして使う方法の例
 
 Kerberos の無制限の委任を使って、次ホップを実行することもできます。 ただし、この方法では、委任された資格情報が使われる場所を制御することはできません。
 
->**注:** **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳細については、次を参照してください。[セキュリティ フォーカス。'アカウントが機密性の高い and cannot be delegated' を特権アカウントの analysing](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)と[Kerberos 認証のツールと設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**注:** **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)」 (セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析) および「[Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」 (Kerberos 認証のツールと設定) をご覧ください。
 
 ### <a name="pros"></a>長所
 
@@ -56,9 +56,10 @@ Kerberos の無制限の委任を使って、次ホップを実行すること�
 
 ## <a name="kerberos-constrained-delegation"></a>Kerberos の制約付き委任
 
-従来の (リソースに基づかない) 制約付き委任を使って、次ホップを実行できます。
+従来の (リソースに基づかない) 制約付き委任を使って、次ホップを実行できます。 「任意の認証プロトコルを使用して、」オプションを使用して Kerberos の制約付き委任を構成するプロトコル遷移を許可します。
 
->**注:** **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳細については、次を参照してください。[セキュリティ フォーカス。'アカウントが機密性の高い and cannot be delegated' を特権アカウントの analysing](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)と[Kerberos 認証のツールと設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+> [!NOTE]
+> **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)」 (セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析) および「[Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」 (Kerberos 認証のツールと設定) をご覧ください。
 
 ### <a name="pros"></a>長所
 
@@ -76,7 +77,7 @@ Kerberos の無制限の委任を使って、次ホップを実行すること�
 リソースに基づく Kerberos の制約付き委任 (Windows Server 2012 で導入) を使って、リソースが存在するサーバー オブジェクトでの資格情報の委任を構成します。
 上で説明した次ホップのシナリオでは、_ServerC_ を構成して、受け入れる委任された資格情報の委任元を指定します。
 
->**注:** **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳細については、次を参照してください。[セキュリティ フォーカス。'アカウントが機密性の高い and cannot be delegated' を特権アカウントの analysing](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)と[Kerberos 認証のツールと設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)
+>**注:** **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)」 (セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析) および「[Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」 (Kerberos 認証のツールと設定) をご覧ください。
 
 ### <a name="pros"></a>長所
 
@@ -213,8 +214,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 - [Windows Server 2012 による Kerberos の制約付き委任の処理方法、第 1 部](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [Windows Server 2012 による Kerberos の制約付き委任の処理方法、第 2 部](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [統合 Windows 認証での Azure Active Directory アプリケーション プロキシ展開に対する Kerberos の制約付き委任の概要](https://aka.ms/kcdpaper)
-- [[MS-ADA2]:Active Directory スキーマ属性 M2.210 Attribute msDS AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
-- [[MS-SFU]:Kerberos Protocol Extensions (Kerberos プロトコルの拡張機能)Service for User および制約付き委任プロトコルの 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
+- [[MS-ADA2]: Active Directory スキーマ属性 M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
+- [[MS-SFU]: Kerberos プロトコル拡張: Service for User および制約付き委任プロトコルの 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
 - [リソースに基づく Kerberos の制約付き委任](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
 - [PrincipalsAllowedToDelegateToAccount を使用した制約付き委任を使用しないリモート管理](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
 
