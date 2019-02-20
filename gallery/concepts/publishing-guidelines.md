@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 description: パブリッシャー向けのガイドライン
 title: PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
-ms.openlocfilehash: a996a820d6bd52e796a41659c6f468662dbff0f4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
+ms.openlocfilehash: 64c3d607b13dce64f70f138fdee849e5baaf85df
+ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655397"
+ms.lasthandoff: 02/14/2019
+ms.locfileid: "56265571"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -93,8 +93,8 @@ PowerShell ギャラリーに公開するモジュールのサンプルは、モ
 
 PowerShell ギャラリーでフィードバックを行う方法は 2 つあります。
 
-- 所有者にお問い合わせください。これにより、ユーザーはパッケージ所有者に電子メールを送信します。 パッケージの所有者は、PowerShell ギャラリー パッケージで使用されているメール アドレスをチェックし、寄せられた問題に対応することが重要です。 この方法の 1 つのデメリットは、問い合わせをしたユーザーと所有者しか会話を見られないため、所有者は同じ質問に何度も答えなければならない可能性があることです。
-- ［コメント］:パッケージの下部には、ページは、コメント フィールドです。
+- 所有者への連絡: この方法では、ユーザーはパッケージの所有者にメールを送信できます。 パッケージの所有者は、PowerShell ギャラリー パッケージで使用されているメール アドレスをチェックし、寄せられた問題に対応することが重要です。 この方法の 1 つのデメリットは、問い合わせをしたユーザーと所有者しか会話を見られないため、所有者は同じ質問に何度も答えなければならない可能性があることです。
+- コメント: パッケージのページの最下部にはコメント フィールドがあります。
   この方法のメリットは、他のユーザーもコメントと回答を確認できるため、同一の質問に答えなければならない回数を少なくできることです。
   パッケージの所有者には、各パッケージに寄せられたコメントをフォローすることが強く推奨されます。
 フォロー方法の詳細については、「[Providing Feedback via Social Media or Comments (ソーシャル メディアやコメントを使用したフィードバックの提供)](../how-to/working-with-packages/social-media-feedback.md)」をご覧ください。
@@ -140,11 +140,11 @@ ProjectURI が記載されている場合、PowerShell ギャラリーではパ�
 
 次のタグを使用すると、その環境でうまく機能するパッケージをユーザーに示します。
 
-- PSEdition_Desktop:Windows PowerShell を使用した互換性のあるパッケージ 
-- PSEdition_Core:Powershell Core と互換性のあるパッケージ 
-- WindowsWindows オペレーティング システムと互換性のあるパッケージ
-- LinuxLinux オペレーティング システムで互換性のあるパッケージ 
-- macOS 10.12 以降Mac オペレーティング システムと互換性のあるパッケージ
+- Windows PowerShell を使用した互換性のある PSEdition_Desktop: パッケージ 
+- Powershell Core と互換性のある PSEdition_Core: パッケージ 
+- Windows オペレーティング システムと互換性のある Windows: パッケージ
+- Linux オペレーティング システムで互換性のあるパッケージを Linux の場合: 
+- Mac オペレーティング システムと互換性のあるパッケージを MacOS の場合:
 
 ## <a name="include-tests"></a>テストを含める
 
@@ -203,7 +203,7 @@ PowerShellGet の publish-module、install-module、save-module、update-module 
 - バージョンは 0.1.1 や 4.11.192 のように、3 つの数字ブロックをピリオドで区切って構造化する
 - "0" から始まるバージョンはパッケージがまだ運用環境に対応していないことを示す。先頭の数字のみを使用する場合は、"0" から始める必要がある
 - 先頭の数字の変更 (1.9.9999 から 2.0.0) は、バージョン間で重大な変更が行われたことを示す
-- 2 番目の数字の変更 (1.01 から 1.02) は、モジュールへの新しいコマンドレットの追加など、機能レベルでの変更を示す
+- 2 番目の数字の変更 (1.1 から 1.2) は、モジュールへの新しいコマンドレットの追加など、機能レベルでの変更を示す
 - 3 番目の数字の変更は、パラメーターの新規追加、サンプルの更新、テストの新規追加など、小規模な変更を示す
 - バージョンを一覧化すると、PowerShell ではバージョンは文字列として並び替えられるため、1.01.0 は 1.001.0 より大きいものと扱われる
 
