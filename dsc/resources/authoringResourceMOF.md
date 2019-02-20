@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MOF を使用したカスタム DSC リソースの記述
-ms.openlocfilehash: 2dcdeb49b50e23bc8b9d87293ebb8d8ec5e7b57d
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: HT
+ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402238"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55682081"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>MOF を使用したカスタム DSC リソースの記述
 
@@ -290,3 +290,16 @@ if (PsDscContext.RunAsUser) {
     Write-Verbose "User: $PsDscContext.RunAsUser";
 }
 ```
+
+## <a name="rebooting-the-node"></a>ノードを再起動します。
+
+場合実行するアクション、`Set-TargetResource`関数には、再起動が必要です、ノードを再起動するように LCM を指示するグローバル フラグを使用することができます。 この再起動は、直後後に発生します、`Set-TargetResource`関数が完了します。
+
+内で、`Set-TargetResource`関数は、次のコード行を追加します。
+
+```powershell
+# Include this line if the resource requires a system reboot.
+$global:DSCMachineStatus = 1
+```
+
+ノードを再起動するように LCM のために、 **RebootNodeIfNeeded**フラグ設定する必要があります`$true`します。 **ActionAfterReboot**設定に設定する必要がありますも**ContinueConfiguration**、既定値します。 LCM の構成の詳細については、次を参照してください。[ローカル構成マネージャーの構成](../managing-nodes/metaConfig.md)、または[ローカル構成マネージャー (v4) の構成](../managing-nodes/metaConfig4.md)します。
