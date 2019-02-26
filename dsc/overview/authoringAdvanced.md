@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: 合成とコラボレーションのための高度な DSC の作成
-ms.openlocfilehash: 3e40ba94de0a53c1c9663553c4ec443b5e0df3fd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+title: CI/CD パイプラインでの DSC のロールについて
+ms.openlocfilehash: 7aec414b3d8e61d1daa1ce796184ac34dbbb43ce
+ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55681801"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56803380"
 ---
-# <a name="advanced-dsc-authoring-for-composition-and-collaboration"></a>合成とコラボレーションのための高度な DSC の作成
+# <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>CI/CD パイプラインでの DSC のロールについて
 
 この記事では、構成とリソースを結合するために使用できるアプローチの種類について説明します。
 各シナリオの目標は同じで、サーバーの展開の終了状態に到達するために複数の構成を選択する場合の複雑さを軽減することです。
