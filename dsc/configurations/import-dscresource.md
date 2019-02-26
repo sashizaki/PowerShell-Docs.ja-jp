@@ -2,16 +2,16 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Import-DSCResource の使用
-ms.openlocfilehash: f22c741969b1429074e7307a00a5c014cf563089
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
+ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265503"
+ms.lasthandoff: 02/25/2019
+ms.locfileid: "56803414"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource の使用
 
-`Import-DScResource` 動的なキーワードは、構成スクリプト ブロック内でのみ使用できますです。 `Import-DSCResource`構成に必要なすべてのリソースをインポートするキーワード。 下にあるリソース`$phsome`は自動的に、インポートで使用されるすべてのリソースを明示的にインポートするベスト プラクティスをまだと見なされますが、[構成](Configurations.md)します。
+`Import-DScResource` 動的なキーワードは、構成スクリプト ブロック内でのみ使用できますです。 `Import-DSCResource`構成に必要なすべてのリソースをインポートするキーワード。 下にあるリソース`$pshome`は自動的に、インポートで使用されるすべてのリソースを明示的にインポートするベスト プラクティスをまだと見なされますが、[構成](Configurations.md)します。
 
 構文は、`Import-DSCResource`を次に示します。  モジュール名を指定するときに新しい行にそれぞれの一覧を表示するための要件になります。
 
