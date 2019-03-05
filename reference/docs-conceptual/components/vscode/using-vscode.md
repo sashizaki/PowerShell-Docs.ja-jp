@@ -2,12 +2,12 @@
 title: PowerShell 開発のための Visual Studio Code の使用
 description: PowerShell 開発のための Visual Studio Code の使用
 ms.date: 08/06/2018
-ms.openlocfilehash: 3101fa57896996a696385801303333e4a6406d20
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
+ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402253"
+ms.lasthandoff: 03/02/2019
+ms.locfileid: "57251389"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell 開発のための Visual Studio Code の使用
 
@@ -64,6 +64,24 @@ Windows、macOS、および Linux 上の最近のワークロードに対して�
 ファイルを閉じるには、ファイル名の横の "x" をクリックします。
 **[ファイル]、[終了]** の順にクリックし、Visual Studio Code を終了します。
 
+### <a name="installing-the-powershell-extension-on-restricted-systems"></a>制限付きのシステムに PowerShell の拡張機能をインストールします。
+
+一部のシステムでは、チェックするすべてのコード署名を必要とし、手動で承認システムで実行する PowerShell エディター サービスが必要な方法で設定されます。
+実行ポリシーを変更するグループ ポリシーの更新は、PowerShell の拡張機能がインストールされているようなエラーが到達した場合に考えられる原因を示します。
+
+```
+Language server startup failed.
+```
+
+PowerShell エディター サービスおよび for VSCode PowerShell 拡張機能はを手動で承認するには、プロンプトと実行、PowerShell を開きます。
+
+```powershell
+Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
+```
+
+"Do you want この信頼されない発行元からソフトウェアを実行するか?"が表示されます。
+型`R`ファイルを実行します。 次に、Visual Studio Code を開き、PowerShell の拡張機能が正しく機能していることを確認します。 作業の開始の問題がある場合に、通知して[GitHub](https://github.com/PowerShell/vscode-powershell/issues)します。
+
 #### <a name="using-a-specific-installed-version-of-powershell"></a>PowerShell の特定のインストール バージョンの使用
 
 Visual Studio Code で PowerShell の特定のインストール バージョンを使用する場合、ユーザー設定ファイルに新しい変数を追加する必要があります。
@@ -98,17 +116,28 @@ Visual Studio Code には、次の構成設定をお勧めします。
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
     "omnisharp.projectLoadTimeout": 120,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
 }
 ```
+
+これらの設定をすべてのファイルの種類に影響しない場合は、VSCode は言語ごとの構成もできます。 設定を配置することで特定の言語設定を作成、`[<language-name>]`フィールド。 たとえば、次のように入力します。
+
+```json
+"[powershell]": {
+    "files.encoding": "utf8bom",
+    "files.autoGuessEncoding": true
+}
+```
+
+ファイルの詳細については、VS コードでのエンコードを参照してください[ファイルのエンコードを理解する](understanding-file-encoding.md)します。
 
 ## <a name="debugging-with-visual-studio-code"></a>Visual Studio Code を使用したデバッグ
 
 ### <a name="no-workspace-debugging"></a>ワークスペースを使用しないデバッグ
 
-Visual Studio Code バージョン 1.9 以降では、PowerShell スクリプトを含むフォルダーを開かずに PowerShell スクリプトをデバッグできます。
-単純に、**[ファイル]、[ファイルを開く]** の順にクリックして PowerShell スクリプト ファイルを開き、行にブレークポイントを設定し (F9 キーを押す)、F5 キーを押してデバッグを開始します。
-[Debug actions]\(デバッグ アクション\) ウィンドウが表示されます。ここでは、デバッガーを中断したり、デバッグのステップ実行、再開、停止を行ったりすることができます。
+Visual Studio Code バージョン 1.9 以降では、PowerShell スクリプトを含むフォルダーを開かずに PowerShell スクリプトをデバッグできます。 PowerShell スクリプト ファイルを開きます**ファイル]、[ファイルを開く.**(F9 キーを押します)、行にブレークポイントを設定、および、f5 キーを押してデバッグを開始するキーを押します。 [Debug actions]\(デバッグ アクション\) ウィンドウが表示されます。ここでは、デバッガーを中断したり、デバッグのステップ実行、再開、停止を行ったりすることができます。
 
 ### <a name="workspace-debugging"></a>ワークスペースを使用したデバッグ
 
@@ -126,7 +155,7 @@ Visual Studio Code バージョン 1.9 以降では、PowerShell スクリプト
 
 デバッグ用の構成ファイルを作成するには、次の手順に従います。
 
-  1. **Ctrl + Shift + D** (Mac の場合は **Cmd + Shift + D**) と押して、[**デバッグ**] ビューを開きます。
+  1. **Ctrl + Shift + D** (Mac の場合は **Cmd + Shift + D**) と押して、**[デバッグ]** ビューを開きます。
   2. ツールバーの **[構成]** 歯車アイコンキーを押します。
   3. Visual Studio Code により、**[環境の選択]** が求められます。 **[PowerShell]** を選択します。
 
@@ -165,7 +194,7 @@ Visual Studio Code バージョン 1.9 以降では、PowerShell スクリプト
 
   これが、一般的なデバッグ シナリオです。
   ただし、エディターでこのファイルを開いた場合、**[構成の追加]** ボタンが表示されます。
-  さらに PowerShell デバッグ構成を追加するには、このボタンを押します。 追加する 1 つの便利な構成が**PowerShell:スクリプトを起動して**します。
+  さらに PowerShell デバッグ構成を追加するには、このボタンを押します。 **[PowerShell: Launch Script]\(PowerShell: スクリプトの起動\)** の構成を追加すると便利です。
   この構成では、エディターで現在どのファイルがアクティブであるかに関係なく、F5 キーを押すと起動される特定のファイルを、オプションの引数とともに指定できます。
 
   デバッグ構成が確立されると、**[デバッグ]** ビューのツールバーのデバッグ構成ドロップダウンから、デバッグ セッションで使用する構成を選択できます。
