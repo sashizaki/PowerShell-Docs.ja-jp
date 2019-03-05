@@ -26,7 +26,7 @@ Windows PowerShell Web Access をインストールし、ゲートウェイを�
 
 Windows Server 2012 R2 の [Add-PswaAuthorizationRule と](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) [Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) に、リモート コンピューターから、またはアクティブな Windows PowerShell Web Access セッション内から Windows PowerShell Web Access 承認規則を追加し、テストできるようにするために、資格情報パラメーターが用意されました。 資格情報パラメーターを持つ他の Windows PowerShell コマンドレットと同様、PSCredential オブジェクトをパラメーターの値として指定できます。 リモート コンピューターに渡す資格情報を含む PSCredential オブジェクトを作成するには、[Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) コマンドレットを実行します。
 
-Windows PowerShell Web Access の認証規則はホワイトリスト方式です。 各規則は、ユーザー、対象コンピューター、および指定された対象コンピューターにおける特定の Windows PowerShell [セッション構成](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1) (エンドポイントまたは_実行空間_とも呼ばれます) の間に許可される接続を定義したものです。
+Windows PowerShell Web Access の認証規則はホワイトリスト方式です。 各規則は、ユーザー、ターゲット コンピューター、および指定されたターゲット コンピューターにおける特定の Windows PowerShell [セッション構成](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1) (エンドポイントまたは_実行空間_とも呼ばれます) の間に許可される接続を定義したものです。
 **実行空間**の説明については、「[PowerShell 実行空間の使用を開始する) を参照してください](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)」
 
 > [!IMPORTANT]
@@ -45,7 +45,7 @@ Windows PowerShell Web Access のセキュリティ モデルは、Web ベース
 IIS のベスト プラクティスと、サービス拒否攻撃を阻止する方法の詳細については、[DoS/サービス拒否攻撃阻止のベスト プラクティスに関するページ](https://technet.microsoft.com/library/cc750213)を参照してください。
 管理者は、市販の認証ソフトウェアを購入してインストールすることも可能です。
 
-エンド ユーザーと対象コンピューターの間に構成される 4 つの層を次の表に示します。
+エンド ユーザーとターゲット コンピューターの間に構成される 4 つの層を次の表に示します。
 
 |レベル|層|
 |-|-|
@@ -165,7 +165,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
   > [!NOTE]
   > この規則は、Windows PowerShell Web Access が提供する承認規則によるセキュリティ層をバイパスするものであり、セキュリティ保護された環境には推奨されません。
 
-- 管理者は、ワークグループとドメインの両方が含まれている環境で、対象コンピューターへの接続をユーザーに許可する必要があります。ワークグループ コンピューターは、ドメイン内の対象コンピューターに接続するために使用されることがあります。ドメイン内のコンピューターは、ワークグループ内の対象コンピューターに接続するために使用されることがあります。 ワークグループ内にはゲートウェイ サーバー *PswaServer* があり、ドメイン内にはターゲット コンピューター *srv1.contoso.com* があります。 ユーザー *Chris* は、ワークグループ ゲートウェイ サーバーとターゲット コンピューターの両方で承認されているローカル ユーザーです。 ワークグループ サーバー上のユーザー名は *chrisLocal*、ターゲット コンピューター上のユーザー名は *contoso\\chris* です。 Chris に srv1.contoso.com へのアクセスを承認するには、管理者は以下の規則を追加する必要があります。
+- 管理者は、ワークグループとドメインの両方が含まれている環境で、ターゲット コンピューターへの接続をユーザーに許可する必要があります。ワークグループ コンピューターは、ドメイン内のターゲット コンピューターに接続するために使用されることがあります。ドメイン内のコンピューターは、ワークグループ内のターゲット コンピューターに接続するために使用されることがあります。 ワークグループ内にはゲートウェイ サーバー *PswaServer* があり、ドメイン内にはターゲット コンピューター *srv1.contoso.com* があります。 ユーザー *Chris* は、ワークグループ ゲートウェイ サーバーとターゲット コンピューターの両方で承認されているローカル ユーザーです。 ワークグループ サーバー上のユーザー名は *chrisLocal*、ターゲット コンピューター上のユーザー名は *contoso\\chris* です。 Chris に srv1.contoso.com へのアクセスを承認するには、管理者は以下の規則を追加する必要があります。
 
 ```powershell
 Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
@@ -181,7 +181,7 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
 2. サインイン ページの **[オプションの接続設定]** で指定された別の資格情報を使用することによる、ターゲット コンピューターでの認証
 
    > [!NOTE]
-   > ゲートウェイ コンピューターと対象コンピューターが別々のワークグループまたはドメインにある場合は、2 つのワークグループ コンピューター間、2 つのドメイン間、またはワークグループとドメインの間で、信頼関係を確立する必要があります。 Windows PowerShell Web Access の承認規則コマンドレットを使用してこの関係を構成することはできません。 承認規則では、コンピューター間の信頼関係は定義されません。承認規則では、特定の対象コンピューターとセッション構成に接続できるようにユーザーを承認することしかできません。 異なるドメイン間で信頼関係を構成する方法の詳細については、[ドメインおよびフォレストの信頼の作成に関するページ](https://technet.microsoft.com/library/cc794775.aspx)を参照してください。
+   > ゲートウェイ コンピューターとターゲット コンピューターが別々のワークグループまたはドメインにある場合は、2 つのワークグループ コンピューター間、2 つのドメイン間、またはワークグループとドメインの間で、信頼関係を確立する必要があります。 Windows PowerShell Web Access の承認規則コマンドレットを使用してこの関係を構成することはできません。 承認規則では、コンピューター間の信頼関係は定義されません。承認規則では、特定のターゲット コンピューターとセッション構成に接続できるようにユーザーを承認することしかできません。 異なるドメイン間で信頼関係を構成する方法の詳細については、[ドメインおよびフォレストの信頼の作成に関するページ](https://technet.microsoft.com/library/cc794775.aspx)を参照してください。
    > 信頼されたホストの一覧にワークグループ コンピューターを追加する方法の詳細については、「 [Remote Management with Server Manager (サーバー マネージャーによるリモート管理)](https://technet.microsoft.com/library/dd759202.aspx)」を参照してください。
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>1 セットの承認規則の複数サイトでの使用

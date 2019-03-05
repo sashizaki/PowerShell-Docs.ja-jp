@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: PowerShell, コマンドレット
 title: Web ベースの Windows PowerShell コンソールの使用
 ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403094"
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "55681311"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Web ベースの Windows PowerShell コンソールの使用
 
@@ -98,7 +98,7 @@ Windows PowerShell Web Access にサインインする前に、管理対象の�
 
     **[終了]** をクリックすると、Windows PowerShell Web Access セッションが保存されずにサインアウトします。
 
-- 同じブラウザー セッションまたは同じブラウザー セッションの新しいタブで、別のリモート コンピューターを管理するためにサインインする。 (これは、ゲートウェイ サーバーが Windows Server 2012 R2 を実行している場合は適用されません。Windows Server 2012 R2 で実行している Windows PowerShell Web Access では、同じブラウザー セッションの新しいタブで複数のユーザー セッションを開くことができます)。同じコンピューターで複数のアクティブ セッションを使う方法の詳細については、このトピックの「[Web ベース コンソールの制限事項](#limitations-of-the-web-based-console)」セクションの「複数の対象コンピューターへの同時接続」を参照してください。
+- 同じブラウザー セッションまたは同じブラウザー セッションの新しいタブで、別のリモート コンピューターを管理するためにサインインする。 (これは、ゲートウェイ サーバーが Windows Server 2012 R2 を実行している場合は適用されません。Windows Server 2012 R2 で実行している Windows PowerShell Web Access では、同じブラウザー セッションの新しいタブで複数のユーザー セッションを開くことができます)。同じコンピューターで複数のアクティブ セッションを使う方法の詳細については、このトピックの「[Web ベース コンソールの制限事項](#limitations-of-the-web-based-console)」セクションの「複数のターゲット コンピューターへの同時接続」を参照してください。
 
 - セッションの非アクティブな状態が 20 分続いた場合。 ゲートウェイの管理者は、非アクティブ状態によるタイムアウトの長さをカスタマイズできます。詳細については、「[セッションの管理](authorization-rules-and-security-features-of-windows-powershell-web-access.md#session-management)」を参照してください。
 
@@ -193,7 +193,7 @@ Alt + F7 | コマンド履歴の一覧を消去
 
     **NoLanguage** の Windows PowerShell Web Access セッション構成または制限付き実行空間にサインインしているユーザーは **[終了]** コマンドを実行してセッションを終了できません。 サインアウトするには、コンソール ページの **[サインアウト]** をクリックする必要があります。
 
-- 複数の対象コンピューターへの同時接続。
+- 複数のターゲット コンピューターへの同時接続。
 
     ゲートウェイ サーバーが Windows Server 2012 を実行している場合、Windows PowerShell Web Access では、ブラウザー セッションごとに接続できるリモート コンピューターは 1 つだけです。一度サインインした後に別のブラウザー タブを使って複数のリモート コンピューターに接続することはできません。 新しいタブまたはブラウザー ウィンドウを開くと、現在のセッションの切断と新しいセッションの開始を確認するメッセージが Windows PowerShell Web Access により表示されます。このメッセージから新しい (または同じ) リモート コンピューターに接続できます。 ただし、異なるリモート コンピューターに対して個別のセッションを 2 つ以上実行する必要がある場合、Internet Explorer の機能を使って新しいセッションを作成できます。 Internet Explorer で新しいブラウザー セッションを開始するには、**Alt** キーを押して **[ファイル]** メニューを開き、**[新しいセッション]** をクリックします。 次に新しいセッションで Windows PowerShell Web Access の Web サイトを開き、サインインして別のリモート コンピューターにアクセスします。
 
@@ -201,7 +201,7 @@ Alt + F7 | コマンド履歴の一覧を消去
 
 - 永続的な Windows PowerShell セッション (再接続)。
 
-    Windows PowerShell Web Access ゲートウェイがタイムアウトすると、ゲートウェイと対象コンピューターとのリモート接続は閉じられます。 これによって、現在処理中のすべてのコマンドレットとスクリプトが停止されます。 実行時間の長いタスクを実行している場合は、Windows PowerShell の **-Job** インフラストラクチャを使うことが推奨されます。これにより、ジョブを開始し、コンピューターから切断した後に再接続して、ジョブを永続的なものにすることができます。 **-Job** コマンドレットを使うもう 1 つのメリットは、Windows PowerShell Web Access を使ってジョブを開始し、サインアウトした後に、Windows PowerShell Web Access またはその他のホスト (Windows PowerShell 統合スクリプティング環境 (ISE) など) を使って再接続できる点です。
+    Windows PowerShell Web Access ゲートウェイがタイムアウトすると、ゲートウェイとターゲット コンピューターとのリモート接続は終了します。 これによって、現在処理中のすべてのコマンドレットとスクリプトが停止されます。 実行時間の長いタスクを実行している場合は、Windows PowerShell の **-Job** インフラストラクチャを使うことが推奨されます。これにより、ジョブを開始し、コンピューターから切断した後に再接続して、ジョブを永続的なものにすることができます。 **-Job** コマンドレットを使うもう 1 つのメリットは、Windows PowerShell Web Access を使ってジョブを開始し、サインアウトした後に、Windows PowerShell Web Access またはその他のホスト (Windows PowerShell 統合スクリプティング環境 (ISE) など) を使って再接続できる点です。
 
 - コンソールのサイズ変更。
 

@@ -145,7 +145,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration の新機能
 
 - Windows PowerShell 言語の機能が強化され、クラスを使用して、Windows PowerShell Desired State Configuration (DSC) のリソースを定義できるようになりました。 Import-DscResource は真の動的キーワードになりました。Windows PowerShell は、DscResource 属性を含むクラスを探して、指定されたモジュールのルート モジュールを解析します。 クラスを使用して DSC リソースを定義できるようになりました。このリソースには、MOF ファイルも、モジュール フォルダー内の DSCResource サブフォルダーも必要ありません。 Windows PowerShell モジュールのファイルには、複数の DSC リソース クラスを含めることができます。
-- 新しいパラメーター、ThrottleLimit が PSDesiredStateConfiguration モジュールの次のコマンドレットに追加されました。 ThrottleLimit パラメーターを追加して、コマンドを同時に実行する対象のコンピューターまたはデバイスの数を指定します。
+- 新しいパラメーター、ThrottleLimit が PSDesiredStateConfiguration モジュールの次のコマンドレットに追加されました。 ThrottleLimit パラメーターを追加して、コマンドを同時に実行するターゲット コンピューターまたはデバイスの数を指定します。
   - Get-DscConfiguration
   - Get-DscConfigurationStatus
   - Get-DscLocalConfigurationManager
