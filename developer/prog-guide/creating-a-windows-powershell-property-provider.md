@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: ade8fbd38e4f4a675e825b0d8850af0379c9d211
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4ed15dabffa933dee9becf2f839887eb9108775d
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858898"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430011"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Windows PowerShell プロパティ プロバイダーを作成する
 
 このトピックでは、データ ストア内のアイテムのプロパティを操作するユーザーを有効にするプロバイダーを作成する方法について説明します。 その結果、この種類のプロバイダーは、Windows PowerShell プロパティ プロバイダーとしてに呼ばれます。 たとえば、レジストリ プロバイダー レジストリ キーの項目のプロパティとして Windows PowerShell ハンドル レジストリ キーの値によって提供されます。 この種類のプロバイダーを追加する必要があります、 [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) .NET クラスの実装へのインターフェイス。
 
 > [!NOTE]
-> Windows PowerShell では、Windows PowerShell プロバイダーの開発に使用できるテンプレート ファイルを提供します。 TemplateProvider.cs ファイルでは、Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントで使用できます。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 > Windows PowerShell では、Windows PowerShell プロバイダーの開発に使用できるテンプレート ファイルを提供します。 TemplateProvider.cs ファイルでは、Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントで使用できます。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 >
 > ダウンロードしたテンプレートが表示されます、  **\<PowerShell のサンプル >** ディレクトリ。 このファイルのコピーを作成して、必要のないすべての機能を削除する、新しい Windows PowerShell プロバイダーを作成するため、コピーを使用する必要があります。
@@ -150,7 +149,6 @@ ms.locfileid: "56858898"
 ## <a name="building-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーの構築
 
 参照してください[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
-参照してください[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
 
 ## <a name="see-also"></a>参照
 
@@ -159,9 +157,5 @@ ms.locfileid: "56858898"
 [デザイン、Windows PowerShell プロバイダー](./designing-your-windows-powershell-provider.md)
 
 [オブジェクトの種類を拡張して、書式設定](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[オブジェクトの種類を拡張して、書式設定](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

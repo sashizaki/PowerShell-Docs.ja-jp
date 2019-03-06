@@ -8,20 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
-ms.openlocfilehash: 77d0871953950374d2eece65bead0f2075b1138b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 432105db021bd19f467f6a275b3ea9038fa82d5b
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857288"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429858"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>RunSpace03 (VB.NET) コード サンプル
 
 VB.NET のソース コードに示します。 で記載されているコンソール アプリケーションの[コンソール アプリケーションを実行に指定されたスクリプトを作成する](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68)します。 このサンプルでは、 [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを取得しますが、スクリプトに渡されるプロセス名の一覧については、情報を処理するスクリプトを実行します。 入力オブジェクトをスクリプトに渡す方法と、エラー オブジェクトと出力オブジェクトを取得する方法を示しています。
-VB.NET のソース コードに示します。 で記載されているコンソール アプリケーションの[コンソール アプリケーションを実行に指定されたスクリプトを作成する](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68)します。 このサンプルでは、 [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを取得しますが、スクリプトに渡されるプロセス名の一覧については、情報を処理するスクリプトを実行します。 入力オブジェクトをスクリプトに渡す方法と、エラー オブジェクトと出力オブジェクトを取得する方法を示しています。
 
 > [!NOTE]
-> Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用して、このサンプルの VB.NET のソース ファイル (runspace03.vb) をダウンロードできます。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 > Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用して、このサンプルの VB.NET のソース ファイル (runspace03.vb) をダウンロードできます。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。

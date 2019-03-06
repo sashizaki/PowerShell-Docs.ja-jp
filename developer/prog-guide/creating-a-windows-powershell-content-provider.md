@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 6e5d79487539d4f58922e2686f1fdba08797f305
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5e35d2fdfa4c6bd70c1b69ca1f357ee8d8ebcdc4
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855308"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429977"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Windows PowerShell コンテンツ プロバイダーを作成する
 
 このトピックでは、データ ストア内の項目の内容を操作するユーザーを有効にする Windows PowerShell プロバイダーを作成する方法について説明します。 その結果、項目の内容を操作できるプロバイダーは Windows PowerShell コンテンツ プロバイダーとしてに呼ばれます。
 
 > [!NOTE]
-> ダウンロードすることができます、 C# Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用して、このプロバイダーのソース ファイル (AccessDBSampleProvider06.cs)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 > ダウンロードすることができます、 C# Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用して、このプロバイダーのソース ファイル (AccessDBSampleProvider06.cs)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
@@ -233,11 +232,9 @@ public object ClearContentDynamicParameters(string path)
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類を定義して、書式設定
 
 プロバイダーを記述する場合は、既存のオブジェクトにメンバーを追加または新しいオブジェクトを定義する必要があります。 これが完了したら、Windows PowerShell がオブジェクトのメンバーを識別するために使用できる種類のファイルと、オブジェクトの表示方法を定義するフォーマット ファイルを作成する必要があります。 詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)します。
-プロバイダーを記述する場合は、既存のオブジェクトにメンバーを追加または新しいオブジェクトを定義する必要があります。 これが完了したら、Windows PowerShell がオブジェクトのメンバーを識別するために使用できる種類のファイルと、オブジェクトの表示方法を定義するフォーマット ファイルを作成する必要があります。 詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)します。
 
 ## <a name="building-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーのビルド
 
-参照してください[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
 参照してください[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
 
 ## <a name="testing-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーのテスト
@@ -285,11 +282,7 @@ Country   : USA
 
 [オブジェクトの種類を拡張して、書式設定](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[オブジェクトの種類を拡張して、書式設定](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
 [ナビゲーションの Windows PowerShell プロバイダーを実装します。](./creating-a-windows-powershell-navigation-provider.md)
-
-[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

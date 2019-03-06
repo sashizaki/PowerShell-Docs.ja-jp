@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: dc68af2b-f622-47c4-964f-b07f3d5bdf14
 caps.latest.revision: 5
-ms.openlocfilehash: fdb78ac93befba66041c4e45834f8a857e3670b6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 367fecfe5417e0e4cc41b076bac6fefbe185624f
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862118"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429654"
 ---
 # <a name="stopprocesssample04-code-samples"></a>StopProcessSample04 コード サンプル
 
 StopProc00 サンプル コマンドレットのコード サンプルを次に示します。 これは、`Stop-Process`で説明されているコマンドレット サンプル[コマンドレットにパラメーター セットを追加する](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)します。 `Stop-Process` Get-proc コマンドレットを使用して取得されるプロセスを停止するコマンドレットは設計されています (で説明されている[最初のコマンドレットを作成](../cmdlet/creating-a-cmdlet-without-parameters.md))。
 
 > [!NOTE]
-> ダウンロードすることができます、 C# (stopprocesssample04.cs) と Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用してこの停止 Proc コマンドレット VB.NET (stopprocesssample04.vb)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 > ダウンロードすることができます、 C# (stopprocesssample04.cs) と Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用してこの停止 Proc コマンドレット VB.NET (stopprocesssample04.vb)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。

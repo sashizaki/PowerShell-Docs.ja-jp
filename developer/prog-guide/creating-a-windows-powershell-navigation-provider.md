@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 066aa188d5d7dfde5af424a3bb8f15ff51c1e936
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cbc8ce0600553f9e9ab973d6f92ea5eafde310e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856958"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57430037"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Windows PowerShell ナビゲーション プロバイダーを作成する
 
 このトピックでは、データ ストアを移動できる Windows PowerShell ナビゲーション プロバイダーを作成する方法について説明します。 この種類のプロバイダーには、再帰的なコマンド、入れ子になったコンテナー、および相対パスがサポートしています。
 
 > [!NOTE]
-> ダウンロードすることができます、 C# Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用して、このプロバイダーのソース ファイル (AccessDBSampleProvider05.cs)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 > ダウンロードすることができます、 C# Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用して、このプロバイダーのソース ファイル (AccessDBSampleProvider05.cs)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
@@ -186,11 +185,9 @@ Windows PowerShell ナビゲーション プロバイダーの実装、 [System.
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類を定義して、書式設定
 
 プロバイダーに既存のオブジェクトにメンバーを追加したり、新しいオブジェクトを定義することができます。 詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)します。
-プロバイダーに既存のオブジェクトにメンバーを追加したり、新しいオブジェクトを定義することができます。 詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)します。
 
 ## <a name="building-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーの構築
 
-詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
 詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
 
 ## <a name="testing-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーのテスト
@@ -323,11 +320,7 @@ Windows PowerShell を使用した、Windows PowerShell プロバイダーを登
 
 [オブジェクトの種類を拡張して、書式設定](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[オブジェクトの種類を拡張して、書式設定](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
 [コンテナーの Windows PowerShell プロバイダーを実装します。](./creating-a-windows-powershell-container-provider.md)
-
-[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 

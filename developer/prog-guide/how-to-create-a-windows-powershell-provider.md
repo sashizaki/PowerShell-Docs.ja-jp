@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide, providers
 ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
 caps.latest.revision: 5
-ms.openlocfilehash: a114a4b0d5a5bfcc0d072f83f0e59ca6d329a172
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 286df63e75d6372cb41c974e60e79b02bd13686e
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862408"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429671"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Windows PowerShell プロバイダーを作成する方法
 
@@ -33,7 +33,6 @@ Windows PowerShell では、既知のデータ ストアへのアクセスに使
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>Windows PowerShell のパスを使用して、格納されたデータにアクセスします。
 
-Windows PowerShell プロバイダーは、Windows PowerShell パスを使用してプログラムでのコマンドを Windows PowerShell ランタイムにアクセスできます。 ほとんどの場合、これらのパスは、プロバイダーを介してデータに直接アクセスに使用されます。 ただし、いくつかのパスは、データにアクセスする Windows PowerShell 以外のアプリケーション プログラミング インターフェイス (Api) を使用するコマンドレットを許可するプロバイダーの内部のパスに解決できます。 Windows PowerShell 内での Windows PowerShell プロバイダーの動作方法の詳細については、次を参照してください。 [Windows PowerShell のしくみ](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)します。
 Windows PowerShell プロバイダーは、Windows PowerShell パスを使用してプログラムでのコマンドを Windows PowerShell ランタイムにアクセスできます。 ほとんどの場合、これらのパスは、プロバイダーを介してデータに直接アクセスに使用されます。 ただし、いくつかのパスは、データにアクセスする Windows PowerShell 以外のアプリケーション プログラミング インターフェイス (Api) を使用するコマンドレットを許可するプロバイダーの内部のパスに解決できます。 Windows PowerShell 内での Windows PowerShell プロバイダーの動作方法の詳細については、次を参照してください。 [Windows PowerShell のしくみ](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)します。
 
 ## <a name="exposing-provider-cmdlets-using-windows-powershell-drives"></a>ドライブの Windows PowerShell を使用して、プロバイダー コマンドレットを公開します。
@@ -64,8 +63,6 @@ Windows PowerShell プロバイダーは、仮想の Windows PowerShell ドラ�
 |[Windows PowerShell プロパティ プロバイダーを作成します。](./creating-a-windows-powershell-property-provider.md)|このトピックでは、ユーザーがデータ ストア内のアイテムのプロパティを操作できる Windows PowerShell プロバイダーを作成する方法を示します。|
 
 ## <a name="see-also"></a>参照
-
-[Windows PowerShell の動作](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [Windows PowerShell の動作](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 

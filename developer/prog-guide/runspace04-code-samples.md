@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: cb6fcc47-cf89-43e7-b686-3d60934ce3e7
 caps.latest.revision: 6
-ms.openlocfilehash: 10f236b201920d2d456af41328c7a62a9e14b571
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2a3e7598c433027fdd96343829c0606fc7b1c37c
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861098"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429467"
 ---
 # <a name="runspace04-code-samples"></a>RunSpace04 コード サンプル
 
 使用する実行空間用のコード サンプルを次に示します、 [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)終了エラーを生成するスクリプトを実行するクラス。 ホスト アプリケーションは、エラーをキャッチし、エラー レコードを解釈する責任を負います。
 
 > [!NOTE]
-> Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用して、この実行空間には、VB.NET のソース ファイル (Runspace04.vb) をダウンロードできます。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 > Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用して、この実行空間には、VB.NET のソース ファイル (Runspace04.vb) をダウンロードできます。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。

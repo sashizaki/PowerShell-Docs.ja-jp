@@ -11,19 +11,18 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: 30b4dbcd281f712bba8d8e3540d2282d527388e4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: be1446dbd2b244f4752e55c8137433edee8427b0
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862068"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429994"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Windows PowerShell アイテム プロバイダーを作成する
 
 このトピックでは、データ ストア内のデータを操作できる Windows PowerShell プロバイダーを作成する方法について説明します。 このトピックでは、ストア内のデータ要素をストアのデータの「項目」として参照されます。 その結果、ストア内のデータを操作できるプロバイダーは、Windows PowerShell 項目プロバイダーとしてに呼ばれます。
 
 > [!NOTE]
-> ダウンロードすることができます、 C# Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用して、このプロバイダーのソース ファイル (AccessDBSampleProvider03.cs)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 > ダウンロードすることができます、 C# Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用して、このプロバイダーのソース ファイル (AccessDBSampleProvider03.cs)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
@@ -88,7 +87,6 @@ Windows PowerShell 項目プロバイダーから派生する .NET クラスを�
 
 ## <a name="checking-for-path-validity"></a>パスの有効性の確認
 
-「PSPath 概念」セクションで定義されている、Windows PowerShell ランタイムが、プロバイダーへの Windows PowerShell パスを提供データ項目を探すときに[Windows PowerShell のしくみ](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)します。 Windows PowerShell 項目プロバイダーは、実装することで渡された任意のパスの構文および意味の有効性を確認する必要があります、 [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)メソッド。 このメソッドが戻る`true`パスが、有効な場合と`false`それ以外の場合。 このメソッドの実装が、パスが構文的にのみ、パスにある項目の有無を確認する必要がありますできませんに注意してくださいと意味的に正しくします。
 「PSPath 概念」セクションで定義されている、Windows PowerShell ランタイムが、プロバイダーへの Windows PowerShell パスを提供データ項目を探すときに[Windows PowerShell のしくみ](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)します。 Windows PowerShell 項目プロバイダーは、実装することで渡された任意のパスの構文および意味の有効性を確認する必要があります、 [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)メソッド。 このメソッドが戻る`true`パスが、有効な場合と`false`それ以外の場合。 このメソッドの実装が、パスが構文的にのみ、パスにある項目の有無を確認する必要がありますできませんに注意してくださいと意味的に正しくします。
 
 実装をここでは、 [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)このプロバイダーのメソッド。 この実装が統一された 1 つに、パス内のすべての区切り記号を変換する NormalizePath ヘルパー メソッドを呼び出すことに注意してください。
@@ -266,11 +264,9 @@ Windows PowerShell 項目プロバイダーを実装できます、 [System.Mana
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類を定義して、書式設定
 
 プロバイダーを記述する場合は、既存のオブジェクトにメンバーを追加または新しいオブジェクトを定義する必要があります。 完了したら、Windows PowerShell がオブジェクトのメンバーを識別するために使用できる種類のファイルと、オブジェクトの表示方法を定義するフォーマット ファイルを作成します。 詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)します。
-プロバイダーを記述する場合は、既存のオブジェクトにメンバーを追加または新しいオブジェクトを定義する必要があります。 完了したら、Windows PowerShell がオブジェクトのメンバーを識別するために使用できる種類のファイルと、オブジェクトの表示方法を定義するフォーマット ファイルを作成します。 詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)します。
 
 ## <a name="building-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーの構築
 
-参照してください[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
 参照してください[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
 
 ## <a name="testing-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーのテスト
@@ -289,16 +285,10 @@ Windows PowerShell を使用したこの Windows PowerShell 項目プロバイ�
 
 [オブジェクトの種類を拡張して、書式設定](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[オブジェクトの種類を拡張して、書式設定](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
-
-[Windows PowerShell の動作](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
-
 [Windows PowerShell の動作](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
 
 [コンテナーの Windows PowerShell プロバイダーを作成します。](./creating-a-windows-powershell-container-provider.md)
 
 [ドライブの Windows PowerShell プロバイダーを作成します。](./creating-a-windows-powershell-drive-provider.md)
-
-[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

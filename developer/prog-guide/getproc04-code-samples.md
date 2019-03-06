@@ -8,19 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c00afd46-758a-4aec-b865-2c9d8f6a17ad
 caps.latest.revision: 5
-ms.openlocfilehash: d679bc8cbdb026e072628d3e0c5704de2eec7af9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b9b42c818981090496f7b14a1cb8bdec14a5d5bb
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855448"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429722"
 ---
 # <a name="getproc04-code-samples"></a>GetProc04 コード サンプル
 
 GetProc04 サンプル コマンドレットのコード サンプルを次に示します。 これは、`Get-Process`で説明されているコマンドレット サンプル[Your コマンドレットの終わらないエラー報告の追加](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)します。 これは、`Get-Process`コマンドレットの呼び出し、 [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)プロセス情報の取得中には無効操作例外がスローされるメソッド。
 
 > [!NOTE]
-> ダウンロードすることができます、C#この Get-proc コマンドレットは、Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用してソース ファイル (getprov04.cs)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 > ダウンロードすることができます、C#この Get-proc コマンドレットは、Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用してソース ファイル (getprov04.cs)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
