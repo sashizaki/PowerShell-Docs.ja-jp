@@ -2,12 +2,12 @@
 title: VSCode と PowerShell でのファイルのエンコードの概要
 description: VSCode と PowerShell でファイルのエンコードを構成します。
 ms.date: 02/28/2019
-ms.openlocfilehash: f3b133b4bee7688821a5960429e2f26b69b01e12
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
-ms.translationtype: HT
+ms.openlocfilehash: 9cf445ebd0c2bb2dbdf4438f02dafe3df3a5d1e2
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251474"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429807"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>VSCode と PowerShell でのファイルのエンコードの概要
 
@@ -68,7 +68,7 @@ At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtp
 PowerShell の拡張機能は、さまざまな方法でスクリプトを使用した操作します。
 
 1. VSCode でスクリプトを編集した内容は、拡張機能に VSCode で送信されます。 [言語サーバー プロトコル][]を utf-8 でこのコンテンツが転送されることを義務付けています。 そのため、間違ったエンコーディングを取得する拡張機能のことはできません。
-2. スクリプトが、統合されたコンソールで直接実行された、読み込まれるファイルから PowerShell によって直接します。 VSCode の Tf PowerShell のエンコードとは異なります、何かできる間違ったここをクリックします。
+2. スクリプトが、統合されたコンソールで直接実行された、読み込まれるファイルから PowerShell によって直接します。 VSCode の PowerShell のエンコードと異なる場合、ものはここへ記述が正しくありません。
 3. VSCode で開いているスクリプトでは、VSCode で開かれていない別のスクリプトを参照する、拡張機能は、ファイル システムからそのスクリプトのコンテンツの読み込みにフォールバックします。 PowerShell の拡張機能が既定では utf-8 がエンコーディングが使用[バイト オーダー マーク][]、または BOM 検出の正しいエンコーディングを選択します。
 
 問題は、BOM なしの形式のエンコーディングを前提とする場合に発生します (など[utf-8][] BOM なしでと[Windows-1252][])。
@@ -100,7 +100,7 @@ Bom は省略可能で、utf-8 の信頼性の高い規則があらゆる場所�
 
 VSCode の既定のエンコードは BOM なしの utf-8 です。
 
-設定する[VSCode のエンコーディング][]VSCode 設定には、(<kbd>Ctrl<kbd>+</kbd>、</kbd>) を設定し、`"files.encoding"`設定。
+設定する[VSCode のエンコード][]VSCode 設定には、(<kbd>Ctrl<kbd>+</kbd>、</kbd>) を設定し、`"files.encoding"`設定。
 
 ```json
 "files.encoding": "utf8bom"
@@ -192,7 +192,7 @@ PowerShell を使用して、特定の入力エンコードを強制すること
 
 ### <a name="existing-scripts"></a>既存のスクリプト
 
-ファイル システム上のスクリプトは、新しい選択したエンコードを再エンコードする必要があります。 VSCode の下部にあるバーでは、utf-8 のラベルが表示されます。 クリックして、操作バーを開き、選択**エンコードで保存**します。 そのファイルの新しいエンコードを選択することができますようになりました。 参照してください[VSCode のエンコーディング][]詳しい手順についてはします。
+ファイル システム上のスクリプトは、新しい選択したエンコードを再エンコードする必要があります。 VSCode の下部にあるバーでは、utf-8 のラベルが表示されます。 クリックして、操作バーを開き、選択**エンコードで保存**します。 そのファイルの新しいエンコードを選択することができますようになりました。 参照してください[VSCode のエンコード][]詳しい手順についてはします。
 
 複数のファイルを再エンコードする必要がある場合は、次のスクリプトを使用することができます。
 
@@ -272,4 +272,4 @@ Git など、いくつかのソース管理ツールは、エンコーディン�
 [バイト オーダー マーク]: https://wikipedia.org/wiki/Byte_order_mark
 [UTF-16]: https://wikipedia.org/wiki/UTF-16
 [言語サーバー プロトコル]: https://microsoft.github.io/language-server-protocol/
-[VSCode のエンコーディング]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
+[VSCode のエンコード]: https://code.visualstudio.com/docs/editor/codebasics#_file-encoding-support
