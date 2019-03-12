@@ -2,12 +2,12 @@
 ms.date: 08/09/2017
 keywords: powershell, コマンドレット, ダウンロード, インストール, セットアップ, windows 10, windows 8.1, windows 8.0, windows 7
 title: Windows PowerShell のインストール
-ms.openlocfilehash: 37f28c2af5a11af26d9110cc6c5f7612124be557
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
+ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
 ms.translationtype: MTE95
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55887618"
+ms.lasthandoff: 03/05/2019
+ms.locfileid: "57429875"
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell のインストール
 
@@ -85,7 +85,7 @@ Windows 7 SP1<br/>Windows Server 2008 R2 SP1 | [WMF 3.0](https://www.microsoft.c
 
 **Azure PowerShell** を探している場合は、「[Overview of Azure PowerShell](/powershell/azure/overview)」 (Azure PowerShell の概要) から開始することができます。
 
-その他にも、[Azure PowerShell のインストールと構成](/powershell/azure/install-azurerm-ps)が必要な場合があります
+その他にも、[Azure PowerShell のインストールと構成](/powershell/azure/install-az-ps)が必要な場合があります
 
 ## <a name="see-also"></a>参照
 
