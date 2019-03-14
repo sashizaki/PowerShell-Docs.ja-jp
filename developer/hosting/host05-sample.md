@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0a49e3c4-6a1b-404c-aefc-134e5ce3d108
 caps.latest.revision: 11
-ms.openlocfilehash: 3d9edb9d2af8ab15764d97256f49f674255e7ee7
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.openlocfilehash: 63bcdc6b273b47f8eb743928d2eaa5ef91470df5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56863798"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794418"
 ---
 # <a name="host05-sample"></a>Host05 サンプル
 
-このサンプルでは、コマンドラインからコマンドを読み取ってや、コマンドを実行し、結果をコンソールに表示する対話型コンソール ベースのホスト アプリケーションを構築する方法を示します。 このホスト アプリケーションでは、[Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) コマンドレットと [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) コマンドレットを使用してリモート コンピューターを呼び出すこともできます。
 このサンプルでは、コマンドラインからコマンドを読み取ってや、コマンドを実行し、結果をコンソールに表示する対話型コンソール ベースのホスト アプリケーションを構築する方法を示します。 このホスト アプリケーションでは、[Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) コマンドレットと [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) コマンドレットを使用してリモート コンピューターを呼び出すこともできます。
 
 ## <a name="requirements"></a>要件
@@ -44,7 +43,6 @@ ms.locfileid: "56863798"
 
 - 実装、 [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection)インターフェイス。
 
-- 実装、 [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)インターフェイスを使用して対話型リモート処理をサポートするために、 [Enter-pssession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)と[Exit-pssession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession)コマンドレット。
 - 実装、 [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)インターフェイスを使用して対話型リモート処理をサポートするために、 [Enter-pssession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)と[Exit-pssession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession)コマンドレット。
 
 ## <a name="example"></a>例

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
-ms.openlocfilehash: 9aff23647e55e8c9c41c54e5b62cedc15fb28a2d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857168"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794707"
 ---
 # <a name="background-jobs"></a>バックグラウンド ジョブ
 
@@ -21,7 +21,6 @@ ms.locfileid: "56857168"
 
 ## <a name="background-jobs-child-jobs-and-the-job-repository"></a>バック グラウンド ジョブの子ジョブおよびジョブ リポジトリ
 
-バック グラウンド ジョブをサポートするコマンドレットによって返されるジョブ オブジェクトは、ジョブを定義します。 (、 [Start-job](/powershell/module/Microsoft.PowerShell.Core/Start-Job)コマンドレットはジョブ オブジェクトも返します)。この定義では、ジョブ、ジョブ、状態情報、および子ジョブを指定するために使用する識別子の名前が含まれます。 ジョブは、作業のいずれかを実行しません。 各バック グラウンド ジョブでは、子ジョブは、実際の作業を実行するために少なくとも 1 つの子ジョブがあります。 作業がバック グラウンド ジョブとして実行されるようにコマンドレットを実行するときにコマンドレットは、する必要があります、ジョブと子ジョブに追加と呼ばれる共通のリポジトリ、*のジョブ リポジトリ*します。
 バック グラウンド ジョブをサポートするコマンドレットによって返されるジョブ オブジェクトは、ジョブを定義します。 (、 [Start-job](/powershell/module/Microsoft.PowerShell.Core/Start-Job)コマンドレットはジョブ オブジェクトも返します)。この定義では、ジョブ、ジョブ、状態情報、および子ジョブを指定するために使用する識別子の名前が含まれます。 ジョブは、作業のいずれかを実行しません。 各バック グラウンド ジョブでは、子ジョブは、実際の作業を実行するために少なくとも 1 つの子ジョブがあります。 作業がバック グラウンド ジョブとして実行されるようにコマンドレットを実行するときにコマンドレットは、する必要があります、ジョブと子ジョブに追加と呼ばれる共通のリポジトリ、*のジョブ リポジトリ*します。
 
 コマンドラインでバック グラウンド ジョブを処理する方法の詳細については、次を参照してください。

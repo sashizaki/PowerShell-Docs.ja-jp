@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a2e66c86-83a7-4148-8575-c28d6d429d4f
 caps.latest.revision: 6
-ms.openlocfilehash: ad7ea457fe0f67bfa41f6bf81f36d4b2e4a76cb3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c178c4a48f9595001bcc249d5f55886fa54bb9f2
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860148"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794446"
 ---
 # <a name="list-view-groupby"></a>リスト ビュー (グループ別)
 
-この例では、一覧の行をグループに分割するリスト ビューを実装する方法を示します。 このリスト ビューのプロパティを表示する、 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)によって返されるオブジェクト、 [Get-service](/powershell/module/microsoft.powershell.management/get-service)コマンドレット。 リスト ビューのコンポーネントに関する詳細については、次を参照してください。[リスト ビューを作成する](./creating-a-list-view.md)します。
 この例では、一覧の行をグループに分割するリスト ビューを実装する方法を示します。 このリスト ビューのプロパティを表示する、 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)によって返されるオブジェクト、 [Get-service](/powershell/module/Microsoft.PowerShell.Management/Get-Service)コマンドレット。 リスト ビューのコンポーネントに関する詳細については、次を参照してください。[リスト ビューを作成する](./creating-a-list-view.md)します。
 
 ### <a name="to-load-this-formatting-file"></a>この書式設定ファイルを読み込む

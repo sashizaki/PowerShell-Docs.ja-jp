@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 77f94326-8ffe-4d40-bd2a-b79fb0b4a4e5
 caps.latest.revision: 8
-ms.openlocfilehash: e8185eb7221a3be0445eddc537dbca89478c74f2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2d634e7638ec0e0117d65ca0b2d08e68f0068a03
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859798"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794911"
 ---
 # <a name="defining-default-member-sets-for-objects"></a>オブジェクトの既定のメンバー セットを定義する
 
@@ -21,7 +21,6 @@ Windows PowerShell は PSStandardMembers メンバーのセットを使用して
 
 ## <a name="member-set-for-systemdiagnosticsprocess"></a>System.Diagnostics.Process のメンバーのセット
 
-次の例では、PSStandardMembers メンバーのセットが DefaultDisplayPropertySet プロパティのセットを定義します。 [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)オブジェクト。 このプロパティのセットを使って、 [Format-list](/powershell/module/Microsoft.PowerShell.Utility/Format-List)コマンドレット。
 次の例では、PSStandardMembers メンバーのセットが DefaultDisplayPropertySet プロパティのセットを定義します。 [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)オブジェクト。 このプロパティのセットを使って、 [Format-list](/powershell/module/Microsoft.PowerShell.Utility/Format-List)コマンドレット。
 
 ```xml
@@ -44,7 +43,6 @@ Windows PowerShell は PSStandardMembers メンバーのセットを使用して
   </MemberSet>
 ```
 
-次の出力がによって返される既定のプロパティを示しています、 [Format-list](/powershell/module/Microsoft.PowerShell.Utility/Format-List)コマンドレット。 のみ、 `Id`、 `Handles`、 `CPU`、および`Name`各プロセス オブジェクトのプロパティが返されます。
 次の出力がによって返される既定のプロパティを示しています、 [Format-list](/powershell/module/Microsoft.PowerShell.Utility/Format-List)コマンドレット。 のみ、 `Id`、 `Handles`、 `CPU`、および`Name`各プロセス オブジェクトのプロパティが返されます。
 
 ```powershell

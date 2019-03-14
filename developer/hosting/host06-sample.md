@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 459b6d0f-d596-4269-9113-915a283c1e28
 caps.latest.revision: 10
-ms.openlocfilehash: afb865b3f6fdb8be96084b3a7fc69b51b23a6d35
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.openlocfilehash: e0593fa5e58c49d93eae7d0516e080b43ad7decf
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56863688"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794673"
 ---
 # <a name="host06-sample"></a>Host06 サンプル
 
@@ -43,7 +43,6 @@ ms.locfileid: "56863688"
 
 - 実装、 [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection)インターフェイス。
 
-- 実装、 [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)インターフェイスを使用して対話型リモート処理をサポートするために、 [Enter-pssession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)と[Exit-pssession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession)コマンドレット。
 - 実装、 [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)インターフェイスを使用して対話型リモート処理をサポートするために、 [Enter-pssession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)と[Exit-pssession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession)コマンドレット。
 
 - トークン化する API を使用するは入力したコマンド ラインを色分けして表示します。

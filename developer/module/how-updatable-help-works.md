@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7674636e-a0f2-4587-bfc5-dd3e6ce5489e
 caps.latest.revision: 6
-ms.openlocfilehash: 8874cc18416937c4d3cb30d801f2714410304c8c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b6ae54ee6c843996c875189b6ee553be5e4f614
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860878"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794384"
 ---
 # <a name="how-updatable-help-works"></a>更新可能なヘルプのしくみ
 
@@ -21,7 +21,6 @@ ms.locfileid: "56860878"
 
 ## <a name="the-update-help-process"></a>Update-help プロセス
 
-次の一覧の動作の説明、 [Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)コマンドレットをユーザーが特定の UI カルチャでモジュールのヘルプ ファイルを更新するコマンドを実行するとします。
 次の一覧の動作の説明、 [Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)コマンドレットをユーザーが特定の UI カルチャでモジュールのヘルプ ファイルを更新するコマンドを実行するとします。
 
 1. `Update-Help` 値によって指定された場所からリモートの HelpInfo XML ファイルを取得、 **HelpInfoURI**モジュール マニフェストでキーし、スキーマに対してファイルを検証します。 (スキーマを表示するには、次を参照してください[HelpInfo XML スキーマ](./helpinfo-xml-schema.md)。)。`Update-Help`モジュール ディレクトリ内のモジュールのユーザーのコンピューター上のローカル HelpInfo XML ファイルを探します。
@@ -36,7 +35,6 @@ ms.locfileid: "56860878"
 
 ## <a name="the-save-help-process"></a>Save-help プロセス
 
-次の一覧の動作の説明、 [Save-help](/powershell/module/Microsoft.PowerShell.Core/Save-Help)と[Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)コマンドレットをユーザーがファイル共有では、ヘルプ ファイルを更新し、それらのファイルを使用して、ヘルプ ファイルを更新するためのコマンドを実行すると、ユーザーのコンピューター。
 次の一覧の動作の説明、 [Save-help](/powershell/module/Microsoft.PowerShell.Core/Save-Help)と[Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)コマンドレットをユーザーがファイル共有では、ヘルプ ファイルを更新し、それらのファイルを使用して、ヘルプ ファイルを更新するためのコマンドを実行すると、ユーザーのコンピューター。
 
 `Save-Help`コマンドレットで指定されているファイル共有で、モジュールのヘルプ ファイルを保存するコマンドを応答で、次の操作を実行する、 **DestinationPath**パラメーター。

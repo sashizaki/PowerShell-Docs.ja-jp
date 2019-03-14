@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8c44df35-b22b-41b0-b34c-ba7ce17b889b
 caps.latest.revision: 7
-ms.openlocfilehash: e11197e4f919519945ad3846dfef99c9e292aa9a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 4b79b533e9fb926e851c9d0eebc932aec80ad959
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862138"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794316"
 ---
 # <a name="remote-runspace-samples"></a>リモート実行空間のサンプル
 
@@ -23,7 +23,6 @@ ms.locfileid: "56862138"
 
 > [!NOTE]
 > リモート コンピューター上のコマンドを実行する方法の詳細については、次を参照してください。 [Windows PowerShell リモート処理](https://msdn.microsoft.com/en-us/library/ee706563(v=vs.85).aspx)します。
-> リモート コンピューター上のコマンドを実行する方法の詳細については、[Windows PowerShell リモート処理] を参照してください (https://msdn.microsoft.com/en-us/library/ee706563(v=vs.85)します。
 
  [RemoteRunspace01 サンプル](./remoterunspace01-sample.md)このサンプルは、リモート接続を確立するために使用されるリモート実行空間を作成する方法を示します。
 

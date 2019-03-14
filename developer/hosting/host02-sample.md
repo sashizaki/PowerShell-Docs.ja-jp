@@ -8,16 +8,15 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9ab83bcb-2d31-4744-a8bc-2ee22e48fc1b
 caps.latest.revision: 17
-ms.openlocfilehash: b74d3443e644bde9ec909a2cb8e0d94a6f3c2385
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
+ms.openlocfilehash: 8ce6cf1fcabf306b412b6f97915f34ab15436202
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56863758"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795183"
 ---
 # <a name="host02-sample"></a>Host02 サンプル
 
-このサンプルでは、カスタム ホストの実装と共に Windows PowerShell ランタイムを使用するホスト アプリケーションを記述する方法を示します。 ホスト アプリケーションはホストのカルチャをドイツ語に設定し、[Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) コマンドレットを実行して、pwrsh.exe を使用して確認できるものと同じ結果を表示し、最新のデータと時刻をドイツ語で印刷します。
 このサンプルでは、カスタム ホストの実装と共に Windows PowerShell ランタイムを使用するホスト アプリケーションを記述する方法を示します。 ホスト アプリケーションはホストのカルチャをドイツ語に設定し、[Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) コマンドレットを実行して、pwrsh.exe を使用して確認できるものと同じ結果を表示し、最新のデータと時刻をドイツ語で印刷します。
 
 ## <a name="requirements"></a>要件
