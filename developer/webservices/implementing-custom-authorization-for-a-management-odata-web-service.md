@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
-ms.openlocfilehash: 5d6ad7f62c451a0013f6c52b294fac9abd0b4bf1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862588"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057894"
 ---
-# <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a><span data-ttu-id="5ea90-102">Management OData Web サービスのカスタム認可を実装する</span><span class="sxs-lookup"><span data-stu-id="5ea90-102">Implementing Custom Authorization for a Management OData web service</span></span>
+# <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a><span data-ttu-id="f0de0-102">Management OData Web サービスのカスタム認可を実装する</span><span class="sxs-lookup"><span data-stu-id="f0de0-102">Implementing Custom Authorization for a Management OData web service</span></span>
 
-<span data-ttu-id="5ea90-103">Windows PowerShell Web サービスを使用して実装するためにサード パーティが必要です、 [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Windows PowerShell コマンドレットを公開するインターフェイス。</span><span class="sxs-lookup"><span data-stu-id="5ea90-103">Using the Windows PowerShell Web Service requires a third party to implement the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface to expose Windows PowerShell cmdlets.</span></span> <span data-ttu-id="5ea90-104">このインターフェイスは、web サービスにユーザーの承認を実行します。</span><span class="sxs-lookup"><span data-stu-id="5ea90-104">This interface performs user authorization to the web service.</span></span> <span data-ttu-id="5ea90-105">インターフェイスを実装するコードを記述した後に、web アプリケーションで使用する DLL にコンパイルする必要があります。</span><span class="sxs-lookup"><span data-stu-id="5ea90-105">After writing the code to implement the interface, you must compile it into a DLL to be used in the web application.</span></span>
+<span data-ttu-id="f0de0-103">Windows PowerShell Web サービスを使用して実装するためにサード パーティが必要です、 [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) Windows PowerShell コマンドレットを公開するインターフェイス。</span><span class="sxs-lookup"><span data-stu-id="f0de0-103">Using the Windows PowerShell Web Service requires a third party to implement the [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface to expose Windows PowerShell cmdlets.</span></span> <span data-ttu-id="f0de0-104">このインターフェイスは、web サービスにユーザーの承認を実行します。</span><span class="sxs-lookup"><span data-stu-id="f0de0-104">This interface performs user authorization to the web service.</span></span> <span data-ttu-id="f0de0-105">インターフェイスを実装するコードを記述した後に、web アプリケーションで使用する DLL にコンパイルする必要があります。</span><span class="sxs-lookup"><span data-stu-id="f0de0-105">After writing the code to implement the interface, you must compile it into a DLL to be used in the web application.</span></span>
 
-## <a name="pass-through-authorization"></a><span data-ttu-id="5ea90-106">パススルー認証</span><span class="sxs-lookup"><span data-stu-id="5ea90-106">Pass-through authorization</span></span>
+## <a name="pass-through-authorization"></a><span data-ttu-id="f0de0-106">パススルー認証</span><span class="sxs-lookup"><span data-stu-id="f0de0-106">Pass-through authorization</span></span>
 
-<span data-ttu-id="5ea90-107">実装する最も簡単な方法、 [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)インターフェイスは、すべてのユーザーを承認するパススルー実装です。</span><span class="sxs-lookup"><span data-stu-id="5ea90-107">The simplest way to implement the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface is a pass-through implementation that authorizes all users.</span></span> <span data-ttu-id="5ea90-108">次の例には、セキュリティ、およびインターフェイスを実装する方法の llustration としてのみ提供されている s はありません。</span><span class="sxs-lookup"><span data-stu-id="5ea90-108">This example provides no security, and s provided only as an llustration of how to implement the interface.</span></span> <span data-ttu-id="5ea90-109">実装、 [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)インターフェイスが 2 つのメソッドをオーバーライドする必要があります。[Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)と[Microsoft.Management.Odata.Customauthorization.Getmembershipid\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)します。</span><span class="sxs-lookup"><span data-stu-id="5ea90-109">An implementation of the  [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface must override two methods: [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.Customauthorization.Getmembershipid\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId).</span></span> <span data-ttu-id="5ea90-110">この例で、 [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)は常に返します、 **System.Security.Principal.WindowsIdentity**現在のユーザーに関連付けられているオブジェクト.</span><span class="sxs-lookup"><span data-stu-id="5ea90-110">In this example, the [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) always returns the **System.Security.Principal.WindowsIdentity** object associated with the current user.</span></span>
+<span data-ttu-id="f0de0-107">実装する最も簡単な方法、 [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)インターフェイスは、すべてのユーザーを承認するパススルー実装です。</span><span class="sxs-lookup"><span data-stu-id="f0de0-107">The simplest way to implement the [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface is a pass-through implementation that authorizes all users.</span></span> <span data-ttu-id="f0de0-108">次の例には、セキュリティ、およびインターフェイスを実装する方法を示してとしてのみ提供されている s はありません。</span><span class="sxs-lookup"><span data-stu-id="f0de0-108">This example provides no security, and s provided only as an illustration of how to implement the interface.</span></span> <span data-ttu-id="f0de0-109">実装、 [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)インターフェイスが 2 つのメソッドをオーバーライドする必要があります。[Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)と[Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)します。</span><span class="sxs-lookup"><span data-stu-id="f0de0-109">An implementation of the  [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface must override two methods: [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId).</span></span> <span data-ttu-id="f0de0-110">この例で、 [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)は常に返します、 **System.Security.Principal.WindowsIdentity**現在のユーザーに関連付けられているオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="f0de0-110">In this example, the [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) always returns the **System.Security.Principal.WindowsIdentity** object associated with the current user.</span></span>
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
@@ -68,7 +68,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
         /// <summary>
 
-        /// Default managemnet system state key
+        /// Default management system state key
 
         /// </summary>
 
@@ -132,9 +132,9 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ```
 
-### <a name="role-based-authorization"></a><span data-ttu-id="5ea90-111">ロール ベースの承認</span><span class="sxs-lookup"><span data-stu-id="5ea90-111">Role-based authorization</span></span>
+### <a name="role-based-authorization"></a><span data-ttu-id="f0de0-111">ロール ベースの承認</span><span class="sxs-lookup"><span data-stu-id="f0de0-111">Role-based authorization</span></span>
 
-<span data-ttu-id="5ea90-112">次の例では、ロール ベースの承認ポリシーを実装します。</span><span class="sxs-lookup"><span data-stu-id="5ea90-112">The following example implements a role-based authorization policy.</span></span> <span data-ttu-id="5ea90-113">ポリシーは、web.config でメイン アプリケーション ディレクトリ内にある XML ファイルと MOF および XML のマッピング スキーマ ファイルで定義されます。</span><span class="sxs-lookup"><span data-stu-id="5ea90-113">The policy is defined in an XML file that resides in the main application directory with the web.config and MOF and XML mapping schema files.</span></span> <span data-ttu-id="5ea90-114">承認のスキーマ ファイルを構成する方法については、次を参照してください。[を構成するロール ベースの承認](./configuring-role-based-authorization.md)します。</span><span class="sxs-lookup"><span data-stu-id="5ea90-114">For information about how to configure the authorization schema file, see [Configuring Role-based Authorization](./configuring-role-based-authorization.md).</span></span> <span data-ttu-id="5ea90-115">サンプルの最初の部分を実装して、 [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)と[Microsoft.Management.Odata.Customauthorization.Getmembershipid\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)メソッド。</span><span class="sxs-lookup"><span data-stu-id="5ea90-115">The first part of the sample implements the [Microsoft.Management.Odata.Customauthorization.Authorizeuser\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.Customauthorization.Getmembershipid\*](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) methods.</span></span> <span data-ttu-id="5ea90-116">この場合は、インターフェイス メソッドはメソッドを呼び出す、`RbacSystem`クラス (以下に定義された) ユーザーのアクセス許可のチェックの実際の作業を実行します。</span><span class="sxs-lookup"><span data-stu-id="5ea90-116">In this case, the interface methods call methods in the `RbacSystem` class (defined below) that do the actual work of checking the permissions for the user.</span></span>
+<span data-ttu-id="f0de0-112">次の例では、ロール ベースの承認ポリシーを実装します。</span><span class="sxs-lookup"><span data-stu-id="f0de0-112">The following example implements a role-based authorization policy.</span></span> <span data-ttu-id="f0de0-113">ポリシーは、web.config でメイン アプリケーション ディレクトリ内にある XML ファイルと MOF および XML のマッピング スキーマ ファイルで定義されます。</span><span class="sxs-lookup"><span data-stu-id="f0de0-113">The policy is defined in an XML file that resides in the main application directory with the web.config and MOF and XML mapping schema files.</span></span> <span data-ttu-id="f0de0-114">承認のスキーマ ファイルを構成する方法については、次を参照してください。[を構成するロール ベースの承認](./configuring-role-based-authorization.md)します。</span><span class="sxs-lookup"><span data-stu-id="f0de0-114">For information about how to configure the authorization schema file, see [Configuring Role-based Authorization](./configuring-role-based-authorization.md).</span></span> <span data-ttu-id="f0de0-115">サンプルの最初の部分を実装して、 [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)と[Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)メソッド。</span><span class="sxs-lookup"><span data-stu-id="f0de0-115">The first part of the sample implements the [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser) and [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) methods.</span></span> <span data-ttu-id="f0de0-116">この場合は、インターフェイス メソッドはメソッドを呼び出す、`RbacSystem`クラス (以下に定義された) ユーザーのアクセス許可のチェックの実際の作業を実行します。</span><span class="sxs-lookup"><span data-stu-id="f0de0-116">In this case, the interface methods call methods in the `RbacSystem` class (defined below) that do the actual work of checking the permissions for the user.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
@@ -189,7 +189,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-<span data-ttu-id="5ea90-117">次の例では、承認ポリシーの XML ファイルを解析するクラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="5ea90-117">The following example creates a class that parses authorization policy in the XML file.</span></span>
+<span data-ttu-id="f0de0-117">次の例では、承認ポリシーの XML ファイルを解析するクラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="f0de0-117">The following example creates a class that parses authorization policy in the XML file.</span></span>
 
 ```csharp
 //-----------------------------------------------------------------------
@@ -209,7 +209,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 
     /// <summary>
     /// Keeps Configuration for the RbacSystem
-    /// It reads the RacSystem configuration for configuratin file and creates RbacConfiguration
+    /// It reads the RacSystem configuration for configuration file and creates RbacConfiguration
     /// </summary>
     [Serializable]
     [XmlRoot("RbacConfiguration")]
@@ -374,7 +374,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
- <span data-ttu-id="5ea90-118">次のクラスは、グループとユーザーをそれぞれ表します。</span><span class="sxs-lookup"><span data-stu-id="5ea90-118">The following classes represent groups and users, respectively.</span></span>
+ <span data-ttu-id="f0de0-118">次のクラスは、グループとユーザーをそれぞれ表します。</span><span class="sxs-lookup"><span data-stu-id="f0de0-118">The following classes represent groups and users, respectively.</span></span>
 
 ```csharp
 //-----------------------------------------------------------------------
@@ -719,7 +719,7 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
             /// Indicates whether the current object is equal to another object of the object type.
             /// </summary>
             /// <param name="other">Other object instance</param>
-            /// <returns>true, if both instace are same else false</returns>
+            /// <returns>true, if both instance are same else false</returns>
             public override bool Equals(object other)
             {
                 return this.Equals(other as RbacUserInfo);
@@ -738,4 +738,4 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-<span data-ttu-id="5ea90-119">最後に、作業ユーザーのアクセス許可のチェックを行うし、メソッドの実装で定義されている認証の状態を返すメソッドの実装 RbacSystem クラス、 [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)インターフェイス。</span><span class="sxs-lookup"><span data-stu-id="5ea90-119">Finally, the RbacSystem class implements methods that do the work of checking the permissions for the user and return the authorization status to the methods defined in the implementation of the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface.</span></span>
+<span data-ttu-id="f0de0-119">最後に、作業ユーザーのアクセス許可のチェックを行うし、メソッドの実装で定義されている認証の状態を返すメソッドの実装 RbacSystem クラス、 [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)インターフェイス。</span><span class="sxs-lookup"><span data-stu-id="f0de0-119">Finally, the RbacSystem class implements methods that do the work of checking the permissions for the user and return the authorization status to the methods defined in the implementation of the [Microsoft.Management.Odata.CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface.</span></span>

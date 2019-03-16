@@ -8,42 +8,42 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a6a04f15-b5d8-475b-ac9c-e75c58ec8933
 caps.latest.revision: 8
-ms.openlocfilehash: 9e8123e9b1068e0fd6efec8508eacf594ff22301
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3cb370cd1bfe9ce7198980cc1c26fafb126d00a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854748"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054902"
 ---
-# <a name="runspace04-sample"></a><span data-ttu-id="7ac08-102">Runspace04 サンプル</span><span class="sxs-lookup"><span data-stu-id="7ac08-102">Runspace04 Sample</span></span>
+# <a name="runspace04-sample"></a><span data-ttu-id="8a3b7-102">Runspace04 サンプル</span><span class="sxs-lookup"><span data-stu-id="8a3b7-102">Runspace04 Sample</span></span>
 
-<span data-ttu-id="7ac08-103">このサンプルは、使用する方法を示します、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)クラスのコマンドを実行して、コマンドを実行している場合にスローされる終了エラーをキャッチする方法。</span><span class="sxs-lookup"><span data-stu-id="7ac08-103">This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run commands, and how to catch terminating errors that are thrown when running the commands.</span></span> <span data-ttu-id="7ac08-104">2 つのコマンドが実行され、最後のコマンドには無効なパラメーターの引数が渡されます。</span><span class="sxs-lookup"><span data-stu-id="7ac08-104">Two commands are run, and the last command is passed a parameter argument that is not valid.</span></span> <span data-ttu-id="7ac08-105">結果として、オブジェクトは返されず、終了するエラーがスローされます。</span><span class="sxs-lookup"><span data-stu-id="7ac08-105">As a result, no objects are returned and a terminating error is thrown.</span></span>
+<span data-ttu-id="8a3b7-103">このサンプルは、使用する方法を示します、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)クラスのコマンドを実行して、コマンドを実行している場合にスローされる終了エラーをキャッチする方法。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-103">This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run commands, and how to catch terminating errors that are thrown when running the commands.</span></span> <span data-ttu-id="8a3b7-104">2 つのコマンドが実行され、最後のコマンドには無効なパラメーターの引数が渡されます。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-104">Two commands are run, and the last command is passed a parameter argument that is not valid.</span></span> <span data-ttu-id="8a3b7-105">結果として、オブジェクトは返されず、終了するエラーがスローされます。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-105">As a result, no objects are returned and a terminating error is thrown.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="7ac08-106">要件</span><span class="sxs-lookup"><span data-stu-id="7ac08-106">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="8a3b7-106">要件</span><span class="sxs-lookup"><span data-stu-id="8a3b7-106">Requirements</span></span>
 
-<span data-ttu-id="7ac08-107">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="7ac08-107">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="8a3b7-107">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-107">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="7ac08-108">使用例</span><span class="sxs-lookup"><span data-stu-id="7ac08-108">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="8a3b7-108">使用例</span><span class="sxs-lookup"><span data-stu-id="8a3b7-108">Demonstrates</span></span>
 
-<span data-ttu-id="7ac08-109">このサンプルは、次を示します。</span><span class="sxs-lookup"><span data-stu-id="7ac08-109">This sample demonstrates the following.</span></span>
+<span data-ttu-id="8a3b7-109">このサンプルは、次を示します。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-109">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="7ac08-110">作成、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7ac08-110">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="8a3b7-110">作成、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-110">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="7ac08-111">パイプラインにコマンドの追加、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7ac08-111">Adding commands to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="8a3b7-111">パイプラインにコマンドの追加、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-111">Adding commands to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="7ac08-112">パイプラインにパラメーター引数を追加します。</span><span class="sxs-lookup"><span data-stu-id="7ac08-112">Adding parameter arguments to the pipeline.</span></span>
+- <span data-ttu-id="8a3b7-112">パイプラインにパラメーター引数を追加します。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-112">Adding parameter arguments to the pipeline.</span></span>
 
-- <span data-ttu-id="7ac08-113">コマンドを同期的に起動します。</span><span class="sxs-lookup"><span data-stu-id="7ac08-113">Invoking the commands synchronously.</span></span>
+- <span data-ttu-id="8a3b7-113">コマンドを同期的に起動します。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-113">Invoking the commands synchronously.</span></span>
 
-- <span data-ttu-id="7ac08-114">使用して[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)を抽出して、コマンドによって返されるオブジェクトからのプロパティを表示するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7ac08-114">Using [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects to extract and display properties from the objects returned by the commands.</span></span>
+- <span data-ttu-id="8a3b7-114">使用して[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)を抽出して、コマンドによって返されるオブジェクトからのプロパティを表示するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-114">Using [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects to extract and display properties from the objects returned by the commands.</span></span>
 
-- <span data-ttu-id="7ac08-115">取得とコマンドの実行中に生成されたエラー レコードを表示します。</span><span class="sxs-lookup"><span data-stu-id="7ac08-115">Retrieving and displaying error records that were generated during the running of the commands.</span></span>
+- <span data-ttu-id="8a3b7-115">取得とコマンドの実行中に生成されたエラー レコードを表示します。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-115">Retrieving and displaying error records that were generated during the running of the commands.</span></span>
 
-- <span data-ttu-id="7ac08-116">キャッチし、コマンドによってスローされた終了例外を表示します。</span><span class="sxs-lookup"><span data-stu-id="7ac08-116">Catching and displaying terminating exceptions thrown by the commands.</span></span>
+- <span data-ttu-id="8a3b7-116">キャッチし、コマンドによってスローされた終了例外を表示します。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-116">Catching and displaying terminating exceptions thrown by the commands.</span></span>
 
-## <a name="example"></a><span data-ttu-id="7ac08-117">例</span><span class="sxs-lookup"><span data-stu-id="7ac08-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="8a3b7-117">例</span><span class="sxs-lookup"><span data-stu-id="8a3b7-117">Example</span></span>
 
-<span data-ttu-id="7ac08-118">このサンプルでは、Windows PowerShell によって提供される既定の実行空間で、コマンドを同期的に実行されます。</span><span class="sxs-lookup"><span data-stu-id="7ac08-118">This sample runs commands synchronously in the default runspace provided by Windows PowerShell.</span></span> <span data-ttu-id="7ac08-119">最後のコマンドは、コマンドには、無効なパラメーターの引数が渡されるために、終了エラーをスローします。</span><span class="sxs-lookup"><span data-stu-id="7ac08-119">The last command throws a terminating error because a parameter argument that is not valid is passed to the command.</span></span> <span data-ttu-id="7ac08-120">終了エラーがトラップされ、表示されます。</span><span class="sxs-lookup"><span data-stu-id="7ac08-120">The terminating error is trapped and displayed.</span></span>
+<span data-ttu-id="8a3b7-118">このサンプルでは、Windows PowerShell によって提供される既定の実行空間で、コマンドを同期的に実行されます。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-118">This sample runs commands synchronously in the default runspace provided by Windows PowerShell.</span></span> <span data-ttu-id="8a3b7-119">最後のコマンドは、コマンドには、無効なパラメーターの引数が渡されるために、終了エラーをスローします。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-119">The last command throws a terminating error because a parameter argument that is not valid is passed to the command.</span></span> <span data-ttu-id="8a3b7-120">終了エラーがトラップされ、表示されます。</span><span class="sxs-lookup"><span data-stu-id="8a3b7-120">The terminating error is trapped and displayed.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -123,6 +123,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="7ac08-121">参照</span><span class="sxs-lookup"><span data-stu-id="7ac08-121">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8a3b7-121">参照</span><span class="sxs-lookup"><span data-stu-id="8a3b7-121">See Also</span></span>
 
-[<span data-ttu-id="7ac08-122">Windows PowerShell ホスト アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="7ac08-122">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="8a3b7-122">Windows PowerShell ホスト アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="8a3b7-122">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

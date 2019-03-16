@@ -8,106 +8,106 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
-ms.openlocfilehash: a421d151ac3fdbb763668dd6fbf775f5b91a833f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56863648"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059662"
 ---
-# <a name="common-parameter-names"></a><span data-ttu-id="40226-102">共有パラメーター名</span><span class="sxs-lookup"><span data-stu-id="40226-102">Common Parameter Names</span></span>
+# <a name="common-parameter-names"></a><span data-ttu-id="6d346-102">共有パラメーター名</span><span class="sxs-lookup"><span data-stu-id="6d346-102">Common Parameter Names</span></span>
 
-<span data-ttu-id="40226-103">このトピックで説明されているパラメーターと呼びます*共通パラメーター*します。</span><span class="sxs-lookup"><span data-stu-id="40226-103">The parameters described in this topic are referred to as *common parameters*.</span></span> <span data-ttu-id="40226-104">Windows PowerShell ランタイムではコマンドレットに追加され、コマンドレットで宣言することはできません。</span><span class="sxs-lookup"><span data-stu-id="40226-104">They are added to cmdlets by the Windows PowerShell runtime and cannot be declared by the cmdlet.</span></span>
+<span data-ttu-id="6d346-103">このトピックで説明されているパラメーターと呼びます*共通パラメーター*します。</span><span class="sxs-lookup"><span data-stu-id="6d346-103">The parameters described in this topic are referred to as *common parameters*.</span></span> <span data-ttu-id="6d346-104">Windows PowerShell ランタイムではコマンドレットに追加され、コマンドレットで宣言することはできません。</span><span class="sxs-lookup"><span data-stu-id="6d346-104">They are added to cmdlets by the Windows PowerShell runtime and cannot be declared by the cmdlet.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="40226-105">プロバイダー コマンドレットと関数で装飾されますが、これらのパラメーターが追加も、`CmdletBinding`属性。</span><span class="sxs-lookup"><span data-stu-id="40226-105">These parameters are also added to provider cmdlets and to functions that are decorated with the `CmdletBinding` attribute.</span></span>
+> <span data-ttu-id="6d346-105">プロバイダー コマンドレットと関数で装飾されますが、これらのパラメーターが追加も、`CmdletBinding`属性。</span><span class="sxs-lookup"><span data-stu-id="6d346-105">These parameters are also added to provider cmdlets and to functions that are decorated with the `CmdletBinding` attribute.</span></span>
 
-## <a name="general-common-parameters"></a><span data-ttu-id="40226-106">一般的な共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="40226-106">General Common Parameters</span></span>
+## <a name="general-common-parameters"></a><span data-ttu-id="6d346-106">一般的な共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="6d346-106">General Common Parameters</span></span>
 
-<span data-ttu-id="40226-107">次のパラメーターは、すべてのコマンドレットに追加され、コマンドレットが実行されるたびにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="40226-107">The following parameters are added to all cmdlets and can be accessed whenever the cmdlet is run.</span></span> <span data-ttu-id="40226-108">これらのパラメーターがによって定義されている、 [System.Management.Automation.Internal.Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters)クラス。</span><span class="sxs-lookup"><span data-stu-id="40226-108">These parameters are defined by the [System.Management.Automation.Internal.Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters) class.</span></span>
+<span data-ttu-id="6d346-107">次のパラメーターは、すべてのコマンドレットに追加され、コマンドレットが実行されるたびにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="6d346-107">The following parameters are added to all cmdlets and can be accessed whenever the cmdlet is run.</span></span> <span data-ttu-id="6d346-108">これらのパラメーターがによって定義されている、 [System.Management.Automation.Internal.Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters)クラス。</span><span class="sxs-lookup"><span data-stu-id="6d346-108">These parameters are defined by the [System.Management.Automation.Internal.Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters) class.</span></span>
 
-### <a name="debug-alias-db"></a><span data-ttu-id="40226-109">デバッグ (別名: db)</span><span class="sxs-lookup"><span data-stu-id="40226-109">Debug (alias: db)</span></span>
+### <a name="debug-alias-db"></a><span data-ttu-id="6d346-109">デバッグ (別名: db)</span><span class="sxs-lookup"><span data-stu-id="6d346-109">Debug (alias: db)</span></span>
 
-<span data-ttu-id="40226-110">データの種類:スイッチ パラメーター</span><span class="sxs-lookup"><span data-stu-id="40226-110">Data type: SwitchParameter</span></span>
+<span data-ttu-id="6d346-110">データの種類:スイッチ パラメーター</span><span class="sxs-lookup"><span data-stu-id="6d346-110">Data type: SwitchParameter</span></span>
 
-<span data-ttu-id="40226-111">このパラメーターを指定するかどうかのメッセージ レベルのプログラマのデバッグ コマンド ラインに表示されることができます。</span><span class="sxs-lookup"><span data-stu-id="40226-111">This parameter specifies whether programmer-level debugging messages that can be displayed at the command line.</span></span> <span data-ttu-id="40226-112">これらのメッセージは、コマンドレットの操作をトラブルシューティングするためのものし、への呼び出しによって生成される、 [System.Management.Automation.Cmdlet.Writedebug\*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)メソッド。</span><span class="sxs-lookup"><span data-stu-id="40226-112">These messages are intended for troubleshooting the operation of the cmdlet, and are generated by calls to the [System.Management.Automation.Cmdlet.Writedebug\*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method.</span></span> <span data-ttu-id="40226-113">デバッグ メッセージをローカライズする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="40226-113">Debug messages do not need to be localized.</span></span>
+<span data-ttu-id="6d346-111">このパラメーターを指定するかどうかのメッセージ レベルのプログラマのデバッグ コマンド ラインに表示されることができます。</span><span class="sxs-lookup"><span data-stu-id="6d346-111">This parameter specifies whether programmer-level debugging messages that can be displayed at the command line.</span></span> <span data-ttu-id="6d346-112">これらのメッセージは、コマンドレットの操作をトラブルシューティングするためのものし、への呼び出しによって生成される、 [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)メソッド。</span><span class="sxs-lookup"><span data-stu-id="6d346-112">These messages are intended for troubleshooting the operation of the cmdlet, and are generated by calls to the [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method.</span></span> <span data-ttu-id="6d346-113">デバッグ メッセージをローカライズする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="6d346-113">Debug messages do not need to be localized.</span></span>
 
-### <a name="erroraction-alias-ea"></a><span data-ttu-id="40226-114">ErrorAction (別名: ea)</span><span class="sxs-lookup"><span data-stu-id="40226-114">ErrorAction (alias: ea)</span></span>
+### <a name="erroraction-alias-ea"></a><span data-ttu-id="6d346-114">ErrorAction (別名: ea)</span><span class="sxs-lookup"><span data-stu-id="6d346-114">ErrorAction (alias: ea)</span></span>
 
-<span data-ttu-id="40226-115">データの種類:列挙</span><span class="sxs-lookup"><span data-stu-id="40226-115">Data type: Enumeration</span></span>
+<span data-ttu-id="6d346-115">データの種類:列挙</span><span class="sxs-lookup"><span data-stu-id="6d346-115">Data type: Enumeration</span></span>
 
-<span data-ttu-id="40226-116">このパラメーターは、どのようなアクションが実行される、エラーが発生したときに指定します。</span><span class="sxs-lookup"><span data-stu-id="40226-116">This parameter specifies what action should take place when an error occurs.</span></span> <span data-ttu-id="40226-117">このパラメーターの値がによって定義されている、 [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference)列挙体。</span><span class="sxs-lookup"><span data-stu-id="40226-117">The possible values for this parameter are defined by the [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) enumeration.</span></span>
+<span data-ttu-id="6d346-116">このパラメーターは、どのようなアクションが実行される、エラーが発生したときに指定します。</span><span class="sxs-lookup"><span data-stu-id="6d346-116">This parameter specifies what action should take place when an error occurs.</span></span> <span data-ttu-id="6d346-117">このパラメーターの値がによって定義されている、 [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference)列挙体。</span><span class="sxs-lookup"><span data-stu-id="6d346-117">The possible values for this parameter are defined by the [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) enumeration.</span></span>
 
-### <a name="errorvariable-alias-ev"></a><span data-ttu-id="40226-118">ErrorVariable (別名: ev)</span><span class="sxs-lookup"><span data-stu-id="40226-118">ErrorVariable (alias: ev)</span></span>
+### <a name="errorvariable-alias-ev"></a><span data-ttu-id="6d346-118">ErrorVariable (別名: ev)</span><span class="sxs-lookup"><span data-stu-id="6d346-118">ErrorVariable (alias: ev)</span></span>
 
-<span data-ttu-id="40226-119">データの種類:String</span><span class="sxs-lookup"><span data-stu-id="40226-119">Data type: String</span></span>
+<span data-ttu-id="6d346-119">データの種類:String</span><span class="sxs-lookup"><span data-stu-id="6d346-119">Data type: String</span></span>
 
-<span data-ttu-id="40226-120">このパラメーターは、エラーが発生したときに、オブジェクトを配置先となる変数を指定します。</span><span class="sxs-lookup"><span data-stu-id="40226-120">This parameter specifies the variable in which to place objects when an error occurs.</span></span> <span data-ttu-id="40226-121">この変数に追加するには、使用 +*varname*オフにして、変数の設定ではなく。</span><span class="sxs-lookup"><span data-stu-id="40226-121">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
+<span data-ttu-id="6d346-120">このパラメーターは、エラーが発生したときに、オブジェクトを配置先となる変数を指定します。</span><span class="sxs-lookup"><span data-stu-id="6d346-120">This parameter specifies the variable in which to place objects when an error occurs.</span></span> <span data-ttu-id="6d346-121">この変数に追加するには、使用 +*varname*オフにして、変数の設定ではなく。</span><span class="sxs-lookup"><span data-stu-id="6d346-121">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
 
-### <a name="outvariable-alias-ov"></a><span data-ttu-id="40226-122">OutVariable (別名: ov)</span><span class="sxs-lookup"><span data-stu-id="40226-122">OutVariable (alias: ov)</span></span>
+### <a name="outvariable-alias-ov"></a><span data-ttu-id="6d346-122">OutVariable (別名: ov)</span><span class="sxs-lookup"><span data-stu-id="6d346-122">OutVariable (alias: ov)</span></span>
 
-<span data-ttu-id="40226-123">データの種類:String</span><span class="sxs-lookup"><span data-stu-id="40226-123">Data type: String</span></span>
+<span data-ttu-id="6d346-123">データの種類:String</span><span class="sxs-lookup"><span data-stu-id="6d346-123">Data type: String</span></span>
 
-<span data-ttu-id="40226-124">このパラメーターは、配置先となるすべての出力コマンドレットによって生成されたオブジェクト変数を指定します。</span><span class="sxs-lookup"><span data-stu-id="40226-124">This parameter specifies the variable in which to place all output objects generated by the cmdlet.</span></span> <span data-ttu-id="40226-125">この変数に追加するには、使用 +*varname*オフにして、変数の設定ではなく。</span><span class="sxs-lookup"><span data-stu-id="40226-125">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
+<span data-ttu-id="6d346-124">このパラメーターは、配置先となるすべての出力コマンドレットによって生成されたオブジェクト変数を指定します。</span><span class="sxs-lookup"><span data-stu-id="6d346-124">This parameter specifies the variable in which to place all output objects generated by the cmdlet.</span></span> <span data-ttu-id="6d346-125">この変数に追加するには、使用 +*varname*オフにして、変数の設定ではなく。</span><span class="sxs-lookup"><span data-stu-id="6d346-125">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
 
-### <a name="outbuffer-alias-ob"></a><span data-ttu-id="40226-126">OutBuffer (別名: ob)</span><span class="sxs-lookup"><span data-stu-id="40226-126">OutBuffer (alias: ob)</span></span>
+### <a name="outbuffer-alias-ob"></a><span data-ttu-id="6d346-126">OutBuffer (別名: ob)</span><span class="sxs-lookup"><span data-stu-id="6d346-126">OutBuffer (alias: ob)</span></span>
 
-<span data-ttu-id="40226-127">データの種類:Int32</span><span class="sxs-lookup"><span data-stu-id="40226-127">Data type: Int32</span></span>
+<span data-ttu-id="6d346-127">データの種類:Int32</span><span class="sxs-lookup"><span data-stu-id="6d346-127">Data type: Int32</span></span>
 
-<span data-ttu-id="40226-128">このパラメーターは、すべてのオブジェクトがパイプラインを介して渡される前に、出力バッファーに格納するオブジェクトの数を定義します。</span><span class="sxs-lookup"><span data-stu-id="40226-128">This parameter defines the number of objects to store in the output buffer before any objects are passed down the pipeline.</span></span> <span data-ttu-id="40226-129">既定では、オブジェクトはパイプラインは、すぐに渡されます。</span><span class="sxs-lookup"><span data-stu-id="40226-129">By default, objects are passed immediately down the pipeline.</span></span>
+<span data-ttu-id="6d346-128">このパラメーターは、すべてのオブジェクトがパイプラインを介して渡される前に、出力バッファーに格納するオブジェクトの数を定義します。</span><span class="sxs-lookup"><span data-stu-id="6d346-128">This parameter defines the number of objects to store in the output buffer before any objects are passed down the pipeline.</span></span> <span data-ttu-id="6d346-129">既定では、オブジェクトはパイプラインは、すぐに渡されます。</span><span class="sxs-lookup"><span data-stu-id="6d346-129">By default, objects are passed immediately down the pipeline.</span></span>
 
-### <a name="verbose-alias-vb"></a><span data-ttu-id="40226-130">詳細 (別名: vb)</span><span class="sxs-lookup"><span data-stu-id="40226-130">Verbose (alias: vb)</span></span>
+### <a name="verbose-alias-vb"></a><span data-ttu-id="6d346-130">詳細 (別名: vb)</span><span class="sxs-lookup"><span data-stu-id="6d346-130">Verbose (alias: vb)</span></span>
 
-<span data-ttu-id="40226-131">データの種類:スイッチ パラメーター</span><span class="sxs-lookup"><span data-stu-id="40226-131">Data type: SwitchParameter</span></span>
+<span data-ttu-id="6d346-131">データの種類:スイッチ パラメーター</span><span class="sxs-lookup"><span data-stu-id="6d346-131">Data type: SwitchParameter</span></span>
 
-<span data-ttu-id="40226-132">このパラメーターは、コマンドレットがコマンドラインで表示できる説明メッセージを書き込むかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="40226-132">This parameter specifies whether the cmdlet writes explanatory messages that can be displayed at the command line.</span></span> <span data-ttu-id="40226-133">これらのメッセージは、ユーザーに役立つ追加情報を提供するためのものし、への呼び出しによって生成される、 [System.Management.Automation.Cmdlet.Writeverbose\*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)メソッド。</span><span class="sxs-lookup"><span data-stu-id="40226-133">These messages are intended to provide additional help to the user, and are generated by calls to the [System.Management.Automation.Cmdlet.Writeverbose\*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method.</span></span>
+<span data-ttu-id="6d346-132">このパラメーターは、コマンドレットがコマンドラインで表示できる説明メッセージを書き込むかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="6d346-132">This parameter specifies whether the cmdlet writes explanatory messages that can be displayed at the command line.</span></span> <span data-ttu-id="6d346-133">これらのメッセージは、ユーザーに役立つ追加情報を提供するためのものし、への呼び出しによって生成される、 [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)メソッド。</span><span class="sxs-lookup"><span data-stu-id="6d346-133">These messages are intended to provide additional help to the user, and are generated by calls to the [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method.</span></span>
 
-### <a name="warningaction-alias-wa"></a><span data-ttu-id="40226-134">WarningAction (別名: ワシントン)</span><span class="sxs-lookup"><span data-stu-id="40226-134">WarningAction (alias: wa)</span></span>
+### <a name="warningaction-alias-wa"></a><span data-ttu-id="6d346-134">WarningAction (別名: ワシントン)</span><span class="sxs-lookup"><span data-stu-id="6d346-134">WarningAction (alias: wa)</span></span>
 
-<span data-ttu-id="40226-135">データの種類:列挙</span><span class="sxs-lookup"><span data-stu-id="40226-135">Data type: Enumeration</span></span>
+<span data-ttu-id="6d346-135">データの種類:列挙</span><span class="sxs-lookup"><span data-stu-id="6d346-135">Data type: Enumeration</span></span>
 
-<span data-ttu-id="40226-136">このパラメーターは、どのようなアクションを実行するコマンドレットは、警告メッセージを書き込むときに指定します。</span><span class="sxs-lookup"><span data-stu-id="40226-136">This parameter specifies what action should take place when the cmdlet writes a warning message.</span></span> <span data-ttu-id="40226-137">このパラメーターの値がによって定義されている、 [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference)列挙体。</span><span class="sxs-lookup"><span data-stu-id="40226-137">The possible values for this parameter are defined by the [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) enumeration.</span></span>
+<span data-ttu-id="6d346-136">このパラメーターは、どのようなアクションを実行するコマンドレットは、警告メッセージを書き込むときに指定します。</span><span class="sxs-lookup"><span data-stu-id="6d346-136">This parameter specifies what action should take place when the cmdlet writes a warning message.</span></span> <span data-ttu-id="6d346-137">このパラメーターの値がによって定義されている、 [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference)列挙体。</span><span class="sxs-lookup"><span data-stu-id="6d346-137">The possible values for this parameter are defined by the [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference) enumeration.</span></span>
 
-### <a name="warningvariable-alias-wv"></a><span data-ttu-id="40226-138">WarningVariable (別名: wv)</span><span class="sxs-lookup"><span data-stu-id="40226-138">WarningVariable (alias: wv)</span></span>
+### <a name="warningvariable-alias-wv"></a><span data-ttu-id="6d346-138">WarningVariable (別名: wv)</span><span class="sxs-lookup"><span data-stu-id="6d346-138">WarningVariable (alias: wv)</span></span>
 
-<span data-ttu-id="40226-139">データの種類:String</span><span class="sxs-lookup"><span data-stu-id="40226-139">Data type: String</span></span>
+<span data-ttu-id="6d346-139">データの種類:String</span><span class="sxs-lookup"><span data-stu-id="6d346-139">Data type: String</span></span>
 
-<span data-ttu-id="40226-140">このパラメーターは、警告メッセージを保存する変数を指定します。</span><span class="sxs-lookup"><span data-stu-id="40226-140">This parameter specifies the variable in which warning messages can be saved.</span></span> <span data-ttu-id="40226-141">この変数に追加するには、使用 +*varname*オフにして、変数の設定ではなく。</span><span class="sxs-lookup"><span data-stu-id="40226-141">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
+<span data-ttu-id="6d346-140">このパラメーターは、警告メッセージを保存する変数を指定します。</span><span class="sxs-lookup"><span data-stu-id="6d346-140">This parameter specifies the variable in which warning messages can be saved.</span></span> <span data-ttu-id="6d346-141">この変数に追加するには、使用 +*varname*オフにして、変数の設定ではなく。</span><span class="sxs-lookup"><span data-stu-id="6d346-141">To append to this variable, use +*varname* rather than clearing and setting the variable.</span></span>
 
-## <a name="risk-mitigation-parameters"></a><span data-ttu-id="40226-142">リスクを緩和するためのパラメーター</span><span class="sxs-lookup"><span data-stu-id="40226-142">Risk-Mitigation Parameters</span></span>
+## <a name="risk-mitigation-parameters"></a><span data-ttu-id="6d346-142">リスクを緩和するためのパラメーター</span><span class="sxs-lookup"><span data-stu-id="6d346-142">Risk-Mitigation Parameters</span></span>
 
-<span data-ttu-id="40226-143">次のパラメーターは、それらのアクションの実行前に確認を要求するコマンドレットに追加されます。</span><span class="sxs-lookup"><span data-stu-id="40226-143">The following parameters are added to cmdlets that requests confirmation before they perform their action.</span></span> <span data-ttu-id="40226-144">確認要求の詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。</span><span class="sxs-lookup"><span data-stu-id="40226-144">For more information about confirmation requests, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).</span></span> <span data-ttu-id="40226-145">これらのパラメーターがによって定義されている、 [System.Management.Automation.Internal.Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)クラス。</span><span class="sxs-lookup"><span data-stu-id="40226-145">These parameters are defined by the [System.Management.Automation.Internal.Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) class.</span></span>
+<span data-ttu-id="6d346-143">次のパラメーターは、それらのアクションの実行前に確認を要求するコマンドレットに追加されます。</span><span class="sxs-lookup"><span data-stu-id="6d346-143">The following parameters are added to cmdlets that requests confirmation before they perform their action.</span></span> <span data-ttu-id="6d346-144">確認要求の詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。</span><span class="sxs-lookup"><span data-stu-id="6d346-144">For more information about confirmation requests, see [Requesting Confirmation](./requesting-confirmation-from-cmdlets.md).</span></span> <span data-ttu-id="6d346-145">これらのパラメーターがによって定義されている、 [System.Management.Automation.Internal.Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)クラス。</span><span class="sxs-lookup"><span data-stu-id="6d346-145">These parameters are defined by the [System.Management.Automation.Internal.Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters) class.</span></span>
 
-### <a name="confirm-alias-cf"></a><span data-ttu-id="40226-146">確認 (別名: cf)</span><span class="sxs-lookup"><span data-stu-id="40226-146">Confirm (alias: cf)</span></span>
+### <a name="confirm-alias-cf"></a><span data-ttu-id="6d346-146">確認 (別名: cf)</span><span class="sxs-lookup"><span data-stu-id="6d346-146">Confirm (alias: cf)</span></span>
 
-<span data-ttu-id="40226-147">データの種類:スイッチ パラメーター</span><span class="sxs-lookup"><span data-stu-id="40226-147">Data type: SwitchParameter</span></span>
+<span data-ttu-id="6d346-147">データの種類:スイッチ パラメーター</span><span class="sxs-lookup"><span data-stu-id="6d346-147">Data type: SwitchParameter</span></span>
 
-<span data-ttu-id="40226-148">このパラメーターは、コマンドレットに入力を求めるかどうか、ユーザーは続行することを確認してくださいプロンプトが表示されるかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="40226-148">This parameter specifies whether the cmdlet displays a prompt that asks if the user is sure that they want to continue.</span></span>
+<span data-ttu-id="6d346-148">このパラメーターは、コマンドレットに入力を求めるかどうか、ユーザーは続行することを確認してくださいプロンプトが表示されるかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="6d346-148">This parameter specifies whether the cmdlet displays a prompt that asks if the user is sure that they want to continue.</span></span>
 
-### <a name="whatif-alias-wi"></a><span data-ttu-id="40226-149">WhatIf (別名: wi)</span><span class="sxs-lookup"><span data-stu-id="40226-149">WhatIf (alias: wi)</span></span>
+### <a name="whatif-alias-wi"></a><span data-ttu-id="6d346-149">WhatIf (別名: wi)</span><span class="sxs-lookup"><span data-stu-id="6d346-149">WhatIf (alias: wi)</span></span>
 
-<span data-ttu-id="40226-150">データの種類:スイッチ パラメーター</span><span class="sxs-lookup"><span data-stu-id="40226-150">Data type: SwitchParameter</span></span>
+<span data-ttu-id="6d346-150">データの種類:スイッチ パラメーター</span><span class="sxs-lookup"><span data-stu-id="6d346-150">Data type: SwitchParameter</span></span>
 
-<span data-ttu-id="40226-151">このパラメーターは、コマンドレットで実際に操作を実行せず、コマンドレットを実行することの効果を説明するメッセージを書き込むかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="40226-151">This parameter specifies whether the cmdlet writes a message that describes the effects of running the cmdlet without actually performing any action.</span></span>
+<span data-ttu-id="6d346-151">このパラメーターは、コマンドレットで実際に操作を実行せず、コマンドレットを実行することの効果を説明するメッセージを書き込むかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="6d346-151">This parameter specifies whether the cmdlet writes a message that describes the effects of running the cmdlet without actually performing any action.</span></span>
 
-## <a name="transaction-parameters"></a><span data-ttu-id="40226-152">トランザクション パラメーター</span><span class="sxs-lookup"><span data-stu-id="40226-152">Transaction Parameters</span></span>
+## <a name="transaction-parameters"></a><span data-ttu-id="6d346-152">トランザクション パラメーター</span><span class="sxs-lookup"><span data-stu-id="6d346-152">Transaction Parameters</span></span>
 
-<span data-ttu-id="40226-153">次のパラメーターは、トランザクションをサポートするコマンドレットに追加されます。</span><span class="sxs-lookup"><span data-stu-id="40226-153">The following parameter is added to cmdlets that support transactions.</span></span> <span data-ttu-id="40226-154">これらのパラメーターがによって定義されている、 [System.Management.Automation.Internal.Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters)クラス。</span><span class="sxs-lookup"><span data-stu-id="40226-154">These parameters are defined by the [System.Management.Automation.Internal.Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) class.</span></span>
+<span data-ttu-id="6d346-153">次のパラメーターは、トランザクションをサポートするコマンドレットに追加されます。</span><span class="sxs-lookup"><span data-stu-id="6d346-153">The following parameter is added to cmdlets that support transactions.</span></span> <span data-ttu-id="6d346-154">これらのパラメーターがによって定義されている、 [System.Management.Automation.Internal.Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters)クラス。</span><span class="sxs-lookup"><span data-stu-id="6d346-154">These parameters are defined by the [System.Management.Automation.Internal.Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters) class.</span></span>
 
-### <a name="usetransaction-alias-usetx"></a><span data-ttu-id="40226-155">[いいえ] (別名: usetx)</span><span class="sxs-lookup"><span data-stu-id="40226-155">UseTransaction (alias: usetx)</span></span>
+### <a name="usetransaction-alias-usetx"></a><span data-ttu-id="6d346-155">[いいえ] (別名: usetx)</span><span class="sxs-lookup"><span data-stu-id="6d346-155">UseTransaction (alias: usetx)</span></span>
 
-<span data-ttu-id="40226-156">データの種類:スイッチ パラメーター</span><span class="sxs-lookup"><span data-stu-id="40226-156">Data type: SwitchParameter</span></span>
+<span data-ttu-id="6d346-156">データの種類:スイッチ パラメーター</span><span class="sxs-lookup"><span data-stu-id="6d346-156">Data type: SwitchParameter</span></span>
 
-<span data-ttu-id="40226-157">このパラメーターは、コマンドレットが、現在のトランザクションを使用して、操作を実行するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="40226-157">This parameter specifies whether the cmdlet will use the current transaction to perform its action.</span></span>
+<span data-ttu-id="6d346-157">このパラメーターは、コマンドレットが、現在のトランザクションを使用して、操作を実行するかどうかを指定します。</span><span class="sxs-lookup"><span data-stu-id="6d346-157">This parameter specifies whether the cmdlet will use the current transaction to perform its action.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="40226-158">参照</span><span class="sxs-lookup"><span data-stu-id="40226-158">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6d346-158">参照</span><span class="sxs-lookup"><span data-stu-id="6d346-158">See Also</span></span>
 
-[<span data-ttu-id="40226-159">System.Management.Automation.Internal.Commonparameters</span><span class="sxs-lookup"><span data-stu-id="40226-159">System.Management.Automation.Internal.Commonparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.CommonParameters)
+[<span data-ttu-id="6d346-159">System.Management.Automation.Internal.Commonparameters</span><span class="sxs-lookup"><span data-stu-id="6d346-159">System.Management.Automation.Internal.Commonparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.CommonParameters)
 
-[<span data-ttu-id="40226-160">System.Management.Automation.Internal.Shouldprocessparameters</span><span class="sxs-lookup"><span data-stu-id="40226-160">System.Management.Automation.Internal.Shouldprocessparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)
+[<span data-ttu-id="6d346-160">System.Management.Automation.Internal.Shouldprocessparameters</span><span class="sxs-lookup"><span data-stu-id="6d346-160">System.Management.Automation.Internal.Shouldprocessparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)
 
-[<span data-ttu-id="40226-161">System.Management.Automation.Internal.Transactionparameters</span><span class="sxs-lookup"><span data-stu-id="40226-161">System.Management.Automation.Internal.Transactionparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.TransactionParameters)
+[<span data-ttu-id="6d346-161">System.Management.Automation.Internal.Transactionparameters</span><span class="sxs-lookup"><span data-stu-id="6d346-161">System.Management.Automation.Internal.Transactionparameters</span></span>](/dotnet/api/System.Management.Automation.Internal.TransactionParameters)
 
-[<span data-ttu-id="40226-162">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="40226-162">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="6d346-162">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="6d346-162">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
 
-[<span data-ttu-id="40226-163">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="40226-163">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="6d346-163">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="6d346-163">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

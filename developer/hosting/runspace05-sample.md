@@ -8,42 +8,42 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1685cfc4-b32c-4bed-b221-e0c4482db955
 caps.latest.revision: 9
-ms.openlocfilehash: f74ff24f114ecd872ffb443c27a57b1fbe42fa23
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eb227b5fa5e91f59b6fc99981ff5affca1cf63fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860748"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056449"
 ---
-# <a name="runspace05-sample"></a><span data-ttu-id="83294-102">Runspace05 サンプル</span><span class="sxs-lookup"><span data-stu-id="83294-102">Runspace05 Sample</span></span>
+# <a name="runspace05-sample"></a><span data-ttu-id="7fd4d-102">Runspace05 サンプル</span><span class="sxs-lookup"><span data-stu-id="7fd4d-102">Runspace05 Sample</span></span>
 
-<span data-ttu-id="83294-103">このサンプルは、スナップインを追加する方法を示します、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトの実行空間が開いたときに、スナップインのコマンドレットを使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="83294-103">This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened.</span></span> <span data-ttu-id="83294-104">スナップインで Get-proc コマンドレットを提供します (によって定義された、 [GetProcessSample01 サンプル](../cmdlet/getprocesssample01-sample.md)) を使用して同期的に実行される、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="83294-104">The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="7fd4d-103">このサンプルは、スナップインを追加する方法を示します、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトの実行空間が開いたときに、スナップインのコマンドレットを使用できるようにします。</span><span class="sxs-lookup"><span data-stu-id="7fd4d-103">This sample shows how to add a snap-in to an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object so that the cmdlet of the snap-in is available when the runspace is opened.</span></span> <span data-ttu-id="7fd4d-104">スナップインで Get-proc コマンドレットを提供します (によって定義された、 [GetProcessSample01 サンプル](../cmdlet/getprocesssample01-sample.md)) を使用して同期的に実行される、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7fd4d-104">The snap-in provides a Get-Proc cmdlet (defined by the [GetProcessSample01 Sample](../cmdlet/getprocesssample01-sample.md)) that is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="83294-105">要件</span><span class="sxs-lookup"><span data-stu-id="83294-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="7fd4d-105">要件</span><span class="sxs-lookup"><span data-stu-id="7fd4d-105">Requirements</span></span>
 
-<span data-ttu-id="83294-106">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="83294-106">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="7fd4d-106">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="7fd4d-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="83294-107">使用例</span><span class="sxs-lookup"><span data-stu-id="83294-107">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="7fd4d-107">使用例</span><span class="sxs-lookup"><span data-stu-id="7fd4d-107">Demonstrates</span></span>
 
-<span data-ttu-id="83294-108">このサンプルは、次を示します。</span><span class="sxs-lookup"><span data-stu-id="83294-108">This sample demonstrates the following.</span></span>
+<span data-ttu-id="7fd4d-108">このサンプルは、次を示します。</span><span class="sxs-lookup"><span data-stu-id="7fd4d-108">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="83294-109">作成、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="83294-109">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="7fd4d-109">作成、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7fd4d-109">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="83294-110">スナップインを追加、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="83294-110">Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="7fd4d-110">スナップインを追加、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7fd4d-110">Adding the snap-in to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="83294-111">作成、 [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)を使用するオブジェクト、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="83294-111">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="7fd4d-111">作成、 [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)を使用するオブジェクト、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7fd4d-111">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="83294-112">作成、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)実行空間を使用するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="83294-112">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="7fd4d-112">作成、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)実行空間を使用するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7fd4d-112">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="83294-113">パイプラインに get-proc コマンドレット、スナップインの追加すること、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="83294-113">Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="7fd4d-113">パイプラインに get-proc コマンドレット、スナップインの追加すること、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7fd4d-113">Adding the snap-in's get-proc cmdlet to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="83294-114">同期的にコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="83294-114">Running the command synchronously.</span></span>
+- <span data-ttu-id="7fd4d-114">同期的にコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="7fd4d-114">Running the command synchronously.</span></span>
 
-- <span data-ttu-id="83294-115">プロパティからの抽出、 [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)コマンドによって返されるオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="83294-115">Extracting properties from the [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="7fd4d-115">プロパティからの抽出、 [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)コマンドによって返されるオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7fd4d-115">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="83294-116">例</span><span class="sxs-lookup"><span data-stu-id="83294-116">Example</span></span>
+## <a name="example"></a><span data-ttu-id="7fd4d-116">例</span><span class="sxs-lookup"><span data-stu-id="7fd4d-116">Example</span></span>
 
-<span data-ttu-id="83294-117">このサンプルで使用する実行空間を作成、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)実行空間が開いたときに使用できる要素を定義するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="83294-117">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="83294-118">このサンプルで Get-proc コマンドレットを定義するスナップインに追加されます最初のセッション状態。</span><span class="sxs-lookup"><span data-stu-id="83294-118">In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.</span></span>
+<span data-ttu-id="7fd4d-117">このサンプルで使用する実行空間を作成、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)実行空間が開いたときに使用できる要素を定義するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="7fd4d-117">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="7fd4d-118">このサンプルで Get-proc コマンドレットを定義するスナップインに追加されます最初のセッション状態。</span><span class="sxs-lookup"><span data-stu-id="7fd4d-118">In this sample, a snap-in that defines a Get-Proc cmdlet is added to the initial session state.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -127,6 +127,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="83294-119">参照</span><span class="sxs-lookup"><span data-stu-id="83294-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7fd4d-119">参照</span><span class="sxs-lookup"><span data-stu-id="7fd4d-119">See Also</span></span>
 
-[<span data-ttu-id="83294-120">Windows PowerShell ホスト アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="83294-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="7fd4d-120">Windows PowerShell ホスト アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="7fd4d-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

@@ -8,68 +8,68 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ac4903f5-fd40-4f1c-b1d1-18923c16ce45
 caps.latest.revision: 8
-ms.openlocfilehash: 63f04e4caebc31974f35b49309b176241c9b8d4b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 26e882dad839af43945f84d4cdd6cda7bdb2d587
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860538"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059713"
 ---
-# <a name="stopprocesssample04-sample"></a><span data-ttu-id="deabe-102">StopProcessSample04 サンプル</span><span class="sxs-lookup"><span data-stu-id="deabe-102">StopProcessSample04 Sample</span></span>
+# <a name="stopprocesssample04-sample"></a><span data-ttu-id="4cb3f-102">StopProcessSample04 サンプル</span><span class="sxs-lookup"><span data-stu-id="4cb3f-102">StopProcessSample04 Sample</span></span>
 
-<span data-ttu-id="deabe-103">このサンプルでは、パラメーター セットを宣言で、既定のパラメーターの設定、および入力オブジェクトを受け取ることができますを指定するコマンドレットを記述する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="deabe-103">This sample shows how to write a cmdlet that declares parameter sets, specifies the default parameter set, and can accept an input object.</span></span> <span data-ttu-id="deabe-104">このコマンドレットと似ています、`Stop-Process`コマンドレットの Windows PowerShell 2.0 で提供されます。</span><span class="sxs-lookup"><span data-stu-id="deabe-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="4cb3f-103">このサンプルでは、パラメーター セットを宣言で、既定のパラメーターの設定、および入力オブジェクトを受け取ることができますを指定するコマンドレットを記述する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-103">This sample shows how to write a cmdlet that declares parameter sets, specifies the default parameter set, and can accept an input object.</span></span> <span data-ttu-id="4cb3f-104">このコマンドレットと似ています、`Stop-Process`コマンドレットの Windows PowerShell 2.0 で提供されます。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="deabe-105">Visual Studio を使用してサンプルをビルドする方法。</span><span class="sxs-lookup"><span data-stu-id="deabe-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="4cb3f-105">Visual Studio を使用してサンプルをビルドする方法。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="deabe-106">インストールされている Windows PowerShell 2.0 sdk では、StopProcessSample04 フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="deabe-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample04 folder.</span></span> <span data-ttu-id="deabe-107">既定の場所は、C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04 します。</span><span class="sxs-lookup"><span data-stu-id="deabe-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.</span></span>
+1. <span data-ttu-id="4cb3f-106">インストールされている Windows PowerShell 2.0 sdk では、StopProcessSample04 フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample04 folder.</span></span> <span data-ttu-id="4cb3f-107">既定の場所は、C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04 します。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample04.</span></span>
 
-2. <span data-ttu-id="deabe-108">ソリューション (.sln) ファイルのアイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="deabe-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="deabe-109">これは、Microsoft Visual Studio でサンプル プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="deabe-109">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="4cb3f-108">ソリューション (.sln) ファイルのアイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="4cb3f-109">これは、Microsoft Visual Studio でサンプル プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-109">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="deabe-110">**ビルド**メニューの **ソリューションのビルド**します。</span><span class="sxs-lookup"><span data-stu-id="deabe-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="4cb3f-110">**ビルド**メニューの **ソリューションのビルド**します。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="deabe-111">サンプルのライブラリは、既定の \bin または \bin\debug フォルダーにビルドされます。</span><span class="sxs-lookup"><span data-stu-id="deabe-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="4cb3f-111">サンプルのライブラリは、既定の \bin または \bin\debug フォルダーにビルドされます。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="deabe-112">サンプルを実行する方法</span><span class="sxs-lookup"><span data-stu-id="deabe-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="4cb3f-112">サンプルを実行する方法</span><span class="sxs-lookup"><span data-stu-id="4cb3f-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="deabe-113">次のモジュール フォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="deabe-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="4cb3f-113">次のモジュール フォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-113">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample04`
 
-2. <span data-ttu-id="deabe-114">モジュール フォルダーにサンプル アセンブリをコピーします。</span><span class="sxs-lookup"><span data-stu-id="deabe-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="4cb3f-114">モジュール フォルダーにサンプル アセンブリをコピーします。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="deabe-115">Windows PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="deabe-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="4cb3f-115">Windows PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="deabe-116">Windows PowerShell にアセンブリを読み込むには、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="deabe-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="4cb3f-116">Windows PowerShell にアセンブリを読み込むには、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample04`
 
-5. <span data-ttu-id="deabe-117">コマンドレットを実行する次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="deabe-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="4cb3f-117">コマンドレットを実行する次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-117">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="deabe-118">要件</span><span class="sxs-lookup"><span data-stu-id="deabe-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="4cb3f-118">要件</span><span class="sxs-lookup"><span data-stu-id="4cb3f-118">Requirements</span></span>
 
-<span data-ttu-id="deabe-119">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="deabe-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="4cb3f-119">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="deabe-120">使用例</span><span class="sxs-lookup"><span data-stu-id="deabe-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="4cb3f-120">使用例</span><span class="sxs-lookup"><span data-stu-id="4cb3f-120">Demonstrates</span></span>
 
-<span data-ttu-id="deabe-121">このサンプルは、次を示します。</span><span class="sxs-lookup"><span data-stu-id="deabe-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="4cb3f-121">このサンプルは、次を示します。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="deabe-122">コマンドレットの属性を使用して、コマンドレット クラスを宣言します。</span><span class="sxs-lookup"><span data-stu-id="deabe-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="4cb3f-122">コマンドレットの属性を使用して、コマンドレット クラスを宣言します。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="deabe-123">パラメーター属性を使用して、コマンドレット パラメーターの宣言。</span><span class="sxs-lookup"><span data-stu-id="deabe-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="4cb3f-123">パラメーター属性を使用して、コマンドレット パラメーターの宣言。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="deabe-124">入力オブジェクトを受け取るパラメーターを追加します。</span><span class="sxs-lookup"><span data-stu-id="deabe-124">Adding a parameter that accepts input object.</span></span>
+- <span data-ttu-id="4cb3f-124">入力オブジェクトを受け取るパラメーターを追加します。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-124">Adding a parameter that accepts input object.</span></span>
 
-- <span data-ttu-id="deabe-125">パラメーターの追加のパラメーター セット</span><span class="sxs-lookup"><span data-stu-id="deabe-125">Adding parameters to parameter sets</span></span>
+- <span data-ttu-id="4cb3f-125">パラメーターの追加のパラメーター セット</span><span class="sxs-lookup"><span data-stu-id="4cb3f-125">Adding parameters to parameter sets</span></span>
 
-- <span data-ttu-id="deabe-126">既定のパラメーターを指定する設定。</span><span class="sxs-lookup"><span data-stu-id="deabe-126">Specifying the default parameter set.</span></span>
+- <span data-ttu-id="4cb3f-126">既定のパラメーターを指定する設定。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-126">Specifying the default parameter set.</span></span>
 
-## <a name="example"></a><span data-ttu-id="deabe-127">例</span><span class="sxs-lookup"><span data-stu-id="deabe-127">Example</span></span>
+## <a name="example"></a><span data-ttu-id="4cb3f-127">例</span><span class="sxs-lookup"><span data-stu-id="4cb3f-127">Example</span></span>
 
-<span data-ttu-id="deabe-128">次のコードでは、パラメーター セットを宣言し、既定のパラメーターの設定、および入力オブジェクトを受け取ることができますを指定します停止 Proc コマンドレットの実装を示します。</span><span class="sxs-lookup"><span data-stu-id="deabe-128">The following code shows an implementation of the Stop-Proc cmdlet that declare parameter sets, specifies the default parameter set, and can accept an input object.</span></span>
+<span data-ttu-id="4cb3f-128">次のコードでは、パラメーター セットを宣言し、既定のパラメーターの設定、および入力オブジェクトを受け取ることができますを指定します停止 Proc コマンドレットの実装を示します。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-128">The following code shows an implementation of the Stop-Proc cmdlet that declare parameter sets, specifies the default parameter set, and can accept an input object.</span></span>
 
-<span data-ttu-id="deabe-129">このサンプルでは、入力オブジェクト、パラメーターのセットを宣言する方法と、既定のパラメーターを使用する設定を指定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="deabe-129">This sample shows the input object, how to declare parameter sets, and how to specify the default parameter set to use.</span></span>
+<span data-ttu-id="4cb3f-129">このサンプルでは、入力オブジェクト、パラメーターのセットを宣言する方法と、既定のパラメーターを使用する設定を指定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4cb3f-129">This sample shows the input object, how to declare parameter sets, and how to specify the default parameter set to use.</span></span>
 
 ```csharp
 using System;
@@ -307,9 +307,9 @@ namespace Microsoft.Samples.PowerShell.Commands
                                             "The process \"{0}\" is a critical process and should not be stopped. Are you sure you wish to stop the process?",
                                                 processName);
                // It is possible that the ProcessRecord method is called
-               // multiple times when objects are recieved as inputs from
+               // multiple times when objects are received as inputs from
                // the pipeline. So to retain YesToAll and NoToAll input that
-               // the user may enter across mutilple calls to this function,
+               // the user may enter across multiple calls to this function,
                // they are stored as private members of the cmdlet.
                if (!ShouldContinue(message, "Warning!",
                             ref yesToAll, ref noToAll))
@@ -361,7 +361,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
            WriteVerbose(message);
 
-           // If the PassThru prameter is specified, return the terminated
+           // If the PassThru parameter is specified, return the terminated
            // process to the pipeline.
            if (passThru)
            {
@@ -490,6 +490,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="deabe-130">参照</span><span class="sxs-lookup"><span data-stu-id="deabe-130">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4cb3f-130">参照</span><span class="sxs-lookup"><span data-stu-id="4cb3f-130">See Also</span></span>
 
-[<span data-ttu-id="deabe-131">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="deabe-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="4cb3f-131">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="4cb3f-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

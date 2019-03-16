@@ -8,40 +8,40 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7c265084-e072-46ca-9844-c3c0e275d6b0
 caps.latest.revision: 7
-ms.openlocfilehash: eb3624bea589e2ab0d7b4f76874e073b942c001f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: fdf0036c68b608d254ed928ae9ac58616a856200
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862158"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059509"
 ---
-# <a name="runspace10-sample"></a><span data-ttu-id="6661b-102">Runspace10 サンプル</span><span class="sxs-lookup"><span data-stu-id="6661b-102">Runspace10 Sample</span></span>
+# <a name="runspace10-sample"></a><span data-ttu-id="46461-102">Runspace10 サンプル</span><span class="sxs-lookup"><span data-stu-id="46461-102">Runspace10 Sample</span></span>
 
-<span data-ttu-id="6661b-103">このサンプルは、既定の最初のセッション状態を作成する方法を示しています追加のコマンドレットを使用する方法、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)最初のセッションの状態を使用する実行空間を作成する方法、および実行する方法。使用して、コマンド、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6661b-103">This sample shows how to create a default initial session state, how to add a cmdlet to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), how to create a runspace that uses the initial session state, and how to run the command by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="46461-103">このサンプルは、既定の最初のセッション状態を作成する方法を示しています追加のコマンドレットを使用する方法、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)最初のセッションの状態を使用する実行空間を作成する方法、および実行する方法。使用して、コマンド、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="46461-103">This sample shows how to create a default initial session state, how to add a cmdlet to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState), how to create a runspace that uses the initial session state, and how to run the command by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="6661b-104">要件</span><span class="sxs-lookup"><span data-stu-id="6661b-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="46461-104">要件</span><span class="sxs-lookup"><span data-stu-id="46461-104">Requirements</span></span>
 
-<span data-ttu-id="6661b-105">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="6661b-105">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="46461-105">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="46461-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="6661b-106">使用例</span><span class="sxs-lookup"><span data-stu-id="6661b-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="46461-106">使用例</span><span class="sxs-lookup"><span data-stu-id="46461-106">Demonstrates</span></span>
 
-<span data-ttu-id="6661b-107">このサンプルは、次を示します。</span><span class="sxs-lookup"><span data-stu-id="6661b-107">This sample demonstrates the following.</span></span>
+<span data-ttu-id="46461-107">このサンプルは、次を示します。</span><span class="sxs-lookup"><span data-stu-id="46461-107">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="6661b-108">作成、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6661b-108">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="46461-108">作成、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="46461-108">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="6661b-109">(ホスト アプリケーションで定義された) コマンドレットへの追加、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6661b-109">Adding a cmdlet (defined by the Host application) to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="46461-109">(ホスト アプリケーションで定義された) コマンドレットへの追加、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="46461-109">Adding a cmdlet (defined by the Host application) to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="6661b-110">作成、 [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)オブジェクトを使用するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6661b-110">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the object.</span></span>
+- <span data-ttu-id="46461-110">作成、 [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)オブジェクトを使用するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="46461-110">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object that uses the object.</span></span>
 
-- <span data-ttu-id="6661b-111">作成、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)を使用するオブジェクト、 [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6661b-111">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
+- <span data-ttu-id="46461-111">作成、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)を使用するオブジェクト、 [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="46461-111">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
 
-- <span data-ttu-id="6661b-112">パイプラインにコマンドを追加、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6661b-112">Adding the command to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="46461-112">パイプラインにコマンドを追加、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="46461-112">Adding the command to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="6661b-113">プロパティからの抽出、 [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)コマンドによって返されるオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6661b-113">Extracting properties from the [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="46461-113">プロパティからの抽出、 [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)コマンドによって返されるオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="46461-113">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="6661b-114">例</span><span class="sxs-lookup"><span data-stu-id="6661b-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="46461-114">例</span><span class="sxs-lookup"><span data-stu-id="46461-114">Example</span></span>
 
-<span data-ttu-id="6661b-115">このサンプルで使用する実行空間を作成、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)実行空間が開いたときに使用できる要素を定義するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6661b-115">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="6661b-116">このサンプルで (ホスト アプリケーションによって定義されている) Get-proc コマンドレットは、最初のセッション状態に追加され、コマンドレットを使用して同期的に実行を[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="6661b-116">In this sample, the Get-Proc cmdlet (defined by the Host application) is added to the initial session state, and the cmdlet is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="46461-115">このサンプルで使用する実行空間を作成、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)実行空間が開いたときに使用できる要素を定義するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="46461-115">This sample creates a runspace that uses an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to define the elements that are available when the runspace is opened.</span></span> <span data-ttu-id="46461-116">このサンプルで (ホスト アプリケーションによって定義されている) Get-proc コマンドレットは、最初のセッション状態に追加され、コマンドレットを使用して同期的に実行を[System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="46461-116">In this sample, the Get-Proc cmdlet (defined by the Host application) is added to the initial session state, and the cmdlet is run synchronously by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -155,6 +155,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="6661b-117">参照</span><span class="sxs-lookup"><span data-stu-id="6661b-117">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="46461-117">参照</span><span class="sxs-lookup"><span data-stu-id="46461-117">See Also</span></span>
 
-[<span data-ttu-id="6661b-118">Windows PowerShell ホスト アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="6661b-118">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="46461-118">Windows PowerShell ホスト アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="46461-118">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

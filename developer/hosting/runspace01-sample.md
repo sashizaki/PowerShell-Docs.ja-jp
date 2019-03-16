@@ -8,34 +8,34 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 42c1c59c-6da5-4cda-9562-e8059177fee1
 caps.latest.revision: 11
-ms.openlocfilehash: c33044fde4456513b5b07b998cc8db389b318e8e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eec9c616fc6d5240db185f764a3ea2c8f9575d03
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855718"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057911"
 ---
-# <a name="runspace01-sample"></a><span data-ttu-id="867b2-102">Runspace01 サンプル</span><span class="sxs-lookup"><span data-stu-id="867b2-102">Runspace01 Sample</span></span>
+# <a name="runspace01-sample"></a><span data-ttu-id="69e40-102">Runspace01 サンプル</span><span class="sxs-lookup"><span data-stu-id="69e40-102">Runspace01 Sample</span></span>
 
-<span data-ttu-id="867b2-103">このサンプルは、使用する方法を示します、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)を実行するクラス、 [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレット同期的にします。</span><span class="sxs-lookup"><span data-stu-id="867b2-103">This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously.</span></span> <span data-ttu-id="867b2-104">[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットが返す[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)ローカル コンピューターで実行されている各プロセスのオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="867b2-104">The [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer.</span></span> <span data-ttu-id="867b2-105">値、 [System.Diagnostics.Process.Processname\*](/dotnet/api/System.Diagnostics.Process.ProcessName)と[System.Diagnostics.Process.Handlecount\*](/dotnet/api/System.Diagnostics.Process.Handlecount)プロパティが、返されたオブジェクトから抽出され、コンソールに表示されます。ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="867b2-105">The values of the [System.Diagnostics.Process.Processname\*](/dotnet/api/System.Diagnostics.Process.ProcessName) and [System.Diagnostics.Process.Handlecount\*](/dotnet/api/System.Diagnostics.Process.Handlecount) properties are then extracted from the returned objects and displayed in a console window.</span></span>
+<span data-ttu-id="69e40-103">このサンプルは、使用する方法を示します、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)を実行するクラス、 [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレット同期的にします。</span><span class="sxs-lookup"><span data-stu-id="69e40-103">This sample shows how to use the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class to run the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously.</span></span> <span data-ttu-id="69e40-104">[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットが返す[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)ローカル コンピューターで実行されている各プロセスのオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="69e40-104">The [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet returns [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process) objects for each process running on the local computer.</span></span> <span data-ttu-id="69e40-105">値、 [System.Diagnostics.Process.Processname\*](/dotnet/api/System.Diagnostics.Process.ProcessName)と[System.Diagnostics.Process.Handlecount\*](/dotnet/api/System.Diagnostics.Process.Handlecount)プロパティが、返されたオブジェクトから抽出され、コンソールに表示されます。ウィンドウです。</span><span class="sxs-lookup"><span data-stu-id="69e40-105">The values of the [System.Diagnostics.Process.Processname\*](/dotnet/api/System.Diagnostics.Process.ProcessName) and [System.Diagnostics.Process.Handlecount\*](/dotnet/api/System.Diagnostics.Process.Handlecount) properties are then extracted from the returned objects and displayed in a console window.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="867b2-106">要件</span><span class="sxs-lookup"><span data-stu-id="867b2-106">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="69e40-106">要件</span><span class="sxs-lookup"><span data-stu-id="69e40-106">Requirements</span></span>
 
- <span data-ttu-id="867b2-107">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="867b2-107">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="69e40-107">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="69e40-107">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="867b2-108">使用例</span><span class="sxs-lookup"><span data-stu-id="867b2-108">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="69e40-108">使用例</span><span class="sxs-lookup"><span data-stu-id="69e40-108">Demonstrates</span></span>
 
-- <span data-ttu-id="867b2-109">作成、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)コマンドを実行するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="867b2-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to run a command.</span></span>
+- <span data-ttu-id="69e40-109">作成、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)コマンドを実行するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="69e40-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to run a command.</span></span>
 
-- <span data-ttu-id="867b2-110">パイプラインにコマンドの追加、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="867b2-110">Adding a command to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="69e40-110">パイプラインにコマンドの追加、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="69e40-110">Adding a command to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="867b2-111">同期的にコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="867b2-111">Running the command synchronously.</span></span>
+- <span data-ttu-id="69e40-111">同期的にコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="69e40-111">Running the command synchronously.</span></span>
 
-- <span data-ttu-id="867b2-112">使用して[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)コマンドによって返されるオブジェクトからプロパティを抽出するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="867b2-112">Using [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) objects to extract properties from the objects returned by the command.</span></span>
+- <span data-ttu-id="69e40-112">使用して[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)コマンドによって返されるオブジェクトからプロパティを抽出するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="69e40-112">Using [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects to extract properties from the objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="867b2-113">例</span><span class="sxs-lookup"><span data-stu-id="867b2-113">Example</span></span>
+## <a name="example"></a><span data-ttu-id="69e40-113">例</span><span class="sxs-lookup"><span data-stu-id="69e40-113">Example</span></span>
 
- <span data-ttu-id="867b2-114">このサンプルの実行、 [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットは同期的に Windows PowerShell によって提供される既定の実行空間。</span><span class="sxs-lookup"><span data-stu-id="867b2-114">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously in the default runspace provided by Windows PowerShell.</span></span>
+ <span data-ttu-id="69e40-114">このサンプルの実行、 [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットは同期的に Windows PowerShell によって提供される既定の実行空間。</span><span class="sxs-lookup"><span data-stu-id="69e40-114">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet synchronously in the default runspace provided by Windows PowerShell.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -92,4 +92,4 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="867b2-115">参照</span><span class="sxs-lookup"><span data-stu-id="867b2-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="69e40-115">参照</span><span class="sxs-lookup"><span data-stu-id="69e40-115">See Also</span></span>
