@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e199bba3-90d3-41ca-9d78-cb502e58508d
 caps.latest.revision: 6
-ms.openlocfilehash: c8b3f907a80d1f6125a5ac04236245503db76ed0
-ms.sourcegitcommit: ce46e5098786e19d521b4bf948ff62d2b90bc53e
+ms.openlocfilehash: 9b4d83aeaf45eab1365dec5fbf48c3c796ed5bde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57251304"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057131"
 ---
 # <a name="security-parameters"></a>セキュリティのパラメーター
 
@@ -29,7 +29,7 @@ ms.locfileid: "57251304"
 |**CertStoreLocation**<br>データの種類:String|ユーザーが証明書ストアの場所を指定できるように、このパラメーターを実装します。 場所は、通常、ファイル パスです。|
 |**CertSubjectName**<br>データの種類:String|ユーザーが証明書の発行者を指定できるように、または、ユーザーは、部分文字列を指定できるように、このパラメーターを実装します。|
 |**CertUsage**<br>データの種類:String|キー使用法または拡張キー使用法を指定するには、このパラメーターを実装します。 キーは、ビット マスクを少し、オブジェクト識別子 (OID) または文字列を表現できます。|
-|**資格情報**<br>データの種類:[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)|このパラメーターを実装するは、コマンドレットによってユーザー名またはパスワードをユーザーが自動的に要求できるようにします。 完全な資格情報が直接指定されていない場合は、両方のプロンプトが表示されます。|
+|**資格情報**<br>データの種類:[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)|このパラメーターを実装するは、コマンドレットによってユーザー名またはパスワードをユーザーが自動的に要求できるようにします。 完全な資格情報が直接指定されていない場合は、両方のプロンプトが表示されます。|
 |**CSPName**<br>データの種類:String|ユーザーが証明書サービス プロバイダー (CSP) の名前を指定できるように、このパラメーターを実装します。|
 |**CSPType**<br>データの種類:整数|ユーザーは、CSP の種類を指定できるように、このパラメーターを実装します。|
 |**グループ**<br>データの種類:String|ユーザーが使用するプリンシパルのアクセスのコレクションを指定できるように、このパラメーターを実装します。 詳細については、の説明を参照して、**プリンシパル**パラメーター。|

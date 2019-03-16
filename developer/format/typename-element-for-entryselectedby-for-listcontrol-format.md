@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 33c7345c-b808-4c1e-bd54-cb870b407432
 caps.latest.revision: 14
-ms.openlocfilehash: 3f0c0ba1fe85d70557e67a30b3a9a59a33043475
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0f7216d4dcc0380bceb47ea7c15b3d4a7e5ceeb2
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856108"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059696"
 ---
 # <a name="typename-element-for-entryselectedby-for-listcontrol-format"></a>ListControl の EntrySelectedBy の TypeName 要素 (書式)
 
@@ -74,6 +74,6 @@ ms.locfileid: "56856108"
 
 [ListEntry (形式) の EntrySelectedBy 要素](./entryselectedby-element-for-listentry-for-listcontrol-format.md)
 
-[ListEntry (形式) の EnrtySelectedBy SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[ListEntry (形式) の EntrySelectedBy SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [PowerShell のファイルを書式設定の書き込み](./writing-a-powershell-formatting-file.md)

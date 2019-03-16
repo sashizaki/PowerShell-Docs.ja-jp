@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 93a00463-af58-41c8-b088-450909fa1d05
 caps.latest.revision: 6
-ms.openlocfilehash: d69e8a734aa96ff9b7911815fb43b81103548b59
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: b98e6879bbfe0e3ec1a9ab37496dde44caf523a4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794350"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054137"
 ---
 # <a name="how-to-set-helpinfo-xml-version-numbers"></a>HelpInfo XML バージョン番号を設定する方法
 
@@ -21,7 +21,8 @@ ms.locfileid: "57794350"
 
 ## <a name="how-to-set-helpinfo-xml-version-numbers"></a>HelpInfo XML バージョン番号を設定する方法
 
-HelpInfo XML ファイルにバージョン番号は、更新可能なヘルプの操作に重要です。 [Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)と[Save-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)コマンドレットがリモートの HelpInfo XML ファイルでの UI カルチャのバージョン番号がの UI カルチャ、バージョン番号より大きい場合にのみ、新しいヘルプ ファイルをダウンロードしますローカルの HelpInfo XML、またはローカルの HelpInfo XML ファイルがないです。
+HelpInfo XML ファイルにバージョン番号は、更新可能なヘルプの操作に重要です。
+[Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)と[Save-help](/powershell/module/Microsoft.PowerShell.Core/Save-Help)コマンドレットがリモートの HelpInfo XML ファイルでの UI カルチャのバージョン番号がの UI カルチャ、バージョン番号より大きい場合にのみ、新しいヘルプ ファイルをダウンロードしますローカルの HelpInfo XML、またはローカルの HelpInfo XML ファイルがないです。
 
 HelpInfo XML ファイルで定義されている 4 つの部分のバージョン番号を使用して、 **System.Version** Microsoft .NET Framework のクラス。 形式は`N1.N2.N3.N4`します。 モジュールの作成者は、任意のバージョン番号付けは許可されているスキームを使用できます、 **System.Version**クラス。 更新可能なヘルプが必要ですそれだけで、バージョン番号の UI カルチャの増加がで指定された場所にその UI カルチャ用の CAB ファイルの新しいバージョンがアップロードされたときに、 **HelpContentURI** HelpInfo XML ファイル内の要素。
 

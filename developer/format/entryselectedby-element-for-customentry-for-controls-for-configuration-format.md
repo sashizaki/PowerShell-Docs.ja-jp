@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 30abae8f-c7f7-479d-ad85-19e07ddef204
 caps.latest.revision: 10
-ms.openlocfilehash: e930e4422afd203feda6a389655ff8a355e3bec0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 81eca4f66f0057074612f2d60482b45adc36357b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858668"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059220"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-configuration-format"></a>Configuration の Controls の CustomEntry の EntrySelectedBy 要素 (書式)
 
@@ -65,6 +65,6 @@ ms.locfileid: "56858668"
 
 [構成 (形式) のコントロールのカスタム コントロールの CustomEntry 要素](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)
 
-[構成 (形式) のコントロールの EntrySelectdBy の TypeName 要素](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
+[構成 (形式) のコントロールの EntrySelectedBy の TypeName 要素](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
 [PowerShell のファイルを書式設定の書き込み](./writing-a-powershell-formatting-file.md)

@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a886a26d-7730-4586-aeac-fd3f0bc60b88
 caps.latest.revision: 8
-ms.openlocfilehash: 75214a3fe4bc019836f75db19fb873bd081f200f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 229725b5b9f1f0082592dcebe11564fd2f630ce1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861418"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059475"
 ---
 # <a name="confirmation-messages"></a>確認メッセージ
 
-バリエーションに応じて表示できるさまざまな確認メッセージをここでは、 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)呼び出されるメソッド。
+バリエーションに応じて表示できるさまざまな確認メッセージをここでは、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)呼び出されるメソッド。
 
 > [!IMPORTANT]
 > 確認を要求する方法を示すサンプル コードでは、次を参照してください。[要求の確認方法](./how-to-request-confirmations.md)します。
@@ -33,7 +33,7 @@ Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-ユーザーが選択した場合**はい**または**すべてはい**、確認を要求 (示すように、次の例) への呼び出し、 [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドを作成すると、これにより、2 番目の確認メッセージが表示されます。
+ユーザーが選択した場合**はい**または**すべてはい**、確認を要求 (示すように、次の例) への呼び出し、 [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドを作成すると、これにより、2 番目の確認メッセージが表示されます。
 
 ```output
 Confirm
@@ -57,7 +57,7 @@ Performing operation "MyAction" on Target "MyResource".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-ユーザーが選択した場合**はい**または**すべてはい**前のメッセージへの呼び出しに、 [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドが行われる原因となる、2 番目の確認メッセージが表示されます。
+ユーザーが選択した場合**はい**または**すべてはい**前のメッセージへの呼び出しに、 [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドが行われる原因となる、2 番目の確認メッセージが表示されます。
 
 ```output
 Confirm

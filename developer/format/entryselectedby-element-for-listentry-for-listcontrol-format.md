@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 0f7a74e9-764d-46ce-ab8e-8b9314ce1659
 caps.latest.revision: 12
-ms.openlocfilehash: 723619e67612b859d0acbab37eecd82141adf923
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 442565d25f60ae8e04501f3f9ffba35d486fbc8a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854948"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054945"
 ---
 # <a name="entryselectedby-element-for-listentry-for-listcontrol-format"></a>ListControl の ListEntry の EntrySelectedBy 要素 (書式)
 
@@ -44,7 +44,7 @@ ms.locfileid: "56854948"
 |要素|説明|
 |-------------|-----------------|
 |[ListControl (形式) の EntrySelectedBy SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素です。<br /><br /> このリスト ビューの定義を使用するのに必要な条件を定義します。|
-|[ListControl (形式) の EnrtySelectedBy SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素です。<br /><br /> このリスト ビューの定義を使用して .NET 型のセットを指定します。|
+|[ListControl (形式) の EntrySelectedBy SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素です。<br /><br /> このリスト ビューの定義を使用して .NET 型のセットを指定します。|
 |[EntrySelectedBy ListControl (形式) 用の TypeName 要素](./typename-element-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素です。<br /><br /> このリスト ビューの定義を使用する .NET 型を指定します。|
 
 ### <a name="parent-elements"></a>親要素
@@ -79,7 +79,7 @@ ms.locfileid: "56854948"
 
 [ListControl (形式) の EntrySelectedBy SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[ListControl (形式) の EnrtySelectedBy SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[ListControl (形式) の EntrySelectedBy SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
 [EntrySelectedBy ListControl (形式) 用の TypeName 要素](./typename-element-for-entryselectedby-for-listcontrol-format.md)
 

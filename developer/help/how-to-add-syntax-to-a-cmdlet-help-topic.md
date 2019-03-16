@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 947d0c0188df5bba3a9fb617fe5abf0b3b28eb51
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857998"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054613"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>コマンドレットのヘルプ トピックに構文を追加する方法
 
@@ -112,7 +112,7 @@ ms.locfileid: "56857998"
 
    その意味が明確に"string"に System.String および System.Int32 の"int"などの型の省略形します。
 
-   列挙型のすべての値を一覧表示など、前の例では、型パラメーター、これは、"basic"または「詳細」に設定できます。
+   列挙型のすべての値を一覧表示など、型パラメーターを指定する前の例では、"basic"または「詳細」に設定することができます。
 
    スイッチ パラメーターは、前の例の一覧など、値はありません。
 

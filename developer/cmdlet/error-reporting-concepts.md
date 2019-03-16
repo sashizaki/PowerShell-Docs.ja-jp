@@ -13,18 +13,18 @@ helpviewer_keywords:
 - errors [PowerShell SDK]
 ms.assetid: 0dce97c0-bd9a-4691-8ca3-e8d5dea902c5
 caps.latest.revision: 11
-ms.openlocfilehash: aac6b7b6ac8a0fad15194b6d3f92c434524fabdb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2f185e415e3effc2cf09a282ca1167e3bcfb7d6a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855078"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054409"
 ---
 # <a name="error-reporting-concepts"></a>エラー レポートの概念
 
 Windows PowerShell がエラーを報告した 2 つのメカニズムを提供します: 1 つのメカニズム*終了エラー*と別のメカニズムの*未終了エラー*します。 正しく、コマンドレットを実行しているホスト アプリケーションが適切な方法で対応できるようにエラーを報告するコマンドレットの重要なです。
 
-コマンドレットを呼び出す必要があります、 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)メソッドのエラーが発生する場合はまたはの入力オブジェクトの処理を続行するためのコマンドレットを許可しないでください。 コマンドレットを呼び出す必要があります、 [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)コマンドレットが入力オブジェクトの処理を続行することができる場合、未終了エラーを報告するメソッド。 どちらの方法では、エラーの原因を調査するホスト アプリケーションが使用できるエラー レコードを提供します。
+コマンドレットを呼び出す必要があります、 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)メソッドのエラーが発生する場合はまたはの入力オブジェクトの処理を続行するためのコマンドレットを許可しないでください。 コマンドレットを呼び出す必要があります、 [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)コマンドレットが入力オブジェクトの処理を続行することができる場合、未終了エラーを報告するメソッド。 どちらの方法では、エラーの原因を調査するホスト アプリケーションが使用できるエラー レコードを提供します。
 
 次のガイドラインを使用すると、エラーが終了するかどうか未終了エラーを判断します。
 
@@ -42,7 +42,7 @@ Windows PowerShell がエラーを報告した 2 つのメカニズムを提供�
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
+[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)
 
 [Windows PowerShell のエラー レコード](./windows-powershell-error-records.md)
 

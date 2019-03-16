@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 45c45800-a87d-456e-b07c-12d4d8c27c67
 caps.latest.revision: 8
-ms.openlocfilehash: 431e5d8407b9f689a5224b329d8c7b52802e19e1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2c6a3d678ca68dc0d189f6ab981fdea5fef894cb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854918"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056483"
 ---
 # <a name="displayerror-element-format"></a>DisplayError 要素 (書式)
 
 データの一部を表示するエラーが発生したときに、文字列 #ERR が表示されることを指定します。
 
-構成要素 (形式) DefaultSettings 要素 (形式) DisplayError 要素 (Frmat)
+構成要素 (形式) DefaultSettings 要素 (形式) DisplayError 要素 (形式)
 
 ## <a name="syntax"></a>構文
 

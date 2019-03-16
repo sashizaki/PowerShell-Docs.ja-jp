@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 96a5dcad-faed-44d8-8c80-321f10499710
 caps.latest.revision: 6
-ms.openlocfilehash: 1513d340cdadc5cb7622e791cc3c163ff39dfe1d
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 49a62ccb09f06f77862d4737199e58293e7fbe0a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795404"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059254"
 ---
 # <a name="credential-attribute-declaration"></a>資格情報属性の宣言
 
-資格情報の属性は、型の資格情報パラメーターで使用できる省略可能な属性[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)をパラメーターに文字列が引数として渡すこともできます。 Windows PowerShell がへの文字列入力を変換パラメーター宣言には、この属性を追加するときに、 [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)オブジェクト。 たとえば、 [Get-credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential)コマンドレットでは、この属性を使用して、Windows PowerShell の生成、 [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)コマンドレットによって返されるオブジェクト。
+資格情報の属性は、型の資格情報パラメーターで使用できる省略可能な属性[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)をパラメーターに文字列が引数として渡すこともできます。 Windows PowerShell がへの文字列入力を変換パラメーター宣言には、この属性を追加するときに、 [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)オブジェクト。 たとえば、 [Get-credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential)コマンドレットでは、この属性を使用して、Windows PowerShell の生成、 [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)コマンドレットによって返されるオブジェクト。
 
 ## <a name="syntax"></a>構文
 
@@ -27,9 +27,9 @@ ms.locfileid: "57795404"
 
 ## <a name="remarks"></a>コメント
 
-- 型のパラメーターでこの属性を使用する通常[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)をパラメーターに文字列が引数として渡すこともできます。 ときに、 [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)オブジェクトがパラメーターに渡されると、Windows PowerShell は何も行いません。
+- 型のパラメーターでこの属性を使用する通常[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)をパラメーターに文字列が引数として渡すこともできます。 ときに、 [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)オブジェクトがパラメーターに渡されると、Windows PowerShell は何も行いません。
 
-- 作成するときに、 [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)オブジェクト、Windows PowerShell は、現在のホストを使用して、ユーザーに適切な指示を表示します。 たとえば、既定のホストが表示されますユーザー名とパスワードを入力するプロンプトこの属性を使用する場合。 ただし、カスタム ホストを使用している場合は、さまざまなプロンプトを定義するし、プロンプトが表示されます。
+- 作成するときに、 [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)オブジェクト、Windows PowerShell は、現在のホストを使用して、ユーザーに適切な指示を表示します。 たとえば、既定のホストが表示されますユーザー名とパスワードを入力するプロンプトこの属性を使用する場合。 ただし、カスタム ホストを使用している場合は、さまざまなプロンプトを定義するし、プロンプトが表示されます。
 
 - この属性は、パラメーターの属性で使用されます。 その属性の詳細については、次を参照してください。[パラメーター属性宣言](./parameter-attribute-declaration.md)します。
 

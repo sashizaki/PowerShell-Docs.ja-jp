@@ -14,12 +14,12 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 7b54fc220a66a47c25b3e8cba644882d31713cb7
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857688"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057945"
 ---
 # <a name="cmdlet-error-reporting"></a>コマンドレット エラー レポート
 
@@ -43,7 +43,7 @@ ms.locfileid: "56857688"
 
 ## <a name="reporting-nonterminating-errors"></a>終了しないエラーの報告
 
-終了しないエラーの報告する必要がありますを行うまでのコマンドレットの実装内で、 [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッド、 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド、または[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)メソッド。 この種のエラーが呼び出すことによって報告された、 [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)さらに、エラー ストリームにエラー レコードを送信するメソッド。
+終了しないエラーの報告する必要がありますを行うまでのコマンドレットの実装内で、 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッド、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド、または[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)メソッド。 この種のエラーが呼び出すことによって報告された、 [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)さらに、エラー ストリームにエラー レコードを送信するメソッド。
 
 ## <a name="reporting-terminating-errors"></a>終了するエラーを報告
 
@@ -53,7 +53,7 @@ ms.locfileid: "56857688"
 
 ## <a name="error-records"></a>エラー レコード
 
-Windows PowerShell を使用すると、終了しないエラー状態の説明[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクト。 各[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクトは、エラー カテゴリの情報、省略可能なターゲット オブジェクト、およびエラーの状態に関する詳細情報を提供します。
+Windows PowerShell を使用すると、終了しないエラー状態の説明[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクト。 各[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクトは、エラー カテゴリの情報、省略可能なターゲット オブジェクト、およびエラーの状態に関する詳細情報を提供します。
 
 ### <a name="error-identifiers"></a>エラー識別子
 
@@ -61,7 +61,7 @@ Windows PowerShell を使用すると、終了しないエラー状態の説明[
 
 エラーの識別子を指定するときに、次のガイドラインに従ってください。
 
-- 異なるコード パスを別の高い特定のエラーの識別子を割り当てます。 呼び出すコード パスの各[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)または[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)独自のエラー識別子があります。
+- 異なるコード パスを別の高い特定のエラーの識別子を割り当てます。 呼び出すコード パスの各[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)または[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)独自のエラー識別子があります。
 
 - エラー識別子は終了し、終了しないエラーの例外型を CLR に一意である必要があります。
 

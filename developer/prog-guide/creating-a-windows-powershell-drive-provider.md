@@ -12,12 +12,12 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: d1546ab0b0e6b5502f35c92c01ce148211c53db2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855798"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055651"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Windows PowerShell ドライブ プロバイダーを作成する
 
@@ -61,7 +61,7 @@ ms.locfileid: "56855798"
 
 すべての Windows PowerShell プロバイダーは、ドライブは、プロバイダーが、プロバイダーを呼び出すときに、Windows PowerShell ランタイムで必要なすべての状態情報を作成する必要があることを意味する、ステートレスで考慮されます。
 
-このドライブ プロバイダーの状態情報には、ドライブ情報の一部として保持されているデータベースへの接続が含まれています。 この情報を格納する方法を示すコードをここでは、 [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)ドライブを表すオブジェクト。
+このドライブ プロバイダーの状態情報には、ドライブ情報の一部として保持されているデータベースへの接続が含まれています。 この情報を格納する方法を示すコードをここでは、 [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)ドライブを表すオブジェクト。
 
 [!code-csharp[AccessDBProviderSample02.cs](../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
 
@@ -73,15 +73,15 @@ ms.locfileid: "56855798"
 
 このメソッドのオーバーライドは、次の操作を行います。
 
-- いることを確認、 [System.Management.Automation.Psdriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root)メンバーが存在して、データ ストアへの接続を作成できます。
+- いることを確認、 [System.Management.Automation.PSDriveinfo.Root*](/dotnet/api/System.Management.Automation.PSDriveInfo.Root)メンバーが存在して、データ ストアへの接続を作成できます。
 
 - ドライブを作成しのサポートに、接続メンバーを設定、`New-PSDrive`コマンドレット。
 
-- 検証、 [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)提案されたドライブのオブジェクト。
+- 検証、 [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)提案されたドライブのオブジェクト。
 
-- 変更、 [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)任意の必要なパフォーマンスと信頼性については、ドライブを記述するオブジェクトまたはドライブを使用して呼び出し元の余分なデータを提供します。
+- 変更、 [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)任意の必要なパフォーマンスと信頼性については、ドライブを記述するオブジェクトまたはドライブを使用して呼び出し元の余分なデータを提供します。
 
-- 使用してエラーを処理、 [System.Management.Automation.Provider.Cmdletprovider.Writeerror*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)メソッドと戻り値`null`します。
+- 使用してエラーを処理、 [System.Management.Automation.Provider.Cmdletprovider.WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)メソッドと戻り値`null`します。
 
   このメソッドは、そのプロバイダーに固有のバージョンのメソッドに渡されたいずれかのドライブ情報を返します。
 

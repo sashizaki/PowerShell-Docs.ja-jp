@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 2039e181becd1b39fc3d6cf0cdbcf0c20e9fc206
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 2df5a59833fcdd58c6b2afbb4882111592fb3d76
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863178"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056432"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Windows PowerShell ホスト アプリケーションを記述する
 
@@ -29,7 +29,7 @@ Windows PowerShell は、アプリケーションでホストできます。 ホ
 
 [追加して、コマンドを起動](./adding-and-invoking-commands.md)を作成して、ホスト アプリケーションでのコマンド パイプラインの実行方法について説明します.
 
-[リモート実行空間を作成する](./creating-remote-runspaces.md)Expains、実行空間をリモート コンピューターに接続する方法。
+[リモート実行空間を作成する](./creating-remote-runspaces.md)実行空間をリモート コンピューターに接続する方法について説明します。
 
 [カスタム ユーザー インターフェイスを作成する](./creating-a-custom-user-interface.md)導入のカスタム ユーザー インターフェイスし、例へのリンクを提供します。
 

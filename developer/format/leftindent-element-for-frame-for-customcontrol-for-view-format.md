@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b0ef4483-74b2-409c-9d00-014d1ed64cb8
 caps.latest.revision: 6
-ms.openlocfilehash: b5696c3ca1988c9a6cd9179229697b6233d8d993
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ec6154c69c3c2de9675780922d907fbf3edb6a95
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857448"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058744"
 ---
 # <a name="leftindent-element-for-frame-for-customcontrol-for-view-format"></a>View の CustomControl の Frame の LeftIndent 要素 (書式)
 
 左余白からデータを移動する文字の数を指定します。 この要素は、カスタム コントロールのビューを定義するときに使用されます。
 
-要素 (形式) ViewDefinitions 要素 (形式) 表示要素 (形式) カスタム コントロール要素 (形式) CustomEntries の構成要素のビュー (形式) CustomItem 要素 CustomEntries のビュー (形式) CustomEntry 要素のカスタム コントロールCustomEntry CustomItem ビュー (形式) LeftIndent 要素のカスタム コントロール用のフレーム要素を CutomControlView (形式)
+要素 (形式) ViewDefinitions 要素 (形式) 表示要素 (形式) カスタム コントロール要素 (形式) CustomEntries の構成要素のビュー (形式) CustomItem 要素 CustomEntries のビュー (形式) CustomEntry 要素のカスタム コントロールCustomEntry CustomItem ビュー (形式) LeftIndent 要素のカスタム コントロール用のフレーム要素を CustomControlView (形式)
 
 ## <a name="syntax"></a>構文
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
 caps.latest.revision: 15
-ms.openlocfilehash: d93750f919c1075f173dc9ac70324cc003e36879
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 88de19be02de4933f892e02093403a82ccdd5788
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862188"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055735"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>TableControl の TableRowEntries 要素 (書式)
 
@@ -41,7 +41,7 @@ ms.locfileid: "56862188"
 
 |要素|説明|
 |-------------|-----------------|
-|[TableControl (形式) の TableRowEntries TableRowEntry 要素](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)|必須の要素。<br /><br /> テーブルの行に表示されるデータを定義します。|
+|[TableControl (形式) の TableRowEntries TableRowEntry 要素](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|必須の要素。<br /><br /> テーブルの行に表示されるデータを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
@@ -84,6 +84,6 @@ ms.locfileid: "56862188"
 
 [TableControl 要素 (形式)](./tablecontrol-element-format.md)
 
-[TableRowEntry 要素 (形式)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)
+[TableRowEntry 要素 (形式)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
 [PowerShell のファイルを書式設定の書き込み](./writing-a-powershell-formatting-file.md)

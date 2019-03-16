@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 4ed15dabffa933dee9becf2f839887eb9108775d
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.openlocfilehash: 6ec0752a9ae06c5c2cdd1a1851caeeff52d8eb74
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57430011"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055157"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Windows PowerShell プロパティ プロバイダーを作成する
 
@@ -66,7 +66,7 @@ ms.locfileid: "57430011"
 
 プロパティを取得するには、プロバイダーを実装する必要があります、 [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)メソッドからの呼び出しをサポートするために、`Get-ItemProperty`コマンドレット。 このメソッドは、(完全修飾)、指定したプロバイダーの内部パスにある項目のプロパティを取得します。
 
-`providerSpecificPickList`パラメーターを取得するプロパティを示します。 このパラメーターが場合`null`または空の場合、メソッドはすべてのプロパティを取得する必要があります。 さらに、 [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)のインスタンスを書き込み、 [System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject)を表すオブジェクトを取得したプロパティのプロパティ バッグ。 メソッドは、何も返す必要があります。
+`providerSpecificPickList`パラメーターを取得するプロパティを示します。 このパラメーターが場合`null`または空の場合、メソッドはすべてのプロパティを取得する必要があります。 さらに、 [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)のインスタンスを書き込み、 [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject)を表すオブジェクトを取得したプロパティのプロパティ バッグ。 メソッドは、何も返す必要があります。
 
 お勧めの実装[System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)選択リスト内の各要素のプロパティ名のワイルドカードの展開をサポートしています。 これを行うには、使用、 [System.Management.Automation.Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern)ワイルドカードによるパターン照合を実行するクラス。
 
@@ -92,7 +92,7 @@ ms.locfileid: "57430011"
 
 ## <a name="setting-properties"></a>設定のプロパティ
 
-プロパティを設定する、Windows PowerShell プロパティ プロバイダーを実装する必要があります、 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッドからの呼び出しをサポートするために、`Set-ItemProperty`コマンドレット。 このメソッドは、指定したパスにある項目の 1 つまたは複数のプロパティを設定し、必要に応じて指定されたプロパティを上書きします。 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)も書き込みますのインスタンスを[System.Management.Automation.Psobject](/dotnet/api/System.Management.Automation.PSObject) 、更新のプロパティ バッグを表すオブジェクトを。プロパティ。
+プロパティを設定する、Windows PowerShell プロパティ プロバイダーを実装する必要があります、 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッドからの呼び出しをサポートするために、`Set-ItemProperty`コマンドレット。 このメソッドは、指定したパスにある項目の 1 つまたは複数のプロパティを設定し、必要に応じて指定されたプロパティを上書きします。 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)も書き込みますのインスタンスを[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) 、更新のプロパティ バッグを表すオブジェクトを。プロパティ。
 
 既定の実装を次に示します[System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) TemplateProvider.cs ファイルを Windows PowerShell によって提供されるからです。
 
@@ -106,9 +106,9 @@ ms.locfileid: "57430011"
 
 - 既定では、このメソッドのオーバーライドを取得しないようにしない限り、ユーザーが非表示オブジェクト用のリーダー、 [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティに設定されて`true`します。 パスが、ユーザーが非表示の項目を表すかどうかエラーを記述する必要がありますと[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)に設定されている`false`します。
 
-- 実装、 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッドを呼び出す必要があります[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)をデータ ストアに変更を加える前に、その戻り値を確認します。 このメソッドは、変更が行われるとシステムの状態にたとえば、ファイルの名前を変更する操作の実行の確認に使用されます。 [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) Windows PowerShell ランタイムと任意のコマンドライン設定やユーザー設定変数での処理で、ユーザーに変更するリソースの名前を送信します。何を表示するかを決定します。
+- 実装、 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッドを呼び出す必要があります[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)をデータ ストアに変更を加える前に、その戻り値を確認します。 このメソッドは、変更が行われるとシステムの状態にたとえば、ファイルの名前を変更する操作の実行の確認に使用されます。 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) Windows PowerShell ランタイムと、コマンドライン設定やユーザー設定変数を決定する処理で、ユーザーに変更するリソースの名前を送信します。何が表示されます。
 
-  呼び出し後[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)返します`true`危険性のあるシステムの変更ができる場合、 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッドを呼び出す必要があります、 [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)メソッド。 このメソッドは、操作を続行することを示す追加のフィードバックを許可するユーザーに確認メッセージを送信します。
+  呼び出し後[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)返します`true`危険性のあるシステムの変更ができる場合、 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッドを呼び出す必要があります、 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)メソッド。 このメソッドは、操作を続行することを示す追加のフィードバックを許可するユーザーに確認メッセージを送信します。
 
 ## <a name="attaching-dynamic-parameters-for-the-set-itemproperty-cmdlet"></a>Set-itemproperty コマンドレットの動的パラメーターをアタッチします。
 
@@ -134,9 +134,9 @@ ms.locfileid: "57430011"
 
 - 既定では、このメソッドのオーバーライドを取得しないようにしない限り、ユーザーが非表示オブジェクト用のリーダー、 [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティに設定されて`true`します。 パスが、ユーザーが非表示の項目を表すかどうかエラーを記述する必要がありますと[System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)に設定されている`false`します。
 
-- 実装、 [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)メソッドを呼び出す必要があります[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)をデータ ストアに変更を加える前に、その戻り値を確認します。 このメソッドは、コンテンツをクリアするなどのシステム状態の変更前に、操作の実行の確認に使用されます。 [System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)コマンドライン設定や ユーザー設定変数を考慮して、Windows PowerShell ランタイムで、ユーザーに変更するリソースの名前を送信します。何を表示するかを決定します。
+- 実装、 [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)メソッドを呼び出す必要があります[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)をデータ ストアに変更を加える前に、その戻り値を確認します。 このメソッドは、コンテンツをクリアするなどのシステム状態の変更前に、操作の実行の確認に使用されます。 [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)コマンドライン設定や ユーザー設定変数を考慮して、Windows PowerShell ランタイムで、ユーザーに変更するリソースの名前を送信します。何を表示するかを決定します。
 
-  呼び出し後[System.Management.Automation.Provider.Cmdletprovider.Shouldprocess*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)返します`true`危険性のあるシステムの変更ができる場合、 [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)メソッドを呼び出す必要があります、 [System.Management.Automation.Provider.Cmdletprovider.Shouldcontinue*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)メソッド。 このメソッドは、危険性のある操作を続行することを示す追加のフィードバックを許可するユーザーに確認メッセージを送信します。
+  呼び出し後[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)返します`true`危険性のあるシステムの変更ができる場合、 [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)メソッドを呼び出す必要があります、 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)メソッド。 このメソッドは、危険性のある操作を続行することを示す追加のフィードバックを許可するユーザーに確認メッセージを送信します。
 
 ## <a name="attaching-dynamic-parameters-to-the-clear-itemproperty-cmdlet"></a>Clear-itemproperty コマンドレットへの動的パラメーター
 

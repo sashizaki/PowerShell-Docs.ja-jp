@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
-ms.openlocfilehash: 2f3bb481722363557c93ebbc5e6df62baeff2555
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: e0550dacc33f45f45ba105ca5cb4d2e5b5d675fb
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862008"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056058"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>終了しないエラーのレポートをコマンドレットに追加する
 
-コマンドレットは、呼び出すことで終了しないエラーを報告できる、 [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッドと、引き続き現在の入力オブジェクトまたはそれ以上の受信を操作するオブジェクトをパイプラインします。 このセクションでは、その入力処理メソッドから終了しないエラーを報告するコマンドレットを作成する方法について説明します。
+コマンドレットは、呼び出すことで終了しないエラーを報告できる、 [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッドと、引き続き現在の入力オブジェクトまたはそれ以上の受信を操作するオブジェクトをパイプラインします。 このセクションでは、その入力処理メソッドから終了しないエラーを報告するコマンドレットを作成する方法について説明します。
 
-終了しないエラー (だけでなく終了するエラー) のコマンドレットを渡す必要があります、 [System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)エラーを識別するオブジェクト。 各エラー レコード「エラー識別子」と呼ばれる一意の文字列によって識別されます。 識別子、だけでなく、各エラーのカテゴリがによって定義される定数で指定された、 [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)列挙体。 ユーザーが設定して、カテゴリに基づいてエラーを表示できます、`$ErrorView`変数を"CategoryView"にします。
+終了しないエラー (だけでなく終了するエラー) のコマンドレットを渡す必要があります、 [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)エラーを識別するオブジェクト。 各エラー レコード「エラー識別子」と呼ばれる一意の文字列によって識別されます。 識別子、だけでなく、各エラーのカテゴリがによって定義される定数で指定された、 [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)列挙体。 ユーザーが設定して、カテゴリに基づいてエラーを表示できます、`$ErrorView`変数を"CategoryView"にします。
 
 エラー レコードの詳細については、次を参照してください。 [Windows PowerShell のエラー レコード](./windows-powershell-error-records.md)します。
 
@@ -101,11 +101,11 @@ End Property
 > [!NOTE]
 > コマンドレットが処理されない各レコードできるだけ独立しています。
 
-この Get-proc コマンドレットよりも優先、 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)を処理するメソッド、`Name`のために、ユーザーまたはスクリプトによって提供される入力パラメーター。 名前が指定されていない場合、このメソッドは各要求のプロセス名またはすべてのプロセスのプロセスを取得します。 この上書きの詳細が記載[最初のコマンドレットを作成](./creating-a-cmdlet-without-parameters.md)です。
+この Get-proc コマンドレットよりも優先、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)を処理するメソッド、`Name`のために、ユーザーまたはスクリプトによって提供される入力パラメーター。 名前が指定されていない場合、このメソッドは各要求のプロセス名またはすべてのプロセスのプロセスを取得します。 この上書きの詳細が記載[最初のコマンドレットを作成](./creating-a-cmdlet-without-parameters.md)です。
 
 #### <a name="things-to-remember-when-reporting-errors"></a>エラーを報告する際の注意点
 
-[System.Management.Automation.Errorrecord](/dotnet/api/System.Management.Automation.ErrorRecord)コマンドレットが根本的に、例外エラーを書き込む必要がある場合に合格するオブジェクトします。 使用して例外を決定する際に、.NET のガイドラインに従います。 基本的に、エラーは、既存の例外と同じである意味場合、コマンドレットを使用またはその例外から派生します。 それ以外の場合、新しい例外またはから直接例外階層を派生する必要がありますが、 [System.Exception](/dotnet/api/System.Exception)クラス。
+[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)コマンドレットが根本的に、例外エラーを書き込む必要がある場合に合格するオブジェクトします。 使用して例外を決定する際に、.NET のガイドラインに従います。 基本的に、エラーは、既存の例外と同じである意味場合、コマンドレットを使用またはその例外から派生します。 それ以外の場合、新しい例外またはから直接例外階層を派生する必要がありますが、 [System.Exception](/dotnet/api/System.Exception)クラス。
 
 エラーの識別子 (ErrorRecord クラスの FullyQualifiedErrorId プロパティからアクセスする) を作成するときに、次に注意してください。
 
@@ -135,7 +135,7 @@ End Property
 
 ## <a name="reporting-nonterminating-errors"></a>終了しないエラーの報告
 
-入力処理メソッドのいずれかが終了しないエラーを報告、出力ストリームを使用して、 [System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッド。 呼び出しを示しますこの Get-proc コマンドレットからのコード例を次に示します[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)からのオーバーライドの中で、 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。 ここで、呼び出しには、コマンドレットは、指定されたプロセスの識別子のプロセスを見つけられない場合が行われます。
+入力処理メソッドのいずれかが終了しないエラーを報告、出力ストリームを使用して、 [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッド。 呼び出しを示しますこの Get-proc コマンドレットからのコード例を次に示します[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)からのオーバーライドの中で、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。 ここで、呼び出しには、コマンドレットは、指定されたプロセスの識別子のプロセスを見つけられない場合が行われます。
 
 ```csharp
 protected override void ProcessRecord()

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 65d04c526ef7aa112da82adb924c0789731f3850
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853468"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055429"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Windows PowerShell アクティビティでワークフローを作成する
 
@@ -33,9 +33,9 @@ Visual Studio のツールボックスからアクティビティを選択して
 
 2. 名前付き引数を作成する`ComputerName`の引数の型と`String[]`します。 この引数は、確認し、参加するコンピューターの名前を表します。
 
-3. 名前付き引数`DomainCred`型の[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)します。 この引数は、コンピューターをドメインに参加する権限を持つドメイン アカウントのドメインの資格情報を表します。
+3. 名前付き引数`DomainCred`型の[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)します。 この引数は、コンピューターをドメインに参加する権限を持つドメイン アカウントのドメインの資格情報を表します。
 
-4. 名前付き引数`MachineCred`型の[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)します。 この引数は、確認し、参加するには、コンピューターの管理者の資格情報を表します。
+4. 名前付き引数`MachineCred`型の[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)します。 この引数は、確認し、参加するには、コンピューターの管理者の資格情報を表します。
 
 5. 追加、 **ParallelForEach**内のアクティビティ、**シーケンス**アクティビティ。 入力`comp`と`ComputerName`内の要素をループが反復処理するためのテキスト ボックス、`ComputerName`配列。
 

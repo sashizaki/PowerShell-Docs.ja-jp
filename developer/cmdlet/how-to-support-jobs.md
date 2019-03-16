@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
 caps.latest.revision: 9
-ms.openlocfilehash: 4b3fa7a54dc4096e79c4de94c8b28f4a784d4627
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d732bce1af446090c3e5741eebeba737f86c7ca8
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855908"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058013"
 ---
 # <a name="how-to-support-jobs"></a>ジョブをサポートする方法
 
@@ -47,7 +47,7 @@ ms.locfileid: "56855908"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. レコードの処理メソッドには、追加、`if`コマンドレットがジョブとして実行する必要があるかどうかを検出するステートメント。 次のコードでは、 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。
+3. レコードの処理メソッドには、追加、`if`コマンドレットがジョブとして実行する必要があるかどうかを検出するステートメント。 次のコードでは、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。
 
     ```csharp
     protected override void ProcessRecord()
@@ -131,7 +131,7 @@ ms.locfileid: "56855908"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobClass](msh_samplesGetProc06#GetProc06JobClass)]  -->
 
-5. コマンドレットは、作業を実行する場合は、呼び出し、 [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)パイプラインに対してプロセス オブジェクトを返すメソッド。 作業がジョブとして実行される場合は、子ジョブをジョブに追加します。
+5. コマンドレットは、作業を実行する場合は、呼び出し、 [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)パイプラインに対してプロセス オブジェクトを返すメソッド。 作業がジョブとして実行される場合は、子ジョブをジョブに追加します。
 
     ```csharp
     void DoProcessLogic(bool asJob)
@@ -168,7 +168,7 @@ using System.Threading;              // Thread pool namespace for posting work.
 using System.Diagnostics;            // Diagnostics namespace for retrieving
                                      // process objects.
 
-// This sample showes a cmdlet whose work can be done by the cmdlet or by using
+// This sample shows a cmdlet whose work can be done by the cmdlet or by using
 // a background job. Background jobs are executed in their own thread,
 // independent of the pipeline thread in which the cmdlet is executed.
 //

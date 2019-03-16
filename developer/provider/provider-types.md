@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e523a8e1-42e4-4633-887f-fb74b3464561
 caps.latest.revision: 12
-ms.openlocfilehash: 25b604621c90f1aa88bc1eea365e47db66e98c3d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 37689571eb1650e5991af2e7002cd037ae99dd68
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858408"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057962"
 ---
 # <a name="provider-types"></a>プロバイダーの種類
 
@@ -65,7 +65,7 @@ ms.locfileid: "56858408"
 
 [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスは、特定のプロバイダー コマンドレットを実装するために、次のメソッドを定義します。 ほとんどの場合、プロバイダー コマンドレットをサポートする必要がありますを上書きするなど、コマンドレットを呼び出すため、Windows PowerShell エンジンが呼び出されるメソッド、`CopyItem`のメソッド、`Copy-Item`コマンドレット、および必要に応じてなどの2番目のメソッドを上書きできます`CopyItemDynamicParameters`、動的パラメーターをコマンドレットに追加するためです。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)と[System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Copy-Item`プロバイダー コマンドレット。 このコマンドレットは、別の 1 つの場所から項目をコピーするユーザーを使用できます。
+- [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)と[System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Copy-Item`プロバイダー コマンドレット。 このコマンドレットは、別の 1 つの場所から項目をコピーするユーザーを使用できます。
 
 - [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)と[System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Get-ChildItem`プロバイダー コマンドレット。 このコマンドレットは、親アイテムの子項目を取得するユーザーを使用できます。
 

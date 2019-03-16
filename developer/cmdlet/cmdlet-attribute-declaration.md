@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Cmdlet attribute
 ms.assetid: 1d323332-f773-4c0e-8a69-2aada765afb2
 caps.latest.revision: 12
-ms.openlocfilehash: 2bc03aaade1f18d48f65ecf5f9ee437ffaf07f92
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 6887467ad5ccafe6edf8f03f531b4750133aa9e9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863428"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058030"
 ---
 # <a name="cmdlet-attribute-declaration"></a>コマンドレット属性の宣言
 
@@ -36,9 +36,9 @@ ms.locfileid: "56863428"
 
 `NounName` ([System.String](/dotnet/api/System.String)) が必要です。 コマンドレットの名詞を指定します。 この名詞では、コマンドレットが実行されるリソースを指定します。 コマンドレットの名詞の詳細については、次を参照してください。[コマンドレット宣言](./cmdlet-class-declaration.md)と[推奨される開発ガイドライン強く](./strongly-encouraged-development-guidelines.md)します。
 
-`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) という名前のパラメーター (省略可能)。 `True` このコマンドレットへの呼び出しをサポートしていることを示します、 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)コマンドレットをシステムを変更する操作を実行する前にユーザーに確認する方法を提供するメソッド。 `False`、既定値は、コマンドレットでは、への呼び出しはサポートされていないことを示します、 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド。 確認要求の詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。
+`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) という名前のパラメーター (省略可能)。 `True` このコマンドレットへの呼び出しをサポートしていることを示します、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)コマンドレットをシステムを変更する操作を実行する前にユーザーに確認する方法を提供するメソッド。 `False`、既定値は、コマンドレットでは、への呼び出しはサポートされていないことを示します、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド。 確認要求の詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。
 
-`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) という名前のパラメーター (省略可能)。 呼び出しによって、コマンドレットのアクションを確認する場合を指定します、 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド。 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) (既定では Medium)、コマンドレットの ConfirmImpact 値が等しくまたはの値よりも大きい場合にのみ呼び出される、`$ConfirmPreference`変数。 このパラメーターを指定する必要がある場合にのみ、`SupportsShouldProcess`パラメーターを指定します。
+`ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) という名前のパラメーター (省略可能)。 呼び出しによって、コマンドレットのアクションを確認する場合を指定します、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド。 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) (既定では Medium)、コマンドレットの ConfirmImpact 値が等しくまたはの値よりも大きい場合にのみ呼び出される、`$ConfirmPreference`変数。 このパラメーターを指定する必要がある場合にのみ、`SupportsShouldProcess`パラメーターを指定します。
 
 `DefaultParameterSetName` ([System.String](/dotnet/api/System.String)) という名前のパラメーター (省略可能)。 Windows PowerShell ランタイムが使用するパラメーターの設定を判断できないときに使用しようとする既定のパラメーターの設定を指定します。 このような状況は、必須のパラメーターを設定する各パラメーターの一意のパラメーターを削除できることを確認します。
 
@@ -54,9 +54,9 @@ Windows PowerShell が設定の既定のパラメーター セット名が指定
 
 **VerbName-NounName**
 
-- Windows PowerShell の外部のリソースを変更するすべてのコマンドレットを含める必要があります、 `SupportsShouldProcess` 、コマンドレットを呼び出すことができるキーワード コマンドレット属性が宣言されている場合、 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッドの前に、そのアクションを実行します。 場合、 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)返しますを呼び出す`false`、この操作を実行しない必要があります。 によって生成される確認要求の詳細については、 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼び出しを参照してください[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。
+- Windows PowerShell の外部のリソースを変更するすべてのコマンドレットを含める必要があります、 `SupportsShouldProcess` 、コマンドレットを呼び出すことができるキーワード コマンドレット属性が宣言されている場合、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッドの前に、そのアクションを実行します。 場合、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)返しますを呼び出す`false`、この操作を実行しない必要があります。 によって生成される確認要求の詳細については、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼び出しを参照してください[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。
 
-`Confirm`と`WhatIf`コマンドレットのパラメーターはサポートするコマンドレットでのみ使用できます[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼び出し。
+`Confirm`と`WhatIf`コマンドレットのパラメーターはサポートするコマンドレットでのみ使用できます[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼び出し。
 
 ## <a name="example"></a>例
 

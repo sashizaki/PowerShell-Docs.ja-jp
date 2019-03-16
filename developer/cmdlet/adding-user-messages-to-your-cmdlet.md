@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: ffc08d2713c4bfc0938b2e07146102af8b5467d2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855988"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055038"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>コマンドレットにユーザー メッセージを追加する
 
@@ -82,7 +82,7 @@ ms.locfileid: "56855988"
 
 コマンドレットの作成の最初の手順は常に、コマンドレットの名前を付けると、コマンドレットを実装する .NET クラスを宣言します。 コマンドレットの任意の並べ替えは、入力処理メソッド; からユーザーへの通知を記述できます。そのため、一般に、できる名前をコマンドレットを実行します。 どのようなシステムの変更を示すすべての動詞を使用してこのコマンドレット。 承認されたコマンドレット動詞の詳細については、次を参照してください。[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)します。
 
-停止 Proc コマンドレットが、システムを変更するように設計します。そのため、 [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute) .NET クラスの宣言を含める必要があります、`SupportsShouldProcess`キーワードを属性し、に設定する`true`します。
+停止 Proc コマンドレットが、システムを変更するように設計します。そのため、 [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) .NET クラスの宣言を含める必要があります、`SupportsShouldProcess`キーワードを属性し、に設定する`true`します。
 
 次のコードは、この停止 Proc コマンドレット クラスの定義です。 この定義の詳細については、次を参照してください。[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)します。
 
@@ -141,16 +141,16 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>入力処理メソッドをオーバーライドします。
 
-コマンドレットは、入力処理メソッドをオーバーライドする必要があります、最もよくなります[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)します。 この停止 Proc コマンドレットよりも優先、 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)処理方法を入力します。 停止 Proc コマンドレットのこの実装では、呼び出しは詳細メッセージ、デバッグ メッセージ、警告メッセージを記述する行われます。
+コマンドレットは、入力処理メソッドをオーバーライドする必要があります、最もよくなります[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)します。 この停止 Proc コマンドレットよりも優先、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)処理方法を入力します。 停止 Proc コマンドレットのこの実装では、呼び出しは詳細メッセージ、デバッグ メッセージ、警告メッセージを記述する行われます。
 
 > [!NOTE]
-> このメソッドを呼び出す方法の詳細については、 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッド、を参照してください[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)します。
+> このメソッドを呼び出す方法の詳細については、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッド、を参照してください[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)します。
 
 ## <a name="writing-a-verbose-message"></a>詳細なメッセージの書き込み
 
-[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)が特定のエラー条件に関連付けられていない一般的なユーザー レベルの情報を記述するメソッドを使用します。 システム管理者はその情報を使用して、その他のコマンドの処理を続行します。 さらに、必要に応じて、このメソッドを使用して書き込まれた情報をローカライズする必要があります。
+[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)が特定のエラー条件に関連付けられていない一般的なユーザー レベルの情報を記述するメソッドを使用します。 システム管理者はその情報を使用して、その他のコマンドの処理を続行します。 さらに、必要に応じて、このメソッドを使用して書き込まれた情報をローカライズする必要があります。
 
-この停止 Proc コマンドレットから次のコードは、2 つの呼び出しを示しています、 [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)メソッドのオーバーライドから、 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。
+この停止 Proc コマンドレットから次のコードは、2 つの呼び出しを示しています、 [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)メソッドのオーバーライドから、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。
 
 ```csharp
 message = String.Format("Attempting to stop process \"{0}\".", name);
@@ -166,14 +166,14 @@ WriteVerbose(message);
 
 ## <a name="writing-a-debug-message"></a>デバッグ メッセージの書き込み
 
-[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)コマンドレットの操作のトラブルシューティングに使用できるデバッグ メッセージを記述するメソッドを使用します。 入力処理メソッドから呼び出し。
+[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)コマンドレットの操作のトラブルシューティングに使用できるデバッグ メッセージを記述するメソッドを使用します。 入力処理メソッドから呼び出し。
 
 > [!NOTE]
-> Windows PowerShell も定義、`Debug`パラメーターを両方の詳細を表示し、デバッグ情報。 呼び出す必要はありません、コマンドレットは、このパラメーターをサポートする場合[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)を呼び出すのと同じコードで[System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
+> Windows PowerShell も定義、`Debug`パラメーターを両方の詳細を表示し、デバッグ情報。 呼び出す必要はありません、コマンドレットは、このパラメーターをサポートする場合[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)を呼び出すのと同じコードで[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
 
-サンプルの停止 Proc コマンドレットからのコードの次の 2 つのセクションへの呼び出しを表示する、 [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)メソッドのオーバーライドから、 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。
+サンプルの停止 Proc コマンドレットからのコードの次の 2 つのセクションへの呼び出しを表示する、 [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)メソッドのオーバーライドから、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。
 
-このデバッグ メッセージが直前に書き込まれる[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)が呼び出されます。
+このデバッグ メッセージが直前に書き込まれる[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)が呼び出されます。
 
 ```csharp
 message =
@@ -182,7 +182,7 @@ message =
 WriteDebug(message);
 ```
 
-このデバッグ メッセージが直前に書き込まれる[System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)が呼び出されます。
+このデバッグ メッセージが直前に書き込まれる[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)が呼び出されます。
 
 ```csharp
 message =
@@ -192,15 +192,15 @@ WriteDebug(message);
 WriteObject(process);
 ```
 
-いずれかは、Windows PowerShell が自動的にルーティング[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)トレース インフラストラクチャとコマンドレットの呼び出し。 これにより、コマンドレットの開発に余分な作業を行うことがなく、ホスト アプリケーション、ファイル、またはデバッガーをトレースするメソッドの呼び出しです。 次のコマンド ライン エントリは、トレース操作を実装します。
+いずれかは、Windows PowerShell が自動的にルーティング[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)トレース インフラストラクチャとコマンドレットの呼び出し。 これにより、コマンドレットの開発に余分な作業を行うことがなく、ホスト アプリケーション、ファイル、またはデバッガーをトレースするメソッドの呼び出しです。 次のコマンド ライン エントリは、トレース操作を実装します。
 
 **PS > トレース式停止インプロセス-proc.log ファイル-停止 proc メモ帳のコマンド**
 
 ## <a name="writing-a-warning-message"></a>警告メッセージの書き込み
 
-[System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)コマンドレットが予期しない結果が、たとえば、読み取り専用ファイルを上書きする可能性がある操作を実行するときに警告を記述するメソッドを使用します。
+[System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)コマンドレットが予期しない結果が、たとえば、読み取り専用ファイルを上書きする可能性がある操作を実行するときに警告を記述するメソッドを使用します。
 
-サンプルの停止 Proc コマンドレットから次のコードに呼び出しを示しています、 [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)メソッドのオーバーライドから、 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。
+サンプルの停止 Proc コマンドレットから次のコードに呼び出しを示しています、 [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)メソッドのオーバーライドから、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。
 
 ```csharp
  if (criticalProcess)
@@ -214,10 +214,10 @@ WriteObject(process);
 
 ## <a name="writing-a-progress-message"></a>進行状況メッセージの書き込み
 
-[System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)コマンドレットの操作を完了するに非常に長い時間を取得すると、進行状況メッセージを書き込むために使用します。 呼び出し[System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)渡します、 [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord)レンダリングするまで、ユーザーに、ホスト アプリケーションに送信されるオブジェクト。
+[System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)コマンドレットの操作を完了するに非常に長い時間を取得すると、進行状況メッセージを書き込むために使用します。 呼び出し[System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)渡します、 [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord)レンダリングするまで、ユーザーに、ホスト アプリケーションに送信されるオブジェクト。
 
 > [!NOTE]
-> この停止 Proc コマンドレットへの呼び出しを含まない、 [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)メソッド。
+> この停止 Proc コマンドレットへの呼び出しを含まない、 [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)メソッド。
 
 次のコードは、項目をコピーしようとするコマンドレットによって作成された進行状況メッセージの例です。
 

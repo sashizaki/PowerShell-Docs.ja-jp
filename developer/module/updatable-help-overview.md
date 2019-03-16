@@ -10,12 +10,12 @@ applies_to:
 - Windows PowerShell 3.0
 ms.assetid: 3f7388a9-9fa8-42bc-b294-538c9a01e30a
 caps.latest.revision: 12
-ms.openlocfilehash: 4e962890fa1d5c282a02a89f0ae2e263844c635e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f2dfb9642ba2dde38124142b659b425bbbb00f37
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856968"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057605"
 ---
 # <a name="updatable-help-overview"></a>更新可能なヘルプの概要
 
@@ -31,7 +31,9 @@ Windows PowerShell のヘルプ トピックは、Windows PowerShell のエク�
 
 更新可能なヘルプには、次の機能が含まれています。
 
-- [Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)コマンドレットで、ユーザーが最新のヘルプにあるかどうかを判断しますモジュールのファイルし、そうでない場合、インターネットから最新のヘルプ ファイルをダウンロード、アンパックし、それらに適切なモジュールのサブディレクトリにインストールしますユーザーのコンピューター。 ユーザーが使用できる、 [Get-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)コマンドレットを新しくインストールされたヘルプ トピックをすぐに表示します。 Windows PowerShell を再起動する必要はありません。
+- [Update-help](/powershell/module/Microsoft.PowerShell.Core/Update-Help)コマンドレットで、ユーザーが最新のヘルプにあるかどうかを判断しますモジュールのファイルし、そうでない場合、インターネットから最新のヘルプ ファイルをダウンロード、アンパックし、それらに適切なモジュールのサブディレクトリにインストールしますユーザーのコンピューター。
+  ユーザーが使用できる、 [Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help)コマンドレットを新しくインストールされたヘルプ トピックをすぐに表示します。
+  PowerShell を再起動する必要はありません。
 
 - [Save-help](/powershell/module/Microsoft.PowerShell.Core/Save-Help)コマンドレットは、最新のヘルプをダウンロードするが、インターネットからファイルし、ファイル システム ディレクトリに保存します。 ユーザーが使用できる、`Update-Help`コマンドレット ヘルプ ファイルのファイル システム ディレクトリから入手し、アンパックし、ユーザーのコンピューターにモジュールのサブディレクトリにインストールします。 `Save-Help`コマンドレットが制限されているユーザーやインターネットにアクセスできない、およびインターネットへのアクセスを制限したい企業向けに設計されています。
 

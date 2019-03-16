@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: 0f025213087e6f308adf8e597fc01c1320251f76
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: db664e589f625855b5a33a02c522d6b238ad2810
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859328"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054879"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>エイリアス、ワイルドカード展開、ヘルプをコマンドレット パラメーターに追加する
 
@@ -110,7 +110,7 @@ Windows PowerShell コマンドレットのパラメーターのヘルプを作�
 
 ## <a name="overriding-an-input-processing-method"></a>入力処理メソッドをオーバーライドします。
 
-コマンドレットは、入力処理メソッドをオーバーライドする必要があります、これは最も頻繁になります[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)します。 コマンドレットを呼び出す必要があります、システムを変更するときに、 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)ようにするメソッド、変更が行われる前にフィードバックを提供するユーザー。 これらのメソッドの詳細については、次を参照してください。[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)します。
+コマンドレットは、入力処理メソッドをオーバーライドする必要があります、これは最も頻繁になります[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)します。 コマンドレットを呼び出す必要があります、システムを変更するときに、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)ユーザーを許可する方法変更が行われる前に、フィードバックを提供します。 これらのメソッドの詳細については、次を参照してください。[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)します。
 
 ## <a name="supporting-wildcard-expansion"></a>ワイルドカードの展開をサポートしています。
 

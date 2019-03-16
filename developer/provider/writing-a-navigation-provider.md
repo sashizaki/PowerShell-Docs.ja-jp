@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: a789b392bddd344ad583c93a1a55302329df9917
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863538"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056594"
 ---
 # <a name="writing-a-navigation-provider"></a>ナビゲーション プロバイダーを記述する
 
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>MakePath を実装します。
 
-[System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)メソッドは、指定された親パスと (するパスに関する情報の種類のプロバイダーの内部パスを作成する指定された子パスを結合プロバイダーがサポートを参照してください[Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)します。 PowerShell エンジンは、ユーザーが呼び出すときにこのメソッドを呼び出して、 [Microsoft.Powershell.Commands.Join パス](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path)コマンドレット。
+[System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)メソッドは、指定された親パスと (するパスに関する情報の種類のプロバイダーの内部パスを作成する指定された子パスを結合プロバイダーがサポートを参照してください[Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)します。 PowerShell エンジンは、ユーザーが呼び出すときにこのメソッドを呼び出して、 [Microsoft.PowerShell.Commands.Join パス](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path)コマンドレット。
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>MoveItem を実装します。
 
-[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)メソッドは、指定された宛先パスに指定されたパスから項目を移動します。 PowerShell エンジンは、ユーザーが呼び出すときにこのメソッドを呼び出して、 [Microsoft.Powershell.Commands.Move 項目](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item)コマンドレット。
+[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)メソッドは、指定された宛先パスに指定されたパスから項目を移動します。 PowerShell エンジンは、ユーザーが呼び出すときにこのメソッドを呼び出して、 [Microsoft.PowerShell.Commands.Move 項目](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item)コマンドレット。
 
 ```csharp
 protected override void MoveItem(string path, string destination)

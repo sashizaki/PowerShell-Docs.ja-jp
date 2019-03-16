@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell SDK
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
-ms.openlocfilehash: dfda6cb68b089a30a156760345420ee80d1d3ae9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 86595ebaac32318a4e3b9a3c4b295c73fb2e1c75
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862108"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055497"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell リファレンス
 
@@ -47,10 +47,10 @@ Windows PowerShell ソフトウェア開発キット (SDK) は、Windows PowerSh
 
 [System.Management.Automation.Provider](/dotnet/api/System.Management.Automation.Provider)この名前空間には、クラス、列挙型、および Windows PowerShell プロバイダーを実装するために必要なインターフェイスが含まれています。 具体的には、 [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)クラスは、基本クラスをすべての Windows PowerShell からプロバイダー クラスを派生する必要があります。
 
-[Microsoft.Powershell.Commands](/dotnet/api/Microsoft.PowerShell.Commands)コマンドレットと Windows PowerShell によって実装されるプロバイダーのクラスがこの名前空間に含まれています。 同様に、お勧めを作成すること、 *YourName*します。実装するこれらのコマンドレットの名前空間のコマンドです。
+[Microsoft.PowerShell.Commands](/dotnet/api/Microsoft.PowerShell.Commands)コマンドレットと Windows PowerShell によって実装されるプロバイダーのクラスがこの名前空間に含まれています。 同様に、お勧めを作成すること、 *YourName*します。実装するこれらのコマンドレットの名前空間のコマンドです。
 
 [System.Management.Automation.Host](/dotnet/api/System.Management.Automation.Host)この名前空間には、クラス、列挙型、およびコマンドレットを使用して、ユーザーと Windows PowerShell の間の相互作用を定義するインターフェイスが含まれています。
 
-[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal)この名前空間には、その他の名前空間のクラスによって使用される基本クラスが含まれています。 たとえば、 [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute)クラスの基本クラスは、 [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)クラス。
+[System.Management.Automation.Internal](/dotnet/api/System.Management.Automation.Internal)この名前空間には、その他の名前空間のクラスによって使用される基本クラスが含まれています。 たとえば、 [System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute)クラスの基本クラスは、 [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)クラス。
 
 [System.Management.Automation.Runspaces](/dotnet/api/System.Management.Automation.Runspaces)この名前空間には、クラス、列挙型、および Windows PowerShell 実行空間を作成するために使用するインターフェイスが含まれています。 このコンテキストでは、Windows PowerShell 実行空間を 1 つまたは複数の Windows PowerShell パイプラインがコマンドレットを呼び出すコンテキストです。 つまり、コマンドレットは、Windows PowerShell 実行空間のコンテキスト内で動作します。 詳細については aboutWindows PowerShell 実行空間を参照してください。 [Windows PowerShell 実行空間](http://msdn.microsoft.com/en-us/a1582cfe-f06d-4aff-adc6-71f49a860ce9)します。

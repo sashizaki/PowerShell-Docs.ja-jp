@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 97a2d3587f8f69edc92150474e94a620ff9a2f71
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854548"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056568"
 ---
 # <a name="advisory-development-guidelines"></a>お勧めする開発ガイドライン
 
@@ -61,7 +61,7 @@ Windows PowerShell は、Microsoft .NET Framework オブジェクトを直接機
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>Windows PowerShell (AD03) を使って資格情報を処理します。
 
-コマンドレットを定義する必要があります、`Credential`を資格情報を表すパラメーター。 このパラメーターは、型でなければなりません[System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)と資格情報の属性宣言を使用して定義する必要があります。 このサポートでは、完全な資格情報が直接指定されていないときにユーザー名、パスワード、または両方のユーザーが自動的に表示されます。 資格情報の属性の詳細については、次を参照してください。[資格情報の属性宣言](./credential-attribute-declaration.md)します。
+コマンドレットを定義する必要があります、`Credential`を資格情報を表すパラメーター。 このパラメーターは、型でなければなりません[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)と資格情報の属性宣言を使用して定義する必要があります。 このサポートでは、完全な資格情報が直接指定されていないときにユーザー名、パスワード、または両方のユーザーが自動的に表示されます。 資格情報の属性の詳細については、次を参照してください。[資格情報の属性宣言](./credential-attribute-declaration.md)します。
 
 ### <a name="support-encoding-parameters-ad04"></a>エンコード パラメーター (AD04) をサポートします。
 
@@ -89,17 +89,17 @@ Windows PowerShell は、Microsoft .NET Framework オブジェクトを直接機
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>パイプラインの入力には、BeginProcessing メソッド (AC02) が上書きされない場合
 
-処理を実装する必要があります、コマンドレットが、パイプラインからの入力を受け付けない場合、 [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッド。 このメソッドの使用は、Windows PowerShell のコマンドレット間で順序を維持するためにできます。 パイプラインの残りのコマンドレットは、これらの処理を起動するチャンスを取得する前に、パイプラインの最初のコマンドレットは常にそのオブジェクトを返します。
+処理を実装する必要があります、コマンドレットが、パイプラインからの入力を受け付けない場合、 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッド。 このメソッドの使用は、Windows PowerShell のコマンドレット間で順序を維持するためにできます。 パイプラインの残りのコマンドレットは、これらの処理を起動するチャンスを取得する前に、パイプラインの最初のコマンドレットは常にそのオブジェクトを返します。
 
 ### <a name="to-handle-stop-requests-override-the-stopprocessing-method-ac03"></a>StopProcessing メソッド (AC03) をオーバーライドしている停止要求を処理するには
 
-上書き、 [System.Management.Automation.Cmdlet.Stopprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)メソッド コマンドレットは、停止信号を処理できるようにします。 一部のコマンドレットの操作を完了する時間がかかるし、時間など、コマンドレットが実行時間の長い RPC 呼び出しでスレッドをブロックするときに、Windows PowerShell ランタイムへの呼び出しの間で渡すことができます。 呼び出しを行うコマンドレットが含まれます、 [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)メソッドを[System.Management.Automation.Cmdlet.Writeerror*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッド、およびその他のフィードバック完了までに時間がかかる場合がありますメカニズム。 このような場合、ユーザーは、これらのコマンドレットに停止シグナルを送信する必要があります。
+上書き、 [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)メソッド コマンドレットは、停止信号を処理できるようにします。 一部のコマンドレットの操作を完了する時間がかかるし、時間など、コマンドレットが実行時間の長い RPC 呼び出しでスレッドをブロックするときに、Windows PowerShell ランタイムへの呼び出しの間で渡すことができます。 呼び出しを行うコマンドレットが含まれます、 [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)メソッドを[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッド、およびその他のフィードバック完了までに時間がかかる場合がありますメカニズム。 このような場合、ユーザーは、これらのコマンドレットに停止シグナルを送信する必要があります。
 
 ### <a name="implement-the-idisposable-interface-ac04"></a>IDisposable インターフェイス (AC04) の実装します。
 
-コマンドレットに (パイプラインに書き込まれます) の破棄されていないオブジェクトがある場合は、によって、 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッドでは、コマンドレットは、その他のオブジェクトの破棄を必要があります。 例では、コマンドレットがファイル ハンドルを開いた場合、その[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッドと保持で使用するためのハンドルを開く、 [System.Management.Automation.Cmdlet.Processrecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)処理の最後に終了する方法、このハンドルが。
+コマンドレットに (パイプラインに書き込まれます) の破棄されていないオブジェクトがある場合は、によって、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッドでは、コマンドレットは、その他のオブジェクトの破棄を必要があります。 例では、コマンドレットがファイル ハンドルを開いた場合、その[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッドと保持で使用するためのハンドルを開く、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)処理の最後に終了する方法、このハンドルが。
 
-Windows PowerShell ランタイムが常に呼び出していない、 [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)メソッド。 たとえば、 [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)コマンドレットを途中の操作をキャンセルするか、コマンドレットのすべての部分でエラーが発生した場合は、終了した場合、メソッドは呼び出されません可能性があります。 したがって、オブジェクトのクリーンアップが必要なコマンドレットの .NET Framework クラスを完全に実装[System.Idisposable](/dotnet/api/System.IDisposable)インターフェイス パターン、ファイナライザーを含む、Windows PowerShell ランタイムは、両方を呼び出すことができます、[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)と[System.Idisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)処理の終了メソッド。
+Windows PowerShell ランタイムが常に呼び出していない、 [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)メソッド。 たとえば、 [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)コマンドレットを途中の操作をキャンセルするか、コマンドレットのすべての部分でエラーが発生した場合は、終了した場合、メソッドは呼び出されません可能性があります。 したがって、オブジェクトのクリーンアップが必要なコマンドレットの .NET Framework クラスを完全に実装[System.IDisposable](/dotnet/api/System.IDisposable)インターフェイス パターン、ファイナライザーを含む、Windows PowerShell ランタイムは、両方を呼び出すことができます、[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)と[System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)処理の終了メソッド。
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>シリアル化に適したパラメーターの型 (AC05) を使用して、
 
@@ -117,7 +117,7 @@ Windows PowerShell ランタイムが常に呼び出していない、 [System.M
 
 - PSPrimitiveDictionary
 
-- SwitchParmeter
+- スイッチ パラメーター
 
 - PSListModifier
 

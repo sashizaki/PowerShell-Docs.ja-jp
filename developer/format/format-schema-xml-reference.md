@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
 caps.latest.revision: 21
-ms.openlocfilehash: 4dfe27a5105d82fa18e35f965f92fad16d390a2a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857788"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056653"
 ---
 # <a name="format-schema-xml-reference"></a>書式設定スキーマ XML リファレンス
 
@@ -81,7 +81,7 @@ ms.locfileid: "56857788"
 
 [DefaultSettings 要素 (形式)](./defaultsettings-element-format.md)書式設定ファイルのすべてのビューに適用される一般的な設定を定義します。 一般的な設定に含めるコレクションを展開する方法を定義するテーブル内のテキストの折り返し、エラーを表示します。
 
-[DisplayError 要素 (Frmat)](./displayerror-element-format.md) #ERR 文字列がデータの一部を表示するエラーが発生したときに表示されることを指定します。
+[DisplayError 要素 (形式)](./displayerror-element-format.md) #ERR 文字列がデータの一部を表示するエラーが発生したときに表示されることを指定します。
 
 [構成 (形式) のコントロールの CustomEntry EntrySelectedBy 要素](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)コモン コントロールまたは使用するには、このコントロールに必要な条件の定義を使用する .NET 型を定義します。 この要素は、書式設定ファイル内のすべてのビューで使用できる一般的なコントロールを定義するときに使用されます。
 
@@ -235,7 +235,7 @@ ms.locfileid: "56857788"
 
 [GroupBy (形式) の SelectionCondition PropertyName 要素](./propertyname-element-for-selectioncondition-for-groupby-format.md).NET プロパティ トリガーの条件を指定します。 このプロパティが存在するかを評価すると`true`条件が満たされ、定義を使用します。 この要素は、オブジェクトの新しいグループを表示する方法を定義するときに使用されます。
 
-[PropertyName 要素 EmtrySelectedBy ListEntry (形式) 用の SelectionCondition](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) .NET プロパティ トリガーの条件を指定します。 このプロパティが存在するかを評価すると`true`条件が満たされ、一覧のエントリを使用します。
+[PropertyName 要素 EntrySelectedBy ListEntry (形式) 用の SelectionCondition](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md) .NET プロパティ トリガーの条件を指定します。 このプロパティが存在するかを評価すると`true`条件が満たされ、一覧のエントリを使用します。
 
 [PropertyName 要素 EntrySelectedBy TableRowEntry (形式) 用の SelectionCondition](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md) .NET プロパティ トリガーの条件を指定します。 このプロパティが存在するかを評価すると`true`条件が満たされると、およびテーブル エントリが使用されます。
 
@@ -363,7 +363,7 @@ ms.locfileid: "56857788"
 
 [TableRowEntries 要素 (形式)](./tablerowentries-element-for-tablecontrol-format.md)テーブルの行を定義します。
 
-[TableRowEntry 要素 (形式)](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)テーブルの行に表示されるデータを定義します。
+[TableRowEntry 要素 (形式)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)テーブルの行に表示されるデータを定義します。
 
 [テキスト要素の構成 (形式) のコントロールの CustomItem](./text-element-for-customitem-for-controls-for-configuration-format.md)データ、およびデータをインデントする空白文字を囲む角かっこ、ラベルなど、コントロールによって表示されるデータに追加されるテキストを指定します。 この要素は、書式設定ファイル内のすべてのビューで使用できる一般的なコントロールを定義するときに使用されます。
 
@@ -427,7 +427,7 @@ ms.locfileid: "56857788"
 
 [幅要素 (形式)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md) (文字) で、列の幅を定義します。
 
-[要素 (形式) をラップ](./wrap-element-for-tablerowentry-for-tablecontrl-format.md)次の行を列の幅を超えるテキストが表示されることを指定します。
+[要素 (形式) をラップ](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)次の行を列の幅を超えるテキストが表示されることを指定します。
 
 [WrapTables 要素 (形式)](./wraptables-element-format.md)データが列の幅より長い場合、次の行にテーブルのセルにデータを移動することを指定します。
 

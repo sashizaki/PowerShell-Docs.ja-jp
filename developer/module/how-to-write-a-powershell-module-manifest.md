@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: 67e041756974dcd84e15cdb4edaf91be45122e28
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859208"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059492"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>PowerShell モジュール マニフェストを記述する方法
 
@@ -77,7 +77,7 @@ A*モジュール マニフェスト*Windows PowerShell データ ファイル (
 |PowerShellVersion<br /><br /> 型: 文字列|' '|このモジュールに必要な Windows PowerShell エンジンの最小バージョン。 現在の有効な値は、1.0、2.0、3.0、4.0、および 5.0 です。<br /><br /> 例: `PowerShellVersion = '5.0'`|
 |PowerShellHostName<br /><br /> 型: 文字列|' '|モジュールに必要な Windows PowerShell ホストの名前を指定します。 この名前は、Windows PowerShell によって提供されます。 プログラムのホスト プログラムの名前を検索する入力:`$host.name`します。<br /><br /> 例: `PowerShellHostName = 'Windows PowerShell ISE Host'`|
 |PowerShellHostVersion<br /><br /> 型: 文字列|' '|このモジュールに必要な Windows PowerShell ホストの最小バージョン。<br /><br /> 例: `PowerShellHostVersion = '2.0'`|
-|DotNetFrameworkVersion<br /><br /> 型: 文字列|' '|このモジュールに必要な Microsoft .NET Framework の最小バージョン。<br /><br /> 例: `DotNetFrameorkVersion = '3.5'`|
+|DotNetFrameworkVersion<br /><br /> 型: 文字列|' '|このモジュールに必要な Microsoft .NET Framework の最小バージョン。<br /><br /> 例: `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> 型: 文字列|' '|このモジュールに必要な共通言語ランタイム (CLR) の最小バージョン。<br /><br /> 例: `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> 型: 文字列|' '|プロセッサ アーキテクチャ (None、X86、Amd64) モジュールが必要です。 有効な値は x86、AMD64、IA64、および None (不明または未指定) です。<br /><br /> 例: `ProcessorArchitecture = 'x86'`|
 |RequiredModules<br /><br /> Type: [string[]]|@()|このモジュールをインポートする前にグローバル環境にインポートする必要がありますモジュールです。 既に読み込まれている場合を除き、表示されているすべてのモジュールが読み込まれます。 (たとえば、一部のモジュール可能性があるによって既に読み込まれて別のモジュール。)。 使用して読み込む特定のバージョンを指定することも`RequiredVersion`なく`ModuleVersion`します。 使用する場合`ModuleVersion`指定されているバージョンの最小値で使用可能な最新バージョンが読み込まれます。<br /><br /> 例: `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> 例: `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|

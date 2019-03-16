@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
 caps.latest.revision: 6
-ms.openlocfilehash: 86a0e8b7e8967280daa57faf5c323efcd3b1368b
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794197"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054188"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>書式設定データを読み込んでエクスポートする
 
@@ -27,7 +27,7 @@ ms.locfileid: "57794197"
 
 - 書式設定、ファイルを参照するモジュール マニフェストを作成できます。 モジュールを使用すると、パッケージ配布用のファイルの書式設定することができます。 使用、 [New-modulemanifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) 、マニフェストを作成するコマンドレットと[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットを現在のセッションにモジュールを読み込めません。 モジュールの詳細については、次を参照してください。 [Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)します。
 
-- 書式設定、ファイルを参照するスナップインを作成できます。 使用して、 [System.Management.Automation.Pssnapin.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats)書式設定ファイルを参照します。 配布パッケージのコマンドレット モジュールと、関連付けられている書式設定の種類のファイルを使用する推奨になります。 モジュールの詳細については、次を参照してください。 [Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)します。
+- 書式設定、ファイルを参照するスナップインを作成できます。 使用して、 [System.Management.Automation.PSSnapIn.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats)書式設定ファイルを参照します。 配布パッケージのコマンドレット モジュールと、関連付けられている書式設定の種類のファイルを使用する推奨になります。 モジュールの詳細については、次を参照してください。 [Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)します。
 
 - コマンドをプログラムで起動するが場合、は、コマンドが実行される、実行空間の最初のセッション状態を書式設定ファイルのエントリを追加できます。 書式設定ファイルを追加するために使用する .NET 型の詳細については、次を参照してください。、 [System.Management.Automation.Runspaces.Sessionstateformatentry でしょうか。Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateFormatEntry)クラス。
 

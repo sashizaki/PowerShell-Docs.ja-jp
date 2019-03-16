@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
-ms.openlocfilehash: c11e50913d2654b786e0e8cfeaf41454999bf75e
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794979"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057724"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>強くお勧めする開発ガイドライン
 
@@ -101,7 +101,7 @@ ms.locfileid: "57794979"
 
 #### <a name="parameters-that-take-true-and-false"></a>パラメーターを受け取る True と False
 
-場合のみ、パラメーターを受け取り`true`と`false`、パラメーターを型として定義[System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)します。 スイッチ パラメーターとして扱われます`true`コマンドで指定されている場合。 Windows PowerShell がするパラメーターの値を考慮する場合は、コマンドでは、パラメーターが含まれていない、`false`します。 ブール型のパラメーターを定義してください。
+場合のみ、パラメーターを受け取り`true`と`false`、パラメーターを型として定義[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)します。 スイッチ パラメーターとして扱われます`true`コマンドで指定されている場合。 Windows PowerShell がするパラメーターの値を考慮する場合は、コマンドでは、パラメーターが含まれていない、`false`します。 ブール型のパラメーターを定義してください。
 
 パラメーターは、3 つの値を区別する必要がある場合: $true、$false、および「未指定」は、null 許容型のパラメーターを定義し、\<bool >。  サードの必要性、「未指定」値には通常、コマンドレットがオブジェクトのブール型プロパティを変更とが発生します。 ここでは「未指定」ことを意味しないプロパティの現在の値を変更します。
 
@@ -111,7 +111,7 @@ ms.locfileid: "57794979"
 
 #### <a name="support-the-passthru-parameter"></a>PassThru パラメーターをサポートします。
 
-既定では、多くのコマンドレットを変更する、システムなど、 [Stop-process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process)コマンドレットがオブジェクトの"sinks"として機能し、結果は返されません。 これらのコマンドレットを実装する必要があります、`PassThru`させるオブジェクトを取得するコマンドレットのパラメーター。 ときに、`PassThru`パラメーターを指定すると、コマンドレットの呼び出しを使用してオブジェクトを返します、 [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)メソッド。 たとえば、次のコマンドは、Calc プロセスが停止し、パイプラインに結果のプロセスを渡します。
+既定では、多くのコマンドレットを変更する、システムなど、 [Stop-process](/powershell/module/Microsoft.PowerShell.Management/Stop-Process)コマンドレットがオブジェクトの"sinks"として機能し、結果は返されません。 これらのコマンドレットを実装する必要があります、`PassThru`させるオブジェクトを取得するコマンドレットのパラメーター。 ときに、`PassThru`パラメーターを指定すると、コマンドレットの呼び出しを使用してオブジェクトを返します、 [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)メソッド。 たとえば、次のコマンドは、Calc プロセスが停止し、パイプラインに結果のプロセスを渡します。
 
 ```powershell
 Stop-Process calc -passthru
@@ -135,21 +135,21 @@ Windows PowerShell ランタイムにより、ユーザーへの各呼び出し�
 
 #### <a name="support-the-writewarning-writeverbose-and-writedebug-methods"></a>WriteWarning、WriteVerbose、WriteDebug メソッドをサポートします。
 
-コマンドレットを呼び出す必要があります、 [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)メソッドが、意図しない結果があります。 操作を実行しようとしています。 たとえば、コマンドレットは、コマンドレットが読み取り専用ファイルを上書きする場合は、このメソッドを呼び出す必要があります。
+コマンドレットを呼び出す必要があります、 [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)メソッドが、意図しない結果があります。 操作を実行しようとしています。 たとえば、コマンドレットは、コマンドレットが読み取り専用ファイルを上書きする場合は、このメソッドを呼び出す必要があります。
 
-コマンドレットを呼び出す必要があります、 [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)メソッド、ユーザーは、コマンドレットの実行内容についていくつかの詳細を必要とする場合。 たとえば、コマンドレットは、コマンドレットの作成者と、コマンドレットの実行内容の詳細が必要となるシナリオがあることを考えている場合、この情報を呼び出す必要があります。
+コマンドレットを呼び出す必要があります、 [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)メソッド、ユーザーは、コマンドレットの実行内容についていくつかの詳細を必要とする場合。 たとえば、コマンドレットは、コマンドレットの作成者と、コマンドレットの実行内容の詳細が必要となるシナリオがあることを考えている場合、この情報を呼び出す必要があります。
 
-コマンドレットを呼び出す必要があります、 [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)メソッドと、developer、または製品のサポート エンジニアがコマンドレットの操作が破損している内容を理解する必要があります。 必要でないコマンドレットを呼び出す、 [System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)メソッドを呼び出すのと同じコードで、 [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)メソッドのため、`Debug`パラメーター情報の両方のセットを表示します。
+コマンドレットを呼び出す必要があります、 [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)メソッドと、developer、または製品のサポート エンジニアがコマンドレットの操作が破損している内容を理解する必要があります。 必要でないコマンドレットを呼び出す、 [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)メソッドを呼び出すのと同じコードで、 [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)メソッド`Debug`パラメーター情報の両方のセットを表示します。
 
 #### <a name="support-writeprogress-for-operations-that-take-a-long-time"></a>WriteProgress を長い時間がかかる操作のサポートします。
 
-コマンドレットの操作を受け取ると完了に長時間をバック グラウンドで実行できませんに定期的な呼び出しを使用したレポートの進行状況をサポートする必要があります、 [System.Management.Automation.Cmdlet.Writeprogress*](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)メソッド。
+コマンドレットの操作を受け取ると完了に長時間をバック グラウンドで実行できませんに定期的な呼び出しを使用したレポートの進行状況をサポートする必要があります、 [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)メソッド。
 
 #### <a name="use-the-host-interfaces"></a>ホスト インターフェイスを使用して、
 
-場合によっては、コマンドレットをする必要がありますと直接通信の代わりにユーザーを使用して、さまざまな書き込みまたはメソッドでサポートされている必要があります、 [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)クラス。 この場合、コマンドレットがから派生する必要があります、 [System.Management.Automation.Pscmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)クラスを使用して、 [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host)プロパティ。 このプロパティは、通信の種類、PromptForChoice、プロンプト、および WriteLine/ReadLine 型などのさまざまなレベルをサポートします。 一番の特定のレベルもあり、個々 のキーを読み書きするバッファーを処理する方法。
+場合によっては、コマンドレットをする必要がありますと直接通信の代わりにユーザーを使用して、さまざまな書き込みまたはメソッドでサポートされている必要があります、 [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)クラス。 この場合、コマンドレットがから派生する必要があります、 [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)クラスを使用して、 [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host)プロパティ。 このプロパティは、通信の種類、PromptForChoice、プロンプト、および WriteLine/ReadLine 型などのさまざまなレベルをサポートします。 一番の特定のレベルもあり、個々 のキーを読み書きするバッファーを処理する方法。
 
-コマンドレットは具体的にはグラフィカル ユーザー インターフェイス (GUI) を生成するように設計、しない限りを使用して、ホストを回避する必要がありますされませんが、 [System.Management.Automation.Pscmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host)プロパティ。 GUI を生成するように設計されたコマンドレットの例は、 [Out-gridview](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView)コマンドレット。
+コマンドレットは具体的にはグラフィカル ユーザー インターフェイス (GUI) を生成するように設計、しない限りを使用して、ホストを回避する必要がありますされませんが、 [System.Management.Automation.PSCmdlet.Host*](/dotnet/api/System.Management.Automation.PSCmdlet.Host)プロパティ。 GUI を生成するように設計されたコマンドレットの例は、 [Out-gridview](/powershell/module/Microsoft.PowerShell.Utility/Out-GridView)コマンドレット。
 
 > [!NOTE]
 > コマンドレットを使用する必要があります、 [System.Console](/dotnet/api/System.Console) API。
@@ -174,15 +174,15 @@ Windows PowerShell パスは、名前空間へのアクセスを正規化する�
 
 コマンドレットは、読み取りまたは書き込みをデータにファイルがある場合は、コマンドレットは、Windows PowerShell パスの入力を受け入れる必要があります、コマンドレットを使用する必要があります、 [System.Management.Automation.Sessionstate.Path](/dotnet/api/System.Management.Automation.SessionState.Path) Windows を変換するプロパティPowerShell パスにファイル システムが認識するパス。 特定のメカニズムには、次のメソッドが含まれます。
 
-- [System.Management.Automation.Pscmdlet.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pscmdlet.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PSCmdlet.GetUnresolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetResolvedProviderPathFromPSPath)
 
-- [System.Management.Automation.Pathintrinsics.Getunresolvedproviderpathfrompspath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
+- [System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath](/dotnet/api/System.Management.Automation.PathIntrinsics.GetUnresolvedProviderPathFromPSPath)
 
-データを読み取りまたは書き込みが、コマンドレットは一連のファイルをコマンドレットではなく文字列プロバイダー コンテンツ情報を使用する必要があります (`Content`メンバー) 読み取りし、書き込みにします。 この情報を得た、 [System.Management.Automation.Provider.Cmdletprovider.Invokeprovider*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider)プロパティ。 これらのメカニズムは、データの書き込みと読み取りに参加する他のデータ ストアを許可します。
+データを読み取りまたは書き込みが、コマンドレットは一連のファイルをコマンドレットではなく文字列プロバイダー コンテンツ情報を使用する必要があります (`Content`メンバー) 読み取りし、書き込みにします。 この情報を得た、 [System.Management.Automation.Provider.CmdletProvider.InvokeProvider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.InvokeProvider)プロパティ。 これらのメカニズムは、データの書き込みと読み取りに参加する他のデータ ストアを許可します。
 
 #### <a name="support-wildcard-characters"></a>ワイルドカード文字をサポートします。
 
@@ -206,11 +206,11 @@ Windows PowerShell パスは、名前空間へのアクセスを正規化する�
 
 コマンドレットによって返される既存の .NET Framework オブジェクトに、スクリプトの開発者やユーザーに必要ないくつかの重要なまたは便利なメンバーと頻繁がありません。 これらの欠落しているメンバーを表示して、オブジェクトをパイプラインに正しく渡すことができるように、適切なメンバー名を作成するために特に重要ですできます。 これらの必要なメンバーを文書化するカスタムの Types.ps1xml ファイルを作成します。 このファイルを作成するときに、次の名前付け規則お勧めします。 *< Your_Product_Name >* します。Types.ps1xml します。
 
-たとえば、追加する、`Mode`スクリプト プロパティを[System.IO.Fileinfo](/dotnet/api/System.IO.FileInfo)ファイルの属性をより明確に表示する型。 さらに、追加でした、`Count`エイリアス プロパティを[System.Array](/dotnet/api/System.Array)一貫性のあるが、プロパティ名の使用を許可する型 (の代わりに`Length`)。
+たとえば、追加する、`Mode`スクリプト プロパティを[System.IO.FileInfo](/dotnet/api/System.IO.FileInfo)ファイルの属性をより明確に表示する型。 さらに、追加でした、`Count`エイリアス プロパティを[System.Array](/dotnet/api/System.Array)一貫性のあるが、プロパティ名の使用を許可する型 (の代わりに`Length`)。
 
 ##### <a name="implement-the-icomparable-interface"></a>IComparable インターフェイスを実装します。
 
-実装を[System.Icomparable](/dotnet/api/System.IComparable)出力オブジェクトのすべてのインターフェイス。 これにより、出力オブジェクトを簡単にさまざまな並べ替えと分析のコマンドレットにパイプ処理できます。
+実装を[System.IComparable](/dotnet/api/System.IComparable)出力オブジェクトのすべてのインターフェイス。 これにより、出力オブジェクトを簡単にさまざまな並べ替えと分析のコマンドレットにパイプ処理できます。
 
 ##### <a name="update-display-information"></a>表示情報を更新します。
 
@@ -230,11 +230,11 @@ Windows PowerShell パスは、名前空間へのアクセスを正規化する�
 
 #### <a name="support-the-processrecord-method"></a>ProcessRecord メソッドをサポートします。
 
-コマンドレットを実装する必要があります、先頭のコマンドレットは、パイプライン内のすべてのレコードを受け入れるように、 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。 Windows PowerShell メソッドを呼び出しますこの複数回、1 回、コマンドレットに送信されるすべてのレコード。
+コマンドレットを実装する必要があります、先頭のコマンドレットは、パイプライン内のすべてのレコードを受け入れるように、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。 Windows PowerShell メソッドを呼び出しますこの複数回、1 回、コマンドレットに送信されるすべてのレコード。
 
 ### <a name="write-single-records-to-the-pipeline-sc03"></a>パイプライン (SC03) に 1 つのレコードを書き込む
 
-コマンドレットがオブジェクトを書き込む必要があります、コマンドレットには、オブジェクトが返される、ときに生成されるとすぐにします。 結合した配列にバッファーに格納するためにそのコマンドレットに保持しないようにします。 オブジェクトを入力として受け取るコマンドレットは、処理、表示、または処理および遅延なしの出力オブジェクトを表示することになります。 出力を生成するコマンドレットはオブジェクト 1 つずつ呼び出す必要があります、 [System.Management.Automation.Cmdlet.Writeobject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)メソッド。 (たとえば、基になる API では、出力オブジェクトの配列を返します) ために、バッチ処理で出力オブジェクトを生成するコマンドレットを呼び出す必要があります、 [System.Managemet.Automation.Cmdlet.Writeobject](/dotnet/api/System.Managemet.Automation.Cmdlet.WriteObject) 2 番目のパラメーターを持つメソッドの設定`true`します。
+コマンドレットがオブジェクトを書き込む必要があります、コマンドレットには、オブジェクトが返される、ときに生成されるとすぐにします。 結合した配列にバッファーに格納するためにそのコマンドレットに保持しないようにします。 オブジェクトを入力として受け取るコマンドレットは、処理、表示、または処理および遅延なしの出力オブジェクトを表示することになります。 出力を生成するコマンドレットはオブジェクト 1 つずつ呼び出す必要があります、 [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)メソッド。 (たとえば、基になる API では、出力オブジェクトの配列を返します) ために、バッチ処理で出力オブジェクトを生成するコマンドレットを呼び出す必要があります、 [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) 2 番目のパラメーターを持つメソッドの設定`true`します。
 
 ### <a name="make-cmdlets-case-insensitive-and-case-preserving-sc04"></a>コマンドレットを大文字と小文字が区別 (SC04)
 

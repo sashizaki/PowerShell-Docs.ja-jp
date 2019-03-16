@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c6ac3d86-0529-4b93-9bc7-ee94fcef9618
 caps.latest.revision: 8
-ms.openlocfilehash: ae4ad8ae3e6cb5d1174dc001b30aa84dd182a606
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ea43e025f5f653ff000e1d7591b535e73da5c9e5
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860238"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054222"
 ---
 # <a name="firstlinehanging-element-for-frame-for-customcontrol-for-view-format"></a>View の CustomControl の Frame の FirstLineHanging 要素 (書式)
 
 データの最初の行が左にシフト文字の数を指定します。 この要素は、カスタム コントロールのビューを定義するときに使用されます。
 
-要素 (形式) ViewDefinitions 要素 (形式) 表示要素 (形式) カスタム コントロール要素 (形式) CustomEntries の構成要素のビュー (形式) CustomItem 要素 CustomEntries のビュー (形式) CustomEntry 要素のカスタム コントロールCustomEntry CustomItem ビュー (形式) のカスタム コントロールのフレームのビュー (形式) FirstLineHanging 要素のカスタム コントロール用のフレーム要素を CutomControlView (形式)
+要素 (形式) ViewDefinitions 要素 (形式) 表示要素 (形式) カスタム コントロール要素 (形式) CustomEntries の構成要素のビュー (形式) CustomItem 要素 CustomEntries のビュー (形式) CustomEntry 要素のカスタム コントロールCustomEntry CustomItem ビュー (形式) のカスタム コントロールのフレームのビュー (形式) FirstLineHanging 要素のカスタム コントロール用のフレーム要素を CustomControlView (形式)
 
 ## <a name="syntax"></a>構文
 

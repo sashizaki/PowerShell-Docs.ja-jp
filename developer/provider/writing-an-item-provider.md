@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
-ms.openlocfilehash: e3289e9336b863b5e0998a2beb29353c82a31f79
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 9285a2f0e673de8b86084157423512bdeeda109d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856708"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058193"
 ---
 # <a name="writing-an-item-provider"></a>アイテム プロバイダーを記述する
 
@@ -46,7 +46,7 @@ Windows PowerShell プロバイダーに関する詳細については、次を�
 
 ### <a name="implementing-getitem"></a>GetItem を実装します。
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)ユーザーを呼び出すときに、PowerShell エンジンによって呼び出される、 [Microsoft.Powershell.Commands.Get 項目](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item)コマンドレット、プロバイダー。 メソッドは、指定されたパスにある項目を返します。 Access データベースの例では、メソッドは、項目が、テーブル、データベースまたはデータベース内の行で、ドライブ自体、かどうかをチェックします。 メソッドを呼び出してにアイテムを PowerShell エンジンに送信する、 [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)メソッド。
+[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)ユーザーを呼び出すときに、PowerShell エンジンによって呼び出される、 [Microsoft.PowerShell.Commands.Get 項目](/dotnet/api/Microsoft.PowerShell.Commands.Get-Item)コマンドレット、プロバイダー。 メソッドは、指定されたパスにある項目を返します。 Access データベースの例では、メソッドは、項目が、テーブル、データベースまたはデータベース内の行で、ドライブ自体、かどうかをチェックします。 メソッドを呼び出してにアイテムを PowerShell エンジンに送信する、 [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)メソッド。
 
 ```csharp
 protected override void GetItem(string path)
@@ -85,7 +85,7 @@ protected override void GetItem(string path)
 
 ### <a name="implementing-setitem"></a>SetItem を実装します。
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドを呼び出す PowerShell エンジンの呼び出しによって呼び出されます、 [Microsoft.Powershell.Commands.Set 項目](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item)コマンドレット. 指定したパスにある項目の値を設定します。
+[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドを呼び出す PowerShell エンジンの呼び出しによって呼び出されます、 [Microsoft.PowerShell.Commands.Set 項目](/dotnet/api/Microsoft.PowerShell.Commands.Set-Item)コマンドレット. 指定したパスにある項目の値を設定します。
 
 アクセス データベースの例は、その項目には、行があるため、メソッドをスローする場合にのみ、項目の値を設定する[NotSupportedException](http://msdn.microsoft.com/library/system.notsupportedexception\(v=vs.110\).aspx)項目がない場合、行。
 
@@ -145,7 +145,7 @@ protected override void SetItem(string path, object values)
 
 ### <a name="implementing-itemexists"></a>ItemExists を実装します。
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)メソッドは、ユーザーを呼び出すと、PowerShell エンジンによって呼び出されます、 [Microsoft.Powershell.Commands.Test パス](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path)コマンドレット。 メソッドは、指定されたパスに項目があるかどうかを判断します。 項目が存在する場合、メソッドは成功に PowerShell エンジンに呼び出して[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)します。
+[System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)メソッドは、ユーザーを呼び出すと、PowerShell エンジンによって呼び出されます、 [Microsoft.PowerShell.Commands.Test パス](/dotnet/api/Microsoft.PowerShell.Commands.Test-Path)コマンドレット。 メソッドは、指定されたパスに項目があるかどうかを判断します。 項目が存在する場合、メソッドは成功に PowerShell エンジンに呼び出して[System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)します。
 
 ```csharp
 protected override bool ItemExists(string path)

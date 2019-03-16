@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41c56499-ee20-4821-830a-478fdcc33f83
 caps.latest.revision: 11
-ms.openlocfilehash: 59cc0514087cc52438e0d1271b8b77a7799eb32c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: bc95c62222eb2806f92499257a397c2e4ec5dbab
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855668"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059067"
 ---
 # <a name="defaultsettings-element-format"></a>DefaultSettings 要素 (書式)
 
@@ -45,7 +45,7 @@ ms.locfileid: "56855668"
 
 |要素|説明|
 |-------------|-----------------|
-|[DisplayError 要素 (Frmat)](./displayerror-element-format.md)|省略可能な要素です。<br /><br /> データの一部を表示中にエラーが発生したときに、文字列 #ERR が表示されることを指定します。|
+|[DisplayError 要素 (形式)](./displayerror-element-format.md)|省略可能な要素です。<br /><br /> データの一部を表示中にエラーが発生したときに、文字列 #ERR が表示されることを指定します。|
 |[EnumerableExpansions 要素 (形式)](./enumerableexpansions-element-format.md)|省略可能な要素です。<br /><br /> .NET オブジェクトをビューに表示されているときに展開するさまざまな方法を定義します。|
 |[PropertyCountForTable (形式)](./propertycountfortable-element-format.md)|省略可能な要素です。<br /><br /> テーブル ビューでオブジェクトを表示するオブジェクトが必要なプロパティの最小数を指定します。|
 |[ShowError 要素 (形式)](./showerror-element-format.md)|省略可能な要素です。<br /><br /> データの一部を表示中にエラーが発生したときに、完全なエラー レコードが表示されることを指定します。|
@@ -63,7 +63,7 @@ ms.locfileid: "56855668"
 
 [構成要素](./configuration-element-format.md)
 
-[DisplayError 要素 (Frmat)](./displayerror-element-format.md)
+[DisplayError 要素 (形式)](./displayerror-element-format.md)
 
 [EnumerableExpansions 要素 (形式)](./enumerableexpansions-element-format.md)
 

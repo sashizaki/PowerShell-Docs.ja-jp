@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
-ms.openlocfilehash: a4b228be91bba27670b26fe21e765ae942afe968
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860718"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056517"
 ---
 # <a name="required-development-guidelines"></a>必要な開発ガイドライン
 
@@ -107,7 +107,7 @@ Windows PowerShell によって提供される動詞の認識されたセット�
 |%|パーセント記号|
 |+|プラス記号|
 |=|等号|
-|~|tilda|
+|~|チルダ|
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>使用できないパラメーター名 (RD03)
 
@@ -122,9 +122,9 @@ Windows PowerShell には、すべてのコマンドレットのパラメータ�
 > [!NOTE]
 > コマンドレット クラスのコマンドレットの属性は、コマンドレットの呼び出しをサポートしていることを示す場合、 [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)への呼び出しにメソッドをおよびコマンドレットが失敗した、 [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッドでは、ユーザーが予期せず、システムを変更する可能性があります。
 
-使用して、 [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)システム変更のメソッド。 ユーザー設定と`Whatif`パラメーター コントロール、 [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド。 これに対し、 [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)呼び出しは、危険性のある変更の追加チェックを実行します。 このメソッドは、任意のユーザー設定によって制御されていない、または`Whatif`パラメーター。 コマンドレットを呼び出す場合、 [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)が、メソッド、`Force`これら 2 つのメソッドへの呼び出しを省略して、操作を続行するパラメーター。 これは、機能は、非対話型のスクリプトとホストで使用するコマンドレットができるので重要です。
+使用して、 [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)システム変更のメソッド。 ユーザー設定と`WhatIf`パラメーター コントロール、 [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド。 これに対し、 [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)呼び出しは、危険性のある変更の追加チェックを実行します。 このメソッドは、任意のユーザー設定によって制御されていない、または`WhatIf`パラメーター。 コマンドレットを呼び出す場合、 [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)が、メソッド、`Force`これら 2 つのメソッドへの呼び出しを省略して、操作を続行するパラメーター。 これは、機能は、非対話型のスクリプトとホストで使用するコマンドレットができるので重要です。
 
-コマンドレットは、これらの呼び出しをサポート、ユーザーがかどうか、アクションを実行する必要があります実際に確認できます。 たとえば、 [Stop-process](/powershell/module/microsoft.powershell.management/stop-process)コマンドレットの呼び出し、 [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドの一連のシステムでは、Winlogon などの重要なプロセスを停止する前に、Spoolsrv プロセス。
+コマンドレットは、これらの呼び出しをサポート、ユーザーがかどうか、アクションを実行する必要があります実際に確認できます。 たとえば、 [Stop-process](/powershell/module/microsoft.powershell.management/stop-process)コマンドレットの呼び出し、 [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドの一連のシステムでは、Winlogon などの重要なプロセスを停止する前に、プロセス。
 
 これらのメソッドのサポートに関する詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。
 
@@ -212,7 +212,7 @@ Windows PowerShell モジュールをパッケージ化し、コマンドレッ�
 
 ## <a name="see-also"></a>参照
 
-[強くお勧めします開発ガイドライン](./strongly-encouraged-development-guidelines.md)
+[強くお勧めします開発のガイドライン](./strongly-encouraged-development-guidelines.md)
 
 [アドバイザリ開発のガイドライン](./advisory-development-guidelines.md)
 

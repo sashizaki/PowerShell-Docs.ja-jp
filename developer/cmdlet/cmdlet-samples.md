@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
 caps.latest.revision: 13
-ms.openlocfilehash: d919d4ad8554e762230c1448d81b50e27c38ba99
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863368"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058047"
 ---
 # <a name="cmdlet-samples"></a>コマンドレット サンプル
 
@@ -39,7 +39,7 @@ ms.locfileid: "56863368"
 
 [StopProcessSample04 サンプル](./stopprocesssample04-sample.md)パラメーター セットを宣言で、既定のパラメーターの設定、および入力オブジェクトを受け取ることができますを指定するコマンドレットを記述する方法を示します。
 
-[Events01 サンプル](./events01-sample.md)によって生成されるイベントを登録するユーザーのためのコマンドレットを作成する方法を示します[System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher)します。 このコマンドレットを使用した、ユーザーは、特定のディレクトリの下のファイルが作成されるときに実行するアクションを登録することができますなど。 このサンプルはから派生した、 [Microsoft.Powershell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)基本クラス。
+[Events01 サンプル](./events01-sample.md)によって生成されるイベントを登録するユーザーのためのコマンドレットを作成する方法を示します[System.IO.Filesystemwatcher](/dotnet/api/System.IO.FileSystemWatcher)します。 このコマンドレットを使用した、ユーザーは、特定のディレクトリの下のファイルが作成されるときに実行するアクションを登録することができますなど。 このサンプルはから派生した、 [Microsoft.PowerShell.Commands.Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)基本クラス。
 
 ## <a name="see-also"></a>参照
 

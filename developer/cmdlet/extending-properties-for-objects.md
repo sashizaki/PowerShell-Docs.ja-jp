@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: be31d03b02394cb1694909cf7b65bbc2a29f6976
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 496e363b041194563d46c09eee67a12055bb54b0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795438"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057299"
 ---
 # <a name="extending-properties-for-objects"></a>オブジェクトのプロパティを拡張する
 
@@ -83,7 +83,7 @@ ms.locfileid: "57795438"
 
 スクリプト プロパティは、値が、スクリプトの出力のプロパティを定義します。
 
-次の例では、`VersionInfo`プロパティに追加されます、 [System.IO.Fileinfo でしょうか。Displayproperty = Fullname](/dotnet/api/System.IO.FileInfo)型。 [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350)要素は、スクリプト プロパティとして、拡張プロパティを定義します。 [名前](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873)要素は、拡張プロパティの名前を指定します。 また、 [GetScriptBlock](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c)要素は、プロパティの値を生成するスクリプトを指定します。 (追加することも、 [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350)要素のメンバーに、[メンバー セット](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3)要素です)。
+次の例では、`VersionInfo`プロパティに追加されます、 [System.IO.FileInfo でしょうか。Displayproperty = Fullname](/dotnet/api/System.IO.FileInfo)型。 [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350)要素は、スクリプト プロパティとして、拡張プロパティを定義します。 [名前](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873)要素は、拡張プロパティの名前を指定します。 また、 [GetScriptBlock](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c)要素は、プロパティの値を生成するスクリプトを指定します。 (追加することも、 [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350)要素のメンバーに、[メンバー セット](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3)要素です)。
 
 ```xml
 <Type>

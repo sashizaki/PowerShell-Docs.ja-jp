@@ -11,19 +11,19 @@ helpviewer_keywords:
 - declaring cmdlets [PowerShell SDK]
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
-ms.openlocfilehash: 3e410087438ac99526049f99e5c768c017a29848
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3168275423dc65fcb2e41dedd9bea275ede58397
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854448"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055089"
 ---
 # <a name="cmdlet-class-declaration"></a>コマンドレットのクラス宣言
 
 Microsoft .NET Framework クラスが指定することでコマンドレットとして宣言されている、**コマンドレット**属性として、クラスのメタデータ。 (、**コマンドレット**属性は、すべてのコマンドレットの唯一の必須属性)。 指定した場合、**コマンドレット**属性、ユーザーにコマンドレットを識別する動詞-名詞形式のペアを指定する必要があります。 また、このコマンドレットをサポートする Windows PowerShell の機能を記述する必要があります。 指定に使用される宣言の構文の詳細については、**コマンドレット**属性は、「[コマンドレット属性宣言](./cmdlet-attribute-declaration.md)します。
 
 > [!NOTE]
-> **コマンドレット**属性を定義した、 [System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)クラス。 このクラスのプロパティは、属性を宣言するときに使用されるパラメーターの宣言に対応します。
+> **コマンドレット**属性を定義した、 [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)クラス。 このクラスのプロパティは、属性を宣言するときに使用されるパラメーターの宣言に対応します。
 
 ## <a name="nouns"></a>名詞
 
@@ -57,7 +57,7 @@ Pascal 形式を使用して、コマンドレットの名前を入力すると�
 
 ## <a name="see-also"></a>参照
 
-[System.Management.Automation.Cmdletattribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
+[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)
 
 [CmdletAttribute 宣言](./cmdlet-attribute-declaration.md)
 

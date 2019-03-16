@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
 caps.latest.revision: 10
-ms.openlocfilehash: fd013384a4b588bcdb397d7771425fe5c031c48f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d9109e8d5b69a25ad52b90bcaff9628b01067211
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856698"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057622"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
 
@@ -30,7 +30,7 @@ ms.locfileid: "56856698"
 
 - 派生するプロバイダー クラスを定義する、 [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラス。
 
-- 上書き、 [System.Management.Automation.Provider.Containercmdletprovider.Copyitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドの動作を変更する、`Copy-Item`コマンドレットに渡してアイテムを別の 1 つの場所にコピーするユーザーを許可します。 (このサンプルで動的パラメーターを追加する方法が表示されない、`Copy-Item`コマンドレットです)。
+- 上書き、 [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドの動作を変更する、`Copy-Item`コマンドレットに渡してアイテムを別の 1 つの場所にコピーするユーザーを許可します。 (このサンプルで動的パラメーターを追加する方法が表示されない、`Copy-Item`コマンドレットです)。
 
 - 上書き、 [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)ユーザーが、親アイテムの子項目を取得する Get ChildItems コマンドレットの動作を変更する方法. (このサンプルは、Get ChildItems コマンドレットに動的パラメーターを追加する方法を表示はされません)。
 

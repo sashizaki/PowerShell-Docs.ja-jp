@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1550b068-dfbc-4ae0-9aa1-72c9a680ec59
 caps.latest.revision: 15
-ms.openlocfilehash: dd48e82452e83f93e2e005c9db53bbc51d8b2eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 3942c008e026b0b99db3c77af4a0152b50fffc4e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858918"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054579"
 ---
 # <a name="tablecontrol-element-format"></a>TableControl 要素 (書式)
 
@@ -48,7 +48,7 @@ ViewDefinitions 要素 (形式) 表示要素 (形式) TableControl 要素 (形�
 |[TableControl (形式) の AutoSize 要素](./autosize-element-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> かどうか、列のサイズと列の数が調整のデータのサイズを指定します。|
 |[TableControl (形式) の HideTableHeaders 要素](./hidetableheaders-element-format.md)|省略可能な要素です。<br /><br /> テーブルのヘッダーは表示されないかどうかを示します。|
 |[TableControl (形式) の TableHeaders 要素](./tableheaders-element-format.md)|必須の要素。<br /><br /> ラベル、幅、およびテーブル ビューの列のデータの配置を定義します。|
-|[TableCotrol (形式) の TableRowEntries 要素](./tablerowentries-element-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> テーブル ビューの定義を提供します。|
+|[TableControl (形式) の TableRowEntries 要素](./tablerowentries-element-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> テーブル ビューの定義を提供します。|
 
 ### <a name="parent-elements"></a>親要素
 

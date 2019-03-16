@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
-ms.openlocfilehash: 832527ea4b042812c39934cd7e124201c6dc2ea4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861498"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057367"
 ---
 # <a name="creating-a-table-view"></a>テーブル ビューを作成する
 
@@ -95,7 +95,7 @@ Running  Appinfo            Application Information
 
 2. [TableColumnHeader](./tablecolumnheader-element-format.md)要素は、テーブルの列の上部に表示される内容を定義します。 ヘッダーを表示する順序でこれらの要素を指定します。
 
-   数は、次のように使用できる、これらの要素の数に制限はありません[TableColumnHeader](./tablecolumnheader-element-format.md)テーブル ビュー内の要素の数に一致する必要があります[TableRowEntry](./tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md)を使用する要素。
+   数は、次のように使用できる、これらの要素の数に制限はありません[TableColumnHeader](./tablecolumnheader-element-format.md)テーブル ビュー内の要素の数に一致する必要があります[TableRowEntry](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)を使用する要素。
 
 3. [ラベル](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)要素が表示されるテキストを指定します。 この要素は省略可能です。
 
@@ -136,7 +136,7 @@ Running  Appinfo            Application Information
 
 - [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)要素は、特定の定義によって表示されるオブジェクトを指定します。 この要素は省略可能と複数を定義する場合にのみ必要です[TableRowEntry](./listentry-element-for-listcontrol-format.md)さまざまなオブジェクトを表示する要素。
 
-- [ラップ](./wrap-element-for-tablerowentry-for-tablecontrl-format.md)要素は、次の行を列の幅を超えるテキストが表示されることを指定します。 既定では、列幅を超えるテキストは切り捨てられます。
+- [ラップ](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)要素は、次の行を列の幅を超えるテキストが表示されることを指定します。 既定では、列幅を超えるテキストは切り捨てられます。
 
 - [TableColumnItems](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)プロパティまたはスクリプトの行の表示が値を持つ要素を定義します。
 

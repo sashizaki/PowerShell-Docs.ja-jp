@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
 caps.latest.revision: 6
-ms.openlocfilehash: 803fe4ae24a4f8022639c5b6d6298100859177ce
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: a50de014988336c473c565b506a73de1c864d7e0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858358"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58058234"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>コマンドレット コマンドレットの動的パラメーター
 
@@ -73,7 +73,7 @@ internal sealed class CertificateProviderDynamicParameters
 
 `Copy-Item` コマンドレットによってトリガーされる動的パラメーターを定義することができます、 `Path`、 `Destination`、および`Recurse`のパラメーター、`Copy-Item`コマンドレットを実装することによって、 [System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)メソッド。
 
-Get ChildItems コマンドレットによってトリガーされる動的パラメーターを定義することができます、`Path`と`Recures`のパラメーター、`Get-ChildItem`コマンドレットを実装することによって、 [System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)と[System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)メソッド。
+Get ChildItems コマンドレットによってトリガーされる動的パラメーターを定義することができます、`Path`と`Recurse`のパラメーター、`Get-ChildItem`コマンドレットを実装することによって、 [System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)と[System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)メソッド。
 
 `Get-Content` コマンドレットによってトリガーされる動的パラメーターを定義することができます、`Path`のパラメーター、`Get-Content`コマンドレットを実装することによって、 [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreaderdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters)メソッド。
 
@@ -89,7 +89,7 @@ Get ChildItems コマンドレットによってトリガーされる動的パ�
 
 `New-ItemProperty` コマンドレットによってトリガーされる動的パラメーターを定義することができます、 `Path`、 `Name`、 `PropertyType`、および`Value`のパラメーター、`New-ItemProperty`コマンドレットを実装することによって、 [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)メソッド。
 
-`New-PSDrive` コマンドレットによってトリガーされる動的パラメーターを定義することができます、 [System.Management.Automation.Psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)によって返されるオブジェクト、`New-PSDrive`コマンドレットを実装することによって、 [System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)メソッド。
+`New-PSDrive` コマンドレットによってトリガーされる動的パラメーターを定義することができます、 [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)によって返されるオブジェクト、`New-PSDrive`コマンドレットを実装することによって、 [System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)メソッド。
 
 `Remove-Item` によってトリガーされる動的パラメーターを定義することができます、`Path`と`Recurse`のパラメーター、`Remove-Item`コマンドレットを実装することによって、 [System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)メソッド。
 

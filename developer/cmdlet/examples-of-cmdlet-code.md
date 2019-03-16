@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6fed2f68-ce6d-4a8f-bf21-f94f27a155c2
 caps.latest.revision: 9
-ms.openlocfilehash: 39c0814faf72cdb4b24730acb2ae429a2f465b32
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 936728d64f30a08fb9e2fa9ccef103683594aa3e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863128"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056262"
 ---
 # <a name="examples-of-cmdlet-code"></a>コマンドレット コードの例
 
@@ -38,7 +38,7 @@ ms.locfileid: "56863128"
 
 [入力処理メソッドをオーバーライドする方法](./how-to-override-input-processing-methods.md)これらの例は、BeginProcessing、ProcessRecord、EndProcessing メソッドをオーバーライドするために使用する基本的な構造を示します。
 
-[ShouldProcess の呼び出しをサポートする方法](./how-to-request-confirmations.md)この例では、どのように[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)コマンドレット内からメソッドを呼び出す必要があります。
+[ShouldProcess の呼び出しをサポートする方法](./how-to-request-confirmations.md)この例では、どのように[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドは、コマンドレット内からを呼び出す必要があります。
 
 [トランザクションをサポートする方法](./how-to-support-transactions.md)コマンドレットは、トランザクションをサポートしているを指定する方法と、トランザクション内でコマンドレットを使用する場合に実行するアクションを実装する方法を示します。
 

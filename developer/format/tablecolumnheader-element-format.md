@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
-ms.openlocfilehash: 15f47c97ac5d55cb76e153af86672b3ffaf176c9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858598"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057877"
 ---
 # <a name="tablecolumnheader-element-format"></a>TableColumnHeader 要素 (書式)
 
@@ -45,7 +45,7 @@ ms.locfileid: "56858598"
 |-------------|-----------------|
 |[TableControl (形式) の TableColumnHeader label 要素](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> 列の上部に表示されるラベルを定義します。 ラベルが指定されていない場合は、行の値を持つが表示されるプロパティの名前が使用されます。|
 |[TableControl (形式) の TableColumnHeader 幅要素](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|必須の要素。<br /><br /> (文字) で、列の幅を指定します。|
-|[TableControl (形式) の TableColumbnHeader の alignment 要素](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> 列のラベルを表示する方法を指定します。 配置が指定されていない場合、ラベルを左側に配置します。|
+|[TableControl (形式) の TableColumnHeader の alignment 要素](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> 列のラベルを表示する方法を指定します。 配置が指定されていない場合、ラベルを左側に配置します。|
 
 ### <a name="parent-elements"></a>親要素
 
@@ -82,7 +82,7 @@ ms.locfileid: "56858598"
 
 ## <a name="see-also"></a>参照
 
-[TableColumnHeader TableContrl (形式) の要素の配置](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[TableControl (形式) の TableColumnHeader の alignment 要素](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
 [テーブル ビューを作成します。](./creating-a-table-view.md)
 

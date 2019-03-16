@@ -14,18 +14,18 @@ helpviewer_keywords:
 - ConfirmPreference [PowerShell Programmer's Guide], described
 ms.assetid: 37d6e87f-57b7-40bd-b645-392cf0b6e88e
 caps.latest.revision: 13
-ms.openlocfilehash: ec441831f5e3231a44c9875d1b6d2bf6280a6965
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 0c0517ef7fbd5ae6434773a2dfe276f3a8c35f39
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853398"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057407"
 ---
 # <a name="requesting-confirmation-from-cmdlets"></a>コマンドレットからの確認を要求する
 
 コマンドレットは、Windows PowerShell 環境の外であるシステムに変更を加えるとしているときに、確認を要求する必要があります。 たとえば、コマンドレットは、ユーザー アカウントを追加またはプロセスを停止するのには場合に進む前に、コマンドレットは、ユーザーから送信される確認必要があります。 これに対し、コマンドレットを Windows PowerShell 変数を変更する場合は、コマンドレットが、確認を要求する必要はありません。
 
-確認要求を行うために、コマンドレットを確認要求では、サポートを呼び出す必要があります示す必要があります、 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)確認要求メッセージを表示する (省略可能) のメソッド。
+確認要求を行うために、コマンドレットを確認要求では、サポートを呼び出す必要があります示す必要があります、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)確認要求メッセージを表示する (省略可能) のメソッド。
 
 ## <a name="supporting-confirmation-requests"></a>確認要求をサポートしています。
 
@@ -40,17 +40,17 @@ ms.locfileid: "56853398"
 
 ## <a name="calling-the-confirmation-request-methods"></a>確認要求のメソッドの呼び出し
 
-コマンドレットのコードで呼び出し、 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド、システムを変更する操作を実行する前にします。 場合の値が返され、呼び出し、コマンドレットを設計`false`操作は実行されず、およびコマンドレットは、次の操作を処理します。
+コマンドレットのコードで呼び出し、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド、システムを変更する操作を実行する前にします。 場合の値が返され、呼び出し、コマンドレットを設計`false`操作は実行されず、およびコマンドレットは、次の操作を処理します。
 
 ## <a name="calling-the-shouldcontinue-method"></a>ShouldContinue メソッドを呼び出す
 
-ほとんどのコマンドレットのみを使用して確認を要求する、 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド。 ただし、場合によっては、追加の確認を必要があります。 このような場合は、補完、 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)への呼び出しで呼び出し、 [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッド。 これにより、コマンドレットやプロバイダーのスコープをより細かく制御する、 **[すべてはい]** 確認プロンプトに応答します。
+ほとんどのコマンドレットのみを使用して確認を要求する、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド。 ただし、場合によっては、追加の確認を必要があります。 このような場合は、補完、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)への呼び出しで呼び出し、 [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッド。 これにより、コマンドレットやプロバイダーのスコープをより細かく制御する、 **[すべてはい]** 確認プロンプトに応答します。
 
-コマンドレットを呼び出す場合、 [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドでは、コマンドレットを提供する必要がありますも、`Force`スイッチ パラメーター。 ユーザーが指定されている場合`Force`コマンドレットを呼び出す必要があります、ユーザーが、コマンドレットを呼び出すと[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)への呼び出しをバイパスする必要がありますが、 [System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)します。
+コマンドレットを呼び出す場合、 [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドでは、コマンドレットを提供する必要がありますも、`Force`スイッチ パラメーター。 ユーザーが指定されている場合`Force`コマンドレットを呼び出す必要があります、ユーザーが、コマンドレットを呼び出すと[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)への呼び出しをバイパスする必要がありますが、 [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)します。
 
-[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)ユーザーを求められますことはできません、非対話型環境から呼び出されたときに例外がスローされます。 追加、`Force`パラメーターにより非対話型環境で呼び出された場合は、コマンドを実行もできるようになります。
+[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)ユーザーを求められますことはできません、非対話型環境から呼び出されたときに例外がスローされます。 追加、`Force`パラメーターにより非対話型環境で呼び出された場合は、コマンドを実行もできるようになります。
 
-次の例は、呼び出す方法を示しています。 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.Shouldcontinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)します。
+次の例は、呼び出す方法を示しています。 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)します。
 
 ```csharp
 if (ShouldProcess (...) )
@@ -62,9 +62,9 @@ if (ShouldProcess (...) )
 }
 ```
 
-動作を[System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼び出しは、コマンドレットが呼び出される環境によって異なります。 前のガイドラインを使用に役立つコマンドレットがホスト環境に関係なく、他のコマンドレットで一貫して動作することを確認します。
+動作を[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼び出しは、コマンドレットが呼び出される環境によって異なります。 前のガイドラインを使用に役立つコマンドレットがホスト環境に関係なく、他のコマンドレットで一貫して動作することを確認します。
 
-呼び出し元の例については、 [System.Management.Automation.Cmdlet.Shouldprocess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッドを参照してください[依頼の確認方法](./how-to-request-confirmations.md)します。
+呼び出し元の例については、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッドを参照してください[依頼の確認方法](./how-to-request-confirmations.md)します。
 
 ## <a name="specify-the-impact-level"></a>影響のレベルを指定します。
 
@@ -74,13 +74,13 @@ if (ShouldProcess (...) )
 
 ## <a name="calling-non-confirmation-methods"></a>非確認メソッドを呼び出す
 
-コマンドレットまたはプロバイダーがメッセージを送信、確認を要求する必要がありますは、次の 3 つのメソッドを呼び出すことができます。 使用しないでください、 [System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)ため、これらの型のメッセージを送信するメソッド[System.Management.Automation.Cmdlet.Writeobject*](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)出力の混在コマンドレットまたはプロバイダーの通常の出力で困難スクリプトを記述します。
+コマンドレットまたはプロバイダーがメッセージを送信、確認を要求する必要がありますは、次の 3 つのメソッドを呼び出すことができます。 使用しないでください、 [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)ため、これらの型のメッセージを送信するメソッド[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)出力の混在コマンドレットまたはプロバイダーの通常の出力で困難スクリプトを記述します。
 
-- コマンドレットまたはプロバイダーを呼び出すことができます、ユーザーに警告して、操作を続行に、 [System.Management.Automation.Cmdlet.Writewarning*](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)メソッド。
+- コマンドレットまたはプロバイダーを呼び出すことができます、ユーザーに警告して、操作を続行に、 [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)メソッド。
 
-- 追加の情報を使用して、ユーザーを取得できる、`Verbose`パラメーターでは、コマンドレット、プロバイダーが呼び出すことができます、 [System.Management.Automation.Cmdlet.Writeverbose*](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)メソッド。
+- 追加の情報を使用して、ユーザーを取得できる、`Verbose`パラメーターでは、コマンドレット、プロバイダーが呼び出すことができます、 [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)メソッド。
 
-- コマンドレットまたはプロバイダーを呼び出すことが他の開発者、または製品サポートについては、デバッグ レベルの詳細を提供するには[System.Management.Automation.Cmdlet.Writedebug*](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)メソッド。 ユーザーを使用してこの情報を取得することができます、`Debug`パラメーター。
+- コマンドレットまたはプロバイダーを呼び出すことが他の開発者、または製品サポートについては、デバッグ レベルの詳細を提供するには[System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)メソッド。 ユーザーを使用してこの情報を取得することができます、`Debug`パラメーター。
 
 コマンドレットとプロバイダーは、まず Windows PowerShell の外部のシステムを変更する操作の実行を試みる前に、確認を要求する次のメソッドを呼び出します。
 

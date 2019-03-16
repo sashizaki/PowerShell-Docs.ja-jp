@@ -10,12 +10,12 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: b02a2e0d4b0a27c261b0bc05febda7826ad5276e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859268"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58054987"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>コマンドレットにパラメーター セットを追加する
 
@@ -179,7 +179,7 @@ Private myInputObject() As Process
 
 ## <a name="overriding-an-input-processing-method"></a>入力処理メソッドをオーバーライドします。
 
-すべてのコマンドレットは、入力処理メソッドをオーバーライドする必要があります、これは最も頻繁になります、 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。 このコマンドレットで、 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)コマンドレットは、任意の数のプロセスを処理できるように、メソッドはオーバーライドされます。 どのパラメーター セットで、ユーザー ベースのさまざまなメソッドの呼び出しが指定されている Select ステートメントが含まれています。
+すべてのコマンドレットは、入力処理メソッドをオーバーライドする必要があります、これは最も頻繁になります、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。 このコマンドレットで、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)コマンドレットは、任意の数のプロセスを処理できるように、メソッドはオーバーライドされます。 どのパラメーター セットで、ユーザー ベースのさまざまなメソッドの呼び出しが指定されている Select ステートメントが含まれています。
 
 ```csharp
 protected override void ProcessRecord()

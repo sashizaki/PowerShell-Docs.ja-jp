@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
 caps.latest.revision: 14
-ms.openlocfilehash: 59921a92661482b8d518b82f490c9879643543bb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859868"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58059577"
 ---
 # <a name="types-of-cmdlet-parameters"></a>コマンドレット パラメーターの種類
 
@@ -91,13 +91,13 @@ private string userName;
 
 ## <a name="switch-parameters"></a>スイッチ パラメーター
 
-Windows PowerShell では、 [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)に値を持つパラメーターを定義することができますの種類が自動的に設定`false`コマンドレットはときに、パラメーターが指定されていない場合と呼ばれる。 可能であれば、ブール型パラメーターの代わりにスイッチ パラメーターを使用します。
+Windows PowerShell では、 [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)に値を持つパラメーターを定義することができますの種類が自動的に設定`false`コマンドレットはときに、パラメーターが指定されていない場合と呼ばれる。 可能であれば、ブール型パラメーターの代わりにスイッチ パラメーターを使用します。
 
 次の例を検討してください。 既定では、いくつかの Windows PowerShell コマンドレットは、パイプラインに出力オブジェクトを渡さないでください。 ただし、これらのコマンドレットがある、`PassThru`スイッチ パラメーターを既定の動作をオーバーライドします。 場合、`PassThru`これらのコマンドレットを呼び出すときに、パラメーターを指定すると、コマンドレットは、パイプラインに出力オブジェクトを返します。
 
-かどうか、パラメーターの既定値を設定する必要があります。`true`呼び出しでは、パラメーターが指定されていない、ときには、パラメーターの意味を反転することを検討してください。 サンプルでは、パラメーター属性にブール値を設定するのではなく`true`、プロパティとして宣言、 [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)を入力し、するパラメーターの既定値を設定`false`.
+かどうか、パラメーターの既定値を設定する必要があります。`true`呼び出しでは、パラメーターが指定されていない、ときには、パラメーターの意味を反転することを検討してください。 サンプルでは、パラメーター属性にブール値を設定するのではなく`true`、プロパティとして宣言、 [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)を入力し、するパラメーターの既定値を設定`false`.
 
-スイッチ パラメーターを定義するには、プロパティとしてを宣言、 [System.Management.Automation.Switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)の次の例に示すように入力します。
+スイッチ パラメーターを定義するには、プロパティとしてを宣言、 [System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)の次の例に示すように入力します。
 
 ```csharp
 [Parameter(Position = 1)]

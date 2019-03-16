@@ -11,12 +11,12 @@ helpviewer_keywords:
 - attributes [PowerShell SDK], described
 ms.assetid: d3f4f652-d929-4c27-9358-9baa390a094c
 caps.latest.revision: 14
-ms.openlocfilehash: b06faf7204213b383b25685837941ad63dcb225b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: 326cd408e86402974569fc76d5e473be5a56f0b6
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853918"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58055174"
 ---
 # <a name="cmdlet-attributes"></a>コマンドレットの属性
 
@@ -32,7 +32,7 @@ Windows PowerShell では、独自のコード内でその機能を実装する�
 
 [コマンドレット属性宣言](./cmdlet-attribute-declaration.md)コマンドレットとして .NET Framework クラスを定義する方法について説明します。
 
-[資格情報の属性宣言](./credential-attribute-declaration.md)への入力を文字列に変換するためのサポートを追加する方法について説明します、 [System.Management.Automation.Pscredential](/dotnet/api/System.Management.Automation.PSCredential)オブジェクト。
+[資格情報の属性宣言](./credential-attribute-declaration.md)への入力を文字列に変換するためのサポートを追加する方法について説明します、 [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)オブジェクト。
 
 [OutputType 属性宣言](./outputtype-attribute-declaration.md)コマンドレットによって返される .NET Framework 型を指定する方法について説明します。
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
-ms.openlocfilehash: a9204ca7b28fc5792ef9bd18f6b0b24964de7386
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859548"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58057248"
 ---
 # <a name="public-resource-schema"></a>パブリック リソース スキーマ
 
@@ -21,7 +21,7 @@ Management OData では、MOF を使用して、リソースとそのプロパ�
 
 ## <a name="defining-a-resource"></a>リソースを定義します。
 
-各リソースは、Windows PowerShell コマンドレットによって返されるオブジェクトに対応します。 Publc リソースの MOF ファイルでは、クラスを宣言することで、リソースを定義します。 クラスは、オブジェクトのプロパティに対応するプロパティで構成されます。 たとえば、次の例で、 [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)クラスは、次の MOF で表されます。
+各リソースは、Windows PowerShell コマンドレットによって返されるオブジェクトに対応します。 パブリック リソースの MOF ファイルでは、クラスを宣言することで、リソースを定義します。 クラスは、オブジェクトのプロパティに対応するプロパティで構成されます。 たとえば、次の例で、 [System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)クラスは、次の MOF で表されます。
 
 ```csharp
 class PswsTest_Process
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-宣言としてエンティティ プロパティとして複合型を宣言する、`string`の種類を`EmbeddedInstance`複合型の名前を含む修飾子。 次の例 hshows プロパティの宣言の`PswsTest_ProcessModule`前の例で宣言された型。
+宣言としてエンティティ プロパティとして複合型を宣言する、`string`の種類を`EmbeddedInstance`複合型の名前を含む修飾子。 次の例のプロパティの宣言を示しています、`PswsTest_ProcessModule`前の例で宣言された型。
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];
@@ -63,7 +63,7 @@ class PswsTest_ProcessModule
 
 ### <a name="associating-entities"></a>エンティティの関連付け
 
-アソシエーションおよび AssocationClass の修飾子を使用して、2 つのエンティティを関連付けることができます。 詳細については、次を参照してください。 [Management OData エンティティを関連付ける](./associating-management-odata-entities.md)します。
+アソシエーションおよび関連クラスの修飾子を使用して、2 つのエンティティを関連付けることができます。 詳細については、次を参照してください。 [Management OData エンティティを関連付ける](./associating-management-odata-entities.md)します。
 
 ### <a name="derived-types"></a>派生型
 
@@ -72,17 +72,16 @@ class PswsTest_ProcessModule
 ```csharp
 Class Product {
 
-[Key] String ProductName;
+    [Key] String ProductName;
 
 };
 
 Class DairyProduct : Product {
 
-Uint16 PercentFat;
+    Uint16 PercentFat;
 };
 Class POPProduct : Product {
 
-Boolean IsCarbonated;
+    Boolean IsCarbonated;
 };
-
 ```

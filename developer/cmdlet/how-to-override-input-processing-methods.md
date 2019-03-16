@@ -8,28 +8,28 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 1a1ad921-5816-4937-acf1-ed4760fae740
 caps.latest.revision: 8
-ms.openlocfilehash: eff40a01b60985788ae0e21156fec7ec4e27fcf1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cfee55576518cf9ce38501192872ce94054f5213
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855918"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056398"
 ---
 # <a name="how-to-override-input-processing-methods"></a>入力処理メソッドをオーバーライドする方法
 
 これらの例では、入力の処理をコマンドレット内のメソッドを上書きする方法を示します。 これらのメソッドは、次の操作を実行に使用されます。
 
-- [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)コマンドレットによって処理されたすべてのオブジェクトに対して有効では 1 回限りのスタートアップ操作を実行するメソッドを使用します。 Windows PowerShell ランタイムでは、このメソッドを 1 回だけ呼び出します。
+- [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)コマンドレットによって処理されたすべてのオブジェクトに対して有効では 1 回限りのスタートアップ操作を実行するメソッドを使用します。 Windows PowerShell ランタイムでは、このメソッドを 1 回だけ呼び出します。
 
-- [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)コマンドレットに渡されるオブジェクトを処理するメソッドを使用します。 Windows PowerShell ランタイムでは、コマンドレットに渡される各オブジェクトに対してこのメソッドを呼び出します。
+- [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)コマンドレットに渡されるオブジェクトを処理するメソッドを使用します。 Windows PowerShell ランタイムでは、コマンドレットに渡される各オブジェクトに対してこのメソッドを呼び出します。
 
-- [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)投稿を 1 回限りの処理操作を実行するメソッドを使用します。 Windows PowerShell ランタイムでは、このメソッドを 1 回だけ呼び出します。
+- [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)投稿を 1 回限りの処理操作を実行するメソッドを使用します。 Windows PowerShell ランタイムでは、このメソッドを 1 回だけ呼び出します。
 
 ## <a name="to-override-the-beginprocessing-method"></a>BeginProcessing メソッドをオーバーライドするには
 
-- 保護されたオーバーライドを宣言、 [System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッド。
+- 保護されたオーバーライドを宣言、 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッド。
 
-次のクラスは、サンプル メッセージを出力します。 このクラスを使用する動詞と名詞コマンドレット属性での変更、新しい動詞と名詞を反映するようにクラスの名前を変更およびのオーバーライドを必要とする機能を追加し、 [System.Management.Automation.Cmdlet.Beginprocessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッド。
+次のクラスは、サンプル メッセージを出力します。 このクラスを使用する動詞と名詞コマンドレット属性での変更、新しい動詞と名詞を反映するようにクラスの名前を変更およびのオーバーライドを必要とする機能を追加し、 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッド。
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "BeginProcessingClass")]
@@ -50,9 +50,9 @@ public class TestBeginProcessingClassTemplate : Cmdlet
 
 ## <a name="to-override-the-processrecord-method"></a>ProcessRecord メソッドをオーバーライドするには
 
-- 保護されたオーバーライドを宣言、 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。
+- 保護されたオーバーライドを宣言、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。
 
-次のクラスは、サンプル メッセージを出力します。 このクラスを使用する動詞と名詞コマンドレット属性での変更、新しい動詞と名詞を反映するようにクラスの名前を変更およびのオーバーライドを必要とする機能を追加し、 [System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。
+次のクラスは、サンプル メッセージを出力します。 このクラスを使用する動詞と名詞コマンドレット属性での変更、新しい動詞と名詞を反映するようにクラスの名前を変更およびのオーバーライドを必要とする機能を追加し、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド。
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "ProcessRecordClass")]
@@ -74,9 +74,9 @@ public class TestProcessRecordClassTemplate : Cmdlet
 
 ## <a name="to-override-the-endprocessing-method"></a>EndProcessing メソッドをオーバーライドするには
 
-- 保護されたオーバーライドを宣言、 [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)メソッド。
+- 保護されたオーバーライドを宣言、 [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)メソッド。
 
-次のクラスは、サンプルを印刷します。 このクラスを使用する動詞と名詞コマンドレット属性での変更、新しい動詞と名詞を反映するようにクラスの名前を変更およびのオーバーライドを必要とする機能を追加し、 [System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)メソッド。
+次のクラスは、サンプルを印刷します。 このクラスを使用する動詞と名詞コマンドレット属性での変更、新しい動詞と名詞を反映するようにクラスの名前を変更およびのオーバーライドを必要とする機能を追加し、 [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)メソッド。
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "EndProcessingClass")]
@@ -97,10 +97,10 @@ public class TestEndProcessingClassTemplate : Cmdlet
 
 ## <a name="see-also"></a>参照
 
-[System.Management.Automation.Cmdlet.Beginprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
+[System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)
 
-[System.Management.Automation.Cmdlet.Endprocessing*](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
+[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)
 
-[System.Management.Automation.Cmdlet.Processrecord*](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
+[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
