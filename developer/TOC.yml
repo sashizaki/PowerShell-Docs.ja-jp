@@ -31,7 +31,7 @@ items:
         items:
         - name: 更新可能なヘルプの概要
           href: ./module/updatable-help-overview.md
-        - name: '更新可能なヘルプの作成: ステップ バイ ステップ'
+        - name: '更新可能なヘルプの作成: ステップバイステップ'
           href: ./module/updatable-help-authoring-step-by-step.md
         - name: 更新可能なヘルプのしくみ
           href: ./module/how-updatable-help-works.md
@@ -815,7 +815,7 @@ items:
       - name: TableControl の TableRowEntries 要素 (書式)
         href: ./format/tablerowentries-element-for-tablecontrol-format.md
       - name: TableControl の TableRowEntries の TableRowEntry 要素 (書式)
-        href: ./format/tablerowentry-element-for-tablerowentroes-for-tablecontrol-format.md
+        href: ./format/tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md
       - name: Configuration の Controls の CustomItem の Text 要素 (書式)
         href: ./format/text-element-for-customitem-for-controls-for-configuration-format.md
       - name: View の Controls の CustomItem の Text 要素 (書式)
@@ -879,7 +879,7 @@ items:
       - name: TableControl の TableColumnHeader の Width 要素 (書式)
         href: ./format/width-element-for-tablecolumnheader-for-tablecontrol-format.md
       - name: TableControl の TableRowEntry の Wrap 要素 (書式)
-        href: ./format/wrap-element-for-tablerowentry-for-tablecontrl-format.md
+        href: ./format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
       - name: WrapTables 要素 (書式)
         href: ./format/wraptables-element-format.md
   - name: コメントベースのヘルプ トピックを記述する
@@ -1006,8 +1006,6 @@ items:
       href: ./workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
     - name: Windows PowerShell アクティビティでワークフローを作成する
       href: ./workflow/creating-a-workflow-with-windows-powershell-activities.md
-    - name: Windows PowerShell ワークフローのアクティビティ コントローラーを拡張する
-      href: ./workflow/extending-the-windows-powershell-workflow-activity-controller.md
     - name: Windows PowerShell ワークフローをインポートして呼び出す
       href: ./workflow/importing-and-invoking-a-windows-powershell-workflow.md
     - name: Windows PowerShell API でジョブをスケジュールする
@@ -1143,9 +1141,9 @@ items:
     items:
     - name: 新機能
       href: windows-powershell-reference-whats-new.md
-ms.openlocfilehash: d95ae41e37ade171609500f0dd2627712aa6dae9
-ms.sourcegitcommit: 47becf2823ece251a7264db2387bb503cf3abaa9
+ms.openlocfilehash: 1ccdff0cabb81cbd68ecbfbdae69672463f9c4e8
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/19/2018
-ms.locfileid: "49451102"
+ms.lasthandoff: 03/16/2019
+ms.locfileid: "58056619"
