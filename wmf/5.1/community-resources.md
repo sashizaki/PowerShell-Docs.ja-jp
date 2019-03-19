@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: コミュニティ リソース
-ms.openlocfilehash: 144fa655d4c14656246bc6c86e7c43f1ea8dca3c
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: a26f6eefeb3beb41575675b3dd4077f056606a70
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219370"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794877"
 ---
-# <a name="community-resources"></a>コミュニティ リソース #
-> 注意: この情報は暫定版であり、変更することがあります。
+# <a name="community-resources"></a>コミュニティ リソース
+> 注: この情報は暫定的であり、変更されることがあります。
 
 PowerShell チームは製品に関するお客様のフィードバックを歓迎し、ユーザーに対して複数の問い合わせ方法をサポートします。
 以下のどの方法でもフィードバックを提供できますが、PowerShell のホーム ページのリンクから始めることをお勧めします。

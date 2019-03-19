@@ -1,3 +1,11 @@
+---
+ms.openlocfilehash: 6e36e6599e36218ce2a925dceda7aa0ee6811057
+ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 02/03/2019
+ms.locfileid: "58142219"
+---
 # <a name="microsoft-open-source-code-of-conduct"></a>Microsoft オープン ソース倫理規定
 
 このプロジェクトは [Microsoft オープン ソース論理規定](https://opensource.microsoft.com/codeofconduct/)を採用しています。
@@ -24,7 +32,7 @@ PowerShell-Docs リポジトリへようこそ。PowerShell-Docs は、公式の
 
 ## <a name="contributing"></a>投稿
 
-[pull 要求](https://help.github.com/articles/using-pull-requests/)を使用して、積極的に投稿をこのリポジトリの*ステージング* ブランチに結合しています。
+[pull request](https://help.github.com/articles/using-pull-requests/)を使用して、積極的に投稿をこのリポジトリの*ステージング* ブランチに結合しています。
 コミュニティが投稿を自由に使用できるように、pull request を送信する前に[投稿の使用許諾契約に署名](https://cla.microsoft.com/)する必要があります。
 
 投稿の詳細については、[共同作成者ガイド](CONTRIBUTING.md)を参照してください。

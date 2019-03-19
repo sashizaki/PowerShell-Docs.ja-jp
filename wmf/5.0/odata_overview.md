@@ -1,22 +1,20 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: 01d4989711c22db20431876c52740afb350caad0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 1153738fdf6f926d5d819bbf91450408dcb17f71
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219550"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794496"
 ---
 # <a name="generate-powershell-cmdlets-based-on-odata-endpoint"></a>OData エンドポイントに基づく PowerShell コマンドレットの生成
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>OData エンドポイントに基づく Windows PowerShell コマンドレットの生成
---------------------------------------------------------------
+
+## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint"></a>OData エンドポイントに基づく Windows PowerShell コマンドレットの生成
 
 **Export-ODataEndpointProxy** は、特定の OData エンドポイントによって公開される機能に基づいて、一連の Windows PowerShell コマンドレットを生成するコマンドレットです。
 
 次の例では、この新しいコマンドレットを使用する方法を示します。
-
-\# Export-ODataEndpointProxy の基本ユース ケース
 
 ```powershell
 Export-ODataEndpointProxy -Uri 'http://services.odata.org/v3/(S(snyobsk1hhutkb2yulwldgf1))/odata/odata.svc' -OutputModule C:\Users\user\Generated.psd1
@@ -50,8 +48,8 @@ ipmo 'C:\Users\user\Generated.psd1'
 -   関連付け
 -   ストリームの引き渡し
 
-<a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>ODataUtils を使用した OData エンドポイントに基づく Windows PowerShell コマンドレットの生成
-------------------------------------------------------------------------------
+## <a name="generate-windows-powershell-cmdlets-based-on-an-odata-endpoint-with-odatautils"></a>ODataUtils を使用した OData エンドポイントに基づく Windows PowerShell コマンドレットの生成
+
 ODataUtils モジュールにより、OData をサポートする REST エンドポイントから Windows PowerShell コマンドレットを生成できます。 Microsoft.PowerShell.ODataUtils Windows PowerShell モジュールには次の増分拡張があります。
 -   サーバー側エンドポイントからクライアント側への追加情報のチャネル。
 -   クライアント側ページング サポート
@@ -59,6 +57,7 @@ ODataUtils モジュールにより、OData をサポートする REST エンド
 -   Web 要求のヘッダーのサポート
 
 Export-ODataEndPointProxy コマンドレットによって生成されたプロキシ コマンドレットは、情報ストリーム (新しい Windows PowerShell 5.0 の機能) 上のサーバー側 OData エンドポイントから (クライアント側プロキシの生成中に使用される $metadata には含まれない) 追加情報を提供します。 次に、その情報を取得する方法の例を示します。
+
 ```powershell
 Import-Module Microsoft.PowerShell.ODataUtils -Force
 $generatedProxyModuleDir = Join-Path -Path $env:SystemDrive -ChildPath 'ODataDemoProxy'
@@ -81,6 +80,7 @@ $additionalInfo['odata.count']
 ```
 
 クライアント側ページング サポートを使用して、サーバー側からバッチのレコードを取得できます。 これは、ネットワーク経由でサーバーから大量のデータを取得する必要がある場合に役立ちます。
+
 ```powershell
 $skipCount = 0
 $batchSize = 3
@@ -94,6 +94,7 @@ $skipCount += $batchSize
 ```
 
 生成されたプロキシ コマンドレットは、クライアントが必要なレコード プロパティのみを受信するためのフィルターとして使用できる -Select パラメーターをサポートします。 フィルター処理はサーバー側で行われるため、ネットワーク経由で転送されるデータの量が削減されます。
+
 ```powershell
 # In the below example only the Name property of the
 # Product record is retrieved from the server side.
@@ -101,6 +102,7 @@ Get-Product -Top 2 -AllowUnsecureConnection -AllowAdditionalData -Select Name
 ```
 
 Export-ODataEndpointProxy コマンドレットと、これによって生成されたプロキシ コマンドレットは、ヘッダー パラメーター (ハッシュ テーブルとして値を指定する) をサポートします。ヘッダー パラメーターは、サーバー側 OData エンドポイントで想定される追加情報をチャネルするために使用できます。 次の例では、認証用のサブスクリプション キーを想定するサービスのヘッダーによってサブスクリプション キーをチャネルすることができます。
+
 ```powershell
 # As an example, in the below command 'XXXX' is the authentication used by the
 # Export-ODataEndpointProxy cmdlet to interact with the server-side
