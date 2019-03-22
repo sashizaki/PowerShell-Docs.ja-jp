@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: JEA, PowerShell, セキュリティ
 title: JEA セッションの構成
-ms.openlocfilehash: 1b598522d43b2c1a26a739a67cee5181b21a7c32
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: b98726ea7ed3aabdfd05034c3b70118e327160cd
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655465"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056595"
 ---
 # <a name="jea-session-configurations"></a>JEA セッションの構成
 
@@ -80,8 +80,9 @@ RunAsVirtualAccount = $true
 RunAsVirtualAccount = $true
 RunAsVirtualAccountGroups = 'NetworkOperator', 'NetworkAuditor'
 ```
+
 > [!NOTE]
-> 仮想アカウントは、ローカル サーバーのセキュリティ ポリシーでサービスとしてログオンを一時的に付与されます。  指定 VirtualAccountGroups のいずれかが既に許可されている場合、ポリシーでは、この権限を個々 の仮想アカウントが不要になった追加され、ポリシーから削除します。  これは、ドメイン コント ローラーのセキュリティ ポリシーのリビジョンが密接に監査対象のドメイン コント ローラーなどのシナリオで役立ちます。  これは、2018 年 11 月に Windows Server 2016 または後でプログラムのロールアップと 2019 年 1 月に Windows Server 2019 または後でプログラムのロールアップでは使用のみ。
+> 仮想アカウントには、ローカル サーバーのセキュリティ ポリシーで、サービスとしてログオンが一時的に付与されます。  指定されている VirtualAccountGroups の 1 つにポリシーでこれが既に付与されている場合、個別の仮想アカウントがポリシーに追加されたり、ポリシーから削除されたりすることがなくなります。  セキュリティ ポリシーの改訂が念入りに監査されるドメイン コントローラーのようなシナリオで役立ちます。  これは、2018 年 11 月以降のロールアップが適用された Windows Server 2016 と、2019 年 1 月以降のロールアップが適用された Windows Server 2019 でのみ利用できます。
 
 #### <a name="group-managed-service-account"></a>グループの管理されたサービス アカウント
 
@@ -104,7 +105,6 @@ GroupManagedServiceAccount = 'Domain\MyJEAgMSA'
 
 > [!NOTE]
 > グループ管理されたサービス アカウントは、ドメインに参加しているコンピューターにおいてのみ、Windows PowerShell 5.1 以降だけで使用できます。
-
 
 #### <a name="more-information-about-run-as-users"></a>実行ユーザーに関する詳しい情報
 
@@ -179,6 +179,7 @@ RoleDefinitions = @{
 ```
 
 ### <a name="role-capability-search-order"></a>ロール機能の検索順序
+
 上の例で示されているように、ロール機能はロール機能ファイルのフラット名 (拡張子を除いたファイル名) によって参照されます。
 システムにおいて同じフラット名で複数のロール機能を使用できる場合、PowerShell は暗黙的な検索順序を使って有効なロール機能ファイルを選びます。
 同じ名前のすべてのロール機能ファイルにアクセスできるようには**なりません**。
@@ -217,6 +218,7 @@ RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon'
 > 条件付きアクセス規則を使用できるのは、Windows PowerShell 5.1 以降のみです。
 
 ### <a name="other-properties"></a>他のプロパティ
+
 セッション構成ファイルではロール機能ファイルで実行できるすべてのことを実行できますが、接続しているユーザーが別のコマンドにアクセスできるようにする機能だけはありません。
 すべてのユーザーに特定のコマンドレット、関数、またはプロバイダーへのアクセスを許可する場合は、セッション構成ファイルで行うことができます。
 セッション構成ファイルでサポートされているプロパティの一覧については、`Get-Help New-PSSessionConfigurationFile -Full` を実行してください。

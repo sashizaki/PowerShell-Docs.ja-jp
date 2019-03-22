@@ -4,15 +4,14 @@ ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 contributor: keithb
 title: WMF 5.1 のインストールと構成
-ms.openlocfilehash: e5c7968744a442b4be9f1e43a45e91429a6d6165
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: c439d0851189a89a81fa38194632dc54475a001d
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55680349"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055988"
 ---
-# <a name="install-and-configure-wmf-51"></a>WMF 5.1 のインストールと構成 #
-
+# <a name="install-and-configure-wmf-51"></a>WMF 5.1 のインストールと構成
 
 ## <a name="download-and-install-the-wmf-51-package"></a>WMF 5.1 パッケージのダウンロードとインストール
 
@@ -23,8 +22,8 @@ ms.locfileid: "55680349"
 | Windows Server 2012 R2 |                         | [Win8.1AndW2K12R2-KB3191564-x64.msu][] |
 | Windows Server 2012    |                         | [W2K12-KB3191565-x64.msu][]            |
 | Windows Server 2008 R2 | [.NET Framework 4.5.2][]| [Win7AndW2K8R2-KB3191566-x64.ZIP][]    |
-| Windows 8.1            |                         | **x64:** [Win8.1AndW2K12R2-KB3191564-x64.msu][]</br>**x86:** [Win8.1-KB3191564-x86.msu][] |
-| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:** [Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86:** [Win7-KB3191566-x86.ZIP][] |
+| Windows 8.1            |                         | **x64:**[Win8.1AndW2K12R2-KB3191564-x64.msu][]</br>**x86:**[Win8.1-KB3191564-x86.msu][] |
+| Windows 7 SP1          | [.NET Framework 4.5.2][]| **x64:**[Win7AndW2K8R2-KB3191566-x64.ZIP][]</br>**x86:**[Win7-KB3191566-x86.ZIP][] |
 
 [.NET Framework 4.5.2]: https://www.microsoft.com/download/details.aspx?id=42642
 [W2K12-KB3191565-x64.msu]: https://go.microsoft.com/fwlink/?linkid=839513
@@ -35,7 +34,8 @@ ms.locfileid: "55680349"
 
 ## <a name="install-wmf-51-for-windows-server-2008-r2-and-windows-7"></a>Windows Server 2008 R2 および Windows 7 で WMF 5.1 をインストールする
 
-> **注:** Windows Server 2008 R2 および Windows 7 でのインストール手順は変更されているため、他のパッケージの手順と異なります。 Windows Server 2012 R2、Windows Server 2012、および Windows 8.1 のインストール手順は次のとおりです。
+> [!NOTE]
+> Windows Server 2008 R2 および Windows 7 でのインストール手順は変更されているため、他のパッケージの手順と異なります。 Windows Server 2012 R2、Windows Server 2012、および Windows 8.1 のインストール手順は次のとおりです。
 
 **Windows Server 2008 R2 および Windows 7 で WMF 5.1 をインストールする**
 
@@ -50,7 +50,7 @@ ZIP ファイルを展開したら、Windows 7 または Windows Server 2008 R2 
 
 Install-WMF5.1.ps1 は Windows Server 2008 R2 および Windows 7 でのインストールの自動化を容易にするため、次のパラメーターを受け取ります。
 
-- AcceptEulaこのパラメーターが含まれると、使用許諾契約書は自動的に受け入れは表示されません。
+- AcceptEula:このパラメーターが含まれる場合、使用許諾契約書は自動的に受け入れられ、表示はされません。
 - AllowRestart:このパラメーターは、AcceptEula が指定されている場合にのみ使用できます。 このパラメーターが含まれていて、WMF 5.1 のインストール後に再起動が必要な場合は、インストールが完了した後すぐに、メッセージが表示されることなく再起動が実行されます。
 
 **Windows Server 2008 R2 SP1 および Windows 7 SP1 での WMF 5.1 の前提条件**
@@ -67,8 +67,8 @@ Windows PowerShell Desired State Configuration (DSC) は、WinRM に依存しま
 WinRM は、Windows Server 2008 R2 および Windows 7 では既定で無効になっています。
 WinRM を有効にするには、Windows PowerShell 管理者特権セッションで `Set-WSManQuickConfig` を実行します。
 
-
 ## <a name="install-wmf-51-for-windows-server-2012-r2-windows-server-2012-and-windows-81"></a>Windows Server 2012 R2、Windows Server 2012、および Windows 8.1 で WMF 5.1 をインストールする
+
 **Windows エクスプローラー (または Windows Server 2012 R2 または Windows 8.1 ではファイル エクスプローラー) からインストールする**
 
 1. MSU ファイルをダウンロードしたフォルダーに移動します。

@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC プル クライアントのセットアップ
-ms.openlocfilehash: b7cd6dc0087eb8368c5467df4c3c7266ed704451
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 54c68ac26e5388260e252ce01418170e26ddecde
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402213"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054256"
 ---
 # <a name="setting-up-a-dsc-pull-client"></a>DSC プル クライアントのセットアップ
 
@@ -23,4 +23,5 @@ ms.locfileid: "53402213"
 * [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
 * [構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)
 
-> **注**:これらのトピックでは、PowerShell 5.0 に適用されます。 PowerShell 4.0 でのプル クライアントのセットアップについては、「[PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID4.md)」を参照してください。
+> [!NOTE]
+> これらのトピックは、PowerShell 5.0 に適用されます。 PowerShell 4.0 でのプル クライアントのセットアップについては、「[PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID4.md)」を参照してください。

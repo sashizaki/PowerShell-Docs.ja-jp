@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC を使用した初回起動時の仮想マシンの構成
-ms.openlocfilehash: 7b9ebc6c818aa39365759945667426c8976997e5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: f9634c330832e23fb2c6f08c5b299b55a5505ac9
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402982"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58059424"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>DSC を使用した初回起動時の仮想マシンの構成
 
@@ -18,16 +18,17 @@ ms.locfileid: "53402982"
 
 > [!NOTE]
 > このトピックで説明されている **DSCAutomationHostEnabled** レジストリ キーは、PowerShell 4.0 では使用できません。
-> PowerShell 4.0 の初回起動時に、新しい仮想マシンを構成する方法については、[Want to Automatically Configure Your Machines Using DSC at Initial Boot-up?]> (https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/) (初回起動時に DSC を使用して自動的にマシンを構成する方法) をご覧ください。
+> PowerShell 4.0 の初回起動時に、新しい仮想マシンを構成する方法については、「[Want to Automatically Configure Your Machines Using DSC at Initial Boot-up?](https://blogs.msdn.microsoft.com/powershell/2014/02/28/want-to-automatically-configure-your-machines-using-dsc-at-initial-boot-up/)」 (初回起動時に DSC を使用して自動的にマシンを構成する方法) をご覧ください。
 
 これらの例を実行するには、以下が必要になります。
 
-- 作業する起動可能な VHD。 [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) で、Windows Server 2016 の評価版と共に ISO をダウンロードできます。 「[Creating Bootable Virtual Hard Disks](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10))」 (起動可能な仮想ハード ディスクの作成) で、ISO イメージから VHD を作成する方法に関する手順を参照してください。
+- 作業する起動可能な VHD。 [TechNet Evaluation Center](https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016) で、Windows Server 2016 の評価版と共に ISO をダウンロードできます。
+  「[Creating Bootable Virtual Hard Disks](/previous-versions/windows/it-pro/windows-7/gg318049(v=ws.10))」 (起動可能な仮想ハード ディスクの作成) で、ISO イメージから VHD を作成する方法に関する手順を参照してください。
 - Hyper-V が有効なホスト コンピューター。 詳細については、「[Hyper-V の概要](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831531(v=ws.11))」をご覧ください。
 
   DSC を使用すると、ソフトウェアのインストールと初回起動時のコンピューターの構成を自動化できます。
   初回起動時のプロセスで実行されるように、起動可能なメディア (VHD など) に構成 MOF ドキュメントまたはメタ構成のいずれかを挿入して、この操作を行います。
-  この動作は、`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies` の [DSCAutomationHostEnabled レジストリ キー](DSCAutomationHostEnabled.md) によって指定されます。
+  この動作は、`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` の [DSCAutomationHostEnabled レジストリ キー](DSCAutomationHostEnabled.md) によって指定されます。
   このキーの既定値は 2 です。これは、初回起動時に DSC を実行することを許可します。
 
   初回起動時に DSC を実行しない場合は、[DSCAutomationHostEnabled レジストリ キー](DSCAutomationHostEnabled.md)を 0 に設定します。
@@ -139,7 +140,7 @@ configuration PullClientBootstrap
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
    ```
 
-2. [DSC Web プル サーバーをセットアップ](../pull-server/pullServer.md)して、**SampleIISInistall** 構成を適切なフォルダーに保存します。
+2. [DSC Web プル サーバーをセットアップ](../pull-server/pullServer.md)して、**SampleIISInstall** 構成を適切なフォルダーに保存します。
 
 3. PowerShell 5.0 以降を実行しているコンピューターで、上記のメタ構成 (**PullClientBootstrap**) を PowerShell スクリプト (.ps1) ファイルとして保存します。
 
@@ -172,7 +173,7 @@ configuration PullClientBootstrap
 
 ## <a name="disable-dsc-at-boot-time"></a>起動時の DSC を無効にする
 
-`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\DSCAutomationHostEnabled` キーの値は既定で 2 に設定されます。これにより、コンピューターが保留中または最新の状態である場合に、DSC 構成を実行することができます。 初回起動時に構成を実行しない場合は、このキーの値を 0 に設定する必要があります。
+`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\DSCAutomationHostEnabled` キーの値は既定で 2 に設定されます。これにより、コンピューターが保留中または最新の状態である場合に、DSC 構成を実行することができます。 初回起動時に構成を実行しない場合は、このキーの値を 0 に設定する必要があります。
 
 1. [Mount-VHD](/powershell/module/hyper-v/mount-vhd) コマンドレットを呼び出して、VHD をマウントします。 たとえば、次のように入力します。
 
@@ -186,10 +187,10 @@ configuration PullClientBootstrap
    reg load HKLM\Vhd E:\Windows\System32\Config\Software`
    ```
 
-3. PowerShell レジストリ プロバイダーを使用して `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\*` に移動します。
+3. PowerShell レジストリ プロバイダーを使用して `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` に移動します。
 
    ```powershell
-   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies`
+   Set-Location HKLM:\Software\Microsoft\Windows\CurrentVersion\Policies\System`
    ```
 
 4. `DSCAutomationHostEnabled` の値を 0 に変更します。

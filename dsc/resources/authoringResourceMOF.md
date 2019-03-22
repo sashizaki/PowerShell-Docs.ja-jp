@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MOF を使用したカスタム DSC リソースの記述
-ms.openlocfilehash: 5917e20769e750042a9855649ff5bec36ad14eb4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: f243c3e3297711e6f6346a0f813a9c017fe227c3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55682081"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58059730"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>MOF を使用したカスタム DSC リソースの記述
 
@@ -69,7 +69,8 @@ class Demo_IISWebsite : OMI_BaseResource
 
 リソース スクリプトでは、リソースのロジックを実装します。 このモジュールでは、**Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** という 3 つの関数を含める必要があります。 3 つのすべての関数は、リソース用に作成した MOF スキーマで定義されている一連のプロパティと同じパラメーター セットを受け取る必要があります。 このドキュメントでは、この一連のプロパティを "リソース プロパティ" と呼びます。 これらの 3 つの関数は、<ResourceName>.psm1 というファイルに格納します。 次の例では、関数は Demo_IISWebsite.psm1 というファイルに格納されます。
 
-> **注**:リソースに対して同じ構成スクリプトを複数回実行する場合、エラーが発生せずに、スクリプトを 1 回実行したときと同じ状態にリソースが保たれる必要があります。 これを実現するには、**Get-TargetResource** と **Test-TargetResource** 関数によってリソースが変更されないようにし、シーケンス内で同じパラメーター値を使用して **Set-TargetResource** 関数を複数回呼び出した場合に、1 回呼び出した場合と常に同じ結果になるようにします。
+> [!NOTE]
+> リソースに対して同じ構成スクリプトを複数回実行する場合、エラーが発生せずに、スクリプトを 1 回実行したときと同じ状態にリソースが保たれる必要があります。 これを実現するには、**Get-TargetResource** と **Test-TargetResource** 関数によってリソースが変更されないようにし、シーケンス内で同じパラメーター値を使用して **Set-TargetResource** 関数を複数回呼び出した場合に、1 回呼び出した場合と常に同じ結果になるようにします。
 
 **Get-TargetResource** 関数の実装では、パラメーターとして指定されたキー リソース プロパティ値を使用して、指定されたリソース インスタンスの状態を確認します。 この関数は、キーとしてすべてのリソース プロパティを、対応する値としてこれらのプロパティの実際の値を一覧表示するハッシュ テーブルを返す必要があります。 コードの例は次のとおりです。
 
@@ -276,7 +277,7 @@ FunctionsToExport = @("Get-TargetResource", "Set-TargetResource", "Test-TargetRe
 
 ## <a name="supporting-psdscrunascredential"></a>PsDscRunAsCredential のサポート
 
->**注:** **PsDscRunAsCredential** PowerShell 5.0 以降ではサポートされています。
+>**注:** **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。
 
 **PsDscRunAsCredential** プロパティを [DSC 構成](../configurations/configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。
 詳細については、「[ユーザーの資格情報を指定して DSC を実行する](../configurations/runAsUser.md)」を参照してください。
@@ -291,15 +292,15 @@ if (PsDscContext.RunAsUser) {
 }
 ```
 
-## <a name="rebooting-the-node"></a>ノードを再起動します。
+## <a name="rebooting-the-node"></a>Node を再起動する
 
-場合実行するアクション、`Set-TargetResource`関数には、再起動が必要です、ノードを再起動するように LCM を指示するグローバル フラグを使用することができます。 この再起動は、直後後に発生します、`Set-TargetResource`関数が完了します。
+`Set-TargetResource` 関数で行われるアクションに再起動が必要となる場合、グローバル フラグを使用し、Node の再起動を LCM に指示できます。 この再起動は、`Set-TargetResource` 関数の完了直後に行われます。
 
-内で、`Set-TargetResource`関数は、次のコード行を追加します。
+`Set-TargetResource` 関数内で次のコード行を追加します。
 
 ```powershell
 # Include this line if the resource requires a system reboot.
 $global:DSCMachineStatus = 1
 ```
 
-ノードを再起動するように LCM のために、 **RebootNodeIfNeeded**フラグ設定する必要があります`$true`します。 **ActionAfterReboot**設定に設定する必要がありますも**ContinueConfiguration**、既定値します。 LCM の構成の詳細については、次を参照してください。[ローカル構成マネージャーの構成](../managing-nodes/metaConfig.md)、または[ローカル構成マネージャー (v4) の構成](../managing-nodes/metaConfig4.md)します。
+LCM で Node を再起動するには、**RebootNodeIfNeeded** フラグを `$true` に設定する必要があります。 また、**ActionAfterReboot** 設定を既定である **ContinueConfiguration** に設定してください。 LCM の構成方法については、「[ローカル構成マネージャーの構成](../managing-nodes/metaConfig.md)」または「[ローカル構成マネージャーの構成 (v4)](../managing-nodes/metaConfig4.md)」を参照してください。

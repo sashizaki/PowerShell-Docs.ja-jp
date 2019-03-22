@@ -2,31 +2,32 @@
 ms.date: 12/11/2018
 contributor: JKeithB, SydneyhSmith
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
-title: 互換性のある PowerShell エディションまたはオペレーティング システムを使用してパッケージ
-ms.openlocfilehash: 8230866561d3021379a48cc2c83fb4104a4058c1
-ms.sourcegitcommit: d396d0e4cfe3d279f399c17e7337380a31d373ac
-ms.translationtype: MTE95
+title: 互換性のある PowerShell エディションまたはオペレーティング システムが含まれるパッケージ
+ms.openlocfilehash: 14038aa9b0453e1d06e6587e97da391b56297c75
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/21/2018
-ms.locfileid: "53747706"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057180"
 ---
-# <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>互換性のある PowerShell エディションまたはオペレーティング システムを使用してパッケージ
+# <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>互換性のある PowerShell エディションまたはオペレーティング システムが含まれるパッケージ
 
 バージョン 5.1 以降、機能セットとプラットフォーム互換性が異なる別エディションの PowerShell が用意されています。
 
-## <a name="searching-by-powershell-edition"></a>PowerShell のエディションでの検索 
-Powershell の 2 つのエディションは次のとおりです。
-- **Desktop Edition:** .NET Framework 上に構築され、Windows の完全フットプリント エディション (Server Core、Windows Desktop など) で実行される PowerShell のバージョンをターゲットとするスクリプトおよびモジュールと互換性があります。
-- **コア エディション:**.NET Core 上に構築され、スクリプトおよび Nano Server などの Windows や Windows IoT の縮小エディションで実行されている PowerShell のバージョンを対象とするモジュールとの互換性を提供します。
+## <a name="searching-by-powershell-edition"></a>PowerShell エディションで検索する
 
-### <a name="powershell-gallery-allows-you-to-filter-packages-compatible-for-specific-powershell-editions"></a>PowerShell ギャラリーでは、特定の PowerShell エディションの互換性のあるパッケージをフィルター処理できます。
+PowerShell の 2 つのエディション:
+- **Desktop Edition:**.NET Framework 上に構築され、Windows の完全フットプリント エディション (Server Core、Windows Desktop など) で実行される PowerShell のバージョンをターゲットとするスクリプトおよびモジュールと互換性があります。
+- **Core Edition:**.NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
 
-パッケージが互換性のある場合は、指定した PSEditions ' PowerShell Editions' の一部として表示されているページを表示するパッケージとパッケージの結果。
+### <a name="powershell-gallery-allows-you-to-filter-packages-compatible-for-specific-powershell-editions"></a>PowerShell ギャラリーでは、特定の PowerShell エディションに対して互換性のあるパッケージをフィルタリングできます
+
+パッケージが指定された PSEditions と互換性がある場合、'PowerShell Editions' の一部としてパッケージの表示ページおよびパッケージ結果に表示されます。
 PowerShell を使用して互換性のあるパッケージを検索することもできます。
 
 ![PSEditions での項目表示ページ](../../Images/packagedisplaypagewithpseditions.PNG)
 
-### <a name="search-for-packages-in-the-gallery-ui-that-work-on-powershell-core"></a>PowerShell Core で機能するギャラリー UI でのパッケージを検索します。
+### <a name="search-for-packages-in-the-gallery-ui-that-work-on-powershell-core"></a>PowerShell Core で機能するギャラリー UI のパッケージを検索する
 
 Tags:"PSEdition_Desktop" と Tags:"PSEdition_Core" を使用して PowerShell ギャラリー上のパッケージをフィルター処理します。
 
@@ -38,9 +39,10 @@ Tags:"PSEdition_Desktop" と Tags:"PSEdition_Core" を使用して PowerShell �
 
 ![Desktop PSEdition と互換性のある項目の検索](../../Images/searchresultswithpseditionsdesktop.PNG)
 
-### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>PowerShell を使用して互換性のあるエディションを検索するパッケージを検索します。
-PowerShell のエディションと OS のフィルター処理するタグを指定することができます。 使用する、`Find-Package`コマンドレットを指定する、 `-Tag` edition (およびの OS) を指定するパラメーター対象としています。
-このように：
+### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>PowerShell を使用し、パッケージの中から互換性のあるエディションを見つける
+PowerShell エディションと OS のタグを指定してフィルタリングできます。
+`Find-Package` コマンドレットを指定します。`-Tag` パラメーターを指定し、対象のエディション (と OS) を指定します。
+例:
 
 ```powershell
 # Find modules compatible with PowerShell Core:
@@ -50,15 +52,15 @@ Find-Module -Tag PSEdition_Core
 Find-Module -Tag PSEdition_Core, Linux
 ```
 
-## <a name="searching-by-operating-system"></a>オペレーティング システムでの検索 
+## <a name="searching-by-operating-system"></a>オペレーティング システムで検索する
 
-PowerShell Core は、Windows、Linux、および MacOS の使用可能なであるために、これらのオペレーティング システムの任意の組み合わせのギャラリー内のパッケージを設計する場合があります。 ギャラリー UI には、オペレーティング システムでタグ付けされたパッケージを検索するのに searchs に次のタグを使用します。
+PowerShell Core は Windows、Linux、MacOS で利用できるため、ギャラリーのパッケージは、それらの OS の組み合わせに合わせて設計されている場合があります。 ギャラリー UI では、次の検索タグを使用し、オペレーティング システムのタグが付けられたパッケージを見つけます。
 
 - タグ:"Windows"
 - タグ:"Linux"
-- タグ:"MacOS" 
+- タグ:"MacOS"
 
-これらのタグを指定することができます`Find-Module`(およびその他の PowerShellGet モジュールのコマンドレット) 次のようにします。
+`Find-Module` (と PowerShellGet モジュールのその他のコマンドレット) でこれらのタグを指定できます。例:
 
 ```powershell
 # Find Modules compatible with Windows
@@ -67,17 +69,17 @@ Find-Module -Tag Linux
 
 ## <a name="searching-for-multiple-compatibilities"></a>複数の互換性の検索
 
-構文を使用して複数の互換性のあるパッケージを探すことができます。 
+次の構文を使用し、互換性が複数あるパッケージを検索できます。
 
-タグ"Compatibility1""Compatibility2" 
+タグ:"Compatibility1" "Compatibility2"
 
-たとえば、Windows と Linux の両方のマシンで実行される PowerShell Core の互換性を持つパッケージを探している場合は、検索タグを使用します。
+たとえば、Windows コンピューターと Linux コンピューターの両方で実行される PowerShell Core Compatibility が与えられたパッケージを検索する場合、次の検索タグを使用します。
 
-タグ"PSEdition_Core""Linux"の"Windows" 
+タグ:"PSEdition_Core" "Windows" "Linux"
 
-PowerShell を使用して検索するに使用することができます、 `Find-Module` (および PowerShellGet モジュールの他のコマンドレット) 次のようにします。
+PowerShell を使用して検索するには、`Find-Module` (と PowerShellGet モジュールのその他のコマンドレット) を使用できます。例:
 
-```powewrshell
+```powershell
 # Find scripts compatible with PowerShell Core, Windows, and Linux
 Find-Script -Tag PSEdition_Core,Linux,Windows
 

@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: PowerShell ギャラリー UI に影響を与えるパッケージ マニフェストの値
-ms.openlocfilehash: dcba56d9f7edf0c08a3b9e3f2326b39a6b3be3fa
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655347"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58058217"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell ギャラリー UI に影響を与えるパッケージ マニフェストの値
 
@@ -40,7 +40,7 @@ ms.locfileid: "53655347"
 | **ロール機能** | PowerShell ギャラリーに公開されたモジュールに 1 つ以上のロール機能 (.psrc) ファイルが含まれる場合に表示されます。このファイルは JEA で使用されます。 [ロール機能](/powershell/jea/role-capabilities)の詳細については、JEA のドキュメントをご覧ください。 | 可 | いいえ |
 | **PowerShell のエディション** | スクリプト マニフェストまたはモジュール マニフェスト内で指定されます。 PowerShell 5.0 で使用するように設計されたモジュールの場合は、タグを使用して制御されます。 デスクトップの場合には PSEdition_Desktop タグを使用し、コアの場合には PSEdition_Core タグを使用します。 PowerShell 5.1 以降でのみ使用されるモジュールの場合には、メイン マニフェストに CompatiblePSEditions キーが存在します。 詳細については [PowerShell Get のドキュメント](module-psedition-support.md)で、PS のエディションの機能について確認してください。 | 可 | 可 |
 | **依存関係** | 依存関係は、モジュール マニフェストの RequiredModules かスクリプト マニフェストの #Requires –Module (name) のいずれかで宣言される、PowerShell ギャラリー内のモジュールです。 | 可 | 可 |
-| **Powershell の最小バージョン** | これは、モジュール マニフェストの PowerShellVersion で指定できます。 | 可 | いいえ |
+| **PowerShell の最小バージョン** | これは、モジュール マニフェストの PowerShellVersion で指定できます。 | 可 | いいえ |
 | **バージョン履歴** | バージョン履歴は、モジュールに加えられた更新を PowerShell ギャラリーに反映します。 削除機能を使用してパッケージのバージョンを非表示にしている場合、パッケージの所有者以外には、パッケージのバージョンはバージョン履歴に表示されません。 | いいえ | いいえ |
 | **プロジェクト サイト** | プロジェクト サイトは、モジュールでは ProjectURI を指定することにより、モジュール マニフェストの Privatedata\PSData セクション内で指定されます。 スクリプト マニフェストでは、.PROJECTURI を指定することにより制御されます。 | 可 | 可 |
 | **ライセンス** | ライセンス リンクは、モジュールでは LicenseURI を指定することにより、モジュール マニフェストの Privatedata\PSData セクション内で指定されます。 スクリプト マニフェストでは、.LICENSEURI を指定することにより制御されます。 LicenseURI を通してライセンスが指定されていない、またはモジュール内にライセンスが指定されていない場合には、PowerShell ギャラリーの使用条件によってパッケージの使用条件が指定されることに注意する必要があります。 詳細については、使用条件をご覧ください。 | 可 | 可 |

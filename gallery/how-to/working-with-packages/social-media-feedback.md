@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: ソーシャル メディアやコメントを使用したフィードバックの提供
-ms.openlocfilehash: a7cdcc2ff2c18fb606d077adf0bdecf57c90703f
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: a27a2fc7cf54835cb53b11382c20d1354345a5a3
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003761"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055004"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>ソーシャル メディアやコメントを使用したフィードバックの提供
 
@@ -27,7 +27,6 @@ PowerShell ギャラリー内にある各パッケージのページの左側に
 他のユーザーに勧めたいパッケージを見つけた場合も、こうすることをお勧めします。
 PowerShell ギャラリーでは、パッケージの "共有" について各ソーシャル メディア サイトを確認し、各ソーシャル メディア サイト内でパッケージが共有された回数を表示します。
 これにより、パッケージが共有された回数のみが表示されるため、他のユーザーからは "いいね!" と評価されたパッケージであると解釈されます。
-
 
 ## <a name="comments"></a>備考
 

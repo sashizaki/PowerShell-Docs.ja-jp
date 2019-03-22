@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: プル サーバーのベスト プラクティス
-ms.openlocfilehash: da67f8fd793878b097ffb260afad0fcf5c69bb04
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402974"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057707"
 ---
 # <a name="pull-server-best-practices"></a>プル サーバーのベスト プラクティス
 
@@ -16,7 +16,7 @@ ms.locfileid: "53402974"
 > [!IMPORTANT]
 > プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
 
-要約:このドキュメントは、プロセスと、ソリューション用に準備するエンジニアを支援するために拡張機能を対象としています。 ベスト プラクティスに関する推奨事項は、将来を見据えた安定したものにするために、お客様によって確認され、製品チームによって検証されたベスト プラクティスの詳細を示す必要があります。
+要約:このドキュメントは、ソリューションを準備するエンジニアを支援するプロセスと拡張機能を示すためのものです。 ベスト プラクティスに関する推奨事項は、将来を見据えた安定したものにするために、お客様によって確認され、製品チームによって検証されたベスト プラクティスの詳細を示す必要があります。
 
 | |ドキュメント情報|
 |:---|:---|
@@ -64,7 +64,7 @@ Windows PowerShell には、宣言構成を作成および管理するために�
 
 ### <a name="software-downloads"></a>ソフトウェアのダウンロード
 
-Windows Update から最新のコンテンツをインストールすることに加えて、ベスト プラクティスとして、DSC プル サーバーの展開と見なされる 2 つのダウンロードがあります。プル サーバーのプロビジョニングを自動化するには、Windows Management Framework と DSC モジュールの最新バージョン。
+Windows Update から最新のコンテンツをインストールすることに加え、DSC プル サーバー展開のベスト プラクティスとして見なされているダウンロードが 2 つあります。最新版の Windows Management Framework と、プル サーバー プロビジョニングを自動化する DSC モジュールです。
 
 ### <a name="wmf"></a>WMF
 
@@ -104,7 +104,7 @@ Windows Server 2012 R2 のインストール ファイルにアクセスでき�
 
 物理サーバーと仮想サーバーの両方でプル サーバーの展開がサポートされます。 プル サーバーのサイズ要件は、Windows Server 2012 R2 の要件と一致します。
 
-CPU:1.4 GHz 64 ビット プロセッサ、メモリ:50 MB のディスク領域32 GB のネットワーク:ギガビット イーサネット アダプター
+CPU:1.4 GHz 64 ビット プロセッサ メモリ:512 MB のディスク領域:32 GB のネットワーク:ギガビット イーサネット アダプター
 
 計画タスク|
 ---|
@@ -260,7 +260,7 @@ Install-Module xPSDesiredStateConfiguration
 
 DSC プル サーバーを展開する最適な方法は、DSC 構成スクリプトを使用することです。 このドキュメントでは、DSC Web サービスのみを構成する基本設定と、DSC Web サービスを含む Windows Server エンド ツー エンドを構成する詳細設定の両方を含むスクリプトを示します。
 
-注: 現在、 `xPSDesiredStateConfiguation` DSC モジュールには、EN-US ロケールを使用するサーバーが必要です。
+注: 現時点では、`xPSDesiredStateConfiguration` DSC モジュールでは、サーバーのロケールとして EN-US を設定する必要があります。
 
 ### <a name="basic-configuration-for-windows-server-2012"></a>Windows Server 2012 の基本構成
 

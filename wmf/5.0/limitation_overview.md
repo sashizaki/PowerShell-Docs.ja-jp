@@ -1,18 +1,18 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: 4eb2f0bac4f2169a9a06d80cb4fa214a09cdfa86
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.openlocfilehash: 3d74217621d00dfd68cad1c45d187a9c2ffb9980
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892986"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054376"
 ---
 # <a name="known-issues-and-limitations"></a>既知の問題と制限事項
 
 ## <a name="powershell-shortcuts-are-broken-when-used-for-the-first-time"></a>初回使用時に PowerShell のショートカットが壊れている
 
-**解決策:** 次の操作のいずれかを実行します。
+**解決策:** 次のアクションの 1 つを実行します。
 
 1. PowerShell のショートカットを右クリックします。 [Windows PowerShell] を選択し、管理者特権以外のモードで起動します。
 2. PowerShell のショートカットを右クリックします。 [Windows PowerShell] を右クリックし、[管理者として実行] を選択して管理者特権モードで起動します。

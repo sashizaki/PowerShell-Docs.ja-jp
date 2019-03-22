@@ -2,16 +2,16 @@
 ms.date: 06/12/2017
 keywords: JEA, PowerShell, セキュリティ
 title: JEA ロール機能
-ms.openlocfilehash: bd0a995adc60e50049ff99d6b23e7c2aeb745a18
-ms.sourcegitcommit: e46b868f56f359909ff7c8230b1d1770935cce0e
+ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45522943"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055055"
 ---
 # <a name="jea-role-capabilities"></a>JEA ロール機能
 
-> 適用先: Windows PowerShell 5.0
+> 適用先:Windows PowerShell 5.0
 
 JEA エンドポイントを作成するとき、JEA セッションでユーザーに許可する*操作*を説明する "ロール機能" を 1 つ以上定義する必要があります。
 ロール機能は、.psrc 拡張子を持つ PowerShell データ ファイルです。このファイルには、接続ユーザーが利用できるすべてのコマンドレット、関数、プロバイダー、外部プログラムが列挙されています。
@@ -58,7 +58,7 @@ PowerShell ヘルプ ドキュメントには、ファイルの構成例が含�
 
 ### <a name="allowing-powershell-cmdlets-and-functions"></a>PowerShell のコマンドレットと関数を許可する
 
-PowerShell コマンドレットまたは関数の実行権限をユーザーに与えるには、VisbibleCmdlets または VisibleFunctions フィールドにコマンドレットまたは関数の名前を追加します。
+PowerShell コマンドレットまたは関数の実行権限をユーザーに与えるには、VisibleCmdlets または VisibleFunctions フィールドにコマンドレットまたは関数の名前を追加します。
 コマンドがコマンドレットであるか、関数であるかわからない場合、`Get-Command <name>` を実行し、出力の "CommandType" プロパティを確認してください。
 
 ```powershell
@@ -101,7 +101,6 @@ VisibleCmdlets フィールドで下のあらゆる要素を組み合わせる�
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}`  | `Param1` パラメーターを指定して `My-Func` を実行することをユーザーに許可します。 "Value1" と "Value2" のみをパラメーターに指定できます。
 `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`     | `Param1` パラメーターを指定して `My-Func` を実行することをユーザーに許可します。 "contoso" で始まる値をパラメーターに指定できます。
 
-
 > [!WARNING]
 > セキュリティのベスト プラクティスとしては、表示されるコマンドレットまたは関数を定義するときは、ワイルドカードの使用は推奨されません。
 > 代わりに、命名規則が同じ他のコマンドが意図せずに許可されるような状況を回避するために、問題のないコマンドを 1 つずつ明示的にリストアップしてください。
@@ -126,7 +125,7 @@ VisibleExternalCommands = 'C:\Windows\System32\whoami.exe', 'C:\Program Files\Co
 
 たとえば、ファイル サーバーの管理者ロールで、ローカル コンピューターでホストされているネットワーク共有を確認しなければならないとします。
 確認方法の 1 つは `net share` を使用することです。
-ただし、net.exe の許可はとても危険です。このコマンドを利用すると、`net group Administrators unprivilegedjeauser /add` の管理者特権が簡単に得られる可能性があるからです。
+しかし、net.exe の許可はとても危険です。このコマンドを利用すると、`net group Administrators unprivilegedjeauser /add` の管理者特権が簡単に得られる可能性があるからです。
 より良い方法は、[Get-SmbShare](https://technet.microsoft.com/library/jj635704.aspx) を許可することです。これで同じ結果が得られますが、範囲がはるかに限られます。
 
 JEA セッションで外部コマンドの利用をユーザーに許可するとき、システム上のどこかに置かれている、同じような名前の (悪意のある) プログラムが代わりに実行されないように、実行可能ファイルの完全パスを常に指定してください。
@@ -171,7 +170,6 @@ FunctionDefinitions = @{
 > [!IMPORTANT]
 > JEA ユーザーが実行できるように、**VisibleFunctions** フィールドにカスタム関数の名前を必ず追加してください。
 
-
 カスタム関数の本文 (スクリプト ブロック) はシステムの既定の言語モードで実行され、JEA の言語制約の対象になりません。
 つまり、関数はファイル システムとレジストリにアクセスし、ロール機能ファイルに表示されないコマンドを実行できます。
 パラメーターを利用するとき、任意コードの実行が許可されないように、`Invoke-Expression` のようなコマンドレットにユーザー入力が直接パイプ処理されないように注意してください。
@@ -211,14 +209,12 @@ PowerShell モジュール、モジュール マニフェスト、PSModulePath �
 
 ## <a name="updating-role-capabilities"></a>ロール機能を更新する
 
-
 ロール機能ファイルは変更内容を保存するだけでいつでも更新できます。
 ロール機能の更新後に新しく JEA セッションを起動すると、変更後の機能が反映されます。
 
 そのため、ロール機能フォルダーのアクセスを制御することはとても重要となります。
 ロール機能ファイルを変更できるユーザーは、非常に信頼できる管理者に限定してください。
 信頼されていないユーザーにロール機能ファイルの変更を許可すると、特権を昇格させるコマンドレットの利用を簡単に許可してしまいます。
-
 
 ロール機能へのアクセスを管理者がロックダウンする場合、ローカル システムにロール機能ファイルとそれが含まれるモジュールの読み取りアクセスが与えられるようにします。
 
@@ -256,16 +252,14 @@ $roleB = @{
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Server' } }
 }
 
-# Resulting permisisons for a user who belongs to both role A and B
-# - The constraint in role B for the DisplayName parameter on Get-Service is ignored becuase of rule #4
+# Resulting permissions for a user who belongs to both role A and B
+# - The constraint in role B for the DisplayName parameter on Get-Service is ignored because of rule #4
 # - The ValidateSets for Restart-Service are merged because both roles use ValidateSet on the same parameter per rule #5
 $mergedAandB = @{
     VisibleCmdlets = 'Get-Service',
                      @{ Name = 'Restart-Service'; Parameters = @{ Name = 'DisplayName'; ValidateSet = 'DNS Client', 'DNS Server' } }
 }
 ```
-
-
 
 **VisibleExternalCommands、VisibleAliases、VisibleProviders、ScriptsToProcess**
 

@@ -1,33 +1,34 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
-title: PowerShell 5.0 以降で、構成 Id を使用して、プル クライアントの設定します。
-ms.openlocfilehash: 8d8cf478f9127e1b7005d1b9e832e84b11612c9c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+title: PowerShell 5.0 以降での構成 ID を使用したプル クライアントのセットアップ
+ms.openlocfilehash: 14db98d240bc87aca3ee985db08c14b7c65d8bb8
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402782"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055718"
 ---
-# <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>PowerShell 5.0 以降で、構成 Id を使用して、プル クライアントの設定します。
+# <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>PowerShell 5.0 以降での構成 ID を使用したプル クライアントのセットアップ
 
 > 適用先:Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
 
-プル クライアントをセットアップする前に、プル サーバーを設定する必要があります。 この順序は必要ありませんが、トラブルシューティングに役立つし、登録が成功したことを確認するのに役立ちます。 プル サーバーを設定するには、次のガイドを使用できます。
+プル クライアントをセットアップする前に、プル サーバーを設定する必要があります。 この順序は必須ではありませんが、トラブルシューティングに役立ち、登録を確実に成功させるのに役立ちます。 プル サーバーをセットアップするには、次のガイドを使用できます。
 
 - [DSC SMB プル サーバーを設定する](pullServerSmb.md)
 - [DSC HTTP プル サーバーを設定する](pullServer.md)
 
-各ターゲット ノードは、構成、リソースをダウンロードしてもその状態を報告を構成できます。 以下のセクションでは、SMB 共有または HTTP プル サーバーの DSC プル クライアントを構成する方法を説明します。 ノードの LCM が更新されるは、割り当てられた構成のダウンロードを構成した場所に連絡されます。 ノードで必要なリソースが存在しない場合に自動的に構成されている場所からダウンロードには。 ノードが構成されている場合、[レポート サーバー](reportServer.md)操作の状態は報告します。
+各ターゲット ノードは、構成やリソースをダウンロードし、さらにその状態を報告するように構成できます。 以下のセクションでは、SMB 共有または HTTP DSC プル サーバーを使用してプル クライアントを構成する方法を説明します。 ノードの LCM が更新されると、構成済みの場所にアクセスして、割り当てられたすべての構成がダウンロードされます。 ノードに必要なリソースが存在しない場合、構成済みの場所から自動的にダウンロードされます。 ノードに[レポート サーバー](reportServer.md)が構成されている場合、操作の状態が報告されます。
 
-> **注**:このトピックでは、PowerShell 5.0 に適用されます。 PowerShell 4.0 でのプル クライアントのセットアップについては、「[PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID4.md)」をご覧ください。
+> [!NOTE]
+> このトピックは、PowerShell 5.0 に適用されます。 PowerShell 4.0 でのプル クライアントのセットアップについては、「[PowerShell 4.0 での構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID4.md)」をご覧ください。
 
-## <a name="configure-the-pull-client-lcm"></a>プル クライアントの LCM を構成します。
+## <a name="configure-the-pull-client-lcm"></a>プル クライアント LCM を構成する
 
-次の例のいずれかを実行するという名前の新しい出力フォルダーを作成**PullClientConfigID**と、メタ構成 MOF ファイルが格納されます。 この場合、メタ構成 MOF ファイルの名前は `localhost.meta.mof` になります。
+以下のいずれかの例を実行すると、**PullClientConfigID** という名前の新しい出力フォルダーが作成され、そこにメタ構成 MOF ファイルが格納されます。 この場合、メタ構成 MOF ファイルの名前は `localhost.meta.mof` になります。
 
 構成を適用するには、**Path** をメタ構成 MOF ファイルの場所に設定して **Set-DscLocalConfigurationManager** コマンドレットを呼び出します。 たとえば、次のように入力します。
 
@@ -37,21 +38,21 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 ## <a name="configuration-id"></a>構成 ID
 
-セットの下の例、 **ConfigurationID**を LCM のプロパティを**Guid**を以前に作成したこの目的のためです。 **ConfigurationID** は、LCM がプル サーバーで適切な構成を検索する場合に使用します。 プル サーバー上の構成 MOF ファイルは、`ConfigurationID.mof` という名前にする必要があります。ここで、*ConfigurationID* はターゲット ノードの LCM の **ConfigurationID** プロパティの値です。 詳細については、次を参照してください。[構成プル サーバー (v4/v5) を発行](publishConfigs.md)します。
+以下の例は、LCM の **ConfigurationID** プロパティをこの目的で以前に作成した **Guid** に設定します。 **ConfigurationID** は、LCM がプル サーバーで適切な構成を検索する場合に使用します。 プル サーバー上の構成 MOF ファイルは、`ConfigurationID.mof` という名前にする必要があります。ここで、*ConfigurationID* はターゲット ノードの LCM の **ConfigurationID** プロパティの値です。 詳細については、[プル サーバーへの構成の発行 (v4/v5)](publishConfigs.md)に関するページを参照してください。
 
-乱数を作成することができます**Guid**またはを使用して、次の例を使用して、 [New-guid](/powershell/module/microsoft.powershell.utility/new-guid)コマンドレット。
+以下の例を使用するか、または [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) コマンドレットを使用して、ランダムな **Guid** を作成できます。
 
 ```powershell
 [System.Guid]::NewGuid()
 ```
 
-使用しての詳細については**Guid** 、環境内で、次を参照してください。 [Guid の計画](/powershell/dsc/secureserver#guids)します。
+環境で **Guid** を使用する詳細については、[Guid の計画](/powershell/dsc/secureserver#guids)に関する項を参照してください。
 
-## <a name="set-up-a-pull-client-to-download-configurations"></a>プル クライアントの設定の構成をダウンロードするには
+## <a name="set-up-a-pull-client-to-download-configurations"></a>構成をダウンロードするようにプル クライアントをセットアップする
 
-各クライアントを構成する必要があります**プル**モードとその構成が格納されている、プル サーバーの url を指定します。 これを行うには、必要な情報を備えるようにローカル構成マネージャー (LCM) を構成する必要があります。 LCM を構成するには、**DSCLocalConfigurationManager** 属性で修飾された特別な種類の構成を作成します。 LCM の構成の詳細については、「[ローカル構成マネージャーの構成](../managing-nodes/metaConfig.md)」をご覧ください。
+各クライアントを**プル** モードで構成し、その構成が格納されているプル サーバーの url を指定する必要があります。 これを行うには、必要な情報を備えるようにローカル構成マネージャー (LCM) を構成する必要があります。 LCM を構成するには、**DSCLocalConfigurationManager** 属性で修飾された特別な種類の構成を作成します。 LCM の構成の詳細については、「[ローカル構成マネージャーの構成](../managing-nodes/metaConfig.md)」をご覧ください。
 
-### <a name="http-dsc-pull-server"></a>HTTP の DSC プル サーバー
+### <a name="http-dsc-pull-server"></a>HTTP DSC プル サーバー
 
 次のスクリプトは、"CONTOSO-PullSrv" という名前のサーバーから構成をプルするように LCM を構成します。
 
@@ -79,11 +80,11 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-このスクリプトでは、**ConfigurationRepositoryWeb** ブロックでプル サーバーを定義しています。 **ServerUrl** DSC プルの url を指定します
+このスクリプトでは、**ConfigurationRepositoryWeb** ブロックでプル サーバーを定義しています。 **ServerUrl** は DSC プルの url を指定します
 
 ### <a name="smb-share"></a>SMB 共有
 
-次のスクリプトは SMB 共有から構成をプルする LCM を構成します`\\SMBPullServer\Pull`します。
+次のスクリプトは、SMB 共有 `\\SMBPullServer\Pull` から構成をプルするように LCM を構成します。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -108,18 +109,18 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-スクリプトでは、 **ConfigurationRepositoryShare**ブロックは、この場合は、SMB 共有だけであるプル サーバーを定義します。
+このスクリプトでは、**ConfigurationRepositoryShare** ブロックでプル サーバーを定義していますが、この例では、単なる SMB 共有です。
 
-## <a name="set-up-a-pull-client-to-download-resources"></a>プル クライアントのセットアップ リソースをダウンロードするには
+## <a name="set-up-a-pull-client-to-download-resources"></a>リソースをダウンロードするようにプル クライアントをセットアップする
 
-のみを指定する場合、 **ConfigurationRepositoryWeb**または**ConfigurationRepositoryShare** (前の例では) のように LCM 構成でブロック、プル クライアントは、同じリソースをプルします。場所がその構成を取得します。 リソースの別の場所を指定することもできます。 別のサーバーとして、リソースの場所を指定するには、使用、 **ResourceRepositoryWeb**ブロックします。 SMB 共有として、リソースの場所を指定するには、使用、 **ResourceRepositoryShare**ブロックします。
+LCM 構成で **ConfigurationRepositoryWeb** ブロックまたは **ConfigurationRepositoryShare** ブロックのみを指定した場合 (前の例はこれに当たります)、プル クライアントは、その構成を取得する同じ場所から、リソースをプルします。 リソース用に別の場所を指定することもできます。 リソースの場所を別のサーバーとして指定するには、**ResourceRepositoryWeb** ブロックを使用します。 リソースの場所を SMB 共有として指定するには、**ResourceRepositoryShare** ブロックを使用します。
 
 > [!NOTE]
-> 組み合わせることができます**ConfigurationRepositoryWeb**で**ResourceRepositoryShare**または**ConfigurationRepositoryShare**で**ResourceRepositoryWeb**. この例は、以下は表示されません。
+> **ConfigurationRepositoryWeb** を **ResourceRepositoryShare** と、または **ConfigurationRepositoryShare** を **ResourceRepositoryWeb** と組み合わせることができます。 この例は、以下に示していません。
 
-### <a name="http-dsc-pull-server"></a>HTTP の DSC プル サーバー
+### <a name="http-dsc-pull-server"></a>HTTP DSC プル サーバー
 
-次のメタ構成から構成を取得するプル クライアント**Contoso-pullsrv**とそのリソースから**Contoso-resourcesrv**します。
+次のメタ構成は、プル クライアントが **CONTOSO-PullSrv** からその構成を取得し、**CONTOSO-ResourceSrv** からそのリソースを取得するように、プル クライアントを構成します。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -152,7 +153,7 @@ PullClientConfigID
 
 ### <a name="smb-share"></a>SMB 共有
 
-次の例では、SMB 共有から構成をプルするクライアントを設定するメタ構成を`\\SMBPullServer\Configurations`、および SMB 共有からリソース`\\SMBPullServer\Resources`します。
+次の例は、SMB 共有 `\\SMBPullServer\Configurations` から構成を、SMB 共有 `\\SMBPullServer\Resources` からリソースをプルするように、クライアントをセットアップするメタ構成を示しています。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -182,9 +183,9 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-#### <a name="automatically-download-resources-in-push-mode"></a>プッシュ モードでリソースを自動的にダウンロードします。
+#### <a name="automatically-download-resources-in-push-mode"></a>プッシュ モードでリソースを自動的にダウンロードする
 
-PowerShell 5.0 以降では、プル クライアントできますからモジュールをダウンロード、SMB 共有が構成されている場合でも**プッシュ**モード。 これは、プル サーバーをセットアップしないシナリオで特に便利です。 **ResourceRepositoryShare**ブロックを指定することがなく使用できる、 **ConfigurationRepositoryShare**します。 次の例では、SMB 共有からプル リソースへのクライアントを設定するメタ構成を`\\SMBPullServer\Resources`します。 とき**PUSHED**構成では、そのは自動的にダウンロード必要なリソースをすべて指定された共有から。
+PowerShell 5.0 以降では、プル クライアントは、**プッシュ** モードで構成されている場合でも、SMB 共有からモジュールをダウンロードできます。 これは、プル サーバーをセットアップしないシナリオで特に便利です。 **ResourceRepositoryShare** ブロックは、**ConfigurationRepositoryShare** を指定しなくても使用できます。 次の例に、SMB 共有 `\\SMBPullServer\Resources` からリソースをプルするようにクライアントをセットアップするメタ構成を示します。 ノードに構成が**プッシュ**されると、指定された共有から必要なすべてのリソースが自動的にダウンロードされます。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -207,11 +208,11 @@ configuration PullClientConfigID
 PullClientConfigID
 ```
 
-## <a name="set-up-a-pull-client-to-report-status"></a>レポートの状態をプル クライアントをセットアップします。
+## <a name="set-up-a-pull-client-to-report-status"></a>状態を報告するようにプル クライアントをセットアップする
 
-既定では、ノードはレポートを構成プル サーバーに送信するはしません。 構成、リソース、およびレポートについて単一のプル サーバーを使うことができますが、レポートをセットアップするために **ReportRepositoryWeb** ブロックを作成する必要があります。
+既定では、ノードは構成済みプル サーバーにレポートを送信しません。 構成、リソース、およびレポートについて単一のプル サーバーを使うことができますが、レポートをセットアップするために **ReportRepositoryWeb** ブロックを作成する必要があります。
 
-### <a name="http-dsc-pull-server"></a>HTTP の DSC プル サーバー
+### <a name="http-dsc-pull-server"></a>HTTP DSC プル サーバー
 
 次の例は、単一のプル サーバーに対して構成とリソースをプルし、レポート データを送信するようにクライアントを設定するメタ構成を示しています。
 
@@ -282,11 +283,11 @@ PullClientConfigID
 
 ### <a name="smb-share"></a>SMB 共有
 
-レポート サーバーは、SMB 共有にすることはできません。
+レポート サーバーを SMB 共有にすることはできません。
 
 ## <a name="next-steps"></a>次の手順
 
-プル クライアントを構成すると、次の手順を実行するのに、次のガイドを使用できます。
+プル クライアントを構成したら、次のガイドを使用して、次の手順を行うことができます。
 
 - [プル サーバーに構成を発行する (v4/v5)](publishConfigs.md)
 - [リソースのパッケージ化とプル サーバーへのアップロード (v4)](package-upload-resources.md)

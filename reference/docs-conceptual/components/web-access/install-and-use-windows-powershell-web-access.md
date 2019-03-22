@@ -2,16 +2,16 @@
 ms.date: 08/23/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access のインストールと使用
-ms.openlocfilehash: a129dfeb61531a1f4d333af3e872d16defa1d12f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402829"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056721"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Access のインストールと使用
 
-更新:2013 年 11 月 5 日 (編集します。2017 年 8 月
+更新:2013 年 11 月 5 日 (編集:2017 年 8 月 23 日)
 
 適用先:Windows Server 2012 R2、Windows Server 2012
 
@@ -136,7 +136,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
    - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
    **例**: `Install-PswaWebApplication -webApplicationName myWebApp -useTestCertificate`
 
@@ -161,7 +161,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
    - Path: /pswa
    - ApplicationPool: pswa_pool
    - EnabledProtocols: http
-   - PhysicalPath: `%*windir*%/Web/PowerShellWebAccess/wwwroot`
+   - PhysicalPath: %windir%/Web/PowerShellWebAccess/wwwroot
 
 3. 次のいずれかの方法で IIS マネージャー コンソールを開きます。
 
@@ -178,7 +178,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 7. **[サイト バインドの追加]** ダイアログ ボックスの **[種類]** フィールドで、**[https]** をクリックします。
 
 8. **"SSL 証明書"** フィールドのドロップダウン メニューから、署名済み証明書を選択します。
-   **[OK]** をクリックします。 証明書の取得方法の詳細については、このトピックの「[IIS マネージャーで SSL 証明書を構成するには](#to-configure-an-ssl-certificate-in-iis-Manager)」を参照してください。
+   **[OK]** をクリックします。 証明書の取得方法の詳細については、このトピックの「[IIS マネージャーで SSL 証明書を構成するには](#to-configure-an-ssl-certificate-in-iis-manager)」を参照してください。
 
    これで、Windows PowerShell Web Access の Web アプリケーションが署名済み SSL 証明書を使うよう構成されました。
 
@@ -271,9 +271,9 @@ Windows PowerShell Web Access をインストールした後、IIS Manager で�
 
 7. **"アプリケーション プール"** フィールドで、手順 3. で作成したアプリケーション プールを選択します。
 
-8. **"物理パス"** フィールドで、アプリケーションの場所を参照します。 既定の場所 (`%windir%/Web/PowerShellWebAccess/wwwroot`) を使うことができます。 **[OK]** をクリックします。
+8. **"物理パス"** フィールドで、アプリケーションの場所を参照します。 既定の場所 (`$env:windir/Web/PowerShellWebAccess/wwwroot`) を使うことができます。 **[OK]** をクリックします。
 
-9. このトピックの「[IIS マネージャーで SSL 証明書を構成するには](#to-configure-an-ssl-certificate-in-iis-Manager) 」の手順に従います。
+9. このトピックの「 [IIS マネージャーで SSL 証明書を構成するには](#to-configure-an-ssl-certificate-in-iis-manager) 」の手順に従います。
 
 10. ![](images/SecurityNote.jpeg) セキュリティ手順 (省略可能):
 
@@ -318,7 +318,7 @@ Windows PowerShell Web Access をインストールした後、IIS Manager で�
 
 1. 新しい Web サイト用のアプリケーション プールが自動で作成されます。 別のアプリケーション プールを使うには、**[選択]** をクリックして、新しい Web サイトに関連付けるアプリケーション プールを選択します。 **[アプリケーション プールの選択]** ダイアログ ボックスで別のアプリケーション プールを選択し、**[OK]** をクリックします。
 
-1. **[物理パス]** テキスト ボックスで、%*windir*%/Web/PowerShellWebAccess/wwwroot に移動します。
+1. **[物理パス]** テキスト ボックスで、%windir%/Web/PowerShellWebAccess/wwwroot に移動します。
 
 1. **[バインド]** 領域の **[種類]** フィールドで、**[https]** を選択します。
 
@@ -329,7 +329,7 @@ Windows PowerShell Web Access をインストールした後、IIS Manager で�
 
 1. 組織の必要に応じて、組織またはユーザーにわかるホスト名を指定します (**`www.contoso.com`** など)。 **[OK]** をクリックします。
 
-1. 運用環境のセキュリティ保護を強化するため、CA によって署名された有効な証明書を提供することを強くお勧めします。 ユーザーは HTTPS Web サイトを経由しないと Windows PowerShell Web Access に接続できないため、SSL 証明書は必ず提供する必要があります。 証明書の取得方法の詳細については、このトピックの「[IIS マネージャーで SSL 証明書を構成するには](#to-configure-an-ssl-certificate-in-iis-Manager)」を参照してください。
+1. 運用環境のセキュリティ保護を強化するため、CA によって署名された有効な証明書を提供することを強くお勧めします。 ユーザーは HTTPS Web サイトを経由しないと Windows PowerShell Web Access に接続できないため、SSL 証明書は必ず提供する必要があります。 証明書の取得方法の詳細については、このトピックの「[IIS マネージャーで SSL 証明書を構成するには](#to-configure-an-ssl-certificate-in-iis-manager)」を参照してください。
 
 1. **[OK]** をクリックして **[Web サイトの追加]** ダイアログ ボックスを閉じます。
 

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: アイテムの作成と公開
-ms.openlocfilehash: 70696535a3bf540ff75a2dc43bca80cb1adf8f45
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
-ms.translationtype: MTE95
+ms.openlocfilehash: 0e0f871b5d43508735e396224fdfd1a29b1e91c0
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012536"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055480"
 ---
 # <a name="creating-and-publishing-an-item"></a>アイテムの作成と公開
 
@@ -22,7 +22,7 @@ PowerShell ギャラリーとは、広範な PowerShell ユーザー コミュ�
 - 必要なメタデータがアイテムに含まれていることを確認する
 - 事前検証ツールを使用して、アイテムが公開できる状態であることを確認する
 - Publish-Module コマンドおよび Publish-Script コマンドを使用して、アイテムを PowerShell ギャラリーに公開する
-- 質問やアイテムに関する懸念事項への対応
+- アイテムに関する質問や懸念事項に答える
 
 PowerShell ギャラリーは、PowerShell モジュールおよび PowerShell スクリプトを受け入れます。 ここでスクリプトとは、大規模モジュールの一部ではなく、1 つのファイルである PowerShell スクリプトを意味しています。
 
@@ -32,7 +32,7 @@ PowerShell ギャラリー アカウントの設定方法については、「[C
 
 アカウントを作成したら、アイテムの公開に必要な API キーを取得できます。 アカウントでサインインすると、PowerShell ギャラリー ページの上部で [Register]\(登録\) の代わりにユーザー名が表示されます。 ユーザー名をクリックすると、[My Account]\(マイ アカウント\) ページに移動します。そこで API キーを確認できます。
 
-注: API キーは、ログインとパスワードとして安全に処理する必要があります。
+注: API キーは、ログイン情報およびパスワードと同等にセキュリティ保護する必要があります。
 このキーを使用すると、PowerShell ギャラリーで所有しているあらゆるアイテムを、自分だけでなく他のユーザーも更新できます。
 キーは定期的に更新することをお勧めします。[My Account]\(マイ アカウント\) ページの [Reset Key]\(キーをリセットする\) を使用して更新できます。
 
@@ -43,18 +43,18 @@ PowerShell ギャラリーでは、スクリプトまたはモジュールのマ
 
 [New-ModuleManifest](/powershell/module/microsoft.powershell.core/new-modulemanifest) および [New-ScriptFileInfo](/powershell/module/PowerShellGet/New-ScriptFileInfo) コマンドレットは、すべてのマニフェスト要素のプレースホルダーが用意されたマニフェスト テンプレートを作成します。
 
-両方のマニフェストでは、PrivateData の主キー データと PSData エリアを発行するために重要な 2 つのセクションがあります。 PowerShell モジュールのマニフェストで主キー データは、PrivateData セクション外のすべてです。 主キーのセットは、使用している PowerShell のバージョンに関連付けられており、未定義はサポートされません。 PrivateData は新しいキーの追加をサポートしているので、PowerShell ギャラリーに固有の要素は PSData にあります。
+どちらのマニフェストにも、公開に重要な 2 つのセクションがあります。主キー データ、および PrivateData の PSData 領域です。 PowerShell モジュール マニフェストにおける主キー データとは、PrivateData セクション外のすべてです。 主キーのセットは、使用している PowerShell のバージョンに関連付けられており、未定義はサポートされません。 PrivateData は新しいキーの追加をサポートしているので、PowerShell ギャラリーに固有の要素は PSData にあります。
 
 
 PowerShell ギャラリーに公開するアイテムについて提供する最も重要なマニフェスト要素は次のとおりです。
 
 - スクリプト名またはモジュール名 - これらは、スクリプトの .PS1 の名前、またはモジュールの .PSD1 の名前から取得されます。
-- バージョン - これは、必須の主キー、形式は SemVer ガイドラインに従う必要があります。 詳細については、ベスト プラクティスを参照してください。
-- 作成者 - これは必須の主キーと項目に関連する名前が含まれています。
-作成者と所有者は以下を参照してください。
+- バージョン - これは必須の主キーで、形式は SemVer ガイドラインに従う必要があります。 詳細についてはベスト プラクティスをご覧ください。
+- 作成者 - これは必須の主キーで、アイテムに関連付けられる名前を含みます。
+下記の作成者と所有者をご覧ください。
 - 説明 - これは必須の主キーで、このアイテムの実行内容と使用にあたっての要件を簡単に説明するのに使用します。
 - ProjectURI - これは強くお勧めする PSData 内の URI フィールドで、アイテムの開発を行う Github リポジトリや同様の場所へのリンクを提供します。
-- タグの PSEditions とプラットフォームとの互換性に基づくパッケージのタグを付けるための強力な推奨事項になります。 詳細については、次を参照してください。、[発行のガイドライン](../../concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms)します。
+- タグ - PSEditions およびプラットフォームとの互換性に基づいて、パッケージにタグ付けすることを強くお勧めします。 詳細については、[公開のガイドライン](../../concepts/publishing-guidelines.md#tag-your-package-with-the-compatible-pseditions-and-platforms)を参照してください。
 
 PowerShell ギャラリーでは、アイテムの作成者と所有者は関連する概念ですが、常に一致するわけではありません。 アイテムの所有者とは、PowerShell ギャラリー アカウントを持ち、アイテムを管理するアクセス許可を有するユーザーです。 アイテムを更新できる所有者が多数いることもあります。 所有者は PowerShell ギャラリーからのみ使用されるもので、アイテムがあるシステムから別のシステムにコピーされると失われます。 作成者は、マニフェスト データに組み込まれている文字列のため、常にアイテムに含まれます。 Microsoft 製品からのアイテムに関する推奨事項は次のとおりです。
 
@@ -89,10 +89,10 @@ PowerShell ギャラリーにアイテムを公開するには、[Publish-Script
 
 エラーを回避するには、公開の前に、-Whatif -Verbose を使用してコマンドを実行することを強くお勧めします。 これによって、かなりの時間を節約することができます。PowerShell ギャラリーに公開するたびに、アイテムのマニフェスト セクションでバージョン番号を更新する必要があるからです。
 
-例は次のようになります。
+次に例を示します。
 
-* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -Whatif -Verbose`
-* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -Whatif -Verbose`
+* `Publish-Module -Path ".\MyModule" -NugetAPIKey "GUID" -WhatIf -Verbose`
+* `Publish-Script -Path ".\MyScriptFile.PS1" -NugetAPIKey "GUID" -WhatIf -Verbose`
 
 出力を注意深く確認し、エラーや警告がない場合は、-Whatif を付けずにコマンドを再実行します。
 

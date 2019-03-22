@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 description: パブリッシャー向けのガイドライン
 title: PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
-ms.openlocfilehash: 64c3d607b13dce64f70f138fdee849e5baaf85df
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.openlocfilehash: 25c359c7acbe7430762a275d8cc4a28f527ec57a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265571"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056500"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -33,7 +33,7 @@ PowerShell ギャラリーへのパッケージの公開の仕組みについて
 - フィードバックに素早く対応する
 - スクリプトではなくモジュールを提供する
 - プロジェクト サイトへのリンクを提供する
-- 互換性のある PSEdition(s) とプラットフォームで、パッケージをタグ付け 
+- 互換性のある PSEdition とプラットフォームでパッケージにタグを付ける
 - モジュールにテストを含める
 - ライセンス条項を含めるか、ライセンス条項へのリンクを提供する (またはその両方)
 - コードに署名する
@@ -93,8 +93,8 @@ PowerShell ギャラリーに公開するモジュールのサンプルは、モ
 
 PowerShell ギャラリーでフィードバックを行う方法は 2 つあります。
 
-- 所有者への連絡: この方法では、ユーザーはパッケージの所有者にメールを送信できます。 パッケージの所有者は、PowerShell ギャラリー パッケージで使用されているメール アドレスをチェックし、寄せられた問題に対応することが重要です。 この方法の 1 つのデメリットは、問い合わせをしたユーザーと所有者しか会話を見られないため、所有者は同じ質問に何度も答えなければならない可能性があることです。
-- コメント: パッケージのページの最下部にはコメント フィールドがあります。
+- 所有者への連絡:この方法では、ユーザーはパッケージの所有者にメールを送信できます。 パッケージの所有者は、PowerShell ギャラリー パッケージで使用されているメール アドレスをチェックし、寄せられた問題に対応することが重要です。 この方法の 1 つのデメリットは、問い合わせをしたユーザーと所有者しか会話を見られないため、所有者は同じ質問に何度も答えなければならない可能性があることです。
+- ［コメント］:パッケージのページの最下部にはコメント フィールドがあります。
   この方法のメリットは、他のユーザーもコメントと回答を確認できるため、同一の質問に答えなければならない回数を少なくできることです。
   パッケージの所有者には、各パッケージに寄せられたコメントをフォローすることが強く推奨されます。
 フォロー方法の詳細については、「[Providing Feedback via Social Media or Comments (ソーシャル メディアやコメントを使用したフィードバックの提供)](../how-to/working-with-packages/social-media-feedback.md)」をご覧ください。
@@ -136,15 +136,15 @@ PowerShell ギャラリーのパッケージの多くは GitHub で開発され�
 
 ProjectURI が記載されている場合、PowerShell ギャラリーではパッケージ ページの左側にプロジェクト サイトへのリンクが表示されます。
 
-## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>互換性のある PSEdition(s) とプラットフォームで、パッケージをタグ付け 
+## <a name="tag-your-package-with-the-compatible-pseditions-and-platforms"></a>互換性のある PSEdition とプラットフォームでパッケージにタグを付ける
 
-次のタグを使用すると、その環境でうまく機能するパッケージをユーザーに示します。
+次のタグを使用し、ユーザーにその環境でうまく機能するパッケージを示します。
 
-- Windows PowerShell を使用した互換性のある PSEdition_Desktop: パッケージ 
-- Powershell Core と互換性のある PSEdition_Core: パッケージ 
-- Windows オペレーティング システムと互換性のある Windows: パッケージ
-- Linux オペレーティング システムで互換性のあるパッケージを Linux の場合: 
-- Mac オペレーティング システムと互換性のあるパッケージを MacOS の場合:
+- PSEdition_Desktop :Windows PowerShell との間で互換性のあるパッケージ
+- PSEdition_Core :PowerShell Core との間で互換性のあるパッケージ
+- Windows :Windows オペレーティング システムとの間で互換性のあるパッケージ
+- Linux :Linux オペレーティング システムとの間で互換性のあるパッケージ
+- MacOS :Mac オペレーティング システムとの間で互換性のあるパッケージ
 
 ## <a name="include-tests"></a>テストを含める
 
@@ -251,4 +251,3 @@ PowerShell ギャラリーにパッケージを公開する上で最も効果的
 - パッケージのコード署名を行うかどうかを決定する
 - プロジェクトが運用環境で使用できるようになったと思われる場合は、1.0.0 バージョンを PowerShell ギャラリーに公開する
 - 引き続きフィードバックを収集し、ユーザーの意見に基づいてコードを反復開発する
-

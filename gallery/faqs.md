@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーに関してよく寄せられる質問
-ms.openlocfilehash: 3fa52892ce50491c040251baae8b4ae4ee3dcba0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55682401"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057690"
 ---
 # <a name="frequently-asked-questions"></a>AppLocker: Frequently Asked Questions (AppLocker: よく寄せられる質問)
 
@@ -31,11 +31,12 @@ PowerShell スクリプトとは、再利用と共有を可能にするため、
 
 パッケージを PowerShell ギャラリーに公開するには、ギャラリーにアカウントを登録する必要があります。 これは、登録時に提供される NuGetApiKey がパッケージの公開に必要になるためです。 登録するには、個人、職場、または学校のアカウントを使用して PowerShell ギャラリーにサインインします。 初めてサインインするときは、1 回限りの登録処理が必要です。 その後、NuGetApiKey キーをプロファイル ページで使用できるようになります。
 
-ギャラリーに登録したら、[Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを使用してパッケージをギャラリーに公開します。 これらのコマンドレットを実行する方法の詳細については、[公開] タブにアクセスするか、[Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) および [Publish-Script](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) のドキュメントを参照してください。
+ギャラリーに登録したら、[Publish-Module][] または [Publish-Script][] コマンドレットを使用してパッケージをギャラリーに公開します。
+これらのコマンドレットを実行する方法の詳細については、[公開] タブにアクセスするか、[Publish-Module][] および [Publish-Script][] のドキュメントを参照してください。
 
 **パッケージをインストールまたは保存するためにギャラリーに登録またはサインインする必要はありません。**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>PowerShell ギャラリーに項目を公開しようとして、"要求を処理できませんでした。 '指定した API キーが無効か、指定したパッケージへのアクセス許可がありません。' リモート サーバーがエラーを返しました: (403) 許可されていません" というエラーを受信しました。 これは何を意味しますか。
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>PowerShell ギャラリーに項目を公開しようとして、"要求を処理できませんでした。 '指定した API キーが無効か、指定したパッケージへのアクセス許可がありません。' リモート サーバーが次のエラーを返す:"(403) Forbidden" というエラーを受信しました。 これは何を意味しますか。
 
 このエラーは、次の理由で発生することがあります。
 
@@ -56,29 +57,37 @@ PowerShell スクリプトとは、再利用と共有を可能にするため、
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>モジュールを PowerShell ギャラリーに公開するための要件は何ですか。
 
-PowerShell モジュールのどの種類 (スクリプト モジュール、バイナリ モジュール、マニフェスト モジュールなど) でも、ギャラリーに公開できます。 モジュールを公開するには、PowerShellGet がそのバージョン、説明、作成者、そのライセンス取得方法について認識している必要があります。 この情報は、*モジュール マニフェスト* (.psd1) ファイル、または[**Publish-Module**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットの **LicenseUri** パラメーターの値から公開プロセスの一環として読み取られます。 ギャラリーに公開されるすべてのモジュールに、モジュール マニフェストが必要です。 マニフェストに次の情報を含むモジュールはすべて、ギャラリーに公開できます。
+PowerShell モジュールのどの種類 (スクリプト モジュール、バイナリ モジュール、マニフェスト モジュールなど) でも、ギャラリーに公開できます。
+モジュールを公開するには、PowerShellGet がそのバージョン、説明、作成者、そのライセンス取得方法について認識している必要があります。
+この情報は、*モジュール マニフェスト* (.psd1) ファイル、または[Publish-Module][] コマンドレットの **LicenseUri** パラメーターの値から公開プロセスの一環として読み取られます。
+ギャラリーに公開されるすべてのモジュールに、モジュール マニフェストが必要です。
+マニフェストに次の情報を含むモジュールはすべて、ギャラリーに公開できます。
 
 - バージョン
 - 説明
 - 作成者
-- マニフェストの **PrivateData** セクションの一部として、または [**Publish-Module**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409)コマンドレットの **LicenseUri** パラメーターの、モジュールのライセンス条項への URI。
+- マニフェストの **PrivateData** セクションの一部として、または [Publish-Module][] コマンドレットの **LicenseUri** パラメーターの、モジュールのライセンス条項への URI。
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>正しい形式のモジュール マニフェストはどのように作成できますか。
 
-モジュール マニフェストを作成するもっとも簡単な方法は、[**New-ModuleManifest**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行することです。 PowerShell 5.0 以降、New-ModuleManifest によって、**ProjectUri**、**LicenseUri**、**Tags** などの有用なメタデータのフィールドが空白のまま、正しい形式のマニフェストが生成されるようになりました。 空白を埋めるか、正しい形式のサンプルとして生成されたマニフェストを使用します。
+モジュール マニフェストを作成する最も簡単な方法は、[New-ModuleManifest][] コマンドレットを実行することです。 PowerShell 5.0 以降、New-ModuleManifest によって、**ProjectUri**、**LicenseUri**、**Tags** などの有用なメタデータのフィールドが空白のまま、正しい形式のマニフェストが生成されるようになりました。 空白を埋めるか、正しい形式のサンプルとして生成されたマニフェストを使用します。
 
-必要なメタデータ フィールドがすべて正しく入力されているかどうかを確認するには、[**Test-ModuleManifest**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを使用します。
+必要なメタデータ フィールドがすべて正しく入力されているかどうかを確認するには、[Test-ModuleManifest][] コマンドレットを使用します。
 
-モジュール マニフェスト ファイルのフィールドを更新するには、[**Update-ModuleManifest**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを使用します。
+モジュール マニフェスト ファイルのフィールドを更新するには、[Update-ModuleManifest][] コマンドレットを使用します。
 
 ## <a name="what-are-the-requirements-to-publish-a-script-to-the-gallery"></a>スクリプトをギャラリーに公開するための要件は何ですか。
 
-PowerShell スクリプトのどの種類 (スクリプトまたはワークフロー) でも、ギャラリーに公開できます。 スクリプトを公開するには、PowerShellGet がそのバージョン、説明、作成者、そのライセンス取得方法について認識している必要があります。 この情報は、スクリプト ファイルの *PSScriptInfo* セクション、または[**Publish-Script**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットの **LicenseUri** パラメーターの値から公開プロセスの一環として読み取られます。 ギャラリーに公開されるすべてのスクリプトに、メタデータ情報が必要です。 PSScriptInfo セクションに次の情報を含むスクリプトはすべて、ギャラリーに公開できます。
+PowerShell スクリプトのどの種類 (スクリプトまたはワークフロー) でも、ギャラリーに公開できます。
+スクリプトを公開するには、PowerShellGet がそのバージョン、説明、作成者、そのライセンス取得方法について認識している必要があります。
+この情報は、スクリプト ファイルの *PSScriptInfo* セクション、または [Publish-Script][] コマンドレットの **LicenseUri** パラメーターの値から公開プロセスの一環として読み取られます。
+ギャラリーに公開されるすべてのスクリプトに、メタデータ情報が必要です。
+PSScriptInfo セクションに次の情報を含むスクリプトはすべて、ギャラリーに公開できます。
 
 - バージョン
 - 説明
 - 作成者
-- スクリプトの **PSScriptInfo** セクションの一部として、または [**Publish-Script**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットの **LicenseUri** パラメーターの、スクリプトのライセンス条項への URI。
+- スクリプトの **PSScriptInfo** セクションの一部として、または [Publish-Script][] コマンドレットの **LicenseUri** パラメーターの、スクリプトのライセンス条項への URI。
 
 ## <a name="how-do-i-search"></a>どのように検索しますか。
 
@@ -94,11 +103,11 @@ PowerShell スクリプトのどの種類 (スクリプトまたはワークフ�
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>正しい形式のスクリプト ファイルはどのように作成できますか。
 
-正しい形式でスクリプト ファイルを作成するもっとも簡単な方法は、[**New-ScriptFileInfo**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行することです。 PowerShell 5.0 以降、New-ScriptFileInfo によって、**ProjectUri**、**LicenseUri**、**Tags** などの有用なメタデータのフィールドが空白のまま、正しい形式のスクリプト ファイルが生成されるようになりました。 空白を埋めるか、正しい形式のサンプルとして生成されたスクリプト ファイルを使用します。
+正しく書式設定されたスクリプトを作成する最も簡単な方法は、[New-ScriptFileInfo][] コマンドレットを実行することです。 PowerShell 5.0 以降、New-ScriptFileInfo によって、**ProjectUri**、**LicenseUri**、**Tags** などの有用なメタデータのフィールドが空白のまま、正しい形式のスクリプト ファイルが生成されるようになりました。 空白を埋めるか、正しい形式のサンプルとして生成されたスクリプト ファイルを使用します。
 
-必要なメタデータ フィールドがすべて正しく入力されているかどうかを確認するには、[**Test-ScriptFileInfo**](http://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを使用します。
+必要なメタデータ フィールドがすべて正しく入力されているかどうかを確認するには、[Test-ScriptFileInfo][] コマンドレットを使用します。
 
-スクリプト メタデータ フィールドを更新するには、[**Update-ScriptFileInfo**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを使用します。
+スクリプト メタデータ フィールドを更新するには、[Update-ScriptFileInfo][] コマンドレットを使用します。
 
 ## <a name="what-other-types-of-powershell-modules-exist"></a>その他にどのような PowerShell モジュールがありますか。
 
@@ -112,7 +121,10 @@ PowerShell モジュールという用語は、実際の機能を実装するフ
 
 PackageManagement はどのパッケージ マネージャーでも機能する一般的なインターフェイスです。 最終的には、PowerShell モジュール、MSI、Ruby gem、NuGet パッケージ、Perl モジュールのどれを扱っていても、その検索とインストールには、PackageManagement のコマンド(Find-Package および Install-Package) を使用できる必要があります。 PackageManagement では、PackageManagement に差し込まれるそれぞれのパッケージ マネージャーのパッケージ プロバイダーを指定することによってこれを実行します。 プロバイダーは、実際の作業をすべて行います。リポジトリからコンテンツをフェッチし、そのコンテンツをローカルにインストールします。 多くの場合、パッケージ プロバイダーは、指定したパッケージの種類の既存のパッケージ マネージャー ツールを単にラップするだけです。
 
-PowerShellGet は PowerShell パッケージのパッケージ マネージャーです。 PackageManagement を介して PowerShellGet 機能を公開する PSModule パッケージ プロバイダーがあります。 このため、[Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) または Install-Package -Provider PSModule を実行して、PowerShell ギャラリーからモジュールをインストールすることができます。 [Update-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) および [Publish-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) を含む特定の PowerShellGet 機能には、PackageManagement コマンドではアクセスできません。
+PowerShellGet は PowerShell パッケージのパッケージ マネージャーです。
+PackageManagement を介して PowerShellGet 機能を公開する PSModule パッケージ プロバイダーがあります。
+このため、[Install-Module][] または Install-Package -Provider PSModule を実行して、PowerShell ギャラリーからモジュールをインストールすることができます。
+[Update-Module][] および [Publish-Module][] を含む特定の PowerShellGet 機能には、PackageManagement コマンドではアクセスできません。
 
 つまり、PowerShellGet はPowerShell コンテンツのプレミアム パッケージ管理エクスペリエンスにのみ重点を置いています。 PackageManagement は、単一の一般的なツール セットによるすべてのパッケージ管理エクスペリエンスの公開に重点を置いています。 この回答では不十分な場合は、このドキュメントの下部にある「**PackageManagement は実際に PowerShellGet にどのように関連しているでしょうか。**」のセクションに詳しい回答があります。
 
@@ -122,7 +134,7 @@ PowerShellGet は PowerShell パッケージのパッケージ マネージャ�
 
 PowerShell ギャラリーは、[NuGet ギャラリー](https://www.nuget.org/)に変更を加えたバージョンです。 PowerShellGet は、NuGet プロバイダーを使用して、PowerShell ギャラリーなどの NuGet ベースのリポジトリで機能します。
 
-PowerShellGet は任意の有効な NuGet リポジトリまたはファイル共有に対して使用することができます。 単に [**Register-PSRepository**](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) コマンドレットを実行して、リポジトリを追加する必要があります。
+PowerShellGet は任意の有効な NuGet リポジトリまたはファイル共有に対して使用することができます。 単に [Register-PSRepository][] コマンドレットを実行して、リポジトリを追加する必要があります。
 
 ## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>NuGet.exe をギャラリーで使用できるという意味でしょうか。
 
@@ -132,13 +144,13 @@ PowerShellGet は任意の有効な NuGet リポジトリまたはファイル�
 
 内部的に、PowerShellGet は PackageManagement インフラストラクチャを大きく活用しています。
 
-PowerShell コマンドレット層で、[Install-Module](https://go.microsoft.com/fwlink/?LinkID=760387&clcid=0x409) は実際には Install-Package -Provider PSModule の Thin ラッパーです。
+PowerShell コマンドレット層で、[Install-Module][] は実際には Install-Package -Provider PSModule の Thin ラッパーです。
 
 PackageManagement パッケージ プロバイダー層では、PSModule パッケージ プロバイダーは実際に他の PackageManagement パッケージ プロバイダーを呼び出します。 たとえば、NuGet ベースのギャラリー (PowerShell ギャラリーなど) を使用している場合、PSModule パッケージ プロバイダーでは、リポジトリで使用できるように NuGet パッケージ プロバイダーを使用します。
 
 ![PowerShellGet アーキテクチャ](Images/powershellgetArchitecture.png)
 
-図 1: PowerShellGet アーキテクチャ
+図 1:PowerShellGet アーキテクチャ
 
 ## <a name="what-is-required-to-run-powershellget"></a>PowerShellGet を実行するには何が必要ですか。
 
@@ -169,3 +181,16 @@ PackageManagement パッケージ プロバイダー層では、PSModule パッ�
 ## <a name="how-do-i-deal-with-a-package-owner-who-is-violating-my-package-license"></a>自分のパッケージ ライセンスを侵害しているパッケージ所有者にはどう対処しますか。
 
 そのパッケージ所有者とその他のパッケージ所有者の間で生じる争いについては、PowerShell コミュニティでの解決をお勧めします。  [争いの解決プロセス](./how-to/getting-support/dispute-resolution.md)を用意しておりますので、PowerShellGallery.com の管理者が仲裁に入る前に確認してください。
+
+[New-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest
+[Test-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/Test-ModuleManifest
+[Update-ModuleManifest]: /powershell/module/Microsoft.PowerShell.Core/Update-ModuleManifest
+
+[Install-Module]: /powershell/module/PowershellGet/Install-Module
+[New-ScriptFileInfo]: /powershell/module/PowershellGet/New-ScriptFileInfo
+[Publish-Module]: /powershell/module/PowershellGet/Publish-Module
+[Publish-Script]: /powershell/module/PowershellGet/Publish-Script
+[Register-PSRepository]: /powershell/module/PowershellGet/Register-PSRepository
+[Test-ScriptFileInfo]: /powershell/module/PowershellGet/Test-ScriptFileInfo
+[Update-Module]: /powershell/module/PowershellGet/Update-Module
+[Update-ScriptFileInfo]: /powershell/module/PowershellGet/Update-ScriptFileInfo

@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC プル サービス
-ms.openlocfilehash: 64c22bc021666026ae58a4c4fb4e3d31b25bae5c
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
-ms.translationtype: MTE95
+ms.openlocfilehash: 00e01e6c71226e6bde48b221e4e4fcf5f346feb4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429960"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056772"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration プル サービス
 
@@ -72,7 +72,8 @@ Windows Server で提供されるプル サービスは、OData インターフ�
 
 [Windows Server Insider プレビュー](https://www.microsoft.com/en-us/software-download/windowsinsiderpreviewserver)のリリース 17090 以降では、SQL Server は、プル サービス (Windows Feature *DSC-Service*) でサポートされるオプションです。 これは、[Azure Automation DSC](/azure/automation/automation-dsc-getting-started) に移行されていない大規模な DSC 環境をスケーリングする新しいオプションです。
 
-> **注**: SQL Server は WMF 5.1 以前のバージョンには追加されず、17090 以降の Windows Server バージョンでのみ使用できます。
+> [!NOTE]
+> SQL Server は WMF 5.1 以前のバージョンには追加されず、17090 以降の Windows Server バージョンでのみ使用できます。
 
 プル サーバーで SQL Server を使用するよう構成するには、**SqlProvider** を `$true` に、そして **SqlConnectionString** を有効な SQL Server 接続文字列に設定します。 詳細については、「[SqlClient 接続文字列](/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings)」を参照してください。
 **xDscWebService** を使用した SQL Server の構成例については、まず「[xDscWebService リソースの使用](#using-the-xdscwebservice-resource)」に目を通してから、GitHub の「[Sample_xDscWebServiceRegistration_UseSQLProvider.ps1](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/master/Examples/Sample_xDscWebServiceRegistration_UseSQLProvider.ps1)」を参照してください。
@@ -84,12 +85,12 @@ Web プル サーバーをセットアップする最も簡単な方法は、**x
 
 1. [Install-Module](/powershell/module/PowershellGet/Install-Module) コマンドレットを呼び出して、**xPSDesiredStateConfiguration** モジュールをインストールします。
    > [!NOTE]
-   > **Install-module**に含まれている、 **PowerShellGet**モジュールは、PowerShell 5.0 に含まれています。 「[PackageManagement PowerShell Modules Preview (PackageManagement PowerShell モジュールのプレビュー)](https://www.microsoft.com/en-us/download/details.aspx?id=49186)」で PowerShell 3.0 と 4.0 の **PowerShellGet** モジュールをダウンロードできます。
+   > **Install-Module** は、PowerShell 5.0 に含まれている **PowerShellGet** モジュールに含まれています。 「[PackageManagement PowerShell Modules Preview (PackageManagement PowerShell モジュールのプレビュー)](https://www.microsoft.com/en-us/download/details.aspx?id=49186)」で PowerShell 3.0 と 4.0 の **PowerShellGet** モジュールをダウンロードできます。
 2. DSC プル サーバーの SSL 証明書を、自社組織内またはパブリック証明機関のいずれかの信頼された証明機関から取得します。 証明機関から受け取る証明書は、通常、PFX 形式です。
-3. 証明書には DSC プル サーバーとして使用する既定の場所になるノード インストール`CERT:\LocalMachine\My`します。
+3. 証明書は、DSC プル サーバーになるノードの既定の場所 (`CERT:\LocalMachine\My` である必要があります) にインストールします。
    - 証明書の拇印をメモしておきます。
-4. 登録キーとして使う GUID を選択します。 PowerShell を使って GUID を生成するには、PS プロンプトに「` [guid]::newGuid()`」または「`New-Guid`」と入力し、Enter キーを押します。 このキーは、登録時にクライアント ノードによって認証のために共有キーとして使用されます。 詳細については、この後の「登録キー」セクションを参照してください。
-5. PowerShell ISE の起動 (F5、次の構成スクリプト) (の Examples フォルダーに含まれる、 **xPSDesiredStateConfiguration**モジュールとして`Sample_xDscWebServiceRegistration.ps1`)。 このスクリプトは、プル サーバーをセットアップします。
+4. 登録キーとして使う GUID を選択します。 PowerShell を使って GUID を生成するには、PS プロンプトに「`[guid]::newGuid()`」または「`New-Guid`」と入力し、Enter キーを押します。 このキーは、登録時にクライアント ノードによって認証のために共有キーとして使用されます。 詳細については、この後の「登録キー」セクションを参照してください。
+5. PowerShell ISE で、次の構成スクリプトを起動 (F5) します (このスクリプトは、**xPSDesiredStateConfiguration** モジュールの Example フォルダーに `Sample_xDscWebServiceRegistration.ps1` として存在します)。 このスクリプトは、プル サーバーをセットアップします。
 
     ```powershell
     configuration Sample_xDscWebServiceRegistration
@@ -164,9 +165,9 @@ Web プル サーバーをセットアップする最も簡単な方法は、**x
 サーバーにクライアント ノードを登録して、構成 ID の代わりに構成名を使用できるように、上の構成で作成された登録キーは、`C:\Program Files\WindowsPowerShell\DscService` にある `RegistrationKeys.txt` という名前のファイルに保存されます。 登録キーは、クライアントがプル サーバーに初期登録を行うときに共有シークレットとして機能します。 登録が正常に完了すると、クライアントは、プル サーバーに一意に認証されるために使う自己署名証明書を生成します。 この証明書の拇印がローカルに保存され、プル サーバーの URL に関連付けられます。
 
 > [!NOTE]
-> 登録キーは、PowerShell 4.0 ではサポートされません。
+> 登録キーは、PowerShell 4.0 ではサポートされていません。
 
-プル サーバーで認証するようにノードを構成するには、登録キーが、このプル サーバーに登録されるすべてのターゲット ノードのメタ構成に含まれている必要があります。 なお、 **RegistrationKey**以下のメタ構成では、ターゲット マシンが正常に登録し、値が格納された値と一致する必要がありますが削除、`RegistrationKeys.txt`プル サーバー上のファイル ('140a952b-b9d6-406b-b416-e0f759c9c0e4' このなど)。 登録キー値を知ると、任意のターゲット コンピューターをプル サーバーに登録できるようになるので、登録キー値は常にセキュリティで保護してください。
+プル サーバーで認証するようにノードを構成するには、登録キーが、このプル サーバーに登録されるすべてのターゲット ノードのメタ構成に含まれている必要があります。 なお、次のメタ構成にある **RegistrationKey** は、ターゲット コンピューターが正常に登録された後に削除され、値はプル サーバーの `RegistrationKeys.txt` ファイルに格納されている値と一致する必要があります (この例では '140a952b-b9d6-406b-b416-e0f759c9c0e4')。 登録キー値を知ると、任意のターゲット コンピューターをプル サーバーに登録できるようになるので、登録キー値は常にセキュリティで保護してください。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -210,7 +211,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 ```
 
 > [!NOTE]
-> **ReportServerWeb**セクション レポート プル サーバーに送信されるデータを使用できます。
+> **ReportServerWeb** セクションでは、レポートするデータをプル サーバーに送信できるようにしています。
 
 メタ構成ファイルに **ConfigurationID** プロパティがないことは、暗黙的に、そのプル サーバーが V2 バージョンのプル サーバー プロトコルをサポートしていることを示すので、初期登録が必要になります。
 逆に、**ConfigurationID** が存在することは、V1 バージョンのプル サーバー プロトコルが使用され、登録処理がないことを意味します。
@@ -227,12 +228,12 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 
 各リソース モジュールは、圧縮し、`{Module Name}_{Module Version}.zip` というパターンで名前を付ける必要があります。
 
-たとえば、名 3.1.2.0 のモジュールのバージョンが xwebadminstration でモジュールを名前は`xWebAdministration_3.2.1.0.zip`します。
+たとえば、モジュール名が xWebAdminstration で、バージョンが 3.1.2.0 のモジュールでは、`xWebAdministration_3.2.1.0.zip` という名前になります。
 各バージョンのモジュールを 1 つの zip ファイルに含める必要があります。
 各 zip ファイルには 1 つのバージョンのリソースのみが含まれるので、WMF 5.0 で追加された、単一のディレクトリに複数のモジュール バージョンを入れるモジュール形式はサポートされていません。
 このため、プル サーバーで使うための DSC リソース モジュールをパッケージ化する前に、ディレクトリ構造に少しの変更が必要です。
 WMF 5.0 の DSC リソースを含むモジュールの既定の形式は、`{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\` です。
-プル サーバー用にパッケージ化は、前に、削除、 **{モジュールのバージョン}** フォルダー パスに`{Module Folder}\DscResources\{DSC Resource Folder}\`します。
+プル サーバー用にパッケージ化する前に、パスが `{Module Folder}\DscResources\{DSC Resource Folder}\` になるように **{Module version}** フォルダーを削除します。
 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを **ModulePath** フォルダーに置きます。
 
 新しく追加したモジュールのチェックサム ファイルを作成するには、`New-DscChecksum {module zip file}` を使用します。
@@ -280,8 +281,8 @@ DSC コミュニティは、プル サービス プロトコルを実装する�
 
 次のトピックでは、プル クライアントのセットアップについて詳しく説明します。
 
-- [構成 ID を使用して DSC プル クライアントのセットアップします。](pullClientConfigID.md)
-- [構成名を使用して DSC プル クライアントのセットアップします。](pullClientConfigNames.md)
+- [構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)
+- [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
 - [部分構成](partialConfigs.md)
 
 ## <a name="see-also"></a>関連項目
@@ -289,5 +290,5 @@ DSC コミュニティは、プル サービス プロトコルを実装する�
 - [Windows PowerShell Desired State Configuration の概要](../overview/overview.md)
 - [構成の適用](enactingConfigurations.md)
 - [DSC レポート サーバーの使用](reportServer.md)
-- [[MS-DSCPM]: Desired State Configuration Pull Model プロトコル](https://msdn.microsoft.com/library/dn393548.aspx)
-- [[MS-DSCPM]: Desired State Configuration Pull Model プロトコルの正誤表](https://msdn.microsoft.com/library/mt612824.aspx)
+- [[MS-DSCPM]:Desired State Configuration Pull Model プロトコル](https://msdn.microsoft.com/library/dn393548.aspx)
+- [[MS-DSCPM]:Desired State Configuration Pull Model プロトコルの正誤表](https://msdn.microsoft.com/library/mt612824.aspx)

@@ -2,12 +2,12 @@
 title: SSH 経由の PowerShell リモート処理
 description: SSH を使用した PowerShell Core のリモート処理
 ms.date: 08/14/2018
-ms.openlocfilehash: b5c6bd70841e270c2c128601612c07af9d9aa6e4
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655295"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58056534"
 ---
 # <a name="powershell-remoting-over-ssh"></a>SSH 経由の PowerShell リモート処理
 
@@ -30,7 +30,7 @@ SSH リモート処理では、Windows コンピューターと Linux コンピ�
 
 ## <a name="general-setup-information"></a>一般的なセットアップ情報
 
-SSH はすべてのコンピューターにインストールする必要があります。 コンピューター間でリモート処理を行うには、SSH クライアント (`ssh.exe`) とサーバー (`sshd.exe`) の両方をインストールします。 OpenSSH を Windows は、Windows 10 ビルドは 1809 および Windows Server 2019 で利用可能なようになりました。 詳細については、次を参照してください。 [OpenSSH を Windows](/windows-server/administration/openssh/openssh_overview)します。 Linux の場合、お使いのプラットフォームに適した SSH (sshd サーバーを含む) をインストールします。 また、SSH リモート処理の機能を取得するために、GitHub から PowerShell Core をインストールする必要があります。 SSH サーバーは、リモート コンピューター上で PowerShell プロセスをホストする SSH サブシステムを作成するように構成される必要があります。 また、有効なパスワードやキーベースの認証を構成する必要があります。
+SSH はすべてのコンピューターにインストールする必要があります。 コンピューター間でリモート処理を行うには、SSH クライアント (`ssh.exe`) とサーバー (`sshd.exe`) の両方をインストールします。 OpenSSH for Windows が Windows 10 ビルド 1809 と Windows Server 2019 で利用できるようになりました。 詳細については、[Windows 向け OpenSSH](/windows-server/administration/openssh/openssh_overview) に関するページを参照してください。 Linux の場合、お使いのプラットフォームに適した SSH (sshd サーバーを含む) をインストールします。 また、SSH リモート処理の機能を取得するために、GitHub から PowerShell Core をインストールする必要があります。 SSH サーバーは、リモート コンピューター上で PowerShell プロセスをホストする SSH サブシステムを作成するように構成される必要があります。 また、有効なパスワードやキーベースの認証を構成する必要があります。
 
 ## <a name="set-up-on-windows-machine"></a>Windows コンピューターでのセットアップ
 
@@ -46,8 +46,8 @@ SSH はすべてのコンピューターにインストールする必要があ�
    New-PSSession [-HostName] <string[]> [-Name <string[]>] [-UserName <string>] [-KeyFilePath <string>] [-SSHTransport] [<CommonParameters>]
    ```
 
-2. 最新の Win32 OpenSSH をインストールします。 インストール手順については、次を参照してください。[インストールの OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse)します。
-3. 編集、`sshd_config`ファイルにある`%ProgramData%\ssh`します。
+2. 最新の Win32 OpenSSH をインストールします。 インストール手順については、「[Installation of OpenSSH](/windows-server/administration/openssh/openssh_install_firstuse)」 (OpenSSH のインストール) を参照してください。
+3. `$env:ProgramData\ssh` にある `sshd_config` ファイルを編集します。
 
    - パスワード認証が有効になっていることを確認します
 
@@ -314,6 +314,6 @@ sudo コマンドは、Linux コンピューターへのリモート セッシ�
 
 [MacOS 向け PowerShell Core](../../install/installing-powershell-core-on-macos.md)
 
-[Windows の OpenSSH](/windows-server/administration/openssh/openssh_overview)
+[Windows 向け OpenSSH](/windows-server/administration/openssh/openssh_overview)
 
 [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html)

@@ -3,12 +3,12 @@ ms.date: 08/27/2018
 keywords: PowerShell, コマンドレット
 title: 詳しいヘルプ情報の取得
 ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: 8b56f003fdef38b0f126cfe82eefcc145cc54783
-ms.sourcegitcommit: 3402a478cf118c11a5642038eb117bc76553e3ab
-ms.translationtype: MTE95
+ms.openlocfilehash: e58814f512aa2c5914f92f942cf2a4a76956ee20
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53411601"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794571"
 ---
 # <a name="getting-detailed-help-information"></a>詳しいヘルプ情報の取得
 
@@ -74,7 +74,7 @@ Get-Help Get-ChildItem -Parameter *
 ```
 
 ヘルプ記事内の例だけを表示するには、`Get-Help` の **Example** パラメーターを使用します。
-たとえば、`Get-ChildItem ` コマンドレットのヘルプ記事の例だけを表示するには、次のように入力します。
+たとえば、`Get-ChildItem` コマンドレットのヘルプ記事の例だけを表示するには、次のように入力します。
 
 ```powershell
 Get-Help Get-ChildItem -Examples

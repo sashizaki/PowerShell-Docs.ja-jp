@@ -2,12 +2,12 @@
 ms.date: 04/11/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC SMB プル サーバーのセットアップ
-ms.openlocfilehash: 722120369df9ff383a02c69111e0bacf2e2e76a5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 9d087a08861b2f4683e81efd1e25f857b8b75e07
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402261"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58057758"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>DSC SMB プル サーバーのセットアップ
 
@@ -59,7 +59,7 @@ Configuration SmbShare
         {
             Name = 'DscSmbShare'
             Path = 'C:\DscSmbShare'
-            FullAccess = 'admininstrator'
+            FullAccess = 'administrator'
             ReadAccess = 'myDomain\Contoso-Server$'
             FolderEnumerationMode = 'AccessBased'
             Ensure = 'Present'
@@ -69,14 +69,14 @@ Configuration SmbShare
 }
 ```
 
-構成は、ディレクトリを作成します。`C:\DscSmbShare`が既に存在し、そのディレクトリを SMB ファイル共有として使用する場合は、します。 **FullAccess**に書き込み、またはファイル共有から削除する必要がある任意のアカウントに付与する必要があります。 **ReadAccess**を共有から構成や DSC リソースを入手するすべてのクライアント ノードに与える必要があります。
+ディレクトリ `C:\DscSmbShare` がまだ存在しない場合は、構成によって作成され、そのディレクトリが SMB ファイル共有として使用されます。 **FullAccess** は、ファイル共有に書き込む必要があるか、ファイル共有から削除する必要があるあらゆるアカウントに付与してください。 **ReadAccess** は、共有から構成または DSC リソースを取得するあらゆるクライアント ノードに付与する必要があります。
 
 > [!NOTE]
-> DSC では既定では、システム アカウントとして実行ためコンピューター自体が共有へのアクセスを必要する必要があります。
+> DSC は既定ではシステム アカウントとして実行されるので、コンピューター自体も共有にアクセスする必要があります。
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>ファイル システムにプル クライアントへのアクセス権限を付与する
 
-クライアント ノードに **ReadAccess** を与えると、そのノードは SMB 共有にアクセスできるようになりますが、その共有内のファイルやフォルダーにはアクセスできません。 クライアント ノードへの SMB 共有フォルダーとサブフォルダーを明示的に付与する必要があります。 DSC でこれを行うには、[cNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) モジュールに含まれている **cNtfsPermissionEntry** リソースを使用して追加します。 次の構成では、プル クライアントに ReadAndExecute アクセスを付与する **cNtfsPermissionEntry** ブロックを追加します。
+クライアント ノードに **ReadAccess** を与えると、そのノードは SMB 共有にアクセスできるようになりますが、その共有内のファイルやフォルダーにはアクセスできません。 クライアント ノードに、SMB 共有のフォルダーやサブフォルダーに対するアクセス権限を明示的に許可する必要があります。 DSC でこれを行うには、[cNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) モジュールに含まれている **cNtfsPermissionEntry** リソースを使用して追加します。 次の構成では、プル クライアントに ReadAndExecute アクセスを付与する **cNtfsPermissionEntry** ブロックを追加します。
 
 ```powershell
 Configuration DSCSMB
@@ -135,7 +135,7 @@ Configuration DSCSMB
 > [!NOTE]
 > SMB プル サーバーを使っている場合は、構成 ID を使う必要があります。 構成名は、SMB ではサポートされません。
 
-各リソース モジュールは、圧縮し、`{Module Name}_{Module Version}.zip` というパターンで名前を付ける必要があります。 たとえば、モジュール名が xWebAdminstration で、バージョンが 3.1.2.0 のモジュールでは、'xWebAdministration_3.2.1.0.zip' という名前になります。 各バージョンのモジュールを 1 つの zip ファイルに含める必要があります。 モジュール zip ファイル内の別のバージョンがサポートされていません。 プル サーバーで使用するための DSC リソース モジュールをパッケージ化は前に、、ディレクトリ構造に小さな変更を加える必要があります。
+各リソース モジュールは、圧縮し、`{Module Name}_{Module Version}.zip` というパターンで名前を付ける必要があります。 たとえば、モジュール名が xWebAdminstration で、バージョンが 3.1.2.0 のモジュールでは、'xWebAdministration_3.2.1.0.zip' という名前になります。 各バージョンのモジュールを 1 つの zip ファイルに含める必要があります。 zip ファイル内のモジュールの個別のバージョンはサポートされていません。 プル サーバーで使うための DSC リソース モジュールをパッケージ化する前に、ディレクトリ構造に少しの変更が必要です。
 
 WMF 5.0 の DSC リソースを含むモジュールの既定の形式は、`{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\` です。
 
@@ -207,7 +207,7 @@ $ConfigurationData = @{
 
 ## <a name="acknowledgements"></a>謝辞
 
-次のユーザーに協力してくれた特殊:
+次の方々に感謝します。
 
 - DSC で SMB を使用することに関する Mike F. Robbins 氏の投稿を、このトピックの内容として参考にしました。 彼のブログは [Mike F Robbins](http://mikefrobbins.com/) にあります。
 - **cNtfsAccessControl** モジュールを作成した Serge Nikalaichyk 氏。 このモジュールのソースは [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl) にあります。

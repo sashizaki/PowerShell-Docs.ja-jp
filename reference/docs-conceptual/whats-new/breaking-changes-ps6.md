@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell、core
 title: PowerShell Core 6.0 の重要な変更
-ms.openlocfilehash: d477a9b27e8d5df6653ee40f8b606879b60a80c7
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655448"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795693"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell Core 6.0 の重要な変更
 
@@ -65,6 +65,10 @@ WMI ベースの 2 つのモジュール セットをサポートすることは
 ### <a name="-counter-cmdlets"></a>`*-Counter` コマンドレット
 
 サポートされていない API を使用していることから、より優れたソリューションが提供されるまで、PowerShell Core から `*-Counter` コマンドレットを削除します。
+
+### <a name="-eventlog-cmdlets"></a>`*-EventLog` コマンドレット
+
+サポートされていない API を使用しているため、より優れたソリューションが提供されるまで、PowerShell Core から `*-EventLog` コマンドレットを削除しています 。 `Get-WinEvent` と `Create-WinEvent` を使用すると、Windows でイベントを取得および作成することができます。
 
 ## <a name="enginelanguage-changes"></a>エンジンおよび言語の変更
 
@@ -179,9 +183,9 @@ PowerShell の名前付けが Microsoft の名前規則に準拠し、OSX では
 
 API がサポートされていないため、改善されたソリューションが発表されるまで、`LocalAccounts` モジュールと `Diagnostics` モジュールの `Counter`コマンドレットが削除されました。
 
-### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>ブール値のパラメーターを使用する Powershell スクリプトが正しく動作しない [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
+### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036httpsgithubcompowershellpowershellissues4036"></a>ブール値のパラメーターを使用する PowerShell スクリプトが正しく動作しない [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-以前は、powershell.exe (現在は `pwsh.exe`) で `-File` を使用して PowerShell スクリプトを実行する場合、$true/$false をパラメーター値として渡すことができませんでした。 解析された値としての $true/$false パラメーターのサポートが追加されました。 現在、ドキュメントに記載されている構文が機能しないため、スイッチの値もサポートされます。
+以前は、**powershell.exe** (現在は **pwsh.exe**) で `-File` を使用して PowerShell スクリプトを実行する場合、`$true`/`$false` をパラメーター値として渡すことができませんでした。 解析された値としての `$true`/`$false` パラメーターのサポートが追加されました。 現在、ドキュメントに記載されている構文が機能しないため、スイッチの値もサポートされます。
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027httpsgithubcompowershellpowershellissues4027"></a>`$PSVersionTable` から `ClrVersion` プロパティを削除 [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
@@ -193,7 +197,7 @@ Windows 以外のプラットフォームでの PowerShell のシバン使用を
 
 ### <a name="implement-unicode-escape-parsing-3958httpsgithubcompowershellpowershellissues3958"></a>Unicode エスケープ解析の実装 [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
-`` `u#### `` または `` `u{####} `` は対応する Unicode 文字に変換されます。 `` `u `` リテラルを出力するには、``` ``u ``` のように、グラーブ文字をエスケープします。
+`` `u####`` または `` `u{####}`` は対応する Unicode 文字に変換されます。 `` `u`` リテラルを出力するには、``` ``u``` のように、グラーブ文字をエスケープします。
 
 ### <a name="change-new-modulemanifest-encoding-to-utf8nobom-on-non-windows-platforms-3940httpsgithubcompowershellpowershellissues3940"></a>Windows 以外のプラットフォームの `New-ModuleManifest` エンコーディングを `UTF8NoBOM` に変更 [#3940](https://github.com/PowerShell/PowerShell/issues/3940)
 
@@ -271,4 +275,4 @@ Web コマンドレットの基となる .NET API が `System.Net.Http.HttpClien
 - `System.Net.ServicePointManager` 設定は使用できなくなります。
 - 現在、macOS では、証明書を使用した認証は使用できません。
 - `http://` URI 経由で `-Credential` を使用するとエラーになります。 `https://` URI を使用するか、または `-AllowUnencryptedAuthentication`パラメーターを指定してエラーを回避してください。
-- `-MaximumRedirection` リダイレクトの試行が最後のリダイレクトの結果を返す代わりに、指定された制限を超えたときに今すぐ終了エラーが生成されます。
+- `-MaximumRedirection` では、指定された制限を超えようとすると、最後のリダイレクトの結果を返す代わりに、終了エラーが生成されるようになりました。

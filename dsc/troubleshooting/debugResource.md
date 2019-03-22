@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC リソースのデバッグ
-ms.openlocfilehash: 9b2e7dd9b42332b869c4d7fabb21bd4b5a6b8800
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402510"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58055582"
 ---
 # <a name="debugging-dsc-resources"></a>DSC リソースのデバッグ
 
@@ -105,7 +105,7 @@ ISE でデバッグ コマンドを使うと、リソース スクリプトを�
 
 [Enable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Enable-DscDebug)を呼び出した後では、[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) を呼び出すたびに構成でデバッガー中断が行われるようになります。 構成を通常どおりに実行できるようにするには、[Disable-DscDebug](/powershell/module/PSDesiredStateConfiguration/Disable-DscDebug) コマンドレットを呼び出してデバッグを無効化する必要があります。
 
->**注:** 再起動しても、LCM のデバッグ状態は変わりません。 デバッグが有効になっている場合、再起動後に構成を開始してもデバッグ中断が行われます。
+>**注:** 再起動をしても、LCM のデバッグ状態は変更されません。 デバッグが有効になっている場合、再起動後に構成を開始してもデバッグ中断が行われます。
 
 ## <a name="see-also"></a>参照
 

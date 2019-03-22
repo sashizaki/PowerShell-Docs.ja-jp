@@ -2,12 +2,12 @@
 ms.date: 08/24/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Script リソース
-ms.openlocfilehash: ef84239820a44aab2a028f7f0fe17653a851b72e
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.openlocfilehash: 86dfb74bf52d8907686bb955fd722f4fb8b9131b
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047758"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054758"
 ---
 # <a name="dsc-script-resource"></a>DSC Script リソース
 
@@ -61,7 +61,7 @@ DSC は `GetScript` からの出力を使用しません。 [Get-DscConfiguratio
 
 ## <a name="examples"></a>例
 
-### <a name="example-1-write-sample-text-using-a-script-resource"></a>例 1:スクリプト リソースを使用して、サンプル テキストを書き込む
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>例 1:Script リソースを使用して、サンプル テキストを作成する
 
 この例では、各ノード上の `C:\TempFolder\TestFile.txt` の有無についてテストします。 このファイルがない場合は、`SetScript` を使用してファイルを作成します。 `GetScript` はファイルのコンテンツを返し、その戻り値は使用されません。
 
@@ -86,7 +86,7 @@ Configuration ScriptTest
 }
 ```
 
-### <a name="example-2-compare-version-information-using-a-script-resource"></a>例 2: スクリプト リソースを使用してバージョン情報を比較します。
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>例 2: Script リソースを使用してバージョン情報を比較する
 
 この例は、オーサリング コンピューター上のテキスト ファイルから *compliant* バージョン情報を取得して、これを `$version` 変数に格納します。 ノードの MOF ファイルを生成するときに、各スクリプト ブロックの `$using:version` 変数は、DSC によって `$version` 変数の値に置き換えられます。 実行時に *compliant* バージョンが各ノード上のテキスト ファイルに格納され、以降の実行で比較され更新されます。
 

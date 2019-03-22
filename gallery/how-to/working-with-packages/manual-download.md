@@ -3,16 +3,16 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, PSGallery
 title: パッケージの手動ダウンロード
-ms.openlocfilehash: 57baa14089b803f58c42ccb54553ecace841e34b
-ms.sourcegitcommit: e24525046dd37166b9d83eeecdc534726316f429
-ms.translationtype: MTE95
+ms.openlocfilehash: af628f99befe50c16c2c0c60f1a352647af34ff4
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/01/2018
-ms.locfileid: "52742824"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054878"
 ---
 # <a name="manual-package-download"></a>パッケージの手動ダウンロード
 
-Powershell ギャラリーでは、PowerShellGet コマンドレットを使用せずに、Web サイトから直接パッケージのダウンロードをサポートしています。 内部リポジトリにコピーすることができますし、NuGet パッケージ (.nupkg) ファイルとしてパッケージをダウンロードできます。
+PowerShell ギャラリーでは、PowerShellGet コマンドレットを使用せずに、Web サイトから直接パッケージのダウンロードをサポートしています。 任意のパッケージを NuGet パッケージ (.nupkg) ファイルとしてダウンロードできます。その後、内部リポジトリにコピーできます。
 
 > [!NOTE]
 > パッケージの手動ダウンロードは、Install-module コマンドレットの代替手段を意図したものでは**ありません**。
@@ -45,7 +45,7 @@ NuGet パッケージ ファイルには、元のパッケージ化されたコ�
 1. NuGet パッケージの内容をローカル フォルダーに抽出します。
 2. フォルダーから NuGet に固有の要素を削除します。
 3. フォルダーの名前を変更します。 既定のフォルダー名は通常、`<name>.<version>` です。 モジュールがプレリリース バージョンとしてタグ付けされされている場合は、バージョンに "-prerelease" を含めることができます。 フォルダーの名前をモジュールの名前だけに変更します。 たとえば、"azurerm.storage.5.0.4-preview" は "azurerm.storage" になります。
-4. 内のフォルダーのいずれかのフォルダーにコピー、`$env:PSModulePath value`します。 `$env:PSModulePath` セミコロンで区切られた一連の PowerShell モジュールが検索するパスです。
+4. フォルダーを `$env:PSModulePath value` 内のフォルダーのいずれかにコピーします。 `$env:PSModulePath` はセミコロンで区切られたパスのセットです。ここで、PowerShell によってモジュールが検索されます。
 
 > [!IMPORTANT]
 > 手動ダウンロードには、モジュールで必要な依存関係は何も含まれていません。 パッケージに依存関係がある場合は、このモジュールが正常に動作するために、それらをシステムにインストールする必要があります。 PowerShell ギャラリーには、パッケージで必要なすべての依存関係が表示されます。

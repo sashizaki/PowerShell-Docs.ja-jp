@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Integrated Scripting Environment (ISE)
 ms.assetid: f156b92d-0203-46d2-89c7-b4989d32e3d2
-ms.openlocfilehash: a5fcc8c813349d0b85cc3af29047424fe787d168
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 3002c2cb7213b1c2d7201dddf5ff3c0651fad767
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402189"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054715"
 ---
 # <a name="windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE)
 
@@ -34,7 +34,7 @@ ISE に機能を追加する**アドオン ツール**は、[Windows PowerShell 
 
 **最近使用した一覧**は、最も頻繁に使用するファイルにより簡単にアクセスできるよう [ファイルを開く] メニューに組み込まれました。
 
-**マージされたコンソール ウィンドウ**。 以前のバージョンの ISE では、コマンド ウィンドウと出力ウィンドウが個別に存在しました。 それらのウィンドウは 1 つのウィンドウに結合され、Windows Powershell コンソールにより近い体裁になっています。
+**マージされたコンソール ウィンドウ**。 以前のバージョンの ISE では、コマンド ウィンドウと出力ウィンドウが個別に存在しました。 それらのウィンドウは 1 つのウィンドウに結合され、Windows PowerShell コンソールにより近い体裁になっています。
 
 **コマンド ライン スイッチ**。 いくつかの新しいコマンド ライン スイッチにより、ISE の機能の仕方をより詳細に制御できるようになりました。 -NoProfile は、プロファイル スクリプトを実行せずに ISE を起動します。 -Help は、ISE でヘルプ ウィンドウを開きます。 -mta は、“マルチスレッド アパートメント モード” で ISE を起動します。 既定では、シングル スレッドです。
 

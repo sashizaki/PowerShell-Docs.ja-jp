@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データと環境データの分離
-ms.openlocfilehash: 24a92e5e4f15959498b57a1488a688d5548f3585
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 305a766fec81d4ea4afce187756188b067a2048b
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402373"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57794928"
 ---
 # <a name="separating-configuration-and-environment-data"></a>構成データと環境データの分離
 
@@ -88,7 +88,7 @@ Mode                LastWriteTime         Length Name
 
 1 つの構成を使用して Web サイトの開発環境と運用環境の両方を設定する完全な例を見てみましょう。 開発環境では、IIS と SQL Server の両方が 1 つのノードにインストールされています。 運用環境では、IIS と SQL は別々のノードにインストールされています。 .psd1 構成データ ファイルを使用して、この 2 つの異なる環境のデータを指定します。
 
- ### <a name="configuration-data-file"></a>構成データ ファイル
+### <a name="configuration-data-file"></a>構成データ ファイル
 
 開発環境と運用環境のデータを、`DevProdEnvData.psd1` という名前のファイルに次のように定義します。
 
@@ -135,7 +135,7 @@ Mode                LastWriteTime         Length Name
 
 構成スクリプトの最後の行で、`DevProdEnvData.psd1` を `$ConfigurationData` パラメーターとして渡して、構成を呼び出し (MOF ドキュメントに構成をコンパイルし) ます。
 
->**注:** この構成には、モジュールが必要があります`xSqlPs`と`xWebAdministration`ターゲット ノードにインストールします。
+>**注:** この構成には、ターゲット ノードにインストールされるモジュール `xSqlPs` と `xWebAdministration` が必要です。
 
 `MyWebApp.ps1` という名前のファイルで構成を定義しましょう。
 

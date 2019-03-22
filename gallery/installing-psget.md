@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: PowerShellGet のインストール
-ms.openlocfilehash: 5c51cb1c7ea2538cc5f8503ce6c5d80edda70e15
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.openlocfilehash: 23a53a9117c9f6a7ad157b635cd7ff4b3b3444c5
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002225"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054830"
 ---
 # <a name="installing-powershellget"></a>PowerShellGet のインストール
 
@@ -57,7 +57,7 @@ ms.locfileid: "50002225"
   Exit
   ```
 
-- PowerShellGet および PackageManagment モジュールが他のプロセスで読み込まれていないことを確認します。
+- PowerShellGet および PackageManagement モジュールが他のプロセスで確実に読み込まれていないようにします。
 - `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` フォルダーと `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` フォルダーの内容を削除します。
 - 管理者特権で PS コンソールを再度開いて、次のコマンドを実行します。
 

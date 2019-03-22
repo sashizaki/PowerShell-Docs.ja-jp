@@ -1,32 +1,32 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc, powershell, 構成、サービス, セットアップ
+keywords: dsc, powershell, 構成, サービス, セットアップ
 title: 構成の作成、コンパイル、適用
-ms.openlocfilehash: fa4d98fd12202439ba7025fd8af3fa398653ca05
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402349"
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795421"
 ---
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
 # <a name="write-compile-and-apply-a-configuration"></a>構成の作成、コンパイル、適用
 
 この演習では、Desired State Configuration (DSC) の構成の作成と適用について最初から最後まで説明します。
-次の例では、書き込みし、非常に単純な構成を適用する方法を学びます。 構成が"HelloWorld.txt"ファイルがローカル コンピューターに存在することを確認します。 ファイルを削除する場合は、DSC ことに、次回の更新は再作成します。
+次の例では、非常に単純な構成を作成して適用する方法について学習します。 この構成により、"HelloWorld.txt" ファイルがローカル コンピューターに存在していることが確保されます。 ファイルを削除する場合は、次に更新されるときに DSC によってファイルが再作成されます。
 
-DSC とそのしくみの概要については、次を参照してください。 [Desired State Configuration の概要開発者向け](../overview/overview.md)します。
+DSC の概要としくみついては、[開発者向けの Desired State Configuration の概要](../overview/overview.md)に関するページをご覧ください。
 
 ## <a name="requirements"></a>要件
 
-この例を実行するには、PowerShell 4.0 またはそれ以降を実行しているコンピューターが必要です。
+このサンプルを実行するには、PowerShell 4.0 以降が動作しているコンピューターが必要です。
 
 ## <a name="write-the-configuration"></a>構成を記述する
 
 DSC [構成](configurations.md)は、1 つ以上のターゲット コンピューター (ノード) を構成する方法を定義する特別な PowerShell 関数です。
 
-PowerShell ISE で、またはその他の PowerShell エディターで、次のように入力します。
+PowerShell ISE、またはその他の PowerShell エディターで、次のように入力します。
 
 ```powershell
 Configuration HelloWorld {
@@ -47,20 +47,22 @@ Configuration HelloWorld {
 }
 ```
 
-"HelloWorld.ps1"として保存します。
+ファイルを "HelloWorld.ps1" という名前で保存します。
 
-関数を定義するようには、構成の定義です。 `localhost` 場合、**ノード**ブロックは構成するターゲット ノードを指定します。
+構成を定義するのは、関数の定義と似ています。 `localhost` 場合、**ノード**ブロックは構成するターゲット ノードを指定します。
 
-構成では、1 つを呼び出す[リソース](../resources/resources.md)、`File`リソース。 リソースは、ターゲット ノードが構成によって定義された状態になっているか確認します。
+構成では、1 つの[リソース](../resources/resources.md) (`File` リソース) を呼び出します。 リソースは、ターゲット ノードが構成によって定義された状態になっているか確認します。
 
 ## <a name="compile-the-configuration"></a>構成をコンパイルする
 
 DSC 構成をノードに適用するには、最初にコンパイルを行い、MOF ファイルを出力する必要があります。
-によって定義されたすべてのノードの 1 つの".mof"ファイルをコンパイルは、関数のように、構成を実行している、`Node`ブロックします。
-構成を実行するのには、する必要があります*ドット ソース*現在のスコープに"HelloWorld.ps1"スクリプト。
-詳細については、次を参照してください。 [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)します。
+関数のように構成を実行すると、`Node` ブロックで定義されたノードごとに、".mof" ファイルを 1 つコンパイルします。
+構成を実行するために、"HelloWorld.ps1" スクリプトを現在の範囲に*ドット ソース*で使用する必要があります。
+詳細については、[スクリプト](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)に関するページを参照してください。
 
-*ドット ソース*"HelloWorld.ps1"スクリプトの後のそれを格納場所のパスを入力して、 `. ` (ドット、領域)。 次に、可能性があります関数のように呼び出して、構成を実行します。
+`. ` (ドット、スペース) の後に保存した場所のパスを入力することで、"HelloWorld.ps1" スクリプトを<!-- markdownlint-disable MD038 -->
+*ドット ソース*で使用します。 その後、関数のように呼び出すことで、構成を実行することができます。
+<!-- markdownlint-enable MD038 -->
 
 ```powershell
 . C:\Scripts\WebsiteTest.ps1
@@ -82,13 +84,13 @@ Mode                LastWriteTime         Length Name
 
 コンパイル済みの MOF があるため、[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを呼び出すことで、ターゲット ノード (今回の場合はローカル コンピューター) に構成を適用できます。
 
-`Start-DscConfiguration`コマンドレットの指示、[ローカル構成マネージャー (LCM)](../managing-nodes/metaConfig.md)構成を適用する、DSC のエンジンです。
+`Start-DscConfiguration` コマンドレットから[ローカル構成マネージャー (LCM)](../managing-nodes/metaConfig.md) (DSC のエンジン) に対して構成の適用を指示します。
 LCM はDSC リソースを呼び出し、構成を適用します。
 
-次のコードを使用して実行する、`Start-DSCConfiguration`コマンドレット。 "Localhost.mof"を格納する場所のディレクトリ パスを指定、`-Path`パラメーター。 `Start-DSCConfiguration`コマンドレットは、いずれかに指定されたディレクトリを検索"\<computername\>.mof"ファイル。 `Start-DSCConfiguration`コマンドレットはファイル名 ("localhost"、"server01"、「dc 02」など) で指定されたコンピューター名に見つけた各".mof"ファイルを適用しようとしています。
+以下のコードを使用して、`Start-DSCConfiguration` コマンドレットを実行します。 "localhost.mof" が保存されているディレクトリ パスを `-Path` パラメーターに指定します。 `Start-DSCConfiguration` コマンドレットは、任意の "\<computername\>.mof" ファイルに対して指定されたディレクトリが対象になります。 `Start-DSCConfiguration` コマンドレットでは、見つかった各 ".mof" ファイルを、ファイル名 ("localhost"、"server01"、"dc-02" など) で指定されたコンピューター名に適用しようとします。
 
 > [!NOTE]
-> 場合、`-Wait`パラメーターが指定されていない`Start-DSCConfiguration`操作を実行するバック グラウンド ジョブを作成します。 指定する、`-Verbose`パラメーターを使用すると、ウォッチ、 **Verbose**が操作の出力。 `-Wait`、および`-Verbose`は両方の省略可能なパラメーターです。
+> `-Wait` パラメーターが指定されていない場合、`Start-DSCConfiguration` では操作を実行するためにバックグラウンド ジョブが作成されます。 `-Verbose` パラメーターを指定すると、操作の**詳細**出力を確認できます。 `-Wait` および `-Verbose` は、どちらも省略可能なパラメーターです。
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
@@ -96,11 +98,11 @@ Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 
 ## <a name="test-the-configuration"></a>構成をテストする
 
-1 回、`Start-DSCConfiguration`コマンドレットが完了したら、指定した場所にある"HelloWorld.txt"ファイルが表示されます。 内容を確認することができます、 [Get-content](/powershell/module/microsoft.powershell.management/get-content)コマンドレット。
+`Start-DSCConfiguration` コマンドレットが完了すると、指定した場所に "HelloWorld.txt" ファイルが表示されます。 [Get-Content](/powershell/module/microsoft.powershell.management/get-content) コマンドレットを使用して、コンテンツを確認できます。
 
-できます*テスト*を使用して現在の状態[Test-dscconfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)します。
+[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) を使用して、現在の状態を*テスト*することもできます。
 
-出力は、ノードが現在適用されている構成で準拠している場合は、"True"にすることがあります。
+現在、ノードが適用された構成に準拠している場合、出力は "True" になります。
 
 ```powershell
 Test-DSCConfiguration
@@ -118,9 +120,9 @@ Get-Content -Path C:\Temp\HelloWorld.txt
 Hello World from DSC!
 ```
 
-## <a name="re-applying-the-configuration"></a>構成を再適用します。
+## <a name="re-applying-the-configuration"></a>構成を再適用する
 
-もう一度適用される構成を表示するには、構成で作成されたテキスト ファイルを削除できます。 使用して、`Start-DSCConfiguration`コマンドレットと、`-UseExisting`パラメーター。 `-UseExisting`パラメーター `Start-DSCConfiguration` "current.mof"ファイルを再適用するを表す最も最近正常に構成を適用します。
+もう一度構成が適用されることを確認するには、自分の構成で作成されたテキスト ファイルを削除します。 `Start-DSCConfiguration` コマンドレットを `-UseExisting` パラメーターを指定して使用します。 `-UseExisting` パラメーターによって、`Start-DSCConfiguration` に対して、最後に正常に適用された構成を表す、"current.mof" を再適用するように指示されます。
 
 ```powershell
 Remove-Item -Path C:\Temp\HelloWorld.txt

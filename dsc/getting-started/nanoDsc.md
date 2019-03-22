@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC on Nano Server の使用
-ms.openlocfilehash: fd81fe56d16100f45d9ee2dfd8fdc303c2a6c17a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
+ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402565"
+ms.lasthandoff: 03/18/2019
+ms.locfileid: "58054664"
 ---
 # <a name="using-dsc-on-nano-server"></a>DSC on Nano Server の使用
 
@@ -38,7 +38,7 @@ Nano Server でサポートされる API のセットは、通常版の Windows 
 - [Stop-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration)
 - [Get-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Get-DscConfiguration)
 - [Test-DscConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
-- [Publish-DscConfiguraiton](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
+- [Publish-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Publish-DscConfiguration)
 - [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration)
 - [Restore-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Restore-DscConfiguration)
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
@@ -50,7 +50,7 @@ Nano Server でサポートされる API のセットは、通常版の Windows 
 
 - 構成のコンパイル (「[DSC 構成](../configurations/configurations.md)」を参照)
 
-  **問題 #1629**パスワードの暗号化 (を参照してください[MOF ファイルのセキュリティ保護](../pull-server/secureMOF.md)) の構成時にコンパイルは機能しません。
+  **問題:** 構成のコンパイル中にパスワードの暗号化 (「[MOF ファイルのセキュリティ保護](../pull-server/secureMOF.md)」を参照) が機能しません。
 
 - メタ構成のコンパイル (「[ローカル構成マネージャーの構成](../managing-nodes/metaConfig.md)」を参照)
 
@@ -60,7 +60,7 @@ Nano Server でサポートされる API のセットは、通常版の Windows 
 
 - DSC リソースのデバッグ (「[DSC リソースのデバッグ](../troubleshooting/debugResource.md)」を参照)
 
-  **問題 #1629**リソースが PsDscRunAsCredential を使用する場合は機能しません (を参照してください[ユーザー資格情報で実行されている DSC](../configurations/runAsUser.md))
+  **問題:** リソースで PsDscRunAsCredential が使用されている場合に機能しません ([ユーザーの資格情報を使用した DSC の実行](../configurations/runAsUser.md)に関するページを参照)
 
 - [ノードの相互依存関係の指定](../configurations/crossNodeDependencies.md)
 
@@ -97,12 +97,12 @@ Nano Server でサポートされる API のセットは、通常版の Windows 
 - **グループ**
 - **GroupSet**
 
-  **問題 #1629**上記のリソースの失敗特定のインスタンスが 2 回呼び出された場合 (同じ構成を 2 回の実行)
+  **問題:** 特定のインスタンスを 2 回呼び出す (同じ構成を 2 回実行する) と、上記のリソースでエラーが発生します
 
 - **Service**
 - **ServiceSet**
 
-  **問題 #1629**専用のサービス (状態) の開始/停止します。 StartupType、資格情報、説明などのほかのサービス属性を変更しようとするとエラーが発生します。 次のようなエラーがスローされます。
+  **問題:** サービスの開始/停止 (状態) でのみ動作します。 StartupType、資格情報、説明などのほかのサービス属性を変更しようとするとエラーが発生します。 次のようなエラーがスローされます。
 
   *型 [management.managementobject] が見つかりません。この型を含むアセンブリが読み込まれていることを確認してください。*
 
