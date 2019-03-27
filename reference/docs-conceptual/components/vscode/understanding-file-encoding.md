@@ -2,12 +2,12 @@
 title: VSCode と PowerShell でのファイルのエンコードの概要
 description: VSCode と PowerShell でのファイルのエンコードの構成
 ms.date: 02/28/2019
-ms.openlocfilehash: 73e766832d56a08bd5ef16df11899a0aab0badae
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795124"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320406"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>VSCode と PowerShell でのファイルのエンコードの概要
 
@@ -60,8 +60,8 @@ At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtp
 - `—` の代わりに `â€”`
 - `Ä` の代わりに `Ã„2`
 - ` ` の代わりに `Â` (改行なしスペース)
-- `é`
-<!-- markdownlint-enable MD038 --> の代わりに `Ã©`
+- `é` の代わりに `Ã©`
+<!-- markdownlint-enable MD038 -->
 
 こちらの便利な[関連ドキュメント](https://www.i18nqa.com/debug/utf8-debug.html)には、UTF-8/Windows-1252 エンコードの問題を示す一般的なパターンの一覧が掲載されています。
 
@@ -215,7 +215,7 @@ ISE で BOM を尊重する必要がありますが、リフレクションを�
 ### <a name="source-control-software"></a>ソース管理ソフトウェア
 
 git などの一部のソース管理ツールはエンコードを無視します (git は単にバイトを追跡します)。
-TFS や Mercurial などの他のツールはそうではない場合があります。 一部の git ベースのツールでさえ、テキストのデコードに依存しています。
+他のもの (Azure DevOps や Mercurial など) はそうではない場合があります。 一部の git ベースのツールでさえ、テキストのデコードに依存しています。
 
 その場合は、次のことを確認してください。
 

@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Format コマンドを使用した出力ビューの変更
 ms.assetid: 63515a06-a6f7-4175-a45e-a0537f4f6d05
-ms.openlocfilehash: 97d3a9e04abb61bb80a0b8c67d9fb9e885a0b91b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 35ccd2525d40ffd5e3f25a1abfa38904a109bde5
+ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403125"
+ms.lasthandoff: 03/21/2019
+ms.locfileid: "58320423"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Format コマンドを使用した出力ビューの変更
 
@@ -49,10 +49,20 @@ PS> Get-Process -Name powershell | Format-Wide -Property Id
 
 #### <a name="controlling-format-wide-display-with-column"></a>列による Format-Wide 表示の制御
 
-**Format-Wide** コマンドレットでは、一度に表示できるプロパティは 1 つだけです。 これは、1 行に要素が 1 つだけ示される単純なリストを表示する場合に便利です。 単純なリスト表示にするには、**Column** パラメーターの値を 1 に設定します。次のように入力します。
+`Format-Wide` コマンドレットでは、一度に表示できるプロパティは 1 つだけです。
+これは、1 行に要素が 1 つだけ示される単純なリストを表示する場合に便利です。
+単純なリスト表示にするには、**Column** パラメーターの値を 1 に設定します。次のように入力します。
 
 ```powershell
-Get-Command Format-Wide -Property Name -Column 1
+Get-Command -Verb Format | Format-Wide -Property Noun -Column 1
+```
+
+```output
+Custom
+Hex
+List
+Table
+Wide
 ```
 
 ### <a name="using-format-list-for-a-list-view"></a>リスト ビューのための Format-List の使用
