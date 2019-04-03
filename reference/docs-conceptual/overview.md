@@ -48,7 +48,7 @@ Get-Help Get-Service
 Get-Service | Get-Member
 ```
 
-### <a name="consistency"></a>Consistency
+### <a name="consistency"></a>一貫性
 
 システム管理は複雑な作業になる場合があります。 一貫性のあるインターフェースを備えたツールを使用することで、システム管理に特有の複雑な作業を制御しやすくなります。 残念ながら、コマンド ライン ツールもスクリプト可能な COM オブジェクトも一貫性に優れてはいません。
 
