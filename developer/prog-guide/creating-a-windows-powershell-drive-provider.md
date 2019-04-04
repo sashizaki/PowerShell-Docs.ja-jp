@@ -119,7 +119,7 @@ ms.locfileid: "58055651"
 
 ## <a name="code-sample"></a>コード サンプル
 
-完全なサンプル コードでは、次を参照してください。 [AccessDbProviderSample02 コード サンプル](./accessdbprovidersample02-code-sample.md)します。
+完全なサンプル コードでは、[AccessDbProviderSample02 コード サンプル](./accessdbprovidersample02-code-sample.md)を参照してください。
 
 ## <a name="testing-the-windows-powershell-drive-provider"></a>Windows PowerShell ドライブ プロバイダーのテスト
 
@@ -159,7 +159,7 @@ Windows PowerShell を使用した、Windows PowerShell プロバイダーを登
 4. 接続を検証します。 接続は、ドライブのメンバーとして定義されている、ために、Get PDDrive コマンドレットを使用してチェックできます。
 
    > [!NOTE]
-   > プロバイダーは、その操作のコンテナーの機能をニーズに応じて、ユーザーはドライブとしてプロバイダーとやり取りまだことはできません。 詳細については、次を参照してください。 [Windows PowerShell コンテナー プロバイダーを作成する](./creating-a-windows-powershell-container-provider.md)します。
+   > プロバイダーは、その操作のコンテナーの機能をニーズに応じて、ユーザーはドライブとしてプロバイダーとやり取りまだことはできません。 詳細については、[Windows PowerShell コンテナー プロバイダーを作成する](./creating-a-windows-powershell-container-provider.md)を参照してください。
 
    **PS > (である get-psdrive mydb) .connection**
 

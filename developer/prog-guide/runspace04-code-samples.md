@@ -20,7 +20,7 @@ ms.locfileid: "57429467"
 使用する実行空間用のコード サンプルを次に示します、 [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)終了エラーを生成するスクリプトを実行するクラス。 ホスト アプリケーションは、エラーをキャッチし、エラー レコードを解釈する責任を負います。
 
 > [!NOTE]
-> Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用して、この実行空間には、VB.NET のソース ファイル (Runspace04.vb) をダウンロードできます。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
+> Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用して、この実行空間には、VB.NET のソース ファイル (Runspace04.vb) をダウンロードできます。 ダウンロードの手順については、[Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)を参照してください。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
 

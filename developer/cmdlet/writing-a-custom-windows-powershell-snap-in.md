@@ -22,7 +22,7 @@ ms.locfileid: "57795591"
 
 この例では、特定のコマンドレットを登録する Windows PowerShell スナップインを記述する方法を示します。
 
-この種類のスナップインでは、登録するどのコマンドレット、プロバイダー、型、または形式を指定します。 アセンブリ内のすべてのコマンドレットとプロバイダーを登録するスナップインを作成する方法の詳細については、次を参照してください。 [、Windows PowerShell スナップインの書き込み](./writing-a-windows-powershell-snap-in.md)します。
+この種類のスナップインでは、登録するどのコマンドレット、プロバイダー、型、または形式を指定します。 アセンブリ内のすべてのコマンドレットとプロバイダーを登録するスナップインを作成する方法の詳細については、[、Windows PowerShell スナップインの書き込み](./writing-a-windows-powershell-snap-in.md)を参照してください。
 
 ## <a name="to-write-a-windows-powershell-snap-in-that-registers-specific-cmdlets"></a>Windows PowerShell スナップインの記述には、特定のコマンドレットを登録します。
 
@@ -213,7 +213,7 @@ public class CustomPSSnapinTest : CustomPSSnapIn
 }
 ```
 
-スナップインの登録の詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)で、 [Windows PowerShell プログラマー ガイド](../prog-guide/windows-powershell-programmer-s-guide.md)します。
+スナップインの登録の詳細については、[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)で、 [Windows PowerShell プログラマー ガイド](../prog-guide/windows-powershell-programmer-s-guide.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

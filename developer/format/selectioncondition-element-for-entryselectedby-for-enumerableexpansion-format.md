@@ -65,9 +65,9 @@ ms.locfileid: "56858288"
 
 - 選択条件が .NET 型の任意の数を指定するか、選択範囲を設定するが、両方を指定することはできません。
 
-選択条件を使用する方法の詳細については、次を参照してください。 [Diplaying データの条件を定義する](./defining-conditions-for-displaying-data.md)します。
+選択条件を使用する方法の詳細については、[Diplaying データの条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
 
-ワイド ビューの他のコンポーネントに関する詳細については、次を参照してください。[表示幅が広い](./creating-a-wide-view.md)します。
+ワイド ビューの他のコンポーネントに関する詳細については、[表示幅が広い](./creating-a-wide-view.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

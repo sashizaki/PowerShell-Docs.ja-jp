@@ -55,7 +55,7 @@ ViewDefinitions 要素 (形式) 表示要素 (形式) ViewSelectedBy 要素 (形
 
 さまざまなビューでこの要素の使用方法の詳細については、次を参照してください[テーブル ビュー コンポーネント](./creating-a-table-view.md)、[一覧ビュー コンポーネント](./creating-a-list-view.md)、[ワイド ビュー コンポーネント](./creating-a-wide-view.md)、および[。カスタム コントロール コンポーネント](./creating-custom-controls.md)します。
 
-`SelectionSetName`要素が書式設定ファイルが複数のビューによって表示されるオブジェクトのセットを定義する場合に使用されます。 選択範囲のセットを定義し、参照する方法の詳細については、次を参照してください。[オブジェクト設定を定義する](./defining-selection-sets.md)します。
+`SelectionSetName`要素が書式設定ファイルが複数のビューによって表示されるオブジェクトのセットを定義する場合に使用されます。 選択範囲のセットを定義し、参照する方法の詳細については、[オブジェクト設定を定義する](./defining-selection-sets.md)を参照してください。
 
 ## <a name="example"></a>例
 

@@ -22,14 +22,14 @@ ms.locfileid: "58055021"
 
 このトピックでは、複数レイヤーのデータ ストアで動作する Windows PowerShell プロバイダーを作成する方法について説明します。 この種類のデータ ストアでのストアの最上位レベルには、ルート項目が含まれています。 と後続の各レベルは子項目のノードと呼ばれます。 これらの子ノードで作業するユーザーを許可すると、ユーザーから操作できる階層的に、データ ストア。
 
-複数レベルのデータ ストアで動作するプロバイダーは、Windows PowerShell コンテナー プロバイダーと呼ばれます。 ただし、内の項目を含む 1 つのコンテナー (入れ子になったコンテナーがありません) がある場合にのみ、Windows PowerShell コンテナー プロバイダーを使用できることもあります。 入れ子になったコンテナーがある場合は、Windows PowerShell ナビゲーション プロバイダーを実装する必要があります。 Windows PowerShell ナビゲーション プロバイダーの実装の詳細については、次を参照してください。 [Windows PowerShell ナビゲーション プロバイダーを作成する](./creating-a-windows-powershell-navigation-provider.md)します。
+複数レベルのデータ ストアで動作するプロバイダーは、Windows PowerShell コンテナー プロバイダーと呼ばれます。 ただし、内の項目を含む 1 つのコンテナー (入れ子になったコンテナーがありません) がある場合にのみ、Windows PowerShell コンテナー プロバイダーを使用できることもあります。 入れ子になったコンテナーがある場合は、Windows PowerShell ナビゲーション プロバイダーを実装する必要があります。 Windows PowerShell ナビゲーション プロバイダーの実装の詳細については、[Windows PowerShell ナビゲーション プロバイダーを作成する](./creating-a-windows-powershell-navigation-provider.md)を参照してください。
 
 > [!NOTE]
-> ダウンロードすることができます、 C# Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用して、このプロバイダーのソース ファイル (AccessDBSampleProvider04.cs)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
+> ダウンロードすることができます、 C# Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用して、このプロバイダーのソース ファイル (AccessDBSampleProvider04.cs)。 ダウンロードの手順については、[Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)を参照してください。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
 >
-> その他の Windows PowerShell プロバイダーの実装の詳細については、次を参照してください。 [Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)します。
+> その他の Windows PowerShell プロバイダーの実装の詳細については、[Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)を参照してください。
 
 ここで説明する Windows PowerShell コンテナー プロバイダーでは、テーブルと、コンテナーの項目として定義されているデータベースの行の 1 つのコンテナーとして、データベースを定義します。
 
@@ -93,9 +93,9 @@ Windows PowerShell コンテナー プロバイダーがから派生する .NET 
 
 セッション固有の初期化情報を追加して、プロバイダーによって使用されているリソースを解放するための機能を実装するを参照してください。[基本的な Windows PowerShell プロバイダーを作成する](./creating-a-basic-windows-powershell-provider.md)します。 ただし、ほとんどのプロバイダー (ここで説明されているプロバイダーを含む) は、この Windows PowerShell によって提供される機能の既定の実装を使用できます。
 
-データ ストアへのアクセスを取得するには、プロバイダーがのメソッドを実装する必要があります、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基本クラス。 これらのメソッドの実装の詳細については、次を参照してください。 [Windows PowerShell ドライブ プロバイダーの作成](./creating-a-windows-powershell-drive-provider.md)です。
+データ ストアへのアクセスを取得するには、プロバイダーがのメソッドを実装する必要があります、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基本クラス。 これらのメソッドの実装の詳細については、[Windows PowerShell ドライブ プロバイダーの作成](./creating-a-windows-powershell-drive-provider.md)を参照してください。
 
-プロバイダーの取得、設定、および消去の項目などのデータ ストアの項目を操作するによって提供されるメソッドを実装する必要があります、 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)基本クラス。 これらのメソッドの実装の詳細については、次を参照してください。 [Windows PowerShell 項目プロバイダーを作成する](./creating-a-windows-powershell-item-provider.md)します。
+プロバイダーの取得、設定、および消去の項目などのデータ ストアの項目を操作するによって提供されるメソッドを実装する必要があります、 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)基本クラス。 これらのメソッドの実装の詳細については、[Windows PowerShell 項目プロバイダーを作成する](./creating-a-windows-powershell-item-provider.md)を参照してください。
 
 ## <a name="retrieving-child-items"></a>子項目を取得します。
 
@@ -398,7 +398,7 @@ protected override bool HasChildItems( string path )
 
 - 実装[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)循環リンクは、およびなどがある場合は、無限再帰を回避するため責任を負います。 そうした状態を反映するように適切な終了例外をスローする必要があります。
 
-- 実装、 [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドを呼び出す必要があります[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)データ ストアに変更を加える前に、戻り値を確認します。 呼び出し後[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)は true を返し、 [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドを呼び出す必要があります、 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)危険性のあるシステムの変更の追加の確認としてのメソッド。 これらのメソッドを呼び出す方法の詳細については、次を参照してください。[項目の名前を変更](#Renaming-Items)します。
+- 実装、 [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドを呼び出す必要があります[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)データ ストアに変更を加える前に、戻り値を確認します。 呼び出し後[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)は true を返し、 [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドを呼び出す必要があります、 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)危険性のあるシステムの変更の追加の確認としてのメソッド。 これらのメソッドを呼び出す方法の詳細については、[項目の名前を変更](#Renaming-Items)を参照してください。
 
 ## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Copy-item コマンドレットへの動的パラメーター
 
@@ -410,7 +410,7 @@ protected override bool HasChildItems( string path )
 
 ## <a name="code-sample"></a>コード サンプル
 
-完全なサンプル コードでは、次を参照してください。 [AccessDbProviderSample04 コード サンプル](./accessdbprovidersample04-code-sample.md)します。
+完全なサンプル コードでは、[AccessDbProviderSample04 コード サンプル](./accessdbprovidersample04-code-sample.md)を参照してください。
 
 ## <a name="building-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーのビルド
 

@@ -22,7 +22,7 @@ ms.locfileid: "56859738"
 この例では、コマンドレットを実行する前に、パラメーターの引数の最小値と最大値を確認、Windows PowerShell ランタイムが使用できる検証規則を指定する方法を示します。 ValidateRange 属性を宣言することで、この検証規則を設定します。
 
 > [!NOTE]
-> この属性を定義するクラスの詳細については、次を参照してください。 [System.Management.Automation.Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)します。
+> この属性を定義するクラスの詳細については、[System.Management.Automation.Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)を参照してください。
 
 ### <a name="to-validate-an-argument-range"></a>引数の範囲を検証するには
 
@@ -39,7 +39,7 @@ ms.locfileid: "56859738"
     private int inputData;
     ```
 
-この属性を宣言する方法の詳細については、次を参照してください。 [ValidateRange 属性宣言](./validaterange-attribute-declaration.md)します。
+この属性を宣言する方法の詳細については、[ValidateRange 属性宣言](./validaterange-attribute-declaration.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

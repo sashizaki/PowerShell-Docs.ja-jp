@@ -22,7 +22,7 @@ ms.locfileid: "56857338"
 ## <a name="in-this-section"></a>このセクションの内容
 
 > [!NOTE]
-> カスタム ホスト インターフェイスを作成するホスト アプリケーションのサンプルは、次を参照してください。[カスタム ホスト サンプル](./custom-host-samples.md)します。
+> カスタム ホスト インターフェイスを作成するホスト アプリケーションのサンプルは、[カスタム ホスト サンプル](./custom-host-samples.md)を参照してください。
 
  [Runspace01 サンプル](./runspace01-sample.md)このサンプルは、使用する方法を示します、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)を実行するクラス、 [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレット同期的に、コンソールでその出力を表示ウィンドウです。
 

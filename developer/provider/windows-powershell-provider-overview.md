@@ -17,7 +17,7 @@ ms.locfileid: "57795625"
 ---
 # <a name="windows-powershell-provider-overview"></a>Windows PowerShell プロバイダーの概要
 
-Windows PowerShell プロバイダーにより、ファイル システムと同様に、マウントされたドライブの場合と同様に公開する任意のデータ ストアです。 たとえば、組み込みレジストリ プロバイダーを使用すると、移動する場合と同様に、レジストリを移動、`c`コンピューターのドライブです。 プロバイダーをオーバーライドできますも、`Item`コマンドレット (たとえば、 `Get-Item`、`Set-Item`など) ファイルと同様に、データ ストアにデータを扱うことができ、ディレクトリは、ファイル システムを移動するときとして扱われるようにします。 詳細については、プロバイダーとドライブ、および Windows PowerShell の組み込みプロバイダーは、次を参照してください。 [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers)します。
+Windows PowerShell プロバイダーにより、ファイル システムと同様に、マウントされたドライブの場合と同様に公開する任意のデータ ストアです。 たとえば、組み込みレジストリ プロバイダーを使用すると、移動する場合と同様に、レジストリを移動、`c`コンピューターのドライブです。 プロバイダーをオーバーライドできますも、`Item`コマンドレット (たとえば、 `Get-Item`、`Set-Item`など) ファイルと同様に、データ ストアにデータを扱うことができ、ディレクトリは、ファイル システムを移動するときとして扱われるようにします。 詳細については、プロバイダーとドライブ、および Windows PowerShell の組み込みプロバイダーは、[about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers)を参照してください。
 
 ## <a name="providers-and-drives"></a>プロバイダーとドライブ
 
@@ -27,7 +27,7 @@ Windows PowerShell プロバイダーにより、ファイル システムと同
 
 ## <a name="type-of-providers"></a>プロバイダーの種類
 
-さまざまなレベルの機能を提供しているプロバイダーのいくつかの種類あります。 プロバイダーがの子孫のいずれかから派生するクラスとして実装されている、 [System.Management.Automation.Sessionstatecategory.Cmdletprovider](/dotnet/api/System.Management.Automation.SessionStateCategory.CmdletProvider)クラス。 プロバイダーのさまざまな種類については、次を参照してください。[プロバイダー型](./provider-types.md)します。
+さまざまなレベルの機能を提供しているプロバイダーのいくつかの種類あります。 プロバイダーがの子孫のいずれかから派生するクラスとして実装されている、 [System.Management.Automation.Sessionstatecategory.Cmdletprovider](/dotnet/api/System.Management.Automation.SessionStateCategory.CmdletProvider)クラス。 プロバイダーのさまざまな種類については、[プロバイダー型](./provider-types.md)を参照してください。
 
 ## <a name="provider-cmdlets"></a>プロバイダー コマンドレット
 
@@ -59,7 +59,7 @@ Windows PowerShell プロバイダーへのリモート アクセスを許可す
 
 ## <a name="dynamic-parameters"></a>動的パラメーター
 
-プロバイダーは、ユーザーがコマンドレットの静的パラメーターのいずれかの特定の値を指定すると、プロバイダー コマンドレットに追加される動的パラメーターを定義できます。 プロバイダーは、1 つ以上の動的パラメーターのメソッドを実装することで。 動的パラメーター、およびそれらを実装するために使用するメソッドを追加するために使用できるコマンドレットのパラメーターの一覧は、次を参照してください。[プロバイダー コマンドレットの動的パラメーター](./provider-cmdlet-dynamic-parameters.md)します。
+プロバイダーは、ユーザーがコマンドレットの静的パラメーターのいずれかの特定の値を指定すると、プロバイダー コマンドレットに追加される動的パラメーターを定義できます。 プロバイダーは、1 つ以上の動的パラメーターのメソッドを実装することで。 動的パラメーター、およびそれらを実装するために使用するメソッドを追加するために使用できるコマンドレットのパラメーターの一覧は、[プロバイダー コマンドレットの動的パラメーター](./provider-cmdlet-dynamic-parameters.md)を参照してください。
 
 ## <a name="provider-capabilities"></a>プロバイダーの機能
 

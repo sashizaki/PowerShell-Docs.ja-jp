@@ -61,7 +61,7 @@ Windows PowerShell は、Microsoft .NET Framework オブジェクトを直接機
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>Windows PowerShell (AD03) を使って資格情報を処理します。
 
-コマンドレットを定義する必要があります、`Credential`を資格情報を表すパラメーター。 このパラメーターは、型でなければなりません[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)と資格情報の属性宣言を使用して定義する必要があります。 このサポートでは、完全な資格情報が直接指定されていないときにユーザー名、パスワード、または両方のユーザーが自動的に表示されます。 資格情報の属性の詳細については、次を参照してください。[資格情報の属性宣言](./credential-attribute-declaration.md)します。
+コマンドレットを定義する必要があります、`Credential`を資格情報を表すパラメーター。 このパラメーターは、型でなければなりません[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)と資格情報の属性宣言を使用して定義する必要があります。 このサポートでは、完全な資格情報が直接指定されていないときにユーザー名、パスワード、または両方のユーザーが自動的に表示されます。 資格情報の属性の詳細については、[資格情報の属性宣言](./credential-attribute-declaration.md)を参照してください。
 
 ### <a name="support-encoding-parameters-ad04"></a>エンコード パラメーター (AD04) をサポートします。
 

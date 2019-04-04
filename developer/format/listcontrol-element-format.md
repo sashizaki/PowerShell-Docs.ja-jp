@@ -52,7 +52,7 @@ ms.locfileid: "56857458"
 
 ## <a name="remarks"></a>コメント
 
-リスト ビューの作成方法の詳細については、次を参照してください。[リスト ビューを作成する](./creating-a-list-view.md)します。
+リスト ビューの作成方法の詳細については、[リスト ビューを作成する](./creating-a-list-view.md)を参照してください。
 
 ## <a name="example"></a>例
 

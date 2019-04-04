@@ -39,11 +39,11 @@ ms.locfileid: "56858928"
 
 - ビューまたはコントロールの各定義における、`EntrySelectedBy`要素は、その定義を使用して表示されるオブジェクトを定義します。 通常、ビューまたはコントロールに 1 つだけ定義して、オブジェクトが定義されているため、`ViewSelectedBy`要素。 `EntrySelectedBy`定義の要素には、`SelectionSetName`選択範囲のセットを指定する子要素。 選択の定義のセットを指定する場合の他の子要素のいずれかを指定できません、`EntrySelectedBy`要素。
 
-- ビューまたはコントロールの各定義における、`SelectionCondition`定義を使用する場合の条件を指定する要素を使用できます。 `SelectionCondition`要素には、`SelectionSetName`選択範囲のセットを示す子要素が条件をトリガーします。 選択範囲のセットで定義されたオブジェクトのいずれかが表示される場合は、条件がトリガーされます。 これらの条件を設定する方法の詳細については、次を参照してください。[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)します。
+- ビューまたはコントロールの各定義における、`SelectionCondition`定義を使用する場合の条件を指定する要素を使用できます。 `SelectionCondition`要素には、`SelectionSetName`選択範囲のセットを示す子要素が条件をトリガーします。 選択範囲のセットで定義されたオブジェクトのいずれかが表示される場合は、条件がトリガーされます。 これらの条件を設定する方法の詳細については、[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
 
 ## <a name="selection-set-example"></a>選択範囲のセットの例
 
-次の例では、選択セットから直接実行する、 `FileSystem` Windows PowerShell によって提供されるファイルの書式設定します。 その他の Windows PowerShell の書式設定ファイルの詳細については、次を参照してください。 [Windows PowerShell の書式設定ファイル](./powershell-formatting-files.md)します。
+次の例では、選択セットから直接実行する、 `FileSystem` Windows PowerShell によって提供されるファイルの書式設定します。 その他の Windows PowerShell の書式設定ファイルの詳細については、[Windows PowerShell の書式設定ファイル](./powershell-formatting-files.md)を参照してください。
 
 ```xml
 <SelectionSets>

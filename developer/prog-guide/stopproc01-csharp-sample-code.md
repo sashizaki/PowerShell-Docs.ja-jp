@@ -20,7 +20,7 @@ ms.locfileid: "57429552"
 ここでは、完全なC#StopProc01 サンプル コマンドレットのコード。
 
 > [!NOTE]
-> ダウンロードすることができます、C#停止 Proc コマンドレットは、Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用して、(stopproc01.cs) のソース ファイル。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
+> ダウンロードすることができます、C#停止 Proc コマンドレットは、Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用して、(stopproc01.cs) のソース ファイル。 ダウンロードの手順については、[Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)を参照してください。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
 

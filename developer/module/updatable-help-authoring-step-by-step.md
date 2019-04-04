@@ -46,7 +46,7 @@ HelpInfoURI = 'http://go.microsoft.com/fwlink/?LinkID=0123'
 
 ### <a name="step-3-create-a-helpinfo-xml-file"></a>手順 3:HelpInfo XML ファイルを作成します。
 
-HelpInfo XML ファイルには、ヘルプ ファイルとサポートされている各 UI カルチャでモジュールの最新のヘルプ ファイルのバージョン番号のインターネット上の場所の URI が含まれています。 すべての Windows PowerShell モジュールでは、1 つの HelpInfo XML ファイルがあります。 編集または HelpInfo XML ファイルを置換するのヘルプ ファイルを更新するときにもう 1 つを入れないでください。 詳細については、次を参照してください。 [HelpInfo XML ファイルを作成する方法](./how-to-create-a-helpinfo-xml-file.md)します。
+HelpInfo XML ファイルには、ヘルプ ファイルとサポートされている各 UI カルチャでモジュールの最新のヘルプ ファイルのバージョン番号のインターネット上の場所の URI が含まれています。 すべての Windows PowerShell モジュールでは、1 つの HelpInfo XML ファイルがあります。 編集または HelpInfo XML ファイルを置換するのヘルプ ファイルを更新するときにもう 1 つを入れないでください。 詳細については、[HelpInfo XML ファイルを作成する方法](./how-to-create-a-helpinfo-xml-file.md)を参照してください。
 
 ### <a name="step-4-sign-your-help-files"></a>手順 4:ヘルプ ファイルに署名します。
 
@@ -54,7 +54,7 @@ HelpInfo XML ファイルには、ヘルプ ファイルとサポートされて
 
 ### <a name="step-5-create-cab-files"></a>手順 5:CAB ファイルを作成します。
 
-作成する、MakeCab.exe などのキャビネット (.cab) ファイルを作成するツールを使用して、します。モジュールのヘルプ ファイルを含む CAB ファイル。 サポートされている各 UI カルチャのヘルプ ファイルに個別の CAB ファイルを作成します。 詳細については、次を参照してください。[を準備する更新可能なヘルプ CAB ファイルの追加方法](./how-to-prepare-updatable-help-cab-files.md)します。
+作成する、MakeCab.exe などのキャビネット (.cab) ファイルを作成するツールを使用して、します。モジュールのヘルプ ファイルを含む CAB ファイル。 サポートされている各 UI カルチャのヘルプ ファイルに個別の CAB ファイルを作成します。 詳細については、[を準備する更新可能なヘルプ CAB ファイルの追加方法](./how-to-prepare-updatable-help-cab-files.md)を参照してください。
 
 ### <a name="step-6-upload-your-files"></a>手順 6:ファイルをアップロードします。
 

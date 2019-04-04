@@ -22,7 +22,7 @@ ms.locfileid: "57794316"
 ## <a name="in-this-section"></a>このセクションの内容
 
 > [!NOTE]
-> リモート コンピューター上のコマンドを実行する方法の詳細については、次を参照してください。 [Windows PowerShell リモート処理](https://msdn.microsoft.com/en-us/library/ee706563(v=vs.85).aspx)します。
+> リモート コンピューター上のコマンドを実行する方法の詳細については、[Windows PowerShell リモート処理](https://msdn.microsoft.com/en-us/library/ee706563(v=vs.85).aspx)を参照してください。
 
  [RemoteRunspace01 サンプル](./remoterunspace01-sample.md)このサンプルは、リモート接続を確立するために使用されるリモート実行空間を作成する方法を示します。
 

@@ -51,9 +51,9 @@ ms.locfileid: "56856758"
 
 ## <a name="remarks"></a>コメント
 
-選択範囲のセットは、書式設定ファイルを定義する任意のビューで使用できる .NET オブジェクトの一般的なグループです。 作成と選択範囲のセットの参照の詳細については、次を参照してください。[選択範囲の設定を定義する](./defining-selection-sets.md)します。
+選択範囲のセットは、書式設定ファイルを定義する任意のビューで使用できる .NET オブジェクトの一般的なグループです。 作成と選択範囲のセットの参照の詳細については、[選択範囲の設定を定義する](./defining-selection-sets.md)を参照してください。
 
-この要素が指定されている場合は指定できません、 [TypeName](./typename-element-for-selectioncondition-for-groupby-format.md)要素。 選択条件を定義する詳細については、次を参照してください。[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)します。
+この要素が指定されている場合は指定できません、 [TypeName](./typename-element-for-selectioncondition-for-groupby-format.md)要素。 選択条件を定義する詳細については、[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

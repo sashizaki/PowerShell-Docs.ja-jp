@@ -19,7 +19,7 @@ ms.locfileid: "56863698"
 
 このサンプルでは、カスタム ホストを使用するホスト アプリケーションを実装する方法を示します。 カスタムのホストを使用する実行空間を作成するサンプルこのでをクリックし、 [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell)を"exit"を呼び出すスクリプトを実行する API を使用 ホスト アプリケーションはスクリプトの出力を確認し、結果を印刷します。
 
- このサンプルでは、Windows PowerShell によって提供される既定の UI 機能を使用します。 カスタム ホストの UI 機能の実装の詳細については、次を参照してください。 [Host02 サンプル](./host02-sample.md)します。
+ このサンプルでは、Windows PowerShell によって提供される既定の UI 機能を使用します。 カスタム ホストの UI 機能の実装の詳細については、[Host02 サンプル](./host02-sample.md)を参照してください。
 
 ## <a name="requirements"></a>要件
 

@@ -27,7 +27,7 @@ ms.locfileid: "56860508"
 
 - 別名を割り当てる前に、Windows PowerShell を起動し、実行、 [Get-alias](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias)コマンドレットを既に使用されているエイリアスを参照してください。
 
-- コマンドレット名と、コマンドレット名の名詞を参照する別名サフィックスの動詞を参照する別名のプレフィックスが含まれます。 エイリアスなど、`Import-Module`コマンドレットは、"ipmo"です。 すべての動詞と、エイリアスの一覧は、次を参照してください。[コマンドレット動詞](./approved-verbs-for-windows-powershell-commands.md)します。
+- コマンドレット名と、コマンドレット名の名詞を参照する別名サフィックスの動詞を参照する別名のプレフィックスが含まれます。 エイリアスなど、`Import-Module`コマンドレットは、"ipmo"です。 すべての動詞と、エイリアスの一覧は、[コマンドレット動詞](./approved-verbs-for-windows-powershell-commands.md)を参照してください。
 
 - 同じ動詞を含むコマンドレットでは、同じ別名のプレフィックスを含めます。 たとえば、名前に"Get"動詞を含むすべての Windows PowerShell コマンドレットのエイリアスは、"g"プレフィックスを使用します。
 

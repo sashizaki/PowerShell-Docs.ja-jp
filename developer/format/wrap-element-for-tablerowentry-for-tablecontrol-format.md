@@ -47,7 +47,7 @@ ms.locfileid: "58059879"
 
 ## <a name="remarks"></a>コメント
 
-テーブル ビューのコンポーネントに関する詳細については、次を参照してください。[テーブル ビューを作成する](./creating-a-table-view.md)します。
+テーブル ビューのコンポーネントに関する詳細については、[テーブル ビューを作成する](./creating-a-table-view.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

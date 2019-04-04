@@ -17,7 +17,7 @@ ms.locfileid: "56854588"
 ---
 # <a name="importing-and-invoking-a-windows-powershell-workflow"></a>Windows PowerShell ワークフローをインポートして呼び出す
 
-Windows PowerShell の 3 を使用すると、インポートして、Windows PowerShell モジュールとしてパッケージ化されているワークフローを呼び出すことができます。 Windows PowerShell モジュールに関する情報は、次を参照してください。 [Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)します。
+Windows PowerShell の 3 を使用すると、インポートして、Windows PowerShell モジュールとしてパッケージ化されているワークフローを呼び出すことができます。 Windows PowerShell モジュールに関する情報は、[Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)を参照してください。
 
 [System.Management.Automation.Psjobproxy](/dotnet/api/System.Management.Automation.PSJobProxy)クラスは、サーバー上のワークフロー オブジェクトのクライアント側のプロキシとして使用されます。 次の手順を使用する方法を説明する、 [System.Management.Automation.Psjobproxy](/dotnet/api/System.Management.Automation.PSJobProxy)にワークフローを呼び出すオブジェクト。
 

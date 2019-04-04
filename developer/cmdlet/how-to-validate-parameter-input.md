@@ -31,7 +31,7 @@ ms.locfileid: "56862468"
 
 [引数の数を検証する方法](./how-to-validate-an-argument-count.md)ArgumentCount 属性を使用して、引数の数を検証する方法について説明します。
 
-パラメーターが宣言されている方法は、検証に影響を与えることができます。 詳細については、次を参照してください。[コマンドレット パラメーターを宣言する方法](./how-to-declare-cmdlet-parameters.md)します。
+パラメーターが宣言されている方法は、検証に影響を与えることができます。 詳細については、[コマンドレット パラメーターを宣言する方法](./how-to-declare-cmdlet-parameters.md)を参照してください。
 
 ## <a name="reference"></a>参照先
 

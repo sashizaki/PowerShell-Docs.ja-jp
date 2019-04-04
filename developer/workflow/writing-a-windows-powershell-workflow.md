@@ -20,7 +20,7 @@ ms.locfileid: "56857408"
 XAML ワークフローを作成するには、Visual studio ワークフロー デザイナーに Windows PowerShell アセンブリによって公開されているアクティビティを追加します。 次の Windows PowerShell アセンブリは、ワークフローが有効なアクティビティを公開します。
 
 > [!IMPORTANT]
-> XAML ワークフローは、ワークフローのヘルプを提供する場合、モジュールとしてパッケージ化する必要があります。 モジュールについては、次を参照してください。 [Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)します。
+> XAML ワークフローは、ワークフローのヘルプを提供する場合、モジュールとしてパッケージ化する必要があります。 モジュールについては、[Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)を参照してください。
 
 - [Microsoft.Powershell.Activities](/dotnet/api/Microsoft.PowerShell.Activities)
 

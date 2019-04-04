@@ -23,7 +23,7 @@ ms.locfileid: "58059373"
 
 ## <a name="pre-processing-tasks"></a>処理前のタスク
 
-コマンドレットをオーバーライドする必要があります、 [System.Management.Automation.Cmdlet.Beginprocessing%2A でしょうか。Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)コマンドレットによって後で処理されるすべてのレコードの有効な前処理の操作を追加します。 Windows PowerShell コマンドのパイプラインを処理するとき Windows PowerShell はこのメソッド 1 回パイプラインでのコマンドレットの各インスタンスについて、 Windows PowerShell がコマンドのパイプラインを呼び出す方法の詳細については、次を参照してください。[コマンドレットの処理ライフ サイクル](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5)します。
+コマンドレットをオーバーライドする必要があります、 [System.Management.Automation.Cmdlet.Beginprocessing%2A でしょうか。Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)コマンドレットによって後で処理されるすべてのレコードの有効な前処理の操作を追加します。 Windows PowerShell コマンドのパイプラインを処理するとき Windows PowerShell はこのメソッド 1 回パイプラインでのコマンドレットの各インスタンスについて、 Windows PowerShell がコマンドのパイプラインを呼び出す方法の詳細については、[コマンドレットの処理ライフ サイクル](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5)を参照してください。
 
 次のコードの実装を示します、 [System.Management.Automation.Cmdlet.Beginprocessing%2A でしょうか。Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.beginprocessing?view=powershellsdk-1.1.0)メソッド。
 
@@ -42,7 +42,7 @@ protected override void BeginProcessing()
 
 ## <a name="input-processing-tasks"></a>処理タスクを入力します。
 
-コマンドレットをオーバーライドできます、 [System.Management.Automation.Cmdlet.Processrecord%2A でしょうか。Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)コマンドレットに送信される入力を処理するメソッド。 Windows PowerShell コマンドのパイプラインを処理するとき、Windows PowerShell は、コマンドレットによって処理される各入力レコードのこのメソッドを呼び出します。 Windows PowerShell がコマンドのパイプラインを呼び出す方法の詳細については、次を参照してください。[コマンドレットの処理ライフ サイクル](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5)します。
+コマンドレットをオーバーライドできます、 [System.Management.Automation.Cmdlet.Processrecord%2A でしょうか。Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)コマンドレットに送信される入力を処理するメソッド。 Windows PowerShell コマンドのパイプラインを処理するとき、Windows PowerShell は、コマンドレットによって処理される各入力レコードのこのメソッドを呼び出します。 Windows PowerShell がコマンドのパイプラインを呼び出す方法の詳細については、[コマンドレットの処理ライフ サイクル](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5)を参照してください。
 
 次のコードの実装を示します、 [System.Management.Automation.Cmdlet.Processrecord%2A でしょうか。Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)メソッド。
 
@@ -63,7 +63,7 @@ protected override void ProcessRecord()
 
 コマンドレットをオーバーライドする必要があります、 [System.Management.Automation.Cmdlet.Endprocessing%2A でしょうか。Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)コマンドレットによって処理されたすべてのレコードの有効な任意の後処理操作を追加するメソッド。 コマンドレットが完了したら、オブジェクト変数をクリーンアップする必要がありますなどを処理します。
 
-Windows PowerShell コマンドのパイプラインを処理するとき Windows PowerShell はこのメソッド 1 回パイプラインでのコマンドレットの各インスタンスについて、 ただし、それは、Windows PowerShell ランタイムを呼び出さないことに注意してください、 [System.Management.Automation.Cmdlet.Endprocessing%2A でしょうか。Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)メソッドの場合、コマンドレットは、その入力の処理によって途中キャンセルまたは終端コマンドレットのすべての部分で、エラーが発生します。 このため、オブジェクトのクリーンアップが必要なコマンドレットの完全な実装する必要があります[System.IDisposable](/dotnet/api/System.IDisposable)パターン、ファイナライザーをなど、ランタイムは、両方を呼び出すことができます、 [System.Management.Automation.Cmdlet.Endprocessing%2A でしょうか。Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)と[System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)処理の終了メソッド。 Windows PowerShell がコマンドのパイプラインを呼び出す方法の詳細については、次を参照してください。[コマンドレットの処理ライフ サイクル](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5)します。
+Windows PowerShell コマンドのパイプラインを処理するとき Windows PowerShell はこのメソッド 1 回パイプラインでのコマンドレットの各インスタンスについて、 ただし、それは、Windows PowerShell ランタイムを呼び出さないことに注意してください、 [System.Management.Automation.Cmdlet.Endprocessing%2A でしょうか。Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)メソッドの場合、コマンドレットは、その入力の処理によって途中キャンセルまたは終端コマンドレットのすべての部分で、エラーが発生します。 このため、オブジェクトのクリーンアップが必要なコマンドレットの完全な実装する必要があります[System.IDisposable](/dotnet/api/System.IDisposable)パターン、ファイナライザーをなど、ランタイムは、両方を呼び出すことができます、 [System.Management.Automation.Cmdlet.Endprocessing%2A でしょうか。Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.endprocessing?view=powershellsdk-1.1.0)と[System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)処理の終了メソッド。 Windows PowerShell がコマンドのパイプラインを呼び出す方法の詳細については、[コマンドレットの処理ライフ サイクル](https://msdn.microsoft.com/en-us/3202f55c-314d-4ac3-ad78-4c7ca72253c5)を参照してください。
 
 次のコードの実装を示します、 [System.Management.Automation.Cmdlet.Processrecord%2A でしょうか。Displayproperty = Fullname](/dotnet/api/system.management.automation.cmdlet.processrecord?view=powershellsdk-1.1.0)メソッド。
 

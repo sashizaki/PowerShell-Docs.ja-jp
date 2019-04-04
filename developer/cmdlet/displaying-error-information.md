@@ -34,7 +34,7 @@ $ stop-service lanmanworkstation
 CloseError: (System.ServiceProcess.ServiceController:ServiceController) [stop-service], ServiceCommandException
 ```
 
-エラー カテゴリの詳細については、次を参照してください。 [Windows PowerShell のエラー レコード](./windows-powershell-error-records.md)します。
+エラー カテゴリの詳細については、[Windows PowerShell のエラー レコード](./windows-powershell-error-records.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

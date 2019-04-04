@@ -19,16 +19,16 @@ ms.locfileid: "58056594"
 
 このトピックでは、入れ子になったコンテナー (複数レベルのデータ ストア)、項目、および相対パスの移動をサポートする Windows PowerShell プロバイダーのメソッドを実装する方法について説明します。 ナビゲーション プロバイダーがから派生する必要があります、 [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラス。
 
-このトピックの例ではプロバイダーでは、そのデータ ストアとして Access データベースを使用します。 いくつかのヘルパー メソッドと、データベースとの対話に使用されるクラスがあります。 ヘルパー メソッドを含む完全なサンプルは、次を参照してください。 [AccessDBProviderSample05](./accessdbprovidersample05.md)します。
+このトピックの例ではプロバイダーでは、そのデータ ストアとして Access データベースを使用します。 いくつかのヘルパー メソッドと、データベースとの対話に使用されるクラスがあります。 ヘルパー メソッドを含む完全なサンプルは、[AccessDBProviderSample05](./accessdbprovidersample05.md)を参照してください。
 
-Windows PowerShell プロバイダーに関する詳細については、次を参照してください。 [Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)します。
+Windows PowerShell プロバイダーに関する詳細については、[Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)を参照してください。
 
 ## <a name="implementing-navigation-methods"></a>ナビゲーション メソッドを実装します。
 
 [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラスが入れ子になったコンテナー、相対パスは、アイテムの移動をサポートするメソッドを実装します。 これらのメソッドの完全な一覧を参照してください。 [NavigationCmdletProvider メソッド](http://msdn.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider_methods\(v=vs.85\).aspx)します。
 
 > [!NOTE]
-> このトピックでは、の情報に基づいて[Windows PowerShell プロバイダーのクイック スタート](./windows-powershell-provider-quickstart.md)します。 このトピックでは、プロバイダーのプロジェクトを設定する方法の基本については説明しませんまたはから継承されたメソッドを実装する方法、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスを作成し、ドライブを削除します。 このトピックの「によって公開されるメソッドを実装する方法については説明しませんも、 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)または[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラス。 Item コマンドレットを実装する方法を示しますたとえば、次を参照してください。[項目プロバイダーの作成](./writing-an-item-provider.md)です。 コンテナーのコマンドレットを実装する方法を示しますたとえば、次を参照してください。[コンテナー プロバイダーの書き込み](./writing-a-container-provider.md)します。
+> このトピックでは、の情報に基づいて[Windows PowerShell プロバイダーのクイック スタート](./windows-powershell-provider-quickstart.md)します。 このトピックでは、プロバイダーのプロジェクトを設定する方法の基本については説明しませんまたはから継承されたメソッドを実装する方法、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスを作成し、ドライブを削除します。 このトピックの「によって公開されるメソッドを実装する方法については説明しませんも、 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)または[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラス。 Item コマンドレットを実装する方法を示しますたとえば、[項目プロバイダーの作成](./writing-an-item-provider.md)を参照してください。 コンテナーのコマンドレットを実装する方法を示しますたとえば、[コンテナー プロバイダーの書き込み](./writing-a-container-provider.md)を参照してください。
 
 ### <a name="declaring-the-provider-class"></a>プロバイダー クラスを宣言します。
 

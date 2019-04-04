@@ -21,7 +21,7 @@ ms.locfileid: "58056058"
 
 終了しないエラー (だけでなく終了するエラー) のコマンドレットを渡す必要があります、 [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)エラーを識別するオブジェクト。 各エラー レコード「エラー識別子」と呼ばれる一意の文字列によって識別されます。 識別子、だけでなく、各エラーのカテゴリがによって定義される定数で指定された、 [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)列挙体。 ユーザーが設定して、カテゴリに基づいてエラーを表示できます、`$ErrorView`変数を"CategoryView"にします。
 
-エラー レコードの詳細については、次を参照してください。 [Windows PowerShell のエラー レコード](./windows-powershell-error-records.md)します。
+エラー レコードの詳細については、[Windows PowerShell のエラー レコード](./windows-powershell-error-records.md)を参照してください。
 
 このセクションのトピックで、次のとおりです。
 
@@ -43,7 +43,7 @@ ms.locfileid: "58056058"
 
 ## <a name="defining-the-cmdlet"></a>コマンドレットを定義します。
 
-コマンドレットの作成の最初の手順は常に、コマンドレットの名前を付けると、コマンドレットを実装する .NET クラスを宣言します。 このコマンドレットは、ため、ここで選択した動詞名は"Get"プロセスの情報を取得します。 (ほぼあらゆる種類の情報を取得するのに対応しているコマンドレットは、コマンドラインの入力を処理できます)承認されたコマンドレット動詞の詳細については、次を参照してください。[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)します。
+コマンドレットの作成の最初の手順は常に、コマンドレットの名前を付けると、コマンドレットを実装する .NET クラスを宣言します。 このコマンドレットは、ため、ここで選択した動詞名は"Get"プロセスの情報を取得します。 (ほぼあらゆる種類の情報を取得するのに対応しているコマンドレットは、コマンドラインの入力を処理できます)承認されたコマンドレット動詞の詳細については、[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)を参照してください。
 
 この Get-proc コマンドレットの定義を次に示します。 この定義の詳細が記載[最初のコマンドレットを作成](./creating-a-cmdlet-without-parameters.md)です。
 
@@ -189,11 +189,11 @@ protected override void ProcessRecord()
 
 ## <a name="define-object-types-and-formatting"></a>オブジェクトの種類と書式設定を定義します。
 
-Windows PowerShell は、.NET オブジェクトを使用してコマンドレット間で情報を渡します。 その結果、コマンドレットは、独自の型を定義する必要がありますか、コマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)します。
+Windows PowerShell は、.NET オブジェクトを使用してコマンドレット間で情報を渡します。 その結果、コマンドレットは、独自の型を定義する必要がありますか、コマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)を参照してください。
 
 ## <a name="building-the-cmdlet"></a>コマンドレットを構築
 
-コマンドレットを実装するには、後にする必要がありますに登録する Windows PowerShell Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
+コマンドレットを実装するには、後にする必要がありますに登録する Windows PowerShell Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)を参照してください。
 
 ## <a name="testing-the-cmdlet"></a>テスト コマンドレット
 

@@ -17,7 +17,7 @@ ms.locfileid: "57794163"
 ---
 # <a name="list-view-basic"></a>リスト ビュー (基本)
 
-この例は、基本のリストに表示するビューを実装する方法を示します、 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)によって返されるオブジェクト、 [Get-service](/powershell/module/microsoft.powershell.management/get-service)コマンドレット。 リスト ビューのコンポーネントに関する詳細については、次を参照してください。[リスト ビューを作成する](./creating-a-list-view.md)します。
+この例は、基本のリストに表示するビューを実装する方法を示します、 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)によって返されるオブジェクト、 [Get-service](/powershell/module/microsoft.powershell.management/get-service)コマンドレット。 リスト ビューのコンポーネントに関する詳細については、[リスト ビューを作成する](./creating-a-list-view.md)を参照してください。
 
 ### <a name="to-load-this-formatting-file"></a>この書式設定ファイルを読み込む
 

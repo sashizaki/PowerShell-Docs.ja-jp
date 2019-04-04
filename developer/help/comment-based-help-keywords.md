@@ -69,4 +69,4 @@ ms.locfileid: "58058081"
 
 関数が、モジュールに関連付けられていない場合は、値にパスとファイル名を含める、**します。ExternalHelp**キーワード。 XML ファイルに指定されたパスには、UI カルチャ固有のサブディレクトリが含まれている場合`Get-Help`スクリプトまたは関数に従ってのフォールバックの標準が確立されている言語の名前を持つ XML ファイルを再帰的にサブディレクトリを検索Windows では、同じように、すべての XML ベースのヘルプ トピックは。
 
-コマンドレットのヘルプの XML ベースのヘルプ ファイルの形式に関する詳細については、次を参照してください。[書き込み Windows PowerShell コマンドレットのヘルプ](./writing-help-for-windows-powershell-cmdlets.md)します。
+コマンドレットのヘルプの XML ベースのヘルプ ファイルの形式に関する詳細については、[書き込み Windows PowerShell コマンドレットのヘルプ](./writing-help-for-windows-powershell-cmdlets.md)を参照してください。

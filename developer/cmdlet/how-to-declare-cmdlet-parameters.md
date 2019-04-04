@@ -33,7 +33,7 @@ ms.locfileid: "58059169"
     private string userName;
     ```
 
-パラメーター属性の詳細については、次を参照してください。[パラメーター属性宣言](./parameter-attribute-declaration.md)します。
+パラメーター属性の詳細については、[パラメーター属性宣言](./parameter-attribute-declaration.md)を参照してください。
 
 ## <a name="how-to-declare-a-positional-parameter"></a>位置指定パラメーターを宣言する方法
 
@@ -49,7 +49,7 @@ ms.locfileid: "58059169"
     private string userName;
     ```
 
-パラメーター属性の詳細については、次を参照してください。[パラメーター属性宣言](./parameter-attribute-declaration.md)します。
+パラメーター属性の詳細については、[パラメーター属性宣言](./parameter-attribute-declaration.md)を参照してください。
 
 ## <a name="how-to-declare-a-mandatory-parameter"></a>必須のパラメーターを宣言する方法
 
@@ -65,7 +65,7 @@ ms.locfileid: "58059169"
     private string userName;
     ```
 
-パラメーター属性の詳細については、次を参照してください。[パラメーター属性宣言](./parameter-attribute-declaration.md)します。
+パラメーター属性の詳細については、[パラメーター属性宣言](./parameter-attribute-declaration.md)を参照してください。
 
 ## <a name="how-to-declare-an-optional-parameter"></a>オプションのパラメーターを宣言する方法
 
@@ -95,7 +95,7 @@ ms.locfileid: "58059169"
     private bool goodbye;
     ```
 
-パラメーター属性の詳細については、次を参照してください。[パラメーター属性宣言](./parameter-attribute-declaration.md)します。
+パラメーター属性の詳細については、[パラメーター属性宣言](./parameter-attribute-declaration.md)を参照してください。
 
 ## <a name="how-to-declare-a-parameter-with-aliases"></a>エイリアスを持つパラメーターを宣言する方法
 
@@ -112,7 +112,7 @@ ms.locfileid: "58059169"
     private string userName;
     ```
 
-Alias 属性の詳細については、次を参照してください。[エイリアス属性宣言](./alias-attribute-declaration.md)します。
+Alias 属性の詳細については、[エイリアス属性宣言](./alias-attribute-declaration.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

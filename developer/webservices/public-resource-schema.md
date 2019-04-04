@@ -63,7 +63,7 @@ class PswsTest_ProcessModule
 
 ### <a name="associating-entities"></a>エンティティの関連付け
 
-アソシエーションおよび関連クラスの修飾子を使用して、2 つのエンティティを関連付けることができます。 詳細については、次を参照してください。 [Management OData エンティティを関連付ける](./associating-management-odata-entities.md)します。
+アソシエーションおよび関連クラスの修飾子を使用して、2 つのエンティティを関連付けることができます。 詳細については、[Management OData エンティティを関連付ける](./associating-management-odata-entities.md)を参照してください。
 
 ### <a name="derived-types"></a>派生型
 

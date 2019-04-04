@@ -32,11 +32,11 @@ ms.locfileid: "58058030"
 
 #### <a name="parameters"></a>パラメーター
 
-`VerbName` ([System.String](/dotnet/api/System.String)) が必要です。 コマンドレットの動詞を指定します。 この動詞は、コマンドレットによって実行されるアクションを指定します。 承認されたコマンドレット動詞の詳細については、次を参照してください。[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)と[開発ガイドラインのために必要な](./required-development-guidelines.md)します。
+`VerbName` ([System.String](/dotnet/api/System.String)) が必要です。 コマンドレットの動詞を指定します。 この動詞は、コマンドレットによって実行されるアクションを指定します。 承認されたコマンドレット動詞の詳細については、[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)と[開発ガイドラインのために必要な](./required-development-guidelines.md)を参照してください。
 
-`NounName` ([System.String](/dotnet/api/System.String)) が必要です。 コマンドレットの名詞を指定します。 この名詞では、コマンドレットが実行されるリソースを指定します。 コマンドレットの名詞の詳細については、次を参照してください。[コマンドレット宣言](./cmdlet-class-declaration.md)と[推奨される開発ガイドライン強く](./strongly-encouraged-development-guidelines.md)します。
+`NounName` ([System.String](/dotnet/api/System.String)) が必要です。 コマンドレットの名詞を指定します。 この名詞では、コマンドレットが実行されるリソースを指定します。 コマンドレットの名詞の詳細については、[コマンドレット宣言](./cmdlet-class-declaration.md)と[推奨される開発ガイドライン強く](./strongly-encouraged-development-guidelines.md)を参照してください。
 
-`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) という名前のパラメーター (省略可能)。 `True` このコマンドレットへの呼び出しをサポートしていることを示します、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)コマンドレットをシステムを変更する操作を実行する前にユーザーに確認する方法を提供するメソッド。 `False`、既定値は、コマンドレットでは、への呼び出しはサポートされていないことを示します、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド。 確認要求の詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。
+`SupportsShouldProcess` ([System.Boolean](/dotnet/api/System.Boolean)) という名前のパラメーター (省略可能)。 `True` このコマンドレットへの呼び出しをサポートしていることを示します、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)コマンドレットをシステムを変更する操作を実行する前にユーザーに確認する方法を提供するメソッド。 `False`、既定値は、コマンドレットでは、への呼び出しはサポートされていないことを示します、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド。 確認要求の詳細については、[確認を要求する](./requesting-confirmation-from-cmdlets.md)を参照してください。
 
 `ConfirmImpact` ([System.Management.Automation.Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) という名前のパラメーター (省略可能)。 呼び出しによって、コマンドレットのアクションを確認する場合を指定します、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド。 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) (既定では Medium)、コマンドレットの ConfirmImpact 値が等しくまたはの値よりも大きい場合にのみ呼び出される、`$ConfirmPreference`変数。 このパラメーターを指定する必要がある場合にのみ、`SupportsShouldProcess`パラメーターを指定します。
 

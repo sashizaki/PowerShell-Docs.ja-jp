@@ -61,11 +61,11 @@ ms.locfileid: "58057231"
 
 - パラメーター属性を使用して、コマンドレット パラメーターの宣言。
 
-- 詳細メッセージを記述します。 詳細なメッセージの書き込みに使用する方法の詳細については、次を参照してください。 [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)します。
+- 詳細メッセージを記述します。 詳細なメッセージの書き込みに使用する方法の詳細については、[System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)を参照してください。
 
-- エラー メッセージを記述します。 エラー メッセージの書き込みに使用する方法の詳細については、次を参照してください。 [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)します。
+- エラー メッセージを記述します。 エラー メッセージの書き込みに使用する方法の詳細については、[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)を参照してください。
 
-- 警告メッセージの書き込み。 警告メッセージの書き込みに使用する方法の詳細については、次を参照してください。 [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)します。
+- 警告メッセージの書き込み。 警告メッセージの書き込みに使用する方法の詳細については、[System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)を参照してください。
 
 ## <a name="example"></a>例
 

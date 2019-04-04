@@ -31,7 +31,7 @@ ms.locfileid: "56854468"
 
 ## <a name="filtering-if-no-set-of-input-objects-is-specified"></a>入力オブジェクトのセットが指定されていない場合にフィルター処理
 
-通常入力オブジェクトのセットが指定されていない場合これをすべてのオブジェクトに対してフィルター処理することを意味します。 詳細については、次を参照してください。[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)します。
+通常入力オブジェクトのセットが指定されていない場合これをすべてのオブジェクトに対してフィルター処理することを意味します。 詳細については、[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)を参照してください。
 
 ## <a name="see-also"></a>参照
 

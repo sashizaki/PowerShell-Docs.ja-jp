@@ -47,7 +47,7 @@ Windows PowerShell では、パラメーター セットを使用して、さま
 
 ## <a name="default-parameter-sets"></a>既定のパラメーター セット
 
-複数のパラメーター セットが定義されているときに使用できます、`DefaultParameterSetName`コマンドレットの既定のパラメーター セットを指定する属性のキーワード。 Windows PowerShell では、コマンドによって提供される情報に基づいて、パラメーターを使用する設定を判断できない場合は、設定、既定のパラメーターを使用します。 コマンドレットの属性の詳細については、次を参照してください。[コマンドレット属性宣言](./cmdlet-attribute-declaration.md)します。
+複数のパラメーター セットが定義されているときに使用できます、`DefaultParameterSetName`コマンドレットの既定のパラメーター セットを指定する属性のキーワード。 Windows PowerShell では、コマンドによって提供される情報に基づいて、パラメーターを使用する設定を判断できない場合は、設定、既定のパラメーターを使用します。 コマンドレットの属性の詳細については、[コマンドレット属性宣言](./cmdlet-attribute-declaration.md)を参照してください。
 
 ## <a name="declaring-parameter-sets"></a>パラメーター セットを宣言します。
 

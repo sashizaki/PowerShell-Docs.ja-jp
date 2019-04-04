@@ -17,7 +17,7 @@ ms.locfileid: "56861628"
 ---
 # <a name="wide-view-groupby"></a>ワイド ビュー (グループ別)
 
-この例のグループを表示するワイド ビューを実装する方法を示しています。 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)によって返されるオブジェクト、`Get-Service`コマンドレット。 ワイド ビューのコンポーネントに関する詳細については、次を参照してください。[ワイド ビューを作成する](./creating-a-wide-view.md)します。
+この例のグループを表示するワイド ビューを実装する方法を示しています。 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)によって返されるオブジェクト、`Get-Service`コマンドレット。 ワイド ビューのコンポーネントに関する詳細については、[ワイド ビューを作成する](./creating-a-wide-view.md)を参照してください。
 
 ### <a name="to-load-this-formatting-file"></a>この書式設定ファイルを読み込む
 

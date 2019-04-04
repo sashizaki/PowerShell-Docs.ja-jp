@@ -97,7 +97,7 @@ Windows PowerShell 3.0 のユーザーと以降のバージョンの Windows Pow
 
 モジュールの作成者は、モジュールのヘルプ ファイルを含めるし、更新可能なヘルプを使用して、ヘルプ ファイルを更新またはモジュールからヘルプ ファイルを省略し、インストールして、それらを更新する更新可能なヘルプを使用、します。
 
-更新可能なヘルプについては、次を参照してください。[更新可能なヘルプをサポートしている](./supporting-updatable-help.md)します。
+更新可能なヘルプについては、[更新可能なヘルプをサポートしている](./supporting-updatable-help.md)を参照してください。
 
 ## <a name="supporting-online-help"></a>オンライン ヘルプのサポート
 
@@ -107,7 +107,7 @@ Windows PowerShell 3.0 のユーザーと以降のバージョンの Windows Pow
 
 Windows PowerShell 3.0 以降で、コマンドレット クラスで HelpUri 属性を定義することで、コマンドレットと関数のヘルプ トピックのオンライン バージョンを検索するユーザーを支援することができます、または**HelpUri**のプロパティ、 **CmdletBinding**属性。 属性の値は、の値、 **HelpUri**コマンドレットまたは関数のプロパティ。
 
-詳細については、次を参照してください。[オンライン ヘルプのサポート](./supporting-online-help.md)します。
+詳細については、[オンライン ヘルプのサポート](./supporting-online-help.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

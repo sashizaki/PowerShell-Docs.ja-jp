@@ -20,7 +20,7 @@ ms.locfileid: "58059475"
 バリエーションに応じて表示できるさまざまな確認メッセージをここでは、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)呼び出されるメソッド。
 
 > [!IMPORTANT]
-> 確認を要求する方法を示すサンプル コードでは、次を参照してください。[要求の確認方法](./how-to-request-confirmations.md)します。
+> 確認を要求する方法を示すサンプル コードでは、[要求の確認方法](./how-to-request-confirmations.md)を参照してください。
 
 ## <a name="specifying-the-resource"></a>リソースを指定します。
 

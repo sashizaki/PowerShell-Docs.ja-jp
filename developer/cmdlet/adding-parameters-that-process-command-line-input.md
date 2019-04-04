@@ -46,7 +46,7 @@ ms.locfileid: "58055922"
 
 ## <a name="defining-the-cmdlet-class"></a>コマンドレット クラスを定義します。
 
-コマンドレットの作成の最初の手順では、コマンドレットの名前付けと、コマンドレットを実装する .NET Framework クラスの宣言です。 このコマンドレットは、ため、ここで選択した動詞名が"Get"にプロセスの情報を取得します (ほぼあらゆる種類の情報を取得するのに対応しているコマンドレットは、コマンドラインの入力を処理できます)承認されたコマンドレット動詞の詳細については、次を参照してください。[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)します。
+コマンドレットの作成の最初の手順では、コマンドレットの名前付けと、コマンドレットを実装する .NET Framework クラスの宣言です。 このコマンドレットは、ため、ここで選択した動詞名が"Get"にプロセスの情報を取得します (ほぼあらゆる種類の情報を取得するのに対応しているコマンドレットは、コマンドラインの入力を処理できます)承認されたコマンドレット動詞の詳細については、[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)を参照してください。
 
 クラス宣言を次に示します、 **Get-proc**コマンドレット。 この定義に関する詳細情報が記載[最初のコマンドレットを作成](./creating-a-cmdlet-without-parameters.md)です。
 
@@ -110,7 +110,7 @@ End Property
 
 #### <a name="things-to-remember-about-parameter-definitions"></a>パラメーターの定義に関する注意点
 
-- 定義済み Windows PowerShell パラメーター名とデータ型は、コマンドレットが Windows PowerShell コマンドレットと互換性があることを確認することを可能な限り再利用する必要があります。 たとえば、すべてのコマンドレットを使用して、定義済み`Id`ユーザーは、リソースを簡単に識別するためにパラメーター名は、どのようなコマンドレットを使用しているに関係なく、パラメーターの意味を理解します。 基本的に、パラメーター名には、共通言語ランタイム (CLR) 内の変数名に使用されるものと同じ規則に従ってください。 パラメーターの名前付けの詳細については、次を参照してください。[コマンドレットのパラメーター名](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)します。
+- 定義済み Windows PowerShell パラメーター名とデータ型は、コマンドレットが Windows PowerShell コマンドレットと互換性があることを確認することを可能な限り再利用する必要があります。 たとえば、すべてのコマンドレットを使用して、定義済み`Id`ユーザーは、リソースを簡単に識別するためにパラメーター名は、どのようなコマンドレットを使用しているに関係なく、パラメーターの意味を理解します。 基本的に、パラメーター名には、共通言語ランタイム (CLR) 内の変数名に使用されるものと同じ規則に従ってください。 パラメーターの名前付けの詳細については、[コマンドレットのパラメーター名](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)を参照してください。
 
 - Windows PowerShell では、一貫性のあるユーザー エクスペリエンスを提供するいくつかのパラメーター名を予約します。 これらのパラメーター名を使用しない: `WhatIf`、 `Confirm`、 `Verbose`、 `Debug`、 `Warn`、 `ErrorAction`、 `ErrorVariable`、 `OutVariable`、および`OutBuffer`します。 さらに、これらのパラメーター名の次のエイリアスは予約されています: `vb`、 `db`、 `ea`、 `ev`、 `ov`、および`ob`します。
 
@@ -118,7 +118,7 @@ End Property
 
 - パラメーターは、シェルが大文字小文字を保持する既定では、Windows PowerShell では大文字です。 引数の大文字小文字の区別は、コマンドレットの操作に依存します。 引数は、コマンドラインで指定されたパラメーターに渡されます。
 
-- その他のパラメーター宣言の例については、次を参照してください。[コマンドレット パラメーター](./cmdlet-parameters.md)します。
+- その他のパラメーター宣言の例については、[コマンドレット パラメーター](./cmdlet-parameters.md)を参照してください。
 
 ## <a name="declaring-parameters-as-positional-or-named"></a>位置指定または名前付きパラメーターの宣言
 
@@ -135,7 +135,7 @@ End Property
 
 ## <a name="supporting-parameter-validation"></a>パラメーターの検証のサポート
 
-サンプル**Get-proc**コマンドレットは、入力の検証属性を追加します[System.Management.Automation.Validatenotnulloremptyattribute](/dotnet/api/System.Management.Automation.ValidateNotNullOrEmptyAttribute)を、`Name`検証を有効にするパラメーターを、。入力がどちらも`null`も空でも。 この属性では、Windows PowerShell によって提供されるいくつかの検証属性の 1 つです。 その他の検証属性の例については、次を参照してください。[パラメーター入力の検証](./validating-parameter-input.md)です。
+サンプル**Get-proc**コマンドレットは、入力の検証属性を追加します[System.Management.Automation.Validatenotnulloremptyattribute](/dotnet/api/System.Management.Automation.ValidateNotNullOrEmptyAttribute)を、`Name`検証を有効にするパラメーターを、。入力がどちらも`null`も空でも。 この属性では、Windows PowerShell によって提供されるいくつかの検証属性の 1 つです。 その他の検証属性の例については、[パラメーター入力の検証](./validating-parameter-input.md)を参照してください。
 
 ```
 [Parameter(Position = 0)]
@@ -200,15 +200,15 @@ End Sub 'ProcessRecord
 
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類を定義して、書式設定
 
-Windows PowerShell は、.NET Framework オブジェクトを使用してコマンドレット間で情報を渡します。 そのため、コマンドレットは、独自の型を定義する必要があります。 またはコマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)します。
+Windows PowerShell は、.NET Framework オブジェクトを使用してコマンドレット間で情報を渡します。 そのため、コマンドレットは、独自の型を定義する必要があります。 またはコマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)を参照してください。
 
 ## <a name="building-the-cmdlet"></a>コマンドレットを構築
 
-コマンドレットを実装した後は、Windows PowerShell スナップインを使用して Windows PowerShell を使用した登録する必要があります。 コマンドレットの登録の詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
+コマンドレットを実装した後は、Windows PowerShell スナップインを使用して Windows PowerShell を使用した登録する必要があります。 コマンドレットの登録の詳細については、[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)を参照してください。
 
 ## <a name="testing-the-cmdlet"></a>テスト コマンドレット
 
-コマンドレットが Windows PowerShell に登録されたときに、コマンドラインで実行してテストできます。 サンプル コマンドレットのコードをテストする 2 つの方法を示します。 詳細については、コマンドラインからコマンドレットを使用して、次を参照してください。 [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)します。
+コマンドレットが Windows PowerShell に登録されたときに、コマンドラインで実行してテストできます。 サンプル コマンドレットのコードをテストする 2 つの方法を示します。 詳細については、コマンドラインからコマンドレットを使用して、[Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)を参照してください。
 
 - Windows PowerShell プロンプトで次のコマンドを使用、Internet Explorer プロセスは、"IEXPLORE"という名前の一覧を表示するには
 

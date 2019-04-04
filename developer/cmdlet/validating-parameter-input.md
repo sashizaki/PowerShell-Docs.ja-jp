@@ -35,27 +35,27 @@ PowerShell では、次の属性に基づいて規則を適用します。
 ### <a name="validatecount"></a>ValidateCount
 
 パラメーターを受け入れることができる引数の最小値と最大数を指定します。
-詳細については、次を参照してください。 [ValidateCount 属性宣言](./validatecount-attribute-declaration.md)します。
+詳細については、[ValidateCount 属性宣言](./validatecount-attribute-declaration.md)を参照してください。
 
 ### <a name="validatelength"></a>ValidateLength
 
 パラメーターの引数では、最小値と最大文字数を指定します。
-詳細については、次を参照してください。 [ValidateLength 属性宣言](./validatelength-attribute-declaration.md)します。
+詳細については、[ValidateLength 属性宣言](./validatelength-attribute-declaration.md)を参照してください。
 
 ### <a name="validatepattern"></a>ValidatePattern
 
 パラメーターの引数を検証する正規表現を指定します。
-詳細については、次を参照してください。 [ValidatePattern 属性宣言](./validatepattern-attribute-declaration.md)します。
+詳細については、[ValidatePattern 属性宣言](./validatepattern-attribute-declaration.md)を参照してください。
 
 ### <a name="validaterange"></a>ValidateRange
 
 パラメーターの引数の最小値と最大値を指定します。
-詳細については、次を参照してください。 [ValidateRange 属性宣言](./validaterange-attribute-declaration.md)します。
+詳細については、[ValidateRange 属性宣言](./validaterange-attribute-declaration.md)を参照してください。
 
 ### <a name="validateset"></a>ValidateSet
 
 パラメーターの引数の有効な値を指定します。
-詳細については、次を参照してください。 [ValidateSet 属性宣言](./validateset-attribute-declaration.md)します。
+詳細については、[ValidateSet 属性宣言](./validateset-attribute-declaration.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

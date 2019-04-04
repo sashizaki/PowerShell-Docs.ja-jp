@@ -67,7 +67,7 @@ Windows PowerShell プロバイダーを作成する最初の手順では、そ�
 
 [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基底クラスとすべての派生クラスはステートレスと見なされるため、Windows PowerShell ランタイムが必要なだけのプロバイダーのインスタンスを作成します。 そのため、ご利用のプロバイダーは、フル コントロール、プロバイダー固有のデータの状態のメンテナンスを必要とする場合にする必要がありますからクラスを派生、 [System.Management.Automation.Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)クラス。 派生クラスは、プロバイダー固有のデータは、Windows PowerShell ランタイムが呼び出すと、アクセスできるように、状態を維持するために必要なメンバーを定義する必要があります、 [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)プロバイダーを初期化します。
 
-Windows PowerShell プロバイダーは、接続ベースの状態を維持することもできます。 接続の状態を維持する詳細については、次を参照してください。 [PowerShell ドライブ プロバイダーを作成する](./creating-a-windows-powershell-drive-provider.md)します。
+Windows PowerShell プロバイダーは、接続ベースの状態を維持することもできます。 接続の状態を維持する詳細については、[PowerShell ドライブ プロバイダーを作成する](./creating-a-windows-powershell-drive-provider.md)を参照してください。
 
 ## <a name="initializing-the-provider"></a>プロバイダーの初期化
 
@@ -97,7 +97,7 @@ Windows PowerShell プロバイダーで使用されるリソースを解放す�
 
 ## <a name="code-sample"></a>コード サンプル
 
-完全なサンプル コードでは、次を参照してください。 [AccessDbProviderSample01 コード サンプル](./accessdbprovidersample01-code-sample.md)します。
+完全なサンプル コードでは、[AccessDbProviderSample01 コード サンプル](./accessdbprovidersample01-code-sample.md)を参照してください。
 
 ## <a name="testing-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーのテスト
 

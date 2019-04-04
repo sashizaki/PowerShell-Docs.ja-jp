@@ -52,7 +52,7 @@ ms.locfileid: "56863618"
 
 ## <a name="remarks"></a>コメント
 
-- この属性を宣言する方法の詳細については、次を参照してください。[コマンドレット パラメーターを宣言する方法](./how-to-declare-cmdlet-parameters.md)します。
+- この属性を宣言する方法の詳細については、[コマンドレット パラメーターを宣言する方法](./how-to-declare-cmdlet-parameters.md)を参照してください。
 
 - コマンドレットは、任意の数のパラメーターを持つことができます。 ただし、ユーザー エクスペリエンスを向上させるには、パラメーターの数を制限します。
 
@@ -72,7 +72,7 @@ ms.locfileid: "56863618"
 
     - 複数のパラメーターを定義できます`ValueFromPipelineByPropertyName = true`します。
 
-- パラメーター名に関するガイドラインの詳細については、次を参照してください。[コマンドレットのパラメーター名](standard-cmdlet-parameter-names-and-types.md)します。
+- パラメーター名に関するガイドラインの詳細については、[コマンドレットのパラメーター名](standard-cmdlet-parameter-names-and-types.md)を参照してください。
 
 - パラメーター属性が定義した、 [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)クラス。
 

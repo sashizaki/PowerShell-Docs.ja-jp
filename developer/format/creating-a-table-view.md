@@ -83,7 +83,7 @@ Running  Appinfo            Application Information
 
 - [GroupBy](./groupby-element-for-view-format.md)オブジェクトの新しいグループが表示される場合 (この例では説明しません) 要素を定義します。 特定のプロパティまたはスクリプトの値が変更されるたびに新しいグループが開始されます。 この要素は省略可能です。
 
-- [コントロール](./controls-element-for-view-format.md)要素 (この例では表示されません)、テーブル ビューで定義されているカスタム コントロールを定義します。 コントロールでは、さらに、データの表示方法を指定する方法を提供します。 この要素は省略可能です。 ビューがその独自のカスタム コントロールを定義できます。 または書式設定ファイルに任意のビューで使用できる一般的なコントロールを使用できます。 カスタム コントロールの詳細については、次を参照してください。[カスタム コントロールを作成する](./creating-custom-controls.md)します。
+- [コントロール](./controls-element-for-view-format.md)要素 (この例では表示されません)、テーブル ビューで定義されているカスタム コントロールを定義します。 コントロールでは、さらに、データの表示方法を指定する方法を提供します。 この要素は省略可能です。 ビューがその独自のカスタム コントロールを定義できます。 または書式設定ファイルに任意のビューで使用できる一般的なコントロールを使用できます。 カスタム コントロールの詳細については、[カスタム コントロールを作成する](./creating-custom-controls.md)を参照してください。
 
 - [HideTableHeaders](./hidetableheaders-element-format.md)要素 (この例では表示されません) では、テーブルでは、テーブルの上部にある任意のラベルは表示されませんを指定します。 この要素は省略可能です。
 
@@ -172,7 +172,7 @@ Running  Appinfo            Application Information
 
 - [TypeName](./typename-element-for-viewselectedby-format.md)要素は、ビューによって表示される .NET オブジェクトを指定します。 完全修飾 .NET 型名が必要です。 少なくとも 1 つの型またはビューの設定の選択範囲を指定する必要がありますが、指定できる要素の最大数はありません。
 
-次の例では、 [ViewSelectedBy](./viewselectedby-element-format.md)と[SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md)要素。 関連する一連の同じオブジェクトのリスト ビューを定義する場合など、複数のビューおよびテーブル ビューを使用して表示されるオブジェクトがある選択範囲のセットを使用します。 選択範囲のセットを作成する方法の詳細については、次を参照してください。[選択範囲のセットを定義する](./defining-selection-sets.md)します。
+次の例では、 [ViewSelectedBy](./viewselectedby-element-format.md)と[SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md)要素。 関連する一連の同じオブジェクトのリスト ビューを定義する場合など、複数のビューおよびテーブル ビューを使用して表示されるオブジェクトがある選択範囲のセットを使用します。 選択範囲のセットを作成する方法の詳細については、[選択範囲のセットを定義する](./defining-selection-sets.md)を参照してください。
 
 ```xml
 <View>
@@ -190,7 +190,7 @@ Running  Appinfo            Application Information
 
 - [SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md)要素は、一連のビューで表示できるオブジェクトを指定します。 少なくとも 1 つの選択範囲のセットまたはビューの種類を指定する必要がありますが、指定できる要素の最大数はありません。
 
-次の例は、ビューを使用してテーブルの特定の定義で表示されるオブジェクトを定義する方法を示します、 [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)要素。 この要素を使用して、オブジェクト、オブジェクトの選択範囲のセットまたは定義を使用する場合を指定する選択条件の .NET 型名を指定できます。 選択条件を作成する方法の詳細については、次を参照してください。[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)します。
+次の例は、ビューを使用してテーブルの特定の定義で表示されるオブジェクトを定義する方法を示します、 [EntrySelectedBy](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)要素。 この要素を使用して、オブジェクト、オブジェクトの選択範囲のセットまたは定義を使用する場合を指定する選択条件の .NET 型名を指定できます。 選択条件を作成する方法の詳細については、[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
 
 > [!NOTE]
 > テーブル ビューの複数の定義を作成するときに、別の列ヘッダーを指定することはできません。 どのようなオブジェクトが表示されるなど、テーブルの行に表示される内容のみを指定できます。
@@ -211,7 +211,7 @@ Running  Appinfo            Application Information
 
 - [SelectionSetName](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md) (表示されない) 要素は、この定義で表示できるオブジェクトのセットを指定します。 少なくとも 1 つの型、選択範囲のセット、または定義については、選択条件を指定する必要がありますが、指定できる要素の最大数はありません。
 
-- [SelectionCondition](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md) (表示されない) 要素は、この定義を使用するのに必要な条件を指定します。 少なくとも 1 つの型、選択範囲のセット、または定義については、選択条件を指定する必要がありますが、指定できる要素の最大数はありません。 選択条件を定義する詳細については、次を参照してください。[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)します。
+- [SelectionCondition](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md) (表示されない) 要素は、この定義を使用するのに必要な条件を指定します。 少なくとも 1 つの型、選択範囲のセット、または定義については、選択条件を指定する必要がありますが、指定できる要素の最大数はありません。 選択条件を定義する詳細については、[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
 
 ## <a name="using-format-strings"></a>書式指定文字列を使用します。
 

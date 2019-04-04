@@ -26,46 +26,46 @@ ms.locfileid: "56863808"
 
 コマンドレットとしては、.NET Framework クラスを識別します。
 これは、必要な基本属性です。
-詳細については、次を参照してください。[コマンドレット属性宣言](./cmdlet-attribute-declaration.md)します。
+詳細については、[コマンドレット属性宣言](./cmdlet-attribute-declaration.md)を参照してください。
 
 ## <a name="parameter-attributes"></a>パラメーター属性
 
 ### <a name="parameter"></a>パラメーター
 
 コマンドレット パラメーターとしてコマンドレット クラスのパブリック プロパティを識別します。
-詳細については、次を参照してください。[パラメーター属性宣言](./parameter-attribute-declaration.md)します。
+詳細については、[パラメーター属性宣言](./parameter-attribute-declaration.md)を参照してください。
 
 ### <a name="alias"></a>エイリアス
 
 パラメーターの 1 つまたは複数のエイリアスを指定します。
-詳細については、次を参照してください。[エイリアス属性宣言](./alias-attribute-declaration.md)します。
+詳細については、[エイリアス属性宣言](./alias-attribute-declaration.md)を参照してください。
 
 ## <a name="argument-validation-attributes"></a>引数の検証属性
 
 ### <a name="validatecount"></a>ValidateCount
 
 コマンドレット パラメーターに使用できる引数の最小値と最大数を指定します。
-詳細については、次を参照してください。 [ValidateCount 属性宣言](./validatecount-attribute-declaration.md)します。
+詳細については、[ValidateCount 属性宣言](./validatecount-attribute-declaration.md)を参照してください。
 
 ### <a name="validatelength"></a>ValidateLength
 
 コマンドレット パラメーターの引数の文字の最小値と最大数を指定します。
-詳細については、次を参照してください。 [ValidateLength 属性宣言](./validatelength-attribute-declaration.md)します。
+詳細については、[ValidateLength 属性宣言](./validatelength-attribute-declaration.md)を参照してください。
 
 ### <a name="validatepattern"></a>ValidatePattern
 
 コマンドレットのパラメーターの引数と一致する正規表現パターンを指定します。
-詳細については、次を参照してください。 [ValidatePattern 属性宣言](./validatepattern-attribute-declaration.md)します。
+詳細については、[ValidatePattern 属性宣言](./validatepattern-attribute-declaration.md)を参照してください。
 
 ### <a name="validaterange"></a>ValidateRange
 
 コマンドレット パラメーターの引数の最小値と最大値を指定します。
-詳細については、次を参照してください。 [ValidateRange 属性宣言](./validaterange-attribute-declaration.md)します。
+詳細については、[ValidateRange 属性宣言](./validaterange-attribute-declaration.md)を参照してください。
 
 ### <a name="validateset"></a>ValidateSet
 
 一連のコマンドレット パラメーターの引数の有効な値を指定します。
-詳細については、次を参照してください。 [ValidateSet 属性宣言](./validateset-attribute-declaration.md)します。
+詳細については、[ValidateSet 属性宣言](./validateset-attribute-declaration.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

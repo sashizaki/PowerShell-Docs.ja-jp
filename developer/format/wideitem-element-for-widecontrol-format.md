@@ -55,7 +55,7 @@ ms.locfileid: "56862628"
 
 ## <a name="remarks"></a>コメント
 
-ワイド ビューのコンポーネントに関する詳細については、次を参照してください。[表示幅が広い](./creating-a-wide-view.md)します。
+ワイド ビューのコンポーネントに関する詳細については、[表示幅が広い](./creating-a-wide-view.md)を参照してください。
 
 ## <a name="example"></a>例
 

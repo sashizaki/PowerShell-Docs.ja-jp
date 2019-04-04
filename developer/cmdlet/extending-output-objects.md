@@ -81,9 +81,9 @@ PS> (1, 2, 3, 4).Length
 
 - プロパティおよびプロパティ セットを追加する方法の詳細については、次を参照してください[拡張プロパティ。](./extending-properties-for-objects.md)
 
-- メソッドを追加する方法の詳細については、次を参照してください。[拡張メソッド](./defining-default-methods-for-objects.md)します。
+- メソッドを追加する方法の詳細については、[拡張メソッド](./defining-default-methods-for-objects.md)を参照してください。
 
-- メンバーのセットを追加する方法の詳細については、次を参照してください。[メンバーのセットを拡張](./defining-default-member-sets-for-objects.md)します。
+- メンバーのセットを追加する方法の詳細については、[メンバーのセットを拡張](./defining-default-member-sets-for-objects.md)を参照してください。
 
 独自の拡張型を定義した後は、次のメソッドのいずれかを使用して、拡張オブジェクトを使用できるようにします。
 

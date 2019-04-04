@@ -17,7 +17,7 @@ ms.locfileid: "57794826"
 ---
 # <a name="list-view-labels"></a>リスト ビュー (ラベル)
 
-この例では、一覧の行ごとのカスタム ラベルを表示するリスト ビューを実装する方法を示します。 このリスト ビューのプロパティを表示する、 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトによって返される、 [Get-service](/powershell/module/Microsoft.PowerShell.Management/Get-Service)コマンドレット。 リスト ビューのコンポーネントに関する詳細については、次を参照してください。[リスト ビューを作成する](./creating-a-list-view.md)します。
+この例では、一覧の行ごとのカスタム ラベルを表示するリスト ビューを実装する方法を示します。 このリスト ビューのプロパティを表示する、 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトによって返される、 [Get-service](/powershell/module/Microsoft.PowerShell.Management/Get-Service)コマンドレット。 リスト ビューのコンポーネントに関する詳細については、[リスト ビューを作成する](./creating-a-list-view.md)を参照してください。
 
 ### <a name="to-load-this-formatting-file"></a>この書式設定ファイルを読み込む
 

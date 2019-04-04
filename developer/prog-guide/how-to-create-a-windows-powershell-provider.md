@@ -33,7 +33,7 @@ Windows PowerShell では、既知のデータ ストアへのアクセスに使
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>Windows PowerShell のパスを使用して、格納されたデータにアクセスします。
 
-Windows PowerShell プロバイダーは、Windows PowerShell パスを使用してプログラムでのコマンドを Windows PowerShell ランタイムにアクセスできます。 ほとんどの場合、これらのパスは、プロバイダーを介してデータに直接アクセスに使用されます。 ただし、いくつかのパスは、データにアクセスする Windows PowerShell 以外のアプリケーション プログラミング インターフェイス (Api) を使用するコマンドレットを許可するプロバイダーの内部のパスに解決できます。 Windows PowerShell 内での Windows PowerShell プロバイダーの動作方法の詳細については、次を参照してください。 [Windows PowerShell のしくみ](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)します。
+Windows PowerShell プロバイダーは、Windows PowerShell パスを使用してプログラムでのコマンドを Windows PowerShell ランタイムにアクセスできます。 ほとんどの場合、これらのパスは、プロバイダーを介してデータに直接アクセスに使用されます。 ただし、いくつかのパスは、データにアクセスする Windows PowerShell 以外のアプリケーション プログラミング インターフェイス (Api) を使用するコマンドレットを許可するプロバイダーの内部のパスに解決できます。 Windows PowerShell 内での Windows PowerShell プロバイダーの動作方法の詳細については、[Windows PowerShell のしくみ](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)を参照してください。
 
 ## <a name="exposing-provider-cmdlets-using-windows-powershell-drives"></a>ドライブの Windows PowerShell を使用して、プロバイダー コマンドレットを公開します。
 

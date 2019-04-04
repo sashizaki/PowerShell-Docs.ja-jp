@@ -22,7 +22,7 @@ ms.locfileid: "56855068"
 この例では、Windows PowerShell ランタイムは、コマンドレットを実行する前に、パラメーターの引数の文字パターンを確認に使用できる検証規則を指定する方法を示します。 この検証規則を設定するには、ValidatePattern 属性を宣言します。
 
 > [!NOTE]
-> この属性を定義するクラスの詳細については、次を参照してください。 [System.Management.Automation.Validatepatternattribute](/dotnet/api/System.Management.Automation.ValidatePatternAttribute)します。
+> この属性を定義するクラスの詳細については、[System.Management.Automation.Validatepatternattribute](/dotnet/api/System.Management.Automation.ValidatePatternAttribute)を参照してください。
 
 ## <a name="to-validate-an-argument-pattern"></a>引数のパターンを検証するには
 
@@ -40,7 +40,7 @@ ms.locfileid: "56855068"
     private int inputData;
     ```
 
-この属性を宣言する方法の詳細については、次を参照してください。 [ValidatePattern 属性宣言](./validatepattern-attribute-declaration.md)します。
+この属性を宣言する方法の詳細については、[ValidatePattern 属性宣言](./validatepattern-attribute-declaration.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

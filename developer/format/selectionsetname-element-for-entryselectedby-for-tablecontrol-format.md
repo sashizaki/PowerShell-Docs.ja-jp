@@ -51,11 +51,11 @@ ms.locfileid: "56856098"
 
 ## <a name="remarks"></a>コメント
 
-複数のビューで使用されるオブジェクトのグループを定義するときに、選択範囲のセットが通常使用されます。 たとえば、テーブル ビューと同じオブジェクトのセットのリスト ビューを作成する可能性があります。 選択範囲のセットを定義する詳細については、次を参照してください。[ビューのオブジェクトのセットを定義する](./defining-selection-sets.md)します。
+複数のビューで使用されるオブジェクトのグループを定義するときに、選択範囲のセットが通常使用されます。 たとえば、テーブル ビューと同じオブジェクトのセットのリスト ビューを作成する可能性があります。 選択範囲のセットを定義する詳細については、[ビューのオブジェクトのセットを定義する](./defining-selection-sets.md)を参照してください。
 
-選択のエントリのセットを指定する場合は、型名を指定できません。 .NET 型を指定する方法の詳細については、次を参照してください。 [TableRowEntry (形式) の EntrySelectedBy の TypeName 要素](./typename-element-for-entryselectedby-for-tablecontrol-format.md)します。
+選択のエントリのセットを指定する場合は、型名を指定できません。 .NET 型を指定する方法の詳細については、[TableRowEntry (形式) の EntrySelectedBy の TypeName 要素](./typename-element-for-entryselectedby-for-tablecontrol-format.md)を参照してください。
 
-テーブル ビューのコンポーネントに関する詳細については、次を参照してください。[テーブル ビューを作成する](./creating-a-table-view.md)します。
+テーブル ビューのコンポーネントに関する詳細については、[テーブル ビューを作成する](./creating-a-table-view.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

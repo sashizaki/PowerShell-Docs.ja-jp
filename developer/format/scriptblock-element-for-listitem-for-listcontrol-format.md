@@ -53,7 +53,7 @@ ms.locfileid: "56855558"
 
 この要素が指定されている場合は指定できません、 [PropertyName](./propertyname-element-for-listitem-for-listcontrol-format.md)要素。
 
-リスト ビューでスクリプトを指定する方法については、次を参照してください。[リスト ビュー](./creating-a-list-view.md)します。
+リスト ビューでスクリプトを指定する方法については、[リスト ビュー](./creating-a-list-view.md)を参照してください。
 
 ## <a name="example"></a>例
 

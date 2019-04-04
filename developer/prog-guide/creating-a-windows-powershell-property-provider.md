@@ -23,11 +23,11 @@ ms.locfileid: "58055157"
 このトピックでは、データ ストア内のアイテムのプロパティを操作するユーザーを有効にするプロバイダーを作成する方法について説明します。 その結果、この種類のプロバイダーは、Windows PowerShell プロパティ プロバイダーとしてに呼ばれます。 たとえば、レジストリ プロバイダー レジストリ キーの項目のプロパティとして Windows PowerShell ハンドル レジストリ キーの値によって提供されます。 この種類のプロバイダーを追加する必要があります、 [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) .NET クラスの実装へのインターフェイス。
 
 > [!NOTE]
-> Windows PowerShell では、Windows PowerShell プロバイダーの開発に使用できるテンプレート ファイルを提供します。 TemplateProvider.cs ファイルでは、Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントで使用できます。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
+> Windows PowerShell では、Windows PowerShell プロバイダーの開発に使用できるテンプレート ファイルを提供します。 TemplateProvider.cs ファイルでは、Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントで使用できます。 ダウンロードの手順については、[Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)を参照してください。
 >
 > ダウンロードしたテンプレートが表示されます、  **\<PowerShell のサンプル >** ディレクトリ。 このファイルのコピーを作成して、必要のないすべての機能を削除する、新しい Windows PowerShell プロバイダーを作成するため、コピーを使用する必要があります。
 >
-> その他の Windows PowerShell プロバイダーの実装の詳細については、次を参照してください。 [Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)します。
+> その他の Windows PowerShell プロバイダーの実装の詳細については、[Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)を参照してください。
 
 > [!CAUTION]
 > プロパティ プロバイダーのメソッドを使用して任意のオブジェクトを書き込む必要があります、 [System.Management.Automation.Provider.Cmdletprovider.Writepropertyobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject)メソッド。
@@ -60,7 +60,7 @@ ms.locfileid: "58055157"
 
 ## <a name="defining-base-functionality"></a>基本機能を定義します。
 
-[System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)インターフェイスは、例外としてプロバイダーの基本クラスのいずれかに接続する、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラス。 使用する基本クラスで必要な基本機能を追加します。 基底クラスの詳細については、次を参照してください。 [Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)します。
+[System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)インターフェイスは、例外としてプロバイダーの基本クラスのいずれかに接続する、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラス。 使用する基本クラスで必要な基本機能を追加します。 基底クラスの詳細については、[Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)を参照してください。
 
 ## <a name="retrieving-properties"></a>プロパティを取得します。
 

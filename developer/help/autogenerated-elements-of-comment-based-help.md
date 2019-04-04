@@ -39,7 +39,7 @@ ms.locfileid: "58054630"
 
 ### <a name="common-parameters"></a>共通パラメーター
 
-共通のパラメーターは、効果がない場合でも、ヘルプ トピックの構文とパラメーターの一覧に追加されます。 共通のパラメーターの詳細については、次を参照してください。 [about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters)します。
+共通のパラメーターは、効果がない場合でも、ヘルプ トピックの構文とパラメーターの一覧に追加されます。 共通のパラメーターの詳細については、[about_CommonParameters](/powershell/module/microsoft.powershell.core/about/about_commonparameters)を参照してください。
 
 ### <a name="parameter-attribute-table"></a>パラメーター属性テーブル
 

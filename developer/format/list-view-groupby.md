@@ -17,7 +17,7 @@ ms.locfileid: "57794446"
 ---
 # <a name="list-view-groupby"></a>リスト ビュー (グループ別)
 
-この例では、一覧の行をグループに分割するリスト ビューを実装する方法を示します。 このリスト ビューのプロパティを表示する、 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)によって返されるオブジェクト、 [Get-service](/powershell/module/Microsoft.PowerShell.Management/Get-Service)コマンドレット。 リスト ビューのコンポーネントに関する詳細については、次を参照してください。[リスト ビューを作成する](./creating-a-list-view.md)します。
+この例では、一覧の行をグループに分割するリスト ビューを実装する方法を示します。 このリスト ビューのプロパティを表示する、 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)によって返されるオブジェクト、 [Get-service](/powershell/module/Microsoft.PowerShell.Management/Get-Service)コマンドレット。 リスト ビューのコンポーネントに関する詳細については、[リスト ビューを作成する](./creating-a-list-view.md)を参照してください。
 
 ### <a name="to-load-this-formatting-file"></a>この書式設定ファイルを読み込む
 

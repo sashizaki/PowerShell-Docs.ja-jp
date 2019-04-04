@@ -22,7 +22,7 @@ ms.locfileid: "56857128"
 この例では、コマンドレットを実行する前に、パラメーターの引数の文字 (長さ) の数を確認、Windows PowerShell ランタイムが使用できる検証規則を指定する方法を示します。 ValidateLength 属性を宣言することで、この検証規則を設定します。
 
 > [!NOTE]
-> この属性を定義するクラスの詳細については、次を参照してください。 [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)します。
+> この属性を定義するクラスの詳細については、[System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)を参照してください。
 
 ## <a name="to-validate-the-argument-length"></a>引数の長さを検証するには
 
@@ -39,7 +39,7 @@ ms.locfileid: "56857128"
     private string userName;
     ```
 
-この属性を宣言する方法の詳細については、次を参照してください。 [ValidateLength 属性宣言](./validatelength-attribute-declaration.md)します。
+この属性を宣言する方法の詳細については、[ValidateLength 属性宣言](./validatelength-attribute-declaration.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

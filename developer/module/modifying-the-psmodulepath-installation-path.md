@@ -39,7 +39,7 @@ Windows PowerShell の起動時、`PSModulePath`で既定値は、次のシス�
 
   `$env:PSModulePath = $env:PSModulePath + ";c:\ModulePath"`
 
-  プロファイルの詳細については、次を参照してください。 [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles) 、Microsoft TechNet ライブラリです。
+  プロファイルの詳細については、[about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles) 、Microsoft TechNet ライブラリを参照してください。
 
 - レジストリに永続的な変数を追加するには、という新しいユーザーの環境変数を作成`PSModulePath`で環境変数エディターを使用して、**システム プロパティ** ダイアログ ボックス。
 

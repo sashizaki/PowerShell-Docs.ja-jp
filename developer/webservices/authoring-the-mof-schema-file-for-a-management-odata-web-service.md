@@ -17,7 +17,7 @@ ms.locfileid: "56854718"
 ---
 # <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a>Management OData Web サービスの MOF スキーマ ファイルを作成する
 
-Management OData web サービスは、パブリック リソースのスキーマを使用する MOF ファイルを作成して公開するリソースを定義します。 各リソースは、ファイル内のクラスとして定義され、プロパティは、クラス メンバーとして定義されます。 MOF ファイルで使用するスキーマの詳細については、次を参照してください。[パブリック リソース スキーマ](./public-resource-schema.md)します。
+Management OData web サービスは、パブリック リソースのスキーマを使用する MOF ファイルを作成して公開するリソースを定義します。 各リソースは、ファイル内のクラスとして定義され、プロパティは、クラス メンバーとして定義されます。 MOF ファイルで使用するスキーマの詳細については、[パブリック リソース スキーマ](./public-resource-schema.md)を参照してください。
 
 ## <a name="example-mof-file"></a>MOF ファイルの例
 

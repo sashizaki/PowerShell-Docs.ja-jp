@@ -25,9 +25,9 @@ ms.locfileid: "58054188"
 
 - 書式設定ファイルは、コマンドラインから現在のセッションにインポートできます。 使用して、 [Update-formatdata](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData)コマンドレットの次の手順で説明します。
 
-- 書式設定、ファイルを参照するモジュール マニフェストを作成できます。 モジュールを使用すると、パッケージ配布用のファイルの書式設定することができます。 使用、 [New-modulemanifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) 、マニフェストを作成するコマンドレットと[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットを現在のセッションにモジュールを読み込めません。 モジュールの詳細については、次を参照してください。 [Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)します。
+- 書式設定、ファイルを参照するモジュール マニフェストを作成できます。 モジュールを使用すると、パッケージ配布用のファイルの書式設定することができます。 使用、 [New-modulemanifest](/powershell/module/Microsoft.PowerShell.Core/New-ModuleManifest) 、マニフェストを作成するコマンドレットと[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットを現在のセッションにモジュールを読み込めません。 モジュールの詳細については、[Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)を参照してください。
 
-- 書式設定、ファイルを参照するスナップインを作成できます。 使用して、 [System.Management.Automation.PSSnapIn.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats)書式設定ファイルを参照します。 配布パッケージのコマンドレット モジュールと、関連付けられている書式設定の種類のファイルを使用する推奨になります。 モジュールの詳細については、次を参照してください。 [Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)します。
+- 書式設定、ファイルを参照するスナップインを作成できます。 使用して、 [System.Management.Automation.PSSnapIn.Formats](/dotnet/api/System.Management.Automation.PSSnapIn.Formats)書式設定ファイルを参照します。 配布パッケージのコマンドレット モジュールと、関連付けられている書式設定の種類のファイルを使用する推奨になります。 モジュールの詳細については、[Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)を参照してください。
 
 - コマンドをプログラムで起動するが場合、は、コマンドが実行される、実行空間の最初のセッション状態を書式設定ファイルのエントリを追加できます。 書式設定ファイルを追加するために使用する .NET 型の詳細については、次を参照してください。、 [System.Management.Automation.Runspaces.Sessionstateformatentry でしょうか。Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateFormatEntry)クラス。
 

@@ -55,7 +55,7 @@ ms.locfileid: "56859008"
    Export-ModuleMember -Function Show-Calendar
    ```
 
-   モジュール マニフェストを使用してインポートされる内容を制限することもできます。 詳細については、次を参照してください。 [PowerShell モジュールをインポートする](./importing-a-powershell-module.md)と[PowerShell モジュール マニフェストの記述方法](./how-to-write-a-powershell-module-manifest.md)します。
+   モジュール マニフェストを使用してインポートされる内容を制限することもできます。 詳細については、[PowerShell モジュールをインポートする](./importing-a-powershell-module.md)と[PowerShell モジュール マニフェストの記述方法](./how-to-write-a-powershell-module-manifest.md)を参照してください。
 
 3. 呼び出しに使用できる独自のモジュールが読み込まれている必要があるモジュールがあれば、 `Import-Module`、独自のモジュールの上部にあります。
 
@@ -67,15 +67,15 @@ ms.locfileid: "56859008"
 
 4. PowerShell のヘルプ システムにモジュールを記述する場合は、これを行うファイル内の標準のヘルプのコメントまたは追加のヘルプ ファイルのいずれか。
 
-   このトピックの下部にあるコード サンプルには、コメントにヘルプ情報が含まれます。 ために選択した場合は、追加のヘルプ コンテンツを含む XML ファイルが展開されたも記述できます。 詳細については、次を参照してください。[書き込みための Windows PowerShell モジュール](./writing-help-for-windows-powershell-modules.md)します。
+   このトピックの下部にあるコード サンプルには、コメントにヘルプ情報が含まれます。 ために選択した場合は、追加のヘルプ コンテンツを含む XML ファイルが展開されたも記述できます。 詳細については、[書き込みための Windows PowerShell モジュール](./writing-help-for-windows-powershell-modules.md)を参照してください。
 
 5. モジュールの追加、XML ファイル、またはモジュールにパッケージ化する他のコンテンツがある場合は、モジュール マニフェストでこれを実行できます。
 
-   モジュール マニフェストは、他のモジュール、ディレクトリのレイアウト、バージョン番号、データを作成、および他の情報の名前を含むファイルです。 PowerShell では、モジュール マニフェスト ファイルを使用して編成し、ソリューションをデプロイします。 ただし、この例の比較的単純な性質では、マニフェスト ファイルが不要です。 詳細については、次を参照してください。[モジュール マニフェスト](./how-to-write-a-powershell-module-manifest.md)します。
+   モジュール マニフェストは、他のモジュール、ディレクトリのレイアウト、バージョン番号、データを作成、および他の情報の名前を含むファイルです。 PowerShell では、モジュール マニフェスト ファイルを使用して編成し、ソリューションをデプロイします。 ただし、この例の比較的単純な性質では、マニフェスト ファイルが不要です。 詳細については、[モジュール マニフェスト](./how-to-write-a-powershell-module-manifest.md)を参照してください。
 
 6. をインストールして、モジュールを実行するモジュールを、適切な PowerShell パスのいずれかに保存し、呼び出しを行う`Import-Module`します。
 
-   モジュールをインストールするパスにある、`$env:PSModulePath`グローバル変数。 たとえば、システム上のモジュールを保存する共通のパスになります`%SystemRoot%/users/<user>/Documents/WindowsPowerShell/Modules/<moduleName>`します。 1 つの .psm1 ファイルのみの場合でも、モジュールが存在するためのフォルダーを作成することを確認します。 これらのパスのいずれかに、モジュールを保存しなかったへの呼び出しで、モジュールの場所を渡す必要があります`Import-Module`します。 (それ以外の場合、PowerShell はできませんを検索します。)PowerShell 3.0 以降、モジュールを PowerShell モジュールのパスのいずれかに配置した場合、必要はありませんを明示的にインポートする: 関数を呼び出すユーザーのいるだけでは自動的に読み込まれます。 モジュール パスの詳細については、次を参照してください。 [PowerShell モジュールをインポートする](./importing-a-powershell-module.md)と[PSModulePath 環境変数](./modifying-the-psmodulepath-installation-path.md)します。
+   モジュールをインストールするパスにある、`$env:PSModulePath`グローバル変数。 たとえば、システム上のモジュールを保存する共通のパスになります`%SystemRoot%/users/<user>/Documents/WindowsPowerShell/Modules/<moduleName>`します。 1 つの .psm1 ファイルのみの場合でも、モジュールが存在するためのフォルダーを作成することを確認します。 これらのパスのいずれかに、モジュールを保存しなかったへの呼び出しで、モジュールの場所を渡す必要があります`Import-Module`します。 (それ以外の場合、PowerShell はできませんを検索します。)PowerShell 3.0 以降、モジュールを PowerShell モジュールのパスのいずれかに配置した場合、必要はありませんを明示的にインポートする: 関数を呼び出すユーザーのいるだけでは自動的に読み込まれます。 モジュール パスの詳細については、[PowerShell モジュールをインポートする](./importing-a-powershell-module.md)と[PSModulePath 環境変数](./modifying-the-psmodulepath-installation-path.md)を参照してください。
 
 7. アクティブなサービスからモジュールを削除するへの呼び出しを行い[Remove-module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)します。
 

@@ -45,7 +45,7 @@ Get-Help Invoke-Command -Online
 
 ## <a name="adding-a-uri-to-the-first-related-link-of-a-command-help-topic"></a>コマンドのヘルプ トピックの最初の関連リンクへの URI の追加
 
-サポートできる`Get-Help`-コマンドの XML ベースのヘルプ トピックの「関連リンク」の最初のエントリを有効な URI を追加することで、任意のコマンドは、オンラインです。 このオプションは、XML ベースのヘルプ トピックでのみ有効ですが、ヘルプ トピックがユーザーのコンピューターにインストールされている場合にだけ機能します。 ヘルプ トピックがインストールされているし、URI が設定されて、この値よりも優先、 **HelpUri**コマンドのプロパティ。 コマンドの XML ベースのヘルプ トピックについては、次を参照してください。[コマンドのヘルプ トピックを Writing XML-Based](../help/writing-xml-based-help-topics-for-commands.md)します。
+サポートできる`Get-Help`-コマンドの XML ベースのヘルプ トピックの「関連リンク」の最初のエントリを有効な URI を追加することで、任意のコマンドは、オンラインです。 このオプションは、XML ベースのヘルプ トピックでのみ有効ですが、ヘルプ トピックがユーザーのコンピューターにインストールされている場合にだけ機能します。 ヘルプ トピックがインストールされているし、URI が設定されて、この値よりも優先、 **HelpUri**コマンドのプロパティ。 コマンドの XML ベースのヘルプ トピックについては、[コマンドのヘルプ トピックを Writing XML-Based](../help/writing-xml-based-help-topics-for-commands.md)を参照してください。
 
 この機能をサポートするためには、URI に表示する必要があります、`maml:uri`最初要素`maml:relatedLinks/maml:navigationLink`内の要素、`maml:relatedLinks`要素。
 

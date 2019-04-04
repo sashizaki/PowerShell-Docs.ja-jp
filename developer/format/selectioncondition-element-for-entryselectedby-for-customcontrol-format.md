@@ -63,7 +63,7 @@ ms.locfileid: "56858828"
 
 - 選択条件が .NET 型の任意の数を指定するか、選択範囲を設定するが、両方を指定することはできません。
 
-選択条件を使用する方法の詳細については、次を参照してください。[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)します。
+選択条件を使用する方法の詳細については、[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

@@ -17,7 +17,7 @@ ms.locfileid: "58054919"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell プロバイダー クイック スタート
 
-このトピックでは、新しいドライブを作成する基本的な機能を備えた Windows PowerShell プロバイダーを作成する方法について説明します。 プロバイダーの詳細については、次を参照してください。 [Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)します。 完全な機能を持つプロバイダーの例については、次を参照してください。[プロバイダ サンプル](./provider-samples.md)します。
+このトピックでは、新しいドライブを作成する基本的な機能を備えた Windows PowerShell プロバイダーを作成する方法について説明します。 プロバイダーの詳細については、[Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)を参照してください。 完全な機能を持つプロバイダーの例については、[プロバイダ サンプル](./provider-samples.md)を参照してください。
 
 ## <a name="writing-a-basic-provider"></a>基本的なプロバイダーの作成
 

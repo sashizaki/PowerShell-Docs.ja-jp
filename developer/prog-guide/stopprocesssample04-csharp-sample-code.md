@@ -20,7 +20,7 @@ ms.locfileid: "57429501"
 ここでは、完全なC#StopProc04 サンプルのコマンドレットのサンプル コード。 これは、コードの`Stop-Process`で説明されているコマンドレット[コマンドレットにパラメーター セットを追加する](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)します。 `Stop-Process` Get-proc コマンドレットを使用して取得されるプロセスを停止するコマンドレットは設計されています (で説明されている[最初のコマンドレットを作成](../cmdlet/creating-a-cmdlet-without-parameters.md))。
 
 > [!NOTE]
-> ダウンロードすることができます、 C# Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用してこの停止 Proc コマンドレット (stopprocesssample04.cs) ソース ファイル。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
+> ダウンロードすることができます、 C# Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用してこの停止 Proc コマンドレット (stopprocesssample04.cs) ソース ファイル。 ダウンロードの手順については、[Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)を参照してください。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
 

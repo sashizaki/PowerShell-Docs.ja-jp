@@ -22,7 +22,7 @@ ms.locfileid: "56861368"
 この例では、コマンドレットを実行する前に、パラメーターの引数を確認、Windows PowerShell ランタイムが使用できる検証規則を指定する方法を示します。 この検証規則は、パラメーターの引数の有効な値のセットを提供します。
 
 > [!NOTE]
-> この属性を定義するクラスの詳細については、次を参照してください。 [System.Management.Automation.Validatesetattribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)します。
+> この属性を定義するクラスの詳細については、[System.Management.Automation.Validatesetattribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)を参照してください。
 
 ## <a name="to-validate-an-argument-set"></a>引数を検証するには、次のように設定します。
 
@@ -40,7 +40,7 @@ ms.locfileid: "56861368"
     private string userName;
     ```
 
-この属性を宣言する方法の詳細については、次を参照してください。 [ValidateSet 属性宣言](./validateset-attribute-declaration.md)します。
+この属性を宣言する方法の詳細については、[ValidateSet 属性宣言](./validateset-attribute-declaration.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

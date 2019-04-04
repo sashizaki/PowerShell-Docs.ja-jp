@@ -52,7 +52,7 @@ ms.locfileid: "56858808"
 
 ## <a name="remarks"></a>コメント
 
-この要素が指定されている場合は指定できません、`SelectionSetName`要素。 選択条件を定義する詳細については、次を参照してください。[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)します。
+この要素が指定されている場合は指定できません、`SelectionSetName`要素。 選択条件を定義する詳細については、[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

@@ -43,7 +43,7 @@ ms.locfileid: "58059526"
 
 ## <a name="defining-the-cmdlet-class"></a>コマンドレット クラスを定義します。
 
-コマンドレットの作成の最初の手順は常に、コマンドレットの名前を付けると、コマンドレットを実装する .NET クラスを宣言します。 このコマンドレットは、特定の文字列では、ここで選択した動詞名は"Select"で定義が検出した、 [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon)クラス。 "Str"名詞形式の名前は、コマンドレットは、文字列には動作するために使用されます。 次の宣言では、コマンドレット クラスの名前、コマンドレットの動詞と名詞の名前が反映されることに注意してください。 承認されたコマンドレット動詞の詳細については、次を参照してください。[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)します。
+コマンドレットの作成の最初の手順は常に、コマンドレットの名前を付けると、コマンドレットを実装する .NET クラスを宣言します。 このコマンドレットは、特定の文字列では、ここで選択した動詞名は"Select"で定義が検出した、 [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon)クラス。 "Str"名詞形式の名前は、コマンドレットは、文字列には動作するために使用されます。 次の宣言では、コマンドレット クラスの名前、コマンドレットの動詞と名詞の名前が反映されることに注意してください。 承認されたコマンドレット動詞の詳細については、[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)を参照してください。
 
 このコマンドレットの .NET クラスがから派生する必要があります、 [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) Windows PowerShell プロバイダーを公開する、Windows PowerShell ランタイムに必要なサポートを提供するための基本クラスインフラストラクチャ。 このコマンドレットはまた、メモなどの .NET Framework の正規表現クラスの使用[System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex)します。
 
@@ -61,7 +61,7 @@ public class SelectStringCommand : PSCmdlet
 このコマンドレットは、ユーザーがアクセスして格納されたデータを確認できるようにいくつかのパラメーターを定義します。 これらのパラメーターを含める、`Path`パラメーター、データ ストアの場所を示す、`Pattern`検索に使用するパターンを指定するパラメーターと、検索を実行する方法をサポートするその他のいくつかのパラメーター。
 
 > [!NOTE]
-> パラメーターの定義の基本についての詳細については、次を参照してください。[そのプロセスのコマンドラインの入力パラメーターを追加する](./adding-parameters-that-process-command-line-input.md)します。
+> パラメーターの定義の基本についての詳細については、[そのプロセスのコマンドラインの入力パラメーターを追加する](./adding-parameters-that-process-command-line-input.md)を参照してください。
 
 ### <a name="declaring-the-path-parameter"></a>パス パラメーターを宣言します。
 
@@ -88,7 +88,7 @@ private string[] paths;
 
 このパラメーターが 2 つの異なるパラメーター セットに属していることと、エイリアスがあることに注意してください。
 
-2 つ[System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)属性を宣言する、`Path`パラメーターが属する、 `ScriptParameterSet` 、`PatternParameterSet`します。 パラメーター セットの詳細については、次を参照してください。[パラメーター セットをコマンドレットに追加](./adding-parameter-sets-to-a-cmdlet.md)します。
+2 つ[System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)属性を宣言する、`Path`パラメーターが属する、 `ScriptParameterSet` 、`PatternParameterSet`します。 パラメーター セットの詳細については、[パラメーター セットをコマンドレットに追加](./adding-parameter-sets-to-a-cmdlet.md)を参照してください。
 
 [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)属性宣言を`PSPath`のエイリアス、`Path`パラメーター。 このエイリアスを宣言することは、Windows PowerShell プロバイダーにアクセスする他のコマンドレットとの整合性強く推奨します。 詳細については aboutWindows PowerShell パスの「PowerShell パスの概念」を参照してください[Windows PowerShell のしくみ](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)します。
 
@@ -195,11 +195,11 @@ internal WildcardPattern[] include = null;
 
 ### <a name="declaring-parameter-sets"></a>パラメーター セットを宣言します。
 
-このコマンドレットは、2 つのパラメーター セットを使用して (`ScriptParameterSet`と`PatternParameterSet`、既定値) データ アクセスで使用される 2 つのパラメーター セットの名前として。 `PatternParameterSet` 既定のパラメーター セットは、使用するは、`Pattern`パラメーターを指定します。 `ScriptParameterSet` ユーザーが、別の検索のメカニズムを指定する場合に使用、`Script`パラメーター。 パラメーター セットの詳細については、次を参照してください。[パラメーター セットをコマンドレットに追加](./adding-parameter-sets-to-a-cmdlet.md)します。
+このコマンドレットは、2 つのパラメーター セットを使用して (`ScriptParameterSet`と`PatternParameterSet`、既定値) データ アクセスで使用される 2 つのパラメーター セットの名前として。 `PatternParameterSet` 既定のパラメーター セットは、使用するは、`Pattern`パラメーターを指定します。 `ScriptParameterSet` ユーザーが、別の検索のメカニズムを指定する場合に使用、`Script`パラメーター。 パラメーター セットの詳細については、[パラメーター セットをコマンドレットに追加](./adding-parameter-sets-to-a-cmdlet.md)を参照してください。
 
 ## <a name="overriding-input-processing-methods"></a>入力処理メソッドをオーバーライドします。
 
-コマンドレットは 1 つ以上の入力処理メソッドをオーバーライドする必要があります、 [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)クラス。 入力の処理方法の詳細については、次を参照してください。[最初のコマンドレットを、作成](./creating-a-cmdlet-without-parameters.md)です。
+コマンドレットは 1 つ以上の入力処理メソッドをオーバーライドする必要があります、 [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)クラス。 入力の処理方法の詳細については、[最初のコマンドレットを、作成](./creating-a-cmdlet-without-parameters.md)を参照してください。
 
 このコマンドレットのオーバーライド、 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)の配列を構築するメソッドは、起動時に正規表現をコンパイルします。 これにより、単純な一致を使用しない検索中にパフォーマンスが向上します。
 
@@ -397,7 +397,7 @@ protected override void ProcessRecord()
 
 ## <a name="code-sample"></a>コード サンプル
 
-次のコードでは、この選択 Str コマンドレットのこのバージョンの実装を示します。 このコードには、コマンドレット クラス、コマンドレットで使用されるプライベート メソッドおよび Windows PowerShell、スナップイン コードは、コマンドレットを登録するために使用が含まれることに注意してください。 コマンドレットの登録の詳細については、次を参照してください。[コマンドレットを構築](#Building-the-Cmdlet)します。
+次のコードでは、この選択 Str コマンドレットのこのバージョンの実装を示します。 このコードには、コマンドレット クラス、コマンドレットで使用されるプライベート メソッドおよび Windows PowerShell、スナップイン コードは、コマンドレットを登録するために使用が含まれることに注意してください。 コマンドレットの登録の詳細については、[コマンドレットを構築](#Building-the-Cmdlet)を参照してください。
 
 ```csharp
 //
@@ -1108,7 +1108,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="building-the-cmdlet"></a>コマンドレットを構築
 
-コマンドレットを実装するには、後にする必要がありますに登録する Windows PowerShell Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
+コマンドレットを実装するには、後にする必要がありますに登録する Windows PowerShell Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)を参照してください。
 
 ## <a name="testing-the-cmdlet"></a>テスト コマンドレット
 

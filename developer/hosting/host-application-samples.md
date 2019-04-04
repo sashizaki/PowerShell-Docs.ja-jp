@@ -25,9 +25,9 @@ ms.locfileid: "57795387"
 
  [PowerShell API サンプル](./windows-powershell-api-samples.md)ここでは、機能が制限されている実行空間を作成する方法を示すサンプル コードと、実行空間を指定する実行空間プールを使用してコマンドを非同期的に実行する方法。
 
- [カスタム ホスト サンプル](./custom-host-samples.md)カスタム ホストを作成するためのサンプル コードが含まれています。 ホストは、ユーザーと、Windows PowerShell エンジン間の通信を提供する Windows PowerShell のコンポーネントです。 カスタム ホストの詳細については、次を参照してください。[カスタム ホスト](https://msdn.microsoft.com/en-us/library/ee706563(v=vs.85).aspx)します。
+ [カスタム ホスト サンプル](./custom-host-samples.md)カスタム ホストを作成するためのサンプル コードが含まれています。 ホストは、ユーザーと、Windows PowerShell エンジン間の通信を提供する Windows PowerShell のコンポーネントです。 カスタム ホストの詳細については、[カスタム ホスト](https://msdn.microsoft.com/en-us/library/ee706563(v=vs.85).aspx)を参照してください。
 
- [サンプルの実行空間](./runspace-samples.md)実行空間を作成するためのサンプル コードが含まれています。 実行空間を使用する方法の詳細については、次を参照してください。[ホスト アプリケーションの実行空間](https://msdn.microsoft.com/en-us/library/ee706563(v=vs.85).aspx)します。
+ [サンプルの実行空間](./runspace-samples.md)実行空間を作成するためのサンプル コードが含まれています。 実行空間を使用する方法の詳細については、[ホスト アプリケーションの実行空間](https://msdn.microsoft.com/en-us/library/ee706563(v=vs.85).aspx)を参照してください。
 
  [リモート実行空間サンプル](./remote-runspace-samples.md)このセクションには、WS Management ベースの Windows PowerShell リモート処理を使用してコンピューターに接続するために使用する実行空間を作成する方法を示すサンプル コードが含まれています。
 

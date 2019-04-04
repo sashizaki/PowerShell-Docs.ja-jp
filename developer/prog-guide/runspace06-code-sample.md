@@ -20,7 +20,7 @@ ms.locfileid: "57429535"
 記載されている Runspace06 サンプルのソース コードを次に示します[、Windows PowerShell スナップインを使用して、実行空間を構成する](http://msdn.microsoft.com/en-us/a7289ee8-9732-49ee-91c7-d533e9538b83)します。 このサンプル アプリケーションは、Windows PowerShell スナップインを 1 つのコマンドを使用して、パイプラインの実行を使用して、これに基づいて、実行空間を作成します。 これを行うには、アプリケーション実行空間の構成情報を作成、実行空間を作成します、1 つのコマンドでパイプラインを作成しますおよびし、パイプラインを実行します。
 
 > [!NOTE]
-> ダウンロードすることができます、 C# Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用してソース ファイル (runspace06.cs)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
+> ダウンロードすることができます、 C# Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用してソース ファイル (runspace06.cs)。 ダウンロードの手順については、[Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)を参照してください。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
 

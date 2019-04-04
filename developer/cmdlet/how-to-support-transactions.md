@@ -20,7 +20,7 @@ ms.locfileid: "56857118"
 この例では、トランザクションのサポートをコマンドレットに追加する基本的なコード要素を示します。
 
 > [!IMPORTANT]
-> Windows PowerShell がトランザクションを処理する方法の詳細については、次を参照してください。[に関するトランザクション][about_Transactions]します。
+> Windows PowerShell がトランザクションを処理する方法の詳細については、[に関するトランザクション][about_Transactions]を参照してください。
 
 ## <a name="to-support-transactions"></a>トランザクションをサポートするには
 

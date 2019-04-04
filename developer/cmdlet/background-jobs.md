@@ -45,7 +45,7 @@ ms.locfileid: "57794707"
 
 - コマンドレットをバック グラウンド ジョブとして実行するかどうかに応じて、適切なオブジェクトを返します。
 
-コード例では、次を参照してください。[サポート ジョブ方法](./how-to-support-jobs.md)します。
+コード例では、[サポート ジョブ方法](./how-to-support-jobs.md)を参照してください。
 
 ## <a name="background-job-related-apis"></a>バック グラウンド ジョブに関連する Api
 

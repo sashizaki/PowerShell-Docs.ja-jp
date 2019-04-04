@@ -20,7 +20,7 @@ ms.locfileid: "57429926"
 記載されている、実行空間のサンプル コードをここでは[コンソール アプリケーションを実行に指定されたスクリプトを作成する](http://msdn.microsoft.com/en-us/a93e6006-36db-4bcc-b9da-c5bebf4ffd68)します。
 
 > [!NOTE]
-> ダウンロードすることができます、C#ソース ファイル (runspace03.cs) および Microsoft Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用してこのサンプルの VB.NET ソース ファイル (runspace03.vb)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
+> ダウンロードすることができます、C#ソース ファイル (runspace03.cs) および Microsoft Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用してこのサンプルの VB.NET ソース ファイル (runspace03.vb)。 ダウンロードの手順については、[Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)を参照してください。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
 

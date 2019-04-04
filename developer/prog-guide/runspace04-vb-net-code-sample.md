@@ -20,7 +20,7 @@ ms.locfileid: "57429892"
 Runspace04 サンプルの VB.NET のソース コードを次に示します。 このサンプルでは、 [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)終了エラーを生成するスクリプトを実行するクラス。 ホスト アプリケーションは、エラーをキャッチし、エラー レコードを解釈する責任を負います。
 
 > [!NOTE]
-> Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用して、このサンプルの VB.NET のソース ファイル (runspace02.vb) をダウンロードできます。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
+> Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用して、このサンプルの VB.NET のソース ファイル (runspace02.vb) をダウンロードできます。 ダウンロードの手順については、[Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)を参照してください。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
 

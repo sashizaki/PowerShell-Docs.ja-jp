@@ -31,7 +31,7 @@ ms.locfileid: "58059254"
 
 - 作成するときに、 [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)オブジェクト、Windows PowerShell は、現在のホストを使用して、ユーザーに適切な指示を表示します。 たとえば、既定のホストが表示されますユーザー名とパスワードを入力するプロンプトこの属性を使用する場合。 ただし、カスタム ホストを使用している場合は、さまざまなプロンプトを定義するし、プロンプトが表示されます。
 
-- この属性は、パラメーターの属性で使用されます。 その属性の詳細については、次を参照してください。[パラメーター属性宣言](./parameter-attribute-declaration.md)します。
+- この属性は、パラメーターの属性で使用されます。 その属性の詳細については、[パラメーター属性宣言](./parameter-attribute-declaration.md)を参照してください。
 
 - 資格情報の属性を定義した、 [System.Management.Automation.Credentialattribute](/dotnet/api/System.Management.Automation.CredentialAttribute)クラス。
 

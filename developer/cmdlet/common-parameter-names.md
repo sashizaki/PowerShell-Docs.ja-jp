@@ -76,7 +76,7 @@ ms.locfileid: "58059662"
 
 ## <a name="risk-mitigation-parameters"></a>リスクを緩和するためのパラメーター
 
-次のパラメーターは、それらのアクションの実行前に確認を要求するコマンドレットに追加されます。 確認要求の詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。 これらのパラメーターがによって定義されている、 [System.Management.Automation.Internal.Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)クラス。
+次のパラメーターは、それらのアクションの実行前に確認を要求するコマンドレットに追加されます。 確認要求の詳細については、[確認を要求する](./requesting-confirmation-from-cmdlets.md)を参照してください。 これらのパラメーターがによって定義されている、 [System.Management.Automation.Internal.Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)クラス。
 
 ### <a name="confirm-alias-cf"></a>確認 (別名: cf)
 

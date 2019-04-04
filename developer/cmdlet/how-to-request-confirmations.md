@@ -20,7 +20,7 @@ ms.locfileid: "58058829"
 この例では、呼び出し、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)から確認を要求する方法、ユーザー アクションが行われる前にします。
 
 > [!IMPORTANT]
-> Windows PowerShell でこれらの要求を処理する方法の詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。
+> Windows PowerShell でこれらの要求を処理する方法の詳細については、[確認を要求する](./requesting-confirmation-from-cmdlets.md)を参照してください。
 
 ## <a name="to-request-confirmation"></a>確認を要求するには
 

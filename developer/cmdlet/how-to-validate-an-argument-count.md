@@ -22,7 +22,7 @@ ms.locfileid: "56859138"
 この例は、パラメーターが受け取る引数 (数) の数を確認する、Windows PowerShell ランタイムを使用する検証規則を指定する方法を示します、コマンドレットの実行前にします。 ValidateCount 属性を宣言することで、この検証規則を設定します。
 
 > [!NOTE]
-> この属性を定義するクラスの詳細については、次を参照してください。 [System.Management.Automation.Validatecountattribute](/dotnet/api/System.Management.Automation.ValidateCountAttribute)します。
+> この属性を定義するクラスの詳細については、[System.Management.Automation.Validatecountattribute](/dotnet/api/System.Management.Automation.ValidateCountAttribute)を参照してください。
 
 ## <a name="to-validate-an-argument-count"></a>引数の数を検証するには
 
@@ -40,7 +40,7 @@ ms.locfileid: "56859138"
     private string[] userNames;
     ```
 
-この属性を宣言する方法の詳細については、次を参照してください。 [ValidateCount 属性宣言](./validatecount-attribute-declaration.md)します。
+この属性を宣言する方法の詳細については、[ValidateCount 属性宣言](./validatecount-attribute-declaration.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 

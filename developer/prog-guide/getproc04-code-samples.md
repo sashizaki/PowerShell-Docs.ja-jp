@@ -20,7 +20,7 @@ ms.locfileid: "58054647"
 GetProc04 サンプル コマンドレットのコード サンプルを次に示します。 これは、`Get-Process`で説明されているコマンドレット サンプル[Your コマンドレットの終わらないエラー報告の追加](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)します。 これは、`Get-Process`コマンドレットの呼び出し、 [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)プロセス情報の取得中には無効操作例外がスローされるメソッド。
 
 > [!NOTE]
-> ダウンロードすることができます、C#この Get-proc コマンドレットは、Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用してソース ファイル (getprov04.cs)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
+> ダウンロードすることができます、C#この Get-proc コマンドレットは、Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用してソース ファイル (getprov04.cs)。 ダウンロードの手順については、[Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)を参照してください。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
 

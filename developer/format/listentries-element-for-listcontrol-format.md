@@ -51,7 +51,7 @@ ms.locfileid: "56856788"
 
 ## <a name="remarks"></a>コメント
 
-リスト ビューの詳細については、次を参照してください。[リスト ビュー](./creating-a-list-view.md)します。
+リスト ビューの詳細については、[リスト ビュー](./creating-a-list-view.md)を参照してください。
 
 ## <a name="example"></a>例
 

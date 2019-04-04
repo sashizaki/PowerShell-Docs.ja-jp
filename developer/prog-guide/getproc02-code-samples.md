@@ -20,7 +20,7 @@ ms.locfileid: "57429603"
 GetProc02 サンプル コマンドレットのコード サンプルを次に示します。 これは、`Get-Process`コマンドレットのサンプルが記載[プロセス コマンド ライン入力パラメーターを追加する](../cmdlet/adding-parameters-that-process-command-line-input.md)します。 これは、`Get-Process`コマンドレットは、名前に基づいてプロセスを取得し、コマンドラインでのプロセスに関する情報を表示します。
 
 > [!NOTE]
-> ダウンロードすることができます、C#この Get-proc コマンドレットは、Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用してソース ファイル (getproc02.cs)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
+> ダウンロードすることができます、C#この Get-proc コマンドレットは、Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用してソース ファイル (getproc02.cs)。 ダウンロードの手順については、[Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)を参照してください。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
 

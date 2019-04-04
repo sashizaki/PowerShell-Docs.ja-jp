@@ -17,7 +17,7 @@ ms.locfileid: "58055429"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Windows PowerShell アクティビティでワークフローを作成する
 
-Visual Studio のツールボックスからアクティビティを選択して、ワークフロー デザイナー ウィンドウにドラッグすることによって、Windows PowerShell ワークフローを作成できます。 Visual Studio ツールボックスに Windows PowerShell のアクティビティを追加する方法の詳細については、次を参照してください。[を Visual Studio ツールボックスに追加の Windows PowerShell アクティビティ](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)します。
+Visual Studio のツールボックスからアクティビティを選択して、ワークフロー デザイナー ウィンドウにドラッグすることによって、Windows PowerShell ワークフローを作成できます。 Visual Studio ツールボックスに Windows PowerShell のアクティビティを追加する方法の詳細については、[を Visual Studio ツールボックスに追加の Windows PowerShell アクティビティ](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)を参照してください。
 
 次の手順では、ユーザーが指定したコンピューターのグループのドメインの状態を確認、状態をもう一度確認し、既に参加していない場合に、ドメインに参加するワークフローを作成する方法について説明します。
 
