@@ -1,10 +1,15 @@
 ---
 ms.date: 08/12/2017
 ms.topic: conceptual
-keywords: 'WMF, PowerShell, セットアップ'
+keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 リリース ノート
+ms.openlocfilehash: dd68f101e6f21256f966f7472dabc273a475a25e
+ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 03/12/2019
+ms.locfileid: "57795336"
 ---
-
 # <a name="windows-management-framework-wmf-51"></a><span data-ttu-id="18436-103">Windows Management Framework (WMF) 5.1</span><span class="sxs-lookup"><span data-stu-id="18436-103">Windows Management Framework (WMF) 5.1</span></span>
 
 <span data-ttu-id="18436-104">WMF は、既存の Windows システムを、Windows Server 2016 でリリースされた PowerShell、WMI、WinRM、およびソフトウェア インベントリ ログ (SIL) のコンポーネントのバージョンに更新する機能を提供します。</span><span class="sxs-lookup"><span data-stu-id="18436-104">WMF provides users with the ability to update existing Windows systems to the versions of PowerShell, WMI, WinRM, and Software Inventory Logging (SIL) components that were released with Windows Server 2016.</span></span>
