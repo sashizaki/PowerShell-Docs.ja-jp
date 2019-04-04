@@ -15,47 +15,47 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 02/03/2019
 ms.locfileid: "56854778"
 ---
-# <a name="label-element-for-listitem-for-listcontrol-format"></a><span data-ttu-id="7cf1a-102">ListControl の ListItem の Label 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="7cf1a-102">Label Element for ListItem for ListControl (Format)</span></span>
+# <a name="label-element-for-listitem-for-listcontrol-format"></a><span data-ttu-id="c4643-102">ListControl の ListItem の Label 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="c4643-102">Label Element for ListItem for ListControl (Format)</span></span>
 
-<span data-ttu-id="7cf1a-103">行のプロパティまたはスクリプトの値の左側に表示されるラベルを指定します。</span><span class="sxs-lookup"><span data-stu-id="7cf1a-103">Specifies the label that is displayed to the left of the property or script value in the row.</span></span>
+<span data-ttu-id="c4643-103">行のプロパティまたはスクリプトの値の左側に表示されるラベルを指定します。</span><span class="sxs-lookup"><span data-stu-id="c4643-103">Specifies the label that is displayed to the left of the property or script value in the row.</span></span>
 
-<span data-ttu-id="7cf1a-104">構成要素 (形式) ViewDefinitions 要素 (形式) 表示要素 (形式) ListControl 要素 (形式) ListEntries 要素の要素に ListControl (形式) ListEntry ListControl 要素 (の ListEntry の ListControl (形式) のリスト項目のListControl (形式) を ListItem ListControl (形式) Label 要素の ListItems の ListItem 要素の形式)</span><span class="sxs-lookup"><span data-stu-id="7cf1a-104">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) ListControl Element (Format) ListEntries Element for ListControl (Format) ListEntry Element for ListControl (Format) ListItems for ListEntry for ListControl Element (Format) ListItem Element for ListItems for ListControl (Format) Label Element for ListItem for ListControl (Format)</span></span>
+<span data-ttu-id="c4643-104">構成要素 (形式) ViewDefinitions 要素 (形式) 表示要素 (形式) ListControl 要素 (形式) ListEntries 要素の要素に ListControl (形式) ListEntry ListControl 要素 (の ListEntry の ListControl (形式) のリスト項目のListControl (形式) を ListItem ListControl (形式) Label 要素の ListItems の ListItem 要素の形式)</span><span class="sxs-lookup"><span data-stu-id="c4643-104">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) ListControl Element (Format) ListEntries Element for ListControl (Format) ListEntry Element for ListControl (Format) ListItems for ListEntry for ListControl Element (Format) ListItem Element for ListItems for ListControl (Format) Label Element for ListItem for ListControl (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="7cf1a-105">構文</span><span class="sxs-lookup"><span data-stu-id="7cf1a-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="c4643-105">構文</span><span class="sxs-lookup"><span data-stu-id="c4643-105">Syntax</span></span>
 
 ```xml
 <Label>Label for displayed value</Label>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="7cf1a-106">属性と要素</span><span class="sxs-lookup"><span data-stu-id="7cf1a-106">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="c4643-106">属性と要素</span><span class="sxs-lookup"><span data-stu-id="c4643-106">Attributes and Elements</span></span>
 
-<span data-ttu-id="7cf1a-107">次のセクションでは、属性、子要素、およびの親要素について説明します、`Label`要素。</span><span class="sxs-lookup"><span data-stu-id="7cf1a-107">The following sections describe the attributes, child elements, and the parent element of the `Label` element.</span></span>
+<span data-ttu-id="c4643-107">次のセクションでは、属性、子要素、およびの親要素について説明します、`Label`要素。</span><span class="sxs-lookup"><span data-stu-id="c4643-107">The following sections describe the attributes, child elements, and the parent element of the `Label` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="7cf1a-108">属性</span><span class="sxs-lookup"><span data-stu-id="7cf1a-108">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="c4643-108">属性</span><span class="sxs-lookup"><span data-stu-id="c4643-108">Attributes</span></span>
 
-<span data-ttu-id="7cf1a-109">なし。</span><span class="sxs-lookup"><span data-stu-id="7cf1a-109">None.</span></span>
+<span data-ttu-id="c4643-109">なし。</span><span class="sxs-lookup"><span data-stu-id="c4643-109">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="7cf1a-110">子要素</span><span class="sxs-lookup"><span data-stu-id="7cf1a-110">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="c4643-110">子要素</span><span class="sxs-lookup"><span data-stu-id="c4643-110">Child Elements</span></span>
 
-<span data-ttu-id="7cf1a-111">なし。</span><span class="sxs-lookup"><span data-stu-id="7cf1a-111">None.</span></span>
+<span data-ttu-id="c4643-111">なし。</span><span class="sxs-lookup"><span data-stu-id="c4643-111">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="7cf1a-112">親要素</span><span class="sxs-lookup"><span data-stu-id="7cf1a-112">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="c4643-112">親要素</span><span class="sxs-lookup"><span data-stu-id="c4643-112">Parent Elements</span></span>
 
-|<span data-ttu-id="7cf1a-113">要素</span><span class="sxs-lookup"><span data-stu-id="7cf1a-113">Element</span></span>|<span data-ttu-id="7cf1a-114">説明</span><span class="sxs-lookup"><span data-stu-id="7cf1a-114">Description</span></span>|
+|<span data-ttu-id="c4643-113">要素</span><span class="sxs-lookup"><span data-stu-id="c4643-113">Element</span></span>|<span data-ttu-id="c4643-114">説明</span><span class="sxs-lookup"><span data-stu-id="c4643-114">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="7cf1a-115">ListControl (形式) のリスト項目の ListItem 要素</span><span class="sxs-lookup"><span data-stu-id="7cf1a-115">ListItem Element for ListItems for ListControl (Format)</span></span>](./listitem-element-for-listitems-for-listcontrol-format.md)|<span data-ttu-id="7cf1a-116">プロパティまたはリスト ビューの行の値が表示されているスクリプトを定義します。</span><span class="sxs-lookup"><span data-stu-id="7cf1a-116">Defines the property or script whose value is displayed in a row of the list view.</span></span>|
+|[<span data-ttu-id="c4643-115">ListControl (形式) のリスト項目の ListItem 要素</span><span class="sxs-lookup"><span data-stu-id="c4643-115">ListItem Element for ListItems for ListControl (Format)</span></span>](./listitem-element-for-listitems-for-listcontrol-format.md)|<span data-ttu-id="c4643-116">プロパティまたはリスト ビューの行の値が表示されているスクリプトを定義します。</span><span class="sxs-lookup"><span data-stu-id="c4643-116">Defines the property or script whose value is displayed in a row of the list view.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="7cf1a-117">テキスト値</span><span class="sxs-lookup"><span data-stu-id="7cf1a-117">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="c4643-117">テキスト値</span><span class="sxs-lookup"><span data-stu-id="c4643-117">Text Value</span></span>
 
-<span data-ttu-id="7cf1a-118">プロパティまたはスクリプトの値の左側に表示されるラベルを指定します。</span><span class="sxs-lookup"><span data-stu-id="7cf1a-118">Specify the label to be display to the left of the property or script value.</span></span>
+<span data-ttu-id="c4643-118">プロパティまたはスクリプトの値の左側に表示されるラベルを指定します。</span><span class="sxs-lookup"><span data-stu-id="c4643-118">Specify the label to be display to the left of the property or script value.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="7cf1a-119">コメント</span><span class="sxs-lookup"><span data-stu-id="7cf1a-119">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="c4643-119">コメント</span><span class="sxs-lookup"><span data-stu-id="c4643-119">Remarks</span></span>
 
-<span data-ttu-id="7cf1a-120">ラベルが指定されていない場合、プロパティまたはスクリプトの名前が表示されます。</span><span class="sxs-lookup"><span data-stu-id="7cf1a-120">If a label is not specified, the name of the property or the script is displayed.</span></span> <span data-ttu-id="7cf1a-121">リスト ビューでのラベルの使用に関する詳細については、次を参照してください。[リスト ビューを作成する](./creating-a-list-view.md)します。</span><span class="sxs-lookup"><span data-stu-id="7cf1a-121">For more information about using labels in a list view, see [Creating a List View](./creating-a-list-view.md).</span></span>
+<span data-ttu-id="c4643-120">ラベルが指定されていない場合、プロパティまたはスクリプトの名前が表示されます。</span><span class="sxs-lookup"><span data-stu-id="c4643-120">If a label is not specified, the name of the property or the script is displayed.</span></span> <span data-ttu-id="c4643-121">リスト ビューでのラベルの使用に関する詳細については、[リスト ビューを作成する](./creating-a-list-view.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c4643-121">For more information about using labels in a list view, see [Creating a List View](./creating-a-list-view.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="7cf1a-122">例</span><span class="sxs-lookup"><span data-stu-id="7cf1a-122">Example</span></span>
+## <a name="example"></a><span data-ttu-id="c4643-122">例</span><span class="sxs-lookup"><span data-stu-id="c4643-122">Example</span></span>
 
-<span data-ttu-id="7cf1a-123">次の例では、行にラベルを追加する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="7cf1a-123">The following example shows how to add a label to a row.</span></span>
+<span data-ttu-id="c4643-123">次の例では、行にラベルを追加する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c4643-123">The following example shows how to add a label to a row.</span></span>
 
 ```xml
 <ListItem>
@@ -65,10 +65,10 @@ ms.locfileid: "56854778"
 
 ```
 
-## <a name="see-also"></a><span data-ttu-id="7cf1a-124">参照</span><span class="sxs-lookup"><span data-stu-id="7cf1a-124">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c4643-124">参照</span><span class="sxs-lookup"><span data-stu-id="c4643-124">See Also</span></span>
 
-[<span data-ttu-id="7cf1a-125">リスト ビューの作成</span><span class="sxs-lookup"><span data-stu-id="7cf1a-125">Creating a List View</span></span>](./creating-a-list-view.md)
+[<span data-ttu-id="c4643-125">リスト ビューの作成</span><span class="sxs-lookup"><span data-stu-id="c4643-125">Creating a List View</span></span>](./creating-a-list-view.md)
 
-[<span data-ttu-id="7cf1a-126">ListItem 要素 (形式)</span><span class="sxs-lookup"><span data-stu-id="7cf1a-126">ListItem Element (Format)</span></span>](./listitem-element-for-listitems-for-listcontrol-format.md)
+[<span data-ttu-id="c4643-126">ListItem 要素 (形式)</span><span class="sxs-lookup"><span data-stu-id="c4643-126">ListItem Element (Format)</span></span>](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[<span data-ttu-id="7cf1a-127">PowerShell のファイルを書式設定の書き込み</span><span class="sxs-lookup"><span data-stu-id="7cf1a-127">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="c4643-127">PowerShell のファイルを書式設定の書き込み</span><span class="sxs-lookup"><span data-stu-id="c4643-127">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

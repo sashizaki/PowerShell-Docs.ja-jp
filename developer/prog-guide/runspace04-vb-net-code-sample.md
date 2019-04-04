@@ -15,16 +15,16 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 03/05/2019
 ms.locfileid: "57429892"
 ---
-# <a name="runspace04--vbnet-code-sample"></a><span data-ttu-id="eb7ab-102">RunSpace04 (VB.NET) コード サンプル</span><span class="sxs-lookup"><span data-stu-id="eb7ab-102">RunSpace04  (VB.NET) Code Sample</span></span>
+# <a name="runspace04--vbnet-code-sample"></a><span data-ttu-id="c997e-102">RunSpace04 (VB.NET) コード サンプル</span><span class="sxs-lookup"><span data-stu-id="c997e-102">RunSpace04  (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="eb7ab-103">Runspace04 サンプルの VB.NET のソース コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="eb7ab-103">Here is the VB.NET source code for the Runspace04 sample.</span></span> <span data-ttu-id="eb7ab-104">このサンプルでは、 [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)終了エラーを生成するスクリプトを実行するクラス。</span><span class="sxs-lookup"><span data-stu-id="eb7ab-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.</span></span> <span data-ttu-id="eb7ab-105">ホスト アプリケーションは、エラーをキャッチし、エラー レコードを解釈する責任を負います。</span><span class="sxs-lookup"><span data-stu-id="eb7ab-105">The host application is responsible for catching the error and interpreting the error record.</span></span>
+<span data-ttu-id="c997e-103">Runspace04 サンプルの VB.NET のソース コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="c997e-103">Here is the VB.NET source code for the Runspace04 sample.</span></span> <span data-ttu-id="c997e-104">このサンプルでは、 [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)終了エラーを生成するスクリプトを実行するクラス。</span><span class="sxs-lookup"><span data-stu-id="c997e-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.</span></span> <span data-ttu-id="c997e-105">ホスト アプリケーションは、エラーをキャッチし、エラー レコードを解釈する責任を負います。</span><span class="sxs-lookup"><span data-stu-id="c997e-105">The host application is responsible for catching the error and interpreting the error record.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="eb7ab-106">Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用して、このサンプルの VB.NET のソース ファイル (runspace02.vb) をダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="eb7ab-106">You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="eb7ab-107">ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。</span><span class="sxs-lookup"><span data-stu-id="eb7ab-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="c997e-106">Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用して、このサンプルの VB.NET のソース ファイル (runspace02.vb) をダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="c997e-106">You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="c997e-107">ダウンロードの手順については、[Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c997e-107">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="eb7ab-108">ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="eb7ab-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="c997e-108">ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。</span><span class="sxs-lookup"><span data-stu-id="c997e-108">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="eb7ab-109">コード サンプル</span><span class="sxs-lookup"><span data-stu-id="eb7ab-109">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="c997e-109">コード サンプル</span><span class="sxs-lookup"><span data-stu-id="c997e-109">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -115,8 +115,8 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace04.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace04.vb#L09-L92 "Runspace04.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="eb7ab-110">参照</span><span class="sxs-lookup"><span data-stu-id="eb7ab-110">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c997e-110">参照</span><span class="sxs-lookup"><span data-stu-id="c997e-110">See Also</span></span>
 
-[<span data-ttu-id="eb7ab-111">Windows PowerShell プログラマー ガイド</span><span class="sxs-lookup"><span data-stu-id="eb7ab-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="c997e-111">Windows PowerShell プログラマー ガイド</span><span class="sxs-lookup"><span data-stu-id="c997e-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="eb7ab-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="eb7ab-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="c997e-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="c997e-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

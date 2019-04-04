@@ -17,16 +17,16 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 02/03/2019
 ms.locfileid: "56857128"
 ---
-# <a name="how-to-validate-the-argument-length"></a><span data-ttu-id="1ef9c-102">引数の長さを検証する方法</span><span class="sxs-lookup"><span data-stu-id="1ef9c-102">How to Validate the Argument Length</span></span>
+# <a name="how-to-validate-the-argument-length"></a><span data-ttu-id="7cca6-102">引数の長さを検証する方法</span><span class="sxs-lookup"><span data-stu-id="7cca6-102">How to Validate the Argument Length</span></span>
 
-<span data-ttu-id="1ef9c-103">この例では、コマンドレットを実行する前に、パラメーターの引数の文字 (長さ) の数を確認、Windows PowerShell ランタイムが使用できる検証規則を指定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1ef9c-103">This example shows how to specify a validation rule that the Windows PowerShell runtime can use to check the number of characters (the length) of the parameter argument before the cmdlet is run.</span></span> <span data-ttu-id="1ef9c-104">ValidateLength 属性を宣言することで、この検証規則を設定します。</span><span class="sxs-lookup"><span data-stu-id="1ef9c-104">You set this validation rule by declaring the ValidateLength attribute.</span></span>
+<span data-ttu-id="7cca6-103">この例では、コマンドレットを実行する前に、パラメーターの引数の文字 (長さ) の数を確認、Windows PowerShell ランタイムが使用できる検証規則を指定する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="7cca6-103">This example shows how to specify a validation rule that the Windows PowerShell runtime can use to check the number of characters (the length) of the parameter argument before the cmdlet is run.</span></span> <span data-ttu-id="7cca6-104">ValidateLength 属性を宣言することで、この検証規則を設定します。</span><span class="sxs-lookup"><span data-stu-id="7cca6-104">You set this validation rule by declaring the ValidateLength attribute.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="1ef9c-105">この属性を定義するクラスの詳細については、次を参照してください。 [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)します。</span><span class="sxs-lookup"><span data-stu-id="1ef9c-105">For more information about the class that defines this attribute, see [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute).</span></span>
+> <span data-ttu-id="7cca6-105">この属性を定義するクラスの詳細については、[System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7cca6-105">For more information about the class that defines this attribute, see [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute).</span></span>
 
-## <a name="to-validate-the-argument-length"></a><span data-ttu-id="1ef9c-106">引数の長さを検証するには</span><span class="sxs-lookup"><span data-stu-id="1ef9c-106">To validate the argument length</span></span>
+## <a name="to-validate-the-argument-length"></a><span data-ttu-id="7cca6-106">引数の長さを検証するには</span><span class="sxs-lookup"><span data-stu-id="7cca6-106">To validate the argument length</span></span>
 
-- <span data-ttu-id="1ef9c-107">次のコードに示すように、検証属性を追加します。</span><span class="sxs-lookup"><span data-stu-id="1ef9c-107">Add the Validate attribute as shown in the following code.</span></span> <span data-ttu-id="1ef9c-108">この例では、引数の長さは 0 ~ 10 文字の長さである必要がありますを指定します。</span><span class="sxs-lookup"><span data-stu-id="1ef9c-108">This example specifies that the length of the argument should have a length of 0 to 10 characters.</span></span>
+- <span data-ttu-id="7cca6-107">次のコードに示すように、検証属性を追加します。</span><span class="sxs-lookup"><span data-stu-id="7cca6-107">Add the Validate attribute as shown in the following code.</span></span> <span data-ttu-id="7cca6-108">この例では、引数の長さは 0 ~ 10 文字の長さである必要がありますを指定します。</span><span class="sxs-lookup"><span data-stu-id="7cca6-108">This example specifies that the length of the argument should have a length of 0 to 10 characters.</span></span>
 
     ```csharp
     [ValidateLength(0, 10)]
@@ -39,10 +39,10 @@ ms.locfileid: "56857128"
     private string userName;
     ```
 
-<span data-ttu-id="1ef9c-109">この属性を宣言する方法の詳細については、次を参照してください。 [ValidateLength 属性宣言](./validatelength-attribute-declaration.md)します。</span><span class="sxs-lookup"><span data-stu-id="1ef9c-109">For more information about how to declare this attribute, see [ValidateLength Attribute Declaration](./validatelength-attribute-declaration.md).</span></span>
+<span data-ttu-id="7cca6-109">この属性を宣言する方法の詳細については、[ValidateLength 属性宣言](./validatelength-attribute-declaration.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7cca6-109">For more information about how to declare this attribute, see [ValidateLength Attribute Declaration](./validatelength-attribute-declaration.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="1ef9c-110">参照</span><span class="sxs-lookup"><span data-stu-id="1ef9c-110">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7cca6-110">参照</span><span class="sxs-lookup"><span data-stu-id="7cca6-110">See Also</span></span>
 
-[<span data-ttu-id="1ef9c-111">ValidateLength 属性の宣言</span><span class="sxs-lookup"><span data-stu-id="1ef9c-111">ValidateLength Attribute Declaration</span></span>](./validatelength-attribute-declaration.md)
+[<span data-ttu-id="7cca6-111">ValidateLength 属性の宣言</span><span class="sxs-lookup"><span data-stu-id="7cca6-111">ValidateLength Attribute Declaration</span></span>](./validatelength-attribute-declaration.md)
 
-[<span data-ttu-id="1ef9c-112">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="1ef9c-112">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="7cca6-112">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="7cca6-112">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

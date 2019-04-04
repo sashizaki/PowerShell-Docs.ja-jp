@@ -15,49 +15,49 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 02/03/2019
 ms.locfileid: "56860938"
 ---
-# <a name="formatstring-element-for-wideitem-for-widecontrol-format"></a><span data-ttu-id="a66fe-102">WideControl の WideItem の FormatString 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="a66fe-102">FormatString Element for WideItem for WideControl (Format)</span></span>
+# <a name="formatstring-element-for-wideitem-for-widecontrol-format"></a><span data-ttu-id="df96b-102">WideControl の WideItem の FormatString 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="df96b-102">FormatString Element for WideItem for WideControl (Format)</span></span>
 
-<span data-ttu-id="a66fe-103">ビューで、プロパティまたはスクリプトの値を表示する方法を定義するフォーマット パターンを指定します。</span><span class="sxs-lookup"><span data-stu-id="a66fe-103">Specifies a format pattern that defines how the property or script value is displayed in the view.</span></span>
+<span data-ttu-id="df96b-103">ビューで、プロパティまたはスクリプトの値を表示する方法を定義するフォーマット パターンを指定します。</span><span class="sxs-lookup"><span data-stu-id="df96b-103">Specifies a format pattern that defines how the property or script value is displayed in the view.</span></span>
 
-<span data-ttu-id="a66fe-104">構成要素 (形式) ViewDefinitions 要素 (形式) 表示要素 (形式) WideControl 要素 (形式) WideEntries 要素 (形式) WideEntry 要素の要素に WideControl (形式) WideItem WideControl (形式) FormatString 要素WideItem WideControl (形式) 用の</span><span class="sxs-lookup"><span data-stu-id="a66fe-104">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) WideControl Element (Format) WideEntries Element (Format) WideEntry Element for WideControl (Format) WideItem Element for WideControl (Format) FormatString Element for WideItem for WideControl (Format)</span></span>
+<span data-ttu-id="df96b-104">構成要素 (形式) ViewDefinitions 要素 (形式) 表示要素 (形式) WideControl 要素 (形式) WideEntries 要素 (形式) WideEntry 要素の要素に WideControl (形式) WideItem WideControl (形式) FormatString 要素WideItem WideControl (形式) 用の</span><span class="sxs-lookup"><span data-stu-id="df96b-104">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) WideControl Element (Format) WideEntries Element (Format) WideEntry Element for WideControl (Format) WideItem Element for WideControl (Format) FormatString Element for WideItem for WideControl (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="a66fe-105">構文</span><span class="sxs-lookup"><span data-stu-id="a66fe-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="df96b-105">構文</span><span class="sxs-lookup"><span data-stu-id="df96b-105">Syntax</span></span>
 
 ```xml
 <FormatString>PropertyPattern</FormatString>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="a66fe-106">属性と要素</span><span class="sxs-lookup"><span data-stu-id="a66fe-106">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="df96b-106">属性と要素</span><span class="sxs-lookup"><span data-stu-id="df96b-106">Attributes and Elements</span></span>
 
-<span data-ttu-id="a66fe-107">次のセクションでは、属性、子要素、およびの親要素について説明します、`FormatString`要素。</span><span class="sxs-lookup"><span data-stu-id="a66fe-107">The following sections describe the attributes, child elements, and the parent element of the `FormatString` element.</span></span>
+<span data-ttu-id="df96b-107">次のセクションでは、属性、子要素、およびの親要素について説明します、`FormatString`要素。</span><span class="sxs-lookup"><span data-stu-id="df96b-107">The following sections describe the attributes, child elements, and the parent element of the `FormatString` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="a66fe-108">属性</span><span class="sxs-lookup"><span data-stu-id="a66fe-108">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="df96b-108">属性</span><span class="sxs-lookup"><span data-stu-id="df96b-108">Attributes</span></span>
 
-<span data-ttu-id="a66fe-109">なし。</span><span class="sxs-lookup"><span data-stu-id="a66fe-109">None.</span></span>
+<span data-ttu-id="df96b-109">なし。</span><span class="sxs-lookup"><span data-stu-id="df96b-109">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="a66fe-110">子要素</span><span class="sxs-lookup"><span data-stu-id="a66fe-110">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="df96b-110">子要素</span><span class="sxs-lookup"><span data-stu-id="df96b-110">Child Elements</span></span>
 
-<span data-ttu-id="a66fe-111">なし。</span><span class="sxs-lookup"><span data-stu-id="a66fe-111">None.</span></span>
+<span data-ttu-id="df96b-111">なし。</span><span class="sxs-lookup"><span data-stu-id="df96b-111">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="a66fe-112">親要素</span><span class="sxs-lookup"><span data-stu-id="a66fe-112">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="df96b-112">親要素</span><span class="sxs-lookup"><span data-stu-id="df96b-112">Parent Elements</span></span>
 
-|<span data-ttu-id="a66fe-113">要素</span><span class="sxs-lookup"><span data-stu-id="a66fe-113">Element</span></span>|<span data-ttu-id="a66fe-114">説明</span><span class="sxs-lookup"><span data-stu-id="a66fe-114">Description</span></span>|
+|<span data-ttu-id="df96b-113">要素</span><span class="sxs-lookup"><span data-stu-id="df96b-113">Element</span></span>|<span data-ttu-id="df96b-114">説明</span><span class="sxs-lookup"><span data-stu-id="df96b-114">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="a66fe-115">WideControl (形式) の WideItem 要素</span><span class="sxs-lookup"><span data-stu-id="a66fe-115">WideItem Element for WideControl (Format)</span></span>](./wideitem-element-for-widecontrol-format.md)|<span data-ttu-id="a66fe-116">プロパティまたはリスト ビューの行の値が表示されているスクリプトを定義します。</span><span class="sxs-lookup"><span data-stu-id="a66fe-116">Defines the property or script whose value is displayed in a row of the list view.</span></span>|
+|[<span data-ttu-id="df96b-115">WideControl (形式) の WideItem 要素</span><span class="sxs-lookup"><span data-stu-id="df96b-115">WideItem Element for WideControl (Format)</span></span>](./wideitem-element-for-widecontrol-format.md)|<span data-ttu-id="df96b-116">プロパティまたはリスト ビューの行の値が表示されているスクリプトを定義します。</span><span class="sxs-lookup"><span data-stu-id="df96b-116">Defines the property or script whose value is displayed in a row of the list view.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="a66fe-117">テキスト値</span><span class="sxs-lookup"><span data-stu-id="a66fe-117">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="df96b-117">テキスト値</span><span class="sxs-lookup"><span data-stu-id="df96b-117">Text Value</span></span>
 
-<span data-ttu-id="a66fe-118">データの書式設定に使用されるパターンを指定します。</span><span class="sxs-lookup"><span data-stu-id="a66fe-118">Specify the pattern that is used to format the data.</span></span> <span data-ttu-id="a66fe-119">たとえば、このパターンを使用型の任意のプロパティの値の書式[System.Timespan](/dotnet/api/System.TimeSpan): {0: MMM} {0:dd} {0:HH}: {0:mm}。</span><span class="sxs-lookup"><span data-stu-id="a66fe-119">For example, you can use this pattern to format the value of any property that is of type [System.Timespan](/dotnet/api/System.TimeSpan): {0:MMM}{0:dd}{0:HH}:{0:mm}.</span></span>
+<span data-ttu-id="df96b-118">データの書式設定に使用されるパターンを指定します。</span><span class="sxs-lookup"><span data-stu-id="df96b-118">Specify the pattern that is used to format the data.</span></span> <span data-ttu-id="df96b-119">たとえば、このパターンを使用型の任意のプロパティの値の書式[System.Timespan](/dotnet/api/System.TimeSpan): {0: MMM} {0:dd} {0:HH}: {0:mm}。</span><span class="sxs-lookup"><span data-stu-id="df96b-119">For example, you can use this pattern to format the value of any property that is of type [System.Timespan](/dotnet/api/System.TimeSpan): {0:MMM}{0:dd}{0:HH}:{0:mm}.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="a66fe-120">コメント</span><span class="sxs-lookup"><span data-stu-id="a66fe-120">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="df96b-120">コメント</span><span class="sxs-lookup"><span data-stu-id="df96b-120">Remarks</span></span>
 
-<span data-ttu-id="a66fe-121">テーブルのビューやリスト ビュー、ワイド ビューは、カスタム ビューを作成するときに、書式指定文字列を使用できます。</span><span class="sxs-lookup"><span data-stu-id="a66fe-121">Format strings can be used when creating table views, list views, wide views, or custom views.</span></span> <span data-ttu-id="a66fe-122">ビューに表示される値の書式設定に関する詳細については、次を参照してください。[表示されるデータの書式設定](./formatting-displayed-data.md)します。</span><span class="sxs-lookup"><span data-stu-id="a66fe-122">For more information about formatting a value displayed in a view, see [Formatting Displayed Data](./formatting-displayed-data.md).</span></span>
+<span data-ttu-id="df96b-121">テーブルのビューやリスト ビュー、ワイド ビューは、カスタム ビューを作成するときに、書式指定文字列を使用できます。</span><span class="sxs-lookup"><span data-stu-id="df96b-121">Format strings can be used when creating table views, list views, wide views, or custom views.</span></span> <span data-ttu-id="df96b-122">ビューに表示される値の書式設定に関する詳細については、[表示されるデータの書式設定](./formatting-displayed-data.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df96b-122">For more information about formatting a value displayed in a view, see [Formatting Displayed Data](./formatting-displayed-data.md).</span></span>
 
-<span data-ttu-id="a66fe-123">ワイド ビューで書式指定文字列の使用に関する詳細については、次を参照してください。[ワイド ビューを作成する](./creating-a-wide-view.md)します。</span><span class="sxs-lookup"><span data-stu-id="a66fe-123">For more information about using format strings in wide views, see [Creating a Wide View](./creating-a-wide-view.md).</span></span>
+<span data-ttu-id="df96b-123">ワイド ビューで書式指定文字列の使用に関する詳細については、[ワイド ビューを作成する](./creating-a-wide-view.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="df96b-123">For more information about using format strings in wide views, see [Creating a Wide View](./creating-a-wide-view.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="a66fe-124">例</span><span class="sxs-lookup"><span data-stu-id="a66fe-124">Example</span></span>
+## <a name="example"></a><span data-ttu-id="df96b-124">例</span><span class="sxs-lookup"><span data-stu-id="df96b-124">Example</span></span>
 
-<span data-ttu-id="a66fe-125">次の例の値の書式指定文字列を定義する方法を示しています、`StartTime`プロパティ。</span><span class="sxs-lookup"><span data-stu-id="a66fe-125">The following example shows how to define a formatting string for the value of the `StartTime` property.</span></span>
+<span data-ttu-id="df96b-125">次の例の値の書式指定文字列を定義する方法を示しています、`StartTime`プロパティ。</span><span class="sxs-lookup"><span data-stu-id="df96b-125">The following example shows how to define a formatting string for the value of the `StartTime` property.</span></span>
 
 ```xml
 <WideItem>
@@ -66,10 +66,10 @@ ms.locfileid: "56860938"
 </WideItem>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="a66fe-126">参照</span><span class="sxs-lookup"><span data-stu-id="a66fe-126">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="df96b-126">参照</span><span class="sxs-lookup"><span data-stu-id="df96b-126">See Also</span></span>
 
-[<span data-ttu-id="a66fe-127">ワイド ビューを作成します。</span><span class="sxs-lookup"><span data-stu-id="a66fe-127">Creating a Wide View</span></span>](./creating-a-wide-view.md)
+[<span data-ttu-id="df96b-127">ワイド ビューを作成します。</span><span class="sxs-lookup"><span data-stu-id="df96b-127">Creating a Wide View</span></span>](./creating-a-wide-view.md)
 
-[<span data-ttu-id="a66fe-128">WideControl (形式) の WideItem 要素</span><span class="sxs-lookup"><span data-stu-id="a66fe-128">WideItem Element for WideControl (Format)</span></span>](./wideitem-element-for-widecontrol-format.md)
+[<span data-ttu-id="df96b-128">WideControl (形式) の WideItem 要素</span><span class="sxs-lookup"><span data-stu-id="df96b-128">WideItem Element for WideControl (Format)</span></span>](./wideitem-element-for-widecontrol-format.md)
 
-[<span data-ttu-id="a66fe-129">Windows PowerShell の書式設定の書き込みとファイルの種類</span><span class="sxs-lookup"><span data-stu-id="a66fe-129">Writing a Windows PowerShell Formatting and Types File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="df96b-129">Windows PowerShell の書式設定の書き込みとファイルの種類</span><span class="sxs-lookup"><span data-stu-id="df96b-129">Writing a Windows PowerShell Formatting and Types File</span></span>](./writing-a-powershell-formatting-file.md)

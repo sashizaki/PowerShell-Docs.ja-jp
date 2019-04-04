@@ -15,52 +15,52 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 02/03/2019
 ms.locfileid: "56855028"
 ---
-# <a name="selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format"></a><span data-ttu-id="083b2-102">View の CustomControl の EntrySelectedBy の SelectionSetName 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="083b2-102">SelectionSetName Element for EntrySelectedBy for CustomControl for View (Format)</span></span>
+# <a name="selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format"></a><span data-ttu-id="554ce-102">View の CustomControl の EntrySelectedBy の SelectionSetName 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="554ce-102">SelectionSetName Element for EntrySelectedBy for CustomControl for View (Format)</span></span>
 
-<span data-ttu-id="083b2-103">.NET オブジェクト、リストのエントリのセットを指定します。</span><span class="sxs-lookup"><span data-stu-id="083b2-103">Specifies a set of .NET objects for the list entry.</span></span> <span data-ttu-id="083b2-104">エントリに指定できる選択セットの数に制限はありません。</span><span class="sxs-lookup"><span data-stu-id="083b2-104">There is no limit to the number of selection sets that can be specified for an entry.</span></span>
+<span data-ttu-id="554ce-103">.NET オブジェクト、リストのエントリのセットを指定します。</span><span class="sxs-lookup"><span data-stu-id="554ce-103">Specifies a set of .NET objects for the list entry.</span></span> <span data-ttu-id="554ce-104">エントリに指定できる選択セットの数に制限はありません。</span><span class="sxs-lookup"><span data-stu-id="554ce-104">There is no limit to the number of selection sets that can be specified for an entry.</span></span>
 
-<span data-ttu-id="083b2-105">要素 (形式) ViewDefinitions 要素 (形式) 表示要素 (形式) カスタム コントロール要素 (形式) CustomEntries の構成要素のビュー (形式) EntrySelectedBy CustomEntries のビュー (形式) CustomEntry 要素のカスタム コントロールCustomEntry EntrySelectedBy CustomEntry (形式) 用のビュー (形式) SelectionSetName 要素の要素</span><span class="sxs-lookup"><span data-stu-id="083b2-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) CustomControl Element (Format) CustomEntries Element for CustomControl for View (Format) CustomEntry Element for CustomEntries for View (Format) EntrySelectedBy Element for CustomEntry for View (Format) SelectionSetName Element for EntrySelectedBy for CustomEntry (Format)</span></span>
+<span data-ttu-id="554ce-105">要素 (形式) ViewDefinitions 要素 (形式) 表示要素 (形式) カスタム コントロール要素 (形式) CustomEntries の構成要素のビュー (形式) EntrySelectedBy CustomEntries のビュー (形式) CustomEntry 要素のカスタム コントロールCustomEntry EntrySelectedBy CustomEntry (形式) 用のビュー (形式) SelectionSetName 要素の要素</span><span class="sxs-lookup"><span data-stu-id="554ce-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) CustomControl Element (Format) CustomEntries Element for CustomControl for View (Format) CustomEntry Element for CustomEntries for View (Format) EntrySelectedBy Element for CustomEntry for View (Format) SelectionSetName Element for EntrySelectedBy for CustomEntry (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="083b2-106">構文</span><span class="sxs-lookup"><span data-stu-id="083b2-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="554ce-106">構文</span><span class="sxs-lookup"><span data-stu-id="554ce-106">Syntax</span></span>
 
 ```xml
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="083b2-107">属性と要素</span><span class="sxs-lookup"><span data-stu-id="083b2-107">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="554ce-107">属性と要素</span><span class="sxs-lookup"><span data-stu-id="554ce-107">Attributes and Elements</span></span>
 
-<span data-ttu-id="083b2-108">次のセクションでは、属性、子要素、およびの親要素について説明します、`SelectionSetName`要素。</span><span class="sxs-lookup"><span data-stu-id="083b2-108">The following sections describe attributes, child elements, and the parent element of the `SelectionSetName` element.</span></span>
+<span data-ttu-id="554ce-108">次のセクションでは、属性、子要素、およびの親要素について説明します、`SelectionSetName`要素。</span><span class="sxs-lookup"><span data-stu-id="554ce-108">The following sections describe attributes, child elements, and the parent element of the `SelectionSetName` element.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="083b2-109">属性</span><span class="sxs-lookup"><span data-stu-id="083b2-109">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="554ce-109">属性</span><span class="sxs-lookup"><span data-stu-id="554ce-109">Attributes</span></span>
 
-<span data-ttu-id="083b2-110">なし。</span><span class="sxs-lookup"><span data-stu-id="083b2-110">None.</span></span>
+<span data-ttu-id="554ce-110">なし。</span><span class="sxs-lookup"><span data-stu-id="554ce-110">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="083b2-111">子要素</span><span class="sxs-lookup"><span data-stu-id="083b2-111">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="554ce-111">子要素</span><span class="sxs-lookup"><span data-stu-id="554ce-111">Child Elements</span></span>
 
-<span data-ttu-id="083b2-112">なし。</span><span class="sxs-lookup"><span data-stu-id="083b2-112">None.</span></span>
+<span data-ttu-id="554ce-112">なし。</span><span class="sxs-lookup"><span data-stu-id="554ce-112">None.</span></span>
 
-### <a name="parent-elements"></a><span data-ttu-id="083b2-113">親要素</span><span class="sxs-lookup"><span data-stu-id="083b2-113">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="554ce-113">親要素</span><span class="sxs-lookup"><span data-stu-id="554ce-113">Parent Elements</span></span>
 
-|<span data-ttu-id="083b2-114">要素</span><span class="sxs-lookup"><span data-stu-id="083b2-114">Element</span></span>|<span data-ttu-id="083b2-115">説明</span><span class="sxs-lookup"><span data-stu-id="083b2-115">Description</span></span>|
+|<span data-ttu-id="554ce-114">要素</span><span class="sxs-lookup"><span data-stu-id="554ce-114">Element</span></span>|<span data-ttu-id="554ce-115">説明</span><span class="sxs-lookup"><span data-stu-id="554ce-115">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="083b2-116">表示 (形式) CustomEntry EntrySelectedBy 要素</span><span class="sxs-lookup"><span data-stu-id="083b2-116">EntrySelectedBy Element for CustomEntry for View (Format)</span></span>](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|<span data-ttu-id="083b2-117">このカスタム エントリまたは条件を使用するには、このエントリが存在する必要がありますを使用する .NET 型を定義します。</span><span class="sxs-lookup"><span data-stu-id="083b2-117">Defines the .NET types that use this custom entry or the condition that must exist for this entry to be used.</span></span>|
+|[<span data-ttu-id="554ce-116">表示 (形式) CustomEntry EntrySelectedBy 要素</span><span class="sxs-lookup"><span data-stu-id="554ce-116">EntrySelectedBy Element for CustomEntry for View (Format)</span></span>](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|<span data-ttu-id="554ce-117">このカスタム エントリまたは条件を使用するには、このエントリが存在する必要がありますを使用する .NET 型を定義します。</span><span class="sxs-lookup"><span data-stu-id="554ce-117">Defines the .NET types that use this custom entry or the condition that must exist for this entry to be used.</span></span>|
 
-## <a name="text-value"></a><span data-ttu-id="083b2-118">テキスト値</span><span class="sxs-lookup"><span data-stu-id="083b2-118">Text Value</span></span>
+## <a name="text-value"></a><span data-ttu-id="554ce-118">テキスト値</span><span class="sxs-lookup"><span data-stu-id="554ce-118">Text Value</span></span>
 
-<span data-ttu-id="083b2-119">選択範囲のセットの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="083b2-119">Specify the name of the selection set.</span></span>
+<span data-ttu-id="554ce-119">選択範囲のセットの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="554ce-119">Specify the name of the selection set.</span></span>
 
-## <a name="remarks"></a><span data-ttu-id="083b2-120">コメント</span><span class="sxs-lookup"><span data-stu-id="083b2-120">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="554ce-120">コメント</span><span class="sxs-lookup"><span data-stu-id="554ce-120">Remarks</span></span>
 
-<span data-ttu-id="083b2-121">カスタム コントロールの各エントリに少なくとも 1 つの型名、選択範囲のセット、または選択条件が定義されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="083b2-121">Each custom control entry must have at least one type name, selection set, or selection condition defined.</span></span>
+<span data-ttu-id="554ce-121">カスタム コントロールの各エントリに少なくとも 1 つの型名、選択範囲のセット、または選択条件が定義されている必要があります。</span><span class="sxs-lookup"><span data-stu-id="554ce-121">Each custom control entry must have at least one type name, selection set, or selection condition defined.</span></span>
 
-<span data-ttu-id="083b2-122">複数のビューで使用されるオブジェクトのグループを定義するときに、選択範囲のセットが通常使用されます。</span><span class="sxs-lookup"><span data-stu-id="083b2-122">Selection sets are typically used when you want to define a group of objects that are used in multiple views.</span></span> <span data-ttu-id="083b2-123">たとえば、テーブル ビューと同じオブジェクトのセットのリスト ビューを作成する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="083b2-123">For example, you might want to create a table view and a list view for the same set of objects.</span></span> <span data-ttu-id="083b2-124">選択範囲のセットを定義する詳細については、次を参照してください。[選択範囲の設定を定義する](./defining-selection-sets.md)します。</span><span class="sxs-lookup"><span data-stu-id="083b2-124">For more information about defining selection sets, see [Defining Selection Sets](./defining-selection-sets.md).</span></span>
+<span data-ttu-id="554ce-122">複数のビューで使用されるオブジェクトのグループを定義するときに、選択範囲のセットが通常使用されます。</span><span class="sxs-lookup"><span data-stu-id="554ce-122">Selection sets are typically used when you want to define a group of objects that are used in multiple views.</span></span> <span data-ttu-id="554ce-123">たとえば、テーブル ビューと同じオブジェクトのセットのリスト ビューを作成する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="554ce-123">For example, you might want to create a table view and a list view for the same set of objects.</span></span> <span data-ttu-id="554ce-124">選択範囲のセットを定義する詳細については、[選択範囲の設定を定義する](./defining-selection-sets.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="554ce-124">For more information about defining selection sets, see [Defining Selection Sets](./defining-selection-sets.md).</span></span>
 
-<span data-ttu-id="083b2-125">カスタム コントロールのビューのコンポーネントに関する詳細については、次を参照してください。[カスタム コントロールを作成する](./creating-custom-controls.md)します。</span><span class="sxs-lookup"><span data-stu-id="083b2-125">For more information about the components of a custom control view, see [Creating Custom Controls](./creating-custom-controls.md).</span></span>
+<span data-ttu-id="554ce-125">カスタム コントロールのビューのコンポーネントに関する詳細については、[カスタム コントロールを作成する](./creating-custom-controls.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="554ce-125">For more information about the components of a custom control view, see [Creating Custom Controls](./creating-custom-controls.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="083b2-126">参照</span><span class="sxs-lookup"><span data-stu-id="083b2-126">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="554ce-126">参照</span><span class="sxs-lookup"><span data-stu-id="554ce-126">See Also</span></span>
 
-[<span data-ttu-id="083b2-127">表示 (形式) CustomEntry EntrySelectedBy 要素</span><span class="sxs-lookup"><span data-stu-id="083b2-127">EntrySelectedBy Element for CustomEntry for View (Format)</span></span>](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
+[<span data-ttu-id="554ce-127">表示 (形式) CustomEntry EntrySelectedBy 要素</span><span class="sxs-lookup"><span data-stu-id="554ce-127">EntrySelectedBy Element for CustomEntry for View (Format)</span></span>](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
 
-[<span data-ttu-id="083b2-128">カスタム コントロールのビュー</span><span class="sxs-lookup"><span data-stu-id="083b2-128">Custom Control View</span></span>](./creating-custom-controls.md)
+[<span data-ttu-id="554ce-128">カスタム コントロールのビュー</span><span class="sxs-lookup"><span data-stu-id="554ce-128">Custom Control View</span></span>](./creating-custom-controls.md)
 
-[<span data-ttu-id="083b2-129">PowerShell のファイルを書式設定の書き込み</span><span class="sxs-lookup"><span data-stu-id="083b2-129">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="554ce-129">PowerShell のファイルを書式設定の書き込み</span><span class="sxs-lookup"><span data-stu-id="554ce-129">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
