@@ -2,10 +2,10 @@ items:
 - name: 概要
   href: overview.md
 - name: インストール
-  href: install/installing-powershell.md
   items:
+  - name: PowerShell のさまざまなバージョンのインストール
+    href: install/installing-powershell.md
   - name: PowerShell Core
-    href: ''
     items:
     - name: Windows への PowerShell Core のインストール
       href: install/installing-powershell-core-on-windows.md
@@ -16,7 +16,6 @@ items:
     - name: ARM への PowerShell Core のインストール
       href: install/powershell-core-on-arm.md
   - name: Windows PowerShell
-    href: ''
     items:
     - name: Windows PowerShell のインストール
       href: install/installing-windows-powershell.md
@@ -25,15 +24,17 @@ items:
     - name: Windows PowerShell のシステム要件
       href: install/windows-powershell-system-requirements.md
 - name: 開始
-  href: getting-started/getting-started-with-windows-powershell.md
   items:
+  - name: PowerShell ファースト ステップ ガイド
+    href: getting-started/getting-started-with-windows-powershell.md
   - name: Windows PowerShell の開始
     href: getting-started/starting-windows-powershell.md
   - name: Windows PowerShell 2.0 エンジンの開始
     href: getting-started/starting-the-windows-powershell-2.0-engine.md
 - name: PowerShell の習得
-  href: learn/understanding-important-powershell-concepts.md
   items:
+  - name: PowerShell の重要な概念を理解する
+    href: learn/understanding-important-powershell-concepts.md
   - name: PowerShell で用いられる名前の習得
     href: learn/learning-powershell-names.md
   - name: 使い慣れたコマンド名の使用
@@ -50,9 +51,10 @@ items:
     href: learn/more-powershell-learning.md
   - name: 移植可能なモジュールの作成
     href: learn/writing-portable-modules.md
-  - name: リモート コマンドの実行
-    href: learn/remoting/running-remote-commands.md
+  - name: PowerShell リモート処理
     items:
+    - name: リモート コマンドの実行
+      href: learn/remoting/running-remote-commands.md
     - name: SSH 経由の PowerShell リモート処理
       href: learn/remoting/ssh-remoting-in-powershell-core.md
     - name: PowerShell Core の WS-Management (WSMan) リモート処理
@@ -64,22 +66,20 @@ items:
   - name: 用語集
     href: learn/windows-powershell-glossary.md
 - name: コンポーネント
-  href: ''
   items:
   - name: コンソール
-    href: ''
     items:
     - name: PowerShell.exe コマンドラインのヘルプ
       href: components/console/powershell.exe-command-line-help.md
     - name: タブ拡張の使用
       href: components/console/using-tab-expansion.md
   - name: ISE
-    href: components/ise/introducing-the-windows-powershell-ise.md
     items:
+    - name: Windows PowerShell ISE の概要
+      href: components/ise/introducing-the-windows-powershell-ise.md
     - name: Windows PowerShell Integrated Scripting Environment (ISE)
       href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
     - name: Windows PowerShell ISE の使用
-      href: ''
       items:
       - name: Windows PowerShell ISE の操作
         href: components/ise/exploring-the-windows-powershell-ise.md
@@ -100,7 +100,6 @@ items:
       - name: Windows PowerShell ISE のアクセシビリティ
         href: components/ise/accessibility-in-windows-powershell-ise.md
     - name: ISE スクリプティング オブジェクト モデル
-      href: ''
       items:
       - name: Windows PowerShell ISE スクリプト オブジェクト モデルの目的
         href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
@@ -133,8 +132,9 @@ items:
       - name: PowerShellTab オブジェクト
         href: components/ise/object-model/the-powershelltab-object.md
   - name: Visual Studio Code
-    href: components/vscode/using-vscode.md
     items:
+    - name: Visual Studio Code の使用
+      href: components/vscode/using-vscode.md
     - name: Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法
       href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
     - name: Visual Studio Code を使用したリモート編集およびデバッグ
@@ -142,7 +142,6 @@ items:
     - name: VSCode と PowerShell でのファイルのエンコードの概要
       href: components/vscode/understanding-file-encoding.md
   - name: Web アクセス
-    href: ''
     items:
     - name: 承認規則とセキュリティ機能
       href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
@@ -157,20 +156,21 @@ items:
   - name: ワークフロー ガイド
     href: components/workflows-guide.md
 - name: 新機能
-  href: ''
   items:
-  - name: PowerShell Core 6.1 の新機能
-    href: whats-new/what-s-new-in-powershell-core-61.md
-  - name: PowerShell Core 6.0 の新機能
-    href: whats-new/what-s-new-in-powershell-core-60.md
+  - name: PowerShell Core 6.x の新機能
     items:
+    - name: PowerShell Core 6.1 の新機能
+      href: whats-new/what-s-new-in-powershell-core-61.md
+    - name: PowerShell Core 6.0 の新機能
+      href: whats-new/what-s-new-in-powershell-core-60.md
     - name: PowerShell Core 6.0 の破壊的変更
       href: whats-new/breaking-changes-ps6.md
     - name: PowerShell Core 6.0 の既知の問題
       href: whats-new/known-issues-ps6.md
-  - name: PowerShell 5.0 の新機能
-    href: whats-new/what-s-new-with-powershell.md
+  - name: PowerShell 5.x の新機能
     items:
+    - name: PowerShell 5.0 の新機能
+      href: whats-new/what-s-new-with-powershell.md
     - name: Windows PowerShell 5.0 の新機能
       href: whats-new/what-s-new-in-windows-powershell-50.md
     - name: PowerShell 5.0 ISE の新機能
@@ -178,8 +178,9 @@ items:
 - name: PowerShell Core のサポート ライフサイクル
   href: powershell-support-lifecycle.md
 - name: サンプル スクリプト
-  href: samples/sample-scripts-for-administration.md
   items:
+  - name: 管理のサンプル スクリプト
+    href: samples/sample-scripts-for-administration.md
   - name: コンピューターの状態を変更する
     href: samples/changing-computer-state.md
   - name: コンピューターに関する情報の収集
@@ -187,7 +188,6 @@ items:
   - name: FilterHashtable を使った Get-WinEvent クエリの作成
     href: samples/creating-get-winEvent-queries-with-filterhashtable.md
   - name: UI 要素の作成
-    href: ''
     items:
     - name: ユーザー設定の入力ボックスを作成する
       href: samples/creating-a-custom-input-box.md
@@ -220,7 +220,6 @@ items:
   - name: ファイル、フォルダー、レジストリ キーの操作
     href: samples/working-with-files-folders-and-registry-keys.md
   - name: オブジェクトの操作
-    href: samples/working-with-objects.md
     items:
     - name: WMI オブジェクトの取得 (Get-WmiObject)
       href: samples/getting-wmi-objects--get-wmiobject-.md
@@ -252,9 +251,9 @@ items:
     href: samples/appendix-1---compatibility-aliases.md
   - name: 付録 2 - カスタムの PowerShell ショートカットの作成
     href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
-ms.openlocfilehash: dd9cac7e7570d6ff4c58b0255a3909f3f0612605
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 3894ca88d01d4f84742321445b0b1e962631c10d
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320389"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920460"
