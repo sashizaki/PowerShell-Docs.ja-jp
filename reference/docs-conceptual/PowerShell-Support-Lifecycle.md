@@ -2,12 +2,12 @@
 title: PowerShell Core のサポート ライフサイクル
 description: PowerShell Core のサポートを管理するポリシー
 ms.date: 08/06/2018
-ms.openlocfilehash: 2e0ca1b9c133e6f316a40aff13365d0489059165
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 178e5c43520f9a392ca219b9f785eb18b1ec5436
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403494"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623860"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core のサポート ライフサイクル
 
@@ -17,9 +17,11 @@ PowerShell Core は、Windows PowerShell とは別に出荷され、インスト
 ただし、PowerShell Core は、[Premier][]、[Microsoft Enterprise Agreements][enterprise-agreement]、[マイクロソフト ソフトウェア アシュアランス][assurance]など、従来の Microsoft サポート契約ではサポートされています。
 サポート依頼で問題を報告して PowerShell Core の[サポート][]を受け、それに対して支払うこともできます。
 
+## <a name="community-support"></a>コミュニティ サポート
+
 GitHub でも[コミュニティ サポート][]を用意しています。問題やバグを報告したり、機能を要望したりできます。
-あるいは、一般的な [Microsoft コミュニティ][]や Microsoft [PowerShell Tech コミュニティ][]で他のコミュニティ メンバーが助けてくれることがあります。
-問題が短期間で解決されることは保証できません。
+また、一般的な [Microsoft コミュニティ][]や Microsoft [PowerShell Tech コミュニティ][]で他のコミュニティ メンバーがサポートしてくれる場合もあります。
+コミュニティによりご自身の問題が短期間で対処または解決されることは保証できません。
 早急な対応が必要な問題の場合、従来の有料サポートをご利用ください。
 
 ## <a name="lifecycle-of-powershell-core"></a>PowerShell Core のライフサイクル
@@ -27,57 +29,73 @@ GitHub でも[コミュニティ サポート][]を用意しています。問�
 PowerShell Core には、[Microsoft Modern Lifecycle Policy][modern] が導入されています。
 このサポート ライフサイクルでは、最新バージョンで最新の機能を常に提供します。
 
-PowerShell Core のバージョン 6.x ブランチは約半年に一回更新されます (6.0、6.1、6.2 など)
+PowerShell Core のバージョン 6.x ブランチは約半年に一回更新されます (例:6.0、6.1、6.2 など。)
 
 > [!IMPORTANT]
 > 引き続きサポートを受けるには、新しいマイナー バージョンの公開後、6 か月以内に更新する必要があります。
 
 たとえば、PowerShell Core 6.1 が 2018 年 7 月 1 日に公開された場合、サポートを維持するには、2019 年 1 月 1 日までに PowerShell Core 6.1 に更新する必要があります。
 
+> [!IMPORTANT]
+> サポートを受け続けるには、それぞれの新しいパッチ バージョンのリリース後 30 日以内に更新する必要があります。
+
+たとえば、PowerShell Core 6.1 を実行していて 2019 年 2 月 19 日に 6.1.3 がリリースされた場合、サポートを維持するには、リリースの 30 日後である 2019 年 3 月 21 日までに PowerShell Core 6.1.3 に更新する必要があります。
+必要な修正プログラムが見つかった場合、その修正プログラムは次の累積的な更新プログラムでリリースされます。
+
 ![PowerShell Core のブランチ ライフサイクル][lifecycle-chart]
 
-Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポートを終了する 12 か月前にお客様に通知することをマイクロソフトの義務としています。
+Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポートを終了する 12 か月前にお客様に通知することを Microsoft の義務としています。
 
-ゆくゆくは PowerShell Core に "Long Term Servicing" 手法を導入することをマイクロソフトは期待しています。この手法では、特定の 6.x ブランチ/バージョンのサポートを維持するために、サービス更新とセキュリティ更新だけが必要になります。
+最終的に、PowerShell Core では "長期サービス" のアプローチを採用する予定です。
+このサービスのアプローチでは、特定のブランチ/バージョン の 6.x のサポートを維持するために、サービスとセキュリティの更新だけが必要になります。
 
 ## <a name="supported-platforms"></a>サポートされているプラットフォーム
 
-お使いの PowerShell Core のバージョンが公式にサポートされているプラットフォームを確認するには、次の表をご覧ください。
+お使いの PowerShell Core のバージョンが公式にサポートされているプラットフォームについては、次の表をご覧ください。
 
 また、弊社のコミュニティでも一部のプラットフォームに向けたパッケージを提供していますが、これらは正式にはサポートされていません。
 これらのパッケージは、表の中で `Community` とマークされています。
 
 `Experimental` としてリストされているプラットフォームは、正式にはサポートされていませんが、実験とフィードバックのために使用することができます。
 
-|                                                   | 6.0         | 6.1         |
+|                                                   | 6.1         | 6.2         |
 |---------------------------------------------------|:-----------:|:-----------:|
 | Windows 7、8.1、10                            | サポート   | サポート   |
 | Windows Server 2008 R2、2012 R2、2016             | サポート   | サポート   |
 | [Windows Server 半期チャネル][semi-annual] | サポート   | サポート   |
-| Ubuntu 14.04 および 16.04                           | サポート   | サポート   |
-| Ubuntu 18.04                                      |             | サポート   |
-| Ubuntu 18.10 (Snap パッケージを使用)                   |             | コミュニティ   |
-| Debian 8.7 以降および 9                                | サポート   | サポート   |
+| Ubuntu 16.04 および 18.04                            | サポート   | サポート   |
+| Ubuntu 18.10 (Snap パッケージを使用)                   | コミュニティ   | コミュニティ   |
+| Debian 9                                          | サポート   | サポート   |
 | CentOS 7                                          | サポート   | サポート   |
 | Red Hat Enterprise Linux 7                        | サポート   | サポート   |
-| OpenSUSE 42.3                                     | サポート   | サポート   |
-| Fedora 27                                         | サポート   | サポート   |
-| Fedora 28                                         |             | サポート   |
+| openSUSE 42.3                                     | サポート   | サポート   |
+| Fedora 28                                         | サポート   | サポート   |
 | macOS 10.12 以降                                      | サポート   | サポート   |
 | Arch                                              | コミュニティ   | コミュニティ   |
-| Raspbian                                          | Experimental| コミュニティ   |
+| Raspbian                                          | コミュニティ   | コミュニティ   |
 | Kali                                              | コミュニティ   | コミュニティ   |
 | AppImage (複数の Linux プラットフォームで機能)     | コミュニティ   | コミュニティ   |
 | [Snap パッケージ](https://snapcraft.io/powershell)   | 注を参照    | 注を参照    |
 
 > [!NOTE]
-> Snap パッケージは、一定期間、試験段階になります。  その後、Snap で新しいサポートの問題が発生しないことが確認されたら、お客様がパッケージを実行しているディストリビューションをサポートがフォローします。
+> パッケージを実行しているディストリビューションと同様に、スナップ パッケージがサポートされます。
 
-## <a name="platform-which-are-out-of-support"></a>サポート対象外のプラットフォーム
+## <a name="powershell-release-end-of-life"></a>PowerShell リリースのサポート終了
 
-プラットフォームのバージョンが、プラットフォームの所有者によって定義された有効期限を迎えると、PowerShell Core もまたそのプラットフォームのバージョンをサポートしなくなります。 アクセスする必要があるユーザーは引き続き以前にリリースされたパッケージを利用できますが、公式のサポートと更新プログラムはどんな種類のものも提供されなくなります。
+[PowerShell Core のライフサイクル](#lifecycle-of-powershell-core)に基づき、さまざまなリリースがサポートされなくなる日付を次の表に示します。
 
-そのため、次のバージョンのサポートはディストリビューションの所有者によって終了され、現在はサポートされていません。
+| バージョン | サポート終了                   |
+|---------|-------------------------------|
+| 6.0     | 2019 年 2 月 13 日             |
+| 6.1     | 2019 年 9 月 28 日            |
+| 6.2     | 6.3 のリリースから 6 か月後   |
+
+## <a name="platforms-which-are-out-of-support"></a>サポート対象外のプラットフォーム
+
+プラットフォームのバージョンが、プラットフォームの所有者によって定義された有効期限を迎えると、PowerShell Core でもそのプラットフォームのバージョンがサポートされなくなります。
+アクセスする必要があるユーザーは引き続き以前にリリースされたパッケージを利用できますが、公式のサポートと更新プログラムはどんな種類のものも提供されなくなります。
+
+そのため、ディストリビューションの所有者によって次のバージョンのサポートは終了され、サポートされていません。
 
 | OS       | バージョン | 有効期限切れ                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
@@ -89,16 +107,19 @@ Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポ�
 | Ubuntu   | 16.10   | [2017 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
 | Ubuntu   | 17.04   | [2018 年 1 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
 | Ubuntu   | 17.10   | [2018 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
+| Debian   | 8       | [2018 年 6 月](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
+| Fedora   | 27      | [2018 年 11 月](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
+| Ubuntu   | 14.04   | [2019 年 4 月](https://wiki.ubuntu.com/Releases)                                              |
 
 ## <a name="notes-on-licensing"></a>ライセンスに関する注意事項
 
 PowerShell Core は [MIT ライセンス][]の下で提供されます。
-このライセンスの下では、また、有料サポート契約がないときは、ユーザーには[コミュニティ サポート][]のみが与えられます。
+このライセンスの下で、有料サポート契約がないときは、ユーザーには[コミュニティ サポート][]のみが与えられます。
 コミュニティ サポートの場合、マイクロソフトは回答や解決を保証しません。
 
 ## <a name="windows-powershell-module"></a>Windows PowerShell モジュール
 
-PowerShell Core のサポートが他の製品モジュールに適用されることは、そのモジュールが PowerShell Core 対応であることが明示されている場合を除いてありません。
+PowerShell Core のサポートに製品モジュールが含まれることは、そのモジュールで明示的に PowerShell Core をサポートしている場合を除いて、ありません。
 たとえば、Windows Server に付属する `ActiveDirectory` モジュールを使用することはサポートの対象外です。
 
 ただし、PowerShell Core 対応であることが明示されていないモジュールの場合でも、サポート対象となることがあります。
@@ -118,6 +139,10 @@ Install-Module WindowsPSModulePath -Force
 Add-WindowsPSModulePath
 ```
 
+## <a name="experimental-features"></a>試験的な機能
+
+[試験的な機能][]には[コミュニティ サポート](#community-support)のみが与えられます。
+
 [Premier]: https://www.microsoft.com/en-us/microsoftservices/support.aspx
 [enterprise-agreement]: https://www.microsoft.com/en-us/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/en-us/licensing/licensing-programs/software-assurance-default.aspx
@@ -130,3 +155,4 @@ Add-WindowsPSModulePath
 [semi-annual]: https://docs.microsoft.com/windows-server/get-started/semi-annual-channel-overview
 [MIT ライセンス]: https://github.com/PowerShell/PowerShell/blob/master/LICENSE.txt
 [`WindowsPSModulePath`]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
+[試験的な機能]: /powershell/module/microsoft.powershell.core/about/about_powershell_config?view=powershell-6#experimentalfeatures

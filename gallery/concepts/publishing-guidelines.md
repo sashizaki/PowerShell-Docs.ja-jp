@@ -4,12 +4,12 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 description: パブリッシャー向けのガイドライン
 title: PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
-ms.openlocfilehash: 25c359c7acbe7430762a275d8cc4a28f527ec57a
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056500"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623910"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -145,6 +145,9 @@ ProjectURI が記載されている場合、PowerShell ギャラリーではパ�
 - Windows :Windows オペレーティング システムとの間で互換性のあるパッケージ
 - Linux :Linux オペレーティング システムとの間で互換性のあるパッケージ
 - MacOS :Mac オペレーティング システムとの間で互換性のあるパッケージ
+
+互換性のあるプラットフォームでパッケージをタグ付けすると、それが検索結果の左側のウィンドウ上のギャラリー検索フィルターに含まれます。 GitHub 上でパッケージをホストする場合は、パッケージにタグ付けするときに [PowerShell ギャラリー互換性シールド](https://img.shields.io/powershellgallery/p/:packageName.svg) 
+ ![互換性シールド](https://img.shields.io/powershellgallery/p/CosmosDB.svg) も利用できます。  
 
 ## <a name="include-tests"></a>テストを含める
 

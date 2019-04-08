@@ -78,7 +78,7 @@ Invoke-DscResource コマンドレットでは、詳細、警告、およびエ�
 ## <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Invoke-DscResource と共に使用すると、DSC リソースを簡単にデバッグできない
 
 LCM がデバッグ モードで実行されている場合 (詳細については「[DSC リソースのデバッグ](https://msdn.microsoft.com/powershell/dsc/debugresource)」を参照)、Invoke-DscResource コマンドレットはデバッグ用に接続する実行空間に関する情報を提供しません。
-**解決策:****Get-PSHostProcessInfo**、**Enter-PSHostProcess**、**Get-Runspace**、**Debug-Runspace** コマンドレットを使用して実行空間を検出して接続し、DSC リソースをデバッグします。
+**解決策:** **Get-PSHostProcessInfo**、**Enter-PSHostProcess**、**Get-Runspace**、**Debug-Runspace** コマンドレットを使用して実行空間を検出して接続し、DSC リソースをデバッグします。
 
 ```powershell
 # Find all the processes hosting PowerShell

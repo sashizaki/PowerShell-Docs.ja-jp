@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell、core
 title: PowerShell Core 6.0 の重要な変更
-ms.openlocfilehash: 975c978629f81f0f13a235c3d304e5ec03bae6d0
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
+ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795693"
+ms.lasthandoff: 03/29/2019
+ms.locfileid: "58623927"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell Core 6.0 の重要な変更
 
@@ -61,6 +61,15 @@ WMI ベースの 2 つのモジュール セットをサポートすることは
 ### <a name="microsoftpowershelllocalaccounts"></a>Microsoft.PowerShell.LocalAccounts
 
 サポートされていない API を使用していることから、より優れたソリューションが提供されるまで、PowerShell Core から `Microsoft.PowerShell.LocalAccounts` コマンドレットを削除します。
+
+### <a name="-computer-cmdlets"></a>`*-Computer` コマンドレット
+
+以下のコマンドレットは、サポートされていない API が使われているため、より優れたソリューションが提供されるまで PowerShell Core から削除されます。
+
+- Add-Computer
+- Checkpoint-Computer
+- Remove-Computer
+- Restore-Computer
 
 ### <a name="-counter-cmdlets"></a>`*-Counter` コマンドレット
 
