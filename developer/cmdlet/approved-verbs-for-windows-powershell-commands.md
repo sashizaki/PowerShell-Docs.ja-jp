@@ -12,12 +12,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], verb names
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
-ms.openlocfilehash: d8a0561d6fbb4447a691c434e0518e3e16ce41e7
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
+ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56863668"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293352"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>PowerShell コマンドの承認された動詞
 
@@ -94,7 +94,7 @@ PowerShell を使用して、 [System.Management.Automation.VerbsCommon](/dotnet
 |[終了](/dotnet/api/System.Management.Automation.VerbsCommon.Exit)(ex)|最近使用したコンテキストに現在の環境またはコンテキストを設定します。 たとえば、`Exit-PSSession`コマンドレットは、対話型セッションを開始するために使用されたセッションでユーザーを配置します。 この動詞を組み合わせて`Enter`します。|このアクションでは、Pop など Out 動詞を使用しないでください。|
 |[検索](/dotnet/api/System.Management.Automation.VerbsCommon.Find)(fd)|不明な黙示的、省略可能なまたは指定したコンテナー内のオブジェクトを検索します。||
 |[形式](/dotnet/api/System.Management.Automation.VerbsCommon.Format)(f)|指定されたフォームまたはレイアウト内のオブジェクトを整列します。||
-|[取得](/dotnet/api/System.Management.Automation.VerbsCommon.Get)(g)|リソースを取得するアクションを指定します。 この動詞を組み合わせて`Set`します。|このアクションでは、読み取り、オープン、Cat、型、Dir、取得、ダンプ、取得、調査、検索、またはこのアクションの検索などの動詞を使用しないでください。|
+|[取得](/dotnet/api/System.Management.Automation.VerbsCommon.Get)(g)|リソースを取得するアクションを指定します。 この動詞を組み合わせて`Set`します。|このアクションでは、読み取り、オープン、Cat、型、Dir、取得、ダンプ、取得、調査、検索、または検索などの動詞を使用しないでください。|
 |[非表示に](/dotnet/api/System.Management.Automation.VerbsCommon.Hide)(h)|検出できないリソースを使用します。 など、コマンドレットを非表示の動詞を含む名前は、ユーザーからサービスを非表示可能性があります。 この動詞を組み合わせて`Show`します。|このアクションでは、ブロックなどの動詞を使用しないでください。|
 |[参加](/dotnet/api/System.Management.Automation.VerbsCommon.Join)(j)|1 つのリソースには、リソースを結合します。 たとえば、`Join-Path`コマンドレットは、1 つのパスを作成するには、その子パスのいずれかのパスを結合します。 この動詞を組み合わせて`Split`します。|このアクションでは、結合、Unite、Connect、あるいは関連付けなどの動詞を使用しないでください。|
 |[ロック](/dotnet/api/System.Management.Automation.VerbsCommon.Lock)(lk)|リソースをセキュリティで保護します。 この動詞を組み合わせて`Unlock`します。|このアクションでは、制限や保護などの動詞を使用しないでください。|
@@ -149,7 +149,7 @@ PowerShell を使用して、 [System.Management.Automation.VerbsData](/dotnet/a
 |[ConvertFrom](/dotnet/api/System.Management.Automation.VerbsData.ConvertFrom) (cf)|1 つまたは複数のサポートされている出力の種類 (コマンドレットの名詞は、入力を示します) 入力の 1 つの主要な型に変換します。|このアクションでは、エクスポート、出力、またはアウトなどの動詞を使用しないでください。|
 |[ConvertTo](/dotnet/api/System.Management.Automation.VerbsData.ConvertTo) (ct)|(コマンドレットの名詞は、出力の種類を示します) のプライマリ出力の型への入力の 1 つまたは複数の型から変換します。|このアクションを使用しないで、インポートなどの動詞入力、または。|
 |[マウント解除](/dotnet/api/System.Management.Automation.VerbsData.Dismount)(dm)|名前付きの場所からエンティティをデタッチします。 この動詞を組み合わせて`Mount`します。|このアクションでは、マウント解除またはリンク解除などの動詞を使用しないでください。|
-|[編集](/dotnet/api/System.Management.Automation.VerbsData.Edit)(ed)|追加またはコンテンツを削除して、既存のデータを変更します。|このアクションでは、このアクションの変更、更新、または変更などの動詞を使用しないでください。|
+|[編集](/dotnet/api/System.Management.Automation.VerbsData.Edit)(ed)|追加またはコンテンツを削除して、既存のデータを変更します。|このアクションでは、変更、更新、または変更などの動詞を使用しないでください。|
 |[展開](/dotnet/api/System.Management.Automation.VerbsData.Expand)(en)|圧縮されたリソースのデータを元の状態に復元します。 この動詞を組み合わせて`Compress`します。|このアクションでは、分解または圧縮解除などの動詞を使用しないでください。|
 |[エクスポート](/dotnet/api/System.Management.Automation.VerbsData.Export)(ep)|または、インターチェンジの形式に、ファイルなどの永続的なデータ ストアには、主な入力をカプセル化します。 この動詞を組み合わせて`Import`します。|このアクションでは、抽出やバックアップなどの動詞を使用しないでください。|
 |[グループ](/dotnet/api/System.Management.Automation.VerbsData.Group)(gp)|配置するか、または 1 つまたは複数のリソースを関連付けます。|このアクションでは、集計、並べ替え、関連付けなどの動詞を使用して、およびはありませんを関連付けます。|
@@ -253,4 +253,4 @@ PowerShell を使用して、 [System.Management.Automation.VerbsOther](/dotnet/
 
 [Windows PowerShell プログラマー ガイド](../prog-guide/windows-powershell-programmer-s-guide.md)
 
-[Windows PowerShell シェル SDK](../windows-powershell-reference.md)
+[Windows PowerShell Shell SDK](../windows-powershell-reference.md)
