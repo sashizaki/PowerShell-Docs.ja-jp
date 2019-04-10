@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: パイプラインからオブジェクトを削除する (Where-Object)
 ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: c060b93a3823be26ad6c7757acc633bb4fc2fcfa
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 1f7d064c7bf2dd551ea96b29762fbccad8174084
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403261"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293148"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>パイプラインからオブジェクトを削除する (Where-Object)
 
@@ -16,7 +16,7 @@ Windows PowerShell では、考えていた数よりも多くのオブジェク�
 
 Windows PowerShell には、`Where-Object` コマンドレットがあります。これを使用すると、パイプラインの各オブジェクトをテストし、特定のテスト条件を満たしている場合にのみ、オブジェクトをパイプラインに沿って渡すことができます。 テストを通過しなかったオブジェクトは、パイプラインから削除されます。 テスト条件は、`Where-Object` **FilterScript** パラメーターの値として指定します。
 
-### <a name="performing-simple-tests-with-where-object"></a>Where-Object を使用して単純なテストを実行する
+## <a name="performing-simple-tests-with-where-object"></a>Where-Object を使用して単純なテストを実行する
 
 **FilterScript** の値は、true または false に評価される*スクリプト ブロック* - (中かっこ {} で囲まれた 1 つまたは複数の Windows PowerShell コマンド) です。 これらのスクリプト ブロックはごく単純にすることができますが、作成するには別の Windows PowerShell の概念である比較演算子について知っておく必要があります。 比較演算子は、演算子の両辺のアイテムを比較します。 比較演算子は、'-' 文字で始まり、名前が続きます。 基本的な比較演算子は、ほとんどの種類のオブジェクトで機能します。 より高度な比較演算子の中には、テキストまたは配列でのみ機能するものもあります。
 
@@ -46,7 +46,7 @@ PS> 1,2,3,4 | Where-Object -FilterScript {$_ -lt 3}
 2
 ```
 
-### <a name="filtering-based-on-object-properties"></a>オブジェクトのプロパティに基づくフィルタリング
+## <a name="filtering-based-on-object-properties"></a>オブジェクトのプロパティに基づくフィルタリング
 
 `$_` は、現在のパイプライン オブジェクトを参照するので、テストのためにそのプロパティにアクセスできます。
 

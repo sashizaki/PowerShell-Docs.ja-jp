@@ -3,14 +3,15 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: 静的なクラスとメソッドの使用
 ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: 0f2b02c3a40365ad0335118b057a4e548c9f6535
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: e4caff63a1ec7295b6fe450c2915baf0cc7e31af
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403213"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293114"
 ---
 # <a name="using-static-classes-and-methods"></a>静的なクラスとメソッドの使用
+
 .NET Framework のクラスの中には、**New-Object** では作成できないものもあります。 たとえば、**New-Object** で **System.Environment** オブジェクトや **System.Math** オブジェクトを作成しようとすると、次のようなエラー メッセージが表示されます。
 
 ```
@@ -29,10 +30,12 @@ At line:1 char:11
 
 エラーが発生する理由は、これらのクラスからは、新しいオブジェクトを作成することができないためです。 これらのクラスは、メソッドおよびプロパティが収められている参照用のライブラリであり、状態の変化を伴いません。 これらのメソッドやプロパティは、オブジェクトを作成しなくても使用できます。 これらのクラスやメソッドは、作成、破棄、変更されないため、*静的クラス*と呼ばれます。 この点をわかりやすく説明するために、実際に静的クラスを使用する例を紹介します。
 
-### <a name="getting-environment-data-with-systemenvironment"></a>System.Environment による環境データの取得
+## <a name="getting-environment-data-with-systemenvironment"></a>System.Environment による環境データの取得
+
 通常、Windows PowerShell でオブジェクトを操作するために最初に行うことは、Get-Member を使用して、そのオブジェクトに含まれているメンバーを調べることです。 静的クラスの場合、実際のクラスがオブジェクトではないため、このプロセスが若干異なります。
 
-#### <a name="referring-to-the-static-systemenvironment-class"></a>静的クラス System.Environment の参照
+### <a name="referring-to-the-static-systemenvironment-class"></a>静的クラス System.Environment の参照
+
 静的クラスを参照するには、そのクラス名を角かっこで囲みます。 たとえば、**System.Environment** を参照するには、角かっこの内側に名前を入力します。 これにより、型に関する一般的な情報が表示されます。
 
 ```
@@ -89,7 +92,7 @@ TickCount                               ExitCode
 
 これで、System.Environment から、必要なプロパティを選んで表示できます。
 
-#### <a name="displaying-static-properties-of-systemenvironment"></a>System.Environment の静的プロパティの表示
+### <a name="displaying-static-properties-of-systemenvironment"></a>System.Environment の静的プロパティの表示
 
 System.Environment の場合はプロパティも静的です。通常のプロパティとは異なる方法で指定する必要があります。 操作の対象が静的メソッドまたは静的プロパティであることを Windows PowerShell に伝えるには **::** を使用します。 Windows PowerShell の起動に使ったコマンドを表示するには、次のように入力して、**CommandLine** プロパティを確認します。
 
@@ -115,7 +118,7 @@ PS> [System.Environment]::HasShutdownStarted
 False
 ```
 
-### <a name="doing-math-with-systemmath"></a>System.Math による数学的演算の実行
+## <a name="doing-math-with-systemmath"></a>System.Math による数学的演算の実行
 
 System.Math 静的クラスは、数学的演算を行うのに役立ちます。 **System.Math** の重要なメンバーのほとんどはメソッドであり、**Get-Member** を使って表示できます。
 

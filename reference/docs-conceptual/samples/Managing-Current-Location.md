@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: 現在の場所の管理
 ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: d1ebc9507a45841e6d4d8219e45c002990e1328c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403006"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293187"
 ---
 # <a name="managing-current-location"></a>現在の場所の管理
 
@@ -16,7 +16,7 @@ ms.locfileid: "53403006"
 
 Windows PowerShell は、**Location** という名詞を使用して作業ディレクトリを参照し、場所を調べて操作するコマンドレットのファミリを実装しています。
 
-### <a name="getting-your-current-location-get-location"></a>現在の場所の取得 (Get-Location)
+## <a name="getting-your-current-location-get-location"></a>現在の場所の取得 (Get-Location)
 
 現在のディレクトリの場所のパスを判断するには、**Get-Location** コマンドを入力します。
 
@@ -30,7 +30,7 @@ C:\Documents and Settings\PowerUser
 > [!NOTE]
 > Get-Location コマンドレットは、BASH シェルの **pwd** コマンドと似ています。 Set-Location コマンドレットは、Cmd.exe の **cd** コマンドと似ています。
 
-### <a name="setting-your-current-location-set-location"></a>現在の場所の設定 (Set-Location)
+## <a name="setting-your-current-location-set-location"></a>現在の場所の設定 (Set-Location)
 
 **Get-Location** コマンドは、**Set-Location** コマンドと共に使用されます。 **Set-Location** コマンドでは、現在のディレクトリの場所を指定できます。
 
@@ -96,7 +96,7 @@ chdir -Path .. -PassThru
 sl -Path HKLM:\SOFTWARE -PassThru
 ```
 
-### <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>最近使用した場所の保存と呼び出し (Push-Location と Pop-Location)
+## <a name="saving-and-recalling-recent-locations-push-location-and-pop-location"></a>最近使用した場所の保存と呼び出し (Push-Location と Pop-Location)
 
 場所を変更する場合、これまでいた場所を把握して、以前の場所に戻るにことができるようにしておくと便利です。 Windows PowerShell の **Push-Location** コマンドレットは、これまでいたディレクトリのパスの順序付けされた履歴 ("スタック") を作成し、補完的な **Pop-Location** コマンドレットを使用して、ディレクトリのパスの履歴を戻ることができます。
 

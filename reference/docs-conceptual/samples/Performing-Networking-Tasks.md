@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: ネットワーク関連タスクの実行
 ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
-ms.openlocfilehash: 64c57c95a70bc4cad4b695a59d96673ed18afdf4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 250ae6e5f6431ce659b3600188d7e30e501c3247
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403384"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293131"
 ---
 # <a name="performing-networking-tasks"></a>ネットワーク関連タスクの実行
 
 TCP/IP は最も一般的に使用されるネットワーク プロトコルです。そのため、TCP/IP に関連したタスクは、最も低レベルのネットワーク プロトコル管理タスクと言えます。 このセクションでは、Windows PowerShell および WMI を使用して、これらのタスクを実行します。
 
-### <a name="listing-ip-addresses-for-a-computer"></a>コンピューターの IP アドレスの一覧表示
+## <a name="listing-ip-addresses-for-a-computer"></a>コンピューターの IP アドレスの一覧表示
 
 ローカル コンピューターで使用されているすべての IP アドレスを取得するには、次のコマンドを使用します。
 
@@ -48,7 +48,7 @@ IPAddress Property   System.String[] IPAddress {get;}
 
 各ネットワーク アダプターの IPAddress プロパティは、実際には配列です。 Definition 列に示されている中かっこは、**IPAddress** が **System.String** 値ではなく、**System.String** 値の配列であることを示しています。
 
-### <a name="listing-ip-configuration-data"></a>IP 構成データの一覧表示
+## <a name="listing-ip-configuration-data"></a>IP 構成データの一覧表示
 
 各ネットワーク アダプターの詳しい IP 構成データを表示するには、次のコマンドを使用します。
 
@@ -66,7 +66,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 このコマンドは、DHCP、DNS、ルーティングなど、IP に関連した従属的な構成プロパティについて詳しい情報を返します。
 
-### <a name="pinging-computers"></a>コンピューターへの ping の送信
+## <a name="pinging-computers"></a>コンピューターへの ping の送信
 
 **Win32_PingStatus** を使用すると、コンピューターに対して簡単に ping を送信できます。 次のコマンドは ping を実行しますが、長い出力が返されます。
 
@@ -106,7 +106,7 @@ Windows PowerShell で 1 ～ 254 の数値の配列を表現するには、**1..
 $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 ```
 
-### <a name="retrieving-network-adapter-properties"></a>ネットワーク アダプターのプロパティの取得
+## <a name="retrieving-network-adapter-properties"></a>ネットワーク アダプターのプロパティの取得
 
 このユーザーズ ガイドの前半で、**Win32_NetworkAdapterConfiguration** を使用して一般的な構成プロパティを取得できることを説明しました。 厳密には TCP/IP 情報とは言えませんが、MAC アドレスやアダプター タイプなどのネットワーク アダプター情報は、コンピューターでどのようなことが起こっているかを把握する上で有益な手段です。 この情報の要約を取得するには、次のコマンドを使用します。
 
@@ -114,7 +114,7 @@ $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 Get-WmiObject -Class Win32_NetworkAdapter -ComputerName .
 ```
 
-### <a name="assigning-the-dns-domain-for-a-network-adapter"></a>ネットワーク アダプターの DNS ドメインの割り当て
+## <a name="assigning-the-dns-domain-for-a-network-adapter"></a>ネットワーク アダプターの DNS ドメインの割り当て
 
 自動名前解決のために DNS ドメインを割り当てるには、**Win32_NetworkAdapterConfiguration SetDNSDomain** メソッドを使用します。 DNS ドメインは、各ネットワーク アダプター構成に対して別々に割り当てることになります。したがって、**ForEach-Object** ステートメントを使用して、各アダプターにドメインを割り当てる必要があります。
 
@@ -130,11 +130,11 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -ComputerName . | Where-Object -FilterScript {$_.IPEnabled} | ForEach-Object -Process {$_.SetDNSDomain('fabrikam.com')}
 ```
 
-### <a name="performing-dhcp-configuration-tasks"></a>DHCP の構成タスクの実行
+## <a name="performing-dhcp-configuration-tasks"></a>DHCP の構成タスクの実行
 
 DNS の構成と同様、DHCP 情報の変更には、一連のネットワーク アダプターに対する操作が伴います。 WMI で実行できる操作はさまざまですが、ここでは、その中でも一般的なものをいくつか選んで説明します。
 
-#### <a name="determining-dhcp-enabled-adapters"></a>DHCP 対応アダプターの特定
+### <a name="determining-dhcp-enabled-adapters"></a>DHCP 対応アダプターの特定
 
 コンピューター上の DHCP 対応アダプターを検索するには、次のコマンドを使用します。
 
@@ -148,7 +148,7 @@ IP 構成の問題があるアダプターを除外するために、IP 対応�
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" -ComputerName .
 ```
 
-#### <a name="retrieving-dhcp-properties"></a>DHCP のプロパティの取得
+### <a name="retrieving-dhcp-properties"></a>DHCP のプロパティの取得
 
 通常、アダプターの DHCP 関連のプロパティは先頭に "DHCP" が付くため、Format-Table の Property パラメーターを使用することで、それらのプロパティだけを表示できます。
 
@@ -156,7 +156,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true 
 Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "DHCPEnabled=$true" -ComputerName . | Format-Table -Property DHCP*
 ```
 
-#### <a name="enabling-dhcp-on-each-adapter"></a>各アダプターの DHCP の有効化
+### <a name="enabling-dhcp-on-each-adapter"></a>各アダプターの DHCP の有効化
 
 すべてのアダプターで DHCP を有効にするには、次のコマンドを使用します。
 
@@ -166,7 +166,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true -
 
 既に有効化されている DHCP を除外するために、**Filter** ステートメントとして "IPEnabled=$true and DHCPEnabled=$false" を使用できます。ただし、この手順を省略しても、エラーは発生しません。
 
-#### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>特定のアダプターの DHCP リースの解放および更新
+### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>特定のアダプターの DHCP リースの解放および更新
 
 **Win32_NetworkAdapterConfiguration** クラスには **ReleaseDHCPLease** メソッドと **RenewDHCPLease** メソッドがあります。 使用方法はどちらも同じです。 通常、これらのメソッドを使用するのは、特定のサブネット上に存在するアダプターのアドレスを解放または更新する必要がある場合だけです。 サブネット上のアダプターをフィルター処理する最も簡単な方法は、対応するサブネットのゲートウェイを使用したアダプター構成だけを選ぶことです。 たとえば、次のコマンドでは、DHCP リースを 192.168.1.254 から取得しているローカル コンピューターについて、アダプターの DHCP リースがすべて解放されます。
 
@@ -183,7 +183,7 @@ Get-WmiObject -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true 
 > [!NOTE]
 > これらのメソッドをリモート コンピューターに対して使用する場合は、接続に使用されているアダプターのリースが解放または更新されると、リモート システムへのアクセスが失われる可能性があることにご注意ください。
 
-#### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>すべてのアダプターの DHCP リースの解放および更新
+### <a name="releasing-and-renewing-dhcp-leases-on-all-adapters"></a>すべてのアダプターの DHCP リースの解放および更新
 
 **Win32_NetworkAdapterConfiguration** の **ReleaseDHCPLeaseAll** メソッドと **RenewDHCPLeaseAll** メソッドを使用すれば、すべてのアダプターを対象に DHCP アドレスをグローバルに解放または更新できます。 ただし、リースの解放と更新をグローバルに実行する場合、実行の対象は、特定のアダプターではなく、WMI クラスになります。したがって、コマンドは特定のアダプターに適用するのではなく、WMI クラスに適用する必要があります。
 
@@ -205,7 +205,7 @@ Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdap
 ( Get-WmiObject -List | Where-Object -FilterScript {$_.Name -eq 'Win32_NetworkAdapterConfiguration'} ).RenewDHCPLeaseAll()
 ```
 
-### <a name="creating-a-network-share"></a>ネットワーク共有の作成
+## <a name="creating-a-network-share"></a>ネットワーク共有の作成
 
 ネットワーク共有を作成するには、**Win32_Share Create** メソッドを使用します。
 
@@ -219,7 +219,7 @@ Windows PowerShell で **net share** を使用して、共有を作成するこ�
 net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
 ```
 
-### <a name="removing-a-network-share"></a>ネットワーク共有の削除
+## <a name="removing-a-network-share"></a>ネットワーク共有の削除
 
 ネットワーク共有を削除する場合も **Win32_Share** を使用できます。ただし、そのプロセスは共有を作成する場合と若干異なります。共有を作成する場合は、フィルターで **Win32_Share** クラスを取得していました。これに対し、共有を削除する場合は、削除対象となる特定の共有を取得する必要があります。 次のステートメントでは、"TempShare" という共有を削除します。
 
@@ -235,7 +235,7 @@ PS> net share tempshare /delete
 tempshare was deleted successfully.
 ```
 
-### <a name="connecting-a-windows-accessible-network-drive"></a>Windows でアクセス可能なネットワーク ドライブの接続
+## <a name="connecting-a-windows-accessible-network-drive"></a>Windows でアクセス可能なネットワーク ドライブの接続
 
 **New-PSDrive** コマンドレットを使用すると、Windows PowerShell ドライブを作成できます。しかし、この方法で作成されたドライブは、Windows PowerShell でしかアクセスできません。 新しいネットワーク ドライブを作成するには、**WScript.Network** という COM オブジェクトを使用します。 次のコマンドは、共有 \\\\FPS01\\users をローカルの B ドライブにマッピングします。
 

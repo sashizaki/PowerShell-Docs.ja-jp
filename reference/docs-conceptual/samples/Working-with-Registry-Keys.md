@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: レジストリ キーの操作
 ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: a9d08f2f6b5803980dec45a4e266ad66879c8c8d
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: e7b497ec2fccf9ba3934439a9c1e9be3cf70a705
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403474"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293199"
 ---
 # <a name="working-with-registry-keys"></a>レジストリ キーの操作
 
 レジストリ キーは Windows PowerShell ドライブ上の項目であるため、それらの操作はファイルやフォルダーの操作によく似ています。 1 つの決定的な違いは、レジストリ ベースの Windows PowerShell ドライブ上のすべての項目は、ファイル システム ドライブ上のフォルダーと同じように、コンテナーであることです。 ただし、レジストリ エントリとそれに関連する値は、個別の項目ではなく、項目のプロパティです。
 
-### <a name="listing-all-subkeys-of-a-registry-key"></a>レジストリ キーのすべてのサブキーを一覧表示
+## <a name="listing-all-subkeys-of-a-registry-key"></a>レジストリ キーのすべてのサブキーを一覧表示
 
 **Get-ChildItem** を使用することにより、レジストリ キーの直下にあるすべての項目を表示することができます。 非表示の項目やシステム項目を表示するには、オプションの **Force** パラメーターを追加します。 たとえば、次のコマンドは、HKEY_CURRENT_USER レジストリ ハイブに対応する、Windows PowerShell ドライブ HKCU: の直下にある項目を表示します。
 
@@ -58,7 +58,7 @@ Get-ChildItem -Path hkcu:\ -Recurse
 Get-ChildItem -Path HKCU:\Software -Recurse | Where-Object -FilterScript {($_.SubKeyCount -le 1) -and ($_.ValueCount -eq 4) }
 ```
 
-### <a name="copying-keys"></a>キーのコピー
+## <a name="copying-keys"></a>キーのコピー
 
 コピーは **Copy-Item** を使用して行われます。 次のコマンドは、HKLM:\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion とそのすべてのプロパティを HKCU:\\ にコピーして、"CurrentVersion" という名前の新しいキーを作成します。
 
@@ -74,7 +74,7 @@ Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination h
 
 ファイル システムのコピーは、使用可能な他の既存のツールを使用して行うこともできます。 任意のレジストリ編集ツール (reg.exe、regini.exe、regedit.exe など) およびレジストリの編集をサポートする COM オブジェクト (WScript.Shell や WMI の StdRegProv クラスなど) を Windows PowerShell 内から使用できます。
 
-### <a name="creating-keys"></a>キーの作成
+## <a name="creating-keys"></a>キーの作成
 
 レジストリでのキーの新規作成は、ファイル システムに新しい項目を作成するよりも簡単です。 すべてのレジストリ キーはコンテナーであるため、項目の種類を指定する必要はなく、次に示すように、明示的なパスを指定するだけで済みます。
 
@@ -88,7 +88,7 @@ New-Item -Path hkcu:\software_DeleteMe
 New-Item -Path Registry::HKCU_DeleteMe
 ```
 
-### <a name="deleting-keys"></a>キーの削除
+## <a name="deleting-keys"></a>キーの削除
 
 項目の削除は、基本的にすべてのプロバイダーで同じです。 次のコマンドを実行すると、確認を求められずに項目が削除されます。
 
@@ -97,7 +97,7 @@ Remove-Item -Path hkcu:\Software_DeleteMe
 Remove-Item -Path 'hkcu:\key with spaces in the name'
 ```
 
-### <a name="removing-all-keys-under-a-specific-key"></a>特定のキーの下にあるすべてのキーの削除
+## <a name="removing-all-keys-under-a-specific-key"></a>特定のキーの下にあるすべてのキーの削除
 
 内包されている項目を削除するには、**Remove-Item** を使用します。ただし、その項目に他の何らかの項目が含まれている場合は、削除の確認を求められます。 たとえば、作成した HKCU:\\CurrentVersion サブキーを削除しようとしすると、次のメッセージが表示されます。
 

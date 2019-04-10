@@ -3,18 +3,18 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: コンピューターの状態を変更する
 ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: f2fadcedaeddfa6f8b9dd4d70738ee062b907d61
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: f8a2ed6a1a0390021eb633c9af64a725146ad136
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403101"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293063"
 ---
 # <a name="changing-computer-state"></a>コンピューターの状態を変更する
 
 Windows PowerShell でコンピューターをリセットするには、標準のコマンド ライン ツールまたは WMI クラスを使用します。 Windows PowerShell は単にツールを実行するために使用するだけですが、Windows PowerShell でコンピューターの電力状態を変更する手順には、Windows PowerShell での外部ツールの使用方法に関する重要な詳細も含まれています。
 
-### <a name="locking-a-computer"></a>コンピューターをロックする
+## <a name="locking-a-computer"></a>コンピューターをロックする
 
 一般的に入手可能なツールを使ってコンピューターを直接ロックする唯一の方法は、**user32.dll** の **LockWorkstation()** 関数を呼び出すことです。
 
@@ -28,7 +28,7 @@ Windows XP などで、ユーザーの簡易切り替えが有効なときにワ
 
 ターミナル サーバーで特定のセッションをシャットダウンするには、**tsshutdn.exe** コマンド ライン ツールを使用します。
 
-### <a name="logging-off-the-current-session"></a>現在のセッションからログオフする
+## <a name="logging-off-the-current-session"></a>現在のセッションからログオフする
 
 ローカル システム上でセッションからログオフする場合、いくつかの方法が考えられます。 最も簡単な方法は、リモート デスクトップ/ターミナル サービスのコマンドライン ツールである **logoff.exe** を使用することです (詳細については、Windows PowerShell プロンプトで **logoff /?** と入力してください)。 現在アクティブなセッションからログオフするには、引数を付けずに **logoff** と入力します。
 
@@ -46,7 +46,7 @@ shutdown.exe -l
 
 詳細について、および Win32Shutdown メソッドの他の機能については、MSDN の「Win32_OperatingSystem クラスの Win32Shutdown メソッド」をご覧ください。
 
-### <a name="shutting-down-or-restarting-a-computer"></a>コンピューターをシャットダウンまたは再起動する
+## <a name="shutting-down-or-restarting-a-computer"></a>コンピューターをシャットダウンまたは再起動する
 
 通常、コンピューターのシャットダウンと再起動は同じ種類に属するタスクです。 コンピューターをシャットダウンできるツールであれば、コンピューターを再起動することもできます。逆にコンピューターを再起動できるツールであれば、コンピューターをシャットダウンすることもできます。 Windows PowerShell からコンピューターを簡単に再起動する方法としては、2 とおりの方法があります。 Tsshutdn.exe または Shutdown.exe に適切な引数を指定して実行することです。 詳しい使用方法は、**tsshutdn.exe ?** または **shutdown.exe ?** を実行すると参照できます。
 
