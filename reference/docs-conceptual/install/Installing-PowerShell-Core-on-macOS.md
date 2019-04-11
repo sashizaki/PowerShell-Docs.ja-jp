@@ -2,18 +2,18 @@
 title: macOS への PowerShell Core のインストール
 description: macOS への PowerShell Core のインストールに関する情報
 ms.date: 12/12/2018
-ms.openlocfilehash: 91e64cace7d4ed988da56109dde9bf2a80528eb4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402558"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293403"
 ---
 # <a name="installing-powershell-core-on-macos"></a>macOS への PowerShell Core のインストール
 
 PowerShell Core は、macOS 10.12 以降をサポートしています。
 すべてのパッケージは GitHub [リリース][] ページにあります。
-パッケージをインストール後、実行`pwsh`端末から。
+パッケージがインストールされたら、ターミナルから `pwsh` を実行します。
 
 ## <a name="about-brew"></a>Brew について
 
@@ -36,7 +36,7 @@ brew cask install powershell
 pwsh
 ```
 
-PowerShell の新しいバージョンがリリースされるは、Homebrew の式を更新および PowerShell をアップグレードします。
+新しいバージョンの PowerShell がリリースされたら、Homebrew の式を更新し、PowerShell をアップグレードしてください。
 
 ```sh
 brew update
@@ -44,7 +44,7 @@ brew cask upgrade powershell
 ```
 
 > [!NOTE]
-> 上記のコマンドは、PowerShell (pwsh) ホスト内から呼び出すことができますが、PowerShell シェルを終了および、アップグレードを完了してに表示される値を更新するには再起動する必要がある`$PSVersionTable`します。
+> 上記のコマンドは PowerShell (pwsh) ホスト内から呼び出すことができますが、その場合、アップグレードを完了するには、PowerShell シェルを終了し、再起動して、`$PSVersionTable` に表示される値を更新する必要があります。
 
 [brew]: http://brew.sh/
 
@@ -52,8 +52,8 @@ brew cask upgrade powershell
 
 Brew の詳細については、「[Brew について](#about-brew)」を参照してください。
 
-Homebrew をインストールした後は、PowerShell をインストールすることができます。
-最初に、インストール、 [Cask バージョン][ cask-versions]パッケージ cask パッケージの代替バージョンをインストールすることができます。
+Homebrew をインストールしたら、PowerShell をインストールできます。
+最初に、[Cask-Versions][cask-versions] パッケージをインストールします。これにより、cask パッケージの代替バージョンをインストールすることができます。
 
 ```sh
 brew tap homebrew/cask-versions
@@ -71,7 +71,7 @@ brew cask install powershell-preview
 pwsh-preview
 ```
 
-PowerShell の新しいバージョンがリリースされるは、Homebrew の式を更新および PowerShell をアップグレードします。
+新しいバージョンの PowerShell がリリースされたら、Homebrew の式を更新し、PowerShell をアップグレードしてください。
 
 ```sh
 brew update
@@ -80,17 +80,18 @@ brew cask upgrade powershell-preview
 
 > [!NOTE]
 > 上記のコマンドは PowerShell (pwsh) ホストから呼び出すことができますが、その場合、PowerShell シェルを終了し、再起動して、アップグレードを完了し、
-> 表示される値を更新および`$PSVersionTable`します。
+> `$PSVersionTable` に表示される値を更新する必要があります。
 
 ## <a name="installation-via-direct-download"></a>直接ダウンロードによるインストール
 
-PKG パッケージ `powershell-6.1.0-osx-x64.pkg` を
+PKG パッケージをダウンロードする
+`powershell-6.2.0-osx-x64.pkg`
 [リリース][] ページから macOS コンピューターにダウンロードします。
 
 ファイルをダブルクリックして画面の指示に従うか、ターミナルからインストールします。
 
 ```sh
-sudo installer -pkg powershell-6.1.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-6.2.0-osx-x64.pkg -target /
 ```
 
 [OpenSSL](#install-openssl) をインストールします。 PowerShell リモート処理および CIM 操作の場合は OpenSSL が必要です。
@@ -103,19 +104,19 @@ macOS プラットフォームで高度な展開シナリオを実行するた�
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.1.0/powershell-6.1.0-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/6.1.0
+sudo mkdir -p /usr/local/microsoft/powershell/6.2.0
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.1.0
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/6.2.0
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/6.1.0/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/6.2.0/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/6.1.0/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/6.2.0/pwsh /usr/local/bin/pwsh
 ```
 
 [OpenSSL](#install-openssl) をインストールします。 PowerShell リモート処理および CIM 操作の場合は OpenSSL が必要です。
@@ -136,17 +137,17 @@ PowerShell リモート処理および CIM 操作の場合は OpenSSL が必要�
 
 Brew の詳細については、「[Brew について](#about-brew)」を参照してください。
 
-OpenSSL をインストールする実行`brew install openssl`します。
+OpenSSL をインストールするには、`brew install openssl` を実行します。
 
 #### <a name="install-openssl-via-macports"></a>MacPorts を介して OpenSSL をインストールする
 
-1. インストール、 [XCode コマンド ライン ツール](#install-xcode-command-line-tools)します。
+1. [XCode コマンド ライン ツール](#install-xcode-command-line-tools)をインストールします。
 1. MacPorts をインストールします。
-   手順が必要な場合を参照してください、[インストール ガイド](https://guide.macports.org/chunked/installing.macports.html)します。
+   手順が必要な場合は、[インストール ガイド](https://guide.macports.org/chunked/installing.macports.html)をご覧ください。
 1. `sudo port selfupdate` を実行して MacPorts を更新します。
 1. `sudo port upgrade outdated` を実行して MacPorts パッケージをアップグレードします。
-1. 実行して OpenSSL をインストール`sudo port install openssl`します。
-1. PowerShell を使用できるようにするライブラリをリンクします。
+1. `sudo port install openssl` を実行して OpenSSL をインストールします。
+1. PowerShell で使用できるようにライブラリをリンクします。
 
 ```sh
 sudo mkdir -p /usr/local/opt/openssl
@@ -155,7 +156,7 @@ sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
 
 ## <a name="uninstalling-powershell-core"></a>PowerShell Core のアンインストール
 
-Homebrew で PowerShell をインストールした場合は、次のコマンドを使用して、アンインストールします。
+Homebrew を使って PowerShell をインストールした場合は、次のコマンドを使ってアンインストールします。
 
 ```sh
 brew cask uninstall powershell
@@ -167,28 +168,28 @@ brew cask uninstall powershell
 sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 ```
 
-追加の PowerShell パスを削除するを参照してください、[パス](#paths)このドキュメントでセクションし、を使用してパスの削除`sudo rm`します。
+追加の PowerShell パスを削除するには、このドキュメントの「[パス](#paths)」セクションを参照し、`sudo rm` を使用してパスを削除してください。
 
 > [!NOTE]
 > Homebrew でインストールした場合、この操作は不要です。
 
 ## <a name="paths"></a>パス
 
-* `$PSHOME` は `/usr/local/microsoft/powershell/6.1.0/` です
-* ユーザー プロファイルは `~/.config/powershell/profile.ps1` から読み込まれます
-* 既定のプロファイルは `$PSHOME/profile.ps1` から読み込まれます
-* ユーザー モジュールは `~/.local/share/powershell/Modules` から読み込まれます
-* 共有モジュールは `/usr/local/share/powershell/Modules` から読み込まれます
-* 既定のモジュールは `$PSHOME/Modules` から読み込まれます
-* PSReadline 履歴は `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt` に記録されます
+* `$PSHOME` : `/usr/local/microsoft/powershell/6.2.0/`
+* ユーザー プロファイルは次から読み込まれます: `~/.config/powershell/profile.ps1`
+* 既定のプロファイルは次から読み込まれます: `$PSHOME/profile.ps1`
+* ユーザー モジュールは次から読み込まれます: `~/.local/share/powershell/Modules`
+* 共有モジュールは次から読み込まれます: `/usr/local/share/powershell/Modules`
+* 既定のモジュールは次から読み込まれます: `$PSHOME/Modules`
+* PSReadline 履歴は次に記録されます: `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
 
 プロファイルには、PowerShell のホスト単位の構成が考慮されています。
-既定のホスト固有プロファイルが存在するように`Microsoft.PowerShell_profile.ps1`同じ場所にします。
+そのため、既定のホスト固有のプロファイルは、同じ場所の `Microsoft.PowerShell_profile.ps1` に存在します。
 
 PowerShell は、macOS の [XDG ベース ディレクトリ仕様][xdg-bds]を尊重しています。
 
 macOS は BSD から派生しているので、プレフィックスに `/opt` ではなく `/usr/local` が使用されます。
-そのため、`$PSHOME`は`/usr/local/microsoft/powershell/6.1.0/`、シンボリック リンクが配置されると`/usr/local/bin/pwsh`します。
+そのため、`$PSHOME` は `/usr/local/microsoft/powershell/6.2.0/` となり、シンボリック リンクは `/usr/local/bin/pwsh` に配置されます。
 
 ## <a name="additional-resources"></a>その他の情報
 

@@ -1,12 +1,12 @@
 ---
 ms.date: 3/18/2019
 title: FilterHashtable を使った Get-WinEvent クエリの作成
-ms.openlocfilehash: fae01cc8be5c1805e2aae008e1f21ed387efa325
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320457"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293284"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>FilterHashtable を使った Get-WinEvent クエリの作成
 
@@ -29,12 +29,12 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="blog-posts-about-enumeration"></a>列挙体についてのブログ投稿
+## <a name="blog-posts-about-enumeration"></a>列挙体についてのブログ投稿
 
 この記事では、ハッシュ テーブルで列挙値を使用する方法について説明します。 列挙体について詳しくは、これらの **Scripting Guy** のブログ投稿をご覧ください。 列挙値を返す関数を作成するには、「[Enumerations and Values (列挙型および値)](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values)」をご覧ください。
 詳細については、[列挙体に関する Scripting Guy の一連のブログ投稿](https://devblogs.microsoft.com/scripting/?s=about+enumeration)をご覧ください。
 
-### <a name="hash-table-keyvalue-pairs"></a>ハッシュ テーブルのキー/値のペア
+## <a name="hash-table-keyvalue-pairs"></a>ハッシュ テーブルのキー/値のペア
 
 効率的なクエリを作成するには、**FilterHashtable** パラメーターと共に `Get-WinEvent` コマンドレットを使います。
 **FilterHashtable** には、Windows イベント ログから特定の情報を取得するためのフィルターとして、ハッシュ テーブルを指定できます。 ハッシュ テーブルでは**キー/値**のペアを使います。 ハッシュ テーブルの詳細については、「[about_Hash_Tables (ハッシュ テーブルについて)](/powershell/module/microsoft.powershell.core/about/about_hash_tables)」をご覧ください。
@@ -53,7 +53,7 @@ Get-WinEvent -FilterHashtable @{
 | LogName      | `<String[]>`       | 可 |
 | ProviderName | `<String[]>`       | 可 |
 | パス         | `<String[]>`       | いいえ  |
-| キーワード     | `<Long[]>`         | いいえ  |
+| Keywords     | `<Long[]>`         | いいえ  |
 | ID           | `<Int32[]>`        | いいえ  |
 | レベル        | `<Int32[]>`        | いいえ  |
 | StartTime    | `<DateTime>`       | いいえ  |
@@ -62,7 +62,7 @@ Get-WinEvent -FilterHashtable @{
 | データ         | `<String[]>`       | いいえ  |
 | *            | `<String[]>`       | いいえ  |
 
-### <a name="building-a-query-with-a-hash-table"></a>ハッシュ テーブルを使ったクエリの作成
+## <a name="building-a-query-with-a-hash-table"></a>ハッシュ テーブルを使ったクエリの作成
 
 結果を確認して問題をトラブルシューティングするため、一度に 1 つの**キー/値**のペアのハッシュ テーブルを作成すると役立ちます。 クエリでは、**アプリケーション** ログからデータを取得します。 ハッシュ テーブルは `Get-WinEvent –LogName Application` に相当します。
 
@@ -89,7 +89,7 @@ Get-WinEvent -FilterHashtable @{
 
 クエリで、アーカイブ済みのイベント ログからデータを取得する必要がある場合は、**Path** キーを使います。 **パス**の値でログ ファイルへの完全なパスを指定します。 詳細については、**Scripting Guy** のブログ投稿「[Use PowerShell to Parse Saved Event Logs for Errors (エラーのために、PowerShell を使って保存したイベント ログを解析する)](https://devblogs.microsoft.com/scripting/use-powershell-to-parse-saved-event-logs-for-errors)」をご覧ください。
 
-### <a name="using-enumerated-values-in-a-hash-table"></a>ハッシュ テーブルでの列挙値の使用
+## <a name="using-enumerated-values-in-a-hash-table"></a>ハッシュ テーブルでの列挙値の使用
 
 ハッシュ テーブルの次のキーは、**Keywords** です。 **Keywords** のデータ型は、大きい数を保持する値の型 `[long]` の配列です。 次のコマンドを使って `[long]` の最大値を検索します。
 
@@ -156,7 +156,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="keywords-static-property-value-optional"></a>Keywords の静的プロパティ値 (省略可能)
+### <a name="keywords-static-property-value-optional"></a>Keywords の静的プロパティ値 (省略可能)
 
 **Keywords** キーは列挙されますが、ハッシュ テーブルのクエリで静的なプロパティ名を使うことができます。
 返される文字列を使うのではなく、**Value__** プロパティを含む値にプロパティ名を変換する必要があります。
@@ -172,7 +172,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-event-id"></a>イベント ID でのフィルター処理
+## <a name="filtering-by-event-id"></a>イベント ID でのフィルター処理
 
 より具体的なデータを取得するために、クエリの結果を**イベント ID** でフィルター処理します。**イベント ID** は、ハッシュ テーブルではキー **ID** として参照され、その値は特定の**イベント ID** です。**イベント ID** は **[Windows イベント ビューアー]** で表示されます。この例では、**イベント ID 1023** を使います。
 
@@ -187,7 +187,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-### <a name="filtering-by-level"></a>レベルでのフィルター処理
+## <a name="filtering-by-level"></a>レベルでのフィルター処理
 
 さらに結果を絞り込み、エラーであるイベントのみを含むようにするために、**Level** キーを使います。
 **[Windows イベント ビューアー]** では文字列値として **Level** が表示されますが、それらは列挙値です。 ハッシュ テーブルでは、文字列値と共に **Level** キーを使うと、エラー メッセージが表示されます。
@@ -218,10 +218,10 @@ Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 | 名前           | 値 |
 | -------------- | ----- |
 | Verbose        |   5   |
-| ［情報］  |   4   |
+| Informational  |   4   |
 | 警告        |   3   |
 | エラー          |   2   |
-| ［重大］       |   1 で保護されたプロセスとして起動されました   |
+| Critical       |   1 で保護されたプロセスとして起動されました   |
 | LogAlways      |   0   |
 
 完成したクエリのハッシュ テーブルには、キー **Level** と値 **2** が含まれています。
@@ -236,7 +236,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-#### <a name="level-static-property-in-enumeration-optional"></a>列挙型の Level の静的プロパティ (省略可能)
+### <a name="level-static-property-in-enumeration-optional"></a>列挙型の Level の静的プロパティ (省略可能)
 
 **Level** キーは列挙されますが、ハッシュ テーブルのクエリで静的なプロパティ名を使うことができます。
 返される文字列を使うのではなく、**Value__** プロパティを含む値にプロパティ名を変換する必要があります。

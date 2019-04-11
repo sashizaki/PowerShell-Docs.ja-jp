@@ -2,12 +2,12 @@
 ms.date: 08/24/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Script リソース
-ms.openlocfilehash: 86dfb74bf52d8907686bb955fd722f4fb8b9131b
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 4eee5625add4d96ade7ababf7f534f597a26712d
+ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58054758"
+ms.lasthandoff: 04/04/2019
+ms.locfileid: "58920358"
 ---
 # <a name="dsc-script-resource"></a>DSC Script リソース
 
@@ -68,7 +68,7 @@ DSC は `GetScript` からの出力を使用しません。 [Get-DscConfiguratio
 ```powershell
 Configuration ScriptTest
 {
-    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
     Node localhost
     {
@@ -86,7 +86,7 @@ Configuration ScriptTest
 }
 ```
 
-### <a name="example-2-compare-version-information-using-a-script-resource"></a>例 2: Script リソースを使用してバージョン情報を比較する
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>例 2:Script リソースを使用してバージョン情報を比較する
 
 この例は、オーサリング コンピューター上のテキスト ファイルから *compliant* バージョン情報を取得して、これを `$version` 変数に格納します。 ノードの MOF ファイルを生成するときに、各スクリプト ブロックの `$using:version` 変数は、DSC によって `$version` 変数の値に置き換えられます。 実行時に *compliant* バージョンが各ノード上のテキスト ファイルに格納され、以降の実行で比較され更新されます。
 
@@ -95,7 +95,7 @@ $version = Get-Content 'version.txt'
 
 Configuration ScriptTest
 {
-    Import-DscResource –ModuleName 'PSDesiredStateConfiguration'
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
 
     Node localhost
     {

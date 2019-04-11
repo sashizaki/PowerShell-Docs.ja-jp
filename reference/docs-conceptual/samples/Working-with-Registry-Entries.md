@@ -3,20 +3,20 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: レジストリ エントリの操作
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
-ms.openlocfilehash: 8483b6f98739697b24a13055dfffbc7b5bacc2cc
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 667d17d0d62745a27ffef5f1912336b72f74c2a9
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55681541"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293080"
 ---
 # <a name="working-with-registry-entries"></a>レジストリ エントリの操作
 
 レジストリ エントリはキーのプロパティであり直接参照できないため、利用するときは少し異なる方法を取る必要があります。
 
-### <a name="listing-registry-entries"></a>レジストリ エントリの一覧表示
+## <a name="listing-registry-entries"></a>レジストリ エントリの一覧表示
 
-レジストリ エントリを確認するには、多くのさまざまな方法があります。 最も簡単な方法は、キーに関連付けられているプロパティの名前を取得することです。 たとえば、レジストリ キー内のエントリの名前を表示する`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion`を使用して、`Get-Item`します。 レジストリ キーは、キーのレジストリ エントリの一覧であり、"Property"という汎用的な名前のプロパティを持っています。
+レジストリ エントリを確認するには、多くのさまざまな方法があります。 最も簡単な方法は、キーに関連付けられているプロパティの名前を取得することです。 たとえば、レジストリ キー `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion` のエントリの名前を確認するには、`Get-Item` を使います。 レジストリ キーは、キーのレジストリ エントリの一覧であり、"Property"という汎用的な名前のプロパティを持っています。
 次のコマンドは、Property プロパティを選択し、一覧に表示されるように項目を拡張します。
 
 ```powershell
@@ -32,7 +32,7 @@ CommonFilesDir
 ProductId
 ```
 
-読みやすい形式でレジストリ エントリを表示するには使用`Get-ItemProperty`:
+レジストリ エントリをさらに読みやすい形式で表示するには、`Get-ItemProperty` を使います。
 
 ```powershell
 Get-ItemProperty -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
@@ -60,19 +60,19 @@ PF_AccessoriesName  : Accessories
 
 キーの Windows PowerShell 関連のプロパティには、**PSPath**、**PSParentPath**、**PSChildName**、および **PSProvider** のように、すべて先頭に "PS" が付きます。
 
-現在の場所を参照するには、"`*.*`." 表記法を使用できます。 使用することができます`Set-Location`に変更する、 **CurrentVersion**レジストリのコンテナー最初。
+現在の場所を参照するために、`*.*` 表記を使用できます。 `Set-Location` を使用して、まず **CurrentVersion** レジストリのコンテナーに変更します。
 
 ```powershell
 Set-Location -Path Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-組み込みの HKLM PSDrive を使用する代わりに、 `Set-Location`:
+または、`Set-Location` と共に組み込みの HKLM PSDrive を使用できます。
 
 ```powershell
 Set-Location -Path hklm:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-現在の場所に対して "`*.*`." 表記法を使用して、完全パスを指定しないでプロパティの一覧を表示することができます。
+次に、現在の場所に対して `*.*` 表記を使用して、完全パスを指定することなくプロパティを一覧表示できます。
 
 ```powershell
 Get-ItemProperty -Path .
@@ -86,13 +86,13 @@ ProgramFilesDir     : C:\Program Files
 ...
 ```
 
-この場所から取得できるように、ファイル システム内と同じパスの展開動作、 **ItemProperty**の`HKLM:\SOFTWARE\Microsoft\Windows\Help`を使用して`Get-ItemProperty -Path ..\Help`します。
+パスの展開は、ファイル システム内の場合と同様に機能します。そのため、この場所から `Get-ItemProperty -Path ..\Help` を使って `HKLM:\SOFTWARE\Microsoft\Windows\Help` の **ItemProperty** の一覧を取得できます。
 
-### <a name="getting-a-single-registry-entry"></a>1 つのレジストリ エントリの取得
+## <a name="getting-a-single-registry-entry"></a>1 つのレジストリ エントリの取得
 
-レジストリ キーの特定のエントリを取得する場合は、いくつかの可能なアプローチのいずれかを使用できます。 この例の値を検索する**DevicePath**で`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion`します。
+レジストリ キーの特定のエントリを取得する場合は、いくつかの可能なアプローチのいずれかを使用できます。 この例では、`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion` の **DevicePath** の値を検索します。
 
-使用して`Get-ItemProperty`を使用して、**パス**、キーの名前を指定するパラメーター、および**名前**の名前を指定するパラメーター、 **DevicePath**エントリ。
+`Get-ItemProperty` を使用する場合、**Path** パラメーターを使用してキーの名前を指定し、**Name** パラメーターを使用して **DevicePath** のエントリの名前を指定します。
 
 ```powershell
 Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion -Name DevicePath
@@ -112,9 +112,9 @@ DevicePath   : C:\WINDOWS\inf
 このコマンドは、標準の Windows PowerShell のプロパティと **DevicePath** プロパティを返します。
 
 > [!NOTE]
-> `Get-ItemProperty`が**フィルター**、 **Include**、および**除外**パラメーター、プロパティ名でフィルター処理には使用できません。 これらのパラメーターは、項目のパスは、レジストリ エントリではないレジストリ キーを参照してください。 項目のプロパティのレジストリ エントリ。
+> `Get-ItemProperty` には **Filter**、**Include**、**Exclude** パラメーターが含まれていますが、これらはプロパティ名でフィルター処理するためには使えません。 これらのパラメーターではレジストリ キーを参照します。これは項目のパスであり、レジストリ エントリではありません。 項目のプロパティであるレジストリ エントリです。
 
-別のオプションとして、Reg.exe コマンド ライン ツールを使用することもできます。 Reg.exe のヘルプを表示するには、入力`reg.exe /?`コマンド プロンプトでします。 DevicePath エントリを検索するには、次のコマンドに示すように reg.exe を使用します。
+別のオプションとして、Reg.exe コマンド ライン ツールを使用することもできます。 reg.exe のヘルプを表示するには、コマンド プロンプトで `reg.exe /?` と入力します。 DevicePath エントリを検索するには、次のコマンドに示すように reg.exe を使用します。
 
 ```powershell
 reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion /v DevicePath
@@ -127,7 +127,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
     DevicePath  REG_EXPAND_SZ   %SystemRoot%\inf
 ```
 
-また、**WshShell COM** オブジェクトを使用していくつかのレジストリ エントリを検索することもできますが、この方法は、大きなバイナリ データや、名前に "\\" を含むレジストリ エントリでは利用できません。 プロパティ名を区切り記号 \\ と共に項目のパスに追加します。
+また、**WshShell** COM オブジェクトを使っていくつかのレジストリ エントリを検索することもできますが、大きなバイナリ データや、"\\" のような文字を含むレジストリ エントリ名を使う場合、この方法は機能しません。 プロパティ名を区切り記号 \\ と共に項目のパスに追加します。
 
 ```powershell
 (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DevicePath")
@@ -137,13 +137,13 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
 %SystemRoot%\inf
 ```
 
-### <a name="setting-a-single-registry-entry"></a>1 つのレジストリ エントリの設定
+## <a name="setting-a-single-registry-entry"></a>1 つのレジストリ エントリの設定
 
-レジストリ キーの特定のエントリを変更する場合は、いくつかの可能なアプローチのいずれかを使用できます。 この例の変更、**パス**エントリ`HKEY_CURRENT_USER\Environment`。 **パス**エントリは、実行可能ファイルを検索する場所を指定します。
+レジストリ キーの特定のエントリを変更する場合は、いくつかある可能なアプローチのいずれかを使用できます。 この例では、`HKEY_CURRENT_USER\Environment` 下の **Path** エントリを変更します。 **Path** エントリでは、実行可能ファイルを検索する場所を指定します。
 
-1. 現在の値を取得、**パス**を使用してエントリ`Get-ItemProperty`します。
-2. 分離することで、新しい値を追加、`;`します。
-3. 使用`Set-ItemProperty`指定したキー、エントリ名、およびレジストリ エントリを変更する値。
+1. `Get-ItemProperty` を使って **Path** エントリの現在の値を取得します。
+2. `;` で区切りながら新しい値を追加します。
+3. 指定したキー、エントリ名、およびレジストリ エントリを変更する値と共に `Set-ItemProperty` を使います。
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
@@ -152,13 +152,13 @@ Set-ItemProperty -Path HKCU:\Environment -Name Path -Value $newpath
 ```
 
 > [!NOTE]
-> `Set-ItemProperty`が**フィルター**、 **Include**、および**除外**パラメーター、プロパティ名でフィルター処理には使用できません。 これらのパラメーターはレジストリ キー (項目のパス) を参照し、レジストリ エントリ (項目のプロパティ) を参照するのではありません。
+> `Set-ItemProperty` には **Filter**、**Include**、**Exclude** パラメーターが含まれていますが、これらはプロパティ名でフィルター処理するためには使えません。 これらのパラメーターはレジストリ キー (項目のパス) を参照し、レジストリ エントリ (項目のプロパティ) を参照するのではありません。
 
 別のオプションとして、Reg.exe コマンド ライン ツールを使用することもできます。 reg.exe のヘルプを表示するには、コマンド プロンプトで「**reg.exe /?**」と入力します。
 at a command prompt.
 
-次の例の変更、**パス**上記の例で追加のパスを削除することで入力します。
-`Get-ItemProperty` 返された文字列を解析しなくてもすむように、現在の値を取得するために使用がまだ`reg query`します。 **SubString**と**LastIndexOf**に追加された最後のパスの取得に使用する方法、**パス**エントリ。
+次の例では、上記の例で追加したパスを削除することで **Path** エントリを変更します。
+`Get-ItemProperty` を引き続き使って現在の値を取得します。`reg query` から返された文字列を解析しなくても済むようにするためです。 **Path** エントリに追加された最後のパスを取得するために、**SubString** および **LastIndexOf** メソッドを使います。
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
@@ -170,9 +170,9 @@ reg add HKCU\Environment /v Path /d $newpath /f
 The operation completed successfully.
 ```
 
-### <a name="creating-new-registry-entries"></a>新しいレジストリ エントリの作成
+## <a name="creating-new-registry-entries"></a>新しいレジストリ エントリの作成
 
-"PowerShellPath"という名前の新しいエントリを追加する、 **CurrentVersion**キーを使用して`New-ItemProperty`キー、エントリ名、およびエントリの値へのパス。 この例では、Windows PowerShell 変数の値を取得しましたが`$PSHome`、Windows PowerShell のインストール ディレクトリへのパスを格納します。
+"PowerShellPath" という名前の新しいエントリを **CurrentVersion** キーに追加するには、キーのパス、エントリ名、エントリの値と共に `New-ItemProperty` を使用します。 この例では、Windows PowerShell の変数 `$PSHome` の値を取得します。これには、Windows PowerShell のインストール ディレクトリへのパスが格納されます。
 
 キーに新しいエントリを追加するには、次のコマンドを使用します。このコマンドは、新しいエントリに関する情報も返します。
 
@@ -208,11 +208,11 @@ New-ItemProperty -Name PowerShellPath -PropertyType String -Value $PSHome `
   -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-追加することで、既存のレジストリ エントリの値を上書きすることも、 **Force**パラメーターを`New-ItemProperty`コマンド。
+また、**Force** パラメーターを任意の `New-ItemProperty` コマンドに追加して、既存のレジストリ エントリの値を上書きすることもできます。
 
-### <a name="renaming-registry-entries"></a>レジストリ エントリの名前変更
+## <a name="renaming-registry-entries"></a>レジストリ エントリの名前変更
 
-名前を変更する、 **PowerShellPath**エントリを"PSHome"、" `Rename-ItemProperty`:
+**PowerShellPath** エントリの名前を "PSHome" に変更するには、`Rename-ItemProperty` を使用します。
 
 ```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome
@@ -224,9 +224,9 @@ Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name 
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru
 ```
 
-### <a name="deleting-registry-entries"></a>レジストリ エントリの削除
+## <a name="deleting-registry-entries"></a>レジストリ エントリの削除
 
-PSHome と PowerShellPath の両方のレジストリ エントリを削除するには使用`Remove-ItemProperty`:
+PSHome と PowerShellPath の両方のレジストリ エントリを削除するには、`Remove-ItemProperty` を使用します。
 
 ```powershell
 Remove-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PSHome

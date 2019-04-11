@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 の新機能
 description: PowerShell Core 6.1 でリリースされた新機能と変更
 ms.date: 09/13/2018
-ms.openlocfilehash: 1b41368bee92850e3593ebf4f5b8a469c4282d98
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55682320"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293318"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 の新機能
 
@@ -67,7 +67,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 | 時間 (秒)   | 12.170                 | 8.493               | 7.08                |
 | 高速化 (%) | なし                    | 30.2%               | 16.6%               |
 
-また、`Import-Csv` は Windows PowerShell からの後退の後で大幅に高速化されました。
+`Import-Csv` は Windows PowerShell からの回帰の後で大幅に高速化されてもいます。
 次の例では、26,616 行 6 列のテスト用 CSV を使用しています。
 
 ```powershell
@@ -210,7 +210,7 @@ PowerShell と Hyper-V の機能である [PowerShell Direct](/virtualization/hy
 `Enable-PSRemoting` では、2 つのリモート処理セッション構成が作成されるようになりました。
 
 - PowerShell のメジャー バージョン用のセッション構成。 たとえば、`PowerShell.6` のように指定します。 このエンドポイントは、"システム全体" の PowerShell 6 セッション構成として、すべてのマイナー バージョン更新で利用できます。
-- 1 つのバージョンに固有のセッション構成。たとえば、`PowerShell.6.1.0` などです。
+- 1 つのバージョンに固有のセッション構成。例: `PowerShell.6.1.0`
 
 この動作は、同じコンピューターに PowerShell 6 の複数のバージョンをインストールしてアクセスできるようにしたい場合に便利です。
 
@@ -305,12 +305,12 @@ PS /etc>
 ### <a name="update-help-as-non-admin"></a>非管理者としての `Update-Help`
 
 要望が多かったので、`Update-Help` は管理者でなくても実行できるようになりました。
-`Update-Help` は既定でユーザー スコープのフォルダーにヘルプを保存します。
+`Update-Help` は既定でユーザー スコープのフォルダーにヘルプを保存するようになりました。
 
 ### <a name="new-methodsproperties-on-pscustomobject"></a>`PSCustomObject` での新しいメソッド/プロパティ
 
 [@iSazonov](https://github.com/iSazonov) のおかげで、`PSCustomObject` に新しいメソッドとプロパティが追加されました。
-`PSCustomObject` には、他のオブジェクトと同じように `Count`/`Length` プロパティが含まれるようになっています。
+`PSCustomObject` には、他のオブジェクトと同じように `Count`/`Length` プロパティが含まれるようになりました。
 
 ```powershell
 $PSCustomObject = [pscustomobject]@{foo = 1}
@@ -422,7 +422,7 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 以前の PowerShell には、`more.com` をラップする `more` という名前の Windows 上の関数がありました。
 この関数は削除されました。
 
-また、`help` 関数は、Windows では `more.com` を使用し、Windows 以外のプラットフォームでは `$env:PAGER` によって指定されているシステムの既定のページャーを使用するように変更されました。
+また、`help` 関数が変更され、Windows では `more.com` を、Windows 以外のプラットフォームでは `$env:PAGER` で指定されたシステムの既定のページャーを使用するようになりました。
 
 ### <a name="cd-drivename-now-returns-users-to-the-current-working-directory-in-that-drive"></a>`cd DriveName:` では、そのドライブの現在の作業ディレクトリに戻るようになりました
 
@@ -489,8 +489,8 @@ Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumbe
 
 Windows では、MSI パッケージは次のパスにインストールされるようになりました。
 
-- `$env:ProgramFiles\PowerShell\6\`: 6.x の安定したインストールの場合
-- `$env:ProgramFiles\PowerShell\6-preview\`: 6.x のプレビュー インストールの場合
+- `$env:ProgramFiles\PowerShell\6\` 6.x の安定したインストールの場合
+- `$env:ProgramFiles\PowerShell\6-preview\` 6.x のプレビュー インストールの場合
 
 この変更により、Microsoft Update で PowerShell Core を更新/保守できるようになります。
 
@@ -516,3 +516,10 @@ Visual Basic は `Add-Type` ではほとんど使用されませんでした。 
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>`CommandTypes.Workflow` および `WorkflowInfoCleaned` の使用のクリーンアップ
 
 これらの変更について詳しくは、[PR #6708](https://github.com/PowerShell/PowerShell/pull/6708) をご覧ください。
+
+### <a name="group-object-now-sorts-the-groups"></a>Group-Object でのグループの並べ替え
+
+パフォーマンス向上の一環として、`Group-Object` でグループの並び替えられた一覧が返されるようになりました。
+順序に依存すべきではありませんが、最初のグループを必要としていた場合、この変更が破壊的になる可能性があります。 以前の動作に依存することの影響は低いため、このパフォーマンス向上には変更するだけの価値があると判断されました。
+
+この変更の詳細については、[問題 #7409](https://github.com/PowerShell/PowerShell/issues/7409) をご覧ください。

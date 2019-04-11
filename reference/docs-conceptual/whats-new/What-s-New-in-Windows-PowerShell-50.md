@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell 5.0 の新機能
-ms.openlocfilehash: a21e6af9f23ac8bb3ddf84dbfa67a67f3ff93b24
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: b2cb729948d4b53c5ea9a536dbeda04c7cb50997
+ms.sourcegitcommit: 9194e603ac242ae733839eb773e4af7360fdd044
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58055106"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59363532"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 の新機能
 
@@ -127,7 +127,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 - 新しいコマンドレット、New-TemporaryFile では、スクリプトの一部として一時ファイルを作成できます。 既定では、新しい一時ファイルは ```C:\Users\<user name>\AppData\Local\Temp``` に作成されます。
 - Out-File、Add-Content、および Set-Content の各コマンドレットに新しい -NoNewline パラメーターが追加されました。これを指定すると、出力後の改行が省略されます。
 - New-Guid コマンドレットは、.NET Framework Guid クラスを利用して GUID を生成します。これはスクリプトまたは DSC リソースを作成している場合に便利です。
-- ファイルのバージョン情報は、特にファイルにパッチが適用された場合に、解釈を間違えやすいデータであるため、新しいスクリプト プロパティ、FileVersionRaw と ProductVersionRaw が FileInfo オブジェクトに対して使用できます。 たとえば、次のコマンドを実行して、powershell.exe のこれらのプロパティ値を表示できます。ここで、$pid には Windows PowerShell の実行中のセッションのプロセス ID が含まれます。 ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- ファイルのバージョン情報は、特にファイルにパッチが適用された場合に、解釈を間違えやすいデータであるため、新しいスクリプト プロパティ、FileVersionRaw と ProductVersionRaw が FileInfo オブジェクトに対して使用できます。 たとえば、次のコマンドを実行して、PowerShell.exe のこれらのプロパティ値を表示できます。ここで、$pid には Windows PowerShell の実行中のセッションのプロセス ID が含まれます。  ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
 - 新しいコマンドレット、Enter-PSHostProcess と Exit-PSHostProcess を使用すると、Windows PowerShell コンソールで実行している現在のプロセスとは別のプロセスで Windows PowerShell スクリプトをデバッグできます。 Enter-PSHostProcess を実行して、特定のプロセス ID を入力するか、特定のプロセス ID にアタッチしてから、Get-Runspace を実行して、プロセス内のアクティブな実行空間を返します。 プロセス内でスクリプトのデバッグが完了したら、Exit-PSHostProcess を実行して、プロセスからデタッチします。
 - 新しい Wait-Debugger コマンドレットが [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。 Wait-Debugger を実行すると、スクリプトの次のステートメントを実行する前に、デバッガー内のスクリプトを停止することができます。
 - Windows PowerShell ワークフロー デバッガーで、コマンドまたはタブ補完をサポートするようになったため、入れ子になったワークフロー関数をデバッグすることができます。 **Ctrl+Break** キーを押すと、実行中のスクリプト、ローカルとリモートの両方のセッション、およびワークフロー スクリプトで、デバッガーに入れるようになりました。
@@ -210,7 +210,7 @@ Windows PowerShell 4.0 は、既定で Windows 8.1 と Windows Server 2012 R2 �
 
 Windows PowerShell 4.0 には、次に示す新機能があります。
 
-### <a name="new-features-in-windows-powershell"></a>Windows PowerShell の新機能
+### <a name="a-namenew-features-in-windows-powershell-1-new-features-in-windows-powershell"></a><a name="new-features-in-windows-powershell-1" />Windows PowerShell の新機能
 
 - **Windows PowerShell Desired State Configuration** (DSC) は、ソフトウェア サービスとそれらのサービスが実行される環境に対して構成データのデプロイと管理を実行できる Windows PowerShell 4.0 の新しい管理システムです。 DSC の詳細については、「[Windows PowerShell Desired State Configuration の概要](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0)」を参照してください。
 - **Save-Help** では、リモート コンピューターにインストールされているモジュールのヘルプを保存できるようになりました。 Save-Help を使用すると、インターネットに接続されたクライアント (ヘルプが必要なモジュールのすべてがインストールされているとは限らない) でヘルプのモジュールをダウンロードし、リモート共有フォルダーまたはインターネットへのアクセスがないリモート コンピューターにヘルプをコピーして保存できます。
@@ -230,7 +230,7 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 - 新しいコマンドレット **Get-FileHash** が追加されました。これは、指定したファイルのファイル ハッシュをいくつかの形式の中から 1 つ返します。
 - Windows PowerShell 4.0 では、モジュールが自らのマニフェストの中で **DefaultCommandPrefix** キーを使用している場合、またはユーザーが **Prefix** パラメーターを指定してモジュールをインポートした場合、モジュールの **ExportedCommands** プロパティにモジュール内のコマンドがプレフィックス付きで表示されます。 モジュールで修飾された構文 (ModuleName\\CommandName) を使用してコマンドを実行するときは、コマンド名にプレフィックスを含める必要があります。
 - **$PSVersionTable.PSVersion** の値が 4.0 に更新されました。
-- **Where()** 演算子の動作が変更されました。 `Collection.Where('property -match name')` は形式 `"Property -CompareOperator Value"` の文字列式を受け入れなくなりました。 ただし、**Where()** 演算子は、スクリプト ブロック形式の文字列式を受け入れます。これは、引き続きサポートされます。
+- **Where()** 演算子の動作が変更されました。 `Collection.Where('property -match name')` 形式 `"Property -CompareOperator Value"` の文字列式は受け入れられなくなりました。 ただし、**Where()** 演算子は、スクリプト ブロック形式の文字列式を受け入れます。これは、引き続きサポートされます。
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE) の新機能
 
@@ -353,7 +353,7 @@ Windows PowerShell は、共通言語ランタイム 4.0 を背景にして作�
 
 ### <a name="support-for-windows-preinstallation-environment"></a>Windows プレインストール環境のサポート
 
-Windows PowerShell 3.0 は、Windows 8 用の Windows プレインストール環境 (Windows PE) 4.0 に含まれるオプションのコンポーネントです。 Windows PE は、オペレーティング システムのないコンピューターを起動して Windows のインストール用に準備する、最小限のオペレーティング システムです。 Windows PE を使用すると、ハード ドライブのパーティションの作成やフォーマット、ディスク イメージのコンピューターへのコピー、ネットワーク共有からの Windows セットアップの開始などを実行できます。 Windows PowerShell 3.0 は、展開、診断、および復旧のシナリオを管理するために Windows PE で使用できます。
+Windows PowerShell 3.0 は、Windows 8 用の Windows プレインストール環境 (Windows PE) 4.0 に含まれるオプションのコンポーネントです。 Windows PE は、オペレーティング システムのないコンピューターを起動して Windows のインストール用に準備する、最小限のオペレーティング システムです。 Windows PE を使用すると、ハード ドライブのパーティションの作成やフォーマット、ディスク イメージのコンピューターへのコピー、ネットワーク共有からの Windows セットアップの開始などを実行できます。 Windows PowerShell 3.0 は、展開、診断、および復旧のシナリオを管理するために Windows PE で使用できます。
 
 ### <a name="disconnected-sessions"></a>切断されたセッション
 

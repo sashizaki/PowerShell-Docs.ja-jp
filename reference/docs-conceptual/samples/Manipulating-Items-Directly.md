@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: 項目を直接操作する
 ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 5f5b6cf4a777229029743b9d9967030effc58215
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55680428"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293267"
 ---
 # <a name="manipulating-items-directly"></a>項目を直接操作する
 
@@ -32,7 +32,7 @@ Cmdlet          Rename-Item                     Rename-Item [-Path] <String>...
 Cmdlet          Set-Item                        Set-Item [-Path] <String[]> ...
 ```
 
-### <a name="creating-new-items-new-item"></a>新しい項目の作成 (New-Item)
+## <a name="creating-new-items-new-item"></a>新しい項目の作成 (New-Item)
 
 ファイル システムで新しい項目を作成するには、**New-Item** コマンドレットを使用します。 項目のパスを指定した **Path** パラメーターと、"file" または "directory" という値を指定した **ItemType** パラメーターを組み込みます。
 
@@ -75,7 +75,7 @@ SKC  VC Name                           Property
 
 レジストリ パスを入力するときは、Windows PowerShell のドライブ名 HKLM: と HKCU: に、必ずコロン (**:**) を含めます。 コロンがないと、Windows PowerShell では、パス内のドライブ名を認識しません。
 
-### <a name="why-registry-values-are-not-items"></a>レジストリ値が項目ではない理由
+## <a name="why-registry-values-are-not-items"></a>レジストリ値が項目ではない理由
 
 **Get-ChildItem** コマンドレットを使用してレジストリ キーの項目を検索する場合は、実際のレジストリ エントリやその値は表示されません。
 
@@ -93,9 +93,9 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-レジストリ エントリを項目として処理することは便利ですが、レジストリ エントリへのパスを一意な方法で指定できません。 パスの表記法では、**Run** という名前のレジストリ サブキーと、**Run** サブキーの **(Default)** レジストリ エントリを区別しません。 さらに、レジストリ エントリの名前にバックスラッシュ (**\\**) を含めることができるので、レジストリ エントリが項目の場合、**Windows\\CurrentVersion\\Run** という名前のレジストリ エントリとそのパスに配置されているサブキーとを、パスの表記法を使用して区別することはできません。
+レジストリ エントリを項目として処理することは便利ですが、レジストリ エントリへのパスを一意な方法で指定できません。 パスの表記法では、**Run** という名前のレジストリ サブキーと、**Run** サブキーの **(Default)** レジストリ エントリを区別しません。 さらに、レジストリ エントリの名前にバックスラッシュ文字 (**\\**) を含めることができるので、レジストリ エントリが項目だった場合は、パスの表記法を使用して **Windows\\CurrentVersion\\Run** という名前のレジストリ エントリとそのパスに配置されているサブキーを区別することはできません。
 
-### <a name="renaming-existing-items-rename-item"></a>既存の項目の名前を変更する (Rename-Item)
+## <a name="renaming-existing-items-rename-item"></a>既存の項目の名前を変更する (Rename-Item)
 
 ファイルまたはフォルダーの名前を変更するには、**Rename-Item** コマンドレットを使用します。 次のコマンドは、**file1.txt** ファイルの名前を **fileOne.txt** に変更します。
 
@@ -112,7 +112,7 @@ At line:1 char:12
 + Rename-Item  <<<< -Path C:\temp\New.Directory\fileOne c:\temp\fileOne.txt
 ```
 
-### <a name="moving-items-move-item"></a>項目の移動 (Move-Item)
+## <a name="moving-items-move-item"></a>項目の移動 (Move-Item)
 
 ファイルまたはフォルダーを移動するには、**Move-Item** コマンドレットを使用します。
 
@@ -128,7 +128,7 @@ Mode                LastWriteTime     Length Name
 d----        2006-05-18  12:14 PM            New.Directory
 ```
 
-### <a name="copying-items-copy-item"></a>項目のコピー (Copy-Item)
+## <a name="copying-items-copy-item"></a>項目のコピー (Copy-Item)
 
 他のシェルでのコピー操作を使い慣れている場合は、Windows PowerShell の **Copy-Item** コマンドレットの動作が普通ではないように思える可能性があります。 1 つの場所から別の場所に項目をコピーする場合、Copy-Item は既定ではその内容をコピーしません。
 
@@ -167,7 +167,7 @@ Mode                LastWriteTime     Length Name
 -a---        2006-05-18  11:44 AM          0 file1
 ```
 
-### <a name="deleting-items-remove-item"></a>項目の削除 (Remove-Item)
+## <a name="deleting-items-remove-item"></a>項目の削除 (Remove-Item)
 
 ファイルおよびフォルダーを削除するには、**Remove-Item** コマンドレットを使用します。 **Remove-Item** など、元に戻せない重要な変更が可能な Windows PowerShell コマンドレットでは、コマンドを入力したときに確認のプロンプトを表示することがあります。 たとえば、**New.Directory** フォルダーを削除しようとする場合、フォルダーにファイルが含まれているため、コマンドの確認が求められます。
 
@@ -188,7 +188,7 @@ specified. If you continue, all children will be removed with the item. Are you
 Remove-Item C:\temp\New.Directory -Recurse
 ```
 
-### <a name="executing-items-invoke-item"></a>項目の実行 (Invoke-Item)
+## <a name="executing-items-invoke-item"></a>項目の実行 (Invoke-Item)
 
 Windows PowerShell は、**Invoke-Item** コマンドレットを使用して、ファイルまたはフォルダーの既定のアクションを実行します。 この既定のアクションは、レジストリの既定のアプリケーション ハンドラーによって決定されます。効果はファイル エクスプローラー内で項目をダブルクリックする場合と同じです。
 

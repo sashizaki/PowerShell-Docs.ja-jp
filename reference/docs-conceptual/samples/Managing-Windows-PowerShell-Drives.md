@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell ドライブの管理
 ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: cfc5418e9d2efb1a786817e1b941d75e22291742
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403205"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293250"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell ドライブの管理
 
@@ -82,7 +82,7 @@ Path
 HKLM:\SOFTWARE\Microsoft
 ```
 
-### <a name="adding-new-windows-powershell-drives-new-psdrive"></a>新しい Windows PowerShell ドライブの追加 (New-PSDrive)
+## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>新しい Windows PowerShell ドライブの追加 (New-PSDrive)
 
 **New-PSDrive** コマンドを使用して、独自の Windows PowerShell ドライブを追加できます。 **New-PSDrive** コマンドの構文を取得するには、**Get-Command** コマンドに **Syntax** パラメーターを指定して入力します。
 
@@ -146,7 +146,7 @@ cvkey:\
 
 New-PsDrive コマンドレットが、現在の Windows PowerShell セッションのみに新しいドライブを追加します。 Windows PowerShell ウィンドウを閉じると、新しいドライブは失われます。 Windows PowerShell ドライブを保存するには、Export-Console コマンドレットを使用して、現在の Windows PowerShell セッションをエクスポートし、PowerShell.exe **PSConsoleFile** パラメーターを使用してインポートします。 または、新しいドライブを Windows PowerShell プロファイルに追加します。
 
-### <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Windows PowerShell ドライブの削除 (Remove-PSDrive)
+## <a name="deleting-windows-powershell-drives-remove-psdrive"></a>Windows PowerShell ドライブの削除 (Remove-PSDrive)
 
 **Remove-PSDrive** コマンドレットを使用して、Windows PowerShell からドライブを削除できます。 **Remove-PSDrive** コマンドレットは簡単に使用できます。特定の Windows PowerShell ドライブを削除するには、Windows PowerShell ドライブの名前を指定するだけです。
 
@@ -156,7 +156,7 @@ New-PsDrive コマンドレットが、現在の Windows PowerShell セッショ
 Remove-PSDrive -Name Office
 ```
 
-削除する、 **cvkey:** Windows PowerShell ドライブをように、 **New-psdrive**トピックでは、次のコマンドを使用します。
+**cvkey:** を削除するには(**New-PSDrive** トピックでも使用した Windows PowerShell ドライブ)、次のコマンドを使用します。
 
 ```powershell
 Remove-PSDrive -Name cvkey
@@ -172,6 +172,6 @@ At line:1 char:15
 + remove-psdrive  <<<< -name office
 ```
 
-### <a name="adding-and-removing-drives-outside-windows-powershell"></a>Windows PowerShell の外部のドライブを追加および削除する
+## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Windows PowerShell の外部のドライブを追加および削除する
 
 Windows PowerShell は、マップされるネットワーク ドライブ、挿入される USB ドライブ、削除されるドライブ (Windows Script Host (WSH) スクリプトから **net use** コマンドまたは **WScript.NetworkMapNetworkDrive**、**RemoveNetworkDrive** メソッドを使用) など、Windows に追加または削除されるファイル システムのドライブを検出します。

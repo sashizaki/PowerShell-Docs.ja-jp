@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: ソフトウェア インストールの操作
 ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: bb97ad37c4295351c0fc2e3c6e1209c8dd673f06
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 9369e3c5ac670895cd4fbd3ebc895c50efd02051
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403464"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293233"
 ---
 # <a name="working-with-software-installations"></a>ソフトウェア インストールの操作
 
@@ -17,7 +17,7 @@ Windows インストーラーを使用するように設計されているアプ
 > [!NOTE]
 > コンピューターにアプリケーションのファイルをコピーすることによってインストールされているアプリケーションは、通常、ここで紹介されている手法を使用してで管理することはできません。 これらのアプリケーションは、「ファイルとフォルダーの操作」セクションで説明した手法を使用することで、ファイルやフォルダーとして管理できます。
 
-### <a name="listing-windows-installer-applications"></a>Windows インストーラー アプリケーションを一覧表示する
+## <a name="listing-windows-installer-applications"></a>Windows インストーラー アプリケーションを一覧表示する
 
 ローカルまたはリモート システムに Windows インストーラーを使用してインストールされているアプリケーションの一覧を表示するには、次の単純な WMI クエリを使用します。
 
@@ -85,7 +85,7 @@ Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
 
 これまでインストールに Windows インストーラーを使用したアプリケーションを検索する方法をいくつか確認しましたが、他のアプリケーションはまだ検討していません。 ほとんどの標準的なアプリケーションはアンインストーラーを Windows に登録するため、Windows レジストリでこれらを検索することで、ローカルで操作できます。
 
-### <a name="listing-all-uninstallable-applications"></a>アンインストール可能なすべてのアプリケーションを一覧表示する
+## <a name="listing-all-uninstallable-applications"></a>アンインストール可能なすべてのアプリケーションを一覧表示する
 
 システム上のすべてのアプリケーションを検索する確実な方法はありませんが、[プログラム追加と削除] ダイアログ ボックスに表示される一覧ですべてのプログラムを検索することができます。 [プログラム追加と削除] は、次のレジストリ キーでこれらのアプリケーションを検索します。
 
@@ -104,7 +104,7 @@ Uninstall  Registry      HKEY_LOCAL_MACHINE\SOFTWARE\Micr...
 > [!NOTE]
 > **HKLM:** ドライブは、**HKEY_LOCAL_MACHINE** のルートにマップされているので、このドライブを Uninstall キーのパスに使用しました。 **HKLM:** の代わりに、**HKLM** または **HKEY_LOCAL_MACHINE** のいずれかを使用して、レジストリのパスを指定できます。 既存のレジストリ ドライブを使用する利点は、タブ補完を利用してキーの名前を入力できるため、ユーザーが入力する必要がないことです。
 
-これで、"Uninstall" という名前のドライブができ、これを利用することでアプリケーションのインストールの検索が迅速かつ便利になります。 Uninstall のレジストリ キーの数をカウントすることによって、インストールされているアプリケーションの数がわかります。Windows PowerShell ドライブ
+これで、"Uninstall" という名前のドライブができ、これを利用することでアプリケーションのインストールの検索が迅速かつ便利になります。 Uninstall のレジストリ キーの数をカウントすることによって、インストールされているアプリケーションの数がわかります。Windows PowerShell ドライブ:
 
 ```
 PS> (Get-ChildItem -Path Uninstall:).Count
@@ -142,7 +142,7 @@ SKC  VC Name                           Property
   0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
 ```
 
-### <a name="installing-applications"></a>アプリケーションのインストール
+## <a name="installing-applications"></a>アプリケーションのインストール
 
 **Win32_Product** クラスを使用して、リモートまたはローカルで、Windows インストーラー パッケージをインストールできます。
 
@@ -157,7 +157,7 @@ SKC  VC Name                           Property
 
 Windows インストーラー テクノロジを使用しないアプリケーションは、展開の自動化に利用できるアプリケーション固有の方法があります。 展開を自動化するための方法があるかどうかを確認するには、アプリケーションのマニュアルを参照するか、アプリケーション ベンダーのサポート システムを参照してください。 場合によっては、アプリケーション ベンダーが特にインストールの自動化に対応するようアプリケーションを設計していなくても、インストーラー ソフトウェアの製造元が自動化のためのテクニックをいくつか持っていることがあります。
 
-### <a name="removing-applications"></a>アプリケーションの削除
+## <a name="removing-applications"></a>アプリケーションの削除
 
 Windows PowerShell を使用した Windows インストーラー パッケージの削除は、パッケージのインストールとほとんど同じ方法で機能します。 名前に基づいてアンインストールするパッケージを選択する例を以下に示します。場合によっては、**IdentifyingNumber** を使用してフィルター処理した方が簡単になることがあります。
 
@@ -179,7 +179,7 @@ Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('Displ
 
 ただし、これらの文字列は、Windows PowerShell プロンプトから直接使用するには、いくつか変更が必要な場合があります。
 
-### <a name="upgrading-windows-installer-applications"></a>Windows インストーラー アプリケーションのアップグレード
+## <a name="upgrading-windows-installer-applications"></a>Windows インストーラー アプリケーションのアップグレード
 
 アプリケーションをアップグレードするには、アプリケーションの名前、およびアプリケーションのアップグレード パッケージのパスを認識している必要があります。 その情報があれば、1 つの Windows PowerShell コマンドを使用してアプリケーションをアップグレードすることができます。
 
