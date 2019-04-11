@@ -2,43 +2,57 @@
 title: Windows への PowerShell Core のインストール
 description: Windows への PowerShell Core のインストールに関する情報
 ms.date: 08/06/2018
-ms.openlocfilehash: 450a38a1ef2e2890059094774fcc3f2ad4fcda6e
-ms.sourcegitcommit: 8dd4394cf867005a8b9ef0bb74b744c964fbc332
+ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
+ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2019
-ms.locfileid: "58748951"
+ms.lasthandoff: 04/09/2019
+ms.locfileid: "59293012"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Windows への PowerShell Core のインストール
 
-## <a name="msi"></a>MSI
+Windows に PowerShell Core をインストールする方法は複数あります。
 
-PowerShell を Windows クライアントまたは Windows Server にインストールするには (Windows 7 SP1、Server 2008 R2 以降で機能)、MSI パッケージを弊社の GitHub [リリース][] ページからダウンロードします。  インストールするリリースの **[資産]** セクションまで下へスクロールします。  [資産] セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
+## <a name="prerequisites"></a>前提条件
 
-MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi` のようになります。
+WSMan を介して PowerShell のリモート処理を有効にするには、次の前提条件を満たす必要があります。
+
+- Windows 10 以前のバージョンの Windows に [ユニバーサル C ランタイム](https://www.microsoft.com/download/details.aspx?id=50410)をインストールします。 これは、直接ダウンロードすることも、Windows Update 経由で入手することもできます。 (オプション パッケージも含め) 修正プログラムはすべて適用されており、サポート対象のシステムには、これが既にインストールされています。
+- Windows Management Framework (WMF) 4.0 以降を Windows 7 と Windows Server 2008 R2 にインストールします。
+
+## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />MSI パッケージのインストール
+
+PowerShell を Windows クライアントまたは Windows Server にインストールするには (Windows 7 SP1、Server 2008 R2 以降で機能)、MSI パッケージを弊社の GitHub [releases][] ページからダウンロードします。 インストールするリリースの **[資産]** セクションまで下へスクロールします。 [資産] セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
+
+MSI ファイルは次のようになります - `PowerShell-<version>-win-<os-arch>.msi`
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 ダウンロードしたら、インストーラーをダブルクリックし、プロンプトの指示に従います。
 
-インストールすると [スタート] メニューにショートカットが表示されます。
+インストーラーにより、Windows の [スタート] メニューにショートカットが作成されます。
 
-- パッケージは、既定で `$env:ProgramFiles\PowerShell\<version>` にインストールされます。
-- PowerShell は、スタート メニューまたは  `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` から起動できます。
+- パッケージは既定で次にインストールされます: `$env:ProgramFiles\PowerShell\<version>`
+- PowerShell は次を使って起動できます: [スタート] メニュー、または `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
 
-### <a name="prerequisites"></a>前提条件
+### <a name="administrative-install-from-the-command-line"></a>コマンド ラインからの管理者インストール
 
-WSMan を介して PowerShell のリモート処理を有効にするには、次の前提条件を満たす必要があります。
+MSI パッケージは、コマンド ラインからインストールできます。 これにより、管理者はユーザーの介入なしでパッケージを展開できます。 PowerShell 用の MSI パッケージには、インストールのオプションを制御するための次のプロパティが含まれます。
 
-- Windows 10 以前のバージョンの Windows に [ユニバーサル C ランタイム](https://www.microsoft.com/download/details.aspx?id=50410)をインストールします。
-  これは、直接ダウンロードすることも、Windows Update 経由で入手することもできます。
-  (オプション パッケージも含め) 修正プログラムはすべて適用されており、サポート対象のシステムには、これが既にインストールされています。
-- Windows Management Framework (WMF) 4.0 以降を Windows 7 と Windows Server 2008 R2 にインストールします。
+- **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - このプロパティでは、エクスプローラーのコンテキスト メニューに **[Open PowerShell]\(PowerShell を開く\)** 項目を追加するためのオプションを制御します。
+- **ENABLE_PSREMOTING** - このプロパティでは、インストール中に PowerShell リモート処理を有効にするためのオプションを制御します。
+- **REGISTER_MANIFEST** - このプロパティでは、Windows イベント ログのマニフェストを登録するためのオプションを制御します。
 
-## <a name="zip"></a>ZIP
+すべてのインストール オプションを有効にして PowerShell Core をサイレント インストールする方法を、次の例に示します。
 
-PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。
-なお、ZIP アーカイブを使用する場合、MSI パッケージのような前提条件確認は行われません。
-したがって、Windows 10 以前のバージョンで WSMan 経由でのリモート処理が正常に動作するには、[前提条件](#prerequisites)が満たされていることを確認する必要があります。
+```powershell
+msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+```
+
+Msiexec.exe 用のコマンド ライン オプションの完全な一覧については、[コマンド ライン オプション](/windows/desktop/Msi/command-line-options)に関するページをご覧ください。
+
+## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />ZIP パッケージのインストール
+
+PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 なお、ZIP アーカイブを使用する場合、MSI パッケージのような前提条件確認は行われません。 WSMan 経由でのリモート処理を正常に動作させるために、[前提条件](#prerequisites)を満たしていることを確認します。
 
 ## <a name="deploying-on-windows-iot"></a>Windows IoT への展開
 
@@ -132,28 +146,12 @@ Nano Server は "ヘッドレス" OS です。 コア バイナリを展開す�
 
 - WSMan を使用してリモート処理を行う場合、「[別のインスタンスのテクニック](../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md#executed-by-another-instance-of-powershell-on-behalf-of-the-instance-that-it-will-register)」の、リモート エンドポイントを作成する手順に従います。
 
-## <a name="instructions-to-create-a-remoting-endpoint"></a>リモート エンドポイントの作成手順
+## <a name="how-to-create-a-remoting-endpoint"></a>リモート エンドポイントの作成方法
 
-PowerShell Core は、WSMan と SSH の両方で PowerShell Remoting Protocol (PSRP) をサポートしています。
-詳細については、次のドキュメントをご覧ください。
+PowerShell Core は、WSMan と SSH の両方で PowerShell Remoting Protocol (PSRP) をサポートしています。 詳細については、次のドキュメントをご覧ください。
 
 - [PowerShell Core での SSH リモート処理][ssh-remoting]
 - [PowerShell Core での WSMan リモート処理][wsman-remoting]
 
-## <a name="artifact-installation-instructions"></a>成果物のインストール手順
-
-アーカイブは CoreCLR ビットを使用して各 CI ビルドに [AppVeyor][] で公開します。
-
-CoreCLR のアーティファクトから PowerShell Core をインストールするには:
-
-1. 特定のビルドの **[アーティファクト]** タブから、zip パッケージをダウンロードします。
-2. [エクスプローラー] で右クリックし、[プロパティ] をクリックし、[ブロックの解除] ボックスをオンにして ZIP ファイルのブロックを解除します。
-3. zip ファイルを `bin` ディレクトリに抽出します
-4. `./bin/pwsh.exe`
-
 <!-- [download-center]: TODO -->
-
-[リリース]: https://github.com/PowerShell/PowerShell/releases
-[ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md
-[wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md
-[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+[releases]: https://github.com/PowerShell/PowerShell/releases [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
