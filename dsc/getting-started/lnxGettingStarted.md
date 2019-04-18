@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 Desired State Configuration (DSC) の概要
-ms.openlocfilehash: 69f087434455aae8e97ea07c79c52e493412d134
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: a18b226d4b2d8b8e1ba8b4168ec6ad8f73c73c42
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402501"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506837"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux 用 Desired State Configuration (DSC) の概要
 
@@ -41,7 +41,7 @@ Linux 用 DSC をインストールする前に、[Open Management Infrastructur
 
 ### <a name="installing-omi"></a>OMI のインストール
 
-Linux 用 Desired State Configuration には、Open Management Infrastructure (OMI) CIM サーバーの 1.0.8.1 以降のバージョンが必要です。 OMI は、Open Group からダウンロードできます。[Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi)します。
+Linux 用 Desired State Configuration には、Open Management Infrastructure (OMI) CIM サーバーの 1.0.8.1 以降のバージョンが必要です。 OMI は、Open Group からダウンロードできます:[Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi)。
 
 OMI をインストールするには、Linux システムに適したパッケージ (.rpm または .deb)、OpenSSL バージョンに適したパッケージ (ssl_098 または ssl_100)、およびアーキテクチャに適したパッケージ (x86/x64) をインストールします。 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server、および Oracle Linux には、RPM パッケージが適しています。 Debian GNU/Linux および Ubuntu Server には、DEB パッケージが適しています。 OpenSSL 0.9.8 がインストールされているコンピューターには ssl_098 パッケージが適し、OpenSSL 1.0 がインストールされているコンピューターには ssl_100 パッケージが適しています。
 
@@ -115,25 +115,25 @@ Linux コンピューターの構成を作成するには、Windows コンピュ
 
 ```powershell
 $Node = "ostc-dsc-01"
-$Credential = Get-Credential -UserName:"root" -Message:"Enter Password:"
+$Credential = Get-Credential -UserName "root" -Message "Enter Password:"
 
 #Ignore SSL certificate validation
-#$opt = New-CimSessionOption -UseSsl:$true -SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true
+#$opt = New-CimSessionOption -UseSsl $true -SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true
 
 #Options for a trusted SSL certificate
-$opt = New-CimSessionOption -UseSsl:$true
-$Sess=New-CimSession -Credential:$credential -ComputerName:$Node -Port:5986 -Authentication:basic -SessionOption:$opt -OperationTimeoutSec:90
+$opt = New-CimSessionOption -UseSsl $true
+$Sess=New-CimSession -Credential $credential -ComputerName $Node -Port 5986 -Authentication basic -SessionOption $opt -OperationTimeoutSec 90
 ```
 
 > [!NOTE]
 > "プッシュ" モードの場合、ユーザーの資格情報は Linux コンピューターの root ユーザーである必要があります。
 > Linux 用 DSC では SSL/TLS 接続のみがサポートされているため、`New-CimSession` を使用するときは、–UseSSL パラメーターを $true に設定する必要があります。
 > OMI (DSC 用) で使用される SSL 証明書は、pemfile プロパティと keyfile プロパティを使用して `/opt/omi/etc/omiserver.conf` ファイルに指定します。
-> [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) コマンドレットを実行している Windows コンピューターでこの証明書が信頼されていない場合は、`-SkipCACheck:$true -SkipCNCheck:$true -SkipRevocationCheck:$true` の各 CIMSession オプションを使用して証明書の検証を無視することを選択できます。
+> [New-CimSession](/powershell/module/CimCmdlets/New-CimSession) コマンドレットを実行している Windows コンピューターでこの証明書が信頼されていない場合は、次の各 CIMSession オプションを使用して証明書の検証を無視することができます: `-SkipCACheck $true -SkipCNCheck $true -SkipRevocationCheck $true`
 
 Linux ノードに DSC 構成をプッシュするには、次のコマンドを実行します。
 
-`Start-DscConfiguration -Path:"C:\temp" -CimSession:$Sess -Wait -Verbose`
+`Start-DscConfiguration -Path:"C:\temp" -CimSession $Sess -Wait -Verbose`
 
 ### <a name="distribute-the-configuration-with-a-pull-server"></a>プル サーバーを使用した構成の配布
 
