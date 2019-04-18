@@ -2,31 +2,31 @@
 ms.date: 12/12/2018
 keywords: dsc, powershell, 構成, サービス, セットアップ
 title: 構成の作成、コンパイル、適用
-ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
+ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795421"
+ms.lasthandoff: 04/11/2019
+ms.locfileid: "59506820"
 ---
-> <span data-ttu-id="62866-103">適用先:Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="62866-103">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="0a335-103">適用先:Windows PowerShell 4.0、Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="0a335-103">Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0</span></span>
 
-# <a name="write-compile-and-apply-a-configuration"></a><span data-ttu-id="62866-104">構成の作成、コンパイル、適用</span><span class="sxs-lookup"><span data-stu-id="62866-104">Write, Compile, and Apply a Configuration</span></span>
+# <a name="write-compile-and-apply-a-configuration"></a><span data-ttu-id="0a335-104">構成の作成、コンパイル、適用</span><span class="sxs-lookup"><span data-stu-id="0a335-104">Write, Compile, and Apply a Configuration</span></span>
 
-<span data-ttu-id="62866-105">この演習では、Desired State Configuration (DSC) の構成の作成と適用について最初から最後まで説明します。</span><span class="sxs-lookup"><span data-stu-id="62866-105">This exercise walks through creating and applying a Desired State Configuration (DSC) configuration from start to finish.</span></span>
-<span data-ttu-id="62866-106">次の例では、非常に単純な構成を作成して適用する方法について学習します。</span><span class="sxs-lookup"><span data-stu-id="62866-106">In the following example, you will learn how to write and apply a very simple Configuration.</span></span> <span data-ttu-id="62866-107">この構成により、"HelloWorld.txt" ファイルがローカル コンピューターに存在していることが確保されます。</span><span class="sxs-lookup"><span data-stu-id="62866-107">The Configuration will ensure a "HelloWorld.txt" file exists on your local machine.</span></span> <span data-ttu-id="62866-108">ファイルを削除する場合は、次に更新されるときに DSC によってファイルが再作成されます。</span><span class="sxs-lookup"><span data-stu-id="62866-108">If you delete the file, DSC will recreate it the next time it updates.</span></span>
+<span data-ttu-id="0a335-105">この演習では、Desired State Configuration (DSC) の構成の作成と適用について最初から最後まで説明します。</span><span class="sxs-lookup"><span data-stu-id="0a335-105">This exercise walks through creating and applying a Desired State Configuration (DSC) configuration from start to finish.</span></span>
+<span data-ttu-id="0a335-106">次の例では、非常に単純な構成を作成して適用する方法について学習します。</span><span class="sxs-lookup"><span data-stu-id="0a335-106">In the following example, you will learn how to write and apply a very simple Configuration.</span></span> <span data-ttu-id="0a335-107">この構成により、"HelloWorld.txt" ファイルがローカル コンピューターに存在していることが確保されます。</span><span class="sxs-lookup"><span data-stu-id="0a335-107">The Configuration will ensure a "HelloWorld.txt" file exists on your local machine.</span></span> <span data-ttu-id="0a335-108">ファイルを削除する場合は、次に更新されるときに DSC によってファイルが再作成されます。</span><span class="sxs-lookup"><span data-stu-id="0a335-108">If you delete the file, DSC will recreate it the next time it updates.</span></span>
 
-<span data-ttu-id="62866-109">DSC の概要としくみついては、[開発者向けの Desired State Configuration の概要](../overview/overview.md)に関するページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="62866-109">For an overview of what DSC is and how it works, see [Desired State Configuration Overview for Developers](../overview/overview.md).</span></span>
+<span data-ttu-id="0a335-109">DSC の概要としくみついては、[開発者向けの Desired State Configuration の概要](../overview/overview.md)に関するページをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="0a335-109">For an overview of what DSC is and how it works, see [Desired State Configuration Overview for Developers](../overview/overview.md).</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="62866-110">要件</span><span class="sxs-lookup"><span data-stu-id="62866-110">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="0a335-110">要件</span><span class="sxs-lookup"><span data-stu-id="0a335-110">Requirements</span></span>
 
-<span data-ttu-id="62866-111">このサンプルを実行するには、PowerShell 4.0 以降が動作しているコンピューターが必要です。</span><span class="sxs-lookup"><span data-stu-id="62866-111">To run this example, you will need a computer running PowerShell 4.0 or later.</span></span>
+<span data-ttu-id="0a335-111">このサンプルを実行するには、PowerShell 4.0 以降が動作しているコンピューターが必要です。</span><span class="sxs-lookup"><span data-stu-id="0a335-111">To run this example, you will need a computer running PowerShell 4.0 or later.</span></span>
 
-## <a name="write-the-configuration"></a><span data-ttu-id="62866-112">構成を記述する</span><span class="sxs-lookup"><span data-stu-id="62866-112">Write the configuration</span></span>
+## <a name="write-the-configuration"></a><span data-ttu-id="0a335-112">構成を記述する</span><span class="sxs-lookup"><span data-stu-id="0a335-112">Write the configuration</span></span>
 
-<span data-ttu-id="62866-113">DSC [構成](configurations.md)は、1 つ以上のターゲット コンピューター (ノード) を構成する方法を定義する特別な PowerShell 関数です。</span><span class="sxs-lookup"><span data-stu-id="62866-113">A DSC [Configuration](configurations.md) is a special PowerShell function that defines how you want to configure one or more target computers (Nodes).</span></span>
+<span data-ttu-id="0a335-113">DSC [構成](configurations.md)は、1 つ以上のターゲット コンピューター (ノード) を構成する方法を定義する特別な PowerShell 関数です。</span><span class="sxs-lookup"><span data-stu-id="0a335-113">A DSC [Configuration](configurations.md) is a special PowerShell function that defines how you want to configure one or more target computers (Nodes).</span></span>
 
-<span data-ttu-id="62866-114">PowerShell ISE、またはその他の PowerShell エディターで、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="62866-114">In the PowerShell ISE, or other PowerShell editor, type the following:</span></span>
+<span data-ttu-id="0a335-114">PowerShell ISE、またはその他の PowerShell エディターで、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="0a335-114">In the PowerShell ISE, or other PowerShell editor, type the following:</span></span>
 
 ```powershell
 Configuration HelloWorld {
@@ -47,30 +47,29 @@ Configuration HelloWorld {
 }
 ```
 
-<span data-ttu-id="62866-115">ファイルを "HelloWorld.ps1" という名前で保存します。</span><span class="sxs-lookup"><span data-stu-id="62866-115">Save the file as "HelloWorld.ps1".</span></span>
+<span data-ttu-id="0a335-115">ファイルを "HelloWorld.ps1" という名前で保存します。</span><span class="sxs-lookup"><span data-stu-id="0a335-115">Save the file as "HelloWorld.ps1".</span></span>
 
-<span data-ttu-id="62866-116">構成を定義するのは、関数の定義と似ています。</span><span class="sxs-lookup"><span data-stu-id="62866-116">Defining a Configuration is like defining a Function.</span></span> <span data-ttu-id="62866-117">`localhost` 場合、**ノード**ブロックは構成するターゲット ノードを指定します。</span><span class="sxs-lookup"><span data-stu-id="62866-117">The **Node** block specifies the target node to be configured, in this case `localhost`.</span></span>
+<span data-ttu-id="0a335-116">構成を定義するのは、関数の定義と似ています。</span><span class="sxs-lookup"><span data-stu-id="0a335-116">Defining a Configuration is like defining a Function.</span></span> <span data-ttu-id="0a335-117">`localhost` 場合、**ノード**ブロックは構成するターゲット ノードを指定します。</span><span class="sxs-lookup"><span data-stu-id="0a335-117">The **Node** block specifies the target node to be configured, in this case `localhost`.</span></span>
 
-<span data-ttu-id="62866-118">構成では、1 つの[リソース](../resources/resources.md) (`File` リソース) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="62866-118">The configuration calls one [resources](../resources/resources.md), the `File` resource.</span></span> <span data-ttu-id="62866-119">リソースは、ターゲット ノードが構成によって定義された状態になっているか確認します。</span><span class="sxs-lookup"><span data-stu-id="62866-119">Resources do the work of ensuring that the target node is in the state defined by the configuration.</span></span>
+<span data-ttu-id="0a335-118">構成では、1 つの[リソース](../resources/resources.md) (`File` リソース) を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="0a335-118">The configuration calls one [resources](../resources/resources.md), the `File` resource.</span></span> <span data-ttu-id="0a335-119">リソースは、ターゲット ノードが構成によって定義された状態になっているか確認します。</span><span class="sxs-lookup"><span data-stu-id="0a335-119">Resources do the work of ensuring that the target node is in the state defined by the configuration.</span></span>
 
-## <a name="compile-the-configuration"></a><span data-ttu-id="62866-120">構成をコンパイルする</span><span class="sxs-lookup"><span data-stu-id="62866-120">Compile the configuration</span></span>
+## <a name="compile-the-configuration"></a><span data-ttu-id="0a335-120">構成をコンパイルする</span><span class="sxs-lookup"><span data-stu-id="0a335-120">Compile the configuration</span></span>
 
-<span data-ttu-id="62866-121">DSC 構成をノードに適用するには、最初にコンパイルを行い、MOF ファイルを出力する必要があります。</span><span class="sxs-lookup"><span data-stu-id="62866-121">For a DSC configuration to be applied to a node, it must first be compiled into a MOF file.</span></span>
-<span data-ttu-id="62866-122">関数のように構成を実行すると、`Node` ブロックで定義されたノードごとに、".mof" ファイルを 1 つコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="62866-122">Running the configuration, like a function, will compile one ".mof" file for every Node defined by the `Node` block.</span></span>
-<span data-ttu-id="62866-123">構成を実行するために、"HelloWorld.ps1" スクリプトを現在の範囲に*ドット ソース*で使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="62866-123">In order to run the configuration, you need to *dot source* your "HelloWorld.ps1" script into the current scope.</span></span>
-<span data-ttu-id="62866-124">詳細については、[スクリプト](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="62866-124">For more information, see [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).</span></span>
+<span data-ttu-id="0a335-121">DSC 構成をノードに適用するには、最初にコンパイルを行い、MOF ファイルを出力する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0a335-121">For a DSC configuration to be applied to a node, it must first be compiled into a MOF file.</span></span>
+<span data-ttu-id="0a335-122">関数のように構成を実行すると、`Node` ブロックで定義されたノードごとに、".mof" ファイルを 1 つコンパイルします。</span><span class="sxs-lookup"><span data-stu-id="0a335-122">Running the configuration, like a function, will compile one ".mof" file for every Node defined by the `Node` block.</span></span>
+<span data-ttu-id="0a335-123">構成を実行するために、"HelloWorld.ps1" スクリプトを現在の範囲に*ドット ソース*で使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="0a335-123">In order to run the configuration, you need to *dot source* your "HelloWorld.ps1" script into the current scope.</span></span>
+<span data-ttu-id="0a335-124">詳細については、[スクリプト](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)に関するページを参照してください。</span><span class="sxs-lookup"><span data-stu-id="0a335-124">For more information, see [about_Scripts](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing).</span></span>
 
-<span data-ttu-id="62866-125">`. ` (ドット、スペース) の後に保存した場所のパスを入力することで、"HelloWorld.ps1" スクリプトを<!-- markdownlint-disable MD038 -->
-*ドット ソース*で使用します。</span><span class="sxs-lookup"><span data-stu-id="62866-125"><!-- markdownlint-disable MD038 -->
-*Dot source* your "HelloWorld.ps1" script by typing in the path where you stored it, after the `. ` (dot, space).</span></span> <span data-ttu-id="62866-126">その後、関数のように呼び出すことで、構成を実行することができます。</span><span class="sxs-lookup"><span data-stu-id="62866-126">You may then, run your configuration by calling it like a Function.</span></span>
+<!-- markdownlint-disable MD038 -->
+<span data-ttu-id="0a335-125">`. ` (ドット、スペース) の後に保存した場所のパスを入力することで、"HelloWorld.ps1" スクリプトを "*ドット ソース*" で使用します。</span><span class="sxs-lookup"><span data-stu-id="0a335-125">*Dot source* your "HelloWorld.ps1" script by typing in the path where you stored it, after the `. ` (dot, space).</span></span> <span data-ttu-id="0a335-126">その後、関数のように呼び出すことで、構成を実行することができます。</span><span class="sxs-lookup"><span data-stu-id="0a335-126">You may then, run your configuration by calling it like a Function.</span></span>
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
-. C:\Scripts\WebsiteTest.ps1
-HelloWolrd
+. C:\Scripts\HelloWorld.ps1
+HelloWorld
 ```
 
-<span data-ttu-id="62866-127">これにより、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="62866-127">This generates the following output:</span></span>
+<span data-ttu-id="0a335-127">これにより、次の出力が生成されます。</span><span class="sxs-lookup"><span data-stu-id="0a335-127">This generates the following output:</span></span>
 
 ```output
 Directory: C:\Scripts\HelloWorld
@@ -81,29 +80,29 @@ Mode                LastWriteTime         Length Name
 -a----        3/13/2017   5:20 PM           2746 localhost.mof
 ```
 
-## <a name="apply-the-configuration"></a><span data-ttu-id="62866-128">構成を適用する</span><span class="sxs-lookup"><span data-stu-id="62866-128">Apply the configuration</span></span>
+## <a name="apply-the-configuration"></a><span data-ttu-id="0a335-128">構成を適用する</span><span class="sxs-lookup"><span data-stu-id="0a335-128">Apply the configuration</span></span>
 
-<span data-ttu-id="62866-129">コンパイル済みの MOF があるため、[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを呼び出すことで、ターゲット ノード (今回の場合はローカル コンピューター) に構成を適用できます。</span><span class="sxs-lookup"><span data-stu-id="62866-129">Now that you have the compiled MOF, you can apply the configuration to the target node (in this case, the local computer) by calling the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.</span></span>
+<span data-ttu-id="0a335-129">コンパイル済みの MOF があるため、[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを呼び出すことで、ターゲット ノード (今回の場合はローカル コンピューター) に構成を適用できます。</span><span class="sxs-lookup"><span data-stu-id="0a335-129">Now that you have the compiled MOF, you can apply the configuration to the target node (in this case, the local computer) by calling the [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) cmdlet.</span></span>
 
-<span data-ttu-id="62866-130">`Start-DscConfiguration` コマンドレットから[ローカル構成マネージャー (LCM)](../managing-nodes/metaConfig.md) (DSC のエンジン) に対して構成の適用を指示します。</span><span class="sxs-lookup"><span data-stu-id="62866-130">The `Start-DscConfiguration` cmdlet tells the [Local Configuration Manager (LCM)](../managing-nodes/metaConfig.md), the engine of DSC, to apply the configuration.</span></span>
-<span data-ttu-id="62866-131">LCM はDSC リソースを呼び出し、構成を適用します。</span><span class="sxs-lookup"><span data-stu-id="62866-131">The LCM does the work of calling the DSC resources to apply the configuration.</span></span>
+<span data-ttu-id="0a335-130">`Start-DscConfiguration` コマンドレットから[ローカル構成マネージャー (LCM)](../managing-nodes/metaConfig.md) (DSC のエンジン) に対して構成の適用を指示します。</span><span class="sxs-lookup"><span data-stu-id="0a335-130">The `Start-DscConfiguration` cmdlet tells the [Local Configuration Manager (LCM)](../managing-nodes/metaConfig.md), the engine of DSC, to apply the configuration.</span></span>
+<span data-ttu-id="0a335-131">LCM はDSC リソースを呼び出し、構成を適用します。</span><span class="sxs-lookup"><span data-stu-id="0a335-131">The LCM does the work of calling the DSC resources to apply the configuration.</span></span>
 
-<span data-ttu-id="62866-132">以下のコードを使用して、`Start-DSCConfiguration` コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="62866-132">Use the code below to execute the `Start-DSCConfiguration` cmdlet.</span></span> <span data-ttu-id="62866-133">"localhost.mof" が保存されているディレクトリ パスを `-Path` パラメーターに指定します。</span><span class="sxs-lookup"><span data-stu-id="62866-133">Specify the directory path where your "localhost.mof" is stored to the `-Path` parameter.</span></span> <span data-ttu-id="62866-134">`Start-DSCConfiguration` コマンドレットは、任意の "\<computername\>.mof" ファイルに対して指定されたディレクトリが対象になります。</span><span class="sxs-lookup"><span data-stu-id="62866-134">The `Start-DSCConfiguration` cmdlet looks through the directory specified for any "\<computername\>.mof" files.</span></span> <span data-ttu-id="62866-135">`Start-DSCConfiguration` コマンドレットでは、見つかった各 ".mof" ファイルを、ファイル名 ("localhost"、"server01"、"dc-02" など) で指定されたコンピューター名に適用しようとします。</span><span class="sxs-lookup"><span data-stu-id="62866-135">The `Start-DSCConfiguration` cmdlet attempts to apply each ".mof" file it finds to the computername specified by the filename ("localhost", "server01", "dc-02", etc.).</span></span>
+<span data-ttu-id="0a335-132">以下のコードを使用して、`Start-DSCConfiguration` コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="0a335-132">Use the code below to execute the `Start-DSCConfiguration` cmdlet.</span></span> <span data-ttu-id="0a335-133">"localhost.mof" が保存されているディレクトリ パスを `-Path` パラメーターに指定します。</span><span class="sxs-lookup"><span data-stu-id="0a335-133">Specify the directory path where your "localhost.mof" is stored to the `-Path` parameter.</span></span> <span data-ttu-id="0a335-134">`Start-DSCConfiguration` コマンドレットは、任意の "\<computername\>.mof" ファイルに対して指定されたディレクトリが対象になります。</span><span class="sxs-lookup"><span data-stu-id="0a335-134">The `Start-DSCConfiguration` cmdlet looks through the directory specified for any "\<computername\>.mof" files.</span></span> <span data-ttu-id="0a335-135">`Start-DSCConfiguration` コマンドレットでは、見つかった各 ".mof" ファイルを、ファイル名 ("localhost"、"server01"、"dc-02" など) で指定されたコンピューター名に適用しようとします。</span><span class="sxs-lookup"><span data-stu-id="0a335-135">The `Start-DSCConfiguration` cmdlet attempts to apply each ".mof" file it finds to the computername specified by the filename ("localhost", "server01", "dc-02", etc.).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="62866-136">`-Wait` パラメーターが指定されていない場合、`Start-DSCConfiguration` では操作を実行するためにバックグラウンド ジョブが作成されます。</span><span class="sxs-lookup"><span data-stu-id="62866-136">If the `-Wait` parameter is not specified, `Start-DSCConfiguration` creates a background job to perform the operation.</span></span> <span data-ttu-id="62866-137">`-Verbose` パラメーターを指定すると、操作の**詳細**出力を確認できます。</span><span class="sxs-lookup"><span data-stu-id="62866-137">Specifying the `-Verbose` parameter allows you to watch the **Verbose** output of the operation.</span></span> <span data-ttu-id="62866-138">`-Wait` および `-Verbose` は、どちらも省略可能なパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="62866-138">`-Wait`, and `-Verbose` are both optional parameters.</span></span>
+> <span data-ttu-id="0a335-136">`-Wait` パラメーターが指定されていない場合、`Start-DSCConfiguration` では操作を実行するためにバックグラウンド ジョブが作成されます。</span><span class="sxs-lookup"><span data-stu-id="0a335-136">If the `-Wait` parameter is not specified, `Start-DSCConfiguration` creates a background job to perform the operation.</span></span> <span data-ttu-id="0a335-137">`-Verbose` パラメーターを指定すると、操作の**詳細**出力を確認できます。</span><span class="sxs-lookup"><span data-stu-id="0a335-137">Specifying the `-Verbose` parameter allows you to watch the **Verbose** output of the operation.</span></span> `-Wait`<span data-ttu-id="0a335-138">および `-Verbose` は、どちらも省略可能なパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="0a335-138">, and `-Verbose` are both optional parameters.</span></span>
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 ```
 
-## <a name="test-the-configuration"></a><span data-ttu-id="62866-139">構成をテストする</span><span class="sxs-lookup"><span data-stu-id="62866-139">Test the configuration</span></span>
+## <a name="test-the-configuration"></a><span data-ttu-id="0a335-139">構成をテストする</span><span class="sxs-lookup"><span data-stu-id="0a335-139">Test the configuration</span></span>
 
-<span data-ttu-id="62866-140">`Start-DSCConfiguration` コマンドレットが完了すると、指定した場所に "HelloWorld.txt" ファイルが表示されます。</span><span class="sxs-lookup"><span data-stu-id="62866-140">Once the `Start-DSCConfiguration` cmdlet is complete, you should see a "HelloWorld.txt" file in the location you specified.</span></span> <span data-ttu-id="62866-141">[Get-Content](/powershell/module/microsoft.powershell.management/get-content) コマンドレットを使用して、コンテンツを確認できます。</span><span class="sxs-lookup"><span data-stu-id="62866-141">You can verify the contents with the [Get-Content](/powershell/module/microsoft.powershell.management/get-content) cmdlet.</span></span>
+<span data-ttu-id="0a335-140">`Start-DSCConfiguration` コマンドレットが完了すると、指定した場所に "HelloWorld.txt" ファイルが表示されます。</span><span class="sxs-lookup"><span data-stu-id="0a335-140">Once the `Start-DSCConfiguration` cmdlet is complete, you should see a "HelloWorld.txt" file in the location you specified.</span></span> <span data-ttu-id="0a335-141">[Get-Content](/powershell/module/microsoft.powershell.management/get-content) コマンドレットを使用して、コンテンツを確認できます。</span><span class="sxs-lookup"><span data-stu-id="0a335-141">You can verify the contents with the [Get-Content](/powershell/module/microsoft.powershell.management/get-content) cmdlet.</span></span>
 
-<span data-ttu-id="62866-142">[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) を使用して、現在の状態を*テスト*することもできます。</span><span class="sxs-lookup"><span data-stu-id="62866-142">You can also *test* the current status using [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).</span></span>
+<span data-ttu-id="0a335-142">[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) を使用して、現在の状態を*テスト*することもできます。</span><span class="sxs-lookup"><span data-stu-id="0a335-142">You can also *test* the current status using [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration).</span></span>
 
-<span data-ttu-id="62866-143">現在、ノードが適用された構成に準拠している場合、出力は "True" になります。</span><span class="sxs-lookup"><span data-stu-id="62866-143">The output should be "True" if the Node is currently compliant with the applied Configuration.</span></span>
+<span data-ttu-id="0a335-143">現在、ノードが適用された構成に準拠している場合、出力は "True" になります。</span><span class="sxs-lookup"><span data-stu-id="0a335-143">The output should be "True" if the Node is currently compliant with the applied Configuration.</span></span>
 
 ```powershell
 Test-DSCConfiguration
@@ -121,16 +120,16 @@ Get-Content -Path C:\Temp\HelloWorld.txt
 Hello World from DSC!
 ```
 
-## <a name="re-applying-the-configuration"></a><span data-ttu-id="62866-144">構成を再適用する</span><span class="sxs-lookup"><span data-stu-id="62866-144">Re-applying the configuration</span></span>
+## <a name="re-applying-the-configuration"></a><span data-ttu-id="0a335-144">構成を再適用する</span><span class="sxs-lookup"><span data-stu-id="0a335-144">Re-applying the configuration</span></span>
 
-<span data-ttu-id="62866-145">もう一度構成が適用されることを確認するには、自分の構成で作成されたテキスト ファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="62866-145">To see your configuration get applied again, you can remove the text file created by your Configuration.</span></span> <span data-ttu-id="62866-146">`Start-DSCConfiguration` コマンドレットを `-UseExisting` パラメーターを指定して使用します。</span><span class="sxs-lookup"><span data-stu-id="62866-146">The use the `Start-DSCConfiguration` cmdlet with the `-UseExisting` parameter.</span></span> <span data-ttu-id="62866-147">`-UseExisting` パラメーターによって、`Start-DSCConfiguration` に対して、最後に正常に適用された構成を表す、"current.mof" を再適用するように指示されます。</span><span class="sxs-lookup"><span data-stu-id="62866-147">The `-UseExisting` parameter instructs `Start-DSCConfiguration` to re-apply the "current.mof" file, which represents the most recently successfully applied configuration.</span></span>
+<span data-ttu-id="0a335-145">もう一度構成が適用されることを確認するには、自分の構成で作成されたテキスト ファイルを削除します。</span><span class="sxs-lookup"><span data-stu-id="0a335-145">To see your configuration get applied again, you can remove the text file created by your Configuration.</span></span> <span data-ttu-id="0a335-146">`Start-DSCConfiguration` コマンドレットを `-UseExisting` パラメーターを指定して使用します。</span><span class="sxs-lookup"><span data-stu-id="0a335-146">The use the `Start-DSCConfiguration` cmdlet with the `-UseExisting` parameter.</span></span> <span data-ttu-id="0a335-147">`-UseExisting` パラメーターによって、`Start-DSCConfiguration` に対して、最後に正常に適用された構成を表す、"current.mof" を再適用するように指示されます。</span><span class="sxs-lookup"><span data-stu-id="0a335-147">The `-UseExisting` parameter instructs `Start-DSCConfiguration` to re-apply the "current.mof" file, which represents the most recently successfully applied configuration.</span></span>
 
 ```powershell
 Remove-Item -Path C:\Temp\HelloWorld.txt
 ```
 
-## <a name="next-steps"></a><span data-ttu-id="62866-148">次の手順</span><span class="sxs-lookup"><span data-stu-id="62866-148">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="0a335-148">次の手順</span><span class="sxs-lookup"><span data-stu-id="0a335-148">Next steps</span></span>
 
-- <span data-ttu-id="62866-149">「[DSC 構成](configurations.md)」で DSC 構成の詳細を確認する。</span><span class="sxs-lookup"><span data-stu-id="62866-149">Find out more about DSC configurations at [DSC configurations](configurations.md).</span></span>
-- <span data-ttu-id="62866-150">「[DSC リソース](../resources/resources.md)」で利用可能な DSC リソースとカスタム DSC リソースの作成方法を確認する。</span><span class="sxs-lookup"><span data-stu-id="62866-150">See what DSC resources are available, and how to create custom DSC resources at [DSC resources](../resources/resources.md).</span></span>
-- <span data-ttu-id="62866-151">「[PowerShell ギャラリー](https://www.powershellgallery.com/)」で DSC の構成とリソースを検索する。</span><span class="sxs-lookup"><span data-stu-id="62866-151">Find DSC configurations and resources in the [PowerShell Gallery](https://www.powershellgallery.com/).</span></span>
+- <span data-ttu-id="0a335-149">「[DSC 構成](configurations.md)」で DSC 構成の詳細を確認する。</span><span class="sxs-lookup"><span data-stu-id="0a335-149">Find out more about DSC configurations at [DSC configurations](configurations.md).</span></span>
+- <span data-ttu-id="0a335-150">「[DSC リソース](../resources/resources.md)」で利用可能な DSC リソースとカスタム DSC リソースの作成方法を確認する。</span><span class="sxs-lookup"><span data-stu-id="0a335-150">See what DSC resources are available, and how to create custom DSC resources at [DSC resources](../resources/resources.md).</span></span>
+- <span data-ttu-id="0a335-151">「[PowerShell ギャラリー](https://www.powershellgallery.com/)」で DSC の構成とリソースを検索する。</span><span class="sxs-lookup"><span data-stu-id="0a335-151">Find DSC configurations and resources in the [PowerShell Gallery](https://www.powershellgallery.com/).</span></span>
