@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
 ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
+ms.sourcegitcommit: 17ce42f97e13e8b3286779dc3f583474b0357023
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "58920392"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell プログラマ&#39;ガイド
@@ -102,7 +102,7 @@ Windows PowerShell シェルを使用して起動する方法の詳細につい�
 |[Windows PowerShell プロバイダーを作成する方法](./how-to-create-a-windows-powershell-provider.md)|このセクションでは、Windows PowerShell 用 Windows PowerShell プロバイダーを作成する方法について説明します。|
 |[Windows PowerShell ホスト アプリケーションを作成する方法](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|このセクションでは、独自のカスタム ホストを実装するホスト アプリケーションを作成する方法と、実行空間を操作するホスト アプリケーションを作成する方法について説明します。|
 |[Windows PowerShell スナップインを作成する方法](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|このセクションでは、アセンブリ内のすべてのコマンドレットとプロバイダーの登録に使用するスナップインを作成する方法とカスタム スナップインで作成する方法について説明します。|
-|[コンソール シェルを作成する方法](./how-to-create-a-console-shell.md)|このセクションでは、コンソールのシェルがなく、拡張を作成する方法について説明します。|
+|[コンソールのシェルを作成する方法](./how-to-create-a-console-shell.md)|このセクションでは、コンソールのシェルがなく、拡張を作成する方法について説明します。|
 |[Windows PowerShell の概念](./windows-powershell-concepts.md)|このセクションには、開発者の視点から Windows PowerShell を理解するのに役立つ概念情報が含まれています。|
 
 ## <a name="see-also"></a>参照
