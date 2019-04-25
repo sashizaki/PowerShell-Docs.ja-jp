@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
 caps.latest.revision: 9
 ms.openlocfilehash: d732bce1af446090c3e5741eebeba737f86c7ca8
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058013"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067962"
 ---
 # <a name="how-to-support-jobs"></a>ジョブをサポートする方法
 
-この例では、コマンドレットを記述するときにジョブをサポートする方法を示します。 コマンドレットをバック グラウンド ジョブとして実行する場合は、次の手順で説明されているコードを含める必要があります。 バック グラウンド ジョブの詳細については、[バック グラウンド ジョブ](./background-jobs.md)を参照してください。
+この例では、コマンドレットを記述するときにジョブをサポートする方法を示します。 コマンドレットをバック グラウンド ジョブとして実行する場合は、次の手順で説明されているコードを含める必要があります。 バック グラウンド ジョブの詳細については、次を参照してください。[バック グラウンド ジョブ](./background-jobs.md)します。
 
 ## <a name="to-support-jobs"></a>ジョブをサポートするには
 

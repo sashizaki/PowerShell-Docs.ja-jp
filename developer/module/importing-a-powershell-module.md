@@ -9,23 +9,23 @@ ms.topic: article
 ms.assetid: 697791b3-2135-4a39-b9d7-8566ed67acf2
 caps.latest.revision: 13
 ms.openlocfilehash: bb5d036e5658c365a4fafa2cac05c0bba9f87019
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854058"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082247"
 ---
 # <a name="importing-a-powershell-module"></a>PowerShell モジュールをインポートする
 
-1 回、モジュールがインストールされているシステムでは、するモジュールをインポートするする可能性があります。 インポートでは、ユーザーは、PowerShell セッションでそのモジュールにアクセスできるように、モジュールをアクティブ メモリに読み込まれるプロセスです。 PowerShell 2.0 への呼び出しでは、新しくインストールした PowerShell モジュールをインポートすることができます[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレット。 PowerShell 3.0 では、PowerShell は暗黙的に関数またはモジュールのコマンドレットのいずれかがユーザーによって呼び出されると、モジュールをインポートすることです。 両方のバージョンが PowerShell がそれを検索することがある場所で、モジュールをインストールすることを想定して ことに注意してください。詳細については、[PowerShell モジュールのインストール](./installing-a-powershell-module.md)を参照してください。 モジュール マニフェストを使用するには、モジュールのどの部分をエクスポートすると、制限してのパラメーターを使用して、`Import-Module`呼び出し箇所は、インポートを制限します。
+1 回、モジュールがインストールされているシステムでは、するモジュールをインポートするする可能性があります。 インポートでは、ユーザーは、PowerShell セッションでそのモジュールにアクセスできるように、モジュールをアクティブ メモリに読み込まれるプロセスです。 PowerShell 2.0 への呼び出しでは、新しくインストールした PowerShell モジュールをインポートすることができます[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレット。 PowerShell 3.0 では、PowerShell は暗黙的に関数またはモジュールのコマンドレットのいずれかがユーザーによって呼び出されると、モジュールをインポートすることです。 両方のバージョンが PowerShell がそれを検索することがある場所で、モジュールをインストールすることを想定して ことに注意してください。詳細については、次を参照してください。 [PowerShell モジュールのインストール](./installing-a-powershell-module.md)します。 モジュール マニフェストを使用するには、モジュールのどの部分をエクスポートすると、制限してのパラメーターを使用して、`Import-Module`呼び出し箇所は、インポートを制限します。
 
 ## <a name="importing-a-snap-in-powershell-10"></a>スナップイン (PowerShell 1.0) をインポートします。
 
-モジュールが PowerShell 1.0 ではありませんでした。 代わりに、登録、スナップインを使用する必要がありました。ただし、これは使用しないでこの時点では、このテクノロジを使用するモジュールは、通常のインストールおよびインポートする方が簡単に。 詳細については、[、Windows PowerShell スナップインを作成する方法](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)を参照してください。
+モジュールが PowerShell 1.0 ではありませんでした。 代わりに、登録、スナップインを使用する必要がありました。ただし、これは使用しないでこの時点では、このテクノロジを使用するモジュールは、通常のインストールおよびインポートする方が簡単に。 詳細については、次を参照してください。 [、Windows PowerShell スナップインを作成する方法](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)します。
 
 ## <a name="importing-a-module-with-import-module-powershell-20"></a>モジュールのインポート (PowerShell 2.0) を持つモジュールをインポートします。
 
-PowerShell 2.0 では、適切に名前付き[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレット モジュールをインポートします。 このコマンドレットを実行しているときに Windows PowerShell がで指定したディレクトリ内の指定したモジュールの検索、`PSModulePath`変数。 Windows PowerShell が次の順序でファイルを検索し、指定されたディレクトリが見つかった場合: モジュールのマニフェスト ファイル (.psd1)、スクリプト モジュール ファイル (.psm1)、バイナリ モジュール ファイル (.dll)。 検索するディレクトリを追加する方法の詳細については、[PSModulePath インストール パスを変更する](./modifying-the-psmodulepath-installation-path.md)を参照してください。 次のコードでは、モジュールをインポートする方法について説明します。
+PowerShell 2.0 では、適切に名前付き[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレット モジュールをインポートします。 このコマンドレットを実行しているときに Windows PowerShell がで指定したディレクトリ内の指定したモジュールの検索、`PSModulePath`変数。 Windows PowerShell が次の順序でファイルを検索し、指定されたディレクトリが見つかった場合: モジュールのマニフェスト ファイル (.psd1)、スクリプト モジュール ファイル (.psm1)、バイナリ モジュール ファイル (.dll)。 検索するディレクトリを追加する方法の詳細については、次を参照してください。 [PSModulePath インストール パスを変更する](./modifying-the-psmodulepath-installation-path.md)します。 次のコードでは、モジュールをインポートする方法について説明します。
 
 ```powershell
 Import-Module myModule
@@ -37,7 +37,7 @@ MyModule に存在していたことと仮定すると、 `PSModulePath`PowerShe
 Import-Module -Name C:\myRandomDirectory\myModule -Verbose
 ```
 
-使用することも、モジュールからエクスポートされる内容と、アクティブなメモリにインポートされる内容を識別するためには、verbose パラメーター。 エクスポートとインポートの両方を制限するユーザーに公開される情報: 違いは、可視性を制御します。 基本的には、エクスポートは、モジュール内のコードによって制御されます。 これに対し、インポートは、によって制御されます、`Import-Module`呼び出します。 詳細については、**を制限するメンバーがインポートされたこと**、後述を参照してください。
+使用することも、モジュールからエクスポートされる内容と、アクティブなメモリにインポートされる内容を識別するためには、verbose パラメーター。 エクスポートとインポートの両方を制限するユーザーに公開される情報: 違いは、可視性を制御します。 基本的には、エクスポートは、モジュール内のコードによって制御されます。 これに対し、インポートは、によって制御されます、`Import-Module`呼び出します。 詳細については、次を参照してください。**を制限するメンバーがインポートされたこと**、後述します。
 
 ## <a name="implicitly-importing-a-module-powershell-30"></a>モジュール (PowerShell 3.0) を暗黙的にインポートします。
 

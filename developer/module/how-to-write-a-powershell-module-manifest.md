@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
 caps.latest.revision: 23
-ms.openlocfilehash: eaa927ec90df6053843f5c942357fed4c7dee966
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 93a8c11099a9883127bca87422e1acaebfd2c093
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059492"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082298"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>PowerShell モジュール マニフェストを記述する方法
 
@@ -23,7 +23,7 @@ ms.locfileid: "58059492"
 
 A*モジュール マニフェスト*Windows PowerShell データ ファイル (.psd1)、モジュールの内容を記述し、モジュールの処理方法を決定します。 マニフェスト ファイル自体は、キーと値のハッシュ テーブルを含むテキスト ファイルです。 マニフェスト ファイルをモジュールにリンクするには、モジュールと同じ名前と、モジュール ディレクトリのルートに配置することで。
 
-1 つの .psm1 またはバイナリ アセンブリのみを含む単純なモジュール、モジュール マニフェストは省略可能です。 ただし、コードを整理するために、バージョン管理情報を維持するために便利ですが、可能であれば、モジュール マニフェストを使用することをお勧めします。 さらに、グローバル アセンブリ キャッシュにインストールされているアセンブリをエクスポートするには、モジュール マニフェストが必要です。 モジュール マニフェストは、更新可能なヘルプ機能をサポートするモジュールの必要もあります。 つまり、更新可能なヘルプは使用して、 **HelpInfoUri**モジュールの更新されたヘルプ ファイルの場所を含むヘルプ情報 (HelpInfo XML) ファイルを検索するモジュール マニフェストでキー。 更新可能なヘルプについては、[更新可能なヘルプをサポートしている](./supporting-updatable-help.md)を参照してください。
+1 つの .psm1 またはバイナリ アセンブリのみを含む単純なモジュール、モジュール マニフェストは省略可能です。 ただし、コードを整理するために、バージョン管理情報を維持するために便利ですが、可能であれば、モジュール マニフェストを使用することをお勧めします。 さらに、グローバル アセンブリ キャッシュにインストールされているアセンブリをエクスポートするには、モジュール マニフェストが必要です。 モジュール マニフェストは、更新可能なヘルプ機能をサポートするモジュールの必要もあります。 つまり、更新可能なヘルプは使用して、 **HelpInfoUri**モジュールの更新されたヘルプ ファイルの場所を含むヘルプ情報 (HelpInfo XML) ファイルを検索するモジュール マニフェストでキー。 更新可能なヘルプについては、次を参照してください。[更新可能なヘルプをサポートしている](./supporting-updatable-help.md)します。
 
 ### <a name="to-create-and-use-a-module-manifest"></a>作成して、モジュール マニフェストを使用するには
 
@@ -80,7 +80,7 @@ A*モジュール マニフェスト*Windows PowerShell データ ファイル (
 |DotNetFrameworkVersion<br /><br /> 型: 文字列|' '|このモジュールに必要な Microsoft .NET Framework の最小バージョン。<br /><br /> 例: `DotNetFrameworkVersion = '3.5'`|
 |CLRVersion<br /><br /> 型: 文字列|' '|このモジュールに必要な共通言語ランタイム (CLR) の最小バージョン。<br /><br /> 例: `CLRVersion = '3.5'`|
 |ProcessorArchitecture<br /><br /> 型: 文字列|' '|プロセッサ アーキテクチャ (None、X86、Amd64) モジュールが必要です。 有効な値は x86、AMD64、IA64、および None (不明または未指定) です。<br /><br /> 例: `ProcessorArchitecture = 'x86'`|
-|RequiredModules<br /><br /> Type: [string[]]|@()|このモジュールをインポートする前にグローバル環境にインポートする必要がありますモジュールです。 既に読み込まれている場合を除き、表示されているすべてのモジュールが読み込まれます。 (たとえば、一部のモジュール可能性があるによって既に読み込まれて別のモジュール。)。 使用して読み込む特定のバージョンを指定することも`RequiredVersion`なく`ModuleVersion`します。 使用する場合`ModuleVersion`指定されているバージョンの最小値で使用可能な最新バージョンが読み込まれます。<br /><br /> 例: `RequiredModules = @(@{ModuleName="myDependentModule", ModuleVersion="2.0",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> 例: `RequiredModules = @(@{ModuleName="myDependentModule", RequiredVersion="1.5",Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
+|RequiredModules<br /><br /> Type: [string[]]|@()|このモジュールをインポートする前にグローバル環境にインポートする必要がありますモジュールです。 既に読み込まれている場合を除き、表示されているすべてのモジュールが読み込まれます。 (たとえば、一部のモジュール可能性があるによって既に読み込まれて別のモジュール。)。 使用して読み込む特定のバージョンを指定することも`RequiredVersion`なく`ModuleVersion`します。 使用する場合`ModuleVersion`指定されているバージョンの最小値で使用可能な最新バージョンが読み込まれます。<br /><br /> 例: `RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> 例: `RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
 |RequiredAssemblies<br /><br /> Type: [string[]]|@()|このモジュールをインポートする前に読み込む必要があるアセンブリ。<br /><br /> なお RequiredModules とは異なり、PowerShell は、既に読み込まれていない場合、RequiredAssemblies に読み込まれます。|
 |ScriptsToProcess<br /><br /> Type: [string[]]|@()|モジュールがインポートされるときに、呼び出し元のセッション状態で実行されるスクリプト (.ps1) ファイル。 これにより、グローバル セッション状態や、入れ子になったモジュール、別のモジュールのセッション状態の可能性があります。 これらのスクリプトを使用して、ログイン スクリプトを使用する場合と同様に、環境を準備することができます。<br /><br /> これらのスクリプトは、マニフェストにリストされているモジュールのいずれかが読み込まれる前に実行されます。|
 |TypesToProcess<br /><br /> Type: [Object[]]|@()|このモジュールをインポートするときに読み込まれるファイル (.ps1xml) を入力します。|

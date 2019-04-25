@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 96a5dcad-faed-44d8-8c80-321f10499710
 caps.latest.revision: 6
 ms.openlocfilehash: 49a62ccb09f06f77862d4737199e58293e7fbe0a
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059254"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068319"
 ---
 # <a name="credential-attribute-declaration"></a>資格情報属性の宣言
 
@@ -31,7 +31,7 @@ ms.locfileid: "58059254"
 
 - 作成するときに、 [System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)オブジェクト、Windows PowerShell は、現在のホストを使用して、ユーザーに適切な指示を表示します。 たとえば、既定のホストが表示されますユーザー名とパスワードを入力するプロンプトこの属性を使用する場合。 ただし、カスタム ホストを使用している場合は、さまざまなプロンプトを定義するし、プロンプトが表示されます。
 
-- この属性は、パラメーターの属性で使用されます。 その属性の詳細については、[パラメーター属性宣言](./parameter-attribute-declaration.md)を参照してください。
+- この属性は、パラメーターの属性で使用されます。 その属性の詳細については、次を参照してください。[パラメーター属性宣言](./parameter-attribute-declaration.md)します。
 
 - 資格情報の属性を定義した、 [System.Management.Automation.Credentialattribute](/dotnet/api/System.Management.Automation.CredentialAttribute)クラス。
 

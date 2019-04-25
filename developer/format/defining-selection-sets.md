@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
 caps.latest.revision: 16
 ms.openlocfilehash: 596212f2e64401a751cf3dca0ee7d60b80912c00
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066313"
 ---
 # <a name="defining-selection-sets"></a>選択セットを定義する
 
@@ -39,11 +39,11 @@ ms.locfileid: "56858928"
 
 - ビューまたはコントロールの各定義における、`EntrySelectedBy`要素は、その定義を使用して表示されるオブジェクトを定義します。 通常、ビューまたはコントロールに 1 つだけ定義して、オブジェクトが定義されているため、`ViewSelectedBy`要素。 `EntrySelectedBy`定義の要素には、`SelectionSetName`選択範囲のセットを指定する子要素。 選択の定義のセットを指定する場合の他の子要素のいずれかを指定できません、`EntrySelectedBy`要素。
 
-- ビューまたはコントロールの各定義における、`SelectionCondition`定義を使用する場合の条件を指定する要素を使用できます。 `SelectionCondition`要素には、`SelectionSetName`選択範囲のセットを示す子要素が条件をトリガーします。 選択範囲のセットで定義されたオブジェクトのいずれかが表示される場合は、条件がトリガーされます。 これらの条件を設定する方法の詳細については、[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
+- ビューまたはコントロールの各定義における、`SelectionCondition`定義を使用する場合の条件を指定する要素を使用できます。 `SelectionCondition`要素には、`SelectionSetName`選択範囲のセットを示す子要素が条件をトリガーします。 選択範囲のセットで定義されたオブジェクトのいずれかが表示される場合は、条件がトリガーされます。 これらの条件を設定する方法の詳細については、次を参照してください。[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)します。
 
 ## <a name="selection-set-example"></a>選択範囲のセットの例
 
-次の例では、選択セットから直接実行する、 `FileSystem` Windows PowerShell によって提供されるファイルの書式設定します。 その他の Windows PowerShell の書式設定ファイルの詳細については、[Windows PowerShell の書式設定ファイル](./powershell-formatting-files.md)を参照してください。
+次の例では、選択セットから直接実行する、 `FileSystem` Windows PowerShell によって提供されるファイルの書式設定します。 その他の Windows PowerShell の書式設定ファイルの詳細については、次を参照してください。 [Windows PowerShell の書式設定ファイル](./powershell-formatting-files.md)します。
 
 ```xml
 <SelectionSets>

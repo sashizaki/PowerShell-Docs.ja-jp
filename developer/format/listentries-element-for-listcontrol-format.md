@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b62e81cc-4175-40fa-829f-634245b09f86
 caps.latest.revision: 12
 ms.openlocfilehash: aaf16702e485135b5299ccb43a2b62db2d9f5762
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856788"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065395"
 ---
 # <a name="listentries-element-for-listcontrol-format"></a>ListControl の ListEntries 要素 (書式)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56856788"
 </ListEntries>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`ListEntries`要素。 少なくとも 1 つの子要素を指定する必要があります。
 
@@ -51,7 +51,7 @@ ms.locfileid: "56856788"
 
 ## <a name="remarks"></a>コメント
 
-リスト ビューの詳細については、[リスト ビュー](./creating-a-list-view.md)を参照してください。
+リスト ビューの詳細については、次を参照してください。[リスト ビュー](./creating-a-list-view.md)します。
 
 ## <a name="example"></a>例
 

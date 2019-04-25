@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 71c3f1f6-6fe2-42f1-8260-6974d3871748
 caps.latest.revision: 11
 ms.openlocfilehash: 7d526372cf80327b3fb9b79b6e83429c57780183
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064893"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>ListControl の EntrySelectedBy の SelectionCondition の PropertyName 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "58059016"
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`PropertyName`要素。
 
@@ -51,9 +51,9 @@ ms.locfileid: "58059016"
 
 ## <a name="remarks"></a>コメント
 
-選択条件では、少なくとも 1 つのプロパティの名前またはスクリプト ブロックを指定する必要がありますが、両方を指定することはできません。 選択条件を使用する方法の詳細については、[とビューのエントリの定義の条件またはアイテムが使用されて](./defining-conditions-for-displaying-data.md)を参照してください。
+選択条件では、少なくとも 1 つのプロパティの名前またはスクリプト ブロックを指定する必要がありますが、両方を指定することはできません。 選択条件を使用する方法の詳細については、次を参照してください。[とビューのエントリの定義の条件またはアイテムが使用されて](./defining-conditions-for-displaying-data.md)します。
 
-リスト ビューの他のコンポーネントに関する詳細については、[リスト ビューの作成](./creating-a-list-view.md)を参照してください。
+リスト ビューの他のコンポーネントに関する詳細については、次を参照してください。[リスト ビューの作成](./creating-a-list-view.md)です。
 
 ## <a name="see-also"></a>参照
 

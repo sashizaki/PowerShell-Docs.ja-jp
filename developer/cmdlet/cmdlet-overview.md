@@ -12,11 +12,11 @@ helpviewer_keywords:
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
 ms.openlocfilehash: f8a8c9300d1ac811c7fbbf7050dd24f78306db8f
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056670"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068472"
 ---
 # <a name="cmdlet-overview"></a>コマンドレットの概要
 
@@ -38,19 +38,19 @@ ms.locfileid: "58056670"
 
 次の用語は、Windows PowerShell コマンドレットのドキュメントでよく使用されます。
 
-- **コマンドレット属性**:コマンドレットとコマンドレットのクラスを宣言するために使用する .NET Framework 属性。 Windows PowerShell は、省略可能なその他のいくつかの属性を使用して、コマンドレットの属性が必要です。 この属性の詳細については、[コマンドレット属性宣言](./cmdlet-attribute-declaration.md)を参照してください。
+- **コマンドレット属性**:コマンドレットとコマンドレットのクラスを宣言するために使用する .NET Framework 属性。 Windows PowerShell は、省略可能なその他のいくつかの属性を使用して、コマンドレットの属性が必要です。 この属性の詳細については、次を参照してください。[コマンドレット属性宣言](./cmdlet-attribute-declaration.md)します。
 
-- **コマンドレット パラメーター**:コマンドレットを実行しているアプリケーションにユーザーに使用可能なパラメーターを定義するパブリック プロパティ。 名前付きの位置を指定すると、コマンドレットできる必要があると*切り替える*パラメーター。 スイッチ パラメーターを使用すると、パラメーターが呼び出しで指定された場合にのみ評価されるパラメーターを定義できます。 パラメーターのさまざまな種類の詳細については、[コマンドレット パラメーター](./cmdlet-parameters.md)を参照してください。
+- **コマンドレット パラメーター**:コマンドレットを実行しているアプリケーションにユーザーに使用可能なパラメーターを定義するパブリック プロパティ。 名前付きの位置を指定すると、コマンドレットできる必要があると*切り替える*パラメーター。 スイッチ パラメーターを使用すると、パラメーターが呼び出しで指定された場合にのみ評価されるパラメーターを定義できます。 パラメーターのさまざまな種類の詳細については、次を参照してください。[コマンドレット パラメーター](./cmdlet-parameters.md)します。
 
-- **パラメーター セット**:特定のアクションを実行するために同じコマンドで使用できるパラメーターのグループ。 コマンドレットは、複数のパラメーター セットを持つことができますが、各パラメーター セットが一意である少なくとも 1 つのパラメーターをいる必要があります。 適切なコマンドレットのデザインでは、一意のパラメーターも必須パラメーターであることを強くお勧めします。 パラメーター セットの詳細については、[コマンドレット パラメーター設定](./cmdlet-parameter-sets.md)を参照してください。
+- **パラメーター セット**:特定のアクションを実行するために同じコマンドで使用できるパラメーターのグループ。 コマンドレットは、複数のパラメーター セットを持つことができますが、各パラメーター セットが一意である少なくとも 1 つのパラメーターをいる必要があります。 適切なコマンドレットのデザインでは、一意のパラメーターも必須パラメーターであることを強くお勧めします。 パラメーター セットの詳細については、次を参照してください。[コマンドレット パラメーター設定](./cmdlet-parameter-sets.md)します。
 
-- **動的パラメーター**:実行時に、コマンドレットに追加されるパラメーター。 通常、動的パラメーターは、別のパラメーターが特定の値に設定されている場合、コマンドレットに追加されます。 動的パラメーターの詳細については、[コマンドレットの動的パラメーター](./cmdlet-dynamic-parameters.md)を参照してください。
+- **動的パラメーター**:実行時に、コマンドレットに追加されるパラメーター。 通常、動的パラメーターは、別のパラメーターが特定の値に設定されている場合、コマンドレットに追加されます。 動的パラメーターの詳細については、次を参照してください。[コマンドレットの動的パラメーター](./cmdlet-dynamic-parameters.md)します。
 
-- **入力処理メソッド**:コマンドが入力として受信するレコードを処理するのに使用できるメソッド。 入力の処理方法があります、 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッド、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド、 [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)メソッド、および[System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)メソッド。 コマンドレットを実装するときの少なくとも 1 つをオーバーライドする必要があります、 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)、および[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)メソッド。 通常、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッドは、コマンドレットが処理されるレコードごとに呼び出されるためにオーバーライドするメソッドです。 これに対し、 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッドと[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)を実行するメソッドに 1 回は呼び出されます処理前または処理後のレコード。 これらのメソッドの詳細については、[入力処理メソッド](./cmdlet-input-processing-methods.md)を参照してください。
+- **入力処理メソッド**:コマンドが入力として受信するレコードを処理するのに使用できるメソッド。 入力の処理方法があります、 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッド、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド、 [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)メソッド、および[System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)メソッド。 コマンドレットを実装するときの少なくとも 1 つをオーバーライドする必要があります、 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)、および[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)メソッド。 通常、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッドは、コマンドレットが処理されるレコードごとに呼び出されるためにオーバーライドするメソッドです。 これに対し、 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッドと[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)を実行するメソッドに 1 回は呼び出されます処理前または処理後のレコード。 これらのメソッドの詳細については、次を参照してください。[入力処理メソッド](./cmdlet-input-processing-methods.md)します。
 
-- **ShouldProcess 機能**:Windows PowerShell コマンドレットでは、システムに変更を加える前に、ユーザーにフィードバックを求めるコマンドレットを作成することができます。 コマンドレットは、この機能を使用するコマンドレットの属性を宣言すると、コマンドレットを呼び出す必要があります、ShouldProcess 機能をサポートしているを宣言する必要があります、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)入力処理メソッド内のメソッド。 ShouldProcess 機能をサポートする方法の詳細については、[確認を要求する](./requesting-confirmation-from-cmdlets.md)を参照してください。
+- **ShouldProcess 機能**:Windows PowerShell コマンドレットでは、システムに変更を加える前に、ユーザーにフィードバックを求めるコマンドレットを作成することができます。 コマンドレットは、この機能を使用するコマンドレットの属性を宣言すると、コマンドレットを呼び出す必要があります、ShouldProcess 機能をサポートしているを宣言する必要があります、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)入力処理メソッド内のメソッド。 ShouldProcess 機能をサポートする方法の詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。
 
-- **トランザクション**:1 つのタスクとして扱われるコマンドの論理グループです。 タスクは、グループ内の任意のコマンドに失敗し、ユーザーが受け入れるか、トランザクション内で実行されるアクションを拒否するかを選択する場合に自動的に失敗します。 トランザクションに参加するにコマンドレットの属性が宣言されている場合は、トランザクションをサポートしているコマンドレットを宣言する必要があります。 トランザクションのサポートは、Windows PowerShell 2.0 で導入されました。 トランザクションの詳細については、[Windows PowerShell のトランザクション](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710)を参照してください。
+- **トランザクション**:1 つのタスクとして扱われるコマンドの論理グループです。 タスクは、グループ内の任意のコマンドに失敗し、ユーザーが受け入れるか、トランザクション内で実行されるアクションを拒否するかを選択する場合に自動的に失敗します。 トランザクションに参加するにコマンドレットの属性が宣言されている場合は、トランザクションをサポートしているコマンドレットを宣言する必要があります。 トランザクションのサポートは、Windows PowerShell 2.0 で導入されました。 トランザクションの詳細については、次を参照してください。 [Windows PowerShell のトランザクション](http://msdn.microsoft.com/en-us/74d7bac7-bc53-49f1-a47a-272e8da84710)です。
 
 ## <a name="how-cmdlets-differ-from-commands"></a>コマンドのコマンドレットの違い
 
@@ -88,23 +88,23 @@ Windows PowerShell には、次の 2 つの基本クラスから派生したコ�
 
 - [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing):ユーザーが停止するコマンドレットは、非同期的に (たとえば、ctrl キーを押しながら C キーを押して) によって処理が停止するために使用します。
 
-これらのメソッドの詳細については、[コマンドレットの入力処理メソッド](./cmdlet-input-processing-methods.md)を参照してください。
+これらのメソッドの詳細については、次を参照してください。[コマンドレットの入力処理メソッド](./cmdlet-input-processing-methods.md)します。
 
 ## <a name="cmdlet-attributes"></a>コマンドレットの属性
 
-Windows PowerShell コマンドレットを管理し、一般的な機能は Windows PowerShell によって提供されると、コマンドレットでする必要がありますを指定に使用されるいくつかの .NET Framework 属性を定義します。 たとえば、コマンドレット、コマンドレットのパラメーターを指定して、コマンドレットの開発者は、コマンドレットのコードでその機能を実装する必要があるないように、入力の検証を要求としてクラスを指定する属性が使用されます。 属性の詳細については、[Windows PowerShell 属性](./cmdlet-attributes.md)を参照してください。
+Windows PowerShell コマンドレットを管理し、一般的な機能は Windows PowerShell によって提供されると、コマンドレットでする必要がありますを指定に使用されるいくつかの .NET Framework 属性を定義します。 たとえば、コマンドレット、コマンドレットのパラメーターを指定して、コマンドレットの開発者は、コマンドレットのコードでその機能を実装する必要があるないように、入力の検証を要求としてクラスを指定する属性が使用されます。 属性の詳細については、次を参照してください。 [Windows PowerShell 属性](./cmdlet-attributes.md)します。
 
 ## <a name="cmdlet-names"></a>コマンドレット名
 
 Windows PowerShell コマンドレットの名前を動詞と名詞を組み合わせた名前のペアを使用します。 たとえば、 `Get-Command` Windows PowerShell に含まれるコマンドレットを使用して、コマンド シェルに登録されているすべてのコマンドレットを取得します。 動詞は、コマンドレットを実行するアクションを識別し、名詞は、リソース、コマンドレットがそのアクションを実行しますを識別します。
 
-.NET Framework のクラスがコマンドレットとして宣言されている場合、これらの名前が指定されます。 .NET Framework クラスをコマンドレットとして宣言する方法の詳細については、[コマンドレット属性宣言](./cmdlet-class-declaration.md)を参照してください。
+.NET Framework のクラスがコマンドレットとして宣言されている場合、これらの名前が指定されます。 .NET Framework クラスをコマンドレットとして宣言する方法の詳細については、次を参照してください。[コマンドレット属性宣言](./cmdlet-class-declaration.md)します。
 
 ## <a name="writing-cmdlet-code"></a>コマンドレット コードの記述
 
 このドキュメントでは、コマンドレット コードの記述方法を検出する 2 つの方法を説明します。 大した説明もなしのコードを表示する場合を参照してください。[コマンドレット コードの例の](./examples-of-cmdlet-code.md)します。 詳細な説明、コードの場合を参照してください、 [GetProc チュートリアル](./getproc-tutorial.md)、 [StopProc チュートリアル](./stopproc-tutorial.md)、または[SelectStr チュートリアル](./selectstr-tutorial.md)トピック。
 
-コマンドレットの記述に関するガイドラインの詳細については、[コマンドレット開発ガイドライン](./cmdlet-development-guidelines.md)を参照してください。
+コマンドレットの記述に関するガイドラインの詳細については、次を参照してください。[コマンドレット開発ガイドライン](./cmdlet-development-guidelines.md)します。
 
 ## <a name="see-also"></a>参照
 

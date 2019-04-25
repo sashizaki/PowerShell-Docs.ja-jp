@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: faa0314b-f6f1-44fd-ad2b-b00cbe38923f
 caps.latest.revision: 9
 ms.openlocfilehash: 8b924c989133b47e4d95d8429778003c76595d58
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066007"
 ---
 # <a name="expand-element-format"></a>Expand 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56858578"
 <Expand>EnumOnly, CoreOnly, Both</Expand>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`Expand`要素。
 
@@ -47,7 +47,7 @@ ms.locfileid: "56858578"
 
 ## <a name="text-value"></a>テキスト値
 
-次の値のいずれかを指定します。
+次のいずれかの値を指定します。
 
 - Enumonly です。コレクション内のオブジェクトのプロパティのみを表示します。
 

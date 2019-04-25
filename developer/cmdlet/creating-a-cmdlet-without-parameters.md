@@ -12,11 +12,11 @@ helpviewer_keywords:
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
 ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054698"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068336"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>パラメーターなしでコマンドレットを作成する
 
@@ -53,7 +53,7 @@ When naming cmdlets, do not use any of the following characters: # , () {} [] & 
 
 ### <a name="choosing-a-verb"></a>動詞を選択します。
 
-承認されたコマンドレット動詞名のセットからの動詞を使用する必要があります。 承認されたコマンドレット動詞の詳細については、[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)を参照してください。
+承認されたコマンドレット動詞名のセットからの動詞を使用する必要があります。 承認されたコマンドレット動詞の詳細については、次を参照してください。[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)します。
 
 ## <a name="defining-the-cmdlet-class"></a>コマンドレット クラスを定義します。
 
@@ -78,7 +78,7 @@ Public Class GetProcCommand
 コマンドレットのクラスの名前を付けるときは、クラス名でコマンドレット名を反映することをお勧めします。 これを行うには、"VerbNounCommand"の形式を使用し、動詞と名詞を使用、コマンドレット名を「動詞」と「名詞」を置き換えます。 サンプルの Get-proc コマンドレットがという GetProcCommand から派生するクラスを定義しますが示すように、前のクラス定義で、 [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)基本クラス。
 
 > [!IMPORTANT]
-> Windows PowerShell ランタイムに直接アクセスするためのコマンドレットを定義する場合は、.NET クラスの派生元、 [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基本クラス。 このクラスの詳細については、[コマンドレットにその定義のパラメーター セットを作成する](./adding-parameter-sets-to-a-cmdlet.md)を参照してください。
+> Windows PowerShell ランタイムに直接アクセスするためのコマンドレットを定義する場合は、.NET クラスの派生元、 [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基本クラス。 このクラスの詳細については、次を参照してください。[コマンドレットにその定義のパラメーター セットを作成する](./adding-parameter-sets-to-a-cmdlet.md)します。
 
 > [!NOTE]
 > コマンドレットのクラスする必要があります明示的にパブリックと指定します。 Public としてマークされていないクラスは、内部には既定でと、Windows PowerShell ランタイムでは検出されません。
@@ -87,7 +87,7 @@ Windows PowerShell を使用して、 [Microsoft.PowerShell.Commands](/dotnet/ap
 
 ## <a name="overriding-an-input-processing-method"></a>入力処理メソッドをオーバーライドします。
 
-[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)クラスは、コマンドレットをオーバーライドする必要がありますが少なくとも 1 つ、3 つの主な入力処理メソッドを提供します。 Windows PowerShell がレコードを処理する方法の詳細については、[Windows PowerShell のしくみ](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)を参照してください。
+[System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)クラスは、コマンドレットをオーバーライドする必要がありますが少なくとも 1 つ、3 つの主な入力処理メソッドを提供します。 Windows PowerShell がレコードを処理する方法の詳細については、次を参照してください。 [Windows PowerShell のしくみ](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)します。
 
 Windows PowerShell ランタイムが呼び出すすべての種類の入力では、 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)処理を有効にします。 コマンドレットは、前処理またはセットアップを実行する必要がある場合、このメソッドをオーバーライドすることでこれが実行できます。
 
@@ -132,9 +132,9 @@ End Sub 'ProcessRecord
 
 #### <a name="things-to-remember-about-input-processing"></a>入力の処理に関する注意点
 
-- 入力の既定のソースは、コマンドラインでユーザーによって提供される明示的なオブジェクト (たとえば、文字列) です。 詳細については、[コマンドライン入力データを処理するコマンドレットを作成する](./adding-parameters-that-process-command-line-input.md)を参照してください。
+- 入力の既定のソースは、コマンドラインでユーザーによって提供される明示的なオブジェクト (たとえば、文字列) です。 詳細については、次を参照してください。[コマンドライン入力データを処理するコマンドレットを作成する](./adding-parameters-that-process-command-line-input.md)します。
 
-- メソッドの処理の入力では、パイプラインのアップ ストリームのコマンドレットの出力オブジェクトからの入力も受信できます。 詳細については、[プロセス パイプラインの入力にコマンドレットを作成する](./adding-parameters-that-process-pipeline-input.md)を参照してください。 対応するコマンドレットはコマンド ラインの組み合わせから入力を受け取るし、パイプラインのソースします。
+- メソッドの処理の入力では、パイプラインのアップ ストリームのコマンドレットの出力オブジェクトからの入力も受信できます。 詳細については、次を参照してください。[プロセス パイプラインの入力にコマンドレットを作成する](./adding-parameters-that-process-pipeline-input.md)します。 対応するコマンドレットはコマンド ラインの組み合わせから入力を受け取るし、パイプラインのソースします。
 
 - 長い間、またはまったく、ダウン ストリームのコマンドレットを返しません可能性があります。 そのため、入力、コマンドレットでメソッドを処理する必要がありますロックが保持されない呼び出し中に[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)、特にロックが、スコープがコマンドレットのインスタンスを超えて拡張されます。
 
@@ -151,15 +151,15 @@ End Sub 'ProcessRecord
 
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類を定義して、書式設定
 
-Windows PowerShell は、.NET オブジェクトを使用してコマンドレット間で情報を渡します。 その結果、コマンドレットは、独自の型を定義する必要がありますか、コマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、[を拡張するオブジェクトの種類と書式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)を参照してください。
+Windows PowerShell は、.NET オブジェクトを使用してコマンドレット間で情報を渡します。 その結果、コマンドレットは、独自の型を定義する必要がありますか、コマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)します。
 
 ## <a name="building-the-cmdlet"></a>コマンドレットを構築
 
-コマンドレットを実装するには、後にする必要がありますに登録する Windows PowerShell Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)を参照してください。
+コマンドレットを実装するには、後にする必要がありますに登録する Windows PowerShell Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
 
 ## <a name="testing-the-cmdlet"></a>テスト コマンドレット
 
-コマンドレットは、Windows PowerShell を使用した登録しているときに、コマンドラインで実行してテストできます。 サンプル Get-proc コマンドレットのコードは小さいが、Windows PowerShell ランタイムとこれには、既存の .NET オブジェクトを引き続き使用します。 Get プロシージャが実行できる内容とその出力を使用する方法を理解することをテストしてみましょう。 詳細については、コマンドラインからコマンドレットを使用して、、 [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)を参照してください。
+コマンドレットは、Windows PowerShell を使用した登録しているときに、コマンドラインで実行してテストできます。 サンプル Get-proc コマンドレットのコードは小さいが、Windows PowerShell ランタイムとこれには、既存の .NET オブジェクトを引き続き使用します。 Get プロシージャが実行できる内容とその出力を使用する方法を理解することをテストしてみましょう。 詳細については、コマンドラインからコマンドレットを使用して、次を参照してください。、 [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)します。
 
 1. Windows PowerShell を起動し、コンピューターで実行されている現在のプロセスを取得します。
 

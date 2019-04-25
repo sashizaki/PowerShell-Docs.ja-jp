@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
 ms.openlocfilehash: 08e05939f8aee42f2cd502a3da7a528d8460dec1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858978"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083248"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>コマンドレットのヘルプ ファイルを作成する方法
 
@@ -38,15 +38,15 @@ ms.locfileid: "56858978"
 
    |ノード|説明|
    |----------|-----------------|
-   |`<details>`|コマンドレットのヘルプ トピックの名前と概要セクションのコンテンツを追加します。 詳細については、[概要とコマンドレットの名前を追加する方法](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)を参照してください。|
-   |`<maml:description>`|コマンドレットのヘルプ トピックの説明 セクションのコンテンツを追加します。 詳細については、[コマンドレットのヘルプ トピックを詳細な説明を追加する方法](./how-to-add-a-cmdlet-description.md)を参照してください。|
-   |`<command:syntax>`|コマンドレットのヘルプ トピックの「構文」セクションのコンテンツを追加します。 詳細については、[構文コマンドレットのヘルプ トピックをに追加する方法](./how-to-add-syntax-to-a-cmdlet-help-topic.md)を参照してください。|
-   |`<command:parameters>`|コマンドレットのヘルプ トピックの PARAMETERS セクションのコンテンツを追加します。 詳細については、[コマンドレットのヘルプ トピックにパラメーターを追加する方法](./how-to-add-parameter-information.md)を参照してください。|
-   |`<command:inputTypes>`|コマンドレットのヘルプ トピックの入力のセクションのコンテンツを追加します。 詳細については、[コマンドレットのヘルプ トピックへの入力タイプの追加方法](./how-to-add-input-types-to-a-cmdlet-help-topic.md)を参照してください。|
-   |`<command:returnValues>`|コマンドレットのヘルプ トピックの出力セクションのコンテンツを追加します。 詳細については、[戻り値の追加コマンドレットのヘルプ トピックにする方法](./how-to-add-return-values-to-a-cmdlet-help-topic.md)を参照してください。|
-   |`<maml:alertset>`|コマンドレットのヘルプ トピックのノートのセクションには、コンテンツを追加します。 詳細については、[を追加する方法は、コマンドレットのヘルプ トピックをノート](./how-to-add-notes-to-a-cmdlet-help-topic.md)を参照してください。|
-   |`<command:examples>`|コマンドレットのヘルプ トピックの例」のセクションのコンテンツを追加します。 詳細については、[コマンドレットのヘルプ トピックに例を追加する方法](./how-to-add-examples-to-a-cmdlet-help-topic.md)を参照してください。|
-   |`<maml:relatedLinks>`|コマンドレットのヘルプ トピックの「関連リンク」のコンテンツを追加します。 詳細については、[コマンドレットのヘルプ トピックへの関連リンクの追加方法](./how-to-add-related-links-to-a-cmdlet-help-topic.md)を参照してください。|
+   |`<details>`|コマンドレットのヘルプ トピックの名前と概要セクションのコンテンツを追加します。 詳細については、次を参照してください。[概要とコマンドレットの名前を追加する方法](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)します。|
+   |`<maml:description>`|コマンドレットのヘルプ トピックの説明 セクションのコンテンツを追加します。 詳細については、次を参照してください。[コマンドレットのヘルプ トピックを詳細な説明を追加する方法](./how-to-add-a-cmdlet-description.md)します。|
+   |`<command:syntax>`|コマンドレットのヘルプ トピックの「構文」セクションのコンテンツを追加します。 詳細については、次を参照してください。[構文コマンドレットのヘルプ トピックをに追加する方法](./how-to-add-syntax-to-a-cmdlet-help-topic.md)します。|
+   |`<command:parameters>`|コマンドレットのヘルプ トピックの PARAMETERS セクションのコンテンツを追加します。 詳細については、次を参照してください。[コマンドレットのヘルプ トピックにパラメーターを追加する方法](./how-to-add-parameter-information.md)します。|
+   |`<command:inputTypes>`|コマンドレットのヘルプ トピックの入力のセクションのコンテンツを追加します。 詳細については、次を参照してください。[コマンドレットのヘルプ トピックへの入力タイプの追加方法](./how-to-add-input-types-to-a-cmdlet-help-topic.md)します。|
+   |`<command:returnValues>`|コマンドレットのヘルプ トピックの出力セクションのコンテンツを追加します。 詳細については、次を参照してください。[戻り値の追加コマンドレットのヘルプ トピックにする方法](./how-to-add-return-values-to-a-cmdlet-help-topic.md)します。|
+   |`<maml:alertset>`|コマンドレットのヘルプ トピックのノートのセクションには、コンテンツを追加します。 詳細については、次を参照してください。[を追加する方法は、コマンドレットのヘルプ トピックをノート](./how-to-add-notes-to-a-cmdlet-help-topic.md)します。|
+   |`<command:examples>`|コマンドレットのヘルプ トピックの例」のセクションのコンテンツを追加します。 詳細については、次を参照してください。[コマンドレットのヘルプ トピックに例を追加する方法](./how-to-add-examples-to-a-cmdlet-help-topic.md)します。|
+   |`<maml:relatedLinks>`|コマンドレットのヘルプ トピックの「関連リンク」のコンテンツを追加します。 詳細については、次を参照してください。[コマンドレットのヘルプ トピックへの関連リンクの追加方法](./how-to-add-related-links-to-a-cmdlet-help-topic.md)します。|
 
 ## <a name="example"></a>例
 

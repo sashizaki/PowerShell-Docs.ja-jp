@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
 ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059781"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082194"
 ---
 # <a name="installing-a-powershell-module"></a>PowerShell モジュールをインストールする
 
 PowerShell モジュールを作成した後は可能性がありますするシステムでは、モジュールをインストールするか他者が使用可能性がありますようにします。 一般的に言えば、これだけで構成されるモジュール ファイル (ie、.psm1 またはバイナリ アセンブリ、モジュール マニフェストおよび他の関連ファイル) ディレクトリにそのコンピューターでをコピーします。 非常に小さいプロジェクトでは、コピーして、単一のリモート コンピューター上に Windows エクスプ ローラーでファイルを貼り付けるだけでこの可能性があります。ただし、大規模なソリューションのより高度なインストール プロセスを使用することがあります。 PowerShell は、システム上に、モジュールを取得する方法に関係なく、さまざまな手法は、ユーザーを検索して、モジュールを使用できるを使用できます。 (詳細については、次を参照してください[PowerShell モジュールをインポートする](./importing-a-powershell-module.md)。)。そのため、インストールの主な問題では、PowerShell がモジュールを検索できることが確認します。
 
-このトピックは次のセクションで構成されます。
+このトピックには、次のセクションが含まれます。
 
 - モジュールをインストールするための規則
 

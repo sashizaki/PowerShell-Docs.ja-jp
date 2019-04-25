@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: dc5ce5a2-50e9-4c88-abf1-ac148a8a6b7b
 caps.latest.revision: 15
 ms.openlocfilehash: 639d3a28dd2af09fcc498caedc5fe74c1493445d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082211"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>PSModulePath インストール パスを変更する
 
@@ -39,7 +39,7 @@ Windows PowerShell の起動時、`PSModulePath`で既定値は、次のシス�
 
   `$env:PSModulePath = $env:PSModulePath + ";c:\ModulePath"`
 
-  プロファイルの詳細については、[about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles) 、Microsoft TechNet ライブラリを参照してください。
+  プロファイルの詳細については、次を参照してください。 [about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles) 、Microsoft TechNet ライブラリです。
 
 - レジストリに永続的な変数を追加するには、という新しいユーザーの環境変数を作成`PSModulePath`で環境変数エディターを使用して、**システム プロパティ** ダイアログ ボックス。
 
