@@ -3,11 +3,11 @@ title: Linux への PowerShell Core のインストール
 description: さまざまな Linux ディストリビューションへの PowerShell Core のインストールに関する情報
 ms.date: 08/06/2018
 ms.openlocfilehash: 06194550f4e73f9dd38f8cdc25f6c7f698cafce2
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293335"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086563"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Linux への PowerShell Core のインストール
 
@@ -75,8 +75,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1404"></a>直接ダウンロードによるインストール - Ubuntu 14.04
 
-Debian パッケージをダウンロードする
-`powershell_6.2.0-1.ubuntu.14.04_amd64.deb`
+Debian パッケージ `powershell_6.2.0-1.ubuntu.14.04_amd64.deb` を
 [リリース][] ページから Ubuntu コンピューターにダウンロードします。
 
 次にターミナルで次を実行します。
@@ -124,8 +123,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>直接ダウンロードによるインストール - Ubuntu 16.04
 
-Debian パッケージをダウンロードする
-`powershell_6.2.0-1.ubuntu.16.04_amd64.deb`
+Debian パッケージ `powershell_6.2.0-1.ubuntu.16.04_amd64.deb` を
 [リリース][] ページから Ubuntu コンピューターにダウンロードします。
 
 次にターミナルで次を実行します。
@@ -176,8 +174,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>直接ダウンロードによるインストール - Ubuntu 18.04
 
-Debian パッケージをダウンロードする
-`powershell_6.2.0-1.ubuntu.18.04_amd64.deb`
+Debian パッケージ `powershell_6.2.0-1.ubuntu.18.04_amd64.deb` を
 [リリース][] ページから Ubuntu コンピューターにダウンロードします。
 
 次にターミナルで次を実行します。
@@ -266,8 +263,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-9"></a>直接ダウンロードによるインストール - Debian 9
 
-Debian パッケージをダウンロードする
-`powershell_6.2.0-1.debian.9_amd64.deb`
+Debian パッケージ `powershell_6.2.0-1.debian.9_amd64.deb` を
 [リリース][] ページから Debian コンピューターにダウンロードします。
 
 次にターミナルで次を実行します。
@@ -307,8 +303,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---centos-7"></a>直接ダウンロードによるインストール - CentOS 7
 
-[CentOS 7][] を使用して、RPM パッケージをダウンロードする
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+[CentOS 7][] を使用して、RPM パッケージ `powershell-6.2.0-1.rhel.7.x86_64.rpm` を
 [リリース][] ページから CentOS コンピューターにダウンロードします。
 
 次にターミナルで次を実行します。
@@ -352,8 +347,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>直接ダウンロードによるインストール - Red Hat Enterprise Linux (RHEL) 7
 
-RPM パッケージをダウンロードする
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+RPM パッケージ `powershell-6.2.0-1.rhel.7.x86_64.rpm` を
 [リリース][] ページから Red Hat Enterprise Linux コンピューターにダウンロードします。
 
 次にターミナルで次を実行します。
@@ -463,8 +457,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-27-fedora-28"></a>直接ダウンロードによるインストール - Fedora 27、Fedora 28
 
-RPM パッケージをダウンロードする
-`powershell-6.2.0-1.rhel.7.x86_64.rpm`
+RPM パッケージ `powershell-6.2.0-1.rhel.7.x86_64.rpm` を
 [リリース][] ページから Fedora コンピューターにダウンロードします。
 
 次にターミナルで次を実行します。
@@ -511,7 +504,7 @@ AUR からパッケージをインストールする方法については、[Arc
 
 ### <a name="getting-snapd"></a>Snapd の取得
 
-`snapd` が Snap を実行するために必要です。
+Snap を実行するには、`snapd` が必要です。
 `snapd` がインストールされているかどうかを確認するには、[こちらの手順](https://docs.snapcraft.io/core/install)を使用してください。
 
 ### <a name="installation-via-snap"></a>Snap を使用したインストール
@@ -687,13 +680,13 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 ## <a name="paths"></a>パス
 
-* `$PSHOME` : `/opt/microsoft/powershell/6.2.0/`
-* ユーザー プロファイルは次から読み込まれます: `~/.config/powershell/profile.ps1`
-* 既定のプロファイルは次から読み込まれます: `$PSHOME/profile.ps1`
-* ユーザー モジュールは次から読み込まれます: `~/.local/share/powershell/Modules`
-* 共有モジュールは次から読み込まれます: `/usr/local/share/powershell/Modules`
-* 既定のモジュールは次から読み込まれます: `$PSHOME/Modules`
-* PSReadline 履歴は次に記録されます: `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+* `$PSHOME` は `/opt/microsoft/powershell/6.2.0/` です
+* ユーザー プロファイルは `~/.config/powershell/profile.ps1` から読み込まれます
+* 既定のプロファイルは `$PSHOME/profile.ps1` から読み込まれます
+* ユーザー モジュールは `~/.local/share/powershell/Modules` から読み込まれます
+* 共有モジュールは `/usr/local/share/powershell/Modules` から読み込まれます
+* 既定のモジュールは `$PSHOME/Modules` から読み込まれます
+* PSReadline 履歴は `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt` に記録されます
 
 プロファイルは PowerShell のホスト別構成を順守します。そのため、既定のホスト固有プロファイルは同じ場所の `Microsoft.PowerShell_profile.ps1` にあります。
 

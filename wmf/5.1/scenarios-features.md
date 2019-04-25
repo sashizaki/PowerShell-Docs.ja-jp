@@ -4,22 +4,22 @@ ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 の新しいシナリオと機能
 ms.openlocfilehash: b00069aad7422f86d1462a62a6c4bc8a91e46705
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55681680"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085460"
 ---
 # <a name="new-scenarios-and-features-in-wmf-51"></a>WMF 5.1 の新しいシナリオと機能
 
-> 注意: この情報は暫定版であり、変更することがあります。
+> 注: この情報は暫定的であり、変更されることがあります。
 
 ## <a name="powershell-editions"></a>PowerShell のエディション
 
-PowerShell は、バージョン 5.1 以降、機能セットとプラットフォーム互換性が異なるさまざまなエディションが提供されるようになりました。
+バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
 
-- **デスクトップ エディション:** .NET Framework 上に構築されており、Server Core や Windows Desktop などの Windows の完全エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
-- **コア エディション:** .NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
+- **Desktop Edition:**.NET Framework 上に構築され、Windows の完全フットプリント エディション (Server Core、Windows Desktop など) で実行される PowerShell のバージョンをターゲットとするスクリプトおよびモジュールと互換性があります。
+- **Core Edition:**.NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
 
 **PowerShell のエディションの使用に関する詳細**
 

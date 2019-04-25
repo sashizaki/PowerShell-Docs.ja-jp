@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: ソーシャル メディアやコメントを使用したフィードバックの提供
 ms.openlocfilehash: 95e5db22b94151c3974189c30f1d4e580b47eeb5
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076074"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>ソーシャル メディアやコメントを使用したフィードバックの提供
 

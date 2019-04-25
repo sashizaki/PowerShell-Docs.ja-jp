@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: ワークフロー ガイド
 ms.openlocfilehash: e2c91299f064a10fd27ab195d0309a9bef6a7ded
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058949"
 ---
 # <a name="psworkflow-module"></a>PSWorkflow モジュール
 

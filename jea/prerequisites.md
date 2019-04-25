@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の前提条件
 ms.openlocfilehash: acc16c0c7eec357b621c0706a66b8752ae5578cd
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893037"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084846"
 ---
 # <a name="prerequisites"></a>前提条件
 
-> 適用先: Windows PowerShell 5.0
+> 適用先:Windows PowerShell 5.0
 
 Just Enough Administration は、Windows PowerShell 5.0 以降に含まれる機能です。
 このトピックでは、JEA の使用を開始するために満たす必要のある前提条件について説明します。
@@ -38,12 +38,10 @@ Windows 10 1507           | 不可
 Windows 8、8.1            | WMF 5.1 のすべての機能
 Windows 7                 | WMF 5.1 の制限された機能<sup>1</sup>
 
-
-  <sup>1</sup> Windows Server 2008 R2 または Windows 7 で、グループが管理するサービス アカウントを使用するように JEA を構成することはできません。
+<sup>1</sup> Windows Server 2008 R2 または Windows 7 で、グループが管理するサービス アカウントを使用するように JEA を構成することはできません。
 仮想アカウントと他の JEA 機能はサポートされています *。*
 
-
-  <sup>2</sup> Windows 10 のバージョン 1511 と 1603 では、JEA の次の機能はサポートされません。グループ管理されたサービス アカウントとしての実行、セッション構成での条件付きアクセス規則、ユーザー ドライブ、ローカル ユーザー アカウントへのアクセスの許可。
+<sup>2</sup> Windows 10 のバージョン 1511 と 1603 では、JEA の次の機能はサポートされません。グループ管理されたサービス アカウントとしての実行、セッション構成での条件付きアクセス規則、ユーザー ドライブ、ローカル ユーザー アカウントへのアクセスの許可。
 これらの機能を使うには、Windows をバージョン 1607 (Anniversary Update) 以降に更新します。
 
 ### <a name="check-which-version-of-powershell-is-installed"></a>インストールされている PowerShell のバージョンを確認する

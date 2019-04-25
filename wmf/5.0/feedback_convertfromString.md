@@ -2,11 +2,11 @@
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 ms.openlocfilehash: fcf2adf67f36edb534df3e2a849459fb20e1c2de
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085356"
 ---
 # <a name="extract-and-parse-structured-objects-out-of-string"></a>文字列から構造化オブジェクトを抽出して分析する
 
@@ -31,8 +31,8 @@ ms.locfileid: "37892365"
 ```
 
 ```output
-P1     P2
---     --
+P1     P2
+--     --
 Hello  World
 ```
 
@@ -41,49 +41,49 @@ Hello  World
 まず手始めに、テキスト ベースのアドレス帳を考えてみましょう。
 
 ```
-    Ana Trujillo
+    Ana Trujillo
 
-    Redmond, WA
+    Redmond, WA
 
-    Antonio Moreno
+    Antonio Moreno
 
-    Renton, WA
+    Renton, WA
 
-    Thomas Hardy
+    Thomas Hardy
 
-    Seattle, WA
+    Seattle, WA
 
-    Christina Berglund
+    Christina Berglund
 
-    Redmond, WA
+    Redmond, WA
 
-    Hanna Moos
+    Hanna Moos
 
-    Puyallup, WA
+    Puyallup, WA
 ```
 
 テンプレートとして使ういくつかの例をファイルにコピーします。
 
 ```
-    Ana Trujillo
+    Ana Trujillo
 
-    Redmond, WA
+    Redmond, WA
 
-    Antonio Moreno
+    Antonio Moreno
 
-    Renton, WA
+    Renton, WA
 ```
 
 抽出するデータを中かっこで囲み、それに任意の名前を付けます。 **Name** プロパティ (およびそれに関連付けられている他のプロパティ) は複数回出現するので、アスタリスク (\*) を使って、この結果を (1 つのレコードに一連のプロパティを抽出するのではなく) 複数のレコードに抽出することを指定します。
 
 ```
-    {Name\*:Ana Trujillo}
+    {Name\*:Ana Trujillo}
 
-    {City:Redmond}, {State:WA}
+    {City:Redmond}, {State:WA}
 
-    {Name\*:Antonio Moreno}
+    {Name\*:Antonio Moreno}
 
-    {City:Renton}, {State:WA}
+    {City:Renton}, {State:WA}
 ```
 
 この一連の例から、`ConvertFrom-String` で、同様の構造を持つ入力ファイルからオブジェクト ベースの出力を自動的に抽出できるようになりました。
@@ -93,13 +93,13 @@ Get-Content .\addresses.output.txt | ConvertFrom-String -TemplateFile .\addresse
 ```
 
 ```output
-ExtentText                     Name               City     State
-----------                     ----               ----     -----
-Ana Trujillo...                Ana Trujillo       Redmond  WA
-Antonio Moreno...              Antonio Moreno     Renton   WA
-Thomas Hardy...                Thomas Hardy       Seattle  WA
-Christina Berglund...          Christina Berglund Redmond  WA
-Hanna Moos...                  Hanna Moos         Puyallup WA
+ExtentText                     Name               City     State
+----------                     ----               ----     -----
+Ana Trujillo...                Ana Trujillo       Redmond  WA
+Antonio Moreno...              Antonio Moreno     Renton   WA
+Thomas Hardy...                Thomas Hardy       Seattle  WA
+Christina Berglund...          Christina Berglund Redmond  WA
+Hanna Moos...                  Hanna Moos         Puyallup WA
 ```
 
 抽出されたテキストに追加のデータ操作を行う目的で、**ExtentText** プロパティに、レコードの抽出元から未加工のテキストがキャプチャされます。 この機能にフィードバックを提供したり、例を書き出すのが難しいコンテンツについて相談したりするには、<psdmfb@microsoft.com> までメールでお知らせください。

@@ -4,11 +4,11 @@ contributor: JKeithB, SydneyhSmith
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: 互換性のある PowerShell エディションまたはオペレーティング システムが含まれるパッケージ
 ms.openlocfilehash: 14038aa9b0453e1d06e6587e97da391b56297c75
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58057180"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084559"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>互換性のある PowerShell エディションまたはオペレーティング システムが含まれるパッケージ
 

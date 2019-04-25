@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: dsc, powershell, 構成, サービス, セットアップ
 title: 構成の作成、コンパイル、適用
 ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
-ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59506820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080018"
 ---
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -90,7 +90,7 @@ LCM はDSC リソースを呼び出し、構成を適用します。
 以下のコードを使用して、`Start-DSCConfiguration` コマンドレットを実行します。 "localhost.mof" が保存されているディレクトリ パスを `-Path` パラメーターに指定します。 `Start-DSCConfiguration` コマンドレットは、任意の "\<computername\>.mof" ファイルに対して指定されたディレクトリが対象になります。 `Start-DSCConfiguration` コマンドレットでは、見つかった各 ".mof" ファイルを、ファイル名 ("localhost"、"server01"、"dc-02" など) で指定されたコンピューター名に適用しようとします。
 
 > [!NOTE]
-> `-Wait` パラメーターが指定されていない場合、`Start-DSCConfiguration` では操作を実行するためにバックグラウンド ジョブが作成されます。 `-Verbose` パラメーターを指定すると、操作の**詳細**出力を確認できます。 `-Wait`および `-Verbose` は、どちらも省略可能なパラメーターです。
+> `-Wait` パラメーターが指定されていない場合、`Start-DSCConfiguration` では操作を実行するためにバックグラウンド ジョブが作成されます。 `-Verbose` パラメーターを指定すると、操作の**詳細**出力を確認できます。 `-Wait` および `-Verbose` は、どちらも省略可能なパラメーターです。
 
 ```powershell
 Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait

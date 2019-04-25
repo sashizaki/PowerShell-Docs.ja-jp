@@ -5,11 +5,11 @@ keywords: WMF, PowerShell, セットアップ
 contributor: keithb
 title: WMF 5.1 のインストールと構成
 ms.openlocfilehash: c439d0851189a89a81fa38194632dc54475a001d
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58055988"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084999"
 ---
 # <a name="install-and-configure-wmf-51"></a>WMF 5.1 のインストールと構成
 

@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: d8ff24b0aba55e1ef964ee05db14b2fddadafdf0
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 5d0065fb3d65c5ccc520bcabc76f0e23d4265818
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222022"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058048"
 ---
 # <a name="wow64-support-for-configuration-keyword"></a>構成キーワードの WOW64 サポート
 

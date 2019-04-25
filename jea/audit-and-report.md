@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の監査とレポート
 ms.openlocfilehash: 2388c735840d8d3683aa8bc9869b9fb0371e5902
-ms.sourcegitcommit: 6749f67c32e05999e10deb9d45f90f45ac21a599
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/08/2018
-ms.locfileid: "48851222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084081"
 ---
 # <a name="auditing-and-reporting-on-jea"></a>JEA の監査とレポート
 
-> 適用先: Windows PowerShell 5.0
+> 適用先:Windows PowerShell 5.0
 
 JEA の展開後、JEA 構成を定期的に監査することが推奨されます。
 JEA エンドポイントに適切なユーザーがアクセスしていること、ロールの割り当てが適切であることを確認できます。

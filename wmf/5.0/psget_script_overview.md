@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: 7667aebb6545ae8dde5d94baee4a663f1d26c167
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3c1fcf94174b99490b19963662ef1ccdf6cebfec
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34219584"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085070"
 ---
 # <a name="powershell-script-discovery-install-and-management-with-powershellget"></a>PowerShellGet による PowerShell スクリプトの検出、インストール、および管理
 
