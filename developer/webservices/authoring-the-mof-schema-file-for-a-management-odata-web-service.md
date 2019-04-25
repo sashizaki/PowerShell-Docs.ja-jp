@@ -9,21 +9,21 @@ ms.topic: article
 ms.assetid: 65fbac8b-07d0-4513-bc8d-79f1f389be0f
 caps.latest.revision: 5
 ms.openlocfilehash: 7aadee07b38d2e9d87c5f0c548d13a5cdad1939f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080766"
 ---
-# <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="771cf-102">Management OData Web サービスの MOF スキーマ ファイルを作成する</span><span class="sxs-lookup"><span data-stu-id="771cf-102">Authoring the MOF schema file for a Management OData web service</span></span>
+# <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="d3279-102">Management OData Web サービスの MOF スキーマ ファイルを作成する</span><span class="sxs-lookup"><span data-stu-id="d3279-102">Authoring the MOF schema file for a Management OData web service</span></span>
 
-<span data-ttu-id="771cf-103">Management OData web サービスは、パブリック リソースのスキーマを使用する MOF ファイルを作成して公開するリソースを定義します。</span><span class="sxs-lookup"><span data-stu-id="771cf-103">You define the resources that your Management OData web service exposes by creating a MOF file that used the public resource schema.</span></span> <span data-ttu-id="771cf-104">各リソースは、ファイル内のクラスとして定義され、プロパティは、クラス メンバーとして定義されます。</span><span class="sxs-lookup"><span data-stu-id="771cf-104">Each resource is defined as a class in the file, and properties are defined as class members.</span></span> <span data-ttu-id="771cf-105">MOF ファイルで使用するスキーマの詳細については、[パブリック リソース スキーマ](./public-resource-schema.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="771cf-105">For more information about the schema used in the MOF file, see [Public Resource Schema](./public-resource-schema.md).</span></span>
+<span data-ttu-id="d3279-103">Management OData web サービスは、パブリック リソースのスキーマを使用する MOF ファイルを作成して公開するリソースを定義します。</span><span class="sxs-lookup"><span data-stu-id="d3279-103">You define the resources that your Management OData web service exposes by creating a MOF file that used the public resource schema.</span></span> <span data-ttu-id="d3279-104">各リソースは、ファイル内のクラスとして定義され、プロパティは、クラス メンバーとして定義されます。</span><span class="sxs-lookup"><span data-stu-id="d3279-104">Each resource is defined as a class in the file, and properties are defined as class members.</span></span> <span data-ttu-id="d3279-105">MOF ファイルで使用するスキーマの詳細については、次を参照してください。[パブリック リソース スキーマ](./public-resource-schema.md)します。</span><span class="sxs-lookup"><span data-stu-id="d3279-105">For more information about the schema used in the MOF file, see [Public Resource Schema](./public-resource-schema.md).</span></span>
 
-## <a name="example-mof-file"></a><span data-ttu-id="771cf-106">MOF ファイルの例</span><span class="sxs-lookup"><span data-stu-id="771cf-106">Example MOF file</span></span>
+## <a name="example-mof-file"></a><span data-ttu-id="d3279-106">MOF ファイルの例</span><span class="sxs-lookup"><span data-stu-id="d3279-106">Example MOF file</span></span>
 
-<span data-ttu-id="771cf-107">次のファイルは、サービスとプロセスのリソースを定義します。</span><span class="sxs-lookup"><span data-stu-id="771cf-107">The following file defines Service and Process resources.</span></span> <span data-ttu-id="771cf-108">これらの各リソースは、Windows PowerShell コマンドレットのセットによって管理できるオブジェクトに対応します。</span><span class="sxs-lookup"><span data-stu-id="771cf-108">Each of these resources corresponds to an object that can be managed by a set of Windows PowerShell cmdlet.</span></span> <span data-ttu-id="771cf-109">プロパティは、これらのコマンドレットによって使用されるパラメーターに対応します。</span><span class="sxs-lookup"><span data-stu-id="771cf-109">The properties correspond to parameters used by those cmdlets.</span></span>
+<span data-ttu-id="d3279-107">次のファイルは、サービスとプロセスのリソースを定義します。</span><span class="sxs-lookup"><span data-stu-id="d3279-107">The following file defines Service and Process resources.</span></span> <span data-ttu-id="d3279-108">これらの各リソースは、Windows PowerShell コマンドレットのセットによって管理できるオブジェクトに対応します。</span><span class="sxs-lookup"><span data-stu-id="d3279-108">Each of these resources corresponds to an object that can be managed by a set of Windows PowerShell cmdlet.</span></span> <span data-ttu-id="d3279-109">プロパティは、これらのコマンドレットによって使用されるパラメーターに対応します。</span><span class="sxs-lookup"><span data-stu-id="d3279-109">The properties correspond to parameters used by those cmdlets.</span></span>
 
-<span data-ttu-id="771cf-110">2 つのリソースには、複合型のプロパティが含まれています。</span><span class="sxs-lookup"><span data-stu-id="771cf-110">Each of the two resources contains properties that are of complex type.</span></span> <span data-ttu-id="771cf-111">クラスを使用して変更として、複合型は定義されて、`ComplexType`修飾子。</span><span class="sxs-lookup"><span data-stu-id="771cf-111">The complex types are defined as classes modified with the `ComplexType` qualifier.</span></span>
+<span data-ttu-id="d3279-110">2 つのリソースには、複合型のプロパティが含まれています。</span><span class="sxs-lookup"><span data-stu-id="d3279-110">Each of the two resources contains properties that are of complex type.</span></span> <span data-ttu-id="d3279-111">クラスを使用して変更として、複合型は定義されて、`ComplexType`修飾子。</span><span class="sxs-lookup"><span data-stu-id="d3279-111">The complex types are defined as classes modified with the `ComplexType` qualifier.</span></span>
 
 ```csharp
 
@@ -209,8 +209,8 @@ class PswsTest_Stream
 
 ```
 
-## <a name="see-also"></a><span data-ttu-id="771cf-112">参照</span><span class="sxs-lookup"><span data-stu-id="771cf-112">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d3279-112">参照</span><span class="sxs-lookup"><span data-stu-id="d3279-112">See Also</span></span>
 
-[<span data-ttu-id="771cf-113">Management OData Web サービスを作成します。</span><span class="sxs-lookup"><span data-stu-id="771cf-113">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
+[<span data-ttu-id="d3279-113">Management OData Web サービスを作成します。</span><span class="sxs-lookup"><span data-stu-id="d3279-113">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
 
-[<span data-ttu-id="771cf-114">パブリック リソースのスキーマ</span><span class="sxs-lookup"><span data-stu-id="771cf-114">Public Resource Schema</span></span>](./public-resource-schema.md)
+[<span data-ttu-id="d3279-114">パブリック リソースのスキーマ</span><span class="sxs-lookup"><span data-stu-id="d3279-114">Public Resource Schema</span></span>](./public-resource-schema.md)

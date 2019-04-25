@@ -9,47 +9,47 @@ ms.topic: article
 ms.assetid: 459b6d0f-d596-4269-9113-915a283c1e28
 caps.latest.revision: 10
 ms.openlocfilehash: 8b89d7bf8a69626dc3e6bd566dab7951a4c7c5ab
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082874"
 ---
-# <a name="host06-sample"></a><span data-ttu-id="cffe9-102">Host06 サンプル</span><span class="sxs-lookup"><span data-stu-id="cffe9-102">Host06 Sample</span></span>
+# <a name="host06-sample"></a><span data-ttu-id="ac606-102">Host06 サンプル</span><span class="sxs-lookup"><span data-stu-id="ac606-102">Host06 Sample</span></span>
 
-<span data-ttu-id="cffe9-103">このサンプルでは、コマンドラインからコマンドを読み取ってや、コマンドを実行し、結果をコンソールに表示する対話型コンソール ベースのホスト アプリケーションを構築する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="cffe9-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span> <span data-ttu-id="cffe9-104">さらに、このサンプルでは、トークナイザー API を使用して、ユーザーが入力したテキストの色を指定します。</span><span class="sxs-lookup"><span data-stu-id="cffe9-104">In addition, this sample uses the Tokenizer APIs to specify the color of the text that is entered by the user.</span></span>
+<span data-ttu-id="ac606-103">このサンプルでは、コマンドラインからコマンドを読み取ってや、コマンドを実行し、結果をコンソールに表示する対話型コンソール ベースのホスト アプリケーションを構築する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="ac606-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span> <span data-ttu-id="ac606-104">さらに、このサンプルでは、トークナイザー API を使用して、ユーザーが入力したテキストの色を指定します。</span><span class="sxs-lookup"><span data-stu-id="ac606-104">In addition, this sample uses the Tokenizer APIs to specify the color of the text that is entered by the user.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="cffe9-105">要件</span><span class="sxs-lookup"><span data-stu-id="cffe9-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="ac606-105">要件</span><span class="sxs-lookup"><span data-stu-id="ac606-105">Requirements</span></span>
 
-- <span data-ttu-id="cffe9-106">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="cffe9-106">This sample requires Windows PowerShell 2.0.</span></span>
+- <span data-ttu-id="ac606-106">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="ac606-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-- <span data-ttu-id="cffe9-107">このアプリケーションは、管理者特権モード (管理者として実行) で実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="cffe9-107">This application must be run in elevated mode (Run as administrator).</span></span>
+- <span data-ttu-id="ac606-107">このアプリケーションは、管理者特権モード (管理者として実行) で実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ac606-107">This application must be run in elevated mode (Run as administrator).</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="cffe9-108">使用例</span><span class="sxs-lookup"><span data-stu-id="cffe9-108">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="ac606-108">使用例</span><span class="sxs-lookup"><span data-stu-id="ac606-108">Demonstrates</span></span>
 
-- <span data-ttu-id="cffe9-109">あるクラスから派生するカスタム ホストを作成、 [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラス、 [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラス、および、 [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラス。</span><span class="sxs-lookup"><span data-stu-id="cffe9-109">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
+- <span data-ttu-id="ac606-109">あるクラスから派生するカスタム ホストを作成、 [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラス、 [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラス、および、 [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラス。</span><span class="sxs-lookup"><span data-stu-id="ac606-109">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
 
-- <span data-ttu-id="cffe9-110">対話型の Windows PowerShell シェルを作成するのにこれらのホスト クラスを使用するコンソール アプリケーションを構築します。</span><span class="sxs-lookup"><span data-stu-id="cffe9-110">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
+- <span data-ttu-id="ac606-110">対話型の Windows PowerShell シェルを作成するのにこれらのホスト クラスを使用するコンソール アプリケーションを構築します。</span><span class="sxs-lookup"><span data-stu-id="ac606-110">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
 
-- <span data-ttu-id="cffe9-111">作成、`$profile`変数と、次のプロファイルの読み込み。</span><span class="sxs-lookup"><span data-stu-id="cffe9-111">Creating a `$profile` variable and loading the following profiles.</span></span>
+- <span data-ttu-id="ac606-111">作成、`$profile`変数と、次のプロファイルの読み込み。</span><span class="sxs-lookup"><span data-stu-id="ac606-111">Creating a `$profile` variable and loading the following profiles.</span></span>
 
-  - <span data-ttu-id="cffe9-112">現在のユーザー、現在のホスト</span><span class="sxs-lookup"><span data-stu-id="cffe9-112">current user, current host</span></span>
+  - <span data-ttu-id="ac606-112">現在のユーザー、現在のホスト</span><span class="sxs-lookup"><span data-stu-id="ac606-112">current user, current host</span></span>
 
-  - <span data-ttu-id="cffe9-113">現在のユーザー、すべてのホスト</span><span class="sxs-lookup"><span data-stu-id="cffe9-113">current user, all hosts</span></span>
+  - <span data-ttu-id="ac606-113">現在のユーザー、すべてのホスト</span><span class="sxs-lookup"><span data-stu-id="ac606-113">current user, all hosts</span></span>
 
-  - <span data-ttu-id="cffe9-114">すべてのユーザー、現在のホスト</span><span class="sxs-lookup"><span data-stu-id="cffe9-114">all users, current host</span></span>
+  - <span data-ttu-id="ac606-114">すべてのユーザー、現在のホスト</span><span class="sxs-lookup"><span data-stu-id="ac606-114">all users, current host</span></span>
 
-  - <span data-ttu-id="cffe9-115">すべてのユーザー、すべてのホスト</span><span class="sxs-lookup"><span data-stu-id="cffe9-115">all users, all hosts</span></span>
+  - <span data-ttu-id="ac606-115">すべてのユーザー、すべてのホスト</span><span class="sxs-lookup"><span data-stu-id="ac606-115">all users, all hosts</span></span>
 
-- <span data-ttu-id="cffe9-116">実装、 [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection)インターフェイス。</span><span class="sxs-lookup"><span data-stu-id="cffe9-116">Implement the [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.</span></span>
+- <span data-ttu-id="ac606-116">実装、 [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection)インターフェイス。</span><span class="sxs-lookup"><span data-stu-id="ac606-116">Implement the [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.</span></span>
 
-- <span data-ttu-id="cffe9-117">実装、 [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)インターフェイスを使用して対話型リモート処理をサポートするために、 [Enter-pssession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)と[Exit-pssession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession)コマンドレット。</span><span class="sxs-lookup"><span data-stu-id="cffe9-117">Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span></span>
+- <span data-ttu-id="ac606-117">実装、 [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)インターフェイスを使用して対話型リモート処理をサポートするために、 [Enter-pssession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)と[Exit-pssession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession)コマンドレット。</span><span class="sxs-lookup"><span data-stu-id="ac606-117">Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span></span>
 
-- <span data-ttu-id="cffe9-118">トークン化する API を使用するは入力したコマンド ラインを色分けして表示します。</span><span class="sxs-lookup"><span data-stu-id="cffe9-118">Use the Tokenize API to colorize the command line as it is typed.</span></span>
+- <span data-ttu-id="ac606-118">トークン化する API を使用するは入力したコマンド ラインを色分けして表示します。</span><span class="sxs-lookup"><span data-stu-id="ac606-118">Use the Tokenize API to colorize the command line as it is typed.</span></span>
 
-## <a name="example"></a><span data-ttu-id="cffe9-119">例</span><span class="sxs-lookup"><span data-stu-id="cffe9-119">Example</span></span>
+## <a name="example"></a><span data-ttu-id="ac606-119">例</span><span class="sxs-lookup"><span data-stu-id="ac606-119">Example</span></span>
 
- <span data-ttu-id="cffe9-120">この例は、コマンドラインでコマンドを入力するユーザーは、これらのコマンドを処理し、し、結果を出力します。</span><span class="sxs-lookup"><span data-stu-id="cffe9-120">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
+ <span data-ttu-id="ac606-120">この例は、コマンドラインでコマンドを入力するユーザーは、これらのコマンドを処理し、し、結果を出力します。</span><span class="sxs-lookup"><span data-stu-id="ac606-120">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -410,9 +410,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="cffe9-121">例</span><span class="sxs-lookup"><span data-stu-id="cffe9-121">Example</span></span>
+## <a name="example"></a><span data-ttu-id="ac606-121">例</span><span class="sxs-lookup"><span data-stu-id="ac606-121">Example</span></span>
 
- <span data-ttu-id="cffe9-122">次のコードは、実装、 [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)このホスト アプリケーションによって使用されるクラスです。</span><span class="sxs-lookup"><span data-stu-id="cffe9-122">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="cffe9-123">実装されていない要素は、例外をスローまたは何も返しません。</span><span class="sxs-lookup"><span data-stu-id="cffe9-123">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="ac606-122">次のコードは、実装、 [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)このホスト アプリケーションによって使用されるクラスです。</span><span class="sxs-lookup"><span data-stu-id="ac606-122">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="ac606-123">実装されていない要素は、例外をスローまたは何も返しません。</span><span class="sxs-lookup"><span data-stu-id="ac606-123">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -634,9 +634,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="cffe9-124">例</span><span class="sxs-lookup"><span data-stu-id="cffe9-124">Example</span></span>
+## <a name="example"></a><span data-ttu-id="ac606-124">例</span><span class="sxs-lookup"><span data-stu-id="ac606-124">Example</span></span>
 
- <span data-ttu-id="cffe9-125">次のコードは、実装、 [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)このホスト アプリケーションによって使用されるクラスです。</span><span class="sxs-lookup"><span data-stu-id="cffe9-125">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
+ <span data-ttu-id="ac606-125">次のコードは、実装、 [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)このホスト アプリケーションによって使用されるクラスです。</span><span class="sxs-lookup"><span data-stu-id="ac606-125">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1152,9 +1152,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="cffe9-126">例</span><span class="sxs-lookup"><span data-stu-id="cffe9-126">Example</span></span>
+## <a name="example"></a><span data-ttu-id="ac606-126">例</span><span class="sxs-lookup"><span data-stu-id="ac606-126">Example</span></span>
 
- <span data-ttu-id="cffe9-127">次のコードは、実装、 [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)このホスト アプリケーションによって使用されるクラスです。</span><span class="sxs-lookup"><span data-stu-id="cffe9-127">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="cffe9-128">実装されていない要素は、例外をスローまたは何も返しません。</span><span class="sxs-lookup"><span data-stu-id="cffe9-128">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="ac606-127">次のコードは、実装、 [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)このホスト アプリケーションによって使用されるクラスです。</span><span class="sxs-lookup"><span data-stu-id="ac606-127">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="ac606-128">実装されていない要素は、例外をスローまたは何も返しません。</span><span class="sxs-lookup"><span data-stu-id="ac606-128">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1364,9 +1364,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="cffe9-129">例</span><span class="sxs-lookup"><span data-stu-id="cffe9-129">Example</span></span>
+## <a name="example"></a><span data-ttu-id="ac606-129">例</span><span class="sxs-lookup"><span data-stu-id="ac606-129">Example</span></span>
 
- <span data-ttu-id="cffe9-130">次のコードを読み取りコマンドラインと色、テキスト、入力します。</span><span class="sxs-lookup"><span data-stu-id="cffe9-130">The following code reads the command line and colors the text as it is entered.</span></span> <span data-ttu-id="cffe9-131">使用してトークンを確認、 [System.Management.Automation.Psparser.Tokenize\*](/dotnet/api/System.Management.Automation.PSParser.Tokenize)メソッド。</span><span class="sxs-lookup"><span data-stu-id="cffe9-131">Tokens are determined by using the [System.Management.Automation.Psparser.Tokenize\*](/dotnet/api/System.Management.Automation.PSParser.Tokenize) method.</span></span>
+ <span data-ttu-id="ac606-130">次のコードを読み取りコマンドラインと色、テキスト、入力します。</span><span class="sxs-lookup"><span data-stu-id="ac606-130">The following code reads the command line and colors the text as it is entered.</span></span> <span data-ttu-id="ac606-131">使用してトークンを確認、 [System.Management.Automation.Psparser.Tokenize\*](/dotnet/api/System.Management.Automation.PSParser.Tokenize)メソッド。</span><span class="sxs-lookup"><span data-stu-id="ac606-131">Tokens are determined by using the [System.Management.Automation.Psparser.Tokenize\*](/dotnet/api/System.Management.Automation.PSParser.Tokenize) method.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1845,10 +1845,10 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="cffe9-132">参照</span><span class="sxs-lookup"><span data-stu-id="cffe9-132">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ac606-132">参照</span><span class="sxs-lookup"><span data-stu-id="ac606-132">See Also</span></span>
 
- [<span data-ttu-id="cffe9-133">System.Management.Automation.Host.PSHost</span><span class="sxs-lookup"><span data-stu-id="cffe9-133">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [<span data-ttu-id="ac606-133">System.Management.Automation.Host.PSHost</span><span class="sxs-lookup"><span data-stu-id="ac606-133">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [<span data-ttu-id="cffe9-134">System.Management.Automation.Host.Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="cffe9-134">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [<span data-ttu-id="ac606-134">System.Management.Automation.Host.Pshostuserinterface</span><span class="sxs-lookup"><span data-stu-id="ac606-134">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [<span data-ttu-id="cffe9-135">System.Management.Automation.Host.Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="cffe9-135">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [<span data-ttu-id="ac606-135">System.Management.Automation.Host.Pshostrawuserinterface</span><span class="sxs-lookup"><span data-stu-id="ac606-135">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
