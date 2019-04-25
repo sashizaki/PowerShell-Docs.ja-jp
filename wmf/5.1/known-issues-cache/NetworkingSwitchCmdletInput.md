@@ -5,37 +5,37 @@ ms.topic: conceptual
 contributor: vaibch
 title: ネットワーク スイッチ マネージャーのコマンドレットの失敗
 ms.openlocfilehash: a0f84c35974b6674faba4b0f19a28bd6e2490a96
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37893156"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084982"
 ---
-# <a name="network-switch-manager-cmdlets-failure"></a><span data-ttu-id="48723-103">ネットワーク スイッチ マネージャーのコマンドレットの失敗</span><span class="sxs-lookup"><span data-stu-id="48723-103">Network Switch Manager Cmdlets Failure</span></span>
+# <a name="network-switch-manager-cmdlets-failure"></a><span data-ttu-id="1972a-103">ネットワーク スイッチ マネージャーのコマンドレットの失敗</span><span class="sxs-lookup"><span data-stu-id="1972a-103">Network Switch Manager Cmdlets Failure</span></span>
 
-<span data-ttu-id="48723-104">ネットワーク スイッチ マネージャーのコマンドレットを使用すれば、WSMAN 経由でネットワーク スイッチを管理することができます。</span><span class="sxs-lookup"><span data-stu-id="48723-104">The Network Switch Manager cmdlets can be used to manage network switches over WSMAN.</span></span>
-<span data-ttu-id="48723-105">このモジュールのコマンドレットの中には、パイプラインからの値を受け入れられるものがいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="48723-105">A few cmdlets of this module are capable of accepting values from pipelines.</span></span>
-<span data-ttu-id="48723-106">WMF 5.1 プレビューの場合、パイプラインからの値を受け入れ可能なコマンドレットは、値がパイプラインを介して渡されていないと、実行に失敗します。</span><span class="sxs-lookup"><span data-stu-id="48723-106">In WMF 5.1 Preview, the cmdlets that can accept value from pipeline fail to execute when the values are not passed through pipelines.</span></span>
+<span data-ttu-id="1972a-104">ネットワーク スイッチ マネージャーのコマンドレットを使用すれば、WSMAN 経由でネットワーク スイッチを管理することができます。</span><span class="sxs-lookup"><span data-stu-id="1972a-104">The Network Switch Manager cmdlets can be used to manage network switches over WSMAN.</span></span>
+<span data-ttu-id="1972a-105">このモジュールのコマンドレットの中には、パイプラインからの値を受け入れられるものがいくつかあります。</span><span class="sxs-lookup"><span data-stu-id="1972a-105">A few cmdlets of this module are capable of accepting values from pipelines.</span></span>
+<span data-ttu-id="1972a-106">WMF 5.1 プレビューの場合、パイプラインからの値を受け入れ可能なコマンドレットは、値がパイプラインを介して渡されていないと、実行に失敗します。</span><span class="sxs-lookup"><span data-stu-id="1972a-106">In WMF 5.1 Preview, the cmdlets that can accept value from pipeline fail to execute when the values are not passed through pipelines.</span></span>
 
-<span data-ttu-id="48723-107">"InputObject" パラメーターが指定されていない場合、コマンドレットは問題なく実行を継続します。</span><span class="sxs-lookup"><span data-stu-id="48723-107">If "InputObject" parameter is not used, the cmdlet should continue to execute without failures.</span></span>
+<span data-ttu-id="1972a-107">"InputObject" パラメーターが指定されていない場合、コマンドレットは問題なく実行を継続します。</span><span class="sxs-lookup"><span data-stu-id="1972a-107">If "InputObject" parameter is not used, the cmdlet should continue to execute without failures.</span></span>
 
-<span data-ttu-id="48723-108">影響を受けるコマンドレット、すなわち、パイプラインから "InputObject" パラメーターの値を受け入れることができるコマンドレットの一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="48723-108">Here is the list of affected cmdlets i.e. these cmdlets can accept value for "InputObject" parameter from pipeline.</span></span>
-<span data-ttu-id="48723-109">この値がパイプラインから渡されたものでない場合、コマンドレットの実行は失敗します。</span><span class="sxs-lookup"><span data-stu-id="48723-109">If this value is not passed from pipeline the execution of cmdlet will fail.</span></span>
+<span data-ttu-id="1972a-108">影響を受けるコマンドレット、すなわち、パイプラインから "InputObject" パラメーターの値を受け入れることができるコマンドレットの一覧を次に示します。</span><span class="sxs-lookup"><span data-stu-id="1972a-108">Here is the list of affected cmdlets i.e. these cmdlets can accept value for "InputObject" parameter from pipeline.</span></span>
+<span data-ttu-id="1972a-109">この値がパイプラインから渡されたものでない場合、コマンドレットの実行は失敗します。</span><span class="sxs-lookup"><span data-stu-id="1972a-109">If this value is not passed from pipeline the execution of cmdlet will fail.</span></span>
 
-- <span data-ttu-id="48723-110">Disable-NetworkSwitchEthernetPort</span><span class="sxs-lookup"><span data-stu-id="48723-110">Disable-NetworkSwitchEthernetPort</span></span>
-- <span data-ttu-id="48723-111">Enable-NetworkSwitchEthernetPort</span><span class="sxs-lookup"><span data-stu-id="48723-111">Enable-NetworkSwitchEthernetPort</span></span>
-- <span data-ttu-id="48723-112">Remove-NetworkSwitchEthernetPortIPAddress</span><span class="sxs-lookup"><span data-stu-id="48723-112">Remove-NetworkSwitchEthernetPortIPAddress</span></span>
-- <span data-ttu-id="48723-113">Set-NetworkSwitchEthernetPortIPAddress</span><span class="sxs-lookup"><span data-stu-id="48723-113">Set-NetworkSwitchEthernetPortIPAddress</span></span>
-- <span data-ttu-id="48723-114">Set-NetworkSwitchPortMode</span><span class="sxs-lookup"><span data-stu-id="48723-114">Set-NetworkSwitchPortMode</span></span>
-- <span data-ttu-id="48723-115">Set-NetworkSwitchPortProperty</span><span class="sxs-lookup"><span data-stu-id="48723-115">Set-NetworkSwitchPortProperty</span></span>
-- <span data-ttu-id="48723-116">Disable-NetworkSwitchFeature</span><span class="sxs-lookup"><span data-stu-id="48723-116">Disable-NetworkSwitchFeature</span></span>
-- <span data-ttu-id="48723-117">Enable-NetworkSwitchFeature</span><span class="sxs-lookup"><span data-stu-id="48723-117">Enable-NetworkSwitchFeature</span></span>
-- <span data-ttu-id="48723-118">Remove-NetworkSwitchVlan</span><span class="sxs-lookup"><span data-stu-id="48723-118">Remove-NetworkSwitchVlan</span></span>
-- <span data-ttu-id="48723-119">Set-NetworkSwitchVlanProperty</span><span class="sxs-lookup"><span data-stu-id="48723-119">Set-NetworkSwitchVlanProperty</span></span>
+- <span data-ttu-id="1972a-110">Disable-NetworkSwitchEthernetPort</span><span class="sxs-lookup"><span data-stu-id="1972a-110">Disable-NetworkSwitchEthernetPort</span></span>
+- <span data-ttu-id="1972a-111">Enable-NetworkSwitchEthernetPort</span><span class="sxs-lookup"><span data-stu-id="1972a-111">Enable-NetworkSwitchEthernetPort</span></span>
+- <span data-ttu-id="1972a-112">Remove-NetworkSwitchEthernetPortIPAddress</span><span class="sxs-lookup"><span data-stu-id="1972a-112">Remove-NetworkSwitchEthernetPortIPAddress</span></span>
+- <span data-ttu-id="1972a-113">Set-NetworkSwitchEthernetPortIPAddress</span><span class="sxs-lookup"><span data-stu-id="1972a-113">Set-NetworkSwitchEthernetPortIPAddress</span></span>
+- <span data-ttu-id="1972a-114">Set-NetworkSwitchPortMode</span><span class="sxs-lookup"><span data-stu-id="1972a-114">Set-NetworkSwitchPortMode</span></span>
+- <span data-ttu-id="1972a-115">Set-NetworkSwitchPortProperty</span><span class="sxs-lookup"><span data-stu-id="1972a-115">Set-NetworkSwitchPortProperty</span></span>
+- <span data-ttu-id="1972a-116">Disable-NetworkSwitchFeature</span><span class="sxs-lookup"><span data-stu-id="1972a-116">Disable-NetworkSwitchFeature</span></span>
+- <span data-ttu-id="1972a-117">Enable-NetworkSwitchFeature</span><span class="sxs-lookup"><span data-stu-id="1972a-117">Enable-NetworkSwitchFeature</span></span>
+- <span data-ttu-id="1972a-118">Remove-NetworkSwitchVlan</span><span class="sxs-lookup"><span data-stu-id="1972a-118">Remove-NetworkSwitchVlan</span></span>
+- <span data-ttu-id="1972a-119">Set-NetworkSwitchVlanProperty</span><span class="sxs-lookup"><span data-stu-id="1972a-119">Set-NetworkSwitchVlanProperty</span></span>
 
-## <a name="resolution"></a><span data-ttu-id="48723-120">解決方法</span><span class="sxs-lookup"><span data-stu-id="48723-120">Resolution</span></span>
+## <a name="resolution"></a><span data-ttu-id="1972a-120">解決方法</span><span class="sxs-lookup"><span data-stu-id="1972a-120">Resolution</span></span>
 
-<span data-ttu-id="48723-121">InputObject パラメーターの値をパイプラインを介して渡すと、コマンドレットは正常に動作します。</span><span class="sxs-lookup"><span data-stu-id="48723-121">The cmdlets work fine when the value of InputObject parameter are passed into it through pipeline.</span></span> <span data-ttu-id="48723-122">上記のコマンドレットのいくつかの使用例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="48723-122">A few examples that work for the above cmdlets are:</span></span>
+<span data-ttu-id="1972a-121">InputObject パラメーターの値をパイプラインを介して渡すと、コマンドレットは正常に動作します。</span><span class="sxs-lookup"><span data-stu-id="1972a-121">The cmdlets work fine when the value of InputObject parameter are passed into it through pipeline.</span></span> <span data-ttu-id="1972a-122">上記のコマンドレットのいくつかの使用例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="1972a-122">A few examples that work for the above cmdlets are:</span></span>
 
 - `Disable-NetworkSwitchEthernetPort`
 

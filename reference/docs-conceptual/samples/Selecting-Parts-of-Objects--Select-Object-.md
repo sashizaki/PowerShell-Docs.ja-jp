@@ -4,15 +4,15 @@ keywords: PowerShell, コマンドレット
 title: オブジェクトの一部を選択する (Select-Object)
 ms.assetid: 72e64b1a-d351-4500-9da3-24d8a71d7a92
 ms.openlocfilehash: 323c57ba4462e20d9713fb74732989584f5a993f
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057898"
 ---
-# <a name="selecting-parts-of-objects-select-object"></a><span data-ttu-id="7eaf0-103">オブジェクトの一部を選択する (Select-Object)</span><span class="sxs-lookup"><span data-stu-id="7eaf0-103">Selecting Parts of Objects (Select-Object)</span></span>
+# <a name="selecting-parts-of-objects-select-object"></a><span data-ttu-id="d957c-103">オブジェクトの一部を選択する (Select-Object)</span><span class="sxs-lookup"><span data-stu-id="d957c-103">Selecting Parts of Objects (Select-Object)</span></span>
 
-<span data-ttu-id="7eaf0-104">**Select-Object** コマンドレットを使用して、Windows PowerShell のオブジェクトを新規作成、またはカスタマイズできます。それらのオブジェクトには、作成時に使用する元のオブジェクトから選択したプロパティを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="7eaf0-104">You can use the **Select-Object** cmdlet to create new, custom Windows PowerShell objects that contain properties selected from the objects you use to create them.</span></span> <span data-ttu-id="7eaf0-105">次のコマンドを入力して、Win32_LogicalDisk WMI クラスの Name および FreeSpace プロパティのみを含む、新規オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="7eaf0-105">Type the following command to create a new object that includes only the Name and FreeSpace properties of the Win32_LogicalDisk WMI class:</span></span>
+<span data-ttu-id="d957c-104">**Select-Object** コマンドレットを使用して、Windows PowerShell のオブジェクトを新規作成、またはカスタマイズできます。それらのオブジェクトには、作成時に使用する元のオブジェクトから選択したプロパティを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="d957c-104">You can use the **Select-Object** cmdlet to create new, custom Windows PowerShell objects that contain properties selected from the objects you use to create them.</span></span> <span data-ttu-id="d957c-105">次のコマンドを入力して、Win32_LogicalDisk WMI クラスの Name および FreeSpace プロパティのみを含む、新規オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="d957c-105">Type the following command to create a new object that includes only the Name and FreeSpace properties of the Win32_LogicalDisk WMI class:</span></span>
 
 ```
 PS> Get-WmiObject -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace
@@ -22,7 +22,7 @@ Name                                    FreeSpace
 C:                                      50664845312
 ```
 
-<span data-ttu-id="7eaf0-106">そのコマンドの発行後に、データの種類を表示することはできません。しかし、Select-Object の後に、結果を Get-Member にパイプする場合、次のように PSCustomObject という新しい種類のオブジェクトを作成することを指定できます。</span><span class="sxs-lookup"><span data-stu-id="7eaf0-106">You cannot see the type of data after issuing that command, but if you pipe the result to Get-Member after the Select-Object, you can tell that you have a new type of object, a PSCustomObject:</span></span>
+<span data-ttu-id="d957c-106">そのコマンドの発行後に、データの種類を表示することはできません。しかし、Select-Object の後に、結果を Get-Member にパイプする場合、次のように PSCustomObject という新しい種類のオブジェクトを作成することを指定できます。</span><span class="sxs-lookup"><span data-stu-id="d957c-106">You cannot see the type of data after issuing that command, but if you pipe the result to Get-Member after the Select-Object, you can tell that you have a new type of object, a PSCustomObject:</span></span>
 
 ```
 PS> Get-WmiObject -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace| Get-Member
@@ -39,7 +39,7 @@ FreeSpace   NoteProperty  FreeSpace=...
 Name        NoteProperty System.String Name=C:
 ```
 
-<span data-ttu-id="7eaf0-107">Select-Object には、数多くの用途があります。</span><span class="sxs-lookup"><span data-stu-id="7eaf0-107">Select-Object has many uses.</span></span> <span data-ttu-id="7eaf0-108">その 1 つはデータのレプリケーションで、その後変更することができます。</span><span class="sxs-lookup"><span data-stu-id="7eaf0-108">One of them is replicating data that you can then modify.</span></span> <span data-ttu-id="7eaf0-109">これで、前のセクションで取り上げた問題に対処できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="7eaf0-109">We can now handle the problem we ran across in the previous section.</span></span> <span data-ttu-id="7eaf0-110">新規作成したオブジェクトの FreeSpace の値を更新することができ、その出力にはわかりやすいラベルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="7eaf0-110">We can update the value of FreeSpace in our newly-created objects and the output will include the descriptive label:</span></span>
+<span data-ttu-id="d957c-107">Select-Object には、数多くの用途があります。</span><span class="sxs-lookup"><span data-stu-id="d957c-107">Select-Object has many uses.</span></span> <span data-ttu-id="d957c-108">その 1 つはデータのレプリケーションで、その後変更することができます。</span><span class="sxs-lookup"><span data-stu-id="d957c-108">One of them is replicating data that you can then modify.</span></span> <span data-ttu-id="d957c-109">これで、前のセクションで取り上げた問題に対処できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="d957c-109">We can now handle the problem we ran across in the previous section.</span></span> <span data-ttu-id="d957c-110">新規作成したオブジェクトの FreeSpace の値を更新することができ、その出力にはわかりやすいラベルが含まれています。</span><span class="sxs-lookup"><span data-stu-id="d957c-110">We can update the value of FreeSpace in our newly-created objects and the output will include the descriptive label:</span></span>
 
 ```
 Get-WmiObject -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace | ForEach-Object -Process {$_.FreeSpace = ($_.FreeSpace)/1024.0/1024.0; $_}

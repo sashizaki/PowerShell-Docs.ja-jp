@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 ms.openlocfilehash: 0d3a87f3a9c3409656ea7f7263723436e1f9d48f
-ms.sourcegitcommit: 8b076ebde7ef971d7465bab834a3c2a32471ef6f
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/06/2018
-ms.locfileid: "37892802"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057367"
 ---
-# <a name="installation-of-module-dependencies"></a><span data-ttu-id="3530a-102">モジュールの依存関係のインストール</span><span class="sxs-lookup"><span data-stu-id="3530a-102">Installation of Module Dependencies</span></span>
+# <a name="installation-of-module-dependencies"></a><span data-ttu-id="fd6db-102">モジュールの依存関係のインストール</span><span class="sxs-lookup"><span data-stu-id="fd6db-102">Installation of Module Dependencies</span></span>
 
-<span data-ttu-id="3530a-103">Windows PowerShell 5.0 以降で実行される Install-Module、Update-Module、および Publish-Module コマンドレットには、Side-by-Side (SxS) モジュール バージョン サポートがあります。</span><span class="sxs-lookup"><span data-stu-id="3530a-103">There is now side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
-<span data-ttu-id="3530a-104">また、発行するバージョンを指定する -RequiredVersion パラメーターを Publish-Module コマンドレットに追加しました。</span><span class="sxs-lookup"><span data-stu-id="3530a-104">Also, we have added a -RequiredVersion parameter to the Publish-Module cmdlet to specify the version to be published.</span></span> <span data-ttu-id="3530a-105">Path パラメーターは、モジュールのベース パスと、バージョン フォルダーをサポートするようになりました。</span><span class="sxs-lookup"><span data-stu-id="3530a-105">The Path parameter now supports the module base path with the version folder.</span></span>
+<span data-ttu-id="fd6db-103">Windows PowerShell 5.0 以降で実行される Install-Module、Update-Module、および Publish-Module コマンドレットには、Side-by-Side (SxS) モジュール バージョン サポートがあります。</span><span class="sxs-lookup"><span data-stu-id="fd6db-103">There is now side-by-side (SxS) module version support in Install-Module, Update-Module, and Publish-Module cmdlets that run in Windows PowerShell 5.0 or newer.</span></span>
+<span data-ttu-id="fd6db-104">また、発行するバージョンを指定する -RequiredVersion パラメーターを Publish-Module コマンドレットに追加しました。</span><span class="sxs-lookup"><span data-stu-id="fd6db-104">Also, we have added a -RequiredVersion parameter to the Publish-Module cmdlet to specify the version to be published.</span></span> <span data-ttu-id="fd6db-105">Path パラメーターは、モジュールのベース パスと、バージョン フォルダーをサポートするようになりました。</span><span class="sxs-lookup"><span data-stu-id="fd6db-105">The Path parameter now supports the module base path with the version folder.</span></span>
 
-<span data-ttu-id="3530a-106">**Install-Module の例:**</span><span class="sxs-lookup"><span data-stu-id="3530a-106">**Install-Module examples:**</span></span>
+<span data-ttu-id="fd6db-106">**Install-Module の例:**</span><span class="sxs-lookup"><span data-stu-id="fd6db-106">**Install-Module examples:**</span></span>
 ```powershell
 PS C:\windows\system32> Install-Module -Name ContosoServer -RequiredVersion 1.0 -Repository MSPSGallery
 
@@ -37,7 +37,7 @@ Version Name          Repository  Description
 2.0     ContosoServer MSPSGallery ContosoServer
 ```
 
-<span data-ttu-id="3530a-107">**依存関係があるモジュールのインストール:**</span><span class="sxs-lookup"><span data-stu-id="3530a-107">**Install a module with dependencies:**</span></span>
+<span data-ttu-id="fd6db-107">**依存関係があるモジュールのインストール:**</span><span class="sxs-lookup"><span data-stu-id="fd6db-107">**Install a module with dependencies:**</span></span>
 ```powershell
 PS C:\windows\system32> Get-InstalledModule
 PS C:\windows\system32> Find-Module -Repository GalleryINT -Name ModuleWithDependencies2 -IncludeDependencies
@@ -79,7 +79,7 @@ ModuleType Version Name                    ExportedCommands
 Manifest   2.0     ModuleWithDependencies2 {Get-NestedRequiredModule1, Get-NestedRequiredModule2, Get-NestedRequiredModule3, Get-NestedRequiredModule4...}
 ```
 
-<span data-ttu-id="3530a-108">**ModuleWithDependencies2 モジュール マニフェスト ファイルの内容**</span><span class="sxs-lookup"><span data-stu-id="3530a-108">**Contents of ModuleWithDependencies2 module manifest file:**</span></span>
+<span data-ttu-id="fd6db-108">**ModuleWithDependencies2 モジュール マニフェスト ファイルの内容**</span><span class="sxs-lookup"><span data-stu-id="fd6db-108">**Contents of ModuleWithDependencies2 module manifest file:**</span></span>
 ```powershell
 @{
 # Version number of this module.
@@ -149,7 +149,7 @@ PrivateData = @{
 }
 ```
 
-<span data-ttu-id="3530a-109">**Update-Module の例:**</span><span class="sxs-lookup"><span data-stu-id="3530a-109">**Update-Module examples:**</span></span>
+<span data-ttu-id="fd6db-109">**Update-Module の例:**</span><span class="sxs-lookup"><span data-stu-id="fd6db-109">**Update-Module examples:**</span></span>
 ```powershell
 PS C:\windows\system32> Update-Module -Name ContosoServer -RequiredVersion 1.5
 PS C:\windows\system32> Get-Module -ListAvailable -Name ContosoServer | Format-List Name,Version,ModuleBase
@@ -191,7 +191,7 @@ Version Name          Repository  Description
 2.8.1   ContosoServer MSPSGallery ContosoServer
 ```
 
-<span data-ttu-id="3530a-110">**Publish-Module の例:**</span><span class="sxs-lookup"><span data-stu-id="3530a-110">**Publish-Module examples:**</span></span>
+<span data-ttu-id="fd6db-110">**Publish-Module の例:**</span><span class="sxs-lookup"><span data-stu-id="fd6db-110">**Publish-Module examples:**</span></span>
 ```powershell
 ContosoServer module with different versions to be published.
 PS C:\windows\system32> Get-Module -Name ContosoServer -ListAvailable

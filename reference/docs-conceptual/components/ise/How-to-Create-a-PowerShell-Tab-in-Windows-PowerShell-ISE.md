@@ -4,55 +4,55 @@ keywords: PowerShell, コマンドレット
 title: Windows PowerShell ISE で PowerShell タブを作成する方法
 ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
 ms.openlocfilehash: 080fe89bf1443f51460589b445431913fa20b4b8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402302"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057742"
 ---
-# <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a><span data-ttu-id="36038-103">Windows PowerShell ISE で PowerShell タブを作成する方法</span><span class="sxs-lookup"><span data-stu-id="36038-103">How to Create a PowerShell Tab in Windows PowerShell ISE</span></span>
+# <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a><span data-ttu-id="38bfd-103">Windows PowerShell ISE で PowerShell タブを作成する方法</span><span class="sxs-lookup"><span data-stu-id="38bfd-103">How to Create a PowerShell Tab in Windows PowerShell ISE</span></span>
 
-<span data-ttu-id="36038-104">Windows PowerShell Integrated Scripting Environment (ISE) のタブを使うと、同じアプリケーション内で複数の実行環境を同時に作成して使用することができます。</span><span class="sxs-lookup"><span data-stu-id="36038-104">Tabs in the Windows PowerShell Integrated Scripting Environment (ISE) allow you to simultaneously create and use several execution environments within the same application.</span></span>
-<span data-ttu-id="36038-105">PowerShell の各タブは、独立した実行環境またはセッションに対応します。</span><span class="sxs-lookup"><span data-stu-id="36038-105">Each PowerShell tab corresponds to a separate execution environment or session.</span></span>
+<span data-ttu-id="38bfd-104">Windows PowerShell Integrated Scripting Environment (ISE) のタブを使うと、同じアプリケーション内で複数の実行環境を同時に作成して使用することができます。</span><span class="sxs-lookup"><span data-stu-id="38bfd-104">Tabs in the Windows PowerShell Integrated Scripting Environment (ISE) allow you to simultaneously create and use several execution environments within the same application.</span></span>
+<span data-ttu-id="38bfd-105">PowerShell の各タブは、独立した実行環境またはセッションに対応します。</span><span class="sxs-lookup"><span data-stu-id="38bfd-105">Each PowerShell tab corresponds to a separate execution environment or session.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="36038-106">1 つのタブで作成した変数、関数、別名が、他のタブに引き継がれることはありません。</span><span class="sxs-lookup"><span data-stu-id="36038-106">Variables, functions, and aliases that you create in one tab do not carry over to another.</span></span> <span data-ttu-id="36038-107">それらのタブは、別々の Windows PowerShell セッションです。</span><span class="sxs-lookup"><span data-stu-id="36038-107">They are different Windows PowerShell sessions.</span></span>
+> <span data-ttu-id="38bfd-106">1 つのタブで作成した変数、関数、別名が、他のタブに引き継がれることはありません。</span><span class="sxs-lookup"><span data-stu-id="38bfd-106">Variables, functions, and aliases that you create in one tab do not carry over to another.</span></span> <span data-ttu-id="38bfd-107">それらのタブは、別々の Windows PowerShell セッションです。</span><span class="sxs-lookup"><span data-stu-id="38bfd-107">They are different Windows PowerShell sessions.</span></span>
 
-<span data-ttu-id="36038-108">Windows PowerShell でタブを開いたり閉じたりするには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="36038-108">Use the following steps to open or close a tab in Windows PowerShell.</span></span>
-<span data-ttu-id="36038-109">タブの名前を変更するには、Windows PowerShell タブのスクリプト オブジェクトで [DisplayName](object-model/The-PowerShellTab-Object.md#displayname) プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="36038-109">To rename a tab, set the [DisplayName](object-model/The-PowerShellTab-Object.md#displayname) property on the Windows PowerShell Tab scripting object.</span></span>
+<span data-ttu-id="38bfd-108">Windows PowerShell でタブを開いたり閉じたりするには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="38bfd-108">Use the following steps to open or close a tab in Windows PowerShell.</span></span>
+<span data-ttu-id="38bfd-109">タブの名前を変更するには、Windows PowerShell タブのスクリプト オブジェクトで [DisplayName](object-model/The-PowerShellTab-Object.md#displayname) プロパティを設定します。</span><span class="sxs-lookup"><span data-stu-id="38bfd-109">To rename a tab, set the [DisplayName](object-model/The-PowerShellTab-Object.md#displayname) property on the Windows PowerShell Tab scripting object.</span></span>
 
-## <a name="to-create-and-use-a-new-powershell-tab"></a><span data-ttu-id="36038-110">新しい PowerShell タブを作成して使用するには</span><span class="sxs-lookup"><span data-stu-id="36038-110">To create and use a new PowerShell Tab</span></span>
+## <a name="to-create-and-use-a-new-powershell-tab"></a><span data-ttu-id="38bfd-110">新しい PowerShell タブを作成して使用するには</span><span class="sxs-lookup"><span data-stu-id="38bfd-110">To create and use a new PowerShell Tab</span></span>
 
-<span data-ttu-id="36038-111">**[ファイル]** メニューで、**[PowerShell タブの新規作成]** をクリックします。新しい PowerShell タブは、常にアクティブなウィンドウとして表示されます。</span><span class="sxs-lookup"><span data-stu-id="36038-111">On the **File** menu, click **New PowerShell Tab**. The new PowerShell tab always opens as the active window.</span></span>
-<span data-ttu-id="36038-112">PowerShell のタブには、開かれた順に番号が付けられます。</span><span class="sxs-lookup"><span data-stu-id="36038-112">PowerShell tabs are incrementally numbered in the order that they are opened.</span></span>
-<span data-ttu-id="36038-113">各タブは、それぞれ独自の Windows PowerShell コンソール ウィンドウに関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="36038-113">Each tab is associated with its own Windows PowerShell console window.</span></span>
-<span data-ttu-id="36038-114">独自のセッションを持つ PowerShell タブは、最大 32 個まで (Windows PowerShell ISE 2.0 では 8 個まで) を同時に開くことができます。</span><span class="sxs-lookup"><span data-stu-id="36038-114">You can have up to 32 PowerShell tabs with their own session open at a time (this is limited to 8 on Windows PowerShell ISE 2.0.)</span></span>
+<span data-ttu-id="38bfd-111">**[ファイル]** メニューで、**[PowerShell タブの新規作成]** をクリックします。新しい PowerShell タブは、常にアクティブなウィンドウとして表示されます。</span><span class="sxs-lookup"><span data-stu-id="38bfd-111">On the **File** menu, click **New PowerShell Tab**. The new PowerShell tab always opens as the active window.</span></span>
+<span data-ttu-id="38bfd-112">PowerShell のタブには、開かれた順に番号が付けられます。</span><span class="sxs-lookup"><span data-stu-id="38bfd-112">PowerShell tabs are incrementally numbered in the order that they are opened.</span></span>
+<span data-ttu-id="38bfd-113">各タブは、それぞれ独自の Windows PowerShell コンソール ウィンドウに関連付けられます。</span><span class="sxs-lookup"><span data-stu-id="38bfd-113">Each tab is associated with its own Windows PowerShell console window.</span></span>
+<span data-ttu-id="38bfd-114">独自のセッションを持つ PowerShell タブは、最大 32 個まで (Windows PowerShell ISE 2.0 では 8 個まで) を同時に開くことができます。</span><span class="sxs-lookup"><span data-stu-id="38bfd-114">You can have up to 32 PowerShell tabs with their own session open at a time (this is limited to 8 on Windows PowerShell ISE 2.0.)</span></span>
 
-<span data-ttu-id="36038-115">なお、ツール バーの **[新規作成]** または **[開く]** アイコンをクリックしても、新しいタブで別のセッションを作成できないことにご注意ください。</span><span class="sxs-lookup"><span data-stu-id="36038-115">Note that clicking the **New** or **Open** icons on the toolbar does not create a new tab with a separate session.</span></span>
-<span data-ttu-id="36038-116">代わりに、これらのボタンを使うと、セッションを持つ現在アクティブなタブ上で、新規または既存のスクリプト ファイルが開きます。</span><span class="sxs-lookup"><span data-stu-id="36038-116">Instead, those buttons open a new or existing script file on the currently active tab with a session.</span></span>
-<span data-ttu-id="36038-117">各タブおよびセッションでは、複数のスクリプト ファイルを開くことができます。</span><span class="sxs-lookup"><span data-stu-id="36038-117">You can have multiple script files open with each tab and session.</span></span>
-<span data-ttu-id="36038-118">セッションのスクリプト タブは、関連付けられたセッションがアクティブな場合にのみ、セッションのタブの下に表示されます。</span><span class="sxs-lookup"><span data-stu-id="36038-118">The script tabs for a session only appear below the session tabs when the associated session is active.</span></span>
+<span data-ttu-id="38bfd-115">なお、ツール バーの **[新規作成]** または **[開く]** アイコンをクリックしても、新しいタブで別のセッションを作成できないことにご注意ください。</span><span class="sxs-lookup"><span data-stu-id="38bfd-115">Note that clicking the **New** or **Open** icons on the toolbar does not create a new tab with a separate session.</span></span>
+<span data-ttu-id="38bfd-116">代わりに、これらのボタンを使うと、セッションを持つ現在アクティブなタブ上で、新規または既存のスクリプト ファイルが開きます。</span><span class="sxs-lookup"><span data-stu-id="38bfd-116">Instead, those buttons open a new or existing script file on the currently active tab with a session.</span></span>
+<span data-ttu-id="38bfd-117">各タブおよびセッションでは、複数のスクリプト ファイルを開くことができます。</span><span class="sxs-lookup"><span data-stu-id="38bfd-117">You can have multiple script files open with each tab and session.</span></span>
+<span data-ttu-id="38bfd-118">セッションのスクリプト タブは、関連付けられたセッションがアクティブな場合にのみ、セッションのタブの下に表示されます。</span><span class="sxs-lookup"><span data-stu-id="38bfd-118">The script tabs for a session only appear below the session tabs when the associated session is active.</span></span>
 
-<span data-ttu-id="36038-119">PowerShell タブをアクティブにするには、タブをクリックします。開かれているすべての PowerShell タブの中から選択するには、**[表示]** メニューで、使う PowerShell タブをクリックします。</span><span class="sxs-lookup"><span data-stu-id="36038-119">To make a PowerShell tab active, click the tab. To select from all PowerShell tabs that are open, on the **View** menu, click the PowerShell tab you want to use.</span></span>
+<span data-ttu-id="38bfd-119">PowerShell タブをアクティブにするには、タブをクリックします。開かれているすべての PowerShell タブの中から選択するには、**[表示]** メニューで、使う PowerShell タブをクリックします。</span><span class="sxs-lookup"><span data-stu-id="38bfd-119">To make a PowerShell tab active, click the tab. To select from all PowerShell tabs that are open, on the **View** menu, click the PowerShell tab you want to use.</span></span>
 
-## <a name="to-create-and-use-a-new-remote-powershell-tab"></a><span data-ttu-id="36038-120">新しいリモート PowerShell タブを作成して使用するには</span><span class="sxs-lookup"><span data-stu-id="36038-120">To create and use a new Remote PowerShell tab</span></span>
+## <a name="to-create-and-use-a-new-remote-powershell-tab"></a><span data-ttu-id="38bfd-120">新しいリモート PowerShell タブを作成して使用するには</span><span class="sxs-lookup"><span data-stu-id="38bfd-120">To create and use a new Remote PowerShell tab</span></span>
 
-<span data-ttu-id="36038-121">**[ファイル]** メニューの **[リモート PowerShell タブの新規作成]** をクリックすると、リモート コンピューターでセッションが確立されます。</span><span class="sxs-lookup"><span data-stu-id="36038-121">On the **File** menu, click **New Remote PowerShell Tab** to establish a session on a remote computer.</span></span>
-<span data-ttu-id="36038-122">ダイアログ ボックスが表示され、リモート接続を確立するために必要な詳細情報を入力するように求められます。</span><span class="sxs-lookup"><span data-stu-id="36038-122">A dialog box appears and prompts you to enter details required to establish the remote connection.</span></span>
-<span data-ttu-id="36038-123">リモート タブの機能はローカルの PowerShell タブと同様ですが、コマンドとスクリプトはリモート コンピューター上で実行されます。</span><span class="sxs-lookup"><span data-stu-id="36038-123">The remote tab functions just like a local PowerShell tab, but the commands and scripts are run on the remote computer.</span></span>
+<span data-ttu-id="38bfd-121">**[ファイル]** メニューの **[リモート PowerShell タブの新規作成]** をクリックすると、リモート コンピューターでセッションが確立されます。</span><span class="sxs-lookup"><span data-stu-id="38bfd-121">On the **File** menu, click **New Remote PowerShell Tab** to establish a session on a remote computer.</span></span>
+<span data-ttu-id="38bfd-122">ダイアログ ボックスが表示され、リモート接続を確立するために必要な詳細情報を入力するように求められます。</span><span class="sxs-lookup"><span data-stu-id="38bfd-122">A dialog box appears and prompts you to enter details required to establish the remote connection.</span></span>
+<span data-ttu-id="38bfd-123">リモート タブの機能はローカルの PowerShell タブと同様ですが、コマンドとスクリプトはリモート コンピューター上で実行されます。</span><span class="sxs-lookup"><span data-stu-id="38bfd-123">The remote tab functions just like a local PowerShell tab, but the commands and scripts are run on the remote computer.</span></span>
 
-## <a name="to-close-a-powershell-tab"></a><span data-ttu-id="36038-124">PowerShell タブを閉じるには</span><span class="sxs-lookup"><span data-stu-id="36038-124">To close a PowerShell Tab</span></span>
+## <a name="to-close-a-powershell-tab"></a><span data-ttu-id="38bfd-124">PowerShell タブを閉じるには</span><span class="sxs-lookup"><span data-stu-id="38bfd-124">To close a PowerShell Tab</span></span>
 
-<span data-ttu-id="36038-125">タブを閉じるには、次の手法のいずれかを使います。</span><span class="sxs-lookup"><span data-stu-id="36038-125">To close a tab, you can use any of the following techniques:</span></span>
+<span data-ttu-id="38bfd-125">タブを閉じるには、次の手法のいずれかを使います。</span><span class="sxs-lookup"><span data-stu-id="38bfd-125">To close a tab, you can use any of the following techniques:</span></span>
 
-- <span data-ttu-id="36038-126">終了するタブをクリックします。</span><span class="sxs-lookup"><span data-stu-id="36038-126">Click the tab that you want to close.</span></span>
+- <span data-ttu-id="38bfd-126">終了するタブをクリックします。</span><span class="sxs-lookup"><span data-stu-id="38bfd-126">Click the tab that you want to close.</span></span>
 
-- <span data-ttu-id="36038-127">**[ファイル]** メニューの **[PowerShell タブを閉じる]** をクリックするか、アクティブなタブの閉じるボタン (**X**) をクリックして、タブを閉じます。</span><span class="sxs-lookup"><span data-stu-id="36038-127">On the **File** menu, click **Close PowerShell Tab**, or click  the Close button  (**X**) on an active tab to close the tab.</span></span>
+- <span data-ttu-id="38bfd-127">**[ファイル]** メニューの **[PowerShell タブを閉じる]** をクリックするか、アクティブなタブの閉じるボタン (**X**) をクリックして、タブを閉じます。</span><span class="sxs-lookup"><span data-stu-id="38bfd-127">On the **File** menu, click **Close PowerShell Tab**, or click  the Close button  (**X**) on an active tab to close the tab.</span></span>
 
-<span data-ttu-id="36038-128">閉じようとしている PowerShell タブに未保存のファイルがあると、そのファイルを保存するか破棄するかを求められます。</span><span class="sxs-lookup"><span data-stu-id="36038-128">If you have unsaved files open in the PowerShell tab that you are closing, you are prompted to save or discard them.</span></span>
-<span data-ttu-id="36038-129">スクリプトを保存する方法について詳しくは、「[スクリプトを保存する方法](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md#how-to-save-a-script)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="36038-129">For more information about how to save a script, see [How to Save a Script](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md#how-to-save-a-script).</span></span>
+<span data-ttu-id="38bfd-128">閉じようとしている PowerShell タブに未保存のファイルがあると、そのファイルを保存するか破棄するかを求められます。</span><span class="sxs-lookup"><span data-stu-id="38bfd-128">If you have unsaved files open in the PowerShell tab that you are closing, you are prompted to save or discard them.</span></span>
+<span data-ttu-id="38bfd-129">スクリプトを保存する方法について詳しくは、「[スクリプトを保存する方法](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md#how-to-save-a-script)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="38bfd-129">For more information about how to save a script, see [How to Save a Script](How-to-Write-and-Run-Scripts-in-the-Windows-PowerShell-ISE.md#how-to-save-a-script).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="36038-130">参照</span><span class="sxs-lookup"><span data-stu-id="36038-130">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="38bfd-130">参照</span><span class="sxs-lookup"><span data-stu-id="38bfd-130">See Also</span></span>
 
-- [<span data-ttu-id="36038-131">Windows PowerShell ISE の紹介</span><span class="sxs-lookup"><span data-stu-id="36038-131">Introducing the Windows PowerShell ISE</span></span>](Introducing-the-Windows-PowerShell-ISE.md)
-- [<span data-ttu-id="36038-132">Windows PowerShell ISE でコンソール ウィンドウを使用する方法</span><span class="sxs-lookup"><span data-stu-id="36038-132">How to Use the Console Pane in the Windows PowerShell ISE</span></span>](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)
+- [<span data-ttu-id="38bfd-131">Windows PowerShell ISE の紹介</span><span class="sxs-lookup"><span data-stu-id="38bfd-131">Introducing the Windows PowerShell ISE</span></span>](Introducing-the-Windows-PowerShell-ISE.md)
+- [<span data-ttu-id="38bfd-132">Windows PowerShell ISE でコンソール ウィンドウを使用する方法</span><span class="sxs-lookup"><span data-stu-id="38bfd-132">How to Use the Console Pane in the Windows PowerShell ISE</span></span>](How-to-Use-the-Console-Pane-in-the-Windows-PowerShell-ISE.md)

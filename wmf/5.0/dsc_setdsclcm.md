@@ -1,18 +1,18 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: b8c3cbc056bb085e8319637571e7a2ce5cd77685
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: f30f43265d9daa47383e42f0f8abf4844365ea6d
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/16/2018
-ms.locfileid: "34187063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057952"
 ---
-# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a><span data-ttu-id="8939b-102">Set-DscLocalConfigurationManager コマンドレットでの -force パラメーターのサポート</span><span class="sxs-lookup"><span data-stu-id="8939b-102">Set-DscLocalConfigurationManager cmdlet supports -force parameter</span></span>
+# <a name="set-dsclocalconfigurationmanager-cmdlet-supports--force-parameter"></a><span data-ttu-id="04f57-102">Set-DscLocalConfigurationManager コマンドレットでの -force パラメーターのサポート</span><span class="sxs-lookup"><span data-stu-id="04f57-102">Set-DscLocalConfigurationManager cmdlet supports -force parameter</span></span>
 
-<span data-ttu-id="8939b-103">Set-DscLocalConfigurationManager コマンドレットに、新しいパラメーターのサポートが追加されました。</span><span class="sxs-lookup"><span data-stu-id="8939b-103">We have added a support for new parameter to Set-DscLocalConfigurationManager cmdlet.</span></span> <span data-ttu-id="8939b-104">これにより、一貫性チェックなどの他の操作がバックグラウンドで実行されている場合でも、すべての実行中の操作が停止するため、コンピューターのメタ構成を確定的にリセットできるようになります。</span><span class="sxs-lookup"><span data-stu-id="8939b-104">This will allow the user to reset meta configuration on machine deterministically when other operations like consistency check are running in background as it will cause all running operations to be stopped.</span></span>
+<span data-ttu-id="04f57-103">Set-DscLocalConfigurationManager コマンドレットに、新しいパラメーターのサポートが追加されました。</span><span class="sxs-lookup"><span data-stu-id="04f57-103">We have added a support for new parameter to Set-DscLocalConfigurationManager cmdlet.</span></span> <span data-ttu-id="04f57-104">これにより、一貫性チェックなどの他の操作がバックグラウンドで実行されている場合でも、すべての実行中の操作が停止するため、コンピューターのメタ構成を確定的にリセットできるようになります。</span><span class="sxs-lookup"><span data-stu-id="04f57-104">This will allow the user to reset meta configuration on machine deterministically when other operations like consistency check are running in background as it will cause all running operations to be stopped.</span></span>
 
-<span data-ttu-id="8939b-105">–Force パラメーターなしでメタ構成を設定しようとすると、次のようなエクスペリエンスになります。</span><span class="sxs-lookup"><span data-stu-id="8939b-105">The experience looks like this when trying to set meta configuration without –Force parameter.</span></span>
+<span data-ttu-id="04f57-105">–Force パラメーターなしでメタ構成を設定しようとすると、次のようなエクスペリエンスになります。</span><span class="sxs-lookup"><span data-stu-id="04f57-105">The experience looks like this when trying to set meta configuration without –Force parameter.</span></span>
 ```powershell
 PS C:\\Configs&gt; Set-DscLocalConfigurationManager -Path .\\MetaTest1\\ -Verbose
 VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT\_DSCLocalConfigurationManager".
@@ -27,7 +27,7 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Set-DscLocalConfigurationManager finished in 0.046 seconds.
 ```
 
-<span data-ttu-id="8939b-106">–force を使うと、コンピューターで現在実行中の操作がキャンセルされるため、システムのメタ構成を正常に更新できます。</span><span class="sxs-lookup"><span data-stu-id="8939b-106">When we use –force it successfully updates the meta configuration on system by canceling the current running operation on the machine.</span></span>
+<span data-ttu-id="04f57-106">–force を使うと、コンピューターで現在実行中の操作がキャンセルされるため、システムのメタ構成を正常に更新できます。</span><span class="sxs-lookup"><span data-stu-id="04f57-106">When we use –force it successfully updates the meta configuration on system by canceling the current running operation on the machine.</span></span>
 ```powershell
 PS C:\\Configs&gt; Set-DscLocalConfigurationManager -Path .\\MetaTest1\\ -Verbose -Force
 VERBOSE: Performing the operation "Start-DscConfiguration: SendMetaConfigurationApply" on target "MSFT\_DSCLocalConfigurationManager".
