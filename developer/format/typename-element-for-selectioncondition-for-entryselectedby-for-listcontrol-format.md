@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: bd025a3a-3780-40db-a068-873e7df38015
 caps.latest.revision: 9
 ms.openlocfilehash: 2b76b040b39088cc9c3b9d6890c38df3c533b39f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862778"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083860"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>ListControl の EntrySelectedBy の SelectionCondition の TypeName 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56862778"
 <TypeName>Nameof.NetType</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`TypeName`要素。
 
@@ -51,7 +51,7 @@ ms.locfileid: "56862778"
 
 ## <a name="remarks"></a>コメント
 
-選択条件が .NET 型の任意の数を指定するか、選択範囲を設定するが、両方を指定することはできません。 選択条件を使用する方法の詳細については、[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
+選択条件が .NET 型の任意の数を指定するか、選択範囲を設定するが、両方を指定することはできません。 選択条件を使用する方法の詳細については、次を参照してください。[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)します。
 
 その他の詳細については、リスト ビューのコンポーネントを参照してください[リスト ビューを作成する](./creating-a-list-view.md)します。
 

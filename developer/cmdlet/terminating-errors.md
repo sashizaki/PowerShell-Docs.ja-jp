@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: b804e738-aefa-41bb-9649-f9ed897fd96c
 caps.latest.revision: 8
 ms.openlocfilehash: d1967fe7996f75ec5229920f7ec49aa5ff6bdbfd
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059237"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067384"
 ---
 # <a name="terminating-errors"></a>終了するエラー
 
 このトピックでは、エラーの終了レポートに使用する方法について説明します。 コマンドレットは、内からメソッドを呼び出す方法についても説明し、メソッドが呼び出されたときに、Windows PowerShell ランタイムによって返される例外について説明します。
 
-終了中にエラーが発生した、コマンドレットは呼び出すことによって、エラーを報告する必要があります、 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)メソッド。 このメソッドは、終了エラーの原因となった状態を説明するエラー レコードを送信するためのコマンドレットを使用します。 エラー レコードの詳細については、[Windows PowerShell のエラー レコード](./windows-powershell-error-records.md)を参照してください。
+終了中にエラーが発生した、コマンドレットは呼び出すことによって、エラーを報告する必要があります、 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)メソッド。 このメソッドは、終了エラーの原因となった状態を説明するエラー レコードを送信するためのコマンドレットを使用します。 エラー レコードの詳細については、次を参照してください。 [Windows PowerShell のエラー レコード](./windows-powershell-error-records.md)します。
 
 ときに、 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)メソッドが呼び出されると、Windows PowerShell ランタイムは完全に、パイプラインの実行を停止し、スロー、 [System.Management.Automation.Pipelinestoppedexception](/dotnet/api/System.Management.Automation.PipelineStoppedException)例外。 呼び出すしようとした後続[System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)、 [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)、またはその他のいくつかの Api により、をスローするこれらの呼び出し[System.Management.Automation.Pipelinestoppedexception](/dotnet/api/System.Management.Automation.PipelineStoppedException)例外。
 

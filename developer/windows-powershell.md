@@ -3,15 +3,15 @@ title: Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: 600d43874d9eda04d556a0ece198026dde9174c3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080460"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
-更新:2013 年 7 月 8 日
+更新日。2013 年 7 月 8 日
 
 Windows PowerShell® は、システム管理に重点を置いて設計されたタスクベースのコマンド ライン シェルおよびスクリプト言語です。 .NET Framework 上に構築された Windows PowerShell® はにより、IT プロフェッショナルおよびパワー ユーザーを制御し、Windows オペレーティング システムおよび Windows で実行されるアプリケーションの管理を自動化します。
 

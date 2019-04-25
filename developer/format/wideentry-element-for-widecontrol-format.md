@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 014763cb-7716-4931-899c-8375b5d7a3dd
 caps.latest.revision: 15
 ms.openlocfilehash: d1d13b5c3436871053353814293d9163ea13c7fb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083673"
 ---
 # <a name="wideentry-element-for-widecontrol-format"></a>WideControl の WideEntry 要素 (書式)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56856528"
 </WideEntry>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`WideEntry`要素。 1 つを指定する必要があります`WideItem`子要素。
 
@@ -53,7 +53,7 @@ ms.locfileid: "56856528"
 
 ## <a name="remarks"></a>コメント
 
-ワイド ビューは、1 つのプロパティの値または各オブジェクトのスクリプト値を表示する一覧の形式です。 その他の種類のビューとは異なり、各ビューの定義の項目要素を 1 つだけを指定できます。 ワイド ビューの他のコンポーネントの詳細については、[ワイド ビューを作成する](./creating-a-wide-view.md)を参照してください。
+ワイド ビューは、1 つのプロパティの値または各オブジェクトのスクリプト値を表示する一覧の形式です。 その他の種類のビューとは異なり、各ビューの定義の項目要素を 1 つだけを指定できます。 ワイド ビューの他のコンポーネントの詳細については、次を参照してください。[ワイド ビューを作成する](./creating-a-wide-view.md)します。
 
 ## <a name="example"></a>例
 
