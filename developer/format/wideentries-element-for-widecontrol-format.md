@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 0c4bff45-0960-4b3a-95e7-47f2cee03ac5
 caps.latest.revision: 12
 ms.openlocfilehash: 083f3c8df8136858e32778ed231943ef983e47aa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853278"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083690"
 ---
-# <a name="wideentries-element-for-widecontrol-format"></a><span data-ttu-id="9d7ac-102">WideControl の WideEntries 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="9d7ac-102">WideEntries Element for WideControl (Format)</span></span>
+# <a name="wideentries-element-for-widecontrol-format"></a><span data-ttu-id="c3f7a-102">WideControl の WideEntries 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="c3f7a-102">WideEntries Element for WideControl (Format)</span></span>
 
-<span data-ttu-id="9d7ac-103">表示幅が広いの定義を提供します。</span><span class="sxs-lookup"><span data-stu-id="9d7ac-103">Provides the definitions of the wide view.</span></span> <span data-ttu-id="9d7ac-104">表示幅が広いには、1 つまたは複数の定義を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9d7ac-104">The wide view must specify one or more definitions.</span></span>
+<span data-ttu-id="c3f7a-103">表示幅が広いの定義を提供します。</span><span class="sxs-lookup"><span data-stu-id="c3f7a-103">Provides the definitions of the wide view.</span></span> <span data-ttu-id="c3f7a-104">表示幅が広いには、1 つまたは複数の定義を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c3f7a-104">The wide view must specify one or more definitions.</span></span>
 
-<span data-ttu-id="9d7ac-105">構成要素 (形式) ViewDefinitions 要素 (形式) 表示要素 (形式) WideControl 要素 (形式) WideEntries 要素 (形式)</span><span class="sxs-lookup"><span data-stu-id="9d7ac-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) WideControl Element (Format) WideEntries Element (Format)</span></span>
+<span data-ttu-id="c3f7a-105">構成要素 (形式) ViewDefinitions 要素 (形式) 表示要素 (形式) WideControl 要素 (形式) WideEntries 要素 (形式)</span><span class="sxs-lookup"><span data-stu-id="c3f7a-105">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) WideControl Element (Format) WideEntries Element (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="9d7ac-106">構文</span><span class="sxs-lookup"><span data-stu-id="9d7ac-106">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="c3f7a-106">構文</span><span class="sxs-lookup"><span data-stu-id="c3f7a-106">Syntax</span></span>
 
 ```xml
 <WideEntries>
@@ -30,33 +30,33 @@ ms.locfileid: "56853278"
 
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="9d7ac-107">属性と要素</span><span class="sxs-lookup"><span data-stu-id="9d7ac-107">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="c3f7a-107">属性および要素</span><span class="sxs-lookup"><span data-stu-id="c3f7a-107">Attributes and Elements</span></span>
 
-<span data-ttu-id="9d7ac-108">次のセクションでは、属性、子要素、およびの親要素について説明します、`WideEntries`要素。</span><span class="sxs-lookup"><span data-stu-id="9d7ac-108">The following sections describe the attributes, child elements, and parent element of the `WideEntries` element.</span></span> <span data-ttu-id="9d7ac-109">少なくとも 1 つの子要素を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="9d7ac-109">At least one child element must be specified.</span></span>
+<span data-ttu-id="c3f7a-108">次のセクションでは、属性、子要素、およびの親要素について説明します、`WideEntries`要素。</span><span class="sxs-lookup"><span data-stu-id="c3f7a-108">The following sections describe the attributes, child elements, and parent element of the `WideEntries` element.</span></span> <span data-ttu-id="c3f7a-109">少なくとも 1 つの子要素を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c3f7a-109">At least one child element must be specified.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="9d7ac-110">属性</span><span class="sxs-lookup"><span data-stu-id="9d7ac-110">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="c3f7a-110">属性</span><span class="sxs-lookup"><span data-stu-id="c3f7a-110">Attributes</span></span>
 
-<span data-ttu-id="9d7ac-111">なし。</span><span class="sxs-lookup"><span data-stu-id="9d7ac-111">None.</span></span>
+<span data-ttu-id="c3f7a-111">なし。</span><span class="sxs-lookup"><span data-stu-id="c3f7a-111">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="9d7ac-112">子要素</span><span class="sxs-lookup"><span data-stu-id="9d7ac-112">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="c3f7a-112">子要素</span><span class="sxs-lookup"><span data-stu-id="c3f7a-112">Child Elements</span></span>
 
-|<span data-ttu-id="9d7ac-113">要素</span><span class="sxs-lookup"><span data-stu-id="9d7ac-113">Element</span></span>|<span data-ttu-id="9d7ac-114">説明</span><span class="sxs-lookup"><span data-stu-id="9d7ac-114">Description</span></span>|
+|<span data-ttu-id="c3f7a-113">要素</span><span class="sxs-lookup"><span data-stu-id="c3f7a-113">Element</span></span>|<span data-ttu-id="c3f7a-114">説明</span><span class="sxs-lookup"><span data-stu-id="c3f7a-114">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="9d7ac-115">WideEntry 要素 (形式)</span><span class="sxs-lookup"><span data-stu-id="9d7ac-115">WideEntry Element (Format)</span></span>](./wideentry-element-for-widecontrol-format.md)|<span data-ttu-id="9d7ac-116">ワイド ビューの定義を提供します。</span><span class="sxs-lookup"><span data-stu-id="9d7ac-116">Provides a definition of the wide view.</span></span>|
+|[<span data-ttu-id="c3f7a-115">WideEntry 要素 (形式)</span><span class="sxs-lookup"><span data-stu-id="c3f7a-115">WideEntry Element (Format)</span></span>](./wideentry-element-for-widecontrol-format.md)|<span data-ttu-id="c3f7a-116">ワイド ビューの定義を提供します。</span><span class="sxs-lookup"><span data-stu-id="c3f7a-116">Provides a definition of the wide view.</span></span>|
 
-### <a name="parent-elements"></a><span data-ttu-id="9d7ac-117">親要素</span><span class="sxs-lookup"><span data-stu-id="9d7ac-117">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="c3f7a-117">親要素</span><span class="sxs-lookup"><span data-stu-id="c3f7a-117">Parent Elements</span></span>
 
-|<span data-ttu-id="9d7ac-118">要素</span><span class="sxs-lookup"><span data-stu-id="9d7ac-118">Element</span></span>|<span data-ttu-id="9d7ac-119">説明</span><span class="sxs-lookup"><span data-stu-id="9d7ac-119">Description</span></span>|
+|<span data-ttu-id="c3f7a-118">要素</span><span class="sxs-lookup"><span data-stu-id="c3f7a-118">Element</span></span>|<span data-ttu-id="c3f7a-119">説明</span><span class="sxs-lookup"><span data-stu-id="c3f7a-119">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="9d7ac-120">WideControl 要素 (形式)</span><span class="sxs-lookup"><span data-stu-id="9d7ac-120">WideControl Element (Format)</span></span>](./widecontrol-element-format.md)|<span data-ttu-id="9d7ac-121">ワイド (1 つの値) を定義するビューの一覧の形式。</span><span class="sxs-lookup"><span data-stu-id="9d7ac-121">Defines a wide (single value) list format for the view.</span></span>|
+|[<span data-ttu-id="c3f7a-120">WideControl 要素 (形式)</span><span class="sxs-lookup"><span data-stu-id="c3f7a-120">WideControl Element (Format)</span></span>](./widecontrol-element-format.md)|<span data-ttu-id="c3f7a-121">ワイド (1 つの値) を定義するビューの一覧の形式。</span><span class="sxs-lookup"><span data-stu-id="c3f7a-121">Defines a wide (single value) list format for the view.</span></span>|
 
-## <a name="remarks"></a><span data-ttu-id="9d7ac-122">コメント</span><span class="sxs-lookup"><span data-stu-id="9d7ac-122">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="c3f7a-122">コメント</span><span class="sxs-lookup"><span data-stu-id="c3f7a-122">Remarks</span></span>
 
-<span data-ttu-id="9d7ac-123">ワイド ビューは、1 つのプロパティの値または各オブジェクトのスクリプト値を表示する一覧の形式です。</span><span class="sxs-lookup"><span data-stu-id="9d7ac-123">A wide view is a list format that displays a single property value or script value for each object.</span></span> <span data-ttu-id="9d7ac-124">ワイド ビューのコンポーネントに関する詳細については、[ワイド ビュー コンポーネント](./creating-a-wide-view.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="9d7ac-124">For more information about the components of a wide view, see [Wide View Components](./creating-a-wide-view.md).</span></span>
+<span data-ttu-id="c3f7a-123">ワイド ビューは、1 つのプロパティの値または各オブジェクトのスクリプト値を表示する一覧の形式です。</span><span class="sxs-lookup"><span data-stu-id="c3f7a-123">A wide view is a list format that displays a single property value or script value for each object.</span></span> <span data-ttu-id="c3f7a-124">ワイド ビューのコンポーネントに関する詳細については、次を参照してください。[ワイド ビュー コンポーネント](./creating-a-wide-view.md)します。</span><span class="sxs-lookup"><span data-stu-id="c3f7a-124">For more information about the components of a wide view, see [Wide View Components](./creating-a-wide-view.md).</span></span>
 
-## <a name="example"></a><span data-ttu-id="9d7ac-125">例</span><span class="sxs-lookup"><span data-stu-id="9d7ac-125">Example</span></span>
+## <a name="example"></a><span data-ttu-id="c3f7a-125">例</span><span class="sxs-lookup"><span data-stu-id="c3f7a-125">Example</span></span>
 
-<span data-ttu-id="9d7ac-126">次の例は、 `WideEntries` 、1 つを定義する要素`WideEntry`要素。</span><span class="sxs-lookup"><span data-stu-id="9d7ac-126">The following example shows a `WideEntries` element that defines a single `WideEntry` element.</span></span> <span data-ttu-id="9d7ac-127">`WideEntry`要素には、1 つが含まれています。`WideItem`ビューに表示されるどのようなプロパティやスクリプトの値を定義する要素。</span><span class="sxs-lookup"><span data-stu-id="9d7ac-127">The `WideEntry` element contains a single `WideItem` element that defines what property or script value is displayed in the view.</span></span>
+<span data-ttu-id="c3f7a-126">次の例は、 `WideEntries` 、1 つを定義する要素`WideEntry`要素。</span><span class="sxs-lookup"><span data-stu-id="c3f7a-126">The following example shows a `WideEntries` element that defines a single `WideEntry` element.</span></span> <span data-ttu-id="c3f7a-127">`WideEntry`要素には、1 つが含まれています。`WideItem`ビューに表示されるどのようなプロパティやスクリプトの値を定義する要素。</span><span class="sxs-lookup"><span data-stu-id="c3f7a-127">The `WideEntry` element contains a single `WideItem` element that defines what property or script value is displayed in the view.</span></span>
 
 ```xml
 <WideControl>
@@ -68,14 +68,14 @@ ms.locfileid: "56853278"
 </WideControl>
 ```
 
-<span data-ttu-id="9d7ac-128">ワイド ビューの完全な例を参照してください。[表示 (Basic) の幅が広い](./wide-view-basic.md)します。</span><span class="sxs-lookup"><span data-stu-id="9d7ac-128">For a complete example of a wide view, see [Wide View (Basic)](./wide-view-basic.md).</span></span>
+<span data-ttu-id="c3f7a-128">ワイド ビューの完全な例を参照してください。[表示 (Basic) の幅が広い](./wide-view-basic.md)します。</span><span class="sxs-lookup"><span data-stu-id="c3f7a-128">For a complete example of a wide view, see [Wide View (Basic)](./wide-view-basic.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="9d7ac-129">参照</span><span class="sxs-lookup"><span data-stu-id="9d7ac-129">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c3f7a-129">参照</span><span class="sxs-lookup"><span data-stu-id="c3f7a-129">See Also</span></span>
 
-[<span data-ttu-id="9d7ac-130">ワイド ビューを作成します。</span><span class="sxs-lookup"><span data-stu-id="9d7ac-130">Creating a Wide View</span></span>](./creating-a-wide-view.md)
+[<span data-ttu-id="c3f7a-130">ワイド ビューを作成します。</span><span class="sxs-lookup"><span data-stu-id="c3f7a-130">Creating a Wide View</span></span>](./creating-a-wide-view.md)
 
-[<span data-ttu-id="9d7ac-131">WideControl 要素 (形式)</span><span class="sxs-lookup"><span data-stu-id="9d7ac-131">WideControl Element (Format)</span></span>](./widecontrol-element-format.md)
+[<span data-ttu-id="c3f7a-131">WideControl 要素 (形式)</span><span class="sxs-lookup"><span data-stu-id="c3f7a-131">WideControl Element (Format)</span></span>](./widecontrol-element-format.md)
 
-[<span data-ttu-id="9d7ac-132">WideEntry 要素 (形式)</span><span class="sxs-lookup"><span data-stu-id="9d7ac-132">WideEntry Element (Format)</span></span>](./wideentry-element-for-widecontrol-format.md)
+[<span data-ttu-id="c3f7a-132">WideEntry 要素 (形式)</span><span class="sxs-lookup"><span data-stu-id="c3f7a-132">WideEntry Element (Format)</span></span>](./wideentry-element-for-widecontrol-format.md)
 
-[<span data-ttu-id="9d7ac-133">PowerShell のファイルを書式設定の書き込み</span><span class="sxs-lookup"><span data-stu-id="9d7ac-133">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="c3f7a-133">PowerShell のファイルを書式設定の書き込み</span><span class="sxs-lookup"><span data-stu-id="c3f7a-133">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

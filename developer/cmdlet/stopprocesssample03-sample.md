@@ -9,63 +9,63 @@ ms.topic: article
 ms.assetid: 31298f1b-8b76-4637-8406-863f5ad27e53
 caps.latest.revision: 8
 ms.openlocfilehash: 91b56a78f878e0d9c0fc11e4b882399bdfb108ac
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058897"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067285"
 ---
-# <a name="stopprocesssample03-sample"></a><span data-ttu-id="4c0a0-102">StopProcessSample03 サンプル</span><span class="sxs-lookup"><span data-stu-id="4c0a0-102">StopProcessSample03 Sample</span></span>
+# <a name="stopprocesssample03-sample"></a><span data-ttu-id="6f128-102">StopProcessSample03 サンプル</span><span class="sxs-lookup"><span data-stu-id="6f128-102">StopProcessSample03 Sample</span></span>
 
-<span data-ttu-id="4c0a0-103">このサンプルでは、パラメーターを持つエイリアスがあり、パラメーターがワイルドカード文字をサポートするコマンドレットを記述する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-103">This sample shows how to write a cmdlet whose parameters have aliases and whose parameters support wildcard characters.</span></span> <span data-ttu-id="4c0a0-104">このコマンドレットと似ています、`Stop-Process`コマンドレットの Windows PowerShell 2.0 で提供されます。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="6f128-103">このサンプルでは、パラメーターを持つエイリアスがあり、パラメーターがワイルドカード文字をサポートするコマンドレットを記述する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="6f128-103">This sample shows how to write a cmdlet whose parameters have aliases and whose parameters support wildcard characters.</span></span> <span data-ttu-id="6f128-104">このコマンドレットと似ています、`Stop-Process`コマンドレットの Windows PowerShell 2.0 で提供されます。</span><span class="sxs-lookup"><span data-stu-id="6f128-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="4c0a0-105">Visual Studio を使用してサンプルをビルドする方法。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="6f128-105">Visual Studio を使用してサンプルをビルドする方法。</span><span class="sxs-lookup"><span data-stu-id="6f128-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="4c0a0-106">インストールされている Windows PowerShell 2.0 sdk では、StopProcessSample03 フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample03 folder.</span></span> <span data-ttu-id="4c0a0-107">既定の場所は、C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03 します。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.</span></span>
+1. <span data-ttu-id="6f128-106">インストールされている Windows PowerShell 2.0 sdk では、StopProcessSample03 フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="6f128-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample03 folder.</span></span> <span data-ttu-id="6f128-107">既定の場所は、C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03 します。</span><span class="sxs-lookup"><span data-stu-id="6f128-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample03.</span></span>
 
-2. <span data-ttu-id="4c0a0-108">ソリューション (.sln) ファイルのアイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="4c0a0-109">これは、Microsoft Visual Studio でサンプル プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-109">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="6f128-108">ソリューション (.sln) ファイルのアイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="6f128-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="6f128-109">これは、Microsoft Visual Studio でサンプル プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="6f128-109">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="4c0a0-110">**ビルド**メニューの **ソリューションのビルド**します。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="6f128-110">**ビルド**メニューの **ソリューションのビルド**します。</span><span class="sxs-lookup"><span data-stu-id="6f128-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="4c0a0-111">サンプルのライブラリは、既定の \bin または \bin\debug フォルダーにビルドされます。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="6f128-111">サンプルのライブラリは、既定の \bin または \bin\debug フォルダーにビルドされます。</span><span class="sxs-lookup"><span data-stu-id="6f128-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="4c0a0-112">サンプルを実行する方法</span><span class="sxs-lookup"><span data-stu-id="4c0a0-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="6f128-112">サンプルを実行する方法</span><span class="sxs-lookup"><span data-stu-id="6f128-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="4c0a0-113">次のモジュール フォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="6f128-113">次のモジュール フォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="6f128-113">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample03`
 
-2. <span data-ttu-id="4c0a0-114">モジュール フォルダーにサンプル アセンブリをコピーします。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="6f128-114">モジュール フォルダーにサンプル アセンブリをコピーします。</span><span class="sxs-lookup"><span data-stu-id="6f128-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="4c0a0-115">Windows PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="6f128-115">Windows PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="6f128-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="4c0a0-116">Windows PowerShell にアセンブリを読み込むには、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="6f128-116">Windows PowerShell にアセンブリを読み込むには、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="6f128-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample03`
 
-5. <span data-ttu-id="4c0a0-117">コマンドレットを実行する次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="6f128-117">コマンドレットを実行する次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="6f128-117">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="4c0a0-118">要件</span><span class="sxs-lookup"><span data-stu-id="4c0a0-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="6f128-118">要件</span><span class="sxs-lookup"><span data-stu-id="6f128-118">Requirements</span></span>
 
-<span data-ttu-id="4c0a0-119">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="6f128-119">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="6f128-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="4c0a0-120">使用例</span><span class="sxs-lookup"><span data-stu-id="4c0a0-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="6f128-120">使用例</span><span class="sxs-lookup"><span data-stu-id="6f128-120">Demonstrates</span></span>
 
-<span data-ttu-id="4c0a0-121">このサンプルは、次を示します。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="6f128-121">このサンプルは、次を示します。</span><span class="sxs-lookup"><span data-stu-id="6f128-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="4c0a0-122">コマンドレットの属性を使用して、コマンドレット クラスを宣言します。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="6f128-122">コマンドレットの属性を使用して、コマンドレット クラスを宣言します。</span><span class="sxs-lookup"><span data-stu-id="6f128-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="4c0a0-123">パラメーター属性を使用して、コマンドレット パラメーターの宣言。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="6f128-123">パラメーター属性を使用して、コマンドレット パラメーターの宣言。</span><span class="sxs-lookup"><span data-stu-id="6f128-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="4c0a0-124">パラメーターの宣言にエイリアスを追加する.</span><span class="sxs-lookup"><span data-stu-id="4c0a0-124">Adding aliases to parameter declarations..</span></span>
+- <span data-ttu-id="6f128-124">パラメーターの宣言にエイリアスを追加する.</span><span class="sxs-lookup"><span data-stu-id="6f128-124">Adding aliases to parameter declarations..</span></span>
 
-- <span data-ttu-id="4c0a0-125">パラメーターにワイルドカードのサポートを追加します。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-125">Adding wildcard support to parameters.</span></span>
+- <span data-ttu-id="6f128-125">パラメーターにワイルドカードのサポートを追加します。</span><span class="sxs-lookup"><span data-stu-id="6f128-125">Adding wildcard support to parameters.</span></span>
 
-## <a name="example"></a><span data-ttu-id="4c0a0-126">例</span><span class="sxs-lookup"><span data-stu-id="4c0a0-126">Example</span></span>
+## <a name="example"></a><span data-ttu-id="6f128-126">例</span><span class="sxs-lookup"><span data-stu-id="6f128-126">Example</span></span>
 
-<span data-ttu-id="4c0a0-127">このサンプルでは、パラメーターのエイリアスを宣言し、ワイルドカードをサポートする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4c0a0-127">This sample shows how to declare parameter aliases and support wildcards.</span></span>
+<span data-ttu-id="6f128-127">このサンプルでは、パラメーターのエイリアスを宣言し、ワイルドカードをサポートする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="6f128-127">This sample shows how to declare parameter aliases and support wildcards.</span></span>
 
 ```csharp
 using System;
@@ -350,6 +350,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 } // namespace Microsoft.Samples.PowerShell.Commands
 ```
 
-## <a name="see-also"></a><span data-ttu-id="4c0a0-128">参照</span><span class="sxs-lookup"><span data-stu-id="4c0a0-128">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6f128-128">参照</span><span class="sxs-lookup"><span data-stu-id="6f128-128">See Also</span></span>
 
-[<span data-ttu-id="4c0a0-129">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="4c0a0-129">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="6f128-129">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="6f128-129">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

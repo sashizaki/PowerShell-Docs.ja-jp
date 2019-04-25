@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: f71ea35d-cff5-4e44-a5c6-3a747ed4c4d9
 caps.latest.revision: 9
 ms.openlocfilehash: 6f6640afb15b3608669538f9b5f53d7a8a5c380d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861378"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068268"
 ---
-# <a name="declaring-properties-as-parameters"></a><span data-ttu-id="ebd65-102">パラメーターとしてプロパティを宣言する</span><span class="sxs-lookup"><span data-stu-id="ebd65-102">Declaring Properties as Parameters</span></span>
+# <a name="declaring-properties-as-parameters"></a><span data-ttu-id="ab3dd-102">パラメーターとしてプロパティを宣言する</span><span class="sxs-lookup"><span data-stu-id="ab3dd-102">Declaring Properties as Parameters</span></span>
 
-<span data-ttu-id="ebd65-103">このトピックでは、コマンドレットのパラメーターを宣言する前に理解する必要があります、基本的な情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="ebd65-103">This topic provides basic information you must understand before you declare the parameters of a cmdlet.</span></span>
+<span data-ttu-id="ab3dd-103">このトピックでは、コマンドレットのパラメーターを宣言する前に理解する必要があります、基本的な情報を提供します。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-103">This topic provides basic information you must understand before you declare the parameters of a cmdlet.</span></span>
 
-<span data-ttu-id="ebd65-104">コマンドレット クラス内でのコマンドレットのパラメーターを宣言するには、各パラメーターを表すパブリック プロパティを定義し、各プロパティに 1 つまたは複数のパラメーター属性を追加します。</span><span class="sxs-lookup"><span data-stu-id="ebd65-104">To declare the parameters of a cmdlet within your cmdlet class, define the public properties that represent each parameter, and then add one or more Parameter attributes to each property.</span></span> <span data-ttu-id="ebd65-105">Windows PowerShell ランタイムでは、パラメーターの属性を使用して、コマンドレット パラメーターとしてプロパティを識別します。</span><span class="sxs-lookup"><span data-stu-id="ebd65-105">The Windows PowerShell runtime uses the Parameter attributes to identify the property as a cmdlet parameter.</span></span> <span data-ttu-id="ebd65-106">パラメーター属性を宣言するための基本構文は`[Parameter()]`します。</span><span class="sxs-lookup"><span data-stu-id="ebd65-106">The basic syntax for declaring the Parameter attribute is `[Parameter()]`.</span></span>
+<span data-ttu-id="ab3dd-104">コマンドレット クラス内でのコマンドレットのパラメーターを宣言するには、各パラメーターを表すパブリック プロパティを定義し、各プロパティに 1 つまたは複数のパラメーター属性を追加します。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-104">To declare the parameters of a cmdlet within your cmdlet class, define the public properties that represent each parameter, and then add one or more Parameter attributes to each property.</span></span> <span data-ttu-id="ab3dd-105">Windows PowerShell ランタイムでは、パラメーターの属性を使用して、コマンドレット パラメーターとしてプロパティを識別します。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-105">The Windows PowerShell runtime uses the Parameter attributes to identify the property as a cmdlet parameter.</span></span> <span data-ttu-id="ab3dd-106">パラメーター属性を宣言するための基本構文は`[Parameter()]`します。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-106">The basic syntax for declaring the Parameter attribute is `[Parameter()]`.</span></span>
 
-<span data-ttu-id="ebd65-107">必要なパラメーターとして定義されているプロパティの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="ebd65-107">Here is an example of a property defined as a required parameter.</span></span>
+<span data-ttu-id="ab3dd-107">必要なパラメーターとして定義されているプロパティの例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-107">Here is an example of a property defined as a required parameter.</span></span>
 
 ```csharp
 [Parameter(Position = 0, Mandatory = true)]
@@ -33,22 +33,22 @@ public string UserName
 private string userName;
 ```
 
-<span data-ttu-id="ebd65-108">パラメーターに関する注意事項があります。</span><span class="sxs-lookup"><span data-stu-id="ebd65-108">Here are some things to remember about parameters.</span></span>
+<span data-ttu-id="ab3dd-108">パラメーターに関する注意事項があります。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-108">Here are some things to remember about parameters.</span></span>
 
-- <span data-ttu-id="ebd65-109">パラメーターをする必要があります明示的にパブリックと指定します。</span><span class="sxs-lookup"><span data-stu-id="ebd65-109">A parameter must be explicitly marked as public.</span></span> <span data-ttu-id="ebd65-110">内部にパブリックの既定としてマークされていないと、Windows PowerShell ランタイムでは見つからないされるパラメーター。</span><span class="sxs-lookup"><span data-stu-id="ebd65-110">Parameters that are not marked as public default to internal and will not be found by the Windows PowerShell runtime.</span></span>
+- <span data-ttu-id="ab3dd-109">パラメーターをする必要があります明示的にパブリックと指定します。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-109">A parameter must be explicitly marked as public.</span></span> <span data-ttu-id="ab3dd-110">内部にパブリックの既定としてマークされていないと、Windows PowerShell ランタイムでは見つからないされるパラメーター。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-110">Parameters that are not marked as public default to internal and will not be found by the Windows PowerShell runtime.</span></span>
 
-- <span data-ttu-id="ebd65-111">パラメーターより優れたパラメーターの検証を提供する Microsoft .NET Framework 型として定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ebd65-111">Parameters should be defined as Microsoft .NET Framework types to provide better parameter validation.</span></span> <span data-ttu-id="ebd65-112">たとえば、値の中から 1 つの値に制限されているパラメーターは、列挙型として定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ebd65-112">For example, parameters that are restricted to one value out of a set of values should be defined as an enumeration type.</span></span> <span data-ttu-id="ebd65-113">型の Uniform Resource Identifier (URI) の値を受け取るパラメーターは必ず[System.Uri](/dotnet/api/System.Uri)します。</span><span class="sxs-lookup"><span data-stu-id="ebd65-113">Parameters that take a Uniform Resource Identifier (URI) value should be of type [System.Uri](/dotnet/api/System.Uri).</span></span>
+- <span data-ttu-id="ab3dd-111">パラメーターより優れたパラメーターの検証を提供する Microsoft .NET Framework 型として定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-111">Parameters should be defined as Microsoft .NET Framework types to provide better parameter validation.</span></span> <span data-ttu-id="ab3dd-112">たとえば、値の中から 1 つの値に制限されているパラメーターは、列挙型として定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-112">For example, parameters that are restricted to one value out of a set of values should be defined as an enumeration type.</span></span> <span data-ttu-id="ab3dd-113">型の Uniform Resource Identifier (URI) の値を受け取るパラメーターは必ず[System.Uri](/dotnet/api/System.Uri)します。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-113">Parameters that take a Uniform Resource Identifier (URI) value should be of type [System.Uri](/dotnet/api/System.Uri).</span></span>
 
-- <span data-ttu-id="ebd65-114">以外のすべての自由形式テキストのプロパティの基本的な文字列パラメーターを回避します。</span><span class="sxs-lookup"><span data-stu-id="ebd65-114">Avoid basic string parameters for all but free-form text properties.</span></span>
+- <span data-ttu-id="ab3dd-114">以外のすべての自由形式テキストのプロパティの基本的な文字列パラメーターを回避します。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-114">Avoid basic string parameters for all but free-form text properties.</span></span>
 
-- <span data-ttu-id="ebd65-115">パラメーターは、任意の数のパラメーター セットを追加できます。</span><span class="sxs-lookup"><span data-stu-id="ebd65-115">You can add a parameter to any number of parameter sets.</span></span> <span data-ttu-id="ebd65-116">パラメーター セットの詳細については、[コマンドレット パラメーター設定](./cmdlet-parameter-sets.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ebd65-116">For more information about parameter sets, see [Cmdlet Parameter Sets](./cmdlet-parameter-sets.md).</span></span>
+- <span data-ttu-id="ab3dd-115">パラメーターは、任意の数のパラメーター セットを追加できます。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-115">You can add a parameter to any number of parameter sets.</span></span> <span data-ttu-id="ab3dd-116">パラメーター セットの詳細については、次を参照してください。[コマンドレット パラメーター設定](./cmdlet-parameter-sets.md)します。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-116">For more information about parameter sets, see [Cmdlet Parameter Sets](./cmdlet-parameter-sets.md).</span></span>
 
-<span data-ttu-id="ebd65-117">Windows PowerShell には、すべてのコマンドレットを自動的に利用できる共通のパラメーターのセットも提供します。</span><span class="sxs-lookup"><span data-stu-id="ebd65-117">Windows PowerShell also provides a set of common parameters that are automatically available to every cmdlet.</span></span> <span data-ttu-id="ebd65-118">これらのパラメーターと、エイリアスの詳細については、[コマンドレットに共通のパラメーター](./common-parameter-names.md)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ebd65-118">For more information about these parameters and their aliases, see [Cmdlet Common Parameters](./common-parameter-names.md).</span></span>
+<span data-ttu-id="ab3dd-117">Windows PowerShell には、すべてのコマンドレットを自動的に利用できる共通のパラメーターのセットも提供します。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-117">Windows PowerShell also provides a set of common parameters that are automatically available to every cmdlet.</span></span> <span data-ttu-id="ab3dd-118">これらのパラメーターと、エイリアスの詳細については、次を参照してください。[コマンドレットに共通のパラメーター](./common-parameter-names.md)します。</span><span class="sxs-lookup"><span data-stu-id="ab3dd-118">For more information about these parameters and their aliases, see [Cmdlet Common Parameters](./common-parameter-names.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="ebd65-119">参照</span><span class="sxs-lookup"><span data-stu-id="ebd65-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ab3dd-119">参照</span><span class="sxs-lookup"><span data-stu-id="ab3dd-119">See Also</span></span>
 
-[<span data-ttu-id="ebd65-120">コマンドレットの一般的なパラメーター</span><span class="sxs-lookup"><span data-stu-id="ebd65-120">Cmdlet Common Parameters</span></span>](./common-parameter-names.md)
+[<span data-ttu-id="ab3dd-120">コマンドレットの一般的なパラメーター</span><span class="sxs-lookup"><span data-stu-id="ab3dd-120">Cmdlet Common Parameters</span></span>](./common-parameter-names.md)
 
-[<span data-ttu-id="ebd65-121">コマンドレットのパラメーターの型</span><span class="sxs-lookup"><span data-stu-id="ebd65-121">Types of Cmdlet Parameter</span></span>](./types-of-cmdlet-parameters.md)
+[<span data-ttu-id="ab3dd-121">コマンドレットのパラメーターの型</span><span class="sxs-lookup"><span data-stu-id="ab3dd-121">Types of Cmdlet Parameter</span></span>](./types-of-cmdlet-parameters.md)
 
-[<span data-ttu-id="ebd65-122">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="ebd65-122">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="ab3dd-122">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="ab3dd-122">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
