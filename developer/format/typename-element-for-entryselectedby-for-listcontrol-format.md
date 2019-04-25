@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 33c7345c-b808-4c1e-bd54-cb870b407432
 caps.latest.revision: 14
 ms.openlocfilehash: 0f7216d4dcc0380bceb47ea7c15b3d4a7e5ceeb2
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059696"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084030"
 ---
 # <a name="typename-element-for-entryselectedby-for-listcontrol-format"></a>ListControl の EntrySelectedBy の TypeName 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "58059696"
 <TypeName>Nameof.NetType</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`TypeName`要素。
 
@@ -53,7 +53,7 @@ ms.locfileid: "58059696"
 
 リストの各エントリに少なくとも 1 つの型名、選択範囲のセット、または選択条件が定義されている必要があります。
 
-この要素はリスト ビューで使用する方法の詳細については、[リスト ビュー](./creating-a-list-view.md)を参照してください。
+この要素はリスト ビューで使用する方法の詳細については、次を参照してください。[リスト ビュー](./creating-a-list-view.md)します。
 
 ## <a name="example"></a>例
 

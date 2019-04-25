@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 81a91c74-6229-4b64-aa2b-9123e8b7e9e5
 caps.latest.revision: 11
 ms.openlocfilehash: be35f6e9e2ad0b2d9a21a91c053aa0f70cafaf9c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862648"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083928"
 ---
 # <a name="typename-element-for-entryselectedby-for-wideentry-format"></a>WideEntry の EntrySelectedBy の TypeName 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56862648"
 <TypeName>Nameof.NetType</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`TypeName`要素。
 
@@ -53,7 +53,7 @@ ms.locfileid: "56862648"
 
 各ワイド エントリには、1 つまたは複数の .NET 型を選択し、セットまたは選択条件を使用する定義が存在する必要がありますを指定する必要があります。
 
-ワイド ビューの他のコンポーネントに関する詳細については、[ワイド ビューを作成する](./creating-a-wide-view.md)を参照してください。
+ワイド ビューの他のコンポーネントに関する詳細については、次を参照してください。[ワイド ビューを作成する](./creating-a-wide-view.md)します。
 
 ## <a name="see-also"></a>参照
 

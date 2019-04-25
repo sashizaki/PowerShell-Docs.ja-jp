@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: fd2cac66-88bb-449f-9d47-bd2cd4fe1801
 caps.latest.revision: 13
 ms.openlocfilehash: e6024ec4f7fc490c92408047c8c15c775e45bf9d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065622"
 ---
 # <a name="formatstring-element-for-listitem-for-listcontrol--format"></a>ListControl の ListItem の FormatString 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56860338"
 <FormatString>PropertyPattern</FormatString>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`FormatString`要素。
 
@@ -51,9 +51,9 @@ ms.locfileid: "56860338"
 
 ## <a name="remarks"></a>コメント
 
-テーブルのビューやリスト ビュー、ワイド ビューは、カスタム ビューを作成するときに、書式指定文字列を使用できます。 ビューに表示される値の書式設定に関する詳細については、[表示されるデータの書式設定](./formatting-displayed-data.md)を参照してください。
+テーブルのビューやリスト ビュー、ワイド ビューは、カスタム ビューを作成するときに、書式指定文字列を使用できます。 ビューに表示される値の書式設定に関する詳細については、次を参照してください。[表示されるデータの書式設定](./formatting-displayed-data.md)します。
 
-リスト ビューで書式指定文字列の使用に関する詳細については、[リスト ビューの作成](./creating-a-list-view.md)を参照してください。
+リスト ビューで書式指定文字列の使用に関する詳細については、次を参照してください。[リスト ビューの作成](./creating-a-list-view.md)です。
 
 ## <a name="example"></a>例
 

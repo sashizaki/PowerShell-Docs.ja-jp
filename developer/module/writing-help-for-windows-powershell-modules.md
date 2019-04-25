@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f2b58fa5-01bc-426c-a043-5c700d6578e9
 caps.latest.revision: 16
 ms.openlocfilehash: 443bf5f693d2ab161668de25a1097347826cb5c2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854068"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082035"
 ---
 # <a name="writing-help-for-windows-powershell-modules"></a>Windows PowerShell モジュールのヘルプを記述する
 
@@ -97,7 +97,7 @@ Windows PowerShell 3.0 のユーザーと以降のバージョンの Windows Pow
 
 モジュールの作成者は、モジュールのヘルプ ファイルを含めるし、更新可能なヘルプを使用して、ヘルプ ファイルを更新またはモジュールからヘルプ ファイルを省略し、インストールして、それらを更新する更新可能なヘルプを使用、します。
 
-更新可能なヘルプについては、[更新可能なヘルプをサポートしている](./supporting-updatable-help.md)を参照してください。
+更新可能なヘルプについては、次を参照してください。[更新可能なヘルプをサポートしている](./supporting-updatable-help.md)します。
 
 ## <a name="supporting-online-help"></a>オンライン ヘルプのサポート
 
@@ -107,7 +107,7 @@ Windows PowerShell 3.0 のユーザーと以降のバージョンの Windows Pow
 
 Windows PowerShell 3.0 以降で、コマンドレット クラスで HelpUri 属性を定義することで、コマンドレットと関数のヘルプ トピックのオンライン バージョンを検索するユーザーを支援することができます、または**HelpUri**のプロパティ、 **CmdletBinding**属性。 属性の値は、の値、 **HelpUri**コマンドレットまたは関数のプロパティ。
 
-詳細については、[オンライン ヘルプのサポート](./supporting-online-help.md)を参照してください。
+詳細については、次を参照してください。[オンライン ヘルプのサポート](./supporting-online-help.md)します。
 
 ## <a name="see-also"></a>参照
 

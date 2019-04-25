@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 65fbac8b-07d0-4513-bc8d-79f1f389be0f
 caps.latest.revision: 5
 ms.openlocfilehash: 7aadee07b38d2e9d87c5f0c548d13a5cdad1939f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854718"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080766"
 ---
 # <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a>Management OData Web サービスの MOF スキーマ ファイルを作成する
 
-Management OData web サービスは、パブリック リソースのスキーマを使用する MOF ファイルを作成して公開するリソースを定義します。 各リソースは、ファイル内のクラスとして定義され、プロパティは、クラス メンバーとして定義されます。 MOF ファイルで使用するスキーマの詳細については、[パブリック リソース スキーマ](./public-resource-schema.md)を参照してください。
+Management OData web サービスは、パブリック リソースのスキーマを使用する MOF ファイルを作成して公開するリソースを定義します。 各リソースは、ファイル内のクラスとして定義され、プロパティは、クラス メンバーとして定義されます。 MOF ファイルで使用するスキーマの詳細については、次を参照してください。[パブリック リソース スキーマ](./public-resource-schema.md)します。
 
 ## <a name="example-mof-file"></a>MOF ファイルの例
 

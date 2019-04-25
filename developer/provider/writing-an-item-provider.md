@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
 ms.openlocfilehash: 9285a2f0e673de8b86084157423512bdeeda109d
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058193"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080817"
 ---
 # <a name="writing-an-item-provider"></a>アイテム プロバイダーを記述する
 
@@ -21,7 +21,7 @@ ms.locfileid: "58058193"
 
 このトピックの例ではプロバイダーでは、そのデータ ストアとして Access データベースを使用します。 いくつかのヘルパー メソッドと、データベースとの対話に使用されるクラスがあります。 ヘルパー メソッドを含む完全なサンプルは、次を参照してください[AccessDBProviderSample03。](./accessdbprovidersample03.md)
 
-Windows PowerShell プロバイダーに関する詳細については、[Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)を参照してください。
+Windows PowerShell プロバイダーに関する詳細については、次を参照してください。 [Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)します。
 
 ## <a name="implementing-item-methods"></a>項目のメソッドを実装します。
 
@@ -223,7 +223,7 @@ protected override bool IsValidPath(string path)
 
 ## <a name="next-steps"></a>次の手順
 
-ドライブ内の別の 1 つのパスから項目を移動して、他の項目を含む項目をサポートしているは一般的な現実世界のプロバイダー。 コンテナーをサポートするプロバイダーの例は、[コンテナー プロバイダーの書き込み](./writing-a-container-provider.md)を参照してください。 項目の移動をサポートするプロバイダーの例は、[ナビゲーション プロバイダーの記述](./writing-a-navigation-provider.md)を参照してください。
+ドライブ内の別の 1 つのパスから項目を移動して、他の項目を含む項目をサポートしているは一般的な現実世界のプロバイダー。 コンテナーをサポートするプロバイダーの例は、次を参照してください。[コンテナー プロバイダーの書き込み](./writing-a-container-provider.md)します。 項目の移動をサポートするプロバイダーの例は、次を参照してください。[ナビゲーション プロバイダーの記述](./writing-a-navigation-provider.md)します。
 
 ## <a name="see-also"></a>参照
 

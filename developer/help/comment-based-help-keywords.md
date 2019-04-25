@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ab90ec96-77f5-42e3-9c7e-2f4156ec207f
 caps.latest.revision: 6
 ms.openlocfilehash: af8a151070d26ffe236800076115c964f625e572
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058081"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083537"
 ---
 # <a name="comment-based-help-keywords"></a>コメント ベースのヘルプのキーワード
 
@@ -69,4 +69,4 @@ ms.locfileid: "58058081"
 
 関数が、モジュールに関連付けられていない場合は、値にパスとファイル名を含める、**します。ExternalHelp**キーワード。 XML ファイルに指定されたパスには、UI カルチャ固有のサブディレクトリが含まれている場合`Get-Help`スクリプトまたは関数に従ってのフォールバックの標準が確立されている言語の名前を持つ XML ファイルを再帰的にサブディレクトリを検索Windows では、同じように、すべての XML ベースのヘルプ トピックは。
 
-コマンドレットのヘルプの XML ベースのヘルプ ファイルの形式に関する詳細については、[書き込み Windows PowerShell コマンドレットのヘルプ](./writing-help-for-windows-powershell-cmdlets.md)を参照してください。
+コマンドレットのヘルプの XML ベースのヘルプ ファイルの形式に関する詳細については、次を参照してください。[書き込み Windows PowerShell コマンドレットのヘルプ](./writing-help-for-windows-powershell-cmdlets.md)します。
