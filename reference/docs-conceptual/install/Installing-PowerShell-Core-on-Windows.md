@@ -3,11 +3,11 @@ title: Windows への PowerShell Core のインストール
 description: Windows への PowerShell Core のインストールに関する情報
 ms.date: 08/06/2018
 ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293012"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058031"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Windows への PowerShell Core のインストール
 
@@ -24,15 +24,15 @@ WSMan を介して PowerShell のリモート処理を有効にするには、�
 
 PowerShell を Windows クライアントまたは Windows Server にインストールするには (Windows 7 SP1、Server 2008 R2 以降で機能)、MSI パッケージを弊社の GitHub [releases][] ページからダウンロードします。 インストールするリリースの **[資産]** セクションまで下へスクロールします。 [資産] セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
 
-MSI ファイルは次のようになります - `PowerShell-<version>-win-<os-arch>.msi`
+MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi` のようになります。
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 ダウンロードしたら、インストーラーをダブルクリックし、プロンプトの指示に従います。
 
 インストーラーにより、Windows の [スタート] メニューにショートカットが作成されます。
 
-- パッケージは既定で次にインストールされます: `$env:ProgramFiles\PowerShell\<version>`
-- PowerShell は次を使って起動できます: [スタート] メニュー、または `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
+- パッケージは、既定で `$env:ProgramFiles\PowerShell\<version>` にインストールされます。
+- PowerShell は、スタート メニューまたは  `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` から起動できます。
 
 ### <a name="administrative-install-from-the-command-line"></a>コマンド ラインからの管理者インストール
 
