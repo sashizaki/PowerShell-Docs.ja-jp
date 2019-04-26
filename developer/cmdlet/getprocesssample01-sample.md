@@ -9,45 +9,45 @@ ms.topic: article
 ms.assetid: 7b48bf80-cbf0-4cb1-8d5b-3b8d06196598
 caps.latest.revision: 10
 ms.openlocfilehash: 00190c7350cb0f1cfc5c389b56e48e9397480446
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068064"
 ---
-# <a name="getprocesssample01-sample"></a><span data-ttu-id="32da3-102">GetProcessSample01 サンプル</span><span class="sxs-lookup"><span data-stu-id="32da3-102">GetProcessSample01 Sample</span></span>
+# <a name="getprocesssample01-sample"></a><span data-ttu-id="b5e39-102">GetProcessSample01 サンプル</span><span class="sxs-lookup"><span data-stu-id="b5e39-102">GetProcessSample01 Sample</span></span>
 
-<span data-ttu-id="32da3-103">このサンプルでは、ローカル コンピューター上のプロセスを取得するコマンドレットを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="32da3-103">This sample shows how to implement a cmdlet that retrieves the processes on the local computer.</span></span> <span data-ttu-id="32da3-104">このコマンドレットは、簡略化されたバージョンの`Get-Process`コマンドレットは Windows PowerShell 2.0 によって提供されます。</span><span class="sxs-lookup"><span data-stu-id="32da3-104">This cmdlet is a simplified version of the `Get-Process` cmdlet that is provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="b5e39-103">このサンプルでは、ローカル コンピューター上のプロセスを取得するコマンドレットを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-103">This sample shows how to implement a cmdlet that retrieves the processes on the local computer.</span></span> <span data-ttu-id="b5e39-104">このコマンドレットは、簡略化されたバージョンの`Get-Process`コマンドレットは Windows PowerShell 2.0 によって提供されます。</span><span class="sxs-lookup"><span data-stu-id="b5e39-104">This cmdlet is a simplified version of the `Get-Process` cmdlet that is provided by Windows PowerShell 2.0.</span></span>
 
-## <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="32da3-105">Visual Studio を使用してサンプルをビルドする方法。</span><span class="sxs-lookup"><span data-stu-id="32da3-105">How to build the sample by using Visual Studio.</span></span>
+## <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="b5e39-105">Visual Studio を使用してサンプルをビルドする方法。</span><span class="sxs-lookup"><span data-stu-id="b5e39-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="32da3-106">インストールされている Windows PowerShell 2.0 sdk では、GetProcessSample01 フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="32da3-106">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample01 folder.</span></span> <span data-ttu-id="32da3-107">既定の場所は、C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample01 します。</span><span class="sxs-lookup"><span data-stu-id="32da3-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample01.</span></span>
+1. <span data-ttu-id="b5e39-106">インストールされている Windows PowerShell 2.0 sdk では、GetProcessSample01 フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-106">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample01 folder.</span></span> <span data-ttu-id="b5e39-107">既定の場所は、C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample01 します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample01.</span></span>
 
-2. <span data-ttu-id="32da3-108">ソリューション (.sln) ファイルのアイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="32da3-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="32da3-109">これは、Microsoft Visual Studio でサンプル プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="32da3-109">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="b5e39-108">ソリューション (.sln) ファイルのアイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="b5e39-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="b5e39-109">これは、Microsoft Visual Studio でサンプル プロジェクトを開きます。</span><span class="sxs-lookup"><span data-stu-id="b5e39-109">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="32da3-110">**ビルド**メニューの **ソリューションのビルド**します。</span><span class="sxs-lookup"><span data-stu-id="32da3-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="b5e39-110">**ビルド**メニューの **ソリューションのビルド**します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-  <span data-ttu-id="32da3-111">サンプルのライブラリは、既定の \bin または \bin\debug フォルダーにビルドされます。</span><span class="sxs-lookup"><span data-stu-id="32da3-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+  <span data-ttu-id="b5e39-111">サンプルのライブラリは、既定の \bin または \bin\debug フォルダーにビルドされます。</span><span class="sxs-lookup"><span data-stu-id="b5e39-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="32da3-112">サンプルを実行する方法</span><span class="sxs-lookup"><span data-stu-id="32da3-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="b5e39-112">サンプルを実行する方法</span><span class="sxs-lookup"><span data-stu-id="b5e39-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="32da3-113">コマンド プロンプト ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="32da3-113">Open a Command Prompt window.</span></span>
+1. <span data-ttu-id="b5e39-113">コマンド プロンプト ウィンドウを開きます。</span><span class="sxs-lookup"><span data-stu-id="b5e39-113">Open a Command Prompt window.</span></span>
 
-2. <span data-ttu-id="32da3-114">サンプルの .dll ファイルを含むディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="32da3-114">Navigate to the directory containing the sample .dll file.</span></span>
+2. <span data-ttu-id="b5e39-114">サンプルの .dll ファイルを含むディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-114">Navigate to the directory containing the sample .dll file.</span></span>
 
-3. <span data-ttu-id="32da3-115">Installutil"GetProcessSample01.dll"を実行します。</span><span class="sxs-lookup"><span data-stu-id="32da3-115">Run installutil "GetProcessSample01.dll".</span></span>
+3. <span data-ttu-id="b5e39-115">Installutil"GetProcessSample01.dll"を実行します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-115">Run installutil "GetProcessSample01.dll".</span></span>
 
-4. <span data-ttu-id="32da3-116">Windows PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="32da3-116">Start Windows PowerShell.</span></span>
+4. <span data-ttu-id="b5e39-116">Windows PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-116">Start Windows PowerShell.</span></span>
 
-5. <span data-ttu-id="32da3-117">シェルにスナップインを追加するには、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="32da3-117">Run the following command to add the snap-in to the shell.</span></span>
+5. <span data-ttu-id="b5e39-117">シェルにスナップインを追加するには、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-117">Run the following command to add the snap-in to the shell.</span></span>
 
    `Add-PSSnapin GetProcPSSnapIn01`
 
-6. <span data-ttu-id="32da3-118">コマンドレットを実行する次のコマンドを入力します。</span><span class="sxs-lookup"><span data-stu-id="32da3-118">Enter the following command to run the cmdlet.</span></span> `get-proc`
+6. <span data-ttu-id="b5e39-118">コマンドレットを実行する次のコマンドを入力します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-118">Enter the following command to run the cmdlet.</span></span> `get-proc`
 
    `get-proc`
 
-   <span data-ttu-id="32da3-119">これは、以下の手順によって生成される出力の例です。</span><span class="sxs-lookup"><span data-stu-id="32da3-119">This is a sample output that results from following these steps.</span></span>
+   <span data-ttu-id="b5e39-119">これは、以下の手順によって生成される出力の例です。</span><span class="sxs-lookup"><span data-stu-id="b5e39-119">This is a sample output that results from following these steps.</span></span>
 
    ```output
    Id              Name            State      HasMoreData     Location             Command
@@ -64,23 +64,23 @@ ms.locfileid: "56859838"
    A file was created in the TEMP directory
    ```
 
-## <a name="requirements"></a><span data-ttu-id="32da3-120">要件</span><span class="sxs-lookup"><span data-stu-id="32da3-120">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="b5e39-120">要件</span><span class="sxs-lookup"><span data-stu-id="b5e39-120">Requirements</span></span>
 
-<span data-ttu-id="32da3-121">このサンプルでは、Windows PowerShell 1.0 以降が必要です。</span><span class="sxs-lookup"><span data-stu-id="32da3-121">This sample requires Windows PowerShell 1.0 or later.</span></span>
+<span data-ttu-id="b5e39-121">このサンプルでは、Windows PowerShell 1.0 以降が必要です。</span><span class="sxs-lookup"><span data-stu-id="b5e39-121">This sample requires Windows PowerShell 1.0 or later.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="32da3-122">使用例</span><span class="sxs-lookup"><span data-stu-id="32da3-122">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="b5e39-122">使用例</span><span class="sxs-lookup"><span data-stu-id="b5e39-122">Demonstrates</span></span>
 
-<span data-ttu-id="32da3-123">このサンプルは、次を示します。</span><span class="sxs-lookup"><span data-stu-id="32da3-123">This sample demonstrates the following.</span></span>
+<span data-ttu-id="b5e39-123">このサンプルは、次を示します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-123">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="32da3-124">基本的なサンプルのコマンドレットを作成します。</span><span class="sxs-lookup"><span data-stu-id="32da3-124">Creating a basic sample cmdlet.</span></span>
+- <span data-ttu-id="b5e39-124">基本的なサンプルのコマンドレットを作成します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-124">Creating a basic sample cmdlet.</span></span>
 
-- <span data-ttu-id="32da3-125">コマンドレットの属性を使用して、コマンドレット クラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="32da3-125">Defining a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="b5e39-125">コマンドレットの属性を使用して、コマンドレット クラスを定義します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-125">Defining a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="32da3-126">Windows PowerShell 1.0 と Windows PowerShell 2.0 の両方で動作するスナップインを作成します。</span><span class="sxs-lookup"><span data-stu-id="32da3-126">Creating a snap-in that works with both Windows PowerShell 1.0 and Windows PowerShell 2.0.</span></span> <span data-ttu-id="32da3-127">以降のサンプルは、Windows PowerShell 2.0 が必要なために、スナップインではなくモジュールを使用します。</span><span class="sxs-lookup"><span data-stu-id="32da3-127">Subsequent samples use modules instead of snap-ins so they require Windows PowerShell 2.0.</span></span>
+- <span data-ttu-id="b5e39-126">Windows PowerShell 1.0 と Windows PowerShell 2.0 の両方で動作するスナップインを作成します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-126">Creating a snap-in that works with both Windows PowerShell 1.0 and Windows PowerShell 2.0.</span></span> <span data-ttu-id="b5e39-127">以降のサンプルは、Windows PowerShell 2.0 が必要なために、スナップインではなくモジュールを使用します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-127">Subsequent samples use modules instead of snap-ins so they require Windows PowerShell 2.0.</span></span>
 
-## <a name="example"></a><span data-ttu-id="32da3-128">例</span><span class="sxs-lookup"><span data-stu-id="32da3-128">Example</span></span>
+## <a name="example"></a><span data-ttu-id="b5e39-128">例</span><span class="sxs-lookup"><span data-stu-id="b5e39-128">Example</span></span>
 
-<span data-ttu-id="32da3-129">このサンプルでは、単純なコマンドレットとそのスナップインで作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="32da3-129">This sample shows how to create a simple cmdlet and its snap-in.</span></span>
+<span data-ttu-id="b5e39-129">このサンプルでは、単純なコマンドレットとそのスナップインで作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b5e39-129">This sample shows how to create a simple cmdlet and its snap-in.</span></span>
 
 ```csharp
 using System;
@@ -192,6 +192,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="32da3-130">参照</span><span class="sxs-lookup"><span data-stu-id="32da3-130">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b5e39-130">参照</span><span class="sxs-lookup"><span data-stu-id="b5e39-130">See Also</span></span>
 
-[<span data-ttu-id="32da3-131">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="32da3-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="b5e39-131">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="b5e39-131">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
