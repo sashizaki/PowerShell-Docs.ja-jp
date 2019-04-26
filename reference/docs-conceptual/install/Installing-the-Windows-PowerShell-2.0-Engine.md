@@ -4,11 +4,11 @@ keywords: PowerShell, コマンドレット
 title: Windows PowerShell 2.0 エンジンのインストール
 ms.assetid: 82928f2b-f96a-4ae6-a0d0-6e7b181da308
 ms.openlocfilehash: b625b61b4e191402074f57ea2e942f800dbbcd53
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402822"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058320"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 エンジンのインストール
 このトピックでは、Windows PowerShell 2.0 エンジンのインストール方法について説明します。
@@ -70,7 +70,7 @@ Windows 8.1 と Windows 8 では、Windows PowerShell 2.0 エンジンの機能�
 Windows PowerShell 2.0 エンジンの開始に関する情報については、「[Windows PowerShell 2.0 エンジンの開始](../getting-started/Starting-the-Windows-PowerShell-2.0-Engine.md)」を参照してください。
 
 ## <a name="on-earlier-systems"></a>以前のシステムの場合
-Windows 7、Windows Server 2008 R2、および Windows Server 2012 に Windows PowerShell 4.0 をインストールする [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881) パッケージには、Windows PowerShell 2.0 エンジンが組み込まれています。 Windows PowerShell 2.0 を エンジンは有効になっており、使用準備が整っていますので、追加のインストールや、セットアップ、構成は必要ありません。
+Windows 7、Windows Server 2008 R2、および Windows Server 2012 に Windows PowerShell 4.0 をインストールする [Windows Management Framework 4.0](https://go.microsoft.com/fwlink/?LinkID=293881) パッケージには、Windows PowerShell 2.0 エンジンが組み込まれています。 Windows PowerShell 2.0 をエンジンは有効になっており、使用準備が整っていますので、追加のインストールや、セットアップ、構成は必要ありません。
 
 Windows 7、Windows Server 2008 R2、および Windows Server 2008 に Windows PowerShell 3.0 をインストールする Windows Management Framework 3.0 パッケージには、Windows PowerShell 2.0 エンジンが組み込まれています。 Windows PowerShell 2.0 をエンジンは有効になっており、使用準備が整っていますので、追加のインストールや、セットアップ、構成は必要ありません。
 
