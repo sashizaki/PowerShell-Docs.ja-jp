@@ -13,11 +13,11 @@ helpviewer_keywords:
 ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
 caps.latest.revision: 13
 ms.openlocfilehash: a3488d5fb3f7eb3df28d0242d6c39d07145a3c8d
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "56863618"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067554"
 ---
 # <a name="parameter-attribute-declaration"></a>パラメーター属性の宣言
 
@@ -52,7 +52,7 @@ ms.locfileid: "56863618"
 
 ## <a name="remarks"></a>コメント
 
-- この属性を宣言する方法の詳細については、[コマンドレット パラメーターを宣言する方法](./how-to-declare-cmdlet-parameters.md)を参照してください。
+- この属性を宣言する方法の詳細については、次を参照してください。[コマンドレット パラメーターを宣言する方法](./how-to-declare-cmdlet-parameters.md)します。
 
 - コマンドレットは、任意の数のパラメーターを持つことができます。 ただし、ユーザー エクスペリエンスを向上させるには、パラメーターの数を制限します。
 
@@ -72,7 +72,7 @@ ms.locfileid: "56863618"
 
     - 複数のパラメーターを定義できます`ValueFromPipelineByPropertyName = true`します。
 
-- パラメーター名に関するガイドラインの詳細については、[コマンドレットのパラメーター名](standard-cmdlet-parameter-names-and-types.md)を参照してください。
+- パラメーター名に関するガイドラインの詳細については、次を参照してください。[コマンドレットのパラメーター名](standard-cmdlet-parameter-names-and-types.md)します。
 
 - パラメーター属性が定義した、 [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)クラス。
 

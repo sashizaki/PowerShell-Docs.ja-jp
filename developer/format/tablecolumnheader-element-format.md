@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
 ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057877"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063811"
 ---
 # <a name="tablecolumnheader-element-format"></a>TableColumnHeader 要素 (書式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "58057877"
 </TableColumnHeader>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`TableColumnHeader`要素。
 
@@ -59,7 +59,7 @@ ms.locfileid: "58057877"
 
 テーブルには、同じ数の必要があります`TableColumnHeader`要素として`TableRowEntry`要素。 列ヘッダーは、テーブルの上部にあるテキストを表示する方法を定義します。 行のエントリでは、テーブルの行で表示するデータを定義します。
 
-テーブル ビューのコンポーネントに関する詳細については、[テーブル ビュー](./creating-a-table-view.md)を参照してください。
+テーブル ビューのコンポーネントに関する詳細については、次を参照してください。[テーブル ビュー](./creating-a-table-view.md)します。
 
 ## <a name="example"></a>例
 

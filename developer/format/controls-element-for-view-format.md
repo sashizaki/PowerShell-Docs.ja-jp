@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3bd82666-447f-40fe-bd87-c8b182522f4f
 caps.latest.revision: 14
 ms.openlocfilehash: 477b8b54c8edd2fa0e6939041d04322d861197c9
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066803"
 ---
 # <a name="controls-element-for-view-format"></a>View の Controls 要素 (書式)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56853668"
 </Controls>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`Controls`要素。 この要素は、少なくとも 1 つの子要素をいる必要があります。 子要素の最大数がないもは順序が重要です。
 

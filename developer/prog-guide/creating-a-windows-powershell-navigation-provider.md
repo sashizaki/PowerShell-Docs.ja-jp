@@ -12,22 +12,22 @@ helpviewer_keywords:
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
 ms.openlocfilehash: 40454f880b57d5b3a8a8ded21c8c97aebba027fe
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055072"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081854"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Windows PowerShell ナビゲーション プロバイダーを作成する
 
 このトピックでは、データ ストアを移動できる Windows PowerShell ナビゲーション プロバイダーを作成する方法について説明します。 この種類のプロバイダーには、再帰的なコマンド、入れ子になったコンテナー、および相対パスがサポートしています。
 
 > [!NOTE]
-> ダウンロードすることができます、 C# Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用して、このプロバイダーのソース ファイル (AccessDBSampleProvider05.cs)。 ダウンロードの手順については、[Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)を参照してください。
+> ダウンロードすることができます、 C# Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用して、このプロバイダーのソース ファイル (AccessDBSampleProvider05.cs)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
 >
-> その他の Windows PowerShell プロバイダーの実装の詳細については、[Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)を参照してください。
+> その他の Windows PowerShell プロバイダーの実装の詳細については、次を参照してください。 [Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)します。
 
 ここで説明されているプロバイダーでは、ドライブとして Access データベースのユーザーのハンドルが有効に、ユーザーがデータベース内のデータ テーブルに移動できるようにします。 独自のナビゲーション プロバイダーを作成するときに、ナビゲーションのために必要なドライブ修飾パス、相対パスの正規化、データ ストアと子の名前を取得し、アイテムの親パスを取得し、テストするメソッドのアイテムを移動するメソッドを実装できます。アイテムを識別するために、コンテナーです。
 
@@ -76,11 +76,11 @@ Windows PowerShell ナビゲーション プロバイダーから派生する .N
 
 セッション固有の初期化情報を追加して、プロバイダーによって使用されているリソースを解放するための機能を実装するを参照してください。[基本的な PS プロバイダーを作成する](./creating-a-basic-windows-powershell-provider.md)します。 ただし、ほとんどのプロバイダー (ここで説明されているプロバイダーを含む) は、Windows PowerShell によって提供されるこの機能の既定の実装を使用できます。
 
-を使用、Windows PowerShell ドライブをデータ ストアへのアクセスを取得するには、のメソッドを実装する必要があります、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基本クラス。 これらのメソッドの実装の詳細については、[Windows PowerShell ドライブ プロバイダーを作成する](./creating-a-windows-powershell-drive-provider.md)を参照してください。
+を使用、Windows PowerShell ドライブをデータ ストアへのアクセスを取得するには、のメソッドを実装する必要があります、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基本クラス。 これらのメソッドの実装の詳細については、次を参照してください。 [Windows PowerShell ドライブ プロバイダーを作成する](./creating-a-windows-powershell-drive-provider.md)します。
 
-プロバイダーの取得、設定、および消去の項目などのデータ ストアの項目を操作するによって提供されるメソッドを実装する必要があります、 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)基本クラス。 これらのメソッドの実装の詳細については、[Windows PowerShell 項目プロバイダーを作成する](./creating-a-windows-powershell-item-provider.md)を参照してください。
+プロバイダーの取得、設定、および消去の項目などのデータ ストアの項目を操作するによって提供されるメソッドを実装する必要があります、 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)基本クラス。 これらのメソッドの実装の詳細については、次を参照してください。 [Windows PowerShell 項目プロバイダーを作成する](./creating-a-windows-powershell-item-provider.md)します。
 
-子項目、または、データ ストアとして作成、コピー、名前の変更、およびアイテムを削除するメソッドの名前を取得するには、によって提供されるメソッドを実装する必要があります、 [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)基本クラス。 これらのメソッドの実装の詳細については、[Windows PowerShell コンテナー プロバイダーを作成する](./creating-a-windows-powershell-container-provider.md)を参照してください。
+子項目、または、データ ストアとして作成、コピー、名前の変更、およびアイテムを削除するメソッドの名前を取得するには、によって提供されるメソッドを実装する必要があります、 [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)基本クラス。 これらのメソッドの実装の詳細については、次を参照してください。 [Windows PowerShell コンテナー プロバイダーを作成する](./creating-a-windows-powershell-container-provider.md)します。
 
 ## <a name="creating-a-windows-powershell-path"></a>Windows PowerShell パスの作成
 
@@ -180,15 +180,15 @@ Windows PowerShell ナビゲーション プロバイダーの実装、 [System.
 
 ## <a name="code-sample"></a>コード サンプル
 
-完全なサンプル コードでは、[AccessDbProviderSample05 コード サンプル](./accessdbprovidersample05-code-sample.md)を参照してください。
+完全なサンプル コードでは、次を参照してください。 [AccessDbProviderSample05 コード サンプル](./accessdbprovidersample05-code-sample.md)します。
 
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類を定義して、書式設定
 
-プロバイダーに既存のオブジェクトにメンバーを追加したり、新しいオブジェクトを定義することができます。 詳細については、[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)を参照してください。
+プロバイダーに既存のオブジェクトにメンバーを追加したり、新しいオブジェクトを定義することができます。 詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)します。
 
 ## <a name="building-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーの構築
 
-詳細については、[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)を参照してください。
+詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
 
 ## <a name="testing-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーのテスト
 

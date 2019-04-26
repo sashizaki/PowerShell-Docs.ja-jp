@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: e620bf6d-76be-47b0-a7a8-f43418f30c60
 caps.latest.revision: 6
 ms.openlocfilehash: b81a32b867795ae51c3f5308c2f82c31ed2747fa
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858368"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080783"
 ---
 # <a name="adding-resources-to-a-management-odata-web-service"></a>Management OData Web サービスにリソースを追加する
 
@@ -55,7 +55,7 @@ ms.locfileid: "56858368"
 
 5. この例では、コマンドレットの Get および Delete コマンドのみをバインドします。 クリア、**作成**と**更新**チェック ボックス、ことを確認します、**取得**と**削除**のチェック ボックスをオンします。 確認します、`Get-VM`コマンドレットが選択されている**取得**、および`Remove-VM`コマンドレットが選択されている**削除**します。
 
-6. VM のコマンドレットのメタデータが出力の種類を指定しないので、出力の種類を指定するコマンドレットを実行する必要があります。 選択**出力の種類を提供する** をクリック**コマンドレットを実行**します。 **コマンドレットの実行**ダイアログが表示されます。 クリックして**実行**します。 **CLR 型**ボックスが表示された、`VirtualMachine`型。 をクリックして**OK**、順にクリックします**次**。
+6. VM のコマンドレットのメタデータが出力の種類を指定しないので、出力の種類を指定するコマンドレットを実行する必要があります。 選択**出力の種類を提供する** をクリック**コマンドレットを実行**します。 **コマンドレットの実行**ダイアログが表示されます。 **[実行]** をクリックします。 **CLR 型**ボックスが表示された、`VirtualMachine`型。 をクリックして**OK**、順にクリックします**次**。
 
 7. 既定では、VirtualMachine オブジェクトのプロパティをすべて選択されます。 Web サービスをこのリソースを要求するときに返されるデータの一部としてたくない任意のプロパティをオフにすることができます。 **[次へ]** をクリックします。
 

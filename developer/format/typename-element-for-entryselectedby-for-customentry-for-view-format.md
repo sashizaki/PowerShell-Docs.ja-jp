@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 76548af7-05bd-4d12-bf71-6fb69c434ef2
 caps.latest.revision: 10
 ms.openlocfilehash: c3dd761cd9b6c468d4833ea35b897ba5d425f598
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858838"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083979"
 ---
 # <a name="typename-element-for-entryselectedby-for-customentry-for-view-format"></a>View の CustomEntry の EntrySelectedBy の TypeName 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56858838"
 <TypeName>Nameof.NetType</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`TypeName`要素。
 
@@ -53,7 +53,7 @@ ms.locfileid: "56858838"
 
 各カスタム コントロールのビュー定義に少なくとも 1 つの型名、選択範囲のセット、または選択条件が定義されている必要があります。
 
-カスタム コントロールのビューのコンポーネントに関する詳細については、[カスタム コントロールを作成する](./creating-custom-controls.md)を参照してください。
+カスタム コントロールのビューのコンポーネントに関する詳細については、次を参照してください。[カスタム コントロールを作成する](./creating-custom-controls.md)します。
 
 ## <a name="see-also"></a>参照
 

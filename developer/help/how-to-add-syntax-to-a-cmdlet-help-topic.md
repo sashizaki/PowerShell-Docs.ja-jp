@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
 ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054613"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083384"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>コマンドレットのヘルプ トピックに構文を追加する方法
 
@@ -166,7 +166,7 @@ ms.locfileid: "58054613"
 
 ## <a name="coding-the-syntax-diagram-xml"></a>XML 構文ダイアグラムのコーディング
 
-終わる説明ノードの直後に、XML の構文ノードを開始、 \</maml:description > タグです。 構文ダイアグラムで使用されるデータの収集方法の詳細については、[構文情報の収集](#Gathering-Syntax-Information)を参照してください。
+終わる説明ノードの直後に、XML の構文ノードを開始、 \</maml:description > タグです。 構文ダイアグラムで使用されるデータの収集方法の詳細については、次を参照してください。[構文情報の収集](#Gathering-Syntax-Information)します。
 
 ### <a name="adding-a-syntax-node"></a>構文ノードを追加します。
 
@@ -210,7 +210,7 @@ ms.locfileid: "58054613"
 
 囲まれた構文項目ノードに追加された各パラメーターが指定されて\<コマンド: パラメーター > タグです。 ペアを作成する必要があります\<コマンド: パラメーター > タグを除く、Windows PowerShell によって提供される共通パラメーター、パラメーター セットに含める各パラメーターのですか。
 
-開始の属性\<コマンド: パラメーター > タグは、構文ダイアグラムでのパラメーターの表示方法を決定します。 パラメーターの属性については、[パラメーター属性](#Parameter-Attributes)を参照してください。
+開始の属性\<コマンド: パラメーター > タグは、構文ダイアグラムでのパラメーターの表示方法を決定します。 パラメーターの属性については、次を参照してください。[パラメーター属性](#Parameter-Attributes)します。
 
 > [!NOTE]
 > \<コマンド: パラメーター > タグは子要素をサポートする\<maml:description > のコンテンツを表示することはありません。 パラメーターの説明は、XML のパラメーターのノードで指定されます。 構文項目の情報は、間の不整合を回避するために bodes 省略 [パラメーター] ノード、(\<maml:description > か、空白のままにします。
