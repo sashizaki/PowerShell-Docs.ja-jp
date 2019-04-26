@@ -9,39 +9,39 @@ ms.topic: article
 ms.assetid: f607a5ad-5372-4392-b2dc-ef3532fabd0f
 caps.latest.revision: 9
 ms.openlocfilehash: 7fafbc6bc19082abb8f37b68c031e0995bf879f6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082534"
 ---
-# <a name="windows-powershell01-sample"></a><span data-ttu-id="fc4d9-102">Windows PowerShell01 サンプル</span><span class="sxs-lookup"><span data-stu-id="fc4d9-102">Windows PowerShell01 Sample</span></span>
+# <a name="windows-powershell01-sample"></a><span data-ttu-id="1effd-102">Windows PowerShell01 サンプル</span><span class="sxs-lookup"><span data-stu-id="1effd-102">Windows PowerShell01 Sample</span></span>
 
-<span data-ttu-id="fc4d9-103">このサンプルは、使用する方法を示します、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)実行空間の機能を制限するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="fc4d9-103">This sample shows how to use an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to limit the functionality of a runspace.</span></span> <span data-ttu-id="fc4d9-104">このサンプルの出力は、実行空間、プライベートとしてコマンドレットをマークする方法、追加する方法と削除コマンドレットとプロバイダーの言語モードを制限する方法を示します、プロキシ コマンドを追加する方法。</span><span class="sxs-lookup"><span data-stu-id="fc4d9-104">The output of this sample demonstrates how to restrict the language mode of the runspace, how to mark a cmdlet as private, how to add and remove cmdlets and providers, how to add a proxy command, and more.</span></span> <span data-ttu-id="fc4d9-105">このサンプル プログラムで、実行空間を制限する方法に重点を置いています。</span><span class="sxs-lookup"><span data-stu-id="fc4d9-105">This sample concentrates on how to restrict the runspace programmatically.</span></span> <span data-ttu-id="fc4d9-106">スクリプトの代わりに、実行空間を制限するには、$ExecutionContext.SessionState.LanguageMode と PSSessionConfiguration コマンドが含まれます。</span><span class="sxs-lookup"><span data-stu-id="fc4d9-106">Scripting alternatives to restricting the runspace include the $ExecutionContext.SessionState.LanguageMode and PSSessionConfiguration commands.</span></span>
+<span data-ttu-id="1effd-103">このサンプルは、使用する方法を示します、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)実行空間の機能を制限するオブジェクト。</span><span class="sxs-lookup"><span data-stu-id="1effd-103">This sample shows how to use an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object to limit the functionality of a runspace.</span></span> <span data-ttu-id="1effd-104">このサンプルの出力は、実行空間、プライベートとしてコマンドレットをマークする方法、追加する方法と削除コマンドレットとプロバイダーの言語モードを制限する方法を示します、プロキシ コマンドを追加する方法。</span><span class="sxs-lookup"><span data-stu-id="1effd-104">The output of this sample demonstrates how to restrict the language mode of the runspace, how to mark a cmdlet as private, how to add and remove cmdlets and providers, how to add a proxy command, and more.</span></span> <span data-ttu-id="1effd-105">このサンプル プログラムで、実行空間を制限する方法に重点を置いています。</span><span class="sxs-lookup"><span data-stu-id="1effd-105">This sample concentrates on how to restrict the runspace programmatically.</span></span> <span data-ttu-id="1effd-106">スクリプトの代わりに、実行空間を制限するには、$ExecutionContext.SessionState.LanguageMode と PSSessionConfiguration コマンドが含まれます。</span><span class="sxs-lookup"><span data-stu-id="1effd-106">Scripting alternatives to restricting the runspace include the $ExecutionContext.SessionState.LanguageMode and PSSessionConfiguration commands.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="fc4d9-107">要件</span><span class="sxs-lookup"><span data-stu-id="fc4d9-107">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="1effd-107">要件</span><span class="sxs-lookup"><span data-stu-id="1effd-107">Requirements</span></span>
 
-<span data-ttu-id="fc4d9-108">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="fc4d9-108">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="1effd-108">このサンプルでは、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="1effd-108">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="fc4d9-109">使用例</span><span class="sxs-lookup"><span data-stu-id="fc4d9-109">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="1effd-109">使用例</span><span class="sxs-lookup"><span data-stu-id="1effd-109">Demonstrates</span></span>
 
-<span data-ttu-id="fc4d9-110">このサンプルでは、次の項目を示しています。</span><span class="sxs-lookup"><span data-stu-id="fc4d9-110">This sample demonstrates the following:</span></span>
+<span data-ttu-id="1effd-110">このサンプルでは、次の項目を示しています。</span><span class="sxs-lookup"><span data-stu-id="1effd-110">This sample demonstrates the following:</span></span>
 
-- <span data-ttu-id="fc4d9-111">設定して、言語を制限する、 [System.Management.Automation.Runspaces.Initialsessionstate.Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode)プロパティ。</span><span class="sxs-lookup"><span data-stu-id="fc4d9-111">Restricting the language by setting the [System.Management.Automation.Runspaces.Initialsessionstate.Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) property.</span></span>
+- <span data-ttu-id="1effd-111">設定して、言語を制限する、 [System.Management.Automation.Runspaces.Initialsessionstate.Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode)プロパティ。</span><span class="sxs-lookup"><span data-stu-id="1effd-111">Restricting the language by setting the [System.Management.Automation.Runspaces.Initialsessionstate.Languagemode](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.LanguageMode) property.</span></span>
 
-- <span data-ttu-id="fc4d9-112">使用して最初のセッション状態の別名を追加すること、 [System.Management.Automation.Runspaces.Sessionstatealiasentry でしょうか。Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="fc4d9-112">Adding aliases to the initial session state by using a [System.Management.Automation.Runspaces.Sessionstatealiasentry?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) object.</span></span>
+- <span data-ttu-id="1effd-112">使用して最初のセッション状態の別名を追加すること、 [System.Management.Automation.Runspaces.Sessionstatealiasentry でしょうか。Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="1effd-112">Adding aliases to the initial session state by using a [System.Management.Automation.Runspaces.Sessionstatealiasentry?Displayproperty=Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateAliasEntry) object.</span></span>
 
-- <span data-ttu-id="fc4d9-113">コマンドをプライベートとしてマークします。</span><span class="sxs-lookup"><span data-stu-id="fc4d9-113">Marking commands as private.</span></span>
+- <span data-ttu-id="1effd-113">コマンドをプライベートとしてマークします。</span><span class="sxs-lookup"><span data-stu-id="1effd-113">Marking commands as private.</span></span>
 
-- <span data-ttu-id="fc4d9-114">使用して、最初のセッション状態からプロバイダーを削除する、 [System.Management.Automation.Runspaces.Initialsessionstate.Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers)プロパティ。</span><span class="sxs-lookup"><span data-stu-id="fc4d9-114">Removing providers from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) property.</span></span>
+- <span data-ttu-id="1effd-114">使用して、最初のセッション状態からプロバイダーを削除する、 [System.Management.Automation.Runspaces.Initialsessionstate.Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers)プロパティ。</span><span class="sxs-lookup"><span data-stu-id="1effd-114">Removing providers from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Providers](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Providers) property.</span></span>
 
-- <span data-ttu-id="fc4d9-115">使用して最初のセッション状態からのコマンドを削除する、 [System.Management.Automation.Runspaces.Initialsessionstate.Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands)プロパティ。</span><span class="sxs-lookup"><span data-stu-id="fc4d9-115">Removing commands from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) property.</span></span>
+- <span data-ttu-id="1effd-115">使用して最初のセッション状態からのコマンドを削除する、 [System.Management.Automation.Runspaces.Initialsessionstate.Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands)プロパティ。</span><span class="sxs-lookup"><span data-stu-id="1effd-115">Removing commands from the initial session state by using the [System.Management.Automation.Runspaces.Initialsessionstate.Commands](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Commands) property.</span></span>
 
-- <span data-ttu-id="fc4d9-116">コマンドおよびプロバイダーの追加、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="fc4d9-116">Adding commands and providers to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="1effd-116">コマンドおよびプロバイダーの追加、 [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="1effd-116">Adding commands and providers to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-## <a name="example"></a><span data-ttu-id="fc4d9-117">例</span><span class="sxs-lookup"><span data-stu-id="fc4d9-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="1effd-117">例</span><span class="sxs-lookup"><span data-stu-id="1effd-117">Example</span></span>
 
-<span data-ttu-id="fc4d9-118">このサンプルでは、実行空間の機能を制限するいくつかの方法を示します。</span><span class="sxs-lookup"><span data-stu-id="fc4d9-118">This sample shows several ways to limit the functionality of a runspace.</span></span>
+<span data-ttu-id="1effd-118">このサンプルでは、実行空間の機能を制限するいくつかの方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1effd-118">This sample shows several ways to limit the functionality of a runspace.</span></span>
 
 ```csharp
 namespace Sample
@@ -257,6 +257,6 @@ namespace Sample
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="fc4d9-119">参照</span><span class="sxs-lookup"><span data-stu-id="fc4d9-119">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="1effd-119">参照</span><span class="sxs-lookup"><span data-stu-id="1effd-119">See Also</span></span>
 
-[<span data-ttu-id="fc4d9-120">Windows PowerShell ホスト アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="fc4d9-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="1effd-120">Windows PowerShell ホスト アプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="1effd-120">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
