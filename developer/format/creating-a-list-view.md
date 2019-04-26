@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 8c7a40ca-1786-46f0-bab5-6ce229daa7ee
 caps.latest.revision: 14
 ms.openlocfilehash: 25d24063501196d44e0f806a55bb699c82f771ce
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861578"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066857"
 ---
 # <a name="creating-a-list-view"></a>リスト ビューを作成する
 
@@ -103,11 +103,11 @@ ServiceType         : Win32OwnProcess
 
 - [GroupBy](./groupby-element-for-view-format.md)オブジェクトの新しいグループが表示される要素を定義します。 特定のプロパティまたはスクリプトの値が変更されるたびに新しいグループが開始されます。 この要素は省略可能です。
 
-- [コントロール](./controls-element-for-view-format.md)要素がリスト ビューで定義されているカスタム コントロールを定義します。 コントロールでは、さらに、データの表示方法を指定する方法を提供します。 この要素は省略可能です。 ビューがその独自のカスタム コントロールを定義できます。 または書式設定ファイルに任意のビューで使用できる一般的なコントロールを使用できます。 カスタム コントロールの詳細については、[カスタム コントロールを作成する](./creating-custom-controls.md)を参照してください。
+- [コントロール](./controls-element-for-view-format.md)要素がリスト ビューで定義されているカスタム コントロールを定義します。 コントロールでは、さらに、データの表示方法を指定する方法を提供します。 この要素は省略可能です。 ビューがその独自のカスタム コントロールを定義できます。 または書式設定ファイルに任意のビューで使用できる一般的なコントロールを使用できます。 カスタム コントロールの詳細については、次を参照してください。[カスタム コントロールを作成する](./creating-custom-controls.md)します。
 
 - [ListControl](./listcontrol-element-format.md)要素は、ビューに表示される内容と書式設定方法を定義します。 その他のすべてのビューと同様に、リスト ビューを表示できますオブジェクトのプロパティの値またはスクリプトによって生成された値。
 
-単純なリスト ビューを定義する完全な書式設定ファイルの例は、[リスト ビュー (Basic)](./list-view-basic.md)を参照してください。
+単純なリスト ビューを定義する完全な書式設定ファイルの例は、次を参照してください。[リスト ビュー (Basic)](./list-view-basic.md)します。
 
 ## <a name="providing-definitions-for-your-list-view"></a>リスト ビューの定義を提供します。
 
@@ -157,11 +157,11 @@ ServiceType         : Win32OwnProcess
 
 - [ラベル](./label-element-for-listitem-for-listcontrol-format.md)要素は、行のプロパティまたはスクリプトの値の左側に表示されるラベルを指定します。 この要素は省略可能です。 ラベルが指定されていない場合、プロパティまたはスクリプトの名前が表示されます。 完全な例を参照してください。[リスト ビュー (ラベル)](./list-view-labels.md)します。
 
-- [ItemSelectionCondition](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)要素は、行を表示するのに必要な条件を指定します。 リスト ビューに条件を追加する方法の詳細については、[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。 この要素は省略可能です。
+- [ItemSelectionCondition](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)要素は、行を表示するのに必要な条件を指定します。 リスト ビューに条件を追加する方法の詳細については、次を参照してください。[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)します。 この要素は省略可能です。
 
 - [FormatString](./formatstring-element-for-listitem-for-listcontrol-format.md)要素は、プロパティ、またはスクリプトの値を表示するために使用するパターンを指定します。 この要素は省略可能です。
 
-単純なリスト ビューを定義する完全な書式設定ファイルの例は、[リスト ビュー (Basic)](./list-view-basic.md)を参照してください。
+単純なリスト ビューを定義する完全な書式設定ファイルの例は、次を参照してください。[リスト ビュー (Basic)](./list-view-basic.md)します。
 
 ## <a name="defining-the-objects-that-use-the-list-view"></a>リスト ビューを使用するオブジェクトを定義します。
 
@@ -185,9 +185,9 @@ ServiceType         : Win32OwnProcess
 
 - [TypeName](./typename-element-for-viewselectedby-format.md)要素は、ビューによって表示される .NET オブジェクトを指定します。 完全修飾 .NET 型名が必要です。 少なくとも 1 つの型またはビューの設定の選択範囲を指定する必要がありますが、指定できる要素の最大数はありません。
 
-完全な書式設定ファイルの例は、[リスト ビュー (Basic)](./list-view-basic.md)を参照してください。
+完全な書式設定ファイルの例は、次を参照してください。[リスト ビュー (Basic)](./list-view-basic.md)します。
 
-次の例では、 [ViewSelectedBy](./viewselectedby-element-format.md)と[SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md)要素。 関連する一連の同じオブジェクトのリスト ビューを定義する場合など、複数のビューおよびテーブル ビューを使用して表示されるオブジェクトがある選択範囲のセットを使用します。 選択範囲のセットを作成する方法の詳細については、[選択範囲のセットを定義する](./defining-selection-sets.md)を参照してください。
+次の例では、 [ViewSelectedBy](./viewselectedby-element-format.md)と[SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md)要素。 関連する一連の同じオブジェクトのリスト ビューを定義する場合など、複数のビューおよびテーブル ビューを使用して表示されるオブジェクトがある選択範囲のセットを使用します。 選択範囲のセットを作成する方法の詳細については、次を参照してください。[選択範囲のセットを定義する](./defining-selection-sets.md)します。
 
 ```xml
 <View>
@@ -205,7 +205,7 @@ ServiceType         : Win32OwnProcess
 
 - [SelectionSetName](./selectionsetname-element-for-viewselectedby-format.md)要素は、一連のビューで表示できるオブジェクトを指定します。 少なくとも 1 つの選択範囲のセットまたはビューの種類を指定する必要がありますが、指定できる要素の最大数はありません。
 
-次の例は、特定の定義を使用してリスト ビューで表示されるオブジェクトを定義する方法を示します、 [EntrySelectedBy](./entryselectedby-element-for-listentry-for-listcontrol-format.md)要素。 この要素を使用して、オブジェクト、オブジェクトの選択範囲のセットまたは定義を使用する場合を指定する選択条件の .NET 型名を指定できます。 選択条件を作成する方法の詳細については、[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
+次の例は、特定の定義を使用してリスト ビューで表示されるオブジェクトを定義する方法を示します、 [EntrySelectedBy](./entryselectedby-element-for-listentry-for-listcontrol-format.md)要素。 この要素を使用して、オブジェクト、オブジェクトの選択範囲のセットまたは定義を使用する場合を指定する選択条件の .NET 型名を指定できます。 選択条件を作成する方法の詳細については、次を参照してください。[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)します。
 
 ```xml
 <ListEntry>
@@ -223,7 +223,7 @@ ServiceType         : Win32OwnProcess
 
 - [SelectionSetName](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md) (表示されない) 要素は、この定義で表示できるオブジェクトのセットを指定します。 少なくとも 1 つの型、選択範囲のセット、または定義については、選択条件を指定する必要がありますが、指定できる要素の最大数はありません。
 
-- [SelectionCondition](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md) (表示されない) 要素は、この定義を使用するのに必要な条件を指定します。 少なくとも 1 つの型、選択範囲のセット、または定義については、選択条件を指定する必要がありますが、指定できる要素の最大数はありません。 選択条件を定義する詳細については、[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
+- [SelectionCondition](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md) (表示されない) 要素は、この定義を使用するのに必要な条件を指定します。 少なくとも 1 つの型、選択範囲のセット、または定義については、選択条件を指定する必要がありますが、指定できる要素の最大数はありません。 選択条件を定義する詳細については、次を参照してください。[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)します。
 
 ## <a name="displaying-groups-of-objects-in-a-list-view"></a>リスト ビューでオブジェクトのグループを表示します。
 
@@ -251,7 +251,7 @@ ServiceType         : Win32OwnProcess
 
 - [CustomControlName](./customcontrolname-element-for-groupby-format.md)要素は、一般的なを指定します。 または、データを表示するために使用するコントロールを表示します。 この要素は省略可能です。
 
-グループを定義する完全な書式設定ファイルの例は、[リスト ビュー (GroupBy)](./list-view-groupby.md)を参照してください。
+グループを定義する完全な書式設定ファイルの例は、次を参照してください。[リスト ビュー (GroupBy)](./list-view-groupby.md)します。
 
 ## <a name="using-format-strings"></a>書式指定文字列を使用します。
 

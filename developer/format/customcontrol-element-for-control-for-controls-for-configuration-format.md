@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d9d92a9e-c680-46ca-962e-e82452726953
 caps.latest.revision: 10
 ms.openlocfilehash: 1d72ce5b18e89bd81c7f81b27f4b8c60bed99764
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857668"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066738"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-configuration-format"></a>Configuration の Controls の Control の CustomControl 要素 (書式)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56857668"
 </CustomControl>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`CustomControl`要素。 この要素は、少なくとも 1 つの子要素をいる必要があります。 指定できる子要素の数に上限はありません。
 

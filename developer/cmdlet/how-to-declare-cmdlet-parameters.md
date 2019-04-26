@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0c0509cc-5a50-49ad-a74f-5527023d0270
 caps.latest.revision: 10
 ms.openlocfilehash: 80e3e27bcf72b078c192525a843a3b3afb306529
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059169"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067917"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>コマンドレット パラメーターを宣言する方法
 
@@ -33,7 +33,7 @@ ms.locfileid: "58059169"
     private string userName;
     ```
 
-パラメーター属性の詳細については、[パラメーター属性宣言](./parameter-attribute-declaration.md)を参照してください。
+パラメーター属性の詳細については、次を参照してください。[パラメーター属性宣言](./parameter-attribute-declaration.md)します。
 
 ## <a name="how-to-declare-a-positional-parameter"></a>位置指定パラメーターを宣言する方法
 
@@ -49,7 +49,7 @@ ms.locfileid: "58059169"
     private string userName;
     ```
 
-パラメーター属性の詳細については、[パラメーター属性宣言](./parameter-attribute-declaration.md)を参照してください。
+パラメーター属性の詳細については、次を参照してください。[パラメーター属性宣言](./parameter-attribute-declaration.md)します。
 
 ## <a name="how-to-declare-a-mandatory-parameter"></a>必須のパラメーターを宣言する方法
 
@@ -65,7 +65,7 @@ ms.locfileid: "58059169"
     private string userName;
     ```
 
-パラメーター属性の詳細については、[パラメーター属性宣言](./parameter-attribute-declaration.md)を参照してください。
+パラメーター属性の詳細については、次を参照してください。[パラメーター属性宣言](./parameter-attribute-declaration.md)します。
 
 ## <a name="how-to-declare-an-optional-parameter"></a>オプションのパラメーターを宣言する方法
 
@@ -95,7 +95,7 @@ ms.locfileid: "58059169"
     private bool goodbye;
     ```
 
-パラメーター属性の詳細については、[パラメーター属性宣言](./parameter-attribute-declaration.md)を参照してください。
+パラメーター属性の詳細については、次を参照してください。[パラメーター属性宣言](./parameter-attribute-declaration.md)します。
 
 ## <a name="how-to-declare-a-parameter-with-aliases"></a>エイリアスを持つパラメーターを宣言する方法
 
@@ -112,7 +112,7 @@ ms.locfileid: "58059169"
     private string userName;
     ```
 
-Alias 属性の詳細については、[エイリアス属性宣言](./alias-attribute-declaration.md)を参照してください。
+Alias 属性の詳細については、次を参照してください。[エイリアス属性宣言](./alias-attribute-declaration.md)します。
 
 ## <a name="see-also"></a>参照
 

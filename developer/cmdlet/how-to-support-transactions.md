@@ -9,18 +9,18 @@ ms.topic: article
 ms.assetid: 4732e38c-b1a0-4de7-b6de-75dbde850488
 caps.latest.revision: 8
 ms.openlocfilehash: c5eea216efd8048aee5768c78c0b48617670f091
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067860"
 ---
 # <a name="how-to-support-transactions"></a>トランザクションをサポートする方法
 
 この例では、トランザクションのサポートをコマンドレットに追加する基本的なコード要素を示します。
 
 > [!IMPORTANT]
-> Windows PowerShell がトランザクションを処理する方法の詳細については、[に関するトランザクション][about_Transactions]を参照してください。
+> Windows PowerShell がトランザクションを処理する方法の詳細については、次を参照してください。[に関するトランザクション][about_Transactions]します。
 
 ## <a name="to-support-transactions"></a>トランザクションをサポートするには
 

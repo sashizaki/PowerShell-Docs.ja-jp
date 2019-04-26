@@ -12,11 +12,11 @@ helpviewer_keywords:
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
 ms.openlocfilehash: 19cc3817016d96e1412a5f3506e9d694ba55b48d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082075"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>基本的な Windows PowerShell プロバイダーを作成する
 
@@ -67,7 +67,7 @@ Windows PowerShell プロバイダーを作成する最初の手順では、そ�
 
 [System.Management.Automation.Provider.Cmdletprovider](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)基底クラスとすべての派生クラスはステートレスと見なされるため、Windows PowerShell ランタイムが必要なだけのプロバイダーのインスタンスを作成します。 そのため、ご利用のプロバイダーは、フル コントロール、プロバイダー固有のデータの状態のメンテナンスを必要とする場合にする必要がありますからクラスを派生、 [System.Management.Automation.Providerinfo](/dotnet/api/System.Management.Automation.ProviderInfo)クラス。 派生クラスは、プロバイダー固有のデータは、Windows PowerShell ランタイムが呼び出すと、アクセスできるように、状態を維持するために必要なメンバーを定義する必要があります、 [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)プロバイダーを初期化します。
 
-Windows PowerShell プロバイダーは、接続ベースの状態を維持することもできます。 接続の状態を維持する詳細については、[PowerShell ドライブ プロバイダーを作成する](./creating-a-windows-powershell-drive-provider.md)を参照してください。
+Windows PowerShell プロバイダーは、接続ベースの状態を維持することもできます。 接続の状態を維持する詳細については、次を参照してください。 [PowerShell ドライブ プロバイダーを作成する](./creating-a-windows-powershell-drive-provider.md)します。
 
 ## <a name="initializing-the-provider"></a>プロバイダーの初期化
 
@@ -97,7 +97,7 @@ Windows PowerShell プロバイダーで使用されるリソースを解放す�
 
 ## <a name="code-sample"></a>コード サンプル
 
-完全なサンプル コードでは、[AccessDbProviderSample01 コード サンプル](./accessdbprovidersample01-code-sample.md)を参照してください。
+完全なサンプル コードでは、次を参照してください。 [AccessDbProviderSample01 コード サンプル](./accessdbprovidersample01-code-sample.md)します。
 
 ## <a name="testing-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーのテスト
 

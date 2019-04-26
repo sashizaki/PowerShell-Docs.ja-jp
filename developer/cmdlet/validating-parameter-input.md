@@ -13,11 +13,11 @@ helpviewer_keywords:
 ms.assetid: 3f15bf20-a068-4a7d-a170-bc43f755d1fe
 caps.latest.revision: 14
 ms.openlocfilehash: 171e3e974619e197a0bcc9dfc759297005e34568
-ms.sourcegitcommit: 69abc5ad16e5dd29ddfb1853e266a4bfd1d59d59
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57429841"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067146"
 ---
 # <a name="validating-parameter-input"></a>パラメーター入力を検証する
 
@@ -35,27 +35,27 @@ PowerShell では、次の属性に基づいて規則を適用します。
 ### <a name="validatecount"></a>ValidateCount
 
 パラメーターを受け入れることができる引数の最小値と最大数を指定します。
-詳細については、[ValidateCount 属性宣言](./validatecount-attribute-declaration.md)を参照してください。
+詳細については、次を参照してください。 [ValidateCount 属性宣言](./validatecount-attribute-declaration.md)します。
 
 ### <a name="validatelength"></a>ValidateLength
 
 パラメーターの引数では、最小値と最大文字数を指定します。
-詳細については、[ValidateLength 属性宣言](./validatelength-attribute-declaration.md)を参照してください。
+詳細については、次を参照してください。 [ValidateLength 属性宣言](./validatelength-attribute-declaration.md)します。
 
 ### <a name="validatepattern"></a>ValidatePattern
 
 パラメーターの引数を検証する正規表現を指定します。
-詳細については、[ValidatePattern 属性宣言](./validatepattern-attribute-declaration.md)を参照してください。
+詳細については、次を参照してください。 [ValidatePattern 属性宣言](./validatepattern-attribute-declaration.md)します。
 
 ### <a name="validaterange"></a>ValidateRange
 
 パラメーターの引数の最小値と最大値を指定します。
-詳細については、[ValidateRange 属性宣言](./validaterange-attribute-declaration.md)を参照してください。
+詳細については、次を参照してください。 [ValidateRange 属性宣言](./validaterange-attribute-declaration.md)します。
 
 ### <a name="validateset"></a>ValidateSet
 
 パラメーターの引数の有効な値を指定します。
-詳細については、[ValidateSet 属性宣言](./validateset-attribute-declaration.md)を参照してください。
+詳細については、次を参照してください。 [ValidateSet 属性宣言](./validateset-attribute-declaration.md)します。
 
 ## <a name="see-also"></a>参照
 

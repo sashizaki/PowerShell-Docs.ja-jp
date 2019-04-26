@@ -9,18 +9,18 @@ ms.topic: article
 ms.assetid: a886a26d-7730-4586-aeac-fd3f0bc60b88
 caps.latest.revision: 8
 ms.openlocfilehash: 229725b5b9f1f0082592dcebe11564fd2f630ce1
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059475"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068370"
 ---
 # <a name="confirmation-messages"></a>確認メッセージ
 
 バリエーションに応じて表示できるさまざまな確認メッセージをここでは、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)呼び出されるメソッド。
 
 > [!IMPORTANT]
-> 確認を要求する方法を示すサンプル コードでは、[要求の確認方法](./how-to-request-confirmations.md)を参照してください。
+> 確認を要求する方法を示すサンプル コードでは、次を参照してください。[要求の確認方法](./how-to-request-confirmations.md)します。
 
 ## <a name="specifying-the-resource"></a>リソースを指定します。
 

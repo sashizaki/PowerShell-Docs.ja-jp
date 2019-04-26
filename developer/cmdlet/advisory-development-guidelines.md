@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
 ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056568"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068795"
 ---
 # <a name="advisory-development-guidelines"></a>お勧めする開発ガイドライン
 
@@ -61,7 +61,7 @@ Windows PowerShell は、Microsoft .NET Framework オブジェクトを直接機
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>Windows PowerShell (AD03) を使って資格情報を処理します。
 
-コマンドレットを定義する必要があります、`Credential`を資格情報を表すパラメーター。 このパラメーターは、型でなければなりません[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)と資格情報の属性宣言を使用して定義する必要があります。 このサポートでは、完全な資格情報が直接指定されていないときにユーザー名、パスワード、または両方のユーザーが自動的に表示されます。 資格情報の属性の詳細については、[資格情報の属性宣言](./credential-attribute-declaration.md)を参照してください。
+コマンドレットを定義する必要があります、`Credential`を資格情報を表すパラメーター。 このパラメーターは、型でなければなりません[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)と資格情報の属性宣言を使用して定義する必要があります。 このサポートでは、完全な資格情報が直接指定されていないときにユーザー名、パスワード、または両方のユーザーが自動的に表示されます。 資格情報の属性の詳細については、次を参照してください。[資格情報の属性宣言](./credential-attribute-declaration.md)します。
 
 ### <a name="support-encoding-parameters-ad04"></a>エンコード パラメーター (AD04) をサポートします。
 
@@ -117,7 +117,7 @@ Windows PowerShell ランタイムが常に呼び出していない、 [System.M
 
 - PSPrimitiveDictionary
 
-- スイッチ パラメーター
+- SwitchParameter
 
 - PSListModifier
 

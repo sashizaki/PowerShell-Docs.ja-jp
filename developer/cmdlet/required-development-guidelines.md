@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
 caps.latest.revision: 19
 ms.openlocfilehash: 3f6bcd2e4ef4d9c404b3a5deeaa9f25d3fa42ec1
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056517"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067469"
 ---
 # <a name="required-development-guidelines"></a>必要な開発ガイドライン
 
 次のガイドラインは、コマンドレットを記述するときに従う必要があります。 コマンドレットとコマンドレット コードの記述に関するガイドラインを設計するためのガイドラインに区切られます。 次のガイドラインに従わない場合、コマンドレットは失敗する可能性し、コマンドレットを使用するときに、ユーザーがエクスペリエンスの低下を必要があります。
 
-## <a name="in-this-topic"></a>このトピックの内容
+## <a name="in-this-topic"></a>このトピックの「
 
 ### <a name="design-guidelines"></a>デザイン ガイドライン
 
@@ -73,7 +73,7 @@ Windows PowerShell によって提供される動詞の認識されたセット�
 
 - [System.Management.Automation.VerbsOther](/dotnet/api/System.Management.Automation.VerbsOther)
 
-承認された動詞名の詳細については、[コマンドレット動詞](./approved-verbs-for-windows-powershell-commands.md)を参照してください。
+承認された動詞名の詳細については、次を参照してください。[コマンドレット動詞](./approved-verbs-for-windows-powershell-commands.md)します。
 
 ユーザーには、検出し、必要なコマンドレット名のセットが必要があります。 ユーザーが迅速に評価のコマンドレットの処理と、システムの機能を簡単に検出できるように、適切な動詞を使用します。 名前が"start"で始まるシステムなど、次のコマンド ライン コマンドがすべてのコマンドの一覧を取得します。`get-command start-*`します。 他のコマンドレットから、コマンドレットを区別するために、コマンドレットの名詞を使用します。 名詞は、操作を実行するリソースを示します。 操作自体は、動詞によって表されます。
 
@@ -111,13 +111,13 @@ Windows PowerShell によって提供される動詞の認識されたセット�
 
 ### <a name="parameters-names-that-cannot-be-used-rd03"></a>使用できないパラメーター名 (RD03)
 
-Windows PowerShell には、すべてのコマンドレットのパラメーターとは特定の状況で追加された追加のパラメーターの共通セットが提供されています。 独自のコマンドレットを設計するときに、次の名前を使用することはできません。確認、Debug、ErrorAction、ErrorVariable、OutVariable、OutBuffer、WarningAction、WarningVariable、WhatIf、UseTransaction と詳細な。 これらのパラメーターの詳細については、[パラメーターの共通名](./common-parameter-names.md)を参照してください。
+Windows PowerShell には、すべてのコマンドレットのパラメーターとは特定の状況で追加された追加のパラメーターの共通セットが提供されています。 独自のコマンドレットを設計するときに、次の名前を使用することはできません。確認、Debug、ErrorAction、ErrorVariable、OutVariable、OutBuffer、WarningAction、WarningVariable、WhatIf、UseTransaction と詳細な。 これらのパラメーターの詳細については、次を参照してください。[パラメーターの共通名](./common-parameter-names.md)します。
 
 ### <a name="support-confirmation-requests-rd04"></a>確認要求 (RD04) をサポートします。
 
 システムを変更する操作を実行するコマンドレットを呼び出す必要がある、 [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) 、確認を要求し、特殊なケースで呼び出すメソッドを[System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッド。 (、 [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドは、後でのみ呼び出す必要があります、 [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッドが呼び出されます)。
 
-これらを呼び出すコマンドレットが設定して、確認要求をサポートしていることを指定する必要があります、`SupportsShouldProcess`コマンドレット属性のキーワード。 この属性を設定する方法についての詳細については、[コマンドレット属性宣言](./cmdlet-attribute-declaration.md)を参照してください。
+これらを呼び出すコマンドレットが設定して、確認要求をサポートしていることを指定する必要があります、`SupportsShouldProcess`コマンドレット属性のキーワード。 この属性を設定する方法についての詳細については、次を参照してください。[コマンドレット属性宣言](./cmdlet-attribute-declaration.md)します。
 
 > [!NOTE]
 > コマンドレット クラスのコマンドレットの属性は、コマンドレットの呼び出しをサポートしていることを示す場合、 [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)への呼び出しにメソッドをおよびコマンドレットが失敗した、 [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッドでは、ユーザーが予期せず、システムを変更する可能性があります。
@@ -126,7 +126,7 @@ Windows PowerShell には、すべてのコマンドレットのパラメータ�
 
 コマンドレットは、これらの呼び出しをサポート、ユーザーがかどうか、アクションを実行する必要があります実際に確認できます。 たとえば、 [Stop-process](/powershell/module/microsoft.powershell.management/stop-process)コマンドレットの呼び出し、 [System.Management.Automation.Cmdlet.ShouldContinue*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドの一連のシステムでは、Winlogon などの重要なプロセスを停止する前に、プロセス。
 
-これらのメソッドのサポートに関する詳細については、[確認を要求する](./requesting-confirmation-from-cmdlets.md)を参照してください。
+これらのメソッドのサポートに関する詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。
 
 ### <a name="support-force-parameter-for-interactive-sessions-rd05"></a>Force パラメーターを対話型セッション (RD05) のサポートします。
 
@@ -156,7 +156,7 @@ Windows PowerShell では、パイプラインに書き込まれるオブジェ�
 
 コマンドレットは、いずれかから派生する必要があります、 [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)または[System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基本クラス。 派生したコマンドレット、 [System.Management.Automation.Cmdlet](/dotnet/api/System.Management.Automation.Cmdlet)クラスは、Windows PowerShell ランタイムに依存しません。 これらは、任意の Microsoft .NET Framework 言語から直接呼び出すことができます。 派生したコマンドレット、 [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)クラスは、Windows PowerShell ランタイムに依存します。 そのため、実行空間内で実行されます。
 
-実装するすべてのコマンドレット クラスは、パブリック クラスである必要があります。 これらのコマンドレット クラスの詳細については、[コマンドレットの概要](./cmdlet-overview.md)を参照してください。
+実装するすべてのコマンドレット クラスは、パブリック クラスである必要があります。 これらのコマンドレット クラスの詳細については、次を参照してください。[コマンドレットの概要](./cmdlet-overview.md)します。
 
 ### <a name="specify-the-cmdlet-attribute-rc02"></a>コマンドレット属性 (RC02) を指定します。
 
@@ -166,11 +166,11 @@ Windows PowerShell で認識されるコマンドレットのコマンドレッ�
 
 - 複数のパラメーター セットが指定されたときに使用される既定のパラメーター セット。 既定のパラメーター セットは、Windows PowerShell がどのパラメーターのセットを使用するかを判断するのに十分な情報を持っていない場合に使用されます。
 
-- コマンドレットがへの呼び出しをサポートしているかを示す、 [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド。 このメソッドでは、コマンドレットは、システムに変更を加える前に、ユーザーに確認メッセージが表示されます。 確認要求が行われる方法の詳細については、[確認を要求する](./requesting-confirmation-from-cmdlets.md)を参照してください。
+- コマンドレットがへの呼び出しをサポートしているかを示す、 [System.Management.Automation.Cmdlet.ShouldProcess*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッド。 このメソッドでは、コマンドレットは、システムに変更を加える前に、ユーザーに確認メッセージが表示されます。 確認要求が行われる方法の詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。
 
-- 確認メッセージに関連付けられているアクションの影響のレベル (または重大度) を示します。 ほとんどの場合、メディアの既定値を使用する必要があります。 影響のレベルがユーザーに表示される確認要求に与える影響の詳細については、[確認を要求する](./requesting-confirmation-from-cmdlets.md)を参照してください。
+- 確認メッセージに関連付けられているアクションの影響のレベル (または重大度) を示します。 ほとんどの場合、メディアの既定値を使用する必要があります。 影響のレベルがユーザーに表示される確認要求に与える影響の詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。
 
-コマンドレットの属性を宣言する方法の詳細については、[CmdletAttribute 宣言](./cmdlet-attribute-declaration.md)を参照してください。
+コマンドレットの属性を宣言する方法の詳細については、次を参照してください。 [CmdletAttribute 宣言](./cmdlet-attribute-declaration.md)します。
 
 ### <a name="override-an-input-processing-method-rc03"></a>処理方法 (RC03) の入力をオーバーライドします。
 
@@ -184,7 +184,7 @@ Windows PowerShell 環境に参加するコマンドレットのオーバーラ�
 
 ### <a name="specify-the-outputtype-attribute-rc04"></a>OutputType 属性 (RC04) を指定します。
 
-(Windows PowerShell 2.0 で導入) の OutputType 属性には、コマンドレットをパイプラインに返す .NET Framework 型を指定します。 コマンドレットの出力の種類を指定することでは、コマンドレットによって返される、やすく他のコマンドレットでオブジェクトをようにします。 この属性を使用して、コマンドレット クラスを修飾することの詳細については、[OutputType 属性宣言](./outputtype-attribute-declaration.md)を参照してください。
+(Windows PowerShell 2.0 で導入) の OutputType 属性には、コマンドレットをパイプラインに返す .NET Framework 型を指定します。 コマンドレットの出力の種類を指定することでは、コマンドレットによって返される、やすく他のコマンドレットでオブジェクトをようにします。 この属性を使用して、コマンドレット クラスを修飾することの詳細については、次を参照してください。 [OutputType 属性宣言](./outputtype-attribute-declaration.md)します。
 
 ### <a name="do-not-retain-handles-to-output-objects-rc05"></a>出力オブジェクト (RC05) へのハンドルを保持していません。
 
@@ -192,7 +192,7 @@ Windows PowerShell 環境に参加するコマンドレットのオーバーラ�
 
 ### <a name="handle-errors-robustly-rc06"></a>エラーを確実に処理 (RC06)
 
-管理環境は本質的に検出し、重要な変更を管理しているシステムになります。 そのため、コマンドレットがエラーを正しく処理することが重要です。 エラー レコードの詳細については、[Windows PowerShell のエラー報告](./error-reporting-concepts.md)を参照してください。
+管理環境は本質的に検出し、重要な変更を管理しているシステムになります。 そのため、コマンドレットがエラーを正しく処理することが重要です。 エラー レコードの詳細については、次を参照してください。 [Windows PowerShell のエラー報告](./error-reporting-concepts.md)します。
 
 - エラーは、コマンドレットが、複数のレコードを処理する続行できない、ときに、終了エラーが発生します。 コマンドレットを呼び出す必要があります、 [System.Management.Automation.Cmdlet.ThrowTerminatingError*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)メソッドを参照する、 [System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクト。 コマンドレットによって、例外がキャッチされない場合、Windows PowerShell ランタイム自体は以下の情報を含む終了エラーをスローします。
 
@@ -208,7 +208,7 @@ Windows PowerShell 環境に参加するコマンドレットのオーバーラ�
 
 ### <a name="use-a-windows-powershell-module-to-deploy-your-cmdlets-rc07"></a>Windows PowerShell モジュールを使用して、コマンドレット (RC07) をデプロイするには
 
-Windows PowerShell モジュールをパッケージ化し、コマンドレットのデプロイを作成します。 モジュールのサポートは、Windows PowerShell 2.0 で導入されました。 (これは非常に便利なコマンドレットをテストする場合)、バイナリ モジュール ファイルとして直接、コマンドレット クラスが含まれているアセンブリを使用することができますか、コマンドレットのアセンブリを参照するモジュール マニフェストを作成することができます。 (追加することできますも既存のスナップイン アセンブリ モジュールを使用する場合。)モジュールの詳細については、[Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)を参照してください。
+Windows PowerShell モジュールをパッケージ化し、コマンドレットのデプロイを作成します。 モジュールのサポートは、Windows PowerShell 2.0 で導入されました。 (これは非常に便利なコマンドレットをテストする場合)、バイナリ モジュール ファイルとして直接、コマンドレット クラスが含まれているアセンブリを使用することができますか、コマンドレットのアセンブリを参照するモジュール マニフェストを作成することができます。 (追加することできますも既存のスナップイン アセンブリ モジュールを使用する場合。)モジュールの詳細については、次を参照してください。 [Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)します。
 
 ## <a name="see-also"></a>参照
 

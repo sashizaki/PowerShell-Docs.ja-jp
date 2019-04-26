@@ -11,18 +11,18 @@ helpviewer_keywords:
 ms.assetid: 4e6b6ac4-1003-4e7e-9d4a-9f1cf74fc4af
 caps.latest.revision: 8
 ms.openlocfilehash: b6ddb8185f21a65b2e3142ebb640962047e11763
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067809"
 ---
 # <a name="how-to-validate-an-argument-count"></a>引数カウントを検証する方法
 
 この例は、パラメーターが受け取る引数 (数) の数を確認する、Windows PowerShell ランタイムを使用する検証規則を指定する方法を示します、コマンドレットの実行前にします。 ValidateCount 属性を宣言することで、この検証規則を設定します。
 
 > [!NOTE]
-> この属性を定義するクラスの詳細については、[System.Management.Automation.Validatecountattribute](/dotnet/api/System.Management.Automation.ValidateCountAttribute)を参照してください。
+> この属性を定義するクラスの詳細については、次を参照してください。 [System.Management.Automation.Validatecountattribute](/dotnet/api/System.Management.Automation.ValidateCountAttribute)します。
 
 ## <a name="to-validate-an-argument-count"></a>引数の数を検証するには
 
@@ -40,7 +40,7 @@ ms.locfileid: "56859138"
     private string[] userNames;
     ```
 
-この属性を宣言する方法の詳細については、[ValidateCount 属性宣言](./validatecount-attribute-declaration.md)を参照してください。
+この属性を宣言する方法の詳細については、次を参照してください。 [ValidateCount 属性宣言](./validatecount-attribute-declaration.md)します。
 
 ## <a name="see-also"></a>参照
 

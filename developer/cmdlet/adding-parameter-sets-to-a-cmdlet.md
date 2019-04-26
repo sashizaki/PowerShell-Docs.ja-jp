@@ -11,11 +11,11 @@ helpviewer_keywords:
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
 ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068839"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>コマンドレットにパラメーター セットを追加する
 
@@ -54,7 +54,7 @@ Windows PowerShell では、同時に動作するパラメーターのグルー�
 コマンドレットの作成の最初の手順は常に、コマンドレットの名前を付けると、コマンドレットを実装する .NET クラスを宣言します。 このコマンドレットでは、"Stop"ライフ サイクルの動詞はコマンドレットは、システム プロセスを停止するために使用されます。 "Proc"名詞形式の名前は、コマンドレットは、プロセスで機能するために使用されます。 次の宣言では、コマンドレット クラスの名前、コマンドレットの動詞と名詞の名前が反映されることに注意してください。
 
 > [!NOTE]
-> 承認されたコマンドレット動詞名の詳細については、[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)を参照してください。
+> 承認されたコマンドレット動詞名の詳細については、次を参照してください。[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)します。
 
 次のコードは、このコマンドレットで停止 Proc クラス定義です。
 
@@ -74,7 +74,7 @@ Public Class StopProcCommand
 
 ## <a name="declaring-the-parameters-of-the-cmdlet"></a>コマンドレットのパラメーターを宣言します。
 
-このコマンドレットは、コマンドレットが (これらのパラメーターは、パラメーター セットも定義) への入力として必要な 3 つのパラメーターを定義と同様に、`Force`コマンドレットが何を管理するパラメーターと`PassThru`コマンドレットに送信するかどうかを決定するパラメーター、オブジェクトをパイプラインを通じてに出力します。 既定では、このコマンドレットは、パイプラインを通じてオブジェクトを通過しません。 これらの最後の 2 つのパラメーターの詳細については、[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)を参照してください。
+このコマンドレットは、コマンドレットが (これらのパラメーターは、パラメーター セットも定義) への入力として必要な 3 つのパラメーターを定義と同様に、`Force`コマンドレットが何を管理するパラメーターと`PassThru`コマンドレットに送信するかどうかを決定するパラメーター、オブジェクトをパイプラインを通じてに出力します。 既定では、このコマンドレットは、パイプラインを通じてオブジェクトを通過しません。 これらの最後の 2 つのパラメーターの詳細については、次を参照してください。[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)します。
 
 ### <a name="declaring-the-name-parameter"></a>Name パラメーターを宣言します。
 
@@ -237,11 +237,11 @@ Select ステートメントによって呼び出されるヘルパー メソッ
 
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類を定義して、書式設定
 
-Windows PowerShell は、.NET オブジェクトを使用してコマンドレット間で情報を渡します。 その結果、コマンドレットは、独自の型を定義する必要がありますか、コマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)を参照してください。
+Windows PowerShell は、.NET オブジェクトを使用してコマンドレット間で情報を渡します。 その結果、コマンドレットは、独自の型を定義する必要がありますか、コマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)します。
 
 ## <a name="building-the-cmdlet"></a>コマンドレットを構築
 
-コマンドレットを実装するには、後にする必要がありますに登録する Windows PowerShell Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)を参照してください。
+コマンドレットを実装するには、後にする必要がありますに登録する Windows PowerShell Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
 
 ## <a name="testing-the-cmdlet"></a>テスト コマンドレット
 

@@ -9,18 +9,18 @@ ms.topic: article
 ms.assetid: 2551ceed-836f-4275-9fc0-ea68446d6a35
 caps.latest.revision: 7
 ms.openlocfilehash: 4f0be193fb5b5c753d040a48e5f49235ece11708
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857408"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080324"
 ---
 # <a name="writing-a-windows-powershell-workflow"></a>Windows PowerShell ワークフローを記述する
 
 XAML ワークフローを作成するには、Visual studio ワークフロー デザイナーに Windows PowerShell アセンブリによって公開されているアクティビティを追加します。 次の Windows PowerShell アセンブリは、ワークフローが有効なアクティビティを公開します。
 
 > [!IMPORTANT]
-> XAML ワークフローは、ワークフローのヘルプを提供する場合、モジュールとしてパッケージ化する必要があります。 モジュールについては、[Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)を参照してください。
+> XAML ワークフローは、ワークフローのヘルプを提供する場合、モジュールとしてパッケージ化する必要があります。 モジュールについては、次を参照してください。 [Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)します。
 
 - [Microsoft.Powershell.Activities](/dotnet/api/Microsoft.PowerShell.Activities)
 

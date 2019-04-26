@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 50c33892-2ade-44c2-906c-81e5f5ca21f2
 caps.latest.revision: 9
 ms.openlocfilehash: 1ecbda8a3b623757517019105e3b1ee46ccbb55c
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860258"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066092"
 ---
 # <a name="enumerableexpansions-element-format"></a>EnumerableExpansions 要素 (書式)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56860258"
 </EnumerableExpansions>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`EnumerableExpansions`要素。 使用できる子要素の数に制限はありません。
 
