@@ -4,19 +4,19 @@ keywords: PowerShell, コマンドレット
 title: 複数選択のリスト ボックス
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
 ms.openlocfilehash: a762145dc197ec7e1424b2fbdcef5e7380d13803
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057960"
 ---
-# <a name="multiple-selection-list-boxes"></a><span data-ttu-id="1dfc5-103">複数選択のリスト ボックス</span><span class="sxs-lookup"><span data-stu-id="1dfc5-103">Multiple-selection List Boxes</span></span>
+# <a name="multiple-selection-list-boxes"></a><span data-ttu-id="c5dfc-103">複数選択のリスト ボックス</span><span class="sxs-lookup"><span data-stu-id="c5dfc-103">Multiple-selection List Boxes</span></span>
 
-<span data-ttu-id="1dfc5-104">Windows PowerShell 3.0 と以降のリリースを使用すると、カスタム Windows フォームで複数選択のリスト ボックス コントロールを作成できます。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-104">Use Windows PowerShell 3.0 and later releases to create a multiple-selection list box control in a custom Windows Form.</span></span>
+<span data-ttu-id="c5dfc-104">Windows PowerShell 3.0 と以降のリリースを使用すると、カスタム Windows フォームで複数選択のリスト ボックス コントロールを作成できます。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-104">Use Windows PowerShell 3.0 and later releases to create a multiple-selection list box control in a custom Windows Form.</span></span>
 
-## <a name="create-list-box-controls-that-allow-multiple-selections"></a><span data-ttu-id="1dfc5-105">複数選択ができるようにするリスト ボックス コントロールを作成します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-105">Create list box controls that allow multiple selections</span></span>
+## <a name="create-list-box-controls-that-allow-multiple-selections"></a><span data-ttu-id="c5dfc-105">複数選択ができるようにするリスト ボックス コントロールを作成します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-105">Create list box controls that allow multiple selections</span></span>
 
-<span data-ttu-id="1dfc5-106">以下を Windows PowerShell ISE にコピーしてから貼り付け、Windows PowerShell スクリプト (.ps1) として保存します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-106">Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows PowerShell script (.ps1).</span></span>
+<span data-ttu-id="c5dfc-106">以下を Windows PowerShell ISE にコピーしてから貼り付け、Windows PowerShell スクリプト (.ps1) として保存します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-106">Copy and then paste the following into Windows PowerShell ISE, and then save it as a Windows PowerShell script (.ps1).</span></span>
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -74,19 +74,19 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-<span data-ttu-id="1dfc5-107">最初に、スクリプトは次の 2 つの .NET Framework クラスを読み込みます。**System.Drawing** と **System.Windows.Forms** です。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-107">The script begins by loading two .NET Framework classes: **System.Drawing** and **System.Windows.Forms**.</span></span> <span data-ttu-id="1dfc5-108">次に、.NET Framework クラス **System.Windows.Forms.Form** の新しいインスタンスを開始します。これにより、コントロールの追加を開始する空白のフォームまたはウィンドウが作成されます。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-108">You then start a new instance of the .NET Framework class **System.Windows.Forms.Form**; that provides a blank form or window to which you can start adding controls.</span></span>
+<span data-ttu-id="c5dfc-107">最初に、スクリプトは次の 2 つの .NET Framework クラスを読み込みます。**System.Drawing** と **System.Windows.Forms** です。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-107">The script begins by loading two .NET Framework classes: **System.Drawing** and **System.Windows.Forms**.</span></span> <span data-ttu-id="c5dfc-108">次に、.NET Framework クラス **System.Windows.Forms.Form** の新しいインスタンスを開始します。これにより、コントロールの追加を開始する空白のフォームまたはウィンドウが作成されます。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-108">You then start a new instance of the .NET Framework class **System.Windows.Forms.Form**; that provides a blank form or window to which you can start adding controls.</span></span>
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
 ```
 
-<span data-ttu-id="1dfc5-109">フォーム クラスのインスタンスを作成したら、このクラスの次の 3 つのプロパティに値を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-109">After you create an instance of the Form class, assign values to three properties of this class.</span></span>
+<span data-ttu-id="c5dfc-109">フォーム クラスのインスタンスを作成したら、このクラスの次の 3 つのプロパティに値を割り当てます。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-109">After you create an instance of the Form class, assign values to three properties of this class.</span></span>
 
-- <span data-ttu-id="1dfc5-110">**Text**。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-110">**Text.**</span></span> <span data-ttu-id="1dfc5-111">ウィンドウのタイトルになります。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-111">This becomes the title of the window.</span></span>
+- <span data-ttu-id="c5dfc-110">**Text**。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-110">**Text.**</span></span> <span data-ttu-id="c5dfc-111">ウィンドウのタイトルになります。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-111">This becomes the title of the window.</span></span>
 
-- <span data-ttu-id="1dfc5-112">**Size**。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-112">**Size.**</span></span> <span data-ttu-id="1dfc5-113">フォームのサイズをピクセル単位で表します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-113">This is the size of the form, in pixels.</span></span> <span data-ttu-id="1dfc5-114">前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-114">The preceding script creates a form that’s 300 pixels wide by 200 pixels tall.</span></span>
+- <span data-ttu-id="c5dfc-112">**Size**。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-112">**Size.**</span></span> <span data-ttu-id="c5dfc-113">フォームのサイズをピクセル単位で表します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-113">This is the size of the form, in pixels.</span></span> <span data-ttu-id="c5dfc-114">前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-114">The preceding script creates a form that’s 300 pixels wide by 200 pixels tall.</span></span>
 
-- <span data-ttu-id="1dfc5-115">**StartingPosition**。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-115">**StartingPosition.**</span></span> <span data-ttu-id="1dfc5-116">前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-116">This optional property is set to **CenterScreen** in the preceding script.</span></span> <span data-ttu-id="1dfc5-117">このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-117">If you don’t add this property, Windows selects a location when the form is opened.</span></span> <span data-ttu-id="1dfc5-118">**StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-118">By setting the **StartingPosition** to **CenterScreen**, you’re automatically displaying the form in the middle of the screen each time it loads.</span></span>
+- <span data-ttu-id="c5dfc-115">**StartingPosition**。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-115">**StartingPosition.**</span></span> <span data-ttu-id="c5dfc-116">前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-116">This optional property is set to **CenterScreen** in the preceding script.</span></span> <span data-ttu-id="c5dfc-117">このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-117">If you don’t add this property, Windows selects a location when the form is opened.</span></span> <span data-ttu-id="c5dfc-118">**StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-118">By setting the **StartingPosition** to **CenterScreen**, you’re automatically displaying the form in the middle of the screen each time it loads.</span></span>
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -94,7 +94,7 @@ $form.Size = New-Object System.Drawing.Size(300,200)
 $form.StartPosition = 'CenterScreen'
 ```
 
-<span data-ttu-id="1dfc5-119">次に、フォームに **[OK]** ボタンを作成します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-119">Next, create an **OK** button for your form.</span></span> <span data-ttu-id="1dfc5-120">**[OK]** ボタンのサイズと動作を指定します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-120">Specify the size and behavior of the **OK** button.</span></span> <span data-ttu-id="1dfc5-121">この例では、ボタンの位置は、フォームの上端から 120 ピクセル、左端から 75 ピクセルです。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-121">In this example, the button position is 120 pixels from the form’s top edge, and 75 pixels from the left edge.</span></span> <span data-ttu-id="1dfc5-122">ボタンの高さは 23 ピクセル、ボタンの幅は 75 ピクセルです。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-122">The button height is 23 pixels, while the button length is 75 pixels.</span></span> <span data-ttu-id="1dfc5-123">スクリプトは、ボタンの動作を決定するために定義済みの Windows フォームの型を使用します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-123">The script uses predefined Windows Forms types to determine the button behaviors.</span></span>
+<span data-ttu-id="c5dfc-119">次に、フォームに **[OK]** ボタンを作成します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-119">Next, create an **OK** button for your form.</span></span> <span data-ttu-id="c5dfc-120">**[OK]** ボタンのサイズと動作を指定します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-120">Specify the size and behavior of the **OK** button.</span></span> <span data-ttu-id="c5dfc-121">この例では、ボタンの位置は、フォームの上端から 120 ピクセル、左端から 75 ピクセルです。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-121">In this example, the button position is 120 pixels from the form’s top edge, and 75 pixels from the left edge.</span></span> <span data-ttu-id="c5dfc-122">ボタンの高さは 23 ピクセル、ボタンの幅は 75 ピクセルです。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-122">The button height is 23 pixels, while the button length is 75 pixels.</span></span> <span data-ttu-id="c5dfc-123">スクリプトは、ボタンの動作を決定するために定義済みの Windows フォームの型を使用します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-123">The script uses predefined Windows Forms types to determine the button behaviors.</span></span>
 
 ```powershell
 $OKButton = New-Object System.Windows.Forms.Button
@@ -106,7 +106,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-<span data-ttu-id="1dfc5-124">同様に、**[キャンセル]** ボタンを作成します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-124">Similarly, you create a **Cancel** button.</span></span> <span data-ttu-id="1dfc5-125">**[キャンセル]** ボタンの位置は、ウィンドウの最上部から 120 ピクセル、左端から 150 ピクセルです。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-125">The **Cancel** button is 120 pixels from the top, but 150 pixels from the left edge of the window.</span></span>
+<span data-ttu-id="c5dfc-124">同様に、**[キャンセル]** ボタンを作成します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-124">Similarly, you create a **Cancel** button.</span></span> <span data-ttu-id="c5dfc-125">**[キャンセル]** ボタンの位置は、ウィンドウの最上部から 120 ピクセル、左端から 150 ピクセルです。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-125">The **Cancel** button is 120 pixels from the top, but 150 pixels from the left edge of the window.</span></span>
 
 ```powershell
 $CancelButton = New-Object System.Windows.Forms.Button
@@ -118,7 +118,7 @@ $form.CancelButton = $CancelButton
 $form.Controls.Add($CancelButton)
 ```
 
-<span data-ttu-id="1dfc5-126">次に、ユーザーに提供する情報を記述するラベルのテキストをウィンドウ上に用意します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-126">Next, provide label text on your window that describes the information you want users to provide.</span></span>
+<span data-ttu-id="c5dfc-126">次に、ユーザーに提供する情報を記述するラベルのテキストをウィンドウ上に用意します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-126">Next, provide label text on your window that describes the information you want users to provide.</span></span>
 
 ```powershell
 $label = New-Object System.Windows.Forms.Label
@@ -128,7 +128,7 @@ $label.Text = 'Please make a selection from the list below:'
 $form.Controls.Add($label)
 ```
 
-<span data-ttu-id="1dfc5-127">ラベルのテキストに記述した情報をユーザーに提供するコントロール (この場合はリスト ボックス) を追加します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-127">Add the control (in this case, a list box) that lets users provide the information you’ve described in your label text.</span></span> <span data-ttu-id="1dfc5-128">テキスト ボックスに加えて、他に多数の適用可能なコントロールがあります。その他のコントロールについては、MSDN の「[System.Windows.Forms 名前空間](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-128">There are many other controls you can apply besides text boxes; for more controls, see [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) on MSDN.</span></span>
+<span data-ttu-id="c5dfc-127">ラベルのテキストに記述した情報をユーザーに提供するコントロール (この場合はリスト ボックス) を追加します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-127">Add the control (in this case, a list box) that lets users provide the information you’ve described in your label text.</span></span> <span data-ttu-id="c5dfc-128">テキスト ボックスに加えて、他に多数の適用可能なコントロールがあります。その他のコントロールについては、MSDN の「[System.Windows.Forms 名前空間](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-128">There are many other controls you can apply besides text boxes; for more controls, see [System.Windows.Forms Namespace](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx) on MSDN.</span></span>
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.Listbox
@@ -136,13 +136,13 @@ $listBox.Location = New-Object System.Drawing.Point(10,40)
 $listBox.Size = New-Object System.Drawing.Size(260,20)
 ```
 
-<span data-ttu-id="1dfc5-129">ユーザーが一覧から複数の値を選択できるようにするよう指定する方法を次に示します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-129">Here’s how you specify that you want to allow users to select multiple values from the list.</span></span>
+<span data-ttu-id="c5dfc-129">ユーザーが一覧から複数の値を選択できるようにするよう指定する方法を次に示します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-129">Here’s how you specify that you want to allow users to select multiple values from the list.</span></span>
 
 ```powershell
 $listBox.SelectionMode = 'MultiExtended'
 ```
 
-<span data-ttu-id="1dfc5-130">次のセクションでは、リスト ボックスでユーザーに対して表示する値を指定します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-130">In the next section, you specify the values you want the list box to display to users.</span></span>
+<span data-ttu-id="c5dfc-130">次のセクションでは、リスト ボックスでユーザーに対して表示する値を指定します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-130">In the next section, you specify the values you want the list box to display to users.</span></span>
 
 ```powershell
 [void] $listBox.Items.Add('Item 1')
@@ -152,26 +152,26 @@ $listBox.SelectionMode = 'MultiExtended'
 [void] $listBox.Items.Add('Item 5')
 ```
 
-<span data-ttu-id="1dfc5-131">リスト ボックス コントロールの高さの最大値を指定します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-131">Specify the maximum height of the list box control.</span></span>
+<span data-ttu-id="c5dfc-131">リスト ボックス コントロールの高さの最大値を指定します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-131">Specify the maximum height of the list box control.</span></span>
 
 ```powershell
 $listBox.Height = 70
 ```
 
-<span data-ttu-id="1dfc5-132">リスト ボックス コントロールをフォームに追加してから、フォームを開くときに他のウィンドウとダイアログ ボックスの最上部に開くよう、Windows に指示します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-132">Add the list box control to your form, and instruct Windows to open the form atop other windows and dialog boxes when it’s opened.</span></span>
+<span data-ttu-id="c5dfc-132">リスト ボックス コントロールをフォームに追加してから、フォームを開くときに他のウィンドウとダイアログ ボックスの最上部に開くよう、Windows に指示します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-132">Add the list box control to your form, and instruct Windows to open the form atop other windows and dialog boxes when it’s opened.</span></span>
 
 ```powershell
 $form.Controls.Add($listBox)
 $form.Topmost = $true
 ```
 
-<span data-ttu-id="1dfc5-133">次のコード行を追加して、Windows でフォームを表示します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-133">Add the following line of code to display the form in Windows.</span></span>
+<span data-ttu-id="c5dfc-133">次のコード行を追加して、Windows でフォームを表示します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-133">Add the following line of code to display the form in Windows.</span></span>
 
 ```powershell
 $result = $form.ShowDialog()
 ```
 
-<span data-ttu-id="1dfc5-134">最後に、**If** ブロック内のコードは、ユーザーがリスト ボックスから 1 つ以上のオプションを選んだ後のフォームの操作を Windows に指示します。その後、**[OK]** ボタンをクリックするか、**Enter** キーを押します。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-134">Finally, the code inside the **If** block instructs Windows what to do with the form after users select one or more options from the list box, and then click the **OK** button or press the **Enter** key.</span></span>
+<span data-ttu-id="c5dfc-134">最後に、**If** ブロック内のコードは、ユーザーがリスト ボックスから 1 つ以上のオプションを選んだ後のフォームの操作を Windows に指示します。その後、**[OK]** ボタンをクリックするか、**Enter** キーを押します。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-134">Finally, the code inside the **If** block instructs Windows what to do with the form after users select one or more options from the list box, and then click the **OK** button or press the **Enter** key.</span></span>
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
@@ -181,8 +181,8 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="1dfc5-135">参照</span><span class="sxs-lookup"><span data-stu-id="1dfc5-135">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c5dfc-135">参照</span><span class="sxs-lookup"><span data-stu-id="c5dfc-135">See Also</span></span>
 
-- [<span data-ttu-id="1dfc5-136">Hey Scripting Guy: これらの PowerShell GUI の例が機能しないのはなぜですか。</span><span class="sxs-lookup"><span data-stu-id="1dfc5-136">Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?</span></span>](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [<span data-ttu-id="1dfc5-137">GitHubDave Wyatt の WinFormsExampleUpdates</span><span class="sxs-lookup"><span data-stu-id="1dfc5-137">GitHub: Dave Wyatt's WinFormsExampleUpdates</span></span>](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [<span data-ttu-id="1dfc5-138">Windows PowerShell の Tip of the Week:複数選択のリスト ボックス - その他</span><span class="sxs-lookup"><span data-stu-id="1dfc5-138">Windows PowerShell Tip of the Week:  Multi-Select List Boxes - And More!</span></span>](https://technet.microsoft.com/library/ff730950.aspx)
+- [<span data-ttu-id="c5dfc-136">Hey Scripting Guy:これらの PowerShell GUI の例が機能しないのはなぜですか。</span><span class="sxs-lookup"><span data-stu-id="c5dfc-136">Hey Scripting Guy:  Why don’t these PowerShell GUI examples work?</span></span>](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [<span data-ttu-id="c5dfc-137">GitHub:Dave Wyatt の WinFormsExampleUpdates</span><span class="sxs-lookup"><span data-stu-id="c5dfc-137">GitHub: Dave Wyatt's WinFormsExampleUpdates</span></span>](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [<span data-ttu-id="c5dfc-138">Windows PowerShell Tip of the Week:オプションの複数選択リスト - その他</span><span class="sxs-lookup"><span data-stu-id="c5dfc-138">Windows PowerShell Tip of the Week:  Multi-Select List Boxes - And More!</span></span>](https://technet.microsoft.com/library/ff730950.aspx)

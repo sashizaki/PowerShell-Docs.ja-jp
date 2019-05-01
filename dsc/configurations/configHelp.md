@@ -3,25 +3,25 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC 構成のヘルプの作成
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080186"
 ---
-# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="92192-103">DSC 構成のヘルプの作成</span><span class="sxs-lookup"><span data-stu-id="92192-103">Writing help for DSC configurations</span></span>
+# <a name="writing-help-for-dsc-configurations"></a><span data-ttu-id="7bb87-103">DSC 構成のヘルプの作成</span><span class="sxs-lookup"><span data-stu-id="7bb87-103">Writing help for DSC configurations</span></span>
 
-><span data-ttu-id="92192-104">適用先:Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="92192-104">Applies To: Windows PowerShell 5.0</span></span>
+><span data-ttu-id="7bb87-104">適用先:Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="7bb87-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="92192-105">DSC 構成では、コメント ベースのヘルプを使用できます。</span><span class="sxs-lookup"><span data-stu-id="92192-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="92192-106">ユーザーは、ヘルプを呼び出すことによってアクセスできる、**構成**で`-?`、またはを使用して、 [Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help)コマンドレット。</span><span class="sxs-lookup"><span data-stu-id="92192-106">Users can access the help by calling the **Configuration** with `-?`, or by using the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet.</span></span> <span data-ttu-id="92192-107">配置のすぐ上に、コメント ベース ヘルプ、`Configuration`キーワード。</span><span class="sxs-lookup"><span data-stu-id="92192-107">Place your Comment-based help directly above the `Configuration` keyword.</span></span>
-<span data-ttu-id="92192-108">パラメーター宣言、または次の例のように両方のすぐ上、コメント ブロックを使用してパラメーター ヘルプの行でを配置できます。</span><span class="sxs-lookup"><span data-stu-id="92192-108">You can place parameter help in-line with your comment block, directly above the parameter declaration, or both as in the example below.</span></span>
+<span data-ttu-id="7bb87-105">DSC 構成では、コメント ベースのヘルプを使用できます。</span><span class="sxs-lookup"><span data-stu-id="7bb87-105">You can use comment-based help in DSC configurations.</span></span> <span data-ttu-id="7bb87-106">ユーザーは、`-?` を指定して **Configuration** を呼び出すか、[Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) コマンドレットを使用することで、ヘルプにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="7bb87-106">Users can access the help by calling the **Configuration** with `-?`, or by using the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet.</span></span> <span data-ttu-id="7bb87-107">コメント ベースのヘルプは `Configuration` キーワードのすぐ上に配置します。</span><span class="sxs-lookup"><span data-stu-id="7bb87-107">Place your Comment-based help directly above the `Configuration` keyword.</span></span>
+<span data-ttu-id="7bb87-108">パラメーターのヘルプは、コメント ブロックのインラインか、パラメーター宣言のすぐ上、または次の例のようにその両方に配置できます。</span><span class="sxs-lookup"><span data-stu-id="7bb87-108">You can place parameter help in-line with your comment block, directly above the parameter declaration, or both as in the example below.</span></span>
 
-<span data-ttu-id="92192-109">PowerShell のコメント ベースのヘルプの詳細については、「[about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="92192-109">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
+<span data-ttu-id="7bb87-109">PowerShell のコメント ベースのヘルプの詳細については、「[about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="7bb87-109">For more information about PowerShell comment-based help, see [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="92192-110">VSCode や ISE などの PowerShell 開発環境では、スニペットのコメント ブロックのテンプレートを自動的に挿入できるようにもあります。</span><span class="sxs-lookup"><span data-stu-id="92192-110">PowerShell development environments, like VSCode and the ISE, also have snippets to allow you to automatically insert comment block templates.</span></span>
+> <span data-ttu-id="7bb87-110">VSCode や ISE などの PowerShell 開発環境には、コメント ブロック テンプレートを自動的に挿入できるスニペットもあります。</span><span class="sxs-lookup"><span data-stu-id="7bb87-110">PowerShell development environments, like VSCode and the ISE, also have snippets to allow you to automatically insert comment block templates.</span></span>
 
-<span data-ttu-id="92192-111">次の例では、構成とそのコメント ベースのヘルプを含むスクリプトを示します。</span><span class="sxs-lookup"><span data-stu-id="92192-111">The following example shows a script that contains a configuration and comment-based help for it.</span></span> <span data-ttu-id="92192-112">この例では、パラメーターを持つ構成を示します。</span><span class="sxs-lookup"><span data-stu-id="92192-112">This example shows a Configuration with parameters.</span></span> <span data-ttu-id="92192-113">詳細については、構成にパラメーターを使用して、参照してください。[パラメーターを追加して、構成に](add-parameters-to-a-configuration.md)します。</span><span class="sxs-lookup"><span data-stu-id="92192-113">To learn more about using parameters in your Configurations, see [Add Parameters to your Configurations](add-parameters-to-a-configuration.md).</span></span>
+<span data-ttu-id="7bb87-111">次の例では、構成とそのコメント ベースのヘルプを含むスクリプトを示します。</span><span class="sxs-lookup"><span data-stu-id="7bb87-111">The following example shows a script that contains a configuration and comment-based help for it.</span></span> <span data-ttu-id="7bb87-112">この例では、パラメーターを含む構成を示します。</span><span class="sxs-lookup"><span data-stu-id="7bb87-112">This example shows a Configuration with parameters.</span></span> <span data-ttu-id="7bb87-113">Configuration でのパラメーターの使用について詳しくは、「[構成にパラメーターを追加する](add-parameters-to-a-configuration.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="7bb87-113">To learn more about using parameters in your Configurations, see [Add Parameters to your Configurations](add-parameters-to-a-configuration.md).</span></span>
 
 ```powershell
 <#
@@ -75,9 +75,9 @@ configuration HelpSample1
 }
 ```
 
-## <a name="viewing-configuration-help"></a><span data-ttu-id="92192-114">構成のヘルプの表示</span><span class="sxs-lookup"><span data-stu-id="92192-114">Viewing configuration help</span></span>
+## <a name="viewing-configuration-help"></a><span data-ttu-id="7bb87-114">構成のヘルプの表示</span><span class="sxs-lookup"><span data-stu-id="7bb87-114">Viewing configuration help</span></span>
 
-<span data-ttu-id="92192-115">構成のヘルプを表示するには使用、`Get-Help`コマンドレット、関数、または型の名前と、関数の名前の末尾に`-?`します。</span><span class="sxs-lookup"><span data-stu-id="92192-115">To view the help for a configuration, use the `Get-Help` cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="92192-116">渡される前の構成の出力は、次の`Get-Help`します。</span><span class="sxs-lookup"><span data-stu-id="92192-116">The following is the output of the previous Configuration passed to `Get-Help`.</span></span>
+<span data-ttu-id="7bb87-115">構成のヘルプを表示するには、`Get-Help` コマンドレットに関数名を付けて使うか、関数名の後に「`-?`」と入力します。</span><span class="sxs-lookup"><span data-stu-id="7bb87-115">To view the help for a configuration, use the `Get-Help` cmdlet with the name of the function, or type the name of the function followed by `-?`.</span></span> <span data-ttu-id="7bb87-116">次に示すのは、前の Configuration を `Get-Help` に渡した場合の出力です。</span><span class="sxs-lookup"><span data-stu-id="7bb87-116">The following is the output of the previous Configuration passed to `Get-Help`.</span></span>
 
 ```powershell
 Get-Help HelpSample1 -Detailed
@@ -157,10 +157,10 @@ REMARKS
 ```
 
 > [!NOTE]
-> <span data-ttu-id="92192-117">フィールドの構文とパラメーターの属性は、PowerShell によってするに対して自動的に生成します。</span><span class="sxs-lookup"><span data-stu-id="92192-117">Syntax fields and parameter attributes are automatically generated for you by PowerShell.</span></span>
+> <span data-ttu-id="7bb87-117">構文のフィールドとパラメーターの属性は、PowerShell によって自動的に生成されます。</span><span class="sxs-lookup"><span data-stu-id="7bb87-117">Syntax fields and parameter attributes are automatically generated for you by PowerShell.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="92192-118">参照</span><span class="sxs-lookup"><span data-stu-id="92192-118">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7bb87-118">参照</span><span class="sxs-lookup"><span data-stu-id="7bb87-118">See Also</span></span>
 
-- [<span data-ttu-id="92192-119">DSC 構成</span><span class="sxs-lookup"><span data-stu-id="92192-119">DSC Configurations</span></span>](configurations.md)
-- [<span data-ttu-id="92192-120">構成の作成、コンパイル、適用</span><span class="sxs-lookup"><span data-stu-id="92192-120">Write, Compile, and Apply a Configuration</span></span>](write-compile-apply-configuration.md)
-- [<span data-ttu-id="92192-121">構成にパラメーターを追加する</span><span class="sxs-lookup"><span data-stu-id="92192-121">Add Parameters to a Configuration</span></span>](add-parameters-to-a-configuration.md)
+- [<span data-ttu-id="7bb87-119">DSC 構成</span><span class="sxs-lookup"><span data-stu-id="7bb87-119">DSC Configurations</span></span>](configurations.md)
+- [<span data-ttu-id="7bb87-120">構成の作成、コンパイル、適用</span><span class="sxs-lookup"><span data-stu-id="7bb87-120">Write, Compile, and Apply a Configuration</span></span>](write-compile-apply-configuration.md)
+- [<span data-ttu-id="7bb87-121">構成にパラメーターを追加する</span><span class="sxs-lookup"><span data-stu-id="7bb87-121">Add Parameters to a Configuration</span></span>](add-parameters-to-a-configuration.md)

@@ -1,59 +1,59 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
-title: パッケージと、プル サーバーにアップロード リソース
+title: リソースをパッケージ化してプル サーバーにアップロードする
 ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079577"
 ---
-# <a name="package-and-upload-resources-to-a-pull-server"></a><span data-ttu-id="49cc4-103">パッケージと、プル サーバーにアップロード リソース</span><span class="sxs-lookup"><span data-stu-id="49cc4-103">Package and Upload Resources to a Pull Server</span></span>
+# <a name="package-and-upload-resources-to-a-pull-server"></a><span data-ttu-id="4b3d7-103">リソースをパッケージ化してプル サーバーにアップロードする</span><span class="sxs-lookup"><span data-stu-id="4b3d7-103">Package and Upload Resources to a Pull Server</span></span>
 
-<span data-ttu-id="49cc4-104">以下のセクションでは、プル サーバーを既に設定したことを前提としています。</span><span class="sxs-lookup"><span data-stu-id="49cc4-104">The sections below assume that you have already set up a Pull Server.</span></span> <span data-ttu-id="49cc4-105">プル サーバーを設定していない場合は、次のガイドを使用できます。</span><span class="sxs-lookup"><span data-stu-id="49cc4-105">If you have not set up your Pull Server, you can use the following guides:</span></span>
+<span data-ttu-id="4b3d7-104">以下のセクションでは、プル サーバーを既にセットアップしてあるものとします。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-104">The sections below assume that you have already set up a Pull Server.</span></span> <span data-ttu-id="4b3d7-105">プル サーバーをセットアップしていない場合は、次のガイドを使用できます。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-105">If you have not set up your Pull Server, you can use the following guides:</span></span>
 
-- [<span data-ttu-id="49cc4-106">DSC SMB プル サーバーを設定する</span><span class="sxs-lookup"><span data-stu-id="49cc4-106">Set up a DSC SMB Pull Server</span></span>](pullServerSmb.md)
-- [<span data-ttu-id="49cc4-107">DSC HTTP プル サーバーを設定する</span><span class="sxs-lookup"><span data-stu-id="49cc4-107">Set up a DSC HTTP Pull Server</span></span>](pullServer.md)
+- [<span data-ttu-id="4b3d7-106">DSC SMB プル サーバーを設定する</span><span class="sxs-lookup"><span data-stu-id="4b3d7-106">Set up a DSC SMB Pull Server</span></span>](pullServerSmb.md)
+- [<span data-ttu-id="4b3d7-107">DSC HTTP プル サーバーを設定する</span><span class="sxs-lookup"><span data-stu-id="4b3d7-107">Set up a DSC HTTP Pull Server</span></span>](pullServer.md)
 
-<span data-ttu-id="49cc4-108">各ターゲット ノードは、構成、リソースをダウンロードしてもその状態を報告を構成できます。</span><span class="sxs-lookup"><span data-stu-id="49cc4-108">Each target node can be configured to download configurations, resources, and even report its status.</span></span> <span data-ttu-id="49cc4-109">この記事では、ダウンロード、およびリソースを自動的にダウンロードするクライアントの構成に利用できるように、リソースをアップロードする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="49cc4-109">This article will show you how to upload resources so they are available to be downloaded, and configure clients to download resources automatically.</span></span> <span data-ttu-id="49cc4-110">ノードがを通じて割り当てられた構成を受信すると**プル**または**プッシュ**(v5) では、自動的にダウンロードし、LCM で指定された場所からの構成に必要なすべてのリソース。</span><span class="sxs-lookup"><span data-stu-id="49cc4-110">When the Node's receives an assigned Configuration, through **Pull** or **Push** (v5), it automatically downloads any resources required by the Configuration from the location specified in the LCM.</span></span>
+<span data-ttu-id="4b3d7-108">各ターゲット ノードは、構成やリソースをダウンロードし、さらにその状態を報告するように構成できます。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-108">Each target node can be configured to download configurations, resources, and even report its status.</span></span> <span data-ttu-id="4b3d7-109">この記事では、ダウンロードできるようにリソースをアップロードする方法、およびリソースを自動的にダウンロードするようにクライアントを構成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-109">This article will show you how to upload resources so they are available to be downloaded, and configure clients to download resources automatically.</span></span> <span data-ttu-id="4b3d7-110">ノードは、割り当てられた構成を**プル**または**プッシュ** (v5) によって受け取ると、構成で必要なすべてのリソースを LCM で指定された場所から自動的にダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-110">When the Node's receives an assigned Configuration, through **Pull** or **Push** (v5), it automatically downloads any resources required by the Configuration from the location specified in the LCM.</span></span>
 
-## <a name="package-resource-modules"></a><span data-ttu-id="49cc4-111">パッケージ リソース モジュール</span><span class="sxs-lookup"><span data-stu-id="49cc4-111">Package Resource Modules</span></span>
+## <a name="package-resource-modules"></a><span data-ttu-id="4b3d7-111">リソース モジュールをパッケージ化する</span><span class="sxs-lookup"><span data-stu-id="4b3d7-111">Package Resource Modules</span></span>
 
-<span data-ttu-id="49cc4-112">クライアントをダウンロードするために使用可能な各リソースは、".zip"ファイルに格納する必要があります。</span><span class="sxs-lookup"><span data-stu-id="49cc4-112">Each resource available for a client to download must be stored in a ".zip" file.</span></span> <span data-ttu-id="49cc4-113">次の例を使用して必要な手順が表示されます、 [xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0)リソース。</span><span class="sxs-lookup"><span data-stu-id="49cc4-113">The example below will show the required steps using the [xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0) resource.</span></span>
+<span data-ttu-id="4b3d7-112">クライアントでダウンロードできるようにする各リソースは、".zip" ファイルに格納する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-112">Each resource available for a client to download must be stored in a ".zip" file.</span></span> <span data-ttu-id="4b3d7-113">以下の例では、[xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0) リソースを使用して必要な手順を示します。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-113">The example below will show the required steps using the [xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0) resource.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="49cc4-114">PowerShell 4.0 を使用して、クライアントがある場合に、リソースのフォルダー構造 flaten する必要があり、バージョン フォルダーを削除します。</span><span class="sxs-lookup"><span data-stu-id="49cc4-114">If you have any clients using PowerShell 4.0, you will need to flaten the resource folder structure and remove any version folders.</span></span> <span data-ttu-id="49cc4-115">詳細については、次を参照してください。[複数のリソース バージョン](../configurations/import-dscresource.md#multiple-resource-versions)します。</span><span class="sxs-lookup"><span data-stu-id="49cc4-115">For more information, see [Multiple Resource Versions](../configurations/import-dscresource.md#multiple-resource-versions).</span></span>
+> <span data-ttu-id="4b3d7-114">PowerShell 4.0 を使っているクライアントがある場合は、リソース フォルダーの構造をフラット化し、すべてのバージョン フォルダーを削除する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-114">If you have any clients using PowerShell 4.0, you will need to flaten the resource folder structure and remove any version folders.</span></span> <span data-ttu-id="4b3d7-115">詳しくは、「[Multiple Resource Versions (複数のリソース バージョン)](../configurations/import-dscresource.md#multiple-resource-versions)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-115">For more information, see [Multiple Resource Versions](../configurations/import-dscresource.md#multiple-resource-versions).</span></span>
 
-<span data-ttu-id="49cc4-116">任意のユーティリティ、スクリプト、または使用するメソッドを使用して、リソース ディレクトリを圧縮することができます。</span><span class="sxs-lookup"><span data-stu-id="49cc4-116">You can compress the resource directory using any utility, script, or method that you prefer.</span></span> <span data-ttu-id="49cc4-117">、Windows で実行できます*を右クリックして*"xPSDesiredStateConfiguration"ディレクトリ、および「を送信する」、し、「圧縮フォルダー」を選択します。</span><span class="sxs-lookup"><span data-stu-id="49cc4-117">In Windows, you can *right-click* on the "xPSDesiredStateConfiguration" directory, and select "Send To", then "Compressed Folder".</span></span>
+<span data-ttu-id="4b3d7-116">好みのユーティリティ、スクリプト、または方法を使って、リソース ディレクトリを圧縮することができます。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-116">You can compress the resource directory using any utility, script, or method that you prefer.</span></span> <span data-ttu-id="4b3d7-117">Windows では、"xPSDesiredStateConfiguration" ディレクトリを "*右クリック*" して [送る] を選択し、[圧縮フォルダー] を選択します。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-117">In Windows, you can *right-click* on the "xPSDesiredStateConfiguration" directory, and select "Send To", then "Compressed Folder".</span></span>
 
 ![右クリック](../media/right-click.gif)
 
-### <a name="naming-the-resource-archive"></a><span data-ttu-id="49cc4-119">リソースのアーカイブの名前を付ける</span><span class="sxs-lookup"><span data-stu-id="49cc4-119">Naming the Resource Archive</span></span>
+### <a name="naming-the-resource-archive"></a><span data-ttu-id="4b3d7-119">リソース アーカイブの名前を指定する</span><span class="sxs-lookup"><span data-stu-id="4b3d7-119">Naming the Resource Archive</span></span>
 
-<span data-ttu-id="49cc4-120">リソースのアーカイブは、次の形式で名前を指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="49cc4-120">The Resource archive needs to be named with the following format:</span></span>
+<span data-ttu-id="4b3d7-120">リソース アーカイブには、次の形式で名前を付ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-120">The Resource archive needs to be named with the following format:</span></span>
 
 ```
 {ModuleName}_{Version}.zip
 ```
 
-<span data-ttu-id="49cc4-121">上記の例では、"xPSDesiredStateConfiguration.zip"によって"xPSDesiredStateConfiguration_8.4.4.0.zip"の名前を変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="49cc4-121">In the example above, "xPSDesiredStateConfiguration.zip" should be renamed "xPSDesiredStateConfiguration_8.4.4.0.zip".</span></span>
+<span data-ttu-id="4b3d7-121">上の例では、"xPSDesiredStateConfiguration.zip" の名前を "xPSDesiredStateConfiguration_8.4.4.0.zip" に変更する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-121">In the example above, "xPSDesiredStateConfiguration.zip" should be renamed "xPSDesiredStateConfiguration_8.4.4.0.zip".</span></span>
 
-### <a name="create-checksums"></a><span data-ttu-id="49cc4-122">チェックサムを作成します。</span><span class="sxs-lookup"><span data-stu-id="49cc4-122">Create CheckSums</span></span>
+### <a name="create-checksums"></a><span data-ttu-id="4b3d7-122">チェックサムを作成する</span><span class="sxs-lookup"><span data-stu-id="4b3d7-122">Create CheckSums</span></span>
 
-<span data-ttu-id="49cc4-123">リソース モジュールを圧縮され名前を変更すると、作成する必要があります、**チェックサム**します。</span><span class="sxs-lookup"><span data-stu-id="49cc4-123">Once the Resource module has been compressed and renamed, you need to create a **CheckSum**.</span></span>  <span data-ttu-id="49cc4-124">**チェックサム**使用して、クライアントでは、LCM によってリソースが変更されていると再度ダウンロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="49cc4-124">The **CheckSum** is used, by the LCM on the client, to determine if the resource has been changed, and needs to be downloaded again.</span></span> <span data-ttu-id="49cc4-125">作成することができます、**チェックサム**で、 [New-dscchecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)コマンドレットは、次の例で示すようにします。</span><span class="sxs-lookup"><span data-stu-id="49cc4-125">You can create a **CheckSum** with the [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) cmdlet, as shown in the example below.</span></span>
+<span data-ttu-id="4b3d7-123">リソース モジュールを圧縮して名前を変更した後は、**チェックサム**を作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-123">Once the Resource module has been compressed and renamed, you need to create a **CheckSum**.</span></span>  <span data-ttu-id="4b3d7-124">**チェックサム**は、クライアント上の LCM によって、リソースが変更されていて、再度ダウンロードする必要があるかどうかを判断するために使われます。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-124">The **CheckSum** is used, by the LCM on the client, to determine if the resource has been changed, and needs to be downloaded again.</span></span> <span data-ttu-id="4b3d7-125">次の例で示すように、**チェックサム**は [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) コマンドレットで作成できます。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-125">You can create a **CheckSum** with the [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) cmdlet, as shown in the example below.</span></span>
 
 ```powershell
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 ```
 
-<span data-ttu-id="49cc4-126">出力は表示されませんが、"xPSDesiredStateConfiguration_8.4.4.0.zip.checksum"が表示されます。</span><span class="sxs-lookup"><span data-stu-id="49cc4-126">No output will be shown, but you should now see a "xPSDesiredStateConfiguration_8.4.4.0.zip.checksum".</span></span> <span data-ttu-id="49cc4-127">実行することも`New-DSCCheckSum`を使用してファイルのディレクトリに対して、`-Path`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="49cc4-127">You can also run `New-DSCCheckSum` against a directory of files using the `-Path` parameter.</span></span> <span data-ttu-id="49cc4-128">チェックサムが既に存在する場合に再作成することを強制できます、`-Force`パラメーター。</span><span class="sxs-lookup"><span data-stu-id="49cc4-128">If a checksum already exists, you can force it to be re-created with the `-Force` parameter.</span></span>
+<span data-ttu-id="4b3d7-126">出力は示されませんが、"xPSDesiredStateConfiguration_8.4.4.0.zip.checksum" が表示されるようになるはずです。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-126">No output will be shown, but you should now see a "xPSDesiredStateConfiguration_8.4.4.0.zip.checksum".</span></span> <span data-ttu-id="4b3d7-127">また、`-Path` パラメーターを使用すると、ファイルのディレクトリに対して `New-DSCCheckSum` を実行することもできます。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-127">You can also run `New-DSCCheckSum` against a directory of files using the `-Path` parameter.</span></span> <span data-ttu-id="4b3d7-128">チェックサムが既に存在する場合は、`-Force` パラメーターを使用して強制的に再作成できます。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-128">If a checksum already exists, you can force it to be re-created with the `-Force` parameter.</span></span>
 
-### <a name="where-to-store-resource-archives"></a><span data-ttu-id="49cc4-129">リソースのアーカイブを格納する場所</span><span class="sxs-lookup"><span data-stu-id="49cc4-129">Where to store Resource Archives</span></span>
+### <a name="where-to-store-resource-archives"></a><span data-ttu-id="4b3d7-129">リソース アーカイブを格納する場所</span><span class="sxs-lookup"><span data-stu-id="4b3d7-129">Where to store Resource Archives</span></span>
 
-#### <a name="on-a-dsc-http-pull-server"></a><span data-ttu-id="49cc4-130">DSC の HTTP プル サーバー</span><span class="sxs-lookup"><span data-stu-id="49cc4-130">On a DSC HTTP Pull Server</span></span>
+#### <a name="on-a-dsc-http-pull-server"></a><span data-ttu-id="4b3d7-130">DSC HTTP プル サーバー上</span><span class="sxs-lookup"><span data-stu-id="4b3d7-130">On a DSC HTTP Pull Server</span></span>
 
-<span data-ttu-id="49cc4-131">設定すると、HTTP プル サーバー上で説明したよう[DSC HTTP プル サーバーを設定する](pullServer.md)、用のディレクトリを指定する、 **ModulePath**と**ConfigurationPath**キー。</span><span class="sxs-lookup"><span data-stu-id="49cc4-131">When you set up your HTTP Pull Server, as explained in [Set up a DSC HTTP Pull Server](pullServer.md), you specify directories for the **ModulePath** and **ConfigurationPath** keys.</span></span> <span data-ttu-id="49cc4-132">**ConfigurationPath**キーは、".mof"ファイルの格納場所を示します。</span><span class="sxs-lookup"><span data-stu-id="49cc4-132">The **ConfigurationPath** key indicates where any ".mof" files should be stored.</span></span> <span data-ttu-id="49cc4-133">**ModulePath** DSC リソース モジュールを格納する場所を示します。</span><span class="sxs-lookup"><span data-stu-id="49cc4-133">The **ModulePath** indicates where any DSC Resource Modules should be stored.</span></span>
+<span data-ttu-id="4b3d7-131">HTTP プル サーバーをセットアップするときは、「[DSC HTTP プル サーバーを設定する](pullServer.md)」で説明されているように、**ModulePath** キーと **ConfigurationPath** キーに対するディレクトリを指定します。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-131">When you set up your HTTP Pull Server, as explained in [Set up a DSC HTTP Pull Server](pullServer.md), you specify directories for the **ModulePath** and **ConfigurationPath** keys.</span></span> <span data-ttu-id="4b3d7-132">**ConfigurationPath** キーは、".mof" ファイルを格納する必要がある場所を示します。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-132">The **ConfigurationPath** key indicates where any ".mof" files should be stored.</span></span> <span data-ttu-id="4b3d7-133">**ModulePath** は、DSC リソース モジュールを格納する必要がある場所を示します。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-133">The **ModulePath** indicates where any DSC Resource Modules should be stored.</span></span>
 
 ```powershell
     xDscWebService PSDSCPullServer
@@ -66,9 +66,9 @@ New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 
 ```
 
-#### <a name="on-an-smb-share"></a><span data-ttu-id="49cc4-134">SMB 共有に</span><span class="sxs-lookup"><span data-stu-id="49cc4-134">On an SMB Share</span></span>
+#### <a name="on-an-smb-share"></a><span data-ttu-id="4b3d7-134">SMB 共有上</span><span class="sxs-lookup"><span data-stu-id="4b3d7-134">On an SMB Share</span></span>
 
-<span data-ttu-id="49cc4-135">指定した場合、 **ResourceRepositoryShare**、プル クライアントのセットアップは、アーカイブと内のチェックサムを保存すると、 **SourcePath**ディレクトリから、 **ResourceRepositoryShare**ブロックします。</span><span class="sxs-lookup"><span data-stu-id="49cc4-135">If you specified a **ResourceRepositoryShare**, when setting up your Pull Client, store archives and checksums in the **SourcePath** directory from the **ResourceRepositoryShare** block.</span></span>
+<span data-ttu-id="4b3d7-135">**ResourceRepositoryShare** を指定した場合は、プル クライアントをセットアップするときに、**ResourceRepositoryShare** ブロックの **SourcePath** ディレクトリに、アーカイブとチェックサムを格納します。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-135">If you specified a **ResourceRepositoryShare**, when setting up your Pull Client, store archives and checksums in the **SourcePath** directory from the **ResourceRepositoryShare** block.</span></span>
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -82,7 +82,7 @@ ResourceRepositoryShare SMBResourceServer
 }
 ```
 
-<span data-ttu-id="49cc4-136">のみを指定した場合、 **ConfigurationRepositoryShare**、プル クライアントのセットアップは、アーカイブと内のチェックサムを保存すると、 **SourcePath**ディレクトリから、 **ConfigurationRepositoryShare**ブロックします。</span><span class="sxs-lookup"><span data-stu-id="49cc4-136">If you specified only a **ConfigurationRepositoryShare**, when setting up your Pull Client, store archives and checksums in the **SourcePath** directory from the **ConfigurationRepositoryShare** block.</span></span>
+<span data-ttu-id="4b3d7-136">**ConfigurationRepositoryShare** だけを指定した場合は、プル クライアントをセットアップするときに、**ConfigurationRepositoryShare** ブロックの **SourcePath** ディレクトリに、アーカイブとチェックサムを格納します。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-136">If you specified only a **ConfigurationRepositoryShare**, when setting up your Pull Client, store archives and checksums in the **SourcePath** directory from the **ConfigurationRepositoryShare** block.</span></span>
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -91,11 +91,11 @@ ConfigurationRepositoryShare SMBPullServer
 }
 ```
 
-#### <a name="updating-resources"></a><span data-ttu-id="49cc4-137">リソースの更新</span><span class="sxs-lookup"><span data-stu-id="49cc4-137">Updating resources</span></span>
+#### <a name="updating-resources"></a><span data-ttu-id="4b3d7-137">リソースの更新</span><span class="sxs-lookup"><span data-stu-id="4b3d7-137">Updating resources</span></span>
 
-<span data-ttu-id="49cc4-138">アーカイブの名、バージョン番号を変更するか、新しいチェックサムを作成して、そのリソースを更新するノードを強制することができます。</span><span class="sxs-lookup"><span data-stu-id="49cc4-138">You can force a Node to update its resources by changing the version number in the archive's name, or by creating a new checksum.</span></span> <span data-ttu-id="49cc4-139">プル クライアントは、必要なリソースの新しいバージョンの確認だけでなく、LCM が更新されると、チェックサムを更新します。</span><span class="sxs-lookup"><span data-stu-id="49cc4-139">The Pull Client will check for newer versions of required resources, as well as updated checksums, when its LCM refreshes.</span></span>
+<span data-ttu-id="4b3d7-138">アーカイブの名前のバージョン番号を変更するか、新しいチェックサムを作成することにより、強制的にノードにリソースを更新させることができます。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-138">You can force a Node to update its resources by changing the version number in the archive's name, or by creating a new checksum.</span></span> <span data-ttu-id="4b3d7-139">プル クライアントでは、LCM が更新されるときに、必要なリソースの新しいバージョンだけでなく更新されたチェックサムも確認されます。</span><span class="sxs-lookup"><span data-stu-id="4b3d7-139">The Pull Client will check for newer versions of required resources, as well as updated checksums, when its LCM refreshes.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="49cc4-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="49cc4-140">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4b3d7-140">関連項目</span><span class="sxs-lookup"><span data-stu-id="4b3d7-140">See also</span></span>
 
-- [<span data-ttu-id="49cc4-141">DSC SMB プル サーバーを設定する</span><span class="sxs-lookup"><span data-stu-id="49cc4-141">Set up a DSC SMB Pull Server</span></span>](pullServerSmb.md)
-- [<span data-ttu-id="49cc4-142">DSC HTTP プル サーバーを設定する</span><span class="sxs-lookup"><span data-stu-id="49cc4-142">Set up a DSC HTTP Pull Server</span></span>](pullServer.md)
+- [<span data-ttu-id="4b3d7-141">DSC SMB プル サーバーを設定する</span><span class="sxs-lookup"><span data-stu-id="4b3d7-141">Set up a DSC SMB Pull Server</span></span>](pullServerSmb.md)
+- [<span data-ttu-id="4b3d7-142">DSC HTTP プル サーバーを設定する</span><span class="sxs-lookup"><span data-stu-id="4b3d7-142">Set up a DSC HTTP Pull Server</span></span>](pullServer.md)
