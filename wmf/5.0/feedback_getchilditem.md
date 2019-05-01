@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: d9f1ca10c948b06b234e17f688b8f899ed41c5d6
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: cc5d2d799c1292f68de5fb2360fcba220c2c010b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34221903"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085295"
 ---
 # <a name="get-childitem-has--depth-parameter"></a>Get-ChildItem の -Depth パラメーター
 **Get-ChildItem** に追加された **–Depth** パラメーターを **–Recurse** と一緒に使うと、再帰を制限できます。

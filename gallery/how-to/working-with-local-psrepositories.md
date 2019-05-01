@@ -2,66 +2,66 @@
 ms.date: 11/06/2018
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery, PsGet
-title: ローカル PSRepositories の操作
+title: ローカルの PSRepositories の操作
 ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55682671"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084098"
 ---
 # <a name="working-with-local-powershellget-repositories"></a>ローカルの PowerShellGet リポジトリの操作
 
-PowerShell ギャラリー以外の PowerShellGet モジュール サポート リポジトリ。
-これらのコマンドレットは、次のシナリオを有効にします。
+PowerShellGet モジュールでは、PowerShell ギャラリー以外のリポジトリがサポートされています。
+これらのコマンドレットにより、次のシナリオが可能になります。
 
-- 環境内で使用するため、信頼されている、事前に検証された PowerShell モジュールのセットをサポートします。
-- PowerShell モジュールまたはスクリプトをビルドする CI/CD パイプラインをテストします。
-- インターネットにアクセスできないシステムに PowerShell スクリプトおよびモジュールを配信します。
+- 環境内で使用するための、信頼された事前検証済みの PowerShell モジュールのセットをサポートする
+- PowerShell モジュールまたはスクリプトを構築する CI/CD パイプラインをテストする
+- インターネットにアクセスできないシステムに PowerShell スクリプトおよびモジュールを提供する
 
-この記事では、ローカル PowerShell リポジトリを設定する方法について説明します。 についても説明します、 [OfflinePowerShellGetDeploy][] PowerShell ギャラリーからモジュールを使用できます。 このモジュールには、ローカル リポジトリに PowerShellGet の最新バージョンをインストールするためのコマンドレットが含まれています。
+この記事では、ローカル PowerShell リポジトリを設定する方法について説明します。 また、PowerShell ギャラリーから使用できる [OfflinePowerShellGetDeploy][] モジュールについても説明します。 このモジュールには、ローカル リポジトリに PowerShellGet の最新バージョンをインストールするためのコマンドレットが含まれています。
 
 ## <a name="local-repository-types"></a>ローカル リポジトリの種類
 
-ローカル PSRepository を作成する 2 つの方法はあります。NuGet のサーバーまたはファイル共有。 各種は、長所と短所があります。
+ローカル PSRepository を作成するには、次の 2 つの方法があります: NuGet サーバーまたはファイル共有。 種類ごとに長所と短所があります。
 
 NuGet サーバー
 
 | 長所| 短所 |
 | --- | --- |
-| PowerShellGallery 機能を正確に模倣します。 | 多層アプリケーションは、操作の計画とサポートが必要です。 |
-| NuGet は、Visual Studio、その他のツールと統合します。 | 認証モデルと必要な NuGet アカウント管理 |
-| NuGet でメタデータをサポートする`.Nupkg`パッケージ | 発行は、API キーの管理とメンテナンスが必要です。 |
-| 検索、パッケージの管理などを提供します。 | |
+| PowerShellGallery の機能を正確に模倣します | 多層アプリでは、運用の計画とサポートが必要です |
+| NuGet は、Visual Studio や他のツールと統合します | 認証モデルと NuGet アカウントの管理が必要です |
+| NuGet では、`.Nupkg` パッケージ内のメタデータがサポートされます | 発行には、API キーの管理とメンテナンスが必要です |
+| 検索、パッケージ管理などが提供されます | |
 
 ファイル共有
 
 | 長所| 短所 |
 | --- | --- |
-| 簡単設定、バックアップ、および管理するには | PowerShellGet で使用されるメタデータは使用できません。 |
-| 単純なセキュリティ モデル、共有のユーザーのアクセス許可 | 基本的なファイル共有を超える UI なし |
-| 既存の項目を置換などの制約のないです。 | 限られたセキュリティと内容を更新するユーザーの記録がありません。 |
+| セットアップ、バックアップ、メンテナンスが簡単です | PowerShellGet で使用されるメタデータは使用できません |
+| セキュリティ モデルがシンプルです (共有に対するユーザーのアクセス許可) | 基本的なファイル共有以外の UI はありません |
+| 既存の項目を置換などの制約はありません | セキュリティに制限があり、誰が何を更新したか記録されません |
 
-PowerShellGet は、特定のバージョンと依存関係のインストールをサポートして型のいずれかで動作します。
-ただし、PowerShell ギャラリーを使用できるいくつかの機能は、基本の NuGet サーバーやファイル共有に対して使用できません。
+PowerShellGet はどちらの種類およびサポートでも動作し、バージョンと依存関係のインストールを特定します。
+ただし、PowerShell ギャラリーでは動作するいくつかの機能が、基本の NuGet サーバーまたはファイル共有に対しては使用できません。
 
-- すべては、パッケージのスクリプトやモジュール、DSC リソース、ロール機能のない差別化要因です。
-- ファイル共有サーバーには、タグを含むパッケージのメタデータを表示できません。
+- すべてはパッケージです。スクリプト、モジュール、DSC リソース、ロールの機能の区別はありません。
+- ファイル共有サーバーは、タグを含むパッケージのメタデータを認識できません。
 
-## <a name="creating-a-local-repository"></a>ローカル リポジトリを作成します。
+## <a name="creating-a-local-repository"></a>ローカル リポジトリを作成する
 
-次の記事では、独自の NuGet サーバーを設定するための手順を示します。
+次の記事では、独自の NuGet サーバーを設定するための手順が示されています。
 
 - [NuGet.Server][]
 
-パッケージを追加する時点までの手順に従います。 手順[パッケージを公開する](#publishing-to-a-local-repository)はこの記事の後半で説明します。
+パッケージを追加する時点までの手順に従います。 [パッケージを公開する](#publishing-to-a-local-repository)ための手順は、この記事の後半で説明します。
 
-ファイル共有ベースのリポジトリでは、ユーザーにファイル共有にアクセスする権限があることを確認します。
+ファイル共有ベースのリポジトリでは、ユーザーにファイル共有にアクセスするためのアクセス許可があることを確認します。
 
-## <a name="registering-a-local-repository"></a>ローカル リポジトリを登録します。
+## <a name="registering-a-local-repository"></a>ローカル リポジトリを登録する
 
-リポジトリを使用できますが、前に、登録する必要を使用して、`Register-PSRepository`コマンド。
-以下の例で、 **InstallationPolicy**に設定されている*信頼済み*、独自のリポジトリを信頼できることを前提としています。
+リポジトリを使用するには、その前に `Register-PSRepository` コマンドを使用して登録する必要があります。
+次の例では、独自のリポジトリを信頼しているという前提で、**InstallationPolicy** を *Trusted* に設定しています。
 
 ```powershell
 # Register a NuGet-based server
@@ -71,38 +71,38 @@ Register-PSRepository -Name LocalPSRepo -SourceLocation http://MyLocalNuget/Api/
 Register-PSRepository -Name LocalPSRepo -SourceLocation '\\localhost\PSRepoLocal\' -ScriptSourceLocation '\\localhost\PSRepoLocal\' -InstallationPolicy Trusted
 ```
 
-2 つのコマンドを処理する方法の違いをメモしておきます**ScriptSourceLocation**します。 ファイル共有ベースのリポジトリでは、 **SourceLocation**と**ScriptSourceLocation**と一致する必要があります。 Web ベースのリポジトリでは、する必要があるさまざまな、最後には、この例では「/」に追加されます、 **SourceLocation**します。
+2 つのコマンドでの **ScriptSourceLocation** の処理方法の違いに注意してください。 ファイル共有ベースのリポジトリでは、**SourceLocation** と **ScriptSourceLocation** が一致している必要があります。 Web ベースのリポジトリでは、それらが異なる必要があるため、この例では、**SourceLocation** の最後に "/" が追加されています。
 
-既定のリポジトリを新しく作成された PSRepository にする場合は、その他のすべての PSRepositories の登録を解除する必要があります。 たとえば、次のように入力します。
+新しく作成する PSRepository を既定のリポジトリにする場合は、他のすべての PSRepository の登録を解除する必要があります。 たとえば、次のように入力します。
 
 ```powershell
 Unregister-PSRepository -Name PSGallery
 ```
 
 > [!NOTE]
-> リポジトリ名 'PSGallery' は、PowerShell ギャラリーで使用するために予約されています。 PSGallery、登録を解除することができますが、その他の任意のリポジトリの名前 PSGallery を再利用することはできません。
+> リポジトリ名 "PSGallery" は、PowerShell ギャラリーで使用するために予約されています。 PSGallery を登録解除することはできますが、他のリポジトリに対して名前 PSGallery を再利用することはできません。
 
-PSGallery を復元する必要がある場合は、次のコマンドを実行します。
+PSGallery を元に戻す必要がある場合は、次のコマンドを実行します。
 
 ```powershell
 Register-PSRepository -Default
 ```
 
-## <a name="publishing-to-a-local-repository"></a>ローカル リポジトリに公開します。
+## <a name="publishing-to-a-local-repository"></a>ローカル リポジトリに発行する
 
-ローカル PSRepository を登録したら、ローカル、PSRepository に発行できます。 2 つの主な発行シナリオがあります。 独自のモジュールを発行および PSGallery からモジュールを発行します。
+ローカル PSRepository を登録した後は、ローカル PSRepository に対して発行できます。 2 つの主な発行シナリオがあります。独自のモジュールの発行と、PSGallery からのモジュールの発行です。
 
-### <a name="publishing-a-module-you-authored"></a>作成したモジュールの発行
+### <a name="publishing-a-module-you-authored"></a>自分で作成したモジュールを発行する
 
-使用`Publish-Module`と`Publish-Script`PowerShell ギャラリーのと同じ方法をローカル PSRepository にモジュールを発行します。
+PowerShell ギャラリーの場合と同じように、`Publish-Module` および `Publish-Script` を使用してローカル環境の PSRepository に自分のモジュールを発行します。
 
-- コードの場所を指定します。
-- API キーを指定します。
+- コードの場所を指定します
+- API キーを指定します
 - リポジトリ名を指定します。 たとえば、`-PSRepository LocalPSRepo` と記述します。
 
 > [!NOTE]
-> NuGet のサーバーでアカウントを作成しにサインインを生成し、API キーを保存する必要があります。
-> ファイル共有の場合は、NuGetApiKey 値の任意の空白でない文字列を使用します。
+> NuGet サーバーにアカウントを作成した後、サインインし、API キーを生成して保存する必要があります。
+> ファイル共有の場合は、NuGetApiKey の値に対して任意の空白でない文字列を使用します。
 
 例:
 
@@ -115,16 +115,16 @@ Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey
 ```
 
 > [!IMPORTANT]
-> セキュリティを確保するには、API キーのスクリプトにハード コーディングされてはなりません。 セキュリティで保護されたキー管理システムを使用します。
+> セキュリティを確保するため、API キーをスクリプトにハード コーディングしてはなりません。 セキュリティ保護されたキー管理システムを使用します。
 
-### <a name="publishing-a-module-from-the-psgallery"></a>PSGallery からモジュールの発行
+### <a name="publishing-a-module-from-the-psgallery"></a>PSGallery からモジュールを発行する
 
-ローカル、PSRepository に PSGallery からモジュールを発行するには、' Save-package ' コマンドレットを使用することができます。
+ローカル環境の PSRepository に PSGallery からモジュールを発行するには、"Save-Package" コマンドレットを使用できます。
 
-- パッケージの名前を指定します。
-- プロバイダーとしての 'NuGet' の指定します。
-- ソース (として PSGallery 場所を指定します。 https://www.powershellgallery.com/api/v2)
-- ローカル リポジトリへのパスを指定します。
+- パッケージの名前を指定します
+- プロバイダーとして "NuGet" を指定します
+- ソースとして PSGallery の場所を指定します (https://www.powershellgallery.com/api/v2)
+- ローカル リポジトリへのパスを指定します
 
 次に例を示します。
 
@@ -133,22 +133,22 @@ Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey
 Save-Package -Name 'PackageName' -Provider Nuget -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
 ```
 
-場合は、ローカル PSRepository には web ベースでは、nuget.exe を使用して発行する追加の手順が必要です。
+ローカル PSRepository が Web ベースの場合は、nuget.exe を使用して発行する追加の手順が必要です。
 
-使用してドキュメントを参照して[nuget.exe][]します。
+[nuget.exe][] の使用についてはドキュメントをご覧ください。
 
-## <a name="installing-powershellget-on-a-disconnected-system"></a>接続されていないシステムに PowerShellGet をインストールします。
+## <a name="installing-powershellget-on-a-disconnected-system"></a>オフラインのシステムに PowerShellGet をインストールする
 
-PowerShellGet の展開は、システムがインターネットから切断する必要がある環境では困難です。 PowerShellGet では、最初に使用されるときに、最新バージョンをインストールするブートス トラップ プロセスがあります。 PowerShell ギャラリーで OfflinePowerShellGetDeploy モジュールは、このブートス トラップ プロセスをサポートするコマンドレットを提供します。
+インターネットに接続されていないシステムが必要な環境に PowerShellGet を展開するのは困難です。 PowerShellGet を初めて使用するときは、最新バージョンをインストールするブートストラップ プロセスがあります。 PowerShell ギャラリーの OfflinePowerShellGetDeploy モジュールでは、このブートストラップ プロセスをサポートするコマンドレットが提供されています。
 
-オフラインの展開をブートス トラップする必要があります。
+オフラインの展開をブートストラップするには、次のことを行う必要があります。
 
-- インターネットに接続されたは、OfflinePowerShellGetDeploy システムと、接続されていないシステム ダウンロードしてインストール
-- PowerShellGet とその依存関係を使用して、インターネットに接続されたシステムでダウンロード、`Save-PowerShellGetForOffline`コマンドレット
-- インターネットに接続されたシステムから切断されているシステムに PowerShellGet とその依存関係をコピーします。
-- 使用して、`Install-PowerShellGetOffline`切断されているシステムに PowerShellGet とその依存関係を適切なフォルダーに配置
+- OfflinePowerShellGetDeploy をダウンロードし、インターネットに接続されたシステムと接続されていないシステムにインストールします
+- `Save-PowerShellGetForOffline` コマンドレットを使用して、PowerShellGet とその依存関係をインターネットに接続されたシステムにダウンロードします
+- PowerShellGet とその依存関係を、インターネットに接続されたシステムから切断されたシステムにコピーします
+- 切断されたシステムで `Install-PowerShellGetOffline` を使用して、PowerShellGet とその依存関係を適切なフォルダーに配置します
 
-使用して、次のコマンド`Save-PowerShellGetForOffline`フォルダーにすべてのコンポーネントを配置するには `f:\OfflinePowerShellGet`
+次のコマンドでは、`Save-PowerShellGetForOffline` を使用してすべてのコンポーネントを `f:\OfflinePowerShellGet` フォルダーに配置します
 
 ```powershell
 # Requires -RunAsAdministrator
@@ -161,10 +161,10 @@ Import-Module F:\OfflinePowerShellGetDeploy
 Save-PowerShellGetForOffline -LocalFolder 'F:\OfflinePowerShellGet'
 ```
 
-この時点での内容を行う必要があります`F:\OfflinePowerShellGet`切断されているシステムを使用できます。 実行、`Install-PowerShellGetOffline`コマンドレットを切断されているシステムに PowerShellGet をインストールします。
+この時点で、`F:\OfflinePowerShellGet` の内容を切断されたシステムで使用できるようにする必要があります。 `Install-PowerShellGetOffline` コマンドレットを実行し、切断されたシステムに PowerShellGet をインストールします。
 
 > [!NOTE]
-> これらのコマンドを実行する前に、PowerShell セッションで PowerShellGet を実行しないことが重要です。 PowerShellGet がセッションに読み込まれると、コンポーネントを更新できません。 PowerShellGet を誤ってを開始する実行を終了し、PowerShell を再起動します。
+> これらのコマンドを実行する前に、PowerShell セッションで PowerShellGet を実行しないことが重要です。 PowerShellGet がセッションに読み込まれた後では、コンポーネントを更新できません。 誤って PowerShellGet を開始した場合は、終了して、PowerShell を再起動します。
 
 ```powershell
 Import-Module F:\OfflinePowerShellGetDeploy
@@ -172,7 +172,7 @@ Import-Module F:\OfflinePowerShellGetDeploy
 Install-PowerShellGetOffline -LocalFolder 'F:\OfflinePowerShellGet'
 ```
 
-これらのコマンドを実行した後、ローカル リポジトリに PowerShellGet を発行する準備が完了したら。
+これらのコマンドの実行が済むと、ローカル リポジトリに PowerShellGet を発行できるようになります。
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
@@ -183,7 +183,7 @@ Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApi
 ```
 
 > [!IMPORTANT]
-> セキュリティを確保するには、API キーのスクリプトにハード コーディングされてはなりません。 セキュリティで保護されたキー管理システムを使用します。
+> セキュリティを確保するため、API キーをスクリプトにハード コーディングしてはなりません。 セキュリティ保護されたキー管理システムを使用します。
 
 <!-- external links -->
 [OfflinePowerShellGetDeploy]: https://www.powershellgallery.com/packages/OfflinePowerShellGetDeploy/0.1.1

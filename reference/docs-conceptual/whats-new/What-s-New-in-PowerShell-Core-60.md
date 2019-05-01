@@ -3,11 +3,11 @@ title: PowerShell Core 6.0 の新機能
 description: PowerShell Core 6.0 でリリースされた新機能と変更
 ms.date: 08/06/2018
 ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55680820"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62059017"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 の新機能
 
@@ -70,7 +70,7 @@ Windows 以外のシステムでより適切に機能するように、PowerShel
 macOS では、PowerShell はネイティブ `os_log` API を使用して、Apple の[統合ログシステム][os_log]にログを記録します。
 Linux では、PowerShell は、ユビキタス ログ ソリューションである [Syslog][] を使用します。
 
-### <a name="filesystem"></a>ファイル システム
+### <a name="filesystem"></a>ファイルシステム
 
 従来、Windows ではサポートされていなかったファイル名の文字をサポートするために、macOS と Linux について多くの変更が行われました。
 
@@ -233,11 +233,11 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 ## <a name="engine-updates"></a>エンジンの更新
 
 - `$PSVersionTable` には、次の 4 つの新しいプロパティがあります。
-  - `PSEdition`: これは、PowerShell Core では `Core` に、Windows PowerShell では `Desktop` に設定されます。
-  - `GitCommitId`: これは、PowerShell が構築された Git ブランチまたはタグの Git コミット ID です。
+  - `PSEdition`:これは、PowerShell Core では `Core` に、Windows PowerShell では `Desktop` に設定されます。
+  - `GitCommitId`:これは、PowerShell が構築された Git ブランチまたはタグの Git コミット ID です。
     リリースされたビルドでは、`PSVersion` と同じになる可能性があります。
-  - `OS`: これは、`[System.Runtime.InteropServices.RuntimeInformation]::OSDescription` によって返される OS バージョンの文字列です。
-  - `Platform`: これは `[System.Environment]::OSVersion.Platform` によって返されます。Windows では `Win32NT` に、macOs では `Unix` に、Linux では `Unix` に設定されます。
+  - `OS`:これは、`[System.Runtime.InteropServices.RuntimeInformation]::OSDescription` によって返される OS バージョンの文字列です。
+  - `Platform`:これは `[System.Environment]::OSVersion.Platform` によって返されます。Windows では `Win32NT` に、macOs では `Unix` に、Linux では `Unix` に設定されます。
 - `$PSVersionTable` から `BuildVersion` プロパティを削除しました。
   このプロパティは、Windows のビルド バージョンに強く関連付けられていました。
   代わりに、`GitCommitId` を使用して、PowerShell Core の正確なビルド バージョンを取得することをお勧めします。 (#3877) ([@iSazonov](https://github.com/iSazonov) に感謝)
@@ -274,7 +274,7 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 - ヘッダー値を検証せずにヘッダーを追加できるように、Web コマンドレットに `-SkipHeaderValidation` スイッチを追加します。 (#4085)
 - 必要に応じて、Web コマンドレットでサーバーの HTTPS 証明書を検証しないようにすることができます。
 - Web コマンドレットに認証パラメーターを追加します。 (#5052) ([@markekraus](https://github.com/markekraus) に感謝)
-  - 追加`-Authentication`3 つのオプションを提供します。Basic、OAuth および Bearer。
+  - 次の 3 つのオプションがある `-Authentication` を追加します。Basic、OAuth、Bearer。
   - OAuth および Bearer オプションのベアラー トークンを取得するために、`-Token` を追加します。
   - HTTPS ではなく、任意のトランスポート スキームに対して指定される認証をバイパスするために、`-AllowUnencryptedAuthentication` を追加します。
 - 応答ヘッダーのキャプチャを有効にするために、`Invoke-RestMethod` に `-ResponseHeadersVariable` を追加します。 (#4888) ([@markekraus](https://github.com/markekraus) に感謝)

@@ -4,11 +4,11 @@ keywords: PowerShell, コマンドレット
 title: コマンドに関する情報の取得
 ms.assetid: 56f8e5b4-d97c-4e59-abbe-bf13e464eb0d
 ms.openlocfilehash: 7af83e3a0e776d96e580b442430357b4ea063a72
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403313"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057708"
 ---
 # <a name="getting-information-about-commands"></a>コマンドに関する情報の取得
 
@@ -55,7 +55,7 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
 
 `Get-Command` コマンドは、現在のセッションのコマンドレットのみを一覧表示します。 PowerShell は、実際にはその他のいくつかの種類のコマンドをサポートします。
 
-- エイリアス
+- 別名
 - 関数
 - スクリプト
 
@@ -74,7 +74,7 @@ Get-Command *
 > アスタリスク (\*) は、PowerShell コマンドの引数のワイルドカードによるマッチングに使用されます。 \* は、「1 つ以上の任意の文字に一致する」という意味です。 `Get-Command a*` を入力すると、文字 "a" で始まるコマンドをすべて検索できます。 **cmd.exe** のワイルドカードのマッチングとは異なり、PowerShell のワイルドカードは、ピリオドもマッチングします。
 
 その他の種類のネイティブ コマンドを取得するには、`Get-Command` の **CommandType** パラメーターを使用します。
-コマンドレットを実行して、返されるクォーラム リソースに関する情報を確認できます。
+コマンドレット。
 
 コマンドの割り当て済みのニックネームであるコマンドのエイリアスを取得するには、次のように入力します。
 

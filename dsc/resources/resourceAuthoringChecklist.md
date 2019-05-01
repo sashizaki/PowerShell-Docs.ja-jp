@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: リソース作成のチェックリスト
 ms.openlocfilehash: 7b1a096bba1b729c096b6689178ee022e12e4634
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076584"
 ---
 # <a name="resource-authoring-checklist"></a>リソース作成のチェックリスト
 
@@ -85,7 +85,7 @@ If ($error.count –ne 0) {
 
 ## <a name="resource-is-idempotent-in-the-positive-case"></a>正の場合、リソースはべき等である
 
-DSC リソースの基本的な特性の 1 つは、冪等性です。 つまり、そのリソースを含む DSC 構成を複数回適用したとき、常に同じ結果が得られます。 たとえば、次の File リソースを含む構成を作成するとします。
+DSC リソースの基本的な特性の 1 つにべき等性があります。 つまり、そのリソースを含む DSC 構成を複数回適用したとき、常に同じ結果が得られます。 たとえば、次の File リソースを含む構成を作成するとします。
 
 ```powershell
 File file {
@@ -210,11 +210,11 @@ File file {
 
 優れたエラー メッセージとは、次のようなものです。
 
-- そこ：エラー メッセージに関する最大の問題は、多くの場合、存在しないようにしてこれらのテンプレートは、同じです。
-- 簡単に理解できます。人間の判読できる、明瞭エラー コード
-- 詳細新機能、問題を正確に説明します
-- 建設的な。アドバイス、問題を解決する方法
-- 正常な。ユーザーを非難したり気分を悪くように
+- 存在する:エラー メッセージに関する最大の問題は、存在しないことがよくあるということです。メッセージが必ず存在するようにします。
+- わかりやすい:人間が判読できる、明瞭なエラー コード
+- 正確である:何が問題であるかを正確に説明します
+- 建設的である:問題を解決する方法を助言します
+- 礼儀正しい:ユーザーを非難したり、不愉快にさせたりしません
 
 エラーはリソース機能を直接実行したときに返されるものとは異なる可能性があるため、エンド ツー エンドのシナリオで (`Start-DscConfiguration` を使用して) エラーを確認します。
 
@@ -222,7 +222,7 @@ File file {
 
 リソースによって出力されるログがわかりやすく、ユーザーにとって価値のあるものであることを確認します。 リソースは、ユーザーに役立つ可能性のあるすべての情報を出力する必要がありますが、常にログが多い方がよいとは限りません。 冗長性および付加価値を提供しないデータを出力することは避ける必要があります。求めている情報を探して何百ものログ エントリを確認する必要がないようにします。 もちろん、ログを出力しないことはこの問題に対する適切な解決策ではありません。
 
-テストする場合は、詳細ログとデバッグ ログ (`Start-DscConfiguration` を `–Verbose` および `–Debug` スイッチを適切に指定して実行する)、および ETW ログも分析する必要があります。 DSC ETW ログを表示するには、イベント ビューアーに移動し、次のフォルダーを開きます。アプリケーションとサービス-Microsoft - Windows - を Desired State Configuration。  既定では稼動チャネルがありますが、構成を実行する前に分析チャネルとデバッグ チャネルを有効にします。
+テストする場合は、詳細ログとデバッグ ログ (`Start-DscConfiguration` を `–Verbose` および `–Debug` スイッチを適切に指定して実行する)、および ETW ログも分析する必要があります。 DSC ETW ログを確認するには、イベント ビューアーに移動し、次のフォルダーを開きます。Applications and Services - Microsoft - Windows - Desired State Configuration。  既定では稼動チャネルがありますが、構成を実行する前に分析チャネルとデバッグ チャネルを有効にします。
 分析/デバッグ チャネルを有効にするには、次のスクリプトを実行できます。
 
 ```powershell
@@ -283,7 +283,7 @@ $programFilesPath = ${env:ProgramFiles(x86)}
 
 このチェックリストには、テストする必要がある重要な項目や見落とされがちな項目が含まれています。 一連のテスト (テストするリソースに固有であり、ここに記載されていない、主に機能のテスト) があります。 負のテスト ケースを忘れないでください。
 
-## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>ベスト プラクティスリソース モジュールには、ResourceDesignerTests.ps1 スクリプトを含むテスト フォルダーが含まれています。
+## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>ベスト プラクティス:リソース モジュールに、ResourceDesignerTests.ps1 スクリプトを含む Test フォルダーが含まれている
 
 リソース モジュール内に "Test" フォルダーを作成し、`ResourceDesignerTests.ps1` ファイルを作成し、指定したモジュール内のすべてのリソースに対して **Test-xDscResource** と **Test-xDscSchema** を使用してテストを追加することをお勧めします。
 この方法で、指定したモジュールのすべてのリソースのスキーマをすばやく検証し、発行する前にサニティ チェックを実行できます。
@@ -294,7 +294,7 @@ Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>ベスト プラクティスリソース フォルダーには、スキーマを生成するためのリソース デザイナー スクリプトが含まれています。
+## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>ベスト プラクティス:リソース フォルダーにスキーマを生成するためのリソース デザイナー スクリプトが含まれている
 
 各リソースに、リソースの mof スキーマを生成する、リソース デザイナー スクリプトを含める必要があります。 このファイルを `<ResourceName>\ResourceDesignerScripts` に配置し、Generate `<ResourceName>Schema.ps1` という名前を付ける必要があります。xRemoteFile リソースの場合、このファイルは `GenerateXRemoteFileSchema.ps1` と呼ばれ、次を含みます。
 
@@ -310,7 +310,7 @@ $CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -T
 New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile
 ```
 
-## <a name="best-practice-resource-supports--whatif"></a>ベスト プラクティスリソースによる-whatif をサポートします。
+## <a name="best-practice-resource-supports--whatif"></a>ベスト プラクティス:リソースによる -WhatIf のサポート
 
 リソースが "危険な" 操作を実行する場合は、`-WhatIf` 機能を実装することをお勧めします。 完了したら、`-WhatIf` スイッチを使用しないでコマンドが実行された場合にどのようなことが発生するかについて、`-WhatIf` 出力で正しく記述されていることを確認します。
 また、`–WhatIf` スイッチが存在する場合は、その操作が実行されない (ノードの状態の変更は行われない) ことも確認します。

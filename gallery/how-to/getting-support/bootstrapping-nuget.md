@@ -4,11 +4,11 @@ contributor: manikb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: NuGet のブートストラップ
 ms.openlocfilehash: 6d8f106bc3b8741203e87e4c097948a843f06d6e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084387"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>NuGet プロバイダーと NuGet.exe をブートストラップする
 
@@ -155,7 +155,7 @@ $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
 $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
 ```
 
-2 つ目は、NuGet.Org の Web サイト ([https://dist.nuget.org/index.html](https://www.nuget.org/downloads)) から NuGet.exe をダウンロードする方法です。運用環境のマシンで使用する NugGet のバージョンを選択するときに、2.8.5.208 よりも新しく、"推奨" の表記があるバージョンであることを確認してください。 ブラウザーを使用してダウンロードした場合、ファイルのブロックを解除することを忘れないようにしてください。 この操作は `Unblock-File` コマンドレットを使用して実行できます。
+2 つ目は、次に示す NuGet.Org の Web サイトから NuGet.exe をダウンロードする方法です: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads)。運用環境のマシンで使用する NugGet のバージョンを選択するときに、2.8.5.208 よりも新しく、"推奨" の表記があるバージョンであることを確認してください。 ブラウザーを使用してダウンロードした場合、ファイルのブロックを解除することを忘れないようにしてください。 この操作は `Unblock-File` コマンドレットを使用して実行できます。
 
 どちらの場合も、NuGet.exe ファイルを `$env:path` の任意の場所にコピーできますが、通常は次の場所にコピーします。
 

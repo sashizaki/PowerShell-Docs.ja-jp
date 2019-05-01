@@ -2,12 +2,12 @@
 title: PowerShell Core の WS-Management (WSMan) リモート処理
 description: WSMan を使用した PowerShell Core のリモート処理
 ms.date: 08/06/2018
-ms.openlocfilehash: ce58ed88f59f32b0f83951e55de36e829f7fa3f4
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403453"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058881"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core の WS-Management (WSMan) リモート処理
 
@@ -28,7 +28,7 @@ PowerShell でリモートからの受信接続を受け入れるようにする
 
 スクリプトは、以下のことを行います
 
-1. %windir%\System32\PowerShell 内にプラグイン用のディレクトリを作成します
+1. `$env:windir\System32\PowerShell` 内にプラグイン用のディレクトリを作成します
 1. この場所に pwrshplugin.dll をコピーします
 1. 構成ファイルを生成します
 1. WinRM にそのプラグインを登録します

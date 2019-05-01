@@ -3,22 +3,22 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成内での条件付きステートメントとループ
 ms.openlocfilehash: 0073d94d28afbb45bb635442129a6cddde4c805a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402317"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080137"
 ---
 # <a name="conditional-statements-and-loops-in-configurations"></a>構成内での条件付きステートメントとループ
 
-行うことができます、[構成](configurations.md)より動的な PowerShell のフロー制御キーワードを使用します。 この記事では説明する条件付きのステートメントとループを使用して、動的な構成を作成する方法。 結合条件とループの[パラメーター](add-parameters-to-a-configuration.md)と[構成データ](configData.md)できる柔軟性と制御の構成をコンパイルするときにします。
+PowerShell のフロー制御キーワードを使って、[構成](configurations.md)をより動的にすることができます。 この記事では、条件ステートメントとループを使って構成をより動的にする方法を説明します。 条件とループを[パラメーター](add-parameters-to-a-configuration.md)および[構成データ](configData.md)と組み合わせることで、構成をコンパイルするときの柔軟性と制御が増します。
 
-関数またはスクリプト ブロックと同じようには、構成内の任意の PowerShell 言語を使用できます。 使用するステートメントは、".mof"ファイルをコンパイルするための構成を呼び出すときにのみ評価されます。 次の例では、概念を説明する単純なシナリオを説明します。 条件は、ループはパラメーターと構成データをよりよく使用されます。
+関数またはスクリプト ブロックと同じように、構成内で任意の PowerShell 言語を使用できます。 使用するステートメントは、".mof" ファイルをコンパイルするために構成を呼び出すときにのみ評価されます。 次の例では、簡単なシナリオを使って概念を説明します。 条件とループは、パラメーターや構成データと共に使われることがよくあります。
 
-この簡単な例で、**サービス**リソース ブロックは、現在の状態を保持する".mof"ファイルを生成するコンパイル時に、サービスの現在の状態を取得します。
+この簡単な例では、**Service** リソース ブロックでコンパイル時にサービスの現在の状態を取得し、現在の状態を保持する ".mof" ファイルを生成します。
 
 > [!NOTE]
-> 動的リソースのブロックを使用すると、Intellisense の有効性を切断します。 PowerShell のパーサーでは、構成をコンパイルするまで指定された値が許容されるかどうかを判断できません。
+> 動的な Resource ブロックを使うと、IntelliSense の有効性は失われます。 PowerShell のパーサーでは、構成がコンパイルされるまで、指定された値が許容されるかどうかを判断できません。
 
 ```powershell
 Configuration ServiceState
@@ -37,7 +37,7 @@ Configuration ServiceState
 }
 ```
 
-さらに、作成することが、**サービス**ブロックの現在のコンピューター上のすべてのサービスのリソースを使用して、`foreach`ループします。
+さらに、`foreach` ループを使って、現在のコンピューター上のすべてのサービスに対して **Service** ブロック リソースを作成できます。
 
 ```powershell
 Configuration ServiceState
@@ -59,7 +59,7 @@ Configuration ServiceState
 }
 ```
 
-単純なを使用してオンラインでマシンの構成を作成することだけでした`if`ステートメント。
+また、簡単な `if` ステートメントを使うことで、オンラインになっているコンピューターに対してのみ構成を作成することができます。
 
 ```powershell
 Configuration ServiceState
@@ -85,7 +85,7 @@ Configuration ServiceState
 ```
 
 > [!NOTE]
-> 動的なリソースは、上記の例のリファレンスで、現在のコンピューターをブロックします。 構成を作成しているコンピューターになる、このインスタンスは、ターゲット ノードではありません。
+> 上の例の動的なリソース ブロックでは、現在のコンピューターが参照されています。 このインスタンスでは、それはターゲット ノードではなく、構成を作成しているコンピューターです。
 
 <!---
 Mention Get-DSCConfigurationFromSystem
@@ -93,19 +93,19 @@ Mention Get-DSCConfigurationFromSystem
 
 ## <a name="summary"></a>要約
 
-要約すると、構成内の任意の PowerShell 言語を使用することができます。
+まとめると、構成内では任意の PowerShell 言語を使うことができます。
 
-これなどが含まれます。
+これには次のものが含まれます。
 
 - カスタム オブジェクト
-- ハッシュ テーブル
+- ハッシュテーブル
 - 文字列操作
 - リモート処理
 - WMI と CIM
-- Active Directory オブジェクト
+- ActiveDirectory オブジェクト
 - その他...
 
-構成で定義されている任意の PowerShell コードがコンパイル時に評価されますが、構成を含むスクリプトのコードを配置することもできます。 構成ブロック外の任意のコードは、構成をインポートするときに実行されます。
+構成で定義されているすべての PowerShell コードはコンパイル時に評価されますが、構成を含むスクリプトにコードを配置することもできます。 構成ブロックの外部にあるすべてのコードは、構成をインポートするときに実行されます。
 
 ## <a name="see-also"></a>関連項目
 

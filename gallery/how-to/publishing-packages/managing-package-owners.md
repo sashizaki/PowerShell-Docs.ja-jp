@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: パッケージの所有者を管理する
 ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50003870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084149"
 ---
 # <a name="managing-package-owners"></a>パッケージの所有者を管理する
 
@@ -34,7 +34,7 @@ PowerShell ギャラリーにパッケージを公開した後、パッケージ
 5. パッケージの所有者になるための招待として、メールが新しい共同所有者に送信されます。
 6. そのユーザーがリンクをクリックすると、パッケージを完全にコントロールできる完全共同所有者になります。所有者となっている他のユーザーを削除することもできます。
 
-**注**: 新しい所有者が所有権を確定するまで、パッケージの所有者リストに追加されることは*ありません*。
+**注意**:新しい所有者が所有権を確定するまで、パッケージの所有者リストに追加されることは "*ありません*"。
 **[所有者の管理]** ページを表示すると、現在の所有者のところに "pending approval" (承認保留) と表示されます。
 他の所有者を削除できるように、その招待を削除できます。
 この招待プロセスにより、パッケージの所有者として他のユーザーが間違って追加されることがありません。

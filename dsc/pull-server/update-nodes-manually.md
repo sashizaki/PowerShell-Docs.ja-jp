@@ -3,32 +3,32 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: プル サーバーからのノードを更新する
 ms.openlocfilehash: 4333a5bf82ef45f22a062942ebe93409433623f5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402150"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079100"
 ---
 # <a name="update-nodes-from-a-pull-server"></a>プル サーバーからのノードを更新する
 
-以下のセクションでは、プル サーバーを既に設定したことを前提としています。 プル サーバーを設定していない場合は、次のガイドを使用できます。
+以下のセクションでは、プル サーバーを既にセットアップしてあるものとします。 プル サーバーをセットアップしていない場合は、次のガイドを使用できます。
 
 - [DSC SMB プル サーバーを設定する](pullServerSmb.md)
 - [DSC HTTP プル サーバーを設定する](pullServer.md)
 
-各ターゲット ノードは、構成、リソースをダウンロードしてもその状態を報告を構成できます。 この記事では、ダウンロード、およびリソースを自動的にダウンロードするクライアントの構成に利用できるように、リソースをアップロードする方法を示します。 ノードがを通じて割り当てられた構成を受信すると**プル**または**プッシュ**(v5) では、自動的にダウンロードし、LCM で指定された場所からの構成に必要なすべてのリソース。
+各ターゲット ノードは、構成やリソースをダウンロードし、さらにその状態を報告するように構成できます。 この記事では、ダウンロードできるようにリソースをアップロードする方法、およびリソースを自動的にダウンロードするようにクライアントを構成する方法を示します。 ノードは、割り当てられた構成を**プル**または**プッシュ** (v5) によって受け取ると、構成で必要なすべてのリソースを LCM で指定された場所から自動的にダウンロードします。
 
-## <a name="using-the-update-dscconfiguration-cmdlet"></a>Update-dscconfiguration コマンドレットを使用してください。
+## <a name="using-the-update-dscconfiguration-cmdlet"></a>Update-DSCConfiguration コマンドレットの使用
 
-PowerShell 5.0 以降、 [Update-dscconfiguration](/powershell/module/psdesiredstateconfiguration/update-dscconfiguration)コマンドレット、LCM の構成をプル サーバーからその構成を更新するノードを強制的にします。
+PowerShell 5.0 以降では、[Update-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/update-dscconfiguration) コマンドレットによって、LCM で構成されているプル サーバーからノードの構成が強制的に更新されます。
 
 ```powershell
 Update-DSCConfiguration -ComputerName "Server01"
 ```
 
-## <a name="using-invoke-cimmethod"></a>呼び出す CIMMethod を使用します。
+## <a name="using-invoke-cimmethod"></a>Invoke-CIMMethod の使用
 
-PowerShell 4.0 では、プル クライアントを使用してその構成を更新する手動で強制できます[Invoke-cimmethod](/powershell/module/cimcmdlets/invoke-cimmethod)します。 次の例では、指定した資格情報で CIM セッションを作成するが適切な CIM メソッドを呼び出すおよびセッションを削除します。
+PowerShell 4.0 ではまだ、[Invoke-CIMMethod](/powershell/module/cimcmdlets/invoke-cimmethod) を使用して手動で強制的にプル クライアントの構成を更新できます。 次の例では、指定した資格情報で CIM セッションを作成し、適切な CIM メソッドを呼び出して、セッションを削除します。
 
 ```powershell
 $cimSession = New-CimSession -ComputerName "Server01" -Credential $(Get-Credential)

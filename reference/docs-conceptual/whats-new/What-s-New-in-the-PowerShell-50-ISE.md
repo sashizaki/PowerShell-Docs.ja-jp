@@ -3,12 +3,12 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: PowerShell 50 ISE の新機能
 ms.assetid: 38648d47-7c27-4b37-a40e-ad29948519c2
-ms.openlocfilehash: f05e3f3f95c8ceec6e843b8a1c79e6f092e1b87b
-ms.sourcegitcommit: 221b7daab7f597f8b2e4864cf9b5d9dda9b9879b
-ms.translationtype: MTE95
+ms.openlocfilehash: 2d953bc4553de7720c590304d29750b84a1ef3b2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52320586"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058184"
 ---
 # <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE の新機能
 このトピックでは、各バージョンの Windows PowerShell Integrated Scripting Environment (ISE) に導入された新機能と更新された機能について説明します。
@@ -147,11 +147,11 @@ Windows PowerShell ISE 2.0 では、コマンド ウィンドウと出力ウィ�
 
 コマンド ライン (「**Powershell_ise.exe**」を入力) から Windows PowerShell ISE を起動する場合、次の新しいコマンド ライン スイッチを追加できます。
 
-- *-NoProfile*: **$profile** を実行せずに Windows PowerShell ISE を起動する
+- *-NoProfile*:**$profile** を実行せずに Windows PowerShell ISE を起動する
 
-- *-Help*: ヘルプ ウィンドウを表示する
+- *-Help*:ヘルプ ウィンドウを表示する
 
-- *-mta*: マルチスレッド アパートメント モードで Windows PowerShell ISE を起動する。 Windows PowerShell ISE の既定の操作モードは、1 つのシングル スレッド アパートメント モード、つまり *-sta* です。
+- *-mta*:マルチスレッド アパートメント モードで Windows PowerShell ISE を起動する。 Windows PowerShell ISE の既定の操作モードは、1 つのシングル スレッド アパートメント モード、つまり *-sta* です。
 
 **この変更の利点**
 

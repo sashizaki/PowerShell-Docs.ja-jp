@@ -4,11 +4,11 @@ keywords: PowerShell, コマンドレット
 title: リスト ボックスから項目を選択する
 ms.assetid: 327c7cc5-21d0-4ace-b151-aa1491d1d3c2
 ms.openlocfilehash: e3d52839409a2fd58fbdc924a2b92d96fbecee53
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55682750"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086070"
 ---
 # <a name="selecting-items-from-a-list-box"></a>リスト ボックスから項目を選択する
 
@@ -75,7 +75,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-このスクリプトは 2 つの .NET Framework クラス、つまり **System.Drawing** と **System.Windows.Forms** を最初に読み込みます。 次に、.NET Framework クラス **System.Windows.Forms.Form** の新しいインスタンスを開始します。これにより、コントロールの追加を開始する空白のフォームまたはウィンドウが作成されます。
+最初に、スクリプトは次の 2 つの .NET Framework クラスを読み込みます。**System.Drawing** と **System.Windows.Forms** です。 次に、.NET Framework クラス **System.Windows.Forms.Form** の新しいインスタンスを開始します。これにより、コントロールの追加を開始する空白のフォームまたはウィンドウが作成されます。
 
 ```powershell
 Add-Type -AssemblyName System.Windows.Forms
@@ -181,4 +181,4 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 - [Hey Scripting Guy: これらの PowerShell GUI の例が機能しないのはなぜですか。](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub: Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week: リスト ボックスからアイテムを選択する](https://technet.microsoft.com/library/ff730949.aspx)
+- [Windows PowerShell Tip of the Week: リスト ボックスから項目を選択する](https://technet.microsoft.com/library/ff730949.aspx)

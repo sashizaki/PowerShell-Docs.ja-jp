@@ -4,11 +4,11 @@ keywords: PowerShell, コマンドレット
 title: レジストリ エントリの操作
 ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
 ms.openlocfilehash: 667d17d0d62745a27ffef5f1912336b72f74c2a9
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293080"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086036"
 ---
 # <a name="working-with-registry-entries"></a>レジストリ エントリの操作
 
@@ -158,7 +158,7 @@ Set-ItemProperty -Path HKCU:\Environment -Name Path -Value $newpath
 at a command prompt.
 
 次の例では、上記の例で追加したパスを削除することで **Path** エントリを変更します。
-`Get-ItemProperty` を引き続き使って現在の値を取得します。`reg query` から返された文字列を解析しなくても済むようにするためです。 **Path** エントリに追加された最後のパスを取得するために、**SubString** および **LastIndexOf** メソッドを使います。
+`reg query` から返された文字列を解析しなくて済むようにするため、`Get-ItemProperty` を引き続き使って現在の値を取得します。 **Path** エントリに追加された最後のパスを取得するために、**SubString** および **LastIndexOf** メソッドを使います。
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path

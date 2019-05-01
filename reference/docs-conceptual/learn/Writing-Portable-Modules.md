@@ -3,40 +3,40 @@ ms.date: 12/14/2018
 keywords: PowerShell, コマンドレット
 title: 移植可能なモジュールの作成
 ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55682551"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086410"
 ---
 # <a name="portable-modules"></a>移植可能なモジュール
 
-Windows PowerShell が用に記述された[.NET Framework][]用の PowerShell Core の書き込み中に[.NET Core][]します。 移植可能なモジュールとは、Windows PowerShell と PowerShell Core の両方で動作するモジュールです。 .NET Framework と .NET Core は互換性が高いが、2 つの利用可能な Api の違いがあります。 違いが、Api で Windows PowerShell と PowerShell Core で使用できます。 モジュールの両方の環境で使用するものでは、これらの違いを意識する必要があります。
+Windows PowerShell が [.NET Framework][] 用であるのに対し、PowerShell Core は [.NET Core][] 用に作成されています。 移植可能なモジュールとは、Windows PowerShell と PowerShell Core の両方で動作するモジュールです。 .NET Framework と .NET Core の間には高い互換性がありますが、使用可能な API には違いがあります。 また、Windows PowerShell と PowerShell Core でも使用できる API が異なります。 両方の環境で使用するモジュールを作成するときは、これらの違いを意識する必要があります。
 
 ## <a name="porting-an-existing-module"></a>既存のモジュールの移植
 
 ### <a name="porting-a-pssnapin"></a>PSSnapIn の移植
 
-PowerShell スナップイン (PSSnapIn) は、PowerShell Core でサポートされていません。 ただし、PSSnapIn を PowerShell モジュールに変換する単純なは。 派生したクラスの 1 つのソース ファイルで PSSnapIn 登録コードは、通常、 [PSSnapIn][]します。 このソース ファイル、ビルドから削除します。これが不要になった。
+PowerShell スナップイン (PSSnapIn) は、PowerShell Core ではサポートされていません。 ただし、PSSnapIn を PowerShell モジュールに変換するのは簡単です。 通常、PSSnapIn の登録コードは、[PSSnapIn][] の派生クラスの単一のソース ファイルに含まれます。 このソース ファイルをビルドから削除します。これは必要ありません。
 
-使用[New-modulemanifest][] PSSnapIn 登録コードの必要性を置換する新しいモジュール マニフェストを作成します。 (説明) などの PSSnapIn から値の一部は、モジュール マニフェスト内で再利用できます。
+[New-ModuleManifest][] を使って、PSSnapIn 登録コードに必要なものを置き換える新しいモジュール マニフェストを作成します。 PSSnapIn の値の一部 (説明など) は、モジュール マニフェストで再利用できます。
 
-`RootModule`コマンドレットを実装するアセンブリ (dll) の名前に、モジュール マニフェスト内のプロパティを設定する必要があります。
+モジュール マニフェストの `RootModule` プロパティは、コマンドレットを実装するアセンブリ (dll) の名前に設定する必要があります。
 
-### <a name="the-net-portability-analyzer-aka-apiport"></a>.NET Portability Analyzer (APIPort とも呼ばれます)
+### <a name="the-net-portability-analyzer-aka-apiport"></a>.NET Portability Analyzer (別名 APIPort)
 
-PowerShell Core で動作、開始して Windows PowerShell 用に記述されたモジュールをポートに、 [.NET Portability Analyzer][]します。 モジュールで使用される .NET Api が .NET Framework、.NET Core、およびその他の .NET ランタイムと互換性があるかを判断するコンパイル済みのアセンブリに対してこのツールを実行します。 このツールは、存在する場合の代替 Api をお勧めします。 追加する必要がありますそれ以外の場合、[ランタイム チェック][]し、特定のランタイムで使用できない機能を制限します。
+Windows PowerShell 用に記述されたモジュールを PowerShell Core で動作するように移植するには、最初に [.NET Portability Analyzer][] を使用します。 コンパイル済みアセンブリに対してこのツールを実行し、モジュールで使われている .NET API が .NET Framework、.NET Core、および他の .NET ランタイムと互換性があるかどうかを判断します。 このツールでは、代替 API がある場合は指摘されます。 それ以外の場合は、[ランタイム チェック][]を追加し、特定のランタイムで使用できない機能を制限することが必要な場合があります。
 
 ## <a name="creating-a-new-module"></a>新しいモジュールの作成
 
-使用する推奨事項は、新しいモジュールを作成する場合、 [.NET CLI][]します。
+新しいモジュールを作成する場合に推奨されるのは、[.NET CLI][] を使用することです。
 
-### <a name="installing-the-powershell-standard-module-template"></a>標準の PowerShell モジュールのテンプレートをインストールします。
+### <a name="installing-the-powershell-standard-module-template"></a>PowerShell 標準モジュール テンプレートのインストール
 
-.NET CLI がインストールされると、単純な PowerShell モジュールを生成するテンプレート ライブラリをインストールします。
-モジュールは、Windows PowerShell、PowerShell Core、Windows、Linux、および macOS の操作に互換性があります。
+.NET CLI をインストールした後、簡単な PowerShell モジュールを生成するためのテンプレート ライブラリをインストールします。
+そのモジュールは、Windows PowerShell、PowerShell Core、Windows、Linux、および macOS と互換性を持つようになります。
 
-次の例では、テンプレートをインストールする方法を示します。
+次の例では、テンプレートのインストール方法を示します。
 
 ```powershell
 dotnet new -i Microsoft.PowerShell.Standard.Module.Template
@@ -74,7 +74,7 @@ PowerShell Standard Module                        psmodule           [C#]       
 
 ### <a name="creating-a-new-module-project"></a>新しいモジュール プロジェクトの作成
 
-テンプレートをインストールした後は、そのテンプレートを使用して、新しい PowerShell モジュール プロジェクトを作成できます。 この例では、サンプル モジュールが 'myModule' と呼ばれます。
+テンプレートをインストールした後は、そのテンプレートを使用して新しい PowerShell モジュール プロジェクトを作成できます。 この例のサンプル モジュールの名前は "myModule" です。
 
 ```
 PS> mkdir myModule
@@ -101,9 +101,9 @@ Running 'dotnet restore' on C:\Users\Steve\myModule\myModule.csproj...
 Restore succeeded.
 ```
 
-### <a name="building-the-module"></a>モジュールの構築
+### <a name="building-the-module"></a>モジュールのビルド
 
-プロジェクトをビルドするのにには、標準の .NET CLI コマンドを使用します。
+標準の .NET CLI コマンドを使用して、プロジェクトをビルドします。
 
 ```powershell
 dotnet build
@@ -126,7 +126,7 @@ Time Elapsed 00:00:05.40
 
 ### <a name="testing-the-module"></a>モジュールのテスト
 
-モジュールをビルドした後は、インポートし、サンプルのコマンドレットを実行できます。
+モジュールをビルドした後は、それをインポートしてサンプルのコマンドレットを実行できます。
 
 ```powershell
 ipmo .\bin\Debug\netstandard2.0\myModule.dll
@@ -160,52 +160,52 @@ FavoriteNumber FavoritePet
              7 Cat
 ```
 
-次のセクションについて詳しく説明このテンプレートで使用されるテクノロジの一部です。
+次のセクションでは、このテンプレートで使用されているテクノロジの一部について詳しく説明します。
 
 ## <a name="net-standard-library"></a>.NET 標準ライブラリ
 
-[.NET standard][]はすべての .NET 実装で使用できる .NET Api の正式な仕様です。 .NET Standard のバージョンと互換性のある .NET Framework と .NET Core のバージョンで動作を .NET Standard をターゲットとするコードを管理します。
+[.NET Standard][] は、すべての .NET 実装で使用できる .NET API の正式な仕様です。 .NET Standard をターゲットとするマネージド コードは、.NET Standard のそのバージョンと互換性のある .NET Framework および .NET Core のバージョンで動作します。
 
 > [!NOTE]
-> .NET Core での API の実装が .NET standard API が存在する可能性があります、スローする可能性が、 `PlatformNotSupportedException` 、実行時にように Windows PowerShell および PowerShell Core との互換性を確認するベスト プラクティスは、モジュール内での両方の環境のテストを実行します。
-> クロスプラット フォーム対応にするものでは、モジュールの場合は、Linux と macOS でテストを実行します。
+> .NET Standard に API が存在していても、.NET Core での API の実装で実行時に `PlatformNotSupportedException` がスローされる可能性があるので、Windows PowerShell および PowerShell Core との互換性を確認するため、両方の環境内でモジュールのテストを実行するのがベスト プラクティスです。
+> クロスプラットフォームを意図したモジュールの場合は、Linux と macOS でもテストを実行します。
 
-.NET Standard をターゲットとにより、モジュールの進化に伴って、互換性のない Api しない誤って取得に導入されたモジュール。 非互換性は、ランタイムではなくコンパイル時に検出されます。
+.NET Standard をターゲットにすると、モジュールが進化しても、互換性のない API が誤ってモジュールに導入されないことが保証されます。 非互換性は、実行時ではなくコンパイル時に検出されます。
 
-ただし、必須ではなく .NET 標準モジュールの Windows PowerShell と PowerShell Core の両方を使用するターゲットに互換性のある Api を使用する限り。 中間言語 (IL) は、2 つのランタイムとの間に互換性があります。 .NET Framework 4.6.1 を対象 .NET Standard 2.0 と互換性があることができます。 .NET Standard 2.0 以外の Api を使用しないし、モジュールは、再コンパイルせずに PowerShell Core 6 では機能します。
+ただし、互換性のある API を使用してさえいれば、.NET Standard をターゲットにしなくても、モジュールは Windows PowerShell と PowerShell Core の両方で動作します。 中間言語 (IL) は、2 つのランタイムの間で互換性があります。 .NET Framework 4.6.1 をターゲットにでき、それは .NET Standard 2.0 と互換性があります。 .NET Standard 2.0 の対象外の API を使用していなければ、モジュールは再コンパイルしなくても PowerShell Core 6 で動作します。
 
-## <a name="powershell-standard-library"></a>PowerShell の標準ライブラリ
+## <a name="powershell-standard-library"></a>PowerShell Standard ライブラリ
 
-[PowerShell の標準][]ライブラリは、その標準のバージョン以上のすべての PowerShell バージョンで利用可能な PowerShell Api の正式な仕様。
+[PowerShell Standard][] ライブラリは、その標準のバージョン以降のすべての PowerShell のバージョンで利用可能な PowerShell API の正式な仕様です。
 
-たとえば、[PowerShell の標準 5.1][]は、Windows PowerShell 5.1 と PowerShell Core 6.0 の両方と互換性のある以降です。
+たとえば、[PowerShell Standard 5.1][] は、Windows PowerShell 5.1 および PowerShell Core 6.0 以降の両方と互換性があります。
 
-PowerShell の標準ライブラリを使用して、モジュールをコンパイルすることをお勧めします。 ライブラリにより、Api が使用可能で Windows PowerShell と PowerShell Core 6 の両方に実装されているようになります。
-PowerShell の標準は、常に上位互換になります。 標準ライブラリ 5.1 の PowerShell を使用して構築されたモジュールは、PowerShell の将来のバージョンと互換性のある常になります。
+PowerShell Standard ライブラリを使用してモジュールをコンパイルすることをお勧めします。 ライブラリにより、API が使用可能で、Windows PowerShell と PowerShell Core 6 の両方で実装されていることが保証されます。
+PowerShell Standard は、常に上位互換性があるように意図されています。 PowerShell Standard ライブラリ 5.1 を使用してビルドされたモジュールは、PowerShell の将来のバージョンと常に互換性があります。
 
 ## <a name="module-manifest"></a>モジュール マニフェスト
 
 ### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a>Windows PowerShell および PowerShell Core との互換性を示す
 
-モジュールが Windows PowerShell と PowerShell Core の両方で動作するかを検証した後、モジュール マニフェストが明示的に示す互換性を使用して、 [CompatiblePSEditions][]プロパティ。 値`Desktop`モジュールが Windows PowerShell では、値の中に互換性があることを意味`Core`モジュールが PowerShell Core と互換性があることを意味します。 両方を含む`Desktop`と`Core`モジュールが Windows PowerShell と PowerShell Core の両方と互換性があることを意味します。
+モジュールが Windows PowerShell と PowerShell Core の両方で動作することを検証した後は、モジュール マニフェストで [CompatiblePSEditions][] プロパティを使用して、互換性を明示的に示す必要があります。 値 `Desktop` はモジュールに Windows PowerShell との互換性があることを意味し、値 `Core` はモジュールに PowerShell Core との互換性があることを意味します。 `Desktop` と `Core` の両方を含めると、モジュールに Windows PowerShell および PowerShell Core の両方との互換性があることを意味します。
 
 > [!NOTE]
-> `Core` わけではありません、モジュールが、Windows、Linux、および macOS と互換性があります。
-> **CompatiblePSEditions**プロパティは PowerShell v5 で導入されました。 モジュール マニフェストを使用して、 **CompatiblePSEditions**プロパティは、PowerShell v5 以前のバージョンでの読み込みに失敗します。
+> `Core` によってモジュールに Windows、Linux、macOS との互換性があることが自動的に示されることはありません。
+> PowerShell v5 では **CompatiblePSEditions** プロパティが導入されました。 **CompatiblePSEditions** プロパティを使用しているモジュール マニフェストは、PowerShell v5 より前のバージョンに読み込むことができません。
 
 ### <a name="indicating-os-compatibility"></a>OS の互換性を示す
 
-最初に、Linux と macOS で、モジュールが動作する検証します。 次に、モジュール マニフェストでこれらのオペレーティング システムとの互換性を示します。 これにより、ユーザーに発行されると、オペレーティング システムのモジュールを見つけやすく、 [PowerShell ギャラリー][]します。
+最初に、モジュールが Linux と macOS で動作することを検証します。 次に、モジュール マニフェストでこれらのオペレーティング システムとの互換性を示します。 これにより、[PowerShell ギャラリー][]に発行した後で、ユーザーがオペレーティング システム用のモジュールを見つけやすくなります。
 
-モジュール マニフェスト内で、`PrivateData`プロパティは、`PSData`サブプロパティ。 省略可能な`Tags`プロパティの`PSData`は PowerShell ギャラリーに表示される値の配列を受け取ります。 PowerShell ギャラリーには、次の互換性の値がサポートされています。
+モジュール マニフェスト内で、`PrivateData` プロパティには `PSData` サブプロパティがあります。 `PSData` の省略可能な `Tags` プロパティは、PowerShell ギャラリーに表示される値の配列を受け取ります。 PowerShell ギャラリーでは、次の互換性の値がサポートされています。
 
 | タグ               | 説明                                |
 |-------------------|--------------------------------------------|
-| PSEdition_Core    | PowerShell Core 6 と互換性があります。          |
-| PSEdition_Desktop | Windows PowerShell との互換性         |
-| Windows           | Windows と互換性があります。                    |
-| Linux             | Linux (特定のディストリビューションがありません) との互換性 |
-| macOS             | MacOS と互換性があります。                      |
+| PSEdition_Core    | PowerShell Core 6 と互換性があります          |
+| PSEdition_Desktop | Windows PowerShell と互換性があります         |
+| Windows           | Windows と互換性があります                    |
+| Linux             | Linux と互換性があります (特定のディストリビューションはなし) |
+| macOS             | macOS と互換性があります                      |
 
 次に例を示します。
 
@@ -261,8 +261,8 @@ PowerShell の標準は、常に上位互換になります。 標準ライブ�
 [ランタイム チェック]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
 [.NET Standard]: /dotnet/standard/net-standard
-[PowerShell の標準]: https://github.com/PowerShell/PowerShellStandard
-[PowerShell の標準 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
+[PowerShell Standard]: https://github.com/PowerShell/PowerShellStandard
+[PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell ギャラリー]: https://www.powershellgallery.com
-[.NET portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
+[.NET Portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/gallery/concepts/module-psedition-support

@@ -4,11 +4,11 @@ keywords: PowerShell, コマンドレット
 title: 複数選択のリスト ボックス
 ms.assetid: f74cd5d9-da57-4802-b614-0b194a7bc8f8
 ms.openlocfilehash: a762145dc197ec7e1424b2fbdcef5e7380d13803
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402549"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057960"
 ---
 # <a name="multiple-selection-list-boxes"></a>複数選択のリスト ボックス
 
@@ -183,6 +183,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>参照
 
-- [Hey Scripting Guy: これらの PowerShell GUI の例が機能しないのはなぜですか。](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHubDave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell の Tip of the Week:複数選択のリスト ボックス - その他](https://technet.microsoft.com/library/ff730950.aspx)
+- [Hey Scripting Guy:これらの PowerShell GUI の例が機能しないのはなぜですか。](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [GitHub:Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [Windows PowerShell Tip of the Week:オプションの複数選択リスト - その他](https://technet.microsoft.com/library/ff730950.aspx)

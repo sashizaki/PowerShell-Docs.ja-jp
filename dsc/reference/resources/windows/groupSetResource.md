@@ -4,11 +4,11 @@ keywords: DSC, PowerShell, 構成, セットアップ
 description: ターゲット ノード上のローカル グループを管理するためのメカニズムを備えています。
 title: DSC GroupSet リソース
 ms.openlocfilehash: afe4c4d33ac5620c411481e93d76a1f90c26deb9
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047713"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077179"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet リソース
 
@@ -44,7 +44,7 @@ Group [string] #ResourceName
 | MembersToInclude| このプロパティは、グループの既存のメンバーシップにメンバーを追加するために使用します。 このプロパティの値は、*Domain*\\*UserName* 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**Members** プロパティは使用しないでください。 併用した場合、エラーが発生します。|
 | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は DependsOn = "[ResourceType]ResourceName" になります。|
 
-## <a name="example-1-ensuring-groups-are-present"></a>例 1:確保グループが存在します。
+## <a name="example-1-ensuring-groups-are-present"></a>例 1:グループが存在することを確認する
 
 次に、"myGroup" と "myOtherGroup" という 2 つのグループが存在することを保証する例を示します。
 

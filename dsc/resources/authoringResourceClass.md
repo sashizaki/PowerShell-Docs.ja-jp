@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell クラスを使用したカスタム DSC リソースの記述
-ms.openlocfilehash: 0759685b04688f574d72b62a15833832ad19e816
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402870"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076720"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell クラスを使用したカスタム DSC リソースの記述
 
@@ -21,7 +21,7 @@ Windows PowerShell 5.0 の PowerShell クラスの導入により、クラスを
 
 DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」をご覧ください。
 
->**注:** ジェネリック コレクションは、クラス ベースのリソースでサポートされていません。
+>**注:** クラスベースのリソースでは、汎用コレクションはサポートされていません。
 
 ## <a name="folder-structure-for-a-class-resource"></a>クラス リソースのフォルダー構造
 
@@ -30,8 +30,8 @@ PowerShell クラスを使用して DSC カスタム リソースを実装する
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
     |- MyDscResource (folder)
-        |- MyDscResource.psm1
-           MyDscResource.psd1
+        MyDscResource.psm1
+        MyDscResource.psd1
 ```
 
 ## <a name="create-the-class"></a>クラスの作成
@@ -64,10 +64,10 @@ DSC リソースのスキーマは、クラスのプロパティとして定義�
 
 属性によってプロパティが変更されることに注意してください。 属性の意味は次のとおりです。
 
-- **Dscproperty (key)**:プロパティが必要です。 プロパティはキーです。 キーとしてマークされたすべてのプロパティの値を組み合わせて、構成内のリソース インスタンスを一意に識別する必要があります。
-- **Dscproperty (mandatory)**:プロパティが必要です。
-- **Dscproperty (notconfigurable)**:プロパティは読み取り専用です。 この属性でマークされたプロパティは、構成で設定できませんが、**Get()** メソッド (存在する場合) によって設定されます。
-- **DscProperty()**:プロパティは構成可能ですが必須ではありません。
+- **DscProperty(Key)**:このプロパティは必須です。 プロパティはキーです。 キーとしてマークされたすべてのプロパティの値を組み合わせて、構成内のリソース インスタンスを一意に識別する必要があります。
+- **DscProperty(Mandatory)**:このプロパティは必須です。
+- **DscProperty(NotConfigurable)**:このプロパティは読み取り専用です。 この属性でマークされたプロパティは、構成で設定できませんが、**Get()** メソッド (存在する場合) によって設定されます。
+- **DscProperty()**:このプロパティは構成可能ですが、必須ではありません。
 
 **$Path** プロパティと **$SourcePath** プロパティは、両方とも文字列です。 **$CreationTime** は、[DateTime](/dotnet/api/system.datetime) プロパティです。 **$Ensure** プロパティは、次のように定義された列挙型です。
 
@@ -86,7 +86,6 @@ enum Ensure
 このコードには、ファイルを **$SourcePath** から **$Path** にコピーするヘルパー関数である CopyFile() 関数も含まれています。
 
 ```powershell
-
     <#
         This method is equivalent of the Set-TargetResource script function.
         It sets the resource to the desired state.
@@ -217,6 +216,7 @@ enum Ensure
 ```
 
 ### <a name="the-complete-file"></a>完全なファイル
+
 完全なクラス ファイルは次のとおりです。
 
 ```powershell
@@ -414,7 +414,6 @@ class FileResource
 } # This module defines a class for a DSC "FileResource" provider.
 ```
 
-
 ## <a name="create-a-manifest"></a>マニフェストの作成
 
 クラスベースのリソースを DSC エンジンで使用できるようにするには、マニフェスト ファイルに、リソースをエクスポートするようにモジュールに指示する **DscResourcesToExport** ステートメントを含める必要があります。 この例では、マニフェストは次のようになります。
@@ -474,7 +473,7 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="supporting-psdscrunascredential"></a>PsDscRunAsCredential のサポート
 
->**注:****PsDscRunAsCredential** PowerShell 5.0 以降ではサポートされています。
+>**注:** **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。
 
 **PsDscRunAsCredential** プロパティを [DSC 構成](../configurations/configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。
 詳細については、「[ユーザーの資格情報を指定して DSC を実行する](../configurations/runAsUser.md)」を参照してください。
@@ -497,6 +496,36 @@ class FileResource {
 }
 ```
 
+### <a name="declaring-multiple-class-resources-in-a-module"></a>1 つのモジュールで複数のクラス リソースを宣言する
+
+1 つのモジュールで複数のクラスベースの DSC リソースを定義できます。 次の方法でフォルダー構造を作成できます。
+
+1. "<ModuleName>.psm1" ファイルに最初のリソースを定義し、以降のリソースは **DSCResources** フォルダー以下に定義します。
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- SecondResource.psm1
+   ```
+
+2. すべてのリソースは、**DSCResources** フォルダー以下で定義します。
+
+   ```
+   $env:ProgramFiles\WindowsPowerShell\Modules (folder)
+        |- MyDscResource (folder)
+           |- MyDscResource.psm1
+              MyDscResource.psd1
+        |- DSCResources
+           |- FirstResource.psm1
+              SecondResource.psm1
+   ```
+
+> [!NOTE]
+> 上記の例で、**DSCResource** 以下の PSM1 ファイルを PSD1 ファイルの **NestedModules** キーに追加します。
+
 ### <a name="access-the-user-context"></a>ユーザー コンテキストへのアクセス
 
 カスタム リソース内からユーザー コンテキストにアクセスするには、自動変数 `$global:PsDscContext` を使用できます。
@@ -510,5 +539,5 @@ if (PsDscContext.RunAsUser) {
 ```
 
 ## <a name="see-also"></a>参照
-### <a name="concepts"></a>概念
+
 [Build Custom Windows PowerShell Desired State Configuration Resources (カスタム Windows PowerShell Desired State Configuration のビルド)](authoringResource.md)

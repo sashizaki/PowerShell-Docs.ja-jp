@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: PowerShell の詳細情報
 ms.openlocfilehash: 5e81801df99a55a358d1d1405bdc79f882aae92f
-ms.sourcegitcommit: 9df29dfc637191b62ca591893c251c1e02d4eb4c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54012553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058388"
 ---
 # <a name="more-powershell-learning"></a>PowerShell の詳細情報
 
@@ -29,9 +29,9 @@ PowerShell の詳細に関する他の情報源
 - [PowerShell 3.0 のジャンプ スタートのファースト ステップ ガイド](https://mva.microsoft.com/en-US/training-courses/getting-started-with-powershell-30-jump-start-8276)
 - [PowerShell 3.0 の高度なツールとスクリプトのジャンプ スタート](https://mva.microsoft.com/en-US/training-courses/advanced-tools-scripting-with-powershell-30-jump-start-8277)
 
-### <a name="channel-9-videos"></a>Channel 9 のビデオ
+### <a name="channel-9-videos"></a>Channel 9 の動画
 
-Channel 9 は、ビデオの発行プラットフォームです。 使用可能な何百もの PowerShell に関する動画は。 ["PowerShell"の検索](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated)にどのようなビデオを参照してください。
+Channel 9 は、Microsoft の動画公開プラットフォームです。 PowerShell に関する数百件の動画を利用できます。 [「PowerShell」を検索](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated)して利用できる動画をご覧ください。
 
 ## <a name="resources-for-windows-powershell-developers"></a>Windows PowerShell 開発者向けのリソース
 

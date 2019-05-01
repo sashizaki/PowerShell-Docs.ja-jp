@@ -3,15 +3,15 @@ ms.date: 08/23/2017
 keywords: PowerShell, コマンドレット
 title: Web ベースの Windows PowerShell コンソールの使用
 ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55681311"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086649"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Web ベースの Windows PowerShell コンソールの使用
 
-更新:2013 年 6 月 24 日
+更新: 2013 年 6 月 24 日
 
 適用先:Windows Server 2012 R2、Windows Server 2012
 

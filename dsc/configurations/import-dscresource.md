@@ -3,17 +3,17 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Import-DSCResource の使用
 ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56803414"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080103"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource の使用
 
-`Import-DScResource` 動的なキーワードは、構成スクリプト ブロック内でのみ使用できますです。 `Import-DSCResource`構成に必要なすべてのリソースをインポートするキーワード。 下にあるリソース`$pshome`は自動的に、インポートで使用されるすべてのリソースを明示的にインポートするベスト プラクティスをまだと見なされますが、[構成](Configurations.md)します。
+`Import-DScResource` は動的なキーワードであり、構成スクリプト ブロックの内部でのみ使用できます。 `Import-DSCResource` キーワードは、構成で必要なリソースをインポートするために使います。 `$pshome` の下にあるリソースは自動的にインポートされますが、[構成](Configurations.md)内で使用されるすべてのリソースを明示的にインポートするのがやはりベスト プラクティスと考えられます。
 
-構文は、`Import-DSCResource`を次に示します。  モジュール名を指定するときに新しい行にそれぞれの一覧を表示するための要件になります。
+`Import-DSCResource` の構文は次に示すとおりです。  モジュールを名前で指定するときは、1 行に 1 つずつ列記する必要があります。
 
 ```syntax
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
@@ -21,14 +21,14 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
 
 |パラメーター  |説明  |
 |---------|---------|
-|`-Name`|DSC リソースの名前をインポートする必要があります。 コマンドで検索します。 このモジュール内でこれらの DSC リソース モジュール名が指定されている場合それ以外の場合、コマンドは、すべての DSC リソースのパスでの DSC リソースを検索します。 ワイルド カードがサポートされます。|
-|`-ModuleName`|モジュール名、またはモジュールの仕様。  モジュールからインポートするリソースを指定すると、コマンドはリソースのみをインポートしようとします。 モジュールのみを指定する場合、コマンドは、モジュール内のすべての DSC リソースをインポートします。|
+|`-Name`|インポートする必要がある DSC リソースの名前です。 モジュール名を指定した場合は、そのモジュール内でこれらの DSC リソースが検索されます。それ以外の場合は、すべての DSC リソース パスで DSC リソースが検索されます。 ワイルド カードがサポートされます。|
+|`-ModuleName`|モジュール名またはモジュールの指定です。  モジュールからインポートするリソースを指定した場合は、それらのリソースだけのインポートが試みられます。 モジュールのみを指定した場合は、モジュール内のすべての DSC リソースがインポートされます。|
 
 ```powershell
 Import-DscResource -ModuleName xActiveDirectory;
 ```
 
-## <a name="example-use-import-dscresource-within-a-configuration"></a>例: 使用 Import-dscresource、構成内で
+## <a name="example-use-import-dscresource-within-a-configuration"></a>次に例を示します。構成内で Import-DSCResource を使用する
 
 ```powershell
 Configuration MSDSCConfiguration
@@ -52,47 +52,47 @@ Configuration MSDSCConfiguration
 ```
 
 > [!NOTE]
-> 同じコマンドでリソース名とモジュール名の複数の値を指定することはサポートされていません。 非確定的な動作を複数のモジュールで同じリソースが存在する場合は、どのモジュールから読み込むには、どのリソースに関することができます。 次のコマンドは、コンパイル中にエラーに発生します。
+> 同じコマンド内でリソース名およびモジュール名に複数の値を指定することはサポートされていません。 同じリソースが複数のモジュールに存在する場合、どのモジュールからリソースが読み込まれるかはわかりません。 次のコマンドでは、コンパイル中にエラーが発生します。
 >
 > ```powershell
 > Import-DscResource -Name UserConfigProvider*,TestLogger1 -ModuleName UserConfigProv,PsModuleForTestLogger
 > ```
 
-名前のパラメーターのみを使用するときに考慮すべき事項:
+Name パラメーターのみを使用するときに考慮すべき事項:
 
-- コンピューターにインストールされているモジュールの数に応じてリソースを消費する操作です。
-- 指定した名前で見つかった最初のリソースが読み込まれます。 場合は、間違ったリソースを読み込むことがインストールされている同じ名前の 1 つ以上のリソースがある場合。
+- コンピューターにインストールされているモジュールの数によっては、リソースを大量に消費する操作です。
+- 指定した名前で最初に見つかったリソースが読み込まれます。 同じ名前で複数のリソースがインストールされている場合は、間違ったリソースが読み込まれる可能性があります。
 
-推奨される使用法は指定`–ModuleName`で、`-Name`パラメーターは、次のようです。
+推奨される使用方法は、以下で説明するように、`-Name` パラメーターと共に `–ModuleName` を指定することです。
 
-この使用法には、次の利点があります。
+この使用方法には次のようなメリットがあります。
 
-- 指定したリソースの検索範囲を制限することによってパフォーマンスに与える影響が減少します。
-- 適切なリソースが読み込まれることを確認、リソースを定義するモジュールを明示的に定義します。
+- 指定したリソースに検索範囲が制限されるため、パフォーマンスへの影響が減少します。
+- リソースが定義されているモジュールを明示的に定義することで、正しいリソースが確実に読み込まれます。
 
 > [!NOTE]
 > PowerShell 5.0 では、DSC リソースに複数バージョンを用意することができ、コンピューターにその複数のバージョンをサイド バイ サイドでインストールできます。 これを実装するには、リソース モジュールの複数のバージョンを同じモジュール フォルダーに格納します。
 > 詳細については、「[複数のバージョンがあるリソースの使用](sxsresource.md)」を参照してください。
 
-## <a name="intellisense-with-import-dscresource"></a>Import-dscresource の Intellisense
+## <a name="intellisense-with-import-dscresource"></a>Import-DSCResource での IntelliSense
 
-ISE で DSC 構成を作成するときに、PowerShell は、リソースとリソースのプロパティの IntelliSence を提供します。 リソースの定義、`$pshome`モジュールのパスが自動的に読み込まれます。 使用してリソースをインポートするときに、`Import-DSCResource`キーワード、指定したリソース定義を追加および Intellisense を拡張して、インポートされたリソースのスキーマが含まれます。
+ISE で DSC の構成を作成するとき、PowerShell ではリソースおよびリソースのプロパティに対して IntelliSence が提供されます。 `$pshome` モジュール パスの下にあるリソースの定義が、自動的に読み込まれます。 `Import-DSCResource` キーワードを使ってリソースをインポートすると、指定したリソース定義が追加されて、インポートされたリソースのスキーマを含むように IntelliSence が拡張されます。
 
-![リソースの Intellisense](/media/resource-intellisense.png)
+![リソースの IntelliSense](/media/resource-intellisense.png)
 
 > [!NOTE]
-> PowerShell 5.0 以降では、タブ補完は、DSC リソースとそのプロパティの ISE に追加されました。 詳細については、次を参照してください。[リソース](../resources/resources.md)します。
+> PowerShell 5.0 以降では、DSC リソースとそのプロパティ用の ISE に対して Tab 補完機能が追加されました。 詳しくは、[リソース](../resources/resources.md)に関する記事をご覧ください。
 
-構成をコンパイルするときに、PowerShell は、構成内のすべてのリソース ブロックを検証するのにインポートされたリソース定義を使用します。
-各リソース ブロックは、次の規則のリソースのスキーマ定義を使用して検証されます。
+構成をコンパイルするとき、PowerShell では、インポートされたリソース定義を使って、構成内のすべてのリソース ブロックが検証されます。
+リソースのスキーマ定義を使って、各リソース ブロックで次の規則が検証されます。
 
-- スキーマで定義されたプロパティのみが使用されます。
-- 各プロパティのデータ型が正しいです。
-- キー プロパティが指定されます。
-- 読み取り専用プロパティは使用されません。
-- 値の検証は、型をマップします。
+- スキーマで定義されているプロパティのみが使用されている。
+- 各プロパティのデータ型が正しい。
+- キー プロパティが指定されている。
+- 読み取り専用プロパティが使用されていない。
+- 値の検証が型にマップされる。
 
-次の構成を検討してください。
+以下のような構成について考えます。
 
 ```powershell
 Configuration SchemaValidationInCorrectEnumValue
@@ -111,41 +111,41 @@ Configuration SchemaValidationInCorrectEnumValue
 }
 ```
 
-この構成の結果、エラーをコンパイルします。
+この構成をコンパイルすると、結果はエラーになります。
 
 ```output
 PSDesiredStateConfiguration\WindowsFeature: At least one of the values ‘Invalid’ is not supported or valid for property ‘Ensure’ on class ‘WindowsFeature’. Please specify only supported values: Present, Absent.
 ```
 
-Intellisense およびスキーマ検証を使用すると、実行時に複雑な問題を回避する解析とコンパイル時に多くのエラーをキャッチできます。
+IntelliSence とスキーマ検証により、解析とコンパイルの間にさらに多くのエラーをキャッチでき、実行時の問題を回避できます。
 
 > [!NOTE]
-> 各 DSC リソースの名前を付けることができます、 **FriendlyName**リソースのスキーマで定義します。 "MSFT_ServiceResource.shema.mof"の最初の 2 つの行を次に示します。
+> 各 DSC リソースは、名前と、リソースのスキーマによって定義された **FriendlyName** を持つことができます。 "MSFT_ServiceResource.shema.mof" の先頭の 2 行を次に示します。
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
-> このリソースを使用して、構成では場合、は、指定**MSFT_ServiceResource**または**サービス**します。
+> このリソースを構成で使用するときは、**MSFT_ServiceResource** または **Service** を指定できます。
 
-## <a name="powershell-v4-and-v5-differences"></a>PowerShell v4 および v5 の違い
+## <a name="powershell-v4-and-v5-differences"></a>PowerShell の v4 と v5 の違い
 
-PowerShell 4.0 の vs での構成を作成するときに「する複数違いがあります。PowerShell 5.0 以降。 このセクションでは、相違点を強調表示されますこの記事に関連する表示します。
+構成を作成するときに、複数の相違点が PowerShell 4.0 と PowerShell 5.0 以降の間に存在します。 このセクションでは、特にこの記事に関連する相違点を示します。
 
 ### <a name="multiple-resource-versions"></a>複数のリソース バージョン
 
-インストールとサイド バイ サイドのリソースの複数のバージョンを使用した、PowerShell 4.0 ではサポートされていません。 問題のリソースの構成をインポートする場合は、インストールされているリソースの 1 つのバージョンのみがあることを確認します。
+複数のバージョンのリソースのサイド バイ サイドでのインストールと使用は、PowerShell 4.0 ではサポートされていませんでした。 リソースを構成にインポートするときに問題がある場合は、インストールされているリソースのバージョンが 1 つだけであることを確認してください。
 
-2 つのバージョンの次の図で、 **xPSDesiredStateConfiguration**モジュールがインストールされています。
+次の図では、2 つのバージョンの **xPSDesiredStateConfiguration** モジュールがインストールされています。
 
-![複数のリソース バージョンを修正しました](/media/multiple-resource-versions-broken.md)
+![修正された複数リソース バージョン](/media/multiple-resource-versions-broken.md)
 
-モジュール ディレクトリの最上位レベルに、必要なモジュールのバージョンの内容をコピーします。
+必要なモジュールのバージョンの内容を、モジュール ディレクトリの最上位レベルにコピーします。
 
-![複数のリソース バージョンを修正しました](/media/multiple-resource-versions-fixed.md)
+![修正された複数リソース バージョン](/media/multiple-resource-versions-fixed.md)
 
 ### <a name="resource-location"></a>リソースの場所
 
-指定された任意のディレクトリに、リソースを格納できる作成と構成のコンパイル、 [PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path)します。 PowerShell 4.0 のでは、LCM は、"プログラム \windowspowershell\modules"を格納するすべての DSC リソース モジュールを必要があります。 または`$pshome\Modules`します。 PowerShell 5.0 以降では、この要件が削除され、リソース モジュールで指定された任意のディレクトリに格納できる`PSModulePath`します。
+構成を作成してコンパイルするとき、[PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path) で指定した任意のディレクトリにリソースを格納できます。 PowerShell 4.0 の LCM では、すべての DSC リソース モジュールが "Program Files\WindowsPowerShell\Modules" または `$pshome\Modules` に格納されている必要があります。 PowerShell 5.0 以降では、この要件はなくなり、`PSModulePath` で指定した任意のディレクトリにリソース モジュールを格納できます。
 
 ## <a name="see-also"></a>関連項目
 

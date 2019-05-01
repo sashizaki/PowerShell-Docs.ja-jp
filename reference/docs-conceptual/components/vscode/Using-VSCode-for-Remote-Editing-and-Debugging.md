@@ -2,81 +2,81 @@
 title: Visual Studio Code を使用したリモート編集およびデバッグ
 description: Visual Studio Code を使用したリモート編集およびデバッグ
 ms.date: 08/06/2018
-ms.openlocfilehash: bab1a629a7e9dafd5957cf93025abb18b8a4f326
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: MTE95
+ms.openlocfilehash: fbc1ee3556e822b4afb2b37111d0688dc89fdab3
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655609"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086675"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Visual Studio Code を使用したリモート編集およびデバッグ
 
-それらの ISE に精通していることを実行できますを取り消すことがあります`psedit file.ps1`ファイル - ローカルまたはリモート - を開くための統合されたコンソールから、ISE で右します。
+ISE に精通している場合、統合コンソールから `psedit file.ps1` を実行してファイル (ローカルまたはリモート) を ISE で開くことができたことを憶えているかもしれません。
 
-結局のところ、この機能は VSCode の PowerShell の拡張機能で使用できるもします。 このガイドでは、これを行う方法を説明します。
+この機能は、VSCode 用の PowerShell 拡張機能でも使用できます。 このガイドではそれを行う方法を説明します。
 
 ## <a name="prerequisites"></a>前提条件
 
-このガイドでは、あることを前提としています。
+このガイドでは、次のことを前提としています。
 
-- リモート リソース (例: VM、コンテナー) へのアクセスがあります。
-- また、ホスト マシンで実行する PowerShell
-- VSCode と for VSCode PowerShell 拡張機能
+- アクセスできるリモート リソース (例: VM、コンテナー)
+- その上で実行する PowerShell およびホスト マシン
+- VSCode および VSCode 用 PowerShell 拡張機能
 
 この機能は、Windows PowerShell と PowerShell Core で動作します。
 
-この機能は、WinRM、PowerShell ダイレクトでは、または SSH を使用してリモート コンピューターに接続するときにも動作します。 SSH を使用する Windows を使用している場合は、チェック アウト、 [SSH の Win32 バージョン](https://github.com/PowerShell/Win32-OpenSSH)!
+また、この機能は、WinRM、PowerShell Direct、または SSH でリモート マシンに接続しているときにも動作します。 SSH を使用したいが、Windows を使用している場合は、[SSH の Win32 バージョン](https://github.com/PowerShell/Win32-OpenSSH)を確認してください。
 
 ## <a name="lets-go"></a>始めましょう
 
-このセクションでリモート編集、および Azure で実行されている Ubuntu VM に、MacBook Pro からデバッグを紹介します。 可能性がありますいない使用する、Windows が **、プロセスと同じです**します。
+このセクションでは、MacBook Pro から Azure で実行されている Ubuntu VM に対するリモート編集およびデバッグの手順を紹介します。 Windows を使用する場合も**プロセスと同じです**。
 
-### <a name="local-file-editing-with-open-editorfile"></a>ローカル ファイルを開く EditorFile での編集
+### <a name="local-file-editing-with-open-editorfile"></a>Open-EditorFile でのローカル ファイル編集
 
-PowerShell の拡張機能で VSCode の開始し、PowerShell の統合されたコンソールを開く、入力も可能`Open-EditorFile foo.ps1`または`psedit foo.ps1`をエディターでローカル foo.ps1 ファイル権限を開きます。
+VSCode 用 PowerShell 拡張機能を開始し、PowerShell 統合コンソールを開くと、「`Open-EditorFile foo.ps1`」または「`psedit foo.ps1`」と入力してエディターでローカル環境の foo.ps1 ファイルを開くことができます。
 
-![オープン EditorFile foo.ps1 がローカルで動作します。](https://user-images.githubusercontent.com/2644648/34895897-7c2c46ac-f79c-11e7-9410-a252aff52f13.png)
+![ローカルに動作する Open-EditorFile foo.ps1](https://user-images.githubusercontent.com/2644648/34895897-7c2c46ac-f79c-11e7-9410-a252aff52f13.png)
 
 >[!NOTE]
-> foo.ps1 は既に存在する必要があります。
+> foo.ps1 が既に存在している必要があります。
 
-そこからできます。
+そこから次のことができます。
 
-余白にブレークポイントを追加![余白にブレークポイントを追加します。](https://user-images.githubusercontent.com/2644648/34895893-7bdc38e2-f79c-11e7-8026-8ad53f9a1bad.png)
+余白にブレークポイントを追加します![余白にブレークポイントを追加](https://user-images.githubusercontent.com/2644648/34895893-7bdc38e2-f79c-11e7-8026-8ad53f9a1bad.png)
 
-f5 キーを押して PowerShell スクリプトをデバッグします。
+F5 キーを押して PowerShell スクリプトをデバッグします。
 ![ローカルの PowerShell スクリプトのデバッグ](https://user-images.githubusercontent.com/2644648/34895894-7bedb874-f79c-11e7-9180-7e0dc2d02af8.png)
 
-デバッグ中に、デバッグ コンソールとの対話、左、およびデバッグ ツールの他のすべての標準のスコープ内の変数を確認できます。
+デバッグ中に、デバッグ コンソールと対話し、左側でスコープ内の変数を確認し、他のすべての標準デバッグ ツールを使用できます。
 
-### <a name="remote-file-editing-with-open-editorfile"></a>リモート ファイルを開く EditorFile での編集
+### <a name="remote-file-editing-with-open-editorfile"></a>Open-EditorFile でのリモート ファイル編集
 
-今すぐ編集とデバッグ、リモート ファイルを見ていきましょう。 手順はほぼ同じ、最初の操作を行います: リモート サーバーに、PowerShell セッションを入力する必要があります。 1 つだけのことです。
+次に、リモート ファイルを編集してデバッグします。 手順はほぼ同じですが、最初に行う必要があることが 1 つだけあります。リモート サーバーへの PowerShell セッションに入ります。
 
-これを行うには、コマンドレットです。 呼び出された`Enter-PSSession`します。
+それを行うためのコマンドレットがあります。 `Enter-PSSession` です。
 
-コマンドレットの機能を削ったダウンについては次のとおりです。
+コマンドレットの簡単な説明は次のとおりです。
 
-- `Enter-PSSession -ComputerName foo` WinRM を使用してセッションを開始します。
-- `Enter-PSSession -ContainerId foo` `Enter-PSSession -VmId foo` PowerShell Direct を使用してセッションを開始します。
-- `Enter-PSSession -HostName foo` SSH を使用してセッションを開始します。
+- `Enter-PSSession -ComputerName foo` は WinRM でセッションを開始します
+- `Enter-PSSession -ContainerId foo` と `Enter-PSSession -VmId foo` は PowerShell Direct でセッションを開始します
+- `Enter-PSSession -HostName foo` は SSH でセッションを開始します
 
-詳細について`Enter-PSSession`、ドキュメントのチェック アウト[ここ](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6)します。
+`Enter-PSSession` について詳しくは、[こちら](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-6)のドキュメントをご覧ください。
 
-使用する SSH リモート処理のため macOS から Azure で Ubuntu VM にします。
+ここでは、Azure の Ubuntu VM に macOS から接続するので、リモート処理に SSH を使用します。
 
-最初に、統合コンソールで、Enter-pssession を実行してみましょう。 セッションにいることがわかります`[something]`プロンプトの左側に表示されます。
+最初に、統合コンソールで Enter-PSSession を実行します。 プロンプトの左側に `[something]` と表示されるので、セッション内にいることがわかります。
 
-![Enter-pssession への呼び出し](https://user-images.githubusercontent.com/2644648/34895896-7c18e0bc-f79c-11e7-9b36-6f4bd0e9b0db.png)
+![Enter-PSSession の呼び出し](https://user-images.githubusercontent.com/2644648/34895896-7c18e0bc-f79c-11e7-9b36-6f4bd0e9b0db.png)
 
-そこから、ローカル スクリプトを編集していた場合、正確な手順を実行しましたできます。
+そこからは、ローカル スクリプトを編集する場合とまったく同じ手順を実行できます。
 
-1. 実行`Open-EditorFile test.ps1`または`psedit test.ps1`を開くリモート`test.ps1`ファイル![オープン EditorFile test.ps1 ファイル](https://user-images.githubusercontent.com/2644648/34895898-7c3e6a12-f79c-11e7-8bdf-549b591ecbcb.png)
-2. ファイル/設定ブレークポイントを編集します。 ![編集し、ブレークポイントを設定](https://user-images.githubusercontent.com/2644648/34895892-7bb68246-f79c-11e7-8c0a-c2121773afbb.png)
-3. (F5)、リモート ファイルのデバッグを開始します。
+1. `Open-EditorFile test.ps1` または `psedit test.ps1` を実行して、リモートの `test.ps1` ファイルを開きます ![test.ps1 ファイルの Open-EditorFile](https://user-images.githubusercontent.com/2644648/34895898-7c3e6a12-f79c-11e7-8bdf-549b591ecbcb.png)
+2. ファイルを編集し、ブレークポイントを設定します ![編集とブレークポイントの設定](https://user-images.githubusercontent.com/2644648/34895892-7bb68246-f79c-11e7-8c0a-c2121773afbb.png)
+3. リモート ファイルのデバッグを開始します (F5)
 
 ![リモート ファイルのデバッグ](https://user-images.githubusercontent.com/2644648/34895895-7c040782-f79c-11e7-93ea-47724fa5c10d.png)
 
-すべてです。 このガイドがリモート デバッグと VSCode での PowerShell の編集に関する質問を明確に役立ったことことと思います。
+以上ですべてです。 VSCode での PowerShell のリモート編集とデバッグに関する質問に、このガイドが役立ったでしょうか。
 
-問題があれば、自由に未解決の問題[GitHub リポジトリで](http://github.com/powershell/vscode-powershell)します。
+何か問題があれば、[GitHub リポジトリ](http://github.com/powershell/vscode-powershell)で自由に問題を開いてください。

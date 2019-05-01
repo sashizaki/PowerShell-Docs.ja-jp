@@ -4,11 +4,11 @@ keywords: PowerShell, コマンドレット
 title: Windows PowerShell ISE のアクセシビリティ
 ms.assetid: a078f9d1-dd6b-4323-b16d-0622cd993aa8
 ms.openlocfilehash: 78a001dbe43a0b005d10a817e05e4cc7a72f5bd0
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402526"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058456"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE のアクセシビリティ
 
@@ -85,8 +85,8 @@ Windows PowerShell ISE は、ハイ コントラスト モードをサポート�
 |**実行**|F5|
 |**選択範囲の実行**|F8|
 |**実行を中止**|CTRL + BREAK コンテキストが明確な場合 (選ばれているテキストがない場合)、CTRL + C を使用できます。|
-|**タブ移動** (次のスクリプトへ)|Ctrl キーを押しながら TAB**に注意してください。** 次のスクリプトへのタブは、1 つの PowerShell タブが開いている場合にのみ、または開くには、1 つ以上の PowerShell タブがあるが、スクリプト ウィンドウにフォーカスがある場合に機能します。|
-|**タブ移動** (前のスクリプトへ)|CTRL + SHIFT + TAB**に注意してください。** 前のスクリプトへのタブは、開くには、1 つだけの PowerShell タブがある場合、または開くには、1 つ以上の PowerShell タブがあるし、スクリプト ウィンドウにフォーカスがある場合は動作します。|
+|**タブ移動** (次のスクリプトへ)|Ctrl + Tab **注:** 次のスクリプトへのタブは、PowerShell タブを 1 つ開いている場合、または PowerShell タブを複数開いている場合にだけ機能します。ただし、フォーカスはスクリプト ウィンドウにあります。|
+|**タブ移動** (前のスクリプトへ)|Ctrl + Shift + Tab **注:** 前のスクリプトへのタブは、PowerShell タブを 1 つだけ開いている場合、または PowerShell タブを複数開いている場合に機能します。フォーカスはスクリプト ウィンドウにあります。|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>ビューをカスタマイズするためのキーボード ショートカット
 

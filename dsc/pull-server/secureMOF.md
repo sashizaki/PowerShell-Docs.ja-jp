@@ -3,11 +3,11 @@ ms.date: 10/31/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MOF ファイルのセキュリティ保護
 ms.openlocfilehash: 6c2aadb75ac617d9b845ef387f292b8156bb8889
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402821"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079339"
 ---
 # <a name="securing-the-mof-file"></a>MOF ファイルのセキュリティ保護
 
@@ -51,11 +51,11 @@ DSC 構成のセキュリティ保護に使用される資格情報を正常に�
 この公開キー証明書を DSC 資格情報の暗号化に使うには、満たす必要のある特定の要件があります。
 
 1. **キー使用法**:
-   - 含める必要があります。'KeyEncipherment' と 'DataEncipherment'。
-   - 必要があります_いない_を含みます。デジタル署名
+   - 含める必要がある: "KeyEncipherment" と "DataEncipherment"。
+   - 含める "_べきではない_": "Digital Signature"。
 2. **拡張キー使用法**:
-   - 含める必要があります。ドキュメントの暗号化 (1.3.6.1.4.1.311.80.1)。
-   - 必要があります_いない_を含みます。クライアント認証 (1.3.6.1.5.5.7.3.2) とサーバー認証 (1.3.6.1.5.5.7.3.1)。
+   - 含める必要がある: ドキュメントの暗号化 (1.3.6.1.4.1.311.80.1)。
+   - 含める "_べきではない_": クライアント認証 (1.3.6.1.5.5.7.3.2) とサーバー認証 (1.3.6.1.5.5.7.3.1)。
 3. 証明書の秘密キーが *ターゲット ノード_ で使用可能であること。
 4. 証明書の**プロバイダー**は、"Microsoft RSA SChannel Cryptographic Provider" でなければならない。
 
@@ -84,7 +84,7 @@ MOF の証明書の暗号化を解除するための秘密キーが常にター�
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>ターゲット ノード: 証明書を作成してエクスポートする
 
-> 対象ノードWindows Server 2016 および Windows 10
+> ターゲット ノード: Windows Server 2016 および Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -95,7 +95,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 
 エクスポートしたら、`DscPublicKey.cer` を**オーサリング ノード**にコピーする必要があります。
 
-> 対象ノードWindows Server 2012 R2 または Windows 8.1 以前のバージョン
+> ターゲット ノード: Windows Server 2012 R2/Windows 8.1 以前
 > [!WARNING]
 > Windows 10 および Windows Server 2016 より前の Windows オペレーティング システムの `New-SelfSignedCertificate` コマンドレットでは、**Type** パラメーターがサポートされていないため、これらのオペレーティング システムでは、他の方法でこの証明書を作成する必要があります。
 >
@@ -151,7 +151,7 @@ PFX はパスワードで保護されていますが、転送中はセキュリ�
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>オーサリング ノード: 証明書を作成してエクスポートする
 
-> 対象ノードWindows Server 2016 および Windows 10
+> ターゲット ノード: Windows Server 2016 および Windows 10
 
 ```powershell
 # note: These steps need to be performed in an Administrator PowerShell session
@@ -167,7 +167,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 
 エクスポートしたら、`DscPrivateKey.pfx` を**ターゲット ノード**にコピーする必要があります。
 
-> 対象ノードWindows Server 2012 R2 または Windows 8.1 以前のバージョン
+> ターゲット ノード: Windows Server 2012 R2/Windows 8.1 以前
 > [!WARNING]
 > Windows 10 および Windows Server 2016 より前の Windows オペレーティング システムの `New-SelfSignedCertificate` コマンドレットでは、**Type** パラメーターがサポートされていないため、これらのオペレーティング システムでは、他の方法でこの証明書を作成する必要があります。
 >

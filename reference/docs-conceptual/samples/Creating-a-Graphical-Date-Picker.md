@@ -4,11 +4,11 @@ keywords: PowerShell, コマンドレット
 title: グラフィカルな日付の選択を作成する
 ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
 ms.openlocfilehash: d3b24af935e781a8a36fc346a6108baaed37b6db
-ms.sourcegitcommit: 3f6002e7109373eda31cc65fc84d2600447cb7e9
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59506803"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058609"
 ---
 # <a name="creating-a-graphical-date-picker"></a>グラフィカルな日付の選択を作成する
 
@@ -146,6 +146,6 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 
 ## <a name="see-also"></a>参照
 
-- [Hey Scripting Guy:これらの PowerShell GUI の例が機能しない理由](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [Hey Scripting Guy:これらの PowerShell GUI の例が機能しないのはなぜですか。](https://go.microsoft.com/fwlink/?LinkId=506644)
 - [GitHub:Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
 - [Windows PowerShell Tip of the Week:グラフィカルな日付の選択を作成する](https://technet.microsoft.com/library/ff730942.aspx)

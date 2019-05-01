@@ -1,51 +1,51 @@
 ---
 ms.date: 12/12/2018
-keywords: dsc、powershell、resource、ギャラリーのセットアップ
+keywords: dsc,powershell,リソース,ギャラリー,セットアップ
 title: 追加の DSC リソースをインストールする
 ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402909"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080083"
 ---
 # <a name="install-additional-dsc-resources"></a>追加の DSC リソースをインストールする
 
-PowerShell には、Desired State Configuration (DSC) のいくつかのボックスのリソースが含まれています。 **PSDesiredStateConfiguration**モジュールには、すべての PowerShell の特定インスタンスで使用可能な OOB DSC リソースが含まれます。
+PowerShell には、Desired State Configuration (DSC) 用に複数のそのまま利用できるリソースが含まれています。 **PSDesiredStateConfiguration** モジュールには、PowerShell の特定のインスタンスで使用可能なすべての OOB DSC リソースが含まれます。
 
-これは、PowerShell 4.0 およびリソースの機能の説明に含まれる OOB リソースの一覧です。
+次に示すのは、PowerShell 4.0 に含まれる OOB リソースの一覧とリソースの機能の説明です。
 
 > [!NOTE]
-> これは、PowerShell の各バージョンと共に OOB リソースの数が大きく、不完全なリストです。
+> PowerShell のバージョンごとに OOB リソースの数は増えているため、これは完全な一覧ではありません。
 
 |リソース  |説明  |
 |---------|---------|
-|**File**|ファイルとディレクトリの状態を制御します。 ファイルをコピー、**ソース**を**先**し、更新時に、**ソース**日付、チェックサム、およびハッシュを比較することによって変更。|
-|**Archive**|アーカイブと指定した場所をアンパックします。 指定したアーカイブを検証します**チェックサム**します。|
+|**File**|ファイルとディレクトリの状態を制御します。 **コピー元**から**コピー先**にファイルをコピーし、日付、チェックサム、およびハッシュを比較することによって**コピー元**が変更されたらファイルを更新します。|
+|**Archive**|アーカイブと指定された場所をアンパックします。 指定された**チェックサム**でアーカイブを検証します。|
 |**Environment**|環境変数を管理します。|
 |**グループ**|ローカル グループを管理し、グループ メンバーシップを制御します。|
-|**Log**|メッセージを書き込みます、`Microsoft-Windows-Desired State Configuration/Analytic`イベント ログ。|
-|**Package**|インストールまたはを使用してパッケージをアンインストールします**引数**、 **LogPath**、 **ReturnCode**、その他の設定。|
+|**Log**|`Microsoft-Windows-Desired State Configuration/Analytic` イベント ログにメッセージを書き込みます。|
+|**Package**|**Arguments**、**LogPath**、 **ReturnCode**、その他の設定を使って、パッケージをインストールまたはアンインストールします。|
 |**Registry**|レジストリ キーと値を管理します。|
-|**Script**|デザインできる独自[取得-テスト-設定](../resources/get-test-set.md)スクリプト ブロック。|
+|**Script**|独自の [get-test-set](../resources/get-test-set.md) スクリプト ブロックを設計できます。|
 |**Service**|Windows サービスを構成します。|
 |**User** |ローカル ユーザーと属性を管理します。|
-|**WindowsFeature**|役割と機能を管理します。|
+|**WindowsFeature**|ロールと機能を管理します。|
 |**WindowsProcess**|Windows プロセスを構成します。|
 
-OOB のリソースでは、一般的な操作に適した開始点を許可します。 OOB のリソースは、ニーズを満たしていない場合書き込める独自[カスタム リソース](../resources/authoringResource.md)します。 問題を解決するために、カスタム リソースを記述する前に、Microsoft と PowerShell コミュニティの両方で既に作成されている DSC リソースの膨大な数を探す必要があります。
+OOB リソースは、一般的な操作のよい起点になります。 OOB リソースがニーズを満たさない場合は、独自の[カスタム リソース](../resources/authoringResource.md)を作成できます。 問題を解決するためのカスタム リソースを記述する前に、Microsoft と PowerShell コミュニティの両方で既に作成されている膨大な数の DSC リソースを調べる必要があります。
 
-両方の DSC リソースを見つけることができます、 [PowerShell ギャラリー](https://www.powershellgallery.com/)と[GitHub](https://github.com/)します。 DSC リソースを使用して PowerShell コンソールから直接インストールすることもできます。 [PowerShellGet](/powershell/module/powershellget/)します。
+[PowerShell ギャラリー](https://www.powershellgallery.com/)と [GitHub](https://github.com/) の両方で、DSC リソースを見つけることができます。 また、[PowerShellGet](/powershell/module/powershellget/) を使って PowerShell コンソールから DSC リソースを直接インストールすることもできます。
 
 ## <a name="installing-powershellget"></a>PowerShellGet のインストール
 
-既にあるかどうかを判断する**PowerShell**取得、またはのインストールに関するヘルプを取得するには、次のガイドを参照してください。[PowerShellGet のインストール](/powershell/gallery/installing-psget)
+**PowerShellGet** が既にあるかどうかを調べたり、そのインストールに関するヘルプ情報を見たりするには、次のガイドを参照してください: 「[PowerShellGet のインストール](/powershell/gallery/installing-psget)」。
 
-## <a name="finding-dsc-resources-using-powershellget"></a>PowerShellGet を使用して DSC リソースの検索
+## <a name="finding-dsc-resources-using-powershellget"></a>PowerShellGet を使用して DSC リソースを検索する
 
-1 回**PowerShellGet**がインストールされている、システムの検索し、インストールでホストされる DSC リソース、 [PowerShell ギャラリー](https://www.powershellgallery.com/)します。
+**PowerShellGet** をシステムにインストールした後は、[PowerShell ギャラリー](https://www.powershellgallery.com/)でホストされている DSC リソースを検索してインストールできます。
 
-まず、使用して、 [Find-dscresource](/powershell/module/powershellget/find-dscresource)コマンドレット DSC リソースを検索します。 実行するときに`Find-DSCResource`最初の「NuGet プロバイダー」をインストールする次のプロンプトが表示されます。
+最初に、[Find-DSCResource](/powershell/module/powershellget/find-dscresource) コマンドレットを使って DSC リソースを検索します。 `Find-DSCResource` を初めて実行すると、"NuGet プロバイダー" のインストールを求める次のメッセージが表示されます。
 
 ```
 PS> Find-DSCResource
@@ -59,15 +59,15 @@ install and import the NuGet provider now?
 [Y] Yes  [N] No  [?] Help (default is "Y"):
 ```
 
-キーを押して 'y' の後に"NuGet"プロバイダーがインストールされている、PowerShell ギャラリーからインストールできる DSC リソースの一覧を参照してください。
+Y キーを押すと、"NuGet" プロバイダーがインストールされて、PowerShell ギャラリーからインストールできる DSC リソースの一覧が表示されます。
 
 > [!NOTE]
-> これが非常に大きいために、一覧は表示されません。
+> 一覧は非常に大きいため示してありません。
 
-指定することも、 `-Name` 、ワイルドカードを使用するパラメーターまたは`-Filter`検索を絞り込むためにワイルドカードを含まないパラメーター。 この例では、ワイルドカードを使用して「タイム ゾーン」DSC リソースの検索を試みます。
+ワイルドカードを使って `-Name` パラメーターを指定するか、またはワイルドカードを使わないで `-Filter` パラメーターを指定して、検索を絞り込むこともできます。 次の例では、ワイルドカードを使って "TimeZone" DSC リソースを検索しています。
 
 > [!IMPORTANT]
-> 現在のバグがある、`Find-DSCResource`両方のワイルドカードを使用できないようにするコマンドレット、`-Name`と`-Filter`パラメーター。 回避策を使用して、次の 2 つ目の例を示しています`Where-Object`します。
+> 現在は `Find-DSCResource` コマンドレットにバグがあり、`-Name` と `-Filter` 両方のパラメーターでワイルドカードを使うことはできません。 次の 2 番目の例では、`Where-Object` を使った回避策を示します。
 
 ```
 PS> Find-DSCResource -Name *Time*
@@ -90,7 +90,7 @@ xSqlServerSQLDataRoot               1.0.0      mlSqlServerDSC                   
 xSqlServerStartupParam              1.0.0      mlSqlServerDSC                      PSGallery
 ```
 
-使用することも`Where-Object`より詳細なフィルターを使用した DSC リソースを検索します。 このアプローチは、組み込みのパラメーターをフィルター処理を使用するよりも低速になります。
+`Where-Object` を使ってさらに詳細なフィルターで DSC リソースを検索することもできます。 この方法では、組み込みのフィルター処理パラメーターを使うより処理が遅くなります。
 
 ```
 PS> Find-DSCResource | Where-Object {$_.Name -like "Time*"}
@@ -100,16 +100,16 @@ Name                                Version    ModuleName                       
 TimeZone                            6.0.0.0    ComputerManagementDsc               PSGallery
 ```
 
-フィルターの詳細については、次を参照してください。 [Where-object](/powershell/module/microsoft.powershell.core/where-object)します。
+フィルター処理について詳しくは、「[Where-Object](/powershell/module/microsoft.powershell.core/where-object)」をご覧ください。
 
-## <a name="installing-dsc-resources-using-powershellget"></a>PowerShellGet を使用して DSC リソースをインストールします。
+## <a name="installing-dsc-resources-using-powershellget"></a>PowerShellGet を使用して DSC リソースをインストールする
 
-DSC リソースをインストールするには、使用、 [Install-module](/powershell/module/PowershellGet/Install-Module)コマンドレットは、下に表示するモジュールの名前を指定する**モジュール**検索結果内の名前。
+DSC リソースをインストールするには、[Install-Module](/powershell/module/PowershellGet/Install-Module) コマンドレットを使い、検索結果の **[ModuleName]** の下に表示されるモジュール名を指定します。
 
-「タイム ゾーン」リソースができるので、モジュールは次の例をインストール、"ComputerManagementDSC"モジュールに存在します。
+"TimeZone" リソースは "ComputerManagementDSC" モジュールに存在するので、この例ではそのモジュールをインストールします。
 
 > [!NOTE]
-> PowerShell ギャラリーを信頼していない場合は、確認を求めず、以下の警告を表示し、インストールの後続のプロンプトを回避する方法を指示するようにします。
+> PowerShell ギャラリーを信頼していない場合は、確認を要求し、以降のインストールでメッセージが表示されないようにする方法を示す、次のような警告が表示されます。
 
 ```
 PS> Install-Module -Name ComputerManagementDSC
@@ -121,7 +121,7 @@ InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure yo
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-モジュールのインストールを続行するには、' y' キーを押します。 インストールした後を使用して、新しいリソースをインストールすることを確認できる[Get-dscresource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)します。
+Y キーを押して、モジュールのインストールを続行します。 インストール後は、[Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) を使って、新しいリソースがインストールされたことを確認できます。
 
 ```
 PS> Get-DSCResource -Name TimeZone -Syntax
@@ -135,7 +135,7 @@ TimeZone [String] #ResourceName
 }
 ```
 
-指定することで、新しくインストールされたモジュールで他のリソースを表示することも、`-ModuleName`パラメーター。
+また、`-ModuleName` パラメーターを指定することで、新しくインストールしたモジュール内の他のリソースを表示することもできます。
 
 ```
 PS> Get-DSCResource -Module ComputerManagementDSC

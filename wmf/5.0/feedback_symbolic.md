@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: 82451c550014c684958aaf0f324457db8f0d8ceb
-ms.sourcegitcommit: 54534635eedacf531d8d6344019dc16a50b8b441
+ms.openlocfilehash: 3cfc2f042234f682599bb67eac592ea3f77b31b6
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2018
-ms.locfileid: "34222006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085186"
 ---
 # <a name="interact-with-symbolic-links-using-improved-item-cmdlets"></a>機能を強化された Item コマンドレットを使ってシンボリック リンクを操作する
 

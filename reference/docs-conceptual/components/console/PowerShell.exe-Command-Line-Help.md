@@ -4,11 +4,11 @@ keywords: PowerShell, コマンドレット
 title: PowerShell.exe コマンドラインのヘルプ
 ms.assetid: 1ab7b93b-6785-42c6-a1c9-35ff686a958f
 ms.openlocfilehash: 0a11ebb11d29adf5853c232b3aa10bc72f92bf0c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402461"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058515"
 ---
 # <a name="powershellexe-command-line-help"></a>PowerShell.exe コマンドラインのヘルプ
 
@@ -51,10 +51,10 @@ Base 64 エンコード文字列版のコマンドを許可します。 複雑�
 
 スクリプトで作成される関数と変数を現在のセッションで使用できるように、指定したスクリプトをローカル スコープ ("ドット ソース形式") で実行します。 スクリプト ファイルのパスと (存在する場合) パラメーターを入力します。 **File** は、コマンド内の最後のパラメーターにする必要があります。 **-File** パラメーターの後に入力されたすべての値は、スクリプト ファイルのパスとそのスクリプトに渡されるパラメーターとして解釈されます。
 
-スクリプトに渡されるパラメーターは、(現在のシェルによる解釈の後で) リテラル文字列として渡されます。 たとえば、cmd.exe でし、環境変数の値を渡す、場合は、cmd.exe 構文を使用します。 `powershell.exe -File .\test.ps1 -TestParam %windir%`
+スクリプトに渡されるパラメーターは、(現在のシェルによる解釈の後で) リテラル文字列として渡されます。 たとえば、cmd.exe で環境変数値を渡す場合は、cmd.exe 構文 `powershell.exe -File .\test.ps1 -TestParam %windir%` を使用します。
 
-これに対しを実行している`powershell.exe -File .\test.ps1 -TestParam $env:windir`リテラル文字列を受信するスクリプトの結果を cmd.exe で`$env:windir`を現在の cmd.exe シェルに特別な意味を持たないためです。
-`$env:windir`の環境変数の参照スタイル_できます_内で使用する、`-Command`パラメーター、PowerShell コードとして解釈されますがありますので。
+対照的に、cmd.exe で `powershell.exe -File .\test.ps1 -TestParam $env:windir` を実行すると、スクリプトはリテラル文字列 `$env:windir` を受け取ります。これは、現在の cmd.exe シェルには特別な意味がないためです。
+`$env:windir` スタイルの環境変数参照は、PowerShell コードとして解釈されるため、`-Command` パラメーター内で "_使用できます_"。
 
 ### <a name="-inputformat-text--xml"></a>\-InputFormat {Text | XML}
 
@@ -107,26 +107,26 @@ PowerShell 3.0 がインストールされていない場合、有効な値は "
 ### <a name="-command"></a>-Command
 
 PowerShell のコマンド プロンプトに入力された場合と同様に、指定されたコマンド (任意のパラメーターを付与する) を実行します。
-実行後、PowerShell を終了しない限り、 **NoExit**パラメーターを指定します。
+実行後は、**NoExit** パラメーターが指定されていない限り、PowerShell は終了します。
 `-Command` の後にある任意のテキストは、単一のコマンド ラインとして PowerShell に送信されます。
 これは、`-File` がスクリプトに送信されたパラメーターを処理する方法とは異なります。
 
-値`-Command`は、"-"、文字列、またはスクリプト ブロック。
-コマンドの結果は、XML の逆シリアル化されたオブジェクト、いないライブ オブジェクトとして親シェルに返されます。
+`-Command` の値には、"-"、文字列、またはスクリプト ブロックを指定できます。
+コマンドの結果は、ライブ オブジェクトとしてではなく、逆シリアル化された XML オブジェクトとして親シェルに返されます。
 
-場合の値`-Command`が"-"、コマンド テキストが標準の入力から読み取られます。
+`-Command` の値が "-" の場合、コマンド テキストは標準入力から読み取られます。
 
-ときの値`-Command`文字列**コマンド**_する必要があります_最後のコマンドは、コマンド引数として解釈されます後に任意の文字が入力されたため、指定されたパラメーターします。
+`-Command` の値が文字列の場合、**Command** は指定する最後のパラメーターにする "_必要があります_"。コマンドの後に入力された文字は、コマンド引数として解釈されるためです。
 
-**コマンド**パラメーターに渡される値を認識できる場合にのみ実行するためのスクリプト ブロックを受け入れる`-Command`ScriptBlock 型として。
-これは_のみ_PowerShell.exe を PowerShell の別のホストから実行するときに使用します。
-既存の変数、式から返されたまたは、PowerShell によって解析された型を含めることがスクリプト ブロックを中かっこで囲まれたリテラルのスクリプト ブロックとしてホスト`{}`PowerShell.exe へ渡される前に、します。
+**Command** パラメーターは、`-Command` に渡された値を ScriptBlock 型として認識できる場合にのみ、スクリプト ブロックを実行用に受け付けます。
+これが可能なのは、別の PowerShell ホストから PowerShell.exe を実行している場合 "_のみ_" です。
+ScriptBlock 型は、PowerShell.exe に渡される前に、既存の変数に含まれているか、式から返されるか、中かっこ `{}` で囲まれたリテラル スクリプト ブロックとして PowerShell ホストによって解析されることがあります。
 
-Cmd.exe ではありませんようなものとしてスクリプト ブロック (またはスクリプト ブロックの型) ために渡される値**コマンド**は_常に_文字列であります。
-文字列の中のスクリプト ブロックを記述することができますが、実行されているのではなくの動作は正確に、一般的な PowerShell プロンプトで入力したかのように元に戻すをブロック スクリプトの内容を印刷します。
+cmd.exe では、スクリプト ブロック (または ScriptBlock 型) とは異なり、**Command** に渡される値は "_常に_" 文字列になります。
+文字列の中にスクリプト ブロックを記述することはできますが、実行されるのではなく、通常の PowerShell プロンプトで入力した場合とまったく同じように動作し、スクリプト ブロックの内容が出力されます。
 
-渡される文字列`-Command`のでスクリプト ブロックの中かっこは多くの場合、最初に cmd.exe から実行する場合でも、PowerShell としてに実行されます。
-文字列内で定義されているインライン スクリプト ブロックを実行する、[呼び出し演算子](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-)`&`ことができます。
+`-Command` に渡された文字列は PowerShell として実行されます。そのため、cmd.exe から実行する場合、スクリプト ブロックの中かっこがそもそも必要ないことがよくあります。
+文字列内で定義されているインライン スクリプト ブロックを実行するには、次の[呼び出し演算子](/powershell/module/microsoft.powershell.core/about/about_operators#call-operator-) `&` を使用できます。
 
 ```console
 "& {<command>}"
@@ -137,7 +137,7 @@ Cmd.exe ではありませんようなものとしてスクリプト ブロッ�
 Powershell.exe の構文を示します。 PowerShell で PowerShell.exe のコマンドを入力している場合、コマンド パラメーターの前にスラッシュ (/) ではなくハイフン (-) を入力してください。 Cmd.exe では、ハイフンとスラッシュのいずれかを使用できます。
 
 > [!NOTE]
-> トラブルシューティング上の注意:PowerShell 2.0 で使用すると、LastExitCode 0xc0000142 の一部のプログラム、Windows PowerShell コンソールで開始しています。
+> トラブルシューティング上の注意:PowerShell 2.0 では、一部のプログラムを Windows PowerShell コンソールで開始すると、LastExitCode 0xc0000142 で失敗します。
 
 ## <a name="examples"></a>例
 

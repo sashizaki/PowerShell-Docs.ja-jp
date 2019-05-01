@@ -4,11 +4,11 @@ keywords: PowerShell, コマンドレット
 title: Windows PowerShell ISE でスクリプトを記述および実行する方法
 ms.assetid: 62f916d9-b3a1-484a-bdfb-41f57112c22b
 ms.openlocfilehash: 61db5e18f05e8e334cd9ba6dab2cf15dee7390cc
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086852"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Windows PowerShell ISE でスクリプトを記述および実行する方法
 
@@ -144,7 +144,7 @@ $psISE.CurrentFile.Save([System.Text.Encoding]::ASCII)
 $psISE.CurrentFile.encoding
 ```
 
-Windows PowerShell ISE には、次のエンコード オプションがサポートされています。ASCII、BigEndianUnicode、Unicode、UTF32、UTF7、UTF8、既定値。 既定値オプションの値は、システムによって異なります。
+Windows PowerShell ISE では、次のエンコード オプションがサポートされています: ASCII、BigEndianUnicode、Unicode、UTF32、UTF7、UTF8、Default。 既定値オプションの値は、システムによって異なります。
 
 Save または Save As コマンドを使用した場合、Windows PowerShell ISE ではスクリプト ファイルのエンコードを変更しません。
 

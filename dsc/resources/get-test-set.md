@@ -1,23 +1,23 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
-title: 取得-テスト-設定
-ms.openlocfilehash: e46710954679bf20f4536c6efbcbd4dafd9e629e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+title: Get-Test-Set
+ms.openlocfilehash: 6d059518a49926bc5fb56e37e7d3d4d2c66bddec
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402574"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076601"
 ---
-# <a name="get-test-set"></a>取得-テスト-設定
+# <a name="get-test-set"></a>Get-Test-Set
 
 >適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
 ![取得、テスト、および設定](/media/get-test-set.png)
 
-PowerShell Desired State Configuration は構築、**取得**、**テスト**、および**設定**プロセス。 DSC[リソース](resources.md)それぞれにこれらの各操作を完了する方法が含まれています。 [構成](../configurations/configurations.md)、リソースのためのパラメーターになるキーを入力するリソースのブロックを定義する**取得**、**テスト**、および**設定**メソッド。
+PowerShell の Desired State Configuration は、**Get**、**Test**、および **Set** プロセスを中心に構成されています。 DSC の各[リソース](resources.md)には、これらの各操作を完了するためのメソッドが含まれています。 「[構成](../configurations/configurations.md)」では、リソースの **Get**、**Test**、および **Set** メソッドのパラメーターとなるキーを入力するリソース ブロックを定義します。
 
-構文は、**サービス**リソース ブロック。 **サービス**リソースは、Windows サービスを構成します。
+これは **Service** リソース ブロックの構文です。 **Service** リソースでは、Windows サービスを構成します。
 
 ```syntax
 Service [String] #ResourceName
@@ -37,7 +37,7 @@ Service [String] #ResourceName
 }
 ```
 
-**取得**、**テスト**、および**設定**のメソッド、**サービス**リソースでこれらの値をそのまま使用するパラメーターのブロックが必要があります。
+**Service** リソースの **Get**、**Test**、および **Set** メソッドには、その値を受け入れるパラメーター ブロックがあります。
 
 ```powershell
     param
@@ -86,9 +86,9 @@ Service [String] #ResourceName
 ```
 
 > [!NOTE]
-> 言語とリソースを定義するために使用する方法を決定する方法、**取得**、**テスト**、および**設定**メソッドが定義されます。
+> リソースの定義に使用される言語とメソッドによって、**Get**、**Test**、および **Set** の各メソッドの定義方法が決まります。
 
-**サービス**リソースの 1 つの必須キーのみが (`Name`)、**サービス**ブロックのリソースのように単純な可能性があります。
+**Service** リソースには必要なキーが 1 つしかないため (`Name`)、**Service** ブロック リソースは次のように単純になる可能性があります。
 
 ```powershell
 Configuration TestConfig
@@ -104,7 +104,7 @@ Configuration TestConfig
 }
 ```
 
-上記の構成をコンパイルするときに、キーの指定した値が生成される".mof"ファイルに格納されます。 詳細については、次を参照してください。 [MOF](/windows/desktop/wmisdk/managed-object-format--mof-)します。
+上記の Configuration をコンパイルすると、キーに指定した値は生成された ".mof" ファイルに格納されます。 詳細については、[MOF](/windows/desktop/wmisdk/managed-object-format--mof-) に関する記事を参照してください。
 
 ```
 instance of MSFT_ServiceResource as $MSFT_ServiceResource1ref
@@ -121,15 +121,15 @@ ModuleVersion = "1.0";
 };
 ```
 
-適用すると、[ローカル構成マネージャー](../managing-nodes/metaConfig.md)に渡すし、値"Spooler"、".mof"ファイルから読み取るは、`-Name`のパラメーター、**取得**、**テスト**、**設定**の"MyService"のインスタンスのメソッド、**サービス**リソース。
+適用されると、[Local Configuration Manager](../managing-nodes/metaConfig.md) で ".mof" ファイルから値 "Spooler" が読み取られ、**Service** リソースの "MyService" インスタンスの **Get**、**Test**、および **Set** メソッドの `-Name` パラメーターに渡されます。
 
 ## <a name="get"></a>取得
 
-**取得**リソースのメソッドは、ターゲット ノードで構成されているように、リソースの状態を取得します。 この状態として返されます、 [hashtable](/powershell/module/microsoft.powershell.core/about/about_hash_tables)します。 キー、 **hashtable**リソースは、構成可能な値、またはパラメーターになります。
+リソースの **Get** メソッドでは、ターゲット ノードに構成されているリソースの状態を取得します。 この状態は[ハッシュテーブル](/powershell/module/microsoft.powershell.core/about/about_hash_tables)として返されます。 **ハッシュテーブル**のキーは、リソースが受け入れる構成可能な値、つまりパラメーターになります。
 
-**取得**メソッドは、マップに直接、 [Get-dscconfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration)コマンドレット。 呼び出すと`Get-DSCConfiguration`、LCM の実行、**取得**現在適用されている構成内の各リソースのメソッド。 LCM は、対応する各リソース インスタンスにパラメーターとして".mof"ファイルに格納されているキーの値を使用します。
+**Get** メソッドは、[Get-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) コマンドレットに直接マップします。 `Get-DSCConfiguration` を呼び出すと、LCM では現在適用されている構成内の各リソースの **Get** メソッドを実行します。 LCM は、".mof" ファイルに格納されているキー値を、対応する各リソース インスタンスへのパラメーターとして使用します。
 
-これはサンプルの出力から、**サービス**"Spooler"サービスを構成するリソース。
+これは、"Spooler" サービスを構成する **Service** リソースの出力例です。
 
 ```output
 ConfigurationName    : Test
@@ -155,7 +155,7 @@ PSComputerName       :
 CimClassName         : MSFT_ServiceResource
 ```
 
-現在の値のプロパティを表示で構成可能な出力、**サービス**リソース。
+出力には、**Service** リソースで構成できる現在の値のプロパティが表示されます。
 
 ```syntax
 Service [String] #ResourceName
@@ -177,10 +177,10 @@ Service [String] #ResourceName
 
 ## <a name="test"></a>Server1
 
-**テスト**リソースのメソッドは、ターゲット ノードが現在に準拠して、リソースのかどうかを判断*目的の状態を*します。 **テスト**メソッドを返します。`$True`または`$False`ノードが準拠しているかどうかを示すためにのみです。
-呼び出すと[Test-dscconfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)、LCM の呼び出し、**テスト**現在適用されている構成内の各リソースのメソッド。 LCM は、対応する各リソース インスタンスにパラメーターとして".mof"ファイルに格納されているキーの値を使用します。
+リソースの **Test** メソッドでは、ターゲット ノードがリソースの "*望ましい状態*" に現在準拠しているかどうかを判断します。 **Test** メソッドは、Node が準拠しているかどうかのみを示す `$True` または `$False` を返します。
+[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) を呼び出すと、LCM では現在適用されている構成内の各リソースの **Test** メソッドを呼び出します。 LCM は、".mof" ファイルに格納されているキー値を、対応する各リソース インスタンスへのパラメーターとして使用します。
 
-場合、結果の個々 のリソースの**テスト**は`$False`、`Test-DSCConfiguration`返します`$False`ノードが準拠していないことを示します。 場合すべてのリソースの**テスト**メソッドが返す`$True`、`Test-DSCConfiguration`返します`$True`ノードが準拠していることを示します。
+個々のリソースの **Test** の結果が `$False` の場合、`Test-DSCConfiguration` は Node が準拠していないことを示す `$False` を返します。 すべてのリソースの **Test** メソッドが `$True` を返す場合、`Test-DSCConfiguration` は Node が準拠していることを示す `$True` を返します。
 
 ```powershell
 Test-DSCConfiguration
@@ -190,7 +190,7 @@ Test-DSCConfiguration
 True
 ```
 
-PowerShell 5.0 以降、`-Detailed`パラメーターが追加されました。 指定する`-Detailed`により`Test-DSCConfiguration`を準拠、および非準拠リソースの検索結果のコレクションを格納するオブジェクトを返します。
+PowerShell 5.0 以降では、`-Detailed` パラメーターが追加されています。 `-Detailed` を指定すると、`Test-DSCConfiguration` は準拠および非準拠リソースの結果のコレクションを含むオブジェクトを返します。
 
 ```powershell
 Test-DSCConfiguration -Detailed
@@ -202,13 +202,13 @@ PSComputerName  ResourcesInDesiredState        ResourcesNotInDesiredState     In
 localhost       {[Service]Spooler}                                            True
 ```
 
-詳細については、次を参照してください[Test-dscconfiguration。](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)
+詳細については、[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) を参照してください
 
 ## <a name="set"></a>設定
 
-**設定**リソースのメソッドが、リソースの準拠するためのノードを強制しようとしています。*目的の状態を*します。 **設定**メソッドがするものでは**べき等である**、つまり**設定**を複数回実行して、エラーのない同じ結果を常に取得できます。  実行すると[Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration)、現在適用されている構成内の各リソースを LCM 切り替えます。 LCM が".mof"ファイルから現在のリソース インスタンスのキーの値を取得し、それらをパラメーターとして使用、**テスト**メソッド。 場合、**テスト**メソッドを返します。 `$True`、ノードが現在のリソースに準拠して、**設定**メソッドはスキップされます。 場合、**テスト**返します`$False`ノードが非対応です。  LCM は、リソース インスタンスのキー値としてパラメーターに渡す、リソースの**設定**ノード コンプライアンスを復元する方法。
+リソースの **Set** メソッドは、Node がリソースの "*望ましい状態*" に準拠した状態になるように試行します。 **Set** メソッドは**べき等**であるように意図されています。つまり、**Set** を複数回実行し、エラーなしで常に同じ結果を取得することができます。  [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration) を実行すると、LCM では現在適用されている構成内の各リソースが循環処理されます。 LCM では ".mof" ファイルから現在のリソース インスタンスのキー値を取得し、それらを **Test** メソッドのパラメーターとして使用します。 **Test** メソッドが `$True` を返した場合、Node は現在のリソースに準拠しているため、**Set** メソッドはスキップされます。 **Test** が `$False` を返した場合、Node は準拠していません。  LCM はリソース インスタンスのキー値をパラメーターとしてリソースの **Set** メソッドに渡し、Node を準拠状態に復元します。
 
-指定することによって、`-Verbose`と`-Wait`パラメーターの進行状況を見ることができます、`Start-DSCConfiguration`コマンドレット。 この例では、ノードは準拠では既にです。 `Verbose`出力には、ことを示します、**設定**メソッドはスキップされました。
+`-Verbose` および `-Wait` パラメーターを指定することで、`Start-DSCConfiguration` コマンドレットの進行状況を確認できます。 この例では、Node は既に準拠しています。 `Verbose` の出力は、**Set** メソッドがスキップされたことを示しています。
 
 ```
 PS> Start-DSCConfiguration -Verbose -Wait -UseExisting
@@ -237,6 +237,6 @@ VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 
 ## <a name="see-also"></a>関連項目
 
-- [Azure Automation DSC の概要](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)
+- [Azure Automation DSC の概要](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Setting up an SMB pull server (SMB プル サーバーのセットアップ)](../pull-server/pullServerSMB.md)
 - [Configuring a pull client (プル クライアントの構成)](../pull-server/pullClientConfigID.md)

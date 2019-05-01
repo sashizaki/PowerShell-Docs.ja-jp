@@ -4,20 +4,20 @@ keywords: PowerShell, コマンドレット
 title: 実行中のプロセスからの PowerShell コマンドをデコードする
 author: randomnote1
 ms.openlocfilehash: a0602070a8c5b60ce0bb09e227690f48d970a868
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402294"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086240"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>実行中のプロセスからの PowerShell コマンドをデコードする
 
-実行しているプロセスが大量のリソースを占有して PowerShell があります。
-このプロセスのコンテキストで実行でき、[タスク スケジューラ][]ジョブまたは[SQL Server エージェント][]ジョブ。 実行されている複数の PowerShell プロセスがある場合は、どのプロセスが、問題を表しますがわかりにくいができます。 この記事では、PowerShell プロセスで現在実行中のスクリプト ブロックをデコードする方法を示します。
+実行している PowerShell プロセスで大量のリソースが使用されることがあります。
+このプロセスは、[タスク スケジューラ][] ジョブまたは [SQL Server エージェント][] ジョブのコンテキストで実行されている可能性があります。 複数の PowerShell プロセスが実行されている場合、どのプロセスで問題が発生しているのかわかりにくいことがあります。 この記事では、PowerShell プロセスで現在実行中のスクリプト ブロックをデコードする方法を示します。
 
-## <a name="create-a-long-running-process"></a>実行時間の長いプロセスを作成します。
+## <a name="create-a-long-running-process"></a>実行時間の長いプロセスを作成する
 
-このシナリオを示すためには、新しい PowerShell ウィンドウを開き、次のコードを実行します。 10 分の 1 分間隔の数値を出力するための PowerShell コマンドを実行します。
+このシナリオを示すため、新しい PowerShell ウィンドウを開き、次のコードを実行します。 10 分間にわたって 1 分ごとに数値を出力する PowerShell コマンドが実行されます。
 
 ```powershell
 powershell.exe -Command {
@@ -31,19 +31,19 @@ powershell.exe -Command {
 }
 ```
 
-## <a name="view-the-process"></a>プロセスを表示します。
+## <a name="view-the-process"></a>プロセスを表示する
 
-PowerShell が実行されているコマンドの本文が格納されている、 **CommandLine**のプロパティ、 [Win32_Process][]クラス。 コマンドの場合、[コマンドでエンコードされた][]、 **CommandLine**プロパティに文字列"EncodedCommand"が含まれています。 この情報を使用してエンコードされたコマンドは、次のプロセスを使用して難読化解除できます。
+PowerShell で実行されているコマンドの本体は、[Win32_Process][] クラスの **CommandLine** プロパティに格納されています。 コマンドが[エンコードされたコマンド][]の場合、**CommandLine** プロパティには文字列 "EncodedCommand" が含まれています。 この情報を使用して、次のプロセスにより、エンコードされたコマンドを難読化解除できます。
 
-管理者として PowerShell を起動します。 PowerShell を管理者として実行されている重要なは、それ以外の場合の結果は返されません、実行中のプロセスを照会するときに。
+管理者として PowerShell を開始します。 PowerShell を管理者として実行することが重要です。そうしないと、実行中のプロセスのクエリを実行しても結果は返されません。
 
-すべてのエンコード済みのコマンドが PowerShell プロセスを取得するには、次のコマンドを実行します。
+次のコマンドを実行し、エンコードされたコマンドを含むすべての PowerShell プロセスを取得します。
 
 ```powershell
 $powerShellProcesses = Get-CimInstance -ClassName Win32_Process -Filter 'CommandLine LIKE "%EncodedCommand%"'
 ```
 
-次のコマンドは、プロセス ID とエンコードされたコマンドを含むカスタム PowerShell オブジェクトを作成します。
+次のコマンドでは、プロセス ID とエンコードされたコマンドを含むカスタム PowerShell オブジェクトが作成されます。
 
 ```powershell
 $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
@@ -58,7 +58,7 @@ $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
 }
 ```
 
-今すぐでエンコードされたコマンドをデコードできます。 次のスニペットは、コマンドの詳細オブジェクトを反復処理し、エンコード済みのコマンドをデコードし、詳しい調査のためのオブジェクトに、デコードされたコマンドを追加します。
+これで、エンコードされたコマンドをデコードできるようになります。 次のスニペットは、コマンドの詳細オブジェクトを反復処理して、エンコードされたコマンドをデコードし、詳しい調査のためのデコードされたコマンドをオブジェクトに追加します。
 
 ```powershell
 $commandDetails | ForEach-Object -Process {
@@ -79,7 +79,7 @@ $commandDetails | ForEach-Object -Process {
 $commandDetails[0]
 ```
 
-デコードされたコマンドは、デコードされた command プロパティを選択してここで確認できます。
+デコードされたコマンド プロパティを選択することで、デコードされたコマンドを確認できるようになります。
 
 ```output
 ProcessId      : 8752
@@ -107,4 +107,4 @@ DecodedCommand :
 [タスク スケジューラ]: /windows/desktop/TaskSchd/task-scheduler-start-page
 [SQL Server エージェント]: /sql/ssms/agent/sql-server-agent
 [Win32_Process]: /windows/desktop/CIMWin32Prov/win32-process
-[コマンドでエンコードされた]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-
+[エンコードされたコマンド]: /powershell/scripting/core-powershell/console/powershell.exe-command-line-help#-encodedcommand-

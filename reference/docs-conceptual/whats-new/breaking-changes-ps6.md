@@ -3,11 +3,11 @@ ms.date: 05/17/2018
 keywords: powershell、core
 title: PowerShell Core 6.0 の重要な変更
 ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623927"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62085934"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell Core 6.0 の重要な変更
 

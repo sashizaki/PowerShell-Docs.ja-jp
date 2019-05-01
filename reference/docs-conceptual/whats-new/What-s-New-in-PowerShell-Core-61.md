@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 の新機能
 description: PowerShell Core 6.1 でリリースされた新機能と変更
 ms.date: 09/13/2018
-ms.openlocfilehash: fe1e892d4a13a7758f5405867fdd7488c059f5cc
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086138"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 の新機能
 
@@ -67,7 +67,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 | 時間 (秒)   | 12.170                 | 8.493               | 7.08                |
 | 高速化 (%) | なし                    | 30.2%               | 16.6%               |
 
-`Import-Csv` は Windows PowerShell からの回帰の後で大幅に高速化されてもいます。
+また、`Import-Csv` は Windows PowerShell からの後退の後で大幅に高速化されました。
 次の例では、26,616 行 6 列のテスト用 CSV を使用しています。
 
 ```powershell
@@ -179,8 +179,9 @@ Markdown は、HTML にレンダリングできる基本的な書式設定で読
 
 ## <a name="experimental-feature-flags"></a>試験機能フラグ
 
-試験機能フラグを使用すると、確定した機能を有効にすることができます。
-これらの試験的機能はサポートされておらず、バグが含まれる可能性があります。
+[試験的機能][]のサポートが有効になりました。 これにより、PowerShell の開発者は新しい機能を提供し、設計が完了する前にフィードバックを取得できます。 このようにすると、設計の進化に伴って破壊的変更が発生するのを回避できます。
+
+使用可能な試験的機能の一覧を取得するには、`Get-ExperimentalFeature` を使います。 これらの機能は、`Enable-ExperimentalFeature` および `Disable-ExperimentalFeature` で有効または無効にできます。
 
 この機能について詳しくは、[PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md) をご覧ください。
 
@@ -210,7 +211,7 @@ PowerShell と Hyper-V の機能である [PowerShell Direct](/virtualization/hy
 `Enable-PSRemoting` では、2 つのリモート処理セッション構成が作成されるようになりました。
 
 - PowerShell のメジャー バージョン用のセッション構成。 たとえば、`PowerShell.6` のように指定します。 このエンドポイントは、"システム全体" の PowerShell 6 セッション構成として、すべてのマイナー バージョン更新で利用できます。
-- 1 つのバージョンに固有のセッション構成。例: `PowerShell.6.1.0`
+- 1 つのバージョンに固有のセッション構成。たとえば、`PowerShell.6.1.0` などです。
 
 この動作は、同じコンピューターに PowerShell 6 の複数のバージョンをインストールしてアクセスできるようにしたい場合に便利です。
 
@@ -305,12 +306,12 @@ PS /etc>
 ### <a name="update-help-as-non-admin"></a>非管理者としての `Update-Help`
 
 要望が多かったので、`Update-Help` は管理者でなくても実行できるようになりました。
-`Update-Help` は既定でユーザー スコープのフォルダーにヘルプを保存するようになりました。
+`Update-Help` は既定でユーザー スコープのフォルダーにヘルプを保存します。
 
 ### <a name="new-methodsproperties-on-pscustomobject"></a>`PSCustomObject` での新しいメソッド/プロパティ
 
 [@iSazonov](https://github.com/iSazonov) のおかげで、`PSCustomObject` に新しいメソッドとプロパティが追加されました。
-`PSCustomObject` には、他のオブジェクトと同じように `Count`/`Length` プロパティが含まれるようになりました。
+`PSCustomObject` には、他のオブジェクトと同じように `Count`/`Length` プロパティが含まれるようになっています。
 
 ```powershell
 $PSCustomObject = [pscustomobject]@{foo = 1}
@@ -489,8 +490,8 @@ Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumbe
 
 Windows では、MSI パッケージは次のパスにインストールされるようになりました。
 
-- `$env:ProgramFiles\PowerShell\6\` 6.x の安定したインストールの場合
-- `$env:ProgramFiles\PowerShell\6-preview\` 6.x のプレビュー インストールの場合
+- `$env:ProgramFiles\PowerShell\6\`: 6.x の安定したインストールの場合
+- `$env:ProgramFiles\PowerShell\6-preview\`: 6.x のプレビュー インストールの場合
 
 この変更により、Microsoft Update で PowerShell Core を更新/保守できるようになります。
 
@@ -523,3 +524,6 @@ Visual Basic は `Add-Type` ではほとんど使用されませんでした。 
 順序に依存すべきではありませんが、最初のグループを必要としていた場合、この変更が破壊的になる可能性があります。 以前の動作に依存することの影響は低いため、このパフォーマンス向上には変更するだけの価値があると判断されました。
 
 この変更の詳細については、[問題 #7409](https://github.com/PowerShell/PowerShell/issues/7409) をご覧ください。
+
+<!-- URL references -->
+[試験的機能]: /powershell/module/Microsoft.PowerShell.Core/About/about_Experimental_Features

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データでの資格情報オプション
 ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "55681231"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080154"
 ---
 # <a name="credentials-options-in-configuration-data"></a>構成データでの資格情報オプション
 
->適用先: Windows PowerShell 5.0
+>適用先:Windows PowerShell 5.0
 
 ## <a name="plain-text-passwords-and-domain-users"></a>プレーンテキスト パスワードとドメイン ユーザー
 
@@ -25,7 +25,7 @@ ms.locfileid: "55681231"
 > [!NOTE]
 > 暗号化されていないプレーンテキスト パスワードを格納/送信するのは一般的には安全ではありません。 このトピックで後述する手法を使って資格情報をセキュリティ保護することをお勧めします。
 > Azure Automation DSC サービスでは、構成でコンパイルされ、安全に格納される資格情報を一元的に管理することができます。
-> 詳細について、「[DSC 構成のコンパイル/資格情報資産](/azure/automation/automation-dsc-compile#credential-assets)」を参照してください。
+> 詳しくは次の記事をご覧ください: [DSC 構成のコンパイルでの資格情報資産](/azure/automation/automation-dsc-compile#credential-assets)に関する記事
 
 ## <a name="handling-credentials-in-dsc"></a>DSC での資格情報の処理
 
@@ -65,7 +65,7 @@ Group [String] #ResourceName
 
 `PsDscRunAsCredential`プロパティの詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
 
-## <a name="example-the-group-resource-credential-property"></a>例: Group リソース資格情報プロパティ
+## <a name="example-the-group-resource-credential-property"></a>次に例を示します。Group リソース資格情報プロパティ
 
 DSC は `Local System` で実行されるため、ローカル ユーザーおよびグループを変更するためのアクセス許可が既にあります。
 追加されたメンバーがローカル アカウントの場合、資格情報は必要ありません。
@@ -137,7 +137,7 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
 1. プレーンテキスト パスワードが推奨されないことを説明するエラー。
 2. ドメイン資格情報を使用しないよう勧める警告。
 
-フラグ**PSDSCAllowPlainTextPassword**と**PSDSCAllowDomainUser**エラーと関連するリスクのユーザーに通知する警告を抑制します。
+フラグ **PSDSCAllowPlainTextPassword** および **PSDSCAllowDomainUser** では、関連するリスクをユーザーに通知するエラーと警告が抑制されます。
 
 ## <a name="psdscallowplaintextpassword"></a>PSDSCAllowPlainTextPassword
 
@@ -181,7 +181,7 @@ DomainCredentialExample -ConfigurationData $cd
 
 ### <a name="localhostmof"></a>localhost.mof
 
-**PSDSCAllowPlainTextPassword**フラグは、ユーザーが MOF ファイルにプレーン テキスト パスワードを格納するリスクを確認する必要があります。 生成された MOF ファイルの場合でも、 **PSCredential**オブジェクトを含む、 **SecureString**が使用すると、パスワードがプレーン テキストとして表示されます。 これは、資格情報が公開されているときだけです。 この MOF ファイルは、すべてのユーザーの管理者アカウントにアクセスするには、アクセス キーを押します。
+**PSDSCAllowPlainTextPassword** フラグを使うときは、ユーザーが MOF ファイルにプレーン テキスト パスワードを格納するリスクを認識している必要があります。 生成される MOF ファイルでは、**SecureString** を含む **PSCredential** オブジェクトが使われている場合であっても、パスワードはプレーン テキストとして表示されます。 これは、資格情報が公開されるときだけです。 この MOF ファイルにアクセスできるすべてのユーザーは、管理者アカウントにアクセスできます。
 
 ```
 /*
@@ -216,16 +216,16 @@ ModuleVersion = "1.0";
 };
 ```
 
-### <a name="credentials-in-transit-and-at-rest"></a>送信および保存時の資格情報
+### <a name="credentials-in-transit-and-at-rest"></a>送信中および保存時の資格情報
 
-- **PSDscAllowPlainTextPassword**フラグがクリア テキストでパスワードを含む MOF ファイルのコンパイルを使用します。
-  クリア テキスト パスワードを含む MOF ファイルを格納する場合は注意してください。
-- 内のノードに、MOF ファイルを配信するタイミング**プッシュ**モードでは、WinRM がで既定値を上書きしない限り、クリア テキスト パスワードを保護する通信を暗号化する、 **AllowUnencrypted**パラメーター。
-  - 証明書で MOF の暗号化では、ノードに適用する前に残りの部分で MOF ファイルを保護します。
-- **プル**モードでは、インターネット インフォメーション サーバーで指定されたプロトコルを使用してトラフィックを暗号化する HTTPS を使用する Windows のプル サーバーを構成することができます。 詳細については、記事をご覧ください。 [DSC プル クライアントのセットアップ](../pull-server/pullclient.md)と[セキュリティで保護する MOF ファイルに証明書](../pull-server/secureMOF.md)します。
-  - [Azure Automation State Configuration](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview)サービス、トラフィックの暗号化は常にプルします。
-- MOF ファイルが保存時暗号化ノードで、PowerShell 5.0 以降します。
-  - PowerShell 4.0 の MOF のプッシュまたはプル ノードにある証明書で暗号化されていないファイルは保存時暗号化されません。
+- **PSDscAllowPlainTextPassword** フラグを使用すると、クリア テキストのパスワードが含まれる MOF ファイルをコンパイルできます。
+  クリア テキストのパスワードが含まれる MOF ファイルを格納するときは注意が必要です。
+- MOF ファイルが**プッシュ** モードでノードに配信されるときは、**AllowUnencrypted** パラメーターで既定値を上書きしない限り、WinRM によってクリア テキスト パスワードを保護するために通信が暗号化されます。
+  - 証明書で MOF を暗号化すると、ノードに適用される前の保存時の MOF ファイルが保護されます。
+- **プル** モードでは、HTTPS を使用してインターネット インフォメーション サーバーで指定されているプロトコルでトラフィックを暗号化するように、Windows プル サーバーを構成することができます。 詳しくは、「[DSC プル クライアントのセットアップ](../pull-server/pullclient.md)」および「[証明書を使用した MOF ファイルのセキュリティ保護](../pull-server/secureMOF.md)」をご覧ください。
+  - [Azure Automation State Configuration](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) サービスでは、プル トラフィックは常に暗号化されます。
+- PowerShell 5.0 以降では、ノードでの保存時の MOF ファイルは暗号化されます。
+  - PowerShell 4.0 での MOF ファイルは、ノードにプッシュまたはプルされるときに証明書で暗号化されていない限り、保存時には暗号化されません。
 
 **Microsoft では、重大なセキュリティ リスクのため、プレーンテキスト パスワードを使用しないことをお勧めします。**
 

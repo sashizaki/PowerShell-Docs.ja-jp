@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: PowerShell リモート処理での次ホップの実行
 ms.openlocfilehash: 1b6e5ad53346324adc7be2d013e154c8600afa4f
-ms.sourcegitcommit: 6ae5b50a4b3ffcd649de1525c3ce6f15d3669082
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56265588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62086342"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>PowerShell リモート処理での次ホップの実行
 
@@ -43,7 +43,7 @@ PowerShell リモート処理用に CredSSP を有効にして使う方法の例
 
 Kerberos の無制限の委任を使って、次ホップを実行することもできます。 ただし、この方法では、委任された資格情報が使われる場所を制御することはできません。
 
->**注:** **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)」 (セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析) および「[Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」 (Kerberos 認証のツールと設定) をご覧ください。
+>**注:** **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts (セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析)](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)」および「[Kerberos Authentication Tools and Settings (Kerberos 認証のツールと設定)](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」をご覧ください
 
 ### <a name="pros"></a>長所
 
@@ -56,10 +56,10 @@ Kerberos の無制限の委任を使って、次ホップを実行すること�
 
 ## <a name="kerberos-constrained-delegation"></a>Kerberos の制約付き委任
 
-従来の (リソースに基づかない) 制約付き委任を使って、次ホップを実行できます。 「任意の認証プロトコルを使用して、」オプションを使用して Kerberos の制約付き委任を構成するプロトコル遷移を許可します。
+従来の (リソースに基づかない) 制約付き委任を使って、次ホップを実行できます。 プロトコル遷移を許可するには、[任意の認証プロトコルを使う] オプションを使用して Kerberos の制約付き委任を構成します。
 
 > [!NOTE]
-> **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)」 (セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析) および「[Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」 (Kerberos 認証のツールと設定) をご覧ください。
+> **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts (セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析)](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)」および「[Kerberos Authentication Tools and Settings (Kerberos 認証のツールと設定)](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」をご覧ください
 
 ### <a name="pros"></a>長所
 
@@ -77,7 +77,7 @@ Kerberos の無制限の委任を使って、次ホップを実行すること�
 リソースに基づく Kerberos の制約付き委任 (Windows Server 2012 で導入) を使って、リソースが存在するサーバー オブジェクトでの資格情報の委任を構成します。
 上で説明した次ホップのシナリオでは、_ServerC_ を構成して、受け入れる委任された資格情報の委任元を指定します。
 
->**注:** **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)」 (セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析) および「[Kerberos Authentication Tools and Settings](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」 (Kerberos 認証のツールと設定) をご覧ください。
+>**注:** **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts (セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析)](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)」および「[Kerberos Authentication Tools and Settings (Kerberos 認証のツールと設定)](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」をご覧ください
 
 ### <a name="pros"></a>長所
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: プル サーバーのベスト プラクティス
 ms.openlocfilehash: fe483a487f85f2e4edb0928fccfe98746ae11231
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58057707"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079202"
 ---
 # <a name="pull-server-best-practices"></a>プル サーバーのベスト プラクティス
 
@@ -16,7 +16,7 @@ ms.locfileid: "58057707"
 > [!IMPORTANT]
 > プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
 
-要約:このドキュメントは、ソリューションを準備するエンジニアを支援するプロセスと拡張機能を示すためのものです。 ベスト プラクティスに関する推奨事項は、将来を見据えた安定したものにするために、お客様によって確認され、製品チームによって検証されたベスト プラクティスの詳細を示す必要があります。
+概要: このドキュメントは、ソリューションを準備するエンジニアを支援するプロセスと拡張機能を示すためのものです。 ベスト プラクティスに関する推奨事項は、将来を見据えた安定したものにするために、お客様によって確認され、製品チームによって検証されたベスト プラクティスの詳細を示す必要があります。
 
 | |ドキュメント情報|
 |:---|:---|
@@ -104,7 +104,7 @@ Windows Server 2012 R2 のインストール ファイルにアクセスでき�
 
 物理サーバーと仮想サーバーの両方でプル サーバーの展開がサポートされます。 プル サーバーのサイズ要件は、Windows Server 2012 R2 の要件と一致します。
 
-CPU:1.4 GHz 64 ビット プロセッサ メモリ:512 MB のディスク領域:32 GB のネットワーク:ギガビット イーサネット アダプター
+CPU: 1.4 GHz 64 ビット プロセッサ メモリ:512 MB のディスク領域:32 GB のネットワーク:ギガビット イーサネット アダプター
 
 計画タスク|
 ---|

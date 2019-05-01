@@ -1,12 +1,12 @@
 ---
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
-ms.openlocfilehash: a2938c168f476e5f9c38ba55ceb45fa2b95571e2
-ms.sourcegitcommit: bad40d59598ae5597051fa381986316a2d9bf6c8
+ms.openlocfilehash: ac845a461eef4f567b74f813621f6bfa38419afb
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/20/2018
-ms.locfileid: "36271179"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62057351"
 ---
 # <a name="powershellget-cmdlets-for-script-management"></a>スクリプト管理用の PowerShellGet コマンドレット
 
@@ -165,7 +165,7 @@ Version Name Author Description
 ## <a name="install-script-and-get-installedscript-cmdlets"></a>Install-Script および Get-InstalledScript コマンドレット
 Install-Script コマンドレットでは、特定のスクリプト ファイルをその依存関係と共に、指定したスコープにインストールできます。 既定では、スクリプトは AllUsers スコープにインストールされます。 Get-InstalledScript コマンドレットでは、Install-Script コマンドレットを使用してインストールされたスクリプト ファイルの一覧を取得できます。
 
-使用上の注意: スクリプトがインストールされた後、管理および検索できるようにするため、Install-Script によってスクリプトを格納するための既定のフォルダーが $home\Documents\WindowsPowerShell\Scripts に作成され、PATH 環境変数にそのフォルダーが追加されます。 パスの変更に問題がある場合は、Install-Script ではなく Save-Script を使用します。 Get-InstalledScripts と Uninstall-Script は、Install-Script を使用してシステム上に配置されたスクリプトに対してのみ機能します。
+使用上の注意:スクリプトがインストールされた後、管理および検索できるようにするため、Install-Script によってスクリプトを格納するための既定のフォルダーが $home\Documents\WindowsPowerShell\Scripts に作成され、PATH 環境変数にそのフォルダーが追加されます。 パスの変更に問題がある場合は、Install-Script ではなく Save-Script を使用します。 Get-InstalledScripts と Uninstall-Script は、Install-Script を使用してシステム上に配置されたスクリプトに対してのみ機能します。
 ```powershell
 \# Install locations for scripts:
 \# Default scope is AllUsers.

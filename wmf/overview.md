@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2018
+ms.date: 04/19/2019
 keywords: WMF, PowerShell, セットアップ
 title: Windows Management Framework (WMF)
-ms.openlocfilehash: f279f975527dc198dd9b47ca1dc4258f54fafef5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 6d25b4025bbc86f6be0e5c74db9f1fbe6705d816
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55679996"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62055447"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
 
@@ -35,26 +35,30 @@ PowerShell と特定の WMF のその他のコンポーネントのさまざま�
 
 ## <a name="wmf-availability-across-windows-operating-systems"></a>Windows オペレーティング システム全体の WMF 可用性
 
-|オペレーティング システムのバージョン  |[WMF 5.1][] |[WMF 5.0][] |[WMF 4.0][] |[WMF 3.0][]  |[WMF 2.0][] |
-|--------------------------|------------|------------|------------|-------------|------------|
-|Windows Server 2019       |出荷時にインストール済み|            |            |             |            |
-|Windows Server 2016       |出荷時にインストール済み|            |            |             |            |
-|Windows 10                |出荷時にインストール済み|出荷時にインストール済み|            |             |            |
-|Windows Server 2012 R2    |可         |可         |出荷時にインストール済み|             |            |
-|Windows 8.1               |可         |可         |出荷時にインストール済み|             |            |
-|Windows Server 2012       |可         |可         |可         |出荷時にインストール済み |            |
-|Windows 8                 |            |            |            |出荷時にインストール済み |            |
-|Windows Server 2008 R2 SP1|可         |可         |可         |可          |出荷時にインストール済み|
-|Windows 7 SP1             |可         |可         |可         |可          |出荷時にインストール済み|
-|Windows Server 2008 SP2   |            |            |            |可          |可         |
-|Windows Vista             |            |            |            |             |可         |
-|Windows Server 2003       |            |            |            |             |可         |
-|Windows XP                |            |            |            |可          |            |
+|        オペレーティング システムのバージョン         | [WMF 5.1][]  | WMF 5.0<br>*サポート対象外* | [WMF 4.0][]  | [WMF 3.0][]  | [WMF 2.0][]  |
+| --------------------------------------- | ------------ | --------------------------- | ------------ | ------------ | ------------ |
+| Windows Server 2019                     | 出荷時にインストール済み |                             |              |              |              |
+| Windows Server 2016                     | 出荷時にインストール済み |                             |              |              |              |
+| Windows 10                              | 出荷時にインストール済み | 出荷時にインストール済み                |              |              |              |
+| Windows Server 2012 R2                  | 可          | 可                         | 出荷時にインストール済み |              |              |
+| Windows 8.1                             | 可          | 可                         | 出荷時にインストール済み |              |              |
+| Windows Server 2012                     | 可          | 可                         | 可          | 出荷時にインストール済み |              |
+| Windows 8<br>*サポート対象外*           |              |                             |              | 出荷時にインストール済み |              |
+| Windows Server 2008 R2 SP1              | 可          | 可                         | 可          | 可          | 出荷時にインストール済み |
+| Windows 7 SP1                           | 可          | 可                         | 可          | 可          | 出荷時にインストール済み |
+| Windows Server 2008 SP2                 |              |                             |              | 可          | 可          |
+| Windows Vista<br>*サポート対象外*       |              |                             |              |              | 可          |
+| Windows Server 2003<br>*サポート対象外* |              |                             |              |              | 可          |
+| Windows XP<br>*サポート対象外*          |              |                             |              | 可          | 可          |
 
-**出荷時にインストール済み**: 指定されたバージョンの WMF の機能は、示されているバージョンの Windows クライアントおよび Windows Server に付属しています。
+- **出荷時にインストール済み**:指定されたバージョンの WMF の機能は、示されているバージョンの Windows クライアントおよび Windows Server に付属しています。
+- **サポート対象外**:これらの製品は Microsoft でサポートされなくなりました。 サポートされている新しいバージョンにアップグレードする必要があります。 詳細については、「[Microsoft ライフサイクル ポリシー][]」ページを参照してください。
 
+> [!NOTE]
+> WMF 5.0 のインストーラーは利用できなくなりました。また、サポート対象外になりました。 WMF 5.1 に置き換えられました。
+
+[Microsoft ライフサイクル ポリシー]: https://support.microsoft.com/lifecycle
 [WMF 5.1]: https://aka.ms/wmf51download
-[WMF 5.0]: https://aka.ms/wmf5download
 [WMF 4.0]: https://aka.ms/wmf4download
 [WMF 3.0]: https://aka.ms/wmf3download
 [WMF 2.0]: https://aka.ms/wmf2download
