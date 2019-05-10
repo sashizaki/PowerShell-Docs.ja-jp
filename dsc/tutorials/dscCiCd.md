@@ -38,7 +38,7 @@ ms.locfileid: "62076477"
 クライアント コンピューターは Windows コンピューターで、以下がインストールされている必要があります。
 
 - [Git](https://git-scm.com/)
-- https://github.com/PowerShell/Demo_CI から複製されたローカル Git リポジトリ
+- [https://github.com/PowerShell/Demo_CI](https://github.com/PowerShell/Demo_CI) から複製されたローカル Git リポジトリ
 - [Visual Studio Code](https://code.visualstudio.com/) などのテキスト エディター
 
 ### <a name="tfssrv1"></a>TFSSrv1

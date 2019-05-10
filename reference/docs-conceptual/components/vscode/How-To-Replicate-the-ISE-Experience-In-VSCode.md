@@ -71,7 +71,7 @@ VSCode でも[独自のキー バインドを構成](https://code.visualstudio.c
 
 エディターの外観を ISE に似せるために、VSCode で使用できる ISE テーマがいくつかあります。
 
-[[コマンド パレット]] に「`theme`」と入力して `Preferences: Color Theme` を取得し、<kbd>Enter</kbd> キーを押します。
+[コマンド パレット] に「`theme`」と入力して `Preferences: Color Theme` を取得し、<kbd>Enter</kbd> キーを押します。
 ドロップダウン リストから `PowerShell ISE` を選択します。
 
 このテーマは、次のように設定で指定できます。
@@ -84,7 +84,7 @@ VSCode でも[独自のキー バインドを構成](https://code.visualstudio.c
 
 [@corbob](https://github.com/corbob) の機能により、PowerShell 拡張機能には独自のコマンド エクスプローラーの開始機能があります。
 
-[[コマンド パレット]] に「`PowerShell Command Explorer`」と入力し、<kbd>Enter</kbd> キーを押します。
+[コマンド パレット] に「`PowerShell Command Explorer`」と入力し、<kbd>Enter</kbd> キーを押します。
 
 ## <a name="open-in-the-ise"></a>ISE で開く
 
@@ -111,4 +111,4 @@ PR や寄付も常に歓迎しています。
 VSCode でコマンドを実行する便利な方法です。
 詳細については、[VSCode のドキュメント](https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette)を参照してください。
 
-[[コマンド パレット]]: #command-palette
+[コマンド パレット]: #command-palette
