@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
 caps.latest.revision: 6
-ms.openlocfilehash: f2f6b9af7740b1231881294c2f32bf97b5a1568b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 37a297228eb33ff75daf94a12635d42b52c6cc9f
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62064511"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229328"
 ---
 # <a name="scriptblock-element-for-groupby-format"></a>GroupBy の ScriptBlock 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "62064511"
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>属性および要素
+## <a name="attributes-and-elements"></a>属性と要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`ScriptBlock`要素。
 
@@ -51,14 +51,14 @@ ms.locfileid: "62064511"
 
 ## <a name="remarks"></a>コメント
 
-Windows PowerShell は、このスクリプトの値が変更されるたびに、新しいグループを開始します。
+PowerShell は、このスクリプトの値が変更されるたびに、新しいグループを開始します。
 
-この要素が指定されている場合は指定できません、 [PropertyName](http://msdn.microsoft.com/en-us/396dede0-039a-4a87-a5ef-3ecabb729676)要素を新しいグループを開始します。
+この要素が指定されている場合は指定できません、 [PropertyName](propertyname-element-for-groupby-format.md)要素を新しいグループを開始します。
 
 ## <a name="see-also"></a>参照
 
-[GroupBy (形式) の PropertyName 要素](./propertyname-element-for-groupby-format.md)
+[GroupBy (形式) の PropertyName 要素](propertyname-element-for-groupby-format.md)
 
-[ビュー (形式) の GroupBy 要素](./groupby-element-for-view-format.md)
+[ビュー (形式) の GroupBy 要素](groupby-element-for-view-format.md)
 
-[PowerShell のファイルを書式設定の書き込み](./writing-a-powershell-formatting-file.md)
+[PowerShell のファイルを書式設定の書き込み](writing-a-powershell-formatting-file.md)
