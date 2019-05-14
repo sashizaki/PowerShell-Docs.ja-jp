@@ -68,7 +68,7 @@
   items:
     - name: コンソール
       items:
-        - name: PowerShell.exe コマンドラインのヘルプ
+        - name: PowerShell のコマンド ライン オプション
           href: components/console/powershell.exe-command-line-help.md
         - name: タブ拡張の使用
           href: components/console/using-tab-expansion.md
