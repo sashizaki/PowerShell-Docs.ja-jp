@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC のトラブルシューティング
-ms.openlocfilehash: 5ee1b68f4f769426fea3c8e10738c3bb6ef94480
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076550"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229536"
 ---
 # <a name="troubleshooting-dsc"></a>DSC のトラブルシューティング
 
@@ -627,6 +627,21 @@ onlyProperty                            PSComputerName
 ------------                            --------------
 14                                      localhost
 ```
+
+## <a name="dsc-returns-unexpected-response-code-internalservererror-when-registering-with-windows-pull-server"></a>Windows プル サーバーに登録すると、DSC から "予期しない応答コード InternalServerError" が返されます。
+
+サーバーにメタ構成を適用して、それを Windows プル サーバーのインスタンスに登録すると、次のエラーが発生する可能性があります。
+
+```PowerShell
+Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
+https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned unexpected response code InternalServerError. .
+    + CategoryInfo          : InvalidResult: (root/Microsoft/...gurationManager:String) [], CimException
+    + FullyQualifiedErrorId : RegisterDscAgentUnsuccessful,Microsoft.PowerShell.DesiredStateConfiguration.Commands.RegisterDscAgentCommand
+    + PSComputerName        : <computername>
+```
+
+トラフィックを暗号化するためにサーバー上で使用される証明書に、URL を解決するためにノードによって使用される DNS 名とは異なる共通名 (CN) が含まれている場合に、これは発生する可能性があります。
+正しい名前の証明書を使用するように Windows プルサーバーのインスタンスを更新します。
 
 ## <a name="see-also"></a>参照
 

@@ -2,12 +2,12 @@
 title: macOS への PowerShell Core のインストール
 description: macOS への PowerShell Core のインストールに関する情報
 ms.date: 12/12/2018
-ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 70f5d64aa8a697a9011d07fbcb2bb821463827e1
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086461"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229746"
 ---
 # <a name="installing-powershell-core-on-macos"></a>macOS への PowerShell Core のインストール
 
@@ -19,6 +19,7 @@ PowerShell Core は、macOS 10.12 以降をサポートしています。
 
 [Homebrew][brew] は、macOS 用の推奨されるパッケージ マネージャーです。
 `brew` コマンドが見つからない場合、[指示][brew]に従い、Homebrew をインストールする必要があります。
+それ以外の場合は、[直接ダウンロード](#installation-via-direct-download)によって、または[バイナリアーカイブ](#binary-archives)から PowerShell をインストールできます。
 
 ## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>macOS 10.12 以降で Homebrew を使用した最新の安定版リリースのインストール
 

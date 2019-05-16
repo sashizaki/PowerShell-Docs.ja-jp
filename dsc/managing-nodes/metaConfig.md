@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: ローカル構成マネージャーの構成
-ms.openlocfilehash: 86d2cc17872692a738e9c68121b8931833d2a251
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 15d696587d54d4a6464096cfb78757c41e9185c6
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079678"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229501"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>ローカル構成マネージャーの構成
 
@@ -121,6 +121,10 @@ Web ベースの構成サーバーを定義するには、**ConfigurationReposit
 |ConfigurationNames|String[]|ターゲット ノードによってプルされる構成の名前の配列。 ノードが **RegistrationKey** を使用してプル サービスに登録されている場合にのみ使用します。 詳細については、「[構成名を使用したプル クライアントのセットアップ](../pull-server/pullClientConfigNames.md)」を参照してください。|
 |RegistrationKey|string|プル サービスにノードを登録する GUID。 詳細については、「[構成名を使用したプル クライアントのセットアップ](../pull-server/pullClientConfigNames.md)」を参照してください。|
 |ServerURL|string|構成サービスの URL。|
+|ProxyURL*|string|構成サービスと通信するときに使用する http プロキシの URL。|
+|ProxyCredential*|pscredential|http プロキシに使用する資格情報。|
+
+>!注\* Windows バージョン 1809 以降でサポートされています。
 
 オンプレミス ノードの ConfigurationRepositoryWeb 値の設定を簡単に行うサンプル スクリプトが用意されています。「[DSC メタ構成の生成](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)」を参照してください。
 
@@ -143,6 +147,10 @@ Web ベースのリソース サーバーを定義するには、**ResourceRepos
 |CertificateID|string|サーバーへの認証に使用される証明書の拇印。|
 |RegistrationKey|string|プル サービスにノードを指定する GUID。|
 |ServerURL|string|構成サーバーの URL。|
+|ProxyURL*|string|構成サービスと通信するときに使用する http プロキシの URL。|
+|ProxyCredential*|pscredential|http プロキシに使用する資格情報。|
+
+>!注\* Windows バージョン 1809 以降でサポートされています。
 
 オンプレミス ノードの ResourceRepositoryWeb 値の設定を簡単に行うサンプル スクリプトが用意されています。「[DSC メタ構成の生成](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)」を参照してください。
 
@@ -166,6 +174,10 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 |CertificateID|string|サーバーへの認証に使用される証明書の拇印。|
 |RegistrationKey|string|プル サービスにノードを指定する GUID。|
 |ServerURL|string|構成サーバーの URL。|
+|ProxyURL*|string|構成サービスと通信するときに使用する http プロキシの URL。|
+|ProxyCredential*|pscredential|http プロキシに使用する資格情報。|
+
+>!注\* Windows バージョン 1809 以降でサポートされています。
 
 オンプレミス ノードの ReportServerWeb 値の設定を簡単に行うサンプル スクリプトが用意されています。「[DSC メタ構成の生成](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)」を参照してください。
 
