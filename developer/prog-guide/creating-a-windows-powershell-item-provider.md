@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: f2c9e10f0dc392399cf062500b7f28b3d1c07f6e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6f91fd53d41dd72c99f8fbc7bc7b863322d88787
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081871"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855050"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Windows PowerShell アイテム プロバイダーを作成する
 
@@ -30,44 +30,6 @@ ms.locfileid: "62081871"
 > その他の Windows PowerShell プロバイダーの実装の詳細については、次を参照してください。 [Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)します。
 
 このトピックで説明されている Windows PowerShell 項目プロバイダーでは、Access データベースからのデータ項目を取得します。 ここでは、"item"は、Access データベース内のテーブルまたはテーブルの行のいずれかです。
-
-次の一覧には、このトピックのセクションが含まれています。 Windows PowerShell 項目プロバイダーの記述に慣れていない場合に、出現する順序でこれらのセクションが読み取られます。 ただし、Windows PowerShell 項目プロバイダーの作成に習熟する場合は、必要な情報に直接移動します。
-
-- [Windows PowerShell 項目プロバイダー クラスを定義します。](#Defining-the-Windows-PowerShell-Item-Provider-Class)
-
-- [基本機能を定義します。](#Defining-Base-Functionality)
-
-- [パスの有効性の確認](#Checking-for-Path-Validity)
-
-- [項目が存在するかを決定します。](#Determining-if-an-Item-Exists)
-
-- [動的パラメーターをアタッチ、`Test-Path`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Test-Path-Cmdlet)
-
-- [項目の取得](#Retrieving-an-Item)
-
-- [動的パラメーターをアタッチ、`Get-Item`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Get-Item-Cmdlet)
-
-- [項目の設定](#Setting-an-Item)
-
-- [動的パラメーターをアタッチ、`Set-Item`コマンドレット](#Retrieving-Dynamic-Parameters-for-SetItem)
-
-- [項目をクリアします。](#Clearing-an-Item)
-
-- [Clear-item コマンドレットへの動的パラメーター](#Retrieve-Dynamic-Parameters-for-ClearItem)
-
-- [項目の既定のアクションを実行します。](#Performing-a-Default-Action-for-an-Item)
-
-- [InvokeDefaultAction の動的パラメーターを取得します。](#Retrieve-Dynamic-Parameters-for-InvokeDefaultAction)
-
-- [ヘルパー メソッドとクラスを実装します。](#Implementing-Helper-Methods-and-Classes)
-
-- [コード サンプル](#Code-Sample)
-
-- [オブジェクトの種類を定義して、書式設定](#Defining-Object-Types-and-Formatting)
-
-- [Windows PowerShell プロバイダーのビルド](#Building-the-Windows-PowerShell-provider)
-
-- [Windows PowerShell プロバイダーのテスト](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-item-provider-class"></a>Windows PowerShell 項目プロバイダー クラスを定義します。
 
@@ -223,7 +185,7 @@ Windows PowerShell 項目プロバイダーを実装できます、 [System.Mana
 
 ## <a name="implementing-helper-methods-and-classes"></a>ヘルパー メソッドとクラスを実装します。
 
-この項目プロバイダーがいくつかのヘルパー メソッドを実装し、パブリックで使用されるクラスは、Windows PowerShell によって定義されたメソッドをオーバーライドします。 これらのヘルパー メソッドとクラスのコードに表示されます、[コード サンプル](#Code-Sample)セクション。
+この項目プロバイダーがいくつかのヘルパー メソッドを実装し、パブリックで使用されるクラスは、Windows PowerShell によって定義されたメソッドをオーバーライドします。 これらのヘルパー メソッドとクラスのコードに表示されます、[コード サンプル](#code-sample)セクション。
 
 ### <a name="normalizepath-method"></a>NormalizePath メソッド
 

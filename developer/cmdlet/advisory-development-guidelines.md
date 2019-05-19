@@ -8,42 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068795"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854877"
 ---
 # <a name="advisory-development-guidelines"></a>お勧めする開発ガイドライン
 
 このセクションでは、適切な開発とユーザー エクスペリエンスを確保するために考慮すべきガイドラインについて説明します。 場合によって次のように適用される場合がありますとありますでない場合があります。
-
-## <a name="design-guidelines"></a>デザイン ガイドライン
-
-- [InputObject パラメーター (AD01) のサポートします。](./advisory-development-guidelines.md#AD01)
-
-- [Force パラメーター (AD02) のサポート](./advisory-development-guidelines.md#AD02)
-
-- [Windows PowerShell (AD03) を使って資格情報を処理します。](./advisory-development-guidelines.md#AD03)
-
-- [エンコード パラメーター (AD04) をサポートします。](./advisory-development-guidelines.md#AD04)
-
-- [テスト コマンドレットは、ブール値 (AD05) を返す必要があります。](./advisory-development-guidelines.md#AD05)
-
-## <a name="code-guidelines"></a>コードのガイドライン
-
-- [次のコマンドレットのクラスの名前付け規則 (AC01)](./advisory-development-guidelines.md#AC01)
-
-- [パイプラインの入力には、BeginProcessing メソッド (AC02) が上書きされない場合](./advisory-development-guidelines.md#AC02)
-
-- [StopProcessing メソッド (AC03) をオーバーライドしている停止要求を処理するには](./advisory-development-guidelines.md#AC03)
-
-- [IDisposable インターフェイス (AC04) の実装します。](./advisory-development-guidelines.md#AC04)
-
-- [シリアル化に適したパラメーターの型 (AC05) を使用して、](./advisory-development-guidelines.md#AC05)
-
-- [SecureString を使用して、機密性の高いデータ (AC06)](./advisory-development-guidelines.md#AC06)
 
 ## <a name="design-guidelines"></a>デザイン ガイドライン
 

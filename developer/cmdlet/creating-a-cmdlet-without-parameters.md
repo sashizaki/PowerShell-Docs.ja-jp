@@ -11,35 +11,19 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
-ms.openlocfilehash: c380b28570c955de6f41152fd617f5c1b0f9e4bd
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7f10acf59dedbb4af17bc5250e8624282ba22656
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068336"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854967"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>パラメーターなしでコマンドレットを作成する
 
 このセクションでは、パラメーターを使用せず、ローカル コンピューターから情報を取得し、パイプラインに情報を書き込みますコマンドレットを作成する方法について説明します。 ここで説明するコマンドレットは、ローカル コンピューターのプロセスに関する情報を取得し、コマンドラインでその情報を表示する Get-proc コマンドレットです。
 
-このセクションのトピックで、次のとおりです。
-
-- [コマンドレットの名前を付ける](#Naming-the-Cmdlet)
-
-- [コマンドレット クラスを定義します。](#Defining-the-Cmdlet-Class)
-
-- [入力処理メソッドをオーバーライドします。](#Overriding-an-Input-Processing-Method)
-
-- [コード サンプル](#Code-Sample)
-
-- [オブジェクトの種類を定義して、書式設定](#Defining-Object-Types-and-Formatting)
-
-- [コマンドレットを構築](#Building-the-Cmdlet)
-
-- [テスト コマンドレット](#Testing-the-Cmdlet)
-
 > [!NOTE]
-> コマンドレットを記述する場合、Windows PowerShell® 参照アセンブリがダウンロードされるディスク上に (既定で C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0 など) を認識します。グローバル アセンブリ キャッシュ (GAC) には未インストールします。
+> コマンドレットを記述する場合、Windows PowerShell® 参照アセンブリがダウンロードされるディスク上に (既定で C:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\v1.0 など) を認識します。 グローバル アセンブリ キャッシュ (GAC) には未インストールします。
 
 ## <a name="naming-the-cmdlet"></a>コマンドレットの名前を付ける
 

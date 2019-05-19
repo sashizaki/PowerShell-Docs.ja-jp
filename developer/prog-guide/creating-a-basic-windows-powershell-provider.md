@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], base provider
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
-ms.openlocfilehash: 19cc3817016d96e1412a5f3506e9d694ba55b48d
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5ebc22067b20f0e1d35d31d5f33e599f50cb7564
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082075"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855067"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>基本的な Windows PowerShell プロバイダーを作成する
 
@@ -26,22 +26,6 @@ ms.locfileid: "62082075"
 
 > [!NOTE]
 > Windows PowerShell によって提供される AccessDBSampleProvider01.cs ファイルでは、このプロバイダーのサンプルが見つかります。
-
-このトピックのセクションは、次のとおりです。
-
-- [Windows PowerShell プロバイダー クラスを定義します。](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [プロバイダー固有の状態情報を定義します。](#Defining-Provider-Specific-State-Information)
-
-- [プロバイダーの初期化](#Initializing-the-Provider)
-
-- [動的パラメーターを開始します。](#Start-Dynamic-Parameters)
-
-- [プロバイダーの初期化解除](#Uninitializing-the-Provider)
-
-- [コード サンプル](#Code-Sample)
-
-- [Windows PowerShell プロバイダーのテスト](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Windows PowerShell プロバイダー クラスを定義します。
 
@@ -77,7 +61,7 @@ Windows PowerShell プロバイダーは、接続ベースの状態を維持す�
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
 
-」の説明に従って、プロバイダーはプロバイダー固有の情報の状態を保持できる[プロバイダーに固有のデータの状態を定義する](#Defining-Provider-Specific-State-Information)します。 この場合、実装をオーバーライドする必要があります、 [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)派生クラスのインスタンスを返すメソッド。
+」の説明に従って、プロバイダーはプロバイダー固有の情報の状態を保持できる[プロバイダーに固有のデータの状態を定義する](#defining-provider-specific-state-information)します。 この場合、実装をオーバーライドする必要があります、 [System.Management.Automation.Provider.Cmdletprovider.Start*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)派生クラスのインスタンスを返すメソッド。
 
 ## <a name="start-dynamic-parameters"></a>動的パラメーターを開始します。
 

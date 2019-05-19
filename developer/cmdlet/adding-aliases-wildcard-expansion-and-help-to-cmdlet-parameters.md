@@ -8,40 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: db664e589f625855b5a33a02c522d6b238ad2810
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 946b71e4480a47ac6ccd6930be445d7efb4fb62d
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62075258"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854906"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>エイリアス、ワイルドカード展開、ヘルプをコマンドレット パラメーターに追加する
 
 エイリアス、ワイルドカードの展開を追加する方法について説明およびヘルプ メッセージの停止 Proc コマンドレットのパラメーター (で説明されている[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md))。
 
 この停止 Proc コマンドレットは Get-proc コマンドレットを使用して取得するプロセスを停止しようとしました。 (で説明されている[最初のコマンドレットを、作成](./creating-a-cmdlet-without-parameters.md))。
-
-このセクションのトピックで、次のとおりです。
-
-- [コマンドレットを定義します。](#Defining-the-Cmdlet)
-
-- [システムの変更のパラメーターを定義します。](#Defining-Parameters-for-System-Modification)
-
-- [パラメーター エイリアスを定義します。](#Defining-a-Parameter-Alias)
-
-- [パラメーターのヘルプの作成](#Creating-Help-for-Parameters)
-
-- [入力処理メソッドをオーバーライドします。](#Overriding-an-Input-Processing-Method)
-
-- [ワイルドカードの展開をサポートしています。](#Supporting-Wildcard-Expansion)
-
-- [コード サンプル](#Defining-a-Parameter-Alias)
-
-- [オブジェクトの種類を定義して、書式設定](#Define-Object-Types-and-Formatting)
-
-- [コマンドレットを構築](#Building-the-Cmdlet)
-
-- [テスト コマンドレット](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>コマンドレットを定義します。
 

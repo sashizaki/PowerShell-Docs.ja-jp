@@ -12,38 +12,18 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 174d3a6860790295e1b73f32d9c1bad46b653917
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 2696d78cae7739310b7684161b597ce436dabe92
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055651"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855200"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Windows PowerShell ドライブ プロバイダーを作成する
 
 このトピックでは、Windows PowerShell ドライブをデータ ストアにアクセスする手段を提供する Windows PowerShell ドライブ プロバイダーを作成する方法について説明します。 この種類のプロバイダーは、"Windows PowerShell ドライブ プロバイダー"とも呼ばれます。 プロバイダーによって使用される Windows PowerShell ドライブでは、データ ストアに接続するための手段を提供します。
 
 ここで説明されている Windows PowerShell ドライブ プロバイダーでは、Microsoft Access データベースへのアクセスを提供します。 このプロバイダーでは、Windows PowerShell ドライブを表します (ドライブ プロバイダーにドライブの任意の数を追加することは)、データベース ドライブの最上位のコンテナーは、データベース内のテーブルを表し、コンテナーの項目が内の行を表しますテーブル。
-
-このトピックのセクションの一覧を示します。 Windows PowerShell ドライブ プロバイダーの記述に慣れていない場合に、出現する順序でこれらのセクションが読み取られます。 ただし、ドライブ プロバイダーの作成に習熟する場合は、直接」に進んでください必要な情報。
-
-- [Windows PowerShell プロバイダー クラスを定義します。](#Defining-the-Windows-PowerShell-Provider-Class)
-
-- [基本機能を定義します。](#Defining-Base-Functionality)
-
-- [ドライブの状態情報の作成](#Creating-Drive-State-Information)
-
-- [ドライブの作成](#Creating-a-Drive)
-
-- [NewDrive に動的パラメーターを追加](#Attaching-Dynamic-Parameters-to-NewDrive)
-
-- [ドライブを削除します。](#Removing-a-Drive)
-
-- [ドライブの既定の初期化](#Initializing-Default-Drives)
-
-- [コード サンプル](#Code-Sample)
-
-- [Windows PowerShell ドライブ プロバイダーのテスト](#Testing-the-Windows-PowerShell-Drive-Provider)
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Windows PowerShell プロバイダー クラスを定義します。
 
@@ -119,7 +99,7 @@ ms.locfileid: "58055651"
 
 ## <a name="code-sample"></a>コード サンプル
 
-完全なサンプル コードでは、[AccessDbProviderSample02 コード サンプル](./accessdbprovidersample02-code-sample.md)を参照してください。
+完全なサンプル コードでは、次を参照してください。 [AccessDbProviderSample02 コード サンプル](./accessdbprovidersample02-code-sample.md)します。
 
 ## <a name="testing-the-windows-powershell-drive-provider"></a>Windows PowerShell ドライブ プロバイダーのテスト
 
@@ -159,7 +139,7 @@ Windows PowerShell を使用した、Windows PowerShell プロバイダーを登
 4. 接続を検証します。 接続は、ドライブのメンバーとして定義されている、ために、Get PDDrive コマンドレットを使用してチェックできます。
 
    > [!NOTE]
-   > プロバイダーは、その操作のコンテナーの機能をニーズに応じて、ユーザーはドライブとしてプロバイダーとやり取りまだことはできません。 詳細については、[Windows PowerShell コンテナー プロバイダーを作成する](./creating-a-windows-powershell-container-provider.md)を参照してください。
+   > プロバイダーは、その操作のコンテナーの機能をニーズに応じて、ユーザーはドライブとしてプロバイダーとやり取りまだことはできません。 詳細については、次を参照してください。 [Windows PowerShell コンテナー プロバイダーを作成する](./creating-a-windows-powershell-container-provider.md)します。
 
    **PS > (である get-psdrive mydb) .connection**
 

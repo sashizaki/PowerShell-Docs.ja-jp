@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], content provider
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
-ms.openlocfilehash: 35c68a2b0f8c9bd1ed4fc54c41aa427ddd75907c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d7e237514b4db4bce3366836d3b6e0cd340bf107
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081922"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855018"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Windows PowerShell コンテンツ プロバイダーを作成する
 
@@ -28,36 +28,6 @@ ms.locfileid: "62081922"
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
 >
 > その他の Windows PowerShell プロバイダーの実装の詳細については、次を参照してください。 [Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)します。
-
-次の一覧には、このトピックのセクションが含まれています。 Windows PowerShell コンテンツ プロバイダーの作成に慣れていない場合は、出現する順序でこれらのセクションを参照します。 ただし、Windows PowerShell コンテンツ プロバイダーの作成に習熟する場合は、必要な情報に直接移動します。
-
-- [Windows PowerShell コンテンツ プロバイダー クラスを定義します。](#Define-the-Windows-PowerShell-Content-Provider-Class)
-
-- [基本機能を定義します。](#Define-Functionality-of-Base-Class)
-
-- [コンテンツのリーダーの実装](#Implementing-a-Content-Reader)
-
-- [コンテンツのライターの実装](#Implementing-a-Content-Writer)
-
-- [コンテンツのリーダーを取得します。](#Retrieving-the-Content-Reader)
-
-- [動的パラメーターをアタッチ、`Get-Content`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Get-Content-Cmdlet)
-
-- [コンテンツのライターを取得します。](#Retrieving-the-Content-Writer)
-
-- [動的パラメーター、Add_Content をアタッチし、`Set-Content`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Add-Content-and-Set-Content-Cmdlets)
-
-- [コンテンツをクリアします。](#Clearing-Content)
-
-- [動的パラメーターをアタッチ、`Clear-Content`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Clear-Content-Cmdlet)
-
-- [コード サンプル](#Code-Sample)
-
-- [オブジェクトの種類を定義して、書式設定](#defining-object-types-and-formatting)
-
-- [Windows PowerShell プロバイダーの構築](#Building-the-Windows-PowerShell-Provider)
-
-- [Windows PowerShell プロバイダーのテスト](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="define-the-windows-powershell-content-provider-class"></a>Windows PowerShell コンテンツ プロバイダー クラスを定義します。
 

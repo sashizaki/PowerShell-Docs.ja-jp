@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 138c6a43937e72fffaa2a09243e500e9822e6111
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068778"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854932"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>コマンドレットにユーザー メッセージを追加する
 
@@ -51,32 +51,6 @@ ms.locfileid: "62068778"
 - メッセージ量に関する情報が含まれているコマンドレットの作業の進行状況レポートは、時間がかかる操作を実行するときに完了しました。
 
 コマンドレットの書き込みのメッセージの種類のコマンドレットが書き込むことのできるメッセージの数に制限はありません。 処理方法、コマンドレットの入力の中から特定を呼び出すことによって、各メッセージが書き込まれます。
-
-## <a name="the-stopproc-cmdlet"></a>StopProc コマンドレット
-
-このセクションのトピックで、次のとおりです。
-
-- [コマンドレットを定義します。](#Defining-the-Cmdlet)
-
-- [システムの変更のパラメーターを定義します。](#Defining-Parameters-for-System-Modification)
-
-- [入力処理メソッドをオーバーライドします。](#Overriding-an-Input-Processing-Method)
-
-- [詳細なメッセージの書き込み](#Writing-a-Verbose-Message)
-
-- [デバッグ メッセージの書き込み](#Writing-a-Debug-Message)
-
-- [警告メッセージの書き込み](#Writing-a-Warning-Message)
-
-- [進行状況メッセージの書き込み](#Writing-a-Progress-Message)
-
-- [コード サンプル](#Code-Sample)
-
-- [オブジェクトの種類と書式設定を定義します。](#Define-Object-Types-and-Formatting)
-
-- [コマンドレットを構築](#Building-the-Cmdlet)
-
-- [テスト コマンドレット](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>コマンドレットを定義します。
 

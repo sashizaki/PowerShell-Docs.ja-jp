@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 6ec0752a9ae06c5c2cdd1a1851caeeff52d8eb74
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c503b17a670a5d1f07aa48e714d8a0eb0aa78ae9
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081837"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855001"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Windows PowerShell プロパティ プロバイダーを作成する
 
@@ -31,26 +31,6 @@ ms.locfileid: "62081837"
 
 > [!CAUTION]
 > プロパティ プロバイダーのメソッドを使用して任意のオブジェクトを書き込む必要があります、 [System.Management.Automation.Provider.Cmdletprovider.Writepropertyobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject)メソッド。
-
-次の一覧には、このトピックのセクションが含まれています。 Windows PowerShell プロパティ プロバイダーの記述に慣れていない場合は、出現する順序では、この情報を読み込みます。 ただし、Windows PowerShell プロパティ プロバイダーの作成に習熟する場合は、直接」に進んでください必要な情報。
-
-- [Windows PowerShell プロバイダーを定義します。](#Defining-the-Windows-PowerShell-provider)
-
-- [基本機能を定義します。](#Defining-Base-Functionality)
-
-- [プロパティを取得します。](#Retrieving-Properties)
-
-- [動的パラメーターをアタッチ、`Get-ItemProperty`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Get-ItemProperty-Cmdlet)
-
-- [プロパティの設定](#Setting-Properties)
-
-- [動的パラメーターをアタッチ、`Set-ItemProperty`コマンドレット](#Attaching-Dynamic-Parameters-for-the-Set-ItemProperty-Cmdlet)
-
-- [プロパティをクリアします。](#Clearing-Properties)
-
-- [動的パラメーターをアタッチ、`Clear-ItemProperty`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Clear-ItemProperty-Cmdlet)
-
-- [Windows PowerShell プロバイダーのビルド](#Building-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーを定義します。
 

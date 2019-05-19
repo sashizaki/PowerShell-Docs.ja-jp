@@ -15,34 +15,16 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], creating
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
-ms.openlocfilehash: fb113086ce89e4becff9bcaf3232905fde2bf610
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c9ad84c5bcb6826fcf51db9a1f1a578a65a1f275
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068812"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854945"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>コマンドライン入力を処理するパラメーターを追加する
 
 コマンドレットの入力の 1 つのソースは、コマンド ラインです。 このトピックでは、パラメーターを追加する方法を説明します、 **Get-proc**コマンドレット (に記載されている[最初のコマンドレットを作成](./creating-a-cmdlet-without-parameters.md)) コマンドレットは、明示的に基づき、ローカル コンピューターからの入力を処理できるようにオブジェクトは、コマンドレットに渡されます。 **Get-proc**説明されているコマンドレットは、ここで、その名前に基づいてプロセスを取得し、コマンド プロンプトで、プロセスに関する情報を表示します。
-
-次のセクションでは、このトピックでは。
-
-- [コマンドレット クラスを定義します。](#Defining-the-Cmdlet-Class)
-
-- [パラメーターの宣言](#Declaring-Parameters)
-
-- [パラメーターの検証のサポート](#Supporting-Parameter-Validation)
-
-- [入力処理メソッドをオーバーライドします。](#Overriding-an-Input-Processing-Method)
-
-- [コード サンプル](#Code-Sample)
-
-- [オブジェクトの種類を定義して、書式設定](#Defining-Object-Types-and-Formatting)
-
-- [コマンドレットを構築](#Building-the-Cmdlet)
-
-- [テスト コマンドレット](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>コマンドレット クラスを定義します。
 

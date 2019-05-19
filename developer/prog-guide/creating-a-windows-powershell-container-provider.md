@@ -11,12 +11,12 @@ helpviewer_keywords:
 - container providers [PowerShell Programmer's Guide]
 ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
 caps.latest.revision: 5
-ms.openlocfilehash: 33effed9a96cf1b9ee5f1a50b60a1937526db9d1
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 9e7da13ff559e802d52df475f2a555baeeeef983
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081905"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855196"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Windows PowerShell コンテナー プロバイダーを作成する
 
@@ -35,44 +35,6 @@ ms.locfileid: "62081905"
 
 > [!CAUTION]
 > 注意この設計が、名前の ID を持つフィールドを持つデータベースを想定していると、フィールドの型がなければなりません。
-
-このトピックのセクションの一覧を示します。 Windows PowerShell コンテナー プロバイダーの記述に慣れていない場合は、出現する順序では、この情報をお読みください。 ただし、Windows PowerShell コンテナー プロバイダーの作成に習熟する場合は、直接」に進んでください必要な情報。
-
-- [Windows PowerShell コンテナー プロバイダー クラスを定義します。](#Defining-a-Windows-PowerShell-Container-Provider-Class)
-
-- [基本機能を定義します。](#defining-base-functionality)
-
-- [子項目を取得します。](#Retrieving-Child-Items)
-
-- [動的パラメーターをアタッチ、`Get-ChildItem`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet)
-
-- [子項目の名前を取得します。](#Retrieving-Child-Item-Names)
-
-- [動的パラメーターをアタッチ、`Get-ChildItem`コマンドレット (名)](#Attaching-Dynamic-Parameters-to-the-Get-ChildItem-Cmdlet-(Name))
-
-- [項目の名前を変更します。](#Renaming-Items)
-
-- [動的パラメーターをアタッチ、`Rename-Item`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Rename-Item-Cmdlet)
-
-- [新しい項目の作成](#Creating-New-Items)
-
-- [動的パラメーターをアタッチ、`New-Item`コマンドレット](#Attaching-Dynamic-Parameters-to-the-New-Item-Cmdlet)
-
-- [項目を削除します。](#Removing-Items)
-
-- [動的パラメーターをアタッチ、`Remove-Item`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Remove-Item-Cmdlet)
-
-- [子項目のクエリを実行します。](#Querying-for-Child-Items)
-
-- [コピー項目](#Copying-Items)
-
-- [動的パラメーターをアタッチ、`Copy-Item`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Copy-Item-Cmdlet)
-
-- [コード サンプル](#Code-Sample)
-
-- [Windows PowerShell プロバイダーのビルド](#Building-the-Windows-PowerShell-Provider)
-
-- [Windows PowerShell プロバイダーのテスト](#Testing-the-Windows-PowerShell-Provider)
 
 ## <a name="defining-a-windows-powershell-container-provider-class"></a>Windows PowerShell コンテナー プロバイダー クラスを定義します。
 
@@ -398,7 +360,7 @@ protected override bool HasChildItems( string path )
 
 - 実装[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)循環リンクは、およびなどがある場合は、無限再帰を回避するため責任を負います。 そうした状態を反映するように適切な終了例外をスローする必要があります。
 
-- 実装、 [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドを呼び出す必要があります[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)データ ストアに変更を加える前に、戻り値を確認します。 呼び出し後[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)は true を返し、 [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドを呼び出す必要があります、 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)危険性のあるシステムの変更の追加の確認としてのメソッド。 これらのメソッドを呼び出す方法の詳細については、次を参照してください。[項目の名前を変更](#Renaming-Items)します。
+- 実装、 [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドを呼び出す必要があります[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)データ ストアに変更を加える前に、戻り値を確認します。 呼び出し後[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)は true を返し、 [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドを呼び出す必要があります、 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)危険性のあるシステムの変更の追加の確認としてのメソッド。 これらのメソッドを呼び出す方法の詳細については、次を参照してください。[項目の名前を変更](#renaming-items)します。
 
 ## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>Copy-item コマンドレットへの動的パラメーター
 

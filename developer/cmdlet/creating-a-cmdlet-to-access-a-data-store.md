@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 28d55874960f9a64b986204411d38319ef1d0da7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068353"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854849"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>データ ストアにアクセスするためのコマンドレットを作成する
 
@@ -22,24 +22,6 @@ ms.locfileid: "62068353"
 ここで説明されている選択 Str コマンドレットは、検索し、ファイルまたはオブジェクトの文字列を選択できます。 文字列を識別するために使用されるパターンをを通じて明示的に指定することができます、`Path`または暗黙的にコマンドレットのパラメーター、`Script`パラメーター。
 
 コマンドレットがから派生した任意の Windows PowerShell プロバイダーを使用するように設計[System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)します。 たとえば、コマンドレットでは、FileSystem プロバイダーまたは Variable プロバイダーは Windows PowerShell によって提供されるを指定できます。 詳細については aboutWindows PowerShell プロバイダーを参照してください。 [Windows PowerShell の設計プロバイダー](../prog-guide/designing-your-windows-powershell-provider.md)します。
-
-このセクションのトピックで、次のとおりです。
-
-- [コマンドレット クラスを定義します。](#Defining-the-Cmdlet-Class)
-
-- [データ アクセスのためのパラメーターを定義します。](#Declaring-the-Path-Parameter)
-
-- [入力処理メソッドをオーバーライドします。](#Overriding-Input-Processing-Methods)
-
-- [コンテンツにアクセスします。](#Accessing-Content)
-
-- [コード サンプル](#Code-Sample)
-
-- [オブジェクトの種類を定義して、書式設定](#Declaring-Search-Support-Parameters)
-
-- [コマンドレットを構築](#Building-the-Cmdlet)
-
-- [テスト コマンドレット](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>コマンドレット クラスを定義します。
 
@@ -397,7 +379,7 @@ protected override void ProcessRecord()
 
 ## <a name="code-sample"></a>コード サンプル
 
-次のコードでは、この選択 Str コマンドレットのこのバージョンの実装を示します。 このコードには、コマンドレット クラス、コマンドレットで使用されるプライベート メソッドおよび Windows PowerShell、スナップイン コードは、コマンドレットを登録するために使用が含まれることに注意してください。 コマンドレットの登録の詳細については、次を参照してください。[コマンドレットを構築](#Building-the-Cmdlet)します。
+次のコードでは、この選択 Str コマンドレットのこのバージョンの実装を示します。 このコードには、コマンドレット クラス、コマンドレットで使用されるプライベート メソッドおよび Windows PowerShell、スナップイン コードは、コマンドレットを登録するために使用が含まれることに注意してください。 コマンドレットの登録の詳細については、次を参照してください。[コマンドレットを構築](#building-the-cmdlet)します。
 
 ```csharp
 //

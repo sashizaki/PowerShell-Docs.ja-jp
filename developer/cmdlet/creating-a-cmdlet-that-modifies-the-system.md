@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: bbe9f0213754d1cc47e0fd9a7a898bde916c0636
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a4fa9ce52855928679a2425f24f2e49a68030c63
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068441"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854912"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>システムを変更するコマンドレットを作成する
 
@@ -42,28 +42,6 @@ ms.locfileid: "62068441"
 ## <a name="the-stopproc-cmdlet"></a>StopProc コマンドレット
 
 このトピックでは Get-proc コマンドレットを使用して取得するプロセスを停止しようとする停止 Proc コマンドレットの説明 (で説明されている[最初のコマンドレットを作成](./creating-a-cmdlet-without-parameters.md))。
-
-このセクションのトピックで、次のとおりです。
-
-- [コマンドレットを定義します。](#Defining-the-Cmdlet)
-
-- [システムの変更のパラメーターを定義します。](#Defining-Parameters-for-System-Modification)
-
-- [入力処理メソッドをオーバーライドします。](#Overriding-an-Input-Processing-Method)
-
-- [ShouldProcess メソッドの呼び出し](#Calling-the-ShouldProcess-Method)
-
-- [ShouldContinue メソッドを呼び出す](#Calling-the-ShouldContinue-Method)
-
-- [入力の処理を停止しています](#Stopping-Input-Processing)
-
-- [コード サンプル](#Code-Sample)
-
-- [オブジェクトの種類を定義して、書式設定](#Defining-Object-Types-and-Formatting)
-
-- [コマンドレットを構築](#Building-the-Cmdlet)
-
-- [テスト コマンドレット](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet"></a>コマンドレットを定義します。
 

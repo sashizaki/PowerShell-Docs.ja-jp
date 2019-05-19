@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
 caps.latest.revision: 5
-ms.openlocfilehash: 40454f880b57d5b3a8a8ded21c8c97aebba027fe
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5f7a61e261399d3d2abe62fe4523e8c9895d5ad4
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081854"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855169"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Windows PowerShell ナビゲーション プロバイダーを作成する
 
@@ -33,34 +33,6 @@ ms.locfileid: "62081854"
 
 > [!CAUTION]
 > 注意この設計が、名前の ID を持つフィールドを持つデータベースを想定していると、フィールドの型がなければなりません。
-
-次の一覧には、このトピックのセクションが含まれています。 Windows PowerShell ナビゲーション プロバイダーの記述に慣れていない場合は、出現する順序では、この情報を読み込みます。 ただし、Windows PowerShell ナビゲーション プロバイダーの作成に習熟する場合は、直接」に進んでください必要な情報。
-
-- [PS ナビゲーション プロバイダー クラスを定義します。](#Define-the-Windows-PowerShell-provider)
-
-- [基本機能を定義します。](#Defining-Base-Functionality)
-
-- [PS パスを作成します。](#Creating-a-Windows-PowerShell-Path)
-
-- [親パスを取得します。](#Retrieving-the-Parent-Path)
-
-- [子のパス名を取得します。](#Retrieve-the-Child-Path-Name)
-
-- [項目がコンテナーであるを決定します。](#Determining-if-an-Item-is-a-Container)
-
-- [アイテムを移動します。](#Moving-an-Item)
-
-- [動的パラメーターをアタッチ、`Move-Item`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Move-Item-Cmdlet)
-
-- [相対パスの正規化](#Normalizing-a-Relative-Path)
-
-- [コード サンプル](#Code-Sample)
-
-- [オブジェクトの種類を定義して、書式設定](#Defining-Object-Types-and-Formatting)
-
-- [Windows PowerShell プロバイダーのビルド](#Building-the-Windows-PowerShell-provider)
-
-- [Windows PowerShell プロバイダーのテスト](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="define-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーを定義します。
 

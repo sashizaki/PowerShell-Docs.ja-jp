@@ -11,34 +11,18 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: bd52dc8aee7975d0899083a5c2f595b17690dc33
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: def0ac2ff98575beb29c3c2a7d91a5a5c53e648e
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068761"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854978"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>パイプライン入力を処理するパラメーターを追加する
 
 コマンドレットの入力の 1 つのソースは、アップ ストリームのコマンドレットから発信されたパイプラインにオブジェクトです。 ここが Get-proc コマンドレットにパラメーターを追加する方法について説明します (で説明されている[最初のコマンドレットを作成](./creating-a-cmdlet-without-parameters.md)) コマンドレットは、パイプライン オブジェクトを処理できるようにします。
 
 この Get-proc コマンドレットを使用して、`Name`パイプライン オブジェクトからの入力を受け付けるパラメーターは、指定された名前に基づいて、ローカル コンピューターからプロセス情報を取得し、コマンドラインでのプロセスに関する情報を表示します。
-
-このセクションのトピックで、次のとおりです。
-
-- [コマンドレット クラスを定義します。](#Defining-the-Cmdlet-Class)
-
-- [パイプラインから入力を定義します。](#Defining-Input-from-the-Pipeline)
-
-- [入力処理メソッドをオーバーライドします。](#Overriding-an-Input-Processing-Method)
-
-- [コード サンプル](#Code-Sample)
-
-- [オブジェクトの種類を定義して、書式設定](#Defining-Object-Types-and-Formatting)
-
-- [コマンドレットを構築](#Building-the-Cmdlet)
-
-- [テスト コマンドレット](#Testing-the-Cmdlet)
 
 ## <a name="defining-the-cmdlet-class"></a>コマンドレット クラスを定義します。
 
