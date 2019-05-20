@@ -1,211 +1,47 @@
-- name: Windows Management Framework (WMF) 概要
+- name: Windows Management Framework (WMF)
   href: overview.md
-- name: WMF 5.1
+- name: インストール
   items:
-    - name: WMF 5.1 リリース ノート
-      href: 5.1/release-notes.md
-    - name: 新しいシナリオと機能
-      items:
-        - name: 新しいシナリオと機能
-          href: 5.1/scenarios-features.md
-        - name: Desired State Configuration (DSC) の機能強化
-          href: 5.1/DSC-improvements.md
-        - name: PowerShell コンソールの機能強化
-          href: 5.1/console-improvements.md
-        - name: PowerShell エンジンの機能強化
-          href: 5.1/engine-improvements.md
-        - name: パッケージ管理の機能強化
-          href: 5.1/package-management-improvements.md
-        - name: JEA の改善
-          href: 5.1/jea-improvements.md
-        - name: カタログ コマンドレット
-          href: 5.1/catalog-cmdlets.md
-        - name: WMF 5.1 で修正されたバグ
-          href: 5.1/bugfixes.md
-    - name: インストールと構成
-      href: 5.1/install-configure.md
-    - name: の既知の問題
-      href: 5.1/known-issues.md
-    - name: 互換性
-      href: 5.1/Compatibility.md
-    - name: 製品の互換性
-      href: 5.1/productincompat.md
-- name: WMF 5.0
+    - name: WMF 5.1 のインストールと構成
+      href: setup/install-configure.md
+    - name: WMF 5.0 のアンインストール
+      href: setup/uninstall.md
+- name: 新機能
+  expanded: true
   items:
-    - name: WMF 5.0 リリース ノート
-      href: 5.0/releasenotes.md
-    - name: インストールの詳細
-      href: 5.0/requirements.md
-    - name: 既知の問題と制限事項
-      href: 5.0/limitation_overview.md
-    - name: Desired State Configuration (DSC) の既知の問題
-      href: 5.0/limitation_dsc.md
+    - name: WMF 5.x のリリース ノート
+      href: whats-new/release-notes.md
+    - name: WMF 5.1 のバグ修正
+      href: whats-new/bugfixes.md
+    - name: 新規および更新されたコマンドレット
+      href: whats-new/new-updated-cmdlets.md
+    - name: PowerShell クラスを使用したカスタム型の作成
+      href: whats-new/class-overview.md
+    - name: WMF 5.1 のコンソール機能強化
+      href: whats-new/console-improvements.md
+    - name: PowerShell スクリプト デバッグの強化
+      href: whats-new/debug-overview.md
+    - name: スクリプトのトレースとログ
+      href: whats-new/script-logging.md
+    - name: WMF 5.1 の DSC 機能強化
+      href: whats-new/DSC-improvements.md
+    - name: WMF 5.1 の PowerShell エンジン機能強化
+      href: whats-new/engine-improvements.md
+    - name: 情報ストリーム
+      href: whats-new/informationstream-overview.md
+    - name: Just Enough Administration (JEA) の強化
+      href: whats-new/jea-improvements.md
+    - name: WMF 5.1 のパッケージ管理の機能強化
+      href: whats-new/package-management-improvements.md
+    - name: ソフトウェア インベントリ ログ (SIL)
+      href: whats-new/sil-overview.md
     - name: 製品の互換性の状態
-      href: 5.0/productincompat.md
-    - name: WMF 5.0 で可能なシナリオ
-      items:
-        - name: Just Enough Administration (JEA)
-          items:
-            - name: JEA の概要
-              href: 5.0/jea_overview.md
-            - name: JEA エンドポイントの作成および接続
-              href: 5.0/jea_endpoint.md
-            - name: JEA のレポート
-              href: 5.0/jea_report.md
-        - name: PowerShell クラスを使用したカスタム型の作成
-          items:
-            - name: 概要
-              href: 5.0/class_overview.md
-            - name: カスタム型の定義
-              href: 5.0/class_newtype.md
-            - name: 基本クラスの宣言
-              href: 5.0/class_base.md
-            - name: 実装されたインターフェイスの宣言
-              href: 5.0/class_interface.md
-            - name: 基本クラス コンストラクターの呼び出し
-              href: 5.0/class_baseconstructor.md
-            - name: 基本クラス メソッドの呼び出し
-              href: 5.0/class_basemethod.md
-        - name: PowerShell スクリプト デバッグの強化
-          href: 5.0/debug_overview.md
-        - name: Desired State Configuration (DSC) の機能強化
-          items:
-            - name: DSC の機能強化の概要
-              href: 5.0/dsc_improvements.md
-            - name: 構成
-              items:
-                - name: ノードの相互依存関係の指定
-                  href: 5.0/dsc_waitfor.md
-                - name: 暗号化された MOF
-                  href: 5.0/dsc_encryptedmof.md
-                - name: DSC 構成に関するヘルプ サポート
-                  href: 5.0/dsc_confighelp.md
-                - name: PowerShell ISE を使ったオーサリングの強化
-                  href: 5.0/dsc_authoring.md
-                - name: 構成における同一重複リソースの許容
-                  href: 5.0/dsc_identicalduplicate.md
-                - name: '-ModuleVersion パラメーターをサポートする Import-DscResource キーワード'
-                  href: 5.0/dsc_importdscresource.md
-                - name: 構成キーワードの WOW64 サポート
-                  href: 5.0/dsc_wow64.md
-            - name: 参照情報
-              items:
-                - name: クラスベースの DSC リソース
-                  href: 5.0/dsc_classbasedresource.md
-                - name: DSC リソース スクリプトのデバッグ
-                  href: 5.0/dsc_resourcedebugging.md
-                - name: DSC リソースの自動 RunAs サポート
-                  href: 5.0/dsc_runas.md
-                - name: DSC リソースの Side-By-Side バージョン管理サポート
-                  href: 5.0/dsc_sxsresource.md
-                - name: 新しいインボックス リソース
-                  href: 5.0/dsc_newresources.md
-            - name: ローカル構成マネージャー
-              items:
-                - name: 複数の構成フラグメントによるノードの構成
-                  href: 5.0/dsc_partialconfig.md
-                - name: RefreshMode の混在のサポート
-                  href: 5.0/dsc_partialconfig_mixedmode.md
-                - name: 新しい属性を使用した DSC エンジンの構成
-                  href: 5.0/dsc_metaconfiguration.md
-                - name: LCM 状態に関する詳細情報
-                  href: 5.0/dsc_lcmstate.md
-                - name: RefreshMode と ConfigurationMode の出現頻度は互いの倍数である必要はない
-                  href: 5.0/dsc_freqnomultiple.md
-                - name: RefreshMode プロパティの追加の値
-                  href: 5.0/dsc_refreshmode.md
-            - name: コマンドレット
-              items:
-                - name: 構成状況の詳細
-                  href: 5.0/dsc_getconfigurationstatus.md
-                - name: Test-DscConfiguration コマンドレットでの参照構成のサポート
-                  href: 5.0/dsc_testconfiguration.md
-                - name: DSC リソース メソッドへの直接アクセス
-                  href: 5.0/dsc_directaccess.md
-                - name: 適用することなく構成ドキュメントを提供する
-                  href: 5.0/dsc_publishconfig.md
-                - name: DSC ドキュメントの削除
-                  href: 5.0/dsc_removeconfigdoc.md
-                - name: 統一された一貫性のある状態とステータスの表現
-                  href: 5.0/dsc_statestatus.md
-                - name: Set-DscLocalConfigurationManager コマンドレットでの -force パラメーターのサポート
-                  href: 5.0/dsc_setdsclcm.md
-            - name: プル モード
-              items:
-                - name: DSC 構成のオンデマンド プル
-                  href: 5.0/dsc_updateconfig.md
-                - name: ノード ID と構成 ID の分離
-                  href: 5.0/dsc_nodeid.md
-                - name: 構成、リソース、レポートのリポジトリの分離
-                  href: 5.0/dsc_repository.md
-                - name: 構成の状態を中央の場所にレポートする
-                  href: 5.0/dsc_reporting.md
-        - name: トランスクリプトおよびログを使用した PowerShell の使用状況の監査
-          items:
-            - name: 監査の概要
-              href: 5.0/audit_overview.md
-            - name: 強化されたトランスクリプション オプション
-              href: 5.0/audit_transcript.md
-            - name: スクリプトのトレースとログ
-              href: 5.0/audit_script.md
-            - name: Cryptographic Message Syntax (CMS) コマンドレット
-              href: 5.0/audit_cms.md
-        - name: PackageManagement によるソフトウェアの検出、インストール、およびインベントリ
-          items:
-            - name: PackageManagement の概要
-              href: 5.0/oneget_overview.md
-            - name: PackageManagement コマンドレット
-              href: 5.0/oneget_cmdlets.md
-        - name: PowerShellGet による PowerShell モジュールの検出、インストール、およびインベントリ
-          items:
-            - name: PowerShellGet モジュールの概要
-              href: 5.0/psget_module_overview.md
-            - name: PowerShell リポジトリの登録
-              href: 5.0/psget_psrepository.md
-            - name: PowerShell 5.0 以降の Side-by-Side バージョン サポート
-              href: 5.0/psget_modulesxsinstall.md
-            - name: モジュールの依存関係のインストール
-              href: 5.0/psget_moduledependency.md
-            - name: モジュール管理用の PowerShellGet コマンドレット
-              href: 5.0/psget_modulecmdlets.md
-        - name: PowerShellGet による PowerShell スクリプトの検出、インストール、および管理
-          items:
-            - name: PowerShellGet スクリプトの概要
-              href: 5.0/psget_script_overview.md
-            - name: スクリプト管理用の PowerShellGet コマンドレット
-              href: 5.0/psget_scriptcmdlets.md
-        - name: コミュニティからのフィードバックに基づいて更新されたコマンドレットと新規コマンドレット
-          items:
-            - name: コミュニティからのフィードバックに基づいて更新されたコマンドレットと新規コマンドレット
-            - name: Item コマンドレットを使用したシンボリック リンク
-              href: 5.0/feedback_symbolic.md
-            - name: アーカイブのコマンドレット
-              href: 5.0/feedback_archive.md
-            - name: クリップボードのコマンドレット
-              href: 5.0/feedback_clipboard.md
-            - name: Convert-String
-              href: 5.0/feedback_convertstring.md
-            - name: 文字列から構造化オブジェクトを抽出して分析する
-              href: 5.0/feedback_convertfromString.md
-            - name: Format-Hex
-              href: 5.0/feedback_formathex.md
-            - name: NoNewLine パラメーター
-              href: 5.0/feedback_nonewline.md
-            - name: New-TemporaryFile
-              href: 5.0/feedback_tempfile.md
-            - name: New-Guid
-              href: 5.0/feedback_newguid.md
-            - name: Get-ChildItem の -Depth パラメーター
-              href: 5.0/feedback_getchilditem.md
-            - name: FileInfo オブジェクトの更新
-              href: 5.0/feedback_fileinfo.md
-            - name: バージョン範囲 (1. * など) の宣言をサポートするモジュール
-              href: 5.0/feedback_moduleversionranges.md
-        - name: 情報ストリーム
-          href: 5.0/informationstream_overview.md
-        - name: OData エンドポイントに基づく PowerShell コマンドレットの生成
-          href: 5.0/odata_overview.md
-        - name: PowerShell を使用したネットワーク スイッチの管理
-          href: 5.0/networkswitch_overview.md
-        - name: ソフトウェア インベントリ ログ (SIL)
-          href: 5.0/sil_overview.md
+      href: whats-new/compatibility.md
+- name: の既知の問題
+  items:
+    - name: WMF 5.0 の既知の問題
+      href: known-issues/known-issues-50.md
+    - name: WMF 5.1 の既知の問題
+      href: known-issues/known-issues-51.md
+    - name: DSC の既知の問題と制限事項
+      href: known-issues/known-issues-dsc.md
