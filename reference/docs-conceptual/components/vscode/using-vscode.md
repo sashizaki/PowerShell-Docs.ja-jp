@@ -2,12 +2,12 @@
 title: PowerShell 開発のための Visual Studio Code の使用
 description: PowerShell 開発のための Visual Studio Code の使用
 ms.date: 08/06/2018
-ms.openlocfilehash: 1e9b9d811a39656327af2810bd6dc8aaf3fde3a4
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
+ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086734"
+ms.lasthandoff: 05/19/2019
+ms.locfileid: "65882571"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell 開発のための Visual Studio Code の使用
 
@@ -82,27 +82,72 @@ Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellE
 "この信頼されていない発行元からのソフトウェアを実行しますか?" というメッセージが表示されます。
 `R` キーを押してファイルを実行します。 次に、Visual Studio Code を開き、PowerShell 拡張機能が正しく機能していることを確認します。 まだ問題がある場合は、[GitHub](https://github.com/PowerShell/vscode-powershell/issues) で問い合わせてください。
 
-#### <a name="using-a-specific-installed-version-of-powershell"></a>PowerShell の特定のインストール バージョンの使用
+#### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>拡張機能で使用する PowerShell のバージョンを選択
 
-Visual Studio Code で PowerShell の特定のインストール バージョンを使用する場合、ユーザー設定ファイルに新しい変数を追加する必要があります。
+Windows PowerShell と PowerShell Core がインストールされている場合、PowerShell の特定のバージョンを PowerShell の拡張機能で使用できるようになりました。 バージョンを選択するには、次の手順を実行します。
 
-1. **[ファイル]、[基本設定]、[設定]** の順にクリックします。
-1. 2 つのエディター ウィンドウが表示されます。
-   一番右側のウィンドウの (`settings.json`)、2 つの中かっこ (`{` と `}`) の間のどこかに、OS に適した以下の設定を追加し、**\<バージョン\>** をインストール済みの PowerShell のバージョンに置き換えます。
+1. コマンド パレットを開きます (Windows と Linux では、<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>、macOS では、<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>)。
+1. "セッション" を検索します。
+1. [PowerShell:Show Session Menu]\(PowerShell: セッション メニューを表示\) をクリックします。
+1. 一覧から、"PowerShell Core" など、使用する PowerShell のバージョンを選択します。
 
-   ```json
-    // On Windows:
-    "powershell.powerShellExePath": "c:/Program Files/PowerShell/<version>/pwsh.exe"
+>[!IMPORTANT]
+> この機能では、異なるオペレーティング システム上のいくつかのよく知られているパスを検索し、PowerShell のインストール場所を検出します。 PowerShell を一般的ではない場所にインストールしている場合、最初にそれがセッション メニューに表示されない場合があります。 次のように、[独自のカスタム パスを追加して](#adding-your-own-powershell-paths-to-the-session-menu)、セッション メニューを拡張できます。
 
-    // On Linux:
-    "powershell.powerShellExePath": "/opt/microsoft/powershell/<version>/pwsh"
+>[!NOTE]
+> 次のようにセッション メニューに進むこともできます。 エディターで PowerShell ファイルを開いているときに、右下に緑のバージョン番号が表示されます。 このバージョン番号をクリックすると、セッション メニューに移動できます。
 
-    // On macOS:
-    "powershell.powerShellExePath": "/usr/local/microsoft/powershell/<version>/pwsh"
-   ```
+##### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>セッション メニューへの独自の PowerShell のパスの追加
 
-1. 設定を希望の PowerShell の実行可能ファイルへのパスに置き換えます。
-1. 設定ファイルを保存し、Visual Studio Code を再起動します。
+VS Code を設定して、セッション メニューに他の PowerShell の実行パスを追加できます。
+
+次のように `powershell.powerShellAdditionalExePaths` のリストに項目を追加するか、`settings.json` にない場合はリストを作成します。
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    // other settings...
+}
+```
+
+各項目には次が必要です。
+
+* `exePath`:`pwsh` または `powershell` 実行可能ファイルへのパス。
+* `versionName`:セッション メニューに表示されるテキスト。
+
+`powershell.powerShellDefaultVersion` の設定を使用して、これをセッション メニューに表示されるテキストに設定して、使用する既定の PowerShell のバージョンを設定できます (前の設定での `versionName`)。
+
+```json
+{
+    // other settings...
+
+    "powershell.powerShellAdditionalExePaths": [
+        {
+            "exePath": "C:\\Users\\tyler\\Downloads\\PowerShell\\pwsh.exe",
+            "versionName": "Downloaded PowerShell"
+        }
+    ],
+    
+    "powershell.powerShellDefaultVersion": "Downloaded PowerShell",
+    
+    // other settings...
+}
+```
+
+この設定を設定したら、Visual Studio Code を再開するか [Developer:Reload Window]\(Developer: ウィンドウの再読み込み\) のコマンド パレットアクションを使用して、現在の vscode ウィンドウを再読み込みします。
+
+これでセッション メニューを開くと、追加した PowerShell バージョンが表示されます。
+
+> [!NOTE]
+> これは、ソースから PowerShell をビルドした場合、PowerShell のローカル ビルドをテストする優れた方法です。
 
 #### <a name="configuration-settings-for-visual-studio-code"></a>Visual Studio Code の構成設定
 

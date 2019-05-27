@@ -2,12 +2,12 @@
 title: Windows への PowerShell Core のインストール
 description: Windows への PowerShell Core のインストールに関する情報
 ms.date: 08/06/2018
-ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5a3c43e27f0027cfbeeefab33b045e618e0ff045
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058031"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854361"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Windows への PowerShell Core のインストール
 
@@ -18,7 +18,7 @@ Windows に PowerShell Core をインストールする方法は複数ありま�
 WSMan を介して PowerShell のリモート処理を有効にするには、次の前提条件を満たす必要があります。
 
 - Windows 10 以前のバージョンの Windows に [ユニバーサル C ランタイム](https://www.microsoft.com/download/details.aspx?id=50410)をインストールします。 これは、直接ダウンロードすることも、Windows Update 経由で入手することもできます。 (オプション パッケージも含め) 修正プログラムはすべて適用されており、サポート対象のシステムには、これが既にインストールされています。
-- Windows Management Framework (WMF) 4.0 以降を Windows 7 と Windows Server 2008 R2 にインストールします。
+- Windows Management Framework (WMF) 4.0 以降を Windows 7 と Windows Server 2008 R2 にインストールします。 WMF の詳細については、[WMF の概要](/powershell/wmf/overview)に関する記事を参照してください。
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />MSI パッケージのインストール
 

@@ -3,12 +3,12 @@ ms.date: 08/23/2018
 keywords: PowerShell, コマンドレット
 title: PowerShell パイプラインの概要
 ms.assetid: 6be50926-7943-4ef7-9499-4490d72a63fb
-ms.openlocfilehash: 05ab98b7261f4d41ade1788a924193eccda6318c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 10e09fbe8de83eba2473f8f042657f7c80473fbd
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086444"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854344"
 ---
 # <a name="understanding-pipelines"></a>パイプラインの概要
 
@@ -61,7 +61,10 @@ d-----        8/23/2018   5:07 PM                catroot2
 
 また、表示する完全なページが準備できると、`Out-Host` コマンドレットに処理が転送されるため、ページングによって CPU 使用率が低下します。 パイプライン内で先行するコマンドレットは、次のページの出力が利用可能になるまで、実行を一時停止します。
 
-この時間差は、PowerShell で使用される CPU およびメモリを監視する Windows タスク マネージャーで確認できます。 コマンド `Get-ChildItem C:\Windows -Recurse` を実行します。 `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging` を使って、このコマンドに対する CPU とメモリの使用量を比較します。
+Windows タスク マネージャーで次のコマンドを比較することにより、パイプによる CPU とメモリの使用量への影響を確認できます。
+
+- `Get-ChildItem C:\Windows -Recurse`
+- `Get-ChildItem C:\Windows -Recurse | Out-Host -Paging`
 
 > [!NOTE]
 > **Paging** パラメーターは、すべての PowerShell ホストでサポートされているわけではありません。 たとえば、PowerShell ISE で **Paging** パラメーターを使おうとすると、次のエラーが表示されます。
