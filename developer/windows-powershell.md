@@ -2,16 +2,16 @@
 title: Windows PowerShell SDK
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: 600d43874d9eda04d556a0ece198026dde9174c3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 7627ab336ddc40ab47c3017eed77c78bbdac4e7f
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080460"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470815"
 ---
 # <a name="windows-powershell"></a>Windows PowerShell
 
-更新日。2013 年 7 月 8 日
+更新:2013 年 7 月 8 日
 
 Windows PowerShell® は、システム管理に重点を置いて設計されたタスクベースのコマンド ライン シェルおよびスクリプト言語です。 .NET Framework 上に構築された Windows PowerShell® はにより、IT プロフェッショナルおよびパワー ユーザーを制御し、Windows オペレーティング システムおよび Windows で実行されるアプリケーションの管理を自動化します。
 
@@ -22,7 +22,7 @@ Windows PowerShell の使用を開始するための基本的な情報、Windows
 
 ## <a name="windows-powershell-documents-on-msdn"></a>MSDN の Windows PowerShell のドキュメント
 
-- [Windows PowerShell SDK のインストール](https://msdn.microsoft.com/en-us/library/ff458115.aspx)Windows PowerShell SDK をインストールする方法について説明します。
+- [Windows PowerShell SDK のインストール](./installing-the-windows-powershell-sdk.md)Windows PowerShell SDK をインストールする方法について説明します。
 
 - [Windows PowerShell モジュールの記述](./module/writing-a-windows-powershell-module.md)管理者、スクリプトの開発者、およびパッケージ化して、Windows PowerShell のソリューションを配布する必要があるコマンドレットの開発者情報を提供します。
 

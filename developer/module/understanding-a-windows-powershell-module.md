@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: 77d328bc1cb8cb42d5a10f107a149c05ab270ce3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082109"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470773"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Windows PowerShell モジュールを理解する
 
@@ -55,7 +55,7 @@ A*マニフェスト モジュール*モジュールはすべてのコンポー�
 
 ### <a name="dynamic-modules"></a>動的モジュール
 
-A*動的モジュール*がモジュールからアンロードされるか、ファイルに保存します。 代わりに、これらが動的に作成、スクリプトを使用して、 [New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module)コマンドレット。 モジュールのこの種類は、オンデマンド読み込みまたは永続的ストレージに保存する必要のないモジュールを作成するスクリプトを使用できます。 動的モジュール、その性質上に短期間に設定するためのものし、でアクセスすることはできません、`Get-Module`コマンドレット。 同様に、通常必要がないモジュールのマニフェスト可能性があります必要も、関連するアセンブリを格納する永続的なフォルダーです。
+A*動的モジュール*はない、読み込み元のまたはファイルに保存されているモジュールです。 代わりに、これらが動的に作成、スクリプトを使用して、 [New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module)コマンドレット。 モジュールのこの種類は、オンデマンド読み込みまたは永続的ストレージに保存する必要のないモジュールを作成するスクリプトを使用できます。 動的モジュール、その性質上に短期間に設定するためのものし、でアクセスすることはできません、`Get-Module`コマンドレット。 同様に、通常必要がないモジュールのマニフェスト可能性があります必要も、関連するアセンブリを格納する永続的なフォルダーです。
 
 ## <a name="module-manifests"></a>モジュール マニフェスト
 
