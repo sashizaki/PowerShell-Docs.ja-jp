@@ -1,12 +1,12 @@
 ---
-ms.date: 3/18/2019
+ms.date: 03/18/2019
 title: FilterHashtable を使った Get-WinEvent クエリの作成
-ms.openlocfilehash: 28ba3c99a297944003a28eaba7de34b77d9df536
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2f598fceb570f189bee776b6ed572b11a6938f64
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058815"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66471023"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>FilterHashtable を使った Get-WinEvent クエリの作成
 
@@ -74,7 +74,7 @@ Get-WinEvent -FilterHashtable @{
 }
 ```
 
-**ProviderName** キーを使ってハッシュ テーブルの作成を続けます。 **ProviderName** は、**[Windows イベント ビューアー]** の **[ソース]** フィールドに表示される名前です。 たとえば、次のスクリーン ショットの **[.NET Runtime]\(.NET ランタイム\)** です。
+**ProviderName** キーを使ってハッシュ テーブルの作成を続けます。 **ProviderName** は、 **[Windows イベント ビューアー]** の **[ソース]** フィールドに表示される名前です。 たとえば、次のスクリーン ショットの **[.NET Runtime]\(.NET ランタイム\)** です。
 
 ![[Windows イベント ビューアー] のソースの画像。](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
@@ -103,7 +103,7 @@ Get-WinEvent -FilterHashtable @{
 
 PowerShell では、**Keywords** キーに対して、**Security** などの文字列ではなく数値を使います。 **[Windows イベント ビューアー]** では文字列として **Keywords** が表示されますが、それらは列挙値です。 ハッシュ テーブルでは、文字列値と共に **Keywords** キーを使うと、エラー メッセージが表示されます。
 
-**[Windows イベント ビューアー]** を開き、**[操作]** ウィンドウから **[現在のログをフィルター]** をクリックします。
+**[Windows イベント ビューアー]** を開き、 **[操作]** ウィンドウから **[現在のログをフィルター]** をクリックします。
 次のスクリーン ショットに示すように、使用可能なキーワードが **[キーワード]** ドロップダウン メニューに表示されます。
 
 ![[Windows イベント ビューアー] のキーワードの画像。](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
