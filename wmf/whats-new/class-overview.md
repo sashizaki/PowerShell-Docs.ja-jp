@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 title: PowerShell クラスを使用したカスタム型の作成
-ms.openlocfilehash: 0dd5bbaca50abb746e15a7bb64a706c7eceee905
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855537"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470936"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>PowerShell クラスを使用したカスタム型の作成
 
@@ -21,7 +21,7 @@ PowerShell 5.0 では、他のオブジェクト指向プログラミング言�
 - PowerShell 言語を使用した型のデバッグ
 - 公式的なメカニズムを適切なレベルで使用した例外の生成および処理
 
-# <a name="declare-base-class"></a>基本クラスの宣言
+## <a name="declare-base-class"></a>基本クラスの宣言
 
 ある PowerShell クラスを、別の PowerShell クラスの基本型として宣言できます。
 
@@ -54,7 +54,7 @@ $list.Add(100)
 $list[0] # return 100
 ```
 
-# <a name="call-base-class-constructor"></a>基本クラス コンストラクターの呼び出し
+### <a name="call-base-class-constructor"></a>基本クラス コンストラクターの呼び出し
 
 サブクラスから基本クラス コンストラクターを呼び出すには、キーワード **base** を使用します。
 
@@ -86,7 +86,7 @@ class C : B
 }
 ```
 
-# <a name="call-base-class-method"></a>基本クラス メソッドの呼び出し
+### <a name="call-base-class-method"></a>基本クラス メソッドの呼び出し
 
 サブクラスで既存のメソッドをオーバーライドすることができます。 そのためには、同じ名前およびシグネチャを使用してメソッドを宣言します。
 
@@ -135,7 +135,7 @@ $list.Add(100)
 $list[0] # return 200
 ```
 
-# <a name="declare-implemented-interface"></a>実装されたインターフェイスの宣言
+### <a name="declare-implemented-interface"></a>実装されたインターフェイスの宣言
 
 基本型が指定されていない場合、基本型の後、またはコロン (:) の直後に、実装されたインターフェイスを宣言することができます。 コンマを使用してすべての型名を区切ります。 C# の構文と似ています。
 
@@ -157,11 +157,11 @@ class MyComparableBar : bar, system.IComparable
 }
 ```
 
-# <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 の新しい言語機能
+## <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 の新しい言語機能
 
 PowerShell 5.0 では、PowerShell に次の新しい言語要素が導入されています。
 
-## <a name="class-keyword"></a>class キーワード
+### <a name="class-keyword"></a>class キーワード
 
 `class` キーワードでは新しいクラスを定義します。 これは、真の .NET Framework 型です。 クラス メンバーはパブリックですが、モジュール スコープ内でのみパブリックです。 型名を文字列として参照することはできません (たとえば、`New-Object` は機能しません)。このリリースでは、クラスが定義されているスクリプトまたはモジュール ファイルの外で type リテラル (`[MyClass]` など) を使用することはできません。
 
@@ -172,7 +172,7 @@ class MyClass
 }
 ```
 
-## <a name="enum-keyword-and-enumerations"></a>enum キーワードおよび列挙
+### <a name="enum-keyword-and-enumerations"></a>enum キーワードおよび列挙
 
 区切り文字として改行文字を使用する `enum` キーワードのサポートが追加されました。 現時点では、列挙子自体に関して列挙子を定義することはできません。 ただし、次の例に示すように、別の列挙型に関して列挙型を初期化することはできます。 また、基本データ型を指定することはできません。基本データ型は常に `[int]` です。
 
@@ -202,11 +202,11 @@ enum SomeEnum { Max = 42 }
 enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 ```
 
-## <a name="import-dscresource"></a>Import-DscResource
+### <a name="import-dscresource"></a>Import-DscResource
 
 `Import-DscResource` は真の動的キーワードです。 PowerShell では、**DscResource** 属性を含むクラスを探して、指定されたモジュールのルート モジュールを解析します。
 
-## <a name="implementingassembly"></a>ImplementingAssembly
+### <a name="implementingassembly"></a>ImplementingAssembly
 
 新しいフィールド **ImplementingAssembly** が **ModuleInfo** に追加されました。 これは、スクリプトでクラスが定義されている場合はスクリプト モジュールに作成された動的アセンブリに設定されるか、またはバイナリ モジュールの読み込み済みアセンブリに設定されます。 **ModuleType** が **Manifest** の場合は設定されません。
 
@@ -232,11 +232,11 @@ $s = "hello"
 
 すべてのメンバーはパブリックです。
 
-## <a name="constructors-and-instantiation"></a>コンストラクターとインスタンス化
+### <a name="constructors-and-instantiation"></a>コンストラクターとインスタンス化
 
 PowerShell のクラスは、コンストラクターを持つことができます。 クラスと同じ名前です。 コンストラクターはオーバーロードできます。 静的コンストラクターがサポートされています。 初期化式を持つプロパティは、コンストラクター内のコードを実行する前に初期化されます。 静的プロパティは、静的コンストラクターの本体の前に初期化され、インスタンスのプロパティは、非静的コンストラクターの本体の前に初期化されます。 現時点では、(C\# 構文 ": this()" のような) 別のコンストラクターからコンストラクターを呼び出す構文はありません。 回避策は、一般的な `Init()` メソッドを定義することです。
 
-### <a name="creating-instances"></a>インスタンスの作成
+#### <a name="creating-instances"></a>インスタンスの作成
 
 > [!NOTE]
 > PowerShell 5.0 では、PowerShell で定義されたクラスでは `New-Object` は機能しません。 また、型名は語彙的にのみ表示され、クラスを定義するモジュールまたはスクリプトの外部では表示されません。 関数は、PowerShell で定義されているクラスのインスタンスを返すことができます。 それらのインスタンスは、モジュールまたはスクリプトの外部で動作します。
@@ -265,7 +265,7 @@ PowerShell のクラスは、コンストラクターを持つことができま
 [hashtable]::new()
 ```
 
-### <a name="discovering-constructors"></a>コンストラクターの検出
+#### <a name="discovering-constructors"></a>コンストラクターの検出
 
 `Get-Member` を使って、またはこの例で示すようにして、コンストラクターのオーバーロードを確認できるようになりました。
 
@@ -280,7 +280,7 @@ hashtable new(int capacity, float loadFactor)
 
 `Get-Member -Static` ではコンストラクターが一覧表示されるため、他のメソッドと同様にオーバーロードを表示できます。 また、この構文のパフォーマンスは、`New-Object` より大幅に高速です。
 
-## <a name="methods"></a>メソッド
+### <a name="methods"></a>メソッド
 
 PowerShell のクラス メソッドは、end ブロックのみを持つ **ScriptBlock** として実装されます。 すべてのメソッドはパブリックです。 **DoSomething** という名前のメソッドを定義する例を次に示します。
 
@@ -304,29 +304,29 @@ $b.DoSomething(42)
 
 オーバーロードされたメソッドもサポートされます。
 
-## <a name="properties"></a>プロパティ
+### <a name="properties"></a>プロパティ
 
 すべてのプロパティはパブリックです。 プロパティには、改行文字かセミコロンが必要です。 オブジェクトの種類が指定されていない場合、プロパティの型はオブジェクトです。
 
 検証属性または引数変換属性を使用するプロパティ (`[ValidateSet("aaa")]` など) は期待どおりに動作します。
 
-## <a name="hidden"></a>Hidden
+### <a name="hidden"></a>Hidden
 
 新しいキーワード `Hidden` が追加されました。 `Hidden` は、プロパティとメソッド (コンストラクターを含む) に適用できます。
 
-Hidden のメンバーはパブリックですが、-Force パラメーターを追加しない限り、`Get-Member` の出力には含められません。 Hidden のメンバーを定義するクラスで完了が発生しない限り、タブの完了時、または IntelliSense の使用時に Hidden のメンバーは含まれません。
+Hidden のメンバーはパブリックですが、`-Force` パラメーターを追加しない限り、`Get-Member` の出力には含められません。 Hidden のメンバーを定義するクラスで完了が発生しない限り、タブの完了時、または IntelliSense の使用時に Hidden のメンバーは含まれません。
 
 C\# コードで PowerShell 内と同じセマンティクスを使用できるように、新しい属性 **System.Management.Automation.HiddenAttribute** が追加されました。
 
-## <a name="return-types"></a>戻り値の型
+### <a name="return-types"></a>戻り値の型
 
 戻り値の型はコントラクトです。 戻り値は、予期された型に変換されます。 戻り値の型が指定されていない場合、戻り値の型は **void** です。 オブジェクトのストリーミングはありません。 オブジェクトが意図的または誤ってパイプラインに書き込まれることはありません。
 
-## <a name="attributes"></a>属性
+### <a name="attributes"></a>属性
 
 2 つの新しい属性 **DscResource** と **DscProperty** が追加されました。
 
-## <a name="lexical-scoping-of-variables"></a>変数の語彙的スコープ
+### <a name="lexical-scoping-of-variables"></a>変数の語彙的スコープ
 
 今回のリリースで語彙的スコープが機能する方法の例を次に示します。
 

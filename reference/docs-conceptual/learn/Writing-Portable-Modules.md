@@ -2,12 +2,12 @@
 ms.date: 12/14/2018
 keywords: PowerShell, コマンドレット
 title: 移植可能なモジュールの作成
-ms.openlocfilehash: 38a93b5b030d58784b91292e2cd060b3a2c19a00
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 237f6aaea0ed019c54d04a8477d7a456edf00910
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086410"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470979"
 ---
 # <a name="portable-modules"></a>移植可能なモジュール
 
@@ -17,11 +17,12 @@ Windows PowerShell が [.NET Framework][] 用であるのに対し、PowerShell 
 
 ### <a name="porting-a-pssnapin"></a>PSSnapIn の移植
 
-PowerShell スナップイン (PSSnapIn) は、PowerShell Core ではサポートされていません。 ただし、PSSnapIn を PowerShell モジュールに変換するのは簡単です。 通常、PSSnapIn の登録コードは、[PSSnapIn][] の派生クラスの単一のソース ファイルに含まれます。 このソース ファイルをビルドから削除します。これは必要ありません。
+PowerShell [スナップイン](/powershell/developer/cmdlet/modules-and-snap-ins)は、PowerShell Core ではサポートされていません。 ただし、PSSnapIn を PowerShell モジュールに変換するのは簡単です。 通常、PSSnapIn の登録コードは、[PSSnapIn][] の派生クラスの単一のソース ファイルに含まれます。
+このソース ファイルをビルドから削除します。これは必要ありません。
 
-[New-ModuleManifest][] を使って、PSSnapIn 登録コードに必要なものを置き換える新しいモジュール マニフェストを作成します。 PSSnapIn の値の一部 (説明など) は、モジュール マニフェストで再利用できます。
+[New-ModuleManifest][] を使って、PSSnapIn 登録コードに必要なものを置き換える新しいモジュール マニフェストを作成します。 **PSSnapIn** の値の一部 (**Description** など) は、モジュール マニフェスト内で再利用できます。
 
-モジュール マニフェストの `RootModule` プロパティは、コマンドレットを実装するアセンブリ (dll) の名前に設定する必要があります。
+モジュール マニフェストの **RootModule** プロパティは、コマンドレットを実装するアセンブリ (dll) の名前に設定する必要があります。
 
 ### <a name="the-net-portability-analyzer-aka-apiport"></a>.NET Portability Analyzer (別名 APIPort)
 

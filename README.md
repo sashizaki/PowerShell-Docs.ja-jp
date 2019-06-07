@@ -1,17 +1,24 @@
 ---
-ms.openlocfilehash: 6e36e6599e36218ce2a925dceda7aa0ee6811057
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 84b29953f09eb62eb30f52d84b087eb4f1f90eed
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068826"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470650"
 ---
 # <a name="microsoft-open-source-code-of-conduct"></a>Microsoft オープン ソース倫理規定
 
 このプロジェクトは [Microsoft オープン ソース論理規定](https://opensource.microsoft.com/codeofconduct/)を採用しています。
 詳細については[論理規定についてのよくある質問](https://opensource.microsoft.com/codeofconduct/faq/)をご覧ください。また、追加の質問やコメントがある場合は[opencode@microsoft.com](mailto:opencode@microsoft.com)にお問い合わせください。
 
-[![ビルドの状態](https://ci.appveyor.com/api/projects/status/onshefxnc4g4pv87/branch/staging?svg=true)](https://ci.appveyor.com/project/PowerShell/powershell-docs/branch/staging)
+[live-badge]: https://powershell.visualstudio.com/PowerShell-Docs/_apis/build/status/PowerShell-Docs-CI?branchName=live
+[staging-badge]: https://powershell.visualstudio.com/PowerShell-Docs/_apis/build/status/PowerShell-Docs-CI?branchName=staging
+
+## <a name="build-status"></a>ビルドの状態
+
+| ライブ ブランチ | ステージング ブランチ |
+|:------------|:---------------|
+| [![live-badge][]][live-badge] | [![staging-badge][]][staging-badge]
 
 ## <a name="powershell-documentation"></a>PowerShell ドキュメント
 
