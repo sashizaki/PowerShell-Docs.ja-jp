@@ -1,188 +1,224 @@
 ---
-ms.date: 06/05/2017
+ms.date: 06/03/2019
 keywords: PowerShell, コマンドレット
 title: ソフトウェア インストールの操作
-ms.assetid: 51a12fe9-95f6-4ffc-81a5-4fa72a5bada9
-ms.openlocfilehash: 9369e3c5ac670895cd4fbd3ebc895c50efd02051
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6d2111a332f0e8c1b545186d3d950e936aed1834
+ms.sourcegitcommit: 4ec9e10647b752cc62b1eabb897ada3dc03c93eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086274"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66830302"
 ---
-# <a name="working-with-software-installations"></a><span data-ttu-id="34444-103">ソフトウェア インストールの操作</span><span class="sxs-lookup"><span data-stu-id="34444-103">Working with Software Installations</span></span>
+# <a name="working-with-software-installations"></a><span data-ttu-id="599f2-103">ソフトウェア インストールの操作</span><span class="sxs-lookup"><span data-stu-id="599f2-103">Working with Software Installations</span></span>
 
-<span data-ttu-id="34444-104">Windows インストーラーを使用するように設計されているアプリケーションは、WMI の **Win32_Product** クラスからアクセスできますが、今日使用されているすべてのアプリケーションが Windows インストーラーを使用しているわけではありません。</span><span class="sxs-lookup"><span data-stu-id="34444-104">Applications that are designed to use Windows Installer can be accessed through WMI's **Win32_Product** class, but not all applications in use today use the Windows Installer.</span></span> <span data-ttu-id="34444-105">Windows インストーラーは、インストール可能なアプリケーションを操作するための標準的な手法を最も広範囲に提供しているため、主にこれらのアプリケーションについて説明します。</span><span class="sxs-lookup"><span data-stu-id="34444-105">Because the Windows Installer provides the widest range of standard techniques for working with installable applications, we will focus primarily on those applications.</span></span> <span data-ttu-id="34444-106">代替のセットアップ ルーチンを使用するアプリケーションは、通常 Windows インストーラーによって管理されません。</span><span class="sxs-lookup"><span data-stu-id="34444-106">Applications that use alternate setup routines will generally not be managed by the Windows Installer.</span></span> <span data-ttu-id="34444-107">これらのアプリケーションを処理する具体的な方法は、インストーラーのソフトウェアとアプリケーションの開発者によってなされた決定によって異なります。</span><span class="sxs-lookup"><span data-stu-id="34444-107">Specific techniques for working with those applications will depend on the installer software and decisions made by the application developer.</span></span>
+<span data-ttu-id="599f2-104">Windows インストーラーを使用するように設計されているアプリケーションは、WMI の **Win32_Product** クラスからアクセスできますが、今日使用されているすべてのアプリケーションが Windows インストーラーを使用しているわけではありません。</span><span class="sxs-lookup"><span data-stu-id="599f2-104">Applications that are designed to use Windows Installer can be accessed through WMI's **Win32_Product** class, but not all applications in use today use the Windows Installer.</span></span>
+<span data-ttu-id="599f2-105">代替のセットアップ ルーチンが使われるアプリケーションは、通常 Windows インストーラーによって管理されません。</span><span class="sxs-lookup"><span data-stu-id="599f2-105">Applications that use alternate setup routines are not usually managed by the Windows Installer.</span></span>
+<span data-ttu-id="599f2-106">このようなアプリケーションを処理するための具体的な方法は、インストーラー ソフトウェアおよびアプリケーション開発者による決定によって異なります。</span><span class="sxs-lookup"><span data-stu-id="599f2-106">Specific techniques for working with those applications depends on the installer software and decisions made by the application developer.</span></span> <span data-ttu-id="599f2-107">たとえば、コンピューター上のフォルダーにファイルをコピーすることでインストールするアプリケーションは、通常、ここで紹介している手法を使用して管理することはできません。</span><span class="sxs-lookup"><span data-stu-id="599f2-107">For example, applications installed by copying the files to a folder on the computer usually cannot be managed by using techniques discussed here.</span></span> <span data-ttu-id="599f2-108">このようなファイルとフォルダーとしてのアプリケーションは、「[ファイルとフォルダーの操作](Working-with-Files-and-Folders.md)」で説明されている手法を使って管理できます。</span><span class="sxs-lookup"><span data-stu-id="599f2-108">You can manage these applications as files and folders by using the techniques discussed in [Working With Files and Folders](Working-with-Files-and-Folders.md).</span></span>
 
-> [!NOTE]
-> <span data-ttu-id="34444-108">コンピューターにアプリケーションのファイルをコピーすることによってインストールされているアプリケーションは、通常、ここで紹介されている手法を使用してで管理することはできません。</span><span class="sxs-lookup"><span data-stu-id="34444-108">Applications that are installed by copying the application files to the computer usually cannot be managed by using techniques discussed here.</span></span> <span data-ttu-id="34444-109">これらのアプリケーションは、「ファイルとフォルダーの操作」セクションで説明した手法を使用することで、ファイルやフォルダーとして管理できます。</span><span class="sxs-lookup"><span data-stu-id="34444-109">You can manage these applications as files and folders by using the techniques discussed in the "Working With Files and Folders" section.</span></span>
+> [!CAUTION]
+> <span data-ttu-id="599f2-109">**Win32_Product** クラスはクエリ用に最適化されていません。</span><span class="sxs-lookup"><span data-stu-id="599f2-109">The **Win32_Product** class is not query optimized.</span></span> <span data-ttu-id="599f2-110">クエリでワイルドカード フィルターが使われると、インストールされているすべての製品を列挙するため WMI によって MSI のプロバイダーが使われ、その後フィルターを処理するために完全な一覧が順次解析されます。</span><span class="sxs-lookup"><span data-stu-id="599f2-110">Queries that use wildcard filters cause WMI to use the MSI provider to enumerate all installed products then parse the full list sequentially to handle the filter.</span></span> <span data-ttu-id="599f2-111">これによってインストールされているパッケージの整合性チェックも開始され、インストールの検証および修復が行われます。</span><span class="sxs-lookup"><span data-stu-id="599f2-111">This also initiates a consistency check of packages installed, verifying and repairing the install.</span></span> <span data-ttu-id="599f2-112">この検証は時間のかかるプロセスで、イベント ログにエラーが発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="599f2-112">The validation is a slow process and may result in errors in the event logs.</span></span> <span data-ttu-id="599f2-113">詳細については、[サポート技術情報の記事 974524](https://support.microsoft.com/help/974524) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="599f2-113">For more information seek [KB article 974524](https://support.microsoft.com/help/974524).</span></span>
 
-## <a name="listing-windows-installer-applications"></a><span data-ttu-id="34444-110">Windows インストーラー アプリケーションを一覧表示する</span><span class="sxs-lookup"><span data-stu-id="34444-110">Listing Windows Installer Applications</span></span>
+## <a name="listing-windows-installer-applications"></a><span data-ttu-id="599f2-114">Windows インストーラー アプリケーションを一覧表示する</span><span class="sxs-lookup"><span data-stu-id="599f2-114">Listing Windows Installer Applications</span></span>
 
-<span data-ttu-id="34444-111">ローカルまたはリモート システムに Windows インストーラーを使用してインストールされているアプリケーションの一覧を表示するには、次の単純な WMI クエリを使用します。</span><span class="sxs-lookup"><span data-stu-id="34444-111">To list the applications installed with the Windows Installer on a local or remote system, use the following simple WMI query:</span></span>
+<span data-ttu-id="599f2-115">ローカルまたはリモート システムに Windows インストーラーを使用してインストールされているアプリケーションの一覧を表示するには、次の単純な WMI クエリを使用します。</span><span class="sxs-lookup"><span data-stu-id="599f2-115">To list the applications installed with the Windows Installer on a local or remote system, use the following simple WMI query:</span></span>
 
-```
-PS> Get-WmiObject -Class Win32_Product -ComputerName .
-
-IdentifyingNumber : {7131646D-CD3C-40F4-97B9-CD9E4E6262EF}
-Name              : Microsoft .NET Framework 2.0
-Vendor            : Microsoft Corporation
-Version           : 2.0.50727
-Caption           : Microsoft .NET Framework 2.0
+```powershell
+Get-CimInstance -Class Win32_Product |
+  Where-Object Name -eq "Microsoft .NET Core Runtime - 2.1.2 (x64)"
 ```
 
-<span data-ttu-id="34444-112">Win32_Product オブジェクトのすべてのプロパティを画面に表示するには、Format-List コマンドレットなど、書式設定のコマンドレットの Properties パラメーターに \* (all) の値を指定して使用します。</span><span class="sxs-lookup"><span data-stu-id="34444-112">To display all of the properties of the Win32_Product object to the display, use the Properties parameter of the formatting cmdlets, such as the Format-List cmdlet, with a value of \* (all).</span></span>
-
+```Output
+Name               Caption                     Vendor                 Version      IdentifyingNumber
+----               -------                     ------                 -------      -----------------
+Microsoft .NET ... Microsoft .NET Core Runt... Microsoft Corporation  16.72.26629  {ACC73072-9AD5-416C-94B...
 ```
-PS> Get-WmiObject -Class Win32_Product -ComputerName . | Where-Object -FilterScript {$_.Name -eq "Microsoft .NET Framework 2.0"} | Format-List -Property *
 
-Name              : Microsoft .NET Framework 2.0
-Version           : 2.0.50727
-InstallState      : 5
-Caption           : Microsoft .NET Framework 2.0
-Description       : Microsoft .NET Framework 2.0
-IdentifyingNumber : {7131646D-CD3C-40F4-97B9-CD9E4E6262EF}
-InstallDate       : 20060506
-InstallDate2      : 20060506000000.000000-000
+<span data-ttu-id="599f2-116">**Win32_Product** オブジェクトのすべてのプロパティを画面に表示するには、`Format-List` コマンドレットなど、書式設定のコマンドレットの **Properties** パラメーターに `*` (all) の値を指定して使用します。</span><span class="sxs-lookup"><span data-stu-id="599f2-116">To display all the properties of the **Win32_Product** object to the display, use the **Properties** parameter of the formatting cmdlets, such as the `Format-List` cmdlet, with a value of `*` (all).</span></span>
+
+```powershell
+Get-CimInstance -Class Win32_Product |
+  Where-Object Name -eq "Microsoft .NET Core Runtime - 2.1.2 (x64)" |
+    Format-List -Property *
+```
+
+```Output
+Name                  : Microsoft .NET Core Runtime - 2.1.2 (x64)
+Version               : 16.72.26629
+InstallState          : 5
+Caption               : Microsoft .NET Core Runtime - 2.1.2 (x64)
+Description           : Microsoft .NET Core Runtime - 2.1.2 (x64)
+IdentifyingNumber     : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
+SKUNumber             :
+Vendor                : Microsoft Corporation
+AssignmentType        : 1
+HelpLink              :
+HelpTelephone         :
+InstallDate           : 20180816
+InstallDate2          :
+InstallLocation       :
+InstallSource         : C:\ProgramData\Package Cache\{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}v16.72.26629\
+Language              : 1033
+LocalPackage          : C:\WINDOWS\Installer\414c96e.msi
+PackageCache          : C:\WINDOWS\Installer\414c96e.msi
+PackageCode           : {D20AC783-1EC5-4A58-9277-F452F5EB9AD9}
+PackageName           : dotnet-runtime-2.1.2-win-x64.msi
+ProductID             :
+RegCompany            :
+RegOwner              :
+Transforms            :
+URLInfoAbout          :
+URLUpdateInfo         :
+WordCount             : 0
+PSComputerName        :
+CimClass              : root/cimv2:Win32_Product
+CimInstanceProperties : {Caption, Description, IdentifyingNumber, Name...}
+CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
+```
+
+<span data-ttu-id="599f2-117">または、`Get-CimInstance` **Filter** パラメーターを使用して、Microsoft .NET Framework 2.0 のみを選択できます。</span><span class="sxs-lookup"><span data-stu-id="599f2-117">Or, you could use the `Get-CimInstance` **Filter** parameter to select only Microsoft .NET Framework 2.0.</span></span> <span data-ttu-id="599f2-118">**Filter** パラメーターの値に対しては、Windows PowerShell の構文ではなく、WMI Query Language (WQL) の構文が使われます。</span><span class="sxs-lookup"><span data-stu-id="599f2-118">The value of the **Filter** parameter uses WMI Query Language (WQL) syntax, not Windows PowerShell syntax.</span></span> <span data-ttu-id="599f2-119">たとえば、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="599f2-119">For example:</span></span>
+
+```powershell
+Get-CimInstance -Class Win32_Product -Filter "Name='Microsoft .NET Core Runtime - 2.1.2 (x64)'" |
+  Format-List -Property *
+```
+
+<span data-ttu-id="599f2-120">関心のあるプロパティだけを一覧表示させるには、書式設定コマンドレットの **Property** パラメーターを使用して必要なプロパティを一覧表示させます。</span><span class="sxs-lookup"><span data-stu-id="599f2-120">To list only the properties that interest you, use the **Property** parameter of the formatting cmdlets to list the desired properties.</span></span>
+
+```powershell
+Get-CimInstance -Class Win32_Product  -Filter "Name='Microsoft .NET Core Runtime - 2.1.2 (x64)'" |
+  Format-List -Property Name,InstallDate,InstallLocation,PackageCache,Vendor,Version,IdentifyingNumber
+```
+
+```Output
+Name              : Microsoft .NET Core Runtime - 2.1.2 (x64)
+InstallDate       : 20180816
 InstallLocation   :
-PackageCache      : C:\WINDOWS\Installer\619ab2.msi
-SKUNumber         :
+PackageCache      : C:\WINDOWS\Installer\414c96e.msi
 Vendor            : Microsoft Corporation
+Version           : 16.72.26629
+IdentifyingNumber : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
 ```
 
-<span data-ttu-id="34444-113">または、**Get-WmiObject Filter** パラメーターを使用して、Microsoft .NET Framework 2.0 のみを選択できます。</span><span class="sxs-lookup"><span data-stu-id="34444-113">Or, you could use the **Get-WmiObject Filter** parameter to select only Microsoft .NET Framework 2.0.</span></span> <span data-ttu-id="34444-114">このコマンドで使用されているフィルターは WMI フィルターであるため、Windows PowerShell の構文ではなく、WMI クエリ言語 (WQL) 構文を使用します。</span><span class="sxs-lookup"><span data-stu-id="34444-114">Because the filter used in this command is a WMI filter, it uses WMI Query Language (WQL) syntax, not Windows PowerShell syntax.</span></span> <span data-ttu-id="34444-115">代わりに、</span><span class="sxs-lookup"><span data-stu-id="34444-115">Instead,:</span></span>
+## <a name="listing-all-uninstallable-applications"></a><span data-ttu-id="599f2-121">アンインストール可能なすべてのアプリケーションを一覧表示する</span><span class="sxs-lookup"><span data-stu-id="599f2-121">Listing All Uninstallable Applications</span></span>
+
+<span data-ttu-id="599f2-122">ほとんどの標準的なアプリケーションでは Windows にアンインストーラーが登録されるため、Windows レジストリでこれらを検索することで、ローカルで操作できます。</span><span class="sxs-lookup"><span data-stu-id="599f2-122">Because most standard applications register an uninstaller with Windows, we can work with those locally by finding them in the Windows registry.</span></span> <span data-ttu-id="599f2-123">システム上のすべてのアプリケーションを検索する確実な方法はありません。</span><span class="sxs-lookup"><span data-stu-id="599f2-123">There is no guaranteed way to find every application on a system.</span></span> <span data-ttu-id="599f2-124">ただし、 **[プログラムの追加と削除]** に表示されるリストを備えているプログラムをすべて検索することは可能です。</span><span class="sxs-lookup"><span data-stu-id="599f2-124">However, it is possible to find all programs with listings displayed in **Add or Remove Programs**.</span></span> <span data-ttu-id="599f2-125">**[プログラム追加と削除]** では、次のレジストリ キーによってこれらのアプリケーションが検索されます。</span><span class="sxs-lookup"><span data-stu-id="599f2-125">**Add or Remove Programs** finds these applications in the following registry key:</span></span>
+
+<span data-ttu-id="599f2-126">`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall` の順にクリックします。</span><span class="sxs-lookup"><span data-stu-id="599f2-126">`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall`.</span></span>
+
+<span data-ttu-id="599f2-127">このキーを調べて、アプリケーションを検索することができます。</span><span class="sxs-lookup"><span data-stu-id="599f2-127">We can examine this key to find applications.</span></span> <span data-ttu-id="599f2-128">Uninstall キーを簡単に表示できるように、このレジストリの場所に PowerShell ドライブをマップできます。</span><span class="sxs-lookup"><span data-stu-id="599f2-128">To make it easier to view the Uninstall key, we can map a PowerShell drive to this registry location:</span></span>
 
 ```powershell
-Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='Microsoft .NET Framework 2.0'"| Format-List -Property *
+New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
 ```
 
-<span data-ttu-id="34444-116">WQL クエリは、スペースや等号など、Windows PowerShell で特別な意味を持つ文字を頻繁に使用することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="34444-116">Note that WQL queries frequently use characters, such as spaces or equal signs, that have a special meaning in Windows PowerShell.</span></span> <span data-ttu-id="34444-117">このため、フィルターのパラメーターの値は、常に引用符で囲むのが安全です。</span><span class="sxs-lookup"><span data-stu-id="34444-117">For this reason, it is prudent to always enclose the value of the Filter parameter in quotation marks.</span></span> <span data-ttu-id="34444-118">また、読みやすさは向上しませんが、Windows PowerShell のエスケープ文字であるバックティック (\`) を使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="34444-118">You can also use the Windows PowerShell escape character, a backtick (\`), although it may not improve readability.</span></span> <span data-ttu-id="34444-119">次のコマンドは前のコマンドと同等で、同様の結果を返しますが、フィルター文字列全体を引用符で囲むのではなく、バックティックを使用して説くス文字をエスケープします。</span><span class="sxs-lookup"><span data-stu-id="34444-119">The following command is equivalent to the previous command and returns the same results, but uses the backtick to escape special characters, instead of quoting the entire filter string.</span></span>
-
-```powershell
-Get-WmiObject -Class Win32_Product -ComputerName . -Filter Name`=`'Microsoft` .NET` Framework` 2.0`' | Format-List -Property *
-```
-
-<span data-ttu-id="34444-120">関心のあるプロパティのみの一覧を表示するには、書式設定コマンドレットの Property パラメーターを使用して、必要なプロパティの一覧を表示します。</span><span class="sxs-lookup"><span data-stu-id="34444-120">To list only the properties that interest you, use the Property parameter of the formatting cmdlets to list the desired properties.</span></span>
-
-```
-Get-WmiObject -Class Win32_Product -ComputerName . | Format-List -Property Name,InstallDate,InstallLocation,PackageCache,Vendor,Version,IdentifyingNumber
-...
-Name              : HighMAT Extension to Microsoft Windows XP CD Writing Wizard
-InstallDate       : 20051022
-InstallLocation   : C:\Program Files\HighMAT CD Writing Wizard\
-PackageCache      : C:\WINDOWS\Installer\113b54.msi
-Vendor            : Microsoft Corporation
-Version           : 1.1.1905.1
-IdentifyingNumber : {FCE65C4E-B0E8-4FBD-AD16-EDCBE6CD591F}
-...
-```
-
-<span data-ttu-id="34444-121">最後に、インストールされたアプリケーションの名前のみを検索するには、単純な **Format-Wide** ステートメントにより、出力が簡略化されます。</span><span class="sxs-lookup"><span data-stu-id="34444-121">Finally, to find only the names of installed applications, a simple **Format-Wide** statement simplifies the output:</span></span>
-
-```powershell
-Get-WmiObject -Class Win32_Product -ComputerName .  | Format-Wide -Column 1
-```
-
-<span data-ttu-id="34444-122">これまでインストールに Windows インストーラーを使用したアプリケーションを検索する方法をいくつか確認しましたが、他のアプリケーションはまだ検討していません。</span><span class="sxs-lookup"><span data-stu-id="34444-122">Although we now have several ways to look at applications that used the Windows Installer for installation, we have not considered other applications.</span></span> <span data-ttu-id="34444-123">ほとんどの標準的なアプリケーションはアンインストーラーを Windows に登録するため、Windows レジストリでこれらを検索することで、ローカルで操作できます。</span><span class="sxs-lookup"><span data-stu-id="34444-123">Because most standard applications register their uninstaller with Windows, we can work with those locally by finding them in the Windows registry.</span></span>
-
-## <a name="listing-all-uninstallable-applications"></a><span data-ttu-id="34444-124">アンインストール可能なすべてのアプリケーションを一覧表示する</span><span class="sxs-lookup"><span data-stu-id="34444-124">Listing All Uninstallable Applications</span></span>
-
-<span data-ttu-id="34444-125">システム上のすべてのアプリケーションを検索する確実な方法はありませんが、[プログラム追加と削除] ダイアログ ボックスに表示される一覧ですべてのプログラムを検索することができます。</span><span class="sxs-lookup"><span data-stu-id="34444-125">Although there is no guaranteed way to find every application on a system, it is possible to find all programs with listings displayed in the Add or Remove Programs dialog box.</span></span> <span data-ttu-id="34444-126">[プログラム追加と削除] は、次のレジストリ キーでこれらのアプリケーションを検索します。</span><span class="sxs-lookup"><span data-stu-id="34444-126">Add or Remove Programs finds these applications in the following registry key:</span></span>
-
-<span data-ttu-id="34444-127">**HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**</span><span class="sxs-lookup"><span data-stu-id="34444-127">**HKEY_LOCAL_MACHINE\\Software\\Microsoft\\Windows\\CurrentVersion\\Uninstall**.</span></span>
-
-<span data-ttu-id="34444-128">また、このキーを確認してアプリケーションを検索することもできます。</span><span class="sxs-lookup"><span data-stu-id="34444-128">We can also examine this key to find applications.</span></span> <span data-ttu-id="34444-129">Uninstall キーを簡単に表示できるように、このレジストリの場所に Windows PowerShell ドライブをマップできます。</span><span class="sxs-lookup"><span data-stu-id="34444-129">To make it easier to view the Uninstall key, we can map a Windows PowerShell drive to this registry location:</span></span>
-
-```
-PS> New-PSDrive -Name Uninstall -PSProvider Registry -Root HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall
-
+```Output
 Name       Provider      Root                                   CurrentLocation
 ----       --------      ----                                   ---------------
 Uninstall  Registry      HKEY_LOCAL_MACHINE\SOFTWARE\Micr...
 ```
-
-> [!NOTE]
-> <span data-ttu-id="34444-130">**HKLM:** ドライブは、**HKEY_LOCAL_MACHINE** のルートにマップされているので、このドライブを Uninstall キーのパスに使用しました。</span><span class="sxs-lookup"><span data-stu-id="34444-130">The **HKLM:** drive is mapped to the root of **HKEY_LOCAL_MACHINE**, so we used that drive in the path to the Uninstall key.</span></span> <span data-ttu-id="34444-131">**HKLM:** の代わりに、**HKLM** または **HKEY_LOCAL_MACHINE** のいずれかを使用して、レジストリのパスを指定できます。</span><span class="sxs-lookup"><span data-stu-id="34444-131">Instead of **HKLM:** we could have specified the registry path by using either **HKLM** or **HKEY_LOCAL_MACHINE**.</span></span> <span data-ttu-id="34444-132">既存のレジストリ ドライブを使用する利点は、タブ補完を利用してキーの名前を入力できるため、ユーザーが入力する必要がないことです。</span><span class="sxs-lookup"><span data-stu-id="34444-132">The advantage of using an existing registry drive is that we can use tab-completion to fill in the keys names, so we do not need to type them.</span></span>
-
-<span data-ttu-id="34444-133">これで、"Uninstall" という名前のドライブができ、これを利用することでアプリケーションのインストールの検索が迅速かつ便利になります。</span><span class="sxs-lookup"><span data-stu-id="34444-133">We now have a drive named "Uninstall" that can be used to quickly and conveniently look for application installations.</span></span> <span data-ttu-id="34444-134">Uninstall のレジストリ キーの数をカウントすることによって、インストールされているアプリケーションの数がわかります。Windows PowerShell ドライブ:</span><span class="sxs-lookup"><span data-stu-id="34444-134">We can find the number of installed applications by counting the number of registry keys in the Uninstall: Windows PowerShell drive:</span></span>
+<span data-ttu-id="599f2-129">これで "Uninstall:" という名前のドライブができました。これを使うと、アプリケーションのインストールをすばやく便利に検索できます。</span><span class="sxs-lookup"><span data-stu-id="599f2-129">We now have a drive named "Uninstall:" that can be used to quickly and conveniently look for application installations.</span></span> <span data-ttu-id="599f2-130">Uninstall のレジストリ キーの数をカウントすることによって、インストールされているアプリケーションの数がわかります。PowerShell ドライブ:</span><span class="sxs-lookup"><span data-stu-id="599f2-130">We can find the number of installed applications by counting the number of registry keys in the Uninstall: PowerShell drive:</span></span>
 
 ```
-PS> (Get-ChildItem -Path Uninstall:).Count
+(Get-ChildItem -Path Uninstall:).Count
 459
 ```
 
-<span data-ttu-id="34444-135">**Get-ChildItem** をはじめとするさまざまな方法を利用して、アプリケーションの一覧を詳細に検索できます。</span><span class="sxs-lookup"><span data-stu-id="34444-135">We can search this list of applications further by using a variety of techniques, beginning with **Get-ChildItem**.</span></span> <span data-ttu-id="34444-136">アプリケーションの一覧を取得して、**$UninstallableApplications** 変数に保存するには、次のコマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="34444-136">To get a list of applications and save them in the **$UninstallableApplications** variable, use the following command:</span></span>
+<span data-ttu-id="599f2-131">**Get-ChildItem** をはじめとするさまざまな方法を利用して、アプリケーションの一覧を詳細に検索できます。</span><span class="sxs-lookup"><span data-stu-id="599f2-131">We can search this list of applications further by using a variety of techniques, beginning with **Get-ChildItem**.</span></span> <span data-ttu-id="599f2-132">アプリケーションの一覧を取得して、 **$UninstallableApplications** 変数に保存するには、次のコマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="599f2-132">To get a list of applications and save them in the **$UninstallableApplications** variable, use the following command:</span></span>
 
 ```powershell
 $UninstallableApplications = Get-ChildItem -Path Uninstall:
 ```
 
+<span data-ttu-id="599f2-133">Uninstall の下のレジストリ キーにレジストリ エントリの値を表示するには、レジストリ キーの GetValue メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="599f2-133">To display the values of the registry entries in the registry keys under Uninstall, use the GetValue method of the registry keys.</span></span> <span data-ttu-id="599f2-134">メソッドの値は、レジストリ エントリの名前です。</span><span class="sxs-lookup"><span data-stu-id="599f2-134">The value of the method is the name of the registry entry.</span></span>
+
+<span data-ttu-id="599f2-135">たとえば、Uninstall キーの下でアプリケーションの表示名を検索するには、次のコマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="599f2-135">For example, to find the display names of applications in the Uninstall key, use the following command:</span></span>
+
+```powershell
+$UninstallableApplications | ForEach-Object -Process { $_.GetValue('DisplayName') }
+```
+
+<span data-ttu-id="599f2-136">これらの値が一意である保証はありません。</span><span class="sxs-lookup"><span data-stu-id="599f2-136">There is no guarantee that these values are unique.</span></span> <span data-ttu-id="599f2-137">次の例では、インストールされている 2 つの項目が "Windows Media エンコーダー 9 シリーズ" として表示されます。</span><span class="sxs-lookup"><span data-stu-id="599f2-137">In the following example, two installed items appear as "Windows Media Encoder 9 Series":</span></span>
+
+```powershell
+$UninstallableApplications | Where-Object -FilterScript { $_.GetValue("DisplayName") -eq "Windows Media Encoder 9 Series"}
+```
+
+```Output
+Name                           Property
+----                           --------
+{ACC73072-9AD5-416C-94BF-D82DD AuthorizedCDFPrefix :
+CEA0F1B}                       Comments            :
+                               Contact             :
+                               DisplayVersion      : 16.72.26629
+                               HelpLink            :
+                               HelpTelephone       :
+                               InstallDate         : 20180816
+                               InstallLocation     :
+                               InstallSource       : C:\ProgramData\Package
+                               Cache\{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}v16.72.26629\
+                               ModifyPath          : MsiExec.exe /X{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
+                               NoModify            : 1
+                               Publisher           : Microsoft Corporation
+                               Readme              :
+                               Size                :
+                               EstimatedSize       : 67156
+                               SystemComponent     : 1
+                               UninstallString     : MsiExec.exe /X{ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
+                               URLInfoAbout        :
+                               URLUpdateInfo       :
+                               VersionMajor        : 16
+                               VersionMinor        : 72
+                               WindowsInstaller    : 1
+                               Version             : 273180677
+                               Language            : 1033
+                               DisplayName         : Microsoft .NET Core Runtime - 2.1.2 (x64)
+```
+
+## <a name="installing-applications"></a><span data-ttu-id="599f2-138">アプリケーションのインストール</span><span class="sxs-lookup"><span data-stu-id="599f2-138">Installing Applications</span></span>
+
+<span data-ttu-id="599f2-139">**Win32_Product** クラスを使用して、リモートまたはローカルで、Windows インストーラー パッケージをインストールできます。</span><span class="sxs-lookup"><span data-stu-id="599f2-139">You can use the **Win32_Product** class to install Windows Installer packages, remotely or locally.</span></span>
+
 > [!NOTE]
-> <span data-ttu-id="34444-137">ここでは、わかりやすくするために長い変数名を使用しています。</span><span class="sxs-lookup"><span data-stu-id="34444-137">We are using a lengthy variable name here for clarity.</span></span> <span data-ttu-id="34444-138">実際に使用するときは、長い名前を使用する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="34444-138">In actual use, there is no reason to use long names.</span></span> <span data-ttu-id="34444-139">変数名にタブ補完を使用できますが、1 ～ 2 文字の名前を使用すると時間を短縮できます。</span><span class="sxs-lookup"><span data-stu-id="34444-139">Although you can use tab-completion for variable names, you can also use 1-2 character names for speed.</span></span> <span data-ttu-id="34444-140">長くわかりやすい名前は、再利用するためのコードを開発する際に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="34444-140">Longer, descriptive names are most useful when you are developing code for reuse.</span></span>
+> <span data-ttu-id="599f2-140">アプリケーションをインストールするには、[管理者として実行] オプションを指定して PowerShell を起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="599f2-140">To install an application, you must start PowerShell with the "Run as administrator" option.</span></span>
 
-<span data-ttu-id="34444-141">Uninstall の下のレジストリ キーにレジストリ エントリの値を表示するには、レジストリ キーの GetValue メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="34444-141">To display the values of the registry entries in the registry keys under Uninstall, use the GetValue method of the registry keys.</span></span> <span data-ttu-id="34444-142">メソッドの値は、レジストリ エントリの名前です。</span><span class="sxs-lookup"><span data-stu-id="34444-142">The value of the method is the name of the registry entry.</span></span>
-
-<span data-ttu-id="34444-143">たとえば、Uninstall キーの下でアプリケーションの表示名を検索するには、次のコマンドを使用します。</span><span class="sxs-lookup"><span data-stu-id="34444-143">For example, to find the display names of applications in the Uninstall key, use the following command:</span></span>
+<span data-ttu-id="599f2-141">リモートでインストールする場合、WMI のサブシステムによって PowerShell のパスが認識されないため、汎用名前付け規則 (UNC) のネットワーク パスを使って .msi パッケージへのパスを指定します。</span><span class="sxs-lookup"><span data-stu-id="599f2-141">When installing remotely, use a Universal Naming Convention (UNC) network path to specify the path to the .msi package, because the WMI subsystem does not understand PowerShell paths.</span></span> <span data-ttu-id="599f2-142">たとえば、リモート コンピューター PC01 のネットワーク共有 `\\AppServ\dsp` にある NewPackage.msi パッケージをインストールするには、PowerShell プロンプトに次のコマンドを入力します。</span><span class="sxs-lookup"><span data-stu-id="599f2-142">For example, to install the NewPackage.msi package located in the network share `\\AppServ\dsp` on the remote computer PC01, type the following command at the PowerShell prompt:</span></span>
 
 ```powershell
-Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue('DisplayName') }
+Invoke-CimMethod -ClassName Win32_Product -MethodName Install -Arguments @{PackageLocation='\\AppSrv\dsp\NewPackage.msi'}
 ```
 
-<span data-ttu-id="34444-144">これらの値が一意である保証はありません。</span><span class="sxs-lookup"><span data-stu-id="34444-144">There is no guarantee that these values are unique.</span></span> <span data-ttu-id="34444-145">次の例では、インストールされている 2 つの項目が "Windows Media エンコーダー 9 シリーズ" として表示されます。</span><span class="sxs-lookup"><span data-stu-id="34444-145">In the following example, two installed items appear as "Windows Media Encoder 9 Series":</span></span>
+<span data-ttu-id="599f2-143">Windows インストーラーのテクノロジが使われないアプリケーションには、展開を自動化するためのアプリケーション固有の方法がある場合があります。</span><span class="sxs-lookup"><span data-stu-id="599f2-143">Applications that do not use Windows Installer technology may have application-specific methods for automated deployment.</span></span> <span data-ttu-id="599f2-144">そのアプリケーションのドキュメントをチェックするか、アプリケーション ベンダーのサポート システムをご確認ください。</span><span class="sxs-lookup"><span data-stu-id="599f2-144">Check the documentation for the application or consult the application vendor's support system.</span></span>
 
-```
-PS> Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue("DisplayName") -eq "Windows Media Encoder 9 Series"}
+## <a name="removing-applications"></a><span data-ttu-id="599f2-145">アプリケーションの削除</span><span class="sxs-lookup"><span data-stu-id="599f2-145">Removing Applications</span></span>
 
-   Hive: Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Micros
-oft\Windows\CurrentVersion\Uninstall
-
-SKC  VC Name                           Property
----  -- ----                           --------
-  0   3 Windows Media Encoder 9        {DisplayName, DisplayIcon, UninstallS...
-  0  24 {E38C00D0-A68B-4318-A8A6-F7... {AuthorizedCDFPrefix, Comments, Conta...
-```
-
-## <a name="installing-applications"></a><span data-ttu-id="34444-146">アプリケーションのインストール</span><span class="sxs-lookup"><span data-stu-id="34444-146">Installing Applications</span></span>
-
-<span data-ttu-id="34444-147">**Win32_Product** クラスを使用して、リモートまたはローカルで、Windows インストーラー パッケージをインストールできます。</span><span class="sxs-lookup"><span data-stu-id="34444-147">You can use the **Win32_Product** class to install Windows Installer packages, remotely or locally.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="34444-148">Windows Vista、Windows Server 2008、およびそれ以降のバージョンの Windows では、アプリケーションをインストールするには、[管理者として実行] オプションを使用して Windows PowerShell を起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="34444-148">On Windows Vista, Windows Server 2008, and later versions of Windows, to install an application, you must start Windows PowerShell with the "Run as administrator" option.</span></span>
-
-<span data-ttu-id="34444-149">リモートでインストールする場合は、WMI のサブシステムが Windows PowerShell のパスを認識しないため、.msi パッケージへのパスを指定するのに、汎用名前付け規則 (UNC) のネットワーク パスを使用します。</span><span class="sxs-lookup"><span data-stu-id="34444-149">When installing remotely, use a Universal Naming Convention (UNC) network path to specify the path to the .msi package, because the WMI subsystem does not understand Windows PowerShell paths.</span></span> <span data-ttu-id="34444-150">たとえば、リモート コンピューター PC01 のネットワーク共有 \\\\AppServ\\dsp にある NewPackage.msi パッケージをインストールするには、Windows PowerShell プロンプトで次のコマンドを入力します。</span><span class="sxs-lookup"><span data-stu-id="34444-150">For example, to install the NewPackage.msi package located in the network share \\\\AppServ\\dsp on the remote computer PC01, type the following command at the Windows PowerShell prompt:</span></span>
+<span data-ttu-id="599f2-146">PowerShell を使用した Windows インストーラー パッケージの削除は、パッケージのインストールとほとんど同じ方法で機能します。</span><span class="sxs-lookup"><span data-stu-id="599f2-146">Removing a Windows Installer package using PowerShell works in approximately the same way as installing a package.</span></span> <span data-ttu-id="599f2-147">名前に基づいてアンインストールするパッケージを選択する例を以下に示します。場合によっては、**IdentifyingNumber** を使用してフィルター処理した方が簡単になることがあります。</span><span class="sxs-lookup"><span data-stu-id="599f2-147">Here is an example that selects the package to uninstall based on its name; in some cases it may be easier to filter with the **IdentifyingNumber**:</span></span>
 
 ```powershell
-(Get-WMIObject -ComputerName PC01 -List | Where-Object -FilterScript {$_.Name -eq 'Win32_Product'}).Install(\\AppSrv\dsp\NewPackage.msi)
+Get-CimInstance -Class Win32_Product -Filter "Name='ILMerge'" | Invoke-CimMethod -MethodName Uninstall
 ```
 
-<span data-ttu-id="34444-151">Windows インストーラー テクノロジを使用しないアプリケーションは、展開の自動化に利用できるアプリケーション固有の方法があります。</span><span class="sxs-lookup"><span data-stu-id="34444-151">Applications that do not use Windows Installer technology may have application-specific methods available for automated deployment.</span></span> <span data-ttu-id="34444-152">展開を自動化するための方法があるかどうかを確認するには、アプリケーションのマニュアルを参照するか、アプリケーション ベンダーのサポート システムを参照してください。</span><span class="sxs-lookup"><span data-stu-id="34444-152">To determine whether there is a method for deployment automation, check the documentation for the application or consult the application vendor's support system.</span></span> <span data-ttu-id="34444-153">場合によっては、アプリケーション ベンダーが特にインストールの自動化に対応するようアプリケーションを設計していなくても、インストーラー ソフトウェアの製造元が自動化のためのテクニックをいくつか持っていることがあります。</span><span class="sxs-lookup"><span data-stu-id="34444-153">In some cases, even if the application vendor did not specifically design the application for installation automation, the installer software manufacturer may have some techniques for automation.</span></span>
-
-## <a name="removing-applications"></a><span data-ttu-id="34444-154">アプリケーションの削除</span><span class="sxs-lookup"><span data-stu-id="34444-154">Removing Applications</span></span>
-
-<span data-ttu-id="34444-155">Windows PowerShell を使用した Windows インストーラー パッケージの削除は、パッケージのインストールとほとんど同じ方法で機能します。</span><span class="sxs-lookup"><span data-stu-id="34444-155">Removing a Windows Installer package by using Windows PowerShell works in approximately the same way as installing a package.</span></span> <span data-ttu-id="34444-156">名前に基づいてアンインストールするパッケージを選択する例を以下に示します。場合によっては、**IdentifyingNumber** を使用してフィルター処理した方が簡単になることがあります。</span><span class="sxs-lookup"><span data-stu-id="34444-156">Here is an example that selects the package to uninstall based on its name; in some cases it may be easier to filter with the **IdentifyingNumber**:</span></span>
-
-```powershell
-(Get-WmiObject -Class Win32_Product -Filter "Name='ILMerge'" -ComputerName . ).Uninstall()
-```
-
-<span data-ttu-id="34444-157">他のアプリケーションの削除は、ローカルで実行する場合でも、それほど単純ではありません。</span><span class="sxs-lookup"><span data-stu-id="34444-157">Removing other applications is not quite so simple, even when done locally.</span></span> <span data-ttu-id="34444-158">**UninstallString** プロパティを抽出することで、これらのアプリケーションに対するコマンド ラインのアンインストール文字列を検索できます。</span><span class="sxs-lookup"><span data-stu-id="34444-158">We can find the command line uninstallation strings for these applications by extracting the **UninstallString** property.</span></span> <span data-ttu-id="34444-159">このメソッドは、Windows インストーラー アプリケーションや Uninstall キーの下に表示される古いプログラムに対して機能します。</span><span class="sxs-lookup"><span data-stu-id="34444-159">This method works for Windows Installer applications and for older programs appearing under the Uninstall key:</span></span>
+<span data-ttu-id="599f2-148">他のアプリケーションの削除は、ローカルで実行する場合でも、それほど単純ではありません。</span><span class="sxs-lookup"><span data-stu-id="599f2-148">Removing other applications is not quite so simple, even when done locally.</span></span> <span data-ttu-id="599f2-149">**UninstallString** プロパティを抽出することで、これらのアプリケーションに対するコマンド ラインのアンインストール文字列を検索できます。</span><span class="sxs-lookup"><span data-stu-id="599f2-149">We can find the command line uninstallation strings for these applications by extracting the **UninstallString** property.</span></span>
+<span data-ttu-id="599f2-150">このメソッドは、Windows インストーラー アプリケーションや Uninstall キーの下に表示される古いプログラムに対して機能します。</span><span class="sxs-lookup"><span data-stu-id="599f2-150">This method works for Windows Installer applications and for older programs appearing under the Uninstall key:</span></span>
 
 ```powershell
 Get-ChildItem -Path Uninstall: | ForEach-Object -Process { $_.GetValue('UninstallString') }
 ```
 
-<span data-ttu-id="34444-160">必要であれば、出力を表示名でフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="34444-160">You can filter the output by the display name, if you like:</span></span>
+<span data-ttu-id="599f2-151">必要であれば、出力を表示名でフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="599f2-151">You can filter the output by the display name, if you like:</span></span>
 
 ```powershell
-Get-ChildItem -Path Uninstall: | Where-Object -FilterScript { $_.GetValue('DisplayName') -like 'Win*'} | ForEach-Object -Process { $_.GetValue('UninstallString') }
+Get-ChildItem -Path Uninstall: |
+    Where-Object -FilterScript { $_.GetValue('DisplayName') -like 'Win*'} |
+        ForEach-Object -Process { $_.GetValue('UninstallString') }
 ```
 
-<span data-ttu-id="34444-161">ただし、これらの文字列は、Windows PowerShell プロンプトから直接使用するには、いくつか変更が必要な場合があります。</span><span class="sxs-lookup"><span data-stu-id="34444-161">However, these strings may not be directly usable from the Windows PowerShell prompt without some modification.</span></span>
+<span data-ttu-id="599f2-152">ただし、これらの文字列は、変更なしでは PowerShell プロンプトから直接使用できない場合があります。</span><span class="sxs-lookup"><span data-stu-id="599f2-152">However, these strings may not be directly usable from the PowerShell prompt without some modification.</span></span>
 
-## <a name="upgrading-windows-installer-applications"></a><span data-ttu-id="34444-162">Windows インストーラー アプリケーションのアップグレード</span><span class="sxs-lookup"><span data-stu-id="34444-162">Upgrading Windows Installer Applications</span></span>
+## <a name="upgrading-windows-installer-applications"></a><span data-ttu-id="599f2-153">Windows インストーラー アプリケーションのアップグレード</span><span class="sxs-lookup"><span data-stu-id="599f2-153">Upgrading Windows Installer Applications</span></span>
 
-<span data-ttu-id="34444-163">アプリケーションをアップグレードするには、アプリケーションの名前、およびアプリケーションのアップグレード パッケージのパスを認識している必要があります。</span><span class="sxs-lookup"><span data-stu-id="34444-163">To upgrade an application, you need to know the name of the application and the path to the application upgrade package.</span></span> <span data-ttu-id="34444-164">その情報があれば、1 つの Windows PowerShell コマンドを使用してアプリケーションをアップグレードすることができます。</span><span class="sxs-lookup"><span data-stu-id="34444-164">With that information, you can upgrade an application with a single Windows PowerShell command:</span></span>
+<span data-ttu-id="599f2-154">アプリケーションをアップグレードするには、アプリケーションの名前、およびアプリケーションのアップグレード パッケージのパスを認識している必要があります。</span><span class="sxs-lookup"><span data-stu-id="599f2-154">To upgrade an application, you need to know the name of the application and the path to the application upgrade package.</span></span> <span data-ttu-id="599f2-155">その情報があれば、1 つの PowerShell コマンドを使用してアプリケーションをアップグレードできます。</span><span class="sxs-lookup"><span data-stu-id="599f2-155">With that information, you can upgrade an application with a single PowerShell command:</span></span>
 
 ```powershell
-(Get-WmiObject -Class Win32_Product -ComputerName . -Filter "Name='OldAppName'").Upgrade(\\AppSrv\dsp\OldAppUpgrade.msi)
+Get-CimInstance -Class Win32_Product -Filter "Name='OldAppName'" |
+  Invoke-CimMethod -MethodName Upgrade -Arguments @{PackageLocation='\\AppSrv\dsp\OldAppUpgrade.msi'}
 ```
