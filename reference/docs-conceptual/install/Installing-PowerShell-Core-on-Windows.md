@@ -17,12 +17,12 @@ Windows に PowerShell Core をインストールする方法は複数ありま�
 
 WSMan を介して PowerShell のリモート処理を有効にするには、次の前提条件を満たす必要があります。
 
-- Windows 10 以前のバージョンの Windows に [ユニバーサル C ランタイム](https://www.microsoft.com/download/details.aspx?id=50410)をインストールします。 これは、直接ダウンロードすることも、Windows Update 経由で入手することもできます。 (オプション パッケージも含め) 修正プログラムはすべて適用されており、サポート対象のシステムには、これが既にインストールされています。
+- Windows 10 以前のバージョンの Windows に [ユニバーサル C ランタイム](https://www.microsoft.com/download/details.aspx?id=50410)をインストールします。 これは、直接ダウンロードすることも、Windows Update 経由で入手することもできます。 修正プログラムが(オプション パッケージも含め)すべて適用されていて、かつサポート対象のシステムには、既にインストールされています。
 - Windows Management Framework (WMF) 4.0 以降を Windows 7 と Windows Server 2008 R2 にインストールします。 WMF の詳細については、[WMF の概要](/powershell/wmf/overview)に関する記事を参照してください。
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />MSI パッケージのインストール
 
-PowerShell を Windows クライアントまたは Windows Server にインストールするには (Windows 7 SP1、Server 2008 R2 以降が対象)、Microsoft の GitHub [リリース][releases] ページから MSI パッケージをダウンロードしてください。 インストールするリリースの **[資産]** セクションまで下へスクロールします。 [資産] セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
+PowerShell を Windows クライアントまたは Windows Server (Windows 7 SP1、Server 2008 R2 以降が対象)にインストールするには 、Microsoft の GitHub [releases][releases] ページから MSI パッケージをダウンロードしてください。 インストールしたいリリースの **[Assets]** セクションまでスクロールダウンします。 [Assets] セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
 
 MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi` のようになります。
 <!-- TODO: should be updated to point to the Download Center as well -->
@@ -52,11 +52,11 @@ Msiexec.exe 用のコマンド ライン オプションの完全な一覧につ
 
 ## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />ZIP パッケージのインストール
 
-PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 なお、ZIP アーカイブを使用する場合、MSI パッケージのような前提条件確認は行われません。 WSMan 経由でのリモート処理を正常に動作させるために、[前提条件](#prerequisites)を満たしていることを確認します。
+PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 なお、ZIP アーカイブを使用する場合、MSI パッケージのような前提条件確認は行われません。 WSMan 経由でのリモート処理を正常に動作させるために、[前提条件](#prerequisites)を満たしていることを確かめてください。
 
 ## <a name="deploying-on-windows-iot"></a>Windows IoT への展開
 
-Windows IoT には既に Windows PowerShell が付属しており、PowerShell Core 6 の展開に使用します。
+Windows IoT には既に PowerShell Core 6 の展開に使用するためのWindows PowerShell が付属しています。
 
 1. ターゲット デバイスに対して `PSSession` を作成します
 
