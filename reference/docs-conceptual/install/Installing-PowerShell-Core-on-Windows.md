@@ -56,7 +56,7 @@ PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用�
 
 ## <a name="deploying-on-windows-iot"></a>Windows IoT への展開
 
-Windows IoT には既に PowerShell Core 6 の展開に使用するためのWindows PowerShell が付属しています。
+Windows IoT には既に PowerShell Core 6 の展開に使用するための Windows PowerShell が付属しています。
 
 1. ターゲット デバイスに対して `PSSession` を作成します
 
