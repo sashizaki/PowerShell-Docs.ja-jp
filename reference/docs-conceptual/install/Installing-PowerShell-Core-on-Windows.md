@@ -22,7 +22,7 @@ WSMan を介して PowerShell のリモート処理を有効にするには、�
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />MSI パッケージのインストール
 
-PowerShell を Windows クライアントまたは Windows Server (Windows 7 SP1、Server 2008 R2 以降が対象)にインストールするには 、Microsoft の GitHub [releases][releases] ページから MSI パッケージをダウンロードしてください。 インストールしたいリリースの **[Assets]** セクションまでスクロールダウンします。 [Assets] セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
+PowerShell を Windows クライアントまたは Windows Server にインストールするには (Windows 7 SP1、Server 2008 R2 以降が対象)、Microsoft の GitHub [リリース][releases] ページから MSI パッケージをダウンロードしてください。 インストールするリリースの **[資産]** セクションまで下へスクロールします。 [資産] セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
 
 MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi` のようになります。
 <!-- TODO: should be updated to point to the Download Center as well -->
