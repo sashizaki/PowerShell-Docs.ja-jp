@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell ISE のキーボード ショートカット
-ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: f71aea16f7a98ff7b6427237dc90104e4ea0db71
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086835"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030928"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE のキーボード ショートカット
 
@@ -20,7 +19,7 @@ Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行�
 
 |操作|キーボード ショートカット|使用する場所|
 |----------|----------------------|----------|
-|**ヘルプ**|F1|スクリプト ウィンドウ **重要:** Web 上の TechNet ライブラリとダウンロードしたヘルプのどちらを F1 ヘルプとして表示するかを指定できます (Update-Help を参照)。 選ぶには、**[ツール]**、**[オプション]** を順にクリックして、**[全般設定]** タブで **[オンライン コンテンツの代わりにローカル ヘルプ コンテンツを使用する]** をオンまたはオフにします。|
+|**ヘルプ**|F1|スクリプト ウィンドウ **重要:** Web 上の TechNet ライブラリとダウンロードしたヘルプのどちらを F1 ヘルプとして表示するかを指定できます (Update-Help を参照)。 選ぶには、 **[ツール]** 、 **[オプション]** を順にクリックして、 **[全般設定]** タブで **[オンライン コンテンツの代わりにローカル ヘルプ コンテンツを使用する]** をオンまたはオフにします。|
 |**コピー**|CTRL キーを押しながら C|スクリプト ウィンドウ、コマンド ウィンドウ、出力ウィンドウ|
 |**切り取り**|CTRL + X|スクリプト ウィンドウ、コマンド ウィンドウ|
 |**アウトラインの展開または折りたたみ**|Ctrl + M|スクリプト ウィンドウ|

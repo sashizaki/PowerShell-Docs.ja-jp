@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: コンピューターに関する情報の収集
-ms.assetid: 9e7b6a2d-34f7-4731-a92c-8b3382eb51bb
-ms.openlocfilehash: d837684108656e17ebf26189bd4841c5de01051c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dc8fcc5f12fdf9e3fc8151d3e50b8b660262c62
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058337"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030839"
 ---
 # <a name="collecting-information-about-computers"></a>コンピューターに関する情報の収集
 
@@ -18,7 +17,7 @@ ms.locfileid: "62058337"
 Windows PowerShell の操作の対象もオブジェクトです。パイプラインを使用することにより、1 つまたは複数のオブジェクトを同じ方法で処理できます。このため、一般的な WMI アクセスにより、高度なタスクを最小限の労力で実行できるようになります。
 
 以降、任意のコンピューターに対して `Get-CimInstance` を使用し、特定の情報を収集する例を紹介します。
-**ComputerName** パラメーターの値には、ローカル コンピューターを表すドット (**.**) を指定しています。
+**ComputerName** パラメーターの値には、ローカル コンピューターを表すドット ( **.** ) を指定しています。
 WMI 経由でアクセス可能なコンピューターであれば、任意のコンピューターの名前または IP アドレスを指定できます。
 ローカル コンピューターに関する情報を取得する場合、**ComputerName** パラメーターは省略することもできます。
 

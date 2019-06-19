@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: PowerShellTab オブジェクト
-ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
-ms.openlocfilehash: 577e2aaaddf3071801816d9ae91dbf0006dd5072
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: bfa11b553f97b7b27b974855ff4e8f1a48c33fea
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62057674"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028909"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab オブジェクト
 
@@ -44,7 +43,7 @@ Windows PowerShell ISE 3.0 以降でサポートされており、それより�
 
 **Script** - System.Management.Automation.ScriptBlock または文字列。実行するスクリプト ブロック。
 
-**\[useNewScope\]** - 省略可能なブール値で、既定は **$true** です。**$true** に設定されると、そのコマンドを実行する新しいスコープが作成されます。 コマンドで指定されている [PowerShell] タブのランタイム環境は変更されません。
+**\[useNewScope\]** - 省略可能なブール値で、既定は **$true** です。 **$true** に設定されると、そのコマンドを実行する新しいスコープが作成されます。 コマンドで指定されている [PowerShell] タブのランタイム環境は変更されません。
 
 **\[millisecondsTimeout\]** - **500** を既定値とする省略可能な整数。
 指定した時間内にコマンドが完了しない場合、コマンドによって **TimeoutException** が生成され、"処理がタイムアウトになりました。" というメッセージが表示されます。

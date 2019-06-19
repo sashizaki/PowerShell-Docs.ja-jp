@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: レジストリ エントリの操作
-ms.assetid: fd254570-27ac-4cc9-81d4-011afd29b7dc
-ms.openlocfilehash: 667d17d0d62745a27ffef5f1912336b72f74c2a9
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c1fd6f57f13240eb2039f2d5756796678800aee0
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086036"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030720"
 ---
 # <a name="working-with-registry-entries"></a>レジストリ エントリの操作
 
@@ -154,7 +153,7 @@ Set-ItemProperty -Path HKCU:\Environment -Name Path -Value $newpath
 > [!NOTE]
 > `Set-ItemProperty` には **Filter**、**Include**、**Exclude** パラメーターが含まれていますが、これらはプロパティ名でフィルター処理するためには使えません。 これらのパラメーターはレジストリ キー (項目のパス) を参照し、レジストリ エントリ (項目のプロパティ) を参照するのではありません。
 
-別のオプションとして、Reg.exe コマンド ライン ツールを使用することもできます。 reg.exe のヘルプを表示するには、コマンド プロンプトで「**reg.exe /?**」と入力します。
+別のオプションとして、Reg.exe コマンド ライン ツールを使用することもできます。 reg.exe のヘルプを表示するには、コマンド プロンプトで「**reg.exe /?** 」と入力します。
 at a command prompt.
 
 次の例では、上記の例で追加したパスを削除することで **Path** エントリを変更します。

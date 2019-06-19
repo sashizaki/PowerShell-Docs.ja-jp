@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: グラフィカルな日付の選択を作成する
-ms.assetid: c1cb722c-41e9-4baa-be83-59b4653222e9
-ms.openlocfilehash: d3b24af935e781a8a36fc346a6108baaed37b6db
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d05445963b41af61a61aa29a425e638d43fb5d9d
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058609"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030244"
 ---
 # <a name="creating-a-graphical-date-picker"></a>グラフィカルな日付の選択を作成する
 
@@ -114,7 +113,7 @@ $form.AcceptButton = $OKButton
 $form.Controls.Add($OKButton)
 ```
 
-同様に、**[キャンセル]** ボタンを作成します。
+同様に、 **[キャンセル]** ボタンを作成します。
 **[キャンセル]** ボタンの位置は、ウィンドウの最上部から 165 ピクセル、左端から 113 ピクセルです。
 
 ```powershell
@@ -134,7 +133,7 @@ $form.Controls.Add($CancelButton)
 $result = $form.ShowDialog()
 ```
 
-最後に、`if` ブロック内のコードにより、ユーザーがカレンダーで日付を選んでから、**[OK]** ボタンをクリックするか **Enter** キーを押した後のフォームの操作を Windows に指示します。
+最後に、`if` ブロック内のコードにより、ユーザーがカレンダーで日付を選んでから、 **[OK]** ボタンをクリックするか **Enter** キーを押した後のフォームの操作を Windows に指示します。
 Windows PowerShell は、ユーザーに選択された日付を表示します。
 
 ```powershell

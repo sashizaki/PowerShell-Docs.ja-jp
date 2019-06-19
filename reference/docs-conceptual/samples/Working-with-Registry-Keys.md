@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: レジストリ キーの操作
-ms.assetid: 91bfaecd-8684-48b4-ad86-065dfe6dc90a
-ms.openlocfilehash: e7b497ec2fccf9ba3934439a9c1e9be3cf70a705
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 18daeaea2ee8917a709fef421d2b316f46bf7f4c
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058864"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030656"
 ---
 # <a name="working-with-registry-keys"></a>レジストリ キーの操作
 
@@ -36,7 +35,7 @@ SKC  VC Name                           Property
 
 これらは、レジストリ エディター (Regedit.exe) 内の HKEY_CURRENT_USER の下に表示される最上位キーです。
 
-レジストリ プロバイダーの名前とその後に "**::**" を指定することにより、このレジストリ パスを指定することもできます。 レジストリ プロバイダーの完全名は **Microsoft.PowerShell.Core\\Registry** ですが、短縮して **Registry** だけにすることができます。 次のいずれのコマンドを使用しても、HKCU の直下にある内容を一覧表示できます。
+レジストリ プロバイダーの名前とその後に " **::** " を指定することにより、このレジストリ パスを指定することもできます。 レジストリ プロバイダーの完全名は **Microsoft.PowerShell.Core\\Registry** ですが、短縮して **Registry** だけにすることができます。 次のいずれのコマンドを使用しても、HKCU の直下にある内容を一覧表示できます。
 
 ```powershell
 Get-ChildItem -Path Registry::HKEY_CURRENT_USER
@@ -112,7 +111,7 @@ parameter was not specified. If you continue, all children will be removed with
 (default is "Y"):
 ```
 
-確認のメッセージを表示せずに、内包されている項目を削除するには、**-Recurse** パラメーターを指定します。
+確認のメッセージを表示せずに、内包されている項目を削除するには、 **-Recurse** パラメーターを指定します。
 
 ```powershell
 Remove-Item -Path HKCU:\CurrentVersion -Recurse

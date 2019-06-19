@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: 現在の場所の管理
-ms.assetid: a9f9e7a7-3ea8-47d3-bbb4-6e437f6d4a4a
-ms.openlocfilehash: f5e0653b2c3bbc9d2526c7a1c2ff88a8a6641695
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086257"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030205"
 ---
 # <a name="managing-current-location"></a>現在の場所の管理
 
@@ -38,7 +37,7 @@ C:\Documents and Settings\PowerUser
 Set-Location -Path C:\Windows
 ```
 
-コマンドを入力した後、コマンドの効果について直接フィードバックを受信しません。 アクションを実行するほとんどの Windows PowerShell コマンドは、出力が必ずしも有益でないため、出力をほとんど、またはまったく生成しません。 **Set-Location** コマンドの入力時にディレクトリが正常に変更されたかどうかを確認するには、**-PassThru** パラメーターを指定して **Set-Location** コマンドを入力します。
+コマンドを入力した後、コマンドの効果について直接フィードバックを受信しません。 アクションを実行するほとんどの Windows PowerShell コマンドは、出力が必ずしも有益でないため、出力をほとんど、またはまったく生成しません。 **Set-Location** コマンドの入力時にディレクトリが正常に変更されたかどうかを確認するには、 **-PassThru** パラメーターを指定して **Set-Location** コマンドを入力します。
 
 ```
 PS> Set-Location -Path C:\Windows -PassThru
@@ -50,9 +49,9 @@ C:\WINDOWS
 
 **-PassThru** パラメーターは、Windows PowerShell の多数の Set コマンドで、既定の出力がない場合に結果についての情報を返すために使用できます。
 
-ほとんどの UNIX や Windows のコマンド シェルと同じ方法で、現在の場所を基準にした相対パスを指定できます。 相対パスの標準の表記法では、ピリオド (**.**) は現在のフォルダーを表し、二重のピリオド (**..**) は現在の場所の親ディレクトリを表します。
+ほとんどの UNIX や Windows のコマンド シェルと同じ方法で、現在の場所を基準にした相対パスを指定できます。 相対パスの標準の表記法では、ピリオド ( **.** ) は現在のフォルダーを表し、二重のピリオド ( **..** ) は現在の場所の親ディレクトリを表します。
 
-たとえば、**C:\\Windows** フォルダーの場合、ピリオド (**.**) は **C:\\Windows** を表し、二重のピリオド (**..**) は **C:** を表します。 現在の場所から C: ドライブのルートに移動するには、次のように入力します。
+たとえば、**C:\\Windows** フォルダーの場合、ピリオド ( **.** ) は **C:\\Windows** を表し、二重のピリオド ( **..** ) は **C:** を表します。 現在の場所から C: ドライブのルートに移動するには、次のように入力します。
 
 ```
 PS> Set-Location -Path .. -PassThru
@@ -146,7 +145,7 @@ Path
 C:\Documents and Settings\me\Local Settings
 ```
 
-**Set-Location** コマンドレットと同様に、**-PassThru** パラメーターを含めて (**Pop-Location** コマンドレットを入力するときに)、入力したディレクトリを表示することができます。
+**Set-Location** コマンドレットと同様に、 **-PassThru** パラメーターを含めて (**Pop-Location** コマンドレットを入力するときに)、入力したディレクトリを表示することができます。
 
 ```
 PS> Pop-Location -PassThru

@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: 静的なクラスとメソッドの使用
-ms.assetid: 418ad766-afa6-4b8c-9a44-471889af7fd9
-ms.openlocfilehash: e4caff63a1ec7295b6fe450c2915baf0cc7e31af
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 437e7b430f37224de7c617e120e37c3efcd7787a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086016"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030735"
 ---
 # <a name="using-static-classes-and-methods"></a>静的なクラスとメソッドの使用
 
@@ -47,11 +46,11 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> 既に説明したように、**New-Object** を使用するとき、 型名の前には ’**System.**’ が自動的に追加されます。 角かっこで囲まれた型名を使用する場合も同様です。つまり、**\[System.Environment]** は、**\[Environment]** と指定することもできます。
+> 既に説明したように、**New-Object** を使用するとき、 型名の前には ’**System.** ’ が自動的に追加されます。 角かっこで囲まれた型名を使用する場合も同様です。つまり、 **\[System.Environment]** は、 **\[Environment]** と指定することもできます。
 
 **System.Environment** クラスには、現在のプロセス (Windows PowerShell 内で作業している場合は powershell.exe) の作業環境に関する一般情報が格納されます。
 
-「**\[System.Environment] | Get-Member**」と入力してこのクラスの詳細を表示しようとすると、オブジェクトの種類は、**System.Environment** ではなく、**System.RuntimeType** であると報告されます。
+「 **\[System.Environment] | Get-Member**」と入力してこのクラスの詳細を表示しようとすると、オブジェクトの種類は、**System.Environment** ではなく、**System.RuntimeType** であると報告されます。
 
 ```
 PS> [System.Environment] | Get-Member
