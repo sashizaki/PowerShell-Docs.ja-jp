@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a82aba91-71af-447d-b9ef-b6b6ac7d9de4
 caps.latest.revision: 19
-ms.openlocfilehash: d1abdca9ecbb5ab0a13593072e6dcb0d647b0b14
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 743efcf23174a9521925c5c19dd670979bc0c523
+ms.sourcegitcommit: 13f24786ed39ca1c07eff2b73a1974c366e31cb8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62066993"
+ms.lasthandoff: 06/19/2019
+ms.locfileid: "67263820"
 ---
 # <a name="writing-a-windows-powershell-cmdlet"></a>Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)
 
@@ -27,7 +27,7 @@ ms.locfileid: "62066993"
 
 [コマンドレット コードの例を](./examples-of-cmdlet-code.md)このセクションには、独自のコマンドレットの記述を開始するために使用できるコード例にはが含まれています。
 
-[コマンドレットの出力を書式設定の例については](https://msdn.microsoft.com/en-us/65829249-124d-47d0-9bf3-8e397dc55855)このセクションには、コマンドレットの出力を書式設定する方法を示す例が含まれています。
+[コマンドレットの出力の書式設定ファイルの書き込み](../format/writing-a-powershell-formatting-file.md)このセクションでは、書式設定ファイルを作成する方法を説明します。 書式設定ファイルは、コマンドラインで、PowerShell がオブジェクトを表示する方法を定義します。
 
 [コマンドレットの記述に関するチュートリアル](./tutorials-for-writing-cmdlets.md)このセクションには、コマンドレット コードの基礎を学習するために使用できるチュートリアルが含まれています。
 
