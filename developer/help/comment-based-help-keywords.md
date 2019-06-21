@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ab90ec96-77f5-42e3-9c7e-2f4156ec207f
 caps.latest.revision: 6
-ms.openlocfilehash: af8a151070d26ffe236800076115c964f625e572
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 534a6c9a43326c8a01b2181c7a799286fa4d3997
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62083537"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301526"
 ---
 # <a name="comment-based-help-keywords"></a>コメント ベースのヘルプのキーワード
 
@@ -23,7 +23,7 @@ ms.locfileid: "62083537"
 
 有効なコメント ベースのヘルプ キーワードを次に示します。 これらは、通常表示されるヘルプ トピックとその使用目的の順序で並んでいます。 これらのキーワードは、コメント ベースのヘルプで任意の順序で表示でき、小文字は区別されません。
 
-なお、`.ExternalHelp`キーワードが他のすべてのコメント ベースのヘルプ キーワードより優先されます。 ときに`.ExternalHelp`が存在する、 [Microsoft.PowerShell.Commands.Get ヘルプ](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help)キーワードの値に一致するヘルプ ファイルを見つけられない場合でも、コマンドレットでコメント ベースのヘルプが表示されません。
+なお、`.ExternalHelp`キーワードが他のすべてのコメント ベースのヘルプ キーワードより優先されます。 ときに`.ExternalHelp`が存在する、 [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand)キーワードの値に一致するヘルプ ファイルを見つけられない場合でも、コマンドレットでコメント ベースのヘルプが表示されません。
 
 `.Synopsis` 関数またはスクリプトの簡単な説明。 このキーワードは、各トピックで 1 回だけ使用できます。
 
@@ -61,9 +61,9 @@ ms.locfileid: "62083537"
 
 `.ExternalHelp` `<XML Help File>` パス、スクリプトまたは関数に対する XML ベースのヘルプ ファイルの名前を指定します。
 
-`.ExternalHelp`キーワードに指示、 [Microsoft.PowerShell.Commands.Get ヘルプ](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help)XML ベースのファイルでスクリプトまたは関数のヘルプを取得するコマンドレットです。 **します。ExternalHelp**スクリプトまたは関数を XML ベースのヘルプ ファイルを使用する場合は、キーワードが必要です。 これがない`Get-Help`関数またはスクリプトのヘルプ ファイルは見つかりません。
+`.ExternalHelp`キーワードに指示、 [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand) XML ベースのファイルでスクリプトまたは関数のヘルプを取得するコマンドレットです。 **します。ExternalHelp**スクリプトまたは関数を XML ベースのヘルプ ファイルを使用する場合は、キーワードが必要です。 これがない`Get-Help`関数またはスクリプトのヘルプ ファイルは見つかりません。
 
-`.ExternalHelp`キーワードが他のすべてのコメント ベースのヘルプ キーワードより優先されます。 ときに`.ExternalHelp`が存在する、 [Microsoft.PowerShell.Commands.Get ヘルプ](/dotnet/api/Microsoft.PowerShell.Commands.Get-Help)キーワードの値に一致するヘルプ ファイルを見つけられない場合でも、コマンドレットでコメント ベースのヘルプが表示されません。
+`.ExternalHelp`キーワードが他のすべてのコメント ベースのヘルプ キーワードより優先されます。 ときに`.ExternalHelp`が存在する、 [Microsoft.PowerShell.Commands.GetHelpCommand](/dotnet/api/Microsoft.PowerShell.Commands.gethelpcommand)キーワードの値に一致するヘルプ ファイルを見つけられない場合でも、コマンドレットでコメント ベースのヘルプが表示されません。
 
 スクリプト モジュールの場合の値によって関数をエクスポートするときに`.ExternalHelp`path を含まないファイル名にする必要があります。 `Get-Help` モジュール ディレクトリのロケール固有のサブディレクトリにファイルを探します。 ファイル名の要件はありませんが、ベスト プラクティスは、次のファイル名の形式を使用する:`<ScriptModule>.psm1-help.xml`します。
 
