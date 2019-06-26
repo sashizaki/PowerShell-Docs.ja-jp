@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 title: 新規および更新されたコマンドレット
-ms.openlocfilehash: 9ec31c89c0bc4b111b40e2d4725fa0782a573204
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855547"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67298651"
 ---
 # <a name="new-and-updated-cmdlets"></a>新規および更新されたコマンドレット
 
@@ -39,7 +39,7 @@ Microsoft.PowerShell.Security モジュールに次の新しいコマンドレ�
 
 ## <a name="cryptographic-message-syntax-cms-cmdlets"></a>Cryptographic Message Syntax (CMS) コマンドレット
 
-Cryptographic Message Syntax コマンドレットは、[RFC5652](https://tools.ietf.org/html/rfc5652) で説明されているように暗号によってメッセージを保護するための IETF 標準書式を使用して、コンテンツの暗号化と暗号化解除をサポートします。
+Cryptographic Message Syntax コマンドレットは、[RFC5652](https://tools.ietf.org/html/rfc5652.html) で説明されているように暗号によってメッセージを保護するための IETF 標準書式を使用して、コンテンツの暗号化と暗号化解除をサポートします。
 
 CMS 暗号化標準では、公開キー暗号化が実装されます。公開キー暗号化では、コンテンツの暗号化に使用されるキー (*公開キー*) とコンテンツの暗号化解除に使用されるキー (*秘密キー*) は別です。
 
@@ -47,9 +47,9 @@ CMS 暗号化標準では、公開キー暗号化が実装されます。公開�
 
 詳細については、次のトピックを参照してください。
 
-- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage.md)
-- [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage.md)
-- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/rotect-CmsMessage.md)
+- [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage)
+- [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
+- [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
 証明書が PowerShell でデータ暗号化証明書として認識されるには、'Code Signing' または 'Encrypted Mail' のような一意のキー使用法識別子 (EKU) が必要です。 証明書プロバイダーでドキュメントの暗号化証明書を表示するには、`Get-ChildItem` の **DocumentEncryptionCert** 動的パラメーターを使用します。
 
@@ -145,6 +145,7 @@ e19d6ea5-3cc2-4db9-8095-0cdaed5a703d
 "a single " | Add-Content -Path Example.txt -NoNewline
 "sentence." | Add-Content -Path Example.txt -NoNewline
 Get-Content .\Example.txt
+```
 
 ```Output
 This is a single sentence.

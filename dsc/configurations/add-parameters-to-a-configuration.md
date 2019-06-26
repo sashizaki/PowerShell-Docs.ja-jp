@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,リソース,ギャラリー,セットアップ
 title: 構成にパラメーターを追加する
-ms.openlocfilehash: 15213404f0cdd6416baf1f83af91b8f5279cc97f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 514bb4cf82b7adbe4cd3d3e34d5464f574cb2206
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080258"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301512"
 ---
 # <a name="add-parameters-to-a-configuration"></a>構成にパラメーターを追加する
 
@@ -187,7 +187,7 @@ $State="Running"
 > [!NOTE]
 > `validation` 属性を使用するときは、`parameter` 属性を指定する必要はありません。
 
-`parameter` および検証属性について詳しくは、[関数の高度なパラメーター](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters.md)に関する記事をご覧ください。
+`parameter` および検証属性について詳しくは、[関数の高度なパラメーター](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters)に関する記事をご覧ください。
 
 ## <a name="fully-parameterized-configuration"></a>完全にパラメーター化された構成
 

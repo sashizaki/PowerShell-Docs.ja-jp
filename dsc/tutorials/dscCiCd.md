@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築
-ms.openlocfilehash: 012057a32ccf85b0d15e76a332cadda4b226180a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076477"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301489"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築
 
@@ -22,10 +22,10 @@ ms.locfileid: "62076477"
 
 この例を使用するには、以下について理解している必要があります。
 
-- CI/CD の概念。 『[The Release Pipeline Model (リリース パイプライン モデル)](http://aka.ms/thereleasepipelinemodelpdf)』が参考資料として役立ちます。
+- CI/CD の概念。 『[The Release Pipeline Model (リリース パイプライン モデル)](https://aka.ms/thereleasepipelinemodelpdf)』が参考資料として役立ちます。
 - [Git](https://git-scm.com/) ソース管理
 - [Pester](https://github.com/pester/Pester) テスト フレームワーク
-- [Team Foundation Server](https://www.visualstudio.com/tfs/)
+- [Team Foundation Server](https://visualstudio.microsoft.com/tfs/)
 
 ## <a name="what-you-will-need"></a>必要なもの
 
@@ -38,13 +38,13 @@ ms.locfileid: "62076477"
 クライアント コンピューターは Windows コンピューターで、以下がインストールされている必要があります。
 
 - [Git](https://git-scm.com/)
-- [https://github.com/PowerShell/Demo_CI](https://github.com/PowerShell/Demo_CI) から複製されたローカル Git リポジトリ
+- [https://github.com/PowerShell/Demo_CI](https://github.com/PowerShell/Demo_CI ) から複製されたローカル Git リポジトリ
 - [Visual Studio Code](https://code.visualstudio.com/) などのテキスト エディター
 
 ### <a name="tfssrv1"></a>TFSSrv1
 
 TFS サーバーをホストするコンピューター。ビルドを定義してリリースします。
-このコンピューターには、[Team Foundation Server 2017](https://www.visualstudio.com/tfs/) がインストールされている必要があります。
+このコンピューターには、[Team Foundation Server 2017](https://visualstudio.microsoft.com/tfs/) がインストールされている必要があります。
 
 ### <a name="buildagent"></a>BuildAgent
 
@@ -157,7 +157,7 @@ Node $AllNodes.Where{$_.Role -eq 'DNSServer'}.NodeName
 
 これは、`DevEnv.ps1` スクリプトによって作成された[構成データ](../configurations/configData.md)内で、`DNSServer` の役割を持つものとして定義されたすべてのノードを検索します。
 
-`Where` メソッドの詳細については、「[about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)」を参照してください。
+`Where` メソッドの詳細については、「[about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)」を参照してください。
 
 CI を行う場合、ノード情報は環境によって変わることがあるため、ノードの定義に構成データを使用することは重要です。構成データを使用すれば、構成コードを変更することなく、ノード情報を簡単に変更できます。
 
@@ -319,7 +319,7 @@ TFS でこの例のビルド定義を作成する場合、psake スクリプト 
 
 コードを TFS にアップロードして内容を確認したので、ビルドを定義しましょう。
 
-ここでは、ビルドに追加するビルド ステップのみを説明します。 TFS でビルド定義を作成する方法の手順については、[ビルド定義の作成とキュー](/azure/devops/pipelines/get-started-designer)に関するページをご覧ください。
+ここでは、ビルドに追加するビルド ステップのみを説明します。 TFS でビルド定義を作成する方法の手順については、[ビルド定義の作成とキュー](/azure/devops/pipelines/create-first-pipeline)に関するページをご覧ください。
 
 新しいビルド定義を作成して (**空**のテンプレートを選択)、"InfraDNS" という名前を付けます。
 ビルド定義に以下のステップを追加します。
@@ -350,7 +350,7 @@ TFS でこの例のビルド定義を作成する場合、psake スクリプト 
 
 ### <a name="copy-files"></a>ファイルのコピー
 
-1. 以下の行すべてを、**[内容]** に追加します。
+1. 以下の行すべてを、 **[内容]** に追加します。
 
    ```
    initiate.ps1
@@ -374,8 +374,8 @@ TFS でこの例のビルド定義を作成する場合、psake スクリプト 
 
 git リポジトリの `ci-cd-example` ブランチに変更がチェックインされたときにプロジェクトがビルドを開始するように、トリガーを設定します。
 
-1. TFS で、**[ビルドとリリース]** タブをクリックします。
-1. `DNS Infra` ビルド定義を選択して、**[編集]** をクリックします。
+1. TFS で、 **[ビルドとリリース]** タブをクリックします。
+1. `DNS Infra` ビルド定義を選択して、 **[編集]** をクリックします。
 1. **[トリガー]** タブをクリックします。
 1. **[継続的インテグレーション (CI)]** を選択して、ブランチのドロップダウン リストで `refs/heads/ci-cd-example` を選択します。
 1. **[保存]** をクリックしてから **[OK]** をクリックします。
@@ -387,8 +387,8 @@ git リポジトリの `ci-cd-example` ブランチに変更がチェックイ�
 リリース定義を作成して、コードのチェックインが行われるたびにプロジェクトが開発環境に展開されるようにしてみましょう。
 
 これを行うには、既に作成したビルド定義 `InfraDNS` に関連付けられた新しいリリース定義を追加します。
-必ず **[継続的配置]** を選択し、新しいビルドが完了したらいつでも新しいリリースがトリガーされるようにして 
-([リリース パイプラインの概要に関する記事](/azure/devops/pipelines/release/what-is-release-management))、次のように構成します。
+必ず **[継続的配置]** を選択し、新しいビルドが完了したらいつでも新しいリリースがトリガーされるようにして
+([リリース パイプラインの概要に関する記事](/azure/devops/pipelines/release/))、次のように構成します。
 
 リリース定義に以下のステップを追加します。
 
@@ -408,14 +408,14 @@ git リポジトリの `ci-cd-example` ブランチに変更がチェックイ�
 1. **[テスト結果の形式]** フィールドとして `NUnit` を選択します。
 1. **[テスト結果ファイル]** フィールドを `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Integration*.xml` に設定します。
 1. **[テスト実行のタイトル]** を `Integration` に設定します。
-1. **[コントロール オプション]** で、**[常に実行する]** を選択します。
+1. **[コントロール オプション]** で、 **[常に実行する]** を選択します。
 
 ### <a name="second-publish-test-results"></a>2 つめのテスト結果の公開
 
 1. **[テスト結果の形式]** フィールドとして `NUnit` を選択します。
 1. **[テスト結果ファイル]** フィールドを `$(Build.DefinitionName)\Deploy\InfraDNS\Tests\Results\Acceptance*.xml` に設定します。
 1. **[テスト実行のタイトル]** を `Acceptance` に設定します。
-1. **[コントロール オプション]** で、**[常に実行する]** を選択します。
+1. **[コントロール オプション]** で、 **[常に実行する]** を選択します。
 
 ## <a name="verify-your-results"></a>結果を確認する
 
