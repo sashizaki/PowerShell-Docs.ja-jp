@@ -59,7 +59,7 @@ Windows PowerShell は、Microsoft .NET Framework オブジェクトを直接機
 
 #### <a name="name-the-cmdlet-class-to-match-the-cmdlet-name"></a>コマンドレット名と一致するコマンドレット クラスの名前します。
 
-コマンドレットを実装する .NET Framework クラス、名前を付けるときに、クラスの名前を"*\<動詞 >**\<名詞 >**\<コマンド >*"、を交換します。*\<動詞 >* と*\<名詞 >* プレース ホルダーを動詞と名詞コマンドレット名に使用します。 たとえば、 [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットがという名前のクラスによって実装される`GetProcessCommand`します。
+コマンドレットを実装する .NET Framework クラス、名前を付けるときに、クラスの名前を" *\<動詞 > **\<名詞 >** \<コマンド >* "、を交換します。 *\<動詞 >* と *\<名詞 >* プレース ホルダーを動詞と名詞コマンドレット名に使用します。 たとえば、 [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットがという名前のクラスによって実装される`GetProcessCommand`します。
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>パイプラインの入力には、BeginProcessing メソッド (AC02) が上書きされない場合
 
