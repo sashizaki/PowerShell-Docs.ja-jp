@@ -28,7 +28,7 @@ Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>]
 Import-DscResource -ModuleName xActiveDirectory;
 ```
 
-## <a name="example-use-import-dscresource-within-a-configuration"></a>次に例を示します。構成内で Import-DSCResource を使用する
+## <a name="example-use-import-dscresource-within-a-configuration"></a>例:構成内で Import-DSCResource を使用する
 
 ```powershell
 Configuration MSDSCConfiguration
