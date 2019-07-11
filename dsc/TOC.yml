@@ -19,7 +19,10 @@
     - name: Azure Virtual Machines 上での DSC の概要
       href: getting-started/azureDSCexthistory.md
 - name: クイックスタート
+  expanded: true
   items:
+    - name: グループ ポリシーからの構成の作成
+      href: quickstarts/gpo-quickstart.md
     - name: DSC を使用した Web サイトの作成
       href: quickstarts/website-quickStart.md
 - name: 構成
@@ -102,7 +105,7 @@
           href: managing-nodes/apply-get-test.md
         - name: ローカル構成マネージャーを構成する (v5)
           href: managing-nodes/metaConfig.md
-        - name: ローカル構成マネージャーを構成する (v4)
+        - name: PowerShell 4.0 での LCM の構成
           href: managing-nodes/metaConfig4.md
         - name: DSC リソース メソッドを直接呼び出す
           href: managing-nodes/directCallResource.md
@@ -242,43 +245,43 @@
       items:
         - name: 概要
           href: reference/mof-classes/msft-dsclocalconfigurationmanager.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの ApplyConfiguration メソッド
+        - name: ApplyConfiguration メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-applyconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの DisableDebugConfiguration メソッド
+        - name: DisableDebugConfiguration メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-disabledebugconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの EnableDebugConfiguration メソッド
+        - name: EnableDebugConfiguration メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-enabledebugconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの GetConfiguration メソッド
+        - name: GetConfiguration メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド
+        - name: GetConfigurationResultOutput メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの GetConfigurationStatus メソッド
+        - name: GetConfigurationStatus メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getconfigurationstatus.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの GetMetaConfiguration メソッド
+        - name: GetMetaConfiguration メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-getmetaconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの PerformRequiredConfigurationChecks メソッド
+        - name: PerformRequiredConfigurationChecks メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-performrequiredconfigurationchecks.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの RemoveConfiguration メソッド
+        - name: RemoveConfiguration メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-removeconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの ResourceGet メソッド
+        - name: ResourceGet メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceget.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの ResourceSet メソッド
+        - name: ResourceSet メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourceset.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの ResourceTest メソッド
+        - name: ResourceTest メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-resourcetest.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの RollBack メソッド
+        - name: RollBack メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-rollback.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの SendConfiguration メソッド
+        - name: SendConfiguration メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApply メソッド
+        - name: SendConfigurationApply メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapply.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApplyAsync メソッド
+        - name: SendConfigurationApplyAsync メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendconfigurationapplyasync.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの SendMetaConfigurationApply メソッド
+        - name: SendMetaConfigurationApply メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-sendmetaconfigurationapply.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの StopConfiguration メソッド
+        - name: StopConfiguration メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-stopconfiguration.md
-        - name: MSFT_DSCLocalConfigurationManager クラスの TestConfiguration メソッド
+        - name: TestConfiguration メソッド
           href: reference/mof-classes/msft-dsclocalconfigurationmanager-testconfiguration.md
 - name: 関連項目
   items:
