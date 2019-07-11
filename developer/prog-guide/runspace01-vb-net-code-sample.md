@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 12ee5382-95ba-41c7-8291-7f69a6f63514
 caps.latest.revision: 7
-ms.openlocfilehash: c45e802605bf0b4fd84a8847787bcc937b7f417b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 19de0fd33cd764c161366c8161adf46c2247482b
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081443"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735019"
 ---
-# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="196e1-102">Runspace01 (VB.NET) コード サンプル</span><span class="sxs-lookup"><span data-stu-id="196e1-102">Runspace01 (VB.NET) Code Sample</span></span>
+# <a name="runspace01-vbnet-code-sample"></a><span data-ttu-id="09cb6-102">Runspace01 (VB.NET) コード サンプル</span><span class="sxs-lookup"><span data-stu-id="09cb6-102">Runspace01 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="196e1-103">記載されている、実行空間のサンプル コードをここでは[コンソール アプリケーションを実行に指定されたコマンドを作成する](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e)します。</span><span class="sxs-lookup"><span data-stu-id="196e1-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](http://msdn.microsoft.com/en-us/793a6570-a072-4799-840b-172f28ce620e).</span></span> <span data-ttu-id="196e1-104">これを行うには、アプリケーションは、実行空間を指定するには、呼び出しをコマンドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="196e1-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="196e1-105">(このアプリケーションは、実行空間の構成情報を指定しないもないは、明示的にパイプラインを作成することに注意してください)。呼び出されるコマンドは、`Get-Process`コマンドレット。</span><span class="sxs-lookup"><span data-stu-id="196e1-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
+<span data-ttu-id="09cb6-103">記載されている、実行空間のサンプル コードをここでは[コンソール アプリケーションを実行に指定されたコマンドを作成する](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)します。</span><span class="sxs-lookup"><span data-stu-id="09cb6-103">Here are the code samples for the runspace described in [Creating a Console Application That Runs a Specified Command](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program).</span></span> <span data-ttu-id="09cb6-104">これを行うには、アプリケーションは、実行空間を指定するには、呼び出しをコマンドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="09cb6-104">To do this, the application invokes a runspace, and then invokes a command.</span></span> <span data-ttu-id="09cb6-105">(このアプリケーションは、実行空間の構成情報を指定しないもないは、明示的にパイプラインを作成することに注意してください)。呼び出されるコマンドは、`Get-Process`コマンドレット。</span><span class="sxs-lookup"><span data-stu-id="09cb6-105">(Note that this application does not specify runspace configuration information, nor does it explicitly create a pipeline.) The command that is invoked is the `Get-Process` cmdlet.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="196e1-106">コード サンプル</span><span class="sxs-lookup"><span data-stu-id="196e1-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="09cb6-106">コード サンプル</span><span class="sxs-lookup"><span data-stu-id="09cb6-106">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -71,6 +71,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace01.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace01.vb#L09-L53 "Runspace01.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="196e1-107">参照</span><span class="sxs-lookup"><span data-stu-id="196e1-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="09cb6-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="09cb6-107">See Also</span></span>
 
-[<span data-ttu-id="196e1-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="196e1-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="09cb6-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="09cb6-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
