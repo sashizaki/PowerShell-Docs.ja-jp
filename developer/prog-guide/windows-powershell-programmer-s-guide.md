@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
-ms.openlocfilehash: 75425fbd38141fc82dd834835912c357ecfa6d2b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 44a9c970d32dc6f98456227f8b02101280541dd9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62081089"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734874"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell プログラマ&#39;ガイド
 
@@ -37,7 +37,7 @@ ms.locfileid: "62081089"
 
 Windows PowerShell は、開発で使用できるコマンドのいくつかの種類を定義します。 これらのコマンドが含まれます: 関数、フィルター、スクリプト、エイリアス、および実行可能ファイル (アプリケーション)。 このガイドで説明するメイン コマンドの種類は、「コマンドレット」と呼ばれる単純な小さなコマンドです。 Windows PowerShell では、一連のコマンドレットを提供し、環境に合わせてコマンドレットのカスタマイズを完全にサポートします。 Windows PowerShell ランタイムは、パイプラインを使用して、コマンドレットと同様に、すべてのコマンドの種類を処理します。
 
-に加えて、コマンドは、Windows PowerShell は、コマンドレットの使用可能な特定のセットを構成するさまざまなカスタマイズ可能な Windows PowerShell プロバイダーをサポートします。 シェルが Windows PowerShell で提供されるホスト アプリケーション (Windows PowerShell.exe) 内で動作するが、特定の要件を満たすために開発できるカスタム ホスト アプリケーションからもアクセスできます。 詳細については、次を参照してください。 [Windows PowerShell のしくみ](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)します。
+に加えて、コマンドは、Windows PowerShell は、コマンドレットの使用可能な特定のセットを構成するさまざまなカスタマイズ可能な Windows PowerShell プロバイダーをサポートします。 シェルが Windows PowerShell で提供されるホスト アプリケーション (Windows PowerShell.exe) 内で動作するが、特定の要件を満たすために開発できるカスタム ホスト アプリケーションからもアクセスできます。 詳細については、次を参照してください。 [Windows PowerShell のしくみ](/previous-versions//ms714658(v=vs.85))します。
 
 ### <a name="windows-powershell-cmdlets"></a>Windows PowerShell コマンドレット
 
@@ -51,17 +51,17 @@ Windows PowerShell は、開発で使用できるコマンドのいくつかの�
 
 Windows PowerShell は、Windows PowerShell プロバイダーにいくつかの既定値を提供します。 たとえば、レジストリ プロバイダーは、ナビゲーション、および Windows レジストリの操作をサポートします。 レジストリ キーは、項目として表され、レジストリ値がプロパティとして扱われます。
 
-」の説明に従って、独自の Windows PowerShell プロバイダーを記述する必要な場合があります、ユーザーにアクセスする必要のあるデータ ストアを公開する場合[Windows PowerShell プロバイダーを作成する](./how-to-create-a-windows-powershell-provider.md)します。 詳細については aboutWindows PowerShell プロバイダーを参照してください。 [Windows PowerShell のしくみ](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)します。
+」の説明に従って、独自の Windows PowerShell プロバイダーを記述する必要な場合があります、ユーザーにアクセスする必要のあるデータ ストアを公開する場合[Windows PowerShell プロバイダーを作成する](./how-to-create-a-windows-powershell-provider.md)します。 詳細については aboutWindows PowerShell プロバイダーを参照してください。 [Windows PowerShell のしくみ](/previous-versions//ms714658(v=vs.85))します。
 
 ### <a name="host-application"></a>ホスト アプリケーション
 
 Windows PowerShell には、既定のホスト アプリケーション powershell.exe、ユーザーと対話し、コンソール ウィンドウを使用して、Windows PowerShell ランタイムをホストするコンソール アプリケーションが含まれています。
 
-ほとんどはする必要があります Windows powershell では、ホスト アプリケーションを作成するカスタマイズはサポートされています。 独自のアプリケーションが必要がありますが、1 つのケースは、既定のホスト アプリケーションによって提供されるインターフェイスよりも優れている GUI インターフェイスの要件がある場合です。 コマンドラインで、GUI を基にする場合に、カスタム アプリケーションをすることもできます。 詳細については、次を参照してください。 [Windows PowerShell ホスト アプリケーションを作成する方法](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)します。
+ほとんどはする必要があります Windows powershell では、ホスト アプリケーションを作成するカスタマイズはサポートされています。 独自のアプリケーションが必要がありますが、1 つのケースは、既定のホスト アプリケーションによって提供されるインターフェイスよりも優れている GUI インターフェイスの要件がある場合です。 コマンドラインで、GUI を基にする場合に、カスタム アプリケーションをすることもできます。 詳細については、次を参照してください。 [Windows PowerShell ホスト アプリケーションを作成する方法](/powershell/developer/hosting/writing-a-windows-powershell-host-application)します。
 
 ### <a name="windows-powershell-runtime"></a>Windows PowerShell ランタイム
 
-Windows PowerShell ランタイムは、コマンドの処理を実装する実行エンジンです。 ホスト アプリケーションと Windows PowerShell コマンドとプロバイダー間のインターフェイスを提供するクラスが含まれています。 Windows PowerShell ランタイムは、シェルは、コマンドが実行される運用環境は、現在の Windows PowerShell セッションの実行空間オブジェクトとして実装されます。 操作の詳細を参照してください。 [Windows PowerShell のしくみ](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)します。
+Windows PowerShell ランタイムは、コマンドの処理を実装する実行エンジンです。 ホスト アプリケーションと Windows PowerShell コマンドとプロバイダー間のインターフェイスを提供するクラスが含まれています。 Windows PowerShell ランタイムは、シェルは、コマンドが実行される運用環境は、現在の Windows PowerShell セッションの実行空間オブジェクトとして実装されます。 操作の詳細を参照してください。 [Windows PowerShell のしくみ](/previous-versions//ms714658(v=vs.85))します。
 
 ### <a name="windows-powershell-language"></a>Windows PowerShell 言語
 
@@ -81,7 +81,7 @@ Windows PowerShell では、さまざまな .NET などのさまざまなオブ�
 
   ETS を使用して作成できます柔軟な新しい「型」を Windows PowerShell 言語と互換性があります。 .NET 開発者は場合、スクリプトに適用するなど、Windows PowerShell 言語と同じセマンティクスを使用してオブジェクトを使用する、オブジェクトを評価するかどうかを判断することは`true`します。
 
-  ETS と Windows PowerShell がオブジェクトを使用する方法の詳細については、次を参照してください。 [Windows PowerShell オブジェクトの概念](http://msdn.microsoft.com/en-us/12700631-be23-4e6b-9bf0-81ea0d166353)します。
+  ETS と Windows PowerShell がオブジェクトを使用する方法の詳細については、次を参照してください。 [Windows PowerShell オブジェクトの概念](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6)します。
 
 ## <a name="programming-for-windows-powershell"></a>Windows PowerShell 用のプログラミング
 
@@ -100,7 +100,7 @@ Windows PowerShell シェルを使用して起動する方法の詳細につい�
 |トピック|定義|
 |-----------|----------------|
 |[Windows PowerShell プロバイダーを作成する方法](./how-to-create-a-windows-powershell-provider.md)|このセクションでは、Windows PowerShell 用 Windows PowerShell プロバイダーを作成する方法について説明します。|
-|[Windows PowerShell ホスト アプリケーションを作成する方法](http://msdn.microsoft.com/en-us/d31355c9-a270-4b09-8f0c-35a7392a7d07)|このセクションでは、独自のカスタム ホストを実装するホスト アプリケーションを作成する方法と、実行空間を操作するホスト アプリケーションを作成する方法について説明します。|
+|[Windows PowerShell ホスト アプリケーションを作成する方法](/powershell/developer/hosting/writing-a-windows-powershell-host-application)|このセクションでは、独自のカスタム ホストを実装するホスト アプリケーションを作成する方法と、実行空間を操作するホスト アプリケーションを作成する方法について説明します。|
 |[Windows PowerShell スナップインを作成する方法](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|このセクションでは、アセンブリ内のすべてのコマンドレットとプロバイダーの登録に使用するスナップインを作成する方法とカスタム スナップインで作成する方法について説明します。|
 |[コンソールのシェルを作成する方法](./how-to-create-a-console-shell.md)|このセクションでは、コンソールのシェルがなく、拡張を作成する方法について説明します。|
 |[Windows PowerShell の概念](./windows-powershell-concepts.md)|このセクションには、開発者の視点から Windows PowerShell を理解するのに役立つ概念情報が含まれています。|

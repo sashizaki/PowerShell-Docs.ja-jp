@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ea15e00e-20dc-4209-9e97-9ffd763e5d97
 caps.latest.revision: 8
-ms.openlocfilehash: 8d7ba9d122e90b80f6009b6dc8e8e3bb07331e4a
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 555baec08539403d3c15d1eca2b23eec0a874e49
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854849"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733951"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>データ ストアにアクセスするためのコマンドレットを作成する
 
@@ -72,7 +72,7 @@ private string[] paths;
 
 2 つ[System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)属性を宣言する、`Path`パラメーターが属する、 `ScriptParameterSet` 、`PatternParameterSet`します。 パラメーター セットの詳細については、次を参照してください。[パラメーター セットをコマンドレットに追加](./adding-parameter-sets-to-a-cmdlet.md)します。
 
-[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)属性宣言を`PSPath`のエイリアス、`Path`パラメーター。 このエイリアスを宣言することは、Windows PowerShell プロバイダーにアクセスする他のコマンドレットとの整合性強く推奨します。 詳細については aboutWindows PowerShell パスの「PowerShell パスの概念」を参照してください[Windows PowerShell のしくみ](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)します。
+[System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute)属性宣言を`PSPath`のエイリアス、`Path`パラメーター。 このエイリアスを宣言することは、Windows PowerShell プロバイダーにアクセスする他のコマンドレットとの整合性強く推奨します。 詳細については aboutWindows PowerShell パスの「PowerShell パスの概念」を参照してください[Windows PowerShell のしくみ](/previous-versions//ms714658(v=vs.85))します。
 
 ### <a name="declaring-the-pattern-parameter"></a>パターン パラメーターを宣言します。
 
@@ -379,7 +379,7 @@ protected override void ProcessRecord()
 
 ## <a name="code-sample"></a>コード サンプル
 
-次のコードでは、この選択 Str コマンドレットのこのバージョンの実装を示します。 このコードには、コマンドレット クラス、コマンドレットで使用されるプライベート メソッドおよび Windows PowerShell、スナップイン コードは、コマンドレットを登録するために使用が含まれることに注意してください。 コマンドレットの登録の詳細については、次を参照してください。[コマンドレットを構築](#building-the-cmdlet)します。
+次のコードでは、この選択 Str コマンドレットのこのバージョンの実装を示します。 このコードには、コマンドレット クラス、コマンドレットで使用されるプライベート メソッドおよび Windows PowerShell、スナップイン コードは、コマンドレットを登録するために使用が含まれることに注意してください。 コマンドレットの登録の詳細については、次を参照してください。[コマンドレットを構築](#Defining-the-Cmdlet-Class)します。
 
 ```csharp
 //
@@ -1090,7 +1090,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="building-the-cmdlet"></a>コマンドレットを構築
 
-コマンドレットを実装するには、後にする必要がありますに登録する Windows PowerShell Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
+コマンドレットを実装するには、後にする必要がありますに登録する Windows PowerShell Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](/previous-versions//ms714644(v=vs.85))します。
 
 ## <a name="testing-the-cmdlet"></a>テスト コマンドレット
 
@@ -1214,7 +1214,7 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットを作成する方法](https://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Windows PowerShell コマンドレットを作成する方法](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
 [初めてのコマンドレットを作成します。](./creating-a-cmdlet-without-parameters.md)
 
@@ -1222,8 +1222,8 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 [Windows PowerShell プロバイダーを設計します。](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[Windows PowerShell の動作](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Windows PowerShell の動作](/previous-versions//ms714658(v=vs.85))
 
-[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

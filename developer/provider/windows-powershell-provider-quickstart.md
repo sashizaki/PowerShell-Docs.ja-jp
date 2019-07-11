@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: 151b7125afe1b0d386467a0e5f89225716857ac2
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080885"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734849"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell プロバイダー クイック スタート
 
@@ -67,7 +67,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ### <a name="implementing-newdrive"></a>NewDrive を実装します。
 
-[System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)メソッドは、ユーザーを呼び出すと、Windows PowerShell エンジンによって呼び出されます、 [Microsoft.PowerShell.Commands.New PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.New-PSDrive)コマンドレット、プロバイダーの名前を指定します。 Windows PowerShell エンジンによって PSDriveInfo パラメーターが渡され、メソッドは、Windows PowerShell エンジンに新しいドライブを返します。 このメソッドは、上記で作成したクラス内で宣言する必要があります。
+[System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)メソッドは、ユーザーを呼び出すと、Windows PowerShell エンジンによって呼び出されます、 [Microsoft.PowerShell.Commands.NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand)コマンドレット、プロバイダーの名前を指定します。 Windows PowerShell エンジンによって PSDriveInfo パラメーターが渡され、メソッドは、Windows PowerShell エンジンに新しいドライブを返します。 このメソッドは、上記で作成したクラス内で宣言する必要があります。
 
 メソッドは、まず、そのドライブ オブジェクトとドライブのルートで渡された両方存在、返すかどうかを確認する`null`それらのいずれかがない場合。 新しいドライブを作成する次の内部クラス AccessDBPSDriveInfo コンス トラクターを使用して、Access データベース ドライブへの接続を表します。
 
@@ -147,7 +147,7 @@ internal class AccessDBPSDriveInfo : PSDriveInfo
 
 ### <a name="implementing-removedrive"></a>RemoveDrive を実装します。
 
-[System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドは、ユーザーを呼び出すと、Windows PowerShell エンジンによって呼び出されます、 [Microsoft.PowerShell.Commands.Remove PSDrive](/dotnet/api/Microsoft.PowerShell.Commands.Remove-PSDrive)コマンドレット。 このプロバイダーでこのメソッドは、Access データベースへの接続を閉じます。
+[System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドは、ユーザーを呼び出すと、Windows PowerShell エンジンによって呼び出されます、 [Microsoft.PowerShell.Commands.RemovePSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.removepsdrivecommand)コマンドレット。 このプロバイダーでこのメソッドは、Access データベースへの接続を閉じます。
 
 ```csharp
 protected override PSDriveInfo RemoveDrive(PSDriveInfo drive)

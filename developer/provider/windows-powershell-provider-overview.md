@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 0d4addc0a064873701ae15c204dbd335f3374ab7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080911"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734866"
 ---
 # <a name="windows-powershell-provider-overview"></a>Windows PowerShell プロバイダーの概要
 
@@ -27,7 +27,7 @@ Windows PowerShell プロバイダーにより、ファイル システムと同
 
 ## <a name="type-of-providers"></a>プロバイダーの種類
 
-さまざまなレベルの機能を提供しているプロバイダーのいくつかの種類あります。 プロバイダーがの子孫のいずれかから派生するクラスとして実装されている、 [System.Management.Automation.Sessionstatecategory.Cmdletprovider](/dotnet/api/System.Management.Automation.SessionStateCategory.CmdletProvider)クラス。 プロバイダーのさまざまな種類については、次を参照してください。[プロバイダー型](./provider-types.md)します。
+さまざまなレベルの機能を提供しているプロバイダーのいくつかの種類あります。 プロバイダーがの子孫のいずれかから派生するクラスとして実装されている、 [System.Management.Automation.SessionStateCategory](/dotnet/api/system.management.automation.sessionstatecategory?view=pscore-6.2.0) **CmdletProvider**クラス。 プロバイダーのさまざまな種類については、次を参照してください。[プロバイダー型](./provider-types.md)します。
 
 ## <a name="provider-cmdlets"></a>プロバイダー コマンドレット
 
@@ -63,7 +63,7 @@ Windows PowerShell プロバイダーへのリモート アクセスを許可す
 
 ## <a name="provider-capabilities"></a>プロバイダーの機能
 
-[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列挙型は、さまざまなプロバイダーをサポートする機能を定義します。 ワイルドカードを使用する、項目をフィルター処理、およびトランザクションをサポートする機能が含まれます。 プロバイダーの機能を指定するには、一連の値を追加、 [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列挙型で、論理と組み合わせて`OR`操作として、 [System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities)プロパティ (属性の 2 番目のパラメーター) の[System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)プロバイダー クラスの属性。 次の属性が、プロバイダーがサポートするように指定するなど、 [System.Management.Automation.Provider.Providercapabilities.Shouldprocess](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.ShouldProcess)と[System.Management.Automation.Provider.Providercapabilities.Transactions](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities.Transactions)機能します。
+[System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列挙型は、さまざまなプロバイダーをサポートする機能を定義します。 ワイルドカードを使用する、項目をフィルター処理、およびトランザクションをサポートする機能が含まれます。 プロバイダーの機能を指定するには、一連の値を追加、 [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列挙型で、論理と組み合わせて`OR`操作として、 [System.Management.Automation.Provider.Cmdletproviderattribute.Providercapabilities*](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities)プロパティ (属性の 2 番目のパラメーター) の[System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)プロバイダー クラスの属性。 次の属性が、プロバイダーがサポートするように指定するなど、 [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **ShouldProcess**と[System.Management.Automation.Provider.ProviderCapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **トランザクション**機能します。
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]
