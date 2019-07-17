@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: MSFT_DSCLocalConfigurationManager クラスの ResourceSet メソッド
-ms.openlocfilehash: 2712b7ff0a19e643c1f343d436c084f8970c9dd4
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: ResourceSet メソッド
+ms.openlocfilehash: 18364027b249e502e1f0b8802d9f3e031c7b07ce
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078403"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727090"
 ---
-# <a name="resourceset-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの ResourceSet メソッド
+# <a name="resourceset-method"></a>ResourceSet メソッド
 
 DSC リソースの **Set** メソッドを直接呼び出します。
 

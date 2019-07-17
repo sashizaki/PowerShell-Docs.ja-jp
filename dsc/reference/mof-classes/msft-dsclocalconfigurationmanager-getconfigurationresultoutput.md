@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド
-ms.openlocfilehash: ea572a4a66befd4e4b8d83e2957632b1b5ed7d93
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: GetConfigurationResultOutput メソッド
+ms.openlocfilehash: 480e710ce1a208253f0e664474c3e9bab296066a
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078647"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727131"
 ---
-# <a name="getconfigurationresultoutput-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの GetConfigurationResultOutput メソッド
+# <a name="getconfigurationresultoutput-method"></a>GetConfigurationResultOutput メソッド
 
 特定のジョブに関連する構成エージェントの出力を取得します。
 

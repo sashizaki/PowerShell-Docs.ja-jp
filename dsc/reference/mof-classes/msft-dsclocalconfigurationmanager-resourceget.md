@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: MSFT_DSCLocalConfigurationManager クラスの ResourceGet メソッド
-ms.openlocfilehash: 1b74adf2327af2e0f9416f1d00eac4e3b75e9013
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: ResourceGet メソッド
+ms.openlocfilehash: dbe610dfcef5ef6c79783801ecb6fdb7408bdfa5
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078573"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727112"
 ---
-# <a name="resourceget-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの ResourceGet メソッド
+# <a name="resourceget-method"></a>ResourceGet メソッド
 
 DSC リソースの **Get** メソッドを直接呼び出します。
 

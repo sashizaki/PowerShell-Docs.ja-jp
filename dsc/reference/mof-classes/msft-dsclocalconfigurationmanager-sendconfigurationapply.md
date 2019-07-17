@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApply メソッド
-ms.openlocfilehash: da3a08307122ab38ee4a6fd5d4a9b97579a988f7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: SendConfigurationApply メソッド
+ms.openlocfilehash: 11b9d435bbaac1600d25ff074b6c55b236a8378b
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078262"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727003"
 ---
-# <a name="sendconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApply メソッド
+# <a name="sendconfigurationapply-method"></a>SendConfigurationApply メソッド
 
 構成ドキュメントを管理ノードに送信し、構成エージェントを使用して構成を適用します。
 

@@ -3,12 +3,12 @@ description: Azure の Desired State Configuration (DSC) 拡張機能のバー�
 ms.date: 06/21/2018
 keywords: dsc, powershell, azure, 拡張機能
 title: Azure DSC 拡張機能のバージョン履歴
-ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 6d821e53e9206d99425e8c83f6d90986c7c28b63
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079746"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734665"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration 拡張機能のバージョン履歴
 
@@ -164,7 +164,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 Technical Preview に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます (WMF をインストールするには再起動が必要です)。
 - **新機能:**
-  - WMF 5.1 プレビューのサポート。 このバージョンが最初に公開されたときは任意のアップグレードであり、WMF 5.1 プレビューをインストールするには Resource Manager テンプレートで Wmfversion = '5.1PP' を指定する必要がありました。 Wmfversion = 'latest' を指定すると、現在でも [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます。 WMF 5.1 プレビューの詳細については、[こちらのブログ]( https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/)を参照してください。
+  - WMF 5.1 プレビューのサポート。 このバージョンが最初に公開されたときは任意のアップグレードであり、WMF 5.1 プレビューをインストールするには Resource Manager テンプレートで Wmfversion = '5.1PP' を指定する必要がありました。 Wmfversion = 'latest' を指定すると、現在でも [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます。 WMF 5.1 プレビューの詳細については、[こちらのブログ](https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/)を参照してください。
   - 他にも軽微な修正や改善が加えられました。
 
 ### <a name="version--219"></a>バージョン 2.19
@@ -200,7 +200,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
   - WMF 4.0 Update のサポート。 WMF 4.0 Update の詳細については、[こちらのブログ](https://blogs.msdn.microsoft.com/powershell/2016/01/19/windows-management-framework-wmf-4-0-update-now-available-for-windows-server-2012-windows-server-2008-r2-sp1-and-windows-7-sp1/)を参照してください。
   - DSC 拡張機能のインストール中または拡張機能のインストール後の DSC 構成の適用中にエラーが発生した場合、ロジックを再試行します。 この変更の一環として、前回のインストールが失敗した場合にインストールが再試行され、以前に失敗した DSC の構成が再実行されるようになります。拡張機能のインストールが完了状態 (成功/エラー) に達するまで、または新しい要求が実行されるまで、最大 3 回実行されます。 無効なユーザー設定またはユーザー入力によって拡張機能が失敗した場合は、再試行されません。 この場合、新しい要求と正しいユーザー設定で拡張機能を再度呼び出す必要があります。 注: DSC 拡張機能は、再試行については Azure VM エージェントに依存しています。 Azure VM エージェントは、成功状態またはエラー状態に達するまで、最後に失敗した要求を含む拡張機能を呼び出します。
 
-### <a name="version-216"></a>2.16 のバージョン
+### <a name="version-216"></a>2\.16 のバージョン
 
 - **リリース日:** 2016 年 4 月 21 日
 - **OS のサポート:** Windows Server 2016 Technical Preview、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1

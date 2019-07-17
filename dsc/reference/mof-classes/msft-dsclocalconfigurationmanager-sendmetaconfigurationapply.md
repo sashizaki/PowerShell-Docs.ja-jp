@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: MSFT_DSCLocalConfigurationManager クラスの SendMetaConfigurationApply メソッド
-ms.openlocfilehash: b372a6c0ab9d4561dcf67026275e7d3ca6aa2584
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+title: SendMetaConfigurationApply メソッド
+ms.openlocfilehash: b2e420bafb8ea22aea43800f6e429d3ed785d1e8
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62078314"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727047"
 ---
-# <a name="sendmetaconfigurationapply-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの SendMetaConfigurationApply メソッド
+# <a name="sendmetaconfigurationapply-method"></a>SendMetaConfigurationApply メソッド
 
 構成エージェントを制御するために使用するローカル構成マネージャーの設定を設定します。
 

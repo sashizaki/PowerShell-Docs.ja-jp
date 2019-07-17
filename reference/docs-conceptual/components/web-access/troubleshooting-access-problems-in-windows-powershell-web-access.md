@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
-ms.openlocfilehash: 314e4a8098988111739705d55b68ff5ed2f5eff3
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 66e913504cf0c34f8d9ab18b088fb06173aca24c
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086597"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733854"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
 
@@ -35,11 +35,11 @@ ms.locfileid: "62086597"
 
   ユーザーが接続しようとしているコンピューターでリモート管理が有効になっていることを確認してください。
 
-  詳細については、「[リモート処理用にコンピューターを構成する方法](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting)」を参照してください。
+  詳細については、「[リモート処理用にコンピューターを構成する方法](/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting)」を参照してください。
 
 ## <a name="internal-server-error"></a>内部サーバー エラー
 
-ユーザーが Internet Explorer ウィンドウで Windows PowerShell Web Access にサインインしようとすると、**[内部サーバー エラー]** ページが表示されるか、*Internet Explorer* が応答しなくなる。
+ユーザーが Internet Explorer ウィンドウで Windows PowerShell Web Access にサインインしようとすると、 **[内部サーバー エラー]** ページが表示されるか、*Internet Explorer* が応答しなくなる。
 
 この問題は Internet Explorer に限られている。
 
@@ -52,13 +52,13 @@ ms.locfileid: "62086597"
 1. [Internet Explorer 10 をインストールし、実行します](https://ie.microsoft.com/testdrive/info/downloads/Default.html)。
 1. Internet Explorer の **[ドキュメント モード]** 設定を *[IE10 標準]* に変更します。
    1. **F12** キーを押して開発者ツール コンソールを開きます。
-   1. Internet Explorer 10 で、**[ブラウザー モード]** をクリックし、*[Internet Explorer 10]* をクリックします。
-   1. **[ドキュメント モード]**、*[IE10 標準]* の順にクリックします。
+   1. Internet Explorer 10 で、 **[ブラウザー モード]** をクリックし、 *[Internet Explorer 10]* をクリックします。
+   1. **[ドキュメント モード]** 、 *[IE10 標準]* の順にクリックします。
    1. もう一度 **F12** キーを押して開発者ツール コンソールを閉じます。
 1. Internet Explorer 10 の自動プロキシ構成を無効にします。
-   1. **[ツール]**、 **[インターネット オプション]** の順にクリックします。
-   1. **[インターネット オプション]** ダイアログ ボックスの **[接続]** タブで、**[LAN の設定]** をクリックします。
-   1. **[設定を自動的に検出する]** チェック ボックスをオフにします。 **[OK]** をクリックし、もう一度 **[OK]** をクリックして、*[インターネット オプション]* ダイアログ ボックスを閉じます。
+   1. **[ツール]** 、 **[インターネット オプション]** の順にクリックします。
+   1. **[インターネット オプション]** ダイアログ ボックスの **[接続]** タブで、 **[LAN の設定]** をクリックします。
+   1. **[設定を自動的に検出する]** チェック ボックスをオフにします。 **[OK]** をクリックし、もう一度 **[OK]** をクリックして、 *[インターネット オプション]* ダイアログ ボックスを閉じます。
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>リモートのワークグループ コンピューターに接続できない
 

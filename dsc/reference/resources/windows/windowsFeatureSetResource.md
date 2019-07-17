@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC WindowsFeatureSet リソース
-ms.openlocfilehash: 8b7c7e72dd58459bd19cb723e5790a82841515c0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8a64168d9ad0d6a6c40eb0398cc734fa93a247dc
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076788"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726796"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet リソース
 
@@ -38,7 +38,7 @@ WindowsFeatureSet [string] #ResourceName
 
 |  プロパティ  |  説明   |
 |---|---|
-| 名前| 追加または削除する役割または機能の名前。 これは [Get-WindowsFeature](https://technet.microsoft.com/en-us/library/jj205469.aspx) コマンドレットの **Name** プロパティと同じものであり、役割または機能の表示名ではありません。|
+| 名前| 追加または削除する役割または機能の名前。 これは [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) コマンドレットの **Name** プロパティと同じものであり、役割または機能の表示名ではありません。|
 | Credential| 役割または機能の追加や削除に使用する資格情報。|
 | Ensure| 役割または機能を追加するかどうかを示します。 役割または機能を追加するには、このプロパティを "Present" に設定します。役割または機能を削除するには、このプロパティを "Absent" に設定します。|
 | IncludeAllSubFeature| **Name** プロパティで指定した機能を使用して必要なすべてのサブ機能を含めるには、このプロパティを **$true** に設定します。|
