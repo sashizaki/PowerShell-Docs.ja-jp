@@ -2,12 +2,12 @@
 title: PowerShell Core のサポート ライフサイクル
 description: PowerShell Core のサポートを管理するポリシー
 ms.date: 08/06/2018
-ms.openlocfilehash: 178e5c43520f9a392ca219b9f785eb18b1ec5436
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.openlocfilehash: b8dd4891ecf245b87c3fe2fa61cd241a12209b57
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623860"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854376"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core のサポート ライフサイクル
 
@@ -41,8 +41,6 @@ PowerShell Core のバージョン 6.x ブランチは約半年に一回更新�
 
 たとえば、PowerShell Core 6.1 を実行していて 2019 年 2 月 19 日に 6.1.3 がリリースされた場合、サポートを維持するには、リリースの 30 日後である 2019 年 3 月 21 日までに PowerShell Core 6.1.3 に更新する必要があります。
 必要な修正プログラムが見つかった場合、その修正プログラムは次の累積的な更新プログラムでリリースされます。
-
-![PowerShell Core のブランチ ライフサイクル][lifecycle-chart]
 
 Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポートを終了する 12 か月前にお客様に通知することを Microsoft の義務としています。
 
@@ -88,7 +86,7 @@ Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポ�
 |---------|-------------------------------|
 | 6.0     | 2019 年 2 月 13 日             |
 | 6.1     | 2019 年 9 月 28 日            |
-| 6.2     | 6.3 のリリースから 6 か月後   |
+| 6.2     | 7 のリリースから 6 か月後     |
 
 ## <a name="platforms-which-are-out-of-support"></a>サポート対象外のプラットフォーム
 

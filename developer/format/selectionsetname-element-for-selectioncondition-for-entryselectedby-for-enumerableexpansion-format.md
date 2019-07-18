@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 7b7af0b2-68e6-43c3-adcc-7c58007fced8
 caps.latest.revision: 13
 ms.openlocfilehash: 6f7c8d9af3c1c2fbda0208148b0088161701fdbe
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063862"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion の EntrySelectedBy の SelectionCondition の SelectionSetName 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56861218"
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`SelectionSetName`要素。
 
@@ -51,9 +51,9 @@ ms.locfileid: "56861218"
 
 ## <a name="remarks"></a>コメント
 
-選択条件では、選択範囲のセットまたは .NET の型を指定できますが、両方を指定することはできません。 選択条件を使用する方法の詳細については、[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
+選択条件では、選択範囲のセットまたは .NET の型を指定できますが、両方を指定することはできません。 選択条件を使用する方法の詳細については、次を参照してください。[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)します。
 
-選択範囲のセットは、書式設定ファイルを定義する任意のビューで使用できる .NET オブジェクトの一般的なグループです。 作成と選択範囲のセットの参照の詳細については、[選択範囲の設定を定義する](./defining-selection-sets.md)を参照してください。
+選択範囲のセットは、書式設定ファイルを定義する任意のビューで使用できる .NET オブジェクトの一般的なグループです。 作成と選択範囲のセットの参照の詳細については、次を参照してください。[選択範囲の設定を定義する](./defining-selection-sets.md)します。
 
 ## <a name="see-also"></a>参照
 

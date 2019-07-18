@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の構成の登録
 ms.openlocfilehash: 6fa0ce434c8e70eb718545e99417bfe034cda6bf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58059441"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084829"
 ---
 # <a name="registering-jea-configurations"></a>JEA の構成の登録
 

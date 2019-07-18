@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC リソース メソッドの直接呼び出し
 ms.openlocfilehash: cf237f638593706e5959e2bcc0d851b0e55baf0e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402293"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079627"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>DSC リソース メソッドの直接呼び出し
 
@@ -49,7 +49,7 @@ $result = Invoke-DscResource -Name File -Method Get -Property @{
 $result.ItemValue | fl
 ```
 
->**注:** 複合リソースのメソッドを直接呼び出すことはサポートされていません。 代わりに、複合リソースの基になるリソースのメソッドを呼び出してください。
+>**注:** 複合リソースのメソッドを直接呼び出すことはできません。 代わりに、複合リソースの基になるリソースのメソッドを呼び出してください。
 
 ## <a name="see-also"></a>参照
 - [MOF を使用したカスタム DSC リソースの記述](../resources/authoringResourceMOF.md)

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 01ae8cbe-acdc-4043-bd6e-1118a5691a55
 caps.latest.revision: 12
 ms.openlocfilehash: 405184f7bdbf1955f1df7766bf2723c244dcc27f
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855738"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064919"
 ---
 # <a name="propertyname-element-for-listitem-for-listcontrol-format"></a>ListControl の ListItem の PropertyName 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56855738"
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`PropertyName`要素。
 
@@ -53,7 +53,7 @@ ms.locfileid: "56855738"
 
 この要素が指定されている場合は指定できません、 [ScriptBlock](./scriptblock-element-for-listitem-for-listcontrol-format.md)要素。
 
-プロパティの値を表示するだけでなく、値または値の表示を変更するために使用する書式指定文字列のラベルを指定することもできます。 リスト ビューでデータを指定する方法については、[リスト ビューを作成する](./creating-a-list-view.md)を参照してください。
+プロパティの値を表示するだけでなく、値または値の表示を変更するために使用する書式指定文字列のラベルを指定することもできます。 リスト ビューでデータを指定する方法については、次を参照してください。[リスト ビューを作成する](./creating-a-list-view.md)します。
 
 ## <a name="example"></a>例
 

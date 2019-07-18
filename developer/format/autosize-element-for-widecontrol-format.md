@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: def37479-7b6e-40cf-bc81-0f7cbc651b31
 caps.latest.revision: 11
 ms.openlocfilehash: 6dbaef5886a0600bd9fe96dbc8d21f00a674dfcf
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857088"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066925"
 ---
 # <a name="autosize-element-for-widecontrol-format"></a>WideControl の AutoSize 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56857088"
 <AutoSize/>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`AutoSize`要素。
 
@@ -49,9 +49,9 @@ None
 
 ワイド ビューを定義するときに追加できます、`AutoSize`要素、または[ColumnNumber](./columnnumber-element-for-widecontrol-format.md)は、要素は両方で追加できません。
 
-ワイド ビューのコンポーネントに関する詳細については、[ワイド ビューを作成する](./creating-a-wide-view.md)を参照してください。
+ワイド ビューのコンポーネントに関する詳細については、次を参照してください。[ワイド ビューを作成する](./creating-a-wide-view.md)します。
 
-ワイド ビューの例は、[表示 (Basic) の幅が広い](./wide-view-basic.md)を参照してください。
+ワイド ビューの例は、次を参照してください。[表示 (Basic) の幅が広い](./wide-view-basic.md)します。
 
 ## <a name="see-also"></a>参照
 

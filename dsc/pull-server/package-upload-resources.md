@@ -1,59 +1,59 @@
 ---
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
-title: パッケージと、プル サーバーにアップロード リソース
+title: リソースをパッケージ化してプル サーバーにアップロードする
 ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402301"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079577"
 ---
-# <a name="package-and-upload-resources-to-a-pull-server"></a>パッケージと、プル サーバーにアップロード リソース
+# <a name="package-and-upload-resources-to-a-pull-server"></a>リソースをパッケージ化してプル サーバーにアップロードする
 
-以下のセクションでは、プル サーバーを既に設定したことを前提としています。 プル サーバーを設定していない場合は、次のガイドを使用できます。
+以下のセクションでは、プル サーバーを既にセットアップしてあるものとします。 プル サーバーをセットアップしていない場合は、次のガイドを使用できます。
 
 - [DSC SMB プル サーバーを設定する](pullServerSmb.md)
 - [DSC HTTP プル サーバーを設定する](pullServer.md)
 
-各ターゲット ノードは、構成、リソースをダウンロードしてもその状態を報告を構成できます。 この記事では、ダウンロード、およびリソースを自動的にダウンロードするクライアントの構成に利用できるように、リソースをアップロードする方法を示します。 ノードがを通じて割り当てられた構成を受信すると**プル**または**プッシュ**(v5) では、自動的にダウンロードし、LCM で指定された場所からの構成に必要なすべてのリソース。
+各ターゲット ノードは、構成やリソースをダウンロードし、さらにその状態を報告するように構成できます。 この記事では、ダウンロードできるようにリソースをアップロードする方法、およびリソースを自動的にダウンロードするようにクライアントを構成する方法を示します。 ノードは、割り当てられた構成を**プル**または**プッシュ** (v5) によって受け取ると、構成で必要なすべてのリソースを LCM で指定された場所から自動的にダウンロードします。
 
-## <a name="package-resource-modules"></a>パッケージ リソース モジュール
+## <a name="package-resource-modules"></a>リソース モジュールをパッケージ化する
 
-クライアントをダウンロードするために使用可能な各リソースは、".zip"ファイルに格納する必要があります。 次の例を使用して必要な手順が表示されます、 [xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0)リソース。
+クライアントでダウンロードできるようにする各リソースは、".zip" ファイルに格納する必要があります。 以下の例では、[xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0) リソースを使用して必要な手順を示します。
 
 > [!NOTE]
-> PowerShell 4.0 を使用して、クライアントがある場合に、リソースのフォルダー構造 flaten する必要があり、バージョン フォルダーを削除します。 詳細については、次を参照してください。[複数のリソース バージョン](../configurations/import-dscresource.md#multiple-resource-versions)します。
+> PowerShell 4.0 を使っているクライアントがある場合は、リソース フォルダーの構造をフラット化し、すべてのバージョン フォルダーを削除する必要があります。 詳しくは、「[Multiple Resource Versions (複数のリソース バージョン)](../configurations/import-dscresource.md#multiple-resource-versions)」をご覧ください。
 
-任意のユーティリティ、スクリプト、または使用するメソッドを使用して、リソース ディレクトリを圧縮することができます。 、Windows で実行できます*を右クリックして*"xPSDesiredStateConfiguration"ディレクトリ、および「を送信する」、し、「圧縮フォルダー」を選択します。
+好みのユーティリティ、スクリプト、または方法を使って、リソース ディレクトリを圧縮することができます。 Windows では、"xPSDesiredStateConfiguration" ディレクトリを "*右クリック*" して [送る] を選択し、[圧縮フォルダー] を選択します。
 
 ![右クリック](../media/right-click.gif)
 
-### <a name="naming-the-resource-archive"></a>リソースのアーカイブの名前を付ける
+### <a name="naming-the-resource-archive"></a>リソース アーカイブの名前を指定する
 
-リソースのアーカイブは、次の形式で名前を指定する必要があります。
+リソース アーカイブには、次の形式で名前を付ける必要があります。
 
 ```
 {ModuleName}_{Version}.zip
 ```
 
-上記の例では、"xPSDesiredStateConfiguration.zip"によって"xPSDesiredStateConfiguration_8.4.4.0.zip"の名前を変更する必要があります。
+上の例では、"xPSDesiredStateConfiguration.zip" の名前を "xPSDesiredStateConfiguration_8.4.4.0.zip" に変更する必要があります。
 
-### <a name="create-checksums"></a>チェックサムを作成します。
+### <a name="create-checksums"></a>チェックサムを作成する
 
-リソース モジュールを圧縮され名前を変更すると、作成する必要があります、**チェックサム**します。  **チェックサム**使用して、クライアントでは、LCM によってリソースが変更されていると再度ダウンロードする必要があります。 作成することができます、**チェックサム**で、 [New-dscchecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)コマンドレットは、次の例で示すようにします。
+リソース モジュールを圧縮して名前を変更した後は、**チェックサム**を作成する必要があります。  **チェックサム**は、クライアント上の LCM によって、リソースが変更されていて、再度ダウンロードする必要があるかどうかを判断するために使われます。 次の例で示すように、**チェックサム**は [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) コマンドレットで作成できます。
 
 ```powershell
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 ```
 
-出力は表示されませんが、"xPSDesiredStateConfiguration_8.4.4.0.zip.checksum"が表示されます。 実行することも`New-DSCCheckSum`を使用してファイルのディレクトリに対して、`-Path`パラメーター。 チェックサムが既に存在する場合に再作成することを強制できます、`-Force`パラメーター。
+出力は示されませんが、"xPSDesiredStateConfiguration_8.4.4.0.zip.checksum" が表示されるようになるはずです。 また、`-Path` パラメーターを使用すると、ファイルのディレクトリに対して `New-DSCCheckSum` を実行することもできます。 チェックサムが既に存在する場合は、`-Force` パラメーターを使用して強制的に再作成できます。
 
-### <a name="where-to-store-resource-archives"></a>リソースのアーカイブを格納する場所
+### <a name="where-to-store-resource-archives"></a>リソース アーカイブを格納する場所
 
-#### <a name="on-a-dsc-http-pull-server"></a>DSC の HTTP プル サーバー
+#### <a name="on-a-dsc-http-pull-server"></a>DSC HTTP プル サーバー上
 
-設定すると、HTTP プル サーバー上で説明したよう[DSC HTTP プル サーバーを設定する](pullServer.md)、用のディレクトリを指定する、 **ModulePath**と**ConfigurationPath**キー。 **ConfigurationPath**キーは、".mof"ファイルの格納場所を示します。 **ModulePath** DSC リソース モジュールを格納する場所を示します。
+HTTP プル サーバーをセットアップするときは、「[DSC HTTP プル サーバーを設定する](pullServer.md)」で説明されているように、**ModulePath** キーと **ConfigurationPath** キーに対するディレクトリを指定します。 **ConfigurationPath** キーは、".mof" ファイルを格納する必要がある場所を示します。 **ModulePath** は、DSC リソース モジュールを格納する必要がある場所を示します。
 
 ```powershell
     xDscWebService PSDSCPullServer
@@ -66,9 +66,9 @@ New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 
 ```
 
-#### <a name="on-an-smb-share"></a>SMB 共有に
+#### <a name="on-an-smb-share"></a>SMB 共有上
 
-指定した場合、 **ResourceRepositoryShare**、プル クライアントのセットアップは、アーカイブと内のチェックサムを保存すると、 **SourcePath**ディレクトリから、 **ResourceRepositoryShare**ブロックします。
+**ResourceRepositoryShare** を指定した場合は、プル クライアントをセットアップするときに、**ResourceRepositoryShare** ブロックの **SourcePath** ディレクトリに、アーカイブとチェックサムを格納します。
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -82,7 +82,7 @@ ResourceRepositoryShare SMBResourceServer
 }
 ```
 
-のみを指定した場合、 **ConfigurationRepositoryShare**、プル クライアントのセットアップは、アーカイブと内のチェックサムを保存すると、 **SourcePath**ディレクトリから、 **ConfigurationRepositoryShare**ブロックします。
+**ConfigurationRepositoryShare** だけを指定した場合は、プル クライアントをセットアップするときに、**ConfigurationRepositoryShare** ブロックの **SourcePath** ディレクトリに、アーカイブとチェックサムを格納します。
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -93,7 +93,7 @@ ConfigurationRepositoryShare SMBPullServer
 
 #### <a name="updating-resources"></a>リソースの更新
 
-アーカイブの名、バージョン番号を変更するか、新しいチェックサムを作成して、そのリソースを更新するノードを強制することができます。 プル クライアントは、必要なリソースの新しいバージョンの確認だけでなく、LCM が更新されると、チェックサムを更新します。
+アーカイブの名前のバージョン番号を変更するか、新しいチェックサムを作成することにより、強制的にノードにリソースを更新させることができます。 プル クライアントでは、LCM が更新されるときに、必要なリソースの新しいバージョンだけでなく更新されたチェックサムも確認されます。
 
 ## <a name="see-also"></a>関連項目
 

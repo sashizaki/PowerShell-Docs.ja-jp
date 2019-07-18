@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d46df0cb-50b7-4b81-82ba-37186a7b7a7f
 caps.latest.revision: 28
 ms.openlocfilehash: 296c63d0c774a0bf56e90dbaa32f2c221d4c3dbd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856328"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066823"
 ---
 # <a name="configuration-element-format"></a>Configuration 要素 (書式)
 
@@ -33,7 +33,7 @@ ms.locfileid: "56856328"
 
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`Configuration`要素。 この要素は、書式設定ファイルごとにルート要素である必要があり、この要素は、少なくとも 1 つの子要素を含める必要があります。
 

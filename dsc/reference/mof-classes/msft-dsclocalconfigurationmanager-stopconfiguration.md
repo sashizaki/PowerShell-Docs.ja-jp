@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: MSFT_DSCLocalConfigurationManager クラスの StopConfiguration メソッド
-ms.openlocfilehash: 1cd887d205967c3d282143df4e6199027639230e
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+title: StopConfiguration メソッド
+ms.openlocfilehash: e1de175032a3bddf11af218bc4a15bdbe554a9d5
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047519"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726991"
 ---
-# <a name="stopconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの StopConfiguration メソッド
+# <a name="stopconfiguration-method"></a>StopConfiguration メソッド
 
 進行中の構成の変更を停止します。
 
@@ -35,9 +35,9 @@ uint32 StopConfiguration(
 
 ## <a name="requirements"></a>要件
 
-MOF**DscCore.mof
+**MOF:** DscCore.mof
 
-**［名前空間］:Root \microsoft\windows\desiredstateconfiguration
+**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

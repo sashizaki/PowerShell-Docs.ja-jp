@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b7a9f086-b1ca-4400-9be7-9ec1ec8880f3
 caps.latest.revision: 11
 ms.openlocfilehash: f20679e3392b99a049c075f24c7712262bab08e1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854118"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063996"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-widecontrol-format"></a>WideControl の EntrySelectedBy の SelectionCondition 要素 (書式)
 
@@ -32,7 +32,7 @@ ms.locfileid: "56854118"
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`SelectionCondition`要素。 1 つを指定する必要があります`PropertyName`または`ScriptBlock`要素。 `SelectionSetName`と`TypeName`要素は省略可能です。 要素のいずれかのいずれかを指定できます。
 
@@ -65,9 +65,9 @@ ms.locfileid: "56854118"
 
 - 選択条件が .NET 型の任意の数を指定するか、選択範囲を設定するが、両方を指定することはできません。
 
-選択条件を使用する方法の詳細については、[とビューのエントリの定義の条件またはアイテムが使用されて](./defining-conditions-for-displaying-data.md)を参照してください。
+選択条件を使用する方法の詳細については、次を参照してください。[とビューのエントリの定義の条件またはアイテムが使用されて](./defining-conditions-for-displaying-data.md)します。
 
-ワイド ビューの他のコンポーネントに関する詳細については、[ワイド ビューを作成する](./creating-a-wide-view.md)を参照してください。
+ワイド ビューの他のコンポーネントに関する詳細については、次を参照してください。[ワイド ビューを作成する](./creating-a-wide-view.md)します。
 
 ## <a name="see-also"></a>参照
 

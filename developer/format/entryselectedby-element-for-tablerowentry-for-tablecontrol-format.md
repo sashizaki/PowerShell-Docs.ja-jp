@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 49623fcf-1238-4d20-a7ce-238d47d9d565
 caps.latest.revision: 15
 ms.openlocfilehash: 9302bfed0324773cb98d698acdcf608f34ee19c1
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058761"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066160"
 ---
 # <a name="entryselectedby-element-for-tablerowentry--for-tablecontrol-format"></a>TableControl の TableRowEntry の EntrySelectedBy 要素 (書式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "58058761"
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`EntrySelectedBy`要素。
 
@@ -57,9 +57,9 @@ ms.locfileid: "58058761"
 
 少なくとも 1 つの型、選択範囲のセット、またはテーブル ビューの定義の選択条件を指定する必要があります。 使用できる子要素の数に上限はありません。
 
-選択条件を使用して、定義オブジェクトに特定のプロパティがある場合など、使用するのに必要な条件を定義または特定のプロパティの値またはスクリプトに評価される`true`します。 選択条件の詳細については、[とビューのエントリの定義の条件またはアイテムが使用されて](./defining-conditions-for-displaying-data.md)を参照してください。
+選択条件を使用して、定義オブジェクトに特定のプロパティがある場合など、使用するのに必要な条件を定義または特定のプロパティの値またはスクリプトに評価される`true`します。 選択条件の詳細については、次を参照してください。[とビューのエントリの定義の条件またはアイテムが使用されて](./defining-conditions-for-displaying-data.md)します。
 
-テーブル ビューのコンポーネントに関する詳細については、[テーブル ビューを作成する](./creating-a-table-view.md)を参照してください。
+テーブル ビューのコンポーネントに関する詳細については、次を参照してください。[テーブル ビューを作成する](./creating-a-table-view.md)します。
 
 ## <a name="example"></a>例
 

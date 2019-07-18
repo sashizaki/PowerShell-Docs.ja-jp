@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell ISE のキーボード ショートカット
-ms.assetid: 8328b946-0f02-4ef4-ac28-2743a1b4043b
-ms.openlocfilehash: 1abae849ce599b586357fd2a8db46c608932bd4e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: f71aea16f7a98ff7b6427237dc90104e4ea0db71
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402262"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030928"
 ---
 # <a name="keyboard-shortcuts-for-the-windows-powershell-ise"></a>Windows PowerShell ISE のキーボード ショートカット
 
@@ -20,7 +19,7 @@ Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行�
 
 |操作|キーボード ショートカット|使用する場所|
 |----------|----------------------|----------|
-|**ヘルプ**|F1|スクリプト ウィンドウ**重要です。** F1 ヘルプは、web では、TechNet ライブラリから、または、ダウンロードしたヘルプ (Update-help を参照してください) を指定することができます。 選ぶには、**[ツール]**、**[オプション]** を順にクリックして、**[全般設定]** タブで **[オンライン コンテンツの代わりにローカル ヘルプ コンテンツを使用する]** をオンまたはオフにします。|
+|**ヘルプ**|F1|スクリプト ウィンドウ **重要:** Web 上の TechNet ライブラリとダウンロードしたヘルプのどちらを F1 ヘルプとして表示するかを指定できます (Update-Help を参照)。 選ぶには、 **[ツール]** 、 **[オプション]** を順にクリックして、 **[全般設定]** タブで **[オンライン コンテンツの代わりにローカル ヘルプ コンテンツを使用する]** をオンまたはオフにします。|
 |**コピー**|CTRL キーを押しながら C|スクリプト ウィンドウ、コマンド ウィンドウ、出力ウィンドウ|
 |**切り取り**|CTRL + X|スクリプト ウィンドウ、コマンド ウィンドウ|
 |**アウトラインの展開または折りたたみ**|Ctrl + M|スクリプト ウィンドウ|
@@ -47,8 +46,8 @@ Windows PowerShell® Integrated Scripting Environment (ISE) の操作を実行�
 |**実行**|F5|
 |**選択範囲の実行**|F8|
 |**実行を中止**|CTRL + BREAK コンテキストが明確な場合 (選ばれているテキストがない場合)、CTRL + C を使用できます。|
-|**タブ移動** (次のスクリプトへ)|Ctrl キーを押しながら TAB**に注意してください。** 次のスクリプトへのタブは、1 つの Windows PowerShell タブが開いている場合にのみ、または開くには、1 つ以上の Windows PowerShell タブがあるが、スクリプト ウィンドウにフォーカスがある場合に機能します。|
-|**タブ移動** (前のスクリプトへ)|CTRL + SHIFT + TAB**に注意してください。** 前のスクリプトへのタブは、開くには、1 つだけの Windows PowerShell タブがある場合、または開くには、1 つ以上の Windows PowerShell タブがあるし、スクリプト ウィンドウにフォーカスがある場合は動作します。|
+|**タブ移動** (次のスクリプトへ)|Ctrl + Tab **注意:** 次のスクリプトへのタブ移動は、1 つの Windows PowerShell タブが開いている場合、またはスクリプト ウィンドウにフォーカスがあるときに複数の Windows PowerShell タブが開いている場合にだけ有効です。|
+|**タブ移動** (前のスクリプトへ)|Ctrl + Shift + Tab **注意:** 前のスクリプトへのタブ移動は、1 つの Windows PowerShell タブが開いている場合、またはスクリプト ウィンドウにフォーカスがあるときに複数の Windows PowerShell タブが開いている場合にだけ有効です。|
 
 ## <a name="keyboard-shortcuts-for-customizing-the-view"></a>ビューをカスタマイズするためのキーボード ショートカット
 
@@ -120,4 +119,4 @@ Windows PowerShell のタブを使用するときに、次のキーボード シ
 
 ## <a name="see-also"></a>参照
 
-- [PowerShell マガジン:Windows PowerShell ISE のキーボード ショートカットの完全な一覧](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)
+- [PowerShell マガジン: Windows PowerShell ISE のキーボード ショートカットの完全な一覧](https://www.powershellmagazine.com/2013/01/29/the-complete-list-of-powershell-ise-3-0-keyboard-shortcuts/)

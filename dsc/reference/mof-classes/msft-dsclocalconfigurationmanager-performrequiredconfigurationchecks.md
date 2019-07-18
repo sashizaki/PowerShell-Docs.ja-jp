@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: MSFT_DSCLocalConfigurationManager クラスの PerformRequiredConfigurationChecks メソッド
-ms.openlocfilehash: b92eefb7fbea6d96afa31f6b802ba10fe20d4103
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+title: PerformRequiredConfigurationChecks メソッド
+ms.openlocfilehash: 909e3a48d08e0220ab0efc6a03bea7ead5d9843e
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047901"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734410"
 ---
-# <a name="performrequiredconfigurationchecks-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの PerformRequiredConfigurationChecks メソッド
+# <a name="performrequiredconfigurationchecks-method"></a>PerformRequiredConfigurationChecks メソッド
 
 タスク スケジューラを使用して、整合性チェックを開始します。
 
@@ -42,9 +42,9 @@ uint32 PerformRequiredConfigurationChecks(
 
 ## <a name="requirements"></a>要件
 
-MOF**DscCore.mof
+**MOF:** DscCore.mof
 
-**［名前空間］:Root \microsoft\windows\desiredstateconfiguration
+**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 7196f039-2f6a-41fd-b252-5b1623ebb9f9
 caps.latest.revision: 11
 ms.openlocfilehash: 09183a538c179f19347c3f1ed45b4ad38c2ca451
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054511"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065752"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>TableControl の TableColumnHeader の Label 要素 (書式)
 
@@ -28,7 +28,7 @@ ms.locfileid: "58054511"
 
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`Label`要素。 1 つだけのラベルには、各列は使用できます。
 
@@ -54,7 +54,7 @@ ms.locfileid: "58054511"
 
 ラベルが指定されていない場合は、行の値を持つが表示されるプロパティの名前が使用されます。
 
-テーブル ビューのコンポーネントに関する詳細については、[テーブル ビューを作成する](./creating-a-table-view.md)を参照してください。
+テーブル ビューのコンポーネントに関する詳細については、次を参照してください。[テーブル ビューを作成する](./creating-a-table-view.md)します。
 
 ## <a name="example"></a>例
 

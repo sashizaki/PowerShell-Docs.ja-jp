@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: 付録 2 - カスタムの PowerShell ショートカットの作成
-ms.assetid: 5d4fd421-5d43-4ec7-86fd-acfe887b066e
-ms.openlocfilehash: e8081b7a64d313c8ef4bbccf95f250445dd68ad9
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 6f1a6a8187b1797103e3620b2cf9155978807ea5
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403374"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030308"
 ---
 # <a name="appendix-2---creating-a-custom-powershell-shortcut"></a>付録 2 - カスタムの PowerShell ショートカットの作成
 
@@ -16,7 +15,7 @@ ms.locfileid: "53403374"
 
 1. Powershell.exe へのショートカットを作成します。
 
-2. ショートカットを右クリックし、**[プロパティ]** をクリックします。
+2. ショートカットを右クリックし、 **[プロパティ]** をクリックします。
 
 3. **[オプション]** タブをクリックします。
 
@@ -36,6 +35,6 @@ ms.locfileid: "53403374"
 
 10. **[ウィンドウのサイズ]** セクションに、幅の値として 1 から 9999 の数値を入力します。 これは、コンソール ウィンドウの 1 行に表示される文字数を表します。 既定の幅は 80 です。Windows PowerShell の出力形式は、この幅用に設計されています。
 
-11. コンソールが開いたときに、デスクトップの特定の位置にそのコンソールが表示されるようにする場合は、**[ウィンドウの位置]** セクションの **[システム設定を使う]** チェック ボックスをオフにし、**[ウィンドウの位置]** セクションで、**[左]** ボックスと **[上]** ボックスの値を変更します。
+11. コンソールが開いたときに、デスクトップの特定の位置にそのコンソールが表示されるようにする場合は、 **[ウィンドウの位置]** セクションの **[システム設定を使う]** チェック ボックスをオフにし、 **[ウィンドウの位置]** セクションで、 **[左]** ボックスと **[上]** ボックスの値を変更します。
 
 12. **[OK]** をクリックします。

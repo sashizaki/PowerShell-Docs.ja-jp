@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 29840c10-2b30-4bb1-a8a0-ddf84d19c2d0
 caps.latest.revision: 18
 ms.openlocfilehash: c5ec80350c7707ccd41112ab5e1952e5dc198cca
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862088"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083707"
 ---
 # <a name="viewdefinitions-element-format"></a>ViewDefinitions 要素 (書式)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56862088"
 </ViewDefinitions>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`ViewDefinitions`要素。 書式設定ファイルで定義できるビューの数に制限はありませんし、任意の順序で追加できます。
 

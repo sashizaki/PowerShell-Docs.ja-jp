@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 意思決定者向け Desired State Configuration の概要
 ms.openlocfilehash: ce554d4bb994d4b1816d9d9c24599e4ef0e1c593
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402446"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079593"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>意思決定者向け Desired State Configuration の概要
 
@@ -44,7 +44,7 @@ DSC は [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/dev
 
 構成は[データ ドリブン](../configurations/configData.md)でもあるため、開発者が関与することなく、運用側で簡単に環境を特定および変更することができます。
 
-## <a name="desired-state-configuration-on-premises-and-off-premises"></a>オンプレミスとオフプレミスの Desired State Configuration
+## <a name="desired-state-configuration-on-premises-and-off-premises"></a>オンプレミスおよびオフプレミスの Desired State Configuration
 DSC を使用して、オンプレミスとオフプレミスの両方の展開を管理できます。
 オンプレミスのソリューションの場合、DSC では[プル サーバー](../pull-server/pullServer.md)を使用してマシンの管理を一元化し、それらの状態をレポートできます。
 クラウド ソリューションの場合、DSC は Windows が使用可能なすべての場所で使用できます。

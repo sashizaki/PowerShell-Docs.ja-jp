@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: ファイルとフォルダーの操作
-ms.assetid: c0ceb96b-e708-45f3-803b-d1f61a48f4c1
-ms.openlocfilehash: 393e886a4945222198d9b81019250c5d5b905ad3
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.openlocfilehash: 0f7cb233918b59475417ec49b611ecc25a94ebe1
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293222"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030692"
 ---
 # <a name="working-with-files-and-folders"></a>ファイルとフォルダーの操作
 

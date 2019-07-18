@@ -13,11 +13,11 @@ helpviewer_keywords:
 ms.assetid: 863e48e9-7206-4c6a-a59a-2ab2d30396bc
 caps.latest.revision: 5
 ms.openlocfilehash: 06910f32752668f13400f9be0767a2179133df04
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623825"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081752"
 ---
 # <a name="how-to-create-a-windows-powershell-provider"></a>Windows PowerShell プロバイダーを作成する方法
 
@@ -33,7 +33,7 @@ Windows PowerShell では、既知のデータ ストアへのアクセスに使
 
 ## <a name="accessing-the-stored-data-using-windows-powershell-paths"></a>Windows PowerShell のパスを使用して、格納されたデータにアクセスします。
 
-Windows PowerShell プロバイダーは、Windows PowerShell パスを使用してプログラムでのコマンドを Windows PowerShell ランタイムにアクセスできます。 ほとんどの場合、これらのパスは、プロバイダーを介してデータに直接アクセスに使用されます。 ただし、いくつかのパスは、データにアクセスする Windows PowerShell 以外のアプリケーション プログラミング インターフェイス (Api) を使用するコマンドレットを許可するプロバイダーの内部のパスに解決できます。 Windows PowerShell 内での Windows PowerShell プロバイダーの動作方法の詳細については、[Windows PowerShell のしくみ](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)を参照してください。
+Windows PowerShell プロバイダーは、Windows PowerShell パスを使用してプログラムでのコマンドを Windows PowerShell ランタイムにアクセスできます。 ほとんどの場合、これらのパスは、プロバイダーを介してデータに直接アクセスに使用されます。 ただし、いくつかのパスは、データにアクセスする Windows PowerShell 以外のアプリケーション プログラミング インターフェイス (Api) を使用するコマンドレットを許可するプロバイダーの内部のパスに解決できます。 Windows PowerShell 内での Windows PowerShell プロバイダーの動作方法の詳細については、次を参照してください。 [Windows PowerShell のしくみ](http://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)します。
 
 ## <a name="exposing-provider-cmdlets-using-windows-powershell-drives"></a>ドライブの Windows PowerShell を使用して、プロバイダー コマンドレットを公開します。
 

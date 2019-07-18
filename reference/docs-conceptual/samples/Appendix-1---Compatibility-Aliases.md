@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: 付録 1 - 互換性のあるエイリアス
-ms.assetid: 96ad921e-1a57-463e-8e60-424faf8b6ef8
-ms.openlocfilehash: 113bbee1af185f98777df5767022d54accb69447
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 553b9f01d6b5e3f4e04f1a75c25979b54dc205da
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403423"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030331"
 ---
 # <a name="appendix-1---compatibility-aliases"></a>付録 1 - 互換性のあるエイリアス
 

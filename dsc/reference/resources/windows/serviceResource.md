@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Service リソース
 ms.openlocfilehash: 09571bd0eaa428e7d0bb7a533d6ad1c0c936e2cf
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047536"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076896"
 ---
 # <a name="dsc-service-resource"></a>DSC Service リソース
 
@@ -39,10 +39,10 @@ Service [string] #ResourceName
 |  プロパティ  |  説明   |
 |---|---|
 | 名前| サービス名を示します。 これは、表示名とは異なることがあります。 Get-Service コマンドレットを使用すると、サービスとその現在の状態の一覧を取得できます。|
-| BuiltInAccount| サービスに使用するサインイン アカウントを示します。 このプロパティに許容される値は次のとおりです。**LocalService**、 **LocalSystem**、および**NetworkService**します。|
+| BuiltInAccount| サービスに使用するサインイン アカウントを示します。 このプロパティで有効な値は、**LocalService**、**LocalSystem**、**NetworkService** です。|
 | Credential| サービスを実行するアカウントの資格情報を示します。 このプロパティおよび __BuiltinAccount__ プロパティを同時に使用することはできません。|
 | DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が __ResourceName__ で、そのタイプが __ResourceType__ である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。|
-| StartupType| サービスのスタートアップの種類を示します。 このプロパティに許容される値は次のとおりです。**自動**、**無効**、および**手動**|
+| StartupType| サービスのスタートアップの種類を示します。 このプロパティで有効な値は、**Automatic**、**Disabled**、**Manual** です|
 | State| サービスに対して保証する状態を示します。|
 | 説明 | ターゲット サービスの説明を示します。|
 | 表示名 | ターゲット サービスの表示名を示します。|

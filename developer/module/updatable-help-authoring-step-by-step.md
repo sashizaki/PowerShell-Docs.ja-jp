@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 10098160-c6b4-4339-b8ff-2c4f8cc0699b
 caps.latest.revision: 13
 ms.openlocfilehash: fbc77cc0fafce93d239da1c459d4b761b21ef3cb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082126"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>更新可能なヘルプの作成: ステップバイステップ
 
@@ -46,7 +46,7 @@ HelpInfoURI = 'http://go.microsoft.com/fwlink/?LinkID=0123'
 
 ### <a name="step-3-create-a-helpinfo-xml-file"></a>手順 3:HelpInfo XML ファイルを作成します。
 
-HelpInfo XML ファイルには、ヘルプ ファイルとサポートされている各 UI カルチャでモジュールの最新のヘルプ ファイルのバージョン番号のインターネット上の場所の URI が含まれています。 すべての Windows PowerShell モジュールでは、1 つの HelpInfo XML ファイルがあります。 編集または HelpInfo XML ファイルを置換するのヘルプ ファイルを更新するときにもう 1 つを入れないでください。 詳細については、[HelpInfo XML ファイルを作成する方法](./how-to-create-a-helpinfo-xml-file.md)を参照してください。
+HelpInfo XML ファイルには、ヘルプ ファイルとサポートされている各 UI カルチャでモジュールの最新のヘルプ ファイルのバージョン番号のインターネット上の場所の URI が含まれています。 すべての Windows PowerShell モジュールでは、1 つの HelpInfo XML ファイルがあります。 編集または HelpInfo XML ファイルを置換するのヘルプ ファイルを更新するときにもう 1 つを入れないでください。 詳細については、次を参照してください。 [HelpInfo XML ファイルを作成する方法](./how-to-create-a-helpinfo-xml-file.md)します。
 
 ### <a name="step-4-sign-your-help-files"></a>手順 4:ヘルプ ファイルに署名します。
 
@@ -54,7 +54,7 @@ HelpInfo XML ファイルには、ヘルプ ファイルとサポートされて
 
 ### <a name="step-5-create-cab-files"></a>手順 5:CAB ファイルを作成します。
 
-作成する、MakeCab.exe などのキャビネット (.cab) ファイルを作成するツールを使用して、します。モジュールのヘルプ ファイルを含む CAB ファイル。 サポートされている各 UI カルチャのヘルプ ファイルに個別の CAB ファイルを作成します。 詳細については、[を準備する更新可能なヘルプ CAB ファイルの追加方法](./how-to-prepare-updatable-help-cab-files.md)を参照してください。
+作成する、MakeCab.exe などのキャビネット (.cab) ファイルを作成するツールを使用して、します。モジュールのヘルプ ファイルを含む CAB ファイル。 サポートされている各 UI カルチャのヘルプ ファイルに個別の CAB ファイルを作成します。 詳細については、次を参照してください。[を準備する更新可能なヘルプ CAB ファイルの追加方法](./how-to-prepare-updatable-help-cab-files.md)します。
 
 ### <a name="step-6-upload-your-files"></a>手順 6:ファイルをアップロードします。
 

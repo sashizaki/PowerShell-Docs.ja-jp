@@ -4,15 +4,15 @@ contributor: manikb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: コマンドレットのトラブルシューティング
 ms.openlocfilehash: f5cd9c0cc23fef5891bf02c10b6541ab0f9d418a
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002464"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084183"
 ---
 # <a name="troubleshooting-cmdlets"></a>コマンドレットのトラブルシューティング
 
-## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>"警告: パッケージ 'パッケージ名' をダウンロードできませんでした" 問題を解決する方法
+## <a name="how-to-resolve-warning-package-your-package-name-failed-to-download-issue"></a>"警告: パッケージ 'パッケージ名' をダウンロードできませんでした" の問題を解決する方法
 
 一部のマシン上で `Install-Module` または `Update-Module` が失敗する場合があることがレポートされています。
 調査の結果、ネットワーク接続の問題であることが判明しました。

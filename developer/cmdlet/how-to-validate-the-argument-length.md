@@ -11,18 +11,18 @@ helpviewer_keywords:
 ms.assetid: d5ddaa6e-4904-46da-beb0-0295a8f38332
 caps.latest.revision: 12
 ms.openlocfilehash: 8a21675acd087df93f93c25952c78931255d60b3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857128"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067715"
 ---
 # <a name="how-to-validate-the-argument-length"></a>引数の長さを検証する方法
 
 この例では、コマンドレットを実行する前に、パラメーターの引数の文字 (長さ) の数を確認、Windows PowerShell ランタイムが使用できる検証規則を指定する方法を示します。 ValidateLength 属性を宣言することで、この検証規則を設定します。
 
 > [!NOTE]
-> この属性を定義するクラスの詳細については、[System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)を参照してください。
+> この属性を定義するクラスの詳細については、次を参照してください。 [System.Management.Automation.Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)します。
 
 ## <a name="to-validate-the-argument-length"></a>引数の長さを検証するには
 
@@ -39,7 +39,7 @@ ms.locfileid: "56857128"
     private string userName;
     ```
 
-この属性を宣言する方法の詳細については、[ValidateLength 属性宣言](./validatelength-attribute-declaration.md)を参照してください。
+この属性を宣言する方法の詳細については、次を参照してください。 [ValidateLength 属性宣言](./validatelength-attribute-declaration.md)します。
 
 ## <a name="see-also"></a>参照
 

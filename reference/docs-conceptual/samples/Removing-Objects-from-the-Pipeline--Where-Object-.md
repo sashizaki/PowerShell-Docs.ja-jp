@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: パイプラインからオブジェクトを削除する (Where-Object)
-ms.assetid: 01df8b22-2d22-4e2c-a18d-c004cd3cc284
-ms.openlocfilehash: 1f7d064c7bf2dd551ea96b29762fbccad8174084
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.openlocfilehash: c47efd38e2ff40ce3b7bf50b161cc38de922c5da
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293148"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030870"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>パイプラインからオブジェクトを削除する (Where-Object)
 

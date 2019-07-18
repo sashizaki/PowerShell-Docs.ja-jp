@@ -8,27 +8,27 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 98bcfda0-6ee2-46f5-bbc7-5fab8b780d6a
 caps.latest.revision: 5
-ms.openlocfilehash: f449c17e4c373c42f8a1d96fa9075940111c65bc
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: edb4d9944a527391983e068ddf07f4fac415c3f9
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056594"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734730"
 ---
 # <a name="writing-a-navigation-provider"></a>ナビゲーション プロバイダーを記述する
 
 このトピックでは、入れ子になったコンテナー (複数レベルのデータ ストア)、項目、および相対パスの移動をサポートする Windows PowerShell プロバイダーのメソッドを実装する方法について説明します。 ナビゲーション プロバイダーがから派生する必要があります、 [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラス。
 
-このトピックの例ではプロバイダーでは、そのデータ ストアとして Access データベースを使用します。 いくつかのヘルパー メソッドと、データベースとの対話に使用されるクラスがあります。 ヘルパー メソッドを含む完全なサンプルは、[AccessDBProviderSample05](./accessdbprovidersample05.md)を参照してください。
+このトピックの例ではプロバイダーでは、そのデータ ストアとして Access データベースを使用します。 いくつかのヘルパー メソッドと、データベースとの対話に使用されるクラスがあります。 ヘルパー メソッドを含む完全なサンプルは、次を参照してください。 [AccessDBProviderSample05](./accessdbprovidersample05.md)します。
 
-Windows PowerShell プロバイダーに関する詳細については、[Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)を参照してください。
+Windows PowerShell プロバイダーに関する詳細については、次を参照してください。 [Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)します。
 
 ## <a name="implementing-navigation-methods"></a>ナビゲーション メソッドを実装します。
 
-[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラスが入れ子になったコンテナー、相対パスは、アイテムの移動をサポートするメソッドを実装します。 これらのメソッドの完全な一覧を参照してください。 [NavigationCmdletProvider メソッド](http://msdn.microsoft.com/library/system.management.automation.provider.navigationcmdletprovider_methods\(v=vs.85\).aspx)します。
+[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラスが入れ子になったコンテナー、相対パスは、アイテムの移動をサポートするメソッドを実装します。 これらのメソッドの完全な一覧を参照してください。 [NavigationCmdletProvider メソッド](/dotnet/api/system.management.automation.provider.navigationcmdletprovider?view=pscore-6.2.0#methods)します。
 
 > [!NOTE]
-> このトピックでは、の情報に基づいて[Windows PowerShell プロバイダーのクイック スタート](./windows-powershell-provider-quickstart.md)します。 このトピックでは、プロバイダーのプロジェクトを設定する方法の基本については説明しませんまたはから継承されたメソッドを実装する方法、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスを作成し、ドライブを削除します。 このトピックの「によって公開されるメソッドを実装する方法については説明しませんも、 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)または[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラス。 Item コマンドレットを実装する方法を示しますたとえば、[項目プロバイダーの作成](./writing-an-item-provider.md)を参照してください。 コンテナーのコマンドレットを実装する方法を示しますたとえば、[コンテナー プロバイダーの書き込み](./writing-a-container-provider.md)を参照してください。
+> このトピックでは、の情報に基づいて[Windows PowerShell プロバイダーのクイック スタート](./windows-powershell-provider-quickstart.md)します。 このトピックでは、プロバイダーのプロジェクトを設定する方法の基本については説明しませんまたはから継承されたメソッドを実装する方法、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスを作成し、ドライブを削除します。 このトピックの「によって公開されるメソッドを実装する方法については説明しませんも、 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)または[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラス。 Item コマンドレットを実装する方法を示しますたとえば、次を参照してください。[項目プロバイダーの作成](./writing-an-item-provider.md)です。 コンテナーのコマンドレットを実装する方法を示しますたとえば、次を参照してください。[コンテナー プロバイダーの書き込み](./writing-a-container-provider.md)します。
 
 ### <a name="declaring-the-provider-class"></a>プロバイダー クラスを宣言します。
 
@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>MakePath を実装します。
 
-[System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)メソッドは、指定された親パスと (するパスに関する情報の種類のプロバイダーの内部パスを作成する指定された子パスを結合プロバイダーがサポートを参照してください[Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)します。 PowerShell エンジンは、ユーザーが呼び出すときにこのメソッドを呼び出して、 [Microsoft.PowerShell.Commands.Join パス](/dotnet/api/Microsoft.PowerShell.Commands.Join-Path)コマンドレット。
+[System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)メソッドは、指定された親パスと (するパスに関する情報の種類のプロバイダーの内部パスを作成する指定された子パスを結合プロバイダーがサポートを参照してください[Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)します。 PowerShell エンジンは、ユーザーが呼び出すときにこのメソッドを呼び出して、 [Microsoft.PowerShell.Commands.JoinPathCommand](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand)コマンドレット。
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -221,7 +221,7 @@ protected override string NormalizeRelativePath(string path,
 
 ### <a name="implementing-moveitem"></a>MoveItem を実装します。
 
-[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)メソッドは、指定された宛先パスに指定されたパスから項目を移動します。 PowerShell エンジンは、ユーザーが呼び出すときにこのメソッドを呼び出して、 [Microsoft.PowerShell.Commands.Move 項目](/dotnet/api/Microsoft.PowerShell.Commands.Move-Item)コマンドレット。
+[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)メソッドは、指定された宛先パスに指定されたパスから項目を移動します。 PowerShell エンジンは、ユーザーが呼び出すときにこのメソッドを呼び出して、 [Microsoft.PowerShell.Commands.MoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.moveitemcommand)コマンドレット。
 
 ```csharp
 protected override void MoveItem(string path, string destination)
@@ -298,7 +298,7 @@ protected override void MoveItem(string path, string destination)
        }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [コンテナーのプロバイダーの作成](./writing-a-container-provider.md)
 

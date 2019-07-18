@@ -11,63 +11,25 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: f2c9e10f0dc392399cf062500b7f28b3d1c07f6e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 6f91fd53d41dd72c99f8fbc7bc7b863322d88787
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055123"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855050"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Windows PowerShell アイテム プロバイダーを作成する
 
 このトピックでは、データ ストア内のデータを操作できる Windows PowerShell プロバイダーを作成する方法について説明します。 このトピックでは、ストア内のデータ要素をストアのデータの「項目」として参照されます。 その結果、ストア内のデータを操作できるプロバイダーは、Windows PowerShell 項目プロバイダーとしてに呼ばれます。
 
 > [!NOTE]
-> ダウンロードすることができます、 C# Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用して、このプロバイダーのソース ファイル (AccessDBSampleProvider03.cs)。 ダウンロードの手順については、[Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)を参照してください。
+> ダウンロードすることができます、 C# Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントを使用して、このプロバイダーのソース ファイル (AccessDBSampleProvider03.cs)。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 >
 > ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
 >
-> その他の Windows PowerShell プロバイダーの実装の詳細については、[Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)を参照してください。
+> その他の Windows PowerShell プロバイダーの実装の詳細については、次を参照してください。 [Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)します。
 
 このトピックで説明されている Windows PowerShell 項目プロバイダーでは、Access データベースからのデータ項目を取得します。 ここでは、"item"は、Access データベース内のテーブルまたはテーブルの行のいずれかです。
-
-次の一覧には、このトピックのセクションが含まれています。 Windows PowerShell 項目プロバイダーの記述に慣れていない場合に、出現する順序でこれらのセクションが読み取られます。 ただし、Windows PowerShell 項目プロバイダーの作成に習熟する場合は、必要な情報に直接移動します。
-
-- [Windows PowerShell 項目プロバイダー クラスを定義します。](#Defining-the-Windows-PowerShell-Item-Provider-Class)
-
-- [基本機能を定義します。](#Defining-Base-Functionality)
-
-- [パスの有効性の確認](#Checking-for-Path-Validity)
-
-- [項目が存在するかを決定します。](#Determining-if-an-Item-Exists)
-
-- [動的パラメーターをアタッチ、`Test-Path`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Test-Path-Cmdlet)
-
-- [項目の取得](#Retrieving-an-Item)
-
-- [動的パラメーターをアタッチ、`Get-Item`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Get-Item-Cmdlet)
-
-- [項目の設定](#Setting-an-Item)
-
-- [動的パラメーターをアタッチ、`Set-Item`コマンドレット](#Retrieving-Dynamic-Parameters-for-SetItem)
-
-- [項目をクリアします。](#Clearing-an-Item)
-
-- [Clear-item コマンドレットへの動的パラメーター](#Retrieve-Dynamic-Parameters-for-ClearItem)
-
-- [項目の既定のアクションを実行します。](#Performing-a-Default-Action-for-an-Item)
-
-- [InvokeDefaultAction の動的パラメーターを取得します。](#Retrieve-Dynamic-Parameters-for-InvokeDefaultAction)
-
-- [ヘルパー メソッドとクラスを実装します。](#Implementing-Helper-Methods-and-Classes)
-
-- [コード サンプル](#Code-Sample)
-
-- [オブジェクトの種類を定義して、書式設定](#Defining-Object-Types-and-Formatting)
-
-- [Windows PowerShell プロバイダーのビルド](#Building-the-Windows-PowerShell-provider)
-
-- [Windows PowerShell プロバイダーのテスト](#Testing-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-item-provider-class"></a>Windows PowerShell 項目プロバイダー クラスを定義します。
 
@@ -81,9 +43,9 @@ Windows PowerShell 項目プロバイダーから派生する .NET クラスを�
 
 」の説明に従って[デザイン、Windows PowerShell プロバイダー](./designing-your-windows-powershell-provider.md)、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスは別に提供されるその他のいくつかのクラスから派生プロバイダーの機能です。 Windows PowerShell 項目プロバイダーでは、そのため、する必要があります定義のすべてのクラスが提供する機能。
 
-セッション固有の初期化情報を追加して、プロバイダーによって使用されるリソースを解放するための機能を実装する方法の詳細については、[基本的な Windows PowerShell プロバイダーを作成する](./creating-a-basic-windows-powershell-provider.md)を参照してください。 ただし、ここでは、説明されているプロバイダーを含む、ほとんどのプロバイダーは、この Windows PowerShell によって提供される機能の既定の実装を使用できます。
+セッション固有の初期化情報を追加して、プロバイダーによって使用されるリソースを解放するための機能を実装する方法の詳細については、次を参照してください。[基本的な Windows PowerShell プロバイダーを作成する](./creating-a-basic-windows-powershell-provider.md)します。 ただし、ここでは、説明されているプロバイダーを含む、ほとんどのプロバイダーは、この Windows PowerShell によって提供される機能の既定の実装を使用できます。
 
-メソッドを実装する必要があります、Windows PowerShell 項目プロバイダーには、ストア内の項目を操作できる、前に、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基底クラスにデータ ストアにアクセスします。 このクラスの実装の詳細については、[Windows PowerShell ドライブ プロバイダーを作成する](./creating-a-windows-powershell-drive-provider.md)を参照してください。
+メソッドを実装する必要があります、Windows PowerShell 項目プロバイダーには、ストア内の項目を操作できる、前に、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基底クラスにデータ ストアにアクセスします。 このクラスの実装の詳細については、次を参照してください。 [Windows PowerShell ドライブ プロバイダーを作成する](./creating-a-windows-powershell-drive-provider.md)します。
 
 ## <a name="checking-for-path-validity"></a>パスの有効性の確認
 
@@ -223,7 +185,7 @@ Windows PowerShell 項目プロバイダーを実装できます、 [System.Mana
 
 ## <a name="implementing-helper-methods-and-classes"></a>ヘルパー メソッドとクラスを実装します。
 
-この項目プロバイダーがいくつかのヘルパー メソッドを実装し、パブリックで使用されるクラスは、Windows PowerShell によって定義されたメソッドをオーバーライドします。 これらのヘルパー メソッドとクラスのコードに表示されます、[コード サンプル](#Code-Sample)セクション。
+この項目プロバイダーがいくつかのヘルパー メソッドを実装し、パブリックで使用されるクラスは、Windows PowerShell によって定義されたメソッドをオーバーライドします。 これらのヘルパー メソッドとクラスのコードに表示されます、[コード サンプル](#code-sample)セクション。
 
 ### <a name="normalizepath-method"></a>NormalizePath メソッド
 
@@ -259,11 +221,11 @@ Windows PowerShell 項目プロバイダーを実装できます、 [System.Mana
 
 ## <a name="code-sample"></a>コード サンプル
 
-完全なサンプル コードでは、[AccessDbProviderSample03 コード サンプル](./accessdbprovidersample03-code-sample.md)を参照してください。
+完全なサンプル コードでは、次を参照してください。 [AccessDbProviderSample03 コード サンプル](./accessdbprovidersample03-code-sample.md)します。
 
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類を定義して、書式設定
 
-プロバイダーを記述する場合は、既存のオブジェクトにメンバーを追加または新しいオブジェクトを定義する必要があります。 完了したら、Windows PowerShell がオブジェクトのメンバーを識別するために使用できる種類のファイルと、オブジェクトの表示方法を定義するフォーマット ファイルを作成します。 詳細については、[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)を参照してください。
+プロバイダーを記述する場合は、既存のオブジェクトにメンバーを追加または新しいオブジェクトを定義する必要があります。 完了したら、Windows PowerShell がオブジェクトのメンバーを識別するために使用できる種類のファイルと、オブジェクトの表示方法を定義するフォーマット ファイルを作成します。 詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)します。
 
 ## <a name="building-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーの構築
 

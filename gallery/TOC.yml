@@ -1,4 +1,3 @@
-items:
 - name: 概要
   href: overview.md
 - name: PowerShellGet のインストール
@@ -7,95 +6,89 @@ items:
   href: getting-started.md
 - name: 方法
   items:
-  - name: ギャラリーのパッケージの検索
-    items:
-    - name: パッケージの検索
-      href: how-to/finding-packages/search-syntax.md
-    - name: 互換性での検索
-      href: how-to/finding-packages/searching-by-compatibility.md
-    - name: 検索結果のフィルター処理
-      href: how-to/finding-packages/filtering-packages.md
-  - name: ギャラリーへの公開
-    items:
-    - name: パッケージの作成と公開
-      href: how-to/publishing-packages/publishing-a-package.md
-    - name: PowerShellGallery アカウントの作成
-      href: how-to/publishing-packages/creating-an-account.md
-    - name: パッケージをリストから外す
-      href: how-to/publishing-packages/unlisting-packages.md
-    - name: パッケージを削除する
-      href: how-to/publishing-packages/deleting-packages.md
-    - name: パッケージの所有者を管理する
-      href: how-to/publishing-packages/managing-package-owners.md
-  - name: パッケージを操作する
-    items:
-    - name: FileList ビュー
-      href: how-to/working-with-packages/filelist-view.md
-    - name: Azure Automation にデプロイする
-      href: how-to/working-with-packages/deploy-to-azure-automation.md
-    - name: パッケージの手動ダウンロード
-      href: how-to/working-with-packages/manual-download.md
-    - name: ライセンス同意が必要なパッケージ
-      href: how-to/working-with-packages/packages-that-require-license-acceptance.md
-    - name: パッケージの所有者に連絡する
-      href: how-to/working-with-packages/contacting-package-owners.md
-    - name: ソーシャル メディアやコメントを使用したフィードバックの提供
-      href: how-to/working-with-packages/social-media-feedback.md
-  - name: アカウント プロファイルの管理
-    items:
-    - name: PowerShell ギャラリーのアカウント設定
-      href: how-to/managing-profile/managing-account.md
-    - name: API キーの管理
-      href: how-to/managing-profile/creating-apikeys.md
-  - name: ローカルの PowerShellGet リポジトリの操作
-    href: how-to/working-with-local-psrepositories.md
+    - name: ギャラリーのパッケージの検索
+      items:
+        - name: パッケージの検索
+          href: how-to/finding-packages/search-syntax.md
+        - name: 互換性での検索
+          href: how-to/finding-packages/searching-by-compatibility.md
+        - name: 検索結果のフィルター処理
+          href: how-to/finding-packages/filtering-packages.md
+    - name: ギャラリーへの公開
+      items:
+        - name: パッケージの作成と公開
+          href: how-to/publishing-packages/publishing-a-package.md
+        - name: PowerShellGallery アカウントの作成
+          href: how-to/publishing-packages/creating-an-account.md
+        - name: パッケージをリストから外す
+          href: how-to/publishing-packages/unlisting-packages.md
+        - name: パッケージを削除する
+          href: how-to/publishing-packages/deleting-packages.md
+        - name: パッケージの所有者を管理する
+          href: how-to/publishing-packages/managing-package-owners.md
+    - name: パッケージを操作する
+      items:
+        - name: FileList ビュー
+          href: how-to/working-with-packages/filelist-view.md
+        - name: Azure Automation にデプロイする
+          href: how-to/working-with-packages/deploy-to-azure-automation.md
+        - name: パッケージの手動ダウンロード
+          href: how-to/working-with-packages/manual-download.md
+        - name: ライセンス同意が必要なパッケージ
+          href: how-to/working-with-packages/packages-that-require-license-acceptance.md
+        - name: パッケージの所有者に連絡する
+          href: how-to/working-with-packages/contacting-package-owners.md
+        - name: ソーシャル メディアやコメントを使用したフィードバックの提供
+          href: how-to/working-with-packages/social-media-feedback.md
+    - name: アカウント プロファイルの管理
+      items:
+        - name: PowerShell ギャラリーのアカウント設定
+          href: how-to/managing-profile/managing-account.md
+        - name: API キーの管理
+          href: how-to/managing-profile/creating-apikeys.md
+    - name: ローカルの PowerShellGet リポジトリの操作
+      href: how-to/working-with-local-psrepositories.md
 - name: 概念
   items:
-  - name: 公開に関するガイドラインとベスト プラクティス
-    href: concepts/publishing-guidelines.md
-  - name: パッケージのマニフェストとギャラリーの UI
-    href: concepts/package-manifest-affecting-ui.md
-  - name: 特定の PSEditions の必須化
-    items:
-    - name: PSEditions のサポートを使用してスクリプトを記述する
-      href: concepts/script-psedition-support.md
-    - name: PSEditions のサポートを使用してモジュールを記述する
-      href: concepts/module-psedition-support.md
-  - name: ライセンス同意の必須化
-    items:
-    - name: スクリプトでのライセンス同意の必須化
-      href: concepts/script-license-acceptance.md
-    - name: モジュールでのライセンス同意の必須化
-      href: concepts/module-license-acceptance.md
-  - name: パッケージをプレリリースとして定義する
-    items:
-    - name: モジュールをプレリリースとして定義する
-      href: concepts/module-prerelease-support.md
-    - name: スクリプトをプレリリースとして定義する
-      href: concepts/script-prerelease-support.md
-  - name: PSScriptAnalyzer ルール プロファイル
-    href: concepts/scriptanalyzer-rule-profile.md
+    - name: 公開に関するガイドラインとベスト プラクティス
+      href: concepts/publishing-guidelines.md
+    - name: パッケージのマニフェストとギャラリーの UI
+      href: concepts/package-manifest-affecting-ui.md
+    - name: 特定の PSEditions の必須化
+      items:
+        - name: PSEditions のサポートを使用してスクリプトを記述する
+          href: concepts/script-psedition-support.md
+        - name: PSEditions のサポートを使用してモジュールを記述する
+          href: concepts/module-psedition-support.md
+    - name: ライセンス同意の必須化
+      items:
+        - name: スクリプトでのライセンス同意の必須化
+          href: concepts/script-license-acceptance.md
+        - name: モジュールでのライセンス同意の必須化
+          href: concepts/module-license-acceptance.md
+    - name: パッケージをプレリリースとして定義する
+      items:
+        - name: モジュールをプレリリースとして定義する
+          href: concepts/module-prerelease-support.md
+        - name: スクリプトをプレリリースとして定義する
+          href: concepts/script-prerelease-support.md
+    - name: PSScriptAnalyzer ルール プロファイル
+      href: concepts/scriptanalyzer-rule-profile.md
 - name: サポートの入手
   items:
-  - name: 不正報告
-    href: how-to/getting-support/report-abuse.md
-  - name: 争いの解決
-    href: how-to/getting-support/dispute-resolution.md
-  - name: 管理者に連絡する
-    href: how-to/getting-support/contacting-administrators.md
-  - name: トラブルシューティング
-    href: how-to/getting-support/troubleshooting-cmdlets.md
-  - name: NuGet プロバイダーと NuGet.exe をブートストラップする
-    href: how-to/getting-support/bootstrapping-nuget.md
-  - name: GDPR 準拠
-    href: how-to/getting-support/gdpr-dsr-policy.md
+    - name: 不正報告
+      href: how-to/getting-support/report-abuse.md
+    - name: 争いの解決
+      href: how-to/getting-support/dispute-resolution.md
+    - name: 管理者に連絡する
+      href: how-to/getting-support/contacting-administrators.md
+    - name: トラブルシューティング
+      href: how-to/getting-support/troubleshooting-cmdlets.md
+    - name: NuGet プロバイダーと NuGet.exe をブートストラップする
+      href: how-to/getting-support/bootstrapping-nuget.md
+    - name: GDPR 準拠
+      href: how-to/getting-support/gdpr-dsr-policy.md
 - name: ギャラリーに関してよく寄せられる質問
   href: faqs.md
 - name: PowerShellGet コマンドレット
-  href: https://docs.microsoft.com/powershell/module/powershellget/
-ms.openlocfilehash: 8b3d2d121c167f3677d3691c8bc481644b95b204
-ms.sourcegitcommit: 548547b2d5fc73e726bb9fec6175d452a351d975
-ms.translationtype: HT
-ms.contentlocale: ja-JP
-ms.lasthandoff: 12/20/2018
-ms.locfileid: "53655312"
+  href: 'https://docs.microsoft.com/powershell/module/powershellget/'

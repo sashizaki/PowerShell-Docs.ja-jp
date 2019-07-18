@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ef8395aa-4b31-48c0-a0b8-b481fd0b3738
 caps.latest.revision: 15
 ms.openlocfilehash: 159f943f6bfb33c5403b5714380631351523789f
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056993"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063940"
 ---
 # <a name="tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format"></a>TableControl の TableColumnItems の TableColumnItem 要素 (書式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "58056993"
 </TableColumnItem>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`TableColumnItem`要素。
 
@@ -58,7 +58,7 @@ ms.locfileid: "58056993"
 
 行の各列では、オブジェクトまたはスクリプトのプロパティを指定できます。 子要素が指定されていない場合は、項目が、プレース ホルダーとデータは表示されません。
 
-テーブル ビューのコンポーネントに関する詳細については、[テーブル ビューを作成する](./creating-a-table-view.md)を参照してください。
+テーブル ビューのコンポーネントに関する詳細については、次を参照してください。[テーブル ビューを作成する](./creating-a-table-view.md)します。
 
 ## <a name="example"></a>例
 

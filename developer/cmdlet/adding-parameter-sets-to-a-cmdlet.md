@@ -10,34 +10,14 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: f0bff11618c18bf53b9c2a185445795a17306fa3
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: d330b9be1da9fbb36be324e68fd6cf2d874fc06b
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054987"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733814"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>コマンドレットにパラメーター セットを追加する
-
-このセクションは、停止 Proc コマンドレットにパラメーターの設定を追加する方法を説明します (で説明されている[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md))。 このプログラマー ガイドで説明されているその他の停止 Proc コマンドレットと同様に、このコマンドレットは Get-proc コマンドレットを使用して取得されるプロセスの停止を試みます (で説明されている[最初のコマンドレットを作成](./creating-a-cmdlet-without-parameters.md))。
-
-このセクションのトピックで、次のとおりです。
-
-- [パラメーターのセットについて知っておくべきこと](#Adding-Parameter-Sets-to-a-Cmdlet)
-
-- [コマンドレット クラスを宣言します。](#Declaring-the-Cmdlet-Class)
-
-- [コマンドレットのパラメーターを宣言します。](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [入力処理メソッドをオーバーライドします。](#Overriding-an-Input-Processing-Method)
-
-- [コード サンプル](#Declaring-the-Parameters-of-the-Cmdlet)
-
-- [オブジェクトの種類を定義して、書式設定](#Defining-Object-Types-and-Formatting)
-
-- [コマンドレットを構築](#Building-the-Cmdlet)
-
-- [テスト コマンドレット](#Testing-the-Cmdlet)
 
 ## <a name="things-to-know-about-parameter-sets"></a>パラメーターのセットについて知っておくべきこと
 
@@ -54,7 +34,7 @@ Windows PowerShell では、同時に動作するパラメーターのグルー�
 コマンドレットの作成の最初の手順は常に、コマンドレットの名前を付けると、コマンドレットを実装する .NET クラスを宣言します。 このコマンドレットでは、"Stop"ライフ サイクルの動詞はコマンドレットは、システム プロセスを停止するために使用されます。 "Proc"名詞形式の名前は、コマンドレットは、プロセスで機能するために使用されます。 次の宣言では、コマンドレット クラスの名前、コマンドレットの動詞と名詞の名前が反映されることに注意してください。
 
 > [!NOTE]
-> 承認されたコマンドレット動詞名の詳細については、[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)を参照してください。
+> 承認されたコマンドレット動詞名の詳細については、次を参照してください。[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)します。
 
 次のコードは、このコマンドレットで停止 Proc クラス定義です。
 
@@ -74,7 +54,7 @@ Public Class StopProcCommand
 
 ## <a name="declaring-the-parameters-of-the-cmdlet"></a>コマンドレットのパラメーターを宣言します。
 
-このコマンドレットは、コマンドレットが (これらのパラメーターは、パラメーター セットも定義) への入力として必要な 3 つのパラメーターを定義と同様に、`Force`コマンドレットが何を管理するパラメーターと`PassThru`コマンドレットに送信するかどうかを決定するパラメーター、オブジェクトをパイプラインを通じてに出力します。 既定では、このコマンドレットは、パイプラインを通じてオブジェクトを通過しません。 これらの最後の 2 つのパラメーターの詳細については、[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)を参照してください。
+このコマンドレットは、コマンドレットが (これらのパラメーターは、パラメーター セットも定義) への入力として必要な 3 つのパラメーターを定義と同様に、`Force`コマンドレットが何を管理するパラメーターと`PassThru`コマンドレットに送信するかどうかを決定するパラメーター、オブジェクトをパイプラインを通じてに出力します。 既定では、このコマンドレットは、パイプラインを通じてオブジェクトを通過しません。 これらの最後の 2 つのパラメーターの詳細については、次を参照してください。[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)します。
 
 ### <a name="declaring-the-name-parameter"></a>Name パラメーターを宣言します。
 
@@ -237,11 +217,11 @@ Select ステートメントによって呼び出されるヘルパー メソッ
 
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類を定義して、書式設定
 
-Windows PowerShell は、.NET オブジェクトを使用してコマンドレット間で情報を渡します。 その結果、コマンドレットは、独自の型を定義する必要がありますか、コマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)を参照してください。
+Windows PowerShell は、.NET オブジェクトを使用してコマンドレット間で情報を渡します。 その結果、コマンドレットは、独自の型を定義する必要がありますか、コマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](/previous-versions//ms714665(v=vs.85))します。
 
 ## <a name="building-the-cmdlet"></a>コマンドレットを構築
 
-コマンドレットを実装するには、後にする必要がありますに登録する Windows PowerShell Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)を参照してください。
+コマンドレットを実装するには、後にする必要がありますに登録する Windows PowerShell Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](/previous-versions//ms714644(v=vs.85))します。
 
 ## <a name="testing-the-cmdlet"></a>テスト コマンドレット
 
@@ -271,10 +251,10 @@ Windows PowerShell コマンドレットが登録されて、コマンドライ�
 
 [システムを変更するコマンドレットを作成します。](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Windows PowerShell コマンドレットを作成する方法](http://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Windows PowerShell コマンドレットを作成する方法](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[オブジェクトの種類を拡張して、書式設定](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[オブジェクトの種類を拡張して、書式設定](/previous-versions//ms714665(v=vs.85))
 
-[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

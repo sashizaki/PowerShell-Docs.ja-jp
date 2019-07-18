@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 914917f7-0efc-4d1f-88bd-de714bedd98f
 caps.latest.revision: 15
 ms.openlocfilehash: 29dbdbd335511e4ca2706a625541554825838f23
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858168"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065157"
 ---
 # <a name="name-element-for-selectionset-format"></a>SelectionSet の Name 要素 (書式)
 
@@ -27,7 +27,7 @@ SelectionSet (形式) の構成要素 (形式) SelectionSets 要素 (形式) Sel
 <Name>Name of selection set</Name>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`Name`要素。
 
@@ -51,7 +51,7 @@ SelectionSet (形式) の構成要素 (形式) SelectionSets 要素 (形式) Sel
 
 ## <a name="remarks"></a>コメント
 
-ここで指定した名前で使用されます、`SelectionSetName`要素。 ビューの定義によって、ビューで使用できる選択セット (ビューが複数の定義を持つ) は、選択条件を指定する場合またはします。 選択範囲のセットの詳細については、[オブジェクト設定を定義する](./defining-selection-sets.md)を参照してください。
+ここで指定した名前で使用されます、`SelectionSetName`要素。 ビューの定義によって、ビューで使用できる選択セット (ビューが複数の定義を持つ) は、選択条件を指定する場合またはします。 選択範囲のセットの詳細については、次を参照してください。[オブジェクト設定を定義する](./defining-selection-sets.md)します。
 
 ## <a name="example"></a>例
 

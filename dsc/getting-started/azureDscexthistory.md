@@ -3,12 +3,12 @@ description: Azure の Desired State Configuration (DSC) 拡張機能のバー�
 ms.date: 06/21/2018
 keywords: dsc, powershell, azure, 拡張機能
 title: Azure DSC 拡張機能のバージョン履歴
-ms.openlocfilehash: 2c076e3beccc15e99af2327820916d7a4d28da68
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.openlocfilehash: 6d821e53e9206d99425e8c83f6d90986c7c28b63
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55682481"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734665"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration 拡張機能のバージョン履歴
 
@@ -42,7 +42,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **新機能:**
   - 副状態やその他の軽微なバグ修正に関する拡張メタデータが改善されました。
 
-## <a name="supported-versions"></a>のサポートされているバージョン
+## <a name="supported-versions"></a>サポートされているバージョン
 
 > [!WARNING]
 > バージョン 2.4 から 2.13 では、2016 年 8 月に署名証明書が失効した WMF 5.0 パブリック プレビューを使用しています。  この問題の詳細については、[ブログの投稿](https://blogs.msdn.microsoft.com/powershell/2016/05/24/azure-dsc-extension-versions-2-4-up-to-2-13-will-retire-in-august/)を参照してください。
@@ -50,9 +50,9 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 ### <a name="version-275"></a>バージョン 2.75
 
 - **リリース日:** 2018 年 3 月 5 日
-- **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Windows Client 7/8.1/10 で、Nano Server
+- **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Windows クライアント 7/8.1/10、Nano Server
 - **WMF のサポート:** WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
-- **環境:** Azure
+- **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - 最近、GitHub が TLS 1.2 に移行されてから、Azure Marketplace で入手できる DIY Resource Manager テンプレートを使用して VM を Azure Automation DSC にオンボードすることができなくなりました。また DSC 拡張機能を使用して GitHub でホストされている構成を取得できなくなりました。 拡張機能を展開する際に、次のようなエラーが表示されます。
@@ -87,9 +87,9 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 ### <a name="version-270---272"></a>バージョン 2.70 から 2.72
 
 - **リリース日:** 2017 年 11 月 13 日
-- **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Windows Client 7/8.1/10 で、Nano Server
+- **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Windows クライアント 7/8.1/10、Nano Server
 - **WMF のサポート:** WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
-- **環境:** Azure
+- **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - ポータルの UI と Resource Manager テンプレートで DSC Azure Automation を使いやすくなるバグ修正と改善。  詳細については、DSC 拡張機能ドキュメントの「[既定の構成スクリプト](/azure/virtual-machines/extensions/dsc-overview)」を参照してください。
@@ -97,9 +97,9 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 ### <a name="version-226"></a>バージョン 2.26
 
 - **リリース日:** 2017 年 6 月 9 日
-- **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Windows Client 7/8.1/10 で、Nano Server
+- **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Windows クライアント 7/8.1/10、Nano Server
 - **WMF のサポート:** WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
-- **環境:** Azure
+- **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - テレメトリの改善。
@@ -107,9 +107,9 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 ### <a name="version-225"></a>バージョン 2.25
 
 - **リリース日:** 2017 年 6 月 2 日
-- **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Windows Client 7/8.1/10 で、Nano Server
+- **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Windows クライアント 7/8.1/10、Nano Server
 - **WMF のサポート:** WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
-- **環境:** Azure
+- **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - いくつかのバグ修正とその他の軽微な改善が加えられました。
@@ -119,7 +119,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **リリース日:** 2017 年 4 月 13 日
 - **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Nano Server
 - **WMF のサポート:** WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
-- **環境:** Azure
+- **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - VM UUID と DSC エージェント ID を拡張機能のメタデータとして公開します。 その他の軽微な改善が加えられました。
@@ -129,7 +129,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **リリース日:** 2017 年 3 月 15 日
 - **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Nano Server
 - **WMF のサポート:** WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
-- **環境:** Azure
+- **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - 多数のバグ修正とその他の改善が加えられました。
@@ -139,7 +139,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **リリース日:** 2017 年 2 月 8 日
 - **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Nano Server
 - **WMF のサポート:** WMF 5.1、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
-- **環境:** Azure
+- **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.1](https://blogs.msdn.microsoft.com/powershell/2016/12/06/wmf-5-1-releasing-january-2017/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - DSC 拡張機能は WMF 5.1 をサポートするようになりました。
@@ -150,7 +150,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **リリース日:** 2016 年 12 月 2 日
 - **OS のサポート:** Windows Server 2016、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1、Nano Server
 - **WMF のサポート:** WMF 5.1 Preview、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
-- **環境:** Azure
+- **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます (WMF をインストールするには再起動が必要です)。 Nano Server の場合は、DSC ロールが VM にインストールされます。
 - **新機能:**
   - Nano Server で DSC 拡張機能を使用できるようになりました。 このバージョンには、Nano Server でこの拡張機能を実行するためのコードの変更が含まれています。
@@ -161,10 +161,10 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **リリース日:** 2016 年 8 月 2 日
 - **OS のサポート:** Windows Server 2016 Technical Preview、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1
 - **WMF のサポート:** WMF 5.1 Preview、WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
-- **環境:** Azure
+- **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 Technical Preview に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます (WMF をインストールするには再起動が必要です)。
 - **新機能:**
-  - WMF 5.1 プレビューのサポート。 このバージョンが最初に公開されたときは任意のアップグレードであり、WMF 5.1 プレビューをインストールするには Resource Manager テンプレートで Wmfversion = '5.1PP' を指定する必要がありました。 Wmfversion = 'latest' を指定すると、現在でも [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます。 WMF 5.1 プレビューの詳細については、[こちらのブログ]( https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/)を参照してください。
+  - WMF 5.1 プレビューのサポート。 このバージョンが最初に公開されたときは任意のアップグレードであり、WMF 5.1 プレビューをインストールするには Resource Manager テンプレートで Wmfversion = '5.1PP' を指定する必要がありました。 Wmfversion = 'latest' を指定すると、現在でも [WMF 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます。 WMF 5.1 プレビューの詳細については、[こちらのブログ](https://blogs.msdn.microsoft.com/powershell/2016/07/16/announcing-windows-management-framework-wmf-5-1-preview/)を参照してください。
   - 他にも軽微な修正や改善が加えられました。
 
 ### <a name="version--219"></a>バージョン 2.19
@@ -172,7 +172,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **リリース日:** 2016 年 6 月 3 日
 - **OS のサポート:** Windows Server 2016 Technical Preview、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1
 - **WMF のサポート:** WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
-- **環境**Azure では、Azure China、Azure Government
+- **環境**Azure、Azure 中国、Azure Government
 - **備考:** このバージョンでは、Windows Server 2016 Technical Preview に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます (WMF をインストールするには再起動が必要です)。
 - **新機能:**
   - DSC 拡張機能が Azure 中国に搭載されました。 このバージョンには、主に Azure 中国上でこの拡張機能を実行するための修正が含まれています。
@@ -182,7 +182,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **リリース日:** 2016 年 6 月 3 日
 - **OS のサポート:** Windows Server 2016 Technical Preview、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1
 - **WMF のサポート:** WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
-- **環境:** Azure
+- **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 Technical Preview に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます (WMF をインストールするには再起動が必要です)。
 - **新機能:**
   - テレメトリの修正プログラムのダウンロード中 (既知の Azure DNS の問題) またはインストール中にエラーが発生した場合、テレメトリがブロック不可になります。
@@ -194,18 +194,18 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **リリース日:** 2016 年 4 月 26 日
 - **OS のサポート:** Windows Server 2016 Technical Preview、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1
 - **WMF のサポート:** WMF 5.0 RTM、WMF 4.0 Update、WMF 4.0
-- **環境:** Azure
+- **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 Technical Preview に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます (WMF をインストールするには再起動が必要です)。
 - **新機能:**
   - WMF 4.0 Update のサポート。 WMF 4.0 Update の詳細については、[こちらのブログ](https://blogs.msdn.microsoft.com/powershell/2016/01/19/windows-management-framework-wmf-4-0-update-now-available-for-windows-server-2012-windows-server-2008-r2-sp1-and-windows-7-sp1/)を参照してください。
-  - DSC 拡張機能のインストール中または拡張機能のインストール後の DSC 構成の適用中にエラーが発生した場合、ロジックを再試行します。 この変更の一環として、前回のインストールが失敗した場合にインストールが再試行され、以前に失敗した DSC の構成が再実行されるようになります。拡張機能のインストールが完了状態 (成功/エラー) に達するまで、または新しい要求が実行されるまで、最大 3 回実行されます。 無効なユーザー設定またはユーザー入力によって拡張機能が失敗した場合は、再試行されません。 この場合、新しい要求と正しいユーザー設定で拡張機能を再度呼び出す必要があります。 注: DSC 拡張機能は、再試行のために Azure VM エージェントに依存します。 Azure VM エージェントは、成功状態またはエラー状態に達するまで、最後に失敗した要求を含む拡張機能を呼び出します。
+  - DSC 拡張機能のインストール中または拡張機能のインストール後の DSC 構成の適用中にエラーが発生した場合、ロジックを再試行します。 この変更の一環として、前回のインストールが失敗した場合にインストールが再試行され、以前に失敗した DSC の構成が再実行されるようになります。拡張機能のインストールが完了状態 (成功/エラー) に達するまで、または新しい要求が実行されるまで、最大 3 回実行されます。 無効なユーザー設定またはユーザー入力によって拡張機能が失敗した場合は、再試行されません。 この場合、新しい要求と正しいユーザー設定で拡張機能を再度呼び出す必要があります。 注: DSC 拡張機能は、再試行については Azure VM エージェントに依存しています。 Azure VM エージェントは、成功状態またはエラー状態に達するまで、最後に失敗した要求を含む拡張機能を呼び出します。
 
-### <a name="version-216"></a>2.16 のバージョン
+### <a name="version-216"></a>2\.16 のバージョン
 
 - **リリース日:** 2016 年 4 月 21 日
 - **OS のサポート:** Windows Server 2016 Technical Preview、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1
 - **WMF のサポート:** WMF 5.0 RTM、WMF 4.0
-- **環境:** Azure
+- **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 Technical Preview に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます (WMF をインストールするには再起動が必要です)。
 - **新機能:**
   - エラー処理が改善され、その他の軽微なバグが修正されました。
@@ -216,7 +216,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **リリース日:** 2016 年 3 月 14 日
 - **OS のサポート:** Windows Server 2016 Technical Preview、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1
 - **WMF のサポート:** WMF 5.0 RTM、WMF 4.0
-- **環境:** Azure
+- **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 Technical Preview に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます (WMF をインストールするには再起動が必要です)。
 - **新機能:**
   - 拡張機能バージョン 2.14 には、WMF RTM をインストールするための変更が含まれていました。 拡張バージョン 2.13.2.0 から 2.14.0.0 へのアップグレード中に、一部の DSC コマンドレットが失敗することや、構成が "指定されたプロパティ値のインスタンスが見つかりません" というエラーで失敗することがあります。 詳細については、[DSC のリリース ノート](https://msdn.microsoft.com/en-us/powershell/wmf/limitation_dsc)を参照してください。 これらの問題の回避策が 2.15 バージョンで追加されました。
@@ -229,7 +229,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **リリース日:** 2016 年 2 月 25 日
 - **OS のサポート:** Windows Server 2016 Technical Preview、Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1
 - **WMF のサポート:** WMF 5.0 RTM、WMF 4.0
-- **環境:** Azure
+- **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 Technical Preview に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます (WMF をインストールするには再起動が必要です)。
 - **新機能:**
   - WMF RTM を使用します。

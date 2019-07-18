@@ -12,11 +12,11 @@ helpviewer_keywords:
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
 ms.openlocfilehash: 3168275423dc65fcb2e41dedd9bea275ede58397
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068642"
 ---
 # <a name="cmdlet-class-declaration"></a>コマンドレットのクラス宣言
 
@@ -31,13 +31,13 @@ Microsoft .NET Framework クラスが指定することでコマンドレット�
 
 コマンドレットの名前に名詞などでなければなりません具体的である場合は、汎用の名詞と*server*、他の同様のリソースからリソースを識別する短いプレフィックスを追加することをお勧めします。 たとえば、プレフィックス付きの名詞を含むコマンドレット名は`Get-SQLServer`します。 一般的な動詞を使用して特定の名詞を組み合わせたには、その操作によって、コマンドレットをすばやく検索し、そのリソースによって不要なコマンドレット名の重複を回避しながら、コマンドレットを識別するユーザーができるようにします。
 
-コマンドレット名では使用できませんの特殊文字の一覧は、[開発ガイドラインのために必要な](./required-development-guidelines.md)を参照してください。
+コマンドレット名では使用できませんの特殊文字の一覧は、次を参照してください。[開発ガイドラインのために必要な](./required-development-guidelines.md)します。
 
 ## <a name="verbs"></a>[動詞]
 
 動詞を指定すると、開発のガイドラインでは、Windows PowerShell によって提供される定義済みの動詞のいずれかを使用する必要があります。 これらの定義済みの動詞のいずれかは、作成したコマンドレットと Microsoft によっては他のユーザーが記述されたコマンドレット一貫性が確保されます。 たとえば、"Get"動詞は、データを取得するコマンドレットが使用されます。
 
-動詞に関するガイドラインの詳細については、[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)を参照してください。 コマンドレット名では使用できませんの特殊文字の一覧は、[開発ガイドラインのために必要な](./required-development-guidelines.md)を参照してください。
+動詞に関するガイドラインの詳細については、次を参照してください。[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)します。 コマンドレット名では使用できませんの特殊文字の一覧は、次を参照してください。[開発ガイドラインのために必要な](./required-development-guidelines.md)します。
 
 ## <a name="supporting-windows-powershell-functionality"></a>Windows PowerShell の機能をサポートしています。
 

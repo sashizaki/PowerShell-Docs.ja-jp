@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 8c012115-9241-4851-9015-841eb508faf3
 caps.latest.revision: 10
 ms.openlocfilehash: d6adf2fa62384d671fd6a07dd185a941daa44cec
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858288"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064137"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion の EntrySelectedBy の SelectionCondition 要素 (書式)
 
@@ -32,7 +32,7 @@ ms.locfileid: "56858288"
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`SelectionCondition`要素。 1 つを指定する必要があります`PropertyName`または`ScriptBlock`要素。 `SelectionSetName`と`TypeName`要素は省略可能です。 要素のいずれかのいずれかを指定できます。
 
@@ -65,9 +65,9 @@ ms.locfileid: "56858288"
 
 - 選択条件が .NET 型の任意の数を指定するか、選択範囲を設定するが、両方を指定することはできません。
 
-選択条件を使用する方法の詳細については、[Diplaying データの条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
+選択条件を使用する方法の詳細については、次を参照してください。 [Diplaying データの条件を定義する](./defining-conditions-for-displaying-data.md)します。
 
-ワイド ビューの他のコンポーネントに関する詳細については、[表示幅が広い](./creating-a-wide-view.md)を参照してください。
+ワイド ビューの他のコンポーネントに関する詳細については、次を参照してください。[表示幅が広い](./creating-a-wide-view.md)します。
 
 ## <a name="see-also"></a>参照
 

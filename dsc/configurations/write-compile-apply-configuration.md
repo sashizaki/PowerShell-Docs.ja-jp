@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc, powershell, 構成, サービス, セットアップ
 title: 構成の作成、コンパイル、適用
-ms.openlocfilehash: c884af9d92ac375457d6eb75d815ae9a9159e273
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 947308efa165543571801c88a922daf44fa88be0
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795421"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080018"
 ---
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -60,13 +60,13 @@ DSC 構成をノードに適用するには、最初にコンパイルを行い�
 構成を実行するために、"HelloWorld.ps1" スクリプトを現在の範囲に*ドット ソース*で使用する必要があります。
 詳細については、[スクリプト](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)に関するページを参照してください。
 
-`. ` (ドット、スペース) の後に保存した場所のパスを入力することで、"HelloWorld.ps1" スクリプトを<!-- markdownlint-disable MD038 -->
-*ドット ソース*で使用します。 その後、関数のように呼び出すことで、構成を実行することができます。
+<!-- markdownlint-disable MD038 -->
+`. ` (ドット、スペース) の後に保存した場所のパスを入力することで、"HelloWorld.ps1" スクリプトを "*ドット ソース*" で使用します。 その後、関数のように呼び出すことで、構成を実行することができます。
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
-. C:\Scripts\WebsiteTest.ps1
-HelloWolrd
+. C:\Scripts\HelloWorld.ps1
+HelloWorld
 ```
 
 これにより、次の出力が生成されます。

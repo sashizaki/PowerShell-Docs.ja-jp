@@ -2,12 +2,12 @@
 title: VSCode と PowerShell でのファイルのエンコードの概要
 description: VSCode と PowerShell でのファイルのエンコードの構成
 ms.date: 02/28/2019
-ms.openlocfilehash: ec06d8f5d446a92e6cd9d2d70b11260d1d0afda8
-ms.sourcegitcommit: 396509cd0d415acc306b68758b6f833406e26bf5
+ms.openlocfilehash: 6a00e45b3700f72f78e2fbcdf6e317f3a17b53c0
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58320406"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058439"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>VSCode と PowerShell でのファイルのエンコードの概要
 
@@ -102,7 +102,7 @@ BOM はオプションであり、Linux の世界ではそれほど採用され�
 
 VSCode の既定のエンコードは BOM なしの UTF-8 です。
 
-[VSCode のエンコード][]を設定するには、VSCode の設定に移動し (<kbd>Ctrl<kbd>+</kbd>、</kbd>)、`"files.encoding"` 設定を指定します。
+[VSCode のエンコード][]を設定するには、VSCode の設定に移動し (<kbd>Ctrl</kbd>+<kbd>、</kbd>)、`"files.encoding"` 設定を指定します。
 
 ```json
 "files.encoding": "utf8bom"

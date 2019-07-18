@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
 ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080659"
 ---
 # <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a>Management OData Web サービスのカスタム認可を実装する
 
@@ -134,7 +134,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ### <a name="role-based-authorization"></a>ロール ベースの承認
 
-次の例では、ロール ベースの承認ポリシーを実装します。 ポリシーは、web.config でメイン アプリケーション ディレクトリ内にある XML ファイルと MOF および XML のマッピング スキーマ ファイルで定義されます。 承認のスキーマ ファイルを構成する方法については、[を構成するロール ベースの承認](./configuring-role-based-authorization.md)を参照してください。 サンプルの最初の部分を実装して、 [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)と[Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)メソッド。 この場合は、インターフェイス メソッドはメソッドを呼び出す、`RbacSystem`クラス (以下に定義された) ユーザーのアクセス許可のチェックの実際の作業を実行します。
+次の例では、ロール ベースの承認ポリシーを実装します。 ポリシーは、web.config でメイン アプリケーション ディレクトリ内にある XML ファイルと MOF および XML のマッピング スキーマ ファイルで定義されます。 承認のスキーマ ファイルを構成する方法については、次を参照してください。[を構成するロール ベースの承認](./configuring-role-based-authorization.md)します。 サンプルの最初の部分を実装して、 [Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)と[Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)メソッド。 この場合は、インターフェイス メソッドはメソッドを呼び出す、`RbacSystem`クラス (以下に定義された) ユーザーのアクセス許可のチェックの実際の作業を実行します。
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins

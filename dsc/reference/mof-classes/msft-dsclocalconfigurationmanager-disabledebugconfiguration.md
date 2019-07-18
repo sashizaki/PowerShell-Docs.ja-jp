@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: MSFT_DSCLocalConfigurationManager クラスの DisableDebugConfiguration メソッド
-ms.openlocfilehash: ec5a401de4cb93f302f8572c0408e3f32d8876ad
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+title: DisableDebugConfiguration メソッド
+ms.openlocfilehash: e3eab98c734b3fd1593ceb2b5d4b40fa69a3bf97
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047721"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727163"
 ---
-# <a name="disabledebugconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの DisableDebugConfiguration メソッド
+# <a name="disabledebugconfiguration-method"></a>DisableDebugConfiguration メソッド
 
 DSC リソースのデバッグを無効にします。
 
@@ -33,9 +33,9 @@ uint32 DisableDebugConfiguration();
 
 ## <a name="requirements"></a>要件
 
-MOF**DscCore.mof
+**MOF:** DscCore.mof
 
-**［名前空間］:Root \microsoft\windows\desiredstateconfiguration
+**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

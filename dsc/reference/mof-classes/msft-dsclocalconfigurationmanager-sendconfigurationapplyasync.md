@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApplyAsync メソッド
-ms.openlocfilehash: b028079cf826719967858f50e357b441ba8f9d79
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+title: SendConfigurationApplyAsync メソッド
+ms.openlocfilehash: c0e6dc9418757ee719e848fa8e7006dd73d91ad8
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047673"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734309"
 ---
-# <a name="sendconfigurationapplyasync-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの SendConfigurationApplyAsync メソッド
+# <a name="sendconfigurationapplyasync-method"></a>SendConfigurationApplyAsync メソッド
 
 構成ドキュメントを管理ノードに非同期的に送信し、構成エージェントを使用して構成を適用します。
 
@@ -41,9 +41,9 @@ uint32 SendConfigurationApplyAsync(
 
 ## <a name="requirements"></a>要件
 
-MOF**DscCore.mof
+**MOF:** DscCore.mof
 
-**［名前空間］:Root \microsoft\windows\desiredstateconfiguration
+**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

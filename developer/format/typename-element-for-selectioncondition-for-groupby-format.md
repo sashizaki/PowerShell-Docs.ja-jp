@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 290d38e3-b9bd-4382-9671-2e28b32b7260
 caps.latest.revision: 6
 ms.openlocfilehash: a4036b1e9de85da7e0029e02cca9e0eaed462f70
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083775"
 ---
 # <a name="typename-element-for-selectioncondition-for-groupby-format"></a>GroupBy の SelectionCondition の TypeName 要素 (書式)
 
@@ -28,7 +28,7 @@ ms.locfileid: "56858808"
 
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`TypeName`要素。
 
@@ -52,7 +52,7 @@ ms.locfileid: "56858808"
 
 ## <a name="remarks"></a>コメント
 
-この要素が指定されている場合は指定できません、`SelectionSetName`要素。 選択条件を定義する詳細については、[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
+この要素が指定されている場合は指定できません、`SelectionSetName`要素。 選択条件を定義する詳細については、次を参照してください。[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)します。
 
 ## <a name="see-also"></a>参照
 

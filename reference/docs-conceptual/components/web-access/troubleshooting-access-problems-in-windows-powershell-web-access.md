@@ -2,16 +2,16 @@
 ms.date: 08/23/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
-ms.openlocfilehash: c9b98c7a1685679eb88b718de0351154cb84e92e
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 66e913504cf0c34f8d9ab18b088fb06173aca24c
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402533"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733854"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
 
-更新:2013 年 6 月 24日 (改訂、2017 年 8 月 23 日)
+更新: 2013 年 6 月 24 日 (改訂: 2017 年 8 月 23 日)
 
 適用先:Windows Server 2012 R2、Windows Server 2012
 
@@ -35,11 +35,11 @@ ms.locfileid: "53402533"
 
   ユーザーが接続しようとしているコンピューターでリモート管理が有効になっていることを確認してください。
 
-  詳細については、「[リモート処理用にコンピューターを構成する方法](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting)」を参照してください。
+  詳細については、「[リモート処理用にコンピューターを構成する方法](/powershell/module/microsoft.powershell.core/about/about_remote_requirements#how-to-configure-your-computer-for-remoting)」を参照してください。
 
 ## <a name="internal-server-error"></a>内部サーバー エラー
 
-ユーザーが Internet Explorer ウィンドウで Windows PowerShell Web Access にサインインしようとすると、**[内部サーバー エラー]** ページが表示されるか、*Internet Explorer* が応答しなくなる。
+ユーザーが Internet Explorer ウィンドウで Windows PowerShell Web Access にサインインしようとすると、 **[内部サーバー エラー]** ページが表示されるか、*Internet Explorer* が応答しなくなる。
 
 この問題は Internet Explorer に限られている。
 
@@ -52,13 +52,13 @@ ms.locfileid: "53402533"
 1. [Internet Explorer 10 をインストールし、実行します](https://ie.microsoft.com/testdrive/info/downloads/Default.html)。
 1. Internet Explorer の **[ドキュメント モード]** 設定を *[IE10 標準]* に変更します。
    1. **F12** キーを押して開発者ツール コンソールを開きます。
-   1. Internet Explorer 10 で、**[ブラウザー モード]** をクリックし、*[Internet Explorer 10]* をクリックします。
-   1. **[ドキュメント モード]**、*[IE10 標準]* の順にクリックします。
+   1. Internet Explorer 10 で、 **[ブラウザー モード]** をクリックし、 *[Internet Explorer 10]* をクリックします。
+   1. **[ドキュメント モード]** 、 *[IE10 標準]* の順にクリックします。
    1. もう一度 **F12** キーを押して開発者ツール コンソールを閉じます。
 1. Internet Explorer 10 の自動プロキシ構成を無効にします。
-   1. **[ツール]**、 **[インターネット オプション]** の順にクリックします。
-   1. **[インターネット オプション]** ダイアログ ボックスの **[接続]** タブで、**[LAN の設定]** をクリックします。
-   1. **[設定を自動的に検出する]** チェック ボックスをオフにします。 **[OK]** をクリックし、もう一度 **[OK]** をクリックして、*[インターネット オプション]* ダイアログ ボックスを閉じます。
+   1. **[ツール]** 、 **[インターネット オプション]** の順にクリックします。
+   1. **[インターネット オプション]** ダイアログ ボックスの **[接続]** タブで、 **[LAN の設定]** をクリックします。
+   1. **[設定を自動的に検出する]** チェック ボックスをオフにします。 **[OK]** をクリックし、もう一度 **[OK]** をクリックして、 *[インターネット オプション]* ダイアログ ボックスを閉じます。
 
 ## <a name="cannot-connect-to-a-remote-workgroup-computer"></a>リモートのワークグループ コンピューターに接続できない
 
@@ -111,7 +111,7 @@ ComputerName | サーバー名
 
 ### <a name="gateway-credentials"></a>ゲートウェイの資格情報
 
-次のいずれかの形式の資格情報を使用して、対象コンピューターとしてゲートウェイ サーバーにサインインします。
+次のいずれかの形式の資格情報を使用して、ターゲット コンピューターとしてゲートウェイ サーバーにサインインします。
 
 - Server\_name\\user\_name
 - Localhost\\user\_name
@@ -126,12 +126,12 @@ ComputerName | サーバー名
 
 ## <a name="cannot-sign-in-with-rule-as-an-ipv6-address-with-a-domain"></a>規則の IPv6 アドレスにドメインが含まれるとき、サインインできない
 
-ドメインを伴う IPv6 アドレスとして承認規則内で指定されている対象コンピューターにサインインできない。
+ドメインを含む IPv6 アドレスとして承認規則内で指定されているターゲット コンピューターにサインインできません。
 
 承認規則では、ドメイン名形式の IPv6 アドレスがサポートされていません。
 
 IPv6 アドレスを使用して対象コンピューターを指定するには、承認規則内で元の (コロンを含む) IPv6 アドレスを使用します。
-Windows PowerShell Web Access のサインイン ページでは、ドメイン名形式の IPv6 アドレスも数値形式の (コロンを含む) IPv6 アドレスも対象コンピューター名としてサポートされていますが、承認規則内では異なります。
+Windows PowerShell Web Access のサインイン ページでは、ドメイン名形式の IPv6 アドレスも数値形式の (コロンを含む) IPv6 アドレスもターゲット コンピューター名としてサポートされていますが、承認規則内では異なります。
 
 IPv6 アドレスの詳細については、[IPv6 の動作のしくみに関するページ](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx)を参照してください。
 
@@ -139,4 +139,4 @@ IPv6 アドレスの詳細については、[IPv6 の動作のしくみに関す
 
 - [Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
 - [Web ベースの Windows PowerShell コンソールの使用](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-- [about_Remote_Requirements](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)

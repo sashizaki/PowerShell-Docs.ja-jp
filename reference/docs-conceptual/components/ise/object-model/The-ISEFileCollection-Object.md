@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: ISEFileCollection オブジェクト
-ms.assetid: 0f86a427-ea38-4bce-85f8-06c98d30d508
-ms.openlocfilehash: eb4b2784820cbe51f662fd2fd945d8760ef9dbff
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 96db51ee921cc0fa34803091d563bc6e118643b6
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403493"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030520"
 ---
 # <a name="the-isefilecollection-object"></a>ISEFileCollection オブジェクト
 
@@ -40,7 +39,7 @@ Windows PowerShell ISE 2.0 以降でサポートされています。
 
 **File** - 文字列。コレクションから削除する ISEFile ファイル。 ファイルが保存されていない場合、このメソッドにより例外がスローされます。 **Force** スイッチ パラメーターを使用すると、保存されていないファイルが強制的に削除されます。
 
-**\[Force\]** - 省略可能な Boolean。**$true** に設定すると、最後に使用してからファイルが保存されていない場合でも、そのファイルを削除する権限が付与されます。 既定値は **$false** です。
+**\[Force\]** - 省略可能な Boolean。 **$true** に設定すると、最後に使用してからファイルが保存されていない場合でも、そのファイルを削除する権限が付与されます。 既定値は **$false** です。
 
 ```powershell
 # Removes the first opened file from the file collection associated with the current PowerShell tab.

@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 9abb63b8-6d02-4e24-9c0e-2d15a04e9051
 caps.latest.revision: 8
 ms.openlocfilehash: 7a36f548a3eccdf2c9cad04a8bfe28bf4e8d6dfd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860108"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083741"
 ---
 # <a name="wide-view-basic"></a>ワイド ビュー (基本)
 
-この例を表示する基本的なワイド ビューを実装する方法を示しています、 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)によって返されるオブジェクト、`Get-Service`コマンドレット。 ワイド ビューのコンポーネントに関する詳細については、[ワイド ビューを作成する](./creating-a-wide-view.md)を参照してください。
+この例を表示する基本的なワイド ビューを実装する方法を示しています、 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)によって返されるオブジェクト、`Get-Service`コマンドレット。 ワイド ビューのコンポーネントに関する詳細については、次を参照してください。[ワイド ビューを作成する](./creating-a-wide-view.md)します。
 
 ### <a name="to-load-this-formatting-file"></a>この書式設定ファイルを読み込む
 

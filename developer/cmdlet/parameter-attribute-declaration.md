@@ -12,12 +12,12 @@ helpviewer_keywords:
 - Parameter attribute
 ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
 caps.latest.revision: 13
-ms.openlocfilehash: a3488d5fb3f7eb3df28d0242d6c39d07145a3c8d
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.openlocfilehash: 81b1ed95669f51ba554f6f99031d098e239f02e0
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "56863618"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735135"
 ---
 # <a name="parameter-attribute-declaration"></a>パラメーター属性の宣言
 
@@ -36,7 +36,7 @@ ms.locfileid: "56863618"
 
 `ParameterSetName` ([System.String](/dotnet/api/System.String)) という名前のパラメーター (省略可能)。 パラメーターの設定をこのコマンドレットのパラメーターが属していることを指定します。 パラメーター セットが指定されていない場合、パラメーターは、すべてのパラメーター セットに属しています。
 
-`Position` ([System.Integer](/dotnet/api/System.Integer)) という名前のパラメーター (省略可能)。 Windows PowerShell コマンド内でパラメーターの位置を指定します。
+`Position` ([System.Int32](/dotnet/api/System.Int32)) という名前のパラメーター (省略可能)。 Windows PowerShell コマンド内でパラメーターの位置を指定します。
 
 `ValueFromPipeline` ([System.Boolean](/dotnet/api/System.Boolean)) という名前のパラメーター (省略可能)。 `True` コマンドレットのパラメーターが、パイプライン オブジェクトから値を受け取ることを示します。 コマンドレットが、完全にアクセスする場合にこのキーワードを指定するだけでなく、オブジェクトのプロパティのオブジェクトします。 既定値は `false` です。
 
@@ -52,7 +52,7 @@ ms.locfileid: "56863618"
 
 ## <a name="remarks"></a>コメント
 
-- この属性を宣言する方法の詳細については、[コマンドレット パラメーターを宣言する方法](./how-to-declare-cmdlet-parameters.md)を参照してください。
+- この属性を宣言する方法の詳細については、次を参照してください。[コマンドレット パラメーターを宣言する方法](./how-to-declare-cmdlet-parameters.md)します。
 
 - コマンドレットは、任意の数のパラメーターを持つことができます。 ただし、ユーザー エクスペリエンスを向上させるには、パラメーターの数を制限します。
 
@@ -72,7 +72,7 @@ ms.locfileid: "56863618"
 
     - 複数のパラメーターを定義できます`ValueFromPipelineByPropertyName = true`します。
 
-- パラメーター名に関するガイドラインの詳細については、[コマンドレットのパラメーター名](standard-cmdlet-parameter-names-and-types.md)を参照してください。
+- パラメーター名に関するガイドラインの詳細については、次を参照してください。[コマンドレットのパラメーター名](standard-cmdlet-parameter-names-and-types.md)します。
 
 - パラメーター属性が定義した、 [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)クラス。
 

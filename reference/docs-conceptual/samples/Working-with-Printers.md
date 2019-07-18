@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: プリンターの操作
-ms.assetid: 4f29ead3-f83b-4706-ac3e-f2154ff38dc5
-ms.openlocfilehash: 77ebb26369b6a40e9c8c7bbbc52347d614cbf083
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.openlocfilehash: 816388325cc3155f1dbd1bc15fc1736155216092
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59292995"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030680"
 ---
 # <a name="working-with-printers"></a>プリンターの操作
 
@@ -19,7 +18,7 @@ Windows PowerShell を使用してプリンターを管理するには、WMI を
 コンピューターにインストールされているプリンターを一覧表示する最も簡単な方法は、WMI の **Win32_Printer** クラスを使用することです。
 
 ```powershell
-Get-WmiObject -Class Win32_Printer -ComputerName
+Get-WmiObject -Class Win32_Printer
 ```
 
 **WScript.Network** という COM オブジェクト (通常、WSH スクリプトで使用されます) を使用してプリンターを一覧表示することもできます。

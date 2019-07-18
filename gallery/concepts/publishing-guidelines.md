@@ -5,11 +5,11 @@ keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 description: パブリッシャー向けのガイドライン
 title: PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623910"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084659"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -94,7 +94,7 @@ PowerShell ギャラリーに公開するモジュールのサンプルは、モ
 PowerShell ギャラリーでフィードバックを行う方法は 2 つあります。
 
 - 所有者への連絡:この方法では、ユーザーはパッケージの所有者にメールを送信できます。 パッケージの所有者は、PowerShell ギャラリー パッケージで使用されているメール アドレスをチェックし、寄せられた問題に対応することが重要です。 この方法の 1 つのデメリットは、問い合わせをしたユーザーと所有者しか会話を見られないため、所有者は同じ質問に何度も答えなければならない可能性があることです。
-- ［コメント］:パッケージのページの最下部にはコメント フィールドがあります。
+- コメント: パッケージのページの最下部にはコメント フィールドがあります。
   この方法のメリットは、他のユーザーもコメントと回答を確認できるため、同一の質問に答えなければならない回数を少なくできることです。
   パッケージの所有者には、各パッケージに寄せられたコメントをフォローすることが強く推奨されます。
 フォロー方法の詳細については、「[Providing Feedback via Social Media or Comments (ソーシャル メディアやコメントを使用したフィードバックの提供)](../how-to/working-with-packages/social-media-feedback.md)」をご覧ください。

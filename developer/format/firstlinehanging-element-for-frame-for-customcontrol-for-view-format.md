@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c6ac3d86-0529-4b93-9bc7-ee94fcef9618
 caps.latest.revision: 8
 ms.openlocfilehash: ea43e025f5f653ff000e1d7591b535e73da5c9e5
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065973"
 ---
 # <a name="firstlinehanging-element-for-frame-for-customcontrol-for-view-format"></a>View の CustomControl の Frame の FirstLineHanging 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "58054222"
 <FirstLineHanging>NumberOfCharactersToShift</FirstLineHanging>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`FirstLineHanging`要素。
 

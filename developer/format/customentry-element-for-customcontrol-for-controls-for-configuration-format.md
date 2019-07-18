@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 9dfba86f-29b2-473c-9e98-9d679176acce
 caps.latest.revision: 11
 ms.openlocfilehash: 497485a388d1cdc834ecc1d1079b0714a7d7f9db
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066474"
 ---
 # <a name="customentry-element-for-customcontrol-for-controls-for-configuration-format"></a>Configuration の Controls の CustomControl の CustomEntry 要素 (書式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "56859808"
 
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`CustomEntry`要素。 定義によって表示される項目を指定する必要があります。
 

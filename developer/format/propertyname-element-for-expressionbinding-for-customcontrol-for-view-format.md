@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1fa3b699-d36e-47a2-b671-a313ba091aaa
 caps.latest.revision: 6
 ms.openlocfilehash: edd8c4b39f56be6b8658db46050bcce33db9cebd
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860218"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064970"
 ---
 # <a name="propertyname-element-for-expressionbinding-for-customcontrol-for-view-format"></a>View の CustomControl の ExpressionBinding の PropertyName 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56860218"
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`PropertyName`要素。
 

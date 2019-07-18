@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
 ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057248"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080579"
 ---
 # <a name="public-resource-schema"></a>パブリック リソース スキーマ
 
@@ -63,7 +63,7 @@ class PswsTest_ProcessModule
 
 ### <a name="associating-entities"></a>エンティティの関連付け
 
-アソシエーションおよび関連クラスの修飾子を使用して、2 つのエンティティを関連付けることができます。 詳細については、[Management OData エンティティを関連付ける](./associating-management-odata-entities.md)を参照してください。
+アソシエーションおよび関連クラスの修飾子を使用して、2 つのエンティティを関連付けることができます。 詳細については、次を参照してください。 [Management OData エンティティを関連付ける](./associating-management-odata-entities.md)します。
 
 ### <a name="derived-types"></a>派生型
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
-ms.openlocfilehash: 77d328bc1cb8cb42d5a10f107a149c05ab270ce3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: cff50d415c4c90182fa1cf015a5a5ba84d4d613a
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862738"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470773"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Windows PowerShell モジュールを理解する
 
@@ -41,21 +41,21 @@ A*モジュール*(通常、1 つのディレクトリに保存する) の単位
 
 さらに、マニフェスト ファイルを使用して、データ ファイル、その他の依存モジュールは、ランタイム スクリプトなど、モジュールにその他のリソースを含めることができます。 マニフェスト ファイルもオーサリングとバージョン管理の情報などのメタデータを追跡するために便利です。
 
-最後に、動的に作成されていないその他のモジュールと同様に、スクリプト モジュールでは、PowerShell がわかる程度のフォルダーに保存する必要があります。 通常は PowerShell モジュールのパスで、します。必要に応じて、モジュールがインストールされていることができますに明示的に記述します。 詳細については、[PowerShell スクリプト モジュールを記述する方法](./how-to-write-a-powershell-script-module.md)を参照してください。
+最後に、動的に作成されていないその他のモジュールと同様に、スクリプト モジュールでは、PowerShell がわかる程度のフォルダーに保存する必要があります。 通常は PowerShell モジュールのパスで、します。必要に応じて、モジュールがインストールされていることができますに明示的に記述します。 詳細については、次を参照してください。 [PowerShell スクリプト モジュールを記述する方法](./how-to-write-a-powershell-script-module.md)します。
 
 ### <a name="binary-modules"></a>バイナリ モジュール
 
 A*バイナリ モジュール*などのコンパイル済みのコードを含む .NET Framework アセンブリ (.dll) は、C#します。 コマンドレットの開発者は、この種類のモジュールを使用して、コマンドレット、プロバイダー、およびその他の共有します。 (既存のスナップインこともできますバイナリ モジュールとして。)スクリプト モジュールと比較して、バイナリ モジュールは、高速または機能を使用するコマンドレットを作成するため (など、マルチ スレッド) を Windows PowerShell スクリプトのコードに容易ではありません。
 
-スクリプトのモジュールとして、モジュールを使用して、その他のリソースを記述して、モジュールに関するメタデータを追跡するために、マニフェスト ファイルを含めることができます。 同様に、おそらくにインストールする、バイナリ モジュール PowerShell モジュールのパスに沿ってどこかのフォルダー。 詳細については、方法[PowerShell バイナリ モジュールを記述する方法](./how-to-write-a-powershell-binary-module.md)を参照してください。
+スクリプトのモジュールとして、モジュールを使用して、その他のリソースを記述して、モジュールに関するメタデータを追跡するために、マニフェスト ファイルを含めることができます。 同様に、おそらくにインストールする、バイナリ モジュール PowerShell モジュールのパスに沿ってどこかのフォルダー。 詳細については、次を参照してください。 方法[PowerShell バイナリ モジュールを記述する方法](./how-to-write-a-powershell-binary-module.md)します。
 
 ### <a name="manifest-modules"></a>マニフェスト モジュール
 
-A*マニフェスト モジュール*モジュールはすべてのコンポーネントを記述するマニフェスト ファイルを使用していて、あらゆる種類のコア アセンブリまたはスクリプトはありません。 (正式には、マニフェスト モジュールのまま、`ModuleToProcess`または`RootModule`マニフェストが空の要素)。ただし、モジュールの場合、依存アセンブリを読み込むか、自動的に特定の処理前のスクリプトを実行する機能などの他の機能を引き続き使用できます。 入れ子になったモジュール、アセンブリ、型、または形式など、他のモジュールが使用するリソースをパッケージ化する便利な方法として、マニフェスト モジュールを使用することもできます。 詳細については、[PowerShell モジュール マニフェストの記述方法](./how-to-write-a-powershell-module-manifest.md)を参照してください。
+A*マニフェスト モジュール*モジュールはすべてのコンポーネントを記述するマニフェスト ファイルを使用していて、あらゆる種類のコア アセンブリまたはスクリプトはありません。 (正式には、マニフェスト モジュールのまま、`ModuleToProcess`または`RootModule`マニフェストが空の要素)。ただし、モジュールの場合、依存アセンブリを読み込むか、自動的に特定の処理前のスクリプトを実行する機能などの他の機能を引き続き使用できます。 入れ子になったモジュール、アセンブリ、型、または形式など、他のモジュールが使用するリソースをパッケージ化する便利な方法として、マニフェスト モジュールを使用することもできます。 詳細については、次を参照してください。 [PowerShell モジュール マニフェストの記述方法](./how-to-write-a-powershell-module-manifest.md)します。
 
 ### <a name="dynamic-modules"></a>動的モジュール
 
-A*動的モジュール*がモジュールからアンロードされるか、ファイルに保存します。 代わりに、これらが動的に作成、スクリプトを使用して、 [New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module)コマンドレット。 モジュールのこの種類は、オンデマンド読み込みまたは永続的ストレージに保存する必要のないモジュールを作成するスクリプトを使用できます。 動的モジュール、その性質上に短期間に設定するためのものし、でアクセスすることはできません、`Get-Module`コマンドレット。 同様に、通常必要がないモジュールのマニフェスト可能性があります必要も、関連するアセンブリを格納する永続的なフォルダーです。
+A*動的モジュール*はない、読み込み元のまたはファイルに保存されているモジュールです。 代わりに、これらが動的に作成、スクリプトを使用して、 [New-module](/powershell/module/Microsoft.PowerShell.Core/New-Module)コマンドレット。 モジュールのこの種類は、オンデマンド読み込みまたは永続的ストレージに保存する必要のないモジュールを作成するスクリプトを使用できます。 動的モジュール、その性質上に短期間に設定するためのものし、でアクセスすることはできません、`Get-Module`コマンドレット。 同様に、通常必要がないモジュールのマニフェスト可能性があります必要も、関連するアセンブリを格納する永続的なフォルダーです。
 
 ## <a name="module-manifests"></a>モジュール マニフェスト
 
@@ -79,7 +79,7 @@ A*モジュール マニフェスト*はハッシュ テーブルを含む .psd1
 
 - エイリアス、関数、変数、およびエクスポートするコマンドレットなど、エクスポートするモジュールのメンバーに制限します。
 
-  詳細については、[PowerShell モジュール マニフェストの記述方法](./how-to-write-a-powershell-module-manifest.md)を参照してください。
+  詳細については、次を参照してください。 [PowerShell モジュール マニフェストの記述方法](./how-to-write-a-powershell-module-manifest.md)します。
 
 ## <a name="storing-and-installing-a-module"></a>格納して、モジュールのインストール
 
@@ -93,7 +93,7 @@ A*モジュール マニフェスト*はハッシュ テーブルを含む .psd1
 
 - ごとのオブジェクトのアセンブリからインポートしたモジュール、  **`Import-Module` -アセンブリ**コマンドは、次の構文に従って命名されます:`"dynamic_code_module_" + assembly.GetName()`します。
 
-  詳細については、[PowerShell モジュールのインストール](./installing-a-powershell-module.md)と[PSModulePath インストール パスを変更する](./modifying-the-psmodulepath-installation-path.md)を参照してください。
+  詳細については、次を参照してください。 [PowerShell モジュールのインストール](./installing-a-powershell-module.md)と[PSModulePath インストール パスを変更する](./modifying-the-psmodulepath-installation-path.md)します。
 
 ## <a name="module-cmdlets-and-variables"></a>モジュールのコマンドレットと変数
 

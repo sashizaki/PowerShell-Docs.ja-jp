@@ -8,27 +8,27 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
-ms.openlocfilehash: bf0a73267b3cad1f50d983ebed53318ec98180e0
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 48ab9102e8f1b17b3b533cc3b0aa1dacef0e2076
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056466"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734833"
 ---
 # <a name="writing-a-container-provider"></a>コンテナー プロバイダーを記述する
 
 このトピックでは、ファイル システム プロバイダー内のフォルダーなどの他の項目を含む項目をサポートする Windows PowerShell プロバイダーのメソッドを実装する方法を説明します。 コンテナーをサポートできるようにするには、プロバイダーがから派生する必要があります、 [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラス。
 
-このトピックの例ではプロバイダーでは、そのデータ ストアとして Access データベースを使用します。 いくつかのヘルパー メソッドと、データベースとの対話に使用されるクラスがあります。 ヘルパー メソッドを含む完全なサンプルは、[AccessDBProviderSample04](./accessdbprovidersample04.md)を参照してください。
+このトピックの例ではプロバイダーでは、そのデータ ストアとして Access データベースを使用します。 いくつかのヘルパー メソッドと、データベースとの対話に使用されるクラスがあります。 ヘルパー メソッドを含む完全なサンプルは、次を参照してください。 [AccessDBProviderSample04](./accessdbprovidersample04.md)します。
 
-Windows PowerShell プロバイダーに関する詳細については、[Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)を参照してください。
+Windows PowerShell プロバイダーに関する詳細については、次を参照してください。 [Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)します。
 
 ## <a name="implementing-container-methods"></a>コンテナーのメソッドを実装します。
 
-[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスは、コンテナーをサポートし、作成、コピー、および項目を削除するメソッドを実装します。 これらのメソッドの完全な一覧を参照してください。 [ContainerCmdletProvider メソッド](http://msdn.microsoft.com/library/system.management.automation.provider.containercmdletprovider_methods\(v=vs.85\).aspx)します。
+[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスは、コンテナーをサポートし、作成、コピー、および項目を削除するメソッドを実装します。 これらのメソッドの完全な一覧を参照してください。 [System.Management.Automation.Provider.ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider?view=pscore-6.2.0#methods)します。
 
 > [!NOTE]
-> このトピックでは、の情報に基づいて[Windows PowerShell プロバイダーのクイック スタート](./windows-powershell-provider-quickstart.md)します。 このトピックでは、プロバイダーのプロジェクトを設定する方法の基本については説明しませんまたはから継承されたメソッドを実装する方法、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスを作成し、ドライブを削除します。 このトピックの「によって公開されるメソッドを実装する方法については説明しませんも、 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)クラス。 Item コマンドレットを実装する方法を示しますたとえば、[項目プロバイダーの作成](./writing-an-item-provider.md)を参照してください。
+> このトピックでは、の情報に基づいて[Windows PowerShell プロバイダーのクイック スタート](./windows-powershell-provider-quickstart.md)します。 このトピックでは、プロバイダーのプロジェクトを設定する方法の基本については説明しませんまたはから継承されたメソッドを実装する方法、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスを作成し、ドライブを削除します。 このトピックの「によって公開されるメソッドを実装する方法については説明しませんも、 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)クラス。 Item コマンドレットを実装する方法を示しますたとえば、次を参照してください。[項目プロバイダーの作成](./writing-an-item-provider.md)です。
 
 ### <a name="declaring-the-provider-class"></a>プロバイダー クラスを宣言します。
 
@@ -44,7 +44,7 @@ Windows PowerShell プロバイダーに関する詳細については、[Window
 
 ### <a name="implementing-getchilditems"></a>GetChildItems を実装します。
 
-PowerShell エンジンの呼び出し、 [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)メソッドを呼び出すときに、 [Microsoft.PowerShell.Commands.Get Childitem](/dotnet/api/Microsoft.PowerShell.Commands.Get-ChildItem)コマンドレット。 このメソッドは、指定されたパスにある項目の子である項目を取得します。
+PowerShell エンジンの呼び出し、 [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)メソッドを呼び出すときに、 [Microsoft.PowerShell.Commands.GetChildItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.Getchilditemcommand)コマンドレット。 このメソッドは、指定されたパスにある項目の子である項目を取得します。
 
 Access データベースの例での動作、 [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)メソッドは、指定した項目の種類によって異なります。 項目が、ドライブの場合は、子は、テーブル、およびメソッドは、データベースからテーブルのセットを返します。 指定した項目がテーブルの場合は、子は、テーブルの行です。 項目が行の場合、子がなくし、メソッドはその行のみを返します。 すべての子項目がによって PowerShell エンジンに送信される、 [System.Management.Automation.Provider.Cmdletprovider.Writeitemobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)メソッド。
 
@@ -155,7 +155,7 @@ protected override void GetChildNames(string path,
 
 ### <a name="implementing-newitem"></a>NewItem を実装します。
 
-[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドは、指定されたパスに指定した型の新しい項目を作成します。 PowerShell エンジンは、ユーザーが呼び出すときにこのメソッドを呼び出して、 [Microsoft.PowerShell.Commands.New 項目](/dotnet/api/Microsoft.PowerShell.Commands.New-Item)コマンドレット。
+[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドは、指定されたパスに指定した型の新しい項目を作成します。 PowerShell エンジンは、ユーザーが呼び出すときにこのメソッドを呼び出して、 [Microsoft.PowerShell.Commands.NewItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.newitemcommand)コマンドレット。
 
 この例では、メソッドは、パスと型が一致するかを判断するロジックを実装します。 (データベース) の場合、ドライブの直下にのみテーブルを作成して、行だけにテーブルを作成できます。 この方法で指定されたパスおよび項目の種類が一致しない場合、メソッドは例外をスローします。
 
@@ -333,7 +333,7 @@ protected override void NewItem(string path, string type,
 
 ### <a name="implementing-copyitem"></a>CopyItem の実装
 
-[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)指定したパスに指定した項目をコピーします。 PowerShell エンジンは、ユーザーが呼び出すときにこのメソッドを呼び出して、 [Microsoft.PowerShell.Commands.Copy 項目](/dotnet/api/Microsoft.PowerShell.Commands.Copy-Item)コマンドレット。 このメソッドは、再帰的で、項目自体だけでなく項目の子のすべてのコピーもできます。
+[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)指定したパスに指定した項目をコピーします。 PowerShell エンジンは、ユーザーが呼び出すときにこのメソッドを呼び出して、 [Microsoft.PowerShell.Commands.CopyItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.copyitemcommand)コマンドレット。 このメソッドは、再帰的で、項目自体だけでなく項目の子のすべてのコピーもできます。
 
 同様に、 [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドでは、このメソッドは、指定した項目がコピー先のパスの種類が正しいことを確認するロジックを実行します。 たとえば、デプロイ先のパスが、テーブルの場合は、コピーするアイテムが行である必要があります。
 
@@ -466,7 +466,7 @@ protected override void CopyItem(string path, string copyPath, bool recurse)
 
 ### <a name="implementing-removeitem"></a>RemoveItem を実装します。
 
-[System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)メソッドは、指定されたパスにある項目を削除します。 PowerShell エンジンは、ユーザーが呼び出すときにこのメソッドを呼び出して、 [Microsoft.PowerShell.Commands.Remove 項目](/dotnet/api/Microsoft.PowerShell.Commands.Remove-Item)コマンドレット。
+[System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)メソッドは、指定されたパスにある項目を削除します。 PowerShell エンジンは、ユーザーが呼び出すときにこのメソッドを呼び出して、 [Microsoft.PowerShell.Commands.RemoveItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.removeitemcommand)コマンドレット。
 
 ```csharp
 protected override void RemoveItem(string path, bool recurse)
@@ -538,7 +538,7 @@ protected override void RemoveItem(string path, bool recurse)
 
 ## <a name="next-steps"></a>次の手順
 
-一般的な現実世界のプロバイダーは、ドライブ内の別の 1 つのパスから項目を移動することができます。 項目の移動をサポートするプロバイダーの例は、[ナビゲーション プロバイダーの記述](./writing-a-navigation-provider.md)を参照してください。
+一般的な現実世界のプロバイダーは、ドライブ内の別の 1 つのパスから項目を移動することができます。 項目の移動をサポートするプロバイダーの例は、次を参照してください。[ナビゲーション プロバイダーの記述](./writing-a-navigation-provider.md)します。
 
 ## <a name="see-also"></a>参照
 

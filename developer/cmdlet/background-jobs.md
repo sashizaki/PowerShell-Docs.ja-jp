@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
 ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794707"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068685"
 ---
 # <a name="background-jobs"></a>バックグラウンド ジョブ
 
@@ -45,7 +45,7 @@ ms.locfileid: "57794707"
 
 - コマンドレットをバック グラウンド ジョブとして実行するかどうかに応じて、適切なオブジェクトを返します。
 
-コード例では、[サポート ジョブ方法](./how-to-support-jobs.md)を参照してください。
+コード例では、次を参照してください。[サポート ジョブ方法](./how-to-support-jobs.md)します。
 
 ## <a name="background-job-related-apis"></a>バック グラウンド ジョブに関連する Api
 

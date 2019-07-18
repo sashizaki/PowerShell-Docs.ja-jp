@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
-ms.openlocfilehash: dbccaf5b8e48a1c4d924bc0ec4ea09b25e10adf0
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MT
+ms.openlocfilehash: 30e98bfcf06b1720005a73ee8294aeba7e1ae066
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083503"
 ---
 # <a name="examples-of-comment-based-help"></a>コメント ベースのヘルプの例
 
@@ -141,7 +141,7 @@ C:\PS> get-help add-extension -full
             Set-Item
 ```
 
-## <a name="example-2-comment-based-help-for-a-script"></a>例 2: スクリプトのコメント ベースのヘルプ
+## <a name="example-2-comment-based-help-for-a-script"></a>例 2:スクリプトのコメント ベースのヘルプ
 
 次の関数サンプルにはには、コメント ベースのヘルプが含まれています。
 

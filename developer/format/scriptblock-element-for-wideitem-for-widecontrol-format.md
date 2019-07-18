@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: e00e8f36-76f2-49a0-9b02-3a2a7fceb2dd
 caps.latest.revision: 8
 ms.openlocfilehash: 6534e9dbfbe0dedf60dadd6467cff9ad9b447ba4
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064205"
 ---
 # <a name="scriptblock-element-for-wideitem-for-widecontrol-format"></a>WideControl の WideItem の ScriptBlock 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56858028"
 <ScriptBlock>ScriptToExecute</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`ScriptBlock`要素。
 
@@ -51,7 +51,7 @@ ms.locfileid: "56858028"
 
 ## <a name="remarks"></a>コメント
 
-ワイド ビューのコンポーネントに関する詳細については、[ワイド ビューを作成する](./creating-a-wide-view.md)を参照してください。
+ワイド ビューのコンポーネントに関する詳細については、次を参照してください。[ワイド ビューを作成する](./creating-a-wide-view.md)します。
 
 ## <a name="example"></a>例
 

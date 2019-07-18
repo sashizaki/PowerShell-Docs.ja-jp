@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell ISE の操作
-ms.assetid: e0d2c6e8-5126-40e7-a1e1-d1cff29fe94a
-ms.openlocfilehash: 059651f159fb2636a93167709134788e90d062b8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 8c47e236e2e345a887fc3af281e429f440e176ff
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403117"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67031032"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Windows PowerShell ISE の操作
 
@@ -19,10 +18,10 @@ Windows PowerShell® Integrated Scripting Environment (ISE) を使用すると�
 
 ## <a name="menu-bar"></a>メニュー バー
 
-メニュー バーには、**[ファイル]**、**[編集]**、**[表示]**、**[ツール]**、**[デバッグ]**、**[アドオン]**、**[ヘルプ]** の各メニューがあります。 メニューのボタンを使用すると、スクリプトの記述と実行、および Windows PowerShell ISE でのコマンドの実行に関連したタスクを実行できます。 さらに、[ISE オブジェクト モデルの階層](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)を使用するスクリプトを実行して、[アドオン ツール](../../core-powershell/ise/The-ISEAddOnTool-Object.md)をメニュー バーに配置することもできます。
+メニュー バーには、 **[ファイル]** 、 **[編集]** 、 **[表示]** 、 **[ツール]** 、 **[デバッグ]** 、 **[アドオン]** 、 **[ヘルプ]** の各メニューがあります。 メニューのボタンを使用すると、スクリプトの記述と実行、および Windows PowerShell ISE でのコマンドの実行に関連したタスクを実行できます。 さらに、[ISE オブジェクト モデルの階層](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)を使用するスクリプトを実行して、[アドオン ツール](../../core-powershell/ise/The-ISEAddOnTool-Object.md)をメニュー バーに配置することもできます。
 
 > [!NOTE]
-> Windows PowerShell ISE 2.0 には、**[ツール]** と **[アドオン]** メニューはありませんでした。
+> Windows PowerShell ISE 2.0 には、 **[ツール]** と **[アドオン]** メニューはありませんでした。
 
 ## <a name="windows-powershell-tabs"></a>Windows PowerShell タブ
 
@@ -80,7 +79,7 @@ Windows PowerShell タブは、Windows PowerShell スクリプトが動作する
 
 ## <a name="help"></a>ヘルプ
 
-Windows PowerShell ISE のヘルプは、Web 上の TechNet ライブラリで利用できます。 ヘルプを開くには、**[ヘルプ]** メニューの **[Windows PowerShell ISE ヘルプ]** をクリックするか、F1 キーを押します。これは、スクリプト ウィンドウまたはコンソール ウィンドウでコマンドレット名の上にカーソルがある場合を除き、どこからでも実行できます。 **[ヘルプ]** メニューからは、Update-Help コマンドレットを実行することや、コマンド ウィンドウを表示することもできます。コマンド ウィンドウは、コマンドレットのすべてのパラメーターを示したり、使いやすいフォームにパラメーターを入力できるようにしたりして、コマンドの作成を助けます。
+Windows PowerShell ISE のヘルプは、Web 上の TechNet ライブラリで利用できます。 ヘルプを開くには、 **[ヘルプ]** メニューの **[Windows PowerShell ISE ヘルプ]** をクリックするか、F1 キーを押します。これは、スクリプト ウィンドウまたはコンソール ウィンドウでコマンドレット名の上にカーソルがある場合を除き、どこからでも実行できます。 **[ヘルプ]** メニューからは、Update-Help コマンドレットを実行することや、コマンド ウィンドウを表示することもできます。コマンド ウィンドウは、コマンドレットのすべてのパラメーターを示したり、使いやすいフォームにパラメーターを入力できるようにしたりして、コマンドの作成を助けます。
 
 ## <a name="see-also"></a>参照
 

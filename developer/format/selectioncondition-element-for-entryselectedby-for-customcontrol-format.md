@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 231e9c6d-09ec-4e68-80ee-0c8f7fe1b9f5
 caps.latest.revision: 7
 ms.openlocfilehash: 49e2c0cf09dfa55b535effcd431e980daf12fac3
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858828"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075751"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-customcontrol-format"></a>CustomControl の EntrySelectedBy の SelectionCondition 要素 (書式)
 
@@ -32,7 +32,7 @@ ms.locfileid: "56858828"
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`SelectionCondition`要素。
 
@@ -63,7 +63,7 @@ ms.locfileid: "56858828"
 
 - 選択条件が .NET 型の任意の数を指定するか、選択範囲を設定するが、両方を指定することはできません。
 
-選択条件を使用する方法の詳細については、[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
+選択条件を使用する方法の詳細については、次を参照してください。[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)します。
 
 ## <a name="see-also"></a>参照
 

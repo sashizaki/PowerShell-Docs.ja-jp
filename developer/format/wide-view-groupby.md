@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 39388197-4ff9-4889-aa32-526011afa1f6
 caps.latest.revision: 6
 ms.openlocfilehash: e95ec550a7815a76a8bd7f9526dfa405a9644360
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861628"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083656"
 ---
 # <a name="wide-view-groupby"></a>ワイド ビュー (グループ別)
 
-この例のグループを表示するワイド ビューを実装する方法を示しています。 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)によって返されるオブジェクト、`Get-Service`コマンドレット。 ワイド ビューのコンポーネントに関する詳細については、[ワイド ビューを作成する](./creating-a-wide-view.md)を参照してください。
+この例のグループを表示するワイド ビューを実装する方法を示しています。 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)によって返されるオブジェクト、`Get-Service`コマンドレット。 ワイド ビューのコンポーネントに関する詳細については、次を参照してください。[ワイド ビューを作成する](./creating-a-wide-view.md)します。
 
 ### <a name="to-load-this-formatting-file"></a>この書式設定ファイルを読み込む
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
 ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057724"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067367"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>強くお勧めする開発ガイドライン
 
@@ -63,7 +63,7 @@ ms.locfileid: "58057724"
 
 コマンドレットは、標準的なパラメーター名を使用して、ユーザーは、特定のパラメーターの意味簡単に確認できるようにする必要があります。 特定の名前が必要な場合、標準的なパラメーター名を使用およびをエイリアスとしてより特定の名前を指定します。 たとえば、`Get-Service`コマンドレットは汎用的な名前のパラメーター (`Name`) と具体的なエイリアス (`ServiceName`)。 パラメーターを指定する両方の用語を使用できます。
 
-パラメーター名とそのデータ型の詳細については、[コマンドレットのパラメーター名と機能のガイドライン](./standard-cmdlet-parameter-names-and-types.md)を参照してください。
+パラメーター名とそのデータ型の詳細については、次を参照してください。[コマンドレットのパラメーター名と機能のガイドライン](./standard-cmdlet-parameter-names-and-types.md)します。
 
 #### <a name="use-singular-parameter-names"></a>単一のパラメーター名を使用します。
 
@@ -85,11 +85,11 @@ ms.locfileid: "58057724"
 
 - 列挙型を定義する (または既存の列挙型を使用して) 有効な値を指定します。 次に、列挙型を使用して、その型のパラメーターを作成します。
 
-- 追加、 **ValidateSet**パラメーター宣言に属性します。 この属性の詳細については、[ValidateSet 属性宣言](./validateset-attribute-declaration.md)を参照してください。
+- 追加、 **ValidateSet**パラメーター宣言に属性します。 この属性の詳細については、次を参照してください。 [ValidateSet 属性宣言](./validateset-attribute-declaration.md)します。
 
 #### <a name="use-standard-types-for-parameters"></a>標準の型パラメーターを使用します。
 
-他のコマンドレットで一貫性を確保するには、するがずっと可能なパラメーターの基本データ型を使用します。 別のパラメーターを使用する種類の詳細については、[標準コマンドレットのパラメーター名と型](./standard-cmdlet-parameter-names-and-types.md)を参照してください。 このトピックでは、名前と、「アクティビティのパラメーター」などの標準パラメーターのグループの .NET Framework 型を記述するいくつかのトピックへのリンクを提供します。
+他のコマンドレットで一貫性を確保するには、するがずっと可能なパラメーターの基本データ型を使用します。 別のパラメーターを使用する種類の詳細については、次を参照してください。[標準コマンドレットのパラメーター名と型](./standard-cmdlet-parameter-names-and-types.md)します。 このトピックでは、名前と、「アクティビティのパラメーター」などの標準パラメーターのグループの .NET Framework 型を記述するいくつかのトピックへのリンクを提供します。
 
 #### <a name="use-strongly-typed-net-framework-types"></a>厳密に型指定された .NET Framework 型を使用します。
 
@@ -121,7 +121,7 @@ Stop-Process calc -passthru
 
 #### <a name="support-parameter-sets"></a>パラメーター セットをサポートします。
 
-コマンドレットは、1 つの目的を実現するものです。 ただし、操作または操作の対象を記述するは、複数の方法は頻繁に。 たとえばの名前、識別子またはプロセス オブジェクト、プロセスが特定されます。 コマンドレットは、ターゲットの適切な表現は、すべてをサポートする必要があります。 通常、コマンドレットは、(パラメーターのセットと呼ばれます) で同時に動作するパラメーターのセットを指定することによってこの要件を満たします。 1 つのパラメーターは、パラメーター セットの任意の数に属することができます。 パラメーター セットの詳細については、[コマンドレット パラメーター設定](./cmdlet-parameter-sets.md)を参照してください。
+コマンドレットは、1 つの目的を実現するものです。 ただし、操作または操作の対象を記述するは、複数の方法は頻繁に。 たとえばの名前、識別子またはプロセス オブジェクト、プロセスが特定されます。 コマンドレットは、ターゲットの適切な表現は、すべてをサポートする必要があります。 通常、コマンドレットは、(パラメーターのセットと呼ばれます) で同時に動作するパラメーターのセットを指定することによってこの要件を満たします。 1 つのパラメーターは、パラメーター セットの任意の数に属することができます。 パラメーター セットの詳細については、次を参照してください。[コマンドレット パラメーター設定](./cmdlet-parameter-sets.md)します。
 
 パラメーター セットを指定する場合は、ValueFromPipeline セットの 1 つだけのパラメーターを設定します。 宣言する方法について、**パラメーター**属性は、「 [ParameterAttribute 宣言](./parameter-attribute-declaration.md)します。
 
@@ -190,7 +190,7 @@ Windows PowerShell パスは、名前空間へのアクセスを正規化する�
 
 ワイルドカードのサポートの文字は使用可能なコマンドレットの操作には、通常は配列が生成されます。 場合によっては、ユーザーは一度に 1 つの項目のみを使用する場合がありますので、配列をサポートするために意味は行いません。 たとえば、 [Set-location](/powershell/module/Microsoft.PowerShell.Management/Set-Location)コマンドレットは、ユーザーが 1 つの場所のみを設定するために、配列をサポートする必要はありません。 このインスタンスでは、コマンドレットには、ワイルドカード文字を引き続きサポートされますが解像度を強制的に 1 つの場所にします。
 
-ワイルドカード文字のパターンの詳細については、[コマンドレットのパラメーターにワイルドカード文字をサポートしている](./supporting-wildcard-characters-in-cmdlet-parameters.md)を参照してください。
+ワイルドカード文字のパターンの詳細については、次を参照してください。[コマンドレットのパラメーターにワイルドカード文字をサポートしている](./supporting-wildcard-characters-in-cmdlet-parameters.md)します。
 
 #### <a name="defining-objects"></a>オブジェクトを定義します。
 

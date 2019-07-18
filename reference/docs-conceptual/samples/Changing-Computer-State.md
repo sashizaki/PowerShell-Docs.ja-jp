@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: コンピューターの状態を変更する
-ms.assetid: 8093268b-27f8-4a49-8871-142c5cc33f01
-ms.openlocfilehash: f8a2ed6a1a0390021eb633c9af64a725146ad136
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.openlocfilehash: 80692ad7c56aa13e55d4997cfec289ffb3605458
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293063"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030286"
 ---
 # <a name="changing-computer-state"></a>コンピューターの状態を変更する
 

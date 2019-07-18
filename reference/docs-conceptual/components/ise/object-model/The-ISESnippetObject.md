@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: ISESnippetObject
-ms.assetid: 98bc8113-c3cd-4201-bdb9-9d9bdb7e266c
-ms.openlocfilehash: f80080f4207cf226fb7466c4842446d08c081347
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 62d470569deb051fca80005235d4c492319cf5ec
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403403"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028894"
 ---
 # <a name="the-isesnippetobject"></a>ISESnippetObject
 

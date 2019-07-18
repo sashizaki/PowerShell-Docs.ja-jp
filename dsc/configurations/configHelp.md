@@ -3,25 +3,25 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC 構成のヘルプの作成
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402893"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080186"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>DSC 構成のヘルプの作成
 
 >適用先:Windows PowerShell 5.0
 
-DSC 構成では、コメント ベースのヘルプを使用できます。 ユーザーは、ヘルプを呼び出すことによってアクセスできる、**構成**で`-?`、またはを使用して、 [Get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help)コマンドレット。 配置のすぐ上に、コメント ベース ヘルプ、`Configuration`キーワード。
-パラメーター宣言、または次の例のように両方のすぐ上、コメント ブロックを使用してパラメーター ヘルプの行でを配置できます。
+DSC 構成では、コメント ベースのヘルプを使用できます。 ユーザーは、`-?` を指定して **Configuration** を呼び出すか、[Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) コマンドレットを使用することで、ヘルプにアクセスできます。 コメント ベースのヘルプは `Configuration` キーワードのすぐ上に配置します。
+パラメーターのヘルプは、コメント ブロックのインラインか、パラメーター宣言のすぐ上、または次の例のようにその両方に配置できます。
 
 PowerShell のコメント ベースのヘルプの詳細については、「[about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)」を参照してください。
 
 > [!NOTE]
-> VSCode や ISE などの PowerShell 開発環境では、スニペットのコメント ブロックのテンプレートを自動的に挿入できるようにもあります。
+> VSCode や ISE などの PowerShell 開発環境には、コメント ブロック テンプレートを自動的に挿入できるスニペットもあります。
 
-次の例では、構成とそのコメント ベースのヘルプを含むスクリプトを示します。 この例では、パラメーターを持つ構成を示します。 詳細については、構成にパラメーターを使用して、参照してください。[パラメーターを追加して、構成に](add-parameters-to-a-configuration.md)します。
+次の例では、構成とそのコメント ベースのヘルプを含むスクリプトを示します。 この例では、パラメーターを含む構成を示します。 Configuration でのパラメーターの使用について詳しくは、「[構成にパラメーターを追加する](add-parameters-to-a-configuration.md)」をご覧ください。
 
 ```powershell
 <#
@@ -77,7 +77,7 @@ configuration HelpSample1
 
 ## <a name="viewing-configuration-help"></a>構成のヘルプの表示
 
-構成のヘルプを表示するには使用、`Get-Help`コマンドレット、関数、または型の名前と、関数の名前の末尾に`-?`します。 渡される前の構成の出力は、次の`Get-Help`します。
+構成のヘルプを表示するには、`Get-Help` コマンドレットに関数名を付けて使うか、関数名の後に「`-?`」と入力します。 次に示すのは、前の Configuration を `Get-Help` に渡した場合の出力です。
 
 ```powershell
 Get-Help HelpSample1 -Detailed
@@ -157,7 +157,7 @@ REMARKS
 ```
 
 > [!NOTE]
-> フィールドの構文とパラメーターの属性は、PowerShell によってするに対して自動的に生成します。
+> 構文のフィールドとパラメーターの属性は、PowerShell によって自動的に生成されます。
 
 ## <a name="see-also"></a>参照
 

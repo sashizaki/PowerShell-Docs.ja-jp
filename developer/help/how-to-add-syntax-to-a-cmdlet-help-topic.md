@@ -8,24 +8,14 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d0c6d03f-1c1a-43d8-928e-e3290e90e0bc
 caps.latest.revision: 5
-ms.openlocfilehash: 2e9dbc9ff8f9507f2008cd6e114ba6fec36b10bf
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 0210b5ed3104777541692a0e78e7d3b16f9c8256
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054613"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855131"
 ---
 # <a name="how-to-add-syntax-to-a-cmdlet-help-topic"></a>コマンドレットのヘルプ トピックに構文を追加する方法
-
-- [パラメーター属性](#Parameter-Attributes)
-
-- [パラメーター値の属性](#Parameter-Value-Attributes)
-
-- [構文情報の収集](#Gathering-Syntax-Information)
-
-- [XML 構文ダイアグラムのコーディング](#Coding-the-Syntax-Diagram-XML)
-
-## <a name="things-to-know-about-the-syntax-diagram-in-cmdlet-help"></a>コマンドレット ヘルプの構文ダイアグラムについて知っておくべきこと
 
 コマンドレットのヘルプ ファイルで構文ダイアグラムの XML コードを開始する前に、パラメーターの属性と構文ダイアグラムでそのデータを表示する方法など、提供する必要があるデータの種類を明確に把握するには、このセクションを読む.
 
@@ -166,7 +156,7 @@ ms.locfileid: "58054613"
 
 ## <a name="coding-the-syntax-diagram-xml"></a>XML 構文ダイアグラムのコーディング
 
-終わる説明ノードの直後に、XML の構文ノードを開始、 \</maml:description > タグです。 構文ダイアグラムで使用されるデータの収集方法の詳細については、[構文情報の収集](#Gathering-Syntax-Information)を参照してください。
+終わる説明ノードの直後に、XML の構文ノードを開始、 \</maml:description > タグです。 構文ダイアグラムで使用されるデータの収集方法の詳細については、次を参照してください。[構文情報の収集](#gathering-syntax-information)します。
 
 ### <a name="adding-a-syntax-node"></a>構文ノードを追加します。
 
@@ -210,7 +200,7 @@ ms.locfileid: "58054613"
 
 囲まれた構文項目ノードに追加された各パラメーターが指定されて\<コマンド: パラメーター > タグです。 ペアを作成する必要があります\<コマンド: パラメーター > タグを除く、Windows PowerShell によって提供される共通パラメーター、パラメーター セットに含める各パラメーターのですか。
 
-開始の属性\<コマンド: パラメーター > タグは、構文ダイアグラムでのパラメーターの表示方法を決定します。 パラメーターの属性については、[パラメーター属性](#Parameter-Attributes)を参照してください。
+開始の属性\<コマンド: パラメーター > タグは、構文ダイアグラムでのパラメーターの表示方法を決定します。 パラメーターの属性については、次を参照してください。[パラメーター属性](#parameter-attributes)します。
 
 > [!NOTE]
 > \<コマンド: パラメーター > タグは子要素をサポートする\<maml:description > のコンテンツを表示することはありません。 パラメーターの説明は、XML のパラメーターのノードで指定されます。 構文項目の情報は、間の不整合を回避するために bodes 省略 [パラメーター] ノード、(\<maml:description > か、空白のままにします。

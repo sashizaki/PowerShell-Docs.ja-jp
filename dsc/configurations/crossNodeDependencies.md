@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: ノードの相互依存関係の指定
 ms.openlocfilehash: 1bdfbd9f8a94809d6bf410eff525e1c877fb6aad
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402198"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080205"
 ---
 # <a name="specifying-cross-node-dependencies"></a>ノードの相互依存関係の指定
 
@@ -15,14 +15,14 @@ ms.locfileid: "53402198"
 
 DSC には、**WaitForAll**、**WaitForAny**、**WaitForSome** などの特別なリソースが用意されています。このリソースを構成で使用すると、他のノードの構成への依存関係を指定することができます。 これらのリソースの動作は次のとおりです。
 
-- **WaitForAll**:指定されたリソースがで定義されているすべてのターゲット ノードで目的の状態の場合、成功、 **NodeName**プロパティ。
-- **WaitForAny**:指定されたリソースが目的の状態では、少なくとも 1 つで定義されているターゲット ノードの場合、成功、 **NodeName**プロパティ。
-- **WaitForSome**:指定します、 **NodeCount**プロパティに加え、 **NodeName**プロパティ。 リソースは、**NodeName** プロパティで定義されたノードの最小数 (**NodeCount** で指定) で目的の状態になった場合に成功します。
+- **WaitForAll**: **NodeName** プロパティで定義されているすべてのターゲット ノードで、指定されたリソースが目的の状態である場合に成功します。
+- **WaitForAny**: **NodeName** プロパティで定義されているターゲット ノードの少なくとも 1 つで、指定されたリソースが目的の状態である場合に成功します。
+- **WaitForSome**: **NodeName** プロパティのほか、**NodeCount** プロパティも指定します。 リソースは、**NodeName** プロパティで定義されたノードの最小数 (**NodeCount** で指定) で目的の状態になった場合に成功します。
 
 ## <a name="syntax"></a>構文
 
-**WaitForAll**と**WaitForAny**リソースが同じ構文を共有します。 置換\<ResourceType\>いずれかでは、次の例で**WaitForAny**または**WaitForAll**します。
-ように、 **DependsOn**キーワード、名前を"[ResourceType] ResourceName"として書式設定する必要があります。 リソースが個別に属している場合[構成](configurations.md)、含める、 **ConfigurationName**書式設定された文字列で"[ResourceType] ResourceName:: [ConfigurationName]:: [ConfigurationName]"。 **NodeName**がコンピューター、またはノードで、現在のリソースが待機する必要があります。
+**WaitForAll** リソースと **WaitForAny** リソースは構文が同じです。 次の例の \<ResourceType\> を、**WaitForAny** または **WaitForAll** に置き換えます。
+**DependsOn** キーワードと同じように、名前は "[ResourceType]ResourceName" という形式にする必要があります。 リソースが異なる [Configuration](configurations.md) に属している場合は、**ConfigurationName** を書式設定する文字列 "[ResourceType]ResourceName::[ConfigurationName]::[ConfigurationName]" に含めます。 **NodeName** は、現在のリソースが待機する必要があるコンピューターまたはノードです。
 
 ```
 <ResourceType> [string] #ResourceName
@@ -37,7 +37,7 @@ DSC には、**WaitForAll**、**WaitForAny**、**WaitForSome** などの特別�
 }
 ```
 
-**WaitForSome**リソースは追加しますが、上記の例のような構文、 **NodeCount**キー。 **NodeCount**数のノードで、現在のリソースを待機する必要がありますかを示します。
+**WaitForSome** リソースは上の例と似た構文ですが、**NodeCount** キーを追加します。 **NodeCount** は、現在のリソースが待機する必要のあるノードの数を示します。
 
 ```
 WaitForSome [String] #ResourceName
@@ -53,14 +53,14 @@ WaitForSome [String] #ResourceName
 }
 ```
 
-すべて**WaitForXXXX**構文の次のキーを共有します。
+すべての **WaitForXXXX** が次の構文キーを共有します。
 
-| プロパティ | 説明 | |RetryIntervalSec |再試行するまでの秒数。 最小値は 1 |。|RetryCount |再試行の回数の最大数 |。|ThrottleLimit |同時に接続するコンピューターの数。 既定値は`New-CimSession`既定 | |。DependsOn |このリソースを構成する前に、別のリソースの構成を実行する必要があることを示します。 詳細については、次を参照してください[DependsOn](resource-depends-on.md)| |。PsDscRunAsCredential |参照してください[ユーザーの資格情報での DSC の使用](./runAsUser.md) |
+|  プロパティ  |  説明   | | RetryIntervalSec| 再試行するまでの秒数。 最小値は 1 です。| | RetryCount| 再試行の回数の最大数。| | ThrottleLimit| 同時に接続するコンピューターの数。 既定値は `New-CimSession` です。| | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 詳しくは、[DependsOn](resource-depends-on.md) に関する記事をご覧ください| | PsDscRunAsCredential | 「[DSC リソースに対して資格情報を使用する](./runAsUser.md)」をご覧ください |
 
 
 ## <a name="using-waitforxxxx-resources"></a>WaitForXXXX リソースの使用
 
-各**WaitForXXXX**リソースが、指定したノードで完了までに、指定されたリソースを待機します。 その他のリソースで同じ構成できますし、*に依存して*、 **WaitForXXXX**リソースを使用して、 **DependsOn**キー。
+各 **WaitForXXXX** リソースは、指定されたノードで指定された数のリソースが完了するのを待機します。 同じ Configuration の他のリソースは、**DependsOn** キーを使用して **WaitForXXXX** リソースに "*依存する*" ことができます。
 
 たとえば、次の構成では、ターゲット ノードは **MyDC** ノード上の **xADDomain** リソースが完了するまで 15 秒間隔で最大 30 回試行しながら待機した後、ドメインに参加できるようになります。
 
@@ -109,13 +109,13 @@ Configuration JoinDomain
 }
 ```
 
-構成をコンパイルするときに、2 つの".mof"ファイルが生成されます。 使用してターゲット ノードに".mof"の両方のファイルを適用、 [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration)コマンドレット
+Configuration をコンパイルすると、2 つの ".mof" ファイルが生成されます。 [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを使って、両方の ".mof" ファイルをターゲットの Node に適用します
 
->**注:** 既定では、WaitForXXX リソースは 1 回試行してから失敗します。 指定する、通常は必要ありません、 **RetryCount**と**RetryIntervalSec**します。
+>**注:** 既定では、WaitForXXX リソースは 1 回試行してから失敗します。 これは必須ではありませんが、通常は、**RetryCount** と **RetryIntervalSec** を指定します。
 
 ## <a name="see-also"></a>参照
 
 - [DSC 構成](configurations.md)
-- [リソースの依存関係を使用して、](resource-depends-on.md)
+- [リソースの依存関係を使用する](resource-depends-on.md)
 - [DSC リソース](../resources/resources.md)
 - [ローカル構成マネージャーの構成](../managing-nodes/metaConfig.md)

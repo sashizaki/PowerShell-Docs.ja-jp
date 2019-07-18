@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
 caps.latest.revision: 15
 ms.openlocfilehash: 88de19be02de4933f892e02093403a82ccdd5788
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055735"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075496"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>TableControl の TableRowEntries 要素 (書式)
 
@@ -29,7 +29,7 @@ ms.locfileid: "58055735"
 </TableRowEntries>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`TableRowEntries`要素。
 
@@ -53,7 +53,7 @@ ms.locfileid: "58055735"
 
 1 つ以上を指定する必要があります`TableRowEntry`テーブル ビューの要素。 数に上限はありません`TableRowEntry`追加できる要素の順序は重要ではもします。
 
-テーブル ビューのコンポーネントに関する詳細については、[テーブル ビューを作成する](./creating-a-table-view.md)を参照してください。
+テーブル ビューのコンポーネントに関する詳細については、次を参照してください。[テーブル ビューを作成する](./creating-a-table-view.md)します。
 
 ## <a name="example"></a>例
 

@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, PSGallery, GDPR
 title: PowerShell ギャラリー GDPR コンプライアンス
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002652"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084234"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>PowerShell ギャラリー GDPR コンプライアンス
 
@@ -53,8 +53,8 @@ PowerShell ギャラリーのアカウントを作成したユーザーは、Pow
 このポリシーにより、電子メールは 90 日後に削除されます。
 
 90 日以内であれば、ご自分の電子メール アドレスと PowerShell ギャラリーとの間で送受信されたすべてのメールのコピーを要求することができます。
-このやり取りを要求するには、"DSR Request for emails relating to this account" という件名のメールを [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) に送信します。
-メッセージの本文には、要求する内容を記述してください (例: この電子メール アドレスとの間で送受信されたすべてのメールを送ってください)。ご自分の電子メール アドレスに関する、要求から 90 日以内のすべてのメールが 7 営業日以内に送信されます。
+このやり取りを要求するには、次の件名のメールを [cgadmin@microsoft.com](mailto:cgadmin@microsoft.com) に送信します: "DSR Request for emails relating to this account" (このアカウントに関連のあるメールの DSR 要求)。
+メッセージの本文には、要求する情報を記述します (例: "Please send all emails sent to or received from this email address" (このメール アドレスで送受信されたすべてのメールを送ってください))。ご自分の電子メール アドレスに関する、要求から 90 日以内のすべてのメールが 7 営業日以内に送信されます。
 
 ### <a name="powershell-gallery-account-information"></a>PowerShell ギャラリーのアカウント情報
 
@@ -92,7 +92,7 @@ Save-Script Get-repository psgallery
 
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>PowerShell ギャラリーから個人データを削除する
 
-ご自分の PowerShell ギャラリーのアカウント、または PowerShell ギャラリーで所有しているパッケージを削除するには、"GDPR Request for items relating to this account" という件名のメールを cgadmin@microsoft.com に送信します。
+自分の PowerShell ギャラリーのアカウント、または PowerShell ギャラリーで所有しているパッケージを削除するには、次の件名のメールを cgadmin@microsoft.com に送信します: "GDPR Request for items relating to this account" (このアカウントに関連のある項目の GDPR 要求)。
 メッセージの本文には、削除を依頼する情報を記述します。 たとえば、次のように入力します。
 
 - パッケージ "パッケージ名" のバージョン x.y.z を削除してください

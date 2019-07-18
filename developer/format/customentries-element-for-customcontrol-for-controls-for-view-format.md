@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3485958a-ba87-4932-907c-a8f140c4abdb
 caps.latest.revision: 8
 ms.openlocfilehash: 4856aee930285781a101868bd6cb67824585bce1
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861808"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066585"
 ---
 # <a name="customentries-element-for-customcontrol-for-controls-for-view-format"></a>View の Controls の CustomControl の CustomEntries 要素 (書式)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56861808"
 </CustomEntries>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`CustomEntries`要素。 指定できる子要素の数に上限はありません。
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b07a53df-64f1-49b0-8cea-c993b3f1f76b
 caps.latest.revision: 10
 ms.openlocfilehash: 1bc936b94ee6fd6239e9e3c4afcdb8f14fbe36eb
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858208"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066942"
 ---
 # <a name="alignment-element-for-tablecolumnitem-for-tablecontrol-format"></a>TableControl の TableColumnItem の Alignment 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56858208"
 <Alignment>AlignmentType</Alignment>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`Alignment`要素。
 
@@ -57,7 +57,7 @@ ms.locfileid: "56858208"
 
 ## <a name="remarks"></a>コメント
 
-テーブル ビューのコンポーネントに関する詳細については、[テーブル ビュー](./creating-a-table-view.md)を参照してください。
+テーブル ビューのコンポーネントに関する詳細については、次を参照してください。[テーブル ビュー](./creating-a-table-view.md)します。
 
 ## <a name="see-also"></a>参照
 

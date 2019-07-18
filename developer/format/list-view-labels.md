@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 53442bb1-74a3-49f9-9150-3bc3081a7565
 caps.latest.revision: 6
 ms.openlocfilehash: 27de41c88e224f7610c10a764e51524016ecc8cb
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794826"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065276"
 ---
 # <a name="list-view-labels"></a>リスト ビュー (ラベル)
 
-この例では、一覧の行ごとのカスタム ラベルを表示するリスト ビューを実装する方法を示します。 このリスト ビューのプロパティを表示する、 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトによって返される、 [Get-service](/powershell/module/Microsoft.PowerShell.Management/Get-Service)コマンドレット。 リスト ビューのコンポーネントに関する詳細については、[リスト ビューを作成する](./creating-a-list-view.md)を参照してください。
+この例では、一覧の行ごとのカスタム ラベルを表示するリスト ビューを実装する方法を示します。 このリスト ビューのプロパティを表示する、 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトによって返される、 [Get-service](/powershell/module/Microsoft.PowerShell.Management/Get-Service)コマンドレット。 リスト ビューのコンポーネントに関する詳細については、次を参照してください。[リスト ビューを作成する](./creating-a-list-view.md)します。
 
 ### <a name="to-load-this-formatting-file"></a>この書式設定ファイルを読み込む
 

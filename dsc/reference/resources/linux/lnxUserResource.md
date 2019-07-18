@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 DSC の nxUser リソース
 ms.openlocfilehash: 1b02be1559957585a2a1733630cb93440e8182f9
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047569"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62077655"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>Linux 用 DSC の nxUser リソース
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
-ms.openlocfilehash: 9ddb3bc172c66314603d2be4df5192a76c92e05d
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856488"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229316"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>PowerShell バイナリ モジュールを記述する方法
 
@@ -25,11 +25,14 @@ ms.locfileid: "56856488"
 
 1. バイナリ PowerShell ソリューションの作成 (で記述されたコマンドレットなどC#) の機能を持つ必要があると適切に動作することを確認します。
 
-   コードの観点からは、バイナリ モジュールの中核は、コマンドレット アセンブリだけです。 実際には、PowerShell は、1 つのコマンドレットのアセンブリを読み込みとアンロード、何も追加の作業、開発者の観点から、モジュールとして扱います。 コマンドレットの記述方法の詳細については、[Windows PowerShell コマンドレットの記述](../cmdlet/writing-a-windows-powershell-cmdlet.md)を参照してください。
+   コードの観点からは、バイナリ モジュールの中核は、コマンドレット アセンブリだけです。 実際には、PowerShell は、1 つのコマンドレットのアセンブリを読み込みとアンロード、何も追加の作業、開発者の観点から、モジュールとして扱います。 コマンドレットの記述方法の詳細については、次を参照してください。 [Windows PowerShell コマンドレットの記述](../cmdlet/writing-a-windows-powershell-cmdlet.md)します。
 
 2. 必要に応じて、ソリューションの残りの部分を作成: (その他のコマンドレットや、XML ファイル) と、モジュール マニフェストを説明します。
 
-   ソリューション内のコマンドレットのアセンブリを記述するだけでなく、モジュール マニフェストは、モジュールをエクスポートおよびインポートする方法、どのようなコマンドレットを公開するか、および追加のファイルがモジュールに変わりますを記述できます。 前に述べたただし、PowerShell は、何も追加の作業のモジュールと同様にバイナリ コマンドレットを扱うことができます。 そのため、モジュール マニフェストは、主に 1 つのパッケージに複数のファイルを結合することや、特定のアセンブリのパブリケーションを明示的に制御するために便利です。 詳細については、[PowerShell モジュール マニフェストの記述方法](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6)を参照してください。
+   ソリューション内のコマンドレットのアセンブリを記述するだけでなく、モジュール マニフェストは、モジュールをエクスポートおよびインポートする方法、どのようなコマンドレットを公開するか、および追加のファイルがモジュールに変わりますを記述できます。
+   前に述べたただし、PowerShell は、何も追加の作業のモジュールと同様にバイナリ コマンドレットを扱うことができます。
+   そのため、モジュール マニフェストは、主に 1 つのパッケージに複数のファイルを結合することや、特定のアセンブリのパブリケーションを明示的に制御するために便利です。
+   詳細については、次を参照してください。 [PowerShell モジュール マニフェストの記述方法](how-to-write-a-powershell-module-manifest.md)します。
 
    次のコードは、非常に単純C#をモジュールとして使用できるのと同じファイル内の 3 つのコマンドレットを含むコード ブロックです。
 
@@ -72,17 +75,19 @@ ms.locfileid: "56856488"
 
    `PSModulePath`グローバル環境変数には、PowerShell がモジュールの検索に使用する既定のパスがについて説明します。 たとえば、システム上のモジュールを保存する共通のパスになります`%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`します。 既定のパスを使用しない場合は、インストール中に、モジュールの場所を明示的に記述する必要があります。 必要に応じて複数のアセンブリと、ソリューション ファイルを格納するフォルダーで、モジュールを保存するフォルダーを作成することを確認します。
 
-   技術的には必要はありません、モジュールを任意の場所にインストールするに注意してください、 `PSModulePath` -これらは、PowerShell は、モジュールを検索する既定の場所だけです。 ただし、別の場所にモジュールを格納するための十分な理由がない限り、そのためのベスト プラクティスと見なされます。 詳細については、[PowerShell モジュールのインストール](./installing-a-powershell-module.md)と[PowerShell モジュールのインストール パスを変更する](./modifying-the-psmodulepath-installation-path.md)を参照してください。
+   技術的には必要はありません、モジュールを任意の場所にインストールするに注意してください、 `PSModulePath` -これらは、PowerShell は、モジュールを検索する既定の場所だけです。 ただし、別の場所にモジュールを格納するための十分な理由がない限り、そのためのベスト プラクティスと見なされます。 詳細については、次を参照してください。 [PowerShell モジュールのインストール](./installing-a-powershell-module.md)と[PowerShell モジュールのインストール パスを変更する](./modifying-the-psmodulepath-installation-path.md)します。
 
 4. 呼び出しで、モジュールを PowerShell にインポート[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)します。
 
-   呼び出す[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)アクティブ メモリに、モジュールが読み込まれます。 PowerShell 3.0 を使用してあり、後で、単に呼び出す場合はコードで、モジュールの名前もインポートされます。詳細については、[PowerShell モジュールをインポートする](./importing-a-powershell-module.md)を参照してください。
+   呼び出す[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)アクティブ メモリに、モジュールが読み込まれます。 PowerShell 3.0 を使用してあり、後で、単に呼び出す場合はコードで、モジュールの名前もインポートされます。詳細については、次を参照してください。 [PowerShell モジュールをインポートする](./importing-a-powershell-module.md)します。
 
 ## <a name="importing-snap-in-assemblies-as-modules"></a>モジュールとスナップインからアセンブリをインポートします。
 
 コマンドレットとプロバイダー スナップイン アセンブリ内に存在するは、バイナリ モジュールとして読み込むことができます。 スナップインでアセンブリがバイナリ モジュールとして読み込まれた場合は、コマンドレットとプロバイダー、スナップインでは、ユーザーが利用できるが、アセンブリ内のスナップイン クラスは無視され、スナップインが登録されていません。 その結果、Windows PowerShell によって提供されるスナップインでコマンドレットは、コマンドレットとプロバイダーがセッションに使用可能な場合でものスナップインで検出できません。
 
-さらに、バイナリ モジュールの一部として、スナップインによって参照されている書式設定または種類のファイルをインポートできません。 書式設定と種類のファイルをインポートするには、モジュール マニフェストを作成する必要があります。 参照してください、 [PowerShell モジュールのマニフェストを作成する方法](http://msdn.microsoft.com/en-us/abe4c24b-e64e-4a61-81d5-18c4fceba0b6)します。
+さらに、バイナリ モジュールの一部として、スナップインによって参照されている書式設定または種類のファイルをインポートできません。
+書式設定と種類のファイルをインポートするには、モジュール マニフェストを作成する必要があります。
+参照してください、 [PowerShell モジュールのマニフェストを作成する方法](how-to-write-a-powershell-module-manifest.md)します。
 
 ## <a name="see-also"></a>参照
 

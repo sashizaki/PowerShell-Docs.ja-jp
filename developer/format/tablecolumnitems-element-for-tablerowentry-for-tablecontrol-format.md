@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d43684ce-7c3d-4d14-8dbd-061c111ee805
 caps.latest.revision: 12
 ms.openlocfilehash: d05437aaa9652e7f81d0854d1a746acffe145699
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056908"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075394"
 ---
 # <a name="tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format"></a>TableControl の TableRowEntry の TableColumnItems 要素 (書式)
 
@@ -29,7 +29,7 @@ TableColumnItems>
 </TableColumnItems>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`TableColumnItems`要素。
 
@@ -53,7 +53,7 @@ TableColumnItems>
 
 A`TableColumnItem`要素は、行の各列は必須です。 最初のエントリには、最初の列、列と 2 番目の上から 2 番目のエントリが表示されます。
 
-テーブル ビューのコンポーネントに関する詳細については、[テーブル ビューを作成する](./creating-a-table-view.md)を参照してください。
+テーブル ビューのコンポーネントに関する詳細については、次を参照してください。[テーブル ビューを作成する](./creating-a-table-view.md)します。
 
 ## <a name="example"></a>例
 

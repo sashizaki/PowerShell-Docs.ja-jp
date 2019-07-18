@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 7c9096a1-46fa-48ea-9b8a-a583484b9d68
 caps.latest.revision: 13
 ms.openlocfilehash: 6545e71ea18d10621ee9c203e70f64dece460ef5
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56853318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067588"
 ---
 # <a name="parameter-aliases"></a>パラメーターのエイリアス
 
@@ -31,7 +31,7 @@ ms.locfileid: "56853318"
 
 - ValueFromPipelineByName 属性とエイリアス属性を使用するにはのコマンドレットを別のオブジェクトの型にバインドできるようにするパラメーターを定義できます。 たとえば、最初のオブジェクトがライターのプロパティと 2 番目のオブジェクトには、エディター プロパティがありました。 さまざまな種類の 2 つのオブジェクトを作成する必要があります。 コマンドレットが含まれていたパラメーターがある場合、ライターおよびエディターのエイリアスとコマンドレットは、プロパティ名に基づくパイプライン入力を受け入れ、コマンドレットは、2 つのパラメーターのエイリアスを使用して両方のオブジェクトへバインドできます。
 
-特定のパラメーターで使用できるエイリアスに関する詳細については、[パラメーターの共通名](./common-parameter-names.md)を参照してください。
+特定のパラメーターで使用できるエイリアスに関する詳細については、次を参照してください。[パラメーターの共通名](./common-parameter-names.md)します。
 
 ## <a name="defining-parameter-aliases"></a>パラメーターのエイリアスを定義します。
 

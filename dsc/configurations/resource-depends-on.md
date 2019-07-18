@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DependsOn を使用したリソースの依存関係
 ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58055701"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080075"
 ---
 # <a name="resource-dependencies-using-dependson"></a>DependsOn を使用したリソースの依存関係
 

@@ -2,12 +2,12 @@
 title: Windows への PowerShell Core のインストール
 description: Windows への PowerShell Core のインストールに関する情報
 ms.date: 08/06/2018
-ms.openlocfilehash: 910ee5a653fc1703bfddaf6367225f3b654d600f
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.openlocfilehash: 3f21761037311891162f1083234edb0aca80d28b
+ms.sourcegitcommit: 4ec9e10647b752cc62b1eabb897ada3dc03c93eb
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293012"
+ms.lasthandoff: 06/11/2019
+ms.locfileid: "66830225"
 ---
 # <a name="installing-powershell-core-on-windows"></a>Windows への PowerShell Core のインストール
 
@@ -17,22 +17,21 @@ Windows に PowerShell Core をインストールする方法は複数ありま�
 
 WSMan を介して PowerShell のリモート処理を有効にするには、次の前提条件を満たす必要があります。
 
-- Windows 10 以前のバージョンの Windows に [ユニバーサル C ランタイム](https://www.microsoft.com/download/details.aspx?id=50410)をインストールします。 これは、直接ダウンロードすることも、Windows Update 経由で入手することもできます。 (オプション パッケージも含め) 修正プログラムはすべて適用されており、サポート対象のシステムには、これが既にインストールされています。
-- Windows Management Framework (WMF) 4.0 以降を Windows 7 と Windows Server 2008 R2 にインストールします。
+- Windows 10 以前のバージョンの Windows に [ユニバーサル C ランタイム](https://www.microsoft.com/download/details.aspx?id=50410)をインストールします。 これは、直接ダウンロードすることも、Windows Update 経由で入手することもできます。 修正プログラムが(オプション パッケージも含め)すべて適用されていて、かつサポート対象のシステムには、既にインストールされています。
+- Windows Management Framework (WMF) 4.0 以降を Windows 7 と Windows Server 2008 R2 にインストールします。 WMF の詳細については、[WMF の概要](/powershell/wmf/overview)に関する記事を参照してください。
 
 ## <a name="a-idmsi-installing-the-msi-package"></a><a id="msi" />MSI パッケージのインストール
+PowerShell を Windows クライアントまたは Windows Server (Windows 7 SP1、Server 2008 R2 以降が対象)にインストールするには 、Microsoft の GitHub [releases][releases] ページから MSI パッケージをダウンロードしてください。 インストールしたいリリースの **[Assets]** セクションまでスクロールダウンします。 [Assets] セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
 
-PowerShell を Windows クライアントまたは Windows Server にインストールするには (Windows 7 SP1、Server 2008 R2 以降で機能)、MSI パッケージを弊社の GitHub [releases](https://github.com/PowerShell/PowerShell/releases) ページからダウンロードします。 インストールするリリースの **[資産]** セクションまで下へスクロールします。 [資産] セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
-
-MSI ファイルは次のようになります - `PowerShell-<version>-win-<os-arch>.msi`
+MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi` のようになります。
 <!-- TODO: should be updated to point to the Download Center as well -->
 
 ダウンロードしたら、インストーラーをダブルクリックし、プロンプトの指示に従います。
 
 インストーラーにより、Windows の [スタート] メニューにショートカットが作成されます。
 
-- パッケージは既定で次にインストールされます: `$env:ProgramFiles\PowerShell\<version>`
-- PowerShell は次を使って起動できます: [スタート] メニュー、または `$env:ProgramFiles\PowerShell\<version>\pwsh.exe`
+- パッケージは、既定で `$env:ProgramFiles\PowerShell\<version>` にインストールされます。
+- PowerShell は、スタート メニューまたは  `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` から起動できます。
 
 ### <a name="administrative-install-from-the-command-line"></a>コマンド ラインからの管理者インストール
 
@@ -52,11 +51,11 @@ Msiexec.exe 用のコマンド ライン オプションの完全な一覧につ
 
 ## <a name="a-idzip-installing-the-zip-package"></a><a id="zip" />ZIP パッケージのインストール
 
-PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 なお、ZIP アーカイブを使用する場合、MSI パッケージのような前提条件確認は行われません。 WSMan 経由でのリモート処理を正常に動作させるために、[前提条件](#prerequisites)を満たしていることを確認します。
+PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 なお、ZIP アーカイブを使用する場合、MSI パッケージのような前提条件確認は行われません。 WSMan 経由でのリモート処理を正常に動作させるために、[前提条件](#prerequisites)を満たしていることを確かめてください。
 
 ## <a name="deploying-on-windows-iot"></a>Windows IoT への展開
 
-Windows IoT には既に Windows PowerShell が付属しており、PowerShell Core 6 の展開に使用します。
+Windows IoT には既に PowerShell Core 6 の展開に使用するための Windows PowerShell が付属しています。
 
 1. ターゲット デバイスに対して `PSSession` を作成します
 
@@ -154,4 +153,8 @@ PowerShell Core は、WSMan と SSH の両方で PowerShell Remoting Protocol (P
 - [PowerShell Core での WSMan リモート処理][wsman-remoting]
 
 <!-- [download-center]: TODO -->
-[releases]: https://github.com/PowerShell/PowerShell/releases [ssh-remoting]: ../core-powershell/SSH-Remoting-in-PowerShell-Core.md [wsman-remoting]: ../core-powershell/WSMan-Remoting-in-PowerShell-Core.md [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
+
+[releases]: https://github.com/PowerShell/PowerShell/releases
+[ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
+[wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
+[AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell

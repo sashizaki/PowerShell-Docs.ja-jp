@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: MSFT_DSCLocalConfigurationManager クラスの ApplyConfiguration メソッド
-ms.openlocfilehash: 559ff1793a18e28dad2f176bdb20eb53bc08630d
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+title: ApplyConfiguration メソッド
+ms.openlocfilehash: 0425b9a7db37e421830ba37da8f5c0a4877a1b72
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047509"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727177"
 ---
-# <a name="applyconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの ApplyConfiguration メソッド
+# <a name="applyconfiguration-method"></a>ApplyConfiguration メソッド
 
 構成エージェントを使用して、保留中の構成を適用します。
 
@@ -37,9 +37,9 @@ uint32 ApplyConfiguration(
 
 ## <a name="requirements"></a>要件
 
-MOF**DscCore.mof
+**MOF:** DscCore.mof
 
-**［名前空間］:Root \microsoft\windows\desiredstateconfiguration
+**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

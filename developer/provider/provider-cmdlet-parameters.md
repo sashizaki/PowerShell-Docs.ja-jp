@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: b3d09eaa-924f-4e2b-adfb-14bb729090dd
 caps.latest.revision: 8
 ms.openlocfilehash: ad7f9737c646dd5cea5abb14b828236e40feac5a
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057044"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62081140"
 ---
 # <a name="provider-cmdlet-parameters"></a>コマンドレット コマンドレットのパラメーター
 
@@ -67,7 +67,7 @@ Get ChildItems のコマンドレット、プロバイダーに渡される値�
 
 ## <a name="provider-cmdlet-dynamic-parameters"></a>プロバイダー コマンドレットの動的パラメーター
 
-コマンドレットのプロバイダーの動的パラメーターは、スタンドアロンのコマンドレットのプロバイダーを動的に似ています。 ユーザーなどの既定のパラメーターのいずれかの特定の値を指定する場合は、パラメーターをコマンドレットに追加するようどちらの場合で、`path`パラメーター。 ただし、動的パラメーターの追加をトリガーするすべての静的パラメーター使用できます。 動的パラメーターの詳細については、[プロバイダー コマンドレットの動的パラメーター](./provider-cmdlet-dynamic-parameters.md)を参照してください。
+コマンドレットのプロバイダーの動的パラメーターは、スタンドアロンのコマンドレットのプロバイダーを動的に似ています。 ユーザーなどの既定のパラメーターのいずれかの特定の値を指定する場合は、パラメーターをコマンドレットに追加するようどちらの場合で、`path`パラメーター。 ただし、動的パラメーターの追加をトリガーするすべての静的パラメーター使用できます。 動的パラメーターの詳細については、次を参照してください。[プロバイダー コマンドレットの動的パラメーター](./provider-cmdlet-dynamic-parameters.md)します。
 
 ## <a name="see-also"></a>参照
 

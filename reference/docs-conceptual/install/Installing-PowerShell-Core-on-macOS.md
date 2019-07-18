@@ -2,12 +2,12 @@
 title: macOS への PowerShell Core のインストール
 description: macOS への PowerShell Core のインストールに関する情報
 ms.date: 12/12/2018
-ms.openlocfilehash: 7db8ca0cb6d13db8ce7f11b4a4b03b7d3f9b6feb
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.openlocfilehash: 70f5d64aa8a697a9011d07fbcb2bb821463827e1
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293403"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229746"
 ---
 # <a name="installing-powershell-core-on-macos"></a>macOS への PowerShell Core のインストール
 
@@ -19,6 +19,7 @@ PowerShell Core は、macOS 10.12 以降をサポートしています。
 
 [Homebrew][brew] は、macOS 用の推奨されるパッケージ マネージャーです。
 `brew` コマンドが見つからない場合、[指示][brew]に従い、Homebrew をインストールする必要があります。
+それ以外の場合は、[直接ダウンロード](#installation-via-direct-download)によって、または[バイナリアーカイブ](#binary-archives)から PowerShell をインストールできます。
 
 ## <a name="installation-of-latest-stable-release-via-homebrew-on-macos-1012-or-higher"></a>macOS 10.12 以降で Homebrew を使用した最新の安定版リリースのインストール
 
@@ -84,8 +85,7 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>直接ダウンロードによるインストール
 
-PKG パッケージをダウンロードする
-`powershell-6.2.0-osx-x64.pkg`
+PKG パッケージ `powershell-6.2.0-osx-x64.pkg` を
 [リリース][] ページから macOS コンピューターにダウンロードします。
 
 ファイルをダブルクリックして画面の指示に従うか、ターミナルからインストールします。
@@ -175,13 +175,13 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 
 ## <a name="paths"></a>パス
 
-* `$PSHOME` : `/usr/local/microsoft/powershell/6.2.0/`
-* ユーザー プロファイルは次から読み込まれます: `~/.config/powershell/profile.ps1`
-* 既定のプロファイルは次から読み込まれます: `$PSHOME/profile.ps1`
-* ユーザー モジュールは次から読み込まれます: `~/.local/share/powershell/Modules`
-* 共有モジュールは次から読み込まれます: `/usr/local/share/powershell/Modules`
-* 既定のモジュールは次から読み込まれます: `$PSHOME/Modules`
-* PSReadline 履歴は次に記録されます: `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`
+* `$PSHOME` は `/usr/local/microsoft/powershell/6.2.0/` です
+* ユーザー プロファイルは `~/.config/powershell/profile.ps1` から読み込まれます
+* 既定のプロファイルは `$PSHOME/profile.ps1` から読み込まれます
+* ユーザー モジュールは `~/.local/share/powershell/Modules` から読み込まれます
+* 共有モジュールは `/usr/local/share/powershell/Modules` から読み込まれます
+* 既定のモジュールは `$PSHOME/Modules` から読み込まれます
+* PSReadline 履歴は `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt` に記録されます
 
 プロファイルには、PowerShell のホスト単位の構成が考慮されています。
 そのため、既定のホスト固有のプロファイルは、同じ場所の `Microsoft.PowerShell_profile.ps1` に存在します。

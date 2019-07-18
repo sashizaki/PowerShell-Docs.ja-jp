@@ -2,13 +2,12 @@
 ms.date: 08/27/2018
 keywords: PowerShell, コマンドレット
 title: 詳しいヘルプ情報の取得
-ms.assetid: 6fb4daf7-8607-4a3e-b692-f77631adc1b9
-ms.openlocfilehash: e58814f512aa2c5914f92f942cf2a4a76956ee20
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 3f52de8c9963618c154b119d5f4859a92d61fbda
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57794571"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030406"
 ---
 # <a name="getting-detailed-help-information"></a>詳しいヘルプ情報の取得
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0f7a74e9-764d-46ce-ab8e-8b9314ce1659
 caps.latest.revision: 12
 ms.openlocfilehash: 442565d25f60ae8e04501f3f9ffba35d486fbc8a
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054945"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066194"
 ---
 # <a name="entryselectedby-element-for-listentry-for-listcontrol-format"></a>ListControl の ListEntry の EntrySelectedBy 要素 (書式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "58054945"
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`EntrySelectedBy`要素。
 
@@ -57,9 +57,9 @@ ms.locfileid: "58054945"
 
 少なくとも 1 つの型、選択範囲のセット、またはリスト ビューの定義の選択条件を指定する必要があります。 使用できる子要素の数に上限はありません。
 
-選択条件を使用して、定義オブジェクトに特定のプロパティがある場合など、使用するのに必要な条件を定義または特定のプロパティの値またはスクリプトに評価される`true`します。 選択条件の詳細については、[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
+選択条件を使用して、定義オブジェクトに特定のプロパティがある場合など、使用するのに必要な条件を定義または特定のプロパティの値またはスクリプトに評価される`true`します。 選択条件の詳細については、次を参照してください。[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)します。
 
-リスト ビューのコンポーネントに関する詳細については、[リスト ビューを作成する](./creating-a-list-view.md)を参照してください。
+リスト ビューのコンポーネントに関する詳細については、次を参照してください。[リスト ビューを作成する](./creating-a-list-view.md)します。
 
 ## <a name="example"></a>例
 

@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: 項目を直接操作する
-ms.assetid: 8cbd4867-917d-41ea-9ff0-b8e765509735
-ms.openlocfilehash: 4caa7d2e0eecff9783556062d8503fe10e616fe5
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293267"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030132"
 ---
 # <a name="manipulating-items-directly"></a>項目を直接操作する
 

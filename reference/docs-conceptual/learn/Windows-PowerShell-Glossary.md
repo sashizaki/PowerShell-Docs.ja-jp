@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell 用語集
-ms.assetid: b0f88cbe-cb83-4912-a301-184534cb35c7
-ms.openlocfilehash: fd15667939fd9b3ea705806686b626645519588a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 0827ec771b1744b87a8c0f0ddf48438f9ba484b2
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403245"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030344"
 ---
 # <a name="windows-powershell-glossary"></a>Windows PowerShell 用語集
 

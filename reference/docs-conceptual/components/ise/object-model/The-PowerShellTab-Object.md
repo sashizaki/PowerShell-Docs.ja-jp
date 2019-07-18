@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: PowerShellTab オブジェクト
-ms.assetid: a9b58556-951b-4f48-b3ae-b351b7564360
-ms.openlocfilehash: 577e2aaaddf3071801816d9ae91dbf0006dd5072
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: bfa11b553f97b7b27b974855ff4e8f1a48c33fea
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402445"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028909"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab オブジェクト
 
@@ -40,11 +39,11 @@ Windows PowerShell ISE 3.0 以降でサポートされており、それより�
 指定したスクリプトを [PowerShell] タブで実行します。
 
 > [!NOTE]
-> このメソッドは、その他の [PowerShell] タブでのみ機能し、実行元となる [PowerShell] タブでは機能しません。 スクリプト ブロックが実行され、スクリプトから返される値はコマンドを呼び出した実行環境に返されます。 コマンドの実行よりも長くかかる場合、 **millesecondsTimeout**値を指定し、コマンドは、例外で失敗します。操作がタイムアウトしました
+> このメソッドは、その他の [PowerShell] タブでのみ機能し、実行元となる [PowerShell] タブでは機能しません。 スクリプト ブロックが実行され、スクリプトから返される値はコマンドを呼び出した実行環境に返されます。 コマンドが **millesecondsTimeout** の値で指定した時間内に完了しない場合、コマンドが失敗して次の例外が発生します。"操作がタイムアウトしました"。
 
 **Script** - System.Management.Automation.ScriptBlock または文字列。実行するスクリプト ブロック。
 
-**\[useNewScope\]** - 省略可能なブール値で、既定は **$true** です。**$true** に設定されると、そのコマンドを実行する新しいスコープが作成されます。 コマンドで指定されている [PowerShell] タブのランタイム環境は変更されません。
+**\[useNewScope\]** - 省略可能なブール値で、既定は **$true** です。 **$true** に設定されると、そのコマンドを実行する新しいスコープが作成されます。 コマンドで指定されている [PowerShell] タブのランタイム環境は変更されません。
 
 **\[millisecondsTimeout\]** - **500** を既定値とする省略可能な整数。
 指定した時間内にコマンドが完了しない場合、コマンドによって **TimeoutException** が生成され、"処理がタイムアウトになりました。" というメッセージが表示されます。

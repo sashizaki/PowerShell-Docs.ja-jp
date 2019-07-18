@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC on Nano Server の使用
-ms.openlocfilehash: ac5eaf3885788f40e12e4f0a0f19025668280f7e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: fb826455c21833ae4c8dc2ecd731ffce6bf7eaba
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58054664"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734620"
 ---
 # <a name="using-dsc-on-nano-server"></a>DSC on Nano Server の使用
 
@@ -44,7 +44,7 @@ Nano Server でサポートされる API のセットは、通常版の Windows 
 - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument)
 - [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus)
 - [Invoke-DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource)
-- [Find-DscResource](https://technet.microsoft.com/en-us/library/mt517874.aspx)
+- [Find-DscResource](/powershell/module/powershellget/find-dscresource?view=powershell-6)
 - [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource)
 - [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum)
 
@@ -56,7 +56,7 @@ Nano Server でサポートされる API のセットは、通常版の Windows 
 
 - ユーザー コンテキストでのリソースの実行 ([ユーザーの資格情報を指定した DSC の実行 (RunAs)](../configurations/runAsUser.md) に関するページを参照)
 
-- クラスベースのリソース (「[PowerShell クラスを使用したカスタム DSC リソースの記述](../resources/authoringResourceClass.md)」を参照)
+- クラスベースのリソース (「[PowerShell クラスを使用したカスタム DSC リソースの記述](/previous-versions//dn948461(v=technet.10))」を参照)
 
 - DSC リソースのデバッグ (「[DSC リソースのデバッグ](../troubleshooting/debugResource.md)」を参照)
 

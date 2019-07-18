@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 81aeafad-dbc3-4712-8bb9-e6a417be260f
 caps.latest.revision: 15
-ms.openlocfilehash: 2df5a59833fcdd58c6b2afbb4882111592fb3d76
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 1aaf936aa22af5c4a4b8c2fa4e6b3bbd2cff6d20
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056432"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855081"
 ---
 # <a name="writing-a-windows-powershell-host-application"></a>Windows PowerShell ホスト アプリケーションを記述する
 
 Windows PowerShell は、アプリケーションでホストできます。 ホスト アプリケーションは、コマンドが実行をローカルまたはリモート コンピューターでセッションを開いて、アプリケーションのニーズに応じて同期または非同期ベースのいずれかのコマンドを呼び出すには、実行空間を定義できます。
 
-次のトピックをホストするアプリケーションを作成する方法を説明します。
+次のトピックでは、Windows PowerShell をホストするアプリケーションを作成する方法について説明します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

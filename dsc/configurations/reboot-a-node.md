@@ -1,13 +1,13 @@
 ---
-ms.date: 1/17/2019
+ms.date: 01/17/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: ノードを再起動する
-ms.openlocfilehash: 015b82a32caefc420973651c72e272fd85baf880
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 106fa1e7b0e3aaf3070ec05548d51140fe9a7725
+ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58054732"
+ms.lasthandoff: 06/03/2019
+ms.locfileid: "66470750"
 ---
 # <a name="reboot-a-node"></a>ノードを再起動する
 

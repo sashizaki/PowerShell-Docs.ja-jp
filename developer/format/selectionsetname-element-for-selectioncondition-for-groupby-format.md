@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 7b9a4912-d755-42f3-8058-53c0797e28e4
 caps.latest.revision: 6
 ms.openlocfilehash: 371913eda2b09ff6788494b68738f2ad53ccb115
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56856758"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063768"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-groupby-format"></a>GroupBy の SelectionCondition の SelectionSetName 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56856758"
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`SelectionSetName`要素。
 
@@ -51,9 +51,9 @@ ms.locfileid: "56856758"
 
 ## <a name="remarks"></a>コメント
 
-選択範囲のセットは、書式設定ファイルを定義する任意のビューで使用できる .NET オブジェクトの一般的なグループです。 作成と選択範囲のセットの参照の詳細については、[選択範囲の設定を定義する](./defining-selection-sets.md)を参照してください。
+選択範囲のセットは、書式設定ファイルを定義する任意のビューで使用できる .NET オブジェクトの一般的なグループです。 作成と選択範囲のセットの参照の詳細については、次を参照してください。[選択範囲の設定を定義する](./defining-selection-sets.md)します。
 
-この要素が指定されている場合は指定できません、 [TypeName](./typename-element-for-selectioncondition-for-groupby-format.md)要素。 選択条件を定義する詳細については、[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
+この要素が指定されている場合は指定できません、 [TypeName](./typename-element-for-selectioncondition-for-groupby-format.md)要素。 選択条件を定義する詳細については、次を参照してください。[を表示するデータの条件を定義する](./defining-conditions-for-displaying-data.md)します。
 
 ## <a name="see-also"></a>参照
 

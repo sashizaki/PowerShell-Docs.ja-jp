@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Registry リソース
 ms.openlocfilehash: e0ae1a4a27edc08c4e6ccd47786426917eb1ccb4
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047726"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076958"
 ---
 # <a name="dsc-registry-resource"></a>DSC Registry リソース
 
-適用先:Windows PowerShell 4.0、Windows PowerShell 5.0_
+_適用先:Windows PowerShell 4.0、Windows PowerShell 5.0_
 
 Windows PowerShell Desired State Configuration (DSC) の **Registry** リソースは、ターゲット ノードでレジストリ キーと値を管理するためのメカニズムを備えています。
 
@@ -42,7 +42,7 @@ Registry [string] #ResourceName
 | Hex| 16 進形式でデータを表現するかどうかを示します。 指定した場合、DWORD/QWORD 値データが 16 進形式で表示されます。 その他の種類に対しては無効です。 既定値は **$false** です。|
 | DependsOn| このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が **ResourceName** で、そのタイプが **ResourceType** である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。|
 | ValueData| レジストリ値のデータ。|
-| ValueType| 値の種類を示します。 サポートされている型は次のとおりです。文字列 (REG_SZ)、バイナリ (REG-BINARY)、Dword 32 ビット (REG_DWORD)、Qword 64 ビット (REG_QWORD)、複数行文字列 (REG_MULTI_SZ)、展開可能な文字列 (REG_EXPAND_SZ) |
+| ValueType| 値の種類を示します。 サポートされている型は次のとおりです。文字列 (REG_SZ)、バイナリ (REG-BINARY)、Dword 32 ビット (REG_DWORD)、Qword 64 ビット (REG_QWORD)、複数行文字列 (REG_MULTI_SZ)、展開可能な文字列値 (REG_EXPAND_SZ) |
 
 ## <a name="example"></a>例
 

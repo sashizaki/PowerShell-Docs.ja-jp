@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: c92a6d3d-8d34-4a76-bdc3-dea923d9858e
 caps.latest.revision: 17
 ms.openlocfilehash: e24d40746da91f60aaf2af655ddcadc88ab6a4db
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857338"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62082738"
 ---
 # <a name="runspace-samples"></a>実行空間のサンプル
 
@@ -22,7 +22,7 @@ ms.locfileid: "56857338"
 ## <a name="in-this-section"></a>このセクションの内容
 
 > [!NOTE]
-> カスタム ホスト インターフェイスを作成するホスト アプリケーションのサンプルは、[カスタム ホスト サンプル](./custom-host-samples.md)を参照してください。
+> カスタム ホスト インターフェイスを作成するホスト アプリケーションのサンプルは、次を参照してください。[カスタム ホスト サンプル](./custom-host-samples.md)します。
 
  [Runspace01 サンプル](./runspace01-sample.md)このサンプルは、使用する方法を示します、 [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell)を実行するクラス、 [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレット同期的に、コンソールでその出力を表示ウィンドウです。
 

@@ -12,17 +12,17 @@ helpviewer_keywords:
 ms.assetid: 55c8b5cb-8ee2-4080-afc4-3f09c9f20128
 caps.latest.revision: 6
 ms.openlocfilehash: 4d50ef4dcd75d5c0ba802fbcfe2d7d1d7c954707
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067027"
 ---
 # <a name="writing-a-custom-windows-powershell-snap-in"></a>カスタム Windows PowerShell スナップインを記述する
 
 この例では、特定のコマンドレットを登録する Windows PowerShell スナップインを記述する方法を示します。
 
-この種類のスナップインでは、登録するどのコマンドレット、プロバイダー、型、または形式を指定します。 アセンブリ内のすべてのコマンドレットとプロバイダーを登録するスナップインを作成する方法の詳細については、[、Windows PowerShell スナップインの書き込み](./writing-a-windows-powershell-snap-in.md)を参照してください。
+この種類のスナップインでは、登録するどのコマンドレット、プロバイダー、型、または形式を指定します。 アセンブリ内のすべてのコマンドレットとプロバイダーを登録するスナップインを作成する方法の詳細については、次を参照してください。 [、Windows PowerShell スナップインの書き込み](./writing-a-windows-powershell-snap-in.md)します。
 
 ## <a name="to-write-a-windows-powershell-snap-in-that-registers-specific-cmdlets"></a>Windows PowerShell スナップインの記述には、特定のコマンドレットを登録します。
 
@@ -213,7 +213,7 @@ public class CustomPSSnapinTest : CustomPSSnapIn
 }
 ```
 
-スナップインの登録の詳細については、[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)で、 [Windows PowerShell プログラマー ガイド](../prog-guide/windows-powershell-programmer-s-guide.md)を参照してください。
+スナップインの登録の詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)で、 [Windows PowerShell プログラマー ガイド](../prog-guide/windows-powershell-programmer-s-guide.md)します。
 
 ## <a name="see-also"></a>参照
 

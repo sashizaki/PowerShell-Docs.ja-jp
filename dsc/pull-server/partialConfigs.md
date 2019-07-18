@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell Desired State Configuration の部分構成
 ms.openlocfilehash: b2b17e35597707eb97ecdcea9dda4466deeab0cb
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402725"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079525"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration の部分構成
 
-適用先:Windows PowerShell 5.0 以降。_
+_適用先:Windows PowerShell 5.0 以降。_
 
 PowerShell 5.0 では、Desired State Configuration (DSC) によって、複数のソースからフラグメントで構成を配信できます。 ターゲット ノード上のローカル構成マネージャー (LCM) によって、フラグメントがまとめられ、1 つの構成として適用されます。 この機能により、チームまたは個人間で構成の制御を共有できます。 たとえば、2 つ以上開発者のチームがサービスで共同作業を行っている場合、それぞれがサービスの自身の一部を管理する構成を作成する可能性があります。 これらの構成は、それぞれ異なるプル サーバーからプルされ、開発の異なる段階で追加される可能性があります。 部分構成では、1 つの構成ドキュメントの編集を調整することなく、さまざまな個人またはチームが構成ノードのさまざまな側面を制御することもできます。 たとえば、1 つのチームが VM とオペレーティング システムの展開を担当し、別のチームがその VM に別のアプリケーションとサービスを展開する場合があります。 部分構成を使用すると、各チームが、不必要に複雑になることなく、独自の構成を作成できます。
 
@@ -375,6 +375,6 @@ SharePointConfig
 
 ## <a name="see-also"></a>参照
 
-[DSC Web プル サーバーのセットアップ](pullServer.md)
+[Windows PowerShell Desired State Configuration プル サーバー](pullServer.md)
 
 [ローカル構成マネージャーの構成](../managing-nodes/metaConfig.md)

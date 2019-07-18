@@ -2,12 +2,12 @@
 ms.date: 08/27/2018
 keywords: PowerShell, コマンドレット
 title: PowerShell スクリプト
-ms.openlocfilehash: 07925ce8dcafd33970a703c9b241bf6f76f88d10
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402894"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058490"
 ---
 # <a name="powershell"></a>PowerShell
 
@@ -50,7 +50,7 @@ Get-Service | Get-Member
 
 ### <a name="consistency"></a>一貫性
 
-システム管理は複雑な作業になる場合があります。 一貫性のあるインターフェースを備えたツールを使用することで、システム管理に特有の複雑な作業を制御しやすくなります。 残念ながら、コマンド ライン ツールもスクリプト可能な COM オブジェクトも一貫性に優れてはいません。
+システム管理は複雑な作業になる場合があります。 一貫性のあるインターフェースを備えたツールを使用することで、システム管理に特有の複雑な作業を制御しやすくなります。 残念ながら、コマンド ライン ツールもスクリプト可能なコンポーネント オブジェクト モデル (COM) オブジェクトも一貫性に優れてはいません。
 
 PowerShell の持つ一貫性は、その主要な利点の 1 つです。 たとえば、`Sort-Object` コマンドレットの使用法を習得すると、その知識を利用してあらゆるコマンドレットの出力を並べ替えることができます。 コマンドレットごとに異なる並べ替えルーチンを習得する必要はありません。
 

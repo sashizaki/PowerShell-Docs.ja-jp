@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: acdeef4d-3554-4f39-a7e6-a684e3848fd7
 caps.latest.revision: 19
 ms.openlocfilehash: efc1c5d1338889ecd0be7150b7733842ce78979e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863188"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083826"
 ---
 # <a name="viewselectedby-element-format"></a>ViewSelectedBy 要素 (書式)
 
@@ -30,7 +30,7 @@ ViewDefinitions 要素 (形式) 表示要素 (形式) ViewSelectedBy 要素 (形
 </ViewSelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`ViewSelectedBy`要素。 この要素には、少なくとも 1 つ含める必要があります`TypeName`または`SelectionSetName`子要素。 指定できる子要素の数に制限はありません、順序は重要ではもします。
 
@@ -55,7 +55,7 @@ ViewDefinitions 要素 (形式) 表示要素 (形式) ViewSelectedBy 要素 (形
 
 さまざまなビューでこの要素の使用方法の詳細については、次を参照してください[テーブル ビュー コンポーネント](./creating-a-table-view.md)、[一覧ビュー コンポーネント](./creating-a-list-view.md)、[ワイド ビュー コンポーネント](./creating-a-wide-view.md)、および[。カスタム コントロール コンポーネント](./creating-custom-controls.md)します。
 
-`SelectionSetName`要素が書式設定ファイルが複数のビューによって表示されるオブジェクトのセットを定義する場合に使用されます。 選択範囲のセットを定義し、参照する方法の詳細については、[オブジェクト設定を定義する](./defining-selection-sets.md)を参照してください。
+`SelectionSetName`要素が書式設定ファイルが複数のビューによって表示されるオブジェクトのセットを定義する場合に使用されます。 選択範囲のセットを定義し、参照する方法の詳細については、次を参照してください。[オブジェクト設定を定義する](./defining-selection-sets.md)します。
 
 ## <a name="example"></a>例
 

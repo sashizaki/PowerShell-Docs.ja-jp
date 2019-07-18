@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: ネットワーク関連タスクの実行
-ms.assetid: a43cc55f-70c1-45c8-9467-eaad0d57e3b5
-ms.openlocfilehash: 250ae6e5f6431ce659b3600188d7e30e501c3247
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.openlocfilehash: e581296b4b7609b374f206c447c4f797e3e2c400
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293131"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030859"
 ---
 # <a name="performing-networking-tasks"></a>ネットワーク関連タスクの実行
 

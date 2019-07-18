@@ -2,17 +2,16 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: ISESnippetCollection オブジェクト
-ms.assetid: ae974955-4282-4cbc-8c42-0fff1904ef32
-ms.openlocfilehash: bd5ed4a1f15e0a398b7c6a17f0071cad889be4a7
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 6c392c08767fba004f63155d5a469777856a0b59
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403434"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030503"
 ---
 # <a name="the-isesnippetcollection-object"></a>ISESnippetCollection オブジェクト
 
-**ISESnippetCollection** オブジェクトは、**ISESnippet** オブジェクトのコレクションです。 **PowerShellTab** オブジェクトに関連付けられているファイル コレクションは、このクラスのメンバーです。 例としては、**$psISE.CurrentPowerShellTab.Files** コレクションです。
+**ISESnippetCollection** オブジェクトは、**ISESnippet** オブジェクトのコレクションです。 **PowerShellTab** オブジェクトに関連付けられているファイル コレクションは、このクラスのメンバーです。 例としては、 **$psISE.CurrentPowerShellTab.Files** コレクションです。
 
 ## <a name="methods"></a>メソッド
 

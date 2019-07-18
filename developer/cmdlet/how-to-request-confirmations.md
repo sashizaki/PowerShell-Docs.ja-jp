@@ -9,18 +9,18 @@ ms.topic: article
 ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
 caps.latest.revision: 9
 ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058829"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067843"
 ---
 # <a name="how-to-request-confirmations"></a>確認を要求する方法
 
 この例では、呼び出し、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)と[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)から確認を要求する方法、ユーザー アクションが行われる前にします。
 
 > [!IMPORTANT]
-> Windows PowerShell でこれらの要求を処理する方法の詳細については、[確認を要求する](./requesting-confirmation-from-cmdlets.md)を参照してください。
+> Windows PowerShell でこれらの要求を処理する方法の詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。
 
 ## <a name="to-request-confirmation"></a>確認を要求するには
 

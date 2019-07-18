@@ -3,13 +3,13 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: '複合リソース: リソースとしての DSC 構成の使用'
 ms.openlocfilehash: 2823d05e0c8feb2933ca691f9ab5149ace2f7ee3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076686"
 ---
-# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>複合リソースリソースとして DSC 構成の使用
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>複合リソース:リソースとしての DSC 構成の使用
 
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -190,7 +190,7 @@ configuration RenameVM
 
 ## <a name="supporting-psdscrunascredential"></a>PsDscRunAsCredential のサポート
 
->**注:** **PsDscRunAsCredential** PowerShell 5.0 以降ではサポートされています。
+>**注:** **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。
 
 **PsDscRunAsCredential** プロパティを [DSC 構成](../configurations/configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。
 詳細については、「[ユーザーの資格情報を指定して DSC を実行する](../configurations/runAsUser.md)」を参照してください。

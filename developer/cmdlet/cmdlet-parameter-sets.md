@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f902fd4d-8f6e-4ef1-b07f-59983039a0d1
 caps.latest.revision: 10
 ms.openlocfilehash: a5822ef1ed3c9efb5957c20255783d515de8957a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857268"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068524"
 ---
 # <a name="cmdlet-parameter-sets"></a>コマンドレット パラメーター セット
 
@@ -47,7 +47,7 @@ Windows PowerShell では、パラメーター セットを使用して、さま
 
 ## <a name="default-parameter-sets"></a>既定のパラメーター セット
 
-複数のパラメーター セットが定義されているときに使用できます、`DefaultParameterSetName`コマンドレットの既定のパラメーター セットを指定する属性のキーワード。 Windows PowerShell では、コマンドによって提供される情報に基づいて、パラメーターを使用する設定を判断できない場合は、設定、既定のパラメーターを使用します。 コマンドレットの属性の詳細については、[コマンドレット属性宣言](./cmdlet-attribute-declaration.md)を参照してください。
+複数のパラメーター セットが定義されているときに使用できます、`DefaultParameterSetName`コマンドレットの既定のパラメーター セットを指定する属性のキーワード。 Windows PowerShell では、コマンドによって提供される情報に基づいて、パラメーターを使用する設定を判断できない場合は、設定、既定のパラメーターを使用します。 コマンドレットの属性の詳細については、次を参照してください。[コマンドレット属性宣言](./cmdlet-attribute-declaration.md)します。
 
 ## <a name="declaring-parameter-sets"></a>パラメーター セットを宣言します。
 

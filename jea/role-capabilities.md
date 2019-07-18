@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: JEA, PowerShell, セキュリティ
 title: JEA ロール機能
-ms.openlocfilehash: b93d206680de485d6cb7a8cb26d63afda5bf8421
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 528b41c0e2ffdcfed3251fb0f714c649e7290761
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58055055"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229556"
 ---
 # <a name="jea-role-capabilities"></a>JEA ロール機能
 
@@ -183,6 +183,8 @@ JEA セッションの制約付きコマンドレットは、関数から呼び�
 
 カスタム関数をたくさん記述する場合、[PowerShell スクリプト モジュール](https://msdn.microsoft.com/library/dd878340(v=vs.85).aspx)に入れると簡単です。
 その後、組み込みやサードパーティのモジュールの場合のように、VisibleFunctions フィールドを利用し、JEA セッションで関数を表示させることができます。
+
+JEA セッションでタブ補完が正しく機能するためには、**VisibleFunctions** リストに組み込み関数 `tabexpansion2` を含める必要があります。
 
 ## <a name="place-role-capabilities-in-a-module"></a>モジュールにロール機能を配置する
 

@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: ddcecc46-ac75-43fa-b03a-802a68524ec3
 caps.latest.revision: 10
 ms.openlocfilehash: da6ac5abe7acbbee8f57b3e81529664f81800b86
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56863268"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075870"
 ---
 # <a name="propertyname-element-for-groupby-format"></a>GroupBy の PropertyName 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56863268"
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`PropertyName`要素。
 
@@ -67,7 +67,7 @@ Windows PowerShell は、このプロパティの値が変更されるたびに�
 
 ```
 
-この要素を含む完全な書式設定ファイルの例は、[表示幅が広い (GroupBy)](./wide-view-groupby.md)を参照してください。
+この要素を含む完全な書式設定ファイルの例は、次を参照してください。[表示幅が広い (GroupBy)](./wide-view-groupby.md)します。
 
 ## <a name="see-also"></a>参照
 

@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: ISEOptions オブジェクト
-ms.assetid: 75e2a76f-f3d1-490b-ad5d-e3829946aabb
-ms.openlocfilehash: e756da21aaa5465f7fa6a90563b4180f0c89e87b
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: e9dcb13c14212ec4aec40a7f163e2ed56ceea6f9
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403182"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67028930"
 ---
 # <a name="the-iseoptions-object"></a>ISEOptions オブジェクト
 
@@ -138,7 +137,7 @@ $psISE.Options.ConsolePaneTextBackgroundColor = 'pink'
 
 Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
-Windows PowerShell ISE のコンソール ウィンドウの IntelliSense のトークンの色を指定します。 このプロパティは、コンソール ウィンドウのトークンの種類と色の名前/値のペアを含むディクショナリ オブジェクトです。 スクリプト ウィンドウで IntelliSense トークンの色を変更する場合は、[TokenColors](#tokencolors) を参照してください。 色を既定値にリセットする場合、[RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors) を参照してください。 次のトークンの色を設定できます。属性、コマンド、CommandArgument、CommandParameter、コメント、GroupEnd、GroupStart、キーワード、LineContinuation、LoopLabel、メンバー、改行、数値、演算子、位置、StatementSeparator、文字列、型、不明、変数です。
+Windows PowerShell ISE のコンソール ウィンドウの IntelliSense のトークンの色を指定します。 このプロパティは、コンソール ウィンドウのトークンの種類と色の名前/値のペアを含むディクショナリ オブジェクトです。 スクリプト ウィンドウで IntelliSense トークンの色を変更する場合は、[TokenColors](#tokencolors) を参照してください。 色を既定値にリセットする場合、[RestoreDefaultConsoleTokenColors](#restoredefaultconsoletokencolors) を参照してください。 以下のトークンの色を設定できます。Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
 
 ```powershell
 # Sets the color of commands to green.
@@ -275,7 +274,7 @@ $psISE.Options.IntellisenseTimeoutInSeconds = 5
 
 Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
-Windows PowerShell ISE が追跡し、**[ファイルを開く]** メニューの下部で表示する、最近使ったファイルの数を指定します。 既定値は 10 です。 値は整数です。
+Windows PowerShell ISE が追跡し、 **[ファイルを開く]** メニューの下部で表示する、最近使ったファイルの数を指定します。 既定値は 10 です。 値は整数です。
 
 ```powershell
 # Changes the number of recently used files that appear at the bottom of the File Open menu to 5.
@@ -435,7 +434,7 @@ $psISE.Options.ShowWarningBeforeSavingOnRun = $true
 
 Windows PowerShell ISE 2.0 以降でサポートされています。
 
-さまざまな PowerShell タブで同じファイルが開かれているときに警告メッセージを表示するかどうかを指定します。 場合設定 **$true**を複数のタブが表示されますこのメッセージで、同じファイルを開きます。"このファイルのコピーが別の Windows PowerShell タブで開きます。このファイルを変更すると、開かれているすべてのファイルに影響します。」というメッセージが表示されます。 既定値は **$true** です。
+さまざまな PowerShell タブで同じファイルが開かれているときに警告メッセージを表示するかどうかを指定します。 **$true** に設定している場合、複数のタブで同じファイルが開かれると、「このファイルのコピーが別の Windows PowerShell タブで開かれています。このファイルを変更すると、開かれているすべてのファイルに影響します。」というメッセージが表示されます。 既定値は **$true** です。
 
 ```powershell
 # Enable the warning message when a file is
@@ -447,7 +446,7 @@ $psISE.Options.ShowWarningForDuplicateFiles = $true
 
 Windows PowerShell ISE 2.0 以降でサポートされています。
 
-Windows PowerShell ISE のスクリプト ウィンドウの IntelliSense トークンの色を指定します。 このプロパティは、スクリプト ウィンドウのトークンの種類と色の名前/値のペアを含むディクショナリ オブジェクトです。 コンソール ウィンドウで IntelliSense トークンの色を変更する場合は、[ConsoleTokenColors](#consoletokencolors) を参照してください。 色を既定値にリセットする場合、[RestoreDefaultTokenColors](#restoredefaulttokencolors) を参照してください。 次のトークンの色を設定できます。属性、コマンド、CommandArgument、CommandParameter、コメント、GroupEnd、GroupStart、キーワード、LineContinuation、LoopLabel、メンバー、改行、数値、演算子、位置、StatementSeparator、文字列、型、不明、変数です。
+Windows PowerShell ISE のスクリプト ウィンドウの IntelliSense トークンの色を指定します。 このプロパティは、スクリプト ウィンドウのトークンの種類と色の名前/値のペアを含むディクショナリ オブジェクトです。 コンソール ウィンドウで IntelliSense トークンの色を変更する場合は、[ConsoleTokenColors](#consoletokencolors) を参照してください。 色を既定値にリセットする場合、[RestoreDefaultTokenColors](#restoredefaulttokencolors) を参照してください。 以下のトークンの色を設定できます。Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。
 
 ```powershell
 # Sets the color of commands to green.
@@ -539,7 +538,7 @@ $psISE.Options.WarningForegroundColor = 'yellow'
 
 Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
-Windows PowerShell ISE で表示される XML コンテンツのトークンの種類と色の名前/値のペアを含むディクショナリ オブジェクトを指定します。 次のトークンの色を設定できます。属性、コマンド、CommandArgument、CommandParameter、コメント、GroupEnd、GroupStart、キーワード、LineContinuation、LoopLabel、メンバー、改行、数値、演算子、位置、StatementSeparator、文字列、型、不明、変数です。 [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors) も参照してください。
+Windows PowerShell ISE で表示される XML コンテンツのトークンの種類と色の名前/値のペアを含むディクショナリ オブジェクトを指定します。 以下のトークンの色を設定できます。Attribute、Command、CommandArgument、CommandParameter、Comment、GroupEnd、GroupStart、Keyword、LineContinuation、LoopLabel、Member、NewLine、Number、Operator、Position、StatementSeparator、String、Type、Unknown、Variable。 [RestoreDefaultXmlTokenColors](#restoredefaultxmltokencolors) も参照してください。
 
 ```powershell
 # Sets the color of XML element names to green.

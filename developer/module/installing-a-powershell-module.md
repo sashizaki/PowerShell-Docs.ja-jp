@@ -8,26 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
-ms.openlocfilehash: 7c2bfca50de4645676eafc01bbf23d9797e8b758
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
+ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059781"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65229457"
 ---
 # <a name="installing-a-powershell-module"></a>PowerShell モジュールをインストールする
 
-PowerShell モジュールを作成した後は可能性がありますするシステムでは、モジュールをインストールするか他者が使用可能性がありますようにします。 一般的に言えば、これだけで構成されるモジュール ファイル (ie、.psm1 またはバイナリ アセンブリ、モジュール マニフェストおよび他の関連ファイル) ディレクトリにそのコンピューターでをコピーします。 非常に小さいプロジェクトでは、コピーして、単一のリモート コンピューター上に Windows エクスプ ローラーでファイルを貼り付けるだけでこの可能性があります。ただし、大規模なソリューションのより高度なインストール プロセスを使用することがあります。 PowerShell は、システム上に、モジュールを取得する方法に関係なく、さまざまな手法は、ユーザーを検索して、モジュールを使用できるを使用できます。 (詳細については、次を参照してください[PowerShell モジュールをインポートする](./importing-a-powershell-module.md)。)。そのため、インストールの主な問題では、PowerShell がモジュールを検索できることが確認します。
-
-このトピックは次のセクションで構成されます。
-
-- モジュールをインストールするための規則
-
-- モジュールをインストールする場所
-
-- モジュールの複数のバージョンをインストールします。
-
-- コマンド名の競合の処理
+PowerShell モジュールを作成した後は可能性がありますするシステムでは、モジュールをインストールするか他者が使用可能性がありますようにします。 一般に、このファイルをコピー モジュール (ie、.psm1 またはバイナリ アセンブリ、モジュール マニフェストおよび他の関連ファイル) をディレクトリにそのコンピューター上で構成されます。 非常に小さいプロジェクトでは、コピーして、単一のリモート コンピューター上に Windows エクスプ ローラーでファイルを貼り付けるだけでこの可能性があります。ただし、大規模なソリューションのより高度なインストール プロセスを使用することがあります。 PowerShell は、システム上に、モジュールを取得する方法に関係なく、さまざまな手法は、ユーザーを検索して、モジュールを使用できるを使用できます。 そのため、インストールの主な問題では、PowerShell がモジュールを検索できることが確認します。 詳細については、次を参照してください。 [PowerShell モジュールをインポートする](./importing-a-powershell-module.md)します。
 
 ## <a name="rules-for-installing-modules"></a>モジュールをインストールするための規則
 
@@ -41,14 +31,14 @@ PowerShell モジュールを作成した後は可能性がありますするシ
 
 既定で、 **PSModulePath**環境変数の値には、次のシステムとユーザー モジュール ディレクトリが含まれていますに追加し、値を編集することができます。
 
-- $PSHome\Modules (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
+- `$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
 
   > [!WARNING]
   > この場所は、Windows に付属するモジュールの予約されています。 この場所にモジュールをインストールしないでください。
 
-- $Home\Documents\WindowsPowerShell\Modules (%UserProfile%\Documents\WindowsPowerShell\Modules)
+- `$Home\Documents\WindowsPowerShell\Modules` (%UserProfile%\Documents\WindowsPowerShell\Modules)
 
-- $Env:ProgramFiles\WindowsPowerShell\Modules (%ProgramFiles%\WindowsPowerShell\Modules)
+- `$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules)
 
   値を取得する、 **PSModulePath**環境変数では、次のコマンドのいずれかを使用します。
 
@@ -60,7 +50,6 @@ PowerShell モジュールを作成した後は可能性がありますするシ
   値にモジュールのパスを追加する、 **PSModulePath**環境変数値には、次のコマンド形式を使用します。 この形式を使用して、 **SetEnvironmentVariable**のメソッド、 **System.Environment**クラスを変更するセッションに依存しない、 **PSModulePath**環境変数。
 
   ```powershell
-
   #Save the current value in the $p variable.
   $p = [Environment]::GetEnvironmentVariable("PSModulePath")
 
@@ -77,7 +66,7 @@ PowerShell モジュールを作成した後は可能性がありますするシ
 
 ### <a name="use-the-correct-module-directory-name"></a>適切なモジュールのディレクトリ名を使用して、
 
-「的確な」モジュールとは、モジュール ディレクトリ内の少なくとも 1 つのファイルの基本名と同じ名前を持つディレクトリに格納されているモジュールです。 モジュールが適切な形式でない場合は、Windows PowerShell で認識されませんをモジュールとして。
+整形式のモジュールとは、モジュール ディレクトリ内の少なくとも 1 つのファイルの基本名と同じ名前を持つディレクトリに格納されているモジュールです。 モジュールが適切な形式でない場合は、Windows PowerShell で認識されませんをモジュールとして。
 
 ファイルの「基本名」は、ファイル名拡張子を除いた名前です。 整形式のモジュールでモジュール ファイルを含むディレクトリの名前がモジュール内の少なくとも 1 つのファイルの基本名と一致する必要があります。
 
@@ -122,9 +111,7 @@ C:\Program Files
 
 独自のモジュールを作成するか、Windows PowerShell コミュニティ web サイトなどの別のパーティからモジュールを取得するユーザー アカウントのみで使用できるモジュールをする場合は、ユーザー固有の Modules ディレクトリで、モジュールをインストールします。
 
-```
-$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
-```
+`$home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 ユーザー固有のモジュール ディレクトリがの値に追加、 **PSModulePath**既定の環境変数。
 
@@ -132,9 +119,7 @@ $home\Documents\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
 
 モジュールをコンピューター上のすべてのユーザー アカウントに使用可能な場合は、プログラム ファイルの場所にモジュールをインストールします。
 
-```
-$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>
-```
+`$Env:ProgramFiles\WindowsPowerShell\Modules\<Module Folder>\<Module Files>`
 
 > [!NOTE]
 > プログラム ファイルの場所は、既定では Windows PowerShell 4.0 以降、PSModulePath 環境変数の値に追加されます。 以前のバージョンの Windows PowerShell は、手動でプログラム ファイルの場所の ((%ProgramFiles%\WindowsPowerShell\Modules) を作成し、前述のように、このパスを PSModulePath 環境変数に追加することができます。
@@ -160,7 +145,7 @@ Fabrikam モジュールを検索する Windows PowerShell モジュールの検
 
 ```powershell
 $p = [Environment]::GetEnvironmentVariable("PSModulePath")
-$p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
+$p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
@@ -168,7 +153,7 @@ $p += "C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 製品の複数のコンポーネントまたは製品の複数のバージョン、モジュールを使用する場合は、%ProgramFiles%\Common Files\Modules サブディレクトリのモジュールに固有のサブディレクトリに、モジュールをインストールします。
 
-次の例では、Fabrikam モジュールは Fabrikam %ProgramFiles%\Common Files\Modules サブディレクトリのサブディレクトリにインストールされます。 各モジュールがモジュールのサブディレクトリでは、そのサブディレクトリに格納されているに注意してください。
+Fabrikam のサブディレクトリに次の例では、Fabrikam のモジュールがインストールされている、`%ProgramFiles%\Common Files\Modules`サブディレクトリ。 各モジュールがモジュールのサブディレクトリでは、そのサブディレクトリに格納されているに注意してください。
 
 ```
 C:\Program Files
@@ -177,7 +162,6 @@ C:\Program Files
       Fabrikam
         Fabrikam.psd1 (module manifest)
         Fabrikam.dll (module assembly)
-
 ```
 
 インストーラーがの値を保証し、 **PSModulePath**環境変数には、一般的なファイル モジュールのサブディレクトリのパスが含まれています。
@@ -198,9 +182,7 @@ $p = $q -join ';'
 同じモジュールの複数のバージョンをインストールするには、次の手順を使用します。
 
 1. モジュールの各バージョン用のディレクトリを作成します。 ディレクトリ名にバージョン番号を含めます。
-
 2. モジュールの各バージョンのモジュール マニフェストを作成します。 値で、 **ModuleVersion**マニフェストでキーに、モジュールのバージョン番号を入力します。 モジュールのバージョン固有のディレクトリでマニフェスト ファイル (.psd1) を保存します。
-
 3. 値にモジュールのルート フォルダーのパスを追加、 **PSModulePath**環境変数は、次の例に示すようにします。
 
 特定のバージョンのモジュールをインポートする、エンドユーザーが使用できます、`MinimumVersion`または`RequiredVersion`のパラメーター、 [Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレット。

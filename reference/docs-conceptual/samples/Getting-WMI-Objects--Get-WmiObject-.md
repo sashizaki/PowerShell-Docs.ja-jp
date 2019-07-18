@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: WMI オブジェクトの取得 (Get-WmiObject)
-ms.assetid: f0ddfc7d-6b5e-4832-82de-2283597ea70d
-ms.openlocfilehash: 522822ac3ea6f08b20fa5af6c9accb48b01035d3
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 93276ce12135342af2d6f238976e65e5d8bdde7a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402221"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030217"
 ---
 # <a name="getting-wmi-objects-get-wmiobject"></a>WMI オブジェクトの取得 (Get-WmiObject)
 

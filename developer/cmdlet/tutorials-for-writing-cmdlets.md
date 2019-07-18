@@ -9,18 +9,18 @@ ms.topic: article
 ms.assetid: d0b548aa-febf-45dd-bf71-2077730b9b73
 caps.latest.revision: 6
 ms.openlocfilehash: 767b392bd1603e83d80bad5b3fd9cb42ff142ce6
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "56863608"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067248"
 ---
 # <a name="tutorials-for-writing-cmdlets"></a>コマンドレットの記述に関するチュートリアル
 
 このセクションには、コマンドレットの記述に関するチュートリアルが含まれています。 これらのチュートリアルには、コマンドレットと、コードが必要な理由の説明を記述するために必要なコードが含まれます。 これらのトピックは、コマンドレットの記述を使い始めたばかりの方のため非常に便利になります。
 
 > [!IMPORTANT]
-> ユーザーにとって以下の説明とコード例について、[コマンドレット サンプル](./cmdlet-samples.md)を参照してください。
+> ユーザーにとって以下の説明とコード例について、次を参照してください。[コマンドレット サンプル](./cmdlet-samples.md)します。
 
 ## <a name="in-this-section"></a>このセクションの内容
 

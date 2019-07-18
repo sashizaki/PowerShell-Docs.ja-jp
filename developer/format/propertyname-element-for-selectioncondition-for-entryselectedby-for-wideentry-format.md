@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 340abb12-6df1-42f4-bdae-b0509c90952c
 caps.latest.revision: 11
 ms.openlocfilehash: 196877b97db9ed0592e357486c1318dc1e7efd31
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56860418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064681"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format"></a>WideEntry の EntrySelectedBy の SelectionCondition の PropertyName 要素 (書式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "56860418"
 
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`PropertyName`要素。
 
@@ -55,9 +55,9 @@ ms.locfileid: "56860418"
 
 ## <a name="remarks"></a>コメント
 
-少なくとも 1 つのプロパティ名またはスクリプトを評価する選択条件を指定する必要がありますが、両方を指定することはできません。 選択条件を使用する方法の詳細については、[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
+少なくとも 1 つのプロパティ名またはスクリプトを評価する選択条件を指定する必要がありますが、両方を指定することはできません。 選択条件を使用する方法の詳細については、次を参照してください。[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)します。
 
-ワイド ビューの他のコンポーネントに関する詳細については、[表示幅が広い](./creating-a-wide-view.md)を参照してください。
+ワイド ビューの他のコンポーネントに関する詳細については、次を参照してください。[表示幅が広い](./creating-a-wide-view.md)します。
 
 ## <a name="see-also"></a>参照
 

@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: スクリプト ウィンドウとコンソール ウィンドウでタブ補完を使用する方法
-ms.assetid: 3b752c3c-0bd0-4eca-a2d3-2d5a37fd9d84
-ms.openlocfilehash: 24a3f00987ff5ca4bf82d1a3206857ec3c4b3f09
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 9fcb85668673adb1de596660d37e56f6607a4064
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402214"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030999"
 ---
 # <a name="how-to-use-tab-completion-in-the-script-pane-and-console-pane"></a>スクリプト ウィンドウとコンソール ウィンドウでタブ補完を使用する方法
 

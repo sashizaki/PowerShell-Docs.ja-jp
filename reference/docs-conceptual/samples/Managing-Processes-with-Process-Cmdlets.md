@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Process コマンドレットによるプロセスの管理
-ms.assetid: 5038f612-d149-4698-8bbb-999986959e31
-ms.openlocfilehash: 741a3464bce6284c4933384398c4e9ddcca2572c
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 0962290327a02141f582acdf168143dee14ac60a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402245"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030173"
 ---
 # <a name="managing-processes-with-process-cmdlets"></a>Process コマンドレットによるプロセスの管理
 

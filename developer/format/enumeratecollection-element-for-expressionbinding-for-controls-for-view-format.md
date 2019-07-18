@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 9e5d4cab-6d93-4d59-80cf-9ca0c0633309
 caps.latest.revision: 6
 ms.openlocfilehash: deb77960ac2962f1cf7c51274e4b18bbc91f5fad
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066075"
 ---
 # <a name="enumeratecollection-element-for-expressionbinding-for-controls-for-view-format"></a>View の Controls の ExpressionBinding の EnumerateCollection 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56854968"
 <EnumerateCollection/>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`EnumerateCollection`要素。
 

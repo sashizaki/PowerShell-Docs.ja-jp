@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データの使用
-ms.openlocfilehash: f2d25b9ced805fb4c91378ebfe840104eb6ce52a
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402430"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727208"
 ---
 # <a name="using-configuration-data-in-dsc"></a>DSC で構成データを使用する
 
@@ -185,13 +185,13 @@ MyDscConfiguration -ConfigurationData .\MyData.psd1
 
 ## <a name="using-configurationdata-variables-in-a-configuration"></a>構成での ConfigurationData 変数の使用
 
-DSC 構成スクリプトで使用できる次の特殊な変数を提供します。
+DSC では、構成スクリプトで使用できる次の特殊な変数が提供されています。
 
 - **$AllNodes** は、**ConfigurationData** で定義されたノードのコレクション全体を参照します。 **.Where()** と **.ForEach()** を使用すると、**AllNodes** コレクションをフィルター処理できます。
 - **ConfigurationData** は、構成のコンパイル時にパラメーターとして渡されるハッシュ テーブル全体を参照します。
-- **MyTypeName**が含まれています、[構成](configurations.md)名前で、変数を使用します。 たとえば、構成で`MyDscConfiguration`、`$MyTypeName`の値になります`MyDscConfiguration`します。
-- **Node** は、**.Where()** または **.ForEach()** を使用してフィルター処理された後の **AllNodes** コレクション内にある特定のエントリを参照します。
-  - これらのメソッドの詳細については、「[about_arrays](/powershell/reference/3.0/Microsoft.PowerShell.Core/About/about_Arrays.md)」を参照してください。
+- **MyTypeName** には、変数がその中で使用される[構成](configurations.md)の名前が含まれています。 たとえば、構成 `MyDscConfiguration` では、`$MyTypeName` の値は `MyDscConfiguration` になります。
+- **Node** は、 **.Where()** または **.ForEach()** を使用してフィルター処理された後の **AllNodes** コレクション内にある特定のエントリを参照します。
+  - これらのメソッドの詳細については、「[about_arrays](/powershell/module/microsoft.powershell.core/about/about_arrays)」を参照してください。
 
 ## <a name="using-non-node-data"></a>ノード外のデータを使用する
 

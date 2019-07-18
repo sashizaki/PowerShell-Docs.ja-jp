@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: MSFT_DSCLocalConfigurationManager クラスの ResourceTest メソッド
-ms.openlocfilehash: e7645b0c6b93b96cb01f72c1c92d468f7642ea13
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+title: ResourceTest メソッド
+ms.openlocfilehash: ff06fd645a94055e79aa0f8d20f2f06e16483720
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047686"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727075"
 ---
-# <a name="resourcetest-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの ResourceTest メソッド
+# <a name="resourcetest-method"></a>ResourceTest メソッド
 
 DSC リソースの **Test** メソッドを直接呼び出します。
 
@@ -44,9 +44,9 @@ uint32 ResourceTest(
 
 ## <a name="requirements"></a>要件
 
-MOF**DscCore.mof
+**MOF:** DscCore.mof
 
-**［名前空間］:Root \microsoft\windows\desiredstateconfiguration
+**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

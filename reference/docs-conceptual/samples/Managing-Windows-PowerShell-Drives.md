@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell ドライブの管理
-ms.assetid: bd809e38-8de9-437a-a250-f30a667d11b4
-ms.openlocfilehash: 9ac5136fb28b450ea6397cab2f36082c50f22e1f
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.openlocfilehash: 32efa282fb787753942e43acab53c7b6eaeb88e3
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293250"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030152"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell ドライブの管理
 
@@ -117,7 +116,7 @@ Office     FileSystem    C:\Program Files\Microsoft Offic...
 > [!NOTE]
 > 一般的に、パスは大文字と小文字が区別されません。
 
-すべての Windows PowerShell ドライブと同様に、名前の後にコロン (**:**) を指定して、新しい Windows PowerShell ドライブを参照します。
+すべての Windows PowerShell ドライブと同様に、名前の後にコロン ( **:** ) を指定して、新しい Windows PowerShell ドライブを参照します。
 
 Windows PowerShell ドライブにより、多数のタスクが簡単になります。 たとえば、Windows レジストリ内の最も重要なキーのいくつかが、極端に長いパスを持っていて、アクセスが煩雑で覚えにくいものがあります。 重要な設定情報が **HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion** にあります。 CurrentVersion レジストリ キーの項目を表示して変更するために、次のように入力して、そのキーのルートになる Windows PowerShell ドライブを作成できます。
 

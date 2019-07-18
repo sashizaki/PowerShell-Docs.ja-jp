@@ -2,13 +2,12 @@
 ms.date: 08/24/2018
 keywords: PowerShell, コマンドレット
 title: PowerShell コマンド名の学習
-ms.assetid: b4d0fd22-8298-4ee6-82ae-9b6f2907c986
-ms.openlocfilehash: 8d50ca03f98ed4ca8f9c09c83ae57afbf0d7888d
-ms.sourcegitcommit: f268dce5b5e72be669be0c6634b8db11369bbae2
+ms.openlocfilehash: a65ffcdca6510093b0a77234e20546b6cc1f02bf
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58623723"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030420"
 ---
 # <a name="learning-powershell-command-names"></a>PowerShell コマンド名の学習
 
@@ -22,7 +21,7 @@ ms.locfileid: "58623723"
 ほとんどのコマンドは、サービスやプロセスなど、オペレーティング システムまたはアプリケーションの各種要素を管理する目的で作成されています。 コマンド名は、同じ系統のコマンド (コマンド ファミリ) だからといって、必ずしも決まったパターンがあるわけではありません。 たとえば、Windows システムでは、`net start` コマンドと `net stop` コマンドを使用して、サービスを開始したり停止したりできます。 **Sc.exe** は、Windows に対応するもう 1 つのサービス制御ツールです。 その名前は、**net.exe** サービス コマンドの命名パターンには準拠していません。 プロセス管理用のコマンドはどうでしょうか。Windows には、プロセスを一覧表示するための **tasklist.exe** コマンドや、プロセスを強制終了するための **taskkill.exe** コマンドが存在します。
 
 これらのコマンドのパラメーター仕様も不規則です。 `net start` コマンドを使用して、リモート コンピューター上でサービスを開始することはできません。 **sc.exe** コマンドは、リモート コンピューター上でサービスを開始できます。 ただし、リモート コンピューターを指定するには、二重のバックスラッシュを名前の前に付与する必要があります。 DC01 という名前のリモート コンピューター上でスプーラー サービスを開始するには、`sc.exe \\DC01 start spooler` と入力します。
-DC01 で実行されているタスクを一覧表示するには、**/S** パラメーターとバックスラッシュを付与していないコンピューター名を使用します。 たとえば、`tasklist /S DC01` のように指定します。
+DC01 で実行されているタスクを一覧表示するには、 **/S** パラメーターとバックスラッシュを付与していないコンピューター名を使用します。 たとえば、`tasklist /S DC01` のように指定します。
 
 > [!NOTE]
 > PowerShell v6 以前では、`sc` は `Set-Content` コマンドレットのエイリアスでした。 そのため、v6 より前のバージョンの PowerShell で **sc.exe** コマンドを実行するには、ファイル名拡張子 **exe** を含んだ完全なファイル名 **sc.exe** を含める必要があります。

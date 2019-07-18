@@ -13,12 +13,12 @@ helpviewer_keywords:
 - error category string [PowerShell SDK]
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
-ms.openlocfilehash: f6f5e50c55b477cbbeeaaf4f3ea665d5dc07758c
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059764"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735065"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell エラー レコード
 
@@ -60,9 +60,9 @@ ms.locfileid: "58059764"
 
 ## <a name="error-category"></a>エラー カテゴリ
 
-エラー レコードを作成する場合は、によって定義された定数のいずれかを使用してエラーのカテゴリを指定、 [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)列挙体。 Windows PowerShell ユーザー設定するときに、エラー情報を表示するエラー カテゴリを使用して、`$ErrorView`変数を`"CategoryView"`します。
+エラー レコードを作成する場合は、によって定義された定数のいずれかを使用してエラーのカテゴリを指定、 [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)列挙体。 Windows PowerShell ユーザー設定するときに、エラー情報を表示するエラー カテゴリを使用して、`$ErrorView`変数を`"CategoryView"`します。
 
-使用しないでください、 [System.Management.Automation.Errorcategory.Notspecified](/dotnet/api/System.Management.Automation.ErrorCategory.NotSpecified)定数。 エラーの原因となった操作、またはエラーに関する情報があれば、カテゴリが完全に一致する場合でも、エラーまたは操作に最も近いカテゴリを選択します。
+使用しないでください、 [System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **NotSpecified**定数。 エラーの原因となった操作、またはエラーに関する情報があれば、カテゴリが完全に一致する場合でも、エラーまたは操作に最も近いカテゴリを選択します。
 
 Windows PowerShell によって表示される情報はカテゴリの表示文字列として参照されておりのプロパティから構築された、 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)クラス。 (このクラスは、エラー [System.Management.Automation.ErrorRecord.CategoryInfo](/dotnet/api/System.Management.Automation.ErrorRecord.CategoryInfo)プロパティです)。
 
@@ -72,7 +72,7 @@ Windows PowerShell によって表示される情報はカテゴリの表示文�
 
 次の一覧には、表示される情報について説明します。
 
-- [カテゴリ]:Windows PowerShell による[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)定数。
+- [カテゴリ]:Windows PowerShell による[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)定数。
 
 - TargetName:既定では、オブジェクトの名前、コマンドレットが処理エラーが発生したときにします。 または、別のコマンドレットで定義された文字列。
 
@@ -88,9 +88,9 @@ Windows PowerShell によって表示される情報はカテゴリの表示文�
 
 交換のメッセージがによって提供される、 [System.Management.Automation.ErrorDetails](/dotnet/api/System.Management.Automation.ErrorDetails)オブジェクト。 Windows PowerShell で使用できる追加のローカリゼーション情報を提供するために、このオブジェクトの次のコンス トラクターのいずれかを使用します。
 
-- [ErrorDetails.ErrorDetails (コマンドレット、文字列、文字列、オブジェクト\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29 でしょうか。Displayproperty = Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Management.Automation.Cmdlet%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29):このコンス トラクターを使用して、テンプレート文字列が、コマンドレットが実装される、同じアセンブリ内のリソース文字列の場合、またはの上書きすることによって、テンプレート文字列をロードする場合、 [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)メソッド。
+- [ErrorDetails(Cmdlet, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___):このコンス トラクターを使用して、テンプレート文字列が、コマンドレットが実装される、同じアセンブリ内のリソース文字列の場合、またはの上書きすることによって、テンプレート文字列をロードする場合、 [System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)メソッド。
 
-- [ErrorDetails.ErrorDetails (アセンブリ、文字列、文字列、オブジェクト\[System.Management.Automation.ErrorDetails.%23Ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29 でしょうか。Displayproperty = Fullname](/dotnet/api/System.Management.Automation.ErrorDetails.%23ctor%28System.Reflection.Assembly%2CSystem.String%2CSystem.String%2CSystem.Object%5B%5D%29):このコンス トラクターを使用して、テンプレート文字列が別のアセンブリでのオーバーライドによって読み込みは[System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)します。
+- [ErrorDetails(Assembly, String, String, Object[])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___):このコンス トラクターを使用して、テンプレート文字列が別のアセンブリでのオーバーライドによって読み込みは[System.Management.Automation.Cmdlet.GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)します。
 
 交換のメッセージは、わずかな違いで例外メッセージを書き込むための .NET Framework デザイン ガイドラインに従う必要があります。 開発者の例外メッセージを書き込む必要があるガイドラインの状態。 コマンドレットのユーザーに対して、これらの交換のメッセージが書き込まれます。
 
@@ -110,7 +110,7 @@ Windows PowerShell によって表示される情報はカテゴリの表示文�
 
 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)
+[System.Management.Automation.ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)
 
 [System.Management.Automation.Errorcategoryinfo](/dotnet/api/System.Management.Automation.ErrorCategoryInfo)
 

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
 caps.latest.revision: 5
-ms.openlocfilehash: 29f1be6a1215219ddd16367a31f528a4f0dbc2e3
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 20ac1e2af8e047b8b572d86a55439676aa8df25c
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795132"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301378"
 ---
 # <a name="creating-a-constrained-runspace"></a>制約付き実行空間を作成する
 
@@ -109,7 +109,7 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="making-commands-private"></a>コマンドをプライベートにします。
 
- 行うことができますもコマンドをプライベートに設定することでの[System.Management.Automation.Commandinfo.Visibility*](/dotnet/api/System.Management.Automation.CommandInfo.Visibility)プロパティを[System.Management.Automation.Sessionstateentryvisibility.Private](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility.Private). ホスト アプリケーションとその他のコマンドは、そのコマンドを呼び出すことができますが、アプリケーションのユーザーのことはできません。 次の例では、 [Get-childitem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem)コマンドはプライベートです。
+ 行うことができますもコマンドをプライベートに設定することでの[System.Management.Automation.Commandinfo.Visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility)プロパティを[System.Management.Automation.SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **プライベート**します。 ホスト アプリケーションとその他のコマンドは、そのコマンドを呼び出すことができますが、アプリケーションのユーザーのことはできません。 次の例では、 [Get-childitem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem)コマンドはプライベートです。
 
 ```csharp
 defaultSessionState = InitialSessionState.CreateDefault();

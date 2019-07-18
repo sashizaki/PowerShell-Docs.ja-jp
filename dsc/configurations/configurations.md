@@ -3,11 +3,11 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC 構成
 ms.openlocfilehash: 6af27f442de3080facd65892c713c989d0e388c5
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62080177"
 ---
 # <a name="dsc-configurations"></a>DSC 構成
 
@@ -32,14 +32,14 @@ Configuration MyDscConfiguration {
 MyDscConfiguration
 ```
 
-としてスクリプトを保存、`.ps1`ファイル。
+スクリプトを `.ps1` ファイルとして保存します。
 
 ## <a name="configuration-syntax"></a>構成構文
 
 構成スクリプトは次の部分で構成されます。
 
 - **Configuration** ブロック。 これは、最も外側にあるスクリプト ブロックです。 このブロックを定義するには、**Configuration** キーワードを使用し、名前を指定します。 この場合、構成の名前は "MyDscConfiguration" です。
-- 1 つまたは複数の **Node** ブロック。 これらは、構成するノード (コンピューターまたは VM) を定義します。 上記の構成には、"TEST-PC1" という名前のコンピューターを対象とする 1 つの **Node** ブロックがあります。 ノード ブロックには、複数のコンピューター名を受け入れることができます。
+- 1 つまたは複数の **Node** ブロック。 これらは、構成するノード (コンピューターまたは VM) を定義します。 上記の構成には、"TEST-PC1" という名前のコンピューターを対象とする 1 つの **Node** ブロックがあります。 Node ブロックは、複数のコンピューター名を受け入れることができます。
 - 1 つまたは複数のリソース ブロック。 ここでは、構成するリソースのプロパティを設定します。 この場合は、それぞれ "WindowsFeature" リソースを呼び出す 2 つのリソース ブロックがあります。
 
 **Configuration** ブロック内では、通常 PowerShell 関数内で可能なすべてのことを行うことができます。 たとえば、前の例では、ターゲット コンピューターの名前を構成内でハード コードしなかった場合、ノード名のパラメーターを追加できます。
@@ -73,13 +73,13 @@ Configuration MyDscConfiguration
 MyDscConfiguration
 ```
 
-**ノード**ブロックは、複数のコンピューター名にも使用できます。 上記の例で使用するか、`-ComputerName`パラメーター、またはコンマで区切られたパスのリストを直接使用するコンピューターの**ノード**ブロックします。
+また、**Node** ブロックは複数のコンピューター名を受け入れることができます。 上の例では、`-ComputerName` パラメーターを使うか、またはコンピューターのコンマ区切りリストを **Node** ブロックに直接渡すことができます。
 
 ```powershell
 MyDscConfiguration -ComputerName "localhost", "Server01"
 ```
 
-コンピューターの一覧を指定するときに、**ノード**ブロック、構成では、内から配列表記を使用する必要があります。
+構成内から **Node** ブロックに対してコンピューターのリストを指定するときは、配列表記を使う必要があります。
 
 ```powershell
 Configuration MyDscConfiguration
@@ -119,7 +119,7 @@ MyDscConfiguration
 - すべての変数が解決されます
 - 構成と同じ名前のフォルダーが現在のディレクトリ内に作成されます。
 - _NodeName_.mof という名前のファイルが新しいディレクトリ内に作成されます。_NodeName_ は、構成のターゲット ノードの名前です。
-  1 つ以上のノードがある場合、MOF ファイルがノードごとに作成されます。
+  複数のノードがある場合は、ノードごとに MOF ファイルが作成されます。
 
 > [!NOTE]
 > MOF ファイルには、ターゲット ノードのすべての構成情報が含まれています。 このため、このファイルをセキュリティ保護することが重要です。
@@ -161,17 +161,17 @@ Mode                LastWriteTime         Length Name
 コマンドレット [Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) を使用して、どのリソースがシステムにインストールされ、LCM で使用できるかを決定できます。
 これらのモジュールが `$env:PSModulePath` に配置され、[Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) によって正しく認識された後、構成内に読み込む必要があります。
 
-**Import-dscresource**内でのみ認識できる動的キーワードには、**構成**ブロック、コマンドレットではありません。
+**Import-DscResource** は、**Configuration** ブロック内でのみ認識される動的なキーワードであり、コマンドレットではありません。
 **Import-DscResource** は、次の 2 つのパラメーターをサポートしています。
 
 - **ModuleName** は、**Import-DscResource** を使用する場合に推奨される方法です。 これは、インポートするリソースを含むモジュールの名前 (およびモジュール名の文字列配列) を受け取ります。
 - **Name** は、インポートするリソースの名前です。 これは、[Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) によって "Name" として返されるフレンドリ名ではありませんが、リソース スキーマを定義するときに使用されるクラス名です ([Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) によって **ResourceType** として返されます)。
 
-使用しての詳細については`Import-DSCResource`を参照してください[Import-dscresource を使用します。](import-dscresource.md)
+`Import-DSCResource` の使用について詳しくは、「[Import-DSCResource の使用](import-dscresource.md)」をご覧ください
 
-## <a name="powershell-v4-and-v5-differences"></a>PowerShell v4 および v5 の違い
+## <a name="powershell-v4-and-v5-differences"></a>PowerShell の v4 と v5 の違い
 
-PowerShell 4.0 に格納する必要がある DSC リソースの違いがあります。 詳細については、次を参照してください。[リソースの場所](import-dscresource.md#resource-location)します。
+PowerShell 4.0 では DSC リソースを格納する必要がある場所が違います。 詳しくは、「[リソースの場所](import-dscresource.md#resource-location)」をご覧ください。
 
 ## <a name="see-also"></a>参照
 

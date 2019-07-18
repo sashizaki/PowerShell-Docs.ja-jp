@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
 caps.latest.revision: 12
 ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059662"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068430"
 ---
 # <a name="common-parameter-names"></a>共有パラメーター名
 
@@ -28,13 +28,13 @@ ms.locfileid: "58059662"
 
 ### <a name="debug-alias-db"></a>デバッグ (別名: db)
 
-データの種類:スイッチ パラメーター
+データの種類:SwitchParameter
 
 このパラメーターを指定するかどうかのメッセージ レベルのプログラマのデバッグ コマンド ラインに表示されることができます。 これらのメッセージは、コマンドレットの操作をトラブルシューティングするためのものし、への呼び出しによって生成される、 [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)メソッド。 デバッグ メッセージをローカライズする必要はありません。
 
 ### <a name="erroraction-alias-ea"></a>ErrorAction (別名: ea)
 
-データの種類:列挙
+データの種類:列挙値
 
 このパラメーターは、どのようなアクションが実行される、エラーが発生したときに指定します。 このパラメーターの値がによって定義されている、 [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference)列挙体。
 
@@ -58,13 +58,13 @@ ms.locfileid: "58059662"
 
 ### <a name="verbose-alias-vb"></a>詳細 (別名: vb)
 
-データの種類:スイッチ パラメーター
+データの種類:SwitchParameter
 
 このパラメーターは、コマンドレットがコマンドラインで表示できる説明メッセージを書き込むかどうかを指定します。 これらのメッセージは、ユーザーに役立つ追加情報を提供するためのものし、への呼び出しによって生成される、 [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)メソッド。
 
 ### <a name="warningaction-alias-wa"></a>WarningAction (別名: ワシントン)
 
-データの種類:列挙
+データの種類:列挙値
 
 このパラメーターは、どのようなアクションを実行するコマンドレットは、警告メッセージを書き込むときに指定します。 このパラメーターの値がによって定義されている、 [System.Management.Automation.Actionpreference](/dotnet/api/System.Management.Automation.ActionPreference)列挙体。
 
@@ -76,17 +76,17 @@ ms.locfileid: "58059662"
 
 ## <a name="risk-mitigation-parameters"></a>リスクを緩和するためのパラメーター
 
-次のパラメーターは、それらのアクションの実行前に確認を要求するコマンドレットに追加されます。 確認要求の詳細については、[確認を要求する](./requesting-confirmation-from-cmdlets.md)を参照してください。 これらのパラメーターがによって定義されている、 [System.Management.Automation.Internal.Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)クラス。
+次のパラメーターは、それらのアクションの実行前に確認を要求するコマンドレットに追加されます。 確認要求の詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。 これらのパラメーターがによって定義されている、 [System.Management.Automation.Internal.Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)クラス。
 
 ### <a name="confirm-alias-cf"></a>確認 (別名: cf)
 
-データの種類:スイッチ パラメーター
+データの種類:SwitchParameter
 
 このパラメーターは、コマンドレットに入力を求めるかどうか、ユーザーは続行することを確認してくださいプロンプトが表示されるかどうかを指定します。
 
 ### <a name="whatif-alias-wi"></a>WhatIf (別名: wi)
 
-データの種類:スイッチ パラメーター
+データの種類:SwitchParameter
 
 このパラメーターは、コマンドレットで実際に操作を実行せず、コマンドレットを実行することの効果を説明するメッセージを書き込むかどうかを指定します。
 
@@ -96,7 +96,7 @@ ms.locfileid: "58059662"
 
 ### <a name="usetransaction-alias-usetx"></a>[いいえ] (別名: usetx)
 
-データの種類:スイッチ パラメーター
+データの種類:SwitchParameter
 
 このパラメーターは、コマンドレットが、現在のトランザクションを使用して、操作を実行するかどうかを指定します。
 

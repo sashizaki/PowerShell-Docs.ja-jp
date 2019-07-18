@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: f6c700c8-0889-49a1-a990-8c6e9aaf4735
 caps.latest.revision: 6
 ms.openlocfilehash: 5166213f8247fa23d5e0b3fdfd2367062d595169
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067758"
 ---
 # <a name="how-to-validate-parameter-input"></a>パラメーター入力を検証する方法
 
@@ -31,7 +31,7 @@ ms.locfileid: "56862468"
 
 [引数の数を検証する方法](./how-to-validate-an-argument-count.md)ArgumentCount 属性を使用して、引数の数を検証する方法について説明します。
 
-パラメーターが宣言されている方法は、検証に影響を与えることができます。 詳細については、[コマンドレット パラメーターを宣言する方法](./how-to-declare-cmdlet-parameters.md)を参照してください。
+パラメーターが宣言されている方法は、検証に影響を与えることができます。 詳細については、次を参照してください。[コマンドレット パラメーターを宣言する方法](./how-to-declare-cmdlet-parameters.md)します。
 
 ## <a name="reference"></a>参照先
 

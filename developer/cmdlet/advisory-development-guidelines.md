@@ -8,42 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
-ms.openlocfilehash: 871a74a084da3c7ec36767b7195461e0e7290cb9
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58056568"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65854877"
 ---
 # <a name="advisory-development-guidelines"></a>お勧めする開発ガイドライン
 
 このセクションでは、適切な開発とユーザー エクスペリエンスを確保するために考慮すべきガイドラインについて説明します。 場合によって次のように適用される場合がありますとありますでない場合があります。
-
-## <a name="design-guidelines"></a>デザイン ガイドライン
-
-- [InputObject パラメーター (AD01) のサポートします。](./advisory-development-guidelines.md#AD01)
-
-- [Force パラメーター (AD02) のサポート](./advisory-development-guidelines.md#AD02)
-
-- [Windows PowerShell (AD03) を使って資格情報を処理します。](./advisory-development-guidelines.md#AD03)
-
-- [エンコード パラメーター (AD04) をサポートします。](./advisory-development-guidelines.md#AD04)
-
-- [テスト コマンドレットは、ブール値 (AD05) を返す必要があります。](./advisory-development-guidelines.md#AD05)
-
-## <a name="code-guidelines"></a>コードのガイドライン
-
-- [次のコマンドレットのクラスの名前付け規則 (AC01)](./advisory-development-guidelines.md#AC01)
-
-- [パイプラインの入力には、BeginProcessing メソッド (AC02) が上書きされない場合](./advisory-development-guidelines.md#AC02)
-
-- [StopProcessing メソッド (AC03) をオーバーライドしている停止要求を処理するには](./advisory-development-guidelines.md#AC03)
-
-- [IDisposable インターフェイス (AC04) の実装します。](./advisory-development-guidelines.md#AC04)
-
-- [シリアル化に適したパラメーターの型 (AC05) を使用して、](./advisory-development-guidelines.md#AC05)
-
-- [SecureString を使用して、機密性の高いデータ (AC06)](./advisory-development-guidelines.md#AC06)
 
 ## <a name="design-guidelines"></a>デザイン ガイドライン
 
@@ -61,7 +35,7 @@ Windows PowerShell は、Microsoft .NET Framework オブジェクトを直接機
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>Windows PowerShell (AD03) を使って資格情報を処理します。
 
-コマンドレットを定義する必要があります、`Credential`を資格情報を表すパラメーター。 このパラメーターは、型でなければなりません[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)と資格情報の属性宣言を使用して定義する必要があります。 このサポートでは、完全な資格情報が直接指定されていないときにユーザー名、パスワード、または両方のユーザーが自動的に表示されます。 資格情報の属性の詳細については、[資格情報の属性宣言](./credential-attribute-declaration.md)を参照してください。
+コマンドレットを定義する必要があります、`Credential`を資格情報を表すパラメーター。 このパラメーターは、型でなければなりません[System.Management.Automation.PSCredential](/dotnet/api/System.Management.Automation.PSCredential)と資格情報の属性宣言を使用して定義する必要があります。 このサポートでは、完全な資格情報が直接指定されていないときにユーザー名、パスワード、または両方のユーザーが自動的に表示されます。 資格情報の属性の詳細については、次を参照してください。[資格情報の属性宣言](./credential-attribute-declaration.md)します。
 
 ### <a name="support-encoding-parameters-ad04"></a>エンコード パラメーター (AD04) をサポートします。
 
@@ -85,7 +59,7 @@ Windows PowerShell は、Microsoft .NET Framework オブジェクトを直接機
 
 #### <a name="name-the-cmdlet-class-to-match-the-cmdlet-name"></a>コマンドレット名と一致するコマンドレット クラスの名前します。
 
-コマンドレットを実装する .NET Framework クラス、名前を付けるときに、クラスの名前を"*\<動詞 >**\<名詞 >**\<コマンド >*"、を交換します。*\<動詞 >* と*\<名詞 >* プレース ホルダーを動詞と名詞コマンドレット名に使用します。 たとえば、 [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットがという名前のクラスによって実装される`GetProcessCommand`します。
+コマンドレットを実装する .NET Framework クラス、名前を付けるときに、クラスの名前を" *\<動詞 > **\<名詞 >** \<コマンド >* "、を交換します。 *\<動詞 >* と *\<名詞 >* プレース ホルダーを動詞と名詞コマンドレット名に使用します。 たとえば、 [Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットがという名前のクラスによって実装される`GetProcessCommand`します。
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>パイプラインの入力には、BeginProcessing メソッド (AC02) が上書きされない場合
 
@@ -117,7 +91,7 @@ Windows PowerShell ランタイムが常に呼び出していない、 [System.M
 
 - PSPrimitiveDictionary
 
-- スイッチ パラメーター
+- SwitchParameter
 
 - PSListModifier
 

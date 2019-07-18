@@ -11,46 +11,26 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: 6ec0752a9ae06c5c2cdd1a1851caeeff52d8eb74
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: c503b17a670a5d1f07aa48e714d8a0eb0aa78ae9
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055157"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855001"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Windows PowerShell プロパティ プロバイダーを作成する
 
 このトピックでは、データ ストア内のアイテムのプロパティを操作するユーザーを有効にするプロバイダーを作成する方法について説明します。 その結果、この種類のプロバイダーは、Windows PowerShell プロパティ プロバイダーとしてに呼ばれます。 たとえば、レジストリ プロバイダー レジストリ キーの項目のプロパティとして Windows PowerShell ハンドル レジストリ キーの値によって提供されます。 この種類のプロバイダーを追加する必要があります、 [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) .NET クラスの実装へのインターフェイス。
 
 > [!NOTE]
-> Windows PowerShell では、Windows PowerShell プロバイダーの開発に使用できるテンプレート ファイルを提供します。 TemplateProvider.cs ファイルでは、Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントで使用できます。 ダウンロードの手順については、[Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)を参照してください。
+> Windows PowerShell では、Windows PowerShell プロバイダーの開発に使用できるテンプレート ファイルを提供します。 TemplateProvider.cs ファイルでは、Microsoft Windows ソフトウェア開発キットの Windows Vista と .NET Framework 3.0 ランタイム コンポーネントで使用できます。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
 >
 > ダウンロードしたテンプレートが表示されます、  **\<PowerShell のサンプル >** ディレクトリ。 このファイルのコピーを作成して、必要のないすべての機能を削除する、新しい Windows PowerShell プロバイダーを作成するため、コピーを使用する必要があります。
 >
-> その他の Windows PowerShell プロバイダーの実装の詳細については、[Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)を参照してください。
+> その他の Windows PowerShell プロバイダーの実装の詳細については、次を参照してください。 [Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)します。
 
 > [!CAUTION]
 > プロパティ プロバイダーのメソッドを使用して任意のオブジェクトを書き込む必要があります、 [System.Management.Automation.Provider.Cmdletprovider.Writepropertyobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject)メソッド。
-
-次の一覧には、このトピックのセクションが含まれています。 Windows PowerShell プロパティ プロバイダーの記述に慣れていない場合は、出現する順序では、この情報を読み込みます。 ただし、Windows PowerShell プロパティ プロバイダーの作成に習熟する場合は、直接」に進んでください必要な情報。
-
-- [Windows PowerShell プロバイダーを定義します。](#Defining-the-Windows-PowerShell-provider)
-
-- [基本機能を定義します。](#Defining-Base-Functionality)
-
-- [プロパティを取得します。](#Retrieving-Properties)
-
-- [動的パラメーターをアタッチ、`Get-ItemProperty`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Get-ItemProperty-Cmdlet)
-
-- [プロパティの設定](#Setting-Properties)
-
-- [動的パラメーターをアタッチ、`Set-ItemProperty`コマンドレット](#Attaching-Dynamic-Parameters-for-the-Set-ItemProperty-Cmdlet)
-
-- [プロパティをクリアします。](#Clearing-Properties)
-
-- [動的パラメーターをアタッチ、`Clear-ItemProperty`コマンドレット](#Attaching-Dynamic-Parameters-to-the-Clear-ItemProperty-Cmdlet)
-
-- [Windows PowerShell プロバイダーのビルド](#Building-the-Windows-PowerShell-provider)
 
 ## <a name="defining-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーを定義します。
 
@@ -60,7 +40,7 @@ ms.locfileid: "58055157"
 
 ## <a name="defining-base-functionality"></a>基本機能を定義します。
 
-[System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)インターフェイスは、例外としてプロバイダーの基本クラスのいずれかに接続する、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラス。 使用する基本クラスで必要な基本機能を追加します。 基底クラスの詳細については、[Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)を参照してください。
+[System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)インターフェイスは、例外としてプロバイダーの基本クラスのいずれかに接続する、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラス。 使用する基本クラスで必要な基本機能を追加します。 基底クラスの詳細については、次を参照してください。 [Your Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)します。
 
 ## <a name="retrieving-properties"></a>プロパティを取得します。
 
@@ -90,7 +70,7 @@ ms.locfileid: "58055157"
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidergetpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyprovidergetpropertydynamicparameters)]  -->
 
-## <a name="setting-properties"></a>設定のプロパティ
+## <a name="setting-properties"></a>プロパティの設定
 
 プロパティを設定する、Windows PowerShell プロパティ プロバイダーを実装する必要があります、 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッドからの呼び出しをサポートするために、`Set-ItemProperty`コマンドレット。 このメソッドは、指定したパスにある項目の 1 つまたは複数のプロパティを設定し、必要に応じて指定されたプロパティを上書きします。 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)も書き込みますのインスタンスを[System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) 、更新のプロパティ バッグを表すオブジェクトを。プロパティ。
 

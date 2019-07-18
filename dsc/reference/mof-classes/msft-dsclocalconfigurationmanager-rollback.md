@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: MSFT_DSCLocalConfigurationManager クラスの RollBack メソッド
-ms.openlocfilehash: 4956900ecd2c9cb7f2e2b5bcab94616f9f5d5565
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+title: RollBack メソッド
+ms.openlocfilehash: 6452bdffd5160d9956576fb59c98e2f9ff7ddbbb
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047734"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67727027"
 ---
-# <a name="rollback-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの RollBack メソッド
+# <a name="rollback-method"></a>RollBack メソッド
 
 構成を以前のバージョンにロールバックします。
 
@@ -35,9 +35,9 @@ uint32 RollBack(
 
 ## <a name="requirements"></a>要件
 
-MOF**DscCore.mof
+**MOF:** DscCore.mof
 
-**［名前空間］:Root \microsoft\windows\desiredstateconfiguration
+**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

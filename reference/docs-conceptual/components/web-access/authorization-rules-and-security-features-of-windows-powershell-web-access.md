@@ -3,17 +3,17 @@ ms.date: 06/27/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access の承認規則とセキュリティ機能
 ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55681261"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058422"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Access の承認規則とセキュリティ機能
 
-最終更新日: 2013 年 6 月 24 日
+更新:2013 年 6 月 24 日
 
-適用対象: Windows Server 2012 R2、Windows Server 2012
+適用先:Windows Server 2012 R2、Windows Server 2012
 
 Windows Server 2012 R2 および Windows Server 2012 の Windows PowerShell Web Access のセキュリティ モデルには制限があります。 ユーザーが Windows PowerShell Web Access ゲートウェイにサインインし、Web ベースの Windows PowerShell コンソールを使用するには、アクセス許可が明示的に付与されている必要があります。
 
@@ -139,7 +139,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
    Remove-PswaAuthorizationRule -ID <rule ID>
    ```
 
-   または、削除する規則の ID 番号を知らないがフレンドリ名は知っている場合、規則の名前を取得し、パイプ処理によって名前を `Remove-PswaAuthorizationRule` コマンドレットに渡すことによって、規則を削除できます。次の例を参照してください: 
+   または、削除する規則の ID 番号を知らないがフレンドリ名は知っている場合、規則の名前を取得し、パイプ処理によって名前を `Remove-PswaAuthorizationRule` コマンドレットに渡すことによって、規則を削除できます。次の例を参照してください。
 
    ```
    Get-PswaAuthorizationRule `
@@ -156,7 +156,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 - 管理者が、制限付き実行空間を指定して、**PswaEndpoint** というエンドポイントを作成します。 その後管理者が `*,*,PswaEndpoint` という規則を作成し、このエンドポイントをその他のコンピューターに配布します。 この規則によって、エンドポイント **PswaEndpoint** を持つすべてのコンピューターにすべてのユーザーがアクセスできるようになります。
   規則セットにこの承認規則だけ定義されている場合、このエンドポイントを持たないコンピューターにはアクセスできません。
 
-- 制限付き実行空間を指定して **PswaEndpoint** というエンドポイントを作成した後は、アクセスを特定のユーザーに制限します。 管理者は **Level1Support** というユーザー グループを作成し、**Level1Support,\*,PswaEndpoint** という規則を定義します。 この規則によって、**Level1Support** グループのすべてのユーザーが、**PswaEndpoint** 構成を持つコンピューターにアクセスできるようになります。 同様に、アクセスを特定のコンピューターに制限することも可能です。
+- 制限付き実行空間を指定して **PswaEndpoint** というエンドポイントを作成した後は、アクセスを特定のユーザーに制限します。 管理者は **Level1Support** というユーザー グループを作成し、次の規則を定義します。**Level1Support、\*、PswaEndpoint**。 この規則によって、**Level1Support** グループのすべてのユーザーが、**PswaEndpoint** 構成を持つコンピューターにアクセスできるようになります。 同様に、アクセスを特定のコンピューターに制限することも可能です。
 
 - 管理者は、その他のユーザーよりも権限の強いアクセスを特定のユーザーに許可することができます。 たとえば、管理者が、**Admins** と **BasicSupport** という 2 つのユーザー グループを作成します。 管理者はさらに、制限付き実行空間を指定して **PswaEndpoint** というエンドポイントを作成し、**Admins,\*,\*** と **BasicSupport,\*,PswaEndpoint** という 2 つの規則を定義します。 最初の規則は、**Admin** グループのすべてのユーザーにすべてのコンピューターへのアクセスを許可します。2 つ目の規則は、**BasicSupport** グループに、**PswaEndpoint** を持つコンピューターだけに対するアクセスを許可します。
 

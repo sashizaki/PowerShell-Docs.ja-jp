@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
 ms.openlocfilehash: 98a3f61ff4fa2367f69357173d4e8e14288ff429
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857478"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083112"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>PowerShell スクリプトや関数のヘルプの記述
 
@@ -31,7 +31,7 @@ PowerShell スクリプトでは、スクリプトの詳細についてのヘル
 スクリプトまたは関数を説明するヘルプ トピックは、スクリプトまたは関数内のコメントのセットとして実装できます。
 スクリプトのコメント ベースのヘルプ、スクリプトおよび関数を記述する場合は、コメント ベースのヘルプを配置するための規則に注意を払います。
 配置を決定するかどうか、`Get-Help`コマンドレットは、スクリプトまたは関数のヘルプ トピックを関連付けます。
-ヘルプ トピックのコメント ベースの記述方法の詳細については、[about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)を参照してください。
+ヘルプ トピックのコメント ベースの記述方法の詳細については、次を参照してください。 [about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)します。
 
 ### <a name="xml-based-command-help"></a>XML ベースのコマンドのヘルプ
 スクリプトまたは関数を説明するヘルプ トピックは、コマンドのヘルプのスキーマを使用する XML ファイルに実装できます。
@@ -41,7 +41,7 @@ PowerShell スクリプトでは、スクリプトの詳細についてのヘル
 
 ### <a name="online-help"></a>オンライン ヘルプ
 インターネット上のヘルプ トピックを投稿して、ダイレクト`Get-Help`トピックを開きます。
-ヘルプ トピックのコメント ベースの記述方法の詳細については、[オンライン ヘルプのサポート](../module/supporting-online-help.md)を参照してください。
+ヘルプ トピックのコメント ベースの記述方法の詳細については、次を参照してください。[オンライン ヘルプのサポート](../module/supporting-online-help.md)します。
 
 書き込み用の確立されたメソッドがコンセプト (「About」) のスクリプトや関数のトピックではありません。
 ただしに投稿できるインターネット リストの概念説明のトピックのトピックと、Url コマンドのヘルプ トピックの「関連リンク」。

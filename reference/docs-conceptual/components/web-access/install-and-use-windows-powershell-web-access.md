@@ -3,11 +3,11 @@ ms.date: 08/23/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access のインストールと使用
 ms.openlocfilehash: 53558f9be5065c7f630f06e535ddab4d7ad72d9e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58056721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62058576"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Access のインストールと使用
 
@@ -248,7 +248,7 @@ Windows PowerShell Web Access をインストールした後、IIS Manager で�
 
 8. **[インストール]** をクリックすると、**[インストールの進行状況]** ページには、インストールの進行状況、結果、メッセージ (警告、エラー、Windows PowerShell Web Access に必要なインストール後の構成手順など) が表示されます。 Windows PowerShell Web Access がインストールされると、基本的かつ必須のゲートウェイ セットアップ手順を記載した Readme ファイルの確認を求めるメッセージが表示されます。 これらの手順も、このドキュメントで説明しています。 Readme ファイルのパスは `C:\Windows\Web\PowerShellWebAccess\wwwroot\README.txt` です。
 
-### <a name="configure-the-gateway"></a>サーバーを構成する
+### <a name="configure-the-gateway"></a>ゲートウェイを構成する
 
 このセクションの手順は、Windows PowerShell Web Access の Web アプリケーションを Web サイトのルート ディレクトリではなくサブディレクトリにインストールするための手順です。 この手順では、 `Install-PswaWebApplication` コマンドレットで実行する操作に相当する内容を GUI ベースで実行しています。 さらにこのセクションでは、IIS マネージャーを使って Windows PowerShell Web Access ゲートウェイをルート Web サイトとして構成するための手順も説明します。
 

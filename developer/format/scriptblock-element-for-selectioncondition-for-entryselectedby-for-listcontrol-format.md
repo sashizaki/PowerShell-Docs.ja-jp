@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 4a1adad7-e864-4892-9d26-a6476a9698d2
 caps.latest.revision: 7
 ms.openlocfilehash: b65d953169f6daf15fb617ce4d0303cf4cb584ee
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58057775"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62064358"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>ListControl の EntrySelectedBy の SelectionCondition の ScriptBlock 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "58057775"
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`ScriptBlock`要素。
 
@@ -53,7 +53,7 @@ ms.locfileid: "58057775"
 
 選択条件が少なくとも 1 つスクリプトまたはプロパティの名前を評価するために指定する必要がありますが、両方を指定することはできません。 (選択条件を使用する方法の詳細については、次を参照してください[とビューのエントリの定義の条件またはアイテムが使用されて](./defining-conditions-for-displaying-data.md)。)。
 
-リスト ビューの他のコンポーネントの詳細については、[リスト ビュー](./creating-a-list-view.md)を参照してください。
+リスト ビューの他のコンポーネントの詳細については、次を参照してください。[リスト ビュー](./creating-a-list-view.md)します。
 
 ## <a name="see-also"></a>参照
 

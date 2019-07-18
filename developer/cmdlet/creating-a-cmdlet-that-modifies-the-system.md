@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: bbe9f0213754d1cc47e0fd9a7a898bde916c0636
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
+ms.sourcegitcommit: f60fa420bdc81db174e6168d3aeb11371e483162
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055140"
+ms.lasthandoff: 06/20/2019
+ms.locfileid: "67301399"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>システムを変更するコマンドレットを作成する
 
@@ -43,31 +43,9 @@ ms.locfileid: "58055140"
 
 このトピックでは Get-proc コマンドレットを使用して取得するプロセスを停止しようとする停止 Proc コマンドレットの説明 (で説明されている[最初のコマンドレットを作成](./creating-a-cmdlet-without-parameters.md))。
 
-このセクションのトピックで、次のとおりです。
-
-- [コマンドレットを定義します。](#Defining-the-Cmdlet)
-
-- [システムの変更のパラメーターを定義します。](#Defining-Parameters-for-System-Modification)
-
-- [入力処理メソッドをオーバーライドします。](#Overriding-an-Input-Processing-Method)
-
-- [ShouldProcess メソッドの呼び出し](#Calling-the-ShouldProcess-Method)
-
-- [ShouldContinue メソッドを呼び出す](#Calling-the-ShouldContinue-Method)
-
-- [入力の処理を停止しています](#Stopping-Input-Processing)
-
-- [コード サンプル](#Code-Sample)
-
-- [オブジェクトの種類を定義して、書式設定](#Defining-Object-Types-and-Formatting)
-
-- [コマンドレットを構築](#Building-the-Cmdlet)
-
-- [テスト コマンドレット](#Testing-the-Cmdlet)
-
 ## <a name="defining-the-cmdlet"></a>コマンドレットを定義します。
 
-コマンドレットの作成の最初の手順は常に、コマンドレットの名前を付けると、コマンドレットを実装する .NET クラスを宣言します。 システムを変更するコマンドレットを記述するため、それに応じて名前にする必要があります。 このコマンドレットが停止システム プロセス、ため、ここで選択した動詞名が"Stop"がによって定義された、 [System.Management.Automation.Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)クラスの名詞コマンドレットは、プロセスを停止することを示すには、"Proc"とします。 承認されたコマンドレット動詞の詳細については、[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)を参照してください。
+コマンドレットの作成の最初の手順は常に、コマンドレットの名前を付けると、コマンドレットを実装する .NET クラスを宣言します。 システムを変更するコマンドレットを記述するため、それに応じて名前にする必要があります。 このコマンドレットが停止システム プロセス、ため、ここで選択した動詞名が"Stop"がによって定義された、 [System.Management.Automation.Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)クラスの名詞コマンドレットは、プロセスを停止することを示すには、"Proc"とします。 承認されたコマンドレット動詞の詳細については、次を参照してください。[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)します。
 
 この停止 Proc コマンドレットのクラス定義を次に示します。
 
@@ -81,7 +59,7 @@ public class StopProcCommand : Cmdlet
 
 ### <a name="extremely-destructive-actions"></a>非常に破壊的な操作
 
-一部の操作は、アクティブなハード ディスク パーティションを再フォーマットなどの非常に破壊的なです。 このような場合は、コマンドレットを設定する必要があります`ConfirmImpact`  =  `ConfirmImpact.High`を宣言するとき、 [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)属性。 この設定では、ユーザーが指定されていない場合でも要求をユーザーが確認するコマンドレットを強制、`Confirm`パラメーター。 ただし、コマンドレットの開発者が過剰な使用を回避する必要があります`ConfirmImpact`のユーザー アカウントを削除するなど、だけ可能性がある破壊的な操作の場合。 ある`ConfirmImpact`に設定されている[System.Management.Automation.Confirmimpact.High](/dotnet/api/System.Management.Automation.ConfirmImpact.High)します。
+一部の操作は、アクティブなハード ディスク パーティションを再フォーマットなどの非常に破壊的なです。 このような場合は、コマンドレットを設定する必要があります`ConfirmImpact`  =  `ConfirmImpact.High`を宣言するとき、 [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)属性。 この設定では、ユーザーが指定されていない場合でも要求をユーザーが確認するコマンドレットを強制、`Confirm`パラメーター。 ただし、コマンドレットの開発者が過剰な使用を回避する必要があります`ConfirmImpact`のユーザー アカウントを削除するなど、だけ可能性がある破壊的な操作の場合。 ある`ConfirmImpact`に設定されている[System.Management.Automation.ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **高**します。
 
 同様に、いくつかの操作は、これらは理論的に変更が Windows PowerShell の外部システムの実行中の状態を破壊する可能性がありますではありません。 このようなコマンドレットを設定できます`ConfirmImpact`に[System.Management.Automation.Confirmimpact.Low](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0)します。 これにより、確認要求が、ユーザーがメディアへの影響と、影響の大きいだけの操作を確認する要求されましたが省略されます。
 
@@ -300,15 +278,15 @@ if (criticalProcess &&!force)
 
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類を定義して、書式設定
 
-Windows PowerShell は、.Net オブジェクトを使用してコマンドレット間で情報を渡します。 その結果、コマンドレットは、独自の型を定義する必要がありますか、コマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、[を拡張するオブジェクトの種類と書式](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)を参照してください。
+Windows PowerShell は、.Net オブジェクトを使用してコマンドレット間で情報を渡します。 その結果、コマンドレットは、独自の型を定義する必要がありますか、コマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](/previous-versions//ms714665(v=vs.85))します。
 
 ## <a name="building-the-cmdlet"></a>コマンドレットを構築
 
-コマンドレットを実装するには、後にする必要があります登録する必要が Windows PowerShell を使用した Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)を参照してください。
+コマンドレットを実装するには、後にする必要があります登録する必要が Windows PowerShell を使用した Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](/previous-versions//ms714644(v=vs.85))します。
 
 ## <a name="testing-the-cmdlet"></a>テスト コマンドレット
 
-コマンドレットは、Windows PowerShell を使用した登録しているときに、コマンドラインで実行してテストできます。 ここでは、停止 Proc コマンドレットをテストするいくつかのテストです。 詳細については、コマンドラインからコマンドレットを使用して、、 [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)を参照してください。
+コマンドレットは、Windows PowerShell を使用した登録しているときに、コマンドラインで実行してテストできます。 ここでは、停止 Proc コマンドレットをテストするいくつかのテストです。 詳細については、コマンドラインからコマンドレットを使用して、次を参照してください。、 [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)します。
 
 - Windows PowerShell を起動し、停止 Proc コマンドレットを使用して、次に示すように処理を停止します。 コマンドレットは、指定されているので、`Name`として必須パラメーターでは、コマンドレットのクエリ パラメーター。
 
@@ -376,9 +354,9 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
 
 [コマンドライン入力を処理するパラメーターの追加](./adding-parameters-that-process-command-line-input.md)
 
-[オブジェクトの種類を拡張して、書式設定](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[オブジェクトの種類を拡張して、書式設定](/previous-versions//ms714665(v=vs.85))
 
-[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 

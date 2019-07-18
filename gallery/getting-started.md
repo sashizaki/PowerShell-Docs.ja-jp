@@ -4,15 +4,15 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーの概要
 ms.openlocfilehash: c8beba3009e462ce52cdecd34fc0313d9234f289
-ms.sourcegitcommit: 1082b13115c5c5be4b76574ba55307b3e567983f
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52576891"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084761"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>PowerShell ギャラリーの概要
 
-PowerShell ギャラリーは、スクリプト、モジュール、およびダウンロードして利用できる DSC リソースを含むパッケージ リポジトリです。 コマンドレットを使用する、 [PowerShellGet](/powershell/module/powershellget)モジュールを PowerShell ギャラリーからパッケージをインストールします。 PowerShell ギャラリーから項目をダウンロードするのにサインインする必要はありません。
+PowerShell ギャラリーは、ダウンロードして利用できるスクリプト、モジュール、DSC リソースが含まれるパッケージ リポジトリです。 PowerShell ギャラリーからパッケージをインストールするには、[PowerShellGet](/powershell/module/powershellget) モジュールのコマンドレットを使います。 PowerShell ギャラリーから項目をダウンロードするのにサインインする必要はありません。
 
 > [!NOTE]
 > PowerShell ギャラリーから直接パッケージをダウンロードすることもできますが、この方法はお勧めできません。
@@ -20,7 +20,7 @@ PowerShell ギャラリーは、スクリプト、モジュール、およびダ
 
 ## <a name="discovering-packages-from-the-powershell-gallery"></a>PowerShell ギャラリーでのパッケージの検出
 
-使用して、PowerShell ギャラリーでパッケージを見つけることができます、**検索**PowerShell ギャラリーの上のコントロール[ホーム ページ](https://www.powershellgallery.com)、またはモジュールおよびスクリプトを参照してから、[パッケージ ページ](https://www.powershellgallery.com/packages). 実行して、PowerShell ギャラリーからパッケージを検索することもできます、 [Find-module][]、 [Find-dscresource]、および[Find-script][]コマンドレットは、パッケージの種類に応じて`-Repository PSGallery`します。
+PowerShell ギャラリーの[ホーム ページ](https://www.powershellgallery.com)の **[検索]** コントロールを使用して、または [[パッケージ] ページ](https://www.powershellgallery.com/packages)からモジュールとスクリプトを参照することによって、PowerShell ギャラリー内のパッケージを検索できます。 また、[Find-Module][]、[Find-DscResource]、[Find-Script][] コマンドレットを、パッケージの種類に応じて `-Repository PSGallery` を指定して実行すると、PowerShell ギャラリーからパッケージを検索できます。
 
 次のパラメーターを使用して、ギャラリーからの結果をフィルター処理できます。
 
@@ -75,15 +75,15 @@ PowerShell ギャラリーからパッケージをダウンロードするとき
 
 ### <a name="deploy"></a>展開
 
-Azure Automation に PowerShell ギャラリーからパッケージを展開する をクリックして**Azure Automation**、順にクリックします**Azure Automation にデプロイする**パッケージ詳細ページにします。 Azure 管理ポータル、Azure アカウント資格情報を使用してサインインする場所にリダイレクトされます。 Azure Automation にすべての依存関係を配置依存関係を持つパッケージを展開することに注意してください。 [Azure Automation にデプロイする] ボタンは、**AzureAutomationNotSupported** タグをパッケージのメタデータに追加すると無効にできます。
+パッケージを PowerShell ギャラリーから Azure Automation にデプロイするには、**[Azure Automation]** をクリックした後、パッケージの詳細ページで **[Deploy to Azure Automation]\(Azure Automation にデプロイする\)** をクリックします。 Azure 管理ポータルにリダイレクトされるため、そこで Azure アカウント資格情報を使用してサインインします。 依存関係のあるパッケージをデプロイすると、すべての依存関係が Azure Automation にデプロイされることに注意してください。 [Azure Automation にデプロイする] ボタンは、**AzureAutomationNotSupported** タグをパッケージのメタデータに追加すると無効にできます。
 
 Azure Automation の詳細については、[Azure Automation](/azure/automation) のドキュメントをご覧ください。
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>PowerShell ギャラリーからのパッケージの更新
 
-PowerShell ギャラリーからインストールされたパッケージを更新するには、[Update-Module][] または [Update-Script][] コマンドレットを実行します。 [Update-module] を実行してインストールされているすべてのモジュールを更新しようとしたときに、追加パラメーターなしで実行、 [Install-module][]します。 モジュールを選択して更新するには、`-Name` パラメーターを追加します。 
+PowerShell ギャラリーからインストールされたパッケージを更新するには、[Update-Module][] または [Update-Script][] コマンドレットを実行します。 パラメーターを追加せずに [Update-Module][] を実行すると、[Install-Module][] を実行してインストールされたすべてのモジュールが更新されます。 モジュールを選択して更新するには、`-Name` パラメーターを追加します。 
 
-同様に、その他のパラメーターなしで実行時に [更新スクリプト] のが更新されますを実行してインストールされているすべてのスクリプト[Install-script][]します。 スクリプトを選択して更新するには、`-Name` パラメーターを追加します。
+同様に、パラメーターを追加せずに [Update-Script][] を実行すると、[Install-Script][] を実行してインストールされたすべてのスクリプトが更新されます。 スクリプトを選択して更新するには、`-Name` パラメーターを追加します。
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>PowerShell ギャラリーからインストールしたパッケージの一覧
 

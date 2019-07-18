@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 3351d237-e8c2-4ec5-9500-4eceadb407c2
 caps.latest.revision: 11
 ms.openlocfilehash: e7158711c60d13c745bbdfab9b1b9fc7d98b34e2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862398"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065412"
 ---
 # <a name="label-element-for-groupby-format"></a>GroupBy の Label 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56862398"
 <Label>DisplayedLabel</Label>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`Label`要素。
 
@@ -65,7 +65,7 @@ Windows PowerShell が新しいプロパティまたはスクリプトの値を�
 
 ```
 
-この要素を含む完全な書式設定ファイルの例は、[表示幅が広い (GroupBy)](./wide-view-groupby.md)を参照してください。
+この要素を含む完全な書式設定ファイルの例は、次を参照してください。[表示幅が広い (GroupBy)](./wide-view-groupby.md)します。
 
 ## <a name="see-also"></a>参照
 

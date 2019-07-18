@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MSFT_DSCLocalConfigurationManager クラス
-ms.openlocfilehash: 7f6aaf209601e99b0120407eb301d32fcfda9eb8
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+ms.openlocfilehash: 09b30edd48384c0e8412e0e6ee926a719249c5b8
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047710"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726891"
 ---
 # <a name="msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラス
 
@@ -58,6 +58,6 @@ class MSFT_DSCLocalConfigurationManager
 
 ## <a name="requirements"></a>要件
 
-MOF**DscCore.mof
+**MOF:** DscCore.mof
 
-**［名前空間］:Root \microsoft\windows\desiredstateconfiguration
+**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration

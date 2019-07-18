@@ -9,13 +9,13 @@ ms.topic: article
 ms.assetid: 18d86af7-7ff9-4968-81be-2caa61937d49
 caps.latest.revision: 10
 ms.openlocfilehash: 946ffb3fe857503c02b9000238a86775969abbd6
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58059887"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075326"
 ---
-# <a name="tablerowentry-element-for-tablerowentries-for-tablecontrol-format"></a>TableControl (形式) の TableRowEntries TableRowEntry 要素
+# <a name="tablerowentry-element-for-tablerowentries-for-tablecontrol-format"></a>TableControl の TableRowEntries の TableRowEntry 要素 (書式)
 
 テーブルの行に表示されるデータを定義します。
 
@@ -31,7 +31,7 @@ ms.locfileid: "58059887"
 </TableRowEntry>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`TableRowEntry`要素。
 
@@ -57,7 +57,7 @@ ms.locfileid: "58059887"
 
 1 つ`TableColumnItems`要素と 1 つ`EntrySelectedBy`要素を指定する必要があります。
 
-テーブル ビューのコンポーネントに関する詳細については、[テーブル ビューを作成する](./creating-a-table-view.md)を参照してください。
+テーブル ビューのコンポーネントに関する詳細については、次を参照してください。[テーブル ビューを作成する](./creating-a-table-view.md)します。
 
 ## <a name="example"></a>例
 

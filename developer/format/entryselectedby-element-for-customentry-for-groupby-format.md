@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a317d482-73cc-4c98-a002-1357fa879cd7
 caps.latest.revision: 7
 ms.openlocfilehash: cf1a80e845c38d97d71f26eba63c38a550958b79
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862818"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62066228"
 ---
 # <a name="entryselectedby-element-for-customentry-for-groupby-format"></a>GroupBy の CustomEntry の EntrySelectedBy 要素 (書式)
 
@@ -31,7 +31,7 @@ ms.locfileid: "56862818"
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`EntrySelectedBy`要素。 少なくとも 1 つの型、選択範囲のセット、または定義の選択条件を指定する必要があります。 使用できる子要素の数に上限はありません。
 
@@ -55,7 +55,7 @@ ms.locfileid: "56862818"
 
 ## <a name="remarks"></a>コメント
 
-選択条件を使用して、使用する定義のオブジェクトに特定のプロパティがある場合などときや、特定のプロパティ値の条件が存在する必要がありますを定義またはスクリプトを評価する`true`します。 選択条件の詳細については、[とビューのエントリの定義の条件またはアイテムが使用されて](./defining-conditions-for-displaying-data.md)を参照してください。
+選択条件を使用して、使用する定義のオブジェクトに特定のプロパティがある場合などときや、特定のプロパティ値の条件が存在する必要がありますを定義またはスクリプトを評価する`true`します。 選択条件の詳細については、次を参照してください。[とビューのエントリの定義の条件またはアイテムが使用されて](./defining-conditions-for-displaying-data.md)します。
 
 ## <a name="see-also"></a>参照
 

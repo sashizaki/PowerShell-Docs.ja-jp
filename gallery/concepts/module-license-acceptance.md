@@ -4,11 +4,11 @@ schema: 2.0.0
 keywords: powershell
 title: ライセンスへの同意が必要なモジュール
 ms.openlocfilehash: 369e32d5278a2e1bf1d3f2ae67f670c524b9f878
-ms.sourcegitcommit: 98b7cfd8ad5718efa8e320526ca76c3cc4141d78
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50002669"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075224"
 ---
 # <a name="modules-requiring-license-acceptance"></a>ライセンスへの同意が必要なモジュール
 
@@ -28,7 +28,7 @@ ms.locfileid: "50002669"
 ## <a name="impact-on-installsaveupdate-module"></a>Install/Save/Update-Module に対する影響
 
 - Install、Save、Update コマンドレットでは、ユーザーがライセンスを確認する場合と同じ動作をする -AcceptLicense という新パラメーターがサポートされます。
-- RequiredLicenseAcceptance が True である場合に -AcceptLicense が指定されていない場合、ユーザーには license.txt が示され、"&quot;ライセンス条項に同意しますか? (はい/いいえ/すべてにはい/すべてにいいえ)&quot;" というメッセージが表示されます。
+- RequiredLicenseAcceptance が True である場合に -AcceptLicense が指定されていない場合、ユーザーには license.txt が示され、次のプロンプトが表示されます。"&quot;ライセンス条項に同意しますか? (はい/いいえ/すべてにはい/すべてにいいえ)&quot;"。
   - ライセンスに同意した場合:
     - **Save-Module:** ユーザーのシステムにモジュールがコピーされます。
     - **Install-Module:** (スコープに基づいて) ユーザーのシステムの適切なフォルダーにモジュールがコピーされます。
@@ -51,7 +51,7 @@ ms.locfileid: "50002669"
 
 ## <a name="examples"></a>例
 
-### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>例 1: ライセンスへの同意を求めるようにモジュール マニフェストを更新する
+### <a name="example-1-update-module-manifest-to-require-license-acceptance"></a>例 1:ライセンスへの同意を求めるようにモジュール マニフェストを更新する
 
 ```powershell
 Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -PrivateData @{
@@ -65,7 +65,7 @@ Update-ModuleManifest -Path C:\modulemanifest.psd1 -RequireLicenseAcceptance -Pr
 
 次のコマンドでは、マニフェスト ファイルを更新して RequireLicenseAcceptance フラグを True に設定します。
 
-### <a name="example-2-install-module-requiring-license-acceptance"></a>例 2: ライセンスへの同意が必要なモジュールをインストールする
+### <a name="example-2-install-module-requiring-license-acceptance"></a>例 2:ライセンスへの同意が必要なモジュールをインストールする
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance
@@ -88,7 +88,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 次のコマンドでは、license.txt ファイルのライセンスが表示され、このライセンスに同意するように求められます。
 
-### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>例 3: -AcceptLicense を使用してライセンスへの同意が必要なモジュールをインストールする
+### <a name="example-3-install-module-requiring-license-acceptance-with--acceptlicense"></a>例 3:-AcceptLicense を使用してライセンスへの同意が必要なモジュールをインストールする
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
@@ -96,7 +96,7 @@ Install-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense
 
 ライセンスへの同意を求めることなく、モジュールがインストールされます。
 
-### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a>例 4: -Force を使用してライセンスへの同意が必要なモジュールをインストールする
+### <a name="example-4-install-module-requiring-license-acceptance-with--force"></a>例 4:-Force を使用してライセンスへの同意が必要なモジュールをインストールする
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance -Force
@@ -113,7 +113,7 @@ At C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.1.3.3\PSModule.psm
    .InstallPackage
 ```
 
-### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>例 5: ライセンスへの同意が必要な依存関係があるモジュールをインストールする
+### <a name="example-5-install-module-with-dependencies-requiring-license-acceptance"></a>例 5:ライセンスへの同意が必要な依存関係があるモジュールをインストールする
 
 モジュール "ModuleWithDependency" はモジュール "ModuleRequireLicenseAcceptance" に依存しています。 ユーザーにはライセンスへの同意が求められます。
 
@@ -135,7 +135,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>例 6: -AcceptLicense を使用してライセンスへの同意が必要な依存関係があるモジュールをインストールする
+### <a name="example-6-install-module-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>例 6:-AcceptLicense を使用してライセンスへの同意が必要な依存関係があるモジュールをインストールする
 
 モジュール "ModuleWithDependency" はモジュール "ModuleRequireLicenseAcceptance" に依存しています。 -AcceptLicense を指定したため、ライセンスへの同意は求められません。
 
@@ -143,7 +143,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 Install-Module -Name ModuleWithDependency -AcceptLicense
 ```
 
-### <a name="example-7-install-module-requiring-license-acceptance-on-a-client-older-than-psgetformatversion-20"></a>例 7: PSGetFormatVersion 2.0 以前のクライアントでライセンスへの同意が必要なモジュールをインストールする
+### <a name="example-7-install-module-requiring-license-acceptance-on-a-client-older-than-psgetformatversion-20"></a>例 7:PSGetFormatVersion 2.0 以前のクライアントでライセンスへの同意が必要なモジュールをインストールする
 
 ```powershell
 Install-Module -Name ModuleRequireLicenseAcceptance
@@ -153,7 +153,7 @@ Install-Module -Name ModuleRequireLicenseAcceptance
 WARNING: The specified module 'ModuleRequireLicenseAcceptance' with PowerShellGetFormatVersion '2.0' is not supported by the current version of PowerShellGet. Get the latest version of the PowerShellGet module to install this module, 'ModuleRequireLicenseAcceptance'.
 ```
 
-### <a name="example-8-save-module-requiring-license-acceptance"></a>例 8: ライセンスへの同意が必要なモジュールを保存する
+### <a name="example-8-save-module-requiring-license-acceptance"></a>例 8:ライセンスへの同意が必要なモジュールを保存する
 
 ```powershell
 Save-Module -Name ModuleRequireLicenseAcceptance -Path C:\Saved
@@ -176,7 +176,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 次のコマンドでは、license.txt ファイルのライセンスが表示され、このライセンスに同意するように求められます。
 
-### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a>例 9: -AcceptLicense を使用してライセンスへの同意が必要なモジュールを保存する
+### <a name="example-9-save-module-requiring-license-acceptance-with--acceptlicense"></a>例 9:-AcceptLicense を使用してライセンスへの同意が必要なモジュールを保存する
 
 ```powershell
 Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
@@ -184,7 +184,7 @@ Save-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense -Path C:\Saved
 
 ライセンスへの同意を求めることなく、モジュールが保存されます。
 
-### <a name="example-10-update-module-requiring-license-acceptance"></a>例 10: ライセンスへの同意が必要なモジュールを更新する
+### <a name="example-10-update-module-requiring-license-acceptance"></a>例 10:ライセンスへの同意が必要なモジュールを更新する
 
 ```powershell
 Update-Module -Name ModuleRequireLicenseAcceptance
@@ -207,7 +207,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 
 次のコマンドでは、license.txt ファイルのライセンスが表示され、このライセンスに同意するように求められます。
 
-### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>例 11: -AcceptLicense を使用してライセンスへの同意が必要なモジュールを更新する
+### <a name="example-11-update-module-requiring-license-acceptance-with--acceptlicense"></a>例 11:-AcceptLicense を使用してライセンスへの同意が必要なモジュールを更新する
 
 ```powershell
 Update-Module -Name ModuleRequireLicenseAcceptance -AcceptLicense

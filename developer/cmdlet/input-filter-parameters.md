@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: e45929d1-bbb4-4dc6-892f-f9eacdb1c84c
 caps.latest.revision: 8
 ms.openlocfilehash: 553878c34e74129f9876cca25a5393cb0d53445a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56854468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62067690"
 ---
 # <a name="input-filter-parameters"></a>入力フィルターのパラメーター
 
@@ -31,7 +31,7 @@ ms.locfileid: "56854468"
 
 ## <a name="filtering-if-no-set-of-input-objects-is-specified"></a>入力オブジェクトのセットが指定されていない場合にフィルター処理
 
-通常入力オブジェクトのセットが指定されていない場合これをすべてのオブジェクトに対してフィルター処理することを意味します。 詳細については、[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)を参照してください。
+通常入力オブジェクトのセットが指定されていない場合これをすべてのオブジェクトに対してフィルター処理することを意味します。 詳細については、次を参照してください。[Get-process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)します。
 
 ## <a name="see-also"></a>参照
 

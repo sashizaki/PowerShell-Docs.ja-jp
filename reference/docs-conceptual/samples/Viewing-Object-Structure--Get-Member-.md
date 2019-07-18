@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: オブジェクトの構造を表示する (Get-member)
-ms.assetid: a1819ed2-2ef3-453a-b2b0-f3589c550481
-ms.openlocfilehash: cc93e45e4306b3d623c1d3d1096dd20c1afc59c8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 80b36abd303a708195f12d96511e616178d11b5a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403197"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030711"
 ---
 # <a name="viewing-object-structure-get-member"></a>オブジェクトの構造を表示する (Get-member)
 

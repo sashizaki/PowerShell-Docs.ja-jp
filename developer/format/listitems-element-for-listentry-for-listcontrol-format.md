@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: d2c1da6d-acc7-4fe8-9e7d-6dcddc2787cd
 caps.latest.revision: 9
 ms.openlocfilehash: c25f18489d9c7abd8889758499dbbacd6ee29304
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56858588"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065242"
 ---
 # <a name="listitems-element-for-listentry-for-listcontrol-format"></a>ListControl の ListEntry の ListItems 要素 (書式)
 
@@ -29,7 +29,7 @@ ms.locfileid: "56858588"
 </ListItems>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`ListItems`要素。 指定できる子要素の数に制限はありません。 子要素の順序は、値がリスト ビューに表示される順序を定義します。
 
@@ -51,7 +51,7 @@ ms.locfileid: "56858588"
 
 ## <a name="remarks"></a>コメント
 
-この種類のビューの詳細については、[リスト ビューを作成する](./creating-a-list-view.md)を参照してください。
+この種類のビューの詳細については、次を参照してください。[リスト ビューを作成する](./creating-a-list-view.md)します。
 
 ## <a name="example"></a>例
 

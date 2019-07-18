@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 859d2335-7fcd-4efd-b1cc-3d171e334c6b
 caps.latest.revision: 7
 ms.openlocfilehash: f4bf820be88919af43eeaf043b3ed8b9c06e1bf2
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855028"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063977"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format"></a>View の CustomControl の EntrySelectedBy の SelectionSetName 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56855028"
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`SelectionSetName`要素。
 
@@ -53,9 +53,9 @@ ms.locfileid: "56855028"
 
 カスタム コントロールの各エントリに少なくとも 1 つの型名、選択範囲のセット、または選択条件が定義されている必要があります。
 
-複数のビューで使用されるオブジェクトのグループを定義するときに、選択範囲のセットが通常使用されます。 たとえば、テーブル ビューと同じオブジェクトのセットのリスト ビューを作成する可能性があります。 選択範囲のセットを定義する詳細については、[選択範囲の設定を定義する](./defining-selection-sets.md)を参照してください。
+複数のビューで使用されるオブジェクトのグループを定義するときに、選択範囲のセットが通常使用されます。 たとえば、テーブル ビューと同じオブジェクトのセットのリスト ビューを作成する可能性があります。 選択範囲のセットを定義する詳細については、次を参照してください。[選択範囲の設定を定義する](./defining-selection-sets.md)します。
 
-カスタム コントロールのビューのコンポーネントに関する詳細については、[カスタム コントロールを作成する](./creating-custom-controls.md)を参照してください。
+カスタム コントロールのビューのコンポーネントに関する詳細については、次を参照してください。[カスタム コントロールを作成する](./creating-custom-controls.md)します。
 
 ## <a name="see-also"></a>参照
 

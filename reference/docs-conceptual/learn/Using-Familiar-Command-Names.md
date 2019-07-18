@@ -2,13 +2,12 @@
 ms.date: 08/27/2018
 keywords: PowerShell, コマンドレット
 title: 使い慣れたコマンド名の使用
-ms.assetid: 021e2424-c64e-4fa5-aa98-aa6405758d5d
-ms.openlocfilehash: b61d647d882d4b2f7ea423a48319e3c104ce96c7
-ms.sourcegitcommit: 5990f04b8042ef2d8e571bec6d5b051e64c9921c
+ms.openlocfilehash: 30b33bc8739975c1a40e51c04a3ee4e426c199e7
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57795676"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030900"
 ---
 # <a name="using-familiar-command-names"></a>使い慣れたコマンド名の使用
 

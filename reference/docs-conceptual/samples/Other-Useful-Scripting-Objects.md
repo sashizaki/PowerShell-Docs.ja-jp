@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: その他の役に立つスクリプティング オブジェクト
-ms.assetid: 4d781196-720b-4ccc-90d2-c570e5e719f5
-ms.openlocfilehash: ff494f375c0d43d83b2a067dbe4f2ab35a90d564
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 8d1d10b518d1aadd6aec831b512802558f8fc075
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402197"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030052"
 ---
 # <a name="other-useful-scripting-objects"></a>その他の役に立つスクリプティング オブジェクト
 

@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: JEA, PowerShell, セキュリティ
 title: JEA セキュリティの考慮事項
 ms.openlocfilehash: 9526e141517601ae3b6d6932cd3536fdf49aa9a6
-ms.sourcegitcommit: 10c347a8c3dcbf8962295601834f5ba85342a87b
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55887601"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084778"
 ---
 # <a name="jea-security-considerations"></a>JEA セキュリティの考慮事項
 
@@ -127,7 +127,7 @@ JEA ロール機能を利用すれば、特権コンテキストを利用して�
 ```
 
 このロール機能では、Microsoft.PowerShell.Management モジュールから名詞 "Process" であらゆる PowerShell コマンドレットを実行できます。
-ユーザーは、コマンドレットのようにアクセスする必要があります`Get-Process`システムで実行しているアプリケーションを理解して`Stop-Process`は応答していないすべてのアプリケーションを終了します。
+システムで実行中のアプリケーションを確認するための `Get-Process` や、応答していないアプリケーションを強制終了するための `Stop-Process` のようなコマンドレットが、必要になることがあります。
 ただし、このエントリでは `Start-Process` も許可されます。これを利用すれば、完全な管理者権限で任意のプログラムを起動できます。
 プログラムをシステムにローカル インストールする必要がないため、悪意のあるユーザーがファイル共有でプログラムを起動するだけで接続ユーザーにローカル管理者特権が与えられ、マルウェアが実行されるなどの事態がありえます。
 

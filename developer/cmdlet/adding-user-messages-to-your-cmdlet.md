@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 5b3a5f5d5d02c7d5a3c1d622ec1a3740739c694f
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: 1e048f6ae94ac226218c18c8f8f7590a4db26226
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58055038"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733759"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>コマンドレットにユーザー メッセージを追加する
 
@@ -52,39 +52,13 @@ ms.locfileid: "58055038"
 
 コマンドレットの書き込みのメッセージの種類のコマンドレットが書き込むことのできるメッセージの数に制限はありません。 処理方法、コマンドレットの入力の中から特定を呼び出すことによって、各メッセージが書き込まれます。
 
-## <a name="the-stopproc-cmdlet"></a>StopProc コマンドレット
-
-このセクションのトピックで、次のとおりです。
-
-- [コマンドレットを定義します。](#Defining-the-Cmdlet)
-
-- [システムの変更のパラメーターを定義します。](#Defining-Parameters-for-System-Modification)
-
-- [入力処理メソッドをオーバーライドします。](#Overriding-an-Input-Processing-Method)
-
-- [詳細なメッセージの書き込み](#Writing-a-Verbose-Message)
-
-- [デバッグ メッセージの書き込み](#Writing-a-Debug-Message)
-
-- [警告メッセージの書き込み](#Writing-a-Warning-Message)
-
-- [進行状況メッセージの書き込み](#Writing-a-Progress-Message)
-
-- [コード サンプル](#Code-Sample)
-
-- [オブジェクトの種類と書式設定を定義します。](#Define-Object-Types-and-Formatting)
-
-- [コマンドレットを構築](#Building-the-Cmdlet)
-
-- [テスト コマンドレット](#Testing-the-Cmdlet)
-
 ## <a name="defining-the-cmdlet"></a>コマンドレットを定義します。
 
-コマンドレットの作成の最初の手順は常に、コマンドレットの名前を付けると、コマンドレットを実装する .NET クラスを宣言します。 コマンドレットの任意の並べ替えは、入力処理メソッド; からユーザーへの通知を記述できます。そのため、一般に、できる名前をコマンドレットを実行します。 どのようなシステムの変更を示すすべての動詞を使用してこのコマンドレット。 承認されたコマンドレット動詞の詳細については、[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)を参照してください。
+コマンドレットの作成の最初の手順は常に、コマンドレットの名前を付けると、コマンドレットを実装する .NET クラスを宣言します。 コマンドレットの任意の並べ替えは、入力処理メソッド; からユーザーへの通知を記述できます。そのため、一般に、できる名前をコマンドレットを実行します。 どのようなシステムの変更を示すすべての動詞を使用してこのコマンドレット。 承認されたコマンドレット動詞の詳細については、次を参照してください。[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)します。
 
 停止 Proc コマンドレットが、システムを変更するように設計します。そのため、 [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) .NET クラスの宣言を含める必要があります、`SupportsShouldProcess`キーワードを属性し、に設定する`true`します。
 
-次のコードは、この停止 Proc コマンドレット クラスの定義です。 この定義の詳細については、[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)を参照してください。
+次のコードは、この停止 Proc コマンドレット クラスの定義です。 この定義の詳細については、次を参照してください。[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)します。
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "proc",
@@ -94,7 +68,7 @@ public class StopProcCommand : Cmdlet
 
 ## <a name="defining-parameters-for-system-modification"></a>システムの変更のパラメーターを定義します。
 
-停止 Proc コマンドレットは、3 つのパラメーターを定義します。 `Name`、 `Force`、および`PassThru`します。 これらのパラメーターの定義の詳細については、[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)を参照してください。
+停止 Proc コマンドレットは、3 つのパラメーターを定義します。 `Name`、 `Force`、および`PassThru`します。 これらのパラメーターの定義の詳細については、次を参照してください。[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)します。
 
 停止 Proc コマンドレットのパラメーター宣言を次に示します。
 
@@ -238,15 +212,15 @@ WriteProgress(pr);
 
 ## <a name="define-object-types-and-formatting"></a>オブジェクトの種類と書式設定を定義します。
 
-Windows PowerShell は、.NET オブジェクトを使用してコマンドレット間で情報を渡します。 その結果、コマンドレットは、独自の型を定義する必要がありますか、コマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)を参照してください。
+Windows PowerShell は、.NET オブジェクトを使用してコマンドレット間で情報を渡します。 その結果、コマンドレットは、独自の型を定義する必要がありますか、コマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](/previous-versions//ms714665(v=vs.85))します。
 
 ## <a name="building-the-cmdlet"></a>コマンドレットを構築
 
-コマンドレットを実装するには、後にする必要があります登録する必要が Windows PowerShell を使用した Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)を参照してください。
+コマンドレットを実装するには、後にする必要があります登録する必要が Windows PowerShell を使用した Windows PowerShell スナップインを使用します。 コマンドレットの登録の詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](/previous-versions//ms714644(v=vs.85))します。
 
 ## <a name="testing-the-cmdlet"></a>テスト コマンドレット
 
-コマンドレットは、Windows PowerShell を使用した登録しているときに、コマンドラインで実行してテストできます。 サンプルの停止 Proc コマンドレットをテストしてみましょう。 詳細については、コマンドラインからコマンドレットを使用して、、 [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)を参照してください。
+コマンドレットは、Windows PowerShell を使用した登録しているときに、コマンドラインで実行してテストできます。 サンプルの停止 Proc コマンドレットをテストしてみましょう。 詳細については、コマンドラインからコマンドレットを使用して、次を参照してください。、 [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)します。
 
 - 次のコマンド ライン エントリは、"NOTEPAD"という名前のプロセスを停止し、詳細の通知を提供し、デバッグ情報を印刷する停止プロシージャを使用します。
 
@@ -275,10 +249,10 @@ Windows PowerShell は、.NET オブジェクトを使用してコマンドレ�
 
 [システムを変更するコマンドレットを作成します。](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Windows PowerShell コマンドレットを作成する方法](http://msdn.microsoft.com/en-us/0d721742-c849-4d0d-964f-78ddd9cd258c)
+[Windows PowerShell コマンドレットを作成する方法](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[オブジェクトの種類を拡張して、書式設定](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[オブジェクトの種類を拡張して、書式設定](/previous-versions//ms714665(v=vs.85))
 
-[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

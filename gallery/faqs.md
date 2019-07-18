@@ -4,11 +4,11 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーに関してよく寄せられる質問
 ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58057690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62084626"
 ---
 # <a name="frequently-asked-questions"></a>AppLocker: Frequently Asked Questions (AppLocker: よく寄せられる質問)
 
@@ -36,7 +36,7 @@ PowerShell スクリプトとは、再利用と共有を可能にするため、
 
 **パッケージをインストールまたは保存するためにギャラリーに登録またはサインインする必要はありません。**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>PowerShell ギャラリーに項目を公開しようとして、"要求を処理できませんでした。 '指定した API キーが無効か、指定したパッケージへのアクセス許可がありません。' リモート サーバーが次のエラーを返す:"(403) Forbidden" というエラーを受信しました。 これは何を意味しますか。
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>PowerShell ギャラリーに項目を公開しようとして、"要求を処理できませんでした。 '指定した API キーが無効か、指定したパッケージへのアクセス許可がありません。' リモート サーバーがエラーを返しました: "(403) Forbidden" というエラーを受信しました。 これは何を意味しますか。
 
 このエラーは、次の理由で発生することがあります。
 
@@ -150,7 +150,7 @@ PackageManagement パッケージ プロバイダー層では、PSModule パッ�
 
 ![PowerShellGet アーキテクチャ](Images/powershellgetArchitecture.png)
 
-図 1:PowerShellGet アーキテクチャ
+図 1: PowerShellGet アーキテクチャ
 
 ## <a name="what-is-required-to-run-powershellget"></a>PowerShellGet を実行するには何が必要ですか。
 

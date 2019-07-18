@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell ISE で PowerShell タブを作成する方法
-ms.assetid: c10c18c7-9ece-4fd0-83dc-a19c53d4fd83
-ms.openlocfilehash: 080fe89bf1443f51460589b445431913fa20b4b8
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: 7baf9a4051a196045d53eebf8ce5260bdc1bc55a
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53402302"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030590"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>Windows PowerShell ISE で PowerShell タブを作成する方法
 
@@ -23,7 +22,7 @@ Windows PowerShell でタブを開いたり閉じたりするには、次の手�
 
 ## <a name="to-create-and-use-a-new-powershell-tab"></a>新しい PowerShell タブを作成して使用するには
 
-**[ファイル]** メニューで、**[PowerShell タブの新規作成]** をクリックします。新しい PowerShell タブは、常にアクティブなウィンドウとして表示されます。
+**[ファイル]** メニューで、 **[PowerShell タブの新規作成]** をクリックします。新しい PowerShell タブは、常にアクティブなウィンドウとして表示されます。
 PowerShell のタブには、開かれた順に番号が付けられます。
 各タブは、それぞれ独自の Windows PowerShell コンソール ウィンドウに関連付けられます。
 独自のセッションを持つ PowerShell タブは、最大 32 個まで (Windows PowerShell ISE 2.0 では 8 個まで) を同時に開くことができます。
@@ -33,7 +32,7 @@ PowerShell のタブには、開かれた順に番号が付けられます。
 各タブおよびセッションでは、複数のスクリプト ファイルを開くことができます。
 セッションのスクリプト タブは、関連付けられたセッションがアクティブな場合にのみ、セッションのタブの下に表示されます。
 
-PowerShell タブをアクティブにするには、タブをクリックします。開かれているすべての PowerShell タブの中から選択するには、**[表示]** メニューで、使う PowerShell タブをクリックします。
+PowerShell タブをアクティブにするには、タブをクリックします。開かれているすべての PowerShell タブの中から選択するには、 **[表示]** メニューで、使う PowerShell タブをクリックします。
 
 ## <a name="to-create-and-use-a-new-remote-powershell-tab"></a>新しいリモート PowerShell タブを作成して使用するには
 

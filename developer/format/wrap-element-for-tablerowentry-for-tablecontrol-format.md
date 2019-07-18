@@ -9,13 +9,13 @@ ms.topic: article
 ms.assetid: 64087c6c-2abd-446d-b837-7d3ee03a6874
 caps.latest.revision: 11
 ms.openlocfilehash: 102fe1b9c3bd04562aa296f390ec549d5f8f35e9
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2019
-ms.locfileid: "58059879"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62083605"
 ---
-# <a name="wrap-element-for-tablerowentry-for-tablecontrol--format"></a>TableControl (形式) の TableRowEntry の要素にラップします。
+# <a name="wrap-element-for-tablerowentry-for-tablecontrol--format"></a>TableControl の TableRowEntry の Wrap 要素 (書式)
 
 次の行を列の幅を超えるテキストが表示されることを指定します。 既定では、列幅を超えるテキストは切り捨てられます。
 
@@ -27,7 +27,7 @@ ms.locfileid: "58059879"
 <Wrap/>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`Wrap`要素。
 
@@ -47,7 +47,7 @@ ms.locfileid: "58059879"
 
 ## <a name="remarks"></a>コメント
 
-テーブル ビューのコンポーネントに関する詳細については、[テーブル ビューを作成する](./creating-a-table-view.md)を参照してください。
+テーブル ビューのコンポーネントに関する詳細については、次を参照してください。[テーブル ビューを作成する](./creating-a-table-view.md)します。
 
 ## <a name="see-also"></a>参照
 

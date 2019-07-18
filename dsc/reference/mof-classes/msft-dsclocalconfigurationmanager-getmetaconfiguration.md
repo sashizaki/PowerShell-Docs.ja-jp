@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: MSFT_DSCLocalConfigurationManager クラスの GetMetaConfiguration メソッド
-ms.openlocfilehash: e14237ef68b95d68e2f14071aa1fa6ba0717f39f
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+title: GetMetaConfiguration メソッド
+ms.openlocfilehash: bd280cb8ebd7b0522e4e01cbd24bd9bdcfddf4c2
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047808"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734436"
 ---
-# <a name="getmetaconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの GetMetaConfiguration メソッド
+# <a name="getmetaconfiguration-method"></a>GetMetaConfiguration メソッド
 
 構成エージェントを制御するために使用するローカル構成マネージャーの設定を取得します。
 
@@ -35,9 +35,9 @@ uint32 GetMetaConfiguration(
 
 ## <a name="requirements"></a>要件
 
-MOF**DscCore.mof
+**MOF:** DscCore.mof
 
-**［名前空間］:Root \microsoft\windows\desiredstateconfiguration
+**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

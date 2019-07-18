@@ -3,11 +3,11 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: CI/CD パイプラインでの DSC のロールについて
 ms.openlocfilehash: 7aec414b3d8e61d1daa1ce796184ac34dbbb43ce
-ms.sourcegitcommit: c581c4c8036edf55147e7bce4b00c860da6c5a8b
-ms.translationtype: MTE95
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56803380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62079830"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>CI/CD パイプラインでの DSC のロールについて
 
@@ -118,4 +118,4 @@ Name プロパティは、各サービスの名前を指定する文字列の配
 新しい構成リリースにはそれぞれ、各リソースの特定のバージョンへの静的参照を含める必要があります。また、実稼働サーバー ノードに到達する前にテストして検証する必要があります。
 ソース管理からの変更のテストとリリースのプロセスにより、小さくても頻繁なバッチで変更をリリースするための安全な環境が作成されます。
 
-リリース パイプラインを使用して、コア インフラストラクチャを管理する方法の詳細については、ホワイト ペーパー「[The Release Pipeline Model (リリース パイプライン モデル)](../further-reading/whitepapers.md)」を参照してください。
+リリース パイプラインを使用して、コア インフラストラクチャを管理する方法の詳細については、次のホワイト ペーパーをご覧ください: 「[The Release Pipeline Model (リリース パイプライン モデル)](../further-reading/whitepapers.md)」。

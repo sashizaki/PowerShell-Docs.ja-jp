@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 936d09f2-2c48-49e8-ab2d-0c8729199a2e
 caps.latest.revision: 8
 ms.openlocfilehash: 8ba8931ea5e34f610878351396cad42023393ad6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862748"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076261"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion の EntrySelectedBy の SelectionSetName 要素 (書式)
 
@@ -28,7 +28,7 @@ ms.locfileid: "56862748"
 
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`SelectionSetName`要素。
 
@@ -54,7 +54,7 @@ ms.locfileid: "56862748"
 
 各定義には、1 つまたは複数の型名、選択範囲のセット、または選択条件を指定する必要があります。
 
-複数のビューで使用されるオブジェクトのグループを定義するときに、選択範囲のセットが通常使用されます。 たとえば、テーブル ビューと同じオブジェクトのセットのリスト ビューを作成する可能性があります。 選択範囲のセットを定義する詳細については、[を定義する設定のビューのオブジェクトを](./defining-selection-sets.md)を参照してください。
+複数のビューで使用されるオブジェクトのグループを定義するときに、選択範囲のセットが通常使用されます。 たとえば、テーブル ビューと同じオブジェクトのセットのリスト ビューを作成する可能性があります。 選択範囲のセットを定義する詳細については、次を参照してください。[を定義する設定のビューのオブジェクトを](./defining-selection-sets.md)します。
 
 ## <a name="see-also"></a>参照
 

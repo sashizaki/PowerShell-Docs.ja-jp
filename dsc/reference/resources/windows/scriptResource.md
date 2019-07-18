@@ -3,11 +3,11 @@ ms.date: 08/24/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Script リソース
 ms.openlocfilehash: 4eee5625add4d96ade7ababf7f534f597a26712d
-ms.sourcegitcommit: 0ca836d1044e46d3a7dcbc69fa93d84f74848559
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/04/2019
-ms.locfileid: "58920358"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62076992"
 ---
 # <a name="dsc-script-resource"></a>DSC Script リソース
 

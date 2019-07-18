@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: a252e0ec-d456-42d7-bd49-d6b8bc57f388
 caps.latest.revision: 11
 ms.openlocfilehash: 9c9d50c880f843e21621e5735c800e3afb48b2ad
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56861928"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068166"
 ---
 # <a name="extending-output-objects"></a>出力オブジェクトを拡張する
 
@@ -81,9 +81,9 @@ PS> (1, 2, 3, 4).Length
 
 - プロパティおよびプロパティ セットを追加する方法の詳細については、次を参照してください[拡張プロパティ。](./extending-properties-for-objects.md)
 
-- メソッドを追加する方法の詳細については、[拡張メソッド](./defining-default-methods-for-objects.md)を参照してください。
+- メソッドを追加する方法の詳細については、次を参照してください。[拡張メソッド](./defining-default-methods-for-objects.md)します。
 
-- メンバーのセットを追加する方法の詳細については、[メンバーのセットを拡張](./defining-default-member-sets-for-objects.md)を参照してください。
+- メンバーのセットを追加する方法の詳細については、次を参照してください。[メンバーのセットを拡張](./defining-default-member-sets-for-objects.md)します。
 
 独自の拡張型を定義した後は、次のメソッドのいずれかを使用して、拡張オブジェクトを使用できるようにします。
 

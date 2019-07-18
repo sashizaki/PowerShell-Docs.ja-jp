@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 6d16bca8-d025-432d-aa84-8b607b8af3ae
 caps.latest.revision: 12
 ms.openlocfilehash: 1a3bafd4ca94aee70e869c699f7a4ef8befc5511
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56862248"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065225"
 ---
 # <a name="listentry-element-for-listcontrol-format"></a>ListControl の ListEntry 要素 (書式)
 
@@ -30,7 +30,7 @@ ms.locfileid: "56862248"
 </ListEntry>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`ListEntry`要素。
 
@@ -53,7 +53,7 @@ ms.locfileid: "56862248"
 
 ## <a name="remarks"></a>コメント
 
-リスト ビューは、プロパティ値または各オブジェクトのスクリプトの値を表示するリスト形式です。 リスト ビューの詳細については、[リスト ビューを作成する](./creating-a-list-view.md)を参照してください。
+リスト ビューは、プロパティ値または各オブジェクトのスクリプトの値を表示するリスト形式です。 リスト ビューの詳細については、次を参照してください。[リスト ビューを作成する](./creating-a-list-view.md)します。
 
 ## <a name="example"></a>例
 

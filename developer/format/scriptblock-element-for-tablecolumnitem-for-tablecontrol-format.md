@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 5f1f0f95-1e0a-4607-ab68-bdf85ef29448
 caps.latest.revision: 9
 ms.openlocfilehash: c52cb4c93512090024b43504d382f6dc7255f19a
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56859768"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62075785"
 ---
 # <a name="scriptblock-element-for-tablecolumnitem-for-tablecontrol-format"></a>TableControl の TableColumnItem の ScriptBlock 要素 (書式)
 
@@ -27,7 +27,7 @@ ms.locfileid: "56859768"
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`ScriptBlock`要素。
 
@@ -51,7 +51,7 @@ ms.locfileid: "56859768"
 
 ## <a name="remarks"></a>コメント
 
-テーブル ビューのコンポーネントに関する詳細については、[テーブル ビューを作成する](./creating-a-table-view.md)を参照してください。
+テーブル ビューのコンポーネントに関する詳細については、次を参照してください。[テーブル ビューを作成する](./creating-a-table-view.md)します。
 
 ## <a name="see-also"></a>参照
 

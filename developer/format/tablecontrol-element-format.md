@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 1550b068-dfbc-4ae0-9aa1-72c9a680ec59
 caps.latest.revision: 15
 ms.openlocfilehash: 3942c008e026b0b99db3c77af4a0152b50fffc4e
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58054579"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62063830"
 ---
 # <a name="tablecontrol-element-format"></a>TableControl 要素 (書式)
 
@@ -33,7 +33,7 @@ ViewDefinitions 要素 (形式) 表示要素 (形式) TableControl 要素 (形�
 
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`TableControl`要素。 テーブルの行を指定する必要があります。 その他のすべての子要素は省略可能です。
 
@@ -58,7 +58,7 @@ ViewDefinitions 要素 (形式) 表示要素 (形式) TableControl 要素 (形�
 
 ## <a name="remarks"></a>コメント
 
-テーブル ビューのコンポーネントに関する詳細については、[テーブル ビューを作成する](./creating-a-table-view.md)を参照してください。
+テーブル ビューのコンポーネントに関する詳細については、次を参照してください。[テーブル ビューを作成する](./creating-a-table-view.md)します。
 
 ## <a name="example"></a>例
 

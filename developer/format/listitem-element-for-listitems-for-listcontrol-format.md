@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 0f96f4f5-8bd5-43ed-95e7-a7358115999a
 caps.latest.revision: 11
 ms.openlocfilehash: 1e0a1b2d20853650328b8cfd1513a08f7e167cd6
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56855158"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62065769"
 ---
 # <a name="listitem-element-for-listitems-for-listcontrol-format"></a>ListControl の ListItems の ListItem 要素 (書式)
 
@@ -33,7 +33,7 @@ ms.locfileid: "56855158"
 </ListItem>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
 次のセクションでは、属性、子要素、およびの親要素について説明します、`ListItem`要素。 1 つだけのプロパティまたはスクリプトを指定することができます。
 
@@ -59,7 +59,7 @@ None
 
 ## <a name="remarks"></a>コメント
 
-リスト ビューのコンポーネントに関する詳細については、[リスト ビューを作成する](./creating-a-list-view.md)を参照してください。
+リスト ビューのコンポーネントに関する詳細については、次を参照してください。[リスト ビューを作成する](./creating-a-list-view.md)します。
 
 ## <a name="example"></a>例
 

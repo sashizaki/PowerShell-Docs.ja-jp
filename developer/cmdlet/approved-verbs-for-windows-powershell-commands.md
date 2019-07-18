@@ -13,11 +13,11 @@ helpviewer_keywords:
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
 ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
-ms.sourcegitcommit: 806cf87488b80800b9f50a8af286e8379519a034
+ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/09/2019
-ms.locfileid: "59293352"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62068744"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>PowerShell コマンドの承認された動詞
 
@@ -253,4 +253,4 @@ PowerShell を使用して、 [System.Management.Automation.VerbsOther](/dotnet/
 
 [Windows PowerShell プログラマー ガイド](../prog-guide/windows-powershell-programmer-s-guide.md)
 
-[Windows PowerShell Shell SDK](../windows-powershell-reference.md)
+[Windows PowerShell シェル SDK](../windows-powershell-reference.md)

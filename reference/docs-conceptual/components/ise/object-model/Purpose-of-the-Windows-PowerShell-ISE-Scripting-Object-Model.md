@@ -2,13 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell ISE スクリプト オブジェクト モデルの目的
-ms.assetid: d176a131-ab0c-43ee-80c1-f824ab8e4a05
-ms.openlocfilehash: fd5ac2c34b173d4eba7636bb5760b1ac9abb4277
-ms.sourcegitcommit: 00ff76d7d9414fe585c04740b739b9cf14d711e1
-ms.translationtype: MTE95
+ms.openlocfilehash: e59593ef06911c709e92fa7a1eabd96d2636ca30
+ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/14/2018
-ms.locfileid: "53403413"
+ms.lasthandoff: 06/12/2019
+ms.locfileid: "67030914"
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE スクリプト オブジェクト モデルの目的
 

@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
-title: MSFT_DSCLocalConfigurationManager クラスの TestConfiguration メソッド
-ms.openlocfilehash: d746832b01310f43a7aae33dd0fa70c0928bb3e0
-ms.sourcegitcommit: e04292a9c10de9a8391d529b7f7aa3753b362dbe
-ms.translationtype: MTE95
+title: TestConfiguration メソッド
+ms.openlocfilehash: 384134212e3b29b63dc045aee4b708c87c970302
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54047582"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726965"
 ---
-# <a name="testconfiguration-method-of-the-msftdsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラスの TestConfiguration メソッド
+# <a name="testconfiguration-method"></a>TestConfiguration メソッド
 
 構成ドキュメントを管理ノードに送信し、そのドキュメントに対して現在の構成を検証します。
 
@@ -44,9 +44,9 @@ uint32 TestConfiguration(
 
 ## <a name="requirements"></a>要件
 
-MOF**DscCore.mof
+**MOF:** DscCore.mof
 
-**［名前空間］:Root \microsoft\windows\desiredstateconfiguration
+**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

@@ -8,28 +8,14 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
 caps.latest.revision: 5
-ms.openlocfilehash: 5e8d1df6b423bfd2cd6b0a64a8875dea9c3fb4ef
-ms.sourcegitcommit: b6871f21bd666f9cd71dd336bb3f844cf472b56c
+ms.openlocfilehash: b6f8aef76a5f4b5dc1a60425541856ead9a9c77a
+ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "56857318"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65855127"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>コマンドレットのヘルプ トピックに例を追加する方法
-
-- [コマンドレットのヘルプの例について知っておくべきこと](#Things-to-Know-about-Examples-in-Cmdlet-Help)
-
-- [例を表示するビューについてのヘルプ](#Help-Views-that-Display-Examples)
-
-- [例として、ノードを追加します。](#Adding-an-Examples-Node)
-
-- [文字の前の追加](#Adding-Preceding-Characters)
-
-- [コマンドを追加します。](#Adding-the-Command)
-
-- [説明の追加](#Adding-a-Description)
-
-- [出力例を追加します。](#Adding-Example-Output)
 
 ## <a name="things-to-know-about-examples-in-cmdlet-help"></a>コマンドレットのヘルプの例について知っておくべきこと
 

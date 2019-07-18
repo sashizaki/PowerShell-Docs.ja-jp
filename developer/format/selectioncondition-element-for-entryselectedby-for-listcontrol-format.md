@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: 633204f3b181316761746ea2679910216fb74657
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.openlocfilehash: f04a07c241268566eaedfe2b299c33d5be4dc19d
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58058966"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67735086"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>ListControl の EntrySelectedBy の SelectionCondition 要素 (書式)
 
@@ -63,9 +63,9 @@ lWhen 選択条件を定義する、次の要件が適用されます。
 
 - 選択条件が .NET 型の任意の数を指定するか、選択範囲を設定するが、両方を指定することはできません。
 
-選択条件を使用する方法の詳細については、[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)を参照してください。
+選択条件を使用する方法の詳細については、次を参照してください。[データが表示される場合の条件を定義する](./defining-conditions-for-displaying-data.md)します。
 
-リスト ビューの他のコンポーネントに関する詳細については、[リスト ビューを作成する](./creating-a-list-view.md)を参照してください。
+リスト ビューの他のコンポーネントに関する詳細については、次を参照してください。[リスト ビューを作成する](./creating-a-list-view.md)します。
 
 ## <a name="see-also"></a>参照
 
@@ -77,6 +77,6 @@ lWhen 選択条件を定義する、次の要件が適用されます。
 
 [ListEntry (形式) の EntrySelectedBy SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-[EntrySelectedBy ListEntry (形式) 用の TypeName 要素](http://msdn.microsoft.com/en-us/fcd4daa6-f3fd-43f7-a468-03c582d34533)
+[EntrySelectedBy ListEntry (形式) 用の TypeName 要素](/powershell/developer/format/typename-element-for-entryselectedby-for-listcontrol-format)
 
 [PowerShell のファイルを書式設定の書き込み](./writing-a-powershell-formatting-file.md)
