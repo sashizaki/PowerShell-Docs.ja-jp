@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell、core
 title: PowerShell Core 6.0 の重要な変更
-ms.openlocfilehash: d25cf07baa11040af57f330feede44635c00c551
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62085934"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843935"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell Core 6.0 の重要な変更
 
@@ -15,7 +15,7 @@ ms.locfileid: "62085934"
 
 ### <a name="powershell-workflow"></a>PowerShell ワークフロー
 
-[PowerShell ワークフロー][workflow]は、実行時間の長い、または並列化されたタスクための堅牢な Runbook の作成を可能にする [Windows Workflow Foundation (WF)][workflow-foundation] の上に構築される Windows PowerShell の機能です。
+[PowerShell ワークフロー][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation]、長時間実行中のタスクまたは並行化されたタスクに対して堅牢な Runbook を作成できるようにします。
 
 .NET Core では Windows Workflow Foundation がサポートされていないため、PowerShell Core の PowerShell ワークフローのサポートを終了します。
 
@@ -113,9 +113,13 @@ WMI ベースの 2 つのモジュール セットをサポートすることは
 
 API が `null` のみを返す場合、Invoke-restmethod は、これを `$null` ではなく、文字列 `"null"` としてシリアル化していました。 今回の変更により、有効なシングル値 JSON `null` がリテラル `$null` として正しくシリアル化されるよう、`Invoke-RestMethod` のロジックが修正されました。
 
-### <a name="remove--computername-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>`*-Computer` コマンドレットから `-ComputerName` を削除 [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277httpsgithubcompowershellpowershellissues5277"></a>`*-Computer` コマンドレットから `-Protocol` を削除 [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-CoreFX の RPC リモート処理 (特に Windows 以外のプラットフォームで) の問題と、PowerShell で一貫性のあるリモート処理エクスペリエンスを保証するため、`\*-Computer` コマンドレットから `-ComputerName` パラメーターが削除されました。 コマンドレットをリモートで実行するには、代わりに `Invoke-Command` を使用してください。
+CoreFX の RPC リモート処理 (特に Windows 以外のプラットフォームで) の問題と、PowerShell で一貫性のあるリモート処理エクスペリエンスを保証するため、`\*-Computer` コマンドレットから `-Protocol` パラメーターが削除されました。 リモート処理では DCOM がサポートされなくなりました。 次のコマンドレットでは、WSMAN リモート処理のみをサポートします。
+
+- Rename-Computer
+- Restart-Computer
+- Stop-Computer
 
 ### <a name="remove--computername-from--service-cmdlets-5090httpsgithubcompowershellpowershellissues5094"></a>`*-Service` コマンドレットから `-ComputerName` を削除 [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
@@ -159,7 +163,7 @@ HTTP を使用する場合、パスワードなどのコンテンツはクリア
 
 ### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>`RunspaceConfiguration` のサポートを終了 [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-以前は、API を使用してプログラミングによって PowerShell 実行空間を作成する場合、レガシー の [`RunspaceConfiguration`][runspaceconfig] と新しい [`InitialSessionState`][iss] のいずれかを使用できました。 今回の変更により `RunspaceConfiguration` のサポートが終了し、`InitialSessionState` のみがサポートされます。
+以前は、API を使用してプログラミングによって PowerShell 実行空間を作成する場合、レガシーの [`RunspaceConfiguration`][runspaceconfig] or the newer [`InitialSessionState`][iss] を使用できました。 今回の変更により `RunspaceConfiguration` のサポートが終了し、`InitialSessionState` のみがサポートされます。
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate

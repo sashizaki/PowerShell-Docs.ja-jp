@@ -2,16 +2,16 @@
 title: PowerShell Core 6.0 の新機能
 description: PowerShell Core 6.0 でリリースされた新機能と変更
 ms.date: 08/06/2018
-ms.openlocfilehash: 83c104d838db9d86fe1d485e92245a9c8f2d2057
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1218a38398f4d86829cf2b4ba6a3a882675eaab
+ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62059017"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67843931"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 の新機能
 
-[PowerShell Core 6.0][github] は、異機種混合環境とハイブリッド クラウド用に構築されたオープン ソースのクロスプラットフォーム (Windows、macOS、Linux) である、PowerShell の新しいエディションです。
+[PowerShell Core 6.0][github] は、異種環境とハイブリッド クラウド用に構築されたオープン ソースのクロスプラットフォーム (Windows、macOS、Linux) である、PowerShell の新しいエディションです。
 
 ## <a name="moved-from-net-framework-to-net-core"></a>.NET Framework から .NET Core への移行
 
@@ -67,7 +67,7 @@ Windows 以外のシステムでより適切に機能するように、PowerShel
 
 ### <a name="logging"></a>ログ記録
 
-macOS では、PowerShell はネイティブ `os_log` API を使用して、Apple の[統合ログシステム][os_log]にログを記録します。
+macOS では、PowerShell はネイティブ `os_log` API を使用して、Apple の[統合ログ システム][os_log]にログを記録します。
 Linux では、PowerShell は、ユビキタス ログ ソリューションである [Syslog][] を使用します。
 
 ### <a name="filesystem"></a>ファイルシステム
@@ -295,6 +295,7 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 
 ### <a name="csv-cmdlets"></a>CSV のコマンドレット
 
+- `Import-Csv` では W3C 拡張ログ ファイル形式をサポートするようになりました (#2482) ([@iSazonov](https://github.com/iSazonov) に感謝)
 - `Import-Csv` と `ConvertFrom-Csv` の `PSTypeName` サポートを追加します。 (#5389) ([@markekraus](https://github.com/markekraus) に感謝)
 - `Import-Csv` で行区切り文字として `CR`、`LF`、`CRLF` を使用できるようにします。 (#5363) ([@iSazonov](https://github.com/iSazonov) に感謝)
 - `Export-Csv` と `ConvertTo-Csv` で `-NoTypeInformation` を既定値にします。 (#5164) ([@markekraus](https://github.com/markekraus) に感謝)
@@ -345,8 +346,8 @@ PowerShell ジョブの詳細については、「[about_Jobs](https://msdn.micr
 
 ## <a name="breaking-changes"></a>破壊的変更
 
-PowerShell Core 6.0 には多くの重大な変更が導入されています。
-その詳細については、[PowerShell Core 6.0 の重大な変更][breaking-changes]に関するページを参照してください。
+PowerShell Core 6.0 には多くの破壊的変更が導入されています。
+その詳細については、[PowerShell Core 6.0 の破壊的変更][breaking-changes]に関するページを参照してください。
 
 ## <a name="debugging"></a>デバッグ
 
@@ -375,7 +376,7 @@ PowerShell Core 内の多くのバグの修正も行いました。
 
 このテレメトリをオプトアウトする場合は、単に `POWERSHELL_TELEMETRY_OPTOUT` 環境変数を作成して値を `true`、`1`、または `yes` のいずれかに設定します。
 この変数を作成すると、PowerShell を初めて実行する前であっても、すべてのテレメトリがバイパスされます。
-[コミュニティ ダッシュボード][community-dashboard]のテレメトリから収集される、このテレメトリ データと洞察を公開することも予定しています。
+[コミュニティ ダッシュボード][community-dashboard]のテレメトリから収集される、このテレメトリ データと分析情報を公開することも予定しています。
 このデータの使用方法の詳細については、こちらの[ブログの投稿][telemetry-blog]を参照してください。
 
 [github]: https://github.com/PowerShell/PowerShell

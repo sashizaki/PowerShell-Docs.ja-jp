@@ -2,19 +2,19 @@
 title: PowerShell 開発のための Visual Studio Code の使用
 description: PowerShell 開発のための Visual Studio Code の使用
 ms.date: 08/06/2018
-ms.openlocfilehash: 5badffd49252e0d72ae2c20d3147ad4b1e92d5ed
-ms.sourcegitcommit: cf1a281cce9f7239c440c90f8b2798d32a13778d
+ms.openlocfilehash: 6a0da6e060693dc7cfc08d40fd658414dc23d660
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2019
-ms.locfileid: "65882571"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67733880"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell 開発のための Visual Studio Code の使用
 
-Visual Studio Code は、[PowerShell ISE] に加え[ise]、PowerShell でも十分にサポートされています。
+Visual Studio Code は、[PowerShell ISE][ise] に加え、PowerShell でも十分にサポートされています。
 さらに、PowerShell Core で ISE はサポートされていませんが、Visual Studio Code はすべてのプラットフォーム (Windows、macOS、および Linux) の PowerShell Core でサポートされています。
 
-Windows で Visual Studio Code を使用する場合、Windows 10 を使用して PowerShell バージョン 5 を使用するか、ダウンレベルの (Windows 8.1 などの) Windows OS に、[Windows Management Framework 5.0 RTM](https://www.microsoft.com/en-us/download/details.aspx?id=50395) をインストールします。
+Windows で Visual Studio Code を使用する場合、Windows 10 を使用して PowerShell バージョン 5 を使用するか、ダウンレベルの (Windows 8.1 などの) Windows OS に、[Windows Management Framework 5.0 RTM](https://devblogs.microsoft.com/powershell/windows-management-framework-wmf-5-0-rtm-is-now-available-via-the-microsoft-update-catalog/) をインストールします。
 
 開始する前に、システムに PowerShell があることを確認してください。
 Windows、macOS、および Linux 上の最近のワークロードに対しては、次を参照してください。
@@ -23,7 +23,7 @@ Windows、macOS、および Linux 上の最近のワークロードに対して�
 - [macOS への PowerShell Core のインストール][install-pscore-macos]
 - [Windows への PowerShell Core のインストール][install-pscore-windows]
 
-従来の Windows PowerShell ワークロードに対しては、「[Windows PowerShell のインストール][install-winps]」を参照してください。
+従来の Windows PowerShell ワークロードについては、「[Windows PowerShell のインストール][install-winps]」を参照してください。
 
 ## <a name="editing-with-visual-studio-code"></a>Visual Studio Code を使用した編集
 
@@ -54,13 +54,13 @@ Windows、macOS、および Linux 上の最近のワークロードに対して�
 
   ![VSCode](../../images/vscode.png)
 
-- Microsoft の PowerShell 拡張機能の、**[インストール]** ボタンをクリックします。
-- インストール後、**[インストール]** ボタンは **[再読み込み]** に変わります。
+- Microsoft の PowerShell 拡張機能の、 **[インストール]** ボタンをクリックします。
+- インストール後、 **[インストール]** ボタンは **[再読み込み]** に変わります。
   **[再読み込み]** をクリックします。
 - Visual Studio Code が再読み込みされたら、編集が可能になります。
 
-たとえば、新しいファイルを作成するには、**[ファイル]、[新規]** の順にクリックします。
-保存するには、**[ファイル]、[保存]** の順にクリックし、`HelloWorld.ps1` などのファイル名を入力します。
+たとえば、新しいファイルを作成するには、 **[ファイル]、[新規]** の順にクリックします。
+保存するには、 **[ファイル]、[保存]** の順にクリックし、`HelloWorld.ps1` などのファイル名を入力します。
 ファイルを閉じるには、ファイル名の横の "x" をクリックします。
 **[ファイル]、[終了]** の順にクリックし、Visual Studio Code を終了します。
 
@@ -186,7 +186,7 @@ Visual Studio Code バージョン 1.9 以降では、PowerShell スクリプト
 
 ### <a name="workspace-debugging"></a>ワークスペースを使用したデバッグ
 
-ワークスペースを使用したデバッグとは、**[ファイル]** メニューの **[ファイルを開く]** を使用して Visual Studio Code で開いたフォルダーのコンテキストでデバッグを行うことを言います。
+ワークスペースを使用したデバッグとは、 **[ファイル]** メニューの **[ファイルを開く]** を使用して Visual Studio Code で開いたフォルダーのコンテキストでデバッグを行うことを言います。
 開いたフォルダーは、通常は PowerShell プロジェクトのフォルダーや Git リポジトリのルートです。
 
 このモードの場合も、単純に F5 キーを押せば、現在選択されている PowerShell スクリプトのデバッグを開始できます。
@@ -200,9 +200,9 @@ Visual Studio Code バージョン 1.9 以降では、PowerShell スクリプト
 
 デバッグ用の構成ファイルを作成するには、次の手順に従います。
 
-  1. **Ctrl + Shift + D** (Mac の場合は **Cmd + Shift + D**) と押して、**[デバッグ]** ビューを開きます。
+  1. **Ctrl + Shift + D** (Mac の場合は **Cmd + Shift + D**) と押して、 **[デバッグ]** ビューを開きます。
   2. ツールバーの **[構成]** 歯車アイコンキーを押します。
-  3. Visual Studio Code により、**[環境の選択]** が求められます。 **[PowerShell]** を選択します。
+  3. Visual Studio Code により、 **[環境の選択]** が求められます。 **[PowerShell]** を選択します。
 
   これを行うときに、Visual Studio Code によってワークスペース フォルダーのルートに、".vscode\launch.json" のディレクトリとファイルが作成されます。
   ここにデバッグ構成が格納されます。 ファイルが Git リポジトリにある場合は、通常は launch.json ファイルをコミットしたいでしょう。
@@ -238,15 +238,15 @@ Visual Studio Code バージョン 1.9 以降では、PowerShell スクリプト
   ```
 
   これが、一般的なデバッグ シナリオです。
-  ただし、エディターでこのファイルを開いた場合、**[構成の追加]** ボタンが表示されます。
-  さらに PowerShell デバッグ構成を追加するには、このボタンを押します。 追加すると便利な構成の 1 つは、**[PowerShell: Launch Script]\(PowerShell: 起動スクリプト\)** です。
+  ただし、エディターでこのファイルを開いた場合、 **[構成の追加]** ボタンが表示されます。
+  さらに PowerShell デバッグ構成を追加するには、このボタンを押します。 追加すると便利な構成の 1 つは、 **[PowerShell: Launch Script]\(PowerShell: 起動スクリプト\)** です。
   この構成では、エディターで現在どのファイルがアクティブであるかに関係なく、F5 キーを押すと起動される特定のファイルを、オプションの引数とともに指定できます。
 
-  デバッグ構成が確立されると、**[デバッグ]** ビューのツールバーのデバッグ構成ドロップダウンから、デバッグ セッションで使用する構成を選択できます。
+  デバッグ構成が確立されると、 **[デバッグ]** ビューのツールバーのデバッグ構成ドロップダウンから、デバッグ セッションで使用する構成を選択できます。
 
 Visual Studio Code 用の PowerShell の拡張機能を使用開始するのに便利なブログを、次にいくつか示します。
 
-- [PowerShell 拡張機能][ps-extension]
+- [PowerShell の拡張機能][ps-extension]
 - [Visual Studio Code での PowerShell スクリプトの記述およびデバッグ][debug]
 - [Visual Studio Code でのデバッグのガイダンス][vscode-guide]
 - [Visual Studio Code での PowerShell のデバッグ][ps-vscode]

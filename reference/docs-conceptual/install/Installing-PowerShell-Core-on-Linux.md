@@ -2,19 +2,21 @@
 title: Linux への PowerShell Core のインストール
 description: さまざまな Linux ディストリビューションへの PowerShell Core のインストールに関する情報
 ms.date: 08/06/2018
-ms.openlocfilehash: 0a7c9549c37222bf599e4bdb9e36c91288191bb3
-ms.sourcegitcommit: 00cf9a99972ce40db7c25b9a3fc6152dec6bddb6
+ms.openlocfilehash: 32d6c0e718ca798af2f6a5d796c3ca362e7befd9
+ms.sourcegitcommit: 13e170e8bff29d3d5f854c874de88f53c5e5ef20
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64530638"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829438"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Linux への PowerShell Core のインストール
 
-[Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora]、および [Arch Linux][arch] をサポートしています。
+[Ubuntu 14.04][u14], [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810],  [Debian 9][deb9],
+[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse],
+[Fedora 27][fedora]、[Fedora 28][fedora]、[Arch Linux][arch] をサポートします。
 
-公式にサポートしていない Linux ディストリビューションの場合、[PowerShell Snap パッケージ][snap]を利用できます。
-また、Linux [`tar.gz` アーカイブ][tar]で直接、PowerShell バイナリを展開できます。ただし、場合によっては、OS に基づいて依存関係を別の手順で設定する必要があります。
+公式にサポートされていない Linux ディストリビューションの場合、[PowerShell Snap パッケージ][snap]を使用してみることができます。
+また、Linux [`tar.gz` アーカイブ][tar]を使用して、直接 PowerShell バイナリを展開できますが、場合によっては、OS に基づいて依存関係を別の手順で設定する必要があります。
 
 すべてのパッケージは GitHub [リリース][] ページにあります。
 パッケージがインストールされたら、ターミナルから `pwsh` を実行します。
@@ -588,8 +590,18 @@ apt-get remove -y powershell
 ### <a name="installation---raspbian"></a>インストール - Raspbian
 
 ```sh
-# Install prerequisites
-sudo apt-get install libunwind8
+###################################
+# Prerequisites
+
+# Update package lists
+sudo apt-get update
+
+# Install libunwind8 and libssl1.0
+# Regex is used to ensure that we do not install libssl1.0-dev, as it is a variant that is not required
+sudo apt-get install '^libssl1.0.[0-9]$' libunwind8 -y
+
+###################################
+# Download and extract PowerShell
 
 # Grab the latest tar.gz
 wget https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-linux-arm32.tar.gz
@@ -647,7 +659,7 @@ PowerShell はすべての Linux ディストリビューションに移植可�
 | Fedora 27 <br> Fedora 28 | libunwind、libcurl、openssl-libs、libicu、compat-openssl10 |
 
 公式にサポートされていない Linux ディストリビューションで PowerShell バイナリを展開するには、別の手順で、ターゲット OS に必要な依存関係をインストールする必要があります。
-たとえば、[Amazon Linux dockerfile][amazon-dockerfile] は依存関係を先にインストールし、それから Linux `tar.gz` アーカイブを抽出します。
+たとえば、[Amazon Linux Dockerfile][amazon-dockerfile] では依存関係を先にインストールし、それから Linux `tar.gz` アーカイブを抽出します。
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
@@ -690,7 +702,7 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 プロファイルは PowerShell のホスト別構成を順守します。そのため、既定のホスト固有プロファイルは同じ場所の `Microsoft.PowerShell_profile.ps1` にあります。
 
-PowerShell は、Linux の [XDG ベース ディレクトリ仕様][xdg-bds]を尊重しています。
+PowerShell では、Linux の [XDG ベース ディレクトリ仕様][xdg-bds]を尊重しています。
 
 [リリース]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

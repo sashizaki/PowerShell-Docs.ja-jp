@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: ノードの相互依存関係の指定
-ms.openlocfilehash: 1bdfbd9f8a94809d6bf410eff525e1c877fb6aad
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 62e553d894897ae1908745c2788b7b7b9cbe50ff
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080205"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734674"
 ---
 # <a name="specifying-cross-node-dependencies"></a>ノードの相互依存関係の指定
 
@@ -55,14 +55,22 @@ WaitForSome [String] #ResourceName
 
 すべての **WaitForXXXX** が次の構文キーを共有します。
 
-|  プロパティ  |  説明   | | RetryIntervalSec| 再試行するまでの秒数。 最小値は 1 です。| | RetryCount| 再試行の回数の最大数。| | ThrottleLimit| 同時に接続するコンピューターの数。 既定値は `New-CimSession` です。| | DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 詳しくは、[DependsOn](resource-depends-on.md) に関する記事をご覧ください| | PsDscRunAsCredential | 「[DSC リソースに対して資格情報を使用する](./runAsUser.md)」をご覧ください |
-
+|プロパティ|  説明   |
+|---------|---------------------|
+| RetryIntervalSec| 再試行するまでの秒数。 最小値は 1 です。|
+| RetryCount| 再試行の回数の最大数。|
+| ThrottleLimit| 同時に接続するコンピューターの数。 既定値は、`New-CimSession` の既定値です。|
+| DependsOn | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 詳細については、[DependsOn](resource-depends-on.md) に関するページを参照してください。|
+| PsDscRunAsCredential | [ユーザーの資格情報を指定した DSC の使用](./runAsUser.md)に関するページを参照してください。 |
 
 ## <a name="using-waitforxxxx-resources"></a>WaitForXXXX リソースの使用
 
-各 **WaitForXXXX** リソースは、指定されたノードで指定された数のリソースが完了するのを待機します。 同じ Configuration の他のリソースは、**DependsOn** キーを使用して **WaitForXXXX** リソースに "*依存する*" ことができます。
+各 **WaitForXXXX** リソースは、指定されたノードで指定された数のリソースが完了するのを待機します。
+同じ Configuration の他のリソースは、**DependsOn** キーを使用して **WaitForXXXX** リソースに "*依存する*" ことができます。
 
 たとえば、次の構成では、ターゲット ノードは **MyDC** ノード上の **xADDomain** リソースが完了するまで 15 秒間隔で最大 30 回試行しながら待機した後、ドメインに参加できるようになります。
+
+既定では、**WaitForXXX** リソースは 1 回試行してから失敗します。 これは必須ではありませんが、通常は、**RetryCount** と **RetryIntervalSec** を指定します。
 
 ```powershell
 Configuration JoinDomain
@@ -111,7 +119,9 @@ Configuration JoinDomain
 
 Configuration をコンパイルすると、2 つの ".mof" ファイルが生成されます。 [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを使って、両方の ".mof" ファイルをターゲットの Node に適用します
 
->**注:** 既定では、WaitForXXX リソースは 1 回試行してから失敗します。 これは必須ではありませんが、通常は、**RetryCount** と **RetryIntervalSec** を指定します。
+> [!NOTE]
+> **WaitForXXX** リソースでは、Windows リモート管理を使用して他のノードの状態を確認します。
+> WinRM でのポートとセキュリティ要件の詳細については、「[PowerShell リモート処理のセキュリティに関する考慮事項](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

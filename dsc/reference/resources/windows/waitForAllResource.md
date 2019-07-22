@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC WaitForAll リソース
-ms.openlocfilehash: 1e891f1aecbdbe641973669f71f22664ad8ea16c
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c1125b7c5b68b9b520ed052800b6a2abf4e53b85
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62076924"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726867"
 ---
 # <a name="dsc-waitforall-resource"></a>DSC WaitForAll リソース
 
@@ -16,6 +16,10 @@ ms.locfileid: "62076924"
 **WaitForAll** Desired State Configuration (DSC) リソースを [DSC 構成](../../../configurations/configurations.md)のノード ブロック内で使用して、他のノードの構成の依存関係を指定することができます。
 
 このリソースは、**ResourceName** プロパティで指定されたリソースが、**NodeName** プロパティで定義されたすべてのターゲット ノード上で目的の状態になった場合に成功します。
+
+> [!NOTE]
+> **WaitForAll** リソースでは、Windows リモート管理を使用して他のノードの状態を確認します。
+> WinRM でのポートとセキュリティ要件の詳細については、「[PowerShell リモート処理のセキュリティに関する考慮事項](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)」を参照してください。
 
 ## <a name="syntax"></a>構文
 

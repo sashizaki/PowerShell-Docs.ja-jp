@@ -1,50 +1,20 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/10/2019
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の前提条件
-ms.openlocfilehash: acc16c0c7eec357b621c0706a66b8752ae5578cd
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8fca5c068412e86acfdb8bed400699f721b76191
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084846"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734279"
 ---
 # <a name="prerequisites"></a>前提条件
 
-> 適用先:Windows PowerShell 5.0
+Just Enough Administration は、PowerShell 5.0 以降に含まれる機能です。 この記事では、JEA の使用を開始するために満たす必要のある前提条件について説明します。
 
-Just Enough Administration は、Windows PowerShell 5.0 以降に含まれる機能です。
-このトピックでは、JEA の使用を開始するために満たす必要のある前提条件について説明します。
 
-## <a name="install-jea"></a>JEA のインストール
-
-JEA は Windows PowerShell 5.0 以降で利用できますが、完全な機能のためには、システムで使用できる最新バージョンの PowerShell をインストールすることをお勧めします。
-次の表は、Windows Server での JEA の可用性を示します。
-
-サーバーのオペレーティング システム   | JEA の可用性
---------------------------|--------------------------------
-Windows Server 2016       | プレインストール済み
-Windows Server 2012 R2    | WMF 5.1 のすべての機能
-Windows Server 2012       | WMF 5.1 のすべての機能
-Windows Server 2008 R2    | WMF 5.1 の制限された機能<sup>1</sup>
-
-JEA は、自宅または会社のコンピューターでも使用できます。
-
-クライアントのオペレーティング システム   | JEA の可用性
---------------------------|-----------------------------------------------------
-Windows 10 1607 以降          | プレインストール済み
-Windows 10 1603、1511     | 制限された機能でプレインストール済み<sup>2</sup>
-Windows 10 1507           | 不可
-Windows 8、8.1            | WMF 5.1 のすべての機能
-Windows 7                 | WMF 5.1 の制限された機能<sup>1</sup>
-
-<sup>1</sup> Windows Server 2008 R2 または Windows 7 で、グループが管理するサービス アカウントを使用するように JEA を構成することはできません。
-仮想アカウントと他の JEA 機能はサポートされています *。*
-
-<sup>2</sup> Windows 10 のバージョン 1511 と 1603 では、JEA の次の機能はサポートされません。グループ管理されたサービス アカウントとしての実行、セッション構成での条件付きアクセス規則、ユーザー ドライブ、ローカル ユーザー アカウントへのアクセスの許可。
-これらの機能を使うには、Windows をバージョン 1607 (Anniversary Update) 以降に更新します。
-
-### <a name="check-which-version-of-powershell-is-installed"></a>インストールされている PowerShell のバージョンを確認する
+## <a name="check-which-version-of-powershell-is-installed"></a>インストールされている PowerShell のバージョンを確認する
 
 システムにインストールされている PowerShell のバージョンを確認するには、Windows PowerShell プロンプトで `$PSVersionTable` 変数を調べます。
 
@@ -52,31 +22,55 @@ Windows 7                 | WMF 5.1 の制限された機能<sup>1</sup>
 $PSVersionTable.PSVersion
 ```
 
-```output
+```Output
 Major  Minor  Build  Revision
 -----  -----  -----  --------
 5      1      14393  1000
 ```
 
-*メジャー* バージョンが **5** 以上の場合、JEA を使用できます。
-エクスペリエンスを最善にし、すべての最新機能にアクセスするには、可能な場合は PowerShell バージョン **5.1** にアップグレードすることをお勧めします。
+JEA は PowerShell 5.0 以降で利用できます。 完全な機能のためには、システムで使用できる最新バージョンの PowerShell をインストールすることをお勧めします。 次の表は、Windows Server での JEA の可用性を示します。
+
+| サーバーのオペレーティング システム |                JEA の可用性                |
+| ----------------------- | ---------------------------------------------- |
+| Windows Server 2016 以降    | プレインストール済み                                   |
+| Windows Server 2012 R2  | WMF 5.1 のすべての機能                |
+| Windows Server 2012     | WMF 5.1 のすべての機能                |
+| Windows Server 2008 R2  | WMF 5.1 の制限された機能<sup>1</sup> |
+
+JEA は、自宅または会社のコンピューターでも使用できます。
+
+| クライアントのオペレーティング システム |                   JEA の可用性                   |
+| ----------------------- | ---------------------------------------------------- |
+| Windows 10 1607 以降        | プレインストール済み                                         |
+| Windows 10 1603、1511   | 制限された機能でプレインストール済み<sup>2</sup> |
+| Windows 10 1507         | 不可                                        |
+| Windows 8、8.1          | WMF 5.1 のすべての機能                      |
+| Windows 7               | WMF 5.1 の制限された機能<sup>1</sup>       |
+
+- <sup>1</sup> Windows Server 2008 R2 または Windows 7 で、グループが管理するサービス アカウントを使用するように JEA を構成することはできません。 仮想アカウントと他の JEA 機能はサポートされています *。*
+
+- <sup>2</sup> 次の JEA 機能は、Windows 10 バージョン 1511 と 1603 ではサポートされていません。
+
+  - グループ管理されたサービス アカウントとして実行する
+  - セッション構成での条件付きアクセス規則
+  - ユーザー ドライブ
+  - ローカル ユーザー アカウントにアクセス許可を付与する
+
+  これらの機能を使うには、Windows をバージョン 1607 (Anniversary Update) 以降に更新します。
 
 ### <a name="install-windows-management-framework"></a>Windows Management Framework をインストールする
 
-古いバージョンの PowerShell を実行している場合、最新の Windows Management Framework (WMF) 更新プログラムにシステムを更新する必要があります。
-更新パッケージおよび最新の WMF リリース ノートへのリンクは、[ダウンロード センター](https://blogs.msdn.microsoft.com/powershell/2016/02/24/windows-management-framework-wmf-5-0-rtm-packages-has-been-republished/)にあります。
+より古いバージョンの PowerShell を実行している場合、最新の Windows Management Framework (WMF) 更新プログラムでご利用のシステムを更新する必要がある可能性があります。 詳細については、[WMF のドキュメント](/powershell/wmf/overview)を参照してください。
 
-すべてのサーバーをアップグレードする前に、WMF とのワークロードの互換性をテストすることを強くお勧めします。
+ご利用のすべてのサーバーをアップグレードする前に、WMF とのワークロードの互換性をテストすることをお勧めします。
 
 Windows 10 のユーザーは、現在のバージョンの Windows PowerShell を取得するには、最新の機能更新をインストールする必要があります。
 
 ## <a name="enable-powershell-remoting"></a>PowerShell リモート処理を有効にする
 
-PowerShell リモート処理は、JEA 構築の基盤を提供します。
-したがって、JEA を使用する前に、システムで PowerShell リモート処理を有効にし、[適切にセキュリティ保護する](/powershell/scripting/setup/winrmsecurity)必要があります。
+PowerShell リモート処理は、JEA 構築の基盤を提供します。 JEA を使用する前に、PowerShell リモート処理を有効にし、適切にセキュリティで保護されていることを確実にする必要があります。 詳細については、[WinRM セキュリティ](/powershell/scripting/learn/remoting/winrmsecurity)に関するページを参照してください。
 
-Windows Server 2012、2012 R2、2016 では、PowerShell リモート処理は既定で有効になります。
-管理者特権の PowerShell ウィンドウで次のコマンドを実行することにより、PowerShell リモート処理を有効にできます。
+Windows Server 2012、2012 R2、2016 では、PowerShell リモート処理は既定で有効になります。 管理者特権の PowerShell ウィンドウで次のコマンドを実行することにより、PowerShell リモート処理を有効にできます。
 
 ```powershell
 Enable-PSRemoting
@@ -84,8 +78,7 @@ Enable-PSRemoting
 
 ## <a name="enable-powershell-module-and-script-block-logging-optional"></a>PowerShell モジュールおよびスクリプト ブロック ログを有効にする (省略可能)
 
-次の手順で、システム上のすべての PowerShell 操作のログを有効にします。
-PowerShell モジュール ログは JEA には必要ありませんが、ユーザーが実行するコマンドが中央の場所に記録されるように有効にすることを強くお勧めします。
+次の手順で、システム上のすべての PowerShell 操作のログを有効にします。 PowerShell モジュール ログは JEA には必要ありませんが、ユーザーが実行するコマンドが確実に中央の場所にログ記録されるように、有効にすることをお勧めします。
 
 グループ ポリシーを使って、PowerShell モジュール ログ ポリシーを構成できます。
 
@@ -94,7 +87,7 @@ PowerShell モジュール ログは JEA には必要ありませんが、ユー
 3. **[モジュール ログを有効にする]** をダブルクリックします。
 4. **[有効]** をクリックします。
 5. [オプション] セクションで、モジュール名の横にある **[表示]** をクリックします。
-6. ポップアップ ウィンドウに「`\*`」と入力します。 これは、すべてのモジュールのコマンドを記録するよう PowerShell に指示します。
+6. ポップアップ ウィンドウに「`*`」を入力して、すべてのモジュールからのコマンドをログ記録します。
 7. **[OK]** をクリックしてポリシーを設定します。
 8. **[PowerShell スクリプト ブロックのログ記録を有効にする]** をダブルクリックします。
 9. **[有効]** をクリックします。
@@ -111,6 +104,6 @@ PowerShell モジュール ログは JEA には必要ありませんが、ユー
 
 ## <a name="see-also"></a>関連項目
 
-[PowerShell リモート処理と WinRM セキュリティに関する追加情報](/powershell/scripting/setup/winrmsecurity)
+[WinRM セキュリティ](/powershell/scripting/learn/remoting/winrmsecurity)
 
-[*PowerShell ♥ the Blue Team* のセキュリティに関するブログ投稿](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+[ブルー チームを支援する PowerShell](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)

@@ -1,39 +1,36 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/10/2019
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の構成の登録
-ms.openlocfilehash: 6fa0ce434c8e70eb718545e99417bfe034cda6bf
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c85eddea2196e4db4bbeea54bde11074f3d1c927
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084829"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726615"
 ---
 # <a name="registering-jea-configurations"></a>JEA の構成の登録
 
-> 適用先:Windows PowerShell 5.0
-
-[ロール機能](role-capabilities.md)と[セッション構成ファイル](session-configurations.md)を作成した後、JEA を使用できるようにする前の最後の手順は、JEA エンドポイントを登録することです。
-システムに JEA エンドポイントを登録すると、ユーザーおよび自動化エンジンでエンドポイントが使用できるようになります。
+[ロール機能](role-capabilities.md)と[セッション構成ファイル](session-configurations.md)を作成したら、最後の手順は、JEA エンドポイントを登録することです。 システムに JEA エンドポイントを登録すると、ユーザーおよび自動化エンジンでエンドポイントが使用できるようになります。
 
 ## <a name="single-machine-configuration"></a>単一コンピューターの構成
 
-小規模な環境の場合、[Register-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/register-pssessionconfiguration) コマンドレットを使ってセッション構成ファイルを登録することにより、JEA を展開できます。
+小規模な環境の場合、[Register-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/register-pssessionconfiguration) コマンドレットを使ってセッション構成ファイルを登録することにより、JEA を展開できます。
 
 作業を開始する前に、次の前提条件を満たしていることを確認してください。
-- 1 つ以上のロールが作成されて、有効な PowerShell モジュールの "RoleCapabilities" フォルダーに配置されていること。
+
+- 1 つ以上のロールが作成されて、PowerShell モジュールの **RoleCapabilities** フォルダーに配置されていること。
 - セッション構成ファイルの作成とテストが済んでいること。
 - JEA 構成を登録するユーザーに、システムに対する管理者権限があること。
+- JEA エンドポイントの名前を選択していること。
 
-JEA エンドポイントの名前を選ぶ必要もあります。
-ユーザーが JEA を使ってシステムに接続するときに、JEA エンドポイントの名前が必要です。
-[Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) コマンドレットを使って、システム上の既存のエンドポイントの名前を確認できます。
-"microsoft" で始まるエンドポイントは、通常、Windows に付属しています。
-"microsoft.powershell" エンドポイントは、リモート PowerShell エンドポイントに接続するときに使われる既定のエンドポイントです。
+ユーザーが JEA を使ってシステムに接続するときに、JEA エンドポイントの名前が必要です。 [Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration) コマンドレットは、システム上のエンドポイントの名前を一覧表示します。 `microsoft` で始まるエンドポイントは、通常、Windows に付属しています。 `microsoft.powershell` エンドポイントは、リモート PowerShell エンドポイントに接続するときに使われる既定のエンドポイントです。
 
 ```powershell
-PS C:\> Get-PSSessionConfiguration | Select-Object Name
+Get-PSSessionConfiguration | Select-Object Name
+```
 
+```Output
 Name
 ----
 microsoft.powershell
@@ -41,35 +38,33 @@ microsoft.powershell.workflow
 microsoft.powershell32
 ```
 
-JEA エンドポイントに対して適切な名前を決定した後、次のコマンドを実行してエンドポイントを登録します。
+次のコマンドを実行してエンドポイントを登録します。
 
 ```powershell
 Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' -Force
 ```
 
 > [!WARNING]
-> 上記のコマンドでは、システム上の WinRM サービスが再起動します。
-> これにより、すべての PowerShell リモート処理セッションおよび実行中の DSC 構成が終了されます。
-> 業務の中断を防ぐため、コマンドを実行する前に、運用環境のコンピューターをオフラインにすることをお勧めします。
+> 前のコマンドにより、システム上の WinRM サービスが再起動します。 これにより、すべての PowerShell リモート処理セッションおよび実行中の DSC 構成が終了されます。 業務の中断を防ぐため、コマンドを実行する前に、運用環境のコンピューターをオフラインにすることをお勧めします。
 
-登録が成功すると、[JEA を使用](using-jea.md)できる状態になります。
-セッション構成ファイルは、エンドポイントの登録後は使用されないので、いつでも削除できます。
+登録すると、すぐに [JEA を使用](using-jea.md)できます。 セッション構成ファイルは、いつでも削除できます。 構成ファイルは、エンドポイントの登録後には使用されません。
 
 ## <a name="multi-machine-configuration-with-dsc"></a>DSC での複数コンピューター構成
 
-JEA を複数のコンピューターに展開する場合、最も簡単な展開モデルである JEA の [Desired State Configuration](https://msdn.microsoft.com/powershell/dsc/overview) リソースを使うと、各コンピューターに JEA を迅速かつ一貫して展開できます。
+JEA を複数のコンピューターに展開するときに、最も簡単な展開モデルでは JEA の [Desired State Configuration (DSC)](/powershell/dsc/overview) リソースを使用して、各コンピューターに JEA を迅速かつ一貫して展開します。
 
-DSC で JEA を展開するには、次の前提条件が満たされていることを確認する必要があります。
-- 1 つまたは複数のロール機能が作成され、有効な PowerShell モジュールに追加されていること。
+DSC で JEA を展開するには、次の前提条件が満たされていることを確認します。
+
+- 1 つまたは複数のロール機能が作成され、PowerShell モジュールに追加されていること。
 - ロールを含む PowerShell モジュールが、各コンピューターからアクセスできる (読み取り専用の) ファイル共有に格納されていること。
 - セッション構成の設定が決定されていること。 JEA DSC リソースを使うときは、セッション構成ファイルを作成する必要はありません。
-- 各コンピューターで管理操作を実行できる資格情報があること、またはコンピューターの管理に使われる DSC プル サーバーにアクセスできること。
+- 各コンピューターで管理操作ができる、またはコンピューターの管理に使われる DSC プル サーバーにアクセスできる資格情報があること。
 - [JEA DSC リソース](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource)をダウンロードしてあること。
 
-ターゲット コンピューター (または、プル サーバーを使っている場合はプル サーバー) 上で、JEA エンドポイント用の DSC 構成を作成します。
-この構成では、JustEnoughAdministration DSC リソースを使って、ファイル共有からロール機能経由でコピーするセッション構成ファイルと File リソースを設定します。
+ターゲット コンピューターまたはプル サーバー上で、JEA エンドポイント用の DSC 構成を作成します。 この構成では、**JustEnoughAdministration** DSC リソースでセッション構成ファイルを定義し、**File** リソースでファイル共有からロール機能をコピーします。
 
 DSC リソースを使って次のプロパティを構成できます。
+
 - ロールの定義
 - 仮想アカウント グループ
 - グループ管理されたサービス アカウント名
@@ -80,10 +75,7 @@ DSC リソースを使って次のプロパティを構成できます。
 
 DSC 構成でのこれらの各プロパティの構文は、PowerShell セッションの構成ファイルと一致しています。
 
-一般的なサーバー メンテナンス モジュールの DSC 構成の例を以下に示します。
-
-ここで、"RoleCapabilities" サブフォルダー内のロール機能を含む有効な PowerShell モジュールは "\\\\myfileshare\\JEA" ファイル共有にあるものと想定しています。
-
+一般的なサーバー メンテナンス モジュールの DSC 構成の例を以下に示します。 ここでは、ロール機能を含む有効な PowerShell モジュールが `\\myfileshare\JEA` ファイル共有に配置されていることを前提にしています。
 
 ```powershell
 Configuration JEAMaintenance
@@ -110,16 +102,13 @@ Configuration JEAMaintenance
 }
 ```
 
-その後、[ローカル構成マネージャーを直接呼び出す](https://msdn.microsoft.com/powershell/dsc/metaconfig)ことにより、または[プル サーバーの構成](https://msdn.microsoft.com/powershell/dsc/pullserver)を更新することにより、この構成をシステムに適用できます。
+その後、[ローカル構成マネージャー](/powershell/dsc/managing-nodes/metaConfig)を直接呼び出すことにより、または[プル サーバーの構成](/powershell/dsc/pull-server/pullServer)を更新することにより、この構成がシステムに適用されます。
 
-DSC リソースを使うと、既定の Microsoft.PowerShell リモート処理エンドポイントを置き換えることもできます。
-これを行うと、リソースにより、既定の WinRM ACL (リモート管理ユーザーとローカル管理者グループのメンバーにアクセスを許可する) を持つ "Microsoft.PowerShell.Restricted" という名前のバックアップ非制約エンドポイントが自動的に登録されます。
+DSC リソースを使うと、既定の **Microsoft.PowerShell** エンドポイントを置き換えることもできます。 置き換えると、リソースで **Microsoft.PowerShell.Restricted** という名前のバックアップ エンドポイントが自動的に登録されます。 バックアップ エンドポイントには、リモート管理ユーザーとローカルの Administrators グループのメンバーのアクセスを許可する既定の WinRM ACL があります。
 
 ## <a name="unregistering-jea-configurations"></a>JEA の構成の登録解除
 
-システムの JEA エンドポイントを削除するには、[Unregister-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Unregister-PSSessionConfiguration) コマンドレットを使います。
-JEA エンドポイントの登録を解除すると、新しいユーザーがシステムに新しい JEA セッションを作成できなくなります。
-また、同じエンドポイント名を使って更新されたセッション構成ファイルを再登録することで、JEA 構成を更新することもできます。
+[Unregister-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/Unregister-PSSessionConfiguration) コマンドレットは、JEA エンドポイントを削除します。 JEA エンドポイントの登録を解除すると、新しいユーザーがシステムに新しい JEA セッションを作成できなくなります。 また、同じエンドポイント名を使って更新されたセッション構成ファイルを再登録することで、JEA 構成を更新することもできます。
 
 ```powershell
 # Unregister the JEA endpoint called "ContosoMaintenance"
@@ -127,10 +116,8 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 ```
 
 > [!WARNING]
-> JEA エンドポイントの登録を解除すると、WinRM サービスが再起動されます。
-> これにより、他の PowerShell セッション、WMI 呼び出し、一部の管理ツールなど、実行中のほとんどのリモート管理操作が中断されます。
-> 計画されたメンテナンス期間中にのみ、PowerShell エンドポイントの登録を解除してください。
+> JEA エンドポイントの登録を解除すると、WinRM サービスが再起動されます。 これにより、他の PowerShell セッション、WMI 呼び出し、一部の管理ツールなど、実行中のほとんどのリモート管理操作が中断されます。 計画されたメンテナンス期間中にのみ、PowerShell エンドポイントの登録を解除してください。
 
 ## <a name="next-steps"></a>次の手順
 
-- [JEA エンドポイントをテストする](using-jea.md)
+[JEA エンドポイントをテストする](using-jea.md)
