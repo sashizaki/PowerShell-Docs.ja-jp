@@ -1,49 +1,43 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/10/2019
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の使用
-ms.openlocfilehash: fa3d3a3c8bc0090ec9ad788585ec5df933134173
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 8f3cc9186c61a2ae5b64eb3dc4f72ca83f1a58c5
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084047"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67734223"
 ---
-# <a name="using-jea"></a><span data-ttu-id="47db2-103">JEA の使用</span><span class="sxs-lookup"><span data-stu-id="47db2-103">Using JEA</span></span>
+# <a name="using-jea"></a><span data-ttu-id="e0b1e-103">JEA の使用</span><span class="sxs-lookup"><span data-stu-id="e0b1e-103">Using JEA</span></span>
 
-> <span data-ttu-id="47db2-104">適用先:Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="47db2-104">Applies to: Windows PowerShell 5.0</span></span>
+<span data-ttu-id="e0b1e-104">この記事では、JEA エンドポイントに接続して使用できるさまざまな方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-104">This article describes the various ways you can connect to and use a JEA endpoint.</span></span>
 
-<span data-ttu-id="47db2-105">このトピックでは、JEA エンドポイントに接続して使うさまざまな方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="47db2-105">This topic describes the various ways you can connect to and use a JEA endpoint.</span></span>
+## <a name="using-jea-interactively"></a><span data-ttu-id="e0b1e-105">JEA を対話的に使う</span><span class="sxs-lookup"><span data-stu-id="e0b1e-105">Using JEA interactively</span></span>
 
-## <a name="using-jea-interactively"></a><span data-ttu-id="47db2-106">JEA を対話的に使う</span><span class="sxs-lookup"><span data-stu-id="47db2-106">Using JEA interactively</span></span>
+<span data-ttu-id="e0b1e-106">JEA の構成をテストする場合、またはユーザー用のシンプルなタスクがある場合は、通常の PowerShell リモート処理セッションと同じ方法で JEA を使用できます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-106">If you're testing your JEA configuration or have simple tasks for users, you can use JEA the same way you would a regular PowerShell remoting session.</span></span> <span data-ttu-id="e0b1e-107">複雑なリモート処理タスクには、[暗黙的なリモート処理](#using-jea-with-implicit-remoting)を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-107">For complex remoting tasks, it's recommended to use [implicit remoting](#using-jea-with-implicit-remoting).</span></span> <span data-ttu-id="e0b1e-108">暗黙的なリモート処理では、ユーザーがローカルでデータ オブジェクトを操作できるようにします。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-108">Implicit remoting allows users to operate with the data objects locally.</span></span>
 
-<span data-ttu-id="47db2-107">JEA の構成をテストする場合、またはユーザーが実行する単純なタスクがある場合は、通常の PowerShell リモート処理セッションと同じ方法で JEA を使用できます。</span><span class="sxs-lookup"><span data-stu-id="47db2-107">If you are testing your JEA configuration or have simple tasks for users to perform, you can use JEA the same way you would a regular PowerShell remoting session.</span></span>
-<span data-ttu-id="47db2-108">複雑なリモート処理タスクの場合は、代わりに[暗黙的なリモート処理](#using-jea-with-implicit-remoting)を使って、データ オブジェクトをローカルに操作することをユーザーに許可することで、ユーザーが容易にタスクを実行できるようにすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="47db2-108">For complex remoting tasks, it is recommended to use [implicit remoting](#using-jea-with-implicit-remoting) instead to make it easier for your users by allowing users to operate with the data objects locally.</span></span>
+<span data-ttu-id="e0b1e-109">JEA を対話的に使用するには、次のものが必要です。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-109">To use JEA interactively, you need:</span></span>
 
-<span data-ttu-id="47db2-109">JEA を対話的に使うには、次のものが必要です。</span><span class="sxs-lookup"><span data-stu-id="47db2-109">To use JEA interactively, you will need:</span></span>
-- <span data-ttu-id="47db2-110">接続しているコンピューターの名前 (ローカル コンピューターでもかまいません)</span><span class="sxs-lookup"><span data-stu-id="47db2-110">The name of the computer you are connecting to (can be the local machine)</span></span>
-- <span data-ttu-id="47db2-111">そのコンピューターに登録されている JEA エンドポイントの名前</span><span class="sxs-lookup"><span data-stu-id="47db2-111">The name of the JEA endpoint registered on that computer</span></span>
-- <span data-ttu-id="47db2-112">JEA エンドポイントにアクセスできるコンピューターの資格情報</span><span class="sxs-lookup"><span data-stu-id="47db2-112">Credentials for the computer that have access to the JEA endpoint</span></span>
+- <span data-ttu-id="e0b1e-110">接続しているコンピューターの名前 (ローカル コンピューターにすることができます)</span><span class="sxs-lookup"><span data-stu-id="e0b1e-110">The name of the computer you're connecting to (can be the local machine)</span></span>
+- <span data-ttu-id="e0b1e-111">そのコンピューターに登録されている JEA エンドポイントの名前</span><span class="sxs-lookup"><span data-stu-id="e0b1e-111">The name of the JEA endpoint registered on that computer</span></span>
+- <span data-ttu-id="e0b1e-112">そのコンピューター上の JEA エンドポイントにアクセスできる資格情報</span><span class="sxs-lookup"><span data-stu-id="e0b1e-112">Credentials that have access to the JEA endpoint on that computer</span></span>
 
-<span data-ttu-id="47db2-113">以上の情報を用意した後、[New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSSession) または [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/enter-pssession) を使って JEA セッションを開始できます。</span><span class="sxs-lookup"><span data-stu-id="47db2-113">With that information in hand, you can start a JEA session using [New-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/New-PSSession) or [Enter-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/enter-pssession).</span></span>
+<span data-ttu-id="e0b1e-113">この情報を前提として、[New-PSSession](/powershell/module/microsoft.powershell.core/New-PSSession) または [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) コマンドレットを使って JEA セッションを開始できます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-113">Given that information, you can start a JEA session using the [New-PSSession](/powershell/module/microsoft.powershell.core/New-PSSession) or [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) cmdlets.</span></span>
 
 ```powershell
 $nonAdminCred = Get-Credential
 Enter-PSSession -ComputerName localhost -ConfigurationName JEAMaintenance -Credential $nonAdminCred
 ```
 
-<span data-ttu-id="47db2-114">現在ログインに使っているアカウントに JEA エンドポイントへのアクセス権がある場合は、`-Credential` パラメーターを省略できます。</span><span class="sxs-lookup"><span data-stu-id="47db2-114">If the account you're currently logged in as has access to the JEA endpoint, you can omit the `-Credential` parameter.</span></span>
+<span data-ttu-id="e0b1e-114">現在のユーザー アカウントに JEA エンドポイントへのアクセス権がある場合は、**Credential** パラメーターを省略できます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-114">If the current user account has access to the JEA endpoint, you can omit the **Credential** parameter.</span></span>
 
-<span data-ttu-id="47db2-115">PowerShell プロンプトが `[localhost]: PS>` に変わると、リモート JEA セッションと対話している状態であることがわかります。</span><span class="sxs-lookup"><span data-stu-id="47db2-115">When the PowerShell prompt changes to `[localhost]: PS>` you will know that you are now interacting with the remote JEA session.</span></span>
-<span data-ttu-id="47db2-116">`Get-Command` を実行して、使用できるコマンドを確認できます。</span><span class="sxs-lookup"><span data-stu-id="47db2-116">You can run `Get-Command` to check which commands are available.</span></span>
-<span data-ttu-id="47db2-117">使用できるパラメーターまたは指定できるパラメーター値に制限があるかどうか、管理者に問い合わせる必要があります。</span><span class="sxs-lookup"><span data-stu-id="47db2-117">You will need to consult with your administrator to learn if there are any restrictions on the available parameters or allowable parameter values.</span></span>
+<span data-ttu-id="e0b1e-115">PowerShell プロンプトが `[localhost]: PS>` に変わると、現在、リモート JEA セッションとやりとりしている状態であることがわかります。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-115">When the PowerShell prompt changes to `[localhost]: PS>` you know that you're now interacting with the remote JEA session.</span></span> <span data-ttu-id="e0b1e-116">`Get-Command` を実行して、使用できるコマンドを確認できます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-116">You can run `Get-Command` to check which commands are available.</span></span> <span data-ttu-id="e0b1e-117">使用できるパラメーターまたは許可されているパラメーター値に制限があるかどうかを確認するには、管理者に問い合わせてください。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-117">Consult with your administrator to learn if there are any restrictions on the available parameters or allowed parameter values.</span></span>
 
-<span data-ttu-id="47db2-118">JEA セッションは NoLanguage モードで動作するので、PowerShell の一般的な使い方の一部を利用できない場合があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="47db2-118">As a reminder, JEA sessions operate in NoLanguage mode, so some of the ways you typically use PowerShell may not be available.</span></span>
-<span data-ttu-id="47db2-119">たとえば、変数を使ってデータを格納したり、コマンドレットから返されたオブジェクトのプロパティを調べたりすることはできません。</span><span class="sxs-lookup"><span data-stu-id="47db2-119">For instance, you cannot use variables to store data or inspect the properties on objects returned from cmdlets.</span></span>
-<span data-ttu-id="47db2-120">次の例では、今日 PowerShell を使って NoLanguage モードで動作する同じコマンドを取得する 2 つの方法を示します。</span><span class="sxs-lookup"><span data-stu-id="47db2-120">The below example shows an example of how you may be using PowerShell today, and two approaches to get the same command working in NoLanguage mode.</span></span>
+<span data-ttu-id="e0b1e-118">JEA セッションは NoLanguage モードで動作することに注意してください。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-118">Remember, JEA sessions operate in NoLanguage mode.</span></span> <span data-ttu-id="e0b1e-119">通常、お客様が使用している方法の中には、PowerShell を利用できないものがある場合があります。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-119">Some of the ways you typically use PowerShell may not be available.</span></span> <span data-ttu-id="e0b1e-120">たとえば、変数を使ってデータを格納したり、コマンドレットから返されたオブジェクトのプロパティを調べたりすることはできません。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-120">For instance, you can't use variables to store data or inspect the properties on objects returned from cmdlets.</span></span> <span data-ttu-id="e0b1e-121">次の例では、NoLanguage モードで動作する同じコマンドを取得するための 2 つの方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-121">The following example shows two approaches to get the same commands to work in NoLanguage mode.</span></span>
 
 ```powershell
-# Using variables in NoLanguage mode is disallowed, so the following will not work
+# Using variables is prohibited in NoLanguage mode. The following will not work:
 # $vm = Get-VM -Name 'SQL01'
 # Start-VM -VM $vm
 
@@ -53,23 +47,18 @@ Get-VM -Name 'SQL01' | Start-VM
 # You can also wrap subcommands in parentheses and enter them inline as arguments
 Start-VM -VM (Get-VM -Name 'SQL01')
 
-# Better yet, use parameter sets that don't require extra data to be passed in when possible
+# You can also use parameter sets that don't require extra data to be passed in
 Start-VM -VMName 'SQL01'
 ```
 
-<span data-ttu-id="47db2-121">この方法が難しくなるさらに複雑なコマンド呼び出しの場合は、[暗黙的なリモート処理](#using-jea-with-implicit-remoting)を使うか、または必要な機能をラップする[カスタム関数の作成](role-capabilities.md#creating-custom-functions)を検討します。</span><span class="sxs-lookup"><span data-stu-id="47db2-121">For more complex command invocations that make this approach difficult, consider using [implicit remoting](#using-jea-with-implicit-remoting) or [creating custom functions](role-capabilities.md#creating-custom-functions) that wrap the functionality you desire.</span></span>
+<span data-ttu-id="e0b1e-122">この方法が難しくなるさらに複雑なコマンド呼び出しの場合は、[暗黙的なリモート処理](#using-jea-with-implicit-remoting)を使用するか、または必要な機能をラップする[カスタム関数の作成](role-capabilities.md#creating-custom-functions)を検討します。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-122">For more complex command invocations that make this approach difficult, consider using [implicit remoting](#using-jea-with-implicit-remoting) or [creating custom functions](role-capabilities.md#creating-custom-functions) that wrap the functionality you require.</span></span>
 
-## <a name="using-jea-with-implicit-remoting"></a><span data-ttu-id="47db2-122">暗黙的なリモート処理での JEA の使用</span><span class="sxs-lookup"><span data-stu-id="47db2-122">Using JEA with implicit remoting</span></span>
+## <a name="using-jea-with-implicit-remoting"></a><span data-ttu-id="e0b1e-123">暗黙的なリモート処理での JEA の使用</span><span class="sxs-lookup"><span data-stu-id="e0b1e-123">Using JEA with implicit remoting</span></span>
 
-<span data-ttu-id="47db2-123">PowerShell がサポートする代替リモート処理モデルでは、ローカル コンピューター上のリモート コンピューターからプロキシ コマンドレットをインポートして、ローカル コマンドの場合と同じように対話できます。</span><span class="sxs-lookup"><span data-stu-id="47db2-123">PowerShell supports an alternative remoting model where you can import proxy cmdlets from a remote machine on your local computer and interact with them as if they were local commands.</span></span>
-<span data-ttu-id="47db2-124">これは暗黙的なリモート処理と呼ばれ、[この *Hey, Scripting Guy!* ブログ投稿](https://blogs.technet.microsoft.com/heyscriptingguy/2013/09/08/remoting-the-implicit-way/)でわかりやすく説明されています。</span><span class="sxs-lookup"><span data-stu-id="47db2-124">This is called implicit remoting, and is explained well in [this *Hey, Scripting Guy!* blog post](https://blogs.technet.microsoft.com/heyscriptingguy/2013/09/08/remoting-the-implicit-way/).</span></span>
-<span data-ttu-id="47db2-125">暗黙的なリモート処理は、全言語モードで JEA コマンドレットを使うことができるので、JEA を使う場合に特に役立ちます。</span><span class="sxs-lookup"><span data-stu-id="47db2-125">Implicit remoting is particularly useful when working with JEA because it allows you to work with JEA cmdlets in a full language mode.</span></span>
-<span data-ttu-id="47db2-126">これは、タブ補完や変数を使い、オブジェクトを操作し、ローカル スクリプトを使って、JEA エンドポイントを簡単に自動化できることを意味します。</span><span class="sxs-lookup"><span data-stu-id="47db2-126">This means you can use tab completion, variables, manipulate objects, and even use local scripts to more easily automate against a JEA endpoint.</span></span>
-<span data-ttu-id="47db2-127">プロキシ コマンドを呼び出すたびに、リモート コンピューター上の JEA エンドポイントにデータが送信されて、そこで実行されます。</span><span class="sxs-lookup"><span data-stu-id="47db2-127">Anytime you invoke a proxy command, the data will be sent to the JEA endpoint on the remote machine and executed there.</span></span>
+<span data-ttu-id="e0b1e-124">PowerShell には、暗黙的なリモート処理モデルが用意されており、リモート マシンからプロキシ コマンドレットをインポートして、ローカル コマンドの場合と同じようにやりとりすることができます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-124">PowerShell has an implicit remoting model that lets you import proxy cmdlets from a remote machine and interact with them as if they were local commands.</span></span> <span data-ttu-id="e0b1e-125">暗黙的なリモート処理は、この **Hey, Scripting Guy!** の</span><span class="sxs-lookup"><span data-stu-id="e0b1e-125">Implicit remoting is explained in this **Hey, Scripting Guy!**</span></span> <span data-ttu-id="e0b1e-126">[ブログ記事](https://devblogs.microsoft.com/scripting/remoting-the-implicit-way/)で説明されています。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-126">[blog post](https://devblogs.microsoft.com/scripting/remoting-the-implicit-way/).</span></span>
+<span data-ttu-id="e0b1e-127">暗黙的なリモート処理は、全言語モードで JEA コマンドレットを使うことができるので、JEA を使用するときに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-127">Implicit remoting is useful when working with JEA because it allows you to work with JEA cmdlets in a full language mode.</span></span> <span data-ttu-id="e0b1e-128">タブ補完や変数を使用し、オブジェクトを操作し、ローカル スクリプトを使用して JEA エンドポイントに対してタスクを自動化することもできます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-128">You can use tab completion, variables, manipulate objects, and even use local scripts to automate tasks against a JEA endpoint.</span></span> <span data-ttu-id="e0b1e-129">プロキシ コマンドを呼び出すたびに、リモート マシン上の JEA エンドポイントにデータが送信されて、そこで実行されます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-129">Anytime you invoke a proxy command, the data is sent to the JEA endpoint on the remote machine and executed there.</span></span>
 
-<span data-ttu-id="47db2-128">暗黙的なリモート処理は、既存の PowerShell セッションからコマンドレットをインポートすることによって動作します。</span><span class="sxs-lookup"><span data-stu-id="47db2-128">Implicit remoting works by importing cmdlets from an existing PowerShell session.</span></span>
-<span data-ttu-id="47db2-129">必要に応じて、各プロキシ コマンドレットの名詞の前に適切なプレフィックスを付けて、リモート システムに対するコマンドを区別できます。</span><span class="sxs-lookup"><span data-stu-id="47db2-129">You can optionally choose to prefix the nouns of each proxy cmdlet with a string of your choosing to distinguish which commands are for the remote system.</span></span>
-<span data-ttu-id="47db2-130">すべてのプロキシ コマンドを含む一時スクリプト モジュールが作成され、ローカル PowerShell セッションが終了するまで使用できます。</span><span class="sxs-lookup"><span data-stu-id="47db2-130">A temporary script module containing all of the proxy commands will be created and can be used for the duration of your local PowerShell session.</span></span>
+<span data-ttu-id="e0b1e-130">暗黙的なリモート処理は、既存の PowerShell セッションからコマンドレットをインポートすることによって動作します。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-130">Implicit remoting works by importing cmdlets from an existing PowerShell session.</span></span> <span data-ttu-id="e0b1e-131">必要に応じて、各プロキシ コマンドレットの名詞の前に選択した文字列でプレフィックスを付けることができます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-131">You can optionally choose to prefix the nouns of each proxy cmdlet with a string of your choosing.</span></span> <span data-ttu-id="e0b1e-132">プレフィックスによって、リモート システムに対するコマンドを区別することができます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-132">The prefix allows you to distinguish the commands that are for the remote system.</span></span> <span data-ttu-id="e0b1e-133">すべてのプロキシ コマンドを含む一時スクリプト モジュールが作成され、ローカル PowerShell セッションの間にインポートされます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-133">A temporary script module containing all the proxy commands is created and imported for the duration of your local PowerShell session.</span></span>
 
 ```powershell
 # Create a new PSSession to your JEA endpoint
@@ -83,12 +72,9 @@ Get-JEACommand
 ```
 
 > [!IMPORTANT]
-> <span data-ttu-id="47db2-131">既定の JEA コマンドレットでの制約のため、一部のシステムでは JEA セッション全体をインポートできない場合があります。</span><span class="sxs-lookup"><span data-stu-id="47db2-131">Some systems may not be able to import an entire JEA session due to constraints in the default JEA cmdlets.</span></span>
-> <span data-ttu-id="47db2-132">これを回避するには、必要なコマンドの名前を `-CommandName` パラメーターで明示的に指定することで、そのコマンドだけを JEA セッションからインポートします。</span><span class="sxs-lookup"><span data-stu-id="47db2-132">To get around this, only import the commands you need from the JEA session by explicitly providing their names to the `-CommandName` parameter.</span></span>
-> <span data-ttu-id="47db2-133">今後の更新で問題が解決され、JEA セッション全体を対象システムにインポートできるようになります。</span><span class="sxs-lookup"><span data-stu-id="47db2-133">A future update will address the issue with importing entire JEA sessions on affected systems.</span></span>
+> <span data-ttu-id="e0b1e-134">既定の JEA コマンドレットでの制約のため、一部のシステムでは JEA セッション全体をインポートできない場合があります。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-134">Some systems may not be able to import an entire JEA session due to constraints in the default JEA cmdlets.</span></span> <span data-ttu-id="e0b1e-135">これを回避するには、必要なコマンドの名前を `-CommandName` パラメーターで明示的に指定することで、そのコマンドだけを JEA セッションからインポートします。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-135">To get around this, only import the commands you need from the JEA session by explicitly providing their names to the `-CommandName` parameter.</span></span> <span data-ttu-id="e0b1e-136">今後の更新で問題が解決され、JEA セッション全体を対象システムにインポートできるようになります。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-136">A future update will address the issue with importing entire JEA sessions on affected systems.</span></span>
 
-<span data-ttu-id="47db2-134">既定の JEA パラメーターの制約により JEA セッションをインポートできない場合は、次の手順に従って、既定のコマンドをインポートされるセットから除外できます。</span><span class="sxs-lookup"><span data-stu-id="47db2-134">If you are unable to import a JEA session due to constraints on the default JEA parameters, you can follow the steps below to filter out the default commands from the imported set.</span></span>
-<span data-ttu-id="47db2-135">その場合でも、`Select-Object` のようなコマンドを使うことはできます。リモート バージョンの代わりにコンピューターにインストールされているローカル バージョンを JEA セッションで使うだけです。</span><span class="sxs-lookup"><span data-stu-id="47db2-135">You will still be able to use commands like `Select-Object` -- you'll just use the local version installed on your computer instead of the remote one in the JEA session.</span></span>
+<span data-ttu-id="e0b1e-137">既定のパラメーターで JEA の制約があるため、JEA セッションをインポートできない場合は、次の手順に従って、既定のコマンドをインポートされるセットから除外します。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-137">If you're unable to import a JEA session because of JEA constraints on the default parameters, follow the steps below to filter out the default commands from the imported set.</span></span> <span data-ttu-id="e0b1e-138">`Select-Object` のようなコマンドを引き続き使用できますが、リモートの JEA セッションからインポートされたものの代わりに、コンピューターにインストールされているローカル バージョンを使用するだけです。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-138">You can continue use commands like `Select-Object`, but you'll just use the local version installed on your computer instead of the one imported from the remote JEA session.</span></span>
 
 ```powershell
 # Create a new PSSession to your JEA endpoint
@@ -105,42 +91,44 @@ $filteredCommands = $commands.Name | Where-Object { $jeaDefaultCmdlets -notconta
 Import-PSSession -Session $jeasession -Prefix 'JEA' -CommandName $filteredCommands
 ```
 
-<span data-ttu-id="47db2-136">また、[Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession) を使って、暗黙的なリモート処理からプロキシされたコマンドレットを保持することもできます。</span><span class="sxs-lookup"><span data-stu-id="47db2-136">You can also persist the proxied cmdlets from implicit remoting using [Export-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/Export-PSSession).</span></span>
-<span data-ttu-id="47db2-137">暗黙的なリモート処理の詳細については、[Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) および [Import-Module](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/import-module) のヘルプ ドキュメントをご覧ください。</span><span class="sxs-lookup"><span data-stu-id="47db2-137">For more information about implicit remoting, check out the help documentation for [Import-PSSession](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.utility/import-pssession) and [Import-Module](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/import-module).</span></span>
+<span data-ttu-id="e0b1e-139">また、[Export-PSSession](/powershell/microsoft.powershell.utility/Export-PSSession) を使って、暗黙的なリモート処理からプロキシされたコマンドレットを保持することもできます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-139">You can also persist the proxied cmdlets from implicit remoting using [Export-PSSession](/powershell/microsoft.powershell.utility/Export-PSSession).</span></span>
+<span data-ttu-id="e0b1e-140">暗黙的なリモート処理の詳細については、[Import-PSSession](/powershell/microsoft.powershell.utility/import-pssession) および [Import-Module](/powershell/microsoft.powershell.core/import-module) のドキュメントを参照してください。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-140">For more information about implicit remoting, see the documentation for [Import-PSSession](/powershell/microsoft.powershell.utility/import-pssession) and [Import-Module](/powershell/microsoft.powershell.core/import-module).</span></span>
 
-## <a name="using-jea-programmatically"></a><span data-ttu-id="47db2-138">JEA のプログラムでの使用</span><span class="sxs-lookup"><span data-stu-id="47db2-138">Using JEA programmatically</span></span>
+## <a name="using-jea-programmatically"></a><span data-ttu-id="e0b1e-141">JEA のプログラムでの使用</span><span class="sxs-lookup"><span data-stu-id="e0b1e-141">Using JEA programmatically</span></span>
 
-<span data-ttu-id="47db2-139">JEA は、社内ヘルプデスク アプリや Web サイトなどのオートメーション システムやユーザー アプリケーションでも使用できます。</span><span class="sxs-lookup"><span data-stu-id="47db2-139">JEA can also be used in automation systems and in user applications, such as in-house helpdesk apps and web sites.</span></span>
-<span data-ttu-id="47db2-140">方法は制約のない PowerShell エンドポイントと対話するアプリの作成と同じですが、JEA ではリモート セッションで実行できるコマンドが制限されることに注意する必要があります。</span><span class="sxs-lookup"><span data-stu-id="47db2-140">The approach is the same as that for building apps that talk to unconstrained PowerShell endpoints, with the caveat that the program should be aware that JEA is limiting the commands that can be run in the remote session.</span></span>
+<span data-ttu-id="e0b1e-142">JEA は、社内ヘルプデスク アプリや Web サイトなどのオートメーション システムやユーザー アプリケーションでも使用できます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-142">JEA can also be used in automation systems and in user applications, such as in-house helpdesk apps and websites.</span></span> <span data-ttu-id="e0b1e-143">この方法は、制約のない PowerShell エンドポイントと通信するアプリをビルドするための方法と同じです。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-143">The approach is the same as that for building apps that talk to unconstrained PowerShell endpoints.</span></span> <span data-ttu-id="e0b1e-144">このプログラムは JEA によって課せられる制限を使用するように設計されていることを確実にします。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-144">Ensure the program is designed to work with limitation imposed by JEA.</span></span>
 
-<span data-ttu-id="47db2-141">簡単な 1 回限りのタスクでは、[Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) コマンドを使って一連のコマンドを JEA で実行できます。</span><span class="sxs-lookup"><span data-stu-id="47db2-141">For simple, one-off tasks, you can use [Invoke-Command](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/invoke-command) to run a set of commands using JEA.</span></span>
+<span data-ttu-id="e0b1e-145">シンプルな 1 回限りのタスクでは、[Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) を使って、コマンドを JEA セッションで実行できます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-145">For simple, one-off tasks, you can use [Invoke-Command](/powershell/module/microsoft.powershell.core/invoke-command) to run commands in a JEA session.</span></span>
 
 ```powershell
 Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Process; Get-Service }
 ```
 
-<span data-ttu-id="47db2-142">JEA セッションに接続しているときに使用できるコマンドを確認するには、`Get-Command` を実行し、結果を反復して指定できるパラメーターを確認します。</span><span class="sxs-lookup"><span data-stu-id="47db2-142">To check which commands are available for use when you connect to a JEA session, run `Get-Command` and iterate through the results to check for the allowed parameters.</span></span>
+<span data-ttu-id="e0b1e-146">JEA セッションに接続しているときに使用できるコマンドを確認するには、`Get-Command` を実行し、結果を反復して指定できるパラメーターを確認します。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-146">To check which commands are available for use when you connect to a JEA session, run `Get-Command` and iterate through the results to check for the allowed parameters.</span></span>
 
 ```powershell
 $allowedCommands = Invoke-Command -ComputerName 'SERVER01' -ConfigurationName 'JEAMaintenance' -ScriptBlock { Get-Command }
 $allowedCommands | Where-Object { $_.CommandType -in 'Function', 'Cmdlet' } | Format-Table Name, Parameters
 ```
 
-<span data-ttu-id="47db2-143">C# アプリを作成する場合は、[WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) オブジェクトで構成名を指定することにより、JEA セッションに接続する PowerShell 実行空間を作成できます。</span><span class="sxs-lookup"><span data-stu-id="47db2-143">If you are building a C# app, you can create a PowerShell runspace that connects to a JEA session by specifying the configuration name in a [WSManConnectionInfo](https://msdn.microsoft.com/library/system.management.automation.runspaces.wsmanconnectioninfo(v=vs.85).aspx) object.</span></span>
+<span data-ttu-id="e0b1e-147">C# アプリをビルドしている場合は、[WSManConnectionInfo](/dotnet/api/system.management.automation.runspaces.wsmanconnectioninfo) オブジェクトで構成名を指定することにより、JEA セッションに接続する PowerShell 実行空間を作成できます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-147">If you're building a C# app, you can create a PowerShell runspace that connects to a JEA session by specifying the configuration name in a [WSManConnectionInfo](/dotnet/api/system.management.automation.runspaces.wsmanconnectioninfo) object.</span></span>
 
 ```csharp
 // using System.Management.Automation;
 var computerName = "SERVER01";
 var configName   = "JEAMaintenance";
-var creds        = // create a PSCredential object here (https://msdn.microsoft.com/library/system.management.automation.pscredential(v=vs.85).aspx)
+// See https://docs.microsoft.com/dotnet/api/system.management.automation.pscredential
+var creds        = // create a PSCredential object here
 
 WSManConnectionInfo connectionInfo = new WSManConnectionInfo(
-                    false,                 // Use SSL
-                    computerName,          // Computer name
-                    5985,                  // WSMan Port
-                    "/wsman",              // WSMan Path
-                    string.Format(CultureInfo.InvariantCulture, "http://schemas.microsoft.com/powershell/{0}", configName),  // Connection URI with config name
-                    creds);                // Credentials
+    false,                 // Use SSL
+    computerName,          // Computer name
+    5985,                  // WSMan Port
+    "/wsman",              // WSMan Path
+                           // Connection URI with config name
+    string.Format(CultureInfo.InvariantCulture, "http://schemas.microsoft.com/powershell/{0}", configName),
+    creds);                // Credentials
+
 // Now, use the connection info to create a runspace where you can run the commands
 using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 {
@@ -165,14 +153,14 @@ using (Runspace runspace = RunspaceFactory.CreateRunspace(connectionInfo))
 }
 ```
 
-## <a name="using-jea-with-powershell-direct"></a><span data-ttu-id="47db2-144">PowerShell Direct での JEA の使用</span><span class="sxs-lookup"><span data-stu-id="47db2-144">Using JEA with PowerShell Direct</span></span>
+## <a name="using-jea-with-powershell-direct"></a><span data-ttu-id="e0b1e-148">PowerShell Direct での JEA の使用</span><span class="sxs-lookup"><span data-stu-id="e0b1e-148">Using JEA with PowerShell Direct</span></span>
 
-<span data-ttu-id="47db2-145">Windows 10 と Windows Server 2016 の Hyper-V には [PowerShell Direct](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/vmsession) 機能があります。Hyper-V 管理者はこの機能を使用して、仮想マシンのネットワーク構成やリモート管理設定に関係なく、PowerShell で仮想マシンを管理できます。</span><span class="sxs-lookup"><span data-stu-id="47db2-145">Hyper-V in Windows 10 and Windows Server 2016 offers [PowerShell Direct](https://msdn.microsoft.com/virtualization/hyperv_on_windows/user_guide/vmsession), a feature which allows Hyper-V administrators to manage virtual machines with PowerShell regardless of the network configuration or remote management settings on the virtual machine.</span></span>
+<span data-ttu-id="e0b1e-149">Windows 10 と Windows Server 2016 の Hyper-V には [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) 機能があります。Hyper-V 管理者はこの機能を使用して、仮想マシンのネットワーク構成やリモート管理設定に関係なく、PowerShell で仮想マシンを管理できます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-149">Hyper-V in Windows 10 and Windows Server 2016 offers [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct), a feature that allows Hyper-V administrators to manage virtual machines with PowerShell regardless of the network configuration or remote management settings on the virtual machine.</span></span>
 
-<span data-ttu-id="47db2-146">JEA で PowerShell Direct を使うと、Hyper-V 管理者に VM への制限付きアクセスを提供できます。これは、VM へのネットワーク接続が失われ、データ センターの管理者がネットワークの設定を修正する必要がある場合に便利です。</span><span class="sxs-lookup"><span data-stu-id="47db2-146">You can use PowerShell Direct with JEA to give a Hyper-V administrator limited access to your VM, which can be useful if you lose network connectivity to your VM and need a datacenter admin to fix the network settings.</span></span>
+<span data-ttu-id="e0b1e-150">JEA と PowerShell Direct を使用して、Hyper-V 管理者にご利用の VM への制限付きアクセスを与えることができます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-150">You can use PowerShell Direct with JEA to give a Hyper-V administrator limited access to your VM.</span></span>
+<span data-ttu-id="e0b1e-151">これは、ご利用の VM へのネットワーク接続が失われ、データセンター管理者にネットワーク設定を修正してもらう必要がある場合に役立つことがあります。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-151">This can be useful if you lose network connectivity to your VM and need a datacenter admin to fix the network settings.</span></span>
 
-<span data-ttu-id="47db2-147">PowerShell Direct で JEA を使うのに追加の構成は必要ありませんが、Windows 10 または Windows Server 2016 を仮想マシン内で実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="47db2-147">No additional configuration is required to use JEA over PowerShell Direct, however the operating system running inside the virtual machine must be Windows 10 or Windows Server 2016.</span></span>
-<span data-ttu-id="47db2-148">Hyper-V 管理者は、PSRemoting コマンドレットで `-VMName` または `-VMId` パラメーターを使って JEA エンドポイントに接続できます。</span><span class="sxs-lookup"><span data-stu-id="47db2-148">The Hyper-V admin can connect to the JEA endpoint by using the `-VMName` or `-VMId` parameters on PSRemoting cmdlets:</span></span>
+<span data-ttu-id="e0b1e-152">PowerShell Direct 経由で JEA を使用するために、追加の構成は必要ありません。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-152">No additional configuration is required to use JEA over PowerShell Direct.</span></span> <span data-ttu-id="e0b1e-153">しかし、仮想マシン内で実行されているゲスト オペレーティング システムは、Windows 10、Windows Server 2016 以降である必要があります。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-153">However, the guest operating system running inside the virtual machine must be Windows 10, Windows Server 2016, or higher.</span></span> <span data-ttu-id="e0b1e-154">Hyper-V 管理者は、PSRemoting コマンドレットで `-VMName` または `-VMId` パラメーターを使って JEA エンドポイントに接続できます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-154">The Hyper-V admin can connect to the JEA endpoint by using the `-VMName` or `-VMId` parameters on PSRemoting cmdlets:</span></span>
 
 ```powershell
 # Entering a JEA session using PowerShell Direct when the VM name is unique
@@ -183,7 +171,4 @@ $vm = Get-VM -VMName 'MyVM' | Select-Object -First 1
 Enter-PSSession -VMId $vm.VMId -ConfigurationName 'NICMaintenance' -Credential 'localhost\JEAformyHoster'
 ```
 
-<span data-ttu-id="47db2-149">Hyper-V 管理者によるシステム管理用に、他の権限を持たない専用のローカル ユーザーを作成することを強くお勧めします。</span><span class="sxs-lookup"><span data-stu-id="47db2-149">It is strongly recommended that you create a dedicated local user with no other rights to manage the system for your Hyper-V administrators to use.</span></span>
-<span data-ttu-id="47db2-150">制約のない PowerShell を使用する場合など、特権のないユーザーでも Windows コンピューターに既定でログインできることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="47db2-150">Remember that even an unprivileged user can still log into a Windows machine by default, including using unconstrained PowerShell.</span></span>
-<span data-ttu-id="47db2-151">これにより、ユーザーは、ファイル システム (の一部) を参照し、OS の環境について詳しく知ることができます。</span><span class="sxs-lookup"><span data-stu-id="47db2-151">That will allow them to browse (some of) the file system and learn more about your OS environment.</span></span>
-<span data-ttu-id="47db2-152">Hyper-V 管理者が PowerShell Direct と JEA を使って VM だけにアクセスできるようにするには、Hyper-V 管理者の JEA アカウントへのローカル ログオン権限を禁止する必要があります。</span><span class="sxs-lookup"><span data-stu-id="47db2-152">To lock down a Hyper-V administrator to only access a VM using PowerShell Direct with JEA, you will need to deny local logon rights to the Hyper-V admin's JEA account.</span></span>
+<span data-ttu-id="e0b1e-155">Hyper-V 管理者が使用するために、システムの管理に必要な最小の権限を持つ、専用のユーザー アカウントを作成することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-155">It's recommended you create a dedicated user account with the minimum rights needed to manage the system for use by a Hyper-V administrator.</span></span> <span data-ttu-id="e0b1e-156">制約のない PowerShell を使用する場合など、特権のないユーザーでも Windows コンピューターに既定でサインインできることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-156">Remember, even an unprivileged user can sign into a Windows machine by default, including using unconstrained PowerShell.</span></span> <span data-ttu-id="e0b1e-157">これにより、ファイル システムを参照し、ご利用の OS 環境について詳しく知ることができます。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-157">That allows them to browse the file system and learn more about your OS environment.</span></span> <span data-ttu-id="e0b1e-158">Hyper-V 管理者をロック ダウンし、PowerShell Direct と JEA を使用して VM だけにアクセスできるように制限するには、Hyper-V 管理者の JEA アカウントへのローカル ログオン権限を禁止する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e0b1e-158">To lock down a Hyper-V administrator and limit them to only access a VM using PowerShell Direct with JEA, you must deny local logon rights to the Hyper-V admin's JEA account.</span></span>

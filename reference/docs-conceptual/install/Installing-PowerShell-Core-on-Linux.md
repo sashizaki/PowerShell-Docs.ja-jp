@@ -2,22 +2,26 @@
 title: Linux への PowerShell Core のインストール
 description: さまざまな Linux ディストリビューションへの PowerShell Core のインストールに関する情報
 ms.date: 08/06/2018
-ms.openlocfilehash: 0a7c9549c37222bf599e4bdb9e36c91288191bb3
-ms.sourcegitcommit: 00cf9a99972ce40db7c25b9a3fc6152dec6bddb6
+ms.openlocfilehash: 32d6c0e718ca798af2f6a5d796c3ca362e7befd9
+ms.sourcegitcommit: 13e170e8bff29d3d5f854c874de88f53c5e5ef20
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64530638"
+ms.lasthandoff: 07/11/2019
+ms.locfileid: "67829438"
 ---
-# <a name="installing-powershell-core-on-linux"></a><span data-ttu-id="34035-103">Linux への PowerShell Core のインストール</span><span class="sxs-lookup"><span data-stu-id="34035-103">Installing PowerShell Core on Linux</span></span>
+# <a name="installing-powershell-core-on-linux"></a><span data-ttu-id="ada2a-103">Linux への PowerShell Core のインストール</span><span class="sxs-lookup"><span data-stu-id="ada2a-103">Installing PowerShell Core on Linux</span></span>
 
-<span data-ttu-id="34035-104">[Ubuntu 14.04][u14]、[Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Debian 9][deb9]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora]、および [Arch Linux][arch] をサポートしています。</span><span class="sxs-lookup"><span data-stu-id="34035-104">Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810],  [Debian 9][deb9], [CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse], [Fedora 27][fedora], [Fedora 28][fedora], and [Arch Linux][arch].</span></span>
+<span data-ttu-id="ada2a-104">[Ubuntu 14.04][u14], [Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810],  [Debian 9][deb9],
+[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse],
+[Fedora 27][fedora]、[Fedora 28][fedora]、[Arch Linux][arch] をサポートします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-104">Supports [Ubuntu 14.04][u14], [Ubuntu 16.04][u16], [Ubuntu 18.04][u1804], [Ubuntu 18.10][u1810],  [Debian 9][deb9],
+[CentOS 7][cos], [Red Hat Enterprise Linux (RHEL) 7][rhel7], [openSUSE 42.3][opensuse], [openSUSE Leap 15][opensuse],
+[Fedora 27][fedora], [Fedora 28][fedora], and [Arch Linux][arch].</span></span>
 
-<span data-ttu-id="34035-105">公式にサポートしていない Linux ディストリビューションの場合、[PowerShell Snap パッケージ][snap]を利用できます。</span><span class="sxs-lookup"><span data-stu-id="34035-105">For Linux distributions that are not officially supported, you can try using the [PowerShell Snap Package][snap].</span></span>
-<span data-ttu-id="34035-106">また、Linux [`tar.gz` アーカイブ][tar]で直接、PowerShell バイナリを展開できます。ただし、場合によっては、OS に基づいて依存関係を別の手順で設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="34035-106">You can also try deploying PowerShell binaries directly using the Linux [`tar.gz` archive][tar], but you would need to set up the necessary dependencies based on the OS in separate steps.</span></span>
+<span data-ttu-id="ada2a-105">公式にサポートされていない Linux ディストリビューションの場合、[PowerShell Snap パッケージ][snap]を使用してみることができます。</span><span class="sxs-lookup"><span data-stu-id="ada2a-105">For Linux distributions that are not officially supported, you can try using the [PowerShell Snap Package][snap].</span></span>
+<span data-ttu-id="ada2a-106">また、Linux [`tar.gz` アーカイブ][tar]を使用して、直接 PowerShell バイナリを展開できますが、場合によっては、OS に基づいて依存関係を別の手順で設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="ada2a-106">You can also try deploying PowerShell binaries directly using the Linux [`tar.gz` archive][tar], but you would need to set up the necessary dependencies based on the OS in separate steps.</span></span>
 
-<span data-ttu-id="34035-107">すべてのパッケージは GitHub [リリース][] ページにあります。</span><span class="sxs-lookup"><span data-stu-id="34035-107">All packages are available on our GitHub [releases][] page.</span></span>
-<span data-ttu-id="34035-108">パッケージがインストールされたら、ターミナルから `pwsh` を実行します。</span><span class="sxs-lookup"><span data-stu-id="34035-108">Once the package is installed, run `pwsh` from a terminal.</span></span>
+<span data-ttu-id="ada2a-107">すべてのパッケージは GitHub [リリース][] ページにあります。</span><span class="sxs-lookup"><span data-stu-id="ada2a-107">All packages are available on our GitHub [releases][] page.</span></span>
+<span data-ttu-id="ada2a-108">パッケージがインストールされたら、ターミナルから `pwsh` を実行します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-108">Once the package is installed, run `pwsh` from a terminal.</span></span>
 
 [u14]: #ubuntu-1404
 [u16]: #ubuntu-1604
@@ -32,26 +36,26 @@ ms.locfileid: "64530638"
 [snap]: #snap-package
 [tar]: #binary-archives
 
-## <a name="installing-preview-releases"></a><span data-ttu-id="34035-109">プレビュー リリースのインストール</span><span class="sxs-lookup"><span data-stu-id="34035-109">Installing Preview Releases</span></span>
+## <a name="installing-preview-releases"></a><span data-ttu-id="ada2a-109">プレビュー リリースのインストール</span><span class="sxs-lookup"><span data-stu-id="ada2a-109">Installing Preview Releases</span></span>
 
-<span data-ttu-id="34035-110">パッケージ リポジトリを介して、Linux 用の PowerShell Core Preview リリースをインストールすると、パッケージ名が `powershell` から `powershell-preview` に変わります。</span><span class="sxs-lookup"><span data-stu-id="34035-110">When installing a PowerShell Core Preview release for Linux via a Package Repository, the package name changes from `powershell` to `powershell-preview`.</span></span>
+<span data-ttu-id="ada2a-110">パッケージ リポジトリを介して、Linux 用の PowerShell Core Preview リリースをインストールすると、パッケージ名が `powershell` から `powershell-preview` に変わります。</span><span class="sxs-lookup"><span data-stu-id="ada2a-110">When installing a PowerShell Core Preview release for Linux via a Package Repository, the package name changes from `powershell` to `powershell-preview`.</span></span>
 
-<span data-ttu-id="34035-111">直接ダウンロードによるインストールでは、ファイル名以外は変わりません。</span><span class="sxs-lookup"><span data-stu-id="34035-111">Installing via direct download does not change, other than the file name.</span></span>
+<span data-ttu-id="ada2a-111">直接ダウンロードによるインストールでは、ファイル名以外は変わりません。</span><span class="sxs-lookup"><span data-stu-id="ada2a-111">Installing via direct download does not change, other than the file name.</span></span>
 
-<span data-ttu-id="34035-112">さまざまなパッケージ マネージャーを使用して、安定したパッケージとプレビュー パッケージをインストールするためのコマンドを以下の表に示します。</span><span class="sxs-lookup"><span data-stu-id="34035-112">Here is a table of the commands to install the stable and preview packages using the various package managers:</span></span>
+<span data-ttu-id="ada2a-112">さまざまなパッケージ マネージャーを使用して、安定したパッケージとプレビュー パッケージをインストールするためのコマンドを以下の表に示します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-112">Here is a table of the commands to install the stable and preview packages using the various package managers:</span></span>
 
-|<span data-ttu-id="34035-113">ディストリビューション</span><span class="sxs-lookup"><span data-stu-id="34035-113">Distribution(s)</span></span>|<span data-ttu-id="34035-114">安定したコマンド</span><span class="sxs-lookup"><span data-stu-id="34035-114">Stable Command</span></span> | <span data-ttu-id="34035-115">プレビュー コマンド</span><span class="sxs-lookup"><span data-stu-id="34035-115">Preview Command</span></span> |
+|<span data-ttu-id="ada2a-113">ディストリビューション</span><span class="sxs-lookup"><span data-stu-id="ada2a-113">Distribution(s)</span></span>|<span data-ttu-id="ada2a-114">安定したコマンド</span><span class="sxs-lookup"><span data-stu-id="ada2a-114">Stable Command</span></span> | <span data-ttu-id="ada2a-115">プレビュー コマンド</span><span class="sxs-lookup"><span data-stu-id="ada2a-115">Preview Command</span></span> |
 |---------------|---------------|-----------------|
-| <span data-ttu-id="34035-116">Ubuntu、Debian</span><span class="sxs-lookup"><span data-stu-id="34035-116">Ubuntu, Debian</span></span> |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
-| <span data-ttu-id="34035-117">CentOS、RedHat</span><span class="sxs-lookup"><span data-stu-id="34035-117">CentOS, RedHat</span></span> |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
-| <span data-ttu-id="34035-118">Fedora</span><span class="sxs-lookup"><span data-stu-id="34035-118">Fedora</span></span>   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
+| <span data-ttu-id="ada2a-116">Ubuntu、Debian</span><span class="sxs-lookup"><span data-stu-id="ada2a-116">Ubuntu, Debian</span></span> |`sudo apt-get install -y powershell`| `sudo apt-get install -y powershell-preview`|
+| <span data-ttu-id="ada2a-117">CentOS、RedHat</span><span class="sxs-lookup"><span data-stu-id="ada2a-117">CentOS, RedHat</span></span> |`sudo yum install -y powershell` | `sudo yum install -y powershell-preview`|
+| <span data-ttu-id="ada2a-118">Fedora</span><span class="sxs-lookup"><span data-stu-id="ada2a-118">Fedora</span></span>   |`sudo dnf install -y powershell` | `sudo dnf install -y powershell-preview`|
 
-## <a name="ubuntu-1404"></a><span data-ttu-id="34035-119">Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="34035-119">Ubuntu 14.04</span></span>
+## <a name="ubuntu-1404"></a><span data-ttu-id="ada2a-119">Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-119">Ubuntu 14.04</span></span>
 
-### <a name="installation-via-package-repository---ubuntu-1404"></a><span data-ttu-id="34035-120">パッケージ リポジトリによるインストール - Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="34035-120">Installation via Package Repository - Ubuntu 14.04</span></span>
+### <a name="installation-via-package-repository---ubuntu-1404"></a><span data-ttu-id="ada2a-120">パッケージ リポジトリによるインストール - Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-120">Installation via Package Repository - Ubuntu 14.04</span></span>
 
-<span data-ttu-id="34035-121">Linux 向け PowerShell Core はパッケージ リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="34035-121">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="34035-122">この方法を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="34035-122">This is the preferred method.</span></span>
+<span data-ttu-id="ada2a-121">Linux 向け PowerShell Core はパッケージ リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="ada2a-121">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="ada2a-122">この方法を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-122">This is the preferred method.</span></span>
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -70,15 +74,15 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="34035-123">スーパーユーザーとして Microsoft リポジトリを登録します。</span><span class="sxs-lookup"><span data-stu-id="34035-123">As superuser, register the Microsoft repository.</span></span>
-<span data-ttu-id="34035-124">以降は、インストールの更新に `sudo apt-get upgrade powershell` を使用するだけで済みます。</span><span class="sxs-lookup"><span data-stu-id="34035-124">From then on, you just need to use `sudo apt-get upgrade powershell` to update the installation.</span></span>
+<span data-ttu-id="ada2a-123">スーパーユーザーとして Microsoft リポジトリを登録します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-123">As superuser, register the Microsoft repository.</span></span>
+<span data-ttu-id="ada2a-124">以降は、インストールの更新に `sudo apt-get upgrade powershell` を使用するだけで済みます。</span><span class="sxs-lookup"><span data-stu-id="ada2a-124">From then on, you just need to use `sudo apt-get upgrade powershell` to update the installation.</span></span>
 
-### <a name="installation-via-direct-download---ubuntu-1404"></a><span data-ttu-id="34035-125">直接ダウンロードによるインストール - Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="34035-125">Installation via Direct Download - Ubuntu 14.04</span></span>
+### <a name="installation-via-direct-download---ubuntu-1404"></a><span data-ttu-id="ada2a-125">直接ダウンロードによるインストール - Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-125">Installation via Direct Download - Ubuntu 14.04</span></span>
 
-<span data-ttu-id="34035-126">Debian パッケージ `powershell_6.2.0-1.ubuntu.14.04_amd64.deb` を</span><span class="sxs-lookup"><span data-stu-id="34035-126">Download the Debian package `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`</span></span>
-<span data-ttu-id="34035-127">[リリース][] ページから Ubuntu コンピューターにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="34035-127">from the [releases][] page onto the Ubuntu machine.</span></span>
+<span data-ttu-id="ada2a-126">Debian パッケージ `powershell_6.2.0-1.ubuntu.14.04_amd64.deb` を</span><span class="sxs-lookup"><span data-stu-id="ada2a-126">Download the Debian package `powershell_6.2.0-1.ubuntu.14.04_amd64.deb`</span></span>
+<span data-ttu-id="ada2a-127">[リリース][] ページから Ubuntu コンピューターにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-127">from the [releases][] page onto the Ubuntu machine.</span></span>
 
-<span data-ttu-id="34035-128">次にターミナルで次を実行します。</span><span class="sxs-lookup"><span data-stu-id="34035-128">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="ada2a-128">次にターミナルで次を実行します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-128">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.14.04_amd64.deb
@@ -86,21 +90,21 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> <span data-ttu-id="34035-129">`dpkg -i` コマンドは依存関係が満たされずに失敗します。</span><span class="sxs-lookup"><span data-stu-id="34035-129">The `dpkg -i` command fails with unmet dependencies.</span></span>
-> <span data-ttu-id="34035-130">次のコマンド `apt-get install -f` でこれらの問題は解決され、PowerShell パッケージの構成が完了します。</span><span class="sxs-lookup"><span data-stu-id="34035-130">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
+> <span data-ttu-id="ada2a-129">`dpkg -i` コマンドは依存関係が満たされずに失敗します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-129">The `dpkg -i` command fails with unmet dependencies.</span></span>
+> <span data-ttu-id="ada2a-130">次のコマンド `apt-get install -f` でこれらの問題は解決され、PowerShell パッケージの構成が完了します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-130">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
 
-### <a name="uninstallation---ubuntu-1404"></a><span data-ttu-id="34035-131">アンインストール - Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="34035-131">Uninstallation - Ubuntu 14.04</span></span>
+### <a name="uninstallation---ubuntu-1404"></a><span data-ttu-id="ada2a-131">アンインストール - Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-131">Uninstallation - Ubuntu 14.04</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1604"></a><span data-ttu-id="34035-132">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="34035-132">Ubuntu 16.04</span></span>
+## <a name="ubuntu-1604"></a><span data-ttu-id="ada2a-132">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-132">Ubuntu 16.04</span></span>
 
-### <a name="installation-via-package-repository---ubuntu-1604"></a><span data-ttu-id="34035-133">パッケージ リポジトリによるインストール - Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="34035-133">Installation via Package Repository - Ubuntu 16.04</span></span>
+### <a name="installation-via-package-repository---ubuntu-1604"></a><span data-ttu-id="ada2a-133">パッケージ リポジトリによるインストール - Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-133">Installation via Package Repository - Ubuntu 16.04</span></span>
 
-<span data-ttu-id="34035-134">Linux 向け PowerShell Core はパッケージ リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="34035-134">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="34035-135">この方法を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="34035-135">This is the preferred method.</span></span>
+<span data-ttu-id="ada2a-134">Linux 向け PowerShell Core はパッケージ リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="ada2a-134">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="ada2a-135">この方法を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-135">This is the preferred method.</span></span>
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -119,14 +123,14 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="34035-136">スーパーユーザーとして Microsoft リポジトリを一度登録すれば、その後は `sudo apt-get upgrade powershell` を使用する更新だけが必要になります。</span><span class="sxs-lookup"><span data-stu-id="34035-136">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
+<span data-ttu-id="ada2a-136">スーパーユーザーとして Microsoft リポジトリを一度登録すれば、その後は `sudo apt-get upgrade powershell` を使用する更新だけが必要になります。</span><span class="sxs-lookup"><span data-stu-id="ada2a-136">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
 
-### <a name="installation-via-direct-download---ubuntu-1604"></a><span data-ttu-id="34035-137">直接ダウンロードによるインストール - Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="34035-137">Installation via Direct Download - Ubuntu 16.04</span></span>
+### <a name="installation-via-direct-download---ubuntu-1604"></a><span data-ttu-id="ada2a-137">直接ダウンロードによるインストール - Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-137">Installation via Direct Download - Ubuntu 16.04</span></span>
 
-<span data-ttu-id="34035-138">Debian パッケージ `powershell_6.2.0-1.ubuntu.16.04_amd64.deb` を</span><span class="sxs-lookup"><span data-stu-id="34035-138">Download the Debian package `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`</span></span>
-<span data-ttu-id="34035-139">[リリース][] ページから Ubuntu コンピューターにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="34035-139">from the [releases][] page onto the Ubuntu machine.</span></span>
+<span data-ttu-id="ada2a-138">Debian パッケージ `powershell_6.2.0-1.ubuntu.16.04_amd64.deb` を</span><span class="sxs-lookup"><span data-stu-id="ada2a-138">Download the Debian package `powershell_6.2.0-1.ubuntu.16.04_amd64.deb`</span></span>
+<span data-ttu-id="ada2a-139">[リリース][] ページから Ubuntu コンピューターにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-139">from the [releases][] page onto the Ubuntu machine.</span></span>
 
-<span data-ttu-id="34035-140">次にターミナルで次を実行します。</span><span class="sxs-lookup"><span data-stu-id="34035-140">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="ada2a-140">次にターミナルで次を実行します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-140">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.16.04_amd64.deb
@@ -134,21 +138,21 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> <span data-ttu-id="34035-141">`dpkg -i` コマンドは依存関係が満たされずに失敗します。</span><span class="sxs-lookup"><span data-stu-id="34035-141">The `dpkg -i` command fails with unmet dependencies.</span></span>
-> <span data-ttu-id="34035-142">次のコマンド `apt-get install -f` でこれらの問題は解決され、PowerShell パッケージの構成が完了します。</span><span class="sxs-lookup"><span data-stu-id="34035-142">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
+> <span data-ttu-id="ada2a-141">`dpkg -i` コマンドは依存関係が満たされずに失敗します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-141">The `dpkg -i` command fails with unmet dependencies.</span></span>
+> <span data-ttu-id="ada2a-142">次のコマンド `apt-get install -f` でこれらの問題は解決され、PowerShell パッケージの構成が完了します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-142">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
 
-### <a name="uninstallation---ubuntu-1604"></a><span data-ttu-id="34035-143">アンインストール - Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="34035-143">Uninstallation - Ubuntu 16.04</span></span>
+### <a name="uninstallation---ubuntu-1604"></a><span data-ttu-id="ada2a-143">アンインストール - Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-143">Uninstallation - Ubuntu 16.04</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1804"></a><span data-ttu-id="34035-144">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="34035-144">Ubuntu 18.04</span></span>
+## <a name="ubuntu-1804"></a><span data-ttu-id="ada2a-144">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-144">Ubuntu 18.04</span></span>
 
-### <a name="installation-via-package-repository---ubuntu-1804"></a><span data-ttu-id="34035-145">パッケージ リポジトリによるインストール - Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="34035-145">Installation via Package Repository - Ubuntu 18.04</span></span>
+### <a name="installation-via-package-repository---ubuntu-1804"></a><span data-ttu-id="ada2a-145">パッケージ リポジトリによるインストール - Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-145">Installation via Package Repository - Ubuntu 18.04</span></span>
 
-<span data-ttu-id="34035-146">Linux 向け PowerShell Core はパッケージ リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="34035-146">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="34035-147">この方法を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="34035-147">This is the preferred method.</span></span>
+<span data-ttu-id="ada2a-146">Linux 向け PowerShell Core はパッケージ リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="ada2a-146">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="ada2a-147">この方法を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-147">This is the preferred method.</span></span>
 
 ```sh
 # Download the Microsoft repository GPG keys
@@ -170,14 +174,14 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="34035-148">スーパーユーザーとして Microsoft リポジトリを一度登録すれば、その後は `sudo apt-get upgrade powershell` を使用する更新だけが必要になります。</span><span class="sxs-lookup"><span data-stu-id="34035-148">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
+<span data-ttu-id="ada2a-148">スーパーユーザーとして Microsoft リポジトリを一度登録すれば、その後は `sudo apt-get upgrade powershell` を使用する更新だけが必要になります。</span><span class="sxs-lookup"><span data-stu-id="ada2a-148">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
 
-### <a name="installation-via-direct-download---ubuntu-1804"></a><span data-ttu-id="34035-149">直接ダウンロードによるインストール - Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="34035-149">Installation via Direct Download - Ubuntu 18.04</span></span>
+### <a name="installation-via-direct-download---ubuntu-1804"></a><span data-ttu-id="ada2a-149">直接ダウンロードによるインストール - Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-149">Installation via Direct Download - Ubuntu 18.04</span></span>
 
-<span data-ttu-id="34035-150">Debian パッケージ `powershell_6.2.0-1.ubuntu.18.04_amd64.deb` を</span><span class="sxs-lookup"><span data-stu-id="34035-150">Download the Debian package `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`</span></span>
-<span data-ttu-id="34035-151">[リリース][] ページから Ubuntu コンピューターにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="34035-151">from the [releases][] page onto the Ubuntu machine.</span></span>
+<span data-ttu-id="ada2a-150">Debian パッケージ `powershell_6.2.0-1.ubuntu.18.04_amd64.deb` を</span><span class="sxs-lookup"><span data-stu-id="ada2a-150">Download the Debian package `powershell_6.2.0-1.ubuntu.18.04_amd64.deb`</span></span>
+<span data-ttu-id="ada2a-151">[リリース][] ページから Ubuntu コンピューターにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-151">from the [releases][] page onto the Ubuntu machine.</span></span>
 
-<span data-ttu-id="34035-152">次にターミナルで次を実行します。</span><span class="sxs-lookup"><span data-stu-id="34035-152">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="ada2a-152">次にターミナルで次を実行します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-152">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.ubuntu.18.04_amd64.deb
@@ -185,28 +189,28 @@ sudo apt-get install -f
 ```
 
 > [!NOTE]
-> <span data-ttu-id="34035-153">`dpkg -i` コマンドは依存関係が満たされずに失敗します。</span><span class="sxs-lookup"><span data-stu-id="34035-153">The `dpkg -i` command fails with unmet dependencies.</span></span>
-> <span data-ttu-id="34035-154">次のコマンド `apt-get install -f` でこれらの問題は解決され、PowerShell パッケージの構成が完了します。</span><span class="sxs-lookup"><span data-stu-id="34035-154">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
+> <span data-ttu-id="ada2a-153">`dpkg -i` コマンドは依存関係が満たされずに失敗します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-153">The `dpkg -i` command fails with unmet dependencies.</span></span>
+> <span data-ttu-id="ada2a-154">次のコマンド `apt-get install -f` でこれらの問題は解決され、PowerShell パッケージの構成が完了します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-154">The next command, `apt-get install -f` resolves these issues then finishes configuring the PowerShell package.</span></span>
 
-### <a name="uninstallation---ubuntu-1804"></a><span data-ttu-id="34035-155">アンインストール - Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="34035-155">Uninstallation - Ubuntu 18.04</span></span>
+### <a name="uninstallation---ubuntu-1804"></a><span data-ttu-id="ada2a-155">アンインストール - Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-155">Uninstallation - Ubuntu 18.04</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="ubuntu-1810"></a><span data-ttu-id="34035-156">Ubuntu 18.10</span><span class="sxs-lookup"><span data-stu-id="34035-156">Ubuntu 18.10</span></span>
+## <a name="ubuntu-1810"></a><span data-ttu-id="ada2a-156">Ubuntu 18.10</span><span class="sxs-lookup"><span data-stu-id="ada2a-156">Ubuntu 18.10</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="34035-157">18.10 が[中間リリース](https://www.ubuntu.com/about/release-cycle)のときに、これは[コミュニティでのみサポートされます](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6)。</span><span class="sxs-lookup"><span data-stu-id="34035-157">As 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle), it is only [community supported](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).</span></span>
+> <span data-ttu-id="ada2a-157">18.10 が[中間リリース](https://www.ubuntu.com/about/release-cycle)のときに、これは[コミュニティでのみサポートされます](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6)。</span><span class="sxs-lookup"><span data-stu-id="ada2a-157">As 18.10 is an [interim release](https://www.ubuntu.com/about/release-cycle), it is only [community supported](https://docs.microsoft.com/en-us/powershell/scripting/powershell-support-lifecycle?view=powershell-6).</span></span>
 
-<span data-ttu-id="34035-158">18.10 へのインストールは `snapd` を使用してサポートされます。</span><span class="sxs-lookup"><span data-stu-id="34035-158">Installing on 18.10 is supported via `snapd`.</span></span> <span data-ttu-id="34035-159">完全な手順については、「[Snap パッケージ][snap]」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="34035-159">See [Snap Package][snap] for full instructions;</span></span>
+<span data-ttu-id="ada2a-158">18.10 へのインストールは `snapd` を使用してサポートされます。</span><span class="sxs-lookup"><span data-stu-id="ada2a-158">Installing on 18.10 is supported via `snapd`.</span></span> <span data-ttu-id="ada2a-159">完全な手順については、「[Snap パッケージ][snap]」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ada2a-159">See [Snap Package][snap] for full instructions;</span></span>
 
-## <a name="debian-8"></a><span data-ttu-id="34035-160">Debian 8</span><span class="sxs-lookup"><span data-stu-id="34035-160">Debian 8</span></span>
+## <a name="debian-8"></a><span data-ttu-id="ada2a-160">Debian 8</span><span class="sxs-lookup"><span data-stu-id="ada2a-160">Debian 8</span></span>
 
-### <a name="installation-via-package-repository---debian-8"></a><span data-ttu-id="34035-161">パッケージ リポジトリによるインストール - Debian 8</span><span class="sxs-lookup"><span data-stu-id="34035-161">Installation via Package Repository - Debian 8</span></span>
+### <a name="installation-via-package-repository---debian-8"></a><span data-ttu-id="ada2a-161">パッケージ リポジトリによるインストール - Debian 8</span><span class="sxs-lookup"><span data-stu-id="ada2a-161">Installation via Package Repository - Debian 8</span></span>
 
-<span data-ttu-id="34035-162">Linux 向け PowerShell Core はパッケージ リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="34035-162">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="34035-163">この方法を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="34035-163">This is the preferred method.</span></span>
+<span data-ttu-id="ada2a-162">Linux 向け PowerShell Core はパッケージ リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="ada2a-162">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="ada2a-163">この方法を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-163">This is the preferred method.</span></span>
 
 ```sh
 # Install system components
@@ -229,14 +233,14 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="34035-164">スーパーユーザーとして Microsoft リポジトリを一度登録すれば、その後は `sudo apt-get upgrade powershell` を使用する更新だけが必要になります。</span><span class="sxs-lookup"><span data-stu-id="34035-164">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
+<span data-ttu-id="ada2a-164">スーパーユーザーとして Microsoft リポジトリを一度登録すれば、その後は `sudo apt-get upgrade powershell` を使用する更新だけが必要になります。</span><span class="sxs-lookup"><span data-stu-id="ada2a-164">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
 
-## <a name="debian-9"></a><span data-ttu-id="34035-165">Debian 9</span><span class="sxs-lookup"><span data-stu-id="34035-165">Debian 9</span></span>
+## <a name="debian-9"></a><span data-ttu-id="ada2a-165">Debian 9</span><span class="sxs-lookup"><span data-stu-id="ada2a-165">Debian 9</span></span>
 
-### <a name="installation-via-package-repository---debian-9"></a><span data-ttu-id="34035-166">パッケージ リポジトリによるインストール - Debian 9</span><span class="sxs-lookup"><span data-stu-id="34035-166">Installation via Package Repository - Debian 9</span></span>
+### <a name="installation-via-package-repository---debian-9"></a><span data-ttu-id="ada2a-166">パッケージ リポジトリによるインストール - Debian 9</span><span class="sxs-lookup"><span data-stu-id="ada2a-166">Installation via Package Repository - Debian 9</span></span>
 
-<span data-ttu-id="34035-167">Linux 向け PowerShell Core はパッケージ リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="34035-167">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
-<span data-ttu-id="34035-168">この方法を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="34035-168">This is the preferred method.</span></span>
+<span data-ttu-id="ada2a-167">Linux 向け PowerShell Core はパッケージ リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="ada2a-167">PowerShell Core, for Linux, is published to package repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="ada2a-168">この方法を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-168">This is the preferred method.</span></span>
 
 ```sh
 # Install system components
@@ -259,34 +263,34 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="34035-169">スーパーユーザーとして Microsoft リポジトリを一度登録すれば、その後は `sudo apt-get upgrade powershell` を使用する更新だけが必要になります。</span><span class="sxs-lookup"><span data-stu-id="34035-169">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
+<span data-ttu-id="ada2a-169">スーパーユーザーとして Microsoft リポジトリを一度登録すれば、その後は `sudo apt-get upgrade powershell` を使用する更新だけが必要になります。</span><span class="sxs-lookup"><span data-stu-id="ada2a-169">After registering the Microsoft repository once as superuser, from then on, you just need to use `sudo apt-get upgrade powershell` to update it.</span></span>
 
-### <a name="installation-via-direct-download---debian-9"></a><span data-ttu-id="34035-170">直接ダウンロードによるインストール - Debian 9</span><span class="sxs-lookup"><span data-stu-id="34035-170">Installation via Direct Download - Debian 9</span></span>
+### <a name="installation-via-direct-download---debian-9"></a><span data-ttu-id="ada2a-170">直接ダウンロードによるインストール - Debian 9</span><span class="sxs-lookup"><span data-stu-id="ada2a-170">Installation via Direct Download - Debian 9</span></span>
 
-<span data-ttu-id="34035-171">Debian パッケージ `powershell_6.2.0-1.debian.9_amd64.deb` を</span><span class="sxs-lookup"><span data-stu-id="34035-171">Download the Debian package `powershell_6.2.0-1.debian.9_amd64.deb`</span></span>
-<span data-ttu-id="34035-172">[リリース][] ページから Debian コンピューターにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="34035-172">from the [releases][] page onto the Debian machine.</span></span>
+<span data-ttu-id="ada2a-171">Debian パッケージ `powershell_6.2.0-1.debian.9_amd64.deb` を</span><span class="sxs-lookup"><span data-stu-id="ada2a-171">Download the Debian package `powershell_6.2.0-1.debian.9_amd64.deb`</span></span>
+<span data-ttu-id="ada2a-172">[リリース][] ページから Debian コンピューターにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-172">from the [releases][] page onto the Debian machine.</span></span>
 
-<span data-ttu-id="34035-173">次にターミナルで次を実行します。</span><span class="sxs-lookup"><span data-stu-id="34035-173">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="ada2a-173">次にターミナルで次を実行します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-173">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dpkg -i powershell_6.2.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
-### <a name="uninstallation---debian-9"></a><span data-ttu-id="34035-174">アンインストール - Debian 9</span><span class="sxs-lookup"><span data-stu-id="34035-174">Uninstallation - Debian 9</span></span>
+### <a name="uninstallation---debian-9"></a><span data-ttu-id="ada2a-174">アンインストール - Debian 9</span><span class="sxs-lookup"><span data-stu-id="ada2a-174">Uninstallation - Debian 9</span></span>
 
 ```sh
 sudo apt-get remove powershell
 ```
 
-## <a name="centos-7"></a><span data-ttu-id="34035-175">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="34035-175">CentOS 7</span></span>
+## <a name="centos-7"></a><span data-ttu-id="ada2a-175">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="ada2a-175">CentOS 7</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="34035-176">このパッケージは Oracle Linux 7 でも動作します。</span><span class="sxs-lookup"><span data-stu-id="34035-176">This package also works on Oracle Linux 7.</span></span>
+> <span data-ttu-id="ada2a-176">このパッケージは Oracle Linux 7 でも動作します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-176">This package also works on Oracle Linux 7.</span></span>
 
-### <a name="installation-via-package-repository-preferred---centos-7"></a><span data-ttu-id="34035-177">パッケージ リポジトリによるインストール (推奨) - CentOS 7</span><span class="sxs-lookup"><span data-stu-id="34035-177">Installation via Package Repository (preferred) - CentOS 7</span></span>
+### <a name="installation-via-package-repository-preferred---centos-7"></a><span data-ttu-id="ada2a-177">パッケージ リポジトリによるインストール (推奨) - CentOS 7</span><span class="sxs-lookup"><span data-stu-id="ada2a-177">Installation via Package Repository (preferred) - CentOS 7</span></span>
 
-<span data-ttu-id="34035-178">Linux 向け PowerShell Core は公式 Microsoft リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="34035-178">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="ada2a-178">Linux 向け PowerShell Core は公式 Microsoft リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="ada2a-178">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -299,26 +303,26 @@ sudo yum install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="34035-179">スーパーユーザーとして Microsoft リポジトリを一度登録すれば、その後は `sudo yum update powershell` を使用する PowerShell の更新だけが必要になります。</span><span class="sxs-lookup"><span data-stu-id="34035-179">After registering the Microsoft repository once as superuser, you just need to use `sudo yum update powershell` to update PowerShell.</span></span>
+<span data-ttu-id="ada2a-179">スーパーユーザーとして Microsoft リポジトリを一度登録すれば、その後は `sudo yum update powershell` を使用する PowerShell の更新だけが必要になります。</span><span class="sxs-lookup"><span data-stu-id="ada2a-179">After registering the Microsoft repository once as superuser, you just need to use `sudo yum update powershell` to update PowerShell.</span></span>
 
-### <a name="installation-via-direct-download---centos-7"></a><span data-ttu-id="34035-180">直接ダウンロードによるインストール - CentOS 7</span><span class="sxs-lookup"><span data-stu-id="34035-180">Installation via Direct Download - CentOS 7</span></span>
+### <a name="installation-via-direct-download---centos-7"></a><span data-ttu-id="ada2a-180">直接ダウンロードによるインストール - CentOS 7</span><span class="sxs-lookup"><span data-stu-id="ada2a-180">Installation via Direct Download - CentOS 7</span></span>
 
-<span data-ttu-id="34035-181">[CentOS 7][] を使用して、RPM パッケージ `powershell-6.2.0-1.rhel.7.x86_64.rpm` を</span><span class="sxs-lookup"><span data-stu-id="34035-181">Using [CentOS 7][], download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
-<span data-ttu-id="34035-182">[リリース][] ページから CentOS コンピューターにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="34035-182">from the [releases][] page onto the CentOS machine.</span></span>
+<span data-ttu-id="ada2a-181">[CentOS 7][] を使用して、RPM パッケージ `powershell-6.2.0-1.rhel.7.x86_64.rpm` を</span><span class="sxs-lookup"><span data-stu-id="ada2a-181">Using [CentOS 7][], download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
+<span data-ttu-id="ada2a-182">[リリース][] ページから CentOS コンピューターにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-182">from the [releases][] page onto the CentOS machine.</span></span>
 
-<span data-ttu-id="34035-183">次にターミナルで次を実行します。</span><span class="sxs-lookup"><span data-stu-id="34035-183">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="ada2a-183">次にターミナルで次を実行します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-183">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-<span data-ttu-id="34035-184">ダウンロードという中間の手順なしでも RPM をインストールできます。</span><span class="sxs-lookup"><span data-stu-id="34035-184">You can also install the RPM without the intermediate step of downloading it:</span></span>
+<span data-ttu-id="ada2a-184">ダウンロードという中間の手順なしでも RPM をインストールできます。</span><span class="sxs-lookup"><span data-stu-id="ada2a-184">You can also install the RPM without the intermediate step of downloading it:</span></span>
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---centos-7"></a><span data-ttu-id="34035-185">アンインストール - CentOS 7</span><span class="sxs-lookup"><span data-stu-id="34035-185">Uninstallation - CentOS 7</span></span>
+### <a name="uninstallation---centos-7"></a><span data-ttu-id="ada2a-185">アンインストール - CentOS 7</span><span class="sxs-lookup"><span data-stu-id="ada2a-185">Uninstallation - CentOS 7</span></span>
 
 ```sh
 sudo yum remove powershell
@@ -326,11 +330,11 @@ sudo yum remove powershell
 
 [CentOS 7]: https://www.centos.org/download/
 
-## <a name="red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="34035-187">Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="34035-187">Red Hat Enterprise Linux (RHEL) 7</span></span>
+## <a name="red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="ada2a-187">Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="ada2a-187">Red Hat Enterprise Linux (RHEL) 7</span></span>
 
-### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="34035-188">パッケージ リポジトリによるインストール (推奨) - Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="34035-188">Installation via Package Repository (preferred) - Red Hat Enterprise Linux (RHEL) 7</span></span>
+### <a name="installation-via-package-repository-preferred---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="ada2a-188">パッケージ リポジトリによるインストール (推奨) - Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="ada2a-188">Installation via Package Repository (preferred) - Red Hat Enterprise Linux (RHEL) 7</span></span>
 
-<span data-ttu-id="34035-189">Linux 向け PowerShell Core は公式 Microsoft リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="34035-189">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="ada2a-189">Linux 向け PowerShell Core は公式 Microsoft リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="ada2a-189">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
 
 ```sh
 # Register the Microsoft RedHat repository
@@ -343,34 +347,34 @@ sudo yum install -y powershell
 pwsh
 ```
 
-<span data-ttu-id="34035-190">スーパーユーザーとして Microsoft リポジトリを一度登録すれば、その後は `sudo yum update powershell` を使用する PowerShell の更新だけが必要になります。</span><span class="sxs-lookup"><span data-stu-id="34035-190">After registering the Microsoft repository once as superuser, you just need to use `sudo yum update powershell` to update PowerShell.</span></span>
+<span data-ttu-id="ada2a-190">スーパーユーザーとして Microsoft リポジトリを一度登録すれば、その後は `sudo yum update powershell` を使用する PowerShell の更新だけが必要になります。</span><span class="sxs-lookup"><span data-stu-id="ada2a-190">After registering the Microsoft repository once as superuser, you just need to use `sudo yum update powershell` to update PowerShell.</span></span>
 
-### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="34035-191">直接ダウンロードによるインストール - Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="34035-191">Installation via Direct Download - Red Hat Enterprise Linux (RHEL) 7</span></span>
+### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="ada2a-191">直接ダウンロードによるインストール - Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="ada2a-191">Installation via Direct Download - Red Hat Enterprise Linux (RHEL) 7</span></span>
 
-<span data-ttu-id="34035-192">RPM パッケージ `powershell-6.2.0-1.rhel.7.x86_64.rpm` を</span><span class="sxs-lookup"><span data-stu-id="34035-192">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
-<span data-ttu-id="34035-193">[リリース][] ページから Red Hat Enterprise Linux コンピューターにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="34035-193">from the [releases][] page onto the Red Hat Enterprise Linux machine.</span></span>
+<span data-ttu-id="ada2a-192">RPM パッケージ `powershell-6.2.0-1.rhel.7.x86_64.rpm` を</span><span class="sxs-lookup"><span data-stu-id="ada2a-192">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
+<span data-ttu-id="ada2a-193">[リリース][] ページから Red Hat Enterprise Linux コンピューターにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-193">from the [releases][] page onto the Red Hat Enterprise Linux machine.</span></span>
 
-<span data-ttu-id="34035-194">次にターミナルで次を実行します。</span><span class="sxs-lookup"><span data-stu-id="34035-194">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="ada2a-194">次にターミナルで次を実行します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-194">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo yum install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-<span data-ttu-id="34035-195">ダウンロードという中間の手順なしでも RPM をインストールできます。</span><span class="sxs-lookup"><span data-stu-id="34035-195">You can also install the RPM without the intermediate step of downloading it:</span></span>
+<span data-ttu-id="ada2a-195">ダウンロードという中間の手順なしでも RPM をインストールできます。</span><span class="sxs-lookup"><span data-stu-id="ada2a-195">You can also install the RPM without the intermediate step of downloading it:</span></span>
 
 ```sh
 sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="34035-196">アンインストール - Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="34035-196">Uninstallation - Red Hat Enterprise Linux (RHEL) 7</span></span>
+### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a><span data-ttu-id="ada2a-196">アンインストール - Red Hat Enterprise Linux (RHEL) 7</span><span class="sxs-lookup"><span data-stu-id="ada2a-196">Uninstallation - Red Hat Enterprise Linux (RHEL) 7</span></span>
 
 ```sh
 sudo yum remove powershell
 ```
 
-## <a name="opensuse"></a><span data-ttu-id="34035-197">openSUSE</span><span class="sxs-lookup"><span data-stu-id="34035-197">openSUSE</span></span>
+## <a name="opensuse"></a><span data-ttu-id="ada2a-197">openSUSE</span><span class="sxs-lookup"><span data-stu-id="ada2a-197">openSUSE</span></span>
 
-### <a name="installation---opensuse-423"></a><span data-ttu-id="34035-198">インストール - openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="34035-198">Installation - openSUSE 42.3</span></span>
+### <a name="installation---opensuse-423"></a><span data-ttu-id="ada2a-198">インストール - openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="ada2a-198">Installation - openSUSE 42.3</span></span>
 
 ```sh
 # Install dependencies
@@ -395,7 +399,7 @@ ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-### <a name="installation---opensuse-leap-15"></a><span data-ttu-id="34035-199">インストール - openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="34035-199">Installation - openSUSE Leap 15</span></span>
+### <a name="installation---opensuse-leap-15"></a><span data-ttu-id="ada2a-199">インストール - openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="ada2a-199">Installation - openSUSE Leap 15</span></span>
 
 ```sh
 # Install dependencies
@@ -420,20 +424,20 @@ ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 pwsh
 ```
 
-### <a name="uninstallation---opensuse-423-opensuse-leap-15"></a><span data-ttu-id="34035-200">アンインストール - openSUSE 42.3、openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="34035-200">Uninstallation - openSUSE 42.3, openSUSE Leap 15</span></span>
+### <a name="uninstallation---opensuse-423-opensuse-leap-15"></a><span data-ttu-id="ada2a-200">アンインストール - openSUSE 42.3、openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="ada2a-200">Uninstallation - openSUSE 42.3, openSUSE Leap 15</span></span>
 
 ```sh
 rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ```
 
-## <a name="fedora"></a><span data-ttu-id="34035-201">Fedora</span><span class="sxs-lookup"><span data-stu-id="34035-201">Fedora</span></span>
+## <a name="fedora"></a><span data-ttu-id="ada2a-201">Fedora</span><span class="sxs-lookup"><span data-stu-id="ada2a-201">Fedora</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="34035-202">Fedora 28 は、PowerShell Core 6.1 以降でのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="34035-202">Fedora 28 is only supported in PowerShell Core 6.1 and newer.</span></span>
+> <span data-ttu-id="ada2a-202">Fedora 28 は、PowerShell Core 6.1 以降でのみサポートされます。</span><span class="sxs-lookup"><span data-stu-id="ada2a-202">Fedora 28 is only supported in PowerShell Core 6.1 and newer.</span></span>
 
-### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a><span data-ttu-id="34035-203">パッケージ リポジトリによるインストール (推奨) - Fedora 27、Fedora 28</span><span class="sxs-lookup"><span data-stu-id="34035-203">Installation via Package Repository (preferred) - Fedora 27, Fedora 28</span></span>
+### <a name="installation-via-package-repository-preferred---fedora-27-fedora-28"></a><span data-ttu-id="ada2a-203">パッケージ リポジトリによるインストール (推奨) - Fedora 27、Fedora 28</span><span class="sxs-lookup"><span data-stu-id="ada2a-203">Installation via Package Repository (preferred) - Fedora 27, Fedora 28</span></span>
 
-<span data-ttu-id="34035-204">Linux 向け PowerShell Core は公式 Microsoft リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="34035-204">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
+<span data-ttu-id="ada2a-204">Linux 向け PowerShell Core は公式 Microsoft リポジトリに公開され、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="ada2a-204">PowerShell Core for Linux is published to official Microsoft repositories for easy installation (and updates).</span></span>
 
 ```sh
 # Register the Microsoft signature key
@@ -455,62 +459,62 @@ sudo dnf install -y powershell
 pwsh
 ```
 
-### <a name="installation-via-direct-download---fedora-27-fedora-28"></a><span data-ttu-id="34035-205">直接ダウンロードによるインストール - Fedora 27、Fedora 28</span><span class="sxs-lookup"><span data-stu-id="34035-205">Installation via Direct Download - Fedora 27, Fedora 28</span></span>
+### <a name="installation-via-direct-download---fedora-27-fedora-28"></a><span data-ttu-id="ada2a-205">直接ダウンロードによるインストール - Fedora 27、Fedora 28</span><span class="sxs-lookup"><span data-stu-id="ada2a-205">Installation via Direct Download - Fedora 27, Fedora 28</span></span>
 
-<span data-ttu-id="34035-206">RPM パッケージ `powershell-6.2.0-1.rhel.7.x86_64.rpm` を</span><span class="sxs-lookup"><span data-stu-id="34035-206">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
-<span data-ttu-id="34035-207">[リリース][] ページから Fedora コンピューターにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="34035-207">from the [releases][] page onto the Fedora machine.</span></span>
+<span data-ttu-id="ada2a-206">RPM パッケージ `powershell-6.2.0-1.rhel.7.x86_64.rpm` を</span><span class="sxs-lookup"><span data-stu-id="ada2a-206">Download the RPM package `powershell-6.2.0-1.rhel.7.x86_64.rpm`</span></span>
+<span data-ttu-id="ada2a-207">[リリース][] ページから Fedora コンピューターにダウンロードします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-207">from the [releases][] page onto the Fedora machine.</span></span>
 
-<span data-ttu-id="34035-208">次にターミナルで次を実行します。</span><span class="sxs-lookup"><span data-stu-id="34035-208">Then execute the following in the terminal:</span></span>
+<span data-ttu-id="ada2a-208">次にターミナルで次を実行します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-208">Then execute the following in the terminal:</span></span>
 
 ```sh
 sudo dnf install compat-openssl10
 sudo dnf install powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-<span data-ttu-id="34035-209">ダウンロードという中間の手順なしでも RPM をインストールできます。</span><span class="sxs-lookup"><span data-stu-id="34035-209">You can also install the RPM without the intermediate step of downloading it:</span></span>
+<span data-ttu-id="ada2a-209">ダウンロードという中間の手順なしでも RPM をインストールできます。</span><span class="sxs-lookup"><span data-stu-id="ada2a-209">You can also install the RPM without the intermediate step of downloading it:</span></span>
 
 ```sh
 sudo dnf install compat-openssl10
 sudo dnf install https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-1.rhel.7.x86_64.rpm
 ```
 
-### <a name="uninstallation---fedora-27-fedora-28"></a><span data-ttu-id="34035-210">アンインストール - Fedora 27、Fedora 28</span><span class="sxs-lookup"><span data-stu-id="34035-210">Uninstallation - Fedora 27, Fedora 28</span></span>
+### <a name="uninstallation---fedora-27-fedora-28"></a><span data-ttu-id="ada2a-210">アンインストール - Fedora 27、Fedora 28</span><span class="sxs-lookup"><span data-stu-id="ada2a-210">Uninstallation - Fedora 27, Fedora 28</span></span>
 
 ```sh
 sudo dnf remove powershell
 ```
 
-## <a name="arch-linux"></a><span data-ttu-id="34035-211">Arch Linux</span><span class="sxs-lookup"><span data-stu-id="34035-211">Arch Linux</span></span>
+## <a name="arch-linux"></a><span data-ttu-id="ada2a-211">Arch Linux</span><span class="sxs-lookup"><span data-stu-id="ada2a-211">Arch Linux</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="34035-212">Arch のサポートは試験段階です。</span><span class="sxs-lookup"><span data-stu-id="34035-212">Arch support is experimental.</span></span>
+> <span data-ttu-id="ada2a-212">Arch のサポートは試験段階です。</span><span class="sxs-lookup"><span data-stu-id="ada2a-212">Arch support is experimental.</span></span>
 
-<span data-ttu-id="34035-213">PowerShell は [Arch Linux][] User Repository (AUR) から入手できます。</span><span class="sxs-lookup"><span data-stu-id="34035-213">PowerShell is available from the [Arch Linux][] User Repository (AUR).</span></span>
+<span data-ttu-id="ada2a-213">PowerShell は [Arch Linux][] User Repository (AUR) から入手できます。</span><span class="sxs-lookup"><span data-stu-id="ada2a-213">PowerShell is available from the [Arch Linux][] User Repository (AUR).</span></span>
 
-* <span data-ttu-id="34035-214">[タグが付けられた最新のリリース][arch-release]でコンパイルできます</span><span class="sxs-lookup"><span data-stu-id="34035-214">It can be compiled with the [latest tagged release][arch-release]</span></span>
-* <span data-ttu-id="34035-215">[最新のコミットからマスターに][arch-git]コンパイルできます</span><span class="sxs-lookup"><span data-stu-id="34035-215">It can be compiled from the [latest commit to master][arch-git]</span></span>
-* <span data-ttu-id="34035-216">[最新のリリース バイナリ][arch-bin]でインストールできます</span><span class="sxs-lookup"><span data-stu-id="34035-216">It can be installed using the [latest release binary][arch-bin]</span></span>
+* <span data-ttu-id="ada2a-214">[タグが付けられた最新のリリース][arch-release]でコンパイルできます</span><span class="sxs-lookup"><span data-stu-id="ada2a-214">It can be compiled with the [latest tagged release][arch-release]</span></span>
+* <span data-ttu-id="ada2a-215">[最新のコミットからマスターに][arch-git]コンパイルできます</span><span class="sxs-lookup"><span data-stu-id="ada2a-215">It can be compiled from the [latest commit to master][arch-git]</span></span>
+* <span data-ttu-id="ada2a-216">[最新のリリース バイナリ][arch-bin]でインストールできます</span><span class="sxs-lookup"><span data-stu-id="ada2a-216">It can be installed using the [latest release binary][arch-bin]</span></span>
 
-<span data-ttu-id="34035-217">AUR のパッケージはコミュニティにより保守管理されています。公式のサポートはありません。</span><span class="sxs-lookup"><span data-stu-id="34035-217">Packages in the AUR are community maintained - there is no official support.</span></span>
+<span data-ttu-id="ada2a-217">AUR のパッケージはコミュニティにより保守管理されています。公式のサポートはありません。</span><span class="sxs-lookup"><span data-stu-id="ada2a-217">Packages in the AUR are community maintained - there is no official support.</span></span>
 
-<span data-ttu-id="34035-218">AUR からパッケージをインストールする方法については、[Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) かコミュニティ [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="34035-218">For more information on installing packages from the AUR, see the [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) or the community [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).</span></span>
+<span data-ttu-id="ada2a-218">AUR からパッケージをインストールする方法については、[Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) かコミュニティ [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile) をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="ada2a-218">For more information on installing packages from the AUR, see the [Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) or the community [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile).</span></span>
 
 [Arch Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
 [arch-git]: https://aur.archlinux.org/packages/powershell-git/
 [arch-bin]: https://aur.archlinux.org/packages/powershell-bin/
 
-## <a name="snap-package"></a><span data-ttu-id="34035-220">Snap パッケージ</span><span class="sxs-lookup"><span data-stu-id="34035-220">Snap Package</span></span>
+## <a name="snap-package"></a><span data-ttu-id="ada2a-220">Snap パッケージ</span><span class="sxs-lookup"><span data-stu-id="ada2a-220">Snap Package</span></span>
 
-### <a name="getting-snapd"></a><span data-ttu-id="34035-221">Snapd の取得</span><span class="sxs-lookup"><span data-stu-id="34035-221">Getting snapd</span></span>
+### <a name="getting-snapd"></a><span data-ttu-id="ada2a-221">Snapd の取得</span><span class="sxs-lookup"><span data-stu-id="ada2a-221">Getting snapd</span></span>
 
-<span data-ttu-id="34035-222">Snap を実行するには、`snapd` が必要です。</span><span class="sxs-lookup"><span data-stu-id="34035-222">`snapd` is required to run snaps.</span></span>
-<span data-ttu-id="34035-223">`snapd` がインストールされているかどうかを確認するには、[こちらの手順](https://docs.snapcraft.io/core/install)を使用してください。</span><span class="sxs-lookup"><span data-stu-id="34035-223">Use [these instructions](https://docs.snapcraft.io/core/install) to make sure you have `snapd` installed.</span></span>
+<span data-ttu-id="ada2a-222">Snap を実行するには、`snapd` が必要です。</span><span class="sxs-lookup"><span data-stu-id="ada2a-222">`snapd` is required to run snaps.</span></span>
+<span data-ttu-id="ada2a-223">`snapd` がインストールされているかどうかを確認するには、[こちらの手順](https://docs.snapcraft.io/core/install)を使用してください。</span><span class="sxs-lookup"><span data-stu-id="ada2a-223">Use [these instructions](https://docs.snapcraft.io/core/install) to make sure you have `snapd` installed.</span></span>
 
-### <a name="installation-via-snap"></a><span data-ttu-id="34035-224">Snap を使用したインストール</span><span class="sxs-lookup"><span data-stu-id="34035-224">Installation via Snap</span></span>
+### <a name="installation-via-snap"></a><span data-ttu-id="ada2a-224">Snap を使用したインストール</span><span class="sxs-lookup"><span data-stu-id="ada2a-224">Installation via Snap</span></span>
 
-<span data-ttu-id="34035-225">Linux 向け PowerShell Core は [Snap ストア](https://snapcraft.io/store)に公開されるため、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="34035-225">PowerShell Core, for Linux, is published to the [Snap store](https://snapcraft.io/store) for easy installation (and updates).</span></span>
-<span data-ttu-id="34035-226">この方法を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="34035-226">This is the preferred method.</span></span>
+<span data-ttu-id="ada2a-225">Linux 向け PowerShell Core は [Snap ストア](https://snapcraft.io/store)に公開されるため、インストール (と更新) が簡単です。</span><span class="sxs-lookup"><span data-stu-id="ada2a-225">PowerShell Core, for Linux, is published to the [Snap store](https://snapcraft.io/store) for easy installation (and updates).</span></span>
+<span data-ttu-id="ada2a-226">この方法を使用することをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-226">This is the preferred method.</span></span>
 
 ```sh
 # Install PowerShell
@@ -520,7 +524,7 @@ sudo snap install powershell --classic
 pwsh
 ```
 
-<span data-ttu-id="34035-227">プレビュー バージョンをインストールする場合は、次の方法を使用します。</span><span class="sxs-lookup"><span data-stu-id="34035-227">If you want to install preview version, use following method.</span></span>
+<span data-ttu-id="ada2a-227">プレビュー バージョンをインストールする場合は、次の方法を使用します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-227">If you want to install preview version, use following method.</span></span>
 
 ```sh
 # Install PowerShell
@@ -530,23 +534,23 @@ sudo snap install powershell-preview --classic
 pwsh-preview
 ```
 
-<span data-ttu-id="34035-228">Snap のインストールが自動的にアップグレードされた後も、`sudo snap refresh powershell` または `sudo snap refresh powershell-preview` を使用してアップグレードをトリガーすることができます。</span><span class="sxs-lookup"><span data-stu-id="34035-228">After installing Snap will automatically upgrade, but you can trigger an upgrade using `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.</span></span>
+<span data-ttu-id="ada2a-228">Snap のインストールが自動的にアップグレードされた後も、`sudo snap refresh powershell` または `sudo snap refresh powershell-preview` を使用してアップグレードをトリガーすることができます。</span><span class="sxs-lookup"><span data-stu-id="ada2a-228">After installing Snap will automatically upgrade, but you can trigger an upgrade using `sudo snap refresh powershell` or `sudo snap refresh powershell-preview`.</span></span>
 
-### <a name="uninstallation"></a><span data-ttu-id="34035-229">アンインストール</span><span class="sxs-lookup"><span data-stu-id="34035-229">Uninstallation</span></span>
+### <a name="uninstallation"></a><span data-ttu-id="ada2a-229">アンインストール</span><span class="sxs-lookup"><span data-stu-id="ada2a-229">Uninstallation</span></span>
 
 ```sh
 sudo snap remove powershell
 ```
 
-<span data-ttu-id="34035-230">または</span><span class="sxs-lookup"><span data-stu-id="34035-230">or</span></span>
+<span data-ttu-id="ada2a-230">または</span><span class="sxs-lookup"><span data-stu-id="ada2a-230">or</span></span>
 
 ```sh
 sudo snap remove powershell-preview
 ```
 
-## <a name="kali"></a><span data-ttu-id="34035-231">Kali</span><span class="sxs-lookup"><span data-stu-id="34035-231">Kali</span></span>
+## <a name="kali"></a><span data-ttu-id="ada2a-231">Kali</span><span class="sxs-lookup"><span data-stu-id="ada2a-231">Kali</span></span>
 
-### <a name="installation---kali"></a><span data-ttu-id="34035-232">インストール - Kali</span><span class="sxs-lookup"><span data-stu-id="34035-232">Installation - Kali</span></span>
+### <a name="installation---kali"></a><span data-ttu-id="ada2a-232">インストール - Kali</span><span class="sxs-lookup"><span data-stu-id="ada2a-232">Installation - Kali</span></span>
 
 ```sh
 # Download & Install prerequisites
@@ -567,29 +571,39 @@ apt-get update && apt-get install -y powershell
 pwsh
 ```
 
-### <a name="uninstallation---kali"></a><span data-ttu-id="34035-233">アンインストール - Kali</span><span class="sxs-lookup"><span data-stu-id="34035-233">Uninstallation - Kali</span></span>
+### <a name="uninstallation---kali"></a><span data-ttu-id="ada2a-233">アンインストール - Kali</span><span class="sxs-lookup"><span data-stu-id="ada2a-233">Uninstallation - Kali</span></span>
 
 ```sh
 # Uninstall PowerShell package
 apt-get remove -y powershell
 ```
 
-## <a name="raspbian"></a><span data-ttu-id="34035-234">Raspbian</span><span class="sxs-lookup"><span data-stu-id="34035-234">Raspbian</span></span>
+## <a name="raspbian"></a><span data-ttu-id="ada2a-234">Raspbian</span><span class="sxs-lookup"><span data-stu-id="ada2a-234">Raspbian</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="34035-235">Raspbian のサポートは試験段階です。</span><span class="sxs-lookup"><span data-stu-id="34035-235">Raspbian support is experimental.</span></span>
+> <span data-ttu-id="ada2a-235">Raspbian のサポートは試験段階です。</span><span class="sxs-lookup"><span data-stu-id="ada2a-235">Raspbian support is experimental.</span></span>
 
-<span data-ttu-id="34035-236">現在のところ、PowerShell は Raspbian Stretch でのみサポートされています。</span><span class="sxs-lookup"><span data-stu-id="34035-236">Currently, PowerShell is only supported on Raspbian Stretch.</span></span>
+<span data-ttu-id="ada2a-236">現在のところ、PowerShell は Raspbian Stretch でのみサポートされています。</span><span class="sxs-lookup"><span data-stu-id="ada2a-236">Currently, PowerShell is only supported on Raspbian Stretch.</span></span>
 
-<span data-ttu-id="34035-237">また、Core CLR (と PowerShell Core) は Pi 2 および Pi 3 デバイス上でのみ動作します。これは、[Pi Zero](https://github.com/dotnet/coreclr/issues/10605) のような他のデバイスにはサポートされていないプロセッサが搭載されているためです。</span><span class="sxs-lookup"><span data-stu-id="34035-237">Also CoreCLR (and thus PowerShell Core) will only work on Pi 2 and Pi 3 devices as other devices, like [Pi Zero](https://github.com/dotnet/coreclr/issues/10605), have an unsupported processor.</span></span>
+<span data-ttu-id="ada2a-237">また、Core CLR (と PowerShell Core) は Pi 2 および Pi 3 デバイス上でのみ動作します。これは、[Pi Zero](https://github.com/dotnet/coreclr/issues/10605) のような他のデバイスにはサポートされていないプロセッサが搭載されているためです。</span><span class="sxs-lookup"><span data-stu-id="ada2a-237">Also CoreCLR (and thus PowerShell Core) will only work on Pi 2 and Pi 3 devices as other devices, like [Pi Zero](https://github.com/dotnet/coreclr/issues/10605), have an unsupported processor.</span></span>
 
-<span data-ttu-id="34035-238">[Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) をダウンロードし、[インストール手順](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)に従って Pi にインストールしてください。</span><span class="sxs-lookup"><span data-stu-id="34035-238">Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) and follow the [installation instructions](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) to get it onto your Pi.</span></span>
+<span data-ttu-id="ada2a-238">[Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) をダウンロードし、[インストール手順](https://www.raspberrypi.org/documentation/installation/installing-images/README.md)に従って Pi にインストールしてください。</span><span class="sxs-lookup"><span data-stu-id="ada2a-238">Download [Raspbian Stretch](https://www.raspberrypi.org/downloads/raspbian/) and follow the [installation instructions](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) to get it onto your Pi.</span></span>
 
-### <a name="installation---raspbian"></a><span data-ttu-id="34035-239">インストール - Raspbian</span><span class="sxs-lookup"><span data-stu-id="34035-239">Installation - Raspbian</span></span>
+### <a name="installation---raspbian"></a><span data-ttu-id="ada2a-239">インストール - Raspbian</span><span class="sxs-lookup"><span data-stu-id="ada2a-239">Installation - Raspbian</span></span>
 
 ```sh
-# Install prerequisites
-sudo apt-get install libunwind8
+###################################
+# Prerequisites
+
+# Update package lists
+sudo apt-get update
+
+# Install libunwind8 and libssl1.0
+# Regex is used to ensure that we do not install libssl1.0-dev, as it is a variant that is not required
+sudo apt-get install '^libssl1.0.[0-9]$' libunwind8 -y
+
+###################################
+# Download and extract PowerShell
 
 # Grab the latest tar.gz
 wget https://github.com/PowerShell/PowerShell/releases/download/v6.2.0/powershell-6.2.0-linux-arm32.tar.gz
@@ -604,7 +618,7 @@ tar -xvf ./powershell-6.2.0-linux-arm32.tar.gz -C ~/powershell
 ~/powershell/pwsh
 ```
 
-<span data-ttu-id="34035-240">必要に応じて、"pwsh" バイナリへのパスを指定せずに、シンボリック リンクを作成して PowerShell を起動することができます</span><span class="sxs-lookup"><span data-stu-id="34035-240">Optionally you can create a symbolic link to be able to start PowerShell without specifying path to the "pwsh" binary</span></span>
+<span data-ttu-id="ada2a-240">必要に応じて、"pwsh" バイナリへのパスを指定せずに、シンボリック リンクを作成して PowerShell を起動することができます</span><span class="sxs-lookup"><span data-stu-id="ada2a-240">Optionally you can create a symbolic link to be able to start PowerShell without specifying path to the "pwsh" binary</span></span>
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
@@ -616,44 +630,44 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 # Now to start PowerShell you can just run "pwsh"
 ```
 
-### <a name="uninstallation---raspbian"></a><span data-ttu-id="34035-241">アンインストール - Raspbian</span><span class="sxs-lookup"><span data-stu-id="34035-241">Uninstallation - Raspbian</span></span>
+### <a name="uninstallation---raspbian"></a><span data-ttu-id="ada2a-241">アンインストール - Raspbian</span><span class="sxs-lookup"><span data-stu-id="ada2a-241">Uninstallation - Raspbian</span></span>
 
 ```sh
 rm -rf ~/powershell
 ```
 
-## <a name="binary-archives"></a><span data-ttu-id="34035-242">バイナリ アーカイブ</span><span class="sxs-lookup"><span data-stu-id="34035-242">Binary Archives</span></span>
+## <a name="binary-archives"></a><span data-ttu-id="ada2a-242">バイナリ アーカイブ</span><span class="sxs-lookup"><span data-stu-id="ada2a-242">Binary Archives</span></span>
 
-<span data-ttu-id="34035-243">Linux プラットフォームで高度な展開シナリオを実行するために、PowerShell バイナリ `tar.gz` アーカイブが用意されています。</span><span class="sxs-lookup"><span data-stu-id="34035-243">PowerShell binary `tar.gz` archives are provided for Linux platforms to enable advanced deployment scenarios.</span></span>
+<span data-ttu-id="ada2a-243">Linux プラットフォームで高度な展開シナリオを実行するために、PowerShell バイナリ `tar.gz` アーカイブが用意されています。</span><span class="sxs-lookup"><span data-stu-id="ada2a-243">PowerShell binary `tar.gz` archives are provided for Linux platforms to enable advanced deployment scenarios.</span></span>
 
-### <a name="dependencies"></a><span data-ttu-id="34035-244">依存関係</span><span class="sxs-lookup"><span data-stu-id="34035-244">Dependencies</span></span>
+### <a name="dependencies"></a><span data-ttu-id="ada2a-244">依存関係</span><span class="sxs-lookup"><span data-stu-id="ada2a-244">Dependencies</span></span>
 
-<span data-ttu-id="34035-245">PowerShell はすべての Linux ディストリビューションに移植可能なバイナリをビルドします。</span><span class="sxs-lookup"><span data-stu-id="34035-245">PowerShell builds portable binaries for all Linux distributions.</span></span>
-<span data-ttu-id="34035-246">ただし、.NET Core ランタイムはディストリビューションごとに異なる依存関係を必要とします。PowerShell でも同じです。</span><span class="sxs-lookup"><span data-stu-id="34035-246">But .NET Core runtime requires different dependencies on different distributions, and hence PowerShell does the same.</span></span>
+<span data-ttu-id="ada2a-245">PowerShell はすべての Linux ディストリビューションに移植可能なバイナリをビルドします。</span><span class="sxs-lookup"><span data-stu-id="ada2a-245">PowerShell builds portable binaries for all Linux distributions.</span></span>
+<span data-ttu-id="ada2a-246">ただし、.NET Core ランタイムはディストリビューションごとに異なる依存関係を必要とします。PowerShell でも同じです。</span><span class="sxs-lookup"><span data-stu-id="ada2a-246">But .NET Core runtime requires different dependencies on different distributions, and hence PowerShell does the same.</span></span>
 
-<span data-ttu-id="34035-247">次の表は、公式にサポートされている Linux ディストリビューションと .NET Core 2.0 の依存関係をまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="34035-247">The following chart shows the .NET Core 2.0 dependencies that are officially supported on different Linux distributions.</span></span>
+<span data-ttu-id="ada2a-247">次の表は、公式にサポートされている Linux ディストリビューションと .NET Core 2.0 の依存関係をまとめたものです。</span><span class="sxs-lookup"><span data-stu-id="ada2a-247">The following chart shows the .NET Core 2.0 dependencies that are officially supported on different Linux distributions.</span></span>
 
-| <span data-ttu-id="34035-248">OS</span><span class="sxs-lookup"><span data-stu-id="34035-248">OS</span></span>                 | <span data-ttu-id="34035-249">依存関係</span><span class="sxs-lookup"><span data-stu-id="34035-249">Dependencies</span></span> |
+| <span data-ttu-id="ada2a-248">OS</span><span class="sxs-lookup"><span data-stu-id="ada2a-248">OS</span></span>                 | <span data-ttu-id="ada2a-249">依存関係</span><span class="sxs-lookup"><span data-stu-id="ada2a-249">Dependencies</span></span> |
 | ------------------ | ------------ |
-| <span data-ttu-id="34035-250">Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="34035-250">Ubuntu 14.04</span></span>       | <span data-ttu-id="34035-251">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="34035-251">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="34035-252">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu52</span><span class="sxs-lookup"><span data-stu-id="34035-252">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span></span> |
-| <span data-ttu-id="34035-253">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="34035-253">Ubuntu 16.04</span></span>       | <span data-ttu-id="34035-254">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="34035-254">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="34035-255">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu55</span><span class="sxs-lookup"><span data-stu-id="34035-255">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55</span></span> |
-| <span data-ttu-id="34035-256">Ubuntu 17.10</span><span class="sxs-lookup"><span data-stu-id="34035-256">Ubuntu 17.10</span></span>       | <span data-ttu-id="34035-257">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="34035-257">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="34035-258">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu57</span><span class="sxs-lookup"><span data-stu-id="34035-258">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57</span></span> |
-| <span data-ttu-id="34035-259">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="34035-259">Ubuntu 18.04</span></span>       | <span data-ttu-id="34035-260">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="34035-260">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="34035-261">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu60</span><span class="sxs-lookup"><span data-stu-id="34035-261">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60</span></span> |
-| <span data-ttu-id="34035-262">Debian 8 (Jessie)</span><span class="sxs-lookup"><span data-stu-id="34035-262">Debian 8 (Jessie)</span></span>  | <span data-ttu-id="34035-263">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="34035-263">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="34035-264">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu52</span><span class="sxs-lookup"><span data-stu-id="34035-264">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span></span> |
-| <span data-ttu-id="34035-265">Debian 9 (Stretch)</span><span class="sxs-lookup"><span data-stu-id="34035-265">Debian 9 (Stretch)</span></span> | <span data-ttu-id="34035-266">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="34035-266">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="34035-267">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.2、libicu57</span><span class="sxs-lookup"><span data-stu-id="34035-267">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57</span></span> |
-| <span data-ttu-id="34035-268">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="34035-268">CentOS 7</span></span> <br> <span data-ttu-id="34035-269">Oracle Linux 7</span><span class="sxs-lookup"><span data-stu-id="34035-269">Oracle Linux 7</span></span> <br> <span data-ttu-id="34035-270">RHEL 7</span><span class="sxs-lookup"><span data-stu-id="34035-270">RHEL 7</span></span> | <span data-ttu-id="34035-271">libunwind、libcurl、openssl-libs、libicu</span><span class="sxs-lookup"><span data-stu-id="34035-271">libunwind, libcurl, openssl-libs, libicu</span></span> |
-| <span data-ttu-id="34035-272">openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="34035-272">openSUSE 42.3</span></span> | <span data-ttu-id="34035-273">libcurl4、libopenssl1_0_0、libicu52_1</span><span class="sxs-lookup"><span data-stu-id="34035-273">libcurl4, libopenssl1_0_0, libicu52_1</span></span> |
-| <span data-ttu-id="34035-274">openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="34035-274">openSUSE Leap 15</span></span> | <span data-ttu-id="34035-275">libcurl4、libopenssl1_0_0、libicu60_2</span><span class="sxs-lookup"><span data-stu-id="34035-275">libcurl4, libopenssl1_0_0, libicu60_2</span></span> |
-| <span data-ttu-id="34035-276">Fedora 27</span><span class="sxs-lookup"><span data-stu-id="34035-276">Fedora 27</span></span> <br> <span data-ttu-id="34035-277">Fedora 28</span><span class="sxs-lookup"><span data-stu-id="34035-277">Fedora 28</span></span> | <span data-ttu-id="34035-278">libunwind、libcurl、openssl-libs、libicu、compat-openssl10</span><span class="sxs-lookup"><span data-stu-id="34035-278">libunwind, libcurl, openssl-libs, libicu, compat-openssl10</span></span> |
+| <span data-ttu-id="ada2a-250">Ubuntu 14.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-250">Ubuntu 14.04</span></span>       | <span data-ttu-id="ada2a-251">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="ada2a-251">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="ada2a-252">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu52</span><span class="sxs-lookup"><span data-stu-id="ada2a-252">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span></span> |
+| <span data-ttu-id="ada2a-253">Ubuntu 16.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-253">Ubuntu 16.04</span></span>       | <span data-ttu-id="ada2a-254">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="ada2a-254">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="ada2a-255">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu55</span><span class="sxs-lookup"><span data-stu-id="ada2a-255">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu55</span></span> |
+| <span data-ttu-id="ada2a-256">Ubuntu 17.10</span><span class="sxs-lookup"><span data-stu-id="ada2a-256">Ubuntu 17.10</span></span>       | <span data-ttu-id="ada2a-257">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="ada2a-257">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="ada2a-258">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu57</span><span class="sxs-lookup"><span data-stu-id="ada2a-258">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu57</span></span> |
+| <span data-ttu-id="ada2a-259">Ubuntu 18.04</span><span class="sxs-lookup"><span data-stu-id="ada2a-259">Ubuntu 18.04</span></span>       | <span data-ttu-id="ada2a-260">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="ada2a-260">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="ada2a-261">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu60</span><span class="sxs-lookup"><span data-stu-id="ada2a-261">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu60</span></span> |
+| <span data-ttu-id="ada2a-262">Debian 8 (Jessie)</span><span class="sxs-lookup"><span data-stu-id="ada2a-262">Debian 8 (Jessie)</span></span>  | <span data-ttu-id="ada2a-263">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="ada2a-263">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="ada2a-264">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.0、libicu52</span><span class="sxs-lookup"><span data-stu-id="ada2a-264">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.0, libicu52</span></span> |
+| <span data-ttu-id="ada2a-265">Debian 9 (Stretch)</span><span class="sxs-lookup"><span data-stu-id="ada2a-265">Debian 9 (Stretch)</span></span> | <span data-ttu-id="ada2a-266">libc6、libgcc1、libgssapi-krb5-2、liblttng-ust0、libstdc++6、</span><span class="sxs-lookup"><span data-stu-id="ada2a-266">libc6, libgcc1, libgssapi-krb5-2, liblttng-ust0, libstdc++6,</span></span> <br> <span data-ttu-id="ada2a-267">libcurl3、libunwind8、libuuid1、zlib1g、libssl1.0.2、libicu57</span><span class="sxs-lookup"><span data-stu-id="ada2a-267">libcurl3, libunwind8, libuuid1, zlib1g, libssl1.0.2, libicu57</span></span> |
+| <span data-ttu-id="ada2a-268">CentOS 7</span><span class="sxs-lookup"><span data-stu-id="ada2a-268">CentOS 7</span></span> <br> <span data-ttu-id="ada2a-269">Oracle Linux 7</span><span class="sxs-lookup"><span data-stu-id="ada2a-269">Oracle Linux 7</span></span> <br> <span data-ttu-id="ada2a-270">RHEL 7</span><span class="sxs-lookup"><span data-stu-id="ada2a-270">RHEL 7</span></span> | <span data-ttu-id="ada2a-271">libunwind、libcurl、openssl-libs、libicu</span><span class="sxs-lookup"><span data-stu-id="ada2a-271">libunwind, libcurl, openssl-libs, libicu</span></span> |
+| <span data-ttu-id="ada2a-272">openSUSE 42.3</span><span class="sxs-lookup"><span data-stu-id="ada2a-272">openSUSE 42.3</span></span> | <span data-ttu-id="ada2a-273">libcurl4、libopenssl1_0_0、libicu52_1</span><span class="sxs-lookup"><span data-stu-id="ada2a-273">libcurl4, libopenssl1_0_0, libicu52_1</span></span> |
+| <span data-ttu-id="ada2a-274">openSUSE Leap 15</span><span class="sxs-lookup"><span data-stu-id="ada2a-274">openSUSE Leap 15</span></span> | <span data-ttu-id="ada2a-275">libcurl4、libopenssl1_0_0、libicu60_2</span><span class="sxs-lookup"><span data-stu-id="ada2a-275">libcurl4, libopenssl1_0_0, libicu60_2</span></span> |
+| <span data-ttu-id="ada2a-276">Fedora 27</span><span class="sxs-lookup"><span data-stu-id="ada2a-276">Fedora 27</span></span> <br> <span data-ttu-id="ada2a-277">Fedora 28</span><span class="sxs-lookup"><span data-stu-id="ada2a-277">Fedora 28</span></span> | <span data-ttu-id="ada2a-278">libunwind、libcurl、openssl-libs、libicu、compat-openssl10</span><span class="sxs-lookup"><span data-stu-id="ada2a-278">libunwind, libcurl, openssl-libs, libicu, compat-openssl10</span></span> |
 
-<span data-ttu-id="34035-279">公式にサポートされていない Linux ディストリビューションで PowerShell バイナリを展開するには、別の手順で、ターゲット OS に必要な依存関係をインストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="34035-279">To deploy PowerShell binaries on Linux distributions that are not officially supported, you need to install the necessary dependencies for the target OS in separate steps.</span></span>
-<span data-ttu-id="34035-280">たとえば、[Amazon Linux dockerfile][amazon-dockerfile] は依存関係を先にインストールし、それから Linux `tar.gz` アーカイブを抽出します。</span><span class="sxs-lookup"><span data-stu-id="34035-280">For example, our [Amazon Linux dockerfile][amazon-dockerfile] installs dependencies first, and then extracts the Linux `tar.gz` archive.</span></span>
+<span data-ttu-id="ada2a-279">公式にサポートされていない Linux ディストリビューションで PowerShell バイナリを展開するには、別の手順で、ターゲット OS に必要な依存関係をインストールする必要があります。</span><span class="sxs-lookup"><span data-stu-id="ada2a-279">To deploy PowerShell binaries on Linux distributions that are not officially supported, you need to install the necessary dependencies for the target OS in separate steps.</span></span>
+<span data-ttu-id="ada2a-280">たとえば、[Amazon Linux Dockerfile][amazon-dockerfile] では依存関係を先にインストールし、それから Linux `tar.gz` アーカイブを抽出します。</span><span class="sxs-lookup"><span data-stu-id="ada2a-280">For example, our [Amazon Linux dockerfile][amazon-dockerfile] installs dependencies first, and then extracts the Linux `tar.gz` archive.</span></span>
 
 [amazon-dockerfile]: https://github.com/PowerShell/PowerShell-Docker/blob/master/release/community-stable/amazonlinux/docker/Dockerfile
 
-### <a name="installation---binary-archives"></a><span data-ttu-id="34035-281">インストール - バイナリ アーカイブ</span><span class="sxs-lookup"><span data-stu-id="34035-281">Installation - Binary Archives</span></span>
+### <a name="installation---binary-archives"></a><span data-ttu-id="ada2a-281">インストール - バイナリ アーカイブ</span><span class="sxs-lookup"><span data-stu-id="ada2a-281">Installation - Binary Archives</span></span>
 
-#### <a name="linux"></a><span data-ttu-id="34035-282">Linux</span><span class="sxs-lookup"><span data-stu-id="34035-282">Linux</span></span>
+#### <a name="linux"></a><span data-ttu-id="ada2a-282">Linux</span><span class="sxs-lookup"><span data-stu-id="ada2a-282">Linux</span></span>
 
 ```sh
 # Download the powershell '.tar.gz' archive
@@ -672,25 +686,25 @@ sudo chmod +x /opt/microsoft/powershell/6.2.0/pwsh
 sudo ln -s /opt/microsoft/powershell/6.2.0/pwsh /usr/bin/pwsh
 ```
 
-### <a name="uninstalling-binary-archives"></a><span data-ttu-id="34035-283">バイナリ アーカイブのアンインストール</span><span class="sxs-lookup"><span data-stu-id="34035-283">Uninstalling binary archives</span></span>
+### <a name="uninstalling-binary-archives"></a><span data-ttu-id="ada2a-283">バイナリ アーカイブのアンインストール</span><span class="sxs-lookup"><span data-stu-id="ada2a-283">Uninstalling binary archives</span></span>
 
 ```sh
 sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 ```
 
-## <a name="paths"></a><span data-ttu-id="34035-284">パス</span><span class="sxs-lookup"><span data-stu-id="34035-284">Paths</span></span>
+## <a name="paths"></a><span data-ttu-id="ada2a-284">パス</span><span class="sxs-lookup"><span data-stu-id="ada2a-284">Paths</span></span>
 
-* <span data-ttu-id="34035-285">`$PSHOME` は `/opt/microsoft/powershell/6.2.0/` です</span><span class="sxs-lookup"><span data-stu-id="34035-285">`$PSHOME` is `/opt/microsoft/powershell/6.2.0/`</span></span>
-* <span data-ttu-id="34035-286">ユーザー プロファイルは `~/.config/powershell/profile.ps1` から読み込まれます</span><span class="sxs-lookup"><span data-stu-id="34035-286">User profiles will be read from `~/.config/powershell/profile.ps1`</span></span>
-* <span data-ttu-id="34035-287">既定のプロファイルは `$PSHOME/profile.ps1` から読み込まれます</span><span class="sxs-lookup"><span data-stu-id="34035-287">Default profiles will be read from `$PSHOME/profile.ps1`</span></span>
-* <span data-ttu-id="34035-288">ユーザー モジュールは `~/.local/share/powershell/Modules` から読み込まれます</span><span class="sxs-lookup"><span data-stu-id="34035-288">User modules will be read from `~/.local/share/powershell/Modules`</span></span>
-* <span data-ttu-id="34035-289">共有モジュールは `/usr/local/share/powershell/Modules` から読み込まれます</span><span class="sxs-lookup"><span data-stu-id="34035-289">Shared modules will be read from `/usr/local/share/powershell/Modules`</span></span>
-* <span data-ttu-id="34035-290">既定のモジュールは `$PSHOME/Modules` から読み込まれます</span><span class="sxs-lookup"><span data-stu-id="34035-290">Default modules will be read from `$PSHOME/Modules`</span></span>
-* <span data-ttu-id="34035-291">PSReadline 履歴は `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt` に記録されます</span><span class="sxs-lookup"><span data-stu-id="34035-291">PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span></span>
+* <span data-ttu-id="ada2a-285">`$PSHOME` は `/opt/microsoft/powershell/6.2.0/` です</span><span class="sxs-lookup"><span data-stu-id="ada2a-285">`$PSHOME` is `/opt/microsoft/powershell/6.2.0/`</span></span>
+* <span data-ttu-id="ada2a-286">ユーザー プロファイルは `~/.config/powershell/profile.ps1` から読み込まれます</span><span class="sxs-lookup"><span data-stu-id="ada2a-286">User profiles will be read from `~/.config/powershell/profile.ps1`</span></span>
+* <span data-ttu-id="ada2a-287">既定のプロファイルは `$PSHOME/profile.ps1` から読み込まれます</span><span class="sxs-lookup"><span data-stu-id="ada2a-287">Default profiles will be read from `$PSHOME/profile.ps1`</span></span>
+* <span data-ttu-id="ada2a-288">ユーザー モジュールは `~/.local/share/powershell/Modules` から読み込まれます</span><span class="sxs-lookup"><span data-stu-id="ada2a-288">User modules will be read from `~/.local/share/powershell/Modules`</span></span>
+* <span data-ttu-id="ada2a-289">共有モジュールは `/usr/local/share/powershell/Modules` から読み込まれます</span><span class="sxs-lookup"><span data-stu-id="ada2a-289">Shared modules will be read from `/usr/local/share/powershell/Modules`</span></span>
+* <span data-ttu-id="ada2a-290">既定のモジュールは `$PSHOME/Modules` から読み込まれます</span><span class="sxs-lookup"><span data-stu-id="ada2a-290">Default modules will be read from `$PSHOME/Modules`</span></span>
+* <span data-ttu-id="ada2a-291">PSReadline 履歴は `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt` に記録されます</span><span class="sxs-lookup"><span data-stu-id="ada2a-291">PSReadline history will be recorded to `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt`</span></span>
 
-<span data-ttu-id="34035-292">プロファイルは PowerShell のホスト別構成を順守します。そのため、既定のホスト固有プロファイルは同じ場所の `Microsoft.PowerShell_profile.ps1` にあります。</span><span class="sxs-lookup"><span data-stu-id="34035-292">The profiles respect PowerShell's per-host configuration, so the default host-specific profiles exists at `Microsoft.PowerShell_profile.ps1` in the same locations.</span></span>
+<span data-ttu-id="ada2a-292">プロファイルは PowerShell のホスト別構成を順守します。そのため、既定のホスト固有プロファイルは同じ場所の `Microsoft.PowerShell_profile.ps1` にあります。</span><span class="sxs-lookup"><span data-stu-id="ada2a-292">The profiles respect PowerShell's per-host configuration, so the default host-specific profiles exists at `Microsoft.PowerShell_profile.ps1` in the same locations.</span></span>
 
-<span data-ttu-id="34035-293">PowerShell は、Linux の [XDG ベース ディレクトリ仕様][xdg-bds]を尊重しています。</span><span class="sxs-lookup"><span data-stu-id="34035-293">PowerShell respects the [XDG Base Directory Specification][xdg-bds] on Linux.</span></span>
+<span data-ttu-id="ada2a-293">PowerShell では、Linux の [XDG ベース ディレクトリ仕様][xdg-bds]を尊重しています。</span><span class="sxs-lookup"><span data-stu-id="ada2a-293">PowerShell respects the [XDG Base Directory Specification][xdg-bds] on Linux.</span></span>
 
 [リリース]: https://github.com/PowerShell/PowerShell/releases/latest
 [releases]: https://github.com/PowerShell/PowerShell/releases/latest

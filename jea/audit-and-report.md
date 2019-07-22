@@ -1,56 +1,52 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/10/2019
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の監査とレポート
-ms.openlocfilehash: 2388c735840d8d3683aa8bc9869b9fb0371e5902
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2afefe83acecc1fc3643d49766120ffecc25378f
+ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084081"
+ms.lasthandoff: 07/10/2019
+ms.locfileid: "67726755"
 ---
-# <a name="auditing-and-reporting-on-jea"></a><span data-ttu-id="a7641-103">JEA の監査とレポート</span><span class="sxs-lookup"><span data-stu-id="a7641-103">Auditing and Reporting on JEA</span></span>
+# <a name="auditing-and-reporting-on-jea"></a><span data-ttu-id="d76c2-103">JEA の監査とレポート</span><span class="sxs-lookup"><span data-stu-id="d76c2-103">Auditing and Reporting on JEA</span></span>
 
-> <span data-ttu-id="a7641-104">適用先:Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="a7641-104">Applies to: Windows PowerShell 5.0</span></span>
+<span data-ttu-id="d76c2-104">JEA を展開したら、JEA 構成を定期的に監査する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d76c2-104">After you've deployed JEA, you need to regularly audit the JEA configuration.</span></span> <span data-ttu-id="d76c2-105">監査は、JEA エンドポイントに適切なユーザーがアクセスしていること、ロールの割り当てが適切であることを評価するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="d76c2-105">Auditing helps you assess that the correct people have access to the JEA endpoint and their assigned roles are still appropriate.</span></span>
 
-<span data-ttu-id="a7641-105">JEA の展開後、JEA 構成を定期的に監査することが推奨されます。</span><span class="sxs-lookup"><span data-stu-id="a7641-105">After you've deployed JEA, you will want to regularly audit the JEA configuration.</span></span>
-<span data-ttu-id="a7641-106">JEA エンドポイントに適切なユーザーがアクセスしていること、ロールの割り当てが適切であることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="a7641-106">This will help you assess if the correct people have access to the JEA endpoint and if their assigned roles are still appropriate.</span></span>
+## <a name="find-registered-jea-sessions-on-a-machine"></a><span data-ttu-id="d76c2-106">コンピューターに登録されている JEA セッションを見つける</span><span class="sxs-lookup"><span data-stu-id="d76c2-106">Find registered JEA sessions on a machine</span></span>
 
-<span data-ttu-id="a7641-107">このトピックでは、JEA エンドポイントを監査するさまざまな方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a7641-107">This topic describes the various ways you can audit a JEA endpoint.</span></span>
-
-## <a name="find-registered-jea-sessions-on-a-machine"></a><span data-ttu-id="a7641-108">コンピューターに登録されている JEA セッションを見つける</span><span class="sxs-lookup"><span data-stu-id="a7641-108">Find registered JEA sessions on a machine</span></span>
-
-<span data-ttu-id="a7641-109">コンピューターに登録されている JEA セッションを確認するには、[Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="a7641-109">To check which JEA sessions are registered on a machine, use the [Get-PSSessionConfiguration](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/get-pssessionconfiguration) cmdlet.</span></span>
+<span data-ttu-id="d76c2-107">コンピューターに登録されている JEA セッションを確認するには、[Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration) コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="d76c2-107">To check which JEA sessions are registered on a machine, use the [Get-PSSessionConfiguration](/powershell/module/microsoft.powershell.core/get-pssessionconfiguration) cmdlet.</span></span>
 
 ```powershell
 # Filter for sessions that are configured as 'RestrictedRemoteServer' to find JEA-like session configurations
-PS C:\> Get-PSSessionConfiguration | Where-Object { $_.SessionType -eq 'RestrictedRemoteServer' }
+Get-PSSessionConfiguration | Where-Object { $_.SessionType -eq 'RestrictedRemoteServer' }
+```
 
-
+```Output
 Name          : JEAMaintenance
 PSVersion     : 5.1
 StartupScript :
 RunAsUser     :
-Permission    : CONTOSO\JEA_DNS_ADMINS AccessAllowed, CONTOSO\JEA_DNS_OPERATORS AccessAllowed, CONTOSO\JEA_DNS_AUDITORS AccessAllowed
+Permission    : CONTOSO\JEA_DNS_ADMINS AccessAllowed, CONTOSO\JEA_DNS_OPERATORS AccessAllowed,
+                CONTOSO\JEA_DNS_AUDITORS AccessAllowed
 ```
 
-<span data-ttu-id="a7641-110">エンドポイントに対して有効な権限は "Permission" プロパティで確認できます。</span><span class="sxs-lookup"><span data-stu-id="a7641-110">The effective rights for the endpoint are listed in the "Permission" property.</span></span>
-<span data-ttu-id="a7641-111">これらのユーザーには、JEA エンドポイントに接続する権限が与えられますが、アクセスできるロール (さらにはコマンド) は、エンドポイントの登録に使用された[セッション構成ファイル](session-configurations.md)の "RoleDefinitions" フィールドにより決定されます。</span><span class="sxs-lookup"><span data-stu-id="a7641-111">These users have the right to connect to the JEA endpoint, but which roles (and, by extension, commands) they have access to is determined by the "RoleDefinitions" field in the [session configuration file](session-configurations.md) that was used to register the endpoint.</span></span>
-
-<span data-ttu-id="a7641-112">"RoleDefinitions" プロパティのデータを展開すると、登録されている JEA エンドポイントのロール マッピングを評価できます。</span><span class="sxs-lookup"><span data-stu-id="a7641-112">You can evaluate the role mappings in a registered JEA endpoint by expanding the data in the "RoleDefinitions" property.</span></span>
+<span data-ttu-id="d76c2-108">エンドポイントに対して有効な権限は **Permission** プロパティで確認できます。</span><span class="sxs-lookup"><span data-stu-id="d76c2-108">The effective rights for the endpoint are listed in the **Permission** property.</span></span> <span data-ttu-id="d76c2-109">これらのユーザーには、JEA エンドポイントに接続する権限が与えられています。</span><span class="sxs-lookup"><span data-stu-id="d76c2-109">These users have the right to connect to the JEA endpoint.</span></span> <span data-ttu-id="d76c2-110">ただし、アクセスできるロールとコマンドは、エンドポイントの登録に使用された[セッション構成ファイル](session-configurations.md)の **RoleDefinitions** プロパティによって決まります。</span><span class="sxs-lookup"><span data-stu-id="d76c2-110">However, the roles and commands they have access to is determined by the **RoleDefinitions** property in the [session configuration file](session-configurations.md) that was used to register the endpoint.</span></span> <span data-ttu-id="d76c2-111">**RoleDefinitions** プロパティを展開して、登録されている JEA エンドポイントのロール マッピングを評価します。</span><span class="sxs-lookup"><span data-stu-id="d76c2-111">Expand the **RoleDefinitions** property to evaluate the role mappings in a registered JEA endpoint.</span></span>
 
 ```powershell
 # Get the desired session configuration
 $jea = Get-PSSessionConfiguration -Name 'JEAMaintenance'
 
 # Enumerate users/groups and which roles they have access to
-$jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{ Name = 'Role Capabilities'; Expression = { $_.Value.RoleCapabilities } }
+$jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{
+  Name = 'Role Capabilities'
+  Expression = { $_.Value.RoleCapabilities }
+}
 ```
 
-## <a name="find-available-role-capabilities-on-the-machine"></a><span data-ttu-id="a7641-113">コンピューターで利用できるロール機能を見つける</span><span class="sxs-lookup"><span data-stu-id="a7641-113">Find available role capabilities on the machine</span></span>
+## <a name="find-available-role-capabilities-on-the-machine"></a><span data-ttu-id="d76c2-112">コンピューターで利用できるロール機能を見つける</span><span class="sxs-lookup"><span data-stu-id="d76c2-112">Find available role capabilities on the machine</span></span>
 
-<span data-ttu-id="a7641-114">有効な PowerShell モジュール内の "RoleCapabilities" フォルダーに保存されている場合、ロール機能ファイルは JEA のみで利用されます。</span><span class="sxs-lookup"><span data-stu-id="a7641-114">Role capability files will only be used by JEA if they are stored in a "RoleCapabilities" folder inside a valid PowerShell module.</span></span>
-<span data-ttu-id="a7641-115">利用可能なモジュールの一覧を検索することで、コンピューターで利用できるすべてのロール機能を見つけることができます。</span><span class="sxs-lookup"><span data-stu-id="a7641-115">You can find all role capabilities available on a computer by searching the list of available modules.</span></span>
+<span data-ttu-id="d76c2-113">JEA では、PowerShell モジュール内の **RoleCapabilities** フォルダーに格納されている `.psrc` ファイルからロール機能を取得します。</span><span class="sxs-lookup"><span data-stu-id="d76c2-113">JEA gets role capabilities from the `.psrc` files stored in the **RoleCapabilities** folder inside a PowerShell module.</span></span> <span data-ttu-id="d76c2-114">次の関数は、コンピューターで使用可能なすべてのロール機能を検索します。</span><span class="sxs-lookup"><span data-stu-id="d76c2-114">The following function finds all role capabilities available on a computer.</span></span>
 
 ```powershell
 function Find-LocalRoleCapability {
@@ -65,56 +61,54 @@ function Find-LocalRoleCapability {
     }
 
     # Format the results nicely to make it easier to read
-    $results | Select-Object @{ Name = 'Name'; Expression = { $_.Name.TrimEnd('.psrc') }}, @{ Name = 'Path'; Expression = { $_.FullName }} | Sort-Object Name
+    $results | Select-Object @{ Name = 'Name'; Expression = { $_.Name.TrimEnd('.psrc') }}, @{
+        Name = 'Path'; Expression = { $_.FullName }
+    } | Sort-Object Name
 }
 ```
 
 > [!NOTE]
-> <span data-ttu-id="a7641-116">この関数の結果の順序は、必ずしも、複数のロール機能で同じ名前が共有されているときのロール機能の選択順に一致しません。</span><span class="sxs-lookup"><span data-stu-id="a7641-116">The order of results from this function is not necessarily the order in which the role capabilities will be selected if multiple role capabilities share the same name.</span></span>
+> <span data-ttu-id="d76c2-115">この関数の結果の順序は、必ずしも、複数のロール機能で同じ名前が共有されているときのロール機能の選択順に一致しません。</span><span class="sxs-lookup"><span data-stu-id="d76c2-115">The order of results from this function is not necessarily the order in which the role capabilities will be selected if multiple role capabilities share the same name.</span></span>
 
-## <a name="check-effective-rights-for-a-specific-user"></a><span data-ttu-id="a7641-117">特定のユーザーに対して有効な権限を確認する</span><span class="sxs-lookup"><span data-stu-id="a7641-117">Check effective rights for a specific user</span></span>
+## <a name="check-effective-rights-for-a-specific-user"></a><span data-ttu-id="d76c2-116">特定のユーザーに対して有効な権限を確認する</span><span class="sxs-lookup"><span data-stu-id="d76c2-116">Check effective rights for a specific user</span></span>
 
-<span data-ttu-id="a7641-118">JEA エンドポイントを設定したら、JEA セッションで特定のユーザーが利用できるコマンドを確認することが推奨されます。</span><span class="sxs-lookup"><span data-stu-id="a7641-118">Once you have set up a JEA endpoint, you may want to check which commands are available to a specific user in a JEA session.</span></span>
-<span data-ttu-id="a7641-119">ユーザーが現在のグループ メンバーシップで JEA セッションを開始するのであれば、[Get-PSSessionCapability](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Get-PSSessionCapability) を利用し、ユーザーに該当するすべてのコマンドを列挙できます。</span><span class="sxs-lookup"><span data-stu-id="a7641-119">You can use [Get-PSSessionCapability](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.core/Get-PSSessionCapability) to enumerate all of the commands applicable to a user if they were to start a JEA session with their current group memberships.</span></span>
-<span data-ttu-id="a7641-120">`Get-PSSessionCapability` の出力は、JEA セッションで `Get-Command -CommandType All` を実行している指定ユーザーのそれと同じになります。</span><span class="sxs-lookup"><span data-stu-id="a7641-120">The output of `Get-PSSessionCapability` is identical to that of the specified user running `Get-Command -CommandType All` in a JEA session.</span></span>
+<span data-ttu-id="d76c2-117">[Get-PSSessionCapability](/powershell/module/microsoft.powershell.core/Get-PSSessionCapability) コマンドレットは、ユーザーのグループ メンバーシップに基づいて、JEA エンドポイントで使用可能なすべてのコマンドを列挙します。</span><span class="sxs-lookup"><span data-stu-id="d76c2-117">The [Get-PSSessionCapability](/powershell/module/microsoft.powershell.core/Get-PSSessionCapability) cmdlet enumerates all the commands available on a JEA endpoint based on a user's group memberships.</span></span>
+<span data-ttu-id="d76c2-118">`Get-PSSessionCapability` の出力は、JEA セッションで `Get-Command -CommandType All` を実行している指定ユーザーのそれと同じになります。</span><span class="sxs-lookup"><span data-stu-id="d76c2-118">The output of `Get-PSSessionCapability` is identical to that of the specified user running `Get-Command -CommandType All` in a JEA session.</span></span>
 
 ```powershell
 Get-PSSessionCapability -ConfigurationName 'JEAMaintenance' -Username 'CONTOSO\Alice'
 ```
 
-<span data-ttu-id="a7641-121">ユーザーが、追加 JEA 権限が与えられるグループの永続的なメンバーではないとき、このコマンドレットでこれらの追加のアクセス許可が反映されない場合があります。</span><span class="sxs-lookup"><span data-stu-id="a7641-121">If your users are not permanent members of groups which would grant them additional JEA rights, this cmdlet may not reflect those extra permissions.</span></span>
-<span data-ttu-id="a7641-122">一般的に、Just-In-Time の特権アクセス (必要なときに必要な許可を与える) 管理システムを利用し、セキュリティ グループに一時的に属することをユーザーに許可する場合がそれに該当します。</span><span class="sxs-lookup"><span data-stu-id="a7641-122">This is typically the case when using just-in-time privileged access management systems to allow users to temporarily belong to a security group.</span></span>
-<span data-ttu-id="a7641-123">仕事を行うために必要な最小限のコマンドだけが与えられるように、ユーザーとロール (と各ロールのコンテンツ) のマッピングを常に注意深く評価してください。</span><span class="sxs-lookup"><span data-stu-id="a7641-123">Always carefully evaluate the mapping of users to roles and the contents of each role to ensure users are only getting access to the least amount of commands needed to do their jobs successfully.</span></span>
+<span data-ttu-id="d76c2-119">ユーザーが、追加 JEA 権限が与えられるグループの永続的なメンバーではないとき、このコマンドレットでこれらの追加のアクセス許可が反映されない場合があります。</span><span class="sxs-lookup"><span data-stu-id="d76c2-119">If your users aren't permanent members of groups that would grant them additional JEA rights, this cmdlet may not reflect those extra permissions.</span></span> <span data-ttu-id="d76c2-120">これは Just-In-Time の特権アクセス (必要なときに必要な許可を与える) 管理システムを利用し、セキュリティ グループに一時的に属することをユーザーに許可する場合に発生します。</span><span class="sxs-lookup"><span data-stu-id="d76c2-120">This happens when using just-in-time privileged access management systems to allow users to temporarily belong to a security group.</span></span> <span data-ttu-id="d76c2-121">ユーザーがジョブを正常に実行するために必要なアクセスのレベルだけを得られるように、ユーザーのロールと機能へのマッピングを注意深く評価します。</span><span class="sxs-lookup"><span data-stu-id="d76c2-121">Carefully evaluate the mapping of users to roles and capabilities to ensure that users only get the level of access needed to do their jobs successfully.</span></span>
 
-## <a name="powershell-event-logs"></a><span data-ttu-id="a7641-124">PowerShell イベント ログ</span><span class="sxs-lookup"><span data-stu-id="a7641-124">PowerShell event logs</span></span>
+## <a name="powershell-event-logs"></a><span data-ttu-id="d76c2-122">PowerShell イベント ログ</span><span class="sxs-lookup"><span data-stu-id="d76c2-122">PowerShell event logs</span></span>
 
-<span data-ttu-id="a7641-125">システムでモジュールやスクリプト ブロックのログ記録を有効にしている場合、ユーザーが JEA セッションで実行したコマンドごとに、Windows イベント ログでイベントを検索できます。</span><span class="sxs-lookup"><span data-stu-id="a7641-125">If you enabled module and/or script block logging on the system, you will be able to find events in the Windows event logs for each command a user ran in their JEA sessions.</span></span>
-<span data-ttu-id="a7641-126">イベントを検索するには、Windows イベント ビューアーを起動し、**Microsoft-Windows-PowerShell/Operational** イベント ログに移動し、イベント ID が **4104** のイベントを探します。</span><span class="sxs-lookup"><span data-stu-id="a7641-126">To find these events, open the Windows Event Viewer, navigate to the **Microsoft-Windows-PowerShell/Operational** event log, and look for events with event ID **4104**.</span></span>
+<span data-ttu-id="d76c2-123">システムでモジュールやスクリプト ブロックのログ記録を有効にしている場合、ユーザーが JEA セッションで実行したコマンドごとに、Windows イベント ログでイベントを確認できます。</span><span class="sxs-lookup"><span data-stu-id="d76c2-123">If you enabled module or script block logging on the system, you can see events in the Windows event logs for each command a user runs in a JEA session.</span></span> <span data-ttu-id="d76c2-124">これらのイベントを検索するには、**Microsoft-Windows-PowerShell/Operational** イベント ログを開き、イベント ID が **4104** のイベントを探します。</span><span class="sxs-lookup"><span data-stu-id="d76c2-124">To find these events, open **Microsoft-Windows-PowerShell/Operational** event log and look for events with event ID **4104**.</span></span>
 
-<span data-ttu-id="a7641-127">各イベント ログ エントリに、コマンドを実行したセッションに関する情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="a7641-127">Each event log entry will include information about the session in which the command was run.</span></span>
-<span data-ttu-id="a7641-128">JEA セッションの場合、これには **ConnectedUser** と **RunAsUser** に関する重要な情報が含まれます。ConnectedUser は JEA セッションを実行した実際のユーザーであり、RunAsUser はコマンドの実行に利用されたアカウント JEA を識別します。</span><span class="sxs-lookup"><span data-stu-id="a7641-128">For JEA sessions, this includes important information about the **ConnectedUser**, which is the actual user who created the JEA session, as well as the **RunAsUser** which identifies the account JEA used to execute the command.</span></span>
-<span data-ttu-id="a7641-129">アプリケーション イベント ログには、RunAsUser により行われた変更が表示されます。そのため、トランスクリプトまたはモジュール/スクリプトのログ記録を有効にしておくことが、コマンドの呼び出しをユーザーにさかのぼって追跡するために重要です。</span><span class="sxs-lookup"><span data-stu-id="a7641-129">Application event logs will show changes being made by the RunAsUser, so having transcripts or module/script logging enabled is crucial to be able to trace a specific command invocation back to a user.</span></span>
+<span data-ttu-id="d76c2-125">各イベント ログ エントリに、コマンドを実行したセッションに関する情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="d76c2-125">Each event log entry includes information about the session in which the command was run.</span></span> <span data-ttu-id="d76c2-126">JEA セッションの場合、イベントには **ConnectedUser** と **RunAsUser** に関する情報が含まれます。</span><span class="sxs-lookup"><span data-stu-id="d76c2-126">For JEA sessions, the event includes information about the **ConnectedUser** and the **RunAsUser**.</span></span> <span data-ttu-id="d76c2-127">**ConnectedUser** は JEA セッションを作成した実際のユーザーです。</span><span class="sxs-lookup"><span data-stu-id="d76c2-127">The **ConnectedUser** is the actual user who created the JEA session.</span></span> <span data-ttu-id="d76c2-128">**RunAsUser** は JEA でコマンドを実行するために使用されたアカウントです。</span><span class="sxs-lookup"><span data-stu-id="d76c2-128">The **RunAsUser** is the account JEA used to execute the command.</span></span>
 
-## <a name="application-event-logs"></a><span data-ttu-id="a7641-130">アプリケーション イベント ログ</span><span class="sxs-lookup"><span data-stu-id="a7641-130">Application event logs</span></span>
+<span data-ttu-id="d76c2-129">アプリケーション イベント ログには、**RunAsUser** により行われた変更が表示されます。</span><span class="sxs-lookup"><span data-stu-id="d76c2-129">Application event logs show changes being made by the **RunAsUser**.</span></span> <span data-ttu-id="d76c2-130">そのため、特定のコマンドの呼び出しを **ConnectedUser** にさかのぼって追跡するには、モジュールおよびスクリプトのログ記録を有効にしておく必要があります。</span><span class="sxs-lookup"><span data-stu-id="d76c2-130">So having module and script logging enabled is required to trace a specific command invocation back to the **ConnectedUser**.</span></span>
 
-<span data-ttu-id="a7641-131">外部のアプリケーションやサービスと情報を交換する JEA セッションでコマンドを実行すると、そのようなアプリケーションやサービスでは、独自のイベント ログにイベントが記録されることがあります。</span><span class="sxs-lookup"><span data-stu-id="a7641-131">When you run a command in a JEA session that interacts with an external application or service, those applications may log events to their own event logs.</span></span>
-<span data-ttu-id="a7641-132">PowerShell のログやトランスクリプトとは異なり、他のログ記録メカニズムでは、JEA セッションの接続ユーザーが記録されず、代わりに、仮想実行ユーザーかグループの管理されたサービス アカウントのみが記録されます。</span><span class="sxs-lookup"><span data-stu-id="a7641-132">Unlike PowerShell logs and transcripts, other logging mechanisms will not capture the connected user of the JEA session, and will instead only log the virtual run-as user or group managed service account.</span></span>
-<span data-ttu-id="a7641-133">コマンドの実行ユーザーを判断するには、[セッション トランスクリプト](#session-transcripts)を確認するか、PowerShell イベント ログと、アプリケーション イベント ログに表示されている時刻とユーザーを関連付ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="a7641-133">In order to determine who ran the command, you will need to consult a [session transcript](#session-transcripts) or correlate PowerShell event logs with the time and user shown in the application event log.</span></span>
+## <a name="application-event-logs"></a><span data-ttu-id="d76c2-131">アプリケーション イベント ログ</span><span class="sxs-lookup"><span data-stu-id="d76c2-131">Application event logs</span></span>
 
-<span data-ttu-id="a7641-134">アプリケーション イベント ログの実行ユーザーと接続ユーザーを比較するとき、WinRM ログも役に立ちます。</span><span class="sxs-lookup"><span data-stu-id="a7641-134">The WinRM log can also help you correlate run as users in an application event log with the connecting user.</span></span>
-<span data-ttu-id="a7641-135">**Microsoft-Windows-Windows Remote Management/Operational** ログのイベント ID **193** では、JEA セッションが作成されるたびに、接続ユーザーと実行ユーザーの両方に対して、セキュリティ識別子 (SID) とアカウント名が記録されます。</span><span class="sxs-lookup"><span data-stu-id="a7641-135">Event ID **193** in the **Microsoft-Windows-Windows Remote Management/Operational** log records the security identifier (SID) and account name for both the connecting user and run as user every time a JEA session is created.</span></span>
+<span data-ttu-id="d76c2-132">外部のアプリケーションやサービスと情報を交換する JEA セッションでコマンドを実行すると、独自のイベント ログにイベントが記録されることがあります。</span><span class="sxs-lookup"><span data-stu-id="d76c2-132">Commands run in a JEA session that interact with external applications or services may log events to their own event logs.</span></span> <span data-ttu-id="d76c2-133">PowerShell ログおよびトランスクリプトと異なり、他のログ記録メカニズムでは JEA セッションの接続されているユーザーは取得されません。</span><span class="sxs-lookup"><span data-stu-id="d76c2-133">Unlike PowerShell logs and transcripts, other logging mechanisms don't capture the connected user of the JEA session.</span></span> <span data-ttu-id="d76c2-134">代わりに、これらのアプリケーションでは、仮想実行ユーザーのみが記録されます。</span><span class="sxs-lookup"><span data-stu-id="d76c2-134">Instead, those applications only log the virtual run-as user.</span></span>
+<span data-ttu-id="d76c2-135">コマンドの実行ユーザーを判断するには、[セッション トランスクリプト](#session-transcripts)を確認するか、PowerShell イベント ログと、アプリケーション イベント ログに表示されている時刻とユーザーを関連付ける必要があります。</span><span class="sxs-lookup"><span data-stu-id="d76c2-135">To determine who ran the command, you need to consult a [session transcript](#session-transcripts) or correlate PowerShell event logs with the time and user shown in the application event log.</span></span>
 
-## <a name="session-transcripts"></a><span data-ttu-id="a7641-136">セッションのトランスクリプト</span><span class="sxs-lookup"><span data-stu-id="a7641-136">Session transcripts</span></span>
+<span data-ttu-id="d76c2-136">WinRM ログは、アプリケーション イベント ログの実行ユーザーと接続ユーザーを関連付けることにも役立ちます。</span><span class="sxs-lookup"><span data-stu-id="d76c2-136">The WinRM log can also help you correlate run-as users to the connecting user in an application event log.</span></span> <span data-ttu-id="d76c2-137">**Microsoft-Windows-Windows Remote Management/Operational** ログのイベント ID **193** では、すべての新しい JEA セッションの接続ユーザーと実行ユーザーの両方に対して、セキュリティ識別子 (SID) とアカウント名が記録されます。</span><span class="sxs-lookup"><span data-stu-id="d76c2-137">Event ID **193** in the **Microsoft-Windows-Windows Remote Management/Operational** log records the security identifier (SID) and account name for both the connecting user and run as user for every new JEA session.</span></span>
 
-<span data-ttu-id="a7641-137">ユーザー セッションごとにトランスクリプトを作成するように JEA を構成した場合、すべてのユーザーのアクションのテキスト コピーが指定のフォルダーに保存されます。</span><span class="sxs-lookup"><span data-stu-id="a7641-137">If you configured JEA to create a transcript for each user session, a text copy of every user's actions will be stored in the specified folder.</span></span>
+## <a name="session-transcripts"></a><span data-ttu-id="d76c2-138">セッションのトランスクリプト</span><span class="sxs-lookup"><span data-stu-id="d76c2-138">Session transcripts</span></span>
 
-<span data-ttu-id="a7641-138">すべてのトランスクリプト ディレクトリを見つけるには、JEA で構成されているコンピューターで管理者として次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="a7641-138">To find all transcript directories, run the following command as an administrator on the computer configured with JEA:</span></span>
+<span data-ttu-id="d76c2-139">ユーザー セッションごとにトランスクリプトを作成するように JEA を構成した場合、すべてのユーザーのアクションのテキスト コピーが指定のフォルダーに保存されます。</span><span class="sxs-lookup"><span data-stu-id="d76c2-139">If you configured JEA to create a transcript for each user session, a text copy of every user's actions are stored in the specified folder.</span></span>
+
+<span data-ttu-id="d76c2-140">次のコマンドでは (管理者として実行した場合)、すべてのトランスクリプト ディレクトリを検索します。</span><span class="sxs-lookup"><span data-stu-id="d76c2-140">The following command (as an administrator) finds all transcript directories.</span></span>
 
 ```powershell
-Get-PSSessionConfiguration | Where-Object { $_.TranscriptDirectory -ne $null } | Format-Table Name, TranscriptDirectory
+Get-PSSessionConfiguration |
+  Where-Object { $_.TranscriptDirectory -ne $null } |
+    Format-Table Name, TranscriptDirectory
 ```
 
-<span data-ttu-id="a7641-139">各トランスクリプトは、セッションの開始時刻、セッションに接続したユーザー、そのユーザーに割り当てられた JEA ID に関する情報で始まります。</span><span class="sxs-lookup"><span data-stu-id="a7641-139">Each transcript starts with information about the time the session started, which user connected to the session, and which JEA identity was assigned to them.</span></span>
+<span data-ttu-id="d76c2-141">各トランスクリプトは、セッションの開始時刻、セッションに接続したユーザー、そのユーザーに割り当てられた JEA ID に関する情報で始まります。</span><span class="sxs-lookup"><span data-stu-id="d76c2-141">Each transcript starts with information about the time the session started, which user connected to the session, and which JEA identity was assigned to them.</span></span>
 
 ```
 **********************
@@ -126,9 +120,7 @@ Machine: SERVER01 (Microsoft Windows NT 10.0.14393.0)
 [...]
 ```
 
-<span data-ttu-id="a7641-140">トランスクリプトの本文には、ユーザーが実行した各コマンドに関する情報が記録されています。</span><span class="sxs-lookup"><span data-stu-id="a7641-140">In the body of the transcript, information is logged about each command the user invoked.</span></span>
-<span data-ttu-id="a7641-141">ユーザーが実行したコマンドの厳密な構文は、PowerShell リモート処理のためにコマンドが変換されるため、JEA セッションでは確認できません。ただし、実行された有効なコマンドを判断することはできます。</span><span class="sxs-lookup"><span data-stu-id="a7641-141">The exact syntax of the command the user ran is unavailable in JEA sessions due to the way commands are transformed for PowerShell remoting, however you can still determine the effective command that was executed.</span></span>
-<span data-ttu-id="a7641-142">次は、JEA セッションでユーザーが `Get-Service Dns` を実行した場合のトランスクリプト例からの抜粋です。</span><span class="sxs-lookup"><span data-stu-id="a7641-142">Below is an example transcript snippet from a user running `Get-Service Dns` in a JEA session:</span></span>
+<span data-ttu-id="d76c2-142">トランスクリプトの本文には、ユーザーが呼び出した各コマンドに関する情報が含まれています。</span><span class="sxs-lookup"><span data-stu-id="d76c2-142">The body of the transcript contains information about each command the user invoked.</span></span> <span data-ttu-id="d76c2-143">使用されたコマンドの正確な構文は、PowerShell リモート処理のためにコマンドが変換される方法のため、JEA セッションでは使用できません。</span><span class="sxs-lookup"><span data-stu-id="d76c2-143">The exact syntax of the command used is unavailable in JEA sessions because of the way commands are transformed for PowerShell remoting.</span></span> <span data-ttu-id="d76c2-144">ただし、実行された有効なコマンドを判断することはできます。</span><span class="sxs-lookup"><span data-stu-id="d76c2-144">However, you can still determine the effective command that was executed.</span></span> <span data-ttu-id="d76c2-145">次は、JEA セッションでユーザーが `Get-Service Dns` を実行した場合のトランスクリプト例からの抜粋です。</span><span class="sxs-lookup"><span data-stu-id="d76c2-145">Below is an example transcript snippet from a user running `Get-Service Dns` in a JEA session:</span></span>
 
 ```
 PS>CommandInvocation(Get-Service): "Get-Service"
@@ -139,14 +131,10 @@ PS>CommandInvocation(Get-Service): "Get-Service"
 Running  Dns                DNS Server
 ```
 
-<span data-ttu-id="a7641-143">ユーザーが実行するコマンドごとに、"CommandInvocation" 行が書き込まれます。これは、ユーザーが実行したコマンドレットまたは関数を意味します。</span><span class="sxs-lookup"><span data-stu-id="a7641-143">For each command a user runs, a "CommandInvocation" line will be written, describing the cmdlet or function the user invoked.</span></span>
-<span data-ttu-id="a7641-144">各 CommandInvocation の後ろに ParameterBindings が続きます。これは、コマンドと共に指定された各パラメーターとその値に関する情報です。</span><span class="sxs-lookup"><span data-stu-id="a7641-144">ParameterBindings follow each CommandInvocation to tell you about each parameter and value that was supplied with the command.</span></span>
-<span data-ttu-id="a7641-145">上記の例では、"Get-Service" コマンドレットでパラメーター "Name" に値 "Dns" が指定されていることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="a7641-145">In the above example, you can see that the parameter "Name" was supplied the value "Dns" for the "Get-Service" cmdlet.</span></span>
+<span data-ttu-id="d76c2-146">ユーザーが実行するコマンドごとに、**CommandInvocation** 行が書き込まれます。</span><span class="sxs-lookup"><span data-stu-id="d76c2-146">A **CommandInvocation** line is written for each command a user runs.</span></span> <span data-ttu-id="d76c2-147">**ParameterBindings** はコマンドと共に指定された各パラメーターとその値を記録します。</span><span class="sxs-lookup"><span data-stu-id="d76c2-147">**ParameterBindings** record each parameter and value supplied with the command.</span></span> <span data-ttu-id="d76c2-148">前の例では、`Get-Service` コマンドレットでパラメーター **Name** に値 **Dns** が指定されていることを確認できます。</span><span class="sxs-lookup"><span data-stu-id="d76c2-148">In the previous example, you can see that the parameter **Name** was supplied the with value **Dns** for the `Get-Service` cmdlet.</span></span>
 
-<span data-ttu-id="a7641-146">各コマンドの出力も CommandInvocation をトリガーします (通常は Out-Default に)。</span><span class="sxs-lookup"><span data-stu-id="a7641-146">The output of each command will also trigger a CommandInvocation, usually to Out-Default.</span></span>
-<span data-ttu-id="a7641-147">Out-Default の InputObject は、コマンドから返される PowerShell オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="a7641-147">The InputObject of Out-Default is the PowerShell object returned from the command.</span></span>
-<span data-ttu-id="a7641-148">そのオブジェクトの詳細が数行下に出力されています。ユーザーに表示される内容と同様のものが表示されます。</span><span class="sxs-lookup"><span data-stu-id="a7641-148">The details of that object are printed a few lines below, closely mimicking what the user would have seen.</span></span>
+<span data-ttu-id="d76c2-149">各コマンドの出力も **CommandInvocation** をトリガーします (通常は `Out-Default` に)。</span><span class="sxs-lookup"><span data-stu-id="d76c2-149">The output of each command also triggers a **CommandInvocation**, usually to `Out-Default`.</span></span> <span data-ttu-id="d76c2-150">`Out-Default` の **InputObject** は、コマンドから返される PowerShell オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="d76c2-150">The **InputObject** of `Out-Default` is the PowerShell object returned from the command.</span></span> <span data-ttu-id="d76c2-151">そのオブジェクトの詳細が数行下に出力されています。ユーザーに表示される内容と同様のものが表示されます。</span><span class="sxs-lookup"><span data-stu-id="d76c2-151">The details of that object are printed a few lines below, closely mimicking what the user would have seen.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="a7641-149">関連項目</span><span class="sxs-lookup"><span data-stu-id="a7641-149">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d76c2-152">関連項目</span><span class="sxs-lookup"><span data-stu-id="d76c2-152">See also</span></span>
 
-- [<span data-ttu-id="a7641-150">*PowerShell ♥ the Blue Team* のセキュリティに関するブログ投稿</span><span class="sxs-lookup"><span data-stu-id="a7641-150">*PowerShell ♥ the Blue Team* blog post on security</span></span>](https://blogs.msdn.microsoft.com/powershell/2015/06/09/powershell-the-blue-team/)
+[<span data-ttu-id="d76c2-153">*PowerShell ♥ the Blue Team* のセキュリティに関するブログ投稿</span><span class="sxs-lookup"><span data-stu-id="d76c2-153">*PowerShell ♥ the Blue Team* blog post on security</span></span>](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
