@@ -2,12 +2,12 @@
 title: SSH 経由の PowerShell リモート処理
 description: SSH を使用した PowerShell Core のリモート処理
 ms.date: 08/14/2018
-ms.openlocfilehash: 1d7bcb69c7e784bf745cb5c2633106ea53f6226a
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d994a3888b9a372b803a65666634775a8905d63a
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086393"
+ms.lasthandoff: 07/22/2019
+ms.locfileid: "68372136"
 ---
 # <a name="powershell-remoting-over-ssh"></a>SSH 経由の PowerShell リモート処理
 
@@ -17,8 +17,7 @@ PowerShell リモート処理では通常、接続交渉とデータ転送に Wi
 
 WinRM は PowerShell リモート処理セッションに堅牢なホスティング モデルを提供します。 SSH ベースのリモート処理では現在、リモート エンドポイント構成および JEA (Just Enough Administration) はサポートされていません。
 
-SSH リモート処理では、Windows コンピューターと Linux コンピューターの間で基本的な PowerShell セッションをリモート処理できます。 SSH リモート処理で、SSH サブシステムとしてターゲット コンピューター上に PowerShell ホスティング プロセスを作成します。
-最終的には、エンドポイント構成と JEA をサポートするために、WinRM とほぼ同じ一般的なホスティング モデルが実装される予定です。
+SSH リモート処理では、Windows コンピューターと Linux コンピューターの間で基本的な PowerShell セッションをリモート処理できます。 SSH リモート処理で、SSH サブシステムとしてターゲット コンピューター上に PowerShell ホスティング プロセスを作成します。 最終的には、エンドポイント構成と JEA をサポートするために、WinRM とほぼ同じ一般的なホスティング モデルが実装される予定です。
 
 現在、`New-PSSession`、`Enter-PSSession`、および `Invoke-Command` コマンドレットには、この新しいリモート処理接続をサポートする新しいパラメーター セットがあります。
 
@@ -88,9 +87,9 @@ SSH はすべてのコンピューターにインストールする必要があ�
 
 5. OpenSSH がインストールされているパスをパス環境変数に追加します。 たとえば、`C:\Program Files\OpenSSH\` のように指定します。 この項目によって、ssh.exe の場所が認識されます。
 
-## <a name="set-up-on-linux-ubuntu-1404-machine"></a>Linux (Ubuntu 14.04) コンピューターでのセットアップ
+## <a name="set-up-on-linux-ubuntu-1604-machine"></a>Linux (Ubuntu 16.04) コンピューターでのセットアップ
 
-1. GitHub から最新の [Linux 向け PowerShell Core](../../install/installing-powershell-core-on-linux.md#ubuntu-1404) ビルドをインストールします
+1. GitHub から最新の [Linux 向け PowerShell Core](../../install/installing-powershell-core-on-linux.md#ubuntu-1604) ビルドをインストールします
 2. 必要に応じて [Ubuntu SSH](https://help.ubuntu.com/lts/serverguide/openssh-server.html) をインストールします
 
    ```bash
@@ -169,11 +168,7 @@ SSH はすべてのコンピューターにインストールする必要があ�
 
 ## <a name="authentication"></a>認証
 
-SSH を使用する PowerShell リモート処理では、SSH クライアントと SSH サービスの間の認証交換に依存し、認証スキーム自体は何も実装されません。
-つまり、多要素認証などの構成されている認証スキームはすべて SSH によって処理され、PowerShell とは独立しています。
-たとえば、セキュリティ強化のため、公開キー認証に加えて 1 回限りのパスワードを要求するように、SSH サービスを構成できます。
-多要素認証の構成については、このドキュメントでは説明されていません。
-多要素認証を正しく構成し、PowerShell リモート処理での使用を試みる前に PowerShell の外部での動作を検証する方法については、SSH のドキュメントをご覧ください。
+SSH を使用する PowerShell リモート処理では、SSH クライアントと SSH サービスの間の認証交換に依存し、認証スキーム自体は何も実装されません。 つまり、多要素認証などの構成されている認証スキームはすべて SSH によって処理され、PowerShell とは独立しています。 たとえば、セキュリティ強化のため、公開キー認証に加えて 1 回限りのパスワードを要求するように、SSH サービスを構成できます。 多要素認証の構成については、このドキュメントでは説明されていません。 多要素認証を正しく構成し、PowerShell リモート処理での使用を試みる前に PowerShell の外部での動作を検証する方法については、SSH のドキュメントをご覧ください。
 
 ## <a name="powershell-remoting-example"></a>PowerShell リモート処理の例
 
@@ -209,7 +204,7 @@ Enter-PSSession $session
 
 ```output
 [UbuntuVM1]: PS /home/TestUser> uname -a
-Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~14.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+Linux TestUser-UbuntuVM1 4.2.0-42-generic 49~16.04.1-Ubuntu SMP Wed Jun 29 20:22:11 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 
 [UbuntuVM1]: PS /home/TestUser> Exit-PSSession
 ```
@@ -310,7 +305,7 @@ sudo コマンドは、Linux コンピューターへのリモート セッシ�
 
 [Windows 向け PowerShell Core](../../install/installing-powershell-core-on-windows.md#msi)
 
-[Linux 向け PowerShell Core](../../install/installing-powershell-core-on-linux.md#ubuntu-1404)
+[Linux 向け PowerShell Core](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
 
 [MacOS 向け PowerShell Core](../../install/installing-powershell-core-on-macos.md)
 
