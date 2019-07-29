@@ -50,11 +50,11 @@ PowerShell は、コマンドレットの名前とその派生の Microsoft .NET
 * 次の予約済み動詞またはエイリアスは使用しないでください。
   これらの動詞は、PowerShell 言語で、または PowerShell によって提供される、特殊なケース コマンドレットによって使用されます。
   - ForEach (foreach)
-  - 形式 (f)
-  - グループ (gp)
-  - 並べ替え (sr)
+  - Format (f)
+  - Group (gp)
+  - Sort (sr)
   - Tee (te)
-  - 場所 (値を下回った場合)
+  - Where (wh)
 
 ## <a name="similar-verbs-for-different-actions"></a>ようなさまざまなアクション動詞
 
