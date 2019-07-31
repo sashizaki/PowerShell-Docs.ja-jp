@@ -60,23 +60,23 @@ PowerShell は、コマンドレットの名前とその派生の Microsoft .NET
 
 次のような動詞は、さまざまなアクションを表します。
 
-### <a name="new-vs-set"></a>新しい vs します。設定
+### <a name="new-vs-set"></a>New と Set
 `New`動詞は、新しいリソースの作成に使用されます。
 `Set`動詞を使用して、それが存在しない場合、よう必要に応じて、リソースの作成、既存のリソースを変更する、`Set-Variable`コマンドレット。
 
-### <a name="find-vs-search"></a>Vs を検索します。検索
+### <a name="find-vs-search"></a>Find と Search
 `Find`オブジェクトの検索に動詞を使用します。
 `Search`でコンテナー リソースへの参照を作成する動詞が使用されます。
 
-### <a name="get-vs-read"></a>Vs を取得します。読み取り
+### <a name="get-vs-read"></a>Get と Read
 `Get`動詞を使用して、ファイルなどのリソースを取得します。
 `Read`ファイルなどのソースから情報を取得する動詞が使用されます。
 
-### <a name="invoke-vs-start"></a>Vs を起動します。管理者として
+### <a name="invoke-vs-start"></a>Invoke と Start
 `Invoke`操作は、通常のコマンドを実行するなどの同期操作を実行する動詞が使用されます。
 `Start`操作は、通常のプロセスを開始するなど、非同期操作を開始する動詞が使用されます。
 
-### <a name="ping-vs-test"></a>Ping vs します。Server1
+### <a name="ping-vs-test"></a>Ping と Test
 使用して、`Test`動詞。
 
 ## <a name="common-verbs"></a>一般的な動詞
