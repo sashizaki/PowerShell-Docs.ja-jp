@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: manikb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: PowerShellGet のインストール
-ms.openlocfilehash: 23a53a9117c9f6a7ad157b635cd7ff4b3b3444c5
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2d3ba8c4d4d4c7ee023c7e6a948a29d8f47ea242
+ms.sourcegitcommit: 8d47eb41445ffaf10fcd68874e397c9a1703d898
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62075275"
+ms.lasthandoff: 07/29/2019
+ms.locfileid: "68601422"
 ---
 # <a name="installing-powershellget"></a>PowerShellGet のインストール
 
@@ -28,7 +28,7 @@ ms.locfileid: "62075275"
 - PowerShellGet を更新する前には、最新の Nuget プロバイダーをインストールする必要があります。 そのためには、PowerShell セッションで、管理者特権で次のコマンドを実行します。
 
   ```powershell
-  Install-PackageProvider Nuget –Force
+  Install-PackageProvider Nuget -Force
   Exit
   ```
 
@@ -37,7 +37,7 @@ ms.locfileid: "62075275"
 - Windows 10、Windows Server 2016、WMF 5.0 または 5.1 がインストールされたシステム、PowerShell 6 を使用するシステムでこれを実行するには、管理者特権で PowerShell セッションから、次のコマンドを実行します。
 
   ```powershell
-  Install-Module –Name PowerShellGet –Force
+  Install-Module -Name PowerShellGet -Force
   Exit
   ```
 
