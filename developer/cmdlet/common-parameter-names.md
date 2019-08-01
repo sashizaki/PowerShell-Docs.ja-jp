@@ -26,7 +26,7 @@ ms.locfileid: "62068430"
 
 次のパラメーターは、すべてのコマンドレットに追加され、コマンドレットが実行されるたびにアクセスできます。 これらのパラメーターがによって定義されている、 [System.Management.Automation.Internal.Commonparameters](/dotnet/api/System.Management.Automation.Internal.CommonParameters)クラス。
 
-### <a name="debug-alias-db"></a>デバッグ (別名: db)
+### <a name="debug-alias-db"></a>Debug (別名: db)
 
 データの種類:SwitchParameter
 
@@ -56,13 +56,13 @@ ms.locfileid: "62068430"
 
 このパラメーターは、すべてのオブジェクトがパイプラインを介して渡される前に、出力バッファーに格納するオブジェクトの数を定義します。 既定では、オブジェクトはパイプラインは、すぐに渡されます。
 
-### <a name="verbose-alias-vb"></a>詳細 (別名: vb)
+### <a name="verbose-alias-vb"></a>Verbose (別名: vb)
 
 データの種類:SwitchParameter
 
 このパラメーターは、コマンドレットがコマンドラインで表示できる説明メッセージを書き込むかどうかを指定します。 これらのメッセージは、ユーザーに役立つ追加情報を提供するためのものし、への呼び出しによって生成される、 [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)メソッド。
 
-### <a name="warningaction-alias-wa"></a>WarningAction (別名: ワシントン)
+### <a name="warningaction-alias-wa"></a>WarningAction (別名: wa)
 
 データの種類:列挙値
 
@@ -78,7 +78,7 @@ ms.locfileid: "62068430"
 
 次のパラメーターは、それらのアクションの実行前に確認を要求するコマンドレットに追加されます。 確認要求の詳細については、次を参照してください。[確認を要求する](./requesting-confirmation-from-cmdlets.md)します。 これらのパラメーターがによって定義されている、 [System.Management.Automation.Internal.Shouldprocessparameters](/dotnet/api/System.Management.Automation.Internal.ShouldProcessParameters)クラス。
 
-### <a name="confirm-alias-cf"></a>確認 (別名: cf)
+### <a name="confirm-alias-cf"></a>Confirm (別名: cf)
 
 データの種類:SwitchParameter
 
@@ -94,7 +94,7 @@ ms.locfileid: "62068430"
 
 次のパラメーターは、トランザクションをサポートするコマンドレットに追加されます。 これらのパラメーターがによって定義されている、 [System.Management.Automation.Internal.Transactionparameters](/dotnet/api/System.Management.Automation.Internal.TransactionParameters)クラス。
 
-### <a name="usetransaction-alias-usetx"></a>[いいえ] (別名: usetx)
+### <a name="usetransaction-alias-usetx"></a>UseTransaction (別名: usetx)
 
 データの種類:SwitchParameter
 
