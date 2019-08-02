@@ -3,10 +3,10 @@ ms.date: 05/17/2018
 keywords: powershell、core
 title: PowerShell Core 6.0 の重要な変更
 ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
-ms.sourcegitcommit: 09f02ccef56ef30e7a9ca901f8d3713724960c68
+ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/12/2019
+ms.lasthandoff: 07/26/2019
 ms.locfileid: "67843935"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell Core 6.0 の重要な変更
@@ -15,7 +15,7 @@ ms.locfileid: "67843935"
 
 ### <a name="powershell-workflow"></a>PowerShell ワークフロー
 
-[PowerShell ワークフロー][workflow] is a feature in Windows PowerShell that builds on top of [Windows Workflow Foundation (WF)][workflow-foundation]、長時間実行中のタスクまたは並行化されたタスクに対して堅牢な Runbook を作成できるようにします。
+[PowerShell ワークフロー][workflow]は、[Windows Workflow Foundation (WF)][workflow-foundation] をベースに構築された Windows PowerShell の機能です。これを使うと、実行時間の長いタスクや並列化されたタスクのための堅牢な Runbook を作成できます。
 
 .NET Core では Windows Workflow Foundation がサポートされていないため、PowerShell Core の PowerShell ワークフローのサポートを終了します。
 
@@ -163,7 +163,7 @@ HTTP を使用する場合、パスワードなどのコンテンツはクリア
 
 ### <a name="removed-runspaceconfiguration-support-4942httpsgithubcompowershellpowershellissues4942"></a>`RunspaceConfiguration` のサポートを終了 [#4942](https://github.com/PowerShell/PowerShell/issues/4942)
 
-以前は、API を使用してプログラミングによって PowerShell 実行空間を作成する場合、レガシーの [`RunspaceConfiguration`][runspaceconfig] or the newer [`InitialSessionState`][iss] を使用できました。 今回の変更により `RunspaceConfiguration` のサポートが終了し、`InitialSessionState` のみがサポートされます。
+以前は、API を使用してプログラムで PowerShell 実行空間を作成する場合、従来の [`RunspaceConfiguration`][runspaceconfig] か新しい [`InitialSessionState`][iss] を使用できました。 今回の変更により `RunspaceConfiguration` のサポートが終了し、`InitialSessionState` のみがサポートされます。
 
 [runspaceconfig]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: https://docs.microsoft.com/dotnet/api/system.management.automation.runspaces.initialsessionstate
