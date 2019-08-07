@@ -21,11 +21,11 @@ ms.locfileid: "62082247"
 
 ## <a name="importing-a-snap-in-powershell-10"></a>スナップイン (PowerShell 1.0) をインポートします。
 
-モジュールが PowerShell 1.0 ではありませんでした。 代わりに、登録、スナップインを使用する必要がありました。ただし、これは使用しないでこの時点では、このテクノロジを使用するモジュールは、通常のインストールおよびインポートする方が簡単に。 詳細については、[Windows PowerShell スナップインを作成する方法](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)を参照してください。
+モジュールが PowerShell 1.0 ではありませんでした。 代わりに、登録されたスナップインを使用する必要がありました。ただし、これを使用しないこの時点では、このテクノロジを使用するモジュールは、通常のインストールおよびインポートする方が簡単です。 詳細については、[Windows PowerShell スナップインを作成する方法](../cmdlet/how-to-create-a-windows-powershell-snap-in.md) を参照してください。
 
 ## <a name="importing-a-module-with-import-module-powershell-20"></a>モジュールのインポート (PowerShell 2.0) を持つモジュールをインポートします。
 
-PowerShell 2.0 では、適切に名前付き[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレット モジュールをインポートします。 このコマンドレットを実行しているときに Windows PowerShell がで指定したディレクトリ内の指定したモジュールの検索、`PSModulePath`変数。 Windows PowerShell が次の順序でファイルを検索し、指定されたディレクトリが見つかった場合: モジュールのマニフェスト ファイル (.psd1)、スクリプト モジュール ファイル (.psm1)、バイナリ モジュール ファイル (.dll)。 検索するディレクトリを追加する方法の詳細については、 [PSModulePath インストール パスを変更する](./modifying-the-psmodulepath-installation-path.md)を参照してください。 次のコードでは、モジュールをインポートする方法について説明します。
+PowerShell 2.0 では、適切に名前付き[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) コマンドレット モジュールをインポートします。 このコマンドレットを実行されると、 Windows PowerShell は`PSModulePath`変数で指定したディレクトリ内の指定したモジュールを検索します。指定されたディレクトリが見つかった場合、Windows PowerShell がモジュールのマニフェスト ファイル (.psd1)、スクリプト モジュール ファイル (.psm1)、バイナリ モジュール ファイル (.dll) の順序でファイルを検索します。 検索するディレクトリを追加する方法の詳細については、 [PSModulePath インストール パスを変更する](./modifying-the-psmodulepath-installation-path.md) を参照してください。 次のコードでは、モジュールをインポートする方法について説明します。
 
 ```powershell
 Import-Module myModule
