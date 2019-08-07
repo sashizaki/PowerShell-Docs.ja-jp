@@ -126,7 +126,7 @@ Windows PowerShell には、次の 2 つの基本クラスから派生したコ�
 
 ## <a name="cmdlet-attributes"></a>コマンドレットの属性
 
-Windows PowerShell コマンドレットを管理し、一般的な機能は Windows PowerShell によって提供されると、コマンドレットでする必要がありますを指定に使用されるいくつかの .NET Framework 属性を定義します。 たとえば、コマンドレット、コマンドレットのパラメーターを指定して、コマンドレットの開発者は、コマンドレットのコードでその機能を実装する必要があるないように、入力の検証を要求としてクラスを指定する属性が使用されます。 属性の詳細については、[Windows PowerShell 属性](./cmdlet-attributes.md)を参照してください。
+Windows PowerShell コマンドレットを管理し、一般的な機能は Windows PowerShell によって提供されると、指定に使用されるいくつかの .NET Framework 属性の定義をコマンドレットで行う必要があります。たとえば、コマンドレットやコマンドレットのパラメーターを指定して、コマンドレットの開発者はコマンドレットのコードでその機能を実装しなくてもいいように、入力の検証を要求としてクラスを指定する属性が使用されます。 属性の詳細については、[Windows PowerShell 属性](./cmdlet-attributes.md) を参照してください。
 
 ## <a name="cmdlet-names"></a>コマンドレット名
 
@@ -136,7 +136,7 @@ Windows PowerShell コマンドレットの名前を動詞と名詞を組み合�
 
 ## <a name="writing-cmdlet-code"></a>コマンドレット コードの記述
 
-このドキュメントでは、コマンドレット コードの記述方法を見つけるための2つの方法を説明します。 あまり説明せずにコードを見たい場合は、[コマンドレット コードの例](./examples-of-cmdlet-code.md)を参照してください。 コードについてさらに説明が必要な場合は、[GetProc チュートリアル](./getproc-tutorial.md)、 [StopProc チュートリアル](./stopproc-tutorial.md)、または[SelectStr チュートリアル](./selectstr-tutorial.md)のトピックを参照してください。
+このドキュメントでは、コマンドレット コードの記述方法を見つけるための2つの方法を説明します。 詳細な説明のないにコードをご覧になる場合は、[コマンドレット コードの例](./examples-of-cmdlet-code.md) を参照してください。 コードについてさらに説明が必要な場合は、[GetProc チュートリアル](./getproc-tutorial.md)、 [StopProc チュートリアル](./stopproc-tutorial.md)、または[SelectStr チュートリアル](./selectstr-tutorial.md) のトピックを参照してください。
 
 コマンドレットの記述に関するガイドラインの詳細については、[コマンドレット開発ガイドライン](./cmdlet-development-guidelines.md)を参照してください。
 
