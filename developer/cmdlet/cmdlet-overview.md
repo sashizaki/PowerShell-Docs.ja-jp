@@ -122,23 +122,23 @@ Windows PowerShell には、次の 2 つの基本クラスから派生したコ�
 
 - [System.Management.Automation.Cmdlet.StopProcessing](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing):ユーザーが停止するコマンドレットは、非同期的に (たとえば、ctrl キーを押しながら C キーを押して) によって処理が停止するために使用します。
 
-これらのメソッドの詳細については、次を参照してください。[コマンドレットの入力処理メソッド](./cmdlet-input-processing-methods.md)します。
+これらのメソッドの詳細については、[コマンドレットの入力処理メソッド](./cmdlet-input-processing-methods.md)を参照してください。
 
 ## <a name="cmdlet-attributes"></a>コマンドレットの属性
 
-Windows PowerShell コマンドレットを管理し、一般的な機能は Windows PowerShell によって提供されると、コマンドレットでする必要がありますを指定に使用されるいくつかの .NET Framework 属性を定義します。 たとえば、コマンドレット、コマンドレットのパラメーターを指定して、コマンドレットの開発者は、コマンドレットのコードでその機能を実装する必要があるないように、入力の検証を要求としてクラスを指定する属性が使用されます。 属性の詳細については、次を参照してください。 [Windows PowerShell 属性](./cmdlet-attributes.md)します。
+Windows PowerShell コマンドレットを管理し、一般的な機能は Windows PowerShell によって提供されると、指定に使用されるいくつかの .NET Framework 属性の定義をコマンドレットで行う必要があります。たとえば、コマンドレットやコマンドレットのパラメーターを指定して、コマンドレットの開発者はコマンドレットのコードでその機能を実装しなくてもいいように、入力の検証を要求としてクラスを指定する属性が使用されます。 属性の詳細については、[Windows PowerShell 属性](./cmdlet-attributes.md) を参照してください。
 
 ## <a name="cmdlet-names"></a>コマンドレット名
 
 Windows PowerShell コマンドレットの名前を動詞と名詞を組み合わせた名前のペアを使用します。 たとえば、 `Get-Command` Windows PowerShell に含まれるコマンドレットを使用して、コマンド シェルに登録されているすべてのコマンドレットを取得します。 動詞は、コマンドレットを実行するアクションを識別し、名詞は、リソース、コマンドレットがそのアクションを実行しますを識別します。
 
-.NET Framework のクラスがコマンドレットとして宣言されている場合、これらの名前が指定されます。 .NET Framework クラスをコマンドレットとして宣言する方法の詳細については、次を参照してください。[コマンドレット属性宣言](./cmdlet-class-declaration.md)します。
+.NET Framework のクラスがコマンドレットとして宣言されている場合、これらの名前が指定されます。 .NET Framework クラスをコマンドレットとして宣言する方法の詳細については、[コマンドレット属性宣言](./cmdlet-class-declaration.md)を参照してください。
 
 ## <a name="writing-cmdlet-code"></a>コマンドレット コードの記述
 
-このドキュメントでは、コマンドレット コードの記述方法を検出する 2 つの方法を説明します。 大した説明もなしのコードを表示する場合を参照してください。[コマンドレット コードの例の](./examples-of-cmdlet-code.md)します。 詳細な説明、コードの場合を参照してください、 [GetProc チュートリアル](./getproc-tutorial.md)、 [StopProc チュートリアル](./stopproc-tutorial.md)、または[SelectStr チュートリアル](./selectstr-tutorial.md)トピック。
+このドキュメントでは、コマンドレット コードの記述方法を見つけるための2つの方法を説明します。 詳細な説明のないにコードをご覧になる場合は、[コマンドレット コードの例](./examples-of-cmdlet-code.md) を参照してください。 コードについてさらに説明が必要な場合は、[GetProc チュートリアル](./getproc-tutorial.md)、 [StopProc チュートリアル](./stopproc-tutorial.md)、または[SelectStr チュートリアル](./selectstr-tutorial.md) のトピックを参照してください。
 
-コマンドレットの記述に関するガイドラインの詳細については、次を参照してください。[コマンドレット開発ガイドライン](./cmdlet-development-guidelines.md)します。
+コマンドレットの記述に関するガイドラインの詳細については、[コマンドレット開発ガイドライン](./cmdlet-development-guidelines.md)を参照してください。
 
 ## <a name="see-also"></a>参照
 
