@@ -126,7 +126,9 @@ Windows PowerShell には、次の 2 つの基本クラスから派生したコ�
 
 ## <a name="cmdlet-attributes"></a>コマンドレットの属性
 
+
 Windows PowerShell コマンドレットを管理し、一般的な機能は Windows PowerShell によって提供されると、いくつかの .NET Framework 属性の定義をコマンドレットでする必要があります。たとえば、コマンドレットやコマンドレットのパラメーターを指定して、コマンドレットの開発者はコマンドレットのコードでその機能を実装しなくてもいいように、入力の検証を要求としてクラスを指定する属性が使用されます。 属性の詳細については、[Windows PowerShell 属性](./cmdlet-attributes.md) を参照してください。
+
 
 ## <a name="cmdlet-names"></a>コマンドレット名
 
@@ -135,6 +137,7 @@ Windows PowerShell コマンドレットの名前を動詞と名詞を組み合�
 .NET Framework のクラスがコマンドレットとして宣言されている場合、これらの名前が指定されます。 .NET Framework クラスをコマンドレットとして宣言する方法の詳細については、[コマンドレット属性宣言](./cmdlet-class-declaration.md)を参照してください。
 
 ## <a name="writing-cmdlet-code"></a>コマンドレット コードの記述
+
 
 このドキュメントでは、コマンドレット コードの記述方法を見つけるための2つの方法を説明します。 詳細な説明のないコードを見たい場合は、[コマンドレット コードの例](./examples-of-cmdlet-code.md) を参照してください。 コードについてさらに説明が必要な場合は、[GetProc チュートリアル](./getproc-tutorial.md)、 [StopProc チュートリアル](./stopproc-tutorial.md)、または[SelectStr チュートリアル](./selectstr-tutorial.md) のトピックを参照してください。
 

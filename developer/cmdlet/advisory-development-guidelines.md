@@ -25,7 +25,7 @@ ms.locfileid: "65854877"
 
 ### <a name="support-an-inputobject-parameter-ad01"></a>InputObject パラメーター (AD01) のサポートします。
 
-Windows PowerShell は、Microsoft .NET Framework オブジェクトを直接機能するため、.NET Framework オブジェクトがある多くの場合、完全に一致する型、ユーザーがする必要がありますが、特定の操作を実行します。 `InputObject` 標準の入力としてこのようなオブジェクトを取得するパラメーターの名前です。 サンプルではたとえば、**停止 Proc**コマンドレット、 [StopProc チュートリアル](./stopproc-tutorial.md)定義、`InputObject`型パイプラインから入力をサポートしているプロセスのパラメーター。 ユーザーは、プロセス オブジェクトのセットを取得、操作を停止するには厳密なオブジェクトを選択、およびに渡して、**停止 Proc**直接コマンドレット。
+Windows PowerShell は、Microsoft .NET Framework オブジェクトを直接機能するため、.NET Framework オブジェクトがある多くの場合、完全に一致する型、ユーザーがする必要がありますが、特定の操作を実行します。 `InputObject` 標準の入力としてこのようなオブジェクトを取得するパラメーターの名前です。 サンプルではたとえば、**Stop-Proc**コマンドレット、 [StopProc チュートリアル](./stopproc-tutorial.md)定義、`InputObject`型パイプラインから入力をサポートしているプロセスのパラメーター。 ユーザーは、プロセス オブジェクトのセットを取得、操作を停止するには厳密なオブジェクトを選択、およびに渡して、**Stop-Proc**直接コマンドレット。
 
 ### <a name="support-the-force-parameter-ad02"></a>Force パラメーター (AD02) のサポート
 
@@ -81,11 +81,11 @@ Windows PowerShell ランタイムが常に呼び出していない、 [System.M
 
 プリミティブの種類:
 
-- Byte、SByte、10 進数、単一、Double、Int16、Int32、Int64、Uint16、UInt32、および UInt64。
+- Byte, SByte, Decimal, Single, Double, Int16, Int32, Int64, Uint16, UInt32, および UInt64
 
-- ブール値、Guid、Byte、TimeSpan、DateTime、Uri、およびバージョン。
+- Boolean, Guid, Byte[], TimeSpan, DateTime, Uri, および Version
 
-- Char、String、XmlDocument です。
+- Char, String, XmlDocument.
 
 組み込みの rehydratable 型:
 

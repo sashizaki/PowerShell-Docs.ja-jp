@@ -67,19 +67,19 @@ A*モジュール マニフェスト*Windows PowerShell データ ファイル (
 
 |要素|既定|説明|
 |-------------|-------------|-----------------|
-|RootModule<br /><br /> 型: 文字列|' '|スクリプト モジュールまたはバイナリ モジュール ファイルこのマニフェストに関連付けられています。 PowerShell の以前のバージョンでは、この要素に、ModuleToProcess が呼び出されます。<br /><br /> ルート モジュールの種類を空にすることができます (このように、**マニフェスト**モジュール)、スクリプト モジュールの名前 (これにより、.psm1、**スクリプト**モジュール)、またはバイナリ モジュール (.exe または .dll の名前これは、これにより、**バイナリ**モジュール)。 モジュール マニフェスト (.psd1) ファイルまたはスクリプト ファイル (.ps1) の名前をこの要素に配置すると、発生するエラーが発生します。|
-|ModuleVersion<br /><br /> 型: 文字列|1.0|このモジュールのバージョン番号。 文字列は、[System.Version] に変換できる必要があります。 つまり、' #。 #。 #。 #。 #' です。 `Import-Module` 上で見つかった最初のモジュールを読み込む、 **$psModulePath**を名と一致して、少なくともの ModuleVersion を持つ、`-MinimumVersion`パラメーター。 特定のバージョンをインポートするには、使用、`-RequiredVersion`パラメーターを代わりにします。<br /><br /> 例: `ModuleVersion = '1.0'`|
-|GUID<br /><br /> 型: 文字列|自動生成された GUID|このモジュールを一意に識別するために使用される ID。 GUID のモジュールをインポートすることはできません現在に注意してください。<br /><br /> 例: `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
-|作成者<br /><br /> 型: 文字列|None|このモジュールの作成者です。<br /><br /> 例: `Author = 'AuthorNameHere'`|
-|CompanyName<br /><br /> 型: 文字列|Unknown の中から 1 つ以上を指定します|企業またはこのモジュールのベンダー。<br /><br /> 例: `CompanyName = 'Fabrikam'`|
-|著作権<br /><br /> 型: 文字列|(c) [現在] [作成者]。 All rights reserved.|このモジュールの著作権情報。<br /><br /> 例: `Copyright = '2016 AuthorName. All rights reserved.'`|
-|説明<br /><br /> 型: 文字列|' '|このモジュールによって提供される機能の説明です。<br /><br /> 例: `Description = 'This is a description of a module.'`|
-|PowerShellVersion<br /><br /> 型: 文字列|' '|このモジュールに必要な Windows PowerShell エンジンの最小バージョン。 現在の有効な値は、1.0、2.0、3.0、4.0、および 5.0 です。<br /><br /> 例: `PowerShellVersion = '5.0'`|
-|PowerShellHostName<br /><br /> 型: 文字列|' '|モジュールに必要な Windows PowerShell ホストの名前を指定します。 この名前は、Windows PowerShell によって提供されます。 プログラムのホスト プログラムの名前を検索する入力:`$host.name`します。<br /><br /> 例: `PowerShellHostName = 'Windows PowerShell ISE Host'`|
-|PowerShellHostVersion<br /><br /> 型: 文字列|' '|このモジュールに必要な Windows PowerShell ホストの最小バージョン。<br /><br /> 例: `PowerShellHostVersion = '2.0'`|
-|DotNetFrameworkVersion<br /><br /> 型: 文字列|' '|このモジュールに必要な Microsoft .NET Framework の最小バージョン。<br /><br /> 例: `DotNetFrameworkVersion = '3.5'`|
-|CLRVersion<br /><br /> 型: 文字列|' '|このモジュールに必要な共通言語ランタイム (CLR) の最小バージョン。<br /><br /> 例: `CLRVersion = '3.5'`|
-|ProcessorArchitecture<br /><br /> 型: 文字列|' '|プロセッサ アーキテクチャ (None、X86、Amd64) モジュールが必要です。 有効な値は x86、AMD64、IA64、および None (不明または未指定) です。<br /><br /> 例: `ProcessorArchitecture = 'x86'`|
+|RootModule<br /><br /> Type: string|' '|スクリプト モジュールまたはバイナリ モジュール ファイルこのマニフェストに関連付けられています。 PowerShell の以前のバージョンでは、この要素に、ModuleToProcess が呼び出されます。<br /><br /> ルート モジュールの種類を空にすることができます (このように、**マニフェスト**モジュール)、スクリプト モジュールの名前 (これにより、.psm1、**スクリプト**モジュール)、またはバイナリ モジュール (.exe または .dll の名前これは、これにより、**バイナリ**モジュール)。 モジュール マニフェスト (.psd1) ファイルまたはスクリプト ファイル (.ps1) の名前をこの要素に配置すると、発生するエラーが発生します。|
+|ModuleVersion<br /><br /> Type: string|1.0|このモジュールのバージョン番号。 文字列は、[System.Version] に変換できる必要があります。 つまり、' #。 #。 #。 #。 #' です。 `Import-Module` 上で見つかった最初のモジュールを読み込む、 **$psModulePath**を名と一致して、少なくともの ModuleVersion を持つ、`-MinimumVersion`パラメーター。 特定のバージョンをインポートするには、使用、`-RequiredVersion`パラメーターを代わりにします。<br /><br /> 例: `ModuleVersion = '1.0'`|
+|GUID<br /><br /> Type: string|自動生成された GUID|このモジュールを一意に識別するために使用される ID。 GUID のモジュールをインポートすることはできません現在に注意してください。<br /><br /> 例: `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
+|作成者<br /><br /> Type: string|None|このモジュールの作成者です。<br /><br /> 例: `Author = 'AuthorNameHere'`|
+|CompanyName<br /><br /> Type: string|Unknown の中から 1 つ以上を指定します|企業またはこのモジュールのベンダー。<br /><br /> 例: `CompanyName = 'Fabrikam'`|
+|著作権<br /><br /> Type: string|(c) [現在] [作成者]。 All rights reserved.|このモジュールの著作権情報。<br /><br /> 例: `Copyright = '2016 AuthorName. All rights reserved.'`|
+|説明<br /><br /> Type: string|' '|このモジュールによって提供される機能の説明です。<br /><br /> 例: `Description = 'This is a description of a module.'`|
+|PowerShellVersion<br /><br /> Type: string|' '|このモジュールに必要な Windows PowerShell エンジンの最小バージョン。 現在の有効な値は、1.0、2.0、3.0、4.0、および 5.0 です。<br /><br /> 例: `PowerShellVersion = '5.0'`|
+|PowerShellHostName<br /><br /> Type: string|' '|モジュールに必要な Windows PowerShell ホストの名前を指定します。 この名前は、Windows PowerShell によって提供されます。 プログラムのホスト プログラムの名前を検索する入力:`$host.name`します。<br /><br /> 例: `PowerShellHostName = 'Windows PowerShell ISE Host'`|
+|PowerShellHostVersion<br /><br /> Type: string|' '|このモジュールに必要な Windows PowerShell ホストの最小バージョン。<br /><br /> 例: `PowerShellHostVersion = '2.0'`|
+|DotNetFrameworkVersion<br /><br /> Type: string|' '|このモジュールに必要な Microsoft .NET Framework の最小バージョン。<br /><br /> 例: `DotNetFrameworkVersion = '3.5'`|
+|CLRVersion<br /><br /> Type: string|' '|このモジュールに必要な共通言語ランタイム (CLR) の最小バージョン。<br /><br /> 例: `CLRVersion = '3.5'`|
+|ProcessorArchitecture<br /><br /> Type: string|' '|プロセッサ アーキテクチャ (None、X86、Amd64) モジュールが必要です。 有効な値は x86、AMD64、IA64、および None (不明または未指定) です。<br /><br /> 例: `ProcessorArchitecture = 'x86'`|
 |RequiredModules<br /><br /> Type: [string[]]|@()|このモジュールをインポートする前にグローバル環境にインポートする必要がありますモジュールです。 既に読み込まれている場合を除き、表示されているすべてのモジュールが読み込まれます。 (たとえば、一部のモジュール可能性があるによって既に読み込まれて別のモジュール。)。 使用して読み込む特定のバージョンを指定することも`RequiredVersion`なく`ModuleVersion`します。 使用する場合`ModuleVersion`指定されているバージョンの最小値で使用可能な最新バージョンが読み込まれます。<br /><br /> 例: `RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`<br /><br /> 例: `RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})`|
 |RequiredAssemblies<br /><br /> Type: [string[]]|@()|このモジュールをインポートする前に読み込む必要があるアセンブリ。<br /><br /> なお RequiredModules とは異なり、PowerShell は、既に読み込まれていない場合、RequiredAssemblies に読み込まれます。|
 |ScriptsToProcess<br /><br /> Type: [string[]]|@()|モジュールがインポートされるときに、呼び出し元のセッション状態で実行されるスクリプト (.ps1) ファイル。 これにより、グローバル セッション状態や、入れ子になったモジュール、別のモジュールのセッション状態の可能性があります。 これらのスクリプトを使用して、ログイン スクリプトを使用する場合と同様に、環境を準備することができます。<br /><br /> これらのスクリプトは、マニフェストにリストされているモジュールのいずれかが読み込まれる前に実行されます。|
@@ -93,8 +93,8 @@ A*モジュール マニフェスト*Windows PowerShell データ ファイル (
 |ModuleList<br /><br /> Type: [string[]]|@()|このモジュールでは、パッケージ化するすべてのモジュールを指定します。 これらのモジュールは、ModuleName と GUID のキーを持つ名前 (コンマ区切り文字列) またはハッシュ テーブルとして入力できます。 ハッシュ テーブルには、オプションの ModuleVersion キーをこともできます。 ModuleList キーは、モジュール インベントリとして設計されています。 これらのモジュールは自動的に処理されません。|
 |ファイル一覧<br /><br /> Type: [string[]]|@()|このモジュールでパッケージ化されたすべてのファイルの一覧です。 として ModuleList、FileList に役立つ、インベントリ リストとしてし、は、それ以外の場合は処理されません。|
 |PrivateData<br /><br /> 種類: [オブジェクト]|' '|RootModule/ModuleToProcess キーで指定された、ルート モジュールに渡される必要があるプライベート データを指定します。|
-|HelpInfoURI<br /><br /> 型: 文字列|' '|このモジュールの HelpInfo URI。|
-|DefaultCommandPrefix<br /><br /> 型: 文字列|' '|コマンドの既定のプレフィックスは、このモジュールからエクスポートされます。 既定のプレフィックスを使用して、オーバーライド`Import-Module`のプレフィックス。|
+|HelpInfoURI<br /><br /> Type: string|' '|このモジュールの HelpInfo URI。|
+|DefaultCommandPrefix<br /><br /> Type: string|' '|コマンドの既定のプレフィックスは、このモジュールからエクスポートされます。 既定のプレフィックスを使用して、オーバーライド`Import-Module`のプレフィックス。|
 
 ## <a name="sample-module-manifest"></a>モジュール マニフェストのサンプル
 
