@@ -37,7 +37,7 @@ Microsoft .NET Framework クラスが指定することでコマンドレット�
 
 動詞を指定すると、開発のガイドラインでは、Windows PowerShell によって提供される定義済みの動詞のいずれかを使用する必要があります。 これらの定義済みの動詞のいずれかは、作成したコマンドレットと Microsoft によっては他のユーザーが記述されたコマンドレット一貫性が確保されます。 たとえば、"Get"動詞は、データを取得するコマンドレットが使用されます。
 
-動詞に関するガイドラインの詳細については、[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md) を参照してください。コマンドレット名では使用できない特殊文字の一覧は、[必要な開発ガイドライン](./required-development-guidelines.md) を参照してください。
+動詞に関するガイドラインの詳細については、[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md) を参照してください。 コマンドレット名では使用できない特殊文字の一覧は、[必要な開発ガイドライン](./required-development-guidelines.md) を参照してください。
 
 ## <a name="supporting-windows-powershell-functionality"></a>Windows PowerShell の機能をサポートしています。
 

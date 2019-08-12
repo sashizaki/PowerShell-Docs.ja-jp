@@ -25,7 +25,7 @@ ms.locfileid: "62082247"
 
 ## <a name="importing-a-module-with-import-module-powershell-20"></a>モジュールのインポート (PowerShell 2.0) を持つモジュールをインポートします。
 
-PowerShell 2.0 では、適切に名前付き[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) コマンドレット モジュールをインポートします。 このコマンドレットを実行されると、 Windows PowerShell は`PSModulePath`変数で指定したディレクトリ内の指定したモジュールを検索します。指定されたディレクトリが見つかった場合、Windows PowerShell がモジュールのマニフェスト ファイル (.psd1)、スクリプト モジュール ファイル (.psm1)、バイナリ モジュール ファイル (.dll) の順序でファイルを検索します。 検索するディレクトリを追加する方法の詳細については、 [PSModulePath インストール パスを変更する](./modifying-the-psmodulepath-installation-path.md) を参照してください。 次のコードでは、モジュールをインポートする方法について説明します。
+PowerShell 2.0 では、適切に名前付き[Import-module](/powershell/module/Microsoft.PowerShell.Core/Import-Module) コマンドレット モジュールをインポートします。 このコマンドレットを実行されると、 Windows PowerShell は`PSModulePath`変数で指定したディレクトリ内の指定したモジュールを検索します。 指定されたディレクトリが見つかった場合、Windows PowerShell がモジュールのマニフェスト ファイル (.psd1)、スクリプト モジュール ファイル (.psm1)、バイナリ モジュール ファイル (.dll) の順序でファイルを検索します。 検索するディレクトリを追加する方法の詳細については、 [PSModulePath インストール パスを変更する](./modifying-the-psmodulepath-installation-path.md) を参照してください。 次のコードでは、モジュールをインポートする方法について説明します。
 
 ```powershell
 Import-Module myModule
