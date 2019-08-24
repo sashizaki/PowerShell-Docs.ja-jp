@@ -12,6 +12,8 @@
   items:
     - name: Linux 用 DSC の概要
       href: getting-started/lnxGettingStarted.md
+    - name: Windows 用 DSC の概要
+      href: getting-started/winGettingStarted.md
     - name: Nano 上での DSC の概要
       href: getting-started/nanoDSC.md
     - name: Azure Automation での DSC の概要
