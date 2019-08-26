@@ -52,6 +52,24 @@
       href: learn/writing-portable-modules.md
     - name: PowerShell リモート処理
       items:
+        - name: Just Enough Administration (JEA)
+          items:
+            - name: 概要
+              href: learn/remoting/jea/overview.md
+            - name: 前提条件
+              href: learn/remoting/jea/prerequisites.md
+            - name: ロール機能
+              href: learn/remoting/jea/role-capabilities.md
+            - name: セッションの構成
+              href: learn/remoting/jea/session-configurations.md
+            - name: JEA の登録
+              href: learn/remoting/jea/register-jea.md
+            - name: JEA の使用
+              href: learn/remoting/jea/using-jea.md
+            - name: セキュリティの考慮事項
+              href: learn/remoting/jea/security-considerations.md
+            - name: JEA での監査とレポート
+              href: learn/remoting/jea/audit-and-report.md
         - name: リモート コマンドの実行
           href: learn/remoting/running-remote-commands.md
         - name: SSH 経由の PowerShell リモート処理
