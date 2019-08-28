@@ -2,12 +2,12 @@
 ms.date: 03/04/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC プル サービス
-ms.openlocfilehash: 3cb2ca09111100f39589072a0d8e7010f9188efb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 865eae5813e0c7b656a4158f0b1350e60f1e3291
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62079406"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986532"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration プル サービス
 
@@ -228,7 +228,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 
 各リソース モジュールは、圧縮し、`{Module Name}_{Module Version}.zip` というパターンで名前を付ける必要があります。
 
-たとえば、モジュール名が xWebAdminstration で、バージョンが 3.1.2.0 のモジュールでは、`xWebAdministration_3.2.1.0.zip` という名前になります。
+たとえば、モジュール名が xWebAdminstration で、バージョンが 3.1.2.0 のモジュールでは、`xWebAdministration_3.1.2.0.zip` という名前になります。
 各バージョンのモジュールを 1 つの zip ファイルに含める必要があります。
 各 zip ファイルには 1 つのバージョンのリソースのみが含まれるので、WMF 5.0 で追加された、単一のディレクトリに複数のモジュール バージョンを入れるモジュール形式はサポートされていません。
 このため、プル サーバーで使うための DSC リソース モジュールをパッケージ化する前に、ディレクトリ構造に少しの変更が必要です。
