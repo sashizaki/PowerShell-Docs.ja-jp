@@ -1,15 +1,15 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
+contributor: JKeithB, SydneyhSmith
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 description: パブリッシャー向けのガイドライン
 title: PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
-ms.openlocfilehash: 1cd0140cc208949e13d23331b23a58ffc374430b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: b470dbd81e79d2a6a228b8c89f85e57c03803ede
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62084659"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986511"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -85,6 +85,22 @@ PowerShell ギャラリーに公開するモジュールのサンプルは、モ
 
 サンプルの推奨パターンは、[PSDscResource モジュール](https://www.powershellgallery.com/packages/PSDscResources) の Examples\RegistryResource フォルダーにあります。
 各ファイルの冒頭には、4 つのサンプルの使用例とともに、サンプルの内容を示す簡単な説明が記載されています。
+
+## <a name="manage-dependencies"></a>依存関係の管理
+
+お客様のモジュールが依存しているモジュールを、モジュール マニフェストで指定することが重要です。
+これにより、エンド ユーザーは、お客様のモジュールが依存している適切なバージョンのモジュールのインストールについて心配する必要がなくなります。
+依存モジュールを指定するには、モジュール マニフェスト内の必須モジュール フィールドを使う必要があります。
+これによって、一覧にあるすべてのモジュールが、お客様のモジュールをインポートする前に (既に読み込まれている場合を除いて) グローバル環境に読み込まれます。 (たとえば、別のモジュールによって一部のモジュールが既に読み込まれている場合があります。)。
+また、ModuleVersion フィールドではなく RequiredVersion フィールドを使って、特定のバージョンを読み込むように指定することもできます。 ModuleVersion を使う場合は、最小バージョンが指定され、使用可能な最新バージョンが読み込まれます。
+特定のバージョンを指定する RequiredVersion フィールドを使わない場合は、必須モジュールのバージョン更新を監視することが重要です。
+モジュールのユーザー エクスペリエンスに影響する可能性のある破壊的変更には、特に注意する必要があります。
+
+```powershell
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+
+Example: RequiredModules = @(@{ModuleName="myDependentModule"; RequiredVersion="1.5"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
+```
 
 ## <a name="respond-to-feedback"></a>フィードバックに対応する
 
