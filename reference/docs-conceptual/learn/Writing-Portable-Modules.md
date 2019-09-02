@@ -30,7 +30,7 @@ Windows PowerShell 用に記述されたモジュールを PowerShell Core で�
 
 ## <a name="creating-a-new-module"></a>新しいモジュールの作成
 
-新しいモジュールを作成する場合に推奨されるのは、[.NET CLI][] を使用することです。
+新しいモジュールを作成する場合に推奨されるのは、[.NET CLI][] の使用です。
 
 ### <a name="installing-the-powershell-standard-module-template"></a>PowerShell 標準モジュール テンプレートのインストール
 
@@ -173,7 +173,7 @@ FavoriteNumber FavoritePet
 
 .NET Standard をターゲットにすると、モジュールが進化しても、互換性のない API が誤ってモジュールに導入されないことが保証されます。 非互換性は、実行時ではなくコンパイル時に検出されます。
 
-ただし、互換性のある API を使用してさえいれば、.NET Standard をターゲットにしなくても、モジュールは Windows PowerShell と PowerShell Core の両方で動作します。 中間言語 (IL) は、2 つのランタイムの間で互換性があります。 .NET Framework 4.6.1 をターゲットにでき、それは .NET Standard 2.0 と互換性があります。 .NET Standard 2.0 の対象外の API を使用していなければ、モジュールは再コンパイルしなくても PowerShell Core 6 で動作します。
+ただし、互換性のある API を使用してさえいれば、.NET Standard をターゲットにしなくても、モジュールは Windows PowerShell と PowerShell Core の両方で動作します。 中間言語 (IL) は、2 つのランタイムの間で互換性があります。 .NET Framework 4.6.1 をターゲットにでき、これは .NET Standard 2.0 と互換性があります。 .NET Standard 2.0 の対象外の API を使用していなければ、モジュールは再コンパイルしなくても PowerShell Core 6 で動作します。
 
 ## <a name="powershell-standard-library"></a>PowerShell Standard ライブラリ
 
