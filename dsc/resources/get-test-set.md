@@ -2,18 +2,18 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Get-Test-Set
-ms.openlocfilehash: e4aa7770bb5fc8b916b0c0a6488b1ccc0ef0ade9
-ms.sourcegitcommit: 58fb23c854f5a8b40ad1f952d3323aeeccac7a24
+ms.openlocfilehash: 68738107cd4a222a13dd4afa158f0370953158ad
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65229520"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215418"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
 
 >適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
-![取得、テスト、および設定](/media/get-test-set.png)
+![取得、テスト、および設定](../media/get-test-set.png)
 
 PowerShell の Desired State Configuration は、**Get**、**Test**、および **Set** プロセスを中心に構成されています。 DSC の各[リソース](resources.md)には、これらの各操作を完了するためのメソッドが含まれています。 「[構成](../configurations/configurations.md)」では、リソースの **Get**、**Test**、および **Set** メソッドのパラメーターとなるキーを入力するリソース ブロックを定義します。
 

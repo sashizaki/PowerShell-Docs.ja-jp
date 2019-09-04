@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Import-DSCResource の使用
-ms.openlocfilehash: ee0b2f0469c6507c8f0148138198597a9e57cdd7
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: e1c2c06d756a70c2de516f330e3123235ce740ba
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080103"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215408"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource の使用
 
@@ -78,7 +78,7 @@ Name パラメーターのみを使用するときに考慮すべき事項:
 
 ISE で DSC の構成を作成するとき、PowerShell ではリソースおよびリソースのプロパティに対して IntelliSence が提供されます。 `$pshome` モジュール パスの下にあるリソースの定義が、自動的に読み込まれます。 `Import-DSCResource` キーワードを使ってリソースをインポートすると、指定したリソース定義が追加されて、インポートされたリソースのスキーマを含むように IntelliSence が拡張されます。
 
-![リソースの IntelliSense](/media/resource-intellisense.png)
+![リソースの IntelliSense](../media/resource-intellisense.png)
 
 > [!NOTE]
 > PowerShell 5.0 以降では、DSC リソースとそのプロパティ用の ISE に対して Tab 補完機能が追加されました。 詳しくは、[リソース](../resources/resources.md)に関する記事をご覧ください。
@@ -137,11 +137,11 @@ Configuration を作成するときに、複数の相違点が PowerShell 4.0 �
 
 次の図では、2 つのバージョンの **xPSDesiredStateConfiguration** モジュールがインストールされています。
 
-![修正された複数リソース バージョン](/media/multiple-resource-versions-broken.md)
+![修正された複数リソース バージョン](../media/multiple-resource-versions-broken.png)
 
 必要なモジュールのバージョンの内容を、モジュール ディレクトリの最上位レベルにコピーします。
 
-![修正された複数リソース バージョン](/media/multiple-resource-versions-fixed.md)
+![修正された複数リソース バージョン](../media/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>リソースの場所
 
