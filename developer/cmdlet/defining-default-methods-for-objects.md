@@ -8,25 +8,26 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 53fe744a-485f-4c21-9623-1cb546372211
 caps.latest.revision: 9
-ms.openlocfilehash: af554cde5e888f2a008028010332caa473151622
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 346a194c6b4c81aa61a6331cdb62ae380a17bb1e
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733984"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215293"
 ---
 # <a name="defining-default-methods-for-objects"></a>オブジェクトの既定のメソッドを定義する
 
-.NET Framework オブジェクトを拡張するときに、オブジェクトをコード メソッドおよびスクリプト メソッドを追加できます。 これらのメソッドを定義するために使用される XML は次のセクションで説明します。
+.NET Framework オブジェクトを拡張すると、コードメソッドとスクリプトメソッドをオブジェクトに追加できます。
+これらのメソッドの定義に使用される XML については、次のセクションで説明します。
 
 > [!NOTE]
-> セクションでは、次の例は、Windows PowerShell のインストール ディレクトリに Types.ps1xml 型ファイル (`$pshome`)。
+> 次のセクションの例は、Windows PowerShell `Types.ps1xml`インストールディレクトリ (`$PSHOME`) の種類のファイルに含まれています。 詳細については、「 [types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)」を参照してください。
 
-## <a name="code-methods"></a>コード メソッド
+## <a name="code-methods"></a>コードメソッド
 
-コードのメソッドは、.NET Framework オブジェクトの静的メソッドを参照します。
+コードメソッドは、.NET Framework オブジェクトの静的メソッドを参照しています。
 
-次の例では、 **ConvertLargeIntegerToInt64**メソッドに追加されます、 [System.Xml.Xmlnode でしょうか。Displayproperty = Fullname](/dotnet/api/System.Xml.XmlNode)型。 [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod)要素は、コードの方法として、拡張メソッドを定義します。 [名前](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name)要素は、拡張メソッドの名前を指定します。 また、 [CodeReference](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference)要素は、静的メソッドを指定します。 (追加することも、 [PSCodeMethod](/dotnet/api/system.management.automation.pscodemethod)要素のメンバーに、 [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0)要素です)。
+次の例では、 **ToString**メソッドが[system.xml](/dotnet/api/System.Xml.XmlNode)型に追加されます。 [Pscodemethod](/dotnet/api/system.management.automation.pscodemethod)要素は、拡張メソッドをコードメソッドとして定義します。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name)要素は、拡張メソッドの名前を指定します。 また、 [Codereference 参照](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference)要素は静的メソッドを指定します。 [Pscodemethod](/dotnet/api/system.management.automation.pscodemethod)要素を[psmembers](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0)要素のメンバーに追加することもできます。
 
 ```xml
 <Type>
@@ -35,7 +36,7 @@ ms.locfileid: "67733984"
     <CodeMethod>
       <Name>ToString</Name>
       <CodeReference>
-        <TypeName>Microsoft.PowerShell.ToStringCodemethods</TypeName>
+        <TypeName>Microsoft.PowerShell.ToStringCodeMethods</TypeName>
         <MethodName>XmlNode</MethodName>
       </CodeReference>
     </CodeMethod>
@@ -43,9 +44,9 @@ ms.locfileid: "67733984"
 </Type>
 ```
 
-## <a name="script-methods"></a>スクリプト メソッド
+## <a name="script-methods"></a>スクリプトメソッド
 
-スクリプト メソッドでは、値が、スクリプトの出力メソッドを定義します。 次の例では、 **ConvertToDateTime**メソッドに追加されます、 [System.Management.Managementobject でしょうか。Displayproperty = Fullname](/dotnet/api/System.Management.ManagementObject)型。 [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0)要素は、スクリプト メソッドとして、拡張メソッドを定義します。 [名前](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name)要素は、拡張メソッドの名前を指定します。 また、[スクリプト](/dotnet/api/system.management.automation.psscriptmethod.script?view=pscore-6.2.0#System_Management_Automation_PSScriptMethod_Script)要素は、メソッドの値を生成するスクリプトを指定します。 (追加することも、 [PSScriptMethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0)要素のメンバーに、 [PSMemberSets](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0)要素です)。
+スクリプトメソッドは、値がスクリプトの出力であるメソッドを定義します。 次の例では、 **Converttodatetime**メソッドが[system.management.managementobject](/dotnet/api/System.Management.ManagementObject)型に追加されています。 [Psscriptmethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0)要素は、拡張メソッドをスクリプトメソッドとして定義します。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name)要素は、拡張メソッドの名前を指定します。 また、 [script](/dotnet/api/system.management.automation.psscriptmethod.script?view=pscore-6.2.0#System_Management_Automation_PSScriptMethod_Script)要素は、メソッド値を生成するスクリプトを指定します。 [Psscriptmethod](/dotnet/api/system.management.automation.psscriptmethod?view=pscore-6.2.0)要素は、 [psmembers](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0)要素のメンバーに追加することもできます。
 
 ```xml
 <Type>
