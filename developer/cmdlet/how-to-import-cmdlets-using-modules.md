@@ -1,45 +1,55 @@
 ---
 title: モジュールを使用してコマンドレットをインポートする方法 |Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/28/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
 caps.latest.revision: 8
-ms.openlocfilehash: c007bb11324e10ffd100797dccd9e6ab0d09a73e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 2f145795a57c988da0cb4ed294142aa141c53cae
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62067979"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215265"
 ---
-# <a name="how-to-import-cmdlets-using-modules"></a><span data-ttu-id="ef821-102">モジュールを使用してコマンドレットをインポートする方法</span><span class="sxs-lookup"><span data-stu-id="ef821-102">How to Import Cmdlets Using Modules</span></span>
+# <a name="how-to-import-cmdlets-using-modules"></a><span data-ttu-id="98a9c-102">モジュールを使用してコマンドレットをインポートする方法</span><span class="sxs-lookup"><span data-stu-id="98a9c-102">How to Import Cmdlets Using Modules</span></span>
 
-<span data-ttu-id="ef821-103">このトピックでは、バイナリ モジュールを使用して Windows PowerShell セッションにコマンドレットをインポートする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="ef821-103">This topic describes how to import cmdlets to a Windows PowerShell session by using a binary module.</span></span>
+<span data-ttu-id="98a9c-103">この記事では、バイナリモジュールを使用して PowerShell セッションにコマンドレットをインポートする方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="98a9c-103">This article describes how to import cmdlets to a PowerShell session by using a binary module.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="ef821-104">モジュールのメンバーには、コマンドレット、プロバイダー、関数、変数、エイリアス、およびその他を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="ef821-104">The members of modules can include cmdlets, providers, functions, variables, aliases, and much more.</span></span> <span data-ttu-id="ef821-105">スナップインには、コマンドレットとプロバイダーのみを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="ef821-105">Snap-ins can contain only cmdlets and providers.</span></span>
+> <span data-ttu-id="98a9c-104">モジュールのメンバーには、コマンドレット、プロバイダー、関数、変数、別名などを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="98a9c-104">The members of modules can include cmdlets, providers, functions, variables, aliases, and much more.</span></span> <span data-ttu-id="98a9c-105">スナップインには、コマンドレットとプロバイダーのみを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="98a9c-105">Snap-ins can contain only cmdlets and providers.</span></span>
 
-## <a name="how-to-load-cmdlets-using-a-module"></a><span data-ttu-id="ef821-106">モジュールを使用してコマンドレットを読み込む方法</span><span class="sxs-lookup"><span data-stu-id="ef821-106">How to load cmdlets using a module</span></span>
+## <a name="how-to-load-cmdlets-using-a-module"></a><span data-ttu-id="98a9c-106">モジュールを使用してコマンドレットを読み込む方法</span><span class="sxs-lookup"><span data-stu-id="98a9c-106">How to load cmdlets using a module</span></span>
 
-1. <span data-ttu-id="ef821-107">コマンドレットが実装されているアセンブリ ファイルと同じ名前を持つモジュール フォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="ef821-107">Create a module folder that has the same name as the assembly file in which the cmdlets are implemented.</span></span> <span data-ttu-id="ef821-108">この手順でモジュール フォルダーを作成、`system32`フォルダー。</span><span class="sxs-lookup"><span data-stu-id="ef821-108">In this procedure, the module folder is created in the `system32` folder.</span></span>
+1. <span data-ttu-id="98a9c-107">コマンドレットが実装されているアセンブリファイルと同じ名前のモジュールフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="98a9c-107">Create a module folder that has the same name as the assembly file in which the cmdlets are implemented.</span></span> <span data-ttu-id="98a9c-108">この手順では、Windows `system32`フォルダーにモジュールフォルダーが作成されます。</span><span class="sxs-lookup"><span data-stu-id="98a9c-108">In this procedure, the module folder is created in the Windows `system32` folder.</span></span>
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
-2. <span data-ttu-id="ef821-109">必ず、`PSModulePath`環境変数には、新しいモジュール フォルダーへのパスが含まれています。</span><span class="sxs-lookup"><span data-stu-id="ef821-109">Make sure that the `PSModulePath` environment variable includes the path to your new module folder.</span></span> <span data-ttu-id="ef821-110">既定では、システム フォルダーは既にに追加、`PSModulePath`環境変数。</span><span class="sxs-lookup"><span data-stu-id="ef821-110">By default, the system folder is already added to the `PSModulePath` environment variable.</span></span>
+1. <span data-ttu-id="98a9c-109">`PSModulePath`環境変数に新しいモジュールフォルダーへのパスが含まれていることを確認します。</span><span class="sxs-lookup"><span data-stu-id="98a9c-109">Make sure that the `PSModulePath` environment variable includes the path to your new module folder.</span></span> <span data-ttu-id="98a9c-110">既定では、システムフォルダーは`PSModulePath`環境変数に既に追加されています。</span><span class="sxs-lookup"><span data-stu-id="98a9c-110">By default, the system folder is already added to the `PSModulePath` environment variable.</span></span> <span data-ttu-id="98a9c-111">を表示`PSModulePath`するには、 `$env:PSModulePath`「」と入力します。</span><span class="sxs-lookup"><span data-stu-id="98a9c-111">To view the `PSModulePath`, type: `$env:PSModulePath`.</span></span>
 
-3. <span data-ttu-id="ef821-111">モジュール フォルダーには、コマンドレットのアセンブリをコピーします。</span><span class="sxs-lookup"><span data-stu-id="ef821-111">Copy the cmdlet assembly into the module folder.</span></span>
+1. <span data-ttu-id="98a9c-112">コマンドレットアセンブリをモジュールフォルダーにコピーします。</span><span class="sxs-lookup"><span data-stu-id="98a9c-112">Copy the cmdlet assembly into the module folder.</span></span>
 
-4. <span data-ttu-id="ef821-112">コマンドレットをセッションに追加するには、次のコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="ef821-112">Run the following command to add the cmdlets to the session:</span></span>
+1. <span data-ttu-id="98a9c-113">モジュールのルートフォルダーにモジュール`.psd1`マニフェストファイル () を追加します。</span><span class="sxs-lookup"><span data-stu-id="98a9c-113">Add a module manifest file (`.psd1`) in the module's root folder.</span></span> <span data-ttu-id="98a9c-114">PowerShell はモジュールマニフェストを使用してモジュールをインポートします。</span><span class="sxs-lookup"><span data-stu-id="98a9c-114">PowerShell uses the module manifest to import your module.</span></span> <span data-ttu-id="98a9c-115">詳細については、「 [PowerShell モジュールマニフェストを記述する方法](../module/how-to-write-a-powershell-module-manifest.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="98a9c-115">For more information, see [How to Write a PowerShell Module Manifest](../module/how-to-write-a-powershell-module-manifest.md).</span></span>
 
-   `import-module [Module_Name]`
+1. <span data-ttu-id="98a9c-116">次のコマンドを実行して、コマンドレットをセッションに追加します。</span><span class="sxs-lookup"><span data-stu-id="98a9c-116">Run the following command to add the cmdlets to the session:</span></span>
 
-   <span data-ttu-id="ef821-113">この手順は、テスト、コマンドレットを使用できます。</span><span class="sxs-lookup"><span data-stu-id="ef821-113">This procedure can be used to test your cmdlets.</span></span> <span data-ttu-id="ef821-114">セッションにアセンブリ内のすべてのコマンドレットを追加します。</span><span class="sxs-lookup"><span data-stu-id="ef821-114">It adds all the cmdlets in the assembly to the session.</span></span> <span data-ttu-id="ef821-115">モジュールの詳細については、モジュール、モジュール、およびエクスポートされるモジュールの要素を制限する方法を読み込むためのさまざまな方法のさまざまな種類を参照してください[Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)します。</span><span class="sxs-lookup"><span data-stu-id="ef821-115">For more information about modules, the different types of modules, the different ways to load modules, and how to restrict the elements of a module that are exported, see [Writing a Windows PowerShell Module](../module/writing-a-windows-powershell-module.md).</span></span>
+   `Import-Module [Module_Name]`
 
-## <a name="see-also"></a><span data-ttu-id="ef821-116">参照</span><span class="sxs-lookup"><span data-stu-id="ef821-116">See Also</span></span>
+   <span data-ttu-id="98a9c-117">この手順は、コマンドレットをテストするために使用できます。</span><span class="sxs-lookup"><span data-stu-id="98a9c-117">This procedure can be used to test your cmdlets.</span></span> <span data-ttu-id="98a9c-118">これにより、アセンブリ内のすべてのコマンドレットがセッションに追加されます。</span><span class="sxs-lookup"><span data-stu-id="98a9c-118">It adds all the cmdlets in the assembly to the session.</span></span> <span data-ttu-id="98a9c-119">モジュールの詳細については、「 [Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="98a9c-119">For more information about modules, see [Writing a Windows PowerShell Module](../module/writing-a-windows-powershell-module.md).</span></span>
 
-[<span data-ttu-id="ef821-117">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="ef821-117">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+## <a name="see-also"></a><span data-ttu-id="98a9c-120">関連項目</span><span class="sxs-lookup"><span data-stu-id="98a9c-120">See also</span></span>
 
-[<span data-ttu-id="ef821-118">モジュールのインストール</span><span class="sxs-lookup"><span data-stu-id="ef821-118">Installing Modules</span></span>](../module/installing-a-powershell-module.md)
+[<span data-ttu-id="98a9c-121">PowerShell モジュールマニフェストを記述する方法</span><span class="sxs-lookup"><span data-stu-id="98a9c-121">How to Write a PowerShell Module Manifest</span></span>](../module/how-to-write-a-powershell-module-manifest.md)
+
+[<span data-ttu-id="98a9c-122">PowerShell モジュールのインポート</span><span class="sxs-lookup"><span data-stu-id="98a9c-122">Importing a PowerShell Module</span></span>](../module/importing-a-powershell-module.md)
+
+[<span data-ttu-id="98a9c-123">Import-Module</span><span class="sxs-lookup"><span data-stu-id="98a9c-123">Import-Module</span></span>](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
+
+[<span data-ttu-id="98a9c-124">モジュールのインストール</span><span class="sxs-lookup"><span data-stu-id="98a9c-124">Installing Modules</span></span>](../module/installing-a-powershell-module.md)
+
+[<span data-ttu-id="98a9c-125">PSModulePath インストールパスの変更</span><span class="sxs-lookup"><span data-stu-id="98a9c-125">Modifying the PSModulePath Installation Path</span></span>](../module/modifying-the-psmodulepath-installation-path.md)
+
+[<span data-ttu-id="98a9c-126">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="98a9c-126">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
