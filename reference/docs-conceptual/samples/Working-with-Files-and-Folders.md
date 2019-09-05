@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: ファイルとフォルダーの操作
-ms.openlocfilehash: 0f7cb233918b59475417ec49b611ecc25a94ebe1
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 743e261d2f5e8bfa39f2731fca7fea6e5678c711
+ms.sourcegitcommit: 02eed65c526ef19cf952c2129f280bb5615bf0c8
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030692"
+ms.lasthandoff: 09/03/2019
+ms.locfileid: "70215523"
 ---
 # <a name="working-with-files-and-folders"></a>ファイルとフォルダーの操作
 
@@ -106,15 +106,17 @@ sure you want to continue?
 Remove-Item -Path C:\temp\DeleteMe -Recurse
 ```
 
-## <a name="mapping-a-local-folder-as-a-windows-accessible-drive"></a>Windows のアクセス可能なドライブとしてのローカル フォルダーのマッピング
+## <a name="mapping-a-local-folder-as-a-drive"></a>ローカル フォルダーをドライブとしてマップする
 
-**subst** コマンドを使用することにより、ローカル フォルダーをマッピングすることもできます。 次のコマンドは、ローカルの Program Files ディレクトリをルートとするローカル ドライブ P: を作成します。
+**New-PSDrive** コマンドを使用して、ローカル フォルダーをマッピングすることもできます。 次のコマンドは、ローカルの Program Files ディレクトリをルートとする PowerShell セッションからのみ参照できる、ローカル ドライブ P: が作成されます。
 
 ```powershell
-subst p: $env:programfiles
+New-PSDrive -Name P -Root $env:ProgramFiles -PSProvider FileSystem
 ```
 
-ネットワーク ドライブと同様に、**subst** を使用して Windows PowerShell 内でマッピングされたドライブは、直ちに Windows PowerShell シェルに表示されます。
+ネットワーク ドライブと同様に、Windows PowerShell 内でマッピングされたドライブは、直ちに Windows PowerShell シェルに表示されます。
+ファイル エクスプローラーから参照できるマッピングされたドライブを作成するには、 **-Persist** のパラメーターが必要です。 ただし、Persist で使用できるのはリモートのパスのみです。
+
 
 ## <a name="reading-a-text-file-into-an-array"></a>配列へのテキスト ファイルの読み込み
 
