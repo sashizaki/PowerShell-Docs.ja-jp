@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 302f00ef-e145-4668-a26a-03bc96ef4b8f
 caps.latest.revision: 10
 ms.openlocfilehash: 9cc6933858f4f37e4fa8b3bbe9afb69a73c68572
-ms.sourcegitcommit: caac7d098a448232304c9d6728e7340ec7517a71
+ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/16/2019
-ms.locfileid: "58059645"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70737576"
 ---
 # <a name="remoterunspace01-sample"></a>RemoteRunspace01 サンプル
 
 このサンプルでは、リモート接続を確立するために使用されるリモート実行空間を作成する方法を示します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
- このサンプルでは、Windows PowerShell 2.0 が必要です。
+ このサンプルには、Windows PowerShell 2.0 が必要です。
 
 ## <a name="demonstrates"></a>使用例
 
-- 作成、 [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクト。
+- [Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを作成しています。
 
-- 設定、 [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout)と[System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)プロパティ、 [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクト。
+- 「」の[Runspaceconnectioninfo *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout)プロパティと[Runspaceconnectioninfo. Opentimeout *](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)プロパティを設定しています。この操作を行うには、 [Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを実行します。
 
-- 使用するリモートの実行空間を作成、 [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)リモート接続を確立するオブジェクト。
+- リモート接続を確立するために[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを使用するリモート実行空間を作成する。
 
-- リモート接続を解放するリモートの実行空間を終了しています。
+- リモートの実行空間を閉じてリモート接続を解放しています。
 
 ## <a name="example"></a>例
 
-このサンプルでは、リモート接続を定義し、リモート接続を確立するためにその接続情報を使用します。
+このサンプルでは、リモート接続を定義し、その接続情報を使用してリモート接続を確立します。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
