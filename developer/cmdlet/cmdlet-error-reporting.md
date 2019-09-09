@@ -1,5 +1,5 @@
 ---
-title: コマンドレットのエラーの報告 |Microsoft Docs
+title: コマンドレットエラー報告 |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -14,79 +14,80 @@ helpviewer_keywords:
 - error records [PowerShell], non-terminating
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
-ms.openlocfilehash: 45f5934314a2871ceb921c7a66b9dfb658d0bd99
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068591"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986310"
 ---
-# <a name="cmdlet-error-reporting"></a>コマンドレット エラー レポート
+# <a name="cmdlet-error-reporting"></a>コマンドレットのエラー報告
 
-コマンドレットには、エラーがエラーを終了しているかどうかに応じて異なる方法でエラーまたは終了しないエラーを報告する必要があります。 終了するエラーは、すぐに終了するパイプラインが発生したエラーまたは処理を続行する理由がない場合に発生するエラーです。 終了しないエラーは、現在のエラー条件を報告するこれらのエラーは、コマンドレットは、入力オブジェクトの処理を継続できます。 終了しないエラーは、通常、ユーザーは、問題の通知がコマンドレットは、[次へ] の入力オブジェクトの処理を続行します。
+コマンドレットでは、エラーがエラーの終了または終了していないエラーであるかどうかに応じて、異なる方法でエラーを報告します。 終了エラーとは、パイプラインが直ちに終了するエラー、または処理を続行する理由がない場合に発生するエラーです。 終了しないエラーとは、現在のエラー状態を報告するエラーですが、コマンドレットは入力オブジェクトの処理を続行できます。 終了しないエラーが発生した場合、通常、ユーザーには問題が通知されますが、コマンドレットは次の入力オブジェクトの処理を続行します。
 
-## <a name="terminating-and-nonterminating-errors"></a>終了しないエラー エラー
+## <a name="terminating-and-nonterminating-errors"></a>終了エラーと終了しないエラー
 
-エラー状態が終了エラーまたは終了しないエラーを確認するのには、次のガイドラインを使用できます。
+次のガイドラインを使用して、エラー状態が終了エラーまたは終了しないエラーであるかどうかを判断できます。
 
-- エラー状態は、さらに入力オブジェクトはすべてを正常に処理されないコマンドレットをできなくなりますか。 場合は、終了エラーになります。
+- コマンドレットがそれ以上の入力オブジェクトを正常に処理できないようにするには、エラー条件を使用します。 その場合、終了エラーになります。
 
-- 特定の入力オブジェクトまたは入力オブジェクトのサブセットに関連するエラー状態ですか。 そうである場合は、終了しないエラーです。
+- 特定の入力オブジェクトまたは入力オブジェクトのサブセットに関連するエラー条件ですか。 それ以外の場合は、終了しないエラーになります。
 
-- コマンドレットは別の入力オブジェクトの処理が成功しないことなど、複数の入力オブジェクトをそのまま使用しますか。 そうである場合は、終了しないエラーです。
+- コマンドレットは、複数の入力オブジェクトを受け入れます。この場合、別の入力オブジェクトで処理が成功する可能性がありますか。 それ以外の場合は、終了しないエラーになります。
 
-- 間で何が終了して、終了しないエラーは、特定の状況が入力オブジェクトが 1 つのみに適用される場合にも複数の入力オブジェクトを受け入れ可能なコマンドレット決定します。
+- 複数の入力オブジェクトを受け入れることができるコマンドレットでは、特定の状況が1つの入力オブジェクトにのみ適用される場合でも、終了エラーと終了しないエラーのどちらを使用するかを決定する必要があります。
 
-- コマンドレットは、任意の数の入力オブジェクトを受信し、終了例外をスローする前に任意の数のオブジェクトの成功またはエラーを送信できます。 受信した入力オブジェクトの数と送信オブジェクトの成功とエラーの数の間の関係はありません。
+- コマンドレットは、任意の数の入力オブジェクトを受信し、任意の数の成功またはエラーオブジェクトを送信してから、終了例外をスローすることができます。 受信した入力オブジェクトの数と、送信された成功したエラーオブジェクトの数の間にはリレーションシップがありません。
 
-- 0 ~ 1 のオブジェクトを入力して生成が 0 ~ 1 に受け入れ可能なコマンドレットの出力オブジェクトのエラーを終了するエラーとして扱うし、終端の例外を生成する必要があります。
+- 0-1 の入力オブジェクトのみを受け入れ、0-1 出力オブジェクトのみを生成できるコマンドレットでは、エラーを終了エラーとして扱い、終了例外を生成する必要があります。
 
 ## <a name="reporting-nonterminating-errors"></a>終了しないエラーの報告
 
-終了しないエラーの報告する必要がありますを行うまでのコマンドレットの実装内で、 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッド、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)メソッド、または[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)メソッド。 この種のエラーが呼び出すことによって報告された、 [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)さらに、エラー ストリームにエラー レコードを送信するメソッド。
+終了しないエラーの報告は、常に、コマンドレットによる[システム](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)の実装 (.................................................... [) メソッド、](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)System....[コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)。 この種のエラーは、 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッドを呼び出してエラーストリームにエラーレコードを送信することによって報告されます。
 
-## <a name="reporting-terminating-errors"></a>終了するエラーを報告
+## <a name="reporting-terminating-errors"></a>終了エラーの報告
 
-例外がスローされても呼び出すことによって、終了するエラーが報告された、 [System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)メソッド。 ただし、Windows PowerShell ランタイムはそれらをキャッチも例外を再びスローする必要はありません、コマンドレットのキャッチし再 OutOfMemory などの例外をスローできますもことに注意します。
+終了エラーは、例外をスローするか、 [ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)メソッドを呼び出すことによって報告されます。 コマンドレットでは、 **OutOfMemory**などの例外をキャッチして再スローすることもできますが、PowerShell ランタイムでも例外がキャッチされるため、例外を再スローする必要はありません。
 
-状況に固有の問題に対して、独自の例外を定義または、そのエラー レコードを使用して既存の例外に情報を追加できます。
+また、状況に固有の問題に対して独自の例外を定義したり、エラーレコードを使用して既存の例外に追加情報を追加したりすることもできます。
 
-## <a name="error-records"></a>エラー レコード
+## <a name="error-records"></a>エラーレコード
 
-Windows PowerShell を使用すると、終了しないエラー状態の説明[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクト。 各[System.Management.Automation.ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクトは、エラー カテゴリの情報、省略可能なターゲット オブジェクト、およびエラーの状態に関する詳細情報を提供します。
+PowerShell では、[システム管理](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクトを使用した終了しないエラー状態について説明します。 各オブジェクトは、エラーカテゴリ情報、オプションのターゲットオブジェクト、およびエラー状態に関する詳細を提供します。
 
 ### <a name="error-identifiers"></a>エラー識別子
 
-エラー識別子は、コマンドレット内のエラー条件を識別する単純な文字列です。 Windows PowerShell は、特定のエラーに応答する場合は、エラー ストリームまたはエラーのログ記録をフィルター処理する場合は、後で使用できるエラーの完全修飾識別子を作成するコマンドレットの識別子を使用またはその他のユーザー固有のアクティビティでは、この識別子を組み合わせたものです。
+エラー識別子は、コマンドレット内のエラー状態を識別する単純な文字列です。
+PowerShell では、この識別子をコマンドレット識別子と組み合わせて、エラーストリームのフィルター処理やエラーのログ記録時、特定のエラーへの応答時、またはユーザー固有のその他の操作を行うときに、後で使用できる完全修飾エラー識別子を作成します。
 
-エラーの識別子を指定するときに、次のガイドラインに従ってください。
+エラー識別子を指定するときは、次のガイドラインに従う必要があります。
 
-- 異なるコード パスを別の高い特定のエラーの識別子を割り当てます。 呼び出すコード パスの各[System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)または[System.Management.Automation.Cmdlet.Throwterminatingerror*](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)独自のエラー識別子があります。
+- さまざまな固有のエラー識別子を異なるコードパスに割り当てます。 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)または[ThrowTerminatingError](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)を呼び出す各コードパスには、独自のエラー識別子を指定することをお勧めします。
 
-- エラー識別子は終了し、終了しないエラーの例外型を CLR に一意である必要があります。
+- エラー識別子は、終了エラーと終了エラーの両方の共通言語ランタイム (CLR) 例外型に対して一意である必要があります。
 
-- コマンドレットまたは Windows PowerShell プロバイダーのバージョン間でのエラー識別子のセマンティクスは変更されません。 エラー識別子のセマンティクスが確立されるは、コマンドレットのライフ サイクル全体で一定維持する必要があります。
+- コマンドレットまたは PowerShell プロバイダーのバージョン間でエラー識別子のセマンティクスを変更しないでください。 エラー id のセマンティクスが確立された後は、コマンドレットのライフサイクル全体にわたって一定の状態を維持する必要があります。
 
-- 終了するエラーを特定の CLR 例外型の一意のエラー識別子を使用します。 例外の種類が変更された場合は、新しいエラー識別子を使用します。
+- 終了エラーの場合は、特定の CLR 例外の種類に対して一意のエラー識別子を使用します。 例外の種類が変更された場合は、新しいエラー識別子を使用します。
 
-- 終了しないエラーの場合は、特定の入力オブジェクトの特定のエラー識別子を使用します。
+- 終了しないエラーの場合は、特定の入力オブジェクトに対して特定のエラー識別子を使用します。
 
-- 答えました報告されるエラーに対応する識別子のテキストを選択します。 空白や句読点を使用しないでください。
+- Tersely が報告されているエラーに対応する識別子のテキストを選択します。 空白や句読点は使用しないでください。
 
-- 再現可能でないエラー識別子を生成することはありません。 たとえば、プロセス識別子が含まれる識別子を生成しません。 エラー識別子は、同じ問題が発生している他のユーザーに表示される識別子に対応する場合にのみ役立ちます。
+- 再現できないエラー識別子は生成しません。 たとえば、プロセス識別子を含む識別子は生成しません。 エラー識別子は、同じ問題が発生している他のユーザーによって検出された識別子に対応している場合にのみ役立ちます。
 
-### <a name="error-categories"></a>エラー カテゴリ
+### <a name="error-categories"></a>エラーカテゴリ
 
-エラー カテゴリは、エンドユーザーのエラーをグループ化に使用されます。 Windows PowerShell は、これらのカテゴリを定義し、エラー レコードを生成するときにそれらの間のコマンドレットと Windows PowerShell プロバイダーを選択する必要があります。
+エラーカテゴリは、ユーザーのエラーをグループ化するために使用されます。 PowerShell では、これらのカテゴリとコマンドレットを定義します。 PowerShell プロバイダーは、エラーレコードを生成するときにこれらのカテゴリを選択する必要があります。
 
-使用可能なエラー カテゴリの説明は、次を参照してください。、 [System.Management.Automation.Errorcategory](/dotnet/api/System.Management.Automation.ErrorCategory)列挙体。 一般に、NoError、UndefinedError、および GenericError 可能な限り使用を避ける必要があります。
+使用可能なエラーカテゴリの説明については、 [ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)列挙体を参照してください。 一般に、可能な限り**Noerror**、 **Undefinederror**、 **genericerror**の使用は避けてください。
 
-ユーザーが設定されている場合は、カテゴリに基づいてエラーを表示できます"`$ErrorView`""CategoryView"にします。
+ユーザーは、カテゴリ`$ErrorView` **ビュー**に設定されたときに、カテゴリに基づいてエラーを表示できます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[Windows PowerShell コマンドレット](./cmdlet-overview.md)
+[コマンドレットの概要](./cmdlet-overview.md)
 
-[コマンドレットの出力](./types-of-cmdlet-output.md)
+[コマンドレットの出力の種類](./types-of-cmdlet-output.md)
 
-[Windows PowerShell シェル SDK](../windows-powershell-reference.md)
+[Windows PowerShell リファレンス](../windows-powershell-reference.md)

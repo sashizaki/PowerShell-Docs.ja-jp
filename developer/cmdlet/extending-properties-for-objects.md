@@ -1,32 +1,32 @@
 ---
 title: オブジェクトのプロパティの拡張 |Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/21/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f33ff3e9-213c-44aa-92ab-09450e65c676
 caps.latest.revision: 11
-ms.openlocfilehash: 496e363b041194563d46c09eee67a12055bb54b0
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 3b14007384cca0d0cfa35655aee437adf73b1ff0
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068149"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986492"
 ---
 # <a name="extending-properties-for-objects"></a>オブジェクトのプロパティを拡張する
 
-.NET Framework オブジェクトを拡張するときに追加できますエイリアス プロパティ、コードのプロパティ、ノート プロパティ、スクリプトのプロパティ、およびプロパティ セット オブジェクトにします。 これらのプロパティを定義するために使用される XML は次のセクションで説明します。
+.NET Framework オブジェクトを拡張すると、エイリアスプロパティ、コードプロパティ、メモプロパティ、スクリプトプロパティ、およびプロパティセットをオブジェクトに追加できます。 以下のセクションでは、これらのプロパティを定義する XML について説明します。
 
 > [!NOTE]
-> セクションでは、次の例は、Windows PowerShell のインストール ディレクトリで既定 Types.ps1xml 型ファイル (`$pshome`)。
+> 次のセクションの例は、PowerShell インストールディレクトリ`Types.ps1xml` (`$PSHOME`) の既定の種類のファイルに含まれています。 詳細については、「 [types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)」を参照してください。
 
 ## <a name="alias-properties"></a>エイリアスのプロパティ
 
-エイリアスのプロパティでは、既存のプロパティの新しい名前を定義します。
+エイリアスプロパティは、既存のプロパティの新しい名前を定義します。
 
-次の例では、`Count`プロパティに追加されます、 [System.Array でしょうか。Displayproperty = Fullname](/dotnet/api/System.Array)型。 [AliasProperty](http://msdn.microsoft.com/en-us/b140038c-807a-4bb9-beca-332491cda1b1)要素は、エイリアス プロパティとして、拡張プロパティを定義します。 [名前](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873)要素を新しい名前を指定します。 また、 [ReferencedMemberName](http://msdn.microsoft.com/en-us/0c5db6cc-9033-4d48-88a7-76b962882f7a)要素は、別名で参照されている既存のプロパティを指定します。 (追加することも、 [AliasProperty](http://msdn.microsoft.com/en-us/d6647953-94ad-4b0b-af2e-4dda6952dee1)要素のメンバーに、[メンバー セット](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3)要素です)。
+次の例では、 **Count**プロパティが[system.string 型に](/dotnet/api/System.Array)追加されています。 Alias[プロパティ](/dotnet/api/system.management.automation.psaliasproperty)要素は、拡張プロパティを別名プロパティとして定義します。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)要素は、新しい名前を指定します。 また、 [Referencedmembername](/dotnet/api/system.management.automation.psaliasproperty.referencedmembername)要素は、エイリアスによって参照される既存のプロパティを指定します。 また`AliasProperty` [、要素](/dotnet/api/system.management.automation.psmemberset)をメンバーメンバーに追加することもできます。
 
 ```xml
 <Type>
@@ -42,9 +42,9 @@ ms.locfileid: "62068149"
 
 ## <a name="code-properties"></a>コードのプロパティ
 
-コードのプロパティは、.NET Framework オブジェクトの静的プロパティを参照します。
+コードプロパティは、.NET Framework オブジェクトの静的プロパティを参照します。
 
-次の例では、`Node`プロパティに追加されます、 [System.IO.Directoryinfo でしょうか。Displayproperty = Fullname](/dotnet/api/System.IO.DirectoryInfo)型。 [CodeProperty](http://msdn.microsoft.com/en-us/59bc4d18-41eb-4c0d-8ad3-bbfa5dc488db)要素は、コードのプロパティとして、拡張プロパティを定義します。 [名前](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873)要素は、拡張プロパティの名前を指定します。 また、 [GetCodeReference](http://msdn.microsoft.com/en-us/62af34f5-cc22-42c0-9e0c-3bd0f5c1a4a0)要素は、拡張プロパティによって参照される静的メソッドを定義します。 (追加することも、 [CodeProperty](http://msdn.microsoft.com/en-us/59bc4d18-41eb-4c0d-8ad3-bbfa5dc488db)要素のメンバーに、[メンバー セット](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3)要素です)。
+次の例では、 **Mode**プロパティが[DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo)型に追加されています。 [Codeproperty](/dotnet/api/system.management.automation.pscodeproperty)要素は、拡張プロパティをコードプロパティとして定義します。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)要素は、拡張プロパティの名前を指定します。 また、 [Getcodereference 参照](/dotnet/api/system.management.automation.pscodeproperty.gettercodereference)要素は、拡張プロパティによって参照される静的メソッドを定義します。 また`CodeProperty` [、要素](/dotnet/api/system.management.automation.psmemberset)をメンバーメンバーに追加することもできます。
 
 ```xml
 <Type>
@@ -61,11 +61,11 @@ ms.locfileid: "62068149"
 </Type>
 ```
 
-## <a name="note-properties"></a>ノート プロパティ
+## <a name="note-properties"></a>メモのプロパティ
 
-メモのプロパティでは、静的な値を持つプロパティを定義します。
+Note プロパティは、静的な値を持つプロパティを定義します。
 
-次の例では、 `Status` (値は「成功」では常に) プロパティに追加されます、 [System.IO.Directoryinfo でしょうか。Displayproperty = Fullname](/dotnet/api/System.IO.DirectoryInfo)型。 [NoteProperty](http://msdn.microsoft.com/en-us/331e6c50-d703-43f0-89bc-ca9fb97800eb)要素拡張プロパティを定義します注プロパティとして、[名前](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873)要素は、拡張プロパティの名前を指定し、[値](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c)要素。拡張プロパティの静的な値を指定します。 (、 [NoteProperty](http://msdn.microsoft.com/en-us/331e6c50-d703-43f0-89bc-ca9fb97800eb)のメンバーに要素を追加することも、[メンバー セット](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3)要素です)。
+次の例では、 **Status**プロパティの値が常に**Success**であるが、 [DirectoryInfo](/dotnet/api/System.IO.DirectoryInfo)型に追加されています。 Note[プロパティ要素は、拡張](/dotnet/api/system.management.automation.psnoteproperty)プロパティを note プロパティとして定義します。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)要素は、拡張プロパティの名前を指定します。 [Value](/dotnet/api/system.management.automation.psnoteproperty.value)要素は、拡張プロパティの静的な値を指定します。 要素`NoteProperty` [は、メンバー](/dotnet/api/system.management.automation.psmemberset)メンバーに追加することもできます。
 
 ```xml
 <Type>
@@ -81,9 +81,9 @@ ms.locfileid: "62068149"
 
 ## <a name="script-properties"></a>スクリプトのプロパティ
 
-スクリプト プロパティは、値が、スクリプトの出力のプロパティを定義します。
+スクリプトプロパティは、スクリプトの出力を値として持つプロパティを定義します。
 
-次の例では、`VersionInfo`プロパティに追加されます、 [System.IO.FileInfo でしょうか。Displayproperty = Fullname](/dotnet/api/System.IO.FileInfo)型。 [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350)要素は、スクリプト プロパティとして、拡張プロパティを定義します。 [名前](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873)要素は、拡張プロパティの名前を指定します。 また、 [GetScriptBlock](http://msdn.microsoft.com/en-us/f3c77546-b98e-4c4e-bbe0-6dfd06696d1c)要素は、プロパティの値を生成するスクリプトを指定します。 (追加することも、 [ScriptProperty](http://msdn.microsoft.com/en-us/858a4247-676b-4cc9-9f3e-057109aad350)要素のメンバーに、[メンバー セット](http://msdn.microsoft.com/en-us/46a50fb5-e150-4c03-8584-e1b53e4d49e3)要素です)。
+次の例では、 **VersionInfo**プロパティ[が、system.string 型に](/dotnet/api/System.IO.FileInfo)追加されます。 [Scriptproperty](/dotnet/api/system.management.automation.psscriptproperty)要素は、拡張プロパティをスクリプトプロパティとして定義します。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)要素は、拡張プロパティの名前を指定します。 また、 [Getscriptblock](/dotnet/api/system.management.automation.psscriptproperty.getterscript)要素は、プロパティ値を生成するスクリプトを指定します。 また`ScriptProperty` [、要素](/dotnet/api/system.management.automation.psmemberset)をメンバーメンバーに追加することもできます。
 
 ```xml
 <Type>
@@ -99,13 +99,15 @@ ms.locfileid: "62068149"
 </Type>
 ```
 
-## <a name="property-sets"></a>プロパティ セット
+## <a name="property-sets"></a>プロパティセット
 
-プロパティ セットは、セットの名前で参照可能な拡張プロパティのグループを定義します。 たとえば、`Property`のパラメーター、 [Format-table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)コマンドレットは、特定のプロパティを表示する設定を指定できます。 プロパティのセットを指定すると、セットに属しているプロパティのみが表示されます。
+プロパティセットは、セットの名前で参照できる拡張プロパティのグループを定義します。
+たとえば、 [Format-Table](/powershell/module/Microsoft.PowerShell.Utility/Format-Table)
+**プロパティ**パラメーターでは、表示する特定のプロパティセットを指定できます。 プロパティセットを指定すると、そのセットに属するプロパティだけが表示されます。
 
-オブジェクトに定義できるプロパティのセットの数に制限はありません。 ただし、PSStandardMembers メンバーのセット内でオブジェクトの既定の表示プロパティを定義するために使用するプロパティ セットを指定する必要があります。 DefaultDisplayProperty、DefaultDisplayPropertySet、および DefaultKeyPropertySet、Types.ps1xml の種類のファイルの既定のプロパティ セット名が含まれます。 PSStandardMembers メンバーのセットに追加するすべての追加のプロパティ セットは無視されます。
+オブジェクトに対して定義できるプロパティセットの数に制限はありません。 ただし、オブジェクトの既定の表示プロパティを定義するために使用されるプロパティセットは、 **Psstandardmembers**メンバーセット内で指定する必要があります。 型ファイルでは、既定のプロパティセット名に**defaultdisplayproperty**、 **DefaultDisplayPropertySet**、および DefaultKeyPropertySet が含まれます。 `Types.ps1xml` **Psstandardmembers**メンバーセットに追加した追加のプロパティセットはすべて無視されます。
 
-次の例では、DefaultDisplayPropertySet プロパティ セットは、PSStandardMembers メンバーのセットに追加、 [System.Serviceprocess.Servicecontroller でしょうか。Displayproperty = Fullname](/dotnet/api/System.ServiceProcess.ServiceController)型。 [PropertySet](http://msdn.microsoft.com/en-us/14cdc234-796e-4857-9b51-bdbaa1412188)要素は、プロパティのグループを定義します。 [名前](http://msdn.microsoft.com/en-us/b58e9d21-c8c9-49a5-909e-9c1cfc64f873)要素がプロパティ セットの名前を指定します。 また、 [ReferencedProperties](http://msdn.microsoft.com/en-us/5e620423-8679-4fbf-b6db-9f79288e4786)要素がセットのプロパティを指定します。 (追加することも、 [PropertySet](http://msdn.microsoft.com/en-us/14cdc234-796e-4857-9b51-bdbaa1412188)要素のメンバーに、[型](http://msdn.microsoft.com/en-us/e5dbd353-d6b2-40a1-92b6-6f1fea744ebe)要素です)。
+次の例では、 **DefaultDisplayPropertySet**プロパティセットが[Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)型の**psstandardmembers**メンバーセットに追加されます。 [PropertySet](/dotnet/api/system.management.automation.pspropertyset)要素は、プロパティのグループを定義します。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name)要素は、プロパティセットの名前を指定します。 また、 [Referencedproperties](/dotnet/api/system.management.automation.pspropertyset.referencedpropertynames)要素は、セットのプロパティを指定します。 `PropertySet`要素を[Type](/dotnet/api/system.management.automation.pstypename)要素のメンバーに追加することもできます。
 
 ```xml
 <Type>
@@ -128,6 +130,10 @@ ms.locfileid: "62068149"
 </Type>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
+
+[型について types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)
+
+[システムの管理](/dotnet/api/System.Management.Automation)
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
