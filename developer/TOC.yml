@@ -887,39 +887,13 @@
         - name: Windows PowerShell コマンドレットのヘルプを記述する
           href: ./help/writing-help-for-windows-powershell-cmdlets.md
         - name: Windows PowerShell プロバイダーのヘルプを記述する
-          href: ./help/writing-help-for-windows-powershell-providers.md
           items:
-            - name: プロバイダー ヘルプ トピックを作成する方法
-              href: ./help/how-to-create-a-provider-help-topic.md
-            - name: プロバイダー名を追加する方法
-              href: ./help/how-to-add-the-provider-name.md
-            - name: プロバイダー ドライブを追加する方法
-              href: ./help/how-to-add-the-provider-drives.md
-            - name: プロバイダーの概要を追加する方法
-              href: ./help/how-to-add-the-provider-synopsis.md
-            - name: プロバイダーの説明を追加する方法
-              href: ./help/how-to-add-a-provider-description.md
-            - name: 機能を追加する方法
-              href: ./help/how-to-add-capabilities.md
-            - name: プロバイダーのヘルプ トピックにタスクを追加する方法
-              href: ./help/how-to-add-tasks-to-a-provider-help-topic.md
             - name: プロバイダーのヘルプ トピックに動的パラメーターを追加する方法
               href: ./help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
-            - name: プロバイダーのヘルプ トピックに注を追加する方法
-              href: ./help/how-to-add-notes-to-a-provider-help-topic.md
             - name: プロバイダーのヘルプ トピックに関連項目を追加する方法
               href: ./help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
         - name: Windows PowerShell のスクリプトと関数のヘルプを記述する
           href: ./help/writing-help-for-windows-powershell-scripts-and-functions.md
-          items:
-            - name: スクリプトと関数に XML ベースのヘルプ トピックを記述する
-              href: ./help/writing-xml-based-help-topics-for-scripts-and-functions.md
-        - name: Windows PowerShell スナップインのヘルプを記述する
-          href: ./help/writing-help-for-windows-powershell-snap-ins.md
-        - name: Windows PowerShell プロバイダーのカスタム コマンドレットのヘルプを記述する
-          href: ./help/writing-custom-cmdlet-help-for-windows-powershell-providers.md
-        - name: Windows PowerShell の About ヘルプを記述する
-          href: ./help/writing-windows-powershell-about-help.md
         - name: コメントベースのヘルプ トピックを記述する
           href: ./help/writing-comment-based-help-topics.md
           items:
@@ -936,7 +910,6 @@
             - name: コメント ベースのヘルプの例
               href: ./help/examples-of-comment-based-help.md
         - name: コマンドに XML ベースのヘルプ トピックを記述する
-          href: ./help/writing-xml-based-help-topics-for-commands.md
           items:
             - name: コマンドレットのヘルプ ファイルを作成する方法
               href: ./help/how-to-create-the-cmdlet-help-file.md
