@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
-ms.openlocfilehash: cc4877242a16a9caa99564aeaae985f85e38791e
-ms.sourcegitcommit: ffcc1c55f5b3adc063353cb75f2a2183acc2234a
+ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70737596"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848118"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>プロバイダーのヘルプ トピックに動的パラメーターを追加する方法
 
@@ -23,7 +23,7 @@ ms.locfileid: "70737596"
 
 プロバイダーのヘルプトピックに記載されている動的パラメーターは、プロバイダーのドライブでコマンドレットまたは関数が使用されている場合に、プロバイダーがコマンドレットまたは関数に追加する動的パラメーターです。
 
-動的パラメーターは、プロバイダーのカスタムコマンドレットのヘルプにも記載されています。 プロバイダーのヘルプとカスタムコマンドレットのヘルプの両方を作成するときは、両方のドキュメントに動的パラメーターのドキュメントを含めてください。 カスタムコマンドレットのヘルプの詳細については、「[プロバイダーの Windows PowerShell カスタムコマンドレットヘルプの記述](./writing-custom-cmdlet-help-for-windows-powershell-providers.md)」を参照してください。
+動的パラメーターは、プロバイダーのカスタムコマンドレットのヘルプにも記載されています。 プロバイダーのヘルプとカスタムコマンドレットのヘルプの両方を作成するときは、両方のドキュメントに動的パラメーターのドキュメントを含めてください。
 
 プロバイダーが動的パラメーターを実装していない場合、プロバイダーヘルプトピックには`DynamicParameters`空の要素が含まれます。
 

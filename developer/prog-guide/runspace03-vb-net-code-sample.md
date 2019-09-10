@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 (VB.NET) コード サンプル |Microsoft Docs
+title: RunSpace03 (VB.NET) コードサンプル |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,23 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3611d66b-19da-4477-ac05-2e5e68312f51
 caps.latest.revision: 6
-ms.openlocfilehash: 6c625c325e491135af3e5c8d58eead62e89ccb4a
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 0931fe7a606b09475084203eaf9fa263ea1cd5f8
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67734987"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848021"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>RunSpace03 (VB.NET) コード サンプル
 
-VB.NET のソース コードに示します。 で記載されているコンソール アプリケーションの[コンソール アプリケーションを実行に指定されたスクリプトを作成する](fd)します。 このサンプルでは、 [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを取得しますが、スクリプトに渡されるプロセス名の一覧については、情報を処理するスクリプトを実行します。 入力オブジェクトをスクリプトに渡す方法と、エラー オブジェクトと出力オブジェクトを取得する方法を示しています。
+次に示すのは、「指定したスクリプトを実行するコンソールアプリケーションの作成」で説明されているコンソールアプリケーションの VB.NET ソースコードです。 このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、スクリプトに渡されたプロセス名の一覧のプロセス情報を取得するスクリプトを実行します。 この例では、入力オブジェクトをスクリプトに渡す方法と、エラーオブジェクトおよび出力オブジェクトを取得する方法を示します。
 
 > [!NOTE]
-> Windows ソフトウェア開発キットの Windows Vista と Microsoft .NET Framework 3.0 ランタイム コンポーネントを使用して、このサンプルの VB.NET のソース ファイル (runspace03.vb) をダウンロードできます。 ダウンロードの手順については、次を参照してください。 [Windows PowerShell のインストールと、Windows PowerShell SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)します。
->
-> ダウンロードしたソース ファイルは、  **\<PowerShell のサンプル >** ディレクトリ。
+> このサンプルの VB.NET ソースファイル (runspace03) をダウンロードするには、windows Vista 用 Windows ソフトウェア開発キットおよび Microsoft .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)」を参照してください。
+> ダウンロードしたソースファイルは、  **\<PowerShell Samples >** ディレクトリにあります。
 
-## <a name="code-sample"></a>コード サンプル
+## <a name="code-sample"></a>コードサンプル
 
 ```vb
 Imports System
@@ -108,6 +107,6 @@ End Namespace
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell プログラマー ガイド](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
