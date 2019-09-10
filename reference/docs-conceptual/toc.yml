@@ -94,8 +94,6 @@
       items:
         - name: Windows PowerShell ISE の概要
           href: components/ise/introducing-the-windows-powershell-ise.md
-        - name: Windows PowerShell Integrated Scripting Environment (ISE)
-          href: components/ise/windows-powershell-integrated-scripting-environment--ise-.md
         - name: Windows PowerShell ISE の使用
           items:
             - name: Windows PowerShell ISE の操作
@@ -200,12 +198,66 @@
   items:
     - name: 管理のサンプル スクリプト
       href: samples/sample-scripts-for-administration.yml
-    - name: コンピューターの状態を変更する
-      href: samples/changing-computer-state.md
-    - name: コンピューターに関する情報の収集
-      href: samples/collecting-information-about-computers.md
-    - name: FilterHashtable を使った Get-WinEvent クエリの作成
-      href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: オブジェクトの操作
+      items:
+        - name: オブジェクトの構造を表示する (Get-Member)
+          href: samples/viewing-object-structure--get-member-.md
+        - name: オブジェクトの一部を選択する - Select-Object
+          href: samples/selecting-parts-of-objects--select-object-.md
+        - name: パイプラインからオブジェクトを削除する (Where-Object)
+          href: samples/removing-objects-from-the-pipeline--where-object-.md
+        - name: オブジェクトの並べ替え
+          href: samples/sorting-objects.md
+        - name: 複数のオブジェクトのタスクを繰り返す (ForEach-Object)
+          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
+        - name: .NET オブジェクトと COM オブジェクトを作成する - New-Object
+          href: samples/creating-.net-and-com-objects--new-object-.md
+        - name: 静的なクラスとメソッドの使用
+          href: samples/using-static-classes-and-methods.md
+        - name: WMI オブジェクトの取得 (Get-WmiObject)
+          href: samples/getting-wmi-objects--get-wmiobject-.md
+    - name: コンピューターの管理
+      items:
+        - name: コンピューターの状態を変更する
+          href: samples/changing-computer-state.md
+        - name: コンピューターに関する情報の収集
+          href: samples/collecting-information-about-computers.md
+        - name: FilterHashtable を使った Get-WinEvent クエリの作成
+          href: samples/creating-get-winEvent-queries-with-filterhashtable.md
+    - name: プロセスとサービスの管理
+      items:
+        - name: Process コマンドレットによるプロセスの管理
+          href: samples/managing-processes-with-process-cmdlets.md
+        - name: サービスの管理
+          href: samples/managing-services.md
+        - name: Windows PowerShell ドライブの管理
+          href: samples/managing-windows-powershell-drives.md
+        - name: プリンターの操作
+          href: samples/working-with-printers.md
+        - name: ネットワーク関連タスクの実行
+          href: samples/performing-networking-tasks.md
+        - name: ソフトウェア インストールの操作
+          href: samples/working-with-software-installations.md
+        - name: 実行中のプロセスからの PowerShell コマンドをデコードする
+          href: samples/decode-powershell-command-from-a-running-process.md
+    - name: 出力の操作
+      items:
+        - name: Out-* コマンドレットを使用してデータをリダイレクトする
+          href: samples/redirecting-data-with-out---cmdlets.md
+        - name: Format コマンドを使用した出力ビューの変更
+          href: samples/using-format-commands-to-change-output-view.md
+    - name: ドライブとファイルの管理
+      items:
+        - name: 現在の場所の管理
+          href: samples/managing-current-location.md
+        - name: ファイルとフォルダーの操作
+          href: samples/working-with-files-and-folders.md
+        - name: ファイル、フォルダー、レジストリ キーの操作
+          href: samples/working-with-files-folders-and-registry-keys.md
+        - name: レジストリ エントリの操作
+          href: samples/working-with-registry-entries.md
+        - name: レジストリ キーの操作
+          href: samples/working-with-registry-keys.md
     - name: UI 要素の作成
       items:
         - name: ユーザー設定の入力ボックスを作成する
@@ -216,57 +268,13 @@
           href: samples/multiple-selection-list-boxes.md
         - name: リスト ボックスから項目を選択する
           href: samples/selecting-items-from-a-list-box.md
-    - name: 実行中のプロセスからの PowerShell コマンドをデコードする
-      href: samples/decode-powershell-command-from-a-running-process.md
-    - name: 現在の場所の管理
-      href: samples/managing-current-location.md
-    - name: Process コマンドレットによるプロセスの管理
-      href: samples/managing-processes-with-process-cmdlets.md
-    - name: サービスの管理
-      href: samples/managing-services.md
-    - name: Windows PowerShell ドライブの管理
-      href: samples/managing-windows-powershell-drives.md
-    - name: 項目を直接操作する
-      href: samples/manipulating-items-directly.md
-    - name: ネットワーク関連タスクの実行
-      href: samples/performing-networking-tasks.md
-    - name: Out-* コマンドレットを使用してデータをリダイレクトする
-      href: samples/redirecting-data-with-out---cmdlets.md
-    - name: Format コマンドを使用した出力ビューの変更
-      href: samples/using-format-commands-to-change-output-view.md
-    - name: ファイルとフォルダーの操作
-      href: samples/working-with-files-and-folders.md
-    - name: ファイル、フォルダー、レジストリ キーの操作
-      href: samples/working-with-files-folders-and-registry-keys.md
-    - name: オブジェクトの操作
+    - name: その他の例
       items:
-        - name: WMI オブジェクトの取得 (Get-WmiObject)
-          href: samples/getting-wmi-objects--get-wmiobject-.md
-        - name: .NET オブジェクトと COM オブジェクトを作成する - New-Object
-          href: samples/creating-.net-and-com-objects--new-object-.md
-        - name: パイプラインからオブジェクトを削除する (Where-Object)
-          href: samples/removing-objects-from-the-pipeline--where-object-.md
-        - name: オブジェクトの一部を選択する - Select-Object
-          href: samples/selecting-parts-of-objects--select-object-.md
-        - name: オブジェクトの並べ替え
-          href: samples/sorting-objects.md
-        - name: 複数のオブジェクトのタスクを繰り返す (ForEach-Object)
-          href: samples/repeating-a-task-for-multiple-objects--foreach-object-.md
-        - name: 静的なクラスとメソッドの使用
-          href: samples/using-static-classes-and-methods.md
-        - name: オブジェクトの構造を表示する (Get-Member)
-          href: samples/viewing-object-structure--get-member-.md
-    - name: プリンターの操作
-      href: samples/working-with-printers.md
-    - name: レジストリ エントリの操作
-      href: samples/working-with-registry-entries.md
-    - name: レジストリ キーの操作
-      href: samples/working-with-registry-keys.md
-    - name: ソフトウェア インストールの操作
-      href: samples/working-with-software-installations.md
-    - name: その他の役に立つスクリプティング オブジェクト
-      href: samples/other-useful-scripting-objects.md
-    - name: 付録 1 - 互換性のあるエイリアス
-      href: samples/appendix-1---compatibility-aliases.md
-    - name: 付録 2 - カスタムの PowerShell ショートカットの作成
-      href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+        - name: 項目を直接操作する
+          href: samples/manipulating-items-directly.md
+        - name: その他の役に立つスクリプティング オブジェクト
+          href: samples/other-useful-scripting-objects.md
+        - name: 付録 1 - 互換性のあるエイリアス
+          href: samples/appendix-1---compatibility-aliases.md
+        - name: 付録 2 - カスタムの PowerShell ショートカットの作成
+          href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
