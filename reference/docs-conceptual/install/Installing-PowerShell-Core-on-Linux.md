@@ -2,12 +2,12 @@
 title: Linux への PowerShell Core のインストール
 description: さまざまな Linux ディストリビューションへの PowerShell Core のインストールに関する情報
 ms.date: 07/19/2019
-ms.openlocfilehash: be11a2a873af71c193730d0a9e723da2dc70a62d
-ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
+ms.openlocfilehash: 7d7c9a9f915f0a6e735a7baec1ec56e9c205a155
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69986731"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848189"
 ---
 # <a name="installing-powershell-core-on-linux"></a>Linux への PowerShell Core のインストール
 
@@ -166,7 +166,7 @@ Linux 向け PowerShell Core は、インストールと更新を容易にする
 ```sh
 # Install system components
 sudo apt-get update
-sudo apt-get install curl apt-transport-https
+sudo apt-get install -y curl apt-transport-https
 
 # Import the public repository GPG keys
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
@@ -197,7 +197,7 @@ Linux 向け PowerShell Core は、インストールと更新を容易にする
 ```sh
 # Install system components
 sudo apt-get update
-sudo apt-get install curl gnupg apt-transport-https
+sudo apt-get install -y curl gnupg apt-transport-https
 
 # Import the public repository GPG keys
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
