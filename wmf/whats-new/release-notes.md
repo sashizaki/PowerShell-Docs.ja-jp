@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.x のリリース ノート
-ms.openlocfilehash: 8bdc423234cf0b104b72b1bee1de35e50783d8a4
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 8924240a4bbedcd34bc68b7cacdd23189a3716d6
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65855767"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848145"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5.x リリース ノート
 
@@ -42,12 +42,15 @@ WMF 5.1 には、Windows Server 2016 でリリースされた PowerShell、WMI�
 - セキュリティの機能強化としては、プル サーバーからもたらされるカタログ署名付きモジュールの適用、PowerShellGet コマンドレットを使用するタイミングなどが挙げられます。
 - さまざまなユーザー要求と問題への対応
 
+> [!IMPORTANT]
+> Windows Server 2008 または Windows 7 に WMF 5.1 をインストールする前に、WMF 3.0 がインストールされていないことを確認します。 詳細については、「[Windows Server 2008 R2 SP1 および Windows 7 SP1 での WMF 5.1 の前提条件](../setup/install-configure.md#wmf-51-prerequisites-for-windows-server-2008-r2-sp1-and-windows-7-sp1)」を参照してください。
+
 ## <a name="powershell-editions"></a>PowerShell のエディション
 
 バージョン 5.1 から、PowerShell は機能セットとプラットフォーム互換性が異なるさまざまなエディションで利用できるようになりました。
 
-- **Desktop Edition:**.NET Framework 上に構築され、Windows の完全フットプリント エディション (Server Core、Windows Desktop など) で実行される PowerShell のバージョンをターゲットとするスクリプトおよびモジュールと互換性があります。
-- **Core Edition:**.NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
+- **Desktop Edition:** .NET Framework 上に構築され、Windows の完全フットプリント エディション (Server Core、Windows Desktop など) で実行される PowerShell のバージョンをターゲットとするスクリプトおよびモジュールと互換性があります。
+- **Core Edition:** .NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
 
 ### <a name="learn-more-about-using-powershell-editions"></a>PowerShell のエディションの使用に関する詳細
 
@@ -90,6 +93,7 @@ WMF 5.1 では、`using module` は PowerShell の他のモジュール関連構
 WMF 5.1 では次のようになります。
 
 - [ModuleSpecification コンストラクター (Hashtable)](/dotnet/api/microsoft.powershell.commands.modulespecification.-ctor?view=powershellsdk-1.1.0#Microsoft_PowerShell_Commands_ModuleSpecification__ctor_System_Collections_Hashtable_) を使用できます。
+
   このハッシュ テーブルの形式は `Get-Module -FullyQualifiedName` と同じです。
 
   **例:** `using module @{ModuleName = 'PSReadLine'; RequiredVersion = '1.1'}`

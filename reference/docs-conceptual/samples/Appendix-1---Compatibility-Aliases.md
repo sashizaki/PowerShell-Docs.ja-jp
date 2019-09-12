@@ -1,36 +1,54 @@
 ---
-ms.date: 06/05/2017
+ms.date: 09/09/2019
 keywords: PowerShell, コマンドレット
 title: 付録 1 - 互換性のあるエイリアス
-ms.openlocfilehash: 553b9f01d6b5e3f4e04f1a75c25979b54dc205da
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 2351fdf23711fe1417f7e3fc3cca5b642d5a59fc
+ms.sourcegitcommit: 00083f07b13c73b86936e7d7307397df27c63c04
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030331"
+ms.lasthandoff: 09/10/2019
+ms.locfileid: "70848167"
 ---
 # <a name="appendix-1---compatibility-aliases"></a>付録 1 - 互換性のあるエイリアス
 
-Windows PowerShell には、UNIX と Cmd のユーザーが使い慣れたコマンド名を Windows PowerShell でも使用できるようにするいくつかの移行エイリアスがあります。 最も一般的なエイリアスについて、対応する Windows PowerShell コマンド、および Windows PowerShell の標準エイリアス (存在する場合) と共に以下の表にまとめました。
+PowerShell には、**UNIX** と **cmd.exe** のユーザーが使い慣れたコマンドを使用できるようにするさまざまなエイリアスがあります。
+そのコマンドと、それに関連する PowerShell コマンドレットおよび PowerShell エイリアスを次の表に示します。
 
-エイリアスに対応する Windows PowerShell コマンドは、Windows PowerShell から Get-Alias コマンドレットを使用して検索できます。 たとえば、**get-alias cls** と入力します。
-
-```
-CommandType     Name                            Definition
------------     ----                            ----------
-Alias           cls                             Clear-Host
-```
-
-|CMD コマンド|UNIX コマンド|PS コマンド|PS エイリアス|
+|cmd.exe コマンド|UNIX コマンド|PowerShell コマンドレット|PowerShell エイリアス|
 |---------------|----------------|--------------|------------|
-|**dir**|**ls**|**Get-ChildItem**|**gci**|
-|**cls**|**clear**|**Clear-Host** (関数)|**cls**|
-|**del、erase、rmdir**|**rm**|**Remove-Item**|**ri**|
-|**copy**|**cp**|**Copy-Item**|**ci**|
-|**move**|**mv**|**Move-Item**|**mi**|
-|**rename**|**mv**|**Rename-Item**|**rni**|
-|**type**|**cat**|**Get-Content**|**gc**|
-|**cd**|**cd**|**Set-Location**|**sl**|
-|**md**|**mkdir**|**New-Item**|**ni**|
-|**pushd**|**pushd**|**Push-Location**|**pushd**|
-|**popd**|**popd**|**Pop-Location**|**popd**|
+|**cls**|**clear**|`Clear-Host` (関数)|`cls`|
+|**copy**|**cp**|`Copy-Item`|`cpi`|
+|**dir**|**ls**|`Get-ChildItem`|`gci`|
+|**type**|**cat**|`Get-Content`|`gc`|
+|**move**|**mv**|`Move-Item`|`mi`|
+|**md**|**mkdir**|`New-Item`|`ni`|
+|**pushd**|**pushd**|`Push-Location`|`pushd`|
+|**popd**|**popd**|`Pop-Location`|`popd`|
+|**del**、**erase**、**rd**、**rmdir**|**rm**|`Remove-Item`|`ri`|
+|**ren**|**mv**|`Rename-Item`|`rni`|
+|**cd**、**chdir**|**cd**|`Set-Location`|`sl`|
+
+PowerShell エイリアスを検索するには、[Get-Alias](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias) コマンドレットを使用します。 コマンドレットのエイリアスを表示するには、**Definition** パラメーターを使用して、コマンドレット名を指定します。
+または、エイリアスのコマンドレット名を検索するには、**Name** パラメーターを使用して、エイリアスを指定します。
+
+```powershell
+Get-Alias -Definition Get-ChildItem
+```
+
+```Output
+CommandType     Name
+-----------     ----
+Alias           dir -> Get-ChildItem
+Alias           gci -> Get-ChildItem
+Alias           ls -> Get-ChildItem
+```
+
+```powershell
+Get-Alias -Name gci
+```
+
+```Output
+CommandType     Name
+-----------     ----
+Alias           gci -> Get-ChildItem
+```

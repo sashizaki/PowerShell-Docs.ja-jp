@@ -1,42 +1,32 @@
 ---
-ms.date: 06/05/2017
+ms.date: 09/06/2019
 keywords: PowerShell, コマンドレット
-title: PowerShell 50 ISE の新機能
-ms.openlocfilehash: 52e8926a7320f86f2ab8970a7778faba6a14a714
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+title: PowerShell 5.0 ISE の新機能
+ms.openlocfilehash: a719baef0da1600f0a5377e1b72c81b67e37eef2
+ms.sourcegitcommit: a74ae7ed089301992fed201fbe55d827a622afa0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030020"
+ms.lasthandoff: 09/06/2019
+ms.locfileid: "70746220"
 ---
-# <a name="what39s-new-in-the-windows-powershell-ise"></a>Windows PowerShell ISE の新機能
+# <a name="whats-new-in-the-windows-powershell-50-ise"></a>Windows PowerShell 5.0 ISE の新機能
+
 このトピックでは、各バージョンの Windows PowerShell Integrated Scripting Environment (ISE) に導入された新機能と更新された機能について説明します。
 
 ## <a name="feature-description"></a>機能の説明
+
 Windows PowerShell ISE は、グラフィカルで直感的な環境でスクリプトおよびモジュールを記述、実行、テストすることができるホスト アプリケーションです。 構文の色分け、タブ補完、視覚的なデバッグ機能、Unicode 準拠、状況依存のヘルプなどの主要な機能により、多彩なスクリプトの操作性が提供されます。
 
-Windows PowerShell ISE の概要については、[Windows PowerShell Integrated Scripting Environment の概要](https://technet.microsoft.com/library/3c1892c2-bf84-4cb6-af26-1f453be9e671)に関するページを参照してください。
+詳細については、「[Windows PowerShell ISE の紹介](../components/ise/Introducing-the-Windows-PowerShell-ISE.md)」を参照してください。
 
-## <a name="new-and-changed-functionality-in-windows-powershell-ise"></a>Windows PowerShell ISE の新機能と変更された機能
 次の表に、Windows PowerShell における Windows PowerShell ISE のこのリリースの新機能と変更された機能を示します。
 
-|機能|Windows PowerShell ISE 4.0|Windows PowerShell ISE 3.0|Windows PowerShell ISE 2.0|
-|--------------------------|-----------------------------------------------|-----------------------------------------------|-----------------------------------------------|
-|**[IntelliSense](#intellisense)**|X|X||
-|**[スニペット](#snippets)**|X|X||
-|**[アドオン ツール](#add-on-tools)**|X|X||
-|**[再起動マネージャーと自動保存](#restart-manager-and-auto-save)**|X|X||
-|**[最近使用した一覧](#most-recently-used-list)**|X|X||
-|**[コンソール ウィンドウ](#console-pane)**|X|X||
-|**[コマンド ライン スイッチ](#command-line-switches)**|X|X||
-|**[エディターの新機能](#new-editor-features)**|X|X||
-|**[新しいヘルプ ビューアー ウィンドウ](#new-help-viewer-window)**|X|X||
-|**[Show-Command コマンドレット](#show-command-cmdlet)**|X|X||
+## <a name="intellisense"></a>IntelliSense
 
-### <a name="intellisense"></a>IntelliSense
-**ISE 3.0 に追加**
+> ISE 3.0 に追加
 
-IntelliSense は、Windows PowerShell ISE の一部である自動補完アシスタンス機能です。 IntelliSense により、文字を入力していくと、一致する可能性のあるコマンドレット、パラメーター、パラメーター値、ファイル、またはフォルダーのクリック可能なメニューが表示されます。
+IntelliSense は、Windows PowerShell ISE の一部である自動補完アシスタンス機能です。
+IntelliSense により、文字を入力していくと、一致する可能性のあるコマンドレット、パラメーター、パラメーター値、ファイル、またはフォルダーのクリック可能なメニューが表示されます。
 
 **この変更の利点**
 
@@ -44,12 +34,13 @@ IntelliSense の追加により、Windows PowerShell ISE を使用してスク�
 
 **動作の相違点**
 
-Windows PowerShell ISE 3.0 以降でコマンドレットを入力すると、スクロールとクリックが可能なメニューが表示され、適切なコマンドを参照して選択できます。
+Windows PowerShell ISE でコマンドレットを入力すると、スクロールとクリックが可能なメニューが表示され、適切なコマンドを参照して選択できます。
 
-### <a name="snippets"></a>スニペット
-**ISE 3.0 に追加**
+## <a name="snippets"></a>スニペット
 
-*スニペット* は、Windows PowerShell ISE で作成するスクリプトに挿入できる Windows PowerShell コードの短いセクションです。 Windows PowerShell ISE にはスニペットの既定のセットが付属しています。 Windows PowerShell ISE での作業中に、**New-Snippet** コマンドレットを使用してスニペットを追加できます。
+> ISE 3.0 に追加
+
+*スニペット* は、Windows PowerShell ISE で作成するスクリプトに挿入できる Windows PowerShell コードの短いセクションです。 Windows PowerShell ISE にはスニペットの既定のセットが付属しています。 Windows PowerShell ISE での作業中に、`New-Snippet` コマンドレットを使用してスニペットを追加できます。
 
 **この変更の利点**
 
@@ -57,44 +48,47 @@ Windows PowerShell ISE 3.0 以降でコマンドレットを入力すると、�
 
 **動作の相違点**
 
-Windows PowerShell 3.0 以降でスニペットを使用するには、**[編集]** メニューで **[スニペットの開始]** をクリックするか、**[Ctrl-J]** キーを押します。
+Windows PowerShell 3.0 以降でスニペットを使用するには、 **[編集]** メニューで **[スニペットの開始]** をクリックするか、<kbd>Ctrl</kbd> + <kbd>J</kbd> キーを押します。
 
-### <a name="add-on-tools"></a>アドオン ツール
-**PowerShell 3.0 に追加**
+## <a name="add-on-tools"></a>アドオン ツール
 
-Windows PowerShell ISE では、アドオン ツールをサポートしています。アドオン ツールとは、オブジェクト モデルを使用して追加される Windows Presentation Foundation (WPF) コントロールです。 アドオン ツールは、垂直方向のウィンドウまたは水平方向のウィンドウとしてコンソール内に表示できます。 1 つのウィンドウ内に複数のアドオン ツールがある場合は、タブ形式のコントロールとして表示されます。 また、サード パーティ製のアドオン ツールも追加または削除できます。 アドオン ツールのインポート方法または削除方法の詳細については、「[Windows PowerShell ISE の操作](https://technet.microsoft.com/library/cc732148.aspx)」を参照してください。
+> PowerShell 3.0 に追加
 
-**この変更の利点**
-
-アドオンを使用すると、スクリプトの操作性を強化する、または機能を Windows PowerShell ISE に追加できるツールを使用して、Windows PowerShell ISE の拡張とカスタマイズができます。
-
-**動作の相違点**
-
-Windows PowerShell ISE 3.0 以降には、**Commands** アドオンが付属しています。 **Commands** アドオンを使用すると、コマンドレットを参照し、**[スクリプト]** ウィンドウと **[コンソール]** ウィンドウで同時にコマンドレットに関するヘルプにアクセスできます。
-
-追加のアドオンは、**[アドオン]** メニューの **[アドオン ツール Web サイトを開く]** コマンドを使用して検索することができます。
-
-### <a name="restart-manager-and-auto-save"></a>再起動マネージャーと自動保存
-**PowerShell 3.0 に追加**
-
-Windows PowerShell ISE では、開いているスクリプトを 2 分おきに別の場所に自動的に保存するようになりました。  Windows PowerShell ISE が動作しなくなった場合またはオペレーティング システムが再起動された場合に、Windows PowerShell ISE を再起動すると、最後のセッションで開いていたスクリプトは、保存されていなかった場合でも回復されます。
-
-自動保存の間隔を変更するには、コンソール ウィンドウでコマンド **$psise.Options.AutoSaveMinuteInterval** を実行します。
+Windows PowerShell ISE で、オブジェクト モデルを使用するアドオン ツールがサポートされるようになりました。 これらのアドオンは、コンソールに垂直方向または水平方向のウィンドウとして表示される Windows Presentation Foundation (WPF) コントロールです。 1 つのウィンドウ内に複数のアドオン ツールがある場合は、タブ形式のコントロールとして表示されます。 また、サード パーティ製のアドオン ツールも追加または削除できます。 詳細については、「[Windows PowerShell ISE スクリプト オブジェクト モデルの目的](../components/ise/object-model/Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)」を参照してください。
 
 **この変更の利点**
 
-Windows PowerShell ISE 内での作業で、予期しない再起動が発生した場合、開いているスクリプトが自動的に保存されるようになりました。
+アドオンにより、機能の追加やスクリプト作成エクスペリエンスの向上を実現するツールを使って、Windows PowerShell ISE を拡張およびカスタマイズできます。
 
 **動作の相違点**
 
-Windows PowerShell ISE 2.0 では、再起動が発生した場合、スクリプトは自動的に保存されません。
+Windows PowerShell ISE 3.0 以降には、**Commands** アドオンが付属しています。 **Commands** アドオンを使用すると、コマンドレットを参照し、 **[スクリプト]** ウィンドウと **[コンソール]** ウィンドウで同時にコマンドレットに関するヘルプにアクセスできます。
 
-### <a name="most-recently-used-list"></a>最近使用した一覧
-**PowerShell 3.0 に追加**
+追加のアドオンは、 **[アドオン]** メニューの **[アドオン ツール Web サイトを開く]** コマンドを使用して検索することができます。
+
+## <a name="restart-manager-and-auto-save"></a>再起動マネージャーと自動保存
+
+> PowerShell 3.0 に追加
+
+Windows PowerShell ISE では、開いているスクリプトを 2 分おきに別の場所に自動的に保存するようになりました。 予期しないクラッシュまたはリブート後に Windows PowerShell ISE が再起動すると、最後のセッションで開いていたスクリプトが (そのスクリプトが保存されていなかった場合でも) 回復されます。
+
+自動保存の間隔を変更するには、コンソール ウィンドウで `$psise.Options.AutoSaveMinuteInterval` コマンドを実行します。
+
+**この変更の利点**
+
+Windows PowerShell ISE 内での作業で、開いているスクリプトが自動的に保存されるようになりました。
+
+**動作の相違点**
+
+Windows PowerShell ISE 2.0 では、スクリプトは自動的に保存されません。
+
+## <a name="most-recently-used-list"></a>最近使用した一覧
+
+> PowerShell 3.0 に追加
 
 Windows PowerShell ISE にファイルの最近使用した一覧が用意されるようになりました。 Windows PowerShell ISE でファイルを開くと、ファイルは **[ファイル]** メニューの最近使用した一覧に追加されます。
 
-最近使用した一覧内の既定のファイル数を変更するには、[コンソール] ウィンドウで、**$psise.Options.MruCount** コマンドを実行します。
+最近使用した一覧に含まれるファイル数の規定値を変更するには、[コンソール] ウィンドウで、`$psise.Options.MruCount` コマンドを実行します。
 
 **この変更の利点**
 
@@ -104,34 +98,24 @@ Windows PowerShell ISE にファイルの最近使用した一覧が用意され
 
 Windows PowerShell ISE 2.0 には、最近使用した一覧は用意されていません。
 
-### <a name="console-pane"></a>コンソール ウィンドウ
-**PowerShell 3.0 に追加**
+## <a name="console-pane"></a>コンソール ウィンドウ
 
-Windows PowerShell ISE の最初のリリースで使用できた、独立したコマンド ウィンドウと出力ウィンドウが 1 つのコンソール ウィンドウに統合されました。 コンソール ウィンドウの機能と外観は、標準的な Windows PowerShell コンソールと似ていますが、次のような機能が強化されています (このトピックで、ほとんどの機能を説明します)。
+> PowerShell 3.0 に追加
+
+Windows PowerShell ISE の最初のリリースで使用できた、独立したコマンド ウィンドウと出力ウィンドウが 1 つのコンソール ウィンドウに統合されました。 コンソール ウィンドウの機能と外観は、標準的な Windows PowerShell コンソールと類似していますが、次のような機能強化が行われています。
 
 - XML 構文を含む入力テキストの構文の色分け (出力テキストを除く)
-
 - IntelliSense
-
 - かっこの照合
-
 - エラー表示
-
 - 全角 Unicode のサポート
-
-- **F1** キーによる状況依存のヘルプ
-
-- **Ctrl + F1** キーによる状況依存の Show-Command
-
+- <kbd>F1</kbd> キーによる状況依存のヘルプ
+- <kbd>Ctrl</kbd> + <kbd>F1</kbd> キーによる状況依存の Show-Command
 - 複雑なスクリプトおよび右から左への記述のサポート
-
 - フォントのサポート
-
 - ズーム
-
 - 行選択モードとブロック選択モード
-
-- **上**方向キーを押して履歴をコンソールに表示したときにコマンド ラインに入力されたコンテンツを保存する機能
+- <kbd>上方向</kbd>キーを押して履歴をコンソールに表示したときにコマンド ラインに入力されたコンテンツを保存する機能
 
 **この変更の利点**
 
@@ -141,16 +125,15 @@ Windows PowerShell ISE の最初のリリースで使用できた、独立した
 
 Windows PowerShell ISE 2.0 では、コマンド ウィンドウと出力ウィンドウは個別に表示されます。
 
-### <a name="command-line-switches"></a>コマンド ライン スイッチ
-**PowerShell 3.0 に追加**
+## <a name="command-line-switches"></a>コマンド ライン スイッチ
+
+> PowerShell 3.0 に追加
 
 コマンド ライン (「**Powershell_ise.exe**」を入力) から Windows PowerShell ISE を起動する場合、次の新しいコマンド ライン スイッチを追加できます。
 
-- *-NoProfile*:**$profile** を実行せずに Windows PowerShell ISE を起動する
-
-- *-Help*:ヘルプ ウィンドウを表示する
-
-- *-mta*:マルチスレッド アパートメント モードで Windows PowerShell ISE を起動する。 Windows PowerShell ISE の既定の操作モードは、1 つのシングル スレッド アパートメント モード、つまり *-sta* です。
+- `-NoProfile`:`$profile` を実行せずに Windows PowerShell ISE を起動する
+- `-Help`:ヘルプ ウィンドウを表示する
+- `-mta`:マルチスレッド アパートメント モードで Windows PowerShell ISE を起動する。 Windows PowerShell ISE の既定の操作モードは、シングル スレッド アパートメント モード、つまり `-sta` です。
 
 **この変更の利点**
 
@@ -160,26 +143,20 @@ Windows PowerShell ISE 2.0 では、コマンド ウィンドウと出力ウィ�
 
 Windows PowerShell ISE 2.0 では、これらのコマンド ライン スイッチは認識されません。
 
-### <a name="new-editor-features"></a>エディターの新機能
-**PowerShell 3.0 に追加**
+## <a name="new-editor-features"></a>エディターの新機能
+
+> PowerShell 3.0 に追加
 
 その他の Windows PowerShell ISE 編集機能として、次のものがあります。
 
-- **XML 構文の色分け**。Windows PowerShell ISE では、Windows PowerShell 構文を色分けする方法と同じ方法で XML 構文を色分けするようになりました。
-
-- **かっこの照合**。Windows PowerShell ISE は、かっこの照合と強調表示の機能を搭載し、次のように使用できます。たとえば、始めかっこを選択している場合、**[一致する項目に移動]** コマンドまたは **[Ctrl + ]** を使用すると、終わりかっこが見つかります。
-
-- **アウトライン表示**。スクリプト ウィンドウでは、アウトラインがサポートされます。これにより、左余白のプラス記号またはマイナス記号をクリックすると、コードのセクションを折りたたんだり展開したりできます。 かっこ、または **#region** タグと **#endregion** タグを使用して、折りたたみ可能なセクションの先頭または末尾をマークすることができます。 すべての領域を展開する、または折りたたむには、**Ctrl + M** キーを押します。
-
-- **ドラッグ アンド ドロップ テキスト編集**。Windows PowerShell ISE で、ドラッグ アンド ドロップによるテキスト編集がサポートされるようになりました。 任意のテキストのブロックを選択し、そのテキストをドラッグしてエディターまたはコンソール内の別の場所に移動できます。 Ctrl キーを押したまま選択したテキストをドラッグし、マウス ボタンを放すと、テキストが新しい場所にコピーされます。 以前のバージョンの Windows PowerShell ISE と同様に、このバージョンの Windows PowerShell ISE では、ファイルを Windows PowerShell ISE 上にドラッグ アンド ドロップすると、Windows PowerShell ISE でファイルが開かれます。
-
-- **解析エラーの表示**。解析エラーは赤い下線で示されます。 示されたエラーをポイントすると、コード内で見つかった問題がヒントのテキストに表示されます。
-
-- **ズーム**。コンソールのコンテンツのズーム倍率を設定するには、ズーム スライダー (Windows PowerShell ISE ウィンドウの右下隅にあります) を使用するか、またはコンソール ウィンドウでコマンド「**$psise.options.Zoom**」を入力します。
-
-- **リッチ テキストのコピーと貼り付け**。Windows PowerShell ISE でクリップボードにコピーすると、元の選択範囲のフォント、サイズ、および色の情報が保存されます。
-
-- **ブロック選択**。テキストのブロックを選択するには、Alt キーを押したままマウスでスクリプト ウィンドウ内のテキストを選択するか、または **Alt + Shift + 方向キー**を押します。
+- **XML 構文の色分け** - Windows PowerShell ISE では、Windows PowerShell 構文を色分けする方法と同じ方法で XML 構文が色分けされるようになりました。
+- **かっこの照合** - Windows PowerShell ISE にはかっこの照合と強調表示を行う機能が含まれ、次のように使用できます。たとえば、始めかっこを選択している場合、 **[一致する項目に移動]** コマンドまたは <kbd>Ctrl</kbd> + <kbd>]</kbd> キーを使用すると、終わりかっこが見つかります。
+- **アウトライン表示**。スクリプト ウィンドウでは、アウトラインがサポートされます。これにより、左余白のプラス記号またはマイナス記号をクリックすると、コードのセクションを折りたたんだり展開したりできます。 かっこ、または `#region` タグと `#endregion` タグを使用して、折りたたみ可能なセクションの先頭と末尾をマークすることができます。 すべての領域を展開する、または折りたたむには、<kbd>Ctrl</kbd> + <kbd>M</kbd> キーを押します。
+- **ドラッグ アンド ドロップ テキスト編集** - Windows PowerShell ISE で、ドラッグ アンド ドロップによるテキスト編集がサポートされるようになりました。 任意のテキストのブロックを選択し、そのテキストをドラッグしてエディターまたはコンソール内の別の場所に移動できます。 <kbd>Ctrl</kbd> キーを押したまま選択したテキストをドラッグし、マウス ボタンを放すと、テキストが新しい場所にコピーされます。 このバージョンの Windows PowerShell ISE では、ファイルを Windows PowerShell ISE 上にドラッグ アンド ドロップすると、Windows PowerShell ISE でファイルが開かれます。
+- **解析エラーの表示** - 解析エラーは赤い下線で示されます。 示されたエラーをポイントすると、コード内で見つかった問題がヒントのテキストに表示されます。
+- **ズーム** - ズーム スライダー (Windows PowerShell ISE ウィンドウの右下隅にあります) を使用するか、コンソール ウィンドウで `$psise.options.Zoom` コマンドを入力することで、コンソールのコンテンツのズーム倍率を設定できます。
+- **リッチ テキストのコピーと貼り付け** - Windows PowerShell ISE でクリップボードにコピーすると、元の選択範囲のフォント、サイズ、および色の情報が保存されます。
+- **ブロック選択** - テキストのブロックを選択するには、<kbd>Alt</kbd> キーを押したままマウスでスクリプト ウィンドウ内のテキストを選択するか、<kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>方向</kbd>キーを押します。
 
 **この変更の利点**
 
@@ -189,39 +166,39 @@ Windows PowerShell ISE 2.0 では、これらのコマンド ライン スイッ
 
 これらの編集の拡張機能は Windows PowerShell ISE 2.0 にはなかった機能です。
 
-### <a name="new-help-viewer-window"></a>新しいヘルプ ビューアー ウィンドウ
-**PowerShell 3.0 に追加**
+## <a name="new-help-viewer-window"></a>新しいヘルプ ビューアー ウィンドウ
 
-カーソルがコマンドレット内にあるかコマンドレットの一部を強調表示しているときに **F1** キーを押すと、強調表示されたコマンドレットに関する状況依存のヘルプが新しいヘルプ ビューアーで開かれます。 Windows PowerShell の About ヘルプを表示するには、コンソール ウィンドウで「**operators**」と入力し、**F1** キーを押します。
+> PowerShell 3.0 に追加
 
-この機能を使用する前に、Microsoft Web サイトから Windows PowerShell のヘルプ トピックの最新バージョンをダウンロードしてください。 ヘルプ トピックをダウンロードする最も簡単な方法は、管理者として Windows PowerShell を実行中に、コンソール ウィンドウで **Update-Help** コマンドレットを実行することです。
+カーソルがコマンドレット内にあるかコマンドレットの一部を強調表示しているときに <kbd>F1</kbd> キーを押すと、強調表示されたコマンドレットに関する状況依存のヘルプが新しいヘルプ ビューアーで開かれます。 Windows PowerShell の **About** ヘルプを表示するには、コンソール ウィンドウで「`operators`」と入力し、<kbd>F1</kbd> キーを押します。
 
-**F1** キーを押したときにヘルプを検索する場所を変更することができます。 **[ツール]**/**[オプション]** メニューで、**[全般設定]** タブの **[その他の設定]** の下で、**[オンライン コンテンツの代わりにローカル ヘルプ コンテンツを使用する]** ボックスをオンまたはオフにすることができます。 オンにした場合、クライアントはモジュール フォルダーで検出されたダウンロード済みのヘルプ内でコマンドレット Help を検索します。  チェック ボックスをオフにした場合は、クライアントは、コマンドレット Help を TechNet ライブラリで検索します。
+この機能を使用する前に、Microsoft Web サイトから Windows PowerShell のヘルプ トピックの最新バージョンをダウンロードしてください。 ヘルプ トピックをダウンロードする最も簡単な方法は、管理者として Windows PowerShell を実行中に、コンソール ウィンドウで `Update-Help` コマンドレットを実行することです。
 
-**この変更の利点**
-
-現在のコマンドレットまたはスクリプトを離れることなく状況依存のヘルプを使用すると、シームレスに学習を行うことができます。
-
-**動作の相違点**
-
-以前のバージョンの Windows PowerShell ISE で F1 キーを押すと、ローカル コンピューター上のヘルプ ファイルが開きました。 Windows PowerShell ISE 3.0 以降では、検索と構成が可能なコマンドレットのヘルプを含むウィンドウが開きます。 このヘルプ エクスペリエンスは Windows PowerShell ISE 3.0 の新機能であり、更新可能なヘルプは Windows PowerShell 3.0 の新機能です。
-
-### <a name="show-command-cmdlet"></a>Show-Command コマンドレット
-**PowerShell 3.0 に追加**
-
-**Show-Command** コマンドレットを使用すると、グラフィカルなフォームに情報を入力してコマンドレットや関数を構成または実行できます。 フォームを使用すると、グラフィカルな環境でユーザーが Windows PowerShell で作業できます。 また、上級のスクリプト作成者は **Show-Command** を使用して、簡単な Windows PowerShell ベースの GUI を作成できます。
+<kbd>F1</kbd> キーを押したときにヘルプを検索する場所を変更することができます。 **[ツール]** / **[オプション]** メニューで、 **[全般設定]** タブの **[その他の設定]** の下で、 **[オンライン コンテンツの代わりにローカル ヘルプ コンテンツを使用する]** ボックスをオンまたはオフにすることができます。 オンにした場合、クライアントでは、モジュール フォルダー内にあるダウンロード済みのヘルプから、コマンドレットのヘルプが検索されます。 チェックボックスがオフの場合、クライアントではヘルプをオンラインで検索します。
 
 **この変更の利点**
 
-Windows PowerShell スクリプトで **Show-Command** を使用すると、ユーザーが使い慣れたグラフィカルな環境を提供できます。 また、**Show-Command** は入門ユーザーが Windows PowerShell を学習するのにも役立ちます。
+現在のコマンドレットまたはスクリプトを離れることなく状況依存のヘルプを使用することで、統合された学習を行うことができます。
 
 **動作の相違点**
 
-Show-Command は Windows PowerShell ISE 3.0 の新機能です。
+以前のバージョンの Windows PowerShell ISE では、<kbd>F1</kbd> キーを押すと、ローカル コンピューター上のヘルプ ファイルが開きました。 Windows PowerShell ISE 3.0 以降では、検索と構成が可能なコマンドレットのヘルプを含むウィンドウが開きます。 このヘルプ エクスペリエンスは Windows PowerShell ISE 3.0 の新機能であり、更新可能なヘルプは Windows PowerShell 3.0 の新機能です。
+
+## <a name="show-command-cmdlet"></a>Show-Command コマンドレット
+
+> PowerShell 3.0 に追加
+
+`Show-Command` コマンドレットを使用すると、グラフィカルなフォームに情報を入力してコマンドレットや関数を構成または実行できます。 フォームを使用すると、グラフィカルな環境でユーザーが Windows PowerShell で作業できます。
+また、上級のスクリプト作成者は `Show-Command` を使用して、簡単な Windows PowerShell ベースの GUI を作成できます。
+
+**この変更の利点**
+
+Windows PowerShell スクリプトで `Show-Command` を使用すると、ユーザーが使い慣れたグラフィカルな環境を提供できます。 また、`Show-Command` は入門ユーザーが Windows PowerShell を学習するのにも役立ちます。
+
+**動作の相違点**
+
+`Show-Command` は Windows PowerShell ISE 3.0 の新機能です。
 
 ## <a name="see-also"></a>関連項目
-Windows PowerShell での Windows PowerShell ISE の使用に関する詳細については、次のリンクを参照してください。
 
-- [Windows PowerShell Integrated Scripting Environment の探索](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)
-- [TechNet Wiki の ISE](https://social.technet.microsoft.com/wiki/search/searchresults.aspx?q=ISE)
-- [スクリプト センター](https://technet.microsoft.com/scriptcenter/default)
+Windows PowerShell ISE の使い方の詳細については、「[Windows PowerShell Integrated Scripting Environment の探索](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)」を参照してください。

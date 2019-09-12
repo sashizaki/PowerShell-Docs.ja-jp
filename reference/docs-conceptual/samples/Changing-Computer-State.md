@@ -2,16 +2,16 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: コンピューターの状態を変更する
-ms.openlocfilehash: 80692ad7c56aa13e55d4997cfec289ffb3605458
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: de3e31e358548943a015b7bba275c4461202b20f
+ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030286"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386279"
 ---
 # <a name="changing-computer-state"></a>コンピューターの状態を変更する
 
-Windows PowerShell でコンピューターをリセットするには、標準のコマンド ライン ツールまたは WMI クラスを使用します。 Windows PowerShell は単にツールを実行するために使用するだけですが、Windows PowerShell でコンピューターの電力状態を変更する手順には、Windows PowerShell での外部ツールの使用方法に関する重要な詳細も含まれています。
+Windows PowerShell でコンピューターをリセットするには、標準のコマンド ライン ツール、WMI、または CIM クラスのいずれかを使用します。 Windows PowerShell は単にツールを実行するために使用するだけですが、Windows PowerShell でコンピューターの電力状態を変更する手順には、Windows PowerShell での外部ツールの使用方法に関する重要な詳細も含まれています。
 
 ## <a name="locking-a-computer"></a>コンピューターをロックする
 
@@ -37,13 +37,19 @@ Windows XP などで、ユーザーの簡易切り替えが有効なときにワ
 shutdown.exe -l
 ```
 
-3 つ目は、WMI を使用する方法です。 Win32_OperatingSystem クラスには、Win32Shutdown メソッドがあります。 このメソッドに 0 フラグを指定して呼び出すと、ログオフが開始されます。
+他に、WMI を使用するというオプションがあります。 Win32_OperatingSystem クラスには、Win32Shutdown メソッドがあります。 このメソッドに 0 フラグを指定して呼び出すと、ログオフが開始されます。
 
 ```powershell
 (Get-WmiObject -Class Win32_OperatingSystem -ComputerName .).Win32Shutdown(0)
 ```
 
 詳細について、および Win32Shutdown メソッドの他の機能については、MSDN の「Win32_OperatingSystem クラスの Win32Shutdown メソッド」をご覧ください。
+
+最後に、WMI メソッドで説明したのと同じ Win32_OperatingSystem クラスで CIM を使用できます。
+
+```powershell
+Get-CIMInstance -Classname Win32_OperatingSystem | Invoke-CimMethod -MethodName Shutdown
+```
 
 ## <a name="shutting-down-or-restarting-a-computer"></a>コンピューターをシャットダウンまたは再起動する
 

@@ -1,0 +1,99 @@
+### YamlMime:Landing
+title: システム管理のサンプル スクリプト
+summary: サンプル コレクションでは、PowerShell を使用してシステムを管理するシナリオについて説明します。
+metadata:
+  title: システム管理のサンプル スクリプト
+  description: サンプル コレクションでは、PowerShell を使用してシステムを管理するシナリオについて説明します。
+  ms.topic: landing-page
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 09/05/2019
+  ms.openlocfilehash: 95ed43cf713f79d8b648a0f3af77fe2e0119f9c4
+  ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 09/05/2019
+  ms.locfileid: "70392029"
+landingContent:
+- title: オブジェクトの操作
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: オブジェクトの構造の表示
+      url: ./viewing-object-structure--get-member-.md
+    - text: オブジェクトの一部の選択
+      url: ./selecting-parts-of-objects--select-object-.md
+    - text: パイプラインでのオブジェクトのフィルター処理
+      url: ./removing-objects-from-the-pipeline--where-object-.md
+    - text: オブジェクトの並べ替え
+      url: ./sorting-objects.md
+    - text: 複数のオブジェクトでのタスクの繰り返し
+      url: ./repeating-a-task-for-multiple-objects--foreach-object-.md
+    - text: .NET オブジェクトと COM オブジェクトの作成
+      url: ./creating-.net-and-com-objects--new-object-.md
+    - text: 静的なクラスとメソッドの使用
+      url: ./using-static-classes-and-methods.md
+    - text: WMI オブジェクトの取得 (Get-WmiObject)
+      url: ./getting-wmi-objects--get-wmiobject-.md
+- title: コンピューターの管理
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: コンピューターの状態を変更する
+      url: ./changing-computer-state.md
+    - text: コンピューターに関する情報の収集
+      url: ./collecting-information-about-computers.md
+    - text: FilterHashtable を使った Get-WinEvent クエリの作成
+      url: ./creating-get-winEvent-queries-with-filterhashtable.md
+- title: プロセスとサービスの管理
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Process コマンドレットによるプロセスの管理
+      url: ./managing-processes-with-process-cmdlets.md
+    - text: サービスの管理
+      url: ./managing-services.md
+    - text: Windows PowerShell ドライブの管理
+      url: ./managing-windows-powershell-drives.md
+    - text: プリンターの操作
+      url: ./working-with-printers.md
+    - text: ネットワーク関連タスクの実行
+      url: ./performing-networking-tasks.md
+    - text: ソフトウェア インストールの操作
+      url: ./working-with-software-installations.md
+    - text: 実行中のプロセスからの PowerShell コマンドをデコードする
+      url: ./decode-powershell-command-from-a-running-process.md
+- title: 出力の操作
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Out-* コマンドレットを使用してデータをリダイレクトする
+      url: ./redirecting-data-with-out---cmdlets.md
+    - text: Format コマンドを使用した出力ビューの変更
+      url: ./using-format-commands-to-change-output-view.md
+- title: ドライブとファイルの管理
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: 現在の場所の管理
+      url: ./managing-current-location.md
+    - text: ファイルとフォルダーの操作
+      url: ./working-with-files-and-folders.md
+    - text: ファイル、フォルダー、レジストリ キーの操作
+      url: ./working-with-files-folders-and-registry-keys.md
+    - text: レジストリ エントリの操作
+      url: ./working-with-registry-entries.md
+    - text: レジストリ キーの操作
+      url: ./working-with-registry-keys.md
+- title: UI 要素の作成
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: ユーザー設定の入力ボックスを作成する
+      url: ./creating-a-custom-input-box.md
+    - text: グラフィカルな日付の選択を作成する
+      url: ./creating-a-graphical-date-picker.md
+    - text: 複数選択のリスト ボックス
+      url: ./multiple-selection-list-boxes.md
+    - text: リスト ボックスから項目を選択する
+      url: ./selecting-items-from-a-list-box.md
