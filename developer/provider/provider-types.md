@@ -1,144 +1,148 @@
 ---
 title: プロバイダーの種類 |Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 08/21/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e523a8e1-42e4-4633-887f-fb74b3464561
 caps.latest.revision: 12
-ms.openlocfilehash: 37689571eb1650e5991af2e7002cd037ae99dd68
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 0a9bfe5dd0978ffce66db1b18ef4d82be6c1a7f2
+ms.sourcegitcommit: 5a004064f33acc0145ccd414535763e95f998c89
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080912"
+ms.lasthandoff: 08/23/2019
+ms.locfileid: "69986653"
 ---
 # <a name="provider-types"></a>プロバイダーの種類
 
-プロバイダーは、(Windows PowerShell によって提供される)、プロバイダーのコマンドレットが操作を実行する方法を変更することで、基本的な機能を定義します。 たとえば、プロバイダーがの既定の機能を使用できます、`Get-Item`コマンドレット、または、データ ストアから項目を取得するときにそのコマンドレットの動作を変更できます。 このトピックで説明されているプロバイダーの機能には、特定のプロバイダーの基底クラスとインターフェイスのメソッドを上書きすることで定義されている機能が含まれています。
+プロバイダーは、PowerShell によって提供されるプロバイダーコマンドレットがアクションを実行する方法を変更することによって、基本的な機能を定義します。 たとえば、プロバイダーは`Get-Item`コマンドレットの既定の機能を使用することも、データストアから項目を取得するときのコマンドレットの動作を変更することもできます。 このドキュメントで説明するプロバイダーの機能には、特定のプロバイダーの基本クラスおよびインターフェイスからメソッドを上書きすることによって定義される機能が含まれています。
 
 > [!NOTE]
-> Windows PowerShell によって事前定義されているプロバイダーの機能を参照してください。[プロバイダー機能](http://msdn.microsoft.com/en-us/864e4807-554a-4016-80ea-bf643a090fc6)します。
+> PowerShell で事前に定義されているプロバイダーの機能については、「[プロバイダーの機能](/previous-versions//ee126189(v=vs.85))」を参照してください。
 
-## <a name="drive-enabled-providers"></a>ドライブが有効なプロバイダー
+## <a name="drive-enabled-providers"></a>ドライブ対応のプロバイダー
 
-ドライブが有効なプロバイダーは、ユーザーが利用できる既定のドライブを指定し、ユーザーが追加またはドライブを削除できるようにします。 によって既定のドライブをデータ ストアへのアクセスが必要なために、ほとんどの場合は、プロバイダーはドライブが有効なプロバイダーです。 ただし、独自のプロバイダーを記述する場合は可能性がありますか、しないにすることを作成し、ドライブを削除するユーザーを許可します。
+ドライブ対応プロバイダーは、ユーザーが使用できる既定のドライブを指定し、ユーザーがドライブを追加または削除できるようにします。 ほとんどの場合、プロバイダーは、データストアにアクセスするためにいくつかの既定のドライブを必要とするため、ドライブ対応のプロバイダーになります。 ただし、独自のプロバイダーを作成するときに、ユーザーがドライブを作成および削除することを許可しない場合もあります。
 
-ドライブが有効なプロバイダーを作成するには、プロバイダー クラスから派生する必要があります、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスまたはそのクラスから派生した別のクラス。 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスは、次のメソッドのプロバイダーの既定のドライブを実装およびサポートを定義、`New-PSDrive`と`Remove-PSDrive`コマンドレット。 ほとんどの場合、プロバイダー コマンドレットをサポートする必要がありますを上書きするなど、コマンドレットを呼び出すため、Windows PowerShell エンジンが呼び出されるメソッド、`NewDrive`のメソッド、`New-PSDrive`コマンドレット、および必要に応じてなどの2番目のメソッドを上書きできます`NewDriveDynamicParameters`、動的パラメーターをコマンドレットに追加するためです。
+ドライブ対応のプロバイダーを作成するには、プロバイダークラスを[DriveCmdletProvider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスまたはそのクラスから派生した別のクラスから派生させる必要があります。 **DriveCmdletProvider**クラスは、プロバイダーの既定のドライブを実装し、コマンドレット`New-PSDrive`と`Remove-PSDrive`コマンドレットをサポートするために、次のメソッドを定義します。 ほとんどの場合、プロバイダーコマンドレットをサポートするには、コマンドレットの`NewDrive`メソッド`New-PSDrive`など、PowerShell エンジンが呼び出すメソッドを上書きして、コマンドレットを呼び出すメソッドを上書きする必要があります。また`NewDriveDynamicParameters` 、必要に応じて、次のように2番目のメソッドを上書きすることもできます。コマンドレットに動的パラメーターを追加します。
 
-- [System.Management.Automation.Provider.Drivecmdletprovider.Initializedefaultdrives*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives)メソッドは、プロバイダーが使用されるたびに、ユーザーに提供される既定のドライブを定義します。
+- [DriveCmdletProvider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.InitializeDefaultDrives)メソッドは、プロバイダーが使用されるときに、ユーザーが使用できる既定のドライブを定義しています。
 
-- [System.Management.Automation.Provider.Drivecmdletprovider.Newdrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)と[System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)メソッドご利用のプロバイダーのサポートを定義、`New-PSDrive`プロバイダー コマンドレット。 このコマンドレットは、データ ストアにアクセスするドライブを作成するユーザーを使用できます。
+- [DriveCmdletProvider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)メソッドと[DriveCmdletProvider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)メソッドは、プロバイダーがをサポートしている`New-PSDrive`かどうかを定義するために使用されます。プロバイダーコマンドレット。 このコマンドレットを使用すると、ユーザーはデータストアにアクセスするためのドライブを作成できます。
 
-- [System.Management.Automation.Provider.Drivecmdletprovider.Removedrive*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドは、プロバイダーのサポートを定義、`Remove-PSDrive`プロバイダー コマンドレット。 このコマンドレットは、データ ストアからドライブを削除するユーザーを使用できます。
+- [DriveCmdletProvider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドは、プロバイダーがプロバイダーコマンドレットを`Remove-PSDrive`どのようにサポートするかを定義します。 このコマンドレットを使用すると、ユーザーはデータストアからドライブを削除できます。
 
-## <a name="item-enabled-providers"></a>項目が有効なプロバイダー
+## <a name="item-enabled-providers"></a>アイテムが有効なプロバイダー
 
-項目が有効なプロバイダーは、取得、設定、またはデータ ストア内の項目をオフにするユーザーを許可します。 "Item"は、ユーザーはアクセスしたり、個別に管理するデータ ストアの要素です。 項目が有効なプロバイダーを作成するには、プロバイダー クラスから派生する必要があります、 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)クラスまたはそのクラスから派生した別のクラス。
+アイテムを有効にしたプロバイダーを使用すると、ユーザーはデータストア内のアイテムを取得、設定、またはクリアできます。 "Item" は、ユーザーが個別にアクセスまたは管理できるデータストアの要素です。 アイテムが有効なプロバイダーを作成するには、プロバイダークラス[が、その](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)クラスから派生した別のクラスから派生している必要があります。
 
-[System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)クラスは、特定のプロバイダー コマンドレットを実装するために、次のメソッドを定義します。 ほとんどの場合、プロバイダー コマンドレットをサポートする必要がありますを上書きするなど、コマンドレットを呼び出すため、Windows PowerShell エンジンが呼び出されるメソッド、`ClearItem`のメソッド、`Clear-Item`コマンドレット、および必要に応じてなどの2番目のメソッドを上書きできます`ClearItemDynamicParameters`、動的パラメーターをコマンドレットに追加するためです。
+System.object**クラスは**、特定のプロバイダーコマンドレットを実装する次のメソッドを定義します。 ほとんどの場合、プロバイダーコマンドレットをサポートするには、コマンドレットの`ClearItem`メソッド`Clear-Item`など、PowerShell エンジンが呼び出すメソッドを上書きして、コマンドレットを呼び出すメソッドを上書きする必要があります。また`ClearItemDynamicParameters` 、必要に応じて、次のように2番目のメソッドを上書きすることもできます。コマンドレットに動的パラメーターを追加します。
 
-- [System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)と[System.Management.Automation.Provider.Itemcmdletprovider.Clearitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters)メソッドご利用のプロバイダーのサポートを定義、`Clear-Item`プロバイダー コマンドレット。 このコマンドレットは、データ ストア内の項目の値を削除するユーザーを使用できます。
+- [System.Management.Automation.Provider.ItemCmdletProvider.ClearItem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) および [System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters) メソッドにより、お使いのプロバイダーで `Clear-Item` プロバイダー コマンドレットをサポートする方法を定義します。 このコマンドレットは、データストア内の項目の値を削除することをユーザーに許可します。
 
-- [System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)と[System.Management.Automation.Provider.Itemcmdletprovider.Getitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters)メソッドを定義する方法プロバイダーがサポートする、`Get-Item`プロバイダー コマンドレット。 このコマンドレットは、データ ストアからデータを取得できます。
+- [System.Management.Automation.Provider.ItemCmdletProvider.GetItem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) および [System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters) メソッドにより、お使いのプロバイダーで `Get-Item` プロバイダー コマンドレットをサポートする方法を定義します。 このコマンドレットを使用すると、ユーザーはデータストアからデータを取得できます。
 
-- [System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)と[System.Management.Automation.Provider.Itemcmdletprovider.Setitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters)メソッドを定義する方法プロバイダーがサポートする、`Set-Item`プロバイダー コマンドレット。 このコマンドレットは、データ ストア内の項目の値を更新するユーザーを使用できます。
+- [SetItem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドと[SetItemDynamicParameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters)メソッドは、プロバイダーがをサポートしているかどうかを定義します。この方法では、 `Set-Item`プロバイダーがプロバイダーコマンドレット。 このコマンドレットを使用すると、ユーザーはデータストア内の項目の値を更新できます。
 
-- [System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)と[System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultaction*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)メソッドご利用のプロバイダーのサポートを定義、`Invoke-Item`プロバイダー コマンドレット。 このコマンドレットは、項目によって指定された既定のアクションを実行するユーザーを使用できます。
+- [InvokeDefaultAction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)および system.object によってプロバイダーがどのように設定されるかについては、「」を[使用して](/dotnet/api/system.management.automation.provider.itemcmdletprovider.invokedefaultactiondynamicparameters)定義されています。プロバイダーコマンド`Invoke-Item`レットをサポートします。 このコマンドレットは、ユーザーが項目によって指定された既定のアクションを実行できるようにします。
 
-- [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)と[System.Management.Automation.Provider.Itemcmdletprovider.Itemexistsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters)メソッドご利用のプロバイダーのサポートを定義、`Test-Path`プロバイダー コマンドレット。 このコマンドレットは、パスのすべての要素が存在するかどうかを判断するユーザーを使用できます。
+- [System.Management.Automation.Provider.ItemCmdletProvider.ItemExists](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) および [System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters) メソッドにより、お使いのプロバイダーで `Test-Path` プロバイダー コマンドレットをサポートする方法を定義します。 このコマンドレットを使用すると、パスのすべての要素が存在するかどうかをユーザーが判断できます。
 
-  プロバイダーのコマンドレットを実装するために使用する方法だけでなく、 [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)クラスは、次のメソッドも定義します。
+プロバイダーコマンドレットの実装に使用されるメソッドに加えて、次のメソッドも定義さ**れてい**ます。
 
-- [System.Management.Automation.Provider.Itemcmdletprovider.Expandpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ExpandPath)メソッドには、プロバイダー パスを指定するときに、ワイルドカードを使用できます。
+- ユーザー[は、プロバイダーのパス](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ExpandPath)を指定するときにワイルドカードを使用できます。
 
-- [System.Management.Automation.Provider.Itemcmdletprovider.Isvalidpath*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)パスが構文的および意味的有効なプロバイダーのかを判断するために使用します。
+- このプロバイダーに対してパスが構文的で有効であるかどうかを判断するに[は、system.string を使用します](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)。
 
 ## <a name="container-enabled-providers"></a>コンテナーが有効なプロバイダー
 
-コンテナーが有効なプロバイダーは、コンテナーである項目を管理するユーザーを許可します。 コンテナーは、共通の親項目の子項目のグループです。 コンテナーが有効なプロバイダーを作成するには、プロバイダー クラスから派生する必要があります、 [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスまたはそのクラスから派生した別のクラス。
+コンテナー対応のプロバイダーを使用すると、ユーザーはコンテナーであるアイテムを管理できます。 コンテナーは、共通の親項目の子項目のグループです。 コンテナーが有効なプロバイダーを作成するには、プロバイダークラスが[ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスまたはそのクラスから派生した別のクラスから派生している必要があります。
 
 > [!IMPORTANT]
-> コンテナーが有効なプロバイダーは、入れ子になったコンテナーを含むデータ ストアにアクセスできません。 コンテナーの子項目が別のコンテナーの場合は、ナビゲーションが有効なプロバイダーを実装する必要があります。
+> コンテナーが有効になっているプロバイダーは、入れ子になったコンテナーを含むデータストアにアクセスすることはできません。 コンテナーの子項目が別のコンテナーである場合は、ナビゲーションが有効なプロバイダーを実装する必要があります。
 
-[System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスは、特定のプロバイダー コマンドレットを実装するために、次のメソッドを定義します。 ほとんどの場合、プロバイダー コマンドレットをサポートする必要がありますを上書きするなど、コマンドレットを呼び出すため、Windows PowerShell エンジンが呼び出されるメソッド、`CopyItem`のメソッド、`Copy-Item`コマンドレット、および必要に応じてなどの2番目のメソッドを上書きできます`CopyItemDynamicParameters`、動的パラメーターをコマンドレットに追加するためです。
+**ContainerCmdletProvider**クラスは、特定のプロバイダーコマンドレットを実装する次のメソッドを定義します。 ほとんどの場合、プロバイダーコマンドレットをサポートするには、コマンドレットの`CopyItem`メソッド`Copy-Item`など、PowerShell エンジンが呼び出すメソッドを上書きして、コマンドレットを呼び出すメソッドを上書きする必要があります。また`CopyItemDynamicParameters` 、必要に応じて、次のように2番目のメソッドを上書きすることもできます。コマンドレットに動的パラメーターを追加します。
 
-- [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)と[System.Management.Automation.Provider.Containercmdletprovider.Copyitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Copy-Item`プロバイダー コマンドレット。 このコマンドレットは、別の 1 つの場所から項目をコピーするユーザーを使用できます。
+- [ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドと[ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)メソッドは、プロバイダーがをサポートしているかどうかを定義するために使用されます。また、 `Copy-Item`プロバイダーコマンドレット。 このコマンドレットを使用すると、ユーザーは1つの場所から別の場所に項目をコピーできます。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)と[System.Management.Automation.Provider.Containercmdletprovider.Getchilditemsdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Get-ChildItem`プロバイダー コマンドレット。 このコマンドレットは、親アイテムの子項目を取得するユーザーを使用できます。
+- ContainerCmdletProvider メソッドと[GetChildItems](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)メソッドは、プロバイダーの方法を定義します。 [GetChildItemsDynamicParameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)メソッドは、プロバイダーの方法を定義します。プロバイダーコマンド`Get-ChildItem`レットをサポートします。 このコマンドレットを使用すると、ユーザーは親項目の子項目を取得できます。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Getchildnames*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)と[System.Management.Automation.Provider.Containercmdletprovider.Getchildnamesdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Get-ChildItem`プロバイダー コマンドレット場合その`Name`パラメーターを指定します。
+- [ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)および[ContainerCmdletProvider dynamicparameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)メソッドによって、プロバイダーの方法が定義されているかどうかが定義されています。は、 `Get-ChildItem` `Name`パラメーターが指定されている場合、プロバイダーコマンドレットをサポートします。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)と[System.Management.Automation.Provider.Containercmdletprovider.Newitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters)メソッドは、プロバイダーのサポートを定義、`New-Item`プロバイダー コマンドレット。 このコマンドレットは、データ ストアに新しい項目を作成するユーザーを使用できます。
+- ContainerCmdletProvider メソッドと[NewItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドと[ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters)メソッドは、プロバイダーがをサポートしているかどうかを定義します。このメソッドは、 `New-Item`プロバイダーコマンドレット。 このコマンドレットを使用すると、ユーザーはデータストアに新しい項目を作成できます。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Removeitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)と[System.Management.Automation.Provider.Containercmdletprovider.Removeitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Remove-Item`プロバイダー コマンドレット。 このコマンドレットは、データ ストアから項目を削除するユーザーを使用できます。
+- [ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)メソッドと[ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)メソッドは、プロバイダーがをどのようにサポートしているかを定義します。このメソッドによって、`Remove-Item`プロバイダーコマンドレット。 このコマンドレットを使用すると、ユーザーはデータストアから項目を削除できます。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Renameitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)と[System.Management.Automation.Provider.Containercmdletprovider.Renameitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Rename-Item`プロバイダー コマンドレット。 このコマンドレットは、データ ストア内のアイテムの名前を変更するユーザーを使用できます。
+- [ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)メソッドと[ContainerCmdletProvider itemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters)メソッドは、プロバイダーがをどのようにサポートしているかを定義していますが、`Rename-Item`プロバイダーコマンドレット。 このコマンドレットを使用すると、ユーザーはデータストア内の項目の名前を変更できます。
 
-  プロバイダーのコマンドレットを実装するために使用する方法だけでなく、 [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスは、次のメソッドも定義します。
+**ContainerCmdletProvider**クラスは、プロバイダーコマンドレットの実装に使用されるメソッドに加えて、次のメソッドも定義します。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Haschilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems)項目に子項目があるかどうかを判断するプロバイダー クラスでメソッドを使用できます。
+- [ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.HasChildItems)メソッドは、項目に子項目があるかどうかを判断するために、プロバイダークラスで使用できます。
 
-- [System.Management.Automation.Provider.Containercmdletprovider.Convertpath*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.ConvertPath)メソッドは、指定されたパスから新しいプロバイダーに固有のパスを作成するプロバイダー クラスで使用できます。
+- プロバイダークラスは、 [ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.ConvertPath)メソッドを使用して、指定されたパスから新しいプロバイダー固有のパスを作成できますが、
 
 ## <a name="navigation-enabled-providers"></a>ナビゲーションが有効なプロバイダー
 
-ナビゲーションが有効なプロバイダーは、データ ストア内の項目を移動するユーザーを許可します。 ナビゲーションが有効なプロバイダーを作成するには、プロバイダー クラスから派生する必要があります、 [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラス。
+ナビゲーションが有効なプロバイダーは、ユーザーがデータストア内の項目を移動できるようにします。 ナビゲーションが有効なプロバイダーを作成するには、プロバイダークラス[が、system.servicemodel](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラスから派生する必要があります。
 
-[System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラスは、特定のプロバイダー コマンドレットを実装するために、次のメソッドを定義します。 ほとんどの場合、プロバイダー コマンドレットをサポートする必要がありますを上書きするなど、コマンドレットを呼び出すため、Windows PowerShell エンジンが呼び出されるメソッド、`MoveItem`のメソッド、`Move-Item`コマンドレット、および必要に応じてなどの2番目のメソッドを上書きできます`MoveItemDynamicParameters`、動的パラメーターをコマンドレットに追加するためです。
+System.string**クラスは**、特定のプロバイダーコマンドレットを実装する次のメソッドを定義します。 ほとんどの場合、プロバイダーコマンドレットをサポートするには、コマンドレットの`MoveItem`メソッド`Move-Item`など、PowerShell エンジンが呼び出すメソッドを上書きして、コマンドレットを呼び出すメソッドを上書きする必要があります。また`MoveItemDynamicParameters` 、必要に応じて、次のように2番目のメソッドを上書きすることもできます。コマンドレットに動的パラメーターを追加します。
 
-- [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)と[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Move-Item`プロバイダー コマンドレット。 このコマンドレットは、ストア内の 1 つの場所から別の場所に項目を移動するユーザーを使用できます。
+- この[メソッドは](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters)、プロバイダーがをサポートしているかどうかを定義します。この[メソッドと、](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)このメソッドによって作成されたプロバイダーの`Move-Item`プロバイダーコマンドレット。 このコマンドレットを使用すると、ユーザーはストア内のある場所から別の場所に項目を移動できます。
 
-- [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)メソッドは、プロバイダーのサポートを定義、`Join-Path`プロバイダー コマンドレット。 このコマンドレットは、プロバイダーの内部パスを作成する親と子パス セグメントを結合するユーザーを使用できます。
+- この[例では](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)、プロバイダーがプロバイダーコマンドレットを`Join-Path`サポートする方法を定義しています。 このコマンドレットを使用すると、ユーザーは親と子のパスセグメントを組み合わせて、プロバイダーの内部パスを作成できます。
 
-  プロバイダーのコマンドレットを実装するために使用する方法だけでなく、 [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラスは、次のメソッドも定義します。
+プロバイダーコマンドレットの実装に使用されるメソッドに加えて、次のメソッドも定義さ**れてい**ます。
 
-- [System.Management.Automation.Provider.Navigationcmdletprovider.Getchildname*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName)メソッドは、パスの子ノードの名前を抽出します。
+- この[メソッドは、パス](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName)の子ノードの名前を抽出するために、このメソッドによって取得されます。
 
-- [System.Management.Automation.Provider.Navigationcmdletprovider.Getparentpath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath)メソッドが親のパス部分を抽出します。
+- [GetParentPath](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath)メソッドは、パスの親の部分を抽出します。このメソッドは、
 
-- [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer)メソッドは、項目は、コンテナー項目かどうかを判断します。 このコンテキストでは、コンテナーは、共通の親項目の下の子項目のグループです。
+- [IsItemContainer](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer)メソッドは、項目がコンテナー項目であるかどうかを判断しています。 このコンテキストでは、コンテナーは共通の親項目の下にある子項目のグループです。
 
-- [System.Management.Automation.Provider.Navigationcmdletprovider.Normalizerelativepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)メソッドのパスが指定の基本パスに関連する項目を返します。
+- [NormalizeRelativePath](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)メソッドは、指定された基本パスに対して相対的な項目へのパスを返しています。
 
 ## <a name="content-enabled-providers"></a>コンテンツが有効なプロバイダー
 
-プロバイダーのコンテンツが有効なアクセス許可をオフに、取得、またはデータ ストアで項目の内容を設定します。 たとえば、FileSystem プロバイダーを使用すると、オフにして、取得、ファイル システム内のファイルの内容を設定できます。 コンテンツが有効なプロバイダーを作成する、プロバイダー クラスのメソッドを実装する必要があります、 [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)インターフェイス。
+コンテンツを有効にしたプロバイダーを使用すると、ユーザーはデータストア内の項目の内容をクリア、取得、または設定できます。
+たとえば、FileSystem プロバイダーでは、ファイルシステム内のファイルの内容をクリア、取得、および設定できます。 コンテンツが有効なプロバイダーを作成するには、プロバイダークラスが[IContentCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)インターフェイスのメソッドを実装する必要があります。
 
-[System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)インターフェイスは、特定のプロバイダー コマンドレットを実装するために、次のメソッドを定義します。 ほとんどの場合、プロバイダー コマンドレットをサポートする必要がありますを上書きするなど、コマンドレットを呼び出すため、Windows PowerShell エンジンが呼び出されるメソッド、`ClearContent`のメソッド、`Clear-Content`コマンドレット、および必要に応じてなどの2番目のメソッドを上書きできます`ClearContentDynamicParameters`、動的パラメーターをコマンドレットに追加するためです。
+**IContentCmdletProvider**インターフェイスは、特定のプロバイダーコマンドレットを実装する次のメソッドを定義します。 ほとんどの場合、プロバイダーコマンドレットをサポートするには、コマンドレットの`ClearContent`メソッド`Clear-Content`など、PowerShell エンジンが呼び出すメソッドを上書きして、コマンドレットを呼び出すメソッドを上書きする必要があります。また`ClearContentDynamicParameters` 、必要に応じて、次のように2番目のメソッドを上書きすることもできます。コマンドレットに動的パラメーターを追加します。
 
-- [System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontent*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)と[System.Management.Automation.Provider.Icontentcmdletprovider.Clearcontentdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Clear-Content`プロバイダー コマンドレット。 このコマンドレットは、項目を削除することがなく、項目のコンテンツを削除するユーザーを使用できます。
+- [IContentCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)メソッドと[IContentCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters)メソッドでは、プロバイダーがどのようにサポートするかが定義されています。このメソッドは、`Clear-Content`プロバイダーコマンドレット。 このコマンドレットを使用すると、項目を削除せずに項目の内容を削除できます。
 
-- [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)と[System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreaderdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Get-Content`プロバイダー コマンドレット。 このコマンドレットは、項目のコンテンツを取得するユーザーを使用できます。 [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentreader*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)メソッドが返す、 [System.Management.Automation.Provider.Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader)を定義するインターフェイスコンテンツの読み取りに使用するメソッド。
+- [IContentCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)メソッドと[IContentCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters)メソッドでは、プロバイダーの方法が定義されています。このメソッドは、プロバイダーの方法を定義します。プロバイダーコマンド`Get-Content`レットをサポートします。 このコマンドレットは、ユーザーが項目のコンテンツを取得できるようにします。 メソッド`System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader`は、コンテンツの読み取りに使用されるメソッドを定義する[IContentReader](/dotnet/api/System.Management.Automation.Provider.IContentReader)インターフェイスを返します。
 
-- [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriter*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)と[System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriterdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Set-Content`プロバイダー コマンドレット。 このコマンドレットは、項目のコンテンツを更新するユーザーを使用できます。 [System.Management.Automation.Provider.Icontentcmdletprovider.Getcontentwriter*](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)メソッドが返す、 [System.Management.Automation.Provider.Icontentwriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter)を定義するインターフェイスコンテンツの書き込みに使用するメソッド。
+- [IContentCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)メソッドと IContentCmdletProvider メソッドによって、プロバイダーの方法が定義されます。 [GetContentWriterDynamicParameters](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters)メソッドによって、プロバイダーのプロバイダーコマンド`Set-Content`レットをサポートします。 このコマンドレットを使用すると、ユーザーは項目のコンテンツを更新できます。 メソッド`System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter`は、コンテンツの書き込みに使用されるメソッドを定義する[IContentWriter](/dotnet/api/System.Management.Automation.Provider.IContentWriter)インターフェイスを返します。
 
 ## <a name="property-enabled-providers"></a>プロパティが有効なプロバイダー
 
-プロパティが有効なプロバイダーは、データ ストア内の項目のプロパティを管理するユーザーを許可します。 プロパティが有効なプロバイダーを作成する、プロバイダー クラスのメソッドを実装する必要があります、 [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)と[System.Management.Automation.Provider.Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider)インターフェイス。 ほとんどの場合、プロバイダー コマンドレットをサポートする必要がありますを上書きするなど、コマンドレットを呼び出すため、Windows PowerShell エンジンが呼び出されるメソッド、`ClearProperty`クリア プロパティ コマンドレット、および必要に応じてメソッドがなどの2番目のメソッドを上書きできます`ClearPropertyDynamicParameters`、動的パラメーターをコマンドレットに追加するためです。
+プロパティを有効にしたプロバイダーを使用すると、ユーザーはデータストア内の項目のプロパティを管理できます。
+プロパティを有効にしたプロバイダーを作成するには、プロバイダークラスが [System.Management.Automation.Provider.IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) と [System.Management.Automation.Provider.IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider) のメソッドを実装する必要がありますので、インターフェイス。 ほとんどの場合、プロバイダーコマンドレットをサポートするには、PowerShell エンジンが呼び出すメソッドを上書きして、コマンドレットを呼び`ClearProperty`出す必要があります (たとえば、Clear プロパティコマンドレットのメソッドなど)。オプションで`ClearPropertyDynamicParameters` 、次のように2番目のメソッドを上書きすることもできます。コマンドレットに動的パラメーターを追加します。
 
-[System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)インターフェイスは、特定のプロバイダー コマンドレットを実装するために、次のメソッドを定義します。
+**IPropertyCmdletProvider**インターフェイスは、特定のプロバイダーコマンドレットを実装する次のメソッドを定義します。
 
-- [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)と[System.Management.Automation.Provider.Ipropertycmdletprovider.Clearpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Clear-ItemProperty`プロバイダー コマンドレット。 このコマンドレットは、プロパティの値を削除するユーザーを使用できます。
+- [IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)メソッドと[IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters)メソッドによって、プロバイダーの方法が定義されます。このメソッドは、プロバイダーの方法を定義します。プロバイダーコマンド`Clear-ItemProperty`レットをサポートします。 このコマンドレットを使用すると、ユーザーはプロパティの値を削除できます。
 
-- [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)と[System.Management.Automation.Provider.Ipropertycmdletprovider.Getpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Get-ItemProperty`プロバイダー コマンドレット。 このコマンドレットは、項目のプロパティを取得するユーザーを使用できます。
+- [IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)と[IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters)の各メソッドは、プロバイダーがどのようにサポートするかを定義しています。この例では、`Get-ItemProperty`プロバイダーコマンドレット。 このコマンドレットを使用すると、ユーザーは項目のプロパティを取得できます。
 
-- [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)と[System.Management.Automation.Provider.Ipropertycmdletprovider.Setpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Set-ItemProperty`プロバイダー コマンドレット。 このコマンドレットは、アイテムのプロパティを更新するユーザーを使用できます。
+- [IPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッドと[IPropertyCmdletProvider dynamicparameters](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters)メソッドは、プロバイダーがどのようにサポートするかを定義します。このメソッドによって、`Set-ItemProperty`プロバイダーコマンドレット。 このコマンドレットを使用すると、ユーザーは項目のプロパティを更新できます。
 
-  [System.Management.Automation.Provider.Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider)インターフェイスは、特定のプロバイダー コマンドレットを実装するために、次のメソッドを定義します。
+  **IDynamicPropertyCmdletProvider**インターフェイスは、特定のプロバイダーコマンドレットを実装する次のメソッドを定義します。
 
-- [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Copyproperty*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyProperty)と[System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Copypropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyPropertyDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Copy-ItemProperty`プロバイダー コマンドレット。 このコマンドレットは、1 つの場所からプロパティとその値をコピーするユーザーを使用できます。
+- [IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyProperty)メソッドと[IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.CopyPropertyDynamicParameters)メソッドは、それぞれの方法を定義します。これらのメソッドの内容を定義するためには、プロバイダーは、 `Copy-ItemProperty`プロバイダーコマンドレットをサポートしています。 このコマンドレットを使用すると、ユーザーはプロパティとその値を1つの場所から別の場所にコピーできます。
 
-- [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Moveproperty*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MoveProperty)と[System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Movepropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MovePropertyDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Move-ItemProperty`プロバイダー コマンドレット。 このコマンドレットは、1 つの場所からプロパティとその値を移動するユーザーを使用できます。
+- [IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MoveProperty)メソッドと[IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MovePropertyDynamicParameters)メソッドでは、どのような方法でを使用するかが定義されています。また、プロバイダーは、 `Move-ItemProperty`プロバイダーコマンドレットをサポートしています。 このコマンドレットを使用すると、ユーザーはプロパティとその値を1つの場所から別の場所に移動できます。
 
-- [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newproperty*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewProperty)と[System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)メソッドは、プロバイダーのサポートを定義、`New-ItemProperty`プロバイダー コマンドレット。 このコマンドレットは、新しいプロパティを作成し、その値を設定できます。
+- [IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewProperty)メソッドと[IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)メソッドでは、どのような方法を使用するかが定義されています。これにより、プロバイダーは、 `New-ItemProperty`プロバイダーコマンドレットをサポートしています。 このコマンドレットを使用すると、ユーザーは新しいプロパティを作成し、その値を設定できます。
 
-- [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Removeproperty*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty)と[System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Removepropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Remove-ItemProperty`コマンドレット。 このコマンドレットは、プロパティとその値を削除するユーザーを使用できます。
+- [IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty)メソッドと[IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters)メソッドでは、方法が定義されています。このメソッドは、方法を定義します。プロバイダーはコマンドレット`Remove-ItemProperty`をサポートしています。 このコマンドレットを使用すると、ユーザーはプロパティとその値を削除できます。
 
-- [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Renameproperty*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty)と[System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Renamepropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters)メソッドは、プロバイダーのサポートを定義、`Rename-ItemProperty`コマンドレット。 このコマンドレットは、プロパティの名前を変更するユーザーを使用できます。
+- [IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty)と[IDynamicPropertyCmdletProvider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters)の各メソッドでは、方法を定義しています。この方法については、「」を指定します。プロバイダーはコマンドレット`Rename-ItemProperty`をサポートしています。 このコマンドレットを使用すると、ユーザーはプロパティの名前を変更できます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[Windows PowerShell プロバイダーの記述](./writing-a-windows-powershell-provider.md)
+[about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers)
+
+[Windows PowerShell プロバイダーの作成](./writing-a-windows-powershell-provider.md)
