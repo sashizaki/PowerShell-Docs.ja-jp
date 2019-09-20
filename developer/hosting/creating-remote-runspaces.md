@@ -8,30 +8,30 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
 caps.latest.revision: 5
-ms.openlocfilehash: f6cc69df8afe64cea867f5d7f9a7d45753a54d6f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: c97b0dfc12d96f99c53383d3578579f1988efd52
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62082976"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143550"
 ---
 # <a name="creating-remote-runspaces"></a>リモート実行空間を作成する
 
-Windows PowerShell コマンドを受け取る、`ComputerName`パラメーターは、Windows PowerShell を実行しているコンピューターで実行することができます。 取らないコマンドを実行する、`ComputerName`パラメーター、Ws-management を使用して、指定したコンピューターに接続する実行空間を構成してそのコンピューターでコマンドを実行します。
+**ComputerName**パラメーターを受け取る powershell コマンドは、powershell を実行する任意のコンピューターで実行できます。 **ComputerName**パラメーターを受け取らないコマンドを実行するには、ws-management を使用して、指定したコンピューターに接続し、そのコンピューターでコマンドを実行する実行空間を構成します。
 
-## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a>WSManConnection を使用して、リモートの実行空間を作成するには
+## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a>WSManConnection を使用してリモートの実行空間を作成する
 
- 作成するリモート コンピューターに接続する実行空間を作成する、 [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクト。 設定して、接続の対象のエンドポイントを指定する、 [System.Management.Automation.Runspaces.Wsmanconnectioninfo.Connectionuri*](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)オブジェクトのプロパティ。 呼び出して、実行空間を作成、 [System.Management.Automation.Runspaces.Runspacefactory.Createrunspace*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)メソッドを指定する、 [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトとして、`connectionInfo`パラメーター。
+ リモートコンピューターに接続する実行空間を作成するには、 [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを作成します。 接続のターゲットエンドポイントは、オブジェクトの[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)プロパティを設定することによって指定してください。 次に、 [RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)メソッドを呼び出して、実行空間を作成します。そのためには、 [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを次の`connectionInfo`ように指定します。引き.
 
- 次の例では、リモート コンピューターに接続する実行空間を作成する方法を示します。 例では、`RemoteComputerUri`リモート コンピューターの実際の URI のプレース ホルダーとして使用されます。
+ 次の例は、リモートコンピューターに接続する実行空間を作成する方法を示しています。 この例では`RemoteComputerUri` 、はリモートコンピューターの実際の URI のプレースホルダーとして使用されます。
 
 ```csharp
 namespace Samples
 {
   using System;
   using System.Collections.ObjectModel;
-  using System.Management.Automation;            // Windows PowerShell namespace.
-  using System.Management.Automation.Runspaces;  // Windows PowerShell namespace.
+  using System.Management.Automation;            // PowerShell namespace.
+  using System.Management.Automation.Runspaces;  // PowerShell namespace.
 
   /// <summary>
   /// This class contains the Main entry point for this host application.
@@ -48,10 +48,11 @@ namespace Samples
       // Create a WSManConnectionInfo object using the default constructor
       // to connect to the "localHost". The WSManConnectionInfo object can
       // also be used to specify connections to remote computers.
-      WSManConnectionInfo connectionInfo = new WSManConnectionInfo();
+      Uri RemoteComputerUri = new uri("http://Server01:5985/WSMAN");
+      WSManConnectionInfo connectionInfo = new WSManConnectionInfo(RemoteComputerUri);
 
       // Set the OperationTimeout property and OpenTimeout properties.
-      // The OperationTimeout property is used to tell Windows PowerShell
+      // The OperationTimeout property is used to tell PowerShell
       // how long to wait (in milliseconds) before timing out for an
       // operation. The OpenTimeout property is used to tell Windows
       // PowerShell how long to wait (in milliseconds) before timing out
