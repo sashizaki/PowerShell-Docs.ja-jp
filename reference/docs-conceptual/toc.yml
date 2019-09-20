@@ -194,6 +194,55 @@
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
 - name: PowerShell Core のサポート ライフサイクル
   href: powershell-support-lifecycle.md
+- name: Windows Management Framework (WMF)
+  items:
+    - name: 概要
+      href: wmf/overview.md
+    - name: インストール
+      items:
+        - name: WMF 5.1 のインストールと構成
+          href: wmf/setup/install-configure.md
+        - name: WMF 5.0 のアンインストール
+          href: wmf/setup/uninstall.md
+    - name: 新機能
+      expanded: true
+      items:
+        - name: WMF 5.x のリリース ノート
+          href: wmf/whats-new/release-notes.md
+        - name: WMF 5.1 のバグ修正
+          href: wmf/whats-new/bugfixes.md
+        - name: 新規および更新されたコマンドレット
+          href: wmf/whats-new/new-updated-cmdlets.md
+        - name: PowerShell クラスを使用したカスタム型の作成
+          href: wmf/whats-new/class-overview.md
+        - name: WMF 5.1 のコンソール機能強化
+          href: wmf/whats-new/console-improvements.md
+        - name: PowerShell スクリプト デバッグの強化
+          href: wmf/whats-new/debug-overview.md
+        - name: スクリプトのトレースとログ
+          href: wmf/whats-new/script-logging.md
+        - name: WMF 5.1 の DSC 機能強化
+          href: wmf/whats-new/DSC-improvements.md
+        - name: WMF 5.1 の PowerShell エンジン機能強化
+          href: wmf/whats-new/engine-improvements.md
+        - name: 情報ストリーム
+          href: wmf/whats-new/informationstream-overview.md
+        - name: Just Enough Administration (JEA) の強化
+          href: wmf/whats-new/jea-improvements.md
+        - name: WMF 5.1 のパッケージ管理の機能強化
+          href: wmf/whats-new/package-management-improvements.md
+        - name: ソフトウェア インベントリ ログ (SIL)
+          href: wmf/whats-new/sil-overview.md
+        - name: 製品の互換性の状態
+          href: wmf/whats-new/compatibility.md
+    - name: の既知の問題
+      items:
+        - name: WMF 5.0 の既知の問題
+          href: wmf/known-issues/known-issues-50.md
+        - name: WMF 5.1 の既知の問題
+          href: wmf/known-issues/known-issues-51.md
+        - name: DSC の既知の問題と制限事項
+          href: wmf/known-issues/known-issues-dsc.md
 - name: サンプル スクリプト
   items:
     - name: 管理のサンプル スクリプト
