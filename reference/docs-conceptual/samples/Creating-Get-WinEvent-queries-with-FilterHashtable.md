@@ -1,12 +1,12 @@
 ---
-ms.date: 03/18/2019
+ms.date: 09/13/2019
 title: FilterHashtable を使った Get-WinEvent クエリの作成
-ms.openlocfilehash: 2f598fceb570f189bee776b6ed572b11a6938f64
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 1bf321c09c20736de36eb896fabced31cfdfbd75
+ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66471023"
+ms.lasthandoff: 09/19/2019
+ms.locfileid: "71143671"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>FilterHashtable を使った Get-WinEvent クエリの作成
 
@@ -16,9 +16,11 @@ ms.locfileid: "66471023"
 
 大規模なイベント ログを使用する場合、パイプラインを通して `Where-Object` コマンドにオブジェクトを送信するのは効率的ではありません。 PowerShell 6 以前では、`Get-EventLog` コマンドレットがログ データを取得するためのもう一つのオプションでした。 たとえば、**Microsoft-Windows-Defrag** ログをフィルター処理する場合、次のコマンドは効率的ではありません。
 
-`Get-EventLog -LogName Application | Where-Object Source -Match defrag`
+```powershell
+Get-EventLog -LogName Application | Where-Object Source -Match defrag
 
-`Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }`
+Get-WinEvent -LogName Application | Where-Object { $_.ProviderName -Match 'defrag' }
+```
 
 次のコマンドでは、パフォーマンスが向上するハッシュ テーブルを使っています。
 
@@ -48,19 +50,35 @@ Get-WinEvent -FilterHashtable @{
 
 キー名、データ型、およびデータ値に対してワイルドカード文字を指定できるかどうかを、次の表に示します。
 
-| キー名     | 値のデータ型    | ワイルドカード文字を指定できるか |
-|------------- | ------------------ | ---------------------------- |
-| LogName      | `<String[]>`       | 可 |
-| ProviderName | `<String[]>`       | 可 |
-| パス         | `<String[]>`       | いいえ  |
-| Keywords     | `<Long[]>`         | いいえ  |
-| ID           | `<Int32[]>`        | いいえ  |
-| レベル        | `<Int32[]>`        | いいえ  |
-| StartTime    | `<DateTime>`       | いいえ  |
-| EndTime      | `<DateTime>`       | いいえ  |
-| UserID       | `<SID>`            | いいえ  |
-| データ         | `<String[]>`       | いいえ  |
-| *            | `<String[]>`       | いいえ  |
+|    キー名    | 値のデータ型 | ワイルドカード文字を指定できるか |
+| -------------- | --------------- | ---------------------------- |
+| LogName        | `<String[]>`    | 可                          |
+| ProviderName   | `<String[]>`    | 可                          |
+| パス           | `<String[]>`    | いいえ                           |
+| Keywords       | `<Long[]>`      | いいえ                           |
+| ID             | `<Int32[]>`     | いいえ                           |
+| レベル          | `<Int32[]>`     | いいえ                           |
+| StartTime      | `<DateTime>`    | いいえ                           |
+| EndTime        | `<DateTime>`    | いいえ                           |
+| UserID         | `<SID>`         | いいえ                           |
+| データ           | `<String[]>`    | いいえ                           |
+| \<named-data\> | `<String[]>`    | いいえ                           |
+
+\<named-data\> キーは、名前付きイベント データ フィールドを表します。 たとえば、Perflib イベント 1008 には次のイベント データを含めることができます。
+
+```xml
+<EventData>
+  <Data Name="Service">BITS</Data>
+  <Data Name="Library">C:\Windows\System32\bitsperf.dll</Data>
+  <Data Name="Win32Error">2</Data>
+</EventData>
+```
+
+次のコマンドを利用し、これらのイベントに対してクエリを実行できます。
+
+```powershell
+Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
+```
 
 ## <a name="building-a-query-with-a-hash-table"></a>ハッシュ テーブルを使ったクエリの作成
 
