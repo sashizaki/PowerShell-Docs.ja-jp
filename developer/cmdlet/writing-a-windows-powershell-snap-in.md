@@ -1,5 +1,5 @@
 ---
-title: Windows PowerShell スナップインの書き込み |Microsoft Docs
+title: Windows PowerShell スナップインを作成する |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -10,50 +10,50 @@ helpviewer_keywords:
 - snap-ins [PowerShell SDK], PSSnapin example
 ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
 caps.latest.revision: 7
-ms.openlocfilehash: 0c99f4bcfe5e2d34d31714dc85a53b5e8abe0925
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 465ab9e8fa29716ce0f46ad0dcf01d0ddd615bcd
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62066959"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322933"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>Windows PowerShell スナップインを記述する
 
-この例では、アセンブリ内のすべてのコマンドレットと Windows PowerShell プロバイダーの登録に使用できる Windows PowerShell スナップインを記述する方法を示します。
+この例では、すべてのコマンドレットと Windows PowerShell プロバイダーをアセンブリに登録するために使用できる Windows PowerShell スナップインを記述する方法を示します。
 
-この種類のスナップインでは、どのコマンドレットとプロバイダーを登録するを選択しません。 登録されているかを選択できるように、スナップインを作成するを参照してください。[カスタム Windows PowerShell スナップインの書き込み](./writing-a-custom-windows-powershell-snap-in.md)します。
+この種類のスナップインでは、登録するコマンドレットとプロバイダーは選択しません。 登録内容を選択できるスナップインを作成するには、「[カスタム Windows PowerShell スナップインの作成](./writing-a-custom-windows-powershell-snap-in.md)」を参照してください。
 
 ### <a name="writing-a-windows-powershell-snap-in"></a>Windows PowerShell スナップインを記述する
 
-1. RunInstallerAttribute 属性を追加します。
+1. Runインストーラ属性属性を追加します。
 
-2. 派生するパブリック クラスを作成、 [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn)クラス。
+2. [Add-pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn)クラスから派生するパブリッククラスを作成します。
 
-    この例では、クラス名は"GetProcPSSnapIn01"が。
+    この例では、クラス名は "GetProcPSSnapIn01" です。
 
-3. (必須) スナップインの名前のパブリック プロパティを追加します。 スナップインの名前を付けるときは使用しないで、次の文字: # . , ( ) { } [ ] & - /\ $ ; : " ' \< > ; ? @ ` *
+3. スナップインの名前のパブリックプロパティを追加します (必須)。 スナップインに名前を付けるときは、次の文字を使用しないでください。 #. , () {} [] &AMP;-/\ $;: "' \< >;? @ ` *
 
-    この例で、スナップインの名前は"GetProcPSSnapIn01"です。
+    この例では、スナップインの名前は "GetProcPSSnapIn01" です。
 
-4. (必須) スナップインの仕入先のパブリック プロパティを追加します。
+4. スナップインのベンダのパブリックプロパティを追加します (必須)。
 
-    この例では、仕入先は"Microsoft"です。
+    この例では、ベンダーは "Microsoft" です。
 
-5. スナップインが (省略可能) の仕入先のリソースのパブリック プロパティを追加します。
+5. スナップインのベンダリソースのパブリックプロパティを追加します (省略可能)。
 
-    この例では、仕入先のリソースは、"GetProcPSSnapIn01、Microsoft"が。
+    この例では、vendor リソースは "GetProcPSSnapIn01, Microsoft" です。
 
-6. (必須) スナップインの説明については、パブリック プロパティを追加します。
+6. スナップインの説明のパブリックプロパティを追加します (必須)。
 
-    この例で、説明は、「これは get-proc コマンドレットを登録する Windows PowerShell スナップインが」。
+    この例では、説明は "This は Windows PowerShell スナップインです。これは、get proc コマンドレットを登録する" です。
 
-7. スナップインが (省略可能) の説明のリソースのパブリック プロパティを追加します。
+7. スナップインの説明リソースのパブリックプロパティを追加します (省略可能)。
 
-    この例では、仕入先のリソースは「GetProcPSSnapIn01、これが get-proc コマンドレットを登録する Windows PowerShell スナップイン」。
+    この例では、ベンダリソースは "GetProcPSSnapIn01, This は Windows PowerShell スナップインであり、これは get proc コマンドレットを登録する" です。
 
 ## <a name="example"></a>例
 
-この例では、Windows PowerShell シェルに Get-proc コマンドレットを登録するのに使用できる Windows PowerShell スナップインを記述する方法を示します。 のみ、GetProcPSSnapIn01 スナップイン クラスと、Get-proc コマンドレット クラスでこの例では、アセンブリの完全は含めること注意してください。
+この例では、windows powershell シェルで Get Proc コマンドレットを登録するために使用できる Windows PowerShell スナップインを記述する方法を示します。 この例では、完全なアセンブリには GetProcPSSnapIn01 スナップインクラスと Get Proc cmdlet クラスのみが含まれることに注意してください。
 
 ```csharp
 [RunInstaller(true)]
@@ -126,8 +126,8 @@ public class GetProcPSSnapIn01 : PSSnapIn
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
-[Windows PowerShell シェル SDK](../windows-powershell-reference.md)
+[Windows PowerShell Shell SDK](../windows-powershell-reference.md)

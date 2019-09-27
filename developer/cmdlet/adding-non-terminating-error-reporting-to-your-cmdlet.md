@@ -1,5 +1,5 @@
 ---
-title: 未終了エラー レポート、コマンドレットに追加する |Microsoft Docs
+title: コマンドレットに終了しないエラー報告を追加する |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,33 +8,33 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
-ms.openlocfilehash: 3741982f81efa04d8fe7ab448fba5f2fdf4b0c01
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: a4426abec96cd922360aeef8c157b4e9f41a15b9
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62068866"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322874"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>終了しないエラーのレポートをコマンドレットに追加する
 
-コマンドレットは、呼び出すことで終了しないエラーを報告できる、 [System.Management.Automation.Cmdlet.WriteError][]メソッドと、引き続き現在の入力オブジェクトまたはそれ以上の受信を操作するオブジェクトをパイプラインします。
-このセクションでは、その入力処理メソッドから終了しないエラーを報告するコマンドレットを作成する方法について説明します。
+コマンドレットは、 [WriteError (システム管理)][]メソッドを呼び出すことによって終了しないエラーを報告し、引き続き現在の入力オブジェクトまたはその他の受信パイプラインオブジェクトで操作を続行できます。
+このセクションでは、入力処理メソッドから終了しないエラーを報告するコマンドレットを作成する方法について説明します。
 
-終了しないエラー (だけでなく終了するエラー) のコマンドレットを渡す必要があります、 [System.Management.Automation.ErrorRecord][]エラーを識別するオブジェクト。
-各 error レコードには、「エラー識別子」と呼ばれる一意の文字列によって識別されます。
-識別子、だけでなく、各エラーのカテゴリがによって定義される定数で指定された、 [System.Management.Automation.ErrorCategory][]列挙体。
-ユーザーが設定して、カテゴリに基づいてエラーを表示できます、`$ErrorView`変数を"CategoryView"にします。
+終了しないエラー (および終了エラー) については、コマンドレットはエラーを識別する system.servicemodel[システムの管理. ErrorRecord][]オブジェクトを渡す必要があります。
+各エラーレコードは、"エラー識別子" と呼ばれる一意の文字列によって識別されます。
+識別子に加えて、各エラーのカテゴリは[ErrorCategory (システム管理)][]列挙型によって定義された定数によって指定されます。
+ユーザーは、 `$ErrorView`変数を "category view" に設定することにより、カテゴリに基づいてエラーを表示できます。
 
-エラー レコードの詳細については、次を参照してください。 [Windows PowerShell のエラー レコード](./windows-powershell-error-records.md)します。
+エラーレコードの詳細については、「 [Windows PowerShell エラーレコード](./windows-powershell-error-records.md)」を参照してください。
 
-## <a name="defining-the-cmdlet"></a>コマンドレットを定義します。
+## <a name="defining-the-cmdlet"></a>コマンドレットの定義
 
-コマンドレットの作成の最初の手順は常に、コマンドレットの名前を付けると、コマンドレットを実装する .NET クラスを宣言します。
-このコマンドレットは、ため、ここで選択した動詞名は"Get"プロセスの情報を取得します。
-(ほぼあらゆる種類の情報を取得するのに対応しているコマンドレットは、コマンドラインの入力を処理できます)承認されたコマンドレット動詞の詳細については、次を参照してください。[コマンドレット動詞名](approved-verbs-for-windows-powershell-commands.md)します。
+コマンドレットの作成の最初の手順では、常にコマンドレットに名前を付け、コマンドレットを実装する .NET クラスを宣言します。
+このコマンドレットはプロセス情報を取得するため、ここで選択した動詞名は "Get" です。
+(情報を取得できるほとんどすべての種類のコマンドレットは、コマンドライン入力を処理できます)。承認されたコマンドレット動詞の詳細については、「[コマンドレットの動詞名](approved-verbs-for-windows-powershell-commands.md)」を参照してください。
 
-この Get-proc コマンドレットの定義を次に示します。
-この定義の詳細が記載[最初のコマンドレットを作成](creating-a-cmdlet-without-parameters.md)です。
+この Get Proc コマンドレットの定義を次に示します。
+この定義の詳細につい[ては、最初のコマンドレットの作成](creating-a-cmdlet-without-parameters.md)に関する説明をご確認ください。
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "proc")]
@@ -47,12 +47,12 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-## <a name="defining-parameters"></a>パラメーターを定義します。
+## <a name="defining-parameters"></a>パラメーターの定義
 
-必要に応じて、コマンドレットは、入力を処理するためのパラメーターを定義する必要があります。
-この Get-proc コマンドレットを定義、**名前**パラメーター」の説明に従って[プロセス コマンド ライン入力パラメーターを追加する](adding-parameters-that-process-command-line-input.md)します。
+必要に応じて、コマンドレットで入力を処理するためのパラメーターを定義する必要があります。
+この Get Proc コマンドレットは、「[コマンドライン入力を処理するパラメーターの追加](adding-parameters-that-process-command-line-input.md)」で説明されているように、 **Name**パラメーターを定義します。
 
-パラメーター宣言を次に示します、**名前**この Get-proc コマンドレットのパラメーター。
+この Get Proc コマンドレットの**Name**パラメーターのパラメーター宣言を次に示します。
 
 ```csharp
 [Parameter(
@@ -84,63 +84,63 @@ Public Property Name() As String()
 End Property
 ```
 
-## <a name="overriding-input-processing-methods"></a>入力処理メソッドをオーバーライドします。
+## <a name="overriding-input-processing-methods"></a>オーバーライド (入力処理メソッドを)
 
-すべてのコマンドレットは、少なくとも 1 つの入力によって提供されるメソッドの処理をオーバーライドする必要があります、 [System.Management.Automation.Cmdlet][]クラス。
-これらのメソッドは、後ほど[最初のコマンドレットを作成](creating-a-cmdlet-without-parameters.md)です。
+すべてのコマンドレットで、[System. Automation. コマンドレット][]1 つの入力処理メソッドをオーバーライドする必要があります。
+これらのメソッドについ[ては、最初のコマンドレットの作成](creating-a-cmdlet-without-parameters.md)に関するセクションで説明します。
 
 > [!NOTE]
-> コマンドレットが処理されない各レコードできるだけ独立しています。
+> コマンドレットでは、各レコードを可能な限り個別に処理する必要があります。
 
-この Get-proc コマンドレットよりも優先、 [System.Management.Automation.Cmdlet.ProcessRecord][]を処理するメソッド、**名前**ユーザーまたはスクリプトによって提供される入力パラメーター。
-名前が指定されていない場合、このメソッドは各要求のプロセス名またはすべてのプロセスのプロセスを取得します。
-この上書きの詳細が記載[最初のコマンドレットを作成](creating-a-cmdlet-without-parameters.md)です。
+この Get Proc コマンドレットは、ユーザーまたはスクリプトによって提供される入力の**Name**パラメーターを処理するために、 [system.servicemodel メソッドを][]オーバーライドします。
+このメソッドは、要求された各プロセス名のプロセスを取得します。名前が指定されていない場合は、すべてのプロセスを取得します。
+この上書きの詳細につい[ては、最初のコマンドレットの作成](creating-a-cmdlet-without-parameters.md)に関する説明をご確認ください。
 
-### <a name="things-to-remember-when-reporting-errors"></a>エラーを報告する際の注意点
+### <a name="things-to-remember-when-reporting-errors"></a>エラーを報告する際の注意事項
 
-[System.Management.Automation.ErrorRecord][]コマンドレットが根本的に、例外エラーを書き込む必要がある場合に合格するオブジェクトします。
-使用して例外を決定する際に、.NET のガイドラインに従います。
-基本的に、エラーは、既存の例外と同じである意味場合、コマンドレットを使用またはその例外から派生します。
-それ以外の場合、新しい例外またはから直接例外階層を派生する必要がありますが、 [System.Exception][]クラス。
+エラーの書き込み時にコマンドレットによって渡される、[システムの管理. ErrorRecord][]オブジェクトには、コアで例外が必要です。
+使用する例外を決定するときは、.NET ガイドラインに従ってください。
+基本的に、エラーの意味が既存の例外と同じである場合、コマンドレットはその例外を使用するか、その例外から派生する必要があります。
+それ以外の場合は、新しい例外または例外の階層を[system.exception][]クラスから直接派生させる必要があります。
 
-エラーの識別子 (ErrorRecord クラスの FullyQualifiedErrorId プロパティからアクセスする) を作成するときに、次に注意してください。
+エラー識別子 (ErrorRecord クラスの FullyQualifiedErrorId プロパティを通じてアクセスされる) を作成する場合は、次の点に注意してください。
 
-- 対象となるは、エラーの入手元とは完全修飾識別子を検査する際に、どのようなエラーを確認できるように診断目的で使用して文字列。
+- 診断を目的とした文字列を使用して、完全修飾識別子を調べるときにエラーの内容とエラーの発生元を特定できます。
 
-- 適切な形式の完全修飾エラー識別子は、ようになります可能性があります。
+- 正しい形式の完全修飾エラー識別子は、次のようになります。
 
 `CommandNotFoundException,Microsoft.PowerShell.Commands.GetCommandCommand`
 
-前の例では、エラー識別子 (最初のトークン) を指定エラーを確認し、残りの部分では、エラーの出所を示します。
+前の例では、エラー識別子 (最初のトークン) はエラーの内容を指定し、残りの部分はエラーの発生元を示しています。
 
-- 複雑なシナリオは、エラーの識別子は検査で解析できるドット区切りトークンを指定できます。
-  これにより、エラーの識別子と、エラーの識別子、エラー カテゴリの部分にも分岐します。
+- より複雑なシナリオでは、エラー識別子を、検査時に解析できるドット区切りのトークンにすることができます。
+  これにより、エラー識別子とエラーカテゴリの両方の部分を分岐することができます。
 
-コマンドレットは、異なるコード パスを特定のエラー識別子を割り当てる必要があります。
-次の情報に注意してエラーの識別子の割り当てのために注意してください。
+コマンドレットでは、特定のエラー識別子を異なるコードパスに割り当てる必要があります。
+エラー識別子の割り当てについては、次の情報を考慮してください。
 
-- エラー識別子は、コマンドレットのライフ サイクル全体で一定する必要があります。
-  コマンドレットのバージョン間でのエラー識別子のセマンティクスは変更されません。
+- エラー識別子は、コマンドレットのライフサイクル全体で一定のままである必要があります。
+  コマンドレットのバージョン間でエラー識別子のセマンティクスを変更しないでください。
 
-- 答えました報告されるエラーに対応するエラーの識別子のテキストを使用します。
-  空白や句読点を使用しないでください。
+- Tersely が報告されているエラーに対応するエラー識別子には、テキストを使用します。
+  空白や句読点は使用しないでください。
 
-- 再現可能なエラー識別子のみを生成するコマンドレットがあります。
-  たとえば、プロセス識別子を含む識別子は生成しません。
-  エラー識別子は、同じ問題が発生している他のユーザーに表示される識別子に対応する場合にのみ、ユーザーに役立ちます。
+- コマンドレットで、再現可能なエラー識別子だけを生成するようにします。
+  たとえば、プロセス識別子を含む識別子を生成しないようにする必要があります。
+  エラー識別子は、同じ問題が発生している他のユーザーによって認識される識別子に対応している場合にのみ、ユーザーにとって役立ちます。
 
-次の条件では、PowerShell によってハンドルされない例外はキャッチしません。
+次の状況では、PowerShell でハンドルされない例外はキャッチされません。
 
-- コマンドレットは、新しいスレッドおよびスレッド ハンドルされない例外をスローすることで実行されているコードを作成する場合、PowerShell は、エラーはキャッチできないと、プロセスが終了します。
+- コマンドレットが新しいスレッドを作成し、そのスレッドで実行されているコードがハンドルされない例外をスローした場合、PowerShell はエラーをキャッチせず、プロセスを終了します。
 
-- オブジェクトは、そのデストラクターまたは Dispose メソッドでハンドルされない例外を発生させるコードが、PowerShell は、エラーはキャッチできないと、プロセスが終了します。
+- オブジェクトのデストラクターにコードが含まれているか、ハンドルされない例外の原因となった Dispose メソッドがある場合、PowerShell はエラーをキャッチせずにプロセスを終了します。
 
 ## <a name="reporting-nonterminating-errors"></a>終了しないエラーの報告
 
-入力処理メソッドのいずれかが終了しないエラーを報告、出力ストリームを使用して、 [System.Management.Automation.Cmdlet.WriteError][]メソッド。
+いずれかの入力処理方法では、 [WriteError (システム管理)][]メソッドを使用して、出力ストリームに終了しないエラーを報告できます。
 
-呼び出しを示しますこの Get-proc コマンドレットからのコード例を次に示します[System.Management.Automation.Cmdlet.WriteError][]からのオーバーライドの中で、 [System.Management.Automation.Cmdlet.ProcessRecord][]メソッド。
-ここで、呼び出しには、コマンドレットは、指定されたプロセスの識別子のプロセスを見つけられない場合が行われます。
+次に示すのは、 [WriteError (システム管理)][]コマンドレットからのコード例です。このコマンドレットでは、 [system.servicemodel メソッドを][] ...................................................
+この場合、指定されたプロセス識別子のプロセスがコマンドレットで見つからない場合、呼び出しが行われます。
 
 ```csharp
 protected override void ProcessRecord()
@@ -180,38 +180,38 @@ protected override void ProcessRecord()
   }
 ```
 
-### <a name="things-to-remember-about-writing-nonterminating-errors"></a>終了しないエラーの記述に関する注意点
+### <a name="things-to-remember-about-writing-nonterminating-errors"></a>終了しないエラーの書き込みに関する注意事項
 
-終了しないエラーでは、このコマンドレットは、各入力オブジェクトの特定のエラー識別子を生成する必要があります。
+終了しないエラーの場合、コマンドレットは、特定の入力オブジェクトごとに特定のエラー識別子を生成する必要があります。
 
-コマンドレットは頻繁に終了しないエラーによって生成された PowerShell アクションを変更する必要があります。
-これを行うこと、`ErrorAction`と`ErrorVariable`パラメーター。
-定義する場合、`ErrorAction`パラメーター、コマンドレットは、ユーザー オプションを表示します[System.Management.Automation.ActionPreference][]を設定して、アクションも直接影響、`$ErrorActionPreference`変数。
+コマンドレットでは、終了しないエラーによって生成される PowerShell アクションを頻繁に変更する必要があります。
+これを行うには、パラメーター `ErrorAction`と`ErrorVariable`パラメーターを定義します。
+`ErrorAction`パラメーターを定義すると、コマンドレットによって[システムの管理. ActionPreference][][system.servicemodel] が表示されます。また、変数を`$ErrorActionPreference`設定することによって、アクションに直接影響を与えることもできます。
 
-終了しないエラーを保存、変数を使用して、コマンドレット、`ErrorVariable`パラメーターの設定の影響を受けません`ErrorAction`します。
-エラーは、変数名の前にプラス記号 (+) を追加することで、既存のエラー変数に追加できます。
+コマンドレットでは、 `ErrorVariable`パラメーターを使用して、終了しないエラーを変数に保存できます。これは、の`ErrorAction`設定の影響を受けません。
+エラーは、変数名の前にプラス記号 (+) を追加することによって、既存のエラー変数に追加できます。
 
-## <a name="code-sample"></a>コード サンプル
+## <a name="code-sample"></a>コードサンプル
 
-完全なC#サンプル コードは、「 [GetProcessSample04 サンプル](./getprocesssample04-sample.md)します。
+完全なC#サンプルコードについては、「 [GetProcessSample04 sample](./getprocesssample04-sample.md)」を参照してください。
 
-## <a name="define-object-types-and-formatting"></a>オブジェクトの種類と書式設定を定義します。
+## <a name="define-object-types-and-formatting"></a>オブジェクトの種類と書式を定義する
 
-PowerShell では、.NET オブジェクトを使用してコマンドレット間で情報を渡します。
-その結果、コマンドレットは、独自の型を定義する必要がありますか、コマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。
-新しい型を定義するか、既存の型の拡張の詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)します。
+PowerShell は、.NET オブジェクトを使用してコマンドレット間で情報を渡します。
+そのため、コマンドレットで独自の型を定義する必要がある場合や、コマンドレットで別のコマンドレットによって提供される既存の型を拡張する必要がある場合があります。
+新しい型を定義する、または既存の型を拡張する方法の詳細については、「[オブジェクトの型と書式設定の拡張](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)」を参照してください。
 
-## <a name="building-the-cmdlet"></a>コマンドレットを構築
+## <a name="building-the-cmdlet"></a>コマンドレットのビルド
 
-コマンドレットを実装するには、後にする必要がありますに登録する Windows PowerShell Windows PowerShell スナップインを使用します。
-コマンドレットの登録の詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
+コマンドレットを実装した後、Windows powershell スナップインを使用して Windows PowerShell に登録する必要があります。
+コマンドレットの登録の詳細については、「[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)」を参照してください。
 
-## <a name="testing-the-cmdlet"></a>テスト コマンドレット
+## <a name="testing-the-cmdlet"></a>コマンドレットのテスト
 
-PowerShell を使用した、コマンドレットを登録しているときに、コマンドラインで実行してテストできます。
-エラーを報告するかどうかを確認するサンプル Get-proc コマンドレットをテストしてみましょう。
+コマンドレットが PowerShell に登録されている場合は、コマンドラインで実行することでテストできます。
+サンプルの Get Proc コマンドレットをテストして、エラーが報告されているかどうかを確認してみましょう。
 
-- PowerShell を起動し、Get-proc コマンドレットを使用して"TEST"という名前のプロセスを取得します。
+- PowerShell を起動し、Get Proc コマンドレットを使用して "TEST" という名前のプロセスを取得します。
 
     ```powershell
     PS> get-proc -name test
@@ -225,26 +225,26 @@ PowerShell を使用した、コマンドレットを登録しているときに
     + get-proc  <<<< -name test
     ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[プロセス パイプラインの入力パラメーターを追加します。](./adding-parameters-that-process-pipeline-input.md)
+[パイプライン入力を処理するパラメーターの追加](./adding-parameters-that-process-pipeline-input.md)
 
 [コマンドライン入力を処理するパラメーターの追加](./adding-parameters-that-process-command-line-input.md)
 
-[初めてのコマンドレットを作成します。](./creating-a-cmdlet-without-parameters.md)
+[最初のコマンドレットの作成](./creating-a-cmdlet-without-parameters.md)
 
-[オブジェクトの種類を拡張して、書式設定](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[オブジェクトの種類と書式設定の拡張](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Windows PowerShell リファレンス](../windows-powershell-reference.md)
 
 [コマンドレットのサンプル](./cmdlet-samples.md)
 
-[System.Exception]: /dotnet/api/System.Exception
-[System.Management.Automation.ActionPreference]: /dotnet/api/System.Management.Automation.ActionPreference
-[System.Management.Automation.Cmdlet.ProcessRecord]: /dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord
-[System.Management.Automation.Cmdlet.WriteError]: /dotnet/api/System.Management.Automation.Cmdlet.WriteError
-[System.Management.Automation.Cmdlet]: /dotnet/api/System.Management.Automation.Cmdlet
-[System.Management.Automation.ErrorCategory]: /dotnet/api/System.Management.Automation.ErrorCategory
-[System.Management.Automation.ErrorRecord]: /dotnet/api/System.Management.Automation.ErrorRecord
+[System.exception]: /dotnet/api/System.Exception
+[システムの管理. ActionPreference]: /dotnet/api/System.Management.Automation.ActionPreference
+[system.servicemodel メソッドを]: /dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord
+[WriteError (システム管理)]: /dotnet/api/System.Management.Automation.Cmdlet.WriteError
+[System. Automation. コマンドレット]: /dotnet/api/System.Management.Automation.Cmdlet
+[ErrorCategory (システム管理)]: /dotnet/api/System.Management.Automation.ErrorCategory
+[システムの管理. ErrorRecord]: /dotnet/api/System.Management.Automation.ErrorRecord

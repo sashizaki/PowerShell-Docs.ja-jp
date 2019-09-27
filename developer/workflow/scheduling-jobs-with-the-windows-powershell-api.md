@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
-ms.openlocfilehash: 8e1d2feff0665f169966f7d5e99540088e66bdfb
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: bdced961d91088dd75be347b7b74b22467c8c9be
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080358"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322957"
 ---
 # <a name="scheduling-jobs-with-the-powershell-api"></a>PowerShell API を使用したジョブのスケジュール設定
 
-によって公開されているオブジェクトを使用して、 **Microsoft.PowerShell.ScheduledJob**名前空間を次の操作を行います。
+次の操作を実行するには **、この名前空間**によって公開されているオブジェクトを使用できます。
 
 - スケジュールされたジョブを作成します。
-- ジョブの実行を定義します。
-- 完了したジョブに関する結果を取得します。
+- ジョブをいつ実行するかを定義します。
+- 完了したジョブの結果を取得します。
 
 ## <a name="triggering-the-job"></a>ジョブのトリガー
 
-スケジュールされたジョブを作成する最初の手順は、ジョブを実行するときに指定します。 これは、作成して構成を**Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger**オブジェクト。 次のコードは、20 秒後で、1 回実行するジョブをスケジュールするトリガーを作成します。
+スケジュールされたジョブを作成する最初の手順では、ジョブを実行するタイミングを指定します。 これを行うには、 **Microsoft. PowerShell ジョブの ScheduledJobTrigger**オブジェクトを作成し、構成します。 次のコードでは、ジョブを今後20秒間実行するようにスケジュールするトリガーを作成します。
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -38,20 +38,20 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 ```
 
-## <a name="defining-the-job"></a>ジョブを定義します。
+## <a name="defining-the-job"></a>ジョブの定義
 
-PowerShell ジョブを定義するには、パラメーターのディクショナリを作成します。 次のパラメーターがサポートされています。
+PowerShell ジョブを定義するには、パラメーター辞書を作成します。 次のパラメーターがサポートされています。
 
-|パラメーター名|説明|
+|[パラメーター名]|説明|
 |--------------------|-----------------|
-|**名前**|ジョブの名前を指定します。|
-|**ScriptBock**|ジョブの実行内容を指定する PowerShell スクリプト ブロック。|
-|**FilePath**|ジョブの実行内容を指定する PowerShell スクリプト ブロックを含むファイルへのパス。|
-|**InitializationScript**|ジョブを初期化する PowerShell スクリプト ブロック。|
-|**ArgumentList**|ジョブが受け取るパラメーターを指定するオブジェクトの配列。|
-|**RunAs32**|32 ビット プロセスでジョブを実行するかどうかを示すブール値。|
+|**Name**|ジョブの名前を指定します。|
+|**ScriptBock**|ジョブの動作を指定する PowerShell スクリプトブロック。|
+|**FilePath**|ジョブの内容を指定する PowerShell スクリプトブロックを含むファイルへのパス。|
+|**InitializationScript**|ジョブを初期化する PowerShell スクリプトブロック。|
+|**ArgumentList**|ジョブによって実行される引数を指定するオブジェクトの配列です。|
+|**RunAs32**|32ビットプロセスでジョブを実行するかどうかを指定するブール値です。|
 
-次のコードは、パラメーターの辞書オブジェクトを作成し、設定、**名前**と**ScriptBlock**パラメーター。
+次のコードでは、パラメーターディクショナリオブジェクトを作成し、 **Name**パラメーターと**ScriptBlock**パラメーターを設定しています。
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -64,9 +64,9 @@ string schedJobDefName = "MySampleSchedJob";
 
 ```
 
-## <a name="creating-the-invocation-and-job-definition-objects"></a>呼び出しとジョブ定義のオブジェクトを作成します。
+## <a name="creating-the-invocation-and-job-definition-objects"></a>呼び出しオブジェクトとジョブ定義オブジェクトの作成
 
-その後作成`ScheduledJobInvocationInfo`と`ScheduledJobDefinition`オブジェクトの次の例に示すようにジョブを実行します。
+次の例`ScheduledJobInvocationInfo`に`ScheduledJobDefinition`示すように、ジョブを実行するオブジェクトとオブジェクトを作成します。
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -82,9 +82,9 @@ ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
 
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a>タスク スケジューラでジョブを登録します。
+## <a name="registering-the-job-with-the-task-scheduler"></a>タスクスケジューラへのジョブの登録
 
-次のコードを使用してジョブを登録する、 [Windows タスク スケジューラ](http://go.microsoft.com/fwlink/?LinkId=251817)します。
+次のコードでは、ジョブを[Windows タスクスケジューラ](https://go.microsoft.com/fwlink/?LinkId=251817)に登録します。
 
 ```csharp
 schedJobDefinition.Register();
@@ -95,7 +95,7 @@ schedJobDefinition.Register();
 
 ## <a name="complete-code-example"></a>完全なコード例
 
-前のスニペットを行った完全なコード例を次に示します。
+前のスニペットを取得した完全なコード例を次に示します。
 
 ```csharp
 using System;

@@ -1,5 +1,5 @@
 ---
-title: コマンドライン入力を処理するパラメーターの追加 |Microsoft Docs
+title: コマンドライン入力を処理するパラメーターを追加する |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -15,22 +15,22 @@ helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], creating
 ms.assetid: da0b32f8-7b51-440e-a061-3177b5759e0e
 caps.latest.revision: 9
-ms.openlocfilehash: c9ad84c5bcb6826fcf51db9a1f1a578a65a1f275
-ms.sourcegitcommit: 01b81317029b28dd9b61d167045fd31f1ec7bc06
+ms.openlocfilehash: 7db93af33717dc4802ed915793f6cd570cfb48f6
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65854945"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71322747"
 ---
 # <a name="adding-parameters-that-process-command-line-input"></a>コマンドライン入力を処理するパラメーターを追加する
 
-コマンドレットの入力の 1 つのソースは、コマンド ラインです。 このトピックでは、パラメーターを追加する方法を説明します、 **Get-proc**コマンドレット (に記載されている[最初のコマンドレットを作成](./creating-a-cmdlet-without-parameters.md)) コマンドレットは、明示的に基づき、ローカル コンピューターからの入力を処理できるようにオブジェクトは、コマンドレットに渡されます。 **Get-proc**説明されているコマンドレットは、ここで、その名前に基づいてプロセスを取得し、コマンド プロンプトで、プロセスに関する情報を表示します。
+コマンドレットの1つの入力ソースは、コマンドラインです。 このトピックでは、コマンドレットに渡された明示的なオブジェクトに基づいてローカルコンピューターからの入力を処理できるように、 **Get Proc**コマンドレット ([最初のコマンドレットの作成](./creating-a-cmdlet-without-parameters.md)に関するページで説明) にパラメーターを追加する方法について説明します。 ここで説明する**Get Proc**コマンドレットは、名前に基づいてプロセスを取得し、コマンドプロンプトでプロセスに関する情報を表示します。
 
-## <a name="defining-the-cmdlet-class"></a>コマンドレット クラスを定義します。
+## <a name="defining-the-cmdlet-class"></a>コマンドレットクラスの定義
 
-コマンドレットの作成の最初の手順では、コマンドレットの名前付けと、コマンドレットを実装する .NET Framework クラスの宣言です。 このコマンドレットは、ため、ここで選択した動詞名が"Get"にプロセスの情報を取得します (ほぼあらゆる種類の情報を取得するのに対応しているコマンドレットは、コマンドラインの入力を処理できます)承認されたコマンドレット動詞の詳細については、次を参照してください。[コマンドレット動詞名](./approved-verbs-for-windows-powershell-commands.md)します。
+コマンドレットの作成の最初の手順は、コマンドレットの名前付けと、コマンドレットを実装する .NET Framework クラスの宣言です。 このコマンドレットはプロセス情報を取得するため、ここで選択した動詞名は "Get" です。 (情報を取得できるほとんどすべての種類のコマンドレットは、コマンドライン入力を処理できます)。承認されたコマンドレット動詞の詳細については、「[コマンドレットの動詞名](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
 
-クラス宣言を次に示します、 **Get-proc**コマンドレット。 この定義に関する詳細情報が記載[最初のコマンドレットを作成](./creating-a-cmdlet-without-parameters.md)です。
+次に、 **Get Proc**コマンドレットのクラス宣言を示します。 この定義の詳細については[、最初のコマンドレットの作成](./creating-a-cmdlet-without-parameters.md)に関する説明をご覧ください。
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "proc")]
@@ -45,13 +45,13 @@ Public Class GetProcCommand
 
 ## <a name="declaring-parameters"></a>パラメーターの宣言
 
-コマンドレット パラメーターには、コマンドレットへの入力を提供するユーザーが可能になります。 次の例では、 **Get-proc**と`Get-Member`パイプラインのコマンドレットの名前と`MemberType`パラメーターです、`Get-Member`コマンドレット。 パラメーターが、引数「プロパティです」
+コマンドレットパラメーターを使用すると、ユーザーはコマンドレットに入力を提供できます。 次の例では、 **Get-Proc**と`Get-Member`は`MemberType`パイプラインコマンドレットの名前で、は`Get-Member`コマンドレットのパラメーターです。 パラメーターには、"property" という引数があります。
 
-**PS > get proc です。`get-member` -membertype プロパティ**
+**PS > get-proc;`get-member` -membertype プロパティ**
 
-コマンドレットのパラメーターを宣言するには、最初にパラメーターを表すプロパティを定義する必要があります。 **Get-proc**コマンドレット、唯一のパラメーターは`Name`をここで取得する .NET Framework のプロセス オブジェクトの名前を表します。 そのため、コマンドレット クラスでは、名前の配列を受け入れるように文字列型のプロパティを定義します。
+コマンドレットのパラメーターを宣言するには、最初にパラメーターを表すプロパティを定義する必要があります。 **Get Proc**コマンドレットでは、唯一のパラメーターが`Name`です。この例では、取得する .NET Framework process オブジェクトの名前を表します。 このため、コマンドレットクラスは、名前の配列を受け入れる文字列型のプロパティを定義します。
 
-パラメーター宣言を次に示します、`Name`のパラメーター、 **Get-proc**コマンドレット。
+`Name` **Get Proc**コマンドレットのパラメーターのパラメーター宣言を次に示します。
 
 ```csharp
 /// <summary>
@@ -83,41 +83,41 @@ Public Property Name() As String()
 End Property
 ```
 
-このプロパティである Windows PowerShell ランタイムを通知するために、`Name`パラメーター、 [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)属性は、プロパティ定義に追加します。 この属性を宣言するための基本構文は`[Parameter()]`します。
+このプロパティが`Name`パラメーターであることを Windows PowerShell ランタイムに通知するには、プロパティ定義に system.string[属性を追加](/dotnet/api/System.Management.Automation.ParameterAttribute)します。 この属性を宣言するための基本`[Parameter()]`構文はです。
 
 > [!NOTE]
-> パラメーターをする必要があります明示的にパブリックと指定します。 内部にパブリックの既定としてマークされていないと、Windows PowerShell ランタイムでは検出できないパラメーター。
+> パラメーターは、明示的にパブリックとしてマークする必要があります。 既定でパブリックに設定されていないパラメーターは、Windows PowerShell ランタイムによって検出されません。
 
-このコマンドレットは、文字列の配列を使用して、`Name`パラメーター。 可能であれば、コマンドレットする必要がありますもパラメーターを定義、配列としてため、これにより、1 つ以上の項目をそのまま使用するコマンドレット。
+このコマンドレットは、 `Name`パラメーターに文字列の配列を使用します。 可能であれば、コマンドレットでパラメーターを配列として定義する必要もあります。これにより、コマンドレットでは複数の項目を受け入れることができるためです。
 
-#### <a name="things-to-remember-about-parameter-definitions"></a>パラメーターの定義に関する注意点
+#### <a name="things-to-remember-about-parameter-definitions"></a>パラメーター定義に関する注意事項
 
-- 定義済み Windows PowerShell パラメーター名とデータ型は、コマンドレットが Windows PowerShell コマンドレットと互換性があることを確認することを可能な限り再利用する必要があります。 たとえば、すべてのコマンドレットを使用して、定義済み`Id`ユーザーは、リソースを簡単に識別するためにパラメーター名は、どのようなコマンドレットを使用しているに関係なく、パラメーターの意味を理解します。 基本的に、パラメーター名には、共通言語ランタイム (CLR) 内の変数名に使用されるものと同じ規則に従ってください。 パラメーターの名前付けの詳細については、次を参照してください。[コマンドレットのパラメーター名](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)します。
+- コマンドレットが Windows PowerShell コマンドレットと互換性があることを確認するために、定義済みの Windows PowerShell パラメーター名とデータ型をできるだけ再利用する必要があります。 たとえば、すべてのコマンドレットが定義済み`Id`のパラメーター名を使用してリソースを識別する場合、ユーザーは、使用しているコマンドレットに関係なく、パラメーターの意味を簡単に理解できます。 基本的に、パラメーター名は、共通言語ランタイム (CLR) の変数名に使用される規則と同じ規則に従います。 パラメーターの名前付けの詳細については、「[コマンドレットパラメーター名](https://msdn.microsoft.com/en-us/c4500737-0a05-4d01-911b-394424c65bfb)」を参照してください。
 
-- Windows PowerShell では、一貫性のあるユーザー エクスペリエンスを提供するいくつかのパラメーター名を予約します。 これらのパラメーター名を使用しない: `WhatIf`、 `Confirm`、 `Verbose`、 `Debug`、 `Warn`、 `ErrorAction`、 `ErrorVariable`、 `OutVariable`、および`OutBuffer`します。 さらに、これらのパラメーター名の次のエイリアスは予約されています: `vb`、 `db`、 `ea`、 `ev`、 `ov`、および`ob`します。
+- Windows PowerShell では、一貫したユーザーエクスペリエンスを提供するために、いくつかのパラメーター名が予約されています。 `WhatIf` 、`Confirm`、 、`Warn` 、、`OutBuffer`、、、およびの各パラメーター名は使用しないでください。 `Debug` `Verbose` `ErrorAction` `ErrorVariable` `OutVariable` また、これらのパラメーター名には`vb` `ea`、 `db`、、、 `ev` `ov`、、および`ob`の各エイリアスが予約されています。
 
-- `Name` コマンドレットで使用するための推奨、単純で一般的なパラメーターの名前です。 次のようにより、特定のコマンドレットに一意で覚えにくい複雑な名前のパラメーター名を選択することをお勧めします。
+- `Name`は、コマンドレットで使用するために推奨される単純なパラメーター名です。 このようなパラメーター名は、特定のコマンドレットに固有であり、覚えにくい複合名として選択することをお勧めします。
 
-- パラメーターは、シェルが大文字小文字を保持する既定では、Windows PowerShell では大文字です。 引数の大文字小文字の区別は、コマンドレットの操作に依存します。 引数は、コマンドラインで指定されたパラメーターに渡されます。
+- Windows PowerShell ではパラメーターの大文字と小文字は区別されませんが、既定では、シェルは大文字小文字を保持します。 引数の大文字と小文字の区別は、コマンドレットの操作によって異なります。 引数は、コマンドラインで指定されたパラメーターに渡されます。
 
-- その他のパラメーター宣言の例については、次を参照してください。[コマンドレット パラメーター](./cmdlet-parameters.md)します。
+- その他のパラメーター宣言の例については、「[コマンドレットパラメーター](./cmdlet-parameters.md)」を参照してください。
 
 ## <a name="declaring-parameters-as-positional-or-named"></a>位置指定または名前付きパラメーターの宣言
 
-コマンドレットをする必要があります各パラメーターとして設定か位置指定か名前付きパラメーター。 パラメーターの両方の種類は、1 つの引数、コンマ、およびブール値の設定で区切られた複数の引数を受け取ります。 呼ばれる、ブール型パラメーター、*切り替える*、ブール型設定のみを処理します。 パラメーターの存在を検出するスイッチを使用します。 推奨される既定値は`false`します。
+コマンドレットでは、各パラメーターを位置指定パラメーターまたは名前付きパラメーターのどちらかとして設定する必要があります。 どちらの種類のパラメーターも、1つの引数、コンマで区切られた複数の引数、およびブール値の設定を受け取ります。 ブール型パラメーター (*スイッチ*とも呼ばれます) は、ブール値の設定のみを処理します。 スイッチは、パラメーターの存在を確認するために使用されます。 推奨される既定`false`値はです。
 
-サンプル**Get-proc**コマンドレットを定義、`Name`位置 0 の位置指定パラメーターとしてパラメーター。 これは、コマンドラインで、ユーザーが入力した最初の引数がこのパラメーターに自動的に挿入されていることを意味します。 名前付きパラメーターを定義する場合は、ユーザーが指定する必要があります、コマンドラインからパラメーター名のままに、`Position`属性の宣言からキーワード。
+サンプルの**Get Proc**コマンドレットは、 `Name`パラメーターを位置0の位置指定パラメーターとして定義します。 これは、ユーザーがコマンドラインに入力した最初の引数が、このパラメーターに自動的に挿入されることを意味します。 ユーザーがコマンドラインからパラメーター名を指定する必要のある名前付きパラメーターを定義する場合は、 `Position`キーワードを属性宣言の外に残します。
 
 > [!NOTE]
-> パラメーターを指定する必要があります、されない限り、ユーザーは、パラメーター名を入力する必要があるないように、最も使用頻度のパラメーターを位置指定して行うことをお勧めします。
+> パラメーターの名前を指定する必要がない限り、最も使用されているパラメーターを設定して、ユーザーがパラメーター名を入力する必要がないようにすることをお勧めします。
 
-## <a name="declaring-parameters-as-mandatory-or-optional"></a>必須または省略可能パラメーターを宣言します。
+## <a name="declaring-parameters-as-mandatory-or-optional"></a>必須またはオプションとしてのパラメーターの宣言
 
-コマンドレットは、省略可能または必須のパラメーターとして各パラメーターを設定する必要があります。 サンプルの**Get-proc**コマンドレット、`Name`ために、オプションとしてパラメーターが定義されている、`Mandatory`属性宣言でキーワードが設定されていません。
+コマンドレットでは、各パラメーターを省略可能なパラメーターまたは必須パラメーターのいずれかとして設定する必要があります。 サンプルの**Get Proc**コマンドレット`Name`では、 `Mandatory`キーワードが属性宣言で設定されていないため、パラメーターはオプションとして定義されます。
 
-## <a name="supporting-parameter-validation"></a>パラメーターの検証のサポート
+## <a name="supporting-parameter-validation"></a>パラメーター検証のサポート
 
-サンプル**Get-proc**コマンドレットは、入力の検証属性を追加します[System.Management.Automation.Validatenotnulloremptyattribute](/dotnet/api/System.Management.Automation.ValidateNotNullOrEmptyAttribute)を、`Name`検証を有効にするパラメーターを、。入力がどちらも`null`も空でも。 この属性では、Windows PowerShell によって提供されるいくつかの検証属性の 1 つです。 その他の検証属性の例については、次を参照してください。[パラメーター入力の検証](./validating-parameter-input.md)です。
+サンプルの**Get Proc**コマンドレットは、入力検証[属性である system.string を](/dotnet/api/System.Management.Automation.ValidateNotNullOrEmptyAttribute) `Name`パラメーターに追加して、入力がで`null`も空でもないことを検証できるようにします。 この属性は、Windows PowerShell によって提供されるいくつかの検証属性の1つです。 その他の検証属性の例については、「[パラメーター入力の検証](./validating-parameter-input.md)」を参照してください。
 
 ```
 [Parameter(Position = 0)]
@@ -125,11 +125,11 @@ End Property
 public string[] Name
 ```
 
-## <a name="overriding-an-input-processing-method"></a>入力処理メソッドをオーバーライドします。
+## <a name="overriding-an-input-processing-method"></a>入力処理メソッドのオーバーライド
 
-コマンドレットは、コマンドライン入力を処理するためには、適切な入力処理メソッドをオーバーライドにする必要があります。 基本的な入力処理メソッドがで導入された[最初のコマンドレットを作成](./creating-a-cmdlet-without-parameters.md)です。
+コマンドレットがコマンドライン入力を処理する場合は、適切な入力処理メソッドをオーバーライドする必要があります。 基本的な入力処理方法は、[最初のコマンドレットを作成するとき](./creating-a-cmdlet-without-parameters.md)に導入されます。
 
-**Get-proc**コマンドレットよりも優先、 [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)を処理するメソッド、`Name`ユーザーまたはスクリプトによって提供されるパラメーターの入力。 このメソッドは、名前が指定されていない場合、各要求プロセス名またはプロセスのすべてのプロセスを取得します。 ある[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)への呼び出し[System.Management.Automation.Cmdlet.WriteObject%28System.Object%2CSystem.Boolean%29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)出力出力を送信するためのメカニズムは、パイプラインにオブジェクトです。 この呼び出しの 2 番目のパラメーター`enumerateCollection`に設定されている`true`プロセス オブジェクトの出力配列を列挙し、コマンドラインに、一度に 1 つのプロセスを記述する Windows PowerShell ランタイムに通知します。
+**Get Proc**コマンドレットは、ユーザーまたはスクリプトによって指定された`Name`パラメーター入力を処理するため[に、system.servicemodel メソッドを](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)オーバーライドします。 このメソッドは、要求された各プロセス名のプロセスを取得します。名前が指定されていない場合は、すべてのプロセスを取得します。 [WriteObject% 2csystem.string% 29](/dotnet/api/system.management.automation.cmdlet.writeobject?view=powershellsdk-1.1.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)の呼び出しが、出力オブジェクトをに送信するための出力機構として使用されていることに注意してください............. [processrecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)商談. この呼び出しの2番目の`enumerateCollection`パラメーターであるは`true` 、をに設定して、プロセスオブジェクトの出力配列を列挙し、一度に1つのプロセスをコマンドラインに書き込むように Windows PowerShell ランタイムに通知します。
 
 ```csharp
 protected override void ProcessRecord()
@@ -176,23 +176,23 @@ Protected Overrides Sub ProcessRecord()
 End Sub 'ProcessRecord
 ```
 
-## <a name="code-sample"></a>コード サンプル
+## <a name="code-sample"></a>コードサンプル
 
-完全なC#サンプル コードは、「 [GetProcessSample02 サンプル](./getprocesssample02-sample.md)します。
+完全なC#サンプルコードについては、「 [GetProcessSample02 sample](./getprocesssample02-sample.md)」を参照してください。
 
-## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類を定義して、書式設定
+## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類と書式設定の定義
 
-Windows PowerShell は、.NET Framework オブジェクトを使用してコマンドレット間で情報を渡します。 そのため、コマンドレットは、独自の型を定義する必要があります。 またはコマンドレットは、別のコマンドレットによって提供される既存の型を拡張する必要があります。 新しい型を定義するか、既存の型の拡張の詳細については、次を参照してください。[を拡張するオブジェクトの種類と書式](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)します。
+Windows PowerShell は、.NET Framework オブジェクトを使用してコマンドレット間で情報を渡します。 そのため、コマンドレットで独自の型を定義する必要がある場合や、コマンドレットで別のコマンドレットによって提供される既存の型を拡張する必要がある場合があります。 新しい型を定義する、または既存の型を拡張する方法の詳細については、「[オブジェクトの型と書式設定の拡張](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)」を参照してください。
 
-## <a name="building-the-cmdlet"></a>コマンドレットを構築
+## <a name="building-the-cmdlet"></a>コマンドレットのビルド
 
-コマンドレットを実装した後は、Windows PowerShell スナップインを使用して Windows PowerShell を使用した登録する必要があります。 コマンドレットの登録の詳細については、次を参照してください。[登録コマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)します。
+コマンドレットを実装したら、Windows PowerShell スナップインを使用して Windows PowerShell に登録する必要があります。 コマンドレットの登録の詳細については、「[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)」を参照してください。
 
-## <a name="testing-the-cmdlet"></a>テスト コマンドレット
+## <a name="testing-the-cmdlet"></a>コマンドレットのテスト
 
-コマンドレットが Windows PowerShell に登録されたときに、コマンドラインで実行してテストできます。 サンプル コマンドレットのコードをテストする 2 つの方法を示します。 詳細については、コマンドラインからコマンドレットを使用して、次を参照してください。 [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell)します。
+コマンドレットが Windows PowerShell に登録されている場合は、コマンドラインで実行することでテストできます。 サンプルコマンドレットのコードをテストするには、次の2つの方法があります。 コマンドラインからコマンドレットを使用する方法の詳細については、「 [Windows PowerShell を使用したはじめに](/powershell/scripting/getting-started/getting-started-with-windows-powershell)」を参照してください。
 
-- Windows PowerShell プロンプトで次のコマンドを使用、Internet Explorer プロセスは、"IEXPLORE"という名前の一覧を表示するには
+- Windows PowerShell プロンプトで、次のコマンドを使用して、"IEXPLORE.EXE" という名前の Internet Explorer のプロセスを一覧表示します。
 
     ```powershell
     PS> get-proc -name iexplore
@@ -206,7 +206,7 @@ Windows PowerShell は、.NET Framework オブジェクトを使用してコマ�
         354      11  10036   18992    85   0.67   3284   iexplore
     ```
 
-- Internet Explorer、Outlook、およびメモ帳のプロセスの"と、IEXPLORE"という名前を一覧表示するには、"OUTLOOK"と「メモ帳」は、次のコマンドを使用します。 複数のプロセスがある場合は、それらのすべてが表示されます。
+- Internet Explorer、Outlook、および "IEXPLORE.EXE"、"OUTLOOK"、および "NOTEPAD" という名前のプロセスを一覧表示するには、次のコマンドを使用します。 複数のプロセスがある場合は、すべてのプロセスが表示されます。
 
     ```powershell
     PS> get-proc -name iexplore, outlook, notepad
@@ -224,15 +224,15 @@ Windows PowerShell は、.NET Framework オブジェクトを使用してコマ�
          39       2   1024     356     30   0.08  3396   notepad
     ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[プロセス パイプラインの入力パラメーターを追加します。](./adding-parameters-that-process-pipeline-input.md)
+[パイプライン入力を処理するパラメーターの追加](./adding-parameters-that-process-pipeline-input.md)
 
-[初めてのコマンドレットを作成します。](./creating-a-cmdlet-without-parameters.md)
+[最初のコマンドレットの作成](./creating-a-cmdlet-without-parameters.md)
 
-[オブジェクトの種類を拡張して、書式設定](http://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[オブジェクトの種類と書式設定の拡張](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[登録のコマンドレット、プロバイダー、およびアプリケーションをホストする方法](http://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
 [Windows PowerShell リファレンス](../windows-powershell-reference.md)
 
