@@ -1,3 +1,5 @@
+- name: このドキュメントの使用方法
+  href: how-to-use-docs.md
 - name: 概要
   href: overview.md
 - name: インストール
@@ -170,6 +172,100 @@
           href: components/web-access/use-the-web-based-windows-powershell-console.md
     - name: ワークフロー ガイド
       href: components/workflows-guide.md
+- name: PowerShell ギャラリー
+  items:
+    - name: 概要
+      href: gallery/overview.md
+    - name: PowerShellGet のインストール
+      href: gallery/installing-psget.md
+    - name: はじめに
+      href: gallery/getting-started.md
+    - name: 方法
+      items:
+        - name: ギャラリーのパッケージの検索
+          items:
+            - name: パッケージの検索
+              href: gallery/how-to/finding-packages/search-syntax.md
+            - name: 互換性での検索
+              href: gallery/how-to/finding-packages/searching-by-compatibility.md
+            - name: 検索結果のフィルター処理
+              href: gallery/how-to/finding-packages/filtering-packages.md
+        - name: ギャラリーへの公開
+          items:
+            - name: パッケージの作成と公開
+              href: gallery/how-to/publishing-packages/publishing-a-package.md
+            - name: PowerShellGallery アカウントの作成
+              href: gallery/how-to/publishing-packages/creating-an-account.md
+            - name: パッケージをリストから外す
+              href: gallery/how-to/publishing-packages/unlisting-packages.md
+            - name: パッケージを削除する
+              href: gallery/how-to/publishing-packages/deleting-packages.md
+            - name: パッケージの所有者を管理する
+              href: gallery/how-to/publishing-packages/managing-package-owners.md
+        - name: パッケージを操作する
+          items:
+            - name: FileList ビュー
+              href: gallery/how-to/working-with-packages/filelist-view.md
+            - name: Azure Automation にデプロイする
+              href: gallery/how-to/working-with-packages/deploy-to-azure-automation.md
+            - name: パッケージの手動ダウンロード
+              href: gallery/how-to/working-with-packages/manual-download.md
+            - name: ライセンス同意が必要なパッケージ
+              href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
+            - name: パッケージの所有者に連絡する
+              href: gallery/how-to/working-with-packages/contacting-package-owners.md
+            - name: ソーシャル メディアやコメントを使用したフィードバックの提供
+              href: gallery/how-to/working-with-packages/social-media-feedback.md
+        - name: アカウント プロファイルの管理
+          items:
+            - name: PowerShell ギャラリーのアカウント設定
+              href: gallery/how-to/managing-profile/managing-account.md
+            - name: API キーの管理
+              href: gallery/how-to/managing-profile/creating-apikeys.md
+        - name: ローカルの PowerShellGet リポジトリの操作
+          href: gallery/how-to/working-with-local-psrepositories.md
+    - name: 概念
+      items:
+        - name: 公開に関するガイドラインとベスト プラクティス
+          href: gallery/concepts/publishing-guidelines.md
+        - name: パッケージのマニフェストとギャラリーの UI
+          href: gallery/concepts/package-manifest-affecting-ui.md
+        - name: 特定の PSEditions の必須化
+          items:
+            - name: PSEditions のサポートを使用してスクリプトを記述する
+              href: gallery/concepts/script-psedition-support.md
+            - name: PSEditions のサポートを使用してモジュールを記述する
+              href: gallery/concepts/module-psedition-support.md
+        - name: ライセンス同意の必須化
+          items:
+            - name: スクリプトでのライセンス同意の必須化
+              href: gallery/concepts/script-license-acceptance.md
+            - name: モジュールでのライセンス同意の必須化
+              href: gallery/concepts/module-license-acceptance.md
+        - name: パッケージをプレリリースとして定義する
+          items:
+            - name: モジュールをプレリリースとして定義する
+              href: gallery/concepts/module-prerelease-support.md
+            - name: スクリプトをプレリリースとして定義する
+              href: gallery/concepts/script-prerelease-support.md
+        - name: PSScriptAnalyzer ルール プロファイル
+          href: gallery/concepts/scriptanalyzer-rule-profile.md
+    - name: サポートの入手
+      items:
+        - name: 不正報告
+          href: gallery/how-to/getting-support/report-abuse.md
+        - name: 争いの解決
+          href: gallery/how-to/getting-support/dispute-resolution.md
+        - name: 管理者に連絡する
+          href: gallery/how-to/getting-support/contacting-administrators.md
+        - name: トラブルシューティング
+          href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
+        - name: NuGet プロバイダーと NuGet.exe をブートストラップする
+          href: gallery/how-to/getting-support/bootstrapping-nuget.md
+        - name: GDPR 準拠
+          href: gallery/how-to/getting-support/gdpr-dsr-policy.md
+    - name: ギャラリーに関してよく寄せられる質問
+      href: gallery/faqs.md
 - name: 新機能
   items:
     - name: PowerShell Core 6.x の新機能
