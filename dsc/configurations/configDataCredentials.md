@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データでの資格情報オプション
-ms.openlocfilehash: 2a326e45bbbad7bd2362b66b88bf61b98df7b02e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: 660c3643f7eb2e9ccb91bd992747fb9d5da0ccdb
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62080154"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71323301"
 ---
 # <a name="credentials-options-in-configuration-data"></a>構成データでの資格情報オプション
 
@@ -65,7 +65,7 @@ Group [String] #ResourceName
 
 `PsDscRunAsCredential`プロパティの詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
 
-## <a name="example-the-group-resource-credential-property"></a>次に例を示します。Group リソース資格情報プロパティ
+## <a name="example-the-group-resource-credential-property"></a>例:Group リソース資格情報プロパティ
 
 DSC は `Local System` で実行されるため、ローカル ユーザーおよびグループを変更するためのアクセス許可が既にあります。
 追加されたメンバーがローカル アカウントの場合、資格情報は必要ありません。
@@ -143,7 +143,7 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
 
 最初のエラー メッセージには、ドキュメントの URL があります。
 このリンクでは、[ConfigurationData](./configData.md) 構造と証明書を使用してパスワードを暗号化する方法を説明しています。
-証明書と DSC の詳細については、[この投稿をご覧ください](http://aka.ms/certs4dsc)。
+証明書と DSC の詳細については、[この投稿をご覧ください](https://aka.ms/certs4dsc)。
 
 プレーンテキスト パスワードを強制的に使用するには、次のようにリソースの構成データ セクションに `PsDscAllowPlainTextPassword` キーワードが必要です。
 

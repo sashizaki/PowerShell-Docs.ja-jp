@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: PowerShell リモート処理での次ホップの実行
-ms.openlocfilehash: 1b6e5ad53346324adc7be2d013e154c8600afa4f
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: f4cfde39de8494050c31cfc3181271b968819695
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62086342"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692144"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>PowerShell リモート処理での次ホップの実行
 
@@ -211,8 +211,8 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 ### <a name="information-on-resource-based-kerberos-constrained-delegation"></a>リソースに基づく Kerberos の制約付き委任についての情報
 
 - [Kerberos 認証の新機能](https://technet.microsoft.com/library/hh831747.aspx)
-- [Windows Server 2012 による Kerberos の制約付き委任の処理方法、第 1 部](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
-- [Windows Server 2012 による Kerberos の制約付き委任の処理方法、第 2 部](https://windowsitpro.com/security/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
+- [Windows Server 2012 による Kerberos の制約付き委任の処理方法、第 1 部](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
+- [Windows Server 2012 による Kerberos の制約付き委任の処理方法、第 2 部](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [統合 Windows 認証での Azure Active Directory アプリケーション プロキシ展開に対する Kerberos の制約付き委任の概要](https://aka.ms/kcdpaper)
 - [[MS-ADA2]: Active Directory スキーマ属性 M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](https://msdn.microsoft.com/library/hh554126.aspx)
 - [[MS-SFU]: Kerberos プロトコル拡張: Service for User および制約付き委任プロトコルの 1.3.2 S4U2proxy](https://msdn.microsoft.com/library/cc246079.aspx)
