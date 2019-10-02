@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: .NET オブジェクトと COM オブジェクトを作成する (New-Object)
-ms.openlocfilehash: 8bb0326d350be634a50897bdcd432e13ec93450c
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 6e98a159451bc7da4ba3b37eaeb813eb71590d2b
+ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67030271"
+ms.lasthandoff: 09/27/2019
+ms.locfileid: "71325165"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>.NET オブジェクトと COM オブジェクトを作成する (New-Object)
 
@@ -226,7 +226,7 @@ $ie.Visible = $true
 次に、Navigate メソッドを使用すると、特定の Web アドレスに移動できます。
 
 ```powershell
-$ie.Navigate("http://www.microsoft.com/technet/scriptcenter/default.mspx")
+$ie.Navigate("https://devblogs.microsoft.com/scripting/")
 ```
 
 Internet Explorer オブジェクト モデルの他のメンバーを使用すると、この Web ページからテキストの内容を取得できます。 次のコマンドを実行すると、現在の Web ページの本文に含まれる HTML テキストが表示されます。
