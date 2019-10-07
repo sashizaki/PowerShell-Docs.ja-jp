@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: PowerShell、コア
 title: PowerShell 6.0 の既知の問題
-ms.openlocfilehash: 502143b660204edada6a9e62bdf6b260a384a078
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: e84dd2f7deefcc64aea09585e7ce24dc1e8515fc
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733831"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692219"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 の既知の問題
 
@@ -53,7 +53,7 @@ Linux/macOS でのグロビングのエクスペリエンス改善に関する�
 
 ### <a name="net-framework-vs-net-core-framework"></a>.NET Framework と .NET Core Framework
 
-Linux/macOS での PowerShell は .NET Core を使用しています。これは、Microsoft Windows の完全な .NET Framework のサブセットです。 これは重要です。なぜなら、PowerShell では、ベースとなるフレームワークの型、メソッドなどに対する直接アクセスが提供されるためです。このため、フレームワークの違いが原因で、Windows で動作するスクリプトが Windows 以外のプラットフォームでは動作しない場合があります。 .NET Core Framework について詳しくは、<https://dotnetfoundation.org/net-core> をご覧ください
+Linux/macOS での PowerShell は .NET Core を使用しています。これは、Microsoft Windows の完全な .NET Framework のサブセットです。 これは重要です。なぜなら、PowerShell では、ベースとなるフレームワークの型、メソッドなどに対する直接アクセスが提供されるためです。このため、フレームワークの違いが原因で、Windows で動作するスクリプトが Windows 以外のプラットフォームでは動作しない場合があります。 .NET Core Framework について詳しくは、[dotnetfoundation.org](https://dotnetfoundation.org/) をご覧ください。
 
 [.NET Standard2.0](https://devblogs.microsoft.com/dotnet/introducing-net-standard/) の出現により、完全な .NET Framework に存在する従来の型やメソッドの多くが、.NET Core 2.0 で復活します。 つまり、従来の Windows PowerShell モジュールの多くを、変更なしで PowerShell Core に読み込むことができるようになります。 .NET Standard 2.0 に関連する作業については、[こちら](https://github.com/PowerShell/PowerShell/projects/4)をご覧ください。
 

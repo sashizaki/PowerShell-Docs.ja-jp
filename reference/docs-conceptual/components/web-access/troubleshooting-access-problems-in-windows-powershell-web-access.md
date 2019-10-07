@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
-ms.openlocfilehash: 66e913504cf0c34f8d9ab18b088fb06173aca24c
-ms.sourcegitcommit: 46bebe692689ebedfe65ff2c828fe666b443198d
+ms.openlocfilehash: 74cebbe418fecd21567ba9ecc7c561b51ac008fd
+ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67733854"
+ms.lasthandoff: 10/01/2019
+ms.locfileid: "71692229"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
 
@@ -49,7 +49,7 @@ ms.locfileid: "67733854"
 
 #### <a name="workaround"></a>回避策
 
-1. [Internet Explorer 10 をインストールし、実行します](https://ie.microsoft.com/testdrive/info/downloads/Default.html)。
+1. Internet Explorer 10 をインストールし、実行します。
 1. Internet Explorer の **[ドキュメント モード]** 設定を *[IE10 標準]* に変更します。
    1. **F12** キーを押して開発者ツール コンソールを開きます。
    1. Internet Explorer 10 で、 **[ブラウザー モード]** をクリックし、 *[Internet Explorer 10]* をクリックします。
