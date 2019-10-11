@@ -1,0 +1,42 @@
+---
+ms.date: 06/12/2017
+keywords: DSC, PowerShell, 構成, セットアップ
+title: DisableDebugConfiguration メソッド
+ms.openlocfilehash: e3eab98c734b3fd1593ceb2b5d4b40fa69a3bf97
+ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.translationtype: HT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/04/2019
+ms.locfileid: "71955059"
+---
+# <a name="disabledebugconfiguration-method"></a><span data-ttu-id="e2536-103">DisableDebugConfiguration メソッド</span><span class="sxs-lookup"><span data-stu-id="e2536-103">DisableDebugConfiguration method</span></span>
+
+<span data-ttu-id="e2536-104">DSC リソースのデバッグを無効にします。</span><span class="sxs-lookup"><span data-stu-id="e2536-104">Disables DSC resource debugging.</span></span>
+
+## <a name="syntax"></a><span data-ttu-id="e2536-105">構文</span><span class="sxs-lookup"><span data-stu-id="e2536-105">Syntax</span></span>
+
+```mof
+uint32 DisableDebugConfiguration();
+```
+
+## <a name="parameters"></a><span data-ttu-id="e2536-106">パラメーター</span><span class="sxs-lookup"><span data-stu-id="e2536-106">Parameters</span></span>
+
+<span data-ttu-id="e2536-107">このメソッドにはパラメーターはありません。</span><span class="sxs-lookup"><span data-stu-id="e2536-107">This method has no parameters.</span></span>
+
+## <a name="return-value"></a><span data-ttu-id="e2536-108">戻り値</span><span class="sxs-lookup"><span data-stu-id="e2536-108">Return value</span></span>
+
+<span data-ttu-id="e2536-109">成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。</span><span class="sxs-lookup"><span data-stu-id="e2536-109">Returns zero on success; otherwise returns an error code.</span></span>
+
+## <a name="remarks"></a><span data-ttu-id="e2536-110">コメント</span><span class="sxs-lookup"><span data-stu-id="e2536-110">Remarks</span></span>
+
+<span data-ttu-id="e2536-111">これは静的メソッドです。</span><span class="sxs-lookup"><span data-stu-id="e2536-111">This is a static method.</span></span>
+
+## <a name="requirements"></a><span data-ttu-id="e2536-112">要件</span><span class="sxs-lookup"><span data-stu-id="e2536-112">Requirements</span></span>
+
+<span data-ttu-id="e2536-113">**MOF:** DscCore.mof</span><span class="sxs-lookup"><span data-stu-id="e2536-113">**MOF:** DscCore.mof</span></span>
+
+<span data-ttu-id="e2536-114">**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration</span><span class="sxs-lookup"><span data-stu-id="e2536-114">**Namespace**: Root\Microsoft\Windows\DesiredStateConfiguration</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="e2536-115">関連項目</span><span class="sxs-lookup"><span data-stu-id="e2536-115">See also</span></span>
+
+[<span data-ttu-id="e2536-116">**MSFT_DSCLocalConfigurationManager**</span><span class="sxs-lookup"><span data-stu-id="e2536-116">**MSFT_DSCLocalConfigurationManager**</span></span>](msft-dsclocalconfigurationmanager.md)
