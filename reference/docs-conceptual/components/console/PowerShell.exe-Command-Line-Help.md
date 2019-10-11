@@ -13,8 +13,8 @@ ms.locfileid: "65229765"
 
 コマンドライン オプションを使用すれば、**Cmd.exe** や **bash** などの別のツールのコマンドラインから PowerShell を実行することも、PowerShell コマンドラインでそれを使用して新しいセッションを開始することもできます。
 
-コマンドラインオプションを使用すると、PowerShell セッションの構成をカスタマイズしたり、入力を制御したりできます。
+コマンドライン オプションを使用すると、PowerShell セッションの構成をカスタマイズしたり、入力を制御したりできます。
 
-Windows PowerShell (powershell.exe) のオプションの完全な一覧については、[about_PowerShell_exe](/powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_exe) を参照してください。
+Windows PowerShell (powershell.exe) のオプションの完全な一覧については、[PowerShell.exe に関するページ](/powershell/module/Microsoft.PowerShell.Core/About/about_PowerShell_exe)を参照してください。
 
-PowerShell Core (pwsh) 用のオプションの完全な一覧については、[about_pwsh](/powershell/module/Microsoft.PowerShell.Core/About/about_pwsh) を参照してください。
+PowerShell Core (pwsh) のオプションの完全な一覧については、[pwsh に関するページ](/powershell/module/Microsoft.PowerShell.Core/About/about_pwsh) を参照してください。

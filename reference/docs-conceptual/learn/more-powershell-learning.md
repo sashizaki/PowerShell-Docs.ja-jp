@@ -18,12 +18,12 @@ PowerShell の詳細に関する他の情報源
 コマンド ラインで使用可能なヘルプに加え、次のリソースには、PowerShell を実行するユーザー向けの詳細情報があります。
 
 - [PowerShell チーム ブログ](https://devblogs.microsoft.com/powershell/)。 PowerShell 製品チームから直接学ぶのに最適なリソースです。
-- [Hey, Scripting Guy!ブログ](https://devblogs.microsoft.com/scripting/)の記事はシナリオに基づいており、魅力的で活気のある書き方で書かれています。
+- [Hey, Scripting Guy!ブログ](https://devblogs.microsoft.com/scripting/)の記事はシナリオに基づいた形式で、いきいきとした引き付けられる内容になっています。
 - PowerShell の使用に関する質問はありませんか。 [PowerShell コミュニティ](/powershell/#pivot=main&panel=community) ページに掲載されている多数のコミュニティ フォーラムのいずれかで、同じような関心を持っている何百人ものユーザーとつながりましょう。
 
 ## <a name="channel-9-videos"></a>Channel 9 の動画
 
-Channel 9 は、Microsoft の動画公開プラットフォームです。 PowerShell に関する数百件の動画を利用できます。 [「PowerShell」を検索](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated)して利用できる動画をご覧ください。
+Channel 9 は、Microsoft の動画公開プラットフォームです。 PowerShell に関する数百件の動画を利用できます。 [「PowerShell」を検索](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated)すると、利用できる動画が表示されます。
 
 ### <a name="microsoft-virtual-academy"></a>Microsoft Virtual Academy
 

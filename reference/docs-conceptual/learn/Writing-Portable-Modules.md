@@ -18,7 +18,7 @@ Windows PowerShell が [.NET Framework][] 用であるのに対し、PowerShell 
 ### <a name="porting-a-pssnapin"></a>PSSnapIn の移植
 
 PowerShell [スナップイン](/powershell/developer/cmdlet/modules-and-snap-ins)は、PowerShell Core ではサポートされていません。 ただし、PSSnapIn を PowerShell モジュールに変換するのは簡単です。 通常、PSSnapIn の登録コードは、[PSSnapIn][] の派生クラスの単一のソース ファイルに含まれます。
-このソース ファイルをビルドから削除します。これは必要ありません。
+このソース ファイルは、必要ありませんので、ビルドから削除します。
 
 [New-ModuleManifest][] を使って、PSSnapIn 登録コードに必要なものを置き換える新しいモジュール マニフェストを作成します。 **PSSnapIn** の値の一部 (**Description** など) は、モジュール マニフェスト内で再利用できます。
 
