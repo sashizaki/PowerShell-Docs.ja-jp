@@ -1,0 +1,166 @@
+---
+title: ファイルのフォーマットの概要 |Microsoft Docs
+ms.custom: ''
+ms.date: 09/13/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: article
+ms.assetid: fe888fee-1fe9-459f-9d62-35732c19a7f8
+caps.latest.revision: 13
+ms.openlocfilehash: d418cff70c1197aa3c331eed909f49198da139e9
+ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72363691"
+---
+# <a name="formatting-file-overview"></a>書式設定ファイルの概要
+
+コマンドによって返されるオブジェクトの表示形式 (コマンドレット、関数、およびスクリプト) は、書式設定ファイル (types.ps1xml ファイル) を使用して定義されます。 これらのファイルのいくつかは、powershell が提供するコマンドによって返されるオブジェクトの表示形式を定義するために PowerShell によって提供されます。たとえば、`Get-Process` コマンドレットによって返さ[れる system.object オブジェクト](/dotnet/api/System.Diagnostics.Process)などです。 ただし、独自のカスタム書式設定ファイルを作成して既定の表示形式を上書きすることも、独自のコマンドによって返されるオブジェクトの表示を定義するカスタム書式設定ファイルを記述することもできます。
+
+> [!IMPORTANT]
+> 書式設定ファイルでは、パイプラインに返されるオブジェクトの要素は決定されません。 オブジェクトがパイプラインに返されると、一部のメンバーが表示されていない場合でも、そのオブジェクトのすべてのメンバーが使用できるようになります。
+
+PowerShell では、これらの書式設定ファイルのデータを使用して、表示される内容と、表示されるデータの書式設定を決定します。 表示されるデータには、オブジェクトのプロパティやスクリプトの値を含めることができます。 スクリプトは、オブジェクトのプロパティから直接使用できない値を表示する場合に使用します。たとえば、オブジェクトの2つのプロパティの値を加算し、その合計をデータの一部として表示します。 表示されるデータの書式設定を行うには、表示するオブジェクトのビューを定義します。 各オブジェクトに対して1つのビューを定義したり、複数のオブジェクトに対して1つのビューを定義したり、同じオブジェクトに対して複数のビューを定義したりできます。 定義できるビューの数に制限はありません。
+
+## <a name="common-features-of-formatting-files"></a>フォーマットファイルの一般的な機能
+
+各フォーマットファイルでは、ファイルで定義されているすべてのビュー間で共有できる次のコンポーネントを定義できます。
+
+- 既定の構成設定 (テーブルの行に表示されるデータを、列の幅よりも長い場合に、次の行に表示するかどうかなど)。 これらの設定の詳細については、「[共通の構成設定の定義](./defining-common-configuration-features.md)」を参照してください。
+
+- 書式設定ファイルのいずれかのビューで表示できるオブジェクトのセット。 これらのセット (*選択セット*と呼ばれます) の詳細については、「[オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
+
+- 書式設定ファイルのすべてのビューで使用できるコモンコントロール。 コントロールを使用すると、データの表示方法をより細かく制御できます。 コントロールの詳細については、「[カスタムコントロールの定義](./creating-custom-controls.md)」を参照してください。
+
+## <a name="formatting-views"></a>ビューの書式設定
+
+書式設定ビューでは、オブジェクトをテーブル形式、リスト形式、ワイド形式、およびカスタム書式で表示できます。 ほとんどの場合、各書式設定定義は、ビューを記述する XML タグのセットによって記述されます。 各ビューには、ビューの名前、ビューを使用するオブジェクト、およびテーブルビューの列と行の情報など、ビューの要素が含まれます。
+
+テーブルビューには、1つまたは複数の列にオブジェクトまたはスクリプトブロックの値のプロパティが一覧表示されます。 各列は、オブジェクトまたはスクリプト値の単一のプロパティを表します。 オブジェクトのすべてのプロパティ、オブジェクトのプロパティのサブセット、またはプロパティとスクリプト値の組み合わせを表示するテーブルビューを定義できます。 テーブルの各行は、返されたオブジェクトを表します。 テーブルビューの作成は、オブジェクトを `Format-Table` コマンドレットにパイプする場合とよく似ています。 このビューの詳細については、「[テーブルビュー](./creating-a-table-view.md)」を参照してください。
+
+リストビューには、1つの列にオブジェクトまたはスクリプトの値のプロパティが一覧表示されます。 一覧の各行には、省略可能なラベルまたはプロパティ名の後にプロパティまたはスクリプトの値が表示されます。 リストビューを作成することは、オブジェクトを @no__t 0 コマンドレットにパイプすることとよく似ています。 このビューの詳細については、「[リストビュー](./creating-a-list-view.md)」を参照してください。
+
+[ワイドビュー] オブジェクトの1つのプロパティまたは1つ以上の列のスクリプト値を一覧表示します。 このビューにはラベルまたはヘッダーがありません。 ワイドビューを作成することは、オブジェクトを @no__t 0 コマンドレットにパイプすることとよく似ています。 このビューの詳細については、「 [Wide ビュー](./creating-a-wide-view.md)」を参照してください。
+
+[カスタムビュー] テーブルビュー、リストビュー、またはワイドビューの固定構造に準拠していないオブジェクトプロパティまたはスクリプト値のカスタマイズ可能なビューが表示されます。 スタンドアロンのカスタムビューを定義することも、テーブルビューやリストビューなどの別のビューで使用されるカスタムビューを定義することもできます。 カスタムビューを作成することは、オブジェクトを @no__t 0 コマンドレットにパイプすることとよく似ています。 このビューの詳細については、「[カスタムビュー](./creating-custom-controls.md)」を参照してください。
+
+## <a name="components-of-a-view"></a>ビューのコンポーネント
+
+次の XML の例は、ビューの基本的な XML コンポーネントを示しています。 個々の XML 要素は、どのビューを作成するかによって異なりますが、ビューの基本コンポーネントはすべて同じです。
+
+最初に、各ビューには、ビューを参照するために使用されるユーザーフレンドリ名を指定する @no__t 0 の要素があります。 ビューによって表示される .NET オブジェクトと、ビューを定義する*コントロール*要素を定義する @no__t 0 の要素。
+
+```xml
+<ViewDefinitions>
+  <View>
+    <Name>NameOfView</Name>
+    <ViewSelectedBy>...</ViewSelectedBy>
+    <TableControl>...</TableControl>
+  </View>
+  <View>
+    <Name>NameOfView</Name>
+    <ViewSelectedBy>...</ViewSelectedBy>
+    <ListControl>...</ListControl>
+  <View>
+  <View>
+    <Name>NameOfView</Name>
+    <ViewSelectedBy>...</ViewSelectedBy>
+    <WideControl>...</WideControl>
+  <View>
+  <View>
+    <Name>NameOfView</Name>
+    <ViewSelectedBy>...</ViewSelectedBy>
+    <CustomControl>...</CustomControl>
+  </View>
+</ViewDefinitions>
+
+```
+
+Control 要素内では、1つまたは複数の*エントリ*要素を定義できます。 複数の定義を使用する場合は、各定義を使用する .NET オブジェクトを指定する必要があります。 通常、各コントロールに必要なエントリは1つだけです。
+
+```xml
+<ListControl>
+  <ListEntries>
+    <ListEntry>
+      <EntrySelectedBy>...</EntrySelectedBy>
+      <ListItems>...</ListItems>
+    <ListEntry>
+    <ListEntry>
+        <EntrySelectedBy>...</EntrySelectedBy>
+      <ListItems>...</ListItems>
+    <ListEntry>
+    <ListEntry>
+        <EntrySelectedBy>...</EntrySelectedBy>
+      <ListItems>...</ListItems>
+    <ListEntry>
+  </ListEntries>
+</ListControl>
+
+```
+
+ビューの各エントリ要素内で、そのビューによって表示される .NET プロパティまたはスクリプトを定義する*項目*要素を指定します。
+
+```xml
+
+<ListItems>
+  <ListItem>...</ListItem>
+  <ListItem>...</ListItem>
+  <ListItem>...</ListItem>
+</ListItems>
+
+```
+
+前の例で示したように、書式設定ファイルには複数のビューを含めることができます。ビューには複数の定義を含めることができ、各定義には複数の項目を含めることができます。
+
+## <a name="example-of-a-table-view"></a>テーブルビューの例
+
+次の例は、2つの列を含むテーブルビューを定義するために使用される XML タグを示しています。 [Viewdefinitions](./viewdefinitions-element-format.md)要素は、書式設定ファイルで定義されているすべてのビューのコンテナー要素です。 [View](./view-element-format.md)要素は、特定のテーブル、リスト、ワイド、またはカスタムビューを定義します。 各[ビュー](./view-element-format.md)要素内では、 [name](./name-element-for-view-format.md)要素はビューの名前を指定し、 [viewselectedby](./viewselectedby-element-format.md)要素はビューを使用するオブジェクトを定義します。また、次に示すように、異なるコントロール要素 (`TableControl` 要素など) を定義します。例) ビューの種類を定義します。
+
+```xml
+<ViewDefinitions>
+  <View>
+    <Name>Name of View</Name>
+    <ViewSelectedBy>
+      <TypeName>Object to display using this view</TypeName>
+      <TypeName>Object to display using this view</TypeName>
+    </ViewSelectedBy>
+    <TableControl>
+      <TableHeaders>
+        <TableColumnHeader>
+          <Width></Width>
+        </TableColumnHeader>
+        <TableColumnHeader>
+          <Width></Width>
+        </TableColumnHeader>
+      </TableHeaders>
+      <TableRowEntries>
+        <TableRowEntry>
+          <TableColumnItems>
+            <TableColumnItem>
+              <PropertyName>Header for column 1</PropertyName>
+            </TableColumnItem>
+            <TableColumnItem>
+              <PropertyName>Header for column 2</PropertyName>
+            </TableColumnItem>
+          </TableColumnItems>
+        </TableRowEntry>
+      </TableRowEntries>
+    </TableControl)
+  </View>
+</ViewDefinitions>
+
+```
+
+## <a name="see-also"></a>参照
+
+[リストビューの作成](./creating-a-list-view.md)
+
+[テーブルビューの作成](./creating-a-table-view.md)
+
+[ワイドビューの作成](./creating-a-wide-view.md)
+
+[カスタムコントロールの作成](./creating-custom-controls.md)
+
+[PowerShell の形式と種類のファイルの作成](./writing-a-powershell-formatting-file.md)
