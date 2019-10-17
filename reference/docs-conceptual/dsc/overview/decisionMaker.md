@@ -1,58 +1,47 @@
 ---
-ms.date: 06/12/2017
+ms.date: 10/11/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 意思決定者向け Desired State Configuration の概要
-ms.openlocfilehash: ce554d4bb994d4b1816d9d9c24599e4ef0e1c593
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 271ec04035feb17e932acd0ac80f32213a4e018b
+ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71953689"
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72352136"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>意思決定者向け Desired State Configuration の概要
 
-このドキュメントでは、Windows PowerShell Desired State Configuration (DSC) を使用するビジネス上の利点について説明します。 テクニカル ガイドではありません。
+このドキュメントでは、PowerShell Desired State Configuration (DSC) を使用するビジネス上の利点について説明します。これはテクニカル ガイドではありません。
 
-## <a name="what-is-desired-state-configuration"></a>Desired State Configuration とは
+## <a name="what-is-dsc"></a>DSC とは
 
-PowerShell Desired State Configuration は、オープン スタンダードに基づく、Windows に組み込まれた構成管理プラットフォームです。 DSC は、展開ライフサイクル (開発、テスト、実稼働前、実稼働) の各段階、およびスケールアウト中に、機能の信頼性と一貫性を維持するために十分な柔軟性があります。
+PowerShell DSC は、Windows に組み込まれた構成管理プラットフォームであり、オープン標準に基づいています。 DSC には、展開ライフサイクルの各ステージ (開発、テスト、実稼働前、実稼働) およびスケールアウト中に、確実かつ一貫した機能を実現するための柔軟性が備わっています。
 
-DSC は[構成](../configurations/configurations.md)を中心としています。
-構成とは、特定の特性を持つコンピューター ("ノード") で構成される環境を説明する読みやすいドキュメントです。
-これらの特性は、特定の Windows 機能が有効になっていることを確認するなどの単純な場合や、SharePoint の展開のように複雑な場合があります。
+DSC は[構成](../configurations/configurations.md)を中心としています。 構成とは、特定の特性を持つコンピューター (またはノード) で構成された環境を記述する PowerShell スクリプトです。 これらの特性は、特定の Windows 機能が有効になっていることを確認するなどの単純な場合や、SharePoint の展開のように複雑な場合があります。
 
-DSC には監視とレポートも組み込まれています。
-システムが適合しなくなった場合、DSC は警告を生成し、システムを修正するために機能することができます。
+DSC には、監視とレポートの機能が組み込まれています。 システムが適合しなくなった場合、DSC は警告を生成し、システムを修正するために機能することができます。
 
-## <a name="benefits-of-using-desired-state-configuration"></a>Desired State Configuration を使用する利点
+## <a name="benefits-of-using-dsc"></a>DSC を使用する利点
 
-構成は、簡単に読み取り、保存、および更新できるように設計されています。
-構成では、ターゲット デバイスをあるべき状態にするための手順を記述するのではなく、ターゲット デバイスがあるべき状態を宣言します。
-これにより、DSC によって構成を学習、導入、実装、および保守するコストが非常に低く抑えられます。
+構成の設計によって、それらの読み取り、保存、および更新を行う方法が簡略化されます。 構成では、ターゲット デバイスの状態が宣言されます。デバイスをその状態にするための手順が記述されるわけではありません。 これらの要因によって、DSC を使用した構成の学習、導入、実装、および保守にかかるコストが削減されます。
 
-構成を作成することは、複雑な展開手順が "信頼できる唯一の情報源" として 1 つの場所で取得されることを意味します。
-これにより、特定の一連のマシンの展開を繰り返す場合にエラーが発生する可能性が大幅に低下します。
-そして、展開の速度と信頼性を高めることで、複雑な展開も迅速に実現できるようになります。
+構成を作成することは、複雑な展開手順が 1 つの場所で、**信頼できる唯一のソース**として取得されることを意味します。 構成を使うと、コンピューターの特定のセットを繰り返し展開する場合にエラーが発生する可能性が低下します。 また、展開の速度と信頼性が向上するため、複雑な展開での迅速なターンアラウンドを実現できます。
 
-また、構成は [PowerShell ギャラリー](https://powershellgallery.com)で共有することもできるため、実行する必要のある作業に適した一般的なシナリオやベスト プラクティスが既に存在している可能性もあります。
+構成は、[PowerShell ギャラリー](https://powershellgallery.com)を介して共有できます。 実行する必要がある作業について、一般的なシナリオやベスト プラクティスが既に存在している可能性があります。
 
+## <a name="dsc-and-devops"></a>DSC と DevOps
 
-## <a name="desired-state-configuration-and-devops"></a>Desired State Configuration と DevOps
+DSC は、[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) を念頭に置いて設計されました。 迅速な展開と反復を可能にする、人、プロセス、ツールの組み合わせであり、内部か外部かに関わらずエンド ユーザーに価値を提供することに重点が置かれています。 環境を定義する単一の構成によって、開発者が各自の要件を構成にエンコードし、その構成をソース管理にチェックインできるようになります。 そして、運用チームは、エラーが発生しやすい手動プロセスを経由せずにコードを展開できるようになります。
 
-DSC は [DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) を念頭に置いて設計され、内部や外部に関わらず、エンド ユーザーに価値を提供することに重点を置いた、迅速な展開と反復を可能にする人、プロセス、そしてツールが組み合わされたものです。
-単一の構成によって環境を定義することで、開発者は要件を構成にエンコードし、その構成をソース管理にチェックインでき、運用チームではエラーが発生しやすい手動プロセスを使用する必要なく、コードを簡単に展開できるようになります。
+構成は[データドリブン](../configurations/configData.md)です。 定義されたデータにより、開発者が関与することなく、運用で簡単に環境の特定と変更を行えます。
 
-構成は[データ ドリブン](../configurations/configData.md)でもあるため、開発者が関与することなく、運用側で簡単に環境を特定および変更することができます。
+## <a name="dsc-on-premises-and-off-premises"></a>オンプレミスおよびオフプレミスの DSC
 
-## <a name="desired-state-configuration-on-premises-and-off-premises"></a>オンプレミスおよびオフプレミスの Desired State Configuration
-DSC を使用して、オンプレミスとオフプレミスの両方の展開を管理できます。
-オンプレミスのソリューションの場合、DSC では[プル サーバー](../pull-server/pullServer.md)を使用してマシンの管理を一元化し、それらの状態をレポートできます。
-クラウド ソリューションの場合、DSC は Windows が使用可能なすべての場所で使用できます。
-Azure では、DSC のレポート作成を一元化する [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/) など、Desired State Configuration に基づいて構築された特定のサービスも提供しています。
+DSC では、オンプレミスとオフプレミスの展開を管理できます。 オンプレミスのソリューションの場合、DSC には、コンピューターの管理を一元化し、それらの状態をレポートするために使用される[プル サーバー](../pull-server/pullServer.md)が備わっています。 オフプレミスのクラウド ソリューションの場合、Windows を使用できる任意の場所で DSC を使用できます。
+Azure には、DSC レポートを一元化する [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/) など、DSC に基づく特定のサービスがあります。
 
 ## <a name="dsc-and-compatibility"></a>DSC と互換性
 
-DSC は Windows Server 2012 R2 で導入されましたが、Windows Management Framework (WMF) パッケージを使用してダウンレベル オペレーティング システムで使用できます。
-WMF の詳細については、[PowerShell のホーム ページ](/powershell/)をご覧ください。
+DSC は Windows Server 2012 R2 で導入されましたが、Windows Management Framework (WMF) 経由で下位バージョンのオペレーティング システムで使用できます。 WMF の詳細については、「[Windows Management Framework](/powershell/scripting/wmf/overview)」をご覧ください。
 
-DSC は、Linux の管理にも使用できます。 詳細については、[Linux 用 DSC の概要](../getting-started/lnxGettingStarted.md)に関するページをご覧ください。
+DSC を使用して Linux を管理できます。 詳細については、[Linux 用 DSC の概要](../getting-started/lnxGettingStarted.md)に関するページをご覧ください。

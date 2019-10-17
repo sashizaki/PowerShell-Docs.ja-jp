@@ -2,12 +2,12 @@
 ms.date: 09/25/2019
 keywords: PowerShell, コマンドレット
 title: PowerShell ドキュメントの使用方法
-ms.openlocfilehash: 403cb155dcd18560267fd360a9277004a5e2510d
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 9e3d5828d6bdb4ef14701994f146354a041efaea
+ms.sourcegitcommit: a80bb79b85deab8ae3c21de56d1ee432fdd92628
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71327873"
+ms.lasthandoff: 10/11/2019
+ms.locfileid: "72281654"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>PowerShell ドキュメントの使用方法
 
@@ -27,6 +27,18 @@ PowerShell のオンライン ドキュメントへようこそ。 このサイ�
 ページの上部にあるバージョン ピッカーを使用し、目的の PowerShell のバージョンを選択します。
 
 ![バージョン ピッカー](images/how-to-use-docs/picker-vall.gif)
+
+`$PSversionTable.PSVersion` の値を調べることで、お客様が使用している PowerShell のバージョンを確認できます。 次の例は、Windows PowerShell v5.1 に対する出力を示しています。
+
+```powershell
+$PSVersionTable.PSVersion
+```
+
+```Output
+Major  Minor  Build  Revision
+-----  -----  -----  --------
+5      1      18362  145
+```
 
 ## <a name="searching-for-articles"></a>記事の検索
 
