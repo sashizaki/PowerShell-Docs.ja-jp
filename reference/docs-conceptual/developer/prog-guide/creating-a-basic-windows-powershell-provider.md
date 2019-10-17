@@ -1,0 +1,111 @@
+---
+title: 基本的な Windows PowerShell プロバイダーを作成する |Microsoft Docs
+ms.custom: ''
+ms.date: 09/13/2016
+ms.reviewer: ''
+ms.suite: ''
+ms.tgt_pltfrm: ''
+ms.topic: article
+helpviewer_keywords:
+- base provider [PowerShell Programmer's Guide]
+- providers [PowerShell Programmer's Guide], base provider
+ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
+caps.latest.revision: 7
+ms.openlocfilehash: e825581b96f0f33893b38f9f6499dd46a7bf38eb
+ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 10/15/2019
+ms.locfileid: "72360521"
+---
+# <a name="creating-a-basic-windows-powershell-provider"></a>基本的な Windows PowerShell プロバイダーを作成する
+
+このトピックは、Windows PowerShell プロバイダーを作成する方法を学習するための出発点となります。 ここで説明する基本的なプロバイダーは、プロバイダーを開始および停止するためのメソッドを提供します。このプロバイダーは、データストアにアクセスしたり、データストア内のデータを取得または設定したりする手段を提供しませんが、によって必要な基本機能を提供します。すべてのプロバイダー。
+
+前述のように、ここで説明する基本的なプロバイダーは、プロバイダーを起動および停止するためのメソッドを実装しています。 Windows PowerShell ランタイムは、これらのメソッドを呼び出して、プロバイダーの初期化と初期化解除を行います。
+
+> [!NOTE]
+> このプロバイダーのサンプルは、Windows PowerShell によって提供される AccessDBSampleProvider01.cs ファイルにあります。
+
+## <a name="defining-the-windows-powershell-provider-class"></a>Windows PowerShell プロバイダークラスの定義
+
+Windows PowerShell プロバイダーを作成するための最初の手順は、.NET クラスを定義することです。 この基本プロバイダーは、`AccessDBProvider` というクラスを定義しています。このクラスは、[この基本クラス](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)から派生します。
+
+プロバイダークラスは、API 名前空間の @no__t 0 の名前空間 (たとえば、xxx) に配置することをお勧めします。PowerShell. プロバイダー。 このプロバイダーは `Microsoft.Samples.PowerShell.Provider` 名前空間を使用します。この名前空間では、すべての Windows PowerShell プロバイダーのサンプルが実行されます。
+
+> [!NOTE]
+> Windows PowerShell プロバイダーのクラスは、明示的にパブリックとしてマークされている必要があります。 パブリックとしてマークされていないクラスは、既定で内部に設定され、Windows PowerShell ランタイムによって検出されません。
+
+この基本プロバイダーのクラス定義を次に示します。
+
+[!code-csharp[AccessDBProviderSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs#L23-L24 "AccessDBProviderSample01.cs")]
+
+クラス定義の直前に、構文 [[の表示プロバイダー ()] を使用して、"system.servicemodel" 属性を宣言する必要が[あります。](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)
+
+必要に応じて、クラスをさらに宣言する属性キーワードを設定できます。 ここで宣言されている system.string 属性に[は、2つのパラメーター](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)が含まれていることに注意してください。 最初の属性パラメーターは、プロバイダーの既定のわかりやすい名前を指定します。ユーザーは後で変更できます。 2番目のパラメーターは、コマンドの処理中にプロバイダーが Windows PowerShell ランタイムに公開する Windows PowerShell 定義の機能を指定します。 プロバイダー機能に使用できる値は、system.servicemodel[機能](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙型によって定義されます。 これは基本プロバイダーであるため、機能をサポートしていません。
+
+> [!NOTE]
+> Windows PowerShell プロバイダーの完全修飾名には、アセンブリ名と、プロバイダーの登録時に Windows PowerShell によって決定されるその他の属性が含まれています。
+
+## <a name="defining-provider-specific-state-information"></a>プロバイダー固有の状態情報の定義
+
+Windows PowerShell ランタイムでは必要に応じてプロバイダーインスタンスが作成される[ため、この基本クラス](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)とすべての派生クラスはステートレスと見なされます。 したがって、プロバイダー固有のデータに対して完全な制御と状態の保守が必要な場合は、クラスを system.servicemodel クラスから派生させる必要が[あります。](/dotnet/api/System.Management.Automation.ProviderInfo) 派生クラスでは、状態を維持するために必要なメンバーを定義する必要があり[ます。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)これにより、Windows PowerShell ランタイムがシステムを呼び出すときに、プロバイダー固有のデータにアクセスできるようになります。プロバイダーを初期化します。
+
+Windows PowerShell プロバイダーは、接続ベースの状態を維持することもできます。 接続状態の維持の詳細については、「 [PowerShell ドライブプロバイダーの作成](./creating-a-windows-powershell-drive-provider.md)」を参照してください。
+
+## <a name="initializing-the-provider"></a>プロバイダーを初期化しています
+
+プロバイダーを初期化するために、windows powershell ランタイムは、Windows PowerShell が起動されたときに、[システムの起動](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)を呼び出します。 ほとんどの場合、プロバイダーはこのメソッドの既定の実装を使用できます。これにより、プロバイダーを記述する[system.servicemodel オブジェクトが返されます](/dotnet/api/System.Management.Automation.ProviderInfo)。 ただし、追加の[](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) [初期化情報を追加する場合は、変更されたバージョンのを返す独自のシステム管理メソッドを実装する必要があります。 Start *](/dotnet/api/System.Management.Automation.ProviderInfo)プロバイダーに渡される system.servicemodel. Providerinfo オブジェクトです。 一般に、このメソッドは渡された[指定さ](/dotnet/api/System.Management.Automation.ProviderInfo)れた system.servicemodel オブジェクト、または他の初期化情報を含む変更された[system.servicemodel オブジェクトを](/dotnet/api/System.Management.Automation.ProviderInfo)返します。
+
+この基本プロバイダーは、このメソッドをオーバーライドしません。 ただし、次のコードは、このメソッドの既定の実装を示しています。
+
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStart](Msh_samplesaccessdbprov01#accessdbprov01ProviderStart)]  -->
+
+プロバイダーは、「[プロバイダー固有のデータの状態の定義](#defining-provider-specific-state-information)」で説明されているように、プロバイダー固有の情報の状態を維持できます。 この場合、の実装では、派生クラスのインスタンスを返すように、[このメソッドを](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)オーバーライドする必要があります。
+
+## <a name="start-dynamic-parameters"></a>動的パラメーターの開始
+
+プロバイダーによる[システム](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)の実装では、追加のパラメーターが必要になる場合があります。 この場合、プロバイダーは、[このメソッドを](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters)オーバーライドして、コマンドレットクラスまたはの[ような解析属性を持つプロパティとフィールドを持つオブジェクトを返します。このメソッドは、System. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクト。
+
+この基本プロバイダーは、このメソッドをオーバーライドしません。 ただし、次のコードは、このメソッドの既定の実装を示しています。
+
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderDynamicParameters](Msh_samplesaccessdbprov01#accessdbprov01ProviderDynamicParameters)]  -->
+
+## <a name="uninitializing-the-provider"></a>プロバイダーの初期化解除
+
+Windows PowerShell プロバイダーが使用するリソースを解放するには、プロバイダーが独自の[システムの管理](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Stop)を実装する必要があります。 このメソッドは、セッションの終了時にプロバイダーを初期化解除するために、Windows PowerShell ランタイムによって呼び出されます。
+
+この基本プロバイダーは、このメソッドをオーバーライドしません。 ただし、次のコードは、このメソッドの既定の実装を示しています。
+
+<!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStop](Msh_samplesaccessdbprov01#accessdbprov01ProviderStop)]  -->
+
+## <a name="code-sample"></a>コードサンプル
+
+完全なサンプルコードについては、「 [AccessDbProviderSample01 のコードサンプル](./accessdbprovidersample01-code-sample.md)」を参照してください。
+
+## <a name="testing-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーのテスト
+
+Windows powershell プロバイダーが Windows PowerShell に登録されたら、サポートされているコマンドレットをコマンドラインで実行することでテストできます。 この基本プロバイダーでは、新しいシェルを実行し、`Get-PSProvider` コマンドレットを使用してプロバイダーの一覧を取得し、AccessDb プロバイダーが存在することを確認します。
+
+```powershell
+Get-PSProvider
+```
+
+次の出力が表示されます。
+
+```output
+Name                 Capabilities                  Drives
+----                 ------------                  ------
+AccessDb             None                          {}
+Alias                ShouldProcess                 {Alias}
+Environment          ShouldProcess                 {Env}
+FileSystem           Filter, ShouldProcess         {C, Z}
+Function             ShouldProcess                 {function}
+Registry             ShouldProcess                 {HKLM, HKCU}
+```
+
+## <a name="see-also"></a>参照
+
+[Windows PowerShell プロバイダーの作成](./how-to-create-a-windows-powershell-provider.md)
+
+[Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)
