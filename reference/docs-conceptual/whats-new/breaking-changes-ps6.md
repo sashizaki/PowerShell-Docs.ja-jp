@@ -2,12 +2,12 @@
 ms.date: 05/17/2018
 keywords: powershell、core
 title: PowerShell Core 6.0 の重要な変更
-ms.openlocfilehash: 186e55c1ac46ce3fc172df18995f8c15d9eeb8eb
-ms.sourcegitcommit: 118eb294d5a84a772e6449d42a9d9324e18ef6b9
+ms.openlocfilehash: df716fc3ad48d640ddefcfd87da445eaf104cfbe
+ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/26/2019
-ms.locfileid: "67843935"
+ms.lasthandoff: 10/18/2019
+ms.locfileid: "72561271"
 ---
 # <a name="breaking-changes-for-powershell-60"></a>PowerShell Core 6.0 の重要な変更
 
@@ -20,6 +20,8 @@ ms.locfileid: "67843935"
 .NET Core では Windows Workflow Foundation がサポートされていないため、PowerShell Core の PowerShell ワークフローのサポートを終了します。
 
 今後、PowerShell ワークフローを必要としない、PowerShell 言語でのネイティブの並列処理とコンカレンシーが可能になる予定です。
+
+OS の再起動後にチェックポイントを使ってスクリプトを再開する必要がある場合は、タスク スケジューラを使って OS の起動時にスクリプトを実行することをお勧めします。ただし、そのスクリプトでそれ自体の状態を維持する必要があります (ファイルに保持するなど)。
 
 [workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
