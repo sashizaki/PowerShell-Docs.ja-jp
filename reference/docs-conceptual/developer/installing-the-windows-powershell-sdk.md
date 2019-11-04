@@ -2,12 +2,12 @@
 title: Windows PowerShell SDK のインストール
 ms.date: 09/13/2016
 ms.topic: article
-ms.openlocfilehash: da1b3dbb8a599aee2cdbab9115aedcab0b4c78c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72367271"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444504"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Windows PowerShell SDK のインストール
 
@@ -17,24 +17,21 @@ ms.locfileid: "72367271"
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Windows 8 と Windows Server 2012 での Windows PowerShell 3.0 SDK のインストール
 
-Windows PowerShell 3.0 は Windows 8 と Windows Server 2012 で自動的にインストールされます。 さらに、Windows 8 SDK の一部としての Windows PowerShell 3.0 の参照アセンブリもダウンロードおよびインストールできます。 これらのアセンブリでは、Windows PowerShell 3.0 のコマンドレット、プロバイダー、およびホスト プログラムを記述できます。 Windows 8 用 Windows SDK をインストールすると、Windows PowerShell アセンブリが自動的に \Program Files (x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0 にインストールされます。 詳細については、Windows 8 SDK のダウンロードサイトを参照してください。 Windows PowerShell のサンプル コードもデベロッパー センターで入手できます。
-詳細については、デベロッパーセンターサイトのデスクトップコードサンプルページを参照してください。
-
-さらに、Windows PowerShell 3.0 には Windows PowerShell 2.0 SDK との下位互換性があり、これには多くのサンプルコードが含まれます。 Windows PowerShell 2.0 SDK をダウンロードする方法の詳細については、以下をご覧ください。 (2.0 のサンプル コードは Windows 8 および Windows PowerShell 3.0 と互換性がありますが、Windows PowerShell 2.0 を Windows 8 プラットフォームにインストールすることはできません)。
+Windows PowerShell 3.0 は Windows 8 と Windows Server 2012 で自動的にインストールされます。 さらに、Windows 8 SDK の一部としての Windows PowerShell 3.0 の参照アセンブリもダウンロードおよびインストールできます。 これらのアセンブリでは、Windows PowerShell 3.0 のコマンドレット、プロバイダー、およびホスト プログラムを記述できます。 Windows 8 用 Windows SDK をインストールすると、Windows PowerShell アセンブリが自動的に参照アセンブリ フォルダー (`\Program Files
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`) にインストールされます。 詳細については、Windows 8 SDK のダウンロードサイトを参照してください。 Windows PowerShell のコードサンプルは、 [Windows powershell 3.0 SDK サンプルパック](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d)の開発センターから入手することもできます。
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Windows 7 と Windows Server 2008 R2 での Windows PowerShell 3.0 SDK のインストール
 
-Windows 7 と Windows Server 2008 R2 では、PowerShell 2.0 が自動的にインストールされます。 さらに、これらのシステムに PowerShell 3.0 をインストールできます。 (詳細については、「Windows PowerShell のインストール」を参照してください)。 前述のように、Windows 7 および Windows Server 2008 R2 で Windows 8 SDK をインストールすることもできます。
+Windows 7 と Windows Server 2008 R2 では、PowerShell 2.0 が自動的にインストールされます。 さらに、これらのシステムに PowerShell 3.0 をインストールできます。 前述のように、windows 7 と windows Server 2008 R2 に Windows 8 SDK をインストールすることもできます。
 
 ## <a name="installing-windows-powershell-20-sdk-for-windows-7-vista-xp-server-2003-and-server-2008"></a>Windows 7、Vista、XP、Server 2003、Server 2008 での Windows PowerShell 2.0 SDK のインストール
 
-Windows PowerShell 2.0 SDK は、コマンドレット、プロバイダー、アプリケーションのホストを記述するために必要な参照アセンブリを提供し、コードの記述を開始するときに開始点として使用できる C# サンプル コードを提供します。
-
-この SDK をインストールするには、「Windows PowerShell 2.0 SDK」を参照してください。
+Windows PowerShell 2.0 SDK は、コマンドレット、プロバイダー、アプリケーションのホストを記述するために必要な参照アセンブリを提供し、コードの記述を開始するときに開始点として使用できる C# サンプル コードを提供します。 コードサンプルは[https://www.microsoft.com/download/details.aspx?id=2560](https://www.microsoft.com/download/details.aspx?id=2560)からダウンロードできます。
 
 ### <a name="reference-assemblies"></a>参照アセンブリ
 
-参照アセンブリは、既定では次の場所にインストールされます: c:\Program Files\Reference Assemblies\Microsoft\WindowsPowerShell\V1.0.
+既定では、参照アセンブリは `c:\Program Files\Reference
+Assemblies\Microsoft\WindowsPowerShell\V1.0` にインストールされます。
 
 > [!NOTE]
 >
@@ -43,14 +40,15 @@ Windows PowerShell 2.0 SDK は、コマンドレット、プロバイダー、�
 
 ### <a name="samples"></a>サンプル
 
-既定では、コードサンプルは次の場所にインストールされます。 C:\Program are SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\. 次のセクションでは、各サンプル コードについて簡単に説明します。
+既定では、コード サンプルは `C:\Program Files\Microsoft
+SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` にインストールされます。 次のセクションでは、各サンプル コードについて簡単に説明します。
 
 #### <a name="cmdlet-samples"></a>コマンドレット サンプル
 
 - GetProcessSample01-ローカルコンピューター上のすべてのプロセスを取得する簡単なコマンドレットを記述する方法を示します。
 - GetProcessSample02-コマンドレットにパラメーターを追加する方法を示します。 このコマンドレットは 1 つまたは複数のプロセス名を取得し、それに一致するプロセスを返します。
 - GetProcessSample03-パイプラインからの入力を受け入れるパラメーターを追加する方法を示します。
-- GetProcessSample04-終了しないエラーを処理する方法を示します。
+- GetProcessSample04-未終了エラーを処理する方法を示します。
 - GetProcessSample05-指定されたプロセスの一覧を表示する方法を示します。
 - SelectObject-特定のオブジェクトのみを選択するフィルターを作成する方法を示します。
 - SelectString-指定したパターンのファイルを検索する方法を示します。
@@ -75,8 +73,8 @@ Windows PowerShell 2.0 SDK は、コマンドレット、プロバイダー、�
 #### <a name="hosting-application-samples"></a>アプリケーションのホストのサンプル
 
 - Runspace01-PowerShell クラスを使用して `Get-Process` コマンドレットを同期的に実行する方法を示します。
-@No__t-0 コマンドレットは、ローカルコンピューター上で実行されている各プロセスのプロセスオブジェクトを返します。
-- Runspace02-PowerShell クラスを使用して、`Get-Process` および `Sort-Object` のコマンドレットを同期的に実行する方法を示します。 @No__t-0 コマンドレットは、ローカルコンピューター上で実行されている各プロセスのプロセスオブジェクトを返します。 @no__t は、Id プロパティに基づいてオブジェクトを並べ替えます。 これらのコマンドの結果は、DataGridView コントロールを使用して表示されます。
+`Get-Process` コマンドレットは、ローカルコンピューター上で実行されている各プロセスのプロセスオブジェクトを返します。
+- Runspace02-PowerShell クラスを使用して、`Get-Process` および `Sort-Object` のコマンドレットを同期的に実行する方法を示します。 `Get-Process` コマンドレットは、ローカルコンピューター上で実行されている各プロセスのプロセスオブジェクトを返し、`Sort-Object` はその Id プロパティに基づいてオブジェクトを並べ替えます。 これらのコマンドの結果は、DataGridView コントロールを使用して表示されます。
 - Runspace03-PowerShell クラスを使用してスクリプトを同期的に実行する方法と、終了しないエラーを処理する方法を示します。 このスクリプトはプロセス名の一覧を受信し、これらのプロセスを取得します。 スクリプトの実行時に生成された終了しないエラーを含む、スクリプトの結果がコンソール ウィンドウに表示されます。
 - Runspace04-PowerShell クラスを使用してコマンドを実行する方法と、コマンドの実行時にスローされる終了エラーをキャッチする方法を示します。 2 つのコマンドが実行され、最後のコマンドには無効なパラメーターの引数が渡されます。 結果として、オブジェクトは返されず、終了するエラーがスローされます。
 - Runspace05-InitialSessionState オブジェクトにスナップインを追加して、実行空間を開いたときにスナップインのコマンドレットを使用できるようにする方法を示します。 スナップインには、PowerShell オブジェクトを使用して同期的に実行される Get Proc コマンドレット (GetProcessSample01 サンプルで定義) が用意されています。
@@ -92,7 +90,7 @@ Windows PowerShell 2.0 SDK は、コマンドレット、プロバイダー、�
 #### <a name="host-samples"></a>ホストのサンプル
 
 - Vmhost01-カスタムホストを使用するホストアプリケーションを実装する方法を示します。 このサンプルでは、カスタムホストを使用する実行空間が作成されます。その後、PowerShell API を使用して、"exit" を呼び出すスクリプトを実行します。 ホスト アプリケーションはスクリプトの出力を確認し、結果を印刷します。
-- Host02-Windows PowerShell ランタイムをカスタムホスト実装と共に使用するホストアプリケーションを記述する方法を示します。 ホストアプリケーションは、ホストカルチャをドイツ語に設定し、@no__t コマンドレットを実行して、結果を表示します。これは pwrsh .exe を使用して表示されます。その後、現在のデータと時刻をドイツ語で印刷します。
+- Host02-Windows PowerShell ランタイムをカスタムホスト実装と共に使用するホストアプリケーションを記述する方法を示します。 ホストアプリケーションは、ホストカルチャをドイツ語に設定し、`Get-Process` コマンドレットを実行して結果を表示します。これは、pwrsh .exe を使用して表示されます。その後、現在のデータと時刻をドイツ語で出力します。
 - Host03-コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する、対話型のコンソールベースのホストアプリケーションを構築する方法を示します。
 - Host04-コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する、対話型のコンソールベースのホストアプリケーションを構築する方法を示します。 このホスト アプリケーションでは、複数選択を指定するための確認メッセージを表示することもできます。
 - Host05-コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する、対話型のコンソールベースのホストアプリケーションを構築する方法を示します。 このホストアプリケーションは、`Enter-PsSession` および `Exit-PsSession` のコマンドレットを使用して、リモートコンピューターへの呼び出しもサポートします。
