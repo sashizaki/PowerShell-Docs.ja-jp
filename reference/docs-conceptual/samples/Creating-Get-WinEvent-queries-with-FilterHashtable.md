@@ -1,12 +1,12 @@
 ---
 ms.date: 09/13/2019
 title: FilterHashtable を使った Get-WinEvent クエリの作成
-ms.openlocfilehash: 1bf321c09c20736de36eb896fabced31cfdfbd75
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
+ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71143671"
+ms.lasthandoff: 11/02/2019
+ms.locfileid: "73444394"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>FilterHashtable を使った Get-WinEvent クエリの作成
 
@@ -36,16 +36,16 @@ Get-WinEvent -FilterHashtable @{
 この記事では、ハッシュ テーブルで列挙値を使用する方法について説明します。 列挙体について詳しくは、これらの **Scripting Guy** のブログ投稿をご覧ください。 列挙値を返す関数を作成するには、「[Enumerations and Values (列挙型および値)](https://devblogs.microsoft.com/scripting/hey-scripting-guy-weekend-scripter-enumerations-and-values)」をご覧ください。
 詳細については、[列挙体に関する Scripting Guy の一連のブログ投稿](https://devblogs.microsoft.com/scripting/?s=about+enumeration)をご覧ください。
 
-## <a name="hash-table-keyvalue-pairs"></a>ハッシュ テーブルのキー/値のペア
+## <a name="hash-table-key-value-pairs"></a>ハッシュ テーブルのキーと値のペア
 
 効率的なクエリを作成するには、**FilterHashtable** パラメーターと共に `Get-WinEvent` コマンドレットを使います。
-**FilterHashtable** には、Windows イベント ログから特定の情報を取得するためのフィルターとして、ハッシュ テーブルを指定できます。 ハッシュ テーブルでは**キー/値**のペアを使います。 ハッシュ テーブルの詳細については、「[about_Hash_Tables (ハッシュ テーブルについて)](/powershell/module/microsoft.powershell.core/about/about_hash_tables)」をご覧ください。
+**FilterHashtable** には、Windows イベント ログから特定の情報を取得するためのフィルターとして、ハッシュ テーブルを指定できます。 ハッシュ テーブルでは、**キーと値**のペアを使用します。 ハッシュ テーブルの詳細については、「[about_Hash_Tables (ハッシュ テーブルについて)](/powershell/module/microsoft.powershell.core/about/about_hash_tables)」をご覧ください。
 
-**キー/値**のペアが同じ行に存在する場合は、それらをセミコロンで区切る必要があります。 **キー/値**のペアが別々の行に存在する場合は、セミコロンは必要ありません。 たとえば、この記事では**キー/値**ペアを別々の行に置き、セミコロンを使いません。
+**キーと値**のペアが同じ行に存在する場合は、それらをセミコロンで区切る必要があります。 **キーと値**のペアがそれぞれ別々の行に存在する場合は、セミコロンは必要ありません。 たとえば、この記事では**キーと値**のペアを別々の行に置き、セミコロンは使用しません。
 
-このサンプルでは、**FilterHashtable** パラメーターの **キー/値** ペアのいくつかを使います。 完成したクエリには、**LogName**、**ProviderName**、**Keywords**、**ID**、および **Level** が含まれます。
+このサンプルでは、**FilterHashtable** パラメーターの**キーと値**のペアのいくつかを使用します。 完成したクエリには、**LogName**、**ProviderName**、**Keywords**、**ID**、および **Level** が含まれます。
 
-指定できる**キー/値**のペアを次の表に示します。これらは、[Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
+適用できる**キーと値**のペアを次の表に示します。これらは、[Get-WinEvent](/powershell/module/microsoft.powershell.diagnostics/Get-WinEvent)
 **FilterHashtable** パラメーターのドキュメントに含まれています。
 
 キー名、データ型、およびデータ値に対してワイルドカード文字を指定できるかどうかを、次の表に示します。
@@ -62,9 +62,9 @@ Get-WinEvent -FilterHashtable @{
 | EndTime        | `<DateTime>`    | いいえ                           |
 | UserID         | `<SID>`         | いいえ                           |
 | データ           | `<String[]>`    | いいえ                           |
-| \<named-data\> | `<String[]>`    | いいえ                           |
+| `<named-data>` | `<String[]>`    | いいえ                           |
 
-\<named-data\> キーは、名前付きイベント データ フィールドを表します。 たとえば、Perflib イベント 1008 には次のイベント データを含めることができます。
+`<named-data>` キーは、名前付きイベント データ フィールドを表します。 たとえば、Perflib イベント 1008 には次のイベント データを含めることができます。
 
 ```xml
 <EventData>
@@ -80,11 +80,14 @@ Get-WinEvent -FilterHashtable @{
 Get-WinEvent -FilterHashtable @{LogName='Application'; 'Service'='Bits'}
 ```
 
+> [!NOTE]
+> PowerShell 6 では、`<named-data>` のクエリを実行する機能が追加されています。
+
 ## <a name="building-a-query-with-a-hash-table"></a>ハッシュ テーブルを使ったクエリの作成
 
-結果を確認して問題をトラブルシューティングするため、一度に 1 つの**キー/値**のペアのハッシュ テーブルを作成すると役立ちます。 クエリでは、**アプリケーション** ログからデータを取得します。 ハッシュ テーブルは `Get-WinEvent –LogName Application` に相当します。
+結果を確認して問題をトラブルシューティングするため、一度に 1 つの**キーと値**のペアのハッシュ テーブルを作成すると役立ちます。 クエリでは、**アプリケーション** ログからデータを取得します。 ハッシュ テーブルは `Get-WinEvent –LogName Application` に相当します。
 
-まず、`Get-WinEvent` クエリを作成します。 **FilterHashtable** パラメーターの**キー/値**のペアを使います。キーには **LogName** を、値には **Application** を指定します。
+まず、`Get-WinEvent` クエリを作成します。 **FilterHashtable** パラメーターの**キーと値**のペアを使います。キーには **LogName** を、値には **Application** を指定します。
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -96,7 +99,7 @@ Get-WinEvent -FilterHashtable @{
 
 ![[Windows イベント ビューアー] のソースの画像。](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
-ハッシュ テーブルを更新して、キーが **ProviderName、値が **.NET Runtime** である**キー/値**のペアを追加します。
+ハッシュ テーブルを更新して、キーが **ProviderName、値が **.NET Runtime** である**キーと値**のペアを含めます。
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -148,7 +151,7 @@ WdiContext       Property   static System.Diagnostics.Eventing.Reader.StandardEv
 WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEventKey…
 ```
 
-列挙値は **.NET Framework** でドキュメント化されています。 詳細については、[StandardEventKeywords 列挙型](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2)に関するページをご覧ください。
+列挙値は **.NET Framework** でドキュメント化されています。 詳細については、[StandardEventKeywords 列挙型](/dotnet/api/system.diagnostics.eventing.reader.standardeventkeywords?redirectedfrom=MSDN&view=netframework-4.7.2)に関するページをご覧ください。
 
 **Keywords** の名前と列挙値は次のようになります。
 
@@ -164,7 +167,7 @@ WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEv
 | ResponseTime     | 281474976710656   |
 | None             | 0                 |
 
-ハッシュ テーブルを更新し、キー **Keywords** と **EventLogClassic** の列挙値 **36028797018963968** を使った**キー/値**のペアを追加します。
+ハッシュ テーブルを更新し、キーが **Keywords**、**EventLogClassic** の列挙値が **36028797018963968** である**キーと値**のペアを含めます。
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -194,7 +197,7 @@ Get-WinEvent -FilterHashtable @{
 
 より具体的なデータを取得するために、クエリの結果を**イベント ID** でフィルター処理します。**イベント ID** は、ハッシュ テーブルではキー **ID** として参照され、その値は特定の**イベント ID** です。**イベント ID** は **[Windows イベント ビューアー]** で表示されます。この例では、**イベント ID 1023** を使います。
 
-ハッシュ テーブルを更新して、キーが **ID**、値が **1023** である**キー/値**のペアを追加します。
+ハッシュ テーブルを更新して、キーが **ID**、値が **1023** である**キーと値**のペアを含めます。
 
 ```powershell
 Get-WinEvent -FilterHashtable @{
@@ -229,7 +232,7 @@ Verbose       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEventLevel Warning {get;}
 ```
 
-列挙値は **.NET Framework** でドキュメント化されています。 詳細については、[StandardEventLevel 列挙型](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2)に関するページをご覧ください。
+列挙値は **.NET Framework** でドキュメント化されています。 詳細については、[StandardEventLevel 列挙型](/dotnet/api/system.diagnostics.eventing.reader.standardeventlevel?redirectedfrom=MSDN&view=netframework-4.7.2)に関するページをご覧ください。
 
 **Level** キーの名前と列挙値は次のようになります。
 
