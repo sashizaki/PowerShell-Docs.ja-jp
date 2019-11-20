@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell ISE の操作
-ms.openlocfilehash: 8c47e236e2e345a887fc3af281e429f440e176ff
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.openlocfilehash: 7949b690cda73148f07922985b1fc30fe1e8b2d0
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67031032"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117443"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Windows PowerShell ISE の操作
 
@@ -18,7 +18,7 @@ Windows PowerShell® Integrated Scripting Environment (ISE) を使用すると�
 
 ## <a name="menu-bar"></a>メニュー バー
 
-メニュー バーには、 **[ファイル]** 、 **[編集]** 、 **[表示]** 、 **[ツール]** 、 **[デバッグ]** 、 **[アドオン]** 、 **[ヘルプ]** の各メニューがあります。 メニューのボタンを使用すると、スクリプトの記述と実行、および Windows PowerShell ISE でのコマンドの実行に関連したタスクを実行できます。 さらに、[ISE オブジェクト モデルの階層](../../core-powershell/ise/The-ISE-Object-Model-Hierarchy.md)を使用するスクリプトを実行して、[アドオン ツール](../../core-powershell/ise/The-ISEAddOnTool-Object.md)をメニュー バーに配置することもできます。
+メニュー バーには、 **[ファイル]** 、 **[編集]** 、 **[表示]** 、 **[ツール]** 、 **[デバッグ]** 、 **[アドオン]** 、 **[ヘルプ]** の各メニューがあります。 メニューのボタンを使用すると、スクリプトの記述と実行、および Windows PowerShell ISE でのコマンドの実行に関連したタスクを実行できます。 さらに、[ISE オブジェクト モデルの階層](object-model/The-ISE-Object-Model-Hierarchy.md)を使用するスクリプトを実行して、[アドオン ツール](object-model/The-ISEAddOnTool-Object.md)をメニュー バーに配置することもできます。
 
 > [!NOTE]
 > Windows PowerShell ISE 2.0 には、 **[ツール]** と **[アドオン]** メニューはありませんでした。
@@ -83,4 +83,4 @@ Windows PowerShell ISE のヘルプは、Web 上の TechNet ライブラリで�
 
 ## <a name="see-also"></a>参照
 
-- [Windows PowerShell ISE の紹介](../../core-powershell/ise/Introducing-the-Windows-PowerShell-ISE.md)
+- [Windows PowerShell ISE の紹介](Introducing-the-Windows-PowerShell-ISE.md)
