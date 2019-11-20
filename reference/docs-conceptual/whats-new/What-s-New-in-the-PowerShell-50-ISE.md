@@ -2,12 +2,12 @@
 ms.date: 09/06/2019
 keywords: PowerShell, コマンドレット
 title: PowerShell 5.0 ISE の新機能
-ms.openlocfilehash: a719baef0da1600f0a5377e1b72c81b67e37eef2
-ms.sourcegitcommit: a74ae7ed089301992fed201fbe55d827a622afa0
+ms.openlocfilehash: f687c409a1a4b0e6b872863e9f132f7cf5baff20
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/06/2019
-ms.locfileid: "70746220"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117519"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Windows PowerShell 5.0 ISE の新機能
 
@@ -201,4 +201,4 @@ Windows PowerShell スクリプトで `Show-Command` を使用すると、ユー
 
 ## <a name="see-also"></a>関連項目
 
-Windows PowerShell ISE の使い方の詳細については、「[Windows PowerShell Integrated Scripting Environment の探索](../getting-started/fundamental/exploring-the-windows-powershell-ise.md)」を参照してください。
+Windows PowerShell ISE の使い方の詳細については、「[Windows PowerShell Integrated Scripting Environment の探索](../components/ise/exploring-the-windows-powershell-ise.md)」を参照してください。
