@@ -2,12 +2,12 @@
 title: Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法
 description: Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法
 ms.date: 08/06/2018
-ms.openlocfilehash: 983da850c13d72bcdc7b2d33970c6e9e06b3d869
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.openlocfilehash: d5542e9a3a48b1ae64356309be669418edf6c79e
+ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62058524"
+ms.lasthandoff: 11/15/2019
+ms.locfileid: "74117493"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法
 
@@ -27,12 +27,29 @@ VSCode 用の PowerShell 拡張機能は PowerShell ISE と完全に同等の機
 
 VSCode でも[独自のキー バインドを構成](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)できます。
 
+## <a name="simplified-ise-like-ui"></a>簡素化された ISE のような UI
+
+Visual Studio Code の UI を簡素化して ISE の UI により近づけたい場合は、次の 2 つの設定を適用します。
+
+```json
+"workbench.activityBar.visible": false,
+"debug.openDebug": "neverOpen",
+```
+
+これにより、次の赤いボックス内にある "アクティビティ バー" と "デバッグ サイド バー" のセクションが非表示になります。
+
+![強調表示されたセクションにはアクティビティ バーとデバッグ サイド バーが含まれている](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+
+最終的な結果は次のようになります。
+
+![VS Code の簡素化されたビュー](images/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
+
 ## <a name="tab-completion"></a>Tab 補完機能
 
 さらに ISE に似たタブ補完を有効にするには、次の設定を追加します。
 
 ```json
-"editor.tabCompletion": "on"
+"editor.tabCompletion": "on",
 ```
 
 > [!NOTE]
@@ -64,7 +81,7 @@ VSCode でも[独自のキー バインドを構成](https://code.visualstudio.c
 新規/無題のファイルを作成するには、既定で PowerShell として登録します。
 
 ```json
-"files.defaultLanguage": "powershell"
+"files.defaultLanguage": "powershell",
 ```
 
 ## <a name="color-scheme"></a>配色
@@ -77,7 +94,7 @@ VSCode でも[独自のキー バインドを構成](https://code.visualstudio.c
 このテーマは、次のように設定で指定できます。
 
 ```json
-"workbench.colorTheme": "PowerShell ISE"
+"workbench.colorTheme": "PowerShell ISE",
 ```
 
 ## <a name="powershell-command-explorer"></a>PowerShell コマンド エクスプローラー
