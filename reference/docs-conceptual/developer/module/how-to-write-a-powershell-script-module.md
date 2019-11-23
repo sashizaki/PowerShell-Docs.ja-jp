@@ -1,35 +1,40 @@
 ---
-title: PowerShell スクリプトモジュールを記述する方法 |Microsoft Docs
+title: How to Write a PowerShell Script Module | Microsoft Docs
 ms.custom: ''
-ms.date: 09/13/2016
+ms.date: 11/21/2019
 ms.reviewer: ''
 ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ed7645ea-5e52-4a45-81a7-aa3c2d605cde
 caps.latest.revision: 16
-ms.openlocfilehash: b2a929a1724f77f0516ad24cfd90f6d6053ed19e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 7742eedd67283535b9e5898adc74d0d48faf68fe
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72360691"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416267"
 ---
 # <a name="how-to-write-a-powershell-script-module"></a>PowerShell スクリプト モジュールを記述する方法
 
-スクリプトモジュールは、基本的には hbase-runner.psm1 拡張子で保存された有効な PowerShell スクリプトです。 この拡張機能により、PowerShell エンジンは、ファイルで多数の規則とコマンドレットを使用できるようになります。 これらの機能のほとんどは、他のシステムにコードをインストールしたり、スコープを管理したりできるようにするために用意されています。 モジュールマニフェストファイルを使用することもできます。これにより、さらに複雑なインストールとソリューションを記述できます。
+A script module is any valid PowerShell script saved in a `.psm1` extension. This extension allows the PowerShell engine to use rules and module cmdlets on your file. Most of these capabilities are there to help you install your code on other systems, as well as manage scoping. You can also use a module manifest file, which describes more complex installations and solutions.
 
-## <a name="writing-a-powershell-script-module"></a>PowerShell スクリプトモジュールの作成
+## <a name="writing-a-powershell-script-module"></a>Writing a PowerShell script module
 
-スクリプトモジュールを作成するには、有効な PowerShell スクリプトを hbase-runner.psm1 ファイルに保存し、そのファイルを PowerShell が検出できる場所にあるディレクトリに保存します。 このフォルダーには、スクリプトを実行するために必要なリソースと、PowerShell に記述されているモジュールの動作を示すマニフェストファイルを配置することもできます。
+To create a script module, save a valid PowerShell script to a `.psm1` file. The script and the directory where it's stored must use the same name. For example, a script named `MyPsScript.psm1` is stored in a directory named `MyPsScript`.
 
-#### <a name="to-create-a-basic-powershell-module"></a>基本的な PowerShell モジュールを作成するには
+The module's directory needs to be in a path specified in `$env:PSModulePath`. The module's directory can contain any resources that are needed to run the script, and a module manifest file that describes to PowerShell how your module works.
 
-1. 既存の PowerShell スクリプトを取得し、hbase-runner.psm1 拡張子を付けてスクリプトを保存します。
+## <a name="create-a-basic-powershell-module"></a>Create a basic PowerShell module
 
-   Hbase-runner.psm1 拡張子を使用してスクリプトを保存すると、モジュールのコマンドレット (モジュールの[インポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module)など) を使用できることになります。 これらのコマンドレットは主に、他のユーザーのシステムに簡単にコードをインポートしてエクスポートできるようにするために用意されています。 (代替ソリューションとしては、他のシステムでコードを読み込んでから、そのコードをアクティブメモリにドットソースします。これは、特にスケーラブルなソリューションではありません)。詳細については、「 [Windows PowerShell モジュール](./understanding-a-windows-powershell-module.md)」の「**モジュールのコマンドレットと変数**」セクションを参照してください。既定では、hbase-runner.psm1 ファイルをインポートしたユーザーはスクリプト内のすべての関数にアクセスできますが、プロパティは使用できません。
+The following steps describe how to create a PowerShell module.
 
-   PowerShell スクリプトの例 (@no__t 0) は、このトピックの最後にあります。
+1. Save a PowerShell script with a `.psm1` extension. Use the same name for the script and the directory where the script is saved.
+
+   Saving a script with the `.psm1` extension means that you can use the module cmdlets, such as [Import-Module](/powershell/module/Microsoft.PowerShell.Core/Import-Module). The module cmdlets exist primarily so that you can import and export your code onto other user's systems. The alternate solution would be to load your code on other systems and then dot-source it into active memory, which isn't a scalable solution. For more information, see [Understanding a Windows PowerShell Module](./understanding-a-windows-powershell-module.md#module-cmdlets-and-variables).
+   By default, when users import your `.psm1` file, all functions in your script are accessible, but variables aren't.
+
+   An example PowerShell script, entitled `Show-Calendar`, is available at the end of this article.
 
    ```powershell
    function Show-Calendar {
@@ -45,9 +50,9 @@ ms.locfileid: "72360691"
    }
    ```
 
-2. 特定の関数またはプロパティへのユーザーのアクセスを制御するには、スクリプトの最後に[export-modulemember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember)を呼び出します。
+2. To control user access to certain functions or variables, call [Export-ModuleMember](/powershell/module/Microsoft.PowerShell.Core/Export-ModuleMember) at the end of your script.
 
-   ページの下部にあるコード例には、既定で公開される関数が1つだけあります。 ただし、次のコードに示すように、公開する関数を明示的に呼び出すことをお勧めします。
+   The example code at the bottom of the article has only one function, which by default would be exposed. However, it's recommended you explicitly call out which functions you wish to expose, as described in the following code:
 
    ```powershell
    function Show-Calendar {
@@ -55,37 +60,38 @@ ms.locfileid: "72360691"
    Export-ModuleMember -Function Show-Calendar
    ```
 
-   モジュールマニフェストを使用してインポートされる内容を制限することもできます。 詳細については、「 [Powershell モジュールをインポート](./importing-a-powershell-module.md)する」および「 [powershell モジュールマニフェストを記述する方法](./how-to-write-a-powershell-module-manifest.md)」を参照してください。
+   You can restrict what's imported using a module manifest. For more information, see [Importing a PowerShell Module](./importing-a-powershell-module.md) and [How to Write a PowerShell Module Manifest](./how-to-write-a-powershell-module-manifest.md).
 
-3. 独自のモジュールで読み込む必要があるモジュールがある場合は、独自のモジュールの上部にある `Import-Module` を呼び出すことによって使用できます。
+3. If you have modules that your own module needs to load, you can use `Import-Module`, at the top of your module.
 
-   `Import-Module` は、対象となるモジュールをシステムにインポートするコマンドレットです。 このため、独自のモジュールをインストールする手順の後の段階でも使用されます。 このページの下部にあるサンプルコードでは、インポートモジュールは使用されません。 使用されていた場合は、次のコードに示すように、ファイルの先頭に一覧表示されます。
+   The `Import-Module` cmdlet imports a targeted module onto a system, and can be used at a later point in the procedure to install your own module. The sample code at the bottom of this article doesn't use any import modules. But if it did, they would be listed at the top of the file, as shown in the following code:
 
    ```powershell
    Import-Module GenericModule
    ```
 
-4. PowerShell ヘルプシステムにモジュールを記述するには、ファイル内で標準のヘルプコメントを使用するか、追加のヘルプファイルを作成します。
+4. To describe your module to the PowerShell Help system, you can either use standard help comments inside the file, or create an additional Help file.
 
-   このトピックの下部にあるコードサンプルには、コメントのヘルプ情報が含まれています。 また、追加のヘルプコンテンツを含む拡張 XML ファイルを作成することもできます。 詳細については、「 [Windows PowerShell モジュールのヘルプの作成](./writing-help-for-windows-powershell-modules.md)」を参照してください。
+   The code sample at the bottom of this article includes the help information in the comments. You could also write expanded XML files that contain additional help content. For more information, see [Writing Help for Windows PowerShell Modules](./writing-help-for-windows-powershell-modules.md).
 
-5. モジュールと共にパッケージ化する追加のモジュール、XML ファイル、またはその他のコンテンツがある場合は、モジュールマニフェストを使用して実行できます。
+5. If you have additional modules, XML files, or other content you want to package with your module, you can use a module manifest.
 
-   モジュールマニフェストは、他のモジュールの名前、ディレクトリレイアウト、バージョン管理番号、作成者データ、およびその他の情報を含むファイルです。 PowerShell では、モジュールマニフェストファイルを使用して、ソリューションの編成とデプロイを行います。 ただし、この例では比較的単純な性質があるため、マニフェストファイルは必要ありませんでした。 詳細については、「[モジュールマニフェスト](./how-to-write-a-powershell-module-manifest.md)」を参照してください。
+   A module manifest is a file that contains the names of other modules, directory layouts, versioning numbers, author data, and other pieces of information. PowerShell uses the module manifest file to organize and deploy your solution. For more information, see [How to write a PowerShell module manifest](./how-to-write-a-powershell-module-manifest.md).
 
-6. モジュールをインストールして実行するには、適切な PowerShell パスのいずれかにモジュールを保存し、`Import-Module` を呼び出します。
+6. To install and run your module, save the module to one of the appropriate PowerShell paths, and use `Import-Module`.
 
-   モジュールをインストールできるパスは、@no__t 0 のグローバル変数に格納されています。 たとえば、システムにモジュールを保存するための一般的なパスは、0 @no__t になります。 Hbase-runner.psm1 ファイルである場合でも、モジュールが存在するフォルダーを必ず作成してください。 これらのパスのいずれかにモジュールを保存しなかった場合は、`Import-Module` への呼び出しでモジュールの場所を渡す必要があります。 (それ以外の場合、PowerShell はそれを見つけることができません)。PowerShell 3.0 以降では、いずれかの PowerShell モジュールパスにモジュールを配置した場合、明示的にインポートする必要はありません。 ユーザーが関数を呼び出したときに、モジュールが自動的に読み込まれます。
-   モジュールパスの詳細については、「PowerShell モジュールと[PSModulePath 環境変数](./modifying-the-psmodulepath-installation-path.md)[のインポート](./importing-a-powershell-module.md)」を参照してください。
+   The paths where you can install your module are located in the `$env:PSModulePath` global variable. For example, a common path to save a module on a system would be `%SystemRoot%/users/<user>/Documents/PowerShell/Modules/<moduleName>`. Be sure to create a directory for your module that uses the same name as the script module, even if it's only a single `.psm1` file. If you didn't save your module to one of these paths, you would have to specify the module's location in the `Import-Module` command. Otherwise, PowerShell wouldn't be able to find the module.
 
-7. アクティブなサービスからモジュールを削除するには、モジュールの[削除](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)を呼び出します。
+   Starting with PowerShell 3.0, if you've placed your module in one of the PowerShell module paths, you don't need to explicitly import it. Your module is automatically loaded when a user calls your function. For more information about the module path, see [Importing a PowerShell Module](./importing-a-powershell-module.md) and [Modifying the PSModulePath Installation Path](./modifying-the-psmodulepath-installation-path.md).
 
-   モジュールは、モジュールファイルを保存した場所から削除するのではなく、アクティブなメモリからモジュールを[削除すること](/powershell/module/Microsoft.PowerShell.Core/Remove-Module)に注意してください。
+7. To remove a module from active service in the current PowerShell session, use [Remove-Module](/powershell/module/Microsoft.PowerShell.Core/Remove-Module).
 
-### <a name="show-calendar-code-example"></a>カレンダーのコード例の表示
+   > [!NOTE]
+   > `Remove-Module` removes a module from the current PowerShell session, but doesn't uninstall the module or delete the module's files.
 
-次の例は、`Show-Calendar` という名前の単一の関数を含む単純なスクリプトモジュールです。
-この関数は、カレンダーの視覚的な表現を表示します。 また、このサンプルには、概要、説明、パラメーター値、および例の PowerShell ヘルプ文字列が含まれています。 コードの最後の行では、モジュールをインポートするときに、@no__t 0 関数がモジュールメンバーとしてエクスポートされることに注意してください。
+## <a name="show-calendar-code-example"></a>Show-Calendar code example
+
+The following example is a script module that contains a single function named `Show-Calendar`. This function displays a visual representation of a calendar. The sample contains the PowerShell Help strings for the synopsis, description, parameter values, and code. When the module is imported, the `Export-ModuleMember` command ensures that the `Show-Calendar` function is exported as a module member.
 
 ```powershell
 <#

@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 (C#) コードサンプル |Microsoft Docs
+title: RunSpace03 (C#) Code Sample | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,27 +8,27 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9ac8ab99-1856-4d6f-b30d-c0a18b8dd1fc
 caps.latest.revision: 6
-ms.openlocfilehash: 49911f2779110c04c0e89f09fdf76ee9cd930edb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 06b5a06ae20a4bbb2c58eaa1776700aa8f80555c
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72360211"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416070"
 ---
 # <a name="runspace03-c-code-sample"></a>RunSpace03 (C#) コード サンプル
 
-「指定さC#れたスクリプトを実行するコンソールアプリケーションの作成」で説明されているコンソールアプリケーションのソースコードを次に示します。 このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、スクリプトに渡されたプロセス名のリストを使用してプロセス情報を取得するスクリプトを実行します。 この例では、入力オブジェクトをスクリプトに渡す方法と、エラーオブジェクトおよび出力オブジェクトを取得する方法を示します。
+Here is the C# source code for the console application described in "Creating a Console Application That Runs a Specified Script". This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that retrieves process information by using the list of process names passed into the script. It shows how to pass input objects to a script and how to retrieve error objects as well as the output objects.
 
 > [!NOTE]
-> このサンプルのC#ソースファイル (runspace03.cs) をダウンロードするには、Microsoft Windows Software Development Kit For windows Vista および Microsoft .NET Framework 3.0 Runtime Components を使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)」を参照してください。
-> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
+> You can download the C# source file (runspace03.cs) for this sample using the Microsoft Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>Code Sample
 
 [!code-csharp[Runspace03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace03/Runspace03.cs#L11-L88 "Runspace03.cs")]
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

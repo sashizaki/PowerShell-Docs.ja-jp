@@ -1,5 +1,5 @@
 ---
-title: Windows PowerShell プロパティプロバイダーを作成する |Microsoft Docs
+title: Creating a Windows PowerShell Property Provider | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -11,131 +11,131 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], property provider
 ms.assetid: a6adca44-b94b-4103-9970-a9b414355e60
 caps.latest.revision: 5
-ms.openlocfilehash: c36b93a5b4d3e7ef92d7f5b16381a8def2dd5466
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 9197f5635528e0f52cd08adde1c6bd69467725e8
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72360481"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417465"
 ---
 # <a name="creating-a-windows-powershell-property-provider"></a>Windows PowerShell プロパティ プロバイダーを作成する
 
-このトピックでは、ユーザーがデータストア内の項目のプロパティを操作できるようにするプロバイダーを作成する方法について説明します。 その結果、この種類のプロバイダーは、Windows PowerShell プロパティプロバイダーと呼ばれます。 たとえば、Windows PowerShell によって提供されるレジストリプロバイダーは、レジストリキーの値をレジストリキー項目のプロパティとして処理します。 この種類のプロバイダーは、 [Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)インターフェイスを .net クラスの実装に追加する必要があります。
+This topic describes how to create a provider that enables the user to manipulate the properties of items in a data store. As a consequence, this type of provider is referred to as a Windows PowerShell property provider. For example, the Registry provider provided by Windows PowerShell handles registry key values as properties of the registry key item. This type of provider must add the [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interface to the implementation of the .NET class.
 
 > [!NOTE]
-> Windows PowerShell には、Windows PowerShell プロバイダーの開発に使用できるテンプレートファイルが用意されています。 TemplateProvider.cs ファイルは、Microsoft Windows Software Development Kit for Windows Vista および .NET Framework 3.0 ランタイムコンポーネントで使用できます。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)」を参照してください。
+> Windows PowerShell provides a template file that you can use to develop a Windows PowerShell provider. The TemplateProvider.cs file is available on the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> ダウンロードしたテンプレートは、 **\<PowerShell Samples >** ディレクトリにあります。 このファイルのコピーを作成し、新しい Windows PowerShell プロバイダーを作成するためにコピーを使用して、不要な機能を削除する必要があります。
+> The downloaded template is available in the **\<PowerShell Samples>** directory. You should make a copy of this file and use the copy for creating a new Windows PowerShell provider, removing any functionality that you do not need.
 >
-> その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。
+> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
 
 > [!CAUTION]
-> プロパティプロバイダーのメソッドは、System........................ [Writepropertyobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject)メソッドを使用してオブジェクトを書き込む必要があります。
+> The methods of your property provider should write any objects using the [System.Management.Automation.Provider.Cmdletprovider.Writepropertyobject*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WritePropertyObject) method.
 
-## <a name="defining-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーの定義
+## <a name="defining-the-windows-powershell-provider"></a>Defining the Windows PowerShell provider
 
-プロパティプロバイダーは、 [Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)インターフェイスをサポートする .net クラスを作成する必要があります。 Windows PowerShell によって提供される TemplateProvider.cs ファイルの既定のクラス宣言を次に示します。
+A property provider must create a .NET class that supports the [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interface. Here is the default class declaration from the TemplateProvider.cs file provided by Windows PowerShell.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyproviderclassdeclaration](Msh_samplestestcmdlets#testcmdletspropertyproviderclassdeclaration)]  -->
 
-## <a name="defining-base-functionality"></a>基本機能の定義
+## <a name="defining-base-functionality"></a>Defining Base Functionality
 
-[System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)インターフェイスは、Drivecmdletprovider クラスを除き、どのプロバイダーの基底クラスにもアタッチできます。このインターフェイスには、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスが含まれています。 使用する基本クラスに必要な基本機能を追加します。 基本クラスの詳細については、「 [Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。
+The [System.Management.Automation.Provider.Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider) interface can be attached to any of the provider base classes, with the exception of the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) class. Add the base functionality that is required by the base class you are using. For more information about base classes, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
 
-## <a name="retrieving-properties"></a>取得 (プロパティを)
+## <a name="retrieving-properties"></a>Retrieving Properties
 
-プロパティを取得するには、プロバイダーが[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)メソッドを実装して、`Get-ItemProperty` コマンドレットからの呼び出しをサポートする必要があります。 このメソッドは、指定されたプロバイダー内部パス (完全修飾) にある項目のプロパティを取得します。
+To retrieve properties, the provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) method to support calls from the `Get-ItemProperty` cmdlet. This method retrieves the properties of the item located at the specified provider-internal path (fully-qualified).
 
-@No__t_0 パラメーターは、取得するプロパティを示します。 このパラメーターが `null` または空の場合、メソッドはすべてのプロパティを取得する必要があります。 さらに、 [Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)は、取得されたプロパティのプロパティバッグを表す、 [system.servicemodel オブジェクトの](/dotnet/api/System.Management.Automation.PSObject)インスタンスを書き込んでいることを意味しています。 メソッドは何も返しません。
+The `providerSpecificPickList` parameter indicates which properties to retrieve. If this parameter is `null` or empty, the method should retrieve all properties. In addition, [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) writes an instance of a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object that represents a property bag of the retrieved properties. The method should return nothing.
 
-[Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)の実装では、選択リストの各要素に対して、プロパティ名のワイルドカード展開がサポートされていることをお勧めします。 これを行うには、 [Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern)クラスを使用して、ワイルドカードのパターンマッチングを実行します。
+It is recommended that the implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) supports the wildcard expansion of property names for each element in the pick list. To do this, use the [System.Management.Automation.Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) class to perform the wildcard pattern matching.
 
-Windows PowerShell によって提供される TemplateProvider.cs ファイルからの[Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)の既定の実装を次に示します。
+Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) from the TemplateProvider.cs file provided by Windows PowerShell.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidergetproperty](Msh_samplestestcmdlets#testcmdletspropertyprovidergetproperty)]  -->
 
-#### <a name="things-to-remember-about-implementing-getproperty"></a>GetProperty の実装に関する注意事項
+#### <a name="things-to-remember-about-implementing-getproperty"></a>Things to Remember About Implementing GetProperty
 
-[Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)の実装には、次の条件が当てはまる場合があります。
+The following conditions may apply to your implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty):
 
-- プロバイダークラスを定義すると、Windows PowerShell プロパティプロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合、 [Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)メソッドの実装では、メソッドに渡されるパスが、指定された機能の要件を満たしていることを確認する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 ["..](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
+- When defining the provider class, a Windows PowerShell property provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of the [System.Management.Automation.Provider.Ipropertycmdletprovider.Getproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty) method needs to ensure that the path passed to the method meets the requirements of the specified capabilities. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- 既定では、このメソッドのオーバーライドでは、ユーザーに表示されないオブジェクトのリーダーを取得しないでください。この場合、 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティが `true` に設定されている必要があります。 パスが、ユーザーおよびシステムから非表示になっている項目を表している場合は、エラーを書き込む必要があります。 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)を `false` に設定します。
+- By default, overrides of this method should not retrieve a reader for objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be written if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
-## <a name="attaching-dynamic-parameters-to-the-get-itemproperty-cmdlet"></a>Get-itemproperty コマンドレットへの動的パラメーターのアタッチ
+## <a name="attaching-dynamic-parameters-to-the-get-itemproperty-cmdlet"></a>Attaching Dynamic Parameters to the Get-ItemProperty Cmdlet
 
-@No__t_0 コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell プロパティプロバイダーで[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters)メソッドを実装する必要があります。 @No__t_0 パラメーターは、完全修飾プロバイダーの内部パスを示します。一方、`providerSpecificPickList` パラメーターは、コマンドラインで入力されたプロバイダー固有のプロパティを指定します。 プロパティがコマンドレットにパイプされている場合、このパラメーターは `null` または空になることがあります。 この場合、このメソッドは、コマンドレットクラスまたは system.servicemodel 型の[Parameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクトと同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、コマンドレットにパラメーターを追加します。
+The `Get-ItemProperty` cmdlet might require additional parameters that are specified dynamically at runtime. To provide these dynamic parameters, the Windows PowerShell property provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Getpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) method. The `path` parameter indicates a fully-qualified provider-internal path, while the `providerSpecificPickList` parameter specifies the provider-specific properties entered on the command line. This parameter might be `null` or empty if the properties are piped to the cmdlet. In this case, this method returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The Windows PowerShell runtime uses the returned object to add the parameters to the cmdlet.
 
-ここでは、Windows PowerShell によって提供される TemplateProvider.cs ファイルからの[Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters)の既定の実装を示します。
+Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) from the TemplateProvider.cs file provided by Windows PowerShell.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidergetpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyprovidergetpropertydynamicparameters)]  -->
 
-## <a name="setting-properties"></a>設定のプロパティ
+## <a name="setting-properties"></a>Setting Properties
 
-プロパティを設定するには、Windows PowerShell プロパティプロバイダーが[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッドを実装して、`Set-ItemProperty` コマンドレットからの呼び出しをサポートする必要があります。 このメソッドは、指定されたパスにある項目の1つ以上のプロパティを設定し、必要に応じて、指定されたプロパティを上書きします。 また、 [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)は、更新されたプロパティのプロパティバッグを表す、system.servicemodel[オブジェクトの](/dotnet/api/System.Management.Automation.PSObject)インスタンスも書き込みます。このオブジェクトは、更新されたプロパティのプロパティバッグを表します。
+To set properties, the Windows PowerShell property provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method to support calls from the `Set-ItemProperty` cmdlet. This method sets one or more properties of the item at the specified path, and overwrites the supplied properties as required. [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) also writes an instance of a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object that represents a property bag of the updated properties.
 
-ここでは、Windows PowerShell によって提供される TemplateProvider.cs ファイルからの[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)の既定の実装を示します。
+Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) from the TemplateProvider.cs file provided by Windows PowerShell.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidersetproperty](Msh_samplestestcmdlets#testcmdletspropertyprovidersetproperty)]  -->
 
-#### <a name="things-to-remember-about-implementing-set-itemproperty"></a>Get-itemproperty の実装に関する注意事項
+#### <a name="things-to-remember-about-implementing-set-itemproperty"></a>Things to Remember About Implementing Set-ItemProperty
 
-[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)の実装には、次の条件が当てはまる場合があります。
+The following conditions may apply to an implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty):
 
-- プロバイダークラスを定義すると、Windows PowerShell プロパティプロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合は、 [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッドを実装することで、メソッドに渡されるパスが指定された機能の要件を満たしていることを確認する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 ["..](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
+- When defining the provider class, a Windows PowerShell property provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method must ensure that the path passed to the method meets the requirements of the specified capabilities. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- 既定では、このメソッドのオーバーライドでは、ユーザーに表示されないオブジェクトのリーダーを取得しないでください。この場合、 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティが `true` に設定されている必要があります。 パスが、ユーザーおよびシステムから非表示になっている項目を表している場合は、エラーを書き込む必要があります。 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)を `false` に設定します。
+- By default, overrides of this method should not retrieve a reader for objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be written if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
-- [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッドを実装する場合は、system.object を呼び出し、戻り値を確認する必要があります。このメソッドの戻り値を確認し[ます。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)データストアに変更を加える前。 このメソッドは、ファイル名の変更など、システム状態が変更されたときの操作の実行を確認するために使用されます。 Windows PowerShell ランタイムを使用して、変更するリソースの名前をユーザー[に送信し](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)ます。また、コマンドライン設定またはユーザー設定変数を処理するかどうかを指定します。が表示されます。
+- Your implementation of the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to system state, for example, renaming files. [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sends the name of the resource to be changed to the user, with the Windows PowerShell runtime and handling any command-line settings or preference variables in determining what should be displayed.
 
-  @No__t_1[が返され](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)た後に、危険性の高いシステム変更を行うことができる場合は、の[ようになります。Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッド[は、system.servicemodel メソッドを呼び](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)出す必要があります。このメソッドは、...................... このメソッドは、ユーザーに確認メッセージを送信して、操作を続行する必要があることを示す追加のフィードバックを許可します。
+  After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, if potentially dangerous system modifications can be made, the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a confirmation message to the user to allow additional feedback to indicate that the operation should be continued.
 
-## <a name="attaching-dynamic-parameters-for-the-set-itemproperty-cmdlet"></a>Get-itemproperty コマンドレットの動的パラメーターのアタッチ
+## <a name="attaching-dynamic-parameters-for-the-set-itemproperty-cmdlet"></a>Attaching Dynamic Parameters for the Set-ItemProperty Cmdlet
 
-@No__t_0 コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell プロパティプロバイダーで[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters)メソッドを実装する必要があります。 このメソッドは、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 動的パラメーターを追加する必要がない場合は、`null` 値を返すことができます。
+The `Set-ItemProperty` cmdlet might require additional parameters that are specified dynamically at runtime. To provide these dynamic parameters, the Windows PowerShell property provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Setpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters) method. This method returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The `null` value can be returned if no dynamic parameters are to be added.
 
-ここでは、Windows PowerShell によって提供される TemplateProvider.cs ファイルからの[Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters)の既定の実装を示します。
+Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Getpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters) from the TemplateProvider.cs file provided by Windows PowerShell.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyprovidersetpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyprovidersetpropertydynamicparameters)]  -->
 
-## <a name="clearing-properties"></a>プロパティのクリア
+## <a name="clearing-properties"></a>Clearing Properties
 
-プロパティをクリアするには、Windows PowerShell プロパティプロバイダーが[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)メソッドを実装して、`Clear-ItemProperty` コマンドレットからの呼び出しをサポートする必要があります。 このメソッドは、指定されたパスにある項目の1つ以上のプロパティを設定します。
+To clear properties, the Windows PowerShell property provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) method to support calls from the `Clear-ItemProperty` cmdlet. This method sets one or more properties for the item located at the specified path.
 
-Windows PowerShell によって提供される TemplateProvider.cs ファイルの[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)の既定の実装を次に示します。
+Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) from the TemplateProvider.cs file provided by Windows PowerShell.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyproviderclearproperty](Msh_samplestestcmdlets#testcmdletspropertyproviderclearproperty)]  -->
 
-#### <a name="thing-to-remember-about-implementing-clearproperty"></a>ClearProperty の実装について覚えておくべきこと
+#### <a name="thing-to-remember-about-implementing-clearproperty"></a>Thing to Remember About Implementing ClearProperty
 
-[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)の実装には、次の条件が当てはまる場合があります。
+The following conditions may apply to your implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty):
 
-- プロバイダークラスを定義すると、Windows PowerShell プロパティプロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合、 [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)メソッドを実装するには、メソッドに渡されるパスが、指定された機能の要件を満たしていることを確認する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 ["..](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
+- When defining the provider class, a Windows PowerShell property provider might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In these cases, the implementation of the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) method needs to ensure that the path passed to the method meets the requirements of the specified capabilities. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) and [System.Management.Automation.Provider.Cmdletprovider.Include*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) properties.
 
-- 既定では、このメソッドのオーバーライドでは、ユーザーに表示されないオブジェクトのリーダーを取得しないでください。この場合、 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティが `true` に設定されている必要があります。 パスが、ユーザーおよびシステムから非表示になっている項目を表している場合は、エラーを書き込む必要があります。 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)を `false` に設定します。
+- By default, overrides of this method should not retrieve a reader for objects that are hidden from the user unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. An error should be written if the path represents an item that is hidden from the user and [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) is set to `false`.
 
-- [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)メソッドを実装するには、system.object を呼び出して、戻り値を確認する必要があります。このメソッドの戻り値を確認し[ます。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)データストアに変更を加える前。 このメソッドは、コンテンツのクリアなど、システム状態が変更される前に操作の実行を確認するために使用されます。 Windows PowerShell ランタイムでは、変更するリソースの名前をユーザーに送信します。 Windows PowerShell ランタイムでは、コマンドライン設定またはユーザー設定変数を考慮に[入れます。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)表示される内容。
+- Your implementation of the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and verify its return value before making any changes to the data store. This method is used to confirm execution of an operation before a change is made to system state, such as clearing content. [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking into account any command line settings or preference variables in determining what should be displayed.
 
-  @No__t_1[が返され](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)た後に、危険性の高いシステム変更を行うことができる場合は、の[ようになります。Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)メソッド[は、system.servicemodel メソッドを呼び](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)出す必要があります。このメソッドは、"..................... このメソッドは、ユーザーに確認メッセージを送信して、危険な可能性のある操作を続行する必要があることを示す追加のフィードバックを許可します。
+  After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, if potentially dangerous system modifications can be made, the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearproperty*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a confirmation message to the user to allow additional feedback to indicate that the potentially dangerous operation should be continued.
 
-## <a name="attaching-dynamic-parameters-to-the-clear-itemproperty-cmdlet"></a>動的パラメーターを Get-itemproperty コマンドレットにアタッチする
+## <a name="attaching-dynamic-parameters-to-the-clear-itemproperty-cmdlet"></a>Attaching Dynamic Parameters to the Clear-ItemProperty Cmdlet
 
-@No__t_0 コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell プロパティプロバイダーで[Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters)メソッドを実装する必要があります。 このメソッドは、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 動的パラメーターを追加する必要がない場合は、`null` 値を返すことができます。
+The `Clear-ItemProperty` cmdlet might require additional parameters that are specified dynamically at runtime. To provide these dynamic parameters, the Windows PowerShell property provider must implement the [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters) method. This method returns an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object. The `null` value can be returned if no dynamic parameters are to be added.
 
-ここでは、Windows PowerShell によって提供される TemplateProvider.cs ファイルからの[Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters)の既定の実装を示します。
+Here is the default implementation of [System.Management.Automation.Provider.Ipropertycmdletprovider.Clearpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters) from the TemplateProvider.cs file provided by Windows PowerShell.
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testcmdletspropertyproviderclearpropertydynamicparameters](Msh_samplestestcmdlets#testcmdletspropertyproviderclearpropertydynamicparameters)]  -->
 
-## <a name="building-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーの構築
+## <a name="building-the-windows-powershell-provider"></a>Building the Windows PowerShell provider
 
-「[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法」を](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)参照してください。
+See [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-[Windows PowerShell プロバイダー](./designing-your-windows-powershell-provider.md)
+[Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
 
-[Windows PowerShell プロバイダーを設計する](./designing-your-windows-powershell-provider.md)
+[Design Your Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
 
-[オブジェクトの種類と書式設定の拡張](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)

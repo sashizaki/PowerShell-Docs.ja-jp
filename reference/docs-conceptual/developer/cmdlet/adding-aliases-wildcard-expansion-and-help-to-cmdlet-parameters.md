@@ -1,5 +1,5 @@
 ---
-title: エイリアス、ワイルドカードの展開、およびコマンドレットパラメーターへのヘルプの追加Microsoft Docs
+title: Adding Aliases, Wildcard Expansion, and Help to Cmdlet Parameters | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: bc921537062e35aa203fa3ee95d3b7211c89cb28
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: d210a852a90d94df2ab360dd86f0b83a396330e3
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72370091"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74415648"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>エイリアス、ワイルドカード展開、ヘルプをコマンドレット パラメーターに追加する
 
-ここでは、Stop-Proc コマンドレットのパラメーターにエイリアス、ワイルドカード拡張、およびヘルプメッセージを追加する方法について説明します (「[システムを変更するコマンドレットの作成](./creating-a-cmdlet-that-modifies-the-system.md)」で説明)。
+This section describes how to add aliases, wildcard expansion, and Help messages to the parameters of the Stop-Proc cmdlet (described in [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)).
 
-この Stop Proc コマンドレットは、Get Proc コマンドレットを使用して取得されたプロセスを停止しようとします (「[最初のコマンドレットを作成する](./creating-a-cmdlet-without-parameters.md)」を参照)。
+This Stop-Proc cmdlet attempts to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)).
 
-## <a name="defining-the-cmdlet"></a>コマンドレットの定義
+## <a name="defining-the-cmdlet"></a>Defining the Cmdlet
 
-コマンドレットの作成の最初の手順では、常にコマンドレットに名前を付け、コマンドレットを実装する .NET クラスを宣言します。 システムを変更するためのコマンドレットを記述しているので、それに応じた名前を付ける必要があります。 このコマンドレットはシステムプロセスを停止するため、プロセスを示すために "Proc" という名詞を使用して、 [Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle)クラスで定義された動詞 "Stop" を使用します。 承認されたコマンドレット動詞の詳細については、「[コマンドレットの動詞名](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
+The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. Because you are writing a cmdlet to change the system, it should be named accordingly. Because this cmdlet stops system processes, it uses the verb "Stop", defined by the [System.Management.Automation.Verbslifecycle](/dotnet/api/System.Management.Automation.VerbsLifeCycle) class, with the noun "Proc" to indicate process. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
 
-次のコードは、この Stop Proc コマンドレットのクラス定義です。
+The following code is the class definition for this Stop-Proc cmdlet.
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "proc",
@@ -33,15 +33,15 @@ ms.locfileid: "72370091"
 public class StopProcCommand : Cmdlet
 ```
 
-## <a name="defining-parameters-for-system-modification"></a>システム変更のパラメーターの定義
+## <a name="defining-parameters-for-system-modification"></a>Defining Parameters for System Modification
 
-コマンドレットでは、システムの変更とユーザーフィードバックをサポートするパラメーターを定義する必要があります。 コマンドレットは、@no__t 0 パラメーターまたはそれと同等のパラメーターを定義して、コマンドレットが何らかの種類の識別子でシステムを変更できるようにする必要があります。 さらに、コマンドレットでは、`Force` および `PassThru` パラメーターを定義する必要があります。 これらのパラメーターの詳細については、「[システムを変更するコマンドレットを作成](./creating-a-cmdlet-that-modifies-the-system.md)する」を参照してください。
+Your cmdlet needs to define parameters that support system modifications and user feedback. The cmdlet should define a `Name` parameter or equivalent so that the cmdlet will be able to modify the system by some sort of identifier. In addition, the cmdlet should define the `Force` and `PassThru` parameters. For more information about these parameters, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
 
-## <a name="defining-a-parameter-alias"></a>パラメーターの別名の定義
+## <a name="defining-a-parameter-alias"></a>Defining a Parameter Alias
 
-パラメーターエイリアスは、コマンドレットパラメーターの代替名または適切に定義された1文字または2文字の短い名前にすることができます。 どちらの場合も、エイリアスを使用する目的は、コマンドラインからのユーザーエントリを簡略化することです。 Windows PowerShell では、宣言構文 [Alias ()] を使用する、system.string[属性のパラメーター](/dotnet/api/System.Management.Automation.AliasAttribute)エイリアスがサポートされています。
+A parameter alias can be an alternate name or a well-defined 1-letter or 2-letter short name for a cmdlet parameter. In both cases, the goal of using aliases is to simplify user entry from the command line. Windows PowerShell supports parameter aliases through the [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribute, which uses the declaration syntax [Alias()].
 
-次のコードは、`Name` パラメーターにエイリアスを追加する方法を示しています。
+The following code shows how an alias is added to the `Name` parameter.
 
 ```csharp
 /// <summary>
@@ -64,13 +64,13 @@ public string[] Name
 private string[] processNames;
 ```
 
-Windows PowerShell ランタイムでは、 [alias 属性を](/dotnet/api/System.Management.Automation.AliasAttribute)使用するだけでなく、別名が指定されていない場合でも、部分的な名前の一致が実行されます。 たとえば、コマンドレットに `FileName` パラメーターがあり、`F` で始まる唯一のパラメーターである場合、ユーザーは `Filename`、`Filenam`、`File`、`Fi`、または @no__t を入力しても、そのエントリを `FileName` パラメーターとして認識できます。
+In addition to using the [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribute, the Windows PowerShell runtime performs partial name matching, even if no aliases are specified. For example, if your cmdlet has a `FileName` parameter and that is the only parameter that starts with `F`, the user could enter `Filename`, `Filenam`, `File`, `Fi`, or `F` and still recognize the entry as the `FileName` parameter.
 
-## <a name="creating-help-for-parameters"></a>パラメーターのヘルプの作成
+## <a name="creating-help-for-parameters"></a>Creating Help for Parameters
 
-Windows PowerShell では、コマンドレットパラメーターのヘルプを作成できます。 この操作は、システムの変更やユーザーフィードバックに使用される任意のパラメーターに対して行います。 ヘルプをサポートする各パラメーターに対して、`HelpMessage` 属性のキーワードを設定することが[できます。](/dotnet/api/System.Management.Automation.ParameterAttribute) このキーワードは、パラメーターを使用する際の参考としてユーザーに表示するテキストを定義します。 また、`HelpMessageBaseName` キーワードを設定して、メッセージに使用するリソースの基本名を指定することもできます。 このキーワードを設定する場合は、`HelpMessageResourceId` キーワードを設定してリソース識別子を指定する必要もあります。
+Windows PowerShell allows you to create Help for cmdlet parameters. Do this for any parameter used for system modification and user feedback. For each parameter to support Help, you can set the `HelpMessage` attribute keyword in the [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attribute declaration. This keyword defines the text to display to the user for assistance in using the parameter. You can also set the `HelpMessageBaseName` keyword to identify the base name of a resource to use for the message. If you set this keyword, you must also set the `HelpMessageResourceId` keyword to specify the resource identifier.
 
-この Stop Proc コマンドレットの次のコードは、`Name` パラメーターの `HelpMessage` 属性キーワードを定義します。
+The following code from this Stop-Proc cmdlet defines the `HelpMessage` attribute keyword for the `Name` parameter.
 
 ```csharp
 /// <summary>
@@ -86,32 +86,32 @@ Windows PowerShell では、コマンドレットパラメーターのヘルプ�
 )]
 ```
 
-## <a name="overriding-an-input-processing-method"></a>入力処理メソッドのオーバーライド
+## <a name="overriding-an-input-processing-method"></a>Overriding an Input Processing Method
 
-コマンドレットでは、入力処理メソッドをオーバーライドする必要があります。これは、ほとんどの場合、このコマンド[レット](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)を使用します。 システムを変更する場合、コマンドレットは、変更を加える前にユーザーがフィードバックを提供できるようにするために、コマンドレットに[よってメソッド](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)を呼び出す必要があり[ます。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) これらの方法の詳細については、「[システムを変更するコマンドレットを作成](./creating-a-cmdlet-that-modifies-the-system.md)する」を参照してください。
+Your cmdlet must override an input processing method, most often this will be [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). When modifying the system, the cmdlet should call the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods to allow the user to provide feedback before a change is made. For more information about these methods, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
 
-## <a name="supporting-wildcard-expansion"></a>ワイルドカード拡張のサポート
+## <a name="supporting-wildcard-expansion"></a>Supporting Wildcard Expansion
 
-複数のオブジェクトを選択できるようにするには、コマンドレットで[Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern)クラスと[Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions)クラスを使用して、パラメーター入力のワイルドカード拡張サポートを提供します。 ワイルドカードパターンの例としては、lsa *、@no__t 横-0、および [a-c] \* があります。 パターンに文字どおりに使用する必要がある文字が含まれている場合は、二重引用符文字 (') をエスケープ文字として使用します。
+To allow the selection of multiple objects, your cmdlet can use the [System.Management.Automation.Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern) and [System.Management.Automation.Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions) classes to provide wildcard expansion support for parameter input. Examples of wildcard patterns are lsa*, \*.txt, and [a-c]\*. Use the back-quote character (`) as an escape character when the pattern contains a character that should be used literally.
 
-ファイル名とパス名のワイルドカードによる展開は、複数のオブジェクトを選択する必要がある場合に、コマンドレットでパス入力のサポートを許可する一般的なシナリオの例です。 通常、ファイルシステムには、現在のフォルダーに存在するすべてのファイルが表示されます。
+Wildcard expansions of file and path names are examples of common scenarios where the cmdlet may want to allow support for path inputs when the selection of multiple objects is required. A common case is in the file system, where a user wants to see all files residing in the current folder.
 
-カスタマイズされたワイルドカードパターン一致の実装が必要になることはほとんどありません。 この場合、コマンドレットは、完全な POSIX 1003.2、3.13 のワイルドカードの展開、または次の簡略化されたサブセットのいずれかをサポートする必要があります。
+You should need a customized wildcard pattern matching implementation only rarely. In this case, your cmdlet should support either the full POSIX 1003.2, 3.13 specification for wildcard expansion or the following simplified subset:
 
-- **疑問符 (?)。** 指定した位置にある任意の文字と一致します。
+- **Question mark (?).** Matches any character at the specified location.
 
-- **アスタリスク (\*)。** 指定した位置から始まる0個以上の文字と一致します。
+- **Asterisk (\*).** Matches zero or more characters starting at the specified location.
 
-- **角かっこ ([) を開きます。** 文字または文字の範囲を含めることができるパターン角かっこ式を導入します。 範囲が必要な場合は、範囲を示すためにハイフン (-) が使用されます。
+- **Open bracket ([).** Introduces a pattern bracket expression that can contain characters or a range of characters. If a range is required, a hyphen (-) is used to indicate the range.
 
-- **閉じかっこ (])。** パターン角かっこ表現を終了します。
+- **Close bracket (]).** Ends a pattern bracket expression.
 
-- **バッククォートエスケープ文字 (')。** 次の文字を文字どおりに取得する必要があることを示します。 プログラムによって指定するのではなく、コマンドラインからバッククォート文字を指定する場合は、バッククォートのエスケープ文字を2回指定する必要があることに注意してください。
+- **Back-quote escape character (`).** Indicates that the next character should be taken literally. Be aware that when specifying the back-quote character from the command line (as opposed to specifying it programmatically), the back-quote escape character must be specified twice.
 
 > [!NOTE]
-> ワイルドカードパターンの詳細については、「[コマンドレットパラメーターでのワイルドカードのサポート](./supporting-wildcard-characters-in-cmdlet-parameters.md)」を参照してください。
+> For more information about wildcard patterns, see [Supporting Wildcards in Cmdlet Parameters](./supporting-wildcard-characters-in-cmdlet-parameters.md).
 
-次のコードは、ワイルドカードオプションを設定し、このコマンドレットの `Name` パラメーターの解決に使用するワイルドカードパターンを定義する方法を示しています。
+The following code shows how to set wildcard options and define the wildcard pattern used for resolving the `Name` parameter for this cmdlet.
 
 ```csharp
 WildcardOptions options = WildcardOptions.IgnoreCase |
@@ -119,7 +119,7 @@ WildcardOptions options = WildcardOptions.IgnoreCase |
 WildcardPattern wildcard = new WildcardPattern(name,options);
 ```
 
-次のコードは、プロセス名が定義されたワイルドカードパターンに一致するかどうかをテストする方法を示しています。 この場合、プロセス名がパターンと一致しない場合、コマンドレットは次のプロセス名を取得し続けます。
+The following code shows how to test whether the process name matches the defined wildcard pattern. Notice that, in this case, if the process name does not match the pattern, the cmdlet continues on to get the next process name.
 
 ```csharp
 if (!wildcard.IsMatch(processName))
@@ -128,29 +128,29 @@ if (!wildcard.IsMatch(processName))
 }
 ```
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>Code Sample
 
-完全なC#サンプルコードについては、「 [StopProcessSample03 sample](./stopprocesssample03-sample.md)」を参照してください。
+For the complete C# sample code, see [StopProcessSample03 Sample](./stopprocesssample03-sample.md).
 
-## <a name="define-object-types-and-formatting"></a>オブジェクトの種類と書式を定義する
+## <a name="define-object-types-and-formatting"></a>Define Object Types and Formatting
 
-Windows PowerShell は、.Net オブジェクトを使用してコマンドレット間で情報を渡します。 そのため、コマンドレットで独自の型を定義する必要がある場合や、コマンドレットで別のコマンドレットによって提供される既存の型を拡張する必要がある場合があります。 新しい型を定義する、または既存の型を拡張する方法の詳細については、「[オブジェクトの型と書式設定の拡張](/previous-versions//ms714665(v=vs.85))」を参照してください。
+Windows PowerShell passes information between cmdlets using .Net objects. Consequently, a cmdlet may need to define its own type, or the cmdlet may need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
 
-## <a name="building-the-cmdlet"></a>コマンドレットのビルド
+## <a name="building-the-cmdlet"></a>Building the Cmdlet
 
-コマンドレットを実装した後は、Windows powershell スナップインを使用して Windows PowerShell に登録する必要があります。 コマンドレットの登録の詳細については、「[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions//ms714644(v=vs.85))」を参照してください。
+After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
 
-## <a name="testing-the-cmdlet"></a>コマンドレットのテスト
+## <a name="testing-the-cmdlet"></a>Testing the Cmdlet
 
-コマンドレットが Windows PowerShell に登録されている場合は、コマンドラインで実行することでテストできます。 Stop-Proc コマンドレットのサンプルをテストしてみましょう。 コマンドラインからコマンドレットを使用する方法の詳細については、「 [Windows PowerShell を使用したはじめに](/powershell/scripting/getting-started/getting-started-with-windows-powershell)」を参照してください。
+When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. Let's test the sample Stop-Proc cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
 
-- Windows PowerShell を起動し、`Name` パラメーターの ProcessName エイリアスを使用してプロセスを停止するには、Stop Proc を使用します。
+- Start Windows PowerShell and use Stop-Proc to stop a process using the ProcessName alias for the `Name` parameter.
 
     ```powershell
     PS> stop-proc -ProcessName notepad
     ```
 
-次の出力が表示されます。
+The following output appears.
 
     ```
     Confirm
@@ -159,13 +159,13 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-- コマンドラインで次のエントリを作成します。 Name パラメーターは必須であるため、入力を求められます。 「!?」と入力します。 パラメーターに関連付けられたヘルプテキストを表示します。
+- Make the following entry on the command line. Because the Name parameter is mandatory, you are prompted for it. Entering "!?" brings up the help text associated with the parameter.
 
     ```powershell
     PS> stop-proc
     ```
 
-次の出力が表示されます。
+The following output appears.
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -176,13 +176,13 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     Name[0]: notepad
     ```
 
-- ここで、ワイルドカードパターン "* note @ no__t" に一致するすべてのプロセスを停止するには、次のエントリを作成します。 パターンに一致する各プロセスを停止する前に、メッセージが表示されます。
+- Now make the following entry to stop all processes that match the wildcard pattern "*note\*". You are prompted before stopping each process that matches the pattern.
 
     ```powershell
     PS> stop-proc -Name *note*
     ```
 
-次の出力が表示されます。
+The following output appears.
 
     ```
     Confirm
@@ -191,7 +191,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-次の出力が表示されます。
+The following output appears.
 
     ```
     Confirm
@@ -200,7 +200,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-次の出力が表示されます。
+The following output appears.
 
     ```
     Confirm
@@ -211,14 +211,14 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
 
 ## <a name="see-also"></a>参照
 
-[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)
+[Create a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Windows PowerShell コマンドレットを作成する方法](/powershell/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[オブジェクトの種類と書式設定の拡張](/previous-versions//ms714665(v=vs.85))
+[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
 
-[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions//ms714644(v=vs.85))
+[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
 
-[コマンドレットパラメーターでのワイルドカードのサポート](./supporting-wildcard-characters-in-cmdlet-parameters.md)
+[Supporting Wildcards in Cmdlet Parameters](./supporting-wildcard-characters-in-cmdlet-parameters.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

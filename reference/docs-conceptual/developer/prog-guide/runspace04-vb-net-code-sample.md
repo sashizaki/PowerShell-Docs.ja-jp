@@ -1,5 +1,5 @@
 ---
-title: RunSpace04 (VB.NET) コードサンプル |Microsoft Docs
+title: RunSpace04  (VB.NET) Code Sample | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,23 +8,23 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f0dea3c-4354-4d7d-9823-5e6234c9a89e
 caps.latest.revision: 6
-ms.openlocfilehash: c1d38c23ea20d7e5ccbc8e475b0c2246f9670ec3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: a0c04adb64ab5f2a9fd42fa7dee3977638d3b535
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72366501"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417952"
 ---
 # <a name="runspace04--vbnet-code-sample"></a>RunSpace04 (VB.NET) コード サンプル
 
-Runspace04 サンプルの VB.NET ソースコードを次に示します。 このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、終了エラーを生成するスクリプトを実行します。 ホストアプリケーションは、エラーをキャッチし、エラーレコードを解釈します。
+Here is the VB.NET source code for the Runspace04 sample. This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error. The host application is responsible for catching the error and interpreting the error record.
 
 > [!NOTE]
-> このサンプルの VB.NET ソースファイル (runspace02) をダウンロードするには、windows Vista 用 Windows ソフトウェア開発キットおよび Microsoft .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/developer/installing-the-windows-powershell-sdk)」を参照してください。
+> You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
 >
-> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
+> The downloaded source files are available in the **\<PowerShell Samples>** directory.
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>Code Sample
 
 ```vb
 Imports System
@@ -117,6 +117,6 @@ End Namespace
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -1,5 +1,5 @@
 ---
-title: ListControl (Format) の EntrySelectedBy の SelectionCondition 要素Microsoft Docs
+title: SelectionCondition Element for EntrySelectedBy for ListControl (Format) | Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
-ms.openlocfilehash: f04a07c241268566eaedfe2b299c33d5be4dc19d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.openlocfilehash: 7150b29ad84dfb587215ee3e64c356adbd5a6305
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72364821"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417542"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>ListControl の EntrySelectedBy の SelectionCondition 要素 (書式)
 
-リストビューのこの定義を使用するために必要な条件を定義します。 リスト定義に指定できる選択条件の数に制限はありません。
+Defines the condition that must exist to use this definition of the list view. There is no limit to the number of selection conditions that can be specified for a list definition.
 
-Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) ListControl 要素 (形式) ListEntries Element (format) ListEntry Element (format) ListEntry (Format) SelectionCondition 要素のエントリListEntry の EntrySelectedBy (形式)
+Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) ListControl Element (Format) ListEntries Element (Format) ListEntry Element (Format) EntrySelectedBy Element for ListEntry (Format) SelectionCondition Element for EntrySelectedBy for ListEntry (Format)
 
 ## <a name="syntax"></a>構文
 
@@ -34,7 +34,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`SelectionCondition` 要素の親要素について説明します。
+The following sections describe attributes, child elements, and the parent element of the `SelectionCondition` element.
 
 ### <a name="attributes"></a>属性
 
@@ -44,39 +44,39 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 |要素|[説明]|
 |-------------|-----------------|
-|[ListEntry (Format) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
-|[ListEntry (Format) の EntrySelectedBy の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素。<br /><br /> 条件をトリガーするスクリプトを指定します。|
-|[EntrySelectedBy for ListEntry (Format) の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)|省略可能な要素。<br /><br /> 条件をトリガーする .NET 型のセットを指定します。|
-|[ListEntry (Format) の EntrySelectedBy の SelectionCondition の TypeName 要素](./typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素。<br /><br /> 条件をトリガーする .NET 型を指定します。|
+|[PropertyName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies the .NET property that triggers the condition.|
+|[ScriptBlock Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies the script that triggers the condition.|
+|[SelectionSetName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)|Optional element.<br /><br /> Specifies the set of .NET types that trigger the condition.|
+|[TypeName Element for SelectionCondition for EntrySelectedBy for ListEntry (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|Optional element.<br /><br /> Specifies a .NET type that triggers the condition.|
 
 ### <a name="parent-elements"></a>親要素
 
 |要素|[説明]|
 |-------------|-----------------|
-|[TableRowEntry の EntrySelectedBy 要素 (形式)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|このテーブルエントリを使用する .NET 型、またはこのエントリを使用するために必要な条件を定義します。|
+|[EntrySelectedBy Element for TableRowEntry (Format)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|Defines the .NET types that use this table entry or the condition that must exist for this entry to be used.|
 
 ## <a name="remarks"></a>コメント
 
-選択条件を定義する場合は、次の要件が適用されます。
+lWhen you are defining a selection condition, the following requirements apply:
 
-- 選択条件には、少なくとも1つのプロパティ名またはスクリプトブロックを指定する必要がありますが、両方を指定することはできません。
+- The selection condition must specify a least one property name or a script block, but cannot specify both.
 
-- 選択条件では、任意の数の .NET 型または選択セットを指定できますが、両方を指定することはできません。
+- The selection condition can specify any number of .NET types or selection sets, but cannot specify both.
 
-選択条件の使用方法の詳細については、「[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+For more information about how to use selection conditions, see [Defining Conditions for when Data is Displayed](./defining-conditions-for-displaying-data.md).
 
-リストビューのその他のコンポーネントの詳細については、「[リストビューの作成](./creating-a-list-view.md)」を参照してください。
+For more information about other components of a list view, see [Creating a List View](./creating-a-list-view.md).
 
 ## <a name="see-also"></a>参照
 
-[リストビューの作成](./creating-a-list-view.md)
+[Creating a List View](./creating-a-list-view.md)
 
-[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)
+[Defining Conditions for When Data Is Displayed](./defining-conditions-for-displaying-data.md)
 
-[ListEntry 要素 (Format)](./listentry-element-for-listcontrol-format.md)
+[ListEntry Element (Format)](./listentry-element-for-listcontrol-format.md)
 
-[ListEntry (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+[SelectionSetName Element for EntrySelectedBy for ListEntry (Format)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-[ListEntry (Format) の EntrySelectedBy の TypeName 要素](/powershell/developer/format/typename-element-for-entryselectedby-for-listcontrol-format)
+[TypeName Element for EntrySelectedBy for ListEntry (Format)](/powershell/scripting/developer/format/typename-element-for-entryselectedby-for-listcontrol-format)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[Writing a PowerShell Formatting File](./writing-a-powershell-formatting-file.md)
