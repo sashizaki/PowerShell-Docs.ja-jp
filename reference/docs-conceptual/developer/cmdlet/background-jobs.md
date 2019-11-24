@@ -39,7 +39,7 @@ ms.locfileid: "72363561"
 
 - System.object[クラスから派生した](/dotnet/api/System.Management.Automation.Job)オブジェクトを作成します。 このオブジェクトには、カスタムジョブオブジェクト、または Windows PowerShell によって提供されるジョブオブジェクト ( [Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob)オブジェクトなど) を指定できます。
 
-- レコード処理メソッドで、コマンドレットをバックグラウンドジョブとして実行する必要があるかどうかを検出する @no__t 0 ステートメントを追加します。
+- レコード処理メソッドで、コマンドレットをバックグラウンドジョブとして実行する必要があるかどうかを検出する `if` ステートメントを追加します。
 
 - カスタムジョブオブジェクトの場合は、job クラスを実装します。
 
@@ -89,6 +89,6 @@ Windows PowerShell バックグラウンド ジョブを停止します。
 
 セッションで実行されている 1 つまたはすべての Windows PowerShell のバックグラウンド ジョブが完了するまでは、コマンド プロンプトが表示されないようにします。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

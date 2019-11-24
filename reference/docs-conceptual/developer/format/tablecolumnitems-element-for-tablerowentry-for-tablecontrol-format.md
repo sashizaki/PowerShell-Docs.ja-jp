@@ -39,25 +39,25 @@ TableColumnItems>
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableControl (Format) の TableColumnItems の TableColumnItem 要素](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|必須の要素です。<br /><br /> 行の列に値が表示されるプロパティまたはスクリプトを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableControl (Format) の TableRowEntries の TableRowEntry 要素](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|テーブルの行に表示されるデータを定義します。|
 
 ## <a name="remarks"></a>コメント
 
-行の各列には、@no__t 0 の要素が必要です。 最初のエントリは最初の列に、2番目の列には2番目のエントリが表示されます。
+行の各列には、`TableColumnItem` 要素が必要です。 最初のエントリは最初の列に、2番目の列には2番目のエントリが表示されます。
 
 テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-次の例は[、system.object オブジェクト](/dotnet/api/System.Diagnostics.Process)の3つのプロパティを定義する @no__t 0 の要素を示しています。
+次の例は[、system.object オブジェクト](/dotnet/api/System.Diagnostics.Process)の3つのプロパティを定義する `TableColumnItems` 要素を示しています。
 
 ```xml
 <TableColumnItems>
@@ -74,7 +74,7 @@ TableColumnItems>
 
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [テーブルビューの作成](./creating-a-table-view.md)
 

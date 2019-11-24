@@ -185,10 +185,10 @@ protected override void ProcessRecord()
 終了しないエラーの場合、コマンドレットは、特定の入力オブジェクトごとに特定のエラー識別子を生成する必要があります。
 
 コマンドレットでは、終了しないエラーによって生成される PowerShell アクションを頻繁に変更する必要があります。
-これを行うには、`ErrorAction` および `ErrorVariable` パラメーターを定義します。
-@No__t-0 パラメーターを定義すると、コマンドレットによって[システムの管理. ActionPreference][][system.servicemodel] が表示されます。また、@no__t 2 の変数を設定して、アクションに直接影響を与えることもできます。
+これを行うには、`ErrorAction` パラメーターと `ErrorVariable` パラメーターを定義します。
+`ErrorAction` パラメーターを定義すると、コマンドレットによって[システムの管理. ActionPreference][][system.servicemodel] が表示されます。また、`$ErrorActionPreference` 変数を設定して、アクションに直接影響を与えることもできます。
 
-コマンドレットでは、`ErrorVariable` パラメーターを使用して、終了しないエラーを変数に保存できます。このパラメーターは、`ErrorAction` の設定の影響を受けません。
+コマンドレットでは、`ErrorVariable` パラメーターを使用して、終了しないエラーを変数に保存できます。このパラメーターは、`ErrorAction`の設定の影響を受けません。
 エラーは、変数名の前にプラス記号 (+) を追加することによって、既存のエラー変数に追加できます。
 
 ## <a name="code-sample"></a>コードサンプル
@@ -225,7 +225,7 @@ PowerShell は、.NET オブジェクトを使用してコマンドレット間�
     + get-proc  <<<< -name test
     ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [パイプライン入力を処理するパラメーターの追加](./adding-parameters-that-process-pipeline-input.md)
 

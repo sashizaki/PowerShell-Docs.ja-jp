@@ -34,7 +34,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`CustomItem` 要素の親要素について説明します。 詳細については、「解説」を参照してください。
+次のセクションでは、`CustomItem` 要素の属性、子要素、および親要素について説明します。 詳細については、「解説」を参照してください。
 
 ### <a name="attributes"></a>属性
 
@@ -42,30 +42,30 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[ビューのコントロールに対する CustomItem の式のバインド要素 (形式)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)|省略可能な要素。<br /><br /> コントロールによって表示されるデータを定義します。|
-|[ビューのコントロールの CustomItem の Frame 要素 (Format)](./frame-element-for-customitem-for-controls-for-view-format.md)|省略可能な要素。<br /><br /> データを左右に移動するなど、データの表示方法を定義します。|
-|[ビューのコントロールの CustomItem の改行要素 (Format)](./newline-element-for-customitem-for-controls-for-view-format.md)|省略可能な要素。<br /><br /> コントロールの表示に空白行を追加します。|
-|[ビューのコントロールの CustomItem のテキスト要素 (書式)](./text-element-for-customitem-for-controls-for-view-format.md)|省略可能な要素。<br /><br /> かっこや角かっこなどのテキストをコントロールの表示に追加します。|
+|[ビューのコントロールに対する CustomItem の式のバインド要素 (形式)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> コントロールによって表示されるデータを定義します。|
+|[ビューのコントロールの CustomItem の Frame 要素 (Format)](./frame-element-for-customitem-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> データを左右に移動するなど、データの表示方法を定義します。|
+|[ビューのコントロールの CustomItem の改行要素 (Format)](./newline-element-for-customitem-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> コントロールの表示に空白行を追加します。|
+|[ビューのコントロールの CustomItem のテキスト要素 (書式)](./text-element-for-customitem-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> かっこや角かっこなどのテキストをコントロールの表示に追加します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[ビューのコントロール (Format) の CustomEntry 要素](./customentry-element-for-customentries-for-controls-for-view-format.md)|コントロールの定義を提供します。|
 
 ## <a name="remarks"></a>コメント
 
-@No__t-0 要素の子要素を指定する場合は、次の点に注意してください。
+`CustomItem` 要素の子要素を指定する場合は、次の点に注意してください。
 
-- 子要素は、`ExpressionBinding`、`NewLine`、`Text`、`Frame` の順に追加する必要があります。
+- 子要素は、`ExpressionBinding`、`NewLine`、`Text`、および `Frame`の順に追加する必要があります。
 
 - 指定できるシーケンスの数に上限はありません。
 
-- 各シーケンスでは、使用できる @no__t 0 要素の数に上限はありません。
+- 各シーケンスには、使用できる `ExpressionBinding` 要素の数に上限はありません。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [ビューのコントロールに対する CustomItem の式のバインド要素 (形式)](./expressionbinding-element-for-customitem-for-controls-for-view-format.md)
 

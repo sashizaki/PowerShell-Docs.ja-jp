@@ -21,7 +21,7 @@ ms.locfileid: "72365691"
 これらのメソッドの定義に使用される XML については、次のセクションで説明します。
 
 > [!NOTE]
-> 次のセクションの例は、Windows PowerShell インストールディレクトリ (`$PSHOME`) の @no__t 0 種類のファイルに含まれています。 詳細については、「 [types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)」を参照してください。
+> 次のセクションの例は、Windows PowerShell インストールディレクトリ (`$PSHOME`) の `Types.ps1xml` の種類のファイルに含まれています。 詳細については、「 [types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)」を参照してください。
 
 ## <a name="code-methods"></a>コードメソッド
 
@@ -62,6 +62,6 @@ ms.locfileid: "72365691"
 </Type>
 ```
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

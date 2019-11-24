@@ -33,15 +33,15 @@ Windows PowerShell のパスの詳細については、「Windows PowerShell の
 
 ### <a name="defining-a-provider-qualified-path"></a>プロバイダー修飾パスの定義
 
-Windows PowerShell ランタイムがプロバイダーを初期化および初期化解除できるようにするには、Windows PowerShell プロバイダーがプロバイダー修飾パスをサポートしている必要があります。 たとえば、FileSystem:: \\ \ uncshare\abc\bar は、Windows PowerShell によって提供されるファイルシステムプロバイダーのプロバイダー修飾パスです。
+Windows PowerShell ランタイムがプロバイダーを初期化および初期化解除できるようにするには、Windows PowerShell プロバイダーがプロバイダー修飾パスをサポートしている必要があります。 たとえば、FileSystem::\\\uncshare\abc\bar は、Windows PowerShell によって提供されるファイルシステムプロバイダーのプロバイダー修飾パスです。
 
 ### <a name="defining-a-provider-direct-path"></a>プロバイダーの直接パスを定義する
 
-Windows PowerShell プロバイダーへのリモートアクセスを許可するには、現在の場所に対して Windows PowerShell プロバイダーに直接渡すプロバイダー-直接パスをサポートする必要があります。 たとえば、レジストリの Windows PowerShell プロバイダーでは、プロバイダーの直接のパスとして \\ \ のようにして使用できます。
+Windows PowerShell プロバイダーへのリモートアクセスを許可するには、現在の場所に対して Windows PowerShell プロバイダーに直接渡すプロバイダー-直接パスをサポートする必要があります。 たとえば、レジストリの Windows PowerShell プロバイダーは、プロバイダーの直接のパスとして \\\ を使用できます。
 
 ### <a name="defining-a-provider-internal-path"></a>プロバイダーの定義-内部パス
 
-プロバイダーコマンドレットが Windows PowerShell 以外のアプリケーションプログラミングインターフェイス (Api) を使用してデータにアクセスできるようにするには、Windows PowerShell プロバイダーがプロバイダー内部パスをサポートしている必要があります。 このパスは、プロバイダーによって修飾されたパスの "::" の後に示されます。 たとえば、ファイルシステム Windows PowerShell プロバイダーのプロバイダー内部パスは @no__t 0 \ uncshare\abc\bar. になります。
+プロバイダーコマンドレットが Windows PowerShell 以外のアプリケーションプログラミングインターフェイス (Api) を使用してデータにアクセスできるようにするには、Windows PowerShell プロバイダーがプロバイダー内部パスをサポートしている必要があります。 このパスは、プロバイダーによって修飾されたパスの "::" の後に示されます。 たとえば、プロバイダー-filesystem Windows PowerShell プロバイダーの内部パスは \\\uncshare\abc\bar.
 
 ## <a name="changing-stored-data"></a>保存されたデータの変更
 
@@ -53,7 +53,7 @@ Windows PowerShell には、独自の Windows PowerShell プロバイダーを�
 
 各 Windows PowerShell プロバイダーの基本クラスで、一連のコマンドレットを使用できるようになります。 ここではコマンドレットについて説明しますが、パラメーターについては説明しません。
 
-Windows PowerShell ランタイムでは、セッション状態を使用して、`Get-Location`、`Set-Location`、`Pop-Location`、`Push-Location` のコマンドレットなど、特定の Windows PowerShell プロバイダーでいくつかの場所のコマンドレットを使用できます。 @No__t-0 コマンドレットを使用して、これらの場所のコマンドレットに関する情報を取得できます。
+Windows PowerShell ランタイムでは、セッション状態を使用して、`Get-Location`、`Set-Location`、`Pop-Location`、`Push-Location` のコマンドレットなど、特定の Windows PowerShell プロバイダーでいくつかの場所のコマンドレットを使用できます。 `Get-Help` コマンドレットを使用して、これらの場所のコマンドレットに関する情報を取得できます。
 
 ### <a name="cmdletprovider-base-class"></a>"クラス \ プロバイダー" 基本クラス
 
@@ -66,7 +66,7 @@ System.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation
 
 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスは、新しいドライブを追加したり、既存のドライブを削除したり、既定のドライブを初期化したりする操作をサポートする Windows PowerShell ドライブプロバイダーを定義します。 たとえば、Windows PowerShell によって提供される FileSystem プロバイダーは、ハードドライブや CD/DVD デバイスドライブなど、マウントされているすべてのボリュームのドライブを初期化します。
 
-このクラスは、system.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)の基底クラスから派生します。 次の表に、このクラスによって公開されるコマンドレットの一覧を示します。 この一覧に加えて、@no__t 0 のコマンドレット (セッション状態によって公開) は、使用可能なドライブを取得するために使用される関連コマンドレットです。
+このクラスは、system.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)の基底クラスから派生します。 次の表に、このクラスによって公開されるコマンドレットの一覧を示します。 この一覧に加えて、`Get-PSDrive` コマンドレット (セッション状態によって公開) は、使用可能なドライブを取得するために使用される関連コマンドレットです。
 
 |コマンドレット|定義|
 |------------|----------------|
@@ -84,7 +84,7 @@ System.string[クラスは、データ](/dotnet/api/System.Management.Automation
 |`Invoke-Item`|指定したパスにある項目の既定のアクションを呼び出します。|
 |`Set-Item`|指定した位置に、指定した値を持つ項目を設定します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。|
 |`Resolve-Path`|Windows PowerShell パスのワイルドカードを解決し、パス情報をストリームします。|
-|`Test-Path`|指定されたパスをテストし、`true` を返します (存在する場合)。それ以外の場合は `false`。 このコマンドレットは、システムの `IsContainer` パラメーターをサポートするために実装されています。 [Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)メソッド。|
+|`Test-Path`|指定したパスをテストし、存在する場合は `true` を返します。それ以外の場合は `false` を返します。 このコマンドレットは、システムの `IsContainer` パラメーターをサポートするために実装されています。 [Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)メソッド。|
 
 ### <a name="containercmdletprovider-base-class"></a>ContainerCmdletProvider 基本クラス
 
@@ -113,7 +113,7 @@ System.string[クラスは](/dotnet/api/System.Management.Automation.Provider.Na
 
 ## <a name="select-provider-interfaces-to-support"></a>サポートするプロバイダーインターフェイスの選択
 
-Windows powershell の基本クラスの1つから派生するだけでなく、Windows PowerShell プロバイダーは、次の1つ以上のプロバイダーインターフェイスから派生することによって、他の機能をサポートできます。 このセクションでは、これらのインターフェイスと、それぞれでサポートされているコマンドレットを定義します。 インターフェイスでサポートされているコマンドレットのパラメーターについては説明しません。 コマンドレットのパラメーター情報は、`Get-Command` および `Get-Help` のコマンドレットを使用してオンラインで入手できます。
+Windows powershell の基本クラスの1つから派生するだけでなく、Windows PowerShell プロバイダーは、次の1つ以上のプロバイダーインターフェイスから派生することによって、他の機能をサポートできます。 このセクションでは、これらのインターフェイスと、それぞれでサポートされているコマンドレットを定義します。 インターフェイスでサポートされているコマンドレットのパラメーターについては説明しません。 コマンドレットのパラメーター情報は、`Get-Command` と `Get-Help` のコマンドレットを使用してオンラインで入手できます。
 
 ### <a name="icontentcmdletprovider"></a>IContentCmdletProvider
 
@@ -141,7 +141,7 @@ Windows powershell の基本クラスの1つから派生するだけでなく、
 
 ### <a name="idynamicpropertycmdletprovider"></a>IDynamicPropertyCmdletProvider
 
-[Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)から派生した[Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider)インターフェイスは、そのクラスの動的パラメーターを指定するプロバイダーを定義します。このインターフェイスには、サポートされているコマンドレット。 この型のプロバイダーは、実行時にプロパティを定義できる操作 (たとえば、新しいプロパティ操作) を処理します。 静的に定義されたプロパティを持つアイテムでは、このような操作は実行できません。 次の表に、このインターフェイスによって公開されるコマンドレットの一覧を示します。
+[Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider)インターフェイスは、 [Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)から派生した、サポートされているコマンドレットの動的パラメーターを指定するプロバイダーを定義しています。 この型のプロバイダーは、実行時にプロパティを定義できる操作 (たとえば、新しいプロパティ操作) を処理します。 静的に定義されたプロパティを持つアイテムでは、このような操作は実行できません。 次の表に、このインターフェイスによって公開されるコマンドレットの一覧を示します。
 
 |コマンドレット|定義|
 |------------|----------------|
@@ -160,7 +160,7 @@ System.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation
 |`Get-Acl`|ファイルやオブジェクトなど、オペレーティングシステムのリソースを保護するために使用されるセキュリティ記述子の一部であるアクセス制御リスト (ACL) に含まれる情報を取得します。|
 |`Set-Acl`|ACL の情報を設定します。 これは、指定されたパスに対して指定された項目の[accesscontrol-namespace](/dotnet/api/System.Security.AccessControl.ObjectSecurity)のインスタンスの形式です。 このコマンドレットでは、Windows PowerShell プロバイダーがセキュリティ情報の設定をサポートしている場合に、レジストリ内のファイル、キー、サブキーに関する情報、またはその他のプロバイダー項目に関する情報を設定できます。|
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell プロバイダーの作成](./how-to-create-a-windows-powershell-provider.md)
 

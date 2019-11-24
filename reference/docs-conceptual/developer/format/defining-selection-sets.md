@@ -17,7 +17,7 @@ ms.locfileid: "72368851"
 ---
 # <a name="defining-selection-sets"></a>選択セットを定義する
 
-複数のビューおよびコントロールを作成する場合は、選択セットと呼ばれるオブジェクトのセットを定義できます。 選択セットを使用すると、各ビューまたはコントロールに対して個別に定義しなくても、オブジェクトを一度定義することができます。 通常、選択セットは、関連する一連の .NET オブジェクトがある場合に使用されます。 たとえば、@no__t 0 の書式設定ファイル (types.ps1xml) では、複数のビューが使用するファイルシステムの種類の選択セットが定義されています。
+複数のビューおよびコントロールを作成する場合は、選択セットと呼ばれるオブジェクトのセットを定義できます。 選択セットを使用すると、各ビューまたはコントロールに対して個別に定義しなくても、オブジェクトを一度定義することができます。 通常、選択セットは、関連する一連の .NET オブジェクトがある場合に使用されます。 たとえば、`FileSystem` の書式設定ファイル (types.ps1xml) では、複数のビューが使用するファイルシステムの種類の選択セットが定義されています。
 
 ## <a name="where-selection-sets-are-defined-and-referenced"></a>選択セットが定義され参照されている場所
 
@@ -35,15 +35,15 @@ ms.locfileid: "72368851"
 
 選択セットは、次の方法で参照できます。
 
-- 各ビューには、ビューを使用して表示されるオブジェクトを定義する @no__t 0 の要素があります。 @No__t-0 要素には、ビューのすべての定義で使用する選択セットを指定する、@no__t 1 の子要素があります。 ビューから参照できる選択セットの数に制限はありません。
+- 各ビューには、ビューを使用して表示されるオブジェクトを定義する `ViewSelectedBy` 要素があります。 `ViewSelectedBy` 要素には、ビューのすべての定義で使用する選択セットを指定する `SelectionSetName` 子要素があります。 ビューから参照できる選択セットの数に制限はありません。
 
-- ビューまたはコントロールの各定義では、`EntrySelectedBy` 要素によって、その定義を使用して表示されるオブジェクトが定義されます。 通常、ビューまたはコントロールには定義が1つしかないため、オブジェクトは `ViewSelectedBy` 要素によって定義されます。 定義の @no__t 0 要素には、選択セットを指定する @no__t 1 つの子要素があります。 定義の選択セットを指定する場合、`EntrySelectedBy` 要素の他の子要素を指定することはできません。
+- ビューまたはコントロールの各定義では、`EntrySelectedBy` 要素によって、その定義を使用して表示されるオブジェクトが定義されます。 通常、ビューまたはコントロールには定義が1つだけ存在するので、オブジェクトは `ViewSelectedBy` 要素によって定義されます。 定義の `EntrySelectedBy` 要素には、選択セットを指定する `SelectionSetName` 子要素があります。 定義の選択セットを指定する場合は、`EntrySelectedBy` 要素の他の子要素を指定することはできません。
 
-- ビューまたはコントロールの各定義では、`SelectionCondition` 要素を使用して、定義を使用する条件を指定できます。 @No__t-0 要素には、条件をトリガーする選択セットを指定する1つの @no__t 子要素があります。 この条件は、選択セットで定義されたオブジェクトのいずれかが表示されたときにトリガーされます。 これらの条件を設定する方法の詳細については、「[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+- ビューまたはコントロールの各定義では、`SelectionCondition` 要素を使用して、定義を使用するときの条件を指定できます。 `SelectionCondition` 要素には、条件をトリガーする選択セットを指定する `SelectionSetName` 子要素があります。 この条件は、選択セットで定義されたオブジェクトのいずれかが表示されたときにトリガーされます。 これらの条件を設定する方法の詳細については、「[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ## <a name="selection-set-example"></a>選択セットの例
 
-次の例は、Windows PowerShell によって提供される @no__t 0 の書式設定ファイルから直接取得される選択セットを示しています。 その他の Windows PowerShell フォーマットファイルの詳細については、「 [Windows powershell の書式設定ファイル](./powershell-formatting-files.md)」を参照してください。
+次の例は、Windows PowerShell によって提供される `FileSystem` フォーマットファイルから直接取得される選択セットを示しています。 その他の Windows PowerShell フォーマットファイルの詳細については、「 [Windows powershell の書式設定ファイル](./powershell-formatting-files.md)」を参照してください。
 
 ```xml
 <SelectionSets>
@@ -59,7 +59,7 @@ ms.locfileid: "72368851"
 </SelectionSets>
 ```
 
-前の選択セットは、テーブルビューの @no__t 0 要素で参照されます。
+前の選択セットは、テーブルビューの `ViewSelectedBy` 要素で参照されます。
 
 ```xml
 <ViewDefinitions>
@@ -132,13 +132,13 @@ ms.locfileid: "72368851"
 
     - [GroupBy (Format) の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [SelectionSets](./selectionsets-element-format.md)
 
 [SelectionSet](./selectionset-element-format.md)
 
-[指定](./name-element-for-selectionset-format.md)
+[名前](./name-element-for-selectionset-format.md)
 
 [な](./types-element-for-selectionset-format.md)
 

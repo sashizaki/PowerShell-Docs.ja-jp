@@ -23,7 +23,7 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
 ### <a name="setting-up-the-project"></a>プロジェクトの設定
 
-1. 「 [Visual Studio のツールボックスへの Windows PowerShell アクティビティの追加](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)」の手順に従っ[て、ワークフロー](/dotnet/api/Microsoft.PowerShell.Activities)プロジェクトを作成し、それらの[アクティビティを追加します。](/dotnet/api/Microsoft.PowerShell.Management.Activities)アセンブリをツールボックスに転送します。
+1. 「 [Visual Studio のツールボックスへの Windows PowerShell アクティビティの追加](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)」の手順に従って、ワークフロープロジェクトを作成し、そのアクティビティ[を [ツール](/dotnet/api/Microsoft.PowerShell.Activities)ボックス] に[追加します](/dotnet/api/Microsoft.PowerShell.Management.Activities)。
 
 2. 参照アセンブリとして、プロジェクトに対して、システムの管理、管理、および管理を行います。そのためには、「」を参照してください。
 
@@ -31,15 +31,15 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
 1. ワークフローに**Sequence**アクティビティを追加します。
 
-2. 引数の型が `String[]` の `ComputerName` という名前の引数を作成します。 この引数は、確認して参加させるコンピューターの名前を表します。
+2. 引数の型が `String[]`の `ComputerName` という名前の引数を作成します。 この引数は、確認して参加させるコンピューターの名前を表します。
 
-3. @No__t-0 という名前の引数を[作成します](/dotnet/api/System.Management.Automation.PSCredential)。 この引数は、ドメインにコンピューターを参加させる権限を持つドメインアカウントのドメイン資格情報を表します。
+3. 型の `DomainCred` という名前の引数を[作成します](/dotnet/api/System.Management.Automation.PSCredential)。 この引数は、ドメインにコンピューターを参加させる権限を持つドメインアカウントのドメイン資格情報を表します。
 
-4. @No__t-0 という名前の引数を[作成します](/dotnet/api/System.Management.Automation.PSCredential)。 この引数は、確認および参加するコンピューターの管理者の資格情報を表します。
+4. 型の `MachineCred` という名前の引数を[作成します](/dotnet/api/System.Management.Automation.PSCredential)。 この引数は、確認および参加するコンピューターの管理者の資格情報を表します。
 
-5. **Sequence**アクティビティ内に**parallelforeach**アクティビティを追加します。 テキストボックスに `comp` と `ComputerName` を入力して、ループが `ComputerName` 配列の要素を反復処理するようにします。
+5. **Sequence**アクティビティ内に**parallelforeach**アクティビティを追加します。 ループが `ComputerName` 配列の要素を反復処理するように、テキストボックスに `comp` を入力し `ComputerName` します。
 
-6. **Parallelforeach**アクティビティの本文に**Sequence**アクティビティを追加します。 シーケンスの**DisplayName**プロパティを `JoinDomain` に設定します。
+6. **Parallelforeach**アクティビティの本文に**Sequence**アクティビティを追加します。 シーケンスの**DisplayName**プロパティを `JoinDomain`に設定します。
 
 7. **GetWmiObject**アクティビティを**joindomain**シーケンスに追加します。
 
@@ -47,7 +47,7 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
    |プロパティ|値|
    |--------------|-----------|
-   |**講義**|"Win32_ComputerSystem"|
+   |**Class**|"Win32_ComputerSystem"|
    |**PSComputerName**|コンペティション|
    |**PSCredential**|各の Ecred|
 
@@ -77,4 +77,5 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
     手順を完了すると、ワークフローデザインウィンドウは次のようになります。
 
-    ワークフローデザイナーでの @no__t 0JoinDomain XAML ワークフローデザイナーでの no__t![joindomain](../media/joindomainworkflow.png "workflow")
+    ワークフローデザイナーでの JoinDomain XAML の ![![ワークフローデザイナーの Joindomain xaml の]](../media/joindomainworkflow.png)
+    (../media/joindomainworkflow.png "joindomainworkflow")

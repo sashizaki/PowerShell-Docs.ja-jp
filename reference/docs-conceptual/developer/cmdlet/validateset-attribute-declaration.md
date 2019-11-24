@@ -41,7 +41,7 @@ ValidateSetAttribute 属性は、コマンドレットパラメーターの引�
 [ValidateSetAttribute("Steve","Mary")]
 ```
 
-@no__t-[0 (system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 @No__t-0 の既定値は、大文字小文字が無視されることを示します。 値を `false` にすると、コマンドレットで大文字と小文字が区別されます。
+`IgnoreCase` ([system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 `true` の既定値は、大文字小文字を区別しないことを示します。 `false` の値を指定すると、コマンドレットで大文字と小文字が区別されます。
 
 ## <a name="remarks"></a>コメント
 
@@ -51,7 +51,7 @@ ValidateSetAttribute 属性は、コマンドレットパラメーターの引�
 
 - ValidateSetAttribute 属性は、 [ValidateSetAttribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)クラスによって定義されます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Validatesetattribute (システム管理)](/dotnet/api/System.Management.Automation.ValidateSetAttribute)
 

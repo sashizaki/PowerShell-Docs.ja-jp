@@ -24,11 +24,11 @@ ms.locfileid: "72364461"
 
 ## <a name="how-to-load-cmdlets-using-a-module"></a>モジュールを使用してコマンドレットを読み込む方法
 
-1. コマンドレットが実装されているアセンブリファイルと同じ名前のモジュールフォルダーを作成します。 この手順では、Windows `system32` フォルダーにモジュールフォルダーが作成されます。
+1. コマンドレットが実装されているアセンブリファイルと同じ名前のモジュールフォルダーを作成します。 この手順では、Windows の `system32` フォルダーにモジュールフォルダーが作成されます。
 
    `%SystemRoot%\system32\WindowsPowerShell\v1.0\Modules\mymodule`
 
-1. @No__t-0 環境変数に、新しいモジュールフォルダーへのパスが含まれていることを確認します。 既定では、system フォルダーは @no__t 0 環境変数に既に追加されています。 @No__t-0 を表示するには、「`$env:PSModulePath`」と入力します。
+1. `PSModulePath` 環境変数に、新しいモジュールフォルダーへのパスが含まれていることを確認します。 既定では、システムフォルダーは `PSModulePath` 環境変数に既に追加されています。 `PSModulePath`を表示するには、「`$env:PSModulePath`」と入力します。
 
 1. コマンドレットアセンブリをモジュールフォルダーにコピーします。
 
@@ -40,7 +40,7 @@ ms.locfileid: "72364461"
 
    この手順は、コマンドレットをテストするために使用できます。 これにより、アセンブリ内のすべてのコマンドレットがセッションに追加されます。 モジュールの詳細については、「 [Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)」を参照してください。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
 [PowerShell モジュールマニフェストを記述する方法](../module/how-to-write-a-powershell-module-manifest.md)
 

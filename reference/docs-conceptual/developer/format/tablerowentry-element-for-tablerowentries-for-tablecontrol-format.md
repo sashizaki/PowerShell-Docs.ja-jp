@@ -41,27 +41,27 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableControl (Format) の TableRowEntry の EntrySelectedBy 要素](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|必須の要素です。<br /><br /> プロパティ値が行内に表示されるオブジェクトを定義します。|
 |[TableControl (Format) の TableRowEntry の TableColumnItems 要素](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|必須の要素です。<br /><br /> 値が表示されるプロパティまたはスクリプトを定義します。|
-|[TableControl (Format) の TableRowEntry の Wrap 要素](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)|省略可能な要素。<br /><br /> 列幅を超えるテキストを次の行に表示するように指定します。|
+|[TableControl (Format) の TableRowEntry の Wrap 要素](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> 列幅を超えるテキストを次の行に表示するように指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableControl (Format) の TableRowEntries 要素](./tablerowentries-element-for-tablecontrol-format.md)|テーブルの行を定義します。|
 
 ## <a name="remarks"></a>コメント
 
-1つの `TableColumnItems` 要素と1つの @no__t 要素を指定する必要があります。
+1つの `TableColumnItems` 要素と1つの `EntrySelectedBy` 要素を指定する必要があります。
 
 テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-次の例は、2つのプロパティの値を表示する行を定義する @no__t 0 要素を示してい[ます。](/dotnet/api/System.Diagnostics.Process)
+次の例は、`TableRowEntry` の2つのプロパティの値を表示する行を定義する要素を示してい[ます。](/dotnet/api/System.Diagnostics.Process)
 
 ```xml
 <TableRowEntry>
@@ -79,7 +79,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </TableRowEntry>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [テーブルビューの作成](./creating-a-table-view.md)
 

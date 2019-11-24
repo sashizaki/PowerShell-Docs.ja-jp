@@ -29,7 +29,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`Name` 要素の親要素について説明します。 各ビューで許可される `Name` 要素は1つだけです。
+次のセクションでは、`Name` 要素の属性、子要素、および親要素について説明します。 各ビューには、1つの `Name` 要素のみが許可されます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,7 +41,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[View 要素 (Format)](./view-element-format.md)|1つ以上の .NET オブジェクトのメンバーを表示するために使用されるビューを定義します。|
 
@@ -55,7 +55,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="example"></a>例
 
-次の例は、 [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトのテーブルビューを定義する @no__t 0 の要素を示しています。 ビューの名前は "service" です。
+[Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトのテーブルビューを定義する `View` 要素の例を次に示します。 ビューの名前は "service" です。
 
 ```xml
 <View>
@@ -68,7 +68,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [リストビューの作成](./creating-a-list-view.md)
 

@@ -41,7 +41,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[WideItem 要素 (Format)](./wideitem-element-for-widecontrol-format.md)|ワイドビューに表示される値を持つプロパティまたはスクリプトブロックを定義します。|
 
@@ -55,7 +55,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="example"></a>例
 
-この例は、値がビューに表示されるスクリプトを定義する @no__t 0 の要素を示しています。
+この例は、ビューに値が表示されるスクリプトを定義する `WideItem` 要素を示しています。
 
 ```xml
 <WideItem>
@@ -63,7 +63,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </WideItem>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [WideItem 要素 (Format)](./wideitem-element-for-widecontrol-format.md)
 

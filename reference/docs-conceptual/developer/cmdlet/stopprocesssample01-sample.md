@@ -17,7 +17,7 @@ ms.locfileid: "72365301"
 ---
 # <a name="stopprocesssample01-sample"></a>StopProcessSample01 サンプル
 
-このサンプルでは、プロセスを停止する前にユーザーからのフィードバックを要求するコマンドレットを記述する方法と、ユーザーがコマンドレットにオブジェクトを返すことを示す @no__t 0 パラメーターを実装する方法を示します。 このコマンドレットは、Windows PowerShell 2.0 によって提供される @no__t 0 のコマンドレットに似ています。
+このサンプルでは、プロセスを停止する前にユーザーからのフィードバックを要求するコマンドレットを記述する方法と、ユーザーがコマンドレットにオブジェクトを返すことを示す `PassThru` パラメーターを実装する方法を示します。 このコマンドレットは、Windows PowerShell 2.0 によって提供される `Stop-Process` コマンドレットに似ています。
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドする方法。
 
@@ -51,7 +51,7 @@ ms.locfileid: "72365301"
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 このサンプルでは、次のことを示します。
 
@@ -61,11 +61,11 @@ ms.locfileid: "72365301"
 
 - 確認を要求するために、メソッドを呼び出します。
 
-- コマンドレットがオブジェクトを返すかどうかを示す @no__t 0 パラメーターを実装します。 既定では、このコマンドレットはパイプラインにオブジェクトを返しません。
+- ユーザーがオブジェクトを返すかどうかを示す `PassThru` パラメーターを実装する。 既定では、このコマンドレットはパイプラインにオブジェクトを返しません。
 
 ## <a name="example"></a>例
 
-このサンプルでは、ユーザーがオブジェクトを返すことを示す @no__t 0 パラメーターを実装する方法と、`ShouldProcess` および `ShouldContinue` メソッドの呼び出しによってユーザーフィードバックを要求する方法を示します。
+このサンプルでは、ユーザーがオブジェクトを返すことを示す `PassThru` パラメーターを実装する方法と、`ShouldProcess` メソッドと `ShouldContinue` メソッドの呼び出しによってユーザーフィードバックを要求する方法を示します。
 
 ```csharp
 using System;
@@ -263,6 +263,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

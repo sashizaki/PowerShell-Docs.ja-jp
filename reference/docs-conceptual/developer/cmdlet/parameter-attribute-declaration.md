@@ -32,23 +32,23 @@ Parameter 属性は、コマンドレットパラメーターとしてコマン�
 
 #### <a name="parameters"></a>パラメーター
 
-@no__t-[0 (system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 `True` は、コマンドレットパラメーターが必要であることを示します。 コマンドレットが呼び出されたときに必要なパラメーターが指定されていない場合、Windows PowerShell はユーザーにパラメーター値の入力を求めます。 既定値は `false` です。
+`Mandatory` ([system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 `True` は、コマンドレットパラメーターが必要であることを示します。 コマンドレットが呼び出されたときに必要なパラメーターが指定されていない場合、Windows PowerShell はユーザーにパラメーター値の入力を求めます。 既定値は `false` です。
 
 `ParameterSetName` ([system.string](/dotnet/api/System.String)) 省略可能な名前付きパラメーター。 このコマンドレットパラメーターが属するパラメーターセットを指定します。 パラメーターセットが指定されていない場合、パラメーターはすべてのパラメーターセットに属します。
 
-@no__t-[0 (system.string](/dotnet/api/System.Int32)) 省略可能な名前付きパラメーター。 Windows PowerShell コマンド内のパラメーターの位置を指定します。
+`Position` ([system.string) 省略](/dotnet/api/System.Int32)可能な名前付きパラメーター。 Windows PowerShell コマンド内のパラメーターの位置を指定します。
 
-@no__t-[0 (system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 `True` は、コマンドレットパラメーターがパイプラインオブジェクトからの値を受け取ることを示します。 コマンドレットがオブジェクトのプロパティだけでなく、完全なオブジェクトにアクセスする場合は、このキーワードを指定します。 既定値は `false` です。
+`ValueFromPipeline` ([system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 `True` は、コマンドレットパラメーターがパイプラインオブジェクトからの値を受け取ることを示します。 コマンドレットがオブジェクトのプロパティだけでなく、完全なオブジェクトにアクセスする場合は、このキーワードを指定します。 既定値は `false` です。
 
-@no__t-[0 (system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 `True` は、コマンドレットパラメーターが、このパラメーターと同じ名前または同じエイリアスを持つパイプラインオブジェクトのプロパティから値を受け取ることを示します。 たとえば、コマンドレットに @no__t 0 のパラメーターがあり、パイプラインオブジェクトにも `Name` のプロパティがある場合、`Name` プロパティの値は、コマンドレットの `Name` パラメーターに割り当てられます。 既定値は `false` です。
+`ValueFromPipelineByPropertyName` ([system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 `True` は、コマンドレットパラメーターが、このパラメーターと同じ名前または別名を持つパイプラインオブジェクトのプロパティから値を受け取ることを示します。 たとえば、コマンドレットに `Name` パラメーターがあり、パイプラインオブジェクトにも `Name` プロパティがある場合、`Name` プロパティの値は、コマンドレットの `Name` パラメーターに割り当てられます。 既定値は `false` です。
 
-@no__t-[0 (system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 `True` は、コマンドレットパラメーターが、コマンドレットに渡される残りのすべての引数を受け入れることを示します。 既定値は `false` です。
+`ValueFromRemainingArguments` ([system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 `True` は、コマンドレットパラメーターが、コマンドレットに渡される残りのすべての引数を受け入れることを示します。 既定値は `false` です。
 
-`HelpMessage` 省略可能な名前付きパラメーター。 パラメーターの短い説明を指定します。 コマンドレットが実行され、必須パラメーターが指定されていない場合、Windows PowerShell はこのメッセージを表示します。
+省略可能な名前付きパラメーター `HelpMessage` ます。 パラメーターの短い説明を指定します。 コマンドレットが実行され、必須パラメーターが指定されていない場合、Windows PowerShell はこのメッセージを表示します。
 
-`HelpMessageBaseName` 省略可能な名前付きパラメーター。リソース識別子が存在する場所を指定します。 たとえば、このパラメーターは、ローカライズするヘルプメッセージを含むリソースアセンブリを指定できます。
+省略可能な名前付きパラメーター `HelpMessageBaseName` ます。リソース識別子が存在する場所を指定します。 たとえば、このパラメーターは、ローカライズするヘルプメッセージを含むリソースアセンブリを指定できます。
 
-`HelpMessageResourceId` 省略可能な名前付きパラメーター。ヘルプメッセージのリソース識別子を指定します。
+省略可能な名前付きパラメーター `HelpMessageResourceId` ます。ヘルプメッセージのリソース識別子を指定します。
 
 ## <a name="remarks"></a>コメント
 
@@ -60,7 +60,7 @@ Parameter 属性は、コマンドレットパラメーターとしてコマン�
 
 - 位置指定パラメーターを指定する場合は、パラメーターに設定されている位置指定パラメーターの数を5未満に制限します。 また、位置指定パラメーターは連続している必要はありません。 位置5、100、および250は、位置0、1、および2と同じように動作します。
 
-- @No__t-0 キーワードが指定されていない場合は、コマンドレットパラメーターを名前で参照する必要があります。
+- `Position` キーワードが指定されていない場合は、コマンドレットパラメーターを名前で参照する必要があります。
 
 - パラメーターセットを使用する場合は、次の点に注意してください。
 
@@ -68,15 +68,15 @@ Parameter 属性は、コマンドレットパラメーターとしてコマン�
 
     - パラメーターセットには、同じ位置に複数の位置パラメーターを含めることはできません。
 
-    - パラメーターセット内の1つのパラメーターだけが `ValueFromPipeline = true` を宣言しなければなりません。 複数のパラメーターで `ValueFromPipelineByPropertyName = true` を定義できます。
+    - パラメーターセット内の1つのパラメーターのみが `ValueFromPipeline = true`を宣言しなければなりません。 複数のパラメーターで `ValueFromPipelineByPropertyName = true`を定義できます。
 
-    - 複数のパラメーターで `ValueFromPipelineByPropertyName = true` を定義できます。
+    - 複数のパラメーターで `ValueFromPipelineByPropertyName = true`を定義できます。
 
 - パラメーター名のガイドラインの詳細については、「[コマンドレットパラメーター名](standard-cmdlet-parameter-names-and-types.md)」を参照してください。
 
 - Parameter 属性は、system.servicemodel[属性](/dotnet/api/System.Management.Automation.ParameterAttribute)クラスによって定義されます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [System.string. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)
 

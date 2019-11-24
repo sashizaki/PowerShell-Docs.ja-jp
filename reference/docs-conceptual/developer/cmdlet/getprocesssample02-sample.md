@@ -17,7 +17,7 @@ ms.locfileid: "72364571"
 ---
 # <a name="getprocesssample02-sample"></a>GetProcessSample02 サンプル
 
-このサンプルでは、ローカルコンピューター上のプロセスを取得するコマンドレットを記述する方法を示します。 これには、取得するプロセスを指定するために使用できる @no__t 0 パラメーターが用意されています。 このコマンドレットは、Windows PowerShell 2.0 によって提供される @no__t 0 コマンドレットの簡略化されたバージョンです。
+このサンプルでは、ローカルコンピューター上のプロセスを取得するコマンドレットを記述する方法を示します。 これには、取得するプロセスを指定するために使用できる `Name` パラメーターが用意されています。 このコマンドレットは、Windows PowerShell 2.0 によって提供される `Get-Process` コマンドレットの簡略化されたバージョンです。
 
 ## <a name="how-to-build-the-sample-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドする方法。
 
@@ -51,7 +51,7 @@ ms.locfileid: "72364571"
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 このサンプルでは、次のことを示します。
 
@@ -135,6 +135,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

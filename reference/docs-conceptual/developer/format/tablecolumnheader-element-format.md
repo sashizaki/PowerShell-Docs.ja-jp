@@ -33,7 +33,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`TableColumnHeader` 要素の親要素について説明します。
+次のセクションでは、`TableColumnHeader` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -41,29 +41,29 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[TableControl (Format) の TableColumnHeader の Label 要素](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|省略可能な要素。<br /><br /> 列の上部に表示されるラベルを定義します。 ラベルが指定されていない場合は、行に表示される値を持つプロパティの名前が使用されます。|
+|[TableControl (Format) の TableColumnHeader の Label 要素](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> 列の上部に表示されるラベルを定義します。 ラベルが指定されていない場合は、行に表示される値を持つプロパティの名前が使用されます。|
 |[TableControl の TableColumnHeader の Width 要素 (Format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|必須の要素です。<br /><br /> 列の幅 (文字数) を指定します。|
-|[TableControl (Format) の TableColumnHeader の Alignment 要素](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|省略可能な要素。<br /><br /> 列のラベルを表示する方法を指定します。 アラインメントが指定されていない場合、ラベルは左揃えで配置されます。|
+|[TableControl (Format) の TableColumnHeader の Alignment 要素](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> 列のラベルを表示する方法を指定します。 アラインメントが指定されていない場合、ラベルは左揃えで配置されます。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableHeaders 要素 (書式)](./tableheaders-element-format.md)|テーブルビューの列を定義します。|
 
 ## <a name="remarks"></a>コメント
 
-テーブルの列ごとにヘッダーを指定します。 列は、@no__t 0 の要素が定義されている順序で表示されます。
+テーブルの列ごとにヘッダーを指定します。 列は `TableColumnHeader` の要素が定義されている順序で表示されます。
 
-テーブルには、`TableRowEntry` 要素と同じ数の @no__t 0 要素が必要です。 列ヘッダーは、テーブルの上部のテキストの表示方法を定義します。 行のエントリによって、テーブルの行に表示されるデータが定義されます。
+テーブルの `TableColumnHeader` 要素の数は、`TableRowEntry` 要素と同じである必要があります。 列ヘッダーは、テーブルの上部のテキストの表示方法を定義します。 行のエントリによって、テーブルの行に表示されるデータが定義されます。
 
 テーブルビューのコンポーネントの詳細については、「[テーブルビュー](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-次の例は、2つの @no__t 0 要素を示しています。 最初の要素は、ラベルが "Column 1" で、幅が16文字で、ラベルが左揃えである列を定義します。 2番目の要素は、ラベルが "Column 2" で、幅が10文字で、列のラベルが中央にある列を定義します。
+次の例は、2つの `TableColumnHeader` 要素を示しています。 最初の要素は、ラベルが "Column 1" で、幅が16文字で、ラベルが左揃えである列を定義します。 2番目の要素は、ラベルが "Column 2" で、幅が10文字で、列のラベルが中央にある列を定義します。
 
 ```xml
 <TableHeaders>
@@ -80,7 +80,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </TableHeaders>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [TableControl (Format) の TableColumnHeader の Alignment 要素](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
 

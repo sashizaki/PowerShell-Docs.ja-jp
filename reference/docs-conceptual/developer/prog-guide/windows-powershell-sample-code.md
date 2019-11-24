@@ -25,7 +25,7 @@ Windows PowerShell®のサンプルは、Windows SDK を通じて入手できま
 
 ## <a name="sample-code-listing"></a>サンプルコードリスト
 
-|サンプルコード|[説明]|
+|サンプル コード|説明|
 |-----------------|-----------------|
 |[AccessDbProviderSample01 のコードサンプル](./accessdbprovidersample01-code-sample.md)|これは、「基本的な[Windows PowerShell プロバイダーの作成](./creating-a-basic-windows-powershell-provider.md)」で説明されているプロバイダーです。|
 |[AccessDbProviderSample02 のコードサンプル](./accessdbprovidersample02-code-sample.md)|これは、「 [Windows PowerShell ドライブプロバイダーの作成](./creating-a-windows-powershell-drive-provider.md)」で説明されているプロバイダーです。|
@@ -34,14 +34,14 @@ Windows PowerShell®のサンプルは、Windows SDK を通じて入手できま
 |[AccessDbProviderSample05 のコードサンプル](./accessdbprovidersample05-code-sample.md)|これは、「 [Windows PowerShell ナビゲーションプロバイダーの作成](./creating-a-windows-powershell-navigation-provider.md)」で説明されているプロバイダーです。|
 |[AccessDbProviderSample06 のコードサンプル](./accessdbprovidersample06-code-sample.md)|これは、「 [Windows PowerShell コンテンツプロバイダーを作成](./creating-a-windows-powershell-content-provider.md)する」で説明されているプロバイダーです。|
 |[GetProc01 のコードサンプル](./getproc01-code-samples.md)|これは、「[最初のコマンドレットの作成](../cmdlet/creating-a-cmdlet-without-parameters.md)」で説明されている基本的な `Get-Process` コマンドレットのサンプルです。|
-|[GetProc02 のコードサンプル](./getproc02-code-samples.md)|これは、「[コマンドライン入力を処理するパラメーターの追加](../cmdlet/adding-parameters-that-process-command-line-input.md)」で説明されている @no__t 0 コマンドレットのサンプルです。|
-|[GetProc03 のコードサンプル](./getproc03-code-samples.md)|これは、「[パイプライン入力を処理するパラメーターの追加](../cmdlet/adding-parameters-that-process-pipeline-input.md)」で説明されている @no__t 0 コマンドレットのサンプルです。|
-|[GetProc04 のコードサンプル](./getproc04-code-samples.md)|これは、「[コマンドレットに終了しないエラー報告を追加](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)する」で説明されている @no__t 0 コマンドレットのサンプルです。|
+|[GetProc02 のコードサンプル](./getproc02-code-samples.md)|これは、「[コマンドライン入力を処理するパラメーターの追加](../cmdlet/adding-parameters-that-process-command-line-input.md)」で説明されている `Get-Process` コマンドレットのサンプルです。|
+|[GetProc03 のコードサンプル](./getproc03-code-samples.md)|これは、「[パイプライン入力を処理するパラメーターの追加](../cmdlet/adding-parameters-that-process-pipeline-input.md)」で説明されている `Get-Process` コマンドレットのサンプルです。|
+|[GetProc04 のコードサンプル](./getproc04-code-samples.md)|これは、「[コマンドレットに終了しないエラー報告を追加](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)する」で説明されている `Get-Process` コマンドレットのサンプルです。|
 |[GetProc05 のコードサンプル](./getproc05-code-samples.md)|この `Get-Process` コマンドレットは、「[コマンドレットに終了しないエラー報告を追加](../cmdlet/adding-non-terminating-error-reporting-to-your-cmdlet.md)する」で説明されているコマンドレットに似ています。|
-|[StopProc01 のコードサンプル](./stopproc01-code-samples.md)|これは、「[システムを変更するコマンドレットの作成](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md)」で説明されている @no__t 0 コマンドレットのサンプルです。|
-|[StopProcessSample04 のコードサンプル](./stopprocesssample04-code-samples.md)|これは、「[コマンドレットにパラメーターセットを追加する](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)」で説明されている @no__t 0 コマンドレットのサンプルです。|
+|[StopProc01 のコードサンプル](./stopproc01-code-samples.md)|これは、「[システムを変更するコマンドレットの作成](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md)」で説明されている `Stop-Process` コマンドレットのサンプルです。|
+|[StopProcessSample04 のコードサンプル](./stopprocesssample04-code-samples.md)|これは、「[コマンドレットにパラメーターセットを追加する](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)」で説明されている `Stop-Process` コマンドレットのサンプルです。|
 |[Runspace01 のコードサンプル](./runspace01-code-samples.md)|これらは、「[指定されたコマンドを実行するコンソールアプリケーションの作成](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)」で説明されている実行空間のコードサンプルです。|
-|[Runspace02 のコードサンプル](./runspace02-code-samples.md)|このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、@no__t 1 つのコマンドレットを同期的に実行します。|
+|[Runspace02 のコードサンプル](./runspace02-code-samples.md)|このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、`Get-Process` コマンドレットを同期的に実行します。|
 |[RunSpace03 のコードサンプル](./runspace03-code-samples.md)|これらは、「指定されたスクリプトを実行するコンソールアプリケーションの作成」で説明されている実行空間のコードサンプルです。|
 |[RunSpace04 のコードサンプル](./runspace04-code-samples.md)|これは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して終了エラーを生成するスクリプトを実行する実行空間のコードサンプルです。|
 |[RunSpace05 のコードサンプル](./runspace05-code-sample.md)|これは、「 [RunspaceConfiguration を使用した実行空間の構成](https://msdn.microsoft.com/en-us/42681d19-2d05-4975-befd-afb1990e79b2)」で説明されている Runspace05 サンプルのソースコードです。|
@@ -51,7 +51,7 @@ Windows PowerShell®のサンプルは、Windows SDK を通じて入手できま
 |[RunSpace09 のコードサンプル](./runspace09-code-sample.md)|これは、「[パイプラインを非同期に呼び出すコンソールアプリケーションの作成](https://msdn.microsoft.com/en-us/198c1c94-2a06-457e-93ce-c0d910618e47)」で説明されている Runspace09 サンプルのソースコードです。|
 |[RunSpace10 のコードサンプル](./runspace10-code-sample.md)|これは Runspace10 サンプルのソースコードであり、コマンドレットを[Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration)に追加し、変更された構成情報を使用して実行空間を作成します。|
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 

@@ -43,7 +43,7 @@ PSStandardMembers メンバーセットは、オブジェクトの既定のプ�
   </MemberSet>
 ```
 
-次の出力は、[フォーマットリスト](/powershell/module/Microsoft.PowerShell.Utility/Format-List)コマンドレットによって返される既定のプロパティを示しています。 各プロセスオブジェクトに対して返されるのは、@no__t 0、`Handles`、`CPU`、および `Name` のプロパティだけです。
+次の出力は、[フォーマットリスト](/powershell/module/Microsoft.PowerShell.Utility/Format-List)コマンドレットによって返される既定のプロパティを示しています。 各プロセスオブジェクトに対して返されるのは、`Id`、`Handles`、`CPU`、および `Name` プロパティだけです。
 
 ```powershell
 Get-Process | format-list
@@ -62,6 +62,6 @@ Name    : agrsmsvc
 ...
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

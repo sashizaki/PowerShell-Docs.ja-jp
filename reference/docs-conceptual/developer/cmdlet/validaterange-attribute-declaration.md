@@ -37,17 +37,17 @@ ValidateRange 属性は、コマンドレットパラメーター引数の最小
 
 ## <a name="remarks"></a>コメント
 
-- @No__t-0 パラメーターの値が `MaxRange` パラメーターの値よりも大きい場合、Windows PowerShell ランタイムは構築エラーをスローします。
+- `MinRange` パラメーターの値が `MaxRange` パラメーターの値よりも大きい場合、Windows PowerShell ランタイムは構築エラーをスローします。
 
 - Windows PowerShell ランタイムは、次の条件下で検証エラーをスローします。
 
-    - 引数の値が @no__t 0 より小さいか、@no__t の上限を超えている場合。
+    - 引数の値が `MinRange` 制限より小さい場合、または `MaxRange` 制限を超える場合。
 
-    - 引数が `MinRange` および `MaxRange` パラメーターと同じ型ではない場合。
+    - 引数が `MinRange` と `MaxRange` パラメーターと同じ型ではない場合。
 
 - ValidateRange 属性は、system.servicemodel[属性](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)クラスによって定義されます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [System. Automation. Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)
 

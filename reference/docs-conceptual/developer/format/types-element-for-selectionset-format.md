@@ -40,13 +40,13 @@ Configuration 要素 (Format) SelectionSets 要素 (書式) Selectionsets Elemen
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[型の TypeName 要素 (Format)](./typename-element-for-types-format.md)|必須の要素です。<br /><br /> 選択セットに属する .NET オブジェクトを指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[SelectionSet 要素 (形式)](./selectionset-element-format.md)|セットの名前で参照できる .NET オブジェクトのセットを定義します。|
 
@@ -56,7 +56,7 @@ Configuration 要素 (Format) SelectionSets 要素 (書式) Selectionsets Elemen
 
 ## <a name="example"></a>例
 
-この例は、4つの .NET 型を定義する @no__t 0 の要素を示しています。
+この例は、4つの .NET 型を定義する `SelectionSet` 要素を示しています。
 
 ```xml
 <SelectionSets>
@@ -72,7 +72,7 @@ Configuration 要素 (Format) SelectionSets 要素 (書式) Selectionsets Elemen
 </SelectionSets>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [オブジェクトのセットの定義](./defining-selection-sets.md)
 

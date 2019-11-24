@@ -21,10 +21,10 @@ ms.locfileid: "72363201"
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-[ワイドビュー (基本)](./wide-view-basic.md)この例では、Servicecontroller を表示する基本的なワイドビューを実装する方法を示します。 [Displayproperty =](/dotnet/api/System.ServiceProcess.ServiceController) @no__t 2 のコマンドレットによって返される Fullname オブジェクト。
+[ワイドビュー (基本)](./wide-view-basic.md)この例では、Servicecontroller を表示する基本的なワイドビューを実装する方法を示します。 [Displayproperty =](/dotnet/api/System.ServiceProcess.ServiceController) `Get-Service` コマンドレットによって返される Fullname オブジェクト。
 
-[Wide ビュー (GroupBy)](./wide-view-groupby.md)この例では、Servicecontroller のグループを表示するワイドビューを実装する方法を示します。 [Displayproperty =](/dotnet/api/System.ServiceProcess.ServiceController) @no__t 2 のコマンドレットによって返される Fullname オブジェクト。
+[Wide ビュー (GroupBy)](./wide-view-groupby.md)この例では、Servicecontroller のグループを表示するワイドビューを実装する方法を示します。 [Displayproperty =](/dotnet/api/System.ServiceProcess.ServiceController) `Get-Service` コマンドレットによって返される Fullname オブジェクト。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)

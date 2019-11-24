@@ -132,7 +132,7 @@ protected override string GetParentPath(string path, string root)
 
 ### <a name="implementing-makepath"></a>MakePath の実装
 
-指定された親パスと指定された子パスを結合してプロバイダー内部パスを作成[します (](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)プロバイダーがサポートできるパスの種類の詳細については、「」を参照してください)。[Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)。 PowerShell エンジンは、ユーザーが次の[コマンドレットを](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand)呼び出すと、このメソッドを呼び出します。
+指定された親パスと指定された子パスを結合してプロバイダー内部パスを作成[します (](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)プロバイダーがサポートできるパスの種類の詳細については、「 [Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)」を参照してください)。 PowerShell エンジンは、ユーザーが次の[コマンドレットを](/dotnet/api/Microsoft.PowerShell.Commands.joinpathcommand)呼び出すと、このメソッドを呼び出します。
 
 ```csharp
 protected override string MakePath(string parent, string child)
@@ -191,7 +191,7 @@ protected override string MakePath(string parent, string child)
 
 ### <a name="implementing-normalizerelativepath"></a>NormalizeRelativePath の実装
 
-[Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)メソッドは、-1 と @no__t の2つのパラメーターを @no__t 受け取り、`path` パラメーターに相当する正規化されたパスを返し、`basepath` を基準としています。引き.
+[Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)メソッドは `path` パラメーターと `basepath` パラメーターを受け取り、`path` パラメーターと等価であり、`basepath` パラメーターを基準とした正規化されたパスを返します。
 
 ```csharp
 protected override string NormalizeRelativePath(string path,
@@ -298,7 +298,7 @@ protected override void MoveItem(string path, string destination)
        }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [コンテナープロバイダーの作成](./writing-a-container-provider.md)
 

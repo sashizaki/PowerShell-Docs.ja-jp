@@ -19,13 +19,13 @@ ms.locfileid: "72361241"
 
 このセクションでは、Windows PowerShell®コマンドレットのヘルプトピックに入力セクションを追加する方法について説明します。 [入力] セクションには、コマンドレットがパイプラインからの入力として受け取るオブジェクトの .NET クラスが、値またはプロパティ名のいずれかで一覧表示されます。
 
-入力セクションに追加できるクラスの数に制限はありません。 入力の種類は @no__t 0command: inputTypes > node で囲まれており、各クラスは \<command: inputType > 要素で囲まれています。
+入力セクションに追加できるクラスの数に制限はありません。 入力の型は \<コマンド: inputTypes > node で囲まれており、各クラスは \<コマンド: inputType > 要素で囲まれています。
 
-スキーマには、各 \<command: inputType > 要素に2つの @no__t 0maml: description > 要素が含まれています。 ただし、`Get-Help` コマンドレットは、\<command: inputType >/\<maml: description >) 要素の内容のみを表示します。
+スキーマには、各 \<コマンド: inputType > 要素の2つの \<maml: description > 要素が含まれています。 ただし、`Get-Help` コマンドレットでは、\<コマンド: inputType >/\<maml: description >) 要素の内容のみが表示されます。
 
-Windows PowerShell 3.0 以降では、`Get-Help` コマンドレットは、@no__t 1maml: uri > 要素の内容を表示します。 この要素を使用すると、.NET クラスを説明するトピックにユーザーを誘導できます。
+Windows PowerShell 3.0 以降では、`Get-Help` コマンドレットは \<maml: uri > 要素の内容を表示します。 この要素を使用すると、.NET クラスを説明するトピックにユーザーを誘導できます。
 
-次の XML は、@no__t 0maml: inputTypes > ノードを示しています。
+次の XML は、\<maml: inputTypes > ノードを示しています。
 
 ```xml
 <command:inputTypes>
@@ -42,7 +42,7 @@ Windows PowerShell 3.0 以降では、`Get-Help` コマンドレットは、@no_
 </command:inputTypes>
 ```
 
-次の XML は、@no__t 0maml: inputTypes > ノードを使用して入力の種類を文書化する例を示しています。
+次の XML は、\<maml: inputTypes > ノードを使用して入力の種類を文書化する例を示しています。
 
 ```xml
 <command:inputTypes>

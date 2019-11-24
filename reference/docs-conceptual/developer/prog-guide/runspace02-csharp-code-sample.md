@@ -17,12 +17,12 @@ ms.locfileid: "72366621"
 ---
 # <a name="runspace02-c-code-sample"></a>Runspace02 (C#) コード サンプル
 
-Runspace02 サンプルのC#ソースコードを次に示します。 このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、@no__t 1 つのコマンドレットを同期的に実行します。 次に、Windows フォームとデータバインディングを使用して、DataGridView コントロールに結果を表示します。
+Runspace02 サンプルのC#ソースコードを次に示します。 このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、`Get-Process` コマンドレットを同期的に実行します。 次に、Windows フォームとデータバインディングを使用して、DataGridView コントロールに結果を表示します。
 
 ## <a name="code-sample"></a>コードサンプル
 
 [!code-csharp[Runspace02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace02/Runspace02.cs#L11-L82 "Runspace02.cs")]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

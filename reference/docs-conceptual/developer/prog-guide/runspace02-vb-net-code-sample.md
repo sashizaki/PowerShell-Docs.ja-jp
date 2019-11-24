@@ -17,7 +17,7 @@ ms.locfileid: "72366611"
 ---
 # <a name="runspace02-vbnet-code-sample"></a>Runspace02 (VB.NET) コード サンプル
 
-Runspace02 サンプルの VB.NET ソースコードを次に示します。 このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、@no__t 1 つのコマンドレットを同期的に実行します。 次に、Windows フォームとデータバインディングを使用して、DataGridView コントロールに結果を表示します。
+Runspace02 サンプルの VB.NET ソースコードを次に示します。 このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、`Get-Process` コマンドレットを同期的に実行します。 次に、Windows フォームとデータバインディングを使用して、DataGridView コントロールに結果を表示します。
 
 ## <a name="code-sample"></a>コードサンプル
 
@@ -86,6 +86,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace02.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace02/Runspace02.vb#L09-L68 "Runspace02.vb")] -->
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

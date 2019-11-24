@@ -29,7 +29,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`AutoSize` 要素の親要素について説明します。
+次のセクションでは、`AutoSize` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -41,19 +41,19 @@ None
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[WideControl 要素 (Format)](./widecontrol-element-format.md)|ビューのワイド (単一値) リスト形式を定義します。|
 
 ## <a name="remarks"></a>コメント
 
-ワイドビューを定義する場合は、@no__t 0 要素または[Columnnumber](./columnnumber-element-for-widecontrol-format.md)要素を追加できますが、両方を追加することはできません。
+ワイドビューを定義する場合は、`AutoSize` 要素または[Columnnumber](./columnnumber-element-for-widecontrol-format.md)要素を追加できますが、両方を追加することはできません。
 
 ワイドビューのコンポーネントの詳細については、「[ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
 
 ワイドビューの例については、「 [Wide ビュー (Basic)](./wide-view-basic.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [WideControl の ColumnNumber 要素 (形式)](./columnnumber-element-for-widecontrol-format.md)
 

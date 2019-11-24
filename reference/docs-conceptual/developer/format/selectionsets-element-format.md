@@ -39,13 +39,13 @@ ms.locfileid: "72361871"
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[SelectionSet 要素 (形式)](./selectionset-element-format.md)|必須の要素です。<br /><br /> セットの名前で参照できる .NET オブジェクトの1つのセットを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[Configuration 要素](./configuration-element-format.md)|書式設定ファイルのトップレベルの要素を表します。|
 
@@ -53,9 +53,9 @@ ms.locfileid: "72361871"
 
 継承によって関連付けられたオブジェクトのセットなど、1つの名前を使用して参照する関連オブジェクトのセットがある場合は、選択セットを使用できます。 ビューを定義するときに、各ビュー内のすべてのオブジェクトを一覧表示するのではなく、選択したセットの名前を使用してオブジェクトのセットを指定できます。
 
-共通選択セットは、書式設定ファイルのビューまたはビューの定義を定義するときに、名前によって指定されます。 このような場合、`ViewSelectedBy` 要素と `EntrySelectedBy` 要素の @no__t 0 子要素は、使用するセットを指定します。 選択セットの詳細については、「[オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
+共通選択セットは、書式設定ファイルのビューまたはビューの定義を定義するときに、名前によって指定されます。 このような場合、`ViewSelectedBy` 要素と `EntrySelectedBy` 要素の `SelectionSetName` 子要素は、使用するセットを指定します。 選択セットの詳細については、「[オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Configuration 要素](./configuration-element-format.md)
 

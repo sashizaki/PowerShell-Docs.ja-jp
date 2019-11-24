@@ -41,7 +41,7 @@ Configuration 要素 (Format) SelectionSets 要素 (形式) Selectionsets 要素
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[Types 要素 (Format)](./types-element-for-selectionset-format.md)|選択セット内の .NET オブジェクトを定義します。|
 
@@ -53,11 +53,11 @@ Configuration 要素 (Format) SelectionSets 要素 (形式) Selectionsets 要素
 
 継承によって関連付けられたオブジェクトのセットなど、1つの名前を使用して参照する関連オブジェクトのセットがある場合は、選択セットを使用できます。 ビューを定義するときに、各ビュー内のすべてのオブジェクトを一覧表示するのではなく、選択したセットの名前を使用してオブジェクトのセットを指定できます。
 
-共通選択セットは、書式設定ファイルのビューを定義するときに、名前によって指定されます。 このような場合、ビューの `ViewSelectedBy` 要素の @no__t 0 子要素は、セットを指定します。 ただし、ビューのエントリごとに、そのビューのエントリのみに適用される選択セットを指定することもできます。 選択セットの詳細については、「[オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
+共通選択セットは、書式設定ファイルのビューを定義するときに、名前によって指定されます。 このような場合、ビューの `ViewSelectedBy` 要素の `SelectionSetName` 子要素によって、セットが指定されます。 ただし、ビューのエントリごとに、そのビューのエントリのみに適用される選択セットを指定することもできます。 選択セットの詳細については、「[オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-次の例は、4つの .NET 型を定義する @no__t 0 要素を示しています。
+次の例は、4つの .NET 型を定義する `SelectionSet` 要素を示しています。
 
 ```
 <SelectionSets>
@@ -73,7 +73,7 @@ Configuration 要素 (Format) SelectionSets 要素 (形式) Selectionsets 要素
 </SelectionSets>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [選択セットの定義](./defining-selection-sets.md)
 

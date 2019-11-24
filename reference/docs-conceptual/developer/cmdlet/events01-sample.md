@@ -24,13 +24,13 @@ ms.locfileid: "72369741"
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドする方法。
 
 1. Windows PowerShell 2.0 SDK がインストールされている状態で、Events01 フォルダーに移動します。
-   既定の場所は `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01` です。
+   既定の場所は `C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\Events01`です。
 
 2. ソリューション (.sln) ファイルのアイコンをダブルクリックします。
    これにより、Microsoft Visual Studio でサンプルプロジェクトが開きます。
 
 3. **[ビルド]** メニューの **[ソリューションのビルド]** をクリックします。
-   サンプルのライブラリは、既定の `\bin` または `\bin\debug` のフォルダーに構築されます。
+   このサンプルのライブラリは、既定の `\bin` または `\bin\debug` フォルダーに組み込まれています。
 
 ### <a name="how-to-run-the-sample"></a>サンプルを実行する方法
 
@@ -77,14 +77,14 @@ A file was created in the TEMP directory
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 このサンプルでは、次のことを示します。
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>イベント登録用のコマンドレットを記述する方法
 
-このコマンドレットは、 [ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)クラスから派生します。このクラスは、`Register-*Event` コマンドレットに共通のパラメーターをサポートしています。
-[ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)から派生したコマンドレットは、特定のパラメーターを定義するだけで、`GetSourceObject` と @no__t 2 つの抽象メソッドをオーバーライドする必要があります。
+コマンドレットは、 [ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)クラスから派生します。このクラスは、`Register-*Event` コマンドレットに共通のパラメーターをサポートしています。
+[ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)から派生したコマンドレットでは、特定のパラメーターを定義し、`GetSourceObject` および `GetSourceObjectEventName` 抽象メソッドをオーバーライドするだけで済みます。
 
 ## <a name="example"></a>例
 
@@ -187,6 +187,6 @@ namespace Sample
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell コマンドレットの記述](writing-a-windows-powershell-cmdlet.md)

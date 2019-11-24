@@ -17,7 +17,7 @@ ms.locfileid: "72359811"
 ---
 # <a name="associating-management-odata-entities"></a>Management OData エンティティを関連付ける
 
-多くの場合、2つの異なる管理 OData エンティティ間のアソシエーションを作成すると便利です。 たとえば、管理 OData サービスは、カテゴリで編成された製品のカタログを管理するエンティティを持つことができます。また、`Product` および `Category` のエンティティを定義します。 これら2つのエンティティを関連付けることにより、クライアントは、web サービスへの単一の要求を使用して、カテゴリ内のすべての製品に関する情報を取得できます。
+多くの場合、2つの異なる管理 OData エンティティ間のアソシエーションを作成すると便利です。 たとえば、管理 OData サービスは、カテゴリ内に編成された製品のカタログを管理するエンティティを持つことができ、エンティティ `Product` と `Category`を定義します。 これら2つのエンティティを関連付けることにより、クライアントは、web サービスへの単一の要求を使用して、カテゴリ内のすべての製品に関する情報を取得できます。
 
 エンティティ間の関連付けを作成する方法を示すサンプルは、[アソシエーションサンプル](https://code.msdn.microsoft.com:443/windowsdesktop/Association-sample-0f0fa87e)でダウンロードできます。
 
@@ -43,9 +43,9 @@ string Products[];
 }
 ```
 
-@No__t-0 クラスは、そのカテゴリに属する製品の名前の配列であるプロパティを定義します。
+`Category` クラスは、そのカテゴリに属する製品の名前の配列であるプロパティを定義します。
 
-2つのエンティティを関連付けるには、サービスのリソーススキーマ MOF ファイルで `Association` 属性を持つクラスを定義する必要があります。 クラスでは、アソシエーションの `ends` という2つのエンティティが関連付けられるように定義する必要があります。 次の例は、カテゴリと製品のエンティティ間の関連付けを定義するクラスの定義を示しています。
+2つのエンティティを関連付けるには、サービスのリソーススキーマ MOF ファイルで `Association` 属性を持つクラスを定義する必要があります。 クラスでは、関連付けの `ends` と呼ばれる、関連付ける2つのエンティティを定義する必要があります。 次の例は、カテゴリと製品のエンティティ間の関連付けを定義するクラスの定義を示しています。
 
 ```csharp
 [Association]
@@ -55,7 +55,7 @@ Product ref theProducts;
 }
 ```
 
-Category クラスの Products プロパティの宣言も変更する必要があります。 @No__t-0 キーワードを使用して、プロパティがアソシエーションの1つの end であることを指定します。 プロパティは、文字列の配列ではなく、別のエンティティへの参照としても定義する必要があります。 これを行うには、`ref` キーワードを使用します。 次の例は、アソシエーションのプロパティ定義を示しています。
+Category クラスの Products プロパティの宣言も変更する必要があります。 `AssociationClass` キーワードを使用して、プロパティがアソシエーションの1つの end であることを指定します。 プロパティは、文字列の配列ではなく、別のエンティティへの参照としても定義する必要があります。 これを行うには、`ref` キーワードを使用します。 次の例は、アソシエーションのプロパティ定義を示しています。
 
 ```csharp
 class Sample_Category {
@@ -82,7 +82,7 @@ Sample_Category ref AssociatedCategory;
 
 #### <a name="steps-for-associating-entities-in-the-resource-schema-file"></a>リソーススキーマファイル内のエンティティを関連付ける手順
 
-- @No__t-0 キーワードを使用して、アソシエーションをクラスとして定義します。
+- `Association` キーワードを使用して、アソシエーションをクラスとして定義します。
 
 - アソシエーションの end を定義するには、AssociationClass キーワードを使用して、関連付けられているエンティティのプロパティを限定します。
 
@@ -94,7 +94,7 @@ Sample_Category ref AssociatedCategory;
 
 - ナビゲーションプロパティが基になるに存在する場合は。 .NET Framework 型、およびそのプロパティに外部キーが含まれているため、明示的なマッピングは必要ありません。
 
-- ナビゲーションプロパティが基になる .NET Framework 型に存在しない場合は、関連付けられているインスタンスのキーの一覧を取得するコマンドレットを指定する必要があります。 これを行うには、`CmdletImplementation` 要素の下に入れ子になっている @no__t 0 要素を追加します。その際、他の CRUD コマンドの `cmdlets` を定義する要素に従います。
+- ナビゲーションプロパティが基になる .NET Framework 型に存在しない場合は、関連付けられているインスタンスのキーの一覧を取得するコマンドレットを指定する必要があります。 これを行うには、他の CRUD コマンドの `cmdlets` を定義する要素に従って、`CmdletImplementation` 要素の下に入れ子になっている `Association` 要素を追加します。
 
   ```xml
   Class Name=" Category">
@@ -177,7 +177,7 @@ Sample_Category ref AssociatedCategory;
 
 #### <a name="constructing-queries-for-associated-entities"></a>関連付けられたエンティティに対するクエリの構築
 
-- クライアントは、関連付けられている製品を取得せずに、カテゴリの詳細を要求できます。 たとえば、次の要求では `food` カテゴリの詳細が取得されます。
+- クライアントは、関連付けられている製品を取得せずに、カテゴリの詳細を要求できます。 たとえば、次の要求では、`food` カテゴリの詳細が取得されます。
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')
@@ -195,12 +195,12 @@ Sample_Category ref AssociatedCategory;
   http://localhost:7000/MODataSvc/sample.svc/Category('food')/$links/AssociatedProducts
   ```
 
-- クライアントは、`$expand` 修飾子を使用して、カテゴリの詳細とそれに関連付けられた製品の両方を取得できます。
+- クライアントは、`$expand` の修飾子を使用して、カテゴリの詳細とそれに関連付けられている製品の両方を取得できます。
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')?$expand=AssociatedProducts
   ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Management OData IIS 拡張 Web サービスの作成](./creating-a-management-odata-web-service.md)

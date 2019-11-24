@@ -40,13 +40,13 @@ ViewDefinitions 要素 (Format) ビュー要素 (Format) TableControl Element (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[TableColumnHeader 要素 (Format)](./tablecolumnheader-element-format.md)|省略可能な要素。<br /><br /> テーブルビューの列のデータのラベル、幅、および配置を定義します。|
+|[TableColumnHeader 要素 (Format)](./tablecolumnheader-element-format.md)|省略可能な要素です。<br /><br /> テーブルビューの列のデータのラベル、幅、および配置を定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableControl 要素 (形式)](./tablecontrol-element-format.md)|ビューのテーブル形式を定義します。|
 
@@ -56,7 +56,7 @@ ViewDefinitions 要素 (Format) ビュー要素 (Format) TableControl Element (F
 
 ## <a name="example"></a>例
 
-この例は、2つの列ヘッダーを定義する @no__t 0 の要素を示しています。
+次の例は、2つの列ヘッダーを定義する `TableHeaders` 要素を示しています。
 
 ```xml
 <TableHeaders>
@@ -73,7 +73,7 @@ ViewDefinitions 要素 (Format) ビュー要素 (Format) TableControl Element (F
 </TableHeaders>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [テーブルビューの作成](./creating-a-table-view.md)
 

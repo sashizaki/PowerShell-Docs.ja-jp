@@ -32,7 +32,7 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`CustomEntries` 要素の親要素について説明します。 1つまたは複数の子要素を指定する必要があります。
+次のセクションでは、`CustomEntries` 要素の属性、子要素、および親要素について説明します。 1つまたは複数の子要素を指定する必要があります。
 
 ### <a name="attributes"></a>属性
 
@@ -40,21 +40,21 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[CustomControl の CustomEntry 要素 (構成用コントロール用) (形式)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|コモンコントロールの定義を提供します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[構成用のコントロールの CustomControl 要素 (形式)](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|共通コントロールを定義します。|
 
 ## <a name="remarks"></a>コメント
 
-ほとんどの場合、1つのコントロールには1つの @no__t 0 要素で定義される定義が1つだけあります。 ただし、同じコントロールを使用して異なる .NET オブジェクトを表示する場合は、複数の定義を含めることができます。 そのような場合は、オブジェクトまたはオブジェクトのセットごとに `CustomEntry` 要素を定義できます。
+ほとんどの場合、コントロールには定義が1つだけあります。定義は1つの `CustomEntry` 要素で定義されます。 ただし、同じコントロールを使用して異なる .NET オブジェクトを表示する場合は、複数の定義を含めることができます。 このような場合は、オブジェクトまたはオブジェクトのセットごとに `CustomEntry` 要素を定義できます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [構成用のコントロールの CustomControl 要素 (形式)](./customcontrol-element-for-control-for-controls-for-configuration-format.md)
 

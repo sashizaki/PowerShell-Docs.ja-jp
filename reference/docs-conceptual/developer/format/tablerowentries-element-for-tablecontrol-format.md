@@ -39,25 +39,25 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableControl (Format) の TableRowEntries の TableRowEntry 要素](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|必須の要素です。<br /><br /> テーブルの行に表示されるデータを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableControl 要素 (形式)](./tablecontrol-element-format.md)|ビューのテーブル形式を定義します。|
 
 ## <a name="remarks"></a>コメント
 
-テーブルビューには1つ以上の @no__t 0 要素を指定する必要があります。 追加できる @no__t 0 要素の数に上限はありません。また、順序が重要でもありません。
+テーブルビューには、1つまたは複数の `TableRowEntry` 要素を指定する必要があります。 追加できる `TableRowEntry` 要素の数に上限はありません。また、順序が重要でもありません。
 
 テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-次の例は、2つのプロパティの値を表示する行を定義する @no__t 0 要素を示してい[ます。](/dotnet/api/System.Diagnostics.Process)
+次の例は、`TableRowEntries` の2つのプロパティの値を表示する行を定義する要素を示してい[ます。](/dotnet/api/System.Diagnostics.Process)
 
 ```xml
 <TableRowEntries>
@@ -78,7 +78,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [テーブルビューの作成](./creating-a-table-view.md)
 

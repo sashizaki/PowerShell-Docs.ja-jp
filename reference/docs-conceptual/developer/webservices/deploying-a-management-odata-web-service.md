@@ -23,9 +23,9 @@ ms.locfileid: "72366181"
 
 管理 OData web サービスをデプロイするには、次の手順を実行します。
 
-1. IIS @no__t 0 ディレクトリの下に web アプリケーション用のディレクトリを作成します。
+1. IIS `WWWRoot` ディレクトリの下に web アプリケーション用のディレクトリを作成します。
 
-2. MOF スキーマファイル、XML スキーマファイル、 [Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)および[register-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)インターフェイスをエクスポートする dll、および web.config ファイルをにコピーします。このファイルには、このファイルをコピーします。アプリケーションディレクトリ。
+2. MOF スキーマファイル、XML スキーマファイル、 [Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)と[register-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)の各インターフェイスをエクスポートする dll、および web.config ファイルをアプリケーションディレクトリにコピーします。このファイルは、アプリケーションディレクトリにコピーします。
 
 3. サイト ID を作成します。
 
@@ -425,7 +425,7 @@ ActionAllSites start
 Start-Sleep 10
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [管理 OData web サービスのカスタム承認の実装](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 

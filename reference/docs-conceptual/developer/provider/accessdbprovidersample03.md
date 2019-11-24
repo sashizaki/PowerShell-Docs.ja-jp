@@ -17,9 +17,9 @@ ms.locfileid: "72359991"
 ---
 # <a name="accessdbprovidersample03"></a>AccessDBProviderSample03
 
-このサンプルで[は、](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) [Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドを上書きして、`Get-Item` との呼び出しをサポートする方法を示しています。この例では、@no__ をサポートしています。t-3 コマンドレット。 このサンプルのプロバイダークラスは、system.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)クラスから派生しています。
+このサンプルで[は、](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) Setitem * メソッドと `Set-Item` コマンドレット `Get-Item` の呼び出しをサポートするように、 [*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドを上書きする方法を示します。この例では、これらのメソッドをオーバーライドします。 このサンプルのプロバイダークラスは、system.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)クラスから派生しています。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 > [!IMPORTANT]
 > プロバイダークラスは、ほとんどの場合、次のいずれかのクラスから派生し、他のプロバイダーインターフェイスを実装する可能性があります。
@@ -32,7 +32,7 @@ ms.locfileid: "72359991"
 
 このサンプルでは、次のことを示します。
 
-- @No__t-0 属性を宣言しています。
+- `CmdletProvider` 属性を宣言しています。
 
 - System.servicemodel[プロバイダークラスから派生した](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)プロバイダークラスを定義しています。
 
@@ -40,11 +40,11 @@ ms.locfileid: "72359991"
 
 - 既存のドライブの削除をサポートするように[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを上書きします。
 
-- @No__t-1 コマンドレットの動作を変更して、ユーザーがデータストアから項目を取得できるようにする[には、このメソッドを](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)上書きします。 (このサンプルでは、`Get-Item` コマンドレットに動的パラメーターを追加する方法については説明しません)。
+- `Get-Item` コマンドレットの動作を変更して、ユーザーがデータストアから項目を取得できるようにする[には、このメソッドを](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)上書きします。 (このサンプルでは、`Get-Item` コマンドレットに動的パラメーターを追加する方法については説明しません)。
 
-- [Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドを上書きして、@no__t 1 つのコマンドレットの動作を変更し、ユーザーがデータストア内の項目を更新できるようにします。 (このサンプルでは、`Get-Item` コマンドレットに動的パラメーターを追加する方法については説明しません)。
+- [Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドを上書きして、`Set-Item` コマンドレットの動作を変更し、ユーザーがデータストア内の項目を更新できるようにしています。 (このサンプルでは、`Get-Item` コマンドレットに動的パラメーターを追加する方法については説明しません)。
 
-- @No__t-1 コマンドレットの動作を変更するには、...................... [Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)メソッドを上書きします。 (このサンプルでは、`Test-Path` コマンドレットに動的パラメーターを追加する方法については説明しません)。
+- `Test-Path` コマンドレットの動作を変更するには、........................ [Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)メソッドを上書きします。 (このサンプルでは、`Test-Path` コマンドレットに動的パラメーターを追加する方法については説明しません)。
 
 - 指定されたパスが有効かどうかを判断するために、system.string. [Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)メソッドを上書きしています。
 
@@ -54,7 +54,7 @@ ms.locfileid: "72359991"
 
 [!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L976 "AccessDBProviderSample03.cs")]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [システムの................](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
 

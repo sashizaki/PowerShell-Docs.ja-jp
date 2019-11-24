@@ -17,7 +17,7 @@ ms.locfileid: "72365881"
 ---
 # <a name="cmdlet-samples"></a>コマンドレット サンプル
 
-このセクションでは、Windows PowerShell 2.0 SDK で提供されるサンプルコードについて説明します。 このセクションのトピックからコードをコピーするか、SDK と共にインストールされたソースファイルを開くことができます。 [Windows PowerShell 2.0 ソフトウェア開発キット (SDK)](https://www.microsoft.com/en-us/download/details.aspx?id=2560)には、各サンプルの ReadMe ファイル、ソースファイル、および Visual Studio プロジェクトファイルが用意されています。 SDK がインストールされているので、`<Drive>:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` フォルダーの下にサンプルを見つけることができます。
+このセクションでは、Windows PowerShell 2.0 SDK で提供されるサンプルコードについて説明します。 このセクションのトピックからコードをコピーするか、SDK と共にインストールされたソースファイルを開くことができます。 [Windows PowerShell 2.0 ソフトウェア開発キット (SDK)](https://www.microsoft.com/en-us/download/details.aspx?id=2560)には、各サンプルの ReadMe ファイル、ソースファイル、および Visual Studio プロジェクトファイルが用意されています。 SDK がインストールされているので、[`<Drive>:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`] フォルダーの下にサンプルを見つけることができます。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
@@ -31,7 +31,7 @@ ms.locfileid: "72365881"
 
 [GetProcessSample05 サンプル](./getprocesssample05-sample.md)このサンプルでは、Get Proc コマンドレットの完全なバージョンを示します。
 
-[StopProcessSample01 サンプル](./stopprocesssample01-sample.md)このサンプルでは、プロセスを停止する前にユーザーからのフィードバックを要求するコマンドレットを記述する方法と、ユーザーがコマンドレットにオブジェクトを返すことを示す @no__t 1 パラメーターを実装する方法を示します。
+[StopProcessSample01 サンプル](./stopprocesssample01-sample.md)このサンプルでは、プロセスを停止する前にユーザーからのフィードバックを要求するコマンドレットを記述する方法と、ユーザーがコマンドレットにオブジェクトを返すことを示す `PassThru` パラメーターを実装する方法を示します。
 
 [StopProcessSample02 サンプル](./stopprocesssample02-sample.md)このサンプルでは、ローカルコンピューター上のプロセスを停止している間に、デバッグメッセージ、詳細メッセージ、警告メッセージを書き込むコマンドレットを記述する方法を示します。
 
@@ -41,6 +41,6 @@ ms.locfileid: "72365881"
 
 [Events01 サンプル](./events01-sample.md)このサンプルでは、ユーザーが system.servicemodel[によって](/dotnet/api/System.IO.FileSystemWatcher)発生したイベントに登録できるようにするコマンドレットを作成する方法を示します。 このコマンドレットを使用すると、たとえば、特定のディレクトリにファイルが作成されたときに実行するアクションを登録できます。 このサンプルは、 [Objecteventregistrationbase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)基底クラスから派生します。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

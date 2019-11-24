@@ -17,7 +17,7 @@ ms.locfileid: "72360311"
 ---
 # <a name="getproc03-vbnet-sample-code"></a>GetProc03 (VB.NET) サンプル コード
 
-次のコードは、パイプライン入力を受け入れることができる @no__t 0 コマンドレットの実装を示しています。 この実装では、パイプライン入力を受け取り、指定された名前に基づいてローカルコンピューターからプロセス情報を取得して、 [WriteObject (system.object, system.string)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)メソッドを出力として使用する @no__t 0 パラメーターを定義します。オブジェクトをパイプラインに送信するための機構。
+次のコードは、パイプライン入力を受け入れることができる `Get-Process` コマンドレットの実装を示しています。 この実装は、パイプライン入力を受け取り、指定された名前に基づいてローカルコンピューターからプロセス情報を取得し、 [WriteObject (system.object, system.string)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)メソッドをパイプラインにオブジェクトを送信するための出力機構として使用する、`Name` パラメーターを定義します。
 
 ## <a name="code-sample"></a>コードサンプル
 

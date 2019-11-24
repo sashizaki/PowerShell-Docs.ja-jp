@@ -17,7 +17,7 @@ ms.locfileid: "72369361"
 ---
 # <a name="stopprocesssample04-sample"></a>StopProcessSample04 サンプル
 
-このサンプルでは、パラメーターセットを宣言し、既定のパラメーターセットを指定し、入力オブジェクトを受け取ることができるコマンドレットを記述する方法を示します。 このコマンドレットは、Windows PowerShell 2.0 によって提供される @no__t 0 のコマンドレットに似ています。
+このサンプルでは、パラメーターセットを宣言し、既定のパラメーターセットを指定し、入力オブジェクトを受け取ることができるコマンドレットを記述する方法を示します。 このコマンドレットは、Windows PowerShell 2.0 によって提供される `Stop-Process` コマンドレットに似ています。
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドする方法。
 
@@ -51,7 +51,7 @@ ms.locfileid: "72369361"
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 このサンプルでは、次のことを示します。
 
@@ -490,6 +490,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

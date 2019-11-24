@@ -17,7 +17,7 @@ ms.locfileid: "72369381"
 ---
 # <a name="stopprocesssample02-sample"></a>StopProcessSample02 サンプル
 
-このサンプルでは、ローカルコンピューター上のプロセスを停止しているときに、debug (WriteDebug)、verbose (Writedebug)、および warning (Writedebug) メッセージを書き込むコマンドレットを記述する方法を示します。 このコマンドレットは、Windows PowerShell 2.0 によって提供される @no__t 0 のコマンドレットに似ています。
+このサンプルでは、ローカルコンピューター上のプロセスを停止しているときに、debug (WriteDebug)、verbose (Writedebug)、および warning (Writedebug) メッセージを書き込むコマンドレットを記述する方法を示します。 このコマンドレットは、Windows PowerShell 2.0 によって提供される `Stop-Process` コマンドレットに似ています。
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドする方法。
 
@@ -53,7 +53,7 @@ ms.locfileid: "72369381"
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 このサンプルでは、次のことを示します。
 
@@ -69,7 +69,7 @@ ms.locfileid: "72369381"
 
 ## <a name="example"></a>例
 
-このサンプルでは、`WriteDebug`、`WriteVerbose`、および `WriteWarning` の各メソッドを使用して、デバッグ、詳細、および警告メッセージを書き込む方法を示します。
+このサンプルでは、`WriteDebug`、`WriteVerbose`、および `WriteWarning` メソッドを使用して、デバッグメッセージ、詳細メッセージ、警告メッセージを書き込む方法を示します。
 
 ```csharp
 using System;
@@ -310,6 +310,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

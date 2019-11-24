@@ -19,14 +19,14 @@ ms.locfileid: "72366341"
 
 このサンプルでは、コンテナーメソッドを上書きして、`Copy-Item`、`Get-ChildItem`、`New-Item`、および `Remove-Item` コマンドレットの呼び出しをサポートする方法を示します。 これらのメソッドは、データ ストアにコンテナーであるアイテムが含まれる場合に実装する必要があります。 コンテナーは、共通の親項目の子項目のグループです。 このサンプルのプロバイダークラスは、 [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスから派生しています。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 > [!IMPORTANT]
 > プロバイダークラスは、ほとんどの場合、[システム](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)から派生することがあります。
 
 このサンプルでは、次のことを示します。
 
-- @No__t-0 属性を宣言しています。
+- `CmdletProvider` 属性を宣言しています。
 
 - [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスから派生したプロバイダークラスを定義しています。
 
@@ -36,7 +36,7 @@ ms.locfileid: "72366341"
 
 - コマンドレットの `Name` パラメーターが指定されている場合に、ChildItems コマンドレットの動作を変更するには、 [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)メソッドを上書きします。
 
-- Containercmdletprovider コマンドレット @no__t の動作を変更するには、 [Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドを上書きします。これにより、ユーザーがデータストアに項目を追加できるようになります。 (このサンプルでは、`New-Item` コマンドレットに動的パラメーターを追加する方法については説明しません)。
+- [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドを上書きして、ユーザーがデータストアに項目を追加できるようにする `New-Item` コマンドレットの動作を変更します ()。 (このサンプルでは、`New-Item` コマンドレットに動的パラメーターを追加する方法については説明しません)。
 
 - [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)メソッドを上書きして、`Remove-Item` コマンドレットの動作を変更しています。 (このサンプルでは、`Remove-Item` コマンドレットに動的パラメーターを追加する方法については説明しません)。
 
@@ -46,7 +46,7 @@ ms.locfileid: "72366341"
 
 [!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L1635 "AccessDBProviderSample04.cs")]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [システムの................](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
 

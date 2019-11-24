@@ -25,13 +25,13 @@ ms.locfileid: "72360701"
 
 ## <a name="importing-a-module-with-import-module-powershell-20"></a>インポートモジュールを使用したモジュールのインポート (PowerShell 2.0)
 
-PowerShell 2.0 では、適切に指定された[インポートモジュール](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットを使用してモジュールをインポートします。 このコマンドレットを実行すると、Windows PowerShell は、@no__t 0 変数で指定されたディレクトリ内で指定されたモジュールを検索します。 指定されたディレクトリが見つかった場合、Windows PowerShell は、モジュールマニフェストファイル (.psd1)、スクリプトモジュールファイル (hbase-runner.psm1)、バイナリモジュールファイル (.dll) の順にファイルを検索します。 検索にディレクトリを追加する方法の詳細については、「 [PSModulePath のインストールパスの変更](./modifying-the-psmodulepath-installation-path.md)」を参照してください。 次のコードは、モジュールをインポートする方法を示しています。
+PowerShell 2.0 では、適切に指定された[インポートモジュール](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットを使用してモジュールをインポートします。 このコマンドレットを実行すると、Windows PowerShell は、`PSModulePath` 変数で指定されたディレクトリ内で指定されたモジュールを検索します。 指定されたディレクトリが見つかった場合、Windows PowerShell は、モジュールマニフェストファイル (.psd1)、スクリプトモジュールファイル (hbase-runner.psm1)、バイナリモジュールファイル (.dll) の順にファイルを検索します。 検索にディレクトリを追加する方法の詳細については、「 [PSModulePath のインストールパスの変更](./modifying-the-psmodulepath-installation-path.md)」を参照してください。 次のコードは、モジュールをインポートする方法を示しています。
 
 ```powershell
 Import-Module myModule
 ```
 
-MyModule が @no__t 0 に配置されていると仮定すると、PowerShell は myModule をアクティブなメモリに読み込みます。 MyModule が @no__t 0 のパスに配置されていない場合でも、その場所を見つける場所を PowerShell に明示的に指示できます。
+MyModule が `PSModulePath`に配置されていると仮定すると、PowerShell は myModule をアクティブなメモリに読み込みます。 MyModule が `PSModulePath` パスに存在しない場合でも、その場所を見つけるために、PowerShell に明示的に指示することができます。
 
 ```powershell
 Import-Module -Name C:\myRandomDirectory\myModule -Verbose
@@ -45,11 +45,11 @@ Windows PowerShell 3.0 以降では、モジュール内のコマンドレット
 
 次のアクションを実行すると、モジュールの自動インポートがトリガーされます ("モジュールの自動読み込み" とも呼ばれます)。
 
-- コマンドでコマンドレットを使用します。 たとえば、「`Get-ExecutionPolicy`」と入力すると、`Get-ExecutionPolicy` コマンドレットを含む、Microsoft. PowerShell. Security モジュールがインポートされます。
+- コマンドでコマンドレットを使用します。 たとえば、「」と入力すると、`Get-ExecutionPolicy` コマンドレットを含む `Get-ExecutionPolicy` がインポートされます。
 
-- コマンドを取得する[には、コマンドレットを](/powershell/module/Microsoft.PowerShell.Core/Get-Command)使用します。  たとえば、`Get-Command Get-JobTrigger` と入力すると、@no__t 2 つのコマンドレットを含む**Psscheduledjob**モジュールがインポートされます。 ワイルドカード文字を含む @no__t 0 コマンドは検出と見なされ、モジュールのインポートはトリガーされません。
+- コマンドを取得する[には、コマンドレットを](/powershell/module/Microsoft.PowerShell.Core/Get-Command)使用します。  たとえば、「`Get-Command Get-JobTrigger`」と入力すると、`Get-JobTrigger` コマンドレットを含む**Psscheduledjob**モジュールがインポートされます。 ワイルドカード文字を含む `Get-Command` コマンドは検出と見なされ、モジュールのインポートはトリガーされません。
 
-- コマンドレットのヘルプを取得するには、 [get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help)コマンドレットを使用します。 たとえば、`Get-Help Get-WinEvent` と入力すると、`Get-WinEvent` コマンドレットが含まれている Microsoft. PowerShell. 診断モジュールがインポートされます。
+- コマンドレットのヘルプを取得するには、 [get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help)コマンドレットを使用します。 たとえば、「」と入力すると、`Get-WinEvent` コマンドレットを含む `Get-Help Get-WinEvent` がインポートされます。
 
 モジュールの自動インポートをサポートするために、`Get-Command` コマンドレットは、モジュールがセッションにインポートされていない場合でも、インストールされているすべてのモジュールのすべてのコマンドレットと関数を取得します。 詳細については、[コマンド](/powershell/module/Microsoft.PowerShell.Core/Get-Command)レットのヘルプトピックを参照してください。
 
@@ -62,7 +62,7 @@ Windows PowerShell 3.0 以降では、モジュール内のコマンドレット
 > [!WARNING]
 > エクスポートされたメンバーの名前が未承認の動詞を使用する場合、またはメンバーの名前が制限付きの文字を使用する場合は、[モジュールのインポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットの実行時に警告が表示されます。
 
-既定では、[モジュールのインポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットは、パイプラインにオブジェクトを返しません。 ただし、このコマンドレットでは、インポートされるモジュールごとに[PSModuleInfo](/dotnet/api/System.Management.Automation.PSModuleInfo)オブジェクトを返すために使用できる @no__t 0 パラメーターがサポートされています。 出力をホストに送信するには、ユーザーが[書き込みホスト](/powershell/module/Microsoft.PowerShell.Utility/Write-Host)コマンドレットを実行する必要があります。
+既定では、[モジュールのインポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットは、パイプラインにオブジェクトを返しません。 ただし、このコマンドレットでは、インポートされるモジュールごとに[PSModuleInfo](/dotnet/api/System.Management.Automation.PSModuleInfo)オブジェクトを返すために使用できる `PassThru` パラメーターがサポートされています。 出力をホストに送信するには、ユーザーが[書き込みホスト](/powershell/module/Microsoft.PowerShell.Utility/Write-Host)コマンドレットを実行する必要があります。
 
 ## <a name="restricting--the-members-that-are-imported"></a>インポートされるメンバーの制限
 
@@ -72,10 +72,10 @@ Windows PowerShell 3.0 以降では、モジュール内のコマンドレット
 
 - `Cmdlet`: このパラメーターは、エクスポートされるコマンドレットを制限します (モジュールマニフェストを使用している場合は、コマンドレット Stoexport キーを参照してください)。
 
-- `Variable`: このパラメーターは、エクスポートされる変数を制限します (モジュールマニフェストを使用している場合は、variables Stoexport キーを参照してください)。
+- `Variable`: このパラメーターでは、エクスポートされる変数を制限します (モジュールマニフェストを使用している場合は、variables Stoexport キーを参照してください)。
 
-- `Alias`: このパラメーターは、エクスポートされるエイリアスを制限します (モジュールマニフェストを使用している場合は、「are Asestoexport キー」を参照してください)。
+- `Alias`: このパラメーターによって、エクスポートされるエイリアスが制限されます (モジュールマニフェストを使用している場合は、「are Asestoexport キー」を参照してください)。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell モジュールの作成](./writing-a-windows-powershell-module.md)

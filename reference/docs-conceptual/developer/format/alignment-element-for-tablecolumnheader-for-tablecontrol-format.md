@@ -41,7 +41,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableColumnHeader 要素 (Format)](./tablecolumnheader-element-format.md)|テーブルの列のデータのラベル、幅、および配置を定義します。|
 
@@ -61,7 +61,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="example"></a>例
 
-この例は、データが左側に揃えられている @no__t 0 の要素を示しています。
+この例では、データが左側に揃えられている `TableColumnHeader` 要素を示します。
 
 ```xml
 <TableColumnHeader>
@@ -71,7 +71,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </TableColumnHeader>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [テーブルビューの作成](./creating-a-table-view.md)
 

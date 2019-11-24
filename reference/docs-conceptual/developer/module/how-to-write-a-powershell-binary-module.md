@@ -73,9 +73,9 @@ ms.locfileid: "72367121"
 
 3. ソリューションをパッケージ化し、PowerShell モジュールパス内の任意の場所にパッケージを保存します。
 
-   @No__t 0 のグローバル環境変数は、PowerShell がモジュールを検索するために使用する既定のパスを記述します。 たとえば、システムにモジュールを保存するための一般的なパスは、0 @no__t になります。 既定のパスを使用しない場合は、インストール中にモジュールの場所を明示的に指定する必要があります。 ソリューションの複数のアセンブリとファイルを格納するフォルダーが必要になる場合があるので、モジュールを保存するためのフォルダーを必ず作成してください。
+   `PSModulePath` グローバル環境変数は、PowerShell がモジュールを検索するために使用する既定のパスを記述します。 たとえば、システムにモジュールを保存するための一般的なパスは、`%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`ます。 既定のパスを使用しない場合は、インストール中にモジュールの場所を明示的に指定する必要があります。 ソリューションの複数のアセンブリとファイルを格納するフォルダーが必要になる場合があるので、モジュールを保存するためのフォルダーを必ず作成してください。
 
-   技術的には、モジュールを @no__t 上の任意の場所にインストールする必要がないことに注意してください-0-PowerShell がモジュールを検索する既定の場所です。 ただし、モジュールを他の場所に格納することが適切な理由がない限り、ベストプラクティスと考えてください。 詳細については、「 [Powershell モジュールのインストール](./installing-a-powershell-module.md)」および「 [Powershell モジュールのインストールパスの変更](./modifying-the-psmodulepath-installation-path.md)」を参照してください。
+   技術的には、`PSModulePath` 上の任意の場所にモジュールをインストールする必要がないことに注意してください。これらは、PowerShell がモジュールを検索する既定の場所です。 ただし、モジュールを他の場所に格納することが適切な理由がない限り、ベストプラクティスと考えてください。 詳細については、「 [Powershell モジュールのインストール](./installing-a-powershell-module.md)」および「 [Powershell モジュールのインストールパスの変更](./modifying-the-psmodulepath-installation-path.md)」を参照してください。
 
 4. モジュールを PowerShell にインポートし[、モジュールを呼び出します。](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
 
@@ -89,6 +89,6 @@ ms.locfileid: "72367121"
 書式設定ファイルと型ファイルをインポートするには、モジュールマニフェストを作成する必要があります。
 「 [PowerShell モジュールマニフェストを記述する方法](how-to-write-a-powershell-module-manifest.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell モジュールの作成](./writing-a-windows-powershell-module.md)

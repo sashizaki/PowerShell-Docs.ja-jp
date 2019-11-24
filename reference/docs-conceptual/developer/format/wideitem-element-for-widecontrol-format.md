@@ -33,7 +33,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、`WideItem` 要素の属性、子要素、および親要素について説明します。 @No__t-0 要素は省略可能です。 ただし、`PropertyName` または `ScriptBlock` の要素を指定する必要がありますが、両方を指定することはできません。
+次のセクションでは、`WideItem` 要素の属性、子要素、および親要素について説明します。 `FormatString` 要素は省略可能です。 ただし、`PropertyName` または `ScriptBlock` 要素を指定する必要がありますが、両方を指定することはできません。
 
 ### <a name="attributes"></a>属性
 
@@ -41,15 +41,15 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[WideControl の WideItem の FormatString 要素 (形式)](./formatstring-element-for-wideitem-for-widecontrol-format.md)|省略可能な要素。<br /><br /> プロパティまたはスクリプトの値をビューに表示する方法を定義する形式パターンを指定します。|
+|[WideControl の WideItem の FormatString 要素 (形式)](./formatstring-element-for-wideitem-for-widecontrol-format.md)|省略可能な要素です。<br /><br /> プロパティまたはスクリプトの値をビューに表示する方法を定義する形式パターンを指定します。|
 |[WideItem の PropertyName 要素 (形式)](./propertyname-element-for-wideitem-for-widecontrol-format.md)|ワイドビューに表示される値を持つオブジェクトのプロパティを指定します。|
 |[WideItem の ScriptBlock 要素 (形式)](./scriptblock-element-for-wideitem-for-widecontrol-format.md)|ワイドビューに値が表示されるスクリプトを指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[WideEntry 要素 (Format)](./wideentry-element-for-widecontrol-format.md)|ワイドビューの定義を提供します。|
 
@@ -59,7 +59,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="example"></a>例
 
-次の例は、1つの @no__t 1 つの要素を定義する @no__t 0 の要素を示しています。 @No__t-0 要素は、ビューに値が表示されるプロパティまたはスクリプトを定義します。
+次の例は、単一の `WideItem` 要素を定義する `WideEntry` 要素を示しています。 `WideItem` 要素は、ビューに値が表示されるプロパティまたはスクリプトを定義します。
 
 ```xml
 <WideEntry>
@@ -71,7 +71,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ワイドビューの完全な例については、「 [Wide ビュー (Basic)](./wide-view-basic.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [WideControl の WideItem の FormatString 要素 (形式)](./formatstring-element-for-wideitem-for-widecontrol-format.md)
 

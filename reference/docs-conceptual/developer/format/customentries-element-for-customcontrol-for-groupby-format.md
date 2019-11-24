@@ -39,21 +39,21 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー Element 
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[GroupBy (Format) の CustomControl の CustomEntry 要素](./customentry-element-for-customcontrol-for-groupby-format.md)|必須の要素です。<br /><br /> コントロールの定義を提供します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[GroupBy (Format) の CustomControl 要素](./customcontrol-element-for-groupby-format.md)|新しいグループを表示するカスタムコントロールを定義します。|
 
 ## <a name="remarks"></a>コメント
 
-ほとんどの場合、コントロールの定義は1つだけであり、1つの @no__t 0 要素で指定されます。 ただし、同じコントロールを使用して異なるグループを表示する場合は、複数の定義を指定できます。 そのような場合は、グループの @no__t 0 要素を定義できます。
+ほとんどの場合、コントロールの定義は1つだけであり、1つの `CustomEntry` 要素で指定されます。 ただし、同じコントロールを使用して異なるグループを表示する場合は、複数の定義を指定できます。 そのような場合は、グループの `CustomEntry` 要素を定義できます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [ビューのコントロール (Format) の CustomEntry 要素](./customentry-element-for-customentries-for-controls-for-view-format.md)
 

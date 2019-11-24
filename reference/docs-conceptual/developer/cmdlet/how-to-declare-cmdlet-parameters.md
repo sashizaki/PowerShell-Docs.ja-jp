@@ -21,7 +21,7 @@ ms.locfileid: "72365681"
 
 ## <a name="how-to-declare-a-named-parameter"></a>名前付きパラメーターを宣言する方法
 
-- 次のコードに示すように、パブリックプロパティを定義します。 パラメーター属性を追加するときは、属性から @no__t 0 キーワードを省略します。
+- 次のコードに示すように、パブリックプロパティを定義します。 パラメーター属性を追加するときは、属性から `Position` キーワードを省略します。
 
     ```csharp
     [Parameter()]
@@ -53,7 +53,7 @@ Parameter 属性の詳細については、「 [Parameter 属性の宣言](./par
 
 ## <a name="how-to-declare-a-mandatory-parameter"></a>必須パラメーターを宣言する方法
 
-- 次のコードに示すように、パブリックプロパティを定義します。 パラメーター属性を追加するときは、`Mandatory` キーワードを `true` に設定します。
+- 次のコードに示すように、パブリックプロパティを定義します。 パラメーター属性を追加するときは、`Mandatory` キーワードを `true`に設定します。
 
     ```csharp
     [Parameter(Position = 0, Mandatory = true)]
@@ -114,7 +114,7 @@ Parameter 属性の詳細については、「 [Parameter 属性の宣言](./par
 
 Alias 属性の詳細については、「 [Alias 属性の宣言](./alias-attribute-declaration.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [.... SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)
 

@@ -62,7 +62,7 @@ PowerShell モジュールを作成した後は、システムにモジュール
   ```
 
   > [!IMPORTANT]
-  > パスを**PSModulePath**に追加したら、変更に関する環境メッセージをブロードキャストする必要があります。 変更をブロードキャストすると、シェルなどの他のアプリケーションが変更を取得できるようになります。 変更をブロードキャストするには、製品のインストールコードから、`lParam` が文字列 "Environment" に設定された**WM_SETTINGCHANGE**メッセージを送信するようにします。 モジュールのインストールコードが**PSModulePath**を更新した後に、必ずメッセージを送信してください。
+  > パスを**PSModulePath**に追加したら、変更に関する環境メッセージをブロードキャストする必要があります。 変更をブロードキャストすると、シェルなどの他のアプリケーションが変更を取得できるようになります。 変更をブロードキャストするには、製品のインストールコードで、`lParam` が文字列 "Environment" に設定された**WM_SETTINGCHANGE**メッセージを送信するようにします。 モジュールのインストールコードが**PSModulePath**を更新した後に、必ずメッセージを送信してください。
 
 ### <a name="use-the-correct-module-directory-name"></a>正しいモジュールディレクトリ名を使用する
 
@@ -101,7 +101,7 @@ C:\Program Files
 
 - [コマンド](/powershell/module/Microsoft.PowerShell.Utility/Show-Command)レットでは、モジュール内のコマンドを見つけて表示することはできません。
 
-  モジュール内のコマンドが、Windows PowerShell Integrated Scripting Environment (ISE) の @no__t 0 ウィンドウにありません。
+  モジュール内のコマンドが、Windows PowerShell Integrated Scripting Environment (ISE) の [`Show-Command`] ウィンドウに表示されていません。
 
 ## <a name="where-to-install-modules"></a>モジュールをインストールする場所
 
@@ -185,7 +185,7 @@ $p = $q -join ';'
 2. モジュールのバージョンごとにモジュールマニフェストを作成します。 マニフェストの**ModuleVersion**キーの値に、モジュールのバージョン番号を入力します。 マニフェストファイル (.psd1) をモジュールのバージョン固有のディレクトリに保存します。
 3. 次の例に示すように、モジュールルートフォルダーのパスを**PSModulePath**環境変数の値に追加します。
 
-モジュールの特定のバージョンをインポートするには、エンドユーザーは、[モジュールのインポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットの `MinimumVersion` または @no__t パラメーターを使用できます。
+モジュールの特定のバージョンをインポートするために、エンドユーザーは、[モジュールのインポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットの `MinimumVersion` パラメーターまたは `RequiredVersion` パラメーターを使用できます。
 
 たとえば、Fabrikam モジュールをバージョン8.0 および9.0 で使用できる場合、Fabrikam モジュールのディレクトリ構造は次のようになります。
 
@@ -210,7 +210,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-これらの手順が完了すると、 [Get Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module)コマンドレットの**ListAvailable**パラメーターは、両方の Fabrikam モジュールを取得します。 特定のモジュールをインポートするには、[モジュールのインポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットの `MinimumVersion` または `RequiredVersion` パラメーターを使用します。
+これらの手順が完了すると、 [Get Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module)コマンドレットの**ListAvailable**パラメーターは、両方の Fabrikam モジュールを取得します。 特定のモジュールをインポートするには、[モジュールのインポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットの `MinimumVersion` パラメーターまたは `RequiredVersion` パラメーターを使用します。
 
 両方のモジュールが同じセッションにインポートされ、モジュールに同じ名前のコマンドレットが含まれている場合、最後にインポートされたコマンドレットはセッションで有効になります。
 
@@ -220,7 +220,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 
 セッションに同じ名前の2つのコマンドが含まれている場合、Windows PowerShell は、優先されるコマンドの種類を実行します。 セッションに同じ名前と同じ種類の2つのコマンドが含まれている場合、Windows PowerShell は、直前にセッションに追加されたコマンドを実行します。 既定では実行されないコマンドを実行する場合、ユーザーはコマンド名をモジュール名で修飾できます。
 
-たとえば、セッションに @no__t 0 関数と `Get-Date` コマンドレットが含まれている場合、Windows PowerShell は既定で関数を実行します。 コマンドレットを実行するには、次のように、コマンドの先頭にモジュール名を付けます。
+たとえば、セッションに `Get-Date` 関数と `Get-Date` コマンドレットが含まれている場合、Windows PowerShell は既定で関数を実行します。 コマンドレットを実行するには、次のように、コマンドの先頭にモジュール名を付けます。
 
 ```powershell
 Microsoft.PowerShell.Utility\Get-Date
@@ -228,9 +228,9 @@ Microsoft.PowerShell.Utility\Get-Date
 
 名前の競合を防ぐために、モジュールの作成者はモジュールマニフェストの**Defaultcommandprefix**キーを使用して、モジュールからエクスポートされたすべてのコマンドの名詞プレフィックスを指定できます。
 
-ユーザーは、`Import-Module` コマンドレットの**prefix**パラメーターを使用して、代替プレフィックスを使用できます。 **Prefix**パラメーターの値は、 **defaultcommandprefix**キーの値よりも優先されます。
+ユーザーは、`Import-Module` コマンドレットの**prefix**パラメーターを使用して、代替のプレフィックスを使用できます。 **Prefix**パラメーターの値は、 **defaultcommandprefix**キーの値よりも優先されます。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence)
 

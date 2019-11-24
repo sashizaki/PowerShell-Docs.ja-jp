@@ -17,7 +17,7 @@ ms.locfileid: "72360221"
 ---
 # <a name="runspace01-vbnet-code-sample"></a>Runspace01 (VB.NET) コード サンプル
 
-ここでは、「[指定されたコマンドを実行するコンソールアプリケーションの作成](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)」で説明されている実行空間のコードサンプルを示します。 これを行うには、アプリケーションが実行空間を呼び出し、コマンドを呼び出します。 (このアプリケーションでは、実行空間の構成情報が指定されていません。また、パイプラインを明示的に作成することもありません)。呼び出されるコマンドは、@no__t 0 のコマンドレットです。
+ここでは、「[指定されたコマンドを実行するコンソールアプリケーションの作成](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)」で説明されている実行空間のコードサンプルを示します。 これを行うには、アプリケーションが実行空間を呼び出し、コマンドを呼び出します。 (このアプリケーションでは、実行空間の構成情報が指定されていません。また、パイプラインを明示的に作成することもありません)。呼び出されるコマンドは、`Get-Process` コマンドレットです。
 
 ## <a name="code-sample"></a>コードサンプル
 
@@ -71,6 +71,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace01.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace01.vb#L09-L53 "Runspace01.vb")] -->
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

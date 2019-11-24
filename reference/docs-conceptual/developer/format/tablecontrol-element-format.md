@@ -43,16 +43,16 @@ ViewDefinitions 要素 (Format) ビュー要素 (Format) TableControl 要素 (Fo
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[TableControl の AutoSize 要素 (Format)](./autosize-element-for-tablecontrol-format.md)|省略可能な要素。<br /><br /> データのサイズに基づいて列のサイズと列の数を調整するかどうかを指定します。|
-|[TableControl (Format) の HideTableHeaders 要素](./hidetableheaders-element-format.md)|省略可能な要素。<br /><br /> テーブルのヘッダーが表示されていないかどうかを示します。|
+|[TableControl の AutoSize 要素 (Format)](./autosize-element-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> データのサイズに基づいて列のサイズと列の数を調整するかどうかを指定します。|
+|[TableControl (Format) の HideTableHeaders 要素](./hidetableheaders-element-format.md)|省略可能な要素です。<br /><br /> テーブルのヘッダーが表示されていないかどうかを示します。|
 |[TableControl の TableHeaders 要素 (Format)](./tableheaders-element-format.md)|必須の要素です。<br /><br /> テーブルビューの列のデータのラベル、幅、および配置を定義します。|
-|[TableControl (Format) の TableRowEntries 要素](./tablerowentries-element-for-tablecontrol-format.md)|省略可能な要素。<br /><br /> テーブルビューの定義を提供します。|
+|[TableControl (Format) の TableRowEntries 要素](./tablerowentries-element-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> テーブルビューの定義を提供します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[View 要素 (Format)](./view-element-format.md)|1つ以上のオブジェクトのメンバーを表示するために使用されるビューを定義します。|
 
@@ -62,7 +62,7 @@ ViewDefinitions 要素 (Format) ビュー要素 (Format) TableControl 要素 (Fo
 
 ## <a name="example"></a>例
 
-この例は、 [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトのプロパティを表示するために使用される @no__t 0 の要素を示しています。
+この例は、 [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトのプロパティを表示するために使用される `TableControl` 要素を示しています。
 
 ```xml
 <View>
@@ -78,7 +78,7 @@ ViewDefinitions 要素 (Format) ビュー要素 (Format) TableControl 要素 (Fo
 
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [テーブルビューの作成](./creating-a-table-view.md)
 

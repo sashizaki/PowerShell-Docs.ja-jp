@@ -46,20 +46,20 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[View (Format) の Controls 要素](./controls-element-for-view-format.md)|省略可能な要素。<br /><br /> ビュー内から名前で参照できるコントロールのセットを定義します。|
-|[CustomControl 要素 (Format)](./customcontrol-element-for-groupby-format.md)|省略可能な要素。<br /><br /> ビューのカスタムコントロール形式を定義します。|
-|[ビューの GroupBy 要素 (Format)](./groupby-element-for-view-format.md)|省略可能な要素。<br /><br /> .NET オブジェクトのメンバーをグループ化する方法を定義します。|
-|[ListControl 要素 (Format)](./listcontrol-element-format.md)|省略可能な要素。<br /><br /> ビューのリスト形式を定義します。|
+|[View (Format) の Controls 要素](./controls-element-for-view-format.md)|省略可能な要素です。<br /><br /> ビュー内から名前で参照できるコントロールのセットを定義します。|
+|[CustomControl 要素 (Format)](./customcontrol-element-for-groupby-format.md)|省略可能な要素です。<br /><br /> ビューのカスタムコントロール形式を定義します。|
+|[ビューの GroupBy 要素 (Format)](./groupby-element-for-view-format.md)|省略可能な要素です。<br /><br /> .NET オブジェクトのメンバーをグループ化する方法を定義します。|
+|[ListControl 要素 (Format)](./listcontrol-element-format.md)|省略可能な要素です。<br /><br /> ビューのリスト形式を定義します。|
 |[ビューの Name 要素 (Format)](./name-element-for-view-format.md)|必須の要素です。<br /><br /> ビューを参照するために使用する名前を指定します。|
-|[TableControl 要素 (形式)](./tablecontrol-element-format.md)|省略可能な要素。<br /><br /> ビューのテーブル形式を定義します。|
+|[TableControl 要素 (形式)](./tablecontrol-element-format.md)|省略可能な要素です。<br /><br /> ビューのテーブル形式を定義します。|
 |[View (Format) の ViewSelectedBy 要素](./viewselectedby-element-format.md)|必須の要素です。<br /><br /> このビューに表示される .NET オブジェクトを定義します。|
-|[WideControl 要素 (Format)](./widecontrol-element-format.md)|省略可能な要素。<br /><br /> ビューのワイド (単一値) リスト形式を定義します。|
+|[WideControl 要素 (Format)](./widecontrol-element-format.md)|省略可能な要素です。<br /><br /> ビューのワイド (単一値) リスト形式を定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[ViewDefinitions 要素 (形式)](./viewdefinitions-element-format.md)|オブジェクトを表示するために使用するビューを定義します。|
 
@@ -77,7 +77,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="example"></a>例
 
-この例は、 [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトのテーブルビューを定義する @no__t 0 の要素を示しています。
+この例は、 [Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトのテーブルビューを定義する `View` 要素を示しています。
 
 ```xml
 <ViewDefinitions>
@@ -92,7 +92,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [ViewDefinitions 要素 (形式)](./viewdefinitions-element-format.md)
 

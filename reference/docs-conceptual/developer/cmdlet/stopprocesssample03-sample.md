@@ -17,7 +17,7 @@ ms.locfileid: "72369371"
 ---
 # <a name="stopprocesssample03-sample"></a>StopProcessSample03 サンプル
 
-このサンプルでは、パラメーターにエイリアスがあり、ワイルドカード文字をサポートするパラメーターを持つコマンドレットを記述する方法を示します。 このコマンドレットは、Windows PowerShell 2.0 によって提供される @no__t 0 のコマンドレットに似ています。
+このサンプルでは、パラメーターにエイリアスがあり、ワイルドカード文字をサポートするパラメーターを持つコマンドレットを記述する方法を示します。 このコマンドレットは、Windows PowerShell 2.0 によって提供される `Stop-Process` コマンドレットに似ています。
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドする方法。
 
@@ -51,7 +51,7 @@ ms.locfileid: "72369371"
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 このサンプルでは、次のことを示します。
 
@@ -350,6 +350,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 } // namespace Microsoft.Samples.PowerShell.Commands
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

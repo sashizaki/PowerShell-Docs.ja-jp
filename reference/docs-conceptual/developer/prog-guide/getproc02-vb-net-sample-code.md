@@ -17,12 +17,12 @@ ms.locfileid: "72366771"
 ---
 # <a name="getproc02-vbnet-sample-code"></a>GetProc02 (VB.NET) サンプル コード
 
-次のコードは、コマンドライン入力を受け入れる @no__t 0 コマンドレットの実装を示しています。 この実装では、コマンドライン入力を許可する @no__t 0 パラメーターを定義し、 [WriteObject (system.object, system.string)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)メソッドを出力機構として使用して、パイプラインに出力オブジェクトを送信することに注意してください。
+次のコードは、コマンドライン入力を受け入れる `Get-Process` コマンドレットの実装を示しています。 この実装では、コマンドライン入力を許可する `Name` パラメーターを定義し、 [WriteObject (system.object, system.string)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)メソッドを出力機構として使用して、パイプラインに出力オブジェクトを送信することに注意してください。
 
 ## <a name="code-sample"></a>コードサンプル
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesgetproc02#getproc02vball](Msh_samplesgetproc02#getproc02vball)]  -->
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

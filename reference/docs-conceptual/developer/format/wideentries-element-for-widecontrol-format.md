@@ -40,13 +40,13 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[WideEntry 要素 (Format)](./wideentry-element-for-widecontrol-format.md)|ワイドビューの定義を提供します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[WideControl 要素 (Format)](./widecontrol-element-format.md)|ビューのワイド (単一値) リスト形式を定義します。|
 
@@ -56,7 +56,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="example"></a>例
 
-次の例は、1つの @no__t 1 つの要素を定義する @no__t 0 の要素を示しています。 @No__t-0 要素には、ビューに表示されるプロパティまたはスクリプトの値を定義する1つの @no__t 要素が含まれています。
+次の例は、単一の `WideEntry` 要素を定義する `WideEntries` 要素を示しています。 `WideEntry` 要素には、ビューに表示されるプロパティまたはスクリプトの値を定義する1つの `WideItem` 要素が含まれています。
 
 ```xml
 <WideControl>
@@ -70,7 +70,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ワイドビューの完全な例については、「 [Wide ビュー (Basic)](./wide-view-basic.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [ワイドビューの作成](./creating-a-wide-view.md)
 

@@ -17,9 +17,9 @@ ms.locfileid: "72366331"
 ---
 # <a name="accessdbprovidersample06"></a>AccessDBProviderSample06
 
-このサンプルでは、コンテンツメソッドを上書きして、`Clear-Content`、`Get-Content`、および `Set-Content` コマンドレットの呼び出しをサポートする方法を示します。 これらのメソッドは、ユーザーがデータ ストア内の項目のコンテンツを管理する必要がある場合に実装する必要があります。 このサンプルのプロバイダークラスは、 [Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)インターフェイスを実装しています。この[クラスは、system.servicemodel クラスの](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラスから派生していますが、
+このサンプルでは、`Clear-Content`、`Get-Content`、および `Set-Content` コマンドレットの呼び出しをサポートするために、コンテンツメソッドを上書きする方法を示します。 これらのメソッドは、ユーザーがデータ ストア内の項目のコンテンツを管理する必要がある場合に実装する必要があります。 このサンプルのプロバイダークラスは、 [Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)インターフェイスを実装しています。この[クラスは、system.servicemodel クラスの](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラスから派生していますが、
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 > [!IMPORTANT]
 > プロバイダークラスは、ほとんどの場合、次のいずれかのクラスから派生し、他のプロバイダーインターフェイスを実装する可能性があります。
@@ -32,15 +32,15 @@ ms.locfileid: "72366331"
 
 このサンプルでは、次のことを示します。
 
-- @No__t-0 属性を宣言しています。
+- `CmdletProvider` 属性を宣言しています。
 
 - [Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)インターフェイスを宣言する、system.servicemodel クラスから派生したプロバイダークラスを定義します。[このクラスは](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)、このクラスから派生します。
 
-- [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)メソッドを上書きして、@no__t 1 つのコマンドレットの動作を変更し、ユーザーが項目からコンテンツを削除できるようにします。 (このサンプルでは、`Clear-Content` コマンドレットに動的パラメーターを追加する方法については説明しません)。
+- [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)メソッドを上書きして、`Clear-Content` コマンドレットの動作を変更し、ユーザーが項目からコンテンツを削除できるようにしています。 (このサンプルでは、`Clear-Content` コマンドレットに動的パラメーターを追加する方法については説明しません)。
 
-- [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)メソッドを上書きして、@no__t 1 つのコマンドレットの動作を変更し、ユーザーが項目の内容を取得できるようにしました。 (このサンプルでは、`Get-Content` コマンドレットに動的パラメーターを追加する方法については説明しません)。
+- [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)メソッドを上書きして、`Get-Content` コマンドレットの動作を変更し、ユーザーが項目の内容を取得できるようにしています。 (このサンプルでは、`Get-Content` コマンドレットに動的パラメーターを追加する方法については説明しません)。
 
-- @No__t-1 コマンドレットの動作を変更して、ユーザーが項目の内容を更新できるようにする[には、このメソッドを](/dotnet/api/Microsoft.PowerShell.Commands.FileSystemProvider.GetContentWriter)上書きします。 (このサンプルでは、`Set-Content` コマンドレットに動的パラメーターを追加する方法については説明しません)。
+- `Set-Content` コマンドレットの動作を変更して、ユーザーが項目の内容を更新できるようにするには、[このメソッドを上書きします](/dotnet/api/Microsoft.PowerShell.Commands.FileSystemProvider.GetContentWriter)。 (このサンプルでは、`Set-Content` コマンドレットに動的パラメーターを追加する方法については説明しません)。
 
 ## <a name="example"></a>例
 
@@ -48,7 +48,7 @@ ms.locfileid: "72366331"
 
 [!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L2399 "AccessDBProviderSample06.cs")]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [システムの................](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
 

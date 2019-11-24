@@ -40,13 +40,13 @@ Configuration 要素 (Format) ViewDefinitions (フォーマット XML) 要素
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[View 要素 (Format)](./view-element-format.md)|1つ以上の .NET オブジェクトを表示するために使用されるビューを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[Configuration 要素 (形式)](./configuration-element-format.md)|書式設定ファイルのトップレベルの要素を表します。|
 
@@ -64,7 +64,7 @@ Configuration 要素 (Format) ViewDefinitions (フォーマット XML) 要素
 
 ## <a name="example"></a>例
 
-この例は、テーブルビューとリストビューの親要素を含む @no__t 0 の要素を示しています。
+この例は、テーブルビューとリストビューの親要素を含む `ViewDefinitions` 要素を示しています。
 
 ```xml
 <Configuration>
@@ -79,7 +79,7 @@ Configuration 要素 (Format) ViewDefinitions (フォーマット XML) 要素
 </Configuration>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Configuration 要素 (形式)](./configuration-element-format.md)
 

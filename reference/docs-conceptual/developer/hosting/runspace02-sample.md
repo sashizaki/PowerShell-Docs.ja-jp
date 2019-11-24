@@ -17,13 +17,13 @@ ms.locfileid: "72360981"
 ---
 # <a name="runspace02-sample"></a>Runspace02 サンプル
 
-このサンプル[では、system.servicemodel クラスを](/dotnet/api/system.management.automation.powershell)使用して、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)および[Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object)コマンドレットを同期的に実行する方法を示します。 [Get process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットは、ローカルコンピューター上で実行されている各プロセスの System.Diagnostics.Process.Id オブジェクト[を返します](/dotnet/api/System.Diagnostics.Process)。このコマンドレットは @no__t、 [*](/dotnet/api/System.Diagnostics.Process.Id)プロパティに基づいてオブジェクトを並べ替えます。 これらのコマンドの結果[は、system.string コントロールを](/dotnet/api/System.Windows.Forms.DataGridView)使用して表示されます。
+このサンプル[では、system.servicemodel クラスを](/dotnet/api/system.management.automation.powershell)使用して、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)および[Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object)コマンドレットを同期的に実行する方法を示します。 [Get process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットは、ローカルコンピューター上で実行されている各プロセスの System.Diagnostics.Process.Id オブジェクトを返します。このコマンドレットは `Sort-Object`、 [*](/dotnet/api/System.Diagnostics.Process.Id)プロパティに基づい[てオブジェクトを](/dotnet/api/System.Diagnostics.Process)並べ替えます。 これらのコマンドの結果[は、system.string コントロールを](/dotnet/api/System.Windows.Forms.DataGridView)使用して表示されます。
 
 ## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 このサンプルでは、次のことを示します。
 
@@ -114,6 +114,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell ホストアプリケーションの作成](./writing-a-windows-powershell-host-application.md)

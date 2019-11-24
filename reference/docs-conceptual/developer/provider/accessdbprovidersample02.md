@@ -17,9 +17,9 @@ ms.locfileid: "72366371"
 ---
 # <a name="accessdbprovidersample02"></a>AccessDBProviderSample02
 
-このサンプルでは、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) * メソッドと[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを上書きして、@no__t への呼び出しをサポートする方法を示しています。この方法については、と @no__t 3 つのコマンドレットがあります。 このサンプルのプロバイダークラスは、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスから派生しています。
+このサンプルでは、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) * メソッドと[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを上書きして、`New-PSDrive` と `Remove-PSDrive` のコマンドレットの呼び出しをサポートする方法を示します。この例では、. このサンプルのプロバイダークラスは、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスから派生しています。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 > [!IMPORTANT]
 > プロバイダークラスは、ほとんどの場合、次のいずれかのクラスから派生し、他のプロバイダーインターフェイスを実装する可能性があります。
@@ -32,7 +32,7 @@ ms.locfileid: "72366371"
 
 このサンプルでは、次のことを示します。
 
-- @No__t-0 属性を宣言しています。
+- `CmdletProvider` 属性を宣言しています。
 
 - [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスによって駆動されるプロバイダークラスを定義します。
 
@@ -42,7 +42,7 @@ ms.locfileid: "72366371"
 
 ## <a name="example"></a>例
 
-このサンプルでは、 [Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)メソッドと[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを上書きする方法を示しています。この例では、このメソッドを上書きしています。 このサンプルプロバイダーでは、ドライブが作成されると、その接続情報が @no__t 0 オブジェクトに格納されます。
+このサンプルでは、 [Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)メソッドと[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを上書きする方法を示しています。この例では、このメソッドを上書きしています。 このサンプルプロバイダーでは、ドライブが作成されると、その接続情報が `AccessDBPsDriveInfo` オブジェクトに格納されます。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers
@@ -197,7 +197,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [システムの................](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
 

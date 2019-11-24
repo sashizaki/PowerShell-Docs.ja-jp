@@ -36,15 +36,15 @@ ms.locfileid: "72363541"
 
 `NounName` ([system.string](/dotnet/api/System.String)) が必要です。 コマンドレットの名詞を指定します。 この名詞は、コマンドレットが処理するリソースを指定します。 コマンドレットの名詞の詳細については、「[コマンドレットの宣言](./cmdlet-class-declaration.md)」を[参照してください。](./strongly-encouraged-development-guidelines.md)
 
-@no__t-[0 (system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 `True` は、コマンドレット[が、システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)を変更するアクションの実行前にユーザーにプロンプトを表示する方法を提供する、コマンドレットの呼び出しをサポートしていることを示します。 `False` (既定値) は、コマンドレットが、[システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)の呼び出しをサポートしていないことを示します。 確認要求の詳細については、「[確認の要求](./requesting-confirmation-from-cmdlets.md)」を参照してください。
+`SupportsShouldProcess` ([system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 `True` は、コマンドレット[が、システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)を変更する操作を実行する前にユーザーにプロンプトを表示する方法を提供する、コマンドレットの呼び出しをサポートしていることを示します。 既定値である `False`は、このコマンドレットが、 [system.object メソッドの](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼び出しをサポートしていないことを示します。 確認要求の詳細については、「[確認の要求](./requesting-confirmation-from-cmdlets.md)」を参照してください。
 
-`ConfirmImpact` ([System. Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) 省略可能な名前付きパラメーター。 コマンドレットのアクションを、[システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)の呼び出しによって確認するかどうかを指定します。 コマンドレットの ConfirmImpact 値 (既定では Medium) が `$ConfirmPreference` 変数の値以上である場合にのみ、指定された....[コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)が呼び出されます。 このパラメーターは、`SupportsShouldProcess` パラメーターが指定されている場合にのみ指定する必要があります。
+`ConfirmImpact` ([System. Confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact)) 省略可能な名前付きパラメーター。 コマンドレットのアクションを、[システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)の呼び出しによって確認するかどうかを指定します。 コマンドレットの ConfirmImpact 値 (既定では、Medium) が `$ConfirmPreference` 変数の値以上である場合にのみ、指定[された](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)値が呼び出されます。 このパラメーターは、`SupportsShouldProcess` パラメーターが指定されている場合にのみ指定する必要があります。
 
 `DefaultParameterSetName` ([system.string](/dotnet/api/System.String)) 省略可能な名前付きパラメーター。 使用するパラメーターセットを判別できない場合に、Windows PowerShell ランタイムが使用を試みる既定のパラメーターセットを指定します。 各パラメーターの unique パラメーターに必須パラメーターを設定することで、この状況を解消できることに注意してください。
 
-既定のパラメーターセット名が指定されている場合でも、Windows PowerShell で既定のパラメーターセットを使用できないケースが1つあります。 Windows PowerShell ランタイムでは、オブジェクトの種類のみを基にしたパラメーターセットを区別できません。 たとえば、ファイルパスとして文字列を受け取る1つのパラメーターセットと、 **FileInfo**オブジェクトを直接受け取る別のセットがある場合、Windows PowerShell では、コマンドレットに渡された値に基づいて、使用するパラメーターセットを決定できません。また、既定のパラメーターセット。 この場合、既定のパラメーターセット名を指定しても、Windows PowerShell はあいまいなパラメーターセットのエラーメッセージをスローします。
+既定のパラメーターセット名が指定されている場合でも、Windows PowerShell で既定のパラメーターセットを使用できないケースが1つあります。 Windows PowerShell ランタイムでは、オブジェクトの種類のみを基にしたパラメーターセットを区別できません。 たとえば、ファイルパスとして文字列を受け取る1つのパラメーターセットと、 **FileInfo**オブジェクトを直接受け取る別のセットがある場合、Windows PowerShell は、コマンドレットに渡された値に基づいて、使用するパラメーターセットを決定できません。また、既定のパラメーターセットを使用しません。 この場合、既定のパラメーターセット名を指定しても、Windows PowerShell はあいまいなパラメーターセットのエラーメッセージをスローします。
 
-@no__t-[0 (system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 `True` は、コマンドレットをトランザクション内で使用できることを示します。 @No__t-0 が指定されている場合、Windows PowerShell ランタイムは、コマンドレットのパラメーターリストに `UseTransaction` パラメーターを追加します。 `False` (既定値) は、コマンドレットをトランザクション内で使用できないことを示します。
+`SupportsTransactions` ([system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 `True` は、コマンドレットをトランザクション内で使用できることを示します。 `True` が指定されている場合、Windows PowerShell ランタイムは、コマンドレットのパラメーターリストに `UseTransaction` パラメーターを追加します。 既定値の `False`は、コマンドレットをトランザクション内で使用できないことを示します。
 
 ## <a name="remarks"></a>コメント
 
@@ -54,9 +54,9 @@ ms.locfileid: "72363541"
 
 **VerbName-NounName**
 
-- コマンドレット属性が宣言されている場合は、Windows PowerShell の外部でリソースを変更するすべてのコマンドレットに `SupportsShouldProcess` キーワードを含める必要があります[。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)これにより、コマンドレットは、コマンドレットは、アクションを実行します。 この呼び出しで @no__t- [1 が返さ](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)れた場合、アクションを実行する必要はありません。 [コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)の呼び出しによって生成される確認要求の詳細については、「[確認の要求](./requesting-confirmation-from-cmdlets.md)」を参照してください。
+- コマンドレット属性が宣言されている場合は、Windows PowerShell の外部でリソースを変更するすべてのコマンドレットに `SupportsShouldProcess` キーワードを含める必要があります。これにより、コマンドレットは、コマンドレットがアクションを実行する前[に、このメソッドを](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼び出すことができます。 この呼び出し[によって `false`](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)が返された場合、アクションを実行する必要はありません。 [コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)の呼び出しによって生成される確認要求の詳細については、「[確認の要求](./requesting-confirmation-from-cmdlets.md)」を参照してください。
 
-@No__t-0 および `WhatIf` コマンドレットのパラメーターは、コマンドレット[の呼び出しを](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)サポートするコマンドレットでのみ使用できます。
+`Confirm` および `WhatIf` のコマンドレットパラメーターは、の呼び出しをサポートするコマンドレットでのみ使用[できます。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
 
 ## <a name="example"></a>例
 
@@ -69,6 +69,6 @@ public class GetProcCommand : Cmdlet
 
 **Get proc**コマンドレットの詳細については、「 [getproc チュートリアル](./getproc-tutorial.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

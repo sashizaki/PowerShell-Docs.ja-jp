@@ -17,7 +17,7 @@ ms.locfileid: "72360261"
 ---
 # <a name="runspace01-code-samples"></a>Runspace01 コード サンプル
 
-ここでは、「[指定されたコマンドを実行するコンソールアプリケーションの作成](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)」で説明されている実行空間のコードサンプルを示します。 実行空間で呼び出されるコマンドは、@no__t 0 のコマンドレットです。
+ここでは、「[指定されたコマンドを実行するコンソールアプリケーションの作成](/dotnet/csharp/programming-guide/inside-a-program/hello-world-your-first-program)」で説明されている実行空間のコードサンプルを示します。 実行空間で呼び出されるコマンドは、`Get-Process` コマンドレットです。
 
 完全なサンプルコードについては、次のトピックを参照してください。
 
@@ -26,7 +26,7 @@ ms.locfileid: "72360261"
 |C#|[Runspace01 (C#) コードサンプル](./runspace01-csharp-code-sample.md)|
 |VB.NET|[Runspace01 (VB.NET) コードサンプル](./runspace01-vb-net-code-sample.md)|
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 

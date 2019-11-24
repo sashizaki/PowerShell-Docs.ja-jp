@@ -33,7 +33,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`EntrySelectedBy` 要素の親要素について説明します。
+次のセクションでは、`EntrySelectedBy` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -41,15 +41,15 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[TableControl の EntrySelectedBy の SelectionCondition 要素 (Format)](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)|省略可能な要素。<br /><br /> このテーブルビュー定義を使用するために必要な条件を定義します。|
-|[TableControl (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)|省略可能な要素。<br /><br /> このテーブルビュー定義を使用する一連の .NET 型を指定します。|
-|[TableControl の EntrySelectedBy の TypeName 要素 (Format)](./typename-element-for-entryselectedby-for-tablecontrol-format.md)|省略可能な要素。<br /><br /> このテーブルビュー定義を使用する .NET 型を指定します。|
+|[TableControl の EntrySelectedBy の SelectionCondition 要素 (Format)](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> このテーブルビュー定義を使用するために必要な条件を定義します。|
+|[TableControl (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> このテーブルビュー定義を使用する一連の .NET 型を指定します。|
+|[TableControl の EntrySelectedBy の TypeName 要素 (Format)](./typename-element-for-entryselectedby-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> このテーブルビュー定義を使用する .NET 型を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableControl (Format) の TableRowEntry 要素](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|テーブルの行に表示されるデータを定義します。|
 
@@ -57,13 +57,13 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 テーブルビュー定義には、少なくとも1つの種類、選択セット、または選択条件を指定する必要があります。 使用できる子要素の数に上限はありません。
 
-選択条件は、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプトが `true` に評価される場合など、使用する定義のために存在する必要がある条件を定義するために使用されます。 選択条件の詳細については、「[ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件を使用して、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプトが `true`として評価される場合など、使用する定義に存在する必要がある条件を定義します。 選択条件の詳細については、「[ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-次の例は、@no__t 0 の要素を示しています。この要素は[、system.object オブジェクト](/dotnet/api/System.Diagnostics.Process)のプロパティを表示するために使用されます。
+次の例[は、`TableRowEntry` のオブジェクトの](/dotnet/api/System.Diagnostics.Process)プロパティを表示するために使用される要素を示しています。
 
 ```xml
 <TableRowEntry>
@@ -81,7 +81,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </TableRowEntry>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [テーブルビューの作成](./creating-a-table-view.md)
 

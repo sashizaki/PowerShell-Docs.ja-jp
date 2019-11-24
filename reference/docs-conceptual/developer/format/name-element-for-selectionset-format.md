@@ -41,7 +41,7 @@ Configuration 要素 (Format) SelectionSets 要素 (形式) Selectionsets 要素
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[SelectionSet 要素 (形式)](./selectionset-element-format.md)|セットの名前で参照できる .NET オブジェクトの1つのセットを定義します。|
 
@@ -55,7 +55,7 @@ Configuration 要素 (Format) SelectionSets 要素 (形式) Selectionsets 要素
 
 ## <a name="example"></a>例
 
-この例は、4つの .NET 型を定義する @no__t 0 の要素を示しています。 選択セットの名前は "FileSystemTypes" です。
+この例は、4つの .NET 型を定義する `SelectionSet` 要素を示しています。 選択セットの名前は "FileSystemTypes" です。
 
 ```xml
 <SelectionSets>
@@ -71,7 +71,7 @@ Configuration 要素 (Format) SelectionSets 要素 (形式) Selectionsets 要素
 </SelectionSets>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [選択セットの定義](./defining-selection-sets.md)
 

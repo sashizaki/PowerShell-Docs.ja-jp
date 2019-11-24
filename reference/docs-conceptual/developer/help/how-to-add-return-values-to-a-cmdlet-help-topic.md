@@ -19,15 +19,15 @@ ms.locfileid: "72367801"
 
 このセクションでは、Windows PowerShell®コマンドレットのヘルプトピックに OUTPUTS セクションを追加する方法について説明します。 OUTPUTS セクションには、コマンドレットが返す、またはパイプラインを渡すオブジェクトの .NET クラスが一覧表示されます。
 
-OUTPUTS セクションに追加できるクラスの数に制限はありません。 コマンドレットの戻り値の型は、@no__t 0command: returnValues > node に囲まれています。各クラスは \<command: 戻り値 > 要素で囲まれています。
+OUTPUTS セクションに追加できるクラスの数に制限はありません。 コマンドレットの戻り値の型は、\<コマンド: returnValues > node で囲みます。各クラスは、\<command: 戻り値 > 要素で囲まれています。
 
 コマンドレットで出力が生成されない場合は、出力がないことを示すためにこのセクションを使用します。 たとえば、クラス名の代わりに "None" を記述し、簡単な説明を入力します。 コマンドレットによって出力が条件付きで生成される場合は、このノードを使用して条件を説明し、条件付き出力を記述します。
 
-スキーマには、各 \<command: 戻り > 要素の2つの @no__t 0maml: description > 要素が含まれています。 ただし、`Get-Help` コマンドレットは、\<command: 戻り >/\<maml: description > 要素の内容のみを表示します。
+このスキーマには、各 \<コマンドに2つの \<maml: description > 要素が含まれています: 戻り > 要素。 ただし、`Get-Help` コマンドレットを実行すると、\<command: 戻り >/\<maml: description > 要素の内容のみが表示されます。
 
-Windows PowerShell 3.0 以降では、`Get-Help` コマンドレットは、@no__t 1maml: uri > 要素の内容を表示します。 この要素を使用すると、.NET クラスを説明するトピックにユーザーを誘導できます。
+Windows PowerShell 3.0 以降では、`Get-Help` コマンドレットは \<maml: uri > 要素の内容を表示します。 この要素を使用すると、.NET クラスを説明するトピックにユーザーを誘導できます。
 
-次の XML は、@no__t 0maml: returnValues > ノードを示しています。
+次の XML は、\<maml: returnValues > ノードを示しています。
 
 ```xml
 <command:returnValues>
@@ -45,7 +45,7 @@ Windows PowerShell 3.0 以降では、`Get-Help` コマンドレットは、@no_
 </command: returnValues>
 ```
 
-次の XML は、@no__t 0maml: returnValues > ノードを使用して、出力の種類を文書化する例を示しています。
+次の XML は、\<maml: returnValues > ノードを使用して、出力の種類を文書化する例を示しています。
 
 ```xml
 <command:returnValues>

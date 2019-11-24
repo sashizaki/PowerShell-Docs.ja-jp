@@ -29,9 +29,9 @@ ms.locfileid: "72361261"
 
 ### <a name="to-add-dynamic-parameters"></a>動的パラメーターを追加するには
 
-1. Dll-help ファイル*の @no__t*-1 要素内に、@no__t 2 つの要素を追加します。 @No__t-0 要素は、`Tasks` 要素の後、`RelatedLinks` 要素の前に表示されます。
+1. Dll-help ファイル*の `providerHelp`* 要素内に、`DynamicParameters` 要素を追加します。 `DynamicParameters` 要素は、`Tasks` 要素の後、`RelatedLinks` 要素の前に表示されます。
 
-   たとえば、次のようになります。
+   次に例を示します。
 
     ```xml
     <providerHelp>
@@ -44,11 +44,11 @@ ms.locfileid: "72361261"
     </providerHelp>
     ```
 
-   プロバイダーが動的パラメーターを実装していない場合は、@no__t 0 の要素を空にすることができます。
+   プロバイダーが動的パラメーターを実装していない場合は、`DynamicParameters` 要素を空にすることができます。
 
-2. @No__t-0 要素内で、各動的パラメーターに `DynamicParameter` 要素を追加します。
+2. `DynamicParameters` 要素内で、各動的パラメーターに `DynamicParameter` 要素を追加します。
 
-   たとえば、次のようになります。
+   次に例を示します。
 
     ```xml
     <DynamicParameters/>
@@ -57,14 +57,14 @@ ms.locfileid: "72361261"
     </DynamicParameters>
     ```
 
-3. 各 `DynamicParameter` 要素に、`Name` と `CmdletSupported` の要素を追加します。
+3. 各 `DynamicParameter` 要素に、`Name` と `CmdletSupported` 要素を追加します。
 
-   |要素名|[説明]|
+   |要素名|説明|
    |------------------|-----------------|
    |名前|パラメーター名を指定します。|
    |サポートされているもの|パラメーターが有効なコマンドレットを指定します。 コマンドレット名のコンマ区切りリストを入力します。|
 
-   たとえば、次の XML ドキュメントでは、Windows PowerShell FileSystem プロバイダーによって `Add-Content`、`Get-Content`、`Set-Content` のコマンドレットに追加される @no__t 0 の動的パラメーターについて説明しています。
+   たとえば、次の XML ドキュメントでは、Windows PowerShell FileSystem プロバイダーによって `Add-Content`、`Get-Content`、`Set-Content` コマンドレットに追加される `Encoding` 動的パラメーターについて説明しています。
 
     ```xml
     <DynamicParameters/>
@@ -75,9 +75,9 @@ ms.locfileid: "72361261"
 
     ```
 
-4. 各 `DynamicParameter` 要素に、`Type` 要素を追加します。 @No__t-0 要素は、動的パラメーターの値の .NET 型を含む `Name` 要素のコンテナーです。
+4. 各 `DynamicParameter` 要素に、`Type` 要素を追加します。 `Type` 要素は、動的パラメーターの値の .NET 型を含む `Name` 要素のコンテナーです。
 
-   たとえば、次の XML は、`Encoding` 動的パラメーターの .NET 型が、 [Microsoft. PowerShell. Filesystemコマンドレット](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding)の列挙体であることを示しています。
+   たとえば、次の XML は、`Encoding` 動的パラメーターの .NET 型が、 [Microsoft. PowerShell コマンドレット](/dotnet/api/microsoft.powershell.commands.filesystemcmdletproviderencoding)であることを示しています。
 
     ```xml
     <DynamicParameters/>
@@ -91,7 +91,7 @@ ms.locfileid: "72361261"
     </DynamicParameters>
     ```
 
-5. @No__t-0 要素を追加します。この要素には、動的パラメーターの簡単な説明が含まれています。 説明を作成する場合は、「[パラメーター情報を追加する方法](./how-to-add-parameter-information.md)」のすべてのコマンドレットパラメーターに指定されているガイドラインを使用します。
+5. `Description` 要素を追加します。この要素には、動的パラメーターの簡単な説明が含まれています。 説明を作成する場合は、「[パラメーター情報を追加する方法](./how-to-add-parameter-information.md)」のすべてのコマンドレットパラメーターに指定されているガイドラインを使用します。
 
    たとえば、次の XML には `Encoding` 動的パラメーターの説明が含まれています。
 
@@ -108,18 +108,18 @@ ms.locfileid: "72361261"
     </DynamicParameters>
     ```
 
-6. @No__t-0 要素とその子要素を追加します。 これらの要素には、動的パラメーターの値が記述されています。 この要素は、列挙値用に設計されています。 スイッチパラメーターの場合など、動的パラメーターに値がない場合、または値を列挙できない場合は、空の `PossibleValues` 要素を追加します。
+6. `PossibleValues` 要素とその子要素を追加します。 これらの要素には、動的パラメーターの値が記述されています。 この要素は、列挙値用に設計されています。 スイッチパラメーターの場合など、動的パラメーターに値がない場合、または値を列挙できない場合は、空の `PossibleValues` 要素を追加します。
 
-   次の表に、`PossibleValues` 要素とその子要素の一覧を示します。
+   次の表に、`PossibleValues` 要素とその子要素の一覧とその説明を示します。
 
-   |要素名|[説明]|
+   |要素名|説明|
    |------------------|-----------------|
-   |指定した値|この要素はコンテナーです。 その子要素について以下に説明します。 各プロバイダーヘルプトピックに1つの `PossibleValues` 要素を追加します。 要素は空にすることができます。|
+   |指定した値|この要素はコンテナーです。 その子要素について以下に説明します。 各プロバイダーヘルプトピックに `PossibleValues` 要素を1つ追加します。 要素は空にすることができます。|
    |指定した値|この要素はコンテナーです。 その子要素について以下に説明します。 動的パラメーターの値ごとに1つの `PossibleValue` 要素を追加します。|
    |値|値の名前を指定します。|
-   |[説明]|この要素には @no__t 0 の要素が含まれています。 @No__t-0 要素のテキストは、`Value` 要素で指定された値を表します。|
+   |説明|この要素には、`Para` 要素が含まれています。 `Para` 要素内のテキストは、`Value` 要素で指定された値を表します。|
 
-   たとえば、次の XML は、@no__t 1 つの動的パラメーターの 1 @no__t の要素を示しています。
+   たとえば、次の XML は、`Encoding` 動的パラメーターの1つの `PossibleValue` 要素を示しています。
 
     ```xml
     <DynamicParameters/>
@@ -140,7 +140,7 @@ ms.locfileid: "72361261"
 
 ## <a name="example"></a>例
 
-次の例は、`Encoding` 動的パラメーターの @no__t 0 要素を示しています。
+次の例は、`Encoding` 動的パラメーターの `DynamicParameters` 要素を示しています。
 
 ```xml
 <DynamicParameters/>

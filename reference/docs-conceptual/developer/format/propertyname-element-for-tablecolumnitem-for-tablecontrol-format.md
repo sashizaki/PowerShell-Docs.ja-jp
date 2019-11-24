@@ -41,7 +41,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableColumnItem 要素 (Format)](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)|行の列に値が表示されるプロパティまたはスクリプトを定義します。|
 
@@ -55,7 +55,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="example"></a>例
 
-この例では[、system.object オブジェクト](/dotnet/api/System.Diagnostics.Process)の `Status` プロパティを指定する @no__t 0 の要素を示します。
+この例で[は、`TableColumnItem` オブジェクトの](/dotnet/api/System.Diagnostics.Process)`Status` プロパティを指定する要素を示します。
 
 ```xml
 <TableColumnItem>
@@ -65,7 +65,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [テーブルビューの作成](./creating-a-table-view.md)
 

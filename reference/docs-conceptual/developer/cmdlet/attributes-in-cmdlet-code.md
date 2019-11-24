@@ -17,7 +17,7 @@ ms.locfileid: "72370001"
 ---
 # <a name="attributes-in-cmdlet-code"></a>コマンドレット コードの属性
 
-Windows PowerShell によって提供される共通の機能を使用するために、コマンドレットコードで定義されているクラスとパブリックプロパティは属性で修飾されています。 たとえば、次のクラス定義では、コマンドレット属性を使用して、 **Get Proc**コマンドレットが実装されている Microsoft .NET Framework クラスを識別します。 (このコマンドレットは、このドキュメントの例として使用されており、Windows PowerShell によって提供される @no__t 0 のコマンドレットに似ています)。
+Windows PowerShell によって提供される共通の機能を使用するために、コマンドレットコードで定義されているクラスとパブリックプロパティは属性で修飾されています。 たとえば、次のクラス定義では、コマンドレット属性を使用して、 **Get Proc**コマンドレットが実装されている Microsoft .NET Framework クラスを識別します。 (このコマンドレットは、このドキュメントの例として使用されており、Windows PowerShell によって提供される `Get-Process` コマンドレットに似ています)。
 
 ```csharp
 [Cmdlet(VerbsCommon.Get, "Proc")]
@@ -30,7 +30,7 @@ public class GetProcCommand : Cmdlet
 
 コマンドレットで宣言できるさまざまな属性の詳細については、「[属性の型](./attribute-types.md)」を参照してください。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [属性の型](./attribute-types.md)
 
