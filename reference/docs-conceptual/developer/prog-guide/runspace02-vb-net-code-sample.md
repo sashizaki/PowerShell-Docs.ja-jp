@@ -15,11 +15,11 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72366611"
 ---
-# <a name="runspace02-vbnet-code-sample"></a><span data-ttu-id="bc7c3-102">Runspace02 (VB.NET) コード サンプル</span><span class="sxs-lookup"><span data-stu-id="bc7c3-102">Runspace02 (VB.NET) Code Sample</span></span>
+# <a name="runspace02-vbnet-code-sample"></a><span data-ttu-id="8580e-102">Runspace02 (VB.NET) コード サンプル</span><span class="sxs-lookup"><span data-stu-id="8580e-102">Runspace02 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="bc7c3-103">Runspace02 サンプルの VB.NET ソースコードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="bc7c3-103">Here is the VB.NET source code for the Runspace02 sample.</span></span> <span data-ttu-id="bc7c3-104">このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、@no__t 1 つのコマンドレットを同期的に実行します。</span><span class="sxs-lookup"><span data-stu-id="bc7c3-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.</span></span> <span data-ttu-id="bc7c3-105">次に、Windows フォームとデータバインディングを使用して、DataGridView コントロールに結果を表示します。</span><span class="sxs-lookup"><span data-stu-id="bc7c3-105">Windows Forms and data binding are then used to display the results in a DataGridView control.</span></span>
+<span data-ttu-id="8580e-103">Runspace02 サンプルの VB.NET ソースコードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="8580e-103">Here is the VB.NET source code for the Runspace02 sample.</span></span> <span data-ttu-id="8580e-104">このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、`Get-Process` コマンドレットを同期的に実行します。</span><span class="sxs-lookup"><span data-stu-id="8580e-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.</span></span> <span data-ttu-id="8580e-105">次に、Windows フォームとデータバインディングを使用して、DataGridView コントロールに結果を表示します。</span><span class="sxs-lookup"><span data-stu-id="8580e-105">Windows Forms and data binding are then used to display the results in a DataGridView control.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="bc7c3-106">コードサンプル</span><span class="sxs-lookup"><span data-stu-id="bc7c3-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="8580e-106">コードサンプル</span><span class="sxs-lookup"><span data-stu-id="8580e-106">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -86,6 +86,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace02.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace02/Runspace02.vb#L09-L68 "Runspace02.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="bc7c3-107">参照</span><span class="sxs-lookup"><span data-stu-id="bc7c3-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8580e-107">関連項目</span><span class="sxs-lookup"><span data-stu-id="8580e-107">See Also</span></span>
 
-[<span data-ttu-id="bc7c3-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="bc7c3-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="8580e-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="8580e-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)

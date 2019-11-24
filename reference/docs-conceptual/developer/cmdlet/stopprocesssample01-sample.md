@@ -15,57 +15,57 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 10/15/2019
 ms.locfileid: "72365301"
 ---
-# <a name="stopprocesssample01-sample"></a><span data-ttu-id="65d2d-102">StopProcessSample01 サンプル</span><span class="sxs-lookup"><span data-stu-id="65d2d-102">StopProcessSample01 Sample</span></span>
+# <a name="stopprocesssample01-sample"></a><span data-ttu-id="8b84f-102">StopProcessSample01 サンプル</span><span class="sxs-lookup"><span data-stu-id="8b84f-102">StopProcessSample01 Sample</span></span>
 
-<span data-ttu-id="65d2d-103">このサンプルでは、プロセスを停止する前にユーザーからのフィードバックを要求するコマンドレットを記述する方法と、ユーザーがコマンドレットにオブジェクトを返すことを示す @no__t 0 パラメーターを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="65d2d-103">This sample shows how to write a cmdlet that requests feedback from the user before it attempts to stop a process, and how to implement a `PassThru` parameter indicating that the user wants the cmdlet to return an object.</span></span> <span data-ttu-id="65d2d-104">このコマンドレットは、Windows PowerShell 2.0 によって提供される @no__t 0 のコマンドレットに似ています。</span><span class="sxs-lookup"><span data-stu-id="65d2d-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="8b84f-103">このサンプルでは、プロセスを停止する前にユーザーからのフィードバックを要求するコマンドレットを記述する方法と、ユーザーがコマンドレットにオブジェクトを返すことを示す `PassThru` パラメーターを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="8b84f-103">This sample shows how to write a cmdlet that requests feedback from the user before it attempts to stop a process, and how to implement a `PassThru` parameter indicating that the user wants the cmdlet to return an object.</span></span> <span data-ttu-id="8b84f-104">このコマンドレットは、Windows PowerShell 2.0 によって提供される `Stop-Process` コマンドレットに似ています。</span><span class="sxs-lookup"><span data-stu-id="8b84f-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="65d2d-105">Visual Studio を使用してサンプルをビルドする方法。</span><span class="sxs-lookup"><span data-stu-id="65d2d-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="8b84f-105">Visual Studio を使用してサンプルをビルドする方法。</span><span class="sxs-lookup"><span data-stu-id="8b84f-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="65d2d-106">Windows PowerShell 2.0 SDK がインストールされている状態で、StopProcessSample01 フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="65d2d-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample01 folder.</span></span> <span data-ttu-id="65d2d-107">既定の場所は C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01. です。</span><span class="sxs-lookup"><span data-stu-id="65d2d-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01.</span></span>
+1. <span data-ttu-id="8b84f-106">Windows PowerShell 2.0 SDK がインストールされている状態で、StopProcessSample01 フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="8b84f-106">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample01 folder.</span></span> <span data-ttu-id="8b84f-107">既定の場所は C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01. です。</span><span class="sxs-lookup"><span data-stu-id="8b84f-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample01.</span></span>
 
-2. <span data-ttu-id="65d2d-108">ソリューション (.sln) ファイルのアイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="65d2d-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="65d2d-109">これにより、Microsoft Visual Studio でサンプルプロジェクトが開きます。</span><span class="sxs-lookup"><span data-stu-id="65d2d-109">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="8b84f-108">ソリューション (.sln) ファイルのアイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="8b84f-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="8b84f-109">これにより、Microsoft Visual Studio でサンプルプロジェクトが開きます。</span><span class="sxs-lookup"><span data-stu-id="8b84f-109">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="65d2d-110">**[ビルド]** メニューの **[ソリューションのビルド]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="65d2d-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="8b84f-110">**[ビルド]** メニューの **[ソリューションのビルド]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="8b84f-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="65d2d-111">サンプルのライブラリは、既定の \bin フォルダーまたは \bin\debug フォルダーに構築されます。</span><span class="sxs-lookup"><span data-stu-id="65d2d-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="8b84f-111">サンプルのライブラリは、既定の \bin フォルダーまたは \bin\debug フォルダーに構築されます。</span><span class="sxs-lookup"><span data-stu-id="8b84f-111">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="65d2d-112">サンプルを実行する方法</span><span class="sxs-lookup"><span data-stu-id="65d2d-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="8b84f-112">サンプルを実行する方法</span><span class="sxs-lookup"><span data-stu-id="8b84f-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="65d2d-113">次のモジュールフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="65d2d-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="8b84f-113">次のモジュールフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="8b84f-113">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample01`
 
-2. <span data-ttu-id="65d2d-114">サンプルアセンブリをモジュールフォルダーにコピーします。</span><span class="sxs-lookup"><span data-stu-id="65d2d-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="8b84f-114">サンプルアセンブリをモジュールフォルダーにコピーします。</span><span class="sxs-lookup"><span data-stu-id="8b84f-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="65d2d-115">Windows PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="65d2d-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="8b84f-115">Windows PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="8b84f-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="65d2d-116">次のコマンドを実行して、Windows PowerShell にアセンブリを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="65d2d-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="8b84f-116">次のコマンドを実行して、Windows PowerShell にアセンブリを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="8b84f-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample01`
 
-5. <span data-ttu-id="65d2d-117">次のコマンドを実行して、コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="65d2d-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="8b84f-117">次のコマンドを実行して、コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="8b84f-117">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="65d2d-118">要件</span><span class="sxs-lookup"><span data-stu-id="65d2d-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="8b84f-118">要件</span><span class="sxs-lookup"><span data-stu-id="8b84f-118">Requirements</span></span>
 
-<span data-ttu-id="65d2d-119">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="65d2d-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="8b84f-119">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="8b84f-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="65d2d-120">サンプル</span><span class="sxs-lookup"><span data-stu-id="65d2d-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="8b84f-120">使用例</span><span class="sxs-lookup"><span data-stu-id="8b84f-120">Demonstrates</span></span>
 
-<span data-ttu-id="65d2d-121">このサンプルでは、次のことを示します。</span><span class="sxs-lookup"><span data-stu-id="65d2d-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="8b84f-121">このサンプルでは、次のことを示します。</span><span class="sxs-lookup"><span data-stu-id="8b84f-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="65d2d-122">コマンドレット属性を使用してコマンドレットクラスを宣言する。</span><span class="sxs-lookup"><span data-stu-id="65d2d-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="8b84f-122">コマンドレット属性を使用してコマンドレットクラスを宣言する。</span><span class="sxs-lookup"><span data-stu-id="8b84f-122">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="65d2d-123">パラメーター属性を使用してコマンドレットパラメーターを宣言する。</span><span class="sxs-lookup"><span data-stu-id="65d2d-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="8b84f-123">パラメーター属性を使用してコマンドレットパラメーターを宣言する。</span><span class="sxs-lookup"><span data-stu-id="8b84f-123">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="65d2d-124">確認を要求するために、メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="65d2d-124">Calling the ShouldProcess method to request confirmation.</span></span>
+- <span data-ttu-id="8b84f-124">確認を要求するために、メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="8b84f-124">Calling the ShouldProcess method to request confirmation.</span></span>
 
-- <span data-ttu-id="65d2d-125">コマンドレットがオブジェクトを返すかどうかを示す @no__t 0 パラメーターを実装します。</span><span class="sxs-lookup"><span data-stu-id="65d2d-125">Implementing a `PassThru` parameter that indicates if the user wants the cmdlet to return an object.</span></span> <span data-ttu-id="65d2d-126">既定では、このコマンドレットはパイプラインにオブジェクトを返しません。</span><span class="sxs-lookup"><span data-stu-id="65d2d-126">By default, this cmdlet does not return an object to the pipeline.</span></span>
+- <span data-ttu-id="8b84f-125">ユーザーがオブジェクトを返すかどうかを示す `PassThru` パラメーターを実装する。</span><span class="sxs-lookup"><span data-stu-id="8b84f-125">Implementing a `PassThru` parameter that indicates if the user wants the cmdlet to return an object.</span></span> <span data-ttu-id="8b84f-126">既定では、このコマンドレットはパイプラインにオブジェクトを返しません。</span><span class="sxs-lookup"><span data-stu-id="8b84f-126">By default, this cmdlet does not return an object to the pipeline.</span></span>
 
-## <a name="example"></a><span data-ttu-id="65d2d-127">例</span><span class="sxs-lookup"><span data-stu-id="65d2d-127">Example</span></span>
+## <a name="example"></a><span data-ttu-id="8b84f-127">例</span><span class="sxs-lookup"><span data-stu-id="8b84f-127">Example</span></span>
 
-<span data-ttu-id="65d2d-128">このサンプルでは、ユーザーがオブジェクトを返すことを示す @no__t 0 パラメーターを実装する方法と、`ShouldProcess` および `ShouldContinue` メソッドの呼び出しによってユーザーフィードバックを要求する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="65d2d-128">This sample shows how to implement a `PassThru` parameter that indicates that the user wants the cmdlet to return an object, and how to request user feedback by calls to the `ShouldProcess` and `ShouldContinue` methods.</span></span>
+<span data-ttu-id="8b84f-128">このサンプルでは、ユーザーがオブジェクトを返すことを示す `PassThru` パラメーターを実装する方法と、`ShouldProcess` メソッドと `ShouldContinue` メソッドの呼び出しによってユーザーフィードバックを要求する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="8b84f-128">This sample shows how to implement a `PassThru` parameter that indicates that the user wants the cmdlet to return an object, and how to request user feedback by calls to the `ShouldProcess` and `ShouldContinue` methods.</span></span>
 
 ```csharp
 using System;
@@ -263,6 +263,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="65d2d-129">参照</span><span class="sxs-lookup"><span data-stu-id="65d2d-129">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="8b84f-129">関連項目</span><span class="sxs-lookup"><span data-stu-id="8b84f-129">See Also</span></span>
 
-[<span data-ttu-id="65d2d-130">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="65d2d-130">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="8b84f-130">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="8b84f-130">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
