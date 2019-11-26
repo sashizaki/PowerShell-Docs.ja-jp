@@ -1,5 +1,5 @@
 ---
-title: RunSpace03 (VB.NET) Code Sample | Microsoft Docs
+title: RunSpace03 (VB.NET) コードサンプル |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,13 +17,13 @@ ms.locfileid: "74417974"
 ---
 # <a name="runspace03-vbnet-code-sample"></a>RunSpace03 (VB.NET) コード サンプル
 
-Here is the VB.NET source code for the console application described in "Creating a Console Application That Runs a Specified Script". This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that retrieves process information for the list of process names passed into the script. It shows how to pass input objects to a script and how to retrieve error objects as well as the output objects.
+次に示すのは、「指定したスクリプトを実行するコンソールアプリケーションの作成」で説明されているコンソールアプリケーションの VB.NET ソースコードです。 このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、スクリプトに渡されたプロセス名の一覧のプロセス情報を取得するスクリプトを実行します。 この例では、入力オブジェクトをスクリプトに渡す方法と、エラーオブジェクトおよび出力オブジェクトを取得する方法を示します。
 
 > [!NOTE]
-> You can download the VB.NET source file (runspace03.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> このサンプルの VB.NET ソースファイル (runspace03) をダウンロードするには、windows Vista 用 Windows ソフトウェア開発キットおよび Microsoft .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
+> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
 
-## <a name="code-sample"></a>Code Sample
+## <a name="code-sample"></a>コードサンプル
 
 ```vb
 Imports System
@@ -105,8 +105,8 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace03.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace03.vb#L09-L83 "Runspace03.vb")] -->
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

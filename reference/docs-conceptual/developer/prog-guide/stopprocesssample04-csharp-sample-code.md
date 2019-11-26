@@ -1,5 +1,5 @@
 ---
-title: StopProcessSample04 (C#) Sample Code | Microsoft Docs
+title: StopProcessSample04 (C#) Sample Code |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,17 +17,17 @@ ms.locfileid: "74416046"
 ---
 # <a name="stopprocesssample04-c-sample-code"></a>StopProcessSample04 (C#) サンプル コード
 
-Here is the complete C# sample code for the StopProc04 sample cmdlet. This is the code for the `Stop-Process` cmdlet described in [Adding Parameter Sets to a Cmdlet](../cmdlet/adding-parameter-sets-to-a-cmdlet.md). The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).
+StopProc04 sample コマンドレットC#の完全なサンプルコードを次に示します。 これは、「[コマンドレットにパラメーターセットを追加する](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)」で説明されている `Stop-Process` コマンドレットのコードです。 `Stop-Process` コマンドレットは、Get Proc コマンドレットを使用して取得されたプロセスを停止するように設計されています ([最初のコマンドレットの作成](../cmdlet/creating-a-cmdlet-without-parameters.md)に関するページを参照してください)。
 
 > [!NOTE]
-> You can download the C# (stopprocesssample04.cs) source file for this Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> この Stop Proc コマンドC#レットの (stopprocesssample04.cs) ソースファイルをダウンロードするには、Microsoft Windows Software Development Kit For windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
 
 [!code-csharp[StopProcessSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs#L11-L435 "StopProcessSample04.cs")]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

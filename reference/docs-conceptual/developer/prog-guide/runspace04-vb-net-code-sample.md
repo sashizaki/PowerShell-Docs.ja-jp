@@ -1,5 +1,5 @@
 ---
-title: RunSpace04  (VB.NET) Code Sample | Microsoft Docs
+title: RunSpace04 (VB.NET) コードサンプル |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,14 +17,14 @@ ms.locfileid: "74417952"
 ---
 # <a name="runspace04--vbnet-code-sample"></a>RunSpace04 (VB.NET) コード サンプル
 
-Here is the VB.NET source code for the Runspace04 sample. This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error. The host application is responsible for catching the error and interpreting the error record.
+Runspace04 サンプルの VB.NET ソースコードを次に示します。 このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、終了エラーを生成するスクリプトを実行します。 ホストアプリケーションは、エラーをキャッチし、エラーレコードを解釈します。
 
 > [!NOTE]
-> You can download the VB.NET source file (runspace02.vb) for this sample by using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> このサンプルの VB.NET ソースファイル (runspace02) をダウンロードするには、windows Vista 用 Windows ソフトウェア開発キットおよび Microsoft .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
 
-## <a name="code-sample"></a>Code Sample
+## <a name="code-sample"></a>コードサンプル
 
 ```vb
 Imports System
@@ -115,8 +115,8 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace04.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace01/Runspace04.vb#L09-L92 "Runspace04.vb")] -->
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

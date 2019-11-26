@@ -1,5 +1,5 @@
 ---
-title: AccessDbProviderSample03 Code Sample | Microsoft Docs
+title: AccessDbProviderSample03 コードサンプル |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,16 +17,16 @@ ms.locfileid: "74417526"
 ---
 # <a name="accessdbprovidersample03-code-sample"></a>AccessDbProviderSample03 コード サンプル
 
-The following code shows the implementation of the Windows PowerShell provider described in [Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md). This provider that can manipulate the data in a data store.
+次のコードは、「 [Windows Powershell 項目プロバイダーの作成](./creating-a-windows-powershell-item-provider.md)」で説明されている windows powershell プロバイダーの実装を示しています。 このプロバイダーは、データストア内のデータを操作できます。
 
 > [!NOTE]
-> You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> このプロバイダーのC#ソースファイル (AccessDBSampleProvider03.cs) をダウンロードするには、Microsoft Windows Software Development Kit For windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
 >
-> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
+> その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。
 
-## <a name="code-sample"></a>Code Sample
+## <a name="code-sample"></a>コードサンプル
 
 ```csharp
 using System;
@@ -999,8 +999,8 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 [!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L11-L976 "AccessDBProviderSample03.cs")]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

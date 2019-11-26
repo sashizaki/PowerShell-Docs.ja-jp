@@ -1,5 +1,5 @@
 ---
-title: AccessDbProviderSample06 Code Sample | Microsoft Docs
+title: AccessDbProviderSample06 コードサンプル |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,21 +17,21 @@ ms.locfileid: "74416227"
 ---
 # <a name="accessdbprovidersample06-code-sample"></a>AccessDbProviderSample06 コード サンプル
 
-The following code shows the implementation of the Windows PowerShell content provider described in [Creating a Windows PowerShell Content Provider](./creating-a-windows-powershell-content-provider.md). This provider enables the user to manipulate the contents of the items in a data store.
+次のコードは、「 [Windows Powershell コンテンツプロバイダーの作成](./creating-a-windows-powershell-content-provider.md)」で説明されている windows powershell コンテンツプロバイダーの実装を示しています。 このプロバイダーは、ユーザーがデータストア内の項目の内容を操作できるようにします。
 
 > [!NOTE]
-> You can download the C# source file (AccessDBSampleProvider06.cs) for this provider by using the Microsoft Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> このプロバイダのC#ソースファイル (AccessDBSampleProvider06.cs) をダウンロードするには、Microsoft Windows Software Development Kit For windows Vista および Microsoft .NET Framework 3.0 Runtime Components を使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
 >
-> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
+> その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。
 
-## <a name="code-sample"></a>Code Sample
+## <a name="code-sample"></a>コードサンプル
 
 [!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L2399 "AccessDBProviderSample06.cs")]
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

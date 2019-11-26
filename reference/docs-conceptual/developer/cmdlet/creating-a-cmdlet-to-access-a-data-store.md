@@ -15,37 +15,37 @@ ms.locfileid: "74415701"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>データ ストアにアクセスするためのコマンドレットを作成する
 
-This section describes how to create a cmdlet that accesses stored data by way of a Windows PowerShell provider. This type of cmdlet uses the Windows PowerShell provider infrastructure of the Windows PowerShell runtime and, therefore, the cmdlet class must derive from the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class.
+このセクションでは、Windows PowerShell プロバイダーを介して格納されたデータにアクセスするコマンドレットを作成する方法について説明します。 この種類のコマンドレットは、Windows PowerShell ランタイムの Windows PowerShell プロバイダーインフラストラクチャを使用するため、コマンドレットクラスは[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底クラスから派生する必要があります。
 
-The Select-Str cmdlet described here can locate and select strings in a file or object. The patterns used to identify the string can be specified explicitly through the `Path` parameter of the cmdlet or implicitly through the `Script` parameter.
+ここで説明する Select-Str コマンドレットは、ファイルまたはオブジェクト内の文字列を検索して選択できます。 文字列を識別するために使用されるパターンは、コマンドレットの `Path` パラメーターを使用して明示的に指定することも、`Script` パラメーターを使用して暗黙的に指定することもできます。
 
-The cmdlet is designed to use any Windows PowerShell provider that derives from [System.Management.Automation.Provider.Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider). For example, the cmdlet can specify the FileSystem provider or the Variable provider that is provided by Windows PowerShell. For more information aboutWindows PowerShell providers, see [Designing Your Windows PowerShell provider](../prog-guide/designing-your-windows-powershell-provider.md).
+コマンドレットは、 [Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)から派生した任意の Windows PowerShell プロバイダーを使用するように設計されています。 たとえば、コマンドレットでは、Windows PowerShell によって提供されるファイルシステムプロバイダーまたは変数プロバイダーを指定できます。 Windows PowerShell プロバイダーの詳細については、「 [Windows powershell プロバイダーの設計](../prog-guide/designing-your-windows-powershell-provider.md)」を参照してください。
 
-## <a name="defining-the-cmdlet-class"></a>Defining the Cmdlet Class
+## <a name="defining-the-cmdlet-class"></a>コマンドレットクラスの定義
 
-The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. This cmdlet detects certain strings, so the verb name chosen here is "Select", defined by the [System.Management.Automation.Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon) class. The noun name "Str" is used because the cmdlet acts upon strings. In the declaration below, note that the cmdlet verb and noun name are reflected in the name of the cmdlet class. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
+コマンドレットの作成の最初の手順では、常にコマンドレットに名前を付け、コマンドレットを実装する .NET クラスを宣言します。 このコマンドレットは特定の文字列を検出するため、ここで選択した動詞名は "Select" で、 [Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon)クラスで定義されています。 名詞名 "Str" は、コマンドレットが文字列に対して動作するために使用されます。 次の宣言では、コマンドレット動詞と名詞名がコマンドレットクラスの名前に反映されていることに注意してください。 承認されたコマンドレット動詞の詳細については、「[コマンドレットの動詞名](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
 
-The .NET class for this cmdlet must derive from the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) base class, because it provides the support needed by the Windows PowerShell runtime to expose the Windows PowerShell provider infrastructure. Note that this cmdlet also makes use of the .NET Framework regular expressions classes, such as [System.Text.Regularexpressions.Regex](/dotnet/api/System.Text.RegularExpressions.Regex).
+このコマンドレットの .NET クラスは、windows powershell プロバイダーのインフラストラクチャを公開するために Windows PowerShell ランタイムが必要とするサポートを提供するため、 [PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底クラスから派生する必要があります。 このコマンドレットは、 [system.text.regularexpressions.regexoptions](/dotnet/api/System.Text.RegularExpressions.Regex)などの .NET Framework 正規表現クラスを使用することにも注意してください。
 
-The following code is the class definition for this Select-Str cmdlet.
+次のコードは、この Select-Str コマンドレットのクラス定義です。
 
 ```csharp
 [Cmdlet(VerbsCommon.Select, "Str", DefaultParameterSetName="PatternParameterSet")]
 public class SelectStringCommand : PSCmdlet
 ```
 
-This cmdlet defines a default parameter set by adding the `DefaultParameterSetName` attribute keyword to the class declaration. The default parameter set `PatternParameterSet` is used when the `Script` parameter is not specified. For more information about this parameter set, see the `Pattern` and `Script` parameter discussion in the following section.
+このコマンドレットは、`DefaultParameterSetName` attribute キーワードをクラス宣言に追加することによって、既定のパラメーターセットを定義します。 `Script` パラメーターが指定されていない場合は、`PatternParameterSet` 既定のパラメーターセットが使用されます。 このパラメーターセットの詳細については、次のセクションの `Pattern` と `Script` パラメーターの説明を参照してください。
 
-## <a name="defining-parameters-for-data-access"></a>Defining Parameters for Data Access
+## <a name="defining-parameters-for-data-access"></a>データアクセスのためのパラメーターの定義
 
-This cmdlet defines several parameters that allow the user to access and examine stored data. These parameters include a `Path` parameter that indicates the location of the data store, a `Pattern` parameter that specifies the pattern to be used in the search, and several other parameters that support how the search is performed.
+このコマンドレットは、ユーザーが格納されたデータにアクセスして確認できるようにするいくつかのパラメーターを定義します。 これらのパラメーターには、データストアの場所を示す `Path` パラメーター、検索で使用されるパターンを指定する `Pattern` パラメーター、および検索の実行方法をサポートするいくつかのパラメーターが含まれます。
 
 > [!NOTE]
-> For more information about the basics of defining parameters, see [Adding Parameters that Process Command Line Input](./adding-parameters-that-process-command-line-input.md).
+> パラメーターの定義の基本の詳細については、「[コマンドライン入力を処理するパラメーターの追加](./adding-parameters-that-process-command-line-input.md)」を参照してください。
 
-### <a name="declaring-the-path-parameter"></a>Declaring the Path Parameter
+### <a name="declaring-the-path-parameter"></a>Path パラメーターの宣言
 
-To locate the data store, this cmdlet must use a Windows PowerShell path to identify the Windows PowerShell provider that is designed to access the data store. Therefore, it defines a `Path` parameter of type string array to indicate the location of the provider.
+データストアを検索するには、このコマンドレットで Windows PowerShell のパスを使用して、データストアにアクセスするように設計されている Windows PowerShell プロバイダーを識別する必要があります。 したがって、プロバイダーの場所を示す文字列配列型の `Path` パラメーターを定義します。
 
 ```csharp
 [Parameter(
@@ -66,15 +66,15 @@ public string[] Path
 private string[] paths;
 ```
 
-Note that this parameter belongs to two different parameter sets and that it has an alias.
+このパラメーターは、2つの異なるパラメーターセットに属しており、別名を持っていることに注意してください。
 
-Two [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) attributes declare that the `Path` parameter belongs to the `ScriptParameterSet` and the `PatternParameterSet`. For more information about parameter sets, see [Adding Parameter Sets to a Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
+2[つの system.object 属性は](/dotnet/api/System.Management.Automation.ParameterAttribute)、`Path` パラメーターが `ScriptParameterSet` と `PatternParameterSet`に属していることを宣言します。 パラメーターセットの詳細については、「[コマンドレットへのパラメーターセットの追加](./adding-parameter-sets-to-a-cmdlet.md)」を参照してください。
 
-The [System.Management.Automation.Aliasattribute](/dotnet/api/System.Management.Automation.AliasAttribute) attribute declares a `PSPath` alias for the `Path` parameter. Declaring this alias is strongly recommended for consistency with other cmdlets that access Windows PowerShell providers. For more information aboutWindows PowerShell paths, see "PowerShell Path Concepts" in [How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85)).
+System.string[属性は、](/dotnet/api/System.Management.Automation.AliasAttribute) `Path` パラメーターの `PSPath` エイリアスを宣言します。 Windows PowerShell プロバイダーにアクセスする他のコマンドレットとの一貫性を確保するために、このエイリアスを宣言することを強くお勧めします。 Windows PowerShell パスの詳細については、「 [Windows powershell の動作](/previous-versions//ms714658(v=vs.85))のしくみ」の「PowerShell パスの概念」を参照してください。
 
-### <a name="declaring-the-pattern-parameter"></a>Declaring the Pattern Parameter
+### <a name="declaring-the-pattern-parameter"></a>Pattern パラメーターの宣言
 
-To specify the patterns to search for, this cmdlet declares a `Pattern` parameter that is an array of strings. A positive result is returned when any of the patterns are found in the data store. Note that these patterns can be compiled into an array of compiled regular expressions or an array of wildcard patterns used for literal searches.
+このコマンドレットは、検索するパターンを指定するために、文字列の配列である `Pattern` パラメーターを宣言します。 データストアにパターンが見つかった場合は、正の結果が返されます。 これらのパターンは、コンパイル済みの正規表現の配列、またはリテラル検索に使用されるワイルドカードパターンの配列にコンパイルできます。
 
 ```csharp
 [Parameter(
@@ -91,13 +91,13 @@ private Regex[] regexPattern;
 private WildcardPattern[] wildcardPattern;
 ```
 
-When this parameter is specified, the cmdlet uses the default parameter set `PatternParameterSet`. In this case, the cmdlet uses the patterns specified here to select strings. In contrast, the `Script` parameter could also be used to provide a script that contains the patterns. The `Script` and `Pattern` parameters define two separate parameter sets, so they are mutually exclusive.
+このパラメーターを指定すると、コマンドレットは `PatternParameterSet`既定のパラメーターセットを使用します。 この場合、コマンドレットは、ここで指定されたパターンを使用して文字列を選択します。 これに対し、`Script` パラメーターを使用して、パターンを含むスクリプトを指定することもできます。 `Script` パラメーターと `Pattern` パラメーターでは、2つの異なるパラメーターセットが定義されているため、相互に排他的です。
 
-### <a name="declaring-search-support-parameters"></a>Declaring Search Support Parameters
+### <a name="declaring-search-support-parameters"></a>検索サポートパラメーターの宣言
 
-This cmdlet defines the following support parameters that can be used to modify the search capabilities of the cmdlet.
+このコマンドレットは、コマンドレットの検索機能を変更するために使用できる次のサポートパラメーターを定義します。
 
-The `Script` parameter specifies a script block that can be used to provide an alternate search mechanism for the cmdlet. The script must contain the patterns used for matching and return a [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) object. Note that this parameter is also the unique parameter that identifies the `ScriptParameterSet` parameter set. When the Windows PowerShell runtime sees this parameter, it uses only parameters that belong to the `ScriptParameterSet` parameter set.
+`Script` パラメーターは、コマンドレットの代替検索メカニズムを提供するために使用できるスクリプトブロックを指定します。 このスクリプトには、照合に使用されるパターンが含まれている必要があります。[また、このオブジェクトを](/dotnet/api/System.Management.Automation.PSObject)返します。 このパラメーターは、`ScriptParameterSet` パラメーターセットを識別する一意のパラメーターでもあることに注意してください。 Windows PowerShell ランタイムは、このパラメーターを認識すると、`ScriptParameterSet` パラメーターセットに属するパラメーターのみを使用します。
 
 ```csharp
 [Parameter(
@@ -112,7 +112,7 @@ public ScriptBlock Script
 ScriptBlock script;
 ```
 
-The `SimpleMatch` parameter is a switch parameter that indicates whether the cmdlet is to explicitly match the patterns as they are supplied. When the user specifies the parameter at the command line (`true`), the cmdlet uses the patterns as they are supplied. If the parameter is not specified (`false`), the cmdlet uses regular expressions. The default for this parameter is `false`.
+`SimpleMatch` パラメーターは、指定されたパターンをコマンドレットが明示的に一致させるかどうかを示すスイッチパラメーターです。 ユーザーがコマンドライン (`true`) でパラメーターを指定すると、コマンドレットは、指定されたパターンを使用します。 パラメーターが指定されていない場合 (`false`)、このコマンドレットでは正規表現を使用します。 このパラメーターの既定値は `false`です。
 
 ```csharp
 [Parameter]
@@ -124,7 +124,7 @@ public SwitchParameter SimpleMatch
 private bool simpleMatch;
 ```
 
-The `CaseSensitive` parameter is a switch parameter that indicates whether a case-sensitive search is performed. When the user specifies the parameter at the command line (`true`), the cmdlet checks for the uppercase and lowercase of characters when comparing patterns. If the parameter is not specified (`false`), the cmdlet does not distinguish between uppercase and lowercase. For example "MyFile" and "myfile" would both be returned as positive hits. The default for this parameter is `false`.
+`CaseSensitive` パラメーターは、大文字と小文字を区別する検索を実行するかどうかを示すスイッチパラメーターです。 ユーザーがコマンドライン (`true`) でパラメーターを指定すると、パターンを比較するときに、コマンドレットによって大文字と小文字がチェックされます。 パラメーターが指定されていない場合 (`false`)、このコマンドレットでは大文字と小文字が区別されません。 たとえば、"MyFile" と "myfile" は、両方とも正のヒットとして返されます。 このパラメーターの既定値は `false`です。
 
 ```csharp
 [Parameter]
@@ -136,7 +136,7 @@ public SwitchParameter CaseSensitive
 private bool caseSensitive;
 ```
 
-The `Exclude` and `Include` parameters identify items that are explicitly excluded from or included in the search. By default, the cmdlet will search all items in the data store. However, to limit the search performed by the cmdlet, these parameters can be used to explicitly indicate items to be included in the search or omitted.
+`Exclude` パラメーターと `Include` パラメーターは、検索に明示的に除外されている項目または検索に含まれる項目を識別します。 既定では、このコマンドレットはデータストア内のすべての項目を検索します。 ただし、コマンドレットによって実行される検索を制限するために、これらのパラメーターを使用して、検索に含める項目を明示的に指定することも、省略することもできます。
 
 ```csharp
 [Parameter]
@@ -173,15 +173,15 @@ internal string[] includeStrings = null;
 internal WildcardPattern[] include = null;
 ```
 
-### <a name="declaring-parameter-sets"></a>Declaring Parameter Sets
+### <a name="declaring-parameter-sets"></a>パラメーターセットの宣言
 
-This cmdlet uses two parameter sets (`ScriptParameterSet` and `PatternParameterSet`, which is the default) as the names of two parameter sets used in data access. `PatternParameterSet` is the default parameter set and is used when the `Pattern` parameter is specified. `ScriptParameterSet` is used when the user specifies an alternate search mechanism through the `Script` parameter. For more information about parameter sets, see [Adding Parameter Sets to a Cmdlet](./adding-parameter-sets-to-a-cmdlet.md).
+このコマンドレットでは、データアクセスで使用される2つのパラメーターセットの名前として2つのパラメーターセット (`ScriptParameterSet` と `PatternParameterSet`が既定値) を使用します。 `PatternParameterSet` は既定のパラメーターセットであり、`Pattern` パラメーターを指定するときに使用されます。 `ScriptParameterSet` は、ユーザーが `Script` パラメーターを使用して代替検索メカニズムを指定するときに使用されます。 パラメーターセットの詳細については、「[コマンドレットへのパラメーターセットの追加](./adding-parameter-sets-to-a-cmdlet.md)」を参照してください。
 
-## <a name="overriding-input-processing-methods"></a>Overriding Input Processing Methods
+## <a name="overriding-input-processing-methods"></a>オーバーライド (入力処理メソッドを)
 
-Cmdlets must override one or more of the input processing methods for the [System.Management.Automation.PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet) class. For more information about the input processing methods, see [Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md).
+コマンドレットは、 [PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)クラスの1つ以上の入力処理メソッドをオーバーライドする必要があります。 入力処理方法の詳細については、「[最初のコマンドレットの作成](./creating-a-cmdlet-without-parameters.md)」を参照してください。
 
-This cmdlet overrides the [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) method to build an array of compiled regular expressions at startup. This increases performance during searches that do not use simple matching.
+このコマンドレットは、起動時にコンパイルされた正規表現の配列を構築するために、[システム管理](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッドをオーバーライドします。 これにより、単純一致を使用しない検索時のパフォーマンスが向上します。
 
 ```csharp
 protected override void BeginProcessing()
@@ -260,7 +260,7 @@ protected override void BeginProcessing()
 }// End of function BeginProcessing().
 ```
 
-This cmdlet also overrides the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method to process the string selections that the user makes on the command line. It writes the results of string selection in the form of a custom object by calling a private **MatchString** method.
+また、このコマンドレットは、コマンドラインでユーザーが選択した文字列を処理するため[に、system.string メソッドも](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)オーバーライドします。 プライベート**matchstring**メソッドを呼び出すことにより、カスタムオブジェクトの形式で文字列選択の結果を書き込みます。
 
 ```csharp
 protected override void ProcessRecord()
@@ -369,15 +369,15 @@ protected override void ProcessRecord()
 }// End of protected override void ProcessRecord().
 ```
 
-## <a name="accessing-content"></a>Accessing Content
+## <a name="accessing-content"></a>コンテンツへのアクセス
 
-Your cmdlet must open the provider indicated by the Windows PowerShell path so that it can access the data. The [System.Management.Automation.Sessionstate](/dotnet/api/System.Management.Automation.SessionState) object for the runspace is used for access to the provider, while the [System.Management.Automation.PSCmdlet.Invokeprovider*](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider) property of the cmdlet is used to open the provider. Access to content is provided by retrieval of the [System.Management.Automation.Providerintrinsics](/dotnet/api/System.Management.Automation.ProviderIntrinsics) object for the provider opened.
+コマンドレットは、Windows PowerShell パスによって示されるプロバイダーを開いて、データにアクセスできるようにする必要があります。 実行空間の[Sessionstate](/dotnet/api/System.Management.Automation.SessionState)オブジェクトは、プロバイダーへのアクセスに使用されます。また、コマンドレットの[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet.InvokeProvider)プロパティは、プロバイダーを開くために使用されていますが、 コンテンツへのアクセスは、開いているプロバイダーの[システムの管理](/dotnet/api/System.Management.Automation.ProviderIntrinsics)オブジェクトを取得することによって提供されます。
 
-This sample Select-Str cmdlet uses the [System.Management.Automation.Providerintrinsics.Content*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content) property to expose the content to scan. It can then call the [System.Management.Automation.Contentcmdletproviderintrinsics.Getreader*](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) method, passing the required Windows PowerShell path.
+このサンプルの Select-Str コマンドレットは、スキャンするコンテンツを公開するために、system.string [*](/dotnet/api/System.Management.Automation.ProviderIntrinsics.Content)プロパティを使用します。 次に、必要な Windows PowerShell のパスを渡して、 [System.](/dotnet/api/System.Management.Automation.ContentCmdletProviderIntrinsics.GetReader) ...... というメソッドを呼び出すことができます。
 
-## <a name="code-sample"></a>Code Sample
+## <a name="code-sample"></a>コードサンプル
 
-The following code shows the implementation of this version of this Select-Str cmdlet. Note that this code includes the cmdlet class, private methods used by the cmdlet, and the Windows PowerShell snap-in code used to register the cmdlet. For more information about registering the cmdlet, see [Building the Cmdlet](#defining-the-cmdlet-class).
+次のコードは、この Select-Str コマンドレットのこのバージョンの実装を示しています。 このコードには、コマンドレットによって使用されるプライベートメソッドと、コマンドレットの登録に使用される Windows PowerShell スナップインコードが含まれていることに注意してください。 コマンドレットの登録の詳細については、「[コマンドレットのビルド](#defining-the-cmdlet-class)」を参照してください。
 
 ```csharp
 //
@@ -1086,21 +1086,21 @@ namespace Microsoft.Samples.PowerShell.Commands
 } //namespace Microsoft.Samples.PowerShell.Commands;
 ```
 
-## <a name="building-the-cmdlet"></a>Building the Cmdlet
+## <a name="building-the-cmdlet"></a>コマンドレットのビルド
 
-After implementing a cmdlet, you must register it with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
+コマンドレットを実装した後、Windows powershell スナップインを使用して Windows PowerShell に登録する必要があります。 コマンドレットの登録の詳細については、「[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions//ms714644(v=vs.85))」を参照してください。
 
-## <a name="testing-the-cmdlet"></a>Testing the Cmdlet
+## <a name="testing-the-cmdlet"></a>コマンドレットのテスト
 
-When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. The following procedure can be used to test the sample Select-Str cmdlet.
+コマンドレットが Windows PowerShell に登録されている場合は、コマンドラインで実行することでテストできます。 次の手順は、サンプルの Select-Str コマンドレットをテストするために使用できます。
 
-1. Start Windows PowerShell, and search the Notes file for occurrences of lines with the expression ".NET". Note that the quotation marks around the name of the path are required only if the path consists of more than one word.
+1. Windows PowerShell を起動し、".NET" という式が含まれている行を検索します。 パスが複数の単語で構成されている場合にのみ、パス名を引用符で囲む必要があることに注意してください。
 
     ```powershell
     select-str -Path "notes" -Pattern ".NET" -SimpleMatch=$false
     ```
 
-    The following output appears.
+    次の出力が表示されます。
 
     ```output
     IgnoreCase   : True
@@ -1115,13 +1115,13 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     Pattern      : .NET
     ```
 
-2. Search the Notes file for occurrences of lines with the word "over", followed by any other text. The `SimpleMatch` parameter is using the default value of `false`. The search is case-insensitive because the `CaseSensitive` parameter is set to `false`.
+2. メモファイルで、"over" という単語が続き、その後に他のテキストが含まれている行を検索します。 `SimpleMatch` パラメーターは、`false`の既定値を使用しています。 `CaseSensitive` パラメーターが `false`に設定されているため、検索では大文字と小文字が区別されません。
 
     ```powershell
     select-str -Path notes -Pattern "over*" -SimpleMatch -CaseSensitive:$false
     ```
 
-    The following output appears.
+    次の出力が表示されます。
 
     ```output
     IgnoreCase   : True
@@ -1136,13 +1136,13 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     Pattern      : over*
     ```
 
-3. Search the Notes file using a regular expression as the pattern. The cmdlet searches for alphabetical characters and blank spaces enclosed in parentheses.
+3. パターンとして正規表現を使用して、メモファイルを検索します。 コマンドレットでは、かっこで囲まれた英文字と空白文字を検索します。
 
     ```powershell
     select-str -Path notes -Pattern "\([A-Za-z:blank:]" -SimpleMatch:$false
     ```
 
-    The following output appears.
+    次の出力が表示されます。
 
     ```output
     IgnoreCase   : True
@@ -1157,13 +1157,13 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     Pattern      : \([A-Za-z:blank:]
     ```
 
-4. Perform a case-sensitive search of the Notes file for occurrences of the word "Parameter".
+4. "Parameter" という単語が出現する場合に、大文字と小文字を区別してメモファイルを検索します。
 
     ```powershell
     select-str -Path notes -Pattern Parameter -CaseSensitive
     ```
 
-    The following output appears.
+    次の出力が表示されます。
 
     ```output
     IgnoreCase   : False
@@ -1178,13 +1178,13 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     Pattern      : Parameter
     ```
 
-5. Search the variable provider shipped with Windows PowerShell for variables that have numerical values from 0 through 9.
+5. Windows PowerShell に付属している変数プロバイダーで、0 ~ 9 の数値を持つ変数を検索します。
 
     ```powershell
     select-str -Path * -Pattern "[0-9]"
     ```
 
-    The following output appears.
+    次の出力が表示されます。
 
     ```output
     IgnoreCase   : True
@@ -1194,13 +1194,13 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     Pattern      : [0-9]
     ```
 
-6. Use a script block to search the file SelectStrCommandSample.cs for the string "Pos". The **cmatch** function for the script performs a case-insensitive pattern match.
+6. スクリプトブロックを使用して、ファイル SelectStrCommandSample.cs で文字列 "Pos" を検索します。 スクリプトの**cmatch**関数は、大文字と小文字を区別しないパターン一致を実行します。
 
     ```powershell
     select-str -Path "SelectStrCommandSample.cs" -Script { if ($args[0] -cmatch "Pos"){ return $true } return $false }
     ```
 
-    The following output appears.
+    次の出力が表示されます。
 
     ```output
     IgnoreCase   : True
@@ -1210,18 +1210,18 @@ When your cmdlet has been registered with Windows PowerShell, you can test it by
     Pattern      :
     ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[Windows PowerShell コマンドレットを作成する方法](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Creating Your First Cmdlet](./creating-a-cmdlet-without-parameters.md)
+[最初のコマンドレットの作成](./creating-a-cmdlet-without-parameters.md)
 
-[Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
+[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[Design Your Windows PowerShell Provider](../prog-guide/designing-your-windows-powershell-provider.md)
+[Windows PowerShell プロバイダーを設計する](../prog-guide/designing-your-windows-powershell-provider.md)
 
-[How Windows PowerShell Works](/previous-versions//ms714658(v=vs.85))
+[Windows PowerShell の動作](/previous-versions//ms714658(v=vs.85))
 
-[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
+[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

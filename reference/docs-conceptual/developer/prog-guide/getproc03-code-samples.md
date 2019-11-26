@@ -1,5 +1,5 @@
 ---
-title: GetProc03 Code Samples | Microsoft Docs
+title: GetProc03 のコードサンプル |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,22 +17,22 @@ ms.locfileid: "74416140"
 ---
 # <a name="getproc03-code-samples"></a>GetProc03 コード サンプル
 
-Here are the code samples for the GetProc03 sample cmdlet. This is the `Get-Process` cmdlet sample described in [Adding Parameters that Process Pipeline Input](../cmdlet/adding-parameters-that-process-pipeline-input.md). This `Get-Process` cmdlet uses a `Name` parameter that accepts input from a pipeline object, retrieves process information from the local computer based on the supplied names, and then displays information about the processes at the command line.
+GetProc03 サンプルコマンドレットのコードサンプルを次に示します。 これは、「[パイプライン入力を処理するパラメーターの追加](../cmdlet/adding-parameters-that-process-pipeline-input.md)」で説明されている `Get-Process` コマンドレットのサンプルです。 この `Get-Process` コマンドレットは、パイプラインオブジェクトからの入力を受け入れ、指定された名前に基づいてローカルコンピューターからプロセス情報を取得し、コマンドラインでプロセスに関する情報を表示する `Name` パラメーターを使用します。
 
 > [!NOTE]
-> You can download the C# source file (getprov03.cs) for this Get-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> この getprov03.cs コマンドレットC#のソースファイル () をダウンロードするには、Microsoft Windows Software Development Kit For windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
 
-For complete sample code, see the following topics.
+完全なサンプルコードについては、次のトピックを参照してください。
 
-|Language|トピック|
+|[言語]|トピック|
 |--------------|-----------|
-|C#|[GetProc03 (C#) Sample Code](./getproc03-csharp-sample-code.md)|
-|VB.NET|[GetProc03 (VB.NET) Sample Code](./getproc03-vb-net-sample-code.md)|
+|C#|[GetProc03 (C#) サンプルコード](./getproc03-csharp-sample-code.md)|
+|VB.NET|[GetProc03 (VB.NET) サンプルコード](./getproc03-vb-net-sample-code.md)|
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

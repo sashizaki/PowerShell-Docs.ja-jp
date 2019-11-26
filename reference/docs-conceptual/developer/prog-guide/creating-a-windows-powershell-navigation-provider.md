@@ -1,5 +1,5 @@
 ---
-title: Creating a Windows PowerShell Navigation Provider | Microsoft Docs
+title: Windows PowerShell ナビゲーションプロバイダーを作成する |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -20,159 +20,159 @@ ms.locfileid: "74416205"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Windows PowerShell ナビゲーション プロバイダーを作成する
 
-This topic describes how to create a Windows PowerShell navigation provider that can navigate the data store. This type of provider supports recursive commands, nested containers, and relative paths.
+このトピックでは、データストア内を移動できる Windows PowerShell ナビゲーションプロバイダーを作成する方法について説明します。 この種類のプロバイダーは、再帰コマンド、入れ子になったコンテナー、および相対パスをサポートしています。
 
 > [!NOTE]
-> You can download the C# source file (AccessDBSampleProvider05.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> このプロバイダーのC#ソースファイル (AccessDBSampleProvider05.cs) をダウンロードするには、Microsoft Windows Software Development Kit For windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
 >
-> For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).
+> その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。
 
-The provider described here enables the user handle an Access database as a drive so that the user can navigate to the data tables in the database. When creating your own navigation provider, you can implement methods that can make drive-qualified paths required for navigation, normalize relative paths, move items of the data store, as well as methods that get child names, get the parent path of an item, and test to identify if an item is a container.
+ここで説明するプロバイダーは、ユーザーがデータベース内のデータテーブルに移動できるように、Access データベースをドライブとして処理できるようにします。 独自のナビゲーションプロバイダーを作成するときに、ナビゲーションに必要なドライブ修飾パスを作成したり、相対パスを正規化したり、データストアの項目を移動したり、子名を取得し、項目の親パスを取得したり、テストしたりできるメソッドを実装できます。項目がコンテナーであるかどうかを識別する。
 
 > [!CAUTION]
-> Be aware that this design assumes a database that has a field with the name ID, and that the type of the field is LongInteger.
+> この設計では、名前が ID のフィールドを持つデータベースと、フィールドの型が LongInteger であることに注意してください。
 
-## <a name="define-the-windows-powershell-provider"></a>Define the Windows PowerShell provider
+## <a name="define-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーを定義する
 
-A Windows PowerShell navigation provider must create a .NET class that derives from the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) base class. Here is the class definition for the navigation provider described in this section.
+Windows PowerShell ナビゲーションプロバイダー[は、system.servicemodel クラスの基底クラス](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)から派生した .net クラスを作成する必要があります。 ここでは、このセクションで説明するナビゲーションプロバイダーのクラス定義を示します。
 
 [!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32 "AccessDBProviderSample05.cs")]
 
-Note that in this provider, the [System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) attribute includes two parameters. The first parameter specifies a user-friendly name for the provider that is used by Windows PowerShell. The second parameter specifies the Windows PowerShell specific capabilities that the provider exposes to the Windows PowerShell runtime during command processing. For this provider, there are no Windows PowerShell specific capabilities that are added.
+このプロバイダーには、2つ[のパラメーター](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)が含まれていることに注意してください。 最初のパラメーターは、Windows PowerShell によって使用されるプロバイダーのわかりやすい名前を指定します。 2番目のパラメーターは、コマンドの処理中にプロバイダーが Windows PowerShell ランタイムに公開する Windows PowerShell 固有の機能を指定します。 このプロバイダーには、Windows PowerShell 固有の機能は追加されていません。
 
-## <a name="defining-base-functionality"></a>Defining Base Functionality
+## <a name="defining-base-functionality"></a>基本機能の定義
 
-As described in [Design Your PS Provider](./designing-your-windows-powershell-provider.md), the [System.Management.Automation.Provider.Navigationcmdletprovider](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) base class derives from several other classes that provided different provider functionality. A Windows PowerShell navigation provider, therefore, must define all of the functionality provided by those classes.
+「 [PS プロバイダーの設計](./designing-your-windows-powershell-provider.md)」で説明さ[れて](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)いるように、さまざまなプロバイダーの機能を提供する他のいくつかのクラスから派生します。 そのため、Windows PowerShell ナビゲーションプロバイダーは、これらのクラスによって提供されるすべての機能を定義する必要があります。
 
-To implement functionality for adding session-specific initialization information and for releasing resources that are used by the provider, see [Creating a Basic PS Provider](./creating-a-basic-windows-powershell-provider.md). However, most providers (including the provider described here) can use the default implementation of this functionality provided by Windows PowerShell.
+セッション固有の初期化情報を追加し、プロバイダーによって使用されるリソースを解放するための機能を実装するには、「[基本的な PS プロバイダーの作成](./creating-a-basic-windows-powershell-provider.md)」を参照してください。 ただし、ほとんどのプロバイダー (ここで説明するプロバイダーを含む) は、Windows PowerShell によって提供されるこの機能の既定の実装を使用できます。
 
-To get access to the data store through a Windows PowerShell drive, you must implement the methods of the [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) base class. For more information about implementing these methods, see [Creating a Windows PowerShell Drive Provider](./creating-a-windows-powershell-drive-provider.md).
+Windows PowerShell ドライブを介してデータストアにアクセスするには、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基底クラスのメソッドを実装する必要があります。 これらのメソッドの実装の詳細については、「 [Windows PowerShell ドライブプロバイダーの作成](./creating-a-windows-powershell-drive-provider.md)」を参照してください。
 
-To manipulate the items of a data store, such as getting, setting, and clearing items, the provider must implement the methods provided by the [System.Management.Automation.Provider.Itemcmdletprovider](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider) base class. For more information about implementing these methods, see [Creating an Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).
+項目の取得、設定、クリアなど、データストアの項目を操作するには、プロバイダー[が、system.object クラスの基本クラス](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)によって提供されるメソッドを実装する必要があります。 これらのメソッドの実装の詳細については、「 [Windows PowerShell 項目プロバイダーの作成](./creating-a-windows-powershell-item-provider.md)」を参照してください。
 
-To get to the child items, or their names, of the data store, as well as methods that create, copy, rename, and remove items, you must implement the methods provided by the [System.Management.Automation.Provider.Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider) base class. For more information about implementing these methods, see [Creating a Windows PowerShell Container Provider](./creating-a-windows-powershell-container-provider.md).
+項目を作成、コピー、名前変更、および削除するメソッドだけでなく、データストアの子項目、またはその名前を取得するには、 [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)基底クラスによって提供されるメソッドを実装する必要があります。 これらのメソッドの実装の詳細については、「 [Windows PowerShell コンテナープロバイダーの作成](./creating-a-windows-powershell-container-provider.md)」を参照してください。
 
-## <a name="creating-a-windows-powershell-path"></a>Creating a Windows PowerShell Path
+## <a name="creating-a-windows-powershell-path"></a>Windows PowerShell のパスを作成する
 
-Windows PowerShell navigation provider use a provider-internal Windows PowerShell path to navigate the items of the data store. To create a provider-internal path the provider must implement the [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method to supports calls from the Combine-Path cmdlet. This method combines a parent and child path into a provider-internal path, using a provider-specific path separator between the parent and child paths.
+Windows PowerShell ナビゲーションプロバイダーは、プロバイダー内部の Windows PowerShell パスを使用して、データストアの項目を移動します。 プロバイダーの内部パスを作成するには、プロバイダーが、組み合わせパスコマンドレットからの呼び出しをサポートするように、system.servicemodel [path *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)メソッドを実装する必要があります。 このメソッドは、親パスと子パスの間にプロバイダー固有のパス区切り記号を使用して、親と子のパスをプロバイダーの内部パスに結合します。
 
-The default implementation takes paths with "/" or "\\" as the path separator, normalizes the path separator to "\\", combines the parent and child path parts with the separator between them, and then returns a string that contains the combined paths.
+既定の実装では、パスの区切り文字として "/" または "\\" が指定されたパスが使用され、パスの区切り記号が "\\" に正規化されます。さらに、親と子のパス部分がこれらの間の区切り記号と結合され、結合されたパスを含む文字列が返されます
 
-This navigation provider does not implement this method. However, the following code is the default implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method.
+このナビゲーションプロバイダーは、このメソッドを実装していません。 ただし、次のコードは、[システム](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)の既定の実装であり、このメソッドを実装しています。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermakepath](Msh_samplestestcmdlets#testprovidermakepath)]  -->
 
-#### <a name="things-to-remember-about-implementing-makepath"></a>Things to Remember About Implementing MakePath
+#### <a name="things-to-remember-about-implementing-makepath"></a>MakePath の実装に関する注意事項
 
-The following conditions may apply to your implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath):
+次の条件は、使用している[システム](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)の実装に適用される可能性があります。
 
-- Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method should not validate the path as a legal fully-qualified path in the provider namespace. Be aware that each parameter can only represent a part of a path, and the combined parts might not generate a fully-qualified path. For example, the [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) method for the filesystem provider might receive "windows\system32" in the `parent` parameter and "abc.dll" in the `child` parameter. The method joins these values with the "\\" separator and returns "windows\system32\abc.dll", which is not a fully-qualified file system path.
+- [システム](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)の実装では、このパスをプロバイダーの名前空間内の有効な完全修飾パスとして検証しないようにしてください。 各パラメーターはパスの一部のみを表すことができ、結合された部分は完全修飾パスを生成しない場合があることに注意してください。 たとえば、filesystem プロバイダーの windows\system32 [*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)メソッドは、`child` パラメーターで "`parent`" を受け取ることがあります。また、"abc .dll" は、"" と表示されます。 メソッドは、これらの値を "\\" 区切り記号と結合し、完全修飾ファイルシステムパスではない "windows\system32\abc.dll" を返します。
 
   > [!IMPORTANT]
-  > The path parts provided in the call to [System.Management.Automation.Provider.Navigationcmdletprovider.Makepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath) might contain characters not allowed in the provider namespace. These characters are most likely used for wildcard expansion and the implementation of this method should not remove them.
+  > [システム](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)の呼び出しで指定されたパス部分には、プロバイダーの名前空間で使用できない文字が含まれている可能性があります。 これらの文字は、ワイルドカードの展開に使用されることが多いため、このメソッドの実装では削除しないでください。
 
-## <a name="retrieving-the-parent-path"></a>Retrieving the Parent Path
+## <a name="retrieving-the-parent-path"></a>親パスの取得
 
-Windows PowerShell navigation providers implement the [System.Management.Automation.Provider.Navigationcmdletprovider.Getparentpath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) method to retrieve the parent part of the indicated full or partial provider-specific path. The method removes the child part of the path and returns the parent path part. The `root` parameter specifies the fully-qualified path to the root of a drive. This parameter can be null or empty if a mounted drive is not in use for the retrieval operation. If a root is specified, the method must return a path to a container in the same tree as the root.
+Windows PowerShell ナビゲーションプロバイダーは、 [Getparentpath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath)メソッドを実装して、指定された完全または部分プロバイダー固有のパスの親部分を取得します。 メソッドは、パスの子部分を削除し、親パス部分を返します。 `root` パラメーターは、ドライブのルートへの完全修飾パスを指定します。 マウントされたドライブが取得操作に使用されていない場合、このパラメーターは null または空にすることができます。 ルートが指定されている場合、メソッドはルートと同じツリー内のコンテナーへのパスを返す必要があります。
 
-The sample navigation provider does not override this method, but uses the default implementation. It accepts paths that use both "/" and "\\" as path separators. It first normalizes the path to have only "\\" separators, then splits the parent path off at the last "\\" and returns the parent path.
+サンプルナビゲーションプロバイダーは、このメソッドをオーバーライドしませんが、既定の実装を使用します。 パス区切り記号として "/" と "\\" の両方を使用するパスを受け入れます。 まず、"\\" の区切り記号のみを含むようにパスを正規化した後、親のパスを最後の "\\" に分割し、親のパスを返します。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetparentpath](Msh_samplestestcmdlets#testprovidergetparentpath)]  -->
 
-#### <a name="to-remember-about-implementing-getparentpath"></a>To Remember About Implementing GetParentPath
+#### <a name="to-remember-about-implementing-getparentpath"></a>GetParentPath の実装について覚えておくには
 
-Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Getparentpath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath) method should split the path lexically on the path separator for the provider namespace. For example, the filesystem provider uses this method to look for the last "\\" and returns everything to the left of the separator.
+[Getparentpath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath)メソッドの実装では、プロバイダーの名前空間のパス区切りでパスを構文的に分割する必要があります。 たとえば、filesystem プロバイダーは、このメソッドを使用して最後の "\\" を検索し、区切り記号の左側にあるすべてのものを返します。
 
-## <a name="retrieve-the-child-path-name"></a>Retrieve the Child Path Name
+## <a name="retrieve-the-child-path-name"></a>子パス名を取得する
 
-Your navigation provider implements the [System.Management.Automation.Provider.Navigationcmdletprovider.Getchildname*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName) method to retrieve the name (leaf element) of the child of the item located at the indicated full or partial provider-specific path.
+ナビゲーションプロバイダーは、指定された完全または部分的なプロバイダー固有のパスにある項目の子の名前 (リーフ要素) を取得するために、system.string. [Getchildname *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName)メソッドを実装します。
 
-The sample navigation provider does not override this method. The default implementation is shown below. It accepts paths that use both "/" and "\\" as path separators. It first normalizes the path to have only "\\" separators, then splits the parent path off at the last "\\" and returns the name of the child path part.
+サンプルナビゲーションプロバイダーでは、このメソッドはオーバーライドされません。 既定の実装は次のとおりです。 パス区切り記号として "/" と "\\" の両方を使用するパスを受け入れます。 最初にパスを正規化して "\\" の区切り記号のみを含め、次に親のパスを最後の "\\" に分割し、子パスの部分の名前を返します。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetchildname](Msh_samplestestcmdlets#testprovidergetchildname)]  -->
 
-#### <a name="things-to-remember-about-implementing-getchildname"></a>Things to Remember About Implementing GetChildName
+#### <a name="things-to-remember-about-implementing-getchildname"></a>GetChildName の実装に関する注意事項
 
-Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Getchildname*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName) method should split the path lexically on the path separator. If the supplied path contains no path separators, the method should return the path unmodified.
+の実装では、パスの区切り記号でパスを構文的に分割する必要があります。 [Getchildname *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetChildName)メソッドを実装します。 指定されたパスにパスの区切り文字が含まれていない場合、メソッドはパスを変更せずに返します。
 
 > [!IMPORTANT]
-> The path provided in the call to this method might contain characters that are illegal in the provider namespace. These characters are most likely used for wildcard expansion or regular expression matching, and the implementation of this method should not remove them.
+> このメソッドの呼び出しで指定されたパスに、プロバイダーの名前空間では無効な文字が含まれている可能性があります。 これらの文字は、ワイルドカードの展開や正規表現の照合に使用されることが多いため、このメソッドの実装では削除しないでください。
 
-## <a name="determining-if-an-item-is-a-container"></a>Determining if an Item is a Container
+## <a name="determining-if-an-item-is-a-container"></a>項目がコンテナーであるかどうかを判断する
 
-The navigation provider can implement the [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) method to determine if the specified path indicates a container. It returns true if the path represents a container, and false otherwise. The user needs this method to be able to use the `Test-Path` cmdlet for the supplied path.
+ナビゲーションプロバイダーは、 [Isitemcontainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer)メソッドを実装して、指定したパスがコンテナーを示すかどうかを判断できます。 パスがコンテナーを表している場合は true、それ以外の場合は false を返します。 ユーザーは、指定されたパスに対して `Test-Path` コマンドレットを使用できるようにするために、このメソッドを必要とします。
 
-The following code shows the [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) implementation in our sample navigation provider. The method verifies that  the specified path is correct and if the table exists, and returns true if the path indicates a container.
+次のコードは、サンプルナビゲーションプロバイダーでの[Isitemcontainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer)の実装を示していますが、 メソッドは、指定されたパスが正しいことと、テーブルが存在するかどうかを検証し、パスがコンテナーを示す場合は true を返します。
 
 [!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L847-L872 "AccessDBProviderSample05.cs")]
 
-#### <a name="things-to-remember-about-implementing-isitemcontainer"></a>Things to Remember About Implementing IsItemContainer
+#### <a name="things-to-remember-about-implementing-isitemcontainer"></a>IsItemContainer の実装に関する注意事項
 
-Your navigation provider .NET class might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In this case, the implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Isitemcontainer*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer) needs to ensure that the path passed meets requirements. To do this, the method should access the appropriate property, for example, the [System.Management.Automation.Provider.Cmdletprovider.Exclude*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) property.
+ナビゲーションプロバイダー .NET クラスは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言する場合があります。 この場合、 [Isitemcontainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer)の実装では、渡されたパスが要件を満たしていることを確認する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、例[では、](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .
 
-## <a name="moving-an-item"></a>Moving an Item
+## <a name="moving-an-item"></a>項目の移動
 
-In support of the `Move-Item` cmdlet, your navigation provider implements the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method. This method moves the item specified by the `path` parameter to the container at the path supplied in the `destination` parameter.
+`Move-Item` コマンドレットのサポートでは、ナビゲーションプロバイダーによって、system.string [*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)メソッドが実装されています。 このメソッドは、`path` パラメーターによって指定された項目を、`destination` パラメーターで指定されたパスにあるコンテナーに移動します。
 
-The sample navigation provider does not override the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method. The following is the default implementation.
+サンプルのナビゲーションプロバイダーでは、system.string [*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)メソッドはオーバーライドされていませんが、 既定の実装は次のとおりです。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermoveitem](Msh_samplestestcmdlets#testprovidermoveitem)]  -->
 
-#### <a name="things-to-remember-about-implementing-moveitem"></a>Things to Remember About Implementing MoveItem
+#### <a name="things-to-remember-about-implementing-moveitem"></a>MoveItem の実装に関する注意事項
 
-Your navigation provider .NET class might declare provider capabilities of ExpandWildcards, Filter, Include, or Exclude, from the [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) enumeration. In this case, the implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) must ensure that the path passed meets requirements. To do this, the method should access the appropriate property, for example, the **CmdletProvider.Exclude** property.
+ナビゲーションプロバイダー .NET クラスは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言する場合があります。 この場合、渡されたパスが要件を満たしていることを確認するために、[システムの管理](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)を実装する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、プロパティを指定し**ます。**
 
-By default, overrides of this method should not move objects over existing objects unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. For example, the filesystem provider will not copy c:\temp\abc.txt over an existing c:\bar.txt file unless the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is set to `true`. If the path specified in the `destination` parameter exists and is a container, the [System.Management.Automation.Provider.Cmdletprovider.Force*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) property is not required. In this case, [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) should move the item indicated by the `path` parameter to the container indicated by the `destination` parameter as a child.
+既定では、このメソッドのオーバーライドでは、system.object [*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティが `true`に設定されていない限り、既存のオブジェクトにオブジェクトを移動することはできません。 たとえば、c:\temp\abc.txt [*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティが `true`に設定されていない場合、filesystem プロバイダーは既存の c:\bar.txt ファイルに対してをコピーしません。 `destination` パラメーターで指定されたパスが存在し、コンテナーである場合は、" [System.](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) ..................................... この場合、`path` パラメーターで示されている項目を、`destination` パラメーターで指定されたコンテナーに移動して、子として指定[する必要が](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)あります。
 
-Your implementation of the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method should call [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) and check its return value before making any changes to the data store. This method is used to confirm execution of an operation when a change is made to system state, for example, deleting files. [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) sends the name of the resource to be changed to the user, with the Windows PowerShell runtime taking into account any command line settings or preference variables in determining what should be displayed to the user.
+[システム](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)の実装では、このメソッドの実装によって、 [system](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ...................... を呼び出し、戻り値を確認してから、データストアに変更を加える必要があります。 このメソッドは、ファイルを削除するなど、システム状態が変更されたときの操作の実行を確認するために使用されます。 このコマンドは、変更するリソースの名前をユーザーに送信[し](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)ます。 Windows PowerShell ランタイムは、ユーザーに表示される内容を決定する際に、コマンドライン設定またはユーザー設定変数を考慮します。
 
-After the call to [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) returns `true`, the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) method should call the [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) method. This method sends a message to the user to allow feedback to say if the operation should be continued. Your provider should call [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) as an additional check for potentially dangerous system modifications.
+`true`[が返され](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)た後、この[メソッドはを](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)返します。[このメソッドは](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)、system.......................................................。 このメソッドは、ユーザーにメッセージを送信して、操作を続行する必要があるかどうかをフィードバックできるようにします。 プロバイダーは、system.servicemodel プロバイダーを呼び出す必要があり[ます。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)危険性の高いシステム変更については、追加のチェックとして続行してください。
 
-## <a name="attaching-dynamic-parameters-to-the-move-item-cmdlet"></a>Attaching Dynamic Parameters to the Move-Item Cmdlet
+## <a name="attaching-dynamic-parameters-to-the-move-item-cmdlet"></a>移動項目のコマンドレットに動的パラメーターをアタッチする
 
-Sometimes the `Move-Item` cmdlet requires additional parameters that are provided dynamically at runtime. To provide these dynamic parameters, the navigation provider must implement the [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters) method to get the required parameter values from the item at the indicated path, and return an object that has properties and fields with parsing attributes similar to a cmdlet class or a [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary) object.
+`Move-Item` コマンドレットでは、実行時に動的に提供される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、ナビゲーションプロバイダーが、指定されたパスにある項目から必要なパラメーター値を取得し、コマンドレットクラス[や system.object に](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)類似した解析属性を持つプロパティとフィールドを持つオブジェクトを返すために、システムの[管理](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters)を実装する必要があります。
 
-This navigation provider does not implement this method. However, the following code is the default implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters).
+このナビゲーションプロバイダーは、このメソッドを実装していません。 ただし、次のコードは、既定の実装である、system.object の既定の実装です。 [Moveitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters)です。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidermoveitemdynamicparameters](Msh_samplestestcmdlets#testprovidermoveitemdynamicparameters)]  -->
 
-## <a name="normalizing-a-relative-path"></a>Normalizing a Relative Path
+## <a name="normalizing-a-relative-path"></a>相対パスの正規化
 
-Your navigation provider implements the [System.Management.Automation.Provider.Navigationcmdletprovider.Normalizerelativepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) method to normalize the fully-qualified path indicated in the `path` parameter as being relative to the path specified by the `basePath` parameter. The method returns a string representation of the normalized path. It writes an error if the `path` parameter specifies a nonexistent path.
+ナビゲーションプロバイダーは、 [Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)メソッドを実装して、`basePath` パラメーターで指定されたパスに対する相対パスとして、`path` パラメーターで示される完全修飾パスを正規化します。 メソッドは、正規化されたパスの文字列形式を返します。 `path` パラメーターに存在しないパスが指定されている場合、エラーが書き込まれます。
 
-The sample navigation provider does not override this method. The following is the default implementation.
+サンプルナビゲーションプロバイダーでは、このメソッドはオーバーライドされません。 既定の実装は次のとおりです。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidernormalizepath](Msh_samplestestcmdlets#testprovidernormalizepath)]  -->
 
-#### <a name="things-to-remember-about-implementing-normalizerelativepath"></a>Things to Remember About Implementing NormalizeRelativePath
+#### <a name="things-to-remember-about-implementing-normalizerelativepath"></a>NormalizeRelativePath の実装に関する注意事項
 
-Your implementation of [System.Management.Automation.Provider.Navigationcmdletprovider.Normalizerelativepath*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath) should parse the `path` parameter, but it does not have to use purely syntactical parsing. You are encouraged to design this method to use the path to look up the path information in the data store and create a path that matches the casing and standardized path syntax.
+[Normalizerelativepath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.NormalizeRelativePath)の実装では、`path` パラメーターを解析する必要がありますが、純粋な構文解析を使用する必要はありません。 このメソッドは、パスを使用してデータストア内のパス情報を参照し、大文字と小文字の区別と標準化されたパス構文に一致するパスを作成するように設計することをお勧めします。
 
-## <a name="code-sample"></a>Code Sample
+## <a name="code-sample"></a>コードサンプル
 
-For complete sample code, see [AccessDbProviderSample05 Code Sample](./accessdbprovidersample05-code-sample.md).
+完全なサンプルコードについては、「 [AccessDbProviderSample05 のコードサンプル](./accessdbprovidersample05-code-sample.md)」を参照してください。
 
-## <a name="defining-object-types-and-formatting"></a>Defining Object Types and Formatting
+## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類と書式設定の定義
 
-It is possible for a provider to add members to existing objects or define new objects. For more information, see[Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351).
+プロバイダーは、既存のオブジェクトにメンバーを追加したり、新しいオブジェクトを定義したりすることができます。 詳細については、「[オブジェクトの種類と書式設定の拡張](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)」を参照してください。
 
-## <a name="building-the-windows-powershell-provider"></a>Building the Windows PowerShell provider
+## <a name="building-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーの構築
 
-For more information, see [How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c).
+詳細については、「[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)」を参照してください。
 
-## <a name="testing-the-windows-powershell-provider"></a>Testing the Windows PowerShell provider
+## <a name="testing-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーのテスト
 
-When your Windows PowerShell provider has been registered with Windows PowerShell, you can test it by running the supported cmdlets on the command line, including cmdlets made available by derivation. This example will test the sample navigation provider.
+Windows powershell プロバイダーが Windows PowerShell に登録されている場合は、コマンドラインでサポートされているコマンドレットを実行してテストできます。これには、派生によって使用可能なコマンドレットも含まれます。 この例では、サンプルナビゲーションプロバイダーをテストします。
 
-1. Run your new shell and use the `Set-Location` cmdlet to set the path to indicate the Access database.
+1. 新しいシェルを実行し、`Set-Location` コマンドレットを使用して、Access データベースを示すパスを設定します。
 
    ```powershell
    Set-Location mydb:
    ```
 
-2. Now run the `Get-Childitem` cmdlet to retrieve a list of the database items, which are the available database tables. For each table, this cmdlet also retrieves the number of table rows.
+2. ここで、`Get-Childitem` コマンドレットを実行して、使用可能なデータベーステーブルであるデータベースアイテムの一覧を取得します。 このコマンドレットは、テーブルごとにテーブル行の数も取得します。
 
    ```powershell
    Get-ChildItem | Format-Table rowcount,name -AutoSize
@@ -199,13 +199,13 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
          29   Suppliers
    ```
 
-3. Use the `Set-Location` cmdlet again to set the location of the Employees data table.
+3. `Set-Location` コマンドレットをもう一度使用して、Employees データテーブルの場所を設定します。
 
    ```powershell
    Set-Location Employees
    ```
 
-4. Let's now use the `Get-Location` cmdlet to retrieve the path to the Employees table.
+4. ここで、`Get-Location` コマンドレットを使用して、Employees テーブルへのパスを取得します。
 
    ```powershell
    Get-Location
@@ -217,7 +217,7 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
    mydb:\Employees
    ```
 
-5. Now use the `Get-Childitem` cmdlet piped to the `Format-Table` cmdlet. This set of cmdlets retrieves the items for the Employees data table, which are the table rows. They are formatted as specified by the `Format-Table` cmdlet.
+5. ここで、`Format-Table` コマンドレットにパイプを使用して `Get-Childitem` コマンドレットを使用します。 この一連のコマンドレットは、テーブル行である Employees データテーブルの項目を取得します。 これらは、`Format-Table` コマンドレットによって指定された形式になっています。
 
    ```powershell
    Get-ChildItem | Format-Table rownumber,psiscontainer,data -AutoSize
@@ -237,7 +237,7 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
    8           False            System.Data.DataRow
    ```
 
-6. You can now run the `Get-Item` cmdlet to retrieve the items for row 0 of the Employees data table.
+6. これで、`Get-Item` コマンドレットを実行して、Employees データテーブルの行0の項目を取得できるようになりました。
 
    ```powershell
    Get-Item 0
@@ -254,7 +254,7 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
    RowNumber      : 0
    ```
 
-7. Use the `Get-Item` cmdlet again to retrieve the employee data for the items in row 0.
+7. `Get-Item` コマンドレットをもう一度使用して、行0の項目の従業員データを取得します。
 
    ```powershell
    (Get-Item 0).data
@@ -284,18 +284,18 @@ When your Windows PowerShell provider has been registered with Windows PowerShel
    ReportsTo       : 2
    ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[Creating Windows PowerShell providers](./how-to-create-a-windows-powershell-provider.md)
+[Windows PowerShell プロバイダーの作成](./how-to-create-a-windows-powershell-provider.md)
 
-[Design Your Windows PowerShell provider](./designing-your-windows-powershell-provider.md)
+[Windows PowerShell プロバイダーを設計する](./designing-your-windows-powershell-provider.md)
 
-[Extending Object Types and Formatting](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[オブジェクトの種類と書式設定の拡張](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
 
-[Implement a Container Windows PowerShell provider](./creating-a-windows-powershell-container-provider.md)
+[コンテナーの Windows PowerShell プロバイダーを実装する](./creating-a-windows-powershell-container-provider.md)
 
-[How to Register Cmdlets, Providers, and Host Applications](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

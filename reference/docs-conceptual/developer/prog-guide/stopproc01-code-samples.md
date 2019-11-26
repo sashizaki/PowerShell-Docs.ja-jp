@@ -1,5 +1,5 @@
 ---
-title: StopProc01 Code Samples | Microsoft Docs
+title: StopProc01 のコードサンプル |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -17,19 +17,19 @@ ms.locfileid: "74417889"
 ---
 # <a name="stopproc01-code-samples"></a>StopProc01 コード サンプル
 
-Here is the code sample for the StopProc01 sample cmdlet. This is the `Stop-Process` cmdlet sample described in [Creating a Cmdlet that Modifies the System](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md). The `Stop-Process` cmdlet is designed to stop processes that are retrieved using the Get-Proc cmdlet (described in [Creating Your First Cmdlet](../cmdlet/creating-a-cmdlet-without-parameters.md)).
+StopProc01 サンプルコマンドレットのコードサンプルを次に示します。 これは、「[システムを変更するコマンドレットの作成](../cmdlet/creating-a-cmdlet-that-modifies-the-system.md)」で説明されている `Stop-Process` コマンドレットのサンプルです。 `Stop-Process` コマンドレットは、Get Proc コマンドレットを使用して取得されたプロセスを停止するように設計されています ([最初のコマンドレットの作成](../cmdlet/creating-a-cmdlet-without-parameters.md)に関するページを参照してください)。
 
 > [!NOTE]
-> You can download the C# (stopproc01.cs) source file for the Stop-Proc cmdlet using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components. For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).
+> Stopproc01.cs コマンドレットのC# () ソースファイルをダウンロードするには、Microsoft Windows Software Development Kit For windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
 >
-> The downloaded source files are available in the **\<PowerShell Samples>** directory.
+> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
 
-|Language|トピック|
+|[言語]|トピック|
 |--------------|-----------|
-|C#|[StopProc01 (C#) Sample Code](./stopproc01-csharp-sample-code.md)|
+|C#|[StopProc01 (C#) サンプルコード](./stopproc01-csharp-sample-code.md)|
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[Windows PowerShell Programmer's Guide](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -1,5 +1,5 @@
 ---
-title: Adding User Messages to Your Cmdlet | Microsoft Docs
+title: コマンドレットにユーザーメッセージを追加する |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -40,25 +40,25 @@ ms.locfileid: "74416031"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>コマンドレットにユーザー メッセージを追加する
 
-Cmdlets can write several kinds of messages that can be displayed to the user by the Windows PowerShell runtime. These messages include the following types:
+コマンドレットでは、Windows PowerShell ランタイムによってユーザーに表示できるいくつかの種類のメッセージを書き込むことができます。 これらのメッセージには、次の種類があります。
 
-- Verbose messages that contain general user information.
+- 一般的なユーザー情報を含む詳細なメッセージ。
 
-- Debug messages that contain troubleshooting information.
+- トラブルシューティング情報を含むメッセージをデバッグします。
 
-- Warning messages that contain a notification that the cmdlet is about to perform an operation that can have unexpected results.
+- コマンドレットが予期しない結果になる可能性のある操作を実行しようとしていることを示す通知を含む警告メッセージ。
 
-- Progress report messages that contain information about how much work the cmdlet has completed when performing an operation that takes a long time.
+- 実行時間が長い操作を実行するときにコマンドレットが完了した作業量に関する情報を含む進行状況レポートメッセージ。
 
-There are no limits to the number of messages that your cmdlet can write or the type of messages that your cmdlet writes. Each message is written by making a specific call from within the input processing method of your cmdlet.
+コマンドレットで書き込むことができるメッセージの数や、コマンドレットが書き込むメッセージの種類に制限はありません。 各メッセージは、コマンドレットの入力処理メソッド内から特定の呼び出しを行うことによって書き込まれます。
 
-## <a name="defining-the-cmdlet"></a>Defining the Cmdlet
+## <a name="defining-the-cmdlet"></a>コマンドレットの定義
 
-The first step in cmdlet creation is always naming the cmdlet and declaring the .NET class that implements the cmdlet. Any sort of cmdlet can write user notifications from its input processing methods; so, in general, you can name this cmdlet using any verb that indicates what system modifications the cmdlet performs. For more information about approved cmdlet verbs, see [Cmdlet Verb Names](./approved-verbs-for-windows-powershell-commands.md).
+コマンドレットの作成の最初の手順では、常にコマンドレットに名前を付け、コマンドレットを実装する .NET クラスを宣言します。 任意の種類のコマンドレットは、入力処理メソッドからユーザー通知を書き込むことができます。そのため、一般に、このコマンドレットには、コマンドレットで実行されるシステム変更を示す動詞を使用して名前を指定できます。 承認されたコマンドレット動詞の詳細については、「[コマンドレットの動詞名](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
 
-The Stop-Proc cmdlet is designed to modify the system; therefore, the [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) declaration for the .NET class must include the `SupportsShouldProcess` attribute keyword and be set to `true`.
+Stop Proc コマンドレットは、システムを変更するように設計されています。したがって、.NET クラスの system.servicemodel[属性](/dotnet/api/System.Management.Automation.CmdletAttribute)宣言には、`SupportsShouldProcess` attribute キーワードを含め、`true`に設定する必要があります。
 
-The following code is the definition for this Stop-Proc cmdlet class. For more information about this definition, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
+次のコードは、この Stop Proc コマンドレットクラスの定義です。 この定義の詳細については、「[システムを変更するコマンドレットを作成](./creating-a-cmdlet-that-modifies-the-system.md)する」を参照してください。
 
 ```csharp
 [Cmdlet(VerbsLifecycle.Stop, "proc",
@@ -66,11 +66,11 @@ The following code is the definition for this Stop-Proc cmdlet class. For more i
 public class StopProcCommand : Cmdlet
 ```
 
-## <a name="defining-parameters-for-system-modification"></a>Defining Parameters for System Modification
+## <a name="defining-parameters-for-system-modification"></a>システム変更のパラメーターの定義
 
-The Stop-Proc cmdlet defines three parameters: `Name`, `Force`, and `PassThru`. For more information about defining these parameters, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
+Stop Proc コマンドレットは、`Name`、`Force`、および `PassThru`の3つのパラメーターを定義します。 これらのパラメーターの定義の詳細については、「[システムを変更するコマンドレットを作成](./creating-a-cmdlet-that-modifies-the-system.md)する」を参照してください。
 
-Here is the parameter declaration for the Stop-Proc cmdlet.
+Stop Proc コマンドレットのパラメーター宣言を次に示します。
 
 ```csharp
 [Parameter(
@@ -113,18 +113,18 @@ public SwitchParameter PassThru
 private bool passThru;
 ```
 
-## <a name="overriding-an-input-processing-method"></a>Overriding an Input Processing Method
+## <a name="overriding-an-input-processing-method"></a>入力処理メソッドのオーバーライド
 
-Your cmdlet must override an input processing method, most often it will be [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord). This Stop-Proc cmdlet overrides the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) input processing method. In this implementation of the Stop-Proc cmdlet, calls are made to write verbose messages, debug messages, and warning messages.
+コマンドレットは、入力処理メソッドをオーバーライドする必要があります。ほとんどの場合、この[コマンドレットは](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)、system.object を変更します。 この Stop Proc コマンドレットは、[システム管理](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)の入力処理方法をオーバーライドします。 この Stop Proc コマンドレットの実装では、詳細メッセージ、デバッグメッセージ、および警告メッセージを書き込む呼び出しが行われます。
 
 > [!NOTE]
-> For more information about how this method calls the [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) and [System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) methods, see [Creating a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md).
+> この[メソッドの呼び出し](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)方法の詳細については、「システムを[変更するコマンドレットを作成](./creating-a-cmdlet-that-modifies-the-system.md)する」を参照してください。[このメソッドは](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)、「」を参照してください。
 
-## <a name="writing-a-verbose-message"></a>Writing a Verbose Message
+## <a name="writing-a-verbose-message"></a>詳細メッセージを書き込んでいます
 
-The [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method is used to write general user-level information that is unrelated to specific error conditions. The system administrator can then use that information to continue processing other commands. In addition, any information written using this method should be localized as needed.
+特定[のエラー](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)条件に関連しない一般的なユーザーレベル情報を書き込むには、system.string メソッドを使用します。 システム管理者は、その情報を使用して、他のコマンドの処理を続行できます。 また、このメソッドを使用して記述された情報は、必要に応じてローカライズする必要があります。
 
-The following code from this Stop-Proc cmdlet shows two calls to the [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) method from the override of the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.
+この Stop Proc コマンドレットの次のコードでは[、system.](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose) . [...](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .......................................................
 
 ```csharp
 message = String.Format("Attempting to stop process \"{0}\".", name);
@@ -138,16 +138,16 @@ message = String.Format("Stopped process \"{0}\", pid {1}.",
 WriteVerbose(message);
 ```
 
-## <a name="writing-a-debug-message"></a>Writing a Debug Message
+## <a name="writing-a-debug-message"></a>デバッグメッセージの書き込み
 
-The [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method is used to write debug messages that can be used to troubleshoot the operation of the cmdlet. The call is made from an input processing method.
+コマンドレットの操作のトラブルシューティングに使用できるデバッグメッセージを記述するには、このメソッドを[使用します](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)。 この呼び出しは、入力処理メソッドによって行われます。
 
 > [!NOTE]
-> Windows PowerShell also defines a `Debug` parameter that presents both verbose and debug information. If your cmdlet supports this parameter, it does not need to call [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) in the same code that calls [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).
+> Windows PowerShell では、詳細情報とデバッグ情報の両方を表示する `Debug` パラメーターも定義されています。 コマンド[レットでこの](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)パラメーターがサポートされている場合は、 [system](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).......................................................
 
-The following two sections of code from the sample Stop-Proc cmdlet show calls to the [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) method from the override of the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.
+次のサンプルの Stop Proc コマンドレットのコードの2つのセクションでは、system............................... [. コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)のオーバーライドから、[システム](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)の呼び出しを示しています。
 
-This debug message is written immediately before [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) is called.
+このデバッグメッセージは、システムの[管理](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)が呼び出される直前に書き込まれます。
 
 ```csharp
 message =
@@ -156,7 +156,7 @@ message =
 WriteDebug(message);
 ```
 
-This debug message is written immediately before [System.Management.Automation.Cmdlet.WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject) is called.
+このデバッグメッセージは、 [WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)が呼び出される直前に書き込まれます。
 
 ```csharp
 message =
@@ -166,15 +166,15 @@ WriteDebug(message);
 WriteObject(process);
 ```
 
-Windows PowerShell automatically routes any [System.Management.Automation.Cmdlet.WriteDebug](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug) calls to the tracing infrastructure and cmdlets. This allows the method calls to be traced to the hosting application, a file, or a debugger without your having to do any extra development work within the cmdlet. The following command-line entry implements a tracing operation.
+Windows PowerShell は、トレースインフラストラクチャとコマンドレットに対して、すべての[システム](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)の呼び出しを自動的にルーティングします。 これにより、メソッド呼び出しをホストアプリケーション、ファイル、またはデバッガーにトレースできます。コマンドレット内で追加の開発作業を行う必要はありません。 次のコマンドラインエントリは、トレース操作を実装します。
 
-**PS> trace-expression stop-proc -file proc.log -command stop-proc notepad**
+**PS > トレース-式の停止-proc-file proc .log-command stop-proc notepad**
 
-## <a name="writing-a-warning-message"></a>Writing a Warning Message
+## <a name="writing-a-warning-message"></a>警告メッセージを書き込んでいます
 
-The [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) method is used to write a warning when the cmdlet is about to perform an operation that might have an unexpected result, for example, overwriting a read-only file.
+コマンドレットで、予期しない結果 (読み取り専用ファイルの上書きなど) が発生する可能性がある操作を実行しようとしているときに、[このメソッドを使用して](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)警告を記述します。
 
-The following code from the sample Stop-Proc cmdlet shows the call to the [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) method from the override of the [System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) method.
+次のサンプルの Stop Proc コマンドレットのコードでは[、system.](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning) . [...](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ......................................................
 
 ```csharp
  if (criticalProcess)
@@ -186,14 +186,14 @@ The following code from the sample Stop-Proc cmdlet shows the call to the [Syste
 } // if (criticalProcess...
 ```
 
-## <a name="writing-a-progress-message"></a>Writing a Progress Message
+## <a name="writing-a-progress-message"></a>進行状況メッセージの書き込み
 
-The [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) is used to write progress messages when cmdlet operations take an extended amount of time to complete. A call to [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) passes a [System.Management.Automation.Progressrecord](/dotnet/api/System.Management.Automation.ProgressRecord) object that is sent to the hosting application for rendering to the user.
+コマンドレット操作の完了に時間がかかる場合は、進行状況を示すメッセージを書き込むために、[システム管理の進行状況](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)が使用されます。 System.servicemodel の呼び出しは、ユーザーに表示するためにホストアプリケーションに送信される、[システムの管理](/dotnet/api/System.Management.Automation.ProgressRecord)...... [progress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)レコードオブジェクトを渡します。
 
 > [!NOTE]
-> This Stop-Proc cmdlet does not include a call to the [System.Management.Automation.Cmdlet.WriteProgress](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress) method.
+> この Stop Proc コマンドレットには、 [system.servicemodel メソッドの](/dotnet/api/System.Management.Automation.Cmdlet.WriteProgress)呼び出しが含まれていません。
 
-The following code is an example of a progress message written by a cmdlet that is attempting to copy an item.
+次のコードは、項目をコピーしようとしているコマンドレットによって作成された進行状況メッセージの例です。
 
 ```csharp
 int myId = 0;
@@ -206,29 +206,29 @@ pr.RecordType = ProgressRecordType.Completed;
 WriteProgress(pr);
 ```
 
-## <a name="code-sample"></a>Code Sample
+## <a name="code-sample"></a>コードサンプル
 
-For the complete C# sample code, see [StopProcessSample02 Sample](./stopprocesssample02-sample.md).
+完全なC#サンプルコードについては、「 [StopProcessSample02 sample](./stopprocesssample02-sample.md)」を参照してください。
 
-## <a name="define-object-types-and-formatting"></a>Define Object Types and Formatting
+## <a name="define-object-types-and-formatting"></a>オブジェクトの種類と書式を定義する
 
-Windows PowerShell passes information between cmdlets using .NET objects. Consequently, a cmdlet might need to define its own type, or the cmdlet might need to extend an existing type provided by another cmdlet. For more information about defining new types or extending existing types, see [Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85)).
+Windows PowerShell は、.NET オブジェクトを使用してコマンドレット間で情報を渡します。 そのため、コマンドレットで独自の型を定義する必要がある場合や、コマンドレットで別のコマンドレットによって提供される既存の型を拡張する必要がある場合があります。 新しい型を定義する、または既存の型を拡張する方法の詳細については、「[オブジェクトの型と書式設定の拡張](/previous-versions//ms714665(v=vs.85))」を参照してください。
 
-## <a name="building-the-cmdlet"></a>Building the Cmdlet
+## <a name="building-the-cmdlet"></a>コマンドレットのビルド
 
-After implementing a cmdlet, it must be registered with Windows PowerShell through a Windows PowerShell snap-in. For more information about registering cmdlets, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85)).
+コマンドレットを実装した後は、Windows powershell スナップインを使用して Windows PowerShell に登録する必要があります。 コマンドレットの登録の詳細については、「[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions//ms714644(v=vs.85))」を参照してください。
 
-## <a name="testing-the-cmdlet"></a>Testing the Cmdlet
+## <a name="testing-the-cmdlet"></a>コマンドレットのテスト
 
-When your cmdlet has been registered with Windows PowerShell, you can test it by running it on the command line. Let's test the sample Stop-Proc cmdlet. For more information about using cmdlets from the command line, see the [Getting Started with Windows PowerShell](/powershell/scripting/getting-started/getting-started-with-windows-powershell).
+コマンドレットが Windows PowerShell に登録されている場合は、コマンドラインで実行することでテストできます。 Stop-Proc コマンドレットのサンプルをテストしてみましょう。 コマンドラインからコマンドレットを使用する方法の詳細については、「 [Windows PowerShell を使用したはじめに](/powershell/scripting/getting-started/getting-started-with-windows-powershell)」を参照してください。
 
-- The following command-line entry uses Stop-Proc to stop the process named "NOTEPAD", provide verbose notifications, and print debug information.
+- 次のコマンドラインエントリは、Stop-Proc を使用して、"NOTEPAD" という名前のプロセスを停止し、詳細通知を提供し、デバッグ情報を出力します。
 
     ```powershell
     PS> stop-proc -Name notepad -Verbose -Debug
     ```
 
-The following output appears.
+次の出力が表示されます。
 
     ```
     VERBOSE: Attempting to stop process " notepad ".
@@ -245,14 +245,14 @@ The following output appears.
     VERBOSE: Stopped process "notepad", pid 5584.
     ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[Create a Cmdlet that Modifies the System](./creating-a-cmdlet-that-modifies-the-system.md)
+[システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)
 
-[How to Create a Windows PowerShell Cmdlet](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
+[Windows PowerShell コマンドレットを作成する方法](/powershell/scripting/developer/cmdlet/writing-a-windows-powershell-cmdlet)
 
-[Extending Object Types and Formatting](/previous-versions//ms714665(v=vs.85))
+[オブジェクトの種類と書式設定の拡張](/previous-versions//ms714665(v=vs.85))
 
-[How to Register Cmdlets, Providers, and Host Applications](/previous-versions//ms714644(v=vs.85))
+[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions//ms714644(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
