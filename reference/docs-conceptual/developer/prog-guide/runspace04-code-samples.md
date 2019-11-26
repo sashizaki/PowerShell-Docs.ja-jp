@@ -1,5 +1,5 @@
 ---
-title: RunSpace04 Code Samples | Microsoft Docs
+title: RunSpace04 のコードサンプル |Microsoft Docs
 ms.custom: ''
 ms.date: 09/13/2016
 ms.reviewer: ''
@@ -15,23 +15,23 @@ ms.contentlocale: ja-JP
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74416080"
 ---
-# <a name="runspace04-code-samples"></a><span data-ttu-id="efcbf-102">RunSpace04 コード サンプル</span><span class="sxs-lookup"><span data-stu-id="efcbf-102">RunSpace04 Code Samples</span></span>
+# <a name="runspace04-code-samples"></a><span data-ttu-id="43723-102">RunSpace04 コード サンプル</span><span class="sxs-lookup"><span data-stu-id="43723-102">RunSpace04 Code Samples</span></span>
 
-<span data-ttu-id="efcbf-103">Here is a code sample for a runspace that uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.</span><span class="sxs-lookup"><span data-stu-id="efcbf-103">Here is a code sample for a runspace that uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.</span></span> <span data-ttu-id="efcbf-104">The host application is responsible for catching the error and interpreting the error record.</span><span class="sxs-lookup"><span data-stu-id="efcbf-104">The host application is responsible for catching the error and interpreting the error record.</span></span>
+<span data-ttu-id="43723-103">次に示すのは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、終了エラーを生成するスクリプトを実行する実行空間のコードサンプルです。</span><span class="sxs-lookup"><span data-stu-id="43723-103">Here is a code sample for a runspace that uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute a script that generates a terminating error.</span></span> <span data-ttu-id="43723-104">ホストアプリケーションは、エラーをキャッチし、エラーレコードを解釈します。</span><span class="sxs-lookup"><span data-stu-id="43723-104">The host application is responsible for catching the error and interpreting the error record.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="efcbf-105">You can download the VB.NET source file (Runspace04.vb) for this runspace using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span><span class="sxs-lookup"><span data-stu-id="efcbf-105">You can download the VB.NET source file (Runspace04.vb) for this runspace using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="efcbf-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span><span class="sxs-lookup"><span data-stu-id="efcbf-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="43723-105">この実行空間の VB.NET ソースファイル (Runspace04) は、windows Vista 用 Windows ソフトウェア開発キットおよび Microsoft .NET Framework 3.0 ランタイムコンポーネントを使用してダウンロードできます。</span><span class="sxs-lookup"><span data-stu-id="43723-105">You can download the VB.NET source file (Runspace04.vb) for this runspace using the Windows Software Development Kit for Windows Vista and Microsoft .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="43723-106">ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="43723-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
 >
-> <span data-ttu-id="efcbf-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span><span class="sxs-lookup"><span data-stu-id="efcbf-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
+> <span data-ttu-id="43723-107">ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。</span><span class="sxs-lookup"><span data-stu-id="43723-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
 
-<span data-ttu-id="efcbf-108">For complete sample code, see the following topics.</span><span class="sxs-lookup"><span data-stu-id="efcbf-108">For complete sample code, see the following topics.</span></span>
+<span data-ttu-id="43723-108">完全なサンプルコードについては、次のトピックを参照してください。</span><span class="sxs-lookup"><span data-stu-id="43723-108">For complete sample code, see the following topics.</span></span>
 
-|<span data-ttu-id="efcbf-109">Language</span><span class="sxs-lookup"><span data-stu-id="efcbf-109">Language</span></span>|<span data-ttu-id="efcbf-110">トピック</span><span class="sxs-lookup"><span data-stu-id="efcbf-110">Topic</span></span>|
+|<span data-ttu-id="43723-109">[言語]</span><span class="sxs-lookup"><span data-stu-id="43723-109">Language</span></span>|<span data-ttu-id="43723-110">トピック</span><span class="sxs-lookup"><span data-stu-id="43723-110">Topic</span></span>|
 |--------------|-----------|
-|<span data-ttu-id="efcbf-111">VB.NET</span><span class="sxs-lookup"><span data-stu-id="efcbf-111">VB.NET</span></span>|[<span data-ttu-id="efcbf-112">Runspace01 (VB.NET) Code Sample</span><span class="sxs-lookup"><span data-stu-id="efcbf-112">Runspace01 (VB.NET) Code Sample</span></span>](./runspace01-vb-net-code-sample.md)|
+|<span data-ttu-id="43723-111">VB.NET</span><span class="sxs-lookup"><span data-stu-id="43723-111">VB.NET</span></span>|[<span data-ttu-id="43723-112">Runspace01 (VB.NET) コードサンプル</span><span class="sxs-lookup"><span data-stu-id="43723-112">Runspace01 (VB.NET) Code Sample</span></span>](./runspace01-vb-net-code-sample.md)|
 
-## <a name="see-also"></a><span data-ttu-id="efcbf-113">参照</span><span class="sxs-lookup"><span data-stu-id="efcbf-113">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="43723-113">関連項目</span><span class="sxs-lookup"><span data-stu-id="43723-113">See Also</span></span>
 
-[<span data-ttu-id="efcbf-114">Windows PowerShell Programmer's Guide</span><span class="sxs-lookup"><span data-stu-id="efcbf-114">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="43723-114">Windows PowerShell プログラマーズガイド</span><span class="sxs-lookup"><span data-stu-id="43723-114">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="efcbf-115">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="efcbf-115">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="43723-115">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="43723-115">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
