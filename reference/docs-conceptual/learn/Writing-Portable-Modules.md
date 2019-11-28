@@ -2,12 +2,12 @@
 ms.date: 12/14/2018
 keywords: PowerShell, コマンドレット
 title: 移植可能なモジュールの作成
-ms.openlocfilehash: 237f6aaea0ed019c54d04a8477d7a456edf00910
-ms.sourcegitcommit: bc42c9166857147a1ecf9924b718d4a48eb901e3
+ms.openlocfilehash: 7871f524495c1ce5283b30696a24185d427edebf
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/03/2019
-ms.locfileid: "66470979"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417651"
 ---
 # <a name="portable-modules"></a>移植可能なモジュール
 
@@ -17,7 +17,7 @@ Windows PowerShell が [.NET Framework][] 用であるのに対し、PowerShell 
 
 ### <a name="porting-a-pssnapin"></a>PSSnapIn の移植
 
-PowerShell [スナップイン](/powershell/developer/cmdlet/modules-and-snap-ins)は、PowerShell Core ではサポートされていません。 ただし、PSSnapIn を PowerShell モジュールに変換するのは簡単です。 通常、PSSnapIn の登録コードは、[PSSnapIn][] の派生クラスの単一のソース ファイルに含まれます。
+PowerShell [スナップイン](/powershell/scripting/developer/cmdlet/modules-and-snap-ins)は、PowerShell Core ではサポートされていません。 ただし、PSSnapIn を PowerShell モジュールに変換するのは簡単です。 通常、PSSnapIn の登録コードは、[PSSnapIn][] の派生クラスの単一のソース ファイルに含まれます。
 このソース ファイルは、必要ありませんので、ビルドから削除します。
 
 [New-ModuleManifest][] を使って、PSSnapIn 登録コードに必要なものを置き換える新しいモジュール マニフェストを作成します。 **PSSnapIn** の値の一部 (**Description** など) は、モジュール マニフェスト内で再利用できます。
@@ -208,7 +208,7 @@ PowerShell Standard は、常に上位互換性があるように意図されて
 | Linux             | Linux と互換性があります (特定のディストリビューションはなし) |
 | macOS             | macOS と互換性があります                      |
 
-次に例を示します。
+例:
 
 ```powershell
 @{
@@ -266,4 +266,4 @@ PowerShell Standard は、常に上位互換性があるように意図されて
 [PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0
 [PowerShell ギャラリー]: https://www.powershellgallery.com
 [.NET Portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
-[CompatiblePSEditions]: /powershell/gallery/concepts/module-psedition-support
+[CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support

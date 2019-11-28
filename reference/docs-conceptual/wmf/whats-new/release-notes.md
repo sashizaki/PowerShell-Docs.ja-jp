@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.x のリリース ノート
-ms.openlocfilehash: 8924240a4bbedcd34bc68b7cacdd23189a3716d6
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147582"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416508"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5.x リリース ノート
 
@@ -56,8 +56,8 @@ WMF 5.1 には、Windows Server 2016 でリリースされた PowerShell、WMI�
 
 - [$PSVersionTable を使用して PowerShell の実行エディションを特定する](/powershell/module/microsoft.powershell.core/about/about_automatic_variables)
 - [PSEdition パラメーターを使用して CompatiblePSEditions で Get-Module の結果をフィルター処理する](/powershell/module/microsoft.powershell.core/get-module)
-- [互換性のある PowerShell のエディションで実行しない場合はスクリプトを実行させない](/powershell/gallery/concepts/script-psedition-support)
-- [特定の PowerShell バージョンに対するモジュールの互換性を宣言する](/powershell/gallery/concepts/module-psedition-support)
+- [互換性のある PowerShell のエディションで実行しない場合はスクリプトを実行させない](/powershell/scripting/gallery/concepts/script-psedition-support)
+- [特定の PowerShell バージョンに対するモジュールの互換性を宣言する](/powershell/scripting/gallery/concepts/module-psedition-support)
 
 ## <a name="module-analysis-cache"></a>モジュール分析キャッシュ
 

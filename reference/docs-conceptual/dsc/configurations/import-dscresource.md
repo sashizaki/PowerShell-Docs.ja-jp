@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Import-DSCResource の使用
-ms.openlocfilehash: f6c1260bac7d4c545f5a6bc4c098ca90ebb186b5
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 4bc269ab1dd4696298b4f33f7661473aae869eba
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954059"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417429"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource の使用
 
@@ -147,7 +147,7 @@ Configuration を作成するときに、複数の相違点が PowerShell 4.0 �
 
 ### <a name="resource-location"></a>リソースの場所
 
-Configuration を作成してコンパイルするとき、[PSModulePath](/powershell/developer/module/modifying-the-psmodulepath-installation-path) で指定した任意のディレクトリにリソースを格納できます。 PowerShell 4.0 の LCM では、すべての DSC リソース モジュールが "Program Files\WindowsPowerShell\Modules" または `$pshome\Modules` に格納されている必要があります。 PowerShell 5.0 以降では、この要件はなくなり、`PSModulePath` で指定した任意のディレクトリにリソース モジュールを格納できます。
+Configuration を作成してコンパイルするとき、[PSModulePath](/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path) で指定した任意のディレクトリにリソースを格納できます。 PowerShell 4.0 の LCM では、すべての DSC リソース モジュールが "Program Files\WindowsPowerShell\Modules" または `$pshome\Modules` に格納されている必要があります。 PowerShell 5.0 以降では、この要件はなくなり、`PSModulePath` で指定した任意のディレクトリにリソース モジュールを格納できます。
 
 ### <a name="moduleversion-added"></a>ModuleVersion の追加
 

@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: プル サーバーのベスト プラクティス
-ms.openlocfilehash: a3c4ca039b1e061a9246848bef6aeecebcd89011
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 5cb47598b11f7884dddf1440cec21afeab49bebb
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71953529"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417731"
 ---
 # <a name="pull-server-best-practices"></a>プル サーバーのベスト プラクティス
 
 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](/powershell/dsc/pull-server/pullserver#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
+> プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](/powershell/scripting/dsc/pull-server/pullserver#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
 
 概要: このドキュメントは、ソリューションを準備するエンジニアを支援するプロセスと拡張機能を示すためのものです。 ベスト プラクティスに関する推奨事項は、将来を見据えた安定したものにするために、お客様によって確認され、製品チームによって検証されたベスト プラクティスの詳細を示す必要があります。
 
@@ -27,7 +27,7 @@ ms.locfileid: "71953529"
 ## <a name="abstract"></a>概要
 
 このドキュメントは、Windows PowerShell Desired State Configuration プル サーバーの実装を計画しているすべてのユーザー向けの公式なガイダンスを提供するためのものです。 プル サーバーは単純なサービスで、数分で展開できる必要があります。 このドキュメントは展開で使用できる技術的な操作方法に関するガイダンスを提供するものですが、ベスト プラクティスと、展開の前に考慮すべきことを参照する場合にも役立ちます。
-読者は DSC と、DSC 展開に含まれるコンポーネントの説明で使用される用語の基礎をよく理解している必要があります。 詳細については、「[Windows PowerShell Desired State Configuration の概要](/powershell/dsc/overview)」を参照してください。
+読者は DSC と、DSC 展開に含まれるコンポーネントの説明で使用される用語の基礎をよく理解している必要があります。 詳細については、「[Windows PowerShell Desired State Configuration の概要](/powershell/scripting/dsc/overview)」を参照してください。
 DSC はクラウドと共に進化することを想定しているため、プル サーバーを含む基礎技術にも進化と、新機能の導入が求められます。 このドキュメントには、以前のリリースへの参照と、先進的な設計を促進する将来を見据えたソリューションへの参照を提供する付録にバージョン テーブルが含まれています。
 
 このドキュメントの主な 2 つのセクションは次のとおりです。
@@ -50,9 +50,9 @@ Windows PowerShell には、宣言構成を作成および管理するために�
 プル サーバーでは、ターゲット ノードにアクセス可能な構成を格納する中央サービスが提供されます。
 
 プル サーバーの役割は、Web サーバー インスタンスまたは SMB ファイル共有のいずれかとして展開することができます。 Web サーバー機能には OData インターフェイスが含まれており、構成の適用時に成功または失敗の確認を報告するターゲット ノードの機能もオプションで含めることができます。 この機能は、多数のターゲット ノードが存在する環境で役立ちます。
-プル サーバーをポイントするようにターゲット ノード (クライアントとも呼ばれる) を構成した後で、最新の構成データと必要なすべてのスクリプトがダウンロードされ、適用されます。 これは、1 回限りの展開として、またはプル サーバーを大規模な変更を管理するための重要な資産とする再発ジョブとして行われる場合があります。 詳細については、「[Windows PowerShell Desired State Configuration プル サーバー](/powershell/dsc/pullServer/pullserver)」および
+プル サーバーをポイントするようにターゲット ノード (クライアントとも呼ばれる) を構成した後で、最新の構成データと必要なすべてのスクリプトがダウンロードされ、適用されます。 これは、1 回限りの展開として、またはプル サーバーを大規模な変更を管理するための重要な資産とする再発ジョブとして行われる場合があります。 詳細については、「[Windows PowerShell Desired State Configuration プル サーバー](/powershell/scripting/dsc/pullServer/pullserver)」および
 
-「[Push and Pull Configuration Modes](/powershell/dsc/pullServer/pullserver)」(構成モードのプッシュとプル) をご覧ください。
+「[Push and Pull Configuration Modes](/powershell/scripting/dsc/pullServer/pullserver)」(構成モードのプッシュとプル) をご覧ください。
 
 ## <a name="configuration-planning"></a>構成計画
 

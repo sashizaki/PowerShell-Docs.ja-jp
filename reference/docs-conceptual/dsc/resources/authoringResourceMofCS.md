@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: C# での DSC リソースの作成
-ms.openlocfilehash: 6f2bb4d411237f13e2735c2e5f630b4f40dc6842
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: a19559c225dd91eceed397df91dd584a577cd7d4
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954319"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417702"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>C\# での DSC リソースの作成
 
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
-通常、Windows PowerShell Desired State Configuration (DSC) カスタム リソースは、PowerShell スクリプトで実装されます。 ただし、C# でコマンドレットを記述して、DSC カスタム リソースの機能を実装することもできます。 C# でのコマンドレットの記述の概要については、「[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](/powershell/developer/windows-powershell)」を参照してください。
+通常、Windows PowerShell Desired State Configuration (DSC) カスタム リソースは、PowerShell スクリプトで実装されます。 ただし、C# でコマンドレットを記述して、DSC カスタム リソースの機能を実装することもできます。 C# でのコマンドレットの記述の概要については、「[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](/powershell/scripting/developer/windows-powershell)」を参照してください。
 
 C# でコマンドレットとしてリソースを実装すること以外に、MOF スキーマの作成、フォルダー構造の作成、およびカスタム DSC リソースのインポートと使用のプロセスは、「[MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)」で説明されていることと同じです。
 
@@ -281,4 +281,4 @@ $env: psmodulepath (folder)
 #### <a name="concepts"></a>概念
 [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)
 #### <a name="other-resources"></a>その他のリソース
-[Windows PowerShell コマンドレットの記述](/powershell/developer/windows-powershell)
+[Windows PowerShell コマンドレットの記述](/powershell/scripting/developer/windows-powershell)

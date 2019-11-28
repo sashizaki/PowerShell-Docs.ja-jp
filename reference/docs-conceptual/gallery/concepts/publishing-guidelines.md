@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 description: パブリッシャー向けのガイドライン
 title: PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
-ms.openlocfilehash: 03c3a037b1d6c523914a2275249124940111fdcd
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 9047e938ab961c68e225c9029e52403c40afbe26
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71328513"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417670"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -98,7 +98,7 @@ PowerShell ギャラリーでフィードバックを行う方法は 2 つあり
 
 他のユーザーとのスクリプトの共有は便利であり、生じる可能性のある問題の解決方法の例を提示できます。 問題は、PowerShell ギャラリーではスクリプトは単一のファイルとなり、個別のドキュメントやサンプル、テストを提供できないことです。
 
-PowerShell モジュールはフォルダー構造となっており、複数のフォルダーやファイルをパッケージ内に含めることができます。 こうしたモジュールの構造であれば、ベスト プラクティスとして示したコマンドレット ヘルプ、ドキュメント、サンプル、テストなどのパッケージも含めることができます。 最大のデメリットは、モジュール内のスクリプトを公開し関数として使用する必要があることです。 モジュールの作成方法については、「[Writing a Windows PowerShell Module (Windows PowerShell モジュールの作成)](/powershell/developer/module/writing-a-windows-powershell-module)」をご覧ください。
+PowerShell モジュールはフォルダー構造となっており、複数のフォルダーやファイルをパッケージ内に含めることができます。 こうしたモジュールの構造であれば、ベスト プラクティスとして示したコマンドレット ヘルプ、ドキュメント、サンプル、テストなどのパッケージも含めることができます。 最大のデメリットは、モジュール内のスクリプトを公開し関数として使用する必要があることです。 モジュールの作成方法については、「[Writing a Windows PowerShell Module (Windows PowerShell モジュールの作成)](/powershell/scripting/developer/module/writing-a-windows-powershell-module)」をご覧ください。
 
 特に DSC 構成などで、スクリプトを提供すると、ユーザー エクスペリエンスを改善できる場合があります。 DSC 構成のベスト プラクティスとして、ドキュメント、サンプル、テストが含まれる付属モジュールと合わせて、構成をスクリプトとして公開することをお勧めします。 このスクリプトでは、`RequiredModules = @(Name of the Module)` 形式で付随モジュールが一覧表示されます。 この方法はどのようなスクリプトでも使用できます。
 
@@ -165,7 +165,7 @@ PowerShell では、コード署名について 2 つの主な検証方法がサ
 
 PowerShell ファイルに署名すると、実行するコードが信頼できる作成元によって作成されており、変更されていないことを確実に保証できます。 PowerShell スクリプト ファイルへの署名方法の詳細については、[署名](/powershell/module/microsoft.powershell.core/about/about_signing)に関するページを参照してください。 つまり、署名はスクリプトのロード時に PowerShell により検証されるすべての `.PS1` ファイルに追加することができます。 [実行ポリシー](/powershell/module/microsoft.powershell.core/about/about_execution_policies) コマンドレットを使用して、署名済みのスクリプトのみが使用されるように PowerShell を制限できます。
 
-モジュールへのカタログ署名は、バージョン 5.1 で PowerShell に追加された機能です。 モジュールへの署名方法については、[カタログ コマンドレット](/powershell/wmf/5.1/catalog-cmdlets)に関するページを参照してください。 カタログ署名は、モジュール内の全ファイルのハッシュ値を含むカタログ ファイルを作成してそのファイルに署名することで行います。
+モジュールへのカタログ署名は、バージョン 5.1 で PowerShell に追加された機能です。 モジュールへの署名方法については、[カタログ コマンドレット](/powershell/scripting/wmf/5.1/catalog-cmdlets)に関するページを参照してください。 カタログ署名は、モジュール内の全ファイルのハッシュ値を含むカタログ ファイルを作成してそのファイルに署名することで行います。
 
 **PowerShellGet** の `Publish-Module`、`Install-Module`、および `Update-Module` の各コマンドレットにより、署名が有効であることが確認され、各パッケージのハッシュ値がカタログに記載されているものと一致するか確認されます。 `Save-Module` では、署名は検証されません。 システムに旧バージョンのモジュールがインストールされている場合、`Install-Module` がインストール済みのものと一致することが、新バージョンの署名機関によって確認されます。 パッケージがカタログによって署名されていない場合、`Install-Module` と `Update-Module` は、`.PSD1` ファイルの署名を使用します。 カタログ署名は、スクリプト ファイルへの署名と併用できますが、それの代わりにはなりません。 PowerShell では、モジュールのロード時にカタログ署名の検証は行いません。
 

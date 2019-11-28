@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 の DSC 機能強化
-ms.openlocfilehash: 4de295db539b95d0f4ddef297df5e9523892bffc
-ms.sourcegitcommit: a35450f420dc10a02379f6e6f08a28ad11fe5a6d
+ms.openlocfilehash: a5efa38ce791a893580316bad7b61a6689153a86
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71692364"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416674"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 の Desired State Configuration (DSC) の機能強化
 
@@ -147,11 +147,11 @@ WMF 5.0 では、PowerShell デバッガーは、クラス ベースのリソー
 
 ## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>PsDscRunAsCredential と DSC 複合リソースを使用する
 
-DSC [複合](https://msdn.microsoft.com/powershell/dsc/authoringresourcecomposite)リソースで [PsDscRunAsCredential](/powershell/dsc/configurations/runAsUser) を使用できるようになりました。
+DSC [複合](/powershell/scripting/dsc/authoringresourcecomposite)リソースで [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) を使用できるようになりました。
 
 構成内で複合リソースを使用するとき、**PsDscRunAsCredential** の値を指定できるようになりました。 指定されると、すべてのリソースが複合リソース内で RunAs ユーザーとして実行されます。 複合リソースが別の複合リソースを呼び出す場合、すべてのそれらのリソースも RunAs ユーザーとして実行されます。 RunAs 資格情報が複合リソース階層のあらゆるレベルに配信されます。 複合リソース内のいずれかのリソースで **PsDscRunAsCredential** に対して独自の値が指定されている場合、構成コンパイル中に結合エラーが発生します。
 
-この例では、PSDesiredStateConfiguration モジュールに含まれている [WindowsFeatureSet](/powershell/dsc/reference/resources/windows/windowsfeaturesetresource) 複合リソースの利用が示されています。
+この例では、PSDesiredStateConfiguration モジュールに含まれている [WindowsFeatureSet](/powershell/scripting/dsc/reference/resources/windows/windowsfeaturesetresource) 複合リソースの利用が示されています。
 
 ```powershell
 Configuration InstallWindowsFeature

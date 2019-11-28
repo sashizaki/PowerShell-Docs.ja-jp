@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell 5.0 の新機能
-ms.openlocfilehash: d86c9c947c521e0aee261a8a0335f1557b0d5a34
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 08775c1767f1d9d18dafab39d188db152073e69d
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71325135"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417575"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 の新機能
 
@@ -414,7 +414,7 @@ Windows PowerShell 3.0 以降では、C# コマンドレットの作成者は、
 
 さらに、**HelpUri** の値は、コマンドレットの XML ベースのヘルプ ファイルにある最初の関連リンク内や、関数内のコメント ベースのヘルプにある .Link ディレクティブにも組み込めます。
 
-オンライン ヘルプのサポートに関する詳細は、Microsoft Docs にある「[Supporting Online Help](/powershell/developer/module/supporting-online-help)」 (オンライン ヘルプのサポート) を参照してください。
+オンライン ヘルプのサポートに関する詳細は、Microsoft Docs にある「[Supporting Online Help](/powershell/scripting/developer/module/supporting-online-help)」 (オンライン ヘルプのサポート) を参照してください。
 
 ### <a name="cim-integration"></a>CIM の統合
 

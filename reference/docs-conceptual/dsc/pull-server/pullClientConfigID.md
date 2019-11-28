@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell 5.0 以降での構成 ID を使用したプル クライアントのセットアップ
-ms.openlocfilehash: 14db98d240bc87aca3ee985db08c14b7c65d8bb8
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: bd173a1079b916c450a0292dca7a595a9bcff985
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71953609"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417238"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>PowerShell 5.0 以降での構成 ID を使用したプル クライアントのセットアップ
 
@@ -46,7 +46,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 [System.Guid]::NewGuid()
 ```
 
-環境で **Guid** を使用する詳細については、[Guid の計画](/powershell/dsc/secureserver#guids)に関する項を参照してください。
+環境で **Guid** を使用する詳細については、[Guid の計画](/powershell/scripting/dsc/secureserver#guids)に関する項を参照してください。
 
 ## <a name="set-up-a-pull-client-to-download-configurations"></a>構成をダウンロードするようにプル クライアントをセットアップする
 

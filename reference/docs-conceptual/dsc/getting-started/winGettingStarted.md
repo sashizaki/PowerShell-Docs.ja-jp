@@ -2,12 +2,12 @@
 ms.date: 08/15/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Windows 用 Desired State Configuration (DSC) の概要
-ms.openlocfilehash: a4f9db481afda65fc4ac5e553230dbba3037ac9a
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: a9346b96693acdbad9bacbd4b6ca85971e17a3d1
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954409"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417767"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Windows 用 Desired State Configuration (DSC) の概要
 
@@ -110,4 +110,4 @@ PowerShellGet コマンドレットを使って、PowerShell ギャラリーな�
 ## <a name="windows-powershell-desired-state-configuration-log-files"></a>Windows PowerShell Desired State Configuration のログ ファイル
 
 DSC のログは、パス `Microsoft-Windows-Dsc/Operational` にある Windows イベント ログに書き込まれます。
-デバッグ用の追加のログを有効にするには、「[DSC イベント ログの場所](/powershell/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs)」に記載されている手順に従ってください。
+デバッグ用の追加のログを有効にするには、「[DSC イベント ログの場所](/powershell/scripting/dsc/troubleshooting/troubleshooting#where-are-dsc-event-logs)」に記載されている手順に従ってください。

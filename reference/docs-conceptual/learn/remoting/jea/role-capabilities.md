@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: JEA, PowerShell, セキュリティ
 title: JEA ロール機能
-ms.openlocfilehash: 7191b90e198ffb539da6870a8ddc3e449ad9e8ae
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.openlocfilehash: 613557d03bb481f9280a06ca1506166a18b4dab2
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2019
-ms.locfileid: "70017843"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416791"
 ---
 # <a name="jea-role-capabilities"></a>JEA ロール機能
 
@@ -177,7 +177,7 @@ New-Item -ItemType Directory $rcFolder
 Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
-PowerShell モジュールの詳細については、[PowerShell モジュールの概要](/powershell/developer/windows-powershell)に関するページを参照してください。
+PowerShell モジュールの詳細については、[PowerShell モジュールの概要](/powershell/scripting/developer/windows-powershell)に関するページを参照してください。
 
 ## <a name="updating-role-capabilities"></a>ロール機能を更新する
 

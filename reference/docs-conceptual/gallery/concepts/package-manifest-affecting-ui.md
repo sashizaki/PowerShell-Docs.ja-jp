@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: PowerShell ギャラリー UI に影響を与えるパッケージ マニフェストの値
-ms.openlocfilehash: cedf81df8de29c54ef559a800d654305029491ec
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.openlocfilehash: 9e37fec879f2f5cbe3926c7dbc946389425d856a
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71328133"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417050"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell ギャラリー UI に影響を与えるパッケージ マニフェストの値
 
@@ -37,7 +37,7 @@ ms.locfileid: "71328133"
 | **関数** | モジュール マニフェストの FunctionsToExport で指定されます。 ワイルドカード “*” を使用せずに項目を明示的に表示すると、ユーザーのロードモジュール パフォーマンスが向上するため、この方法が推奨されます。 | 可 | いいえ |
 | **DSC リソース** | PowerShell バージョン 5.0 以降で使用されるモジュールの場合、これはマニフェストの DscResourcesToExport で指定されます。 モジュールが PowerShell 4 で使用される場合には、DSCResourcesToExport はサポート対象外のマニフェスト キーであるため、使用できません (PowerShell 4 以前には DSC が提供されていませんでした)。 | 可 | いいえ |
 | **ワークフロー** | ワークフローは PowerShell ギャラリーにスクリプトとして公開され、コードにワークフローとして指定されます (例については、[Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) に関するページをご覧ください)。 これは、マニフェストによって制御されません。 | いいえ | いいえ |
-| **ロール機能** | PowerShell ギャラリーに公開されたモジュールに 1 つ以上のロール機能 (.psrc) ファイルが含まれる場合に表示されます。このファイルは JEA で使用されます。 [ロール機能](/powershell/jea/role-capabilities)の詳細については、JEA のドキュメントをご覧ください。 | 可 | いいえ |
+| **ロール機能** | PowerShell ギャラリーに公開されたモジュールに 1 つ以上のロール機能 (.psrc) ファイルが含まれる場合に表示されます。このファイルは JEA で使用されます。 [ロール機能](/powershell/scripting/learn/remoting/jea/role-capabilities)の詳細については、JEA のドキュメントをご覧ください。 | 可 | いいえ |
 | **PowerShell のエディション** | スクリプト マニフェストまたはモジュール マニフェスト内で指定されます。 PowerShell 5.0 で使用するように設計されたモジュールの場合は、タグを使用して制御されます。 デスクトップの場合には PSEdition_Desktop タグを使用し、コアの場合には PSEdition_Core タグを使用します。 PowerShell 5.1 以降でのみ使用されるモジュールの場合には、メイン マニフェストに CompatiblePSEditions キーが存在します。 詳細については [PowerShell Get のドキュメント](module-psedition-support.md)で、PS のエディションの機能について確認してください。 | 可 | 可 |
 | **依存関係** | 依存関係は、モジュール マニフェストの RequiredModules かスクリプト マニフェストの #Requires –Module (name) のいずれかで宣言される、PowerShell ギャラリー内のモジュールです。 | 可 | 可 |
 | **PowerShell の最小バージョン** | これは、モジュール マニフェストの PowerShellVersion で指定できます。 | 可 | いいえ |

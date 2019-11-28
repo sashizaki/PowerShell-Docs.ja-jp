@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の構成の登録
-ms.openlocfilehash: c85eddea2196e4db4bbeea54bde11074f3d1c927
-ms.sourcegitcommit: e894ed833cef57967cdaf002f8c883f66864e836
+ms.openlocfilehash: dbed5c7dd71f2f7a09d97416be56dff675799548
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/25/2019
-ms.locfileid: "70017713"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417604"
 ---
 # <a name="registering-jea-configurations"></a>JEA の構成の登録
 
@@ -51,7 +51,7 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 
 ## <a name="multi-machine-configuration-with-dsc"></a>DSC での複数コンピューター構成
 
-JEA を複数のコンピューターに展開するときに、最も簡単な展開モデルでは JEA の [Desired State Configuration (DSC)](/powershell/dsc/overview) リソースを使用して、各コンピューターに JEA を迅速かつ一貫して展開します。
+JEA を複数のコンピューターに展開するときに、最も簡単な展開モデルでは JEA の [Desired State Configuration (DSC)](/powershell/scripting/dsc/overview) リソースを使用して、各コンピューターに JEA を迅速かつ一貫して展開します。
 
 DSC で JEA を展開するには、次の前提条件が満たされていることを確認します。
 
@@ -59,7 +59,7 @@ DSC で JEA を展開するには、次の前提条件が満たされている�
 - ロールを含む PowerShell モジュールが、各コンピューターからアクセスできる (読み取り専用の) ファイル共有に格納されていること。
 - セッション構成の設定が決定されていること。 JEA DSC リソースを使うときは、セッション構成ファイルを作成する必要はありません。
 - 各コンピューターで管理操作ができる、またはコンピューターの管理に使われる DSC プル サーバーにアクセスできる資格情報があること。
-- [JEA DSC リソース](https://github.com/PowerShell/JEA/tree/master/DSC%20Resource)をダウンロードしてあること。
+- [JEA DSC リソース](https://github.com/powershell/JEA/tree/master/DSC%20Resource)をダウンロードしてあること。
 
 ターゲット コンピューターまたはプル サーバー上で、JEA エンドポイント用の DSC 構成を作成します。 この構成では、**JustEnoughAdministration** DSC リソースでセッション構成ファイルを定義し、**File** リソースでファイル共有からロール機能をコピーします。
 
@@ -102,7 +102,7 @@ Configuration JEAMaintenance
 }
 ```
 
-その後、[ローカル構成マネージャー](/powershell/dsc/managing-nodes/metaConfig)を直接呼び出すことにより、または[プル サーバーの構成](/powershell/dsc/pull-server/pullServer)を更新することにより、この構成がシステムに適用されます。
+その後、[ローカル構成マネージャー](/powershell/scripting/dsc/managing-nodes/metaConfig)を直接呼び出すことにより、または[プル サーバーの構成](/powershell/scripting/dsc/pull-server/pullServer)を更新することにより、この構成がシステムに適用されます。
 
 DSC リソースを使うと、既定の **Microsoft.PowerShell** エンドポイントを置き換えることもできます。 置き換えると、リソースで **Microsoft.PowerShell.Restricted** という名前のバックアップ エンドポイントが自動的に登録されます。 バックアップ エンドポイントには、リモート管理ユーザーとローカルの Administrators グループのメンバーのアクセスを許可する既定の WinRM ACL があります。
 

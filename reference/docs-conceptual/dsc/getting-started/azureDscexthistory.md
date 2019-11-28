@@ -3,12 +3,12 @@ description: Azure の Desired State Configuration (DSC) 拡張機能のバー�
 ms.date: 06/21/2018
 keywords: dsc, powershell, azure, 拡張機能
 title: Azure DSC 拡張機能のバージョン履歴
-ms.openlocfilehash: d97ba879679972752196e3f16d0dfb7c731776b9
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 7a89037d62cb2c8580141d2b177fdded5db654eb
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71953919"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417287"
 ---
 # <a name="azure-desired-state-configuration-extension-version-history"></a>Azure Desired State Configuration 拡張機能のバージョン履歴
 
@@ -219,7 +219,7 @@ Azure、Windows Server、および Windows Management Framework (WMF) (Windows P
 - **環境**Azure
 - **備考:** このバージョンでは、Windows Server 2016 Technical Preview に含まれる DSC を使用しています。他の Windows OS の場合は、[Windows Management Framework 5.0 RTM](https://blogs.msdn.microsoft.com/powershell/2015/12/16/windows-management-framework-wmf-5-0-rtm-is-now-available/) がインストールされます (WMF をインストールするには再起動が必要です)。
 - **新機能:**
-  - 拡張機能バージョン 2.14 には、WMF RTM をインストールするための変更が含まれていました。 拡張バージョン 2.13.2.0 から 2.14.0.0 へのアップグレード中に、一部の DSC コマンドレットが失敗することや、構成が "指定されたプロパティ値のインスタンスが見つかりません" というエラーで失敗することがあります。 詳細については、[DSC のリリース ノート](https://msdn.microsoft.com/en-us/powershell/wmf/limitation_dsc)を参照してください。 これらの問題の回避策が 2.15 バージョンで追加されました。
+  - 拡張機能バージョン 2.14 には、WMF RTM をインストールするための変更が含まれていました。 拡張バージョン 2.13.2.0 から 2.14.0.0 へのアップグレード中に、一部の DSC コマンドレットが失敗することや、構成が "指定されたプロパティ値のインスタンスが見つかりません" というエラーで失敗することがあります。 詳細については、[DSC のリリース ノート](/powershell/scripting/wmf/known-issues/known-issues-dsc)を参照してください。 これらの問題の回避策が 2.15 バージョンで追加されました。
   - 残念ながら、既にバージョン 2.14 をインストールし、上記の 2 つの問題のいずれかが発生している場合は、これらの手順を手動で実行する必要があります。  管理者特権の PowerShell セッションの場合:
     - `Remove-Item -Path $env:SystemRoot\system32\Configuration\DSCEngineCache.mof`
     - `mofcomp $env:windir\system32\wbem\DscCoreConfProv.mof`

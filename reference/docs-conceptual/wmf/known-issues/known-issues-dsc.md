@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 title: Desired State Configuration (DSC) の既知の問題と制限事項
-ms.openlocfilehash: 6faf24795d14a93f265943029d9f6f1388f32263
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.openlocfilehash: a76c5bb336804c5b384e6b6ba6a705c6049ef7fb
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71147722"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416610"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Desired State Configuration (DSC) の既知の問題と制限事項
 
@@ -52,7 +52,7 @@ LCM が DebugMode の場合、Ctrl + C キーを押して `Get-DscConfiguration`
 
 LCM が DebugMode の場合、`Get-DscConfiguration` で開始された操作を停止しようとすると、`Stop-DscConfiguration` が応答しない場合があります
 
-**解決策:** `Get-DscConfiguration` で開始された操作のデバッグを「[DSC リソースのデバッグ](/powershell/dsc/troubleshooting/debugResource)」の説明に従って終了します。
+**解決策:** `Get-DscConfiguration` で開始された操作のデバッグを「[DSC リソースのデバッグ](/powershell/scripting/dsc/troubleshooting/debugResource)」の説明に従って終了します。
 
 ## <a name="no-verbose-error-messages-are-shown-in-debugmode"></a>DebugMode で詳細なエラー メッセージが表示されない
 
@@ -80,7 +80,7 @@ LCM が **DebugMode** の場合は、DSC リソースから詳細なエラー �
 
 ## <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Invoke-DscResource と共に使用すると、DSC リソースを簡単にデバッグできない
 
-LCM がデバッグ モードで実行されている場合、`Invoke-DscResource` コマンドレットでデバッグ用に接続する実行空間に関する情報が提供されません。 詳細については、「[DSC リソースのデバッグ](/powershell/dsc/troubleshooting/debugResource)」を参照してください。
+LCM がデバッグ モードで実行されている場合、`Invoke-DscResource` コマンドレットでデバッグ用に接続する実行空間に関する情報が提供されません。 詳細については、「[DSC リソースのデバッグ](/powershell/scripting/dsc/troubleshooting/debugResource)」を参照してください。
 
 **解決策:** `Get-PSHostProcessInfo`、`Enter-PSHostProcess`、`Get-Runspace`、および `Debug-Runspace` コマンドレットを使用して実行空間を検出してアタッチし、DSC リソースをデバッグします。
 
