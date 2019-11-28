@@ -2,50 +2,50 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,リソース,ギャラリー,セットアップ
 title: 追加の DSC リソースをインストールする
-ms.openlocfilehash: ecaf176230ccd934b57b1c27d72ff83e6ba906e9
-ms.sourcegitcommit: 18985d07ef024378c8590dc7a983099ff9225672
+ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71954489"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417800"
 ---
-# <a name="install-additional-dsc-resources"></a><span data-ttu-id="68566-103">追加の DSC リソースをインストールする</span><span class="sxs-lookup"><span data-stu-id="68566-103">Install Additional DSC Resources</span></span>
+# <a name="install-additional-dsc-resources"></a><span data-ttu-id="c476b-103">追加の DSC リソースをインストールする</span><span class="sxs-lookup"><span data-stu-id="c476b-103">Install Additional DSC Resources</span></span>
 
-<span data-ttu-id="68566-104">PowerShell には、Desired State Configuration (DSC) 用に複数のそのまま利用できるリソースが含まれています。</span><span class="sxs-lookup"><span data-stu-id="68566-104">PowerShell includes several Out-of-the-box resources for Desired State Configuration (DSC).</span></span> <span data-ttu-id="68566-105">**PSDesiredStateConfiguration** モジュールには、PowerShell の特定のインスタンスで使用可能なすべての OOB DSC リソースが含まれます。</span><span class="sxs-lookup"><span data-stu-id="68566-105">The **PSDesiredStateConfiguration** module contains all of the OOB DSC resources available on your specific instance of PowerShell.</span></span>
+<span data-ttu-id="c476b-104">PowerShell には、Desired State Configuration (DSC) 用に複数のそのまま利用できるリソースが含まれています。</span><span class="sxs-lookup"><span data-stu-id="c476b-104">PowerShell includes several Out-of-the-box resources for Desired State Configuration (DSC).</span></span> <span data-ttu-id="c476b-105">**PSDesiredStateConfiguration** モジュールには、PowerShell の特定のインスタンスで使用可能なすべての OOB DSC リソースが含まれます。</span><span class="sxs-lookup"><span data-stu-id="c476b-105">The **PSDesiredStateConfiguration** module contains all of the OOB DSC resources available on your specific instance of PowerShell.</span></span>
 
-<span data-ttu-id="68566-106">次に示すのは、PowerShell 4.0 に含まれる OOB リソースの一覧とリソースの機能の説明です。</span><span class="sxs-lookup"><span data-stu-id="68566-106">This is a list of the OOB resources included in PowerShell 4.0 and a description of the resource's capabilities.</span></span>
+<span data-ttu-id="c476b-106">次に示すのは、PowerShell 4.0 に含まれる OOB リソースの一覧とリソースの機能の説明です。</span><span class="sxs-lookup"><span data-stu-id="c476b-106">This is a list of the OOB resources included in PowerShell 4.0 and a description of the resource's capabilities.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="68566-107">PowerShell のバージョンごとに OOB リソースの数は増えているため、これは完全な一覧ではありません。</span><span class="sxs-lookup"><span data-stu-id="68566-107">This is an incomplete list, as the number of OOB resources has grown with each version of PowerShell.</span></span>
+> <span data-ttu-id="c476b-107">PowerShell のバージョンごとに OOB リソースの数は増えているため、これは完全な一覧ではありません。</span><span class="sxs-lookup"><span data-stu-id="c476b-107">This is an incomplete list, as the number of OOB resources has grown with each version of PowerShell.</span></span>
 
-|<span data-ttu-id="68566-108">リソース</span><span class="sxs-lookup"><span data-stu-id="68566-108">Resource</span></span>  |<span data-ttu-id="68566-109">説明</span><span class="sxs-lookup"><span data-stu-id="68566-109">Description</span></span>  |
+|<span data-ttu-id="c476b-108">リソース</span><span class="sxs-lookup"><span data-stu-id="c476b-108">Resource</span></span>  |<span data-ttu-id="c476b-109">説明</span><span class="sxs-lookup"><span data-stu-id="c476b-109">Description</span></span>  |
 |---------|---------|
-|<span data-ttu-id="68566-110">**File**</span><span class="sxs-lookup"><span data-stu-id="68566-110">**File**</span></span>|<span data-ttu-id="68566-111">ファイルとディレクトリの状態を制御します。</span><span class="sxs-lookup"><span data-stu-id="68566-111">Controls the state of files and directories.</span></span> <span data-ttu-id="68566-112">**コピー元**から**コピー先**にファイルをコピーし、日付、チェックサム、およびハッシュを比較することによって**コピー元**が変更されたらファイルを更新します。</span><span class="sxs-lookup"><span data-stu-id="68566-112">Copies files from a **Source** to a **Destination** and updates them when the **Source** changes by comparing dates, checksums, and hashes.</span></span>|
-|<span data-ttu-id="68566-113">**Archive**</span><span class="sxs-lookup"><span data-stu-id="68566-113">**Archive**</span></span>|<span data-ttu-id="68566-114">アーカイブと指定された場所をアンパックします。</span><span class="sxs-lookup"><span data-stu-id="68566-114">Unpacks archives and a specified location.</span></span> <span data-ttu-id="68566-115">指定された**チェックサム**でアーカイブを検証します。</span><span class="sxs-lookup"><span data-stu-id="68566-115">Validates the archives with a specified **Checksum**.</span></span>|
-|<span data-ttu-id="68566-116">**Environment**</span><span class="sxs-lookup"><span data-stu-id="68566-116">**Environment**</span></span>|<span data-ttu-id="68566-117">環境変数を管理します。</span><span class="sxs-lookup"><span data-stu-id="68566-117">Manages environment variables.</span></span>|
-|<span data-ttu-id="68566-118">**グループ**</span><span class="sxs-lookup"><span data-stu-id="68566-118">**Group**</span></span>|<span data-ttu-id="68566-119">ローカル グループを管理し、グループ メンバーシップを制御します。</span><span class="sxs-lookup"><span data-stu-id="68566-119">Manages local groups and controls group membership.</span></span>|
-|<span data-ttu-id="68566-120">**Log**</span><span class="sxs-lookup"><span data-stu-id="68566-120">**Log**</span></span>|<span data-ttu-id="68566-121">`Microsoft-Windows-Desired State Configuration/Analytic` イベント ログにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="68566-121">Writes messages to the `Microsoft-Windows-Desired State Configuration/Analytic` event log.</span></span>|
-|<span data-ttu-id="68566-122">**Package**</span><span class="sxs-lookup"><span data-stu-id="68566-122">**Package**</span></span>|<span data-ttu-id="68566-123">**Arguments**、**LogPath**、 **ReturnCode**、その他の設定を使って、パッケージをインストールまたはアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="68566-123">Installs or uninstalls packages using **Arguments**, **LogPath**, **ReturnCode**, other settings.</span></span>|
-|<span data-ttu-id="68566-124">**Registry**</span><span class="sxs-lookup"><span data-stu-id="68566-124">**Registry**</span></span>|<span data-ttu-id="68566-125">レジストリ キーと値を管理します。</span><span class="sxs-lookup"><span data-stu-id="68566-125">Manages registry keys and values.</span></span>|
-|<span data-ttu-id="68566-126">**Script**</span><span class="sxs-lookup"><span data-stu-id="68566-126">**Script**</span></span>|<span data-ttu-id="68566-127">独自の [get-test-set](../resources/get-test-set.md) スクリプト ブロックを設計できます。</span><span class="sxs-lookup"><span data-stu-id="68566-127">Allows you to design your own [get-test-set](../resources/get-test-set.md) script blocks.</span></span>|
-|<span data-ttu-id="68566-128">**Service**</span><span class="sxs-lookup"><span data-stu-id="68566-128">**Service**</span></span>|<span data-ttu-id="68566-129">Windows サービスを構成します。</span><span class="sxs-lookup"><span data-stu-id="68566-129">Configures Windows services.</span></span>|
-|<span data-ttu-id="68566-130">**User**</span><span class="sxs-lookup"><span data-stu-id="68566-130">**User**</span></span> |<span data-ttu-id="68566-131">ローカル ユーザーと属性を管理します。</span><span class="sxs-lookup"><span data-stu-id="68566-131">Manages local users and attributes.</span></span>|
-|<span data-ttu-id="68566-132">**WindowsFeature**</span><span class="sxs-lookup"><span data-stu-id="68566-132">**WindowsFeature**</span></span>|<span data-ttu-id="68566-133">ロールと機能を管理します。</span><span class="sxs-lookup"><span data-stu-id="68566-133">Manages roles and features.</span></span>|
-|<span data-ttu-id="68566-134">**WindowsProcess**</span><span class="sxs-lookup"><span data-stu-id="68566-134">**WindowsProcess**</span></span>|<span data-ttu-id="68566-135">Windows プロセスを構成します。</span><span class="sxs-lookup"><span data-stu-id="68566-135">Configures Windows processes.</span></span>|
+|<span data-ttu-id="c476b-110">**File**</span><span class="sxs-lookup"><span data-stu-id="c476b-110">**File**</span></span>|<span data-ttu-id="c476b-111">ファイルとディレクトリの状態を制御します。</span><span class="sxs-lookup"><span data-stu-id="c476b-111">Controls the state of files and directories.</span></span> <span data-ttu-id="c476b-112">**コピー元**から**コピー先**にファイルをコピーし、日付、チェックサム、およびハッシュを比較することによって**コピー元**が変更されたらファイルを更新します。</span><span class="sxs-lookup"><span data-stu-id="c476b-112">Copies files from a **Source** to a **Destination** and updates them when the **Source** changes by comparing dates, checksums, and hashes.</span></span>|
+|<span data-ttu-id="c476b-113">**Archive**</span><span class="sxs-lookup"><span data-stu-id="c476b-113">**Archive**</span></span>|<span data-ttu-id="c476b-114">アーカイブと指定された場所をアンパックします。</span><span class="sxs-lookup"><span data-stu-id="c476b-114">Unpacks archives and a specified location.</span></span> <span data-ttu-id="c476b-115">指定された**チェックサム**でアーカイブを検証します。</span><span class="sxs-lookup"><span data-stu-id="c476b-115">Validates the archives with a specified **Checksum**.</span></span>|
+|<span data-ttu-id="c476b-116">**Environment**</span><span class="sxs-lookup"><span data-stu-id="c476b-116">**Environment**</span></span>|<span data-ttu-id="c476b-117">環境変数を管理します。</span><span class="sxs-lookup"><span data-stu-id="c476b-117">Manages environment variables.</span></span>|
+|<span data-ttu-id="c476b-118">**グループ**</span><span class="sxs-lookup"><span data-stu-id="c476b-118">**Group**</span></span>|<span data-ttu-id="c476b-119">ローカル グループを管理し、グループ メンバーシップを制御します。</span><span class="sxs-lookup"><span data-stu-id="c476b-119">Manages local groups and controls group membership.</span></span>|
+|<span data-ttu-id="c476b-120">**Log**</span><span class="sxs-lookup"><span data-stu-id="c476b-120">**Log**</span></span>|<span data-ttu-id="c476b-121">`Microsoft-Windows-Desired State Configuration/Analytic` イベント ログにメッセージを書き込みます。</span><span class="sxs-lookup"><span data-stu-id="c476b-121">Writes messages to the `Microsoft-Windows-Desired State Configuration/Analytic` event log.</span></span>|
+|<span data-ttu-id="c476b-122">**Package**</span><span class="sxs-lookup"><span data-stu-id="c476b-122">**Package**</span></span>|<span data-ttu-id="c476b-123">**Arguments**、**LogPath**、 **ReturnCode**、その他の設定を使って、パッケージをインストールまたはアンインストールします。</span><span class="sxs-lookup"><span data-stu-id="c476b-123">Installs or uninstalls packages using **Arguments**, **LogPath**, **ReturnCode**, other settings.</span></span>|
+|<span data-ttu-id="c476b-124">**Registry**</span><span class="sxs-lookup"><span data-stu-id="c476b-124">**Registry**</span></span>|<span data-ttu-id="c476b-125">レジストリ キーと値を管理します。</span><span class="sxs-lookup"><span data-stu-id="c476b-125">Manages registry keys and values.</span></span>|
+|<span data-ttu-id="c476b-126">**Script**</span><span class="sxs-lookup"><span data-stu-id="c476b-126">**Script**</span></span>|<span data-ttu-id="c476b-127">独自の [get-test-set](../resources/get-test-set.md) スクリプト ブロックを設計できます。</span><span class="sxs-lookup"><span data-stu-id="c476b-127">Allows you to design your own [get-test-set](../resources/get-test-set.md) script blocks.</span></span>|
+|<span data-ttu-id="c476b-128">**Service**</span><span class="sxs-lookup"><span data-stu-id="c476b-128">**Service**</span></span>|<span data-ttu-id="c476b-129">Windows サービスを構成します。</span><span class="sxs-lookup"><span data-stu-id="c476b-129">Configures Windows services.</span></span>|
+|<span data-ttu-id="c476b-130">**User**</span><span class="sxs-lookup"><span data-stu-id="c476b-130">**User**</span></span> |<span data-ttu-id="c476b-131">ローカル ユーザーと属性を管理します。</span><span class="sxs-lookup"><span data-stu-id="c476b-131">Manages local users and attributes.</span></span>|
+|<span data-ttu-id="c476b-132">**WindowsFeature**</span><span class="sxs-lookup"><span data-stu-id="c476b-132">**WindowsFeature**</span></span>|<span data-ttu-id="c476b-133">ロールと機能を管理します。</span><span class="sxs-lookup"><span data-stu-id="c476b-133">Manages roles and features.</span></span>|
+|<span data-ttu-id="c476b-134">**WindowsProcess**</span><span class="sxs-lookup"><span data-stu-id="c476b-134">**WindowsProcess**</span></span>|<span data-ttu-id="c476b-135">Windows プロセスを構成します。</span><span class="sxs-lookup"><span data-stu-id="c476b-135">Configures Windows processes.</span></span>|
 
-<span data-ttu-id="68566-136">OOB リソースは、一般的な操作のよい起点になります。</span><span class="sxs-lookup"><span data-stu-id="68566-136">The OOB resources allow a good starting point for common operations.</span></span> <span data-ttu-id="68566-137">OOB リソースがニーズを満たさない場合は、独自の[カスタム リソース](../resources/authoringResource.md)を作成できます。</span><span class="sxs-lookup"><span data-stu-id="68566-137">If the OOB resources do not meet your needs, you can write your own [Custom Resource](../resources/authoringResource.md).</span></span> <span data-ttu-id="68566-138">問題を解決するためのカスタム リソースを記述する前に、Microsoft と PowerShell コミュニティの両方で既に作成されている膨大な数の DSC リソースを調べる必要があります。</span><span class="sxs-lookup"><span data-stu-id="68566-138">Before you write a custom resource to solve your problem, you should look through the vast number of DSC resources that have already been created by both Microsoft and the PowerShell community.</span></span>
+<span data-ttu-id="c476b-136">OOB リソースは、一般的な操作のよい起点になります。</span><span class="sxs-lookup"><span data-stu-id="c476b-136">The OOB resources allow a good starting point for common operations.</span></span> <span data-ttu-id="c476b-137">OOB リソースがニーズを満たさない場合は、独自の[カスタム リソース](../resources/authoringResource.md)を作成できます。</span><span class="sxs-lookup"><span data-stu-id="c476b-137">If the OOB resources do not meet your needs, you can write your own [Custom Resource](../resources/authoringResource.md).</span></span> <span data-ttu-id="c476b-138">問題を解決するためのカスタム リソースを記述する前に、Microsoft と PowerShell コミュニティの両方で既に作成されている膨大な数の DSC リソースを調べる必要があります。</span><span class="sxs-lookup"><span data-stu-id="c476b-138">Before you write a custom resource to solve your problem, you should look through the vast number of DSC resources that have already been created by both Microsoft and the PowerShell community.</span></span>
 
-<span data-ttu-id="68566-139">[PowerShell ギャラリー](https://www.powershellgallery.com/)と [GitHub](https://github.com/) の両方で、DSC リソースを見つけることができます。</span><span class="sxs-lookup"><span data-stu-id="68566-139">You can find DSC resources in both the [PowerShell Gallery](https://www.powershellgallery.com/) and [GitHub](https://github.com/).</span></span> <span data-ttu-id="68566-140">また、[PowerShellGet](/powershell/module/powershellget/) を使って PowerShell コンソールから DSC リソースを直接インストールすることもできます。</span><span class="sxs-lookup"><span data-stu-id="68566-140">You can also install DSC resources directly from the PowerShell console using [PowerShellGet](/powershell/module/powershellget/).</span></span>
+<span data-ttu-id="c476b-139">[PowerShell ギャラリー](https://www.powershellgallery.com/)と [GitHub](https://github.com/) の両方で、DSC リソースを見つけることができます。</span><span class="sxs-lookup"><span data-stu-id="c476b-139">You can find DSC resources in both the [PowerShell Gallery](https://www.powershellgallery.com/) and [GitHub](https://github.com/).</span></span> <span data-ttu-id="c476b-140">また、[PowerShellGet](/powershell/module/powershellget/) を使って PowerShell コンソールから DSC リソースを直接インストールすることもできます。</span><span class="sxs-lookup"><span data-stu-id="c476b-140">You can also install DSC resources directly from the PowerShell console using [PowerShellGet](/powershell/module/powershellget/).</span></span>
 
-## <a name="installing-powershellget"></a><span data-ttu-id="68566-141">PowerShellGet のインストール</span><span class="sxs-lookup"><span data-stu-id="68566-141">Installing PowerShellGet</span></span>
+## <a name="installing-powershellget"></a><span data-ttu-id="c476b-141">PowerShellGet のインストール</span><span class="sxs-lookup"><span data-stu-id="c476b-141">Installing PowerShellGet</span></span>
 
-<span data-ttu-id="68566-142">**PowerShellGet** が既にあるかどうかを調べたり、そのインストールに関するヘルプ情報を見たりするには、次のガイドを参照してください: 「[PowerShellGet のインストール](/powershell/gallery/installing-psget)」。</span><span class="sxs-lookup"><span data-stu-id="68566-142">To determine if you already have **PowerShell** get, or to get help installing it, see the following guide: [Installing PowerShellGet](/powershell/gallery/installing-psget).</span></span>
+<span data-ttu-id="c476b-142">**PowerShellGet** が既にあるかどうかを調べたり、そのインストールに関するヘルプ情報を見たりするには、次のガイドを参照してください: 「[PowerShellGet のインストール](/powershell/scripting/gallery/installing-psget)」。</span><span class="sxs-lookup"><span data-stu-id="c476b-142">To determine if you already have **PowerShell** get, or to get help installing it, see the following guide: [Installing PowerShellGet](/powershell/scripting/gallery/installing-psget).</span></span>
 
-## <a name="finding-dsc-resources-using-powershellget"></a><span data-ttu-id="68566-143">PowerShellGet を使用して DSC リソースを検索する</span><span class="sxs-lookup"><span data-stu-id="68566-143">Finding DSC resources using PowerShellGet</span></span>
+## <a name="finding-dsc-resources-using-powershellget"></a><span data-ttu-id="c476b-143">PowerShellGet を使用して DSC リソースを検索する</span><span class="sxs-lookup"><span data-stu-id="c476b-143">Finding DSC resources using PowerShellGet</span></span>
 
-<span data-ttu-id="68566-144">**PowerShellGet** をシステムにインストールした後は、[PowerShell ギャラリー](https://www.powershellgallery.com/)でホストされている DSC リソースを検索してインストールできます。</span><span class="sxs-lookup"><span data-stu-id="68566-144">Once **PowerShellGet** is installed on your system, you can find and install DSC resources hosted in the [PowerShell Gallery](https://www.powershellgallery.com/).</span></span>
+<span data-ttu-id="c476b-144">**PowerShellGet** をシステムにインストールした後は、[PowerShell ギャラリー](https://www.powershellgallery.com/)でホストされている DSC リソースを検索してインストールできます。</span><span class="sxs-lookup"><span data-stu-id="c476b-144">Once **PowerShellGet** is installed on your system, you can find and install DSC resources hosted in the [PowerShell Gallery](https://www.powershellgallery.com/).</span></span>
 
-<span data-ttu-id="68566-145">最初に、[Find-DSCResource](/powershell/module/powershellget/find-dscresource) コマンドレットを使って DSC リソースを検索します。</span><span class="sxs-lookup"><span data-stu-id="68566-145">First, use the [Find-DSCResource](/powershell/module/powershellget/find-dscresource) cmdlet to find DSC resources.</span></span> <span data-ttu-id="68566-146">`Find-DSCResource` を初めて実行すると、"NuGet プロバイダー" のインストールを求める次のメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="68566-146">When you run `Find-DSCResource` for the first time, you see the following prompt to install the "NuGet provider".</span></span>
+<span data-ttu-id="c476b-145">最初に、[Find-DSCResource](/powershell/module/powershellget/find-dscresource) コマンドレットを使って DSC リソースを検索します。</span><span class="sxs-lookup"><span data-stu-id="c476b-145">First, use the [Find-DSCResource](/powershell/module/powershellget/find-dscresource) cmdlet to find DSC resources.</span></span> <span data-ttu-id="c476b-146">`Find-DSCResource` を初めて実行すると、"NuGet プロバイダー" のインストールを求める次のメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="c476b-146">When you run `Find-DSCResource` for the first time, you see the following prompt to install the "NuGet provider".</span></span>
 
 ```
 PS> Find-DSCResource
@@ -59,15 +59,15 @@ install and import the NuGet provider now?
 [Y] Yes  [N] No  [?] Help (default is "Y"):
 ```
 
-<span data-ttu-id="68566-147">Y キーを押すと、"NuGet" プロバイダーがインストールされて、PowerShell ギャラリーからインストールできる DSC リソースの一覧が表示されます。</span><span class="sxs-lookup"><span data-stu-id="68566-147">After pressing 'y', the "NuGet" provider is installed, you see a list of DSC resources that you can install from the PowerShell Gallery.</span></span>
+<span data-ttu-id="c476b-147">Y キーを押すと、"NuGet" プロバイダーがインストールされて、PowerShell ギャラリーからインストールできる DSC リソースの一覧が表示されます。</span><span class="sxs-lookup"><span data-stu-id="c476b-147">After pressing 'y', the "NuGet" provider is installed, you see a list of DSC resources that you can install from the PowerShell Gallery.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="68566-148">一覧は非常に大きいため示してありません。</span><span class="sxs-lookup"><span data-stu-id="68566-148">List is not shown because it is very large.</span></span>
+> <span data-ttu-id="c476b-148">一覧は非常に大きいため示してありません。</span><span class="sxs-lookup"><span data-stu-id="c476b-148">List is not shown because it is very large.</span></span>
 
-<span data-ttu-id="68566-149">ワイルドカードを使って `-Name` パラメーターを指定するか、またはワイルドカードを使わないで `-Filter` パラメーターを指定して、検索を絞り込むこともできます。</span><span class="sxs-lookup"><span data-stu-id="68566-149">You can also specify the `-Name` parameter using wildcards, or `-Filter` parameter without wildcards to narrow down your search.</span></span> <span data-ttu-id="68566-150">次の例では、ワイルドカードを使って "TimeZone" DSC リソースを検索しています。</span><span class="sxs-lookup"><span data-stu-id="68566-150">This example attempts to find a "TimeZone" DSC resource using the wildcards.</span></span>
+<span data-ttu-id="c476b-149">ワイルドカードを使って `-Name` パラメーターを指定するか、またはワイルドカードを使わないで `-Filter` パラメーターを指定して、検索を絞り込むこともできます。</span><span class="sxs-lookup"><span data-stu-id="c476b-149">You can also specify the `-Name` parameter using wildcards, or `-Filter` parameter without wildcards to narrow down your search.</span></span> <span data-ttu-id="c476b-150">次の例では、ワイルドカードを使って "TimeZone" DSC リソースを検索しています。</span><span class="sxs-lookup"><span data-stu-id="c476b-150">This example attempts to find a "TimeZone" DSC resource using the wildcards.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="68566-151">現在は `Find-DSCResource` コマンドレットにバグがあり、`-Name` と `-Filter` 両方のパラメーターでワイルドカードを使うことはできません。</span><span class="sxs-lookup"><span data-stu-id="68566-151">Currently there is a bug in the `Find-DSCResource` cmdlet that prevents using wildcards in both the `-Name` and `-Filter` parameters.</span></span> <span data-ttu-id="68566-152">次の 2 番目の例では、`Where-Object` を使った回避策を示します。</span><span class="sxs-lookup"><span data-stu-id="68566-152">The second example below shows a workaround using `Where-Object`.</span></span>
+> <span data-ttu-id="c476b-151">現在は `Find-DSCResource` コマンドレットにバグがあり、`-Name` と `-Filter` 両方のパラメーターでワイルドカードを使うことはできません。</span><span class="sxs-lookup"><span data-stu-id="c476b-151">Currently there is a bug in the `Find-DSCResource` cmdlet that prevents using wildcards in both the `-Name` and `-Filter` parameters.</span></span> <span data-ttu-id="c476b-152">次の 2 番目の例では、`Where-Object` を使った回避策を示します。</span><span class="sxs-lookup"><span data-stu-id="c476b-152">The second example below shows a workaround using `Where-Object`.</span></span>
 
 ```
 PS> Find-DSCResource -Name *Time*
@@ -90,7 +90,7 @@ xSqlServerSQLDataRoot               1.0.0      mlSqlServerDSC                   
 xSqlServerStartupParam              1.0.0      mlSqlServerDSC                      PSGallery
 ```
 
-<span data-ttu-id="68566-153">`Where-Object` を使ってさらに詳細なフィルターで DSC リソースを検索することもできます。</span><span class="sxs-lookup"><span data-stu-id="68566-153">You can also use `Where-Object` to find DSC resources with more granular filtering.</span></span> <span data-ttu-id="68566-154">この方法では、組み込みのフィルター処理パラメーターを使うより処理が遅くなります。</span><span class="sxs-lookup"><span data-stu-id="68566-154">This approach will be slower than using built in filtering parameters.</span></span>
+<span data-ttu-id="c476b-153">`Where-Object` を使ってさらに詳細なフィルターで DSC リソースを検索することもできます。</span><span class="sxs-lookup"><span data-stu-id="c476b-153">You can also use `Where-Object` to find DSC resources with more granular filtering.</span></span> <span data-ttu-id="c476b-154">この方法では、組み込みのフィルター処理パラメーターを使うより処理が遅くなります。</span><span class="sxs-lookup"><span data-stu-id="c476b-154">This approach will be slower than using built in filtering parameters.</span></span>
 
 ```
 PS> Find-DSCResource | Where-Object {$_.Name -like "Time*"}
@@ -100,16 +100,16 @@ Name                                Version    ModuleName                       
 TimeZone                            6.0.0.0    ComputerManagementDsc               PSGallery
 ```
 
-<span data-ttu-id="68566-155">フィルター処理について詳しくは、「[Where-Object](/powershell/module/microsoft.powershell.core/where-object)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="68566-155">For more information on filtering, see [Where-Object](/powershell/module/microsoft.powershell.core/where-object).</span></span>
+<span data-ttu-id="c476b-155">フィルター処理について詳しくは、「[Where-Object](/powershell/module/microsoft.powershell.core/where-object)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="c476b-155">For more information on filtering, see [Where-Object](/powershell/module/microsoft.powershell.core/where-object).</span></span>
 
-## <a name="installing-dsc-resources-using-powershellget"></a><span data-ttu-id="68566-156">PowerShellGet を使用して DSC リソースをインストールする</span><span class="sxs-lookup"><span data-stu-id="68566-156">Installing DSC Resources using PowerShellGet</span></span>
+## <a name="installing-dsc-resources-using-powershellget"></a><span data-ttu-id="c476b-156">PowerShellGet を使用して DSC リソースをインストールする</span><span class="sxs-lookup"><span data-stu-id="c476b-156">Installing DSC Resources using PowerShellGet</span></span>
 
-<span data-ttu-id="68566-157">DSC リソースをインストールするには、[Install-Module](/powershell/module/PowershellGet/Install-Module) コマンドレットを使い、検索結果の **[ModuleName]** の下に表示されるモジュール名を指定します。</span><span class="sxs-lookup"><span data-stu-id="68566-157">To install a DSC resource, use the [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet, specifying the name of the module shown under **Module** name in your search results.</span></span>
+<span data-ttu-id="c476b-157">DSC リソースをインストールするには、[Install-Module](/powershell/module/PowershellGet/Install-Module) コマンドレットを使い、検索結果の **[ModuleName]** の下に表示されるモジュール名を指定します。</span><span class="sxs-lookup"><span data-stu-id="c476b-157">To install a DSC resource, use the [Install-Module](/powershell/module/PowershellGet/Install-Module) cmdlet, specifying the name of the module shown under **Module** name in your search results.</span></span>
 
-<span data-ttu-id="68566-158">"TimeZone" リソースは "ComputerManagementDSC" モジュールに存在するので、この例ではそのモジュールをインストールします。</span><span class="sxs-lookup"><span data-stu-id="68566-158">The "TimeZone" resource exists in the "ComputerManagementDSC" module, so that is the module this example installs.</span></span>
+<span data-ttu-id="c476b-158">"TimeZone" リソースは "ComputerManagementDSC" モジュールに存在するので、この例ではそのモジュールをインストールします。</span><span class="sxs-lookup"><span data-stu-id="c476b-158">The "TimeZone" resource exists in the "ComputerManagementDSC" module, so that is the module this example installs.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="68566-159">PowerShell ギャラリーを信頼していない場合は、確認を要求し、以降のインストールでメッセージが表示されないようにする方法を示す、次のような警告が表示されます。</span><span class="sxs-lookup"><span data-stu-id="68566-159">If you have not trusted the PowerShell gallery, you see the warning below asking for confirmation, and instructing you how to avoid subsequent prompts on installs.</span></span>
+> <span data-ttu-id="c476b-159">PowerShell ギャラリーを信頼していない場合は、確認を要求し、以降のインストールでメッセージが表示されないようにする方法を示す、次のような警告が表示されます。</span><span class="sxs-lookup"><span data-stu-id="c476b-159">If you have not trusted the PowerShell gallery, you see the warning below asking for confirmation, and instructing you how to avoid subsequent prompts on installs.</span></span>
 
 ```
 PS> Install-Module -Name ComputerManagementDSC
@@ -121,7 +121,7 @@ InstallationPolicy value by running the Set-PSRepository cmdlet. Are you sure yo
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-<span data-ttu-id="68566-160">Y キーを押して、モジュールのインストールを続行します。</span><span class="sxs-lookup"><span data-stu-id="68566-160">Press 'y' to continue installing the module.</span></span> <span data-ttu-id="68566-161">インストール後は、[Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) を使って、新しいリソースがインストールされたことを確認できます。</span><span class="sxs-lookup"><span data-stu-id="68566-161">After install, you can verify that your new resource is installed using [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource).</span></span>
+<span data-ttu-id="c476b-160">Y キーを押して、モジュールのインストールを続行します。</span><span class="sxs-lookup"><span data-stu-id="c476b-160">Press 'y' to continue installing the module.</span></span> <span data-ttu-id="c476b-161">インストール後は、[Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) を使って、新しいリソースがインストールされたことを確認できます。</span><span class="sxs-lookup"><span data-stu-id="c476b-161">After install, you can verify that your new resource is installed using [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource).</span></span>
 
 ```
 PS> Get-DSCResource -Name TimeZone -Syntax
@@ -135,7 +135,7 @@ TimeZone [String] #ResourceName
 }
 ```
 
-<span data-ttu-id="68566-162">また、`-ModuleName` パラメーターを指定することで、新しくインストールしたモジュール内の他のリソースを表示することもできます。</span><span class="sxs-lookup"><span data-stu-id="68566-162">You can also view other resources in your newly installed module, by specifying the `-ModuleName` parameter.</span></span>
+<span data-ttu-id="c476b-162">また、`-ModuleName` パラメーターを指定することで、新しくインストールしたモジュール内の他のリソースを表示することもできます。</span><span class="sxs-lookup"><span data-stu-id="c476b-162">You can also view other resources in your newly installed module, by specifying the `-ModuleName` parameter.</span></span>
 
 ```
 PS> Get-DSCResource -Module ComputerManagementDSC
@@ -151,6 +151,6 @@ PowerShell      TimeZone                  ComputerManagementDsc          6.0.0.0
 PowerShell      VirtualMemory             ComputerManagementDsc          6.0.0.0    {Drive, Type, DependsOn, Initi...
 ```
 
-## <a name="see-also"></a><span data-ttu-id="68566-163">関連項目</span><span class="sxs-lookup"><span data-stu-id="68566-163">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c476b-163">関連項目</span><span class="sxs-lookup"><span data-stu-id="c476b-163">See also</span></span>
 
-- [<span data-ttu-id="68566-164">リソースとは</span><span class="sxs-lookup"><span data-stu-id="68566-164">What are Resources?</span></span>](../resources/resources.md)
+- [<span data-ttu-id="c476b-164">リソースとは</span><span class="sxs-lookup"><span data-stu-id="c476b-164">What are Resources?</span></span>](../resources/resources.md)
