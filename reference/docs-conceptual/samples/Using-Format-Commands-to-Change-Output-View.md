@@ -1,13 +1,13 @@
 ---
-ms.date: 10/22/2019
+ms.date: 11/22/2019
 keywords: PowerShell, コマンドレット
 title: Format コマンドを使用した出力ビューの変更
-ms.openlocfilehash: 9d9854362b5150a99bdd0c02518599840c1fd42d
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.openlocfilehash: f270d5ec5efe5caf506d6a8a45285990996f6ae6
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2019
-ms.locfileid: "73444423"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417596"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Format コマンドを使用した出力ビューの変更
 
@@ -128,7 +128,7 @@ Id          : 21748
 
 ### <a name="getting-detailed-information-by-using-format-list-with-wildcards"></a>Format-List でワイルドカードを使用して詳細情報を取得する
 
-`Format-List` コマンドレットでは、その **Property** パラメーターの値としてワイルドカードを使用できます。 こうすることで、詳細情報を表示できます。 多くの場合、オブジェクトには必要以上の情報が含まれています。既定では PowerShell ですべてのプロパティ値が表示されないのはそのためです。 オブジェクトのプロパティをすべて表示するには、**Format-List -Property \&#42;** コマンドを使用します。 次のコマンドは、1 つのプロセスについて 60 行を超える出力を生成します。
+`Format-List` コマンドレットでは、その **Property** パラメーターの値としてワイルドカードを使用できます。 こうすることで、詳細情報を表示できます。 多くの場合、オブジェクトには必要以上の情報が含まれています。既定では PowerShell ですべてのプロパティ値が表示されないのはそのためです。 オブジェクトのプロパティをすべて表示するには、`Format-List -Property *` コマンドを使用します。 次のコマンドは、1 つのプロセスについて 60 行を超える出力を生成します。
 
 ```powershell
 Get-Process -Name iexplore | Format-List -Property *

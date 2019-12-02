@@ -1,15 +1,15 @@
 ---
-ms.date: 05/17/2018
+ms.date: 11/15/2019
 keywords: powershell、core
 title: PowerShell Core 6.0 の重要な変更
-ms.openlocfilehash: df716fc3ad48d640ddefcfd87da445eaf104cfbe
-ms.sourcegitcommit: e1027805385081c2e6f9250f9cd1167a45f035b0
+ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72561271"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74417561"
 ---
-# <a name="breaking-changes-for-powershell-60"></a>PowerShell Core 6.0 の重要な変更
+# <a name="breaking-changes-for-powershell-6x"></a>PowerShell 6.x の破壊的変更
 
 ## <a name="features-no-longer-available-in-powershell-core"></a>PowerShell Core で使用できなくなった機能
 
@@ -23,7 +23,7 @@ ms.locfileid: "72561271"
 
 OS の再起動後にチェックポイントを使ってスクリプトを再開する必要がある場合は、タスク スケジューラを使って OS の起動時にスクリプトを実行することをお勧めします。ただし、そのスクリプトでそれ自体の状態を維持する必要があります (ファイルに保持するなど)。
 
-[workflow]: https://docs.microsoft.com/powershell/scripting/core-powershell/workflows-guide
+[workflow]: /powershell/scripting/components/workflows-guide
 [workflow-foundation]: https://docs.microsoft.com/dotnet/framework/windows-workflow-foundation/
 
 ### <a name="custom-snap-ins"></a>カスタム スナップイン
@@ -291,3 +291,4 @@ Web コマンドレットの基となる .NET API が `System.Net.Http.HttpClien
 - 現在、macOS では、証明書を使用した認証は使用できません。
 - `http://` URI 経由で `-Credential` を使用するとエラーになります。 `https://` URI を使用するか、または `-AllowUnencryptedAuthentication`パラメーターを指定してエラーを回避してください。
 - `-MaximumRedirection` では、指定された制限を超えようとすると、最後のリダイレクトの結果を返す代わりに、終了エラーが生成されるようになりました。
+- PowerShell 6.2 では、JSON 応答に対して規定値が UTF-8 エンコードになるように変更が加えられました。 JSON 応答に文字セットが指定されていない場合、既定のエンコードは RFC 8259 に従って UTF-8 にする必要があります。
