@@ -2,16 +2,22 @@
 ms.date: 09/06/2019
 keywords: PowerShell, コマンドレット
 title: PowerShell 5.0 ISE の新機能
-ms.openlocfilehash: f687c409a1a4b0e6b872863e9f132f7cf5baff20
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.openlocfilehash: 8f15e99c5a6ae33aeae9bd33eb0cf58fb27e3b90
+ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2019
-ms.locfileid: "74117519"
+ms.lasthandoff: 11/23/2019
+ms.locfileid: "74416634"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Windows PowerShell 5.0 ISE の新機能
 
-このトピックでは、各バージョンの Windows PowerShell Integrated Scripting Environment (ISE) に導入された新機能と更新された機能について説明します。
+このトピックでは、Windows PowerShell Integrated Scripting Environment (ISE) バージョン 5.0 に導入された新機能と更新された機能について説明します。
+
+> [!NOTE]
+> PowerShell ISE は、アクティブな機能開発の対象ではなくなりました。 Windows に付属するコンポーネントとして、セキュリティや優先順位の高いサービスに関する修正プログラムが引き続き公式でサポートされます。
+> 現在、Windows から ISE が削除される予定はありません。
+>
+> PowerShell v6 以降では、ISE はサポートされていません。 ISE の代替をお探しのユーザーは、[PowerShell 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)と共に [Visual Studio Code](https://code.visualstudio.com/) を使用することをお勧めします。
 
 ## <a name="feature-description"></a>機能の説明
 
