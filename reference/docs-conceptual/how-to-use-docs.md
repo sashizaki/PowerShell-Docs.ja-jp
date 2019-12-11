@@ -3,10 +3,10 @@ ms.date: 10/20/2019
 keywords: PowerShell, コマンドレット
 title: PowerShell ドキュメントの使用方法
 ms.openlocfilehash: 80f72bb89b3bb82ee7c4d16b8969395f02d7d4ca
-ms.sourcegitcommit: ac1ccdd826f112a11db09af9c628cae013f947ab
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/20/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72676158"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>PowerShell ドキュメントの使用方法

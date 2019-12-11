@@ -3,10 +3,10 @@ ms.date: 08/23/2018
 keywords: PowerShell, コマンドレット
 title: PowerShell の重要な概念を理解する
 ms.openlocfilehash: 8f9af370db46ea47dbccbabb7cc90fc27b8f2765
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030987"
 ---
 # <a name="understanding-important-powershell-concepts"></a>PowerShell の重要な概念を理解する

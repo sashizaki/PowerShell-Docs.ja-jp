@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell 2.0 エンジンのインストール
 ms.openlocfilehash: a2b78755e7e44e2523baee5477fadc94eab485b1
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030967"
 ---
 # <a name="installing-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 エンジンのインストール
@@ -39,7 +39,7 @@ Windows 8.1 と Windows 8 では、Windows PowerShell 2.0 エンジンの機能�
 
 2. **アプリ** バーで、 **[設定]** をクリックしてから、 **[Windows の機能の有効化または無効化]** をクリックします。
 
-3. **[Windows の機能]** ボックスで、[**Windows PowerShell 2.0**] ノードを展開し、[**Windows PowerShell 2.0** エンジン] ボックスをクリックして、オンまたはオフにします。
+3. **[Windows の機能]** ボックスで、 **[Windows PowerShell 2.0]** ノードを展開し、 **[Windows PowerShell 2.0]** エンジン ボックスをクリックして、オンまたはオフにします。
 
 ## <a name="on-windows-server-2012-r2-and-windows-server-2012"></a>Windows Server 2012 R2 または Windows Server 2012
 次の手順を実行して、Windows PowerShell 2.0 エンジンと Microsoft .NET Framework 3.5 の機能を追加します。 Windows PowerShell 2.0 エンジンには最低でも Microsoft .NET Framework 2.0.50727 が必要です。 この要件は Microsoft .NET Framework 3.5 で満たされます。

@@ -3,10 +3,10 @@ title: VSCode と PowerShell でのファイルのエンコードの概要
 description: VSCode と PowerShell でのファイルのエンコードの構成
 ms.date: 02/28/2019
 ms.openlocfilehash: 3283e1262c8eb26906429ecf195cfa0b122b330f
-ms.sourcegitcommit: a6e54a305fdeb6482321c77da8066d2f991c93e1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74117414"
 ---
 # <a name="understanding-file-encoding-in-vscode-and-powershell"></a>VSCode と PowerShell でのファイルのエンコードの概要

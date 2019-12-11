@@ -3,10 +3,10 @@ ms.date: 08/23/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access のアンインストール
 ms.openlocfilehash: 22c874d766445dccedd8494097daf16c30fa66ff
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62058151"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Windows PowerShell Web Access をアンインストールする
@@ -39,7 +39,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
     -   Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックします。
 
-    -   Windows の**スタート**画面で、**[Windows PowerShell]** をクリックします。
+    -   Windows の**スタート**画面で、 **[Windows PowerShell]** をクリックします。
 
 2. 「`Uninstall-PswaWebApplication`」と入力し、**Enter** キーを押します。
    1. 独自のカスタム Web サイト名を指定した場合は、コマンドに `-WebsiteName` パラメーターを追加し、Web サイト名を指定します。
@@ -56,9 +56,9 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 1. 次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。 セッションを既に開いている場合は、次の手順に進んでください。
 
-    -   Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
+    -   Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックし、 **[管理者として実行]** をクリックします。
 
-    -   Windows の**スタート**画面で、**[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
+    -   Windows の**スタート**画面で、 **[Windows PowerShell]** を右クリックし、 **[管理者として実行]** をクリックします。
 
 1. 次のように入力して **Enter** キーを押します。*computer_name* は、Windows PowerShell Web Access を削除するリモート サーバーです。 `-Restart` パラメーターによって、対象サーバーが自動的に再起動されます (削除で必要な場合)。
 
@@ -89,9 +89,9 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 1. **[操作]** ウィンドウの **[Web サイトの管理]** で **[停止]** をクリックします。
 
-1. ツリー ウィンドウで、Windows PowerShell Web Access Web アプリケーションを実行している Web サイトの Web アプリケーションを右クリックして、**[削除]** をクリックします。
+1. ツリー ウィンドウで、Windows PowerShell Web Access Web アプリケーションを実行している Web サイトの Web アプリケーションを右クリックして、 **[削除]** をクリックします。
 
-1. ツリー ウィンドウで **[アプリケーション プール]** を選択し、Windows PowerShell Web Access アプリケーション プールのフォルダーを選択して、**[操作]** ウィンドウの **[停止]** をクリックし、コンテンツ ウィンドウの **[削除]** をクリックします。
+1. ツリー ウィンドウで **[アプリケーション プール]** を選択し、Windows PowerShell Web Access アプリケーション プールのフォルダーを選択して、 **[操作]** ウィンドウの **[停止]** をクリックし、コンテンツ ウィンドウの **[削除]** をクリックします。
 
 1. IIS マネージャーを閉じます。
 
@@ -107,17 +107,17 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
     -   Windows デスクトップで、Windows タスク バーの **[サーバー マネージャー]** をクリックし、サーバー マネージャーを開始します。
 
-    -   Windows の**スタート**画面で、**[サーバー マネージャー]** をクリックします。
+    -   Windows の**スタート**画面で、 **[サーバー マネージャー]** をクリックします。
 
 1. **[管理]** メニューの **[役割と機能の削除]** をクリックします。
 
-1. **[対象サーバーの選択]** ページで、削除対象の機能を備えているサーバーまたはオフライン VHD を選択します。 オフライン VHD を選択するには、最初に VHD マウント先のサーバーを選択してから、VHD ファイルを選択します。 対象サーバーを選択したら、**[次へ]** をクリックします。
+1. **[対象サーバーの選択]** ページで、削除対象の機能を備えているサーバーまたはオフライン VHD を選択します。 オフライン VHD を選択するには、最初に VHD マウント先のサーバーを選択してから、VHD ファイルを選択します。 対象サーバーを選択したら、 **[次へ]** をクリックします。
 
 1. もう一度 **[次へ]** をクリックして **[機能の削除]** ページにスキップします。
 
-1. **[Windows PowerShell Web Access]** のチェック ボックスをすべてオフにして、**[次へ]** をクリックします。
+1. **[Windows PowerShell Web Access]** のチェック ボックスをすべてオフにして、 **[次へ]** をクリックします。
 
-1. **[削除オプションの確認]** ページで、**[削除]** をクリックします。
+1. **[削除オプションの確認]** ページで、 **[削除]** をクリックします。
 
 ## <a name="see-also"></a>参照
 

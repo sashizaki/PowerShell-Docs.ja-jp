@@ -3,10 +3,10 @@ title: PowerShell Core 6.1 の新機能
 description: PowerShell Core 6.1 でリリースされた新機能と変更
 ms.date: 09/13/2018
 ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62086138"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 の新機能
@@ -164,7 +164,7 @@ Manifest   1.0.0.0    NetworkTransition           Core,Desk {Add-NetIPHttpsCertB
 
 Markdown は、HTML にレンダリングできる基本的な書式設定で読むことができるプレーンテキスト ドキュメントを作成するための標準です。
 
-6.1 では、Markdown ドキュメントを変換してコンソールにレンダリングできるコマンドレットがいくつか追加されました。次はその例です。
+6\.1 では、Markdown ドキュメントを変換してコンソールにレンダリングできるコマンドレットがいくつか追加されました。次はその例です。
 
 - `ConvertFrom-Markdown`
 - `Get-MarkdownOption`

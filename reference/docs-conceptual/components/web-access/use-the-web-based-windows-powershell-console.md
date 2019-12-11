@@ -3,10 +3,10 @@ ms.date: 08/23/2017
 keywords: PowerShell, コマンドレット
 title: Web ベースの Windows PowerShell コンソールの使用
 ms.openlocfilehash: 2bb9c6ef486ef32012a15f9890997cf2fa6a3a0b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62086649"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Web ベースの Windows PowerShell コンソールの使用
@@ -64,13 +64,13 @@ Windows PowerShell Web Access にサインインする前に、管理対象の�
 また担当者がリモート コンピューターの承認済みユーザーであることと、リモート コンピューターがリモート管理を許可するよう構成されている必要があります。
 リモート管理を許可するようコンピューターを構成する方法の詳細については、[Windows PowerShell でのリモート コマンドの有効化および使用](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-psremoting)に関するページを参照してください。
 
-コンピューターを構成してリモート管理を有効にする最も簡単な方法は、Windows PowerShell セッションを管理者特権で開き (**[管理者として実行]**)、コンピューター上で **Enable-PSRemoting -force** コマンドレットを実行することです。
+コンピューターを構成してリモート管理を有効にする最も簡単な方法は、Windows PowerShell セッションを管理者特権で開き ( **[管理者として実行]** )、コンピューター上で **Enable-PSRemoting -force** コマンドレットを実行することです。
 
 ### <a name="to-sign-in-to-windows-powershell-web-access"></a>Windows PowerShell Web Access にサインインするには
 
 1. Windows PowerShell Web Access Web サイトをインターネット ブラウザーのウィンドウまたはタブで開きます。
 
-1. Windows PowerShell Web Access のサインイン ページで、ネットワーク ユーザー名、パスワード、および管理対象の (自分が承認済みユーザーとなっている) コンピューター名を入力します。 コンピューター名の代わりにカスタム サイトまたはプロキシ サーバーの URI を使うよう Windows PowerShell Web Access 管理者から指示されている場合は、**"接続の種類"** フィールドの **[接続 URI]** を選択し、URI を入力してください。
+1. Windows PowerShell Web Access のサインイン ページで、ネットワーク ユーザー名、パスワード、および管理対象の (自分が承認済みユーザーとなっている) コンピューター名を入力します。 コンピューター名の代わりにカスタム サイトまたはプロキシ サーバーの URI を使うよう Windows PowerShell Web Access 管理者から指示されている場合は、 **"接続の種類"** フィールドの **[接続 URI]** を選択し、URI を入力してください。
 
     > ![注](images/Note.jpeg) **注**:
     >
@@ -80,11 +80,11 @@ Windows PowerShell Web Access にサインインする前に、管理対象の�
 
 1. **[オプションの接続設定]** セクションは、管理対象のリモート コンピューターの承認要件に関連しています。 オプションの接続設定に相当するパラメーターの詳細については、[Enter-PSSession](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enter-pssession) コマンドレットのヘルプを参照してください。
 
-    通常、Windows PowerShell Web Access ゲートウェイの通過に使う資格情報は、管理対象のリモート コンピューターが認識する資格情報と同じです。 ただし、手順 2. で指定したリモート コンピューターを別の資格情報を使って管理する場合、**[オプションの接続設定]** セクションを展開して、別の資格情報を入力します。 それ以外の場合、手順 6. に進みます。
+    通常、Windows PowerShell Web Access ゲートウェイの通過に使う資格情報は、管理対象のリモート コンピューターが認識する資格情報と同じです。 ただし、手順 2. で指定したリモート コンピューターを別の資格情報を使って管理する場合、 **[オプションの接続設定]** セクションを展開して、別の資格情報を入力します。 それ以外の場合、手順 6. に進みます。
 
 1. Windows PowerShell Web Access 管理者が Windows PowerShell Web Access ユーザー用にカスタムのセッション構成を作成している場合、そのセッション構成の名前を **"構成名"** フィールドに入力します。 セッション構成の詳細については、「[about_Session_Configurations](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configurations)」を参照してください。
 
-1. **[認証の種類]** の設定は、それ以外にするよう Windows PowerShell Web Access 管理者から指示された場合を除き、**[既定]** が設定されたままにしておきます。
+1. **[認証の種類]** の設定は、それ以外にするよう Windows PowerShell Web Access 管理者から指示された場合を除き、 **[既定]** が設定されたままにしておきます。
 
 1. **[サインイン]** をクリックします。
 
@@ -195,7 +195,7 @@ Alt + F7 | コマンド履歴の一覧を消去
 
 - 複数のターゲット コンピューターへの同時接続。
 
-    ゲートウェイ サーバーが Windows Server 2012 を実行している場合、Windows PowerShell Web Access では、ブラウザー セッションごとに接続できるリモート コンピューターは 1 つだけです。一度サインインした後に別のブラウザー タブを使って複数のリモート コンピューターに接続することはできません。 新しいタブまたはブラウザー ウィンドウを開くと、現在のセッションの切断と新しいセッションの開始を確認するメッセージが Windows PowerShell Web Access により表示されます。このメッセージから新しい (または同じ) リモート コンピューターに接続できます。 ただし、異なるリモート コンピューターに対して個別のセッションを 2 つ以上実行する必要がある場合、Internet Explorer の機能を使って新しいセッションを作成できます。 Internet Explorer で新しいブラウザー セッションを開始するには、**Alt** キーを押して **[ファイル]** メニューを開き、**[新しいセッション]** をクリックします。 次に新しいセッションで Windows PowerShell Web Access の Web サイトを開き、サインインして別のリモート コンピューターにアクセスします。
+    ゲートウェイ サーバーが Windows Server 2012 を実行している場合、Windows PowerShell Web Access では、ブラウザー セッションごとに接続できるリモート コンピューターは 1 つだけです。一度サインインした後に別のブラウザー タブを使って複数のリモート コンピューターに接続することはできません。 新しいタブまたはブラウザー ウィンドウを開くと、現在のセッションの切断と新しいセッションの開始を確認するメッセージが Windows PowerShell Web Access により表示されます。このメッセージから新しい (または同じ) リモート コンピューターに接続できます。 ただし、異なるリモート コンピューターに対して個別のセッションを 2 つ以上実行する必要がある場合、Internet Explorer の機能を使って新しいセッションを作成できます。 Internet Explorer で新しいブラウザー セッションを開始するには、**Alt** キーを押して **[ファイル]** メニューを開き、 **[新しいセッション]** をクリックします。 次に新しいセッションで Windows PowerShell Web Access の Web サイトを開き、サインインして別のリモート コンピューターにアクセスします。
 
     Windows PowerShell Web Access ゲートウェイが Windows Server 2012 R2 で実行されている場合、ユーザーは異なるブラウザー タブでリモート コンピューターへの複数の接続を開くことができます。 Web ベースの Windows PowerShell コンソールを使用してリモート コンピューターへの複数の接続を開く必要がある場合は、ゲートウェイ サーバーがこの機能をサポートしているかどうかを Windows PowerShell Web Access ゲートウェイ管理者に確認してください。
 

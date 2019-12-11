@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: 項目を直接操作する
 ms.openlocfilehash: 50aed569cf6b876297abe3cf1544eba70f6279ce
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030132"
 ---
 # <a name="manipulating-items-directly"></a>項目を直接操作する
@@ -72,7 +72,7 @@ SKC  VC Name                           Property
   0   0 _Test                          {}
 ```
 
-レジストリ パスを入力するときは、Windows PowerShell のドライブ名 HKLM: と HKCU: に、必ずコロン (**:**) を含めます。 コロンがないと、Windows PowerShell では、パス内のドライブ名を認識しません。
+レジストリ パスを入力するときは、Windows PowerShell のドライブ名 HKLM: と HKCU: に、必ずコロン ( **:** ) を含めます。 コロンがないと、Windows PowerShell では、パス内のドライブ名を認識しません。
 
 ## <a name="why-registry-values-are-not-items"></a>レジストリ値が項目ではない理由
 
@@ -92,7 +92,7 @@ SKC  VC Name                           Property
   3   0 OptionalComponents             {}
 ```
 
-レジストリ エントリを項目として処理することは便利ですが、レジストリ エントリへのパスを一意な方法で指定できません。 パスの表記法では、**Run** という名前のレジストリ サブキーと、**Run** サブキーの **(Default)** レジストリ エントリを区別しません。 さらに、レジストリ エントリの名前にバックスラッシュ文字 (**\\**) を含めることができるので、レジストリ エントリが項目だった場合は、パスの表記法を使用して **Windows\\CurrentVersion\\Run** という名前のレジストリ エントリとそのパスに配置されているサブキーを区別することはできません。
+レジストリ エントリを項目として処理することは便利ですが、レジストリ エントリへのパスを一意な方法で指定できません。 パスの表記法では、**Run** という名前のレジストリ サブキーと、**Run** サブキーの **(Default)** レジストリ エントリを区別しません。 さらに、レジストリ エントリの名前にバックスラッシュ文字 ( **\\** ) を含めることができるので、レジストリ エントリが項目だった場合は、パスの表記法を使用して **Windows\\CurrentVersion\\Run** という名前のレジストリ エントリとそのパスに配置されているサブキーを区別することはできません。
 
 ## <a name="renaming-existing-items-rename-item"></a>既存の項目の名前を変更する (Rename-Item)
 
@@ -181,7 +181,7 @@ specified. If you continue, all children will be removed with the item. Are you
 (default is "Y"):
 ```
 
-**[はい]** が既定の応答であるので、フォルダーとファイルを削除するには、**Enter** キーを押します。 確認せずにフォルダーを削除するには、**-Recurse** パラメーターを使用します。
+**[はい]** が既定の応答であるので、フォルダーとファイルを削除するには、**Enter** キーを押します。 確認せずにフォルダーを削除するには、 **-Recurse** パラメーターを使用します。
 
 ```powershell
 Remove-Item C:\temp\New.Directory -Recurse
