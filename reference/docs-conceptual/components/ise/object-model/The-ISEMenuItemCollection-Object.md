@@ -3,31 +3,31 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: ISEMenuItemCollection オブジェクト
 ms.openlocfilehash: b3795af1a6ed61ed6e371e5fc20cc4e95f643fd4
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67030544"
 ---
-# <a name="the-isemenuitemcollection-object"></a><span data-ttu-id="feceb-103">ISEMenuItemCollection オブジェクト</span><span class="sxs-lookup"><span data-stu-id="feceb-103">The ISEMenuItemCollection Object</span></span>
+# <a name="the-isemenuitemcollection-object"></a><span data-ttu-id="95bf2-103">ISEMenuItemCollection オブジェクト</span><span class="sxs-lookup"><span data-stu-id="95bf2-103">The ISEMenuItemCollection Object</span></span>
 
-<span data-ttu-id="feceb-104">**ISEMenuItemCollection** オブジェクトは、**ISEMenuItem** オブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="feceb-104">An **ISEMenuItemCollection** object is a collection of **ISEMenuItem** objects.</span></span> <span data-ttu-id="feceb-105">これは Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection クラスのインスタンスです。</span><span class="sxs-lookup"><span data-stu-id="feceb-105">It is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection class.</span></span> <span data-ttu-id="feceb-106">例としては、Windows PowerShell® Integrated Scripting Environment (ISE) の **アドオン** メニューをカスタマイズするために使用される **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="feceb-106">An example is the **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** object that is used to customize the **Add-On** menu in Windows PowerShell® Integrated Scripting Environment (ISE).</span></span>
+<span data-ttu-id="95bf2-104">**ISEMenuItemCollection** オブジェクトは、**ISEMenuItem** オブジェクトのコレクションです。</span><span class="sxs-lookup"><span data-stu-id="95bf2-104">An **ISEMenuItemCollection** object is a collection of **ISEMenuItem** objects.</span></span> <span data-ttu-id="95bf2-105">これは Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection クラスのインスタンスです。</span><span class="sxs-lookup"><span data-stu-id="95bf2-105">It is an instance of the Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection class.</span></span> <span data-ttu-id="95bf2-106">例としては、Windows PowerShell® Integrated Scripting Environment (ISE) の **アドオン** メニューをカスタマイズするために使用される **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="95bf2-106">An example is the **$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus** object that is used to customize the **Add-On** menu in Windows PowerShell® Integrated Scripting Environment (ISE).</span></span>
 
-## <a name="method"></a><span data-ttu-id="feceb-107">方法</span><span class="sxs-lookup"><span data-stu-id="feceb-107">Method</span></span>
+## <a name="method"></a><span data-ttu-id="95bf2-107">方法</span><span class="sxs-lookup"><span data-stu-id="95bf2-107">Method</span></span>
 
-### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a><span data-ttu-id="feceb-108">Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)</span><span class="sxs-lookup"><span data-stu-id="feceb-108">Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)</span></span>
+### <a name="addstring-displayname-systemmanagementautomationscriptblock-action-systemwindowsinputkeygesture-shortcut-"></a><span data-ttu-id="95bf2-108">Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)</span><span class="sxs-lookup"><span data-stu-id="95bf2-108">Add\(string DisplayName, System.Management.Automation.ScriptBlock Action, System.Windows.Input.KeyGesture Shortcut \)</span></span>
 
-<span data-ttu-id="feceb-109">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="feceb-109">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="95bf2-109">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="95bf2-109">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="feceb-110">メニュー項目をコレクションに追加します。</span><span class="sxs-lookup"><span data-stu-id="feceb-110">Adds a menu item to the collection.</span></span>
+<span data-ttu-id="95bf2-110">メニュー項目をコレクションに追加します。</span><span class="sxs-lookup"><span data-stu-id="95bf2-110">Adds a menu item to the collection.</span></span>
 
-<span data-ttu-id="feceb-111">**DisplayName** 追加するメニューの表示名。</span><span class="sxs-lookup"><span data-stu-id="feceb-111">**DisplayName** The display name of the menu to be added.</span></span>
+<span data-ttu-id="95bf2-111">**DisplayName** 追加するメニューの表示名。</span><span class="sxs-lookup"><span data-stu-id="95bf2-111">**DisplayName** The display name of the menu to be added.</span></span>
 
-<span data-ttu-id="feceb-112">**Action** このメニュー項目に関連付けられるアクションを指定する **System.Management.Automation.ScriptBlock** オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="feceb-112">**Action** The **System.Management.Automation.ScriptBlock** object that specifies the action that is associated with this menu item.</span></span>
+<span data-ttu-id="95bf2-112">**Action** このメニュー項目に関連付けられるアクションを指定する **System.Management.Automation.ScriptBlock** オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="95bf2-112">**Action** The **System.Management.Automation.ScriptBlock** object that specifies the action that is associated with this menu item.</span></span>
 
-<span data-ttu-id="feceb-113">**Shortcut** アクションのキーボード ショートカット。</span><span class="sxs-lookup"><span data-stu-id="feceb-113">**Shortcut** The keyboard shortcut for the action.</span></span>
+<span data-ttu-id="95bf2-113">**Shortcut** アクションのキーボード ショートカット。</span><span class="sxs-lookup"><span data-stu-id="95bf2-113">**Shortcut** The keyboard shortcut for the action.</span></span>
 
-<span data-ttu-id="feceb-114">**Returns** 追加した ISEMenuItem オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="feceb-114">**Returns** The ISEMenuItem object that was just added.</span></span>
+<span data-ttu-id="95bf2-114">**Returns** 追加した ISEMenuItem オブジェクト。</span><span class="sxs-lookup"><span data-stu-id="95bf2-114">**Returns** The ISEMenuItem object that was just added.</span></span>
 
 ```powershell
 # Create an Add-ons menu with an fast access key and a shortcut.
@@ -35,19 +35,19 @@ ms.locfileid: "67030544"
 $menuAdded = $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Add('_Process', {Get-Process}, 'Alt+P')
 ```
 
-### <a name="clear"></a><span data-ttu-id="feceb-115">Clear\(\)</span><span class="sxs-lookup"><span data-stu-id="feceb-115">Clear\(\)</span></span>
+### <a name="clear"></a><span data-ttu-id="95bf2-115">Clear\(\)</span><span class="sxs-lookup"><span data-stu-id="95bf2-115">Clear\(\)</span></span>
 
-<span data-ttu-id="feceb-116">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="feceb-116">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="95bf2-116">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="95bf2-116">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="feceb-117">メニュー項目からすべてのサブメニューを削除します。</span><span class="sxs-lookup"><span data-stu-id="feceb-117">Removes all submenus from the menu item.</span></span>
+<span data-ttu-id="95bf2-117">メニュー項目からすべてのサブメニューを削除します。</span><span class="sxs-lookup"><span data-stu-id="95bf2-117">Removes all submenus from the menu item.</span></span>
 
 ```powershell
 # Remove all custom submenu items from the AddOns menu
 $psISE.CurrentPowerShellTab.AddOnsMenu.Submenus.Clear()
 ```
 
-## <a name="see-also"></a><span data-ttu-id="feceb-118">参照</span><span class="sxs-lookup"><span data-stu-id="feceb-118">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="95bf2-118">参照</span><span class="sxs-lookup"><span data-stu-id="95bf2-118">See Also</span></span>
 
-- [<span data-ttu-id="feceb-119">ISEMenuItem オブジェクト</span><span class="sxs-lookup"><span data-stu-id="feceb-119">The ISEMenuItem Object</span></span>](The-ISEMenuItem-Object.md)
-- [<span data-ttu-id="feceb-120">Windows PowerShell ISE スクリプト オブジェクト モデルの目的</span><span class="sxs-lookup"><span data-stu-id="feceb-120">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [<span data-ttu-id="feceb-121">ISE オブジェクト モデルの階層</span><span class="sxs-lookup"><span data-stu-id="feceb-121">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
+- [<span data-ttu-id="95bf2-119">ISEMenuItem オブジェクト</span><span class="sxs-lookup"><span data-stu-id="95bf2-119">The ISEMenuItem Object</span></span>](The-ISEMenuItem-Object.md)
+- [<span data-ttu-id="95bf2-120">Windows PowerShell ISE スクリプト オブジェクト モデルの目的</span><span class="sxs-lookup"><span data-stu-id="95bf2-120">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [<span data-ttu-id="95bf2-121">ISE オブジェクト モデルの階層</span><span class="sxs-lookup"><span data-stu-id="95bf2-121">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
