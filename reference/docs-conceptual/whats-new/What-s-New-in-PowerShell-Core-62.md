@@ -3,10 +3,10 @@ title: PowerShell Core 6.2 の新機能
 description: PowerShell Core 6.2 でリリースされた新機能と変更
 ms.date: 03/28/2019
 ms.openlocfilehash: 6a0da8a410e602ae3963e0bc7bace745317d7d4b
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62058099"
 ---
 # <a name="whats-new-in-powershell-core-62"></a>PowerShell Core 6.2 の新機能
@@ -15,7 +15,7 @@ PowerShell Core 6.2 リリースでは、パフォーマンスの向上、バグ
 
 ## <a name="experimental-features"></a>試験的な機能
 
-以前のバージョンで[試験的機能][]のサポートが有効になりました。 6.2 リリースでは、4 つの試験的機能を試すことができます。その機能を改善し、主流の機能に昇格させる価値があるかどうかを判断できるように、フィードバックを提供してください。
+以前のバージョンで[試験的機能][]のサポートが有効になりました。 6\.2 リリースでは、4 つの試験的機能を試すことができます。その機能を改善し、主流の機能に昇格させる価値があるかどうかを判断できるように、フィードバックを提供してください。
 
 使用できる試験的機能の一覧を取得するには、`Get-ExperimentalFeature` を使います。 これらの機能は、`Enable-ExperimentalFeature` および `Disable-ExperimentalFeature` で有効または無効にできます。
 

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 のコンソール機能強化
 ms.openlocfilehash: d0dd8e3c31dc0ddebab1bb899468b77a9292954d
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71147632"
 ---
 # <a name="console-improvements-in-wmf-51"></a>WMF 5.1 のコンソール機能強化

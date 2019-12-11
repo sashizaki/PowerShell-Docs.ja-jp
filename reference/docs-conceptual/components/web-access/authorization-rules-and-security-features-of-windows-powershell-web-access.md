@@ -3,10 +3,10 @@ ms.date: 06/27/2017
 keywords: PowerShell, コマンドレット
 title: Windows PowerShell Web Access の承認規則とセキュリティ機能
 ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: e7445ba8203da304286c591ff513900ad1c244a4
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "62058422"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Access の承認規則とセキュリティ機能
@@ -83,7 +83,7 @@ Windows PowerShell Web Access におけるセキュリティの最後の層は�
 
 この層は、ユーザーが [Enter-PSSession](/powershell/module/microsoft.powershell.core/Enter-PSSession) または [New-PSSession](/powershell/module/microsoft.powershell.core/new-pssession) コマンドレットを実行して Windows PowerShell からターゲット コンピューターへのリモート Windows PowerShell セッション作成を試みた場合に、試行された接続を評価するのと同じセキュリティ メカニズムを提供します。
 
-既定では、Windows PowerShell Web Access は、ゲートウェイとターゲット コンピューター両方での認証に、プライマリのユーザー名とパスワードを使います。 Web ベースのサインイン ページでは、**[オプションの接続設定]** というセクションで、必要に応じてターゲット コンピューターに対する別の資格情報を提示するためのオプションをユーザーに提供しています。 ユーザーがその他の資格情報を提示しない場合、ゲートウェイへの接続に使われるプライマリのユーザー名とパスワードが、ターゲット コンピューターへの接続にも使われます。
+既定では、Windows PowerShell Web Access は、ゲートウェイとターゲット コンピューター両方での認証に、プライマリのユーザー名とパスワードを使います。 Web ベースのサインイン ページでは、 **[オプションの接続設定]** というセクションで、必要に応じてターゲット コンピューターに対する別の資格情報を提示するためのオプションをユーザーに提供しています。 ユーザーがその他の資格情報を提示しない場合、ゲートウェイへの接続に使われるプライマリのユーザー名とパスワードが、ターゲット コンピューターへの接続にも使われます。
 
 承認規則を使って、特定のセッション構成に対するユーザーのアクセスを許可することができます。 担当者は、Windows PowerShell Web Access 用の_制限付き実行空間_またはセッション構成を作成し、特定のユーザーが特定のセッション構成だけにアクセスできるようにして、それらのユーザーを Windows PowerShell Web Access にサインインさせることができます。 アクセス制御リスト (ACL) を使って特定のエンドポイントにアクセスできるユーザーを決定できることに加えて、このセクションで説明する承認規則を使用すると、エンドポイントへのアクセスを特定のユーザーにさらに制限することができます。 制限付き実行空間の詳細については、[制約付き実行空間の作成](https://msdn.microsoft.com/library/dn614668)に関するページを参照してください。
 
@@ -102,9 +102,9 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
 1. 次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。
 
-   - Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
+   - Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックし、 **[管理者として実行]** をクリックします。
 
-   - Windows の**スタート**画面で、**[Windows PowerShell]** を右クリックし、**[管理者として実行]** をクリックします。
+   - Windows の**スタート**画面で、 **[Windows PowerShell]** を右クリックし、 **[管理者として実行]** をクリックします。
 
 2. セッションの構成を使用してユーザー アクセスを制限するための手順 (**省略可能**):
 

@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: コンピューターの状態を変更する
 ms.openlocfilehash: de3e31e358548943a015b7bba275c4461202b20f
-ms.sourcegitcommit: d1ba596f9e0d4df9565601a70687a126d535c917
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/05/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "70386279"
 ---
 # <a name="changing-computer-state"></a>コンピューターの状態を変更する

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: '複合リソース: リソースとしての DSC 構成の使用'
 ms.openlocfilehash: 7fa6ee56d4706b96fb47123c7aa00c4df6256492
-ms.sourcegitcommit: 14b50e5446f69729f72231f5dc6f536cdd1084c3
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73933823"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>複合リソース:リソースとしての DSC 構成の使用

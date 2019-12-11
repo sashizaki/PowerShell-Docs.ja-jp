@@ -4,10 +4,10 @@ schema: 2.0.0
 keywords: powershell
 title: スクリプトでのライセンス同意の必須化
 ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
-ms.sourcegitcommit: 4a2cf30351620a58ba95ff5d76b247e601907589
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/27/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71328083"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>スクリプトでのライセンス同意の必須化

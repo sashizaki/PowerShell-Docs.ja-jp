@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 title: PowerShell スクリプト デバッグの強化
 ms.openlocfilehash: f1771a451ba671da2371fcfc95374e6131573ddc
-ms.sourcegitcommit: 0a6b562a497860caadba754c75a83215315d37a1
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "71147812"
 ---
 # <a name="improvements-in-powershell-script-debugging"></a>PowerShell スクリプト デバッグの強化
