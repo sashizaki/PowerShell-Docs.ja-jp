@@ -3,31 +3,31 @@ ms.date: 06/05/2017
 keywords: PowerShell, コマンドレット
 title: ISEAddOnTool オブジェクト
 ms.openlocfilehash: c71602d200b941ed4fb142b9c35f0fe68982e3e9
-ms.sourcegitcommit: a6f13c16a535acea279c0ddeca72f1f0d8a8ce4c
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/12/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "67028987"
 ---
-# <a name="the-iseaddontool-object"></a><span data-ttu-id="a9294-103">ISEAddOnTool オブジェクト</span><span class="sxs-lookup"><span data-stu-id="a9294-103">The ISEAddOnTool Object</span></span>
+# <a name="the-iseaddontool-object"></a><span data-ttu-id="bb360-103">ISEAddOnTool オブジェクト</span><span class="sxs-lookup"><span data-stu-id="bb360-103">The ISEAddOnTool Object</span></span>
 
-<span data-ttu-id="a9294-104">**ISEAddonTool** オブジェクトは、Windows PowerShell ISE に追加の機能を提供する、インストール済みのアドオン ツールを表します。</span><span class="sxs-lookup"><span data-stu-id="a9294-104">An **ISEAddonTool** object represents an installed add-on tool that provides additional functionality toWindows PowerShell ISE.</span></span> <span data-ttu-id="a9294-105">例としては、 **[表示]** 、 **[コマンド アドオンの表示]** の順にクリックして表示できる**コマンド** ツールです。</span><span class="sxs-lookup"><span data-stu-id="a9294-105">An example is the **Commands** tool that you can display by clicking **View**, then **Show Command Add-on**.</span></span> <span data-ttu-id="a9294-106">このツールには、利用可能なさまざまな **ISEAddOnTool** オブジェクトを操作することでアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="a9294-106">This tool is then accessible to you by manipulating the various available **ISEAddOnTool** objects.</span></span>
+<span data-ttu-id="bb360-104">**ISEAddonTool** オブジェクトは、Windows PowerShell ISE に追加の機能を提供する、インストール済みのアドオン ツールを表します。</span><span class="sxs-lookup"><span data-stu-id="bb360-104">An **ISEAddonTool** object represents an installed add-on tool that provides additional functionality toWindows PowerShell ISE.</span></span> <span data-ttu-id="bb360-105">例としては、 **[表示]** 、 **[コマンド アドオンの表示]** の順にクリックして表示できる**コマンド** ツールです。</span><span class="sxs-lookup"><span data-stu-id="bb360-105">An example is the **Commands** tool that you can display by clicking **View**, then **Show Command Add-on**.</span></span> <span data-ttu-id="bb360-106">このツールには、利用可能なさまざまな **ISEAddOnTool** オブジェクトを操作することでアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="bb360-106">This tool is then accessible to you by manipulating the various available **ISEAddOnTool** objects.</span></span>
 
-<span data-ttu-id="a9294-107">各アドオン ツールは、垂直方向のウィンドウまたは水平方向のウィンドウのいずれかと関連付けることができます。</span><span class="sxs-lookup"><span data-stu-id="a9294-107">Each add-on tool can be associated with either the vertical pane or the horizontal pane.</span></span> <span data-ttu-id="a9294-108">垂直方向のウィンドウは、Windows PowerShell ISE の右端にドッキングされています。</span><span class="sxs-lookup"><span data-stu-id="a9294-108">The vertical pane is docked to the right edge of Windows PowerShell ISE.</span></span> <span data-ttu-id="a9294-109">水平方向のウィンドウは、下端にドッキングされています。</span><span class="sxs-lookup"><span data-stu-id="a9294-109">The horizontal pane is docked to the bottom edge.</span></span>
+<span data-ttu-id="bb360-107">各アドオン ツールは、垂直方向のウィンドウまたは水平方向のウィンドウのいずれかと関連付けることができます。</span><span class="sxs-lookup"><span data-stu-id="bb360-107">Each add-on tool can be associated with either the vertical pane or the horizontal pane.</span></span> <span data-ttu-id="bb360-108">垂直方向のウィンドウは、Windows PowerShell ISE の右端にドッキングされています。</span><span class="sxs-lookup"><span data-stu-id="bb360-108">The vertical pane is docked to the right edge of Windows PowerShell ISE.</span></span> <span data-ttu-id="bb360-109">水平方向のウィンドウは、下端にドッキングされています。</span><span class="sxs-lookup"><span data-stu-id="bb360-109">The horizontal pane is docked to the bottom edge.</span></span>
 
-<span data-ttu-id="a9294-110">Windows PowerShell ISE の各 PowerShell タブには、インストール済みのアドオン ツールの固有のセットを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="a9294-110">Each PowerShell tab in Windows PowerShell ISE can have its own set of add-on tools installed.</span></span> <span data-ttu-id="a9294-111">現在選択しているタブで使用できるツールのコレクション、または [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md) コレクション オブジェクトのいずれかの **PowerShellTab** オブジェクトの同じプロパティのコレクションにアクセスするには、[$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-PowerShellTab-Object.md) および [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-PowerShellTab-Object.md) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a9294-111">See [$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-PowerShellTab-Object.md) and [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-PowerShellTab-Object.md) to access the collection of tools available to the currently selected tab or the same properties on any of the **PowerShellTab** objects in the [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md) collection object.</span></span>
+<span data-ttu-id="bb360-110">Windows PowerShell ISE の各 PowerShell タブには、インストール済みのアドオン ツールの固有のセットを含めることができます。</span><span class="sxs-lookup"><span data-stu-id="bb360-110">Each PowerShell tab in Windows PowerShell ISE can have its own set of add-on tools installed.</span></span> <span data-ttu-id="bb360-111">現在選択しているタブで使用できるツールのコレクション、または [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md) コレクション オブジェクトのいずれかの **PowerShellTab** オブジェクトの同じプロパティのコレクションにアクセスするには、[$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-PowerShellTab-Object.md) および [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-PowerShellTab-Object.md) を参照してください。</span><span class="sxs-lookup"><span data-stu-id="bb360-111">See [$psISE.CurrentPowerShellTab.HorizontalAddOnTools](The-PowerShellTab-Object.md) and [$psISE.CurrentPowerShellTab.VerticalAddOnTools](The-PowerShellTab-Object.md) to access the collection of tools available to the currently selected tab or the same properties on any of the **PowerShellTab** objects in the [$psISE.PowerShellTabs](The-PowerShellTabCollection-Object.md) collection object.</span></span>
 
-## <a name="methods"></a><span data-ttu-id="a9294-112">メソッド</span><span class="sxs-lookup"><span data-stu-id="a9294-112">Methods</span></span>
+## <a name="methods"></a><span data-ttu-id="bb360-112">メソッド</span><span class="sxs-lookup"><span data-stu-id="bb360-112">Methods</span></span>
 
-<span data-ttu-id="a9294-113">このクラスのオブジェクトで使用できる Windows PowerShell ISE 固有のメソッドはありません。</span><span class="sxs-lookup"><span data-stu-id="a9294-113">There are no Windows PowerShell ISE-specific methods available for objects of this class.</span></span>
+<span data-ttu-id="bb360-113">このクラスのオブジェクトで使用できる Windows PowerShell ISE 固有のメソッドはありません。</span><span class="sxs-lookup"><span data-stu-id="bb360-113">There are no Windows PowerShell ISE-specific methods available for objects of this class.</span></span>
 
-## <a name="properties"></a><span data-ttu-id="a9294-114">プロパティ</span><span class="sxs-lookup"><span data-stu-id="a9294-114">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="bb360-114">プロパティ</span><span class="sxs-lookup"><span data-stu-id="bb360-114">Properties</span></span>
 
-### <a name="control"></a><span data-ttu-id="a9294-115">Control</span><span class="sxs-lookup"><span data-stu-id="a9294-115">Control</span></span>
+### <a name="control"></a><span data-ttu-id="bb360-115">Control</span><span class="sxs-lookup"><span data-stu-id="bb360-115">Control</span></span>
 
-<span data-ttu-id="a9294-116">Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。</span><span class="sxs-lookup"><span data-stu-id="a9294-116">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="bb360-116">Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。</span><span class="sxs-lookup"><span data-stu-id="bb360-116">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="a9294-117">**コントロール** プロパティは、コマンド アドオン ツールの詳細への読み取りアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="a9294-117">The **Control** property provides read access to many of the details of the Commands add-on tool.</span></span>
+<span data-ttu-id="bb360-117">**コントロール** プロパティは、コマンド アドオン ツールの詳細への読み取りアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="bb360-117">The **Control** property provides read access to many of the details of the Commands add-on tool.</span></span>
 
 ```powershell
 # View the properties of the Commands add-on tool.
@@ -139,11 +139,11 @@ IsSealed                    : False
 Dispatcher                  : System.Windows.Threading.Dispatcher
 ```
 
-### <a name="isvisible"></a><span data-ttu-id="a9294-118">IsVisible</span><span class="sxs-lookup"><span data-stu-id="a9294-118">IsVisible</span></span>
+### <a name="isvisible"></a><span data-ttu-id="bb360-118">IsVisible</span><span class="sxs-lookup"><span data-stu-id="bb360-118">IsVisible</span></span>
 
-<span data-ttu-id="a9294-119">Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。</span><span class="sxs-lookup"><span data-stu-id="a9294-119">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="bb360-119">Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。</span><span class="sxs-lookup"><span data-stu-id="bb360-119">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="a9294-120">割り当てられているウィンドウにアドオン ツールが現在表示されているかどうかを示すブール型プロパティ。</span><span class="sxs-lookup"><span data-stu-id="a9294-120">The Boolean property that indicates whether the add-on tool is currently visible in its assigned pane.</span></span> <span data-ttu-id="a9294-121">表示されている場合は、**IsVisible** プロパティを **$false** を設定すると、ツールを非表示にすることができます。**IsVisible** プロパティを **$true** に設定すると、PowerShell でアドオン ツールが表示されます。アドオン ツールを非表示にすると、**CurrentVisibleHorizontalTool** または **CurrentVisibleVerticalTool** オブジェクトからアクセスできなくなるため、これらのオブジェクトのこのプロパティを使用して表示するようにすることはできません。</span><span class="sxs-lookup"><span data-stu-id="a9294-121">If it is visible, you can set the **IsVisible** property to **$false** to hide the tool, or set the **IsVisible** property to **$true** to make an add-on tool visible on its PowerShell tab. Note that after an add-on tool is hidden, it is no longer accessible through the **CurrentVisibleHorizontalTool** or **CurrentVisibleVerticalTool** objects, and therefore cannot be made visible by using this property on that object.</span></span>
+<span data-ttu-id="bb360-120">割り当てられているウィンドウにアドオン ツールが現在表示されているかどうかを示すブール型プロパティ。</span><span class="sxs-lookup"><span data-stu-id="bb360-120">The Boolean property that indicates whether the add-on tool is currently visible in its assigned pane.</span></span> <span data-ttu-id="bb360-121">表示されている場合は、**IsVisible** プロパティを **$false** を設定すると、ツールを非表示にすることができます。**IsVisible** プロパティを **$true** に設定すると、PowerShell でアドオン ツールが表示されます。アドオン ツールを非表示にすると、**CurrentVisibleHorizontalTool** または **CurrentVisibleVerticalTool** オブジェクトからアクセスできなくなるため、これらのオブジェクトのこのプロパティを使用して表示するようにすることはできません。</span><span class="sxs-lookup"><span data-stu-id="bb360-121">If it is visible, you can set the **IsVisible** property to **$false** to hide the tool, or set the **IsVisible** property to **$true** to make an add-on tool visible on its PowerShell tab. Note that after an add-on tool is hidden, it is no longer accessible through the **CurrentVisibleHorizontalTool** or **CurrentVisibleVerticalTool** objects, and therefore cannot be made visible by using this property on that object.</span></span>
 
 ```powershell
 # Hide the current tool in the vertical tool pane
@@ -152,11 +152,11 @@ $psISE.CurrentVisibleVerticalTool.IsVisible = $false
 $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible = $true
 ```
 
-### <a name="name"></a><span data-ttu-id="a9294-122">名前</span><span class="sxs-lookup"><span data-stu-id="a9294-122">Name</span></span>
+### <a name="name"></a><span data-ttu-id="bb360-122">名前</span><span class="sxs-lookup"><span data-stu-id="bb360-122">Name</span></span>
 
-<span data-ttu-id="a9294-123">Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。</span><span class="sxs-lookup"><span data-stu-id="a9294-123">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
+<span data-ttu-id="bb360-123">Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。</span><span class="sxs-lookup"><span data-stu-id="bb360-123">Supported in Windows PowerShell ISE 3.0 and later, and not present in earlier versions.</span></span>
 
-<span data-ttu-id="a9294-124">アドオン ツールの名前を取得する読み取り専用プロパティ。</span><span class="sxs-lookup"><span data-stu-id="a9294-124">The read-only property that gets the name of the add-on tool.</span></span>
+<span data-ttu-id="bb360-124">アドオン ツールの名前を取得する読み取り専用プロパティ。</span><span class="sxs-lookup"><span data-stu-id="bb360-124">The read-only property that gets the name of the add-on tool.</span></span>
 
 ```powershell
 # Gets the name of the visible vertical pane add-on tool.
@@ -164,8 +164,8 @@ $psISE.CurrentVisibleVerticalTool.Name
 Commands
 ```
 
-## <a name="see-also"></a><span data-ttu-id="a9294-125">参照</span><span class="sxs-lookup"><span data-stu-id="a9294-125">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="bb360-125">参照</span><span class="sxs-lookup"><span data-stu-id="bb360-125">See Also</span></span>
 
-- [<span data-ttu-id="a9294-126">ISEAddOnToolCollection オブジェクト</span><span class="sxs-lookup"><span data-stu-id="a9294-126">The ISEAddOnToolCollection Object</span></span>](The-ISEAddOnToolCollection-Object.md)
-- [<span data-ttu-id="a9294-127">Windows PowerShell ISE スクリプト オブジェクト モデルの目的</span><span class="sxs-lookup"><span data-stu-id="a9294-127">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [<span data-ttu-id="a9294-128">ISE オブジェクト モデルの階層</span><span class="sxs-lookup"><span data-stu-id="a9294-128">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
+- [<span data-ttu-id="bb360-126">ISEAddOnToolCollection オブジェクト</span><span class="sxs-lookup"><span data-stu-id="bb360-126">The ISEAddOnToolCollection Object</span></span>](The-ISEAddOnToolCollection-Object.md)
+- [<span data-ttu-id="bb360-127">Windows PowerShell ISE スクリプト オブジェクト モデルの目的</span><span class="sxs-lookup"><span data-stu-id="bb360-127">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [<span data-ttu-id="bb360-128">ISE オブジェクト モデルの階層</span><span class="sxs-lookup"><span data-stu-id="bb360-128">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
