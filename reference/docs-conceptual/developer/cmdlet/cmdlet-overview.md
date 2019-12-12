@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 0aa32589-4447-4ead-a5dd-a3be99113140
 caps.latest.revision: 21
 ms.openlocfilehash: 14200aed2fb94c37c8b8af29650f602945e7ac1c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365891"
 ---
 # <a name="cmdlet-overview"></a>コマンドレットの概要
@@ -75,7 +75,7 @@ PowerShell では、省略可能な他のいくつかの属性が使用されま
 ### <a name="shouldprocess-feature"></a>機能を処理する
 
 PowerShell では、コマンドレットがシステムに変更を加える前に、ユーザーにフィードバックを求めるコマンドレットを作成できます。
-この機能を使用するには、コマンドレットでコマンドレットの属性を宣言するときに、コマンドレットで指定する機能がサポートされていることを宣言する必要があり[ます。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)また、コマンドレットは、次のように指定する必要があります。 [このコマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)は、入力処理メソッド内からメソッドを続行します。
+この機能を使用するには、コマンドレットでコマンドレットの属性を宣言するときに、コマンドレットで指定する機能がサポートされていることを宣言する必要があり[ます。また](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)、コマンドレット[は、入力](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)処理メソッド内からメソッドを呼び出す必要があります。
 入力プロセス機能をサポートする方法の詳細については、「[確認の要求](requesting-confirmation-from-cmdlets.md)」を参照してください。
 
 ### <a name="transaction"></a>トランザクション
