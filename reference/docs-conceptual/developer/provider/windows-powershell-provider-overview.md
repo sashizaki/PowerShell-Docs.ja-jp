@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
 ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366291"
 ---
 # <a name="windows-powershell-provider-overview"></a>Windows PowerShell プロバイダーの概要
@@ -39,7 +39,7 @@ Windows PowerShell プロバイダーを使用すると、マウントされた�
 
 ### <a name="drive-qualified-paths"></a>ドライブ修飾パス
 
-ドライブ修飾パスは、項目名、項目が配置されているコンテナーとサブコンテナー、および項目のアクセスに使用される Windows PowerShell ドライブを組み合わせたものです。 (ドライブは、データストアへのアクセスに使用されるプロバイダーによって定義されます。 このパスの先頭には、ドライブ名とコロン (:) が続きます。 例: `get-childitem C:`
+ドライブ修飾パスは、項目名、項目が配置されているコンテナーとサブコンテナー、および項目のアクセスに使用される Windows PowerShell ドライブを組み合わせたものです。 (ドライブは、データストアへのアクセスに使用されるプロバイダーによって定義されます。 このパスの先頭には、ドライブ名とコロン (:) が続きます。 たとえば次のようになります。`get-childitem C:`
 
 ### <a name="provider-qualified-paths"></a>プロバイダー修飾パス
 
@@ -90,7 +90,7 @@ Windows PowerShell エンジンは、 [Icmdletprovidersupportshelp](/dotnet/api/
 <CmdletHelpPath>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell プロバイダーの機能](./provider-types.md)
 

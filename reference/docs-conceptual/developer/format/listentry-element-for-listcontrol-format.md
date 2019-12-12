@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 6d16bca8-d025-432d-aa84-8b607b8af3ae
 caps.latest.revision: 12
 ms.openlocfilehash: 1a3bafd4ca94aee70e869c699f7a4ef8befc5511
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362751"
 ---
 # <a name="listentry-element-for-listcontrol-format"></a>ListControl の ListEntry 要素 (書式)
@@ -42,7 +42,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 |要素|[説明]|
 |-------------|-----------------|
-|[ListEntry の EntrySelectedBy 要素 (形式)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|省略可能な要素。<br /><br /> このリストビュー定義を使用する .NET オブジェクト、またはこの定義を使用するために必要な条件を定義します。|
+|[ListEntry の EntrySelectedBy 要素 (形式)](./entryselectedby-element-for-listentry-for-listcontrol-format.md)|省略可能な要素です。<br /><br /> このリストビュー定義を使用する .NET オブジェクト、またはこの定義を使用するために必要な条件を定義します。|
 |[ListItems 要素 (Format)](./listitems-element-for-listentry-for-listcontrol-format.md)|必須の要素です。<br /><br /> リストビューによって値が表示されるプロパティとスクリプトを定義します。|
 
 ### <a name="parent-elements"></a>親要素

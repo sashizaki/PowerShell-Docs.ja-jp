@@ -17,10 +17,10 @@ helpviewer_keywords:
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
 ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365931"
 ---
 # <a name="cmdlet-parameters"></a>コマンドレットのパラメーター
@@ -49,11 +49,11 @@ ms.locfileid: "72365931"
 
 [入力フィルターパラメーター](./input-filter-parameters.md)コマンドレットによって影響を与える入力オブジェクトのセットをフィルター処理する、`Filter`、`Include`、および `Exclude` パラメーターについて説明します。
 
-## <a name="related-sections"></a>関連項目
+## <a name="related-sections"></a>関連セクション
 
 [パラメーター入力を検証する方法](./how-to-validate-parameter-input.md)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [パラメーター属性の宣言](./parameter-attribute-declaration.md)
 

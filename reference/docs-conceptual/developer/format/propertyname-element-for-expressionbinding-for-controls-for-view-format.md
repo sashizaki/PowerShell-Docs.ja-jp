@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c53a28eb-8cc7-42d6-b47b-31dfa6a69e50
 caps.latest.revision: 6
 ms.openlocfilehash: c3030e80c8e8bd671fafec3d1ecadb9d916682b7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362561"
 ---
 # <a name="propertyname-element-for-expressionbinding-for-controls-for-view-format"></a>View の Controls の ExpressionBinding の PropertyName 要素 (書式)
@@ -29,7 +29,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`PropertyName` 要素の親要素について説明します。
+次のセクションでは、`PropertyName` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
