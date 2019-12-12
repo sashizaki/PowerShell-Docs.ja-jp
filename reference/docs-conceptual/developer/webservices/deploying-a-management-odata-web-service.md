@@ -9,35 +9,35 @@ ms.topic: article
 ms.assetid: 4497b64c-7875-4047-bf77-07e04c098ffe
 caps.latest.revision: 4
 ms.openlocfilehash: 376d90394b632e82322b848cb124f002ff91d8b3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366181"
 ---
-# <a name="deploying-a-management-odata-web-service"></a><span data-ttu-id="e4c03-102">Management OData Web サービスを展開する</span><span class="sxs-lookup"><span data-stu-id="e4c03-102">Deploying a Management OData web service</span></span>
+# <a name="deploying-a-management-odata-web-service"></a><span data-ttu-id="6909c-102">Management OData Web サービスを展開する</span><span class="sxs-lookup"><span data-stu-id="6909c-102">Deploying a Management OData web service</span></span>
 
-<span data-ttu-id="e4c03-103">管理 OData web サービスを作成するために必要なすべての手順を完了したら、IIS で web アプリケーションとして展開する必要があります。</span><span class="sxs-lookup"><span data-stu-id="e4c03-103">After you have completed all of the steps necessary to create a Management OData web service, you must deploy it as a web application in IIS.</span></span>
+<span data-ttu-id="6909c-103">管理 OData web サービスを作成するために必要なすべての手順を完了したら、IIS で web アプリケーションとして展開する必要があります。</span><span class="sxs-lookup"><span data-stu-id="6909c-103">After you have completed all of the steps necessary to create a Management OData web service, you must deploy it as a web application in IIS.</span></span>
 
-## <a name="deploying-the-web-service"></a><span data-ttu-id="e4c03-104">Web サービスのデプロイ</span><span class="sxs-lookup"><span data-stu-id="e4c03-104">Deploying the web service</span></span>
+## <a name="deploying-the-web-service"></a><span data-ttu-id="6909c-104">Web サービスのデプロイ</span><span class="sxs-lookup"><span data-stu-id="6909c-104">Deploying the web service</span></span>
 
-<span data-ttu-id="e4c03-105">管理 OData web サービスをデプロイするには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="e4c03-105">Complete the following steps to deploy the Management OData web service.</span></span>
+<span data-ttu-id="6909c-105">管理 OData web サービスをデプロイするには、次の手順を実行します。</span><span class="sxs-lookup"><span data-stu-id="6909c-105">Complete the following steps to deploy the Management OData web service.</span></span>
 
-1. <span data-ttu-id="e4c03-106">IIS `WWWRoot` ディレクトリの下に web アプリケーション用のディレクトリを作成します。</span><span class="sxs-lookup"><span data-stu-id="e4c03-106">Create a directory for you web application under your IIS `WWWRoot` directory.</span></span>
+1. <span data-ttu-id="6909c-106">IIS `WWWRoot` ディレクトリの下に web アプリケーション用のディレクトリを作成します。</span><span class="sxs-lookup"><span data-stu-id="6909c-106">Create a directory for you web application under your IIS `WWWRoot` directory.</span></span>
 
-2. <span data-ttu-id="e4c03-107">MOF スキーマファイル、XML スキーマファイル、 [Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)と[register-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)の各インターフェイスをエクスポートする dll、および web.config ファイルをアプリケーションディレクトリにコピーします。このファイルは、アプリケーションディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="e4c03-107">Copy the MOF schema file, the XML schema file, the DLLs that export the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) and [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interfaces, and the web.config file into the application directory.</span></span>
+2. <span data-ttu-id="6909c-107">MOF スキーマファイル、XML スキーマファイル、 [Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)と[register-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)の各インターフェイスをエクスポートする dll、および web.config ファイルをアプリケーションディレクトリにコピーします。このファイルは、アプリケーションディレクトリにコピーします。</span><span class="sxs-lookup"><span data-stu-id="6909c-107">Copy the MOF schema file, the XML schema file, the DLLs that export the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) and [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interfaces, and the web.config file into the application directory.</span></span>
 
-3. <span data-ttu-id="e4c03-108">サイト ID を作成します。</span><span class="sxs-lookup"><span data-stu-id="e4c03-108">Create a site ID.</span></span>
+3. <span data-ttu-id="6909c-108">サイト ID を作成します。</span><span class="sxs-lookup"><span data-stu-id="6909c-108">Create a site ID.</span></span>
 
-4. <span data-ttu-id="e4c03-109">アプリプールを作成して構成します。</span><span class="sxs-lookup"><span data-stu-id="e4c03-109">Create and configure an app pool.</span></span>
+4. <span data-ttu-id="6909c-109">アプリプールを作成して構成します。</span><span class="sxs-lookup"><span data-stu-id="6909c-109">Create and configure an app pool.</span></span>
 
-5. <span data-ttu-id="e4c03-110">サイトの認証を構成します。</span><span class="sxs-lookup"><span data-stu-id="e4c03-110">Configure authentication for the site.</span></span>
+5. <span data-ttu-id="6909c-110">サイトの認証を構成します。</span><span class="sxs-lookup"><span data-stu-id="6909c-110">Configure authentication for the site.</span></span>
 
-6. <span data-ttu-id="e4c03-111">ファイアウォールを構成します。</span><span class="sxs-lookup"><span data-stu-id="e4c03-111">Configure the firewall.</span></span>
+6. <span data-ttu-id="6909c-111">ファイアウォールを構成します。</span><span class="sxs-lookup"><span data-stu-id="6909c-111">Configure the firewall.</span></span>
 
-7. <span data-ttu-id="e4c03-112">サイトを開始します。</span><span class="sxs-lookup"><span data-stu-id="e4c03-112">Start the site.</span></span>
+7. <span data-ttu-id="6909c-112">サイトを開始します。</span><span class="sxs-lookup"><span data-stu-id="6909c-112">Start the site.</span></span>
 
-<span data-ttu-id="e4c03-113">次の Windows PowerShell スクリプトは、管理 OData web サービスをデプロイする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="e4c03-113">The following Windows PowerShell scripts demonstrate how to deploy a Management OData web service.</span></span>
+<span data-ttu-id="6909c-113">次の Windows PowerShell スクリプトは、管理 OData web サービスをデプロイする方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="6909c-113">The following Windows PowerShell scripts demonstrate how to deploy a Management OData web service.</span></span>
 
 ```powershell
 # Test for presence of Microsoft.Samples.Management.OData.RoleBasedPlugins.dll
@@ -425,16 +425,16 @@ ActionAllSites start
 Start-Sleep 10
 ```
 
-## <a name="see-also"></a><span data-ttu-id="e4c03-114">関連項目</span><span class="sxs-lookup"><span data-stu-id="e4c03-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="6909c-114">参照</span><span class="sxs-lookup"><span data-stu-id="6909c-114">See Also</span></span>
 
-[<span data-ttu-id="e4c03-115">管理 OData web サービスのカスタム承認の実装</span><span class="sxs-lookup"><span data-stu-id="e4c03-115">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[<span data-ttu-id="6909c-115">管理 OData web サービスのカスタム承認の実装</span><span class="sxs-lookup"><span data-stu-id="6909c-115">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="e4c03-116">管理 OData web サービスに SessionConfiguration を実装する</span><span class="sxs-lookup"><span data-stu-id="e4c03-116">Implementing SessionConfiguration for a Management OData web service</span></span>](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+[<span data-ttu-id="6909c-116">管理 OData web サービスに SessionConfiguration を実装する</span><span class="sxs-lookup"><span data-stu-id="6909c-116">Implementing SessionConfiguration for a Management OData web service</span></span>](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="e4c03-117">管理用の OData web サービスの MOF スキーマファイルを作成する</span><span class="sxs-lookup"><span data-stu-id="e4c03-117">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="6909c-117">管理用の OData web サービスの MOF スキーマファイルを作成する</span><span class="sxs-lookup"><span data-stu-id="6909c-117">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="e4c03-118">管理用の OData web サービス用の XML スキーマファイルの作成</span><span class="sxs-lookup"><span data-stu-id="e4c03-118">Authoring the XML schema file for a Management OData web service</span></span>](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="6909c-118">管理用の OData web サービス用の XML スキーマファイルの作成</span><span class="sxs-lookup"><span data-stu-id="6909c-118">Authoring the XML schema file for a Management OData web service</span></span>](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="e4c03-119">管理 OData web サービスの Web.config ファイルを作成する</span><span class="sxs-lookup"><span data-stu-id="e4c03-119">Authoring the Web.config file for a Management OData web service</span></span>](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="6909c-119">管理 OData web サービスの Web.config ファイルを作成する</span><span class="sxs-lookup"><span data-stu-id="6909c-119">Authoring the Web.config file for a Management OData web service</span></span>](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="e4c03-120">管理 OData Web サービスの作成</span><span class="sxs-lookup"><span data-stu-id="e4c03-120">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
+[<span data-ttu-id="6909c-120">管理 OData Web サービスの作成</span><span class="sxs-lookup"><span data-stu-id="6909c-120">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
