@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ac6f7aaa-d0cc-4c7b-a341-85e736174579
 caps.latest.revision: 21
 ms.openlocfilehash: 437b3d6bb62fdd3a74f3392ec71df360c01a1974
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363721"
 ---
 # <a name="format-schema-xml-reference"></a>書式設定スキーマ XML リファレンス
@@ -213,33 +213,33 @@ ms.locfileid: "72363721"
 
 [GroupBy (Format) の PropertyName 要素](./propertyname-element-for-groupby-format.md)値が変更されるたびに新しいグループを開始する .NET プロパティを指定します。
 
-[ItemSeclectionCondition の PropertyName 要素 (構成用コントロール用) (形式)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、コントロールが使用されます。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
+[ItemSeclectionCondition の PropertyName 要素 (構成用コントロール用) (形式)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、コントロールが使用されます。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
 
-[ビューのコントロール (Format) の ItemSelectionCondition の PropertyName 要素](./propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、コントロールが使用されます。 この要素は、ビューで使用できるコントロールを定義するときに使用されます。
+[ビューのコントロール (Format) の ItemSelectionCondition の PropertyName 要素](./propertyname-element-for-itemselectioncondition-for-controls-for-view-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、コントロールが使用されます。 この要素は、ビューで使用できるコントロールを定義するときに使用されます。
 
-[CustomControl の ItemSelectionCondition の PropertyName 要素](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)は、条件をトリガーする .net プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、コントロールが使用されます。 この要素は、カスタムコントロールビューを定義するときに使用されます。
+[CustomControl の ItemSelectionCondition の PropertyName 要素](./propertyname-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)は、条件をトリガーする .net プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、コントロールが使用されます。 この要素は、カスタムコントロールビューを定義するときに使用されます。
 
-[GroupBy (Format) の ItemSelectionCondition の PropertyName 要素](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、コントロールが使用されます。 この要素は、新しいオブジェクトのグループをどのように表示するかを定義するときに使用されます。
+[GroupBy (Format) の ItemSelectionCondition の PropertyName 要素](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、コントロールが使用されます。 この要素は、新しいオブジェクトのグループをどのように表示するかを定義するときに使用されます。
 
-[ListItem の ItemSelectionCondition の PropertyName 要素 (形式)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、ビューが使用されます。 この要素は、リストビューを定義するときに使用されます。
+[ListItem の ItemSelectionCondition の PropertyName 要素 (形式)](./propertyname-element-for-itemselectioncondition-for-listcontrol-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、ビューが使用されます。 この要素は、リストビューを定義するときに使用されます。
 
 [ListControl の ListItem の PropertyName 要素 (形式)](./propertyname-element-for-listitem-for-listcontrol-format.md)値が一覧に表示される .NET プロパティを指定します。
 
-[ListEntry (Format) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、エントリが使用されます。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
+[ListEntry (Format) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、エントリが使用されます。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
 
-[ビューのコントロールの SelectionCondition の PropertyName 要素 (Format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、エントリが使用されます。 この要素は、ビューで使用できるコントロールを定義するときに使用されます。
+[ビューのコントロールの SelectionCondition の PropertyName 要素 (Format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、エントリが使用されます。 この要素は、ビューで使用できるコントロールを定義するときに使用されます。
 
-[CustomControl For ビュー (Format) の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、定義が使用されます。 この要素は、カスタムコントロールビューを定義するときに使用されます。
+[CustomControl For ビュー (Format) の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、定義が使用されます。 この要素は、カスタムコントロールビューを定義するときに使用されます。
 
-[列挙 Able膨張 (形式) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、定義が使用されます。
+[列挙 Able膨張 (形式) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、定義が使用されます。
 
-[GroupBy (Format) の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-groupby-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、定義が使用されます。 この要素は、新しいオブジェクトのグループをどのように表示するかを定義するときに使用されます。
+[GroupBy (Format) の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-groupby-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、定義が使用されます。 この要素は、新しいオブジェクトのグループをどのように表示するかを定義するときに使用されます。
 
-[ListEntry (Format) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、リストエントリが使用されます。
+[ListEntry (Format) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、リストエントリが使用されます。
 
-[TableRowEntry (Format) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、テーブルエントリが使用されます。
+[TableRowEntry (Format) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-tablerowentry-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、テーブルエントリが使用されます。
 
-[WideEntry (Format) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、定義が使用されます。
+[WideEntry (Format) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、定義が使用されます。
 
 [TableColumnItem の PropertyName 要素 (形式)](./propertyname-element-for-tablecolumnitem-for-tablecontrol-format.md)行の列に値を表示するプロパティを指定します。
 
@@ -263,33 +263,33 @@ ms.locfileid: "72363721"
 
 [GroupBy (Format) の ScriptBlock 要素](./scriptblock-element-for-groupby-format.md)値が変更されるたびに新しいグループを開始するスクリプトを指定します。
 
-[構成用のコントロールの ItemSelectionCondition の ScriptBlock 要素 (形式)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、コントロールが使用されます。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
+[構成用のコントロールの ItemSelectionCondition の ScriptBlock 要素 (形式)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、コントロールが使用されます。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
 
-[ビューのコントロール (Format) の ItemSelectionCondition の ScriptBlock 要素](./scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、コントロールが使用されます。 この要素は、ビューで使用できるコントロールを定義するときに使用されます。
+[ビューのコントロール (Format) の ItemSelectionCondition の ScriptBlock 要素](./scriptblock-element-for-itemselectioncondition-for-controls-for-view-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、コントロールが使用されます。 この要素は、ビューで使用できるコントロールを定義するときに使用されます。
 
-[CustomControl For ビュー (Format) の ItemSelectionCondition の ScriptBlock 要素](./scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、コントロールが使用されます。 この要素は、カスタムコントロールビューを定義するときに使用されます。
+[CustomControl For ビュー (Format) の ItemSelectionCondition の ScriptBlock 要素](./scriptblock-element-for-itemselectioncondition-for-customcontrol-for-view-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、コントロールが使用されます。 この要素は、カスタムコントロールビューを定義するときに使用されます。
 
-[GroupBy (Format) の ItemSelectionCondition の ScriptBlock 要素](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、コントロールが使用されます。 この要素は、新しいオブジェクトのグループをどのように表示するかを定義するときに使用されます。
+[GroupBy (Format) の ItemSelectionCondition の ScriptBlock 要素](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、コントロールが使用されます。 この要素は、新しいオブジェクトのグループをどのように表示するかを定義するときに使用されます。
 
-[ListControl の ItemSelectionCondition の ScriptBlock 要素 (形式)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、リスト項目が使用されます。 この要素は、リストビューを定義するときに使用されます。
+[ListControl の ItemSelectionCondition の ScriptBlock 要素 (形式)](./scriptblock-element-for-itemselectioncondition-for-listcontrol-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、リスト項目が使用されます。 この要素は、リストビューを定義するときに使用されます。
 
 [ListItem の ScriptBlock 要素 (形式)](./scriptblock-element-for-listitem-for-listcontrol-format.md)一覧の行に値が表示されるスクリプトを指定します。
 
-[構成用のコントロールの SelectionCondition の ScriptBlock 要素 (形式)](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、定義が使用されます。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
+[構成用のコントロールの SelectionCondition の ScriptBlock 要素 (形式)](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、定義が使用されます。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
 
-[ビューのコントロールの SelectionCondition の ScriptBlock 要素 (Format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、定義が使用されます。 この要素は、ビューで使用できるコントロールを定義するときに使用されます。
+[ビューのコントロールの SelectionCondition の ScriptBlock 要素 (Format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、定義が使用されます。 この要素は、ビューで使用できるコントロールを定義するときに使用されます。
 
-[CustomControl For ビュー (Format) の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、定義が使用されます。 この要素は、カスタムコントロールビューを定義するときに使用されます。
+[CustomControl For ビュー (Format) の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、定義が使用されます。 この要素は、カスタムコントロールビューを定義するときに使用されます。
 
 [列挙 Able展開の EntrySelectedBy の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)条件をトリガーするスクリプトを指定します。
 
-[GroupBy (Format) の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、定義が使用されます。 この要素は、新しいオブジェクトのグループをどのように表示するかを定義するときに使用されます。
+[GroupBy (Format) の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、定義が使用されます。 この要素は、新しいオブジェクトのグループをどのように表示するかを定義するときに使用されます。
 
-[ListEntry (Format) の EntrySelectedBy の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、リストエントリが使用されます。
+[ListEntry (Format) の EntrySelectedBy の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、リストエントリが使用されます。
 
-[TableRowEntry (Format) の EntrySelectedBy の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)条件をトリガーするスクリプトブロックを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、テーブルエントリが使用されます。
+[TableRowEntry (Format) の EntrySelectedBy の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)条件をトリガーするスクリプトブロックを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、テーブルエントリが使用されます。
 
-[WideEntry (Format) の EntrySelectedBy の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、ワイドエントリの定義が使用されます。
+[WideEntry (Format) の EntrySelectedBy の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)条件をトリガーするスクリプトを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、ワイドエントリの定義が使用されます。
 
 [TableColumnItem の ScriptBlock 要素 (形式)](./scriptblock-element-for-tablecolumnitem-for-tablecontrol-format.md)行の列に値が表示されるスクリプトを指定します。
 

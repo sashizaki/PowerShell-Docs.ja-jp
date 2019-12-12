@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8ae2196d-d6c8-4101-8805-4190d293af51
 caps.latest.revision: 13
 ms.openlocfilehash: 19d31f6b619dff23e7e35bb53d2397f4f41eb728
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369881"
 ---
 # <a name="cmdlet-dynamic-parameters"></a>コマンドレット動的パラメーター
@@ -26,7 +26,7 @@ ms.locfileid: "72369881"
 
 PowerShell では、プロバイダーコマンドレットのいくつかで動的パラメーターが使用されます。 たとえば、`Get-Item` および `Get-ChildItem` のコマンドレットは、 **Path**パラメーターに**証明書**プロバイダーのパスが指定されている場合に、実行時に**codesigningcert**パラメーターを追加します。 **Path**パラメーターに別のプロバイダーのパスが指定されている場合、 **Codesigningcert**パラメーターは使用できません。
 
-次の例は、`Get-Item` が実行されたときに、実行時に**Codesigningcert**パラメーターがどのように追加されるかを示しています。
+次の例は、`Get-Item` の実行時に**Codesigningcert**パラメーターを実行時に追加する方法を示しています。
 
 この例では、PowerShell ランタイムによってパラメーターが追加され、コマンドレットが正常に実行されました。
 

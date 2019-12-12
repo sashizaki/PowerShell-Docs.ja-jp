@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
 caps.latest.revision: 9
 ms.openlocfilehash: f8cbaf464345b8f2b693e72f3dbe781a47605b28
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417779"
 ---
 # <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell プログラマーズ&#39;ガイド
@@ -53,7 +53,7 @@ Windows PowerShell には、いくつかの既定の Windows PowerShell プロ�
 
 ユーザーがアクセスする必要があるデータストアを公開する場合は、「 [Windows Powershell プロバイダーの作成](./how-to-create-a-windows-powershell-provider.md)」で説明されているように、独自の windows powershell プロバイダーを記述することが必要になる場合があります。 Windows PowerShell プロバイダーの詳細については、「 [Windows powershell のしくみ](/previous-versions//ms714658(v=vs.85))」を参照してください。
 
-### <a name="host-application"></a>ホストアプリケーション
+### <a name="host-application"></a>[ホスト アプリケーション]
 
 Windows PowerShell には、既定のホストアプリケーションの PowerShell .exe が含まれています。これは、ユーザーと対話し、コンソールウィンドウを使用して Windows PowerShell ランタイムをホストするコンソールアプリケーションです。
 
@@ -105,6 +105,6 @@ Windows PowerShell シェルの使用を開始する方法の詳細について�
 |[コンソールシェルを作成する方法](./how-to-create-a-console-shell.md)|このセクションでは、拡張できないコンソールシェルを作成する方法について説明します。|
 |[Windows PowerShell の概念](./windows-powershell-concepts.md)|このセクションには、開発者の視点から Windows PowerShell を理解するのに役立つ概念情報が含まれています。|
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

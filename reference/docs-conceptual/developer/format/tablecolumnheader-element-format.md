@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
 caps.latest.revision: 19
 ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361851"
 ---
 # <a name="tablecolumnheader-element-format"></a>TableColumnHeader 要素 (書式)
@@ -41,7 +41,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[TableControl (Format) の TableColumnHeader の Label 要素](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> 列の上部に表示されるラベルを定義します。 ラベルが指定されていない場合は、行に表示される値を持つプロパティの名前が使用されます。|
 |[TableControl の TableColumnHeader の Width 要素 (Format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|必須の要素です。<br /><br /> 列の幅 (文字数) を指定します。|
@@ -49,7 +49,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[TableHeaders 要素 (書式)](./tableheaders-element-format.md)|テーブルビューの列を定義します。|
 
@@ -80,7 +80,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </TableHeaders>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [TableControl (Format) の TableColumnHeader の Alignment 要素](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
 

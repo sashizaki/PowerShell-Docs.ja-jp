@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 38971643-2a3d-4f5b-a1fa-6334c162b8ed
 caps.latest.revision: 4
 ms.openlocfilehash: e915ac71feb50cb58cfa9195f0de94763affdb77
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363701"
 ---
 # <a name="formatting-displayed-data"></a>表示されるデータの書式を設定する
 
-リスト、テーブル、またはワイドビュー内の個々のデータポイントを表示する方法を指定できます。 ビューの項目を定義するときに `FormatString` 要素を使用することも、`ScriptBlock` 要素を使用してデータに対して `FormatString` メソッドを呼び出すこともできます。
+リスト、テーブル、またはワイドビュー内の個々のデータポイントを表示する方法を指定できます。 ビューの項目を定義するときに `FormatString` 要素を使用することも、`ScriptBlock` 要素を使用してデータの `FormatString` メソッドを呼び出すこともできます。
 
 ## <a name="using-the-formatstring-element"></a>FormatString 要素の使用
 

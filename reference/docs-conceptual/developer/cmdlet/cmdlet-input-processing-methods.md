@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: b0bb8172-c9fa-454b-9f1b-57c3fe60671b
 caps.latest.revision: 12
 ms.openlocfilehash: a28c8d3df19bc72bf338d6abc4e02768c5097209
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369871"
 ---
 # <a name="cmdlet-input-processing-methods"></a>コマンドレットの入力処理メソッド
@@ -63,7 +63,7 @@ protected override void ProcessRecord()
 
 PowerShell がコマンドパイプラインを処理するとき、PowerShell は、パイプラインのコマンドレットの各インスタンスに対してこのメソッドを1回呼び出します。
 ただし、コマンドレットが入力処理の途中で取り消された場合、またはコマンドレットのいずれかの部分で終了エラーが発生した場合は、PowerShell ランタイムが EndProcessing メソッドを呼び出さないことに注意する必要があります。
-このため、オブジェクトのクリーンアップを必要とするコマンドレットは、ファイナライザーを含む完全な IDisposable パターンを実装する必要があり[ます。](/dotnet/api/System.IDisposable)これにより、ランタイムは、次の最後に EndProcessing メソッドと[system.servicemodel メソッドの](/dotnet/api/System.IDisposable.Dispose)両方を呼び出すことができるようになります。プロセス.
+このため、オブジェクトのクリーンアップを必要とするコマンドレットは、ファイナライザーを含む完全な[IDisposable](/dotnet/api/System.IDisposable)パターンを実装する必要があります。これにより、処理の終了時にランタイムが EndProcessing メソッドと[system.servicemodel メソッドの両方を呼び](/dotnet/api/System.IDisposable.Dispose)出すことができるようになります。
 PowerShell がコマンドパイプラインを呼び出す方法の詳細については、「コマンド[レット処理のライフサイクル](/previous-versions/ms714429(v=vs.85))」を参照してください。
 
 次のコードは、EndProcessing メソッドの実装を示しています。
@@ -86,6 +86,6 @@ protected override void EndProcessing()
 
 [SelectStr チュートリアル](selectstr-tutorial.md)
 
-[IDisposable](/dotnet/api/System.IDisposable)
+[System.IDisposable](/dotnet/api/System.IDisposable)
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

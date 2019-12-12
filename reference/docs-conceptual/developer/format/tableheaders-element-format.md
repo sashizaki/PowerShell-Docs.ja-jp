@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f9fa2b6f-b99a-42de-9779-44e9cb583f71
 caps.latest.revision: 15
 ms.openlocfilehash: bd44fcf4878c858afe81fb071ce72f627ac465dc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361821"
 ---
 # <a name="tableheaders-element-format"></a>TableHeaders 要素 (Format)
@@ -40,13 +40,13 @@ ViewDefinitions 要素 (Format) ビュー要素 (Format) TableControl Element (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[TableColumnHeader 要素 (Format)](./tablecolumnheader-element-format.md)|省略可能な要素です。<br /><br /> テーブルビューの列のデータのラベル、幅、および配置を定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[TableControl 要素 (形式)](./tablecontrol-element-format.md)|ビューのテーブル形式を定義します。|
 
@@ -73,7 +73,7 @@ ViewDefinitions 要素 (Format) ビュー要素 (Format) TableControl Element (F
 </TableHeaders>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [テーブルビューの作成](./creating-a-table-view.md)
 

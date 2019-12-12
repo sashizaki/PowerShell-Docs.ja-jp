@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 014763cb-7716-4931-899c-8375b5d7a3dd
 caps.latest.revision: 15
 ms.openlocfilehash: d1d13b5c3436871053353814293d9163ea13c7fb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367901"
 ---
 # <a name="wideentry-element-for-widecontrol-format"></a>WideControl の WideEntry 要素 (書式)
@@ -40,14 +40,14 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[WideEntry の EntrySelectedBy 要素 (形式)](./entryselectedby-element-for-wideentry-format.md)|省略可能な要素です。<br /><br /> このワイドエントリ定義を使用する .NET 型、またはこの定義を使用するために必要な条件を定義します。|
 |[WideItem 要素 (Format)](./wideitem-element-for-widecontrol-format.md)|必須の要素です。<br /><br /> 値が表示されるプロパティまたはスクリプトを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[WideEntries 要素 (Format)](./wideentries-element-for-widecontrol-format.md)|ワイドビューの定義を提供します。|
 
@@ -72,7 +72,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ワイドビューの完全な例については、「 [Wide ビュー (Basic)](./wide-view-basic.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [ワイドビューの作成](./creating-a-wide-view.md)
 

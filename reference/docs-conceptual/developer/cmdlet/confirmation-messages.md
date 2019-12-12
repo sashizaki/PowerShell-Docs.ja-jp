@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a886a26d-7730-4586-aeac-fd3f0bc60b88
 caps.latest.revision: 8
 ms.openlocfilehash: 229725b5b9f1f0082592dcebe11564fd2f630ce1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365731"
 ---
 # <a name="confirmation-messages"></a>確認メッセージ
@@ -24,7 +24,7 @@ ms.locfileid: "72365731"
 
 ## <a name="specifying-the-resource"></a>リソースの指定
 
-変更しようとしているリソースを指定するには、このコマンドレットを呼び出してください[。Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0)メソッド。 この場合は、メソッドの `target` パラメーターを使用してリソースを指定し、Windows PowerShell によって操作が追加されます。 次のメッセージでは、"MyResource" というテキストが使用されるリソースであり、操作は呼び出しを行うコマンドの名前です。
+変更しようとしているリソースを指定するには、このコマンドレットを呼び出してください[。Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0)メソッド。 この場合、メソッドの `target` パラメーターを使用してリソースを指定すると、Windows PowerShell によって操作が追加されます。 次のメッセージでは、"MyResource" というテキストが使用されるリソースであり、操作は呼び出しを行うコマンドの名前です。
 
 ```output
 Confirm
@@ -33,7 +33,7 @@ Performing operation "Test-RequestConfirmationTemplate1" on Target "MyResource".
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-次の例に示すように、ユーザーが確認要求に対して **[はい]** または **[はい] を**選択した場合は、次のように、2番目の確認メッセージが表示され[ます。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)さ.
+次の例に示すように、ユーザーが確認要求に対して **[はい]** または **[はい] を**選択した場合は、" [System](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ..............................................
 
 ```output
 Confirm
