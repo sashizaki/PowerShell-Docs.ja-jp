@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 98708c1d-6f39-4a76-b454-31153a6ade8c
 caps.latest.revision: 12
 ms.openlocfilehash: 3c110bd5fe3ef2f790ef136556afa7c29d0b5b29
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363951"
 ---
 # <a name="customitem-element-for-customentry-for-customcontrol-for-view-format"></a>View の CustomControl の CustomEntry の CustomItem 要素 (書式)
@@ -34,7 +34,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`CustomItem` 要素の親要素について説明します。
+次のセクションでは、`CustomItem` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -44,10 +44,10 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 |要素|[説明]|
 |-------------|-----------------|
-|[CustomControl for ビュー (Format) に対する CustomItem の式のバインド要素](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|省略可能な要素。<br /><br /> コントロールによって表示されるデータを定義します。|
-|[CustomControl for ビュー (Format) の CustomItem の Frame 要素](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|省略可能な要素。<br /><br /> カスタムコントロールビューとその表示方法によって表示されるデータを定義します。|
-|[View (Format) のカスタムコントロールの CustomItem の改行要素](./newline-element-for-customitem-for-customcontrol-for-view-format.md)|省略可能な要素。<br /><br /> コントロールの表示に空白行を追加します。|
-|[CustomControl for ビュー (Format) の CustomItem の Text 要素](./text-element-for-customitem-for-customview-for-view-format.md)|省略可能な要素。<br /><br /> コントロールによって表示されるデータに追加のテキストを指定します。|
+|[CustomControl for ビュー (Format) に対する CustomItem の式のバインド要素](./expressionbinding-element-for-customitem-for-customcontrol-for-view-format.md)|省略可能な要素です。<br /><br /> コントロールによって表示されるデータを定義します。|
+|[CustomControl for ビュー (Format) の CustomItem の Frame 要素](./frame-element-for-customitem-for-customcontrol-for-view-format.md)|省略可能な要素です。<br /><br /> カスタムコントロールビューとその表示方法によって表示されるデータを定義します。|
+|[View (Format) のカスタムコントロールの CustomItem の改行要素](./newline-element-for-customitem-for-customcontrol-for-view-format.md)|省略可能な要素です。<br /><br /> コントロールの表示に空白行を追加します。|
+|[CustomControl for ビュー (Format) の CustomItem の Text 要素](./text-element-for-customitem-for-customview-for-view-format.md)|省略可能な要素です。<br /><br /> コントロールによって表示されるデータに追加のテキストを指定します。|
 
 ### <a name="parent-elements"></a>親要素
 

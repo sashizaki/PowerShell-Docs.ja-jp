@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a317d482-73cc-4c98-a002-1357fa879cd7
 caps.latest.revision: 7
 ms.openlocfilehash: cf1a80e845c38d97d71f26eba63c38a550958b79
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363861"
 ---
 # <a name="entryselectedby-element-for-customentry-for-groupby-format"></a>GroupBy の CustomEntry の EntrySelectedBy 要素 (書式)
@@ -43,9 +43,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (�
 
 |要素|[説明]|
 |-------------|-----------------|
-|[GroupBy (Format) の EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|省略可能な要素。<br /><br /> この定義を使用するために必要な条件を定義します。|
-|[GroupBy (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)|省略可能な要素。<br /><br /> コントロールのこの定義を使用する .NET 型のセットを指定します。|
-|[GroupBy (Format) の EntrySelectedBy の TypeName 要素](./typename-element-for-entryselectedby-for-groupby-format.md)|省略可能な要素。<br /><br /> コントロールのこの定義を使用する .NET 型を指定します。|
+|[GroupBy (Format) の EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)|省略可能な要素です。<br /><br /> この定義を使用するために必要な条件を定義します。|
+|[GroupBy (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)|省略可能な要素です。<br /><br /> コントロールのこの定義を使用する .NET 型のセットを指定します。|
+|[GroupBy (Format) の EntrySelectedBy の TypeName 要素](./typename-element-for-entryselectedby-for-groupby-format.md)|省略可能な要素です。<br /><br /> コントロールのこの定義を使用する .NET 型を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
@@ -55,7 +55,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (�
 
 ## <a name="remarks"></a>コメント
 
-選択条件を使用して、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプトが `true` に評価される場合など、使用する定義に存在する必要がある条件を定義します。 選択条件の詳細については、「[ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件を使用して、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプトが `true`に評価される場合など、使用する定義に必要な条件を定義します。 選択条件の詳細については、「[ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

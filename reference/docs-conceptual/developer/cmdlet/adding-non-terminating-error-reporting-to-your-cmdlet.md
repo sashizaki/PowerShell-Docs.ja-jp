@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f2a1531a-a92a-4606-9d54-c5df80d34f33
 caps.latest.revision: 8
 ms.openlocfilehash: a4426abec96cd922360aeef8c157b4e9f41a15b9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364611"
 ---
 # <a name="adding-non-terminating-error-reporting-to-your-cmdlet"></a>終了しないエラーのレポートをコマンドレットに追加する
@@ -191,7 +191,7 @@ protected override void ProcessRecord()
 コマンドレットでは、`ErrorVariable` パラメーターを使用して、終了しないエラーを変数に保存できます。このパラメーターは、`ErrorAction`の設定の影響を受けません。
 エラーは、変数名の前にプラス記号 (+) を追加することによって、既存のエラー変数に追加できます。
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>コード サンプル
 
 完全なC#サンプルコードについては、「 [GetProcessSample04 sample](./getprocesssample04-sample.md)」を参照してください。
 
@@ -217,7 +217,7 @@ PowerShell は、.NET オブジェクトを使用してコマンドレット間�
     PS> get-proc -name test
     ```
 
-次の出力が表示されます。
+次のような出力が表示されます。
 
     ```
     get-proc : Operation is not valid due to the current state of the object.
@@ -225,7 +225,7 @@ PowerShell は、.NET オブジェクトを使用してコマンドレット間�
     + get-proc  <<<< -name test
     ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [パイプライン入力を処理するパラメーターの追加](./adding-parameters-that-process-pipeline-input.md)
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 715ea055-037b-46ad-b70f-87b3f5134403
 caps.latest.revision: 14
 ms.openlocfilehash: 2742be0389a1bf04af100a490a59c0d938165811
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367991"
 ---
 # <a name="widecontrol-element-format"></a>WideControl 要素 (書式)
@@ -41,7 +41,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[WideControl の AutoSize 要素 (形式)](./autosize-element-for-widecontrol-format.md)|省略可能な要素です。<br /><br /> データのサイズに基づいて列のサイズと列の数を調整するかどうかを指定します。|
 |[WideControl の ColumnNumber 要素 (形式)](./columnnumber-element-for-widecontrol-format.md)|省略可能な要素です。<br /><br /> ワイドビューに表示される列の数を指定します。|
@@ -49,7 +49,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[View 要素 (Format)](./view-element-format.md)|1つ以上の .NET オブジェクトを表示するために使用されるビューを定義します。|
 
@@ -79,7 +79,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ワイドビューの完全な例については、「 [Wide ビュー (Basic)](./wide-view-basic.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [WideControl の Autosize 要素 (形式)](./autosize-element-for-widecontrol-format.md)
 

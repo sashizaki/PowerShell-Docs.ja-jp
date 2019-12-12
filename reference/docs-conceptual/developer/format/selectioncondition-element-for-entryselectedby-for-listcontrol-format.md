@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7649d5d0-2b56-49b5-a670-dde46caca343
 caps.latest.revision: 11
 ms.openlocfilehash: 7150b29ad84dfb587215ee3e64c356adbd5a6305
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417542"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-listcontrol-format"></a>ListControl の EntrySelectedBy の SelectionCondition 要素 (書式)
@@ -32,7 +32,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>属性および要素
+## <a name="attributes-and-elements"></a>属性と要素
 
 次のセクションでは、`SelectionCondition` 要素の属性、子要素、および親要素について説明します。
 
@@ -42,7 +42,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[ListEntry (Format) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
 |[ListEntry (Format) の EntrySelectedBy の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーするスクリプトを指定します。|
@@ -51,7 +51,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[TableRowEntry の EntrySelectedBy 要素 (形式)](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|このテーブルエントリを使用する .NET 型、またはこのエントリを使用するために必要な条件を定義します。|
 
@@ -67,7 +67,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 リストビューのその他のコンポーネントの詳細については、「[リストビューの作成](./creating-a-list-view.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [リストビューの作成](./creating-a-list-view.md)
 

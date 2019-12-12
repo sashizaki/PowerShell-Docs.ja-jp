@@ -3,10 +3,10 @@ title: Windows PowerShell API でジョブをスケジュールする
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: 4e1d4ed6bffd858b92bf29b1dc6d8503454fafda
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359831"
 ---
 # <a name="scheduling-jobs-with-the-windows-powershell-api"></a>Windows PowerShell API でジョブをスケジュールする
@@ -33,7 +33,7 @@ Windows PowerShell ジョブを定義するには、パラメーター辞書を�
 
 |パラメーター名|[説明]|
 |---|---|
-|名前|ジョブの名前。|
+|名前|ジョブの名前を指定します。|
 |ScriptBock|ジョブの動作を指定する Windows PowerShell スクリプトブロック。|
 |ファイル パス|ジョブの動作を指定する Windows PowerShell スクリプトブロックを含むファイルへのパスです。|
 |InitializationScript|ジョブを初期化する Windows PowerShell スクリプトブロック。|
@@ -54,7 +54,7 @@ jobDefParameters.Add("ScriptBlock", scriptBlock);  // A scriptblock or script Fi
 
 ## <a name="creating-the-invocation-and-job-definition-objects"></a>呼び出しオブジェクトとジョブ定義オブジェクトの作成
 
-次に、ジョブを実行する ScheduledJobInvocationInfo オブジェクトと ScheduledJobDefinition オブジェクトを作成します。 このコード例を次に示します。
+次に、ジョブを実行する ScheduledJobInvocationInfo オブジェクトと ScheduledJobDefinition オブジェクトを作成します。 次のコードでこれを示します。
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(

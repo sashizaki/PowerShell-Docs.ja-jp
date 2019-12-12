@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 51f7aec9-7b01-4370-84f4-1e58508a851f
 caps.latest.revision: 6
 ms.openlocfilehash: e92b2dfff07358132c480c47c34279e5365fe400
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362121"
 ---
 # <a name="scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format"></a>Configuration の Controls の ItemSeclectionCondition の ScriptBlock 要素 (書式)
 
-条件をトリガーするスクリプトを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、コントロールが使用されます。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
+条件をトリガーするスクリプトを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、コントロールが使用されます。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
 
 Configuration 要素 (Format) 構成用の CustomControl の Configuration (format) CustomEntries 要素の構成 (形式) の CustomControl 要素の構成 (書式設定) 要素のコントロール要素形式) CustomControl の CustomEntry 要素を構成するためのコントロール用の CustomEntry 要素を構成するためのコントロール用 CustomItem 要素の構成式のバインド要素 CustomItem の構成 (形式)構成のコントロール (Format) の ItemSelectionCondition の構成 (Format) ScriptBlock 要素の式のバインドの ItemSelectionCondition 要素
 
@@ -29,7 +29,7 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`ScriptBlock` 要素の親要素について説明します。
+次のセクションでは、`ScriptBlock` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 

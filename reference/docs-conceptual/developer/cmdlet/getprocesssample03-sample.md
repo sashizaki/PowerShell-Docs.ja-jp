@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fc9d80ee-6ebd-48cd-a7ea-53cb2b442a22
 caps.latest.revision: 6
 ms.openlocfilehash: ec5a8c284dd3fa772261099281aba1fb68c49118
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369711"
 ---
 # <a name="getprocesssample03-sample"></a>GetProcessSample03 サンプル
@@ -25,7 +25,7 @@ ms.locfileid: "72369711"
 
 2. ソリューション (.sln) ファイルのアイコンをダブルクリックします。 これにより、Visual Studio でサンプルプロジェクトが開きます。
 
-3. **[ビルド]** メニューの **[ソリューションのビルド]** をクリックします。
+3. **[ビルド]** メニューの **[ソリューションのビルド]** を選択します。
 
     サンプルのライブラリは、既定の \bin フォルダーまたは \bin\debug フォルダーに構築されます。
 
@@ -140,6 +140,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

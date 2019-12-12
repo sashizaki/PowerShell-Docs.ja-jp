@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
 caps.latest.revision: 28
 ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367071"
 ---
 # <a name="installing-a-powershell-module"></a>PowerShell モジュールをインストールする
@@ -230,7 +230,7 @@ Microsoft.PowerShell.Utility\Get-Date
 
 ユーザーは、`Import-Module` コマンドレットの**prefix**パラメーターを使用して、代替のプレフィックスを使用できます。 **Prefix**パラメーターの値は、 **defaultcommandprefix**キーの値よりも優先されます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence)
 

@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
 caps.latest.revision: 8
 ms.openlocfilehash: af41c2c9855310d047404114a07b27180a7aa8fc
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74415674"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>パラメーターなしでコマンドレットを作成する
@@ -82,7 +82,7 @@ System.servicemodel[クラスには、3](/dotnet/api/System.Management.Automatio
 
 コマンドレットがパイプライン入力を受け取らない場合[は、このメソッドを](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)オーバーライドする必要があります。 このメソッドは、並べ替えコマンドレットの場合と同様に、一度に1つの要素に対してコマンドレットを実行できない場合に、その代わりに使用されることに注意して[ください](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)。
 
-このサンプルの Get Proc コマンド[レットは、](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)パイプラインの入力を受け取る必要があるため、このメソッドをオーバーライドし、システムの既定の実装を使用し[て、.](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)... [...](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) ...... [WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)メソッドを使用して、プロセスを取得し、コマンドラインに書き込むプロセスを取得するために、[このオーバーライドが](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)実行されます。
+このサンプルの Get Proc コマンドレットは、パイプラインの入力を受け取る必要があるため、[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)このメソッドをオーバーライドして、システムの既定の実装を使用します。 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)と共に、を行います[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)。 [WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)メソッドを使用して、プロセスを取得し、コマンドラインに書き込むプロセスを取得するために、[このオーバーライドが](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)実行されます。
 
 ```csharp
 protected override void ProcessRecord()
@@ -129,7 +129,7 @@ End Sub 'ProcessRecord
 
 たとえば、コマンドレットが途中で取り消された場合、またはコマンドレットのいずれかの部分で終了エラーが発生した場合[は、を](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)呼び出すことはできません。 したがって、オブジェクトのクリーンアップを必要とするコマンドレットは、ファイナライザーを含む完全な[IDisposable](/dotnet/api/System.IDisposable)パターンを実装する必要があります。これにより、処理の[終了時に](/dotnet/api/System.IDisposable.Dispose)ランタイム[が両方の](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)を呼び出すことができるようになります。
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>コード サンプル
 
 完全なC#サンプルコードについては、「 [GetProcessSample01 sample](./getprocesssample01-sample.md)」を参照してください。
 
@@ -151,7 +151,7 @@ Windows PowerShell は、.NET オブジェクトを使用してコマンドレ�
     get-proc
     ```
 
-    次の出力が表示されます。
+    次のような出力が表示されます。
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -175,7 +175,7 @@ Windows PowerShell は、.NET オブジェクトを使用してコマンドレ�
     $p.length
     ```
 
-    次の出力が表示されます。
+    次のような出力が表示されます。
 
     ```output
     63
@@ -187,7 +187,7 @@ Windows PowerShell は、.NET オブジェクトを使用してコマンドレ�
     $p[6]
     ```
 
-    次の出力が表示されます。
+    次のような出力が表示されます。
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id    ProcessName
@@ -201,7 +201,7 @@ Windows PowerShell は、.NET オブジェクトを使用してコマンドレ�
     $p[6].starttime
     ```
 
-    次の出力が表示されます。
+    次のような出力が表示されます。
 
     ```output
     Tuesday, July 26, 2005 9:34:15 AM
@@ -221,7 +221,7 @@ Windows PowerShell は、.NET オブジェクトを使用してコマンドレ�
     $p | Where-Object {$_.HandleCount -gt 500 } | Sort-Object HandleCount
     ```
 
-    次の出力が表示されます。
+    次のような出力が表示されます。
 
     ```output
     Handles  NPM(K)  PM(K)  WS(K)  VS(M)  CPU(s)  Id   ProcessName
@@ -243,7 +243,7 @@ Windows PowerShell は、.NET オブジェクトを使用してコマンドレ�
         TypeName: System.Diagnostics.Process
     ```
 
-    次の出力が表示されます。
+    次のような出力が表示されます。
 
     ```output
     Name                     MemberType Definition
@@ -254,7 +254,7 @@ Windows PowerShell は、.NET オブジェクトを使用してコマンドレ�
     ...
     ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [コマンドライン入力を処理するコマンドレットの作成](./adding-parameters-that-process-command-line-input.md)
 

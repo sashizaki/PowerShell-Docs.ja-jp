@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c6739205-2bc9-4507-b2af-d19d548c2057
 caps.latest.revision: 6
 ms.openlocfilehash: b92b99d88992cf13dbf7bfbe88aad603615f3138
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364051"
 ---
 # <a name="customentry-element-for-customentries-for-controls-for-view-format"></a>View の Controls の CustomEntries の CustomEntry 要素 (書式)
@@ -42,7 +42,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 |要素|[説明]|
 |-------------|-----------------|
-|[ビューのコントロールに対する CustomEntry 要素 (形式)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|省略可能な要素。<br /><br /> このコントロール定義を使用する .NET 型、またはこの定義を使用するために必要な条件を定義します。|
+|[ビューのコントロールに対する CustomEntry 要素 (形式)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> このコントロール定義を使用する .NET 型、またはこの定義を使用するために必要な条件を定義します。|
 |[ビュー用のコントロール用の Custommentry の CustomItem 要素 (形式)](./customitem-element-for-customentry-for-controls-for-view-format.md)|必須の要素です。<br /><br /> コントロールがデータを表示する方法を定義します。|
 
 ### <a name="parent-elements"></a>親要素

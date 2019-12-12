@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
 caps.latest.revision: 23
 ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363411"
 ---
 # <a name="creating-a-table-view"></a>テーブル ビューを作成する
@@ -232,7 +232,7 @@ Running  Appinfo            Application Information
 
 - [FormatString](./label-element-for-listitem-for-listcontrol-format.md)要素は、プロパティまたはスクリプトの値の表示方法を定義する形式パターンを指定します。
 
-次の例では、スクリプトの値の書式を設定するために、`ToString` メソッドが呼び出されています。 スクリプトは、オブジェクトの任意のメソッドを呼び出すことができます。 したがって、オブジェクトに、書式設定パラメーターを持つメソッド (`ToString` など) がある場合、スクリプトはそのメソッドを呼び出してスクリプトの出力値を書式設定できます。
+次の例では、スクリプトの値の書式を設定するために、`ToString` メソッドが呼び出されています。 スクリプトは、オブジェクトの任意のメソッドを呼び出すことができます。 したがって、オブジェクトに、書式設定パラメーターを持つメソッド (`ToString`など) がある場合、スクリプトはそのメソッドを呼び出してスクリプトの出力値を書式設定できます。
 
 ```xml
 <ListItem>

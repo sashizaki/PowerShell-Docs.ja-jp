@@ -9,21 +9,21 @@ ms.topic: article
 ms.assetid: 7c265084-e072-46ca-9844-c3c0e275d6b0
 caps.latest.revision: 7
 ms.openlocfilehash: fdf0036c68b608d254ed928ae9ac58616a856200
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367341"
 ---
 # <a name="runspace10-sample"></a>Runspace10 サンプル
 
-このサンプルでは、初期セッションの既定の状態を作成する方法、コマンドレットを[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)に追加する方法、初期セッション状態を使用する実行空間を作成する方法、およびを使用してコマンドを実行する方法を示します。[System. Automation. Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。
+このサンプルでは、既定の初期セッション状態を作成する方法、コマンドレットを[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)に追加する方法、初期セッション状態を使用する実行空間を作成する方法、およびコマンドを実行する方法について、「」で説明[します。](/dotnet/api/system.management.automation.powershell)
 
 ## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 このサンプルでは、次のことを示します。
 

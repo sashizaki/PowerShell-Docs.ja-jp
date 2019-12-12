@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fd3ddc33-b21c-4464-b3f2-a78dbe0062a8
 caps.latest.revision: 8
 ms.openlocfilehash: 4865d716ebe0460b662253a3019e93e82428b882
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362921"
 ---
 # <a name="itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format"></a>Configuration の Controls の ExpressionBinding の ItemSelectionCondition 要素 (書式)
@@ -32,7 +32,7 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`ItemSelectionCondition` 要素の親要素について説明します。
+次のセクションでは、`ItemSelectionCondition` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -42,8 +42,8 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 |要素|[説明]|
 |-------------|-----------------|
-|[構成用のコントロールの ItemSelectionCondition の PropertyName 要素 (形式)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
-|[構成用のコントロールの ItemSelectionCondition の ScriptBlock 要素 (形式)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> 条件をトリガーするスクリプトを指定します。|
+|[構成用のコントロールの ItemSelectionCondition の PropertyName 要素 (形式)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
+|[構成用のコントロールの ItemSelectionCondition の ScriptBlock 要素 (形式)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーするスクリプトを指定します。|
 
 ### <a name="parent-elements"></a>親要素
 

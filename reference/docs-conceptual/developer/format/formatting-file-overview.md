@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fe888fee-1fe9-459f-9d62-35732c19a7f8
 caps.latest.revision: 13
 ms.openlocfilehash: d418cff70c1197aa3c331eed909f49198da139e9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363691"
 ---
 # <a name="formatting-file-overview"></a>書式設定ファイルの概要
@@ -153,7 +153,7 @@ Control 要素内では、1つまたは複数の*エントリ*要素を定義で
 
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [リストビューの作成](./creating-a-list-view.md)
 
@@ -161,6 +161,6 @@ Control 要素内では、1つまたは複数の*エントリ*要素を定義で
 
 [ワイドビューの作成](./creating-a-wide-view.md)
 
-[カスタムコントロールの作成](./creating-custom-controls.md)
+[カスタム コントロールの作成](./creating-custom-controls.md)
 
 [PowerShell の形式と種類のファイルの作成](./writing-a-powershell-formatting-file.md)

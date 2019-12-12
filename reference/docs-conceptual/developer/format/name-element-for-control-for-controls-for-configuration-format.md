@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b4371d45-49a4-4303-8384-5b54105bd0d6
 caps.latest.revision: 8
 ms.openlocfilehash: 2704a530e0ae269efb772ac10e531bcbb12f6eff
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362711"
 ---
 # <a name="name-element-for-control-for-controls-for-configuration-format"></a>Configuration の Controls の Control の Name 要素 (書式)
@@ -30,7 +30,7 @@ Configuration 要素 (Format) コントロールの構成 (書式) のコント�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`Name` 要素の親要素について説明します。
+次のセクションでは、`Name` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 

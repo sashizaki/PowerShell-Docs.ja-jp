@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c6649d07-4762-4602-9b4b-d9e2e9e63312
 caps.latest.revision: 13
 ms.openlocfilehash: 531ff447f8407a737131a38351d7e4c6e7da90fb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363191"
 ---
 # <a name="expressionbinding-element-for-customitem-for-controls-for-configuration-format"></a>Configuration の Controls の CustomItem の ExpressionBinding 要素 (書式)
@@ -36,7 +36,7 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`ExpressionBinding` 要素の親要素について説明します。
+次のセクションでは、`ExpressionBinding` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -46,12 +46,12 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 |要素|[説明]|
 |-------------|-----------------|
-|`CustomControl Element`|省略可能な要素。<br /><br /> このコントロールによって使用されるコントロールを定義します。|
-|[構成用のコントロールの式のバインドの CustomControlName 要素 (形式)](./customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> コモンコントロールまたはビューコントロールの名前を指定します。|
-|[構成対象のコントロールの式のバインドの列挙 Atecollection 要素 (形式)](./enumeratecollection-element-for-expressionbinding-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> コレクションの要素がコントロールによって表示されることを指定します。|
-|[構成用のコントロールの式のバインドの ItemSelectionCondition 要素 (形式)](./itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> このコモンコントロールを使用するために必要な条件を定義します。|
-|[構成用のコントロールの式のバインドの PropertyName 要素 (Format)](./propertyname-element-for-expressionbinding-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> コモンコントロールによって表示される値を持つ .NET プロパティを指定します。|
-|[構成用のコントロールの式のバインドの ScriptBlock 要素 (形式)](./scriptblock-element-for-expressionbinding-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> 共通コントロールによって値が表示されるスクリプトを指定します。|
+|`CustomControl Element`|省略可能な要素です。<br /><br /> このコントロールによって使用されるコントロールを定義します。|
+|[構成用のコントロールの式のバインドの CustomControlName 要素 (形式)](./customcontrolname-element-for-expressionbinding-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> コモンコントロールまたはビューコントロールの名前を指定します。|
+|[構成対象のコントロールの式のバインドの列挙 Atecollection 要素 (形式)](./enumeratecollection-element-for-expressionbinding-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> コレクションの要素がコントロールによって表示されることを指定します。|
+|[構成用のコントロールの式のバインドの ItemSelectionCondition 要素 (形式)](./itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> このコモンコントロールを使用するために必要な条件を定義します。|
+|[構成用のコントロールの式のバインドの PropertyName 要素 (Format)](./propertyname-element-for-expressionbinding-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> コモンコントロールによって表示される値を持つ .NET プロパティを指定します。|
+|[構成用のコントロールの式のバインドの ScriptBlock 要素 (形式)](./scriptblock-element-for-expressionbinding-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> 共通コントロールによって値が表示されるスクリプトを指定します。|
 
 ### <a name="parent-elements"></a>親要素
 

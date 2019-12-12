@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7b48bf80-cbf0-4cb1-8d5b-3b8d06196598
 caps.latest.revision: 10
 ms.openlocfilehash: 00190c7350cb0f1cfc5c389b56e48e9397480446
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369731"
 ---
 # <a name="getprocesssample01-sample"></a>GetProcessSample01 サンプル
@@ -25,7 +25,7 @@ ms.locfileid: "72369731"
 
 2. ソリューション (.sln) ファイルのアイコンをダブルクリックします。 これにより、Microsoft Visual Studio でサンプルプロジェクトが開きます。
 
-3. **[ビルド]** メニューの **[ソリューションのビルド]** をクリックします。
+3. **[ビルド]** メニューの **[ソリューションのビルド]** を選択します。
 
   サンプルのライブラリは、既定の \bin フォルダーまたは \bin\debug フォルダーに構築されます。
 
@@ -68,7 +68,7 @@ ms.locfileid: "72369731"
 
 このサンプルには、Windows PowerShell 1.0 以降が必要です。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 このサンプルでは、次のことを示します。
 

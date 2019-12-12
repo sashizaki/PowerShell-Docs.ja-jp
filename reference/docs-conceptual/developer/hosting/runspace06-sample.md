@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 471c85f3-9287-45c2-b4bc-833caa1b7634
 caps.latest.revision: 8
 ms.openlocfilehash: 3850aec88bc800718a82f51c91fbd0cb3c705089
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367591"
 ---
 # <a name="runspace06-sample"></a>Runspace06 サンプル
@@ -23,7 +23,7 @@ ms.locfileid: "72367591"
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 このサンプルでは、次のことを示します。
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 30abae8f-c7f7-479d-ad85-19e07ddef204
 caps.latest.revision: 10
 ms.openlocfilehash: 81eca4f66f0057074612f2d60482b45adc36357b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368771"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-configuration-format"></a>Configuration の Controls の CustomEntry の EntrySelectedBy 要素 (書式)
@@ -33,7 +33,7 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`EntrySelectedBy` 要素の親要素について説明します。
+次のセクションでは、`EntrySelectedBy` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -43,9 +43,9 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 |要素|[説明]|
 |-------------|-----------------|
-|[構成用のコントロール (Format) の EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> 共通のコントロール定義を使用するために必要な条件を定義します。|
-|[構成用のコントロール (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> コモンコントロールのこの定義を使用する一連の .NET 型を指定します。|
-|[構成用のコントロール (Format) の EntrySelectedBy の TypeName 要素](./typename-element-for-entryselectedby-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> コモンコントロールのこの定義を使用する .NET 型を指定します。|
+|[構成用のコントロール (Format) の EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> 共通のコントロール定義を使用するために必要な条件を定義します。|
+|[構成用のコントロール (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> コモンコントロールのこの定義を使用する一連の .NET 型を指定します。|
+|[構成用のコントロール (Format) の EntrySelectedBy の TypeName 要素](./typename-element-for-entryselectedby-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> コモンコントロールのこの定義を使用する .NET 型を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 

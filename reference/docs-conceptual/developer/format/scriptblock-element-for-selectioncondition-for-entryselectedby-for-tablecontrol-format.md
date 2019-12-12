@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 2b11fbcf-3426-48ae-9319-2c847969f723
 caps.latest.revision: 10
 ms.openlocfilehash: 7afc834e68ef332bee1e23da782fb5c5527fcf54
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368581"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format"></a>TableControl の EntrySelectedBy の SelectionCondition の ScriptBlock 要素 (書式)
 
-条件をトリガーするスクリプトブロックを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、テーブルエントリが使用されます。
+条件をトリガーするスクリプトブロックを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、テーブルエントリが使用されます。
 
 Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) TableControl Element (Format) TableRowEntries Element (format) TableRowEntry Element (format) TableRowEntry (Format) の要素Entryselectedby for TableRowEntry (Format) の SelectionCondition に対して EntrySelectedBy for TableRowEntry (Format) ScriptBlock 要素の selectioncondition 要素
 
@@ -29,7 +29,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`ScriptBlock` 要素の親要素について説明します。
+次のセクションでは、`ScriptBlock` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 

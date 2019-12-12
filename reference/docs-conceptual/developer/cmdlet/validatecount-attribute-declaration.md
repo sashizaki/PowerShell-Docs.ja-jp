@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 516af1ef-2c2e-408d-84bc-865f5bccf761
 caps.latest.revision: 11
 ms.openlocfilehash: ffc45f6b80a2b7ed22f27d083d042b1de7f353f6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369231"
 ---
 # <a name="validatecount-attribute-declaration"></a>ValidateCount 属性の宣言
@@ -31,9 +31,9 @@ ValidateCount 属性では、コマンドレットパラメーターに許可さ
 
 #### <a name="parameters"></a>パラメーター
 
-`MinLength` ([System.string][]) が必要です。 引数の最小数を指定します。
+`MinLength` ([System.Int32][]) が必要です。 引数の最小数を指定します。
 
-`MaxLength` ([System.string][]) が必要です。 引数の最大数を指定します。
+`MaxLength`([System.Int32][]) が必要です。 引数の最大数を指定します。
 
 ## <a name="remarks"></a>コメント
 
@@ -43,9 +43,9 @@ ValidateCount 属性では、コマンドレットパラメーターに許可さ
 
 - Windows PowerShell ランタイムは、次の状況でエラーをスローします。
 
-    - @No__t-0 および `MaxLength` 属性パラメーター[System.string][]system.string ではありません。
+    - `MinLength` 属性と `MaxLength` 属性パラメーター[System.Int32][]system.string ではありません。
 
-    - @No__t-0 属性パラメーターの値が、`MinLength` 属性パラメーターの値未満です。
+    - `MaxLength` 属性パラメーターの値が `MinLength` 属性パラメーターの値未満です。
 
 - ValidateCount 属性は、 [System. Automation. ValidateCountAttribute][]よって定義されています。
 
@@ -60,5 +60,5 @@ ValidateCount 属性では、コマンドレットパラメーターに許可さ
 [引数カウントを検証する方法]: how-to-validate-an-argument-count.md
 [Windows PowerShell コマンドレットの記述]: writing-a-windows-powershell-cmdlet.md
 
-[System.string]: /dotnet/api/System.Int32
+[System.Int32]: /dotnet/api/System.Int32
 [System. Automation. ValidateCountAttribute]: /dotnet/api/System.Management.Automation.ValidateCountAttribute

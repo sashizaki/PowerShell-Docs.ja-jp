@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: cf6c1442-60aa-477a-8f30-ab02b1b11039
 caps.latest.revision: 7
 ms.openlocfilehash: d4a5fc934a41b00f89862674e44e4540680674f7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361231"
 ---
 # <a name="how-to-add-parameter-information"></a>パラメーター情報を追加する方法
@@ -175,7 +175,7 @@ PARAMETERS セクションの内容は、ヘルプトピックの「構文」セ
 
 パラメーターの既定値は、コマンドレットのヘルプトピックのすべてのビューに表示されません。 ただし、ユーザーがトピックの完全な (Get-help \<のファイル名 > 完全) またはパラメーター (Get-help \<のファイル名 > パラメーター) ビューを要求したときに、パラメーターの説明の後にあるテーブル (パラメーター属性と共に) に表示されます。
 
-次の XML は、`<command:parameter>` ノードに追加された `<dev:defaultValue>` タグのペアを示しています。 既定値は、終了 `</command:parameterValue>` タグの直後 (パラメーター値が指定されている場合)、またはパラメーターの説明の終了 `</maml:description>` タグの直後に続くことに注意してください。 指定.
+次の XML は、`<command:parameter>` ノードに追加された `<dev:defaultValue>` タグのペアを示しています。 既定値は、終了 `</command:parameterValue>` タグの直後 (パラメーター値が指定されている場合)、またはパラメーターの説明の終了 `</maml:description>` タグの直後に続くことに注意してください。 name。
 
 ```xml
 <command:parameters>

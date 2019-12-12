@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 20cbf009-9633-476e-b0b3-5604117ef2dd
 caps.latest.revision: 4
 ms.openlocfilehash: adde7c205f26c9bb87307f7eaa56988cefccdeaf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367671"
 ---
 # <a name="writing-windows-powershell-help"></a>Windows PowerShell ヘルプの作成
 
-このドキュメントは、Windows PowerShell コマンドレット、プロバイダー、および `Get-Help` コマンドレットを使用してコマンドラインで表示できる概念に関するトピックに関するヘルプコンテンツを記述するすべてのユーザー向けに書かれています。
+このドキュメントは、Windows PowerShell コマンドレット、プロバイダー、および `Get-Help` コマンドレットを使用してコマンドラインで表示できる概念に関するトピックのヘルプコンテンツを記述するすべてのユーザー向けに書かれています。
 
 ## <a name="cmdlet-help"></a>コマンドレットのヘルプ
 

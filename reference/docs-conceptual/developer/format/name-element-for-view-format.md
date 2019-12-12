@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3a31010d-1db9-44ae-a7f3-6ed32cb641cb
 caps.latest.revision: 16
 ms.openlocfilehash: 097d20cb6a04635124d1f96823248df6095ca1af
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362641"
 ---
 # <a name="name-element-for-view-format"></a>View の Name 要素 (書式)
@@ -41,7 +41,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[View 要素 (Format)](./view-element-format.md)|1つ以上の .NET オブジェクトのメンバーを表示するために使用されるビューを定義します。|
 
@@ -68,7 +68,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [リストビューの作成](./creating-a-list-view.md)
 
@@ -76,7 +76,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 [ワイドビューの作成](./creating-a-wide-view.md)
 
-[カスタムコントロールの作成](./creating-custom-controls.md)
+[カスタム コントロールの作成](./creating-custom-controls.md)
 
 [View 要素 (Format)](./view-element-format.md)
 

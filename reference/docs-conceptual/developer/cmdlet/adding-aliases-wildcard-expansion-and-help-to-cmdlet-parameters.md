@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
 ms.openlocfilehash: d210a852a90d94df2ab360dd86f0b83a396330e3
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74415648"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>エイリアス、ワイルドカード展開、ヘルプをコマンドレット パラメーターに追加する
@@ -128,7 +128,7 @@ if (!wildcard.IsMatch(processName))
 }
 ```
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>コード サンプル
 
 完全なC#サンプルコードについては、「 [StopProcessSample03 sample](./stopprocesssample03-sample.md)」を参照してください。
 
@@ -150,7 +150,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     PS> stop-proc -ProcessName notepad
     ```
 
-次の出力が表示されます。
+次のような出力が表示されます。
 
     ```
     Confirm
@@ -165,7 +165,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     PS> stop-proc
     ```
 
-次の出力が表示されます。
+次のような出力が表示されます。
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -182,7 +182,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     PS> stop-proc -Name *note*
     ```
 
-次の出力が表示されます。
+次のような出力が表示されます。
 
     ```
     Confirm
@@ -191,7 +191,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-次の出力が表示されます。
+次のような出力が表示されます。
 
     ```
     Confirm
@@ -200,7 +200,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-次の出力が表示されます。
+次のような出力が表示されます。
 
     ```
     Confirm
@@ -209,7 +209,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [システムを変更するコマンドレットを作成する](./creating-a-cmdlet-that-modifies-the-system.md)
 

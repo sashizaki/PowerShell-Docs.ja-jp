@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1a1ad921-5816-4937-acf1-ed4760fae740
 caps.latest.revision: 8
 ms.openlocfilehash: cfee55576518cf9ce38501192872ce94054f5213
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364471"
 ---
 # <a name="how-to-override-input-processing-methods"></a>入力処理メソッドをオーバーライドする方法
@@ -29,7 +29,7 @@ ms.locfileid: "72364471"
 
 - [システム](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)の保護されたオーバーライドを宣言してください。
 
-次のクラスは、サンプルメッセージを出力します。 このクラスを使用するには、コマンドレット属性の動詞と名詞を変更し、新しい動詞と名詞を反映するようにクラスの名前を変更します。次に、必要な機能を、[システム](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)のオーバーライドに追加します。b.
+次のクラスは、サンプルメッセージを出力します。 このクラスを使用するには、コマンドレット属性の動詞と名詞を変更し、新しい動詞と名詞を反映するようにクラスの名前を変更します。次に、必要な機能を、[システム](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)のオーバーライドメソッドのオーバーライドに追加します。
 
 ```csharp
 [Cmdlet(VerbsDiagnostic.Test, "BeginProcessingClass")]

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5d22f47b-3679-4587-a559-94454415d2dd
 caps.latest.revision: 5
 ms.openlocfilehash: f2164b97e4f3b3346e66d00834aa299659b62b33
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416097"
 ---
 # <a name="getproc04-vbnet-sample-code"></a>GetProc04 (VB.NET) サンプル コード
@@ -24,11 +24,11 @@ ms.locfileid: "74416097"
 >
 > ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>コード サンプル
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesgetproc04#GetProc04vball](Msh_samplesgetproc04#GetProc04vball)]  -->
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 

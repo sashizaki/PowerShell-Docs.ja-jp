@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a5729091-78a9-4bc1-abac-210bc20c6dbe
 caps.latest.revision: 7
 ms.openlocfilehash: f93dc20a9c5f87c14605578062b1e60f5a3d25cf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363651"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-view-format"></a>View の Controls の CustomItem の Frame 要素 (書式)
@@ -35,7 +35,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`Frame` 要素の親要素について説明します。
+次のセクションでは、`Frame` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -46,10 +46,10 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 |要素|[説明]|
 |-------------|-----------------|
 |`CustomItem Element`|必須の要素|
-|[ビューのコントロールのフレームの FirstLineHanging 要素 (形式)](./firstlinehanging-element-for-frame-for-controls-for-view-format.md)|省略可能な要素。<br /><br /> 最初の行を左にシフトする文字数を指定します。|
-|[ビューのコントロールのフレームの FirstLineIndent 要素 (Format)](./firstlineindent-element-for-frame-for-controls-for-view-format.md)|省略可能な要素。<br /><br /> 最初の行を右にシフトする文字数を指定します。|
-|[ビューのコントロールのフレームの左インデント要素 (書式)](./leftindent-element-for-frame-for-controls-for-view-format.md)|省略可能な要素。<br /><br /> データを左余白から移動する文字数を指定します。|
-|[ビューのコントロールのフレームの右インデント要素 (書式)](./rightindent-element-for-frame-for-controls-for-view-format.md)|省略可能な要素。<br /><br /> データを右余白から移動する文字数を指定します。|
+|[ビューのコントロールのフレームの FirstLineHanging 要素 (形式)](./firstlinehanging-element-for-frame-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> 最初の行を左にシフトする文字数を指定します。|
+|[ビューのコントロールのフレームの FirstLineIndent 要素 (Format)](./firstlineindent-element-for-frame-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> 最初の行を右にシフトする文字数を指定します。|
+|[ビューのコントロールのフレームの左インデント要素 (書式)](./leftindent-element-for-frame-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> データを左余白から移動する文字数を指定します。|
+|[ビューのコントロールのフレームの右インデント要素 (書式)](./rightindent-element-for-frame-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> データを右余白から移動する文字数を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
@@ -59,7 +59,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="remarks"></a>コメント
 
-[Firstlinehanging](./firstlinehanging-element-for-frame-for-controls-for-view-format.md)と[firstlinehanging](./firstlineindent-element-for-frame-for-controls-for-view-format.md)要素を同じ `Frame` 要素で指定することはできません。
+同じ `Frame` 要素で[Firstlinehanging](./firstlinehanging-element-for-frame-for-controls-for-view-format.md)と[firstlinehanging](./firstlineindent-element-for-frame-for-controls-for-view-format.md)要素を指定することはできません。
 
 ## <a name="see-also"></a>参照
 

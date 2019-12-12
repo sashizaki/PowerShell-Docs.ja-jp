@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: f71ea35d-cff5-4e44-a5c6-3a747ed4c4d9
 caps.latest.revision: 9
 ms.openlocfilehash: 6f6640afb15b3608669538f9b5f53d7a8a5c380d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365751"
 ---
 # <a name="declaring-properties-as-parameters"></a>パラメーターとしてプロパティを宣言する
 
 このトピックでは、コマンドレットのパラメーターを宣言する前に理解しておく必要がある基本的な情報について説明します。
 
-コマンドレットクラス内のコマンドレットのパラメーターを宣言するには、各パラメーターを表すパブリックプロパティを定義し、1つまたは複数のパラメーター属性を各プロパティに追加します。 Windows PowerShell ランタイムは、パラメーター属性を使用して、コマンドレットパラメーターとしてプロパティを識別します。 パラメーター属性を宣言するための基本構文は、`[Parameter()]` です。
+コマンドレットクラス内のコマンドレットのパラメーターを宣言するには、各パラメーターを表すパブリックプロパティを定義し、1つまたは複数のパラメーター属性を各プロパティに追加します。 Windows PowerShell ランタイムは、パラメーター属性を使用して、コマンドレットパラメーターとしてプロパティを識別します。 パラメーター属性を宣言するための基本構文は `[Parameter()]`です。
 
 必須パラメーターとして定義されたプロパティの例を次に示します。
 

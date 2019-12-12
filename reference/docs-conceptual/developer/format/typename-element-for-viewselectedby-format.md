@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0ad807a9-d7d8-4e96-b799-9c6a7677cc2d
 caps.latest.revision: 12
 ms.openlocfilehash: e2028c479103cc414295dc24a0f9bb69190bfc66
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361441"
 ---
 # <a name="typename-element-for-viewselectedby-format"></a>ViewSelectedBy の TypeName 要素 (書式)
@@ -47,7 +47,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="text-value"></a>テキスト値
 
-.NET 型の完全修飾名 (`System.IO.DirectoryInfo` など) を指定します。
+`System.IO.DirectoryInfo`など、.NET 型の完全修飾名を指定します。
 
 ## <a name="remarks"></a>コメント
 
@@ -75,7 +75,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 [ワイドビューの作成](./creating-a-wide-view.md)
 
-[カスタムコントロールの作成](./creating-custom-controls.md)
+[カスタム コントロールの作成](./creating-custom-controls.md)
 
 [ViewSelectedBy 要素 (形式)](./viewselectedby-element-format.md)
 

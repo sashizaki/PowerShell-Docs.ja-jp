@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
 caps.latest.revision: 9
 ms.openlocfilehash: d732bce1af446090c3e5741eebeba737f86c7ca8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369661"
 ---
 # <a name="how-to-support-jobs"></a>ジョブをサポートする方法
@@ -47,7 +47,7 @@ ms.locfileid: "72369661"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. レコード処理メソッドで、`if` ステートメントを追加して、コマンドレットをジョブとして実行する必要があるかどうかを検出します。 次のコードでは、[このメソッドを使用してい](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)ます。
+3. レコード処理メソッドで、コマンドレットをジョブとして実行する必要があるかどうかを検出する `if` ステートメントを追加します。 次のコードでは、[このメソッドを使用してい](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)ます。
 
     ```csharp
     protected override void ProcessRecord()

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b8b6739b-770c-432a-95ab-551c7507c51f
 caps.latest.revision: 6
 ms.openlocfilehash: 3b5ce60d3a0d76988af48f49445a5478a415d498
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361671"
 ---
 # <a name="typename-element-for-entryselectedby-for-groupby-format"></a>GroupBy の EntrySelectedBy の TypeName 要素 (書式)
@@ -29,7 +29,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`TypeName` 要素の親要素について説明します。
+次のセクションでは、`TypeName` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -47,7 +47,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (�
 
 ## <a name="text-value"></a>テキスト値
 
-.NET 型の完全修飾名 (`System.IO.DirectoryInfo` など) を指定します。
+`System.IO.DirectoryInfo`など、.NET 型の完全修飾名を指定します。
 
 ## <a name="remarks"></a>コメント
 
@@ -57,7 +57,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (�
 
 ## <a name="see-also"></a>参照
 
-[カスタムコントロールの作成](./creating-custom-controls.md)
+[カスタム コントロールの作成](./creating-custom-controls.md)
 
 [GroupBy の CustomEntry の EntrySelectedBy 要素 (形式)](./entryselectedby-element-for-customentry-for-groupby-format.md)
 

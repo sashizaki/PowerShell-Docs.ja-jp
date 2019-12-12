@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 3da88ff9-c4c7-4ace-aa24-0a29c8cfa060
 caps.latest.revision: 6
 ms.openlocfilehash: 4afe0370f7a2c5b17826544e94e76650611c9d68
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417503"
 ---
 # <a name="creating-a-windows-powershell-content-provider"></a>Windows PowerShell コンテンツ プロバイダーを作成する
@@ -195,7 +195,7 @@ public object ClearContentDynamicParameters(string path)
 
 [!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L1819-L1822 "AccessDBProviderSample06.cs")]
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>コード サンプル
 
 完全なサンプルコードについては、「 [AccessDbProviderSample06 のコードサンプル](./accessdbprovidersample06-code-sample.md)」を参照してください。
 
@@ -244,7 +244,7 @@ Zip       : 98089
 Country   : USA
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell プロバイダーの作成](./how-to-create-a-windows-powershell-provider.md)
 

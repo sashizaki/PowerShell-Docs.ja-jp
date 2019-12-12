@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 6c24dd44-a8ec-421d-ac86-90912e1a8cc6
 caps.latest.revision: 5
 ms.openlocfilehash: 7166881bd1403ea8c81ec2928321f6b93e3ac58d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360271"
 ---
 # <a name="how-to-create-a-console-shell"></a>コンソール シェルを作成する方法
@@ -50,7 +50,7 @@ make-shell
 > [!CAUTION]
 > アセンブリへの UNC パスは、シェルではサポートされていません。
 
-|パラメーター|説明|
+|パラメーター|[説明]|
 |---------------|-----------------|
 |-out n .exe|必須。 生成するシェルの名前。 パスは、このパラメーターの一部として指定されます。<br /><br /> この値が指定されていない場合、シェルによって ".exe" がこの値に追加されます。 **注意:** 参照されている .dll ファイルと同じ名前の出力ファイルを作成しないでください。 これを行おうとすると、シェルの作成ツールは同じ名前の .cs ファイルを作成します。これにより、コマンドレットのソースコードを含む .cs ファイルが上書きされます。|
 |-名前空間 ns|必須。 Runspaceconfiguration クラスに対して使用する名前空間[。](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration)これにより、キットが生成およびコンパイルされます。|
@@ -68,7 +68,7 @@ make-shell
 |-?<br /><br /> -ヘルプ|著作権メッセージとシェルのコマンドラインオプションを表示します。|
 |-verbose|シェルの作成中に詳細情報を表示します。|
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 

@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 853b7e5d-76c1-490e-8269-0ef31ba2ff13
 caps.latest.revision: 10
 ms.openlocfilehash: dc1ae92af8a57d6197b595db8e098256ac444b78
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360001"
 ---
 # <a name="accessdbprovidersample01"></a>AccessDBProviderSample01
 
 このサンプルでは、system.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)クラスから直接派生するプロバイダークラスを宣言する方法を示します。 すべてを網羅しておく目的でここに含めておきます。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 > [!IMPORTANT]
 > プロバイダークラスは、ほとんどの場合、次のいずれかのクラスから派生し、他のプロバイダーインターフェイスを実装する可能性があります。
@@ -30,9 +30,9 @@ ms.locfileid: "72360001"
 >
 > プロバイダーの機能に基づいて派生するプロバイダークラスを選択する方法の詳細については、「 [Windows PowerShell プロバイダーの設計](./provider-types.md)」を参照してください。
 
-このサンプルでは、次のことを示します。
+このサンプルは、次の操作方法を示します。
 
-- @No__t-0 属性を宣言しています。
+- `CmdletProvider` 属性を宣言しています。
 
 - [システム](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)の.......................................
 

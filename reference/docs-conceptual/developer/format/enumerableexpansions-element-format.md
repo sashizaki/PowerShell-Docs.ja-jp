@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 50c33892-2ade-44c2-906c-81e5f5ca21f2
 caps.latest.revision: 9
 ms.openlocfilehash: 1ecbda8a3b623757517019105e3b1ee46ccbb55c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363301"
 ---
 # <a name="enumerableexpansions-element-format"></a>EnumerableExpansions 要素 (書式)
@@ -31,7 +31,7 @@ Configuration 要素 (Format) DefaultSettings 要素 (Format) 列挙 Able展開�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`EnumerableExpansions` 要素の親要素について説明します。 使用できる子要素の数に制限はありません。
+次のセクションでは、`EnumerableExpansions` 要素の属性、子要素、および親要素について説明します。 使用できる子要素の数に制限はありません。
 
 ### <a name="attributes"></a>属性
 
@@ -41,7 +41,7 @@ Configuration 要素 (Format) DefaultSettings 要素 (Format) 列挙 Able展開�
 
 |要素|[説明]|
 |-------------|-----------------|
-|[列挙 Able展開要素 (形式)](./enumerableexpansion-element-format.md)|省略可能な要素。<br /><br /> ビューに表示されるときに展開される特定の .NET コレクションオブジェクトを定義します。|
+|[列挙 Able展開要素 (形式)](./enumerableexpansion-element-format.md)|省略可能な要素です。<br /><br /> ビューに表示されるときに展開される特定の .NET コレクションオブジェクトを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 

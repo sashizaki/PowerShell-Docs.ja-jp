@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7b9a4912-d755-42f3-8058-53c0797e28e4
 caps.latest.revision: 6
 ms.openlocfilehash: 371913eda2b09ff6788494b68738f2ad53ccb115
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361861"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-groupby-format"></a>GroupBy の SelectionCondition の SelectionSetName 要素 (書式)
@@ -29,7 +29,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`SelectionSetName` 要素の親要素について説明します。
+次のセクションでは、`SelectionSetName` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 231e9c6d-09ec-4e68-80ee-0c8f7fe1b9f5
 caps.latest.revision: 7
 ms.openlocfilehash: 49e2c0cf09dfa55b535effcd431e980daf12fac3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368441"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-customcontrol-format"></a>CustomControl の EntrySelectedBy の SelectionCondition 要素 (書式)
@@ -34,7 +34,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`SelectionCondition` 要素の親要素について説明します。
+次のセクションでは、`SelectionCondition` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -44,10 +44,10 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 |要素|[説明]|
 |-------------|-----------------|
-|[CustomControl for ビュー (Format) の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|省略可能な要素。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
-|[CustomControl for ビュー (Format) の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)|省略可能な要素。<br /><br /> 条件をトリガーするスクリプトを指定します。|
-|[View (Format) のカスタムコントロールの SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|省略可能な要素。<br /><br /> 条件をトリガーする .NET 型のセットを指定します。|
-|[CustomControl for ビュー (Format) の SelectionCondition の TypeName 要素](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|省略可能な要素。<br /><br /> 条件をトリガーする .NET 型を指定します。|
+|[CustomControl for ビュー (Format) の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
+|[CustomControl for ビュー (Format) の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-customcontrol-for-view-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーするスクリプトを指定します。|
+|[View (Format) のカスタムコントロールの SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型のセットを指定します。|
+|[CustomControl for ビュー (Format) の SelectionCondition の TypeName 要素](./typename-element-for-selectioncondition-for-customcontrol-for-view-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 

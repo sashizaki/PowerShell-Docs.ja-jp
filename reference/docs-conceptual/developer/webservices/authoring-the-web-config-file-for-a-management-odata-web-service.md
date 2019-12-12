@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: d569f5d5-9746-40c0-be5e-f218bc4560f7
 caps.latest.revision: 4
 ms.openlocfilehash: f52953ee091f05df5f355719ecba788d3d5ee055
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359791"
 ---
 # <a name="authoring-the-webconfig-file-for-a-management-odata-web-service"></a>Management OData Web サービスの Web.config ファイルを作成する
 
-Management OData web サービスをデプロイする前に、XML スキーマファイルと、 [Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)を[実装する dll を参照するように web.config ファイルを構成する必要があります。Register-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)インターフェイス () を行います。
+Management OData web サービスを配置する前に、XML スキーマファイルと、 [Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)および[register-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)インターフェイスを実装する dll をポイントするように web.config ファイルを構成する必要があります。このような場合には、
 
 ## <a name="sample-config-file"></a>サンプル構成ファイル
 

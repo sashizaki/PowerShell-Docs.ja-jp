@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 697791b3-2135-4a39-b9d7-8566ed67acf2
 caps.latest.revision: 13
 ms.openlocfilehash: bb5d036e5658c365a4fafa2cac05c0bba9f87019
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360701"
 ---
 # <a name="importing-a-powershell-module"></a>PowerShell モジュールをインポートする
@@ -41,7 +41,7 @@ Import-Module -Name C:\myRandomDirectory\myModule -Verbose
 
 ## <a name="implicitly-importing-a-module-powershell-30"></a>モジュールを暗黙的にインポートする (PowerShell 3.0)
 
-Windows PowerShell 3.0 以降では、モジュール内のコマンドレットまたは関数がコマンドで使用されると、モジュールは自動的にインポートされます。 この機能は、 **PSModulePath**環境変数の値に含まれているディレクトリ内の任意のモジュールに対して機能します。 ただし、モジュールを有効なパスに保存しない場合でも、上記の明示的な[モジュール](/powershell/module/Microsoft.PowerShell.Core/Import-Module)を使用して読み込むことができます。
+Windows PowerShell 3.0 以降、モジュールのコマンドレットまたは関数をコマンドで使用すると、モジュールは自動的にインポートされます。 この機能は、 **PSModulePath**環境変数の値に含まれているディレクトリ内の任意のモジュールに対して機能します。 ただし、モジュールを有効なパスに保存しない場合でも、上記の明示的な[モジュール](/powershell/module/Microsoft.PowerShell.Core/Import-Module)を使用して読み込むことができます。
 
 次のアクションを実行すると、モジュールの自動インポートがトリガーされます ("モジュールの自動読み込み" とも呼ばれます)。
 
@@ -76,6 +76,6 @@ Windows PowerShell 3.0 以降では、モジュール内のコマンドレット
 
 - `Alias`: このパラメーターによって、エクスポートされるエイリアスが制限されます (モジュールマニフェストを使用している場合は、「are Asestoexport キー」を参照してください)。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell モジュールの作成](./writing-a-windows-powershell-module.md)

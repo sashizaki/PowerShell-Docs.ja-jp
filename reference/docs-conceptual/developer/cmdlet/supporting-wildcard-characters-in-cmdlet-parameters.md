@@ -7,10 +7,10 @@ ms.suite: ''
 ms.tgt_pltfrm: ''
 ms.topic: article
 ms.openlocfilehash: 19644c5bc186a5554d6b134a67fc7c4d7aa7b64c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365311"
 ---
 # <a name="supporting-wildcard-characters-in-cmdlet-parameters"></a>コマンドレット パラメーターでワイルドカード文字をサポートする
@@ -30,7 +30,7 @@ ms.locfileid: "72365311"
 
 Windows PowerShell では、次のワイルドカード文字がサポートされています。
 
-| ワイルドカード |                             説明                             |  例   |     [一致する]      | ［次の値に一致しない］ |
+| ワイルドカード |                             [説明]                             |  例   |     [一致する]      | ［次の値に一致しない］ |
 | -------- | ------------------------------------------------------------------- | ---------- | ---------------- | -------------- |
 | *        | 指定された位置を開始位置として、0個以上の文字と一致します | `a*`       | A、ag、Apple     |                |
 | ?        | 指定した位置にある任意の文字と一致します                     | `?n`       | 、In、on       | 済み            |
@@ -61,7 +61,7 @@ PowerShell コマンドプロンプトから使用する場合:
 
 - "John Smith \`\`[*\`']"
 
-このパターンは、"John Smith [Marketing]" または "John Smith [Development]" と一致します。 次に例を示します。
+このパターンは、"John Smith [Marketing]" または "John Smith [Development]" と一致します。 たとえば、次のようになります。
 
 ```
 PS> "John Smith [Marketing]" -like "John Smith ``[*``]"
@@ -76,7 +76,7 @@ True
 コマンドレットのパラメーターでワイルドカード文字がサポートされている場合、通常、この操作では配列の出力が生成されます。
 場合によっては、ユーザーが1つの項目のみを使用する可能性があるため、配列の出力をサポートすることは意味がありません。 たとえば、`Set-Location` コマンドレットでは、ユーザーが1つの場所のみを設定するため、配列の出力はサポートされません。 このインスタンスでは、コマンドレットはワイルドカード文字を引き続きサポートしますが、1つの場所を強制的に解決します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
 

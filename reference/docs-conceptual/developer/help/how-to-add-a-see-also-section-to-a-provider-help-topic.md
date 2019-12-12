@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 9c754ac3-cee3-4c13-9bad-e499c8a68a09
 caps.latest.revision: 4
 ms.openlocfilehash: f5c48fd04c620828a6e99c5c5424d11b31fd10e5
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367841"
 ---
 # <a name="how-to-add-a-see-also-section-to-a-provider-help-topic"></a>プロバイダーのヘルプ トピックに関連項目を追加する方法
@@ -29,7 +29,7 @@ ms.locfileid: "72367841"
 
 1. Dll-help ファイル*の `providerHelp`* 要素内に、`RelatedLinks` 要素を追加します。 `RelatedLinks` 要素は、`providerHelp` 要素の最後の要素である必要があります。 各プロバイダーヘルプトピックでは、`RelatedLinks` 要素が1つだけ許可されます。
 
-   次に例を示します。
+   たとえば、次のようになります。
 
     ```xml
     <providerHelp>
@@ -40,7 +40,7 @@ ms.locfileid: "72367841"
 
 2. **「関連**項目」セクションの各トピックについて、`RelatedLinks` 要素内に `navigationLink` 要素を追加します。 次に、各 `navigationLink` 要素内に、1つの `linkText` 要素と1つの `uri` 要素を追加します。 `uri` 要素を使用していない場合は、空の要素 (\<uri/>) として追加できます。
 
-   次に例を示します。
+   たとえば、次のようになります。
 
     ```xml
     <providerHelp>

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2933a6ca-fe92-4ba2-97ee-ef0f0d5fdfcf
 caps.latest.revision: 8
 ms.openlocfilehash: b73284adb4bf228510bf8134aa4c6a10561b7ea2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359771"
 ---
 # <a name="configuring-role-based-authorization"></a>ロール ベースの認可を構成する
@@ -23,7 +23,7 @@ ms.locfileid: "72359771"
 
 ## <a name="modifying-the-rbacconfigurationxml-file"></a>RBacConfiguration .xml ファイルの変更
 
-このファイルは、アプリケーションの承認ポリシーを定義します。 ロールは `Group` ノードを使用して定義されます。 @No__t_0 ノードは、そのグループに割り当てられたユーザーが実行できる Windows PowerShell コマンドを定義します。 ユーザーは `User` ノードを使用してグループに割り当てられます。
+このファイルは、アプリケーションの承認ポリシーを定義します。 ロールは `Group` ノードを使用して定義されます。 `Group` ノードは、そのグループに割り当てられたユーザーが実行できる Windows PowerShell コマンドを定義します。 ユーザーは `User` ノードを使用してグループに割り当てられます。
 
 これらの例では、[管理者 `Group`] ノードにモジュールを追加し、各グループにユーザーを追加します。
 
@@ -97,9 +97,9 @@ ms.locfileid: "72359771"
 
 #### <a name="adding-a-user-to-a-group-node"></a>グループノードへのユーザーの追加
 
-1. テキストエディターで、 **Rbacconfiguration .xml**ファイルを開きます。 このファイルは、インストール前にエンドポイント名を変更しなかった場合は、C: \\ \inetpub\wwwroot\Modata フォルダーにあります。
+1. テキストエディターで、 **Rbacconfiguration .xml**ファイルを開きます。 このファイルは、インストール前にエンドポイント名を変更しなかった場合は、C:\\\inetpub\wwwroot\Modata フォルダーにあります。
 
-2. [@No__t_0] ノードの終了タグのすぐ後に、次の XML を追加します。
+2. [`Users`] ノードの終了タグのすぐ後に、次の XML を追加します。
 
    ```xml
    <User Name="UserName" GroupName="AdminGroup" AuthenticationType="Basic" DomainName="DomainName"/>

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eee505c3-ff2c-4bfb-b48a-037ec34bce72
 caps.latest.revision: 8
 ms.openlocfilehash: a0c8548dd916a5b32a56462058858f887a9d5803
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363371"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-view-format"></a>View の Controls の Control の CustomControl 要素 (書式)
@@ -31,7 +31,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`CustomControl` 要素の親要素について説明します。 子要素を1つだけ指定する必要があります。
+次のセクションでは、`CustomControl` 要素の属性、子要素、および親要素について説明します。 子要素を1つだけ指定する必要があります。
 
 ### <a name="attributes"></a>属性
 

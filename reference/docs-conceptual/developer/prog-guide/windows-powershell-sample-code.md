@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
 caps.latest.revision: 7
 ms.openlocfilehash: e9df44b17453e9f73f6eb388d9cbc8a69fce4ba2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366421"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell サンプル コード
@@ -25,7 +25,7 @@ Windows PowerShell®のサンプルは、Windows SDK を通じて入手できま
 
 ## <a name="sample-code-listing"></a>サンプルコードリスト
 
-|サンプル コード|説明|
+|サンプル コード|[説明]|
 |-----------------|-----------------|
 |[AccessDbProviderSample01 のコードサンプル](./accessdbprovidersample01-code-sample.md)|これは、「基本的な[Windows PowerShell プロバイダーの作成](./creating-a-basic-windows-powershell-provider.md)」で説明されているプロバイダーです。|
 |[AccessDbProviderSample02 のコードサンプル](./accessdbprovidersample02-code-sample.md)|これは、「 [Windows PowerShell ドライブプロバイダーの作成](./creating-a-windows-powershell-drive-provider.md)」で説明されているプロバイダーです。|
@@ -51,7 +51,7 @@ Windows PowerShell®のサンプルは、Windows SDK を通じて入手できま
 |[RunSpace09 のコードサンプル](./runspace09-code-sample.md)|これは、「[パイプラインを非同期に呼び出すコンソールアプリケーションの作成](https://msdn.microsoft.com/en-us/198c1c94-2a06-457e-93ce-c0d910618e47)」で説明されている Runspace09 サンプルのソースコードです。|
 |[RunSpace10 のコードサンプル](./runspace10-code-sample.md)|これは Runspace10 サンプルのソースコードであり、コマンドレットを[Runspaceconfiguration](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConfiguration)に追加し、変更された構成情報を使用して実行空間を作成します。|
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 

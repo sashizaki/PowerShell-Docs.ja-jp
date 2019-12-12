@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 4a1adad7-e864-4892-9d26-a6476a9698d2
 caps.latest.revision: 7
 ms.openlocfilehash: b65d953169f6daf15fb617ce4d0303cf4cb584ee
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368591"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>ListControl の EntrySelectedBy の SelectionCondition の ScriptBlock 要素 (書式)
 
-条件をトリガーするスクリプトを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、リストエントリが使用されます。
+条件をトリガーするスクリプトを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、リストエントリが使用されます。
 
 Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) ListControl 要素 (形式) ListEntries Element (format) ListEntry Element (format) ListEntry (Format) SelectionCondition 要素のエントリEntryselectedby for ListEntry (Format) の SelectionCondition に使用する EntrySelectedBy for ListEntry (Format) ScriptBlock 要素
 
@@ -29,7 +29,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`ScriptBlock` 要素の親要素について説明します。
+次のセクションでは、`ScriptBlock` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -63,7 +63,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 [ListEntry (Format) の EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-[リストビュー](./creating-a-list-view.md)
+[リスト ビュー](./creating-a-list-view.md)
 
 [ビューエントリまたはアイテムが使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)
 

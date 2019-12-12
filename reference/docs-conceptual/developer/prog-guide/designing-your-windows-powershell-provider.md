@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
 ms.openlocfilehash: 962d2ba9fd892c297a633276b9ac07a5fa75ea87
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366811"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Windows PowerShell プロバイダーを設計する
@@ -160,7 +160,7 @@ System.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation
 |`Get-Acl`|ファイルやオブジェクトなど、オペレーティングシステムのリソースを保護するために使用されるセキュリティ記述子の一部であるアクセス制御リスト (ACL) に含まれる情報を取得します。|
 |`Set-Acl`|ACL の情報を設定します。 これは、指定されたパスに対して指定された項目の[accesscontrol-namespace](/dotnet/api/System.Security.AccessControl.ObjectSecurity)のインスタンスの形式です。 このコマンドレットでは、Windows PowerShell プロバイダーがセキュリティ情報の設定をサポートしている場合に、レジストリ内のファイル、キー、サブキーに関する情報、またはその他のプロバイダー項目に関する情報を設定できます。|
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell プロバイダーの作成](./how-to-create-a-windows-powershell-provider.md)
 

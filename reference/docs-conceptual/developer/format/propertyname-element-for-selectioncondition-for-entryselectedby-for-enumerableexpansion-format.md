@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 9ae11924-0072-451e-bf70-c5ffb25dccc0
 caps.latest.revision: 13
 ms.openlocfilehash: 0c20512e660c8d2b61d063dbd7078b55b23efeb8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362321"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion の EntrySelectedBy の SelectionCondition の PropertyName 要素 (書式)
 
-条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、定義が使用されます。
+条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、定義が使用されます。
 
 Configuration 要素 (Format) DefaultSettings 要素 (format) 列挙 Able膨張要素 (format) 列挙 able膨張拡張要素 (format) の Entryselectedby 要素の entryselectedby 要素の EntrySelectedBy 要素列挙 able膨張 (Format) の EntrySelectedBy の SelectionCondition の列挙 Able展開 (Format) PropertyName 要素
 
@@ -29,7 +29,7 @@ Configuration 要素 (Format) DefaultSettings 要素 (format) 列挙 Able膨張�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`PropertyName` 要素の親要素について説明します。
+次のセクションでは、`PropertyName` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 

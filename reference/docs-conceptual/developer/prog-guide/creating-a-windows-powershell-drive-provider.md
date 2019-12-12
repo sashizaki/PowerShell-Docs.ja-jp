@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
 ms.openlocfilehash: 2e3d97e224b06bdf36ac0bc1237911e029ea762d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366831"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Windows PowerShell ドライブ プロバイダーを作成する
@@ -97,7 +97,7 @@ Windows PowerShell ランタイムがドライブを作成できるようにす�
 
 すべてのドライブプロバイダーは、ユーザーが見つけやすいように、ルートドライブをマウントする必要があります。 ルートドライブには、他のマウントされたドライブのルートとして機能する場所が一覧表示される場合があります。 たとえば、Active Directory プロバイダーは、ルート分散システム環境 (DSE) の `namingContext` 属性で見つかった名前付けコンテキストを一覧表示するドライブを作成する場合があります。 これは、ユーザーが他のドライブのマウントポイントを検出するのに役立ちます。
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>コード サンプル
 
 完全なサンプルコードについては、「 [AccessDbProviderSample02 のコードサンプル](./accessdbprovidersample02-code-sample.md)」を参照してください。
 
@@ -163,7 +163,7 @@ Windows PowerShell プロバイダーが Windows PowerShell に登録されて�
 
    **PS > 終了**
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell プロバイダーの作成](./how-to-create-a-windows-powershell-provider.md)
 

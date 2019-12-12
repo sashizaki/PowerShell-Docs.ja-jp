@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
 caps.latest.revision: 15
 ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367121"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>PowerShell バイナリ モジュールを記述する方法
@@ -89,6 +89,6 @@ ms.locfileid: "72367121"
 書式設定ファイルと型ファイルをインポートするには、モジュールマニフェストを作成する必要があります。
 「 [PowerShell モジュールマニフェストを記述する方法](how-to-write-a-powershell-module-manifest.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell モジュールの作成](./writing-a-windows-powershell-module.md)

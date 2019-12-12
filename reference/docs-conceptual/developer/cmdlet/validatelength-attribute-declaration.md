@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
 ms.openlocfilehash: a25fa2410fcc6803563573596af1bc99052c3ffa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369181"
 ---
 # <a name="validatelength-attribute-declaration"></a>ValidateLength 属性の宣言
@@ -43,9 +43,9 @@ ValidateLength 属性は、コマンドレットパラメーター引数の文�
 
 - Windows PowerShell ランタイムは、次の状況でエラーをスローします。
 
-    - @No__t-0 属性パラメーターの値が、`MinLength` 属性パラメーターの値より小さい場合。
+    - `MaxLength` 属性パラメーターの値が `MinLength` 属性パラメーターの値より小さい場合。
 
-    - @No__t-0 属性パラメーターが0に設定されている場合。
+    - `MaxLength` 属性パラメーターが0に設定されている場合。
 
     - 引数が文字列でない場合。
 

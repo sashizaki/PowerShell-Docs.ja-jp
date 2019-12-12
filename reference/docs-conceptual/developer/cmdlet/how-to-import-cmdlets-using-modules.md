@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a41d9e5f-de6f-47b7-9601-c108609320d0
 caps.latest.revision: 8
 ms.openlocfilehash: 2f145795a57c988da0cb4ed294142aa141c53cae
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364461"
 ---
 # <a name="how-to-import-cmdlets-using-modules"></a>モジュールを使用してコマンドレットをインポートする方法
@@ -40,7 +40,7 @@ ms.locfileid: "72364461"
 
    この手順は、コマンドレットをテストするために使用できます。 これにより、アセンブリ内のすべてのコマンドレットがセッションに追加されます。 モジュールの詳細については、「 [Windows PowerShell モジュールの記述](../module/writing-a-windows-powershell-module.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>「
 
 [PowerShell モジュールマニフェストを記述する方法](../module/how-to-write-a-powershell-module-manifest.md)
 

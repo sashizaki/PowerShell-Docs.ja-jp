@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 70532e7e-9cac-43c3-9687-e77011ecc878
 caps.latest.revision: 4
 ms.openlocfilehash: 5eb2186cbceee21f8b4a8c88b812e9c71f15e0af
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366031"
 ---
 # <a name="creating-a-workflow-by-using-a-windows-powershell-script"></a>Windows PowerShell スクリプトを利用してワークフローを作成する
@@ -28,7 +28,7 @@ workflow Invoke-HelloWorld {"Hello World from workflow"}
 
 ## <a name="implementing-parallel-and-sequence"></a>並列とシーケンスの実装
 
-[Windows Workflow Foundation](https://msdn.microsoft.com/en-us/library/ms735967.aspx)は、アクティビティの並列実行をサポートします。 Windows PowerShell スクリプトでこの機能を実装するには、スクリプトブロックの前に `parallel` キーワードを使用します。 @No__t 0 の構築を使用して、オブジェクトのコレクションを並列に反復処理することもできます。 並列ブロック内で連続した順序でアクティビティのグループを実行するには、そのアクティビティのグループをスクリプトブロックで囲み、ブロックの前に sequence キーワードを付けます。
+[Windows Workflow Foundation](https://msdn.microsoft.com/en-us/library/ms735967.aspx)は、アクティビティの並列実行をサポートします。 Windows PowerShell スクリプトでこの機能を実装するには、スクリプトブロックの前に `parallel` キーワードを使用します。 また、`foreach -parallel` の構築を使用して、オブジェクトのコレクションを並列に反復処理することもできます。 並列ブロック内で連続した順序でアクティビティのグループを実行するには、そのアクティビティのグループをスクリプトブロックで囲み、ブロックの前に sequence キーワードを付けます。
 
 ## <a name="joining-computers-to-a-domain"></a>ドメインへのコンピューターの参加
 

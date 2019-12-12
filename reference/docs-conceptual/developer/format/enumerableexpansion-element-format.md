@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 93d27173-9ae4-46e5-bb78-90525915cd70
 caps.latest.revision: 9
 ms.openlocfilehash: bc1e58c00ca8419f9204076f0a46050281e704db
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368751"
 ---
 # <a name="enumerableexpansion-element-format"></a>EnumerableExpansion 要素 (書式)
@@ -32,7 +32,7 @@ Configuration 要素 (Format) DefaultSettings 要素 (Format) Enumerableexpansio
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`EnumerableExpansion` 要素の親要素について説明します。
+次のセクションでは、`EnumerableExpansion` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -42,7 +42,7 @@ Configuration 要素 (Format) DefaultSettings 要素 (Format) Enumerableexpansio
 
 |要素|[説明]|
 |-------------|-----------------|
-|[列挙 Able展開 (形式) の EntrySelectedBy 要素](./entryselectedby-element-for-enumerableexpansion-format.md)|省略可能な要素。<br /><br /> この定義によって展開される .NET コレクションオブジェクトを定義します。|
+|[列挙 Able展開 (形式) の EntrySelectedBy 要素](./entryselectedby-element-for-enumerableexpansion-format.md)|省略可能な要素です。<br /><br /> この定義によって展開される .NET コレクションオブジェクトを定義します。|
 |[要素の展開 (形式)](./expand-element-format.md)|この定義に対してコレクションオブジェクトを展開する方法を指定します。|
 
 ### <a name="parent-elements"></a>親要素

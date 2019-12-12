@@ -11,10 +11,10 @@ helpviewer_keywords:
 ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
 caps.latest.revision: 11
 ms.openlocfilehash: 48b2b2b9ab2a39cf185ed54bcfa99d46562e13b6
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366281"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell リファレンス
@@ -23,7 +23,7 @@ Windows PowerShell は Microsoft .NET フレームワークに接続された環
 
 システム管理者は、Windows PowerShell を使用して、直接またはスクリプトを使用してコマンドを実行することで、システムリソースの管理を自動化することができます。
 
-## <a name="developer-audience"></a>開発者向け
+## <a name="developer-audience"></a>対象となる開発者
 
 Windows PowerShell Software Development Kit (SDK) は、Windows PowerShell によって提供される Api に関する参照情報を必要とするコマンド開発者向けに記述されています。 コマンド開発者は、windows powershell を使用して、Windows PowerShell で実行できるタスクを拡張するコマンドとプロバイダーの両方を作成します。
 
@@ -37,11 +37,11 @@ Windows PowerShell SDK に加えて、次のリソースについて詳しく説
 
 [Windows PowerShell コマンドレットの記述](./cmdlet/writing-a-windows-powershell-cmdlet.md)コマンドレットを設計しているプログラムマネージャーと、コマンドレットコードを実装する開発者のための情報とコード例を提供します。
 
-[Windows PowerShell チームブログ](https://blogs.msdn.microsoft.com/PowerShell/)他の Windows PowerShell ユーザーから学習し、コラボレーションするための最適なリソースです。 Windows PowerShell チームのブログを読み、Windows PowerShell ユーザーフォーラム (microsoft... windows. PowerShell) に参加します。 Windows Live Search を使用して、他の Windows PowerShell のブログとリソースを検索します。 そして、専門知識を身に付けておくと、自由にアイデアを投稿できます。
+[Windows PowerShell チームブログ](https://blogs.msdn.microsoft.com/PowerShell/)他の Windows PowerShell ユーザーから学習し、コラボレーションするための最適なリソースです。 Windows PowerShell チームのブログを読み、Windows PowerShell ユーザー フォーラム (microsoft.public.windows.powershell) に参加してください。 Windows Live Search を使用して、他の Windows PowerShell のブログとリソースを検索してください。 そして、専門知識を身に付けておくと、自由にアイデアを投稿できます。
 
 [PowerShell モジュールブラウザー](/powershell/module/)には、最新バージョンのコマンドラインヘルプトピックが用意されています。
 
-## <a name="class-libraries"></a>クラスライブラリ
+## <a name="class-libraries"></a>クラス ライブラリ
 
 [この名前](/dotnet/api/System.Management.Automation)空間は、Windows PowerShell のルート名前空間です。 これには、カスタムコマンドレットを実装するために必要なクラス、列挙体、およびインターフェイスが含まれています。 具体的には、すべてのコマンドレットクラスを派生させる必要がある基本クラス[です。](/dotnet/api/System.Management.Automation.Cmdlet) コマンドレットの詳細については、「」を参照してください。
 

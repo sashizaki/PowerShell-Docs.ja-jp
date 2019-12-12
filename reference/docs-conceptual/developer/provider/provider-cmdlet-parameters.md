@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b3d09eaa-924f-4e2b-adfb-14bb729090dd
 caps.latest.revision: 8
 ms.openlocfilehash: ad7f9737c646dd5cea5abb14b828236e40feac5a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366311"
 ---
 # <a name="provider-cmdlet-parameters"></a>コマンドレット コマンドレットのパラメーター
@@ -29,9 +29,9 @@ ms.locfileid: "72366311"
 
 `Clear-ItemProperty` コマンドレットを使用すると、 [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)メソッドを実装することによって、`Clear-ItemProperty` コマンドレットの `Path` および `Name` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
 
-`Copy-Item` コマンドレットを使用すると、 [ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)を実装することによって、`Copy-Item` コマンドレットの `Path`、`Destination`、および `Recurse` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。b.
+`Copy-Item` コマンドレットでは、 [ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドを実装することによって、`Copy-Item` コマンドレットの `Path`、`Destination`、および `Recurse` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
 
-ChildItems コマンドレットは、 [Containercmdletprovider Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)を実装することによって、`Get-ChildItem` コマンドレットの `Path` および `Recurse` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。と[Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)メソッドを提供しているとします。
+ChildItems コマンドレットは、 [Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)メソッドと Containercmdletprovider * メソッドを実装することによって、`Get-ChildItem` コマンドレットの `Path` パラメーターと `Recurse` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。このコマンドレットは、 [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)を実装します。
 
 `Get-Content` コマンドレットを使用すると、 [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)メソッドを実装することによって、`Get-Content` コマンドレットの `Path` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
 
@@ -43,13 +43,13 @@ ChildItems コマンドレットは、 [Containercmdletprovider Getchilditems *]
 
 `Move-Item` コマンドレットを使用すると、`Move-Item` コマンドレットの `Path` パラメーターと `Destination` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。そのためには、[このメソッドを](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)実装します。
 
-`New-Item` コマンドレットでは、 [Containercmdletprovider Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)を実装することによって、`New-Item` コマンドレットの `Path`、`ItemType`、および `Value` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。b.
+`New-Item` コマンドレットでは、 [Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドを実装することによって、`New-Item` コマンドレットの `Path`、`ItemType`、および `Value` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
 
-`New-ItemProperty` コマンドレットを使用すると、`Value` コマンドレットの `Path`、`Name`、`PropertyType`、および `New-ItemProperty` パラメーターに渡された値をプロバイダーがどのように使用するかを定義でき[ます。](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty)b.
+`New-ItemProperty` コマンドレットを使用すると、`Value` コマンドレットの `Path`、`Name`、`PropertyType`、および `New-ItemProperty` パラメーターに渡された値をプロバイダーがどのように使用するかを定義[できます。](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty)
 
 `Remove-Item`、 [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)メソッドを実装することによって、`Remove-Item` コマンドレットの `Path` および `Recurse` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
 
-`Remove-ItemProperty`、 [Idynamicpropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty)を実装することによって、`Remove-ItemProperty` コマンドレットの `Path` および `Name` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。b.
+`Remove-ItemProperty`、 [Idynamicpropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty)メソッドを実装することによって、`Remove-ItemProperty` コマンドレットの `Path` および `Name` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
 
 `Rename-Item` コマンドレットでは、 [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)メソッドを実装することによって、`Rename-Item` コマンドレットの `Path` および `NewName` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
 

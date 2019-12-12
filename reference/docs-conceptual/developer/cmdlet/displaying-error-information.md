@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 76fcc0c1-9795-45d3-a564-40f822b657b5
 caps.latest.revision: 8
 ms.openlocfilehash: 4bc8666ee9053eb368402c8644558f4fe2dcc9ee
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369971"
 ---
 # <a name="displaying-error-information"></a>エラー情報を表示する
@@ -26,7 +26,7 @@ $ stop-service lanmanworkstation
 You do not have sufficient permissions to stop the service Workstation.
 ```
 
-ただし、ユーザーは `$ErrorView` 変数を `"CategoryView"` に設定することにより、エラーをカテゴリ別に表示できます。 カテゴリビューでは、エラーの詳細な説明ではなく、エラーレコードからの特定の情報が表示されます。 このビューは、スキャンするエラーの一覧が長い場合に便利です。 カテゴリビューでは、前のエラーメッセージが次のように表示されます。
+ただし、ユーザーは `$ErrorView` 変数を `"CategoryView"`に設定することによって、エラーをカテゴリ別に表示できます。 カテゴリビューでは、エラーの詳細な説明ではなく、エラーレコードからの特定の情報が表示されます。 このビューは、スキャンするエラーの一覧が長い場合に便利です。 カテゴリビューでは、前のエラーメッセージが次のように表示されます。
 
 ```powershell
 $ $ErrorView = "CategoryView"

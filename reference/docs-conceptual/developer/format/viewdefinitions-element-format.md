@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 29840c10-2b30-4bb1-a8a0-ddf84d19c2d0
 caps.latest.revision: 18
 ms.openlocfilehash: c5ec80350c7707ccd41112ab5e1952e5dc198cca
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361421"
 ---
 # <a name="viewdefinitions-element-format"></a>ViewDefinitions 要素 (書式)
@@ -40,13 +40,13 @@ Configuration 要素 (Format) ViewDefinitions (フォーマット XML) 要素
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[View 要素 (Format)](./view-element-format.md)|1つ以上の .NET オブジェクトを表示するために使用されるビューを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[Configuration 要素 (形式)](./configuration-element-format.md)|書式設定ファイルのトップレベルの要素を表します。|
 
@@ -79,7 +79,7 @@ Configuration 要素 (Format) ViewDefinitions (フォーマット XML) 要素
 </Configuration>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Configuration 要素 (形式)](./configuration-element-format.md)
 

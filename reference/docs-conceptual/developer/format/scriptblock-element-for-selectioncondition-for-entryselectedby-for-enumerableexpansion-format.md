@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4126b799-c43d-4175-8513-6d761c65437e
 caps.latest.revision: 9
 ms.openlocfilehash: a51d8d22fa8b0c7f303a5e8f37edcc5e57724063
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368611"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion の EntrySelectedBy の SelectionCondition の ScriptBlock 要素 (書式)
@@ -29,7 +29,7 @@ Configuration 要素 (Format) DefaultSettings 要素 (format) 列挙 Able膨張�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`ScriptBlock` 要素の親要素について説明します。
+次のセクションでは、`ScriptBlock` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 

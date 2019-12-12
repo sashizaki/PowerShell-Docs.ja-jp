@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f2b58fa5-01bc-426c-a043-5c700d6578e9
 caps.latest.revision: 16
 ms.openlocfilehash: 443bf5f693d2ab161668de25a1097347826cb5c2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360561"
 ---
 # <a name="writing-help-for-windows-powershell-modules"></a>Windows PowerShell モジュールのヘルプを記述する
@@ -109,7 +109,7 @@ Windows PowerShell 3.0 以降では、コマンドレットと関数のヘルプ
 
 詳細については、「[オンラインヘルプのサポート](./supporting-online-help.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell モジュールの作成](./writing-a-windows-powershell-module.md)
 

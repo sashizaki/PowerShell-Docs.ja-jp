@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
 caps.latest.revision: 9
 ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365421"
 ---
 # <a name="interpreting-errorrecord-objects"></a>ErrorRecord オブジェクトを解釈する
 
 ほとんどの場合、 [System. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクトは、コマンドまたはスクリプトによって生成される終了しないエラーを表します。 終了エラーでは、 [Icontainserrorrecord](/dotnet/api/System.Management.Automation.IContainsErrorRecord)インターフェイスを使用して、errorrecord 内の追加情報を指定することもできます。
 
-コマンドまたはスクリプトの実行中に発生した特定のエラーを処理するためのエラーハンドラーをスクリプトまたはホストに記述する場合は、のクラスを表しているかどうかを判断するために、このオブジェクトを解釈する必要が[あります。](/dotnet/api/System.Management.Automation.ErrorRecord)処理するエラー。
+コマンドまたはスクリプトの実行中に発生した特定のエラーを処理するためのエラーハンドラーをスクリプトまたはホストに記述する場合は、処理するエラーのクラスを表すかどうかを判断するために、[システムの管理](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクトを解釈する必要があります。
 
 コマンドレットで終了または終了しないエラーが発生した場合は、エラー状態を説明するエラーレコードを作成する必要があります。 ホストアプリケーションは、これらのエラーレコードを調査し、エラーを軽減する何らかのアクションを実行する必要があります。 また、ホストアプリケーションは、レコードを処理できなかったが続行できた、終了しないエラーのエラーレコードを調査する必要があります。また、パイプラインの停止の原因となったエラーを終了するために、エラーレコードを調査する必要があります。
 
@@ -68,7 +68,7 @@ ms.locfileid: "72365421"
 
 前の例では、最初のトークンはエラー識別子であり、その後にコマンドレットクラスの名前が続きます。 エラー識別子には、1つのトークンを指定することも、識別子を検査するときに分岐を許可するドット区切りの識別子を指定することもできます。 エラー識別子に空白または句読点を使用しないでください。 コンマを使用しないことが特に重要です。Windows PowerShell では、識別子とコマンドレットのクラス名を区切るためにコンマが使用されます。
 
-### <a name="other-information"></a>その他の情報
+### <a name="other-information"></a>関連情報
 
 また[、エラー](/dotnet/api/System.Management.Automation.ErrorRecord)が発生した環境を説明する情報を提供することもできます。 この情報には、エラーの詳細、呼び出し情報、エラーが発生したときに処理されていた対象オブジェクトなどが含まれます。 この情報はホストアプリケーションにとって有用な場合がありますが、通常はエラーを識別するために使用されません。 この情報は、次のプロパティを使用して取得できます。
 

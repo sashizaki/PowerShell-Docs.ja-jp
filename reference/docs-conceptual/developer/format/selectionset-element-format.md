@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 848e7acd-d578-4fd1-a575-c0c3b9b5e68a
 caps.latest.revision: 17
 ms.openlocfilehash: c809aa6c3a40d16cfd2fd99065a846d265ec0f61
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368381"
 ---
 # <a name="selectionset-element-format"></a>SelectionSet 要素 (書式)
@@ -40,14 +40,14 @@ Configuration 要素 (Format) SelectionSets 要素 (書式) Selectionsets 要素
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[SelectionSet の Name 要素 (Format)](./name-element-for-selectionset-format.md)|必須の要素です。<br /><br /> 選択セットを参照するために使用する名前を指定します。|
 |[Types 要素 (Format)](./types-element-for-selectionset-format.md)|必須の要素です。<br /><br /> 選択セット内の .NET オブジェクトを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[SelectionSets 要素の形式](./selectionsets-element-format.md)|書式設定ファイルのすべてのビューで使用できる .NET オブジェクトの共通セットを定義します。|
 
@@ -75,7 +75,7 @@ Configuration 要素 (Format) SelectionSets 要素 (書式) Selectionsets 要素
 </SelectionSets>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [選択セットの定義](./defining-selection-sets.md)
 

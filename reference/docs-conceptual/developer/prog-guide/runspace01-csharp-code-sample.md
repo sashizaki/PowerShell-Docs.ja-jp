@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d59f8b7c-e800-4633-aa5b-74d4c57e2706
 caps.latest.revision: 6
 ms.openlocfilehash: 607113ed566fc1e08e5b1d7092c83da2a22366ca
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74418024"
 ---
 # <a name="runspace01-c-code-sample"></a>Runspace01 (C#) コード サンプル
@@ -24,11 +24,11 @@ ms.locfileid: "74418024"
 >
 > ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>コード サンプル
 
 [!code-csharp[Runspace01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace01/Runspace01.cs#L11-L62 "Runspace01.cs")]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 

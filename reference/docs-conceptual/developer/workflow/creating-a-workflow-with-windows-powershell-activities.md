@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
 ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359631"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Windows PowerShell アクティビティでワークフローを作成する
@@ -21,7 +21,7 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
 次の手順では、ユーザー指定のコンピューターのグループのドメインステータスを確認し、まだ参加していない場合はドメインに参加させるワークフローを作成する方法について説明します。その後、状態をもう一度確認します。
 
-### <a name="setting-up-the-project"></a>プロジェクトの設定
+### <a name="setting-up-the-project"></a>プロジェクトを設定する
 
 1. 「 [Visual Studio のツールボックスへの Windows PowerShell アクティビティの追加](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)」の手順に従って、ワークフロープロジェクトを作成し、そのアクティビティ[を [ツール](/dotnet/api/Microsoft.PowerShell.Activities)ボックス] に[追加します](/dotnet/api/Microsoft.PowerShell.Management.Activities)。
 
@@ -57,7 +57,7 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
     |プロパティ|値|
     |--------------|-----------|
-    |**コンピューター名**|コンペティション|
+    |**ComputerName**|コンペティション|
     |**DomainCredential**|DomainCred|
 
 11. **Addcomputer**アクティビティの後に、 **RestartComputer**アクティビティを**joindomain**シーケンスに追加します。
@@ -66,10 +66,10 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
     |プロパティ|値|
     |--------------|-----------|
-    |**コンピューター名**|コンペティション|
-    |**証明**|各の Ecred|
-    |**の**|Microsoft. PowerShell. WaitForServiceTypes. PowerShell|
-    |**必ず**|True|
+    |**ComputerName**|コンペティション|
+    |**資格情報**|各の Ecred|
+    |**対象**|Microsoft. PowerShell. WaitForServiceTypes. PowerShell|
+    |**Force**|True|
     |Wait|True|
     |PSComputerName|{""}|
 
@@ -77,5 +77,5 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
     手順を完了すると、ワークフローデザインウィンドウは次のようになります。
 
-    ワークフローデザイナーでの JoinDomain XAML の ![![ワークフローデザイナーの Joindomain xaml の]](../media/joindomainworkflow.png)
-    (../media/joindomainworkflow.png "joindomainworkflow")
+    ワークフローデザイナーでの JoinDomain XAML の ![![ワークフローデザイナーでの Joindomain xaml](../media/joindomainworkflow.png "JoinDomainWorkflow")の](../media/joindomainworkflow.png)
+    

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c92a6d3d-8d34-4a76-bdc3-dea923d9858e
 caps.latest.revision: 17
 ms.openlocfilehash: e24d40746da91f60aaf2af655ddcadc88ab6a4db
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361001"
 ---
 # <a name="runspace-samples"></a>実行空間のサンプル
@@ -42,7 +42,7 @@ ms.locfileid: "72361001"
 
  [Runspace09 サンプル](./runspace09-sample.md)このサンプルでは、スクリプトを[システム](/dotnet/api/system.management.automation.powershell)のパイプラインに追加する方法と、スクリプトを非同期で実行する方法を示します。 イベントはスクリプトの出力を処理するために使用されます。
 
- [Runspace10 サンプル](./runspace10-sample.md)このサンプルでは、初期セッションの既定の状態を作成する方法、コマンドレットを[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)に追加する方法、初期セッション状態を使用する実行空間を作成する方法、およびを使用してコマンドを実行する方法を示します。[System. Automation. Powershell](/dotnet/api/system.management.automation.powershell)オブジェクト。
+ [Runspace10 サンプル](./runspace10-sample.md)このサンプルでは、既定の初期セッション状態を作成する方法、コマンドレットを[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)に追加する方法、初期セッション状態を使用する実行空間を作成する方法、およびコマンドを実行する方法について、「」で説明[します。](/dotnet/api/system.management.automation.powershell)
 
  [Runspace11 サンプル](./runspace11-sample.md)これは、既存のコマンドレットを呼び出すが、使用可能なパラメーターのセットを制限するプロキシコマンドを作成するために、 [system.object クラスを](/dotnet/api/System.Management.Automation.ProxyCommand)使用する方法を示しています。 このプロキシ コマンドは、制約付き実行空間の作成に使用される最初のセッション状態に追加されます。 つまり、ユーザーはプロキシ コマンドを使用しないとコマンドレットの機能にアクセスできません。
 

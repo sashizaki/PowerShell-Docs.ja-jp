@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ebbac73a-1c99-4388-9f47-703cd024dc6d
 caps.latest.revision: 18
 ms.openlocfilehash: a9356635d60d5f8c5d4dec4ec8b7d0aea2b037dd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361871"
 ---
 # <a name="selectionsets-element-format"></a>SelectionSets 要素 (書式)
@@ -39,13 +39,13 @@ ms.locfileid: "72361871"
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[SelectionSet 要素 (形式)](./selectionset-element-format.md)|必須の要素です。<br /><br /> セットの名前で参照できる .NET オブジェクトの1つのセットを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[Configuration 要素](./configuration-element-format.md)|書式設定ファイルのトップレベルの要素を表します。|
 
@@ -55,7 +55,7 @@ ms.locfileid: "72361871"
 
 共通選択セットは、書式設定ファイルのビューまたはビューの定義を定義するときに、名前によって指定されます。 このような場合、`ViewSelectedBy` 要素と `EntrySelectedBy` 要素の `SelectionSetName` 子要素は、使用するセットを指定します。 選択セットの詳細については、「[オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Configuration 要素](./configuration-element-format.md)
 

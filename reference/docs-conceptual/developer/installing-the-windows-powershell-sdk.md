@@ -3,10 +3,10 @@ title: Windows PowerShell SDK のインストール
 ms.date: 09/13/2016
 ms.topic: article
 ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
-ms.sourcegitcommit: 36e4c79afda2ce11febd93951e143687245f0b50
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/02/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "73444504"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Windows PowerShell SDK のインストール
@@ -74,7 +74,7 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` にインストールさ�
 
 - Runspace01-PowerShell クラスを使用して `Get-Process` コマンドレットを同期的に実行する方法を示します。
 `Get-Process` コマンドレットは、ローカルコンピューター上で実行されている各プロセスのプロセスオブジェクトを返します。
-- Runspace02-PowerShell クラスを使用して、`Get-Process` および `Sort-Object` のコマンドレットを同期的に実行する方法を示します。 `Get-Process` コマンドレットは、ローカルコンピューター上で実行されている各プロセスのプロセスオブジェクトを返し、`Sort-Object` はその Id プロパティに基づいてオブジェクトを並べ替えます。 これらのコマンドの結果は、DataGridView コントロールを使用して表示されます。
+- Runspace02-PowerShell クラスを使用して、`Get-Process` と `Sort-Object` のコマンドレットを同期的に実行する方法を示します。 `Get-Process` コマンドレットは、ローカルコンピューター上で実行されている各プロセスのプロセスオブジェクトを返し、`Sort-Object` はその Id プロパティに基づいてオブジェクトを並べ替えます。 これらのコマンドの結果は、DataGridView コントロールを使用して表示されます。
 - Runspace03-PowerShell クラスを使用してスクリプトを同期的に実行する方法と、終了しないエラーを処理する方法を示します。 このスクリプトはプロセス名の一覧を受信し、これらのプロセスを取得します。 スクリプトの実行時に生成された終了しないエラーを含む、スクリプトの結果がコンソール ウィンドウに表示されます。
 - Runspace04-PowerShell クラスを使用してコマンドを実行する方法と、コマンドの実行時にスローされる終了エラーをキャッチする方法を示します。 2 つのコマンドが実行され、最後のコマンドには無効なパラメーターの引数が渡されます。 結果として、オブジェクトは返されず、終了するエラーがスローされます。
 - Runspace05-InitialSessionState オブジェクトにスナップインを追加して、実行空間を開いたときにスナップインのコマンドレットを使用できるようにする方法を示します。 スナップインには、PowerShell オブジェクトを使用して同期的に実行される Get Proc コマンドレット (GetProcessSample01 サンプルで定義) が用意されています。
@@ -93,19 +93,19 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` にインストールさ�
 - Host02-Windows PowerShell ランタイムをカスタムホスト実装と共に使用するホストアプリケーションを記述する方法を示します。 ホストアプリケーションは、ホストカルチャをドイツ語に設定し、`Get-Process` コマンドレットを実行して結果を表示します。これは、pwrsh .exe を使用して表示されます。その後、現在のデータと時刻をドイツ語で出力します。
 - Host03-コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する、対話型のコンソールベースのホストアプリケーションを構築する方法を示します。
 - Host04-コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する、対話型のコンソールベースのホストアプリケーションを構築する方法を示します。 このホスト アプリケーションでは、複数選択を指定するための確認メッセージを表示することもできます。
-- Host05-コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する、対話型のコンソールベースのホストアプリケーションを構築する方法を示します。 このホストアプリケーションは、`Enter-PsSession` および `Exit-PsSession` のコマンドレットを使用して、リモートコンピューターへの呼び出しもサポートします。
+- Host05-コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する、対話型のコンソールベースのホストアプリケーションを構築する方法を示します。 このホストアプリケーションでは、`Enter-PsSession` および `Exit-PsSession` のコマンドレットを使用して、リモートコンピューターへの呼び出しもサポートします。
 - Host06-コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する、対話型のコンソールベースのホストアプリケーションを構築する方法を示します。 さらに、このサンプルでは、トークナイザー API を使用して、ユーザーが入力したテキストの色を指定します。
 
 #### <a name="provider-samples"></a>プロバイダーのサンプル
 
 - AccessDBProviderSample01-表示プロバイダークラスから直接派生するプロバイダークラスを宣言する方法を示します。 すべてを網羅しておく目的でここに含めておきます。
 
-- AccessDBProviderSample02-NewDrive メソッドと RemoveDrive メソッドを上書きして、`New-PSDrive` および `Remove-PSDrive` コマンドレットの呼び出しをサポートする方法を示します。 このサンプルのプロバイダークラスは、DriveCmdletProvider クラスから派生します。
+- AccessDBProviderSample02-NewDrive メソッドと RemoveDrive メソッドを上書きして、`New-PSDrive` および `Remove-PSDrive` のコマンドレットの呼び出しをサポートする方法を示します。 このサンプルのプロバイダークラスは、DriveCmdletProvider クラスから派生します。
 
-- AccessDBProviderSample03-`Get-Item` および `Set-Item` コマンドレットの呼び出しをサポートするように、GetItem メソッドと SetItem メソッドを上書きする方法を示します。 このサンプルのプロバイダークラスは、Itemのプロバイダークラスから派生します。
+- AccessDBProviderSample03-GetItem メソッドと SetItem メソッドを上書きして、`Get-Item` および `Set-Item` のコマンドレットの呼び出しをサポートする方法を示します。 このサンプルのプロバイダークラスは、Itemのプロバイダークラスから派生します。
 
-- AccessDBProviderSample04-`Copy-Item`、`Get-ChildItem`、`New-Item`、および `Remove-Item` コマンドレットの呼び出しをサポートするようにコンテナーメソッドを上書きする方法を示します。 これらのメソッドは、データ ストアにコンテナーであるアイテムが含まれる場合に実装する必要があります。 コンテナーは、共通の親項目の子項目のグループです。 このサンプルのプロバイダークラスは、Itemのプロバイダークラスから派生します。
+- AccessDBProviderSample04-コンテナーメソッドを上書きして、`Copy-Item`、`Get-ChildItem`、`New-Item`、および `Remove-Item` コマンドレットの呼び出しをサポートする方法を示します。 これらのメソッドは、データ ストアにコンテナーであるアイテムが含まれる場合に実装する必要があります。 コンテナーは、共通の親項目の子項目のグループです。 このサンプルのプロバイダークラスは、Itemのプロバイダークラスから派生します。
 
-- AccessDBProviderSample05-`Move-Item` および `Join-Path` コマンドレットの呼び出しをサポートするようにコンテナーメソッドを上書きする方法を示します。 これらのメソッドは、ユーザーがコンテナー内で項目を移動する必要があり、データ ストアに入れ子状態のコンテナーが含まれる場合に実装する必要があります。 このサンプルのプロバイダークラスは、Navigation、Provider クラスから派生します。
+- AccessDBProviderSample05-コンテナーメソッドを上書きして、`Move-Item` および `Join-Path` のコマンドレットの呼び出しをサポートする方法を示します。 これらのメソッドは、ユーザーがコンテナー内で項目を移動する必要があり、データ ストアに入れ子状態のコンテナーが含まれる場合に実装する必要があります。 このサンプルのプロバイダークラスは、Navigation、Provider クラスから派生します。
 
-- AccessDBProviderSample06-`Clear-Content`、`Get-Content`、`Set-Content` の各コマンドレットの呼び出しをサポートするために、コンテンツメソッドを上書きする方法を示します。 これらのメソッドは、ユーザーがデータ ストア内の項目のコンテンツを管理する必要がある場合に実装する必要があります。 このサンプルのプロバイダークラスは NavigationIContentCmdletProvider Provider クラスから派生し、このクラスには、インターフェイスが実装されています。
+- AccessDBProviderSample06-`Clear-Content`、`Get-Content`、および `Set-Content` コマンドレットの呼び出しをサポートするために、コンテンツメソッドを上書きする方法について説明します。 これらのメソッドは、ユーザーがデータ ストア内の項目のコンテンツを管理する必要がある場合に実装する必要があります。 このサンプルのプロバイダークラスは NavigationIContentCmdletProvider Provider クラスから派生し、このクラスには、インターフェイスが実装されています。

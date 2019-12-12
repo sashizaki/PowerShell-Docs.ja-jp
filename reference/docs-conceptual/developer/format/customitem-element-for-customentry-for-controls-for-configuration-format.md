@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 73fb11ee-0ebd-477a-ac36-acdfbb32e70d
 caps.latest.revision: 7
 ms.openlocfilehash: bd0cb69770817ec215ddb1862a43a838baddefcf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364031"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-configuration-format"></a>Configuration の Controls の CustomEntry の CustomItem 要素 (書式)
@@ -42,7 +42,7 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[構成用のコントロールに対する CustomItem の式のバインド要素 (形式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> コントロールによって表示されるデータを定義します。|
 |[構成用のコントロールの CustomItem の Frame 要素 (形式)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> データを左右に移動するなど、データの表示方法を定義します。|
@@ -51,7 +51,7 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[CustomControl の CustomEntry 要素 (構成用コントロール用) (形式)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|コントロールの定義を提供します。|
 
@@ -65,7 +65,7 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 - 各シーケンスには、使用できる `ExpressionBinding` 要素の数に上限はありません。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [構成用のコントロールに対する CustomItem の式のバインド要素 (形式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 

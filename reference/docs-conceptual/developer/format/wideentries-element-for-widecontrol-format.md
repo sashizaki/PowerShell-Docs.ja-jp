@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0c4bff45-0960-4b3a-95e7-47f2cee03ac5
 caps.latest.revision: 12
 ms.openlocfilehash: 083f3c8df8136858e32778ed231943ef983e47aa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361431"
 ---
 # <a name="wideentries-element-for-widecontrol-format"></a>WideControl の WideEntries 要素 (書式)
@@ -40,13 +40,13 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[WideEntry 要素 (Format)](./wideentry-element-for-widecontrol-format.md)|ワイドビューの定義を提供します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[WideControl 要素 (Format)](./widecontrol-element-format.md)|ビューのワイド (単一値) リスト形式を定義します。|
 
@@ -70,7 +70,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ワイドビューの完全な例については、「 [Wide ビュー (Basic)](./wide-view-basic.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [ワイドビューの作成](./creating-a-wide-view.md)
 

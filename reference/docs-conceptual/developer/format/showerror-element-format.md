@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a456e5df-fbf9-42b6-a6d8-4b2adafb86b1
 caps.latest.revision: 9
 ms.openlocfilehash: ff320619b7f768718ace7d482332a60a73c625b7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368241"
 ---
 # <a name="showerror-element-format"></a>ShowError 要素 (書式)
@@ -29,7 +29,7 @@ Configuration 要素 (Format) DefaultSettings Element (Format) ShowError 要素 
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`ShowError` 要素の親要素について説明します。 この要素の既定値は `false` です。
+次のセクションでは、`ShowError` 要素の属性、子要素、および親要素について説明します。 この要素の既定値は `false`です。
 
 ### <a name="attributes"></a>属性
 

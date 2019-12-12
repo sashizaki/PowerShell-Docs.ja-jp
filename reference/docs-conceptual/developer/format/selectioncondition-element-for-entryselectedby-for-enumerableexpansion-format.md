@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 8c012115-9241-4851-9015-841eb508faf3
 caps.latest.revision: 10
 ms.openlocfilehash: d6adf2fa62384d671fd6a07dd185a941daa44cec
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362011"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion の EntrySelectedBy の SelectionCondition 要素 (書式)
@@ -34,7 +34,7 @@ Configuration 要素 (Format) DefaultSettings 要素 (format) 列挙 Able膨張�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`SelectionCondition` 要素の親要素について説明します。 1つの `PropertyName` または `ScriptBlock` の要素を指定する必要があります。 @No__t-0 および `TypeName` の要素は省略可能です。 いずれかの要素を指定できます。
+次のセクションでは、`SelectionCondition` 要素の属性、子要素、および親要素について説明します。 1つの `PropertyName` または `ScriptBlock` 要素を指定する必要があります。 `SelectionSetName` 要素と `TypeName` 要素は省略可能です。 いずれかの要素を指定できます。
 
 ### <a name="attributes"></a>属性
 
@@ -44,10 +44,10 @@ Configuration 要素 (Format) DefaultSettings 要素 (format) 列挙 Able膨張�
 
 |要素|[説明]|
 |-------------|-----------------|
-|[列挙 Able膨張 (形式) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
-|[列挙 Able展開の EntrySelectedBy の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素。<br /><br /> 条件をトリガーするスクリプトを指定します。|
-|[列挙 Able膨張 (Format) の EntrySelectedBy の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素。<br /><br /> 条件をトリガーする .NET 型のセットを指定します。|
-|[列挙型拡張の EntrySelectedBy の SelectionCondition の TypeName 要素 (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素。<br /><br /> 条件をトリガーする .NET 型を指定します。|
+|[列挙 Able膨張 (形式) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
+|[列挙 Able展開の EntrySelectedBy の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーするスクリプトを指定します。|
+|[列挙 Able膨張 (Format) の EntrySelectedBy の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型のセットを指定します。|
+|[列挙型拡張の EntrySelectedBy の SelectionCondition の TypeName 要素 (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 

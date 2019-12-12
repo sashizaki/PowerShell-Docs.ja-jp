@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
 caps.latest.revision: 5
 ms.openlocfilehash: f776f13fe743a3f5f67de0d94883e3f754040ffc
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367641"
 ---
 # <a name="adding-and-invoking-commands"></a>コマンドを追加し、呼び出す
 
 実行空間を作成した後、Windows PowerShellcommands とスクリプトをパイプラインに追加し、同期または非同期でパイプラインを呼び出すことができます。
 
-## <a name="creating-a-pipeline"></a>パイプラインの作成
+## <a name="creating-a-pipeline"></a>パイプラインを作成する
 
- [System. Automation. Powershell](/dotnet/api/system.management.automation.powershell)クラスには、コマンド、パラメーター、およびスクリプトをパイプラインに追加するためのメソッドがいくつか用意されています。 パイプラインを同期的に呼び出すには、[システム](/dotnet/api/System.Management.Automation.PowerShell.Invoke)のオーバーロードを呼び出すか、または、[システム](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)のオーバーロードを呼び出すことによって非同期的に呼び出します。次に、「」と入力し[ます。](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)
+ [System. Automation. Powershell](/dotnet/api/system.management.automation.powershell)クラスには、コマンド、パラメーター、およびスクリプトをパイプラインに追加するためのメソッドがいくつか用意されています。 パイプラインを同期的に呼び出すには、[システム](/dotnet/api/System.Management.Automation.PowerShell.Invoke)のオーバーロードを呼び出すか、または、システムのオーバーロードを呼び出して非同期的に呼び出します。また[は、次](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)に、その後に、システムの呼び出しを実行して、その後で、[このメソッドを](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)呼び出します。
 
 ### <a name="addcommand"></a>AddCommand
 
@@ -79,7 +79,7 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
- バッチ処理をシミュレートするには、次のコードでは、パイプラインの末尾にステートメントを追加する、 [System. Powershell. Addstatement *](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)メソッドを使用します。次のコードは、`PowerShell` という名前の実行中のプロセスの一覧を取得し、実行中のサービスの一覧を取得します。
+ バッチ処理をシミュレートするには、次のコードで実行中のプロセスの一覧を名前`PowerShell`で取得します。このメソッドを使用して、パイプラインの末尾にステートメントを追加します。 [System.Management.Automation.Powershell.Addstatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)次に、実行中のサービスの一覧を取得します。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -90,14 +90,14 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
- 既存のスクリプトを実行するには、 [System. Powershell. Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)メソッドを呼び出します。 次の例では、パイプラインにスクリプトを追加して実行します。 この例では、`D:\PSScripts` という名前のフォルダーに `MyScript.ps1` という名前のスクリプトが既に存在することを前提としています。
+ 既存のスクリプトを実行するには、 [System. Powershell. Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)メソッドを呼び出します。 次の例では、パイプラインにスクリプトを追加して実行します。 この例では、`D:\PSScripts`という名前のフォルダーに `MyScript.ps1` という名前のスクリプトが既に存在することを前提としています。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- また、`useLocalScope` という名前のブール型パラメーターを受け取るバージョンの[System. Powershell. Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)メソッドもあります。 このパラメーターを `true` に設定すると、スクリプトはローカルスコープで実行されます。 次のコードでは、スクリプトがローカルスコープで実行されます。
+ また、`useLocalScope`という名前のブール型パラメーターを受け取るバージョンの[System. Powershell. Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)メソッドもあります。 このパラメーターが `true`に設定されている場合、スクリプトはローカルスコープで実行されます。 次のコードでは、スクリプトがローカルスコープで実行されます。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -138,7 +138,7 @@ namespace HostPS1e
 
 ### <a name="invoking-a-pipeline-asynchronously"></a>パイプラインの非同期呼び出し
 
- パイプラインを非同期的に呼び出すには、[システム](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)のオーバーロードを呼び出して[IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx)オブジェクトを作成し、次に、その後に system.servicemodel を呼び出します。これには、次のように入力します。 [*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)メソッド。
+ パイプラインを非同期的に呼び出すには、[システム](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)のオーバーロードを呼び出して、 [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx)オブジェクトを作成し、次に、その後に system.servicemodel [*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)メソッドを呼び出す必要があります。
 
  次の例は、パイプラインを非同期的に呼び出す方法を示しています。
 

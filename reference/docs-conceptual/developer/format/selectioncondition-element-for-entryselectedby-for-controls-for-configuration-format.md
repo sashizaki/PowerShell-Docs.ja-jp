@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: f23ef405-0f1e-4607-b3f4-4017b7ead106
 caps.latest.revision: 7
 ms.openlocfilehash: a5098da55d0a63272a121b973cb05e26dc47e3e1
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368451"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format"></a>Configuration の Controls の EntrySelectedBy の SelectionCondition 要素 (書式)
@@ -34,7 +34,7 @@ Configuration 要素 (Format) コントロールの configuration (format) Custo
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`SelectionCondition` 要素の親要素について説明します。
+次のセクションでは、`SelectionCondition` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -44,10 +44,10 @@ Configuration 要素 (Format) コントロールの configuration (format) Custo
 
 |要素|[説明]|
 |-------------|-----------------|
-|[構成用のコントロールの SelectionCondition の PropertyName 要素 (形式)](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
-|[構成用のコントロールの SelectionCondition の ScriptBlock 要素 (形式)](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> 条件をトリガーするスクリプトを指定します。|
-|[構成用のコントロールの SelectionCondition の SelectionSetName 要素 (形式)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> 条件をトリガーする .NET 型のセットを指定します。|
-|[構成用のコントロールの SelectionCondition の TypeName 要素 (Format)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> 条件をトリガーする .NET 型を指定します。|
+|[構成用のコントロールの SelectionCondition の PropertyName 要素 (形式)](./propertyname-element-for-selectioncondition-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
+|[構成用のコントロールの SelectionCondition の ScriptBlock 要素 (形式)](./scriptblock-element-for-selectioncondition-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーするスクリプトを指定します。|
+|[構成用のコントロールの SelectionCondition の SelectionSetName 要素 (形式)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型のセットを指定します。|
+|[構成用のコントロールの SelectionCondition の TypeName 要素 (Format)](./typename-element-for-selectioncondition-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: bd025a3a-3780-40db-a068-873e7df38015
 caps.latest.revision: 9
 ms.openlocfilehash: 2b76b040b39088cc9c3b9d6890c38df3c533b39f
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361561"
 ---
 # <a name="typename-element-for-selectioncondition-for-entryselectedby-for-listcontrol-format"></a>ListControl の EntrySelectedBy の SelectionCondition の TypeName 要素 (書式)
@@ -29,7 +29,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`TypeName` 要素の親要素について説明します。
+次のセクションでは、`TypeName` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -47,7 +47,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="text-value"></a>テキスト値
 
-.NET 型の完全修飾名 (`System.IO.DirectoryInfo` など) を指定します。
+`System.IO.DirectoryInfo`など、.NET 型の完全修飾名を指定します。
 
 ## <a name="remarks"></a>コメント
 

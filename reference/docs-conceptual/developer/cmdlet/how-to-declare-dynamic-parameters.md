@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: db04f1df-def5-4456-8869-336024cda723
 caps.latest.revision: 8
 ms.openlocfilehash: a9c530cdc66302eb6b3d9d2b284eeb486c3b2ba9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364421"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>動的パラメーターを宣言する方法
@@ -27,7 +27,7 @@ ms.locfileid: "72364421"
    public class SendGreetingCommand : Cmdlet, IDynamicParameters
    ```
 
-2. [Idynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)メソッドを呼び出します。このメソッドは、動的パラメーターが定義されているオブジェクトを返します。 この例では、`Employee` パラメーターが指定されている場合、メソッドが呼び出されます。
+2. [Idynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)メソッドを呼び出します。このメソッドは、動的パラメーターが定義されているオブジェクトを返します。 この例では、`Employee` パラメーターが指定されたときにメソッドが呼び出されます。
 
    ```csharp
    public object GetDynamicParameters()
@@ -60,7 +60,7 @@ ms.locfileid: "72364421"
 
 ## <a name="example"></a>例
 
-この例では、ユーザーが `Employee` パラメーターを指定するたびに、`Department` パラメーターが追加されます。 @No__t-0 パラメーターは省略可能なパラメーターであり、ValidateSet 属性を使用して、許可される引数を指定します。
+この例では、ユーザーが `Employee` パラメーターを指定するたびに、`Department` パラメーターが追加されます。 `Department` パラメーターは省略可能なパラメーターであり、ValidateSet 属性を使用して、許可される引数を指定します。
 
 ```csharp
 using System;

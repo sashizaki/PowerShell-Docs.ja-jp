@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
 caps.latest.revision: 5
 ms.openlocfilehash: 48ab9102e8f1b17b3b533cc3b0aa1dacef0e2076
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366241"
 ---
 # <a name="writing-a-container-provider"></a>コンテナー プロバイダーを記述する
@@ -105,7 +105,7 @@ protected override void GetChildItems(string path, bool recurse)
 
 ### <a name="implementing-getchildnames"></a>GetChildNames の実装
 
-[Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)メソッドは[Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)メソッドに似ていますが、それだけを返すという点が異なりますので、このメソッドはを返します。項目の名前プロパティ。項目自体ではありません。
+[Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)メソッドは、 [Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)メソッドに似ていますが、項目自体ではなく、項目の name プロパティのみが返される点が異なりますので、このメソッドは返されませんでした。
 
 ```csharp
 protected override void GetChildNames(string path,

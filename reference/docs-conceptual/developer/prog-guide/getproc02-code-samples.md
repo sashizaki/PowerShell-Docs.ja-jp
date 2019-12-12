@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a2fd91af-758b-49b9-b57f-106ee01fc8c1
 caps.latest.revision: 5
 ms.openlocfilehash: 381011ffd9bd4a46dcfcdbebaa0164d03378abe6
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416179"
 ---
 # <a name="getproc02-code-samples"></a>GetProc02 コード サンプル
@@ -26,12 +26,12 @@ GetProc02 サンプルコマンドレットのコードサンプルを次に示�
 
 完全なサンプルコードについては、次のトピックを参照してください。
 
-|[言語]|トピック|
+|Language|トピック|
 |--------------|-----------|
 |C#|[GetProc02 (C#) サンプルコード](./getproc02-csharp-sample-code.md)|
 |VB.NET|[GetProc02 (VB.NET) サンプルコード](./getproc02-vb-net-sample-code.md)|
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 

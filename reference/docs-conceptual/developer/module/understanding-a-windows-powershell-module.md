@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d4e38235-9987-4347-afd2-0f7d1dc8f64a
 caps.latest.revision: 19
 ms.openlocfilehash: b42ba6b2bf42a74213eb78f2db22e16de7e90583
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360641"
 ---
 # <a name="understanding-a-windows-powershell-module"></a>Windows PowerShell モジュールを理解する
@@ -117,6 +117,6 @@ $PSScriptRoot この変数には、スクリプトモジュールの実行元の
 
 $env:P SModulePath この環境変数には、Windows PowerShell モジュールが格納されているディレクトリの一覧が含まれています。 Windows PowerShell は、モジュールを自動的にインポートし、モジュールのヘルプトピックを更新するときに、この変数の値を使用します。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell モジュールの作成](./writing-a-windows-powershell-module.md)

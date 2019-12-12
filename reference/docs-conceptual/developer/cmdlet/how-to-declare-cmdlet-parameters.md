@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0c0509cc-5a50-49ad-a74f-5527023d0270
 caps.latest.revision: 10
 ms.openlocfilehash: 80e3e27bcf72b078c192525a843a3b3afb306529
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365681"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>コマンドレット パラメーターを宣言する方法
@@ -114,7 +114,7 @@ Parameter 属性の詳細については、「 [Parameter 属性の宣言](./par
 
 Alias 属性の詳細については、「 [Alias 属性の宣言](./alias-attribute-declaration.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [.... SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)
 

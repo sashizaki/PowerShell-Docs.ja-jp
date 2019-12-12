@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 4a6f97ab-45b2-4f3d-84d4-30acf8e074d0
 caps.latest.revision: 12
 ms.openlocfilehash: b036f39cd01ffe4b4ce7db9627cb6da0d5327190
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364281"
 ---
 # <a name="validateset-attribute-declaration"></a>ValidateSet 属性の宣言
@@ -51,7 +51,7 @@ ValidateSetAttribute 属性は、コマンドレットパラメーターの引�
 
 - ValidateSetAttribute 属性は、 [ValidateSetAttribute](/dotnet/api/System.Management.Automation.ValidateSetAttribute)クラスによって定義されます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Validatesetattribute (システム管理)](/dotnet/api/System.Management.Automation.ValidateSetAttribute)
 

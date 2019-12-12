@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 46dc0657-110f-4367-8bb6-a95dca2c5016
 caps.latest.revision: 8
 ms.openlocfilehash: 9c00ec6de987729fec42dc57245a949d11e31f4b
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366331"
 ---
 # <a name="accessdbprovidersample06"></a>AccessDBProviderSample06
@@ -30,7 +30,7 @@ ms.locfileid: "72366331"
 >
 > プロバイダーの機能に基づいて派生するプロバイダークラスを選択する方法の詳細については、「 [Windows PowerShell プロバイダーの設計](./provider-types.md)」を参照してください。
 
-このサンプルでは、次のことを示します。
+このサンプルは、次の操作方法を示します。
 
 - `CmdletProvider` 属性を宣言しています。
 
@@ -48,7 +48,7 @@ ms.locfileid: "72366331"
 
 [!code-csharp[AccessDBProviderSample06.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L2399 "AccessDBProviderSample06.cs")]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [システムの................](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
 

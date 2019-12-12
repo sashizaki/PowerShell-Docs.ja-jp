@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 9dfba86f-29b2-473c-9e98-9d679176acce
 caps.latest.revision: 11
 ms.openlocfilehash: 497485a388d1cdc834ecc1d1079b0714a7d7f9db
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364071"
 ---
 # <a name="customentry-element-for-customcontrol-for-controls-for-configuration-format"></a>Configuration の Controls の CustomControl の CustomEntry 要素 (書式)
@@ -33,7 +33,7 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`CustomEntry` 要素の親要素について説明します。 定義によって表示される項目を指定する必要があります。
+次のセクションでは、`CustomEntry` 要素の属性、子要素、および親要素について説明します。 定義によって表示される項目を指定する必要があります。
 
 ### <a name="attributes"></a>属性
 
@@ -43,7 +43,7 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 |要素|[説明]|
 |-------------|-----------------|
-|[Configuration 用のコントロール用の CustomEntry 要素 (形式)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|省略可能な要素。<br /><br /> コモンコントロールの定義、またはこのコントロールを使用するために存在する必要がある条件を使用する .NET 型を定義します。|
+|[Configuration 用のコントロール用の CustomEntry 要素 (形式)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> コモンコントロールの定義、またはこのコントロールを使用するために存在する必要がある条件を使用する .NET 型を定義します。|
 |[構成のための CustomEntry コントロールの CustomItem 要素](./customitem-element-for-customentry-for-controls-for-configuration-format.md)|必須の要素です。<br /><br /> コントロールによって表示されるデータとその表示方法を定義します。|
 
 ### <a name="parent-elements"></a>親要素

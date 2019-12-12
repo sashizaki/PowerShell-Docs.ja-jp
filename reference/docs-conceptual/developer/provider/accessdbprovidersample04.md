@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ee3a7e56-7331-4f71-9ecb-7a59b8021c68
 caps.latest.revision: 10
 ms.openlocfilehash: 7096f8066568c214a5902f6943a2c093932d3b56
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366341"
 ---
 # <a name="accessdbprovidersample04"></a>AccessDBProviderSample04
@@ -24,7 +24,7 @@ ms.locfileid: "72366341"
 > [!IMPORTANT]
 > プロバイダークラスは、ほとんどの場合、[システム](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)から派生することがあります。
 
-このサンプルでは、次のことを示します。
+このサンプルは、次の操作方法を示します。
 
 - `CmdletProvider` 属性を宣言しています。
 
@@ -46,7 +46,7 @@ ms.locfileid: "72366341"
 
 [!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample06/AccessDBProviderSample06.cs#L11-L1635 "AccessDBProviderSample04.cs")]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [システムの................](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)
 

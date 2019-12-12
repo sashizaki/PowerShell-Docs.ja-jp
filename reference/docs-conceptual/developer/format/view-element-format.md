@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d837d5d4-ed2e-4d84-a306-0b5d2ad2d0bf
 caps.latest.revision: 24
 ms.openlocfilehash: 2361c1117757569bef0815018c75764430a9e7a8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361461"
 ---
 # <a name="view-element-format"></a>View 要素 (書式)
@@ -46,7 +46,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[View (Format) の Controls 要素](./controls-element-for-view-format.md)|省略可能な要素です。<br /><br /> ビュー内から名前で参照できるコントロールのセットを定義します。|
 |[CustomControl 要素 (Format)](./customcontrol-element-for-groupby-format.md)|省略可能な要素です。<br /><br /> ビューのカスタムコントロール形式を定義します。|
@@ -59,7 +59,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[ViewDefinitions 要素 (形式)](./viewdefinitions-element-format.md)|オブジェクトを表示するために使用するビューを定義します。|
 
@@ -92,7 +92,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [ViewDefinitions 要素 (形式)](./viewdefinitions-element-format.md)
 

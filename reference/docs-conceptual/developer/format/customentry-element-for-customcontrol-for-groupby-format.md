@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2987cb45-f646-45d4-b81b-7871e77af36f
 caps.latest.revision: 5
 ms.openlocfilehash: dcf4f8b2bbd422067ffdf9b3b4972e279e91edf9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72364061"
 ---
 # <a name="customentry-element-for-customcontrol-for-groupby-format"></a>GroupBy の CustomControl の CustomEntry 要素 (書式)
@@ -42,7 +42,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (�
 
 |要素|[説明]|
 |-------------|-----------------|
-|[GroupBy の CustomEntry の EntrySelectedBy 要素 (形式)](./entryselectedby-element-for-customentry-for-groupby-format.md)|省略可能な要素。<br /><br /> このコントロール定義を使用する .NET 型、またはこの定義を使用するために必要な条件を定義します。|
+|[GroupBy の CustomEntry の EntrySelectedBy 要素 (形式)](./entryselectedby-element-for-customentry-for-groupby-format.md)|省略可能な要素です。<br /><br /> このコントロール定義を使用する .NET 型、またはこの定義を使用するために必要な条件を定義します。|
 |[GroupBy の CustomEntry の CustomItem 要素 (形式)](./customitem-element-for-customentry-for-groupby-format.md)|必須の要素です。<br /><br /> コントロールがデータを表示する方法を定義します。|
 
 ### <a name="parent-elements"></a>親要素

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: bf54eac7-88c6-4108-a5f6-2f0906d1662b
 caps.latest.revision: 5
 ms.openlocfilehash: f65a90023df88fceafae1d1875ddf46b9088e2b8
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367011"
 ---
 # <a name="naming-help-files"></a>ヘルプ ファイルに名前を付ける
@@ -66,7 +66,7 @@ CIM コマンドは、モジュールに入れ子になったモジュールと�
 
 ## <a name="script-workflow-help-files"></a>スクリプトワークフローのヘルプファイル
 
-モジュールに含まれているスクリプトワークフローは、XML ベースのヘルプファイルに記載されています。 ヘルプファイルの名前に関する技術的な要件はありません。 ただし、スクリプトワークフローが定義されているスクリプトモジュールのヘルプファイルには、という名前を指定することをお勧めします。 次に例を示します。
+モジュールに含まれているスクリプトワークフローは、XML ベースのヘルプファイルに記載されています。 ヘルプファイルの名前に関する技術的な要件はありません。 ただし、スクリプトワークフローが定義されているスクリプトモジュールのヘルプファイルには、という名前を指定することをお勧めします。 たとえば、次のようになります。
 
 ```
 <ScriptModule>.psm1-help.xml

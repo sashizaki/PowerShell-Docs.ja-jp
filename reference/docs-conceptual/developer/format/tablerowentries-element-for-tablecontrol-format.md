@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d10b68ca-256c-4c58-b503-73f7777b39ae
 caps.latest.revision: 15
 ms.openlocfilehash: 88de19be02de4933f892e02093403a82ccdd5788
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368151"
 ---
 # <a name="tablerowentries-element-for-tablecontrol-format"></a>TableControl の TableRowEntries 要素 (書式)
@@ -39,13 +39,13 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[TableControl (Format) の TableRowEntries の TableRowEntry 要素](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|必須の要素です。<br /><br /> テーブルの行に表示されるデータを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[TableControl 要素 (形式)](./tablecontrol-element-format.md)|ビューのテーブル形式を定義します。|
 
@@ -78,7 +78,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [テーブルビューの作成](./creating-a-table-view.md)
 

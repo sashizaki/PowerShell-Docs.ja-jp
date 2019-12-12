@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: e01344bd-ad69-4789-8e9f-2e79880c3a33
 caps.latest.revision: 6
 ms.openlocfilehash: cb79fb942111cee89c6b2abba75de4c494082b7e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368601"
 ---
 # <a name="scriptblock-element-for-selectioncondition-for-entryselectedby-for-groupby-format"></a>GroupBy の EntrySelectedBy の SelectionCondition の ScriptBlock 要素 (書式)
 
-条件をトリガーするスクリプトを指定します。 このスクリプトが `true` に評価されると、条件が満たされ、定義が使用されます。 この要素は、新しいオブジェクトのグループをどのように表示するかを定義するときに使用されます。
+条件をトリガーするスクリプトを指定します。 このスクリプトが `true`に評価されると、条件が満たされ、定義が使用されます。 この要素は、新しいオブジェクトのグループをどのように表示するかを定義するときに使用されます。
 
 Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (形式) GroupBy 要素の groupby (format) CustomControl 要素の groupby (format) CustomEntry 要素の CustomControl の CustomEntries 要素Groupby (format) の CustomControl の Entryselectedby for groupby (format) Selectionselectedby 要素の Selectionselectedby を使用して、groupby (形式) の selectioncondition に対して groupby (形式) を指定します。
 
@@ -29,7 +29,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`ScriptBlock` 要素の親要素について説明します。
+次のセクションでは、`ScriptBlock` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 

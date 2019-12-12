@@ -9,17 +9,17 @@ ms.topic: article
 ms.assetid: e620bf6d-76be-47b0-a7a8-f43418f30c60
 caps.latest.revision: 6
 ms.openlocfilehash: b81a32b867795ae51c3f5308c2f82c31ed2747fa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359821"
 ---
 # <a name="adding-resources-to-a-management-odata-web-service"></a>Management OData Web サービスにリソースを追加する
 
 この例では、管理用の OData スキーマデザイナーを使用して、既存の管理 OData web サービスにリソースを追加する方法を示します。 [Pswsroleベースのプラグイン](https://code.msdn.microsoft.com:443/windowsdesktop/PswsRoleBasedPlugins-9c79b75a)のサンプルでは、プロセスリソースとサーバーリソースを公開する web サービスを作成します。 この例では、仮想マシン (VM) リソースを web サービスに追加します。
 
-## <a name="prerequisites"></a>必須コンポーネント
+## <a name="prerequisites"></a>必要条件
 
 このトピックでは、「 [Windows PowerShell Web サービスの作成](./creating-a-management-odata-web-service.md)」で説明されているように[Pswsroleñプラグイン](https://code.msdn.microsoft.com:443/windowsdesktop/PswsRoleBasedPlugins-9c79b75a)サンプルをダウンロードしてインストールし、 [Management OData スキーマデザイナー](https://marketplace.visualstudio.com/items?itemName=jlisc0.ManagementODataSchemaDesigner)をダウンロードしてインストールしたことを前提としています。 また、このトピックでは、Management Odata エンドポイントを設定するコンピューターに Hyper-v Windows PowerShell モジュールがインストールされていることを前提としています。
 

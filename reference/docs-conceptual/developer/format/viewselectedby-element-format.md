@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: acdeef4d-3554-4f39-a7e6-a684e3848fd7
 caps.latest.revision: 19
 ms.openlocfilehash: efc1c5d1338889ecd0be7150b7733842ce78979e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367971"
 ---
 # <a name="viewselectedby-element-format"></a>ViewSelectedBy 要素 (書式)
@@ -40,14 +40,14 @@ ViewDefinitions 要素 (Format) ビュー要素 (形式) ViewSelectedBy 要素 (
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[ViewSelectedBy (Format) の TypeName 要素](./typename-element-for-viewselectedby-format.md)|省略可能な要素です。<br /><br /> ビューに表示される .NET オブジェクトを指定します。|
 |[ViewSelectedBy (Format) の SelectionSetName 要素](./selectionsetname-element-for-viewselectedby-format.md)|省略可能な要素です。<br /><br /> ビューに表示される一連の .NET オブジェクトを指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[View 要素 (Format)](./view-element-format.md)|1つ以上の .NET オブジェクトを表示するビューを定義します。|
 
@@ -71,7 +71,7 @@ ViewDefinitions 要素 (Format) ビュー要素 (形式) ViewSelectedBy 要素 (
 </View>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [リストビューの作成](./creating-a-list-view.md)
 
@@ -79,7 +79,7 @@ ViewDefinitions 要素 (Format) ビュー要素 (形式) ViewSelectedBy 要素 (
 
 [ワイドビューの作成](./creating-a-wide-view.md)
 
-[カスタムコントロールの作成](./creating-custom-controls.md)
+[カスタム コントロールの作成](./creating-custom-controls.md)
 
 [選択セットの定義](./defining-selection-sets.md)
 

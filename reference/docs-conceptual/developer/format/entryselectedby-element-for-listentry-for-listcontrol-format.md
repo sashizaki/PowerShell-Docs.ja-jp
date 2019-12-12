@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 0f7a74e9-764d-46ce-ab8e-8b9314ce1659
 caps.latest.revision: 12
 ms.openlocfilehash: 442565d25f60ae8e04501f3f9ffba35d486fbc8a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363831"
 ---
 # <a name="entryselectedby-element-for-listentry-for-listcontrol-format"></a>ListControl の ListEntry の EntrySelectedBy 要素 (書式)
@@ -43,9 +43,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 |要素|[説明]|
 |-------------|-----------------|
-|[ListControl (Format) の EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素。<br /><br /> このリストビュー定義を使用するために必要な条件を定義します。|
-|[ListControl (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素。<br /><br /> このリストビュー定義を使用する一連の .NET 型を指定します。|
-|[ListControl (Format) の EntrySelectedBy の TypeName 要素](./typename-element-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素。<br /><br /> このリストビュー定義を使用する .NET 型を指定します。|
+|[ListControl (Format) の EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素です。<br /><br /> このリストビュー定義を使用するために必要な条件を定義します。|
+|[ListControl (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素です。<br /><br /> このリストビュー定義を使用する一連の .NET 型を指定します。|
+|[ListControl (Format) の EntrySelectedBy の TypeName 要素](./typename-element-for-entryselectedby-for-listcontrol-format.md)|省略可能な要素です。<br /><br /> このリストビュー定義を使用する .NET 型を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
@@ -57,7 +57,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 リストビュー定義には、少なくとも1つの種類、選択セット、または選択条件を指定する必要があります。 使用できる子要素の数に上限はありません。
 
-選択条件は、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプトが `true` に評価される場合など、使用する定義のために存在する必要がある条件を定義するために使用されます。 選択条件の詳細については、「[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件を使用して、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプトが `true`として評価される場合など、使用する定義に存在する必要がある条件を定義します。 選択条件の詳細については、「[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 リストビューのコンポーネントの詳細については、「[リストビューの作成](./creating-a-list-view.md)」を参照してください。
 

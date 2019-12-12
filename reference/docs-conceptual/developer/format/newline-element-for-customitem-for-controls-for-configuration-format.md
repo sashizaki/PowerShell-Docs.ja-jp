@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 57fcd7ba-44bb-403f-9747-5b429ccb70d0
 caps.latest.revision: 6
 ms.openlocfilehash: 58b6b6be0191ae3feec3d40b85a0de3699870902
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362631"
 ---
 # <a name="newline-element-for-customitem-for-controls-for-configuration-format"></a>Configuration の Controls の CustomItem の NewLine 要素 (書式)
@@ -29,7 +29,7 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`NewLine` 要素の親要素について説明します。
+次のセクションでは、`NewLine` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 

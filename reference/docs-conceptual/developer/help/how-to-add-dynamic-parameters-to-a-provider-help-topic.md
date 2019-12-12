@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e20e5ad6-a6e6-4a63-9d42-1ac54214f748
 caps.latest.revision: 5
 ms.openlocfilehash: 59839e9b8b6f2a56f2f1a9c755f2f1a85deb34aa
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361261"
 ---
 # <a name="how-to-add-dynamic-parameters-to-a-provider-help-topic"></a>プロバイダーのヘルプ トピックに動的パラメーターを追加する方法
@@ -31,7 +31,7 @@ ms.locfileid: "72361261"
 
 1. Dll-help ファイル*の `providerHelp`* 要素内に、`DynamicParameters` 要素を追加します。 `DynamicParameters` 要素は、`Tasks` 要素の後、`RelatedLinks` 要素の前に表示されます。
 
-   次に例を示します。
+   たとえば、次のようになります。
 
     ```xml
     <providerHelp>
@@ -48,7 +48,7 @@ ms.locfileid: "72361261"
 
 2. `DynamicParameters` 要素内で、各動的パラメーターに `DynamicParameter` 要素を追加します。
 
-   次に例を示します。
+   たとえば、次のようになります。
 
     ```xml
     <DynamicParameters/>
@@ -59,7 +59,7 @@ ms.locfileid: "72361261"
 
 3. 各 `DynamicParameter` 要素に、`Name` と `CmdletSupported` 要素を追加します。
 
-   |要素名|説明|
+   |要素名|[説明]|
    |------------------|-----------------|
    |名前|パラメーター名を指定します。|
    |サポートされているもの|パラメーターが有効なコマンドレットを指定します。 コマンドレット名のコンマ区切りリストを入力します。|
@@ -112,12 +112,12 @@ ms.locfileid: "72361261"
 
    次の表に、`PossibleValues` 要素とその子要素の一覧とその説明を示します。
 
-   |要素名|説明|
+   |要素名|[説明]|
    |------------------|-----------------|
    |指定した値|この要素はコンテナーです。 その子要素について以下に説明します。 各プロバイダーヘルプトピックに `PossibleValues` 要素を1つ追加します。 要素は空にすることができます。|
    |指定した値|この要素はコンテナーです。 その子要素について以下に説明します。 動的パラメーターの値ごとに1つの `PossibleValue` 要素を追加します。|
    |値|値の名前を指定します。|
-   |説明|この要素には、`Para` 要素が含まれています。 `Para` 要素内のテキストは、`Value` 要素で指定された値を表します。|
+   |[説明]|この要素には、`Para` 要素が含まれています。 `Para` 要素内のテキストは、`Value` 要素で指定された値を表します。|
 
    たとえば、次の XML は、`Encoding` 動的パラメーターの1つの `PossibleValue` 要素を示しています。
 

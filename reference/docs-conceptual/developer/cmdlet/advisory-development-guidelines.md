@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
 caps.latest.revision: 9
 ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72370041"
 ---
 # <a name="advisory-development-guidelines"></a>お勧めする開発ガイドライン
@@ -59,7 +59,7 @@ Windows PowerShell は Microsoft .NET Framework オブジェクトで直接動�
 
 #### <a name="name-the-cmdlet-class-to-match-the-cmdlet-name"></a>コマンドレット名と一致するようにコマンドレットクラスの名前を指定します
 
-コマンドレットを実装する .NET Framework クラスに名前を付けた場合は、クラスに " *\<Verb > **\<Noun >*** \<Command *" という*名前を付けます。ここで > \<Verb プレースホルダーと *>* \<Noun プレースホルダーを置き換えます。コマンドレット名に使用される動詞と名詞。 たとえば、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットは、`GetProcessCommand` というクラスによって実装されます。
+コマンドレットを実装する .NET Framework クラスに名前を付けた場合は、クラスに " *\<verb > **\<名詞 >** \<コマンド >* " を指定します。ここで\<*動詞 >* と *\<名詞 >* プレースホルダーは、コマンドレット名に使用される動詞と名詞に置き換えられます。 たとえば、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットは、`GetProcessCommand`というクラスによって実装されます。
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>パイプライン入力が BeginProcessing メソッドをオーバーライドしない場合 (AC02)
 
@@ -67,11 +67,11 @@ Windows PowerShell は Microsoft .NET Framework オブジェクトで直接動�
 
 ### <a name="to-handle-stop-requests-override-the-stopprocessing-method-ac03"></a>停止要求を処理するには、StopProcessing メソッド (AC03) をオーバーライドします。
 
-コマンドレットが停止シグナルを処理できるように、[このメソッドをオーバーライドします](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)。 一部のコマンドレットでは、操作が完了するまでに長い時間がかかります。また、コマンドレットが長時間の RPC 呼び出しでスレッドをブロックしている場合など、Windows PowerShell ランタイムの呼び出しの間に長い時間がかかることがあります。 これには、 [WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)メソッドへの呼び出しを実行するコマンドレット、 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッド、および完了までに時間がかかるその他のフィードバックメカニズムが含まれている必要があります. このような場合、ユーザーはこれらのコマンドレットに停止シグナルを送信することが必要になる場合があります。
+コマンドレットが停止シグナルを処理できるように、[このメソッドをオーバーライドします](/dotnet/api/System.Management.Automation.Cmdlet.StopProcessing)。 一部のコマンドレットでは、操作が完了するまでに長い時間がかかります。また、コマンドレットが長時間の RPC 呼び出しでスレッドをブロックしている場合など、Windows PowerShell ランタイムの呼び出しの間に長い時間がかかることがあります。 これには、 [WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)メソッドへの呼び出しを行うコマンドレット、 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッド、および完了までに時間がかかる可能性のあるその他のフィードバック機構が含まれていることがあります。 このような場合、ユーザーはこれらのコマンドレットに停止シグナルを送信することが必要になる場合があります。
 
 ### <a name="implement-the-idisposable-interface-ac04"></a>IDisposable インターフェイス (AC04) を実装する
 
-コマンドレット[に、(](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)パイプラインに書き込まれる) の破棄されないオブジェクトが含まれている場合、コマンドレットでは追加のオブジェクトの破棄が必要になることがあります。 たとえば、コマンドレットによって、ファイルハンドルがその[システム](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)の "管理.............................................. [...](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ..............処理の終了時に終了します。
+コマンドレット[に、(](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)パイプラインに書き込まれる) の破棄されないオブジェクトが含まれている場合、コマンドレットでは追加のオブジェクトの破棄が必要になることがあります。 たとえば、コマンドレットが、その[システム](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)のファイルハンドルを開いて、そのハンドルを開いたままにして[、プロセスの](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)終了時にハンドルを開いたままにした場合、このハンドルを閉じておく必要があるとします。
 
 Windows PowerShell ランタイムで[は、必ずしも system.servicemodel メソッドが](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)呼び出されるわけではありません。 たとえば、コマンドレットが操作の途中で取り消された場合、またはコマンドレットのいずれかの部分で終了エラーが発生した場合、[このメソッドは](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)呼び出されないことがあります。 したがって、オブジェクトのクリーンアップを必要とするコマンドレットの .NET Framework クラスは、ファイナライザーを含む完全な [system.servicemodel](/dotnet/api/System.IDisposable) インターフェイスパターンを実装する必要があります。これにより、Windows PowerShell ランタイムは、 [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)処理の最後に、システムの.... コマンドレットと system.servicemodel [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)メソッドを実行します。
 
@@ -91,7 +91,7 @@ Windows PowerShell ランタイムで[は、必ずしも system.servicemodel メ
 
 - PSPrimitiveDictionary
 
-- SwitchParameter
+- スイッチ パラメーター
 
 - PSListModifier
 

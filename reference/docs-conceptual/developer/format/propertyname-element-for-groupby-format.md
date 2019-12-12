@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ddcecc46-ac75-43fa-b03a-802a68524ec3
 caps.latest.revision: 10
 ms.openlocfilehash: da6ac5abe7acbbee8f57b3e81529664f81800b86
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362521"
 ---
 # <a name="propertyname-element-for-groupby-format"></a>GroupBy の PropertyName 要素 (書式)
@@ -29,7 +29,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビューの要素
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`PropertyName` 要素の親要素について説明します。
+次のセクションでは、`PropertyName` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 

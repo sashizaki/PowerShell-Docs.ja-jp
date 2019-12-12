@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: eae67e47-6c60-4741-8430-78d2cb6067b1
 caps.latest.revision: 10
 ms.openlocfilehash: ccfc0b772ad3b2d1979c7c832a5153de870035d7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368401"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format"></a>ListEntry の EntrySelectedBy の SelectionCondition の SelectionSetName 要素 (書式)
@@ -29,7 +29,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`SelectionSetName` 要素の親要素について説明します。
+次のセクションでは、`SelectionSetName` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 

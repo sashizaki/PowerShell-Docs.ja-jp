@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: daea8c6f-873a-4639-9eee-599642822958
 caps.latest.revision: 6
 ms.openlocfilehash: 697f2ea284393ebddd77a862c408f27f3d332900
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361971"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-controls-for-view-format"></a>View の Controls の SelectionCondition の SelectionSetName 要素 (書式)
@@ -29,7 +29,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`SelectionSetName` 要素の親要素について説明します。
+次のセクションでは、`SelectionSetName` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 

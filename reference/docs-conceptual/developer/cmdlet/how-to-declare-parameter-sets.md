@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 46905eb9-64d7-4c55-9c2a-7bc7bf04e14b
 caps.latest.revision: 10
 ms.openlocfilehash: 6c2e5891a8e3f24969c12a2e57dc5ae8caa68e41
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365611"
 ---
 # <a name="how-to-declare-parameter-sets"></a>パラメーター セットを宣言する方法
@@ -20,7 +20,7 @@ ms.locfileid: "72365611"
 この例では、コマンドレットのパラメーターを宣言するときに2つのパラメーターセットを定義する方法を示します。 各パラメーターセットには、一意のパラメーターと、両方のパラメーターセットで使用される共有パラメーターの両方があります。 既定のパラメーターセットの指定方法など、パラメーターセットの詳細については、「[コマンドレットパラメーターセット](./cmdlet-parameter-sets.md)」を参照してください。
 
 > [!IMPORTANT]
-> 可能な限り、パラメーターセットの一意のパラメーターを必須パラメーターとして定義します。 ただし、パラメーターを指定せずにコマンドレットを実行する場合は、unique パラメーターを省略可能なパラメーターにすることができます。 たとえば、`Get-Command` コマンドレットの一意のパラメーターは省略可能です。
+> 可能な限り、パラメーターセットの一意のパラメーターを必須パラメーターとして定義します。 ただし、パラメーターを指定せずにコマンドレットを実行する場合は、unique パラメーターを省略可能なパラメーターにすることができます。 たとえば、`Get-Command` コマンドレットの unique パラメーターは省略可能です。
 
 ## <a name="how-to-define-two-parameter-sets"></a>2つのパラメーターセットを定義する方法
 

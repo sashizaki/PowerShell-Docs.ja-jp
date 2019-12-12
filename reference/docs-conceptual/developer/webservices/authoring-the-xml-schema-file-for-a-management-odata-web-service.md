@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
 ms.openlocfilehash: a806d012097d107b6cc35710b9a93f2b27dd1ace
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359801"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>Management OData Web サービスの XML スキーマ ファイルを作成する
 
-Web サービスが公開するリソース (「 [Management OData web サービスの MOF スキーマファイルの作成](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)」を参照) を定義した後、これらのリソースを、それぞれに対してサポートされている操作を実装する、基になる Windows PowerShell コマンドレットにマップします。リソース[マッピングスキーマ](./resource-mapping-schema.md)に準拠した XML ファイルを作成します。 また、この XML ファイルは、クライアントがリソースにアクセスするために使用する Url を指定します。
+Web サービスが公開するリソース (「 [Management OData web サービスの MOF スキーマファイルの作成](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)」を参照) を定義した後、リソース[マッピングスキーマ](./resource-mapping-schema.md)に準拠した XML ファイルを作成することにより、各リソースに対してサポートされている操作を実装する、基になる Windows PowerShell コマンドレットにそれらのリソースをマップします。 また、この XML ファイルは、クライアントがリソースにアクセスするために使用する Url を指定します。
 
 ## <a name="mappng-resources-to-urls"></a>Url へのリソースの Mappng
 
@@ -51,7 +51,7 @@ XML ファイルの最初の部分は、MOF スキーマファイルで定義さ
 |更新プログラム、更新|更新プログラム、更新|
 |削除|削除|
 
-次の例は、`Service` リソースに対する作成、読み取り、および更新操作のマッピングを示しています。
+次の例は、`Service` リソースに対する作成、読み取り、および更新の各操作のマッピングを示しています。
 
 ```xml
 <ClassImplementations>

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: d2c65171-4d4c-46a9-a545-591df058acd1
 caps.latest.revision: 7
 ms.openlocfilehash: 00e9ae0916dd6d22602b99b201c9c4b7e549dc48
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361591"
 ---
 # <a name="typename-element-for-selectioncondition-for-customcontrol-for-view--format"></a>View の CustomControl の SelectionCondition の TypeName 要素 (書式)
@@ -30,7 +30,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`TypeName` 要素の親要素について説明します。
+次のセクションでは、`TypeName` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -48,7 +48,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="text-value"></a>テキスト値
 
-.NET 型の完全修飾名 (`System.IO.DirectoryInfo` など) を指定します。
+`System.IO.DirectoryInfo`など、.NET 型の完全修飾名を指定します。
 
 ## <a name="remarks"></a>コメント
 

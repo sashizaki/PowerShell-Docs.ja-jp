@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 39388197-4ff9-4889-aa32-526011afa1f6
 caps.latest.revision: 6
 ms.openlocfilehash: e95ec550a7815a76a8bd7f9526dfa405a9644360
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367951"
 ---
 # <a name="wide-view-groupby"></a>ワイド ビュー (グループ別)
@@ -23,14 +23,14 @@ ms.locfileid: "72367951"
 
 1. このトピックの「例」のセクションにある XML をテキストファイルにコピーします。
 
-2. テキストファイルを保存します。 フォーマットファイルとして識別するには、ファイルに `format.ps1xml` 拡張子を追加してください。
+2. テキスト ファイルを保存します。 `format.ps1xml` 拡張機能をファイルに追加して、フォーマットファイルとして識別するようにしてください。
 
-3. Windows PowerShell を開き、次のコマンドを実行して、書式設定ファイルを現在のセッションに読み込みます。 `Update-formatdata -prependpath PathToFormattingFile`。
+3. Windows PowerShell を開き、次のコマンドを実行して、書式設定ファイルを現在のセッションに読み込みます: `Update-formatdata -prependpath PathToFormattingFile`。
 
    > [!WARNING]
    > この書式設定ファイルは、Windows PowerShell の書式設定ファイルによって既に定義されているオブジェクトの表示を定義します。 コマンドレットの実行時には `prependPath` パラメーターを使用する必要があり、このフォーマットファイルをモジュールとして読み込むことはできません。
 
-## <a name="demonstrates"></a>サンプル
+## <a name="demonstrates"></a>使用例
 
 この書式設定ファイルは、次の XML 要素を示しています。
 

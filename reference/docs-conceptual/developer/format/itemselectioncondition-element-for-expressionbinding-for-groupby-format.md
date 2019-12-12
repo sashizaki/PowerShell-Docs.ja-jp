@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 6af3be7d-921e-4cf7-bd5a-d87aa0b4efbd
 caps.latest.revision: 7
 ms.openlocfilehash: b2b0a0d1996392614807e08b820a72978e38a0cb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365291"
 ---
 # <a name="itemselectioncondition-element-for-expressionbinding-for-groupby-format"></a>GroupBy の ExpressionBinding の ItemSelectionCondition 要素 (書式)
@@ -32,7 +32,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`ItemSelectionCondition` 要素の親要素について説明します。
+次のセクションでは、`ItemSelectionCondition` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -42,8 +42,8 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (�
 
 |要素|[説明]|
 |-------------|-----------------|
-|[GroupBy (Format) の ItemSelectionCondition の PropertyName 要素](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)|省略可能な要素。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
-|[GroupBy (Format) の ItemSelectionCondition の ScriptBlock 要素](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md)|省略可能な要素。<br /><br /> 条件をトリガーするスクリプトを指定します。|
+|[GroupBy (Format) の ItemSelectionCondition の PropertyName 要素](./propertyname-element-for-itemselectioncondition-for-groupby-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
+|[GroupBy (Format) の ItemSelectionCondition の ScriptBlock 要素](./scriptblock-element-for-itemselectioncondition-for-groupby-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーするスクリプトを指定します。|
 
 ### <a name="parent-elements"></a>親要素
 

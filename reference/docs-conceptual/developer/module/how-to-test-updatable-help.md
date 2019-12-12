@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3e064048-2b94-4365-bdb7-f1ee7c0a7fd7
 caps.latest.revision: 6
 ms.openlocfilehash: cecc6c26ccaece06462ddd74b53534137fcf3037
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367151"
 ---
 # <a name="how-to-test-updatable-help"></a>更新可能なヘルプをテストする方法

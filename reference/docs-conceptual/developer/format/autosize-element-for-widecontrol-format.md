@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: def37479-7b6e-40cf-bc81-0f7cbc651b31
 caps.latest.revision: 11
 ms.openlocfilehash: 6dbaef5886a0600bd9fe96dbc8d21f00a674dfcf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369051"
 ---
 # <a name="autosize-element-for-widecontrol-format"></a>WideControl の AutoSize 要素 (書式)
@@ -41,7 +41,7 @@ None
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[WideControl 要素 (Format)](./widecontrol-element-format.md)|ビューのワイド (単一値) リスト形式を定義します。|
 
@@ -53,7 +53,7 @@ None
 
 ワイドビューの例については、「 [Wide ビュー (Basic)](./wide-view-basic.md)」を参照してください。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [WideControl の ColumnNumber 要素 (形式)](./columnnumber-element-for-widecontrol-format.md)
 

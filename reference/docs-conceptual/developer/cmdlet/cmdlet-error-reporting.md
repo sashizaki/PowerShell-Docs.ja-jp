@@ -15,10 +15,10 @@ helpviewer_keywords:
 ms.assetid: 0b014035-52ea-44cb-ab38-bbe463c5465a
 caps.latest.revision: 8
 ms.openlocfilehash: 5dfec318438ca139518c596011ac5e56445738ea
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365921"
 ---
 # <a name="cmdlet-error-reporting"></a>コマンドレットのエラー報告
@@ -43,7 +43,7 @@ ms.locfileid: "72365921"
 
 ## <a name="reporting-nonterminating-errors"></a>終了しないエラーの報告
 
-終了しないエラーの報告は、常に、コマンドレットによる[システム](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)の実装 (.................................................... [) メソッド、](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)System....[コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)。 この種のエラーは、 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッドを呼び出してエラーストリームにエラーレコードを送信することによって報告されます。
+終了しないエラーの報告は、常に、コマンドレットによって実行されるようにする必要があり[ます。この](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッドの実装には、または、システムの[管理、.](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) ........................... [...](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) ... この種のエラーは、 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッドを呼び出してエラーストリームにエラーレコードを送信することによって報告されます。
 
 ## <a name="reporting-terminating-errors"></a>終了エラーの報告
 
@@ -82,7 +82,7 @@ PowerShell では、この識別子をコマンドレット識別子と組み合
 
 使用可能なエラーカテゴリの説明については、 [ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)列挙体を参照してください。 一般に、可能な限り**Noerror**、 **Undefinederror**、 **genericerror**の使用は避けてください。
 
-ユーザーは `$ErrorView` をカテゴリ**ビュー**に設定すると、カテゴリに基づいてエラーを表示できます。
+ユーザーは、カテゴリ**ビュー**に `$ErrorView` を設定したときに、カテゴリに基づいてエラーを表示できます。
 
 ## <a name="see-also"></a>「
 

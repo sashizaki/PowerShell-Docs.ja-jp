@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 67a2b061-2a4a-4ad1-84f9-cdbefb64aaab
 caps.latest.revision: 8
 ms.openlocfilehash: abb8b91626128b3deaa2db24a9fd8b34a6563410
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363631"
 ---
 # <a name="groupby-element-for-view-format"></a>View の GroupBy 要素 (書式)
@@ -35,7 +35,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビューの要素
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、および親要素について説明します。
+以降のセクションでは、属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -45,11 +45,11 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビューの要素
 
 |要素|[説明]|
 |-------------|-----------------|
-|[GroupBy (Format) の CustomControl 要素](./customcontrol-element-for-groupby-format.md)|省略可能な要素。<br /><br /> 新しいグループを表示するカスタムコントロールを定義します。|
-|[GroupBy (Format) の CustomControlName 要素](./customcontrolname-element-for-groupby-format.md)|省略可能な要素。<br /><br /> 新しいグループを表示するために使用するコントロールの名前を指定します。|
-|[GroupBy (Format) の Label 要素](./label-element-for-groupby-format.md)|省略可能な要素。<br /><br /> 新しいグループが検出されたときに表示されるラベルを指定します。|
-|[GroupBy (Format) の PropertyName 要素](./propertyname-element-for-groupby-format.md)|省略可能な要素。<br /><br /> .NET プロパティの値が変更されるたびに、によって新しいグループが開始されることを指定します。|
-|[GroupBy (Format) の ScriptBlock 要素](./scriptblock-element-for-groupby-format.md)|省略可能な要素。<br /><br /> 値が変更されるたびに新しいグループを開始するスクリプトを指定します。|
+|[GroupBy (Format) の CustomControl 要素](./customcontrol-element-for-groupby-format.md)|省略可能な要素です。<br /><br /> 新しいグループを表示するカスタムコントロールを定義します。|
+|[GroupBy (Format) の CustomControlName 要素](./customcontrolname-element-for-groupby-format.md)|省略可能な要素です。<br /><br /> 新しいグループを表示するために使用するコントロールの名前を指定します。|
+|[GroupBy (Format) の Label 要素](./label-element-for-groupby-format.md)|省略可能な要素です。<br /><br /> 新しいグループが検出されたときに表示されるラベルを指定します。|
+|[GroupBy (Format) の PropertyName 要素](./propertyname-element-for-groupby-format.md)|省略可能な要素です。<br /><br /> .NET プロパティの値が変更されるたびに、によって新しいグループが開始されることを指定します。|
+|[GroupBy (Format) の ScriptBlock 要素](./scriptblock-element-for-groupby-format.md)|省略可能な要素です。<br /><br /> 値が変更されるたびに新しいグループを開始するスクリプトを指定します。|
 
 ### <a name="parent-elements"></a>親要素
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4d68a8f3-fba0-44c5-97b9-9fc191d269a5
 caps.latest.revision: 13
 ms.openlocfilehash: 0906d0d37c66b8c1538a0b2e9e0f1ff2fba12ac0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369341"
 ---
 # <a name="strongly-encouraged-development-guidelines"></a>強くお勧めする開発ガイドライン
@@ -53,7 +53,7 @@ ms.locfileid: "72369341"
 
 ### <a name="use-pascal-case-for-cmdlet-names-sd02"></a>コマンドレット名に Pascal ケースを使用する (SD02)
 
-パラメーター名には Pascal 形式を使用します。 つまり、動詞の最初の文字と名詞で使用されるすべての用語を大文字にします。 たとえば、"`Clear-ItemProperty`" のようになります。
+パラメーター名には Pascal 形式を使用します。 つまり、動詞の最初の文字と名詞で使用されるすべての用語を大文字にします。 たとえば、"`Clear-ItemProperty`" などです。
 
 ### <a name="parameter-design-guidelines-sd03"></a>パラメーターのデザインガイドライン (SD03)
 
@@ -240,7 +240,7 @@ Windows PowerShell のパスは、名前空間へのアクセスを標準化す�
 
 既定では、Windows PowerShell 自体は大文字と小文字を区別しません。 ただし、既存の多くのシステムを処理するため、Windows PowerShell では、操作と互換性のために大文字と小文字が維持されます。 つまり、文字が大文字で指定されている場合、Windows PowerShell はそれを大文字で保持します。 システムが正常に機能するためには、コマンドレットでこの規則に従う必要があります。 可能であれば、大文字と小文字を区別しない方法で動作します。 ただし、後でコマンドまたはパイプラインで実行されるコマンドレットの場合は、元のケースを保持する必要があります。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [必要な開発ガイドライン](./required-development-guidelines.md)
 

@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 2d4e58a9-05bc-437c-86b9-d8d55cba7d48
 caps.latest.revision: 36
 ms.openlocfilehash: 4475b3f5e15826efbe8bab867011985cd7e2e1ae
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72370031"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>PowerShell コマンドの承認された動詞
@@ -233,7 +233,7 @@ PowerShell では、 [VerbsOther](/dotnet/api/System.Management.Automation.Verbs
 |--------------------|------------|--------------|
 |(U)[を使用する](/dotnet/api/System.Management.Automation.VerbsOther.Use)|を使用するか、リソースを使用して何らかの処理を行います。||
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [VerbsCommon (システム管理)](/dotnet/api/System.Management.Automation.VerbsCommon)
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
 ms.openlocfilehash: bdced961d91088dd75be347b7b74b22467c8c9be
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366021"
 ---
 # <a name="scheduling-jobs-with-the-powershell-api"></a>PowerShell API を使用したジョブのスケジュール設定
@@ -40,11 +40,11 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 ## <a name="defining-the-job"></a>ジョブの定義
 
-PowerShell ジョブを定義するには、パラメーター辞書を作成します。 次のパラメーターがサポートされています。
+PowerShell ジョブを定義するには、パラメーター辞書を作成します。 サポートされているパラメーターは次のとおりです。
 
 |パラメーター名|[説明]|
 |--------------------|-----------------|
-|**指定**|ジョブの名前。|
+|**名前**|ジョブの名前を指定します。|
 |**ScriptBock**|ジョブの動作を指定する PowerShell スクリプトブロック。|
 |**FilePath**|ジョブの内容を指定する PowerShell スクリプトブロックを含むファイルへのパス。|
 |**InitializationScript**|ジョブを初期化する PowerShell スクリプトブロック。|
@@ -66,7 +66,7 @@ string schedJobDefName = "MySampleSchedJob";
 
 ## <a name="creating-the-invocation-and-job-definition-objects"></a>呼び出しオブジェクトとジョブ定義オブジェクトの作成
 
-次の例に示すように、ジョブを実行する `ScheduledJobInvocationInfo` および `ScheduledJobDefinition` のオブジェクトを作成します。
+次の例に示すように、ジョブを実行する `ScheduledJobInvocationInfo` と `ScheduledJobDefinition` オブジェクトを作成します。
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(

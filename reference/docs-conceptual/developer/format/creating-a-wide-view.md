@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 2d4303c5-b451-4ccb-9831-b17a17ceac20
 caps.latest.revision: 16
 ms.openlocfilehash: 651de5d3bc2619f20438f3951ac5a8c4b0bf46d4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368951"
 ---
 # <a name="creating-a-wide-view"></a>ワイド ビューを作成する
@@ -239,7 +239,7 @@ View>
 
 - [ScriptBlock](./scriptblock-element-for-wideitem-for-widecontrol-format.md)要素 (表示されません) は、ビューによって値が表示されるスクリプトを指定します。 スクリプトまたはプロパティのいずれかを指定する必要がありますが、両方を指定することはできません。
 
-次の例では、スクリプトの値を書式設定するために `ToString` メソッドが呼び出されます。 スクリプトは、オブジェクトの任意のメソッドを呼び出すことができます。 したがって、オブジェクトに、書式設定パラメーターを持つ `ToString` などのメソッドがある場合、スクリプトはそのメソッドを呼び出してスクリプトの出力値を書式設定できます。
+次の例では、スクリプトの値の書式を設定するために、`ToString` メソッドが呼び出されています。 スクリプトは、オブジェクトの任意のメソッドを呼び出すことができます。 したがって、オブジェクトに、書式設定パラメーターを持つメソッド (`ToString`など) がある場合、スクリプトはそのメソッドを呼び出してスクリプトの出力値を書式設定できます。
 
 ```xml
 <WideItem>
@@ -250,7 +250,7 @@ View>
 </WideItem>
 ```
 
-次の XML 要素を使用して `ToString` メソッドを呼び出すことができます。
+次の XML 要素を使用して、`ToString` メソッドを呼び出すことができます。
 
 - [WideItem](./wideitem-element-for-widecontrol-format.md)要素は、ビューによって表示されるデータを指定します。
 

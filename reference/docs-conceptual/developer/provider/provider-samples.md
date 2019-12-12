@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: c4933dad-fec9-4337-a1a9-9dc16ee87cc3
 caps.latest.revision: 9
 ms.openlocfilehash: 1e7aeb5bcb6bd5a2845648c3327e2245e6c428ba
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366301"
 ---
 # <a name="provider-samples"></a>プロバイダーのサンプル
@@ -21,7 +21,7 @@ ms.locfileid: "72366301"
 
 ## <a name="in-this-section"></a>このセクションの内容
 
-ここでは、次のトピックについて説明します。
+このセクションには、次のトピックがあります。
 
 [AccessDBProviderSample01 サンプル](./accessdbprovidersample01.md)このサンプルでは、system.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)クラスから直接派生するプロバイダークラスを宣言する方法を示します。 すべてを網羅しておく目的でここに含めておきます。
 
@@ -35,6 +35,6 @@ ms.locfileid: "72366301"
 
 [AccessDBProviderSample06](./accessdbprovidersample06.md)このサンプルでは、`Clear-Content`、`Get-Content`、および `Set-Content` コマンドレットの呼び出しをサポートするために、コンテンツメソッドを上書きする方法を示します。 これらのメソッドは、ユーザーがデータ ストア内の項目のコンテンツを管理する必要がある場合に実装する必要があります。 このサンプルのプロバイダークラスは、 [Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)インターフェイスを実装しています。この[クラスは、system.servicemodel クラスの](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラスから派生していますが、
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell プロバイダーの作成](./writing-a-windows-powershell-provider.md)

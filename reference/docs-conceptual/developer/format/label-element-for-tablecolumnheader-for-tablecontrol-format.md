@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 7196f039-2f6a-41fd-b252-5b1623ebb9f9
 caps.latest.revision: 11
 ms.openlocfilehash: 09183a538c179f19347c3f1ed45b4ad38c2ca451
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365171"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>TableControl の TableColumnHeader の Label 要素 (書式)
@@ -42,7 +42,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[TableControl の TableHeaders の TableColumnHeader 要素 (Format)](./tablecolumnheader-element-format.md)|テーブルの列のデータのラベル、幅、および配置を定義します。|
 
@@ -68,7 +68,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </TableColumnHeader>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [テーブルビューの作成](./creating-a-table-view.md)
 

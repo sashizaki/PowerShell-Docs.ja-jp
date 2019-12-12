@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
 caps.latest.revision: 9
 ms.openlocfilehash: 390eb2d0153c65967d8c0711c852aa6e13fe4660
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360821"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Windows PowerShell ホスト クイック スタート
@@ -91,7 +91,7 @@ PowerShell.Create().AddCommand("Get-Process")
 ### <a name="addstatement"></a>AddStatement
 
 バッチ処理をシミュレートするには、追加のステートメントをパイプラインの末尾に追加する、 [addstatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)メソッドを使用します。
-次のコードは、`PowerShell` という名前の実行中のプロセスの一覧を取得し、実行中のサービスの一覧を取得します。
+次のコードでは、`PowerShell`という名前の実行中のプロセスの一覧を取得し、実行中のサービスの一覧を取得します。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -104,15 +104,15 @@ ps.Invoke();
 
 既存のスクリプトを実行するには、. [PowerShell. AddScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript)メソッドを呼び出します。
 次の例では、パイプラインにスクリプトを追加して実行します。
-この例では、`D:\PSScripts` という名前のフォルダーに `MyScript.ps1` という名前のスクリプトが既に存在することを前提としています。
+この例では、`D:\PSScripts`という名前のフォルダーに `MyScript.ps1` という名前のスクリプトが既に存在することを前提としています。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
-また、`useLocalScope` という名前のブール型パラメーターを受け取る AddScript メソッドのバージョンもあります。
-このパラメーターを `true` に設定すると、スクリプトはローカルスコープで実行されます。
+また、`useLocalScope`という名前のブール型パラメーターを受け取る AddScript メソッドのバージョンもあります。
+このパラメーターが `true`に設定されている場合、スクリプトはローカルスコープで実行されます。
 次のコードでは、スクリプトがローカルスコープで実行されます。
 
 ```csharp
@@ -151,7 +151,7 @@ ps.Invoke();
 指定したコマンドのみを読み込む実行空間を使用すると、パフォーマンスが大幅に向上します。
 
 最初のセッション状態のコマンドレットを定義するには、system.servicemodel. [Sessionstatecmd・ entry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry)クラスのメソッドを使用します。
-次の例では、空の初期セッション状態を作成し、`Get-Command` と `Import-Module` のコマンドを最初のセッション状態に定義して追加します。
+次の例では、空の初期セッション状態を作成し、`Get-Command` および `Import-Module` のコマンドを初期セッション状態に定義して追加します。
 その後、その最初のセッション状態によって制約された実行空間を作成し、その実行空間でコマンドを実行します。
 
 初期セッション状態を作成します。

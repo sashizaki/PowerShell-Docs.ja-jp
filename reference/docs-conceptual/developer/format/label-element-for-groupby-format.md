@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 3351d237-e8c2-4ec5-9500-4eceadb407c2
 caps.latest.revision: 11
 ms.openlocfilehash: e7158711c60d13c745bbdfab9b1b9fc7d98b34e2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365201"
 ---
 # <a name="label-element-for-groupby-format"></a>GroupBy の Label 要素 (書式)
@@ -55,7 +55,7 @@ Windows PowerShell では、この要素で指定されたテキストに加え�
 
 ## <a name="example"></a>例
 
-次の例は、新しいグループのラベルを示しています。 表示されるラベルは次のようになります。 `Service Type: NewValueofProperty`
+次の例は、新しいグループのラベルを示しています。 表示されるラベルは次のようになります: `Service Type: NewValueofProperty`
 
 ```xml
 <GroupBy>

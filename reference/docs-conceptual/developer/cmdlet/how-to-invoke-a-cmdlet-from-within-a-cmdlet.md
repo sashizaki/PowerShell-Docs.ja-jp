@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
 caps.latest.revision: 12
 ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365551"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>コマンドレット内からコマンドレットを呼び出す方法
 
-この例では、別のコマンドレット内からコマンドレットを呼び出す方法を示します。このコマンドレットを使用すると、開発中のコマンドレットに、呼び出されたコマンドレットの機能を追加できます。 この例では、`Get-Process` コマンドレットを呼び出して、ローカルコンピューター上で実行されているプロセスを取得します。 @No__t-0 コマンドレットの呼び出しは、次のコマンドと同じです。 このコマンドは、名前が "a" ~ "t" で始まるすべてのプロセスを取得します。
+この例では、別のコマンドレット内からコマンドレットを呼び出す方法を示します。このコマンドレットを使用すると、開発中のコマンドレットに、呼び出されたコマンドレットの機能を追加できます。 この例では、`Get-Process` コマンドレットを呼び出して、ローカルコンピューター上で実行されているプロセスを取得します。 `Get-Process` コマンドレットの呼び出しは、次のコマンドと同じです。 このコマンドは、名前が "a" ~ "t" で始まるすべてのプロセスを取得します。
 
 ```powershell
 Get-Process -name [a-t]
@@ -43,7 +43,7 @@ Get-Process -name [a-t]
     gp.Name = new string[] { "[a-t]*" };
     ```
 
-3. @No__t-1 コマンドレットを呼び出すには、system.servicemodel [*](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)メソッドを呼び出します。
+3. `Get-Process` コマンドレットを呼び出すには、system.servicemodel [*](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)メソッドを呼び出します。
 
     ```csharp
       foreach (Process p in gp.Invoke<Process>())

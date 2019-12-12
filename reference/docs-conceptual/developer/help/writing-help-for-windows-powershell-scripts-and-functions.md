@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 859a6e22-75b1-43d4-ba62-62c107803b37
 caps.latest.revision: 7
 ms.openlocfilehash: af989fb2eeba6b68f2e3e6506f3f60d5be6f7d8a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367721"
 ---
 # <a name="writing-help-for-powershell-scripts-and-functions"></a>PowerShell スクリプトと関数のヘルプの作成
@@ -39,7 +39,7 @@ PowerShell スクリプトには、スクリプトの各関数に関するスク
 
 `ExternalHelp` comment キーワードが存在する場合、`ExternalHelp` キーワードの値に一致するヘルプファイルが見つからない `Get-Help` 場合でも、コメントベースのヘルプよりも優先されます。
 
-### <a name="online-help"></a>オンラインヘルプ
+### <a name="online-help"></a>オンライン ヘルプ
 ヘルプトピックをインターネットに投稿し、`Get-Help` にダイレクトして、トピックを開くことができます。
 コメントベースのヘルプトピックの記述の詳細については、「[オンラインヘルプのサポート](../module/supporting-online-help.md)」を参照してください。
 
@@ -68,6 +68,6 @@ PowerShell スクリプトには、スクリプトの各関数に関するスク
 
 - `Get-Help` スクリプトまたは関数のヘルプトピックが表示されるのは、スクリプトファイルとヘルプトピックファイルが正しい場所に保存されている場合のみです。 そのため、PowerShell のインストール手順を含めたり、スクリプトや関数をスクリプトまたは関数のヘルプトピックに保存したりインストールしたりすることはできません。 代わりに、スクリプトまたは関数の配布に使用するすべてのインストール手順をドキュメントに含めます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [コメントベースのヘルプトピックの作成](./writing-comment-based-help-topics.md)

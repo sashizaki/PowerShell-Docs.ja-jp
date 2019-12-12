@@ -14,10 +14,10 @@ helpviewer_keywords:
 ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
 caps.latest.revision: 9
 ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369111"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell エラー レコード
@@ -38,7 +38,7 @@ ms.locfileid: "72369111"
 
 - エラーをスローしたコマンドレットに関するオプションの呼び出し情報。 この情報は、Windows PowerShell によって指定されます (「呼び出しメッセージ」を参照してください)。
 
-- エラーが発生したときに処理されていたターゲットオブジェクト。 これは入力オブジェクトである場合もあれば、コマンドレットが処理していた別のオブジェクトである場合もあります。 たとえば、コマンド `remove-item -recurse c:\somedirectory` の場合、エラーは "c:\somedirectory\lockedfile" の FileInfo オブジェクトのインスタンスである可能性があります。 ターゲットオブジェクトの情報は省略可能です。
+- エラーが発生したときに処理されていたターゲットオブジェクト。 これは入力オブジェクトである場合もあれば、コマンドレットが処理していた別のオブジェクトである場合もあります。 たとえば、コマンド `remove-item -recurse c:\somedirectory`の場合、エラーは "c:\somedirectory\lockedfile" の FileInfo オブジェクトのインスタンスである可能性があります。 ターゲットオブジェクトの情報は省略可能です。
 
 ## <a name="error-identifier"></a>エラー識別子
 
@@ -58,9 +58,9 @@ ms.locfileid: "72369111"
 
 - エラー識別子は、再現不可能な方法で動的に生成しないようにしてください。 たとえば、プロセス ID などのエラー情報を組み込むことはできません。 エラー識別子は、同じエラー条件が発生している他のユーザーによって検出されたエラー識別子に対応している場合にのみ役立ちます。
 
-## <a name="error-category"></a>エラーカテゴリ
+## <a name="error-category"></a>エラー カテゴリ
 
-エラーレコードを作成するときに、 [ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)列挙体で定義されている定数の1つを使用して、エラーのカテゴリを指定します。 Windows PowerShell は、ユーザーが `$ErrorView` 変数を `"CategoryView"` に設定したときに、エラーカテゴリを使用してエラー情報を表示します。
+エラーレコードを作成するときに、 [ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)列挙体で定義されている定数の1つを使用して、エラーのカテゴリを指定します。 Windows PowerShell は、ユーザーが `$ErrorView` 変数を `"CategoryView"`に設定したときに、エラーカテゴリを使用してエラー情報を表示します。
 
 [ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **notspecified**定数は使用しないでください。 エラーまたはエラーの原因となった操作に関する情報がある場合は、カテゴリが完全に一致していない場合でも、エラーまたは操作について最もよく説明されているカテゴリを選択します。
 
@@ -72,15 +72,15 @@ Windows PowerShell によって表示される情報は、カテゴリビュー�
 
 次の一覧に、表示される情報を示します。
 
-- [カテゴリ]:Windows PowerShell で定義された[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)定数。
+- Category: Windows PowerShell で定義された[ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)定数。
 
-- TargetName既定では、エラーが発生したときにコマンドレットが処理していたオブジェクトの名前。 または、別のコマンドレットで定義された文字列。
+- TargetName: 既定では、エラーが発生したときにコマンドレットが処理していたオブジェクトの名前。 または、別のコマンドレットで定義された文字列。
 
-- TargetType既定では、対象オブジェクトの種類です。 または、別のコマンドレットで定義された文字列。
+- TargetType: 既定では、ターゲットオブジェクトの型です。 または、別のコマンドレットで定義された文字列。
 
-- 演習既定では、エラーレコードを作成したコマンドレットの名前です。 または、他のコマンドレットで定義された文字列。
+- アクティビティ: 既定では、エラーレコードを作成したコマンドレットの名前。 または、他のコマンドレットで定義された文字列。
 
-- 理由:既定では、例外の種類です。 または、別のコマンドレットで定義された文字列。
+- 理由: 既定では、例外の種類です。 または、別のコマンドレットで定義された文字列。
 
 ## <a name="replacement-error-message"></a>置換エラーメッセージ
 
@@ -88,9 +88,9 @@ Windows PowerShell によって表示される情報は、カテゴリビュー�
 
 置換メッセージ[は、system.servicemodel オブジェクトに](/dotnet/api/System.Management.Automation.ErrorDetails)よって提供されます。 Windows PowerShell で使用できる追加のローカライズ情報を提供するため、このオブジェクトの次のいずれかのコンストラクターを使用します。
 
-- [Errordetails (コマンドレット、string、string、Object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___):テンプレート文字列が、コマンドレットが実装されている同じアセンブリ内のリソース文字列であるか、またはテンプレート文字列をオーバーライドすることによってテンプレート文字列を読み込む場合、このコンストラクターを使用します。 [GetResourceString](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)メソッド.
+- [Errordetails (コマンドレット、文字列、文字列、オブジェクト [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Management_Automation_Cmdlet_System_String_System_String_System_Object___): テンプレート文字列が、コマンドレットが実装されている同じアセンブリ内のリソース文字列であるか、またはテンプレート文字列をオーバーライドすることによってテンプレート文字列を読み込む場合[は、この](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)コンストラクターを使用します。
 
-- [Errordetails (Assembly、string、string、Object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___):このコンストラクターは、テンプレート文字列が別のアセンブリ内にあり、それをオーバーライドして読み込むことができない場合に使用し[ます。](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)
+- [Errordetails (Assembly、string、string、Object [])](/dotnet/api/system.management.automation.errordetails.-ctor?view=pscore-6.2.0#System_Management_Automation_ErrorDetails__ctor_System_Reflection_Assembly_System_String_System_String_System_Object___): このコンストラクターは、テンプレート文字列が別のアセンブリ内にあり、それをオーバーライドして読み込むことができない場合に使用し[ます。](/dotnet/api/System.Management.Automation.Cmdlet.GetResourceString)
 
 この置換メッセージは、例外メッセージを作成するための .NET Framework 設計ガイドラインに従っている必要がありますが、わずかな違いがあります。 例外メッセージが開発者向けに記述されていることを示すガイドラインの状態。 これらの置換メッセージは、コマンドレットユーザー用に記述する必要があります。
 
@@ -102,7 +102,7 @@ Windows PowerShell によって表示される情報は、カテゴリビュー�
 
 ## <a name="invocation-information"></a>呼び出し情報
 
-コマンドレットが[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)または[Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)を使用してエラーレコードを報告する場合、Windows PowerShell は、その情報を説明する情報を自動的に追加します。エラーが発生したときに呼び出されたコマンドです。 この情報は、 [Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo)オブジェクトによって提供されます。このオブジェクトには、コマンドによって呼び出されたコマンドレットの名前、コマンド自体、およびパイプラインまたはスクリプトに関する情報が含まれています。 このプロパティは読み取り専用です。
+コマンドレットが[WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)または[Throwterminatingerror *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)を使用してエラーレコードを報告すると、Windows PowerShell によって、エラーが発生したときに呼び出されたコマンドを説明する情報が自動的に追加されます。 この情報は、 [Invocationinfo](/dotnet/api/System.Management.Automation.InvocationInfo)オブジェクトによって提供されます。このオブジェクトには、コマンドによって呼び出されたコマンドレットの名前、コマンド自体、およびパイプラインまたはスクリプトに関する情報が含まれています。 このプロパティは読み取り専用です。
 
 ## <a name="see-also"></a>参照
 

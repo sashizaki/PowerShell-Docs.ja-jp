@@ -13,10 +13,10 @@ helpviewer_keywords:
 ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
 caps.latest.revision: 13
 ms.openlocfilehash: 81b1ed95669f51ba554f6f99031d098e239f02e0
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365361"
 ---
 # <a name="parameter-attribute-declaration"></a>パラメーター属性の宣言
@@ -76,7 +76,7 @@ Parameter 属性は、コマンドレットパラメーターとしてコマン�
 
 - Parameter 属性は、system.servicemodel[属性](/dotnet/api/System.Management.Automation.ParameterAttribute)クラスによって定義されます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [System.string. Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)
 

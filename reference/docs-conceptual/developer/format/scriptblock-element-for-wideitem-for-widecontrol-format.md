@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: e00e8f36-76f2-49a0-9b02-3a2a7fceb2dd
 caps.latest.revision: 8
 ms.openlocfilehash: 6534e9dbfbe0dedf60dadd6467cff9ad9b447ba4
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362031"
 ---
 # <a name="scriptblock-element-for-wideitem-for-widecontrol-format"></a>WideControl の WideItem の ScriptBlock 要素 (書式)
@@ -41,7 +41,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[WideItem 要素 (Format)](./wideitem-element-for-widecontrol-format.md)|ワイドビューに表示される値を持つプロパティまたはスクリプトブロックを定義します。|
 
@@ -63,7 +63,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </WideItem>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [WideItem 要素 (Format)](./wideitem-element-for-widecontrol-format.md)
 

@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
 caps.latest.revision: 5
 ms.openlocfilehash: 26c7bafe708fbbd89aecb002f3591daa03f56b77
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74417526"
 ---
 # <a name="accessdbprovidersample03-code-sample"></a>AccessDbProviderSample03 コード サンプル
@@ -26,7 +26,7 @@ ms.locfileid: "74417526"
 >
 > その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>コード サンプル
 
 ```csharp
 using System;
@@ -999,7 +999,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 [!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L11-L976 "AccessDBProviderSample03.cs")]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 

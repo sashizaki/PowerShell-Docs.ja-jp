@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
 caps.latest.revision: 13
 ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363561"
 ---
 # <a name="background-jobs"></a>バックグラウンド ジョブ
@@ -89,6 +89,6 @@ Windows PowerShell バックグラウンド ジョブを停止します。
 
 セッションで実行されている 1 つまたはすべての Windows PowerShell のバックグラウンド ジョブが完了するまでは、コマンド プロンプトが表示されないようにします。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)

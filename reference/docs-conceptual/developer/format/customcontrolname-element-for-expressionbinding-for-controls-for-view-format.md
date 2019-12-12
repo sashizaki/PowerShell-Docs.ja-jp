@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4b6ee11e-9086-41d2-afd3-42fb9f24da69
 caps.latest.revision: 7
 ms.openlocfilehash: bf1d57447f9018f1535af14466427aaeabc048f3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72369151"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-controls-for-view-format"></a>View の Controls の ExpressionBinding の CustomControlName 要素 (書式)
@@ -29,7 +29,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`CustomControlName` 要素の親要素について説明します。
+次のセクションでは、`CustomControlName` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 

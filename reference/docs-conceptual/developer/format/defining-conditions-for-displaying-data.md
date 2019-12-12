@@ -9,21 +9,21 @@ ms.topic: article
 ms.assetid: c1e05821-6aec-437b-84a5-218a5727f88b
 caps.latest.revision: 10
 ms.openlocfilehash: 8a5b84b6a461e9fc340a5981578d95ca2ac6b9f7
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363901"
 ---
 # <a name="defining-conditions-for-displaying-data"></a>データの表示条件を定義する
 
-ビューまたはコントロールによって表示されるデータを定義するときに、表示されるデータに必要な条件を指定できます。 条件は、特定のプロパティによって、またはスクリプトまたはプロパティの値が `true` に評価されるときにトリガーされます。 選択条件が満たされると、ビューまたはコントロールの定義が使用されます。
+ビューまたはコントロールによって表示されるデータを定義するときに、表示されるデータに必要な条件を指定できます。 条件は、特定のプロパティによって、またはスクリプトまたはプロパティの値が `true`に評価されるときにトリガーされます。 選択条件が満たされると、ビューまたはコントロールの定義が使用されます。
 
 ## <a name="specifying-a-selection-condition-for-a-definition"></a>定義の選択条件の指定
 
 ビューまたはコントロールの定義を作成するときに、`EntrySelectedBy` 要素を使用して、定義を使用するオブジェクトまたは定義を使用するために必要な条件を指定します。 条件は `SelectionCondition` 要素によって指定されます。
 
-次の例では、テーブルビューの定義に対して選択条件が指定されています。 この例では、指定されたスクリプトが `true` に評価される場合にのみ、定義が使用されます。
+次の例では、テーブルビューの定義に対して選択条件が指定されています。 この例では、指定されたスクリプトが `true`に評価される場合にのみ、定義が使用されます。
 
 ```xml
 <TableRowEntry>
@@ -46,7 +46,7 @@ ms.locfileid: "72363901"
 
 ## <a name="specifying-a-selection-condition-for-an-item"></a>項目の選択条件の指定
 
-項目定義に `ItemSelectionCondition` 要素を含めることによって、リストビューまたはコントロールの項目をいつ使用するかを指定することもできます。 次の例では、リストビューの項目に対して選択条件が指定されています。 この例では、この項目は、スクリプトが `true` に評価された場合にのみ使用されます。
+項目定義に `ItemSelectionCondition` 要素を含めることによって、リストビューまたはコントロールの項目をいつ使用するかを指定することもできます。 次の例では、リストビューの項目に対して選択条件が指定されています。 この例では、この項目は、スクリプトが `true`に評価されるときにのみ使用されます。
 
 ```xml
 <ListItem>

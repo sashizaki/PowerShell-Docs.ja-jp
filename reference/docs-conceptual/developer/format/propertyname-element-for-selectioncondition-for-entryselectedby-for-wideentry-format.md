@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 340abb12-6df1-42f4-bdae-b0509c90952c
 caps.latest.revision: 11
 ms.openlocfilehash: 196877b97db9ed0592e357486c1318dc1e7efd31
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362241"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format"></a>WideEntry の EntrySelectedBy の SelectionCondition の PropertyName 要素 (書式)
 
-条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、定義が使用されます。
+条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、定義が使用されます。
 
 Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) WideControl Element (format) WideEntries Element (format) WideEntry Element (format) WideEntry (Format) SelectionCondition 要素の (Format) 項目の EntrySelectedBy 要素Entryselectedby for WideEntry (Format) PropertyName Element for EntrySelectedBy for WideEntry (Format)
 
@@ -33,7 +33,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`PropertyName` 要素の親要素について説明します。
+次のセクションでは、`PropertyName` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 

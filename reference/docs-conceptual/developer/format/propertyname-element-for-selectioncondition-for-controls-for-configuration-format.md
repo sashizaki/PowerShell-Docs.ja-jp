@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: ec048408-e1c6-41ef-b39b-72f4c2dcf2ac
 caps.latest.revision: 6
 ms.openlocfilehash: b4b2440fdb7171d09fdc16ac7cc4f25ed1a4bb78
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72362401"
 ---
 # <a name="propertyname-element-for-selectioncondition-for-controls-for-configuration-format"></a>Configuration の Controls の SelectionCondition の PropertyName 要素 (書式)
 
-条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true` と評価された場合、条件が満たされ、エントリが使用されます。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
+条件をトリガーする .NET プロパティを指定します。 このプロパティが存在する場合、または `true`に評価された場合、条件が満たされ、エントリが使用されます。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
 
 Configuration 要素 (Format) 構成用の CustomControl の Configuration (format) CustomEntries 要素の構成 (形式) の CustomControl 要素の構成 (書式設定) 要素のコントロール要素Format) CustomControl 用の CustomEntry 要素を構成するためのコントロールのためのコントロール用の構成 (形式) の構成 (形式) のために、customentry の configuration (書式) の Selectionselectedby 構成用の EntrySelectedBy の SelectionCondition 要素 (Format) ListEntry の EntrySelectedBy の SelectionCondition の PropertyName 要素 (形式)
 
@@ -29,7 +29,7 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ## <a name="attributes-and-elements"></a>属性と要素
 
-次のセクションでは、属性、子要素、`PropertyName` 要素の親要素について説明します。
+次のセクションでは、`PropertyName` 要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 

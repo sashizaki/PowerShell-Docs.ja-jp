@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 4606fec0-ff31-4d36-af68-227405335ec3
 caps.latest.revision: 15
 ms.openlocfilehash: 0427367efa2c8a7e352d718706d1341a0c8e3621
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367961"
 ---
 # <a name="types-element-for-selectionset-format"></a>SelectionSet の Types 要素 (書式)
@@ -40,13 +40,13 @@ Configuration 要素 (Format) SelectionSets 要素 (書式) Selectionsets Elemen
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[型の TypeName 要素 (Format)](./typename-element-for-types-format.md)|必須の要素です。<br /><br /> 選択セットに属する .NET オブジェクトを指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[SelectionSet 要素 (形式)](./selectionset-element-format.md)|セットの名前で参照できる .NET オブジェクトのセットを定義します。|
 
@@ -72,7 +72,7 @@ Configuration 要素 (Format) SelectionSets 要素 (書式) Selectionsets Elemen
 </SelectionSets>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [オブジェクトのセットの定義](./defining-selection-sets.md)
 

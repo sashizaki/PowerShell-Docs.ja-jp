@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: ef8395aa-4b31-48c0-a0b8-b481fd0b3738
 caps.latest.revision: 15
 ms.openlocfilehash: 9e6cffc7476ef01124d95ecbf287d9788b0324c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368231"
 ---
 # <a name="tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format"></a>TableControl の TableColumnItems の TableColumnItem 要素 (書式)
@@ -42,7 +42,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[TableControl (Format) の TableColumnItem の Alignment 要素](./alignment-element-for-tablecolumnitem-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> 行の列のデータをどのように表示するかを定義します。|
 |[TableControl (Format) の TableColumnItem の FormatString 要素](./formatstring-element-for-tablecolumnitem-for-tablecontrol-format.md)|行の列のデータの書式設定に使用する形式パターンを指定します。|
@@ -51,7 +51,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[TableControl (Format) の TableControlEntry の TableColumnItems 要素](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|値が行内に表示されるプロパティまたはスクリプトを定義します。|
 
@@ -73,7 +73,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [テーブルビューの作成](./creating-a-table-view.md)
 

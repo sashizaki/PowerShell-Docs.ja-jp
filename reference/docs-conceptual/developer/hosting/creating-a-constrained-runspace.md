@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
 caps.latest.revision: 5
 ms.openlocfilehash: 20ac1e2af8e047b8b572d86a55439676aa8df25c
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367651"
 ---
 # <a name="creating-a-constrained-runspace"></a>制約付き実行空間を作成する
 
-パフォーマンスまたはセキュリティ上の理由により、ホストアプリケーションで使用できる Windows PowerShell コマンドを制限する必要がある場合があります。 これを行うには、 [Initialsessionstate *](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create)メソッドを呼び出して[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)を作成してから、必要なコマンドのみを追加します。このためには、次のように入力します。ご.
+パフォーマンスまたはセキュリティ上の理由により、ホストアプリケーションで使用できる Windows PowerShell コマンドを制限する必要がある場合があります。 これを行うには、 [Initialsessionstate *](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create)メソッドを呼び出して、空の[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)を作成してから、使用するコマンドのみを追加します。これには、次のように入力します。
 
  指定したコマンドのみを読み込む実行空間を使用すると、パフォーマンスが大幅に向上します。
 

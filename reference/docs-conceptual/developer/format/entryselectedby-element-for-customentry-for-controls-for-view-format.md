@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: b3d80a7d-3797-4c46-ae74-ae5cda79b24f
 caps.latest.revision: 8
 ms.openlocfilehash: efb20c3f2077547e6eb3cb28240512b444f9c481
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363891"
 ---
 # <a name="entryselectedby-element-for-customentry-for-controls-for-view-format"></a>View の Controls の CustomEntry の EntrySelectedBy 要素 (書式)
@@ -43,9 +43,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 |要素|[説明]|
 |-------------|-----------------|
-|[ビューのコントロール (Format) に対する EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md)|省略可能な要素。<br /><br /> この定義を使用するために必要な条件を定義します。|
-|[ビューのコントロール (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)|省略可能な要素。<br /><br /> コントロールのこの定義を使用する .NET 型のセットを指定します。|
-|[ビューのコントロール (Format) の EntrySelectedBy の TypeName 要素](./typename-element-for-entryselectedby-for-controls-for-view-format.md)|省略可能な要素。<br /><br /> コントロールのこの定義を使用する .NET 型を指定します。|
+|[ビューのコントロール (Format) に対する EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> この定義を使用するために必要な条件を定義します。|
+|[ビューのコントロール (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> コントロールのこの定義を使用する .NET 型のセットを指定します。|
+|[ビューのコントロール (Format) の EntrySelectedBy の TypeName 要素](./typename-element-for-entryselectedby-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> コントロールのこの定義を使用する .NET 型を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
@@ -55,7 +55,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="remarks"></a>コメント
 
-選択条件を使用して、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプトが `true` に評価される場合など、使用する定義に存在する必要がある条件を定義します。 選択条件の詳細については、「[ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件を使用して、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプトが `true`に評価される場合など、使用する定義に必要な条件を定義します。 選択条件の詳細については、「[ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

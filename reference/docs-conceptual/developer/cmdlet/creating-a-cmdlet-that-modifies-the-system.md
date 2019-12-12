@@ -14,10 +14,10 @@ helpviewer_keywords:
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
 ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365761"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>システムを変更するコマンドレットを作成する
@@ -272,7 +272,7 @@ if (criticalProcess &&!force)
 
 システムの変更を行うコマンドレットの入力処理メソッドでは、入力の処理を停止する方法が提供される必要があります。 この Stop Proc コマンドレットの場合は[、system.](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) [..](/dotnet/api/System.Diagnostics.Process.Kill) ....................................................... `PassThru` パラメーターは `true`に設定されて[いるので](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)、 [WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)も呼び出されて、プロセスオブジェクトがパイプラインに送信されます。この処理が行われます。
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>コード サンプル
 
 完全なC#サンプルコードについては、「 [StopProcessSample01 sample](./stopprocesssample01-sample.md)」を参照してください。
 
@@ -294,7 +294,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     PS> stop-proc
     ```
 
-次の出力が表示されます。
+次のような出力が表示されます。
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -308,7 +308,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     PS> stop-proc -Name notepad
     ```
 
-次の出力が表示されます。
+次のような出力が表示されます。
 
     ```
     Confirm
@@ -323,7 +323,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     PS> stop-proc -Name Winlogon
     ```
 
-次の出力が表示されます。
+次のような出力が表示されます。
 
     ```output
     Confirm
@@ -341,7 +341,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     PS> stop-proc -Name winlogon -Force
     ```
 
-次の出力が表示されます。
+次のような出力が表示されます。
 
     ```output
     Confirm
@@ -350,7 +350,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [コマンドライン入力を処理するパラメーターの追加](./adding-parameters-that-process-command-line-input.md)
 

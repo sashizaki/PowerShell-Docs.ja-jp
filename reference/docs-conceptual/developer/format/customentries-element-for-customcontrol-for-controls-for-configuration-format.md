@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 80fc4de2-208f-4506-9a6a-c2675bb83be4
 caps.latest.revision: 11
 ms.openlocfilehash: abef6c91500f665c2366f221496d4cfd6444f5c9
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368821"
 ---
 # <a name="customentries-element-for-customcontrol-for-controls-for-configuration-format"></a>Configuration の Controls の CustomControl の CustomEntries 要素 (書式)
@@ -40,13 +40,13 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ### <a name="child-elements"></a>子要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[CustomControl の CustomEntry 要素 (構成用コントロール用) (形式)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|コモンコントロールの定義を提供します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|説明|
+|要素|[説明]|
 |-------------|-----------------|
 |[構成用のコントロールの CustomControl 要素 (形式)](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|共通コントロールを定義します。|
 
@@ -54,7 +54,7 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ほとんどの場合、コントロールには定義が1つだけあります。定義は1つの `CustomEntry` 要素で定義されます。 ただし、同じコントロールを使用して異なる .NET オブジェクトを表示する場合は、複数の定義を含めることができます。 このような場合は、オブジェクトまたはオブジェクトのセットごとに `CustomEntry` 要素を定義できます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [構成用のコントロールの CustomControl 要素 (形式)](./customcontrol-element-for-control-for-controls-for-configuration-format.md)
 

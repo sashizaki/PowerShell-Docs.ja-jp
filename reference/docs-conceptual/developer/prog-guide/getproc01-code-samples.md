@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: f85487d6-ef50-40b9-b60d-8bb65506627e
 caps.latest.revision: 6
 ms.openlocfilehash: 6d47fbc6b41d87cb830683ea412826275083b8a3
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360461"
 ---
 # <a name="getproc01-code-samples"></a>GetProc01 コード サンプル
 
-GetProc01 サンプルコマンドレットのコードサンプルを次に示します。 これは、「[最初のコマンドレットの作成](../cmdlet/creating-a-cmdlet-without-parameters.md)」で説明されている基本的な `Get-Process` コマンドレットのサンプルです。 @No__t 0 コマンドレットは、ローカルコンピューター上で実行されているすべてのプロセスに関する情報を取得するように設計されています。
+GetProc01 サンプルコマンドレットのコードサンプルを次に示します。 これは、「[最初のコマンドレットの作成](../cmdlet/creating-a-cmdlet-without-parameters.md)」で説明されている基本的な `Get-Process` コマンドレットのサンプルです。 `Get-Process` コマンドレットは、ローカルコンピューター上で実行されているすべてのプロセスに関する情報を取得するように設計されています。
 
 完全なサンプルコードについては、次のトピックを参照してください。
 

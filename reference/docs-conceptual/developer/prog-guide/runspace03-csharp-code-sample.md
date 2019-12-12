@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 9ac8ab99-1856-4d6f-b30d-c0a18b8dd1fc
 caps.latest.revision: 6
 ms.openlocfilehash: 06b5a06ae20a4bbb2c58eaa1776700aa8f80555c
-ms.sourcegitcommit: d43f66071f1f33b350d34fa1f46f3a35910c5d24
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/23/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "74416070"
 ---
 # <a name="runspace03-c-code-sample"></a>RunSpace03 (C#) コード サンプル
@@ -23,11 +23,11 @@ ms.locfileid: "74416070"
 > このサンプルのC#ソースファイル (runspace03.cs) をダウンロードするには、Microsoft Windows Software Development Kit For windows Vista および Microsoft .NET Framework 3.0 Runtime Components を使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
 > ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>コード サンプル
 
 [!code-csharp[Runspace03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/Runspace03/Runspace03.cs#L11-L88 "Runspace03.cs")]
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 
