@@ -9,71 +9,71 @@ ms.topic: article
 ms.assetid: 6aebd53f-0610-4959-88b2-42339588c859
 caps.latest.revision: 6
 ms.openlocfilehash: ad4300937c10652b677346a62c42fa4f6e8513cf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72365701"
 ---
-# <a name="getprocesssample05-sample"></a><span data-ttu-id="611c1-102">GetProcessSample05 サンプル</span><span class="sxs-lookup"><span data-stu-id="611c1-102">GetProcessSample05 Sample</span></span>
+# <a name="getprocesssample05-sample"></a><span data-ttu-id="d5c63-102">GetProcessSample05 サンプル</span><span class="sxs-lookup"><span data-stu-id="d5c63-102">GetProcessSample05 Sample</span></span>
 
-<span data-ttu-id="611c1-103">このサンプルでは、Get Proc コマンドレットの完全なバージョンを示します。</span><span class="sxs-lookup"><span data-stu-id="611c1-103">This sample shows a complete version of the Get-Proc cmdlet.</span></span>
+<span data-ttu-id="d5c63-103">このサンプルでは、Get Proc コマンドレットの完全なバージョンを示します。</span><span class="sxs-lookup"><span data-stu-id="d5c63-103">This sample shows a complete version of the Get-Proc cmdlet.</span></span>
 
-## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="611c1-104">Visual Studio を使用してサンプルをビルドする方法。</span><span class="sxs-lookup"><span data-stu-id="611c1-104">How to build the sample using Visual Studio.</span></span>
+## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="d5c63-104">Visual Studio を使用してサンプルをビルドする方法。</span><span class="sxs-lookup"><span data-stu-id="d5c63-104">How to build the sample using Visual Studio.</span></span>
 
-1. <span data-ttu-id="611c1-105">Windows エクスプローラーを開き、Samples ディレクトリの下の GetProcessSample05 ディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="611c1-105">Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.</span></span>
+1. <span data-ttu-id="d5c63-105">Windows エクスプローラーを開き、Samples ディレクトリの下の GetProcessSample05 ディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="d5c63-105">Open Windows Explorer and navigate to the GetProcessSample05 directory under the Samples directory.</span></span>
 
-   <span data-ttu-id="611c1-106">Windows PowerShell 2.0 SDK がインストールされている状態で、GetProcessSample05 フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="611c1-106">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder.</span></span> <span data-ttu-id="611c1-107">既定の場所は C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05. です。</span><span class="sxs-lookup"><span data-stu-id="611c1-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span></span>
+   <span data-ttu-id="d5c63-106">Windows PowerShell 2.0 SDK がインストールされている状態で、GetProcessSample05 フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="d5c63-106">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample05 folder.</span></span> <span data-ttu-id="d5c63-107">既定の場所は C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05. です。</span><span class="sxs-lookup"><span data-stu-id="d5c63-107">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample05.</span></span>
 
-2. <span data-ttu-id="611c1-108">ソリューション (.sln) ファイルのアイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="611c1-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="611c1-109">これにより、Visual Studio でサンプルプロジェクトが開きます。</span><span class="sxs-lookup"><span data-stu-id="611c1-109">This opens the sample project in Visual Studio.</span></span>
+2. <span data-ttu-id="d5c63-108">ソリューション (.sln) ファイルのアイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="d5c63-108">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="d5c63-109">これにより、Visual Studio でサンプルプロジェクトが開きます。</span><span class="sxs-lookup"><span data-stu-id="d5c63-109">This opens the sample project in Visual Studio.</span></span>
 
-3. <span data-ttu-id="611c1-110">**[ビルド]** メニューの **[ソリューションのビルド]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="611c1-110">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="d5c63-110">**[ビルド]** メニューの **[ソリューションのビルド]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="d5c63-110">In the **Build** menu, select **Build Solution**.</span></span>
 
-   <span data-ttu-id="611c1-111">サンプルのライブラリは、既定の \bin ディレクトリまたは \bin\debug ディレクトリにビルドされます。</span><span class="sxs-lookup"><span data-stu-id="611c1-111">The library for the sample will be built in the default \bin or \bin\debug directories.</span></span>
+   <span data-ttu-id="d5c63-111">サンプルのライブラリは、既定の \bin ディレクトリまたは \bin\debug ディレクトリにビルドされます。</span><span class="sxs-lookup"><span data-stu-id="d5c63-111">The library for the sample will be built in the default \bin or \bin\debug directories.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="611c1-112">サンプルを実行する方法</span><span class="sxs-lookup"><span data-stu-id="611c1-112">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="d5c63-112">サンプルを実行する方法</span><span class="sxs-lookup"><span data-stu-id="d5c63-112">How to run the sample</span></span>
 
-1. <span data-ttu-id="611c1-113">次のモジュールフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="611c1-113">Create the following module folder:</span></span>
+1. <span data-ttu-id="d5c63-113">次のモジュールフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="d5c63-113">Create the following module folder:</span></span>
 
    `[user]/documents/windowspowershell/modules/GetProcessSample05`
 
-2. <span data-ttu-id="611c1-114">サンプルアセンブリをモジュールフォルダーにコピーします。</span><span class="sxs-lookup"><span data-stu-id="611c1-114">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="d5c63-114">サンプルアセンブリをモジュールフォルダーにコピーします。</span><span class="sxs-lookup"><span data-stu-id="d5c63-114">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="611c1-115">Windows PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="611c1-115">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="d5c63-115">Windows PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="d5c63-115">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="611c1-116">次のコマンドを実行して、Windows PowerShell にアセンブリを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="611c1-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="d5c63-116">次のコマンドを実行して、Windows PowerShell にアセンブリを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="d5c63-116">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
    `Import-module getprossessample05`
 
-5. <span data-ttu-id="611c1-117">次のコマンドを実行して、コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="611c1-117">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="d5c63-117">次のコマンドを実行して、コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="d5c63-117">Run the following command to run the cmdlet:</span></span>
 
    `get-proc`
 
-## <a name="requirements"></a><span data-ttu-id="611c1-118">要件</span><span class="sxs-lookup"><span data-stu-id="611c1-118">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="d5c63-118">要件</span><span class="sxs-lookup"><span data-stu-id="d5c63-118">Requirements</span></span>
 
-<span data-ttu-id="611c1-119">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="611c1-119">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="d5c63-119">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="d5c63-119">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="611c1-120">サンプル</span><span class="sxs-lookup"><span data-stu-id="611c1-120">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="d5c63-120">使用例</span><span class="sxs-lookup"><span data-stu-id="d5c63-120">Demonstrates</span></span>
 
-<span data-ttu-id="611c1-121">このサンプルでは、次のことを示します。</span><span class="sxs-lookup"><span data-stu-id="611c1-121">This sample demonstrates the following.</span></span>
+<span data-ttu-id="d5c63-121">このサンプルでは、次のことを示します。</span><span class="sxs-lookup"><span data-stu-id="d5c63-121">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="611c1-122">コマンドレットの属性を使用して、コマンドレットクラスを宣言します。</span><span class="sxs-lookup"><span data-stu-id="611c1-122">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="d5c63-122">コマンドレットの属性を使用して、コマンドレットクラスを宣言します。</span><span class="sxs-lookup"><span data-stu-id="d5c63-122">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="611c1-123">Parameter 属性を使用してコマンドレットパラメーターを宣言しています。</span><span class="sxs-lookup"><span data-stu-id="611c1-123">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
+- <span data-ttu-id="d5c63-123">Parameter 属性を使用してコマンドレットパラメーターを宣言しています。</span><span class="sxs-lookup"><span data-stu-id="d5c63-123">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="611c1-124">パラメーターの位置を指定する。</span><span class="sxs-lookup"><span data-stu-id="611c1-124">Specifying positions for parameters.</span></span>
+- <span data-ttu-id="d5c63-124">パラメーターの位置を指定する。</span><span class="sxs-lookup"><span data-stu-id="d5c63-124">Specifying positions for parameters.</span></span>
 
-- <span data-ttu-id="611c1-125">このパラメーターを指定すると、パイプラインからの入力を受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="611c1-125">Specifying that parameters can take input from the pipeline.</span></span> <span data-ttu-id="611c1-126">入力は、オブジェクトまたはプロパティ名がパラメーター名と同じであるオブジェクトのプロパティの値から取得できます。</span><span class="sxs-lookup"><span data-stu-id="611c1-126">The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.</span></span>
+- <span data-ttu-id="d5c63-125">このパラメーターを指定すると、パイプラインからの入力を受け取ることができます。</span><span class="sxs-lookup"><span data-stu-id="d5c63-125">Specifying that parameters can take input from the pipeline.</span></span> <span data-ttu-id="d5c63-126">入力は、オブジェクトまたはプロパティ名がパラメーター名と同じであるオブジェクトのプロパティの値から取得できます。</span><span class="sxs-lookup"><span data-stu-id="d5c63-126">The input can be taken from an object or a value from a property of an object whose property name is the same as the parameter name.</span></span>
 
-- <span data-ttu-id="611c1-127">パラメーター入力の検証属性を宣言しています。</span><span class="sxs-lookup"><span data-stu-id="611c1-127">Declaring a validation attribute for the parameter input.</span></span>
+- <span data-ttu-id="d5c63-127">パラメーター入力の検証属性を宣言しています。</span><span class="sxs-lookup"><span data-stu-id="d5c63-127">Declaring a validation attribute for the parameter input.</span></span>
 
-- <span data-ttu-id="611c1-128">エラーと例外の処理。</span><span class="sxs-lookup"><span data-stu-id="611c1-128">Handling errors and exceptions.</span></span>
+- <span data-ttu-id="d5c63-128">エラーと例外の処理。</span><span class="sxs-lookup"><span data-stu-id="d5c63-128">Handling errors and exceptions.</span></span>
 
-- <span data-ttu-id="611c1-129">デバッグメッセージを書き込んでいます。</span><span class="sxs-lookup"><span data-stu-id="611c1-129">Writing debug messages.</span></span>
+- <span data-ttu-id="d5c63-129">デバッグメッセージを書き込んでいます。</span><span class="sxs-lookup"><span data-stu-id="d5c63-129">Writing debug messages.</span></span>
 
-## <a name="example"></a><span data-ttu-id="611c1-130">例</span><span class="sxs-lookup"><span data-stu-id="611c1-130">Example</span></span>
+## <a name="example"></a><span data-ttu-id="d5c63-130">例</span><span class="sxs-lookup"><span data-stu-id="d5c63-130">Example</span></span>
 
-<span data-ttu-id="611c1-131">このサンプルでは、指定されたプロセスの一覧を表示するコマンドレットを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="611c1-131">This sample shows how to create a cmdlet that displays a list of specified processes.</span></span>
+<span data-ttu-id="d5c63-131">このサンプルでは、指定されたプロセスの一覧を表示するコマンドレットを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d5c63-131">This sample shows how to create a cmdlet that displays a list of specified processes.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands
@@ -479,6 +479,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="611c1-132">参照</span><span class="sxs-lookup"><span data-stu-id="611c1-132">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d5c63-132">参照</span><span class="sxs-lookup"><span data-stu-id="d5c63-132">See Also</span></span>
 
-[<span data-ttu-id="611c1-133">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="611c1-133">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="d5c63-133">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="d5c63-133">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
