@@ -9,27 +9,27 @@ ms.topic: article
 ms.assetid: 2933a6ca-fe92-4ba2-97ee-ef0f0d5fdfcf
 caps.latest.revision: 8
 ms.openlocfilehash: b73284adb4bf228510bf8134aa4c6a10561b7ea2
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359771"
 ---
-# <a name="configuring-role-based-authorization"></a><span data-ttu-id="c2839-102">ロール ベースの認可を構成する</span><span class="sxs-lookup"><span data-stu-id="c2839-102">Configuring Role-based Authorization</span></span>
+# <a name="configuring-role-based-authorization"></a><span data-ttu-id="7a8bf-102">ロール ベースの認可を構成する</span><span class="sxs-lookup"><span data-stu-id="7a8bf-102">Configuring Role-based Authorization</span></span>
 
-<span data-ttu-id="c2839-103">このトピックでは、「 [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) 管理のためのカスタム承認の実装」で説明されている Customauthorization インターフェイスのサンプル実装に対して、ロールベースの承認ポリシーを構成する方法について説明します。[OData IIS 拡張機能](./implementing-custom-authorization-for-a-management-odata-web-service.md)。</span><span class="sxs-lookup"><span data-stu-id="c2839-103">This topic demonstrates how to configure the role-based authorization policy for the sample implementation of the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface described in [Implementing Custom Authorization for Management OData IIS Extension](./implementing-custom-authorization-for-a-management-odata-web-service.md).</span></span>
+<span data-ttu-id="7a8bf-103">このトピックでは、「 [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) 管理のためのカスタム承認の実装」で説明されている Customauthorization インターフェイスのサンプル実装に対して、ロールベースの承認ポリシーを構成する方法について説明します。[OData IIS 拡張機能](./implementing-custom-authorization-for-a-management-odata-web-service.md)。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-103">This topic demonstrates how to configure the role-based authorization policy for the sample implementation of the [Microsoft.Management.Odata.Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization) interface described in [Implementing Custom Authorization for Management OData IIS Extension](./implementing-custom-authorization-for-a-management-odata-web-service.md).</span></span>
 
-<span data-ttu-id="c2839-104">この例では、サンプル管理 OData アプリケーションで使用される XML ファイルを構成して、承認ポリシーを定義します。</span><span class="sxs-lookup"><span data-stu-id="c2839-104">In this example, you will configure an XML file that is used by the sample Management OData application to define the authorization policy.</span></span> <span data-ttu-id="c2839-105">2つのロールを作成し、ワークフローを含むさまざまな Windows PowerShell モジュールをそれらのロールに関連付けます。</span><span class="sxs-lookup"><span data-stu-id="c2839-105">You will create two roles and associate different Windows PowerShell modules that contain workflows with those roles.</span></span> <span data-ttu-id="c2839-106">XML ファイルを定義するスキーマは、「[ロールベースの承認構成スキーマ](./role-based-authorization-configuration-schema.md)」に記載されています。</span><span class="sxs-lookup"><span data-stu-id="c2839-106">The schema that defines the XML file is listed at [Role-Based Authorization Configuration Schema](./role-based-authorization-configuration-schema.md).</span></span>
+<span data-ttu-id="7a8bf-104">この例では、サンプル管理 OData アプリケーションで使用される XML ファイルを構成して、承認ポリシーを定義します。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-104">In this example, you will configure an XML file that is used by the sample Management OData application to define the authorization policy.</span></span> <span data-ttu-id="7a8bf-105">2つのロールを作成し、ワークフローを含むさまざまな Windows PowerShell モジュールをそれらのロールに関連付けます。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-105">You will create two roles and associate different Windows PowerShell modules that contain workflows with those roles.</span></span> <span data-ttu-id="7a8bf-106">XML ファイルを定義するスキーマは、「[ロールベースの承認構成スキーマ](./role-based-authorization-configuration-schema.md)」に記載されています。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-106">The schema that defines the XML file is listed at [Role-Based Authorization Configuration Schema](./role-based-authorization-configuration-schema.md).</span></span>
 
-## <a name="modifying-the-rbacconfigurationxml-file"></a><span data-ttu-id="c2839-107">RBacConfiguration .xml ファイルの変更</span><span class="sxs-lookup"><span data-stu-id="c2839-107">Modifying the RBacConfiguration.xml File</span></span>
+## <a name="modifying-the-rbacconfigurationxml-file"></a><span data-ttu-id="7a8bf-107">RBacConfiguration .xml ファイルの変更</span><span class="sxs-lookup"><span data-stu-id="7a8bf-107">Modifying the RBacConfiguration.xml File</span></span>
 
-<span data-ttu-id="c2839-108">このファイルは、アプリケーションの承認ポリシーを定義します。</span><span class="sxs-lookup"><span data-stu-id="c2839-108">This file defines the authorization policy for the application.</span></span> <span data-ttu-id="c2839-109">ロールは `Group` ノードを使用して定義されます。</span><span class="sxs-lookup"><span data-stu-id="c2839-109">Roles are defined by using `Group` nodes.</span></span> <span data-ttu-id="c2839-110">@No__t_0 ノードは、そのグループに割り当てられたユーザーが実行できる Windows PowerShell コマンドを定義します。</span><span class="sxs-lookup"><span data-stu-id="c2839-110">A `Group` node defines the Windows PowerShell commands that users assigned to that group can run.</span></span> <span data-ttu-id="c2839-111">ユーザーは `User` ノードを使用してグループに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="c2839-111">Users are assigned to groups by using `User` nodes.</span></span>
+<span data-ttu-id="7a8bf-108">このファイルは、アプリケーションの承認ポリシーを定義します。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-108">This file defines the authorization policy for the application.</span></span> <span data-ttu-id="7a8bf-109">ロールは `Group` ノードを使用して定義されます。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-109">Roles are defined by using `Group` nodes.</span></span> <span data-ttu-id="7a8bf-110">`Group` ノードは、そのグループに割り当てられたユーザーが実行できる Windows PowerShell コマンドを定義します。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-110">A `Group` node defines the Windows PowerShell commands that users assigned to that group can run.</span></span> <span data-ttu-id="7a8bf-111">ユーザーは `User` ノードを使用してグループに割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-111">Users are assigned to groups by using `User` nodes.</span></span>
 
-<span data-ttu-id="c2839-112">これらの例では、[管理者 `Group`] ノードにモジュールを追加し、各グループにユーザーを追加します。</span><span class="sxs-lookup"><span data-stu-id="c2839-112">In these examples, you will add a module to the Administrator `Group` node, and add a user to each group.</span></span>
+<span data-ttu-id="7a8bf-112">これらの例では、[管理者 `Group`] ノードにモジュールを追加し、各グループにユーザーを追加します。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-112">In these examples, you will add a module to the Administrator `Group` node, and add a user to each group.</span></span>
 
-#### <a name="adding-a-module-to-a-group-node"></a><span data-ttu-id="c2839-113">グループノードへのモジュールの追加</span><span class="sxs-lookup"><span data-stu-id="c2839-113">Adding a Module to a Group Node</span></span>
+#### <a name="adding-a-module-to-a-group-node"></a><span data-ttu-id="7a8bf-113">グループノードへのモジュールの追加</span><span class="sxs-lookup"><span data-stu-id="7a8bf-113">Adding a Module to a Group Node</span></span>
 
-1. <span data-ttu-id="c2839-114">テキストエディターで、 **Rbacconfiguration**という名前のファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="c2839-114">Create a file named **RBacConfiguration.xml** in a text editor.</span></span> <span data-ttu-id="c2839-115">このファイルは、web サービスのメインアプリケーションディレクトリに保存する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2839-115">This file should be saved to the main application directory for your web service.</span></span> <span data-ttu-id="c2839-116">ファイルに次のテキストを挿入します。</span><span class="sxs-lookup"><span data-stu-id="c2839-116">Insert the following text in the file.</span></span>
+1. <span data-ttu-id="7a8bf-114">テキストエディターで、 **Rbacconfiguration**という名前のファイルを作成します。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-114">Create a file named **RBacConfiguration.xml** in a text editor.</span></span> <span data-ttu-id="7a8bf-115">このファイルは、web サービスのメインアプリケーションディレクトリに保存する必要があります。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-115">This file should be saved to the main application directory for your web service.</span></span> <span data-ttu-id="7a8bf-116">ファイルに次のテキストを挿入します。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-116">Insert the following text in the file.</span></span>
 
    ```xml
    <?xml version="1.0" encoding="utf-8"?>
@@ -85,9 +85,9 @@ ms.locfileid: "72359771"
    </RbacConfiguration>
    ```
 
-2. <span data-ttu-id="c2839-117">このファイルには、2つの `Group` ノードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="c2839-117">The file contains two `Group` nodes.</span></span> <span data-ttu-id="c2839-118">これらは、この例で使用される2つのロール、`NonAdminGroup` と `AdminGroup` ロールを表します。</span><span class="sxs-lookup"><span data-stu-id="c2839-118">These represent the two roles used in this example, the `NonAdminGroup` and the `AdminGroup` roles.</span></span>
+2. <span data-ttu-id="7a8bf-117">このファイルには、2つの `Group` ノードが含まれています。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-117">The file contains two `Group` nodes.</span></span> <span data-ttu-id="7a8bf-118">これらは、この例で使用される2つのロール、`NonAdminGroup` と `AdminGroup` ロールを表します。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-118">These represent the two roles used in this example, the `NonAdminGroup` and the `AdminGroup` roles.</span></span>
 
-   <span data-ttu-id="c2839-119">最初の `Group` ノードの終了 `Cmdlets` タグのすぐ後に、次の XML を追加します。</span><span class="sxs-lookup"><span data-stu-id="c2839-119">Directly after the closing `Cmdlets` tag in the first `Group` node, add the following XML:</span></span>
+   <span data-ttu-id="7a8bf-119">最初の `Group` ノードの終了 `Cmdlets` タグのすぐ後に、次の XML を追加します。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-119">Directly after the closing `Cmdlets` tag in the first `Group` node, add the following XML:</span></span>
 
    ```xml
    <Modules>
@@ -95,17 +95,17 @@ ms.locfileid: "72359771"
          </Modules>
    ```
 
-#### <a name="adding-a-user-to-a-group-node"></a><span data-ttu-id="c2839-120">グループノードへのユーザーの追加</span><span class="sxs-lookup"><span data-stu-id="c2839-120">Adding a User to a Group Node</span></span>
+#### <a name="adding-a-user-to-a-group-node"></a><span data-ttu-id="7a8bf-120">グループノードへのユーザーの追加</span><span class="sxs-lookup"><span data-stu-id="7a8bf-120">Adding a User to a Group Node</span></span>
 
-1. <span data-ttu-id="c2839-121">テキストエディターで、 **Rbacconfiguration .xml**ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="c2839-121">Open the **RBacConfiguration.xml** file in a text editor.</span></span> <span data-ttu-id="c2839-122">このファイルは、インストール前にエンドポイント名を変更しなかった場合は、C: \\ \inetpub\wwwroot\Modata フォルダーにあります。</span><span class="sxs-lookup"><span data-stu-id="c2839-122">This file is located in the folder C:\\\inetpub\wwwroot\Modata  if you did not change the endpoint name before installation.</span></span>
+1. <span data-ttu-id="7a8bf-121">テキストエディターで、 **Rbacconfiguration .xml**ファイルを開きます。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-121">Open the **RBacConfiguration.xml** file in a text editor.</span></span> <span data-ttu-id="7a8bf-122">このファイルは、インストール前にエンドポイント名を変更しなかった場合は、C:\\\inetpub\wwwroot\Modata フォルダーにあります。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-122">This file is located in the folder C:\\\inetpub\wwwroot\Modata  if you did not change the endpoint name before installation.</span></span>
 
-2. <span data-ttu-id="c2839-123">[@No__t_0] ノードの終了タグのすぐ後に、次の XML を追加します。</span><span class="sxs-lookup"><span data-stu-id="c2839-123">Directly after the closing tag in the `Users` node, add the following XML:</span></span>
+2. <span data-ttu-id="7a8bf-123">[`Users`] ノードの終了タグのすぐ後に、次の XML を追加します。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-123">Directly after the closing tag in the `Users` node, add the following XML:</span></span>
 
    ```xml
    <User Name="UserName" GroupName="AdminGroup" AuthenticationType="Basic" DomainName="DomainName"/>
    ```
 
-3. <span data-ttu-id="c2839-124">前の手順で追加した XML のすぐ後に、次の XML を追加します。</span><span class="sxs-lookup"><span data-stu-id="c2839-124">Directly after the XML added in the previous step, add the following XML:</span></span>
+3. <span data-ttu-id="7a8bf-124">前の手順で追加した XML のすぐ後に、次の XML を追加します。</span><span class="sxs-lookup"><span data-stu-id="7a8bf-124">Directly after the XML added in the previous step, add the following XML:</span></span>
 
    ```xml
    <User Name="UserName" GroupName="NonAdminGroup" AuthenticationType="Basic" DomainName="DomainName"/>

@@ -9,43 +9,43 @@ ms.topic: article
 ms.assetid: 9c90d268-730b-4e73-9dfd-5f288c27aed0
 caps.latest.revision: 8
 ms.openlocfilehash: 74d7c9e9cb0d7ce829635e6aff994473e09e7479
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360851"
 ---
-# <a name="runspace11-sample"></a><span data-ttu-id="6eb60-102">Runspace11 サンプル</span><span class="sxs-lookup"><span data-stu-id="6eb60-102">Runspace11 Sample</span></span>
+# <a name="runspace11-sample"></a><span data-ttu-id="9b9a2-102">Runspace11 サンプル</span><span class="sxs-lookup"><span data-stu-id="9b9a2-102">Runspace11 Sample</span></span>
 
-<span data-ttu-id="6eb60-103">このサンプルでは、 [System. proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand)クラスを使用して、既存のコマンドレットを呼び出すが、使用可能なパラメーターのセットを制限するプロキシコマンドを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="6eb60-103">This sample shows how to use the [System.Management.Automation.Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand) class to create a proxy command that calls an existing cmdlet, but restricts the set of available parameters.</span></span> <span data-ttu-id="6eb60-104">このプロキシ コマンドは、制約付き実行空間の作成に使用される最初のセッション状態に追加されます。</span><span class="sxs-lookup"><span data-stu-id="6eb60-104">The proxy command is then added to an initial session state that is used to create a constrained runspace.</span></span> <span data-ttu-id="6eb60-105">つまり、ユーザーはプロキシ コマンドを使用しないとコマンドレットの機能にアクセスできません。</span><span class="sxs-lookup"><span data-stu-id="6eb60-105">This means that the user can access the functionality of the cmdlet only through the proxy command.</span></span>
+<span data-ttu-id="9b9a2-103">このサンプルでは、 [System. proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand)クラスを使用して、既存のコマンドレットを呼び出すが、使用可能なパラメーターのセットを制限するプロキシコマンドを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="9b9a2-103">This sample shows how to use the [System.Management.Automation.Proxycommand](/dotnet/api/System.Management.Automation.ProxyCommand) class to create a proxy command that calls an existing cmdlet, but restricts the set of available parameters.</span></span> <span data-ttu-id="9b9a2-104">このプロキシ コマンドは、制約付き実行空間の作成に使用される最初のセッション状態に追加されます。</span><span class="sxs-lookup"><span data-stu-id="9b9a2-104">The proxy command is then added to an initial session state that is used to create a constrained runspace.</span></span> <span data-ttu-id="9b9a2-105">つまり、ユーザーはプロキシ コマンドを使用しないとコマンドレットの機能にアクセスできません。</span><span class="sxs-lookup"><span data-stu-id="9b9a2-105">This means that the user can access the functionality of the cmdlet only through the proxy command.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="6eb60-106">要件</span><span class="sxs-lookup"><span data-stu-id="6eb60-106">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="9b9a2-106">要件</span><span class="sxs-lookup"><span data-stu-id="9b9a2-106">Requirements</span></span>
 
-<span data-ttu-id="6eb60-107">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="6eb60-107">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="9b9a2-107">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="9b9a2-107">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="6eb60-108">サンプル</span><span class="sxs-lookup"><span data-stu-id="6eb60-108">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="9b9a2-108">使用例</span><span class="sxs-lookup"><span data-stu-id="9b9a2-108">Demonstrates</span></span>
 
-<span data-ttu-id="6eb60-109">このサンプルでは、次のことを示します。</span><span class="sxs-lookup"><span data-stu-id="6eb60-109">This sample demonstrates the following.</span></span>
+<span data-ttu-id="9b9a2-109">このサンプルでは、次のことを示します。</span><span class="sxs-lookup"><span data-stu-id="9b9a2-109">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="6eb60-110">既存のコマンドレットのメタデータを記述する、system.servicemodel[メタデータ](/dotnet/api/System.Management.Automation.CommandMetadata)オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="6eb60-110">Creating a [System.Management.Automation.Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata) object that describes the metadata of an existing cmdlet.</span></span>
+- <span data-ttu-id="9b9a2-110">既存のコマンドレットのメタデータを記述する、system.servicemodel[メタデータ](/dotnet/api/System.Management.Automation.CommandMetadata)オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="9b9a2-110">Creating a [System.Management.Automation.Commandmetadata](/dotnet/api/System.Management.Automation.CommandMetadata) object that describes the metadata of an existing cmdlet.</span></span>
 
-- <span data-ttu-id="6eb60-111">[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトを作成しています。</span><span class="sxs-lookup"><span data-stu-id="6eb60-111">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
+- <span data-ttu-id="9b9a2-111">[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトを作成しています。</span><span class="sxs-lookup"><span data-stu-id="9b9a2-111">Creating an [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object.</span></span>
 
-- <span data-ttu-id="6eb60-112">コマンドレットのパラメーターを削除するようにコマンドレットのメタデータを変更します。</span><span class="sxs-lookup"><span data-stu-id="6eb60-112">Modifying the cmdlet metadata to remove a parameter of the cmdlet.</span></span>
+- <span data-ttu-id="9b9a2-112">コマンドレットのパラメーターを削除するようにコマンドレットのメタデータを変更します。</span><span class="sxs-lookup"><span data-stu-id="9b9a2-112">Modifying the cmdlet metadata to remove a parameter of the cmdlet.</span></span>
 
-- <span data-ttu-id="6eb60-113">コマンドレットを[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトに追加し、コマンドレットをプライベートにします。</span><span class="sxs-lookup"><span data-stu-id="6eb60-113">Adding the cmdlet to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object and making the cmdlet private.</span></span>
+- <span data-ttu-id="9b9a2-113">コマンドレットを[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトに追加し、コマンドレットをプライベートにします。</span><span class="sxs-lookup"><span data-stu-id="9b9a2-113">Adding the cmdlet to the [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) object and making the cmdlet private.</span></span>
 
-- <span data-ttu-id="6eb60-114">既存のコマンドレットを呼び出すプロキシ関数を作成しますが、は制限されたパラメーターのセットのみを公開します。</span><span class="sxs-lookup"><span data-stu-id="6eb60-114">Creating a proxy function that calls the existing cmdlet, but exposes only a restricted set of parameters.</span></span>
+- <span data-ttu-id="9b9a2-114">既存のコマンドレットを呼び出すプロキシ関数を作成しますが、は制限されたパラメーターのセットのみを公開します。</span><span class="sxs-lookup"><span data-stu-id="9b9a2-114">Creating a proxy function that calls the existing cmdlet, but exposes only a restricted set of parameters.</span></span>
 
-- <span data-ttu-id="6eb60-115">初期セッション状態にプロキシ関数を追加しています。</span><span class="sxs-lookup"><span data-stu-id="6eb60-115">Adding the proxy function to the initial session state.</span></span>
+- <span data-ttu-id="9b9a2-115">初期セッション状態にプロキシ関数を追加しています。</span><span class="sxs-lookup"><span data-stu-id="9b9a2-115">Adding the proxy function to the initial session state.</span></span>
 
-- <span data-ttu-id="6eb60-116">System.object オブジェクトを使用する、[システムの管理](/dotnet/api/system.management.automation.powershell)........... [...](/dotnet/api/System.Management.Automation.Runspaces.Runspace) .................</span><span class="sxs-lookup"><span data-stu-id="6eb60-116">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
+- <span data-ttu-id="9b9a2-116">System.object オブジェクトを使用する、[システムの管理](/dotnet/api/system.management.automation.powershell)........... [...](/dotnet/api/System.Management.Automation.Runspaces.Runspace) .................</span><span class="sxs-lookup"><span data-stu-id="9b9a2-116">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object.</span></span>
 
-- <span data-ttu-id="6eb60-117">制限付き実行空間のデモンストレーションを行うために[、プライベート](/dotnet/api/system.management.automation.powershell)コマンドレットとプロキシ関数を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="6eb60-117">Calling the private cmdlet and the proxy function using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to demonstrate the constrained runspace.</span></span>
+- <span data-ttu-id="9b9a2-117">制限付き実行空間のデモンストレーションを行うために[、プライベート](/dotnet/api/system.management.automation.powershell)コマンドレットとプロキシ関数を呼び出します。</span><span class="sxs-lookup"><span data-stu-id="9b9a2-117">Calling the private cmdlet and the proxy function using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object to demonstrate the constrained runspace.</span></span>
 
-## <a name="example"></a><span data-ttu-id="6eb60-118">例</span><span class="sxs-lookup"><span data-stu-id="6eb60-118">Example</span></span>
+## <a name="example"></a><span data-ttu-id="9b9a2-118">例</span><span class="sxs-lookup"><span data-stu-id="9b9a2-118">Example</span></span>
 
-<span data-ttu-id="6eb60-119">これにより、制約付き実行空間を示すためのプライベートコマンドレットのプロキシコマンドが作成されます。</span><span class="sxs-lookup"><span data-stu-id="6eb60-119">This creates a proxy command for a private cmdlet to demonstrate a constrained runspace.</span></span>
+<span data-ttu-id="9b9a2-119">これにより、制約付き実行空間を示すためのプライベートコマンドレットのプロキシコマンドが作成されます。</span><span class="sxs-lookup"><span data-stu-id="9b9a2-119">This creates a proxy command for a private cmdlet to demonstrate a constrained runspace.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -244,6 +244,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="6eb60-120">参照</span><span class="sxs-lookup"><span data-stu-id="6eb60-120">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="9b9a2-120">参照</span><span class="sxs-lookup"><span data-stu-id="9b9a2-120">See Also</span></span>
 
-[<span data-ttu-id="6eb60-121">Windows PowerShell ホストアプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="6eb60-121">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="9b9a2-121">Windows PowerShell ホストアプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="9b9a2-121">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

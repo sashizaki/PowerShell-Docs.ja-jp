@@ -9,35 +9,35 @@ ms.topic: article
 ms.assetid: 1fca30b1-13fe-48a2-b0dd-979c161177a6
 caps.latest.revision: 14
 ms.openlocfilehash: 9a4b7c842c6222fa2e9f1c14f37f45d7a5158107
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361051"
 ---
-# <a name="host01-sample"></a><span data-ttu-id="33540-102">Host01 サンプル</span><span class="sxs-lookup"><span data-stu-id="33540-102">Host01 Sample</span></span>
+# <a name="host01-sample"></a><span data-ttu-id="d528d-102">Host01 サンプル</span><span class="sxs-lookup"><span data-stu-id="d528d-102">Host01 Sample</span></span>
 
-<span data-ttu-id="33540-103">このサンプルでは、カスタムホストを使用するホストアプリケーションを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="33540-103">This sample shows how to implement a host application that uses a custom host.</span></span> <span data-ttu-id="33540-104">このサンプルでは、カスタムホストを使用する実行空間が作成され、その[後、"](/dotnet/api/System.Management.Automation.PowerShell) exit" を呼び出すスクリプトを実行するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="33540-104">In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit."</span></span> <span data-ttu-id="33540-105">ホスト アプリケーションはスクリプトの出力を確認し、結果を印刷します。</span><span class="sxs-lookup"><span data-stu-id="33540-105">The host application then looks at the output of the script and prints out the results.</span></span>
+<span data-ttu-id="d528d-103">このサンプルでは、カスタムホストを使用するホストアプリケーションを実装する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d528d-103">This sample shows how to implement a host application that uses a custom host.</span></span> <span data-ttu-id="d528d-104">このサンプルでは、カスタムホストを使用する実行空間が作成され、その[後、"](/dotnet/api/System.Management.Automation.PowerShell) exit" を呼び出すスクリプトを実行するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="d528d-104">In this sample a runspace is created that uses the custom host, and then the [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) API is used to run a script that calls "exit."</span></span> <span data-ttu-id="d528d-105">ホスト アプリケーションはスクリプトの出力を確認し、結果を印刷します。</span><span class="sxs-lookup"><span data-stu-id="d528d-105">The host application then looks at the output of the script and prints out the results.</span></span>
 
- <span data-ttu-id="33540-106">このサンプルでは、Windows PowerShell によって提供される既定の UI 機能を使用します。</span><span class="sxs-lookup"><span data-stu-id="33540-106">This sample uses the default UI features provided by Windows PowerShell.</span></span> <span data-ttu-id="33540-107">カスタムホストの UI 機能の実装の詳細については、「 [Host02 Sample](./host02-sample.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="33540-107">For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).</span></span>
+ <span data-ttu-id="d528d-106">このサンプルでは、Windows PowerShell によって提供される既定の UI 機能を使用します。</span><span class="sxs-lookup"><span data-stu-id="d528d-106">This sample uses the default UI features provided by Windows PowerShell.</span></span> <span data-ttu-id="d528d-107">カスタムホストの UI 機能の実装の詳細については、「 [Host02 Sample](./host02-sample.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d528d-107">For more information about implementing the UI features of a custom host, see [Host02 Sample](./host02-sample.md).</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="33540-108">要件</span><span class="sxs-lookup"><span data-stu-id="33540-108">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="d528d-108">要件</span><span class="sxs-lookup"><span data-stu-id="d528d-108">Requirements</span></span>
 
- <span data-ttu-id="33540-109">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="33540-109">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="d528d-109">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="d528d-109">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="33540-110">サンプル</span><span class="sxs-lookup"><span data-stu-id="33540-110">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="d528d-110">使用例</span><span class="sxs-lookup"><span data-stu-id="d528d-110">Demonstrates</span></span>
 
-- <span data-ttu-id="33540-111">[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラスから派生したカスタムホストクラスを作成する場合は、</span><span class="sxs-lookup"><span data-stu-id="33540-111">Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.</span></span>
+- <span data-ttu-id="d528d-111">[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラスから派生したカスタムホストクラスを作成する場合は、</span><span class="sxs-lookup"><span data-stu-id="d528d-111">Creating a custom host class that derives from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class.</span></span>
 
-- <span data-ttu-id="33540-112">カスタムホストクラスを使用する実行空間を作成する。</span><span class="sxs-lookup"><span data-stu-id="33540-112">Creating a runspace that uses the custom host class.</span></span>
+- <span data-ttu-id="d528d-112">カスタムホストクラスを使用する実行空間を作成する。</span><span class="sxs-lookup"><span data-stu-id="d528d-112">Creating a runspace that uses the custom host class.</span></span>
 
-- <span data-ttu-id="33540-113">Exit を呼び出すスクリプトを実行する、 [system.string オブジェクトを](/dotnet/api/System.Management.Automation.PowerShell)作成します。</span><span class="sxs-lookup"><span data-stu-id="33540-113">Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.</span></span>
+- <span data-ttu-id="d528d-113">Exit を呼び出すスクリプトを実行する、 [system.string オブジェクトを](/dotnet/api/System.Management.Automation.PowerShell)作成します。</span><span class="sxs-lookup"><span data-stu-id="d528d-113">Creating a [System.Management.Automation.Powershell](/dotnet/api/System.Management.Automation.PowerShell) object that runs a script that calls exit.</span></span>
 
-- <span data-ttu-id="33540-114">終了プロセスで正しい終了コードが使用されたことを確認しています。</span><span class="sxs-lookup"><span data-stu-id="33540-114">Verifying that the correct exit code was used in the exit process.</span></span>
+- <span data-ttu-id="d528d-114">終了プロセスで正しい終了コードが使用されたことを確認しています。</span><span class="sxs-lookup"><span data-stu-id="d528d-114">Verifying that the correct exit code was used in the exit process.</span></span>
 
-## <a name="example"></a><span data-ttu-id="33540-115">例</span><span class="sxs-lookup"><span data-stu-id="33540-115">Example</span></span>
+## <a name="example"></a><span data-ttu-id="d528d-115">例</span><span class="sxs-lookup"><span data-stu-id="d528d-115">Example</span></span>
 
- <span data-ttu-id="33540-116">次のコードは、単純なカスタムホストインターフェイスを使用するホストアプリケーションの実装を示しています。</span><span class="sxs-lookup"><span data-stu-id="33540-116">The following code shows an implementation of a host application that uses a simple custom host interface.</span></span>
+ <span data-ttu-id="d528d-116">次のコードは、単純なカスタムホストインターフェイスを使用するホストアプリケーションの実装を示しています。</span><span class="sxs-lookup"><span data-stu-id="d528d-116">The following code shows an implementation of a host application that uses a simple custom host interface.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -137,9 +137,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="33540-117">例</span><span class="sxs-lookup"><span data-stu-id="33540-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="d528d-117">例</span><span class="sxs-lookup"><span data-stu-id="d528d-117">Example</span></span>
 
- <span data-ttu-id="33540-118">次のコードは、このホストアプリケーションで使用される[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラスを実装したものです。</span><span class="sxs-lookup"><span data-stu-id="33540-118">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="33540-119">実装されていない要素は、例外をスローするか、nothing を返します。</span><span class="sxs-lookup"><span data-stu-id="33540-119">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="d528d-118">次のコードは、このホストアプリケーションで使用される[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラスを実装したものです。</span><span class="sxs-lookup"><span data-stu-id="d528d-118">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="d528d-119">実装されていない要素は、例外をスローするか、nothing を返します。</span><span class="sxs-lookup"><span data-stu-id="d528d-119">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -308,4 +308,4 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="33540-120">参照</span><span class="sxs-lookup"><span data-stu-id="33540-120">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d528d-120">参照</span><span class="sxs-lookup"><span data-stu-id="d528d-120">See Also</span></span>

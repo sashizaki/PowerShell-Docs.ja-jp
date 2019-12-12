@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: 0b2a7ce2-3c33-469c-a4a4-b8fe3bd05324
 caps.latest.revision: 5
 ms.openlocfilehash: 93780ee8af80d78a5b97a32098384a148070b54a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366141"
 ---
-# <a name="implementing-sessionconfiguration-for-a-management-odata-web-service"></a><span data-ttu-id="d3ae2-102">Management OData Web サービスの SessionConfiguration を実装する</span><span class="sxs-lookup"><span data-stu-id="d3ae2-102">Implementing SessionConfiguration for a Management OData web service</span></span>
+# <a name="implementing-sessionconfiguration-for-a-management-odata-web-service"></a><span data-ttu-id="c202b-102">Management OData Web サービスの SessionConfiguration を実装する</span><span class="sxs-lookup"><span data-stu-id="c202b-102">Implementing SessionConfiguration for a Management OData web service</span></span>
 
-<span data-ttu-id="d3ae2-103">Windows PowerShell Web サービスを使用するには、 [register-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)インターフェイスを実装して windows powershell コマンドレットを公開するためのサードパーティが必要です。</span><span class="sxs-lookup"><span data-stu-id="d3ae2-103">Using the Windows PowerShell Web Service requires a third party to implement the [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interface to expose Windows PowerShell cmdlets.</span></span> <span data-ttu-id="d3ae2-104">このインターフェイスは、サーバーでコマンドレットを実行するために web サービスが使用するリモートセッションに関する情報へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="d3ae2-104">This interface provides access to information about the remote session that the web service uses to run the cmdlets on the server.</span></span> <span data-ttu-id="d3ae2-105">インターフェイスを実装するコードを記述したら、そのコードをコンパイルして、web アプリケーションで使用する DLL を作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d3ae2-105">After writing the code to implement the interface, you must compile it into a DLL to be used in the web application.</span></span>
+<span data-ttu-id="c202b-103">Windows PowerShell Web サービスを使用するには、 [register-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)インターフェイスを実装して windows powershell コマンドレットを公開するためのサードパーティが必要です。</span><span class="sxs-lookup"><span data-stu-id="c202b-103">Using the Windows PowerShell Web Service requires a third party to implement the [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interface to expose Windows PowerShell cmdlets.</span></span> <span data-ttu-id="c202b-104">このインターフェイスは、サーバーでコマンドレットを実行するために web サービスが使用するリモートセッションに関する情報へのアクセスを提供します。</span><span class="sxs-lookup"><span data-stu-id="c202b-104">This interface provides access to information about the remote session that the web service uses to run the cmdlets on the server.</span></span> <span data-ttu-id="c202b-105">インターフェイスを実装するコードを記述したら、そのコードをコンパイルして、web アプリケーションで使用する DLL を作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c202b-105">After writing the code to implement the interface, you must compile it into a DLL to be used in the web application.</span></span>
 
-## <a name="implementation-of-pssessionconfiguration-interface"></a><span data-ttu-id="d3ae2-106">Register-pssessionconfiguration インターフェイスの実装</span><span class="sxs-lookup"><span data-stu-id="d3ae2-106">Implementation of PSSessionConfiguration interface</span></span>
+## <a name="implementation-of-pssessionconfiguration-interface"></a><span data-ttu-id="c202b-106">Register-pssessionconfiguration インターフェイスの実装</span><span class="sxs-lookup"><span data-stu-id="c202b-106">Implementation of PSSessionConfiguration interface</span></span>
 
-<span data-ttu-id="d3ae2-107">次のコードは、 [register-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)インターフェイスを実装しています。</span><span class="sxs-lookup"><span data-stu-id="d3ae2-107">The following code implements the [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interface.</span></span>
+<span data-ttu-id="c202b-107">次のコードは、 [register-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)インターフェイスを実装しています。</span><span class="sxs-lookup"><span data-stu-id="c202b-107">The following code implements the [System.Management.Automation.Remoting.Pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration) interface.</span></span>
 
 ```csharp
 //-----------------------------------------------------------------------
@@ -114,6 +114,6 @@ namespace Microsoft.Samples.Management.OData.RoleBasedPlugins
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="d3ae2-108">参照</span><span class="sxs-lookup"><span data-stu-id="d3ae2-108">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c202b-108">参照</span><span class="sxs-lookup"><span data-stu-id="c202b-108">See Also</span></span>
 
-[<span data-ttu-id="d3ae2-109">管理 OData web サービスのカスタム承認の実装</span><span class="sxs-lookup"><span data-stu-id="d3ae2-109">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[<span data-ttu-id="c202b-109">管理 OData web サービスのカスタム承認の実装</span><span class="sxs-lookup"><span data-stu-id="c202b-109">Implementing Custom Authorization for a Management OData web service</span></span>](./implementing-custom-authorization-for-a-management-odata-web-service.md)

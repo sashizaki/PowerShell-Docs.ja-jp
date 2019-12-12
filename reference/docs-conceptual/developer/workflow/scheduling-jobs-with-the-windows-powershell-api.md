@@ -9,23 +9,23 @@ ms.topic: article
 ms.assetid: 64718f8e-de60-4fb7-894d-2975b5257ff6
 caps.latest.revision: 4
 ms.openlocfilehash: bdced961d91088dd75be347b7b74b22467c8c9be
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366021"
 ---
-# <a name="scheduling-jobs-with-the-powershell-api"></a><span data-ttu-id="90d65-102">PowerShell API を使用したジョブのスケジュール設定</span><span class="sxs-lookup"><span data-stu-id="90d65-102">Scheduling jobs with the PowerShell API</span></span>
+# <a name="scheduling-jobs-with-the-powershell-api"></a><span data-ttu-id="96c0c-102">PowerShell API を使用したジョブのスケジュール設定</span><span class="sxs-lookup"><span data-stu-id="96c0c-102">Scheduling jobs with the PowerShell API</span></span>
 
-<span data-ttu-id="90d65-103">次の操作を実行するには **、この名前空間**によって公開されているオブジェクトを使用できます。</span><span class="sxs-lookup"><span data-stu-id="90d65-103">You can use the objects exposed by the **Microsoft.PowerShell.ScheduledJob** namespace to do the following:</span></span>
+<span data-ttu-id="96c0c-103">次の操作を実行するには **、この名前空間**によって公開されているオブジェクトを使用できます。</span><span class="sxs-lookup"><span data-stu-id="96c0c-103">You can use the objects exposed by the **Microsoft.PowerShell.ScheduledJob** namespace to do the following:</span></span>
 
-- <span data-ttu-id="90d65-104">スケジュールされたジョブを作成します。</span><span class="sxs-lookup"><span data-stu-id="90d65-104">Create a scheduled job.</span></span>
-- <span data-ttu-id="90d65-105">ジョブをいつ実行するかを定義します。</span><span class="sxs-lookup"><span data-stu-id="90d65-105">Define when the job runs.</span></span>
-- <span data-ttu-id="90d65-106">完了したジョブの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="90d65-106">Get results about the completed job.</span></span>
+- <span data-ttu-id="96c0c-104">スケジュールされたジョブを作成します。</span><span class="sxs-lookup"><span data-stu-id="96c0c-104">Create a scheduled job.</span></span>
+- <span data-ttu-id="96c0c-105">ジョブをいつ実行するかを定義します。</span><span class="sxs-lookup"><span data-stu-id="96c0c-105">Define when the job runs.</span></span>
+- <span data-ttu-id="96c0c-106">完了したジョブの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="96c0c-106">Get results about the completed job.</span></span>
 
-## <a name="triggering-the-job"></a><span data-ttu-id="90d65-107">ジョブのトリガー</span><span class="sxs-lookup"><span data-stu-id="90d65-107">Triggering the job</span></span>
+## <a name="triggering-the-job"></a><span data-ttu-id="96c0c-107">ジョブのトリガー</span><span class="sxs-lookup"><span data-stu-id="96c0c-107">Triggering the job</span></span>
 
-<span data-ttu-id="90d65-108">スケジュールされたジョブを作成する最初の手順では、ジョブを実行するタイミングを指定します。</span><span class="sxs-lookup"><span data-stu-id="90d65-108">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="90d65-109">これを行うには、 **Microsoft. PowerShell ジョブの ScheduledJobTrigger**オブジェクトを作成し、構成します。</span><span class="sxs-lookup"><span data-stu-id="90d65-109">Do this by creating and configuring a **Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger** object.</span></span> <span data-ttu-id="90d65-110">次のコードでは、ジョブを今後20秒間実行するようにスケジュールするトリガーを作成します。</span><span class="sxs-lookup"><span data-stu-id="90d65-110">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
+<span data-ttu-id="96c0c-108">スケジュールされたジョブを作成する最初の手順では、ジョブを実行するタイミングを指定します。</span><span class="sxs-lookup"><span data-stu-id="96c0c-108">The first step in creating a scheduled job is specifying when the job should run.</span></span> <span data-ttu-id="96c0c-109">これを行うには、 **Microsoft. PowerShell ジョブの ScheduledJobTrigger**オブジェクトを作成し、構成します。</span><span class="sxs-lookup"><span data-stu-id="96c0c-109">Do this by creating and configuring a **Microsoft.PowerShell.ScheduledJob.ScheduledJobTrigger** object.</span></span> <span data-ttu-id="96c0c-110">次のコードでは、ジョブを今後20秒間実行するようにスケジュールするトリガーを作成します。</span><span class="sxs-lookup"><span data-stu-id="96c0c-110">The following code creates a trigger that schedules a job to run a single time 20 seconds in the future.</span></span>
 
 ```csharp
 ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
@@ -38,20 +38,20 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 ```
 
-## <a name="defining-the-job"></a><span data-ttu-id="90d65-111">ジョブの定義</span><span class="sxs-lookup"><span data-stu-id="90d65-111">Defining the job</span></span>
+## <a name="defining-the-job"></a><span data-ttu-id="96c0c-111">ジョブの定義</span><span class="sxs-lookup"><span data-stu-id="96c0c-111">Defining the job</span></span>
 
-<span data-ttu-id="90d65-112">PowerShell ジョブを定義するには、パラメーター辞書を作成します。</span><span class="sxs-lookup"><span data-stu-id="90d65-112">You define a PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="90d65-113">次のパラメーターがサポートされています。</span><span class="sxs-lookup"><span data-stu-id="90d65-113">The following parameters are supported:</span></span>
+<span data-ttu-id="96c0c-112">PowerShell ジョブを定義するには、パラメーター辞書を作成します。</span><span class="sxs-lookup"><span data-stu-id="96c0c-112">You define a PowerShell job by creating a parameter dictionary.</span></span> <span data-ttu-id="96c0c-113">サポートされているパラメーターは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="96c0c-113">The following parameters are supported:</span></span>
 
-|<span data-ttu-id="90d65-114">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="90d65-114">Parameter Name</span></span>|<span data-ttu-id="90d65-115">[説明]</span><span class="sxs-lookup"><span data-stu-id="90d65-115">Description</span></span>|
+|<span data-ttu-id="96c0c-114">パラメーター名</span><span class="sxs-lookup"><span data-stu-id="96c0c-114">Parameter Name</span></span>|<span data-ttu-id="96c0c-115">[説明]</span><span class="sxs-lookup"><span data-stu-id="96c0c-115">Description</span></span>|
 |--------------------|-----------------|
-|<span data-ttu-id="90d65-116">**指定**</span><span class="sxs-lookup"><span data-stu-id="90d65-116">**Name**</span></span>|<span data-ttu-id="90d65-117">ジョブの名前。</span><span class="sxs-lookup"><span data-stu-id="90d65-117">The name of the job.</span></span>|
-|<span data-ttu-id="90d65-118">**ScriptBock**</span><span class="sxs-lookup"><span data-stu-id="90d65-118">**ScriptBock**</span></span>|<span data-ttu-id="90d65-119">ジョブの動作を指定する PowerShell スクリプトブロック。</span><span class="sxs-lookup"><span data-stu-id="90d65-119">A PowerShell script block that specifies what the job does.</span></span>|
-|<span data-ttu-id="90d65-120">**FilePath**</span><span class="sxs-lookup"><span data-stu-id="90d65-120">**FilePath**</span></span>|<span data-ttu-id="90d65-121">ジョブの内容を指定する PowerShell スクリプトブロックを含むファイルへのパス。</span><span class="sxs-lookup"><span data-stu-id="90d65-121">Path to a file that contains a PowerShell script block to specify what the job does.</span></span>|
-|<span data-ttu-id="90d65-122">**InitializationScript**</span><span class="sxs-lookup"><span data-stu-id="90d65-122">**InitializationScript**</span></span>|<span data-ttu-id="90d65-123">ジョブを初期化する PowerShell スクリプトブロック。</span><span class="sxs-lookup"><span data-stu-id="90d65-123">A PowerShell script block that initializes the job.</span></span>|
-|<span data-ttu-id="90d65-124">**ArgumentList**</span><span class="sxs-lookup"><span data-stu-id="90d65-124">**ArgumentList**</span></span>|<span data-ttu-id="90d65-125">ジョブによって実行される引数を指定するオブジェクトの配列です。</span><span class="sxs-lookup"><span data-stu-id="90d65-125">An array of objects that specify arguments that the job takes.</span></span>|
-|<span data-ttu-id="90d65-126">**RunAs32**</span><span class="sxs-lookup"><span data-stu-id="90d65-126">**RunAs32**</span></span>|<span data-ttu-id="90d65-127">32ビットプロセスでジョブを実行するかどうかを指定するブール値です。</span><span class="sxs-lookup"><span data-stu-id="90d65-127">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
+|<span data-ttu-id="96c0c-116">**名前**</span><span class="sxs-lookup"><span data-stu-id="96c0c-116">**Name**</span></span>|<span data-ttu-id="96c0c-117">ジョブの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="96c0c-117">The name of the job.</span></span>|
+|<span data-ttu-id="96c0c-118">**ScriptBock**</span><span class="sxs-lookup"><span data-stu-id="96c0c-118">**ScriptBock**</span></span>|<span data-ttu-id="96c0c-119">ジョブの動作を指定する PowerShell スクリプトブロック。</span><span class="sxs-lookup"><span data-stu-id="96c0c-119">A PowerShell script block that specifies what the job does.</span></span>|
+|<span data-ttu-id="96c0c-120">**FilePath**</span><span class="sxs-lookup"><span data-stu-id="96c0c-120">**FilePath**</span></span>|<span data-ttu-id="96c0c-121">ジョブの内容を指定する PowerShell スクリプトブロックを含むファイルへのパス。</span><span class="sxs-lookup"><span data-stu-id="96c0c-121">Path to a file that contains a PowerShell script block to specify what the job does.</span></span>|
+|<span data-ttu-id="96c0c-122">**InitializationScript**</span><span class="sxs-lookup"><span data-stu-id="96c0c-122">**InitializationScript**</span></span>|<span data-ttu-id="96c0c-123">ジョブを初期化する PowerShell スクリプトブロック。</span><span class="sxs-lookup"><span data-stu-id="96c0c-123">A PowerShell script block that initializes the job.</span></span>|
+|<span data-ttu-id="96c0c-124">**ArgumentList**</span><span class="sxs-lookup"><span data-stu-id="96c0c-124">**ArgumentList**</span></span>|<span data-ttu-id="96c0c-125">ジョブによって実行される引数を指定するオブジェクトの配列です。</span><span class="sxs-lookup"><span data-stu-id="96c0c-125">An array of objects that specify arguments that the job takes.</span></span>|
+|<span data-ttu-id="96c0c-126">**RunAs32**</span><span class="sxs-lookup"><span data-stu-id="96c0c-126">**RunAs32**</span></span>|<span data-ttu-id="96c0c-127">32ビットプロセスでジョブを実行するかどうかを指定するブール値です。</span><span class="sxs-lookup"><span data-stu-id="96c0c-127">A boolean value that specifies whether to run the job in a 32-bit process.</span></span>|
 
-<span data-ttu-id="90d65-128">次のコードでは、パラメーターディクショナリオブジェクトを作成し、 **Name**パラメーターと**ScriptBlock**パラメーターを設定しています。</span><span class="sxs-lookup"><span data-stu-id="90d65-128">The following code creates a parameter dictionary object and sets the **Name** and **ScriptBlock** parameters.</span></span>
+<span data-ttu-id="96c0c-128">次のコードでは、パラメーターディクショナリオブジェクトを作成し、 **Name**パラメーターと**ScriptBlock**パラメーターを設定しています。</span><span class="sxs-lookup"><span data-stu-id="96c0c-128">The following code creates a parameter dictionary object and sets the **Name** and **ScriptBlock** parameters.</span></span>
 
 ```csharp
 string schedJobDefName = "MySampleSchedJob";
@@ -64,9 +64,9 @@ string schedJobDefName = "MySampleSchedJob";
 
 ```
 
-## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="90d65-129">呼び出しオブジェクトとジョブ定義オブジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="90d65-129">Creating the invocation and job definition objects</span></span>
+## <a name="creating-the-invocation-and-job-definition-objects"></a><span data-ttu-id="96c0c-129">呼び出しオブジェクトとジョブ定義オブジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="96c0c-129">Creating the invocation and job definition objects</span></span>
 
-<span data-ttu-id="90d65-130">次の例に示すように、ジョブを実行する `ScheduledJobInvocationInfo` および `ScheduledJobDefinition` のオブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="90d65-130">You then create `ScheduledJobInvocationInfo` and `ScheduledJobDefinition` objects to run the job as shown in the following example:</span></span>
+<span data-ttu-id="96c0c-130">次の例に示すように、ジョブを実行する `ScheduledJobInvocationInfo` と `ScheduledJobDefinition` オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="96c0c-130">You then create `ScheduledJobInvocationInfo` and `ScheduledJobDefinition` objects to run the job as shown in the following example:</span></span>
 
 ```csharp
 ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
@@ -82,9 +82,9 @@ ScheduledJobInvocationInfo jobInvocationInfo = new ScheduledJobInvocationInfo(
 
 ```
 
-## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="90d65-131">タスクスケジューラへのジョブの登録</span><span class="sxs-lookup"><span data-stu-id="90d65-131">Registering the job with the task scheduler</span></span>
+## <a name="registering-the-job-with-the-task-scheduler"></a><span data-ttu-id="96c0c-131">タスクスケジューラへのジョブの登録</span><span class="sxs-lookup"><span data-stu-id="96c0c-131">Registering the job with the task scheduler</span></span>
 
-<span data-ttu-id="90d65-132">次のコードでは、ジョブを[Windows タスクスケジューラ](https://go.microsoft.com/fwlink/?LinkId=251817)に登録します。</span><span class="sxs-lookup"><span data-stu-id="90d65-132">The following code registers the job with the [Windows Task Scheduler](https://go.microsoft.com/fwlink/?LinkId=251817).</span></span>
+<span data-ttu-id="96c0c-132">次のコードでは、ジョブを[Windows タスクスケジューラ](https://go.microsoft.com/fwlink/?LinkId=251817)に登録します。</span><span class="sxs-lookup"><span data-stu-id="96c0c-132">The following code registers the job with the [Windows Task Scheduler](https://go.microsoft.com/fwlink/?LinkId=251817).</span></span>
 
 ```csharp
 schedJobDefinition.Register();
@@ -93,9 +93,9 @@ schedJobDefinition.Register();
 
 ```
 
-## <a name="complete-code-example"></a><span data-ttu-id="90d65-133">完全なコード例</span><span class="sxs-lookup"><span data-stu-id="90d65-133">Complete code Example</span></span>
+## <a name="complete-code-example"></a><span data-ttu-id="96c0c-133">完全なコード例</span><span class="sxs-lookup"><span data-stu-id="96c0c-133">Complete code Example</span></span>
 
-<span data-ttu-id="90d65-134">前のスニペットを取得した完全なコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="90d65-134">The following is the complete code example from which the previous snippets were taken.</span></span>
+<span data-ttu-id="96c0c-134">前のスニペットを取得した完全なコード例を次に示します。</span><span class="sxs-lookup"><span data-stu-id="96c0c-134">The following is the complete code example from which the previous snippets were taken.</span></span>
 
 ```csharp
 using System;

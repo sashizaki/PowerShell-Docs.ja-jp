@@ -9,37 +9,37 @@ ms.topic: article
 ms.assetid: 1100d91d-249d-4af7-9854-2d6a423ac2f4
 caps.latest.revision: 7
 ms.openlocfilehash: 70577a6a42ce26e9791360fa30baae9d7a492daf
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367311"
 ---
-# <a name="runspace08-sample"></a><span data-ttu-id="247bd-102">Runspace08 サンプル</span><span class="sxs-lookup"><span data-stu-id="247bd-102">Runspace08 Sample</span></span>
+# <a name="runspace08-sample"></a><span data-ttu-id="16b1d-102">Runspace08 サンプル</span><span class="sxs-lookup"><span data-stu-id="16b1d-102">Runspace08 Sample</span></span>
 
-<span data-ttu-id="247bd-103">このサンプルでは、コマンドと引数を、[システムの管理](/dotnet/api/system.management.automation.powershell)オブジェクトのパイプラインに追加する方法と、コマンドを同期的に実行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="247bd-103">This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the commands synchronously.</span></span>
+<span data-ttu-id="16b1d-103">このサンプルでは、コマンドと引数を、[システムの管理](/dotnet/api/system.management.automation.powershell)オブジェクトのパイプラインに追加する方法と、コマンドを同期的に実行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="16b1d-103">This sample shows how to add commands and arguments to the pipeline of a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object and how to run the commands synchronously.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="247bd-104">要件</span><span class="sxs-lookup"><span data-stu-id="247bd-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="16b1d-104">要件</span><span class="sxs-lookup"><span data-stu-id="16b1d-104">Requirements</span></span>
 
-<span data-ttu-id="247bd-105">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="247bd-105">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="16b1d-105">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="16b1d-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="247bd-106">サンプル</span><span class="sxs-lookup"><span data-stu-id="247bd-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="16b1d-106">使用例</span><span class="sxs-lookup"><span data-stu-id="16b1d-106">Demonstrates</span></span>
 
-<span data-ttu-id="247bd-107">このサンプルでは、次のことを示します。</span><span class="sxs-lookup"><span data-stu-id="247bd-107">This sample demonstrates the following.</span></span>
+<span data-ttu-id="16b1d-107">このサンプルでは、次のことを示します。</span><span class="sxs-lookup"><span data-stu-id="16b1d-107">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="247bd-108">[Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory)クラスを使用して、[システムの管理](/dotnet/api/System.Management.Automation.Runspaces.Runspace)... 実行空間オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="247bd-108">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.</span></span>
+- <span data-ttu-id="16b1d-108">[Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory)クラスを使用して、[システムの管理](/dotnet/api/System.Management.Automation.Runspaces.Runspace)... 実行空間オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="16b1d-108">Creating a [System.Management.Automation.Runspaces.Runspace](/dotnet/api/System.Management.Automation.Runspaces.Runspace) object by using the [System.Management.Automation.Runspaces.Runspacefactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory) class.</span></span>
 
-- <span data-ttu-id="247bd-109">実行空間[を使用](/dotnet/api/system.management.automation.powershell)する、system.string オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="247bd-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
+- <span data-ttu-id="16b1d-109">実行空間[を使用](/dotnet/api/system.management.automation.powershell)する、system.string オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="16b1d-109">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that uses the runspace.</span></span>
 
-- <span data-ttu-id="247bd-110">コマンドレットを、 [System. Automation. Powershell](/dotnet/api/system.management.automation.powershell)オブジェクトのパイプラインに追加します。</span><span class="sxs-lookup"><span data-stu-id="247bd-110">Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+- <span data-ttu-id="16b1d-110">コマンドレットを、 [System. Automation. Powershell](/dotnet/api/system.management.automation.powershell)オブジェクトのパイプラインに追加します。</span><span class="sxs-lookup"><span data-stu-id="16b1d-110">Adding cmdlets to the pipeline of the [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
-- <span data-ttu-id="247bd-111">コマンドレットを同期的に実行します。</span><span class="sxs-lookup"><span data-stu-id="247bd-111">Running the cmdlets synchronously.</span></span>
+- <span data-ttu-id="16b1d-111">コマンドレットを同期的に実行します。</span><span class="sxs-lookup"><span data-stu-id="16b1d-111">Running the cmdlets synchronously.</span></span>
 
-- <span data-ttu-id="247bd-112">コマンドによって返された、[システムの管理](/dotnet/api/System.Management.Automation.PSObject)オブジェクトからプロパティを抽出しています。</span><span class="sxs-lookup"><span data-stu-id="247bd-112">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
+- <span data-ttu-id="16b1d-112">コマンドによって返された、[システムの管理](/dotnet/api/System.Management.Automation.PSObject)オブジェクトからプロパティを抽出しています。</span><span class="sxs-lookup"><span data-stu-id="16b1d-112">Extracting properties from the [System.Management.Automation.PSObject](/dotnet/api/System.Management.Automation.PSObject) objects returned by the command.</span></span>
 
-## <a name="example"></a><span data-ttu-id="247bd-113">例</span><span class="sxs-lookup"><span data-stu-id="247bd-113">Example</span></span>
+## <a name="example"></a><span data-ttu-id="16b1d-113">例</span><span class="sxs-lookup"><span data-stu-id="16b1d-113">Example</span></span>
 
-<span data-ttu-id="247bd-114">このサンプルで[は、system.servicemodel オブジェクトを](/dotnet/api/system.management.automation.powershell)使用して、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)および[Sort オブジェクト](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object)のコマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="247bd-114">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+<span data-ttu-id="16b1d-114">このサンプルで[は、system.servicemodel オブジェクトを](/dotnet/api/system.management.automation.powershell)使用して、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)および[Sort オブジェクト](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object)のコマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="16b1d-114">This sample runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object) cmdlets by using a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -120,6 +120,6 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="247bd-115">参照</span><span class="sxs-lookup"><span data-stu-id="247bd-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="16b1d-115">参照</span><span class="sxs-lookup"><span data-stu-id="16b1d-115">See Also</span></span>
 
-[<span data-ttu-id="247bd-116">Windows PowerShell ホストアプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="247bd-116">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)
+[<span data-ttu-id="16b1d-116">Windows PowerShell ホストアプリケーションの作成</span><span class="sxs-lookup"><span data-stu-id="16b1d-116">Writing a Windows PowerShell Host Application</span></span>](./writing-a-windows-powershell-host-application.md)

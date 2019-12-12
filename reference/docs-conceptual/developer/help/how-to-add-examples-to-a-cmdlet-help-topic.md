@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
 caps.latest.revision: 5
 ms.openlocfilehash: b6f8aef76a5f4b5dc1a60425541856ead9a9c77a
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72368111"
 ---
-# <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a><span data-ttu-id="371a9-102">コマンドレットのヘルプ トピックに例を追加する方法</span><span class="sxs-lookup"><span data-stu-id="371a9-102">How to Add Examples to a Cmdlet Help Topic</span></span>
+# <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a><span data-ttu-id="58356-102">コマンドレットのヘルプ トピックに例を追加する方法</span><span class="sxs-lookup"><span data-stu-id="58356-102">How to Add Examples to a Cmdlet Help Topic</span></span>
 
-## <a name="things-to-know-about-examples-in-cmdlet-help"></a><span data-ttu-id="371a9-103">コマンドレットのヘルプの例について理解しておくべきこと</span><span class="sxs-lookup"><span data-stu-id="371a9-103">Things to Know about Examples in Cmdlet Help</span></span>
+## <a name="things-to-know-about-examples-in-cmdlet-help"></a><span data-ttu-id="58356-103">コマンドレットのヘルプの例について理解しておくべきこと</span><span class="sxs-lookup"><span data-stu-id="58356-103">Things to Know about Examples in Cmdlet Help</span></span>
 
-- <span data-ttu-id="371a9-104">パラメーター名が省略可能な場合でも、コマンド内のすべてのパラメーター名を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="371a9-104">List all of the parameter names in the command, even when the parameter names are optional.</span></span> <span data-ttu-id="371a9-105">これにより、ユーザーがコマンドを簡単に解釈できるようになります。</span><span class="sxs-lookup"><span data-stu-id="371a9-105">This helps the user to interpret the command easily.</span></span>
+- <span data-ttu-id="58356-104">パラメーター名が省略可能な場合でも、コマンド内のすべてのパラメーター名を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="58356-104">List all of the parameter names in the command, even when the parameter names are optional.</span></span> <span data-ttu-id="58356-105">これにより、ユーザーがコマンドを簡単に解釈できるようになります。</span><span class="sxs-lookup"><span data-stu-id="58356-105">This helps the user to interpret the command easily.</span></span>
 
-- <span data-ttu-id="371a9-106">Windows PowerShell®で動作する場合でも、エイリアスと部分的なパラメーター名は避けてください。</span><span class="sxs-lookup"><span data-stu-id="371a9-106">Avoid aliases and partial parameter names, even though they work in Windows PowerShell®.</span></span>
+- <span data-ttu-id="58356-106">Windows PowerShell®で動作する場合でも、エイリアスと部分的なパラメーター名は避けてください。</span><span class="sxs-lookup"><span data-stu-id="58356-106">Avoid aliases and partial parameter names, even though they work in Windows PowerShell®.</span></span>
 
-- <span data-ttu-id="371a9-107">この例では、コマンドの構築のための有理数について説明します。</span><span class="sxs-lookup"><span data-stu-id="371a9-107">In the example description, explain the rational for the construction of the command.</span></span> <span data-ttu-id="371a9-108">特定のパラメーターと値を選択した理由、および変数の使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="371a9-108">Explain why you chose particular parameters and values, and how you use variables.</span></span>
+- <span data-ttu-id="58356-107">この例では、コマンドの構築のための有理数について説明します。</span><span class="sxs-lookup"><span data-stu-id="58356-107">In the example description, explain the rational for the construction of the command.</span></span> <span data-ttu-id="58356-108">特定のパラメーターと値を選択した理由、および変数の使用方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="58356-108">Explain why you chose particular parameters and values, and how you use variables.</span></span>
 
-- <span data-ttu-id="371a9-109">コマンドで式を使用する場合は、詳細について説明します。</span><span class="sxs-lookup"><span data-stu-id="371a9-109">If the command uses expressions, explain them in detail.</span></span>
+- <span data-ttu-id="58356-109">コマンドで式を使用する場合は、詳細について説明します。</span><span class="sxs-lookup"><span data-stu-id="58356-109">If the command uses expressions, explain them in detail.</span></span>
 
-- <span data-ttu-id="371a9-110">コマンドでオブジェクトのプロパティとメソッド (特に既定の表示に表示されないプロパティ) を使用する場合は、オブジェクトについてユーザーに通知する機会として例を使用します。</span><span class="sxs-lookup"><span data-stu-id="371a9-110">If the command uses properties and methods of objects, especially properties that do not appear in the default display, use the example as an opportunity tell the user about the object.</span></span>
+- <span data-ttu-id="58356-110">コマンドでオブジェクトのプロパティとメソッド (特に既定の表示に表示されないプロパティ) を使用する場合は、オブジェクトについてユーザーに通知する機会として例を使用します。</span><span class="sxs-lookup"><span data-stu-id="58356-110">If the command uses properties and methods of objects, especially properties that do not appear in the default display, use the example as an opportunity tell the user about the object.</span></span>
 
-## <a name="help-views-that-display-examples"></a><span data-ttu-id="371a9-111">例を表示するヘルプビュー</span><span class="sxs-lookup"><span data-stu-id="371a9-111">Help Views that Display Examples</span></span>
+## <a name="help-views-that-display-examples"></a><span data-ttu-id="58356-111">例を表示するヘルプビュー</span><span class="sxs-lookup"><span data-stu-id="58356-111">Help Views that Display Examples</span></span>
 
-<span data-ttu-id="371a9-112">例は、コマンドレットのヘルプの詳細ビューと完全ビューでのみ表示されます。</span><span class="sxs-lookup"><span data-stu-id="371a9-112">Examples appear only in the Detailed and Full views of cmdlet Help.</span></span>
+<span data-ttu-id="58356-112">例は、コマンドレットのヘルプの詳細ビューと完全ビューでのみ表示されます。</span><span class="sxs-lookup"><span data-stu-id="58356-112">Examples appear only in the Detailed and Full views of cmdlet Help.</span></span>
 
-## <a name="adding-an-examples-node"></a><span data-ttu-id="371a9-113">例ノードの追加</span><span class="sxs-lookup"><span data-stu-id="371a9-113">Adding an Examples Node</span></span>
+## <a name="adding-an-examples-node"></a><span data-ttu-id="58356-113">例ノードの追加</span><span class="sxs-lookup"><span data-stu-id="58356-113">Adding an Examples Node</span></span>
 
-<span data-ttu-id="371a9-114">次の XML は、1つの例のノードを含む例ノードを追加する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="371a9-114">The following XML shows how to add an Examples node that contains a single Example node.</span></span> <span data-ttu-id="371a9-115">トピックに含める例ごとに、その他の例のノードを追加します。</span><span class="sxs-lookup"><span data-stu-id="371a9-115">Add additional example nodes for each examples you want to include in the topic.</span></span>
+<span data-ttu-id="58356-114">次の XML は、1つの例のノードを含む例ノードを追加する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="58356-114">The following XML shows how to add an Examples node that contains a single Example node.</span></span> <span data-ttu-id="58356-115">トピックに含める例ごとに、その他の例のノードを追加します。</span><span class="sxs-lookup"><span data-stu-id="58356-115">Add additional example nodes for each examples you want to include in the topic.</span></span>
 
 ```xml
 <command:examples>
@@ -44,9 +44,9 @@ ms.locfileid: "72368111"
 </command:examples>
 ```
 
-## <a name="adding-an-example-title"></a><span data-ttu-id="371a9-116">例のタイトルの追加</span><span class="sxs-lookup"><span data-stu-id="371a9-116">Adding an Example Title</span></span>
+## <a name="adding-an-example-title"></a><span data-ttu-id="58356-116">例のタイトルの追加</span><span class="sxs-lookup"><span data-stu-id="58356-116">Adding an Example Title</span></span>
 
-<span data-ttu-id="371a9-117">次の XML は、この例のタイトルを追加する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="371a9-117">The following XML shows how to add a title for the example.</span></span> <span data-ttu-id="371a9-118">タイトルは、例を他の例とは別に設定するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="371a9-118">The title is used to set the example apart from other examples.</span></span> <span data-ttu-id="371a9-119">Windows PowerShell®では、連番のサンプル番号を含む標準ヘッダーが使用されます。</span><span class="sxs-lookup"><span data-stu-id="371a9-119">Windows PowerShell® uses a standard header that includes a sequential example number.</span></span>
+<span data-ttu-id="58356-117">次の XML は、この例のタイトルを追加する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="58356-117">The following XML shows how to add a title for the example.</span></span> <span data-ttu-id="58356-118">タイトルは、例を他の例とは別に設定するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="58356-118">The title is used to set the example apart from other examples.</span></span> <span data-ttu-id="58356-119">Windows PowerShell®では、連番のサンプル番号を含む標準ヘッダーが使用されます。</span><span class="sxs-lookup"><span data-stu-id="58356-119">Windows PowerShell® uses a standard header that includes a sequential example number.</span></span>
 
 ```xml
 <command:examples>
@@ -56,9 +56,9 @@ ms.locfileid: "72368111"
 </command:examples>
 ```
 
-## <a name="adding-preceding-characters"></a><span data-ttu-id="371a9-120">追加 (前の文字を)</span><span class="sxs-lookup"><span data-stu-id="371a9-120">Adding Preceding Characters</span></span>
+## <a name="adding-preceding-characters"></a><span data-ttu-id="58356-120">追加 (前の文字を)</span><span class="sxs-lookup"><span data-stu-id="58356-120">Adding Preceding Characters</span></span>
 
-<span data-ttu-id="371a9-121">次の XML は、例のコマンドの直前に表示される、Windows PowerShell プロンプトなどの文字を追加する方法を示しています (スペースは不要です)。</span><span class="sxs-lookup"><span data-stu-id="371a9-121">The following XML shows how to add characters, such as the Windows PowerShell prompt, that are displayed immediately before the example command (without any intervening spaces).</span></span> <span data-ttu-id="371a9-122">Windows PowerShell®では、Windows PowerShell プロンプト: C:\ PS > が使用されます。</span><span class="sxs-lookup"><span data-stu-id="371a9-122">Windows PowerShell® uses the Windows PowerShell prompt: C:\PS>.</span></span>
+<span data-ttu-id="58356-121">次の XML は、例のコマンドの直前に表示される、Windows PowerShell プロンプトなどの文字を追加する方法を示しています (スペースは不要です)。</span><span class="sxs-lookup"><span data-stu-id="58356-121">The following XML shows how to add characters, such as the Windows PowerShell prompt, that are displayed immediately before the example command (without any intervening spaces).</span></span> <span data-ttu-id="58356-122">Windows PowerShell®では、Windows PowerShell プロンプト: C:\ PS > が使用されます。</span><span class="sxs-lookup"><span data-stu-id="58356-122">Windows PowerShell® uses the Windows PowerShell prompt: C:\PS>.</span></span>
 
 ```xml
 <command:examples>
@@ -71,9 +71,9 @@ ms.locfileid: "72368111"
 </command:examples>
 ```
 
-## <a name="adding-the-command"></a><span data-ttu-id="371a9-123">コマンドの追加</span><span class="sxs-lookup"><span data-stu-id="371a9-123">Adding the Command</span></span>
+## <a name="adding-the-command"></a><span data-ttu-id="58356-123">コマンドの追加</span><span class="sxs-lookup"><span data-stu-id="58356-123">Adding the Command</span></span>
 
-<span data-ttu-id="371a9-124">次の XML は、例の実際のコマンドを追加する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="371a9-124">The following XML shows how to add the actual command of the example.</span></span> <span data-ttu-id="371a9-125">コマンドを追加するときに、コマンドレットとパラメーターの名前全体 (エイリアスを使用しない) を入力します。</span><span class="sxs-lookup"><span data-stu-id="371a9-125">When adding the command, type the entire name (do not use alias) of cmdlets and parameters.</span></span> <span data-ttu-id="371a9-126">また、可能な限り小文字を使用します。</span><span class="sxs-lookup"><span data-stu-id="371a9-126">Also, use lowercase characters whenever possible.</span></span>
+<span data-ttu-id="58356-124">次の XML は、例の実際のコマンドを追加する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="58356-124">The following XML shows how to add the actual command of the example.</span></span> <span data-ttu-id="58356-125">コマンドを追加するときに、コマンドレットとパラメーターの名前全体 (エイリアスを使用しない) を入力します。</span><span class="sxs-lookup"><span data-stu-id="58356-125">When adding the command, type the entire name (do not use alias) of cmdlets and parameters.</span></span> <span data-ttu-id="58356-126">また、可能な限り小文字を使用します。</span><span class="sxs-lookup"><span data-stu-id="58356-126">Also, use lowercase characters whenever possible.</span></span>
 
 ```xml
 <command:examples>
@@ -87,9 +87,9 @@ ms.locfileid: "72368111"
 </command:examples>
 ```
 
-## <a name="adding-a-description"></a><span data-ttu-id="371a9-127">説明の追加</span><span class="sxs-lookup"><span data-stu-id="371a9-127">Adding a Description</span></span>
+## <a name="adding-a-description"></a><span data-ttu-id="58356-127">説明の追加</span><span class="sxs-lookup"><span data-stu-id="58356-127">Adding a Description</span></span>
 
-<span data-ttu-id="371a9-128">次の XML は、この例の説明を追加する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="371a9-128">The following XML shows how to add a description for the example.</span></span> <span data-ttu-id="371a9-129">Windows PowerShell®では、複数の \<maml: 段落 > タグを使用できる場合でも、\<maml: 段落 > タグの1つのセットを説明に使用します。</span><span class="sxs-lookup"><span data-stu-id="371a9-129">Windows PowerShell® uses a single set of \<maml:para> tags for the description, even though multiple \<maml:para> tags can be used.</span></span>
+<span data-ttu-id="58356-128">次の XML は、この例の説明を追加する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="58356-128">The following XML shows how to add a description for the example.</span></span> <span data-ttu-id="58356-129">Windows PowerShell®では、複数の \<maml: 段落 > タグを使用できる場合でも、\<maml: 段落 > タグの1つのセットを説明に使用します。</span><span class="sxs-lookup"><span data-stu-id="58356-129">Windows PowerShell® uses a single set of \<maml:para> tags for the description, even though multiple \<maml:para> tags can be used.</span></span>
 
 ```xml
 <command:examples>
@@ -106,9 +106,9 @@ ms.locfileid: "72368111"
 </command:examples>
 ```
 
-## <a name="adding-example-output"></a><span data-ttu-id="371a9-130">出力例の追加</span><span class="sxs-lookup"><span data-stu-id="371a9-130">Adding Example Output</span></span>
+## <a name="adding-example-output"></a><span data-ttu-id="58356-130">出力例の追加</span><span class="sxs-lookup"><span data-stu-id="58356-130">Adding Example Output</span></span>
 
-<span data-ttu-id="371a9-131">次の XML は、コマンドの出力を追加する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="371a9-131">The following XML shows how to add the output of the command.</span></span> <span data-ttu-id="371a9-132">コマンドの結果情報は省略可能ですが、場合によっては、特定のパラメーターを使用した場合の影響を示すのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="371a9-132">The command results information is optional, but in some cases it is helpful to demonstrate the effect of using specific parameters.</span></span> <span data-ttu-id="371a9-133">Windows PowerShell®では、2組の空白 \<maml: 段落 > タグを使用して、コマンドの出力をコマンドから分離します。</span><span class="sxs-lookup"><span data-stu-id="371a9-133">Windows PowerShell® uses two sets of blank \<maml:para> tags to separate the command output from the command.</span></span>
+<span data-ttu-id="58356-131">次の XML は、コマンドの出力を追加する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="58356-131">The following XML shows how to add the output of the command.</span></span> <span data-ttu-id="58356-132">コマンドの結果情報は省略可能ですが、場合によっては、特定のパラメーターを使用した場合の影響を示すのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="58356-132">The command results information is optional, but in some cases it is helpful to demonstrate the effect of using specific parameters.</span></span> <span data-ttu-id="58356-133">Windows PowerShell®では、2組の空白 \<maml: 段落 > タグを使用して、コマンドの出力をコマンドから分離します。</span><span class="sxs-lookup"><span data-stu-id="58356-133">Windows PowerShell® uses two sets of blank \<maml:para> tags to separate the command output from the command.</span></span>
 
 ```xml
 <command:examples>

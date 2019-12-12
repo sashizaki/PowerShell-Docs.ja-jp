@@ -9,25 +9,25 @@ ms.topic: article
 ms.assetid: a52ab737-753c-4d04-8af7-758d5c805e18
 caps.latest.revision: 7
 ms.openlocfilehash: b21811e5a5a819c3d5c4a55fcbe685a84819b71d
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367801"
 ---
-# <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a><span data-ttu-id="22d22-102">コマンドレットのヘルプ トピックに戻り値を追加する方法</span><span class="sxs-lookup"><span data-stu-id="22d22-102">How to Add Return Values to a Cmdlet Help Topic</span></span>
+# <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a><span data-ttu-id="77763-102">コマンドレットのヘルプ トピックに戻り値を追加する方法</span><span class="sxs-lookup"><span data-stu-id="77763-102">How to Add Return Values to a Cmdlet Help Topic</span></span>
 
-<span data-ttu-id="22d22-103">このセクションでは、Windows PowerShell®コマンドレットのヘルプトピックに OUTPUTS セクションを追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="22d22-103">This section describes how to add an OUTPUTS section to a Windows PowerShell® cmdlet Help topic.</span></span> <span data-ttu-id="22d22-104">OUTPUTS セクションには、コマンドレットが返す、またはパイプラインを渡すオブジェクトの .NET クラスが一覧表示されます。</span><span class="sxs-lookup"><span data-stu-id="22d22-104">The OUTPUTS section lists the .NET classes of objects that the cmdlet returns or passes down the pipeline.</span></span>
+<span data-ttu-id="77763-103">このセクションでは、Windows PowerShell®コマンドレットのヘルプトピックに OUTPUTS セクションを追加する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="77763-103">This section describes how to add an OUTPUTS section to a Windows PowerShell® cmdlet Help topic.</span></span> <span data-ttu-id="77763-104">OUTPUTS セクションには、コマンドレットが返す、またはパイプラインを渡すオブジェクトの .NET クラスが一覧表示されます。</span><span class="sxs-lookup"><span data-stu-id="77763-104">The OUTPUTS section lists the .NET classes of objects that the cmdlet returns or passes down the pipeline.</span></span>
 
-<span data-ttu-id="22d22-105">OUTPUTS セクションに追加できるクラスの数に制限はありません。</span><span class="sxs-lookup"><span data-stu-id="22d22-105">There is no limit to the number of classes that you can add to the OUTPUTS section.</span></span> <span data-ttu-id="22d22-106">コマンドレットの戻り値の型は、\<コマンド: returnValues > node で囲みます。各クラスは、\<command: 戻り値 > 要素で囲まれています。</span><span class="sxs-lookup"><span data-stu-id="22d22-106">The return types of a cmdlet are enclosed in a \<command:returnValues> node, with each class enclosed in a \<command:returnValue> element.</span></span>
+<span data-ttu-id="77763-105">OUTPUTS セクションに追加できるクラスの数に制限はありません。</span><span class="sxs-lookup"><span data-stu-id="77763-105">There is no limit to the number of classes that you can add to the OUTPUTS section.</span></span> <span data-ttu-id="77763-106">コマンドレットの戻り値の型は、\<コマンド: returnValues > node で囲みます。各クラスは、\<command: 戻り値 > 要素で囲まれています。</span><span class="sxs-lookup"><span data-stu-id="77763-106">The return types of a cmdlet are enclosed in a \<command:returnValues> node, with each class enclosed in a \<command:returnValue> element.</span></span>
 
-<span data-ttu-id="22d22-107">コマンドレットで出力が生成されない場合は、出力がないことを示すためにこのセクションを使用します。</span><span class="sxs-lookup"><span data-stu-id="22d22-107">If a cmdlet does not generate any output, use this section to indicate that there is no output.</span></span> <span data-ttu-id="22d22-108">たとえば、クラス名の代わりに "None" を記述し、簡単な説明を入力します。</span><span class="sxs-lookup"><span data-stu-id="22d22-108">For example, in place of the class name, write "None" and provide a brief explanation.</span></span> <span data-ttu-id="22d22-109">コマンドレットによって出力が条件付きで生成される場合は、このノードを使用して条件を説明し、条件付き出力を記述します。</span><span class="sxs-lookup"><span data-stu-id="22d22-109">If the cmdlet generates output conditionally, use this node to explain the conditions and describe the conditional output.</span></span>
+<span data-ttu-id="77763-107">コマンドレットで出力が生成されない場合は、出力がないことを示すためにこのセクションを使用します。</span><span class="sxs-lookup"><span data-stu-id="77763-107">If a cmdlet does not generate any output, use this section to indicate that there is no output.</span></span> <span data-ttu-id="77763-108">たとえば、クラス名の代わりに "None" を記述し、簡単な説明を入力します。</span><span class="sxs-lookup"><span data-stu-id="77763-108">For example, in place of the class name, write "None" and provide a brief explanation.</span></span> <span data-ttu-id="77763-109">コマンドレットによって出力が条件付きで生成される場合は、このノードを使用して条件を説明し、条件付き出力を記述します。</span><span class="sxs-lookup"><span data-stu-id="77763-109">If the cmdlet generates output conditionally, use this node to explain the conditions and describe the conditional output.</span></span>
 
-<span data-ttu-id="22d22-110">このスキーマには、各 \<コマンドに2つの \<maml: description > 要素が含まれています: 戻り > 要素。</span><span class="sxs-lookup"><span data-stu-id="22d22-110">The schema includes two \<maml:description> elements in each \<command:returnValue> element.</span></span> <span data-ttu-id="22d22-111">ただし、`Get-Help` コマンドレットを実行すると、\<command: 戻り >/\<maml: description > 要素の内容のみが表示されます。</span><span class="sxs-lookup"><span data-stu-id="22d22-111">However, the `Get-Help` cmdlet displays only the content of the \<command:returnValue>/\<maml:description> element.</span></span>
+<span data-ttu-id="77763-110">このスキーマには、各 \<コマンドに2つの \<maml: description > 要素が含まれています: 戻り > 要素。</span><span class="sxs-lookup"><span data-stu-id="77763-110">The schema includes two \<maml:description> elements in each \<command:returnValue> element.</span></span> <span data-ttu-id="77763-111">ただし、`Get-Help` コマンドレットを実行すると、\<command: 戻り >/\<maml: description > 要素の内容のみが表示されます。</span><span class="sxs-lookup"><span data-stu-id="77763-111">However, the `Get-Help` cmdlet displays only the content of the \<command:returnValue>/\<maml:description> element.</span></span>
 
-<span data-ttu-id="22d22-112">Windows PowerShell 3.0 以降では、`Get-Help` コマンドレットは \<maml: uri > 要素の内容を表示します。</span><span class="sxs-lookup"><span data-stu-id="22d22-112">Beginning in Windows PowerShell 3.0, the `Get-Help` cmdlet displays the content of the \<maml:uri> element.</span></span> <span data-ttu-id="22d22-113">この要素を使用すると、.NET クラスを説明するトピックにユーザーを誘導できます。</span><span class="sxs-lookup"><span data-stu-id="22d22-113">This element lets you direct users to topics that describe the .NET class.</span></span>
+<span data-ttu-id="77763-112">Windows PowerShell 3.0 以降では、`Get-Help` コマンドレットは \<maml: uri > 要素の内容を表示します。</span><span class="sxs-lookup"><span data-stu-id="77763-112">Beginning in Windows PowerShell 3.0, the `Get-Help` cmdlet displays the content of the \<maml:uri> element.</span></span> <span data-ttu-id="77763-113">この要素を使用すると、.NET クラスを説明するトピックにユーザーを誘導できます。</span><span class="sxs-lookup"><span data-stu-id="77763-113">This element lets you direct users to topics that describe the .NET class.</span></span>
 
-<span data-ttu-id="22d22-114">次の XML は、\<maml: returnValues > ノードを示しています。</span><span class="sxs-lookup"><span data-stu-id="22d22-114">The following XML shows the \<maml:returnValues> node.</span></span>
+<span data-ttu-id="77763-114">次の XML は、\<maml: returnValues > ノードを示しています。</span><span class="sxs-lookup"><span data-stu-id="77763-114">The following XML shows the \<maml:returnValues> node.</span></span>
 
 ```xml
 <command:returnValues>
@@ -45,7 +45,7 @@ ms.locfileid: "72367801"
 </command: returnValues>
 ```
 
-<span data-ttu-id="22d22-115">次の XML は、\<maml: returnValues > ノードを使用して、出力の種類を文書化する例を示しています。</span><span class="sxs-lookup"><span data-stu-id="22d22-115">The following XML shows an example of using the \<maml:returnValues> node to document an output type.</span></span>
+<span data-ttu-id="77763-115">次の XML は、\<maml: returnValues > ノードを使用して、出力の種類を文書化する例を示しています。</span><span class="sxs-lookup"><span data-stu-id="77763-115">The following XML shows an example of using the \<maml:returnValues> node to document an output type.</span></span>
 
 ```xml
 <command:returnValues>

@@ -9,19 +9,19 @@ ms.topic: article
 ms.assetid: c3baa406-cd33-4420-be5a-07ef09d93480
 caps.latest.revision: 8
 ms.openlocfilehash: 3504ab1d974c55e9279172d0e851961474ccb926
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72363381"
 ---
-# <a name="creating-custom-controls"></a><span data-ttu-id="34e9a-102">カスタム コントロールを作成する</span><span class="sxs-lookup"><span data-stu-id="34e9a-102">Creating Custom Controls</span></span>
+# <a name="creating-custom-controls"></a><span data-ttu-id="d2c57-102">カスタム コントロールを作成する</span><span class="sxs-lookup"><span data-stu-id="d2c57-102">Creating Custom Controls</span></span>
 
-<span data-ttu-id="34e9a-103">カスタムコントロールは、書式設定ファイルの最も柔軟なコンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="34e9a-103">Custom controls are the most flexible components of a formatting file.</span></span> <span data-ttu-id="34e9a-104">データテーブルなどのデータの正式な構造を定義するテーブル、リスト、およびワイドビューとは異なり、カスタムコントロールでは、個々のデータの表示方法を定義できます。</span><span class="sxs-lookup"><span data-stu-id="34e9a-104">Unlike table, list, and wide views that define a formal structure of data, such as a table of data, custom controls allow you to define how an individual piece of data is displayed.</span></span> <span data-ttu-id="34e9a-105">書式設定ファイルのすべてのビューで使用できるカスタムコントロールの共通セットを定義したり、特定のビューで使用できるカスタムコントロールを定義したり、オブジェクトのグループで使用できるコントロールのセットを定義したりできます。</span><span class="sxs-lookup"><span data-stu-id="34e9a-105">You can define a common set of custom controls that are available to all the views of the formatting file, you can define custom controls that are available to a specific view, or you can define a set of controls that are available to a group of objects.</span></span>
+<span data-ttu-id="d2c57-103">カスタムコントロールは、書式設定ファイルの最も柔軟なコンポーネントです。</span><span class="sxs-lookup"><span data-stu-id="d2c57-103">Custom controls are the most flexible components of a formatting file.</span></span> <span data-ttu-id="d2c57-104">データテーブルなどのデータの正式な構造を定義するテーブル、リスト、およびワイドビューとは異なり、カスタムコントロールでは、個々のデータの表示方法を定義できます。</span><span class="sxs-lookup"><span data-stu-id="d2c57-104">Unlike table, list, and wide views that define a formal structure of data, such as a table of data, custom controls allow you to define how an individual piece of data is displayed.</span></span> <span data-ttu-id="d2c57-105">書式設定ファイルのすべてのビューで使用できるカスタムコントロールの共通セットを定義したり、特定のビューで使用できるカスタムコントロールを定義したり、オブジェクトのグループで使用できるコントロールのセットを定義したりできます。</span><span class="sxs-lookup"><span data-stu-id="d2c57-105">You can define a common set of custom controls that are available to all the views of the formatting file, you can define custom controls that are available to a specific view, or you can define a set of controls that are available to a group of objects.</span></span>
 
-## <a name="custom-control-example"></a><span data-ttu-id="34e9a-106">カスタムコントロールの例</span><span class="sxs-lookup"><span data-stu-id="34e9a-106">Custom Control Example</span></span>
+## <a name="custom-control-example"></a><span data-ttu-id="d2c57-106">カスタムコントロールの例</span><span class="sxs-lookup"><span data-stu-id="d2c57-106">Custom Control Example</span></span>
 
-<span data-ttu-id="34e9a-107">次の例は、types.ps1xml ファイルで定義されているカスタムコントロールを示しています。</span><span class="sxs-lookup"><span data-stu-id="34e9a-107">The following example shows a custom control that is defined in the Certificates.Format.ps1xml file.</span></span> <span data-ttu-id="34e9a-108">このカスタムコントロールは、テーブルビューに表示さ[れるオブジェクトを](/dotnet/api/System.Management.Automation.Signature)区切るために使用されます。</span><span class="sxs-lookup"><span data-stu-id="34e9a-108">This custom control is used to separate the [System.Management.Automation.Signature](/dotnet/api/System.Management.Automation.Signature) objects displayed in a table view.</span></span>
+<span data-ttu-id="d2c57-107">次の例は、types.ps1xml ファイルで定義されているカスタムコントロールを示しています。</span><span class="sxs-lookup"><span data-stu-id="d2c57-107">The following example shows a custom control that is defined in the Certificates.Format.ps1xml file.</span></span> <span data-ttu-id="d2c57-108">このカスタムコントロールは、テーブルビューに表示さ[れるオブジェクトを](/dotnet/api/System.Management.Automation.Signature)区切るために使用されます。</span><span class="sxs-lookup"><span data-stu-id="d2c57-108">This custom control is used to separate the [System.Management.Automation.Signature](/dotnet/api/System.Management.Automation.Signature) objects displayed in a table view.</span></span>
 
 ```xml
 <Controls>
@@ -51,6 +51,6 @@ ms.locfileid: "72363381"
 
 ```
 
-## <a name="see-also"></a><span data-ttu-id="34e9a-109">参照</span><span class="sxs-lookup"><span data-stu-id="34e9a-109">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d2c57-109">参照</span><span class="sxs-lookup"><span data-stu-id="d2c57-109">See Also</span></span>
 
-[<span data-ttu-id="34e9a-110">PowerShell フォーマットファイルの作成</span><span class="sxs-lookup"><span data-stu-id="34e9a-110">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="d2c57-110">PowerShell フォーマットファイルの作成</span><span class="sxs-lookup"><span data-stu-id="d2c57-110">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)

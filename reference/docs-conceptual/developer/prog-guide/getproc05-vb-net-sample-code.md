@@ -9,15 +9,15 @@ ms.topic: article
 ms.assetid: 8dfc0f66-65ec-4141-9088-68e47dbe3908
 caps.latest.revision: 6
 ms.openlocfilehash: de0e7de6b02f62770126350d0c09df6c7909464e
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72366661"
 ---
-# <a name="getproc05-vbnet-sample-code"></a><span data-ttu-id="266eb-102">GetProc05 (VB.NET) サンプル コード</span><span class="sxs-lookup"><span data-stu-id="266eb-102">GetProc05 (VB.NET) Sample Code</span></span>
+# <a name="getproc05-vbnet-sample-code"></a><span data-ttu-id="057c0-102">GetProc05 (VB.NET) サンプル コード</span><span class="sxs-lookup"><span data-stu-id="057c0-102">GetProc05 (VB.NET) Sample Code</span></span>
 
-<span data-ttu-id="266eb-103">GetProc05 sample コマンドレットの完全な VB.NET コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="266eb-103">Here is the complete VB.NET code for the GetProc05 sample cmdlet.</span></span>
+<span data-ttu-id="057c0-103">GetProc05 sample コマンドレットの完全な VB.NET コードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="057c0-103">Here is the complete VB.NET code for the GetProc05 sample cmdlet.</span></span>
 
 ```vb
 Imports System
@@ -434,6 +434,6 @@ End Namespace
 
 <!-- TODO!!!:  [!code-csharp[GetProcessSample01.vb](../../powershell-sdk-samples/SDK-2.0/vb/GetProcessSample01/GetProcessSample01.vb#L10-L419 "GetProcessSample01.cs")] -->
 
-## <a name="see-also"></a><span data-ttu-id="266eb-104">参照</span><span class="sxs-lookup"><span data-stu-id="266eb-104">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="057c0-104">参照</span><span class="sxs-lookup"><span data-stu-id="057c0-104">See Also</span></span>
 
-[<span data-ttu-id="266eb-105">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="266eb-105">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="057c0-105">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="057c0-105">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
