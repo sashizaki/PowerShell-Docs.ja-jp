@@ -9,10 +9,10 @@ ms.topic: article
 ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
 caps.latest.revision: 5
 ms.openlocfilehash: 12d2cb8c40c9fd6278bb964a6259d03167536195
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72359881"
 ---
 # <a name="writing-an-item-provider"></a>アイテム プロバイダーを記述する
@@ -25,7 +25,7 @@ Windows PowerShell プロバイダーの詳細については、「 [Windows Pow
 
 ## <a name="implementing-item-methods"></a>項目メソッドの実装
 
-System.string[クラスは](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)、データストア内の項目にアクセスして操作するために使用できるいくつかのメソッドを公開します。 これらのメソッドの完全な一覧については、「 [itemの表示プロバイダーのメソッド](/dotnet/api/system.management.automation.provider.itemcmdletprovider?view=pscore-6.2.0#methods)」を参照してください。 この例では、これらの4つのメソッドを実装します。 System.string。指定されたパスの項目[を取得し](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)ます。 [Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)は、指定された項目の値を設定しています。 System.object は、指定されたパスに項目が存在するかどうか[を確認します。](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) System.string は、データストア内の場所にマップされているかどうかを確認するためのパス[を確認します。](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)
+System.string[クラスは](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)、データストア内の項目にアクセスして操作するために使用できるいくつかのメソッドを公開します。 これらのメソッドの完全な一覧については、「 [itemの表示プロバイダーのメソッド](/dotnet/api/system.management.automation.provider.itemcmdletprovider?view=pscore-6.2.0#methods)」を参照してください。 この例では、これらの4つのメソッドを実装します。 System.string。指定されたパスの項目[を取得し](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)ます。... [Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)は、指定された項目の値を設定しています。 System.object は、指定されたパスに項目が存在するかどうか[を確認します。](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) System.string は、データストア内の場所にマップされているかどうかを確認するためのパス[を確認します。](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)
 
 > [!NOTE]
 > このトピックは、「 [Windows PowerShell プロバイダーのクイックスタート](./windows-powershell-provider-quickstart.md)」の情報に基づいています。 このトピックでは、プロバイダープロジェクトを設定する方法の基本については説明しません。また、ドライブを作成または削除する[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスから継承されたメソッドを実装する方法についても説明しません。

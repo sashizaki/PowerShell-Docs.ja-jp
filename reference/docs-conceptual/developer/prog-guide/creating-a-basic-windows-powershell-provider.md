@@ -12,10 +12,10 @@ helpviewer_keywords:
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
 ms.openlocfilehash: e825581b96f0f33893b38f9f6499dd46a7bf38eb
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72360521"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>基本的な Windows PowerShell プロバイダーを作成する
@@ -31,7 +31,7 @@ ms.locfileid: "72360521"
 
 Windows PowerShell プロバイダーを作成するための最初の手順は、.NET クラスを定義することです。 この基本プロバイダーは、`AccessDBProvider` というクラスを定義しています。このクラスは、[この基本クラス](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)から派生します。
 
-プロバイダークラスは、API 名前空間の @no__t 0 の名前空間 (たとえば、xxx) に配置することをお勧めします。PowerShell. プロバイダー。 このプロバイダーは `Microsoft.Samples.PowerShell.Provider` 名前空間を使用します。この名前空間では、すべての Windows PowerShell プロバイダーのサンプルが実行されます。
+プロバイダークラスは、API 名前空間の `Providers` 名前空間 (たとえば、xxx) に配置することをお勧めします。PowerShell. プロバイダー。 このプロバイダーは `Microsoft.Samples.PowerShell.Provider` 名前空間を使用します。この名前空間では、すべての Windows PowerShell プロバイダーのサンプルが実行されます。
 
 > [!NOTE]
 > Windows PowerShell プロバイダーのクラスは、明示的にパブリックとしてマークされている必要があります。 パブリックとしてマークされていないクラスは、既定で内部に設定され、Windows PowerShell ランタイムによって検出されません。
@@ -40,7 +40,8 @@ Windows PowerShell プロバイダーを作成するための最初の手順は�
 
 [!code-csharp[AccessDBProviderSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs#L23-L24 "AccessDBProviderSample01.cs")]
 
-クラス定義の直前に、構文 [[の表示プロバイダー ()] を使用して、"system.servicemodel" 属性を宣言する必要が[あります。](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)
+クラス定義の直前に、構文 [の表示プロバイダー ()] を使用して、"system.servicemodel" 属性を宣言する必要が[あります。](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)
+
 
 必要に応じて、クラスをさらに宣言する属性キーワードを設定できます。 ここで宣言されている system.string 属性に[は、2つのパラメーター](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)が含まれていることに注意してください。 最初の属性パラメーターは、プロバイダーの既定のわかりやすい名前を指定します。ユーザーは後で変更できます。 2番目のパラメーターは、コマンドの処理中にプロバイダーが Windows PowerShell ランタイムに公開する Windows PowerShell 定義の機能を指定します。 プロバイダー機能に使用できる値は、system.servicemodel[機能](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙型によって定義されます。 これは基本プロバイダーであるため、機能をサポートしていません。
 
@@ -49,13 +50,13 @@ Windows PowerShell プロバイダーを作成するための最初の手順は�
 
 ## <a name="defining-provider-specific-state-information"></a>プロバイダー固有の状態情報の定義
 
-Windows PowerShell ランタイムでは必要に応じてプロバイダーインスタンスが作成される[ため、この基本クラス](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)とすべての派生クラスはステートレスと見なされます。 したがって、プロバイダー固有のデータに対して完全な制御と状態の保守が必要な場合は、クラスを system.servicemodel クラスから派生させる必要が[あります。](/dotnet/api/System.Management.Automation.ProviderInfo) 派生クラスでは、状態を維持するために必要なメンバーを定義する必要があり[ます。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)これにより、Windows PowerShell ランタイムがシステムを呼び出すときに、プロバイダー固有のデータにアクセスできるようになります。プロバイダーを初期化します。
+Windows PowerShell ランタイムでは必要に応じてプロバイダーインスタンスが作成される[ため、この基本クラス](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)とすべての派生クラスはステートレスと見なされます。 したがって、プロバイダー固有のデータに対して完全な制御と状態の保守が必要な場合は、クラスを system.servicemodel クラスから派生させる必要が[あります。](/dotnet/api/System.Management.Automation.ProviderInfo) 派生クラスでは、状態を維持するために必要なメンバーを定義する必要があります。これにより、Windows PowerShell ランタイムが、プロバイダーを初期化するため[に、このメソッドを](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)呼び出すときに、プロバイダー固有のデータにアクセスできるようになります。
 
 Windows PowerShell プロバイダーは、接続ベースの状態を維持することもできます。 接続状態の維持の詳細については、「 [PowerShell ドライブプロバイダーの作成](./creating-a-windows-powershell-drive-provider.md)」を参照してください。
 
 ## <a name="initializing-the-provider"></a>プロバイダーを初期化しています
 
-プロバイダーを初期化するために、windows powershell ランタイムは、Windows PowerShell が起動されたときに、[システムの起動](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)を呼び出します。 ほとんどの場合、プロバイダーはこのメソッドの既定の実装を使用できます。これにより、プロバイダーを記述する[system.servicemodel オブジェクトが返されます](/dotnet/api/System.Management.Automation.ProviderInfo)。 ただし、追加の[](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start) [初期化情報を追加する場合は、変更されたバージョンのを返す独自のシステム管理メソッドを実装する必要があります。 Start *](/dotnet/api/System.Management.Automation.ProviderInfo)プロバイダーに渡される system.servicemodel. Providerinfo オブジェクトです。 一般に、このメソッドは渡された[指定さ](/dotnet/api/System.Management.Automation.ProviderInfo)れた system.servicemodel オブジェクト、または他の初期化情報を含む変更された[system.servicemodel オブジェクトを](/dotnet/api/System.Management.Automation.ProviderInfo)返します。
+プロバイダーを初期化するために、windows powershell ランタイムは、Windows PowerShell が起動されたときに、[システムの起動](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)を呼び出します。 ほとんどの場合、プロバイダーはこのメソッドの既定の実装を使用できます。これにより、プロバイダーを記述する[system.servicemodel オブジェクトが返されます](/dotnet/api/System.Management.Automation.ProviderInfo)。 ただし、追加の初期化情報を追加する場合は、独自の[システム](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)を実装する必要があります。このメソッドは、プロバイダーに渡される変更されたバージョンの[system.string オブジェクトを](/dotnet/api/System.Management.Automation.ProviderInfo)返す、変更されたバージョンのを返します。 一般に、このメソッドは渡された[指定さ](/dotnet/api/System.Management.Automation.ProviderInfo)れた system.servicemodel オブジェクト、または他の初期化情報を含む変更された[system.servicemodel オブジェクトを](/dotnet/api/System.Management.Automation.ProviderInfo)返します。
 
 この基本プロバイダーは、このメソッドをオーバーライドしません。 ただし、次のコードは、このメソッドの既定の実装を示しています。
 
@@ -65,7 +66,7 @@ Windows PowerShell プロバイダーは、接続ベースの状態を維持す�
 
 ## <a name="start-dynamic-parameters"></a>動的パラメーターの開始
 
-プロバイダーによる[システム](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)の実装では、追加のパラメーターが必要になる場合があります。 この場合、プロバイダーは、[このメソッドを](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters)オーバーライドして、コマンドレットクラスまたはの[ような解析属性を持つプロパティとフィールドを持つオブジェクトを返します。このメソッドは、System. Automation. Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクト。
+プロバイダーによる[システム](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Start)の実装では、追加のパラメーターが必要になる場合があります。 この場合、プロバイダー[は、このメソッドを](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.StartDynamicParameters)オーバーライドして、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。この場合、プロバイダーはこのメソッドをオーバーライドして、プロパティとフィールドを持つオブジェクトを返します。
 
 この基本プロバイダーは、このメソッドをオーバーライドしません。 ただし、次のコードは、このメソッドの既定の実装を示しています。
 
