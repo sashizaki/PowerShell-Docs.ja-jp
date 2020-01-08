@@ -2,12 +2,12 @@
 ms.date: 10/11/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 意思決定者向け Desired State Configuration の概要
-ms.openlocfilehash: 271ec04035feb17e932acd0ac80f32213a4e018b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72352136"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737255"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>意思決定者向け Desired State Configuration の概要
 
@@ -31,7 +31,7 @@ DSC には、監視とレポートの機能が組み込まれています。 シ
 
 ## <a name="dsc-and-devops"></a>DSC と DevOps
 
-DSC は、[DevOps](http://blogs.technet.com/b/ashleymcglone/archive/2015/11/20/devops-for-n00bs-ie-windows-people.aspx) を念頭に置いて設計されました。 迅速な展開と反復を可能にする、人、プロセス、ツールの組み合わせであり、内部か外部かに関わらずエンド ユーザーに価値を提供することに重点が置かれています。 環境を定義する単一の構成によって、開発者が各自の要件を構成にエンコードし、その構成をソース管理にチェックインできるようになります。 そして、運用チームは、エラーが発生しやすい手動プロセスを経由せずにコードを展開できるようになります。
+DSC は、[DevOps](/archive/blogs/ashleymcglone/devops-for-n00bs-ie-windows-people-like-me) を念頭に置いて設計されました。 迅速な展開と反復を可能にする、人、プロセス、ツールの組み合わせであり、内部か外部かに関わらずエンド ユーザーに価値を提供することに重点が置かれています。 環境を定義する単一の構成によって、開発者が各自の要件を構成にエンコードし、その構成をソース管理にチェックインできるようになります。 そして、運用チームは、エラーが発生しやすい手動プロセスを経由せずにコードを展開できるようになります。
 
 構成は[データドリブン](../configurations/configData.md)です。 定義されたデータにより、開発者が関与することなく、運用で簡単に環境の特定と変更を行えます。
 

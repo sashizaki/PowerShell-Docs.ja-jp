@@ -1,13 +1,13 @@
 ---
 ms.date: 08/14/2018
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: Windows PowerShell ISE の紹介
-ms.openlocfilehash: 1723c11f38966cfffec9a6b3e4cb7b2304f19e7a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3e4471d0982ba4d7ef1a9d59906a9ff297f6f7cb
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416276"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736200"
 ---
 # <a name="the-windows-powershell-ise"></a>Windows PowerShell ISE
 
@@ -27,7 +27,7 @@ ISE は、Windows PowerShell V2 で初めて導入され、PowerShell V3 で再�
 
 Windows PowerShell ISE の主な機能:
 
-- 複数行の編集:[コマンド] ペインで現在の行の下に空白行を挿入するには、<kbd>Shift</kbd> + <kbd>Enter</kbd> キーを押します。
+- 複数行の編集:[コマンド] ペインで現在の行の下に空白行を挿入するには、<kbd>Shift</kbd>+<kbd>Enter</kbd> キーを押します。
 - 選択して実行:スクリプトの一部を実行するには、実行するテキストを選択して、 **[スクリプトの実行]** ボタンをクリックします。 または、<kbd>F5</kbd> キーを押します。
 - 状況依存ヘルプ:「`Invoke-Item`」と入力してから、<kbd>F1</kbd> キーを押します。 ヘルプ ファイルが開き、`Invoke-Item` コマンドレットの記事が表示されます。
 

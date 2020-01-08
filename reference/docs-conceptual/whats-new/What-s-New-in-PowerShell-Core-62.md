@@ -2,12 +2,12 @@
 title: PowerShell Core 6.2 の新機能
 description: PowerShell Core 6.2 でリリースされた新機能と変更
 ms.date: 03/28/2019
-ms.openlocfilehash: 6a0da8a410e602ae3963e0bc7bace745317d7d4b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2f5f5d11ba46d53966093c5e3ed6d0c7d47308d0
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62058099"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737136"
 ---
 # <a name="whats-new-in-powershell-core-62"></a>PowerShell Core 6.2 の新機能
 
@@ -72,7 +72,7 @@ PowerShell Core をさまざまなオペレーティング システムで使用
 
 ```powershell
 PS> "Hello World!" > Temp:/hello.txt
-PS> `Get-Content` Temp:/hello.txt
+PS> Get-Content Temp:/hello.txt
 Hello World!
 ```
 
@@ -102,7 +102,7 @@ PS> Import-AzRecoveryServicesAsrVaultSettingsFile
 > この機能は、対話的に使用するためのものです。 短縮形のコマンドレットは実行できません。
 > この機能はエイリアスに代わるものではありません。
 
-## <a name="breaking-changes"></a>破壊的変更
+## <a name="breaking-changes"></a>重大な変更
 
 - Windows PowerShell に合わせて `Write-Output` の `-NoEnumerate` の動作を修正します。 (#9069)
 - `Join-String -InputObject 1,2,3` の結果を `1,2,3 | Join-String` の結果と同じにします (#8611) (@sethvs に感謝)
@@ -119,7 +119,7 @@ PS> Import-AzRecoveryServicesAsrVaultSettingsFile
 - プロファイルの処理の前に `-WorkingDirectory` の処理を移動します (#8079)
 - Unix 上では `PATHEXT` 環境変数を追加しません (#7697) (@iSazonov に感謝)
 
-## <a name="known-issues"></a>の既知の問題
+## <a name="known-issues"></a>既知の問題
 
 - Windows IOT ARM プラットフォーム上のリモート処理には、モジュールの読み込みに関する問題があります。 (#8053) を参照してください
 
