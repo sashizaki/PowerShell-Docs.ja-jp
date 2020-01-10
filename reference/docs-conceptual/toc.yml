@@ -24,9 +24,9 @@
           href: install/installing-the-windows-powershell-2.0-engine.md
         - name: Windows PowerShell のシステム要件
           href: install/windows-powershell-system-requirements.md
-- name: 開始
+- name: はじめに
   items:
-    - name: PowerShell ファースト ステップ ガイド
+    - name: PowerShell の概要
       href: getting-started/getting-started-with-windows-powershell.md
     - name: Windows PowerShell の開始
       href: getting-started/starting-windows-powershell.md
@@ -68,7 +68,7 @@
               href: learn/remoting/jea/register-jea.md
             - name: JEA の使用
               href: learn/remoting/jea/using-jea.md
-            - name: セキュリティの考慮事項
+            - name: セキュリティに関する考慮事項
               href: learn/remoting/jea/security-considerations.md
             - name: JEA での監査とレポート
               href: learn/remoting/jea/audit-and-report.md
@@ -84,7 +84,7 @@
           href: learn/remoting/ps-remoting-second-hop.md
     - name: 用語集
       href: learn/windows-powershell-glossary.md
-- name: コンポーネント
+- name: Components
   items:
     - name: コンソール
       items:
@@ -178,9 +178,9 @@
       href: gallery/overview.md
     - name: PowerShellGet のインストール
       href: gallery/installing-psget.md
-    - name: はじめに
+    - name: 作業の開始
       href: gallery/getting-started.md
-    - name: 方法
+    - name: 操作方法
       items:
         - name: ギャラリーのパッケージの検索
           items:
@@ -222,7 +222,7 @@
               href: gallery/how-to/managing-profile/managing-account.md
             - name: API キーの管理
               href: gallery/how-to/managing-profile/creating-apikeys.md
-        - name: ローカルの PowerShellGet リポジトリの操作
+        - name: PowerShellGet プライベート リポジトリの操作
           href: gallery/how-to/working-with-local-psrepositories.md
     - name: 概念
       items:
@@ -262,7 +262,7 @@
           href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
         - name: NuGet プロバイダーと NuGet.exe をブートストラップする
           href: gallery/how-to/getting-support/bootstrapping-nuget.md
-        - name: GDPR 準拠
+        - name: GDPR コンプライアンス
           href: gallery/how-to/getting-support/gdpr-dsr-policy.md
     - name: ギャラリーに関してよく寄せられる質問
       href: gallery/faqs.md
@@ -331,7 +331,7 @@
           href: wmf/whats-new/sil-overview.md
         - name: 製品の互換性の状態
           href: wmf/whats-new/compatibility.md
-    - name: の既知の問題
+    - name: 既知の問題
       items:
         - name: WMF 5.0 の既知の問題
           href: wmf/known-issues/known-issues-50.md
@@ -351,7 +351,7 @@
           href: dsc/overview/DscForEngineers.md
         - name: CI/CD パイプラインでの DSC のロールについて
           href: dsc/overview/authoringAdvanced.md
-    - name: はじめに
+    - name: 作業の開始
       items:
         - name: Linux 用 DSC の概要
           href: dsc/getting-started/lnxGettingStarted.md
@@ -416,7 +416,7 @@
                   href: dsc/configurations/crossNodeDependencies.md
                 - name: ノードを再起動する
                   href: dsc/configurations/reboot-a-node.md
-    - name: 参照情報
+    - name: リソース
       items:
         - name: 概念
           items:
@@ -430,7 +430,7 @@
               href: dsc/resources/singleInstance.md
             - name: リソース作成のチェックリスト
               href: dsc/resources/resourceAuthoringChecklist.md
-        - name: ハウツー ガイド
+        - name: 操作方法ガイド
           items:
             - name: PowerShell での MOF ベースのリソースの記述
               href: dsc/resources/authoringResourceMOF.md
@@ -444,7 +444,7 @@
               href: dsc/resources/authoringResourceMofDesigner.md
     - name: ノードの管理
       items:
-        - name: ハウツー ガイド
+        - name: 操作方法ガイド
           items:
             - name: ノード上で構成を適用、取得、およびテストする
               href: dsc/managing-nodes/apply-get-test.md
@@ -460,7 +460,7 @@
           items:
             - name: プッシュ/プル モデル
               href: dsc/pull-server/enactingConfigurations.md
-        - name: ハウツー ガイド
+        - name: 操作方法ガイド
           items:
             - name: プル サーバーを設定する
               items:
@@ -506,11 +506,11 @@
           href: dsc/tutorials/DSCAutomationHostEnabled.md
     - name: トラブルシューティング
       items:
-        - name: の既知の問題
+        - name: 既知の問題
           href: dsc/troubleshooting/troubleshooting.md
         - name: DSC リソースをデバッグする
           href: dsc/troubleshooting/debugResource.md
-    - name: 参照先
+    - name: リファレンス
       items:
         - name: Windows 組み込みリソース
           items:
@@ -632,7 +632,7 @@
       items:
         - name: ホワイトペーパー
           href: dsc/further-reading/whitepapers.md
-- name: サンプル スクリプト
+- name: サンプルのスクリプト
   items:
     - name: 管理のサンプル スクリプト
       href: samples/sample-scripts-for-administration.yml
@@ -744,7 +744,7 @@
           items:
             - name: ヘルプ ファイルに名前を付ける
               href: developer/module/naming-help-files.md
-            - name: 更新可能ヘルプのサポート
+            - name: 更新可能なヘルプのサポート
               href: developer/module/supporting-updatable-help.md
               items:
                 - name: 更新可能なヘルプの概要
@@ -812,7 +812,7 @@
                 - name: 標準的なコマンドレット パラメーターの名前と型
                   href: developer/cmdlet/standard-cmdlet-parameter-names-and-types.md
                   items:
-                    - name: アクティビティ パラメーター
+                    - name: アクティビティのパラメーター
                       href: developer/cmdlet/activity-parameters.md
                     - name: 日付と時刻のパラメーター
                       href: developer/cmdlet/date-and-time-parameters.md
