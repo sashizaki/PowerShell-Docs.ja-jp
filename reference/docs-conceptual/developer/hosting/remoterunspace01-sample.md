@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 302f00ef-e145-4668-a26a-03bc96ef4b8f
 caps.latest.revision: 10
 ms.openlocfilehash: 9cc6933858f4f37e4fa8b3bbe9afb69a73c68572
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72361011"
 ---
-# <a name="remoterunspace01-sample"></a><span data-ttu-id="831b5-102">RemoteRunspace01 サンプル</span><span class="sxs-lookup"><span data-stu-id="831b5-102">RemoteRunspace01 Sample</span></span>
+# <a name="remoterunspace01-sample"></a><span data-ttu-id="af58d-102">RemoteRunspace01 サンプル</span><span class="sxs-lookup"><span data-stu-id="af58d-102">RemoteRunspace01 Sample</span></span>
 
-<span data-ttu-id="831b5-103">このサンプルでは、リモート接続を確立するために使用されるリモート実行空間を作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="831b5-103">This sample shows how to create a remote runspace that is used to establish a remote connection.</span></span>
+<span data-ttu-id="af58d-103">このサンプルでは、リモート接続を確立するために使用されるリモート実行空間を作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="af58d-103">This sample shows how to create a remote runspace that is used to establish a remote connection.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="831b5-104">要件</span><span class="sxs-lookup"><span data-stu-id="831b5-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="af58d-104">要件</span><span class="sxs-lookup"><span data-stu-id="af58d-104">Requirements</span></span>
 
- <span data-ttu-id="831b5-105">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="831b5-105">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="af58d-105">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="af58d-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="831b5-106">サンプル</span><span class="sxs-lookup"><span data-stu-id="831b5-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="af58d-106">使用例</span><span class="sxs-lookup"><span data-stu-id="af58d-106">Demonstrates</span></span>
 
-- <span data-ttu-id="831b5-107">[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを作成しています。</span><span class="sxs-lookup"><span data-stu-id="831b5-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="af58d-107">[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを作成しています。</span><span class="sxs-lookup"><span data-stu-id="af58d-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="831b5-108">「」の[Runspaceconnectioninfo \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout)プロパティと[Runspaceconnectioninfo. Opentimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)プロパティを設定しています。この操作を行うには、 [Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを実行します。</span><span class="sxs-lookup"><span data-stu-id="831b5-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="af58d-108">Wsmanconnectioninfo オブジェクトの[Runspaceconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) \* プロパティと[Runspaceconnectioninfo. Opentimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)プロパティを設定しています。この値を設定すると、[System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトのプロパティが設定されます。</span><span class="sxs-lookup"><span data-stu-id="af58d-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="831b5-109">リモート接続を確立するために[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを使用するリモート実行空間を作成する。</span><span class="sxs-lookup"><span data-stu-id="831b5-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
+- <span data-ttu-id="af58d-109">リモート接続を確立するために[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを使用するリモート実行空間を作成する。</span><span class="sxs-lookup"><span data-stu-id="af58d-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
 
-- <span data-ttu-id="831b5-110">リモートの実行空間を閉じてリモート接続を解放しています。</span><span class="sxs-lookup"><span data-stu-id="831b5-110">Closing the remote runspace to release the remote connection.</span></span>
+- <span data-ttu-id="af58d-110">リモートの実行空間を閉じてリモート接続を解放しています。</span><span class="sxs-lookup"><span data-stu-id="af58d-110">Closing the remote runspace to release the remote connection.</span></span>
 
-## <a name="example"></a><span data-ttu-id="831b5-111">例</span><span class="sxs-lookup"><span data-stu-id="831b5-111">Example</span></span>
+## <a name="example"></a><span data-ttu-id="af58d-111">例</span><span class="sxs-lookup"><span data-stu-id="af58d-111">Example</span></span>
 
-<span data-ttu-id="831b5-112">このサンプルでは、リモート接続を定義し、その接続情報を使用してリモート接続を確立します。</span><span class="sxs-lookup"><span data-stu-id="831b5-112">This sample defines a remote connection and then uses that connection information to establish a remote connection.</span></span>
+<span data-ttu-id="af58d-112">このサンプルでは、リモート接続を定義し、その接続情報を使用してリモート接続を確立します。</span><span class="sxs-lookup"><span data-stu-id="af58d-112">This sample defines a remote connection and then uses that connection information to establish a remote connection.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces

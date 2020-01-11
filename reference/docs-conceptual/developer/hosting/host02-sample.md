@@ -9,33 +9,33 @@ ms.topic: article
 ms.assetid: 9ab83bcb-2d31-4744-a8bc-2ee22e48fc1b
 caps.latest.revision: 17
 ms.openlocfilehash: 34918f32a86718ce82987c029cb4dfa09b4359bd
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367481"
 ---
-# <a name="host02-sample"></a><span data-ttu-id="095db-102">Host02 サンプル</span><span class="sxs-lookup"><span data-stu-id="095db-102">Host02 Sample</span></span>
+# <a name="host02-sample"></a><span data-ttu-id="b1cab-102">Host02 サンプル</span><span class="sxs-lookup"><span data-stu-id="b1cab-102">Host02 Sample</span></span>
 
-<span data-ttu-id="095db-103">このサンプルでは、Windows PowerShell ランタイムをカスタムホスト実装と共に使用するホストアプリケーションを記述する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="095db-103">This sample shows how to write a host application that uses the Windows PowerShell runtime along with a custom host implementation.</span></span> <span data-ttu-id="095db-104">ホスト アプリケーションはホストのカルチャをドイツ語に設定し、[Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) コマンドレットを実行して、pwrsh.exe を使用して確認できるものと同じ結果を表示し、最新のデータと時刻をドイツ語で印刷します。</span><span class="sxs-lookup"><span data-stu-id="095db-104">The host application sets the host culture to German, runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet and displays the results as you would see them by using pwrsh.exe, and then prints out the current data and time in German.</span></span>
+<span data-ttu-id="b1cab-103">このサンプルでは、Windows PowerShell ランタイムをカスタムホスト実装と共に使用するホストアプリケーションを記述する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="b1cab-103">This sample shows how to write a host application that uses the Windows PowerShell runtime along with a custom host implementation.</span></span> <span data-ttu-id="b1cab-104">ホスト アプリケーションはホストのカルチャをドイツ語に設定し、[Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) コマンドレットを実行して、pwrsh.exe を使用して確認できるものと同じ結果を表示し、最新のデータと時刻をドイツ語で印刷します。</span><span class="sxs-lookup"><span data-stu-id="b1cab-104">The host application sets the host culture to German, runs the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) cmdlet and displays the results as you would see them by using pwrsh.exe, and then prints out the current data and time in German.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="095db-105">要件</span><span class="sxs-lookup"><span data-stu-id="095db-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="b1cab-105">要件</span><span class="sxs-lookup"><span data-stu-id="b1cab-105">Requirements</span></span>
 
- <span data-ttu-id="095db-106">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="095db-106">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="b1cab-106">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="b1cab-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="095db-107">サンプル</span><span class="sxs-lookup"><span data-stu-id="095db-107">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="b1cab-107">使用例</span><span class="sxs-lookup"><span data-stu-id="b1cab-107">Demonstrates</span></span>
 
-- <span data-ttu-id="095db-108">[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラスから派生したクラスを持つカスタムホストを作成する ( [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラス、およびを作成するための[ものです)。Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスを提供します。</span><span class="sxs-lookup"><span data-stu-id="095db-108">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
+- <span data-ttu-id="b1cab-108">[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラス、[Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラス、および [Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) クラスから派生したクラスを持つカスタムホストを作成しています。このホストには、クラスが含まれています。</span><span class="sxs-lookup"><span data-stu-id="b1cab-108">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
 
-- <span data-ttu-id="095db-109">カスタムホストを使用する実行空間を作成する。</span><span class="sxs-lookup"><span data-stu-id="095db-109">Creating a runspace that uses the custom host.</span></span>
+- <span data-ttu-id="b1cab-109">カスタムホストを使用する実行空間を作成する。</span><span class="sxs-lookup"><span data-stu-id="b1cab-109">Creating a runspace that uses the custom host.</span></span>
 
-- <span data-ttu-id="095db-110">ホストカルチャをドイツ語に設定します。</span><span class="sxs-lookup"><span data-stu-id="095db-110">Setting the host culture to German.</span></span>
+- <span data-ttu-id="b1cab-110">ホストカルチャをドイツ語に設定します。</span><span class="sxs-lookup"><span data-stu-id="b1cab-110">Setting the host culture to German.</span></span>
 
-- <span data-ttu-id="095db-111">スクリプトを実行してプロセスを取得および並べ替え、次にドイツ語で表示されている現在の日付を取得する、[システムの管理. Powershell](/dotnet/api/system.management.automation.powershell)オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="095db-111">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that runs a script to retrieve and sort the processes, then retrieves the current date which is displayed in German.</span></span>
+- <span data-ttu-id="b1cab-111">スクリプトを実行してプロセスを取得および並べ替え、次にドイツ語で表示されている現在の日付を取得する、[システムの管理. Powershell](/dotnet/api/system.management.automation.powershell)オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="b1cab-111">Creating a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object that runs a script to retrieve and sort the processes, then retrieves the current date which is displayed in German.</span></span>
 
-## <a name="example"></a><span data-ttu-id="095db-112">例</span><span class="sxs-lookup"><span data-stu-id="095db-112">Example</span></span>
+## <a name="example"></a><span data-ttu-id="b1cab-112">例</span><span class="sxs-lookup"><span data-stu-id="b1cab-112">Example</span></span>
 
- <span data-ttu-id="095db-113">次のコードは、カスタムホストを使用するホストアプリケーションの実装を示しています。</span><span class="sxs-lookup"><span data-stu-id="095db-113">The following code shows an implementation of a host application that uses the custom host.</span></span>
+ <span data-ttu-id="b1cab-113">次のコードは、カスタムホストを使用するホストアプリケーションの実装を示しています。</span><span class="sxs-lookup"><span data-stu-id="b1cab-113">The following code shows an implementation of a host application that uses the custom host.</span></span>
 
 ```csharp
 // Copyright (c) 2006 Microsoft Corporation. All rights reserved.
@@ -132,9 +132,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="095db-114">例</span><span class="sxs-lookup"><span data-stu-id="095db-114">Example</span></span>
+## <a name="example"></a><span data-ttu-id="b1cab-114">例</span><span class="sxs-lookup"><span data-stu-id="b1cab-114">Example</span></span>
 
- <span data-ttu-id="095db-115">次のコードは、このホストアプリケーションで使用される[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラスを実装したものです。</span><span class="sxs-lookup"><span data-stu-id="095db-115">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="095db-116">実装されていない要素は、例外をスローするか、nothing を返します。</span><span class="sxs-lookup"><span data-stu-id="095db-116">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="b1cab-115">次のコードは、このホストアプリケーションで使用される[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラスを実装したものです。</span><span class="sxs-lookup"><span data-stu-id="b1cab-115">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="b1cab-116">実装されていない要素は、例外をスローするか、nothing を返します。</span><span class="sxs-lookup"><span data-stu-id="b1cab-116">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -314,9 +314,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="095db-117">例</span><span class="sxs-lookup"><span data-stu-id="095db-117">Example</span></span>
+## <a name="example"></a><span data-ttu-id="b1cab-117">例</span><span class="sxs-lookup"><span data-stu-id="b1cab-117">Example</span></span>
 
- <span data-ttu-id="095db-118">次のコードは、このホストアプリケーションで使用される[Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラスを実装したものです。</span><span class="sxs-lookup"><span data-stu-id="095db-118">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
+ <span data-ttu-id="b1cab-118">次のコードは、このホストアプリケーションで使用される[Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラスを実装したものです。</span><span class="sxs-lookup"><span data-stu-id="b1cab-118">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -565,9 +565,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="095db-119">例</span><span class="sxs-lookup"><span data-stu-id="095db-119">Example</span></span>
+## <a name="example"></a><span data-ttu-id="b1cab-119">例</span><span class="sxs-lookup"><span data-stu-id="b1cab-119">Example</span></span>
 
- <span data-ttu-id="095db-120">次のコードは、このホストアプリケーションで使用される[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスを実装したものです。</span><span class="sxs-lookup"><span data-stu-id="095db-120">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="095db-121">実装されていない要素は、例外をスローするか、nothing を返します。</span><span class="sxs-lookup"><span data-stu-id="095db-121">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="b1cab-120">次のコードは、このホストアプリケーションで使用される[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスを実装したものです。</span><span class="sxs-lookup"><span data-stu-id="b1cab-120">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="b1cab-121">実装されていない要素は、例外をスローするか、nothing を返します。</span><span class="sxs-lookup"><span data-stu-id="b1cab-121">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -784,12 +784,12 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="095db-122">参照</span><span class="sxs-lookup"><span data-stu-id="095db-122">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b1cab-122">参照</span><span class="sxs-lookup"><span data-stu-id="b1cab-122">See Also</span></span>
 
- [<span data-ttu-id="095db-123">System. Automation. Powershell</span><span class="sxs-lookup"><span data-stu-id="095db-123">System.Management.Automation.Powershell</span></span>](/dotnet/api/system.management.automation.powershell)
+ [<span data-ttu-id="b1cab-123">System. Automation. Powershell</span><span class="sxs-lookup"><span data-stu-id="b1cab-123">System.Management.Automation.Powershell</span></span>](/dotnet/api/system.management.automation.powershell)
 
- [<span data-ttu-id="095db-124">PSHost (システム管理)</span><span class="sxs-lookup"><span data-stu-id="095db-124">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [<span data-ttu-id="b1cab-124">PSHost (システム管理)</span><span class="sxs-lookup"><span data-stu-id="b1cab-124">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [<span data-ttu-id="095db-125">Pshostuserinterface (システム管理)</span><span class="sxs-lookup"><span data-stu-id="095db-125">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [<span data-ttu-id="b1cab-125">Pshostuserinterface (システム管理)</span><span class="sxs-lookup"><span data-stu-id="b1cab-125">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [<span data-ttu-id="095db-126">Pshostrawuserinterface (システム管理)</span><span class="sxs-lookup"><span data-stu-id="095db-126">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [<span data-ttu-id="b1cab-126">Pshostrawuserinterface (システム管理)</span><span class="sxs-lookup"><span data-stu-id="b1cab-126">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)

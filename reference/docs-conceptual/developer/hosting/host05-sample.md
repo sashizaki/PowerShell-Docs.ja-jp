@@ -9,45 +9,45 @@ ms.topic: article
 ms.assetid: 0a49e3c4-6a1b-404c-aefc-134e5ce3d108
 caps.latest.revision: 11
 ms.openlocfilehash: 98271f5f439d10b6d29fd0a6422b5b9b4ab55716
-ms.sourcegitcommit: 52a67bcd9d7bf3e8600ea4302d1fa8970ff9c998
+ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 12/05/2019
 ms.locfileid: "72367461"
 ---
-# <a name="host05-sample"></a><span data-ttu-id="4692d-102">Host05 サンプル</span><span class="sxs-lookup"><span data-stu-id="4692d-102">Host05 Sample</span></span>
+# <a name="host05-sample"></a><span data-ttu-id="db9fa-102">Host05 サンプル</span><span class="sxs-lookup"><span data-stu-id="db9fa-102">Host05 Sample</span></span>
 
-<span data-ttu-id="4692d-103">このサンプルでは、コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する対話型コンソールベースのホストアプリケーションを構築する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="4692d-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span> <span data-ttu-id="4692d-104">このホスト アプリケーションでは、[Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) コマンドレットと [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) コマンドレットを使用してリモート コンピューターを呼び出すこともできます。</span><span class="sxs-lookup"><span data-stu-id="4692d-104">This host application also supports calls to remote computers by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span></span>
+<span data-ttu-id="db9fa-103">このサンプルでは、コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する対話型コンソールベースのホストアプリケーションを構築する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="db9fa-103">This sample shows how to build an interactive console-based host application that reads commands from the command line, executes the commands, and then displays the results to the console.</span></span> <span data-ttu-id="db9fa-104">このホスト アプリケーションでは、[Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) コマンドレットと [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) コマンドレットを使用してリモート コンピューターを呼び出すこともできます。</span><span class="sxs-lookup"><span data-stu-id="db9fa-104">This host application also supports calls to remote computers by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="4692d-105">要件</span><span class="sxs-lookup"><span data-stu-id="4692d-105">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="db9fa-105">要件</span><span class="sxs-lookup"><span data-stu-id="db9fa-105">Requirements</span></span>
 
-- <span data-ttu-id="4692d-106">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="4692d-106">This sample requires Windows PowerShell 2.0.</span></span>
+- <span data-ttu-id="db9fa-106">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="db9fa-106">This sample requires Windows PowerShell 2.0.</span></span>
 
-- <span data-ttu-id="4692d-107">このアプリケーションは、管理者特権モードで実行する必要があります (管理者として実行)。</span><span class="sxs-lookup"><span data-stu-id="4692d-107">This application must be run in elevated mode (Run as administrator).</span></span>
+- <span data-ttu-id="db9fa-107">このアプリケーションは、管理者特権モードで実行する必要があります (管理者として実行)。</span><span class="sxs-lookup"><span data-stu-id="db9fa-107">This application must be run in elevated mode (Run as administrator).</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="4692d-108">サンプル</span><span class="sxs-lookup"><span data-stu-id="4692d-108">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="db9fa-108">使用例</span><span class="sxs-lookup"><span data-stu-id="db9fa-108">Demonstrates</span></span>
 
-- <span data-ttu-id="4692d-109">[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラスから派生したクラスを持つカスタムホストを作成する ( [Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラス、およびを作成するための[ものです)。Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスを提供します。</span><span class="sxs-lookup"><span data-stu-id="4692d-109">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
+- <span data-ttu-id="db9fa-109">[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラス、[Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラス、および [Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) クラスから派生したクラスを持つカスタムホストを作成しています。このホストには、クラスが含まれています。</span><span class="sxs-lookup"><span data-stu-id="db9fa-109">Creating a custom host whose classes derive from the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class, the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class, and the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class.</span></span>
 
-- <span data-ttu-id="4692d-110">これらのホストクラスを使用して対話型の Windows PowerShell シェルを構築するコンソールアプリケーションを構築します。</span><span class="sxs-lookup"><span data-stu-id="4692d-110">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
+- <span data-ttu-id="db9fa-110">これらのホストクラスを使用して対話型の Windows PowerShell シェルを構築するコンソールアプリケーションを構築します。</span><span class="sxs-lookup"><span data-stu-id="db9fa-110">Building a console application that uses these host classes to build an interactive Windows PowerShell shell.</span></span>
 
-- <span data-ttu-id="4692d-111">@No__t 0 変数を作成し、次のプロファイルを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="4692d-111">Creating a `$profile` variable and loading the following profiles.</span></span>
+- <span data-ttu-id="db9fa-111">`$profile` 変数を作成し、次のプロファイルを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="db9fa-111">Creating a `$profile` variable and loading the following profiles.</span></span>
 
-  - <span data-ttu-id="4692d-112">現在のユーザー、現在のホスト</span><span class="sxs-lookup"><span data-stu-id="4692d-112">current user, current host</span></span>
+  - <span data-ttu-id="db9fa-112">現在のユーザー、現在のホスト</span><span class="sxs-lookup"><span data-stu-id="db9fa-112">current user, current host</span></span>
 
-  - <span data-ttu-id="4692d-113">現在のユーザー、すべてのホスト</span><span class="sxs-lookup"><span data-stu-id="4692d-113">current user, all hosts</span></span>
+  - <span data-ttu-id="db9fa-113">現在のユーザー、すべてのホスト</span><span class="sxs-lookup"><span data-stu-id="db9fa-113">current user, all hosts</span></span>
 
-  - <span data-ttu-id="4692d-114">すべてのユーザー、現在のホスト</span><span class="sxs-lookup"><span data-stu-id="4692d-114">all users, current host</span></span>
+  - <span data-ttu-id="db9fa-114">すべてのユーザー、現在のホスト</span><span class="sxs-lookup"><span data-stu-id="db9fa-114">all users, current host</span></span>
 
-  - <span data-ttu-id="4692d-115">すべてのユーザー、すべてのホスト</span><span class="sxs-lookup"><span data-stu-id="4692d-115">all users, all hosts</span></span>
+  - <span data-ttu-id="db9fa-115">すべてのユーザー、すべてのホスト</span><span class="sxs-lookup"><span data-stu-id="db9fa-115">all users, all hosts</span></span>
 
-- <span data-ttu-id="4692d-116">[Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection)インターフェイスを実装してください。</span><span class="sxs-lookup"><span data-stu-id="4692d-116">Implement the [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.</span></span>
+- <span data-ttu-id="db9fa-116">[Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection)インターフェイスを実装してください。</span><span class="sxs-lookup"><span data-stu-id="db9fa-116">Implement the [System.Management.Automation.Host.Ihostuisupportsmultiplechoiceselection](/dotnet/api/System.Management.Automation.Host.IHostUISupportsMultipleChoiceSelection) interface.</span></span>
 
-- <span data-ttu-id="4692d-117">[Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)インターフェイスを実装して、[パススルー](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)および[出口](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession)のコマンドレットを使用して、対話型リモート処理をサポートします。</span><span class="sxs-lookup"><span data-stu-id="4692d-117">Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span></span>
+- <span data-ttu-id="db9fa-117">[Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession)インターフェイスを実装して、[パススルー](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession)および[出口](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession)のコマンドレットを使用して、対話型リモート処理をサポートします。</span><span class="sxs-lookup"><span data-stu-id="db9fa-117">Implement the [System.Management.Automation.Host.Ihostsupportsinteractivesession](/dotnet/api/System.Management.Automation.Host.IHostSupportsInteractiveSession) interface to support interactive remoting by using the [Enter-PsSession](/powershell/module/Microsoft.PowerShell.Core/Enter-PSSession) and [Exit-PsSession](/powershell/module/Microsoft.PowerShell.Core/Exit-PSSession) cmdlets.</span></span>
 
-## <a name="example"></a><span data-ttu-id="4692d-118">例</span><span class="sxs-lookup"><span data-stu-id="4692d-118">Example</span></span>
+## <a name="example"></a><span data-ttu-id="db9fa-118">例</span><span class="sxs-lookup"><span data-stu-id="db9fa-118">Example</span></span>
 
- <span data-ttu-id="4692d-119">この例では、コマンドラインでコマンドを入力し、そのコマンドを処理して、結果を出力することをユーザーに許可します。</span><span class="sxs-lookup"><span data-stu-id="4692d-119">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
+ <span data-ttu-id="db9fa-119">この例では、コマンドラインでコマンドを入力し、そのコマンドを処理して、結果を出力することをユーザーに許可します。</span><span class="sxs-lookup"><span data-stu-id="db9fa-119">This example allows the user to enter commands at a command line, processes those commands, and then prints out the results.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -401,9 +401,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="4692d-120">例</span><span class="sxs-lookup"><span data-stu-id="4692d-120">Example</span></span>
+## <a name="example"></a><span data-ttu-id="db9fa-120">例</span><span class="sxs-lookup"><span data-stu-id="db9fa-120">Example</span></span>
 
- <span data-ttu-id="4692d-121">次のコードは、このホストアプリケーションで使用される[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラスを実装したものです。</span><span class="sxs-lookup"><span data-stu-id="4692d-121">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="4692d-122">実装されていない要素は、例外をスローするか、nothing を返します。</span><span class="sxs-lookup"><span data-stu-id="4692d-122">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="db9fa-121">次のコードは、このホストアプリケーションで使用される[PSHost](/dotnet/api/System.Management.Automation.Host.PSHost)クラスを実装したものです。</span><span class="sxs-lookup"><span data-stu-id="db9fa-121">The following code is the implementation of the [System.Management.Automation.Host.PSHost](/dotnet/api/System.Management.Automation.Host.PSHost) class that is used by this host application.</span></span> <span data-ttu-id="db9fa-122">実装されていない要素は、例外をスローするか、nothing を返します。</span><span class="sxs-lookup"><span data-stu-id="db9fa-122">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -634,9 +634,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="4692d-123">例</span><span class="sxs-lookup"><span data-stu-id="4692d-123">Example</span></span>
+## <a name="example"></a><span data-ttu-id="db9fa-123">例</span><span class="sxs-lookup"><span data-stu-id="db9fa-123">Example</span></span>
 
- <span data-ttu-id="4692d-124">次のコードは、このホストアプリケーションで使用される[Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラスを実装したものです。</span><span class="sxs-lookup"><span data-stu-id="4692d-124">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
+ <span data-ttu-id="db9fa-124">次のコードは、このホストアプリケーションで使用される[Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)クラスを実装したものです。</span><span class="sxs-lookup"><span data-stu-id="db9fa-124">The following code is the implementation of the [System.Management.Automation.Host.Pshostuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface) class that is used by this host application.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1153,9 +1153,9 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="example"></a><span data-ttu-id="4692d-125">例</span><span class="sxs-lookup"><span data-stu-id="4692d-125">Example</span></span>
+## <a name="example"></a><span data-ttu-id="db9fa-125">例</span><span class="sxs-lookup"><span data-stu-id="db9fa-125">Example</span></span>
 
- <span data-ttu-id="4692d-126">次のコードは、このホストアプリケーションで使用される[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスを実装したものです。</span><span class="sxs-lookup"><span data-stu-id="4692d-126">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="4692d-127">実装されていない要素は、例外をスローするか、nothing を返します。</span><span class="sxs-lookup"><span data-stu-id="4692d-127">Those elements that are not implemented throw an exception or return nothing.</span></span>
+ <span data-ttu-id="db9fa-126">次のコードは、このホストアプリケーションで使用される[Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)クラスを実装したものです。</span><span class="sxs-lookup"><span data-stu-id="db9fa-126">The following code is the implementation of the [System.Management.Automation.Host.Pshostrawuserinterface](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface) class that is used by this host application.</span></span> <span data-ttu-id="db9fa-127">実装されていない要素は、例外をスローするか、nothing を返します。</span><span class="sxs-lookup"><span data-stu-id="db9fa-127">Those elements that are not implemented throw an exception or return nothing.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Host
@@ -1365,10 +1365,10 @@ namespace Microsoft.Samples.PowerShell.Host
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="4692d-128">参照</span><span class="sxs-lookup"><span data-stu-id="4692d-128">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="db9fa-128">参照</span><span class="sxs-lookup"><span data-stu-id="db9fa-128">See Also</span></span>
 
- [<span data-ttu-id="4692d-129">PSHost (システム管理)</span><span class="sxs-lookup"><span data-stu-id="4692d-129">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
+ [<span data-ttu-id="db9fa-129">PSHost (システム管理)</span><span class="sxs-lookup"><span data-stu-id="db9fa-129">System.Management.Automation.Host.PSHost</span></span>](/dotnet/api/System.Management.Automation.Host.PSHost)
 
- [<span data-ttu-id="4692d-130">Pshostuserinterface (システム管理)</span><span class="sxs-lookup"><span data-stu-id="4692d-130">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
+ [<span data-ttu-id="db9fa-130">Pshostuserinterface (システム管理)</span><span class="sxs-lookup"><span data-stu-id="db9fa-130">System.Management.Automation.Host.Pshostuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostUserInterface)
 
- [<span data-ttu-id="4692d-131">Pshostrawuserinterface (システム管理)</span><span class="sxs-lookup"><span data-stu-id="4692d-131">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
+ [<span data-ttu-id="db9fa-131">Pshostrawuserinterface (システム管理)</span><span class="sxs-lookup"><span data-stu-id="db9fa-131">System.Management.Automation.Host.Pshostrawuserinterface</span></span>](/dotnet/api/System.Management.Automation.Host.PSHostRawUserInterface)
