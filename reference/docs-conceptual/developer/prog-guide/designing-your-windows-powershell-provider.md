@@ -10,12 +10,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], designing
 ms.assetid: 11d20319-cc40-4227-b810-4af33372b182
 caps.latest.revision: 10
-ms.openlocfilehash: 962d2ba9fd892c297a633276b9ac07a5fa75ea87
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bfb29fd5df87ffa9ae270c18ce8bfb0c59ee6f90
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366811"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870661"
 ---
 # <a name="designing-your-windows-powershell-provider"></a>Windows PowerShell プロバイダーを設計する
 
@@ -57,7 +57,9 @@ Windows PowerShell ランタイムでは、セッション状態を使用して�
 
 ### <a name="cmdletprovider-base-class"></a>"クラス \ プロバイダー" 基本クラス
 
-System.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)クラスは、基本的な Windows PowerShell プロバイダーを定義します。 このクラスは、プロバイダー宣言をサポートし、すべての Windows PowerShell プロバイダーが使用できるさまざまなプロパティおよびメソッドを提供します。 クラスは、セッションで使用可能なすべてのプロバイダーを一覧表示するために、`Get-PSProvider` コマンドレットによって呼び出されます。 このコマンドレットの実装には、セッション状態があります。
+System.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)クラスは、基本的な Windows PowerShell プロバイダーを定義します。 このクラスは、プロバイダー宣言をサポートし、すべての Windows PowerShell プロバイダーが使用できるさまざまなプロパティおよびメソッドを提供します。
+クラスは、セッションで使用可能なすべてのプロバイダーを一覧表示するために、`Get-PSProvider` コマンドレットによって呼び出されます。
+このコマンドレットの実装には、セッション状態があります。
 
 > [!NOTE]
 > Windows PowerShell プロバイダーは、すべての Windows PowerShell 言語スコープで使用できます。
@@ -68,23 +70,23 @@ System.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation
 
 このクラスは、system.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)の基底クラスから派生します。 次の表に、このクラスによって公開されるコマンドレットの一覧を示します。 この一覧に加えて、`Get-PSDrive` コマンドレット (セッション状態によって公開) は、使用可能なドライブを取得するために使用される関連コマンドレットです。
 
-|コマンドレット|定義|
-|------------|----------------|
-|`New-PSDrive`|セッションの新しいドライブを作成し、ドライブ情報をストリームします。|
-|`Remove-PSDrive`|セッションからドライブを削除します。|
+|      コマンドレット      |                             定義                              |
+| ---------------- | ------------------------------------------------------------------- |
+| `New-PSDrive`    | セッションの新しいドライブを作成し、ドライブ情報をストリームします。 |
+| `Remove-PSDrive` | セッションからドライブを削除します。                                   |
 
 ### <a name="itemcmdletprovider-base-class"></a>Itemの提供プロバイダーの基本クラス
 
 System.string[クラスは、データ](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)ストアの個々の項目に対して操作を実行する Windows PowerShell 項目プロバイダーを定義します。また、コンテナーまたはナビゲーション機能を想定していません。 このクラスは、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基底クラスから派生します。 次の表に、このクラスによって公開されるコマンドレットの一覧を示します。
 
-|コマンドレット|定義|
-|------------|----------------|
-|`Clear-Item`|指定した場所にある項目の現在の内容を消去し、プロバイダーによって指定された "クリア" 値に置き換えます。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。|
-|`Get-Item`|指定した位置から項目を取得し、結果のオブジェクトをストリームします。|
-|`Invoke-Item`|指定したパスにある項目の既定のアクションを呼び出します。|
-|`Set-Item`|指定した位置に、指定した値を持つ項目を設定します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。|
-|`Resolve-Path`|Windows PowerShell パスのワイルドカードを解決し、パス情報をストリームします。|
-|`Test-Path`|指定したパスをテストし、存在する場合は `true` を返します。それ以外の場合は `false` を返します。 このコマンドレットは、システムの `IsContainer` パラメーターをサポートするために実装されています。 [Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)メソッド。|
+|     コマンドレット     |                                                                                                                                                            定義                                                                                                                                                            |
+| -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Clear-Item`   | 指定した場所にある項目の現在の内容を消去し、プロバイダーによって指定された "クリア" 値に置き換えます。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。                                                                                   |
+| `Get-Item`     | 指定した位置から項目を取得し、結果のオブジェクトをストリームします。                                                                                                                                                                                                                                                  |
+| `Invoke-Item`  | 指定したパスにある項目の既定のアクションを呼び出します。                                                                                                                                                                                                                                                                   |
+| `Set-Item`     | 指定した位置に、指定した値を持つ項目を設定します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。                                                                                                                                                   |
+| `Resolve-Path` | Windows PowerShell パスのワイルドカードを解決し、パス情報をストリームします。                                                                                                                                                                                                                                              |
+| `Test-Path`    | 指定したパスをテストし、存在する場合は `true` を返します。それ以外の場合は `false` を返します。 このコマンドレットは、システムの `IsContainer` パラメーターをサポートするために実装されています。 [Writeitemobject *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)メソッド。 |
 
 ### <a name="containercmdletprovider-base-class"></a>ContainerCmdletProvider 基本クラス
 
@@ -92,22 +94,22 @@ System.string[クラスは、データ](/dotnet/api/System.Management.Automation
 
 このクラスは、system.object の基底クラスから[派生して](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)います。 次の表は、このクラスによって実装されるコマンドレットを定義しています。
 
-|コマンドレット|定義|
-|------------|----------------|
-|`Copy-Item`|ある場所から別の場所に項目をコピーします。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。|
-|`Get-Childitem`|指定した位置にある子項目を取得し、それらをオブジェクトとしてストリームします。|
-|`New-Item`|指定した位置に新しい項目を作成し、結果のオブジェクトをストリームします。|
-|`Remove-Item`|指定された場所から項目を削除します。|
-|`Rename-Item`|指定した位置にある項目の名前を変更します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。|
+|     コマンドレット      |                                                                        定義                                                                        |
+| --------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Copy-Item`     | ある場所から別の場所に項目をコピーします。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。 |
+| `Get-Childitem` | 指定した位置にある子項目を取得し、それらをオブジェクトとしてストリームします。                                                                        |
+| `New-Item`      | 指定した位置に新しい項目を作成し、結果のオブジェクトをストリームします。                                                                           |
+| `Remove-Item`   | 指定された場所から項目を削除します。                                                                                                               |
+| `Rename-Item`   | 指定した位置にある項目の名前を変更します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。 |
 
 ### <a name="navigationcmdletprovider-base-class"></a>Navigationのプロバイダーの基本クラス
 
 System.string[クラスは](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)、複数のコンテナーを使用する項目に対して操作を実行する Windows PowerShell ナビゲーションプロバイダーを定義します。 このクラスは、 [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)基底クラスから派生します。 次の表に、このクラスによって公開されるコマンドレットの一覧を示します。
 
-|コマンドレット|定義|
-|------------|----------------|
-|結合-パス|パス間にプロバイダー固有の区切り記号を使用して、2つのパスを1つのパスに結合します。 このコマンドレットは、文字列をストリームします。|
-|`Move-Item`|項目を指定された場所に移動します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。|
+|    コマンドレット    |                                                                      定義                                                                      |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 結合-パス | パス間にプロバイダー固有の区切り記号を使用して、2つのパスを1つのパスに結合します。 このコマンドレットは、文字列をストリームします。                               |
+| `Move-Item`  | 項目を指定された場所に移動します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。 |
 
 関連するコマンドレットは、Windows PowerShell によって行う基本的な解析パスコマンドレットです。 このコマンドレットを使用して、Windows PowerShell のパスを解析し、`Parent` パラメーターをサポートすることができます。 親パス文字列をストリームします。
 
@@ -119,12 +121,12 @@ Windows powershell の基本クラスの1つから派生するだけでなく、
 
 [Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)インターフェイスは、データ項目のコンテンツに対して操作を実行するコンテンツプロバイダーを定義します。 次の表に、このインターフェイスによって公開されるコマンドレットの一覧を示します。
 
-|コマンドレット|定義|
-|------------|----------------|
-|`Add-Content`|指定された値の長さを、指定した項目の内容に追加します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。|
-|`Clear-Content`|指定した項目の内容を "クリア" 値に設定します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。|
-|`Get-Content`|指定した項目の内容を取得し、結果のオブジェクトをストリームします。|
-|`Set-Content`|指定した項目の既存の内容を置き換えます。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。|
+|     コマンドレット      |                                                                                        定義                                                                                        |
+| --------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Add-Content`   | 指定された値の長さを、指定した項目の内容に追加します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。 |
+| `Clear-Content` | 指定した項目の内容を "クリア" 値に設定します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。               |
+| `Get-Content`   | 指定した項目の内容を取得し、結果のオブジェクトをストリームします。                                                                                                         |
+| `Set-Content`   | 指定した項目の既存の内容を置き換えます。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。                     |
 
 ### <a name="ipropertycmdletprovider"></a>IPropertyCmdletProvider
 
@@ -133,37 +135,38 @@ Windows powershell の基本クラスの1つから派生するだけでなく、
 > [!NOTE]
 > これらのコマンドレットの `Path` パラメーターは、プロパティを識別するのではなく、項目へのパスを示します。
 
-|コマンドレット|定義|
-|------------|----------------|
-|`Clear-ItemProperty`|指定された項目のプロパティを "clear" 値に設定します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。|
-|`Get-ItemProperty`|指定した項目からプロパティを取得し、結果のオブジェクトをストリームします。|
-|`Set-ItemProperty`|指定した値を使用して、指定した項目のプロパティを設定します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。|
+|        コマンドレット        |                                                                                   定義                                                                                    |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Clear-ItemProperty` | 指定された項目のプロパティを "clear" 値に設定します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。      |
+| `Get-ItemProperty`   | 指定した項目からプロパティを取得し、結果のオブジェクトをストリームします。                                                                                                |
+| `Set-ItemProperty`   | 指定した値を使用して、指定した項目のプロパティを設定します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。 |
 
 ### <a name="idynamicpropertycmdletprovider"></a>IDynamicPropertyCmdletProvider
 
-[Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider)インターフェイスは、 [Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)から派生した、サポートされているコマンドレットの動的パラメーターを指定するプロバイダーを定義しています。 この型のプロバイダーは、実行時にプロパティを定義できる操作 (たとえば、新しいプロパティ操作) を処理します。 静的に定義されたプロパティを持つアイテムでは、このような操作は実行できません。 次の表に、このインターフェイスによって公開されるコマンドレットの一覧を示します。
+[Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider)インターフェイスは、 [Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider)から派生した、サポートされているコマンドレットの動的パラメーターを指定するプロバイダーを定義しています。 この型のプロバイダーは、実行時にプロパティを定義できる操作 (たとえば、新しいプロパティ操作) を処理します。 静的に定義されたプロパティを持つアイテムでは、このような操作は実行できません。
+次の表に、このインターフェイスによって公開されるコマンドレットの一覧を示します。
 
-|コマンドレット|定義|
-|------------|----------------|
-|`Copy-ItemProperty`|指定した項目から別の項目にプロパティをコピーします。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。|
-|`Move-ItemProperty`|指定した項目から別の項目にプロパティを移動します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。|
-|`New-ItemProperty`|指定した項目に対してプロパティを作成し、結果のオブジェクトをストリームします。|
-|`Remove-ItemProperty`|指定した項目のプロパティを削除します。|
-|`Rename-ItemProperty`|指定した項目のプロパティの名前を変更します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。|
+|        コマンドレット         |                                                                                定義                                                                                |
+| --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `Copy-ItemProperty`   | 指定した項目から別の項目にプロパティをコピーします。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。 |
+| `Move-ItemProperty`   | 指定した項目から別の項目にプロパティを移動します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。  |
+| `New-ItemProperty`    | 指定した項目に対してプロパティを作成し、結果のオブジェクトをストリームします。                                                                                             |
+| `Remove-ItemProperty` | 指定した項目のプロパティを削除します。                                                                                                                              |
+| `Rename-ItemProperty` | 指定した項目のプロパティの名前を変更します。 このコマンドレットは、`PassThru` パラメーターが指定されていない限り、パイプラインを介して出力オブジェクトを渡しません。                 |
 
 ### <a name="isecuritydescriptorcmdletprovider"></a>Isecurity記述子の提供プロバイダー
 
 System.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation.Provider.ISecurityDescriptorCmdletProvider)インターフェイスは、セキュリティ記述子の機能をプロバイダーに追加しています。 このインターフェイスを使用すると、ユーザーはデータストア内の項目のセキュリティ記述子情報を取得して設定できます。 次の表に、このインターフェイスによって公開されるコマンドレットの一覧を示します。
 
-|コマンドレット|定義|
-|------------|----------------|
-|`Get-Acl`|ファイルやオブジェクトなど、オペレーティングシステムのリソースを保護するために使用されるセキュリティ記述子の一部であるアクセス制御リスト (ACL) に含まれる情報を取得します。|
-|`Set-Acl`|ACL の情報を設定します。 これは、指定されたパスに対して指定された項目の[accesscontrol-namespace](/dotnet/api/System.Security.AccessControl.ObjectSecurity)のインスタンスの形式です。 このコマンドレットでは、Windows PowerShell プロバイダーがセキュリティ情報の設定をサポートしている場合に、レジストリ内のファイル、キー、サブキーに関する情報、またはその他のプロバイダー項目に関する情報を設定できます。|
+|  コマンドレット   |                                                                                                                                                                                                          定義                                                                                                                                                                                                          |
+| --------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Get-Acl` | ファイルやオブジェクトなど、オペレーティングシステムのリソースを保護するために使用されるセキュリティ記述子の一部であるアクセス制御リスト (ACL) に含まれる情報を取得します。                                                                                                                                                                                                                                      |
+| `Set-Acl` | ACL の情報を設定します。 これは、指定されたパスに対して指定された項目の[accesscontrol-namespace](/dotnet/api/System.Security.AccessControl.ObjectSecurity)のインスタンスの形式です。 このコマンドレットでは、Windows PowerShell プロバイダーがセキュリティ情報の設定をサポートしている場合に、レジストリ内のファイル、キー、サブキーに関する情報、またはその他のプロバイダー項目に関する情報を設定できます。 |
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell プロバイダーの作成](./how-to-create-a-windows-powershell-provider.md)
 
-[Windows PowerShell の動作](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Windows PowerShell の動作](/previous-versions/ms714658(v=vs.85))
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - snap-ins [PowerShell SDK], PSSnapin example
 ms.assetid: 875024f4-e02b-4416-80b9-af5e5b50aad6
 caps.latest.revision: 7
-ms.openlocfilehash: 465ab9e8fa29716ce0f46ad0dcf01d0ddd615bcd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d12a66e354a23041fffb0f8fa286c849849ec2b0
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364231"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870474"
 ---
 # <a name="writing-a-windows-powershell-snap-in"></a>Windows PowerShell スナップインを記述する
 
@@ -31,7 +31,7 @@ ms.locfileid: "72364231"
 
     この例では、クラス名は "GetProcPSSnapIn01" です。
 
-3. スナップインの名前のパブリックプロパティを追加します (必須)。 スナップインに名前を付けるときは、次の文字を使用しないでください。 #. , () {} [] &-/\ $;: "' \< >;? @ ` *
+3. スナップインの名前のパブリックプロパティを追加します (必須)。 スナップインに名前を付けるときは、`#`、`.`、`,`、`(`、`)`、`{`、`}`、`[`、`]`、`&`、`-`、`/`、`\`、`$`、`;`、`:`、`"`、`'`、`<`、`>`、`|`のいずれの文字も使用しないでください。
 
     この例では、スナップインの名前は "GetProcPSSnapIn01" です。
 
@@ -53,7 +53,7 @@ ms.locfileid: "72364231"
 
 ## <a name="example"></a>例
 
-この例では、windows powershell シェルで Get Proc コマンドレットを登録するために使用できる Windows PowerShell スナップインを記述する方法を示します。 この例では、完全なアセンブリには GetProcPSSnapIn01 スナップインクラスと Get Proc cmdlet クラスのみが含まれることに注意してください。
+この例では、windows powershell シェルで Get Proc コマンドレットを登録するために使用できる Windows PowerShell スナップインを記述する方法を示します。 この例では、完全なアセンブリには GetProcPSSnapIn01 スナップインクラスと `Get-Proc` コマンドレットクラスのみが含まれることに注意してください。
 
 ```csharp
 [RunInstaller(true)]
@@ -126,8 +126,8 @@ public class GetProcPSSnapIn01 : PSSnapIn
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell Shell SDK](../windows-powershell-reference.md)

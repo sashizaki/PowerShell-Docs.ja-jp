@@ -1,22 +1,14 @@
 ---
-title: Windows PowerShell ナビゲーションプロバイダーを作成する |Microsoft Docs
-ms.custom: ''
+title: Windows PowerShell ナビゲーション プロバイダーを作成する
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- navigation providers [PowerShell Programmer's Guide]
-- providers [PowerShell Programmer's Guide], navigation provider
 ms.assetid: 8bd3224d-ca6f-4640-9464-cb4d9f4e13b1
-caps.latest.revision: 5
-ms.openlocfilehash: f73e732ca9416b906b3647c5090dfa04ad940484
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 96a9167019c047bb9c6e56362b2c1110ece553dd
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416205"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870695"
 ---
 # <a name="creating-a-windows-powershell-navigation-provider"></a>Windows PowerShell ナビゲーション プロバイダーを作成する
 
@@ -24,10 +16,7 @@ ms.locfileid: "74416205"
 
 > [!NOTE]
 > このプロバイダーのC#ソースファイル (AccessDBSampleProvider05.cs) をダウンロードするには、Microsoft Windows Software Development Kit For windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
->
-> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
->
-> その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。
+> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。 その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。
 
 ここで説明するプロバイダーは、ユーザーがデータベース内のデータテーブルに移動できるように、Access データベースをドライブとして処理できるようにします。 独自のナビゲーションプロバイダーを作成するときに、ナビゲーションに必要なドライブ修飾パスを作成したり、相対パスを正規化したり、データストアの項目を移動したり、子名を取得し、項目の親パスを取得したり、テストしたりできるメソッドを実装できます。項目がコンテナーであるかどうかを識別する。
 
@@ -38,7 +27,8 @@ ms.locfileid: "74416205"
 
 Windows PowerShell ナビゲーションプロバイダー[は、system.servicemodel クラスの基底クラス](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)から派生した .net クラスを作成する必要があります。 ここでは、このセクションで説明するナビゲーションプロバイダーのクラス定義を示します。
 
-[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32 "AccessDBProviderSample05.cs")]
+[!code-csharp[AccessDBProviderSample05.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample05/AccessDBProviderSample05.cs#L31-L32
+"AccessDBProviderSample05.cs")]
 
 このプロバイダーには、2つ[のパラメーター](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)が含まれていることに注意してください。 最初のパラメーターは、Windows PowerShell によって使用されるプロバイダーのわかりやすい名前を指定します。 2番目のパラメーターは、コマンドの処理中にプロバイダーが Windows PowerShell ランタイムに公開する Windows PowerShell 固有の機能を指定します。 このプロバイダーには、Windows PowerShell 固有の機能は追加されていません。
 
@@ -77,7 +67,8 @@ Windows PowerShell ナビゲーションプロバイダーは、プロバイダ�
 
 Windows PowerShell ナビゲーションプロバイダーは、 [Getparentpath *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.GetParentPath)メソッドを実装して、指定された完全または部分プロバイダー固有のパスの親部分を取得します。 メソッドは、パスの子部分を削除し、親パス部分を返します。 `root` パラメーターは、ドライブのルートへの完全修飾パスを指定します。 マウントされたドライブが取得操作に使用されていない場合、このパラメーターは null または空にすることができます。 ルートが指定されている場合、メソッドはルートと同じツリー内のコンテナーへのパスを返す必要があります。
 
-サンプルナビゲーションプロバイダーは、このメソッドをオーバーライドしませんが、既定の実装を使用します。 パス区切り記号として "/" と "\\" の両方を使用するパスを受け入れます。 まず、"\\" の区切り記号のみを含むようにパスを正規化した後、親のパスを最後の "\\" に分割し、親のパスを返します。
+サンプルナビゲーションプロバイダーは、このメソッドをオーバーライドしませんが、既定の実装を使用します。
+パス区切り記号として "/" と "\\" の両方を使用するパスを受け入れます。 まず、"\\" の区切り記号のみを含むようにパスを正規化した後、親のパスを最後の "\\" に分割し、親のパスを返します。
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplestestcmdlets#testprovidergetparentpath](Msh_samplestestcmdlets#testprovidergetparentpath)]  -->
 
@@ -126,7 +117,8 @@ Windows PowerShell ナビゲーションプロバイダーは、 [Getparentpath 
 
 既定では、このメソッドのオーバーライドでは、system.object [*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティが `true`に設定されていない限り、既存のオブジェクトにオブジェクトを移動することはできません。 たとえば、c:\temp\abc.txt [*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティが `true`に設定されていない場合、filesystem プロバイダーは既存の c:\bar.txt ファイルに対してをコピーしません。 `destination` パラメーターで指定されたパスが存在し、コンテナーである場合は、" [System.](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) ..................................... この場合、`path` パラメーターで示されている項目を、`destination` パラメーターで指定されたコンテナーに移動して、子として指定[する必要が](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)あります。
 
-[システム](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)の実装では、このメソッドの実装によって、 [system](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ...................... を呼び出し、戻り値を確認してから、データストアに変更を加える必要があります。 このメソッドは、ファイルを削除するなど、システム状態が変更されたときの操作の実行を確認するために使用されます。 このコマンドは、変更するリソースの名前をユーザーに送信[し](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)ます。 Windows PowerShell ランタイムは、ユーザーに表示される内容を決定する際に、コマンドライン設定またはユーザー設定変数を考慮します。
+[システム](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)の実装では、このメソッドの実装によって、 [system](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ...................... を呼び出し、戻り値を確認してから、データストアに変更を加える必要があります。 このメソッドは、ファイルを削除するなど、システム状態が変更されたときの操作の実行を確認するために使用されます。
+このコマンドは、変更するリソースの名前をユーザーに送信[し](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)ます。 Windows PowerShell ランタイムは、ユーザーに表示される内容を決定する際に、コマンドライン設定またはユーザー設定変数を考慮します。
 
 ........................ [System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)... ...................................... を`true` [System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) 呼び出した後、System.[System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) ........ このメソッドは、ユーザーにメッセージを送信して、操作を続行する必要があるかどうかをフィードバックできるようにします。 プロバイダーは、system.servicemodel プロバイダーを呼び出す必要があり[ます。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)危険性の高いシステム変更については、追加のチェックとして続行してください。
 
@@ -156,11 +148,11 @@ Windows PowerShell ナビゲーションプロバイダーは、 [Getparentpath 
 
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類と書式設定の定義
 
-プロバイダーは、既存のオブジェクトにメンバーを追加したり、新しいオブジェクトを定義したりすることができます。 詳細については、「[オブジェクトの種類と書式設定の拡張](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)」を参照してください。
+プロバイダーは、既存のオブジェクトにメンバーを追加したり、新しいオブジェクトを定義したりすることができます。 詳細については、「[オブジェクトの種類と書式設定の拡張](/previous-versions/ms714665(v=vs.85))」を参照してください。
 
 ## <a name="building-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーの構築
 
-詳細については、「[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)」を参照してください。
+詳細については、「[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions/ms714644(v=vs.85))」を参照してください。
 
 ## <a name="testing-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーのテスト
 
@@ -178,7 +170,7 @@ Windows powershell プロバイダーが Windows PowerShell に登録されて�
    Get-ChildItem | Format-Table rowcount,name -AutoSize
    ```
 
-   ```output
+   ```Output
    RowCount   Name
    --------   ----
         180   MSysAccessObjects
@@ -211,7 +203,7 @@ Windows powershell プロバイダーが Windows PowerShell に登録されて�
    Get-Location
    ```
 
-   ```output
+   ```Output
    Path
    ----
    mydb:\Employees
@@ -223,7 +215,7 @@ Windows powershell プロバイダーが Windows PowerShell に登録されて�
    Get-ChildItem | Format-Table rownumber,psiscontainer,data -AutoSize
    ```
 
-   ```output
+   ```Output
    RowNumber   PSIsContainer   Data
    ---------   --------------   ----
    0           False            System.Data.DataRow
@@ -243,7 +235,7 @@ Windows powershell プロバイダーが Windows PowerShell に登録されて�
    Get-Item 0
    ```
 
-   ```output
+   ```Output
    PSPath        : AccessDB::C:\PS\Northwind.mdb\Employees\0
    PSParentPath  : AccessDB::C:\PS\Northwind.mdb\Employees
    PSChildName   : 0
@@ -260,7 +252,7 @@ Windows powershell プロバイダーが Windows PowerShell に登録されて�
    (Get-Item 0).data
    ```
 
-   ```output
+   ```Output
    EmployeeID      : 1
    LastName        : Davis
    FirstName       : Sara
@@ -284,17 +276,17 @@ Windows powershell プロバイダーが Windows PowerShell に登録されて�
    ReportsTo       : 2
    ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell プロバイダーの作成](./how-to-create-a-windows-powershell-provider.md)
 
 [Windows PowerShell プロバイダーを設計する](./designing-your-windows-powershell-provider.md)
 
-[オブジェクトの種類と書式設定の拡張](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[オブジェクトの種類と書式設定の拡張](/previous-versions/ms714665(v=vs.85))
 
 [コンテナーの Windows PowerShell プロバイダーを実装する](./creating-a-windows-powershell-container-provider.md)
 
-[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions/ms714644(v=vs.85))
 
 [Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
 
