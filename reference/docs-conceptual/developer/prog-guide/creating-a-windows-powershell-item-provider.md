@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: ad42b8de867f468e832380ab6a22a39b6d27d3c6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a64e49894ce5195cc177e97a7049740389b09456
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417490"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870712"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Windows PowerShell アイテム プロバイダーを作成する
 
@@ -24,10 +24,7 @@ ms.locfileid: "74417490"
 
 > [!NOTE]
 > このプロバイダーのC#ソースファイル (AccessDBSampleProvider03.cs) をダウンロードするには、Microsoft Windows Software Development Kit For windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
->
-> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
->
-> その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。
+> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。 その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。
 
 このトピックで説明する Windows PowerShell 項目プロバイダーは、Access データベースからデータの項目を取得します。 この場合、"item" は Access データベースのテーブルまたはテーブル内の行のいずれかです。
 
@@ -43,13 +40,15 @@ Windows PowerShell 項目プロバイダーでは、.NET クラスを定義す�
 
 「 [Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」で説明されているように、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスは、さまざまなプロバイダー機能を提供する他のいくつかのクラスから派生します。 そのため、Windows PowerShell 項目プロバイダーは、これらのクラスによって提供されるすべての機能を定義する必要があります。
 
-セッション固有の初期化情報を追加したり、プロバイダーで使用されるリソースを解放したりするための機能を実装する方法の詳細については、「[基本的な Windows PowerShell プロバイダーの作成](./creating-a-basic-windows-powershell-provider.md)」を参照してください。 ただし、ここで説明するプロバイダーを含むほとんどのプロバイダーは、Windows PowerShell によって提供されるこの機能の既定の実装を使用できます。
+セッション固有の初期化情報を追加したり、プロバイダーで使用されるリソースを解放したりするための機能を実装する方法の詳細については、「[基本的な Windows PowerShell プロバイダーの作成](./creating-a-basic-windows-powershell-provider.md)」を参照してください。
+ただし、ここで説明するプロバイダーを含むほとんどのプロバイダーは、Windows PowerShell によって提供されるこの機能の既定の実装を使用できます。
 
 Windows PowerShell 項目プロバイダーがストア内の項目を操作できるようにするには、データストアにアクセスするために、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基底クラスのメソッドを実装する必要があります。 このクラスの実装の詳細については、「 [Windows PowerShell ドライブプロバイダーの作成](./creating-a-windows-powershell-drive-provider.md)」を参照してください。
 
 ## <a name="checking-for-path-validity"></a>パスの有効性を確認しています
 
-Windows powershell ランタイムは、データの項目を検索するときに、windows powershell の[動作につい](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)ての「Pspath の概念」セクションで定義されているように、プロバイダーへの windows powershell パスを提供します。 Windows PowerShell 項目プロバイダーは、指定されたパスの構文とセマンティックの有効性を検証する必要があります。そのためには、 [System.](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) .................. を実装します。 このメソッドは、パスが有効な場合は `true` を返し、それ以外の場合は `false` を返します。 このメソッドの実装では、パスに項目が存在するかどうかを検証しないことに注意してください。ただし、パスの構文的で意味が正しいことだけを確認してください。
+Windows powershell ランタイムは、データの項目を検索するときに、windows powershell の[動作につい](/previous-versions/ms714658(v=vs.85))ての「Pspath の概念」セクションで定義されているように、プロバイダーへの windows powershell パスを提供します。
+Windows PowerShell 項目プロバイダーは、指定されたパスの構文とセマンティックの有効性を検証する必要があります。そのためには、 [System.](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) .................. を実装します。 このメソッドは、パスが有効な場合は `true` を返し、それ以外の場合は `false` を返します。 このメソッドの実装では、パスに項目が存在するかどうかを検証しないことに注意してください。ただし、パスの構文的で意味が正しいことだけを確認してください。
 
 ここでは、このプロバイダーのシステムの管理を実装しています。このプロバイダーの[Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)メソッド。 この実装では、NormalizePath ヘルパーメソッドを呼び出して、パス内のすべての区切り記号を一様なものに変換することに注意してください。
 
@@ -89,7 +88,7 @@ Windows powershell ランタイムは、データの項目を検索するとき�
 
 #### <a name="things-to-remember-about-implementing-getitem"></a>GetItem の実装に関する注意事項
 
-次の条件は、[システム](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)の実装に適用される可能性があります。...
+次の条件は、[システム](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)の実装に適用される可能性があります。
 
 - プロバイダークラスを定義すると、Windows PowerShell 項目プロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合は、メソッドに渡されるパスが要件を満たしているかどうかを確認する必要[があります。](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 [".](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
 
@@ -219,17 +218,17 @@ Windows PowerShell 項目プロバイダーは、 [Invokedefaultaction *](/dotne
 
 サンプルプロバイダーは、指定されたテーブルの行情報オブジェクトのコレクションを返す DatabaseRowInfo メソッドを定義します。 このメソッドには、例外をトラップするための try/catch ブロックが含まれています。 エラーが発生すると、行情報は生成されません。
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>コード サンプル
 
 完全なサンプルコードについては、「 [AccessDbProviderSample03 のコードサンプル](./accessdbprovidersample03-code-sample.md)」を参照してください。
 
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類と書式設定の定義
 
-プロバイダーを作成する場合は、既存のオブジェクトにメンバーを追加したり、新しいオブジェクトを定義したりすることが必要になる場合があります。 完了したら、Windows PowerShell がオブジェクトのメンバーを識別するために使用できる型ファイルと、オブジェクトの表示方法を定義するフォーマットファイルを作成します。 の詳細については、「[オブジェクトの種類と書式設定の拡張](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)」を参照してください。
+プロバイダーを作成する場合は、既存のオブジェクトにメンバーを追加したり、新しいオブジェクトを定義したりすることが必要になる場合があります。 完了したら、Windows PowerShell がオブジェクトのメンバーを識別するために使用できる型ファイルと、オブジェクトの表示方法を定義するフォーマットファイルを作成します。 の詳細については、「[オブジェクトの種類と書式設定の拡張](/previous-versions/ms714665(v=vs.85))」を参照してください。
 
 ## <a name="building-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーの構築
 
-「[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法」を](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)参照してください。
+「[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法」を](/previous-versions/ms714644(v=vs.85))参照してください。
 
 ## <a name="testing-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーのテスト
 
@@ -245,12 +244,12 @@ Windows PowerShell 項目プロバイダーは、 [Invokedefaultaction *](/dotne
 
 [Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)
 
-[オブジェクトの種類と書式設定の拡張](https://msdn.microsoft.com/en-us/da976d91-a3d6-44e8-affa-466b1e2bd351)
+[オブジェクトの種類と書式設定の拡張](/previous-versions/ms714665(v=vs.85))
 
-[Windows PowerShell の動作](https://msdn.microsoft.com/en-us/ced30e23-10af-4700-8933-49873bd84d58)
+[Windows PowerShell の動作](/previous-versions/ms714658(v=vs.85))
 
 [コンテナーの Windows PowerShell プロバイダーの作成](./creating-a-windows-powershell-container-provider.md)
 
 [ドライブ Windows PowerShell プロバイダーの作成](./creating-a-windows-powershell-drive-provider.md)
 
-[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](https://msdn.microsoft.com/en-us/a41e9054-29c8-40ab-bf2b-8ce4e7ec1c8c)
+[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions/ms714644(v=vs.85))
