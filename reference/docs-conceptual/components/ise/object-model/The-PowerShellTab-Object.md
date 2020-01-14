@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: PowerShellTab オブジェクト
-ms.openlocfilehash: bfa11b553f97b7b27b974855ff4e8f1a48c33fea
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028909"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736932"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab オブジェクト
 
@@ -43,7 +43,7 @@ Windows PowerShell ISE 3.0 以降でサポートされており、それより�
 
 **Script** - System.Management.Automation.ScriptBlock または文字列。実行するスクリプト ブロック。
 
-**\[useNewScope\]** - 省略可能なブール値で、既定は **$true** です。 **$true** に設定されると、そのコマンドを実行する新しいスコープが作成されます。 コマンドで指定されている [PowerShell] タブのランタイム環境は変更されません。
+**\[useNewScope\]** - 省略可能なブール値で、既定は `$true` です。`$true` に設定されると、そのコマンドを実行する新しいスコープが作成されます。 コマンドで指定されている [PowerShell] タブのランタイム環境は変更されません。
 
 **\[millisecondsTimeout\]** - **500** を既定値とする省略可能な整数。
 指定した時間内にコマンドが完了しない場合、コマンドによって **TimeoutException** が生成され、"処理がタイムアウトになりました。" というメッセージが表示されます。
@@ -67,7 +67,7 @@ $a
 Measure-Command {$psISE.PowerShellTabs[1].InvokeSynchronous('sleep 10', $false, 5000)}
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 ### <a name="addonsmenu"></a>AddOnsMenu
 
@@ -92,7 +92,7 @@ $psISE.CurrentPowerShellTab.AddOnsMenu
 
 Windows PowerShell ISE 2.0 以降でサポートされています。
 
-スクリプトを [Invoke( Script )](#invoke-script-) メソッドで呼び出すことが可能な場合は **$true** を返す、読み取り専用のブール型プロパティです。
+スクリプトを [Invoke( Script )](#invoke-script-) メソッドで呼び出すことが可能な場合は `$true` を返す、読み取り専用のブール型プロパティです。
 
 ```powershell
 # CanInvoke will be false if the PowerShell
@@ -107,9 +107,9 @@ $secondTab.Invoke({sleep 20})
 $secondTab.CanInvoke
 ```
 
-### <a name="consolepane"></a>Consolepane
+### <a name="consolepane"></a>ConsolePane
 
-Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。  Windows PowerShell ISE 2.0 では、このパラメータの名前は **CommandPane** でした。
+Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。 Windows PowerShell ISE 2.0 では、このパラメータの名前は **CommandPane** でした。
 
 コンソール ウィンドウの [editor](The-ISEEditor-Object.md) オブジェクトを取得する読み取り専用のプロパティです。
 
@@ -118,7 +118,7 @@ Windows PowerShell ISE 3.0 以降でサポートされており、それより�
 $psISE.CurrentPowerShellTab.ConsolePane
 ```
 
-### <a name="displayname"></a>表示名
+### <a name="displayname"></a>DisplayName
 
 Windows PowerShell ISE 2.0 以降でサポートされています。
 
@@ -154,9 +154,9 @@ $newFile.Editor.Text = "a`r`nb"
 $newFile.Editor.LineCount
 ```
 
-### <a name="output"></a>出力
+### <a name="output"></a>Output
 
-この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。  Windows PowerShell ISE 2.0 より後のバージョンでは、**ConsolePane** オブジェクトを同じ目的で使用できます。
+この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。 Windows PowerShell ISE 2.0 より後のバージョンでは、**ConsolePane** オブジェクトを同じ目的で使用できます。
 
 現在の[エディター](The-ISEEditor-Object.md)の出力ウィンドウが取得する読み取り専用のプロパティです。
 
@@ -165,7 +165,7 @@ $newFile.Editor.LineCount
 $psISE.CurrentPowerShellTab.output.clear()
 ```
 
-### <a name="prompt"></a>ダイアログを表示する
+### <a name="prompt"></a>Prompt
 
 Windows PowerShell ISE 2.0 以降でサポートされています。
 
@@ -204,7 +204,7 @@ $psISE.CurrentPowerShellTab.StatusText
 
 Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
-水平方向のアドオン ツール ウィンドウが現在開いているかどうかを示す読み取り 専用のプロパティです。
+水平方向のアドオン ツール ウィンドウが現在開いているかどうかを示す読み取り専用のプロパティです。
 
 ```powershell
 # Gets the current state of the horizontal Add-ons tool pane.

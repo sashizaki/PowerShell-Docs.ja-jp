@@ -2,22 +2,22 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: '複合リソース: リソースとしての DSC 構成の使用'
-ms.openlocfilehash: 7fa6ee56d4706b96fb47123c7aa00c4df6256492
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 79fe94bd5bab8fa460714e5994d2e2487f302410
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73933823"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415897"
 ---
 # <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>複合リソース:リソースとしての DSC 構成の使用
 
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
-実際の状況では、構成は多くのさまざまなリソースを呼び出したり、膨大な数のプロパティを設定したりするため、長く複雑になることがあります。 このような複雑さに対処するために、Windows PowerShell Desired State Configuration (DSC) 構成を他の構成のリソースとして使用できます。 これは、複合リソースと呼ばれます。 複合リソースは、パラメーターを受け取る DSC 構成です。 構成のパラメーターは、リソースのプロパティとして機能します。 構成は **.schema.psm1** 拡張子のファイルとして保存され、一般的な DSC リソースの MOF スキーマとリソース スクリプトの両方に代わるものです。DSC リソースの詳細については、[「DSC リソース」](resources.md)を参照してください。
+実際の状況では、構成は多くのさまざまなリソースを呼び出したり、膨大な数のプロパティを設定したりするため、長く複雑になることがあります。 このような複雑さに対処するために、Windows PowerShell Desired State Configuration (DSC) 構成を他の構成のリソースとして使用できます。 これは、複合リソースと呼ばれます。 複合リソースは、パラメーターを受け取る DSC 構成です。 構成のパラメーターは、リソースのプロパティとして機能します。 構成は、拡張子が `.schema.psm1` のファイルとして保存されます。 MOF スキーマと、一般的な DSC リソースのリソース スクリプトの両方の代わりになります。 DSC リソースの詳細については、[Windows PowerShell Desired State Configuration](resources.md) に関する記事を参照してください。
 
 ## <a name="creating-the-composite-resource"></a>複合リソースの作成
 
-この例では、仮想マシンを構成するために多くの既存のリソースを呼び出す構成を作成します。 構成ブロックで設定する値を指定する代わりに、構成では数多くのパラメーターを受け取り、後でそれが構成ブロックで使用されます。
+この例では、仮想マシンを構成するために多くの既存のリソースを呼び出す構成を作成します。 構成ブロックで設定する値を指定する代わりに、構成ではパラメーターが受け取られ、後でそれが構成ブロックで使用されます。
 
 ```powershell
 Configuration xVirtualMachine
@@ -131,27 +131,33 @@ Configuration xVirtualMachine
 }
 ```
 
+> [!NOTE]
+> 現在、DSC では、複合リソースまたは入れ子になった構成を複合リソース内に配置することはサポートされていません。
+
 ### <a name="saving-the-configuration-as-a-composite-resource"></a>複合リソースとしての構成の保存
 
-パラメーター化された構成を DSC リソースとして使用するには、他の MOF ベースのリソースに似たディレクトリ構造で保存し、 **.schema.psm1** 拡張子を持つ名前を指定します。 この例では、ファイルに **xVirtualMachine.schema.psm1** という名前を付けます。 次の行を含む **xVirtualMachine.psd1** というマニフェストも作成する必要があります。 これは、**MyDscResources.psd1** に加えて **MyDscResources** フォルダーの下に格納されるすべてのリソースのモジュール マニフェストです。
+パラメーター化された構成を DSC リソースとして使用するには、他の MOF ベースのリソースに似たディレクトリ構造で保存し、`.schema.psm1` 拡張子を持つ名前を指定します。 この例では、ファイルに `xVirtualMachine.schema.psm1` という名前を付けます。 次の行を含む `xVirtualMachine.psd1` というマニフェストも作成する必要があります。
 
 ```powershell
 RootModule = 'xVirtualMachine.schema.psm1'
 ```
+
+> [!NOTE]
+> これは、`MyDscResources` フォルダーにあるすべてのリソースのモジュール マニフェストである `MyDscResources.psd1` に追加されます。
 
 完了すると、フォルダー構造は次のようになります。
 
 ```
 $env: psmodulepath
     |- MyDscResources
-           MyDscResources.psd1
+        |- MyDscResources.psd1
         |- DSCResources
             |- xVirtualMachine
                 |- xVirtualMachine.psd1
                 |- xVirtualMachine.schema.psm1
 ```
 
-これで、リソースは Get-DscResource コマンドレットを使用して検出できるようになり、そのプロパティは、そのコマンドレットまたは Windows PowerShell ISE の **Ctrl + Space** キーによるオートコンプリートを使用して検出できるようになります。
+これで、リソースは `Get-DscResource` コマンドレットを使用して検出できるようになり、そのプロパティは、そのコマンドレットまたは Windows PowerShell ISE の <kbd>Ctrl</kbd> + <kbd>Space</kbd> キーによるオートコンプリートを使用して検出できるようになります。
 
 ## <a name="using-the-composite-resource"></a>複合リソースの使用
 
@@ -213,12 +219,11 @@ Configuration MultipleVms
 > [!NOTE]
 > **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。
 
-**PsDscRunAsCredential** プロパティを [DSC 構成](../configurations/configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。
-詳細については、「[ユーザーの資格情報を指定して DSC を実行する](../configurations/runAsUser.md)」を参照してください。
+**PsDscRunAsCredential** プロパティを [DSC 構成](../configurations/configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。 詳細については、「[ユーザーの資格情報を指定して DSC を実行する](../configurations/runAsUser.md)」を参照してください。
 
 カスタム リソース内からユーザー コンテキストにアクセスするには、自動変数 `$PsDscContext` を使用できます。
 
-たとえば、次のコードは、リソースが詳細出力ストリームに実行しているユーザー コンテキストを記述します。
+たとえば、次のコードでは、リソースが実行されているユーザー コンテキストが、詳細出力ストリームに書き込まれます。
 
 ```powershell
 if ($PsDscContext.RunAsUser) {
@@ -227,6 +232,8 @@ if ($PsDscContext.RunAsUser) {
 ```
 
 ## <a name="see-also"></a>参照
+
 ### <a name="concepts"></a>概念
-* [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)
-* [Windows PowerShell Desired State Configuration の概要](../overview/overview.md)
+
+- [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)
+- [Windows PowerShell Desired State Configuration の概要](../overview/overview.md)

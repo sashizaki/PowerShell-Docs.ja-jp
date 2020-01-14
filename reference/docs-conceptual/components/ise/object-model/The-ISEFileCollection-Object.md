@@ -1,27 +1,27 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+ms.date: 12/31/2019
+keywords: powershell,コマンドレット
 title: ISEFileCollection オブジェクト
-ms.openlocfilehash: 96db51ee921cc0fa34803091d563bc6e118643b6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4192afa9dc91d9ea4c4c084d3ba0175483620229
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030520"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736217"
 ---
 # <a name="the-isefilecollection-object"></a>ISEFileCollection オブジェクト
 
-**ISEFileCollection** オブジェクトは **ISEFile** オブジェクトのコレクションです。 たとえば $psISE.CurrentPowerShellTab.Files コレクションです。
+**ISEFileCollection** オブジェクトは **ISEFile** オブジェクトのコレクションです。 例は、`$psISE.CurrentPowerShellTab.Files` コレクションです。
 
 ## <a name="methods"></a>メソッド
 
-### <a name="add-fullpath-"></a>Add\( \[fullPath\] \)
+### <a name="add-fullpath-"></a>Add\( \[FullPath\] \)
 
 Windows PowerShell ISE 2.0 以降でサポートされています。
 
-新しい無題ファイルを作成して返し、コレクションに追加します。 新しく作成されたファイルの **IsUntitled** プロパティは **$true** です。
+新しい無題ファイルを作成して返し、コレクションに追加します。 新しく作成されたファイルの **IsUntitled** プロパティは `$true` です。
 
-**\[fullPath\]** - 省略可能な文字列。ファイルの完全指定パス。 **fullPath** パラメーターと相対パスを含める、または完全パスではなくファイル名を使用すると、例外が生成されます。
+**\[FullPath\]** - 省略可能な文字列。ファイルの完全指定パス。 **FullPath** パラメーターと相対パスを含める、または完全パスではなくファイル名を使用すると、例外が生成されます。
 
 ```powershell
 # Adds a new untitled file to the collection of files in the current PowerShell tab.
@@ -39,7 +39,7 @@ Windows PowerShell ISE 2.0 以降でサポートされています。
 
 **File** - 文字列。コレクションから削除する ISEFile ファイル。 ファイルが保存されていない場合、このメソッドにより例外がスローされます。 **Force** スイッチ パラメーターを使用すると、保存されていないファイルが強制的に削除されます。
 
-**\[Force\]** - 省略可能な Boolean。 **$true** に設定すると、最後に使用してからファイルが保存されていない場合でも、そのファイルを削除する権限が付与されます。 既定値は **$false** です。
+**\[Force\]** - 省略可能な Boolean。`$true` に設定すると、最後に使用してからファイルが保存されていない場合でも、そのファイルを削除する権限が付与されます。 既定では、 `$false`です。
 
 ```powershell
 # Removes the first opened file from the file collection associated with the current PowerShell tab.
@@ -56,9 +56,9 @@ $psISE.CurrentPowerShellTab.Files.Remove($firstfile, $true)
 
 Windows PowerShell ISE 2.0 以降でサポートされています。
 
-**selectedFile** パラメーターにより指定されたファイルを選択します。
+**SelectedFile** パラメーターにより指定されたファイルを選択します。
 
-**selectedFile** - Microsoft.PowerShell.Host.ISE.ISEFile。選択する ISEFile ファイル。
+**SelectedFile** - Microsoft.PowerShell.Host.ISE.ISEFile。選択する ISEFile ファイル。
 
 ```powershell
 # Selects the specified file.

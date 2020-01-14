@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+ms.date: 12/31/2019
+keywords: powershell,コマンドレット
 title: ISESnippetCollection オブジェクト
-ms.openlocfilehash: 6c392c08767fba004f63155d5a469777856a0b59
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6cdc43dd1d82e94f66122d7f7b313c02e755fed7
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030503"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736047"
 ---
 # <a name="the-isesnippetcollection-object"></a>ISESnippetCollection オブジェクト
 
-**ISESnippetCollection** オブジェクトは、**ISESnippet** オブジェクトのコレクションです。 **PowerShellTab** オブジェクトに関連付けられているファイル コレクションは、このクラスのメンバーです。 例としては、 **$psISE.CurrentPowerShellTab.Files** コレクションです。
+**ISESnippetCollection** オブジェクトは、**ISESnippet** オブジェクトのコレクションです。 **PowerShellTab** オブジェクトに関連付けられているファイル コレクションは、このクラスのメンバーです。 例は、`$psISE.CurrentPowerShellTab.Files` コレクションです。
 
 ## <a name="methods"></a>メソッド
 
@@ -19,7 +19,7 @@ ms.locfileid: "67030503"
 
 Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
-ユーザー定義のスニペットを含む .snippets.ps1xml ファイルを読み込みます。 スニペットを作成する最も簡単な方法は、New-IseSnippet コマンドレットを使用することです。このコマンドレットでは、Windows PowerShell ISE を開始するたびにスニペットがロードされるように、自動的にスニペットをプロファイル フォルダーに保存します。
+ユーザー定義のスニペットが含まれる `.snippets.ps1xml` ファイルを読み込みます。 スニペットを作成する最も簡単な方法は、`New-IseSnippet` コマンドレットを使用することです。このコマンドレットを使うと、Windows PowerShell ISE を開始するたびにスニペットがロードされるように、スニペットがプロファイル フォルダーに自動的に保存されます。
 
 **FilePathName** - スニペット定義を含む .snippets.ps1xml ファイルへのパスとファイル名。
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+ms.date: 12/31/2019
+keywords: powershell,コマンドレット
 title: Windows PowerShell ISE スクリプト オブジェクト モデルの目的
-ms.openlocfilehash: e59593ef06911c709e92fa7a1eabd96d2636ca30
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1f48df112bd19297baa311116e79d3d7603d7c81
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030914"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736234"
 ---
 # <a name="purpose-of-the-windows-powershell-ise-scripting-object-model"></a>Windows PowerShell ISE スクリプト オブジェクト モデルの目的
 
@@ -17,12 +17,13 @@ ms.locfileid: "67030914"
 
 オブジェクト モデルを使用して、アプリケーションの設定およびオプションを変更することができます。 たとえば、次のように変更できます。
 
-- エラー、警告、詳細出力、デバッグ出力の色を変更することができます。
-- コマンド ウィンドウ、出力ウィンドウ、スクリプト ウィンドウの背景色を取得および設定することができます。
-- 出力ウィンドウの前景色を設定することができます。
-- Windows PowerShell ISE のフォント名とフォント サイズを設定することができます。
-- 警告を構成することができます。 この設定には、複数の PowerShell タブでファイルが開かれている場合や、ファイルが保存される前にそのファイル内のスクリプトを実行する場合に発行される警告が含まれます。
-- スクリプト ウィンドウと出力ウィンドウが並べて表示されるビューと、スクリプト ウィンドウが出力ウィンドウの上に表示されるビューを切り替えることができます。 コマンド ウィンドウは、出力ウィンドウの上部または下部にドッキングできます。
+- エラー、警告、詳細出力、デバッグ出力の色を変更します。
+- コマンド ウィンドウ、出力ウィンドウ、スクリプト ウィンドウの背景色を取得または設定します。
+- 出力ウィンドウの前景色を設定します。
+- Windows PowerShell ISE のフォント名とフォント サイズを設定します。
+- 警告を構成します。 この設定には、複数の PowerShell タブでファイルが開かれている場合や、ファイルが保存される前にそのファイル内のスクリプトを実行する場合に発行される警告が含まれます。
+- スクリプト ウィンドウと出力ウィンドウが並べて表示されるビューと、スクリプト ウィンドウが出力ウィンドウの上に表示されるビューを切り替えます。
+- コマンド ウィンドウは、出力ウィンドウの上部または下部にドッキングします。
 
 ## <a name="enhancing-the-functionality-of-windows-powershell-ise"></a>Windows PowerShell ISE の機能の拡張
 
@@ -49,6 +50,6 @@ ms.locfileid: "67030914"
 
 スクリプト オブジェクト モデルを使用して、よく行う操作のキーボード ショートカットを作成することができます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [ISE オブジェクト モデルの階層](The-ISE-Object-Model-Hierarchy.md)

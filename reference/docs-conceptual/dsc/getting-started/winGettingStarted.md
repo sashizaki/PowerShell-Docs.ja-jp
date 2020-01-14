@@ -2,12 +2,12 @@
 ms.date: 08/15/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Windows 用 Desired State Configuration (DSC) の概要
-ms.openlocfilehash: a9346b96693acdbad9bacbd4b6ca85971e17a3d1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2add2c936e60c0c9446bf4b398fbf7b4bd6407f7
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417767"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75416159"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Windows 用 Desired State Configuration (DSC) の概要
 
@@ -27,12 +27,11 @@ DSC に関する一般的な情報については、「[Windows PowerShell Desir
 - Windows 8.1
 - Windows 7
 
-[Microsoft Hyper-V Server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) のスタンドアロン製品 SKU には Desired State Configuraion の実装が含まれていないため、これを PowerShell DSC または Azure Automation State Configuration によって管理することはできません。
+[Microsoft Hyper-V Server](/windows-server/virtualization/hyper-v/hyper-v-server-2016) のスタンドアロン製品 SKU には、Desired State Configuration の実装が含まれていないため、PowerShell DSC または Azure Automation State Configuration で管理することはできません。
 
 ## <a name="installing-dsc"></a>DSC のインストール
 
-PowerShell Desired State Configuration は Windows に含まれており、Windows Management Framework を通じて更新されます。
-最新バージョンは [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616) です。
+PowerShell Desired State Configuration は Windows に含まれており、Windows Management Framework を通じて更新されます。 最新バージョンは [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616) です。
 
 > [!NOTE]
 > DSC を使ってコンピューターを管理するために、Windows Server の 'DSC-Service' 機能を有効にする必要はありません。
@@ -44,7 +43,7 @@ PowerShell Desired State Configuration は Windows に含まれており、Windo
 
 ### <a name="creating-a-configuration-mof-document"></a>構成 MOF ドキュメントの作成
 
-構成を作成するには、Windows PowerShell 構成キーワードを使用します。
+構成を作成するには、Windows PowerShell の `Configuration` キーワードを使用します。
 以下の手順では、Windows PowerShell を使って構成ドキュメントを作成する方法について説明します。
 
 #### <a name="define-a-configuration-and-generate-the-configuration-document"></a>構成を定義し、構成ドキュメントを生成します。
@@ -71,41 +70,57 @@ Configuration EnvironmentVariable_Path
 
 EnvironmentVariable_Path -OutputPath:"C:\EnvironmentVariable_Path"
 ```
+
 #### <a name="install-a-module-containing-dsc-resources"></a>DSC リソースを含むモジュールをインストールする
 
 Windows PowerShell Desired State Configuration には、DSC リソースを含んだ組み込みモジュールが含まれています。
 PowerShellGet コマンドレットを使って、PowerShell ギャラリーなどの外部ソースからモジュールを読み込むこともできます。
 
-`Install-Module 'PSDscResources' -Verbose`
+```PowerShell
+Install-Module 'PSDscResources' -Verbose
+```
 
 #### <a name="apply-the-configuration-to-the-machine"></a>構成をコンピューターに適用する
 
-構成ドキュメント (MOF ファイル) をコンピューターに適用するには、[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを使います。
+> [!NOTE]
+> DSC が実行できるようにするには、`localhost` の構成を実行している場合でも PowerShell のリモート コマンドを受信するように、Windows を構成する必要があります。 環境を簡単に正しく構成するには、管理者特権の PowerShell ターミナルで `Set-WsManQuickConfig -Force` を実行するだけです。
 
-`Start-DscConfiguration -Path 'C:\EnvironmentVariable_Path' -Wait -Verbose`
+[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを使用して、構成ドキュメント (MOF ファイル) をコンピューターに適用できます。
+
+```powershell
+Start-DscConfiguration -Path 'C:\EnvironmentVariable_Path' -Wait -Verbose
+```
 
 #### <a name="get-the-current-state-of-the-configuration"></a>構成の現在の状態を取得する
 
 [Get-DscConfiguration](/powershell/module/psdesiredstateconfiguration/get-dscconfiguration) コマンドレットを使うと、コンピューターの現在の状態が照会され、構成の現在の値が返されます。
 
-`Get-DscConfiguration`
+```powershell
+Get-DscConfiguration
+```
 
 [Get-DscLocalConfigurationManager](/powershell/module/psdesiredstateconfiguration/get-dscLocalConfigurationManager) コマンドレットを使うと、コンピューターに適用されている現在のメタ構成が返されます。
 
-`Get-DscLocalConfigurationManager`
+```powershell
+Get-DscLocalConfigurationManager
+```
 
 #### <a name="remove-the-current-configuration-from-a-machine"></a>コンピューターから現在の構成を削除する
 
 [Remove-DscConfigurationDocument](/powershell/module/psdesiredstateconfiguration/remove-dscconfigurationdocument)
 
-`Remove-DscConfigurationDocument -Stage Current -Verbose`
+```powershell
+Remove-DscConfigurationDocument -Stage Current -Verbose
+```
 
 #### <a name="configure-settings-in-local-configuration-manager"></a>ローカル構成マネージャーで設定を構成する
 
 [Set-DSCLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Set-DscLocalConfigurationManager) コマンドレットを使って、コンピューターにメタ構成 MOF ファイルを適用します。
 メタ構成 MOF へのパスが必要です。
 
-`Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbose`
+```powershell
+Set-DSCLocalConfigurationManager -Path 'c:\metaconfig\localhost.meta.mof' -Verbose
+```
 
 ## <a name="windows-powershell-desired-state-configuration-log-files"></a>Windows PowerShell Desired State Configuration のログ ファイル
 

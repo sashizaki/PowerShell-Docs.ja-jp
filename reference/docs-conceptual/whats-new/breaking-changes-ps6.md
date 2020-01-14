@@ -1,13 +1,13 @@
 ---
-ms.date: 11/15/2019
+ms.date: 12/18/2019
 keywords: powershell、core
 title: PowerShell Core 6.0 の重要な変更
-ms.openlocfilehash: a1dac42bcda8e1258a99ef281691a9d4c5986b53
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: dfbbeb5e5bb3d43959ce144afffc5b10193f8b30
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417561"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415705"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>PowerShell 6.x の破壊的変更
 
@@ -17,7 +17,7 @@ ms.locfileid: "74417561"
 
 [PowerShell ワークフロー][workflow]は、[Windows Workflow Foundation (WF)][workflow-foundation] をベースに構築された Windows PowerShell の機能です。これを使うと、実行時間の長いタスクや並列化されたタスクのための堅牢な Runbook を作成できます。
 
-.NET Core では Windows Workflow Foundation がサポートされていないため、PowerShell Core の PowerShell ワークフローのサポートを終了します。
+.NET Core では Windows Workflow Foundation がサポートされていないため、PowerShell Core では PowerShell ワークフローはサポートされていません。
 
 今後、PowerShell ワークフローを必要としない、PowerShell 言語でのネイティブの並列処理とコンカレンシーが可能になる予定です。
 
@@ -64,6 +64,10 @@ WMI ベースの 2 つのモジュール セットをサポートすることは
 
 サポートされていない API を使用していることから、より優れたソリューションが提供されるまで、PowerShell Core から `Microsoft.PowerShell.LocalAccounts` コマンドレットを削除します。
 
+### <a name="new-webserviceproxy-cmdlet-removed"></a>`New-WebServiceProxy` コマンドレットが削除された
+
+.NET Core では、SOAP プロトコルを使用するためのサービスを提供する Windows Communication Framework はサポートされていません。 このコマンドレットは、SOAP を必要とするため削除されました。
+
 ### <a name="-computer-cmdlets"></a>`*-Computer` コマンドレット
 
 以下のコマンドレットは、サポートされていない API が使われているため、より優れたソリューションが提供されるまで PowerShell Core から削除されます。
@@ -83,7 +87,7 @@ WMI ベースの 2 つのモジュール セットをサポートすることは
 
 ## <a name="enginelanguage-changes"></a>エンジンおよび言語の変更
 
-### <a name="rename-powershellexe-to-pwshexe-5101httpsgithubcompowershellpowershellissues5101"></a>名前 `powershell.exe` を `pwsh.exe` に変更 [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
+### <a name="rename-powershellexe-to-pwshexe-5101httpsgithubcompowershellpowershellissues5101"></a>`powershell.exe` から `pwsh.exe` への名前変更 [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
 
 ユーザーが (Windows PowerShell ではなく) Windows 上で PowerShell Core を確実な方法で呼び出せるよう、PowerShell Core のバイナリが Windows では `pwsh.exe` に、Windows 以外のプラットフォームでは `pwsh` に変更されました。
 
@@ -273,7 +277,7 @@ CoreFX でサポートされていないハッシュ アルゴリズムがあり
 
 `ValueFromRemainingArguments` は、それ自体が配列である単一の値ではなく、値を配列として返すよう変更されました。
 
-### <a name="buildversion-is-removed-from-psversiontable-1415httpsgithubcompowershellpowershellissues1415"></a>`$PSVersionTable` から `BuildVersion` が削除されました。[#1415](https://github.com/PowerShell/PowerShell/issues/1415)
+### <a name="buildversion-is-removed-from-psversiontable-1415httpsgithubcompowershellpowershellissues1415"></a>`$PSVersionTable` を `BuildVersion` から削除 [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
 
 `$PSVersionTable` から `BuildVersion` プロパティを削除してください。 このプロパティは、Windows のビルド バージョンと関連付けられていました。 代わりに、`GitCommitId` を使用して、PowerShell Core の正確なビルド バージョンを取得することをお勧めします。
 

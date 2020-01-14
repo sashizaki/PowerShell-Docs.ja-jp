@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+ms.date: 12/31/2019
+keywords: powershell,コマンドレット
 title: ISEEditor オブジェクト
-ms.openlocfilehash: 2d4c3d941035384c591ca57e809c0e3a9b852f5c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cb63acebc1a8bb9fa6cc07199088ae0d5441bc91
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086767"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736191"
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor オブジェクト
 
@@ -69,7 +69,7 @@ $psISE.CurrentPowerShellTab.ConsolePane.GetLineLength(1)
 
 Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
-エディター オブジェクトの **CanGoToMatch** プロパティが **$true** の場合、一致する文字にカーソルを移動します。これは、カーソルが始めかっこ \(、始め角かっこ \[、始め波かっこ { の直前または終わりかっこ \)、終わり角かっこ \]、終わり波かっこ } の直後にある場合に発生します。  カーソルは、開始文字の前または終了文字の後に配置されます。 **CanGoToMatch** プロパティが **$false** の場合、このメソッドでは何も実行されません。
+エディター オブジェクトの **CanGoToMatch** プロパティが `$true` の場合、一致する文字にカーソルを移動します。これは、カーソルが始めかっこ `(`、始め角かっこ `[`、始め波かっこ `{` の直前または終わりかっこ `)`、終わり角かっこ `]`、終わり波かっこ `}` の直後にある場合に発生します。 カーソルは、開始文字の前または終了文字の後に配置されます。 **CanGoToMatch** プロパティが `$false` の場合、このメソッドでは何も実行されません。
 
 ```powershell
 # Goes to the matching character if CanGoToMatch() is $true
@@ -141,13 +141,13 @@ Windows PowerShell ISE 3.0 以降でサポートされており、それより�
 $psISE.CurrentFile.Editor.ToggleOutliningExpansion()
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 ### <a name="cangotomatch"></a>CanGoToMatch
 
 Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
-カーソルがかっこ、角かっこ、または波かっこ (\(\)、\[\]、{}) の横にあるかどうかを示す読み取り専用のブール型プロパティ。 カーソルがかっこの始め文字の直前またはかっこの終わり文字の直後にある場合、このプロパティの値は **$true** です。 それ以外の場合は **$false** です。
+カーソルがかっこ `()`、角かっこ `[]`、または波かっこ `{}` の横にあるかどうかを示す読み取り専用のブール型プロパティ。 カーソルがかっこの始め文字の直前またはかっこの終わり文字の直後にある場合、このプロパティの値は `$true` です。 それ以外の場合は、`$false` となります。
 
 ```powershell
 # Test to see if the caret is next to a parenthesis, bracket, or brace
@@ -206,7 +206,7 @@ Windows PowerShell ISE 2.0 以降でサポートされています。
 
 後述の「[スクリプト例](#scripting-example)」を参照してください。
 
-### <a name="text"></a>テキスト
+### <a name="text"></a>Text
 
 Windows PowerShell ISE 2.0 以降でサポートされています。
 

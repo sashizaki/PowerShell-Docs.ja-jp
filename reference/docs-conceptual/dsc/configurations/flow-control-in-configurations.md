@@ -2,23 +2,24 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成内での条件付きステートメントとループ
-ms.openlocfilehash: 0073d94d28afbb45bb635442129a6cddde4c805a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 86f75be4a3d1c1760dd6269335431e8ab9fd8d09
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954079"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75736898"
 ---
-# <a name="conditional-statements-and-loops-in-configurations"></a>構成内での条件付きステートメントとループ
+# <a name="conditional-statements-and-loops-in-a-configuration"></a>Configuration 内での条件付きステートメントとループ
 
-PowerShell のフロー制御キーワードを使って、[構成](configurations.md)をより動的にすることができます。 この記事では、条件ステートメントとループを使って構成をより動的にする方法を説明します。 条件とループを[パラメーター](add-parameters-to-a-configuration.md)および[構成データ](configData.md)と組み合わせることで、構成をコンパイルするときの柔軟性と制御が増します。
+PowerShell のフロー制御キーワードを使って、[Configuration](configurations.md) をより動的にすることができます。 この記事では、条件ステートメントとループを使って `Configuration` をより動的にする方法を説明します。 条件ステートメントとループを[パラメーター](add-parameters-to-a-configuration.md)および[構成データ](configData.md)と組み合わせることで、`Configuration` をコンパイルするときの柔軟性と制御が増します。
 
-関数またはスクリプト ブロックと同じように、構成内で任意の PowerShell 言語を使用できます。 使用するステートメントは、".mof" ファイルをコンパイルするために構成を呼び出すときにのみ評価されます。 次の例では、簡単なシナリオを使って概念を説明します。 条件とループは、パラメーターや構成データと共に使われることがよくあります。
+関数またはスクリプト ブロックと同じように、`Configuration` 内で任意の PowerShell 言語の機能を使用できます。
+使用するステートメントは、`.mof` ファイルをコンパイルするために `Configuration` を呼び出すときにのみ評価されます。 次の例では、シナリオを使って概念を説明します。 条件ステートメントとループは、パラメーターや構成データと共に使われることがよくあります。
 
-この簡単な例では、**Service** リソース ブロックでコンパイル時にサービスの現在の状態を取得し、現在の状態を保持する ".mof" ファイルを生成します。
+この例では、**Service** リソース ブロックでコンパイル時にサービスの現在の状態を取得し、現在の状態を保持する `.mof` ファイルを生成します。
 
 > [!NOTE]
-> 動的な Resource ブロックを使うと、IntelliSense の有効性は失われます。 PowerShell のパーサーでは、構成がコンパイルされるまで、指定された値が許容されるかどうかを判断できません。
+> 動的な Resource ブロックを使うと、IntelliSense の有効性は失われます。 PowerShell のパーサーでは、`Configuration` がコンパイルされるまで、指定された値が許容されるかどうかを判断できません。
 
 ```powershell
 Configuration ServiceState
@@ -37,7 +38,7 @@ Configuration ServiceState
 }
 ```
 
-さらに、`foreach` ループを使って、現在のコンピューター上のすべてのサービスに対して **Service** ブロック リソースを作成できます。
+さらに、`foreach` ループを使って、現在のコンピューター上のすべてのサービスに対して **Service** リソース ブロックを作成できます。
 
 ```powershell
 Configuration ServiceState
@@ -46,7 +47,7 @@ Configuration ServiceState
     Import-DSCResource -Name Service -Module PSDesiredStateConfiguration
     Node localhost
     {
-        Foreach ($service in $(Get-Service))
+        foreach ($service in $(Get-Service))
         {
             Service $service.Name
             {
@@ -59,7 +60,7 @@ Configuration ServiceState
 }
 ```
 
-また、簡単な `if` ステートメントを使うことで、オンラインになっているコンピューターに対してのみ構成を作成することができます。
+また、`if` ステートメントを使用してオンラインになっているコンピューターに対してのみ `Configuration` を作成することもできます。
 
 ```powershell
 Configuration ServiceState
@@ -67,7 +68,7 @@ Configuration ServiceState
     # It is best practice to explicitly import any resources used in your Configurations.
     Import-DSCResource -Name Service -Module PSDesiredStateConfiguration
 
-    Foreach ($computer in @('Server01', 'Server02', 'Server03'))
+    foreach ($computer in @('Server01', 'Server02', 'Server03'))
     {
         if (Test-Connection -ComputerName $computer)
         {
@@ -85,15 +86,15 @@ Configuration ServiceState
 ```
 
 > [!NOTE]
-> 上の例の動的なリソース ブロックでは、現在のコンピューターが参照されています。 このインスタンスでは、それはターゲット ノードではなく、構成を作成しているコンピューターです。
+> 上の例の動的なリソース ブロックでは、現在のコンピューターが参照されています。 このインスタンスでは、それはターゲット ノードではなく、`Configuration` を作成しているコンピューターです。
 
 <!---
 Mention Get-DSCConfigurationFromSystem
 -->
 
-## <a name="summary"></a>要約
+## <a name="summary"></a>まとめ
 
-まとめると、構成内では任意の PowerShell 言語を使うことができます。
+まとめると、`Configuration` 内では任意の PowerShell 言語の機能を使うことができます。
 
 これには次のものが含まれます。
 
@@ -105,9 +106,9 @@ Mention Get-DSCConfigurationFromSystem
 - ActiveDirectory オブジェクト
 - その他...
 
-構成で定義されているすべての PowerShell コードはコンパイル時に評価されますが、構成を含むスクリプトにコードを配置することもできます。 構成ブロックの外部にあるすべてのコードは、構成をインポートするときに実行されます。
+`Configuration` で定義されているすべての PowerShell コードはコンパイル時に評価されますが、`Configuration` を含むスクリプトにコードを配置することもできます。 `Configuration` ブロックの外部にあるすべてのコードは、`Configuration` をインポートするときに実行されます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [構成にパラメーターを追加する](add-parameters-to-a-configuration.md)
 - [構成から構成データを分離する](configData.md)

@@ -1,17 +1,17 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+ms.date: 12/31/2019
+keywords: powershell,コマンドレット
 title: ISEFile オブジェクト
-ms.openlocfilehash: ebb5a35f6ea9d93eab633b9f4e6c84e4fddd6ae8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028964"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737000"
 ---
 # <a name="the-isefile-object"></a>ISEFile オブジェクト
 
-**ISEFile** オブジェクトは、Windows PowerShell® Integrated Scripting Environment (ISE) のファイルを表します。 これは Microsoft.PowerShell.Host.ISE.ISEFile クラスのインスタンスです。 このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。 **$PsISE.CurrentFile** と、PowerShell タブのファイル コレクション内のファイルは、Microsoft.PowerShell.Host.ISE.ISEFile クラスのすべてのインスタンスです。
+**ISEFile** オブジェクトは、Windows PowerShell® Integrated Scripting Environment (ISE) のファイルを表します。 これは **Microsoft.PowerShell.Host.ISE.ISEFile** クラスのインスタンスです。 このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。 `$psISE.CurrentFile` と、PowerShell タブのファイル コレクション内のファイルは、****Microsoft.PowerShell.Host.ISE.ISEFile** クラスのすべてのインスタンスです。
 
 ## <a name="methods"></a>メソッド
 
@@ -63,20 +63,20 @@ $psISE.CurrentFile.SaveAs($fullPath)
 $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
-### <a name="displayname"></a>表示名
+### <a name="displayname"></a>DisplayName
 
 Windows PowerShell ISE 2.0 以降でサポートされています。
 
-このファイルの表示名が含まれている文字列を取得する読み取り専用のプロパティ。 名前は、エディターの上部の **[ファイル]** タブに表示されます。 名前の末尾のアスタリスク \(\*\) は、保存されていない変更がファイルに含まれていることを示します。
+このファイルの表示名が含まれている文字列を取得する読み取り専用のプロパティ。 名前は、エディターの上部の **[ファイル]** タブに表示されます。 名前の末尾のアスタリスク (`(*)`) は、保存されていない変更がファイルに含まれていることを示します。
 
 ```powershell
 # Shows the display name of the file.
 $psISE.CurrentFile.DisplayName
 ```
 
-### <a name="editor"></a>Editor
+### <a name="editor"></a>エディター
 
 Windows PowerShell ISE 2.0 以降でサポートされています。
 
@@ -113,7 +113,7 @@ $psISE.CurrentFile.FullPath
 
 Windows PowerShell ISE 2.0 以降でサポートされています。
 
-ファイルが最後に変更された後にファイルが保存されている場合に **$true** を返す読み取り専用のブール型プロパティ。
+ファイルが最後に変更された後にファイルが保存されている場合に `$true` を返す読み取り専用のブール型プロパティ。
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -125,7 +125,7 @@ $myfile.IsSaved
 
 Windows PowerShell ISE 2.0 以降でサポートされています。
 
-ファイルにタイトルが指定されたことがない場合に **$true** を返す読み取り専用のプロパティ。
+ファイルにタイトルが指定されたことがない場合に `$true` を返す読み取り専用のプロパティ。
 
 ```powershell
 # Determines whether the file has never been given a title.

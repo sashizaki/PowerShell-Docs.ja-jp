@@ -2,23 +2,23 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: クイック スタート - DSC を使用して Web サイトを作成する
-ms.openlocfilehash: d98607939ccd3cc5e660936d8c0a6d54fce7d65f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 08ca25604998ce8c913ef8112b5342f2e0216b6e
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71955069"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75416129"
 ---
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
+# <a name="quickstart---create-a-website-with-desired-state-configuration-dsc"></a>クイックスタート - Desired State Configuration (DSC) を使用して Web サイトを作成する
 
-# <a name="quickstart---create-a-website-with-dsc"></a>クイック スタート - DSC を使用して Web サイトを作成する
+> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
 この演習では、Desired State Configuration (DSC) の構成の作成と適用について最初から最後まで説明します。
 これから使用するサンプルでは、サーバーの `Web-Server` (IIS) 機能が有効になっており、そのサーバのディレクトリ `inetpub\wwwroot` に「Hello World」サンプルのコンテンツが存在することを確認します。
 
 DSC の概要としくみついては、「[意思決定者向け Desired State Configuration の概要](../overview/decisionMaker.md)」をご覧ください。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 このサンプルを実行するには、Windows Server 2012 以降と PowerShell 4.0 以降が動作しているコンピューターが必要です。
 
@@ -74,12 +74,12 @@ Configuration WebsiteTest {
 
 関数名の前に **Configuration** というキーワードを追加することで、PowerShell の関数のように表示されます。
 
-`localhost` 場合、**ノード**ブロックは構成するターゲット ノードを指定します。
+**Node** ブロックでは、構成するターゲット ノードを指定します。 例では、 `localhost`が使用されます。
 
 構成は 2 つの[リソース](../resources/resources.md) (**WindowsFeature** と**ファイル**) を呼び出します。
 リソースは、ターゲット ノードが構成によって定義された状態になっているか確認します。
 
-## <a name="compile-the-configuration"></a>構成をコンパイルする
+## <a name="compile-the-configuration"></a>構成のコンパイル
 
 DSC 構成をノードに適用するには、最初にコンパイルを行い、MOF ファイルを出力する必要があります。
 これを行うには、構成を関数のように実行します。
@@ -105,7 +105,7 @@ Mode                LastWriteTime         Length Name
 2 行目では構成を実行します。
 その結果、現在のフォルダのサブ フォルダとして `WebsiteTest` という名前の新しいフォルダが作成されます。
 `WebsiteTest` フォルダーには、`localhost.mof` という名前のファイルが含まれています。
-これは後にターゲット ノードに適用できるファイルです。
+これは、ターゲット ノードに適用できるファイルです。
 
 ## <a name="apply-the-configuration"></a>構成を適用する
 
@@ -113,6 +113,9 @@ Mode                LastWriteTime         Length Name
 
 `Start-DscConfiguration` コマンドレットから DSC のエンジンである [Local Configuration Manager (LCM)](../managing-nodes/metaConfig.md) に対して構成の適用を指示します。
 LCM はDSC リソースを呼び出し、構成を適用します。
+
+> [!NOTE]
+> DSC が実行できるようにするには、`localhost` の構成を実行している場合でも PowerShell のリモート コマンドを受信するように、Windows を構成する必要があります。 環境を簡単に正しく構成するには、管理者特権の PowerShell ターミナルで `Set-WsManQuickConfig -Force` を実行するだけです。
 
 PowerShell コンソールで構成が保存されているフォルダーに移動し、次のコマンドを実行します。
 
@@ -127,7 +130,7 @@ Start-DscConfiguration .\WebsiteTest
 今回の場合は、Web ブラウザーで `http://localhost/` を参照することで、結果を直接テストすることもできます。
 この例の最初の手順として、作成した「Hello World」 HTML ページが表示されます。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - 「[DSC 構成](../configurations/configurations.md)」で DSC 構成の詳細を確認する。
 - 「[DSC リソース](../resources/resources.md)」で利用可能な DSC リソースとカスタム DSC リソースの作成方法を確認する。

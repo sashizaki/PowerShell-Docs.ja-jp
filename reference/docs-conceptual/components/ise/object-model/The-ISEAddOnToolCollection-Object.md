@@ -1,21 +1,21 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+ms.date: 12/31/2019
+keywords: powershell,コマンドレット
 title: ISEAddOnToolCollection オブジェクト
-ms.openlocfilehash: 28ab9747e573b7a76ee655289b341870b1728bc2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e07a47169381307b50ac190165307c926b4ad94e
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030629"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737017"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>ISEAddOnToolCollection オブジェクト
 
-**ISEAddOnToolCollection** オブジェクトは、**ISEAddOnTool** オブジェクトのコレクションです。 例としては、 **$psISE.CurrentPowerShellTab.VerticalAddOnTools** オブジェクトです。
+**ISEAddOnToolCollection** オブジェクトは、**ISEAddOnTool** オブジェクトのコレクションです。 例は、`$psISE.CurrentPowerShellTab.VerticalAddOnTools` オブジェクトです。
 
 ## <a name="methods"></a>メソッド
 
-### <a name="add-name-controltype-isvisible-"></a>Add\( Name、ControlType、\[IsVisible\] \)
+### <a name="add-name-controltype-isvisible-"></a>Add\( Name, ControlType, \[IsVisible\] \)
 
 Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 
@@ -25,7 +25,7 @@ Windows PowerShell ISE 3.0 以降でサポートされており、それより�
 
 **ControlType** - 追加するコントロールを指定する種類。
 
-**\[IsVisible\]** - 省略可能なブール値は、 **$true** に設定すると、アドオン ツールが、関連付けられているツール ウィンドウに直ちに表示されます。
+**\[IsVisible\]** - 省略可能なブール値は、`$true` に設定すると、アドオン ツールが、関連付けられているツール ウィンドウに直ちに表示されます。
 
 ```powershell
 # Load a DLL with an add-on and then add it to the ISE

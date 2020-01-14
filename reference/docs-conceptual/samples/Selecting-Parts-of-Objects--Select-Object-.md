@@ -1,48 +1,40 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+ms.date: 12/23/2019
+keywords: powershell,コマンドレット
 title: オブジェクトの一部を選択する (Select-Object)
-ms.openlocfilehash: 4d4c89f0b5103e4701a3af3cd07fcd7c8f1c697f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 06b92c7c4c5098c707a7d9f9d9a96e6b6a897f80
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030107"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737170"
 ---
 # <a name="selecting-parts-of-objects-select-object"></a>オブジェクトの一部を選択する (Select-Object)
 
-**Select-Object** コマンドレットを使用して、Windows PowerShell のオブジェクトを新規作成、またはカスタマイズできます。それらのオブジェクトには、作成時に使用する元のオブジェクトから選択したプロパティを含めることができます。 次のコマンドを入力して、Win32_LogicalDisk WMI クラスの Name および FreeSpace プロパティのみを含む、新規オブジェクトを作成します。
+`Select-Object` コマンドレットを使用して、PowerShell のオブジェクトを新規作成、またはカスタマイズできます。それらのオブジェクトには、作成時に使用する元のオブジェクトから選択したプロパティを含めることができます。 次のコマンドを入力して、**Win32_LogicalDisk** WMI クラスの **Name** および **FreeSpace** プロパティのみを含む、新規オブジェクトを作成します。
 
-```
-PS> Get-WmiObject -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace
-
-Name                                    FreeSpace
-----                                    ---------
-C:                                      50664845312
+```powershell
+Get-CimInstance -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace
 ```
 
-そのコマンドの発行後に、データの種類を表示することはできません。しかし、Select-Object の後に、結果を Get-Member にパイプする場合、次のように PSCustomObject という新しい種類のオブジェクトを作成することを指定できます。
-
-```
-PS> Get-WmiObject -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace| Get-Member
-
-   TypeName: System.Management.Automation.PSCustomObject
-
-Name        MemberType   Definition
-----        ----------   ----------
-Equals      Method       System.Boolean Equals(Object obj)
-GetHashCode Method       System.Int32 GetHashCode()
-GetType     Method       System.Type GetType()
-ToString    Method       System.String ToString()
-FreeSpace   NoteProperty  FreeSpace=...
-Name        NoteProperty System.String Name=C:
+```Output
+Name      FreeSpace
+----      ---------
+C:      50664845312
 ```
 
-Select-Object には、数多くの用途があります。 その 1 つはデータのレプリケーションで、その後変更することができます。 これで、前のセクションで取り上げた問題に対処できるようになりました。 新規作成したオブジェクトの FreeSpace の値を更新することができ、その出力にはわかりやすいラベルが含まれています。
+`Select-Object` では、計算されるプロパティを作成できます。 したがって、**FreeSpace** をバイト単位ではなくギガバイト単位で表示できます。
 
+```powershell
+Get-CimInstance -Class Win32_LogicalDisk |
+  Select-Object -Property Name, @{
+    label='FreeSpace'
+    expression={($_.FreeSpace/1GB).ToString('F2')}
+  }
 ```
-Get-WmiObject -Class Win32_LogicalDisk | Select-Object -Property Name,FreeSpace | ForEach-Object -Process {$_.FreeSpace = ($_.FreeSpace)/1024.0/1024.0; $_}
-Name                                                                  FreeSpace
-----                                                                  ---------
-C:                                                                48317.7265625
+
+```Output
+Name    FreeSpace
+----    ---------
+C:      47.18
 ```

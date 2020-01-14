@@ -3,14 +3,14 @@ ms.date: 11/06/2018
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery, PsGet
 title: ローカルの PSRepositories の操作
-ms.openlocfilehash: 94824ea584c097838b24c6f2cd02407b6147a781
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c1bd905674ae76a3badd3eff50780f0e1bb5fc64
+ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71327993"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75415816"
 ---
-# <a name="working-with-local-powershellget-repositories"></a>ローカルの PowerShellGet リポジトリの操作
+# <a name="working-with-private-powershellget-repositories"></a>PowerShellGet プライベート リポジトリの操作
 
 PowerShellGet モジュールでは、PowerShell ギャラリー以外のリポジトリがサポートされています。
 これらのコマンドレットにより、次のシナリオが可能になります。
@@ -18,6 +18,7 @@ PowerShellGet モジュールでは、PowerShell ギャラリー以外のリポ�
 - 環境内で使用するための、信頼された事前検証済みの PowerShell モジュールのセットをサポートする
 - PowerShell モジュールまたはスクリプトを構築する CI/CD パイプラインをテストする
 - インターネットにアクセスできないシステムに PowerShell スクリプトおよびモジュールを提供する
+- 組織でのみ使用できる PowerShell スクリプトとモジュールを提供する
 
 この記事では、ローカル PowerShell リポジトリを設定する方法について説明します。 また、PowerShell ギャラリーから使用できる [OfflinePowerShellGetDeploy][] モジュールについても説明します。 このモジュールには、ローカル リポジトリに PowerShellGet の最新バージョンをインストールするためのコマンドレットが含まれています。
 
@@ -25,7 +26,7 @@ PowerShellGet モジュールでは、PowerShell ギャラリー以外のリポ�
 
 ローカル PSRepository を作成するには、次の 2 つの方法があります: NuGet サーバーまたはファイル共有。 種類ごとに長所と短所があります。
 
-NuGet サーバー
+### <a name="nuget-server"></a>NuGet サーバー
 
 | 長所| 短所 |
 | --- | --- |
@@ -34,7 +35,7 @@ NuGet サーバー
 | NuGet では、`.Nupkg` パッケージ内のメタデータがサポートされます | 発行には、API キーの管理とメンテナンスが必要です |
 | 検索、パッケージ管理などが提供されます | |
 
-ファイル共有
+### <a name="file-share"></a>ファイル共有
 
 | 長所| 短所 |
 | --- | --- |
@@ -73,7 +74,7 @@ Register-PSRepository -Name LocalPSRepo -SourceLocation '\\localhost\PSRepoLocal
 
 2 つのコマンドでの **ScriptSourceLocation** の処理方法の違いに注意してください。 ファイル共有ベースのリポジトリでは、**SourceLocation** と **ScriptSourceLocation** が一致している必要があります。 Web ベースのリポジトリでは、それらが異なる必要があるため、この例では、**SourceLocation** の最後に "/" が追加されています。
 
-新しく作成する PSRepository を既定のリポジトリにする場合は、他のすべての PSRepository の登録を解除する必要があります。 たとえば、次のように入力します。
+新しく作成する PSRepository を既定のリポジトリにする場合は、他のすべての PSRepository の登録を解除する必要があります。 次に例を示します。
 
 ```powershell
 Unregister-PSRepository -Name PSGallery
@@ -98,18 +99,20 @@ PowerShell ギャラリーの場合と同じように、`Publish-Module` およ�
 
 - コードの場所を指定します
 - API キーを指定します
-- リポジトリ名を指定します。 たとえば、`-PSRepository LocalPSRepo` と記述します。
+- リポジトリ名を指定します。 たとえば、`-PSRepository LocalPSRepo` のように指定します。
 
 > [!NOTE]
 > NuGet サーバーにアカウントを作成した後、サインインし、API キーを生成して保存する必要があります。
 > ファイル共有の場合は、NuGetApiKey の値に対して任意の空白でない文字列を使用します。
 
-例:
+例 :
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+```
 
+```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
@@ -130,7 +133,7 @@ Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey
 
 ```powershell
 # Publish from the PSGallery to your local Repository
-Save-Package -Name 'PackageName' -Provider Nuget -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
+Save-Package -Name 'PackageName' -Provider NuGet -Source https://www.powershellgallery.com/api/v2 -Path '\\localhost\PSRepoLocal\'
 ```
 
 ローカル PSRepository が Web ベースの場合は、nuget.exe を使用して発行する追加の手順が必要です。
@@ -181,6 +184,10 @@ Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApi
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
+
+## <a name="use-packaging-solutions-to-host-powershellget-repositories"></a>パッケージ化ソリューションを使用して PowerShellGet リポジトリをホストする
+
+また、Azure Artifacts などのパッケージ化ソリューションを使用して、プライベートまたはパブリックの PowerShellGet リポジトリをホストすることもできます。 詳細と手順については、[Azure Artifacts のドキュメント](https://docs.microsoft.com/azure/devops/artifacts/tutorials/private-powershell-library)を参照してください。
 
 > [!IMPORTANT]
 > セキュリティを確保するため、API キーをスクリプトにハード コーディングしてはなりません。 セキュリティ保護されたキー管理システムを使用します。
