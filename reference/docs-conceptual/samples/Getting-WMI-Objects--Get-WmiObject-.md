@@ -1,135 +1,137 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+ms.date: 12/23/2019
+keywords: powershell,コマンドレット
 title: WMI オブジェクトの取得 (Get-WmiObject)
-ms.openlocfilehash: 93276ce12135342af2d6f238976e65e5d8bdde7a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 23fd8cf596a8be7e36651ac3f9c79ca97240e647
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67030217"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737221"
 ---
-# <a name="getting-wmi-objects-get-wmiobject"></a><span data-ttu-id="22b0c-103">WMI オブジェクトの取得 (Get-WmiObject)</span><span class="sxs-lookup"><span data-stu-id="22b0c-103">Getting WMI Objects (Get-WmiObject)</span></span>
+# <a name="getting-wmi-objects-get-wmiobject"></a><span data-ttu-id="c562d-103">WMI オブジェクトの取得 (Get-WmiObject)</span><span class="sxs-lookup"><span data-stu-id="c562d-103">Getting WMI Objects (Get-WmiObject)</span></span>
 
-## <a name="getting-wmi-objects-get-wmiobject"></a><span data-ttu-id="22b0c-104">WMI オブジェクトの取得 (Get-WmiObject)</span><span class="sxs-lookup"><span data-stu-id="22b0c-104">Getting WMI Objects (Get-WmiObject)</span></span>
+## <a name="getting-wmi-objects-get-wmiobject"></a><span data-ttu-id="c562d-104">WMI オブジェクトの取得 (Get-WmiObject)</span><span class="sxs-lookup"><span data-stu-id="c562d-104">Getting WMI Objects (Get-WmiObject)</span></span>
 
-<span data-ttu-id="22b0c-105">Windows Management Instrumentation (WMI) は、Windows システム管理のための中核となるテクノロジであり、幅広い種類の情報を一貫した方法で公開します。</span><span class="sxs-lookup"><span data-stu-id="22b0c-105">Windows Management Instrumentation (WMI) is a core technology for Windows system administration because it exposes a wide range of information in a uniform manner.</span></span> <span data-ttu-id="22b0c-106">WMI によって可能になるタスクが非常に多いことから、WMI オブジェクトにアクセスするための Windows PowerShell コマンドレットである **Get-WmiObject** は、実際の作業を行うための最も便利なコマンドレットの 1 つと言えます。</span><span class="sxs-lookup"><span data-stu-id="22b0c-106">Because of how much WMI makes possible, the Windows PowerShell cmdlet for accessing WMI objects, **Get-WmiObject**, is one of the most useful for doing real work.</span></span> <span data-ttu-id="22b0c-107">ここでは、Get-WmiObject を使って WMI オブジェクトにアクセスする方法と、WMI オブジェクトを使って特定の作業を行う方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="22b0c-107">We are going to discuss how to use Get-WmiObject to access WMI objects and then how to use WMI objects to do specific things.</span></span>
+<span data-ttu-id="c562d-105">Windows Management Instrumentation (WMI) は、Windows システム管理のための中核となるテクノロジであり、幅広い種類の情報を一貫した方法で公開します。</span><span class="sxs-lookup"><span data-stu-id="c562d-105">Windows Management Instrumentation (WMI) is a core technology for Windows system administration because it exposes a wide range of information in a uniform manner.</span></span> <span data-ttu-id="c562d-106">WMI によって可能になるタスクが非常に多いことから、WMI オブジェクトにアクセスするための PowerShell コマンドレットである `Get-CimInstance` は、実際の作業を行うための最も便利なコマンドレットの 1 つと言えます。</span><span class="sxs-lookup"><span data-stu-id="c562d-106">Because of how much WMI makes possible, the PowerShell cmdlet for accessing WMI objects, `Get-CimInstance`, is one of the most useful for doing real work.</span></span> <span data-ttu-id="c562d-107">ここでは、CimCmdlets を使って WMI オブジェクトにアクセスする方法と、WMI オブジェクトを使って特定の作業を行う方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="c562d-107">We are going to discuss how to use the CimCmdlets to access WMI objects and then how to use WMI objects to do specific things.</span></span>
 
-### <a name="listing-wmi-classes"></a><span data-ttu-id="22b0c-108">WMI クラスの一覧を取得する</span><span class="sxs-lookup"><span data-stu-id="22b0c-108">Listing WMI Classes</span></span>
+### <a name="listing-wmi-classes"></a><span data-ttu-id="c562d-108">WMI クラスの一覧を取得する</span><span class="sxs-lookup"><span data-stu-id="c562d-108">Listing WMI Classes</span></span>
 
-<span data-ttu-id="22b0c-109">WMI のほとんどのユーザーが直面する最初の問題は、WMI で何ができるかを調べることです。</span><span class="sxs-lookup"><span data-stu-id="22b0c-109">The first problem most WMI users encounter is trying to find out what can be done with WMI.</span></span> <span data-ttu-id="22b0c-110">WMI クラスは、管理できるリソースを記述しています。</span><span class="sxs-lookup"><span data-stu-id="22b0c-110">WMI classes describe the resources that can be managed.</span></span> <span data-ttu-id="22b0c-111">何百もの WMI クラスがあり、その中には数十個のプロパティを持つクラスもあります。</span><span class="sxs-lookup"><span data-stu-id="22b0c-111">There are hundreds of WMI classes, some of which contain dozens of properties.</span></span>
+<span data-ttu-id="c562d-109">WMI のほとんどのユーザーが直面する最初の問題は、WMI で何ができるかを調べることです。</span><span class="sxs-lookup"><span data-stu-id="c562d-109">The first problem most WMI users encounter is trying to find out what can be done with WMI.</span></span> <span data-ttu-id="c562d-110">WMI クラスは、管理できるリソースを記述しています。</span><span class="sxs-lookup"><span data-stu-id="c562d-110">WMI classes describe the resources that can be managed.</span></span> <span data-ttu-id="c562d-111">何百もの WMI クラスがあり、その中には数十個のプロパティを持つクラスもあります。</span><span class="sxs-lookup"><span data-stu-id="c562d-111">There are hundreds of WMI classes, some of which contain dozens of properties.</span></span>
 
-<span data-ttu-id="22b0c-112">この問題に対処するため、**Get-WmiObject** では WMI を探索可能にしました。</span><span class="sxs-lookup"><span data-stu-id="22b0c-112">**Get-WmiObject** addresses this problem by making WMI discoverable.</span></span> <span data-ttu-id="22b0c-113">ローカル コンピューター上で使える WMI クラスの一覧を取得するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="22b0c-113">You can get a list of the WMI classes available on the local computer by typing:</span></span>
-
-```
-PS> Get-WmiObject -List
-
-__SecurityRelatedClass                  __NTLMUser9X
-__PARAMETERS                            __SystemSecurity
-__NotifyStatus                          __ExtendedStatus
-Win32_PrivilegesStatus                  Win32_TSNetworkAdapterSettingError
-Win32_TSRemoteControlSettingError       Win32_TSEnvironmentSettingError
-...
-```
-
-<span data-ttu-id="22b0c-114">同じ情報をリモート コンピューターから取得するには、次のように、ComputerName パラメーターにコンピューター名や IP アドレスを指定します。</span><span class="sxs-lookup"><span data-stu-id="22b0c-114">You can retrieve the same information from a remote computer by using the ComputerName parameter, specifying a computer name or IP address:</span></span>
-
-```
-PS> Get-WmiObject -List -ComputerName 192.168.1.29
-
-__SystemClass                           __NAMESPACE
-__Provider                              __Win32Provider
-__ProviderRegistration                  __ObjectProviderRegistration
-...
-```
-
-<span data-ttu-id="22b0c-115">リモート コンピューターから返されるクラスの一覧は、そのコンピューターで実行されている特定のオペレーティング システムや、インストールされているアプリケーションによって追加された特定の WMI 拡張機能に応じて異なることがあります。</span><span class="sxs-lookup"><span data-stu-id="22b0c-115">The class listing returned by remote computers may vary due to the specific operating system the computer is running and the particular WMI extensions added by installed applications.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="22b0c-116">Get-WmiObject を使ってリモート コンピューターに接続するときは、リモート コンピューターで WMI が実行されている必要があり、既定の構成の場合、接続に使うアカウントがリモート コンピューターのローカル管理者グループに属している必要があります。</span><span class="sxs-lookup"><span data-stu-id="22b0c-116">When using Get-WmiObject to connect to a remote computer, the remote computer must be running WMI and, under the default configuration, the account you are using must be in the local administrators group on the remote computer.</span></span> <span data-ttu-id="22b0c-117">リモート システムに Windows PowerShell をインストールする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="22b0c-117">The remote system does not need to have Windows PowerShell installed.</span></span> <span data-ttu-id="22b0c-118">そのため、WMI が利用可能であれば、Windows PowerShell を実行していないオペレーティング システムであっても管理できます。</span><span class="sxs-lookup"><span data-stu-id="22b0c-118">This allows you to administer operating systems that are not running Windows PowerShell, but do have WMI available.</span></span>
-
-<span data-ttu-id="22b0c-119">また、ローカル システムに接続するときに、コンピューター名を含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="22b0c-119">You can even include the ComputerName when connecting to the local system.</span></span> <span data-ttu-id="22b0c-120">ローカル コンピューターの名前、IP アドレス (またはループバック アドレス 127.0.0.1)、WMI スタイル '.' をコンピューター名として使うことができます。</span><span class="sxs-lookup"><span data-stu-id="22b0c-120">You can use the local computer's name, its IP address (or the loopback address 127.0.0.1), or the WMI-style '.' as the computer name.</span></span> <span data-ttu-id="22b0c-121">IP アドレスが 192.168.1.90 で、Admin01 という名前のコンピューターで Windows PowerShell を実行している場合、次のコマンドはそのコンピューターのすべての WMI クラスの一覧を返します。</span><span class="sxs-lookup"><span data-stu-id="22b0c-121">If you are running Windows PowerShell on a computer named Admin01 with IP address 192.168.1.90, the following commands will all return the WMI class listing for that computer:</span></span>
+<span data-ttu-id="c562d-112">この問題に対処するため、`Get-CimClass` では WMI を探索可能にしました。</span><span class="sxs-lookup"><span data-stu-id="c562d-112">`Get-CimClass` addresses this problem by making WMI discoverable.</span></span> <span data-ttu-id="c562d-113">ローカル コンピューター上で使える WMI クラスの一覧を取得するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="c562d-113">You can get a list of the WMI classes available on the local computer by typing:</span></span>
 
 ```powershell
-Get-WmiObject -List
-Get-WmiObject -List -ComputerName .
-Get-WmiObject -List -ComputerName Admin01
-Get-WmiObject -List -ComputerName 192.168.1.90
-Get-WmiObject -List -ComputerName 127.0.0.1
-Get-WmiObject -List -ComputerName localhost
+Get-CimClass -Namespace root/CIMV2 |
+  Where-Object CimClassName -like Win32* |
+    Select-Object CimClassName
 ```
 
-<span data-ttu-id="22b0c-122">Get-WmiObject は、既定では root/cimv2 名前空間を使います。</span><span class="sxs-lookup"><span data-stu-id="22b0c-122">Get-WmiObject uses the root/cimv2 namespace by default.</span></span> <span data-ttu-id="22b0c-123">別の WMI 名前空間を指定する場合は、**Namespace** パラメーターを使って、対応する名前空間のパスを指定します。</span><span class="sxs-lookup"><span data-stu-id="22b0c-123">If you want to specify another WMI namespace, use the **Namespace** parameter and specify the corresponding namespace path:</span></span>
-
-```
-PS> Get-WmiObject -List -ComputerName 192.168.1.29 -Namespace root
-
-__SystemClass                           __NAMESPACE
-__Provider                              __Win32Provider
+```Output
+CimClassName
+------------
+Win32_DeviceChangeEvent
+Win32_SystemConfigurationChangeEvent
+Win32_VolumeChangeEvent
+Win32_SystemTrace
+Win32_ProcessTrace
+Win32_ProcessStartTrace
+Win32_ProcessStopTrace
+Win32_ThreadTrace
+Win32_ThreadStartTrace
+Win32_ThreadStopTrace
 ...
 ```
 
-### <a name="displaying-wmi-class-details"></a><span data-ttu-id="22b0c-124">WMI クラスの詳細を表示する</span><span class="sxs-lookup"><span data-stu-id="22b0c-124">Displaying WMI Class Details</span></span>
+<span data-ttu-id="c562d-114">同じ情報をリモート コンピューターから取得するには、次のように、**ComputerName** パラメーターにコンピューター名や IP アドレスを指定します。</span><span class="sxs-lookup"><span data-stu-id="c562d-114">You can retrieve the same information from a remote computer by using the **ComputerName** parameter, specifying a computer name or IP address:</span></span>
 
-<span data-ttu-id="22b0c-125">WMI クラスの名前がわかっている場合は、その名前を使って情報をすぐに取得できます。</span><span class="sxs-lookup"><span data-stu-id="22b0c-125">If you already know the name of a WMI class, you can use it to get information immediately.</span></span> <span data-ttu-id="22b0c-126">たとえば、コンピューターに関する情報を取得するためによく使われる WMI クラスの 1 つに、**Win32_OperatingSystem** があります。</span><span class="sxs-lookup"><span data-stu-id="22b0c-126">For example, one of the WMI classes commonly used for retrieving information about a computer is **Win32_OperatingSystem**.</span></span>
-
-```
-PS> Get-WmiObject -Class Win32_OperatingSystem -Namespace root/cimv2 -ComputerName .
-
-SystemDirectory : C:\WINDOWS\system32
-Organization    : Global Network Solutions
-BuildNumber     : 2600
-RegisteredUser  : Oliver W. Jones
-SerialNumber    : 12345-678-9012345-67890
-Version         : 5.1.2600
+```powershell
+Get-CimClass -Namespace root/CIMV2 -ComputerName 192.168.1.29
 ```
 
-<span data-ttu-id="22b0c-127">ここでは、すべてのパラメーターを示しましたが、このコマンドはもっと簡潔に表現できます。</span><span class="sxs-lookup"><span data-stu-id="22b0c-127">Although we are showing all of the parameters, the command can be expressed in a more succinct way.</span></span> <span data-ttu-id="22b0c-128">**ComputerName** パラメーターは、ローカル システムに接続するときには必要ありません。</span><span class="sxs-lookup"><span data-stu-id="22b0c-128">The **ComputerName** parameter is not necessary when connecting to the local system.</span></span> <span data-ttu-id="22b0c-129">最も一般的なケースを示し、このパラメーターを思い出してもらうために使いました。</span><span class="sxs-lookup"><span data-stu-id="22b0c-129">We show it to demonstrate the most general case and remind you about the parameter.</span></span> <span data-ttu-id="22b0c-130">**Namespace** の既定値は root/cimv2 であるため、これも省略できます。</span><span class="sxs-lookup"><span data-stu-id="22b0c-130">The **Namespace** defaults to root/cimv2, and can be omitted as well.</span></span> <span data-ttu-id="22b0c-131">最後に、ほとんどのコマンドレットでは、共通のパラメーターの名前を省略できます。</span><span class="sxs-lookup"><span data-stu-id="22b0c-131">Finally, most cmdlets allow you to omit the name of common parameters.</span></span> <span data-ttu-id="22b0c-132">Get-WmiObject の場合、最初のパラメーターに名前が指定されていないときには、Windows PowerShell はそれを **Class** パラメーターとして扱います。</span><span class="sxs-lookup"><span data-stu-id="22b0c-132">With Get-WmiObject, if no name is specified for the first parameter, Windows PowerShell treats it as the **Class** parameter.</span></span> <span data-ttu-id="22b0c-133">したがって、先ほどのコマンドは、次のように入力することもできました。</span><span class="sxs-lookup"><span data-stu-id="22b0c-133">This means the last command could have been issued by typing:</span></span>
+<span data-ttu-id="c562d-115">リモート コンピューターから返されるクラスの一覧は、そのコンピューターで実行されている特定のオペレーティング システムや、インストールされているアプリケーションによって追加された特定の WMI 拡張機能に応じて異なることがあります。</span><span class="sxs-lookup"><span data-stu-id="c562d-115">The class listing returned by remote computers may vary due to the specific operating system the computer is running and the particular WMI extensions added by installed applications.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="c562d-116">CIM コマンドレットを使用してリモート コンピューターに接続するときは、リモート コンピューターで WMI が実行されていて、使用するアカウントがリモート コンピューターのローカル管理者グループに属している必要があります。</span><span class="sxs-lookup"><span data-stu-id="c562d-116">When using CIM cmdlets to connect to a remote computer, the remote computer must be running WMI and the account you are using must be in the local administrators group on the remote computer.</span></span>
+> <span data-ttu-id="c562d-117">リモート システムに PowerShell をインストールする必要はありません。</span><span class="sxs-lookup"><span data-stu-id="c562d-117">The remote system does not need to have PowerShell installed.</span></span> <span data-ttu-id="c562d-118">そのため、WMI が利用可能であれば、PowerShell を実行していないオペレーティング システムであっても管理できます。</span><span class="sxs-lookup"><span data-stu-id="c562d-118">This allows you to administer operating systems that are not running PowerShell, but do have WMI available.</span></span>
+
+### <a name="displaying-wmi-class-details"></a><span data-ttu-id="c562d-119">WMI クラスの詳細を表示する</span><span class="sxs-lookup"><span data-stu-id="c562d-119">Displaying WMI Class Details</span></span>
+
+<span data-ttu-id="c562d-120">WMI クラスの名前がわかっている場合は、その名前を使って情報をすぐに取得できます。</span><span class="sxs-lookup"><span data-stu-id="c562d-120">If you already know the name of a WMI class, you can use it to get information immediately.</span></span> <span data-ttu-id="c562d-121">たとえば、コンピューターに関する情報を取得するためによく使われる WMI クラスの 1 つに、**Win32_OperatingSystem** があります。</span><span class="sxs-lookup"><span data-stu-id="c562d-121">For example, one of the WMI classes commonly used for retrieving information about a computer is **Win32_OperatingSystem**.</span></span>
+
+```powershell
+Get-CimInstance -Class Win32_OperatingSystem
+```
+
+```Output
+SystemDirectory     Organization BuildNumber RegisteredUser SerialNumber            Version
+---------------     ------------ ----------- -------------- ------------            -------
+C:\WINDOWS\system32 Microsoft    18362       USER1          00330-80000-00000-AA175 10.0.18362
+```
+
+<span data-ttu-id="c562d-122">ここでは、すべてのパラメーターを示しましたが、このコマンドはもっと簡潔に表現できます。</span><span class="sxs-lookup"><span data-stu-id="c562d-122">Although we are showing all of the parameters, the command can be expressed in a more succinct way.</span></span>
+<span data-ttu-id="c562d-123">**ComputerName** パラメーターは、ローカル システムに接続するときには必要ありません。</span><span class="sxs-lookup"><span data-stu-id="c562d-123">The **ComputerName** parameter is not necessary when connecting to the local system.</span></span> <span data-ttu-id="c562d-124">最も一般的なケースを示し、このパラメーターを思い出してもらうために使いました。</span><span class="sxs-lookup"><span data-stu-id="c562d-124">We show it to demonstrate the most general case and remind you about the parameter.</span></span> <span data-ttu-id="c562d-125">**Namespace** の既定値は `root/CIMV2` であるため、これも省略できます。</span><span class="sxs-lookup"><span data-stu-id="c562d-125">The **Namespace** defaults to `root/CIMV2`, and can be omitted as well.</span></span> <span data-ttu-id="c562d-126">最後に、ほとんどのコマンドレットでは、共通のパラメーターの名前を省略できます。</span><span class="sxs-lookup"><span data-stu-id="c562d-126">Finally, most cmdlets allow you to omit the name of common parameters.</span></span> <span data-ttu-id="c562d-127">`Get-CimInstance` の場合、最初のパラメーターで名前を指定しないと、PowerShell ではそれが **Class** パラメーターとして扱われます。</span><span class="sxs-lookup"><span data-stu-id="c562d-127">With `Get-CimInstance`, if no name is specified for the first parameter, PowerShell treats it as the **Class** parameter.</span></span> <span data-ttu-id="c562d-128">したがって、先ほどのコマンドは、次のように入力することもできました。</span><span class="sxs-lookup"><span data-stu-id="c562d-128">This means the last command could have been issued by typing:</span></span>
 
 ```powershell
 Get-WmiObject Win32_OperatingSystem
 ```
 
-<span data-ttu-id="22b0c-134">**Win32_OperatingSystem** クラスには、ここで紹介した以外にも多数のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="22b0c-134">The **Win32_OperatingSystem** class has many more properties than those displayed here.</span></span> <span data-ttu-id="22b0c-135">Get-Member を使うと、すべてのプロパティを参照できます。</span><span class="sxs-lookup"><span data-stu-id="22b0c-135">You can use Get-Member to see all the properties.</span></span> <span data-ttu-id="22b0c-136">WMI クラスのプロパティは、他のオブジェクト プロパティと同じように自動的に取得できます。</span><span class="sxs-lookup"><span data-stu-id="22b0c-136">The properties of a WMI class are automatically available like other object properties:</span></span>
+<span data-ttu-id="c562d-129">**Win32_OperatingSystem** クラスには、ここで紹介した以外にも多数のプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="c562d-129">The **Win32_OperatingSystem** class has many more properties than those displayed here.</span></span> <span data-ttu-id="c562d-130">Get-Member を使うと、すべてのプロパティを参照できます。</span><span class="sxs-lookup"><span data-stu-id="c562d-130">You can use Get-Member to see all the properties.</span></span> <span data-ttu-id="c562d-131">WMI クラスのプロパティは、他のオブジェクト プロパティと同じように自動的に取得できます。</span><span class="sxs-lookup"><span data-stu-id="c562d-131">The properties of a WMI class are automatically available like other object properties:</span></span>
 
+```powershell
+Get-CimInstance -Class Win32_OperatingSystem | Get-Member -MemberType Property
 ```
-PS> Get-WmiObject -Class Win32_OperatingSystem -Namespace root/cimv2 -ComputerName . | Get-Member -MemberType Property
 
-   TypeName: System.Management.ManagementObject#root\cimv2\Win32_OperatingSyste
-m
-
+```Output
+   TypeName: Microsoft.Management.Infrastructure.CimInstance#root/cimv2/Win32_OperatingSystem
 Name                                      MemberType Definition
 ----                                      ---------- ----------
-__CLASS                                   Property   System.String __CLASS {...
-...
-BootDevice                                Property   System.String BootDevic...
-BuildNumber                               Property   System.String BuildNumb...
+BootDevice                                Property   string BootDevice {get;}
+BuildNumber                               Property   string BuildNumber {get;}
+BuildType                                 Property   string BuildType {get;}
+Caption                                   Property   string Caption {get;}
+CodeSet                                   Property   string CodeSet {get;}
+CountryCode                               Property   string CountryCode {get;}
+CreationClassName                         Property   string CreationClassName {get;}
+CSCreationClassName                       Property   string CSCreationClassName {get;}
+CSDVersion                                Property   string CSDVersion {get;}
+CSName                                    Property   string CSName {get;}
+CurrentTimeZone                           Property   short CurrentTimeZone {get;}
+DataExecutionPrevention_32BitApplications Property   bool DataExecutionPrevention_32BitApplications {get;}
+DataExecutionPrevention_Available         Property   bool DataExecutionPrevention_Available {get;}
 ...
 ```
 
-#### <a name="displaying-non-default-properties-with-format-cmdlets"></a><span data-ttu-id="22b0c-137">既定以外のプロパティを Format コマンドレットで表示する</span><span class="sxs-lookup"><span data-stu-id="22b0c-137">Displaying Non-Default Properties with Format Cmdlets</span></span>
+#### <a name="displaying-non-default-properties-with-format-cmdlets"></a><span data-ttu-id="c562d-132">既定以外のプロパティを Format コマンドレットで表示する</span><span class="sxs-lookup"><span data-stu-id="c562d-132">Displaying Non-Default Properties with Format Cmdlets</span></span>
 
-<span data-ttu-id="22b0c-138">**Win32_OperatingSystem** クラスに含まれている情報のうち、既定では表示されない情報を表示するには、**Format** コマンドレットを使います。</span><span class="sxs-lookup"><span data-stu-id="22b0c-138">If you want information contained in the **Win32_OperatingSystem** class that is not displayed by default, you can display it by using the **Format** cmdlets.</span></span> <span data-ttu-id="22b0c-139">たとえば、利用可能なメモリのデータを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="22b0c-139">For example, if you want to display available memory data, type:</span></span>
+<span data-ttu-id="c562d-133">**Win32_OperatingSystem** クラスに含まれている情報のうち、既定では表示されない情報を表示するには、**Format** コマンドレットを使います。</span><span class="sxs-lookup"><span data-stu-id="c562d-133">If you want information contained in the **Win32_OperatingSystem** class that is not displayed by default, you can display it by using the **Format** cmdlets.</span></span> <span data-ttu-id="c562d-134">たとえば、利用可能なメモリのデータを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="c562d-134">For example, if you want to display available memory data, type:</span></span>
 
+```powershell
+Get-CimInstance -Class Win32_OperatingSystem |
+  Format-Table -Property TotalVirtualMemorySize, TotalVisibleMemorySize,
+    FreePhysicalMemory, FreeVirtualMemory, FreeSpaceInPagingFiles
 ```
-PS> Get-WmiObject -Class Win32_OperatingSystem -Namespace root/cimv2 -ComputerName . | Format-Table -Property TotalVirtualMemorySize,TotalVisibleMemorySize,FreePhysicalMemory,FreeVirtualMemory,FreeSpaceInPagingFiles
 
-TotalVirtualMemorySize TotalVisibleMemory FreePhysicalMemory FreeVirtualMemory FreeSpaceInPagingFiles
----------------------- ---------------    ------------------ -==--------------------- ---------------
-               2097024          785904                305808           2056724                1558232
+```Output
+TotalVirtualMemorySize TotalVisibleMemorySize FreePhysicalMemory FreeVirtualMemory FreeSpaceInPagingFiles
+---------------------- ---------------------- ------------------ ----------------- ----------------------
+              33449088               16671872            6451868          18424496               16285032
 ```
 
 > [!NOTE]
-> <span data-ttu-id="22b0c-140">**Format-Table** のプロパティ名にはワイルドカードを指定できるので、最後のパイプライン要素は `Format-Table -Property Total,Free` のように省略できます</span><span class="sxs-lookup"><span data-stu-id="22b0c-140">Wildcards work with property names in **Format-Table**, so the final pipeline element can be reduced to `Format-Table -Property Total,Free`</span></span>
+> <span data-ttu-id="c562d-135">`Format-Table` のプロパティ名にはワイルドカードを指定できるので、最後のパイプライン要素は `Format-Table -Property Total*Memory*, Free*` のように省略できます</span><span class="sxs-lookup"><span data-stu-id="c562d-135">Wildcards work with property names in `Format-Table`, so the final pipeline element can be reduced to `Format-Table -Property Total*Memory*, Free*`</span></span>
 
-<span data-ttu-id="22b0c-141">メモリのデータは、次のように入力して一覧の形式にすると、さらに読みやすくなります。</span><span class="sxs-lookup"><span data-stu-id="22b0c-141">The memory data might be more readable if you format it as a list by typing:</span></span>
+<span data-ttu-id="c562d-136">メモリのデータは、次のように入力して一覧の形式にすると、さらに読みやすくなります。</span><span class="sxs-lookup"><span data-stu-id="c562d-136">The memory data might be more readable if you format it as a list by typing:</span></span>
 
+```powershell
+Get-CimInstance -Class Win32_OperatingSystem | Format-List Total*Memory*, Free*
 ```
-PS> Get-WmiObject -Class Win32_OperatingSystem -Namespace root/cimv2 -ComputerName . | Format-List TotalVirtualMemorySize,TotalVisibleMemorySize,FreePhysicalMemory,FreeVirtualMemory,FreeSpaceInPagingFiles
 
-TotalVirtualMemorySize : 2097024
-TotalVisibleMemorySize : 785904
-FreePhysicalMemory     : 301876
-FreeVirtualMemory      : 2056724
-FreeSpaceInPagingFiles : 1556644
+```Output
+TotalVirtualMemorySize : 33449088
+TotalVisibleMemorySize : 16671872
+FreePhysicalMemory     : 6524456
+FreeSpaceInPagingFiles : 16285808
+FreeVirtualMemory      : 18393668
+Name                   : Microsoft Windows 10 Pro|C:\WINDOWS|\Device\Harddisk0\Partition2
 ```

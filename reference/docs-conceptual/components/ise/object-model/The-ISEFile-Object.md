@@ -1,31 +1,31 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+ms.date: 12/31/2019
+keywords: powershell,コマンドレット
 title: ISEFile オブジェクト
-ms.openlocfilehash: ebb5a35f6ea9d93eab633b9f4e6c84e4fddd6ae8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
+ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67028964"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75737000"
 ---
-# <a name="the-isefile-object"></a><span data-ttu-id="b7c4b-103">ISEFile オブジェクト</span><span class="sxs-lookup"><span data-stu-id="b7c4b-103">The ISEFile Object</span></span>
+# <a name="the-isefile-object"></a><span data-ttu-id="02d2b-103">ISEFile オブジェクト</span><span class="sxs-lookup"><span data-stu-id="02d2b-103">The ISEFile Object</span></span>
 
-<span data-ttu-id="b7c4b-104">**ISEFile** オブジェクトは、Windows PowerShell® Integrated Scripting Environment (ISE) のファイルを表します。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-104">An **ISEFile** object represents a file in Windows PowerShell® Integrated Scripting Environment (ISE).</span></span> <span data-ttu-id="b7c4b-105">これは Microsoft.PowerShell.Host.ISE.ISEFile クラスのインスタンスです。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-105">It is an instance of the Microsoft.PowerShell.Host.ISE.ISEFile class.</span></span> <span data-ttu-id="b7c4b-106">このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-106">This topic lists its member methods and member properties.</span></span> <span data-ttu-id="b7c4b-107">**$PsISE.CurrentFile** と、PowerShell タブのファイル コレクション内のファイルは、Microsoft.PowerShell.Host.ISE.ISEFile クラスのすべてのインスタンスです。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-107">The **$psISE.CurrentFile** and the files in the Files collection in a PowerShell tab are all instances of the Microsoft.PowerShell.Host.ISE.ISEFile class.</span></span>
+<span data-ttu-id="02d2b-104">**ISEFile** オブジェクトは、Windows PowerShell® Integrated Scripting Environment (ISE) のファイルを表します。</span><span class="sxs-lookup"><span data-stu-id="02d2b-104">An **ISEFile** object represents a file in Windows PowerShell® Integrated Scripting Environment (ISE).</span></span> <span data-ttu-id="02d2b-105">これは **Microsoft.PowerShell.Host.ISE.ISEFile** クラスのインスタンスです。</span><span class="sxs-lookup"><span data-stu-id="02d2b-105">It is an instance of the **Microsoft.PowerShell.Host.ISE.ISEFile** class.</span></span> <span data-ttu-id="02d2b-106">このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。</span><span class="sxs-lookup"><span data-stu-id="02d2b-106">This topic lists its member methods and member properties.</span></span> <span data-ttu-id="02d2b-107">`$psISE.CurrentFile` と、PowerShell タブのファイル コレクション内のファイルは、\*\*\*\*Microsoft.PowerShell.Host.ISE.ISEFile\*\* クラスのすべてのインスタンスです。</span><span class="sxs-lookup"><span data-stu-id="02d2b-107">The `$psISE.CurrentFile` and the files in the Files collection in a PowerShell tab are all instances of the \*\*\*\*Microsoft.PowerShell.Host.ISE.ISEFile\*\* class.</span></span>
 
-## <a name="methods"></a><span data-ttu-id="b7c4b-108">メソッド</span><span class="sxs-lookup"><span data-stu-id="b7c4b-108">Methods</span></span>
+## <a name="methods"></a><span data-ttu-id="02d2b-108">メソッド</span><span class="sxs-lookup"><span data-stu-id="02d2b-108">Methods</span></span>
 
-### <a name="save-saveencoding-"></a><span data-ttu-id="b7c4b-109">Save\( \[saveEncoding\] \)</span><span class="sxs-lookup"><span data-stu-id="b7c4b-109">Save\( \[saveEncoding\] \)</span></span>
+### <a name="save-saveencoding-"></a><span data-ttu-id="02d2b-109">Save\( \[saveEncoding\] \)</span><span class="sxs-lookup"><span data-stu-id="02d2b-109">Save\( \[saveEncoding\] \)</span></span>
 
-<span data-ttu-id="b7c4b-110">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-110">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="02d2b-110">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="02d2b-110">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="b7c4b-111">ファイルをディスクに保存します。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-111">Saves the file to disk.</span></span>
+<span data-ttu-id="02d2b-111">ファイルをディスクに保存します。</span><span class="sxs-lookup"><span data-stu-id="02d2b-111">Saves the file to disk.</span></span>
 
-<span data-ttu-id="b7c4b-112">**\[saveEncoding\]** - 省略可能な [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)。保存したファイルで使用する省略可能な文字エンコード パラメーター。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-112">**\[saveEncoding\]** - optional [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) An optional character encoding parameter to be used for the saved file.</span></span> <span data-ttu-id="b7c4b-113">既定値は **UTF8** です。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-113">The default value is **UTF8**.</span></span>
+<span data-ttu-id="02d2b-112">**\[saveEncoding\]** - 省略可能な [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)。保存したファイルで使用する省略可能な文字エンコード パラメーター。</span><span class="sxs-lookup"><span data-stu-id="02d2b-112">**\[saveEncoding\]** - optional [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) An optional character encoding parameter to be used for the saved file.</span></span> <span data-ttu-id="02d2b-113">既定値は **UTF8** です。</span><span class="sxs-lookup"><span data-stu-id="02d2b-113">The default value is **UTF8**.</span></span>
 
-### <a name="exceptions"></a><span data-ttu-id="b7c4b-114">例外</span><span class="sxs-lookup"><span data-stu-id="b7c4b-114">Exceptions</span></span>
+### <a name="exceptions"></a><span data-ttu-id="02d2b-114">例外</span><span class="sxs-lookup"><span data-stu-id="02d2b-114">Exceptions</span></span>
 
-- <span data-ttu-id="b7c4b-115">**System.IO.IOException**:ファイルを保存できませんでした。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-115">**System.IO.IOException**: The file could not be saved.</span></span>
+- <span data-ttu-id="02d2b-115">**System.IO.IOException**:ファイルを保存できませんでした。</span><span class="sxs-lookup"><span data-stu-id="02d2b-115">**System.IO.IOException**: The file could not be saved.</span></span>
 
 ```powershell
 # Save the file using the default encoding (UTF8)
@@ -39,21 +39,21 @@ $myfile = $psISE.CurrentFile
 $myfile.Encoding
 ```
 
-### <a name="saveasfilename-saveencoding"></a><span data-ttu-id="b7c4b-116">SaveAs\(filename, \[saveEncoding\]\)</span><span class="sxs-lookup"><span data-stu-id="b7c4b-116">SaveAs\(filename, \[saveEncoding\]\)</span></span>
+### <a name="saveasfilename-saveencoding"></a><span data-ttu-id="02d2b-116">SaveAs\(filename, \[saveEncoding\]\)</span><span class="sxs-lookup"><span data-stu-id="02d2b-116">SaveAs\(filename, \[saveEncoding\]\)</span></span>
 
-<span data-ttu-id="b7c4b-117">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-117">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="02d2b-117">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="02d2b-117">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="b7c4b-118">指定したファイル名およびエンコードでファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-118">Saves the file with the specified file name and encoding.</span></span>
+<span data-ttu-id="02d2b-118">指定したファイル名およびエンコードでファイルを保存します。</span><span class="sxs-lookup"><span data-stu-id="02d2b-118">Saves the file with the specified file name and encoding.</span></span>
 
-<span data-ttu-id="b7c4b-119">**filename** - ファイルを保存するために使用する名前の文字列。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-119">**filename** - String The name to be used to save the file.</span></span>
+<span data-ttu-id="02d2b-119">**filename** - ファイルを保存するために使用する名前の文字列。</span><span class="sxs-lookup"><span data-stu-id="02d2b-119">**filename** - String The name to be used to save the file.</span></span>
 
-<span data-ttu-id="b7c4b-120">**\[saveEncoding\]** - 省略可能な [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)。保存したファイルで使用する省略可能な文字エンコード パラメーター。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-120">**\[saveEncoding\]** - optional [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) An optional character encoding parameter to be used for the saved file.</span></span> <span data-ttu-id="b7c4b-121">既定値は **UTF8** です。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-121">The default value is **UTF8**.</span></span>
+<span data-ttu-id="02d2b-120">**\[saveEncoding\]** - 省略可能な [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)。保存したファイルで使用する省略可能な文字エンコード パラメーター。</span><span class="sxs-lookup"><span data-stu-id="02d2b-120">**\[saveEncoding\]** - optional [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx) An optional character encoding parameter to be used for the saved file.</span></span> <span data-ttu-id="02d2b-121">既定値は **UTF8** です。</span><span class="sxs-lookup"><span data-stu-id="02d2b-121">The default value is **UTF8**.</span></span>
 
-### <a name="exceptions"></a><span data-ttu-id="b7c4b-122">例外</span><span class="sxs-lookup"><span data-stu-id="b7c4b-122">Exceptions</span></span>
+### <a name="exceptions"></a><span data-ttu-id="02d2b-122">例外</span><span class="sxs-lookup"><span data-stu-id="02d2b-122">Exceptions</span></span>
 
-- <span data-ttu-id="b7c4b-123">**System.ArgumentNullException**:**filename** パラメーターが null です。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-123">**System.ArgumentNullException**: The **filename** parameter is null.</span></span>
-- <span data-ttu-id="b7c4b-124">**System.ArgumentException**:**filename** パラメーターが空です。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-124">**System.ArgumentException**: The **filename** parameter is empty.</span></span>
-- <span data-ttu-id="b7c4b-125">**System.IO.IOException**:ファイルを保存できませんでした。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-125">**System.IO.IOException**: The file could not be saved.</span></span>
+- <span data-ttu-id="02d2b-123">**System.ArgumentNullException**:**filename** パラメーターが null です。</span><span class="sxs-lookup"><span data-stu-id="02d2b-123">**System.ArgumentNullException**: The **filename** parameter is null.</span></span>
+- <span data-ttu-id="02d2b-124">**System.ArgumentException**:**filename** パラメーターが空です。</span><span class="sxs-lookup"><span data-stu-id="02d2b-124">**System.ArgumentException**: The **filename** parameter is empty.</span></span>
+- <span data-ttu-id="02d2b-125">**System.IO.IOException**:ファイルを保存できませんでした。</span><span class="sxs-lookup"><span data-stu-id="02d2b-125">**System.IO.IOException**: The file could not be saved.</span></span>
 
 ```powershell
 # Save the file with a full path and name.
@@ -63,57 +63,57 @@ $psISE.CurrentFile.SaveAs($fullPath)
 $psISE.CurrentFile.SaveAs($fullPath, [System.Text.Encoding]::UTF8)
 ```
 
-## <a name="properties"></a><span data-ttu-id="b7c4b-126">プロパティ</span><span class="sxs-lookup"><span data-stu-id="b7c4b-126">Properties</span></span>
+## <a name="properties"></a><span data-ttu-id="02d2b-126">Properties</span><span class="sxs-lookup"><span data-stu-id="02d2b-126">Properties</span></span>
 
-### <a name="displayname"></a><span data-ttu-id="b7c4b-127">表示名</span><span class="sxs-lookup"><span data-stu-id="b7c4b-127">DisplayName</span></span>
+### <a name="displayname"></a><span data-ttu-id="02d2b-127">DisplayName</span><span class="sxs-lookup"><span data-stu-id="02d2b-127">DisplayName</span></span>
 
-<span data-ttu-id="b7c4b-128">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-128">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="02d2b-128">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="02d2b-128">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="b7c4b-129">このファイルの表示名が含まれている文字列を取得する読み取り専用のプロパティ。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-129">The read-only property that gets the string that contains the display name of this file.</span></span> <span data-ttu-id="b7c4b-130">名前は、エディターの上部の **[ファイル]** タブに表示されます。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-130">The name is shown on the **File** tab at the top of the editor.</span></span> <span data-ttu-id="b7c4b-131">名前の末尾のアスタリスク \(\*\) は、保存されていない変更がファイルに含まれていることを示します。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-131">The presence of an asterisk \(\*\) at the end of the name indicates that the file has changes that have not been saved.</span></span>
+<span data-ttu-id="02d2b-129">このファイルの表示名が含まれている文字列を取得する読み取り専用のプロパティ。</span><span class="sxs-lookup"><span data-stu-id="02d2b-129">The read-only property that gets the string that contains the display name of this file.</span></span> <span data-ttu-id="02d2b-130">名前は、エディターの上部の **[ファイル]** タブに表示されます。</span><span class="sxs-lookup"><span data-stu-id="02d2b-130">The name is shown on the **File** tab at the top of the editor.</span></span> <span data-ttu-id="02d2b-131">名前の末尾のアスタリスク (`(*)`) は、保存されていない変更がファイルに含まれていることを示します。</span><span class="sxs-lookup"><span data-stu-id="02d2b-131">The presence of an asterisk `(*)` at the end of the name indicates that the file has changes that have not been saved.</span></span>
 
 ```powershell
 # Shows the display name of the file.
 $psISE.CurrentFile.DisplayName
 ```
 
-### <a name="editor"></a><span data-ttu-id="b7c4b-132">Editor</span><span class="sxs-lookup"><span data-stu-id="b7c4b-132">Editor</span></span>
+### <a name="editor"></a><span data-ttu-id="02d2b-132">エディター</span><span class="sxs-lookup"><span data-stu-id="02d2b-132">Editor</span></span>
 
-<span data-ttu-id="b7c4b-133">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-133">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="02d2b-133">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="02d2b-133">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="b7c4b-134">指定したファイルで使用される[エディター オブジェクト](The-ISEEditor-Object.md)を取得する読み取り専用のプロパティ。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-134">The read-only property that gets the [editor object](The-ISEEditor-Object.md) that is used for the specified file.</span></span>
+<span data-ttu-id="02d2b-134">指定したファイルで使用される[エディター オブジェクト](The-ISEEditor-Object.md)を取得する読み取り専用のプロパティ。</span><span class="sxs-lookup"><span data-stu-id="02d2b-134">The read-only property that gets the [editor object](The-ISEEditor-Object.md) that is used for the specified file.</span></span>
 
 ```powershell
 # Gets the editor and the text.
 $psISE.CurrentFile.Editor.Text
 ```
 
-### <a name="encoding"></a><span data-ttu-id="b7c4b-135">エンコード</span><span class="sxs-lookup"><span data-stu-id="b7c4b-135">Encoding</span></span>
+### <a name="encoding"></a><span data-ttu-id="02d2b-135">エンコード</span><span class="sxs-lookup"><span data-stu-id="02d2b-135">Encoding</span></span>
 
-<span data-ttu-id="b7c4b-136">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-136">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="02d2b-136">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="02d2b-136">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="b7c4b-137">元のファイル エンコードを取得する読み取り専用のプロパティ。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-137">The read-only property that gets the original file encoding.</span></span> <span data-ttu-id="b7c4b-138">これは **System.Text.Encoding** オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-138">This is a **System.Text.Encoding** object.</span></span>
+<span data-ttu-id="02d2b-137">元のファイル エンコードを取得する読み取り専用のプロパティ。</span><span class="sxs-lookup"><span data-stu-id="02d2b-137">The read-only property that gets the original file encoding.</span></span> <span data-ttu-id="02d2b-138">これは **System.Text.Encoding** オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="02d2b-138">This is a **System.Text.Encoding** object.</span></span>
 
 ```powershell
 # Shows the encoding for the file.
 $psISE.CurrentFile.Encoding
 ```
 
-### <a name="fullpath"></a><span data-ttu-id="b7c4b-139">FullPath</span><span class="sxs-lookup"><span data-stu-id="b7c4b-139">FullPath</span></span>
+### <a name="fullpath"></a><span data-ttu-id="02d2b-139">FullPath</span><span class="sxs-lookup"><span data-stu-id="02d2b-139">FullPath</span></span>
 
-<span data-ttu-id="b7c4b-140">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-140">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="02d2b-140">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="02d2b-140">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="b7c4b-141">開いているファイルの完全パスを指定する文字列を取得する読み取り専用プロパティ。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-141">The read-only property that gets the string that specifies the full path of the opened file.</span></span>
+<span data-ttu-id="02d2b-141">開いているファイルの完全パスを指定する文字列を取得する読み取り専用プロパティ。</span><span class="sxs-lookup"><span data-stu-id="02d2b-141">The read-only property that gets the string that specifies the full path of the opened file.</span></span>
 
 ```powershell
 # Shows the full path for the file.
 $psISE.CurrentFile.FullPath
 ```
 
-### <a name="issaved"></a><span data-ttu-id="b7c4b-142">IsSaved</span><span class="sxs-lookup"><span data-stu-id="b7c4b-142">IsSaved</span></span>
+### <a name="issaved"></a><span data-ttu-id="02d2b-142">IsSaved</span><span class="sxs-lookup"><span data-stu-id="02d2b-142">IsSaved</span></span>
 
-<span data-ttu-id="b7c4b-143">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-143">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="02d2b-143">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="02d2b-143">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="b7c4b-144">ファイルが最後に変更された後にファイルが保存されている場合に **$true** を返す読み取り専用のブール型プロパティ。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-144">The read-only Boolean property that returns **$true** if the file has been saved after it was last modified.</span></span>
+<span data-ttu-id="02d2b-144">ファイルが最後に変更された後にファイルが保存されている場合に `$true` を返す読み取り専用のブール型プロパティ。</span><span class="sxs-lookup"><span data-stu-id="02d2b-144">The read-only Boolean property that returns `$true` if the file has been saved after it was last modified.</span></span>
 
 ```powershell
 # Determines whether the file has been saved since it was last modified.
@@ -121,11 +121,11 @@ $myfile = $psISE.CurrentFile
 $myfile.IsSaved
 ```
 
-### <a name="isuntitled"></a><span data-ttu-id="b7c4b-145">IsUntitled</span><span class="sxs-lookup"><span data-stu-id="b7c4b-145">IsUntitled</span></span>
+### <a name="isuntitled"></a><span data-ttu-id="02d2b-145">IsUntitled</span><span class="sxs-lookup"><span data-stu-id="02d2b-145">IsUntitled</span></span>
 
-<span data-ttu-id="b7c4b-146">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-146">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
+<span data-ttu-id="02d2b-146">Windows PowerShell ISE 2.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="02d2b-146">Supported in Windows PowerShell ISE 2.0 and later.</span></span>
 
-<span data-ttu-id="b7c4b-147">ファイルにタイトルが指定されたことがない場合に **$true** を返す読み取り専用のプロパティ。</span><span class="sxs-lookup"><span data-stu-id="b7c4b-147">The read-only property that returns **$true** if the file has never been given a title.</span></span>
+<span data-ttu-id="02d2b-147">ファイルにタイトルが指定されたことがない場合に `$true` を返す読み取り専用のプロパティ。</span><span class="sxs-lookup"><span data-stu-id="02d2b-147">The read-only property that returns `$true` if the file has never been given a title.</span></span>
 
 ```powershell
 # Determines whether the file has never been given a title.
@@ -134,8 +134,8 @@ $psISE.CurrentFile.SaveAs("temp.txt")
 $psISE.CurrentFile.IsUntitled
 ```
 
-## <a name="see-also"></a><span data-ttu-id="b7c4b-148">参照</span><span class="sxs-lookup"><span data-stu-id="b7c4b-148">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="02d2b-148">参照</span><span class="sxs-lookup"><span data-stu-id="02d2b-148">See Also</span></span>
 
-- [<span data-ttu-id="b7c4b-149">The ISEFileCollectionObject</span><span class="sxs-lookup"><span data-stu-id="b7c4b-149">The ISEFileCollectionObject</span></span>](The-ISEFileCollection-Object.md)
-- [<span data-ttu-id="b7c4b-150">Windows PowerShell ISE スクリプト オブジェクト モデルの目的</span><span class="sxs-lookup"><span data-stu-id="b7c4b-150">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
-- [<span data-ttu-id="b7c4b-151">ISE オブジェクト モデルの階層</span><span class="sxs-lookup"><span data-stu-id="b7c4b-151">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
+- [<span data-ttu-id="02d2b-149">The ISEFileCollectionObject</span><span class="sxs-lookup"><span data-stu-id="02d2b-149">The ISEFileCollectionObject</span></span>](The-ISEFileCollection-Object.md)
+- [<span data-ttu-id="02d2b-150">Windows PowerShell ISE スクリプト オブジェクト モデルの目的</span><span class="sxs-lookup"><span data-stu-id="02d2b-150">Purpose of the Windows PowerShell ISE Scripting Object Model</span></span>](Purpose-of-the-Windows-PowerShell-ISE-Scripting-Object-Model.md)
+- [<span data-ttu-id="02d2b-151">ISE オブジェクト モデルの階層</span><span class="sxs-lookup"><span data-stu-id="02d2b-151">The ISE Object Model Hierarchy</span></span>](The-ISE-Object-Model-Hierarchy.md)
