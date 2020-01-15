@@ -2,12 +2,12 @@
 ms.date: 10/11/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 意思決定者向け Desired State Configuration の概要
-ms.openlocfilehash: b6d483d105c2d3b9be7215be36397d452338c7f1
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: bb73ee8fe636272f99989aa45712fe34fedad617
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75737255"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870797"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>意思決定者向け Desired State Configuration の概要
 
@@ -38,7 +38,7 @@ DSC は、[DevOps](/archive/blogs/ashleymcglone/devops-for-n00bs-ie-windows-peop
 ## <a name="dsc-on-premises-and-off-premises"></a>オンプレミスおよびオフプレミスの DSC
 
 DSC では、オンプレミスとオフプレミスの展開を管理できます。 オンプレミスのソリューションの場合、DSC には、コンピューターの管理を一元化し、それらの状態をレポートするために使用される[プル サーバー](../pull-server/pullServer.md)が備わっています。 オフプレミスのクラウド ソリューションの場合、Windows を使用できる任意の場所で DSC を使用できます。
-Azure には、DSC レポートを一元化する [Azure Automation](https://azure.microsoft.com/en-us/documentation/services/automation/) など、DSC に基づく特定のサービスがあります。
+Azure には、DSC レポートを一元化する [Azure Automation](/azure/automation) など、DSC に基づく特定のサービスがあります。
 
 ## <a name="dsc-and-compatibility"></a>DSC と互換性
 

@@ -2,12 +2,12 @@
 ms.date: 03/15/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Microsoft Azure での DSC の使用
-ms.openlocfilehash: 54a317a415ff12c3d270897f414cba88716f0728
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6d71b69eea78e775a3e5aaac64bccfa10092b8e6
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71953959"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870831"
 ---
 # <a name="using-dsc-on-microsoft-azure"></a>Microsoft Azure での DSC の使用
 
@@ -15,8 +15,7 @@ Microsoft Azure の Desired State Configuration (DSC) は、[Azure Desired State
 
 ## <a name="azure-desired-state-configuration-extension-handler"></a>Azure Desired State Configuration 拡張機能ハンドラー
 
-Azure DSC 拡張機能を使用すると、Microsoft Azure でホストされている VM を DSC で管理することができます。
-詳細については、次のトピックを参照してください。
+Azure DSC 拡張機能を使用すると、Microsoft Azure でホストされている VM を DSC で管理することができます。 詳細については、次のトピックを参照してください。
 
 - [Azure Desired State Configuration 拡張機能ハンドラーの概要](/azure/virtual-machines/extensions/dsc-overview)
 - [Azure Resource Manager テンプレートを使用した Windows VMSS および Desired State Configuration](/azure/virtual-machines/extensions/dsc-template)
@@ -25,7 +24,7 @@ Azure DSC 拡張機能を使用すると、Microsoft Azure でホストされて
 
 ## <a name="azure-automation-dsc"></a>Azure Automation DSC
 
-[Azure Automation サービス](https://azure.microsoft.com/en-us/services/automation/) を使用すると、DSC 構成、リソース、管理対象ノードを Azure 内で管理することができます。 詳細については、次のトピックを参照してください。
+[Azure Automation サービス](https://azure.microsoft.com/services/automation/) を使用すると、DSC 構成、リソース、管理対象ノードを Azure 内で管理することができます。 詳細については、次のトピックを参照してください。
 
 - [Azure Automation DSC](/azure/automation/automation-dsc-overview)
 - [Azure Automation DSC の使用](/azure/automation/automation-dsc-getting-started)

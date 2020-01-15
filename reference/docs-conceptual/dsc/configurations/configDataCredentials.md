@@ -2,40 +2,32 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データでの資格情報オプション
-ms.openlocfilehash: 660c3643f7eb2e9ccb91bd992747fb9d5da0ccdb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: aac27f1ff4b4287b53745fa3b946fb3de84771c2
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954539"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870559"
 ---
 # <a name="credentials-options-in-configuration-data"></a>構成データでの資格情報オプション
 
->適用先:Windows PowerShell 5.0
+> 適用先:Windows PowerShell 5.0
 
 ## <a name="plain-text-passwords-and-domain-users"></a>プレーンテキスト パスワードとドメイン ユーザー
 
-暗号化されていない資格情報を含む DSC 構成では、プレーンテキスト パスワードについてのエラー メッセージが生成されます。
-また、DSC では、ドメイン資格情報を使用すると警告が生成されます。
-これらのエラーや警告メッセージが表示されないようにするには、次の DSC 構成データ キーワードを使用します。
+暗号化されていない資格情報を含む DSC 構成では、プレーンテキスト パスワードについてのエラー メッセージが生成されます。 また、DSC では、ドメイン資格情報を使用すると警告が生成されます。 これらのエラーや警告メッセージが表示されないようにするには、次の DSC 構成データ キーワードを使用します。
 
 - **PsDscAllowPlainTextPassword**
 - **PsDscAllowDomainUser**
 
 > [!NOTE]
-> 暗号化されていないプレーンテキスト パスワードを格納/送信するのは一般的には安全ではありません。 このトピックで後述する手法を使って資格情報をセキュリティ保護することをお勧めします。
-> Azure Automation DSC サービスでは、構成でコンパイルされ、安全に格納される資格情報を一元的に管理することができます。
-> 詳しくは次の記事をご覧ください: [DSC 構成のコンパイルでの資格情報資産](/azure/automation/automation-dsc-compile#credential-assets)に関する記事
+> 暗号化されていないプレーンテキスト パスワードを格納/送信するのは一般的には安全ではありません。 このトピックで後述する手法を使って資格情報をセキュリティ保護することをお勧めします。 Azure Automation DSC サービスでは、構成でコンパイルされ、安全に格納される資格情報を一元的に管理することができます。 詳しくは次の記事をご覧ください: [DSC 構成のコンパイルでの資格情報資産](/azure/automation/automation-dsc-compile#credential-assets)に関する記事
 
 ## <a name="handling-credentials-in-dsc"></a>DSC での資格情報の処理
 
-DSC 構成リソースは、既定で `Local System` として実行されます。
-ただし、`Package` リソースでソフトウェアを特定のユーザー アカウントでインストールする必要がある場合など、リソースによっては資格情報が必要となることがあります。
+DSC 構成リソースは、既定で `Local System` として実行されます。 ただし、`Package` リソースでソフトウェアを特定のユーザー アカウントでインストールする必要がある場合など、リソースによっては資格情報が必要となることがあります。
 
-以前のリソースでは、ハード コードされた `Credential` プロパティ名使用してこのことに対処していました。
-WMF 5.0 では、すべてのリソースに対して自動 `PsDscRunAsCredential` プロパティが追加されました。
-`PsDscRunAsCredential` の使用の詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
-新しいリソースおよびカスタム リソースでは、資格情報の独自のプロパティを作成する代わりに、この自動プロパティを使用できます。
+以前のリソースでは、ハード コードされた `Credential` プロパティ名使用してこのことに対処していました。 WMF 5.0 では、すべてのリソースに対して自動 `PsDscRunAsCredential` プロパティが追加されました。 `PsDscRunAsCredential` の使用の詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。 新しいリソースおよびカスタム リソースでは、資格情報の独自のプロパティを作成する代わりに、この自動プロパティを使用できます。
 
 > [!NOTE]
 > 一部のリソースは特定の理由のために複数の資格情報を使用するように設計されており、それらのリソースには独自の資格情報プロパティがあることに注意してください。
@@ -43,7 +35,10 @@ WMF 5.0 では、すべてのリソースに対して自動 `PsDscRunAsCredentia
 リソースの使用可能な資格情報プロパティを検索するには、ISE で `Get-DscResource -Name ResourceName -Syntax` または Intellisense を使用します (`CTRL+SPACE`)。
 
 ```powershell
-PS C:\> Get-DscResource -Name Group -Syntax
+Get-DscResource -Name Group -Syntax
+```
+
+```Output
 Group [String] #ResourceName
 {
     GroupName = [string]
@@ -58,22 +53,15 @@ Group [String] #ResourceName
 }
 ```
 
-この例では、`PSDesiredStateConfiguration` 組み込み DSC リソース モジュールの [Group](../resources/resources.md) リソースを使用します。
-ローカル グループを作成し、メンバーを追加または削除できます。
-`Credential` プロパティと、自動 `PsDscRunAsCredential` プロパティの両方を受け取ります。
-ただし、リソースでは `Credential` プロパティのみが使用されます。
+この例では、`PSDesiredStateConfiguration` 組み込み DSC リソース モジュールの [Group](../resources/resources.md) リソースを使用します。 ローカル グループを作成し、メンバーを追加または削除できます。 `Credential` プロパティと、自動 `PsDscRunAsCredential` プロパティの両方を受け取ります。 ただし、リソースでは `Credential` プロパティのみが使用されます。
 
 `PsDscRunAsCredential`プロパティの詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
 
 ## <a name="example-the-group-resource-credential-property"></a>例:Group リソース資格情報プロパティ
 
-DSC は `Local System` で実行されるため、ローカル ユーザーおよびグループを変更するためのアクセス許可が既にあります。
-追加されたメンバーがローカル アカウントの場合、資格情報は必要ありません。
-`Group` リソースがローカル グループにドメイン アカウントを追加する場合、資格情報が必要となります。
+DSC は `Local System` で実行されるため、ローカル ユーザーおよびグループを変更するためのアクセス許可が既にあります。 追加されたメンバーがローカル アカウントの場合、資格情報は必要ありません。 `Group` リソースがローカル グループにドメイン アカウントを追加する場合、資格情報が必要となります。
 
-Active Directory への匿名クエリは許可されません。
-`Group` リソースの `Credential` プロパティは、Active Directory のクエリに使用されるドメイン アカウントです。
-既定では、ユーザーは Active Directory 内の大部分のオブジェクトを*読み取る*ことができるため、ほとんどの場合これは汎用ユーザー アカウントです。
+Active Directory への匿名クエリは許可されません。 `Group` リソースの `Credential` プロパティは、Active Directory のクエリに使用されるドメイン アカウントです。 既定では、ユーザーは Active Directory 内の大部分のオブジェクトを*読み取る*ことができるため、ほとんどの場合これは汎用ユーザー アカウントです。
 
 ## <a name="example-configuration"></a>構成の例
 
@@ -141,9 +129,7 @@ At C:\WINDOWS\system32\WindowsPowerShell\v1.0\Modules\PSDesiredStateConfiguratio
 
 ## <a name="psdscallowplaintextpassword"></a>PSDSCAllowPlainTextPassword
 
-最初のエラー メッセージには、ドキュメントの URL があります。
-このリンクでは、[ConfigurationData](./configData.md) 構造と証明書を使用してパスワードを暗号化する方法を説明しています。
-証明書と DSC の詳細については、[この投稿をご覧ください](https://aka.ms/certs4dsc)。
+最初のエラー メッセージには、ドキュメントの URL があります。 このリンクでは、[ConfigurationData](./configData.md) 構造と証明書を使用してパスワードを暗号化する方法を説明しています。 証明書と DSC の詳細については、[この投稿をご覧ください](https://aka.ms/certs4dsc)。
 
 プレーンテキスト パスワードを強制的に使用するには、次のようにリソースの構成データ セクションに `PsDscAllowPlainTextPassword` キーワードが必要です。
 
@@ -218,12 +204,11 @@ ModuleVersion = "1.0";
 
 ### <a name="credentials-in-transit-and-at-rest"></a>送信中および保存時の資格情報
 
-- **PSDscAllowPlainTextPassword** フラグを使用すると、クリア テキストのパスワードが含まれる MOF ファイルをコンパイルできます。
-  クリア テキストのパスワードが含まれる MOF ファイルを格納するときは注意が必要です。
+- **PSDscAllowPlainTextPassword** フラグを使用すると、クリア テキストのパスワードが含まれる MOF ファイルをコンパイルできます。 クリア テキストのパスワードが含まれる MOF ファイルを格納するときは注意が必要です。
 - MOF ファイルが**プッシュ** モードでノードに配信されるときは、**AllowUnencrypted** パラメーターで既定値を上書きしない限り、WinRM によってクリア テキスト パスワードを保護するために通信が暗号化されます。
   - 証明書で MOF を暗号化すると、ノードに適用される前の保存時の MOF ファイルが保護されます。
 - **プル** モードでは、HTTPS を使用してインターネット インフォメーション サーバーで指定されているプロトコルでトラフィックを暗号化するように、Windows プル サーバーを構成することができます。 詳しくは、「[DSC プル クライアントのセットアップ](../pull-server/pullclient.md)」および「[証明書を使用した MOF ファイルのセキュリティ保護](../pull-server/secureMOF.md)」をご覧ください。
-  - [Azure Automation State Configuration](https://docs.microsoft.com/en-us/azure/automation/automation-dsc-overview) サービスでは、プル トラフィックは常に暗号化されます。
+  - [Azure Automation State Configuration](/azure/automation/automation-dsc-overview) サービスでは、プル トラフィックは常に暗号化されます。
 - PowerShell 5.0 以降では、ノードでの保存時の MOF ファイルは暗号化されます。
   - PowerShell 4.0 での MOF ファイルは、ノードにプッシュまたはプルされるときに証明書で暗号化されていない限り、保存時には暗号化されません。
 
@@ -231,18 +216,15 @@ ModuleVersion = "1.0";
 
 ## <a name="domain-credentials"></a>ドメイン資格情報
 
-構成スクリプト例を (暗号化して、またはしないで) もう一度実行しても、資格情報のドメイン アカウントを使用することは推奨されないという警告が生成されます。
-ローカル アカウントを使用すると、他のサーバーで使用可能なドメイン資格情報が漏えいする可能性がなくなります。
+構成スクリプト例を (暗号化して、またはしないで) もう一度実行しても、資格情報のドメイン アカウントを使用することは推奨されないという警告が生成されます。 ローカル アカウントを使用すると、他のサーバーで使用可能なドメイン資格情報が漏えいする可能性がなくなります。
 
 **DSC リソースで資格情報を使用する場合、可能な場合は、ドメイン アカウントではなくローカル アカウントを選択します。**
 
-資格情報の `Username` プロパティに '\\' または '\@' が含まれていた場合、DSC はそれをドメイン アカウントとして処理します。
-ユーザー名のドメイン部分には、"localhost"、"127.0.0.1"、および "::1" の例外があります。
+資格情報の `Username` プロパティに '\\' または '\@' が含まれていた場合、DSC はそれをドメイン アカウントとして処理します。 ユーザー名のドメイン部分には、"localhost"、"127.0.0.1"、および "::1" の例外があります。
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
-上記の DSC `Group` リソースの例では、Active Directory ドメインのクエリを実行するにはドメイン アカウントが*必要です*。
-この場合は、次のように `ConfigurationData` ブロックに `PSDscAllowDomainUser` プロパティを追加します。
+上記の DSC `Group` リソースの例では、Active Directory ドメインのクエリを実行するにはドメイン アカウントが*必要です*。 この場合は、次のように `ConfigurationData` ブロックに `PSDscAllowDomainUser` プロパティを追加します。
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force
