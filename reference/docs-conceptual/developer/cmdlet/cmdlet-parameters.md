@@ -16,12 +16,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], parameters
 ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
 caps.latest.revision: 23
-ms.openlocfilehash: 914a10907bcf980eed8d7e2f819c382fe6b341ad
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c1d8984f4aad7bae6f9be66a2222e2c74c8afa3d
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365931"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022212"
 ---
 # <a name="cmdlet-parameters"></a>コマンドレットのパラメーター
 
@@ -33,7 +33,7 @@ ms.locfileid: "72365931"
 
 [コマンドレットパラメーターの型](./types-of-cmdlet-parameters.md)コマンドレットで宣言できるさまざまな種類のパラメーターについて説明します。
 
-[コマンドレットのパラメーター名と機能のガイドライン](./standard-cmdlet-parameter-names-and-types.md)Discuses は、標準パラメーターの名前、推奨されるデータ型、および機能を入力します。
+[コマンドレットのパラメーター名と機能のガイドライン](./standard-cmdlet-parameter-names-and-types.md)標準パラメーターの名前、推奨されるデータ型、および機能について説明します。
 
 [パラメーターの別名](./parameter-aliases.md)パラメーターに対して定義できるエイリアスについて説明します。
 
@@ -53,7 +53,7 @@ ms.locfileid: "72365931"
 
 [パラメーター入力を検証する方法](./how-to-validate-parameter-input.md)
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [パラメーター属性の宣言](./parameter-attribute-declaration.md)
 
