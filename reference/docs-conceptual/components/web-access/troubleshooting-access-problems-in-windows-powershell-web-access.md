@@ -1,17 +1,17 @@
 ---
 ms.date: 08/23/2017
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
-ms.openlocfilehash: 74cebbe418fecd21567ba9ecc7c561b51ac008fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 818beffaf7df55ae36a154b7b751f9201c5b4299
+ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71692229"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75870185"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
 
-更新: 2013 年 6 月 24 日 (改訂: 2017 年 8 月 23 日)
+更新:2013 年 6 月 24 日 (改訂: 2017 年 8 月 23 日)
 
 適用先:Windows Server 2012 R2、Windows Server 2012
 
@@ -56,7 +56,7 @@ ms.locfileid: "71692229"
    1. **[ドキュメント モード]** 、 *[IE10 標準]* の順にクリックします。
    1. もう一度 **F12** キーを押して開発者ツール コンソールを閉じます。
 1. Internet Explorer 10 の自動プロキシ構成を無効にします。
-   1. **[ツール]** 、 **[インターネット オプション]** の順にクリックします。
+   1. **[ツール]** をクリックした後、 **[インターネット オプション]** をクリックします。
    1. **[インターネット オプション]** ダイアログ ボックスの **[接続]** タブで、 **[LAN の設定]** をクリックします。
    1. **[設定を自動的に検出する]** チェック ボックスをオフにします。 **[OK]** をクリックし、もう一度 **[OK]** をクリックして、 *[インターネット オプション]* ダイアログ ボックスを閉じます。
 
@@ -66,63 +66,59 @@ ms.locfileid: "71692229"
 
 ## <a name="cannot-find-web-server-iis-management-tools-even-though-the-role-was-installed"></a>ロールがインストールされているにもかかわらず Web サーバー (IIS) 管理ツールが見つからない
 
-`Install-WindowsFeature` コマンドレットを使って Windows PowerShell Web Access をインストールした場合、コマンドレットに `-IncludeManagementTools` パラメーターを追加しない限り管理ツールはインストールされません。
+`Install-WindowsFeature` コマンドレットを使用して Windows PowerShell Web Access をインストールした場合、**IncludeManagementTools** パラメーターをコマンドレットに追加しない限り、管理ツールはインストールされません。
 
 例については、「[Windows PowerShell コマンドレットを使って Windows PowerShell Web Access をインストールするには](install-and-use-windows-powershell-web-access.md#to-install-windows-powershell-web-access-by-using-windows-powershell-cmdlets)」を参照してください。
 
-ゲートウェイ サーバーを対象とする**役割と機能の追加ウィザード**のセッションでツールを選択することで、IIS マネージャー コンソールとその他の必要な IIS 管理ツールを追加できます。
-役割および機能の追加ウィザードは、サーバー マネージャー内で開きます。
+ゲートウェイ サーバーを対象とする**役割と機能の追加ウィザード**のセッションでツールを選択することで、IIS マネージャー コンソールとその他の必要な IIS 管理ツールを追加できます。 役割および機能の追加ウィザードは、サーバー マネージャー内で開きます。
 
 ## <a name="windows-powershell-web-access-website-is-not-accessible"></a>Windows PowerShell Web Access Web サイトにアクセスできない
 
 Internet Explorer セキュリティ強化の構成 (IE ESC) を有効にして、信頼済みサイトの一覧に Windows PowerShell Web Access Web サイトを追加できます。
 
-セキュリティ上の理由からお勧めはできませんが、IE ESC を無効にするという方法もあります。
-IE ESC は、サーバー マネージャーの [ローカル サーバー] ページの [プロパティ] タイルで無効にすることができます。
+セキュリティ上の理由からお勧めはできませんが、IE ESC を無効にするという方法もあります。 IE ESC は、サーバー マネージャーの [ローカル サーバー] ページの [プロパティ] タイルで無効にすることができます。
 
 ## <a name="an-authorization-failure-occurred-verify-that-you-are-authorized-to-connect-to-the-destination-computer"></a>"承認エラーが発生しました。 対象のコンピューターに接続する権限が与えられているかどうかを確認してください。"
 
 ゲートウェイ サーバーが対象のコンピューターであり、ワークグループ内にある場合に、接続しようとすると上記のエラー メッセージが表示される。
 
-ゲートウェイ サーバーが対象のサーバーでもあり、ワークグループ内にある場合は、ユーザー名、コンピューター名、ユーザー グループ名を指定します。
-ドット (.) を単体で使用してコンピューター名を表すことはできません。
+ゲートウェイ サーバーが対象のサーバーでもあり、ワークグループ内にある場合は、ユーザー名、コンピューター名、ユーザー グループ名を指定します。 ドット (.) を単体で使用してコンピューター名を表すことはできません。
 
 ### <a name="scenarios-and-proper-values"></a>シナリオと適切な値
 
 #### <a name="all-cases"></a>すべてのケース
 
-パラメーター | 値
--- | --
-UserName | Server\_name\\user\_name<br/>Localhost\\user\_name<br/>.\\user\_name
-UserGroup | Server\_name\\user\_group<br/>Localhost\\user\_group<br/>.\\user\_group
-ComputerGroup | Server\_name\\computer\_group<br/>Localhost\\computer\_group<br/>.\\computer\_group
+  パラメーター   |                                        値
+------------- | -----------------------------------------------------------------------------------
+UserName      | `Server_name\user_name`<br/>`Localhost\user_name`<br/>`.\user_name`
+UserGroup     | `Server_name\user_group`<br/>`Localhost\user_group`<br/>`.\user_group`
+ComputerGroup | `Server_name\computer_group`<br/>`Localhost\computer_group`<br/>`.\computer_group`
 
 #### <a name="gateway-server-is-in-a-domain"></a>ゲートウェイ サーバーがドメイン内にある場合
 
-パラメーター | 値
--- | --
-ComputerName | ゲートウェイ サーバーの完全修飾名または Localhost
+ パラメーター   |                        値
+------------ | ----------------------------------------------------
+[ComputerName] | ゲートウェイ サーバーの完全修飾名または Localhost
 
 #### <a name="gateway-server-is-in-a-workgroup"></a>ゲートウェイ サーバーがワークグループ内にある場合
 
-パラメーター | 値
--- | --
-ComputerName | サーバー名
+ パラメーター   |    値
+------------ | -----------
+[ComputerName] | サーバー名
 
 ### <a name="gateway-credentials"></a>ゲートウェイの資格情報
 
 次のいずれかの形式の資格情報を使用して、ターゲット コンピューターとしてゲートウェイ サーバーにサインインします。
 
-- Server\_name\\user\_name
-- Localhost\\user\_name
-- .\\user\_name
+- `Server_name\user_name`
+- `Localhost\user_name`
+- `.\user_name`
 
 ## <a name="a-security-identifier-sid-is-displayed-in-an-authorization-rule"></a>セキュリティ識別子 (SID) が認証規則に表示される
 
-承認規則内に、構文 user\_name/computer\_name ではなくセキュリティ識別子 (SID) が表示される
+承認規則内に、構文 `user_name/computer_name` ではなくセキュリティ識別子 (SID) が表示されます。
 
-規則が有効ではなくなっているか、Active Directory Domain Services のクエリが失敗しています。
-以前はワークグループ内にあったゲートウェイ サーバーが後でドメインに参加した場合は通常、承認規則は有効ではありません。
+規則が有効ではなくなっているか、Active Directory Domain Services のクエリが失敗しています。 以前はワークグループ内にあったゲートウェイ サーバーが後でドメインに参加した場合は通常、承認規則は有効ではありません。
 
 ## <a name="cannot-sign-in-with-rule-as-an-ipv6-address-with-a-domain"></a>規則の IPv6 アドレスにドメインが含まれるとき、サインインできない
 
@@ -130,13 +126,12 @@ ComputerName | サーバー名
 
 承認規則では、ドメイン名形式の IPv6 アドレスがサポートされていません。
 
-IPv6 アドレスを使用して対象コンピューターを指定するには、承認規則内で元の (コロンを含む) IPv6 アドレスを使用します。
-Windows PowerShell Web Access のサインイン ページでは、ドメイン名形式の IPv6 アドレスも数値形式の (コロンを含む) IPv6 アドレスもターゲット コンピューター名としてサポートされていますが、承認規則内では異なります。
+IPv6 アドレスを使用して対象コンピューターを指定するには、承認規則内で元の (コロンを含む) IPv6 アドレスを使用します。 Windows PowerShell Web Access のサインイン ページでは、ドメイン名形式の IPv6 アドレスも数値形式の (コロンを含む) IPv6 アドレスもターゲット コンピューター名としてサポートされていますが、承認規則内では異なります。
 
-IPv6 アドレスの詳細については、[IPv6 の動作のしくみに関するページ](https://technet.microsoft.com/library/cc781672(v=ws.10).aspx)を参照してください。
+IPv6 アドレスの詳細については、[IPv6 の動作のしくみに関するページ](/previous-versions/windows/it-pro/windows-server-2003/cc781672(v=ws.10))を参照してください。
 
 ## <a name="see-also"></a>参照
 
-- [Windows PowerShell Web Access の承認規則とセキュリティ機能](https://technet.microsoft.com/en-us/library/dn282394(v=ws.11).aspx)
-- [Web ベースの Windows PowerShell コンソールの使用](https://technet.microsoft.com/en-us/library/hh831417(v=ws.11).aspx)
-- [about_Remote_Requirements](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
+- [Windows PowerShell Web Access の承認規則とセキュリティ機能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn282394(v=ws.11))
+- [Web ベースの Windows PowerShell コンソールの使用](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831417(v=ws.11))
+- [about_Remote_Requirements](/powershell/module/microsoft.powershell.core/about/about_remote_requirements)
