@@ -2,12 +2,12 @@
 title: PowerShell Core のサポート ライフサイクル
 description: PowerShell Core のサポートを管理するポリシー
 ms.date: 08/06/2018
-ms.openlocfilehash: 27738514fc84105a0339eafcdbb540b7d3790052
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 57804df830da01bee0f48acc374658b025a46b85
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416308"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022232"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core のサポート ライフサイクル
 
@@ -51,22 +51,24 @@ Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポ�
 
 | プラットフォーム                                          |      6.2      |    7.0    |
 |---------------------------------------------------|:-------------:|:---------:|
-| Windows 7、8.1、10                            |   サポート   | サポート |
-| Windows Server 2008 R2、2012 R2、2016             |   サポート   | サポート |
-| [Windows Server 半期チャネル][semi-annual] |   サポート   | サポート |
-| Ubuntu 16.04 および 18.04                            |   サポート   | サポート |
+| Windows 7、8.1、10                            |   サポートされています   | サポートされています |
+| Windows Server 2008 R2、2012 R2、2016             |   サポートされています   | サポートされています |
+| [Windows Server 半期チャネル][semi-annual] |   サポートされています   | サポートされています |
+| Ubuntu 16.04 および 18.04                            |   サポートされています   | サポートされています |
 | Ubuntu 18.10 (Snap パッケージを使用)                   |   コミュニティ   | コミュニティ |
 | Ubuntu 19.04 (Snap パッケージを使用)                   |   コミュニティ   | コミュニティ |
-| Debian 9                                          |   サポート   | サポート |
-| Debian 10                                         | サポートしていません。 | サポート |
-| CentOS 7                                          |   サポート   | サポート |
-| Red Hat Enterprise Linux 7                        |   サポート   | サポート |
-| openSUSE 42.3                                     |   サポート   | サポート |
-| Fedora 28                                         |   サポート   | サポート |
-| Fedora 29、30                                     | サポートしていません。 | サポート |
+| Debian 9                                          |   サポートされています   | サポートされています |
+| Debian 10                                         | サポートされていません | サポートされています |
+| CentOS 7                                          |   サポートされています   | サポートされています |
+| CentOS 8                                          | サポートされていません | サポートされています |
+| Red Hat Enterprise Linux 7                        |   サポートされています   | サポートされています |
+| Red Hat Enterprise Linux 8                        | サポートされていません | サポートされています |
+| openSUSE 42.3                                     |   サポートされています   | サポートされています |
+| Fedora 28                                         |   サポートされています   | サポートされています |
+| Fedora 29、30                                     | サポートされていません | サポートされています |
 | Alpine 3.8                                        |   注を参照    | 注を参照  |
-| Alpine 3.9 および 3.10                               | サポートしていません。 | 注を参照  |
-| macOS 10.12 以降                                      |   サポート   | サポート |
+| Alpine 3.9 および 3.10                               | サポートされていません | 注を参照  |
+| macOS 10.12 以降                                      |   サポートされています   | サポートされています |
 | Arch                                              |   コミュニティ   | コミュニティ |
 | Raspbian                                          |   コミュニティ   | コミュニティ |
 | Kali                                              |   コミュニティ   | コミュニティ |
@@ -83,7 +85,7 @@ Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポ�
 
 [PowerShell Core のライフサイクル](#lifecycle-of-powershell-core)に基づき、さまざまなリリースがサポートされなくなる日付を次の表に示します。
 
-| バージョン | サポート終了                   |
+| Version | サポート終了                   |
 |---------|-------------------------------|
 | 6.0     | 2019 年 2 月 13 日             |
 | 6.1     | 2019 年 9 月 28 日            |
@@ -95,7 +97,7 @@ Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポ�
 
 そのため、ディストリビューションの所有者によって次のバージョンのサポートは終了され、サポートされていません。
 
-| プラットフォーム | バージョン | 有効期限切れ                                                                                 |
+| プラットフォーム | Version | 有効期限切れ                                                                                 |
 |----------|---------|---------------------------------------------------------------------------------------------|
 | Fedora   | 24      | [2017 年 8 月](https://fedoramagazine.org/fedora-24-eol/)                                    |
 | Fedora   | 25      | [2017 年 12 月](https://fedoramagazine.org/fedora-25-end-life/)                             |

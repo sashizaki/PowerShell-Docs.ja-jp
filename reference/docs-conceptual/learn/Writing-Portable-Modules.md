@@ -1,13 +1,13 @@
 ---
-ms.date: 12/14/2018
-keywords: PowerShell, コマンドレット
+ms.date: 01/10/2020
+keywords: powershell,コマンドレット
 title: 移植可能なモジュールの作成
-ms.openlocfilehash: 7871f524495c1ce5283b30696a24185d427edebf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 124e6efadfd07b8c5214a5c0446b1589f7142388
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417651"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022246"
 ---
 # <a name="portable-modules"></a>移植可能なモジュール
 
@@ -200,7 +200,7 @@ PowerShell Standard は、常に上位互換性があるように意図されて
 
 モジュール マニフェスト内で、`PrivateData` プロパティには `PSData` サブプロパティがあります。 `PSData` の省略可能な `Tags` プロパティは、PowerShell ギャラリーに表示される値の配列を受け取ります。 PowerShell ギャラリーでは、次の互換性の値がサポートされています。
 
-| タグ               | 説明                                |
+| タグ               | [説明]                                |
 |-------------------|--------------------------------------------|
 | PSEdition_Core    | PowerShell Core 6 と互換性があります          |
 | PSEdition_Desktop | Windows PowerShell と互換性があります         |
@@ -254,6 +254,45 @@ PowerShell Standard は、常に上位互換性があるように意図されて
 }
 ```
 
+## <a name="dependency-on-native-libraries"></a>ネイティブ ライブラリに対する依存関係
+
+さまざまなオペレーティング システムまたはプロセッサ アーキテクチャでの使用を目的としたモジュールは、それ自体が何らかのネイティブ ライブラリに依存するマネージド ライブラリに依存する場合があります。
+
+PowerShell 7 より前では、マネージド ライブラリが正しく検出できるように、適切なネイティブ dll を読み込むためのカスタム コードを用意する必要がありました。
+
+PowerShell 7 では、読み込まれるネイティブ バイナリは、[.NET RID カタログ][] 表記のサブセットに従って、マネージド ライブラリの場所内のサブフォルダー内で検索されます。
+
+```
+managed.dll folder
+                |
+                |--- 'win-x64' folder
+                |       |--- native.dll
+                |
+                |--- 'win-x86' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm64' folder
+                |       |--- native.dll
+                |
+                |--- 'linux-x64' folder
+                |       |--- native.so
+                |
+                |--- 'linux-x86' folder
+                |       |--- native.so
+                |
+                |--- 'linux-arm' folder
+                |       |--- native.so
+                |
+                |--- 'linux-arm64' folder
+                |       |--- native.so
+                |
+                |--- 'osx-x64' folder
+                |       |--- native.dylib
+```
+
 <!-- reference links -->
 [.NET Framework]: /dotnet/framework/
 [.NET Core]: /dotnet/core/
@@ -267,3 +306,4 @@ PowerShell Standard は、常に上位互換性があるように意図されて
 [PowerShell ギャラリー]: https://www.powershellgallery.com
 [.NET Portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support
+[.NET RID カタログ]: https://docs.microsoft.com/dotnet/core/rid-catalog
