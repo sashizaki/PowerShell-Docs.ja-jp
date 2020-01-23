@@ -1,43 +1,43 @@
 ---
-ms.date: 12/14/2018
-keywords: PowerShell, コマンドレット
+ms.date: 01/10/2020
+keywords: powershell,コマンドレット
 title: 移植可能なモジュールの作成
-ms.openlocfilehash: 7871f524495c1ce5283b30696a24185d427edebf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 124e6efadfd07b8c5214a5c0446b1589f7142388
+ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417651"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "76022246"
 ---
-# <a name="portable-modules"></a><span data-ttu-id="a627d-103">移植可能なモジュール</span><span class="sxs-lookup"><span data-stu-id="a627d-103">Portable Modules</span></span>
+# <a name="portable-modules"></a><span data-ttu-id="87692-103">移植可能なモジュール</span><span class="sxs-lookup"><span data-stu-id="87692-103">Portable Modules</span></span>
 
-<span data-ttu-id="a627d-104">Windows PowerShell が [.NET Framework][] 用であるのに対し、PowerShell Core は [.NET Core][] 用に作成されています。</span><span class="sxs-lookup"><span data-stu-id="a627d-104">Windows PowerShell is written for [.NET Framework][] while PowerShell Core is written for [.NET Core][].</span></span> <span data-ttu-id="a627d-105">移植可能なモジュールとは、Windows PowerShell と PowerShell Core の両方で動作するモジュールです。</span><span class="sxs-lookup"><span data-stu-id="a627d-105">Portable modules are modules that work in both Windows PowerShell and PowerShell Core.</span></span> <span data-ttu-id="a627d-106">.NET Framework と .NET Core の間には高い互換性がありますが、使用可能な API には違いがあります。</span><span class="sxs-lookup"><span data-stu-id="a627d-106">While .NET Framework and .NET Core are highly compatible, there are differences in the available APIs between the two.</span></span> <span data-ttu-id="a627d-107">また、Windows PowerShell と PowerShell Core でも使用できる API が異なります。</span><span class="sxs-lookup"><span data-stu-id="a627d-107">There are also differences in the APIs available in Windows PowerShell and PowerShell Core.</span></span> <span data-ttu-id="a627d-108">両方の環境で使用するモジュールを作成するときは、これらの違いを意識する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a627d-108">Modules intended to be used in both environments need to be aware of these differences.</span></span>
+<span data-ttu-id="87692-104">Windows PowerShell が [.NET Framework][] 用であるのに対し、PowerShell Core は [.NET Core][] 用に作成されています。</span><span class="sxs-lookup"><span data-stu-id="87692-104">Windows PowerShell is written for [.NET Framework][] while PowerShell Core is written for [.NET Core][].</span></span> <span data-ttu-id="87692-105">移植可能なモジュールとは、Windows PowerShell と PowerShell Core の両方で動作するモジュールです。</span><span class="sxs-lookup"><span data-stu-id="87692-105">Portable modules are modules that work in both Windows PowerShell and PowerShell Core.</span></span> <span data-ttu-id="87692-106">.NET Framework と .NET Core の間には高い互換性がありますが、使用可能な API には違いがあります。</span><span class="sxs-lookup"><span data-stu-id="87692-106">While .NET Framework and .NET Core are highly compatible, there are differences in the available APIs between the two.</span></span> <span data-ttu-id="87692-107">また、Windows PowerShell と PowerShell Core でも使用できる API が異なります。</span><span class="sxs-lookup"><span data-stu-id="87692-107">There are also differences in the APIs available in Windows PowerShell and PowerShell Core.</span></span> <span data-ttu-id="87692-108">両方の環境で使用するモジュールを作成するときは、これらの違いを意識する必要があります。</span><span class="sxs-lookup"><span data-stu-id="87692-108">Modules intended to be used in both environments need to be aware of these differences.</span></span>
 
-## <a name="porting-an-existing-module"></a><span data-ttu-id="a627d-109">既存のモジュールの移植</span><span class="sxs-lookup"><span data-stu-id="a627d-109">Porting an Existing Module</span></span>
+## <a name="porting-an-existing-module"></a><span data-ttu-id="87692-109">既存のモジュールの移植</span><span class="sxs-lookup"><span data-stu-id="87692-109">Porting an Existing Module</span></span>
 
-### <a name="porting-a-pssnapin"></a><span data-ttu-id="a627d-110">PSSnapIn の移植</span><span class="sxs-lookup"><span data-stu-id="a627d-110">Porting a PSSnapIn</span></span>
+### <a name="porting-a-pssnapin"></a><span data-ttu-id="87692-110">PSSnapIn の移植</span><span class="sxs-lookup"><span data-stu-id="87692-110">Porting a PSSnapIn</span></span>
 
-<span data-ttu-id="a627d-111">PowerShell [スナップイン](/powershell/scripting/developer/cmdlet/modules-and-snap-ins)は、PowerShell Core ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="a627d-111">PowerShell [SnapIns](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) aren't supported in PowerShell Core.</span></span> <span data-ttu-id="a627d-112">ただし、PSSnapIn を PowerShell モジュールに変換するのは簡単です。</span><span class="sxs-lookup"><span data-stu-id="a627d-112">However, it's trivial to convert a PSSnapIn to a PowerShell module.</span></span> <span data-ttu-id="a627d-113">通常、PSSnapIn の登録コードは、[PSSnapIn][] の派生クラスの単一のソース ファイルに含まれます。</span><span class="sxs-lookup"><span data-stu-id="a627d-113">Typically, the PSSnapIn registration code is in a single source file of a class that derives from [PSSnapIn][].</span></span>
-<span data-ttu-id="a627d-114">このソース ファイルは、必要ありませんので、ビルドから削除します。</span><span class="sxs-lookup"><span data-stu-id="a627d-114">Remove this source file from the build; it's no longer needed.</span></span>
+<span data-ttu-id="87692-111">PowerShell [スナップイン](/powershell/scripting/developer/cmdlet/modules-and-snap-ins)は、PowerShell Core ではサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="87692-111">PowerShell [SnapIns](/powershell/scripting/developer/cmdlet/modules-and-snap-ins) aren't supported in PowerShell Core.</span></span> <span data-ttu-id="87692-112">ただし、PSSnapIn を PowerShell モジュールに変換するのは簡単です。</span><span class="sxs-lookup"><span data-stu-id="87692-112">However, it's trivial to convert a PSSnapIn to a PowerShell module.</span></span> <span data-ttu-id="87692-113">通常、PSSnapIn の登録コードは、[PSSnapIn][] の派生クラスの単一のソース ファイルに含まれます。</span><span class="sxs-lookup"><span data-stu-id="87692-113">Typically, the PSSnapIn registration code is in a single source file of a class that derives from [PSSnapIn][].</span></span>
+<span data-ttu-id="87692-114">このソース ファイルは、必要ありませんので、ビルドから削除します。</span><span class="sxs-lookup"><span data-stu-id="87692-114">Remove this source file from the build; it's no longer needed.</span></span>
 
-<span data-ttu-id="a627d-115">[New-ModuleManifest][] を使って、PSSnapIn 登録コードに必要なものを置き換える新しいモジュール マニフェストを作成します。</span><span class="sxs-lookup"><span data-stu-id="a627d-115">Use [New-ModuleManifest][] to create a new module manifest that replaces the need for the PSSnapIn registration code.</span></span> <span data-ttu-id="a627d-116">**PSSnapIn** の値の一部 (**Description** など) は、モジュール マニフェスト内で再利用できます。</span><span class="sxs-lookup"><span data-stu-id="a627d-116">Some of the values from the **PSSnapIn** (such as **Description**) can be reused within the module manifest.</span></span>
+<span data-ttu-id="87692-115">[New-ModuleManifest][] を使って、PSSnapIn 登録コードに必要なものを置き換える新しいモジュール マニフェストを作成します。</span><span class="sxs-lookup"><span data-stu-id="87692-115">Use [New-ModuleManifest][] to create a new module manifest that replaces the need for the PSSnapIn registration code.</span></span> <span data-ttu-id="87692-116">**PSSnapIn** の値の一部 (**Description** など) は、モジュール マニフェスト内で再利用できます。</span><span class="sxs-lookup"><span data-stu-id="87692-116">Some of the values from the **PSSnapIn** (such as **Description**) can be reused within the module manifest.</span></span>
 
-<span data-ttu-id="a627d-117">モジュール マニフェストの **RootModule** プロパティは、コマンドレットを実装するアセンブリ (dll) の名前に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a627d-117">The **RootModule** property in the module manifest should be set to the name of the assembly (dll) implementing the cmdlets.</span></span>
+<span data-ttu-id="87692-117">モジュール マニフェストの **RootModule** プロパティは、コマンドレットを実装するアセンブリ (dll) の名前に設定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="87692-117">The **RootModule** property in the module manifest should be set to the name of the assembly (dll) implementing the cmdlets.</span></span>
 
-### <a name="the-net-portability-analyzer-aka-apiport"></a><span data-ttu-id="a627d-118">.NET Portability Analyzer (別名 APIPort)</span><span class="sxs-lookup"><span data-stu-id="a627d-118">The .NET Portability Analyzer (aka APIPort)</span></span>
+### <a name="the-net-portability-analyzer-aka-apiport"></a><span data-ttu-id="87692-118">.NET Portability Analyzer (別名 APIPort)</span><span class="sxs-lookup"><span data-stu-id="87692-118">The .NET Portability Analyzer (aka APIPort)</span></span>
 
-<span data-ttu-id="a627d-119">Windows PowerShell 用に記述されたモジュールを PowerShell Core で動作するように移植するには、最初に [.NET Portability Analyzer][] を使用します。</span><span class="sxs-lookup"><span data-stu-id="a627d-119">To port modules written for Windows PowerShell to work with PowerShell Core, start with the [.NET Portability Analyzer][].</span></span> <span data-ttu-id="a627d-120">コンパイル済みアセンブリに対してこのツールを実行し、モジュールで使われている .NET API が .NET Framework、.NET Core、および他の .NET ランタイムと互換性があるかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="a627d-120">Run this tool against your compiled assembly to determine if the .NET APIs used in the module are compatible with .NET Framework, .NET Core, and other .NET runtimes.</span></span> <span data-ttu-id="a627d-121">このツールでは、代替 API がある場合は指摘されます。</span><span class="sxs-lookup"><span data-stu-id="a627d-121">The tool suggests alternate APIs if they exist.</span></span> <span data-ttu-id="a627d-122">それ以外の場合は、[ランタイム チェック][]を追加し、特定のランタイムで使用できない機能を制限することが必要な場合があります。</span><span class="sxs-lookup"><span data-stu-id="a627d-122">Otherwise, you may need to add [runtime checks][] and restrict capabilities not available in specific runtimes.</span></span>
+<span data-ttu-id="87692-119">Windows PowerShell 用に記述されたモジュールを PowerShell Core で動作するように移植するには、最初に [.NET Portability Analyzer][] を使用します。</span><span class="sxs-lookup"><span data-stu-id="87692-119">To port modules written for Windows PowerShell to work with PowerShell Core, start with the [.NET Portability Analyzer][].</span></span> <span data-ttu-id="87692-120">コンパイル済みアセンブリに対してこのツールを実行し、モジュールで使われている .NET API が .NET Framework、.NET Core、および他の .NET ランタイムと互換性があるかどうかを判断します。</span><span class="sxs-lookup"><span data-stu-id="87692-120">Run this tool against your compiled assembly to determine if the .NET APIs used in the module are compatible with .NET Framework, .NET Core, and other .NET runtimes.</span></span> <span data-ttu-id="87692-121">このツールでは、代替 API がある場合は指摘されます。</span><span class="sxs-lookup"><span data-stu-id="87692-121">The tool suggests alternate APIs if they exist.</span></span> <span data-ttu-id="87692-122">それ以外の場合は、[ランタイム チェック][]を追加し、特定のランタイムで使用できない機能を制限することが必要な場合があります。</span><span class="sxs-lookup"><span data-stu-id="87692-122">Otherwise, you may need to add [runtime checks][] and restrict capabilities not available in specific runtimes.</span></span>
 
-## <a name="creating-a-new-module"></a><span data-ttu-id="a627d-123">新しいモジュールの作成</span><span class="sxs-lookup"><span data-stu-id="a627d-123">Creating a New Module</span></span>
+## <a name="creating-a-new-module"></a><span data-ttu-id="87692-123">新しいモジュールの作成</span><span class="sxs-lookup"><span data-stu-id="87692-123">Creating a New Module</span></span>
 
-<span data-ttu-id="a627d-124">新しいモジュールを作成する場合に推奨されるのは、[.NET CLI][] の使用です。</span><span class="sxs-lookup"><span data-stu-id="a627d-124">If creating a new module, the recommendation is to use the [.NET CLI][].</span></span>
+<span data-ttu-id="87692-124">新しいモジュールを作成する場合に推奨されるのは、[.NET CLI][] の使用です。</span><span class="sxs-lookup"><span data-stu-id="87692-124">If creating a new module, the recommendation is to use the [.NET CLI][].</span></span>
 
-### <a name="installing-the-powershell-standard-module-template"></a><span data-ttu-id="a627d-125">PowerShell 標準モジュール テンプレートのインストール</span><span class="sxs-lookup"><span data-stu-id="a627d-125">Installing the PowerShell Standard Module Template</span></span>
+### <a name="installing-the-powershell-standard-module-template"></a><span data-ttu-id="87692-125">PowerShell 標準モジュール テンプレートのインストール</span><span class="sxs-lookup"><span data-stu-id="87692-125">Installing the PowerShell Standard Module Template</span></span>
 
-<span data-ttu-id="a627d-126">.NET CLI をインストールした後、簡単な PowerShell モジュールを生成するためのテンプレート ライブラリをインストールします。</span><span class="sxs-lookup"><span data-stu-id="a627d-126">Once the .NET CLI is installed, install a template library to generate a simple PowerShell module.</span></span>
-<span data-ttu-id="a627d-127">そのモジュールは、Windows PowerShell、PowerShell Core、Windows、Linux、および macOS と互換性を持つようになります。</span><span class="sxs-lookup"><span data-stu-id="a627d-127">The module will be compatible with Windows PowerShell, PowerShell Core, Windows, Linux, and macOS.</span></span>
+<span data-ttu-id="87692-126">.NET CLI をインストールした後、簡単な PowerShell モジュールを生成するためのテンプレート ライブラリをインストールします。</span><span class="sxs-lookup"><span data-stu-id="87692-126">Once the .NET CLI is installed, install a template library to generate a simple PowerShell module.</span></span>
+<span data-ttu-id="87692-127">そのモジュールは、Windows PowerShell、PowerShell Core、Windows、Linux、および macOS と互換性を持つようになります。</span><span class="sxs-lookup"><span data-stu-id="87692-127">The module will be compatible with Windows PowerShell, PowerShell Core, Windows, Linux, and macOS.</span></span>
 
-<span data-ttu-id="a627d-128">次の例では、テンプレートのインストール方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a627d-128">The following example shows how to install the template:</span></span>
+<span data-ttu-id="87692-128">次の例では、テンプレートのインストール方法を示します。</span><span class="sxs-lookup"><span data-stu-id="87692-128">The following example shows how to install the template:</span></span>
 
 ```powershell
 dotnet new -i Microsoft.PowerShell.Standard.Module.Template
@@ -73,9 +73,9 @@ PowerShell Standard Module                        psmodule           [C#]       
 ...
 ```
 
-### <a name="creating-a-new-module-project"></a><span data-ttu-id="a627d-129">新しいモジュール プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="a627d-129">Creating a New Module Project</span></span>
+### <a name="creating-a-new-module-project"></a><span data-ttu-id="87692-129">新しいモジュール プロジェクトの作成</span><span class="sxs-lookup"><span data-stu-id="87692-129">Creating a New Module Project</span></span>
 
-<span data-ttu-id="a627d-130">テンプレートをインストールした後は、そのテンプレートを使用して新しい PowerShell モジュール プロジェクトを作成できます。</span><span class="sxs-lookup"><span data-stu-id="a627d-130">After the template is installed, you can create a new PowerShell module project using that template.</span></span> <span data-ttu-id="a627d-131">この例のサンプル モジュールの名前は "myModule" です。</span><span class="sxs-lookup"><span data-stu-id="a627d-131">In this example, the sample module is called 'myModule'.</span></span>
+<span data-ttu-id="87692-130">テンプレートをインストールした後は、そのテンプレートを使用して新しい PowerShell モジュール プロジェクトを作成できます。</span><span class="sxs-lookup"><span data-stu-id="87692-130">After the template is installed, you can create a new PowerShell module project using that template.</span></span> <span data-ttu-id="87692-131">この例のサンプル モジュールの名前は "myModule" です。</span><span class="sxs-lookup"><span data-stu-id="87692-131">In this example, the sample module is called 'myModule'.</span></span>
 
 ```
 PS> mkdir myModule
@@ -102,9 +102,9 @@ Running 'dotnet restore' on C:\Users\Steve\myModule\myModule.csproj...
 Restore succeeded.
 ```
 
-### <a name="building-the-module"></a><span data-ttu-id="a627d-132">モジュールのビルド</span><span class="sxs-lookup"><span data-stu-id="a627d-132">Building the Module</span></span>
+### <a name="building-the-module"></a><span data-ttu-id="87692-132">モジュールのビルド</span><span class="sxs-lookup"><span data-stu-id="87692-132">Building the Module</span></span>
 
-<span data-ttu-id="a627d-133">標準の .NET CLI コマンドを使用して、プロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="a627d-133">Use standard .NET CLI commands to build the project.</span></span>
+<span data-ttu-id="87692-133">標準の .NET CLI コマンドを使用して、プロジェクトをビルドします。</span><span class="sxs-lookup"><span data-stu-id="87692-133">Use standard .NET CLI commands to build the project.</span></span>
 
 ```powershell
 dotnet build
@@ -125,9 +125,9 @@ Build succeeded.
 Time Elapsed 00:00:05.40
 ```
 
-### <a name="testing-the-module"></a><span data-ttu-id="a627d-134">モジュールのテスト</span><span class="sxs-lookup"><span data-stu-id="a627d-134">Testing the Module</span></span>
+### <a name="testing-the-module"></a><span data-ttu-id="87692-134">モジュールのテスト</span><span class="sxs-lookup"><span data-stu-id="87692-134">Testing the Module</span></span>
 
-<span data-ttu-id="a627d-135">モジュールをビルドした後は、それをインポートしてサンプルのコマンドレットを実行できます。</span><span class="sxs-lookup"><span data-stu-id="a627d-135">After building the module, you can import it and execute the sample cmdlet.</span></span>
+<span data-ttu-id="87692-135">モジュールをビルドした後は、それをインポートしてサンプルのコマンドレットを実行できます。</span><span class="sxs-lookup"><span data-stu-id="87692-135">After building the module, you can import it and execute the sample cmdlet.</span></span>
 
 ```powershell
 ipmo .\bin\Debug\netstandard2.0\myModule.dll
@@ -161,54 +161,54 @@ FavoriteNumber FavoritePet
              7 Cat
 ```
 
-<span data-ttu-id="a627d-136">次のセクションでは、このテンプレートで使用されているテクノロジの一部について詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="a627d-136">The following sections describe in detail some of the technologies used by this template.</span></span>
+<span data-ttu-id="87692-136">次のセクションでは、このテンプレートで使用されているテクノロジの一部について詳しく説明します。</span><span class="sxs-lookup"><span data-stu-id="87692-136">The following sections describe in detail some of the technologies used by this template.</span></span>
 
-## <a name="net-standard-library"></a><span data-ttu-id="a627d-137">.NET 標準ライブラリ</span><span class="sxs-lookup"><span data-stu-id="a627d-137">.NET Standard Library</span></span>
+## <a name="net-standard-library"></a><span data-ttu-id="87692-137">.NET 標準ライブラリ</span><span class="sxs-lookup"><span data-stu-id="87692-137">.NET Standard Library</span></span>
 
-<span data-ttu-id="a627d-138">[.NET Standard][] は、すべての .NET 実装で使用できる .NET API の正式な仕様です。</span><span class="sxs-lookup"><span data-stu-id="a627d-138">[.NET Standard][] is a formal specification of .NET APIs that are available in all .NET implementations.</span></span> <span data-ttu-id="a627d-139">.NET Standard をターゲットとするマネージド コードは、.NET Standard のそのバージョンと互換性のある .NET Framework および .NET Core のバージョンで動作します。</span><span class="sxs-lookup"><span data-stu-id="a627d-139">Managed code targeting .NET Standard works with the .NET Framework and .NET Core versions that are compatible with that version of the .NET Standard.</span></span>
-
-> [!NOTE]
-> <span data-ttu-id="a627d-140">.NET Standard に API が存在していても、.NET Core での API の実装で実行時に `PlatformNotSupportedException` がスローされる可能性があるので、Windows PowerShell および PowerShell Core との互換性を確認するため、両方の環境内でモジュールのテストを実行するのがベスト プラクティスです。</span><span class="sxs-lookup"><span data-stu-id="a627d-140">Although an API may exist in .NET Standard, the API implementation in .NET Core may throw a `PlatformNotSupportedException` at runtime, so to verify compatibility with Windows PowerShell and PowerShell Core, the best practice is to run tests for your module within both environments.</span></span>
-> <span data-ttu-id="a627d-141">クロスプラットフォームを意図したモジュールの場合は、Linux と macOS でもテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="a627d-141">Also run tests on Linux and macOS if your module is intended to be cross-platform.</span></span>
-
-<span data-ttu-id="a627d-142">.NET Standard をターゲットにすると、モジュールが進化しても、互換性のない API が誤ってモジュールに導入されないことが保証されます。</span><span class="sxs-lookup"><span data-stu-id="a627d-142">Targeting .NET Standard helps ensure that, as the module evolves, incompatible APIs don't accidentally get introduced into the module.</span></span> <span data-ttu-id="a627d-143">非互換性は、実行時ではなくコンパイル時に検出されます。</span><span class="sxs-lookup"><span data-stu-id="a627d-143">Incompatibilities are discovered at compile time instead of runtime.</span></span>
-
-<span data-ttu-id="a627d-144">ただし、互換性のある API を使用してさえいれば、.NET Standard をターゲットにしなくても、モジュールは Windows PowerShell と PowerShell Core の両方で動作します。</span><span class="sxs-lookup"><span data-stu-id="a627d-144">However, it isn't required to target .NET Standard for a module to work with both Windows PowerShell and PowerShell Core, as long as you use compatible APIs.</span></span> <span data-ttu-id="a627d-145">中間言語 (IL) は、2 つのランタイムの間で互換性があります。</span><span class="sxs-lookup"><span data-stu-id="a627d-145">The Intermediate Language (IL) is compatible between the two runtimes.</span></span> <span data-ttu-id="a627d-146">.NET Framework 4.6.1 をターゲットにでき、これは .NET Standard 2.0 と互換性があります。</span><span class="sxs-lookup"><span data-stu-id="a627d-146">You can target .NET Framework 4.6.1, which is compatible with .NET Standard 2.0.</span></span> <span data-ttu-id="a627d-147">.NET Standard 2.0 の対象外の API を使用していなければ、モジュールは再コンパイルしなくても PowerShell Core 6 で動作します。</span><span class="sxs-lookup"><span data-stu-id="a627d-147">If you don't use APIs outside of .NET Standard 2.0, then your module works with PowerShell Core 6 without recompilation.</span></span>
-
-## <a name="powershell-standard-library"></a><span data-ttu-id="a627d-148">PowerShell Standard ライブラリ</span><span class="sxs-lookup"><span data-stu-id="a627d-148">PowerShell Standard Library</span></span>
-
-<span data-ttu-id="a627d-149">[PowerShell Standard][] ライブラリは、その標準のバージョン以降のすべての PowerShell のバージョンで利用可能な PowerShell API の正式な仕様です。</span><span class="sxs-lookup"><span data-stu-id="a627d-149">The [PowerShell Standard][] library is a formal specification of PowerShell APIs available in all PowerShell versions greater than or equal to the version of that standard.</span></span>
-
-<span data-ttu-id="a627d-150">たとえば、[PowerShell Standard 5.1][] は、Windows PowerShell 5.1 および PowerShell Core 6.0 以降の両方と互換性があります。</span><span class="sxs-lookup"><span data-stu-id="a627d-150">For example, [PowerShell Standard 5.1][] is compatible with both Windows PowerShell 5.1 and PowerShell Core 6.0 or newer.</span></span>
-
-<span data-ttu-id="a627d-151">PowerShell Standard ライブラリを使用してモジュールをコンパイルすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="a627d-151">We recommend you compile your module using PowerShell Standard Library.</span></span> <span data-ttu-id="a627d-152">ライブラリにより、API が使用可能で、Windows PowerShell と PowerShell Core 6 の両方で実装されていることが保証されます。</span><span class="sxs-lookup"><span data-stu-id="a627d-152">The library ensures the APIs are available and implemented in both Windows PowerShell and PowerShell Core 6.</span></span>
-<span data-ttu-id="a627d-153">PowerShell Standard は、常に上位互換性があるように意図されています。</span><span class="sxs-lookup"><span data-stu-id="a627d-153">PowerShell Standard is intended to always be forwards-compatible.</span></span> <span data-ttu-id="a627d-154">PowerShell Standard ライブラリ 5.1 を使用してビルドされたモジュールは、PowerShell の将来のバージョンと常に互換性があります。</span><span class="sxs-lookup"><span data-stu-id="a627d-154">A module built using PowerShell Standard Library 5.1 will always be compatible with future versions of PowerShell.</span></span>
-
-## <a name="module-manifest"></a><span data-ttu-id="a627d-155">モジュール マニフェスト</span><span class="sxs-lookup"><span data-stu-id="a627d-155">Module Manifest</span></span>
-
-### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a><span data-ttu-id="a627d-156">Windows PowerShell および PowerShell Core との互換性を示す</span><span class="sxs-lookup"><span data-stu-id="a627d-156">Indicating Compatibility With Windows PowerShell and PowerShell Core</span></span>
-
-<span data-ttu-id="a627d-157">モジュールが Windows PowerShell と PowerShell Core の両方で動作することを検証した後は、モジュール マニフェストで [CompatiblePSEditions][] プロパティを使用して、互換性を明示的に示す必要があります。</span><span class="sxs-lookup"><span data-stu-id="a627d-157">After validating that your module works with both Windows PowerShell and PowerShell Core, the module manifest should explicitly indicate compatibility by using the [CompatiblePSEditions][] property.</span></span> <span data-ttu-id="a627d-158">値 `Desktop` はモジュールに Windows PowerShell との互換性があることを意味し、値 `Core` はモジュールに PowerShell Core との互換性があることを意味します。</span><span class="sxs-lookup"><span data-stu-id="a627d-158">A value of `Desktop` means that the module is compatible with Windows PowerShell, while a value of `Core` means that the module is compatible with PowerShell Core.</span></span> <span data-ttu-id="a627d-159">`Desktop` と `Core` の両方を含めると、モジュールに Windows PowerShell および PowerShell Core の両方との互換性があることを意味します。</span><span class="sxs-lookup"><span data-stu-id="a627d-159">Including both `Desktop` and `Core` means that the module is compatible with both Windows PowerShell and PowerShell Core.</span></span>
+<span data-ttu-id="87692-138">[.NET Standard][] は、すべての .NET 実装で使用できる .NET API の正式な仕様です。</span><span class="sxs-lookup"><span data-stu-id="87692-138">[.NET Standard][] is a formal specification of .NET APIs that are available in all .NET implementations.</span></span> <span data-ttu-id="87692-139">.NET Standard をターゲットとするマネージド コードは、.NET Standard のそのバージョンと互換性のある .NET Framework および .NET Core のバージョンで動作します。</span><span class="sxs-lookup"><span data-stu-id="87692-139">Managed code targeting .NET Standard works with the .NET Framework and .NET Core versions that are compatible with that version of the .NET Standard.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a627d-160">`Core` によってモジュールに Windows、Linux、macOS との互換性があることが自動的に示されることはありません。</span><span class="sxs-lookup"><span data-stu-id="a627d-160">`Core` does not automatically mean that the module is compatible with Windows, Linux, and macOS.</span></span>
-> <span data-ttu-id="a627d-161">PowerShell v5 では **CompatiblePSEditions** プロパティが導入されました。</span><span class="sxs-lookup"><span data-stu-id="a627d-161">The **CompatiblePSEditions** property was introduced in PowerShell v5.</span></span> <span data-ttu-id="a627d-162">**CompatiblePSEditions** プロパティを使用しているモジュール マニフェストは、PowerShell v5 より前のバージョンに読み込むことができません。</span><span class="sxs-lookup"><span data-stu-id="a627d-162">Module manifests that use the **CompatiblePSEditions** property fail to load in versions prior to PowerShell v5.</span></span>
+> <span data-ttu-id="87692-140">.NET Standard に API が存在していても、.NET Core での API の実装で実行時に `PlatformNotSupportedException` がスローされる可能性があるので、Windows PowerShell および PowerShell Core との互換性を確認するため、両方の環境内でモジュールのテストを実行するのがベスト プラクティスです。</span><span class="sxs-lookup"><span data-stu-id="87692-140">Although an API may exist in .NET Standard, the API implementation in .NET Core may throw a `PlatformNotSupportedException` at runtime, so to verify compatibility with Windows PowerShell and PowerShell Core, the best practice is to run tests for your module within both environments.</span></span>
+> <span data-ttu-id="87692-141">クロスプラットフォームを意図したモジュールの場合は、Linux と macOS でもテストを実行します。</span><span class="sxs-lookup"><span data-stu-id="87692-141">Also run tests on Linux and macOS if your module is intended to be cross-platform.</span></span>
 
-### <a name="indicating-os-compatibility"></a><span data-ttu-id="a627d-163">OS の互換性を示す</span><span class="sxs-lookup"><span data-stu-id="a627d-163">Indicating OS Compatibility</span></span>
+<span data-ttu-id="87692-142">.NET Standard をターゲットにすると、モジュールが進化しても、互換性のない API が誤ってモジュールに導入されないことが保証されます。</span><span class="sxs-lookup"><span data-stu-id="87692-142">Targeting .NET Standard helps ensure that, as the module evolves, incompatible APIs don't accidentally get introduced into the module.</span></span> <span data-ttu-id="87692-143">非互換性は、実行時ではなくコンパイル時に検出されます。</span><span class="sxs-lookup"><span data-stu-id="87692-143">Incompatibilities are discovered at compile time instead of runtime.</span></span>
 
-<span data-ttu-id="a627d-164">最初に、モジュールが Linux と macOS で動作することを検証します。</span><span class="sxs-lookup"><span data-stu-id="a627d-164">First, validate that your module works on Linux and macOS.</span></span> <span data-ttu-id="a627d-165">次に、モジュール マニフェストでこれらのオペレーティング システムとの互換性を示します。</span><span class="sxs-lookup"><span data-stu-id="a627d-165">Next, indicate compatibility with those operating systems in the module manifest.</span></span> <span data-ttu-id="a627d-166">これにより、[PowerShell ギャラリー][]に発行した後で、ユーザーがオペレーティング システム用のモジュールを見つけやすくなります。</span><span class="sxs-lookup"><span data-stu-id="a627d-166">This makes it easier for users to find your module for their operating system when published to the [PowerShell Gallery][].</span></span>
+<span data-ttu-id="87692-144">ただし、互換性のある API を使用してさえいれば、.NET Standard をターゲットにしなくても、モジュールは Windows PowerShell と PowerShell Core の両方で動作します。</span><span class="sxs-lookup"><span data-stu-id="87692-144">However, it isn't required to target .NET Standard for a module to work with both Windows PowerShell and PowerShell Core, as long as you use compatible APIs.</span></span> <span data-ttu-id="87692-145">中間言語 (IL) は、2 つのランタイムの間で互換性があります。</span><span class="sxs-lookup"><span data-stu-id="87692-145">The Intermediate Language (IL) is compatible between the two runtimes.</span></span> <span data-ttu-id="87692-146">.NET Framework 4.6.1 をターゲットにでき、これは .NET Standard 2.0 と互換性があります。</span><span class="sxs-lookup"><span data-stu-id="87692-146">You can target .NET Framework 4.6.1, which is compatible with .NET Standard 2.0.</span></span> <span data-ttu-id="87692-147">.NET Standard 2.0 の対象外の API を使用していなければ、モジュールは再コンパイルしなくても PowerShell Core 6 で動作します。</span><span class="sxs-lookup"><span data-stu-id="87692-147">If you don't use APIs outside of .NET Standard 2.0, then your module works with PowerShell Core 6 without recompilation.</span></span>
 
-<span data-ttu-id="a627d-167">モジュール マニフェスト内で、`PrivateData` プロパティには `PSData` サブプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="a627d-167">Within the module manifest, the `PrivateData` property has a `PSData` sub-property.</span></span> <span data-ttu-id="a627d-168">`PSData` の省略可能な `Tags` プロパティは、PowerShell ギャラリーに表示される値の配列を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="a627d-168">The optional `Tags` property of `PSData` takes an array of values that show up in PowerShell Gallery.</span></span> <span data-ttu-id="a627d-169">PowerShell ギャラリーでは、次の互換性の値がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="a627d-169">The PowerShell Gallery supports the following compatibility values:</span></span>
+## <a name="powershell-standard-library"></a><span data-ttu-id="87692-148">PowerShell Standard ライブラリ</span><span class="sxs-lookup"><span data-stu-id="87692-148">PowerShell Standard Library</span></span>
 
-| <span data-ttu-id="a627d-170">タグ</span><span class="sxs-lookup"><span data-stu-id="a627d-170">Tag</span></span>               | <span data-ttu-id="a627d-171">説明</span><span class="sxs-lookup"><span data-stu-id="a627d-171">Description</span></span>                                |
+<span data-ttu-id="87692-149">[PowerShell Standard][] ライブラリは、その標準のバージョン以降のすべての PowerShell のバージョンで利用可能な PowerShell API の正式な仕様です。</span><span class="sxs-lookup"><span data-stu-id="87692-149">The [PowerShell Standard][] library is a formal specification of PowerShell APIs available in all PowerShell versions greater than or equal to the version of that standard.</span></span>
+
+<span data-ttu-id="87692-150">たとえば、[PowerShell Standard 5.1][] は、Windows PowerShell 5.1 および PowerShell Core 6.0 以降の両方と互換性があります。</span><span class="sxs-lookup"><span data-stu-id="87692-150">For example, [PowerShell Standard 5.1][] is compatible with both Windows PowerShell 5.1 and PowerShell Core 6.0 or newer.</span></span>
+
+<span data-ttu-id="87692-151">PowerShell Standard ライブラリを使用してモジュールをコンパイルすることをお勧めします。</span><span class="sxs-lookup"><span data-stu-id="87692-151">We recommend you compile your module using PowerShell Standard Library.</span></span> <span data-ttu-id="87692-152">ライブラリにより、API が使用可能で、Windows PowerShell と PowerShell Core 6 の両方で実装されていることが保証されます。</span><span class="sxs-lookup"><span data-stu-id="87692-152">The library ensures the APIs are available and implemented in both Windows PowerShell and PowerShell Core 6.</span></span>
+<span data-ttu-id="87692-153">PowerShell Standard は、常に上位互換性があるように意図されています。</span><span class="sxs-lookup"><span data-stu-id="87692-153">PowerShell Standard is intended to always be forwards-compatible.</span></span> <span data-ttu-id="87692-154">PowerShell Standard ライブラリ 5.1 を使用してビルドされたモジュールは、PowerShell の将来のバージョンと常に互換性があります。</span><span class="sxs-lookup"><span data-stu-id="87692-154">A module built using PowerShell Standard Library 5.1 will always be compatible with future versions of PowerShell.</span></span>
+
+## <a name="module-manifest"></a><span data-ttu-id="87692-155">モジュール マニフェスト</span><span class="sxs-lookup"><span data-stu-id="87692-155">Module Manifest</span></span>
+
+### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a><span data-ttu-id="87692-156">Windows PowerShell および PowerShell Core との互換性を示す</span><span class="sxs-lookup"><span data-stu-id="87692-156">Indicating Compatibility With Windows PowerShell and PowerShell Core</span></span>
+
+<span data-ttu-id="87692-157">モジュールが Windows PowerShell と PowerShell Core の両方で動作することを検証した後は、モジュール マニフェストで [CompatiblePSEditions][] プロパティを使用して、互換性を明示的に示す必要があります。</span><span class="sxs-lookup"><span data-stu-id="87692-157">After validating that your module works with both Windows PowerShell and PowerShell Core, the module manifest should explicitly indicate compatibility by using the [CompatiblePSEditions][] property.</span></span> <span data-ttu-id="87692-158">値 `Desktop` はモジュールに Windows PowerShell との互換性があることを意味し、値 `Core` はモジュールに PowerShell Core との互換性があることを意味します。</span><span class="sxs-lookup"><span data-stu-id="87692-158">A value of `Desktop` means that the module is compatible with Windows PowerShell, while a value of `Core` means that the module is compatible with PowerShell Core.</span></span> <span data-ttu-id="87692-159">`Desktop` と `Core` の両方を含めると、モジュールに Windows PowerShell および PowerShell Core の両方との互換性があることを意味します。</span><span class="sxs-lookup"><span data-stu-id="87692-159">Including both `Desktop` and `Core` means that the module is compatible with both Windows PowerShell and PowerShell Core.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="87692-160">`Core` によってモジュールに Windows、Linux、macOS との互換性があることが自動的に示されることはありません。</span><span class="sxs-lookup"><span data-stu-id="87692-160">`Core` does not automatically mean that the module is compatible with Windows, Linux, and macOS.</span></span>
+> <span data-ttu-id="87692-161">PowerShell v5 では **CompatiblePSEditions** プロパティが導入されました。</span><span class="sxs-lookup"><span data-stu-id="87692-161">The **CompatiblePSEditions** property was introduced in PowerShell v5.</span></span> <span data-ttu-id="87692-162">**CompatiblePSEditions** プロパティを使用しているモジュール マニフェストは、PowerShell v5 より前のバージョンに読み込むことができません。</span><span class="sxs-lookup"><span data-stu-id="87692-162">Module manifests that use the **CompatiblePSEditions** property fail to load in versions prior to PowerShell v5.</span></span>
+
+### <a name="indicating-os-compatibility"></a><span data-ttu-id="87692-163">OS の互換性を示す</span><span class="sxs-lookup"><span data-stu-id="87692-163">Indicating OS Compatibility</span></span>
+
+<span data-ttu-id="87692-164">最初に、モジュールが Linux と macOS で動作することを検証します。</span><span class="sxs-lookup"><span data-stu-id="87692-164">First, validate that your module works on Linux and macOS.</span></span> <span data-ttu-id="87692-165">次に、モジュール マニフェストでこれらのオペレーティング システムとの互換性を示します。</span><span class="sxs-lookup"><span data-stu-id="87692-165">Next, indicate compatibility with those operating systems in the module manifest.</span></span> <span data-ttu-id="87692-166">これにより、[PowerShell ギャラリー][]に発行した後で、ユーザーがオペレーティング システム用のモジュールを見つけやすくなります。</span><span class="sxs-lookup"><span data-stu-id="87692-166">This makes it easier for users to find your module for their operating system when published to the [PowerShell Gallery][].</span></span>
+
+<span data-ttu-id="87692-167">モジュール マニフェスト内で、`PrivateData` プロパティには `PSData` サブプロパティがあります。</span><span class="sxs-lookup"><span data-stu-id="87692-167">Within the module manifest, the `PrivateData` property has a `PSData` sub-property.</span></span> <span data-ttu-id="87692-168">`PSData` の省略可能な `Tags` プロパティは、PowerShell ギャラリーに表示される値の配列を受け取ります。</span><span class="sxs-lookup"><span data-stu-id="87692-168">The optional `Tags` property of `PSData` takes an array of values that show up in PowerShell Gallery.</span></span> <span data-ttu-id="87692-169">PowerShell ギャラリーでは、次の互換性の値がサポートされています。</span><span class="sxs-lookup"><span data-stu-id="87692-169">The PowerShell Gallery supports the following compatibility values:</span></span>
+
+| <span data-ttu-id="87692-170">タグ</span><span class="sxs-lookup"><span data-stu-id="87692-170">Tag</span></span>               | <span data-ttu-id="87692-171">[説明]</span><span class="sxs-lookup"><span data-stu-id="87692-171">Description</span></span>                                |
 |-------------------|--------------------------------------------|
-| <span data-ttu-id="a627d-172">PSEdition_Core</span><span class="sxs-lookup"><span data-stu-id="a627d-172">PSEdition_Core</span></span>    | <span data-ttu-id="a627d-173">PowerShell Core 6 と互換性があります</span><span class="sxs-lookup"><span data-stu-id="a627d-173">Compatible with PowerShell Core 6</span></span>          |
-| <span data-ttu-id="a627d-174">PSEdition_Desktop</span><span class="sxs-lookup"><span data-stu-id="a627d-174">PSEdition_Desktop</span></span> | <span data-ttu-id="a627d-175">Windows PowerShell と互換性があります</span><span class="sxs-lookup"><span data-stu-id="a627d-175">Compatible with Windows PowerShell</span></span>         |
-| <span data-ttu-id="a627d-176">Windows</span><span class="sxs-lookup"><span data-stu-id="a627d-176">Windows</span></span>           | <span data-ttu-id="a627d-177">Windows と互換性があります</span><span class="sxs-lookup"><span data-stu-id="a627d-177">Compatible with Windows</span></span>                    |
-| <span data-ttu-id="a627d-178">Linux</span><span class="sxs-lookup"><span data-stu-id="a627d-178">Linux</span></span>             | <span data-ttu-id="a627d-179">Linux と互換性があります (特定のディストリビューションはなし)</span><span class="sxs-lookup"><span data-stu-id="a627d-179">Compatible with Linux (no specific distro)</span></span> |
-| <span data-ttu-id="a627d-180">macOS</span><span class="sxs-lookup"><span data-stu-id="a627d-180">macOS</span></span>             | <span data-ttu-id="a627d-181">macOS と互換性があります</span><span class="sxs-lookup"><span data-stu-id="a627d-181">Compatible with macOS</span></span>                      |
+| <span data-ttu-id="87692-172">PSEdition_Core</span><span class="sxs-lookup"><span data-stu-id="87692-172">PSEdition_Core</span></span>    | <span data-ttu-id="87692-173">PowerShell Core 6 と互換性があります</span><span class="sxs-lookup"><span data-stu-id="87692-173">Compatible with PowerShell Core 6</span></span>          |
+| <span data-ttu-id="87692-174">PSEdition_Desktop</span><span class="sxs-lookup"><span data-stu-id="87692-174">PSEdition_Desktop</span></span> | <span data-ttu-id="87692-175">Windows PowerShell と互換性があります</span><span class="sxs-lookup"><span data-stu-id="87692-175">Compatible with Windows PowerShell</span></span>         |
+| <span data-ttu-id="87692-176">Windows</span><span class="sxs-lookup"><span data-stu-id="87692-176">Windows</span></span>           | <span data-ttu-id="87692-177">Windows と互換性があります</span><span class="sxs-lookup"><span data-stu-id="87692-177">Compatible with Windows</span></span>                    |
+| <span data-ttu-id="87692-178">Linux</span><span class="sxs-lookup"><span data-stu-id="87692-178">Linux</span></span>             | <span data-ttu-id="87692-179">Linux と互換性があります (特定のディストリビューションはなし)</span><span class="sxs-lookup"><span data-stu-id="87692-179">Compatible with Linux (no specific distro)</span></span> |
+| <span data-ttu-id="87692-180">macOS</span><span class="sxs-lookup"><span data-stu-id="87692-180">macOS</span></span>             | <span data-ttu-id="87692-181">macOS と互換性があります</span><span class="sxs-lookup"><span data-stu-id="87692-181">Compatible with macOS</span></span>                      |
 
-<span data-ttu-id="a627d-182">例:</span><span class="sxs-lookup"><span data-stu-id="a627d-182">Example:</span></span>
+<span data-ttu-id="87692-182">例:</span><span class="sxs-lookup"><span data-stu-id="87692-182">Example:</span></span>
 
 ```powershell
 @{
@@ -254,6 +254,45 @@ FavoriteNumber FavoritePet
 }
 ```
 
+## <a name="dependency-on-native-libraries"></a><span data-ttu-id="87692-183">ネイティブ ライブラリに対する依存関係</span><span class="sxs-lookup"><span data-stu-id="87692-183">Dependency on Native Libraries</span></span>
+
+<span data-ttu-id="87692-184">さまざまなオペレーティング システムまたはプロセッサ アーキテクチャでの使用を目的としたモジュールは、それ自体が何らかのネイティブ ライブラリに依存するマネージド ライブラリに依存する場合があります。</span><span class="sxs-lookup"><span data-stu-id="87692-184">Modules intended for use across different operating systems or processor architectures may depend on a managed library that itself depends on some native libraries.</span></span>
+
+<span data-ttu-id="87692-185">PowerShell 7 より前では、マネージド ライブラリが正しく検出できるように、適切なネイティブ dll を読み込むためのカスタム コードを用意する必要がありました。</span><span class="sxs-lookup"><span data-stu-id="87692-185">Prior to PowerShell 7, one would have to have custom code to load the appropriate native dll so that the managed library can find it correctly.</span></span>
+
+<span data-ttu-id="87692-186">PowerShell 7 では、読み込まれるネイティブ バイナリは、[.NET RID カタログ][] 表記のサブセットに従って、マネージド ライブラリの場所内のサブフォルダー内で検索されます。</span><span class="sxs-lookup"><span data-stu-id="87692-186">With PowerShell 7, native binaries to load are searched in sub-folders within the managed library's location following a subset of the [.NET RID Catalog][] notation.</span></span>
+
+```
+managed.dll folder
+                |
+                |--- 'win-x64' folder
+                |       |--- native.dll
+                |
+                |--- 'win-x86' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm' folder
+                |       |--- native.dll
+                |
+                |--- 'win-arm64' folder
+                |       |--- native.dll
+                |
+                |--- 'linux-x64' folder
+                |       |--- native.so
+                |
+                |--- 'linux-x86' folder
+                |       |--- native.so
+                |
+                |--- 'linux-arm' folder
+                |       |--- native.so
+                |
+                |--- 'linux-arm64' folder
+                |       |--- native.so
+                |
+                |--- 'osx-x64' folder
+                |       |--- native.dylib
+```
+
 <!-- reference links -->
 [.NET Framework]: /dotnet/framework/
 [.NET Core]: /dotnet/core/
@@ -269,3 +308,5 @@ FavoriteNumber FavoritePet
 [PowerShell Gallery]: https://www.powershellgallery.com
 [.NET Portability Analyzer]: https://github.com/Microsoft/dotnet-apiport
 [CompatiblePSEditions]: /powershell/scripting/gallery/concepts/module-psedition-support
+[.NET RID カタログ]: https://docs.microsoft.com/dotnet/core/rid-catalog
+[.NET RID Catalog]: https://docs.microsoft.com/dotnet/core/rid-catalog
