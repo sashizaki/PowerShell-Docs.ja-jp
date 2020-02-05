@@ -8,28 +8,28 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9c754ac3-cee3-4c13-9bad-e499c8a68a09
 caps.latest.revision: 4
-ms.openlocfilehash: f5c48fd04c620828a6e99c5c5424d11b31fd10e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1c1b7f4cf56ea2f9e30438a60e7bee29d87b80ba
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367841"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995953"
 ---
-# <a name="how-to-add-a-see-also-section-to-a-provider-help-topic"></a><span data-ttu-id="7159d-102">プロバイダーのヘルプ トピックに関連項目を追加する方法</span><span class="sxs-lookup"><span data-stu-id="7159d-102">How to Add a See Also Section to a Provider Help Topic</span></span>
+# <a name="how-to-add-a-see-also-section-to-a-provider-help-topic"></a><span data-ttu-id="5c3d7-102">プロバイダーのヘルプ トピックに関連項目を追加する方法</span><span class="sxs-lookup"><span data-stu-id="5c3d7-102">How to Add a See Also Section to a Provider Help Topic</span></span>
 
-<span data-ttu-id="7159d-103">このセクションでは、プロバイダーヘルプトピックの **「関連項目」** セクションにデータを設定する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="7159d-103">This section explains how to populate the **SEE ALSO** section of a provider help topic.</span></span>
+<span data-ttu-id="5c3d7-103">このセクションでは、プロバイダーヘルプトピックの **「関連項目」** セクションにデータを設定する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-103">This section explains how to populate the **SEE ALSO** section of a provider help topic.</span></span>
 
-<span data-ttu-id="7159d-104">「関連項目」セクションは、プロバイダーに関連するトピックの一覧で構成され**て**います。また、ユーザーがプロバイダーをよりよく理解し、使用するために役立つ場合もあります。</span><span class="sxs-lookup"><span data-stu-id="7159d-104">The **SEE ALSO** section consists of a list of topics that are related to the provider or might help the user better understand and use the provider.</span></span> <span data-ttu-id="7159d-105">トピックの一覧には、Windows PowerShell のヘルプトピック (コマンドレットのヘルプ、プロバイダーのヘルプ、および概念説明の "about") を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="7159d-105">The topic list can include cmdlet help, provider help and conceptual ("about") help topics in Windows PowerShell.</span></span> <span data-ttu-id="7159d-106">また、現在のプロバイダーのヘルプトピックのオンラインバージョンを含む、書籍、紙、およびオンラインのトピックへの参照を含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="7159d-106">It can also include references to books, paper, and online topics, including an online version of the current provider help topic.</span></span>
+<span data-ttu-id="5c3d7-104">「関連項目」セクションは、プロバイダーに関連するトピックの一覧で構成され**て**います。また、ユーザーがプロバイダーをよりよく理解し、使用するために役立つ場合もあります。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-104">The **SEE ALSO** section consists of a list of topics that are related to the provider or might help the user better understand and use the provider.</span></span> <span data-ttu-id="5c3d7-105">トピックの一覧には、Windows PowerShell のヘルプトピック (コマンドレットのヘルプ、プロバイダーのヘルプ、および概念説明の "about") を含めることができます。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-105">The topic list can include cmdlet help, provider help and conceptual ("about") help topics in Windows PowerShell.</span></span> <span data-ttu-id="5c3d7-106">また、現在のプロバイダーのヘルプトピックのオンラインバージョンを含む、書籍、紙、およびオンラインのトピックへの参照を含めることもできます。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-106">It can also include references to books, paper, and online topics, including an online version of the current provider help topic.</span></span>
 
-<span data-ttu-id="7159d-107">オンライントピックを参照するときは、プレーンテキストで URI または検索語句を指定します。</span><span class="sxs-lookup"><span data-stu-id="7159d-107">When you refer to online topics, provide the URI or a search term in plain text.</span></span> <span data-ttu-id="7159d-108">`Get-Help` コマンドレットは、一覧のどのトピックにもリンクまたはリダイレクトしません。</span><span class="sxs-lookup"><span data-stu-id="7159d-108">The `Get-Help` cmdlet does not link or redirect to any of the topics in the list.</span></span> <span data-ttu-id="7159d-109">また、`Get-Help` コマンドレットの `Online` パラメーターは、プロバイダーのヘルプでは機能しません。</span><span class="sxs-lookup"><span data-stu-id="7159d-109">Also, the `Online` parameter of the `Get-Help` cmdlet does not work with provider help.</span></span>
+<span data-ttu-id="5c3d7-107">オンライントピックを参照するときは、プレーンテキストで URI または検索語句を指定します。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-107">When you refer to online topics, provide the URI or a search term in plain text.</span></span> <span data-ttu-id="5c3d7-108">`Get-Help` コマンドレットは、一覧のどのトピックにもリンクまたはリダイレクトしません。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-108">The `Get-Help` cmdlet does not link or redirect to any of the topics in the list.</span></span> <span data-ttu-id="5c3d7-109">また、`Get-Help` コマンドレットの `Online` パラメーターは、プロバイダーのヘルプでは機能しません。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-109">Also, the `Online` parameter of the `Get-Help` cmdlet does not work with provider help.</span></span>
 
-<span data-ttu-id="7159d-110">「関連項目」セクションは、`RelatedLinks` 要素とそれに含まれるタグから作成されます。</span><span class="sxs-lookup"><span data-stu-id="7159d-110">The See Also section is created from the `RelatedLinks` element and the tags that it contains.</span></span> <span data-ttu-id="7159d-111">タグを追加する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="7159d-111">The following XML shows how to add the tags.</span></span>
+<span data-ttu-id="5c3d7-110">「関連項目」セクションは、`RelatedLinks` 要素とそれに含まれるタグから作成されます。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-110">The See Also section is created from the `RelatedLinks` element and the tags that it contains.</span></span> <span data-ttu-id="5c3d7-111">タグを追加する方法を次の XML に示します。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-111">The following XML shows how to add the tags.</span></span>
 
-### <a name="to-add-see-also-topics"></a><span data-ttu-id="7159d-112">「関連項目」を追加するには</span><span class="sxs-lookup"><span data-stu-id="7159d-112">To Add "SEE ALSO" Topics</span></span>
+### <a name="to-add-see-also-topics"></a><span data-ttu-id="5c3d7-112">「関連項目」を追加するには</span><span class="sxs-lookup"><span data-stu-id="5c3d7-112">To Add "SEE ALSO" Topics</span></span>
 
-1. <span data-ttu-id="7159d-113">Dll-help ファイル*の `providerHelp`* 要素内に、`RelatedLinks` 要素を追加します。</span><span class="sxs-lookup"><span data-stu-id="7159d-113">In the *AssemblyName*.dll-help.xml file, within the `providerHelp` element, add a `RelatedLinks` element.</span></span> <span data-ttu-id="7159d-114">`RelatedLinks` 要素は、`providerHelp` 要素の最後の要素である必要があります。</span><span class="sxs-lookup"><span data-stu-id="7159d-114">The `RelatedLinks` element should be the last element in the `providerHelp` element.</span></span> <span data-ttu-id="7159d-115">各プロバイダーヘルプトピックでは、`RelatedLinks` 要素が1つだけ許可されます。</span><span class="sxs-lookup"><span data-stu-id="7159d-115">Only one `RelatedLinks` element is permitted in each provider help topic.</span></span>
+1. <span data-ttu-id="5c3d7-113">Dll-help ファイル*の `providerHelp`* 要素内に、`RelatedLinks` 要素を追加します。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-113">In the *AssemblyName*.dll-help.xml file, within the `providerHelp` element, add a `RelatedLinks` element.</span></span> <span data-ttu-id="5c3d7-114">`RelatedLinks` 要素は、`providerHelp` 要素の最後の要素である必要があります。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-114">The `RelatedLinks` element should be the last element in the `providerHelp` element.</span></span> <span data-ttu-id="5c3d7-115">各プロバイダーヘルプトピックでは、`RelatedLinks` 要素が1つだけ許可されます。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-115">Only one `RelatedLinks` element is permitted in each provider help topic.</span></span>
 
-   <span data-ttu-id="7159d-116">たとえば、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="7159d-116">For example:</span></span>
+   <span data-ttu-id="5c3d7-116">たとえば次のようになります。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-116">For example:</span></span>
 
     ```xml
     <providerHelp>
@@ -38,9 +38,9 @@ ms.locfileid: "72367841"
     </providerHelp>
     ```
 
-2. <span data-ttu-id="7159d-117">**「関連**項目」セクションの各トピックについて、`RelatedLinks` 要素内に `navigationLink` 要素を追加します。</span><span class="sxs-lookup"><span data-stu-id="7159d-117">For each topic in the **SEE ALSO** section, within the `RelatedLinks` element, add a `navigationLink` element.</span></span> <span data-ttu-id="7159d-118">次に、各 `navigationLink` 要素内に、1つの `linkText` 要素と1つの `uri` 要素を追加します。</span><span class="sxs-lookup"><span data-stu-id="7159d-118">Then, within each `navigationLink` element, add one `linkText` element and one `uri` element.</span></span> <span data-ttu-id="7159d-119">`uri` 要素を使用していない場合は、空の要素 (\<uri/>) として追加できます。</span><span class="sxs-lookup"><span data-stu-id="7159d-119">If you are not using the `uri` element, you can add it as an empty element (\<uri/>).</span></span>
+2. <span data-ttu-id="5c3d7-117">**「関連**項目」セクションの各トピックについて、`RelatedLinks` 要素内に `navigationLink` 要素を追加します。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-117">For each topic in the **SEE ALSO** section, within the `RelatedLinks` element, add a `navigationLink` element.</span></span> <span data-ttu-id="5c3d7-118">次に、各 `navigationLink` 要素内に、1つの `linkText` 要素と1つの `uri` 要素を追加します。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-118">Then, within each `navigationLink` element, add one `linkText` element and one `uri` element.</span></span> <span data-ttu-id="5c3d7-119">`uri` 要素を使用していない場合は、空の要素 (\<uri/>) として追加できます。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-119">If you are not using the `uri` element, you can add it as an empty element (\<uri/>).</span></span>
 
-   <span data-ttu-id="7159d-120">たとえば、次のようになります。</span><span class="sxs-lookup"><span data-stu-id="7159d-120">For example:</span></span>
+   <span data-ttu-id="5c3d7-120">たとえば次のようになります。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-120">For example:</span></span>
 
     ```xml
     <providerHelp>
@@ -53,9 +53,9 @@ ms.locfileid: "72367841"
     </providerHelp>
     ```
 
-3. <span data-ttu-id="7159d-121">`linkText` タグの間のトピック名を入力します。</span><span class="sxs-lookup"><span data-stu-id="7159d-121">Type the topic name between the `linkText` tags.</span></span> <span data-ttu-id="7159d-122">URI を指定する場合は、`uri` タグの間に入力します。</span><span class="sxs-lookup"><span data-stu-id="7159d-122">If you are providing a URI, type it between the `uri` tags.</span></span> <span data-ttu-id="7159d-123">現在のプロバイダーのヘルプトピックのオンラインバージョンを示すには、`linkText` タグの間に、トピック名の代わりに「Online version:」と入力します。</span><span class="sxs-lookup"><span data-stu-id="7159d-123">To indicate the online version of the current provider help topic, between the `linkText` tags, type "Online version:" instead of the topic name.</span></span> <span data-ttu-id="7159d-124">通常、"オンラインバージョン:" リンクは、「関連項目」の一覧の最初のトピックです。</span><span class="sxs-lookup"><span data-stu-id="7159d-124">Typically, the "Online version:" link is the first topic in the SEE ALSO topic list.</span></span>
+3. <span data-ttu-id="5c3d7-121">`linkText` タグの間のトピック名を入力します。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-121">Type the topic name between the `linkText` tags.</span></span> <span data-ttu-id="5c3d7-122">URI を指定する場合は、`uri` タグの間に入力します。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-122">If you are providing a URI, type it between the `uri` tags.</span></span> <span data-ttu-id="5c3d7-123">現在のプロバイダーのヘルプトピックのオンラインバージョンを示すには、`linkText` タグの間に、トピック名の代わりに「Online version:」と入力します。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-123">To indicate the online version of the current provider help topic, between the `linkText` tags, type "Online version:" instead of the topic name.</span></span> <span data-ttu-id="5c3d7-124">通常、"オンラインバージョン:" リンクは、「関連項目」の一覧の最初のトピックです。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-124">Typically, the "Online version:" link is the first topic in the SEE ALSO topic list.</span></span>
 
-   <span data-ttu-id="7159d-125">次の例には、3つのトピックも含まれています。</span><span class="sxs-lookup"><span data-stu-id="7159d-125">The following example include three SEE ALSO topics.</span></span> <span data-ttu-id="7159d-126">最初のは、現在のトピックのオンラインバージョンを参照します。</span><span class="sxs-lookup"><span data-stu-id="7159d-126">The first refer to the online version of the current topic.</span></span> <span data-ttu-id="7159d-127">2番目のコマンドレットは、Windows PowerShell コマンドレットのヘルプトピックを参照します。</span><span class="sxs-lookup"><span data-stu-id="7159d-127">The second refers to a Windows PowerShell cmdlet help topic.</span></span> <span data-ttu-id="7159d-128">3番目のトピックでは、別のオンライントピックを参照します。</span><span class="sxs-lookup"><span data-stu-id="7159d-128">The third refers to another online topic.</span></span>
+   <span data-ttu-id="5c3d7-125">次の例には、3つのトピックも含まれています。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-125">The following example include three SEE ALSO topics.</span></span> <span data-ttu-id="5c3d7-126">最初のは、現在のトピックのオンラインバージョンを参照します。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-126">The first refer to the online version of the current topic.</span></span> <span data-ttu-id="5c3d7-127">2番目のコマンドレットは、Windows PowerShell コマンドレットのヘルプトピックを参照します。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-127">The second refers to a Windows PowerShell cmdlet help topic.</span></span> <span data-ttu-id="5c3d7-128">3番目のトピックでは、別のオンライントピックを参照します。</span><span class="sxs-lookup"><span data-stu-id="5c3d7-128">The third refers to another online topic.</span></span>
 
     ```xml
     <providerHelp>
@@ -70,7 +70,7 @@ ms.locfileid: "72367841"
             </navigationLink>
             <navigationLink>
                 <linkText> Windows PowerShell Getting Started Guide </linkText>
-                <uri>http://go.microsoft.com/fwlink/?LinkID=89597<uri/>
+                <uri>https://go.microsoft.com/fwlink/?LinkID=89597<uri/>
             </navigationLink>
         </RelatedLinks>
     </providerHelp>

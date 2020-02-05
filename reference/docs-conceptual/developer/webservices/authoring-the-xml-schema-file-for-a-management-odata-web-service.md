@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
-ms.openlocfilehash: a806d012097d107b6cc35710b9a93f2b27dd1ace
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b830571418fe75bbfc68df02f20a6012efefd99a
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359801"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76996068"
 ---
-# <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="318e5-102">Management OData Web サービスの XML スキーマ ファイルを作成する</span><span class="sxs-lookup"><span data-stu-id="318e5-102">Authoring the XML schema file for a Management OData web service</span></span>
+# <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a><span data-ttu-id="d9e73-102">Management OData Web サービスの XML スキーマ ファイルを作成する</span><span class="sxs-lookup"><span data-stu-id="d9e73-102">Authoring the XML schema file for a Management OData web service</span></span>
 
-<span data-ttu-id="318e5-103">Web サービスが公開するリソース (「 [Management OData web サービスの MOF スキーマファイルの作成](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)」を参照) を定義した後、リソース[マッピングスキーマ](./resource-mapping-schema.md)に準拠した XML ファイルを作成することにより、各リソースに対してサポートされている操作を実装する、基になる Windows PowerShell コマンドレットにそれらのリソースをマップします。</span><span class="sxs-lookup"><span data-stu-id="318e5-103">After you define the resources your web service will expose (see [Authoring the MOF schema file for a Management OData web service](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)), you map those resources to the underlying Windows PowerShell cmdlets that implement the supported operations for each resource by creating an XML file that conforms to the [Resource Mapping Schema](./resource-mapping-schema.md).</span></span> <span data-ttu-id="318e5-104">また、この XML ファイルは、クライアントがリソースにアクセスするために使用する Url を指定します。</span><span class="sxs-lookup"><span data-stu-id="318e5-104">The XML file also specifies the URLs that are used by the client to access the resources.</span></span>
+<span data-ttu-id="d9e73-103">Web サービスが公開するリソース (「 [Management OData web サービスの MOF スキーマファイルの作成](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)」を参照) を定義した後、リソース[マッピングスキーマ](./resource-mapping-schema.md)に準拠した XML ファイルを作成することにより、各リソースに対してサポートされている操作を実装する、基になる Windows PowerShell コマンドレットにそれらのリソースをマップします。</span><span class="sxs-lookup"><span data-stu-id="d9e73-103">After you define the resources your web service will expose (see [Authoring the MOF schema file for a Management OData web service](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)), you map those resources to the underlying Windows PowerShell cmdlets that implement the supported operations for each resource by creating an XML file that conforms to the [Resource Mapping Schema](./resource-mapping-schema.md).</span></span> <span data-ttu-id="d9e73-104">また、この XML ファイルは、クライアントがリソースにアクセスするために使用する Url を指定します。</span><span class="sxs-lookup"><span data-stu-id="d9e73-104">The XML file also specifies the URLs that are used by the client to access the resources.</span></span>
 
-## <a name="mappng-resources-to-urls"></a><span data-ttu-id="318e5-105">Url へのリソースの Mappng</span><span class="sxs-lookup"><span data-stu-id="318e5-105">Mappng resources to URLs</span></span>
+## <a name="mappng-resources-to-urls"></a><span data-ttu-id="d9e73-105">Url へのリソースの Mappng</span><span class="sxs-lookup"><span data-stu-id="d9e73-105">Mappng resources to URLs</span></span>
 
-<span data-ttu-id="318e5-106">XML ファイルの最初の部分は、MOF スキーマファイルで定義されているリソースを、それらへのアクセスに使用される Url にマップします。</span><span class="sxs-lookup"><span data-stu-id="318e5-106">The first part of the XML file maps the resources defined in the MOF schema file to the URLs that are used to access them.</span></span> <span data-ttu-id="318e5-107">次の例は、そのマッピングを示しています。</span><span class="sxs-lookup"><span data-stu-id="318e5-107">The following example shows that mapping.</span></span>
+<span data-ttu-id="d9e73-106">XML ファイルの最初の部分は、MOF スキーマファイルで定義されているリソースを、それらへのアクセスに使用される Url にマップします。</span><span class="sxs-lookup"><span data-stu-id="d9e73-106">The first part of the XML file maps the resources defined in the MOF schema file to the URLs that are used to access them.</span></span> <span data-ttu-id="d9e73-107">次の例は、そのマッピングを示しています。</span><span class="sxs-lookup"><span data-stu-id="d9e73-107">The following example shows that mapping.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
-<ResourceMetadata xmlns="http://schemas.microsoft.com/powershell-web-services/2010/09">
+<ResourceMetadata xmlns="https://schemas.microsoft.com/powershell-web-services/2010/09">
     <SchemaNamespace>PswsTest</SchemaNamespace>
     <ContainerName>PSWSEntityContainer</ContainerName>
     <Resources>
@@ -40,18 +40,18 @@ ms.locfileid: "72359801"
     </Resources>
 ```
 
-## <a name="mapping-cmdlets-to-crud-operations"></a><span data-ttu-id="318e5-108">コマンドレットを CRUD 操作にマッピングする</span><span class="sxs-lookup"><span data-stu-id="318e5-108">Mapping cmdlets to CRUD operations</span></span>
+## <a name="mapping-cmdlets-to-crud-operations"></a><span data-ttu-id="d9e73-108">コマンドレットを CRUD 操作にマッピングする</span><span class="sxs-lookup"><span data-stu-id="d9e73-108">Mapping cmdlets to CRUD operations</span></span>
 
-<span data-ttu-id="318e5-109">次に、リソースがサポートする CRUD (作成、読み取り、更新、および削除) 操作に対応するコマンドレットを指定します。</span><span class="sxs-lookup"><span data-stu-id="318e5-109">You then specify the cmdlets that correspond to the CRUD (create, read, update, and delete) operations that the resources support.</span></span> <span data-ttu-id="318e5-110">Management OData[リソースマッピングスキーマ](./resource-mapping-schema.md)では、CRUD 操作は次のようにマップされます。</span><span class="sxs-lookup"><span data-stu-id="318e5-110">In the Management OData [Resource Mapping Schema](./resource-mapping-schema.md), the CRUD operations are mapped as follows.</span></span>
+<span data-ttu-id="d9e73-109">次に、リソースがサポートする CRUD (作成、読み取り、更新、および削除) 操作に対応するコマンドレットを指定します。</span><span class="sxs-lookup"><span data-stu-id="d9e73-109">You then specify the cmdlets that correspond to the CRUD (create, read, update, and delete) operations that the resources support.</span></span> <span data-ttu-id="d9e73-110">Management OData[リソースマッピングスキーマ](./resource-mapping-schema.md)では、CRUD 操作は次のようにマップされます。</span><span class="sxs-lookup"><span data-stu-id="d9e73-110">In the Management OData [Resource Mapping Schema](./resource-mapping-schema.md), the CRUD operations are mapped as follows.</span></span>
 
-|<span data-ttu-id="318e5-111">CRUD コマンド</span><span class="sxs-lookup"><span data-stu-id="318e5-111">CRUD command</span></span>|<span data-ttu-id="318e5-112">XML 要素</span><span class="sxs-lookup"><span data-stu-id="318e5-112">XML element</span></span>|
+|<span data-ttu-id="d9e73-111">CRUD コマンド</span><span class="sxs-lookup"><span data-stu-id="d9e73-111">CRUD command</span></span>|<span data-ttu-id="d9e73-112">XML 要素</span><span class="sxs-lookup"><span data-stu-id="d9e73-112">XML element</span></span>|
 |------------------|-----------------|
-|<span data-ttu-id="318e5-113">作成</span><span class="sxs-lookup"><span data-stu-id="318e5-113">Create</span></span>|<span data-ttu-id="318e5-114">作成</span><span class="sxs-lookup"><span data-stu-id="318e5-114">Create</span></span>|
-|<span data-ttu-id="318e5-115">読み取り</span><span class="sxs-lookup"><span data-stu-id="318e5-115">Read</span></span>|<span data-ttu-id="318e5-116">クエリ</span><span class="sxs-lookup"><span data-stu-id="318e5-116">Query</span></span>|
-|<span data-ttu-id="318e5-117">更新プログラム、更新</span><span class="sxs-lookup"><span data-stu-id="318e5-117">Update</span></span>|<span data-ttu-id="318e5-118">更新プログラム、更新</span><span class="sxs-lookup"><span data-stu-id="318e5-118">Update</span></span>|
-|<span data-ttu-id="318e5-119">削除</span><span class="sxs-lookup"><span data-stu-id="318e5-119">Delete</span></span>|<span data-ttu-id="318e5-120">削除</span><span class="sxs-lookup"><span data-stu-id="318e5-120">Delete</span></span>|
+|<span data-ttu-id="d9e73-113">作成</span><span class="sxs-lookup"><span data-stu-id="d9e73-113">Create</span></span>|<span data-ttu-id="d9e73-114">作成</span><span class="sxs-lookup"><span data-stu-id="d9e73-114">Create</span></span>|
+|<span data-ttu-id="d9e73-115">読み取り</span><span class="sxs-lookup"><span data-stu-id="d9e73-115">Read</span></span>|<span data-ttu-id="d9e73-116">クエリ</span><span class="sxs-lookup"><span data-stu-id="d9e73-116">Query</span></span>|
+|<span data-ttu-id="d9e73-117">更新プログラム、更新</span><span class="sxs-lookup"><span data-stu-id="d9e73-117">Update</span></span>|<span data-ttu-id="d9e73-118">更新プログラム、更新</span><span class="sxs-lookup"><span data-stu-id="d9e73-118">Update</span></span>|
+|<span data-ttu-id="d9e73-119">削除</span><span class="sxs-lookup"><span data-stu-id="d9e73-119">Delete</span></span>|<span data-ttu-id="d9e73-120">削除</span><span class="sxs-lookup"><span data-stu-id="d9e73-120">Delete</span></span>|
 
-<span data-ttu-id="318e5-121">次の例は、`Service` リソースに対する作成、読み取り、および更新の各操作のマッピングを示しています。</span><span class="sxs-lookup"><span data-stu-id="318e5-121">The following example shows the mappings for the Create, Read, and Update operations on the `Service` resource.</span></span>
+<span data-ttu-id="d9e73-121">次の例は、`Service` リソースに対する作成、読み取り、および更新の各操作のマッピングを示しています。</span><span class="sxs-lookup"><span data-stu-id="d9e73-121">The following example shows the mappings for the Create, Read, and Update operations on the `Service` resource.</span></span>
 
 ```xml
 <ClassImplementations>
@@ -157,10 +157,10 @@ ms.locfileid: "72359801"
         </Class>
 ```
 
-## <a name="see-also"></a><span data-ttu-id="318e5-122">参照</span><span class="sxs-lookup"><span data-stu-id="318e5-122">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d9e73-122">関連項目</span><span class="sxs-lookup"><span data-stu-id="d9e73-122">See Also</span></span>
 
-[<span data-ttu-id="318e5-123">管理用の OData web サービスの MOF スキーマファイルを作成する</span><span class="sxs-lookup"><span data-stu-id="318e5-123">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[<span data-ttu-id="d9e73-123">管理用の OData web サービスの MOF スキーマファイルを作成する</span><span class="sxs-lookup"><span data-stu-id="d9e73-123">Authoring the MOF schema file for a Management OData web service</span></span>](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[<span data-ttu-id="318e5-124">リソースマッピングスキーマ</span><span class="sxs-lookup"><span data-stu-id="318e5-124">Resource Mapping Schema</span></span>](./resource-mapping-schema.md)
+[<span data-ttu-id="d9e73-124">リソースマッピングスキーマ</span><span class="sxs-lookup"><span data-stu-id="d9e73-124">Resource Mapping Schema</span></span>](./resource-mapping-schema.md)
 
-[<span data-ttu-id="318e5-125">管理 OData Web サービスの作成</span><span class="sxs-lookup"><span data-stu-id="318e5-125">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
+[<span data-ttu-id="d9e73-125">管理 OData Web サービスの作成</span><span class="sxs-lookup"><span data-stu-id="d9e73-125">Creating a Management OData Web Service</span></span>](./creating-a-management-odata-web-service.md)
