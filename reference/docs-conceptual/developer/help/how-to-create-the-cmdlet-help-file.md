@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
-ms.openlocfilehash: 08e05939f8aee42f2cd502a3da7a528d8460dec1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 186a8ceecea47564503dc181a76cc314033b6d3f
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361201"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76996045"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>コマンドレットのヘルプ ファイルを作成する方法
 
@@ -36,7 +36,7 @@ ms.locfileid: "72361201"
 
    次の表に、各ノードの XML 要素と各ノードの説明を示します。
 
-   |ノード|[説明]|
+   |Node|Description|
    |----------|-----------------|
    |`<details>`|コマンドレットのヘルプトピックの [名前] セクションと [概要] セクションの内容を追加します。 詳細については、「[コマンドレット名と概要の追加方法](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)」を参照してください。|
    |`<maml:description>`|コマンドレットのヘルプトピックの [説明] セクションの内容を追加します。 詳細については、[コマンドレットのヘルプトピックの「詳細な説明を追加する方法](./how-to-add-a-cmdlet-description.md)」を参照してください。|
@@ -54,9 +54,9 @@ ms.locfileid: "72361201"
 
 ```xml
 <command:command
-  xmlns:maml="http://schemas.microsoft.com/maml/2004/10"
-  xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10"
-  xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+  xmlns:maml="https://schemas.microsoft.com/maml/2004/10"
+  xmlns:command="https://schemas.microsoft.com/maml/dev/command/2004/10"
+  xmlns:dev="https://schemas.microsoft.com/maml/dev/2004/10">
   <command:details>
     <!--Add name an synopsis here-->
   </command:details>
@@ -87,7 +87,7 @@ ms.locfileid: "72361201"
 </command:command>
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
  [コマンドレット名と概要を追加する方法](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)
 

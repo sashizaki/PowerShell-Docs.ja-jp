@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3204599c-7159-47aa-82ec-4a476f461027
 caps.latest.revision: 7
-ms.openlocfilehash: 5c5707d1c533e0498c6794b60f4499e530e25813
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cf181e8f26ebd4b9c57b5b0191809211f2471f13
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360661"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995582"
 ---
 # <a name="supporting-online-help"></a>オンライン ヘルプのサポート
 
@@ -56,7 +56,7 @@ Get-Help Invoke-Command -Online
 <maml:relatedLinks>
     <maml:navigationLink>
         <maml:linkText>Online version:</maml:linkText>
-        <maml:uri>http://go.microsoft.com/fwlink/?LinkID=113279</maml:uri>
+        <maml:uri>https://go.microsoft.com/fwlink/?LinkID=113279</maml:uri>
     </maml:navigationLink>
     <maml:navigationLink>
         <maml:linkText>about_History</maml:linkText>
@@ -76,7 +76,7 @@ Get-Help Invoke-Command -Online
 次のコードは、`Get-History` コマンドレットクラスのすべての属性を示しています。
 
 ```
-[Cmdlet(VerbsCommon.Get, "History", HelpUri = "http://go.microsoft.com/fwlink/?LinkID=001122")]
+[Cmdlet(VerbsCommon.Get, "History", HelpUri = "https://go.microsoft.com/fwlink/?LinkID=001122")]
 ```
 
 ### <a name="adding-a-helpuri-property-to-an-advanced-function"></a>高度な関数へのプロパティの追加
@@ -89,7 +89,7 @@ Get-Help Invoke-Command -Online
 
 function New-Calendar {
     [CmdletBinding(SupportsShouldProcess=$true,
-    HelpURI="http://go.microsoft.com/fwlink/?LinkID=01122")]
+    HelpURI="https://go.microsoft.com/fwlink/?LinkID=01122")]
 ```
 
 ### <a name="adding-a-helpuri-attribute-to-a-cim-command"></a>CIM コマンドへの属性の追加
@@ -99,7 +99,7 @@ CIM コマンドの**場合は、** CDXML ファイル内のコマンド**レッ
 次のコードは、開始-デバッグ CIM コマンドのすべての属性を示しています。
 
 ```
-<CmdletMetadata Verb="Debug" HelpUri="http://go.microsoft.com/fwlink/?LinkID=001122"/>
+<CmdletMetadata Verb="Debug" HelpUri="https://go.microsoft.com/fwlink/?LinkID=001122"/>
 ```
 
 ### <a name="adding-a-helpuri-attribute-to-a-workflow"></a>ワークフローへの属性の追加
@@ -112,5 +112,5 @@ Windows PowerShell 言語で記述されたワークフローの場合は、を�
 次のコードは、を示しています。ワークフローファイル内の ExternalHelp ディレクティブ。
 
 ```powershell
-# .ExternalHelp "http://go.microsoft.com/fwlink/?LinkID=138338"
+# .ExternalHelp "https://go.microsoft.com/fwlink/?LinkID=138338"
 ```

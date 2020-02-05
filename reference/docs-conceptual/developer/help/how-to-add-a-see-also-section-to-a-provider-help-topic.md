@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9c754ac3-cee3-4c13-9bad-e499c8a68a09
 caps.latest.revision: 4
-ms.openlocfilehash: f5c48fd04c620828a6e99c5c5424d11b31fd10e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1c1b7f4cf56ea2f9e30438a60e7bee29d87b80ba
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367841"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995953"
 ---
 # <a name="how-to-add-a-see-also-section-to-a-provider-help-topic"></a>プロバイダーのヘルプ トピックに関連項目を追加する方法
 
@@ -29,7 +29,7 @@ ms.locfileid: "72367841"
 
 1. Dll-help ファイル*の `providerHelp`* 要素内に、`RelatedLinks` 要素を追加します。 `RelatedLinks` 要素は、`providerHelp` 要素の最後の要素である必要があります。 各プロバイダーヘルプトピックでは、`RelatedLinks` 要素が1つだけ許可されます。
 
-   たとえば、次のようになります。
+   たとえば次のようになります。
 
     ```xml
     <providerHelp>
@@ -40,7 +40,7 @@ ms.locfileid: "72367841"
 
 2. **「関連**項目」セクションの各トピックについて、`RelatedLinks` 要素内に `navigationLink` 要素を追加します。 次に、各 `navigationLink` 要素内に、1つの `linkText` 要素と1つの `uri` 要素を追加します。 `uri` 要素を使用していない場合は、空の要素 (\<uri/>) として追加できます。
 
-   たとえば、次のようになります。
+   たとえば次のようになります。
 
     ```xml
     <providerHelp>
@@ -70,7 +70,7 @@ ms.locfileid: "72367841"
             </navigationLink>
             <navigationLink>
                 <linkText> Windows PowerShell Getting Started Guide </linkText>
-                <uri>http://go.microsoft.com/fwlink/?LinkID=89597<uri/>
+                <uri>https://go.microsoft.com/fwlink/?LinkID=89597<uri/>
             </navigationLink>
         </RelatedLinks>
     </providerHelp>

@@ -2,18 +2,18 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC の PackageManagement リソース
-ms.openlocfilehash: dfc23bfabbc45041e15c56a29a77c5bdda430a30
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 28ae8772170bd4559c8a19c3a1df8c9118734857
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71953239"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995975"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC の PackageManagement リソース
 
 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0、Windows PowerShell 5.1
 
-Windows PowerShell Desired State Configuration (DSC) の **PackageManagement** リソースは、ターゲット ノードで Package Management パッケージをインストールまたはアンインストールするメカニズムを備えています。 このリソースには **PackageManagement** モジュールが必要です。これは、[http://PowerShellGallery.com](https://PowerShellGallery.com) から入手できます。
+Windows PowerShell Desired State Configuration (DSC) の **PackageManagement** リソースは、ターゲット ノードで Package Management パッケージをインストールまたはアンインストールするメカニズムを備えています。 このリソースには **PackageManagement** モジュールが必要です。これは、[https://PowerShellGallery.com](https://PowerShellGallery.com) から入手できます。
 
 > [!IMPORTANT]
 > **PackageManagement** モジュールは、次のプロパティ情報が適切であるようにバージョン 1.1.7.0 以降である必要があります。
@@ -37,31 +37,31 @@ PackageManagement [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
-|プロパティ |説明 |
+|プロパティ |[説明] |
 |---|---|
-|名前 |インストールまたはアンインストールするパッケージの名前を指定します。 |
+|Name |インストールまたはアンインストールするパッケージの名前を指定します。 |
 |AdditionalParameters |`Get-Package -AdditionalArguments` に渡されるパラメーターのプロバイダー固有のハッシュ テーブル。 たとえば、NuGet プロバイダーでは DestinationPath のような追加のパラメーターを渡すことができます。 |
 |MaximumVersion |検索するパッケージで許容される最大バージョンを指定します。 このパラメーターを追加しない場合、リソースでは利用できるパッケージの最新バージョンが検索されます。 |
 |MinimumVersion |検索するパッケージで許容される最小バージョンを指定します。 このパラメーターを追加しない場合、**MaximumVersion** パラメーターで指定された最大バージョンも満たす、パッケージで利用可能な最新バージョンがリソースによって検索されます。 |
 |ProviderName |パッケージの検索先となるパッケージ プロバイダー名を指定します。 `Get-PackageProvider` コマンドレットを実行して、パッケージ プロバイダー名を取得できます。 |
 |RequiredVersion |インストールするパッケージの正確なバージョンを指定します。 このパラメーターを指定しない場合、**MaximumVersion** パラメーターで指定された最大バージョンも満たす、パッケージで利用可能な最新バージョンがこの DSC リソースによってインストールされます。 |
-|ソース |パッケージのあるパッケージ ソースの名前を指定します。 これは、URI か、`Register-PackageSource` または PackageManagementSource の DSC リソースに登録されたソースのどちらかになります。 |
+|source |パッケージのあるパッケージ ソースの名前を指定します。 これは、URI か、`Register-PackageSource` または PackageManagementSource の DSC リソースに登録されたソースのどちらかになります。 |
 |SourceCredential |指定したパッケージ プロバイダーまたはソースのパッケージをインストールする権限を持つユーザー アカウントを指定します。 |
 
 ## <a name="additional-parameters"></a>追加のパラメーター
 
 次の表は、AdditionalParameters プロパティのオプションを示しています。
 
-|パラメーター |説明 |
+|パラメーター |[説明] |
 |---|---|
 |DestinationPath |組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージをインストールするファイルの場所を指定します。 |
 |InstallationPolicy |組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージのソースを信頼するかどうかを決定します。 つぎのいずれかです。**Untrusted** または **Trusted**。 |
 
 ## <a name="common-properties"></a>共通プロパティ
 
-|プロパティ |説明 |
+|プロパティ |[説明] |
 |---|---|
 |DependsOn |このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が ResourceName で、そのタイプが ResourceType である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。 |
 |Ensure |パッケージをインストールまたはアンインストールするかどうかを決定します。 既定値は **Present** です。 |

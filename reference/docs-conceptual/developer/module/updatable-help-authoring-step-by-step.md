@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 10098160-c6b4-4339-b8ff-2c4f8cc0699b
 caps.latest.revision: 13
-ms.openlocfilehash: fbc77cc0fafce93d239da1c459d4b761b21ef3cb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a5290265f3d729504983b95195c793b88c4a2613
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366991"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995981"
 ---
 # <a name="updatable-help-authoring-step-by-step"></a>更新可能なヘルプの作成: ステップ バイ ステップ
 
@@ -33,14 +33,14 @@ ms.locfileid: "72366991"
 
 **Helpinfouri**キーをモジュールマニフェストに追加します。 キーの値は、モジュールの HelpInfo XML 情報ファイルの場所の Uniform Resource Identifier (URI) です。 セキュリティのため、アドレスは "http" または "https" で始まる必要があります。 URI にはインターネットの場所を指定する必要がありますが、HelpInfo XML ファイル名を含めることはできません。
 
-たとえば、次のようになります。
+たとえば次のようになります。
 
 ```powershell
 
 @{
 RootModule = TestModule.psm1
 ModuleVersion = '2.0'
-HelpInfoURI = 'http://go.microsoft.com/fwlink/?LinkID=0123'
+HelpInfoURI = 'https://go.microsoft.com/fwlink/?LinkID=0123'
 }
 ```
 
