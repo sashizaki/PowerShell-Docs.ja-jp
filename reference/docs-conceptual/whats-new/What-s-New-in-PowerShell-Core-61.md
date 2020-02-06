@@ -2,19 +2,18 @@
 title: PowerShell Core 6.1 の新機能
 description: PowerShell Core 6.1 でリリースされた新機能と変更
 ms.date: 09/13/2018
-ms.openlocfilehash: 3d836a24b494df9c7f6ebe994386e2a0297521fa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 531259217f2b71213776e7d394616c7790e9aca9
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62086138"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995516"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 の新機能
 
 以下では、PowerShell Core 6.1 で導入された主要な新機能と変更点からいくつか選んで説明します。
 
-PowerShell をさらに速く安定したものにする**数多くの** "細かな新機能と変更" (それに多数のバグ修正) が他にもあります。
-すべての変更点のリストについては、[GitHub の変更ログ](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md)に関するページを確認してください。
+PowerShell をさらに速く安定したものにする**数多くの** "細かな新機能と変更" (それに多数のバグ修正) が他にもあります。 すべての変更点のリストについては、[GitHub の変更ログ](https://github.com/PowerShell/PowerShell/blob/master/CHANGELOG.md)に関するページを確認してください。
 
 以下では何人かの名前を挙げていますが、このリリースを可能にしてくれた[コミュニティのすべての共同作成者](https://github.com/PowerShell/PowerShell/graphs/contributors)に感謝します。
 
@@ -37,13 +36,11 @@ Windows 互換機能パックにより、PowerShell Core では **Windows 10 Oct
 
 ## <a name="support-for-application-whitelisting"></a>アプリケーション ホワイトリストのサポート
 
-PowerShell Core 6.1 では、Windows PowerShell 5.1 と同じように、[AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) および [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) のアプリケーション ホワイトリストをサポートします。
-アプリケーション ホワイトリストを使用すると、PowerShell の[制約付き言語モード](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)で実行できるバイナリを細かく制御できます。
+PowerShell Core 6.1 では、Windows PowerShell 5.1 と同じように、[AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) および [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) のアプリケーション ホワイトリストをサポートします。 アプリケーション ホワイトリストを使用すると、PowerShell の[制約付き言語モード](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)で実行できるバイナリを細かく制御できます。
 
 ## <a name="performance-improvements"></a>パフォーマンスの向上
 
-PowerShell Core 6.0 では、いくつか大きなパフォーマンス向上が行われます。
-PowerShell Core 6.1 では引き続き、特定の操作の速度向上が行われています。
+PowerShell Core 6.0 では、いくつか大きなパフォーマンス向上が行われます。 PowerShell Core 6.1 では引き続き、特定の操作の速度向上が行われています。
 
 たとえば、`Group-Object` の速度は 66% 向上しました。
 
@@ -54,7 +51,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Group-O
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | 時間 (秒)   | 25.178                 | 19.653              | 6.641               |
-| 高速化 (%) | なし                    | 21.9%               | 66.2%               |
+| 高速化 (%) | 該当なし                    | 21.9%               | 66.2%               |
 
 同様に、次のような並べ替えのシナリオが 15% 以上向上しています。
 
@@ -65,7 +62,7 @@ Measure-Command { 1..100000 | % {Get-Random -Minimum 1 -Maximum 10000} | Sort-Ob
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1 |
 |--------------|------------------------|---------------------|---------------------|
 | 時間 (秒)   | 12.170                 | 8.493               | 7.08                |
-| 高速化 (%) | なし                    | 30.2%               | 16.6%               |
+| 高速化 (%) | 該当なし                    | 30.2%               | 16.6%               |
 
 また、`Import-Csv` は Windows PowerShell からの後退の後で大幅に高速化されました。
 次の例では、26,616 行 6 列のテスト用 CSV を使用しています。
@@ -77,7 +74,7 @@ Measure-Command {$a = Import-Csv foo.csv}
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
 | 時間 (秒)   | 0.441                  | 1.069               | 0.268                  |
-| 高速化 (%) | なし                    | -142.4%             | 74.9% (WPS から 39.2%) |
+| 高速化 (%) | 該当なし                    | -142.4%             | 74.9% (WPS から 39.2%) |
 
 最後に、JSON から `PSObject` への変換は、Windows PowerShell から 50% 以上スピードアップされました。
 次の例では、最大 2 MB のテスト用 JSON ファイルを使用します。
@@ -89,14 +86,13 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 |              | Windows PowerShell 5.1 | PowerShell Core 6.0 | PowerShell Core 6.1    |
 |--------------|------------------------|---------------------|------------------------|
 | 時間 (秒)   | 0.259                  | 0.577               | 0.125                  |
-| 高速化 (%) | なし                    | -122.8%             | 78.3% (WPS から 51.7%) |
+| 高速化 (%) | 該当なし                    | -122.8%             | 78.3% (WPS から 51.7%) |
 
 ## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Windows で互換性のある組み込みモジュールについては `system32` を確認する
 
 Windows 10 1809 更新プログラムと Windows Server 2019 では、複数の組み込み PowerShell モジュールが更新され、PowerShell Core と互換性有りとマークされました。
 
-PowerShell Core 6.1 は起動すると、`PSModulePath` 環境変数の一部として `$windir\System32` を自動的にインクルードします。
-ただし、`CompatiblePSEdition` が `Core` と互換性有りとマークされている場合は、`Get-Module` および `Import-Module` に対してのみモジュールを公開します。
+PowerShell Core 6.1 は起動すると、`PSModulePath` 環境変数の一部として `$windir\System32` を自動的にインクルードします。 ただし、`CompatiblePSEdition` が `Core` と互換性有りとマークされている場合は、`Get-Module` および `Import-Module` に対してのみモジュールを公開します。
 
 
 ```powershell
@@ -181,7 +177,7 @@ Markdown は、HTML にレンダリングできる基本的な書式設定で読
 
 [試験的機能][]のサポートが有効になりました。 これにより、PowerShell の開発者は新しい機能を提供し、設計が完了する前にフィードバックを取得できます。 このようにすると、設計の進化に伴って破壊的変更が発生するのを回避できます。
 
-使用可能な試験的機能の一覧を取得するには、`Get-ExperimentalFeature` を使います。 これらの機能は、`Enable-ExperimentalFeature` および `Disable-ExperimentalFeature` で有効または無効にできます。
+使用できる試験的機能の一覧を取得するには、`Get-ExperimentalFeature` を使います。 これらの機能は、`Enable-ExperimentalFeature` および `Disable-ExperimentalFeature` で有効または無効にできます。
 
 この機能について詳しくは、[PowerShell RFC0029](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0029-Support-Experimental-Features.md) をご覧ください。
 
@@ -202,15 +198,13 @@ Markdown は、HTML にレンダリングできる基本的な書式設定で読
 
 PowerShell と Hyper-V の機能である [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) を使用すると、ネットワーク接続または他のリモート管理サービスがなくても、Hyper-V VM またはコンテナーに接続できます。
 
-以前の PowerShell Direct では、コンテナー上の組み込み Windows PowerShell インスタンスを使用して接続していました。
-現在の PowerShell Direct は、最初に、`PATH` 環境変数で使用可能な `pwsh.exe` を使用して接続を試みます。
-`pwsh.exe` を使用できない場合、PowerShell Direct は `powershell.exe` を使用するようにフォールバックします。
+以前の PowerShell Direct では、コンテナー上の組み込み Windows PowerShell インスタンスを使用して接続していました。 現在の PowerShell Direct は、最初に、`PATH` 環境変数で使用可能な `pwsh.exe` を使用して接続を試みます。 `pwsh.exe` を使用できない場合、PowerShell Direct は `powershell.exe` を使用するようにフォールバックします。
 
 ### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>`Enable-PSRemoting` はプレビュー バージョン用に別のリモート処理エンドポイントを作成するようになった
 
 `Enable-PSRemoting` では、2 つのリモート処理セッション構成が作成されるようになりました。
 
-- PowerShell のメジャー バージョン用のセッション構成。 たとえば、`PowerShell.6` のように指定します。 このエンドポイントは、"システム全体" の PowerShell 6 セッション構成として、すべてのマイナー バージョン更新で利用できます。
+- PowerShell のメジャー バージョン用のセッション構成。 たとえば、「 `PowerShell.6` 」のように入力します。 このエンドポイントは、"システム全体" の PowerShell 6 セッション構成として、すべてのマイナー バージョン更新で利用できます。
 - 1 つのバージョンに固有のセッション構成。たとえば、`PowerShell.6.1.0` などです。
 
 この動作は、同じコンピューターに PowerShell 6 の複数のバージョンをインストールしてアクセスできるようにしたい場合に便利です。
@@ -262,8 +256,7 @@ Permission    : NT AUTHORITY\INTERACTIVE AccessAllowed, BUILTIN\Administrators A
 
 ### <a name="userhostport-syntax-supported-for-ssh"></a>SSH に対してサポートされる `user@host:port` 構文
 
-SSH クライアントは、通常、`user@host:port` の形式で接続文字列をサポートします。
-PowerShell リモート処理用のプロトコルとして SSH が追加されたことに伴い、この形式の接続文字列のサポートが追加されました。
+SSH クライアントは、通常、`user@host:port` の形式で接続文字列をサポートします。 PowerShell リモート処理用のプロトコルとして SSH が追加されたことに伴い、この形式の接続文字列のサポートが追加されました。
 
 `Enter-PSSession -HostName fooUser@ssh.contoso.com:2222`
 
@@ -305,13 +298,11 @@ PS /etc>
 
 ### <a name="update-help-as-non-admin"></a>非管理者としての `Update-Help`
 
-要望が多かったので、`Update-Help` は管理者でなくても実行できるようになりました。
-`Update-Help` は既定でユーザー スコープのフォルダーにヘルプを保存します。
+要望が多かったので、`Update-Help` は管理者でなくても実行できるようになりました。 `Update-Help` は既定でユーザー スコープのフォルダーにヘルプを保存します。
 
 ### <a name="new-methodsproperties-on-pscustomobject"></a>`PSCustomObject` での新しいメソッド/プロパティ
 
-[@iSazonov](https://github.com/iSazonov) のおかげで、`PSCustomObject` に新しいメソッドとプロパティが追加されました。
-`PSCustomObject` には、他のオブジェクトと同じように `Count`/`Length` プロパティが含まれるようになっています。
+[@iSazonov](https://github.com/iSazonov) のおかげで、`PSCustomObject` に新しいメソッドとプロパティが追加されました。 `PSCustomObject` には、他のオブジェクトと同じように `Count`/`Length` プロパティが含まれるようになっています。
 
 ```powershell
 $PSCustomObject = [pscustomobject]@{foo = 1}
@@ -353,8 +344,7 @@ foo
 
 ### `Where-Object -Not`
 
-@SimonWahlin のおかげで、`-Not` パラメーターが `Where-Object` に追加されました。
-パイプラインのオブジェクトを、存在しないプロパティまたは null/空のプロパティ値でフィルター処理できます。
+@SimonWahlin のおかげで、`-Not` パラメーターが `Where-Object` に追加されました。 パイプラインのオブジェクトを、存在しないプロパティまたは null/空のプロパティ値でフィルター処理できます。
 
 たとえば、次のコマンドでは、依存サービスが定義されていないすべてのサービスが返されます。
 
@@ -368,8 +358,7 @@ PowerShell 6.0 が BOM のない UTF-8 に移行したことに伴い、`New-Mod
 
 ### <a name="conversions-from-psmethod-to-delegate"></a>PSMethod からデリゲートへの変換
 
-[@powercode](https://github.com/powercode) のおかげで、`PSMethod` のデリゲートへの変換がサポートされるようになりました。
-これにより、`PSMethod` `[M]::DoubleStrLen` をデリゲート値として `[M]::AggregateString` に渡す、といったことができるようになります。
+[@powercode](https://github.com/powercode) のおかげで、`PSMethod` のデリゲートへの変換がサポートされるようになりました。 これにより、`PSMethod` `[M]::DoubleStrLen` をデリゲート値として `[M]::AggregateString` に渡すといった操作ができるようになります。
 
 ```powershell
 class M {
@@ -420,8 +409,7 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 
 ### <a name="removal-of-the-more-function"></a>`more` 関数の削除
 
-以前の PowerShell には、`more.com` をラップする `more` という名前の Windows 上の関数がありました。
-この関数は削除されました。
+以前の PowerShell には、`more.com` をラップする `more` という名前の Windows 上の関数がありました。 この関数は削除されました。
 
 また、`help` 関数が変更され、Windows では `more.com` を、Windows 以外のプラットフォームでは `$env:PAGER` で指定されたシステムの既定のページャーを使用するようになりました。
 
@@ -484,7 +472,7 @@ Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumbe
 
 [@kvprasoon](https://github.com/kvprasoon) のおかげで、`-LiteralPath` パラメーターがあるすべての組み込み PowerShell コマンドレットに対し、パラメーター エイリアス `-lp` が追加されました。
 
-## <a name="breaking-changes"></a>破壊的変更
+## <a name="breaking-changes"></a>重大な変更
 
 ### <a name="msi-based-installation-paths-on-windows"></a>Windows での MSI ベースのインストール パス
 
@@ -511,8 +499,7 @@ PowerShell Core は、起動されると基本的なテレメトリ データを
 
 ### <a name="removed-visualbasic-as-a-supported-language-in-add-type"></a>Add-Type でサポートされる言語としての `VisualBasic` の削除
 
-これまでは、`Add-Type` コマンドレットを使用して Visual Basic コードをコンパイルできました。
-Visual Basic は `Add-Type` ではほとんど使用されませんでした。 この機能を削除して、PowerShell のサイズを小さくしました。
+これまでは、`Add-Type` コマンドレットを使用して Visual Basic コードをコンパイルできました。 Visual Basic は `Add-Type` ではほとんど使用されませんでした。 この機能を削除して、PowerShell のサイズを小さくしました。
 
 ### <a name="cleaned-up-uses-of-commandtypesworkflow-and-workflowinfocleaned"></a>`CommandTypes.Workflow` および `WorkflowInfoCleaned` の使用のクリーンアップ
 
