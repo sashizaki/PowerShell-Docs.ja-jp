@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: リソース作成のチェックリスト
-ms.openlocfilehash: c0a18169b5e9f6ba0c3848b00725731453763611
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e7401071db9cb149fff572d79568d69a0b8ea004
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71952879"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818143"
 ---
 # <a name="resource-authoring-checklist"></a>リソース作成のチェックリスト
 
@@ -36,7 +36,7 @@ xPSDesiredStateConfiguration
 ## <a name="resource-and-schema-are-correct"></a>リソースとスキーマが正しい
 
 リソース スキーマ (*.schema.mof) ファイルを確認します。 [DSC リソース デザイナー](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0)をスキーマの開発と試験に利用できます。
-次のことを確認します。
+次のことを確認してください。
 
 - プロパティの型が正しい (たとえば、数値を受け入れるプロパティには文字列を使用せず、UInt32 またはその他の数値型を代わりに使用する必要があります)
 - プロパティの属性が正しく指定されている ([key]、[required]、[write]、[read])
@@ -63,7 +63,7 @@ Test-xDscResource <Resource_folder>
 Test-xDscSchema <Path_to_resource_schema_file>
 ```
 
-たとえば、次のように入力します。
+次に例を示します。
 
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
@@ -130,7 +130,7 @@ File file {
 - DSC エージェントはサービスとして実行されるため、資格情報またはセッションの動作が異なる可能性があります。  機能は必ずエンド ツー エンドでテストしてください。
 - `Start-DscConfiguration` によるエラー出力は、`Set-TargetResource` 関数を直接呼び出したときに表示されるものとは異なる場合があります。
 
-## <a name="test-compatability-on-all-dsc-supported-platforms"></a>すべての DSC 対応プラットフォームで互換性を試験する
+## <a name="test-compatibility-on-all-dsc-supported-platforms"></a>すべての DSC 対応プラットフォームで互換性を試験する
 
 リソースは、DSC がサポートされているすべてのプラットフォーム (Windows Server 2008 R2 以降) で動作する必要があります。 DSC の最新バージョンを取得するには、OS に最新の WMF (Windows Management Framework) をインストールします。 リソースがこれらのプラットフォームの一部で動作しないことが意図的である場合は、特定のエラー メッセージが返される必要があります。 また、リソースで、呼び出すコマンドレットが特定のマシン上に存在するかどうかがチェックされることも確認します。 Windows Server 2012 には、WMF がインストールされていても Windows Server 2008R2では使用できない多数の新しいコマンドレットが追加されています。
 
@@ -246,7 +246,7 @@ Invoke-Expression $commandToExecute
 
 例:
 
-次の代わりに、
+次の表記の代わりに、
 
 ```powershell
 $tempPath = "C:\Users\kkaczma\AppData\Local\Temp\MyResource"

@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc, powershell, 構成, サービス, セットアップ
 title: 構成の作成、コンパイル、適用
-ms.openlocfilehash: 8bcd55518b0409b9a4b02ca95f027a0a77eb5300
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: eb61e518762b9f13e617ecd4711bfef7a86814ec
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71953999"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818160"
 ---
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -18,7 +18,7 @@ ms.locfileid: "71953999"
 
 DSC の概要としくみついては、[開発者向けの Desired State Configuration の概要](../overview/overview.md)に関するページをご覧ください。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 このサンプルを実行するには、PowerShell 4.0 以降が動作しているコンピューターが必要です。
 
@@ -65,7 +65,7 @@ Configuration HelloWorld {
 
 構成では、1 つの[リソース](../resources/resources.md) (`File` リソース) を呼び出します。 リソースは、ターゲット ノードが構成によって定義された状態になっているか確認します。
 
-## <a name="compile-the-configuration"></a>構成をコンパイルする
+## <a name="compile-the-configuration"></a>構成のコンパイル
 
 DSC 構成をノードに適用するには、最初にコンパイルを行い、MOF ファイルを出力する必要があります。
 関数のように構成を実行すると、`Node` ブロックで定義されたノードごとに、".mof" ファイルを 1 つコンパイルします。
@@ -140,7 +140,7 @@ Hello World from DSC!
 Remove-Item -Path C:\Temp\HelloWorld.txt
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - 「[DSC 構成](configurations.md)」で DSC 構成の詳細を確認する。
 - 「[DSC リソース](../resources/resources.md)」で利用可能な DSC リソースとカスタム DSC リソースの作成方法を確認する。

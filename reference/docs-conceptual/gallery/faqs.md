@@ -3,14 +3,14 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーに関してよく寄せられる質問
-ms.openlocfilehash: bcbb36a9ec60d88d1ef56fd270f0ae1862d5ca6b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 70e2220bd68b351e0b09dd3c59901104f7874335
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328053"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818126"
 ---
-# <a name="frequently-asked-questions"></a>AppLocker: Frequently Asked Questions (AppLocker: よく寄せられる質問)
+# <a name="frequently-asked-questions"></a>よく寄せられる質問
 
 ## <a name="what-is-a-powershell-module"></a>PowerShell モジュールとは何ですか。
 
@@ -36,7 +36,7 @@ PowerShell スクリプトとは、再利用と共有を可能にするため、
 
 **パッケージをインストールまたは保存するためにギャラリーに登録またはサインインする必要はありません。**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>PowerShell ギャラリーに項目を公開しようとして、"要求を処理できませんでした。 '指定した API キーが無効か、指定したパッケージへのアクセス許可がありません。' リモート サーバーがエラーを返しました: "(403) Forbidden" というエラーを受信しました。 これは何を意味しますか。
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>PowerShell ギャラリーに項目を公開しようとして、"要求を処理できませんでした。 '指定した API キーが無効か、指定したパッケージへのアクセス許可がありません。' リモート サーバーがエラー"(403) Forbidden" というエラーを受信しました。 これはどういう意味でしょうか。
 
 このエラーは、次の理由で発生することがあります。
 
@@ -63,9 +63,9 @@ PowerShell モジュールのどの種類 (スクリプト モジュール、バ
 ギャラリーに公開されるすべてのモジュールに、モジュール マニフェストが必要です。
 マニフェストに次の情報を含むモジュールはすべて、ギャラリーに公開できます。
 
-- バージョン
-- 説明
-- 作成者
+- Version
+- [説明]
+- Author
 - マニフェストの **PrivateData** セクションの一部として、または [Publish-Module][] コマンドレットの **LicenseUri** パラメーターの、モジュールのライセンス条項への URI。
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>正しい形式のモジュール マニフェストはどのように作成できますか。
@@ -84,16 +84,16 @@ PowerShell スクリプトのどの種類 (スクリプトまたはワークフ�
 ギャラリーに公開されるすべてのスクリプトに、メタデータ情報が必要です。
 PSScriptInfo セクションに次の情報を含むスクリプトはすべて、ギャラリーに公開できます。
 
-- バージョン
-- 説明
-- 作成者
+- Version
+- [説明]
+- Author
 - スクリプトの **PSScriptInfo** セクションの一部として、または [Publish-Script][] コマンドレットの **LicenseUri** パラメーターの、スクリプトのライセンス条項への URI。
 
 ## <a name="how-do-i-search"></a>どのように検索しますか。
 
 検索したいものをテキスト ボックスに入力します。 たとえば、Azure SQL に関連するモジュールを検索する場合は、「azure sql」と入力します。 検索エンジンによって、タイトル、説明、全体のメタデータを含む、公開されているすべてのパッケージでこれらのキーワードが検索されます。 次に、重み付けされた品質スコアに基づき、もっとも近い一致が表示されます。 また、次のフィールドについて、検索クエリで field:"value" 構文を使用して、特定のフィールドを検索することもできます。
 
-- タグ
+- Tags
 - 関数
 - コマンドレット
 - DscResources
@@ -138,7 +138,7 @@ PowerShellGet は任意の有効な NuGet リポジトリまたはファイル�
 
 ## <a name="does-that-mean-i-can-use-nugetexe-to-work-with-the-gallery"></a>NuGet.exe をギャラリーで使用できるという意味でしょうか。
 
-対応
+はい。
 
 ## <a name="how-does-packagemanagement-actually-relate-to-powershellget-technical-details"></a>PackageManagement は実際に PowerShellGet にどのように関連しているでしょうか。 (技術的な詳細)
 

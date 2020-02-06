@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 の DSC 機能強化
-ms.openlocfilehash: a5efa38ce791a893580316bad7b61a6689153a86
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d9339ec9f316c4a32c5fa6cb2360c077973ee334
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416674"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818109"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 の Desired State Configuration (DSC) の機能強化
 
@@ -36,7 +36,7 @@ WMF 5.0 では、PowerShell デバッガーは、クラス ベースのリソー
 
 ## <a name="enable-circular-log-on-esent-database-instance"></a>ESENT データベース インスタンスでの循環ログの有効化
 
-以前のバージョンの DSC-PullServer では、データベース インスタンスが循環ログなしで作成されていたため、ESENT データベース ログ ファイルがプルサーバーのディスク領域を占有していました。 このリリースには、プルサーバーの web.config を使用してインスタンスの循環ログ動作を制御するオプションがあります。 既定では、CircularLogging が TRUE に設定されます。
+以前のバージョンの DSC-PullServer では、データベース インスタンスが循環ログなしで作成されていたため、ESENT データベース ログ ファイルがプル サーバーのディスク領域を占有していました。 このリリースには、プルサーバーの web.config を使用してインスタンスの循環ログ動作を制御するオプションがあります。 既定では、CircularLogging が TRUE に設定されます。
 
 ```xml
 <appSettings>

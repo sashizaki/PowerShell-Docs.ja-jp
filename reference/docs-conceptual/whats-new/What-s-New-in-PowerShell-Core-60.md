@@ -2,12 +2,12 @@
 title: PowerShell Core 6.0 の新機能
 description: PowerShell Core 6.0 でリリースされた新機能と変更
 ms.date: 08/06/2018
-ms.openlocfilehash: a623c5b37d5eef2148792203a3c2ff91a0fab266
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d1bc1ef2676da60062b8bdd57042331f0f245bec
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416762"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995491"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 の新機能
 
@@ -15,12 +15,9 @@ ms.locfileid: "74416762"
 
 ## <a name="moved-from-net-framework-to-net-core"></a>.NET Framework から .NET Core への移行
 
-PowerShell Core では、ランタイムとして [.NET Core 2.0][] を使用します。
-.NET core 2.0 を使用することで、PowerShell Core を複数のプラットフォーム (Windows、macOS、Linux) で動作させることができます。
-PowerShell Core では、PowerShell のコマンドレットとスクリプトで使用される、.NET Core 2.0 によって提供される API セットも公開します。
+PowerShell Core では、ランタイムとして [.NET Core 2.0][] を使用します。 .NET core 2.0 を使用することで、PowerShell Core を複数のプラットフォーム (Windows、macOS、Linux) で動作させることができます。 PowerShell Core では、PowerShell のコマンドレットとスクリプトで使用される、.NET Core 2.0 によって提供される API セットも公開します。
 
-Windows PowerShell では、.NET Framework ランタイムを使用して PowerShell エンジンをホストしていました。
-これは、Windows PowerShell が .NET Framework によって提供される API セットを公開することを意味します。
+Windows PowerShell では、.NET Framework ランタイムを使用して PowerShell エンジンをホストしていました。 これは、Windows PowerShell が .NET Framework によって提供される API セットを公開することを意味します。
 
 .NET Core と .NET Framework の間で共有される API は、[.NET Standard][] の一部として定義されています。
 
@@ -52,23 +49,19 @@ PowerShell では、次のように、macOS と Linux が正式にサポート�
 - Windows on ARM32/ARM64
 - Raspbian (Stretch)
 
-Windows 以外のシステムでより適切に機能するように、PowerShell Core 6.0 には多くの変更が行われました。
-これらのいくつかは重大な変更であり、Windows にも影響します。
-その他の変更は、PowerShell Core の Windows 以外のインストールにのみ存在するか適用されます。
+Windows 以外のシステムでより適切に機能するように、PowerShell Core 6.0 には多くの変更が行われました。 これらのいくつかは破壊的変更であり、Windows にも影響します。 その他の変更は、PowerShell Core の Windows 以外のインストールにのみ存在するか適用されます。
 
 - Unix プラットフォームでのネイティブ コマンドのグロビング サポートを追加しました。
-- `more` 機能は Linux `$PAGER` に対応し、既定で `less` に設定されます。
-  これは、ネイティブ バイナリ/コマンドでワイルドカードを使用できるようになったことを意味します (例: `ls *.txt`)。 (#3463)
+- `more` 機能は Linux `$PAGER` に対応し、既定で `less` に設定されます。 これは、ネイティブ バイナリ/コマンドでワイルドカードを使用できるようになったことを意味します (例: `ls *.txt`)。 (#3463)
 - 末尾の円記号は、ネイティブ コマンド引数を処理するときに自動的にエスケープされます。 (#4965)
-- スクリプト エンジンは現在サポートされていないため、Windows 以外のプラットフォームで PowerShell を実行するときは `-ExecutionPolicy` スイッチを無視します。 (#3481)
+- スクリプトの署名は現在サポートされていないため、Windows 以外のプラットフォームで PowerShell を実行するときは `-ExecutionPolicy` スイッチを無視します。 (#3481)
 - Unix プラットフォームで `NoEcho` を受け入れるために ConsoleHost を修正しました。 (#3801)
 - Unix プラットフォームで大文字と小文字を区別しないパターン マッチングをサポートするために `Get-Help` を修正しました。 (#3852)
 - パッケージに `powershell` man ページが追加されました。
 
 ### <a name="logging"></a>ログ記録
 
-macOS では、PowerShell はネイティブ `os_log` API を使用して、Apple の[統合ログ システム][os_log]にログを記録します。
-Linux では、PowerShell は、ユビキタス ログ ソリューションである [Syslog][] を使用します。
+macOS では、PowerShell はネイティブ `os_log` API を使用して、Apple の[統合ログ システム][os_log]にログを記録します。 Linux では、PowerShell は、ユビキタス ログ ソリューションである [Syslog][] を使用します。
 
 ### <a name="filesystem"></a>ファイルシステム
 
@@ -82,10 +75,9 @@ Linux では、PowerShell は、ユビキタス ログ ソリューションで�
 - Unix では、コロン文字を含むファイルとフォルダーの名前がサポートされます。 (#4959)
 - コンマを含むスクリプトの名前または完全パスがサポートされます。 (#4136) ([@TimCurwick](https://github.com/TimCurwick) に感謝)
 - ナビゲーション コマンドレットのワイルドカードの展開を抑制するために `-LiteralPath` が使用されるタイミングを検出します。 (#5038)
-- *nix `ls -R` や Windows の `DIR /S` ネイティブ コマンドのように動作するよう `Get-ChildItem` を更新しました。
-  `Get-ChildItem` では、再帰的検索時に発生するシンボリック リンクを返し、これらのリンク先のディレクトリは検索しなくなりました。 (#3780)
+- *nix `ls -R` や Windows の `DIR /S` ネイティブ コマンドのように動作するよう `Get-ChildItem` を更新しました。 `Get-ChildItem` では、再帰的検索時に発生するシンボリック リンクを返し、これらのリンク先のディレクトリは検索しなくなりました。 (#3780)
 
-### <a name="case-sensitivity"></a>大文字と小文字の区別
+### <a name="case-sensitivity"></a>大文字小文字の区別
 
 Linux と macOS では大文字と小文字を区別する傾向があります。一方、Windows では大文字と小文字は区別されませんが、大文字と小文字は保持されます。
 一般に、PowerShell では大文字と小文字が区別されません。
@@ -95,49 +87,37 @@ Linux と macOS では大文字と小文字を区別する傾向があります�
 ## <a name="support-for-side-by-side-installations"></a>サイド バイ サイド インストールのサポート
 
 PowerShell Core は、Windows PowerShell とは別にインストール、構成、実行されます。
-PowerShell Core には "ポータブル" ZIP パッケージがあります。
-ZIP パッケージを使用して、PowerShell を依存関係と見なすアプリケーションに対して局所的なものを含む、ディスクの任意の位置に任意の数のバージョンをインストールすることができます。
-サイド バイ サイド インストールでは、新しいバージョンの PowerShell のテストと既存のスクリプトの段階的な移行がより容易になります。
-また、サイド バイ サイドでは、スクリプトを必要な特定のバージョンにピン留めできるため、後方互換性が有効になります。
+PowerShell Core には "ポータブル" ZIP パッケージがあります。 ZIP パッケージを使用して、PowerShell を依存関係と見なすアプリケーションに対して局所的なものを含む、ディスクの任意の位置に任意の数のバージョンをインストールすることができます。
+サイド バイ サイド インストールでは、新しいバージョンの PowerShell のテストと既存のスクリプトの段階的な移行がより容易になります。 また、サイド バイ サイドでは、スクリプトを必要な特定のバージョンにピン留めできるため、後方互換性が有効になります。
 
 > [!NOTE]
-> 既定では、Windows 上の MSI ベースのインストーラーはインプレース更新インストールを行います。
->
+> 既定では、Windows 上の MSI ベースのインストーラーはインプレース アップデート インストールを行います。
 
-## <a name="renamed-powershellexe-to-pwshexe"></a>`powershell(.exe)` から `pwsh(.exe)` への名前変更
+## <a name="renamed-powershellexe-to-pwshexe"></a>`powershell(.exe)` から `pwsh(.exe)` への名称変更
 
-PowerShell Core のバイナリ名が `powershell(.exe)` から `pwsh(.exe)` に変更されました。
-この変更により、Windows PowerShell と PowerShell Core のサイド バイ サイドのインストールをサポートするために、ユーザーがコンピューター上で PowerShell Core を実行する場合に決定的な方法が提供されます。
-また、`pwsh` は短いため、入力しやすくなります。
+PowerShell Core のバイナリ名が `powershell(.exe)` から `pwsh(.exe)` に変更されました。 この変更により、Windows PowerShell と PowerShell Core のサイド バイ サイドのインストールをサポートするために、ユーザーがコンピューター上で PowerShell Core を実行する決定論的な方法が提供されます。 また、`pwsh` は短いため、入力しやすくなります。
 
-`powershell.exe` から `pwsh(.exe)` への変更以外の変更点は次のとおりです。
+`powershell.exe` から `pwsh(.exe)` への追加の変更点は次のとおりです。
 
-- 最初の位置指定パラメーターが `-Command` から `-File` に変更されました。
-  この変更により、Windows 以外のプラットフォームの PowerShell 以外のシェルから実行されている PowerShell スクリプトの `#!` (シバンともいう) 使用方法が修正されます。
-  これは、`-File` を指定せずに `pwsh foo.ps1` または `pwsh fooScript` のようなコマンドを実行できることも意味します。
-  ただし、この変更では、`pwsh.exe -Command Get-Command` などのコマンドの実行を試みる場合に `-c` または `-Command` を明示的に指定する必要があります。 (#4019)
-- PowerShell Core は `-i` (または `-Interactive`) スイッチを受け入れ、対話型シェルを示します。 (# 3558) これにより、Unix プラットフォームで既定のシェルとして PowerShell を使用できるようになります。
+- 最初の位置指定パラメーターが `-Command` から `-File` に変更されました。 この変更により、Windows 以外のプラットフォームの PowerShell 以外のシェルから実行されている PowerShell スクリプトの `#!` (シバンともいいます) の使用方法が修正されます。 これは、`-File` を指定せずに `pwsh foo.ps1` または `pwsh fooScript` のようなコマンドを実行できることも意味します。 ただし、この変更によって、`pwsh.exe -Command Get-Command` などのコマンドを実行しようとする場合は `-c` または `-Command` を明示的に指定する必要があります。
+  (#4019)
+- PowerShell Core は `-i` (または `-Interactive`) スイッチを受け入れ、対話型シェルを示します。
+  (# 3558) これにより、Unix プラットフォームで既定のシェルとして PowerShell を使用できるようになります。
 - パラメーターの `-importsystemmodules` と `-psconsoleFile` を `pwsh.exe` から削除しました。 (#4995)
 - 他のネイティブ ツールに合わせて `pwsh -version` と `pwsh.exe` の組み込みヘルプを変更しました。 (#4958 および #4931) ([@iSazonov](https://github.com/iSazonov) に感謝)
 - `-File` と `-Command` の無効な引数エラー メッセージと終了コードの Unix 標準への準拠 (#4573)
-- Windows の `-WindowStyle` パラメーターを追加しました。 (#4573) 同様に、Windows 以外のプラットフォームのパッケージ ベースのインストール更新はインプレース更新となります。
+- Windows の `-WindowStyle` パラメーターを追加しました。 (#4573) 同様に、Windows 以外のプラットフォームでのパッケージ ベースのインストールはインプレースアップデートとなります。
 
 ## <a name="backwards-compatibility-with-windows-powershell"></a>Windows PowerShell との後方互換性
 
 PowerShell Core の目的は、Windows PowerShell との互換性をできる限り維持することです。
-PowerShell Core では [.NET Standard][] 2.0 を使用して、既存の .NET アセンブリとのバイナリの互換性を提供します。
-多くの PowerShell モジュールはこれらのアセンブリ (多くの場合、Dll) に依存するため、.NET Standard では .NET Core を引き続き使用できます。
-PowerShell Core には、.NET Framework DLL の依存関係を検索するための既知のフォルダー (通常、ディスク上のグローバル アセンブリ キャッシュが存在する場所など) を調べるヒューリスティックも含まれます。
+PowerShell Core では [.NET Standard][] 2.0 を使用して、既存の .NET アセンブリとのバイナリの互換性を提供します。 多くの PowerShell モジュールはこれらのアセンブリ (多くの場合、Dll) に依存するため、.NET Standard では .NET Core を引き続き使用できます。 PowerShell Core には、.NET Framework DLL の依存関係を検索するための既知のフォルダー (通常、ディスク上のグローバル アセンブリ キャッシュが存在する場所など) を調べるヒューリスティックも含まれます。
 
 .NET Standard の詳細については、[.NET ブログ][]、この [YouTube][] ビデオ、および GitHub のこの [FAQ][] を参照してください。
 
-PowerShell 言語と "組み込み" モジュール (`Microsoft.PowerShell.Management`、`Microsoft.PowerShell.Utility` など) が Windows PowerShell の場合と同じように機能するように最善を尽くしました。
-多くの場合、コミュニティを利用して、これらのコマンドレットに新しい機能とバグの修正が追加されています。
-場合によっては、基になる .NET レイヤーとの依存関係がないため、機能が削除されているか、使用できなくなっています。
+PowerShell 言語と "組み込み" モジュール (`Microsoft.PowerShell.Management`、`Microsoft.PowerShell.Utility` など) が Windows PowerShell の場合と同じように機能するように最善を尽くしました。 多くの場合、コミュニティの助力とともに、これらのコマンドレットに新しい機能とバグの修正が追加されています。 場合によっては、基になる .NET レイヤーとの依存関係がないため、機能が削除されているか、使用できなくなっています。
 
-Windows の一部として出荷されるモジュールのほとんど (`DnsClient`、`Hyper-V`、`NetTCPIP`、`Storage` など) と、Azure と Office を含むその他の Microsoft 製品はまだ .NET Core には*明示的に*移植されていません。
-PowerShell チームはこれらの製品グループとチームと協力して既存のモジュールを検証し、PowerShell Core に移植しています。
-.NET Standard と [CDXML][] を使用すると、これらの従来の Windows PowerShell モジュールの多くが PowerShell Core で機能するようですが、正式には検証されておらず、また、正式にサポートされていません。
+Windows の一部として出荷されるモジュールのほとんど (`DnsClient`、`Hyper-V`、`NetTCPIP`、`Storage` など) と、Azure と Office を含むその他の Microsoft 製品はまだ .NET Core には*明示的に*移植されていません。 PowerShell チームはこれらの製品グループとチームと協力して既存のモジュールを検証し、PowerShell Core に移植しています。 .NET Standard と [CDXML][] を使用すると、これらの従来の Windows PowerShell モジュールの多くが PowerShell Core で機能するようですが、正式には検証されておらず、また、正式にサポートされていません。
 
 [`WindowsPSModulePath`][windowspsmodulepath] モジュールをインストールして、Windows PowerShell `PSModulePath` をご利用の PowerShell Core `PSModulePath` に追加することで、Windows PowerShell モジュールを使用できます。
 
@@ -159,29 +139,23 @@ Add-WindowsPSModulePath
 
 PowerShell Core には、弊社がサポートする主なすべてのプラットフォーム (複数の Linux ディストリビューション、Windows Server Core、Nano Server を含む) 用の Docker コンテナーのサポートが追加されています。
 
-完全なリストについては、[Docker Hub の `microsoft/powershell`][docker-hub] のタグを確認してください。
-Docker と PowerShell Core の詳細については、GitHub の「[Docker][]」を参照してください。
+完全なリストについては、[Docker Hub の `microsoft/powershell`][docker-hub] のタグを確認してください。 Docker と PowerShell Core の詳細については、GitHub の「[Docker][]」を参照してください。
 
 ## <a name="ssh-based-powershell-remoting"></a>SSH ベースの PowerShell リモート処理
 
-PowerShell リモート処理プロトコル (PSRP) が、従来の WinRM ベースの PSRP に加えて、SSH (Secure Shell) プロトコルでも機能するようになりました。
+PowerShell リモート処理プロトコル (PSRP) が、従来の WinRM ベースの PSRP に加えて、Secure Shell (SSH) でも機能するようになりました。
 
-これは、`Enter-PSSession` や `New-PSSession` などのコマンドレットを使用し、SSH を使用して認証できることを意味します。
-OpenSSH ベースの SSH サーバーにサブシステムとして PowerShell を登録するだけで、従来の `PSSession` セマンティクスで既存の SSH ベースの認証メカニズム (パスワードや秘密キーなど) を使用できます。
+これは、`Enter-PSSession` や `New-PSSession` などのコマンドレットを使用し、SSH を使用して認証できることを意味します。 OpenSSH ベースの SSH サーバーにサブシステムとして PowerShell を登録するだけで、従来の `PSSession` セマンティクスで既存の SSH ベースの認証メカニズム (パスワードや秘密キーなど) を使用できます。
 
 SSH ベースのリモート処理の構成と使用の詳細については、「[SSH 経由の PowerShell リモート処理][ssh-remoting]」を参照してください。
 
 ## <a name="default-encoding-is-utf-8-without-a-bom-except-for-new-modulemanifest"></a>New-ModuleManifest を除き、既定のエンコードは BOM なしの UTF-8 です
 
-これまでは、`Get-Content`、`Set-Content` のような Windows PowerShell コマンドレットでは、ASCII や UTF-16 などの異なるエンコードを使用していました。
-エンコードを指定せずにコマンドレットを混在させると、エンコード既定値の変数により問題が生じていました。
+これまでは、`Get-Content`、`Set-Content` のような Windows PowerShell コマンドレットでは、ASCII や UTF-16 などの異なるエンコードを使用していました。 エンコードを指定せずにコマンドレットを混在させると、エンコード既定値の差異により問題が生じていました。
 
-従来、Windows 以外のプラットフォームでは、テキスト ファイルの既定のエンコードとして BOM (バイト オーダー マーク) なしで UTF-8 を使用します。
-より多くの Windows アプリケーションとツールが UTF-16 から BOM なしの UTF-8 エンコードに移行しつつあります。
-PowerShell Core では、より広範囲のエコシステムに準拠するために既定のエンコードが変更されています。
+従来、Windows 以外のプラットフォームでは、テキスト ファイルの既定のエンコードとして バイト オーダー マーク (BOM) なしで UTF-8 を使用します。 より多くの Windows アプリケーションとツールが UTF-16 から BOM なしの UTF-8 エンコードに移行しつつあります。 PowerShell Core では、より広範囲のエコシステムに準拠するために既定のエンコードが変更されています。
 
-つまり、`-Encoding` パラメーターを使用するすべての組み込みコマンドレットでは、既定で `UTF8NoBOM` 値が使用されます。
-以下のコマンドレットがこの変更の影響を受けます。
+つまり、`-Encoding` パラメーターを使用するすべての組み込みコマンドレットでは、既定で `UTF8NoBOM` 値が使用されます。 この変更の影響を受けるコマンドレットは次のとおりです。
 
 - Add-Content
 - Export-Clixml
@@ -205,12 +179,7 @@ PowerShell Core では、より広範囲のエコシステムに準拠するた�
 
 ## <a name="support-backgrounding-of-pipelines-with-ampersand--3360"></a>アンパサンド (`&`) を使用するパイプラインのバックグラウンドでの実行サポート (#3360)
 
-パイプラインの最後に `&` を配置すると、パイプラインが PowerShell ジョブとして実行されます。
-パイプラインをバックグラウンドで実行すると、ジョブ オブジェクトが返されます。
-パイプラインがジョブとして実行されている場合は、標準の `*-Job` コマンドレットをすべてジョブの管理のために使用できます。
-パイプラインで使用される変数 (プロセス固有の変数は無視) は、`Copy-Item $foo $bar &` のみが機能するようにジョブに自動的にコピーされます。
-また、ジョブは、ユーザーのホーム ディレクトリではなく、現在のディレクトリで実行されます。
-PowerShell ジョブの詳細については、「[about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs)」を参照してください。
+パイプラインの最後に `&` を配置すると、パイプラインが PowerShell ジョブとして実行されます。 パイプラインをバックグラウンドで実行すると、ジョブ オブジェクトが返されます。 パイプラインがジョブとして実行されている場合は、標準の `*-Job` コマンドレットをすべてジョブの管理のために使用できます。 パイプラインで使用される変数 (プロセス固有の変数は無視) は、`Copy-Item $foo $bar &` のみが機能するようにジョブに自動的にコピーされます。 また、ジョブは、ユーザーのホーム ディレクトリではなく、現在のディレクトリで実行されます。 PowerShell ジョブの詳細については、「[about_Jobs](/powershell/module/microsoft.powershell.core/about/about_jobs)」を参照してください。
 
 ## <a name="semantic-versioning"></a>セマンティック バージョニング
 
@@ -238,14 +207,10 @@ PowerShell ジョブの詳細については、「[about_Jobs](/powershell/modul
     リリースされたビルドでは、`PSVersion` と同じになる可能性があります。
   - `OS`:これは、`[System.Runtime.InteropServices.RuntimeInformation]::OSDescription` によって返される OS バージョンの文字列です。
   - `Platform`:これは `[System.Environment]::OSVersion.Platform` によって返されます。Windows では `Win32NT` に、macOs では `Unix` に、Linux では `Unix` に設定されます。
-- `$PSVersionTable` から `BuildVersion` プロパティを削除しました。
-  このプロパティは、Windows のビルド バージョンに強く関連付けられていました。
-  代わりに、`GitCommitId` を使用して、PowerShell Core の正確なビルド バージョンを取得することをお勧めします。 (#3877) ([@iSazonov](https://github.com/iSazonov) に感謝)
-- `$PSVersionTable` から `ClrVersion` プロパティを削除しました。
-  このプロパティは .NET Core には適しておらず、PowerShell に適用できない特定のレガシー用にのみ .NET Core で保持されました。
+- `$PSVersionTable` から `BuildVersion` プロパティを削除しました。 このプロパティは、Windows のビルド バージョンに強く関連付けられていました。 代わりに、`GitCommitId` を使用して、PowerShell Core の正確なビルド バージョンを取得することをお勧めします。 (#3877) ([@iSazonov](https://github.com/iSazonov) に感謝)
+- `$PSVersionTable` から `ClrVersion` プロパティを削除しました。 このプロパティは .NET Core には適しておらず、PowerShell に適用できない特定のレガシー用にのみ .NET Core で保持されました。
 - PowerShell が特定の OS で実行されているかどうかを判断するために、新しく 3 つの自動変数 (`$IsWindows`、`$IsMacOs`、`$IsLinux`) を追加しました。
-- PowerShell Core のバナーに `GitCommitId` を追加します。
-  バージョンを取得するために PowerShell を起動してすぐに `$PSVersionTable` を実行する必要がなくなりました。 (#3916) ([@iSazonov](https://github.com/iSazonov) に感謝)
+- PowerShell Core のバナーに `GitCommitId` を追加します。 バージョンを取得するために PowerShell を起動してすぐに `$PSVersionTable` を実行する必要がなくなりました。 (#3916) ([@iSazonov](https://github.com/iSazonov) に感謝)
 - 起動前に必要ないくつかの設定 (`ExecutionPolicy` など) を格納するために、`$PSHome` に `powershell.config.json` という JSON 構成ファイルを追加します。
 - Windows EXE の実行中はパイプラインをブロックしません。
 - COM コレクションの列挙が有効になりました。 (#4553)
@@ -265,7 +230,7 @@ PowerShell ジョブの詳細については、「[about_Jobs](/powershell/modul
 - Web コマンドレットに複数のリンク ヘッダー サポートを追加します。 (#5265) ([@markekraus](https://github.com/markekraus) に感謝)
 - Web コマンドレットでのリンク ヘッダーの改ページのサポート (#3828)
   - `Invoke-WebRequest` では、応答にリンク ヘッダーが含まれている場合、URL と `rel` 属性を表す Dictionary として RelationLink プロパティを作成し、開発者が使いやすいように URL を絶対 URL にします。
-  - `Invoke-RestMethod` では、応答に Link ヘッダーが含まれている場合、`-FollowRelLink` スイッチを公開し、存在しなくなるか、省略可能な `-MaximumFollowRelLink` パラメーター値にヒットするまで、`next` `rel` リンクに自動的に従うようにします。
+  - `Invoke-RestMethod` では、レスポンスに Link ヘッダーが含まれている場合、`-FollowRelLink` スイッチを公開し、Link ヘッダーが存在しなくなるか、省略可能な `-MaximumFollowRelLink` パラメーター値に到達するまで、`next` `rel` リンクに自動的に従うようにします。
 - 標準以外のメソッドの動詞で使用できるように、Web コマンドレットに `-CustomMethod` パラメーターを追加します。 (#3142) ([@Lee303](https://github.com/Lee303) に感謝)
 - Web コマンドレットに `SslProtocol` サポートを追加します。 (#5329) ([@markekraus](https://github.com/markekraus) に感謝)
 - Web コマンドレットにマルチパートのサポートを追加します。 (#4782) ([@markekraus](https://github.com/markekraus) に感謝)
@@ -277,21 +242,22 @@ PowerShell ジョブの詳細については、「[about_Jobs](/powershell/modul
   - 次の 3 つのオプションがある `-Authentication` を追加します。Basic、OAuth、Bearer。
   - OAuth および Bearer オプションのベアラー トークンを取得するために、`-Token` を追加します。
   - HTTPS ではなく、任意のトランスポート スキームに対して指定される認証をバイパスするために、`-AllowUnencryptedAuthentication` を追加します。
-- 応答ヘッダーのキャプチャを有効にするために、`Invoke-RestMethod` に `-ResponseHeadersVariable` を追加します。 (#4888) ([@markekraus](https://github.com/markekraus) に感謝)
+- 応答ヘッダーのキャプチャを有効にするために、`Invoke-RestMethod` に `-ResponseHeadersVariable` を追加します。
+  (#4888) ([@markekraus](https://github.com/markekraus) に感謝)
 - 応答ステータス コードが成功でない場合は例外に HTTP 応答を含めるように、Web コマンドレットを修正します。 (#3201)
 - Web コマンドレットの `UserAgent` を `WindowsPowerShell` から `PowerShell` に変更します。 (#4914) ([@markekraus](https://github.com/markekraus) に感謝)
 - 明示的な `ContentType` 検出を `Invoke-RestMethod` に追加します。(#4692)
-- 標準以外の User-Agent ヘッダーを扱うために、Web コマンドレットの `-SkipHeaderValidation` を修正します。 (#4479 および #4512) ([@markekraus](https://github.com/markekraus) に感謝)
+- 標準以外の User-Agent ヘッダーを扱うために、Web コマンドレットの `-SkipHeaderValidation` を修正します。 (#4479 &
+  #<a name="4512-thanks-markekraushttpsgithubcommarkekraus"></a>4512) ([@markekraus](https://github.com/markekraus) に感謝します)
 
 ### <a name="json-cmdlets"></a>JSON コマンドレット
 
 - 代わりに `Hashtable` を返すように `ConvertFrom-Json` に `-AsHashtable` を追加します。 (#5043) ([@bergmeister](https://github.com/bergmeister) に感謝)
 - `ConvertTo-Json` 出力でよりわかりやすいフォーマッタを使用します。 (#2787) (@kittholland に感謝)
 - `ConvertTo-Json` に `Jobject` のシリアル化サポートを追加します。 (#5141)
-- 完全な JSON 文字列を一緒に構築する、パイプラインからの文字列配列の逆シリアル化を行うために `ConvertFrom-Json` を修正します。
-  この修正により、改行で JSON 解析が中断される場合があります。 (#3823)
-- `System.Array` に定義されている `AliasProperty "Count"` を削除します。
-  これにより、いくつかの `ConvertFrom-Json` の出力で無関係な `Count` プロパティが削除されます。 (#3231) ([@PetSerAl](https://github.com/PetSerAl) に感謝)
+- 完全な JSON 文字列を一緒に構築する、パイプラインからの文字列配列の逆シリアル化を行うために `ConvertFrom-Json` を修正します。 これにより、改行で JSON 解析が中断される場合があるのを修正します。
+  (#3823)
+- `System.Array` に定義されている `AliasProperty "Count"` を削除します。 これにより、いくつかの `ConvertFrom-Json` の出力で無関係な `Count` プロパティが削除されます。 (#3231) ([@PetSerAl](https://github.com/PetSerAl) に感謝)
 
 ### <a name="csv-cmdlets"></a>CSV のコマンドレット
 
@@ -307,11 +273,11 @@ PowerShell ジョブの詳細については、「[about_Jobs](/powershell/modul
 
 ### <a name="other-cmdlets"></a>その他のコマンドレット
 
-- リンク ループを確認し、必要に応じて symlink をトラバースする `-FollowSymlink` という `Get-ChildItem` にパラメーターを追加します。 (#4020)
+- リンク ループを確認し、必要に応じて symlink をトラバースする `-FollowSymlink` というパラメーターを `Get-ChildItem` に追加します。 (#4020)
 - `CSharpVersion7` をサポートするために `Add-Type` を更新します。 (#3933) ([@iSazonov](https://github.com/iSazonov) に感謝)
 - より優れたソリューションが見つかるまでサポートされていない API を使用するため、`Microsoft.PowerShell.LocalAccounts` モジュールを削除します。 (#4302)
 - より優れたソリューションが見つかるまでサポートされていない API を使用するため、`Microsoft.PowerShell.Diagnostics` の `*-Counter` コマンドレットを削除します。 (#4303)
-- `Invoke-Item -Path <folder>` のサポートを追加します。 (#4262)
+- `Invoke-Item -Path <folder>` のサポートが追加されます。 (#4262)
 - ファイル名拡張子とファイル名の残りの部分の間のパスを分割できるように、`Split-Path` に `-Extension` および `-LeafBase` スイッチを追加します。 (#2721) ([@powercode](https://github.com/powercode) に感謝)
 - Top/Bottom N Sort のために `Sort-Object` にパラメーターの `-Top` と `-Bottom` を追加します。
 - `CodeProperty "Parent"` を `System.Diagnostics.Process` に追加して、プロセスの親プロセスを公開します。 (#2850) ([@powercode](https://github.com/powercode) に感謝)
@@ -341,10 +307,11 @@ PowerShell ジョブの詳細については、「[about_Jobs](/powershell/modul
   ```
 
 - `Select-Object` の `-Property` にハッシュテーブルの Tab 補完機能を追加します。 (#3625) ([@powercode](https://github.com/powercode) に感謝)
-- `Select-Object` の `-ExcludeProperty` と `-ExpandProperty` で引数のオートコンプリートを有効にします。 (#3443) ([@iSazonov](https://github.com/iSazonov) に感謝)
+- `Select-Object` の `-ExcludeProperty` と `-ExpandProperty` で引数のオートコンプリートを有効にします。
+  (#3443) ([@iSazonov](https://github.com/iSazonov) に感謝)
 - ネイティブ コンプリーターに対する `native.exe --<tab>` 呼び出しを行うために、Tab 補完機能のバグを修正します。 (#3633) ([@powercode](https://github.com/powercode) に感謝)
 
-## <a name="breaking-changes"></a>破壊的変更
+## <a name="breaking-changes"></a>重大な変更
 
 PowerShell Core 6.0 には多くの破壊的変更が導入されています。
 その詳細については、[PowerShell Core 6.0 の破壊的変更][breaking-changes]に関するページを参照してください。
@@ -354,10 +321,10 @@ PowerShell Core 6.0 には多くの破壊的変更が導入されています。
 - `Invoke-Command -ComputerName` でのリモート ステップイン デバッグをサポートします。 (#3015)
 - PowerShell Core でのバインダー デバッグ ログを有効にします。
 
-## <a name="filesystem-updates"></a>FileSystem の更新
+## <a name="filesystem-updates"></a>ファイルシステムの更新
 
 - UNC パスからの FileSystem プロバイダーの使用を有効にします。 ($4998)
-- `Split-Path` で UNC ルートを使用できるようになりました。
+- UNC ルートで `Split-Path` が使用できるようになりました。
 - 引数なしの `cd` が `cd ~` として動作するようになりました。
 - 260 文字を超えるパスを使用できるように PowerShell Core を修正しました。 (#3960)
 
@@ -365,8 +332,7 @@ PowerShell Core 6.0 には多くの破壊的変更が導入されています。
 
 起動時刻、さまざまな組み込みコマンドレット、ネイティブ バイナリの操作など、PowerShell 全体のパフォーマンスについて*多く*の改善を行いました。
 
-PowerShell Core 内の多くのバグの修正も行いました。
-修正と変更の完全なリストについては、GitHub の[変更ログ][]に関するページを確認してください。
+PowerShell Core 内の多くのバグの修正も行いました。 修正と変更の完全なリストについては、GitHub の[変更ログ][]に関するページを確認してください。
 
 ## <a name="telemetry"></a>テレメトリ
 
@@ -374,10 +340,7 @@ PowerShell Core 内の多くのバグの修正も行いました。
   - OS のプラットフォーム (`$PSVersionTable.OSDescription`)
   - PowerShell の正確なバージョン (`$PSVersionTable.GitCommitId`)
 
-このテレメトリをオプトアウトする場合は、単に `POWERSHELL_TELEMETRY_OPTOUT` 環境変数を作成して値を `true`、`1`、または `yes` のいずれかに設定します。
-この変数を作成すると、PowerShell を初めて実行する前であっても、すべてのテレメトリがバイパスされます。
-[コミュニティ ダッシュボード][community-dashboard]のテレメトリから収集される、このテレメトリ データと分析情報を公開することも予定しています。
-このデータの使用方法の詳細については、こちらの[ブログの投稿][telemetry-blog]を参照してください。
+このテレメトリをオプトアウトする場合は、単に `POWERSHELL_TELEMETRY_OPTOUT` 環境変数を作成して値を `true`、`1`、または `yes` のいずれかに設定します。 この変数を作成すると、PowerShell を初めて実行する前であっても、すべてのテレメトリがバイパスされます。 [コミュニティ ダッシュボード][community-dashboard]のテレメトリから収集される、このテレメトリ データと分析情報を公開することも予定しています。 このデータの使用方法の詳細については、こちらの[ブログの投稿][telemetry-blog]を参照してください。
 
 [github]: https://github.com/PowerShell/PowerShell
 [.NET Core 2.0]: https://docs.microsoft.com/dotnet/core/

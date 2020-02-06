@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: JEA, PowerShell, セキュリティ
 title: JEA ロール機能
-ms.openlocfilehash: 613557d03bb481f9280a06ca1506166a18b4dab2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5b5b5977d4fec1ed850f1146fe7c09463908651b
+ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416791"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76818177"
 ---
 # <a name="jea-role-capabilities"></a>JEA ロール機能
 
@@ -36,7 +36,7 @@ JEA エンドポイントでユーザーのアクセス許可の昇格が許可�
 
 |                                            リスク                                            |                                例                                |                                                                              関連するコマンド                                                                              |
 | ------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| JEA を迂回する管理者特権を接続ユーザーに与える                                | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`、`Add-LocalGroupMember`、`net.exe`、`dsadd.exe`                                                                                                        |
+| JEA を迂回する管理者特権を接続ユーザーに与える                                | `Add-LocalGroupMember -Member 'CONTOSO\jdoe' -Group 'Administrators'` | `Add-ADGroupMember`、`Add-LocalGroupMember`、`net.exe`, `dsadd.exe`                                                                                                        |
 | マルウェア、エクスプロイト、防御を迂回するカスタム スクリプトなど、任意のコードを実行する | `Start-Process -FilePath '\\san\share\malware.exe'`                   | `Start-Process`, `New-Service`, `Invoke-Item`, `Invoke-WmiMethod`, `Invoke-CimMethod`, `Invoke-Expression`, `Invoke-Command`, `New-ScheduledTask`, `Register-ScheduledJob` |
 
 ## <a name="create-a-role-capability-file"></a>ロール機能ファイルを作成する
@@ -157,9 +157,11 @@ FunctionDefinitions = @{
 
 JEA セッションでタブ補完が正しく機能するためには、**VisibleFunctions** リストに組み込み関数 `tabexpansion2` を含める必要があります。
 
-## <a name="place-role-capabilities-in-a-module"></a>モジュールにロール機能を配置する
+## <a name="make-the-role-capabilities-available-to-a-configuration"></a>構成でロール機能を使用できるようにする
 
-PowerShell でロール機能ファイルを検出できるようにするには、ファイルを PowerShell モジュールの **RoleCapabilities** フォルダーに保存する必要があります。 モジュールは `$env:PSModulePath` 環境変数に含まれるあらゆるフォルダーに保存できますが、System32 や信頼されていない接続ユーザーがファイルを変更できる可能性があるフォルダーには保存しないでください。 以下の例では、`$env:ProgramFiles` パスに **ContosoJEA** という名前の基本 PowerShell スクリプト モジュールを作成しています。
+PowerShell 6 より前の場合、PowerShell でロール機能ファイルを検出できるようにするには、ファイルを PowerShell モジュールの **RoleCapabilities** フォルダーに保存する必要があります。 モジュールは `$env:PSModulePath` 環境変数に含まれるあらゆるフォルダーに保存できますが、`$env:SystemRoot\System32` や、信頼されていないユーザーがファイルを変更できる可能性があるフォルダーには配置しないでください。
+
+次の例では、ロール機能ファイルをホストするための **ContosoJEA** という名前の PowerShell スクリプト モジュールを `$env:ProgramFiles` パスに作成します。
 
 ```powershell
 # Create a folder for the module
@@ -178,6 +180,8 @@ Copy-Item -Path .\MyFirstJEARole.psrc -Destination $rcFolder
 ```
 
 PowerShell モジュールの詳細については、[PowerShell モジュールの概要](/powershell/scripting/developer/windows-powershell)に関するページを参照してください。
+
+PowerShell 6 以降では、**RoleDefinitions** プロパティがセッション構成ファイルに追加されました。 このプロパティを使用すると、使用するロールの定義のロール構成ファイルの場所を指定できます。 「[New-PSSessionConfigurationFile](/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile)」に記載されている例を参照してください。
 
 ## <a name="updating-role-capabilities"></a>ロール機能を更新する
 
@@ -243,6 +247,6 @@ $mergedAandB = @{
 あるロール機能からのプロバイダーと別のロール機能からのコマンドレット/関数/コマンドが組み合わされることで、本来の意図とは異なるシステム リソース アクセスがユーザーに与えられるような事態が発生しないように注意してください。
 たとえば、あるロールで `Remove-Item` コマンドレットが許可され、別のロールで `FileSystem` プロバイダーが許可される場合、JEA ユーザーがコンピューター上のファイルを削除する可能性があります。 効果的なユーザー アクセス許可を確認する方法については、[JEA の監査](audit-and-report.md)に関する記事に追加情報があります。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 [セッション構成ファイルを作成する](session-configurations.md)

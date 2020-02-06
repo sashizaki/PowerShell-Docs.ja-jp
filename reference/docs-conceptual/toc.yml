@@ -654,8 +654,8 @@
           href: samples/creating-.net-and-com-objects--new-object-.md
         - name: 静的なクラスとメソッドの使用
           href: samples/using-static-classes-and-methods.md
-        - name: WMI オブジェクトの取得 (Get-WmiObject)
-          href: samples/getting-wmi-objects--get-wmiobject-.md
+        - name: WMI オブジェクトの取得 - Get-CimInstance
+          href: samples/getting-wmi-objects--get-ciminstance-.md
     - name: コンピューターの管理
       items:
         - name: コンピューターの状態を変更する

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーの概要
-ms.openlocfilehash: ee3fe7d9c65ad1a8f9ffd2ddec0f4ce6659bc3d5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fd4185234136dd9f3e628df50954b6ebff637639
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328463"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995888"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>PowerShell ギャラリーの概要
 
@@ -23,7 +23,7 @@ PowerShell ギャラリーの[ホーム ページ](https://www.powershellgallery
 
 次のパラメーターを使用して、ギャラリーからの結果をフィルター処理できます。
 
-- 名前
+- Name
 - AllVersions
 - MinimumVersion
 - RequiredVersion
@@ -31,8 +31,8 @@ PowerShell ギャラリーの[ホーム ページ](https://www.powershellgallery
 - Includes
 - DscResource
 - RoleCapability
-- コマンド
-- フィルター
+- command
+- Assert
 
 ギャラリー内の特定の DSC リソースのみを検出したい場合は、[Find-DscResource][] コマンドレットを実行します。 Find-DscResource では、ギャラリーに含まれている DSC リソースのデータが返されます。 DSC リソースは常にモジュールの一部として配布されるため、この DSC リソースをインストールする場合も [Install-Module][] を実行する必要があります。
 
@@ -68,7 +68,7 @@ PowerShell ギャラリーからパッケージをダウンロードするとき
 
 既定では、[Install-Module][] および [Install-Script][] は最新バージョンのパッケージをインストールします。 前のバージョンのパッケージをインストールするには、`-RequiredVersion` パラメーターを追加します。
 
-### <a name="deploy"></a>展開
+### <a name="deploy"></a>配置
 
 パッケージを PowerShell ギャラリーから Azure Automation にデプロイするには、 **[Azure Automation]** をクリックした後、パッケージの詳細ページで **[Deploy to Azure Automation]\(Azure Automation にデプロイする\)** をクリックします。 Azure 管理ポータルにリダイレクトされるため、そこで Azure アカウント資格情報を使用してサインインします。 依存関係のあるパッケージをデプロイすると、すべての依存関係が Azure Automation にデプロイされることに注意してください。 [Azure Automation にデプロイする] ボタンは、**AzureAutomationNotSupported** タグをパッケージのメタデータに追加すると無効にできます。
 
@@ -76,9 +76,9 @@ Azure Automation の詳細については、[Azure Automation](/azure/automation
 
 ## <a name="updating-packages-from-the-powershell-gallery"></a>PowerShell ギャラリーからのパッケージの更新
 
-PowerShell ギャラリーからインストールされたパッケージを更新するには、[Update-Module][] または [Update-Script][] コマンドレットを実行します。 パラメーターを追加せずに [Update-Module][] を実行すると、[Install-Module][] を実行してインストールされたすべてのモジュールが更新されます。 モジュールを選択して更新するには、`-Name` パラメーターを追加します。
+PowerShell ギャラリーからインストールされたパッケージを更新するには、[Update-Module][] または [Update-Script][] コマンドレットを実行します。 パラメーターを追加せずに [Update-Module][] を実行すると、[Install-Module][] を実行してインストールされたすべてのモジュールの更新が試行されます。 モジュールを選択して更新するには、`-Name` パラメーターを追加します。
 
-同様に、パラメーターを追加せずに [Update-Script][] を実行すると、[Install-Script][] を実行してインストールされたすべてのスクリプトが更新されます。 スクリプトを選択して更新するには、`-Name` パラメーターを追加します。
+同様に、パラメーターを追加せずに [Update-Script][] を実行する場合も、[Install-Script][] を実行してインストールされたすべてのスクリプトの更新が試行されます。 スクリプトを選択して更新するには、`-Name` パラメーターを追加します。
 
 ## <a name="list-packages-that-you-have-installed-from-the-powershell-gallery"></a>PowerShell ギャラリーからインストールしたパッケージの一覧
 
@@ -98,3 +98,5 @@ PowerShell ギャラリーからどのモジュールをインストールした
 [Register-PSRepository]: /powershell/module/powershellget/Register-Repository
 [Save-Module]: /powershell/module/powershellget/Save-Module
 [Save-Script]: /powershell/module/powershellget/Save-Script
+[Update-Module]: /powershell/module/powershellget/Update-Module
+[Update-Script]: /powershell/module/powershellget/Update-Script

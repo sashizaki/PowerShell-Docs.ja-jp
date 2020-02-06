@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC プル サービス
-ms.openlocfilehash: d71c87e0420a0ee54eca36f1792b43103431233f
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
+ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870814"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76885389"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration プル サービス
 
@@ -22,6 +22,14 @@ Local Configuration Manager (LCM) は、プル サービス ソリューショ�
 - Windows Server で実行されるプル サービス
 - コミュニティが維持するオープン ソースのソリューション
 - SMB 共有
+
+各ソリューションの推奨スケールは次のとおりです。
+
+|                   解決策                   |              クライアント ノード              |
+| -------------------------------------------- | -------------------------------------- |
+| MDB/ESENT データベースを使用する Windows プル サーバー | 最大 500 ノード                        |
+| SQL データベースを使用する Windows プル サーバー       | 最大 1000 ノード                       |
+| Azure Automation DSC                         | ノードが 1000 個より多いシナリオ |
 
 **推奨されるソリューション**であり、最も多くの機能を使用できる選択肢は [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) です。
 
@@ -219,7 +227,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 
 各リソース モジュールは、圧縮し、`{Module Name}_{Module Version}.zip` というパターンで名前を付ける必要があります。
 
-たとえば、モジュール名が xWebAdminstration で、バージョンが 3.1.2.0 のモジュールでは、`xWebAdministration_3.1.2.0.zip` という名前になります。 各バージョンのモジュールを 1 つの zip ファイルに含める必要があります。
+たとえば、モジュール名が **xWebAdminstration** で、バージョンが 3.1.2.0 のモジュールでは、`xWebAdministration_3.1.2.0.zip` という名前になります。 各バージョンのモジュールを 1 つの zip ファイルに含める必要があります。
 各 zip ファイルには 1 つのバージョンのリソースのみが含まれるので、WMF 5.0 で追加された、単一のディレクトリに複数のモジュール バージョンを入れるモジュール形式はサポートされていません。 このため、プル サーバーで使うための DSC リソース モジュールをパッケージ化する前に、ディレクトリ構造に少しの変更が必要です。 WMF 5.0 の DSC リソースを含むモジュールの既定の形式は、`{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\` です。 プル サーバー用にパッケージ化する前に、パスが `{Module Folder}\DscResources\{DSC Resource Folder}\` になるように **{Module version}** フォルダーを削除します。 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを **ModulePath** フォルダーに置きます。
 
 新しく追加したモジュールのチェックサム ファイルを作成するには、`New-DscChecksum {module zip file}` を使用します。

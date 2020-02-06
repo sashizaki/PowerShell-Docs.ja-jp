@@ -1,17 +1,29 @@
 ---
-ms.date: 12/18/2019
+ms.date: 02/03/2020
 keywords: powershell、core
 title: PowerShell Core 6.0 の重要な変更
-ms.openlocfilehash: dfbbeb5e5bb3d43959ce144afffc5b10193f8b30
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.openlocfilehash: 47ed14cceed86e4dd04a8e0079af00f6a98988ea
+ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75415705"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76995459"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>PowerShell 6.x の破壊的変更
 
 ## <a name="features-no-longer-available-in-powershell-core"></a>PowerShell Core で使用できなくなった機能
+
+### <a name="modules-not-shipped-for-powershell-6x"></a>PowerShell 6.x に付属しないモジュール
+
+互換性に関するさまざまな理由から、次のモジュールは PowerShell 6 には含まれません。
+
+- ISE
+- Microsoft.PowerShell.LocalAccounts
+- Microsoft.PowerShell.ODataUtils
+- Microsoft.PowerShell.Operation.Validation
+- PSScheduledJob
+- PSWorkflow
+- PSWorkflowUtility
 
 ### <a name="powershell-workflow"></a>PowerShell ワークフロー
 
@@ -40,10 +52,11 @@ OS の再起動後にチェックポイントを使ってスクリプトを再�
 
 WMI ベースの 2 つのモジュール セットをサポートすることは複雑になるため、PowerShell Core から WMI v1 コマンドレットが削除されました。
 
-- `Get-WmiObject`
-- `Invoke-WmiMethod`
 - `Register-WmiEvent`
 - `Set-WmiInstance`
+- `Invoke-WmiMethod`
+- `Get-WmiObject`
+- `Remove-WmiObject`
 
 これに代わり、新しい機能や再設計された構文を含み、同じ機能を提供する CIM (別名 WMI v2) コマンドレットを使用することをお勧めします。
 
@@ -68,14 +81,51 @@ WMI ベースの 2 つのモジュール セットをサポートすることは
 
 .NET Core では、SOAP プロトコルを使用するためのサービスを提供する Windows Communication Framework はサポートされていません。 このコマンドレットは、SOAP を必要とするため削除されました。
 
-### <a name="-computer-cmdlets"></a>`*-Computer` コマンドレット
+### <a name="-transaction-cmdlets-removed"></a>`*-Transaction` コマンドレットの削除
+
+以下のコマンドレットの使用方法は非常に限られていました。 これらのサポートを中止することが決定されました。
+
+- `Complete-Transaction`
+- `Get-Transaction`
+- `Start-Transaction`
+- `Undo-Transaction`
+- `Use-Transaction`
+
+### <a name="security-cmdlets-not-available-on-non-windows-platforms"></a>Windows 以外のプラットフォームで使用できないセキュリティ コマンドレット
+
+- `Get-Acl`
+- `Set-Acl`
+- `Get-AuthenticodeSignature`
+- `Set-AuthenticodeSignature`
+- `Get-CmsMessage`
+- `Protect-CmsMessage`
+- `Unprotect-CmsMessage`
+- `New-FileCatalog`
+- `Test-FileCatalog`
+
+### <a name="-computerand-other-windows-specific-cmdlets"></a>`*-Computer` およびその他の Windows 専用コマンドレット
 
 以下のコマンドレットは、サポートされていない API が使われているため、より優れたソリューションが提供されるまで PowerShell Core から削除されます。
 
-- Add-Computer
-- Checkpoint-Computer
-- Remove-Computer
-- Restore-Computer
+- `Get-Clipboard`
+- `Set-Clipboard`
+- `Add-Computer`
+- `Checkpoint-Computer`
+- `Remove-Computer`
+- `Restore-Computer`
+- `Reset-ComputerMachinePassword`
+- `Disable-ComputerRestore`
+- `Enable-ComputerRestore`
+- `Get-ComputerRestorePoint`
+- `Test-ComputerSecureChannel`
+- `Get-ControlPanelItem`
+- `Show-ControlPanelItem`
+- `Get-HotFix`
+- `Clear-RecycleBin`
+- `Update-List`
+- `Out-Printer`
+- `ConvertFrom-String`
+- `Convert-String`
 
 ### <a name="-counter-cmdlets"></a>`*-Counter` コマンドレット
 
@@ -84,6 +134,31 @@ WMI ベースの 2 つのモジュール セットをサポートすることは
 ### <a name="-eventlog-cmdlets"></a>`*-EventLog` コマンドレット
 
 サポートされていない API を使用しているため、より優れたソリューションが提供されるまで、PowerShell Core から `*-EventLog` コマンドレットを削除しています 。 `Get-WinEvent` と `Create-WinEvent` を使用すると、Windows でイベントを取得および作成することができます。
+
+### <a name="cmdlets-that-use-wpf-removed"></a>WPF を使用するコマンドレットの削除
+
+Windows Presentation Framework は、CoreCLR ではサポートされていません。 以下のコマンドレットが影響を受けます。
+
+- `Show-Command`
+- `Out-GridView`
+- `Get-Help` の **showwindow** パラメーター
+
+### <a name="some-dsc-cmdlets-removed"></a>一部の DSC コマンドレットの削除
+
+- `Get-DscConfiguration`
+- `Publish-DscConfiguration`
+- `Restore-DscConfiguration`
+- `Start-DscConfiguration`
+- `Stop-DscConfiguration`
+- `Test-DscConfiguration`
+- `Update-DscConfiguration`
+- `Remove-DscConfigurationDocument`
+- `Get-DscConfigurationStatus`
+- `Disable-DscDebug`
+- `Enable-DscDebug`
+- `Get-DscLocalConfigurationManager`
+- `Set-DscLocalConfigurationManager`
+- `Invoke-DscResource`
 
 ## <a name="enginelanguage-changes"></a>エンジンおよび言語の変更
 
