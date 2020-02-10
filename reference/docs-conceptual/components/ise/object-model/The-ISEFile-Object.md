@@ -11,7 +11,7 @@ ms.locfileid: "75737000"
 ---
 # <a name="the-isefile-object"></a>ISEFile オブジェクト
 
-**ISEFile** オブジェクトは、Windows PowerShell® Integrated Scripting Environment (ISE) のファイルを表します。 これは **Microsoft.PowerShell.Host.ISE.ISEFile** クラスのインスタンスです。 このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。 `$psISE.CurrentFile` と、PowerShell タブのファイル コレクション内のファイルは、****Microsoft.PowerShell.Host.ISE.ISEFile** クラスのすべてのインスタンスです。
+**ISEFile** オブジェクトは、Windows PowerShell® Integrated Scripting Environment (ISE) のファイルを表します。 これは **Microsoft.PowerShell.Host.ISE.ISEFile** クラスのインスタンスです。 このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。 `$psISE.CurrentFile` と、PowerShell タブのファイル コレクション内のファイルは、\*\***Microsoft.PowerShell.Host.ISE.ISEFile** クラスのすべてのインスタンスです。
 
 ## <a name="methods"></a>メソッド
 
