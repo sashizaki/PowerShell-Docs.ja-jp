@@ -2,12 +2,12 @@
 ms.date: 10/30/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC のトラブルシューティング
-ms.openlocfilehash: 2a0d2138f30573b9ae6cf52d8b106a05f1193407
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
+ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954619"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77478787"
 ---
 # <a name="troubleshooting-dsc"></a>DSC のトラブルシューティング
 
@@ -119,7 +119,7 @@ Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 Consistency engine was run successfully.
 ```
 
-DSC イベントは、ユーザーが 1 つの DSC ジョブからイベントを集計できるように特定の構造に記録されます。 その構造は次のとおりです。
+DSC イベントは、ユーザーが 1 つの DSC ジョブからイベントを集計できるように特定の構造に記録されます。 構造は次のとおりです。
 
 ```
 Job ID : <Guid>
@@ -642,6 +642,16 @@ https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned une
 
 トラフィックを暗号化するためにサーバー上で使用される証明書に、URL を解決するためにノードによって使用される DNS 名とは異なる共通名 (CN) が含まれている場合に、これは発生する可能性があります。
 正しい名前の証明書を使用するように Windows プルサーバーのインスタンスを更新します。
+
+## <a name="error-when-running-sysprep-after-applying-a-dsc-configuration"></a>DSC 構成の適用後に Sysprep を実行するとエラーが発生する
+
+DSC 構成を適用した後に Sysprep を実行して Windows Server を一般化しようとすると、次のエラーが発生することがあります。
+
+```
+SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
+```
+
+Windows PowerShell Desired State Configuration を使用して構成された後のサーバーの一般化は、サポートされているシナリオではありません。  代わりに、Windows セットアップの Specialize フェーズが完了した後で、構成を Windows に適用します。
 
 ## <a name="see-also"></a>参照
 

@@ -2,12 +2,12 @@
 title: PowerShell Core のサポート ライフサイクル
 description: PowerShell Core のサポートを管理するポリシー
 ms.date: 08/06/2018
-ms.openlocfilehash: 57804df830da01bee0f48acc374658b025a46b85
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+ms.openlocfilehash: d535199e19c1aabbbfdd140b38aad329bc5d957e
+ms.sourcegitcommit: 5f199cd2a1b31dbcebaab44f2fe496f289831a30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022232"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77478804"
 ---
 # <a name="powershell-core-support-lifecycle"></a>PowerShell Core のサポート ライフサイクル
 
@@ -50,22 +50,20 @@ Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポ�
 `Experimental` としてリストされているプラットフォームは、正式にはサポートされていませんが、実験とフィードバックのために使用することができます。
 
 | プラットフォーム                                          |      6.2      |    7.0    |
-|---------------------------------------------------|:-------------:|:---------:|
-| Windows 7、8.1、10                            |   サポートされています   | サポートされています |
-| Windows Server 2008 R2、2012 R2、2016             |   サポートされています   | サポートされています |
+| ------------------------------------------------- | :-----------: | :-------: |
+| Windows 8.1、10                               |   サポートされています   | サポートされています |
+| Windows Server 2012 R2、2016                      |   サポートされています   | サポートされています |
 | [Windows Server 半期チャネル][semi-annual] |   サポートされています   | サポートされています |
 | Ubuntu 16.04 および 18.04                            |   サポートされています   | サポートされています |
-| Ubuntu 18.10 (Snap パッケージを使用)                   |   コミュニティ   | コミュニティ |
-| Ubuntu 19.04 (Snap パッケージを使用)                   |   コミュニティ   | コミュニティ |
+| Ubuntu 19.10 (スナップ パッケージを使用)                   |   コミュニティ   | コミュニティ |
+| Ubuntu 20.04 (スナップ パッケージを使用)                   |   コミュニティ   | コミュニティ |
 | Debian 9                                          |   サポートされています   | サポートされています |
 | Debian 10                                         | サポートされていません | サポートされています |
 | CentOS 7                                          |   サポートされています   | サポートされています |
 | CentOS 8                                          | サポートされていません | サポートされています |
 | Red Hat Enterprise Linux 7                        |   サポートされています   | サポートされています |
 | Red Hat Enterprise Linux 8                        | サポートされていません | サポートされています |
-| openSUSE 42.3                                     |   サポートされています   | サポートされています |
-| Fedora 28                                         |   サポートされています   | サポートされています |
-| Fedora 29、30                                     | サポートされていません | サポートされています |
+| Fedora 30                                         | サポートされていません | サポートされています |
 | Alpine 3.8                                        |   注を参照    | 注を参照  |
 | Alpine 3.9 および 3.10                               | サポートされていません | 注を参照  |
 | macOS 10.12 以降                                      |   サポートされています   | サポートされています |
@@ -97,19 +95,23 @@ Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポ�
 
 そのため、ディストリビューションの所有者によって次のバージョンのサポートは終了され、サポートされていません。
 
-| プラットフォーム | Version | 有効期限切れ                                                                                 |
-|----------|---------|---------------------------------------------------------------------------------------------|
-| Fedora   | 24      | [2017 年 8 月](https://fedoramagazine.org/fedora-24-eol/)                                    |
-| Fedora   | 25      | [2017 年 12 月](https://fedoramagazine.org/fedora-25-end-life/)                             |
-| Fedora   | 26      | [2018 年 5 月](https://fedoramagazine.org/fedora-26-end-life/)                                  |
-| openSUSE | 42.1    | [2017 年 5 月](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)     |
-| openSUSE | 42.2    | [2018 年 1 月](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html) |
-| Ubuntu   | 16.10   | [2017 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)        |
-| Ubuntu   | 17.04   | [2018 年 1 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)          |
-| Ubuntu   | 17.10   | [2018 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)        |
-| Debian   | 8       | [2018 年 6 月](https://lists.debian.org/debian-security-announce/2018/msg00132.html)           |
-| Fedora   | 27      | [2018 年 11 月](https://fedoramagazine.org/fedora-27-end-of-life/)                          |
-| Ubuntu   | 14.04   | [2019 年 4 月](https://wiki.ubuntu.com/Releases)                                              |
+| プラットフォーム       | Version | 有効期限切れ                                                                                                                        |
+| -------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| Debian         | 8       | [2018 年 6 月](https://lists.debian.org/debian-security-announce/2018/msg00132.html)                                                  |
+| Fedora         | 24      | [2017 年 8 月](https://fedoramagazine.org/fedora-24-eol/)                                                                           |
+| Fedora         | 25      | [2017 年 12 月](https://fedoramagazine.org/fedora-25-end-life/)                                                                    |
+| Fedora         | 26      | [2018 年 5 月](https://fedoramagazine.org/fedora-26-end-life/)                                                                         |
+| Fedora         | 27      | [2018 年 11 月](https://fedoramagazine.org/fedora-27-end-of-life/)                                                                 |
+| Fedora         | 28      | [2019 年 5 月](https://fedoramagazine.org/fedora-28-end-of-life/)                                                                      |
+| openSUSE       | 42.1    | [2017 年 5 月](https://lists.opensuse.org/opensuse-security-announce/2017-05/msg00053.html)                                            |
+| openSUSE       | 42.2    | [2018 年 1 月](https://lists.opensuse.org/opensuse-security-announce/2017-11/msg00066.html)                                        |
+| openSUSE       | 42.3    | [2019 年 7 月](https://lists.opensuse.org/opensuse-security-announce/2019-07/msg00000.html)                                           |
+| Ubuntu         | 14.04   | [2019 年 4 月](https://wiki.ubuntu.com/Releases)                                                                                     |
+| Ubuntu         | 16.10   | [2017 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2017-July/000223.html)                                               |
+| Ubuntu         | 17.04   | [2018 年 1 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-January.txt)                                                 |
+| Ubuntu         | 17.10   | [2018 年 7 月](https://lists.ubuntu.com/archives/ubuntu-announce/2018-July/000232.html)                                               |
+| Windows        | 7       | [2020 年 1 月](https://support.microsoft.com/en-us/help/4057281/windows-7-support-ended-on-january-14-2020)                        |
+| Windows Server | 2008 R2 | [2020 年 1 月](https://support.microsoft.com/en-us/help/4456235/end-of-support-for-windows-server-2008-and-windows-server-2008-r2) |
 
 ## <a name="notes-on-licensing"></a>ライセンスに関する注意事項
 
