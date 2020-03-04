@@ -2,12 +2,12 @@
 ms.date: 07/10/2019
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の構成の登録
-ms.openlocfilehash: dbed5c7dd71f2f7a09d97416be56dff675799548
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7cc67e891bc14dd667c97e9a8b550b33b4c2b874
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417604"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706208"
 ---
 # <a name="registering-jea-configurations"></a>JEA の構成の登録
 
@@ -51,7 +51,7 @@ Register-PSSessionConfiguration -Path .\MyJEAConfig.pssc -Name 'JEAMaintenance' 
 
 ## <a name="multi-machine-configuration-with-dsc"></a>DSC での複数コンピューター構成
 
-JEA を複数のコンピューターに展開するときに、最も簡単な展開モデルでは JEA の [Desired State Configuration (DSC)](/powershell/scripting/dsc/overview) リソースを使用して、各コンピューターに JEA を迅速かつ一貫して展開します。
+JEA を複数のコンピューターに展開するときに、最も簡単な展開モデルでは JEA の [Desired State Configuration (DSC)](../../../dsc/overview/overview.md) リソースを使用して、各コンピューターに JEA を迅速かつ一貫して展開します。
 
 DSC で JEA を展開するには、次の前提条件が満たされていることを確認します。
 
@@ -118,6 +118,6 @@ Unregister-PSSessionConfiguration -Name 'ContosoMaintenance' -Force
 > [!WARNING]
 > JEA エンドポイントの登録を解除すると、WinRM サービスが再起動されます。 これにより、他の PowerShell セッション、WMI 呼び出し、一部の管理ツールなど、実行中のほとんどのリモート管理操作が中断されます。 計画されたメンテナンス期間中にのみ、PowerShell エンドポイントの登録を解除してください。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 [JEA エンドポイントをテストする](using-jea.md)
