@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: powershell、core
 title: モジュールとコマンドレットのリリース履歴
-ms.openlocfilehash: e421201d74da2cc74b1bd57529fb3c3e5245ecae
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: e0fe9b263bdd0a5e1bedd0762b7613a4bbe02a58
+ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995434"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77706133"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>モジュールとコマンドレットのリリース履歴
 
@@ -47,7 +47,7 @@ ms.locfileid: "76995434"
 | PSScheduledJob                            | &check; |         |         |         | Windows のみ |
 | PSWorkflow                                | &check; |         |         |         | Windows のみ |
 | PSWorkflowUtility                         | &check; |         |         |         | Windows のみ |
-| ThreadJob                                 |         | &check; | &check; | &check; |              |
+| ThreadJob                                 |         | &check; | &check; | &check; | PowerShell 5.1 にインストール可能 |
 
 ## <a name="cmdlet-release-history"></a>コマンドレットのリリース履歴
 
@@ -121,7 +121,7 @@ ms.locfileid: "76995434"
 | Get-PSSessionCapability           | &check; | &check; | &check; | &check; |                            |
 | Get-PSSessionConfiguration        | &check; | &check; | &check; | &check; |                            |
 | Get-PSSnapin                      | &check; |         |         |         | Windows のみ               |
-| Get-Verb                          | &check; |         |         |         | Windows のみ               |
+| Get-Verb                          | &check; |         |         |         | Microsoft.PowerShell.Utility 6.0 以降に移動 |
 | Import-Module                     | &check; | &check; | &check; | &check; |                            |
 | Invoke-Command                    | &check; | &check; | &check; | &check; |                            |
 | Invoke-History                    | &check; | &check; | &check; | &check; |                            |
@@ -636,4 +636,4 @@ ms.locfileid: "76995434"
 
 |   コマンドレット名   |  5.1  |   6.x   |   7.0   |   7.1   | Note |
 | --------------- | :---: | :-----: | :-----: | :-----: | ---- |
-| Start-ThreadJob |       | &check; | &check; | &check; |      |
+| Start-ThreadJob |       | &check; | &check; | &check; | PowerShell 5.1 にインストール可能 |
