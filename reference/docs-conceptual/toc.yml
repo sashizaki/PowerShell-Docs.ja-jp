@@ -6,7 +6,7 @@
   items:
     - name: PowerShell のさまざまなバージョンのインストール
       href: install/installing-powershell.md
-    - name: PowerShell Core
+    - name: PowerShell のインストール
       items:
         - name: Windows への PowerShell Core のインストール
           href: install/installing-powershell-core-on-windows.md
@@ -16,7 +16,7 @@
           href: install/installing-powershell-core-on-macos.md
         - name: ARM への PowerShell Core のインストール
           href: install/powershell-core-on-arm.md
-    - name: Windows PowerShell
+    - name: Windows PowerShell 5.1 のインストール
       items:
         - name: Windows PowerShell のインストール
           href: install/installing-windows-powershell.md
@@ -24,6 +24,8 @@
           href: install/installing-the-windows-powershell-2.0-engine.md
         - name: Windows PowerShell のシステム要件
           href: install/windows-powershell-system-requirements.md
+    - name: Docker での PowerShell の使用
+      href: install/PowerShell-in-Docker.md
 - name: はじめに
   items:
     - name: PowerShell の概要
@@ -268,6 +270,10 @@
       href: gallery/faqs.md
 - name: 新機能
   items:
+    - name: PowerShell 7.x の新機能
+      items:
+        - name: PowerShell 7.0 の新機能
+          href: whats-new/what-s-new-in-powershell-70.md
     - name: PowerShell Core 6.x の新機能
       items:
         - name: PowerShell Core 6.2 の新機能

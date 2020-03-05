@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 98cac43698b3f537ee318cd2570b2174631665a7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7d399786b9b43ee302493359d9702981045212e9
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359631"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277468"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Windows PowerShell アクティビティでワークフローを作成する
 
@@ -21,7 +21,7 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
 次の手順では、ユーザー指定のコンピューターのグループのドメインステータスを確認し、まだ参加していない場合はドメインに参加させるワークフローを作成する方法について説明します。その後、状態をもう一度確認します。
 
-### <a name="setting-up-the-project"></a>プロジェクトを設定する
+### <a name="setting-up-the-project"></a>プロジェクトの設定
 
 1. 「 [Visual Studio のツールボックスへの Windows PowerShell アクティビティの追加](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)」の手順に従って、ワークフロープロジェクトを作成し、そのアクティビティ[を [ツール](/dotnet/api/Microsoft.PowerShell.Activities)ボックス] に[追加します](/dotnet/api/Microsoft.PowerShell.Management.Activities)。
 
@@ -47,7 +47,7 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
    |プロパティ|値|
    |--------------|-----------|
-   |**Class**|"Win32_ComputerSystem"|
+   |**クラス**|"Win32_ComputerSystem"|
    |**PSComputerName**|コンペティション|
    |**PSCredential**|各の Ecred|
 
@@ -57,7 +57,7 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
     |プロパティ|値|
     |--------------|-----------|
-    |**ComputerName**|コンペティション|
+    |**[ComputerName]**|コンペティション|
     |**DomainCredential**|DomainCred|
 
 11. **Addcomputer**アクティビティの後に、 **RestartComputer**アクティビティを**joindomain**シーケンスに追加します。
@@ -66,16 +66,16 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
     |プロパティ|値|
     |--------------|-----------|
-    |**ComputerName**|コンペティション|
+    |**[ComputerName]**|コンペティション|
     |**資格情報**|各の Ecred|
-    |**対象**|Microsoft. PowerShell. WaitForServiceTypes. PowerShell|
+    |**の**|Microsoft. PowerShell. WaitForServiceTypes. PowerShell|
     |**Force**|True|
-    |Wait|True|
+    |待機|True|
     |PSComputerName|{""}|
 
 13. **RestartComputer**アクティビティの後に、 **GetWmiObject**アクティビティを**joindomain**シーケンスに追加します。 前の**GetWmiObject**アクティビティと同じになるように、プロパティを編集します。
 
     手順を完了すると、ワークフローデザインウィンドウは次のようになります。
 
-    ワークフローデザイナーでの JoinDomain XAML の ![![ワークフローデザイナーでの Joindomain xaml](../media/joindomainworkflow.png "JoinDomainWorkflow")の](../media/joindomainworkflow.png)
+    ワークフローデザイナーでの JoinDomain XAML の ![![ワークフローデザイナーでの Joindomain xaml](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "JoinDomainWorkflow")の](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
     
