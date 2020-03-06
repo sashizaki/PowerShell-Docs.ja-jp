@@ -8,18 +8,21 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: dc5ce5a2-50e9-4c88-abf1-ac148a8a6b7b
 caps.latest.revision: 15
-ms.openlocfilehash: 5957ea4c15cd3778bd09b67c4b97de0ef0cfdd2a
-ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
+ms.openlocfilehash: b176d8439025ac132962859f79e72ae6f9703e82
+ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2019
-ms.locfileid: "74953842"
+ms.lasthandoff: 03/06/2020
+ms.locfileid: "78405049"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>PSModulePath インストール パスを変更する
 
 `PSModulePath` 環境変数には、ディスクにインストールされているモジュールの場所へのパスが格納されます。 PowerShell では、モジュールへの完全パスをユーザーが指定しない場合、この変数を使用してモジュールを検索します。 この変数のパスは、表示されている順序で検索されます。
 
-PowerShell が起動すると、`PSModulePath` は、Windows PowerShell の `$HOME\Documents\PowerShell\Modules; $PSHOME\Modules` または `$HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules` の既定値を使用して、システム環境変数として作成されます。
+PowerShell を起動すると、`PSModulePath` がシステム環境変数として作成されます。既定値は、Windows の場合は `$HOME\Documents\PowerShell\Modules; $PSHOME\Modules`、Linux または Mac の場合は `$HOME/.local/share/powershell/Modules: usr/local/share/powershell/Modules`、Windows PowerShell の場合は `$HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules` です。
+
+> [!NOTE]
+> ユーザー固有の**CurrentUser**の場所は、ユーザープロファイル内の**ドキュメント**の場所にある `WindowsPowerShell\Modules` フォルダーです。 その場所の特定のパスは、Windows のバージョンと、フォルダーリダイレクトを使用しているかどうかによって異なります。 既定では、Windows 10 の場合、その場所は `$HOME\Documents\WindowsPowerShell\Modules`です。
 
 ## <a name="to-view-the-psmodulepath-variable"></a>PSModulePath 変数を表示するには
 
@@ -56,3 +59,5 @@ PowerShell が起動すると、`PSModulePath` は、Windows PowerShell の `$HO
 ## <a name="see-also"></a>参照
 
 [Windows PowerShell モジュールの作成](./writing-a-windows-powershell-module.md)
+
+[about_Modules](/powershell/module/microsoft.powershell.core/about/about_modules)
