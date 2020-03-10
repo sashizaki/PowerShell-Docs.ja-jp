@@ -8,13 +8,13 @@
       href: install/installing-powershell.md
     - name: PowerShell のインストール
       items:
-        - name: Windows への PowerShell Core のインストール
+        - name: Windows への PowerShell のインストール
           href: install/installing-powershell-core-on-windows.md
-        - name: Linux への PowerShell Core のインストール
+        - name: Linux への PowerShell のインストール
           href: install/installing-powershell-core-on-linux.md
-        - name: macOS への PowerShell Core のインストール
+        - name: macOS への PowerShell のインストール
           href: install/installing-powershell-core-on-macos.md
-        - name: ARM への PowerShell Core のインストール
+        - name: ARM への PowerShell のインストール
           href: install/powershell-core-on-arm.md
     - name: Windows PowerShell 5.1 のインストール
       items:
@@ -296,6 +296,8 @@
           href: whats-new/what-s-new-in-the-powershell-50-ise.md
     - name: モジュールとコマンドレットのリリース履歴
       href: whats-new/cmdlet-versions.md
+    - name: モジュール互換性リスト
+      href: whats-new/module-compatibility.md
 - name: PowerShell Core のサポート ライフサイクル
   href: powershell-support-lifecycle.md
 - name: Windows Management Framework (WMF)
