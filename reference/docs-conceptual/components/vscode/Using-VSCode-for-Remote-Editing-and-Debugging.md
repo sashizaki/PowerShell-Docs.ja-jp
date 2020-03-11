@@ -2,12 +2,12 @@
 title: Visual Studio Code を使用したリモート編集およびデバッグ
 description: Visual Studio Code を使用したリモート編集およびデバッグ
 ms.date: 06/13/2019
-ms.openlocfilehash: ae3b7a3709498fcd547a48d0849b0dc880217225
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5ce7f575d90ff47fd6b8a0a2b567e972ec3a9fef
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "67263929"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279160"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Visual Studio Code を使用したリモート編集およびデバッグ
 
@@ -38,7 +38,7 @@ ISE に精通していれば、統合コンソールから `psedit file.ps1` を
 
 VSCode 用 PowerShell 拡張機能を開始し、PowerShell 統合コンソールを開くと、「`Open-EditorFile foo.ps1`」または「`psedit foo.ps1`」と入力してエディターでローカル環境の foo.ps1 ファイルを開くことができます。
 
-![ローカルに動作する Open-EditorFile foo.ps1](images/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
+![ローカルに動作する Open-EditorFile foo.ps1](media/Using-VSCode-for-Remote-Editing-and-Debugging/1-open-local-file.png)
 
 >[!NOTE]
 > ファイル `foo.ps1` は既に存在している必要があります。
@@ -47,11 +47,11 @@ VSCode 用 PowerShell 拡張機能を開始し、PowerShell 統合コンソー�
 
 - 余白にブレークポイントを追加します
 
-  ![余白にブレークポイントを追加する](images/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+  ![余白にブレークポイントを追加する](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
 
 - F5 キーを押して PowerShell スクリプトをデバッグします。
 
-  ![PowerShell のローカル スクリプトをデバッグする](images/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
+  ![PowerShell のローカル スクリプトをデバッグする](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
 デバッグ中に、デバッグ コンソールと対話し、左側でスコープ内の変数を確認し、他のすべての標準デバッグ ツールを使用できます。
 
@@ -73,20 +73,20 @@ VSCode 用 PowerShell 拡張機能を開始し、PowerShell 統合コンソー�
 
 まず、統合コンソールで `Enter-PSSession` を実行します。 プロンプトの左側に `[<hostname>]` が表示されたら、リモート セッションに接続しています。
 
-![Enter-PSSession の呼び出し](images/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
+![Enter-PSSession の呼び出し](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
 これで、ローカル スクリプトを編集する場合と同じ手順を実行できるようになりました。
 
 1. `Open-EditorFile test.ps1` または `psedit test.ps1` を実行してリモートの `test.ps1` ファイルを開きます
 
-  ![Open-EditorFile the test.ps1 ファイル](images/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
+  ![Open-EditorFile the test.ps1 ファイル](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
 
 1. ファイルを編集し、ブレークポイントを設定します
 
-   ![編集とブレークポイントの設定](images/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+   ![編集とブレークポイントの設定](media/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
 
 1. リモート ファイルのデバッグを開始します (F5)
 
-   ![リモート ファイルのデバッグ](images/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+   ![リモート ファイルのデバッグ](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
 
 何か問題があれば、[GitHub リポジトリ](https://github.com/powershell/vscode-powershell)で問題を開いてください。

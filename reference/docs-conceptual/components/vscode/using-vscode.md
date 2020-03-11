@@ -2,12 +2,12 @@
 title: PowerShell 開発のための Visual Studio Code の使用
 description: PowerShell 開発のための Visual Studio Code の使用
 ms.date: 11/07/2019
-ms.openlocfilehash: 4f197e71d3b79828f466584f5d862415726818b1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 16ae228c0d169261b783366a730fd2d5d77d32d6
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117387"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279072"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell 開発のための Visual Studio Code の使用
 
@@ -17,9 +17,9 @@ PowerShell バージョンが 5 の Windows で VSCode を使用する場合、W
 
 開始する前に、システムに PowerShell があることを確認します。 Windows、macOS、Linux 上の最近のワークロードに対しては、次のリンクを参照してください。
 
-- [Linux への PowerShell Core のインストール][install-pscore-linux]
-- [macOS への PowerShell Core のインストール][install-pscore-macos]
-- [Windows への PowerShell Core のインストール][install-pscore-windows]
+- [Linux に PowerShell Core をインストールする][install-pscore-linux]
+- [macOS に PowerShell Core をインストールする][install-pscore-macos]
+- [Windows に PowerShell Core をインストールする][install-pscore-windows]
 
 従来の Windows PowerShell ワークロードについては、「[Windows PowerShell のインストール][install-winps]」を参照してください。
 
@@ -48,7 +48,7 @@ PowerShell バージョンが 5 の Windows で VSCode を使用する場合、W
    1. サイド バーに **[拡張機能]** ビューが開きます。 Microsoft の PowerShell の拡張機能を選択します。
       次の画像のような VSCode 画面が表示されるはずです。
 
-      ![VSCode](../../images/using-vscode/vscode.png)
+      ![VS Code](media/using-vscode/vscode.png)
 
    1. Microsoft の PowerShell 拡張機能の、 **[インストール]** ボタンをクリックします。
    1. インストール後、 **[インストール]** ボタンは **[再読み込み]** に変わります。 **[再読み込み]** をクリックします。
@@ -157,7 +157,7 @@ VSCode には、次の構成設定をお勧めします。
 }
 ```
 
-これらの設定がすべてのファイルの種類に影響しないようにする場合、VSCode では言語ごとに構成することもできます。 `[<language-name>]` フィールドに設定を指定して、言語固有の設定を作成します。 たとえば、次のように入力します。
+これらの設定がすべてのファイルの種類に影響しないようにする場合、VSCode では言語ごとに構成することもできます。 `[<language-name>]` フィールドに設定を指定して、言語固有の設定を作成します。 次に例を示します。
 
 ```json
 "[powershell]": {

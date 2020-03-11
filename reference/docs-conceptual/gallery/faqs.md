@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーに関してよく寄せられる質問
-ms.openlocfilehash: 70e2220bd68b351e0b09dd3c59901104f7874335
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 9572a61d38b0d540b0b8933405810ac4f2b6377e
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818126"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278182"
 ---
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
 
@@ -64,7 +64,7 @@ PowerShell モジュールのどの種類 (スクリプト モジュール、バ
 マニフェストに次の情報を含むモジュールはすべて、ギャラリーに公開できます。
 
 - Version
-- [説明]
+- 説明
 - Author
 - マニフェストの **PrivateData** セクションの一部として、または [Publish-Module][] コマンドレットの **LicenseUri** パラメーターの、モジュールのライセンス条項への URI。
 
@@ -85,7 +85,7 @@ PowerShell スクリプトのどの種類 (スクリプトまたはワークフ�
 PSScriptInfo セクションに次の情報を含むスクリプトはすべて、ギャラリーに公開できます。
 
 - Version
-- [説明]
+- 説明
 - Author
 - スクリプトの **PSScriptInfo** セクションの一部として、または [Publish-Script][] コマンドレットの **LicenseUri** パラメーターの、スクリプトのライセンス条項への URI。
 
@@ -148,7 +148,7 @@ PowerShell コマンドレット層で、[Install-Module][] は実際には Inst
 
 PackageManagement パッケージ プロバイダー層では、PSModule パッケージ プロバイダーは実際に他の PackageManagement パッケージ プロバイダーを呼び出します。 たとえば、NuGet ベースのギャラリー (PowerShell ギャラリーなど) を使用している場合、PSModule パッケージ プロバイダーでは、リポジトリで使用できるように NuGet パッケージ プロバイダーを使用します。
 
-![PowerShellGet アーキテクチャ](Images/powershellgetArchitecture.png)
+![PowerShellGet アーキテクチャ](media/faqs/powershellgetArchitecture.png)
 
 図 1: PowerShellGet アーキテクチャ
 

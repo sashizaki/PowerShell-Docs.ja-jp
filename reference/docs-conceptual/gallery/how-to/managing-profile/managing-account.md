@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーのアカウント設定
-ms.openlocfilehash: ebe784ec5aae5ff3a4d444d12a168ef38aaef65f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: db61c3fd8c73048b51f3411a8c1dab52fb03d08a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328033"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278108"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell ギャラリーのアカウント設定
 
@@ -25,7 +25,7 @@ PowerShell ギャラリーには、次のアカウント設定が用意されて
 
 電子メール アドレスは、PowerShell ギャラリーの通知の送信先です。 ログイン アカウントと一致している必要はありません。 アクセス権がある任意の電子メール アカウントを使用することができます。 PowerShell ギャラリーから直接、電子メール アドレスが他のユーザーに提供されることはありません。
 
-![電子メール アドレスの変更](../../Images/PSGallery_AcccountEmailAddress.png)
+![電子メール アドレスの変更](media/managing-account/PSGallery_AcccountEmailAddress.png)
 
 新しい電子メール アドレスを入力すると、PowerShell ギャラリーによって確認メールがそのアドレスに送信されます。 確認メールには、PowerShell ギャラリーに戻って変更プロセスを完了するためのリンクが含まれています。 確認プロセスを完了するまで、すべての通知が変更前のアドレスに送信されます。
 
@@ -36,10 +36,10 @@ PowerShell ギャラリーには、次の通知オプションが用意されて
 - Users can contact me through the PowerShell Gallery\(ユーザーが PowerShell ギャラリーを通じて連絡できるようにする\)
 - Notify me when an item is pushed to the PowerShell Gallery using my account\(自分のアカウントを使用して PowerShell ギャラリーにパッケージがプッシュされたときに通知を受け取る\)
 
-![電子メール アドレスの変更](../../Images/PSGallery_AccountEmailOptions.png)
+![電子メール アドレスの変更](media/managing-account/PSGallery_AccountEmailOptions.png)
 
 このページで説明したように、PowerShell ギャラリーからの重要な通知を無効にすることはできません。
-具体的な内容は次のとおりです。
+チェックの内容は次のとおりです
 
 - セキュリティ通知
 - PowerShell ギャラリー管理者からのアカウント管理の通知
@@ -49,20 +49,20 @@ PowerShell ギャラリーには、次の通知オプションが用意されて
 
 ログイン アカウントを変更するには、現在のアカウントでサインインしている必要があります。 変更を完了するには、次の手順を実行します。
 
-![ログイン アカウントの設定](../../Images/PSGallery_LoginAccountSettings.png)
+![ログイン アカウントの設定](media/managing-account/PSGallery_LoginAccountSettings.png)
 
 1. **[アカウントの変更]** をクリックします。 ログイン アカウントの変更が PowerShell ギャラリーでのそのアカウントのすべての使用に適用されることを説明するポップアップ ウィンドウが表示されます。 情報を確認して、 **[OK]** をクリックして続行します。
 
-   ![ログイン アカウントの設定](../../Images/PSGallery_LoginAccountChange-1.png)
+   ![ログイン アカウントの設定](media/managing-account/PSGallery_LoginAccountChange-1.png)
 
 2. _新しいアカウント_を使用してサインインするように求められます。
 
-   ![ログイン アカウントの設定](../../Images/PSGallery_LoginAccountChange-2.png)
+   ![ログイン アカウントの設定](media/managing-account/PSGallery_LoginAccountChange-2.png)
 
 3. **[次へ]** をクリックすると、現在のアカウントを使用してサインインしていることを知らせるメッセージが表示されます。
    **[Sign out and sign in with a different account]\(サインアウトして別のアカウントでサインインする\)** をクリックします。
 
-   ![ログイン アカウントの設定](../../Images/PSGallery_LoginAccountChange-3.png)
+   ![ログイン アカウントの設定](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. 新しいアカウントのパスワードを入力します。 パスワードを入力すると、ログイン アカウントが更新されたことを示す [アカウント設定] ページに戻ります。
 

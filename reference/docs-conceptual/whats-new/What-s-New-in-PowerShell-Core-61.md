@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 の新機能
 description: PowerShell Core 6.1 でリリースされた新機能と変更
 ms.date: 09/13/2018
-ms.openlocfilehash: 531259217f2b71213776e7d394616c7790e9aca9
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 079d5a472c743ce94f2e93143c1dcb4ff406951f
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995516"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277741"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 の新機能
 
@@ -169,7 +169,7 @@ Markdown は、HTML にレンダリングできる基本的な書式設定で読
 
 たとえば、`Show-Markdown` はマークダウン ファイルをコンソールにレンダリングします。
 
-![Show-Markdown の例](./images/markdown_example.png)
+![Show-Markdown の例](media/What-s-New-in-PowerShell-Core-61/markdown_example.png)
 
 これらのコマンドレットの動作について詳しくは、[こちらの RFC](https://github.com/PowerShell/PowerShell-RFC/blob/master/5-Final/RFC0025-Native-Markdown-Rendering.md) をご覧ください。
 
@@ -264,7 +264,7 @@ SSH クライアントは、通常、`user@host:port` の形式で接続文字�
 
 [@bergmeister](https://github.com/bergmeister) の尽力により、Windows でコンテキスト メニューを有効にできるようになりました。 エクスプローラーで任意のフォルダーから PowerShell 6.1 のシステム全体のインストールを開くことができます。
 
-![PowerShell 6 のシェル コンテキスト メニュー](./images/shell_context_menu.png)
+![PowerShell 6 のシェル コンテキスト メニュー](media/What-s-New-in-PowerShell-Core-61/shell_context_menu.png)
 
 ## <a name="goodies"></a>その他
 
@@ -272,7 +272,7 @@ SSH クライアントは、通常、`user@host:port` の形式で接続文字�
 
 [@bergmeister](https://github.com/bergmeister) のおかげで、PowerShell Core のショートカットのジャンプ リストに [管理者として実行] が含まれるようになりました。
 
-![PowerShell 6 のジャンプ リストにおける [管理者として実行]](./images/jumplist.png)
+![PowerShell 6 のジャンプ リストにおける [管理者として実行]](media/What-s-New-in-PowerShell-Core-61/jumplist.png)
 
 ### <a name="cd---returns-to-previous-directory"></a>`cd -` は以前のディレクトリを返す
 

@@ -3,12 +3,12 @@ ms.date: 09/10/2018
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: API キーの管理
-ms.openlocfilehash: 954eb27c25babdb8efe50c13caf5f2d287c6b3e3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0f44a080415f1acf13680771b6e9db5b805f8f45
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328293"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278304"
 ---
 # <a name="managing-api-keys"></a>API キーの管理
 
@@ -19,7 +19,7 @@ PowerShell ギャラリーでは、さまざまな公開要件をサポートす
 
 次の図は、スコープ付き API キーを作成するときに使用できるオプションを示しています。
 
-![API キーの作成](../../Images/PSGallery_KeyScoped.png)
+![API キーの作成](media/creating-APIkeys/PSGallery_KeyScoped.png)
 
 この例では、**AzureRMDataFactory** という名前の API キーを作成しました。 このキーの値は、'AzureRM.DataFactory' で始まる名前を持つパッケージをプッシュするために使用でき、365 日間有効です。 これは、同じ組織内の別のチームが異なるパッケージで作業する場合の一般的なシナリオです。 チームのメンバーは、作業する特定のパッケージに対する特権を付与するキーを持ちます。
 有効期限の値により、古いキーや忘れられたキーの使用を防止します。
@@ -32,7 +32,7 @@ PowerShell ギャラリーでは、さまざまな公開要件をサポートす
 
 セキュリティのため、新しく作成されたキー値は画面に表示されず、次に示すように [コピー] ボタンを使用してのみ入手できます。
 
-![新しい API キー値を取得する](../../Images/PSGallery_CopyCreatedKey.png)
+![新しい API キー値を取得する](media/creating-APIkeys/PSGallery_CopyCreatedKey.png)
 
 > [!IMPORTANT]
 > API キー値は、作成直後または更新直後にのみコピーできます。 キー値は表示されず、ページを更新すると、もう一度アクセスすることはできなくなります。 キー値を紛失した場合は、[再生成] を使用して、再生成された後にキーをコピーする必要があります。
@@ -48,7 +48,7 @@ PowerShell ギャラリーでは、さまざまな公開要件をサポートす
 新しいキーにはすべて有効期限があります。 有効期限の値の単位は日です。 有効期限の有効な値は次のとおりです。
 
 - 1 日
-- 90 日
+- 90 日間
 - 180 日
 - 270 日
 - 365 日 (既定値)
@@ -59,7 +59,7 @@ PowerShell ギャラリーでは、さまざまな公開要件をサポートす
 
 既存のキーの一部の設定を変更することができます。 前述したように、既存の API キーのセキュリティ スコープを変更したり、有効期限を変更することはできません。 変更可能なオプションは、次のスクリーンショットに示されているとおりです。
 
-![新しい API キー値を取得する](../../Images/PSGallery_EditAPIKey.png)
+![新しい API キー値を取得する](media/creating-APIkeys/PSGallery_EditAPIKey.png)
 
 キーによって制御されるパッケージを変更するには、一覧から個々のパッケージを選択するか、glob パターンを変更します。
 

@@ -2,18 +2,18 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Get-Test-Set
-ms.openlocfilehash: 42c1df6df2fbf65cbbb8407db613cac2e5b81cfb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bf409f71c07c434fbc7389789e16575868d21b42
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954289"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278421"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
 
 >適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
-![取得、テスト、および設定](../media/get-test-set.png)
+![取得、テスト、および設定](media/get-test-set/get-test-set.png)
 
 PowerShell の Desired State Configuration は、**Get**、**Test**、および **Set** プロセスを中心に構成されています。 DSC の各[リソース](resources.md)には、これらの各操作を完了するためのメソッドが含まれています。 「[構成](../configurations/configurations.md)」では、リソースの **Get**、**Test**、および **Set** メソッドのパラメーターとなるキーを入力するリソース ブロックを定義します。
 
@@ -175,7 +175,7 @@ Service [String] #ResourceName
 }
 ```
 
-## <a name="test"></a>Server1
+## <a name="test"></a>テスト
 
 リソースの **Test** メソッドでは、ターゲット ノードがリソースの "*望ましい状態*" に現在準拠しているかどうかを判断します。 **Test** メソッドは、Node が準拠しているかどうかのみを示す `$True` または `$False` を返します。
 [Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) を呼び出すと、LCM では現在適用されている構成内の各リソースの **Test** メソッドを呼び出します。 LCM は、".mof" ファイルに格納されているキー値を、対応する各リソース インスタンスへのパラメーターとして使用します。
@@ -204,7 +204,7 @@ localhost       {[Service]Spooler}                                            Tr
 
 詳細については、[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) を参照してください
 
-## <a name="set"></a>設定
+## <a name="set"></a>オン
 
 リソースの **Set** メソッドは、Node がリソースの "*望ましい状態*" に準拠した状態になるように試行します。 **Set** メソッドは**べき等**であるように意図されています。つまり、**Set** を複数回実行し、エラーなしで常に同じ結果を取得することができます。  [Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Start-DSCConfiguration) を実行すると、LCM では現在適用されている構成内の各リソースが循環処理されます。 LCM では ".mof" ファイルから現在のリソース インスタンスのキー値を取得し、それらを **Test** メソッドのパラメーターとして使用します。 **Test** メソッドが `$True` を返した場合、Node は現在のリソースに準拠しているため、**Set** メソッドはスキップされます。 **Test** が `$False` を返した場合、Node は準拠していません。  LCM はリソース インスタンスのキー値をパラメーターとしてリソースの **Set** メソッドに渡し、Node を準拠状態に復元します。
 

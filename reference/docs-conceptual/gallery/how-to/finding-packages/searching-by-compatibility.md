@@ -3,12 +3,12 @@ ms.date: 12/11/2018
 contributor: JKeithB, SydneyhSmith
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: 互換性のある PowerShell エディションまたはオペレーティング システムが含まれるパッケージ
-ms.openlocfilehash: 14038aa9b0453e1d06e6587e97da391b56297c75
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b414ce2c2b189e9da150cbe612e0bb2572d39e76
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71328443"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278371"
 ---
 # <a name="packages-with-compatible-powershell-editions-or-operating-systems"></a>互換性のある PowerShell エディションまたはオペレーティング システムが含まれるパッケージ
 
@@ -25,7 +25,7 @@ PowerShell の 2 つのエディション:
 パッケージが指定された PSEditions と互換性がある場合、'PowerShell Editions' の一部としてパッケージの表示ページおよびパッケージ結果に表示されます。
 PowerShell を使用して互換性のあるパッケージを検索することもできます。
 
-![PSEditions での項目表示ページ](../../Images/packagedisplaypagewithpseditions.PNG)
+![PSEditions での項目表示ページ](media/searching-by-compatibility/packagedisplaypagewithpseditions.PNG)
 
 ### <a name="search-for-packages-in-the-gallery-ui-that-work-on-powershell-core"></a>PowerShell Core で機能するギャラリー UI のパッケージを検索する
 
@@ -33,11 +33,11 @@ Tags:"PSEdition_Desktop" と Tags:"PSEdition_Core" を使用して PowerShell �
 
 ### <a name="use-tagspsedition_core-to-search-items-compatible-with-powershell-core-edition"></a>Tags:"PSEdition_Core" を使用して PowerShell Core エディションと互換性のある項目を検索します。
 
-![Core PSEdition と互換性のある項目の検索](../../Images/searchresultswithpseditions.PNG)
+![Core PSEdition と互換性のある項目の検索](media/searching-by-compatibility/searchresultswithpseditions.PNG)
 
 ### <a name="use-tagspsedition_desktop-to-search-items-compatible-with-powershell-desktop-edition"></a>Tags:"PSEdition_Desktop" を使用して PowerShell Desktop エディションと互換性のある項目を検索します。
 
-![Desktop PSEdition と互換性のある項目の検索](../../Images/searchresultswithpseditionsdesktop.PNG)
+![Desktop PSEdition と互換性のある項目の検索](media/searching-by-compatibility/searchresultswithpseditionsdesktop.PNG)
 
 ### <a name="search-for-packages-to-find-compatible-editions-using-powershell"></a>PowerShell を使用し、パッケージの中から互換性のあるエディションを見つける
 PowerShell エディションと OS のタグを指定してフィルタリングできます。

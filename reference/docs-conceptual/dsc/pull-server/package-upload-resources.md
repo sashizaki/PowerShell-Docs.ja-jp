@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: リソースをパッケージ化してプル サーバーにアップロードする
-ms.openlocfilehash: 29a62f96393a53c9e7da57a5e51732dcb0937194
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954379"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278505"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>リソースをパッケージ化してプル サーバーにアップロードする
 
@@ -27,7 +27,7 @@ ms.locfileid: "71954379"
 
 好みのユーティリティ、スクリプト、または方法を使って、リソース ディレクトリを圧縮することができます。 Windows では、"xPSDesiredStateConfiguration" ディレクトリを "*右クリック*" して [送る] を選択し、[圧縮フォルダー] を選択します。
 
-![右クリック](../media/right-click.gif)
+![右クリック](media/package-upload-resources/right-click.gif)
 
 ### <a name="naming-the-resource-archive"></a>リソース アーカイブの名前を指定する
 

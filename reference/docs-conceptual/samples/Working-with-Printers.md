@@ -2,12 +2,12 @@
 ms.date: 12/23/2019
 keywords: powershell,コマンドレット
 title: プリンターの操作
-ms.openlocfilehash: 47c4f230d023ad93e2b65080feaa1dbfae803d08
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: 1d6b9a57ec61f06af694757dc8017d50b4dd40fe
+ms.sourcegitcommit: 1fa89ab20d14a61f139f1394c45aaedd5a7c5438
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736864"
+ms.lasthandoff: 03/09/2020
+ms.locfileid: "78935211"
 ---
 # <a name="working-with-printers-in-windows"></a>Windows でのプリンターの操作
 
@@ -42,7 +42,8 @@ Get-CimInstance -Class Win32_Printer
 通常使うプリンターを WMI を使用して設定するには、**Win32_Printer** コレクションでプリンターを検索し、**SetDefaultPrinter** メソッドを呼び出します。
 
 ```powershell
-(Get-CimInstance -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'").SetDefaultPrinter()
+$printer = Get-CimInstance -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'"
+Invoke-CimMethod -InputObject $printer -MethodName SetDefaultPrinter
 ```
 
 **WScript.Network** の方が多少簡単に使用できます。これは、プリンター名のみを引数として取る **SetDefaultPrinter** メソッドを備えているためです。
