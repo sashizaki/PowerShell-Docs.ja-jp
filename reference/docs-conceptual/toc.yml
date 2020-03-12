@@ -726,6 +726,36 @@
           href: samples/appendix-1---compatibility-aliases.md
         - name: 付録 2 - カスタムの PowerShell ショートカットの作成
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
+- name: コミュニティ
+  items:
+    - name: コミュニティのリソース
+      href: community/community-support.md
+    - name: デジタル アート
+      href: community/digital-art.md
+    - name: PowerShell ドキュメントの新機能
+      href: community/whats-new-in-docs.md
+    - name: 共同作成者ガイド
+      items:
+        - name: 概要
+          href: community/contributing/overview.md
+        - name: ドキュメントの問題をファイルにする方法
+          href: community/contributing/file-an-issue.md
+        - name: ドキュメントの作成を開始する
+          href: community/contributing/get-started-writing.md
+        - name: プル要求の送信
+          href: community/contributing/pull-requests.md
+        - name: PowerShell ドキュメントのスタイル ガイド
+          href: community/contributing/powershell-style-guide.md
+        - name: コマンドレット リファレンスの編集
+          href: community/contributing/editing-cmdlet-ref.md
+        - name: その他のリソース
+          items:
+            - name: 編集のチェックリスト
+              href: community/contributing/editorial-checklist.md
+            - name: 問題の管理方法
+              href: community/contributing/managing-issues.md
+            - name: プル要求の管理方法
+              href: community/contributing/managing-pull-requests.md
 - name: PowerShell SDK
   items:
     - name: 概要
