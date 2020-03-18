@@ -1,13 +1,13 @@
 ---
 ms.date: 06/27/2017
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: Windows PowerShell Web Access の承認規則とセキュリティ機能
 ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "62058422"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402609"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Access の承認規則とセキュリティ機能
 
@@ -24,7 +24,7 @@ Windows PowerShell Web Access をインストールし、ゲートウェイを�
 
 管理者は、Windows PowerShell Web Access に対して `{0-n}` 個の認証規則を定義できます。 既定のセキュリティは、許容的ではなく制限的なものになります。認証規則がゼロの場合には、すべてのユーザーがすべてのアクセスを禁止されます。
 
-Windows Server 2012 R2 の [Add-PswaAuthorizationRule と](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps) [Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) に、リモート コンピューターから、またはアクティブな Windows PowerShell Web Access セッション内から Windows PowerShell Web Access 承認規則を追加し、テストできるようにするために、資格情報パラメーターが用意されました。 資格情報パラメーターを持つ他の Windows PowerShell コマンドレットと同様、PSCredential オブジェクトをパラメーターの値として指定できます。 リモート コンピューターに渡す資格情報を含む PSCredential オブジェクトを作成するには、[Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) コマンドレットを実行します。
+Windows Server 2012 R2 の [Add-PswaAuthorizationRule と](/powershell/module/powershellwebaccess/add-pswaauthorizationrule?view=winserver2012r2-ps)[Test-PswaAuthorizationRule](/powershell/module/powershellwebaccess/test-pswaauthorizationrule?view=winserver2012r2-ps) に、リモート コンピューターから、またはアクティブな Windows PowerShell Web Access セッション内から Windows PowerShell Web Access 承認規則を追加し、テストできるようにするために、資格情報パラメーターが用意されました。 資格情報パラメーターを持つ他の Windows PowerShell コマンドレットと同様、PSCredential オブジェクトをパラメーターの値として指定できます。 リモート コンピューターに渡す資格情報を含む PSCredential オブジェクトを作成するには、[Get-Credential](/powershell/module/microsoft.powershell.security/Get-Credential) コマンドレットを実行します。
 
 Windows PowerShell Web Access の認証規則はホワイトリスト方式です。 各規則は、ユーザー、ターゲット コンピューター、および指定されたターゲット コンピューターにおける特定の Windows PowerShell [セッション構成](/powershell/module/microsoft.powershell.core/about/about_session_configurations?view=powershell-5.1) (エンドポイントまたは_実行空間_とも呼ばれます) の間に許可される接続を定義したものです。
 **実行空間**の説明については、「[PowerShell 実行空間の使用を開始する) を参照してください](https://blogs.technet.microsoft.com/heyscriptingguy/2015/11/26/beginning-use-of-powershell-runspaces-part-1/)」
@@ -38,7 +38,7 @@ Windows PowerShell Web Access の認証規則はホワイトリスト方式で�
 
 承認規則の構成方法の詳細については、このトピックの「[承認規則の構成](#configuring-authorization-rules-and-site-security)」を参照してください。
 
-### <a name="security"></a>セキュリティ
+### <a name="security"></a>Security
 
 Windows PowerShell Web Access のセキュリティ モデルは、Web ベース コンソールのエンド ユーザーとターゲット コンピューターの間に 4 つの層を構成します。 Windows PowerShell Web Access 管理者は、IIS マネージャー コンソールで構成を追加することで、セキュリティ層をさらに追加できます。 IIS マネージャー コンソールで Web サイトを保護する方法について詳しくは、「[Web サーバーのセキュリティを構成する (IIS7)](https://technet.microsoft.com/library/cc731278)」をご覧ください。
 
@@ -47,9 +47,9 @@ IIS のベスト プラクティスと、サービス拒否攻撃を阻止する
 
 エンド ユーザーとターゲット コンピューターの間に構成される 4 つの層を次の表に示します。
 
-|レベル|層|
+|Level|レイヤー|
 |-|-|
-|1 で保護されたプロセスとして起動されました|[IIS Web サーバーのセキュリティ機能](#iis-web-server-security-features)|
+|1|[IIS Web サーバーのセキュリティ機能](#iis-web-server-security-features)|
 |2|[Windows PowerShell Web Access のフォーム ベースのゲートウェイ認証](#windows-powershell-web-access-forms-based-gateway-authentication)|
 |3|[Windows PowerShell Web Access の承認規則](#windows-powershell-web-access-authorization-rules)|
 |4|[対象コンピューターでの認証と承認規則](#target-authentication-and-authorization-rules)|
@@ -127,7 +127,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
    ```
 
 4. **Get-PswaAuthorizationRule** コマンドレットまたは `Test-PswaAuthorizationRule -UserName <domain\user | computer\user> -ComputerName** <computer_name>` のいずれかを実行して、規則が作成されたことを検証します。
-   たとえば、`Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214` のように指定します。
+   たとえば、「 `Test-PswaAuthorizationRule -UserName Contoso\\JSmith -ComputerName Contoso_214` 」のように入力します。
 
 #### <a name="to-remove-an-authorization-rule"></a>承認規則を削除するには
 
@@ -182,7 +182,7 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
 
    > [!NOTE]
    > ゲートウェイ コンピューターとターゲット コンピューターが別々のワークグループまたはドメインにある場合は、2 つのワークグループ コンピューター間、2 つのドメイン間、またはワークグループとドメインの間で、信頼関係を確立する必要があります。 Windows PowerShell Web Access の承認規則コマンドレットを使用してこの関係を構成することはできません。 承認規則では、コンピューター間の信頼関係は定義されません。承認規則では、特定のターゲット コンピューターとセッション構成に接続できるようにユーザーを承認することしかできません。 異なるドメイン間で信頼関係を構成する方法の詳細については、[ドメインおよびフォレストの信頼の作成に関するページ](https://technet.microsoft.com/library/cc794775.aspx)を参照してください。
-   > 信頼されたホストの一覧にワークグループ コンピューターを追加する方法の詳細については、「 [Remote Management with Server Manager (サーバー マネージャーによるリモート管理)](https://technet.microsoft.com/library/dd759202.aspx)」を参照してください。
+   > 信頼されたホストの一覧にワークグループ コンピューターを追加する方法の詳細については、「[サーバー マネージャーによるリモート管理](https://technet.microsoft.com/library/dd759202.aspx)」を参照してください。
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>1 セットの承認規則の複数サイトでの使用
 

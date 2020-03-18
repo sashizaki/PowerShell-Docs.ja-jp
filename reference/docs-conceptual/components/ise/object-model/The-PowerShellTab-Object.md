@@ -3,11 +3,11 @@ ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: PowerShellTab オブジェクト
 ms.openlocfilehash: 55e3678a8285f0ec7e8131d98c87478216c26f37
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736932"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402519"
 ---
 # <a name="the-powershelltab-object"></a>PowerShellTab オブジェクト
 
@@ -154,7 +154,7 @@ $newFile.Editor.Text = "a`r`nb"
 $newFile.Editor.LineCount
 ```
 
-### <a name="output"></a>Output
+### <a name="output"></a>出力
 
 この機能は、Windows PowerShell ISE 2.0 に存在しますが、それよりも後のバージョンの ISE では削除されているか、名前が変更されています。 Windows PowerShell ISE 2.0 より後のバージョンでは、**ConsolePane** オブジェクトを同じ目的で使用できます。
 
