@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 の DSC 機能強化
-ms.openlocfilehash: d9339ec9f316c4a32c5fa6cb2360c077973ee334
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 99434d14100de54d2d4c89c5888741ab2f1c512a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818109"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78277633"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 の Desired State Configuration (DSC) の機能強化
 
@@ -59,7 +59,7 @@ WMF 5.0 では、PowerShell デバッガーは、クラス ベースのリソー
 
 - ローカル構成設定により、あるノードに受信を許可する部分構成が定義されます。
 
-  ![サンプルのメタ構成](../images/DSC-improvements/MetaConfigPartialOne.png)
+  ![サンプルのメタ構成](media/DSC-improvements/MetaConfigPartialOne.png)
 
 - サンプルの部分構成定義
 
@@ -80,11 +80,11 @@ WMF 5.0 では、PowerShell デバッガーは、クラス ベースのリソー
 
 - 生成された MOF ファイルに組み込まれている 'ConfigurationName'。
 
-  ![生成された mof ファイルのサンプル](../images/DSC-improvements/PartialGeneratedMof.png)
+  ![生成された mof ファイルのサンプル](media/DSC-improvements/PartialGeneratedMof.png)
 
 - プル構成リポジトリの FileName
 
-  ![構成リポジトリの FileName](../images/DSC-improvements/PartialInConfigRepository.png)
+  ![構成リポジトリの FileName](media/DSC-improvements/PartialInConfigRepository.png)
 
   Azure Automation サービス名により、MOF ファイルが `<ConfigurationName>.<NodeName>.mof` として生成されました。 そのため、下の構成は PartialOne.localhost.mof にコンパイルされます。
 
@@ -249,7 +249,7 @@ WMF 5.1 では、DSC はカタログ ファイルと構成 (.MOF) ファイル�
 
 #### <a name="pull"></a>プル
 
-ノードの LocalConfigurationManager は、その現在の設定に基づき、モジュールと構成の署名を検証します。 既定では、署名検証は無効です。 署名検証は、‘SignatureValidation’ ブロックを下の図のようにノードのメタ構成定義に追加することで有効にできます:
+ノードの LocalConfigurationManager は、その現在の設定に基づき、モジュールと構成の署名を検証します。 既定では、署名検証は無効です。 署名検証は、"SignatureValidation" ブロックを下の図のようにノードのメタ構成定義に追加することで有効にできます。
 
 ```powershell
 [DSCLocalConfigurationManager()]
@@ -293,11 +293,11 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
 > モジュール カタログと構成の署名検証は、構成がシステムに最初に適用されるときか、モジュールがダウンロードされ、インストールされるときにのみ実行されます。
 > 整合性実行では、Current.mof やそのモジュール依存性の署名は検証されません。 何らかの段階で検証に失敗した場合、たとえば、プル サーバーからプルされた構成に署名がされていない場合、構成の処理が中止となり、下にエラーが表示されます。一時ファイルはすべて削除されます。
 
-![構成のエラー出力のサンプル](../images/DSC-improvements/PullUnsignedConfigFail.png)
+![構成のエラー出力のサンプル](media/DSC-improvements/PullUnsignedConfigFail.png)
 
 同様に、カタログに署名のないモジュールがプルされると次のエラーが発生します。
 
-![モジュールのエラー出力のサンプル](../images/DSC-improvements/PullUnisgnedCatalog.png)
+![モジュールのエラー出力のサンプル](media/DSC-improvements/PullUnisgnedCatalog.png)
 
 #### <a name="push"></a>プッシュ
 
@@ -345,12 +345,12 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
   ```
 
-  ![ErrorUnsignedMofPushed](../images/DSC-improvements/PushUnsignedMof.png)
+  ![ErrorUnsignedMofPushed](media/DSC-improvements/PushUnsignedMof.png)
 
 - コード署名証明書を利用し、構成ファイルに署名します。
 
-  ![SignMofFile](../images/DSC-improvements/SignMofFile.png)
+  ![SignMofFile](media/DSC-improvements/SignMofFile.png)
 
 - 署名された MOF ファイルをプッシュしてみます。
 
-  ![PushSignedMofFile](../images/DSC-improvements/PushSignedMof.png)
+  ![PushSignedMofFile](media/DSC-improvements/PushSignedMof.png)

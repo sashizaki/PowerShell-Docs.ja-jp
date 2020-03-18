@@ -3,12 +3,12 @@ ms.date: 09/11/2018
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, PSGallery
 title: パッケージの手動ダウンロード
-ms.openlocfilehash: c0a96e866dfd27f9b2170ea540ec6dd0c67701fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e562f5b94b4d2caa7d31269a324e417d1a9e844a
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71327893"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278719"
 ---
 # <a name="manual-package-download"></a>パッケージの手動ダウンロード
 
@@ -22,7 +22,7 @@ PowerShell ギャラリーでは、PowerShellGet コマンドレットを使用�
 
 次に示すように、各ページには [手動ダウンロード] のリンクがあります。
 
-![手動ダウンロード](../../Images/packagedisplaypagewithpseditions.png)
+![手動ダウンロード](media/manual-download/packagedisplaypagewithpseditions.png)
 
 手動でダウンロードするには、 **[Download the raw nupkg file]\(raw nupk ファイルのダウンロード\)** をクリックします。 パッケージのコピーがブラウザーのダウンロード フォルダーに `<name>.<version>.nupkg` という名前でコピーされます。
 
@@ -42,11 +42,12 @@ NuGet パッケージ ファイルには、元のパッケージ化されたコ�
 > `Install-Module` によって実行されるいくつかの手順は含まれていません。
 
 最も簡単な方法は、フォルダーから NuGet に固有の要素を削除することです。 要素を削除すると、パッケージの作成者によって作成された PowerShell コードが残ります。
-NuGet 固有の要素の一覧については、[手動ダウンロードを使用してパッケージを取得](#using-manual-download-to-acquire-a-package)に関するページを参照してください。
+NuGet 固有の要素の一覧については、[手動ダウンロードを使用したパッケージの取得](#using-manual-download-to-acquire-a-package)に関するページを参照してください。
 
 手順は次のとおりです。
 
-1. NuGet パッケージの内容をローカル フォルダーに抽出します。
+1. インターネットからダウンロードされた NuGet パッケージ (`.nupkg`) ファイルのブロックを、たとえば、`Unblock-File -Path C:\Downloads\module.nupkg` コマンドレットを使用して解除します。
+2. NuGet パッケージの内容をローカル フォルダーに抽出します。
 2. フォルダーから NuGet に固有の要素を削除します。
 3. フォルダーの名前を変更します。 既定のフォルダー名は通常、`<name>.<version>` です。 モジュールがプレリリース バージョンとしてタグ付けされている場合は、バージョンに `-prerelease` を含めることができます。 フォルダーの名前をモジュールの名前だけに変更します。 たとえば、`azurerm.storage.5.0.4-preview` を `azurerm.storage` にします。
 4. フォルダーを `$env:PSModulePath value` 内のフォルダーのいずれかにコピーします。 `$env:PSModulePath` は、PowerShell がモジュールを検索する、セミコロンで区切られたパスのセットです。
@@ -63,7 +64,8 @@ NuGet 固有の要素の一覧については、[手動ダウンロードを使�
 
 手順は次のとおりです。
 
-1. NuGet パッケージの内容を抽出します。
+1. インターネットからダウンロードされた NuGet パッケージ (`.nupkg`) ファイルのブロックを、たとえば、`Unblock-File -Path C:\Downloads\package.nupkg` コマンドレットを使用して解除します。
+2. NuGet パッケージの内容を抽出します。
 2. フォルダー内の `.PS1` ファイルは、この場所から直接使用することができます。
 3. フォルダー内の NuGet に固有の要素を削除できます。
 

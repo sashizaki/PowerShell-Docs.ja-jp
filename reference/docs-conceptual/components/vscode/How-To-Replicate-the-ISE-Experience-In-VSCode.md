@@ -2,12 +2,12 @@
 title: Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法
 description: Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法
 ms.date: 08/06/2018
-ms.openlocfilehash: d5542e9a3a48b1ae64356309be669418edf6c79e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 193243dc2e3e921b22a6ee068370200ae84ce4ac
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74117493"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78279260"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法
 
@@ -15,9 +15,25 @@ VSCode 用の PowerShell 拡張機能は PowerShell ISE と完全に同等の機
 
 このドキュメントでは、ISE と比較してなじみのあるユーザー エクスペリエンスになるように VSCode で構成できる設定の一覧を紹介します。
 
+## <a name="ise-mode"></a>ISE モード
+
+> [!NOTE]
+> この機能は、バージョン 2019.12.0 以降の PowerShell Preview 拡張機能、および バージョン2020.3.0 以降の PowerShell 拡張機能で使用できます。
+
+Visual Studio Code で ISE のエクスペリエンスを最も簡単にレプリケートするには、"ISE モード" を有効にします。
+これを行うには、コマンド パレット (<kbd>F1</kbd> または <kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> または <kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> (macOS の場合)) を開き、「ISE モード」と入力します。
+一覧から "PowerShell: ISE モードの有効化" を選択します。
+
+このコマンドを実行すると、このドキュメントに含まれる設定の多くが自動的に適用されます。
+結果は次のようになります。
+
+![ISE モード](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
+
+この記事の残りの部分では、ISE モードの設定に関する詳細情報と、追加の設定をいくつか取り上げて説明します。
+
 ## <a name="key-bindings"></a>キー バインド
 
-| 機能                              | ISE バインド                  | VSCode バインド                              |
+| Function                              | ISE バインド                  | VSCode バインド                              |
 | ----------------                      | -----------                  | --------------                              |
 | デバッガーの割り込みと中断          | <kbd>Ctrl</kbd>+<kbd>B</kbd> | <kbd>F6</kbd>                               |
 | 現在の行/強調表示されているテキストを実行する | <kbd>F8</kbd>                | <kbd>F8</kbd>                               |
@@ -36,13 +52,16 @@ Visual Studio Code の UI を簡素化して ISE の UI により近づけたい
 "debug.openDebug": "neverOpen",
 ```
 
+> [!NOTE]
+> これらの設定は "[ISE モード](#ise-mode)" に含まれています。
+
 これにより、次の赤いボックス内にある "アクティビティ バー" と "デバッグ サイド バー" のセクションが非表示になります。
 
-![強調表示されたセクションにはアクティビティ バーとデバッグ サイド バーが含まれている](images/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+![強調表示されたセクションにはアクティビティ バーとデバッグ サイド バーが含まれている](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
 
 最終的な結果は次のようになります。
 
-![VS Code の簡素化されたビュー](images/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
+![VS Code の簡素化されたビュー](media/How-To-Replicate-the-ISE-Experience-In-VSCode/2-simplified-ui.png)
 
 ## <a name="tab-completion"></a>Tab 補完機能
 
@@ -55,13 +74,19 @@ Visual Studio Code の UI を簡素化して ISE の UI により近づけたい
 > [!NOTE]
 > この設定は (拡張機能ではなく) VSCode に直接追加されました。 その動作は VSCode によって直接決定され、拡張機能から変更することはできません。
 
-## <a name="no-focus-on-console-when-executing"></a>実行時のコンソールへのフォーカスなし
+> [!NOTE]
+> この設定は "[ISE モード](#ise-mode)" に含まれています。
+
+## <a name="no-focus-on-console-when-executing"></a>実行時にコンソールにフォーカスなし
 
 <kbd>F8</kbd> キーで実行したときにエディターのフォーカスを維持するには:
 
 ```json
 "powershell.integratedConsole.focusConsoleOnExecute": false
 ```
+
+> [!NOTE]
+> この設定は "[ISE モード](#ise-mode)" に含まれています。
 
 アクセシビリティのため、既定値は `true` です。
 
@@ -84,6 +109,9 @@ Visual Studio Code の UI を簡素化して ISE の UI により近づけたい
 "files.defaultLanguage": "powershell",
 ```
 
+> [!NOTE]
+> この設定は "[ISE モード](#ise-mode)" に含まれています。
+
 ## <a name="color-scheme"></a>配色
 
 エディターの外観を ISE に似せるために、VSCode で使用できる ISE テーマがいくつかあります。
@@ -97,11 +125,17 @@ Visual Studio Code の UI を簡素化して ISE の UI により近づけたい
 "workbench.colorTheme": "PowerShell ISE",
 ```
 
+> [!NOTE]
+> この設定は "[ISE モード](#ise-mode)" に含まれています。
+
 ## <a name="powershell-command-explorer"></a>PowerShell コマンド エクスプローラー
 
 [@corbob](https://github.com/corbob) の機能により、PowerShell 拡張機能には独自のコマンド エクスプローラーの開始機能があります。
 
 [コマンド パレット] に「`PowerShell Command Explorer`」と入力し、<kbd>Enter</kbd> キーを押します。
+
+> [!NOTE]
+> これは自動的に "[ISE モード](#ise-mode)" で表示されます。
 
 ## <a name="open-in-the-ise"></a>ISE で開く
 

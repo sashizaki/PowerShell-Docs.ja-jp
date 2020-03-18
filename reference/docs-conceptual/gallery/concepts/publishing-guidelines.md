@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 description: パブリッシャー向けのガイドライン
 title: PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
-ms.openlocfilehash: 9047e938ab961c68e225c9029e52403c40afbe26
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 07271e037100350d3efc7ae63860f42afd22aae7
+ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417670"
+ms.lasthandoff: 03/04/2020
+ms.locfileid: "78278217"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -123,12 +123,12 @@ ProjectURI が記載されている場合、PowerShell ギャラリーではパ�
 
 - PSEdition_Desktop:Windows PowerShell との間で互換性のあるパッケージ
 - PSEdition_Core:PowerShell Core との間で互換性のあるパッケージ
-- Windows:Windows オペレーティング システムとの間で互換性のあるパッケージ
-- Linux:Linux オペレーティング システムとの間で互換性のあるパッケージ
+- Windows: Windows オペレーティング システムとの間で互換性のあるパッケージ
+- Linux: Linux オペレーティング システムとの間で互換性のあるパッケージ
 - MacOS:Mac オペレーティング システムとの間で互換性のあるパッケージ
 
 互換性のあるプラットフォームでパッケージをタグ付けすると、それが検索結果の左側のウィンドウ上のギャラリー検索フィルターに含まれます。 GitHub 上でパッケージをホストする場合は、パッケージにタグ付けするときに [PowerShell ギャラリー互換性シールド](https://img.shields.io/powershellgallery/p/:packageName.svg)
-![互換性シールド ](../Images/CosmosDB.svg) も利用できます。
+![互換性シールド ](media/publishing-guidelines/CosmosDB.svg) も利用できます。
 
 ## <a name="include-tests"></a>テストを含める
 
@@ -205,7 +205,7 @@ PowerShell ギャラリーは、公開プロセスのテストの対象として
 `Publish-Module` または `Publish-Script` を使用できない理由がある場合には、弊社にお知らせください。
 **PowerShellGet** の GitHub リポジトリにイシューを登録し、**NuGet** または **PackageManagement**を選択することになった理由を詳細にご記入ください。
 
-## <a name="recommended-workflow"></a>推奨ワークフロー
+## <a name="recommended-workflow"></a>推奨されるワークフロー
 
 PowerShell ギャラリーにパッケージを公開する上で最も効果的と考えられる方法を次に示します。
 
