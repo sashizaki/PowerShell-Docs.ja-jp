@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC プル サービス
-ms.openlocfilehash: f171c3dc579dfb24a8c9fb87fbb50dccae619091
-ms.sourcegitcommit: aaf1284dfec2e4c698009d6dc27ff103aaafd581
+ms.openlocfilehash: cf2420e6889f63ac3b2859e5ee36fa888b728afc
+ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76885389"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79402439"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration プル サービス
 
@@ -28,10 +28,10 @@ Local Configuration Manager (LCM) は、プル サービス ソリューショ�
 |                   解決策                   |              クライアント ノード              |
 | -------------------------------------------- | -------------------------------------- |
 | MDB/ESENT データベースを使用する Windows プル サーバー | 最大 500 ノード                        |
-| SQL データベースを使用する Windows プル サーバー       | 最大 1000 ノード                       |
-| Azure Automation DSC                         | ノードが 1000 個より多いシナリオ |
+| SQL データベースを使用する Windows プル サーバー       | 最大 3500 ノード                       |
+| Azure Automation DSC                         | 小規模環境と大規模環境の両方      |
 
-**推奨されるソリューション**であり、最も多くの機能を使用できる選択肢は [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) です。
+**推奨されるソリューション**であり、最も多くの機能を使用できる選択肢は [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) です。 Automation アカウントあたりのノード数の上限は指定されていません。
 
 Azure サービスでは、プライベート データセンター内にあるオンプレミス ノードと、パブリック クラウド （Azure や AWS など) 内にあるノードのどちらも管理できます。 インターネットへのサーバーの直接接続が許可されないプライベート環境の場合は、公開されている Azure の IP 範囲 ([Azure データセンターの IP 範囲](https://www.microsoft.com/download/details.aspx?id=41653)に関するページを参照) のみに送信トラフィックを制限することを検討してください。
 
@@ -273,7 +273,7 @@ DSC コミュニティは、プル サービス プロトコルを実装する�
 - [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
 - [部分構成](partialConfigs.md)
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [Windows PowerShell Desired State Configuration の概要](../overview/overview.md)
 - [構成の適用](enactingConfigurations.md)
