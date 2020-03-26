@@ -2,18 +2,23 @@
 title: PowerShell 開発のための Visual Studio Code の使用
 description: PowerShell 開発のための Visual Studio Code の使用
 ms.date: 11/07/2019
-ms.openlocfilehash: 16ae228c0d169261b783366a730fd2d5d77d32d6
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 86739970b58460bef9686a75bf0604d0605d4888
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279072"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082435"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell 開発のための Visual Studio Code の使用
 
-[PowerShell ISE][ise] だけでなく、PowerShell も Visual Studio Code (VSCode) で問題なくサポートされています。 PowerShell Core では ISE はサポートされていませんが、VSCode はすべてのプラットフォーム (Windows、macOS、Linux) の PowerShell Core でサポートされています。
+[Visual Studio Code](https://code.visualstudio.com/) は、Microsoft によるクロスプラットフォーム (Windows、macOS、Linux) のスクリプト エディターです。 [PowerShell 拡張機能](https://marketplace.visualstudio.com/items?itemName=ms-vscode.PowerShell)と共に使用すると、充実した対話型のスクリプト編集エクスペリエンスがもたらされ、信頼性の高い PowerShell スクリプトを簡単に記述できます。
 
-PowerShell バージョンが 5 の Windows で VSCode を使用する場合、Windows 10 を使用するか、ダウンレベルの Windows OS (Windows 8.1 など) 向けの Windows Management Framework 5.1 をインストールします。 詳細については、「[WMF 5.1 のインストールと構成](/powershell/scripting/wmf/setup/install-configure)」を参照してください。
+PowerShell スクリプトの記述に使用するエディターとしては、PowerShell 拡張機能を備えた Visual Studio Code をお勧めします。
+次の PowerShell バージョンがサポートされています。
+
+- PowerShell 7 以上
+- PowerShell Core 6
+- Windows PowerShell 5.1
 
 開始する前に、システムに PowerShell があることを確認します。 Windows、macOS、Linux 上の最近のワークロードに対しては、次のリンクを参照してください。
 
@@ -23,38 +28,38 @@ PowerShell バージョンが 5 の Windows で VSCode を使用する場合、W
 
 従来の Windows PowerShell ワークロードについては、「[Windows PowerShell のインストール][install-winps]」を参照してください。
 
-## <a name="editing-with-vscode"></a>VSCode による編集
+> [!NOTE]
+> Visual Studio Code は、[Visual Studio](https://visualstudio.microsoft.com/) と同じものではありません。
 
-1. VSCode をインストールします。 詳細については、「[Visual Studio Code の設定](https://code.visualstudio.com/Docs/setup/setup-overview)」という概要ページを参照してください。
+> [!IMPORTANT]
+> Windows では [Windows PowerShell ISE][ise] も引き続き使用できますが、これはアクティブな機能開発の対象ではなくなっており、PowerShell 7 以降および PowerShell Core 6 は使用できません。
+> Windows に付属するコンポーネントとして、セキュリティや優先順位の高いサービスに関する修正プログラムが引き続き公式でサポートされます。 現在、Windows から ISE が削除される予定はありません。
 
-   プラットフォーム別のインストール手順があります。
+## <a name="editing-with-visual-studio-code"></a>Visual Studio Code を使用した編集
 
-   - **Linux**: [Linux 上で VS コードを実行する](https://code.visualstudio.com/docs/setup/linux)方法に関するページのインストール手順に従います。
-   - **macOS**: [macOS 上で VS コードを実行する](https://code.visualstudio.com/docs/setup/mac)方法に関するページのインストール手順に従います。
+1. Visual Studio Code をインストールします。 詳細については、「[Visual Studio Code の設定](https://code.visualstudio.com/Docs/setup/setup-overview)」という概要ページを参照してください。
 
-     > [!IMPORTANT]
-     > macOS で、PowerShell の拡張機能用が正常に動作するには、OpenSSL をインストールする必要があります。 これには、[Homebrew](https://brew.sh/) をインストールして、`brew install openssl` を実行するのが最も簡単です。 これで、VSCode を使用して PowerShell 拡張機能を正常に読み込むことができます。
+    プラットフォーム別のインストール手順があります。
 
-   - **Windows**: [Windows 上で VS コードを実行する](https://code.visualstudio.com/docs/setup/windows)方法に関するページのインストール手順に従います。
+    - **Windows**: [Windows 上での Visual Studio Code の実行](https://code.visualstudio.com/docs/setup/windows)に関するページに記載されているインストール手順に従ってください。
+    - **macOS**: [macOS 上での Visual Studio Code の実行](https://code.visualstudio.com/docs/setup/mac)に関するページに記載されているインストール手順に従ってください。
+    - **Linux**: [Linux 上での Visual Studio Code の実行](https://code.visualstudio.com/docs/setup/linux)に関するページに記載されているインストール手順に従ってください。
 
 1. PowerShell 拡張機能をインストールします。
 
-   1. 次の方法で VSCode アプリを起動します。
-      - **Windows**: PowerShell セッションで `code` と入力します。
-      - **Linux**: ターミナルで `code` と入力します。
-      - **macOS**: ターミナルで `code` と入力します。
+   1. コンソールで「`code`」と入力するか、Visual Studio Code Insiders をインストールした場合は「`code-insiders`」と入力して、Visual Studio Code アプリを起動します。
    1. Windows または Linux の場合、<kbd>Ctrl</kbd>+<kbd>P</kbd> を押し、**Quick Open** を起動します。 macOS の場合、<kbd>Cmd</kbd>+<kbd>P</kbd> を押します。
    1. Quick Open を開き、「`ext install powershell`」と入力し、**Enter** キーを押します。
    1. サイド バーに **[拡張機能]** ビューが開きます。 Microsoft の PowerShell の拡張機能を選択します。
-      次の画像のような VSCode 画面が表示されるはずです。
+      次の画像のような Visual Studio Code の画面が表示されるはずです。
 
-      ![VS Code](media/using-vscode/vscode.png)
+      ![Visual Studio Code](media/using-vscode/vscode.png)
 
    1. Microsoft の PowerShell 拡張機能の、 **[インストール]** ボタンをクリックします。
-   1. インストール後、 **[インストール]** ボタンは **[再読み込み]** に変わります。 **[再読み込み]** をクリックします。
-   1. VSCode が再読み込みされたら、編集が可能になります。
+   1. インストール後、 **[インストール]** ボタンが **[再読み込み]** に変わった場合は、 **[再読み込み]** をクリックします。
+   1. Visual Studio Code が再読み込みされたら、編集が可能になります。
 
-たとえば、新しいファイルを作成するには、 **[ファイル]、[新規]** の順にクリックします。 保存するには、 **[ファイル]、[保存]** の順にクリックし、`HelloWorld.ps1` のようなファイル名を入力します。 ファイルを閉じるには、ファイル名の横の `X` をクリックします。 VSCode を終了するには、 **[ファイル]、[終了]** の順にクリックします。
+たとえば、新しいファイルを作成するには、 **[ファイル]、[新規]** の順にクリックします。 保存するには、 **[ファイル]、[保存]** の順にクリックし、`HelloWorld.ps1` のようなファイル名を入力します。 ファイルを閉じるには、ファイル名の横の `X` をクリックします。 Visual Studio Code を終了するには、 **[ファイル] > [終了]** を選択します。
 
 ### <a name="installing-the-powershell-extension-on-restricted-systems"></a>制限されているシステムへの PowerShell 拡張機能のインストール
 
@@ -64,13 +69,46 @@ PowerShell バージョンが 5 の Windows で VSCode を使用する場合、W
 Language server startup failed.
 ```
 
-PowerShell エディター サービスおよび VSCode 用 PowerShell 拡張機能を手動で承認するには、PowerShell プロンプトを開いて次のコマンドを実行します。
+PowerShell エディター サービスおよび Visual Studio Code 用 PowerShell 拡張機能を手動で承認するには、PowerShell プロンプトを開いて次のコマンドを実行します。
 
 ```powershell
 Import-Module $HOME\.vscode\extensions\ms-vscode.powershell*\modules\PowerShellEditorServices\PowerShellEditorServices.psd1
 ```
 
-"**この信頼されていない発行元からのソフトウェアを実行しますか?** " というメッセージが表示されます。 `A` キーを押してファイルを実行します。 次に、VSCode を開き、PowerShell 拡張機能が正しく機能していることを確認します。 まだ問題がある場合は、[GitHub](https://github.com/PowerShell/vscode-powershell/issues) で問い合わせてください。
+"**この信頼されていない発行元からのソフトウェアを実行しますか?** " というメッセージが表示されます。
+`A` キーを押してファイルを実行します。 次に、Visual Studio Code を開き、PowerShell 拡張機能が正しく機能していることを確認します。 まだ問題がある場合は、[GitHub](https://github.com/PowerShell/vscode-powershell/issues) で問い合わせてください。
+
+> [!NOTE]
+> Visual Studio Code 用 PowerShell 拡張機能では、制約付き言語モードでの実行はサポートされていません。 詳細については、[そのサポートを追跡する GitHub イシュー](https://github.com/PowerShell/vscode-powershell/issues/606)を参照してください。
+
+### <a name="using-an-older-version-of-the-powershell-extension-for-windows-powershell-v3-and-v4"></a>Windows PowerShell v3 および v4 用の古いバージョンの PowerShell 拡張機能を使用する
+
+現在の PowerShell 拡張機能では [v3 と v4 のサポートが停止されています](https://github.com/PowerShell/vscode-powershell/issues/1310)が、サポートされていた最終バージョンの拡張機能を引き続き使用できます。
+
+> [!NOTE]
+> この古いバージョンの拡張機能に修正プログラムが追加されることはありません。 これは "そのままの状態で" 提供されますが、Windows PowerShell v3 と Windows PowerShell v4 を引き続き使用している場合に利用できます。
+
+まず、[拡張機能] ペインを開いて「`PowerShell`」を検索します。 次に、歯車をクリックして、 **[Install another version...]\(別のバージョンをインストール...\)** を選択します。
+
+![別のバージョンをインストール...](media/using-vscode/install-another-version.png)
+
+次に、 **`2020.1.0`** バージョンを選択します。 このバージョンの拡張機能は、v3 と v4 がサポートされている最後のバージョンです。
+
+また、拡張機能のバージョンが自動的に更新されないように、次の設定を追加します。
+
+```json
+{
+    "extensions.autoUpdate": false
+}
+```
+
+これはしばらくの間は動作しますが、このバージョンの拡張機能が動作しなくなるような変更が Visual Studio Code で実装される可能性があります。
+このことと、サポートがないことにより、次のいずれかを強くお勧めします。
+
+- PowerShell 7 をダウンロードする - これは Windows PowerShell とのサイド バイ サイド インストールであり、PowerShell 拡張機能と最適に連携します
+- Windows PowerShell 5.1 にアップグレードする
+
+この記事の「[Visual Studio Code を使用した編集](#editing-with-visual-studio-code)」セクションに、これらをインストールする場所へのリンクが記載されています。
 
 ### <a name="choosing-a-version-of-powershell-to-use-with-the-extension"></a>拡張機能で使用する PowerShell のバージョンを選択
 
@@ -89,7 +127,7 @@ Windows PowerShell と PowerShell Core がインストールされている場�
 
 ### <a name="adding-your-own-powershell-paths-to-the-session-menu"></a>セッション メニューへの独自の PowerShell のパスの追加
 
-VSCode 設定を利用し、セッション メニューに他の PowerShell の実行可能パスを追加できます。
+[Visual Studio Code 設定](https://code.visualstudio.com/docs/getstarted/settings): `powershell.powerShellAdditionalExePaths` を使用して、セッション メニューに他の PowerShell の実行パスを追加できます。
 
 次のように `powershell.powerShellAdditionalExePaths` のリストに項目を追加するか、`settings.json` にない場合はリストを作成します。
 
@@ -110,8 +148,8 @@ VSCode 設定を利用し、セッション メニューに他の PowerShell の
 
 各項目には次が必要です。
 
-* `exePath`:`pwsh` または `powershell` 実行可能ファイルへのパス。
-* `versionName`:セッション メニューに表示されるテキスト。
+- `exePath`:`pwsh` または `powershell` 実行可能ファイルへのパス。
+- `versionName`:セッション メニューに表示されるテキスト。
 
 `powershell.powerShellDefaultVersion` の設定を使用して、これをセッション メニューに表示されるテキストに設定して、使用する既定の PowerShell のバージョンを設定できます (前の設定での `versionName`)。
 
@@ -132,66 +170,70 @@ VSCode 設定を利用し、セッション メニューに他の PowerShell の
 }
 ```
 
-この設定を構成したら、VSCode を再起動します。あるいは**コマンド パレット**から現在の VSCode ウィンドウを再度読み込むには、「**Developer: Reload Window**」と入力します。
+この設定を構成したら、Visual Studio Code を再起動します。または、**コマンド パレット**から現在の Visual Studio Code ウィンドウを再度読み込むには、「**Developer: Reload Window**」と入力します。
 
 これでセッション メニューを開くと、追加した PowerShell バージョンが表示されます。
 
 > [!NOTE]
 > これは、ソースから PowerShell をビルドした場合、PowerShell のローカル ビルドをテストする優れた方法です。
 
-### <a name="configuration-settings-for-vscode"></a>VSCode の構成設定
+### <a name="configuration-settings-for-visual-studio-code"></a>Visual Studio Code の構成設定
+
+まず、Visual Studio Code の設定を変更する方法に慣れていない場合は、[Visual Studio Code の設定に関するドキュメント](https://code.visualstudio.com/docs/getstarted/settings)を確認することをお勧めします。
 
 前段の手順を使用して、`settings.json` に構成設定を追加することができます。
 
-VSCode には、次の構成設定をお勧めします。
-
 ```json
 {
-    "csharp.suppressDotnetRestoreNotification": true,
     "editor.renderWhitespace": "all",
     "editor.renderControlCharacters": true,
-    "omnisharp.projectLoadTimeout": 120,
     "files.trimTrailingWhitespace": true,
     "files.encoding": "utf8bom",
     "files.autoGuessEncoding": true
 }
 ```
 
-これらの設定がすべてのファイルの種類に影響しないようにする場合、VSCode では言語ごとに構成することもできます。 `[<language-name>]` フィールドに設定を指定して、言語固有の設定を作成します。 次に例を示します。
+これらの設定がすべてのファイルの種類に影響しないようにする場合、Visual Studio Code では言語ごとに構成することもできます。 `[<language-name>]` フィールドに設定を指定して、言語固有の設定を作成します。 次に例を示します。
 
 ```json
-"[powershell]": {
-    "files.encoding": "utf8bom",
-    "files.autoGuessEncoding": true
+{
+    "[powershell]": {
+        "files.encoding": "utf8bom",
+        "files.autoGuessEncoding": true
+    }
 }
 ```
 
-VSCode でのファイル エンコードについて詳しくは、[ファイルのエンコードの理解](understanding-file-encoding.md)に関する記事をご覧ください。
+> [!TIP]
+> Visual Studio Code でのファイル エンコードについて詳しくは、[ファイル エンコードの概要](understanding-file-encoding.md)に関する記事をご覧ください。
+>
+> また、PowerShell 編集用に Visual Studio Code を構成する方法に関するその他のヒントについては、「[Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法](How-To-Replicate-the-ISE-Experience-In-VSCode.md)」もご覧ください。
 
-## <a name="debugging-with-vscode"></a>VSCode によるデバッグ
+## <a name="debugging-with-visual-studio-code"></a>Visual Studio Code を使用したデバッグ
 
 ### <a name="no-workspace-debugging"></a>ワークスペースを使用しないデバッグ
 
-VSCode バージョン 1.9 以降では、PowerShell スクリプトを含むフォルダーを開かずに PowerShell スクリプトをデバッグできます。 **[ファイル] > [ファイルを開く]** の順にクリックして PowerShell スクリプト ファイルを開き、行にブレークポイントを設定し、<kbd>F9</kbd> キーを押し、<kbd>F5</kbd> キーを押してデバッグを開始します。 [Debug actions]\(デバッグ アクション\) ウィンドウが表示されます。ここでは、デバッガーを中断したり、デバッグをステップ実行、再開、停止したりできます。
+Visual Studio Code バージョン 1.9 以降では、PowerShell スクリプトを含むフォルダーを開かずに PowerShell スクリプトをデバッグできます。 **[ファイル] > [ファイルを開く]** の順にクリックして PowerShell スクリプト ファイルを開き、行にブレークポイントを設定し、<kbd>F9</kbd> キーを押し、<kbd>F5</kbd> キーを押してデバッグを開始します。 [Debug actions]\(デバッグ アクション\) ウィンドウが表示されます。ここでは、デバッガーを中断したり、デバッグをステップ実行、再開、停止したりできます。
 
 ### <a name="workspace-debugging"></a>ワークスペースを使用したデバッグ
 
 ワークスペースを使用したデバッグとは、 **[ファイル]** メニューの **[フォルダーを開く]** を使用して Visual Studio Code で開いたフォルダーのコンテキストでデバッグを行うことを言います。開いたフォルダーは、通常は PowerShell プロジェクトのフォルダーや Git リポジトリのルートです。
 
-このモードの場合も、<kbd>F5</kbd> キーを押せば、現在選択されている PowerShell スクリプトのデバッグを開始できます。 ただし、ワークスペースを使用したデバッグでは、現在開いているファイルをデバッグする以外に、複数のデバッグ構成を定義できます。 たとえば、次の目的で構成を追加できます。
-
-- デバッガーで Pester テストを起動します。
-- デバッガーで引数を使用して特定のファイルを起動します。
-- デバッガーで対話型セッションを起動します。
-- PowerShell ホスト手順にデバッガーをアタッチします。
+このモードの場合も、<kbd>F5</kbd> キーを押せば、現在選択されている PowerShell スクリプトのデバッグを開始できます。 ただし、ワークスペースを使用したデバッグでは、現在開いているファイルをデバッグする以外に、複数のデバッグ構成を定義できます。 これらについては、この後すぐに説明します。
 
 デバッグ用の構成ファイルを作成するには、次の手順に従います。
 
   1. Windows または Linux の場合、<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> を押し、 **[デバッグ]** ビューを開きます。 macOS の場合、<kbd>Cmd</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd> を押します。
-  1. ツールバーの **[構成]** 歯車アイコンをクリックします。
-  1. VSCode により、 **[環境の選択]** が求められます。 **[PowerShell]** を選択します。
+  1. "launch.json ファイルの作成" リンクをクリックします。
+  1. Visual Studio Code により、 **[環境の選択]** が求められます。 **[PowerShell]** を選択します。
+  1. 最後に、使用するデバッグの種類を選択します。
 
-結果的に、VSCode によってワークスペース フォルダーのルートにディレクトリとファイル `.vscode\launch.json` が作成されます。 この場所にデバッグ構成が格納されます。 ファイルが Git リポジトリにある場合は、通常、`launch.json` ファイルをコミットすることになるでしょう。 `launch.json` ファイルの内容:
+- **現在のファイルを起動** - 現在アクティブなエディター ウィンドウのファイルを起動してデバッグします
+- **スクリプトを起動** - 指定したファイルまたはコマンドを起動してデバッグします
+- **対話型セッション** - 統合コンソールから実行されたコマンドをデバッグします
+- **アタッチ** - 実行中の PowerShell ホスト プロセスにデバッガーをアタッチします
+
+結果として、Visual Studio Code によってワークスペース フォルダーのルートにディレクトリとファイル `.vscode\launch.json` が作成されます。 この場所にデバッグ構成が格納されます。 ファイルが Git リポジトリにある場合は、通常、`launch.json` ファイルをコミットすることになるでしょう。 `launch.json` ファイルの内容:
 
 ```json
 {
@@ -253,6 +295,12 @@ Visual Studio Code 用の PowerShell の拡張機能を使用開始するのに�
 [debugging-part1]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-1/
 [debugging-part2]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-2/
 
-## <a name="powershell-extension-for-vscode"></a>VSCode 用 PowerShell 拡張機能
+## <a name="powershell-extension-for-visual-studio-code"></a>Visual Studio Code 用 PowerShell 拡張機能
 
 PowerShell の拡張機能のソース コードは、[GitHub](https://github.com/PowerShell/vscode-powershell) にあります。
+
+共同作成に興味をお持ちの場合は、ぜひ pull request をご活用ください。 [GitHub 上の 開発者向けドキュメント](https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md)を参照して、作業を開始してください。
+
+## <a name="troubleshooting-the-powershell-extension-for-visual-studio-code"></a>Visual Studio Code 用 PowerShell 拡張機能のトラブルシューティング
+
+PowerShell スクリプト開発のための Visual Studio Code の使用に関して問題が発生した場合は、[GitHub 上のトラブルシューティング ガイド](https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md)を参照してください

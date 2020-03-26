@@ -2,18 +2,18 @@
 ms.date: 10/20/2019
 keywords: powershell,コマンドレット
 title: PowerShell ドキュメントの使用方法
-ms.openlocfilehash: 7b73bc82f32e3ce1e6015822e0cc82078183931b
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 50b054ddc21d55946969414688306fc0d15a5adf
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279310"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082834"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>PowerShell ドキュメントの使用方法
 
 PowerShell のオンライン ドキュメントへようこそ。 このサイトには、次のバージョンの PowerShell のコマンドレット リファレンスが含まれています。
 
-- PowerShell 7 (プレビュー)
+- PowerShell 7
 - PowerShell 6
 - PowerShell 5.1
 

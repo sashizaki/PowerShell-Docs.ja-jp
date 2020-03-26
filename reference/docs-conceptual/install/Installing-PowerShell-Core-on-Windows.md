@@ -2,12 +2,12 @@
 title: Windows への PowerShell のインストール
 description: Windows への PowerShell のインストールに関する情報
 ms.date: 08/06/2018
-ms.openlocfilehash: df05a16bcf7a81d43d24535e50517fa217f82e7a
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: bb0971b6c4ac99bde70b226da2becf2f4ed82083
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402419"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082791"
 ---
 # <a name="installing-powershell-on-windows"></a>Windows への PowerShell のインストール
 
@@ -81,7 +81,8 @@ Windows IoT には、PowerShell 7 の展開に使用するための Windows Powe
 1. ターゲット デバイスに対して `PSSession` を作成します
 
    ```powershell
-   $s = New-PSSession -ComputerName <deviceIp> -Credential Administrator
+   Set-Item -Path WSMan:\localhost\Client\TrustedHosts <deviceip>
+   $S = New-PSSession -ComputerName <deviceIp> -Credential Administrator
    ```
 
 2. ZIP パッケージをデバイスにコピーします
@@ -173,6 +174,8 @@ Nano Server は "ヘッドレス" OS です。 PowerShell バイナリを展開�
 ```
 dotnet tool install --global PowerShell
 ```
+
+dotnet tool install によって、`$env:PATH` 環境変数に `$env:USERPROFILE\dotnet\tools` が追加されます。 ただし、現在実行中のシェルには更新された `$env:PATH` が設定されていません。 新しいシェルからは、「`pwsh`」と入力すると PowerShell を起動できるはずです。
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>リモート エンドポイントの作成方法
 

@@ -2,12 +2,12 @@
 title: Linux への PowerShell のインストール
 description: さまざまな Linux ディストリビューションへの PowerShell のインストールに関する情報
 ms.date: 03/09/2020
-ms.openlocfilehash: 0c7b2bd804d07b2fcb61a61240b139f84fabd6db
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 13b8583ed45f1201e61225b377112a59d2b26cb2
+ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402539"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "80082792"
 ---
 # <a name="installing-powershell-on-linux"></a>Linux への PowerShell のインストール
 
@@ -298,7 +298,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>直接ダウンロードによるインストール - Alpine 3.9 および 3.10
 
-[リリース][] ページから Alpine コンピューターに tar.gz パッケージ `powershell_7.0.0-linux-x64.tar.gz` をダウンロードします。
+[リリース][] ページから Alpine コンピューターに tar.gz パッケージ `powershell-7.0.0-linux-alpine-x64.tar.gz` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -693,6 +693,8 @@ rm -rf ~/powershell
 ```
 dotnet tool install --global PowerShell
 ```
+
+dotnet tool install によって、`PATH` 環境変数に `~/.dotnet/tools` が追加されます。 ただし、現在実行中のシェルには更新された `PATH` が設定されていません。 新しいシェルからは、「`pwsh`」と入力すると PowerShell を起動できるはずです。
 
 ## <a name="binary-archives"></a>バイナリ アーカイブ
 
