@@ -47,8 +47,7 @@ PowerShell は、[MIT ライセンス][] に基づき使用が許諾されてい
 
 ### <a name="windows-docker-file-and-image-licenses"></a>Windows Docker ファイルとイメージのライセンス
 
-Windows コンテナー用のコンテナー OS イメージを入手して使用する場合、Docker Hub 上で参照可能な追加ライセンス条項を確認して理解し、同意する必要があり
-ます。
+Windows コンテナー用のコンテナー OS イメージを入手して使用する場合、Docker Hub 上で参照可能な追加ライセンス条項を確認して理解し、同意する必要があります。
 
 - [Window Server Core][Window Server Core]
 - [Nano Server][Nano Server]
