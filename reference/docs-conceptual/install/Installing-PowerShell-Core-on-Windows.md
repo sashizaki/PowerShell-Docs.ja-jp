@@ -34,7 +34,7 @@ MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi` のようにな�
 - PowerShell は、スタート メニューまたは  `$env:ProgramFiles\PowerShell\<version>\pwsh.exe` から起動できます。
 
 > [!NOTE]
-> PowerShell 7 は新しいディレクトリにインストールされ、Windows PowerShell 5.1 と side-by-side 実行されます。 PowerShell Core 6.x の場合、PowerShell 7 はインプレース アップグレードで、PowerShell Core 6.x は削除されます。
+> PowerShell 7 は新しいディレクトリにインストールされ、Windows PowerShell 5.1 と side-by-side 実行されます。 PowerShell Core 6.x がインストールされている場合、PowerShell 7 にインプレース アップグレードされ、PowerShell Core 6.x は削除されます。
 >
 > - PowerShell 7 は `%programfiles%\PowerShell\7` にインストールされます
 > - `%programfiles%\PowerShell\7` フォルダーは `$env:PATH` に追加されます
