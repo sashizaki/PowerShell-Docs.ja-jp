@@ -33,7 +33,7 @@ PowerShell と特定の WMF のその他のコンポーネントのさまざま�
 - [WMF 4.0](https://download.microsoft.com/download/3/D/6/3D61D262-8549-4769-A660-230B67E15B25/Windows%20Management%20Framework%204%200%20Release%20Notes.docx)
 - [WMF 3.0](https://download.microsoft.com/download/E/7/6/E76850B8-DA6E-4FF5-8CCE-A24FC513FD16/WMF%203%20Release%20Notes.docx)
 
-## <a name="wmf-availability-across-windows-operating-systems"></a>Windows オペレーティング システム全体の WMF 可用性
+## <a name="wmf-availability-across-windows-operating-systems"></a>Windows オペレーティング システムに対する WMF の対応状況
 
 |        オペレーティング システムのバージョン         | [WMF 5.1][]  | WMF 5.0<br>*サポート対象外* | [WMF 4.0][]  | [WMF 3.0][]  | [WMF 2.0][]  |
 | --------------------------------------- | ------------ | --------------------------- | ------------ | ------------ | ------------ |
