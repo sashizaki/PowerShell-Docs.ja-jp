@@ -42,7 +42,7 @@ brew cask install powershell
 pwsh
 ```
 
-新しいバージョンの PowerShell がリリースされたら、Homebrew の式を更新し、PowerShell をアップグレードしてください。
+新しいバージョンの PowerShell がリリースされたら、Homebrew のパッケージ定義 (Formula) を更新し、PowerShell をアップグレードしてください。
 
 ```sh
 brew update
@@ -77,7 +77,7 @@ brew cask install powershell-preview
 pwsh-preview
 ```
 
-新しいバージョンの PowerShell がリリースされたら、Homebrew の式を更新し、PowerShell をアップグレードしてください。
+新しいバージョンの PowerShell がリリースされたら、Homebrew のパッケージ定義 (Formula) を更新し、PowerShell をアップグレードしてください。
 
 ```sh
 brew update
