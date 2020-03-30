@@ -13,13 +13,13 @@ ms.locfileid: "78279659"
 ---
 # <a name="using-powershell-in-docker"></a>Docker での PowerShell の使用
 
-PowerShell がプレインストールされた Docker イメージを発行します。 この記事では、Docker コンテナーで PowerShell の使用を開始する方法を説明します。
+PowerShell がプレインストールされた Docker イメージが公開されています。 この記事では、Docker コンテナーで PowerShell の使用を開始する方法を説明します。
 
 ## <a name="finding-available-images"></a>使用可能なイメージの検索
 
-リリースされたイメージには、Docker 17.05 以降が必要です。 また、`sudo` またはローカル管理者権限なしで Docker を実行できる必要もあります。 `docker` を正しくインストールするには、Docker の公式な[手順][install]に従ってください。
+リリースされたイメージを使用するには、Docker 17.05 以降が必要です。 また、`sudo` またはローカル管理者権限なしで Docker を実行できる必要があります。 `docker` を正しくインストールするには、Docker の公式な[手順][install]に従ってください。
 
-リリース コンテナーは、`centos:7` などの公式のディストリビューション イメージから派生し、依存関係をインストールしてから、最後に PowerShell パッケージをインストールします。
+リリースされているコンテナーは、`centos:7` などの公式のディストリビューション イメージから派生し、依存関係をインストールした後、最後に PowerShell パッケージがインストールされた状態となっています。
 
 これらのコンテナーは [hub.docker.com/r/microsoft/powershell][docker-release] にあります。
 
@@ -47,14 +47,14 @@ PowerShell は、[MIT ライセンス][] に基づき使用が許諾されてい
 
 ### <a name="windows-docker-file-and-image-licenses"></a>Windows Docker ファイルとイメージのライセンス
 
-Windows コンテナー用のコンテナー OS イメージを要求して使用することで、Docker Hub で利用可能な追加ライセンス条項を確認して理解し、同意することができます。
+Windows コンテナー用のコンテナー OS イメージを入手して使用する場合、Docker Hub 上で参照可能な追加ライセンス条項を確認して理解し、同意する必要があります。
 
 - [Window Server Core][Window Server Core]
 - [Nano Server][Nano Server]
 
 ### <a name="telemetry"></a>テレメトリ
 
-既定では、PowerShell は、個人を特定できる情報が含まれない限られたテレメトリを収集し、将来のバージョンの PowerShell 開発に利用します。 テレメトリを送信しないようにするには、インストール先から PowerShell を起動する前に、`POWERSHELL_TELEMETRY_OPTOUT` という環境変数を作成して値を `1` に設定します。 収集したテレメトリは、[Microsoft プライバシーに関する声明][privacy]に分類されます。
+既定では、PowerShell は、個人を特定できる情報が含まれない限られたテレメトリを収集し、将来のバージョンの PowerShell 開発に利用します。 テレメトリを送信しないようにするには、インストール先から PowerShell を起動する前に、`POWERSHELL_TELEMETRY_OPTOUT` という環境変数を作成して値を `1` に設定します。 収集するテレメトリは、[Microsoft プライバシー ステートメント][privacy]に記載されています。
 
 <!-- link references -->
 [install]: https://docs.docker.com/engine/installation/
