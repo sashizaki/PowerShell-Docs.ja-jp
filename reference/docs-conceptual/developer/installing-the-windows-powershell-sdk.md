@@ -1,13 +1,13 @@
 ---
 title: Windows PowerShell SDK のインストール
-ms.date: 09/13/2016
+ms.date: 03/30/2020
 ms.topic: article
-ms.openlocfilehash: e7ca38377b3e6533eec1a70027f6de1a9fb3091b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b47dddaf167024d30a7a31596f96569f976109d7
+ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "73444504"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80394993"
 ---
 # <a name="installing-the-windows-powershell-sdk"></a>Windows PowerShell SDK のインストール
 
@@ -18,7 +18,7 @@ ms.locfileid: "73444504"
 ## <a name="installing-windows-powershell-30-sdk-for-windows-8-and-windows-server-2012"></a>Windows 8 と Windows Server 2012 での Windows PowerShell 3.0 SDK のインストール
 
 Windows PowerShell 3.0 は Windows 8 と Windows Server 2012 で自動的にインストールされます。 さらに、Windows 8 SDK の一部としての Windows PowerShell 3.0 の参照アセンブリもダウンロードおよびインストールできます。 これらのアセンブリでは、Windows PowerShell 3.0 のコマンドレット、プロバイダー、およびホスト プログラムを記述できます。 Windows 8 用 Windows SDK をインストールすると、Windows PowerShell アセンブリが自動的に参照アセンブリ フォルダー (`\Program Files
-(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`) にインストールされます。 詳細については、Windows 8 SDK のダウンロードサイトを参照してください。 Windows PowerShell のコードサンプルは、 [Windows powershell 3.0 SDK サンプルパック](https://code.msdn.microsoft.com/Windows-PowerShell-30-SDK-9a34641d)の開発センターから入手することもできます。
+(x86)\Reference Assemblies\Microsoft\WindowsPowerShell\3.0`) にインストールされます。 詳細については、Windows 8 SDK のダウンロードサイトを参照してください。 Windows PowerShell のコードサンプルは、 [powershell sdk のサンプル](https://github.com/MicrosoftDocs/powershell-sdk-samples/tree/master/SDK-3.0)リポジトリでも入手できます。
 
 ## <a name="installing-windows-powershell-30-sdk-for-windows-7-and-windows-server-2008-r2"></a>Windows 7 と Windows Server 2008 R2 での Windows PowerShell 3.0 SDK のインストール
 
@@ -34,11 +34,9 @@ Windows PowerShell 2.0 SDK は、コマンドレット、プロバイダー、�
 Assemblies\Microsoft\WindowsPowerShell\V1.0` にインストールされます。
 
 > [!NOTE]
->
 > Windows PowerShell 2.0 のアセンブリに対してコンパイルされるコードは、Windows PowerShell 1.0 のインストールに読み込むことができません。 ただし、Windows PowerShell 1.0 のアセンブリに対してコンパイルされるコードは、Windows PowerShell 2.0 のインストールに読み込むことができます。
 
-
-### <a name="samples"></a>サンプル
+### <a name="samples"></a>Samples
 
 既定では、コード サンプルは `C:\Program Files\Microsoft
 SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` にインストールされます。 次のセクションでは、各サンプル コードについて簡単に説明します。
@@ -73,7 +71,7 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` にインストールさ�
 #### <a name="hosting-application-samples"></a>アプリケーションのホストのサンプル
 
 - Runspace01-PowerShell クラスを使用して `Get-Process` コマンドレットを同期的に実行する方法を示します。
-`Get-Process` コマンドレットは、ローカルコンピューター上で実行されている各プロセスのプロセスオブジェクトを返します。
+  `Get-Process` コマンドレットは、ローカルコンピューター上で実行されている各プロセスのプロセスオブジェクトを返します。
 - Runspace02-PowerShell クラスを使用して、`Get-Process` と `Sort-Object` のコマンドレットを同期的に実行する方法を示します。 `Get-Process` コマンドレットは、ローカルコンピューター上で実行されている各プロセスのプロセスオブジェクトを返し、`Sort-Object` はその Id プロパティに基づいてオブジェクトを並べ替えます。 これらのコマンドの結果は、DataGridView コントロールを使用して表示されます。
 - Runspace03-PowerShell クラスを使用してスクリプトを同期的に実行する方法と、終了しないエラーを処理する方法を示します。 このスクリプトはプロセス名の一覧を受信し、これらのプロセスを取得します。 スクリプトの実行時に生成された終了しないエラーを含む、スクリプトの結果がコンソール ウィンドウに表示されます。
 - Runspace04-PowerShell クラスを使用してコマンドを実行する方法と、コマンドの実行時にスローされる終了エラーをキャッチする方法を示します。 2 つのコマンドが実行され、最後のコマンドには無効なパラメーターの引数が渡されます。 結果として、オブジェクトは返されず、終了するエラーがスローされます。
@@ -89,7 +87,7 @@ SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` にインストールさ�
 
 #### <a name="host-samples"></a>ホストのサンプル
 
-- Vmhost01-カスタムホストを使用するホストアプリケーションを実装する方法を示します。 このサンプルでは、カスタムホストを使用する実行空間が作成されます。その後、PowerShell API を使用して、"exit" を呼び出すスクリプトを実行します。 ホスト アプリケーションはスクリプトの出力を確認し、結果を印刷します。
+- Vmhost01-カスタムホストを使用するホストアプリケーションを実装する方法を示します。 このサンプルでは、カスタムホストを使用する実行空間が作成され、その後、PowerShell API を使用して `exit`を呼び出すスクリプトが実行されます。 ホスト アプリケーションはスクリプトの出力を確認し、結果を印刷します。
 - Host02-Windows PowerShell ランタイムをカスタムホスト実装と共に使用するホストアプリケーションを記述する方法を示します。 ホストアプリケーションは、ホストカルチャをドイツ語に設定し、`Get-Process` コマンドレットを実行して結果を表示します。これは、pwrsh .exe を使用して表示されます。その後、現在のデータと時刻をドイツ語で出力します。
 - Host03-コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する、対話型のコンソールベースのホストアプリケーションを構築する方法を示します。
 - Host04-コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する、対話型のコンソールベースのホストアプリケーションを構築する方法を示します。 このホスト アプリケーションでは、複数選択を指定するための確認メッセージを表示することもできます。
