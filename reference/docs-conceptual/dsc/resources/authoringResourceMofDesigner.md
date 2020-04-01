@@ -2,22 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: リソース デザイナー ツールの使用
-ms.openlocfilehash: 4f678f4586c75c830bf876b891fe4784aa3b4e95
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 36eed0fc888380a03a3279e834748708f578d973
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71952859"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500641"
 ---
 # <a name="using-the-resource-designer-tool"></a>リソース デザイナー ツールの使用
 
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
-リソース デザイナー ツールは、Windows PowerShell Desired State Configuration (DSC) リソースの作成を簡単にする、**xDscResourceDesigner** モジュールによって公開されている一連のコマンドレットです。 このリソースのコマンドレットは、MOF スキーマ、スクリプト モジュール、および新しいリソースのディレクトリ構造の作成に役立ちます。 DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」を参照してください。
-このトピックでは、Active Directory ユーザーを管理する DSC リソースを作成します。
-[Install-Module](/powershell/module/PowershellGet/Install-Module) コマンドレットを使用して **xDscResourceDesigner** モジュールをインストールします。
-
->**注**:**Install-Module** は、PowerShell 5.0 に含まれている **PowerShellGet** モジュールに含まれています。 「[PackageManagement PowerShell Modules Preview (PackageManagement PowerShell モジュールのプレビュー)](https://www.microsoft.com/en-us/download/details.aspx?id=49186)」で PowerShell 3.0 と 4.0 の **PowerShellGet** モジュールをダウンロードできます。
+リソース デザイナー ツールは、Windows PowerShell Desired State Configuration (DSC) リソースの作成を簡単にする、**xDscResourceDesigner** モジュールによって公開されている一連のコマンドレットです。 このリソースのコマンドレットは、MOF スキーマ、スクリプト モジュール、および新しいリソースのディレクトリ構造の作成に役立ちます。 DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」を参照してください。 このトピックでは、Active Directory ユーザーを管理する DSC リソースを作成します。 [Install-Module](/powershell/module/PowershellGet/Install-Module) コマンドレットを使用して **xDscResourceDesigner** モジュールをインストールします。
 
 ## <a name="creating-resource-properties"></a>リソース プロパティの作成
 まず、リソースで公開するプロパティを決定する必要があります。 この例では、次のプロパティを持つ Active Directory ユーザーを定義します。
@@ -26,7 +22,7 @@ ms.locfileid: "71952859"
 * **UserName**:ユーザーを一意に識別するキー プロパティです。
 * **Ensure**:ユーザー アカウントが存在するかしないかを指定します。 このパラメーターに使用できる値は 2 つのみです。
 * **DomainCredential**:ユーザーのドメイン パスワードです。
-* **Password**:必要に応じて構成でユーザー パスワードを変更できるようにするために必要なユーザーのパスワードです。
+* **パスワード**:必要に応じて構成でユーザー パスワードを変更できるようにするために必要なユーザーのパスワードです。
 
 プロパティを作成するには、**New-xDscResourceProperty** コマンドレットを使用します。 次の PowerShell コマンドでは、上記で説明したプロパティを作成します。
 
@@ -37,7 +33,7 @@ $DomainCredential = New-xDscResourceProperty –Name DomainCredential -Type PSCr
 $Password = New-xDscResourceProperty –Name Password -Type PSCredential -Attribute Write
 ```
 
-## <a name="create-the-resource"></a>リソースの作成
+## <a name="create-the-resource"></a>リソースを作成する
 
 リソース プロパティが作成されたので、**New-xDscResource** コマンドレットを呼び出してリソースを作成できます。 **New-xDscResource** コマンドレットは、パラメーターとしてプロパティのリストを受け取ります。 モジュールを作成するパス、新しいリソースの名前、そのリソースが含まれているモジュールの名前も受け取ります。 次の PowerShell コマンドでは、リソースを作成します。
 
@@ -60,7 +56,8 @@ class Demo_ADUser : OMI_BaseResource
 };
 ```
 
-リソース スクリプトは **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1** にあります。 これには、自分自身を追加する必要があるリソースを実装する実際のロジックは含まれません。 スケルトン スクリプトの内容は次のとおりです。
+リソース スクリプトは **C:\Program Files\WindowsPowerShell\Modules\Demo_DSCModule\DSCResources\Demo_ADUser\Demo_ADUser.psm1** にあります。
+これには、自分自身を追加する必要があるリソースを実装する実際のロジックは含まれません。 スケルトン スクリプトの内容は次のとおりです。
 
 ```powershell
 function Get-TargetResource

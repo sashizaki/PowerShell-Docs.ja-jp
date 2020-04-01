@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery, PsGet
 title: PowerShell ギャラリー
-ms.openlocfilehash: d3e3b9d8bb3d6cefd3a3bfe79b012bb1dc1d8a2d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e489d2dd4db087b53eb07d2a8793c8f586c9b210
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71327863"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500563"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell ギャラリー
 
@@ -21,31 +21,20 @@ PowerShellGet モジュールには、[PowerShell ギャラリー](https://www.P
 
 ## <a name="getting-started-with-the-gallery"></a>ギャラリーをお使いになる前に
 
-ギャラリーからパッケージをインストールするには、最新バージョンの PowerShellGet モジュールが必要です。
-完全な手順については、「[PowerShellGet のインストール](installing-psget.md)」を参照してください。
+ギャラリーからパッケージをインストールするには、最新バージョンの PowerShellGet モジュールが必要です。 完全な手順については、「[PowerShellGet のインストール](installing-psget.md)」を参照してください。
 
 ギャラリーで PowerShellGet コマンドを使用する方法については、[[はじめに]](getting-started.md) ページを参照してください。 *Update-Help -Module PowerShellGet* を実行し、コマンドのローカル ヘルプをインストールすることもできます。
 
 ## <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
 
-**PowerShellGet** モジュールは、**Windows PowerShell 3.0 以降**、または **PowerShell Core 6.0 以降**を必要とします。
-
-**Windows PowerShell** の適切なバージョンは、次のオペレーティング システムに対して利用できます。
-
-- Windows 10
-- Windows 8.1 Pro
-- Windows 8.1 Enterprise
-- Windows 7 SP1
-- Windows Server 2019
-- Windows Server 2016
-- Windows Server 2012 R2
-- Windows Server 2008 R2 SP1
+**PowerShellGet** モジュールは **PowerShell 3.0 以降**を必要とします。
 
 **PowerShellGet** には、.NET Framework 4.5 以降が必要です。 .NET Framework 4.5 以降を[ここ](https://msdn.microsoft.com/library/5a4x27ek.aspx)からインストールできます。
 
-**PowerShell Core** はクロス プラットフォームであるため、Windows、Linux、MacOS で動作し、**PowerShellGet** をこれらのシステムで使用することもできます。 **PowerShell Core** でサポートされるシステムの完全な一覧については、[PowerShell のインストール](/powershell/scripting/setup/installing-powershell)に関するページを参照してください。
+**PowerShell Core** はクロス プラットフォームであるため、Windows、Linux、MacOS で動作し、**PowerShellGet** をこれらのシステムで使用することもできます。 **PowerShell Core** でサポートされるシステムの完全な一覧については、[PowerShell のインストール](/powershell/scripting/install/installing-powershell)に関するページを参照してください。
 
-ギャラリーでホストされているモジュールの多くは、さまざまな OS をサポートしており、追加の要件があります。 詳細については、モジュールのドキュメントをご覧ください。
+ギャラリーでホストされているモジュールの多くは、さまざまな OS をサポートしており、追加の要件があります。
+詳細については、モジュールのドキュメントをご覧ください。
 
 ## <a name="got-a-question-have-feedback"></a>ご質問または フィードバックがある場合は、
 

@@ -2,12 +2,12 @@
 ms.date: 07/09/2019
 keywords: DSC, GPO, PowerShell, 構成, セットアップ
 title: クイック スタート - グループ ポリシーを DSC に変換する
-ms.openlocfilehash: 8c89dbbce5b2b146194b799d7e36ecce3105bfeb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5e6b86be5127332fe4fd400980c8e147b735247b
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71953469"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500650"
 ---
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
@@ -54,8 +54,8 @@ Mode                LastWriteTime     Length Name
 > [!NOTE]
 > **BaselineManagement** は、Microsoft からではなく、プロジェクト保守管理者からのコミュニティ ソリューションに対するサポートを、DSC でより検索しやすくするように、コミュニティによって開発されたソリューションです。 [GitHub](https://github.com/microsoft/BaselineManagement) 上で **BaselineManagement** に対して新しい問題を作成することができます。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
-- 構成スクリプトを Azure Automation State Configuration にアップロードするには、[作業の開始](/automation/automation-dsc-getting-started#importing-a-configuration-into-azure-automation)に関するページを参照してください。
+- 構成スクリプトを Azure Automation State Configuration にアップロードするには、[作業の開始](/azure/automation/automation-dsc-getting-started#importing-a-configuration-into-azure-automation)に関するページを参照してください。
 - **SecurityPolicyDSC** モジュールと **AuditPolicyDSC** モジュールを [Automation Account](/azure/automation/shared-resources/modules) に追加します。
 - 「[PowerShell ギャラリー](https://www.powershellgallery.com/)」で DSC の構成とリソースを検索する。

@@ -4,12 +4,12 @@ contributor: JKeithB, SydneyhSmith
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 description: パブリッシャー向けのガイドライン
 title: PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
-ms.openlocfilehash: 07271e037100350d3efc7ae63860f42afd22aae7
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 5ee33ba12475f9d3e5ceb3b31f37d9f2acc19d9e
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78278217"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500596"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -165,7 +165,8 @@ PowerShell では、コード署名について 2 つの主な検証方法がサ
 
 PowerShell ファイルに署名すると、実行するコードが信頼できる作成元によって作成されており、変更されていないことを確実に保証できます。 PowerShell スクリプト ファイルへの署名方法の詳細については、[署名](/powershell/module/microsoft.powershell.core/about/about_signing)に関するページを参照してください。 つまり、署名はスクリプトのロード時に PowerShell により検証されるすべての `.PS1` ファイルに追加することができます。 [実行ポリシー](/powershell/module/microsoft.powershell.core/about/about_execution_policies) コマンドレットを使用して、署名済みのスクリプトのみが使用されるように PowerShell を制限できます。
 
-モジュールへのカタログ署名は、バージョン 5.1 で PowerShell に追加された機能です。 モジュールへの署名方法については、[カタログ コマンドレット](/powershell/scripting/wmf/5.1/catalog-cmdlets)に関するページを参照してください。 カタログ署名は、モジュール内の全ファイルのハッシュ値を含むカタログ ファイルを作成してそのファイルに署名することで行います。
+モジュールへのカタログ署名は、バージョン 5.1 で PowerShell に追加された機能です。 モジュールへの署名方法については、[カタログ コマンドレット](/powershell/scripting/wmf/whats-new/new-updated-cmdlets#catalog-cmdlets)に関するページを参照してください。
+カタログ署名は、モジュール内の全ファイルのハッシュ値を含むカタログ ファイルを作成してそのファイルに署名することで行います。
 
 **PowerShellGet** の `Publish-Module`、`Install-Module`、および `Update-Module` の各コマンドレットにより、署名が有効であることが確認され、各パッケージのハッシュ値がカタログに記載されているものと一致するか確認されます。 `Save-Module` では、署名は検証されません。 システムに旧バージョンのモジュールがインストールされている場合、`Install-Module` がインストール済みのものと一致することが、新バージョンの署名機関によって確認されます。 パッケージがカタログによって署名されていない場合、`Install-Module` と `Update-Module` は、`.PSD1` ファイルの署名を使用します。 カタログ署名は、スクリプト ファイルへの署名と併用できますが、それの代わりにはなりません。 PowerShell では、モジュールのロード時にカタログ署名の検証は行いません。
 

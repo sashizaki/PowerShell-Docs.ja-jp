@@ -2,12 +2,12 @@
 ms.date: 01/02/2020
 keywords: powershell,コマンドレット
 title: Windows PowerShell ISE でスクリプトをデバッグする方法
-ms.openlocfilehash: c5da80f3e0e013448533c80bbe1957a301be38f5
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: 6fbe340cbff832b5d0e2a5515ef432cec574a3c1
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75737119"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500938"
 ---
 # <a name="how-to-debug-scripts-in-windows-powershell-ise"></a>Windows PowerShell ISE でスクリプトをデバッグする方法
 
@@ -26,13 +26,13 @@ Windows PowerShell のデバッグ環境では、次の 3 種類のブレーク�
 
 1. **コマンドのブレークポイント。** スクリプトの操作中、指定したコマンドを実行する前に、スクリプトは一時停止します。 ブレークポイントを必要な操作のみにフィルターで絞り込むために、パラメーターを指定できます。 コマンドには、作成した関数を指定することもできます。
 
-この 3 種類のうち、行のブレークポイントだけは、Windows PowerShell ISE デバッグ環境で、メニューやキーボード ショートカットを使って設定できます。 他の 2 つの種類のブレークポイントは、コンソール ウィンドウから [Set-PSBreakpoint ](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md) コマンドレットを使って設定できます。 このセクションでは、Windows PowerShell ISE でメニューが使用可能な場合は使用してデバッグ作業を実行する方法と、スクリプトを使用してさまざまなコマンドをコンソール ウィンドウから実行する方法を説明します。
+この 3 種類のうち、行のブレークポイントだけは、Windows PowerShell ISE デバッグ環境で、メニューやキーボード ショートカットを使って設定できます。 他の 2 つの種類のブレークポイントは、コンソール ウィンドウから [Set-PSBreakpoint ](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint) コマンドレットを使って設定できます。 このセクションでは、Windows PowerShell ISE でメニューが使用可能な場合は使用してデバッグ作業を実行する方法と、スクリプトを使用してさまざまなコマンドをコンソール ウィンドウから実行する方法を説明します。
 
 ### <a name="to-set-a-breakpoint"></a>ブレークポイントを設定するには
 
 ブレークポイントをスクリプトに設定するには、まずブレークポイントを保存する必要があります。 行のブレークポイントを設定する行を右クリックしてから、 **[ブレークポイントの設定/解除]** をクリックします。 または、行のブレークポイントを設定する行をクリックしてから、<kbd>F9</kbd> キーを押すか、 **[デバッグ]** メニューの **[ブレークポイントの設定/解除]** をクリックします。
 
-次のスクリプトは、コンソール ウィンドウから [Set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md) コマンドレットを使って変数のブレークポイントを設定する方法の例を示しています。
+次のスクリプトは、コンソール ウィンドウから [Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint) コマンドレットを使って変数のブレークポイントを設定する方法の例を示しています。
 
 ```powershell
 # This command sets a breakpoint on the Server variable in the Sample.ps1 script.
@@ -43,7 +43,7 @@ Set-PSBreakpoint -Script sample.ps1 -Variable Server
 
 現在の Windows PowerShell セッションで設定されているすべてのブレークポイントを表示します。
 
-**[デバッグ]** メニューの **[ブレークポイントの一覧を表示]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Get-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Get-PSBreakpoint.md) コマンドレットを使ってすべてのブレークポイントの一覧を表示する方法の例を示しています。
+**[デバッグ]** メニューの **[ブレークポイントの一覧を表示]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Get-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Get-PSBreakpoint) コマンドレットを使ってすべてのブレークポイントの一覧を表示する方法の例を示しています。
 
 ```powershell
 # This command lists all breakpoints in the current session.
@@ -55,7 +55,7 @@ Get-PSBreakpoint
 ブレークポイントを解除すると、そのブレークポイントは削除されます。
 
 後で使う可能性があるブレークポイントは、解除するのではなく[無効にする](#disable-a-breakpoint)ことができます。 ブレークポイントを解除する行を右クリックしてから、 **[ブレークポイントの設定/解除]** をクリックします。
-または、ブレークポイントを解除する行をクリックして、 **[デバッグ]** メニューの **[ブレークポイントの設定/解除]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Remove-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Remove-PSBreakpoint.md) コマンドレットを使って、指定した ID のブレークポイントを解除する方法の例を示しています。
+または、ブレークポイントを解除する行をクリックして、 **[デバッグ]** メニューの **[ブレークポイントの設定/解除]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Remove-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Remove-PSBreakpoint) コマンドレットを使って、指定した ID のブレークポイントを解除する方法の例を示しています。
 
 ```powershell
 # This command deletes the breakpoint with breakpoint ID 2.
@@ -66,7 +66,7 @@ Remove-PSBreakpoint -Id 2
 
 現在のセッション内で定義されたすべてのブレークポイントを削除するには、 **[デバッグ]** メニューの **[すべてのブレークポイントを削除]** をクリックします。
 
-次のスクリプトは、コンソール ウィンドウから [Remove-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Remove-PSBreakpoint.md) コマンドレットを使ってすべてのブレークポイントを削除する方法の例を示しています。
+次のスクリプトは、コンソール ウィンドウから [Remove-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Remove-PSBreakpoint) コマンドレットを使ってすべてのブレークポイントを削除する方法の例を示しています。
 
 ```powershell
 # This command deletes all of the breakpoints in the current session.
@@ -75,7 +75,7 @@ Get-PSBreakpoint | Remove-PSBreakpoint
 
 ### <a name="disable-a-breakpoint"></a>ブレークポイントの無効化
 
-ブレークポイントを無効にしても、そのブレークポイントは削除されず、再び有効にするまでの間オフになります。 特定の行のブレークポイントを無効にするには、ブレークポイントを無効にする行を右クリックし、 **[ブレークポイントの無効化]** をクリックします。 または、ブレークポイントを無効にする行をクリックしてから、<kbd>F9</kbd> キーを押すか、 **[デバッグ]** メニューの **[ブレークポイントの無効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Disable-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Disable-PSBreakpoint.md) コマンドレットを使って、指定した ID のブレークポイントを無効にする方法の例を示しています。
+ブレークポイントを無効にしても、そのブレークポイントは削除されず、再び有効にするまでの間オフになります。 特定の行のブレークポイントを無効にするには、ブレークポイントを無効にする行を右クリックし、 **[ブレークポイントの無効化]** をクリックします。 または、ブレークポイントを無効にする行をクリックしてから、<kbd>F9</kbd> キーを押すか、 **[デバッグ]** メニューの **[ブレークポイントの無効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Disable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Disable-PSBreakpoint) コマンドレットを使って、指定した ID のブレークポイントを無効にする方法の例を示しています。
 
 ```powershell
 # This command disables the breakpoint with breakpoint ID 0.
@@ -84,7 +84,7 @@ Disable-PSBreakpoint -Id 0
 
 ### <a name="disable-all-breakpoints"></a>すべてのブレークポイントの無効化
 
-ブレークポイントを無効にしても、そのブレークポイントは削除されず、再び有効にするまでの間オフになります。 現在のセッション内のすべてのブレークポイントを無効にするには、 **[デバッグ]** メニューの **[すべてのブレークポイントの無効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Disable-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Disable-PSBreakpoint.md) コマンドレットを使ってすべてのブレークポイントを無効にする方法の例を示しています。
+ブレークポイントを無効にしても、そのブレークポイントは削除されず、再び有効にするまでの間オフになります。 現在のセッション内のすべてのブレークポイントを無効にするには、 **[デバッグ]** メニューの **[すべてのブレークポイントの無効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Disable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Disable-PSBreakpoint) コマンドレットを使ってすべてのブレークポイントを無効にする方法の例を示しています。
 
 ```powershell
 # This command disables all breakpoints in the current session.
@@ -94,7 +94,7 @@ Get-PSBreakpoint | Disable-PSBreakpoint
 
 ### <a name="enable-a-breakpoint"></a>ブレークポイントの有効化
 
-特定の行のブレークポイントを有効にするには、ブレークポイントを有効にする行を右クリックし、 **[ブレークポイントの有効化]** をクリックします。 または、ブレークポイントを有効にする行をクリックしてから、<kbd>F9</kbd> キーを押すか、 **[デバッグ]** メニューの **[ブレークポイントの有効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Enable-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Enable-PSBreakpoint.md) コマンドレットを使って特定のブレークポイントを有効にする方法の例を示しています。
+特定の行のブレークポイントを有効にするには、ブレークポイントを有効にする行を右クリックし、 **[ブレークポイントの有効化]** をクリックします。 または、ブレークポイントを有効にする行をクリックしてから、<kbd>F9</kbd> キーを押すか、 **[デバッグ]** メニューの **[ブレークポイントの有効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Enable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Enable-PSBreakpoint) コマンドレットを使って特定のブレークポイントを有効にする方法の例を示しています。
 
 ```powershell
 # This command enables breakpoints with breakpoint IDs 0, 1, and 5.
@@ -103,7 +103,7 @@ Enable-PSBreakpoint -Id 0, 1, 5
 
 ### <a name="enable-all-breakpoints"></a>すべてのブレークポイントの有効化
 
-現在のセッション内で定義されたすべてのブレークポイントを有効にするには、 **[デバッグ]** メニューの **[すべてのブレークポイントを有効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Enable-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Enable-PSBreakpoint.md) コマンドレットを使ってすべてのブレークポイントを有効にする方法の例を示しています。
+現在のセッション内で定義されたすべてのブレークポイントを有効にするには、 **[デバッグ]** メニューの **[すべてのブレークポイントを有効化]** をクリックします。 次のスクリプトは、コンソール ウィンドウから [Enable-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Enable-PSBreakpoint) コマンドレットを使ってすべてのブレークポイントを有効にする方法の例を示しています。
 
 ```powershell
 # This command enables all breakpoints in the current session.
@@ -113,7 +113,7 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 
 ## <a name="how-to-manage-a-debugging-session"></a>デバッグ セッションを管理する方法
 
-デバッグを開始する前に、1 つ以上のブレークポイントを設定する必要があります。 ブレークポイントを設定するには、まず、デバッグするスクリプトを保存する必要があります。 ブレークポイントを設定する手順については、「[ブレークポイントを管理する方法](#how-to-manage-breakpoints)」または「[Set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md)」をご覧ください。
+デバッグを開始する前に、1 つ以上のブレークポイントを設定する必要があります。 ブレークポイントを設定するには、まず、デバッグするスクリプトを保存する必要があります。 ブレークポイントを設定する手順については、「[ブレークポイントを管理する方法](#how-to-manage-breakpoints)」または「[Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint)」をご覧ください。
 デバッグを開始した後は、デバッグを停止するまで、スクリプトを編集できません。 1 つ以上のブレークポイントを設定したスクリプトは、実行前に自動的に保存されます。
 
 ### <a name="to-start-debugging"></a>デバッグを開始するには
@@ -138,7 +138,7 @@ Get-PSBreakpoint | Enable-PSBreakpoint
 
 ステッピングは、一度に 1 つのステートメントを実行するプロセスです。 コードの行で停止し、変数の値とシステムの状態を確認できます。 次の表では、ステップ オーバー、ステップ イン、ステップ アウトなどの一般的なデバッグ タスクについて説明します。
 
-| デバッグ タスク |                                                                                                                   [説明]                                                                                                                    |                                                      PowerShell ISE で実行する方法                                                       |
+| デバッグ タスク |                                                                                                                   説明                                                                                                                    |                                                      PowerShell ISE で実行する方法                                                       |
 | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **ステップ イン**  | 現在のステートメントを実行し、次のステートメントで停止します。 現在のステートメントが関数やスクリプトの呼び出しの場合、デバッガーはその関数やスクリプトにステップ インします。それ以外の場合、デバッガーは次のステートメントで停止します。                      | <kbd>F11</kbd> キーを押すか、 **[デバッグ]** メニューの **[ステップ イン]** をクリックするか、コンソール ウィンドウに `S` と入力して <kbd>Enter</kbd> キーを押します。                 |
 | **ステップ オーバー**  | 現在のステートメントを実行し、次のステートメントで停止します。 現在のステートメントが関数やスクリプトの呼び出しの場合、デバッガーはその関数やスクリプトの全体を実行し、関数を呼び出した後の次のステートメントで停止します。 | <kbd>F10</kbd> キーを押すか、 **[デバッグ]** メニューの **[ステップ オーバー]** をクリックするか、コンソール ウィンドウに `V` と入力して <kbd>Enter</kbd> キーを押します。                 |
@@ -198,4 +198,4 @@ C:\ps-test\MyScript.ps1
 
 ## <a name="see-also"></a>参照
 
-- [Windows PowerShell ISE の操作](exploring-the-windows-powershell-ise.md)
+[Windows PowerShell ISE の操作](exploring-the-windows-powershell-ise.md)

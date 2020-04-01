@@ -2,12 +2,12 @@
 title: PowerShell Core 6.0 の新機能
 description: PowerShell Core 6.0 でリリースされた新機能と変更
 ms.date: 08/06/2018
-ms.openlocfilehash: d1bc1ef2676da60062b8bdd57042331f0f245bec
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 39bcb343c44c32d183c8bb90306a8f4a57397eb6
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995491"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500488"
 ---
 # <a name="whats-new-in-powershell-core-60"></a>PowerShell Core 6.0 の新機能
 
@@ -231,7 +231,7 @@ SSH ベースのリモート処理の構成と使用の詳細については、�
 - Web コマンドレットでのリンク ヘッダーの改ページのサポート (#3828)
   - `Invoke-WebRequest` では、応答にリンク ヘッダーが含まれている場合、URL と `rel` 属性を表す Dictionary として RelationLink プロパティを作成し、開発者が使いやすいように URL を絶対 URL にします。
   - `Invoke-RestMethod` では、レスポンスに Link ヘッダーが含まれている場合、`-FollowRelLink` スイッチを公開し、Link ヘッダーが存在しなくなるか、省略可能な `-MaximumFollowRelLink` パラメーター値に到達するまで、`next` `rel` リンクに自動的に従うようにします。
-- 標準以外のメソッドの動詞で使用できるように、Web コマンドレットに `-CustomMethod` パラメーターを追加します。 (#3142) ([@Lee303](https://github.com/Lee303) に感謝)
+- 標準以外のメソッドの動詞で使用できるように、Web コマンドレットに `-CustomMethod` パラメーターを追加します。 (#3142) (@Lee303 に感謝)
 - Web コマンドレットに `SslProtocol` サポートを追加します。 (#5329) ([@markekraus](https://github.com/markekraus) に感謝)
 - Web コマンドレットにマルチパートのサポートを追加します。 (#4782) ([@markekraus](https://github.com/markekraus) に感謝)
 - システム全体のプロキシ設定が無視されるように、Web コマンドレットに `-NoProxy` を追加します。 (#3447) ([@TheFlyingCorpse](https://github.com/TheFlyingCorpse) に感謝)
@@ -248,7 +248,7 @@ SSH ベースのリモート処理の構成と使用の詳細については、�
 - Web コマンドレットの `UserAgent` を `WindowsPowerShell` から `PowerShell` に変更します。 (#4914) ([@markekraus](https://github.com/markekraus) に感謝)
 - 明示的な `ContentType` 検出を `Invoke-RestMethod` に追加します。(#4692)
 - 標準以外の User-Agent ヘッダーを扱うために、Web コマンドレットの `-SkipHeaderValidation` を修正します。 (#4479 &
-  #<a name="4512-thanks-markekraushttpsgithubcommarkekraus"></a>4512) ([@markekraus](https://github.com/markekraus) に感謝します)
+  #<a name="4512-thanks-markekraus"></a>4512) ([@markekraus](https://github.com/markekraus) に感謝します)
 
 ### <a name="json-cmdlets"></a>JSON コマンドレット
 

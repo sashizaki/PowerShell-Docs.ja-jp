@@ -2,12 +2,12 @@
 title: PowerShell コミュニティのリソース
 description: PowerShell ユーザーによって作成されたリソースの一覧
 ms.date: 03/04/2020
-ms.openlocfilehash: ce828926624ab0255bc0ede1ce1c2ff965dbf679
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.openlocfilehash: 50f5eaaef9ef30351fa605f74648a8efbce90af3
+ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79060357"
+ms.lasthandoff: 03/30/2020
+ms.locfileid: "80395015"
 ---
 # <a name="powershell-community-resources"></a>PowerShell コミュニティのリソース
 
@@ -32,4 +32,4 @@ PowerShell コミュニティでは、[GitHub](https://github.com/powershell/pow
 
 Microsoft では、楽しいデジタル アートワークのコレクションをご用意しています。
 
-[デジタル アート](https://docs.microsoft.com/powershell/scripting/community/digital-art.md)
+[デジタル アート](/powershell/scripting/community/digital-art)

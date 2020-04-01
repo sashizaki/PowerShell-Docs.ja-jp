@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,コマンドレット
 title: Windows PowerShell Web Access の承認規則とセキュリティ機能
-ms.openlocfilehash: c426b8cfb10829241ba244a5d840c91e1de9f66e
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 9bc1be125ebab4e9ba29ba832b442777e9bfc859
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402609"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500883"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Access の承認規則とセキュリティ機能
 
@@ -85,7 +85,7 @@ Windows PowerShell Web Access におけるセキュリティの最後の層は�
 
 既定では、Windows PowerShell Web Access は、ゲートウェイとターゲット コンピューター両方での認証に、プライマリのユーザー名とパスワードを使います。 Web ベースのサインイン ページでは、 **[オプションの接続設定]** というセクションで、必要に応じてターゲット コンピューターに対する別の資格情報を提示するためのオプションをユーザーに提供しています。 ユーザーがその他の資格情報を提示しない場合、ゲートウェイへの接続に使われるプライマリのユーザー名とパスワードが、ターゲット コンピューターへの接続にも使われます。
 
-承認規則を使って、特定のセッション構成に対するユーザーのアクセスを許可することができます。 担当者は、Windows PowerShell Web Access 用の_制限付き実行空間_またはセッション構成を作成し、特定のユーザーが特定のセッション構成だけにアクセスできるようにして、それらのユーザーを Windows PowerShell Web Access にサインインさせることができます。 アクセス制御リスト (ACL) を使って特定のエンドポイントにアクセスできるユーザーを決定できることに加えて、このセクションで説明する承認規則を使用すると、エンドポイントへのアクセスを特定のユーザーにさらに制限することができます。 制限付き実行空間の詳細については、[制約付き実行空間の作成](https://msdn.microsoft.com/library/dn614668)に関するページを参照してください。
+承認規則を使って、特定のセッション構成に対するユーザーのアクセスを許可することができます。 担当者は、Windows PowerShell Web Access 用の_制限付き実行空間_またはセッション構成を作成し、特定のユーザーが特定のセッション構成だけにアクセスできるようにして、それらのユーザーを Windows PowerShell Web Access にサインインさせることができます。 アクセス制御リスト (ACL) を使って特定のエンドポイントにアクセスできるユーザーを決定できることに加えて、このセクションで説明する承認規則を使用すると、エンドポイントへのアクセスを特定のユーザーにさらに制限することができます。 制限付き実行空間の詳細については、[制約付き実行空間の作成](/powershell/scripting/developer/hosting/creating-a-constrained-runspace)に関するページを参照してください。
 
 ### <a name="configuring-authorization-rules"></a>承認規則の構成
 
@@ -112,7 +112,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
    まだ作成されていない場合は、「[about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files)」に記載されているセッション構成の作成手順を使用してください。
 
-3. この承認規則により、特定のユーザー 1 人が、通常アクセスが許可されているネットワーク上の 1 つのコンピューターにアクセスして、このユーザーが通常必要とするスクリプトとコマンドレットに制限された特定の 1 つのセッション構成にアクセスできるようになります。 次のように入力して **Enter** キーを押します。
+3. この承認規則により、特定のユーザーが、通常アクセスが許可されているネットワーク上の 1 台のコンピューターにアクセスして、このユーザー&trade;が通常必要とするスクリプトとコマンドレットに制限された特定のセッション構成にアクセスできるようになります。 次のように入力して **Enter** キーを押します。
 
    ```
    Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `
@@ -151,7 +151,8 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
 #### <a name="other-authorization-rule-scenario-examples"></a>承認規則のその他のシナリオの例
 
-あらゆる Windows PowerShell セッションはいずれかのセッション構成を使います。セッションにセッション構成が指定されていない場合、Windows PowerShell は、組み込み済みの Windows PowerShell セッション構成である Microsoft.PowerShell という既定値を使います。 既定のセッション構成には、コンピューターで使うことができるすべてのコマンドレットが含まれています。 管理者は、制限付き実行空間 (エンド ユーザーが実行できるコマンドレットとタスクの範囲が制限されている) が指定されたセッション構成を定義することで、すべてのコンピューターに対するアクセスを制限できます。 1 つのコンピューターに対する全言語でのアクセス、または Windows PowerShell リモート管理コマンドレットだけに対するアクセスを許可されているユーザーは、最初の対象コンピューターに接続されているその他のコンピューターに接続できます。 制限付き実行空間を定義することで、許可されている Windows PowerShell 実行空間から他のコンピューターへのユーザー アクセスを阻止し、Windows PowerShell Web Access 環境のセキュリティを強化できます。 セッション構成は、Windows PowerShell Web Access からアクセス可能な状態にすると管理者が判断したすべてのコンピューターに (グループ ポリシーを使って) 配布できます。 セッション構成の詳細については、「[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)」を参照してください。 次に、シナリオの例をいくつか示します。
+あらゆる Windows PowerShell セッションはいずれかのセッション構成を使います。セッションにセッション構成が指定されていない場合、Windows PowerShell は、組み込み済みの Windows PowerShell セッション構成である Microsoft.PowerShell という既定値を使います。 既定のセッション構成には、コンピューターで使うことができるすべてのコマンドレットが含まれています。 管理者は、制限付き実行空間 (エンド ユーザーが実行できるコマンドレットとタスクの範囲が制限されている) が指定されたセッション構成を定義することで、すべてのコンピューターに対するアクセスを制限できます。 1 つのコンピューターに対する全言語でのアクセス、または Windows PowerShell リモート管理コマンドレットだけに対するアクセスを許可されているユーザーは、最初の対象コンピューターに接続されているその他のコンピューターに接続できます。 制限付き実行空間を定義することで、許可されている Windows PowerShell 実行空間から他のコンピューターへのユーザー アクセスを阻止し、Windows PowerShell Web Access 環境のセキュリティを強化できます。 セッション構成は、Windows PowerShell Web Access からアクセス可能な状態にすると管理者が判断したすべてのコンピューターに (グループ ポリシーを使って) 配布できます。 セッション構成の詳細については、「[about_Session_Configurations](/powershell/module/Microsoft.PowerShell.Core/About/about_session_configurations)」を参照してください。
+次に、シナリオの例をいくつか示します。
 
 - 管理者が、制限付き実行空間を指定して、**PswaEndpoint** というエンドポイントを作成します。 その後管理者が `*,*,PswaEndpoint` という規則を作成し、このエンドポイントをその他のコンピューターに配布します。 この規則によって、エンドポイント **PswaEndpoint** を持つすべてのコンピューターにすべてのユーザーがアクセスできるようになります。
   規則セットにこの承認規則だけ定義されている場合、このエンドポイントを持たないコンピューターにはアクセスできません。
@@ -181,8 +182,8 @@ Add-PswaAuthorizationRule -userName PswaServer\chrisLocal `
 2. サインイン ページの **[オプションの接続設定]** で指定された別の資格情報を使用することによる、ターゲット コンピューターでの認証
 
    > [!NOTE]
-   > ゲートウェイ コンピューターとターゲット コンピューターが別々のワークグループまたはドメインにある場合は、2 つのワークグループ コンピューター間、2 つのドメイン間、またはワークグループとドメインの間で、信頼関係を確立する必要があります。 Windows PowerShell Web Access の承認規則コマンドレットを使用してこの関係を構成することはできません。 承認規則では、コンピューター間の信頼関係は定義されません。承認規則では、特定のターゲット コンピューターとセッション構成に接続できるようにユーザーを承認することしかできません。 異なるドメイン間で信頼関係を構成する方法の詳細については、[ドメインおよびフォレストの信頼の作成に関するページ](https://technet.microsoft.com/library/cc794775.aspx)を参照してください。
-   > 信頼されたホストの一覧にワークグループ コンピューターを追加する方法の詳細については、「[サーバー マネージャーによるリモート管理](https://technet.microsoft.com/library/dd759202.aspx)」を参照してください。
+   > ゲートウェイ コンピューターとターゲット コンピューターが別々のワークグループまたはドメインにある場合は、2 つのワークグループ コンピューター間、2 つのドメイン間、またはワークグループとドメインの間で、信頼関係を確立する必要があります。 Windows PowerShell Web Access の承認規則コマンドレットを使用してこの関係を構成することはできません。 承認規則では、コンピューター間の信頼関係は定義されません。承認規則では、特定のターゲット コンピューターとセッション構成に接続できるようにユーザーを承認することしかできません。 異なるドメイン間で信頼関係を構成する方法の詳細については、[ドメインおよびフォレストの信頼の作成に関するページ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794775(v=ws.10))を参照してください。
+   > 信頼されたホストの一覧にワークグループ コンピューターを追加する方法の詳細については、「[サーバー マネージャーによるリモート管理](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd759202(v=ws.11))」を参照してください。
 
 ### <a name="using-a-single-set-of-authorization-rules-for-multiple-sites"></a>1 セットの承認規則の複数サイトでの使用
 
@@ -198,7 +199,7 @@ Windows PowerShell Web Access では、ユーザーが同時に接続できる�
 
 ### <a name="setting-default-parameters-on-the-sign-in-page"></a>サインイン ページに既定のパラメーターを設定する
 
-Windows PowerShell Web Access ゲートウェイを Windows Server 2012 R2 で実行する場合、Windows PowerShell Web Access サインイン ページに表示される設定に既定の値を構成できます。 前の段落で説明されている **web.config** ファイルに値を構成できます。 サインイン ページの設定の既定値は、web.config ファイルの **appSettings** セクションにあります。**appSettings** セクションの例を次に示します。 これらの設定の多くに有効な値は、Windows PowerShell の [New-PSSession](https://technet.microsoft.com/library/hh849717.aspx) コマンドレットの対応するパラメーターのものと同じです。
+Windows PowerShell Web Access ゲートウェイを Windows Server 2012 R2 で実行する場合、Windows PowerShell Web Access サインイン ページに表示される設定に既定の値を構成できます。 前の段落で説明されている **web.config** ファイルに値を構成できます。 サインイン ページの設定の既定値は、web.config ファイルの **appSettings** セクションにあります。**appSettings** セクションの例を次に示します。 これらの設定の多くに有効な値は、Windows PowerShell の [New-PSSession](/powershell/module/Microsoft.PowerShell.Core/New-PSSession) コマンドレットの対応するパラメーターのものと同じです。
 
 たとえば、次のコード ブロックに示された `defaultApplicationName` キーは、ターゲット コンピューター上の **$PSSessionApplicationName** ユーザー設定変数の値になります。
 
@@ -225,8 +226,8 @@ Windows Server 2012 R2 で実行する Windows PowerShell Web Access では、�
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell Web Access のインストールと使用](https://technet.microsoft.com/library/hh831611(v=ws.11).aspx)
+[Windows PowerShell Web Access のインストールと使用](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831611(v=ws.11))
 
-[about_Session_Configurations](https://technet.microsoft.com/library/dd819508.aspx)
+[about_Session_Configurations](/powershell/module/microsoft.powershell.core/about/about_Session_Configurations)
 
 [Windows PowerShell Web Access のコマンドレット](/powershell/module/powershellwebaccess/?view=winserver2012r2-ps)
