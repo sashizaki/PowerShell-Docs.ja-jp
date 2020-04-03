@@ -2,12 +2,12 @@
 ms.date: 01/08/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC プル サービス
-ms.openlocfilehash: cf2420e6889f63ac3b2859e5ee36fa888b728afc
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 821f183c91e805154323f9f6a42f7f5006499182
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402439"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500720"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration プル サービス
 
@@ -70,7 +70,7 @@ Windows Server で提供されるプル サービスは、OData インターフ�
 | ------- | -------------------- | -------------------- | ---------------------------------------------- |
 | MDB     | ESENT (既定)、MDB | ESENT (既定)、MDB | ESENT (既定)、SQL Server、MDB               |
 
-[Windows Server Insider プレビュー](https://www.microsoft.com/software-download/windowsinsiderpreviewserver)のリリース 17090 以降では、SQL Server は、プル サービス (Windows Feature *DSC-Service*) でサポートされるオプションです。 これは、[Azure Automation DSC](/azure/automation/automation-dsc-getting-started) に移行されていない大規模な DSC 環境をスケーリングする新しいオプションです。
+Windows Server のリリース 17090 以降では、SQL Server は、プル サービス (Windows Feature *DSC-Service*) でサポートされるオプションです。 これは、[Azure Automation DSC](/azure/automation/automation-dsc-getting-started) に移行されていない大規模な DSC 環境をスケーリングする新しいオプションです。
 
 > [!NOTE]
 > SQL Server は WMF 5.1 以前のバージョンには追加されず、17090 以降の Windows Server バージョンでのみ使用できます。
@@ -82,7 +82,7 @@ Windows Server で提供されるプル サービスは、OData インターフ�
 
 Web プル サーバーをセットアップする最も簡単な方法は、**xPSDesiredStateConfiguration** モジュールに含まれる **xDscWebService** リソースを使用することです。 次の手順では、Web サービスを設定する `Configuration` 内でリソースを使用する方法について説明します。
 
-1. [Install-Module](/reference/6/PowerShellGet/Install-Module.md) コマンドレットを呼び出して、**xPSDesiredStateConfiguration** モジュールをインストールします。
+1. [Install-Module](/powershell/module/PowerShellGet/Install-Module) コマンドレットを呼び出して、**xPSDesiredStateConfiguration** モジュールをインストールします。
 
    > [!NOTE]
    > `Install-Module` は、**PowerShellGet** モジュールに含まれています。これは PowerShell 5.0 以降に含まれています。
@@ -234,7 +234,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 
 ### <a name="configuration-mof-format"></a>構成 MOF の形式
 
-ターゲット ノード上の LCM が構成を検証できるように、構成 MOF ファイルはチェックサム ファイルと組み合わせて使用する必要があります。 チェックサムを作成するには、[New-DscChecksum](/reference/6/PSDesiredStateConfiguration/New-DSCCheckSum.md) コマンドレットを呼び出します。 このコマンドレットは、構成 MOF が存在するフォルダーが指定された **Path** パラメーターを受け取ります。 このコマンドレットは、`ConfigurationMOFName.mof.checksum` という名前でチェックサム ファイルを作成します。ここで、`ConfigurationMOFName` は構成 MOF ファイルの名前です。 指定のフォルダーに複数の構成 MOF ファイルがある場合は、そのフォルダー内の構成ごとにチェックサムが作成されます。 MOF ファイルと、それに関連するチェックサム ファイルは、**ConfigurationPath** フォルダーに配置します。
+ターゲット ノード上の LCM が構成を検証できるように、構成 MOF ファイルはチェックサム ファイルと組み合わせて使用する必要があります。 チェックサムを作成するには、[New-DscChecksum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) コマンドレットを呼び出します。 このコマンドレットは、構成 MOF が存在するフォルダーが指定された **Path** パラメーターを受け取ります。 このコマンドレットは、`ConfigurationMOFName.mof.checksum` という名前でチェックサム ファイルを作成します。ここで、`ConfigurationMOFName` は構成 MOF ファイルの名前です。 指定のフォルダーに複数の構成 MOF ファイルがある場合は、そのフォルダー内の構成ごとにチェックサムが作成されます。 MOF ファイルと、それに関連するチェックサム ファイルは、**ConfigurationPath** フォルダーに配置します。
 
 > [!NOTE]
 > 何らかの方法で構成 MOF ファイルを変更した場合は、チェックサム ファイルも作成し直す必要があります。

@@ -2,18 +2,18 @@
 title: PowerShell Core のサポート ライフサイクル
 description: PowerShell Core のサポートを管理するポリシー
 ms.date: 03/09/2020
-ms.openlocfilehash: c1e91aa193dd4a6353098e16ae18301c0753ea85
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.openlocfilehash: c319371778eb4615559ae12e0cd153a535ed22bf
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082406"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500989"
 ---
 # <a name="powershell-support-lifecycle"></a>PowerShell のサポート ライフサイクル
 
 PowerShell は、Windows PowerShell とは別に出荷され、インストールされ、構成される別個のツール セットであり、コンポーネント セットです。 PowerShell は、Windows ライセンス契約には含まれていません。
 
-PowerShell は、[Premier][]、[Microsoft Enterprise Agreements][enterprise-agreement]、[マイクロソフト ソフトウェア アシュアランス][assurance]など、従来の Microsoft サポート契約でサポートされています。
+PowerShell は、[有料サポート][]、[Microsoft Enterprise Agreements][enterprise-agreement]、[マイクロソフト ソフトウェア アシュアランス][assurance]など、従来の Microsoft サポート契約でサポートされています。
 サポート リクエストで問題を報告して PowerShell の[サポート][]を受け、それに対して支払うこともできます。
 
 ## <a name="community-support"></a>コミュニティ サポート
@@ -23,7 +23,7 @@ GitHub でも[コミュニティ サポート][]を用意しています。問�
 
 ## <a name="lifecycle-of-powershell-7"></a>PowerShell 7 のライフサイクル
 
-PowerShell 7 のリリースでは、PowerShell は [Microsoft モダン ライフサイクル ポリシー][modern]で引き続きサポートされていますが、サポート日は [.NET Core のサポート ライフサイクル][Long-Term]にリンクされています。 このサービス方法では、お客様は長期サポート (LTS) リリースまたは最新リリースを選択できます。 PowerShell 7.0 は LTS リリースです。 サポートは、.NET Core 3.1 のサポートで終了します。 次の LTS リリースは、次の .NET コア LTS リリースの後になります。 最新のサポート終了日については、[「PowerShell リリースのサポート終了」の表](#powershell-releases-end-of-life)を参照してください。 LTS リリースの更新プログラムには、既存のワークロードへの影響を回避または最小限に抑えるように設計された重要なセキュリティとサービスの更新プログラムおよび修正プログラムのみが含まれます。
+PowerShell 7 のリリースでは、PowerShell は [Microsoft モダン ライフサイクル ポリシー][modern]で引き続きサポートされていますが、サポート日は [.NET Core のサポート ライフサイクル][Long-Term]にリンクされています。 このサービス方法では、お客様は長期サポート (LTS) リリースまたは最新リリースを選択できます。 PowerShell 7.0 は LTS リリースです。 サポートは、.NET Core 3.1 のサポートで終了します。 次の LTS リリースは、次の .NET Core LTS リリースの後になります。 最新のサポート終了日については、[「PowerShell リリースのサポート終了」の表](#powershell-releases-end-of-life)を参照してください。 LTS リリースの更新プログラムには、既存のワークロードへの影響を回避または最小限に抑えるように設計された重要なセキュリティとサービスの更新プログラムおよび修正プログラムのみが含まれます。
 
 最新リリースは、LTS リリース間で発生するリリースです。 最新リリースには、重要な修正プログラム、イノベーション、新機能が含まれています。 最新リリースは、次の最新リリースまたは LTS リリース後 3 か月間サポートされます。
 
@@ -155,7 +155,7 @@ PowerShell のメジャー リリースのタイムラインを、次の表に�
 | PowerShell 1.0       |   2006 年 11 月   | Windows XP SP2、Windows Server 2003 SP1、Windows Vista にインストールできます。 Windows Server 2008 のオプションのコンポーネントです。                          |
 
 <!-- hyperlink references -->
-[Premier]: https://www.microsoft.com/microsoftservices/support.aspx
+[有料サポート]: https://support.microsoft.com/hub/4343728/support-for-business
 [enterprise-agreement]: https://www.microsoft.com/licensing/licensing-programs/enterprise.aspx
 [assurance]: https://www.microsoft.com/licensing/licensing-programs/software-assurance-default.aspx
 [コミュニティ サポート]: /powershell/scripting/community/community-support

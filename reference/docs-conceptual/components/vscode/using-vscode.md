@@ -2,12 +2,12 @@
 title: PowerShell 開発のための Visual Studio Code の使用
 description: PowerShell 開発のための Visual Studio Code の使用
 ms.date: 11/07/2019
-ms.openlocfilehash: 86739970b58460bef9686a75bf0604d0605d4888
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.openlocfilehash: 8644aa7c648d649651ca679238e0b79ff35ac579
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082435"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500904"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell 開発のための Visual Studio Code の使用
 
@@ -22,9 +22,9 @@ PowerShell スクリプトの記述に使用するエディターとしては、
 
 開始する前に、システムに PowerShell があることを確認します。 Windows、macOS、Linux 上の最近のワークロードに対しては、次のリンクを参照してください。
 
-- [Linux に PowerShell Core をインストールする][install-pscore-linux]
-- [macOS に PowerShell Core をインストールする][install-pscore-macos]
-- [Windows に PowerShell Core をインストールする][install-pscore-windows]
+- [Linux への PowerShell のインストール][install-pscore-linux]
+- [macOS への PowerShell のインストール][install-pscore-macos]
+- [Windows への PowerShell のインストール][install-pscore-windows]
 
 従来の Windows PowerShell ワークロードについては、「[Windows PowerShell のインストール][install-winps]」を参照してください。
 
@@ -268,7 +268,16 @@ Visual Studio Code バージョン 1.9 以降では、PowerShell スクリプト
 
 デバッグ構成が確立されたら、デバッグ セッション中に使用する構成を選択できます。 **[デバッグ]** ビューのツール バーでデバッグ構成ドロップダウンから構成を選択します。
 
-Visual Studio Code 用の PowerShell の拡張機能を使用開始するのに便利なブログを、次にいくつか示します。
+## <a name="useful-resources"></a>有用なリソース
+
+Visual Studio Code 用の PowerShell 拡張機能の使用を開始するのに役立つビデオとブログ記事を、次にいくつか示します。
+
+### <a name="videos"></a>ビデオ
+
+- [既定の PowerShell エディターとして Visual Studio Code を使用する](https://youtu.be/bGn45vIeAMM)
+- [Visual Studio Code: PowerShell スクリプトのデバッグの詳細](https://youtu.be/cSbIXmlkr8o)
+
+### <a name="blog-posts"></a>ブログ記事
 
 - [PowerShell の拡張機能][ps-extension]
 - [Visual Studio Code での PowerShell スクリプトの記述およびデバッグ][debug]
@@ -279,6 +288,16 @@ Visual Studio Code 用の PowerShell の拡張機能を使用開始するのに�
 - [PowerShell 開発のための Visual Studio Code の編集機能 – パート 2][editing-part2]
 - [Visual Studio Code での PowerShell スクリプトのデバッグ – パート 1][debugging-part1]
 - [Visual Studio Code での PowerShell スクリプトのデバッグ – パート 2][debugging-part2]
+
+## <a name="powershell-extension-for-visual-studio-code"></a>Visual Studio Code 用 PowerShell 拡張機能
+
+PowerShell の拡張機能のソース コードは、[GitHub](https://github.com/PowerShell/vscode-powershell) にあります。
+
+共同作成に興味をお持ちの場合は、ぜひ pull request をご活用ください。 [GitHub 上の 開発者向けドキュメント](https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md)を参照して、作業を開始してください。
+
+## <a name="troubleshooting-the-powershell-extension-for-visual-studio-code"></a>Visual Studio Code 用 PowerShell 拡張機能のトラブルシューティング
+
+PowerShell スクリプト開発のための Visual Studio Code の使用に関して問題が発生した場合は、[GitHub 上のトラブルシューティング ガイド](https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md)を参照してください
 
 [ise]: ../ise/Introducing-the-Windows-PowerShell-ISE.md
 [install-pscore-linux]:  ../../install/Installing-PowerShell-Core-on-Linux.md
@@ -294,13 +313,3 @@ Visual Studio Code 用の PowerShell の拡張機能を使用開始するのに�
 [editing-part2]: https://devblogs.microsoft.com/scripting/visual-studio-code-editing-features-for-powershell-development-part-2/
 [debugging-part1]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-1/
 [debugging-part2]: https://devblogs.microsoft.com/scripting/debugging-powershell-script-in-visual-studio-code-part-2/
-
-## <a name="powershell-extension-for-visual-studio-code"></a>Visual Studio Code 用 PowerShell 拡張機能
-
-PowerShell の拡張機能のソース コードは、[GitHub](https://github.com/PowerShell/vscode-powershell) にあります。
-
-共同作成に興味をお持ちの場合は、ぜひ pull request をご活用ください。 [GitHub 上の 開発者向けドキュメント](https://github.com/PowerShell/vscode-powershell/blob/master/docs/development.md)を参照して、作業を開始してください。
-
-## <a name="troubleshooting-the-powershell-extension-for-visual-studio-code"></a>Visual Studio Code 用 PowerShell 拡張機能のトラブルシューティング
-
-PowerShell スクリプト開発のための Visual Studio Code の使用に関して問題が発生した場合は、[GitHub 上のトラブルシューティング ガイド](https://github.com/PowerShell/vscode-powershell/blob/master/docs/troubleshooting.md)を参照してください

@@ -1,13 +1,13 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: Windows PowerShell 5.0 の新機能
-ms.openlocfilehash: 08775c1767f1d9d18dafab39d188db152073e69d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8c1858a63adad467e389a683708bccba2a6768c7
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417575"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500465"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 の新機能
 
@@ -17,7 +17,8 @@ Windows PowerShell 5.0 には下位互換性があります。 Windows PowerShel
 
 ## <a name="installing-windows-powershell"></a>Windows PowerShell のインストール
 
-Windows PowerShell 5.0 は、Windows Server 2016 Technical Preview および Windows 10 に既定でインストールされています。
+Windows PowerShell 5.0 は、Windows Server 2016 Technical Preview および Windows に既定でインストールされています
+10.
 
 Windows PowerShell 5.0 を Windows Server 2012 R2、Windows 8.1 Enterprise または Windows 8.1 Pro にインストールするには、[Windows Management Framework 5.0](https://aka.ms/wmf5download) をダウンロードしてインストールします。 Windows Management Framework 5.0 をインストールする前に、ダウンロードの詳細を読み、システム要件がすべて満たされていることを確認してください。
 
@@ -32,18 +33,18 @@ Windows PowerShell 5.0 を Windows Server 2012 R2、Windows 8.1 Enterprise ま�
 
 Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DSC) に対する多くの更新と機能強化が、[Windows RT 8.1、Windows 8.1、Windows Server 2012 R2 の 2014 年 11 月の更新プログラムのロールアップ](https://support.microsoft.com/kb/3000850/) (KB 3000850) で利用可能になりました。 Windows PowerShell で `Get-Hotfix -Id KB3000850` を実行することで、KB 3000850 がシステムにインストールされているかどうかを判断できます。
 
-- [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) モジュールの既存のコマンドレットの更新
-  - [Get-DscResource](https://technet.microsoft.com/library/dn521625.aspx) が高速になりました (特に ISE で)。
-  - [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) に新しいパラメーター、-UseExisting が追加されました。これは最後に適用した構成を再適用します。
-  - [Start-DscConfiguration](https://technet.microsoft.com/library/dn521623.aspx) -Force が修正されました。
-  - [Get-DscLocalConfigurationManager](https://technet.microsoft.com/library/dn407378.aspx) がエンジン状態に関するより有用な情報を表示します。
-  - [Test-DscConfiguration](https://technet.microsoft.com/library/dn407382.aspx) が True または False と共にコンピューター名を返すようになりました。
-  - [New-DscChecksum](https://technet.microsoft.com/library/dn521622.aspx) が UNC パスをサポートするようになりました。
+- [PSDesiredStateConfiguration](/powershell/module/PSDesiredStateConfiguration) モジュールの既存のコマンドレットの更新
+  - [Get-DscResource](/powershell/module/PSDesiredStateConfiguration) が高速になりました (特に ISE で)。
+  - [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration) に新しいパラメーター、-UseExisting が追加されました。これは最後に適用した構成を再適用します。
+  - [Start-DscConfiguration](/powershell/module/PSDesiredStateConfiguration) -Force が修正されました。
+  - [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration) がエンジン状態に関するより有用な情報を表示します。
+  - [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration) が True または False と共にコンピューター名を返すようになりました。
+  - [New-DscChecksum](/powershell/module/PSDesiredStateConfiguration) が UNC パスをサポートするようになりました。
 
-- [PSDesiredStateConfiguration](https://technet.microsoft.com/library/dn391651(v=wps.640).aspx) モジュールの新しいコマンドレット
-  - [Update-DscConfiguration](https://technet.microsoft.com/library/mt143541(v=wps.630).aspx):オンデマンド プル サーバー チェックを実行します。
-  - [Stop-DscConfiguration](https://technet.microsoft.com/library/mt143542(v=wps.630).aspx):既に実行されている構成を停止します。
-  - [Remove-DscConfigurationDocument](https://technet.microsoft.com/library/mt143544(v=wps.630).aspx):さまざまな段階 (保留中、以前、または現在) の構成に関するドキュメントを削除できます。
+- [PSDesiredStateConfiguration](/powershell/module/PSDesiredStateConfiguration) モジュールの新しいコマンドレット
+  - [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration):オンデマンド プル サーバー チェックを実行します。
+  - [Stop-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Stop-DscConfiguration):既に実行されている構成を停止します。
+  - [Remove-DscConfigurationDocument](/powershell/module/PSDesiredStateConfiguration/Remove-DscConfigurationDocument):さまざまな段階 (保留中、以前、または現在) の構成に関するドキュメントを削除できます。
 
 - 言語の機能強化
   - DependsOn が複合リソースをサポートするようになりました。
@@ -86,8 +87,8 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
   - パッケージ リソース
     - 正しくないパッケージはインストールされなくなりました (ローカルまたは Web ソースのどちらからも)。
     - HTTPS をサポートするようになりました。
-  - [パッケージ リソース](https://technet.microsoft.com/library/dn282132.aspx)で HTTPS がサポートされるようになりました。
-  - [アーカイブ リソース](https://technet.microsoft.com/library/dn249917.aspx)が資格情報をサポートするようになりました。
+  - [パッケージ リソース](/powershell/scripting/dsc/reference/resources/windows/packageresource)で HTTPS がサポートされるようになりました。
+  - [アーカイブ リソース](/powershell/scripting/dsc/reference/resources/windows/archiveresource)が資格情報をサポートするようになりました。
 
 ## <a name="new-features-in-windows-powershell-50"></a>Windows PowerShell 5.0 の新機能
 
@@ -99,7 +100,8 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 ### <a name="new-features-in-windows-powershell"></a>Windows PowerShell の新機能
 
-- Windows PowerShell 5.0 以降では、クラスを使用して、他のオブジェクト指向のプログラミング言語に類似した正式な構文とセマンティクスを使用して開発することができます。 **Class**、**Enum** などのキーワードが、新しい機能をサポートするために Windows PowerShell 言語に追加されました。 クラスに関する作業の詳細については、「about_Classes」を参照してください。
+- Windows PowerShell 5.0 以降では、クラスを使用して、他のオブジェクト指向のプログラミング言語に類似した正式な構文とセマンティクスを使用して開発することができます。 **Class**、**Enum** などのキーワードが、新しい機能をサポートするために Windows PowerShell 言語に追加されました。
+  クラスに関する作業の詳細については、「about_Classes」を参照してください。
 
 - Windows PowerShell 5.0 では、スクリプトとその呼び出し元 (またはホスト環境) の間で構造化データを転送するために使用できる新しい構造化された情報ストリームが導入されています。 Write-Host を使用して、情報ストリームに出力を生成できるようになりました。 また、情報ストリームは PowerShell.Streams、ジョブ、スケジュールされたジョブ、およびワークフローでも機能します。 次の機能は情報ストリームをサポートしています。
   - Windows PowerShell がコマンドの情報ストリーム データを処理する方法を指定できる新しい Write-Information コマンドレット。 Write-Host は、Write-Information のラッパーです。 Write-Information はサポートされているワークフロー アクティビティでもあります。
@@ -111,27 +113,30 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 - [Microsoft Research](https://research.microsoft.com/) とのコラボレーションにより、新しいコマンドレット、ConvertFrom-String が追加されました。 ConvertFrom-String では、テキスト文字列のコンテンツから構造化されたオブジェクトを抽出して、解析することができます。 詳細については、ConvertFrom-String を参照してください。
 - 新しい Convert-String コマンドレットは、-Example パラメーターで指定する例を基にテキストを自動的に書式設定します。
 - 新しいモジュール、Microsoft.PowerShell.Archive には、コマンドレットが含まれています。そのコマンドレットでは、ファイルとフォルダーをアーカイブ (ZIP とも呼ばれる) ファイルに圧縮して、既存の ZIP ファイルからファイルを抽出し、ZIP ファイル内で圧縮されたファイルの新しいバージョンで ZIP ファイルを更新できます。
-- 新しいモジュール、PackageManagement では、インターネット上のソフトウェア パッケージを検出してインストールすることができます。 PackageManagement (旧 OneGet) モジュールは、Windows のパッケージ管理を単一の Windows PowerShell インターフェイスと統一するための、マネージャー、または既存のパッケージ マネージャー (パッケージ プロバイダーとも呼ばれる) のマルチプレクサーです。
+- 新しいモジュール、PackageManagement では、インターネット上のソフトウェア パッケージを検出してインストールすることができます。
+  PackageManagement (旧 OneGet) モジュールは、Windows のパッケージ管理を単一の Windows PowerShell インターフェイスと統一するための、マネージャー、または既存のパッケージ マネージャー (パッケージ プロバイダーとも呼ばれる) のマルチプレクサーです。
 - 新しいモジュール、PowerShellGet では、[PowerShell ギャラリー](https://www.powershellgallery.com/)上、または Register-PSRepository コマンドレットを実行することでセットアップできる内部モジュール リポジトリ上で、モジュールと DSC リソースを検索、インストール、発行、および更新することができます。
-- 新しい言語キーワード、**Hidden** が追加され、メンバー (プロパティまたはメソッド) が Get-Member の結果に既定で表示されないように指定できるようになりました (-Force パラメーターを追加する場合を除く)。 非表示としてマークされているプロパティやメソッドは、IntelliSense の結果にも表示されません。ただし、メンバーが表示される必要のあるコンテキスト内で作業している場合を除きます。たとえば、クラス メソッドを使用している場合、自動変数 $This は非表示のメンバーを表示する必要があります。
+- 新しい言語キーワード、**Hidden** が追加され、メンバー (プロパティまたはメソッド) が Get-Member の結果に既定で表示されないように指定できるようになりました (-Force パラメーターを追加する場合を除く)。
+  非表示としてマークされているプロパティやメソッドは、IntelliSense の結果にも表示されません。ただし、メンバーが表示される必要のあるコンテキスト内で作業している場合を除きます。たとえば、クラス メソッドを使用している場合、自動変数 $This は非表示のメンバーを表示する必要があります。
 - New-Item、Remove-Item、および Get-ChildItem が[シンボリック リンク](https://en.wikipedia.org/wiki/Symbolic_link)の作成と管理をサポートするために強化されました。 New-Item の **-ItemType** パラメーターでは、新しい値、**SymbolicLink** を使用できます。 シンボリック リンクは、New-Item コマンドレットを実行することで、1 つの行で作成できるようになりました。
 - また、Get-ChildItem には新しい -Depth パラメーターも追加されました。これを -Recurse パラメーターと共に使用すると再帰を制限します。 たとえば、Get-ChildItem -Recurse -Depth 2 は、現在のフォルダー、現在のフォルダー内のすべての子フォルダー、および子フォルダー内のすべてのフォルダーから結果を返します。
-- Copy-Item で、1 つの Windows PowerShell セッションから別のセッションにファイルまたはフォルダーをコピーできるようになりました。つまり、リモート コンピューター ([Nano Server](https://blogs.technet.com/b/windowsserver/archive/2015/04/08/microsoft-announces-nano-server-for-modern-apps-and-cloud.aspx) を実行しているため他のインターフェイスを持たないコンピューターを含む) に接続されているセッションにファイルをコピーできるようになりました。 ファイルをコピーするには、新しい -FromSession と -ToSession パラメーターの値として PSSession ID を指定し、-Path と -Destination を追加して元のパスと宛先をそれぞれ指定します。 例: Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder
+- Copy-Item で、1 つの Windows PowerShell セッションから別のセッションにファイルまたはフォルダーをコピーできるようになりました。つまり、リモート コンピューター (Nano Server を実行しているため他のインターフェイスを持たないコンピューターを含む) に接続されているセッションにファイルをコピーできるようになりました。 ファイルをコピーするには、新しい -FromSession と -ToSession パラメーターの値として PSSession ID を指定し、-Path と -Destination を追加して元のパスと宛先をそれぞれ指定します。 例: Copy-Item -Path c:\\myFile.txt -ToSession $s -Destination d:\\destinationFolder
 - Windows PowerShell トランスクリプションが強化され、コンソール ホスト (**powershell.exe**) に加えて、すべてのホスト アプリケーション (Windows PowerShell ISE など) に適用されるようになりました。 トランスクリプション オプション (システム全体のトランスクリプトの有効化を含む) は、 **[PowerShell トランスクリプションを有効にする]** グループ ポリシー設定 ([管理用テンプレート]/[Windows コンポーネント]/[Windows PowerShell]) を有効にすることで設定できます。
 - 新しい詳細スクリプト トレース機能では、システムで使用される Windows PowerShell スクリプトの詳細な追跡や分析を有効にすることができます。 詳細なスクリプト トレースを有効にすると、Windows PowerShell はすべてのスクリプト ブロックを Windows イベント トレーシング (ETW) イベント ログ、**Microsoft-Windows-PowerShell/Operational** に記録します。
-- Windows PowerShell 5.0 以降では、新しい Cryptographic Message Syntax コマンドレットが、[RFC5652](https://tools.ietf.org/html/rfc5652) で説明されているように暗号によってメッセージを保護するための IETF 標準書式を使用して、コンテンツの暗号化と暗号化解除をサポートします。 Get-CmsMessage、Protect-CmsMessage、および Unprotect-CmsMessage の各コマンドレットが [Microsoft.PowerShell.Security](https://technet.microsoft.com/library/hh849807.aspx) モジュールに追加されました。
-- [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) モジュールの新しいコマンドレット、Get-Runspace、Debug-Runspace、Get-RunspaceDebug、Enable-RunspaceDebug、および Disable-RunspaceDebug を使用すると、実行空間でのデバッグ オプションを設定して、実行空間でのデバッグを開始、停止できます。 任意の実行空間 (つまり、Windows PowerShell コンソールまたは Windows PowerShell ISE セッションの既定の実行空間ではない実行空間) をデバッグする場合、Windows PowerShell では、スクリプトにブレークポイントを設定し、追加されたブレークポイントを使用して、実行空間スクリプトをデバッグするデバッガーをアタッチするまでスクリプトが実行されないようにすることができます。 実行空間用の Windows PowerShell スクリプト デバッガーに、任意の実行空間に対する入れ子になったデバッグのサポートが追加されました。
-- 新しい Format-Hex コマンドレットが [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。 Format-Hex を使うと、テキスト データやバイナリ データを 16 進数形式で表示できます。
-- Get-Clipboard コマンドレットと Set-Clipboard コマンドレットが、[Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。これらのコマンドレットにより、Windows PowerShell セッションとの間のコンテンツの転送が容易になります。 クリップボードのコマンドレットは、画像、オーディオ ファイル、ファイルのリスト、およびテキストをサポートします。
-- 新しいコマンドレット、Clear-RecycleBin が、[Microsoft.PowerShell.Management](https://technet.microsoft.com/library/hh849827(v=wps.640).aspx) モジュールに追加されました。このコマンドレットは、外部ドライブを含む固定ドライブのゴミ箱を空にします。 既定では、コマンドレットの ConfirmImpact プロパティが ConfirmImpact.High に設定されているため、Clear-RecycleBin コマンドを確認するよう求めるメッセージが表示されます。
+- Windows PowerShell 5.0 以降では、新しい Cryptographic Message Syntax コマンドレットが、[RFC5652](https://tools.ietf.org/html/rfc5652) で説明されているように暗号によってメッセージを保護するための IETF 標準書式を使用して、コンテンツの暗号化と暗号化解除をサポートします。 Get-CmsMessage、Protect-CmsMessage、および Unprotect-CmsMessage の各コマンドレットが [Microsoft.PowerShell.Security](/powershell/module/Microsoft.PowerShell.Security) モジュールに追加されました。
+- [Microsoft.PowerShell.Utility](/powershell/module/Microsoft.PowerShell.Utility) モジュールの新しいコマンドレット、Get-Runspace、Debug-Runspace、Get-RunspaceDebug、Enable-RunspaceDebug、および Disable-RunspaceDebug を使用すると、実行空間でのデバッグ オプションを設定して、実行空間でのデバッグを開始、停止できます。 任意の実行空間 (つまり、Windows PowerShell コンソールまたは Windows PowerShell ISE セッションの既定の実行空間ではない実行空間) をデバッグする場合、Windows PowerShell では、スクリプトにブレークポイントを設定し、追加されたブレークポイントを使用して、実行空間スクリプトをデバッグするデバッガーをアタッチするまでスクリプトが実行されないようにすることができます。 実行空間用の Windows PowerShell スクリプト デバッガーに、任意の実行空間に対する入れ子になったデバッグのサポートが追加されました。
+- 新しい Format-Hex コマンドレットが [Microsoft.PowerShell.Utility](/powershell/module/Microsoft.PowerShell.Utility) モジュールに追加されました。
+  Format-Hex を使うと、テキスト データやバイナリ データを 16 進数形式で表示できます。
+- Get-Clipboard コマンドレットと Set-Clipboard コマンドレットが、[Microsoft.PowerShell.Utility](/powershell/module/Microsoft.PowerShell.Utility) モジュールに追加されました。これらのコマンドレットにより、Windows PowerShell セッションとの間のコンテンツの転送が容易になります。 クリップボードのコマンドレットは、画像、オーディオ ファイル、ファイルのリスト、およびテキストをサポートします。
+- 新しいコマンドレット、Clear-RecycleBin が、[Microsoft.PowerShell.Management](/powershell/module/Microsoft.PowerShell.Management) モジュールに追加されました。このコマンドレットは、外部ドライブを含む固定ドライブのゴミ箱を空にします。 既定では、コマンドレットの ConfirmImpact プロパティが ConfirmImpact.High に設定されているため、Clear-RecycleBin コマンドを確認するよう求めるメッセージが表示されます。
 - 新しいコマンドレット、New-TemporaryFile では、スクリプトの一部として一時ファイルを作成できます。 既定では、新しい一時ファイルは ```C:\Users\<user name>\AppData\Local\Temp``` に作成されます。
 - Out-File、Add-Content、および Set-Content の各コマンドレットに新しい -NoNewline パラメーターが追加されました。これを指定すると、出力後の改行が省略されます。
 - New-Guid コマンドレットは、.NET Framework Guid クラスを利用して GUID を生成します。これはスクリプトまたは DSC リソースを作成している場合に便利です。
-- ファイルのバージョン情報は、特にファイルにパッチが適用された場合に、解釈を間違えやすいデータであるため、新しいスクリプト プロパティ、FileVersionRaw と ProductVersionRaw が FileInfo オブジェクトに対して使用できます。 たとえば、次のコマンドを実行して、powershell.exe のこれらのプロパティ値を表示できます。ここで、$pid には Windows PowerShell の実行中のセッションのプロセス ID が含まれます。 ```Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force```
+- ファイルのバージョン情報は、特にファイルにパッチが適用された場合に、解釈を間違えやすいデータであるため、新しいスクリプト プロパティ、FileVersionRaw と ProductVersionRaw が FileInfo オブジェクトに対して使用できます。 たとえば、次のコマンドを実行して、powershell.exe のこれらのプロパティ値を表示できます。ここで、$pid には Windows PowerShell の実行中のセッションのプロセス ID が含まれます: `Get-Process -Id $pid -FileVersionInfo | Format-List *version* -Force`
 - 新しいコマンドレット、Enter-PSHostProcess と Exit-PSHostProcess を使用すると、Windows PowerShell コンソールで実行している現在のプロセスとは別のプロセスで Windows PowerShell スクリプトをデバッグできます。 Enter-PSHostProcess を実行して、特定のプロセス ID を入力するか、特定のプロセス ID にアタッチしてから、Get-Runspace を実行して、プロセス内のアクティブな実行空間を返します。 プロセス内でスクリプトのデバッグが完了したら、Exit-PSHostProcess を実行して、プロセスからデタッチします。
-- 新しい Wait-Debugger コマンドレットが [Microsoft.PowerShell.Utility](https://technet.microsoft.com/library/hh849958.aspx) モジュールに追加されました。 Wait-Debugger を実行すると、スクリプトの次のステートメントを実行する前に、デバッガー内のスクリプトを停止することができます。
+- 新しい Wait-Debugger コマンドレットが [Microsoft.PowerShell.Utility](/powershell/module/Microsoft.PowerShell.Utility) モジュールに追加されました。 Wait-Debugger を実行すると、スクリプトの次のステートメントを実行する前に、デバッガー内のスクリプトを停止することができます。
 - Windows PowerShell ワークフロー デバッガーで、コマンドまたはタブ補完をサポートするようになったため、入れ子になったワークフロー関数をデバッグすることができます。 **Ctrl+Break** キーを押すと、実行中のスクリプト、ローカルとリモートの両方のセッション、およびワークフロー スクリプトで、デバッガーに入れるようになりました。
-- Debug-Job コマンドレットが [Microsoft.PowerShell.Core](https://technet.microsoft.com/library/hh849695.aspx) モジュールに追加され、Windows PowerShell ワークフローの実行中のジョブ スクリプト、バックグラウンド、およびリモート セッションで実行するジョブをデバッグできます。
+- Debug-Job コマンドレットが [Microsoft.PowerShell.Core](/powershell/module/Microsoft.PowerShell.Core) モジュールに追加され、Windows PowerShell ワークフローの実行中のジョブ スクリプト、バックグラウンド、およびリモート セッションで実行するジョブをデバッグできます。
 - 新しい状態、AtBreakpoint が Windows PowerShell ジョブに追加されました。 AtBreakpoint 状態は、ジョブがブレークポイントの設定を含むスクリプトを実行し、スクリプトがブレークポイントにヒットした場合に適用されます。 ジョブがデバッグ ブレークポイントで停止したら、Debug-Job コマンドレットを実行して、ジョブをデバッグする必要があります。
 - Windows PowerShell 5.0 では、$PSModulePath の同一フォルダーにある 1 つの Windows PowerShell モジュールの複数のバージョンに対するサポートを実装しています。 RequiredVersion プロパティが ModuleSpecification クラスに追加され、必要なバージョンのモジュールを取得できるようになりました。このプロパティは、ModuleVersion プロパティとは相互に排他的です。 RequiredVersion が、Get-Module、Import-Module、および Remove-Module コマンドレットの FullyQualifiedName パラメーターの値の一部としてサポートされるようになりました。
 - Test-ModuleManifest コマンドレットを実行して、モジュール バージョンを検証できるようになりました。
@@ -143,7 +148,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 - FullyQualifiedName パラメーターが、Import-Module コマンドレットと Remove-Module コマンドレットに追加され、1 つのモジュールの複数のバージョンの保存をサポートします。
 - Save-Help、Update-Help、Import-PSSession、Export-PSSession、および Get-Command に、ModuleSpecification 型の新しいパラメーター、FullyQualifiedModule が追加されました。 このパラメーターを追加して、完全修飾名でモジュールを指定します。
 - **$PSVersionTable.PSVersion** の値が 5.0 に更新されました。
-- WMF 5.0 (PowerShell 5.0) には **Pester** モジュールが含まれます。  Pester は、PowerShell の単体テスト フレームワークです。 スクリプトのテストを作成できるいくつかの使いやすいキーワードが提供されます。
+- WMF 5.0 (PowerShell 5.0) には **Pester** モジュールが含まれます。 Pester は、PowerShell の単体テスト フレームワークです。 スクリプトのテストを作成できるいくつかの使いやすいキーワードが提供されます。
 
 ### <a name="new-features-in-windows-powershell-desired-state-configuration"></a>Windows PowerShell Desired State Configuration の新機能
 
@@ -170,8 +175,9 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 - Windows PowerShell には、生成された構成関数に \[CmdletBinding()] を追加することで定義される、DSC 構成のカスタム ヘルプに対するサポートが含まれるようになりました。
 - 新しい **DscLocalConfigurationManager** 属性では、メタ構成として構成ブロックを指定します。その構成ブロックを使って DSC ローカル構成マネージャーが構成されます。 この属性は、DSC ローカル構成マネージャーを構成するアイテムのみが含まれるように、構成を制限します。 処理中に、この構成によって \*.meta.mof ファイルが生成されます。その後、Set-DscLocalConfigurationManager コマンドレットを実行して、そのファイルは該当するターゲット ノードに送られます。
 - Windows PowerShell 5.0 で、部分構成ができるようになりました。 ノードに対して構成ドキュメントをフラグメントとして提供できます。 構成ドキュメントの複数のフラグメントをノードが受け取るには、想定されるフラグメントを指定するように、そのノードのローカル構成マネージャーをまず設定する必要があります
-- コンピューター間の同期は、Windows PowerShell 5.0 の DSC での新機能です。 組み込みの WaitFor\* リソース (**WaitForAll**、**WaitForAny**、および **WaitForSome**) を使用すると、コンピューター間の依存関係を外部のオーケストレーションなしで構成の実行中に指定できます。 これらのリソースは、WS-Man プロトコルで CIM 接続を使用して、ノード間の同期を提供します。 構成は、別のコンピューターの特定のリソースの状態が変更されるまで待機できます。
-- 新しい委任セキュリティ機能である Just Enough Administration (JEA) は、DSC と Windows PowerShell の制限付き実行空間を活用して、意図的であるかどうかに関わらず、従業員によるデータの損失や侵害から企業をセキュリティで保護します。 xJEA DSC リソースをダウンロードできる場所など、JEA に関する詳細については、「[Just Enough Administration の使用手順](https://blogs.technet.com/b/privatecloud/archive/2014/05/14/just-enough-administration-step-by-step.aspx)」を参照してください。
+- コンピューター間の同期は、Windows PowerShell 5.0 の DSC での新機能です。 組み込みの WaitFor\* リソース (**WaitForAll**、**WaitForAny**、および **WaitForSome**) を使用すると、コンピューター間の依存関係を外部のオーケストレーションなしで構成の実行中に指定できます。 これらのリソースは、WS-Man プロトコルで CIM 接続を使用して、ノード間の同期を提供します。
+  構成は、別のコンピューターの特定のリソースの状態が変更されるまで待機できます。
+- 新しい委任セキュリティ機能である Just Enough Administration (JEA) は、DSC と Windows PowerShell の制限付き実行空間を活用して、意図的であるかどうかに関わらず、従業員によるデータの損失や侵害から企業をセキュリティで保護します。 xJEA DSC リソースをダウンロードできる場所など、JEA に関する詳細については、「[Just Enough Administration](/powershell/scripting/learn/remoting/jea/overview)」をご覧ください。
 - PSDesiredStateConfiguration モジュールには、次の新しいコマンドレットが追加されました。
   - 新しい Get-DscConfigurationStatus コマンドレットは、ターゲット ノードから構成状態に関する高レベルの情報を取得します。 最後の状態、またはすべての構成の状態を取得できます。
   - 新しい Compare-DscConfiguration コマンドレットは、指定した構成を 1 つ以上のターゲット ノードの実際の状態と比較します。
@@ -188,7 +194,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 ### <a name="new-features-in-windows-powershell-web-services-management-odata-iis-extension"></a>Windows PowerShell Web サービス (Management OData IIS 拡張機能) の新機能
 
-- Windows PowerShell 5.0 以降では、新しい [Microsoft.PowerShell.OdataUtils](https://technet.microsoft.com/library/dn818507(v=wps.640).aspx) モジュールにある Export-ODataEndpointProxy コマンドレットを実行すると、指定した OData エンドポイントによって公開される機能に基づいて、Windows PowerShell コマンドレットのセットを生成できます。
+- Windows PowerShell 5.0 以降では、新しい [Microsoft.PowerShell.OdataUtils](/powershell/module/microsoft.powershell.odatautils) モジュールにある Export-ODataEndpointProxy コマンドレットを実行すると、指定した OData エンドポイントによって公開される機能に基づいて、Windows PowerShell コマンドレットのセットを生成できます。
 
 ### <a name="notable-bug-fixes-in-windows-powershell-50"></a>Windows PowerShell 5.0 での主なバグ修正
 
@@ -210,27 +216,29 @@ Windows PowerShell 4.0 は、既定で Windows 8.1 と Windows Server 2012 R2 �
 
 Windows PowerShell 4.0 には、次に示す新機能があります。
 
-### <a name="a-namenew-features-in-windows-powershell-1-new-features-in-windows-powershell"></a><a name="new-features-in-windows-powershell-1" />Windows PowerShell の新機能
+### <a name="new-features-in-windows-powershell"></a><a name="new-features-in-windows-powershell-1" />Windows PowerShell の新機能
 
-- **Windows PowerShell Desired State Configuration** (DSC) は、ソフトウェア サービスとそれらのサービスが実行される環境に対して構成データのデプロイと管理を実行できる Windows PowerShell 4.0 の新しい管理システムです。 DSC の詳細については、「[Windows PowerShell Desired State Configuration の概要](https://technet.microsoft.com/library/c134aa32-b085-4656-9a89-955d8ff768d0)」を参照してください。
+- **Windows PowerShell Desired State Configuration** (DSC) は、ソフトウェア サービスとそれらのサービスが実行される環境に対して構成データのデプロイと管理を実行できる Windows PowerShell 4.0 の新しい管理システムです。 DSC の詳細については、「[Windows PowerShell Desired State Configuration の概要](/powershell/scripting/dsc/getting-started/wingettingstarted)」を参照してください。
 - **Save-Help** では、リモート コンピューターにインストールされているモジュールのヘルプを保存できるようになりました。 Save-Help を使用すると、インターネットに接続されたクライアント (ヘルプが必要なモジュールのすべてがインストールされているとは限らない) でヘルプのモジュールをダウンロードし、リモート共有フォルダーまたはインターネットへのアクセスがないリモート コンピューターにヘルプをコピーして保存できます。
 - Windows PowerShell デバッガーが拡張され、Windows PowerShell ワークフローのデバッグと、リモート コンピューターで実行されているスクリプトのデバッグが可能になりました。 Windows PowerShell ワークフローは、Windows PowerShell コマンド ラインまたは Windows PowerShell ISE からスクリプト レベルでデバッグできるようになりました。 Windows PowerShell スクリプト (スクリプト ワークフローを含む) は、リモート セッション経由でデバッグできるようになりました。 リモート デバッグ セッションは、切断されても Windows PowerShell リモート セッション上に保存され、後で再接続されます。
 - **Register-ScheduledJob** および **Set-ScheduledJob** で **RunNow** パラメーターを使用できるようになり、**Trigger** パラメーターを使用して直後のジョブ開始日時を設定する必要がなくなりました。
 - **Invoke-RestMethod** と **Invoke-WebRequest** で、Headers パラメーターを使用してすべてのヘッダーを設定できるようになりました。 このパラメーターは以前から存在しますが、使用すると例外やエラーが発生する Web コマンドレットのいくつかのパラメーターの 1 つでした。
 - **Get-Module** に、新しいパラメーター **FullyQualifiedName** が追加されました (**ModuleSpecification\[]** 型)。 Get-Module の **FullyQualifiedName** パラメーターを使用すると、モジュール名やバージョンを使用してモジュールを指定でき、オプションとして GUID でも指定できます。
 - Windows Server 2012 R2 での既定の実行ポリシー設定は **RemoteSigned** です。 Windows 8.1 では、既定の設定に変更はありません。
-- Windows PowerShell 4.0 以降で、動的なメソッド名を使用したメソッド呼び出しがサポートされるようになりました。 変数にメソッド名を格納し、その変数を呼び出すことによって動的にメソッドを呼び出せます。
+- Windows PowerShell 4.0 以降で、動的なメソッド名を使用したメソッド呼び出しがサポートされるようになりました。
+  変数にメソッド名を格納し、その変数を呼び出すことによって動的にメソッドを呼び出せます。
 - **PSElapsedTimeoutSec** ワークフロー共通パラメーターで指定したタイムアウト期間が経過したとき、非同期のワークフロー ジョブは削除されなくなりました。
 - 新しいパラメーター **RepeatIndefinitely** が **New-JobTrigger** および **Set-JobTrigger** コマンドレットに追加されました。 これを使用すると、スケジュールされたジョブの実行を無期限に繰り返す場合に、**RepetitionDuration** パラメーターの **TimeSpan.MaxValue** 値に指定する必要がなくなります。
 - **Passthru** パラメーターが **Enable-JobTrigger** および **Disable-JobTrigger** コマンドレットに追加されました。 Passthru パラメーターを使用すると、実行するコマンドによって作成または変更されるすべてのオブジェクトが表示されます。
 - **Add-Computer** および **Remove-Computer** コマンドレットにワークグループを指定するパラメーターの名前が整合性のあるものになりました。 どちらのコマンドレットでも、パラメーター **WorkgroupName** を使用します。
 - 新しい共通パラメーター **PipelineVariable** が追加されました。 PipelineVariable を使用すると、パイプされたコマンド (またはパイプされたコマンドの一部) の結果を変数として保存し、パイプラインの残りの部分に引き渡すことができます。
-- メソッド構文を使用したコレクションのフィルター処理がサポートされるようになりました。 Where() または Where-Object の構文に似た簡潔なメソッド呼び出しの形式を使用して、オブジェクトのコレクションをフィルター処理できます。 次に例を示します。(Get-Process).where({$_.Name -match 'powershell'})
+- メソッド構文を使用したコレクションのフィルター処理がサポートされるようになりました。 Where() または Where-Object の構文に似た簡潔なメソッド呼び出しの形式を使用して、オブジェクトのコレクションをフィルター処理できます。 以下に例を示します。(Get-Process).where({$_.Name -match 'powershell'})
 - **Get-Process** コマンドレットに新しいスイッチ パラメーター **IncludeUserName** が追加されました。
 - 新しいコマンドレット **Get-FileHash** が追加されました。これは、指定したファイルのファイル ハッシュをいくつかの形式の中から 1 つ返します。
 - Windows PowerShell 4.0 では、モジュールが自らのマニフェストの中で **DefaultCommandPrefix** キーを使用している場合、またはユーザーが **Prefix** パラメーターを指定してモジュールをインポートした場合、モジュールの **ExportedCommands** プロパティにモジュール内のコマンドがプレフィックス付きで表示されます。 モジュールで修飾された構文 (ModuleName\\CommandName) を使用してコマンドを実行するときは、コマンド名にプレフィックスを含める必要があります。
 - **$PSVersionTable.PSVersion** の値が 4.0 に更新されました。
-- **Where()** 演算子の動作が変更されました。 `Collection.Where('property -match name')` は形式 `"Property -CompareOperator Value"` の文字列式を受け入れなくなりました。 ただし、**Where()** 演算子は、スクリプト ブロック形式の文字列式を受け入れます。これは、引き続きサポートされます。
+- **Where()** 演算子の動作が変更されました。 `Collection.Where('property -match name')` は形式 `"Property -CompareOperator Value"` の文字列式を受け入れなくなりました。
+  ただし、**Where()** 演算子は、スクリプト ブロック形式の文字列式を受け入れます。これは、引き続きサポートされます。
 
 ### <a name="new-features-in-windows-powershell-integrated-scripting-environment-ise"></a>Windows PowerShell Integrated Scripting Environment (ISE) の新機能
 
@@ -249,11 +257,12 @@ Windows PowerShell 4.0 には、次に示す新機能があります。
 
 ### <a name="new-features-in-windows-powershell-web-services"></a>Windows PowerShell Web サービスの新機能
 
-- コマンドレットの実行中に Windows PowerShell Web サービス (PSWS、Management OData IIS 拡張機能ともいう) でエラーが発生した場合に、より詳細なエラー メッセージが呼び出し元に返されます。 さらに、エラーコードは「[Windows Azure REST API のエラー コードのガイドライン](https://msdn.microsoft.com/library/windowsazure/dd179357.aspx)」に従います。
+- コマンドレットの実行中に Windows PowerShell Web サービス (PSWS、Management OData IIS 拡張機能ともいう) でエラーが発生した場合に、より詳細なエラー メッセージが呼び出し元に返されます。 さらに、エラーコードは「[Windows Azure REST API のエラー コードのガイドライン](/rest/api/storageservices/Common-REST-API-Error-Codes)」に従います。
 - エンドポイントで API のバージョンを定義したり、特定の API バージョンの使用を強制したりできるようになりました。 クライアントとサーバーの間でバージョンの不一致が発生すると、クライアントとサーバーの両方にエラーが表示されます。
 - ディスパッチ スキーマの管理が簡略化され、スキーマで欠落しているフィールドの値が自動的に生成されるようになりました。 ディスパッチ スキーマが存在しない場合でも、生成された値は出発点として役立ちます。
 - PSWS での型の処理が改良され、既定のコンストラクターとは異なるコンストラクターを使用する型がサポートされ、Windows PowerShell での **PSTypeConverter** と同様の動作になりました。 これにより、PSWS で複合型を使用できます。
-- PSWS で、クエリの実行中に、関連付けられているインスタンスを展開できるようになりました。 バイナリ コンテンツ (イメージ、オーディオ、ビデオなど) のサイズが大きくなると、転送のコストが重要になるため、エンコードせずにバイナリ データを転送するほうが適切です。 エンコードせずに転送する場合、PSWS では名前付きリソース ストリームを使用します。 名前付きリソース ストリームは、**Edm.Stream** 型のエンティティのプロパティです。 それぞれの名前付きリソース ストリームには、GET 操作用と UPDATE 操作用に別個の URI があります。
+- PSWS で、クエリの実行中に、関連付けられているインスタンスを展開できるようになりました。 バイナリ コンテンツ (イメージ、オーディオ、ビデオなど) のサイズが大きくなると、転送のコストが重要になるため、エンコードせずにバイナリ データを転送するほうが適切です。 エンコードせずに転送する場合、PSWS では名前付きリソース ストリームを使用します。
+  名前付きリソース ストリームは、**Edm.Stream** 型のエンティティのプロパティです。 それぞれの名前付きリソース ストリームには、GET 操作用と UPDATE 操作用に別個の URI があります。
 - OData アクションで、リソースに対して CRUD (作成、読み取り、更新、および削除) 以外のメソッドを呼び出すメカニズムが提供されるようになりました。 アクションを呼び出すには、そのアクションに対して定義された URI に HTTP POST 要求を送信します。 アクションに対するパラメーターは、POST 要求の本体で定義します。
 - Windows Azure のガイドラインと一貫性を保つため、すべての URL を単純化する必要があります。 **Key As Segment** に組み込まれた変更により、1 つのキーでセグメントを表現できます。 なお、複数のキー値を使用する参照は、これまでと同様、かっこで囲んだコンマ区切り値で表記する必要があることに注意してください。
 - PSWS の今回より前のリリースでは、作成、更新、または削除操作を実行する唯一の方法は、最上位レベルのリソースに対して Post、Put、または Delete を呼び出すことでした。 今回のリリースの PSWS では、Contained Resource 操作という新しい機能で同じ結果を得ることができます。これを使用すると、同じリソースにより間接的に到達し、それらのリソースが含まれているかのようにアクセスできます。
@@ -319,7 +328,8 @@ Windows PowerShell 3.0 には、次に示す新機能があります。
 
 ### <a name="windows-powershell-workflow"></a>Windows PowerShell ワークフロー
 
-Windows PowerShell ワークフローによって、Windows Workflow Foundation の機能を Windows PowerShell で利用できます。 ワークフローは、XAML または Windows PowerShell 言語で記述し、コマンドレットを実行するのとまったく同様に実行できます。 [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) コマンドレットはワークフロー コマンドを取得し、[Get-help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) コマンドレットは、ワークフローのヘルプを取得します。
+Windows PowerShell ワークフローによって、Windows Workflow Foundation の機能を Windows PowerShell で利用できます。
+ワークフローは、XAML または Windows PowerShell 言語で記述し、コマンドレットを実行するのとまったく同様に実行できます。 `Get-Command` コマンドレットを使用するとワークフロー コマンドを取得でき、`Get-Help` コマンドレットを使用するとワークフローのヘルプを取得できます。
 
 ワークフローは、複数のコンピューターを管理するアクティビティのシーケンスです。これは、実行時間が長く、反復可能な、頻繁に実行できるシーケンスで、並列実行、割り込み、中断、および再起動が可能です。 ワークフローは、ネットワークの停止、Windows の再起動、電源障害などの意図的または偶発的な割り込みから再開できます。
 
@@ -329,10 +339,12 @@ Windows PowerShell ワークフローの利点を次に示します。
 
 - 実行時間の長いタスクのシーケンスを自動化します。
 - **実行時間の長いタスクをリモート監視します**。 アクティビティの状態と進行状況をいつでも表示できます。
-- **複数コンピューターの管理。** 数百の管理対象ノードでタスクをワークフローとして同時に実行できます。 Windows PowerShell ワークフローには、**PSComputerName** などの共通管理パラメーターで構成される組み込みライブラリが含まれているため、複数のコンピューターを管理するシナリオに対応できます。
+- **複数コンピューターの管理。** 数百の管理対象ノードでタスクをワークフローとして同時に実行できます。
+  Windows PowerShell ワークフローには、**PSComputerName** などの共通管理パラメーターで構成される組み込みライブラリが含まれているため、複数のコンピューターを管理するシナリオに対応できます。
 - **複雑なプロセスを 1 つのタスクで実行します。** エンド ツー エンドのシナリオ全体を実装する関連したスクリプトを 1 つのワークフローにまとめることができます。
 - **永続化。** ワークフローは、作成者によって定義された特定の時点で保存 (またはチェックポイントを作成) できるため、ワークフローを最初から再開する代わりに、最後の永続化されたタスク (またはチェックポイント) からワークフローを再開できます。
-- **信頼性。** エラー回復が自動化されます。 ワークフローは、計画的な、および計画外の再起動の後も残ります。 ワークフローの実行を中断した後、最後の永続化ポイントからワークフローを再開できます。 ワークフローの作成者は、1 つまたは複数の管理対象ノードで障害が発生した時に再実行する特定のアクティビティを指定できます。
+- **信頼性。** エラー回復が自動化されます。 ワークフローは、計画的な、および計画外の再起動の後も残ります。 ワークフローの実行を中断した後、最後の永続化ポイントからワークフローを再開できます。
+  ワークフローの作成者は、1 つまたは複数の管理対象ノードで障害が発生した時に再実行する特定のアクティビティを指定できます。
 - **切断、再接続、切断されたセッションでの実行が可能。** ユーザーがワークフロー サーバーに接続したり切断したりしても、ワークフローは継続的に実行されます。 クライアント コンピューターからログオフするか、クライアント コンピューターを再始動しても、ワークフローに割り込むことなく別のコンピューターからワークフローの実行を監視できます。
 - **スケジュール設定。** ワークフロー タスクは、Windows PowerShell のコマンドレットまたはスクリプトと同じようにスケジュール設定できます。
 - **ワークフローと接続のスロットル調整。** ワークフローの実行とノードへの接続をスロットルで調整できるため、スケーラビリティと高可用性のシナリオに対応できます。
@@ -341,11 +353,11 @@ Windows PowerShell ワークフローの利点を次に示します。
 
 Windows PowerShell Web Access は、Windows PowerShell のコマンドとスクリプトをユーザーが Web ベースのコンソールで実行できる Windows Server 2012 の機能です。 Web ベースのコンソールを使用するデバイスでは、Windows PowerShell、リモート管理ソフトウェアまたはブラウザー プラグインをインストールする必要はありません。 必要なのは、適切に構成された Windows PowerShell Web Access ゲートウェイと、JavaScript をサポートし、Cookie を許可するクライアント デバイスのブラウザーのみです。
 
-詳細については、「[ Windows PowerShell Web Access の展開](https://go.microsoft.com/fwlink/p/?LinkID=221050)」を参照してください。
+詳細については、「[ Windows PowerShell Web Access の展開](/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access)」を参照してください。
 
 ### <a name="new-windows-powershell-ise-features"></a>Windows PowerShell ISE の新機能
 
-Windows PowerShell 3.0 では、Windows PowerShell Integrated Scripting Environment (ISE) に多くの新機能が追加されました。たとえば、IntelliSense、Show-Command ウィンドウ、統合されたコンソール ウィンドウ、スニペット、かっこの一致に基づくセクションの展開/折りたたみ、自動保存、最近使った項目の一覧、機能豊富なコピー、ブロックのコピー、および Windows PowerShell スクリプト ワークフローの記述を完全サポートする機能などです。 詳細については、「[about_Windows_PowerShell_ISE [v3]](https://technet.microsoft.com/library/dfa54d47-60c6-4fff-8197-c747e8d411bb)」を参照してください。
+Windows PowerShell 3.0 では、Windows PowerShell Integrated Scripting Environment (ISE) に多くの新機能が追加されました。たとえば、IntelliSense、Show-Command ウィンドウ、統合されたコンソール ウィンドウ、スニペット、かっこの一致に基づくセクションの展開/折りたたみ、自動保存、最近使った項目の一覧、機能豊富なコピー、ブロックのコピー、および Windows PowerShell スクリプト ワークフローの記述を完全サポートする機能などです。 詳細については、「[about_Windows_PowerShell_ISE](/powershell/module/microsoft.powershell.core/about/about_windows_powershell_ise)」をご覧ください。
 
 ### <a name="support-for-microsoft-net-framework-4"></a>Microsoft .NET Framework 4 のサポート
 
@@ -353,7 +365,8 @@ Windows PowerShell は、共通言語ランタイム 4.0 を背景にして作�
 
 ### <a name="support-for-windows-preinstallation-environment"></a>Windows プレインストール環境のサポート
 
-Windows PowerShell 3.0 は、Windows 8 用の Windows プレインストール環境 (Windows PE) 4.0 に含まれるオプションのコンポーネントです。 Windows PE は、オペレーティング システムのないコンピューターを起動して Windows のインストール用に準備する、最小限のオペレーティング システムです。 Windows PE を使用すると、ハード ドライブのパーティションの作成やフォーマット、ディスク イメージのコンピューターへのコピー、ネットワーク共有からの Windows セットアップの開始などを実行できます。 Windows PowerShell 3.0 は、展開、診断、および復旧のシナリオを管理するために Windows PE で使用できます。
+Windows PowerShell 3.0 は、Windows 8 用の Windows プレインストール環境 (Windows PE) 4.0 に含まれるオプションのコンポーネントです。 Windows PE は、オペレーティング システムのないコンピューターを起動して Windows のインストール用に準備する、最小限のオペレーティング システムです。 Windows PE を使用すると、ハード ドライブのパーティションの作成やフォーマット、ディスク イメージのコンピューターへのコピー、ネットワーク共有からの Windows セットアップの開始などを実行できます。
+Windows PowerShell 3.0 は、展開、診断、および復旧のシナリオを管理するために Windows PE で使用できます。
 
 ### <a name="disconnected-sessions"></a>切断されたセッション
 
@@ -361,9 +374,9 @@ Windows PowerShell 3.0 以降では、New-PSSession コマンドレットを使�
 
 セッションで実行されているコマンドを中断せずに、セッションから切断できるようになりました。 セッションを終了したり、コンピューターをシャットダウンしたりできます。 後で、同じまたは異なるコンピューター上の異なるセッションから、元のセッションに再接続できます。
 
-[Get-PSSession](https://technet.microsoft.com/library/b2b10531-d0df-4746-b877-e75c09955cb6) コマンドレットの **ComputerName** パラメーターで、コンピューターに接続されているすべてのユーザー セッション (異なるコンピューター上の異なるセッションで開始されたセッションを含む) を取得できるようになりました。 そのセッションへの接続、コマンドの結果の取得、新しいコマンドの開始、セッションの切断を実行できます。
+`Get-PSSession` コマンドレットの **ComputerName** パラメーターで、コンピューターに接続されているすべてのユーザー セッション (異なるコンピューター上の異なるセッションで開始されたセッションを含む) を取得できるようになりました。 そのセッションへの接続、コマンドの結果の取得、新しいコマンドの開始、セッションの切断を実行できます。
 
-"切断されたセッション" 機能をサポートする新しいコマンドレットが追加されました。たとえば、[Disconnect-PSSession](https://technet.microsoft.com/library/f8f95111-612f-4cba-9098-77904b0473d8)、[Connect-PSSession](https://technet.microsoft.com/library/b803dd29-f208-4079-80d4-db04d778f060)、Receive-PSSession などです。また、PSSessions を管理するコマンドレットに新しいパラメーターが追加されました。たとえば、[Invoke-Command](https://technet.microsoft.com/library/906b4b41-7da8-4330-9363-e7164e5e6970) コマンドレットの **InDisconnectedSession** パラメーターなどです。
+"切断されたセッション" 機能をサポートする新しいコマンドレットが追加されました。たとえば、`Disconnect-PSSession`、`Connect-PSSession`、`Receive-PSSession` などです。また、PSSessions を管理するコマンドレットに新しいパラメーターが追加されました。たとえば、`Invoke-Command` コマンドレットの **InDisconnectedSession** パラメーターなどです。
 
 "切断されたセッション" 機能がサポートされるのは、接続の両端、つまり、開始側 ("クライアント") と終了側 ("サーバー") にある両方のコンピューターで Windows PowerShell 3.0 が実行されている場合のみです。
 
@@ -377,19 +390,20 @@ Windows PowerShell 3.0 は、クライアントとサーバー間の接続が予
 
 ### <a name="updatable-help-system"></a>更新可能なヘルプ システム
 
-モジュール内のコマンドレットに関する更新されたヘルプ ファイルをダウンロードできるようになりました。 [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドレットは、最新のヘルプ ファイルを識別し、それらのファイルをインターネットからダウンロードし、アンパックし、検証し、モジュール用の言語固有の該当するディレクトリにインストールします。
+モジュール内のコマンドレットに関する更新されたヘルプ ファイルをダウンロードできるようになりました。 `Update-Help` コマンドレットは、最新のヘルプ ファイルを識別し、それらのファイルをインターネットからダウンロードし、アンパックし、検証し、モジュール用の言語固有の該当するディレクトリにインストールします。
 
 更新されたヘルプ ファイルは、`Get-Help` と入力するだけで使用できます。 Windows または Windows PowerShell を再起動する必要はありません。 $pshome ディレクトリのモジュールのヘルプを更新するには、[管理者として実行] オプションを使用して Windows PowerShell を起動します。
 
-インターネットにアクセスできないユーザーやファイアウォールの内側にいるユーザーをサポートするには、新しいコマンドレット [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) を使用して、ファイル共有などのファイル システム ディレクトリにヘルプ ファイルをダウンロードします。 その後、ユーザーは [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドレットを使用して、更新されたヘルプ ファイルをファイル共有から入手します。
+インターネットにアクセスできないユーザーやファイアウォールの内側にいるユーザーをサポートするには、新しいコマンドレット `Save-Help` を使用して、ファイル共有などのファイル システム ディレクトリにヘルプ ファイルをダウンロードします。 その後、ユーザーは `Update-Help` コマンドレットを使用して、更新されたヘルプ ファイルをファイル共有から入手できます。
 
-[Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドレットを使用してヘルプ ファイルを更新する際は、すべてのサポートされる UI カルチャのすべてのモジュール、または特定のモジュールに対して更新を実行できます。 Windows PowerShell プロファイルに [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドを置くこともできます。 既定では、Windows PowerShell は、モジュールに対するヘルプ ファイルを 1 日に 1 回を超えてダウンロードすることはありません。
+`Update-Help` コマンドレットを使用して、サポートされるすべての UI カルチャの、すべてまたは特定のモジュールに対するヘルプ ファイルを更新できます。 Windows PowerShell プロファイルに `Update-Help` コマンドを置くこともできます。
+既定では、Windows PowerShell は、モジュールに対するヘルプ ファイルを 1 日に 1 回を超えてダウンロードすることはありません。
 
-Windows 8 および Windows Server 2012 モジュールにはヘルプ ファイルが含まれていません。 最新のヘルプ ファイルをダウンロードするには、`Update-Help` と入力します。 詳細については、`Get-Help` と入力する (パラメーターなし) か、「[about_Updatable_Help](https://technet.microsoft.com/library/10bba75c-f4ac-4ca1-bbf3-8f34dd521ffe)」を参照してください。
+Windows 8 および Windows Server 2012 モジュールにはヘルプ ファイルが含まれていません。 最新のヘルプ ファイルをダウンロードするには、`Update-Help` と入力します。 詳細については、`Get-Help` と入力する (パラメーターなし) か、「[about_Updatable_Help](/powershell/module/microsoft.powershell.core/about/about_Updatable_Help)」を参照してください。
 
-コンピューターにコマンドレットのヘルプ ファイルがインストールされていない場合、[Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) コマンドレットは、自動生成されたヘルプを表示するようになりました。 自動生成されたヘルプには、コマンドの構文と、[Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) コマンドレットを使用してヘルプ ファイルをダウンロードする方法が記載されています。
+コンピューターにコマンドレットのヘルプ ファイルがインストールされていない場合、`Get-Help` コマンドレットで自動生成されたヘルプが表示されるようになりました。 自動生成されたヘルプには、コマンドの構文と、`Update-Help` コマンドレットを使用してヘルプ ファイルをダウンロードする方法が記載されています。
 
-モジュールの作成者は、自分のモジュールに対して更新可能なヘルプをサポートできます。 モジュールにヘルプ ファイルを組み込んでおき、更新可能なヘルプを使用してそれらのヘルプ ファイルを更新することができます。あるいは、ヘルプ ファイルを省略し、更新可能なヘルプを使用してヘルプ ファイルをインストールすることもできます。 更新可能なヘルプのサポートに関する詳細は、MSDN にある「[更新可能なヘルプのサポート](https://go.microsoft.com/FWLink/?LinkID=242129)」を参照してください。
+モジュールの作成者は、自分のモジュールに対して更新可能なヘルプをサポートできます。 モジュールにヘルプ ファイルを組み込んでおき、更新可能なヘルプを使用してそれらのヘルプ ファイルを更新することができます。あるいは、ヘルプ ファイルを省略し、更新可能なヘルプを使用してヘルプ ファイルをインストールすることもできます。 更新可能なヘルプのサポートに関する詳細については、「[更新可能なヘルプのサポート](/powershell/scripting/developer/module/supporting-updatable-help)」をご覧ください。
 
 ### <a name="enhanced-online-help"></a>強化されたオンライン ヘルプ
 
@@ -422,15 +436,16 @@ Windows PowerShell 3.0 には、Common Information Model (CIM) のサポート�
 
 ### <a name="session-configuration-files"></a>セッション構成ファイル
 
-Windows PowerShell 3.0 以降では、ファイルを使用してカスタム セッションの構成を設計できます。 新しいセッション構成ファイルでは、そのセッション構成を使用するセッションの環境を決定できます。たとえば、セッションに読み込むモジュール、スクリプト、およびフォーマット ファイル、ユーザーが使用できるコマンドレットおよび言語要素、ユーザーが実行できるモジュールおよびスクリプト、ユーザーが見ることのできる変数を決定します。
+Windows PowerShell 3.0 以降では、ファイルを使用してカスタム セッションの構成を設計できます。
+新しいセッション構成ファイルでは、そのセッション構成を使用するセッションの環境を決定できます。たとえば、セッションに読み込むモジュール、スクリプト、およびフォーマット ファイル、ユーザーが使用できるコマンドレットおよび言語要素、ユーザーが実行できるモジュールおよびスクリプト、ユーザーが見ることのできる変数を決定します。
 
 ユーザーが特定の 1 つのモジュールからコマンドレットを実行できるだけのセッションを設計できます。あるいは、ユーザーが完全な言語を持ち、すべてのモジュールにアクセスでき、高度なタスクを実行するスクリプトにアクセスできるセッションを設計できます。
 
 以前のバージョンの Windows PowerShell では、このレベルの制御は、C# プログラムや複雑なスタートアップ スクリプトを作成できる人のみが使用できました。 現在は、コンピューターの Administrators グループのすべてのメンバーが、構成ファイルを使用してセッションの構成をカスタマイズできます。
 
-セッション構成ファイルを作成するには、[New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) コマンドレットを使用します。 セッション構成ファイルをセッション構成に適用するには、[Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) コマンドレットまたは [Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) コマンドレットを使用します。
+セッション構成ファイルを作成するには、`New-PSSessionConfigurationFile` コマンドレットを使用します。 セッション構成ファイルをセッション構成に適用するには、`Register-PSSessionConfiguration` または `Set-PSSessionConfiguration コマンドレットを使用します。
 
-詳細については、「[about_Session_Configuration_Files](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_session_configuration_files?view=powershell-5.0)」および「[New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866)」を参照してください。
+詳細については、「[about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files)」および `New-PSSessionConfigurationFile` を参照してください。
 
 ### <a name="scheduled-jobs-and-task-scheduler-integration"></a>スケジュールされたジョブ、およびタスク スケジューラとの統合
 
@@ -438,13 +453,14 @@ Windows PowerShell のバックグラウンド ジョブは、Windows PowerShell
 
 Windows PowerShell のスケジュール設定されたジョブは、Windows PowerShell のバックグラウンド ジョブとタスク スケジューラのタスクを統合した便利なハイブリッドです。
 
-Windows PowerShell のバックグラウンド ジョブと同様、スケジュールされたジョブはバックグラウンドで非同期に実行されます。 スケジュールされたジョブが完了したインスタンスは、[Start-Job](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) および [Get-Job](https://technet.microsoft.com/library/1352c534-7193-46ca-9ab1-0c5219a661ad) などのジョブ コマンドレットを使用して管理できます。
+Windows PowerShell のバックグラウンド ジョブと同様、スケジュールされたジョブはバックグラウンドで非同期に実行されます。
+スケジュールされたジョブが完了したインスタンスは、`Start-Job` や `Get-Job` などのジョブ コマンドレットを使用して管理できます。
 
 タスク スケジューラのタスクと同様、スケジュールされたジョブは 1 回または繰り返し実行したり、特定のアクションまたはイベントへの応答として実行したりできます。 スケジュールされたジョブはタスク スケジューラで表示および管理できます。必要に応じて有効または無効にする、実行する、テンプレートとして使用する、ジョブが開始される条件を設定するなどの操作が可能です。
 
 さらに、スケジュールされたジョブには、それらのジョブを管理するためのカスタマイズされた一連のコマンドレットがあります。 それらのコマンドレットでは、スケジュールされたジョブの作成、編集、管理、無効化、再有効化を実行したり、スケジュールされたジョブのトリガーを作成したり、スケジュールされたジョブのオプションを設定したりできます。
 
-スケジュールされたジョブの詳細については、「[about_Scheduled_Jobs](https://technet.microsoft.com/library/3b546629-703c-4939-b44f-52dd567bce92)」を参照してください。
+スケジュールされたジョブの詳細については、「[about_Scheduled_Jobs](/powershell/module/microsoft.powershell.core/about/about_Scheduled_Jobs)」を参照してください。
 
 ### <a name="windows-powershell-language-enhancements"></a>Windows PowerShell 言語の機能強化
 
@@ -454,36 +470,36 @@ Windows PowerShell 3.0 には、言語を単純化し、使いやすくし、一
 
 新しいコマンドレットが Windows PowerShell コアのインストールに追加されました。スケジュールされたジョブ、切断されたセッション、CIM 統合、更新可能なヘルプ システムを管理するコマンドレットです。
 
-|||
-|-|-|
-|Add-JobTrigger|New-JobTrigger|
-|Connect-PSSession|New-PSSessionConfigurationFile|
-|ConvertFrom-Json|New-PSSessionOption|
-|ConvertTo-Json|New-PSWorkflowExecutionOption|
-|Disable-JobTrigger|New-PSWorkflowSession|
-|Disable-ScheduledJob|New-ScheduledJobOption|
-|Disconnect-PSSession|New-WinEvent|
-|Enable-JobTrigger|Receive-PSSession|
-|Enable-ScheduledJob|Register-CimIndicationEvent|
-|Get-CimAssociatedInstance|Register-ScheduledJob|
-|Get-CimClass|Remove-CimInstance|
-|Get-CimInstance|Remove-CimSession|
-|Get-CimSession|Remove-TypeData|
-|Get-ControlPanelItem|Rename-Computer|
-|Get-IseSnippet|Resume-Job|
-|Get-JobTrigger|Save-Help|
-|Get-ScheduledJob|Set-CimInstance|
-|Get-ScheduledJobOption|Set-JobTrigger|
-|Get-TypeData|Set-ScheduledJob|
-|Import-IseSnippet|Set-ScheduledJobOption|
-|Invoke-AsWorkflow|Show-Command|
-|Invoke-CimMethod|Show-ControlPanelItem|
-|Invoke-RestMethod|Suspend-Job|
-|Invoke-WebRequest|Test-PSSessionConfigurationFile|
-|New-CimInstance|Unblock-File|
-|New-CimSession|Unregister-ScheduledJob|
-|New-CimSessionOption|Update-Help|
-|New-IseSnippet||
+|                           |                                 |
+| ------------------------- | ------------------------------- |
+| Add-JobTrigger            | New-JobTrigger                  |
+| Connect-PSSession         | New-PSSessionConfigurationFile  |
+| ConvertFrom-Json          | New-PSSessionOption           |
+| ConvertTo-Json            | New-PSWorkflowExecutionOption   |
+| Disable-JobTrigger        | New-PSWorkflowSession           |
+| Disable-ScheduledJob      | New-ScheduledJobOption          |
+| Disconnect-PSSession      | New-WinEvent                    |
+| Enable-JobTrigger         | Receive-PSSession               |
+| Enable-ScheduledJob       | Register-CimIndicationEvent     |
+| Get-CimAssociatedInstance | Register-ScheduledJob           |
+| Get-CimClass              | Remove-CimInstance              |
+| Get-CimInstance           | Remove-CimSession               |
+| Get-CimSession            | Remove-TypeData                 |
+| Get-ControlPanelItem      | Rename-Computer                 |
+| Get-IseSnippet            | Resume-Job                      |
+| Get-JobTrigger            | Save-Help                       |
+| Get-ScheduledJob          | Set-CimInstance                 |
+| Get-ScheduledJobOption    | Set-JobTrigger                  |
+| Get-TypeData              | Set-ScheduledJob                |
+| Import-IseSnippet         | Set-ScheduledJobOption          |
+| Invoke-AsWorkflow         | Show-Command                    |
+| Invoke-CimMethod          | Show-ControlPanelItem           |
+| Invoke-RestMethod         | Suspend-Job                     |
+| Invoke-WebRequest         | Test-PSSessionConfigurationFile |
+| New-CimInstance           | Unblock-File                    |
+| New-CimSession            | Unregister-ScheduledJob         |
+| New-CimSessionOption      | Update-Help                     |
+| New-IseSnippet            |                                 |
 
 ### <a name="improvements-to-existing-core-cmdlets-and-providers"></a>既存のコア コマンドレットとプロバイダーの機能強化
 
@@ -495,23 +511,25 @@ Windows PowerShell 3.0 では、既存のコマンドレットに新しい機能
 
 Windows PowerShell 3.0 では、リモート コンピューター上でのモジュールの検出、インポート、および暗黙的なリモート処理の機能が拡張されました。 Module コマンドレットは、Windows PowerShell のリモート処理を使用してリモート コンピューター上のモジュールを取得し、モジュールをリモートまたはローカル コンピューターにインポートします。 新しい CIM セッションのサポートでは、Windows 以外のコンピューターを管理するために CIM および WMI を使用して、リモート コンピューター上で暗黙的に実行されるコマンドをローカル コンピューターにインポートできます。
 
-詳細については、「[Get-module](https://technet.microsoft.com/library/2cccd4c4-9a21-4c77-b691-984ee57242e1)」コマンドレットと「[Import-module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade)」コマンドレットのヘルプ トピックを参照してください。
+詳細については、`Get-Module` および `Import-Module` コマンドレットのヘルプ トピックを参照してください。
 
 ### <a name="enhanced-tab-completion"></a>強化された Tab 補完機能
 
-Windows PowerShell コンソールの Tab 補完機能では、コマンドレット、パラメーター、パラメーター値、列挙、.NET Framework 型、COM オブジェクト、隠しディレクトリなどの名前が補完されるようになりました。 Tab 補完機能は、新しいパーサーと抽象構文ツリーに基づいて完全に再作成され、インメモリ解析ツリーや行の途中での Tab 補完を含むより多くのシナリオをサポートします。
+Windows PowerShell コンソールの Tab 補完機能では、コマンドレット、パラメーター、パラメーター値、列挙、.NET Framework 型、COM オブジェクト、隠しディレクトリなどの名前が補完されるようになりました。
+Tab 補完機能は、新しいパーサーと抽象構文ツリーに基づいて完全に再作成され、インメモリ解析ツリーや行の途中での Tab 補完を含むより多くのシナリオをサポートします。
 
 ### <a name="module-auto-loading"></a>モジュールの自動読み込み
 
-[Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) コマンドレットにより、コンピューターにインストールされているすべてのモジュール (現在のセッションでインポートされないモジュールを含む) のすべてのコマンドレットと関数を取得できるようになりました。
+`Get-Command` コマンドレットにより、コンピューターにインストールされているすべてのモジュール (現在のセッションにインポートされないモジュールを含む) のすべてのコマンドレットと関数を取得できるようになりました。
 
-必要なコマンドレットを取得したら、何かのモジュールをインポートすることなく、すぐに使用できます。 Windows PowerShell のモジュールは、モジュール内のいずれかのコマンドレットを使用した時点で自動的にインポートされるようになりました。 モジュールを検索したり、それに含まれるコマンドレットを使用するためにインポートしたりする必要がありません。
+必要なコマンドレットを取得したら、何かのモジュールをインポートすることなく、すぐに使用できます。
+Windows PowerShell のモジュールは、モジュール内のいずれかのコマンドレットを使用した時点で自動的にインポートされるようになりました。 モジュールを検索したり、それに含まれるコマンドレットを使用するためにインポートしたりする必要がありません。
 
-モジュールの自動インポートがトリガーされるのは、コマンド内でコマンドレットを使用した場合、コマンドレットの **Get-Command** をワイルドカードなしで実行した場合、コマンドレットの [Get-Help](https://technet.microsoft.com/library/1f46eeb4-49d7-4bec-bb29-395d9b42f54a) をワイルドカードなしで実行した場合です。
+モジュールの自動インポートがトリガーされるのは、コマンド内でコマンドレットを使用した場合、コマンドレットの `Get-Command` をワイルドカードなしで実行した場合、またはコマンドレットの `Get-Help` をワイルドカードなしで実行した場合です。
 
 モジュールの自動インポートの有効/無効の切り替えや構成を行うには、 **$PSModuleAutoLoadingPreference** ユーザー設定変数を使用します。
 
-詳細については、「[about_Modules ](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_modules?view=powershell-5.0)」、「[about_Preference_Variables [v4]](https://technet.microsoft.com/library/31344314-be29-4286-b039-afa5460cbe8b)」、および「[Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad)」コマンドレットと「[Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade)」コマンドレットのヘルプ トピックを参照してください。
+詳細については、「[about_Modules ](/powershell/module/microsoft.powershell.core/about/about_modules)」、「[about_Preference_Variables](/powershell/module/microsoft.powershell.core/about/about_Preference_Variables)」、および `Get-Command` と `Import-Module` コマンドレットのヘルプ トピックを参照してください。
 
 ### <a name="module-experience-improvements"></a>モジュールのエクスペリエンスの改善
 
@@ -523,15 +541,15 @@ Windows PowerShell 3.0 は、高度な機能のサポートをモジュールに
 4. 利用可能な (まだインポートされていない) モジュール検出の機能強化。たとえば、同じコマンド内で **Path** および **ListAvailable** パラメーターを使用できます。
 5. モジュールのコードを変更せずに名前の競合を回避する、モジュール マニフェストの新しい **DefaultCommandPrefix** キー。
 6. モジュールの要件の改善。必要なモジュールをバージョンと GUID によって完全修飾して指定する機能や、必要なモジュールの自動インポートなどがあります。
-7. [New-ModuleManifest](https://technet.microsoft.com/library/512adced-f42f-4e88-ba7c-834fc9e5d047) コマンドレットの操作が効率化され、実行時の対話が減りました。
+7. `New-ModuleManifest` コマンドレットの操作が効率化され、実行時の対話が減りました。
 8. &#35;Requires の新しい **Module** パラメーター。
-9. [Import-Module](https://technet.microsoft.com/library/af616c24-e122-4098-930e-1e3ea2080ade) コマンドレットが改善され、**MinimumVersion** および **RequiredVersion** の両パラメーターが追加されました。
+9. `Import-Module` コマンドレットが改善され、**MinimumVersion** と **RequiredVersion** の両方のパラメーターが追加されました。
 
 ### <a name="simplified-command-discovery"></a>コマンド検出の単純化
 
-すべてのモジュールをインポートしないでも、現在のセッションで使用可能なコマンドを検出できるようになりました。 Windows PowerShell 3.0 では、インストールされているすべてのモジュールからすべてのコマンドを [Get-Command](https://technet.microsoft.com/library/59c6d302-6e8c-48b7-a6f6-f0172df936ad) コマンドレットが取得します。 また、あるコマンドを使用すると。そのコマンドをエクスポートするモジュールがセッションに自動的にインポートされます。
+すべてのモジュールをインポートしないでも、現在のセッションで使用可能なコマンドを検出できるようになりました。 Windows PowerShell 3.0 では、`Get-Command` コマンドレットを使用すると、インストールされているすべてのモジュールからすべてのコマンドを取得できます。 また、あるコマンドを使用すると。そのコマンドをエクスポートするモジュールがセッションに自動的にインポートされます。
 
-新しい [Show-Command](https://technet.microsoft.com/library/65bba50b-91a8-49d5-80a2-a30fc684ba41) コマンドレットは、特に初級ユーザー向けに設計されています。 ウィンドウでコマンドを検索できます。 すべてのコマンドを表示するかモジュールによってフィルター処理し、ボタンをクリックしてモジュールをインポートし、テキスト ボックスやドロップダウン リストを使用して有効なコマンドを作成した後、そのコマンドをコピーしたり、このウィンドウを開いたままでコマンドを実行したりできます。
+新しい `Show-Command` コマンドレットは、特に初心者向けに設計されています。 ウィンドウでコマンドを検索できます。 すべてのコマンドを表示するかモジュールによってフィルター処理し、ボタンをクリックしてモジュールをインポートし、テキスト ボックスやドロップダウン リストを使用して有効なコマンドを作成した後、そのコマンドをコピーしたり、このウィンドウを開いたままでコマンドを実行したりできます。
 
 ### <a name="improved-logging-diagnostics-and-group-policy-support"></a>ログ記録、診断、およびグループ ポリシーのサポートの改善
 
@@ -545,15 +563,13 @@ Windows PowerShell 3.0 において、コマンドとモジュールのログ記
 
 Windows PowerShell コンソール ホスト プログラムは Windows PowerShell 3.0 で新機能が追加され、既定でシングル スレッド アパートメントがサポートされます。 エクスプローラーの新しい [PowerShell で実行] オプションを使用すると、右クリックするだけで、制限なしのセッションでスクリプトを実行できます。 コンソール ホストの起動ロジックが新しくなり、Windows PowerShell を高速で起動できるようになりました。また、新しいフォントを使用すると、使い慣れたコンソールのウィンドウ エクペリエンスにカスタマイズできます。
 
-詳細については、「[about_Run_With_PowerShell](https://technet.microsoft.com/library/c9d9ca5f-eff9-4409-be9d-e43b5b4087eb)」を参照してください。
-
 ### <a name="new-cmdlet-and-hosting-apis"></a>新しい Cmdlet API および Hosting API
 
 新しい Cmdlet API および Hosting API には、公開 Advanced Syntax Tree (AST) API、パイプライン ページング、入れ子になったパイプライン、実行空間プールの Tab 補完、Windows RT のための各 API、Obsolete コマンドレット属性、FunctionInfo オブジェクトの Verb および Noun プロパティが含まれています。
 
-### <a name="performance-improvements"></a>パフォーマンスの向上
+### <a name="performance-improvements"></a>パフォーマンスの強化
 
-Windows PowerShell での大幅なパフォーマンスの向上は、.NET Framework 4. の動的言語ランタイム (DLR) 上で構築された新しい言語パーサーの成果です。さらに、ランタイム スクリプトのコンパイルの向上、エンジンの信頼性の向上、および [Get-ChildItem](https://technet.microsoft.com/library/75cf79bb-4db6-4a67-8c36-3d20754e2190) のアルゴリズム変更によるパフォーマンスの向上 (特にネットワーク共有の検索時) なども貢献しています。
+Windows PowerShell での大幅なパフォーマンスの向上は、.NET Framework 4. の動的言語ランタイム (DLR) を基にして構築された新しい言語パーサーの成果です。さらに、ランタイム スクリプトのコンパイルの向上、エンジンの信頼性の向上、および `Get-ChildItem` のアルゴリズム変更によるパフォーマンスの向上 (特にネットワーク共有の検索時) なども貢献しています。
 
 ### <a name="runas-and-shared-host-support"></a>RunAs および共有ホストのサポート
 
@@ -565,9 +581,9 @@ Windows PowerShell 3.0 には、RunAs 機能と共有ホスト機能のサポー
 
 ### <a name="special-character-handling-improvements"></a>特殊文字の処理の改善
 
-Windows PowerShell 3.0 では、特殊文字を正しく解釈して処理する機能が改善されました。パスに含まれる特殊文字を処理する **LiteralPath** パラメーターが、新しい [Update-Help](https://technet.microsoft.com/library/93e1d870-ace6-432b-8778-8920291d7545) および [Save-Help](https://technet.microsoft.com/library/aed94f90-b73f-4e25-a25d-7c18d9f161fa) コマンドレットを含む、**Path** パラメーターを持つほとんどすべてのコマンドレットで有効になりました。 また、ファイル名やパスに含まれるアクサングラーブ文字 (\`) と角かっこの処理を改善する特別なロジックがパーサーに組み込まれました。
+Windows PowerShell 3.0 では、特殊文字を正しく解釈して処理する機能が改善されました。パスに含まれる特殊文字を処理する **LiteralPath** パラメーターが、**Path** パラメーターを持つほとんどすべてのコマンドレットで有効になりました。これには新しい `Update-Help` および `Save-Help` コマンドレットも含まれます。 また、ファイル名やパスに含まれるアクサングラーブ文字 (\`) と角かっこの処理を改善する特別なロジックがパーサーに組み込まれました。
 
 ## <a name="see-also"></a>参照
 
-- [about_Windows_PowerShell_5.0](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
+- [about_Windows_PowerShell_5.0](/previous-versions/powershell/module/microsoft.powershell.core/about/about_windows_powershell_5.0?view=powershell-5.0)
 - [Windows PowerShell](https://go.microsoft.com/fwlink/?LinkID=107116)

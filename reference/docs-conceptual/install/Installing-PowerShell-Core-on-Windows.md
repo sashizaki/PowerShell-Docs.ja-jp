@@ -2,12 +2,12 @@
 title: Windows への PowerShell のインストール
 description: Windows への PowerShell のインストールに関する情報
 ms.date: 08/06/2018
-ms.openlocfilehash: bb0971b6c4ac99bde70b226da2becf2f4ed82083
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.openlocfilehash: ea5432725f4baea8c688fb8e67482910e2c3981e
+ms.sourcegitcommit: b6cf10224eb9f32919a505cdffbe5968241c18a1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082791"
+ms.lasthandoff: 03/28/2020
+ms.locfileid: "80374890"
 ---
 # <a name="installing-powershell-on-windows"></a>Windows への PowerShell のインストール
 
@@ -15,16 +15,23 @@ Windows に PowerShell をインストールする方法は複数あります。
 
 ## <a name="prerequisites"></a>前提条件
 
+PowerShell の最新リリースは、Windows 7 SP1、Server 2008 R2、およびそれ以降のバージョンでサポートされています。
+
 WSMan を介して PowerShell のリモート処理を有効にするには、次の前提条件を満たす必要があります。
 
-- Windows 10 以前のバージョンの Windows に [ユニバーサル C ランタイム](https://www.microsoft.com/download/details.aspx?id=50410)をインストールします。 これは、直接ダウンロードすることも、Windows Update 経由で入手することもできます。 修正プログラムが(オプション パッケージも含め)すべて適用されていて、かつサポート対象のシステムには、既にインストールされています。
+- Windows 10 より前のバージョンの Windows に[ユニバーサル C ランタイム](https://www.microsoft.com/download/details.aspx?id=50410)をインストールします。 これは、直接ダウンロードすることも、Windows Update 経由で入手することもできます。 完全にパッチが適用されたシステムには、既にこのパッケージがインストールされています。
 - Windows Management Framework (WMF) 4.0 以降を Windows 7 と Windows Server 2008 R2 にインストールします。 WMF の詳細については、[WMF の概要](/powershell/scripting/wmf/overview)に関する記事を参照してください。
+
+## <a name="download-the-installer-package"></a>インストーラー パッケージをダウンロードする
+
+Windows に PowerShell をインストールするには、GitHub の[リリース][releases] ページからインストール パッケージをダウンロードします。 リリース ページの **[Assets]** セクションまで下にスクロールします。 **[Assets]** セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />MSI パッケージのインストール
 
-PowerShell を Windows クライアントまたは Windows Server にインストールするには (Windows 7 SP1、Server 2008 R2 以降で機能)、MSI パッケージを弊社の GitHub [リリース][releases] ページからダウンロードします。 インストールしたいリリースの **[Assets]** セクションまでスクロールダウンします。 [Assets] セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
+MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi` のようになります。 次に例を示します。
 
-MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi` のようになります。
+- `PowerShell-7.0.0-win-x64.msi`
+- `PowerShell-7.0.0-win-x86.msi`
 
 ダウンロードしたら、インストーラーをダブルクリックし、プロンプトの指示に従います。
 
@@ -36,15 +43,15 @@ MSI ファイルは、`PowerShell-<version>-win-<os-arch>.msi` のようにな�
 > [!NOTE]
 > PowerShell 7 は新しいディレクトリにインストールされ、Windows PowerShell 5.1 と side-by-side 実行されます。 PowerShell Core 6.x がインストールされている場合、PowerShell 7 にインプレース アップグレードされ、PowerShell Core 6.x は削除されます。
 >
-> - PowerShell 7 は `%programfiles%\PowerShell\7` にインストールされます
-> - `%programfiles%\PowerShell\7` フォルダーは `$env:PATH` に追加されます
-> - `%programfiles%\PowerShell\6` フォルダーは削除されます
+> - PowerShell 7 は `$env:ProgramFiles\PowerShell\7` にインストールされます
+> - `$env:ProgramFiles\PowerShell\7` フォルダーは `$env:PATH` に追加されます
+> - `$env:ProgramFiles\PowerShell\6` フォルダーは削除されます
 >
 > PowerShell 6 を PowerShell 7 と side-by-side 実行する必要がある場合は、[ZIP インストール](#zip)方法を使用して PowerShell 6 を再インストールします。
 
 ### <a name="administrative-install-from-the-command-line"></a>コマンド ラインからの管理者インストール
 
-MSI パッケージは、コマンド ラインからインストールできます。 これにより、管理者はユーザーの介入なしでパッケージを展開できます。 PowerShell 用の MSI パッケージには、インストールのオプションを制御するための次のプロパティが含まれます。
+MSI パッケージはコマンド ラインからインストールできるため、管理者はユーザーの介入なしにパッケージを展開できます。 MSI パッケージには、インストールのオプションを制御するための次のプロパティが含まれます。
 
 - **ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL** - このプロパティでは、エクスプローラーのコンテキスト メニューに **[Open PowerShell]\(PowerShell を開く\)** 項目を追加するためのオプションを制御します。
 - **ENABLE_PSREMOTING** - このプロパティでは、インストール中に PowerShell リモート処理を有効にするためのオプションを制御します。
@@ -53,10 +60,10 @@ MSI パッケージは、コマンド ラインからインストールできま
 すべてのインストール オプションを有効にして PowerShell をサイレント インストールする方法を、次の例に示します。
 
 ```powershell
-msiexec.exe /package PowerShell-<version>-win-<os-arch>.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
+msiexec.exe /package PowerShell-7.0.0-win-x64.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=1 ENABLE_PSREMOTING=1 REGISTER_MANIFEST=1
 ```
 
-Msiexec.exe 用のコマンド ライン オプションの完全な一覧については、[コマンド ライン オプション](/windows/desktop/Msi/command-line-options)に関するページをご覧ください。
+`Msiexec.exe` 用のコマンド ライン オプションの完全な一覧については、[コマンド ライン オプション](/windows/desktop/Msi/command-line-options)に関するページをご覧ください。
 
 ## <a name="installing-the-msix-package"></a><a id="msix" />MSIX パッケージのインストール
 
@@ -64,19 +71,22 @@ Windows 10 クライアントに MSIX パッケージを手動でインストー
 
 MSIX ファイルは、`PowerShell-<version>-win-<os-arch>.msix` のようになります。
 
-ダウンロード後、単にインストーラーをダブルクリックするだけではインストールできません。このパッケージでは、仮想化されていないリソースを使用する必要があるためです。  インストールするには、`Add-AppxPackage` コマンドレットを使用する必要があります。
+パッケージをインストールするには、`Add-AppxPackage` コマンドレットを使用する必要があります。
 
 ```powershell
 Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 ```
 
+> [!NOTE]
+> MSIX パッケージはまだリリースされていません。 パッケージがリリースされると、Microsoft Store と GitHub の[リリース][releases] ページから入手できるようになります。
+
 ## <a name="installing-the-zip-package"></a><a id="zip" />ZIP パッケージのインストール
 
-PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 なお、ZIP アーカイブを使用する場合、MSI パッケージのような前提条件確認は行われません。 WSMan 経由でのリモート処理を正常に動作させるために、[前提条件](#prerequisites)を満たしていることを確かめてください。
+PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 ZIP アーカイブをインストールしても、MSI パッケージのように前提条件は確認されません。 WSMan 経由でのリモート処理を正常に動作させるために、[前提条件](#prerequisites)を満たしていることを確かめてください。
 
 ## <a name="deploying-on-windows-iot"></a>Windows IoT への展開
 
-Windows IoT には、PowerShell 7 の展開に使用するための Windows PowerShell が既に付属しています。
+Windows IoT には、PowerShell 7 の展開に使用できる Windows PowerShell が付属しています。
 
 1. ターゲット デバイスに対して `PSSession` を作成します
 
@@ -121,13 +131,14 @@ Windows IoT には、PowerShell 7 の展開に使用するための Windows Powe
 
 ## <a name="deploying-on-nano-server"></a>Nano Server への展開
 
-これらの手順では、Nano Server イメージ上で PowerShell のバージョンが既に実行されており、それが [Nano Server Image Builder](/windows-server/get-started/deploy-nano-server) で生成されていることを前提としています。
-Nano Server は "ヘッドレス" OS です。 PowerShell バイナリを展開するには、2 つの方法があります。
+以下の手順では、Nano Server が "ヘッドレス" OS であり、あるバージョンの PowerShell が既に実行されていることを前提としています。 詳細については、[Nano Server Image Builder](/windows-server/get-started/deploy-nano-server) のドキュメントをご覧ください。
+
+PowerShell バイナリを展開するには、2 つの方法があります。
 
 1. オフライン: Nano Server VHD をマウントし、zip ファイルの中身をマウント イメージ内の選択した場所に展開します。
 2. オンライン: zip ファイルを PowerShell セッションを介して転送し、選択した場所にそれを展開します。
 
-いずれの場合も、Windows 10 x64 ZIP リリース パッケージが必要であり、"管理者" PowerShell インスタンス内でコマンドを実行する必要があります。
+どちらの場合も、Windows 10 x64 の ZIP リリース パッケージが必要です。 PowerShell の "管理者" インスタンス内でコマンドを実行してください。
 
 ### <a name="offline-deployment-of-powershell"></a>PowerShell のオフラインでの展開
 
@@ -138,7 +149,7 @@ Nano Server は "ヘッドレス" OS です。 PowerShell バイナリを展開�
 
 ### <a name="online-deployment-of-powershell"></a>PowerShell のオンラインでの展開
 
-次の手順では、Nano Server の実行中のインスタンスに PowerShell を展開し、そのリモート エンドポイントを構成します。
+次の手順に従って、PowerShell を Nano Server に展開します。
 
 - Windows PowerShell のインボックス インスタンスに接続する
 
@@ -175,7 +186,7 @@ Nano Server は "ヘッドレス" OS です。 PowerShell バイナリを展開�
 dotnet tool install --global PowerShell
 ```
 
-dotnet tool install によって、`$env:PATH` 環境変数に `$env:USERPROFILE\dotnet\tools` が追加されます。 ただし、現在実行中のシェルには更新された `$env:PATH` が設定されていません。 新しいシェルからは、「`pwsh`」と入力すると PowerShell を起動できるはずです。
+dotnet tool install によって、`$env:PATH` 環境変数に `$env:USERPROFILE\dotnet\tools` が追加されます。 ただし、現在実行中のシェルには更新された `$env:PATH` が設定されていません。 新しいシェルからは、「`pwsh`」と入力すると PowerShell を起動できます。
 
 ## <a name="how-to-create-a-remoting-endpoint"></a>リモート エンドポイントの作成方法
 

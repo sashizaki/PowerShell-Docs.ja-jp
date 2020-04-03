@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: リソース作成のチェックリスト
-ms.openlocfilehash: e7401071db9cb149fff572d79568d69a0b8ea004
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.openlocfilehash: 85e0963d46358cd37cb87ea94fe6d1178a4f6a4a
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76818143"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500624"
 ---
 # <a name="resource-authoring-checklist"></a>リソース作成のチェックリスト
 
@@ -15,8 +15,8 @@ ms.locfileid: "76818143"
 
 ## <a name="resource-module-contains-psd1-file-and-schemamof-for-every-resource"></a>リソース モジュールにすべてのリソースの .psd1 ファイルと schema.mof が含まれている
 
-リソースが正しい構造であり、必要なすべてのファイルが含まれていることを確認します。 すべてのリソース モジュールには .psd1 ファイルが含まれている必要があり、すべて非複合リソースには .schema.mof ファイルが含まれている必要があります。 スキーマが含まれていないリソースは `Get-DscResource` によって一覧表示されず、ユーザーは ISE でこれらのモジュールに対してコードを記述するときに IntelliSense を使用できません。
-[xPSDesiredStateConfiguration リソース モジュール](https://github.com/PowerShell/xPSDesiredStateConfiguration)の一部である xRemoteFile リソースのディレクトリ構造は、次のようになります。
+リソースが正しい構造であり、必要なすべてのファイルが含まれていることを確認します。 すべてのリソース モジュールには .psd1 ファイルが含まれている必要があり、すべて非複合リソースには .schema.mof ファイルが含まれている必要があります。
+スキーマが含まれていないリソースは `Get-DscResource` によって一覧表示されず、ユーザーは ISE でこれらのモジュールに対してコードを記述するときに IntelliSense を使用できません。 [xPSDesiredStateConfiguration リソース モジュール](https://github.com/PowerShell/xPSDesiredStateConfiguration)の一部である xRemoteFile リソースのディレクトリ構造は、次のようになります。
 
 ```
 xPSDesiredStateConfiguration
@@ -35,8 +35,7 @@ xPSDesiredStateConfiguration
 
 ## <a name="resource-and-schema-are-correct"></a>リソースとスキーマが正しい
 
-リソース スキーマ (*.schema.mof) ファイルを確認します。 [DSC リソース デザイナー](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0)をスキーマの開発と試験に利用できます。
-次のことを確認してください。
+リソース スキーマ (*.schema.mof) ファイルを確認します。 [DSC リソース デザイナー](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0)をスキーマの開発と試験に利用できます。 次のことを確認してください。
 
 - プロパティの型が正しい (たとえば、数値を受け入れるプロパティには文字列を使用せず、UInt32 またはその他の数値型を代わりに使用する必要があります)
 - プロパティの属性が正しく指定されている ([key]、[required]、[write]、[read])
@@ -54,7 +53,7 @@ xPSDesiredStateConfiguration
 
   例: `[ClassVersion("1.0.0.0"), FriendlyName("xRemoteFile")]`
 
-- すべてのフィールドにわかりやすい説明があります。 PowerShell GitHub リポジトリには、[xRemoteFile の .schema.mof](https://github.com/PowerShell/xPSDesiredStateConfiguration/blob/dev/DSCResources/MSFT_xRemoteFile/MSFT_xRemoteFile.schema.mof) など、良い例があります。
+- すべてのフィールドにわかりやすい説明があります。 PowerShell GitHub リポジトリには、[xRemoteFile の .schema.mof](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/DSCResources/DSC_xRemoteFile/DSC_xRemoteFile.schema.mof) などの優れた例があります
 
 また、[DSC リソース デザイナー](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0)から **Test-xDscResource** および **Test-xDscSchema** コマンドレットを使用して、リソースとスキーマを自動的に確認する必要があります。
 
@@ -72,8 +71,7 @@ Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 
 ## <a name="resource-loads-without-errors"></a>リソースがエラーなしで読み込まれる
 
-リソース モジュールを正常に読み込めるか確認します。
-これは、手動で実行する (`Import-Module <resource_module> -force` を実行してエラーが発生しないことを確認する) か、自動テストを作成して実行することができます。 後者の場合は、テスト ケースで次の構造に従うことができます。
+リソース モジュールを正常に読み込めるか確認します。 これは、手動で実行する (`Import-Module <resource_module> -force` を実行してエラーが発生しないことを確認する) か、自動テストを作成して実行することができます。 後者の場合は、テスト ケースで次の構造に従うことができます。
 
 ```powershell
 $error = $null
@@ -94,8 +92,7 @@ File file {
 }
 ```
 
-これを最初に適用した後、test.txt ファイルが `C:\test` フォルダーに出現します。 ただし、同じ構成の後続の実行で、マシンの状態を変更しないでください (たとえば、`test.txt` ファイルのコピーを作成しないでください)。
-リソースがべき等であることを確認するには、リソースを直接テストする場合は `Set-TargetResource` を繰り返し呼び出し、エンド ツー エンド テストを実行する場合は `Start-DscConfiguration` を複数回呼び出します。 実行するたびに結果が同じである必要があります。
+これを最初に適用した後、test.txt ファイルが `C:\test` フォルダーに出現します。 ただし、同じ構成の後続の実行で、マシンの状態を変更しないでください (たとえば、`test.txt` ファイルのコピーを作成しないでください)。 リソースがべき等であることを確認するには、リソースを直接テストする場合は `Set-TargetResource` を繰り返し呼び出し、エンド ツー エンド テストを実行する場合は `Start-DscConfiguration` を複数回呼び出します。 実行するたびに結果が同じである必要があります。
 
 ## <a name="test-user-modification-scenario"></a>ユーザー変更シナリオのテスト
 
@@ -124,10 +121,9 @@ File file {
 
 ## <a name="verify-end-to-end-using-start-dscconfiguration"></a>**Start-DscConfiguration** を使用してエンド ツー エンドで確認する
 
-直接呼び出すことによって **Get/Set/Test-TargetResource** 関数をテストすることは重要ですが、この方法ですべての問題が検出されるわけではありません。 テストにおいては、`Start-DscConfiguration` やプル サーバーの使用に関する部分を重視する必要があります。 これはユーザーが実際にリソースを使用する方法であり、この種類のテストの重要性を過小評価しないようにしてください。
-可能性がある問題の種類:
+直接呼び出すことによって **Get/Set/Test-TargetResource** 関数をテストすることは重要ですが、この方法ですべての問題が検出されるわけではありません。 テストにおいては、`Start-DscConfiguration` やプル サーバーの使用に関する部分を重視する必要があります。 これはユーザーが実際にリソースを使用する方法であり、この種類のテストの重要性を過小評価しないようにしてください。 可能性がある問題の種類:
 
-- DSC エージェントはサービスとして実行されるため、資格情報またはセッションの動作が異なる可能性があります。  機能は必ずエンド ツー エンドでテストしてください。
+- DSC エージェントはサービスとして実行されるため、資格情報またはセッションの動作が異なる可能性があります。 機能は必ずエンド ツー エンドでテストしてください。
 - `Start-DscConfiguration` によるエラー出力は、`Set-TargetResource` 関数を直接呼び出したときに表示されるものとは異なる場合があります。
 
 ## <a name="test-compatibility-on-all-dsc-supported-platforms"></a>すべての DSC 対応プラットフォームで互換性を試験する
@@ -187,8 +183,7 @@ File file {
   }
   ```
 
-- スクリプトの例の最後に、実際の値を使用して構成を呼び出す方法の例 (コメント アウト) を含めることをお勧めします。
-  たとえば、上記の構成では、UserAgent を指定する最善の方法が次のとおりであることは必ずしも明白ではありません。
+- スクリプトの例の最後に、実際の値を使用して構成を呼び出す方法の例 (コメント アウト) を含めることをお勧めします。 たとえば、上記の構成では、UserAgent を指定する最善の方法が次のとおりであることは必ずしも明白ではありません。
 
   `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer` その場合、その構成で意図する実行内容をコメントで明らかにできます。
 
@@ -220,10 +215,10 @@ File file {
 
 ## <a name="log-messages-are-easy-to-understand-and-informative-including-verbose-debug-and-etw-logs"></a>ログ メッセージは、わかりやすく、有益な情報が含まれている (-verbose、-debug、および ETW ログを含む)
 
-リソースによって出力されるログがわかりやすく、ユーザーにとって価値のあるものであることを確認します。 リソースは、ユーザーに役立つ可能性のあるすべての情報を出力する必要がありますが、常にログが多い方がよいとは限りません。 冗長性および付加価値を提供しないデータを出力することは避ける必要があります。求めている情報を探して何百ものログ エントリを確認する必要がないようにします。 もちろん、ログを出力しないことはこの問題に対する適切な解決策ではありません。
+リソースによって出力されるログがわかりやすく、ユーザーにとって価値のあるものであることを確認します。
+リソースは、ユーザーに役立つ可能性のあるすべての情報を出力する必要がありますが、常にログが多い方がよいとは限りません。 冗長性および付加価値を提供しないデータを出力することは避ける必要があります。求めている情報を探して何百ものログ エントリを確認する必要がないようにします。 もちろん、ログを出力しないことはこの問題に対する適切な解決策ではありません。
 
-テストする場合は、詳細ログとデバッグ ログ (`Start-DscConfiguration` を `–Verbose` および `–Debug` スイッチを適切に指定して実行する)、および ETW ログも分析する必要があります。 DSC ETW ログを確認するには、イベント ビューアーに移動し、次のフォルダーを開きます。Applications and Services - Microsoft - Windows - Desired State Configuration。  既定では稼動チャネルがありますが、構成を実行する前に分析チャネルとデバッグ チャネルを有効にします。
-分析/デバッグ チャネルを有効にするには、次のスクリプトを実行できます。
+テストする場合は、詳細ログとデバッグ ログ (`Start-DscConfiguration` を `–Verbose` および `–Debug` スイッチを適切に指定して実行する)、および ETW ログも分析する必要があります。 DSC ETW ログを確認するには、イベント ビューアーに移動し、次のフォルダーを開きます。Applications and Services - Microsoft - Windows - Desired State Configuration。 既定では稼動チャネルがありますが、構成を実行する前に分析チャネルとデバッグ チャネルを有効にします。 分析/デバッグ チャネルを有効にするには、次のスクリプトを実行できます。
 
 ```powershell
 $statusEnabled = $true
@@ -241,8 +236,7 @@ Invoke-Expression $commandToExecute
 
 ## <a name="resource-implementation-does-not-contain-hardcoded-paths"></a>リソースの実装にハードコードされたパスが含まれていない
 
-リソースの実装にハードコードされたパスがないことを確認します (特に、それらが言語 (en-us) を想定する場合、または使用できるシステム変数がある場合)。
-リソースが特定のパスにアクセスする必要がある場合、パスは他のコンピューターでは異なる可能性があるため、パスをハードコーディングする代わりに環境変数を使用します。
+リソースの実装にハードコードされたパスがないことを確認します (特に、それらが言語 (en-us) を想定する場合、または使用できるシステム変数がある場合)。 リソースが特定のパスにアクセスする必要がある場合、パスは他のコンピューターでは異なる可能性があるため、パスをハードコーディングする代わりに環境変数を使用します。
 
 例:
 
@@ -285,9 +279,7 @@ $programFilesPath = ${env:ProgramFiles(x86)}
 
 ## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>ベスト プラクティス:リソース モジュールに、ResourceDesignerTests.ps1 スクリプトを含む Test フォルダーが含まれている
 
-リソース モジュール内に "Test" フォルダーを作成し、`ResourceDesignerTests.ps1` ファイルを作成し、指定したモジュール内のすべてのリソースに対して **Test-xDscResource** と **Test-xDscSchema** を使用してテストを追加することをお勧めします。
-この方法で、指定したモジュールのすべてのリソースのスキーマをすばやく検証し、発行する前にサニティ チェックを実行できます。
-xRemoteFile の場合、`ResourceTests.ps1` は次のように単純になります。
+リソース モジュール内に "Test" フォルダーを作成し、`ResourceDesignerTests.ps1` ファイルを作成し、指定したモジュール内のすべてのリソースに対して **Test-xDscResource** と **Test-xDscSchema** を使用してテストを追加することをお勧めします。 この方法で、指定したモジュールのすべてのリソースのスキーマをすばやく検証し、発行する前にサニティ チェックを実行できます。 xRemoteFile の場合、`ResourceTests.ps1` は次のように単純になります。
 
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
@@ -312,9 +304,7 @@ New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Hea
 
 ## <a name="best-practice-resource-supports--whatif"></a>ベスト プラクティス:リソースによる -WhatIf のサポート
 
-リソースが "危険な" 操作を実行する場合は、`-WhatIf` 機能を実装することをお勧めします。 完了したら、`-WhatIf` スイッチを使用しないでコマンドが実行された場合にどのようなことが発生するかについて、`-WhatIf` 出力で正しく記述されていることを確認します。
-また、`–WhatIf` スイッチが存在する場合は、その操作が実行されない (ノードの状態の変更は行われない) ことも確認します。
-たとえば、File リソースをテストすると仮定します。 "test" の内容を持つファイル `test.txt` を作成する単純な構成を次に示します。
+リソースが "危険な" 操作を実行する場合は、`-WhatIf` 機能を実装することをお勧めします。 完了したら、`-WhatIf` スイッチを使用しないでコマンドが実行された場合にどのようなことが発生するかについて、`-WhatIf` 出力で正しく記述されていることを確認します。 また、`–WhatIf` スイッチが存在する場合は、その操作が実行されない (ノードの状態の変更は行われない) ことも確認します。 たとえば、File リソースをテストすると仮定します。 "test" の内容を持つファイル `test.txt` を作成する単純な構成を次に示します。
 
 ```powershell
 configuration config
@@ -337,7 +327,7 @@ config
 Start-DscConfiguration -Path .\config -ComputerName localhost -Wait -Verbose -WhatIf
 ```
 
-```output
+```Output
 VERBOSE: Perform operation 'Invoke CimMethod' with following parameters, ''methodName' =
 SendConfigurationApply,'className' = MSFT_DSCLocalConfigurationManager,'namespaceName' =
 root/Microsoft/Windows/DesiredStateConfiguration'.

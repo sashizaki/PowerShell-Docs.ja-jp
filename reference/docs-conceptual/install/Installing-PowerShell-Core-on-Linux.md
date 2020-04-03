@@ -2,16 +2,16 @@
 title: Linux への PowerShell のインストール
 description: さまざまな Linux ディストリビューションへの PowerShell のインストールに関する情報
 ms.date: 03/09/2020
-ms.openlocfilehash: 13b8583ed45f1201e61225b377112a59d2b26cb2
-ms.sourcegitcommit: d36db3a1bc44aee6bc97422b557041c3aece4c67
+ms.openlocfilehash: 31da32b81dbbcf4b46fd5f0cd9d921f28f434763
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/21/2020
-ms.locfileid: "80082792"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500547"
 ---
 # <a name="installing-powershell-on-linux"></a>Linux への PowerShell のインストール
 
-[Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Ubuntu 19.04][u1904]、[Debian 8][deb8]、[Debian 9][deb9]、[Debian 10][deb10]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 27][fedora]、[Fedora 28][fedora]、[Arch Linux][arch] をサポートしています。
+[Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Ubuntu 19.04][u1904]、[Debian 8][deb8]、[Debian 9][deb9]、[Debian 10][deb10]、[Alpine 3.9 および 3.10][alpine]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 28][fedora]、[Fedora 29][fedora]、[Fedora 30][fedora]、[Arch Linux][arch] がサポートされています。
 
 公式にサポートされていない Linux ディストリビューションの場合は、[PowerShell の Snap パッケージ][snap]を使った PowerShell のインストールを試すことができます。 また、Linux [`tar.gz` アーカイブ][tar]を使用して、直接 PowerShell バイナリを展開できますが、場合によっては、OS に基づいて依存関係を別の手順で設定する必要があります。
 
@@ -31,6 +31,7 @@ ms.locfileid: "80082792"
 [deb8]: #debian-8
 [deb9]: #debian-9
 [deb10]: #debian-10
+[alpine]: #alpine-39-and-310
 [cos]: #centos-7
 [rhel7]: #red-hat-enterprise-linux-rhel-7
 [opensuse]: #opensuse
@@ -83,12 +84,12 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>直接ダウンロードによるインストール - Ubuntu 16.04
 
-[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell_7.0.0-1.ubuntu.16.04_amd64.deb` をダウンロードします。
+[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
 ```sh
-sudo dpkg -i powershell_7.0.0-1.ubuntu.16.04_amd64.deb
+sudo dpkg -i powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -133,12 +134,12 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>直接ダウンロードによるインストール - Ubuntu 18.04
 
-[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell_7.0.0-1.ubuntu.18.04_amd64.deb` をダウンロードします。
+[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
 ```sh
-sudo dpkg -i powershell_7.0.0-1.ubuntu.18.04_amd64.deb
+sudo dpkg -i powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -229,12 +230,12 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-9"></a>直接ダウンロードによるインストール - Debian 9
 
-[リリース][] ページから Debian コンピューターに Debian パッケージ `powershell_7.0.0-1.debian.9_amd64.deb` をダウンロードします。
+[リリース][] ページから Debian コンピューターに Debian パッケージ `powershell-lts_7.0.0-1.debian.9_amd64.deb` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
 ```sh
-sudo dpkg -i powershell_7.0.0-1.debian.9_amd64.deb
+sudo dpkg -i powershell-lts_7.0.0-1.debian.9_amd64.deb
 sudo apt-get install -f
 ```
 
@@ -248,6 +249,29 @@ sudo apt-get remove powershell
 
 > [!NOTE]
 > Debian 10 は、PowerShell 7.0 以降でのみサポートされます。
+
+### <a name="installation-via-package-repository---debian-10"></a>パッケージ リポジトリによるインストール - Debian 10
+
+Linux 向けの PowerShell は、インストールと更新を容易にするためにパッケージ リポジトリに公開されています。
+
+推奨される方法は次のとおりです。
+
+```sh
+# Download the Microsoft repository GPG keys
+wget https://packages.microsoft.com/config/debian/10/packages-microsoft-prod.deb
+
+# Register the Microsoft repository GPG keys
+sudo dpkg -i packages-microsoft-prod.deb
+
+# Update the list of products
+sudo apt-get update
+
+# Install PowerShell
+sudo apt-get install -y powershell
+
+# Start PowerShell
+pwsh
+```
 
 ### <a name="installation-via-direct-download---debian-10"></a>直接ダウンロードによるインストール - Debian 10
 
@@ -365,18 +389,18 @@ pwsh
 
 ### <a name="installation-via-direct-download---centos-7"></a>直接ダウンロードによるインストール - CentOS 7
 
-[CentOS 7][] を利用し、[リリース][] ページから CentOS コンピューターに RPM パッケージ `powershell-7.0.0-1.rhel.7.x86_64.rpm` をダウンロードします。
+[CentOS 7][] を利用し、[リリース][] ページから CentOS コンピューターに RPM パッケージ `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
 ```sh
-sudo yum install powershell-7.0.0-1.rhel.7.x86_64.rpm
+sudo yum install powershell-lts-7.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ダウンロードという中間の手順なしで RPM をインストールすることができます。
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-lts-7.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---centos-7"></a>アンインストール - CentOS 7
@@ -408,18 +432,18 @@ pwsh
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>直接ダウンロードによるインストール - Red Hat Enterprise Linux (RHEL) 7
 
-[リリース][] ページから Red Hat Enterprise Linux コンピューターに RPM パッケージ `powershell-7.0.0-1.rhel.7.x86_64.rpm` をダウンロードします。
+[リリース][] ページから Red Hat Enterprise Linux コンピューターに RPM パッケージ `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
 ```sh
-sudo yum install powershell-7.0.0-1.rhel.7.x86_64.rpm
+sudo yum install powershell-lts-7.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ダウンロードという中間の手順なしで RPM をインストールすることができます。
 
 ```sh
-sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-1.rhel.7.x86_64.rpm
+sudo yum install https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-lts-7.0.0-1.rhel.7.x86_64.rpm
 ```
 
 ### <a name="uninstallation---red-hat-enterprise-linux-rhel-7"></a>アンインストール - Red Hat Enterprise Linux (RHEL) 7
@@ -555,7 +579,7 @@ PowerShell は [Arch Linux][] User Repository (AUR) から入手できます。
 
 AUR のパッケージはコミュニティによって管理されています。公式のサポートは存在しません。
 
-AUR からパッケージをインストールする方法については、[Arch Linux wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) かコミュニティ [DockerFile](https://github.com/PowerShell/PowerShell/blob/master/docker/community/archlinux/Dockerfile) をご覧ください。
+AUR からパッケージをインストールする方法については、[Arch Linux の wiki](https://wiki.archlinux.org/index.php/Arch_User_Repository#Installing_packages) か「[Docker での PowerShell の使用](powershell-in-docker.md)」を参照してください。
 
 [Arch Linux]: https://www.archlinux.org/download/
 [arch-release]: https://aur.archlinux.org/packages/powershell/
@@ -672,7 +696,7 @@ tar -xvf ./powershell-7.0.0-linux-arm32.tar.gz -C ~/powershell
 
 ```sh
 # Start PowerShell from bash with sudo to create a symbolic link
-sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" -Target "\$PSHOME/pwsh" -Force
+sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" -Target "$PSHOME/pwsh" -Force
 
 # alternatively you can run following to create a symbolic link
 # sudo ln -s ~/powershell/pwsh /usr/bin/pwsh

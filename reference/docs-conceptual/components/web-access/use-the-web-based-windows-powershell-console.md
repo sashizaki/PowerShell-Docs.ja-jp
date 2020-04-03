@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,コマンドレット
 title: Web ベースの Windows PowerShell コンソールの使用
-ms.openlocfilehash: 4c1bac2c712e430263d748b36897f4cfd8885919
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.openlocfilehash: 29aa123049884004dd4e1a8f042783538d80abc6
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402589"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500865"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Web ベースの Windows PowerShell コンソールの使用
 
@@ -102,7 +102,7 @@ Windows PowerShell Web Access にサインインする前に、管理対象の�
 
 - ブラウザーが実行されているクライアント デバイスの電源を切る、またはネットワークから切断する。
 
-- Web コンソールで **[終了]** コマンドを実行する。 接続先のセッション構成が [NoLanguage](https://msdn.microsoft.com/library/windows/desktop/system.management.automation.pslanguagemode.aspx) モードをサポートするよう構成されている場合、または制限付き実行空間が指定されている場合は、このコマンドは機能しません。
+- Web コンソールで **[終了]** コマンドを実行する。 接続先のセッション構成が [NoLanguage](/dotnet/api/system.management.automation.pslanguagemode) モードをサポートするよう構成されている場合、または制限付き実行空間が指定されている場合は、このコマンドは機能しません。
 
 もう一度サインインする場合は、Windows PowerShell Web Access の Web ページをもう一度開き、このトピックの「[Windows PowerShell Web Access へのサインイン](#signing-in-to-windows-powershell-web-access)」の手順に従ってサインインします。
 
@@ -211,12 +211,9 @@ Alt + F7          | コマンド履歴の一覧を消去
 
     同じ方法でコンソールの高さを変更できます。
 
-    コンソール ビューをカスタマイズするその他の例については、[Windows PowerShell チームのブログ](hhttps://devblogs.microsoft.com/powershell)を参照してください。
+    コンソール ビューをカスタマイズするその他の例については、[Windows PowerShell チームのブログ](h https://devblogs.microsoft.com/powershell)を参照してください。
 
 ## <a name="see-also"></a>参照
 
-- [Windows PowerShell コマンドレット リファレンス](https://technet.microsoft.com/library/ee407531(ws.10).aspx)
-- [Microsoft TechNet の Windows PowerShell](https://technet.microsoft.com/library/bb978526.aspx)
-- [TechNet スクリプト センター リポジトリ](https://gallery.technet.microsoft.com/scriptcenter)
-- [スクリプト センター - Hey, Scripting Guy!](https://technet.microsoft.com/scriptcenter)
-- [Windows PowerShell チーム ブログ](https://blogs.msdn.com/b/powershell/)
+- [Hey, Scripting Guy!](https://devblogs.microsoft.com/scripting/)
+- [PowerShell チーム ブログ](https://devblogs.microsoft.com/powershell/)

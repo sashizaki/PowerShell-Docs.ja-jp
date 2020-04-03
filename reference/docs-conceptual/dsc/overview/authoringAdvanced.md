@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: CI/CD パイプラインでの DSC のロールについて
-ms.openlocfilehash: 79740225c030974546035b67e0f873fa00aa690a
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 8d7244a6e5e2c215d9d3ada959b716df2cce0b83
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279371"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500820"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>CI/CD パイプラインでの DSC のロールについて
 
@@ -41,7 +41,7 @@ ms.locfileid: "78279371"
 
 さらに、お客様からは、このモデルを使用したときに、各制御チームの構成変更がリリース パイプラインを通じて完全にテストされているとは思えず、実稼働環境で予期しない結果につながるというフィードバックもいただいております。
 
-**サーバーにリリースするすべての変更を 1 つのパイプラインを使用して評価することが重要です。**
+**サーバーにリリースされたすべての変更を 1 つのパイプラインを使用して評価することが重要です。**
 
 次の図では、チーム B はチーム A に部分構成をリリースします。そしてチーム A は両方の構成が適用されたサーバーに対してテストを実行します。 このモデルでは、1 つの機関だけが実稼働環境で変更を行う権限を持っています。
 

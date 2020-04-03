@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,リソース,ギャラリー,セットアップ
 title: 構成にパラメーターを追加する
-ms.openlocfilehash: 72e6c15593d11ed39d7fe8ea79f794089f410cf8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9dd9f2be58c13840be2b24e7e21a0d4af79b67cc
+ms.sourcegitcommit: b0966d61293e28ecdb929c5065be9760884e4e7d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "71954199"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80263154"
 ---
 # <a name="add-parameters-to-a-configuration"></a>構成にパラメーターを追加する
 
@@ -36,17 +36,18 @@ Configuration TestConfig
 
 関数とは異なり、[CmdletBinding](/powershell/module/microsoft.powershell.core/about/about_functions_cmdletbindingattribute) 属性では機能は追加されません。 [共通パラメーター](/powershell/module/microsoft.powershell.core/about/about_commonparameters)に加えて、構成では次の組み込みパラメーターを定義せずに使用できます。
 
-|パラメーター  |説明  |
-|---------|---------|
-|`-InstanceName`|[複合構成](compositeconfigs.md)の定義で使用されます|
-|`-DependsOn`|[複合構成](compositeconfigs.md)の定義で使用されます|
-|`-PSDSCRunAsCredential`|[複合構成](compositeconfigs.md)の定義で使用されます|
-|`-ConfigurationData`|構成で使用する構造化[構成データ](configData.md)を渡すために使用されます。|
-|`-OutputPath`|"\<コンピューター名\>.mof" ファイルがコンパイルされる場所を指定するために使用されます|
+|        パラメーター        |                                         説明                                          |
+| ----------------------- | -------------------------------------------------------------------------------------------- |
+| `-InstanceName`         | [複合構成](compositeconfigs.md)の定義で使用されます                             |
+| `-DependsOn`            | [複合構成](compositeconfigs.md)の定義で使用されます                             |
+| `-PSDSCRunAsCredential` | [複合構成](compositeconfigs.md)の定義で使用されます                             |
+| `-ConfigurationData`    | 構成で使用する構造化[構成データ](configData.md)を渡すために使用されます。 |
+| `-OutputPath`           | "\<コンピューター名\>.mof" ファイルがコンパイルされる場所を指定するために使用されます                      |
 
 ## <a name="adding-your-own-parameters-to-configurations"></a>構成に独自のパラメーターを追加する
 
-組み込みパラメーターに加えて、独自のパラメーターを構成に追加することもできます。 関数と同様、パラメーター ブロックを構成の宣言内で直接指定します。 構成のパラメーター ブロックは、すべての**ノード**宣言の外部で、すべての "*インポート*" ステートメントより上に置く必要があります。 パラメーターを追加することにより、構成をいっそう堅牢で動的にすることができます。
+組み込みパラメーターに加えて、独自のパラメーターを構成に追加することもできます。
+関数と同様、パラメーター ブロックを構成の宣言内で直接指定します。 構成のパラメーター ブロックは、すべての**ノード**宣言の外部で、すべての "*インポート*" ステートメントより上に置く必要があります。 パラメーターを追加することにより、構成をいっそう堅牢で動的にすることができます。
 
 ```powershell
 Configuration TestConfig
@@ -117,7 +118,8 @@ TestConfig -ComputerName "server01", "server02", "server03"
 
 ## <a name="advanced-parameters-in-configurations"></a>構成の高度なパラメーター
 
-`-ComputerName` パラメーターに加えて、サービス名と状態のパラメーターを追加することができます。 次の例では、`-ServiceName` パラメーターでパラメーター ブロックを追加し、それを使用して **Service** リソース ブロックを動的に定義しています。 また、`-State` パラメーターを追加し、**Service** リソース ブロック内で **State** を動的に定義しています。
+`-ComputerName` パラメーターに加えて、サービス名と状態のパラメーターを追加することができます。
+次の例では、`-ServiceName` パラメーターでパラメーター ブロックを追加し、それを使用して **Service** リソース ブロックを動的に定義しています。 また、`-State` パラメーターを追加し、**Service** リソース ブロック内で **State** を動的に定義しています。
 
 ```powershell
 Configuration TestConfig
@@ -149,7 +151,7 @@ Configuration TestConfig
 ```
 
 > [!NOTE]
-> さらに高度なシナリオでは、動的なデータを構造化された[構成データ](configData.md)に移動することが適切な場合があります。
+> より高度なシナリオでは、動的データを構造化された[構成データ](configData.md)に移動した方が合理的な場合があります。
 
 現在の例の構成では、動的な `$ServiceName` を受け取っていますが、指定されないと、コンパイル エラーが発生します。 次の例のように、既定値を追加できます。
 
@@ -213,7 +215,7 @@ Configuration TestConfig
     # It is best practice to explicitly import any required resources or modules.
     Import-DSCResource -Module PSDesiredStateConfiguration
 
-    Node localhost
+    Node $ComputerName
     {
         Service $ServiceName
         {

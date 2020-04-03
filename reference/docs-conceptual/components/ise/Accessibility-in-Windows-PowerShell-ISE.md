@@ -2,12 +2,12 @@
 ms.date: 12/19/2019
 keywords: powershell,コマンドレット
 title: Windows PowerShell ISE のアクセシビリティ
-ms.openlocfilehash: e618daca98d76f767a8b60a3425760bfc0bd0f64
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.openlocfilehash: 89eff839d69fdbd5a1fa48b61dab627ef83f751b
+ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75736285"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80500964"
 ---
 # <a name="accessibility-in-windows-powershell-ise"></a>Windows PowerShell ISE のアクセシビリティ
 
@@ -121,7 +121,7 @@ Microsoft Windows のアクセシビリティ機能とユーティリティに�
 | **デバッガーの停止**          | <kbd>Shift</kbd> + <kbd>F5</kbd>                 | スクリプト ウィンドウ、スクリプトのデバッグ時 |
 
 > [!NOTE]
-> Windows PowerShell ISE でスクリプトをデバッグする場合は、Windows PowerShell コンソール用に設計されたキーボード ショートカットも使用できます。 それらのショートカットを使用するには、コンソール ウィンドウでショートカットを入力してから Enter キーを押します。
+> Windows PowerShell ISE でスクリプトをデバッグする場合は、Windows PowerShell コンソール用に設計されたキーボード ショートカットも使用できます。 それらのショートカットを使用するには、コンソール ペインにショートカットを入力してから、<kbd>Enter</kbd> キーを押します。
 
 |                 アクション                  |      キーボード ショートカット       |                使用する場所                 |
 | --------------------------------------- | ---------------------------- | ------------------------------------- |
@@ -143,7 +143,7 @@ Windows PowerShell のタブを使用するときに、次のキーボード シ
 | ------------------------------- | ---------------------------------------------------------------------------------- |
 | **PowerShell タブを閉じる**        | <kbd>Ctrl</kbd> + <kbd>W</kbd>                                                       |
 | **PowerShell タブの新規作成**          | <kbd>Ctrl</kbd> + <kbd>T</kbd>                                                       |
-| **前の PowerShell タブ**     | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> (任意の PowerShell タブ上で開いているファイルがない場合にのみ)                 |
+| **前の PowerShell タブ**     | <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> (任意の PowerShell タブ上で開いているファイルがない場合にのみ) |
 | **次の Windows PowerShell タブ** | <kbd>Ctrl</kbd> + <kbd>Tab</kbd> (任意の PowerShell タブ上で開いているファイルがない場合にのみ) |
 
 ## <a name="keyboard-shortcuts-for-starting-and-exiting"></a>開始および終了のキーボード ショートカット
@@ -157,8 +157,7 @@ Windows PowerShell のタブを使用するときに、次のキーボード シ
 
 ## <a name="breakpoint-management"></a>ブレークポイントの管理
 
-視覚に障碍のある方のために、ブレークポイントを管理するコマンドレット ([Get-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Get-PSBreakpoint.md)、[Set-PSBreakpoint](/reference/6/Microsoft.PowerShell.Utility/Set-PSBreakpoint.md) など) を通じて、ブレークポイント情報をご利用いただけます。
-詳しくは、「[Windows PowerShell ISE でスクリプトをデバッグする方法](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)」の「ブレークポイントを管理する方法」をご覧ください。
+視覚に障碍のある方のために、ブレークポイントを管理するコマンドレット ([Get-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Get-PSBreakpoint)、[Set-PSBreakpoint](/powershell/module/Microsoft.PowerShell.Utility/Set-PSBreakpoint) など) を通じて、ブレークポイント情報をご利用いただけます。 詳しくは、「[Windows PowerShell ISE でスクリプトをデバッグする方法](How-to-Debug-Scripts-in-Windows-PowerShell-ISE.md)」の「ブレークポイントを管理する方法」をご覧ください。
 
 ## <a name="see-also"></a>参照
 

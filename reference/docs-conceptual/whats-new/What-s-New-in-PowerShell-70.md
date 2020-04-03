@@ -2,12 +2,12 @@
 title: PowerShell 7.0 の新機能
 description: PowerShell 7.0 でリリースされた新機能と変更
 ms.date: 03/04/2020
-ms.openlocfilehash: 6915bb70d6e54da86d2b935e3feed8d7f3770ba9
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.openlocfilehash: 84631d9fa169c8d1b4cd4dd23eb3d7c1bca120bb
+ms.sourcegitcommit: b0966d61293e28ecdb929c5065be9760884e4e7d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78404993"
+ms.lasthandoff: 03/25/2020
+ms.locfileid: "80263137"
 ---
 # <a name="whats-new-in-powershell-70"></a>PowerShell 7.0 の新機能
 
@@ -53,7 +53,7 @@ PowerShell 7.0 は、異種環境とハイブリッド クラウドを管理す�
 
 ## <a name="running-powershell-7"></a>PowerShell 7 の実行
 
-PowerShell 7 は新しいディレクトリにインストールされ、Windows PowerShell 5.1 と side-by-side 実行されます。 PowerShell Core 6.x の場合、PowerShell 7 インプレース アップグレードで、PowerShell Core 6.x は削除されます。
+PowerShell 7 は新しいディレクトリにインストールされ、Windows PowerShell 5.1 と side-by-side 実行されます。 PowerShell Core 6.x がインストールされている場合、PowerShell 7 にインプレース アップグレードされ、PowerShell Core 6.x は削除されます。
 
 - PowerShell 7 は `%programfiles%\PowerShell\7` にインストールされます
 - `%programfiles%\PowerShell\7` フォルダーは `$env:PATH` に追加されます
@@ -396,6 +396,7 @@ Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration
 - AppDomain.CurrentDomain.ProcessExit から イベントハンドラーの登録を解除して、リソース リークを修正 (#10626)
 - ActionPreference.Break にサポートを追加して、デバッグ、エラー、情報、進行状況、詳細、または警告メッセージの生成時にデバッガーを起動 (#8205) (@KirkMunroに感謝)
 - CPL 拡張機能を指定せずに、PowerShell Core 内でコントロール パネルのアドイン起動を有効化 (#9828)
+- -split 演算子で負の数値をサポート (#8960) (@ece-jacob-scott に感謝)
 
 ### <a name="general-cmdlet-updates-and-fixes"></a>一般的なコマンドレットの更新と修正
 
