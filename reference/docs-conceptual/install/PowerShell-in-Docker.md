@@ -4,22 +4,22 @@ description: Docker イメージにプレインストールされている Power
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/03/2020
-ms.openlocfilehash: 771214c719ef01fe2c8bc56a4b26c629fcad3856
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: b16a31a04ca863ab55c7c9718b1a1a973e61ee46
+ms.sourcegitcommit: f55da6dea4b58a2cd13c7be7c24c07341f177b71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78279659"
+ms.lasthandoff: 04/03/2020
+ms.locfileid: "80646369"
 ---
 # <a name="using-powershell-in-docker"></a>Docker での PowerShell の使用
 
-PowerShell がプレインストールされた Docker イメージが公開されています。 この記事では、Docker コンテナーで PowerShell の使用を開始する方法を説明します。
+PowerShell がプレインストールされた Docker イメージを発行します。 この記事では、Docker コンテナーで PowerShell の使用を開始する方法を説明します。
 
 ## <a name="finding-available-images"></a>使用可能なイメージの検索
 
-リリースされたイメージを使用するには、Docker 17.05 以降が必要です。 また、`sudo` またはローカル管理者権限なしで Docker を実行できる必要があります。 `docker` を正しくインストールするには、Docker の公式な[手順][install]に従ってください。
+リリースされたイメージには、Docker 17.05 以降が必要です。 また、`sudo` またはローカル管理者権限なしで Docker を実行できる必要もあります。 `docker` を正しくインストールするには、Docker の公式な[手順][install]に従ってください。
 
-リリースされているコンテナーは、`centos:7` などの公式のディストリビューション イメージから派生し、依存関係をインストールした後、最後に PowerShell パッケージがインストールされた状態となっています。
+リリース コンテナーは、`centos:7` などの公式のディストリビューション イメージから派生し、依存関係をインストールしてから、最後に PowerShell パッケージをインストールします。
 
 これらのコンテナーは [hub.docker.com/r/microsoft/powershell][docker-release] にあります。
 
@@ -35,7 +35,7 @@ docker run -it mcr.microsoft.com/powershell
 
 ### <a name="remove-the-image-when-no-longer-needed"></a>不要になったイメージを削除する
 
-次のコマンドは、不要になった Docker コンテナーを削除するときに使用します。
+次のコマンドは、不要になった Docker イメージを削除するときに使用します。
 
 ```console
 docker rmi mcr.microsoft.com/powershell
@@ -47,7 +47,7 @@ PowerShell は、[MIT ライセンス][] に基づき使用が許諾されてい
 
 ### <a name="windows-docker-file-and-image-licenses"></a>Windows Docker ファイルとイメージのライセンス
 
-Windows コンテナー用のコンテナー OS イメージを入手して使用する場合、Docker Hub 上で参照可能な追加ライセンス条項を確認して理解し、同意する必要があります。
+Windows コンテナー用のコンテナー OS イメージを要求して使用することで、Docker Hub で利用可能な追加ライセンス条項を確認して理解し、同意することができます。
 
 - [Window Server Core][Window Server Core]
 - [Nano Server][Nano Server]

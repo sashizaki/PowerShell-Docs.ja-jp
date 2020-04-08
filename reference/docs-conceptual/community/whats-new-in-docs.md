@@ -1,19 +1,58 @@
 ---
 title: PowerShell ドキュメントの新機能
 description: PowerShell ドキュメントに対する変更の一覧
-ms.date: 03/04/2020
-ms.openlocfilehash: b2b196a83eafc87daf9f9eb06a93377058f1ff20
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.date: 03/31/2020
+ms.openlocfilehash: b7fee886b1c5584dc9d75b86ca79980579040db7
+ms.sourcegitcommit: ef1a3079809ec2e3c58e785c84de2df968145658
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79060217"
+ms.lasthandoff: 04/01/2020
+ms.locfileid: "80537066"
 ---
 # <a name="whats-new-in-powershell-docs"></a>PowerShell ドキュメントの新機能
 
 この記事では、先月ドキュメントに行われた主な変更点をいくつか紹介し、コミュニティからのコントリビューションに感謝の意を表します。
 
 ドキュメントの品質向上にご協力ください。 開始方法については、[共同作成者ガイド][contrib]をご覧ください。
+
+## <a name="2020-march"></a>2020 年 3 月
+
+### <a name="highlights"></a>ハイライト
+
+- 新しいドキュメント
+  - PowerShell ドキュメントのコミュニティ ページ
+    - [コミュニティ リソース](/powershell/scripting/community/community-support) ページ
+    - [Powershell ドキュメントの新機能](#2020-march) ページ (このページ)
+    - デジタル アート ページに追加された [PowerShell インフォグラフィック](https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/assets/PowerShell_7_Infographic.pdf)
+    - [PowerShell ドキュメントの共同作成者ガイド](/powershell/scripting/community/contributing/overview?view=powershell-7)
+  - 新しい PowerShell コンテンツ
+    - [Windows PowerShell 5.1 から PowerShell 7 への移行](/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7)
+    - [PowerShell 7 モジュールの互換性リスト](/PowerShell/scripting/whats-new/module-compatibility)
+    - [Docker での PowerShell の使用](/powershell/scripting/install/powershell-in-docker)
+  - 新しい Wiki コンテンツ
+    - [PowerShell は、IDictionary TKey、TValue を実装する型に存在しないキーの例外を回避します](https://github.com/MicrosoftDocs/PowerShell-Docs/wiki/PowerShell-prevents-exceptions-for-non-existent-keys-for-types-that-implement-IDictionary-TKey,-TValue-)
+    - [PowerShell での名前空間の処理は大文字と小文字が区別されますが、大文字小文字を保存します](https://github.com/MicrosoftDocs/PowerShell-Docs/wiki/PowerShell's-treatment-of-namespaces-is-case-insensitive-but-case-preserving)
+
+- ドキュメントのメンテナンス
+  - 壊れたリンクの大量クリーンアップ
+  - 古い問題と重複する問題のクリーンアップ
+
+- GitHub の統計
+  - 統合された PR 100 件 (コミュニティから 14 件)
+  - オープンしたイシュー 68 件 (コミュニティから 56 件)
+  - クローズしたイシュー 109 件
+
+### <a name="top-community-contributors"></a>コミュニティのトップ共同作成者
+
+プル要求の送信やイシューの入力によって、PowerShell ドキュメントに貢献してくださった方をご紹介します。 よろしくお願いいたします。
+
+- k-takai - PR 7 件
+- mklement0 - イシュー 5 件
+- juvtib - イシュー 4 件
+- iSazonovイシュー 3 件
+- doctordns - イシュー 2 件
+- mdorantesm - イシュー 2 件
+- qt3m45su0najc7 - イシュー 2 件
 
 ## <a name="2020-february"></a>2020 年 2 月
 
@@ -77,11 +116,11 @@ PowerShell コミュニティは、活気のあるコラボレーション グ�
 
 | Docs PR の送信 | 2016 | 2017 | 2018 | 2019 | 2020 | 総計 |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ----------: |
-| コミュニティの合計    |  194 |  447 |  467 |  320 |   16 |        1447 |
+| コミュニティの合計    |  198 |  448 |  468 |  322 |   22 |        1469 |
 | matt9ucci          |      |  157 |   80 |   30 |      |         267 |
 | nschonni           |      |      |   14 |  138 |      |         152 |
 | kiazhi             |   25 |   79 |   12 |      |      |         116 |
-| alexandair         |   57 |    7 |   26 |    2 |      |          92 |
+| alexandair         |   59 |    8 |   26 |    2 |      |          95 |
 | doctordns          |    5 |   32 |   20 |    7 |    2 |          66 |
 | sethvs             |      |    1 |   44 |      |      |          45 |
 | Dan1el42           |   20 |      |      |      |      |          20 |
@@ -89,8 +128,10 @@ PowerShell コミュニティは、活気のあるコラボレーション グ�
 | it-praktyk         |      |      |   16 |    1 |      |          17 |
 | markekraus         |      |   11 |    5 |      |      |          16 |
 | purdo17            |      |      |   13 |      |      |          13 |
+| k-takai            |      |      |    5 |    1 |    7 |          13 |
 | kvprasoon          |    2 |    1 |    7 |    2 |      |          12 |
 | PlagueHO           |   10 |      |      |    1 |      |          11 |
+| KirkMunro          |    1 |    1 |    2 |    6 |      |          10 |
 | exchange12rocks    |      |    7 |    3 |      |      |          10 |
 
 ### <a name="github-issues-opened"></a>GitHub イシューのオープン
@@ -99,14 +140,14 @@ GitHub イシューにより、Microsoft は弊社のドキュメントのエラ
 
 | Docs イシューのオープン | 2016 | 2017 | 2018 | 2019 | 2020 | 総計 |
 | ------------------ | ---: | ---: | ---: | ---: | ---: | ----------: |
-| コミュニティの合計    |   34 |   95 |  213 |  575 |   86 |        1003 |
-| mklement0          |      |   19 |   60 |   56 |   13 |         148 |
+| コミュニティの合計    |   34 |   95 |  213 |  575 |  123 |        1081 |
+| mklement0          |      |   19 |   60 |   56 |   17 |         153 |
 | jszabo98           |      |      |    2 |   15 |    2 |          19 |
-| iSazonov           |      |    1 |    4 |   10 |      |          15 |
-| doctordns          |      |    5 |    3 |    5 |    2 |          15 |
+| iSazonov           |      |    1 |    4 |   10 |    2 |          18 |
+| doctordns          |      |    5 |    3 |    5 |    4 |          17 |
+| alexandair         |    9 |    4 |    2 |      |      |          15 |
 | KirkMunro          |      |      |    7 |    7 |      |          14 |
 | vexx32             |      |      |    3 |   11 |      |          14 |
-| alexandair         |    6 |    4 |    2 |      |      |          12 |
 
 <!-- Link references -->
 [contrib]: contributing/overview.md
