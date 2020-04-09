@@ -10,12 +10,12 @@ helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
 ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
 caps.latest.revision: 8
-ms.openlocfilehash: c9c0b9a7a587e856efc82b4d277cee373e3f8b38
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6e17ff3d8ad3f7b2c511b879c913633f320bf511
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416313"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978629"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>コマンドレットにパラメーター セットを追加する
 
@@ -31,7 +31,7 @@ Windows PowerShell では、パラメーターセットを、一緒に動作す�
 
 ## <a name="declaring-the-cmdlet-class"></a>コマンドレットクラスの宣言
 
-コマンドレットの作成の最初の手順では、常にコマンドレットに名前を付け、コマンドレットを実装する .NET クラスを宣言します。 このコマンドレットでは、コマンドレットがシステムプロセスを停止するため、ライフサイクルの動詞 "Stop" が使用されます。 名詞名 "Proc" が使用されるのは、コマンドレットがプロセスで動作するためです。 次の宣言では、コマンドレット動詞と名詞名がコマンドレットクラスの名前に反映されていることに注意してください。
+コマンドレットの作成の最初の手順では、常にコマンドレットに名前を付け、コマンドレットを実装する .NET クラスを宣言します。 このコマンドレットでは、コマンドレットがシステムプロセスを停止するため、ライフサイクル動詞 "Stop" が使用されます。 名詞名 "Proc" が使用されるのは、コマンドレットがプロセスで動作するためです。 次の宣言では、コマンドレット動詞と名詞名がコマンドレットクラスの名前に反映されていることに注意してください。
 
 > [!NOTE]
 > 承認されたコマンドレットの動詞名の詳細については、「[コマンドレットの動詞名](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
@@ -60,7 +60,7 @@ Public Class StopProcCommand
 
 この入力パラメーターを使用すると、停止するプロセスの名前をユーザーが指定できます。 このパラメーターに対して設定されている `ProcessName` パラメーターを指定するのは、 [`ParameterSetName` attribute キーワード](/dotnet/api/System.Management.Automation.ParameterAttribute)であることに注意してください。
 
-[!code-csharp[StopProcessSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs#L44-L58 "StopProcessSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs" range="44-58":::
 
 ```vb
 <Parameter(Position:=0, ParameterSetName:="ProcessName", _
@@ -229,23 +229,23 @@ Windows PowerShell は、.NET オブジェクトを使用してコマンドレ�
 
 - Windows PowerShell を起動したら、`ProcessId` パラメーターを設定して Stop Proc コマンドレットを実行し、その識別子に基づいてプロセスを停止します。 この場合、コマンドレットは `ProcessId` パラメーターセットを使用してプロセスを停止します。
 
-    ```
-    PS> stop-proc -Id 444
-    Confirm
-    Are you sure you want to perform this action?
-    Performing operation "stop-proc" on Target "notepad (444)".
-    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
-    ```
+  ```
+  PS> stop-proc -Id 444
+  Confirm
+  Are you sure you want to perform this action?
+  Performing operation "stop-proc" on Target "notepad (444)".
+  [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
+  ```
 
 - Windows PowerShell を起動したら、`InputObject` パラメーターを設定して Stop Proc コマンドレットを実行し、`Get-Process` コマンドによって取得されるメモ帳オブジェクトのプロセスを停止します。
 
-    ```
-    PS> get-process notepad | stop-proc
-    Confirm
-    Are you sure you want to perform this action?
-    Performing operation "stop-proc" on Target "notepad (444)".
-    [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
-    ```
+  ```
+  PS> get-process notepad | stop-proc
+  Confirm
+  Are you sure you want to perform this action?
+  Performing operation "stop-proc" on Target "notepad (444)".
+  [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
+  ```
 
 ## <a name="see-also"></a>参照
 

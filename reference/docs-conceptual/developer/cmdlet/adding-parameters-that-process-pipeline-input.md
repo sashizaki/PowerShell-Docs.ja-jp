@@ -11,12 +11,12 @@ helpviewer_keywords:
 - parameters [PowerShell Programmer's Guide], pipeline input
 ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
 caps.latest.revision: 8
-ms.openlocfilehash: 9ecb73a4138a5853fa5fb378874da2d81c5dbdba
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4966ac274713899e7ea9e0c375dca220a972a1b5
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364601"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978731"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>パイプライン入力を処理するパラメーターを追加する
 
@@ -43,13 +43,14 @@ Public Class GetProcCommand
 
 ## <a name="defining-input-from-the-pipeline"></a>パイプラインからの入力の定義
 
-このセクションでは、コマンドレットのパイプラインからの入力を定義する方法について説明します。 この Get Proc コマンドレットは、「[コマンドライン入力を処理するパラメーターの追加](./adding-parameters-that-process-command-line-input.md)」で説明されているように、`Name` パラメーターを表すプロパティを定義します。 (パラメーターの宣言に関する一般的な情報については、「」を参照してください)。
+このセクションでは、コマンドレットのパイプラインからの入力を定義する方法について説明します。 この Get Proc コマンドレットは、「[コマンドライン入力を処理するパラメーターの追加](./adding-parameters-that-process-command-line-input.md)」で説明されているように、`Name` パラメーターを表すプロパティを定義します。
+(パラメーターの宣言に関する一般的な情報については、「」を参照してください)。
 
 ただし、コマンドレットでパイプラインの入力を処理する必要がある場合は、Windows PowerShell ランタイムによって入力値にバインドされたパラメーターを持つ必要があります。 これを行うには、`ValueFromPipeline` キーワードを追加するか、または `ValueFromPipelineByProperty` キーワードを[system.object 属性宣言](/dotnet/api/System.Management.Automation.ParameterAttribute)に追加する必要があります。 コマンドレットが入力オブジェクト全体にアクセスする場合は、`ValueFromPipeline` キーワードを指定します。 コマンドレットがオブジェクトのプロパティのみにアクセスする場合は、`ValueFromPipelineByProperty` を指定します。
 
 パイプライン入力を受け入れるこの Get Proc コマンドレットの `Name` パラメーターのパラメーター宣言を次に示します。
 
-[!code-csharp[GetProcessSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs#L35-L44 "GetProcessSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs" range="35-44":::
 
 ```vb
 <Parameter(Position:=0, ValueFromPipeline:=True, _
@@ -77,7 +78,7 @@ End Property
 
 コマンドレットがパイプライン入力を処理する場合は、適切な入力処理メソッドをオーバーライドする必要があります。 基本的な入力処理方法は、[最初のコマンドレットを作成するとき](./creating-a-cmdlet-without-parameters.md)に導入されます。
 
-この Get Proc コマンドレットは、ユーザーまたはスクリプトによって指定された `Name` パラメーターの入力を処理するために、 [system.servicemodel メソッドを](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)オーバーライドします。 このメソッドは、要求された各プロセス名のプロセスを取得します。名前が指定されていない場合は、すべてのプロセスを取得します。 [WriteObject (system.object, system.string)](/dotnet/api/system.management.automation.cmdlet.writeobject?view=pscore-6.2.0#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)の呼び出しが、出力オブジェクトをパイプラインに送信するための出力機構として使用されていることに注意し[てください。](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) この呼び出しの2番目のパラメーターである `enumerateCollection`は `true` に設定され、プロセスオブジェクトの配列を列挙し、一度に1つのプロセスをコマンドラインに書き込むように Windows PowerShell ランタイムに指示します。
+この Get Proc コマンドレットは、ユーザーまたはスクリプトによって指定された `Name` パラメーターの入力を処理するために、 [system.servicemodel メソッドを](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)オーバーライドします。 このメソッドは、要求された各プロセス名のプロセスを取得します。名前が指定されていない場合は、すべてのプロセスを取得します。 [WriteObject (system.object, system.string)](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)の呼び出しが、出力オブジェクトをパイプラインに送信するための出力機構として使用されていることに注意し[てください。](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) この呼び出しの2番目のパラメーターである `enumerateCollection`は `true` に設定され、プロセスオブジェクトの配列を列挙し、一度に1つのプロセスをコマンドラインに書き込むように Windows PowerShell ランタイムに指示します。
 
 ```csharp
 protected override void ProcessRecord()
@@ -142,37 +143,37 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
 
 - Windows PowerShell プロンプトで、次のコマンドを入力して、パイプラインを介してプロセス名を取得します。
 
-    ```powershell
-    PS> type ProcessNames | get-proc
-    ```
+  ```powershell
+  PS> type ProcessNames | get-proc
+  ```
 
-次のような出力が表示されます。
+  次のような出力が表示されます。
 
-    ```
-    Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName
-    -------  ------  -----   ----- -----   ------    --  -----------
-        809      21  40856    4448    147    9.50  2288  iexplore
-        737      21  26036   16348    144   22.03  3860  iexplore
-         39       2   1024     388     30    0.08  3396  notepad
-       3927      62  71836   26984    467  195.19  1848  OUTLOOK
-    ```
+  ```
+  Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName
+  -------  ------  -----   ----- -----   ------    --  -----------
+      809      21  40856    4448    147    9.50  2288  iexplore
+      737      21  26036   16348    144   22.03  3860  iexplore
+       39       2   1024     388     30    0.08  3396  notepad
+     3927      62  71836   26984    467  195.19  1848  OUTLOOK
+  ```
 
 - 次の行を入力して、"IEXPLORE.EXE" というプロセスから `Name` プロパティを持つプロセスオブジェクトを取得します。 この例では、(Windows PowerShell によって提供される) `Get-Process` コマンドレットを上流のコマンドとして使用して、"IEXPLORE.EXE" プロセスを取得します。
 
-    ```powershell
-    PS> get-process iexplore | get-proc
-    ```
+  ```powershell
+  PS> get-process iexplore | get-proc
+  ```
 
-次のような出力が表示されます。
+  次のような出力が表示されます。
 
-    ```
-    Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName
-    -------  ------  -----      ----- -----   ------     -- -----------
-        801      21  40720    6544    142    9.52  2288  iexplore
-        726      21  25872   16652    138   22.09  3860  iexplore
-        801      21  40720    6544    142    9.52  2288  iexplore
-        726      21  25872   16652    138   22.09  3860  iexplore
-    ```
+  ```
+  Handles  NPM(K)  PM(K)   WS(K)  VS(M)  CPU(s)    Id  ProcessName
+  -------  ------  -----   ----- -----   ------    --  -----------
+      801      21  40720    6544    142    9.52  2288  iexplore
+      726      21  25872   16652    138   22.09  3860  iexplore
+      801      21  40720    6544    142    9.52  2288  iexplore
+      726      21  25872   16652    138   22.09  3860  iexplore
+  ```
 
 ## <a name="see-also"></a>参照
 

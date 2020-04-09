@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 92492a7e-257d-47d3-b119-89df3c5545e8
 caps.latest.revision: 9
-ms.openlocfilehash: db7ff3a2dbd92f562379d206db494ab92ef08736
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4d697e73ff4ab4cc4b88593f814d589f89005663
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367301"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978646"
 ---
 # <a name="windows-powershell02-sample"></a>Windows PowerShell02 サンプル
 
@@ -23,25 +23,21 @@ ms.locfileid: "72367301"
 
 - このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>使用例
+## <a name="demonstrates"></a>例
 
 このサンプルは、次の操作方法を示します。
 
 - 実行空間の最小数と最大数を指定して RunspacePool オブジェクトを作成し、同時に開くことができるようにします。
-
 - コマンドの一覧を作成します。
-
 - コマンドを非同期に実行します。
-
 - [Runspacepool. Getavailablerunspaces *](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool.GetAvailableRunspaces)メソッドを呼び出して、解放されている実行空間の数を確認します。
-
 - コマンドの出力を、system.servicemodel [*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)メソッドを使用してキャプチャします。
 
 ## <a name="example"></a>例
 
 このサンプルでは、実行空間プールの実行空間を開く方法と、それらの実行空間でコマンドを非同期に実行する方法を示します。
 
-[!code-csharp[PowerShell02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/PowerShell02/PowerShell02.cs#L11-L96 "PowerShell02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/PowerShell02/PowerShell02.cs" range="11-96":::
 
 ## <a name="see-also"></a>参照
 

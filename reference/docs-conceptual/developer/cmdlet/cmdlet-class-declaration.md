@@ -11,16 +11,17 @@ helpviewer_keywords:
 - declaring cmdlets [PowerShell SDK]
 ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
 caps.latest.revision: 14
-ms.openlocfilehash: 979025ad5c34ab73dcc23d0e38ffb9acc431f15a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0de49d979c31b0e8d111323a2e1899d97868ec3f
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363521"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978714"
 ---
 # <a name="cmdlet-class-declaration"></a>コマンドレットのクラス宣言
 
-Microsoft .NET Framework クラスは、クラスのメタデータとして**コマンドレット**属性を指定することで、コマンドレットとして宣言されます。 (**コマンドレット**属性は、すべてのコマンドレットに必要な唯一の属性です)。 **コマンドレット**の属性を指定する場合は、コマンドレットを識別する動詞と名詞のペアをユーザーに指定する必要があります。 また、コマンドレットがサポートする Windows PowerShell の機能について説明する必要があります。 **コマンドレット**属性の指定に使用される宣言構文の詳細については、「[コマンドレット属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
+Microsoft .NET Framework クラスは、クラスのメタデータとして**コマンドレット**属性を指定することで、コマンドレットとして宣言されます。 (**コマンドレット**属性は、すべてのコマンドレットに必要な唯一の属性です)。
+**コマンドレット**の属性を指定する場合は、コマンドレットを識別する動詞と名詞のペアをユーザーに指定する必要があります。 また、コマンドレットがサポートする Windows PowerShell の機能について説明する必要があります。 **コマンドレット**属性の指定に使用される宣言構文の詳細については、「[コマンドレット属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
 
 > [!NOTE]
 > **コマンドレット**属性は、system.servicemodel[属性](/dotnet/api/System.Management.Automation.CmdletAttribute)クラスによって定義されます。 このクラスのプロパティは、属性を宣言するときに使用される宣言パラメーターに対応します。
@@ -33,7 +34,7 @@ Microsoft .NET Framework クラスは、クラスのメタデータとして**�
 
 コマンドレット名に使用できない特殊文字の一覧については、「[必要な開発ガイドライン](./required-development-guidelines.md)」を参照してください。
 
-## <a name="verbs"></a>[動詞]
+## <a name="verbs"></a>動詞
 
 動詞を指定する場合、開発ガイドラインでは、Windows PowerShell によって提供される定義済み動詞のいずれかを使用する必要があります。 これらの定義済み動詞のいずれかを使用すると、作成したコマンドレットと、Microsoft によって作成されたコマンドレットと他のコマンドレットとの間の一貫性が確保されます。 たとえば、データを取得するコマンドレットには、"Get" 動詞を使用します。
 
@@ -45,11 +46,11 @@ Microsoft .NET Framework クラスは、クラスのメタデータとして**�
 
 **コマンドレット**属性の指定に使用される宣言構文の詳細については、「[コマンドレット属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
 
-## <a name="cmdlet-class-definition"></a>コマンドレット クラスの定義
+## <a name="cmdlet-class-definition"></a>コマンドレットのクラス定義
 
 次のコードは、GetProc cmdlet クラスの定義です。 Pascal の大文字と小文字の区別が使用され、クラスの名前にはコマンドレットの動詞と名詞が含まれていることに注意してください。
 
-[!code-csharp[GetProcessSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs#L33-L34 "GetProcessSample01.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample01/GetProcessSample01.cs" range="33-34":::
 
 ## <a name="pascal-casing"></a>Pascal 形式の文字種
 

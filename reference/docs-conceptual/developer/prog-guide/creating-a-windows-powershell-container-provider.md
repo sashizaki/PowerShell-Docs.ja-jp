@@ -1,22 +1,13 @@
 ---
-title: Windows PowerShell コンテナープロバイダーを作成する |Microsoft Docs
-ms.custom: ''
+title: Windows PowerShell コンテナー プロバイダーを作成する
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
 ms.topic: article
-helpviewer_keywords:
-- providers [PowerShell Programmer's Guide], container provider
-- container providers [PowerShell Programmer's Guide]
-ms.assetid: a7926647-0d18-45b2-967e-b31f92004bc4
-caps.latest.revision: 5
-ms.openlocfilehash: 69e45de4220a234783d35a877116ad5a5e47d182
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: eec92d526ad78d2351eef6679eaa0df19900715b
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870780"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978493"
 ---
 # <a name="creating-a-windows-powershell-container-provider"></a>Windows PowerShell コンテナー プロバイダーを作成する
 
@@ -42,7 +33,7 @@ Windows PowerShell コンテナープロバイダーは、 [Containercmdletprovi
 public class AccessDBProvider : ContainerCmdletProvider
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L34-L35 "AccessDBProviderSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs" range="34-35":::
 
 このクラス定義では、このクラス[の属性](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)に2つのパラメーターが含まれていることに注意してください。 最初のパラメーターは、Windows PowerShell によって使用されるプロバイダーのわかりやすい名前を指定します。 2番目のパラメーターは、コマンドの処理中にプロバイダーが Windows PowerShell ランタイムに公開する Windows PowerShell 固有の機能を指定します。 このプロバイダーには、Windows PowerShell 固有の機能は追加されていません。
 
@@ -118,7 +109,7 @@ protected override void GetChildItems(string path, bool recurse)
 } // GetChildItems
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L311-L362 "AccessDBProviderSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs" range="311-362":::
 
 #### <a name="things-to-remember-about-implementing-getchilditems"></a>GetChildItems の実装に関する注意事項
 
@@ -126,7 +117,7 @@ protected override void GetChildItems(string path, bool recurse)
 
 - プロバイダークラスを定義すると、Windows PowerShell コンテナープロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合は、 [Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)メソッドの実装で、メソッドに渡されるパスが指定された機能の要件を満たしていることを確認する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 ["..](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
 
-- このメソッドの実装では、項目がユーザーに表示される可能性のある項目へのアクセス形式を考慮する必要があります。 たとえば、ユーザーがファイルシステムプロバイダー (Windows PowerShell によって提供される) を介してファイルに対する書き込みアクセス権を持っていても、 [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)読み取りアクセス権を持っていない場合、ファイルはまだ存在しています`true`。 実装では、子を列挙できるかどうかを確認するために、親項目のチェックが必要になる場合があります。
+- このメソッドの実装では、項目がユーザーに表示される可能性のある項目へのアクセス形式を考慮する必要があります。 たとえば、ユーザーがファイルシステムプロバイダー (Windows PowerShell によって提供される) を介してファイルに対する書き込みアクセス権を持っていても、読み取りアクセス権を持っていない場合は、ファイルがまだ存在していて、かつ、`true`[が返され](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)ます。 実装では、子を列挙できるかどうかを確認するために、親項目のチェックが必要になる場合があります。
 
 - 複数の項目を書き込む場合、 [Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)メソッドには時間がかかることがあります。 プロバイダーを設計して、1回に1つずつ、[システム](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)を使用して項目を書き込むようにすることができます。 この手法を使用すると、ストリーム内のユーザーに項目が表示されます。
 
@@ -134,7 +125,7 @@ protected override void GetChildItems(string path, bool recurse)
 
 ## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet"></a>Get-childitem コマンドレットへの動的パラメーターのアタッチ
 
-Containercmdletprovider を呼び出す`Get-ChildItem`コマンドレット[System.Management.Automation.Provider.Containercmdletprovider.Getchilditems*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)には、実行時に動的に指定される追加のパラメーターが必要な場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell コンテナープロバイダーが[Containercmdletprovider. Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)メソッドを実装する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Get-ChildItem` コマンドレットにパラメーターを追加します。
+[Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)を呼び出す `Get-ChildItem` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell コンテナープロバイダーが[Containercmdletprovider. Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)メソッドを実装する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Get-ChildItem` コマンドレットにパラメーターを追加します。
 
 この Windows PowerShell コンテナープロバイダーは、このメソッドを実装していません。 ただし、次のコードは、このメソッドの既定の実装です。
 
@@ -192,7 +183,7 @@ protected override void GetChildNames(string path,
 } // GetChildNames
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L369-L411 "AccessDBProviderSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs" range="369-411":::
 
 #### <a name="things-to-remember-about-implementing-getchildnames"></a>GetChildNames の実装に関する注意事項
 
@@ -209,7 +200,7 @@ protected override void GetChildNames(string path,
 
 ## <a name="attaching-dynamic-parameters-to-the-get-childitem-cmdlet-name"></a>動的パラメーターを Get-childitem コマンドレット (Name) にアタッチする
 
-`Get-ChildItem` コマンドレット (`Name` パラメーターを使用) には、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell コンテナープロバイダーが[Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)を実装する必要があります。このメソッドは、 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスまたは system.servicemodel 型の Parameterdictionary と同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクト。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Get-ChildItem` コマンドレットにパラメーターを追加します。
+`Get-ChildItem` コマンドレット (`Name` パラメーターを使用) には、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell コンテナープロバイダーが[Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)を実装する必要があります。このメソッドは、 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Get-ChildItem` コマンドレットにパラメーターを追加します。
 
 このプロバイダーは、このメソッドを実装していません。 ただし、次のコードは、このメソッドの既定の実装です。
 
@@ -272,7 +263,7 @@ protected override void NewItem( string path, string type, object newItemValue )
 } // NewItem
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L939-L955 "AccessDBProviderSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs" range="939-955":::
 
 #### <a name="things-to-remember-about-implementing-newitem"></a>NewItem の実装に関する注意事項
 
@@ -283,7 +274,7 @@ protected override void NewItem( string path, string type, object newItemValue )
 
 - `newItemValue` パラメーターの場合は、 [Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドの実装で、少なくとも文字列を受け入れることをお勧めします。 また、同じパスに対し[て、system.servicemodel](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) ........... によって取得されたオブジェクトの型も受け入れます。 [Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドは、convertto-html * メソッドを使用して、型を目的の型に変換できます。 [*](/dotnet/api/System.Management.Automation.LanguagePrimitives.ConvertTo)メソッドを使用して Containercmdletprovider します。
 
-- [Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドの実装では、Containercmdletprovider を呼び出す必要があり[ます。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)データストアに変更を加える前に、戻り値を確認して、その戻り値を確認してください。 Containercmdletprovider の[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)呼び出しによって true が返された後、Newitem * メソッドはを呼び出す[System.Management.Automation.Provider.Containercmdletprovider.Newitem*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem) 必要があります。この場合、* メソッドは[System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)System.object は、危険性の高いシステム変更について追加のチェックとしてメソッドを続行します。
+- [Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドの実装では、Containercmdletprovider を呼び出す必要があり[ます。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)データストアに変更を加える前に、戻り値を確認して、その戻り値を確認してください。 Containercmdletprovider の呼び出しによって true[が返され](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)た後、 [Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドは、危険性の高いシステム変更を確認するために追加のチェックとして、[このメソッドを](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)呼び出す必要があることを確認してから、このメソッドを呼び出します。
 
 ## <a name="attaching-dynamic-parameters-to-the-new-item-cmdlet"></a>動的パラメーターを新しい項目のコマンドレットにアタッチする
 
@@ -315,7 +306,7 @@ protected override void NewItem( string path, string type, object newItemValue )
 
 ## <a name="attaching-dynamic-parameters-to-the-remove-item-cmdlet"></a>動的パラメーターを削除コマンドレットにアタッチする
 
-`Remove-Item` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、コンテナープロバイダーが[Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)メソッドを実装してこれらのパラメーターを処理する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスまたは system.servicemodel 型の Parameterdictionary と同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクト。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Remove-Item` コマンドレットにパラメーターを追加します。
+`Remove-Item` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、コンテナープロバイダーが[Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)メソッドを実装してこれらのパラメーターを処理する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Remove-Item` コマンドレットにパラメーターを追加します。
 
 このコンテナープロバイダーは、このメソッドを実装していません。 ただし、次のコードは、 [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)の既定の実装であることを示しています。
 
@@ -334,7 +325,7 @@ protected override bool HasChildItems( string path )
 } // HasChildItems
 ```
 
-[!code-csharp[AccessDBProviderSample04.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs#L1094-L1097 "AccessDBProviderSample04.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample04/AccessDBProviderSample04.cs" range="1094-1097":::
 
 #### <a name="things-to-remember-about-implementing-haschilditems"></a>HasChildItems の実装に関する注意事項
 
@@ -360,7 +351,7 @@ protected override bool HasChildItems( string path )
 
 - [ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)の実装は、循環リンクがある場合に無限再帰を防ぐことを担当します。また、同様の処理を行います。 このような状態を反映するには、適切な終了例外をスローする必要があります。
 
-- ContainerCmdletProvider メソッドの実装では、 [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)を呼び出す必要があり[ます。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)データストアに変更を加える前に、戻り値を確認して、その戻り値を確認してください。 ContainerCmdletProvider の呼び出しによって true[System.Management.Automation.Provider.Cmdletprovider.ShouldProcess](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)が返された後に、このメソッドはを呼び出す必要[System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)があります。この場合、このメソッドは、 [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)System.object は、危険性の高いシステム変更について追加のチェックとしてメソッドを続行します。 これらのメソッドの呼び出しの詳細については、「[項目名の変更](#renaming-items)」を参照してください。
+- ContainerCmdletProvider メソッドの実装では、 [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)を呼び出す必要があり[ます。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)データストアに変更を加える前に、戻り値を確認して、その戻り値を確認してください。 ContainerCmdletProvider の呼び出しによって true[が返され](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)た後、 [System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドは、システムが危険に陥る可能性があるかどうかを確認するための追加のチェックとして、このメソッドを呼び出す必要があることを確認する必要があり[ます。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue) これらのメソッドの呼び出しの詳細については、「[項目名の変更](#renaming-items)」を参照してください。
 
 ## <a name="attaching-dynamic-parameters-to-the-copy-item-cmdlet"></a>コピー項目のコマンドレットに動的パラメーターをアタッチする
 
@@ -487,7 +478,7 @@ Windows powershell プロバイダーが Windows PowerShell に登録されて�
    Country   : USA
    ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell プロバイダーの作成](./how-to-create-a-windows-powershell-provider.md)
 

@@ -12,30 +12,33 @@ helpviewer_keywords:
 - drives [PowerShell Programmer's Guide]
 ms.assetid: 2b446841-6616-4720-9ff8-50801d7576ed
 caps.latest.revision: 6
-ms.openlocfilehash: 2e3d97e224b06bdf36ac0bc1237911e029ea762d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 88be7cc6cc0ab54604bc9de71e0ae07c20457514
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366831"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978459"
 ---
 # <a name="creating-a-windows-powershell-drive-provider"></a>Windows PowerShell ドライブ プロバイダーを作成する
 
 このトピックでは、windows PowerShell ドライブを介してデータストアにアクセスする方法を提供する Windows PowerShell ドライブプロバイダーを作成する方法について説明します。 この種類のプロバイダーは、Windows PowerShell ドライブプロバイダーとも呼ばれます。 プロバイダーによって使用される Windows PowerShell ドライブは、データストアに接続する手段を提供します。
 
-ここに記載されている Windows PowerShell ドライブプロバイダーは、Microsoft Access データベースへのアクセスを提供します。 このプロバイダーの場合、Windows PowerShell ドライブはデータベースを表し (ドライブプロバイダーに任意の数のドライブを追加することができます)、ドライブの最上位のコンテナーはデータベースのテーブルを表し、コンテナーの項目は次の行を表します。テーブル。
+ここに記載されている Windows PowerShell ドライブプロバイダーは、Microsoft Access データベースへのアクセスを提供します。
+このプロバイダーの場合、Windows PowerShell ドライブはデータベースを表し (ドライブプロバイダーに任意の数のドライブを追加することができます)、ドライブの最上位のコンテナーはデータベース内のテーブルを表し、コンテナーの項目はテーブル内の行を表します。
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Windows PowerShell プロバイダークラスの定義
 
 Drive プロバイダーは、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)基底クラスから派生する .net クラスを定義する必要があります。 このドライブプロバイダーのクラス定義を次に示します。
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L29-L30 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="29-30":::
 
-この例[では、](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)この例では、コマンドの処理中にプロバイダーが windows powershell ランタイムに公開する、プロバイダーのユーザーフレンドリ名と、windows powershell 固有の機能を指定しています。 プロバイダー機能に使用できる値は、system.servicemodel[機能](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙型によって定義されます。 このドライブプロバイダーは、これらの機能のいずれもサポートしていません。
+この例[では、](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)この例では、コマンドの処理中にプロバイダーが windows powershell ランタイムに公開する、プロバイダーのユーザーフレンドリ名と、windows powershell 固有の機能を指定しています。
+プロバイダー機能に使用できる値は、system.servicemodel[機能](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙型によって定義されます。 このドライブプロバイダーは、これらの機能のいずれもサポートしていません。
 
 ## <a name="defining-base-functionality"></a>基本機能の定義
 
-「 [Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」で説明されているように、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスは、プロバイダーの初期化と初期化解除に必要なメソッドを定義する、system.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)の基底クラスから派生します。 セッション固有の初期化情報を追加し、プロバイダーによって使用されるリソースを解放するための機能を実装するには、「[基本的な Windows PowerShell プロバイダーの作成](./creating-a-basic-windows-powershell-provider.md)」を参照してください。 ただし、ほとんどのプロバイダー (ここで説明するプロバイダーを含む) は、Windows PowerShell によって提供されるこの機能の既定の実装を使用できます。
+「 [Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」で説明されているように、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスは、プロバイダーの初期化と初期化解除に必要なメソッドを定義する、system.servicemodel[プロバイダー](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)の基底クラスから派生します。 セッション固有の初期化情報を追加し、プロバイダーによって使用されるリソースを解放するための機能を実装するには、「[基本的な Windows PowerShell プロバイダーの作成](./creating-a-basic-windows-powershell-provider.md)」を参照してください。
+ただし、ほとんどのプロバイダー (ここで説明するプロバイダーを含む) は、Windows PowerShell によって提供されるこの機能の既定の実装を使用できます。
 
 ## <a name="creating-drive-state-information"></a>ドライブの状態情報の作成
 
@@ -43,24 +46,20 @@ Drive プロバイダーは、 [Drivecmdletprovider](/dotnet/api/System.Manageme
 
 このドライブプロバイダーの場合、状態情報には、ドライブ情報の一部として保持されているデータベースへの接続が含まれます。 次に示すコードは、この情報がドライブを説明する[system.management.automation.psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)オブジェクトにどのように格納されるかを示しています。
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L130-L151 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="130-151":::
 
 ## <a name="creating-a-drive"></a>ドライブの作成
 
 Windows PowerShell ランタイムがドライブを作成できるようにするには、ドライブプロバイダーが[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)メソッドを実装する必要があります。 次のコードは、このドライブプロバイダーの[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)メソッドを実装する方法を示しています。
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L42-L84 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="42-84":::
 
 このメソッドをオーバーライドするには、次の操作を行う必要があります。
 
 - [System.management.automation.psdriveinfo *](/dotnet/api/System.Management.Automation.PSDriveInfo.Root)メンバーが存在し、データストアへの接続が可能であることを確認します。
-
 - `New-PSDrive` コマンドレットをサポートして、ドライブを作成し、接続メンバーを設定します。
-
 - 提案されたドライブの[system.management.automation.psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)オブジェクトを検証します。
-
 - ドライブを説明する[system.management.automation.psdriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo)オブジェクトを、必要なパフォーマンスまたは信頼性の情報で変更するか、ドライブを使用して呼び出し元に追加のデータを提供します。
-
 - [WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError)メソッドを使用してエラーを処理した後、`null`を返します。
 
   このメソッドは、メソッドに渡されたドライブ情報またはプロバイダー固有のバージョンのいずれかを返します。
@@ -79,7 +78,7 @@ Windows PowerShell ランタイムがドライブを作成できるようにす�
 
 次のコードは、このドライブプロバイダーの[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを実装する方法を示しています。
 
-[!code-csharp[AccessDBProviderSample02.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs#L91-L116 "AccessDBProviderSample02.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample02/AccessDBProviderSample02.cs" range="91-116":::
 
 ドライブを削除できる場合、メソッドは `drive` パラメーターを使用してメソッドに渡された情報を返す必要があります。 ドライブを削除できない場合、メソッドは例外を書き込み、`null`を返す必要があります。 プロバイダーがこのメソッドをオーバーライドしない場合、このメソッドの既定の実装は、入力として渡されたドライブ情報だけを返します。
 
@@ -109,9 +108,9 @@ Windows PowerShell プロバイダーが Windows PowerShell に登録されて�
 
    **PS > `Get-PSProvider`**
 
-   次の出力が表示されます。
+   次のような出力が表示されます。
 
-   ```output
+   ```Output
    Name                 Capabilities                  Drives
    ----                 ------------                  ------
    AccessDB             None                          {}
@@ -122,15 +121,17 @@ Windows PowerShell プロバイダーが Windows PowerShell に登録されて�
    Registry             ShouldProcess                 {HKLM, HKCU}
    ```
 
-2. オペレーティングシステムの**管理ツール**の **[データソース]** 部分にアクセスして、データベースのデータベースサーバー名 (DSN) が存在することを確認します。 **[USER DSN]** テーブルで、 **[MS Access Database]** をダブルクリックし、ドライブパス C:\ps\northwind.mdb. を追加します。
+2. オペレーティングシステムの**管理ツール**の **[データソース]** 部分にアクセスして、データベースのデータベースサーバー名 (DSN) が存在することを確認します。 **[USER DSN]** テーブルで、 **[MS Access Database]** をダブルクリックし、`C:\ps\northwind.mdb`ドライブパスを追加します。
 
 3. サンプルドライブプロバイダーを使用して新しいドライブを作成します。
 
-   **PS > psdrive-name mydb-root c:\ps\northwind.mdb-psprovider AccessDb**
+   ```powershell
+   new-psdrive -name mydb -root c:\ps\northwind.mdb -psprovider AccessDb`
+   ```
 
-   次の出力が表示されます。
+   次のような出力が表示されます。
 
-   ```output
+   ```Output
    Name     Provider     Root                   CurrentLocation
    ----     --------     ----                   ---------------
    mydb     AccessDB     c:\ps\northwind.mdb
@@ -143,9 +144,9 @@ Windows PowerShell プロバイダーが Windows PowerShell に登録されて�
 
    **PS > (psdrive mydb). 接続**
 
-   次の出力が表示されます。
+   次のような出力が表示されます。
 
-   ```output
+   ```Output
    ConnectionString  : Driver={Microsoft Access Driver (*.mdb)};DBQ=c:\ps\northwind.mdb
    ConnectionTimeout : 15
    Database          : c:\ps\northwind
@@ -159,9 +160,10 @@ Windows PowerShell プロバイダーが Windows PowerShell に登録されて�
 
 5. ドライブを取り外し、シェルを終了します。
 
-   **PS > psdrive mydb**
-
-   **PS > 終了**
+   ```powershell
+   PS> remove-psdrive mydb
+   PS> exit
+   ```
 
 ## <a name="see-also"></a>参照
 

@@ -11,12 +11,12 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], item provider
 ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
 caps.latest.revision: 6
-ms.openlocfilehash: a64e49894ce5195cc177e97a7049740389b09456
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 32f58d70dc01130f37639960109bf9ef4a8aa7cc
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870712"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978442"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Windows PowerShell アイテム プロバイダーを作成する
 
@@ -32,7 +32,7 @@ ms.locfileid: "75870712"
 
 Windows PowerShell 項目プロバイダーでは、.NET クラスを定義する必要があります。このクラス[の基底クラス](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)から派生します。 このセクションで説明する項目プロバイダーのクラス定義を次に示します。
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L34-L36 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="34-36":::
 
 このクラス定義では、 [system.string 属性に2つのパラメーター](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)が含まれていることに注意してください。 最初のパラメーターは、Windows PowerShell によって使用されるプロバイダーのわかりやすい名前を指定します。 2番目のパラメーターは、コマンドの処理中にプロバイダーが Windows PowerShell ランタイムに公開する Windows PowerShell 固有の機能を指定します。 このプロバイダーには、Windows PowerShell 固有の機能は追加されていません。
 
@@ -52,7 +52,7 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 ここでは、このプロバイダーのシステムの管理を実装しています。このプロバイダーの[Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)メソッド。 この実装では、NormalizePath ヘルパーメソッドを呼び出して、パス内のすべての区切り記号を一様なものに変換することに注意してください。
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L274-L298 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="274-298":::
 
 ## <a name="determining-if-an-item-exists"></a>項目が存在するかどうかを判断する
 
@@ -60,7 +60,7 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 次に示すのは、このプロバイダーの system.servicemodel.................... [Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)メソッドの実装です。 このメソッドは PathIsDrive、ChunkPath、および GetTable helper メソッドを呼び出し、プロバイダーによって定義されたオブジェクトを使用します。
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L229-L267 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="229-267":::
 
 #### <a name="things-to-remember-about-implementing-itemexists"></a>ItemExists の実装に関する注意事項
 
@@ -68,11 +68,11 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 - プロバイダークラスを定義すると、Windows PowerShell 項目プロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合、[システム](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)の実装では、メソッドに渡されるパスが指定された機能の要件を満たしていることを確認する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 [".](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
 
-- このメソッドの実装では、項目がユーザーに表示される可能性のある項目への任意の形式のアクセスを処理する必要があります。 たとえば、ユーザーがファイルシステムプロバイダー (Windows PowerShell によって提供される) を介してファイルに対する書き込みアクセス権を持っていても、 [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)読み取りアクセス権を持っていない場合、ファイルはまだ存在しています`true`。 子項目を列挙できるかどうかを確認するために、の実装で親項目を確認することが必要になる場合があります。
+- このメソッドの実装では、項目がユーザーに表示される可能性のある項目への任意の形式のアクセスを処理する必要があります。 たとえば、ユーザーがファイルシステムプロバイダー (Windows PowerShell によって提供される) を介してファイルに対する書き込みアクセス権を持っていても、読み取りアクセス権を持っていない場合は、ファイルがまだ存在していて、かつ、`true`[が返され](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)ます。 子項目を列挙できるかどうかを確認するために、の実装で親項目を確認することが必要になる場合があります。
 
 ## <a name="attaching-dynamic-parameters-to-the-test-path-cmdlet"></a>テストパスコマンドレットへの動的パラメーターのアタッチ
 
-場合によっては、`Test-Path` コマンドレットを実行すると、実行時に動的に指定される追加のパラメーターが必要になることが[あります。](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで、system.servicemodel.............................- [Dynamicsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters)メソッドを実装します。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスまたは system.servicemodel 型の Parameterdictionary と同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクト。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Test-Path` コマンドレットにパラメーターを追加します。
+場合によっては、`Test-Path` コマンドレットを実行すると、実行時に動的に指定される追加のパラメーターが必要になることが[あります。](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで、system.servicemodel.............................- [Dynamicsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters)メソッドを実装します。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Test-Path` コマンドレットにパラメーターを追加します。
 
 この Windows PowerShell 項目プロバイダーは、このメソッドを実装していません。 ただし、次のコードは、このメソッドの既定の実装です。
 
@@ -84,7 +84,7 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 次に示すのは、このプロバイダーに対する system.servicemodel......................... [...](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)を実装したものです。 このメソッドは、GetTable と GetRow のヘルパーメソッドを使用して、Access データベース内のテーブルまたはデータテーブル内の行のいずれかの項目を取得します。
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L132-L163 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="132-163":::
 
 #### <a name="things-to-remember-about-implementing-getitem"></a>GetItem の実装に関する注意事項
 
@@ -96,7 +96,7 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 ## <a name="attaching-dynamic-parameters-to-the-get-item-cmdlet"></a>動的パラメーターの Get Item コマンドレットへのアタッチ
 
-`Get-Item` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで[Getitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters)メソッドを実装する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスまたは system.servicemodel 型の Parameterdictionary と同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクト。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Get-Item` コマンドレットにパラメーターを追加します。
+`Get-Item` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで[Getitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters)メソッドを実装する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Get-Item` コマンドレットにパラメーターを追加します。
 
 このプロバイダーは、このメソッドを実装していません。 ただし、次のコードは、このメソッドの既定の実装です。
 
@@ -124,7 +124,7 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 ## <a name="retrieving-dynamic-parameters-for-setitem"></a>SetItem の動的パラメーターの取得
 
-`Set-Item` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで[Setitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters)メソッドを実装する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスまたは system.servicemodel 型の Parameterdictionary と同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクト。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Set-Item` コマンドレットにパラメーターを追加します。
+`Set-Item` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで[Setitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters)メソッドを実装する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Set-Item` コマンドレットにパラメーターを追加します。
 
 このプロバイダーは、このメソッドを実装していません。 ただし、次のコードは、このメソッドの既定の実装です。
 
@@ -152,7 +152,7 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 ## <a name="retrieve-dynamic-parameters-for-clearitem"></a>ClearItem の動的パラメーターの取得
 
-`Clear-Item` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで、システムを実装する必要があります。 [Clearitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters)メソッド。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスまたは system.servicemodel 型の Parameterdictionary と同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクト。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Clear-Item` コマンドレットにパラメーターを追加します。
+`Clear-Item` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで、システムを実装する必要があります。 [Clearitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters)メソッド。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Clear-Item` コマンドレットにパラメーターを追加します。
 
 この項目プロバイダーは、このメソッドを実装していません。 ただし、次のコードは、このメソッドの既定の実装です。
 
@@ -176,7 +176,7 @@ Windows PowerShell 項目プロバイダーは、 [Invokedefaultaction *](/dotne
 
 ## <a name="retrieve-dynamic-parameters-for-invokedefaultaction"></a>InvokeDefaultAction の動的パラメーターの取得
 
-`Invoke-Item` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーでは、system.string [*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters)メソッドを実装する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスまたは system.servicemodel 型の Parameterdictionary と同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクト。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Invoke-Item` コマンドレットに動的パラメーターを追加します。
+`Invoke-Item` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーでは、system.string [*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters)メソッドを実装する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Invoke-Item` コマンドレットに動的パラメーターを追加します。
 
 この項目プロバイダーは、このメソッドを実装していません。 ただし、次のコードは、このメソッドの既定の実装です。
 
@@ -234,7 +234,7 @@ Windows PowerShell 項目プロバイダーは、 [Invokedefaultaction *](/dotne
 
 この Windows PowerShell 項目プロバイダーが Windows PowerShell に登録されている場合、プロバイダーの基本およびドライブの機能のみをテストできます。 項目の操作をテストするには、「[コンテナーの Windows PowerShell プロバイダーの実装](./creating-a-windows-powershell-container-provider.md)」で説明されているコンテナー機能も実装する必要があります。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 

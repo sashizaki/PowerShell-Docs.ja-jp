@@ -11,16 +11,16 @@ helpviewer_keywords:
 - providers [PowerShell Programmer's Guide], base provider
 ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
 caps.latest.revision: 7
-ms.openlocfilehash: e825581b96f0f33893b38f9f6499dd46a7bf38eb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0f8621cd22ca402f3a564ccdfb36c97da68dac6a
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360521"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978510"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>基本的な Windows PowerShell プロバイダーを作成する
 
-このトピックは、Windows PowerShell プロバイダーを作成する方法を学習するための出発点となります。 ここで説明する基本的なプロバイダーは、プロバイダーを開始および停止するためのメソッドを提供します。このプロバイダーは、データストアにアクセスしたり、データストア内のデータを取得または設定したりする手段を提供しませんが、によって必要な基本機能を提供します。すべてのプロバイダー。
+このトピックは、Windows PowerShell プロバイダーを作成する方法を学習するための出発点となります。 ここで説明する基本的なプロバイダーは、プロバイダーを開始および停止するためのメソッドを提供します。このプロバイダーは、データストアにアクセスしたり、データストア内のデータを取得または設定したりする手段を提供するものではなく、すべてのプロバイダーで必要な基本的な機能を提供します。
 
 前述のように、ここで説明する基本的なプロバイダーは、プロバイダーを起動および停止するためのメソッドを実装しています。 Windows PowerShell ランタイムは、これらのメソッドを呼び出して、プロバイダーの初期化と初期化解除を行います。
 
@@ -38,10 +38,9 @@ Windows PowerShell プロバイダーを作成するための最初の手順は�
 
 この基本プロバイダーのクラス定義を次に示します。
 
-[!code-csharp[AccessDBProviderSample01.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs#L23-L24 "AccessDBProviderSample01.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs" range="23-24":::
 
 クラス定義の直前に、構文 [の表示プロバイダー ()] を使用して、"system.servicemodel" 属性を宣言する必要が[あります。](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)
-
 
 必要に応じて、クラスをさらに宣言する属性キーワードを設定できます。 ここで宣言されている system.string 属性に[は、2つのパラメーター](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)が含まれていることに注意してください。 最初の属性パラメーターは、プロバイダーの既定のわかりやすい名前を指定します。ユーザーは後で変更できます。 2番目のパラメーターは、コマンドの処理中にプロバイダーが Windows PowerShell ランタイムに公開する Windows PowerShell 定義の機能を指定します。 プロバイダー機能に使用できる値は、system.servicemodel[機能](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙型によって定義されます。 これは基本プロバイダーであるため、機能をサポートしていません。
 
@@ -80,7 +79,7 @@ Windows PowerShell プロバイダーが使用するリソースを解放する�
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesaccessdbprov01#accessdbprov01ProviderStop](Msh_samplesaccessdbprov01#accessdbprov01ProviderStop)]  -->
 
-## <a name="code-sample"></a>コードサンプル
+## <a name="code-sample"></a>コード サンプル
 
 完全なサンプルコードについては、「 [AccessDbProviderSample01 のコードサンプル](./accessdbprovidersample01-code-sample.md)」を参照してください。
 
@@ -92,9 +91,9 @@ Windows powershell プロバイダーが Windows PowerShell に登録された�
 Get-PSProvider
 ```
 
-次の出力が表示されます。
+次のような出力が表示されます。
 
-```output
+```Output
 Name                 Capabilities                  Drives
 ----                 ------------                  ------
 AccessDb             None                          {}
