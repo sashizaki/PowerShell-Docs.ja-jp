@@ -8,25 +8,23 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
 caps.latest.revision: 5
-ms.openlocfilehash: 26c7bafe708fbbd89aecb002f3591daa03f56b77
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ee4a0cb6032361aecdf21ab7346521b4757f7030
+ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417526"
+ms.lasthandoff: 04/08/2020
+ms.locfileid: "80978561"
 ---
-# <a name="accessdbprovidersample03-code-sample"></a><span data-ttu-id="c6e29-102">AccessDbProviderSample03 コード サンプル</span><span class="sxs-lookup"><span data-stu-id="c6e29-102">AccessDbProviderSample03 Code Sample</span></span>
+# <a name="accessdbprovidersample03-code-sample"></a><span data-ttu-id="71ede-102">AccessDbProviderSample03 コード サンプル</span><span class="sxs-lookup"><span data-stu-id="71ede-102">AccessDbProviderSample03 Code Sample</span></span>
 
-<span data-ttu-id="c6e29-103">次のコードは、「 [Windows Powershell 項目プロバイダーの作成](./creating-a-windows-powershell-item-provider.md)」で説明されている windows powershell プロバイダーの実装を示しています。</span><span class="sxs-lookup"><span data-stu-id="c6e29-103">The following code shows the implementation of the Windows PowerShell provider described in [Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).</span></span> <span data-ttu-id="c6e29-104">このプロバイダーは、データストア内のデータを操作できます。</span><span class="sxs-lookup"><span data-stu-id="c6e29-104">This provider that can manipulate the data in a data store.</span></span>
+<span data-ttu-id="71ede-103">次のコードは、「 [Windows Powershell 項目プロバイダーの作成](./creating-a-windows-powershell-item-provider.md)」で説明されている windows powershell プロバイダーの実装を示しています。</span><span class="sxs-lookup"><span data-stu-id="71ede-103">The following code shows the implementation of the Windows PowerShell provider described in [Creating a Windows PowerShell Item Provider](./creating-a-windows-powershell-item-provider.md).</span></span>
+<span data-ttu-id="71ede-104">このプロバイダーは、データストア内のデータを操作できます。</span><span class="sxs-lookup"><span data-stu-id="71ede-104">This provider that can manipulate the data in a data store.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="c6e29-105">このプロバイダーのC#ソースファイル (AccessDBSampleProvider03.cs) をダウンロードするには、Microsoft Windows Software Development Kit For windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。</span><span class="sxs-lookup"><span data-stu-id="c6e29-105">You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="c6e29-106">ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6e29-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
->
-> <span data-ttu-id="c6e29-107">ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。</span><span class="sxs-lookup"><span data-stu-id="c6e29-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span>
->
-> <span data-ttu-id="c6e29-108">その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="c6e29-108">For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).</span></span>
+> <span data-ttu-id="71ede-105">このプロバイダーのC#ソースファイル (AccessDBSampleProvider03.cs) をダウンロードするには、Microsoft Windows Software Development Kit For windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。</span><span class="sxs-lookup"><span data-stu-id="71ede-105">You can download the C# source file (AccessDBSampleProvider03.cs) for this provider using the Microsoft Windows Software Development Kit for Windows Vista and .NET Framework 3.0 Runtime Components.</span></span> <span data-ttu-id="71ede-106">ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="71ede-106">For download instructions, see [How to Install Windows PowerShell and Download the Windows PowerShell SDK](/powershell/scripting/developer/installing-the-windows-powershell-sdk).</span></span>
+> <span data-ttu-id="71ede-107">ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。</span><span class="sxs-lookup"><span data-stu-id="71ede-107">The downloaded source files are available in the **\<PowerShell Samples>** directory.</span></span> <span data-ttu-id="71ede-108">その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="71ede-108">For more information about other Windows PowerShell provider implementations, see [Designing Your Windows PowerShell Provider](./designing-your-windows-powershell-provider.md).</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="c6e29-109">コード サンプル</span><span class="sxs-lookup"><span data-stu-id="c6e29-109">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="71ede-109">コード サンプル</span><span class="sxs-lookup"><span data-stu-id="71ede-109">Code Sample</span></span>
 
 ```csharp
 using System;
@@ -997,10 +995,10 @@ namespace Microsoft.Samples.PowerShell.Providers
 }
 ```
 
-[!code-csharp[AccessDBProviderSample03.cs](../../../../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs#L11-L976 "AccessDBProviderSample03.cs")]
+:::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample03/AccessDBProviderSample03.cs" range="11-976":::
 
-## <a name="see-also"></a><span data-ttu-id="c6e29-110">参照</span><span class="sxs-lookup"><span data-stu-id="c6e29-110">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="71ede-110">参照</span><span class="sxs-lookup"><span data-stu-id="71ede-110">See Also</span></span>
 
-[<span data-ttu-id="c6e29-111">Windows PowerShell プログラマーズガイド</span><span class="sxs-lookup"><span data-stu-id="c6e29-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
+[<span data-ttu-id="71ede-111">Windows PowerShell プログラマーズガイド</span><span class="sxs-lookup"><span data-stu-id="71ede-111">Windows PowerShell Programmer's Guide</span></span>](./windows-powershell-programmer-s-guide.md)
 
-[<span data-ttu-id="c6e29-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="c6e29-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="71ede-112">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="71ede-112">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
