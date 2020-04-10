@@ -158,7 +158,7 @@
           href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
         - name: Visual Studio Code を使用したリモート編集およびデバッグ
           href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-        - name: VSCode と PowerShell でのファイルのエンコードの概要
+        - name: VS Code と PowerShell でのファイルのエンコードの概要
           href: components/vscode/understanding-file-encoding.md
     - name: Web アクセス
       items:
