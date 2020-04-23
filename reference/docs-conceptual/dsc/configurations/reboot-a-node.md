@@ -3,10 +3,10 @@ ms.date: 01/17/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: ノードを再起動する
 ms.openlocfilehash: 22c63fab9b6646f522f8531b46a43a94ff883552
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954029"
 ---
 # <a name="reboot-a-node"></a>ノードを再起動する
@@ -15,7 +15,7 @@ ms.locfileid: "71954029"
 > このトピックでは、ノードの再起動方法について説明します。 再起動を成功させるために、**ActionAfterReboot** と **RebootNodeIfNeeded** の LCM 設定は適切に構成される必要があります。
 > ローカル構成マネージャーの設定については、「[ローカル構成マネージャーの構成](../managing-nodes/metaConfig.md)」または[ローカル構成マネージャー (v4) の構成](../managing-nodes/metaConfig4.md)に関するページを参照してください。
 
-ノードは、`$global:DSCMachineStatus` フラグを使用することで、リソース内から再起動できます。 `Set-TargetResource` 関数でこのフラグを `1` に設定すると、現在のリソースの **Set** メソッドの直後に、LCM によってノードが再起動されます。 このフラグを使用して、[ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc) DSC リソース モジュールの **PendingReboot** リソースで、DSC の外部で再起動が保留されているかどうかを検出します。
+ノードは、`$global:DSCMachineStatus` フラグを使用することで、リソース内から再起動できます。 `1` 関数でこのフラグを `Set-TargetResource` に設定すると、現在のリソースの **Set** メソッドの直後に、LCM によってノードが再起動されます。 このフラグを使用して、**ComputerManagementDsc** DSC リソース モジュールの [PendingReboot](https://github.com/PowerShell/ComputerManagementDsc) リソースで、DSC の外部で再起動が保留されているかどうかを検出します。
 
 ご利用の[構成](configurations.md)では、ノードの再起動を必要とするステップを実行できます。 これには次のような内容を含めることができます。
 
@@ -45,7 +45,7 @@ PendingReboot [String] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 | プロパティ | 説明 |
 | --- | --- |

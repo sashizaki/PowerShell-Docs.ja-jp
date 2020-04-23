@@ -3,10 +3,10 @@ ms.date: 01/10/2020
 keywords: powershell,コマンドレット
 title: 移植可能なモジュールの作成
 ms.openlocfilehash: 124e6efadfd07b8c5214a5c0446b1589f7142388
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "76022246"
 ---
 # <a name="portable-modules"></a>移植可能なモジュール
@@ -198,9 +198,9 @@ PowerShell Standard は、常に上位互換性があるように意図されて
 
 最初に、モジュールが Linux と macOS で動作することを検証します。 次に、モジュール マニフェストでこれらのオペレーティング システムとの互換性を示します。 これにより、[PowerShell ギャラリー][]に発行した後で、ユーザーがオペレーティング システム用のモジュールを見つけやすくなります。
 
-モジュール マニフェスト内で、`PrivateData` プロパティには `PSData` サブプロパティがあります。 `PSData` の省略可能な `Tags` プロパティは、PowerShell ギャラリーに表示される値の配列を受け取ります。 PowerShell ギャラリーでは、次の互換性の値がサポートされています。
+モジュール マニフェスト内で、`PrivateData` プロパティには `PSData` サブプロパティがあります。 `Tags` の省略可能な `PSData` プロパティは、PowerShell ギャラリーに表示される値の配列を受け取ります。 PowerShell ギャラリーでは、次の互換性の値がサポートされています。
 
-| タグ               | [説明]                                |
+| タグ               | 説明                                |
 |-------------------|--------------------------------------------|
 | PSEdition_Core    | PowerShell Core 6 と互換性があります          |
 | PSEdition_Desktop | Windows PowerShell と互換性があります         |

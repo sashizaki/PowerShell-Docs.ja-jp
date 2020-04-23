@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: プル サーバーからのノードを更新する
 ms.openlocfilehash: fa59a2f6574db2dbc96621be4326f1d5a55e5de9
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500675"
 ---
 # <a name="update-nodes-from-a-pull-server"></a>プル サーバーからのノードを更新する

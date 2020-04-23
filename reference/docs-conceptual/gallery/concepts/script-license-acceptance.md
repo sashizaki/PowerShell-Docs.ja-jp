@@ -4,10 +4,10 @@ schema: 2.0.0
 keywords: powershell
 title: スクリプトでのライセンス同意の必須化
 ms.openlocfilehash: e7101eb6a480dd87965b7b9be9d49583042b603f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328083"
 ---
 # <a name="requiring-license-acceptance-for-scripts"></a>スクリプトでのライセンス同意の必須化
@@ -18,7 +18,7 @@ ms.locfileid: "71328083"
 
 ## <a name="examples"></a>例
 
-### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>例 1:ライセンスへの同意が必要な依存関係があるスクリプトをインストールする
+### <a name="example-1-install-script-with-dependencies-requiring-license-acceptance"></a>例 1: ライセンスへの同意が必要な依存関係があるスクリプトをインストールする
 
 スクリプト "ScriptRequireLicenseAcceptance" は、モジュール "ModuleRequireLicenseAcceptance" に依存しています。 ユーザーにはライセンスへの同意が求められます。
 
@@ -38,7 +38,7 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):
 ```
 
-### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>例 2:-AcceptLicense を使用してライセンスへの同意が必要な依存関係があるスクリプトをインストールする
+### <a name="example-2-install-script-with-dependencies-requiring-license-acceptance-and--acceptlicense"></a>例 2: -AcceptLicense を使用してライセンスへの同意が必要な依存関係があるスクリプトをインストールする
 
 スクリプト "ScriptRequireLicenseAcceptance" は、モジュール "ModuleRequireLicenseAcceptance" に依存しています。 -AcceptLicense を指定したため、ライセンスへの同意は求められません。
 
@@ -46,8 +46,8 @@ Do you accept the license terms for module 'ModuleRequireLicenseAcceptance'.
 PS> Install-Script -Name ScriptRequireLicenseAcceptance -AcceptLicense
 ```
 
-## <a name="more-details"></a>詳細情報
+## <a name="more-details"></a>詳細
 
 - [モジュールに対するライセンス同意リクエストのサポート](module-license-acceptance.md)
 - [PowerShellGallery でのライセンス同意リクエストのサポート](../how-to/working-with-packages/packages-that-require-license-acceptance.md)
-- [Azure Automation へのデプロイで表示されるライセンス同意リクエスト](../how-to/working-with-packages/deploy-to-azure-automation.md)
+- [Azure Automation へのデプロイに表示されるライセンス同意リクエスト](../how-to/working-with-packages/deploy-to-azure-automation.md)

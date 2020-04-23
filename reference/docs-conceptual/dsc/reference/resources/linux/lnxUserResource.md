@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 DSC の nxUser リソース
 ms.openlocfilehash: 6d7b52809741813af7fa80b1c6372b267aff4777
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954799"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>Linux 用 DSC の nxUser リソース
@@ -31,7 +31,7 @@ nxUser <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |特定の状態を保証するアカウント名を示します。 |
 |---|---|

@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,コマンドレット
 title: Windows PowerShell Web Access のインストールと使用
 ms.openlocfilehash: a3207c859c4b93b07d4c1b41d7df5269daa39a7d
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79402619"
 ---
 # <a name="install-and-use-windows-powershell-web-access"></a>Windows PowerShell Web Access のインストールと使用
 
-更新:2013 年 11 月 5 日 (編集:2017 年 8 月 23 日)
+更新: 2013 年 11 月 5 日 (編集: 2017 年 8 月 23 日)
 
-適用先:Windows Server 2012 R2、Windows Server 2012
+適用対象: Windows Server 2012 R2、Windows Server 2012
 
 ## <a name="introduction"></a>はじめに
 
@@ -158,7 +158,7 @@ Windows PowerShell Web Access の Web アプリケーションの構成を完了
 
    `Install-PswaWebApplication`
 
-   コマンドレットの実行により次のゲートウェイ設定が構成されます。 これらの設定は、必要に応じて IIS マネージャー コンソールで変更できます。 `Install-PswaWebApplication` コマンドレットの `WebsiteName` および `WebApplicationName` パラメーターの値を指定することも可能です。
+   コマンドレットの実行により次のゲートウェイ設定が構成されます。 これらの設定は、必要に応じて IIS マネージャー コンソールで変更できます。 `WebsiteName` コマンドレットの `WebApplicationName` および `Install-PswaWebApplication` パラメーターの値を指定することも可能です。
 
    - Path: /pswa
    - ApplicationPool: pswa_pool
@@ -202,7 +202,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
    - Windows デスクトップで、タスク バーの **[Windows PowerShell]** を右クリックし、 **[管理者として実行]** をクリックします。
    - Windows の**スタート**画面で、 **[Windows PowerShell]** を右クリックし、 **[管理者として実行]** をクリックします。
 
-2. セッションの構成を使用してユーザー アクセスを制限するための手順 (省略可能):既に存在する規則の中で使用するセッションの構成を確認します。 まだ作成されていない場合は、「[about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations)」に記載されているセッション構成の作成手順を使用してください。
+2. セッション構成を使用してユーザー アクセスを制限するためのオプション手順: 規則内で使用するセッション構成が既に存在することを確認します。 まだ作成されていない場合は、「[about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configurations)」に記載されているセッション構成の作成手順を使用してください。
 
 3. 次のように入力して **Enter** キーを押します。
 
@@ -210,7 +210,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
    この承認規則により、特定のユーザー 1 人が、通常アクセスが許可されているネットワーク上の 1 つのコンピューターにアクセスして、このユーザーが通常必要とするスクリプトとコマンドレットに制限された特定の 1 つのセッション構成にアクセスできるようになります。
 
-   次の例では、`Contoso` ドメインの `JSmith` というユーザーに、コンピューター `Contoso_214` を管理し、`NewAdminsOnly` という名前のセッション構成を使用するためのアクセス権が付与されます。
+   次の例では、`JSmith` ドメインの `Contoso` というユーザーに、コンピューター `Contoso_214` を管理し、`NewAdminsOnly` という名前のセッション構成を使用するためのアクセス権が付与されます。
 
    `Add-PswaAuthorizationRule -UserName Contoso\JSmith -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 
@@ -269,7 +269,7 @@ Windows PowerShell Web Access をインストールした後、IIS Manager で�
 
 5. Windows PowerShell Web Access の Web サイトの追加先となる Web サイト ( **[既定の Web サイト]** など) を右クリックして、 **[アプリケーションの追加]** をクリックします。
 
-6. **"エイリアス"** フィールドに「pswa」と入力するか、別のエイリアスを入力します。 このエイリアスが仮想ディレクトリ名となります。 たとえば、`https://<server-name>/pswa` という URL の **pswa** は、この手順で指定されたものです。
+6. **"エイリアス"** フィールドに「pswa」と入力するか、別のエイリアスを入力します。 このエイリアスが仮想ディレクトリ名となります。 たとえば、**という URL の**pswa`https://<server-name>/pswa` は、この手順で指定されたものです。
 
 7. **"アプリケーション プール"** フィールドで、手順 3. で作成したアプリケーション プールを選択します。
 
@@ -383,7 +383,7 @@ Windows PowerShell Web Access の承認規則とセキュリティの詳細に�
 
    この承認規則により、特定のユーザーが、通常アクセスが許可されているネットワーク上の 1 台のコンピューターにアクセスして、このユーザー&trade;が通常必要とするスクリプトとコマンドレットに制限された特定のセッション構成にアクセスできるようになります。
 
-   次の例では、`Contoso` ドメインの `JSmith` というユーザーに、コンピューター `Contoso_214` を管理し、`NewAdminsOnly` という名前のセッション構成を使用するためのアクセス権が付与されます。
+   次の例では、`JSmith` ドメインの `Contoso` というユーザーに、コンピューター `Contoso_214` を管理し、`NewAdminsOnly` という名前のセッション構成を使用するためのアクセス権が付与されます。
 
    `Add-PswaAuthorizationRule -UserName 'Contoso\JSmith' -ComputerName Contoso_214 -ConfigurationName NewAdminsOnly`
 

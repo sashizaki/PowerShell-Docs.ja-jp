@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 title: スクリプトのトレースとログ
 ms.openlocfilehash: 6b7e5022cb4c974da5ddb3d670b5808dc9fb7bdc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147802"
 ---
 # <a name="script-tracing-and-logging"></a>スクリプトのトレースとログ
@@ -17,28 +17,28 @@ PowerShell には、コマンドレットの呼び出しをログに記録する
 
 イベントは次のとおりです。
 
-| ［チャネル］ |                               Operational                               |
+| チャネル |                               運用時                               |
 | ------- | ----------------------------------------------------------------------- |
-| レベル   | Verbose                                                                 |
+| Level   | "詳細"                                                                 |
 | オペコード  | 作成                                                                  |
 | タスク    | CommandStart                                                            |
-| キーワード | Runspace                                                                |
-| イベント ID | Engine_ScriptBlockCompiled (0x1008 = 4104)                              |
-| メッセージ | Creating Scriptblock text (%1 of %2): </br> %3 </br> ScriptBlock ID: %4 |
+| Keyword | Runspace                                                                |
+| EventId | Engine_ScriptBlockCompiled (0x1008 = 4104)                              |
+| Message | Creating Scriptblock text (%1 of %2): </br> %3 </br> ScriptBlock ID: %4 |
 
 
 メッセージに埋め込まれたテキストは、コンパイルされたスクリプト ブロックの範囲です。 ID は、スクリプト ブロックの有効期間に保持される GUID です。
 
 詳細ログ記録の機能を有効にすると、次のように開始マーカーと終了マーカーが書き込まれます。
 
-| ［チャネル］ |                                 Operational                                |
+| チャネル |                                 運用時                                |
 | ------- | -------------------------------------------------------------------------- |
-| レベル   | Verbose                                                                    |
+| Level   | "詳細"                                                                    |
 | オペコード  | Open / Close                                                               |
 | タスク    | CommandStart / CommandStop                                                 |
-| キーワード | Runspace                                                                   |
-| イベント ID | ScriptBlock\_Invoke\_Start\_Detail (0x1009 = 4105) / </br> ScriptBlock\_Invoke\_Complete\_Detail (0x100A = 4106) |
-| メッセージ | Started / Completed invocation of ScriptBlock ID: %1 </br> Runspace ID: %2 |
+| Keyword | Runspace                                                                   |
+| EventId | ScriptBlock\_Invoke\_Start\_Detail (0x1009 = 4105) / </br> ScriptBlock\_Invoke\_Complete\_Detail (0x100A = 4106) |
+| Message | Started / Completed invocation of ScriptBlock ID: %1 </br> Runspace ID: %2 |
 
 ID は (イベント ID 0x1008 に関連付けることができる) スクリプト ブロックを表す GUIDで、Runspace ID はこのスクリプト ブロックが実行された実行空間を表します。
 

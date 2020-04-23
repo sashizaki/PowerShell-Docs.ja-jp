@@ -2,12 +2,12 @@
 ms.date: 06/27/2017
 keywords: powershell,コマンドレット
 title: Windows PowerShell Web Access の承認規則とセキュリティ機能
-ms.openlocfilehash: 9bc1be125ebab4e9ba29ba832b442777e9bfc859
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: ee25df052994e47e559daa87b89af813471d896b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500883"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81624756"
 ---
 # <a name="authorization-rules-and-security-features-of-windows-powershell-web-access"></a>Windows PowerShell Web Access の承認規則とセキュリティ機能
 
@@ -112,7 +112,7 @@ Windows PowerShell Web Access コマンドレットは、ワイルドカード�
 
    まだ作成されていない場合は、「[about_Session_Configuration_Files](/powershell/module/microsoft.powershell.core/about/about_session_configuration_files)」に記載されているセッション構成の作成手順を使用してください。
 
-3. この承認規則により、特定のユーザーが、通常アクセスが許可されているネットワーク上の 1 台のコンピューターにアクセスして、このユーザー&trade;が通常必要とするスクリプトとコマンドレットに制限された特定のセッション構成にアクセスできるようになります。 次のように入力して **Enter** キーを押します。
+3. この承認規則により、特定のユーザー 1 人が、通常アクセスが許可されているネットワーク上の 1 つのコンピューターにアクセスして、このユーザーが通常必要とするスクリプトとコマンドレットに制限された特定の 1 つのセッション構成にアクセスできるようになります。 次のように入力して **Enter** キーを押します。
 
    ```
    Add-PswaAuthorizationRule -UserName <domain\user | computer\user> `

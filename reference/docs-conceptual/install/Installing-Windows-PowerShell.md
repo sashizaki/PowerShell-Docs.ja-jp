@@ -3,10 +3,10 @@ ms.date: 08/09/2017
 keywords: powershell, コマンドレット, ダウンロード, インストール, セットアップ, windows 10, windows 8.1, windows 8.0, windows 7
 title: Windows PowerShell のインストール
 ms.openlocfilehash: 345cde8012bece730e7217ed16be6175ad26bb28
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62086478"
 ---
 # <a name="installing-windows-powershell"></a>Windows PowerShell のインストール
@@ -24,7 +24,7 @@ Windows で PowerShell コンソールや ISE (Integrated Scripting Environment)
 
 ### <a name="for-console"></a>コンソールの場合
 
-バージョン | インストール先
+Version | Location
 -- | --
 Windows 10 | 左下隅にある Windows アイコンをクリックして、「PowerShell」と入力し始めます
 Windows 8.1、8.0 | スタート画面で、「PowerShell」と入力し始めます。<br/>デスクトップ上の場合は、左下隅にある Windows アイコンをクリックして、「PowerShell」と入力し始めます
@@ -32,7 +32,7 @@ Windows 7 SP1 | 左下隅にある Windows アイコンをクリックして、�
 
 ### <a name="for-ise"></a>ISE の場合
 
-バージョン | インストール先
+Version | Location
 -- | --
 Windows 10 | 左下隅にある Windows アイコンをクリックして、「ISE」と入力し始めます
 Windows 8.1、8.0 | スタート画面で、「**PowerShell ISE**」と入力します。<br/>デスクトップで、左下隅にある Windows アイコンをクリックして、「**PowerShell ISE**」と入力します

@@ -1,12 +1,12 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: ファイル、フォルダー、レジストリ キーの操作
 ms.openlocfilehash: 0c8716c384827d0816e2847ff81232c14638681b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030763"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>ファイル、フォルダー、レジストリ キーの操作
@@ -43,7 +43,7 @@ Get-Command -Name Get-ChildItem -Syntax
 
 ### <a name="listing-all-contained-items--recurse"></a>含まれるすべての項目の一覧表示 (-Recurse)
 
-Windows フォルダー内の項目と、サブフォルダー内に含まれる項目の両方を表示するには、**Get-ChildItem** の **Recurse** パラメーターを使用します。 一覧には、Windows フォルダー内のすべて、およびそのサブフォルダー内の項目が表示されます。 たとえば、次のように入力します。
+Windows フォルダー内の項目と、サブフォルダー内に含まれる項目の両方を表示するには、**Get-ChildItem** の **Recurse** パラメーターを使用します。 一覧には、Windows フォルダー内のすべて、およびそのサブフォルダー内の項目が表示されます。 次に例を示します。
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS -Recurse
@@ -70,7 +70,7 @@ assembly
 
 ### <a name="forcibly-listing-hidden-items--force"></a>強制的に非表示のアイテムを一覧表示する (-Force)
 
-ファイル エクスプローラーまたは Cmd.exe で通常は非表示の項目は、**Get-ChildItem** コマンドの出力に表示されません。 非表示の項目を表示するには、**Get-ChildItem** の **Force** パラメーターを使用します。 たとえば、次のように入力します。
+ファイル エクスプローラーまたは Cmd.exe で通常は非表示の項目は、**Get-ChildItem** コマンドの出力に表示されません。 非表示の項目を表示するには、**Get-ChildItem** の **Force** パラメーターを使用します。 次に例を示します。
 
 ```powershell
 Get-ChildItem -Path C:\Windows -Force

@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,リソース,ギャラリー,セットアップ
 title: 構成にパラメーターを追加する
 ms.openlocfilehash: 9dd9f2be58c13840be2b24e7e21a0d4af79b67cc
-ms.sourcegitcommit: b0966d61293e28ecdb929c5065be9760884e4e7d
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/25/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80263154"
 ---
 # <a name="add-parameters-to-a-configuration"></a>構成にパラメーターを追加する
@@ -187,7 +187,7 @@ $State="Running"
 ```
 
 > [!NOTE]
-> `validation` 属性を使用するときは、`parameter` 属性を指定する必要はありません。
+> `parameter` 属性を使用するときは、`validation` 属性を指定する必要はありません。
 
 `parameter` および検証属性について詳しくは、[関数の高度なパラメーター](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters)に関する記事をご覧ください。
 
@@ -226,7 +226,7 @@ Configuration TestConfig
 }
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [DSC 構成のヘルプを作成する](configHelp.md)
 - [動的な構成](flow-control-in-configurations.md)

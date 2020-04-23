@@ -2,12 +2,12 @@
 ms.date: 08/23/2017
 keywords: powershell,コマンドレット
 title: Web ベースの Windows PowerShell コンソールの使用
-ms.openlocfilehash: 29aa123049884004dd4e1a8f042783538d80abc6
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 9a5d6d825dc82710466768bc612b012dd80937da
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500865"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80978663"
 ---
 # <a name="use-the-web-based-windows-powershell-console"></a>Web ベースの Windows PowerShell コンソールの使用
 
@@ -211,9 +211,8 @@ Alt + F7          | コマンド履歴の一覧を消去
 
     同じ方法でコンソールの高さを変更できます。
 
-    コンソール ビューをカスタマイズするその他の例については、[Windows PowerShell チームのブログ](h https://devblogs.microsoft.com/powershell)を参照してください。
+    コンソール ビューをカスタマイズするその他の例については、[Windows PowerShell チームのブログ](https://devblogs.microsoft.com/powershell)を参照してください。
 
 ## <a name="see-also"></a>参照
 
 - [Hey, Scripting Guy!](https://devblogs.microsoft.com/scripting/)
-- [PowerShell チーム ブログ](https://devblogs.microsoft.com/powershell/)

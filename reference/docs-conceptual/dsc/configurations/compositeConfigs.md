@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成を入れ子にする
 ms.openlocfilehash: 07e4fb5b9d406153d2fbb4285e28b8d1f0dfdcf5
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75417858"
 ---
 # <a name="nesting-dsc-configurations"></a>DSC 構成を入れ子にする
@@ -49,7 +49,7 @@ Configuration NestedFileConfig
 }
 ```
 
-この例では、`FileConfig` は **CopyFrom** および **CopyTo** という 2 つの必須パラメーターを受け取り、それらは `File` リソース ブロック内の **SourcePath** プロパティおよび **DestinationPath** プロパティの値として使用されます。 `NestedConfig` 構成は `FileConfig` をリソースとして呼び出します。 `NestedConfig` リソース ブロック内のプロパティ (**CopyFrom** と **CopyTo**) は、`FileConfig` 構成のパラメーターです。
+この例では、`FileConfig` は **CopyFrom** および **CopyTo** という 2 つの必須パラメーターを受け取り、それらは **リソース ブロック内の**SourcePath**プロパティおよび**DestinationPath`File` プロパティの値として使用されます。 `NestedConfig` 構成は `FileConfig` をリソースとして呼び出します。 `NestedConfig` リソース ブロック内のプロパティ (**CopyFrom** と **CopyTo**) は、`FileConfig` 構成のパラメーターです。
 
 現在、DSC では、入れ子になった構成内に構成を入れ子にすることはサポートされていません。 構成を入れ子にできるレイヤーの深さは 1 つだけです。
 

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 Desired State Configuration (DSC) の概要
 ms.openlocfilehash: b1bc9b9fafd89a1af0f967de38a817bff1f3ffe3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "73933844"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux 用 Desired State Configuration (DSC) の概要
@@ -20,7 +20,7 @@ Linux 用 DSC では、次の Linux オペレーティング システム バー
 - CentOS 5、6、および 7 (x86/x64)
 - Debian GNU/Linux 6、7、および 8 (x86/x64)
 - Oracle Linux 5、6 および 7 (x86/x64)
-- Red Hat Enterprise Linux Server 5、6 および 7 (x86/x64)
+- Red Hat Enterprise Linux Server 5、6、および 7 (x86/x64)
 - SUSE Linux Enterprise Server 10、11、および 12 (x86/x64)
 - Ubuntu Server 12.04 LTS、14.04 LTS、および 16.04 LTS (x86/x64)
 
@@ -29,7 +29,7 @@ Linux 用 DSC では、次の Linux オペレーティング システム バー
 |  必須パッケージ |  説明 |  最小バージョン |
 |---|---|---|
 | glibc| GNU ライブラリ| 2\...4 - 31.30|
-| python| Python| 2.4 - 3.4|
+| Python| Python| 2.4 - 3.4|
 | omiserver| Open Management Infrastructure (オープン管理インフラストラクチャ)| 1.0.8.1|
 | openssl| OpenSSL ライブラリ| 0.9.8 または 1.0|
 | ctypes| Python CTypes ライブラリ| Python のバージョンに一致する必要があります。|
@@ -41,7 +41,7 @@ Linux 用 DSC をインストールする前に、[Open Management Infrastructur
 
 ### <a name="installing-omi"></a>OMI のインストール
 
-Linux 用 Desired State Configuration には、Open Management Infrastructure (OMI) CIM サーバーの 1.0.8.1 以降のバージョンが必要です。 OMI は、Open Group からダウンロードできます:[Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi)。
+Linux 用 Desired State Configuration には、Open Management Infrastructure (OMI) CIM サーバーの 1.0.8.1 以降のバージョンが必要です。 OMI は、Open Group: [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi) からダウンロードできます。
 
 OMI をインストールするには、Linux システムに適したパッケージ (.rpm または .deb)、OpenSSL バージョンに適したパッケージ (ssl_098 または ssl_100)、およびアーキテクチャに適したパッケージ (x86/x64) をインストールします。 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server、および Oracle Linux には、RPM パッケージが適しています。 Debian GNU/Linux および Ubuntu Server には、DEB パッケージが適しています。 OpenSSL 0.9.8 がインストールされているコンピューターには ssl_098 パッケージが適し、OpenSSL 1.0 がインストールされているコンピューターには ssl_100 パッケージが適しています。
 
@@ -183,7 +183,7 @@ Linux 用 DSC には、ローカルの Linux コンピューターから構成�
 
 Linux 用 DSC のメッセージのために次のログ ファイルが生成されます。
 
-|ログ ファイル|Directory|説明|
+|ログ ファイル|ディレクトリ|説明|
 |---|---|---|
 |**omiserver.log**|`/var/opt/omi/log`|OMI CIM サーバーの操作に関連するメッセージ。|
 |**dsc.log**|`/var/opt/omi/log`|ローカル構成マネージャー (LCM) と DSC リソースの操作に関連するメッセージ。|

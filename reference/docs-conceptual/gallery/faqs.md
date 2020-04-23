@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーに関してよく寄せられる質問
 ms.openlocfilehash: 035681e108e1a3e05fe5d659d527ae1ad1c64cf4
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500583"
 ---
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
@@ -36,7 +36,7 @@ PowerShell スクリプトとは、再利用と共有を可能にするため、
 
 **パッケージをインストールまたは保存するためにギャラリーに登録またはサインインする必要はありません。**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>PowerShell ギャラリーに項目を公開しようとして、"要求を処理できませんでした。 '指定した API キーが無効か、指定したパッケージへのアクセス許可がありません。' リモート サーバーがエラー"(403) Forbidden" というエラーを受信しました。 これはどういう意味でしょうか。
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>PowerShell ギャラリーに項目を公開しようとして、"要求を処理できませんでした。 '指定した API キーが無効か、指定したパッケージへのアクセス許可がありません。' リモート サーバーがエラーを返しました: (403) 許可されていません" というエラーを受信しました。 これはどういう意味でしょうか。
 
 このエラーは、次の理由で発生することがあります。
 
@@ -61,7 +61,7 @@ PowerShell モジュールのどの種類 (スクリプト モジュール、バ
 - Version
 - 説明
 - Author
-- マニフェストの **PrivateData** セクションの一部として、または [Publish-Module][] コマンドレットの **LicenseUri** パラメーターの、モジュールのライセンス条項への URI。
+- マニフェストの **PrivateData** セクションの一部として、または **Publish-Module** コマンドレットの [Publish-Module][] パラメーターの、モジュールのライセンス条項への URI。
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>正しい形式のモジュール マニフェストはどのように作成できますか。
 
@@ -78,7 +78,7 @@ PowerShell スクリプトのどの種類 (スクリプトまたはワークフ�
 - Version
 - 説明
 - Author
-- スクリプトの **PSScriptInfo** セクションの一部として、または [Publish-Script][] コマンドレットの **LicenseUri** パラメーターの、スクリプトのライセンス条項への URI。
+- スクリプトの **PSScriptInfo** セクションの一部として、または **Publish-Script** コマンドレットの [Publish-Script][] パラメーターの、スクリプトのライセンス条項への URI。
 
 ## <a name="how-do-i-search"></a>どのように検索しますか。
 

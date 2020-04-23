@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC ProcessSet リソース
 ms.openlocfilehash: 72925d3a9516f5c0040427773a3b1d66034667bb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953129"
 ---
 # <a name="dsc-processset-resource"></a>DSC ProcessSet リソース
@@ -32,12 +32,12 @@ ProcessSet [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
-|パス |プロセスの実行可能ファイルのパス。 実行可能ファイルの名前がある場合 (完全修飾パスではない)、DSC リソースは環境 `$env:Path` 変数を検索し、ファイルを見つけます。 このプロパティの値が完全修飾パスの場合、DSC は `$env:Path` 環境変数でファイルを探すことはせず、パスが存在しない場合はエラーをスローします。 相対パスは指定できません。 |
-|Credential |プロセスを開始するための資格情報を示します。 |
+|Path |プロセスの実行可能ファイルのパス。 実行可能ファイルの名前がある場合 (完全修飾パスではない)、DSC リソースは環境 `$env:Path` 変数を検索し、ファイルを見つけます。 このプロパティの値が完全修飾パスの場合、DSC は `$env:Path` 環境変数でファイルを探すことはせず、パスが存在しない場合はエラーをスローします。 相対パスは指定できません。 |
+|資格情報 |プロセスを開始するための資格情報を示します。 |
 |StandardErrorPath |プロセスにより標準エラーが書き込まれるパス。 既存のファイルは上書きされます。 |
 |StandardInputPath |プロセスが標準入力を受け取るとき、その発信元となるストリーム。 |
 |StandardOutputPath |プロセスにより標準出力が書き込まれるファイルのパス。 既存のファイルは上書きされます。 |

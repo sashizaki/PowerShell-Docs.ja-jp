@@ -1,12 +1,12 @@
 ---
 ms.date: 11/22/2019
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: Format コマンドを使用した出力ビューの変更
 ms.openlocfilehash: f270d5ec5efe5caf506d6a8a45285990996f6ae6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74417596"
 ---
 # <a name="using-format-commands-to-change-output-view"></a>Format コマンドを使用した出力ビューの変更
@@ -155,7 +155,7 @@ Running  WinRM              Windows Remote Management (WS-Manag...
 
 ### <a name="improving-format-table-output-autosize"></a>Format-Table 出力の改善 (AutoSize)
 
-表形式ビューは情報を大量に表示するには便利ですが、データの表示幅が狭すぎる場合は解釈しにくいことがあります。 前の例では、出力は切り捨てられています。 `Format-Table` コマンドを実行するときに **AutoSize** パラメーターを指定すると、PowerShell では、表示される実際のデータに基づいて列の幅を計算します。 これにより、列を読み取ることができるようになります。
+表形式ビューは情報を大量に表示するには便利ですが、データの表示幅が狭すぎる場合は解釈しにくいことがあります。 前の例では、出力は切り捨てられています。 **コマンドを実行するときに**AutoSize`Format-Table` パラメーターを指定すると、PowerShell では、表示される実際のデータに基づいて列の幅を計算します。 これにより、列を読み取ることができるようになります。
 
 ```powershell
 Get-Service -Name win* | Format-Table -AutoSize
@@ -190,7 +190,7 @@ WinRM               Running Automatic Windows Remote Management (WS-Management) 
 
 ### <a name="wrapping-format-table-output-in-columns-wrap"></a>Format-Table 出力の列内の折り返し (Wrap)
 
-**Wrap** パラメーターを使用することで、長い `Format-Table` データをその表示列内で強制的に折り返すことができます。 **Wrap** パラメーターだけを使用した場合、必ずしも期待どおりにはなりません。**AutoSize** も指定しなければ、既定の設定が使用されるためです。
+`Format-Table`Wrap**パラメーターを使用することで、長い** データをその表示列内で強制的に折り返すことができます。 **Wrap** パラメーターだけを使用した場合、必ずしも期待どおりにはなりません。**AutoSize** も指定しなければ、既定の設定が使用されるためです。
 
 ```powershell
 Get-Service -Name win* | Format-Table -Property Name,Status,StartType,DisplayName,DependentServices -Wrap

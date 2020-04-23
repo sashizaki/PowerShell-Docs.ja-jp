@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: ISEAddOnTool オブジェクト
 ms.openlocfilehash: a5357005ec1a883f5a14882a42e3150e09ff33a2
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736132"
 ---
 # <a name="the-iseaddontool-object"></a>ISEAddOnTool オブジェクト
@@ -155,7 +155,7 @@ $psISE.CurrentVisibleVerticalTool.IsVisible = $false
 $psISE.CurrentPowerShellTab.VerticalAddOnTools[0].IsVisible = $true
 ```
 
-### <a name="name"></a>Name
+### <a name="name"></a>名前
 
 Windows PowerShell ISE 3.0 以降でサポートされており、それよりも前のバージョンには存在しません。
 

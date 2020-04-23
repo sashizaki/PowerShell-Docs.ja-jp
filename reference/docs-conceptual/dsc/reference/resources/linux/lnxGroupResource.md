@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 DSC の nxGroup リソース
 ms.openlocfilehash: 098ae2e8ab183934ec3c185c0fd237731b1353dc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953209"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>Linux 用 DSC の nxGroup リソース
@@ -28,12 +28,12 @@ nxGroup <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
 |GroupName |特定の状態を保証するグループの名前を指定します。 |
-|[メンバー] |グループを形成するメンバーを指定します。 |
+|メンバー |グループを形成するメンバーを指定します。 |
 |MembersToInclude |グループのメンバーであることを保証するユーザーを指定します。 |
 |MembersToExclude |グループのメンバーでないことを保証するユーザーを指定します。 |
 |PreferredGroupID |可能であれば、グループ id を指定の値に設定します。 そのグループ id が現在使用中である場合は、次に使用可能なグループ id が使用されます。 |

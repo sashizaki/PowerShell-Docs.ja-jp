@@ -3,10 +3,10 @@ ms.date: 08/25/2017
 keywords: powershell,コマンドレット
 title: ObjectModelRoot オブジェクト
 ms.openlocfilehash: 0b04bdb3127edaac7b504556843efb64ee65ed13
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736030"
 ---
 # <a name="the-objectmodelroot-object"></a>ObjectModelRoot オブジェクト
@@ -39,7 +39,7 @@ Windows PowerShell® Integrated Scripting Environment (ISE) のプリンシパ�
 
 エディターの右側にある垂直方向のツール ウィンドウに現在表示されている Windows PowerShell ISE アドオン ツールを取得する読み取り専用のプロパティ。
 
-### <a name="options"></a>オプション
+### <a name="options"></a>Options
 
 > Windows PowerShell ISE 2.0 以降でサポートされています。
 

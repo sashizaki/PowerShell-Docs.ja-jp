@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Get-Test-Set
 ms.openlocfilehash: bf409f71c07c434fbc7389789e16575868d21b42
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278421"
 ---
 # <a name="get-test-set"></a>Get-Test-Set
 
->適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
+>適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 ![取得、テスト、および設定](media/get-test-set/get-test-set.png)
 
@@ -121,7 +121,7 @@ ModuleVersion = "1.0";
 };
 ```
 
-適用すると、[ローカル構成マネージャー](../managing-nodes/metaConfig.md) (LCM) によって ".mof" ファイルから値 "Spooler" が読み取られ、それが**サービス** リソースの "MyService" インスタンス用の **Get**、**Test**、および **Set** メソッドの `-Name` パラメーターに渡されます。
+適用すると、[ローカル構成マネージャー](../managing-nodes/metaConfig.md) (LCM) によって ".mof" ファイルから値 "Spooler" が読み取られ、それが`-Name`サービス**リソースの "MyService" インスタンス用の**Get **、** Test **、および** Set**メソッドの** パラメーターに渡されます。
 
 ## <a name="get"></a>取得
 
@@ -235,7 +235,7 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Time taken for configuration job to complete is 1.379 seconds
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Azure Automation DSC の概要](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
 - [Setting up an SMB pull server (SMB プル サーバーのセットアップ)](../pull-server/pullServerSMB.md)

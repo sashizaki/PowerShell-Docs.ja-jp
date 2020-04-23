@@ -3,15 +3,15 @@ ms.date: 10/31/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MOF ファイルのセキュリティ保護
 ms.openlocfilehash: ab03db8bf4ed7d412691ae87fd12da5131607886
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278471"
 ---
 # <a name="securing-the-mof-file"></a>MOF ファイルのセキュリティ保護
 
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 DSC では、ローカル構成マネージャー (LCM) が必要な終了状態を実装する、MOF ファイルに格納されている情報を適用することで、サーバー ノードの構成を管理します。 このファイルには構成の詳細が含まれているため、安全に保つことが重要です。 このトピックでは、ターゲット ノードがファイルを暗号化したことを確認する方法について説明します。
 
@@ -40,14 +40,14 @@ DSC 構成のセキュリティ保護に使用される資格情報を正常に�
 
 ## <a name="certificate-requirements"></a>証明書の要件
 
-資格情報の暗号化を指定するには、公開キー証明書が、DSC 構成の作成に使用されているコンピューターから**信頼された**_ターゲット ノード_で使用可能である必要があります。 この公開キー証明書を DSC 資格情報の暗号化に使うには、満たす必要のある特定の要件があります。
+資格情報の暗号化を指定するには、公開キー証明書が、DSC 構成の作成に使用されているコンピューターから_信頼された_**ターゲット ノード**で使用可能である必要があります。 この公開キー証明書を DSC 資格情報の暗号化に使うには、満たす必要のある特定の要件があります。
 
 1. **キー使用法**:
-   - 含める必要がある: "KeyEncipherment" と "DataEncipherment"。
-   - 含める "_べきではない_": "Digital Signature"。
+   - 含める必要がある: 'KeyEncipherment' と 'DataEncipherment'。
+   - 含める_べきではない_: 'Digital Signature'。
 2. **拡張キー使用法**:
    - 含める必要がある: ドキュメントの暗号化 (1.3.6.1.4.1.311.80.1)。
-   - 含める "_べきではない_": クライアント認証 (1.3.6.1.5.5.7.3.2) とサーバー認証 (1.3.6.1.5.5.7.3.1)。
+   - 含める_べきではない_: クライアント認証 (1.3.6.1.5.5.7.3.2) とサーバー認証 (1.3.6.1.5.5.7.3.1)。
 3. 証明書の秘密キーが *ターゲット ノード_ で使用可能であること。
 4. 証明書の**プロバイダー**は、"Microsoft RSA SChannel Cryptographic Provider" でなければならない。
 

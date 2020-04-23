@@ -3,10 +3,10 @@ title: Linux への PowerShell のインストール
 description: さまざまな Linux ディストリビューションへの PowerShell のインストールに関する情報
 ms.date: 03/09/2020
 ms.openlocfilehash: 31da32b81dbbcf4b46fd5f0cd9d921f28f434763
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500547"
 ---
 # <a name="installing-powershell-on-linux"></a>Linux への PowerShell のインストール
@@ -15,7 +15,7 @@ ms.locfileid: "80500547"
 
 公式にサポートされていない Linux ディストリビューションの場合は、[PowerShell の Snap パッケージ][snap]を使った PowerShell のインストールを試すことができます。 また、Linux [`tar.gz` アーカイブ][tar]を使用して、直接 PowerShell バイナリを展開できますが、場合によっては、OS に基づいて依存関係を別の手順で設定する必要があります。
 
-すべてのパッケージは GitHub [リリース][] ページにあります。 パッケージがインストールされたら、ターミナルから `pwsh` を実行します。 [プレビュー リリース](#installing-preview-releases)をインストールした場合は、`pwsh-preview` を実行します。
+すべてのパッケージは GitHub [ ページから Ubuntu コンピューターに Debian パッケージ ][] ページにあります。 パッケージがインストールされたら、ターミナルから `pwsh` を実行します。 `pwsh-preview`プレビュー リリース[をインストールした場合は、](#installing-preview-releases) を実行します。
 
 > [!NOTE]
 > PowerShell 7 はインプレース アップグレードで、PowerShell Core 6.x は削除されます。
@@ -84,7 +84,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>直接ダウンロードによるインストール - Ubuntu 16.04
 
-[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb` をダウンロードします。
+`powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -134,7 +134,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>直接ダウンロードによるインストール - Ubuntu 18.04
 
-[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb` をダウンロードします。
+`powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -157,14 +157,14 @@ sudo apt-get remove powershell
 `snapd` によるインストールがサポートされています。 手順については、「[Snap パッケージ][snap]」をご覧ください。
 
 > [!NOTE]
-> Ubuntu 18.10 は、[コミュニティでサポートされている](../powershell-support-lifecycle.md)[中間リリース](https://www.ubuntu.com/about/release-cycle)です。
+> Ubuntu 18.10 は、[コミュニティでサポートされている](https://www.ubuntu.com/about/release-cycle)[中間リリース](../powershell-support-lifecycle.md)です。
 
 ## <a name="ubuntu-1904"></a>Ubuntu 19.04
 
 `snapd` によるインストールがサポートされています。 手順については、「[Snap パッケージ][snap]」をご覧ください。
 
 > [!NOTE]
-> Ubuntu 19.04 は、[コミュニティでサポートされている](../powershell-support-lifecycle.md)[中間リリース](https://www.ubuntu.com/about/release-cycle)です。
+> Ubuntu 19.04 は、[コミュニティでサポートされている](https://www.ubuntu.com/about/release-cycle)[中間リリース](../powershell-support-lifecycle.md)です。
 
 ## <a name="debian-8"></a>Debian 8
 
@@ -230,7 +230,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-9"></a>直接ダウンロードによるインストール - Debian 9
 
-[リリース][] ページから Debian コンピューターに Debian パッケージ `powershell-lts_7.0.0-1.debian.9_amd64.deb` をダウンロードします。
+`powershell-lts_7.0.0-1.debian.9_amd64.deb`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -275,7 +275,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-10"></a>直接ダウンロードによるインストール - Debian 10
 
-[リリース][] ページから Debian コンピューターに tar.gz パッケージ `powershell_7.0.0-linux-x64.tar.gz` をダウンロードします。
+`powershell_7.0.0-linux-x64.tar.gz`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -322,7 +322,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>直接ダウンロードによるインストール - Alpine 3.9 および 3.10
 
-[リリース][] ページから Alpine コンピューターに tar.gz パッケージ `powershell-7.0.0-linux-alpine-x64.tar.gz` をダウンロードします。
+`powershell-7.0.0-linux-alpine-x64.tar.gz`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -389,7 +389,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---centos-7"></a>直接ダウンロードによるインストール - CentOS 7
 
-[CentOS 7][] を利用し、[リリース][] ページから CentOS コンピューターに RPM パッケージ `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` をダウンロードします。
+[CentOS 7][] を利用し、`powershell-lts-7.0.0-1.rhel.7.x86_64.rpm`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -432,7 +432,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>直接ダウンロードによるインストール - Red Hat Enterprise Linux (RHEL) 7
 
-[リリース][] ページから Red Hat Enterprise Linux コンピューターに RPM パッケージ `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` をダウンロードします。
+`powershell-lts-7.0.0-1.rhel.7.x86_64.rpm`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -544,7 +544,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-28-29-and-30"></a>直接ダウンロードによるインストール - Fedora 28、29、および 30
 
-[リリース][] ページから Fedora コンピューターに RPM パッケージ `powershell-7.0.0-1.rhel.7.x86_64.rpm` をダウンロードします。
+`powershell-7.0.0-1.rhel.7.x86_64.rpm`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -590,7 +590,7 @@ AUR からパッケージをインストールする方法については、[Arc
 
 ### <a name="getting-snapd"></a>Snapd の取得
 
-Snap を実行するには、`snapd` が必要です。 `snapd` がインストールされているかどうかを確認するには、[こちらの手順](https://docs.snapcraft.io/core/install)を使用してください。
+Snap を実行するには、`snapd` が必要です。 [ がインストールされているかどうかを確認するには、](https://docs.snapcraft.io/core/install)こちらの手順`snapd`を使用してください。
 
 ### <a name="installation-via-snap"></a>Snap を使用したインストール
 
@@ -718,7 +718,7 @@ rm -rf ~/powershell
 dotnet tool install --global PowerShell
 ```
 
-dotnet tool install によって、`PATH` 環境変数に `~/.dotnet/tools` が追加されます。 ただし、現在実行中のシェルには更新された `PATH` が設定されていません。 新しいシェルからは、「`pwsh`」と入力すると PowerShell を起動できるはずです。
+dotnet tool install によって、`~/.dotnet/tools` 環境変数に `PATH` が追加されます。 ただし、現在実行中のシェルには更新された `PATH` が設定されていません。 新しいシェルからは、「`pwsh`」と入力すると PowerShell を起動できるはずです。
 
 ## <a name="binary-archives"></a>バイナリ アーカイブ
 
@@ -787,5 +787,5 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 
 PowerShell では、Linux の [XDG ベース ディレクトリ仕様][xdg-bds]を尊重しています。
 
-[リリース]: https://github.com/PowerShell/PowerShell/releases/latest
+[ ページから Ubuntu コンピューターに Debian パッケージ ]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html

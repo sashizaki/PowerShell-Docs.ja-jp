@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: C# での DSC リソースの作成
 ms.openlocfilehash: a19559c225dd91eceed397df91dd584a577cd7d4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74417702"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>C\# での DSC リソースの作成
 
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 通常、Windows PowerShell Desired State Configuration (DSC) カスタム リソースは、PowerShell スクリプトで実装されます。 ただし、C# でコマンドレットを記述して、DSC カスタム リソースの機能を実装することもできます。 C# でのコマンドレットの記述の概要については、「[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](/powershell/scripting/developer/windows-powershell)」を参照してください。
 

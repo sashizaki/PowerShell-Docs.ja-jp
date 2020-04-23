@@ -1,12 +1,12 @@
 ---
 ms.date: 12/06/2019
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: Windows PowerShell のシステム要件
 ms.openlocfilehash: 713b062916fec0c5c70ea9a7f95fea3570afb64a
-ms.sourcegitcommit: 0e4c69d8b5cf71431592fe41da816dec9b70f1f9
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/09/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74953791"
 ---
 # <a name="windows-powershell-system-requirements"></a>Windows PowerShell のシステム要件
@@ -21,7 +21,7 @@ Windows® 8.1 および Windows Server® 2012 R2 には、必要なプログラ�
 
 Windows PowerShell 5.1 は、次のバージョンの Windows で実行されます。 Windows PowerShell 5.1 を実行するには、Windows Management Framework 5.1 をインストールします。 詳細については、「[WMF 5.1 のインストールと構成](../wmf/setup/install-configure.md)」を参照してください。
 
-| Windows Version | システム要件 |
+| Windows のバージョン | システム要件 |
 | ----- | ----- |
 | Windows Server 2019 | 既定でインストールされています |
 | Windows Server 2016 | 既定でインストールされています |
@@ -37,7 +37,7 @@ Windows PowerShell 5.1 は、次のバージョンの Windows で実行されま
 
 Windows PowerShell 5.0 は、次のバージョンの Windows で実行できます。 Windows PowerShell 5.0 を実行するには、Windows Management Framework 5.1 をインストールします。 詳細については、「[WMF 5.1 のインストールと構成](../wmf/setup/install-configure.md)」を参照してください。 Windows Management Framework 5.1 は Windows Management Framework 5.0 に取って代わります。
 
-| Windows Version | システム要件 |
+| Windows のバージョン | システム要件 |
 | ----- | ----- |
 | Windows Server 2019 | 上位バージョンが既定でインストール済み |
 | Windows Server 2016 | 上位バージョンが既定でインストール済み |
@@ -53,7 +53,7 @@ Windows PowerShell 5.0 は、次のバージョンの Windows で実行できま
 
 Windows PowerShell 4.0 は、次のバージョンの Windows で実行できます。 Windows PowerShell 4.0 を実行するには、お使いのオペレーティング システム用のバージョンの Windows Management Framework をインストールします。
 
-| Windows Version | システム要件 |
+| Windows のバージョン | システム要件 |
 | ----- | ----- |
 | Windows 8.1 | 既定でインストールされています |
 | Windows Server 2012 R2 | 既定でインストールされています |
@@ -64,7 +64,7 @@ Windows PowerShell 4.0 は、次のバージョンの Windows で実行できま
 
 Windows PowerShell 3.0 は、次のバージョンの Windows で実行できます。 Windows PowerShell 3.0 を実行するには、お使いのオペレーティング システム用のバージョンの Windows Management Framework をインストールします。
 
-| Windows Version | システム要件 |
+| Windows のバージョン | システム要件 |
 | ----- | ----- |
 | Windows 8 | 既定でインストールされています |
 | Windows Server 2012 | 既定でインストールされています |
@@ -76,7 +76,7 @@ Windows PowerShell 3.0 は、次のバージョンの Windows で実行できま
 
 次の表は、Windows PowerShell の .NET Framework 要件をまとめたものです。
 
-| バージョン | .NET 要件 |
+| Version | .NET 要件 |
 | ----- | ----- |
 | Windows PowerShell 5.1 | Microsoft .NET Framework 4.5 のフル インストールが必要です。 Windows 8.1 と Windows Server 2012 R2 には、既定で Microsoft .NET Framework 4.5 が付属しています。 |
 | Windows PowerShell 5.0 | Microsoft .NET Framework 4.5 のフル インストールが必要です。 Windows 8.1 と Windows Server 2012 R2 には、既定で Microsoft .NET Framework 4.5 が付属しています。 |
@@ -85,7 +85,7 @@ Windows PowerShell 3.0 は、次のバージョンの Windows で実行できま
 
 次のリンクを使用し、Microsoft .NET Framework バージョンを Microsoft ダウンロード センターからダウンロードします。
 
-| バージョン | リンク |
+| Version | Link |
 | ----- | ----- |
 | .NET Framework 4.5 (`dotNetFx45_Full_setup.exe`) | [Microsoft .NET Framework 4.5](https://go.microsoft.com/fwlink/?LinkID=242919) |
 | .NET Framework 4 (`dotNetFx40_Full_setup.exe`) | [Microsoft .NET Framework 4 (Web インストーラー)](https://www.microsoft.com/en-us/download/details.aspx?id=17851) |
@@ -120,8 +120,8 @@ Windows PowerShell はグラフィカル ユーザー インターフェイス�
   - [Show-ControlPanelItem](/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
   - [Show-EventLog](/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
 - パラメーター
-  - [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) コマンドレットの **ShowWindow** パラメーター。
-  - [Register-PSSessionConfiguration](/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) と [Set-PSSessionConfiguration](/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration) コマンドレットの **ShowSecurityDescriptorUI** パラメーター。
+  - **Get-Help** コマンドレットの [ShowWindow](/powershell/module/Microsoft.PowerShell.Core/Get-Help) パラメーター。
+  - **Register-PSSessionConfiguration** と [Set-PSSessionConfiguration](/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) コマンドレットの [ShowSecurityDescriptorUI](/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration) パラメーター。
 
 ## <a name="windows-powershell-engine-requirements"></a>Windows PowerShell エンジンの要件
 
@@ -145,7 +145,7 @@ Windows PowerShell 2.0、Windows PowerShell 3.0、および Windows PowerShell 4
 
 **WinRM** サービスは Windows PE に存在しません。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell ファースト ステップ ガイド](../getting-started/Getting-Started-with-Windows-PowerShell.md)
 

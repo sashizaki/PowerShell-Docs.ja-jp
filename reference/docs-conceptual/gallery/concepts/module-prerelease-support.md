@@ -4,10 +4,10 @@ contributor: keithb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: プレリリース モジュールのバージョン
 ms.openlocfilehash: eced067dd21082de0db653daf3b838217154f1dd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328143"
 ---
 # <a name="prerelease-module-versions"></a>プレリリース モジュールのバージョン
@@ -123,7 +123,7 @@ Version         Name          Repository  Description
 1.9.0-alpha     TestPackage   PSGallery   Package used to validate changes to the PowerShe...
 ```
 
-プレリリースが指定されているかどうかの違いしかない、モジュールのバージョンの同時インストールはサポートされません。 PowerShellGet を使用してモジュールをインストールすると、ModuleVersion を使用してフォルダー名が作成され、同じモジュールの異なるバージョンが同時にインストールされます。 Prerelease 文字列のない ModuleVersion がフォルダー名で使用されます。 ユーザーが MyModule バージョン 2.5.0-alpha をインストールすると、`MyModule\2.5.0` フォルダーにインストールされます。 その後、ユーザーが 2.5.0-beta をインストールすると、2.5.0-beta バージョンがフォルダー `MyModule\2.5.0` の内容を**上書き**します。 この方法の 1 つの利点が、実稼働可能バージョンのインストール後にプレリリース バージョンをアンインストールする必要がないことです。 以下の例は、予想すべき内容を示します。
+プレリリースが指定されているかどうかの違いしかない、モジュールのバージョンの同時インストールはサポートされません。 PowerShellGet を使用してモジュールをインストールすると、ModuleVersion を使用してフォルダー名が作成され、同じモジュールの異なるバージョンが同時にインストールされます。 Prerelease 文字列のない ModuleVersion がフォルダー名で使用されます。 ユーザーが MyModule バージョン 2.5.0-alpha をインストールすると、`MyModule\2.5.0` フォルダーにインストールされます。 その後、ユーザーが 2.5.0-beta をインストールすると、2.5.0-beta バージョンがフォルダー  **の内容を**上書き`MyModule\2.5.0`します。 この方法の 1 つの利点が、実稼働可能バージョンのインストール後にプレリリース バージョンをアンインストールする必要がないことです。 以下の例は、予想すべき内容を示します。
 
 ``` powershell
 C:\windows\system32> Get-InstalledModule TestPackage -AllVersions
@@ -192,7 +192,7 @@ Version         Name          Repository   Description
 1.1.3.2         TestPackage   PSGallery    Package used to validate changes to the PowerShe...
 ```
 
-## <a name="more-details"></a>詳細情報
+## <a name="more-details"></a>詳細
 
 - [プレリリース バージョンのスクリプト](script-prerelease-support.md)
 - [Find-Module](/powershell/module/powershellget/find-module)

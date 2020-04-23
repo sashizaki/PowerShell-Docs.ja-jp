@@ -3,17 +3,17 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC 構成のヘルプの作成
 ms.openlocfilehash: 498ec0f594ed3229e097903c4ea2ae34d3da03a2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954139"
 ---
 # <a name="writing-help-for-dsc-configurations"></a>DSC 構成のヘルプの作成
 
->適用先:Windows PowerShell 5.0
+>適用先: Windows PowerShell 5.0
 
-DSC 構成では、コメント ベースのヘルプを使用できます。 ユーザーは、`-?` を指定して **Configuration** を呼び出すか、[Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) コマンドレットを使用することで、ヘルプにアクセスできます。 コメント ベースのヘルプは `Configuration` キーワードのすぐ上に配置します。
+DSC 構成では、コメント ベースのヘルプを使用できます。 ユーザーは、**を指定して**Configuration`-?` を呼び出すか、[Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) コマンドレットを使用することで、ヘルプにアクセスできます。 コメント ベースのヘルプは `Configuration` キーワードのすぐ上に配置します。
 パラメーターのヘルプは、コメント ブロックのインラインか、パラメーター宣言のすぐ上、または次の例のようにその両方に配置できます。
 
 PowerShell のコメント ベースのヘルプの詳細については、「[about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)」を参照してください。

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 title: Just Enough Administration (JEA) の強化
 ms.openlocfilehash: 847ae92a6225023bcd0ee3dfe7c7058bdc356836
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147602"
 ---
 # <a name="improvements-to-just-enough-administration-jea"></a>Just Enough Administration (JEA) の強化
@@ -26,7 +26,7 @@ UserDriveMaximumSize = 10485760    # 10 MB
 
 ユーザー ドライブをバッキングするフォルダーが "`$env:LOCALAPPDATA\Microsoft\Windows\PowerShell\DriveRoots\DOMAIN_USER`" に作成されます。
 
-ユーザー ドライブを公開するように構成された JEA エンドポイントとの間で、ユーザー ドライブを使用してファイルのコピーを行うには、`Copy-Item` で `-ToSession` および `-FromSession` パラメーターを使用します。
+ユーザー ドライブを公開するように構成された JEA エンドポイントとの間で、ユーザー ドライブを使用してファイルのコピーを行うには、`-ToSession` で `-FromSession` および `Copy-Item` パラメーターを使用します。
 
 ```powershell
 # Connect to the JEA endpoint
@@ -63,7 +63,7 @@ RunAsVirtualAccount = $false
 > グループの管理されたサービス アカウントでは、仮想アカウントの分離または限定的な範囲を許容していません。
 > 接続ユーザーはすべて同じ gMSA ID を共有することになります。この ID は企業全体を対象とするアクセス許可を持つ場合もあります。 gMSA の使用を選択する場合は細心の注意を払ってください。可能であればローカル コンピューターに限定された仮想アカウントを常に優先してください。
 
-## <a name="conditional-access-policies"></a>条件付きのアクセス ポリシー
+## <a name="conditional-access-policies"></a>条件付きアクセス ポリシー
 
 あるユーザーがシステムの管理を目的としてシステムに接続したときにその人が実行できる操作を制限する場合に JEA は便利です。しかし、だれかが JEA を使用できる*タイミング*を制限したい場合はどうするのですか? ユーザーが JEA セッションを確立するときに属する必要があるセキュリティ グループを指定できるように、セッション構成ファイル (.pssc) に構成オプションを追加しました。 環境内にジャスト イン タイム (JIT) システムが搭載されていて、高い権限を持つ JEA エンドポイントにアクセスする前にユーザーに自分の権限を昇格させる必要があるとき、このオプションは特に有用です。
 
@@ -81,6 +81,6 @@ RequiredGroups = @{ Or = '2FA-logon', 'smartcard-logon' }
 RequiredGroups = @{ And = 'elevated-jea', @{ Or = '2FA-logon', 'smartcard-logon' }}
 ```
 
-## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>固定:Windows Server 2008 R2 で仮想アカウントがサポートされるようになりました。
+## <a name="fixed-virtual-accounts-are-now-supported-on-windows-server-2008-r2"></a>固定: Windows Server 2008 R2 で仮想アカウントがサポートされるようになりました。
 
 WMF 5.1 では、Windows Server 2008 R2 で仮想アカウントを使用できるようになりました。これにより、Windows Server 2008 R2 - 2016 にわたり一貫した構成と機能の類似性が提供されます。 Windows 7 で JEA を使用する場合、仮想アカウントはまだサポートされていません。

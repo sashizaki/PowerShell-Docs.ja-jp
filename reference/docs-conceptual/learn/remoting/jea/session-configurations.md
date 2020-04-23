@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: JEA, PowerShell, セキュリティ
 title: JEA セッションの構成
 ms.openlocfilehash: 650d0d11ef13605847d0822249e29e3491180629
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70017733"
 ---
 # <a name="jea-session-configurations"></a>JEA セッションの構成
@@ -213,7 +213,7 @@ Test-PSSessionConfigurationFile -Path .\JEAConfig.pssc # should yield True
 
 JEA セッション構成で、ロールへのユーザーのマッピングなどのプロパティを変更するには、[登録解除](register-jea.md#unregistering-jea-configurations)する必要があります。 その後、更新されたセッション構成ファイルを使用して JEA セッション構成を[再登録](register-jea.md)します。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 - [JEA 構成を登録する](register-jea.md)
 - [ロール機能](role-capabilities.md)

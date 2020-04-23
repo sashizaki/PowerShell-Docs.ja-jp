@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MSFT_DSCLocalConfigurationManager クラス
 ms.openlocfilehash: 09b30edd48384c0e8412e0e6ee926a719249c5b8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953269"
 ---
 # <a name="msft_dsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラス
@@ -24,7 +24,7 @@ class MSFT_DSCLocalConfigurationManager
 };
 ```
 
-## <a name="members"></a>[メンバー]
+## <a name="members"></a>メンバー
 
 **MSFT_DSCLocalConfigurationManager** クラスには次のメンバーがあります。
 
@@ -56,7 +56,7 @@ class MSFT_DSCLocalConfigurationManager
 | [StopConfiguration](msft-dsclocalconfigurationmanager-stopconfiguration.md)| 進行中の構成を停止します。|
 | [TestConfiguration](msft-dsclocalconfigurationmanager-testconfiguration.md)| 構成ドキュメントを管理ノードに送信し、そのドキュメントに対して現在の構成を検証します。|
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 **MOF:** DscCore.mof
 

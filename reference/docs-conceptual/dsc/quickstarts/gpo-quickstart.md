@@ -3,10 +3,10 @@ ms.date: 07/09/2019
 keywords: DSC, GPO, PowerShell, 構成, セットアップ
 title: クイック スタート - グループ ポリシーを DSC に変換する
 ms.openlocfilehash: 5e6b86be5127332fe4fd400980c8e147b735247b
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500650"
 ---
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0

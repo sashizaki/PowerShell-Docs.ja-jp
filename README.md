@@ -1,14 +1,14 @@
 ---
 ms.openlocfilehash: 034d75a84e39cb0cf88a272ca58b5ccc229c5d9b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/26/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74540458"
 ---
 # <a name="microsoft-open-source-code-of-conduct"></a>Microsoft オープン ソース倫理規定
 
-このプロジェクトは [Microsoft オープン ソース論理規定](https://opensource.microsoft.com/codeofconduct/)を採用しています。 詳細については[論理規定についてのよくある質問](https://opensource.microsoft.com/codeofconduct/faq/)をご覧ください。また、追加の質問やコメントがある場合は[opencode@microsoft.com](mailto:opencode@microsoft.com)にお問い合わせください。
+このプロジェクトは、「[Microsoft のオープン ソースの倫理規定](https://opensource.microsoft.com/codeofconduct/)」を採用しています。 詳細については[論理規定についてのよくある質問](https://opensource.microsoft.com/codeofconduct/faq/)をご覧ください。また、追加の質問やコメントがある場合は[opencode@microsoft.com](mailto:opencode@microsoft.com)にお問い合わせください。
 
 [live-badge]: https://powershell.visualstudio.com/PowerShell-Docs/_apis/build/status/PowerShell-Docs-CI?branchName=live
 [staging-badge]: https://powershell.visualstudio.com/PowerShell-Docs/_apis/build/status/PowerShell-Docs-CI?branchName=staging
@@ -35,7 +35,7 @@ PowerShell-Docs リポジトリへようこそ。PowerShell-Docs は、公式の
     - [jea/](https://docs.microsoft.com/powershell/scripting/jea/) は Just Enough Administration 機能用です
     - [wmf](https://docs.microsoft.com/powershell/scripting/wmf/overview) には Windows Management Framework のリリース ノートが含まれています。これは、Windows の以前のバージョンに対して PowerShell の新しいバージョンを配布するために使用するパッケージです。
 
-## <a name="contributing"></a>投稿
+## <a name="contributing"></a>寄与
 
 [pull request](https://help.github.com/articles/using-pull-requests/)を使用して、積極的に投稿をこのリポジトリの*ステージング* ブランチに結合しています。
 コミュニティが投稿を自由に使用できるように、pull request を送信する前に[投稿の使用許諾契約に署名](https://cla.microsoft.com/)する必要があります。

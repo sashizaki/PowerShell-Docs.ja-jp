@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC リソースのデバッグ
 ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954259"
 ---
 # <a name="debugging-dsc-resources"></a>DSC リソースのデバッグ
 
-> 適用先:Windows PowerShell 5.0
+> 適用先: Windows PowerShell 5.0
 
 PowerShell 5.0 では、構成が適用されているときに DSC リソースをデバッグできる新機能が Desired State Configuraiton (DSC) に導入されました。
 

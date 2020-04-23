@@ -4,10 +4,10 @@ description: この記事では、PowerShell ドキュメントの共同作成�
 ms.date: 03/05/2020
 ms.topic: conceptual
 ms.openlocfilehash: 5db78ae2805cb26aa79aa698cfb8b5d8ba8911dc
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79402629"
 ---
 # <a name="contributing-to-powershell-documentation"></a>PowerShell ドキュメントへの投稿
@@ -65,12 +65,12 @@ docs.microsoft.com に公開されるすべてのリポジトリには、「[Mic
 - [イシューを報告する方法](file-an-issue.md)
 - [ドキュメントの作成を開始する](get-started-writing.md)
 - [プル要求の送信](pull-requests.md)
-- [PowerShell ドキュメントのスタイル ガイド](powershell-style-guide.md)
-- [コマンドレット リファレンスの編集](editing-cmdlet-ref.md)
+- [PowerShell-Docs スタイル ガイド](powershell-style-guide.md)
+- [コマンドレット編集リファレンス](editing-cmdlet-ref.md)
 
 その他のリソース
 
-- [編集のチェックリスト](editorial-checklist.md)
+- [編集チェックリスト](editorial-checklist.md)
 - [イシューを管理する方法](managing-issues.md)
 - [プル要求を管理する方法](managing-pull-requests.md)
 

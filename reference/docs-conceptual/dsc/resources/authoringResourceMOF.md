@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MOF を使用したカスタム DSC リソースの記述
 ms.openlocfilehash: 24e9d15bcbe1eddd297daeb04e0713c443e52c38
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71952899"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>MOF を使用したカスタム DSC リソースの記述
@@ -129,7 +129,7 @@ function Get-TargetResource
 * 既存の Web サイトの更新
 * 既存の Web サイトの削除
 
-これを次の例に示します。
+次の例を使って説明します。
 
 ```powershell
 # The Set-TargetResource function is used to create, delete or configure a website on the target machine.

@@ -4,10 +4,10 @@ schema: 2.0.0
 keywords: powershell
 title: PowerShell ギャラリー UI に影響を与えるパッケージ マニフェストの値
 ms.openlocfilehash: 9e37fec879f2f5cbe3926c7dbc946389425d856a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74417050"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell ギャラリー UI に影響を与えるパッケージ マニフェストの値
@@ -21,44 +21,44 @@ ms.locfileid: "74417050"
 
 次の表に、公開者によって制御される PowerShell ギャラリー パッケージ ページの UI 要素を示します。 UI 要素がモジュール マニフェストによって制御されるか、スクリプト マニフェストによって制御されるかを項目ごとに表示しています。
 
-| UI 要素 | 説明 | モジュール | スクリプト |
+| UI 要素 | 説明 | [Module] | スクリプト |
 | --- | --- | --- | --- |
-| **タイトル** | ギャラリーに公開されるパッケージの名前です  | いいえ | いいえ |
-| **バージョン** | 表示されるバージョンはメタデータ内のバージョン文字列で、指定されている場合、プレリリースです。 モジュール マニフェストでのバージョンの基本部分は、ModuleVersion です。 スクリプトの場合、.VERSION として指定されます。 プレリリース バージョンの文字列が指定されている場合、その文字列は、モジュールでは ModuleVersion に追加され、スクリプトでは .VERSION の一部として指定されます。 [モジュール](module-prerelease-support.md)や[スクリプト](script-prerelease-support.md)でプレリリースの文字列を指定するためのドキュメントがあります。 | 可 | 可 |
-| **説明** | モジュール マニフェストでの説明です。スクリプト ファイル マニフェストでは .DESCRIPTION となります。 | 可 | 可 |
-| **ライセンス同意リクエスト** | モジュールはユーザーのライセンス同意をリクエストできます。そのためには、モジュール マニフェストを RequireLicenseAcceptance = $true に変更し、LicenseURI を指定し、モジュール フォルダーのルートに license.txt ファイルを置きます。 詳細な情報については、「[ライセンス同意リクエスト](../how-to/working-with-packages/packages-that-require-license-acceptance.md)」のトピックで説明しています。 | 可 | いいえ |
-| **リリース ノート** | モジュールの場合、この情報は PSData\PrivateData の ReleaseNotes セクションから取得されます。 スクリプト マニフェストでは、.RELEASENOTES 要素です。 | 可 | 可 |
+| **Title** | ギャラリーに公開されるパッケージの名前です  | いいえ | いいえ |
+| **バージョン** | 表示されるバージョンはメタデータ内のバージョン文字列で、指定されている場合、プレリリースです。 モジュール マニフェストでのバージョンの基本部分は、ModuleVersion です。 スクリプトの場合、.VERSION として指定されます。 プレリリース バージョンの文字列が指定されている場合、その文字列は、モジュールでは ModuleVersion に追加され、スクリプトでは .VERSION の一部として指定されます。 [モジュール](module-prerelease-support.md)や[スクリプト](script-prerelease-support.md)でプレリリースの文字列を指定するためのドキュメントがあります。 | はい | はい |
+| **説明** | モジュール マニフェストでの説明です。スクリプト ファイル マニフェストでは .DESCRIPTION となります。 | はい | はい |
+| **ライセンス同意リクエスト** | モジュールはユーザーのライセンス同意をリクエストできます。そのためには、モジュール マニフェストを RequireLicenseAcceptance = $true に変更し、LicenseURI を指定し、モジュール フォルダーのルートに license.txt ファイルを置きます。 詳細な情報については、「[ライセンス同意リクエスト](../how-to/working-with-packages/packages-that-require-license-acceptance.md)」のトピックで説明しています。 | はい | いいえ |
+| **リリース ノート** | モジュールの場合、この情報は PSData\PrivateData の ReleaseNotes セクションから取得されます。 スクリプト マニフェストでは、.RELEASENOTES 要素です。 | はい | はい |
 | **所有者** | 所有者は、パッケージを更新できる PowerShell ギャラリー内のユーザーの一覧です。 パッケージ マニフェストには、所有者の一覧は含まれていません。 他のドキュメントで、[アイテムの所有者を管理する](../how-to/publishing-packages/managing-package-owners.md)方法について説明しています。 | いいえ | いいえ |
-| **作成者** | これは、モジュール マニフェストに作成者として指定されます。スクリプト マニフェストでは .AUTHOR として指定されます。 [作成者] フィールドは、パッケージに関連する会社や組織を指定する場合によく使用されます。 | 可 | 可 |
-| **著作権** | モジュール マニフェストの [著作権] フィールドです。スクリプト マニフェストでは .COPYRIGHT です。 | 可 | 可 |
+| **作成者** | これは、モジュール マニフェストに作成者として指定されます。スクリプト マニフェストでは .AUTHOR として指定されます。 [作成者] フィールドは、パッケージに関連する会社や組織を指定する場合によく使用されます。 | はい | はい |
+| **著作権** | モジュール マニフェストの [著作権] フィールドです。スクリプト マニフェストでは .COPYRIGHT です。 | はい | はい |
 | **FileList** | PowerShell ギャラリーへの公開時に、パッケージからこのファイル一覧が取得されます。 マニフェストの情報で制御することはできません。 注: PowerShell ギャラリーで各パッケージと共に表示される追加の .nuspec ファイルがあります。これは、システムにパッケージをインストールした後には存在しません。 これはパッケージの Nuget パッケージ マニフェストであり、無視してかまいません。 | いいえ | いいえ |
-| **タグ** | モジュールの場合、タグは PSData\PrivateData に置かれています。 スクリプトの場合は、このセクションは .TAGS とラベル付けされています。 タグにはスペースを含めることはできません。タグを引用符で囲っても同様です。 タグには詳細な要件と意味があります。これについては、このトピックの後半の「タグの詳細」セクションで説明します。 | 可 | 可 |
-| **コマンドレット** | モジュール マニフェストの CmdletsToExport で指定されます。 ワイルドカード “*” を使用せずに項目を明示的に表示すると、ユーザーのロードモジュール パフォーマンスが向上するため、この方法が推奨されます。 | 可 | いいえ |
-| **関数** | モジュール マニフェストの FunctionsToExport で指定されます。 ワイルドカード “*” を使用せずに項目を明示的に表示すると、ユーザーのロードモジュール パフォーマンスが向上するため、この方法が推奨されます。 | 可 | いいえ |
-| **DSC リソース** | PowerShell バージョン 5.0 以降で使用されるモジュールの場合、これはマニフェストの DscResourcesToExport で指定されます。 モジュールが PowerShell 4 で使用される場合には、DSCResourcesToExport はサポート対象外のマニフェスト キーであるため、使用できません (PowerShell 4 以前には DSC が提供されていませんでした)。 | 可 | いいえ |
+| **タグ** | モジュールの場合、タグは PSData\PrivateData に置かれています。 スクリプトの場合は、このセクションは .TAGS とラベル付けされています。 タグにはスペースを含めることはできません。タグを引用符で囲っても同様です。 タグには詳細な要件と意味があります。これについては、このトピックの後半の「タグの詳細」セクションで説明します。 | はい | はい |
+| **コマンドレット** | モジュール マニフェストの CmdletsToExport で指定されます。 ワイルドカード “*” を使用せずに項目を明示的に表示すると、ユーザーのロードモジュール パフォーマンスが向上するため、この方法が推奨されます。 | はい | いいえ |
+| **関数** | モジュール マニフェストの FunctionsToExport で指定されます。 ワイルドカード “*” を使用せずに項目を明示的に表示すると、ユーザーのロードモジュール パフォーマンスが向上するため、この方法が推奨されます。 | はい | いいえ |
+| **DSC リソース** | PowerShell バージョン 5.0 以降で使用されるモジュールの場合、これはマニフェストの DscResourcesToExport で指定されます。 モジュールが PowerShell 4 で使用される場合には、DSCResourcesToExport はサポート対象外のマニフェスト キーであるため、使用できません (PowerShell 4 以前には DSC が提供されていませんでした)。 | はい | いいえ |
 | **ワークフロー** | ワークフローは PowerShell ギャラリーにスクリプトとして公開され、コードにワークフローとして指定されます (例については、[Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) に関するページをご覧ください)。 これは、マニフェストによって制御されません。 | いいえ | いいえ |
-| **ロール機能** | PowerShell ギャラリーに公開されたモジュールに 1 つ以上のロール機能 (.psrc) ファイルが含まれる場合に表示されます。このファイルは JEA で使用されます。 [ロール機能](/powershell/scripting/learn/remoting/jea/role-capabilities)の詳細については、JEA のドキュメントをご覧ください。 | 可 | いいえ |
-| **PowerShell のエディション** | スクリプト マニフェストまたはモジュール マニフェスト内で指定されます。 PowerShell 5.0 で使用するように設計されたモジュールの場合は、タグを使用して制御されます。 デスクトップの場合には PSEdition_Desktop タグを使用し、コアの場合には PSEdition_Core タグを使用します。 PowerShell 5.1 以降でのみ使用されるモジュールの場合には、メイン マニフェストに CompatiblePSEditions キーが存在します。 詳細については [PowerShell Get のドキュメント](module-psedition-support.md)で、PS のエディションの機能について確認してください。 | 可 | 可 |
-| **依存関係** | 依存関係は、モジュール マニフェストの RequiredModules かスクリプト マニフェストの #Requires –Module (name) のいずれかで宣言される、PowerShell ギャラリー内のモジュールです。 | 可 | 可 |
-| **PowerShell の最小バージョン** | これは、モジュール マニフェストの PowerShellVersion で指定できます。 | 可 | いいえ |
+| **ロール機能** | PowerShell ギャラリーに公開されたモジュールに 1 つ以上のロール機能 (.psrc) ファイルが含まれる場合に表示されます。このファイルは JEA で使用されます。 [ロール機能](/powershell/scripting/learn/remoting/jea/role-capabilities)の詳細については、JEA のドキュメントをご覧ください。 | はい | いいえ |
+| **PowerShell のエディション** | スクリプト マニフェストまたはモジュール マニフェスト内で指定されます。 PowerShell 5.0 で使用するように設計されたモジュールの場合は、タグを使用して制御されます。 デスクトップの場合には PSEdition_Desktop タグを使用し、コアの場合には PSEdition_Core タグを使用します。 PowerShell 5.1 以降でのみ使用されるモジュールの場合には、メイン マニフェストに CompatiblePSEditions キーが存在します。 詳細については [PowerShell Get のドキュメント](module-psedition-support.md)で、PS のエディションの機能について確認してください。 | はい | はい |
+| **依存関係** | 依存関係は、モジュール マニフェストの RequiredModules かスクリプト マニフェストの #Requires –Module (name) のいずれかで宣言される、PowerShell ギャラリー内のモジュールです。 | はい | はい |
+| **PowerShell の最小バージョン** | これは、モジュール マニフェストの PowerShellVersion で指定できます。 | はい | いいえ |
 | **バージョン履歴** | バージョン履歴は、モジュールに加えられた更新を PowerShell ギャラリーに反映します。 削除機能を使用してパッケージのバージョンを非表示にしている場合、パッケージの所有者以外には、パッケージのバージョンはバージョン履歴に表示されません。 | いいえ | いいえ |
-| **プロジェクト サイト** | プロジェクト サイトは、モジュールでは ProjectURI を指定することにより、モジュール マニフェストの Privatedata\PSData セクション内で指定されます。 スクリプト マニフェストでは、.PROJECTURI を指定することにより制御されます。 | 可 | 可 |
-| **ライセンス** | ライセンス リンクは、モジュールでは LicenseURI を指定することにより、モジュール マニフェストの Privatedata\PSData セクション内で指定されます。 スクリプト マニフェストでは、.LICENSEURI を指定することにより制御されます。 LicenseURI を通してライセンスが指定されていない、またはモジュール内にライセンスが指定されていない場合には、PowerShell ギャラリーの使用条件によってパッケージの使用条件が指定されることに注意する必要があります。 詳細については、使用条件をご覧ください。 | 可 | 可 |
-| **アイコン** | スクリプト マニフェストまたはモジュール マニフェストの Privatedata-PSData セクションに IconURI フラグを指定することで、PowerShell Gallery のパッケージにアイコンを指定できます。 IconURI は透明の背景を持つ 32x32 の画像を指す必要があります。 URI は直接的な画像 URL にする**必要があり**、PowerShell Gallery パッケージの画像またはファイルが含まれる Web ページに移動することは**できません**。 | 可 | 可 |
+| **プロジェクト サイト** | プロジェクト サイトは、モジュールでは ProjectURI を指定することにより、モジュール マニフェストの Privatedata\PSData セクション内で指定されます。 スクリプト マニフェストでは、.PROJECTURI を指定することにより制御されます。 | はい | はい |
+| **License** | ライセンス リンクは、モジュールでは LicenseURI を指定することにより、モジュール マニフェストの Privatedata\PSData セクション内で指定されます。 スクリプト マニフェストでは、.LICENSEURI を指定することにより制御されます。 LicenseURI を通してライセンスが指定されていない、またはモジュール内にライセンスが指定されていない場合には、PowerShell ギャラリーの使用条件によってパッケージの使用条件が指定されることに注意する必要があります。 詳細については、使用条件をご覧ください。 | はい | はい |
+| **アイコン** | スクリプト マニフェストまたはモジュール マニフェストの Privatedata-PSData セクションに IconURI フラグを指定することで、PowerShell Gallery のパッケージにアイコンを指定できます。 IconURI は透明の背景を持つ 32x32 の画像を指す必要があります。 URI は直接的な画像 URL にする**必要があり**、PowerShell Gallery パッケージの画像またはファイルが含まれる Web ページに移動することは**できません**。 | はい | はい |
 
 
 ## <a name="editing-package-details"></a>パッケージの詳細の編集
 
 PowerShell ギャラリー パッケージ編集ページでは、公開者は表示されるパッケージのフィールドの一部を個別に変更できます。
 
-- Title
+- タイトル
 - 説明
-- 要約
+- まとめ
 - アイコン URL
 - プロジェクト ホーム ページの URL
-- 作成者
+- Authors
 - 著作権
-- タグ
+- Tags
 - リリース ノート
 - ライセンス リクエスト
 
@@ -84,20 +84,20 @@ PowerShell ギャラリーと PowerShellGet コマンドレットが独自に扱
 | SQL |  |
 | AWS |  |
 | DSCResource |  |
-| 自動化 |  |
+| Automation |  |
 | REST |  |
 | ActiveDirectory | AD はそれ自体が現在使用されていません  |
 | SQLServer |  |
 | DBA |  |
-| セキュリティ | Defense は精度が低くなります |
+| Security | Defense は精度が低くなります |
 | データベース | Databases (複数) は推奨されません |
 | DevOps |  |
 | Windows |  |
 | Build |  |
-| 展開 | Deploy の使用頻度はやや低めです |
+| デプロイ | Deploy の使用頻度はやや低めです |
 | クラウド |  |
 | GIT |  |
-| Server1 | Testing は推奨されません |
+| テスト | Testing は推奨されません |
 | VersionControl | Version はこれよりも頻繁に使用されますが、精度が低くなります  |
 | ログ記録 | Logging はアクションとしての使用が推奨されます |
 | ログ | Log は物としての使用が推奨されます |
@@ -106,13 +106,13 @@ PowerShell ギャラリーと PowerShellGet コマンドレットが独自に扱
 | Linux |  |
 | IIS |  |
 | AzureAutomation |  |
-| 記憶域 |  |
+| ストレージ |  |
 | GitHub |  |
 | Json |  |
 | Exchange |  |
 | ネットワーク | Networking も同様ですが、使用頻度は低めです |
 | SharePoint |  |
-| レポート | Reporting はアクションで、Report は物です |
+| レポーティング | Reporting はアクションで、Report は物です |
 | レポート | Report は物です |
 | WinRM |  |
 | 監視 |  |
@@ -130,7 +130,7 @@ PowerShell ギャラリーと PowerShellGet コマンドレットが独自に扱
 | 構成 |  |
 | ChatOps |  |
 | PackageManagement |  |
-| WMI に関するページ |  |
+| WMI |  |
 | ファイアウォール |  |
 | Docker |  |
 | Appveyor |  |

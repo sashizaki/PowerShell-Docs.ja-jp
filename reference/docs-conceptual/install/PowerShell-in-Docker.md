@@ -5,10 +5,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/03/2020
 ms.openlocfilehash: b16a31a04ca863ab55c7c9718b1a1a973e61ee46
-ms.sourcegitcommit: f55da6dea4b58a2cd13c7be7c24c07341f177b71
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/03/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80646369"
 ---
 # <a name="using-powershell-in-docker"></a>Docker での PowerShell の使用
@@ -17,7 +17,7 @@ PowerShell がプレインストールされた Docker イメージを発行し�
 
 ## <a name="finding-available-images"></a>使用可能なイメージの検索
 
-リリースされたイメージには、Docker 17.05 以降が必要です。 また、`sudo` またはローカル管理者権限なしで Docker を実行できる必要もあります。 `docker` を正しくインストールするには、Docker の公式な[手順][install]に従ってください。
+リリースされたイメージには、Docker 17.05 以降が必要です。 また、`sudo` またはローカル管理者権限なしで Docker を実行できる必要もあります。 [ を正しくインストールするには、Docker の公式な][install]手順`docker`に従ってください。
 
 リリース コンテナーは、`centos:7` などの公式のディストリビューション イメージから派生し、依存関係をインストールしてから、最後に PowerShell パッケージをインストールします。
 

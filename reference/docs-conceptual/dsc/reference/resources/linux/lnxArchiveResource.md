@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 DSC の nxArchive リソース
 ms.openlocfilehash: 77b52ad68344ba791501baeb585a5001cc97a126
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953329"
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>Linux 用 DSC の nxArchive リソース
@@ -27,13 +27,13 @@ nxArchive <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
 |SourcePath |アーカイブ ファイルのソース パスを指定します。 これは .tar、.zip、または .tar.gz ファイルである必要があります。 |
 |DestinationPath |アーカイブ コンテンツが抽出されることを保証する場所を指定します。 |
-|チェックサム |ソース アーカイブが更新されたかどうかを確認するときに使用するタイプを定義します。 値は、**ctime**、**mtime**、または **md5** です。 既定値は **md5** です。 |
+|Checksum |ソース アーカイブが更新されたかどうかを確認するときに使用するタイプを定義します。 値は、**ctime**、**mtime**、または **md5** です。 既定値は **md5** です。 |
 |Force |特定のファイル操作 (ファイルの上書き、空でないディレクトリの削除など) によって、エラーが発生します。 **Force** プロパティを使用すると、このようなエラーがオーバーライドされます。 既定値は `$false` です。 |
 
 ## <a name="common-properties"></a>共通プロパティ

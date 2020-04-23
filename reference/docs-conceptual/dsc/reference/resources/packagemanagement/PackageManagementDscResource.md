@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC の PackageManagement リソース
 ms.openlocfilehash: 28ae8772170bd4559c8a19c3a1df8c9118734857
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "76995975"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC の PackageManagement リソース
@@ -39,9 +39,9 @@ PackageManagement [string] #ResourceName
 
 ## <a name="properties"></a>Properties
 
-|プロパティ |[説明] |
+|プロパティ |説明 |
 |---|---|
-|Name |インストールまたはアンインストールするパッケージの名前を指定します。 |
+|名前 |インストールまたはアンインストールするパッケージの名前を指定します。 |
 |AdditionalParameters |`Get-Package -AdditionalArguments` に渡されるパラメーターのプロバイダー固有のハッシュ テーブル。 たとえば、NuGet プロバイダーでは DestinationPath のような追加のパラメーターを渡すことができます。 |
 |MaximumVersion |検索するパッケージで許容される最大バージョンを指定します。 このパラメーターを追加しない場合、リソースでは利用できるパッケージの最新バージョンが検索されます。 |
 |MinimumVersion |検索するパッケージで許容される最小バージョンを指定します。 このパラメーターを追加しない場合、**MaximumVersion** パラメーターで指定された最大バージョンも満たす、パッケージで利用可能な最新バージョンがリソースによって検索されます。 |
@@ -54,14 +54,14 @@ PackageManagement [string] #ResourceName
 
 次の表は、AdditionalParameters プロパティのオプションを示しています。
 
-|パラメーター |[説明] |
+|パラメーター |説明 |
 |---|---|
 |DestinationPath |組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージをインストールするファイルの場所を指定します。 |
 |InstallationPolicy |組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージのソースを信頼するかどうかを決定します。 つぎのいずれかです。**Untrusted** または **Trusted**。 |
 
 ## <a name="common-properties"></a>共通プロパティ
 
-|プロパティ |[説明] |
+|プロパティ |説明 |
 |---|---|
 |DependsOn |このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が ResourceName で、そのタイプが ResourceType である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。 |
 |Ensure |パッケージをインストールまたはアンインストールするかどうかを決定します。 既定値は **Present** です。 |

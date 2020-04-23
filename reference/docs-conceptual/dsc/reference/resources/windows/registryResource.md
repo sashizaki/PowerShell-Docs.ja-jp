@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Registry リソース
 ms.openlocfilehash: be2f9134368784ad2d208362104ce046c49492e0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953079"
 ---
 # <a name="dsc-registry-resource"></a>DSC Registry リソース
@@ -32,11 +32,11 @@ Registry [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
-|キー |特定の状態を確認するレジストリ キーのパスを示します。 このパスには、ハイブを含める必要があります。 |
+|Key |特定の状態を確認するレジストリ キーのパスを示します。 このパスには、ハイブを含める必要があります。 |
 |ValueName |レジストリ値の名前を示します。 レジストリ キーを追加または削除するには、**ValueType** または **ValueData** を指定せずに、このプロパティを空の文字列で指定します。 レジストリ キーの既定値を変更または削除するには、**ValueType** または **ValueData** を指定し、このプロパティを空の文字列で指定します。 |
 |Force |指定のレジストリ キーが存在する場合、**Force** はそのキーを新しい値で上書きします。 レジストリ キーをサブキーと共に削除する場合は、これが `$true` である必要があります。 |
 |Hex |16 進形式でデータを表現するかどうかを示します。 指定した場合、DWORD/QWORD 値データが 16 進形式で表示されます。 その他の種類に対しては無効です。 既定値は `$false` です。 |

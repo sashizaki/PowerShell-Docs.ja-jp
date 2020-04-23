@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, PSGallery
 title: パッケージの手動ダウンロード
 ms.openlocfilehash: e562f5b94b4d2caa7d31269a324e417d1a9e844a
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278719"
 ---
 # <a name="manual-package-download"></a>パッケージの手動ダウンロード
@@ -15,7 +15,7 @@ ms.locfileid: "78278719"
 PowerShell ギャラリーでは、PowerShellGet コマンドレットを使用せずに、Web サイトから直接パッケージのダウンロードをサポートしています。 どのパッケージも NuGet パッケージ (`.nupkg`) ファイルとしてダウンロードでき、その後、内部リポジトリにコピーできます。
 
 > [!NOTE]
-> パッケージの手動ダウンロードは、`Install-Module` コマンドレットの代替手段を意図したものでは**ありません**。
+> パッケージの手動ダウンロードは、 **コマンドレットの代替手段を意図したものでは**ありません`Install-Module`。
 > パッケージのダウンロードでは、モジュールまたはスクリプトはインストールされません。 NuGet パッケージのダウンロードには依存関係は含まれていません。 次の手順は、参照目的にのみ提供されています。
 
 ## <a name="using-manual-download-to-acquire-a-package"></a>手動ダウンロードを使用してパッケージを取得
@@ -38,7 +38,7 @@ NuGet パッケージ ファイルには、元のパッケージ化されたコ�
 ## <a name="installing-powershell-modules-from-a-nuget-package"></a>NuGet パッケージから PowerShell モジュールをインストールする
 
 > [!NOTE]
-> これらの手順を実行しても、`Install-Module` を実行した場合と同じ結果には**なりません**。 これらの手順は、最小要件を満たします。 これらは、`Install-Module` の代替手段を意図したものではありません。
+> これらの手順を実行しても、 **を実行した場合と同じ結果には**なりません`Install-Module`。 これらの手順は、最小要件を満たします。 これらは、`Install-Module` の代替手段を意図したものではありません。
 > `Install-Module` によって実行されるいくつかの手順は含まれていません。
 
 最も簡単な方法は、フォルダーから NuGet に固有の要素を削除することです。 要素を削除すると、パッケージの作成者によって作成された PowerShell コードが残ります。
@@ -58,7 +58,7 @@ NuGet 固有の要素の一覧については、[手動ダウンロードを使�
 ## <a name="installing-powershell-scripts-from-a-nuget-package"></a>NuGet パッケージから PowerShell スクリプトをインストールする
 
 > [!NOTE]
-> これらの手順を実行しても、`Install-Script` を実行した場合と同じ結果には**なりません**。 これらの手順は、最小要件を満たします。 これらは、`Install-Script` の代替手段を意図したものではありません。
+> これらの手順を実行しても、 **を実行した場合と同じ結果には**なりません`Install-Script`。 これらの手順は、最小要件を満たします。 これらは、`Install-Script` の代替手段を意図したものではありません。
 
 最も簡単な方法は、NuGet パッケージを抽出してから、スクリプトを直接使用することです。
 

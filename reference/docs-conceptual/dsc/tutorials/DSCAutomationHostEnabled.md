@@ -3,13 +3,13 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSCAutomationHostEnabled レジストリ キー
 ms.openlocfilehash: 2bccd2738b9f61efd656fdf0f98cf71affdbe781
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954269"
 ---
->適用先:Windows PowerShell 5.0
+>適用先: Windows PowerShell 5.0
 
 # <a name="dscautomationhostenabled-registry-key"></a>DSCAutomationHostEnabled レジストリ キー
 
@@ -19,8 +19,8 @@ DSC は、**HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policie
 |  DSCAutomationHostEnabled の値  |  説明   |
 |---|---|
 0 | 起動時にコンピューターの構成を行いません。 |
-1 で保護されたプロセスとして起動されました | 起動時にコンピューターの構成を行います。 |
-2 | コンピューターの構成は、DSC の状態が保留中または最新の場合にのみ行います。 これは、既定値です。 |
+1 | 起動時にコンピューターの構成を行います。 |
+2 | コンピューターの構成は、DSC の状態が保留中または最新の場合にのみ行います。 これが既定値です。 |
 
 ## <a name="see-also"></a>参照
 

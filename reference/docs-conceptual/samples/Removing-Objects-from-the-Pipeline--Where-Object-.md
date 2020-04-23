@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: powershell,コマンドレット
 title: パイプラインからオブジェクトを削除する (Where-Object)
 ms.openlocfilehash: 370e7745341b70c0794352a690d5750d21f53ac2
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737187"
 ---
 # <a name="removing-objects-from-the-pipeline-where-object"></a>パイプラインからオブジェクトを削除する (Where-Object)
@@ -107,7 +107,7 @@ intelppm               Intel Processor Driver
 ...
 ```
 
-上記のコマンドには `Where-Object` 要素が 2 つありますが、次のように `-and` 論理演算子を使用して、`Where-Object` 要素 1 つで表現することができます。
+上記のコマンドには `Where-Object` 要素が 2 つありますが、次のように `Where-Object` 論理演算子を使用して、`-and` 要素 1 つで表現することができます。
 
 ```powershell
 Get-CimInstance -Class Win32_SystemDriver |

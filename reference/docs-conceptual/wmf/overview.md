@@ -3,10 +3,10 @@ ms.date: 04/19/2019
 keywords: WMF, PowerShell, セットアップ
 title: Windows Management Framework (WMF)
 ms.openlocfilehash: d581370fd602e03c86aa549eb8b273ff4d01b4e5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147912"
 ---
 # <a name="windows-management-framework"></a>Windows Management Framework
@@ -40,16 +40,16 @@ PowerShell と特定の WMF のその他のコンポーネントのさまざま�
 | Windows Server 2019                     | 出荷時にインストール済み |                             |              |              |              |
 | Windows Server 2016                     | 出荷時にインストール済み |                             |              |              |              |
 | Windows 10                              | 出荷時にインストール済み | 出荷時にインストール済み                |              |              |              |
-| Windows Server 2012 R2                  | 可          | 可                         | 出荷時にインストール済み |              |              |
-| Windows 8.1                             | 可          | 可                         | 出荷時にインストール済み |              |              |
-| Windows Server 2012                     | 可          | 可                         | 可          | 出荷時にインストール済み |              |
+| Windows Server 2012 R2                  | はい          | はい                         | 出荷時にインストール済み |              |              |
+| Windows 8.1                             | はい          | はい                         | 出荷時にインストール済み |              |              |
+| Windows Server 2012                     | はい          | はい                         | はい          | 出荷時にインストール済み |              |
 | Windows 8<br>*サポート対象外*           |              |                             |              | 出荷時にインストール済み |              |
-| Windows Server 2008 R2 SP1              | 可          | 可                         | 可          | 可          | 出荷時にインストール済み |
-| Windows 7 SP1                           | 可          | 可                         | 可          | 可          | 出荷時にインストール済み |
-| Windows Server 2008 SP2                 |              |                             |              | 可          | 可          |
-| Windows Vista<br>*サポート対象外*       |              |                             |              |              | 可          |
-| Windows Server 2003<br>*サポート対象外* |              |                             |              |              | 可          |
-| Windows XP<br>*サポート対象外*          |              |                             |              | 可          | 可          |
+| Windows Server 2008 R2 SP1              | はい          | はい                         | はい          | はい          | 出荷時にインストール済み |
+| Windows 7 SP1                           | はい          | はい                         | はい          | はい          | 出荷時にインストール済み |
+| Windows Server 2008 SP2                 |              |                             |              | はい          | はい          |
+| Windows Vista<br>*サポート対象外*       |              |                             |              |              | はい          |
+| Windows Server 2003<br>*サポート対象外* |              |                             |              |              | はい          |
+| Windows XP<br>*サポート対象外*          |              |                             |              | はい          | はい          |
 
 - **出荷時にインストール済み**:指定されたバージョンの WMF の機能は、示されているバージョンの Windows クライアントおよび Windows Server に付属しています。
 - **サポート対象外**:これらの製品は Microsoft でサポートされなくなりました。 サポートされている新しいバージョンにアップグレードする必要があります。 詳細については、「[Microsoft ライフサイクル ポリシー][]」ページを参照してください。

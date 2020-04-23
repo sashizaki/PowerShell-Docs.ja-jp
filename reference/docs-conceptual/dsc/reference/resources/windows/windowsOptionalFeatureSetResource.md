@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC WindowsOptionalFeatureSet リソース
 ms.openlocfilehash: f378006a6c362ee9890d70dd76fb552dd262a544
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71952869"
 ---
 # <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet リソース
@@ -34,15 +34,15 @@ WindowsOptionalFeatureSet [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
 |名前 |有効または無効にする機能の名前を示します。 |
-|ソース |実装されていません。 |
+|source |実装されていません。 |
 |NoWindowsUpdateCheck |機能を有効にするソース ファイルを検索するとき、DISM が Windows Update (WU) を確認するかどうかを指定します。 `$true` の場合、DISM は WU に接続しません。 |
 |RemoveFilesOnDisable |**Ensure** が **Absent** に設定されているときに、`$true` に設定すると、その機能に関連付けられているすべてのファイルが削除されます。 |
-|ログ レベル |ログに表示される最大の出力レベル。 有効な値は**ErrorsOnly**、**ErrorsAndWarning**、**ErrorsAndWarningAndInformation** です。 |
+|LogLevel |ログに表示される最大の出力レベル。 有効な値は**ErrorsOnly**、**ErrorsAndWarning**、**ErrorsAndWarningAndInformation** です。 |
 |LogPath |リソース プロバイダーの操作を記録するログ ファイルへのパス。 |
 
 ## <a name="common-properties"></a>共通プロパティ

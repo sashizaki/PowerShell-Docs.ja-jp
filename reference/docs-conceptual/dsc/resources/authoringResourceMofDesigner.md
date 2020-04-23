@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: リソース デザイナー ツールの使用
 ms.openlocfilehash: 36eed0fc888380a03a3279e834748708f578d973
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500641"
 ---
 # <a name="using-the-resource-designer-tool"></a>リソース デザイナー ツールの使用
 
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 リソース デザイナー ツールは、Windows PowerShell Desired State Configuration (DSC) リソースの作成を簡単にする、**xDscResourceDesigner** モジュールによって公開されている一連のコマンドレットです。 このリソースのコマンドレットは、MOF スキーマ、スクリプト モジュール、および新しいリソースのディレクトリ構造の作成に役立ちます。 DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」を参照してください。 このトピックでは、Active Directory ユーザーを管理する DSC リソースを作成します。 [Install-Module](/powershell/module/PowershellGet/Install-Module) コマンドレットを使用して **xDscResourceDesigner** モジュールをインストールします。
 
@@ -19,10 +19,10 @@ ms.locfileid: "80500641"
 まず、リソースで公開するプロパティを決定する必要があります。 この例では、次のプロパティを持つ Active Directory ユーザーを定義します。
 
 パラメーター名  説明
-* **UserName**:ユーザーを一意に識別するキー プロパティです。
-* **Ensure**:ユーザー アカウントが存在するかしないかを指定します。 このパラメーターに使用できる値は 2 つのみです。
-* **DomainCredential**:ユーザーのドメイン パスワードです。
-* **パスワード**:必要に応じて構成でユーザー パスワードを変更できるようにするために必要なユーザーのパスワードです。
+* **UserName**: ユーザーを一意に識別するキー プロパティです。
+* **Ensure**: ユーザー アカウントが存在するかしないかを指定します。 このパラメーターに使用できる値は 2 つのみです。
+* **DomainCredential**: ユーザーのドメイン パスワードです。
+* **Password**: 必要に応じて構成でユーザー パスワードを変更できるようにするために必要なユーザーのパスワードです。
 
 プロパティを作成するには、**New-xDscResourceProperty** コマンドレットを使用します。 次の PowerShell コマンドでは、上記で説明したプロパティを作成します。
 

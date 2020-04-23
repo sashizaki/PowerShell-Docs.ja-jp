@@ -4,21 +4,21 @@ ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 のバグ修正
 ms.openlocfilehash: 8edf295eb6304dc04de2fa5d3792b1c2fc4b01f3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147852"
 ---
 # <a name="bug-fixes-in-wmf-51"></a>WMF 5.1 のバグ修正
 
-## <a name="bug-fixes"></a>バグ修正
+## <a name="bug-fixes"></a>バグの修正
 
 WMF 5.1 では、次の重要なバグが修正されました。
 
 ### <a name="module-auto-discovery-fully-honors-psmodulepath"></a>モジュールの自動検出で PSModulePath が完全に受け入れられる
 
-モジュールの自動検出 (コマンド呼び出し時に Import-Module を明示的に指定しないモジュールの自動的な読み込み) が、WMF 3 で導入されました。 導入時、PowerShell は `$env:PSModulePath` を使用する前に `$PSHome\Modules` のコマンドを確認していました。
+モジュールの自動検出 (コマンド呼び出し時に Import-Module を明示的に指定しないモジュールの自動的な読み込み) が、WMF 3 で導入されました。 導入時、PowerShell は `$PSHome\Modules` を使用する前に `$env:PSModulePath` のコマンドを確認していました。
 
 WMF 5.1 では、この動作が `$env:PSModulePath` を完全に受け入れるように変更されています。 これにより、PowerShell によって提供されるコマンド (`Get-ChildItem` など) を定義するユーザー作成のモジュールを、自動的に読み込み、組み込みコマンドを正しくオーバーライドできます。
 
@@ -42,7 +42,7 @@ WMF 5.0 では、COM オブジェクト上のメソッドを呼び出して COM 
 
 #### <a name="argument-conversions-were-not-always-performed-correctly"></a>引数の変換が正常に実行されないことがあった
 
-次に例を示します。
+次の例では
 
 ```powershell
 $obj = New-Object -ComObject WScript.Shell
@@ -53,7 +53,7 @@ $obj.SendKeys([char]173)
 
 #### <a name="enumerable-com-objects-not-always-handled-correctly"></a>列挙可能な COM オブジェクトが正しく処理されないことがある
 
-PowerShell は通常ほとんどの列挙可能なオブジェクトを列挙しますが、WMF 5.0 で発生したバグにより、IEnumerable を実装する COM オブジェクトの列挙が行われませんでした。 たとえば、次のように入力します。
+PowerShell は通常ほとんどの列挙可能なオブジェクトを列挙しますが、WMF 5.0 で発生したバグにより、IEnumerable を実装する COM オブジェクトの列挙が行われませんでした。 次に例を示します。
 
 ```powershell
 function Get-COMDictionary

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 title: Desired State Configuration (DSC) の既知の問題と制限事項
 ms.openlocfilehash: a76c5bb336804c5b384e6b6ba6a705c6049ef7fb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74416610"
 ---
 # <a name="desired-state-configuration-dsc-known-issues-and-limitations"></a>Desired State Configuration (DSC) の既知の問題と制限事項
@@ -64,19 +64,19 @@ LCM が **DebugMode** の場合は、DSC リソースから詳細なエラー �
 
 `Invoke-DscResource` コマンドレットを使用してリソースのメソッドを直接呼び出した後、このような操作のレコードを `Get-DscConfigurationStatus` によって取得することはできません。
 
-**解決策:** なし。
+**解決策:** [なし] :
 
 ## <a name="get-dscconfigurationstatus-returns-pull-cycle-operations-as-type-consistency"></a>Get-DscConfigurationStatus でプル サイクル操作がタイプ **Consistency** として返される
 
 ノードがプル更新モードに設定されている場合、プル操作を実行するたびに、`Get-DscConfigurationStatus` コマンドレットで操作のタイプが *Initial* ではなく **Consistency** としてレポートされます
 
-**解決策:** なし。
+**解決策:** [なし] :
 
 ## <a name="invoke-dscresource-cmdlet-does-not-return-message-in-the-order-they-were-produced"></a>Invoke-DscResource コマンドレットで、メッセージが生成された順序で返されない
 
 `Invoke-DscResource` コマンドレットでは、詳細、警告、およびエラー メッセージは LCM または DSC リソースによって生成された順序で返されません。
 
-**解決策:** なし。
+**解決策:** [なし] :
 
 ## <a name="dsc-resources-cannot-be-debugged-easily-when-used-with-invoke-dscresource"></a>Invoke-DscResource と共に使用すると、DSC リソースを簡単にデバッグできない
 
@@ -130,13 +130,13 @@ Start-DscConfiguration -UseExisting -CimSession $session
 
 DSC 構成スクリプトでのノード名としての IPv6 アドレスは、このリリースではサポートされていません。
 
-**解決策:** なし。
+**解決策:** [なし] :
 
 ## <a name="debugging-of-class-based-dsc-resources"></a>`Class-Based` DSC リソースのデバッグ
 
 クラスベースの DSC リソースのデバッグは、このリリースではサポートされていません。
 
-**解決策:** なし。
+**解決策:** [なし] :
 
 ## <a name="variables-and-functions-defined-in-script-scope-in-dsc-class-based-resource-are-not-preserved-across-multiple-calls-to-a-dsc-resource"></a>DSC クラスベース リソースの $script スコープで定義された変数と関数が、DSC リソースへの複数の呼び出しで保持されない
 
@@ -148,7 +148,7 @@ DSC 構成スクリプトでのノード名としての IPv6 アドレスは、�
 
 構成でリソースが **PSDscRunAsCredential** プロパティを使用している場合の DSC リソースのデバッグは、このリリースではサポートされていません。
 
-**解決策:** なし。
+**解決策:** [なし] :
 
 ## <a name="psdscrunascredential-is-not-supported-for-dsc-composite-resources"></a>PsDscRunAsCredential が DSC 複合リソースでサポートされない
 
@@ -158,7 +158,7 @@ DSC 構成スクリプトでのノード名としての IPv6 アドレスは、�
 
 リソースで必須とマークされていない場合、またはサポートされていない場合、**Syntax** パラメーターで **PsDscRunAsCredential** が正しく反映されません。
 
-**解決策:** なし。 ただし、ISE で構成を作成すると、IntelliSense の使用時に、**PsDscRunAsCredential** プロパティに関する正しいメタデータが反映されます。
+**解決策:** [なし] : ただし、ISE で構成を作成すると、IntelliSense の使用時に、**PsDscRunAsCredential** プロパティに関する正しいメタデータが反映されます。
 
 ## <a name="windowsoptionalfeature-is-not-available-in-windows-7"></a>WindowsOptionalFeature を Windows 7 で使用できない
 

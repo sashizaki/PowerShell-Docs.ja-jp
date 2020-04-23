@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 DSC の nxPackage リソース
 ms.openlocfilehash: 4091cbbd5e34a84b9011870da4bda93281378347
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954819"
 ---
 # <a name="dsc-for-linux-nxpackage-resource"></a>Linux 用 DSC の nxPackage リソース
@@ -29,7 +29,7 @@ nxPackage <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
@@ -38,7 +38,7 @@ nxPackage <string> #ResourceName
 |PackageGroup |`$true` の場合、**Name** は **PackageManager** で使用されるパッケージ グループの名前であるものとみなされます。 **PackageGroup** は、**FilePath** を指定したときには使用できません。 |
 |引数 |指定されたとおりにパッケージに渡される引数の文字列。 |
 |ReturnCode |想定されるリターン コード。 実際のリターン コードがここで指定される想定される値と一致しない場合、構成はエラーを返します。 |
-|ファイル パス |パッケージが存在するファイル パス。 |
+|FilePath |パッケージが存在するファイル パス。 |
 
 ## <a name="common-properties"></a>共通プロパティ
 

@@ -1,12 +1,12 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: Windows PowerShell ドライブの管理
 ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70215510"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell ドライブの管理
@@ -149,19 +149,19 @@ New-PsDrive コマンドレットが、現在の Windows PowerShell セッショ
 
 **Remove-PSDrive** コマンドレットを使用して、Windows PowerShell からドライブを削除できます。 **Remove-PSDrive** コマンドレットは簡単に使用できます。特定の Windows PowerShell ドライブを削除するには、Windows PowerShell ドライブの名前を指定するだけです。
 
-たとえば、**Office:** Windows PowerShell ドライブを **New-PSDrive** のトピックに示すように追加した場合、次のように入力して削除できます。
+たとえば、**New-PSDrive** のトピックでは、**Office:** という Windows PowerShell ドライブを追加しました。このドライブを削除するには、次のように入力します。
 
 ```powershell
 Remove-PSDrive -Name Office
 ```
 
-**cvkey:** を削除するには(**New-PSDrive** トピックでも使用した Windows PowerShell ドライブ)、次のコマンドを使用します。
+**New-PSDrive** トピックで使用した **cvkey:** という Windows PowerShell ドライブを削除するには、次のコマンドを使用します。
 
 ```powershell
 Remove-PSDrive -Name cvkey
 ```
 
-Windows PowerShell ドライブを削除するのは簡単ですが、そのドライブにいる間は削除できません。 たとえば、次のように入力します。
+Windows PowerShell ドライブを削除するのは簡単ですが、そのドライブにいる間は削除できません。 次に例を示します。
 
 ```
 PS> cd office:

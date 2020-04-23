@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell 4.0 で構成 ID を使用してプル クライアントをセットアップする
 ms.openlocfilehash: 9259c624c8725f7d76f61e9ad7caa42e1bfa308c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71955149"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-40"></a>PowerShell 4.0 で構成 ID を使用してプル クライアントをセットアップする
 
->適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
+>適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
@@ -27,7 +27,7 @@ ms.locfileid: "71955149"
 
 以下のいずれかの例を実行すると、**PullClientConfigID** という名前の新しい出力フォルダーが作成され、そこにメタ構成 MOF ファイルが格納されます。 この場合、メタ構成 MOF ファイルの名前は `localhost.meta.mof` になります。
 
-構成を適用するには、**Path** をメタ構成 MOF ファイルの場所に設定して **Set-DscLocalConfigurationManager** コマンドレットを呼び出します。 たとえば、次のように入力します。
+構成を適用するには、**Path** をメタ構成 MOF ファイルの場所に設定して **Set-DscLocalConfigurationManager** コマンドレットを呼び出します。 次に例を示します。
 
 ```powershell
 Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientConfigId –Verbose.

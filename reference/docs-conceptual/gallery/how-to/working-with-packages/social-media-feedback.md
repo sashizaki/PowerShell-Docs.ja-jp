@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: ソーシャル メディアやコメントを使用したフィードバックの提供
 ms.openlocfilehash: 95e5db22b94151c3974189c30f1d4e580b47eeb5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71327883"
 ---
 # <a name="providing-feedback-via-social-media-or-comments"></a>ソーシャル メディアやコメントを使用したフィードバックの提供
@@ -28,7 +28,7 @@ PowerShell ギャラリー内にある各パッケージのページの左側に
 PowerShell ギャラリーでは、パッケージの "共有" について各ソーシャル メディア サイトを確認し、各ソーシャル メディア サイト内でパッケージが共有された回数を表示します。
 これにより、パッケージが共有された回数のみが表示されるため、他のユーザーからは "いいね!" と評価されたパッケージであると解釈されます。
 
-## <a name="comments"></a>備考
+## <a name="comments"></a>説明
 
 > [!IMPORTANT]
 > Livefyre コメント機能はサード パーティ ベンダーによって提供され、現在はサポートされていません。

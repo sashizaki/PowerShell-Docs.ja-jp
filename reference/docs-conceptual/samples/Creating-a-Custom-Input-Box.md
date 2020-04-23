@@ -3,10 +3,10 @@ ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: ユーザー設定の入力ボックスを作成する
 ms.openlocfilehash: ff0588b44169bc276e2833254cec60eda759e2c8
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "77706191"
 ---
 # <a name="creating-a-custom-input-box"></a>ユーザー設定の入力ボックスを作成する
@@ -65,7 +65,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-最初に、スクリプトは次の 2 つの .NET Framework クラスを読み込みます。**System.Drawing** と **System.Windows.Forms** です。 次に、.NET Framework クラス **System.Windows.Forms.Form** の新しいインスタンスを開始します。これにより、コントロールの追加を開始する空白のフォームまたはウィンドウが作成されます。
+このスクリプトは 2 つの .NET Framework クラス、つまり **System.Drawing** と **System.Windows.Forms** を最初に読み込みます。 次に、.NET Framework クラス **System.Windows.Forms.Form** の新しいインスタンスを開始します。これにより、コントロールの追加を開始する空白のフォームまたはウィンドウが作成されます。
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
@@ -159,5 +159,5 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>参照
 
-- [GitHub:Dave Wyatt の WinFormsExampleUpdates](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730941(v=technet.10))
-- [Windows PowerShell Tip of the Week:ユーザー設定の入力ボックスを作成する](https://technet.microsoft.com/library/ff730941.aspx)
+- [GitHub: Dave Wyatt の WinFormsExampleUpdates](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730941(v=technet.10))
+- [Windows PowerShell Tip of the Week: ユーザー設定の入力ボックスを作成する](https://technet.microsoft.com/library/ff730941.aspx)

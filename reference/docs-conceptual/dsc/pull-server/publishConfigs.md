@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成 ID (v4/v5) を使用してプル サーバーに発行する
 ms.openlocfilehash: 99c5b89e7d556fa72eaa6a3ba1654936f96a0b9d
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500758"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>構成 ID (v4/v5) を使用してプル サーバーに発行する
@@ -41,7 +41,7 @@ GenericConfig
 
 ### <a name="configuration-ids-guid"></a>構成 ID (GUID)
 
-`localhost.mof` ファイルの名前を `<GUID>.mof` ファイルに変更する必要があります。 以下の例を使用するか、または [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) コマンドレットを使用して、ランダムな **Guid** を作成できます。
+`localhost.mof` ファイルの名前を `<GUID>.mof` ファイルに変更する必要があります。 以下の例を使用するか、または **New-Guid** コマンドレットを使用して、ランダムな [Guid](/powershell/module/microsoft.powershell.utility/new-guid) を作成できます。
 
 ```powershell
 [System.Guid]::NewGuid()
@@ -76,7 +76,7 @@ Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
 プル サーバーまたは SMB 共有に格納される各 `.mof` ファイルには、`.checksum` ファイルを関連付ける必要があります。
 このファイルにより、クライアントは、関連付けられている `.mof` ファイルが変更され、もう一度ダウンロードする必要が生じたときに把握することができます。
 
-**チェックサム**は [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) コマンドレットで作成できます。 また、`-Path` パラメーターを使用すると、ファイルのディレクトリに対して `New-DSCCheckSum` を実行することもできます。
+**チェックサム**は [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) コマンドレットで作成できます。 また、`New-DSCCheckSum` パラメーターを使用すると、ファイルのディレクトリに対して `-Path` を実行することもできます。
 チェックサムが既に存在する場合は、`-Force` パラメーターを使用して強制的に再作成できます。 次の例では、前のセクションの `.mof` ファイルが含まれているディレクトリを指定し、`-Force` パラメーターを使用しています。
 
 ```powershell
@@ -122,7 +122,7 @@ ConfigurationRepositoryShare SMBPullServer
 - [構成 ID を使用してプル クライアントを設定する (v5)](pullClientConfigId.md)
 - [構成名を使用してプル クライアントを設定する (v5)](pullClientConfigNames.md)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [DSC SMB プル サーバーを設定する](pullServerSmb.md)
 - [DSC HTTP プル サーバーを設定する](pullServer.md)

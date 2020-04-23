@@ -3,15 +3,15 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC User リソース
 ms.openlocfilehash: dec432c2ff1b4e4408165fef391e77cbf1d85ac4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953009"
 ---
 # <a name="dsc-user-resource"></a>DSC User リソース
 
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.x
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.x
 
 PowerShell Desired State Configuration (DSC) の **User** リソースは、ターゲット ノード上でローカル ユーザー アカウントを管理するためのメカニズムを備えています。
 
@@ -34,7 +34,7 @@ User [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|

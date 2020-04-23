@@ -3,15 +3,15 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Package リソース
 ms.openlocfilehash: efac07b4b051564cadd5aa1542a6afda6cd453ad
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953149"
 ---
 # <a name="dsc-package-resource"></a>DSC Package リソース
 
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.x
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell Desired State Configuration (DSC) の **Package** リソースは、Windows インストーラーや setup.exe パッケージなど、ターゲット ノードでパッケージをインストールまたはアンインストールするメカニズムを備えています。
 
@@ -33,15 +33,15 @@ Package [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
 |名前 |特定の状態を保証するパッケージの名前を示します。 |
-|パス |パッケージが存在するパスを示します。 |
+|Path |パッケージが存在するパスを示します。 |
 |ProductId |パッケージを一意に識別する製品 ID を示します。 |
 |引数 |指定されたとおりにパッケージに渡される引数の文字列を一覧表示します。 |
-|Credential |リモート ソースのパッケージへのアクセスを提供します。 このプロパティは、パッケージのインストールには使用されません。 パッケージは常に、ローカル システムにインストールされます。 |
+|資格情報 |リモート ソースのパッケージへのアクセスを提供します。 このプロパティは、パッケージのインストールには使用されません。 パッケージは常に、ローカル システムにインストールされます。 |
 |LogPath |プロバイダーがパッケージをインストールまたはアンインストールするためのログ ファイルを保存する場所の完全パスを示します。 |
 |ReturnCode |想定されるリターン コードを示します。 実際のリターン コードがここで指定される想定される値と一致しない場合、構成はエラーを返します。 |
 

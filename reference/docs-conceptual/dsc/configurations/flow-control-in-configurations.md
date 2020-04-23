@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成内での条件付きステートメントとループ
 ms.openlocfilehash: 86f75be4a3d1c1760dd6269335431e8ab9fd8d09
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736898"
 ---
 # <a name="conditional-statements-and-loops-in-a-configuration"></a>Configuration 内での条件付きステートメントとループ
@@ -14,7 +14,7 @@ ms.locfileid: "75736898"
 PowerShell のフロー制御キーワードを使って、[Configuration](configurations.md) をより動的にすることができます。 この記事では、条件ステートメントとループを使って `Configuration` をより動的にする方法を説明します。 条件ステートメントとループを[パラメーター](add-parameters-to-a-configuration.md)および[構成データ](configData.md)と組み合わせることで、`Configuration` をコンパイルするときの柔軟性と制御が増します。
 
 関数またはスクリプト ブロックと同じように、`Configuration` 内で任意の PowerShell 言語の機能を使用できます。
-使用するステートメントは、`.mof` ファイルをコンパイルするために `Configuration` を呼び出すときにのみ評価されます。 次の例では、シナリオを使って概念を説明します。 条件ステートメントとループは、パラメーターや構成データと共に使われることがよくあります。
+使用するステートメントは、`Configuration` ファイルをコンパイルするために `.mof` を呼び出すときにのみ評価されます。 次の例では、シナリオを使って概念を説明します。 条件ステートメントとループは、パラメーターや構成データと共に使われることがよくあります。
 
 この例では、**Service** リソース ブロックでコンパイル時にサービスの現在の状態を取得し、現在の状態を保持する `.mof` ファイルを生成します。
 
@@ -38,7 +38,7 @@ Configuration ServiceState
 }
 ```
 
-さらに、`foreach` ループを使って、現在のコンピューター上のすべてのサービスに対して **Service** リソース ブロックを作成できます。
+さらに、**ループを使って、現在のコンピューター上のすべてのサービスに対して**Service`foreach` リソース ブロックを作成できます。
 
 ```powershell
 Configuration ServiceState
@@ -60,7 +60,7 @@ Configuration ServiceState
 }
 ```
 
-また、`if` ステートメントを使用してオンラインになっているコンピューターに対してのみ `Configuration` を作成することもできます。
+また、`Configuration` ステートメントを使用してオンラインになっているコンピューターに対してのみ `if` を作成することもできます。
 
 ```powershell
 Configuration ServiceState

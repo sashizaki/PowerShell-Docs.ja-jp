@@ -1,12 +1,12 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: 現在の場所の管理
 ms.openlocfilehash: 42ab56759dec882d140f813c8614e578957722b3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030205"
 ---
 # <a name="managing-current-location"></a>現在の場所の管理
@@ -81,7 +81,7 @@ Path
 HKLM:\
 ```
 
-Set-Location と入力するか、Set-Location に対する組み込みの Windows PowerShell のエイリアス (cd、chdir、sl) のいずれかを使用します。 たとえば、次のように入力します。
+Set-Location と入力するか、Set-Location に対する組み込みの Windows PowerShell のエイリアス (cd、chdir、sl) のいずれかを使用します。 次に例を示します。
 
 ```powershell
 cd -Path C:\Windows
@@ -161,7 +161,7 @@ C:\Documents and Settings\PowerUser
 Set-Location \\FS01\Public
 ```
 
-または
+or
 
 ```powershell
 Push-Location \\FS01\Public

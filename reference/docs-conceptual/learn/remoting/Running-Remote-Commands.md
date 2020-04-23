@@ -1,12 +1,12 @@
 ---
 ms.date: 08/14/2018
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: リモート コマンドの実行
 ms.openlocfilehash: d6609deafd8dec4f34a8412439d87dacd20d46f1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030317"
 ---
 # <a name="running-remote-commands"></a>リモート コマンドの実行
@@ -118,7 +118,7 @@ $s = New-PSSession -ComputerName Server01, Server02
 Invoke-Command -Session $s {$h = Get-HotFix}
 ```
 
-これで、同じセッション内の他のコマンドで、`$h` 変数のデータを使用できるようになりました。 結果はローカル コンピューターに表示されます。 たとえば、次のように入力します。
+これで、同じセッション内の他のコマンドで、`$h` 変数のデータを使用できるようになりました。 結果はローカル コンピューターに表示されます。 次に例を示します。
 
 ```powershell
 Invoke-Command -Session $s {$h | where {$_.InstalledBy -ne "NTAUTHORITY\SYSTEM"}}
@@ -132,7 +132,7 @@ Windows PowerShell には、WSMan プロバイダーが含まれています。 
 
 WSMan プロバイダーの詳細については、[WSMan Provider](https://technet.microsoft.com/library/dd819476.aspx) (WSMan プロバイダー) および [WS-Management コマンドレット関するページ](/powershell/module/microsoft.powershell.core/about/about_ws-management_cmdlets)を参照するか、Windows PowerShell コンソールで `Get-Help wsman` と入力してください。
 
-詳細については、次のドキュメントをご覧ください。
+詳細については、次を参照してください。
 
 - [about_Remote のよく寄せられる質問](https://technet.microsoft.com/library/dd315359.aspx)
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)

@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,コマンドレット
 title: Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
 ms.openlocfilehash: 818beffaf7df55ae36a154b7b751f9201c5b4299
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870185"
 ---
 # <a name="troubleshooting-access-problems-in-windows-powershell-web-access"></a>Windows PowerShell Web Access でのアクセスに関する問題のトラブルシューティング
 
-更新:2013 年 6 月 24 日 (改訂: 2017 年 8 月 23 日)
+更新: 2013 年 6 月 24 日 (改訂: 2017 年 8 月 23 日)
 
-適用先:Windows Server 2012 R2、Windows Server 2012
+適用対象: Windows Server 2012 R2、Windows Server 2012
 
 次のセクションでは、Windows PowerShell Web Access を利用したリモート コンピューターへの接続で発生する可能性がある一般的な問題とその問題の解決案を提示します。
 

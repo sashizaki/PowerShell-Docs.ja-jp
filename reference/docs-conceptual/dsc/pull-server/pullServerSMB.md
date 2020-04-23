@@ -3,15 +3,15 @@ ms.date: 04/11/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC SMB プル サーバーのセットアップ
 ms.openlocfilehash: be41f7a708f1a129919fae8300fc4307441097f7
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500703"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>DSC SMB プル サーバーのセットアップ
 
-適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
+適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
@@ -76,7 +76,7 @@ Configuration SmbShare
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>ファイル システムにプル クライアントへのアクセス権限を付与する
 
-クライアント ノードに **ReadAccess** を与えると、そのノードは SMB 共有にアクセスできるようになりますが、その共有内のファイルやフォルダーにはアクセスできません。 クライアント ノードに、SMB 共有のフォルダーやサブフォルダーに対するアクセス権限を明示的に許可する必要があります。 DSC でこれを行うには、[cNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) モジュールに含まれている **cNtfsPermissionEntry** リソースを使用して追加します。
+クライアント ノードに **ReadAccess** を与えると、そのノードは SMB 共有にアクセスできるようになりますが、その共有内のファイルやフォルダーにはアクセスできません。 クライアント ノードに、SMB 共有のフォルダーやサブフォルダーに対するアクセス権限を明示的に許可する必要があります。 DSC でこれを行うには、**cNtfsAccessControl** モジュールに含まれている [cNtfsPermissionEntry](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) リソースを使用して追加します。
 次の構成では、プル クライアントに ReadAndExecute アクセスを付与する **cNtfsPermissionEntry** ブロックを追加します。
 
 ```powershell
@@ -141,7 +141,7 @@ Configuration DSCSMB
 
 WMF 5.0 の DSC リソースを含むモジュールの既定の形式は、`{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\` です。
 
-プル サーバー用にパッケージ化する前に、パスが `{Module Folder}\DscResources\{DSC Resource Folder}\` になるように単純に `{Module version}` フォルダーを削除します。 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを SMB 共有フォルダーに置きます。
+プル サーバー用にパッケージ化する前に、パスが `{Module version}` になるように単純に `{Module Folder}\DscResources\{DSC Resource Folder}\` フォルダーを削除します。 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを SMB 共有フォルダーに置きます。
 
 ## <a name="creating-the-mof-checksum"></a>MOF チェックサムの作成
 
@@ -210,7 +210,7 @@ $ConfigurationData = @{
 - DSC で SMB を使用することに関する Mike F. Robbins 氏の投稿を、このトピックの内容として参考にしました。 彼のブログは [Mike F Robbins](http://mikefrobbins.com/) にあります。
 - **cNtfsAccessControl** モジュールを作成した Serge Nikalaichyk 氏。 このモジュールのソースは [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl) にあります。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [Windows PowerShell Desired State Configuration の概要](../overview/overview.md)
 

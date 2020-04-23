@@ -1,12 +1,12 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: オブジェクトの並べ替え
 ms.openlocfilehash: ed78e7e333f3468781c9cd96df2194fbdfebe753
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030774"
 ---
 # <a name="sorting-objects"></a>オブジェクトの並べ替え
@@ -124,7 +124,7 @@ LastWriteTime          CreationTime
 Sort-Object LastWriteTime, Name
 ```
 
-さらに、組み込みの別名 `sort` で `Sort-Object` を参照できます。
+さらに、組み込みの別名 `Sort-Object` で `sort` を参照できます。
 
 ```powershell
 sort LastWriteTime, Name

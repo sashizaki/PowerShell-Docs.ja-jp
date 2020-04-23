@@ -3,18 +3,18 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC を使用した初回起動時の仮想マシンの構成
 ms.openlocfilehash: f9634c330832e23fb2c6f08c5b299b55a5505ac9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954609"
 ---
 # <a name="configure-a-virtual-machines-at-initial-boot-up-by-using-dsc"></a>DSC を使用した初回起動時の仮想マシンの構成
 
 > [!IMPORTANT]
-> 適用先:Windows PowerShell 5.0
+> 適用先: Windows PowerShell 5.0
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 > [!NOTE]
 > このトピックで説明されている **DSCAutomationHostEnabled** レジストリ キーは、PowerShell 4.0 では使用できません。
@@ -28,7 +28,7 @@ ms.locfileid: "71954609"
 
   DSC を使用すると、ソフトウェアのインストールと初回起動時のコンピューターの構成を自動化できます。
   初回起動時のプロセスで実行されるように、起動可能なメディア (VHD など) に構成 MOF ドキュメントまたはメタ構成のいずれかを挿入して、この操作を行います。
-  この動作は、`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` の [DSCAutomationHostEnabled レジストリ キー](DSCAutomationHostEnabled.md) によって指定されます。
+  この動作は、[ の ](DSCAutomationHostEnabled.md)DSCAutomationHostEnabled レジストリ キー`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` によって指定されます。
   このキーの既定値は 2 です。これは、初回起動時に DSC を実行することを許可します。
 
   初回起動時に DSC を実行しない場合は、[DSCAutomationHostEnabled レジストリ キー](DSCAutomationHostEnabled.md)を 0 に設定します。
@@ -66,7 +66,7 @@ Configuration SampleIISInstall
 
 ### <a name="to-inject-the-configuration-mof-document-on-the-vhd"></a>VHD 上で構成 MOF ドキュメントを挿入するには
 
-1. [Mount-VHD](/powershell/module/hyper-v/mount-vhd) コマンドレットを呼び出して、構成を挿入する VHD をマウントします。 たとえば、次のように入力します。
+1. [Mount-VHD](/powershell/module/hyper-v/mount-vhd) コマンドレットを呼び出して、構成を挿入する VHD をマウントします。 次に例を示します。
 
    ```powershell
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
@@ -83,14 +83,14 @@ Configuration SampleIISInstall
    SampleIISInstall
    ```
 
-5. この操作を行うと、`SampleIISInstall` という名前の新しいフォルダーに、`localhost.mof` ファイルが作成されます。
-   [Move-Item](/powershell/module/microsoft.powershell.management/move-item) コマンドレットを使用して、`Pending.mof` に名前を変更し、VHD の適切な場所にそのファイルを移動します。 たとえば、次のように入力します。
+5. この操作を行うと、`localhost.mof` という名前の新しいフォルダーに、`SampleIISInstall` ファイルが作成されます。
+   `Pending.mof`Move-Item[ コマンドレットを使用して、](/powershell/module/microsoft.powershell.management/move-item) に名前を変更し、VHD の適切な場所にそのファイルを移動します。 次に例を示します。
 
    ```powershell
        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
    ```
 
-6. [Dismount-VHD](/powershell/module/hyper-v/dismount-vhd) コマンドレットを呼び出して、VHD のマウントを解除します。 たとえば、次のように入力します。
+6. [Dismount-VHD](/powershell/module/hyper-v/dismount-vhd) コマンドレットを呼び出して、VHD のマウントを解除します。 次に例を示します。
 
    ```powershell
    Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
@@ -134,7 +134,7 @@ configuration PullClientBootstrap
 
 ### <a name="to-inject-the-metaconfiguration-mof-document-on-the-vhd"></a>VHD 上でメタ構成 MOF ドキュメントを挿入するには
 
-1. [Mount-VHD](/powershell/module/hyper-v/mount-vhd) コマンドレットを呼び出して、メタ構成を挿入する VHD をマウントします。 たとえば、次のように入力します。
+1. [Mount-VHD](/powershell/module/hyper-v/mount-vhd) コマンドレットを呼び出して、メタ構成を挿入する VHD をマウントします。 次に例を示します。
 
    ```powershell
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
@@ -153,14 +153,14 @@ configuration PullClientBootstrap
    PullClientBootstrap
    ```
 
-6. この操作を行うと、`PullClientBootstrap` という名前の新しいフォルダーに、`localhost.meta.mof` ファイルが作成されます。
-   [Move-Item](/powershell/module/microsoft.powershell.management/move-item) コマンドレットを使用して、`MetaConfig.mof` に名前を変更し、VHD の適切な場所にそのファイルを移動します。
+6. この操作を行うと、`localhost.meta.mof` という名前の新しいフォルダーに、`PullClientBootstrap` ファイルが作成されます。
+   `MetaConfig.mof`Move-Item[ コマンドレットを使用して、](/powershell/module/microsoft.powershell.management/move-item) に名前を変更し、VHD の適切な場所にそのファイルを移動します。
 
    ```powershell
    Move-Item -Path C:\DSCTest\PullClientBootstrap\localhost.meta.mof -Destination E:\Windows\System32\Configuration\MetaConfig.mof
    ```
 
-7. [Dismount-VHD](/powershell/module/hyper-v/dismount-vhd) コマンドレットを呼び出して、VHD のマウントを解除します。 たとえば、次のように入力します。
+7. [Dismount-VHD](/powershell/module/hyper-v/dismount-vhd) コマンドレットを呼び出して、VHD のマウントを解除します。 次に例を示します。
 
    ```powershell
    Dismount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
@@ -175,13 +175,13 @@ configuration PullClientBootstrap
 
 `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\DSCAutomationHostEnabled` キーの値は既定で 2 に設定されます。これにより、コンピューターが保留中または最新の状態である場合に、DSC 構成を実行することができます。 初回起動時に構成を実行しない場合は、このキーの値を 0 に設定する必要があります。
 
-1. [Mount-VHD](/powershell/module/hyper-v/mount-vhd) コマンドレットを呼び出して、VHD をマウントします。 たとえば、次のように入力します。
+1. [Mount-VHD](/powershell/module/hyper-v/mount-vhd) コマンドレットを呼び出して、VHD をマウントします。 次に例を示します。
 
    ```powershell
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
    ```
 
-2. `reg load` を呼び出して、VHD からレジストリの `HKLM\Software` サブキーを読み込みます。
+2. `HKLM\Software` を呼び出して、VHD からレジストリの `reg load` サブキーを読み込みます。
 
    ```powershell
    reg load HKLM\Vhd E:\Windows\System32\Config\Software`

@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: ノード上で構成を適用、取得、およびテストする
 ms.openlocfilehash: 41f8d2d75d3dd9621de615e7999c2690cb8ce44a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953839"
 ---
 # <a name="apply-get-and-test-configurations-on-a-node"></a>ノード上で構成を適用、取得、およびテストする
@@ -45,13 +45,13 @@ Mode                LastWriteTime     Length Name
 -a----       11/27/2018   7:29 AM     2.13KB server02.mof
 ```
 
-構成を適用するには、[Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを使います。 `-Path` パラメーターでは、".mof" ファイルが存在するディレクトリを指定します。 `-Computername` を指定しないと、`Start-DSCConfiguration` では、".mof" ファイルの名前によって指定されているコンピューター名 (\<コンピューター名\>.mof) に対して、各構成の適用が試みられます。 詳細な出力を表示するには、`Start-DSCConfiguration` に対して `-Verbose` を指定します。
+構成を適用するには、[Start-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを使います。 `-Path` パラメーターでは、".mof" ファイルが存在するディレクトリを指定します。 `-Computername` を指定しないと、`Start-DSCConfiguration` では、".mof" ファイルの名前によって指定されているコンピューター名 (\<コンピューター名\>.mof) に対して、各構成の適用が試みられます。 詳細な出力を表示するには、`-Verbose` に対して `Start-DSCConfiguration` を指定します。
 
 ```powershell
 Start-DSCConfiguration -Path C:\Temp\ -Verbose
 ```
 
-`-Wait` を指定しない場合、1 つのジョブが作成されます。 作成されたジョブには、`Start-DSCConfiguration` によって処理される ".mof" ファイルごとに 1 つの **ChildJob** があります。
+`-Wait` を指定しない場合、1 つのジョブが作成されます。 作成されたジョブには、**によって処理される ".mof" ファイルごとに 1 つの**ChildJob`Start-DSCConfiguration` があります。
 
 ```output
 Id     Name            PSJobTypeName   State         HasMoreData     Location             Command
@@ -101,7 +101,7 @@ An LCM method call arrived from computer SERVER01 with user sid S-1-5-21-1245250
 Operation 'Invoke CimMethod' complete.
 ```
 
-PowerShell 5.0 以降では、`Start-DSCConfiguration` に `-UseExisting` パラメーターが追加されています。 `-UseExisting` を指定することにより、`-Path` パラメーターで指定したものではなく、既存適用されている構成を使うようコマンドレットに指示します。
+PowerShell 5.0 以降では、`-UseExisting` に `Start-DSCConfiguration` パラメーターが追加されています。 `-UseExisting` を指定することにより、`-Path` パラメーターで指定したものではなく、既存適用されている構成を使うようコマンドレットに指示します。
 
 ```powershell
 Start-DSCConfiguration -UseExisting -Verbose -Wait
@@ -219,6 +219,6 @@ PowerShell 5.0 以降では、[Publish-DSCConfiguration](/powershell/module/PSDe
 Publish-DscConfiguration -Path '$home\WebServer' -ComputerName "ContosoWebServer" -Credential (get-credential Contoso\webadministrator)
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [取得、テスト、および設定](../resources/get-test-set.md)

@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC ServiceSet リソース
 ms.openlocfilehash: 97c25f46940d69ed6c696e2692e29131e9a997b0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953029"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet リソース
@@ -33,7 +33,7 @@ ServiceSet [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
@@ -41,7 +41,7 @@ ServiceSet [string] #ResourceName
 |StartupType |サービスのスタートアップの種類を示します。 このプロパティで有効な値は、**Automatic**、**Disabled**、**Manual** です。 |
 |BuiltInAccount |サービスに使用するサインイン アカウントを示します。 このプロパティで有効な値は、**LocalService**、**LocalSystem**、**NetworkService** です。 |
 |State |サービスに対して保証する状態を次のように示します。**Stopped** または **Running**。 |
-|Credential |サービス リソースを実行するアカウントの資格情報を示します。 このプロパティおよび **BuiltinAccount** プロパティを同時に使用することはできません。 |
+|資格情報 |サービス リソースを実行するアカウントの資格情報を示します。 このプロパティおよび **BuiltinAccount** プロパティを同時に使用することはできません。 |
 
 ## <a name="common-properties"></a>共通プロパティ
 

@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: ギャラリーの管理者に問い合わせる
 ms.openlocfilehash: f9197dfbf0cedb642259f554b42ec6f63eae30a4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328403"
 ---
 # <a name="contact-gallery-administrators"></a>ギャラリーの管理者に問い合わせる

@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, PSGallery, GDPR
 title: PowerShell ギャラリー GDPR コンプライアンス
 ms.openlocfilehash: fb1191d8a1cd12d5994e41238c384eb504d0c261
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328323"
 ---
 # <a name="powershell-gallery-gdpr-compliance"></a>PowerShell ギャラリー GDPR コンプライアンス
@@ -15,7 +15,7 @@ ms.locfileid: "71328323"
 ## <a name="overview"></a>概要
 
 2018 年 5 月に、ヨーロッパの個人情報保護法、一般データ保護規制 (GDPR) が有効になりました。
-GDPR によって、企業、政府機関、非営利団体、および欧州連合 (EU) の人に商品やサービスを提供したり、ヨーロッパの居住者に関連するデータを収集分析したりするその他の組織に、新しい規則が課されます。
+GDPR は、欧州連合 (EU) 内で人々に製品やサービスを提供したり、EU 居住者に関連するデータを収集および分析したりする企業、政府機関、非営利組織やその他の組織を対象とする新しいルールです。
 GDPR は現住所に関わらず適用されます。
 
 > [!NOTE]
@@ -41,7 +41,7 @@ PowerShell ギャラリーのアカウントを作成したユーザーは、Pow
 
 次のセクションは、PowerShell ギャラリーがデータ サブジェクト要求 (DSR) をどのようにサポートするかを、PowerShell ギャラリーに格納された情報をエクスポートする方法や、この情報の削除を依頼する方法について説明しています。
 
-### <a name="email"></a>電子メール
+### <a name="email"></a>Email
 
 電子メールのやり取りには、次のいずれかが含まれます。
 
@@ -93,7 +93,7 @@ Save-Script Get-repository psgallery
 ## <a name="deleting-personal-data-from-the-powershell-gallery"></a>PowerShell ギャラリーから個人データを削除する
 
 自分の PowerShell ギャラリーのアカウント、または PowerShell ギャラリーで所有しているパッケージを削除するには、次の件名のメールを cgadmin@microsoft.com に送信します: "GDPR Request for items relating to this account" (このアカウントに関連のある項目の GDPR 要求)。
-メッセージの本文には、削除を依頼する情報を記述します。 たとえば、次のように入力します。
+メッセージの本文には、削除を依頼する情報を記述します。 次に例を示します。
 
 - パッケージ "パッケージ名" のバージョン x.y.z を削除してください
 - パッケージ "パッケージ名" のすべてのバージョンを削除してください

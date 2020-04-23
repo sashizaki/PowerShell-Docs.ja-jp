@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 title: 情報ストリーム
 ms.openlocfilehash: c54603cf0dd4f0b69f8147620130f9f29bc3e5ec
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147612"
 ---
 # <a name="information-stream"></a>情報ストリーム
@@ -60,7 +60,7 @@ $r.Id
 4008
 ```
 
-`Write-Information` の **InformationVariable** パラメーターを使用すると、`Write-Host` コマンドレットとは異なり、出力を変数にキャプチャできます。 **タグ**を使用すると、**情報**ストリームに送信されたメッセージのチャネルを分けることができます。
+`Write-Host` の **InformationVariable** パラメーターを使用すると、`Write-Information` コマンドレットとは異なり、出力を変数にキャプチャできます。 **タグ**を使用すると、**情報**ストリームに送信されたメッセージのチャネルを分けることができます。
 
 ```powershell
 $r = OutputGusher -InformationVariable iv
@@ -83,7 +83,7 @@ Process              {System.Diagnostics.Process (powershell)}
 PSHOST               {Preparing to give you output!, =============================, I , <3 ...}
 ```
 
-タグを使用して**情報**ストリームにメッセージを送ると、そのメッセージはホスト アプリケーションには表示されず、タグ名を使用して取得されるようになります。 たとえば、次のように入力します。
+タグを使用して**情報**ストリームにメッセージを送ると、そのメッセージはホスト アプリケーションには表示されず、タグ名を使用して取得されるようになります。 次に例を示します。
 
 ```powershell
 $iv | where Tags -eq 'LogHigh'

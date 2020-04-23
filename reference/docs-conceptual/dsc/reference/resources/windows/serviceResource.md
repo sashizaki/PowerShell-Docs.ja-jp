@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Service リソース
 ms.openlocfilehash: 0bef6aa6d3526c9d8d92187c1e738d5c46b5665a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953049"
 ---
 # <a name="dsc-service-resource"></a>DSC Service リソース
@@ -34,18 +34,18 @@ Service [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
 |名前 |サービス名を示します。 これは、表示名とは異なることがあります。 `Get-Service` コマンドレットを使用すると、サービスとその現在の状態の一覧を取得できます。 |
 |BuiltInAccount |サービスに使用するサインイン アカウントを示します。 このプロパティで有効な値は、**LocalService**、**LocalSystem**、**NetworkService** です。 |
-|Credential |サービスを実行するアカウントの資格情報を示します。 このプロパティおよび **BuiltinAccount** プロパティを同時に使用することはできません。 |
+|資格情報 |サービスを実行するアカウントの資格情報を示します。 このプロパティおよび **BuiltinAccount** プロパティを同時に使用することはできません。 |
 |StartupType |サービスのスタートアップの種類を示します。 このプロパティで有効な値は、**Automatic**、**Disabled**、**Manual** です。 |
-|State |サービスに対して保証する状態を示します。 値は、次のとおりです。**Running** または **Stopped**。 |
+|State |サービスに対して保証する状態を示します。 値は次のとおりです。**Running** または **Stopped**。 |
 |説明 |ターゲット サービスの説明を示します。 |
-|表示名 |ターゲット サービスの表示名を示します。 |
-|パス |新しいサービスのバイナリ ファイルのパスを示します。 |
+|DisplayName |ターゲット サービスの表示名を示します。 |
+|Path |新しいサービスのバイナリ ファイルのパスを示します。 |
 
 ## <a name="common-properties"></a>共通プロパティ
 

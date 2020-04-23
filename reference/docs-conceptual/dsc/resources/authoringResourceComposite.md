@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: '複合リソース: リソースとしての DSC 構成の使用'
 ms.openlocfilehash: 79fe94bd5bab8fa460714e5994d2e2487f302410
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75415897"
 ---
-# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>複合リソース:リソースとしての DSC 構成の使用
+# <a name="composite-resources-using-a-dsc-configuration-as-a-resource"></a>複合リソース: リソースとしての DSC 構成の使用
 
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 実際の状況では、構成は多くのさまざまなリソースを呼び出したり、膨大な数のプロパティを設定したりするため、長く複雑になることがあります。 このような複雑さに対処するために、Windows PowerShell Desired State Configuration (DSC) 構成を他の構成のリソースとして使用できます。 これは、複合リソースと呼ばれます。 複合リソースは、パラメーターを受け取る DSC 構成です。 構成のパラメーターは、リソースのプロパティとして機能します。 構成は、拡張子が `.schema.psm1` のファイルとして保存されます。 MOF スキーマと、一般的な DSC リソースのリソース スクリプトの両方の代わりになります。 DSC リソースの詳細については、[Windows PowerShell Desired State Configuration](resources.md) に関する記事を参照してください。
 
@@ -143,7 +143,7 @@ RootModule = 'xVirtualMachine.schema.psm1'
 ```
 
 > [!NOTE]
-> これは、`MyDscResources` フォルダーにあるすべてのリソースのモジュール マニフェストである `MyDscResources.psd1` に追加されます。
+> これは、`MyDscResources.psd1` フォルダーにあるすべてのリソースのモジュール マニフェストである `MyDscResources` に追加されます。
 
 完了すると、フォルダー構造は次のようになります。
 

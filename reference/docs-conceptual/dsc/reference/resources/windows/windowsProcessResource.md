@@ -3,15 +3,15 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC WindowsProcess リソース
 ms.openlocfilehash: e168cdebb04f7ec83b73a537a5f188299f40d8b7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71952839"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess リソース
 
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.x
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell Desired State Configuration (DSC) の **WindowsProcess** リソースは、ターゲット ノードにプロセスを構成するためのメカニズムを備えています。
 
@@ -33,13 +33,13 @@ WindowsProcess [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
 |引数 |プロセスに渡す引数の文字列をそのまま示します。 複数の引数を渡す必要がある場合は、そのすべてをこの文字列内に配置します。 |
-|パス |プロセスの実行可能ファイルのパス。 これが (完全修飾パスではなく) 実行可能ファイルの名前の場合、DSC リソースではその実行可能ファイルを見つけるために環境 `$env:Path` 変数が検索されます。 このプロパティの値が完全修飾パスの場合、DSC ではそのファイルを見つけるために `$env:Path` 変数は使用されず、パスが存在しない場合はエラーがスローされます。 相対パスは指定できません。 |
-|Credential |プロセスを開始するための資格情報を示します。 |
+|Path |プロセスの実行可能ファイルのパス。 これが (完全修飾パスではなく) 実行可能ファイルの名前の場合、DSC リソースではその実行可能ファイルを見つけるために環境 `$env:Path` 変数が検索されます。 このプロパティの値が完全修飾パスの場合、DSC ではそのファイルを見つけるために `$env:Path` 変数は使用されず、パスが存在しない場合はエラーがスローされます。 相対パスは指定できません。 |
+|資格情報 |プロセスを開始するための資格情報を示します。 |
 |StandardErrorPath |標準エラーを書き込むディレクトリ パスを示します。 既存のファイルは上書きされます。 |
 |StandardInputPath |標準入力の場所を示します。 |
 |StandardOutputPath |標準出力の書き込み場所を示します。 既存のファイルは上書きされます。 |

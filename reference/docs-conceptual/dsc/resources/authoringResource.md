@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: カスタム Windows PowerShell Desired State Configuration のビルド
 ms.openlocfilehash: f0f35e8d0083d302f142f2215c9f28fee411eb07
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71952849"
 ---
 # <a name="build-custom-windows-powershell-desired-state-configuration-resources"></a>カスタム Windows PowerShell Desired State Configuration のビルド
 
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 Windows PowerShell Desired State Configuration (DSC) には、環境の構成に使用できる組み込みのリソースがあります このトピックでは、開発リソースの概要および特定の情報と例を含むトピックへのリンクを示します。
 
@@ -22,5 +22,5 @@ DSC リソースは、Windows PowerShell モジュールです。 モジュー�
 * [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)
 * [Implementing a DSC resource in C# (C# での DSC リソースの実装)](authoringResourceMofCS.md)
 * [PowerShell クラスを使用したカスタム DSC リソースの記述](authoringResourceClass.md)
-* [複合リソース:リソースとしての DSC 構成の使用](authoringResourceComposite.md)
+* [複合リソース: リソースとしての DSC 構成の使用](authoringResourceComposite.md)
 * [リソース デザイナー ツールの使用](authoringResourceMofDesigner.md)

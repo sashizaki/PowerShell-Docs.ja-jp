@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 title: 新規および更新されたコマンドレット
 ms.openlocfilehash: ffd5db2d4fc9bf8f67ef5e352633ad3209f72c87
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147592"
 ---
 # <a name="new-and-updated-cmdlets"></a>新規および更新されたコマンドレット
@@ -32,7 +32,7 @@ Microsoft.PowerShell.Security モジュールに次の新しいコマンドレ�
 
 `Get-Clipboard` と `Set-Clipboard` を使うと、Windows PowerShell セッションとの間でコンテンツを容易に転送できます。 クリップボードのコマンドレットは、画像、オーディオ ファイル、ファイルのリスト、およびテキストをサポートします。
 
-詳細については、次のドキュメントをご覧ください。
+詳細については、次を参照してください。
 
 - [Get-Clipboard](/powershell/module/Microsoft.PowerShell.Management/Get-Clipboard)
 - [Set-Clipboard](/powershell/module/Microsoft.PowerShell.Management/Set-Clipboard)
@@ -45,13 +45,13 @@ CMS 暗号化標準では、公開キー暗号化が実装されます。公開�
 
 公開キーは広く共有でき、機密データではありません。 公開キーで暗号化したコンテンツは、秘密キーを使用してのみ暗号化解除できます。 公開キー暗号化の詳細については、「[公開鍵暗号](https://en.wikipedia.org/wiki/Public-key_cryptography)」を参照してください。
 
-詳細については、次のトピックを参照してください。
+詳細情報
 
 - [Get-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Get-CmsMessage)
 - [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
 - [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
-証明書が PowerShell でデータ暗号化証明書として認識されるには、'Code Signing' または 'Encrypted Mail' のような一意のキー使用法識別子 (EKU) が必要です。 証明書プロバイダーでドキュメントの暗号化証明書を表示するには、`Get-ChildItem` の **DocumentEncryptionCert** 動的パラメーターを使用します。
+証明書が PowerShell でデータ暗号化証明書として認識されるには、'Code Signing' または 'Encrypted Mail' のような一意のキー使用法識別子 (EKU) が必要です。 証明書プロバイダーでドキュメントの暗号化証明書を表示するには、**の**DocumentEncryptionCert`Get-ChildItem` 動的パラメーターを使用します。
 
 ```powershell
 Get-ChildItem Cert:\CurrentUser -DocumentEncryptionCert -Recurse
@@ -138,7 +138,7 @@ e19d6ea5-3cc2-4db9-8095-0cdaed5a703d
 
 ## <a name="nonewline-parameter"></a>NoNewLine パラメーター
 
-`Out-File`、`Add-Content`、および `Set-Content` に、出力後の改行を省略する新しい **NoNewline** スイッチが追加されました。 たとえば、次のように入力します。
+`Out-File`、`Add-Content`、および `Set-Content` に、出力後の改行を省略する新しい **NoNewline** スイッチが追加されました。 次に例を示します。
 
 ```powershell
 "This is " | Out-File -FilePath Example.txt -NoNewline

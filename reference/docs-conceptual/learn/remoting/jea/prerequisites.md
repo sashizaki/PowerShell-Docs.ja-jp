@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の前提条件
 ms.openlocfilehash: 1833bacf49eebcccefc10f7c85a39732559c1a97
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74416732"
 ---
 # <a name="prerequisites"></a>前提条件
@@ -43,7 +43,7 @@ JEA は、自宅または会社のコンピューターでも使用できます�
 | ----------------------- | ---------------------------------------------------- |
 | Windows 10 1607 以降        | プレインストール済み                                         |
 | Windows 10 1603、1511   | 制限された機能でプレインストール済み<sup>2</sup> |
-| Windows 10 1507         | 不可                                        |
+| Windows 10 1507         | 使用不可                                        |
 | Windows 8、8.1          | WMF 5.1 のすべての機能                      |
 | Windows 7               | WMF 5.1 の制限された機能<sup>1</sup>       |
 
@@ -96,13 +96,13 @@ Enable-PSRemoting
 
 グループ ポリシーを通してシステム全体の PowerShell トランスクリプトを有効にすることもできます。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 [ロール機能ファイルを作成する](role-capabilities.md)
 
 [セッション構成ファイルを作成する](session-configurations.md)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [WinRM セキュリティ](/powershell/scripting/learn/remoting/winrmsecurity)
 

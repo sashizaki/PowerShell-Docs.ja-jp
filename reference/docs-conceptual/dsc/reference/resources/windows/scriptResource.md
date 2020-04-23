@@ -3,15 +3,15 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Script リソース
 ms.openlocfilehash: e09e86011fa7dbb2a4d7f28b5032b4328b6f6ec2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953069"
 ---
 # <a name="dsc-script-resource"></a>DSC Script リソース
 
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.x
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell Desired State Configuration (DSC) の **Script** リソースは、ターゲット ノードで Windows PowerShell スクリプトのブロックを実行するためのメカニズムを備えています。 **Script** リソースでは、対応する DSC 状態操作を実行するために、定義するスクリプト ブロックを含む **GetScript**、**SetScript**、および **TestScript** プロパティを使用します。
 
@@ -32,14 +32,14 @@ Script [string] #ResourceName
 > [!NOTE]
 > **GetScript**、**TestScript**、および **SetScript** ブロックは文字列として格納されます。
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
 |GetScript |ノードの現在の状態を返すスクリプト ブロック。 |
 |SetScript |ノードが目的の状態になっていない場合に、コンプライアンスを適用するために DSC が使用するスクリプト ブロック。 |
 |TestScript |ノードが目的の状態になっているかどうかを判定するスクリプト ブロック。 |
-|Credential |資格情報が必要な場合、このスクリプトの実行に使用する資格情報を示します。 |
+|資格情報 |資格情報が必要な場合、このスクリプトの実行に使用する資格情報を示します。 |
 
 ## <a name="common-properties"></a>共通プロパティ
 
@@ -51,7 +51,7 @@ Script [string] #ResourceName
 > [!NOTE]
 > **PsDscRunAsCredential** という共通プロパティは、他の資格情報という文脈の中であらゆる DSC リソースを実行するために WMF 5.0 で追加されました。 詳細については、「[DSC リソースに対して資格情報を使用する](../../../configurations/runasuser.md)」を参照してください。
 
-### <a name="additional-information"></a>追加情報
+### <a name="additional-information"></a>関連情報
 
 #### <a name="getscript"></a>GetScript
 
@@ -73,7 +73,7 @@ DSC では **GetScript** からの出力が使用されません。 [Get-DscConf
 
 ## <a name="examples"></a>例
 
-### <a name="example-1-write-sample-text-using-a-script-resource"></a>例 1:Script リソースを使用して、サンプル テキストを作成する
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>例 1: Script リソースを使用して、サンプル テキストを作成する
 
 この例では、各ノード上の `C:\TempFolder\TestFile.txt` の有無についてテストします。 このファイルがない場合は、`SetScript` を使用してファイルを作成します。 `GetScript` はファイルのコンテンツを返し、その戻り値は使用されません。
 
@@ -98,7 +98,7 @@ Configuration ScriptTest
 }
 ```
 
-### <a name="example-2-compare-version-information-using-a-script-resource"></a>例 2:Script リソースを使用してバージョン情報を比較する
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>例 2: Script リソースを使用してバージョン情報を比較する
 
 この例は、オーサリング コンピューター上のテキスト ファイルから *compliant* バージョン情報を取得して、これを `$version` 変数に格納します。 ノードの MOF ファイルを生成するときに、各スクリプト ブロックの `$using:version` 変数は、DSC によって `$version` 変数の値に置き換えられます。
 実行時に *compliant* バージョンが各ノード上のテキスト ファイルに格納され、以降の実行で比較され更新されます。

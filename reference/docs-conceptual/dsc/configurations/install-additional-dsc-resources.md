@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,リソース,ギャラリー,セットアップ
 title: 追加の DSC リソースをインストールする
 ms.openlocfilehash: 7a6a935349358e11a77d2f00c0bf88e0ad18c097
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74417800"
 ---
 # <a name="install-additional-dsc-resources"></a>追加の DSC リソースをインストールする
@@ -20,15 +20,15 @@ PowerShell には、Desired State Configuration (DSC) 用に複数のそのま�
 
 |リソース  |説明  |
 |---------|---------|
-|**File**|ファイルとディレクトリの状態を制御します。 **コピー元**から**コピー先**にファイルをコピーし、日付、チェックサム、およびハッシュを比較することによって**コピー元**が変更されたらファイルを更新します。|
+|**[最近使ったファイル]**|ファイルとディレクトリの状態を制御します。 **コピー元**から**コピー先**にファイルをコピーし、日付、チェックサム、およびハッシュを比較することによって**コピー元**が変更されたらファイルを更新します。|
 |**Archive**|アーカイブと指定された場所をアンパックします。 指定された**チェックサム**でアーカイブを検証します。|
 |**Environment**|環境変数を管理します。|
 |**グループ**|ローカル グループを管理し、グループ メンバーシップを制御します。|
 |**Log**|`Microsoft-Windows-Desired State Configuration/Analytic` イベント ログにメッセージを書き込みます。|
 |**Package**|**Arguments**、**LogPath**、 **ReturnCode**、その他の設定を使って、パッケージをインストールまたはアンインストールします。|
-|**Registry**|レジストリ キーと値を管理します。|
-|**Script**|独自の [get-test-set](../resources/get-test-set.md) スクリプト ブロックを設計できます。|
-|**Service**|Windows サービスを構成します。|
+|**レジストリ**|レジストリ キーと値を管理します。|
+|**[スクリプト]**|独自の [get-test-set](../resources/get-test-set.md) スクリプト ブロックを設計できます。|
+|**サービス**|Windows サービスを構成します。|
 |**User** |ローカル ユーザーと属性を管理します。|
 |**WindowsFeature**|ロールと機能を管理します。|
 |**WindowsProcess**|Windows プロセスを構成します。|

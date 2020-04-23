@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 title: PowerShell クラスを使用したカスタム型の作成
 ms.openlocfilehash: c2c50fb65ce4931fcf6ae529b4146df391c831c4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147842"
 ---
 # <a name="creating-custom-types-using-powershell-classes"></a>PowerShell クラスを使用したカスタム型の作成
@@ -304,19 +304,19 @@ $b.DoSomething(42)
 
 オーバーロードされたメソッドもサポートされます。
 
-### <a name="properties"></a>プロパティ
+### <a name="properties"></a>Properties
 
 すべてのプロパティはパブリックです。 プロパティには、改行文字かセミコロンが必要です。 オブジェクトの種類が指定されていない場合、プロパティの型はオブジェクトです。
 
 検証属性または引数変換属性を使用するプロパティ (`[ValidateSet("aaa")]` など) は期待どおりに動作します。
 
-### <a name="hidden"></a>Hidden
+### <a name="hidden"></a>[非表示]
 
 新しいキーワード `Hidden` が追加されました。 `Hidden` は、プロパティとメソッド (コンストラクターを含む) に適用できます。
 
-Hidden のメンバーはパブリックですが、`-Force` パラメーターを追加しない限り、`Get-Member` の出力には含められません。 Hidden のメンバーを定義するクラスで完了が発生しない限り、タブの完了時、または IntelliSense の使用時に Hidden のメンバーは含まれません。
+Hidden のメンバーはパブリックですが、`Get-Member` パラメーターを追加しない限り、`-Force` の出力には含められません。 Hidden のメンバーを定義するクラスで完了が発生しない限り、タブの完了時、または IntelliSense の使用時に Hidden のメンバーは含まれません。
 
-C\# コードで PowerShell 内と同じセマンティクスを使用できるように、新しい属性 **System.Management.Automation.HiddenAttribute** が追加されました。
+C**コードで PowerShell 内と同じセマンティクスを使用できるように、新しい属性**System.Management.Automation.HiddenAttribute\# が追加されました。
 
 ### <a name="return-types"></a>戻り値の型
 

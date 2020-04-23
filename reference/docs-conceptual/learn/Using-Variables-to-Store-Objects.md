@@ -1,12 +1,12 @@
 ---
 ms.date: 08/27/2018
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: 変数を使用したオブジェクトの保存
 ms.openlocfilehash: 2d20d84e48d3f68cab5c1ffa05d689b46415ebc8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030373"
 ---
 # <a name="using-variables-to-store-objects"></a>変数を使用したオブジェクトの保存
@@ -40,7 +40,7 @@ Path
 C:\temp
 ```
 
-`Get-Member` を使用して変数の内容に関する情報を表示できます。 `Get-Member` は、`Get-Location` からの出力と同様に、`$loc` が **PathInfo** オブジェクトであることを示しています。
+`Get-Member` を使用して変数の内容に関する情報を表示できます。 `Get-Member` は、`$loc` からの出力と同様に、**が**PathInfo`Get-Location` オブジェクトであることを示しています。
 
 ```powershell
 PS> $loc | Get-Member -MemberType Property

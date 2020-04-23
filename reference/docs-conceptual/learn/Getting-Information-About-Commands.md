@@ -1,12 +1,12 @@
 ---
 ms.date: 08/27/2018
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: コマンドに関する情報の取得
 ms.openlocfilehash: eb918c6f89d8369db775258263a8f7a7902a6cc7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030947"
 ---
 # <a name="getting-information-about-commands"></a>コマンドに関する情報の取得
@@ -28,7 +28,7 @@ Cmdlet          Add-Type                3.1.0.0    Microsoft.PowerShell.Utility
 ...
 ```
 
-この出力は、**cmd.exe** のヘルプの出力に似ている、内部コマンドの表形式の概要です。 上記の `Get-Command` コマンドの出力の抜粋では、表示されているすべてのコマンドのコマンドレットは CommandType です。 コマンドレットは、PowerShell の組み込みのコマンドの種類です。 この種類は、おおまかに言うと、**cmd.exe** の `dir` および `cd` のようなコマンドや、バッシュのような Unix シェルの組み込みコマンドと同じです。
+この出力は、**cmd.exe** のヘルプの出力に似ている、内部コマンドの表形式の概要です。 上記の `Get-Command` コマンドの出力の抜粋では、表示されているすべてのコマンドのコマンドレットは CommandType です。 コマンドレットは、PowerShell の組み込みのコマンドの種類です。 この種類は、おおまかに言うと、`dir`cmd.exe`cd` の **および** のようなコマンドや、バッシュのような Unix シェルの組み込みコマンドと同じです。
 
 `Get-Command` コマンドレットには、各コマンドレットの構文を返す **Syntax** パラメーターがあります。 次の例は、`Get-Help` コマンドレットの構文を取得する方法を示しています。
 
@@ -54,7 +54,7 @@ Get-Help [[-Name] <String>] [-Path <String>] [-Category <String[]>] [-Component 
 
 `Get-Command` コマンドは、現在のセッションのコマンドレットのみを一覧表示します。 PowerShell は、実際にはその他のいくつかの種類のコマンドをサポートします。
 
-- 別名
+- エイリアス
 - 関数
 - スクリプト
 
@@ -72,7 +72,7 @@ Get-Command *
 > [!NOTE]
 > アスタリスク (\*) は、PowerShell コマンドの引数のワイルドカードによるマッチングに使用されます。 \* は、「1 つ以上の任意の文字に一致する」という意味です。 `Get-Command a*` を入力すると、文字 "a" で始まるコマンドをすべて検索できます。 **cmd.exe** のワイルドカードのマッチングとは異なり、PowerShell のワイルドカードは、ピリオドもマッチングします。
 
-その他の種類のネイティブ コマンドを取得するには、`Get-Command` の **CommandType** パラメーターを使用します。
+その他の種類のネイティブ コマンドを取得するには、**の**CommandType`Get-Command` パラメーターを使用します。
 コマンドレット。
 
 コマンドの割り当て済みのニックネームであるコマンドのエイリアスを取得するには、次のように入力します。

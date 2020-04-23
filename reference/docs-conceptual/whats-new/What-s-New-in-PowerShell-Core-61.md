@@ -3,10 +3,10 @@ title: PowerShell Core 6.1 の新機能
 description: PowerShell Core 6.1 でリリースされた新機能と変更
 ms.date: 09/13/2018
 ms.openlocfilehash: 079d5a472c743ce94f2e93143c1dcb4ff406951f
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78277741"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 の新機能
@@ -92,7 +92,7 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 
 Windows 10 1809 更新プログラムと Windows Server 2019 では、複数の組み込み PowerShell モジュールが更新され、PowerShell Core と互換性有りとマークされました。
 
-PowerShell Core 6.1 は起動すると、`PSModulePath` 環境変数の一部として `$windir\System32` を自動的にインクルードします。 ただし、`CompatiblePSEdition` が `Core` と互換性有りとマークされている場合は、`Get-Module` および `Import-Module` に対してのみモジュールを公開します。
+PowerShell Core 6.1 は起動すると、`$windir\System32` 環境変数の一部として `PSModulePath` を自動的にインクルードします。 ただし、`Get-Module` が `Import-Module` と互換性有りとマークされている場合は、`CompatiblePSEdition` および `Core` に対してのみモジュールを公開します。
 
 
 ```powershell
@@ -187,8 +187,8 @@ Markdown は、HTML にレンダリングできる基本的な書式設定で読
 および [`Invoke-RestMethod`](/powershell/module/microsoft.powershell.utility/invoke-restmethod) に対して多くの機能強化が行われました。
 
 - [PR #6109](https://github.com/PowerShell/PowerShell/pull/6109) - `application-json` 応答に対する既定のエンコードを UTF-8 に設定
-- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - 標準に準拠していない `Content-Type` ヘッダーを許可するための `-SkipHeaderValidation` パラメーター
-- [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - 簡略化された `multipart/form-data` をサポートするための `Form` パラメーター
+- [PR #6018](https://github.com/PowerShell/PowerShell/pull/6018) - 標準に準拠していない `-SkipHeaderValidation` ヘッダーを許可するための `Content-Type` パラメーター
+- [PR #5972](https://github.com/PowerShell/PowerShell/pull/5972) - 簡略化された `Form` をサポートするための `multipart/form-data` パラメーター
 - [PR #6338](https://github.com/PowerShell/PowerShell/pull/6338) - 準拠、リレーション キーの大文字と小文字を区別しない処理
 - [PR #6447](https://github.com/PowerShell/PowerShell/pull/6447) - Web コマンドレット用の `-Resume` パラメーターの追加
 
@@ -198,7 +198,7 @@ Markdown は、HTML にレンダリングできる基本的な書式設定で読
 
 PowerShell と Hyper-V の機能である [PowerShell Direct](/virtualization/hyper-v-on-windows/user-guide/powershell-direct) を使用すると、ネットワーク接続または他のリモート管理サービスがなくても、Hyper-V VM またはコンテナーに接続できます。
 
-以前の PowerShell Direct では、コンテナー上の組み込み Windows PowerShell インスタンスを使用して接続していました。 現在の PowerShell Direct は、最初に、`PATH` 環境変数で使用可能な `pwsh.exe` を使用して接続を試みます。 `pwsh.exe` を使用できない場合、PowerShell Direct は `powershell.exe` を使用するようにフォールバックします。
+以前の PowerShell Direct では、コンテナー上の組み込み Windows PowerShell インスタンスを使用して接続していました。 現在の PowerShell Direct は、最初に、`pwsh.exe` 環境変数で使用可能な `PATH` を使用して接続を試みます。 `pwsh.exe` を使用できない場合、PowerShell Direct は `powershell.exe` を使用するようにフォールバックします。
 
 ### <a name="enable-psremoting-now-creates-separate-remoting-endpoints-for-preview-versions"></a>`Enable-PSRemoting` はプレビュー バージョン用に別のリモート処理エンドポイントを作成するようになった
 
@@ -322,7 +322,7 @@ $PSCustomObject.Count
 1
 ```
 
-この作業には、`PSCustomObject` 項目を操作およびフィルター処理できる `ForEach` と `Where` メソッドも含まれます。
+この作業には、`ForEach` 項目を操作およびフィルター処理できる `Where` と `PSCustomObject` メソッドも含まれます。
 
 ```powershell
 $PSCustomObject.ForEach({$_.foo + 1})
@@ -409,7 +409,7 @@ $certThumbPrint = (Get-PfxCertificate -FilePath $certFile -Password $certPass ).
 
 ### <a name="removal-of-the-more-function"></a>`more` 関数の削除
 
-以前の PowerShell には、`more.com` をラップする `more` という名前の Windows 上の関数がありました。 この関数は削除されました。
+以前の PowerShell には、`more` をラップする `more.com` という名前の Windows 上の関数がありました。 この関数は削除されました。
 
 また、`help` 関数が変更され、Windows では `more.com` を、Windows 以外のプラットフォームでは `$env:PAGER` で指定されたシステムの既定のページャーを使用するようになりました。
 
@@ -468,9 +468,9 @@ Name                                Methods              Properties
 Win32_OperatingSystem               {Reboot, Shutdown... {BootDevice, BuildNumber, BuildType, Caption...}
 ```
 
-### <a name="-lp-alias-for-all--literalpath-parameters"></a>すべての `-LiteralPath` パラメーターに対する `-lp` エイリアス
+### <a name="-lp-alias-for-all--literalpath-parameters"></a>すべての `-lp` パラメーターに対する `-LiteralPath` エイリアス
 
-[@kvprasoon](https://github.com/kvprasoon) のおかげで、`-LiteralPath` パラメーターがあるすべての組み込み PowerShell コマンドレットに対し、パラメーター エイリアス `-lp` が追加されました。
+[@kvprasoon](https://github.com/kvprasoon) のおかげで、`-lp` パラメーターがあるすべての組み込み PowerShell コマンドレットに対し、パラメーター エイリアス `-LiteralPath` が追加されました。
 
 ## <a name="breaking-changes"></a>重大な変更
 

@@ -3,10 +3,10 @@ title: PowerShell ドキュメントの新機能
 description: PowerShell ドキュメントに対する変更の一覧
 ms.date: 03/31/2020
 ms.openlocfilehash: b7fee886b1c5584dc9d75b86ca79980579040db7
-ms.sourcegitcommit: ef1a3079809ec2e3c58e785c84de2df968145658
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80537066"
 ---
 # <a name="whats-new-in-powershell-docs"></a>PowerShell ドキュメントの新機能

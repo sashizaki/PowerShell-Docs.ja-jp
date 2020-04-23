@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DependsOn を使用したリソースの依存関係
 ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954479"
 ---
 # <a name="resource-dependencies-using-dependson"></a>DependsOn を使用したリソースの依存関係
@@ -141,6 +141,6 @@ VERBOSE: Time taken for configuration job to complete is 15.385 seconds
         }
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [ノード間依存関係の使用](./crossNodeDependencies.md)

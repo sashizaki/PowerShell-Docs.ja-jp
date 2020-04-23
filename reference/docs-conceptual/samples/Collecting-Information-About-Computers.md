@@ -3,10 +3,10 @@ ms.date: 12/23/2019
 keywords: powershell,コマンドレット
 title: コンピューターに関する情報の収集
 ms.openlocfilehash: 9407ff15b3c3ca6b3adab60d4d01d957c599e79e
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75737238"
 ---
 # <a name="collecting-information-about-computers"></a>コンピューターに関する情報の収集
@@ -117,7 +117,7 @@ CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ...
 ```
 
-`Get-CimInstance` の **Property** パラメーターによって制限されるのは、WMI クラスのインスタンスから返されるプロパティです。PowerShell に返されるオブジェクトが制限されるわけではありません。実際、上の例を見ると、余分なデータが返されていることがわかります。 出力結果を減らすためには、`Select-Object` を使用します。
+**の**Property`Get-CimInstance` パラメーターによって制限されるのは、WMI クラスのインスタンスから返されるプロパティです。PowerShell に返されるオブジェクトが制限されるわけではありません。実際、上の例を見ると、余分なデータが返されていることがわかります。 出力結果を減らすためには、`Select-Object` を使用します。
 
 ```powershell
 Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixId | Select-Object -Property HotFixId

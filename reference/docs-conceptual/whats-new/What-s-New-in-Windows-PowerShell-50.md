@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: Windows PowerShell 5.0 の新機能
-ms.openlocfilehash: 8c1858a63adad467e389a683708bccba2a6768c7
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: dba016546fe034684f6b7afe43ec2e7a1b793d96
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500465"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80978204"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 の新機能
 
@@ -460,7 +460,7 @@ Windows PowerShell のバックグラウンド ジョブと同様、スケジュ
 
 さらに、スケジュールされたジョブには、それらのジョブを管理するためのカスタマイズされた一連のコマンドレットがあります。 それらのコマンドレットでは、スケジュールされたジョブの作成、編集、管理、無効化、再有効化を実行したり、スケジュールされたジョブのトリガーを作成したり、スケジュールされたジョブのオプションを設定したりできます。
 
-スケジュールされたジョブの詳細については、「[about_Scheduled_Jobs](/powershell/module/microsoft.powershell.core/about/about_Scheduled_Jobs)」を参照してください。
+スケジュールされたジョブの詳細については、「[about_Scheduled_Jobs](/powershell/module/psscheduledjob/about/about_scheduled_jobs?view=powershell-5.1)」を参照してください。
 
 ### <a name="windows-powershell-language-enhancements"></a>Windows PowerShell 言語の機能強化
 

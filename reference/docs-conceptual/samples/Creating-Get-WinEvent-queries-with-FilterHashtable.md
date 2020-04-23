@@ -2,10 +2,10 @@
 ms.date: 09/13/2019
 title: FilterHashtable を使った Get-WinEvent クエリの作成
 ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "73444394"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>FilterHashtable を使った Get-WinEvent クエリの作成
@@ -52,16 +52,16 @@ Get-WinEvent -FilterHashtable @{
 
 |    キー名    | 値のデータ型 | ワイルドカード文字を指定できるか |
 | -------------- | --------------- | ---------------------------- |
-| LogName        | `<String[]>`    | 可                          |
-| ProviderName   | `<String[]>`    | 可                          |
-| パス           | `<String[]>`    | いいえ                           |
+| LogName        | `<String[]>`    | はい                          |
+| ProviderName   | `<String[]>`    | はい                          |
+| Path           | `<String[]>`    | いいえ                           |
 | Keywords       | `<Long[]>`      | いいえ                           |
-| ID             | `<Int32[]>`     | いいえ                           |
-| レベル          | `<Int32[]>`     | いいえ                           |
+| id             | `<Int32[]>`     | いいえ                           |
+| Level          | `<Int32[]>`     | いいえ                           |
 | StartTime      | `<DateTime>`    | いいえ                           |
 | EndTime        | `<DateTime>`    | いいえ                           |
 | UserID         | `<SID>`         | いいえ                           |
-| データ           | `<String[]>`    | いいえ                           |
+| Data           | `<String[]>`    | いいえ                           |
 | `<named-data>` | `<String[]>`    | いいえ                           |
 
 `<named-data>` キーは、名前付きイベント データ フィールドを表します。 たとえば、Perflib イベント 1008 には次のイベント データを含めることができます。
@@ -165,7 +165,7 @@ WdiDiagnostic    Property   static System.Diagnostics.Eventing.Reader.StandardEv
 | WdiDiagnostic    | 1125899906842624  |
 | WdiContext       | 562949953421312   |
 | ResponseTime     | 281474976710656   |
-| None             | 0                 |
+| なし             | 0                 |
 
 ハッシュ テーブルを更新し、キーが **Keywords**、**EventLogClassic** の列挙値が **36028797018963968** である**キーと値**のペアを含めます。
 
@@ -238,11 +238,11 @@ Warning       Property   static System.Diagnostics.Eventing.Reader.StandardEvent
 
 | 名前           | 値 |
 | -------------- | ----- |
-| Verbose        |   5   |
+| "詳細"        |   5   |
 | Informational  |   4   |
 | 警告        |   3   |
 | エラー          |   2   |
-| Critical       |   1 で保護されたプロセスとして起動されました   |
+| Critical       |   1   |
 | LogAlways      |   0   |
 
 完成したクエリのハッシュ テーブルには、キー **Level** と値 **2** が含まれています。

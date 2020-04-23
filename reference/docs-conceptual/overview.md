@@ -1,12 +1,12 @@
 ---
 ms.date: 08/27/2018
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: PowerShell スクリプト
 ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62058490"
 ---
 # <a name="powershell"></a>PowerShell
@@ -28,7 +28,7 @@ PowerShell ベースのソース コードは現在、GitHub で入手可能で�
 
 PowerShell は、従来からの問題を排除し、新しい機能を追加することにより、コマンド ラインおよびスクリプト環境を改善することを目的として設計されています。
 
-### <a name="discoverability"></a>機能の見つけやすさ
+### <a name="discoverability"></a>Discoverability (探索可能性)
 
 PowerShell では、簡単にその機能を見つけられます。 たとえば、Windows サービスを表示したり変更したりするコマンドレットの一覧を検索するには、次のように入力します。
 

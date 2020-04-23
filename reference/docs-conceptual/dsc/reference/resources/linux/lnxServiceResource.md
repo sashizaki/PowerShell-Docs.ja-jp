@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 DSC の nxService リソース
 ms.openlocfilehash: 6bb58796c4deff1153f932f61c328d84f8c4d2ca
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954839"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>Linux 用 DSC の nxService リソース
@@ -26,13 +26,13 @@ nxService <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
 |名前 |構成するサービス/デーモンの名前。 |
 |コントローラー |サービスを構成するときに使用するサービス コントローラーの種類。 |
-|Enabled |ブート時にサービスを開始するかどうかを示します。 |
+|有効 |ブート時にサービスを開始するかどうかを示します。 |
 |State |サービスが実行されるかどうかを示します。 サービスが実行されないようにするには、このプロパティを **Stopped** に設定します。 サービスが確実に実行されるようにするには、このプロパティを **Running** に設定します。 |
 
 ## <a name="common-properties"></a>共通プロパティ

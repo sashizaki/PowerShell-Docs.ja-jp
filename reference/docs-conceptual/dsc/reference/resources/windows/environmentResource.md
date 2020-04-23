@@ -3,15 +3,15 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC 環境リソース
 ms.openlocfilehash: d6d3b4a2086be28fbfa2bf200acef9b13b7b7825
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954719"
 ---
 # <a name="dsc-environment-resource"></a>DSC 環境リソース
 
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.x
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell Desired State Configuration (DSC) の **Environment** リソースは、システム環境変数を管理するためのメカニズムを備えています。
 
@@ -29,12 +29,12 @@ Environment [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
 |名前 |特定の状態を保証する環境変数の名前を示します。 |
-|パス |構成されている環境変数を定義します。 変数が **Path** 変数である場合は、このプロパティを `$true` に設定します。それ以外の場合は、`$false` に設定します。 既定値は `$false` です。 構成されている変数が **Path** 変数である場合は、**Value** プロパティによって提供される値が既存の値に追加されます。 |
+|Path |構成されている環境変数を定義します。 変数が `$true`Path**変数である場合は、このプロパティを** に設定します。それ以外の場合は、`$false` に設定します。 既定では、 `$false`です。 構成されている変数が **Path** 変数である場合は、**Value** プロパティによって提供される値が既存の値に追加されます。 |
 |値 |環境変数に割り当てる値。 |
 
 ## <a name="common-properties"></a>共通プロパティ

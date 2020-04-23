@@ -3,10 +3,10 @@ ms.date: 07/10/2019
 keywords: JEA, PowerShell, セキュリティ
 title: Just Enough Administration の概要
 ms.openlocfilehash: 4b74e5be9558810748a8844a325c8213e1b3ebc9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70017703"
 ---
 # <a name="just-enough-administration"></a>Just Enough Administration
@@ -25,7 +25,7 @@ Just Enough Administration (JEA) は、PowerShell で管理されるものすべ
 
 JEA では、**最小限の特権**の原則を通じて、この問題に対処しています。 JEA を利用すると、DNS 管理者に管理エンドポイントを構成して、これらの管理者が作業を行うのに必要な PowerShell コマンドだけにアクセスできるようにすることができます。 つまり、DNS 管理者に Active Directory への権限を付与しなくても、侵害された DNS キャッシュを修復したり、DNS サーバーを再起動したり、またはファイル システムを参照したり、潜在的に危険性なスクリプトを実行したりできる適切なアクセスを提供できます。 さらに、JEA セッションが一時的な特権仮想アカウントを使用するように構成されている場合、DNS 管理者は**管理者以外の**資格情報を使用してサーバーに接続できる一方で、一般的には管理者特権を必要とするコマンドも実行できます。 JEA により、幅広い特権が与えられたローカル/ドメイン管理者ロールからユーザーを削除し、各コンピューターでユーザーに許可する操作を慎重に制御することができます。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 JEA を使用するための要件の詳細については、「[前提条件](prerequisites.md)」の記事を参照してください。
 

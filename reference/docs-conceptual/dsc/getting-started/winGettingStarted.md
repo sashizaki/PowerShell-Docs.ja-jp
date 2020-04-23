@@ -3,10 +3,10 @@ ms.date: 08/15/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Windows 用 Desired State Configuration (DSC) の概要
 ms.openlocfilehash: 2add2c936e60c0c9446bf4b398fbf7b4bd6407f7
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75416159"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Windows 用 Desired State Configuration (DSC) の概要

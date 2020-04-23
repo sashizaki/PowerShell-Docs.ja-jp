@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: ノードの相互依存関係の指定
 ms.openlocfilehash: 62e553d894897ae1908745c2788b7b7b9cbe50ff
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954109"
 ---
 # <a name="specifying-cross-node-dependencies"></a>ノードの相互依存関係の指定
 
-> 適用先:Windows PowerShell 5.0
+> 適用先: Windows PowerShell 5.0
 
 DSC には、**WaitForAll**、**WaitForAny**、**WaitForSome** などの特別なリソースが用意されています。このリソースを構成で使用すると、他のノードの構成への依存関係を指定することができます。 これらのリソースの動作は次のとおりです。
 
@@ -66,7 +66,7 @@ WaitForSome [String] #ResourceName
 ## <a name="using-waitforxxxx-resources"></a>WaitForXXXX リソースの使用
 
 各 **WaitForXXXX** リソースは、指定されたノードで指定された数のリソースが完了するのを待機します。
-同じ Configuration の他のリソースは、**DependsOn** キーを使用して **WaitForXXXX** リソースに "*依存する*" ことができます。
+同じ Configuration の他のリソースは、*DependsOn* キーを使用して **WaitForXXXX** リソースに "**依存する**" ことができます。
 
 たとえば、次の構成では、ターゲット ノードは **MyDC** ノード上の **xADDomain** リソースが完了するまで 15 秒間隔で最大 30 回試行しながら待機した後、ドメインに参加できるようになります。
 

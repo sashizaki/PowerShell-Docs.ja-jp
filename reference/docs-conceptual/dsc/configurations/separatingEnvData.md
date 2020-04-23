@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データと環境データの分離
 ms.openlocfilehash: b16243fc9096f786a25ed20868e94a3aa85e403e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954439"
 ---
 # <a name="separating-configuration-and-environment-data"></a>構成データと環境データの分離
 
->適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
+>適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 構成データを使用して、DSC 構成で使用するデータを構成自体と切り離しておくと便利です。
 そうすることにより、複数の環境に 1 つの構成を使用することができます。
@@ -68,7 +68,7 @@ $MyData =
 MyDscConfiguration -ConfigurationData $MyData
 ```
 
-このスクリプトの最後の行は、**ConfigurationData** パラメーターの値として `$MyData` を渡して、構成をコンパイルします。
+このスクリプトの最後の行は、`$MyData`ConfigurationData**パラメーターの値として** を渡して、構成をコンパイルします。
 
 その結果、2 つの MOF ファイルが作成されます。
 
@@ -82,7 +82,7 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
 
-`$MyData` が、それぞれ独自の `NodeName` と `Role` を持つ、2 つの異なるノードを指定します。 構成は、`$MyData` (具体的には `$AllNodes`) から取得したノードのコレクションを集めることで動的に**ノード** ブロックを作成し、そのコレクションを `Role` プロパティと突き合わせてフィルタ―処理します。
+`$MyData` が、それぞれ独自の `NodeName` と `Role` を持つ、2 つの異なるノードを指定します。 構成は、 **(具体的には**) から取得したノードのコレクションを集めることで動的に`$MyData`ノード`$AllNodes` ブロックを作成し、そのコレクションを `Role` プロパティと突き合わせてフィルタ―処理します。
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>構成データを使用して、開発および運用環境を定義する
 

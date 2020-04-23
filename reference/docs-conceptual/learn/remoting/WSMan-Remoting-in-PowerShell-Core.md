@@ -3,10 +3,10 @@ title: PowerShell Core の WS-Management (WSMan) リモート処理
 description: WSMan を使用した PowerShell Core のリモート処理
 ms.date: 08/06/2018
 ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "62058881"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core の WS-Management (WSMan) リモート処理
@@ -16,7 +16,7 @@ ms.locfileid: "62058881"
 Windows PowerShell Core パッケージには、WinRM プラグイン (`pwrshplugin.dll`) とインストール スクリプト (`Install-PowerShellRemoting.ps1`) が `$PSHome` に含まれています。
 これらのファイルにより、そのエンドポイントが指定されている場合、PowerShell が受信の PowerShell リモート接続を受け入れるようになります。
 
-### <a name="motivation"></a>動機
+### <a name="motivation"></a>目的
 
 PowerShell をインストールすると、`New-PSSession` と `Enter-PSSession` を使用したリモート コンピューターへの PowerShell セッションを確立できます。
 PowerShell でリモートからの受信接続を受け入れるようにするには、ユーザーが WinRM リモート エンドポイントを作成する必要があります。
@@ -24,7 +24,7 @@ PowerShell でリモートからの受信接続を受け入れるようにする
 このインストール スクリプトは、`Enable-PSRemoting` に同じアクションを実行する機能が追加されるまでの短期的なソリューションです。
 詳細については、問題 [#1193](https://github.com/PowerShell/PowerShell/issues/1193) を参照してください。
 
-### <a name="script-actions"></a>スクリプト アクション
+### <a name="script-actions"></a>[スクリプト操作]
 
 スクリプトは、以下のことを行います
 
@@ -56,7 +56,7 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
 
-**注**:リモート処理の登録スクリプトによって WinRM は再起動されるので、既存のすべての PSRP セッションはこのスクリプトの実行後、直ちに終了します。 リモート セッション中に実行される場合、これによって接続は終了します。
+**注:** リモート処理の登録スクリプトによって WinRM は再起動されるので、既存のすべての PSRP セッションはこのスクリプトの実行後、直ちに終了します。 リモート セッション中に実行される場合、これによって接続は終了します。
 
 ## <a name="how-to-connect-to-the-new-endpoint"></a>新しいエンドポイントに接続する方法
 
@@ -67,4 +67,4 @@ New-PSSession ... -ConfigurationName "powershell.6.0.0"
 Enter-PSSession ... -ConfigurationName "powershell.6.0.0"
 ```
 
-なお、`-ConfigurationName` が指定されていない `New-PSSession` と `Enter-PSSession` の呼び出しは、既定の PowerShell のエンドポイントである `microsoft.powershell` をターゲットとします。
+なお、`New-PSSession` が指定されていない `Enter-PSSession` と `-ConfigurationName` の呼び出しは、既定の PowerShell のエンドポイントである `microsoft.powershell` をターゲットとします。

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC on Nano Server の使用
 ms.openlocfilehash: fb826455c21833ae4c8dc2ecd731ffce6bf7eaba
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953859"
 ---
 # <a name="using-dsc-on-nano-server"></a>DSC on Nano Server の使用
 
-> 適用先:Windows PowerShell 5.0
+> 適用先: Windows PowerShell 5.0
 
 **DSC on Nano Server** は、Windows Server 2016 メディアの `NanoServer\Packages` フォルダーに含まれるオプションのパッケージです。 このパッケージをインストールするには、Nano Server の VHD を作成するときに、**New-NanoServerImage** 関数の **Packages** パラメーターの値として **Microsoft-NanoServer-DSC-Package** を指定します。 たとえば、仮想マシンの VHD を作成する場合、コマンドは次のようになります。
 
@@ -60,7 +60,7 @@ Nano Server でサポートされる API のセットは、通常版の Windows 
 
 - DSC リソースのデバッグ (「[DSC リソースのデバッグ](../troubleshooting/debugResource.md)」を参照)
 
-  **問題:** リソースで PsDscRunAsCredential が使用されている場合に機能しません ([ユーザーの資格情報を使用した DSC の実行](../configurations/runAsUser.md)に関するページを参照)
+  **問題:** リソースで PsDscRunAsCredential が使用されている場合に機能しません (「[ユーザーの資格情報を指定して DSC を実行する](../configurations/runAsUser.md)」を参照)
 
 - [ノードの相互依存関係の指定](../configurations/crossNodeDependencies.md)
 
@@ -82,11 +82,11 @@ Nano Server でサポートされる API のセットは、通常版の Windows 
 
 - **Archive**
 - **Environment**
-- **File**
+- **[最近使ったファイル]**
 - **Log**
 - **ProcessSet**
-- **Registry**
-- **Script**
+- **レジストリ**
+- **[スクリプト]**
 - **WindowsPackageCab**
 - **WindowsProcess**
 - **WaitForAll** (「[ノードの相互依存関係の指定](../configurations/crossNodeDependencies.md)」を参照)
@@ -97,12 +97,12 @@ Nano Server でサポートされる API のセットは、通常版の Windows 
 - **グループ**
 - **GroupSet**
 
-  **問題:** 特定のインスタンスを 2 回呼び出す (同じ構成を 2 回実行する) と、上記のリソースでエラーが発生します
+  **問題:** 特定のインスタンスを 2 回呼び出す (同じ構成を 2 回実行する) と上記のリソースでエラーが発生します
 
-- **Service**
+- **サービス**
 - **ServiceSet**
 
-  **問題:** サービスの開始/停止 (状態) でのみ動作します。 StartupType、資格情報、説明などのほかのサービス属性を変更しようとするとエラーが発生します。 次のようなエラーがスローされます。
+  **問題:** サービス (状態) の開始/停止でのみ正常に動作します。 StartupType、資格情報、説明などのほかのサービス属性を変更しようとするとエラーが発生します。 次のようなエラーがスローされます。
 
   *型 [management.managementobject] が見つかりません。この型を含むアセンブリが読み込まれていることを確認してください。*
 

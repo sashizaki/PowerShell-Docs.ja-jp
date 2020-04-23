@@ -3,13 +3,13 @@ ms.date: 12/12/2018
 keywords: dsc, powershell, 構成, サービス, セットアップ
 title: 構成の作成、コンパイル、適用
 ms.openlocfilehash: eb61e518762b9f13e617ecd4711bfef7a86814ec
-ms.sourcegitcommit: ea7d87a7a56f368e3175219686dfa2870053c644
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/29/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "76818160"
 ---
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 # <a name="write-compile-and-apply-a-configuration"></a>構成の作成、コンパイル、適用
 
@@ -61,7 +61,7 @@ Configuration HelloWorld {
 
 ファイルを "HelloWorld.ps1" という名前で保存します。
 
-構成を定義するのは、関数の定義と似ています。 `localhost` 場合、**ノード**ブロックは構成するターゲット ノードを指定します。
+構成を定義するのは、関数の定義と似ています。 **場合、** ノード`localhost`ブロックは構成するターゲット ノードを指定します。
 
 構成では、1 つの[リソース](../resources/resources.md) (`File` リソース) を呼び出します。 リソースは、ターゲット ノードが構成によって定義された状態になっているか確認します。
 
@@ -73,7 +73,7 @@ DSC 構成をノードに適用するには、最初にコンパイルを行い�
 詳細については、[スクリプト](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)に関するページを参照してください。
 
 <!-- markdownlint-disable MD038 -->
-`. ` (ドット、スペース) の後に保存した場所のパスを入力することで、"HelloWorld.ps1" スクリプトを "*ドット ソース*" で使用します。 その後、関数のように呼び出すことで、構成を実行することができます。
+*(ドット、スペース) の後に保存した場所のパスを入力することで、"HelloWorld.ps1" スクリプトを "* ドット ソース`. `" で使用します。 その後、関数のように呼び出すことで、構成を実行することができます。
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
@@ -112,7 +112,7 @@ Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 
 `Start-DSCConfiguration` コマンドレットが完了すると、指定した場所に "HelloWorld.txt" ファイルが表示されます。 [Get-Content](/powershell/module/microsoft.powershell.management/get-content) コマンドレットを使用して、コンテンツを確認できます。
 
-[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) を使用して、現在の状態を*テスト*することもできます。
+*Test-DSCConfiguration* を使用して、現在の状態を[テスト](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration)することもできます。
 
 現在、ノードが適用された構成に準拠している場合、出力は "True" になります。
 

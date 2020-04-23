@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: CI/CD パイプラインでの DSC のロールについて
 ms.openlocfilehash: 8d7244a6e5e2c215d9d3ada959b716df2cce0b83
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500820"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>CI/CD パイプラインでの DSC のロールについて
@@ -97,4 +97,4 @@ Configuration Name
 > [!NOTE]
 > 複合リソースの使用についてのフィードバックには、変更するには新しい MOF をコンパイルしてリリースする必要があるというご指摘がありました。 これは仕様です。 新しい構成リリースにはそれぞれ、各リソースの特定のバージョンへの静的参照を含める必要があります。また、実稼働サーバー ノードに到達する前にテストして検証する必要があります。 ソース管理からの変更のテストとリリースのプロセスにより、小さくても頻繁なバッチで変更をリリースするための安全な環境が作成されます。
 
-リリース パイプラインを使用して、コア インフラストラクチャを管理する方法の詳細については、次のホワイト ペーパーをご覧ください: 「[The Release Pipeline Model (リリース パイプライン モデル)](../further-reading/whitepapers.md)」。
+リリース パイプラインを使用して、コア インフラストラクチャを管理する方法の詳細については、ホワイト ペーパー「[The Release Pipeline Model (リリース パイプライン モデル)](../further-reading/whitepapers.md)」を参照してください。

@@ -3,10 +3,10 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: リソースをパッケージ化してプル サーバーにアップロードする
 ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78278505"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>リソースをパッケージ化してプル サーバーにアップロードする
@@ -47,7 +47,7 @@ ms.locfileid: "78278505"
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 ```
 
-出力は示されませんが、"xPSDesiredStateConfiguration_8.4.4.0.zip.checksum" が表示されるようになるはずです。 また、`-Path` パラメーターを使用すると、ファイルのディレクトリに対して `New-DSCCheckSum` を実行することもできます。 チェックサムが既に存在する場合は、`-Force` パラメーターを使用して強制的に再作成できます。
+出力は示されませんが、"xPSDesiredStateConfiguration_8.4.4.0.zip.checksum" が表示されるようになるはずです。 また、`New-DSCCheckSum` パラメーターを使用すると、ファイルのディレクトリに対して `-Path` を実行することもできます。 チェックサムが既に存在する場合は、`-Force` パラメーターを使用して強制的に再作成できます。
 
 ### <a name="where-to-store-resource-archives"></a>リソース アーカイブを格納する場所
 
@@ -95,7 +95,7 @@ ConfigurationRepositoryShare SMBPullServer
 
 アーカイブの名前のバージョン番号を変更するか、新しいチェックサムを作成することにより、強制的にノードにリソースを更新させることができます。 プル クライアントでは、LCM が更新されるときに、必要なリソースの新しいバージョンだけでなく更新されたチェックサムも確認されます。
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [DSC SMB プル サーバーを設定する](pullServerSmb.md)
 - [DSC HTTP プル サーバーを設定する](pullServer.md)

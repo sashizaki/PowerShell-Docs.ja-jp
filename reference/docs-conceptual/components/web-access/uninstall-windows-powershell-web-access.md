@@ -3,17 +3,17 @@ ms.date: 08/23/2017
 keywords: powershell,コマンドレット
 title: Windows PowerShell Web Access のアンインストール
 ms.openlocfilehash: 3c2c83525f5a240976eef215b5eac939796c91e8
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "78279012"
 ---
 # <a name="uninstall-windows-powershell-web-access"></a>Windows PowerShell Web Access をアンインストールする
 
-更新:2013 年 6 月 24 日
+最終更新日: 2013 年 6 月 24 日
 
-適用先:Windows Server 2012 R2、Windows Server 2012
+適用対象: Windows Server 2012 R2、Windows Server 2012
 
 このトピックの手順で、Windows PowerShell Web Access Web サイトと該当アプリケーションがインストール先のゲートウェイ サーバーから削除されます。
 
@@ -32,7 +32,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 の両方をアンインストールできます。
 
-### <a name="step-1-delete-the-web-application-using-cmdlets"></a>手順 1:コマンドレットを利用して Web アプリケーションを削除する
+### <a name="step-1-delete-the-web-application-using-cmdlets"></a>手順 1: コマンドレットを利用して Web アプリケーションを削除する
 
 1. 次のいずれかを実行して Windows PowerShell セッションを開きます。
 
@@ -53,7 +53,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
       `Uninstall-PswaWebApplication -DeleteTestCertificate`
 
-### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>手順 2:コマンドレットを利用し、Windows PowerShell Web Access をアンインストールする
+### <a name="step-2-uninstall-windows-powershell-web-access-using-cmdlets"></a>手順 2: コマンドレットを利用し、Windows PowerShell Web Access をアンインストールする
 
 1. 次のいずれかを実行して、管理者特権を使って Windows PowerShell セッションを開きます。 セッションを既に開いている場合は、次の手順に進んでください。
 
@@ -76,7 +76,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
 
 このセクションの手順では、サーバー マネージャーの役割と機能の削除ウィザード、および IIS マネージャー コンソールを使用して Windows PowerShell Web Access の Web アプリケーションと Windows PowerShell Web Access 機能の両方をアンインストールできます。
 
-### <a name="step-1-delete-the-web-application-using-iis-manager"></a>手順 1:IIS マネージャーを利用して Web アプリケーションを削除する
+### <a name="step-1-delete-the-web-application-using-iis-manager"></a>手順 1: IIS マネージャーを利用して Web アプリケーションを削除する
 
 1. 次のいずれかの方法で IIS マネージャー コンソールを開きます。 既に開いている場合は、次の手順に進んでください。
 
@@ -97,7 +97,7 @@ Windows PowerShell Web Access の実行に必要なため、Windows PowerShell W
    > [!WARNING]
    > アンインストールでは証明書は削除されません。 自己署名証明書を作成している場合、または使用したテスト証明書を削除する場合は、IIS マネージャーで証明書を削除できます。
 
-### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>手順 2:役割と機能の削除ウィザードを使って Windows PowerShell Web Access をアンインストールする
+### <a name="step-2-uninstall-windows-powershell-web-access-using-the-remove-roles-and-features-wizard"></a>手順 2: 役割と機能の削除ウィザードを使って Windows PowerShell Web Access をアンインストールする
 
 1. サーバー マネージャーを既に開いている場合は、次の手順に進んでください。 サーバー マネージャーをまだ開いていない場合は、次のいずれかの方法で開きます。
 

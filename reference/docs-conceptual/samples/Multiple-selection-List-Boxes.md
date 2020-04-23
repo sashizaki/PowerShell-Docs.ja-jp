@@ -1,12 +1,12 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: 複数選択のリスト ボックス
 ms.openlocfilehash: dcfa43ac8e7cc4ba6147f71791edbf7989af3583
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "67030096"
 ---
 # <a name="multiple-selection-list-boxes"></a>複数選択のリスト ボックス
@@ -73,7 +73,7 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 }
 ```
 
-最初に、スクリプトは次の 2 つの .NET Framework クラスを読み込みます。**System.Drawing** と **System.Windows.Forms** です。 次に、.NET Framework クラス **System.Windows.Forms.Form** の新しいインスタンスを開始します。これにより、コントロールの追加を開始する空白のフォームまたはウィンドウが作成されます。
+このスクリプトは 2 つの .NET Framework クラス、つまり **System.Drawing** と **System.Windows.Forms** を最初に読み込みます。 次に、.NET Framework クラス **System.Windows.Forms.Form** の新しいインスタンスを開始します。これにより、コントロールの追加を開始する空白のフォームまたはウィンドウが作成されます。
 
 ```powershell
 $form = New-Object System.Windows.Forms.Form
@@ -182,6 +182,6 @@ if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 
 ## <a name="see-also"></a>参照
 
-- [Hey Scripting Guy:これらの PowerShell GUI の例が機能しないのはなぜですか。](https://go.microsoft.com/fwlink/?LinkId=506644)
-- [GitHub:Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week:オプションの複数選択リスト - その他](https://technet.microsoft.com/library/ff730950.aspx)
+- [Hey Scripting Guy: これらの PowerShell GUI の例が機能しないのはなぜですか。](https://go.microsoft.com/fwlink/?LinkId=506644)
+- [GitHub: Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [Windows PowerShell Tip of the Week: 複数選択のリスト ボックスなど](https://technet.microsoft.com/library/ff730950.aspx)

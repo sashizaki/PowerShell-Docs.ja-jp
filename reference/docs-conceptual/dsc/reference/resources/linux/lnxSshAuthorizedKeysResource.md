@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 DSC の nxSshAuthorizedKeys リソース
 ms.openlocfilehash: 6e008efcbff2e679650d0bc3d5b8b573f6ef83e0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953259"
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>Linux 用 DSC の nxSshAuthorizedKeys リソース
@@ -26,13 +26,13 @@ nxAuthorizedKeys <string> #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
 |KeyComment |キーの一意のコメント。 これは、キーを一意に識別するために使用されます。 |
-|Username |承認された ssh キーを管理するユーザー名。 定義されていない場合、既定のユーザーは **root** です。 |
-|キー |キーの内容。 **Ensure** を **Present** に設定する場合、これは必須になります。|
+|ユーザー名 |承認された ssh キーを管理するユーザー名。 定義されていない場合、既定のユーザーは **root** です。 |
+|Key |キーの内容。 **Ensure** を **Present** に設定する場合、これは必須になります。|
 
 ## <a name="common-properties"></a>共通プロパティ
 

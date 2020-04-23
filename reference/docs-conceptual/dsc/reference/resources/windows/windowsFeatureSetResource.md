@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC WindowsFeatureSet リソース
 ms.openlocfilehash: 1758d248dde4fdee57bd01c157a3f9a8340d6194
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71952959"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet リソース
@@ -33,14 +33,14 @@ WindowsFeatureSet [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |  プロパティ  |  説明   |
 |---|---|
 |名前 |追加または削除する役割または機能の名前。 これは [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) コマンドレットの **Name** プロパティと同じものであり、役割または機能の表示名ではありません。 |
-|ソース |必要に応じて、インストールに使用するソース ファイルの場所を示します。 |
+|source |必要に応じて、インストールに使用するソース ファイルの場所を示します。 |
 |IncludeAllSubFeature |**Name** プロパティで指定した機能を使用して必要なすべてのサブ機能を含めるには、このプロパティを `$true` に設定します。 |
-|Credential |役割または機能の追加や削除に使用する資格情報。 |
+|資格情報 |役割または機能の追加や削除に使用する資格情報。 |
 |LogPath |リソース プロバイダーの操作を記録するログ ファイルへのパス。 |
 
 ## <a name="common-properties"></a>共通プロパティ

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データの使用
 ms.openlocfilehash: 7d13b19ba932d1a818194a221f145fd1a3832547
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954189"
 ---
 # <a name="using-configuration-data-in-dsc"></a>DSC で構成データを使用する
 
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 組み込みの DSC **ConfigurationData** パラメーターを使用して、構成内で使用可能なデータを定義することができます。
 これにより、複数のノードや異なる環境で使用可能な 1 つの構成を作成できます。
@@ -23,7 +23,7 @@ ms.locfileid: "71954189"
 ## <a name="the-configurationdata-common-parameter"></a>共通の ConfigurationData パラメーター
 
 DSC 構成では、**ConfigurationData** という共通パラメーターを使用します。このパラメーターは、構成をコンパイルするときに指定します。
-構成をコンパイルする方法の詳細については、「[DSC 構成](configurations.md)」を参照してください。
+構成のコンパイルについては、「[DSC 構成](configurations.md)」をご覧ください。
 
 **ConfigurationData** パラメーターはハッシュテーブルであり、**AllNodes** という名前のキーが少なくとも 1 つ必要です。
 その他のキーを 1 つ以上含めることもできます。

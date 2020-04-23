@@ -3,15 +3,15 @@ ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell 5.0 以降での構成 ID を使用したプル クライアントのセットアップ
 ms.openlocfilehash: a014e04fc5fbf2e813d9b0d79f39fe5aa3836f86
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500735"
 ---
 # <a name="set-up-a-pull-client-using-configuration-ids-in-powershell-50-and-later"></a>PowerShell 5.0 以降での構成 ID を使用したプル クライアントのセットアップ
 
-> 適用先:Windows PowerShell 5.0
+> 適用先: Windows PowerShell 5.0
 
 > [!IMPORTANT]
 > プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
@@ -40,7 +40,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 以下の例は、LCM の **ConfigurationID** プロパティをこの目的で以前に作成した **Guid** に設定します。 **ConfigurationID** は、LCM がプル サーバーで適切な構成を検索する場合に使用します。 プル サーバー上の構成 MOF ファイルは、`ConfigurationID.mof` という名前にする必要があります。ここで、*ConfigurationID* はターゲット ノードの LCM の **ConfigurationID** プロパティの値です。 詳細については、[プル サーバーへの構成の発行 (v4/v5)](publishConfigs.md)に関するページを参照してください。
 
-以下の例を使用するか、または [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) コマンドレットを使用して、ランダムな **Guid** を作成できます。
+以下の例を使用するか、または **New-Guid** コマンドレットを使用して、ランダムな [Guid](/powershell/module/microsoft.powershell.utility/new-guid) を作成できます。
 
 ```powershell
 [System.Guid]::NewGuid()

@@ -3,15 +3,15 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Log リソース
 ms.openlocfilehash: 0a2f12793357fdf10bd4a2f6003f9dc2276b173c
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870763"
 ---
 # <a name="dsc-log-resource"></a>DSC Log リソース
 
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.x
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell Desired State Configuration (DSC) の **Log** リソースは、Microsoft-Windows-Desired State Configuration/Analytic イベント ログにメッセージを書き込むためのメカニズムを備えています。
 
@@ -31,13 +31,13 @@ Log [string] #ResourceName
 
 ## <a name="properties"></a>Properties
 
-| プロパティ |                                                   [説明]                                                    |
+| プロパティ |                                                   説明                                                    |
 | -------- | ---------------------------------------------------------------------------------------------------------------- |
 | Message  | Microsoft-Windows-Desired State Configuration/Analytic イベント ログに書き込むメッセージを示します。 |
 
 ## <a name="common-properties"></a>共通プロパティ
 
-|       プロパティ       |                                                                                                                                                          [説明]                                                                                                                                                           |
+|       プロパティ       |                                                                                                                                                          説明                                                                                                                                                           |
 | -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | DependsOn            | このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が ResourceName で、そのタイプが ResourceType である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。 |
 | PsDscRunAsCredential | リソース全体を実行するための資格情報を設定します。                                                                                                                                                                                                                                                                        |

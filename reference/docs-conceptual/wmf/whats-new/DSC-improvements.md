@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 の DSC 機能強化
-ms.openlocfilehash: 99434d14100de54d2d4c89c5888741ab2f1c512a
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 78c15f453977384ba437b0bd69cd620eb1a29fbd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78277633"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80978289"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 の Desired State Configuration (DSC) の機能強化
 
@@ -147,7 +147,7 @@ WMF 5.0 では、PowerShell デバッガーは、クラス ベースのリソー
 
 ## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>PsDscRunAsCredential と DSC 複合リソースを使用する
 
-DSC [複合](/powershell/scripting/dsc/authoringresourcecomposite)リソースで [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) を使用できるようになりました。
+DSC [複合](/powershell/scripting/dsc/configurations/runAsUser)リソースで [PsDscRunAsCredential](/powershell/scripting/dsc/resources/authoringresourcecomposite) を使用できるようになりました。
 
 構成内で複合リソースを使用するとき、**PsDscRunAsCredential** の値を指定できるようになりました。 指定されると、すべてのリソースが複合リソース内で RunAs ユーザーとして実行されます。 複合リソースが別の複合リソースを呼び出す場合、すべてのそれらのリソースも RunAs ユーザーとして実行されます。 RunAs 資格情報が複合リソース階層のあらゆるレベルに配信されます。 複合リソース内のいずれかのリソースで **PsDscRunAsCredential** に対して独自の値が指定されている場合、構成コンパイル中に結合エラーが発生します。
 
@@ -240,7 +240,7 @@ WMF 5.1 では、DSC はカタログ ファイルと構成 (.MOF) ファイル�
 ### <a name="how-to-sign-configuration-and-module"></a>構成とモジュールに署名する方法
 
 - 構成ファイル (.MOF): 既存の PowerShell コマンドレット [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) が拡張され、MOF ファイルの署名に対応しています。
-- モジュール: モジュールの署名は、次の手順を利用し、対応するモジュール カタログに署名することで完了します。
+- モジュール: モジュールの署名は、次の手順を利用し、対応するモジュール カタログに署名することで完了します:
   1. カタログ ファイルの作成: カタログ ファイルには、暗号法のハッシュまたは拇印の集まりが含まれています。 拇印はそれぞれ、モジュールに含まれるファイルに対応します。 新しいコマンドレット [New-FileCatalog](/powershell/module/microsoft.powershell.security/new-filecatalog) が追加され、ユーザーは自分のモジュールのカタログ ファイルを作成できます。
   2. カタログ ファイルの署名: [Set-AuthenticodeSignature](/powershell/module/Microsoft.PowerShell.Security/Set-AuthenticodeSignature) を利用し、カタログ ファイルに署名します。
   3. モジュール フォルダー内にカタログ ファイルを配置します。 慣例では、モジュール カタログ ファイルは、モジュールと同じ名前のモジュール フォルダーの下に配置する必要があります。
@@ -286,7 +286,7 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
    - `<moduleName>.cat` ファイルを見つけ、`Get-AuthenticodeSignature` を使ってその署名を検証します。
    - 署名者が信頼できることを認定した証明機関を検証します。
    - 新しいコマンドレット `Test-FileCatalog` を利用し、モジュールのコンテンツが改ざんされていないことを検証します。
-5. `$env:ProgramFiles\WindowsPowerShell\Modules\` に対して `Install-Module` を行います
+5. `Install-Module` に対して `$env:ProgramFiles\WindowsPowerShell\Modules\` を行います
 6. プロセス構成
 
 > [!NOTE]

@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: クイック スタート - DSC を使用して Web サイトを作成する
 ms.openlocfilehash: 08ca25604998ce8c913ef8112b5342f2e0216b6e
-ms.sourcegitcommit: 1b88c280dd0799f225242608f0cbdab485357633
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75416129"
 ---
 # <a name="quickstart---create-a-website-with-desired-state-configuration-dsc"></a>クイックスタート - Desired State Configuration (DSC) を使用して Web サイトを作成する
 
-> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
 
 この演習では、Desired State Configuration (DSC) の構成の作成と適用について最初から最後まで説明します。
 これから使用するサンプルでは、サーバーの `Web-Server` (IIS) 機能が有効になっており、そのサーバのディレクトリ `inetpub\wwwroot` に「Hello World」サンプルのコンテンツが存在することを確認します。
@@ -37,7 +37,7 @@ DSC の概要としくみついては、「[意思決定者向け Desired State 
 </body>
 ```
 
-これを先ほど作成した `test` フォルダに `index.htm` というファイル名でこのファイルを保存します。
+これを先ほど作成した `index.htm` フォルダに `test` というファイル名でこのファイルを保存します。
 
 ## <a name="write-the-configuration"></a>構成を記述する
 

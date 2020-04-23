@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC WindowsPackageCab リソース
 ms.openlocfilehash: ec465b2c3b1d180ba46ee24a61f2be1129148962
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954639"
 ---
 # <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab リソース
@@ -30,7 +30,7 @@ Windows PowerShell Desired State Configuration (DSC) の **WindowsPackageCab** �
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|

@@ -3,10 +3,10 @@ ms.date: 01/08/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC プル サービス
 ms.openlocfilehash: 821f183c91e805154323f9f6a42f7f5006499182
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500720"
 ---
 # <a name="desired-state-configuration-pull-service"></a>Desired State Configuration プル サービス
@@ -163,7 +163,7 @@ Web プル サーバーをセットアップする最も簡単な方法は、**x
 
 #### <a name="registration-key"></a>登録キー
 
-サーバーにクライアント ノードを登録して、構成 ID の代わりに構成名を使用できるように、上の構成で作成された登録キーは、`C:\Program Files\WindowsPowerShell\DscService` にある `RegistrationKeys.txt` という名前のファイルに保存されます。 登録キーは、クライアントがプル サーバーに初期登録を行うときに共有シークレットとして機能します。 登録が正常に完了すると、クライアントは、プル サーバーに一意に認証されるために使う自己署名証明書を生成します。 この証明書の拇印がローカルに保存され、プル サーバーの URL に関連付けられます。
+サーバーにクライアント ノードを登録して、構成 ID の代わりに構成名を使用できるように、上の構成で作成された登録キーは、`RegistrationKeys.txt` にある `C:\Program Files\WindowsPowerShell\DscService` という名前のファイルに保存されます。 登録キーは、クライアントがプル サーバーに初期登録を行うときに共有シークレットとして機能します。 登録が正常に完了すると、クライアントは、プル サーバーに一意に認証されるために使う自己署名証明書を生成します。 この証明書の拇印がローカルに保存され、プル サーバーの URL に関連付けられます。
 
 > [!NOTE]
 > 登録キーは、PowerShell 4.0 ではサポートされていません。
@@ -228,7 +228,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 各リソース モジュールは、圧縮し、`{Module Name}_{Module Version}.zip` というパターンで名前を付ける必要があります。
 
 たとえば、モジュール名が **xWebAdminstration** で、バージョンが 3.1.2.0 のモジュールでは、`xWebAdministration_3.1.2.0.zip` という名前になります。 各バージョンのモジュールを 1 つの zip ファイルに含める必要があります。
-各 zip ファイルには 1 つのバージョンのリソースのみが含まれるので、WMF 5.0 で追加された、単一のディレクトリに複数のモジュール バージョンを入れるモジュール形式はサポートされていません。 このため、プル サーバーで使うための DSC リソース モジュールをパッケージ化する前に、ディレクトリ構造に少しの変更が必要です。 WMF 5.0 の DSC リソースを含むモジュールの既定の形式は、`{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\` です。 プル サーバー用にパッケージ化する前に、パスが `{Module Folder}\DscResources\{DSC Resource Folder}\` になるように **{Module version}** フォルダーを削除します。 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを **ModulePath** フォルダーに置きます。
+各 zip ファイルには 1 つのバージョンのリソースのみが含まれるので、WMF 5.0 で追加された、単一のディレクトリに複数のモジュール バージョンを入れるモジュール形式はサポートされていません。 このため、プル サーバーで使うための DSC リソース モジュールをパッケージ化する前に、ディレクトリ構造に少しの変更が必要です。 WMF 5.0 の DSC リソースを含むモジュールの既定の形式は、`{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\` です。 プル サーバー用にパッケージ化する前に、パスが **になるように**{Module version}`{Module Folder}\DscResources\{DSC Resource Folder}\` フォルダーを削除します。 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを **ModulePath** フォルダーに置きます。
 
 新しく追加したモジュールのチェックサム ファイルを作成するには、`New-DscChecksum {module zip file}` を使用します。
 
@@ -273,10 +273,10 @@ DSC コミュニティは、プル サービス プロトコルを実装する�
 - [構成名を使用したプル クライアントのセットアップ](pullClientConfigNames.md)
 - [部分構成](partialConfigs.md)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 - [Windows PowerShell Desired State Configuration の概要](../overview/overview.md)
 - [構成の適用](enactingConfigurations.md)
 - [DSC レポート サーバーの使用](reportServer.md)
-- [[MS-DSCPM]:Desired State Configuration Pull Model プロトコル](https://docs.microsoft.com/openspecs/windows_protocols/ms-dscpm/ea744c01-51a2-4000-9ef2-312711dcc8c9)
-- [[MS-DSCPM]:Desired State Configuration Pull Model プロトコルの正誤表](https://docs.microsoft.com/openspecs/windows_protocols/ms-winerrata/f5fc7ae3-9172-41e8-ac6a-2a5a5b7bfaf5)
+- [[MS-DSCPM]: Desired State Configuration Pull Model プロトコル](https://docs.microsoft.com/openspecs/windows_protocols/ms-dscpm/ea744c01-51a2-4000-9ef2-312711dcc8c9)
+- [[MS-DSCPM]: Desired State Configuration Pull Model プロトコルの正誤表](https://docs.microsoft.com/openspecs/windows_protocols/ms-winerrata/f5fc7ae3-9172-41e8-ac6a-2a5a5b7bfaf5)

@@ -1,12 +1,12 @@
 ---
 ms.date: 09/09/2019
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: 付録 1 - 互換性のあるエイリアス
 ms.openlocfilehash: 2351fdf23711fe1417f7e3fc3cca5b642d5a59fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "70848167"
 ---
 # <a name="appendix-1---compatibility-aliases"></a>付録 1 - 互換性のあるエイリアス
@@ -16,7 +16,7 @@ PowerShell には、**UNIX** と **cmd.exe** のユーザーが使い慣れた�
 
 |cmd.exe コマンド|UNIX コマンド|PowerShell コマンドレット|PowerShell エイリアス|
 |---------------|----------------|--------------|------------|
-|**cls**|**clear**|`Clear-Host` (関数)|`cls`|
+|**cls**|**オフ**|`Clear-Host` (関数)|`cls`|
 |**copy**|**cp**|`Copy-Item`|`cpi`|
 |**dir**|**ls**|`Get-ChildItem`|`gci`|
 |**type**|**cat**|`Get-Content`|`gc`|

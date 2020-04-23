@@ -1,12 +1,12 @@
 ---
 ms.date: 09/06/2019
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: PowerShell 5.0 ISE の新機能
 ms.openlocfilehash: 8f15e99c5a6ae33aeae9bd33eb0cf58fb27e3b90
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "74416634"
 ---
 # <a name="whats-new-in-the-windows-powershell-50-ise"></a>Windows PowerShell 5.0 ISE の新機能
@@ -54,7 +54,7 @@ Windows PowerShell ISE でコマンドレットを入力すると、スクロー
 
 **動作の相違点**
 
-Windows PowerShell 3.0 以降でスニペットを使用するには、 **[編集]** メニューで **[スニペットの開始]** をクリックするか、<kbd>Ctrl</kbd> + <kbd>J</kbd> キーを押します。
+Windows PowerShell 3.0 以降でスニペットを使用するには、 **[編集]** メニューで **[スニペットの開始]** をクリックするか、<kbd>Ctrl</kbd>+<kbd>J</kbd> キーを押します。
 
 ## <a name="add-on-tools"></a>アドオン ツール
 
@@ -112,14 +112,14 @@ Windows PowerShell ISE の最初のリリースで使用できた、独立した
 
 - XML 構文を含む入力テキストの構文の色分け (出力テキストを除く)
 - IntelliSense
-- かっこの照合
+- かっこの一致
 - エラー表示
 - 全角 Unicode のサポート
 - <kbd>F1</kbd> キーによる状況依存のヘルプ
-- <kbd>Ctrl</kbd> + <kbd>F1</kbd> キーによる状況依存の Show-Command
+- <kbd>Ctrl</kbd>+<kbd>F1</kbd> キーによる状況依存の Show-Command
 - 複雑なスクリプトおよび右から左への記述のサポート
 - フォントのサポート
-- ズーム
+- Zoom
 - 行選択モードとブロック選択モード
 - <kbd>上方向</kbd>キーを押して履歴をコンソールに表示したときにコマンド ラインに入力されたコンテンツを保存する機能
 
@@ -156,13 +156,13 @@ Windows PowerShell ISE 2.0 では、これらのコマンド ライン スイッ
 その他の Windows PowerShell ISE 編集機能として、次のものがあります。
 
 - **XML 構文の色分け** - Windows PowerShell ISE では、Windows PowerShell 構文を色分けする方法と同じ方法で XML 構文が色分けされるようになりました。
-- **かっこの照合** - Windows PowerShell ISE にはかっこの照合と強調表示を行う機能が含まれ、次のように使用できます。たとえば、始めかっこを選択している場合、 **[一致する項目に移動]** コマンドまたは <kbd>Ctrl</kbd> + <kbd>]</kbd> キーを使用すると、終わりかっこが見つかります。
-- **アウトライン表示**。スクリプト ウィンドウでは、アウトラインがサポートされます。これにより、左余白のプラス記号またはマイナス記号をクリックすると、コードのセクションを折りたたんだり展開したりできます。 かっこ、または `#region` タグと `#endregion` タグを使用して、折りたたみ可能なセクションの先頭と末尾をマークすることができます。 すべての領域を展開する、または折りたたむには、<kbd>Ctrl</kbd> + <kbd>M</kbd> キーを押します。
+- **かっこの照合** - Windows PowerShell ISE にはかっこの照合と強調表示を行う機能が含まれ、次のように使用できます。たとえば、始めかっこを選択している場合、 **[一致する項目に移動]** コマンドまたは <kbd>Ctrl</kbd>+<kbd>]</kbd> キーを使用すると、終わりかっこが見つかります。
+- **アウトライン表示**。スクリプト ウィンドウでは、アウトラインがサポートされます。これにより、左余白のプラス記号またはマイナス記号をクリックすると、コードのセクションを折りたたんだり展開したりできます。 かっこ、または `#region` タグと `#endregion` タグを使用して、折りたたみ可能なセクションの先頭と末尾をマークすることができます。 すべての領域を展開する、または折りたたむには、<kbd>Ctrl</kbd>+<kbd>M</kbd> キーを押します。
 - **ドラッグ アンド ドロップ テキスト編集** - Windows PowerShell ISE で、ドラッグ アンド ドロップによるテキスト編集がサポートされるようになりました。 任意のテキストのブロックを選択し、そのテキストをドラッグしてエディターまたはコンソール内の別の場所に移動できます。 <kbd>Ctrl</kbd> キーを押したまま選択したテキストをドラッグし、マウス ボタンを放すと、テキストが新しい場所にコピーされます。 このバージョンの Windows PowerShell ISE では、ファイルを Windows PowerShell ISE 上にドラッグ アンド ドロップすると、Windows PowerShell ISE でファイルが開かれます。
 - **解析エラーの表示** - 解析エラーは赤い下線で示されます。 示されたエラーをポイントすると、コード内で見つかった問題がヒントのテキストに表示されます。
 - **ズーム** - ズーム スライダー (Windows PowerShell ISE ウィンドウの右下隅にあります) を使用するか、コンソール ウィンドウで `$psise.options.Zoom` コマンドを入力することで、コンソールのコンテンツのズーム倍率を設定できます。
 - **リッチ テキストのコピーと貼り付け** - Windows PowerShell ISE でクリップボードにコピーすると、元の選択範囲のフォント、サイズ、および色の情報が保存されます。
-- **ブロック選択** - テキストのブロックを選択するには、<kbd>Alt</kbd> キーを押したままマウスでスクリプト ウィンドウ内のテキストを選択するか、<kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>方向</kbd>キーを押します。
+- **ブロック選択** - テキストのブロックを選択するには、<kbd>Alt</kbd> キーを押したままマウスでスクリプト ウィンドウ内のテキストを選択するか、<kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>方向</kbd>キーを押します。
 
 **この変更の利点**
 

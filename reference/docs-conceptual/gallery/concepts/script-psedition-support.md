@@ -4,10 +4,10 @@ contributor: manikb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: 互換性のある PowerShell エディションが含まれるスクリプト
 ms.openlocfilehash: e364879f611429a8583e550fb7704431e456fbb1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328063"
 ---
 # <a name="script-with-compatible-powershell-editions"></a>互換性のある PowerShell エディションが含まれるスクリプト
@@ -16,7 +16,7 @@ ms.locfileid: "71328063"
 
 - **Desktop Edition:** .NET Framework 上に構築され、Windows の完全フットプリント エディション (Server Core、Windows Desktop など) で実行される PowerShell のバージョンをターゲットとするスクリプトおよびモジュールと互換性があります。
 
-- **Core Edition:** .NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
+- **コア エディション:** .NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
 
 PowerShell の実行中のエディションが $PSVersionTable の PSEdition プロパティに表示されます。
 
@@ -64,7 +64,7 @@ Find-Script -Tag PSEdition_Desktop
 Find-Script -Tag PSEdition_Core
 ```
 
-## <a name="more-details"></a>詳細情報
+## <a name="more-details"></a>詳細
 
 - [PSEditions が含まれるモジュール](module-psedition-support.md)
 - [PowerShellGallery での PSEditions のサポート](../how-to/finding-packages/searching-by-compatibility.md)

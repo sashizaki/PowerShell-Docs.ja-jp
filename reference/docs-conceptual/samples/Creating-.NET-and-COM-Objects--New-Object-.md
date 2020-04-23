@@ -1,12 +1,12 @@
 ---
 ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: .NET オブジェクトと COM オブジェクトを作成する (New-Object)
 ms.openlocfilehash: 6e98a159451bc7da4ba3b37eaeb813eb71590d2b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71325165"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>.NET オブジェクトと COM オブジェクトを作成する (New-Object)
@@ -120,9 +120,9 @@ PS> $RemoteAppLog
 ## <a name="creating-com-objects-with-new-object"></a>New-Object による COM オブジェクトの作成
 コンポーネント オブジェクト モデル (COM) のコンポーネントを操作するには、**New-Object** を使用します。 一口にコンポーネントと言っても、その種類は Windows Script Host (WSH) に含まれている各種ライブラリから、Internet Explorer のようなほとんどのシステムにインストールされている ActiveX アプリケーションまで多岐にわたります。
 
-**New-Object** では、.NET Framework ランタイム呼び出し可能ラッパーを使って COM オブジェクトを作成します。したがって、COM オブジェクトを呼び出す際には .NET Framework の場合と同じ制限が適用されます。 COM オブジェクトを作成するには、使用する COM クラスのプログラム識別子 (*ProgId*) を **ComObject** パラメーターで指定する必要があります。 COM の使用上の制限や、システム上で利用できる ProgId の調査方法については、このマニュアルの範囲を超えているので詳しく説明しません。しかし、WSH などの環境に存在する、一般によく知られているようなオブジェクトについては、Windows PowerShell 内で使用できます。
+**New-Object** では、.NET Framework ランタイム呼び出し可能ラッパーを使って COM オブジェクトを作成します。したがって、COM オブジェクトを呼び出す際には .NET Framework の場合と同じ制限が適用されます。 COM オブジェクトを作成するには、使用する COM クラスのプログラム識別子 (**ProgId**) を *ComObject* パラメーターで指定する必要があります。 COM の使用上の制限や、システム上で利用できる ProgId の調査方法については、このマニュアルの範囲を超えているので詳しく説明しません。しかし、WSH などの環境に存在する、一般によく知られているようなオブジェクトについては、Windows PowerShell 内で使用できます。
 
-次の ProgID を指定することで、WSH オブジェクトを作成できます:**WScript.Shell**、**WScript.Network**、**Scripting.Dictionary**、および **Scripting.FileSystemObject**。 これらのオブジェクトを作成するコマンドの例を次に示します。
+WSH オブジェクトは、**WScript.Shell**、**WScript.Network**、**Scripting.Dictionary**、**Scripting.FileSystemObject** などを ProgId として指定すれば作成できます。 これらのオブジェクトを作成するコマンドの例を次に示します。
 
 ```powershell
 New-Object -ComObject WScript.Shell
@@ -155,7 +155,7 @@ CreateShortcut           Method                IDispatch CreateShortcut (str...
 ...
 ```
 
-**Get-Member** には、省略可能なパラメーター **InputObject** があります。**Get-Member** に対する入力をパイプで渡す代わりに、このパラメーターを使用することもできます。 **Get-Member -InputObject $WshShell** コマンドを使用しても表示される出力結果は同じです。 **InputObject** を使用した場合、その引数は単一の項目として扱われます。 つまり、1 つの変数に複数のオブジェクトが格納されている場合、**Get-Member** では、それらはオブジェクトの配列として扱われます。 たとえば、次のように入力します。
+**Get-Member** には、省略可能なパラメーター **InputObject** があります。**Get-Member** に対する入力をパイプで渡す代わりに、このパラメーターを使用することもできます。 **Get-Member -InputObject $WshShell** コマンドを使用しても表示される出力結果は同じです。 **InputObject** を使用した場合、その引数は単一の項目として扱われます。 つまり、1 つの変数に複数のオブジェクトが格納されている場合、**Get-Member** では、それらはオブジェクトの配列として扱われます。 次に例を示します。
 
 ```
 PS> $a = 1,2,"three"

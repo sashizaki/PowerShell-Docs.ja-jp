@@ -791,7 +791,7 @@
               items:
                 - name: 更新可能なヘルプの概要
                   href: developer/module/updatable-help-overview.md
-                - name: '更新可能なヘルプの作成: ステップバイステップ'
+                - name: '更新可能なヘルプの作成: ステップ バイ ステップ'
                   href: developer/module/updatable-help-authoring-step-by-step.md
                 - name: 更新可能なヘルプのしくみ
                   href: developer/module/how-updatable-help-works.md

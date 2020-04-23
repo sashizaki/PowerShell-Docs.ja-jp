@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC グループ リソース
 ms.openlocfilehash: 695a914683c6daff44dd2a6c94b6353acf881030
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954659"
 ---
 # <a name="dsc-group-resource"></a>DSC グループ リソース
@@ -32,14 +32,14 @@ Group [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
 |GroupName |特定の状態を保証するグループの名前です。 |
-|Credential |リモート リソースにアクセスするために必要な資格情報です このアカウントには、ローカルではないすべてのアカウントをグループに追加できる、Active Directory への適切なアクセス許可が必要です。このアクセス許可がない場合、ターゲット ノードで構成が実行されると、エラーが発生します。
+|資格情報 |リモート リソースにアクセスするために必要な資格情報です このアカウントには、ローカルではないすべてのアカウントをグループに追加できる、Active Directory への適切なアクセス許可が必要です。このアクセス許可がない場合、ターゲット ノードで構成が実行されると、エラーが発生します。
 |説明 |グループの説明です。 |
-|[メンバー] |このプロパティは、現在のグループ メンバーシップを指定したメンバーで置き換えるために使用します。 このプロパティの値は、`Domain\UserName` 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**MembersToExclude** プロパティおよび **MembersToInclude** プロパティは併用しないでください。 併用すると、エラーが発生します。 |
+|メンバー |このプロパティは、現在のグループ メンバーシップを指定したメンバーで置き換えるために使用します。 このプロパティの値は、`Domain\UserName` 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**MembersToExclude** プロパティおよび **MembersToInclude** プロパティは併用しないでください。 併用すると、エラーが発生します。 |
 |MembersToExclude |このプロパティは、グループの既存のメンバーシップからメンバーを削除するために使用します。 このプロパティの値は、`Domain\UserName` 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**Members** プロパティは使用しないでください。 併用すると、エラーが発生します。 |
 |MembersToInclude |このプロパティは、グループの既存のメンバーシップにメンバーを追加するために使用します。 このプロパティの値は、`Domain\UserName` 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**Members** プロパティは使用しないでください。 併用した場合、エラーが発生します。 |
 

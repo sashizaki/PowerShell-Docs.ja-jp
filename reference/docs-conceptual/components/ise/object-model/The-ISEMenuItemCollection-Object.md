@@ -3,15 +3,15 @@ ms.date: 12/31/2019
 keywords: powershell,コマンドレット
 title: ISEMenuItemCollection オブジェクト
 ms.openlocfilehash: 39e8547c9b19ba323d4b224a46eda416542b2807
-ms.sourcegitcommit: 058a6e86eac1b27ca57a11687019df98709ed709
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75736174"
 ---
 # <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection オブジェクト
 
-**ISEMenuItemCollection** オブジェクトは、**ISEMenuItem** オブジェクトのコレクションです。 これは **Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection** クラスのインスタンスです。 例としては、Windows PowerShell® Integrated Scripting Environment (ISE) の **[アドオン]** メニューをカスタマイズするために使用される `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus` オブジェクトです。
+**ISEMenuItemCollection** オブジェクトは、**ISEMenuItem** オブジェクトのコレクションです。 これは **Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection** クラスのインスタンスです。 例としては、Windows PowerShell® Integrated Scripting Environment (ISE) の `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus`[アドオン]**メニューをカスタマイズするために使用される** オブジェクトです。
 
 ## <a name="method"></a>方法
 

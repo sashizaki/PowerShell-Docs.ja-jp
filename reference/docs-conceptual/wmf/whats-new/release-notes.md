@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.x のリリース ノート
 ms.openlocfilehash: 3fc712dbcbe184c60ae248b260c8f6800f111fdd
-ms.sourcegitcommit: c97dcf1e00ef540e7464c36c88f841474060044c
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/15/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "79402359"
 ---
 # <a name="windows-management-framework-wmf-5x-release-notes"></a>Windows Management Framework (WMF) 5.x リリース ノート
@@ -50,7 +50,7 @@ WMF 5.1 には、Windows Server 2016 でリリースされた PowerShell、WMI�
 バージョン 5.1 から、PowerShell は機能セットとプラットフォーム互換性が異なるさまざまなエディションで利用できるようになりました。
 
 - **Desktop Edition:** .NET Framework 上に構築され、Windows の完全フットプリント エディション (Server Core、Windows Desktop など) で実行される PowerShell のバージョンをターゲットとするスクリプトおよびモジュールと互換性があります。
-- **Core Edition:** .NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
+- **コア エディション:** .NET Core 上に構築されており、Nano Server や Windows IoT などの Windows の縮小エディションで実行する PowerShell のバージョンを対象とするスクリプトおよびモジュールとの互換性を提供します。
 
 ### <a name="learn-more-about-using-powershell-editions"></a>PowerShell のエディションの使用に関する詳細
 

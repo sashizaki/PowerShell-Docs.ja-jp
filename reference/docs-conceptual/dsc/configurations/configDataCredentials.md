@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データでの資格情報オプション
 ms.openlocfilehash: aac27f1ff4b4287b53745fa3b946fb3de84771c2
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870559"
 ---
 # <a name="credentials-options-in-configuration-data"></a>構成データでの資格情報オプション
 
-> 適用先:Windows PowerShell 5.0
+> 適用先: Windows PowerShell 5.0
 
 ## <a name="plain-text-passwords-and-domain-users"></a>プレーンテキスト パスワードとドメイン ユーザー
 
@@ -21,7 +21,7 @@ ms.locfileid: "75870559"
 - **PsDscAllowDomainUser**
 
 > [!NOTE]
-> 暗号化されていないプレーンテキスト パスワードを格納/送信するのは一般的には安全ではありません。 このトピックで後述する手法を使って資格情報をセキュリティ保護することをお勧めします。 Azure Automation DSC サービスでは、構成でコンパイルされ、安全に格納される資格情報を一元的に管理することができます。 詳しくは次の記事をご覧ください: [DSC 構成のコンパイルでの資格情報資産](/azure/automation/automation-dsc-compile#credential-assets)に関する記事
+> 暗号化されていないプレーンテキスト パスワードを格納/送信するのは一般的には安全ではありません。 このトピックで後述する手法を使って資格情報をセキュリティ保護することをお勧めします。 Azure Automation DSC サービスでは、構成でコンパイルされ、安全に格納される資格情報を一元的に管理することができます。 詳細について、「[DSC 構成のコンパイル/資格情報資産](/azure/automation/automation-dsc-compile#credential-assets)」を参照してください。
 
 ## <a name="handling-credentials-in-dsc"></a>DSC での資格情報の処理
 
@@ -53,15 +53,15 @@ Group [String] #ResourceName
 }
 ```
 
-この例では、`PSDesiredStateConfiguration` 組み込み DSC リソース モジュールの [Group](../resources/resources.md) リソースを使用します。 ローカル グループを作成し、メンバーを追加または削除できます。 `Credential` プロパティと、自動 `PsDscRunAsCredential` プロパティの両方を受け取ります。 ただし、リソースでは `Credential` プロパティのみが使用されます。
+この例では、[ 組み込み DSC リソース モジュールの ](../resources/resources.md)Group`PSDesiredStateConfiguration` リソースを使用します。 ローカル グループを作成し、メンバーを追加または削除できます。 `Credential` プロパティと、自動 `PsDscRunAsCredential` プロパティの両方を受け取ります。 ただし、リソースでは `Credential` プロパティのみが使用されます。
 
 `PsDscRunAsCredential`プロパティの詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
 
-## <a name="example-the-group-resource-credential-property"></a>例:Group リソース資格情報プロパティ
+## <a name="example-the-group-resource-credential-property"></a>例: Group リソース資格情報プロパティ
 
 DSC は `Local System` で実行されるため、ローカル ユーザーおよびグループを変更するためのアクセス許可が既にあります。 追加されたメンバーがローカル アカウントの場合、資格情報は必要ありません。 `Group` リソースがローカル グループにドメイン アカウントを追加する場合、資格情報が必要となります。
 
-Active Directory への匿名クエリは許可されません。 `Group` リソースの `Credential` プロパティは、Active Directory のクエリに使用されるドメイン アカウントです。 既定では、ユーザーは Active Directory 内の大部分のオブジェクトを*読み取る*ことができるため、ほとんどの場合これは汎用ユーザー アカウントです。
+Active Directory への匿名クエリは許可されません。 `Credential` リソースの `Group` プロパティは、Active Directory のクエリに使用されるドメイン アカウントです。 既定では、ユーザーは Active Directory 内の大部分のオブジェクトを*読み取る*ことができるため、ほとんどの場合これは汎用ユーザー アカウントです。
 
 ## <a name="example-configuration"></a>構成の例
 
@@ -220,11 +220,11 @@ ModuleVersion = "1.0";
 
 **DSC リソースで資格情報を使用する場合、可能な場合は、ドメイン アカウントではなくローカル アカウントを選択します。**
 
-資格情報の `Username` プロパティに '\\' または '\@' が含まれていた場合、DSC はそれをドメイン アカウントとして処理します。 ユーザー名のドメイン部分には、"localhost"、"127.0.0.1"、および "::1" の例外があります。
+資格情報の \\ プロパティに '\@' または '`Username`' が含まれていた場合、DSC はそれをドメイン アカウントとして処理します。 ユーザー名のドメイン部分には、"localhost"、"127.0.0.1"、および "::1" の例外があります。
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
-上記の DSC `Group` リソースの例では、Active Directory ドメインのクエリを実行するにはドメイン アカウントが*必要です*。 この場合は、次のように `ConfigurationData` ブロックに `PSDscAllowDomainUser` プロパティを追加します。
+上記の DSC `Group` リソースの例では、Active Directory ドメインのクエリを実行するにはドメイン アカウントが*必要です*。 この場合は、次のように `PSDscAllowDomainUser` ブロックに `ConfigurationData` プロパティを追加します。
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force

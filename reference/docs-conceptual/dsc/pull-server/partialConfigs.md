@@ -3,15 +3,15 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell Desired State Configuration の部分構成
 ms.openlocfilehash: 842acad221d468ca5e4c9e660f0205c567bcc220
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "80500767"
 ---
 # <a name="powershell-desired-state-configuration-partial-configurations"></a>PowerShell Desired State Configuration の部分構成
 
-_適用先:Windows PowerShell 5.0 以降。_
+_適用対象: Windows PowerShell 5.0 以降_
 
 PowerShell 5.0 では、Desired State Configuration (DSC) によって、複数のソースからフラグメントで構成を配信できます。 ターゲット ノード上のローカル構成マネージャー (LCM) によって、フラグメントがまとめられ、1 つの構成として適用されます。 この機能により、チームまたは個人間で構成の制御を共有できます。 たとえば、2 つ以上開発者のチームがサービスで共同作業を行っている場合、それぞれがサービスの自身の一部を管理する構成を作成する可能性があります。 これらの構成は、それぞれ異なるプル サーバーからプルされ、開発の異なる段階で追加される可能性があります。 部分構成では、1 つの構成ドキュメントの編集を調整することなく、さまざまな個人またはチームが構成ノードのさまざまな側面を制御することもできます。 たとえば、1 つのチームが VM とオペレーティング システムの展開を担当し、別のチームがその VM に別のアプリケーションとサービスを展開する場合があります。 部分構成を使用すると、各チームが、不必要に複雑になることなく、独自の構成を作成できます。
 
@@ -193,7 +193,7 @@ PartialConfigDemo
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationnames"></a>プル サーバーでの構成ドキュメントの名前付けおよび配置 (ConfigurationNames)
 
-部分構成ドキュメントは、プル サーバーの `web.config` ファイルで **ConfigurationPath** として指定されたフォルダーに配置する必要があります (通常 `C:\Program
+部分構成ドキュメントは、プル サーバーの ** ファイルで **ConfigurationPath`web.config` として指定されたフォルダーに配置する必要があります (通常 `C:\Program
 Files\WindowsPowerShell\DscService\Configuration`)。
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-51"></a>PowerShell 5.1 のプル サーバーでの構成ドキュメントの名前付け
@@ -202,7 +202,7 @@ Files\WindowsPowerShell\DscService\Configuration`)。
 
 #### <a name="naming-configuration-documents-on-the-pull-server-in-powershell-50"></a>PowerShell 5.0 のプル サーバーでの構成ドキュメントの名前付け
 
-構成ドキュメントは次のように名前を付ける必要があります。*ConfigurationName* が部分構成の名前である場合、`ConfigurationName.mof` です。 この例では、構成ドキュメントの名前は次のようになります。
+構成ドキュメントは次のように名前を付ける必要があります。`ConfigurationName.mof`ConfigurationName *が部分構成の名前である場合、* です。 この例では、構成ドキュメントの名前は次のようになります。
 
 ```
 ServiceAccountConfig.mof
@@ -213,7 +213,7 @@ SharePointConfig.mof.checksum
 
 ### <a name="naming-and-placing-the-configuration-documents-on-the-pull-server-configurationid"></a>プル サーバーでの構成ドキュメントの名前付けおよび配置 (ConfigurationID)
 
-部分構成ドキュメントは、プル サーバーの `web.config` ファイルで **ConfigurationPath** として指定されたフォルダーに配置する必要があります (通常 `C:\Program Files\WindowsPowerShell\DscService\Configuration`)。 構成ドキュメントの名前は `<ConfigurationName>.<ConfigurationID>.mof` のようになっている必要があります。_ConfigurationName_ は部分構成の名前であり、_ConfigurationID_ はターゲット ノードの LCM で定義されている構成 ID です。 この例では、構成ドキュメントの名前は次のようになります。
+部分構成ドキュメントは、プル サーバーの **ファイルで**ConfigurationPath`web.config` として指定されたフォルダーに配置する必要があります (通常 `C:\Program Files\WindowsPowerShell\DscService\Configuration`)。 構成ドキュメントの名前は `<ConfigurationName>.<ConfigurationID>.mof` のようになっている必要があります。_ConfigurationName_ は部分構成の名前であり、_ConfigurationID_ はターゲット ノードの LCM で定義されている構成 ID です。 この例では、構成ドキュメントの名前は次のようになります。
 
 ```
 ServiceAccountConfig.1d545e3b-60c3-47a0-bf65-5afc05182fd0.mof
@@ -307,7 +307,7 @@ configuration PartialConfigDemo
 PartialConfigDemo
 ```
 
-なお、Settings ブロックで指定されている **RefreshMode** は "Pull" ですが、`SharePointConfig` 部分構成の **RefreshMode** は "Push" です。
+なお、Settings ブロックで指定されている **RefreshMode** は "Pull" ですが、**部分構成の**RefreshMode`SharePointConfig` は "Push" です。
 
 それぞれの更新モードの前述の説明に従って、構成 MOF ファイルの名前付けおよび配置を行います。
 `Publish-DSCConfiguration` を呼び出して、`SharePointConfig` 部分構成を公開し、`ServiceAccountConfig` 構成がプル サーバーからプルされることを待機するか、または [Update-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/Update-DscConfiguration) を呼び出して強制的に更新します。

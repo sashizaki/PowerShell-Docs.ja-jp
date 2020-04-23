@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: アイテムの作成と公開
 ms.openlocfilehash: 1aa9cc84f259869ca6f8b8e2f6952e43eaac14df
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71327923"
 ---
 # <a name="creating-and-publishing-an-item"></a>アイテムの作成と公開
@@ -24,7 +24,7 @@ PowerShell ギャラリーとは、広範な PowerShell ユーザー コミュ�
 - Publish-Module コマンドおよび Publish-Script コマンドを使用して、アイテムを PowerShell ギャラリーに公開する
 - アイテムに関する質問や懸念事項に答える
 
-PowerShell ギャラリーは、PowerShell モジュールおよび PowerShell スクリプトを受け入れます。 ここでスクリプトとは、大規模モジュールの一部ではなく、1 つのファイルである PowerShell スクリプトを意味しています。
+PowerShell ギャラリーでは、PowerShell モジュールと PowerShell スクリプトを受け付けています。 ここでスクリプトとは、大規模モジュールの一部ではなく、1 つのファイルである PowerShell スクリプトを意味しています。
 
 ## <a name="powershell-gallery-account-and-api-key"></a>PowerShell ギャラリー アカウントと API キー
 

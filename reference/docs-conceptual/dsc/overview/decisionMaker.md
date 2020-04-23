@@ -3,10 +3,10 @@ ms.date: 10/11/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 意思決定者向け Desired State Configuration の概要
 ms.openlocfilehash: bb73ee8fe636272f99989aa45712fe34fedad617
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2020
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "75870797"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>意思決定者向け Desired State Configuration の概要
