@@ -1,23 +1,23 @@
 ---
 ms.date: 11/13/2018
-keywords: PowerShell, コマンドレット
+keywords: powershell,コマンドレット
 title: 実行中のプロセスからの PowerShell コマンドをデコードする
 author: randomnote1
 ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "66470971"
 ---
-# <a name="decode-a-powershell-command-from-a-running-process"></a><span data-ttu-id="d99f2-103">実行中のプロセスからの PowerShell コマンドをデコードする</span><span class="sxs-lookup"><span data-stu-id="d99f2-103">Decode a PowerShell command from a running process</span></span>
+# <a name="decode-a-powershell-command-from-a-running-process"></a><span data-ttu-id="ce782-103">実行中のプロセスからの PowerShell コマンドをデコードする</span><span class="sxs-lookup"><span data-stu-id="ce782-103">Decode a PowerShell command from a running process</span></span>
 
-<span data-ttu-id="d99f2-104">実行している PowerShell プロセスで大量のリソースが使用されることがあります。</span><span class="sxs-lookup"><span data-stu-id="d99f2-104">At times, you may have a PowerShell process running that is taking up a large amount of resources.</span></span>
-<span data-ttu-id="d99f2-105">このプロセスは、[タスク スケジューラ][] ジョブまたは [SQL Server エージェント][] ジョブのコンテキストで実行されている可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d99f2-105">This process could be running in the context of a [Task Scheduler][] job or a [SQL Server Agent][] job.</span></span> <span data-ttu-id="d99f2-106">複数の PowerShell プロセスが実行されている場合、どのプロセスで問題が発生しているのかわかりにくいことがあります。</span><span class="sxs-lookup"><span data-stu-id="d99f2-106">Where there are multiple PowerShell processes running, it can be difficult to know which process represents the problem.</span></span> <span data-ttu-id="d99f2-107">この記事では、PowerShell プロセスで現在実行中のスクリプト ブロックをデコードする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="d99f2-107">This article shows how to decode a script block that a PowerShell process is currently running.</span></span>
+<span data-ttu-id="ce782-104">実行している PowerShell プロセスで大量のリソースが使用されることがあります。</span><span class="sxs-lookup"><span data-stu-id="ce782-104">At times, you may have a PowerShell process running that is taking up a large amount of resources.</span></span>
+<span data-ttu-id="ce782-105">このプロセスは、[タスク スケジューラ][] ジョブまたは [SQL Server エージェント][] ジョブのコンテキストで実行されている可能性があります。</span><span class="sxs-lookup"><span data-stu-id="ce782-105">This process could be running in the context of a [Task Scheduler][] job or a [SQL Server Agent][] job.</span></span> <span data-ttu-id="ce782-106">複数の PowerShell プロセスが実行されている場合、どのプロセスで問題が発生しているのかわかりにくいことがあります。</span><span class="sxs-lookup"><span data-stu-id="ce782-106">Where there are multiple PowerShell processes running, it can be difficult to know which process represents the problem.</span></span> <span data-ttu-id="ce782-107">この記事では、PowerShell プロセスで現在実行中のスクリプト ブロックをデコードする方法を示します。</span><span class="sxs-lookup"><span data-stu-id="ce782-107">This article shows how to decode a script block that a PowerShell process is currently running.</span></span>
 
-## <a name="create-a-long-running-process"></a><span data-ttu-id="d99f2-108">実行時間の長いプロセスを作成する</span><span class="sxs-lookup"><span data-stu-id="d99f2-108">Create a long running process</span></span>
+## <a name="create-a-long-running-process"></a><span data-ttu-id="ce782-108">実行時間の長いプロセスを作成する</span><span class="sxs-lookup"><span data-stu-id="ce782-108">Create a long running process</span></span>
 
-<span data-ttu-id="d99f2-109">このシナリオを示すため、新しい PowerShell ウィンドウを開き、次のコードを実行します。</span><span class="sxs-lookup"><span data-stu-id="d99f2-109">To demonstrate this scenario, open a new PowerShell window and run the following code.</span></span> <span data-ttu-id="d99f2-110">10 分間にわたって 1 分ごとに数値を出力する PowerShell コマンドが実行されます。</span><span class="sxs-lookup"><span data-stu-id="d99f2-110">It executes a PowerShell command that outputs a number every minute for 10 minutes.</span></span>
+<span data-ttu-id="ce782-109">このシナリオを示すため、新しい PowerShell ウィンドウを開き、次のコードを実行します。</span><span class="sxs-lookup"><span data-stu-id="ce782-109">To demonstrate this scenario, open a new PowerShell window and run the following code.</span></span> <span data-ttu-id="ce782-110">10 分間にわたって 1 分ごとに数値を出力する PowerShell コマンドが実行されます。</span><span class="sxs-lookup"><span data-stu-id="ce782-110">It executes a PowerShell command that outputs a number every minute for 10 minutes.</span></span>
 
 ```powershell
 powershell.exe -Command {
@@ -31,19 +31,19 @@ powershell.exe -Command {
 }
 ```
 
-## <a name="view-the-process"></a><span data-ttu-id="d99f2-111">プロセスを表示する</span><span class="sxs-lookup"><span data-stu-id="d99f2-111">View the process</span></span>
+## <a name="view-the-process"></a><span data-ttu-id="ce782-111">プロセスを表示する</span><span class="sxs-lookup"><span data-stu-id="ce782-111">View the process</span></span>
 
-<span data-ttu-id="d99f2-112">PowerShell で実行されているコマンドの本体は、[Win32_Process][] クラスの **CommandLine** プロパティに格納されています。</span><span class="sxs-lookup"><span data-stu-id="d99f2-112">The body of the command which PowerShell is executing is stored in the **CommandLine** property of the [Win32_Process][] class.</span></span> <span data-ttu-id="d99f2-113">コマンドがエンコードされたコマンドである場合、**CommandLine** プロパティには文字列 "EncodedCommand" が含まれています。</span><span class="sxs-lookup"><span data-stu-id="d99f2-113">If the command is an encoded command, the **CommandLine** property contains the string "EncodedCommand".</span></span> <span data-ttu-id="d99f2-114">この情報を使用して、次のプロセスにより、エンコードされたコマンドを難読化解除できます。</span><span class="sxs-lookup"><span data-stu-id="d99f2-114">Using this information, the encoded command can be de-obfuscated via the following process.</span></span>
+<span data-ttu-id="ce782-112">PowerShell で実行されているコマンドの本体は、**Win32_Process** クラスの [Win32_Process][] プロパティに格納されています。</span><span class="sxs-lookup"><span data-stu-id="ce782-112">The body of the command which PowerShell is executing is stored in the **CommandLine** property of the [Win32_Process][] class.</span></span> <span data-ttu-id="ce782-113">コマンドがエンコードされたコマンドである場合、**CommandLine** プロパティには文字列 "EncodedCommand" が含まれています。</span><span class="sxs-lookup"><span data-stu-id="ce782-113">If the command is an encoded command, the **CommandLine** property contains the string "EncodedCommand".</span></span> <span data-ttu-id="ce782-114">この情報を使用して、次のプロセスにより、エンコードされたコマンドを難読化解除できます。</span><span class="sxs-lookup"><span data-stu-id="ce782-114">Using this information, the encoded command can be de-obfuscated via the following process.</span></span>
 
-<span data-ttu-id="d99f2-115">管理者として PowerShell を開始します。</span><span class="sxs-lookup"><span data-stu-id="d99f2-115">Start PowerShell as Administrator.</span></span> <span data-ttu-id="d99f2-116">PowerShell を管理者として実行することが重要です。そうしないと、実行中のプロセスのクエリを実行しても結果は返されません。</span><span class="sxs-lookup"><span data-stu-id="d99f2-116">It is vital that PowerShell is running as administrator, otherwise no results are returned when querying the running processes.</span></span>
+<span data-ttu-id="ce782-115">管理者として PowerShell を開始します。</span><span class="sxs-lookup"><span data-stu-id="ce782-115">Start PowerShell as Administrator.</span></span> <span data-ttu-id="ce782-116">PowerShell を管理者として実行することが重要です。そうしないと、実行中のプロセスのクエリを実行しても結果は返されません。</span><span class="sxs-lookup"><span data-stu-id="ce782-116">It is vital that PowerShell is running as administrator, otherwise no results are returned when querying the running processes.</span></span>
 
-<span data-ttu-id="d99f2-117">次のコマンドを実行し、エンコードされたコマンドを含むすべての PowerShell プロセスを取得します。</span><span class="sxs-lookup"><span data-stu-id="d99f2-117">Execute the following command to get all of the PowerShell processes that have an encoded command:</span></span>
+<span data-ttu-id="ce782-117">次のコマンドを実行し、エンコードされたコマンドを含むすべての PowerShell プロセスを取得します。</span><span class="sxs-lookup"><span data-stu-id="ce782-117">Execute the following command to get all of the PowerShell processes that have an encoded command:</span></span>
 
 ```powershell
 $powerShellProcesses = Get-CimInstance -ClassName Win32_Process -Filter 'CommandLine LIKE "%EncodedCommand%"'
 ```
 
-<span data-ttu-id="d99f2-118">次のコマンドでは、プロセス ID とエンコードされたコマンドを含むカスタム PowerShell オブジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="d99f2-118">The following command creates a custom PowerShell object that contains the process ID and the encoded command.</span></span>
+<span data-ttu-id="ce782-118">次のコマンドでは、プロセス ID とエンコードされたコマンドを含むカスタム PowerShell オブジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="ce782-118">The following command creates a custom PowerShell object that contains the process ID and the encoded command.</span></span>
 
 ```powershell
 $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
@@ -58,7 +58,7 @@ $commandDetails = $powerShellProcesses | Select-Object -Property ProcessId,
 }
 ```
 
-<span data-ttu-id="d99f2-119">これで、エンコードされたコマンドをデコードできるようになります。</span><span class="sxs-lookup"><span data-stu-id="d99f2-119">Now the encoded command can be decoded.</span></span> <span data-ttu-id="d99f2-120">次のスニペットは、コマンドの詳細オブジェクトを反復処理して、エンコードされたコマンドをデコードし、詳しい調査のためのデコードされたコマンドをオブジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="d99f2-120">The following snippet iterates over the command details object, decodes the encoded command, and adds the decoded command back to the object for further investigation.</span></span>
+<span data-ttu-id="ce782-119">これで、エンコードされたコマンドをデコードできるようになります。</span><span class="sxs-lookup"><span data-stu-id="ce782-119">Now the encoded command can be decoded.</span></span> <span data-ttu-id="ce782-120">次のスニペットは、コマンドの詳細オブジェクトを反復処理して、エンコードされたコマンドをデコードし、詳しい調査のためのデコードされたコマンドをオブジェクトに追加します。</span><span class="sxs-lookup"><span data-stu-id="ce782-120">The following snippet iterates over the command details object, decodes the encoded command, and adds the decoded command back to the object for further investigation.</span></span>
 
 ```powershell
 $commandDetails | ForEach-Object -Process {
@@ -79,7 +79,7 @@ $commandDetails | ForEach-Object -Process {
 $commandDetails[0]
 ```
 
-<span data-ttu-id="d99f2-121">デコードされたコマンド プロパティを選択することで、デコードされたコマンドを確認できるようになります。</span><span class="sxs-lookup"><span data-stu-id="d99f2-121">The decoded command can now be reviewed by selecting the decoded command property.</span></span>
+<span data-ttu-id="ce782-121">デコードされたコマンド プロパティを選択することで、デコードされたコマンドを確認できるようになります。</span><span class="sxs-lookup"><span data-stu-id="ce782-121">The decoded command can now be reviewed by selecting the decoded command property.</span></span>
 
 ```output
 ProcessId      : 8752
