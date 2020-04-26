@@ -3,29 +3,29 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell クラスを使用したカスタム DSC リソースの記述
 ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71952829"
 ---
-# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a><span data-ttu-id="52054-103">PowerShell クラスを使用したカスタム DSC リソースの記述</span><span class="sxs-lookup"><span data-stu-id="52054-103">Writing a custom DSC resource with PowerShell classes</span></span>
+# <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a><span data-ttu-id="d1cd8-103">PowerShell クラスを使用したカスタム DSC リソースの記述</span><span class="sxs-lookup"><span data-stu-id="d1cd8-103">Writing a custom DSC resource with PowerShell classes</span></span>
 
-> <span data-ttu-id="52054-104">適用先:Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="52054-104">Applies To: Windows PowerShell 5.0</span></span>
+> <span data-ttu-id="d1cd8-104">適用先:Windows PowerShell 5.0</span><span class="sxs-lookup"><span data-stu-id="d1cd8-104">Applies To: Windows PowerShell 5.0</span></span>
 
-<span data-ttu-id="52054-105">Windows PowerShell 5.0 の PowerShell クラスの導入により、クラスを作成して DSC リソースを定義できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="52054-105">With the introduction of PowerShell classes in Windows PowerShell 5.0, you can now define a DSC resource by creating a class.</span></span> <span data-ttu-id="52054-106">クラスでは、スキーマとリソースの実装の両方を定義するため、MOF ファイルを別途作成する必要がありません。</span><span class="sxs-lookup"><span data-stu-id="52054-106">The class defines both the schema and the implementation of the resource, so there is no need to create a separate MOF file.</span></span> <span data-ttu-id="52054-107">**DSCResources** フォルダーが必要ないため、クラスベースのリソースのフォルダー構造は単純になりました。</span><span class="sxs-lookup"><span data-stu-id="52054-107">The folder structure for a class-based resource is also simpler, because a **DSCResources** folder is not necessary.</span></span>
+<span data-ttu-id="d1cd8-105">Windows PowerShell 5.0 の PowerShell クラスの導入により、クラスを作成して DSC リソースを定義できるようになりました。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-105">With the introduction of PowerShell classes in Windows PowerShell 5.0, you can now define a DSC resource by creating a class.</span></span> <span data-ttu-id="d1cd8-106">クラスでは、スキーマとリソースの実装の両方を定義するため、MOF ファイルを別途作成する必要がありません。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-106">The class defines both the schema and the implementation of the resource, so there is no need to create a separate MOF file.</span></span> <span data-ttu-id="d1cd8-107">**DSCResources** フォルダーが必要ないため、クラスベースのリソースのフォルダー構造は単純になりました。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-107">The folder structure for a class-based resource is also simpler, because a **DSCResources** folder is not necessary.</span></span>
 
-<span data-ttu-id="52054-108">クラスベースの DSC リソースでは、スキーマは、プロパティの型を指定する属性で変更できるクラスのプロパティとして定義されます。</span><span class="sxs-lookup"><span data-stu-id="52054-108">In a class-based DSC resource, the schema is defined as properties of the class which can be modified with attributes to specify the property type..</span></span> <span data-ttu-id="52054-109">リソースは、**Get()** 、**Set()** 、および **Test()** メソッド (スクリプト リソースの **Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** 関数に相当します) によって実装されます。</span><span class="sxs-lookup"><span data-stu-id="52054-109">The resource is implemented by **Get()**, **Set()**, and **Test()** methods (equivalent to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.</span></span>
+<span data-ttu-id="d1cd8-108">クラスベースの DSC リソースでは、スキーマは、プロパティの型を指定する属性で変更できるクラスのプロパティとして定義されます。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-108">In a class-based DSC resource, the schema is defined as properties of the class which can be modified with attributes to specify the property type..</span></span> <span data-ttu-id="d1cd8-109">リソースは、**Get()** 、**Set()** 、および **Test()** メソッド (スクリプト リソースの **Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** 関数に相当します) によって実装されます。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-109">The resource is implemented by **Get()**, **Set()**, and **Test()** methods (equivalent to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.</span></span>
 
-<span data-ttu-id="52054-110">このトピックでは、指定されたパス内のファイルを管理する **FileResource** という名前の単純なリソースを作成します。</span><span class="sxs-lookup"><span data-stu-id="52054-110">In this topic, we will create a simple resource named **FileResource** that manages a file in a specified path.</span></span>
+<span data-ttu-id="d1cd8-110">このトピックでは、指定されたパス内のファイルを管理する **FileResource** という名前の単純なリソースを作成します。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-110">In this topic, we will create a simple resource named **FileResource** that manages a file in a specified path.</span></span>
 
-<span data-ttu-id="52054-111">DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="52054-111">For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)</span></span>
+<span data-ttu-id="d1cd8-111">DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-111">For more information about DSC resources, see [Build Custom Windows PowerShell Desired State Configuration Resources](authoringResource.md)</span></span>
 
-><span data-ttu-id="52054-112">**注:** クラスベースのリソースでは、汎用コレクションはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="52054-112">**Note:** Generic collections are not supported in class-based resources.</span></span>
+><span data-ttu-id="d1cd8-112">**注:** クラスベースのリソースでは、汎用コレクションはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-112">**Note:** Generic collections are not supported in class-based resources.</span></span>
 
-## <a name="folder-structure-for-a-class-resource"></a><span data-ttu-id="52054-113">クラス リソースのフォルダー構造</span><span class="sxs-lookup"><span data-stu-id="52054-113">Folder structure for a class resource</span></span>
+## <a name="folder-structure-for-a-class-resource"></a><span data-ttu-id="d1cd8-113">クラス リソースのフォルダー構造</span><span class="sxs-lookup"><span data-stu-id="d1cd8-113">Folder structure for a class resource</span></span>
 
-<span data-ttu-id="52054-114">PowerShell クラスを使用して DSC カスタム リソースを実装するには、次のフォルダー構造を作成します。</span><span class="sxs-lookup"><span data-stu-id="52054-114">To implement a DSC custom resource with a PowerShell class, create the following folder structure.</span></span> <span data-ttu-id="52054-115">クラスは **MyDscResource.psm1** で定義し、モジュール マニフェストは **MyDscResource.psd1** で定義します。</span><span class="sxs-lookup"><span data-stu-id="52054-115">The class is defined in **MyDscResource.psm1** and the module manifest is defined in **MyDscResource.psd1**.</span></span>
+<span data-ttu-id="d1cd8-114">PowerShell クラスを使用して DSC カスタム リソースを実装するには、次のフォルダー構造を作成します。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-114">To implement a DSC custom resource with a PowerShell class, create the following folder structure.</span></span> <span data-ttu-id="d1cd8-115">クラスは **MyDscResource.psm1** で定義し、モジュール マニフェストは **MyDscResource.psd1** で定義します。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-115">The class is defined in **MyDscResource.psm1** and the module manifest is defined in **MyDscResource.psd1**.</span></span>
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -34,9 +34,9 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
         MyDscResource.psd1
 ```
 
-## <a name="create-the-class"></a><span data-ttu-id="52054-116">クラスの作成</span><span class="sxs-lookup"><span data-stu-id="52054-116">Create the class</span></span>
+## <a name="create-the-class"></a><span data-ttu-id="d1cd8-116">クラスの作成</span><span class="sxs-lookup"><span data-stu-id="d1cd8-116">Create the class</span></span>
 
-<span data-ttu-id="52054-117">PowerShell クラスを作成するには、class キーワードを使用します。</span><span class="sxs-lookup"><span data-stu-id="52054-117">You use the class keyword to create a PowerShell class.</span></span> <span data-ttu-id="52054-118">クラスを DSC リソースとして指定するには、**DscResource()** 属性を使用します。</span><span class="sxs-lookup"><span data-stu-id="52054-118">To specify that a class is a DSC resource, use the **DscResource()** attribute.</span></span> <span data-ttu-id="52054-119">クラスの名前は、DSC リソースの名前です。</span><span class="sxs-lookup"><span data-stu-id="52054-119">The name of the class is the name of the DSC resource.</span></span>
+<span data-ttu-id="d1cd8-117">PowerShell クラスを作成するには、class キーワードを使用します。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-117">You use the class keyword to create a PowerShell class.</span></span> <span data-ttu-id="d1cd8-118">クラスを DSC リソースとして指定するには、**DscResource()** 属性を使用します。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-118">To specify that a class is a DSC resource, use the **DscResource()** attribute.</span></span> <span data-ttu-id="d1cd8-119">クラスの名前は、DSC リソースの名前です。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-119">The name of the class is the name of the DSC resource.</span></span>
 
 ```powershell
 [DscResource()]
@@ -44,9 +44,9 @@ class FileResource {
 }
 ```
 
-### <a name="declare-properties"></a><span data-ttu-id="52054-120">プロパティの宣言</span><span class="sxs-lookup"><span data-stu-id="52054-120">Declare properties</span></span>
+### <a name="declare-properties"></a><span data-ttu-id="d1cd8-120">プロパティの宣言</span><span class="sxs-lookup"><span data-stu-id="d1cd8-120">Declare properties</span></span>
 
-<span data-ttu-id="52054-121">DSC リソースのスキーマは、クラスのプロパティとして定義します。</span><span class="sxs-lookup"><span data-stu-id="52054-121">The DSC resource schema is defined as properties of the class.</span></span> <span data-ttu-id="52054-122">3 つのプロパティを次のように宣言します。</span><span class="sxs-lookup"><span data-stu-id="52054-122">We declare three properties as follows.</span></span>
+<span data-ttu-id="d1cd8-121">DSC リソースのスキーマは、クラスのプロパティとして定義します。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-121">The DSC resource schema is defined as properties of the class.</span></span> <span data-ttu-id="d1cd8-122">3 つのプロパティを次のように宣言します。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-122">We declare three properties as follows.</span></span>
 
 ```powershell
 [DscProperty(Key)]
@@ -62,14 +62,14 @@ class FileResource {
 [Nullable[datetime]] $CreationTime
 ```
 
-<span data-ttu-id="52054-123">属性によってプロパティが変更されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="52054-123">Notice that the properties are modified by attributes.</span></span> <span data-ttu-id="52054-124">属性の意味は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="52054-124">The meaning of the attributes is as follows:</span></span>
+<span data-ttu-id="d1cd8-123">属性によってプロパティが変更されることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-123">Notice that the properties are modified by attributes.</span></span> <span data-ttu-id="d1cd8-124">属性の意味は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-124">The meaning of the attributes is as follows:</span></span>
 
-- <span data-ttu-id="52054-125">**DscProperty(Key)** :このプロパティは必須です。</span><span class="sxs-lookup"><span data-stu-id="52054-125">**DscProperty(Key)**: The property is required.</span></span> <span data-ttu-id="52054-126">プロパティはキーです。</span><span class="sxs-lookup"><span data-stu-id="52054-126">The property is a key.</span></span> <span data-ttu-id="52054-127">キーとしてマークされたすべてのプロパティの値を組み合わせて、構成内のリソース インスタンスを一意に識別する必要があります。</span><span class="sxs-lookup"><span data-stu-id="52054-127">The values of all properties marked as keys must combine to uniquely identify a resource instance within a configuration.</span></span>
-- <span data-ttu-id="52054-128">**DscProperty(Mandatory)** :このプロパティは必須です。</span><span class="sxs-lookup"><span data-stu-id="52054-128">**DscProperty(Mandatory)**: The property is required.</span></span>
-- <span data-ttu-id="52054-129">**DscProperty(NotConfigurable)** :このプロパティは読み取り専用です。</span><span class="sxs-lookup"><span data-stu-id="52054-129">**DscProperty(NotConfigurable)**: The property is read-only.</span></span> <span data-ttu-id="52054-130">この属性でマークされたプロパティは、構成で設定できませんが、**Get()** メソッド (存在する場合) によって設定されます。</span><span class="sxs-lookup"><span data-stu-id="52054-130">Properties marked with this attribute cannot be set by a configuration, but are populated by the **Get()** method when present.</span></span>
-- <span data-ttu-id="52054-131">**DscProperty()** :このプロパティは構成可能ですが、必須ではありません。</span><span class="sxs-lookup"><span data-stu-id="52054-131">**DscProperty()**: The property is configurable, but it is not required.</span></span>
+- <span data-ttu-id="d1cd8-125">**DscProperty(Key)** :このプロパティは必須です。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-125">**DscProperty(Key)**: The property is required.</span></span> <span data-ttu-id="d1cd8-126">プロパティはキーです。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-126">The property is a key.</span></span> <span data-ttu-id="d1cd8-127">キーとしてマークされたすべてのプロパティの値を組み合わせて、構成内のリソース インスタンスを一意に識別する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-127">The values of all properties marked as keys must combine to uniquely identify a resource instance within a configuration.</span></span>
+- <span data-ttu-id="d1cd8-128">**DscProperty(Mandatory)** :このプロパティは必須です。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-128">**DscProperty(Mandatory)**: The property is required.</span></span>
+- <span data-ttu-id="d1cd8-129">**DscProperty(NotConfigurable)** :このプロパティは読み取り専用です。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-129">**DscProperty(NotConfigurable)**: The property is read-only.</span></span> <span data-ttu-id="d1cd8-130">この属性でマークされたプロパティは、構成で設定できませんが、**Get()** メソッド (存在する場合) によって設定されます。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-130">Properties marked with this attribute cannot be set by a configuration, but are populated by the **Get()** method when present.</span></span>
+- <span data-ttu-id="d1cd8-131">**DscProperty()** :このプロパティは構成可能ですが、必須ではありません。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-131">**DscProperty()**: The property is configurable, but it is not required.</span></span>
 
-<span data-ttu-id="52054-132">**$Path** プロパティと **$SourcePath** プロパティは、両方とも文字列です。</span><span class="sxs-lookup"><span data-stu-id="52054-132">The **$Path** and **$SourcePath** properties are both strings.</span></span> <span data-ttu-id="52054-133">**$CreationTime** は、[DateTime](/dotnet/api/system.datetime) プロパティです。</span><span class="sxs-lookup"><span data-stu-id="52054-133">The **$CreationTime** is a [DateTime](/dotnet/api/system.datetime) property.</span></span> <span data-ttu-id="52054-134">**$Ensure** プロパティは、次のように定義された列挙型です。</span><span class="sxs-lookup"><span data-stu-id="52054-134">The **$Ensure** property is an enumeration type, defined as follows.</span></span>
+<span data-ttu-id="d1cd8-132">**$Path** プロパティと **$SourcePath** プロパティは、両方とも文字列です。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-132">The **$Path** and **$SourcePath** properties are both strings.</span></span> <span data-ttu-id="d1cd8-133">**$CreationTime** は、[DateTime](/dotnet/api/system.datetime) プロパティです。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-133">The **$CreationTime** is a [DateTime](/dotnet/api/system.datetime) property.</span></span> <span data-ttu-id="d1cd8-134">**$Ensure** プロパティは、次のように定義された列挙型です。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-134">The **$Ensure** property is an enumeration type, defined as follows.</span></span>
 
 ```powershell
 enum Ensure
@@ -79,11 +79,11 @@ enum Ensure
 }
 ```
 
-### <a name="implementing-the-methods"></a><span data-ttu-id="52054-135">メソッドの実装</span><span class="sxs-lookup"><span data-stu-id="52054-135">Implementing the methods</span></span>
+### <a name="implementing-the-methods"></a><span data-ttu-id="d1cd8-135">メソッドの実装</span><span class="sxs-lookup"><span data-stu-id="d1cd8-135">Implementing the methods</span></span>
 
-<span data-ttu-id="52054-136">**Get()** 、**Set()** 、および **Test()** メソッドは、スクリプト リソースの **Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** 関数に似ています。</span><span class="sxs-lookup"><span data-stu-id="52054-136">The **Get()**, **Set()**, and **Test()** methods are analogous to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.</span></span>
+<span data-ttu-id="d1cd8-136">**Get()** 、**Set()** 、および **Test()** メソッドは、スクリプト リソースの **Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** 関数に似ています。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-136">The **Get()**, **Set()**, and **Test()** methods are analogous to the **Get-TargetResource**, **Set-TargetResource**, and **Test-TargetResource** functions in a script resource.</span></span>
 
-<span data-ttu-id="52054-137">このコードには、ファイルを **$SourcePath** から **$Path** にコピーするヘルパー関数である CopyFile() 関数も含まれています。</span><span class="sxs-lookup"><span data-stu-id="52054-137">This code also includes the CopyFile() function, a helper function that copies the file from **$SourcePath** to **$Path**.</span></span>
+<span data-ttu-id="d1cd8-137">このコードには、ファイルを **$SourcePath** から **$Path** にコピーするヘルパー関数である CopyFile() 関数も含まれています。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-137">This code also includes the CopyFile() function, a helper function that copies the file from **$SourcePath** to **$Path**.</span></span>
 
 ```powershell
     <#
@@ -215,9 +215,9 @@ enum Ensure
     }
 ```
 
-### <a name="the-complete-file"></a><span data-ttu-id="52054-138">完全なファイル</span><span class="sxs-lookup"><span data-stu-id="52054-138">The complete file</span></span>
+### <a name="the-complete-file"></a><span data-ttu-id="d1cd8-138">完全なファイル</span><span class="sxs-lookup"><span data-stu-id="d1cd8-138">The complete file</span></span>
 
-<span data-ttu-id="52054-139">完全なクラス ファイルは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="52054-139">The complete class file follows.</span></span>
+<span data-ttu-id="d1cd8-139">完全なクラス ファイルは次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-139">The complete class file follows.</span></span>
 
 ```powershell
 enum Ensure
@@ -414,9 +414,9 @@ class FileResource
 } # This module defines a class for a DSC "FileResource" provider.
 ```
 
-## <a name="create-a-manifest"></a><span data-ttu-id="52054-140">マニフェストの作成</span><span class="sxs-lookup"><span data-stu-id="52054-140">Create a manifest</span></span>
+## <a name="create-a-manifest"></a><span data-ttu-id="d1cd8-140">マニフェストの作成</span><span class="sxs-lookup"><span data-stu-id="d1cd8-140">Create a manifest</span></span>
 
-<span data-ttu-id="52054-141">クラスベースのリソースを DSC エンジンで使用できるようにするには、マニフェスト ファイルに、リソースをエクスポートするようにモジュールに指示する **DscResourcesToExport** ステートメントを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="52054-141">To make a class-based resource available to the DSC engine, you must include a **DscResourcesToExport** statement in the manifest file that instructs the module to export the resource.</span></span> <span data-ttu-id="52054-142">この例では、マニフェストは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="52054-142">Our manifest looks like this:</span></span>
+<span data-ttu-id="d1cd8-141">クラスベースのリソースを DSC エンジンで使用できるようにするには、マニフェスト ファイルに、リソースをエクスポートするようにモジュールに指示する **DscResourcesToExport** ステートメントを含める必要があります。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-141">To make a class-based resource available to the DSC engine, you must include a **DscResourcesToExport** statement in the manifest file that instructs the module to export the resource.</span></span> <span data-ttu-id="d1cd8-142">この例では、マニフェストは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-142">Our manifest looks like this:</span></span>
 
 ```powershell
 @{
@@ -452,9 +452,9 @@ PowerShellVersion = '5.0'
 }
 ```
 
-## <a name="test-the-resource"></a><span data-ttu-id="52054-143">リソースのテスト</span><span class="sxs-lookup"><span data-stu-id="52054-143">Test the resource</span></span>
+## <a name="test-the-resource"></a><span data-ttu-id="d1cd8-143">リソースのテスト</span><span class="sxs-lookup"><span data-stu-id="d1cd8-143">Test the resource</span></span>
 
-<span data-ttu-id="52054-144">既に説明したように、クラスとマニフェスト ファイルをフォルダー構造で保存した後で、新しいリソースを使用する構成を作成できます。</span><span class="sxs-lookup"><span data-stu-id="52054-144">After saving the class and manifest files in the folder structure as described earlier, you can create a configuration that uses the new resource.</span></span> <span data-ttu-id="52054-145">DSC 構成を実行する方法については、「[構成の適用](../pull-server/enactingConfigurations.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="52054-145">For information about how to run a DSC configuration, see [Enacting configurations](../pull-server/enactingConfigurations.md).</span></span> <span data-ttu-id="52054-146">次の構成では、`c:\test\test.txt` のファイルが存在するかどうかを確認し、存在しない場合は、ファイルを `c:\test.txt` からコピーします (構成を実行する前に `c:\test.txt` を作成する必要があります)。</span><span class="sxs-lookup"><span data-stu-id="52054-146">The following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the configuration).</span></span>
+<span data-ttu-id="d1cd8-144">既に説明したように、クラスとマニフェスト ファイルをフォルダー構造で保存した後で、新しいリソースを使用する構成を作成できます。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-144">After saving the class and manifest files in the folder structure as described earlier, you can create a configuration that uses the new resource.</span></span> <span data-ttu-id="d1cd8-145">DSC 構成を実行する方法については、「[構成の適用](../pull-server/enactingConfigurations.md)」をご覧ください。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-145">For information about how to run a DSC configuration, see [Enacting configurations](../pull-server/enactingConfigurations.md).</span></span> <span data-ttu-id="d1cd8-146">次の構成では、`c:\test\test.txt` のファイルが存在するかどうかを確認し、存在しない場合は、ファイルを `c:\test.txt` からコピーします (構成を実行する前に `c:\test.txt` を作成する必要があります)。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-146">The following configuration will check to see whether the file at `c:\test\test.txt` exists, and, if not, copies the file from `c:\test.txt` (you should create `c:\test.txt` before you run the configuration).</span></span>
 
 ```powershell
 Configuration Test
@@ -471,24 +471,24 @@ Test
 Start-DscConfiguration -Wait -Force Test
 ```
 
-## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="52054-147">PsDscRunAsCredential のサポート</span><span class="sxs-lookup"><span data-stu-id="52054-147">Supporting PsDscRunAsCredential</span></span>
+## <a name="supporting-psdscrunascredential"></a><span data-ttu-id="d1cd8-147">PsDscRunAsCredential のサポート</span><span class="sxs-lookup"><span data-stu-id="d1cd8-147">Supporting PsDscRunAsCredential</span></span>
 
-><span data-ttu-id="52054-148">**注:** **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="52054-148">**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
+><span data-ttu-id="d1cd8-148">**注:** **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-148">**Note:** **PsDscRunAsCredential** is supported in PowerShell 5.0 and later.</span></span>
 
-<span data-ttu-id="52054-149">**PsDscRunAsCredential** プロパティを [DSC 構成](../configurations/configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。</span><span class="sxs-lookup"><span data-stu-id="52054-149">The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
-<span data-ttu-id="52054-150">詳細については、「[ユーザーの資格情報を指定して DSC を実行する](../configurations/runAsUser.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="52054-150">For more information, see [Running DSC with user credentials](../configurations/runAsUser.md).</span></span>
+<span data-ttu-id="d1cd8-149">**PsDscRunAsCredential** プロパティを [DSC 構成](../configurations/configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-149">The **PsDscRunAsCredential** property can be used in [DSC configurations](../configurations/configurations.md) resource block to specify that the resource should be run under a specified set of credentials.</span></span>
+<span data-ttu-id="d1cd8-150">詳細については、「[ユーザーの資格情報を指定して DSC を実行する](../configurations/runAsUser.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-150">For more information, see [Running DSC with user credentials](../configurations/runAsUser.md).</span></span>
 
-### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a><span data-ttu-id="52054-151">使用するリソースに対する PsDscRunAsCredential の要求または却下</span><span class="sxs-lookup"><span data-stu-id="52054-151">Require or disallow PsDscRunAsCredential for your resource</span></span>
+### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a><span data-ttu-id="d1cd8-151">使用するリソースに対する PsDscRunAsCredential の要求または却下</span><span class="sxs-lookup"><span data-stu-id="d1cd8-151">Require or disallow PsDscRunAsCredential for your resource</span></span>
 
-<span data-ttu-id="52054-152">**DscResource()** 属性でオプションのパラメーター **RunAsCredential** を指定します。</span><span class="sxs-lookup"><span data-stu-id="52054-152">The **DscResource()** attribute takes an optional parameter **RunAsCredential**.</span></span>
-<span data-ttu-id="52054-153">このパラメーターには以下の 3 つの値のいずれかを指定します。</span><span class="sxs-lookup"><span data-stu-id="52054-153">This parameter takes one of three values:</span></span>
+<span data-ttu-id="d1cd8-152">**DscResource()** 属性でオプションのパラメーター **RunAsCredential** を指定します。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-152">The **DscResource()** attribute takes an optional parameter **RunAsCredential**.</span></span>
+<span data-ttu-id="d1cd8-153">このパラメーターには以下の 3 つの値のいずれかを指定します。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-153">This parameter takes one of three values:</span></span>
 
-- <span data-ttu-id="52054-154">`Optional`**PsDscRunAsCredential** は、このリソースを呼び出す構成ではオプションです。</span><span class="sxs-lookup"><span data-stu-id="52054-154">`Optional` **PsDscRunAsCredential** is optional for configurations that call this resource.</span></span> <span data-ttu-id="52054-155">これは、既定値です。</span><span class="sxs-lookup"><span data-stu-id="52054-155">This is the default value.</span></span>
-- <span data-ttu-id="52054-156">`Mandatory`**PsDscRunAsCredential** は、このリソースを呼び出す構成で使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="52054-156">`Mandatory` **PsDscRunAsCredential** must be used for any configuration that calls this resource.</span></span>
-- <span data-ttu-id="52054-157">`NotSupported`このリソースを呼び出す構成には **PsDscRunAsCredential** を使用できません。</span><span class="sxs-lookup"><span data-stu-id="52054-157">`NotSupported` Configurations that call this resource cannot use **PsDscRunAsCredential**.</span></span>
-- <span data-ttu-id="52054-158">`Default``Optional` と同じです。</span><span class="sxs-lookup"><span data-stu-id="52054-158">`Default` Same as `Optional`.</span></span>
+- <span data-ttu-id="d1cd8-154">`Optional` **PsDscRunAsCredential** は、このリソースを呼び出す構成ではオプションです。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-154">`Optional` **PsDscRunAsCredential** is optional for configurations that call this resource.</span></span> <span data-ttu-id="d1cd8-155">これが既定値です。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-155">This is the default value.</span></span>
+- <span data-ttu-id="d1cd8-156">`Mandatory` **PsDscRunAsCredential** は、このリソースを呼び出す構成で使用する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-156">`Mandatory` **PsDscRunAsCredential** must be used for any configuration that calls this resource.</span></span>
+- <span data-ttu-id="d1cd8-157">`NotSupported`このリソースを呼び出す構成には **PsDscRunAsCredential** を使用できません。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-157">`NotSupported` Configurations that call this resource cannot use **PsDscRunAsCredential**.</span></span>
+- <span data-ttu-id="d1cd8-158">`Default``Optional` と同じです。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-158">`Default` Same as `Optional`.</span></span>
 
-<span data-ttu-id="52054-159">たとえば、次の属性を使用して、ご使用のカスタム リソースが **PsDscRunAsCredential** の使用をサポートしないことを指定します。</span><span class="sxs-lookup"><span data-stu-id="52054-159">For example, use the following attribute to specify that your custom resource does not support using **PsDscRunAsCredential**:</span></span>
+<span data-ttu-id="d1cd8-159">たとえば、次の属性を使用して、ご使用のカスタム リソースが **PsDscRunAsCredential** の使用をサポートしないことを指定します。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-159">For example, use the following attribute to specify that your custom resource does not support using **PsDscRunAsCredential**:</span></span>
 
 ```powershell
 [DscResource(RunAsCredential=NotSupported)]
@@ -496,11 +496,11 @@ class FileResource {
 }
 ```
 
-### <a name="declaring-multiple-class-resources-in-a-module"></a><span data-ttu-id="52054-160">1 つのモジュールで複数のクラス リソースを宣言する</span><span class="sxs-lookup"><span data-stu-id="52054-160">Declaring multiple class resources in a module</span></span>
+### <a name="declaring-multiple-class-resources-in-a-module"></a><span data-ttu-id="d1cd8-160">1 つのモジュールで複数のクラス リソースを宣言する</span><span class="sxs-lookup"><span data-stu-id="d1cd8-160">Declaring multiple class resources in a module</span></span>
 
-<span data-ttu-id="52054-161">1 つのモジュールで複数のクラスベースの DSC リソースを定義できます。</span><span class="sxs-lookup"><span data-stu-id="52054-161">A module can define multiple class based DSC resources.</span></span> <span data-ttu-id="52054-162">次の方法でフォルダー構造を作成できます。</span><span class="sxs-lookup"><span data-stu-id="52054-162">You can create the folder structure in the following ways:</span></span>
+<span data-ttu-id="d1cd8-161">1 つのモジュールで複数のクラスベースの DSC リソースを定義できます。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-161">A module can define multiple class based DSC resources.</span></span> <span data-ttu-id="d1cd8-162">次の方法でフォルダー構造を作成できます。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-162">You can create the folder structure in the following ways:</span></span>
 
-1. <span data-ttu-id="52054-163">"<ModuleName>.psm1" ファイルに最初のリソースを定義し、以降のリソースは **DSCResources** フォルダー以下に定義します。</span><span class="sxs-lookup"><span data-stu-id="52054-163">Define the first resource in the "<ModuleName>.psm1" file and subsequent resources under the **DSCResources** folder.</span></span>
+1. <span data-ttu-id="d1cd8-163">"<ModuleName>.psm1" ファイルに最初のリソースを定義し、以降のリソースは **DSCResources** フォルダー以下に定義します。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-163">Define the first resource in the "<ModuleName>.psm1" file and subsequent resources under the **DSCResources** folder.</span></span>
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -511,7 +511,7 @@ class FileResource {
            |- SecondResource.psm1
    ```
 
-2. <span data-ttu-id="52054-164">すべてのリソースは、**DSCResources** フォルダー以下で定義します。</span><span class="sxs-lookup"><span data-stu-id="52054-164">Define all resources under the **DSCResources** folder.</span></span>
+2. <span data-ttu-id="d1cd8-164">すべてのリソースは、**DSCResources** フォルダー以下で定義します。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-164">Define all resources under the **DSCResources** folder.</span></span>
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -524,13 +524,13 @@ class FileResource {
    ```
 
 > [!NOTE]
-> <span data-ttu-id="52054-165">上記の例で、**DSCResource** 以下の PSM1 ファイルを PSD1 ファイルの **NestedModules** キーに追加します。</span><span class="sxs-lookup"><span data-stu-id="52054-165">In the examples above, add any PSM1 files under the **DSCResources** to the **NestedModules** key in your PSD1 file.</span></span>
+> <span data-ttu-id="d1cd8-165">上記の例で、**DSCResource** 以下の PSM1 ファイルを PSD1 ファイルの **NestedModules** キーに追加します。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-165">In the examples above, add any PSM1 files under the **DSCResources** to the **NestedModules** key in your PSD1 file.</span></span>
 
-### <a name="access-the-user-context"></a><span data-ttu-id="52054-166">ユーザー コンテキストへのアクセス</span><span class="sxs-lookup"><span data-stu-id="52054-166">Access the user context</span></span>
+### <a name="access-the-user-context"></a><span data-ttu-id="d1cd8-166">ユーザー コンテキストへのアクセス</span><span class="sxs-lookup"><span data-stu-id="d1cd8-166">Access the user context</span></span>
 
-<span data-ttu-id="52054-167">カスタム リソース内からユーザー コンテキストにアクセスするには、自動変数 `$global:PsDscContext` を使用できます。</span><span class="sxs-lookup"><span data-stu-id="52054-167">To access the user context from within a custom resource, you can use the automatic variable `$global:PsDscContext`.</span></span>
+<span data-ttu-id="d1cd8-167">カスタム リソース内からユーザー コンテキストにアクセスするには、自動変数 `$global:PsDscContext` を使用できます。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-167">To access the user context from within a custom resource, you can use the automatic variable `$global:PsDscContext`.</span></span>
 
-<span data-ttu-id="52054-168">たとえば、次のコードは、リソースが詳細出力ストリームに実行しているユーザー コンテキストを記述します。</span><span class="sxs-lookup"><span data-stu-id="52054-168">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
+<span data-ttu-id="d1cd8-168">たとえば、次のコードは、リソースが詳細出力ストリームに実行しているユーザー コンテキストを記述します。</span><span class="sxs-lookup"><span data-stu-id="d1cd8-168">For example the following code would write the user context under which the resource is running to the verbose output stream:</span></span>
 
 ```powershell
 if (PsDscContext.RunAsUser) {
@@ -538,6 +538,6 @@ if (PsDscContext.RunAsUser) {
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="52054-169">参照</span><span class="sxs-lookup"><span data-stu-id="52054-169">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="d1cd8-169">参照</span><span class="sxs-lookup"><span data-stu-id="d1cd8-169">See Also</span></span>
 
-[<span data-ttu-id="52054-170">Build Custom Windows PowerShell Desired State Configuration Resources (カスタム Windows PowerShell Desired State Configuration のビルド)</span><span class="sxs-lookup"><span data-stu-id="52054-170">Build Custom Windows PowerShell Desired State Configuration Resources</span></span>](authoringResource.md)
+[<span data-ttu-id="d1cd8-170">Build Custom Windows PowerShell Desired State Configuration Resources (カスタム Windows PowerShell Desired State Configuration のビルド)</span><span class="sxs-lookup"><span data-stu-id="d1cd8-170">Build Custom Windows PowerShell Desired State Configuration Resources</span></span>](authoringResource.md)
