@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーの概要
-ms.openlocfilehash: fd4185234136dd9f3e628df50954b6ebff637639
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: bae0af144e6f520142e7eaea3dd0e1039976dae4
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995888"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81219695"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>PowerShell ギャラリーの概要
 
@@ -23,7 +23,7 @@ PowerShell ギャラリーの[ホーム ページ](https://www.powershellgallery
 
 次のパラメーターを使用して、ギャラリーからの結果をフィルター処理できます。
 
-- Name
+- 名前
 - AllVersions
 - MinimumVersion
 - RequiredVersion
@@ -85,6 +85,16 @@ PowerShell ギャラリーからインストールされたパッケージを更
 PowerShell ギャラリーからどのモジュールをインストールしたかを調べるには、[Get-InstalledModule][] コマンドレットを実行します。 このコマンドは、PowerShell ギャラリーから直接インストールした、システム上にあるモジュールをすべて一覧表示します。
 
 同様に、PowerShell ギャラリーからどのスクリプトをインストールしたかを調べるには、[Get-InstalledScript][] コマンドレットを実行します。 このコマンドは、PowerShell ギャラリーから直接インストールした、システム上にあるスクリプトをすべて一覧表示します。
+
+## <a name="network-access-to-the-powershell-gallery"></a>PowerShell ギャラリーへのネットワーク アクセス
+
+PowerShell ギャラリーでは、次のホスト名が使用されます。
+
+- `psg-prod-eastus.azureedge.net` - CDN ホスト名
+- `devopsgallerystorage.blob.core.windows.net` - ストレージ アカウントのホスト名
+- `*.powershellgallery.com` - Web サイト
+
+これらのホスト名は、ご利用のネットワークからのアクセスを制御する許可リストに追加する必要があります。
 
 [Find-DscResource]: /powershell/module/powershellget/Find-DscResource
 [Find-Module]: /powershell/module/powershellget/Find-Module

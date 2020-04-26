@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell クラスを使用したカスタム DSC リソースの記述
 ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71952829"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell クラスを使用したカスタム DSC リソースの記述
@@ -483,8 +483,8 @@ Start-DscConfiguration -Wait -Force Test
 **DscResource()** 属性でオプションのパラメーター **RunAsCredential** を指定します。
 このパラメーターには以下の 3 つの値のいずれかを指定します。
 
-- `Optional`**PsDscRunAsCredential** は、このリソースを呼び出す構成ではオプションです。 これは、既定値です。
-- `Mandatory`**PsDscRunAsCredential** は、このリソースを呼び出す構成で使用する必要があります。
+- `Optional` **PsDscRunAsCredential** は、このリソースを呼び出す構成ではオプションです。 これが既定値です。
+- `Mandatory` **PsDscRunAsCredential** は、このリソースを呼び出す構成で使用する必要があります。
 - `NotSupported`このリソースを呼び出す構成には **PsDscRunAsCredential** を使用できません。
 - `Default``Optional` と同じです。
 

@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: RemoveConfiguration メソッド
 ms.openlocfilehash: aacbed96beb960d7e0d449423a4de9a27f0a287e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71953399"
 ---
 # <a name="removeconfiguration-method"></a>RemoveConfiguration メソッド
@@ -24,7 +24,7 @@ uint32 RemoveConfiguration(
 
 ## <a name="parameters"></a>パラメーター
 
-*Stage* \[in\] 削除する構成ドキュメントを指定します。 次の値が有効です。
+*Stage* \[in\] 削除する構成ドキュメントを指定します。 有効な値は、
 
 |値 |説明 |
 |:--- |:---|
@@ -38,15 +38,15 @@ uint32 RemoveConfiguration(
 
 成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 これは静的メソッドです。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 **MOF:** DscCore.mof
 
-**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
+**名前空間**:Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

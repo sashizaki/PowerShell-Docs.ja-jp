@@ -2,12 +2,12 @@
 title: Windows PowerShell 5.1 から PowerShell 7 への移行
 description: Windows プラットフォームで PowerShell 5.1 から PowerShell 7 に更新します。
 ms.date: 03/25/2020
-ms.openlocfilehash: e3881b1758f50119444969ad39541aec694cebe5
-ms.sourcegitcommit: 30ccbbb32915b551c4cd4c91ef1df96b5b7514c4
+ms.openlocfilehash: 8f19297bdb4825f3bbd50544dc5737997e3c83e3
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/01/2020
-ms.locfileid: "80500499"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81440494"
 ---
 # <a name="migrating-from-windows-powershell-51-to-powershell-7"></a>Windows PowerShell 5.1 から PowerShell 7 への移行
 
@@ -176,7 +176,7 @@ SSH ベースのリモート処理は、**WinRM** のような Windows ネイテ
 Enter-PSSession -HostName <Computer> -UserName <Username>
 ```
 
-または、**HostName** パラメーターを使用する場合は、ユーザー名の情報に続けてアットマーク ('@') を入力し、続けてコンピューター名を指定します。
+または、**HostName** パラメーターを使用する場合は、ユーザー名の情報に続けてアットマーク (`@`) を入力し、続けてコンピューター名を指定します。
 
 ```powershell
 Enter-PSSession -HostName <Username>@<Computer>

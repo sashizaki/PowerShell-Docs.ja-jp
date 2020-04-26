@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: ResourceSet メソッド
 ms.openlocfilehash: 18364027b249e502e1f0b8802d9f3e031c7b07ce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954959"
 ---
 # <a name="resourceset-method"></a>ResourceSet メソッド
@@ -38,15 +38,15 @@ uint32 ResourceSet(
 
 成功した場合は 0 を返します。それ以外の場合はエラー コードを返します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 これは静的メソッドです。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 **MOF:** DscCore.mof
 
-**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
+**名前空間**:Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

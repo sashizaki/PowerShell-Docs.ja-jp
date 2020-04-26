@@ -4,10 +4,10 @@ contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: 検索結果のフィルター処理
 ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71328043"
 ---
 # <a name="filtering-search-results"></a>検索結果のフィルター処理
@@ -27,13 +27,13 @@ ms.locfileid: "71328043"
 
 ドロップダウンの下にあるチェック ボックスでは、結果を次の条件でフィルター処理できます。
 - パッケージの種類
-  - モジュール
+  - Module
   - スクリプト
-- ［カテゴリ］
+- Categories
   - コマンドレット
   - DSC リソース
   - 機能
-  - ロールの機能
+  - ロール機能
   - ワークフロー
 
 PowerShell ギャラリー内のモジュールのみを表示するには、[パッケージの種類] の [モジュール] をオンにします。

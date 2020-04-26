@@ -2,12 +2,12 @@
 title: macOS への PowerShell のインストール
 description: macOS への PowerShell のインストールに関する情報
 ms.date: 12/12/2018
-ms.openlocfilehash: 3a5e71d0f69d0c39f9b7f3fa667863d7ec0a31dd
-ms.sourcegitcommit: bf71c8c5e2a4fc7d5c3a67a537db1285089d03a7
+ms.openlocfilehash: 4640cef3f99aefe36d69d4eb7cb4859bde1c0347
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/30/2020
-ms.locfileid: "80395009"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "80977524"
 ---
 # <a name="installing-powershell-on-macos"></a>macOS への PowerShell のインストール
 
@@ -146,13 +146,7 @@ xcode-select --install
 
 ### <a name="install-openssl"></a>OpenSSL のインストール
 
-PowerShell リモート処理および CIM 操作の場合は OpenSSL が必要です。 MacPorts または Brew を介してインストールすることができます。
-
-#### <a name="install-openssl-via-brew"></a>Brew を介して OpenSSL をインストールする
-
-Brew の詳細については、「[Brew について](#about-brew)」を参照してください。
-
-OpenSSL をインストールするには、`brew install openssl` を実行します。
+PowerShell リモート処理および CIM 操作の場合は OpenSSL が必要です。 MacPorts を介してインストールすることができます。
 
 #### <a name="install-openssl-via-macports"></a>MacPorts を介して OpenSSL をインストールする
 
@@ -161,12 +155,12 @@ OpenSSL をインストールするには、`brew install openssl` を実行し�
    手順が必要な場合は、[インストール ガイド](https://guide.macports.org/chunked/installing.macports.html)をご覧ください。
 1. `sudo port selfupdate` を実行して MacPorts を更新します。
 1. `sudo port upgrade outdated` を実行して MacPorts パッケージをアップグレードします。
-1. `sudo port install openssl` を実行して OpenSSL をインストールします。
+1. `sudo port install openssl10` を実行して OpenSSL をインストールします。
 1. PowerShell で使用できるようにライブラリをリンクします。
 
 ```sh
 sudo mkdir -p /usr/local/opt/openssl
-sudo ln -s /opt/local/lib /usr/local/opt/openssl/lib
+sudo ln -s /opt/local/lib/openssl-1.0 /usr/local/opt/openssl/lib
 ```
 
 ## <a name="uninstalling-powershell"></a>PowerShell のアンインストール

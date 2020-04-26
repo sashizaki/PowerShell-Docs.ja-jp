@@ -3,10 +3,10 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC ファイル リソース
 ms.openlocfilehash: 4c6945d4cdcbc64ac6d52db563823efe8fd0247e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954679"
 ---
 # <a name="dsc-file-resource"></a>DSC ファイル リソース
@@ -36,19 +36,19 @@ File [string] #ResourceName
 }
 ```
 
-## <a name="properties"></a>プロパティ
+## <a name="properties"></a>Properties
 
 |プロパティ |説明 |
 |---|---|
 |DestinationPath |**Ensure** で **Present** または **Absent** であることを保証するターゲット ノード上の場所。 |
 |属性 |対象となるファイルまたはディレクトリの属性の望ましい状態。 有効な値は、_Archive_、_Hidden_、_ReadOnly_、_System_ です。 |
-|チェックサム |2 つのファイルが同じであるかどうかを決定するときに使用するチェックサム タイプ。 有効な値は、次のとおりです。**SHA-1**、**SHA-256**、**SHA-512**、**createdDate**、**modifiedDate**。 |
+|Checksum |2 つのファイルが同じであるかどうかを決定するときに使用するチェックサム タイプ。 有効な値は、次のとおりです。**SHA-1**、**SHA-256**、**SHA-512**、**createdDate**、**modifiedDate**。 |
 |内容 |**File** **型**に使用した場合にのみ有効です。 **Ensure** (保証) するコンテンツがターゲット ファイルで **Present** または **Absent** であることを示します。 |
-|Credential |ソース ファイルなどのリソースにアクセスするために必要な資格情報。 |
+|資格情報 |ソース ファイルなどのリソースにアクセスするために必要な資格情報。 |
 |Force |結果としてエラーになるアクセス操作 (ファイルの上書き、空でないディレクトリの削除など) をオーバーライドします。 既定値は `$false` です。 |
 |Recurse |**Directory** **型**に使用した場合にのみ有効です。 すべてのサブディレクトリに対して状態操作を再帰的に実行します。 既定値は `$false` です。 |
 |SourcePath |ファイルまたはフォルダー リソースのコピー元のパス。 |
-|種類 |構成されるリソースの種類。 有効な値は **Directory** と **File** です。 既定値は **File** です。 |
+|Type |構成されるリソースの種類。 有効な値は **Directory** と **File** です。 既定値は **File** です。 |
 |MatchSource |最初のコピー後にソース ディレクトリに追加された新しいファイルをリソースで監視するかどうかを決定します。 `$true` の値は、最初のコピー後、すべての新しいソース ファイルが指定した場所にコピーされることを示します。 `$false` に設定した場合、リソースではソース ディレクトリの内容がキャッシュされ、最初のコピー後に追加されたファイルはすべて無視されます。 既定値は `$false` です。 |
 
 > [!WARNING]
@@ -65,11 +65,11 @@ File [string] #ResourceName
 > [!NOTE]
 > **PsDscRunAsCredential** という共通プロパティは、他の資格情報という文脈の中であらゆる DSC リソースを実行するために WMF 5.0 で追加されました。 詳細については、「[DSC リソースに対して資格情報を使用する](../../../configurations/runasuser.md)」を参照してください。
 
-### <a name="additional-information"></a>追加情報
+### <a name="additional-information"></a>関連情報
 
 - **DestinationPath** のみを指定した場合、リソースではパスが存在すること (**Present**) または存在しないこと (**Absent**) が保証されます。
 - **Type** の値が **Directory** の **SourcePath** と **DestinationPath** を指定すると、リソースではソース ディレクトリがコピー先のパスにコピーされます。 プロパティ **Recurse**、**Force**、**MatchSource** で実行されるコピー操作の種類が変更され、**Credential** ではソース ディレクトリへのアクセスに使用するアカウントが決まります。
-- **Attributes** プロパティの **ReadOnly** 値を **DestinationPath** と共に指定した場合、**Present** で指定のパスが作成され、**Contents** でファイルのコンテンツが設定されることを **Ensure** (保証) してください。 また、**Absent** 設定で **Attributes** プロパティ全体が無視され、指定のパスであらゆるファイルが削除されることを確認 (**Ensure**) してください。
+- **Attributes** プロパティの **ReadOnly** 値を **DestinationPath** と共に指定した場合、**Ensure** **Present** で指定のパスが作成され、**Contents** でファイルのコンテンツが設定されます。 **Ensure** **Absent** 設定で **Attributes** プロパティ全体が無視され、指定のパスで任意のファイルが削除されます。
 
 ## <a name="example"></a>例
 

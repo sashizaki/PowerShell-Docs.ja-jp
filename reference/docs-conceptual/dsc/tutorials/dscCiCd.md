@@ -3,10 +3,10 @@ ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築
 ms.openlocfilehash: 2d049cd640f0df9b018a88ad106e59dbeed7bcee
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71954239"
 ---
 # <a name="building-a-continuous-integration-and-continuous-deployment-pipeline-with-dsc"></a>DSC を使用した継続的インテグレーションと継続的配置パイプラインの構築
@@ -31,7 +31,7 @@ ms.locfileid: "71954239"
 
 この例をビルドして実行するには、コンピューター複数台と仮想マシン、またはそのいずれかを含む環境が必要です。
 
-### <a name="client"></a>クライアント
+### <a name="client"></a>Client
 
 この例を設定して実行する、すべての作業を行うコンピューターです。
 
@@ -91,7 +91,7 @@ Windows ビルド エージェントをインストールし実行する方法�
 > この例では Git リポジトリの `ci-cd-example` ブランチのコードを使用しています。
 > このブランチを TFS プロジェクトの既定ブランチとし、また作成する CI/CD トリガーに必ず指定してください。
 
-## <a name="understanding-the-code"></a>コードを理解する
+## <a name="understanding-the-code"></a>コードについて
 
 ビルドおよび配置パイプラインを作成する前に、コードの一部を見て何が起きているかを理解しましょう。
 クライアント コンピューターで、使い慣れたテキスト エディターを開き、Demo_CI Git リポジトリのルートに移動します。
@@ -370,7 +370,7 @@ TFS でこの例のビルド定義を作成する場合、psake スクリプト 
 1. **[成果物の種類]** を `Server` に設定します。
 1. **[コントロール オプション]** で `Enabled` を選択します。
 
-## <a name="enable-continuous-integration"></a>継続的インテグレーションを有効にする
+## <a name="enable-continuous-integration"></a>継続的インテグレーションの有効化
 
 git リポジトリの `ci-cd-example` ブランチに変更がチェックインされたときにプロジェクトがビルドを開始するように、トリガーを設定します。
 
@@ -424,7 +424,7 @@ git リポジトリの `ci-cd-example` ブランチに変更がチェックイ�
 
 クライアント コンピューターでブラウザーを開いて `www.contoso.com` に移動して、配置結果を確認できます。
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 この例では、URL `www.contoso.com` が `TestAgent2` に解決されるように DNS サーバー `TestAgent1` を構成していますが、Web サイトの配置は実際には行いません。
 それを行うためのスケルトンは、`WebApp` フォルダー下のリポジトリで提供されています。

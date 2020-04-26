@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
-keywords: PowerShell, コマンドレット
+ms.date: 04/15/2020
+keywords: powershell,コマンドレット
 title: PowerShell リモート処理での次ホップの実行
-ms.openlocfilehash: 567d75009f7d53e9e95e5480b275ec3991cfb9f5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7819058bd8118ba44e66ec658017f536076609b5
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417633"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81527624"
 ---
 # <a name="making-the-second-hop-in-powershell-remoting"></a>PowerShell リモート処理での次ホップの実行
 
@@ -28,7 +28,7 @@ PowerShell リモート処理で CredSSP を使用する場合のセキュリテ
 
 資格情報の盗難攻撃の詳細については、「[Mitigating Pass-the-Hash (PtH) Attacks and Other Credential Theft (Pass-the-Hash (PtH) 攻撃とその他の資格情報の盗難の抑制)](https://www.microsoft.com/en-us/download/details.aspx?id=36036)」を参照してください。
 
-PowerShell リモート処理用に CredSSP を有効にして使う方法の例については、「[Using CredSSP to solve the second-hop problem](https://blogs.technet.microsoft.com/heyscriptingguy/2012/11/14/enable-powershell-second-hop-functionality-with-credssp/)」 (次ホップ問題の解決に CredSSP を使う) をご覧ください。
+PowerShell リモート処理用に CredSSP を有効にして使用する方法の例については、「[CredSSP を使用して PowerShell "次ホップ" 機能を有効にする](https://devblogs.microsoft.com/scripting/enable-powershell-second-hop-functionality-with-credssp/)」をご覧ください。
 
 ### <a name="pros"></a>長所
 
@@ -43,7 +43,8 @@ PowerShell リモート処理用に CredSSP を有効にして使う方法の例
 
 Kerberos の無制限の委任を使って、次ホップを実行することもできます。 ただし、この方法では、委任された資格情報が使われる場所を制御することはできません。
 
->**注:** **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts (セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析)](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)」および「[Kerberos Authentication Tools and Settings (Kerberos 認証のツールと設定)](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」をご覧ください
+> [!NOTE]
+> **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts)」および「[Kerberos 認証のツールと設定](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」をご覧ください。
 
 ### <a name="pros"></a>長所
 
@@ -59,7 +60,7 @@ Kerberos の無制限の委任を使って、次ホップを実行すること�
 従来の (リソースに基づかない) 制約付き委任を使って、次ホップを実行できます。 プロトコル遷移を許可するには、[任意の認証プロトコルを使う] オプションを使用して Kerberos の制約付き委任を構成します。
 
 > [!NOTE]
-> **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts (セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析)](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)」および「[Kerberos Authentication Tools and Settings (Kerberos 認証のツールと設定)](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」をご覧ください
+> **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts (セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析)](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts)」および「[Kerberos Authentication Tools and Settings (Kerberos 認証のツールと設定)](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」をご覧ください
 
 ### <a name="pros"></a>長所
 
@@ -74,10 +75,10 @@ Kerberos の無制限の委任を使って、次ホップを実行すること�
 
 ## <a name="resource-based-kerberos-constrained-delegation"></a>リソースに基づく Kerberos の制約付き委任
 
-リソースに基づく Kerberos の制約付き委任 (Windows Server 2012 で導入) を使って、リソースが存在するサーバー オブジェクトでの資格情報の委任を構成します。
-上で説明した次ホップのシナリオでは、_ServerC_ を構成して、受け入れる委任された資格情報の委任元を指定します。
+リソースに基づく Kerberos の制約付き委任 (Windows Server 2012 で導入) を使って、リソースが存在するサーバー オブジェクトでの資格情報の委任を構成します。 上で説明した次ホップのシナリオでは、_ServerC_ を構成して、受け入れる委任された資格情報の委任元を指定します。
 
->**注:** **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts (セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析)](https://blogs.technet.microsoft.com/poshchap/2015/05/01/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts/)」および「[Kerberos Authentication Tools and Settings (Kerberos 認証のツールと設定)](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」をご覧ください
+> [!NOTE]
+> **[アカウントは重要なので委任できない]** プロパティが設定されている Active Directory アカウントは委任できません。 詳しくは、「[Security Focus: Analysing 'Account is sensitive and cannot be delegated' for Privileged Accounts (セキュリティ フォーカス: 特権アカウントに対する "アカウントは重要なので委任できない" の分析)](/archive/blogs/poshchap/security-focus-analysing-account-is-sensitive-and-cannot-be-delegated-for-privileged-accounts)」および「[Kerberos Authentication Tools and Settings (Kerberos 認証のツールと設定)](https://technet.microsoft.com/library/cc738673(v=ws.10).aspx)」をご覧ください
 
 ### <a name="pros"></a>長所
 
@@ -95,16 +96,15 @@ Kerberos の無制限の委任を使って、次ホップを実行すること�
 
 ### <a name="example"></a>例
 
-_ServerB_ からの委任された資格情報を許可するように _ServerC_ でリソースに基づく制約付き委任を構成する PowerShell の例を示します。
-この例では、すべてのサーバーが Windows Server 2012 以降を実行しており、いずれかのサーバーが属している各ドメインに少なくとも 1 つの Windows Server 2012 ドメイン コントローラーがあるものとします。
+_ServerB_ からの委任された資格情報を許可するように _ServerC_ でリソースに基づく制約付き委任を構成する PowerShell の例を示します。 この例では、すべてのサーバーが Windows Server 2012 以降を実行しており、いずれかのサーバーが属している各ドメインに少なくとも 1 つの Windows Server 2012 ドメイン コントローラーがあるものとします。
 
 制約付き委任を構成する前に、`RSAT-AD-PowerShell` 機能を追加して Active Directory PowerShell モジュールをインストールした後、そのモジュールをセッションにインポートする必要があります。
 
 ```powershell
 PS C:\> Add-WindowsFeature RSAT-AD-PowerShell
-
 PS C:\> Import-Module ActiveDirectory
 ```
+
 使用できる複数のコマンドレットに、**PrincipalsAllowedToDelegateToAccount** パラメーターが追加されています。
 
 ```powershell
@@ -177,7 +177,8 @@ Invoke-Command -ComputerName $ServerB.Name -Credential $cred -ScriptBlock {
 }
 ```
 
-この例では、_ServerB_ が `$ServerC` 変数を認識できるようにするため、`$using` 変数を使用しています。 `$using` 変数については、「[About Remote Variables](https://technet.microsoft.com/library/jj149005.aspx)」 (リモート変数について) を参照してください。
+この例では、_ServerB_ が `$ServerC` 変数を認識できるようにするため、`$using` 変数を使用しています。
+`$using` 変数については、「[About Remote Variables](https://technet.microsoft.com/library/jj149005.aspx)」 (リモート変数について) を参照してください。
 
 複数のサーバーが _ServerC_ に資格情報を委任できるようにするには、_ServerC_ で **PrincipalsAllowedToDelegateToAccount** パラメーターの値に配列を設定します。
 
@@ -210,20 +211,19 @@ Set-ADComputer -Identity $ServerC -PrincipalsAllowedToDelegateToAccount $null
 
 ### <a name="information-on-resource-based-kerberos-constrained-delegation"></a>リソースに基づく Kerberos の制約付き委任についての情報
 
-- [Kerberos 認証の新機能](https://technet.microsoft.com/library/hh831747.aspx)
+- [Kerberos 認証の新機能](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831747(v=ws.11))
 - [Windows Server 2012 による Kerberos の制約付き委任の処理方法、第 1 部](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-1)
 - [Windows Server 2012 による Kerberos の制約付き委任の処理方法、第 2 部](https://www.itprotoday.com/windows-server/how-windows-server-2012-eases-pain-kerberos-constrained-delegation-part-2)
 - [統合 Windows 認証での Azure Active Directory アプリケーション プロキシ展開に対する Kerberos の制約付き委任の概要](https://aka.ms/kcdpaper)
 - [[MS-ADA2]: Active Directory スキーマ属性 M2.210 Attribute msDS-AllowedToActOnBehalfOfOtherIdentity](/openspecs/windows_protocols/ms-ada2/cea4ac11-a4b2-4f2d-84cc-aebb4a4ad405)
 - [[MS-SFU]: Kerberos プロトコル拡張: Service for User および制約付き委任プロトコルの 1.3.2 S4U2proxy](/openspecs/windows_protocols/ms-sfu/bde93b0e-f3c9-4ddf-9f44-e1453be7af5a)
-- [リソースに基づく Kerberos の制約付き委任](https://blog.kloud.com.au/2013/07/11/kerberos-constrained-delegation/)
-- [PrincipalsAllowedToDelegateToAccount を使用した制約付き委任を使用しないリモート管理](https://blogs.msdn.microsoft.com/taylorb/2012/11/06/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount/)
+- [PrincipalsAllowedToDelegateToAccount を使用した制約付き委任を使用しないリモート管理](/archive/blogs/taylorb/remote-administration-without-constrained-delegation-using-principalsallowedtodelegatetoaccount)
 
 ## <a name="pssessionconfiguration-using-runas"></a>RunAs を使用する PSSessionConfiguration
 
 _ServerB_ にセッション構成を作成し、その **RunAsCredential** パラメーターを設定できます。
 
-PSSessionConfiguration と RunAs を使って次ホップの問題を解決する方法については、「[Another solution to multi-hop PowerShell remoting](https://blogs.msdn.microsoft.com/sergey_babkins_blog/2015/03/18/another-solution-to-multi-hop-powershell-remoting/)」 (マルチホップ PowerShell リモート処理に対する別の解決策) をご覧ください。
+PSSessionConfiguration と RunAs を使って次ホップの問題を解決する方法については、「[Another solution to multi-hop PowerShell remoting](/archive/blogs/sergey_babkins_blog/another-solution-to-multi-hop-powershell-remoting)」 (マルチホップ PowerShell リモート処理に対する別の解決策) をご覧ください。
 
 ### <a name="pros"></a>長所
 

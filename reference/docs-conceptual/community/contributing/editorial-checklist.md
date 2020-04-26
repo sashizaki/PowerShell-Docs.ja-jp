@@ -3,12 +3,12 @@ title: 編集チェックリスト
 description: PowerShell ドキュメントを編集する際のルールの概要を示します。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 511e0c323e1a3256039e819d06f32f6e1ac42767
-ms.sourcegitcommit: 18d832858a7b8ea094763afa753e0f48f01372e7
+ms.openlocfilehash: b5baf7366239084779d34e23f218e5e6222ed1a3
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/10/2020
-ms.locfileid: "79060337"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "81624739"
 ---
 # <a name="editors-checklist"></a>編集者のチェックリスト
 
@@ -36,7 +36,8 @@ ms.locfileid: "79060337"
   - 構文例: `Verb-Noun -Parameter`
   - ファイル パス: `C:\Program Files\PowerShell`、`/usr/bin/pwsh`
   - ドキュメント内でクリック可能であることを意図していない URL
-- プロパティ名、パラメーター値、パラメーター名、クラス名、モジュール名、エンティティ名、オブジェクト名、型名には太字を使用する
+  - プロパティまたはパラメーターの値
+- プロパティ名、パラメーター、名前、クラス名、モジュール名、エンティティ名、オブジェクト名、型名には太字を使用する
   - 太字は、強調ではなく、セマンティック マークアップに使用
   - 太字 - アスタリスク (`**`) を使用
 - 斜体 - アンダースコア (`_`) を使用
@@ -60,7 +61,7 @@ ms.locfileid: "79060337"
 - 前後に空白行を挿入する
 - タグ付きのコード フェンスを使用する - **powershell**、**Output**、または他の適切な言語 ID
 - タグなしのフェンス - 構文ブロックまたはその他のシェル
-- 読者が **[コピー]** ボタンを使用することを意図していない簡単な例を除き、**Output** は別のコード ブロックに配置する
+- 読者が **[コピー]** ボタンを使用することを意図していないシンプルな例を除き、Output は別のコード ブロックに配置する
 - [サポートされている言語](/contribute/code-in-docs#supported-languages)の一覧を参照する
 
 ### <a name="lists"></a>リスト

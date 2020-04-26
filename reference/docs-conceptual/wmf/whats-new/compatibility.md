@@ -4,10 +4,10 @@ ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: 製品の互換性の状態
 ms.openlocfilehash: c740b2560162ecdab40daac2f9ae36c29811ac13
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
+ms.lasthandoff: 04/22/2020
 ms.locfileid: "71147822"
 ---
 # <a name="product-compatibility-status"></a>製品の互換性の状態
@@ -24,7 +24,7 @@ ms.locfileid: "71147822"
 > [!NOTE]
 > Skype for Business Server 2015 と WMF 5.1 の互換性のテストは、Windows Server 2012 R2 でのみ実施されています。
 
-## <a name="not-tested"></a>テストせず
+## <a name="not-tested"></a>テストされていません
 
 次のサーバー アプリケーションを実行しているシステムは Windows Management Framework 5.1 に対して**テストされていません。**
 
