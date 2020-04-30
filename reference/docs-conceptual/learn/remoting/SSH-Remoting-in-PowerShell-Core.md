@@ -2,12 +2,12 @@
 title: SSH 経由の PowerShell リモート処理
 description: SSH を使用した PowerShell Core のリモート処理
 ms.date: 09/30/2019
-ms.openlocfilehash: 0f2fb13010d62dec5b19b373a24a199bff22665d
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 9fe3e22c54a4695a1027f416acf113f2f7fd2cd7
+ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "73444373"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82174137"
 ---
 # <a name="powershell-remoting-over-ssh"></a>SSH 経由の PowerShell リモート処理
 
@@ -53,7 +53,7 @@ PowerShell 6 以降と SSH がすべてのコンピューターにインスト�
    > [!NOTE]
    > PowerShell を OpenSSH の既定のシェルとして設定する場合、[Windows で OpenSSH を構成する](/windows-server/administration/openssh/openssh_server_configuration)方法に関するページを参照してください。
 
-1. `sshd_config` にある `$env:ProgramData\ssh` ファイルを編集します。
+1. `$env:ProgramData\ssh` にある `sshd_config` ファイルを編集します。
 
    パスワード認証が有効になっていることを確認します。
 
@@ -64,13 +64,15 @@ PowerShell 6 以降と SSH がすべてのコンピューターにインスト�
    リモート コンピューターで PowerShell プロセスをホストする SSH サブシステムを作成します。
 
    ```
-   Subsystem powershell c:/progra~1/powershell/6/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo -NoProfile
    ```
 
    > [!NOTE]
+   > PowerShell 実行可能ファイルの既定の場所は `c:/progra~1/powershell/7/pwsh.exe` です。 この場所は、PowerShell のインストール方法によって異なります。
+   >
    > スペースを含むファイル パスには、8.3 の短い名前を使用する必要があります。 OpenSSH for Windows にバグがあり、サブシステムの実行可能ファイルのパスでスペースが機能しません。 詳細については、[こちらの GitHub の問題](https://github.com/PowerShell/Win32-OpenSSH/issues/784)のページを参照してください。
    >
-   > 通常、`Program Files` が、Windows の `Progra~1` フォルダーに対する 8.3 の短い名前です。 しかし、次のコマンドを使用して確認することができます。
+   > 通常、`Progra~1` が、Windows の `Program Files` フォルダーに対する 8.3 の短い名前です。 しかし、次のコマンドを使用して確認することができます。
    >
    > ```powershell
    > Get-CimInstance Win32_Directory -Filter 'Name="C:\\Program Files"' |
@@ -109,7 +111,7 @@ PowerShell 6 以降と SSH がすべてのコンピューターにインスト�
    sudo apt install openssh-server
    ```
 
-1. `sshd_config` で `/etc/ssh` ファイルを編集します。
+1. `/etc/ssh` で `sshd_config` ファイルを編集します。
 
    パスワード認証が有効になっていることを確認します。
 
@@ -122,6 +124,9 @@ PowerShell 6 以降と SSH がすべてのコンピューターにインスト�
    ```
    Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
    ```
+
+   > [!NOTE]
+   > PowerShell 実行可能ファイルの既定の場所は `/usr/bin/pwsh` です。 この場所は、PowerShell のインストール方法によって異なります。
 
    必要であれば、キー認証を有効にします。
 
@@ -146,7 +151,7 @@ PowerShell 6 以降と SSH がすべてのコンピューターにインスト�
    1. `Remote Login` にオンにして `Remote Login: On` を設定します。
    1. 適切なユーザーにアクセスを許可します。
 
-1. `sshd_config` で `/private/etc/ssh/sshd_config` ファイルを編集します。
+1. `/private/etc/ssh/sshd_config` で `sshd_config` ファイルを編集します。
 
    **nano** などのテキスト エディターを使用します。
 
@@ -165,6 +170,9 @@ PowerShell 6 以降と SSH がすべてのコンピューターにインスト�
    ```
    Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
    ```
+
+   > [!NOTE]
+   > PowerShell 実行可能ファイルの既定の場所は `/usr/local/bin/pwsh` です。 この場所は、PowerShell のインストール方法によって異なります。
 
    必要であれば、キー認証を有効にします。
 
@@ -314,7 +322,7 @@ GitCommitId                    v6.0.0-alpha.17
 
 **sudo** コマンドは、Linux コンピューターへのリモート セッションでは機能しません。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Linux に PowerShell Core をインストールする](../../install/installing-powershell-core-on-linux.md#ubuntu-1604)
 

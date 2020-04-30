@@ -2,58 +2,58 @@
 title: Linux への PowerShell のインストール
 description: さまざまな Linux ディストリビューションへの PowerShell のインストールに関する情報
 ms.date: 03/09/2020
-ms.openlocfilehash: 31da32b81dbbcf4b46fd5f0cd9d921f28f434763
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 201bb693c3473f6b1f05d860562b1fc132912bb2
+ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500547"
+ms.lasthandoff: 04/27/2020
+ms.locfileid: "82174138"
 ---
 # <a name="installing-powershell-on-linux"></a>Linux への PowerShell のインストール
 
-[Ubuntu 16.04][u16]、[Ubuntu 18.04][u1804]、[Ubuntu 18.10][u1810]、[Ubuntu 19.04][u1904]、[Debian 8][deb8]、[Debian 9][deb9]、[Debian 10][deb10]、[Alpine 3.9 および 3.10][alpine]、[CentOS 7][cos]、[Red Hat Enterprise Linux (RHEL) 7][rhel7]、[openSUSE 42.3][opensuse]、[openSUSE Leap 15][opensuse]、[Fedora 28][fedora]、[Fedora 29][fedora]、[Fedora 30][fedora]、[Arch Linux][arch] がサポートされています。
-
-公式にサポートされていない Linux ディストリビューションの場合は、[PowerShell の Snap パッケージ][snap]を使った PowerShell のインストールを試すことができます。 また、Linux [`tar.gz` アーカイブ][tar]を使用して、直接 PowerShell バイナリを展開できますが、場合によっては、OS に基づいて依存関係を別の手順で設定する必要があります。
-
-すべてのパッケージは GitHub [ ページから Ubuntu コンピューターに Debian パッケージ ][] ページにあります。 パッケージがインストールされたら、ターミナルから `pwsh` を実行します。 `pwsh-preview`プレビュー リリース[をインストールした場合は、](#installing-preview-releases) を実行します。
+すべてのパッケージは GitHub [リリース][] ページにあります。 パッケージがインストールされたら、ターミナルから `pwsh` を実行します。 [プレビュー リリース](#installing-preview-releases)をインストールした場合は、`pwsh-preview` を実行します。
 
 > [!NOTE]
 > PowerShell 7 はインプレース アップグレードで、PowerShell Core 6.x は削除されます。
 >
 > `/usr/local/microsoft/powershell/6` フォルダーは `/usr/local/microsoft/powershell/7` に置き換えられました。
 >
-> Powershell 6 を PowerShell 7 と side-by-side 実行する必要がある場合は、[バイナリ アーカイブ](#binary-archives)方法を使用して PowerShell 6 を再インストールします。
+> PowerShell 6 を PowerShell 7 と side-by-side 実行する必要がある場合は、[バイナリ アーカイブ](#binary-archives)方法を使用して PowerShell 6 を再インストールします。
 
-[u16]: #ubuntu-1604
-[u1804]: #ubuntu-1804
-[u1810]: #ubuntu-1810
-[u1904]: #ubuntu-1904
-[deb8]: #debian-8
-[deb9]: #debian-9
-[deb10]: #debian-10
-[alpine]: #alpine-39-and-310
-[cos]: #centos-7
-[rhel7]: #red-hat-enterprise-linux-rhel-7
-[opensuse]: #opensuse
-[fedora]: #fedora
-[arch]: #arch-linux
+公式にサポートされていない Linux ディストリビューションの場合は、[PowerShell の Snap パッケージ][snap]を使った PowerShell のインストールを試すことができます。 また、Linux [`tar.gz` アーカイブ][tar]を使用して、直接 PowerShell バイナリを展開できますが、場合によっては、OS に基づいて依存関係を別の手順で設定する必要があります。
+
 [snap]: #snap-package
 [tar]: #binary-archives
 
+正式にサポートされているリリース
 
-## <a name="installing-preview-releases"></a>プレビュー リリースのインストール
+- Ubuntu 16.04
+- Ubuntu 18.04
+- Debian 8
+- Debian 9
+- Debian 10
+- Alpine 3.9 および 3.10
+- CentOS 7
+- Red Hat Enterprise Linux (RHEL) 7
+- Fedora 28
+- Fedora 29
+- Fedora 30
+- openSUSE 42.3
+- openSUSE Leap 15
 
-パッケージ リポジトリを介して、Linux 用の PowerShell Preview リリースをインストールすると、パッケージ名が `powershell` から `powershell-preview` に変わります。
+コミュニティでサポートされているリリース
 
-直接ダウンロードによるインストールでは、ファイル名以外は変わりません。
+- Ubuntu 18.10
+- Ubuntu 19.04
+- Arch Linux
+- Kali
+- Raspbian (試験段階)
 
-さまざまなパッケージ マネージャーを使用して安定版およびプレビュー版パッケージをインストールするためのコマンドを、以下の表に示します。
+代替のインストール方法
 
-| ディストリビューション |            安定したコマンド            |               プレビュー コマンド                |
-| --------------- | ------------------------------------ | -------------------------------------------- |
-| Ubuntu、Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
-| CentOS、RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
-| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
+- Snap パッケージ
+- バイナリ アーカイブ
+- .NET グローバル ツール
 
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
@@ -84,7 +84,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>直接ダウンロードによるインストール - Ubuntu 16.04
 
-`powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
+[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell-lts_7.0.0-1.ubuntu.16.04_amd64.deb` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -134,7 +134,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>直接ダウンロードによるインストール - Ubuntu 18.04
 
-`powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
+[リリース][] ページから Ubuntu コンピューターに Debian パッケージ `powershell-lts_7.0.0-1.ubuntu.18.04_amd64.deb` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -157,14 +157,14 @@ sudo apt-get remove powershell
 `snapd` によるインストールがサポートされています。 手順については、「[Snap パッケージ][snap]」をご覧ください。
 
 > [!NOTE]
-> Ubuntu 18.10 は、[コミュニティでサポートされている](https://www.ubuntu.com/about/release-cycle)[中間リリース](../powershell-support-lifecycle.md)です。
+> Ubuntu 18.10 は、[コミュニティでサポートされている](../powershell-support-lifecycle.md)[中間リリース](https://www.ubuntu.com/about/release-cycle)です。
 
 ## <a name="ubuntu-1904"></a>Ubuntu 19.04
 
 `snapd` によるインストールがサポートされています。 手順については、「[Snap パッケージ][snap]」をご覧ください。
 
 > [!NOTE]
-> Ubuntu 19.04 は、[コミュニティでサポートされている](https://www.ubuntu.com/about/release-cycle)[中間リリース](../powershell-support-lifecycle.md)です。
+> Ubuntu 19.04 は、[コミュニティでサポートされている](../powershell-support-lifecycle.md)[中間リリース](https://www.ubuntu.com/about/release-cycle)です。
 
 ## <a name="debian-8"></a>Debian 8
 
@@ -230,7 +230,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-9"></a>直接ダウンロードによるインストール - Debian 9
 
-`powershell-lts_7.0.0-1.debian.9_amd64.deb`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
+[リリース][] ページから Debian コンピューターに Debian パッケージ `powershell-lts_7.0.0-1.debian.9_amd64.deb` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -275,7 +275,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---debian-10"></a>直接ダウンロードによるインストール - Debian 10
 
-`powershell_7.0.0-linux-x64.tar.gz`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
+[リリース][] ページから Debian コンピューターに tar.gz パッケージ `powershell_7.0.0-linux-x64.tar.gz` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -322,7 +322,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---alpine-39-and-310"></a>直接ダウンロードによるインストール - Alpine 3.9 および 3.10
 
-`powershell-7.0.0-linux-alpine-x64.tar.gz`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
+[リリース][] ページから Alpine コンピューターに tar.gz パッケージ `powershell-7.0.0-linux-alpine-x64.tar.gz` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -389,7 +389,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---centos-7"></a>直接ダウンロードによるインストール - CentOS 7
 
-[CentOS 7][] を利用し、`powershell-lts-7.0.0-1.rhel.7.x86_64.rpm`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
+[CentOS 7][] を利用し、[リリース][] ページから CentOS コンピューターに RPM パッケージ `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -432,7 +432,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---red-hat-enterprise-linux-rhel-7"></a>直接ダウンロードによるインストール - Red Hat Enterprise Linux (RHEL) 7
 
-`powershell-lts-7.0.0-1.rhel.7.x86_64.rpm`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
+[リリース][] ページから Red Hat Enterprise Linux コンピューターに RPM パッケージ `powershell-lts-7.0.0-1.rhel.7.x86_64.rpm` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -544,7 +544,7 @@ pwsh
 
 ### <a name="installation-via-direct-download---fedora-28-29-and-30"></a>直接ダウンロードによるインストール - Fedora 28、29、および 30
 
-`powershell-7.0.0-1.rhel.7.x86_64.rpm`リリース[ ページから Ubuntu コンピューターに Debian パッケージ ][] をダウンロードします。
+[リリース][] ページから Fedora コンピューターに RPM パッケージ `powershell-7.0.0-1.rhel.7.x86_64.rpm` をダウンロードします。
 
 次に、ターミナルで、以下のコマンドを実行します。
 
@@ -573,9 +573,9 @@ sudo dnf remove powershell
 
 PowerShell は [Arch Linux][] User Repository (AUR) から入手できます。
 
-* [タグが付けられた最新のリリース][arch-release]でコンパイルできます
-* [最新のコミットからマスターに][arch-git]コンパイルできます
-* [最新のリリース バイナリ][arch-bin]でインストールできます
+- [タグが付けられた最新のリリース][arch-release]でコンパイルできます
+- [最新のコミットからマスターに][arch-git]コンパイルできます
+- [最新のリリース バイナリ][arch-bin]でインストールできます
 
 AUR のパッケージはコミュニティによって管理されています。公式のサポートは存在しません。
 
@@ -590,7 +590,7 @@ AUR からパッケージをインストールする方法については、[Arc
 
 ### <a name="getting-snapd"></a>Snapd の取得
 
-Snap を実行するには、`snapd` が必要です。 [ がインストールされているかどうかを確認するには、](https://docs.snapcraft.io/core/install)こちらの手順`snapd`を使用してください。
+Snap を実行するには、`snapd` が必要です。 `snapd` がインストールされているかどうかを確認するには、[こちらの手順](https://docs.snapcraft.io/core/install)を使用してください。
 
 ### <a name="installation-via-snap"></a>Snap を使用したインストール
 
@@ -710,6 +710,20 @@ sudo ~/powershell/pwsh -c New-Item -ItemType SymbolicLink -Path "/usr/bin/pwsh" 
 rm -rf ~/powershell
 ```
 
+## <a name="installing-preview-releases"></a>プレビュー リリースのインストール
+
+パッケージ リポジトリを介して、Linux 用の PowerShell Preview リリースをインストールすると、パッケージ名が `powershell` から `powershell-preview` に変わります。
+
+直接ダウンロードによるインストールでは、ファイル名以外は変わりません。
+
+さまざまなパッケージ マネージャーを使用して安定版およびプレビュー版パッケージをインストールするためのコマンドを、以下の表に示します。
+
+| ディストリビューション |            安定したコマンド            |               プレビュー コマンド                |
+| --------------- | ------------------------------------ | -------------------------------------------- |
+| Ubuntu、Debian  | `sudo apt-get install -y powershell` | `sudo apt-get install -y powershell-preview` |
+| CentOS、RedHat  | `sudo yum install -y powershell`     | `sudo yum install -y powershell-preview`     |
+| Fedora          | `sudo dnf install -y powershell`     | `sudo dnf install -y powershell-preview`     |
+
 ## <a name="install-as-a-net-global-tool"></a>.NET グローバル ツールとしてインストールする
 
 [.NET Core SDK](/dotnet/core/sdk) が既にインストールされている場合は、PowerShell を [.NET グローバル ツール](/dotnet/core/tools/global-tools)として簡単にインストールできます。
@@ -718,7 +732,7 @@ rm -rf ~/powershell
 dotnet tool install --global PowerShell
 ```
 
-dotnet tool install によって、`~/.dotnet/tools` 環境変数に `PATH` が追加されます。 ただし、現在実行中のシェルには更新された `PATH` が設定されていません。 新しいシェルからは、「`pwsh`」と入力すると PowerShell を起動できるはずです。
+dotnet tool install によって、`PATH` 環境変数に `~/.dotnet/tools` が追加されます。 ただし、現在実行中のシェルには更新された `PATH` が設定されていません。 新しいシェルからは、「`pwsh`」と入力すると PowerShell を起動できるはずです。
 
 ## <a name="binary-archives"></a>バイナリ アーカイブ
 
@@ -781,11 +795,11 @@ sudo rm -rf /usr/bin/pwsh /opt/microsoft/powershell
 - ユーザー モジュールは `~/.local/share/powershell/Modules` から読み込まれます
 - 共有モジュールは `/usr/local/share/powershell/Modules` から読み込まれます
 - 既定のモジュールは `$PSHOME/Modules` から読み込まれます
-- PSReadline 履歴は `~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt` に記録されます
+- PSReadLine 履歴は、`~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt` に記録されます
 
 プロファイルは PowerShell のホスト別構成を順守します。そのため、既定のホスト固有プロファイルは同じ場所の `Microsoft.PowerShell_profile.ps1` にあります。
 
 PowerShell では、Linux の [XDG ベース ディレクトリ仕様][xdg-bds]を尊重しています。
 
-[ ページから Ubuntu コンピューターに Debian パッケージ ]: https://github.com/PowerShell/PowerShell/releases/latest
+[リリース]: https://github.com/PowerShell/PowerShell/releases/latest
 [xdg-bds]: https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
