@@ -2,12 +2,12 @@
 title: Windows への PowerShell のインストール
 description: Windows への PowerShell のインストールに関する情報
 ms.date: 08/06/2018
-ms.openlocfilehash: ea5432725f4baea8c688fb8e67482910e2c3981e
-ms.sourcegitcommit: b6cf10224eb9f32919a505cdffbe5968241c18a1
+ms.openlocfilehash: a8543a91ad503364c5346a11c9c9d9f910547278
+ms.sourcegitcommit: b80ce0396550d0896189d0205d6c4b4372ac2015
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/28/2020
-ms.locfileid: "80374890"
+ms.lasthandoff: 04/24/2020
+ms.locfileid: "82141379"
 ---
 # <a name="installing-powershell-on-windows"></a>Windows への PowerShell のインストール
 
@@ -82,11 +82,11 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 ## <a name="installing-the-zip-package"></a><a id="zip" />ZIP パッケージのインストール
 
-PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 ZIP アーカイブをインストールしても、MSI パッケージのように前提条件は確認されません。 WSMan 経由でのリモート処理を正常に動作させるために、[前提条件](#prerequisites)を満たしていることを確かめてください。
+PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 ZIP アーカイブをインストールしても、MSI パッケージのように前提条件は確認されません。 [リリース][releases] ページから ZIP アーカイブをダウンロードします。 ファイルのダウンロード方法によっては、`Unblock-File` コマンドレットを使用して、ファイルのブロックを解除することが必要になる場合があります。 任意の場所にコンテンツを解凍し、そこから `pwsh.exe` を実行します。 WSMan 経由でのリモート処理を正常に動作させるために、[前提条件](#prerequisites)を満たしていることを確かめてください。
 
-## <a name="deploying-on-windows-iot"></a>Windows IoT への展開
+## <a name="deploying-on-windows-10-iot-enterprise"></a>Windows 10 IoT Enterprise への展開
 
-Windows IoT には、PowerShell 7 の展開に使用できる Windows PowerShell が付属しています。
+Windows 10 IoT Enterprise には、PowerShell 7 の展開に使用できる Windows PowerShell が付属しています。
 
 1. ターゲット デバイスに対して `PSSession` を作成します
 
@@ -128,6 +128,16 @@ Windows IoT には、PowerShell 7 の展開に使用できる Windows PowerShell
    # Be sure to use the -Configuration parameter.  If you omit it, you will connect to Windows PowerShell 5.1
    Enter-PSSession -ComputerName <deviceIp> -Credential Administrator -Configuration powershell.<version>
    ```
+## <a name="deploying-on-windows-10-iot-core"></a>Windows 10 IoT Core への展開
+
+PowerShell 7 の展開に使用できる *IOT_POWERSHELL* 機能を取り込む場合、Windows 10 IoT Core によって Windows PowerShell が追加されます。
+上記で Windows 10 IoT Enterprise に対して定義した手順は、IoT Core にも適用できます。
+
+配布イメージに最新の powershell を追加する場合は、[Import-PSCoreRelease](https://github.com/ms-iot/iot-adk-addonkit/blob/master/Tools/IoTCoreImaging/Docs/Import-PSCoreRelease.md#Import-PSCoreRelease) コマンドを使用して、ワークスペースにパッケージを取り込み、さらに *OPENSRC_POWERSHELL* 機能をご利用のイメージに追加します。
+
+> [!NOTE]
+> ARM64 アーキテクチャの場合、*IOT_POWERSHELL* を取り込むときに、Windows Powershell は追加されません。 そのため、zip ベースのインストールは機能しません。
+> イメージに追加するには、Import-PSCoreRelease コマンドを使用する必要があります。
 
 ## <a name="deploying-on-nano-server"></a>Nano Server への展開
 
