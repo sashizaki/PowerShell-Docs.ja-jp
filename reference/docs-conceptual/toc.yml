@@ -731,13 +731,20 @@
         - name: 付録 2 - カスタムの PowerShell ショートカットの作成
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
 - name: コミュニティ
+  expanded: true
   items:
-    - name: コミュニティのリソース
+    - name: コミュニティの更新情報
+      href: community/community-update.yml
+    - name: コミュニティ サポート
       href: community/community-support.md
-    - name: デジタル アート
-      href: community/digital-art.md
-    - name: PowerShell ドキュメントの新機能
-      href: community/whats-new-in-docs.md
+    - name: 殿堂入り共同作成者
+      href: community/hall-of-fame.md
+    - name: Docs の新機能
+      items:
+        - name: 2020 年第 2 四半期
+          href: community/2020-Q2.md
+        - name: 2020 年第 1 四半期
+          href: community/2020-Q1.md
     - name: 共同作成者ガイド
       items:
         - name: 概要
@@ -758,8 +765,10 @@
               href: community/contributing/editorial-checklist.md
             - name: 問題の管理方法
               href: community/contributing/managing-issues.md
-            - name: プル要求の管理方法
+            - name: プル要求を管理する方法
               href: community/contributing/managing-pull-requests.md
+    - name: デジタル アート
+      href: community/digital-art.md
 - name: PowerShell SDK
   items:
     - name: 概要
