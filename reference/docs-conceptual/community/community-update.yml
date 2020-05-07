@@ -1,0 +1,61 @@
+### YamlMime:Landing
+title: コミュニティの更新情報
+summary: リソースの一覧と、新しい記事とコミュニティの投稿の概要です。
+metadata:
+  title: コミュニティの更新情報
+  description: リソースの一覧と、新しい記事とコミュニティの投稿の概要です。
+  ms.topic: landing-page
+  author: sdwheeler
+  ms.author: sewhee
+  ms.date: 04/29/2020
+  ms.openlocfilehash: 42d8de8ffedf9ac1b0bd7ee5df1483f8d1316da7
+  ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
+  ms.translationtype: HT
+  ms.contentlocale: ja-JP
+  ms.lasthandoff: 05/01/2020
+  ms.locfileid: "82630888"
+landingContent:
+- title: コミュニティのリソース
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: コミュニティ サポート
+      url: community-support.md
+    - text: デジタル アート
+      url: digital-art.md
+    - text: 殿堂入り共同作成者
+      url: hall-of-fame.md
+- title: PowerShell ドキュメントの新機能
+  linkLists:
+  - linkListType: whats-new
+    links:
+    - text: 2020 年第 2 四半期
+      url: ./2020-Q2.md
+    - text: 2020 年第 1 四半期
+      url: ./2020-Q1.md
+- title: 参加する - PowerShell ドキュメントに投稿する
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: PowerShell の共同作成者ガイド
+      url: contributing/overview.md
+    - text: ドキュメントの作成を開始する方法
+      url: contributing/get-started-writing.md
+  - linkListType: how-to-guide
+    links:
+    - text: イシューを報告する方法
+      url: contributing/file-an-issue.md
+    - text: プル要求の送信
+      url: contributing/pull-requests.md
+    - text: PowerShell ドキュメントのスタイル ガイド
+      url: contributing/powershell-style-guide.md
+    - text: コマンドレット リファレンスの編集
+      url: contributing/editing-cmdlet-ref.md
+  - linkListType: reference
+    links:
+    - text: 編集チェックリスト
+      url: contributing/editorial-checklist.md
+    - text: 問題の管理方法
+      url: contributing/managing-issues.md
+    - text: プル要求を管理する方法
+      url: contributing/managing-pull-requests.md
