@@ -1,19 +1,17 @@
 ---
-title: PowerShell コミュニティのリソース
+title: PowerShell コミュニティ サポートのリソース
 description: PowerShell ユーザーによって作成されたリソースの一覧
-ms.date: 03/04/2020
-ms.openlocfilehash: 50f5eaaef9ef30351fa605f74648a8efbce90af3
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.date: 04/29/2020
+ms.openlocfilehash: f35524c8a1a457ffd6cccf0d2165cc340f7519ca
+ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80395015"
+ms.lasthandoff: 05/01/2020
+ms.locfileid: "82630837"
 ---
-# <a name="powershell-community-resources"></a>PowerShell コミュニティのリソース
+# <a name="getting-support-from-the-community"></a>コミュニティからのサポートを利用する
 
 PowerShell コミュニティは、活気のあるアクティブなユーザー グループです。 この記事は、コミュニティの他のメンバーとの交流に役立ちます。
-
-## <a name="getting-support-from-the-community"></a>コミュニティからのサポートを利用する
 
 PowerShell コミュニティでは、[GitHub](https://github.com/powershell/powershell/issues) リポジトリを使用して、問題やバグを報告したり機能要求を送信したりできます。 質問がある場合は、次のいずれかのパブリック フォーラムで、他のコミュニティ メンバーがサポートしてくれることがあります。
 
@@ -27,9 +25,3 @@ PowerShell コミュニティでは、[GitHub](https://github.com/powershell/pow
 - [PowerShell Discord](https://discord.gg/Ju25cw6)
 
 サポート ポリシーの詳細については、[PowerShell のサポート ライフサイクル](/powershell/scripting/powershell-support-lifecycle)に関するページをご覧ください。
-
-## <a name="looking-for-logos-and-other-digital-goodies"></a>ロゴなどのデジタル メディアを探している場合
-
-Microsoft では、楽しいデジタル アートワークのコレクションをご用意しています。
-
-[デジタル アート](/powershell/scripting/community/digital-art)
