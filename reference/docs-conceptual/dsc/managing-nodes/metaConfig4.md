@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell 4.0 での LCM の構成
-ms.openlocfilehash: 747b15c483c79a7ecbb62214ef5a59f8dc137bd4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4a9dedf67f9fb18fdd7f5adf70dbf1402fb3f918
+ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953829"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83271833"
 ---
 # <a name="configuring-the-lcm-in-powershell-40"></a>PowerShell 4.0 での LCM の構成
 
@@ -24,11 +24,11 @@ ms.locfileid: "71953829"
 設定または取得できるローカル構成マネージャーのプロパティを次に示します。
 
 - **AllowModuleOverwrite**:構成サービスからダウンロードされた新しい構成で、ターゲット ノードの古い構成を上書きできるかどうかを制御します。 設定可能な値は True および False です。
-- **CertificateID**:構成で渡される資格情報をセキュリティで保護するために使用される証明書の拇印。 詳細については、「[Want to secure credentials in Windows PowerShell Desired State Configuration? (Windows PowerShell Desired State Configuration で資格情報をセキュリティ保護する)](https://blogs.msdn.microsoft.com/powershell/2014/01/31/want-to-secure-credentials-in-windows-powershell-desired-state-configuration/)」を参照してください。
+- **CertificateID**:構成で渡される資格情報をセキュリティで保護するために使用される証明書の拇印。 詳細については、「[Want to secure credentials in Windows PowerShell Desired State Configuration? (Windows PowerShell Desired State Configuration で資格情報をセキュリティ保護する)](https://devblogs.microsoft.com/powershell/want-to-secure-credentials-in-windows-powershell-desired-state-configuration/)」を参照してください。
 - **ConfigurationID**:プル サービスから特定の構成ファイルを取得するために使用する GUID を指定します。 この GUID によって、適切な構成ファイルにアクセスできます。
 - **ConfigurationMode**:ローカル構成マネージャーによってターゲット ノードに構成が実際に適用される方法を指定します。 次の値を使用できます。
   - **ApplyOnly**:このオプションを使用すると、DSC によって構成が適用され、その後何も行われません。ただし、ターゲット ノードに直接新しい構成を送信した場合や、プル サービスに接続しており、DSC がプル サービスを確認して新しい構成を検出した場合は除きます。 ターゲット ノードの構成のずれが発生した場合、アクションは実行されません。
-  - **ApplyAndMonitor**:このオプション (既定) を使用すると、新しい構成をターゲット ノードに直接送信した場合でも、プル サービスで検出された場合でも、DSC によって新しい構成が適用されます。 その後、ターゲット ノードの構成が構成ファイルからずれた場合、DSC はログで不一致を報告します。 DSC ログの詳細については、「[Using Event Logs to Diagnose Errors in Desired State Configuration (Desired State Configuration でのイベント ログを使用したエラーの診断)](https://blogs.msdn.com/b/powershell/archive/2014/01/03/using-event-logs-to-diagnose-errors-in-desired-state-configuration.aspx)」を参照してください。
+  - **ApplyAndMonitor**:このオプション (既定) を使用すると、新しい構成をターゲット ノードに直接送信した場合でも、プル サービスで検出された場合でも、DSC によって新しい構成が適用されます。 その後、ターゲット ノードの構成が構成ファイルからずれた場合、DSC はログで不一致を報告します。 DSC ログの詳細については、「[Using Event Logs to Diagnose Errors in Desired State Configuration (Desired State Configuration でのイベント ログを使用したエラーの診断)](https://devblogs.microsoft.com/powershell/using-event-logs-to-diagnose-errors-in-desired-state-configuration/)」を参照してください。
   - **ApplyAndAutoCorrect**:このオプションを使用すると、新しい構成をターゲット ノードに直接送信した場合も、プル サービスで検出された場合も、DSC によって新しい構成が適用されます。 その後、ターゲット ノードの構成が構成ファイルからずれた場合、DSC はログで不一致を報告し、構成ファイルに準拠するようにターゲット ノードの構成を調整します。
 - **ConfigurationModeFrequencyMins**:DSC のバックグラウンド アプリケーションがターゲット ノードで現在のノード構成の実装を試みる頻度 (分単位) を示します。 既定値は 15 です。 この値は、RefreshMode と組み合わせて設定することができます。 RefreshMode を PULL に設定すると、ターゲット ノードは RefreshFrequencyMins の設定間隔で構成サービスに接続し、現在の構成をダウンロードします。 RefreshMode の値に関係なく、ConfigurationModeFrequencyMins の設定間隔で、整合性エンジンは、ターゲット ノードにダウンロードされた最新の構成を適用します。 RefreshFrequencyMins は、ConfigurationModeFrequencyMins の倍数である整数に設定する必要があります。
 - **Credential**:構成サービスへの接続など、リモート リソースにアクセスするために必要な資格情報を示します (Get-Credential と同様)。

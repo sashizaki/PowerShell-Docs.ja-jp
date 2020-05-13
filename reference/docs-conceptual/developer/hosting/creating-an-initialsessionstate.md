@@ -9,11 +9,11 @@ ms.topic: article
 ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
 caps.latest.revision: 5
 ms.openlocfilehash: 9140d03e046def2fbbcc2a842b9ea1b9e1fa2985
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367621"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83271884"
 ---
 # <a name="creating-an-initialsessionstate"></a>InitialSessionState を作成する
 
@@ -25,7 +25,7 @@ InitialSessionState は、その実行空間で使用できるコマンド、変
 ## <a name="create-a-default-initialsessionstate"></a>既定の InitialSessionState を作成する
 
 **InitialSessionState**クラスの[Createdefault](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault)メソッドと[CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2)メソッドを使用して、 **InitialSessionState**オブジェクトを作成できます。
-**Createdefault**メソッドは、すべての組み込みコマンドが読み込まれた**InitialSessionState**を作成します。一方、CreateDefault2 メソッドは、powershell をホストするために必要なコマンド (モジュールのコマンド) のみを読み込みます。
+**Createdefault**メソッドは、すべての組み込みコマンドが読み込まれた**InitialSessionState**を作成します。一方、CreateDefault2 メソッドは、powershell をホストするために必要なコマンド ( **CreateDefault2**モジュールのコマンド) のみを読み込みます。
 
 ホストアプリケーションで使用できるコマンドをさらに制限する場合は、制約付き実行空間を作成する必要があります。
 詳細については、「[制約付き実行空間の作成](creating-a-constrained-runspace.md)」を参照してください。
@@ -95,6 +95,6 @@ namespace SampleHost
 
 ## <a name="see-also"></a>参照
 
-[制約付き実行空間の作成](creating-a-constrained-runspace.md)
+[制約付き実行空間を作成する](creating-a-constrained-runspace.md)
 
-[コマンドの追加と呼び出し](adding-and-invoking-commands.md)
+[コマンドを追加し、呼び出す](adding-and-invoking-commands.md)
