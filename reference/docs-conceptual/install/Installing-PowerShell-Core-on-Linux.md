@@ -2,12 +2,12 @@
 title: Linux への PowerShell のインストール
 description: さまざまな Linux ディストリビューションへの PowerShell のインストールに関する情報
 ms.date: 03/09/2020
-ms.openlocfilehash: 6ad637bd30e5e40ccc9532bae6f1171ecf79734a
-ms.sourcegitcommit: e0a737961280026832cff9c658ed1468dc904e80
+ms.openlocfilehash: e04d8a91999cd6e9b2d669230c7a1b412f11eeb8
+ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/30/2020
-ms.locfileid: "82605851"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83271901"
 ---
 # <a name="installing-powershell-on-linux"></a>Linux への PowerShell のインストール
 
@@ -54,6 +54,10 @@ ms.locfileid: "82605851"
 - Snap パッケージ
 - バイナリ アーカイブ
 - .NET グローバル ツール
+
+現在、サポートされていません 
+
+- Ubuntu 20.04
 
 ## <a name="ubuntu-1604"></a>Ubuntu 16.04
 
@@ -165,6 +169,10 @@ sudo apt-get remove powershell
 
 > [!NOTE]
 > Ubuntu 19.04 は、[コミュニティでサポートされている](../powershell-support-lifecycle.md)[中間リリース](https://www.ubuntu.com/about/release-cycle)です。
+
+## <a name="ubuntu-2004"></a>Ubuntu 20.04
+
+Ubuntu 20.04 は LTS リリースです。 現在、PowerShell はこのバージョンをサポートしていません。 このバージョンのサポートは、PowerShell 7.1 リリースで考慮されています。 Ubuntu 20.04 のサポートを希望する場合は、この[要求](https://github.com/PowerShell/PowerShell/issues/12626)にご投票ください。
 
 ## <a name="debian-8"></a>Debian 8
 

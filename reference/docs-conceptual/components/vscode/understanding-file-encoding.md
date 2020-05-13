@@ -2,12 +2,12 @@
 title: VS Code と PowerShell でのファイルのエンコードの概要
 description: VS Code と PowerShell でのファイルのエンコードの構成
 ms.date: 02/28/2019
-ms.openlocfilehash: b09c13374c28e88c66d1d84fbe56ca5c66b34c8c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 991e3ccc95dd0dd2106cefe6c68371e59c031f35
+ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80978680"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83271867"
 ---
 # <a name="understanding-file-encoding-in-vs-code-and-powershell"></a>VS Code と PowerShell でのファイルのエンコードの概要
 
@@ -73,7 +73,7 @@ PowerShell 拡張機能は、さまざまな方法でスクリプトとやりと
 2. 統合されたコンソールでスクリプトを直接実行されると、PowerShell によってファイルから直接読み取られます。 PowerShell のエンコードが VS Code のエンコードと異なる場合は、ここで何か問題が起こる可能性があります。
 3. VS Code で開かれているスクリプトにより VS Code で開かれていない別のスクリプトが参照されている場合、拡張機能はフォール バックして、そのスクリプトのコンテンツをファイル システムから読み込みます。 PowerShell 拡張機能の既定は UTF-8 エンコードですが、[バイト オーダー マーク][] (BOM) 検出を使用して正しいエンコードが選択されます。
 
-問題は、BOM なしの形式 (BOM なしの [UTF-8][] や [Windows-1252][] など) のエンコードを想定しているときに発生します。 PowerShell 拡張機能の既定値は UTF-8 です。 この拡張機能では VS Code のエンコード設定を変更できません。 詳細については、[問題 #824](https://github.com/Microsoft/VS Code/issues/824) を参照してください。
+問題は、BOM なしの形式 (BOM なしの [UTF-8][] や [Windows-1252][] など) のエンコードを想定しているときに発生します。 PowerShell 拡張機能の既定値は UTF-8 です。 この拡張機能では VS Code のエンコード設定を変更できません。 詳細については、[問題番号 824](https://github.com/Microsoft/VSCode/issues/824) を参照してください。
 
 ## <a name="choosing-the-right-encoding"></a>適切なエンコードの選択
 
@@ -255,11 +255,11 @@ PowerShell でのエンコードとエンコードの構成に関するお勧め
 
 - [@mklement0] の [StackOverflow 上の PowerShell エンコードの概要](https://stackoverflow.com/questions/40098771/changing-powershells-default-output-encoding-to-utf-8)
 - エンコードの問題について VS Code-PowerShell で開かれた以前の問題:
-  - [#1308](https://github.com/PowerShell/VS Code-powershell/issues/1308)
-  - [#1628](https://github.com/PowerShell/VS Code-powershell/issues/1628)
-  - [#1680](https://github.com/PowerShell/VS Code-powershell/issues/1680)
-  - [#1744](https://github.com/PowerShell/VS Code-powershell/issues/1744)
-  - [#1751](https://github.com/PowerShell/VS Code-powershell/issues/1751)
+  - [#1308](https://github.com/PowerShell/VSCode-powershell/issues/1308)
+  - [#1628](https://github.com/PowerShell/VSCode-powershell/issues/1628)
+  - [#1680](https://github.com/PowerShell/VSCode-powershell/issues/1680)
+  - [#1744](https://github.com/PowerShell/VSCode-powershell/issues/1744)
+  - [#1751](https://github.com/PowerShell/VSCode-powershell/issues/1751)
 - [*Joel on Software* が Unicode について書いた以前の投稿](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [.NET Standard のエンコード](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
 
