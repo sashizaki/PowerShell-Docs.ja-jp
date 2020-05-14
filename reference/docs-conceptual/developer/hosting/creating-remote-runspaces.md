@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
 caps.latest.revision: 5
-ms.openlocfilehash: c97b0dfc12d96f99c53383d3578579f1988efd52
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 964320108d7aff24d59905028fb976e0f75642e7
+ms.sourcegitcommit: 08e9ed4bc9bffc7af82b3130e74ec7763db74e4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367681"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83382628"
 ---
 # <a name="creating-remote-runspaces"></a>リモート実行空間を作成する
 
@@ -21,9 +21,9 @@ ms.locfileid: "72367681"
 
 ## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a>WSManConnection を使用してリモートの実行空間を作成する
 
- リモートコンピューターに接続する実行空間を作成するには、 [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを作成します。 接続のターゲットエンドポイントは、オブジェクトの[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)プロパティを設定することによって指定してください。 次に、 [RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)メソッドを呼び出して、実行空間を作成します。このためには、 [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを `connectionInfo` パラメーターとして指定しています。
+ リモートコンピューターに接続する実行空間を作成するには、 [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを作成します。 接続のターゲットエンドポイントは、オブジェクトの[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)プロパティを設定することによって指定してください。 次に、 [RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)メソッドを呼び出して、 [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトをパラメーターとして指定して、実行空間を作成してから、このメソッドを呼び出します。 `connectionInfo`
 
- 次の例は、リモートコンピューターに接続する実行空間を作成する方法を示しています。 この例では、リモートコンピューターの実際の URI のプレースホルダーとして `RemoteComputerUri` が使用されています。
+ 次の例は、リモートコンピューターに接続する実行空間を作成する方法を示しています。 この例で `RemoteComputerUri` は、はリモートコンピューターの実際の URI のプレースホルダーとして使用されます。
 
 ```csharp
 namespace Samples
@@ -48,7 +48,7 @@ namespace Samples
       // Create a WSManConnectionInfo object using the default constructor
       // to connect to the "localHost". The WSManConnectionInfo object can
       // also be used to specify connections to remote computers.
-      Uri RemoteComputerUri = new uri("http://Server01:5985/WSMAN");
+      Uri RemoteComputerUri = new Uri("http://Server01:5985/WSMAN");
       WSManConnectionInfo connectionInfo = new WSManConnectionInfo(RemoteComputerUri);
 
       // Set the OperationTimeout property and OpenTimeout properties.
