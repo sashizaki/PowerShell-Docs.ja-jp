@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 057a666f-731b-423d-9d80-7be6b1836244
 caps.latest.revision: 5
-ms.openlocfilehash: c97b0dfc12d96f99c53383d3578579f1988efd52
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 964320108d7aff24d59905028fb976e0f75642e7
+ms.sourcegitcommit: 08e9ed4bc9bffc7af82b3130e74ec7763db74e4f
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367681"
+ms.lasthandoff: 05/13/2020
+ms.locfileid: "83382628"
 ---
-# <a name="creating-remote-runspaces"></a><span data-ttu-id="abaa5-102">リモート実行空間を作成する</span><span class="sxs-lookup"><span data-stu-id="abaa5-102">Creating remote runspaces</span></span>
+# <a name="creating-remote-runspaces"></a><span data-ttu-id="4726f-102">リモート実行空間を作成する</span><span class="sxs-lookup"><span data-stu-id="4726f-102">Creating remote runspaces</span></span>
 
-<span data-ttu-id="abaa5-103">**ComputerName**パラメーターを受け取る powershell コマンドは、powershell を実行する任意のコンピューターで実行できます。</span><span class="sxs-lookup"><span data-stu-id="abaa5-103">PowerShell commands that take a **ComputerName** parameter can be run on any computer that runs PowerShell.</span></span> <span data-ttu-id="abaa5-104">**ComputerName**パラメーターを受け取らないコマンドを実行するには、ws-management を使用して、指定したコンピューターに接続し、そのコンピューターでコマンドを実行する実行空間を構成します。</span><span class="sxs-lookup"><span data-stu-id="abaa5-104">To run commands that don't take a **ComputerName** parameter, you can use WS-Management to configure a runspace that connects to a specified computer, and run commands on that computer.</span></span>
+<span data-ttu-id="4726f-103">**ComputerName**パラメーターを受け取る powershell コマンドは、powershell を実行する任意のコンピューターで実行できます。</span><span class="sxs-lookup"><span data-stu-id="4726f-103">PowerShell commands that take a **ComputerName** parameter can be run on any computer that runs PowerShell.</span></span> <span data-ttu-id="4726f-104">**ComputerName**パラメーターを受け取らないコマンドを実行するには、ws-management を使用して、指定したコンピューターに接続し、そのコンピューターでコマンドを実行する実行空間を構成します。</span><span class="sxs-lookup"><span data-stu-id="4726f-104">To run commands that don't take a **ComputerName** parameter, you can use WS-Management to configure a runspace that connects to a specified computer, and run commands on that computer.</span></span>
 
-## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a><span data-ttu-id="abaa5-105">WSManConnection を使用してリモートの実行空間を作成する</span><span class="sxs-lookup"><span data-stu-id="abaa5-105">Using a WSManConnection to create a remote runspace</span></span>
+## <a name="using-a-wsmanconnection-to-create-a-remote-runspace"></a><span data-ttu-id="4726f-105">WSManConnection を使用してリモートの実行空間を作成する</span><span class="sxs-lookup"><span data-stu-id="4726f-105">Using a WSManConnection to create a remote runspace</span></span>
 
- <span data-ttu-id="abaa5-106">リモートコンピューターに接続する実行空間を作成するには、 [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="abaa5-106">To create a runspace that connects to a remote computer, you create a [System.Management.Automation.Runspaces.WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span> <span data-ttu-id="abaa5-107">接続のターゲットエンドポイントは、オブジェクトの[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)プロパティを設定することによって指定してください。</span><span class="sxs-lookup"><span data-stu-id="abaa5-107">You specify the target endpoint for the connection by setting the [System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) property of the object.</span></span> <span data-ttu-id="abaa5-108">次に、 [RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)メソッドを呼び出して、実行空間を作成します。このためには、 [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを `connectionInfo` パラメーターとして指定しています。</span><span class="sxs-lookup"><span data-stu-id="abaa5-108">You then create a runspace by calling the [System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) method, specifying the [System.Management.Automation.Runspaces.WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object as the `connectionInfo` parameter.</span></span>
+ <span data-ttu-id="4726f-106">リモートコンピューターに接続する実行空間を作成するには、 [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="4726f-106">To create a runspace that connects to a remote computer, you create a [System.Management.Automation.Runspaces.WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span> <span data-ttu-id="4726f-107">接続のターゲットエンドポイントは、オブジェクトの[WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri)プロパティを設定することによって指定してください。</span><span class="sxs-lookup"><span data-stu-id="4726f-107">You specify the target endpoint for the connection by setting the [System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ConnectionUri) property of the object.</span></span> <span data-ttu-id="4726f-108">次に、 [RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace)メソッドを呼び出して、 [WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトをパラメーターとして指定して、実行空間を作成してから、このメソッドを呼び出します。 `connectionInfo`</span><span class="sxs-lookup"><span data-stu-id="4726f-108">You then create a runspace by calling the [System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory.CreateRunspace) method, specifying the [System.Management.Automation.Runspaces.WSManConnectionInfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object as the `connectionInfo` parameter.</span></span>
 
- <span data-ttu-id="abaa5-109">次の例は、リモートコンピューターに接続する実行空間を作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="abaa5-109">The following example shows how to create a runspace that connects to a remote computer.</span></span> <span data-ttu-id="abaa5-110">この例では、リモートコンピューターの実際の URI のプレースホルダーとして `RemoteComputerUri` が使用されています。</span><span class="sxs-lookup"><span data-stu-id="abaa5-110">In the example, `RemoteComputerUri` is used as a placeholder for the actual URI of a remote computer.</span></span>
+ <span data-ttu-id="4726f-109">次の例は、リモートコンピューターに接続する実行空間を作成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="4726f-109">The following example shows how to create a runspace that connects to a remote computer.</span></span> <span data-ttu-id="4726f-110">この例で `RemoteComputerUri` は、はリモートコンピューターの実際の URI のプレースホルダーとして使用されます。</span><span class="sxs-lookup"><span data-stu-id="4726f-110">In the example, `RemoteComputerUri` is used as a placeholder for the actual URI of a remote computer.</span></span>
 
 ```csharp
 namespace Samples
@@ -48,7 +48,7 @@ namespace Samples
       // Create a WSManConnectionInfo object using the default constructor
       // to connect to the "localHost". The WSManConnectionInfo object can
       // also be used to specify connections to remote computers.
-      Uri RemoteComputerUri = new uri("http://Server01:5985/WSMAN");
+      Uri RemoteComputerUri = new Uri("http://Server01:5985/WSMAN");
       WSManConnectionInfo connectionInfo = new WSManConnectionInfo(RemoteComputerUri);
 
       // Set the OperationTimeout property and OpenTimeout properties.
