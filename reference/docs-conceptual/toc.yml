@@ -755,22 +755,20 @@
               href: community/contributing/managing-pull-requests.md
     - name: デジタル アート
       href: community/digital-art.md
-- name: PowerShell 開発者
+- name: スクリプト作成と開発
   items:
-    - name: クロスプラットフォーム開発
+    - name: Visual Studio Code
       items:
-        - name: Visual Studio Code
-          items:
-            - name: Visual Studio Code の使用
-              href: components/vscode/using-vscode.md
-            - name: Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法
-              href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
-            - name: Visual Studio Code を使用したリモート編集およびデバッグ
-              href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
-            - name: VS Code と PowerShell でのファイルのエンコードの概要
-              href: components/vscode/understanding-file-encoding.md
-        - name: 移植可能なモジュールの作成
-          href: learn/writing-portable-modules.md
+        - name: Visual Studio Code の使用
+          href: components/vscode/using-vscode.md
+        - name: Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法
+          href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
+        - name: Visual Studio Code を使用したリモート編集およびデバッグ
+          href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+        - name: VS Code と PowerShell でのファイルのエンコードの概要
+          href: components/vscode/understanding-file-encoding.md
+    - name: 移植可能なモジュールの作成
+      href: learn/writing-portable-modules.md
     - name: レガシ PowerShell SDK
       items:
         - name: 概要
