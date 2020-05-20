@@ -120,8 +120,8 @@ Windows PowerShell はグラフィカル ユーザー インターフェイス�
   - [Show-ControlPanelItem](/powershell/module/Microsoft.PowerShell.Management/Show-ControlPanelItem)
   - [Show-EventLog](/powershell/module/Microsoft.PowerShell.Management/Show-EventLog)
 - パラメーター
-  - **Get-Help** コマンドレットの [ShowWindow](/powershell/module/Microsoft.PowerShell.Core/Get-Help) パラメーター。
-  - **Register-PSSessionConfiguration** と [Set-PSSessionConfiguration](/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) コマンドレットの [ShowSecurityDescriptorUI](/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration) パラメーター。
+  - [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) コマンドレットの **ShowWindow** パラメーター。
+  - [Register-PSSessionConfiguration](/powershell/module/Microsoft.PowerShell.Core/Register-PSSessionConfiguration) と [Set-PSSessionConfiguration](/powershell/module/Microsoft.PowerShell.Core/Set-PSSessionConfiguration) コマンドレットの **ShowSecurityDescriptorUI** パラメーター。
 
 ## <a name="windows-powershell-engine-requirements"></a>Windows PowerShell エンジンの要件
 

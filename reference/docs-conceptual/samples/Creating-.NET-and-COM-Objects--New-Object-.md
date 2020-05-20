@@ -120,7 +120,7 @@ PS> $RemoteAppLog
 ## <a name="creating-com-objects-with-new-object"></a>New-Object による COM オブジェクトの作成
 コンポーネント オブジェクト モデル (COM) のコンポーネントを操作するには、**New-Object** を使用します。 一口にコンポーネントと言っても、その種類は Windows Script Host (WSH) に含まれている各種ライブラリから、Internet Explorer のようなほとんどのシステムにインストールされている ActiveX アプリケーションまで多岐にわたります。
 
-**New-Object** では、.NET Framework ランタイム呼び出し可能ラッパーを使って COM オブジェクトを作成します。したがって、COM オブジェクトを呼び出す際には .NET Framework の場合と同じ制限が適用されます。 COM オブジェクトを作成するには、使用する COM クラスのプログラム識別子 (**ProgId**) を *ComObject* パラメーターで指定する必要があります。 COM の使用上の制限や、システム上で利用できる ProgId の調査方法については、このマニュアルの範囲を超えているので詳しく説明しません。しかし、WSH などの環境に存在する、一般によく知られているようなオブジェクトについては、Windows PowerShell 内で使用できます。
+**New-Object** では、.NET Framework ランタイム呼び出し可能ラッパーを使って COM オブジェクトを作成します。したがって、COM オブジェクトを呼び出す際には .NET Framework の場合と同じ制限が適用されます。 COM オブジェクトを作成するには、使用する COM クラスのプログラム識別子 (*ProgId*) を **ComObject** パラメーターで指定する必要があります。 COM の使用上の制限や、システム上で利用できる ProgId の調査方法については、このマニュアルの範囲を超えているので詳しく説明しません。しかし、WSH などの環境に存在する、一般によく知られているようなオブジェクトについては、Windows PowerShell 内で使用できます。
 
 WSH オブジェクトは、**WScript.Shell**、**WScript.Network**、**Scripting.Dictionary**、**Scripting.FileSystemObject** などを ProgId として指定すれば作成できます。 これらのオブジェクトを作成するコマンドの例を次に示します。
 

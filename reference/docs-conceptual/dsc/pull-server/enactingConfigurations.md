@@ -24,7 +24,7 @@ PowerShell Desired State Configuration (DSC) 構成を適用するには、プ�
 構成を作成し、コンパイルした後、プッシュ モードで適用するには、[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを呼び出し、コマンドレットの -Path パラメーターを構成 MOF が配置されているパスに設定します。 たとえば、構成 MOF が `C:\DSC\Configurations\localhost.mof` にある場合は、`Start-DscConfiguration -Path 'C:\DSC\Configurations'` というコマンドを使用してローカル コンピューターに適用します。
 
 > [!NOTE]
-> 既定では、DSC はバックグラウンド ジョブとして構成を実行します。 構成を対話的に実行するには、[Wait](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) パラメーターを指定して **Start-DscConfiguration** を呼び出します。
+> 既定では、DSC はバックグラウンド ジョブとして構成を実行します。 構成を対話的に実行するには、**Wait** パラメーターを指定して [Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) を呼び出します。
 
 ## <a name="pull-mode"></a>プル モード
 

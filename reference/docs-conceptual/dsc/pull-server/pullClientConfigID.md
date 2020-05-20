@@ -40,7 +40,7 @@ Set-DSCLocalConfigurationManager –ComputerName localhost –Path .\PullClientC
 
 以下の例は、LCM の **ConfigurationID** プロパティをこの目的で以前に作成した **Guid** に設定します。 **ConfigurationID** は、LCM がプル サーバーで適切な構成を検索する場合に使用します。 プル サーバー上の構成 MOF ファイルは、`ConfigurationID.mof` という名前にする必要があります。ここで、*ConfigurationID* はターゲット ノードの LCM の **ConfigurationID** プロパティの値です。 詳細については、[プル サーバーへの構成の発行 (v4/v5)](publishConfigs.md)に関するページを参照してください。
 
-以下の例を使用するか、または **New-Guid** コマンドレットを使用して、ランダムな [Guid](/powershell/module/microsoft.powershell.utility/new-guid) を作成できます。
+以下の例を使用するか、または [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) コマンドレットを使用して、ランダムな **Guid** を作成できます。
 
 ```powershell
 [System.Guid]::NewGuid()

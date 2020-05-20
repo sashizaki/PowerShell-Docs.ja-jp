@@ -18,7 +18,7 @@ Windows PowerShell® Integrated Scripting Environment (ISE) を使用すると�
 
 ## <a name="menu-bar"></a>メニュー バー
 
-メニュー バーには、 **[ファイル]** 、 **[編集]** 、 **[表示]** 、 **[ツール]** 、 **[デバッグ]** 、 **[アドオン]** 、 **[ヘルプ]** の各メニューがあります。 メニューのボタンを使用すると、スクリプトの記述と実行、および Windows PowerShell ISE でのコマンドの実行に関連したタスクを実行できます。 さらに、[ISE オブジェクト モデルの階層](object-model/The-ISEAddOnTool-Object.md)を使用するスクリプトを実行して、[アドオン ツール](object-model/The-ISE-Object-Model-Hierarchy.md)をメニュー バーに配置することもできます。
+メニュー バーには、 **[ファイル]** 、 **[編集]** 、 **[表示]** 、 **[ツール]** 、 **[デバッグ]** 、 **[アドオン]** 、 **[ヘルプ]** の各メニューがあります。 メニューのボタンを使用すると、スクリプトの記述と実行、および Windows PowerShell ISE でのコマンドの実行に関連したタスクを実行できます。 さらに、[ISE オブジェクト モデルの階層](object-model/The-ISE-Object-Model-Hierarchy.md)を使用するスクリプトを実行して、[アドオン ツール](object-model/The-ISEAddOnTool-Object.md)をメニュー バーに配置することもできます。
 
 > [!NOTE]
 > Windows PowerShell ISE 2.0 には、 **[ツール]** と **[アドオン]** メニューはありませんでした。

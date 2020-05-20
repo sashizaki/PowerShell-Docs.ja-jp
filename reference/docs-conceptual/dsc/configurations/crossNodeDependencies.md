@@ -66,7 +66,7 @@ WaitForSome [String] #ResourceName
 ## <a name="using-waitforxxxx-resources"></a>WaitForXXXX リソースの使用
 
 各 **WaitForXXXX** リソースは、指定されたノードで指定された数のリソースが完了するのを待機します。
-同じ Configuration の他のリソースは、*DependsOn* キーを使用して **WaitForXXXX** リソースに "**依存する**" ことができます。
+同じ Configuration の他のリソースは、**DependsOn** キーを使用して **WaitForXXXX** リソースに "*依存する*" ことができます。
 
 たとえば、次の構成では、ターゲット ノードは **MyDC** ノード上の **xADDomain** リソースが完了するまで 15 秒間隔で最大 30 回試行しながら待機した後、ドメインに参加できるようになります。
 

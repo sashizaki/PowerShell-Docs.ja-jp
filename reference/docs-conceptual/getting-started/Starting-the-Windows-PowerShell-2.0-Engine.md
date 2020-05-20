@@ -37,7 +37,7 @@ PowerShell.exe -Version 2
 
 これは、通常システム管理者によって実行される高度なタスクです。
 
-次の手順では、**Register-PSSessionConfiguration** コマンドレットの [PSVersion](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) パラメーターを使用して、Windows PowerShell 2.0 エンジンを使用するセッション構成を作成します。 **New-PSSessionConfigurationFile** コマンドレットの [PowerShellVersion](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) パラメーターを使用して、Windows PowerShell 2.0 エンジンを読み込むセッションのセッション構成ファイルを作成することも、**Set-PSSessionConfiguration** パラメーターの [PSVersion](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) パラメーターを使用して、Windows PowerShell 2.0 エンジンを使用するようにセッション構成を変更することもできます。
+次の手順では、[Register-PSSessionConfiguration](https://technet.microsoft.com/library/e9152ae2-bd6d-4056-9bc7-dc1893aa29ea) コマンドレットの **PSVersion** パラメーターを使用して、Windows PowerShell 2.0 エンジンを使用するセッション構成を作成します。 [New-PSSessionConfigurationFile](https://technet.microsoft.com/library/5f3e3633-6e90-479c-aea9-ba45a1954866) コマンドレットの **PowerShellVersion** パラメーターを使用して、Windows PowerShell 2.0 エンジンを読み込むセッションのセッション構成ファイルを作成することも、[Set-PSSessionConfiguration](https://technet.microsoft.com/library/b21fbad3-1759-4260-b206-dcb8431cd6ea) パラメーターの **PSVersion** パラメーターを使用して、Windows PowerShell 2.0 エンジンを使用するようにセッション構成を変更することもできます。
 
 セッション構成ファイルの詳細については、「[about_Session_Configuration_Files](https://technet.microsoft.com/library/c7217447-1ebf-477b-a8ef-4dbe9a1473b8)」を参照してください。セットアップとセキュリティを含むセッション構成の詳細については、「[about_Session_Configurations [v4]](https://technet.microsoft.com/library/a2fbe12a-350c-4d04-be50-24102824e3ab)」を参照してください。
 
@@ -51,7 +51,7 @@ PowerShell.exe -Version 2
    Register-PSSessionConfiguration -Name PS2 -PSVersion 2.0
    ```
 
-2. PS2 セッション構成を使用する Server01 コンピューターでセッションを作成するには、リモート セッションを作成するコマンドレット (**New-PSSession** コマンドレットなど) の [ConfigurationName](https://technet.microsoft.com/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) パラメーターを使用します。
+2. PS2 セッション構成を使用する Server01 コンピューターでセッションを作成するには、リモート セッションを作成するコマンドレット ([New-PSSession](https://technet.microsoft.com/library/76f6628c-054c-4eda-ba7a-a6f28daaa26f) コマンドレットなど) の **ConfigurationName** パラメーターを使用します。
 
    セッション構成を使用するセッションを開始すると、Windows PowerShell 2.0 エンジンが自動的にセッションに読み込まれます。
 
@@ -63,7 +63,7 @@ PowerShell.exe -Version 2
 
 ## <a name="how-to-start-a-background-job-with-the-windows-powershell-20-engine"></a>Windows PowerShell 2.0 エンジンを使用してバックグラウンド ジョブを開始する方法
 
-Windows PowerShell 2.0 エンジンを使用してバックグラウンド ジョブを開始するには、**Start-Job** コマンドレットの [PSVersion](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) パラメーターを使用します。
+Windows PowerShell 2.0 エンジンを使用してバックグラウンド ジョブを開始するには、[Start-Job](https://technet.microsoft.com/library/2bc04935-0deb-4ec0-b856-d7290cca6442) コマンドレットの **PSVersion** パラメーターを使用します。
 
 次のコマンドは、Windows PowerShell 2.0 エンジンを使用してバックグラウンド ジョブを開始します。
 

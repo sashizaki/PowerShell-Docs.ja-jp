@@ -61,7 +61,7 @@ PowerShell モジュールのどの種類 (スクリプト モジュール、バ
 - Version
 - 説明
 - Author
-- マニフェストの **PrivateData** セクションの一部として、または **Publish-Module** コマンドレットの [Publish-Module][] パラメーターの、モジュールのライセンス条項への URI。
+- マニフェストの **PrivateData** セクションの一部として、または [Publish-Module][] コマンドレットの **LicenseUri** パラメーターの、モジュールのライセンス条項への URI。
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>正しい形式のモジュール マニフェストはどのように作成できますか。
 
@@ -78,7 +78,7 @@ PowerShell スクリプトのどの種類 (スクリプトまたはワークフ�
 - Version
 - 説明
 - Author
-- スクリプトの **PSScriptInfo** セクションの一部として、または **Publish-Script** コマンドレットの [Publish-Script][] パラメーターの、スクリプトのライセンス条項への URI。
+- スクリプトの **PSScriptInfo** セクションの一部として、または [Publish-Script][] コマンドレットの **LicenseUri** パラメーターの、スクリプトのライセンス条項への URI。
 
 ## <a name="how-do-i-search"></a>どのように検索しますか。
 

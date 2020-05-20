@@ -33,7 +33,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>プロセスを表示する
 
-PowerShell で実行されているコマンドの本体は、**Win32_Process** クラスの [Win32_Process][] プロパティに格納されています。 コマンドがエンコードされたコマンドである場合、**CommandLine** プロパティには文字列 "EncodedCommand" が含まれています。 この情報を使用して、次のプロセスにより、エンコードされたコマンドを難読化解除できます。
+PowerShell で実行されているコマンドの本体は、[Win32_Process][] クラスの **CommandLine** プロパティに格納されています。 コマンドがエンコードされたコマンドである場合、**CommandLine** プロパティには文字列 "EncodedCommand" が含まれています。 この情報を使用して、次のプロセスにより、エンコードされたコマンドを難読化解除できます。
 
 管理者として PowerShell を開始します。 PowerShell を管理者として実行することが重要です。そうしないと、実行中のプロセスのクエリを実行しても結果は返されません。
 

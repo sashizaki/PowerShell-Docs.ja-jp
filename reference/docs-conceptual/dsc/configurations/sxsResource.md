@@ -17,7 +17,7 @@ PowerShell 5.0 では、DSC リソースの異なるバージョンを 1 台の�
 
 ## <a name="installing-separate-resource-versions-side-by-side"></a>リソースの異なるバージョンのサイド バイ サイド インストール
 
-**Install-Module** コマンドレットの **MinimumVersion**、**MaximumVersion**、[RequiredVersion](/powershell/module/PowershellGet/Install-Module) の各パラメーターを使用すると、インストールするモジュールのバージョンを指定できます。 バージョンを指定せずに **Install-Module** を呼び出すと、最新バージョンがインストールされます。
+[Install-Module](/powershell/module/PowershellGet/Install-Module) コマンドレットの **MinimumVersion**、**MaximumVersion**、**RequiredVersion** の各パラメーターを使用すると、インストールするモジュールのバージョンを指定できます。 バージョンを指定せずに **Install-Module** を呼び出すと、最新バージョンがインストールされます。
 
 たとえば、**xFailOverCluster** モジュールのバージョンが複数あり、それぞれに **xCluster** リソースが含まれているとします。 バージョン番号を指定しないで **Install-Module** を呼び出すと、最新バージョンのモジュールがインストールされます。
 
