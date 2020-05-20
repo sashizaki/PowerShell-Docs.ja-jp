@@ -143,7 +143,7 @@ RootModule = 'xVirtualMachine.schema.psm1'
 ```
 
 > [!NOTE]
-> これは、`MyDscResources.psd1` フォルダーにあるすべてのリソースのモジュール マニフェストである `MyDscResources` に追加されます。
+> これは、`MyDscResources` フォルダーにあるすべてのリソースのモジュール マニフェストである `MyDscResources.psd1` に追加されます。
 
 完了すると、フォルダー構造は次のようになります。
 

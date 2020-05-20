@@ -15,7 +15,7 @@ ms.locfileid: "75736847"
 
 ## <a name="listing-all-subkeys-of-a-registry-key"></a>レジストリ キーのすべてのサブキーを一覧表示
 
-`Get-ChildItem` を使用することにより、レジストリ キーの直下にあるすべての項目を表示することができます。 非表示の項目やシステム項目を表示するには、オプションの **Force** パラメーターを追加します。 たとえば、次のコマンドは、`HKCU:` レジストリ ハイブに対応する、PowerShell ドライブ `HKEY_CURRENT_USER` の直下にある項目を表示します。
+`Get-ChildItem` を使用することにより、レジストリ キーの直下にあるすべての項目を表示することができます。 非表示の項目やシステム項目を表示するには、オプションの **Force** パラメーターを追加します。 たとえば、次のコマンドは、`HKEY_CURRENT_USER` レジストリ ハイブに対応する、PowerShell ドライブ `HKCU:` の直下にある項目を表示します。
 
 ```powershell
 Get-ChildItem -Path HKCU:\ | Select-Object Name
@@ -57,7 +57,7 @@ Get-ChildItem -Path Microsoft.PowerShell.Core\Registry::HKCU
 Get-ChildItem HKCU:
 ```
 
-これらのコマンドは、`DIR`Cmd.exe**の** コマンドや UNIX シェルの `ls` を使用したときと同様に、直接含まれている項目のみ一覧表示します。 内包されている項目を表示するには、**Recurse** パラメーターを指定する必要があります。 `HKCU:` 内のすべてのレジストリ キーを一覧表示するには、次のコマンドを使用します。
+これらのコマンドは、**Cmd.exe** の `DIR` コマンドや UNIX シェルの `ls` を使用したときと同様に、直接含まれている項目のみ一覧表示します。 内包されている項目を表示するには、**Recurse** パラメーターを指定する必要があります。 `HKCU:` 内のすべてのレジストリ キーを一覧表示するには、次のコマンドを使用します。
 
 ```powershell
 Get-ChildItem -Path HKCU:\ -Recurse
@@ -72,7 +72,7 @@ Get-ChildItem -Path HKCU:\Software -Recurse |
 
 ## <a name="copying-keys"></a>キーのコピー
 
-コピーは `Copy-Item` を使用して行われます。 次の例では、`CurrentVersion` の `HKLM:\SOFTWARE\Microsoft\Windows\` サブキーとそのすべてのプロパティを、`HKCU:\` にコピーします。
+コピーは `Copy-Item` を使用して行われます。 次の例では、`HKLM:\SOFTWARE\Microsoft\Windows\` の `CurrentVersion` サブキーとそのすべてのプロパティを、`HKCU:\` にコピーします。
 
 ```powershell
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination HKCU:

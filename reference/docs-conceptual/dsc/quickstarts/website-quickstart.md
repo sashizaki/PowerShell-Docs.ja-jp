@@ -37,7 +37,7 @@ DSC の概要としくみついては、「[意思決定者向け Desired State 
 </body>
 ```
 
-これを先ほど作成した `index.htm` フォルダに `test` というファイル名でこのファイルを保存します。
+これを先ほど作成した `test` フォルダに `index.htm` というファイル名でこのファイルを保存します。
 
 ## <a name="write-the-configuration"></a>構成を記述する
 

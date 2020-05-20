@@ -51,7 +51,7 @@ CMS 暗号化標準では、公開キー暗号化が実装されます。公開�
 - [Protect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/Protect-CmsMessage)
 - [Unprotect-CmsMessage](/powershell/module/Microsoft.PowerShell.Security/unprotect-CmsMessage)
 
-証明書が PowerShell でデータ暗号化証明書として認識されるには、'Code Signing' または 'Encrypted Mail' のような一意のキー使用法識別子 (EKU) が必要です。 証明書プロバイダーでドキュメントの暗号化証明書を表示するには、**の**DocumentEncryptionCert`Get-ChildItem` 動的パラメーターを使用します。
+証明書が PowerShell でデータ暗号化証明書として認識されるには、'Code Signing' または 'Encrypted Mail' のような一意のキー使用法識別子 (EKU) が必要です。 証明書プロバイダーでドキュメントの暗号化証明書を表示するには、`Get-ChildItem` の **DocumentEncryptionCert** 動的パラメーターを使用します。
 
 ```powershell
 Get-ChildItem Cert:\CurrentUser -DocumentEncryptionCert -Recurse

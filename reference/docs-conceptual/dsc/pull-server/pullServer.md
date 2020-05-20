@@ -163,7 +163,7 @@ Web プル サーバーをセットアップする最も簡単な方法は、**x
 
 #### <a name="registration-key"></a>登録キー
 
-サーバーにクライアント ノードを登録して、構成 ID の代わりに構成名を使用できるように、上の構成で作成された登録キーは、`RegistrationKeys.txt` にある `C:\Program Files\WindowsPowerShell\DscService` という名前のファイルに保存されます。 登録キーは、クライアントがプル サーバーに初期登録を行うときに共有シークレットとして機能します。 登録が正常に完了すると、クライアントは、プル サーバーに一意に認証されるために使う自己署名証明書を生成します。 この証明書の拇印がローカルに保存され、プル サーバーの URL に関連付けられます。
+サーバーにクライアント ノードを登録して、構成 ID の代わりに構成名を使用できるように、上の構成で作成された登録キーは、`C:\Program Files\WindowsPowerShell\DscService` にある `RegistrationKeys.txt` という名前のファイルに保存されます。 登録キーは、クライアントがプル サーバーに初期登録を行うときに共有シークレットとして機能します。 登録が正常に完了すると、クライアントは、プル サーバーに一意に認証されるために使う自己署名証明書を生成します。 この証明書の拇印がローカルに保存され、プル サーバーの URL に関連付けられます。
 
 > [!NOTE]
 > 登録キーは、PowerShell 4.0 ではサポートされていません。
@@ -228,7 +228,7 @@ Sample_MetaConfigurationToRegisterWithLessSecurePullServer -RegistrationKey $Reg
 各リソース モジュールは、圧縮し、`{Module Name}_{Module Version}.zip` というパターンで名前を付ける必要があります。
 
 たとえば、モジュール名が **xWebAdminstration** で、バージョンが 3.1.2.0 のモジュールでは、`xWebAdministration_3.1.2.0.zip` という名前になります。 各バージョンのモジュールを 1 つの zip ファイルに含める必要があります。
-各 zip ファイルには 1 つのバージョンのリソースのみが含まれるので、WMF 5.0 で追加された、単一のディレクトリに複数のモジュール バージョンを入れるモジュール形式はサポートされていません。 このため、プル サーバーで使うための DSC リソース モジュールをパッケージ化する前に、ディレクトリ構造に少しの変更が必要です。 WMF 5.0 の DSC リソースを含むモジュールの既定の形式は、`{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\` です。 プル サーバー用にパッケージ化する前に、パスが **になるように**{Module version}`{Module Folder}\DscResources\{DSC Resource Folder}\` フォルダーを削除します。 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを **ModulePath** フォルダーに置きます。
+各 zip ファイルには 1 つのバージョンのリソースのみが含まれるので、WMF 5.0 で追加された、単一のディレクトリに複数のモジュール バージョンを入れるモジュール形式はサポートされていません。 このため、プル サーバーで使うための DSC リソース モジュールをパッケージ化する前に、ディレクトリ構造に少しの変更が必要です。 WMF 5.0 の DSC リソースを含むモジュールの既定の形式は、`{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\` です。 プル サーバー用にパッケージ化する前に、パスが `{Module Folder}\DscResources\{DSC Resource Folder}\` になるように **{Module version}** フォルダーを削除します。 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを **ModulePath** フォルダーに置きます。
 
 新しく追加したモジュールのチェックサム ファイルを作成するには、`New-DscChecksum {module zip file}` を使用します。
 

@@ -28,7 +28,7 @@ ms.locfileid: "71954609"
 
   DSC を使用すると、ソフトウェアのインストールと初回起動時のコンピューターの構成を自動化できます。
   初回起動時のプロセスで実行されるように、起動可能なメディア (VHD など) に構成 MOF ドキュメントまたはメタ構成のいずれかを挿入して、この操作を行います。
-  この動作は、[ の ](DSCAutomationHostEnabled.md)DSCAutomationHostEnabled レジストリ キー`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` によって指定されます。
+  この動作は、`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System` の [DSCAutomationHostEnabled レジストリ キー](DSCAutomationHostEnabled.md) によって指定されます。
   このキーの既定値は 2 です。これは、初回起動時に DSC を実行することを許可します。
 
   初回起動時に DSC を実行しない場合は、[DSCAutomationHostEnabled レジストリ キー](DSCAutomationHostEnabled.md)を 0 に設定します。
@@ -83,8 +83,8 @@ Configuration SampleIISInstall
    SampleIISInstall
    ```
 
-5. この操作を行うと、`localhost.mof` という名前の新しいフォルダーに、`SampleIISInstall` ファイルが作成されます。
-   `Pending.mof`Move-Item[ コマンドレットを使用して、](/powershell/module/microsoft.powershell.management/move-item) に名前を変更し、VHD の適切な場所にそのファイルを移動します。 次に例を示します。
+5. この操作を行うと、`SampleIISInstall` という名前の新しいフォルダーに、`localhost.mof` ファイルが作成されます。
+   [Move-Item](/powershell/module/microsoft.powershell.management/move-item) コマンドレットを使用して、`Pending.mof` に名前を変更し、VHD の適切な場所にそのファイルを移動します。 次に例を示します。
 
    ```powershell
        Move-Item -Path C:\DSCTest\SampleIISInstall\localhost.mof -Destination E:\Windows\System32\Configuration\Pending.mof
@@ -153,8 +153,8 @@ configuration PullClientBootstrap
    PullClientBootstrap
    ```
 
-6. この操作を行うと、`localhost.meta.mof` という名前の新しいフォルダーに、`PullClientBootstrap` ファイルが作成されます。
-   `MetaConfig.mof`Move-Item[ コマンドレットを使用して、](/powershell/module/microsoft.powershell.management/move-item) に名前を変更し、VHD の適切な場所にそのファイルを移動します。
+6. この操作を行うと、`PullClientBootstrap` という名前の新しいフォルダーに、`localhost.meta.mof` ファイルが作成されます。
+   [Move-Item](/powershell/module/microsoft.powershell.management/move-item) コマンドレットを使用して、`MetaConfig.mof` に名前を変更し、VHD の適切な場所にそのファイルを移動します。
 
    ```powershell
    Move-Item -Path C:\DSCTest\PullClientBootstrap\localhost.meta.mof -Destination E:\Windows\System32\Configuration\MetaConfig.mof
@@ -181,7 +181,7 @@ configuration PullClientBootstrap
    Mount-VHD -Path C:\users\public\documents\vhd\Srv16.vhd
    ```
 
-2. `HKLM\Software` を呼び出して、VHD からレジストリの `reg load` サブキーを読み込みます。
+2. `reg load` を呼び出して、VHD からレジストリの `HKLM\Software` サブキーを読み込みます。
 
    ```powershell
    reg load HKLM\Vhd E:\Windows\System32\Config\Software`

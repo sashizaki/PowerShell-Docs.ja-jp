@@ -81,7 +81,7 @@ PSComputerName        :
 
 ## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a>スクリプトが実行されない: DSC ログを使用したスクリプト エラーの診断
 
-すべての Windows ソフトウェアと同じく、DSC は[イベント ビューアー](/windows/desktop/EventLog/about-event-logging)から参照可能な[ログ](https://support.microsoft.com/hub/4338813/windows-help)にエラーとイベントを記録します。
+すべての Windows ソフトウェアと同じく、DSC は[イベント ビューアー](https://support.microsoft.com/hub/4338813/windows-help)から参照可能な[ログ](/windows/desktop/EventLog/about-event-logging)にエラーとイベントを記録します。
 これらのログを調べることは、特定の操作が失敗した理由や、今後エラーを防止する方法を理解するために役立ちます。 構成スクリプトの記述は複雑になることがあります。そのため、作成しながらエラーをより簡単に追跡できるように、DSC ログ リソースを使用して DSC 分析イベント ログで構成の進行状況を追跡してください。
 
 ## <a name="where-are-dsc-event-logs"></a>DSC イベント ログの場所
@@ -192,7 +192,7 @@ TimeCreated                     Id LevelDisplayName Message
 12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
 ```
 
-`$SeparateDscOperations`Where-Object[ を使用して変数 ](/powershell/module/microsoft.powershell.core/where-object) 内のデータを抽出できます。 次に、DSC のトラブルシューティングに役立つデータを抽出する 5 つのシナリオを示します。
+[Where-Object](/powershell/module/microsoft.powershell.core/where-object) を使用して変数 `$SeparateDscOperations` 内のデータを抽出できます。 次に、DSC のトラブルシューティングに役立つデータを抽出する 5 つのシナリオを示します。
 
 ### <a name="1-operations-failures"></a>1: 操作エラー
 
@@ -416,7 +416,7 @@ TimeCreated                     Id LevelDisplayName Message
 
 ### <a name="getting-events-for-a-remote-computer"></a>リモート コンピューターのイベントの取得
 
-`ComputerName` コマンドレットの `Trace-xDscOperation` パラメーターを使用して、リモート コンピューターのイベントの詳細を取得します。 これを行う前に、ファイアウォール ルールを作成してリモート コンピューターでのリモート管理を許可する必要があります。
+`Trace-xDscOperation` コマンドレットの `ComputerName` パラメーターを使用して、リモート コンピューターのイベントの詳細を取得します。 これを行う前に、ファイアウォール ルールを作成してリモート コンピューターでのリモート管理を許可する必要があります。
 
 ```powershell
 New-NetFirewallRule -Name "Service RemoteAdmin" -DisplayName "Remote" -Action Allow

@@ -121,7 +121,7 @@ ModuleVersion = "1.0";
 };
 ```
 
-適用すると、[ローカル構成マネージャー](../managing-nodes/metaConfig.md) (LCM) によって ".mof" ファイルから値 "Spooler" が読み取られ、それが`-Name`サービス**リソースの "MyService" インスタンス用の**Get **、** Test **、および** Set**メソッドの** パラメーターに渡されます。
+適用すると、[ローカル構成マネージャー](../managing-nodes/metaConfig.md) (LCM) によって ".mof" ファイルから値 "Spooler" が読み取られ、それが**サービス** リソースの "MyService" インスタンス用の **Get**、**Test**、および **Set** メソッドの `-Name` パラメーターに渡されます。
 
 ## <a name="get"></a>取得
 

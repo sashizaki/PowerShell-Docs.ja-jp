@@ -11,7 +11,7 @@ ms.locfileid: "75736174"
 ---
 # <a name="the-isemenuitemcollection-object"></a>ISEMenuItemCollection オブジェクト
 
-**ISEMenuItemCollection** オブジェクトは、**ISEMenuItem** オブジェクトのコレクションです。 これは **Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection** クラスのインスタンスです。 例としては、Windows PowerShell® Integrated Scripting Environment (ISE) の `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus`[アドオン]**メニューをカスタマイズするために使用される** オブジェクトです。
+**ISEMenuItemCollection** オブジェクトは、**ISEMenuItem** オブジェクトのコレクションです。 これは **Microsoft.PowerShell.Host.ISE.ISEMenuItemCollection** クラスのインスタンスです。 例としては、Windows PowerShell® Integrated Scripting Environment (ISE) の **[アドオン]** メニューをカスタマイズするために使用される `$psISE.CurrentPowerShellTab.AddOnsMenu.Submenus` オブジェクトです。
 
 ## <a name="method"></a>方法
 

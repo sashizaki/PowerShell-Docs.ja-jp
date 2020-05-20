@@ -117,7 +117,7 @@ CimSystemProperties   : Microsoft.Management.Infrastructure.CimSystemProperties
 ...
 ```
 
-**の**Property`Get-CimInstance` パラメーターによって制限されるのは、WMI クラスのインスタンスから返されるプロパティです。PowerShell に返されるオブジェクトが制限されるわけではありません。実際、上の例を見ると、余分なデータが返されていることがわかります。 出力結果を減らすためには、`Select-Object` を使用します。
+`Get-CimInstance` の **Property** パラメーターによって制限されるのは、WMI クラスのインスタンスから返されるプロパティです。PowerShell に返されるオブジェクトが制限されるわけではありません。実際、上の例を見ると、余分なデータが返されていることがわかります。 出力結果を減らすためには、`Select-Object` を使用します。
 
 ```powershell
 Get-CimInstance -ClassName Win32_QuickFixEngineering -Property HotFixId | Select-Object -Property HotFixId

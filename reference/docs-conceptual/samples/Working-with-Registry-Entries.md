@@ -85,11 +85,11 @@ ProgramFilesDir     : C:\Program Files
 ...
 ```
 
-パスの展開は、ファイル システム内の場合と同様に機能します。そのため、この場所から **を使って** の `HKLM:\SOFTWARE\Microsoft\Windows\Help`ItemProperty`Get-ItemProperty -Path ..\Help` の一覧を取得できます。
+パスの展開は、ファイル システム内の場合と同様に機能します。そのため、この場所から `Get-ItemProperty -Path ..\Help` を使って `HKLM:\SOFTWARE\Microsoft\Windows\Help` の **ItemProperty** の一覧を取得できます。
 
 ## <a name="getting-a-single-registry-entry"></a>1 つのレジストリ エントリの取得
 
-レジストリ キーの特定のエントリを取得する場合は、いくつかの可能なアプローチのいずれかを使用できます。 この例では、**の**DevicePath`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion` の値を検索します。
+レジストリ キーの特定のエントリを取得する場合は、いくつかの可能なアプローチのいずれかを使用できます。 この例では、`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion` の **DevicePath** の値を検索します。
 
 `Get-ItemProperty` を使用する場合、**Path** パラメーターを使用してキーの名前を指定し、**Name** パラメーターを使用して **DevicePath** のエントリの名前を指定します。
 
@@ -138,9 +138,9 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
 
 ## <a name="setting-a-single-registry-entry"></a>1 つのレジストリ エントリの設定
 
-レジストリ キーの特定のエントリを変更する場合は、いくつかある可能なアプローチのいずれかを使用できます。 この例では、**下の**Path`HKEY_CURRENT_USER\Environment` エントリを変更します。 **Path** エントリでは、実行可能ファイルを検索する場所を指定します。
+レジストリ キーの特定のエントリを変更する場合は、いくつかある可能なアプローチのいずれかを使用できます。 この例では、`HKEY_CURRENT_USER\Environment` 下の **Path** エントリを変更します。 **Path** エントリでは、実行可能ファイルを検索する場所を指定します。
 
-1. **を使って**Path`Get-ItemProperty` エントリの現在の値を取得します。
+1. `Get-ItemProperty` を使って **Path** エントリの現在の値を取得します。
 2. `;` で区切りながら新しい値を追加します。
 3. 指定したキー、エントリ名、およびレジストリ エントリを変更する値と共に `Set-ItemProperty` を使います。
 
@@ -157,7 +157,7 @@ Set-ItemProperty -Path HKCU:\Environment -Name Path -Value $newpath
 at a command prompt.
 
 次の例では、上記の例で追加したパスを削除することで **Path** エントリを変更します。
-`Get-ItemProperty` から返された文字列を解析しなくて済むようにするため、`reg query` を引き続き使って現在の値を取得します。 **Path** エントリに追加された最後のパスを取得するために、**SubString** および **LastIndexOf** メソッドを使います。
+`reg query` から返された文字列を解析しなくて済むようにするため、`Get-ItemProperty` を引き続き使って現在の値を取得します。 **Path** エントリに追加された最後のパスを取得するために、**SubString** および **LastIndexOf** メソッドを使います。
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path

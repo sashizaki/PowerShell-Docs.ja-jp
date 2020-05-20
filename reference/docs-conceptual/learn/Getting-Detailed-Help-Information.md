@@ -54,25 +54,25 @@ or
 help Get-ChildItem
 ```
 
-詳細な情報を表示するには、**コマンドレットの**Detailed`Get-Help` パラメーターを使用します。 たとえば、`Get-ChildItem` コマンドレットに関する詳細情報を表示するには、次のように入力します。
+詳細な情報を表示するには、`Get-Help` コマンドレットの **Detailed** パラメーターを使用します。 たとえば、`Get-ChildItem` コマンドレットに関する詳細情報を表示するには、次のように入力します。
 
 ```powershell
 Get-Help Get-ChildItem -Detailed
 ```
 
-ヘルプ記事のすべての内容を表示するには、**コマンドレットの**Full`Get-Help` パラメーターを使用します。 たとえば、`Get-ChildItem` コマンドレットのヘルプ記事の内容をすべて表示するには、次のように入力します。
+ヘルプ記事のすべての内容を表示するには、`Get-Help` コマンドレットの **Full** パラメーターを使用します。 たとえば、`Get-ChildItem` コマンドレットのヘルプ記事の内容をすべて表示するには、次のように入力します。
 
 ```powershell
 Get-Help Get-ChildItem -Full
 ```
 
-コマンドレットのパラメーターに関する詳しいヘルプを表示するには、**コマンドレットの**Parameter`Get-Help` パラメーターを使用します。 たとえば、`Get-ChildItem` コマンドレットのすべてのパラメーターの詳しいヘルプを表示するには、次のように入力します。
+コマンドレットのパラメーターに関する詳しいヘルプを表示するには、`Get-Help` コマンドレットの **Parameter** パラメーターを使用します。 たとえば、`Get-ChildItem` コマンドレットのすべてのパラメーターの詳しいヘルプを表示するには、次のように入力します。
 
 ```powershell
 Get-Help Get-ChildItem -Parameter *
 ```
 
-ヘルプ記事内の例だけを表示するには、**の**Example`Get-Help` パラメーターを使用します。
+ヘルプ記事内の例だけを表示するには、`Get-Help` の **Example** パラメーターを使用します。
 たとえば、`Get-ChildItem` コマンドレットのヘルプ記事の例だけを表示するには、次のように入力します。
 
 ```powershell
@@ -97,7 +97,7 @@ Get-Help about_*
 Get-Help about_command_syntax
 ```
 
-`Get-Help`Detailed **、** Parameter **、** Examples**などの** のパラメーターは、概念説明のヘルプ記事の表示には効果がありません。
+**Detailed**、**Parameter**、**Examples** などの `Get-Help` のパラメーターは、概念説明のヘルプ記事の表示には効果がありません。
 
 ## <a name="getting-help-about-providers"></a>プロバイダーに関するヘルプの表示
 
@@ -113,7 +113,7 @@ Get-Help registry
 Get-Help -Category provider
 ```
 
-`Get-Help`Detailed **、** Parameter **、** Examples**などの** のパラメーターは、プロバイダー ヘルプ記事の表示には効果がありません。
+**Detailed**、**Parameter**、**Examples** などの `Get-Help` のパラメーターは、プロバイダー ヘルプ記事の表示には効果がありません。
 
 ## <a name="getting-help-about-scripts-and-functions"></a>スクリプトおよび関数に関するヘルプの表示
 
@@ -145,10 +145,10 @@ Get-Help c:\ps-test\TestScript.ps1
 
 オンラインでのヘルプ記事の表示は、ヘルプを表示するための最善の方法の 1 つです。 オンラインの記事は、より簡単に最新のコンテンツに更新して提供できます。
 
-オンライン ヘルプを表示するには、**コマンドレットの**Online`Get-Help` パラメーターを使用します。 プロバイダー ヘルプや概念説明 (About) のヘルプ記事など、PowerShell に付属しているすべてのヘルプ記事は、[PowerShell](/powershell/scripting/powershell-scripting) ドキュメントでオンラインから利用できます。
+オンライン ヘルプを表示するには、`Get-Help` コマンドレットの **Online** パラメーターを使用します。 プロバイダー ヘルプや概念説明 (About) のヘルプ記事など、PowerShell に付属しているすべてのヘルプ記事は、[PowerShell](/powershell/scripting/powershell-scripting) ドキュメントでオンラインから利用できます。
 
 > [!NOTE]
-> 概念説明の記事 (about_ **) やプロバイダー ヘルプの記事では、** Online\* パラメーターを使用できません。
+> 概念説明の記事 (about_\*) やプロバイダー ヘルプの記事では、**Online** パラメーターを使用できません。
 > オンライン ヘルプはオプションであるため、すべてのコマンドレット、関数、またはスクリプトで有効なわけではありません。
 
 たとえば、`Get-ChildItem` コマンドレットのヘルプ記事のオンライン バージョンを表示するには、次のように入力します。

@@ -112,7 +112,7 @@ MyDscConfiguration
 > [!NOTE]
 > 構成を呼び出すには、(他の PowerShell 関数と同様に) 関数がグローバル スコープ内にある必要があります。
 > そのためには、スクリプトで "ドット ソース" を行うか、F5 キーを使用するか、または ISE で **[スクリプトの実行]** をクリックして、構成スクリプトを実行します。
-> スクリプトでドット ソースを行うには、構成を含むスクリプト ファイルの名前が `. .\myConfig.ps1` である場合、`myConfig.ps1` でコマンドを実行します。
+> スクリプトでドット ソースを行うには、構成を含むスクリプト ファイルの名前が `myConfig.ps1` である場合、`. .\myConfig.ps1` でコマンドを実行します。
 
 構成を呼び出すと、結果は次のようになります。
 
@@ -165,7 +165,7 @@ Mode                LastWriteTime         Length Name
 **Import-DscResource** は、次の 2 つのパラメーターをサポートしています。
 
 - **ModuleName** は、**Import-DscResource** を使用する場合に推奨される方法です。 これは、インポートするリソースを含むモジュールの名前 (およびモジュール名の文字列配列) を受け取ります。
-- **Name** は、インポートするリソースの名前です。 これは、[Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) によって "Name" として返されるフレンドリ名ではありませんが、リソース スキーマを定義するときに使用されるクラス名です (**Get-DscResource** によって [ResourceType](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) として返されます)。
+- **Name** は、インポートするリソースの名前です。 これは、[Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) によって "Name" として返されるフレンドリ名ではありませんが、リソース スキーマを定義するときに使用されるクラス名です ([Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) によって **ResourceType** として返されます)。
 
 `Import-DSCResource` の使用について詳しくは、「[Import-DSCResource の使用](import-dscresource.md)」をご覧ください
 

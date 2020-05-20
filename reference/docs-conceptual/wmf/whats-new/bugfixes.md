@@ -18,7 +18,7 @@ WMF 5.1 では、次の重要なバグが修正されました。
 
 ### <a name="module-auto-discovery-fully-honors-psmodulepath"></a>モジュールの自動検出で PSModulePath が完全に受け入れられる
 
-モジュールの自動検出 (コマンド呼び出し時に Import-Module を明示的に指定しないモジュールの自動的な読み込み) が、WMF 3 で導入されました。 導入時、PowerShell は `$PSHome\Modules` を使用する前に `$env:PSModulePath` のコマンドを確認していました。
+モジュールの自動検出 (コマンド呼び出し時に Import-Module を明示的に指定しないモジュールの自動的な読み込み) が、WMF 3 で導入されました。 導入時、PowerShell は `$env:PSModulePath` を使用する前に `$PSHome\Modules` のコマンドを確認していました。
 
 WMF 5.1 では、この動作が `$env:PSModulePath` を完全に受け入れるように変更されています。 これにより、PowerShell によって提供されるコマンド (`Get-ChildItem` など) を定義するユーザー作成のモジュールを、自動的に読み込み、組み込みコマンドを正しくオーバーライドできます。
 

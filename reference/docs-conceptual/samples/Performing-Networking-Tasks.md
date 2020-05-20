@@ -64,7 +64,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
 
 ネットワーク アダプター構成オブジェクトに対して既定で表示される情報は、確認できる情報のごく一部のみです。 詳細な調査とトラブルシューティングを行う場合は、`Select-Object` または書式設定用コマンドレット (`Format-List` など) を使用して、表示するプロパティを指定します。
 
-最新の TCP/IP ネットワークでは、IPX や WINS のプロパティには関心がないことが考えられます。 **の**ExcludeProperty`Select-Object` パラメーターを使用して、名前が "WINS" または "IPX" で始まるプロパティを非表示にすることができます。
+最新の TCP/IP ネットワークでは、IPX や WINS のプロパティには関心がないことが考えられます。 `Select-Object` の **ExcludeProperty** パラメーターを使用して、名前が "WINS" または "IPX" で始まるプロパティを非表示にすることができます。
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
@@ -81,7 +81,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
 Get-CimInstance -Class Win32_PingStatus -Filter "Address='127.0.0.1'"
 ```
 
-次のコマンドでは、概要を把握しやすくするため、Address、ResponseTime、StatusCode の各プロパティだけを表示しています。 **の**Autosize`Format-Table` パラメーターを使用すると、PowerShell で適切に表示されるように表の列のサイズが変更されます。
+次のコマンドでは、概要を把握しやすくするため、Address、ResponseTime、StatusCode の各プロパティだけを表示しています。 `Format-Table` の **Autosize** パラメーターを使用すると、PowerShell で適切に表示されるように表の列のサイズが変更されます。
 
 ```powershell
 Get-CimInstance -Class Win32_PingStatus -Filter "Address='127.0.0.1'" |
@@ -142,7 +142,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
 
 ここでは、フィルター処理ステートメントとして、`IPEnabled=$true` が必要です。その理由は、TCP/IP だけを使用したネットワークでも、コンピューター上のネットワーク アダプター構成のいくつかが、実際には TCP/IP アダプターではないためです。これらは、すべてのアダプターについて RAS、PPTP、QoS などのサービスをサポートする汎用的なソフトウェア要素であるため、自己のアドレスを持ちません。
 
-`Where-Object` フィルターを使う代わりに、`Get-CimInstance` コマンドレットを使用して、コマンドをフィルター処理することもできます。
+`Get-CimInstance` フィルターを使う代わりに、`Where-Object` コマンドレットを使用して、コマンドをフィルター処理することもできます。
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration |

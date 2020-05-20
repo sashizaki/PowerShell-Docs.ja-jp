@@ -31,7 +31,7 @@ Permission    : CONTOSO\JEA_DNS_ADMINS AccessAllowed, CONTOSO\JEA_DNS_OPERATORS 
                 CONTOSO\JEA_DNS_AUDITORS AccessAllowed
 ```
 
-エンドポイントに対して有効な権限は **Permission** プロパティで確認できます。 これらのユーザーには、JEA エンドポイントに接続する権限が与えられています。 ただし、アクセスできるロールとコマンドは、エンドポイントの登録に使用された**セッション構成ファイル**の [RoleDefinitions](session-configurations.md) プロパティによって決まります。 **RoleDefinitions** プロパティを展開して、登録されている JEA エンドポイントのロール マッピングを評価します。
+エンドポイントに対して有効な権限は **Permission** プロパティで確認できます。 これらのユーザーには、JEA エンドポイントに接続する権限が与えられています。 ただし、アクセスできるロールとコマンドは、エンドポイントの登録に使用された[セッション構成ファイル](session-configurations.md)の **RoleDefinitions** プロパティによって決まります。 **RoleDefinitions** プロパティを展開して、登録されている JEA エンドポイントのロール マッピングを評価します。
 
 ```powershell
 # Get the desired session configuration
@@ -46,7 +46,7 @@ $jea.RoleDefinitions.GetEnumerator() | Select-Object Name, @{
 
 ## <a name="find-available-role-capabilities-on-the-machine"></a>コンピューターで利用できるロール機能を見つける
 
-JEA では、PowerShell モジュール内の `.psrc`RoleCapabilities**フォルダーに格納されている** ファイルからロール機能を取得します。 次の関数は、コンピューターで使用可能なすべてのロール機能を検索します。
+JEA では、PowerShell モジュール内の **RoleCapabilities** フォルダーに格納されている `.psrc` ファイルからロール機能を取得します。 次の関数は、コンピューターで使用可能なすべてのロール機能を検索します。
 
 ```powershell
 function Find-LocalRoleCapability {
@@ -131,9 +131,9 @@ PS>CommandInvocation(Get-Service): "Get-Service"
 Running  Dns                DNS Server
 ```
 
-ユーザーが実行するコマンドごとに、**CommandInvocation** 行が書き込まれます。 **ParameterBindings** はコマンドと共に指定された各パラメーターとその値を記録します。 前の例では、**コマンドレットでパラメーター**Name**に値**Dns`Get-Service` が指定されていることを確認できます。
+ユーザーが実行するコマンドごとに、**CommandInvocation** 行が書き込まれます。 **ParameterBindings** はコマンドと共に指定された各パラメーターとその値を記録します。 前の例では、`Get-Service` コマンドレットでパラメーター **Name** に値 **Dns** が指定されていることを確認できます。
 
-各コマンドの出力も **CommandInvocation** をトリガーします (通常は `Out-Default` に)。 **の**InputObject`Out-Default` は、コマンドから返される PowerShell オブジェクトです。 そのオブジェクトの詳細が数行下に出力されています。ユーザーに表示される内容と同様のものが表示されます。
+各コマンドの出力も **CommandInvocation** をトリガーします (通常は `Out-Default` に)。 `Out-Default` の **InputObject** は、コマンドから返される PowerShell オブジェクトです。 そのオブジェクトの詳細が数行下に出力されています。ユーザーに表示される内容と同様のものが表示されます。
 
 ## <a name="see-also"></a>参照
 

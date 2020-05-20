@@ -41,7 +41,7 @@ GenericConfig
 
 ### <a name="configuration-ids-guid"></a>構成 ID (GUID)
 
-`localhost.mof` ファイルの名前を `<GUID>.mof` ファイルに変更する必要があります。 以下の例を使用するか、または **New-Guid** コマンドレットを使用して、ランダムな [Guid](/powershell/module/microsoft.powershell.utility/new-guid) を作成できます。
+`localhost.mof` ファイルの名前を `<GUID>.mof` ファイルに変更する必要があります。 以下の例を使用するか、または [New-Guid](/powershell/module/microsoft.powershell.utility/new-guid) コマンドレットを使用して、ランダムな **Guid** を作成できます。
 
 ```powershell
 [System.Guid]::NewGuid()
@@ -76,7 +76,7 @@ Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
 プル サーバーまたは SMB 共有に格納される各 `.mof` ファイルには、`.checksum` ファイルを関連付ける必要があります。
 このファイルにより、クライアントは、関連付けられている `.mof` ファイルが変更され、もう一度ダウンロードする必要が生じたときに把握することができます。
 
-**チェックサム**は [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) コマンドレットで作成できます。 また、`New-DSCCheckSum` パラメーターを使用すると、ファイルのディレクトリに対して `-Path` を実行することもできます。
+**チェックサム**は [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) コマンドレットで作成できます。 また、`-Path` パラメーターを使用すると、ファイルのディレクトリに対して `New-DSCCheckSum` を実行することもできます。
 チェックサムが既に存在する場合は、`-Force` パラメーターを使用して強制的に再作成できます。 次の例では、前のセクションの `.mof` ファイルが含まれているディレクトリを指定し、`-Force` パラメーターを使用しています。
 
 ```powershell

@@ -14,7 +14,7 @@ ms.locfileid: "75736898"
 PowerShell のフロー制御キーワードを使って、[Configuration](configurations.md) をより動的にすることができます。 この記事では、条件ステートメントとループを使って `Configuration` をより動的にする方法を説明します。 条件ステートメントとループを[パラメーター](add-parameters-to-a-configuration.md)および[構成データ](configData.md)と組み合わせることで、`Configuration` をコンパイルするときの柔軟性と制御が増します。
 
 関数またはスクリプト ブロックと同じように、`Configuration` 内で任意の PowerShell 言語の機能を使用できます。
-使用するステートメントは、`Configuration` ファイルをコンパイルするために `.mof` を呼び出すときにのみ評価されます。 次の例では、シナリオを使って概念を説明します。 条件ステートメントとループは、パラメーターや構成データと共に使われることがよくあります。
+使用するステートメントは、`.mof` ファイルをコンパイルするために `Configuration` を呼び出すときにのみ評価されます。 次の例では、シナリオを使って概念を説明します。 条件ステートメントとループは、パラメーターや構成データと共に使われることがよくあります。
 
 この例では、**Service** リソース ブロックでコンパイル時にサービスの現在の状態を取得し、現在の状態を保持する `.mof` ファイルを生成します。
 
@@ -38,7 +38,7 @@ Configuration ServiceState
 }
 ```
 
-さらに、**ループを使って、現在のコンピューター上のすべてのサービスに対して**Service`foreach` リソース ブロックを作成できます。
+さらに、`foreach` ループを使って、現在のコンピューター上のすべてのサービスに対して **Service** リソース ブロックを作成できます。
 
 ```powershell
 Configuration ServiceState
@@ -60,7 +60,7 @@ Configuration ServiceState
 }
 ```
 
-また、`Configuration` ステートメントを使用してオンラインになっているコンピューターに対してのみ `if` を作成することもできます。
+また、`if` ステートメントを使用してオンラインになっているコンピューターに対してのみ `Configuration` を作成することもできます。
 
 ```powershell
 Configuration ServiceState

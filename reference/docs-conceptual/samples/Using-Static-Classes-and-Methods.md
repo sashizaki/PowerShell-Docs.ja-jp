@@ -50,7 +50,7 @@ True     False    Environment                              System.Object
 
 **System.Environment** クラスには、現在のプロセス (Windows PowerShell 内で作業している場合は powershell.exe) の作業環境に関する一般情報が格納されます。
 
-「 **\[System.Environment] | Get-Member**」と入力してこのクラスの詳細を表示しようとすると、オブジェクトの種類は、**System.Environment** ではなく、**System.RuntimeType** であると報告されます。
+「**\[System.Environment] | Get-Member**」と入力してこのクラスの詳細を表示しようとすると、オブジェクトの種類は、**System.Environment** ではなく、**System.RuntimeType** であると報告されます。
 
 ```
 PS> [System.Environment] | Get-Member

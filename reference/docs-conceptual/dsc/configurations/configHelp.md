@@ -13,7 +13,7 @@ ms.locfileid: "71954139"
 
 >適用先: Windows PowerShell 5.0
 
-DSC 構成では、コメント ベースのヘルプを使用できます。 ユーザーは、**を指定して**Configuration`-?` を呼び出すか、[Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) コマンドレットを使用することで、ヘルプにアクセスできます。 コメント ベースのヘルプは `Configuration` キーワードのすぐ上に配置します。
+DSC 構成では、コメント ベースのヘルプを使用できます。 ユーザーは、`-?` を指定して **Configuration** を呼び出すか、[Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) コマンドレットを使用することで、ヘルプにアクセスできます。 コメント ベースのヘルプは `Configuration` キーワードのすぐ上に配置します。
 パラメーターのヘルプは、コメント ブロックのインラインか、パラメーター宣言のすぐ上、または次の例のようにその両方に配置できます。
 
 PowerShell のコメント ベースのヘルプの詳細については、「[about_Comment_Based_Help](/powershell/module/microsoft.powershell.core/about/about_comment_based_help)」を参照してください。

@@ -147,7 +147,7 @@ WMF 5.0 では、PowerShell デバッガーは、クラス ベースのリソー
 
 ## <a name="using-psdscrunascredential-with-dsc-composite-resources"></a>PsDscRunAsCredential と DSC 複合リソースを使用する
 
-DSC [複合](/powershell/scripting/dsc/configurations/runAsUser)リソースで [PsDscRunAsCredential](/powershell/scripting/dsc/resources/authoringresourcecomposite) を使用できるようになりました。
+DSC [複合](/powershell/scripting/dsc/resources/authoringresourcecomposite)リソースで [PsDscRunAsCredential](/powershell/scripting/dsc/configurations/runAsUser) を使用できるようになりました。
 
 構成内で複合リソースを使用するとき、**PsDscRunAsCredential** の値を指定できるようになりました。 指定されると、すべてのリソースが複合リソース内で RunAs ユーザーとして実行されます。 複合リソースが別の複合リソースを呼び出す場合、すべてのそれらのリソースも RunAs ユーザーとして実行されます。 RunAs 資格情報が複合リソース階層のあらゆるレベルに配信されます。 複合リソース内のいずれかのリソースで **PsDscRunAsCredential** に対して独自の値が指定されている場合、構成コンパイル中に結合エラーが発生します。
 
@@ -286,7 +286,7 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
    - `<moduleName>.cat` ファイルを見つけ、`Get-AuthenticodeSignature` を使ってその署名を検証します。
    - 署名者が信頼できることを認定した証明機関を検証します。
    - 新しいコマンドレット `Test-FileCatalog` を利用し、モジュールのコンテンツが改ざんされていないことを検証します。
-5. `Install-Module` に対して `$env:ProgramFiles\WindowsPowerShell\Modules\` を行います
+5. `$env:ProgramFiles\WindowsPowerShell\Modules\` に対して `Install-Module` を行います
 6. プロセス構成
 
 > [!NOTE]

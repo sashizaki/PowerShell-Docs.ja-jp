@@ -53,7 +53,7 @@ Group [String] #ResourceName
 }
 ```
 
-この例では、[ 組み込み DSC リソース モジュールの ](../resources/resources.md)Group`PSDesiredStateConfiguration` リソースを使用します。 ローカル グループを作成し、メンバーを追加または削除できます。 `Credential` プロパティと、自動 `PsDscRunAsCredential` プロパティの両方を受け取ります。 ただし、リソースでは `Credential` プロパティのみが使用されます。
+この例では、`PSDesiredStateConfiguration` 組み込み DSC リソース モジュールの [Group](../resources/resources.md) リソースを使用します。 ローカル グループを作成し、メンバーを追加または削除できます。 `Credential` プロパティと、自動 `PsDscRunAsCredential` プロパティの両方を受け取ります。 ただし、リソースでは `Credential` プロパティのみが使用されます。
 
 `PsDscRunAsCredential`プロパティの詳細については、「[ユーザーの資格情報を指定して DSC を実行する](runAsUser.md)」を参照してください。
 
@@ -61,7 +61,7 @@ Group [String] #ResourceName
 
 DSC は `Local System` で実行されるため、ローカル ユーザーおよびグループを変更するためのアクセス許可が既にあります。 追加されたメンバーがローカル アカウントの場合、資格情報は必要ありません。 `Group` リソースがローカル グループにドメイン アカウントを追加する場合、資格情報が必要となります。
 
-Active Directory への匿名クエリは許可されません。 `Credential` リソースの `Group` プロパティは、Active Directory のクエリに使用されるドメイン アカウントです。 既定では、ユーザーは Active Directory 内の大部分のオブジェクトを*読み取る*ことができるため、ほとんどの場合これは汎用ユーザー アカウントです。
+Active Directory への匿名クエリは許可されません。 `Group` リソースの `Credential` プロパティは、Active Directory のクエリに使用されるドメイン アカウントです。 既定では、ユーザーは Active Directory 内の大部分のオブジェクトを*読み取る*ことができるため、ほとんどの場合これは汎用ユーザー アカウントです。
 
 ## <a name="example-configuration"></a>構成の例
 
@@ -220,11 +220,11 @@ ModuleVersion = "1.0";
 
 **DSC リソースで資格情報を使用する場合、可能な場合は、ドメイン アカウントではなくローカル アカウントを選択します。**
 
-資格情報の \\ プロパティに '\@' または '`Username`' が含まれていた場合、DSC はそれをドメイン アカウントとして処理します。 ユーザー名のドメイン部分には、"localhost"、"127.0.0.1"、および "::1" の例外があります。
+資格情報の `Username` プロパティに '\\' または '\@' が含まれていた場合、DSC はそれをドメイン アカウントとして処理します。 ユーザー名のドメイン部分には、"localhost"、"127.0.0.1"、および "::1" の例外があります。
 
 ## <a name="psdscallowdomainuser"></a>PSDscAllowDomainUser
 
-上記の DSC `Group` リソースの例では、Active Directory ドメインのクエリを実行するにはドメイン アカウントが*必要です*。 この場合は、次のように `PSDscAllowDomainUser` ブロックに `ConfigurationData` プロパティを追加します。
+上記の DSC `Group` リソースの例では、Active Directory ドメインのクエリを実行するにはドメイン アカウントが*必要です*。 この場合は、次のように `ConfigurationData` ブロックに `PSDscAllowDomainUser` プロパティを追加します。
 
 ```powershell
 $password = "ThisIsAPlaintextPassword" | ConvertTo-SecureString -asPlainText -Force

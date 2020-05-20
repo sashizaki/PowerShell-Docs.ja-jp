@@ -80,12 +80,12 @@ VisibleCmdlets = @{ Name = 'Restart-Service'; Parameters = @{ Name = 'Name'; Val
 |                                           例                                           |                                                             使用事例                                                              |
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `'My-Func'` または `@{ Name = 'My-Func' }`                                                      | パラメーターに制限を適用せずに `My-Func` を実行することをユーザーに許可します。                                                      |
-| `'MyModule\My-Func'`                                                                        | パラメーターに制限を適用せずにモジュール `My-Func` から `MyModule` を実行することをユーザーに許可します。                           |
+| `'MyModule\My-Func'`                                                                        | パラメーターに制限を適用せずにモジュール `MyModule` から `My-Func` を実行することをユーザーに許可します。                           |
 | `'My-*'`                                                                                    | 動詞 `My` でコマンドレットまたは関数を実行することをユーザーに許可します。                                                                 |
 | `'*-Func'`                                                                                  | 名詞 `Func` でコマンドレットまたは関数を実行することをユーザーに許可します。                                                               |
-| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`              | `My-Func` パラメーターと `Param1` パラメーターを指定して `Param2` を実行することをユーザーに許可します。 あらゆる値をパラメーターに指定できます。          |
-| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}` | `My-Func` パラメーターを指定して `Param1` を実行することをユーザーに許可します。 "Value1" と "Value2" のみをパラメーターに指定できます。        |
-| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`    | `My-Func` パラメーターを指定して `Param1` を実行することをユーザーに許可します。 "contoso" で始まる値をパラメーターに指定できます。 |
+| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'}, @{ Name = 'Param2' }}`              | `Param1` パラメーターと `Param2` パラメーターを指定して `My-Func` を実行することをユーザーに許可します。 あらゆる値をパラメーターに指定できます。          |
+| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidateSet = 'Value1', 'Value2' }}` | `Param1` パラメーターを指定して `My-Func` を実行することをユーザーに許可します。 "Value1" と "Value2" のみをパラメーターに指定できます。        |
+| `@{ Name = 'My-Func'; Parameters = @{ Name = 'Param1'; ValidatePattern = 'contoso.*' }}`    | `Param1` パラメーターを指定して `My-Func` を実行することをユーザーに許可します。 "contoso" で始まる値をパラメーターに指定できます。 |
 
 > [!WARNING]
 > セキュリティのベスト プラクティスとしては、表示されるコマンドレットまたは関数を定義するときは、ワイルドカードの使用は推奨されません。 代わりに、命名規則が同じ他のコマンドが意図せずに許可されるような状況を回避するために、問題のないコマンドを 1 つずつ明示的にリストアップしてください。
@@ -148,14 +148,14 @@ FunctionDefinitions = @{
 
 カスタム関数の本文 (スクリプト ブロック) はシステムの既定の言語モードで実行され、JEA の言語制約の対象になりません。 つまり、関数はファイル システムとレジストリにアクセスし、ロール機能ファイルに表示されないコマンドを実行できます。 パラメーターを使用するときは、任意のコードを実行しないように注意してください。 `Invoke-Expression` のようなコマンドレットにユーザー入力がパイプ処理されないようにします。
 
-上記の例では、簡潔な `Microsoft.PowerShell.Utility\Select-Object` ではなく、完全修飾モジュール名 (FQMN) `Select-Object` が使用されていることに注目してください。
+上記の例では、簡潔な `Select-Object` ではなく、完全修飾モジュール名 (FQMN) `Microsoft.PowerShell.Utility\Select-Object` が使用されていることに注目してください。
 ロール機能ファイルに定義されている関数は、JEA セッションの範囲に入ります。この範囲には、JEA で作成されるプロキシ関数が含まれ、既存のコマンドが制約されます。
 
 既定では、`Select-Object` は、オブジェクト上で任意プロパティを選択することができない、すべての JEA セッションの制約付きコマンドレットです。 関数で制約なしの `Select-Object` を使用するには、FQMN を使用して、完全な実装を明示的に要求する必要があります。 JEA セッションの制約付きコマンドレットはすべて、関数から呼び出されるときに同じ制約があります。 詳細については、「[about_Command_Precedence](/powershell/module/microsoft.powershell.core/about/about_command_precedence)」(コマンドの優先順位について) を参照してください。
 
 複数のカスタム関数を記述する場合、それらを PowerShell スクリプト モジュールに入れると利便性が高まります。 組み込みやサードパーティのモジュールの場合のように、**VisibleFunctions** フィールドを利用し、JEA セッションでこれらの関数を表示させることができます。
 
-JEA セッションでタブ補完が正しく機能するためには、`tabexpansion2`VisibleFunctions**リストに組み込み関数** を含める必要があります。
+JEA セッションでタブ補完が正しく機能するためには、**VisibleFunctions** リストに組み込み関数 `tabexpansion2` を含める必要があります。
 
 ## <a name="make-the-role-capabilities-available-to-a-configuration"></a>構成でロール機能を使用できるようにする
 

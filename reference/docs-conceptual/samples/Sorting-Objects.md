@@ -124,7 +124,7 @@ LastWriteTime          CreationTime
 Sort-Object LastWriteTime, Name
 ```
 
-さらに、組み込みの別名 `Sort-Object` で `sort` を参照できます。
+さらに、組み込みの別名 `sort` で `Sort-Object` を参照できます。
 
 ```powershell
 sort LastWriteTime, Name

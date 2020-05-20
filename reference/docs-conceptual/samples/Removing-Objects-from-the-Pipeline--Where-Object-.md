@@ -107,7 +107,7 @@ intelppm               Intel Processor Driver
 ...
 ```
 
-上記のコマンドには `Where-Object` 要素が 2 つありますが、次のように `Where-Object` 論理演算子を使用して、`-and` 要素 1 つで表現することができます。
+上記のコマンドには `Where-Object` 要素が 2 つありますが、次のように `-and` 論理演算子を使用して、`Where-Object` 要素 1 つで表現することができます。
 
 ```powershell
 Get-CimInstance -Class Win32_SystemDriver |

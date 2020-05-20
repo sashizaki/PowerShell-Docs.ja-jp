@@ -314,9 +314,9 @@ $b.DoSomething(42)
 
 新しいキーワード `Hidden` が追加されました。 `Hidden` は、プロパティとメソッド (コンストラクターを含む) に適用できます。
 
-Hidden のメンバーはパブリックですが、`Get-Member` パラメーターを追加しない限り、`-Force` の出力には含められません。 Hidden のメンバーを定義するクラスで完了が発生しない限り、タブの完了時、または IntelliSense の使用時に Hidden のメンバーは含まれません。
+Hidden のメンバーはパブリックですが、`-Force` パラメーターを追加しない限り、`Get-Member` の出力には含められません。 Hidden のメンバーを定義するクラスで完了が発生しない限り、タブの完了時、または IntelliSense の使用時に Hidden のメンバーは含まれません。
 
-C**コードで PowerShell 内と同じセマンティクスを使用できるように、新しい属性**System.Management.Automation.HiddenAttribute\# が追加されました。
+C\# コードで PowerShell 内と同じセマンティクスを使用できるように、新しい属性 **System.Management.Automation.HiddenAttribute** が追加されました。
 
 ### <a name="return-types"></a>戻り値の型
 

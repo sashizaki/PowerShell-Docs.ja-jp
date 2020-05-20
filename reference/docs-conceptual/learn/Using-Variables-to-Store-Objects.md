@@ -40,7 +40,7 @@ Path
 C:\temp
 ```
 
-`Get-Member` を使用して変数の内容に関する情報を表示できます。 `Get-Member` は、`$loc` からの出力と同様に、**が**PathInfo`Get-Location` オブジェクトであることを示しています。
+`Get-Member` を使用して変数の内容に関する情報を表示できます。 `Get-Member` は、`Get-Location` からの出力と同様に、`$loc` が **PathInfo** オブジェクトであることを示しています。
 
 ```powershell
 PS> $loc | Get-Member -MemberType Property

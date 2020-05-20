@@ -76,7 +76,7 @@ Configuration SmbShare
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>ファイル システムにプル クライアントへのアクセス権限を付与する
 
-クライアント ノードに **ReadAccess** を与えると、そのノードは SMB 共有にアクセスできるようになりますが、その共有内のファイルやフォルダーにはアクセスできません。 クライアント ノードに、SMB 共有のフォルダーやサブフォルダーに対するアクセス権限を明示的に許可する必要があります。 DSC でこれを行うには、**cNtfsAccessControl** モジュールに含まれている [cNtfsPermissionEntry](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) リソースを使用して追加します。
+クライアント ノードに **ReadAccess** を与えると、そのノードは SMB 共有にアクセスできるようになりますが、その共有内のファイルやフォルダーにはアクセスできません。 クライアント ノードに、SMB 共有のフォルダーやサブフォルダーに対するアクセス権限を明示的に許可する必要があります。 DSC でこれを行うには、[cNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) モジュールに含まれている **cNtfsPermissionEntry** リソースを使用して追加します。
 次の構成では、プル クライアントに ReadAndExecute アクセスを付与する **cNtfsPermissionEntry** ブロックを追加します。
 
 ```powershell
@@ -141,7 +141,7 @@ Configuration DSCSMB
 
 WMF 5.0 の DSC リソースを含むモジュールの既定の形式は、`{Module Folder}\{Module Version}\DscResources\{DSC Resource Folder}\` です。
 
-プル サーバー用にパッケージ化する前に、パスが `{Module version}` になるように単純に `{Module Folder}\DscResources\{DSC Resource Folder}\` フォルダーを削除します。 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを SMB 共有フォルダーに置きます。
+プル サーバー用にパッケージ化する前に、パスが `{Module Folder}\DscResources\{DSC Resource Folder}\` になるように単純に `{Module version}` フォルダーを削除します。 この変更を加えた後、上で説明したようにフォルダーを zip 圧縮し、これらの zip ファイルを SMB 共有フォルダーに置きます。
 
 ## <a name="creating-the-mof-checksum"></a>MOF チェックサムの作成
 

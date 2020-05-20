@@ -141,7 +141,7 @@ Windows Presentation Framework は、CoreCLR ではサポートされていま�
 
 - `Show-Command`
 - `Out-GridView`
-- **の**showwindow`Get-Help` パラメーター
+- `Get-Help` の **showwindow** パラメーター
 
 ### <a name="some-dsc-cmdlets-removed"></a>一部の DSC コマンドレットの削除
 
@@ -176,7 +176,7 @@ Windows Presentation Framework は、CoreCLR ではサポートされていま�
 
 `Mandatory`パラメーターと `ValidateNotNull` および `ValidateNotNullOrEmpty` 属性について、コレクションの要素の型が値型の場合に null 要素チェックを省略します。
 
-### <a name="change-outputencoding-to-use-utf-8-nobom-encoding-rather-than-ascii-5369"></a>ASCIIではなく `$OutputEncoding` エンコードを使用するよう `UTF-8 NoBOM` を変更 [#5369](https://github.com/PowerShell/PowerShell/issues/5369)
+### <a name="change-outputencoding-to-use-utf-8-nobom-encoding-rather-than-ascii-5369"></a>ASCIIではなく `UTF-8 NoBOM` エンコードを使用するよう `$OutputEncoding` を変更 [#5369](https://github.com/PowerShell/PowerShell/issues/5369)
 
 以前のエンコード、ASCII (7 ビット) を使用すると、出力が不適切に変更される場合があります。 今回の変更では、`UTF-8 NoBOM` が既定値となり、ほとんどのツールおよびオペレーティング システムでサポートされているエンコードを使用して Unicode 出力を保持します。
 
@@ -192,27 +192,27 @@ Windows Presentation Framework は、CoreCLR ではサポートされていま�
 
 ### <a name="invoke-restmethod-doesnt-return-useful-info-when-no-data-is-returned-5320"></a>データが返されない場合、Invoke-RestMethod により、有益な情報が返されない [#5320](https://github.com/PowerShell/PowerShell/issues/5320)
 
-API が `null` のみを返す場合、Invoke-restmethod は、これを `"null"` ではなく、文字列 `$null` としてシリアル化していました。 今回の変更により、有効なシングル値 JSON `Invoke-RestMethod` がリテラル `null` として正しくシリアル化されるよう、`$null` のロジックが修正されました。
+API が `null` のみを返す場合、Invoke-restmethod は、これを `$null` ではなく、文字列 `"null"` としてシリアル化していました。 今回の変更により、有効なシングル値 JSON `null` がリテラル `$null` として正しくシリアル化されるよう、`Invoke-RestMethod` のロジックが修正されました。
 
-### <a name="remove--protocol-from--computer-cmdlets-5277"></a>`-Protocol` コマンドレットから `*-Computer` を削除 [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
+### <a name="remove--protocol-from--computer-cmdlets-5277"></a>`*-Computer` コマンドレットから `-Protocol` を削除 [#5277](https://github.com/PowerShell/PowerShell/issues/5277)
 
-CoreFX の RPC リモート処理 (特に Windows 以外のプラットフォームで) の問題と、PowerShell で一貫性のあるリモート処理エクスペリエンスを保証するため、`-Protocol` コマンドレットから `\*-Computer` パラメーターが削除されました。 リモート処理では DCOM がサポートされなくなりました。 次のコマンドレットでは、WSMAN リモート処理のみをサポートします。
+CoreFX の RPC リモート処理 (特に Windows 以外のプラットフォームで) の問題と、PowerShell で一貫性のあるリモート処理エクスペリエンスを保証するため、`\*-Computer` コマンドレットから `-Protocol` パラメーターが削除されました。 リモート処理では DCOM がサポートされなくなりました。 次のコマンドレットでは、WSMAN リモート処理のみをサポートします。
 
 - Rename-Computer
 - Restart-Computer
 - Stop-Computer
 
-### <a name="remove--computername-from--service-cmdlets-5090"></a>`-ComputerName` コマンドレットから `*-Service` を削除 [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
+### <a name="remove--computername-from--service-cmdlets-5090"></a>`*-Service` コマンドレットから `-ComputerName` を削除 [#5090](https://github.com/PowerShell/PowerShell/issues/5094)
 
-一貫性のある PSRP の使用を促進するために、`-ComputerName` コマンドレットから `*-Service` パラメーターが削除されました。
+一貫性のある PSRP の使用を促進するために、`*-Service` コマンドレットから `-ComputerName` パラメーターが削除されました。
 
-### <a name="fix-get-item--literalpath-ab-if-ab-doesnt-actually-exist-to-return-error-5197"></a>`Get-Item -LiteralPath a*b` が実際に存在しない場合は、エラーを返すよう `a*b` を修正 [#5197](https://github.com/PowerShell/PowerShell/issues/5197)
+### <a name="fix-get-item--literalpath-ab-if-ab-doesnt-actually-exist-to-return-error-5197"></a>`a*b` が実際に存在しない場合は、エラーを返すよう `Get-Item -LiteralPath a*b` を修正 [#5197](https://github.com/PowerShell/PowerShell/issues/5197)
 
 以前は、ワイルドカードを渡された `-LiteralPath` は `-Path` と同様に処理され、ワイルドカードを使ってファイルが検出されない場合は、何も返さず終了していました。 正しい動作として、ファイルが存在しない場合はエラーを返すには、`-LiteralPath` はリテラルである必要があります。 `-Literal` にワイルドカードを使用した場合、リテラルとして処理するよう変更されました。
 
 ### <a name="import-csv-should-apply-pstypenames-upon-import-when-type-information-is-present-in-the-csv-5134"></a>インポート時に CSV に型情報が存在する場合、`Import-Csv` が `PSTypeNames` を適用 [#5134](https://github.com/PowerShell/PowerShell/issues/5134)
 
-以前は、`Export-CSV` を使用してインポートされた `TypeInformation` を含む `ConvertFrom-Csv` を使用してオブジェクトをエクスポートすると、型情報が保持されませんでした。 今回の変更により、CSV ファイルから使用可能な場合は `PSTypeNames` メンバーに型情報が追加されます。
+以前は、`ConvertFrom-Csv` を使用してインポートされた `TypeInformation` を含む `Export-CSV` を使用してオブジェクトをエクスポートすると、型情報が保持されませんでした。 今回の変更により、CSV ファイルから使用可能な場合は `PSTypeNames` メンバーに型情報が追加されます。
 
 ### <a name="-notypeinformation-should-be-default-on-export-csv-5131"></a>`-NoTypeInformation` の既定値を `Export-Csv` に設定 [#5131](https://github.com/PowerShell/PowerShell/issues/5131)
 
@@ -228,7 +228,7 @@ HTTP を使用する場合、パスワードなどのコンテンツはクリア
 
 ### <a name="remove-addtypecommandbase-class-5407"></a>`AddTypeCommandBase` クラスを削除 [#5407](https://github.com/PowerShell/PowerShell/issues/5407)
 
-パフォーマンス向上のため、`AddTypeCommandBase` から `Add-Type` クラスが削除されました。 このクラスは、Add-Type コマンドレットでのみ使用されており、ユーザーに影響はありません。
+パフォーマンス向上のため、`Add-Type` から `AddTypeCommandBase` クラスが削除されました。 このクラスは、Add-Type コマンドレットでのみ使用されており、ユーザーに影響はありません。
 
 ### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080"></a>コマンドレットと `-Encoding` パラメーターを `System.Text.Encoding` 型に統合 [#5080](https://github.com/PowerShell/PowerShell/issues/5080)
 
@@ -273,9 +273,9 @@ PowerShell の名前付けが Microsoft の名前規則に準拠し、OSX では
 
 `pwsh.exe` の終了コードを Unix の規則と一致するよう変更
 
-### <a name="removal-of-localaccount-and-cmdlets-from--diagnostics-modules-4302-4303"></a>`LocalAccount` モジュールから `Diagnostics` およびコマンドレットを削除 [#4302](https://github.com/PowerShell/PowerShell/issues/4302) [#4303](https://github.com/PowerShell/PowerShell/issues/4303)
+### <a name="removal-of-localaccount-and-cmdlets-from--diagnostics-modules-4302-4303"></a>`Diagnostics` モジュールから `LocalAccount` およびコマンドレットを削除 [#4302](https://github.com/PowerShell/PowerShell/issues/4302) [#4303](https://github.com/PowerShell/PowerShell/issues/4303)
 
-API がサポートされていないため、改善されたソリューションが発表されるまで、`LocalAccounts` モジュールと `Counter` モジュールの `Diagnostics`コマンドレットが削除されました。
+API がサポートされていないため、改善されたソリューションが発表されるまで、`LocalAccounts` モジュールと `Diagnostics` モジュールの `Counter`コマンドレットが削除されました。
 
 ### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036"></a>ブール値のパラメーターを使用する PowerShell スクリプトが正しく動作しない [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
@@ -283,11 +283,11 @@ API がサポートされていないため、改善されたソリューショ�
 
 ### <a name="remove-clrversion-property-from-psversiontable-4027"></a>`ClrVersion` から `$PSVersionTable` プロパティを削除 [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
-`ClrVersion` の `$PSVersionTable` プロパティは CoreCLR では有用でないため、エンドユーザーは、互換性を判定するためにこの値を使用しないでください。
+`$PSVersionTable` の `ClrVersion` プロパティは CoreCLR では有用でないため、エンドユーザーは、互換性を判定するためにこの値を使用しないでください。
 
 ### <a name="change-positional-parameter-for-powershellexe-from--command-to--file-4019"></a>`powershell.exe` の位置指定パラメーターを `-Command` から `-File` に変更 [#4019](https://github.com/PowerShell/PowerShell/issues/4019)
 
-Windows 以外のプラットフォームでの PowerShell のシバン使用を有効化します。 Unix ベースのシステムでは、`pwsh` を明示的に呼び出すのではなく、自動的に PowerShell を起動するスクリプト実行可能ファイルを作成できます。 また、`powershell foo.ps1` を指定せずに `powershell fooScript` または `-File` のようなコマンドを実行できます。 ただし、今回の変更後、`-c` などのコマンドを実行しようとする場合は `-Command` または `powershell.exe Get-Command` を明示的に指定する必要があります。
+Windows 以外のプラットフォームでの PowerShell のシバン使用を有効化します。 Unix ベースのシステムでは、`pwsh` を明示的に呼び出すのではなく、自動的に PowerShell を起動するスクリプト実行可能ファイルを作成できます。 また、`-File` を指定せずに `powershell foo.ps1` または `powershell fooScript` のようなコマンドを実行できます。 ただし、今回の変更後、`powershell.exe Get-Command` などのコマンドを実行しようとする場合は `-c` または `-Command` を明示的に指定する必要があります。
 
 ### <a name="implement-unicode-escape-parsing-3958"></a>Unicode エスケープ解析の実装 [#3958](https://github.com/PowerShell/PowerShell/issues/3958)
 
@@ -311,7 +311,7 @@ Windows 以外のプラットフォームでの PowerShell のシバン使用を
 
 ### <a name="powershell-as-a-default-shell-doesnt-work-with-script-command-3319"></a>既定シェルの PowerShell でスクリプト コマンドが正しく動作しない [#3319](https://github.com/PowerShell/PowerShell/issues/3319)
 
-Unix では、対話型のシェルで `-i` の入力を受け付けることが通常で、多くのツールでこの動作が前提とされ、スイッチ `script` を使ってシェルを呼び出します (たとえば `-i` や、PowerShell が既定のシェルに設定されている場合)。 以前は `-i` と一致する便利な方法として `-inputformat` を使用できましたが、この重要な変更後は `-in` を使用する必要があります。
+Unix では、対話型のシェルで `-i` の入力を受け付けることが通常で、多くのツールでこの動作が前提とされ、スイッチ `-i` を使ってシェルを呼び出します (たとえば `script` や、PowerShell が既定のシェルに設定されている場合)。 以前は `-inputformat` と一致する便利な方法として `-i` を使用できましたが、この重要な変更後は `-in` を使用する必要があります。
 
 ### <a name="typo-fix-in-get-computerinfo-property-name-3167"></a>Get-computerinfo プロパティ名の入力ミスを修正 [#3167](https://github.com/PowerShell/PowerShell/issues/3167)
 
@@ -354,20 +354,20 @@ CoreFX でサポートされていないハッシュ アルゴリズムがあり
 
 ### <a name="buildversion-is-removed-from-psversiontable-1415"></a>`BuildVersion` を `$PSVersionTable` から削除 [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
 
-`BuildVersion` から `$PSVersionTable` プロパティを削除してください。 このプロパティは、Windows のビルド バージョンと関連付けられていました。 代わりに、`GitCommitId` を使用して、PowerShell Core の正確なビルド バージョンを取得することをお勧めします。
+`$PSVersionTable` から `BuildVersion` プロパティを削除してください。 このプロパティは、Windows のビルド バージョンと関連付けられていました。 代わりに、`GitCommitId` を使用して、PowerShell Core の正確なビルド バージョンを取得することをお勧めします。
 
 ### <a name="changes-to-web-cmdlets"></a>Web のコマンドレットへの変更
 
 Web コマンドレットの基となる .NET API が `System.Net.Http.HttpClient` に変更されました。 この変更は、多くのメリットを提供します。 ただし、この変更と、Internet Explorer での相互運用性がないことを理由として、`Invoke-WebRequest` と `Invoke-RestMethod`に重要な変更が加えられました。
 
 - `Invoke-WebRequest` では、基本的な HTML 解析のみがサポートされます。 `Invoke-WebRequest` は常に `BasicHtmlWebResponseObject` オブジェクトを返します。 `ParsedHtml` および `Forms` プロパティが削除されました。
-- `BasicHtmlWebResponseObject.Headers` の値は `String[]` から `String` に変更されました。
+- `BasicHtmlWebResponseObject.Headers` の値は `String` から `String[]` に変更されました。
 - `BasicHtmlWebResponseObject.BaseResponse` は、`System.Net.Http.HttpResponseMessage` オブジェクトに変更されました。
 - Web コマンドレットの例外の `Response` プロパティが、`System.Net.Http.HttpResponseMessage` オブジェクトに変更されました。
 - `-Headers` および `-UserAgent` パラメーターの既定設定が、Strict RFC ヘッダー解析に変更されました。 これは、`-SkipHeaderValidation` を使用して無効にできます。
 - `file://` および `ftp://` URI スキームのサポートは終了しました。
 - `System.Net.ServicePointManager` 設定は使用できなくなります。
 - 現在、macOS では、証明書を使用した認証は使用できません。
-- `-Credential` URI 経由で `http://` を使用するとエラーになります。 `https://` URI を使用するか、または `-AllowUnencryptedAuthentication`パラメーターを指定してエラーを回避してください。
+- `http://` URI 経由で `-Credential` を使用するとエラーになります。 `https://` URI を使用するか、または `-AllowUnencryptedAuthentication`パラメーターを指定してエラーを回避してください。
 - `-MaximumRedirection` では、指定された制限を超えようとすると、最後のリダイレクトの結果を返す代わりに、終了エラーが生成されるようになりました。
 - PowerShell 6.2 では、JSON 応答に対して規定値が UTF-8 エンコードになるように変更が加えられました。 JSON 応答に文字セットが指定されていない場合、既定のエンコードは RFC 8259 に従って UTF-8 にする必要があります。

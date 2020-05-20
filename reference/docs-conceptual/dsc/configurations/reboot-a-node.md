@@ -15,7 +15,7 @@ ms.locfileid: "71954029"
 > このトピックでは、ノードの再起動方法について説明します。 再起動を成功させるために、**ActionAfterReboot** と **RebootNodeIfNeeded** の LCM 設定は適切に構成される必要があります。
 > ローカル構成マネージャーの設定については、「[ローカル構成マネージャーの構成](../managing-nodes/metaConfig.md)」または[ローカル構成マネージャー (v4) の構成](../managing-nodes/metaConfig4.md)に関するページを参照してください。
 
-ノードは、`$global:DSCMachineStatus` フラグを使用することで、リソース内から再起動できます。 `1` 関数でこのフラグを `Set-TargetResource` に設定すると、現在のリソースの **Set** メソッドの直後に、LCM によってノードが再起動されます。 このフラグを使用して、**ComputerManagementDsc** DSC リソース モジュールの [PendingReboot](https://github.com/PowerShell/ComputerManagementDsc) リソースで、DSC の外部で再起動が保留されているかどうかを検出します。
+ノードは、`$global:DSCMachineStatus` フラグを使用することで、リソース内から再起動できます。 `Set-TargetResource` 関数でこのフラグを `1` に設定すると、現在のリソースの **Set** メソッドの直後に、LCM によってノードが再起動されます。 このフラグを使用して、[ComputerManagementDsc](https://github.com/PowerShell/ComputerManagementDsc) DSC リソース モジュールの **PendingReboot** リソースで、DSC の外部で再起動が保留されているかどうかを検出します。
 
 ご利用の[構成](configurations.md)では、ノードの再起動を必要とするステップを実行できます。 これには次のような内容を含めることができます。
 

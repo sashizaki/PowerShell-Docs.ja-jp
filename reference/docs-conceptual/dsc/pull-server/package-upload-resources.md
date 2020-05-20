@@ -47,7 +47,7 @@ ms.locfileid: "78278505"
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip
 ```
 
-出力は示されませんが、"xPSDesiredStateConfiguration_8.4.4.0.zip.checksum" が表示されるようになるはずです。 また、`New-DSCCheckSum` パラメーターを使用すると、ファイルのディレクトリに対して `-Path` を実行することもできます。 チェックサムが既に存在する場合は、`-Force` パラメーターを使用して強制的に再作成できます。
+出力は示されませんが、"xPSDesiredStateConfiguration_8.4.4.0.zip.checksum" が表示されるようになるはずです。 また、`-Path` パラメーターを使用すると、ファイルのディレクトリに対して `New-DSCCheckSum` を実行することもできます。 チェックサムが既に存在する場合は、`-Force` パラメーターを使用して強制的に再作成できます。
 
 ### <a name="where-to-store-resource-archives"></a>リソース アーカイブを格納する場所
 
