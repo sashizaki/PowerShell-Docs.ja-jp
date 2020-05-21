@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4174e84f-d516-4aca-b418-273047dcfb07
 caps.latest.revision: 7
-ms.openlocfilehash: 5761ed2168a46d6ed9a2e50554d459f5b93223ee
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f45b5e985fa38ca4ff41707f1842ddb8b930e2b1
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359661"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557501"
 ---
-# <a name="creating-a-workflow-activity-from-a-windows-powershell-cmdlet"></a><span data-ttu-id="80feb-102">Windows PowerShell コマンドレットからワークフロー アクティビティを作成する</span><span class="sxs-lookup"><span data-stu-id="80feb-102">Creating a Workflow Activity from a Windows PowerShell Cmdlet</span></span>
+# <a name="creating-a-workflow-activity-from-a-windows-powershell-cmdlet"></a><span data-ttu-id="bff47-102">Windows PowerShell コマンドレットからワークフロー アクティビティを作成する</span><span class="sxs-lookup"><span data-stu-id="bff47-102">Creating a Workflow Activity from a Windows PowerShell Cmdlet</span></span>
 
-<span data-ttu-id="80feb-103">任意の Windows PowerShell モジュールまたはコマンドレットをワークフローアクティビティとしてパッケージ化するに[は、そのクラスの](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator)メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="80feb-103">Any Windows PowerShell module or cmdlet can be packaged as a Workflow activity by using the methods of the [Microsoft.Powershell.Activities.Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) class.</span></span> <span data-ttu-id="80feb-104">アクティビティを C# 表すコードを生成するには、Generatefromname クラスの[\*](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromName)メソッドを使用して、microsoft. Powershell. [activityfromcommandinfo](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromModuleInfo)\* メソッドと、[microsoft. powershell. activity. activitygenerator. activity. activity. activity](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromCommandInfo), activity. [activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) クラスのメソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="80feb-104">Use the [Microsoft.Powershell.Activities.Activitygenerator.Generatefrommoduleinfo\*](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromModuleInfo), [Microsoft.Powershell.Activities.Activitygenerator.Generatefromcommandinfo\*](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromCommandInfo), and [Microsoft.Powershell.Activities.Activitygenerator.Generatefromname\*](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromName) methods of the [Microsoft.Powershell.Activities.Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) class to generate C# code that represents an activity.</span></span> <span data-ttu-id="80feb-105">その後、結果C#のコードをコンパイルして、プロジェクトにアクティビティとして追加できるアセンブリにすることができます。</span><span class="sxs-lookup"><span data-stu-id="80feb-105">You can then compile the resulting C# code into an assembly that can be added to a project as an activity.</span></span>
+<span data-ttu-id="bff47-103">任意の Windows PowerShell モジュールまたはコマンドレットをワークフローアクティビティとしてパッケージ化するに[は、そのクラスの](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator)メソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="bff47-103">Any Windows PowerShell module or cmdlet can be packaged as a Workflow activity by using the methods of the [Microsoft.Powershell.Activities.Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) class.</span></span> <span data-ttu-id="bff47-104">アクティビティを表す C# コードを生成するには、Generatefromname クラスの[\*](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromName)メソッドを使用して、microsoft [. Powershell.](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) [activityfrommoduleinfo](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromModuleInfo) [\* メソッド](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromCommandInfo)と、microsoft. powershell. activity. activitygenerator. activity. activity. activity. activity. activity. activity. activity. activity. activity. を使用します。</span><span class="sxs-lookup"><span data-stu-id="bff47-104">Use the [Microsoft.Powershell.Activities.Activitygenerator.Generatefrommoduleinfo\*](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromModuleInfo), [Microsoft.Powershell.Activities.Activitygenerator.Generatefromcommandinfo\*](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromCommandInfo), and [Microsoft.Powershell.Activities.Activitygenerator.Generatefromname\*](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator.GenerateFromName) methods of the [Microsoft.Powershell.Activities.Activitygenerator](/dotnet/api/Microsoft.PowerShell.Activities.ActivityGenerator) class to generate C# code that represents an activity.</span></span> <span data-ttu-id="bff47-105">その後、結果の C# コードをコンパイルして、プロジェクトにアクティビティとして追加できるアセンブリにすることができます。</span><span class="sxs-lookup"><span data-stu-id="bff47-105">You can then compile the resulting C# code into an assembly that can be added to a project as an activity.</span></span>
 
-<span data-ttu-id="80feb-106">その後、次の形式C#のコマンドラインを使用して、アクティビティとしてプロジェクトに追加できるアセンブリに、結果のコードをコンパイルできます。</span><span class="sxs-lookup"><span data-stu-id="80feb-106">You can then compile the resulting C# code into an assembly that can be added to a project as an activity by using a command line with the following form.</span></span>
+<span data-ttu-id="bff47-106">その後、生成された C# コードを、次の形式のコマンドラインを使用して、アクティビティとしてプロジェクトに追加できるアセンブリにコンパイルできます。</span><span class="sxs-lookup"><span data-stu-id="bff47-106">You can then compile the resulting C# code into an assembly that can be added to a project as an activity by using a command line with the following form.</span></span>
 
-<span data-ttu-id="80feb-107">**csc/nologo/out: AssemblyName/target: library/reference: codefile.cs/reference: Microsoft. PowerShell. 活動**</span><span class="sxs-lookup"><span data-stu-id="80feb-107">**csc /nologo /out:AssemblyName /target:library /reference:System.Activities.Activity /reference:Microsoft.PowerShell.Activities codefile.cs**</span></span>
+<span data-ttu-id="bff47-107">**csc/nologo/out: AssemblyName/target: library/reference: codefile.cs/reference: Microsoft. PowerShell. 活動**</span><span class="sxs-lookup"><span data-stu-id="bff47-107">**csc /nologo /out:AssemblyName /target:library /reference:System.Activities.Activity /reference:Microsoft.PowerShell.Activities codefile.cs**</span></span>
 
-## <a name="example"></a><span data-ttu-id="80feb-108">例</span><span class="sxs-lookup"><span data-stu-id="80feb-108">Example</span></span>
+## <a name="example"></a><span data-ttu-id="bff47-108">例</span><span class="sxs-lookup"><span data-stu-id="bff47-108">Example</span></span>
 
-<span data-ttu-id="80feb-109">次の例は、Windows PowerShell C#モジュールからアクティビティのコードを生成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="80feb-109">The following example demonstrates how to generate C# code for an activity from a Windows PowerShell module.</span></span>
+<span data-ttu-id="bff47-109">次の例は、Windows PowerShell モジュールからアクティビティの C# コードを生成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="bff47-109">The following example demonstrates how to generate C# code for an activity from a Windows PowerShell module.</span></span>
 
 ```csharp
 using System;
@@ -71,9 +71,9 @@ namespace MakeActivity
 
 ```
 
-## <a name="example"></a><span data-ttu-id="80feb-110">例</span><span class="sxs-lookup"><span data-stu-id="80feb-110">Example</span></span>
+## <a name="example"></a><span data-ttu-id="bff47-110">例</span><span class="sxs-lookup"><span data-stu-id="bff47-110">Example</span></span>
 
-<span data-ttu-id="80feb-111">次の例は、Windows PowerShell C#コマンドレットからアクティビティのコードを生成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="80feb-111">The following example demonstrates how to generate C# code for an activity from a Windows PowerShell cmdlet.</span></span>
+<span data-ttu-id="bff47-111">次の例は、Windows PowerShell コマンドレットからアクティビティの C# コードを生成する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="bff47-111">The following example demonstrates how to generate C# code for an activity from a Windows PowerShell cmdlet.</span></span>
 
 ```csharp
 using System;
