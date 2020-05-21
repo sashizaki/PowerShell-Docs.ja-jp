@@ -8,32 +8,32 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49f8267c-d887-4d7d-b9b7-80dc624b1261
 caps.latest.revision: 4
-ms.openlocfilehash: d199c53a748ac57bb2a5f998b5056e39d3e80c0d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1bebfbd822963830363012060067c656d7709543
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361181"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565528"
 ---
-# <a name="placing-comment-based-help-in-scripts"></a><span data-ttu-id="5ebb3-102">スクリプトにコメント ベースのヘルプを配置する</span><span class="sxs-lookup"><span data-stu-id="5ebb3-102">Placing Comment-Based Help in Scripts</span></span>
+# <a name="placing-comment-based-help-in-scripts"></a><span data-ttu-id="d985a-102">スクリプトにコメント ベースのヘルプを配置する</span><span class="sxs-lookup"><span data-stu-id="d985a-102">Placing Comment-Based Help in Scripts</span></span>
 
-<span data-ttu-id="5ebb3-103">このトピックでは、`Get-Help` コマンドレットがコメントベースのヘルプトピックをスクリプトに関連付け、スクリプト内に存在する可能性のある関数を使用しないように、スクリプトのコメントベースのヘルプを配置する場所について説明します。</span><span class="sxs-lookup"><span data-stu-id="5ebb3-103">This topic explains where to place comment-based help for a script so that the `Get-Help` cmdlet associates the comment-based help topic with scripts and not with any functions that might be in the script.</span></span>
+<span data-ttu-id="d985a-103">このトピックでは、スクリプトにコメントベースのヘルプトピックを配置する方法について説明し `Get-Help` ます。このコマンドレットは、スクリプトに含まれる関数ではなく、スクリプトにコメントベースのヘルプトピックを関連付けます。</span><span class="sxs-lookup"><span data-stu-id="d985a-103">This topic explains where to place comment-based help for a script so that the `Get-Help` cmdlet associates the comment-based help topic with scripts and not with any functions that might be in the script.</span></span>
 
-## <a name="where-to-place-comment-based-help-for-a-script"></a><span data-ttu-id="5ebb3-104">スクリプトのコメントベースのヘルプを配置する場所</span><span class="sxs-lookup"><span data-stu-id="5ebb3-104">Where to Place Comment-Based Help for a Script</span></span>
+## <a name="where-to-place-comment-based-help-for-a-script"></a><span data-ttu-id="d985a-104">スクリプトのコメントベースのヘルプを配置する場所</span><span class="sxs-lookup"><span data-stu-id="d985a-104">Where to Place Comment-Based Help for a Script</span></span>
 
-- <span data-ttu-id="5ebb3-105">スクリプトファイルの先頭にあります。</span><span class="sxs-lookup"><span data-stu-id="5ebb3-105">At the beginning of the script file.</span></span> <span data-ttu-id="5ebb3-106">スクリプトのヘルプは、コメントと空白行によってのみスクリプトの先頭に配置できます。</span><span class="sxs-lookup"><span data-stu-id="5ebb3-106">Script Help can be preceded in the script only by comments and blank lines.</span></span>
+- <span data-ttu-id="d985a-105">スクリプトファイルの先頭にあります。</span><span class="sxs-lookup"><span data-stu-id="d985a-105">At the beginning of the script file.</span></span> <span data-ttu-id="d985a-106">スクリプトのヘルプは、コメントと空白行によってのみスクリプトの先頭に配置できます。</span><span class="sxs-lookup"><span data-stu-id="d985a-106">Script Help can be preceded in the script only by comments and blank lines.</span></span>
 
-- <span data-ttu-id="5ebb3-107">スクリプトファイルの末尾にあります。</span><span class="sxs-lookup"><span data-stu-id="5ebb3-107">At the end of the script file.</span></span>
+- <span data-ttu-id="d985a-107">スクリプトファイルの末尾にあります。</span><span class="sxs-lookup"><span data-stu-id="d985a-107">At the end of the script file.</span></span>
 
-  <span data-ttu-id="5ebb3-108">スクリプト本体の最初の項目 (ヘルプの後) が関数宣言の場合、スクリプトヘルプの末尾と関数宣言の間には、少なくとも2つの空白行が必要です。</span><span class="sxs-lookup"><span data-stu-id="5ebb3-108">If the first item in the script body (after the Help) is a function declaration, there must be at least two blank lines between the end of the script Help and the function declaration.</span></span> <span data-ttu-id="5ebb3-109">それ以外の場合、ヘルプは、スクリプトのヘルプではなく、関数のヘルプとして解釈されます。</span><span class="sxs-lookup"><span data-stu-id="5ebb3-109">Otherwise, the Help is interpreted as being Help for the function, not Help for the script.</span></span>
+  <span data-ttu-id="d985a-108">スクリプト本体の最初の項目 (ヘルプの後) が関数宣言の場合、スクリプトヘルプの末尾と関数宣言の間には、少なくとも2つの空白行が必要です。</span><span class="sxs-lookup"><span data-stu-id="d985a-108">If the first item in the script body (after the Help) is a function declaration, there must be at least two blank lines between the end of the script Help and the function declaration.</span></span> <span data-ttu-id="d985a-109">それ以外の場合、ヘルプは、スクリプトのヘルプではなく、関数のヘルプとして解釈されます。</span><span class="sxs-lookup"><span data-stu-id="d985a-109">Otherwise, the Help is interpreted as being Help for the function, not Help for the script.</span></span>
 
-## <a name="examples-of-help-placement-in-a-script"></a><span data-ttu-id="5ebb3-110">スクリプト内のヘルプの配置例</span><span class="sxs-lookup"><span data-stu-id="5ebb3-110">Examples of Help Placement in a Script</span></span>
+## <a name="examples-of-help-placement-in-a-script"></a><span data-ttu-id="d985a-110">スクリプト内のヘルプの配置例</span><span class="sxs-lookup"><span data-stu-id="d985a-110">Examples of Help Placement in a Script</span></span>
 
- <span data-ttu-id="5ebb3-111">次の例は、スクリプトのコメントベースのヘルプの各配置オプションを示しています。</span><span class="sxs-lookup"><span data-stu-id="5ebb3-111">The following examples show each of the placement options for comment-based help for a script.</span></span>
+ <span data-ttu-id="d985a-111">次の例は、スクリプトのコメントベースのヘルプの各配置オプションを示しています。</span><span class="sxs-lookup"><span data-stu-id="d985a-111">The following examples show each of the placement options for comment-based help for a script.</span></span>
 
-### <a name="help-at-the-beginning-of-a-script"></a><span data-ttu-id="5ebb3-112">スクリプトの先頭のヘルプ</span><span class="sxs-lookup"><span data-stu-id="5ebb3-112">Help at the Beginning of a Script</span></span>
+### <a name="help-at-the-beginning-of-a-script"></a><span data-ttu-id="d985a-112">スクリプトの先頭のヘルプ</span><span class="sxs-lookup"><span data-stu-id="d985a-112">Help at the Beginning of a Script</span></span>
 
- <span data-ttu-id="5ebb3-113">次の例では、スクリプトの先頭にあるコメントに基づいています。</span><span class="sxs-lookup"><span data-stu-id="5ebb3-113">The following example shows comment-based at the beginning of a script.</span></span>
+ <span data-ttu-id="d985a-113">次の例では、スクリプトの先頭にあるコメントに基づいています。</span><span class="sxs-lookup"><span data-stu-id="d985a-113">The following example shows comment-based at the beginning of a script.</span></span>
 
 ```
 <#
@@ -45,9 +45,9 @@ param [string]$ComputerName
 ...
 ```
 
-### <a name="help-at-the-end-of-a-script"></a><span data-ttu-id="5ebb3-114">スクリプトの最後のヘルプ</span><span class="sxs-lookup"><span data-stu-id="5ebb3-114">Help at the End of a Script</span></span>
+### <a name="help-at-the-end-of-a-script"></a><span data-ttu-id="d985a-114">スクリプトの最後のヘルプ</span><span class="sxs-lookup"><span data-stu-id="d985a-114">Help at the End of a Script</span></span>
 
- <span data-ttu-id="5ebb3-115">次の例では、スクリプトの最後にコメントを使用してコメントを示します。</span><span class="sxs-lookup"><span data-stu-id="5ebb3-115">The following example shows comment-based at the end of a script.</span></span>
+ <span data-ttu-id="d985a-115">次の例では、スクリプトの最後にコメントを使用してコメントを示します。</span><span class="sxs-lookup"><span data-stu-id="d985a-115">The following example shows comment-based at the end of a script.</span></span>
 
 ```powershell
 ...
