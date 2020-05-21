@@ -148,20 +148,6 @@
               href: components/ise/object-model/the-powershelltabcollection-object.md
             - name: PowerShellTab オブジェクト
               href: components/ise/object-model/the-powershelltab-object.md
-    - name: Web アクセス
-      items:
-        - name: 承認規則とセキュリティ機能
-          href: components/web-access/authorization-rules-and-security-features-of-windows-powershell-web-access.md
-        - name: インストール
-          href: components/web-access/install-and-use-windows-powershell-web-access.md
-        - name: アクセスに関する問題のトラブルシューティング
-          href: components/web-access/troubleshooting-access-problems-in-windows-powershell-web-access.md
-        - name: Windows PowerShell Web Access のアンインストール
-          href: components/web-access/uninstall-windows-powershell-web-access.md
-        - name: Web ベースの PowerShell コンソールの使用
-          href: components/web-access/use-the-web-based-windows-powershell-console.md
-    - name: ワークフロー ガイド
-      href: components/workflows-guide.md
 - name: PowerShell ギャラリー
   items:
     - name: 概要
