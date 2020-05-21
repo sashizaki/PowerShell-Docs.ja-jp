@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f723b21-8f95-4981-8b6e-4f07c22d601a
 caps.latest.revision: 5
-ms.openlocfilehash: b6f8aef76a5f4b5dc1a60425541856ead9a9c77a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 82bee7b7bb0ef49203636f2a293075f3db924ce4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368111"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557092"
 ---
 # <a name="how-to-add-examples-to-a-cmdlet-help-topic"></a>コマンドレットのヘルプ トピックに例を追加する方法
 
@@ -58,7 +58,7 @@ ms.locfileid: "72368111"
 
 ## <a name="adding-preceding-characters"></a>追加 (前の文字を)
 
-次の XML は、例のコマンドの直前に表示される、Windows PowerShell プロンプトなどの文字を追加する方法を示しています (スペースは不要です)。 Windows PowerShell®では、Windows PowerShell プロンプト: C:\ PS > が使用されます。
+次の XML は、例のコマンドの直前に表示される、Windows PowerShell プロンプトなどの文字を追加する方法を示しています (スペースは不要です)。 Windows PowerShell®では、Windows PowerShell プロンプト: C:\ PS> が使用されます。
 
 ```xml
 <command:examples>
@@ -89,7 +89,7 @@ ms.locfileid: "72368111"
 
 ## <a name="adding-a-description"></a>説明の追加
 
-次の XML は、この例の説明を追加する方法を示しています。 Windows PowerShell®では、複数の \<maml: 段落 > タグを使用できる場合でも、\<maml: 段落 > タグの1つのセットを説明に使用します。
+次の XML は、この例の説明を追加する方法を示しています。 Windows PowerShell®では、複数の \< \< maml: 段落> タグを使用することもできますが、説明のために maml: 段落> タグの1つのセットを使用します。
 
 ```xml
 <command:examples>
@@ -108,7 +108,7 @@ ms.locfileid: "72368111"
 
 ## <a name="adding-example-output"></a>出力例の追加
 
-次の XML は、コマンドの出力を追加する方法を示しています。 コマンドの結果情報は省略可能ですが、場合によっては、特定のパラメーターを使用した場合の影響を示すのに役立ちます。 Windows PowerShell®では、2組の空白 \<maml: 段落 > タグを使用して、コマンドの出力をコマンドから分離します。
+次の XML は、コマンドの出力を追加する方法を示しています。 コマンドの結果情報は省略可能ですが、場合によっては、特定のパラメーターを使用した場合の影響を示すのに役立ちます。 Windows PowerShell®では、コマンドの \< 出力をコマンドから分離するために、2つの空白の maml: 段落> タグを使用します。
 
 ```xml
 <command:examples>

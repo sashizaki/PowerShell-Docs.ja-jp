@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: ae37e3f3-5fd6-4ff6-bf66-a249ff96822b
 caps.latest.revision: 7
-ms.openlocfilehash: 2afa0e79d9de781149f31a45666d13f98ca10a26
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4989b0bb8a379011cde1a1d2cc803a081d79d97f
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359681"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557296"
 ---
 # <a name="implementing-custom-authorization-for-a-management-odata-web-service"></a>Management OData Web サービスのカスタム認可を実装する
 
@@ -21,7 +21,7 @@ Windows PowerShell Web サービスを使用するには、サードパーティ
 
 ## <a name="pass-through-authorization"></a>パススルー承認
 
-[CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)インターフェイスを実装する最も簡単な方法は、すべてのユーザーを承認するパススルー実装です。 この例では、セキュリティは提供されず、はインターフェイスを実装する方法の図解としてのみ提供されます。 [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)インターフェイスを実装するには、 [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)と [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId) の2つのメソッドをオーバーライドする必要があります。このような場合には、を指定します。 この例では、 [CustomAuthorization ユーザー](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)は常に、現在のユーザーに関連付けられている**WindowsIdentity**オブジェクトを返しています。
+[CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)インターフェイスを実装する最も簡単な方法は、すべてのユーザーを承認するパススルー実装です。 この例では、セキュリティは提供されず、はインターフェイスを実装する方法の図解としてのみ提供されます。 [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)インターフェイスを実装するには、 [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)と CustomAuthorization の2つのメソッドをオーバーライドする必要があります。このような場合には、 [Microsoft.Management.Odata.CustomAuthorization.GetMembershipId](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)を指定します。 この例では、 [CustomAuthorization ユーザー](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)は常に、現在のユーザーに関連付けられている**WindowsIdentity**オブジェクトを返しています。
 
 ```csharp
 namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPERLINK "VBScript:u(%227%22,30)" OData. HYPERLINK "VBScript:u(%227%22,36)" BasicPlugins
@@ -134,7 +134,7 @@ namespace Microsoft.Samples. HYPERLINK "VBScript:u(%227%22,19)" Management. HYPE
 
 ### <a name="role-based-authorization"></a>ロール ベースの承認
 
-次の例では、ロールベースの承認ポリシーを実装します。 ポリシーは、web.config および MOF および XML マッピングスキーマファイルを使用して、メインアプリケーションディレクトリに存在する XML ファイルで定義されます。 承認スキーマファイルを構成する方法の詳細については、「[ロールベースの承認を構成](./configuring-role-based-authorization.md)する」を参照してください。 このサンプルの最初の部分では、 [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)と[CustomAuthorization の id](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)メソッドを実装しています。この例を示します。 この場合、インターフェイスメソッドは、ユーザーのアクセス許可を確認する実際の作業を実行する `RbacSystem` クラス (以下で定義) のメソッドを呼び出します。
+次の例では、ロールベースの承認ポリシーを実装します。 ポリシーは、web.config および MOF および XML マッピングスキーマファイルを使用して、メインアプリケーションディレクトリに存在する XML ファイルで定義されます。 承認スキーマファイルを構成する方法の詳細については、「[ロールベースの承認を構成](./configuring-role-based-authorization.md)する」を参照してください。 このサンプルの最初の部分では、 [CustomAuthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.AuthorizeUser)と[CustomAuthorization の id](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization.GetMembershipId)メソッドを実装しています。この例を示します。 この場合、インターフェイスメソッドは、 `RbacSystem` ユーザーのアクセス許可を確認する実際の作業を行うクラス (以下で定義) のメソッドを呼び出します。
 
 ```csharp
 namespace Microsoft.Samples.Management.OData.RoleBasedPlugins

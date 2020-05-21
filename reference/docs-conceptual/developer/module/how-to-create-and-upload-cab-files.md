@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8d35f233-5447-48a2-a961-9fbca763262b
 caps.latest.revision: 7
-ms.openlocfilehash: 9928a0b31a57d42eb39cea1af0509613c483caf7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 37b31aa77dde23c1bd57a9af67e2232ef0827005
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367331"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557586"
 ---
 # <a name="how-to-create-and-upload-cab-files"></a>CAB ファイルを作成してアップロードする方法
 
@@ -25,7 +25,7 @@ ms.locfileid: "72367331"
 
 1. モジュールのヘルプファイルを UI カルチャで整理します。 更新可能な各ヘルプ CAB ファイルには、1つの UI カルチャの1つのモジュールのヘルプファイルが含まれています。 モジュールに対して複数のヘルプ CAB ファイルを配信できます。それぞれ異なる UI カルチャを対象としています。
 
-2. ヘルプファイルに、更新可能なヘルプで許可されているファイルの種類だけが含まれていること、およびヘルプファイルスキーマに対して検証されていることを確認します。 `Update-Help` コマンドレットで、無効なファイルや許可されていない種類のファイルが検出された場合、無効なファイルはインストールされず、CAB からのファイルのインストールが停止します。 許可されるファイルの種類の一覧については、「[更新可能なヘルプ CAB ファイルで許可](./file-types-permitted-in-an-updatable-help-cab-file.md)されているファイルの種類」を参照してください。
+2. ヘルプファイルに、更新可能なヘルプで許可されているファイルの種類だけが含まれていること、およびヘルプファイルスキーマに対して検証されていることを確認します。 `Update-Help`コマンドレットで、無効なファイルや許可されていない種類のファイルが検出された場合、無効なファイルはインストールされず、CAB からのファイルのインストールが停止します。 許可されるファイルの種類の一覧については、「[更新可能なヘルプ CAB ファイルで許可](./file-types-permitted-in-an-updatable-help-cab-file.md)されているファイルの種類」を参照してください。
 
 3. ヘルプファイルにデジタル署名します。 デジタル署名は必須ではありませんが、ベストプラクティスです。
 

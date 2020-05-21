@@ -8,24 +8,24 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 432798e4-5d69-46b1-9517-ff09bffaa4be
 caps.latest.revision: 7
-ms.openlocfilehash: 37af16d0279b6487c78f90eb19bcfe5c152ed9e7
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 58b908be3149376547b075320b021421351b881e
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76996054"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557067"
 ---
 # <a name="how-to-add-input-types-to-a-cmdlet-help-topic"></a>コマンドレットのヘルプ トピックに入力の種類を追加する方法
 
 このセクションでは、Windows PowerShell®コマンドレットのヘルプトピックに入力セクションを追加する方法について説明します。 [入力] セクションには、コマンドレットがパイプラインからの入力として受け取るオブジェクトの .NET クラスが、値またはプロパティ名のいずれかで一覧表示されます。
 
-入力セクションに追加できるクラスの数に制限はありません。 入力の型は \<コマンド: inputTypes > node で囲まれており、各クラスは \<コマンド: inputType > 要素で囲まれています。
+入力セクションに追加できるクラスの数に制限はありません。 入力型は、 \< コマンド: inputTypes> node で囲まれており、各クラスは \< コマンド: inputType> 要素で囲まれています。
 
-スキーマには、各 \<コマンド: inputType > 要素の2つの \<maml: description > 要素が含まれています。 ただし、`Get-Help` コマンドレットでは、\<コマンド: inputType >/\<maml: description >) 要素の内容のみが表示されます。
+スキーマには、 \< 各 \< コマンド: inputType> 要素に2つの maml: description> 要素が含まれています。 ただし、コマンドレットでは、 `Get-Help` \< コマンド: inputType>/ \< maml: description>) 要素の内容のみが表示されます。
 
-Windows PowerShell 3.0 以降では、`Get-Help` コマンドレットは \<maml: uri > 要素の内容を表示します。 この要素を使用すると、.NET クラスを説明するトピックにユーザーを誘導できます。
+Windows PowerShell 3.0 以降では、 `Get-Help` コマンドレットにより、 \< maml: uri> 要素の内容が表示されます。 この要素を使用すると、.NET クラスを説明するトピックにユーザーを誘導できます。
 
-次の XML は、\<maml: inputTypes > ノードを示しています。
+次の XML は、 \< maml: inputTypes> ノードを示しています。
 
 ```xml
 <command:inputTypes>
@@ -42,7 +42,7 @@ Windows PowerShell 3.0 以降では、`Get-Help` コマンドレットは \<maml
 </command:inputTypes>
 ```
 
-次の XML は、\<maml: inputTypes > ノードを使用して入力の種類を文書化する例を示しています。
+次の XML は、 \< maml: inputTypes> ノードを使用して入力の種類を文書化する例を示しています。
 
 ```xml
 <command:inputTypes>

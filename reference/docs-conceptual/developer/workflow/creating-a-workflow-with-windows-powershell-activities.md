@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: fb55971a-4ea4-4c51-aeff-4e0bb05a51b2
 caps.latest.revision: 6
-ms.openlocfilehash: 7d399786b9b43ee302493359d9702981045212e9
-ms.sourcegitcommit: 01c60c0c97542dbad48ae34339cddbd813f1353b
+ms.openlocfilehash: 12b0b246b78142f3811f9f566cd94e4dabd40cc9
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/04/2020
-ms.locfileid: "78277468"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557467"
 ---
 # <a name="creating-a-workflow-with-windows-powershell-activities"></a>Windows PowerShell アクティビティでワークフローを作成する
 
@@ -21,7 +21,7 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
 次の手順では、ユーザー指定のコンピューターのグループのドメインステータスを確認し、まだ参加していない場合はドメインに参加させるワークフローを作成する方法について説明します。その後、状態をもう一度確認します。
 
-### <a name="setting-up-the-project"></a>プロジェクトの設定
+### <a name="setting-up-the-project"></a>プロジェクトを設定する
 
 1. 「 [Visual Studio のツールボックスへの Windows PowerShell アクティビティの追加](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)」の手順に従って、ワークフロープロジェクトを作成し、そのアクティビティ[を [ツール](/dotnet/api/Microsoft.PowerShell.Activities)ボックス] に[追加します](/dotnet/api/Microsoft.PowerShell.Management.Activities)。
 
@@ -31,15 +31,15 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
 1. ワークフローに**Sequence**アクティビティを追加します。
 
-2. 引数の型が `String[]`の `ComputerName` という名前の引数を作成します。 この引数は、確認して参加させるコンピューターの名前を表します。
+2. 引数の型がであるという名前の引数を作成 `ComputerName` `String[]` します。 この引数は、確認して参加させるコンピューターの名前を表します。
 
-3. 型の `DomainCred` という名前の引数を[作成します](/dotnet/api/System.Management.Automation.PSCredential)。 この引数は、ドメインにコンピューターを参加させる権限を持つドメインアカウントのドメイン資格情報を表します。
+3. 「System.string」という名前の引数を作成 `DomainCred` し[ます。](/dotnet/api/System.Management.Automation.PSCredential) この引数は、ドメインにコンピューターを参加させる権限を持つドメインアカウントのドメイン資格情報を表します。
 
-4. 型の `MachineCred` という名前の引数を[作成します](/dotnet/api/System.Management.Automation.PSCredential)。 この引数は、確認および参加するコンピューターの管理者の資格情報を表します。
+4. 「System.string」という名前の引数を作成 `MachineCred` し[ます。](/dotnet/api/System.Management.Automation.PSCredential) この引数は、確認および参加するコンピューターの管理者の資格情報を表します。
 
-5. **Sequence**アクティビティ内に**parallelforeach**アクティビティを追加します。 ループが `ComputerName` 配列の要素を反復処理するように、テキストボックスに `comp` を入力し `ComputerName` します。
+5. **Sequence**アクティビティ内に**parallelforeach**アクティビティを追加します。 `comp` `ComputerName` ループが配列の要素を反復処理するように、テキストボックスにとを入力し `ComputerName` ます。
 
-6. **Parallelforeach**アクティビティの本文に**Sequence**アクティビティを追加します。 シーケンスの**DisplayName**プロパティを `JoinDomain`に設定します。
+6. **Parallelforeach**アクティビティの本文に**Sequence**アクティビティを追加します。 シーケンスの**DisplayName**プロパティをに設定 `JoinDomain` します。
 
 7. **GetWmiObject**アクティビティを**joindomain**シーケンスに追加します。
 
@@ -57,7 +57,7 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
     |プロパティ|値|
     |--------------|-----------|
-    |**[ComputerName]**|コンペティション|
+    |**コンピューター名**|コンペティション|
     |**DomainCredential**|DomainCred|
 
 11. **Addcomputer**アクティビティの後に、 **RestartComputer**アクティビティを**joindomain**シーケンスに追加します。
@@ -66,16 +66,16 @@ Windows PowerShell ワークフローを作成するには、Visual Studio の�
 
     |プロパティ|値|
     |--------------|-----------|
-    |**[ComputerName]**|コンペティション|
+    |**コンピューター名**|コンペティション|
     |**資格情報**|各の Ecred|
     |**の**|Microsoft. PowerShell. WaitForServiceTypes. PowerShell|
     |**Force**|True|
-    |待機|True|
+    |Wait|True|
     |PSComputerName|{""}|
 
 13. **RestartComputer**アクティビティの後に、 **GetWmiObject**アクティビティを**joindomain**シーケンスに追加します。 前の**GetWmiObject**アクティビティと同じになるように、プロパティを編集します。
 
     手順を完了すると、ワークフローデザインウィンドウは次のようになります。
 
-    ワークフローデザイナーでの JoinDomain XAML の ![![ワークフローデザイナーでの Joindomain xaml](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "JoinDomainWorkflow")の](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
-    
+    ![ワークフローデザイナーの JoinDomain XAML ](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png)
+     ![ワークフローデザイナーの JOINDOMAIN xaml](media/creating-a-workflow-with-windows-powershell-activities/joindomainworkflow.png "JoinDomainWorkflow")

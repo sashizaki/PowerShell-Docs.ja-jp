@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a6a04f15-b5d8-475b-ac9c-e75c58ec8933
 caps.latest.revision: 8
-ms.openlocfilehash: 3cb370cd1bfe9ce7198980cc1c26fafb126d00a3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 416061e5812e608f2099ca833bcaac4f0e651f59
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360901"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557620"
 ---
 # <a name="runspace04-sample"></a>Runspace04 サンプル
 
@@ -23,7 +23,7 @@ ms.locfileid: "72360901"
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>使用例
+## <a name="demonstrates"></a>対象
 
 このサンプルでは、次のことを示します。
 
@@ -125,4 +125,4 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell ホストアプリケーションの作成](./writing-a-windows-powershell-host-application.md)
+[Windows PowerShell ホスト アプリケーションを記述する](./writing-a-windows-powershell-host-application.md)
