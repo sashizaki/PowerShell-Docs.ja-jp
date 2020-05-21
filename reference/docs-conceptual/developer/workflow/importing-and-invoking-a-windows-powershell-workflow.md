@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 50e6f9b1-2678-4f53-9250-7c48843a9549
 caps.latest.revision: 5
-ms.openlocfilehash: 1113c0d1cd68bb97d2f96b529f755b62137d1f40
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a9497d72a586d0cc64c1d4e090819230285767e8
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366041"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564968"
 ---
 # <a name="importing-and-invoking-a-windows-powershell-workflow"></a>Windows PowerShell ワークフローをインポートして呼び出す
 
@@ -25,7 +25,7 @@ Windows PowerShell 3 では、Windows PowerShell モジュールとしてパッ�
 
 1. [Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを作成して、リモートの実行空間への接続を作成します。
 
-2. Wsmanconnectioninfo オブジェクトの[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトの[*](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ShellUri)プロパティを `Microsoft.PowerShell.Workflow` に設定して、Windows PowerShell エンドポイントを指定するように指定していますが、
+2. [Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトの[Wsmanconnectioninfo *](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo.ShellUri)プロパティをに設定して、 `Microsoft.PowerShell.Workflow` Windows PowerShell エンドポイントを指定します。このプロパティは、によって指定されます。
 
 3. 前の手順を完了することによって作成された接続を使用する実行空間を作成します。
 

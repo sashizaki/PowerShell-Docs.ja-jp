@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: db04f1df-def5-4456-8869-336024cda723
 caps.latest.revision: 8
-ms.openlocfilehash: a9c530cdc66302eb6b3d9d2b284eeb486c3b2ba9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d3c2c339ba9ac6ec4a1958fadbfe1c6d74e3d736
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364421"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561054"
 ---
 # <a name="how-to-declare-dynamic-parameters"></a>動的パラメーターを宣言する方法
 
-この例では、実行時にコマンドレットに追加される動的パラメーターを定義する方法を示します。 この例では、ユーザーが `Employee` スイッチパラメーターを指定するたびに、`Department` パラメーターがコマンドレットに追加されます。 動的パラメーターの詳細については、「[コマンドレット動的パラメーター](./cmdlet-dynamic-parameters.md)」を参照してください。
+この例では、実行時にコマンドレットに追加される動的パラメーターを定義する方法を示します。 この例では、 `Department` ユーザーがスイッチパラメーターを指定するたびに、パラメーターがコマンドレットに追加され `Employee` ます。 動的パラメーターの詳細については、「[コマンドレット動的パラメーター](./cmdlet-dynamic-parameters.md)」を参照してください。
 
 ## <a name="to-define-dynamic-parameters"></a>動的パラメーターを定義するには
 
@@ -27,7 +27,7 @@ ms.locfileid: "72364421"
    public class SendGreetingCommand : Cmdlet, IDynamicParameters
    ```
 
-2. [Idynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)メソッドを呼び出します。このメソッドは、動的パラメーターが定義されているオブジェクトを返します。 この例では、`Employee` パラメーターが指定されたときにメソッドが呼び出されます。
+2. [Idynamicparameters *](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)メソッドを呼び出します。このメソッドは、動的パラメーターが定義されているオブジェクトを返します。 この例では、パラメーターを指定したときにメソッドが呼び出され `Employee` ます。
 
    ```csharp
    public object GetDynamicParameters()
@@ -60,7 +60,7 @@ ms.locfileid: "72364421"
 
 ## <a name="example"></a>例
 
-この例では、ユーザーが `Employee` パラメーターを指定するたびに、`Department` パラメーターが追加されます。 `Department` パラメーターは省略可能なパラメーターであり、ValidateSet 属性を使用して、許可される引数を指定します。
+この例では、 `Department` ユーザーがパラメーターを指定するたびに、パラメーターが追加され `Employee` ます。 `Department`パラメーターは省略可能なパラメーターで、ValidateSet 属性は許可される引数を指定するために使用されます。
 
 ```csharp
 using System;
@@ -141,6 +141,6 @@ namespace SendGreeting
 
 [Idynamicparameters * のようになります。](/dotnet/api/System.Management.Automation.IDynamicParameters.GetDynamicParameters)
 
-[コマンドレット動的パラメーター](./cmdlet-dynamic-parameters.md)
+[コマンドレットの動的パラメーター](./cmdlet-dynamic-parameters.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 55908d67-7cbe-482a-a105-5a6da93c5311
 caps.latest.revision: 4
-ms.openlocfilehash: 8d692cf88d1d356886ef973f0989294d6b51ee6d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fd565e8bf8429d91d785664c8cc69d1843439219
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361071"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560595"
 ---
 # <a name="writing-help-for-powershell-cmdlets"></a>PowerShell コマンドレットのヘルプの作成
 
@@ -34,7 +34,7 @@ XML ベースのコマンドレットヘルプファイル形式では一貫性�
 
 ### <a name="write-simply"></a>書き込みのみ
 単純な語句と語句を使用します。
-専門用語を避けてください。
+専門的な用語を使わない。
 多くの読者が、外部言語の辞書とヘルプトピックのみを装備していることを考慮してください。
 
 ### <a name="write-consistently"></a>一貫した書き込み
@@ -85,24 +85,24 @@ Url の変更は避けてください。
 
 ## <a name="see-also"></a>参照
 
- [コマンドレットのヘルプファイルを作成する方法](./how-to-create-the-cmdlet-help-file.md)
+ [コマンドレットのヘルプ ファイルを作成する方法](./how-to-create-the-cmdlet-help-file.md)
 
- [コマンドレットの名前と概要をコマンドレットのヘルプトピックに追加する方法](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)
+ [コマンドレットのヘルプ トピックにコマンドレットの名前と概要を追加する方法](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)
 
  [詳細な説明をコマンドレットヘルプトピックに追加する方法](./how-to-add-a-cmdlet-description.md)
 
- [コマンドレットヘルプトピックに構文を追加する方法](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
+ [コマンドレットのヘルプ トピックに構文を追加する方法](./how-to-add-syntax-to-a-cmdlet-help-topic.md)
 
  [コマンドレットにパラメーターを追加する方法に関するヘルプトピック](./how-to-add-parameter-information.md)
 
  [コマンドレットのヘルプトピックに入力の種類を追加する方法](./how-to-add-input-types-to-a-cmdlet-help-topic.md)
 
- [コマンドレットヘルプトピックに戻り値を追加する方法](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
+ [コマンドレットのヘルプ トピックに戻り値を追加する方法](./how-to-add-return-values-to-a-cmdlet-help-topic.md)
 
- [コマンドレットヘルプトピックにメモを追加する方法](./how-to-add-notes-to-a-cmdlet-help-topic.md)
+ [コマンドレットのヘルプ トピックに注を追加する方法](./how-to-add-notes-to-a-cmdlet-help-topic.md)
 
- [コマンドレットのヘルプトピックに例を追加する方法](./how-to-add-examples-to-a-cmdlet-help-topic.md)
+ [コマンドレットのヘルプ トピックに例を追加する方法](./how-to-add-examples-to-a-cmdlet-help-topic.md)
 
- [コマンドレットヘルプトピックに関連リンクを追加する方法](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
+ [コマンドレットのヘルプ トピックに関連リンクを追加する方法](./how-to-add-related-links-to-a-cmdlet-help-topic.md)
 
  [Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: b3d09eaa-924f-4e2b-adfb-14bb729090dd
 caps.latest.revision: 8
-ms.openlocfilehash: ad7f9737c646dd5cea5abb14b828236e40feac5a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8ce13032a55d164121a073ef94086dc1de09b902
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366311"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564208"
 ---
 # <a name="provider-cmdlet-parameters"></a>コマンドレット コマンドレットのパラメーター
 
@@ -21,56 +21,56 @@ ms.locfileid: "72366311"
 
 ## <a name="provider-cmdlet-static-parameters"></a>プロバイダーコマンドレットの静的パラメーター
 
-静的パラメーターは、Windows PowerShell によって定義されます。 これらのパラメーターの大規模なセットは、すべてのプロバイダー間で一貫性を提供し、より簡単な開発環境を提供するために、Windows PowerShell によって実装されます。 これらのパラメーターの例としては、`Get-Item` コマンドレットの `literalPath`、`exclude`、`include` の各パラメーターがあります。 これらのパラメーターの小さなセットを上書きして、プロバイダーに固有のアクションを提供できます。 これらのパラメーターの例としては、`Set-Item` コマンドレットの `Path` と `Value` パラメーターがあります。 プロバイダーコマンドレットで上書きできるパラメーターの一覧を次に示します。
+静的パラメーターは、Windows PowerShell によって定義されます。 これらのパラメーターの大規模なセットは、すべてのプロバイダー間で一貫性を提供し、より簡単な開発環境を提供するために、Windows PowerShell によって実装されます。 これらのパラメーターの例としては、 `literalPath` `exclude` コマンドレットの、、およびパラメーターがあり `include` `Get-Item` ます。 これらのパラメーターの小さなセットを上書きして、プロバイダーに固有のアクションを提供できます。 これらのパラメーターの例として、 `Path` `Value` コマンドレットのパラメーターとパラメーターがあり `Set-Item` ます。 プロバイダーコマンドレットで上書きできるパラメーターの一覧を次に示します。
 
-`Clear-Content` コマンドレットを使用すると、 [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)メソッドを実装することによって、`Clear-Content` コマンドレットの `Path` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
+`Clear-Content`コマンドレットを使用し `Path` `Clear-Content` て、 [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)メソッドを実装することによって、コマンドレットのパラメーターに渡される値をプロバイダーがどのように使用するかを定義できます。
 
-`Clear-Item` コマンドレットを使用すると、`Clear-Item` コマンドレットの `Path` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。そのためには、[このメソッドを](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)実装します。
+`Clear-Item`コマンドレットを使用して、プロバイダーが、 `Path` コマンドレットのパラメーターに渡された値をどのように使用するかを定義できます。これを行う `Clear-Item` には、このメソッドを実装[System.Management.Automation.Provider.Itemcmdletprovider.Clearitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)します。
 
-`Clear-ItemProperty` コマンドレットを使用すると、 [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)メソッドを実装することによって、`Clear-ItemProperty` コマンドレットの `Path` および `Name` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
+`Clear-ItemProperty`コマンドレットを使用し `Path` `Name` て、 `Clear-ItemProperty` [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearProperty)メソッドを実装することによって、コマンドレットのパラメーターとパラメーターに渡される値をプロバイダーがどのように使用するかを定義できます。
 
-`Copy-Item` コマンドレットでは、 [ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドを実装することによって、`Copy-Item` コマンドレットの `Path`、`Destination`、および `Recurse` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
+`Copy-Item`コマンドレットを使用し `Path` `Destination` て、 `Recurse` `Copy-Item` [ContainerCmdletProvider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドを実装することによって、コマンドレットの、、およびパラメーターに渡される値をプロバイダーがどのように使用するかを定義できます。
 
-ChildItems コマンドレットは、 [Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)メソッドと Containercmdletprovider * メソッドを実装することによって、`Get-ChildItem` コマンドレットの `Path` パラメーターと `Recurse` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。このコマンドレットは、 [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)を実装します。
+ChildItems コマンドレットは、 `Path` `Recurse` `Get-ChildItem` [Containercmdletprovider. Getchilditems *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItems)メソッドと[*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNames)メソッドを実装することによって、コマンドレットのパラメーターとパラメーターに渡された値をプロバイダーがどのように使用するかを定義しています。
 
-`Get-Content` コマンドレットを使用すると、 [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)メソッドを実装することによって、`Get-Content` コマンドレットの `Path` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
+`Get-Content`コマンドレットを使用し `Path` `Get-Content` て、 [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)メソッドを実装することによって、コマンドレットのパラメーターに渡される値をプロバイダーがどのように使用するかを定義できます。
 
-`Get-Item` コマンドレットを使用すると、`Get-Item` コマンドレットの `Path` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。これを行うには、[このメソッドを](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)実装します。
+`Get-Item`コマンドレットを使用して、プロバイダーが `Path` コマンドレットのパラメーターに渡す値をどのように使用するかを定義できます。これを行う `Get-Item` には、このメソッドを[System.Management.Automation.Provider.Itemcmdletprovider.Getitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)実装します。
 
-`Get-ItemProperty` コマンドレットを使用すると、 [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)メソッドを実装することによって、`Get-ItemProperty` コマンドレットの `Path` および `Name` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
+`Get-ItemProperty`コマンドレットを使用し `Path` `Name` て、 `Get-ItemProperty` [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetProperty)メソッドを実装することによって、コマンドレットのパラメーターとパラメーターに渡される値をプロバイダーがどのように使用するかを定義できます。
 
-`Invoke-Item` コマンドレットを使用すると、 [Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)メソッドを実装することによって、`Invoke-Item` コマンドレットの `Path` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
+`Invoke-Item`コマンドレットを使用して、プロバイダーが `Path` `Invoke-Item` [Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)メソッドを実装することによって、コマンドレットのパラメーターに渡された値をどのように使用するかを定義できます。
 
-`Move-Item` コマンドレットを使用すると、`Move-Item` コマンドレットの `Path` パラメーターと `Destination` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。そのためには、[このメソッドを](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)実装します。
+`Move-Item`コマンドレットを使用して、プロバイダーが、 `Path` `Destination` コマンドレットのパラメーターとパラメーターに渡された値をどのように使用するかを定義できます `Move-Item` [。これ](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)を行うには、このメソッドを実装します。
 
-`New-Item` コマンドレットでは、 [Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドを実装することによって、`New-Item` コマンドレットの `Path`、`ItemType`、および `Value` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
+`New-Item`コマンドレットを使用し `Path` `ItemType` て、 `Value` `New-Item` [Containercmdletprovider. Newitem *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItem)メソッドを実装することで、コマンドレットの、、およびパラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
 
-`New-ItemProperty` コマンドレットを使用すると、`Value` コマンドレットの `Path`、`Name`、`PropertyType`、および `New-ItemProperty` パラメーターに渡された値をプロバイダーがどのように使用するかを定義[できます。](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty)
+`New-ItemProperty`コマンドレットを使用して、プロバイダーが、、、、 `Path` `Name` `PropertyType` および `Value` の各パラメーター `New-ItemProperty` [Microsoft.PowerShell.Commands.Registryprovider.Newproperty*](/dotnet/api/Microsoft.PowerShell.Commands.RegistryProvider.NewProperty)に渡された値を使用する方法を定義することができます。
 
-`Remove-Item`、 [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)メソッドを実装することによって、`Remove-Item` コマンドレットの `Path` および `Recurse` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
+`Remove-Item``Path` `Recurse` `Remove-Item` [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)メソッドを実装することで、コマンドレットのパラメーターとパラメーターに渡される値をプロバイダーがどのように使用するかを定義できます。
 
-`Remove-ItemProperty`、 [Idynamicpropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty)メソッドを実装することによって、`Remove-ItemProperty` コマンドレットの `Path` および `Name` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
+`Remove-ItemProperty``Path` `Name` `Remove-ItemProperty` [Idynamicpropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty)メソッドを実装することで、コマンドレットのパラメーターとパラメーターに渡される値をプロバイダーがどのように使用するかを定義できます。
 
-`Rename-Item` コマンドレットでは、 [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)メソッドを実装することによって、`Rename-Item` コマンドレットの `Path` および `NewName` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
+`Rename-Item`コマンドレットを使用し `Path` `NewName` て、 `Rename-Item` [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)メソッドを実装することによって、コマンドレットのパラメーターとパラメーターに渡される値をプロバイダーがどのように使用するかを定義できます。
 
-`Rename-ItemProperty`、Idynamicpropertycmdletprovider * を実装することによって`Path`、`Rename-ItemProperty` コマンドレットの 、`NewName`、および `Name` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。 [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Renameproperty*](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty)メソッド。
+`Rename-ItemProperty``Path` `NewName` `Name` `Rename-ItemProperty` [Idynamicpropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty)メソッドを実装することで、コマンドレットの、、およびパラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
 
-`Set-Content` コマンドレットを使用すると、 [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)メソッドを実装することによって、`Set-Content` コマンドレットの `Path` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
+`Set-Content`コマンドレットを使用し `Path` `Set-Content` て、 [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriter)メソッドを実装することによって、コマンドレットのパラメーターに渡される値をプロバイダーがどのように使用するかを定義できます。
 
-`Set-Item` コマンドレットでは、 [Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドを実装することによって、`Set-Item` コマンドレットの `Path` および `Value` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
+`Set-Item`コマンドレットを使用し `Path` `Value` て、 `Set-Item` [Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドを実装することによって、コマンドレットのパラメーターとパラメーターに渡される値をプロバイダーがどのように使用するかを定義できます。
 
-`Set-ItemProperty` コマンドレットでは、 [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッドを実装することによって、`Set-Item` コマンドレットの `Path` および `Value` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
+`Set-ItemProperty`コマンドレットを使用し `Path` `Value` て、 `Set-Item` [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッドを実装することによって、コマンドレットのパラメーターとパラメーターに渡される値をプロバイダーがどのように使用するかを定義できます。
 
-`Test-Path` コマンドレットを使用すると、 [Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)メソッドを実装することによって、`Test-Path` コマンドレットの `Path` パラメーターに渡された値をプロバイダーがどのように使用するかを定義できます。
+`Test-Path`コマンドレットを使用して、プロバイダーが `Path` `Test-Path` [Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)メソッドを実装することによって、コマンドレットのパラメーターに渡された値をどのように使用するかを定義できます。
 
-また、これらのパラメーターの特性を指定することはできません。これらのパラメーターが省略可能か必須かなど、これらのパラメーターにエイリアスを指定したり、検証属性を指定したりすることはできません。 これに対して、`Parameters` 属性などの属性を使用して、スタンドアロンのコマンドレットでパラメーターの特性を指定することができます。
+また、これらのパラメーターの特性を指定することはできません。これらのパラメーターが省略可能か必須かなど、これらのパラメーターにエイリアスを指定したり、検証属性を指定したりすることはできません。 これに対して、属性などの属性を使用して、スタンドアロンのコマンドレットでパラメーターの特性を指定することができ `Parameters` ます。
 
 ## <a name="provider-cmdlet-dynamic-parameters"></a>プロバイダーコマンドレット動的パラメーター
 
-コマンドレットプロバイダーの動的パラメーターは、スタンドアロンのコマンドレットの動的プロバイダーに似ています。 どちらの場合も、パラメーターは、ユーザーが `path` パラメーターなどの既定のパラメーターのいずれかに特定の値を指定すると、コマンドレットに追加されます。 ただし、動的パラメーターの追加をトリガーするために、すべての静的パラメーターを使用できるわけではありません。 動的パラメーターの詳細については、「[プロバイダーコマンドレット動的パラメーター](./provider-cmdlet-dynamic-parameters.md)」を参照してください。
+コマンドレットプロバイダーの動的パラメーターは、スタンドアロンのコマンドレットの動的プロバイダーに似ています。 どちらの場合も、パラメーターなど、ユーザーが既定のパラメーターのいずれかに特定の値を指定すると、パラメーターがコマンドレットに追加され `path` ます。 ただし、動的パラメーターの追加をトリガーするために、すべての静的パラメーターを使用できるわけではありません。 動的パラメーターの詳細については、「[プロバイダーコマンドレット動的パラメーター](./provider-cmdlet-dynamic-parameters.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 
 [プロバイダーコマンドレット動的パラメーター](./provider-cmdlet-dynamic-parameters.md)
 
-[Windows PowerShell プロバイダーの作成](./writing-a-windows-powershell-provider.md)
+[Windows PowerShell プロバイダーを記述する](./writing-a-windows-powershell-provider.md)

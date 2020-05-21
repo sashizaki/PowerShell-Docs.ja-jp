@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: d2465420-0970-4408-9ee5-260cf444cb67
 caps.latest.revision: 8
-ms.openlocfilehash: e6a0711cff6a550100f584fb64ae7f59f71a3cfb
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b266a22e3ab16762b22e9d630b968ee510ff1c49
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359981"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564191"
 ---
 # <a name="provider-cmdlets"></a>プロバイダー コマンドレット
 
@@ -33,7 +33,7 @@ ms.locfileid: "72359981"
 
 ### <a name="item-cmdlets"></a>項目のコマンドレット
 
-- `Clear-Item`: このコマンドレットは、データストア内の項目の値を削除することをユーザーに許可します。 このコマンドレットをサポートするには、次のように、 [system](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) .................... [..](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters)
+- `Clear-Item`: このコマンドレットを使用すると、ユーザーはデータストア内の項目の値を削除できます。 このコマンドレットをサポートするには、次のように、 [system](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem) .................... [..](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters)
 
 - `Copy-Item`: このコマンドレットを使用すると、ユーザーは1つの場所から別の場所に項目をコピーできます。 このコマンドレットをサポートするには、 [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItem)メソッドと[Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)メソッドを上書きします。このコマンドレットをサポートするには、次のようにします。
 
@@ -49,7 +49,7 @@ ms.locfileid: "72359981"
 
   - [Containercmdletprovider のようにします。 Getchildnamesdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)
 
-- `Invoke-Item`: このコマンドレットは、ユーザーが項目によって指定された既定のアクションを実行できるようにします。 このコマンドレットをサポートするには、 [Invokedefaultaction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)と[Invokedefaultaction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)の各メソッドを上書きします。このコマンドレットをサポートするには、次のようにします。
+- `Invoke-Item`: このコマンドレットは、ユーザーがアイテムによって指定された既定のアクションを実行できるようにします。 このコマンドレットをサポートするには、 [Invokedefaultaction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)と[Invokedefaultaction](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)の各メソッドを上書きします。このコマンドレットをサポートするには、次のようにします。
 
 - `Move-Item`: このコマンドレットを使用すると、ユーザーは1つの場所から別の場所に項目を移動できます。 このコマンドレットをサポートするには、次のように[して、](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters) [system.](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem) ......................................。
 
@@ -57,7 +57,7 @@ ms.locfileid: "72359981"
 
 - `Remove-Item`: このコマンドレットを使用すると、ユーザーはデータストアから項目を削除できます。 このコマンドレットをサポートするには、 [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItem)メソッドと[Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)メソッドを上書きします。このコマンドレットをサポートするには、次のようにします。
 
-- `Rename-Item`: このコマンドレットは、ユーザーがデータストア内の項目の名前を変更できるようにします。 このコマンドレットをサポートするには、 [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)および[Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters)の各メソッドを上書きします。このコマンドレットをサポートするには、次のようにします。
+- `Rename-Item`: このコマンドレットを使用すると、ユーザーはデータストア内の項目の名前を変更できます。 このコマンドレットをサポートするには、 [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItem)および[Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters)の各メソッドを上書きします。このコマンドレットをサポートするには、次のようにします。
 
 - `Set-Item`: このコマンドレットは、ユーザーがデータストア内の項目の値を更新できるようにします。 このコマンドレットをサポートするには、 [Setitem](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)と[Setitemdynamicparameters](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters)の各メソッドを上書きします。このコマンドレットをサポートするには、次のようにします。
 
@@ -65,7 +65,7 @@ ms.locfileid: "72359981"
 
 - `Add-Content`: このコマンドレットを使用すると、ユーザーはコンテンツを項目に追加できます。
 
-- `Clear-Content`: このコマンドレットを使用すると、項目を削除せずに項目の内容を削除できます。 このコマンドレットをサポートするには、Icontentcmdletprovider メソッドと[Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters)メソッドを上書きします。このコマンドレットの[内容](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)は次のようになります。
+- `Clear-Content`: このコマンドレットを使用すると、ユーザーは項目を削除せずに項目の内容を削除できます。 このコマンドレットをサポートするには、Icontentcmdletprovider メソッドと[Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters)メソッドを上書きします。このコマンドレットの[内容](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContent)は次のようになります。
 
 - `Get-Content`: このコマンドレットは、ユーザーが項目のコンテンツを取得できるようにします。 このコマンドレットをサポートするには、 [Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)メソッドと Icontentcmdletprovider メソッドを上書きします。このコマンドレットは、メソッドと[パラメーター](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters)メソッドを上書きします。 [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReader)メソッドは、コンテンツの読み取りに使用されるメソッドを定義する[Icontentreader](/dotnet/api/System.Management.Automation.Provider.IContentReader)インターフェイスを返します。このインターフェイスは、コンテンツの読み取りに使用されます。
 
@@ -81,11 +81,11 @@ ms.locfileid: "72359981"
 
 - `Move-ItemProperty`: このコマンドレットを使用すると、ユーザーはプロパティとその値を1つの場所から別の場所に移動できます。 このコマンドレットをサポートするには、 [Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MoveProperty)メソッドと[Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.MovePropertyDynamicParameters)メソッドを上書きします。このコマンドレットについては、「」をご利用ください。
 
-- `New-ItemProperty`: このコマンドレットは、新しいプロパティを作成し、その値を設定することをユーザーに許可します。 このコマンドレットをサポートするには、 [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newproperty](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewProperty)と Idynamicpropertycmdletprovider パラメーターを上書きして、このコマンドレットを次のように上書きします。 [System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Newpropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)メソッド。
+- `New-ItemProperty`: このコマンドレットは、新しいプロパティを作成し、その値を設定することをユーザーに許可します。 このコマンドレットをサポートするには、 [Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewProperty)メソッドと[Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)メソッドを上書きします。このコマンドレットをサポートするには、次のようにします。
 
 - `Remove-ItemProperty`: このコマンドレットを使用すると、ユーザーはプロパティとその値を削除できます。 このコマンドレットをサポートするには、 [Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemoveProperty)メソッドと[Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters)メソッドを上書きします。このコマンドレットをサポートするには、次のようにします。
 
-- `Rename-ItemProperty`: このコマンドレットは、ユーザーがプロパティの名前を変更できるようにします。 このコマンドレットをサポートするには、[Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty) メソッドと [Idynamicpropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters) メソッドを上書きします。このコマンドレットは、プロパティとをオーバーライドします。
+- `Rename-ItemProperty`: このコマンドレットを使用すると、ユーザーはプロパティの名前を変更できます。 このコマンドレットをサポートするには、Idynamicpropertycmdletprovider メソッドと Idynamicpropertycmdletprovider メソッドを上書きします。このコマンドレットは、[プロパティ](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenameProperty)と[System.Management.Automation.Provider.Idynamicpropertycmdletprovider.Renamepropertydynamicparameters](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters)をオーバーライドします。
 
 - `Set-ItemProperty`: このコマンドレットを使用すると、ユーザーは項目のプロパティを更新できます。 このコマンドレットをサポートするには、 [Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetProperty)メソッドと[Ipropertycmdletprovider](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters)メソッドを上書きします。このコマンドレットについては、「」をご利用ください。
 
@@ -95,7 +95,7 @@ ms.locfileid: "72359981"
 
 - `Pop-Location`: このコマンドレットは、現在の場所を最後にスタックにプッシュした場所に変更します。 このコマンドレットをサポートするために、メソッドを上書きする必要はありません。
 
-- `Push-Location`: このコマンドレットは、現在の場所を場所 ("スタック") の一覧の先頭に追加します。 このコマンドレットをサポートするために、メソッドを上書きする必要はありません。
+- `Push-Location`: このコマンドレットは、現在の場所を場所の一覧 ("スタック") の先頭に追加します。 このコマンドレットをサポートするために、メソッドを上書きする必要はありません。
 
 - `Set-Location`: このコマンドレットは、現在の作業場所を指定された場所に設定します。 このコマンドレットをサポートするために、メソッドを上書きする必要はありません。
 
@@ -105,7 +105,7 @@ ms.locfileid: "72359981"
 
 - `Convert-Path`: このコマンドレットは、Windows PowerShell パスのパスを Windows PowerShell プロバイダーのパスに変換します。
 
-- `Split-Path`: パスの指定した部分を返します。
+- `Split-Path`: パスの指定された部分を返します。
 
 - `Resolve-Path`: パスのワイルドカード文字を解決し、パスの内容を表示します。
 

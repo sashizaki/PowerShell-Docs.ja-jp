@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e8adc997-1a71-48e9-9383-513ef13da7cf
 caps.latest.revision: 4
-ms.openlocfilehash: 584e5923008e8369a83c699478844f0e0c295adc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: da74c674c704794d8648dcdf9ba0a1617decba9b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367761"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560612"
 ---
 # <a name="syntax-of-comment-based-help"></a>コメント ベースのヘルプの構文
 
@@ -37,7 +37,7 @@ ms.locfileid: "72367761"
 
 ## <a name="syntax-description"></a>構文の説明
 
- コメントベースのヘルプは、一連のコメントとして書かれています。 コメントの各行の前にコメント記号 (#) を入力するか、"\<#" と "# >" の記号を使用してコメントブロックを作成することができます。 コメントブロック内のすべての行は、コメントとして解釈されます。
+ コメントベースのヘルプは、一連のコメントとして書かれています。 コメントの各行の前にコメント記号 (#) を入力することも、" \< #" と "# >" 記号を使用してコメントブロックを作成することもできます。 コメントブロック内のすべての行は、コメントとして解釈されます。
 
  コメントベースのヘルプの各セクションは、キーワードによって定義され、各キーワードの前にドット (.) が付きます。 キーワードは任意の順序で表示できます。 キーワード名の大文字と小文字は区別されません。
 

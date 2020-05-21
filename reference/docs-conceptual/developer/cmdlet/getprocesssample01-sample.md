@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7b48bf80-cbf0-4cb1-8d5b-3b8d06196598
 caps.latest.revision: 10
-ms.openlocfilehash: 00190c7350cb0f1cfc5c389b56e48e9397480446
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 27f1c346863458920b310c6c4ce1403b3aab69ba
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369731"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563801"
 ---
 # <a name="getprocesssample01-sample"></a>GetProcessSample01 サンプル
 
-このサンプルでは、ローカルコンピューター上のプロセスを取得するコマンドレットを実装する方法を示します。 このコマンドレットは、Windows PowerShell 2.0 によって提供される `Get-Process` コマンドレットの簡略化されたバージョンです。
+このサンプルでは、ローカルコンピューター上のプロセスを取得するコマンドレットを実装する方法を示します。 このコマンドレットは、 `Get-Process` Windows PowerShell 2.0 によって提供されるコマンドレットの簡略化されたバージョンです。
 
 ## <a name="how-to-build-the-sample-by-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドする方法。
 
@@ -25,7 +25,7 @@ ms.locfileid: "72369731"
 
 2. ソリューション (.sln) ファイルのアイコンをダブルクリックします。 これにより、Microsoft Visual Studio でサンプルプロジェクトが開きます。
 
-3. **[ビルド]** メニューの **[ソリューションのビルド]** を選択します。
+3. **[ビルド]** メニューで、**[ソリューションのビルド]** を選択します。
 
   サンプルのライブラリは、既定の \bin フォルダーまたは \bin\debug フォルダーに構築されます。
 
@@ -68,7 +68,7 @@ ms.locfileid: "72369731"
 
 このサンプルには、Windows PowerShell 1.0 以降が必要です。
 
-## <a name="demonstrates"></a>使用例
+## <a name="demonstrates"></a>対象
 
 このサンプルでは、次のことを示します。
 
@@ -194,4 +194,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

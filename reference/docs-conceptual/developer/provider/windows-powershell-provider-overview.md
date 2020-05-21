@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 82244fbd-07b9-47f3-805c-3fb90ebbf58a
 caps.latest.revision: 13
-ms.openlocfilehash: 81f6c8cd75ccea9e711cd8f6d6daa6cca5a499a0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9f1b94e722e59e707a26547949c661b5098d29e0
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366291"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560952"
 ---
 # <a name="windows-powershell-provider-overview"></a>Windows PowerShell プロバイダーの概要
 
-Windows PowerShell プロバイダーを使用すると、マウントされたドライブのように、任意のデータストアをファイルシステムとして公開できます。 たとえば、組み込みレジストリプロバイダーを使用すると、コンピューターの `c` ドライブを移動する場合と同様に、レジストリ内を移動することができます。 プロバイダーは、`Item` コマンドレット (`Get-Item`、`Set-Item`など) をオーバーライドすることもできます。これにより、データストア内のデータをファイルやディレクトリと同様に処理できるようになります。 プロバイダーとドライブ、および Windows PowerShell の組み込みプロバイダーの詳細については、「 [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers)」を参照してください。
+Windows PowerShell プロバイダーを使用すると、マウントされたドライブのように、任意のデータストアをファイルシステムとして公開できます。 たとえば、組み込みレジストリプロバイダーを使用すると、コンピューターのドライブに移動する場合と同様に、レジストリ内を移動でき `c` ます。 プロバイダーは、コマンドレット (たとえば、、など) をオーバーライドすることもできます。これにより、 `Item` `Get-Item` `Set-Item` データストア内のデータはファイルシステムの移動時に処理されます。 プロバイダーとドライブ、および Windows PowerShell の組み込みプロバイダーの詳細については、「 [about_Providers](/powershell/module/microsoft.powershell.core/about/about_providers)」を参照してください。
 
 ## <a name="providers-and-drives"></a>プロバイダーとドライブ
 
@@ -39,19 +39,19 @@ Windows PowerShell プロバイダーを使用すると、マウントされた�
 
 ### <a name="drive-qualified-paths"></a>ドライブ修飾パス
 
-ドライブ修飾パスは、項目名、項目が配置されているコンテナーとサブコンテナー、および項目のアクセスに使用される Windows PowerShell ドライブを組み合わせたものです。 (ドライブは、データストアへのアクセスに使用されるプロバイダーによって定義されます。 このパスの先頭には、ドライブ名とコロン (:) が続きます。 たとえば次のようになります。`get-childitem C:`
+ドライブ修飾パスは、項目名、項目が配置されているコンテナーとサブコンテナー、および項目のアクセスに使用される Windows PowerShell ドライブを組み合わせたものです。 (ドライブは、データストアへのアクセスに使用されるプロバイダーによって定義されます。 このパスの先頭には、ドライブ名とコロン (:) が続きます。 例: `get-childitem C:`
 
 ### <a name="provider-qualified-paths"></a>プロバイダー修飾パス
 
-Windows PowerShell エンジンがプロバイダーを初期化および初期化解除できるようにするには、プロバイダーがプロバイダーによって修飾されたパスをサポートする必要があります。 たとえば、ユーザーは、次のプロバイダーによって修飾されたパスが定義されているため、ファイルシステムプロバイダーの初期化と初期化解除を行うことができます: `FileSystem::\\uncshare\abc\bar`。
+Windows PowerShell エンジンがプロバイダーを初期化および初期化解除できるようにするには、プロバイダーがプロバイダーによって修飾されたパスをサポートする必要があります。 たとえば、ユーザーは、次のプロバイダーによって修飾されたパスを定義するため、FileSystem プロバイダーを初期化および初期化解除 `FileSystem::\\uncshare\abc\bar` できます。
 
 ### <a name="provider-direct-paths"></a>プロバイダー-直接パス
 
-Windows PowerShell プロバイダーへのリモートアクセスを許可するには、現在の場所に対して Windows PowerShell プロバイダーに直接渡すプロバイダー-直接パスをサポートする必要があります。 たとえば、レジストリの Windows PowerShell プロバイダーでは、`\\server\regkeypath` をプロバイダーのダイレクトパスとして使用できます。
+Windows PowerShell プロバイダーへのリモートアクセスを許可するには、現在の場所に対して Windows PowerShell プロバイダーに直接渡すプロバイダー-直接パスをサポートする必要があります。 たとえば、Windows PowerShell プロバイダーは、 `\\server\regkeypath` プロバイダーの直接のパスとしてを使用できます。
 
 ### <a name="provider-internal-paths"></a>プロバイダー-内部パス
 
-プロバイダーコマンドレットが Windows PowerShell 以外のアプリケーションプログラミングインターフェイス (Api) を使用してデータにアクセスできるようにするには、Windows PowerShell プロバイダーがプロバイダー内部パスをサポートしている必要があります。 このパスは、プロバイダーによって修飾されたパスの "::" の後に示されます。 たとえば、プロバイダー-filesystem Windows PowerShell プロバイダーの内部パスは `\\uncshare\abc\bar`ます。
+プロバイダーコマンドレットが Windows PowerShell 以外のアプリケーションプログラミングインターフェイス (Api) を使用してデータにアクセスできるようにするには、Windows PowerShell プロバイダーがプロバイダー内部パスをサポートしている必要があります。 このパスは、プロバイダーによって修飾されたパスの "::" の後に示されます。 たとえば、ファイルシステム Windows PowerShell プロバイダーのプロバイダー内部パスは `\\uncshare\abc\bar` です。
 
 ## <a name="overriding-cmdlet-parameters"></a>コマンドレットパラメーターのオーバーライド
 
@@ -63,7 +63,7 @@ Windows PowerShell プロバイダーへのリモートアクセスを許可す�
 
 ## <a name="provider-capabilities"></a>プロバイダーの機能
 
-プロバイダーがサポートできるさまざまな機能が定義さ[れてい](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)ます ()。 これには、ワイルドカード、フィルター項目、およびサポートトランザクションを使用する機能が含まれます。 プロバイダーの機能を指定するには、論理 `OR` 操作と組み合わせて、System. automation. provider. [providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)列挙型の値のリストを、プロバイダークラスの system.servicemodel................. [. プロバイダーの](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)属性[のプロパティ (](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities)属性の2番目のパラメーター) として追加します。 たとえば、次の属性では、プロバイダーがシステムの[管理](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0)をサポートしていることを指定しています。プロバイダーは、の**処理**と[システムの管理](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0)を実行します。
+プロバイダーがサポートできるさまざまな機能が定義さ[れてい](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)ます ()。 これには、ワイルドカード、フィルター項目、およびサポートトランザクションを使用する機能が含まれます。 プロバイダーの機能を指定するには、 [System.Management.Automation.Provider.Providercapabilities](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities) `OR` プロバイダークラスの system.servicemodel (属性の2番目のパラメーター) プロパティとして、論理操作と組み合わせて、system.string 列挙型の値のリストを追加します。このプロパティ[には、](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute.ProviderCapabilities)プロバイダークラスの[...](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute) ............. プロバイダーの属性属性が含まれます。 たとえば、次の属性では、プロバイダーがシステムの[管理](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0)をサポートしていることを指定しています。プロバイダーは、の**処理**と[システムの管理](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities?view=pscore-6.2.0) **Transactions**を実行します。
 
 ```csharp
 [CmdletProvider(RegistryProvider.ProviderName, ProviderCapabilities.ShouldProcess | ProviderCapabilities.Transactions)]
@@ -74,9 +74,9 @@ Windows PowerShell プロバイダーへのリモートアクセスを許可す�
 
 プロバイダーを作成するときに、サポートするプロバイダーコマンドレットに独自のヘルプを実装できます。 これには、プロバイダーコマンドレットごとに1つのヘルプトピックが含まれています。また、プロバイダーコマンドレットの動作が動的パラメーターの使用方法によって異なる場合は、複数のバージョンのヘルプトピックがあります。 プロバイダーのコマンドレット固有のヘルプをサポートするには、プロバイダーが[Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp)インターフェイスを実装する必要があります。
 
-Windows PowerShell エンジンは、 [Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml)を呼び出して、プロバイダーのコマンドレットのヘルプトピックを表示するためのメソッドを呼び出します。 エンジンは、`Get-Help` コマンドレットを実行するときにユーザーが指定したコマンドレットの名前と、ユーザーの現在のパスを提供します。 プロバイダーが異なるドライブに対して同じプロバイダーコマンドレットの異なるバージョンを実装している場合は、現在のパスが必要です。 メソッドは、コマンドレットヘルプの XML を含む文字列を返す必要があります。
+Windows PowerShell エンジンは、 [Icmdletprovidersupportshelp](/dotnet/api/System.Management.Automation.Provider.ICmdletProviderSupportsHelp.GetHelpMaml)を呼び出して、プロバイダーのコマンドレットのヘルプトピックを表示するためのメソッドを呼び出します。 エンジンは、コマンドレットの実行時にユーザーが指定したコマンドレットの名前 `Get-Help` と、ユーザーの現在のパスを提供します。 プロバイダーが異なるドライブに対して同じプロバイダーコマンドレットの異なるバージョンを実装している場合は、現在のパスが必要です。 メソッドは、コマンドレットヘルプの XML を含む文字列を返す必要があります。
 
-ヘルプファイルの内容は、PSMAML XML を使用して書き込まれます。 これは、スタンドアロンのコマンドレットのヘルプコンテンツを記述するために使用される XML スキーマと同じです。 カスタムコマンドレットヘルプの内容を、`CmdletHelpPaths` 要素のプロバイダーのヘルプファイルに追加します。 次の例は、1つのプロバイダーコマンドレットの `command` 要素を示しています。また、プロバイダーが提供するプロバイダーコマンドレットの名前を指定する方法を示しています。 対応
+ヘルプファイルの内容は、PSMAML XML を使用して書き込まれます。 これは、スタンドアロンのコマンドレットのヘルプコンテンツを記述するために使用される XML スキーマと同じです。 カスタムコマンドレットのヘルプの内容を、プロバイダーのヘルプファイルの要素の下に追加し `CmdletHelpPaths` ます。 次の例は、 `command` 1 つのプロバイダーコマンドレットの要素を示しています。また、プロバイダーが提供するプロバイダーコマンドレットの名前を指定する方法を示しています。 対応
 
 ```xml
 <CmdletHelpPaths>
@@ -96,4 +96,4 @@ Windows PowerShell エンジンは、 [Icmdletprovidersupportshelp](/dotnet/api/
 
 [プロバイダーコマンドレット](./provider-cmdlets.md)
 
-[Windows PowerShell プロバイダーの作成](./writing-a-windows-powershell-provider.md)
+[Windows PowerShell プロバイダーを記述する](./writing-a-windows-powershell-provider.md)

@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
-ms.openlocfilehash: 30e98bfcf06b1720005a73ee8294aeba7e1ae066
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fbaea91c12eede70d30e29dce3fd2d36d7f55994
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367821"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564842"
 ---
 # <a name="examples-of-comment-based-help"></a>コメント ベースのヘルプの例
 
@@ -145,7 +145,7 @@ C:\PS> get-help add-extension -full
 
 次のサンプル関数には、コメントベースのヘルプが含まれています。
 
-終了 **#>** と `Param` ステートメントの間に空白行があることに注意してください。 `Param` ステートメントが含まれていないスクリプトでは、ヘルプトピックの最後のコメントと最初の関数宣言の間に、少なくとも2つの空白行が必要です。 これらの空白行がない場合、get-help は、スクリプトではなく、関数にヘルプトピックを関連付けます。
+終了とステートメントの間に空白行があることに注意して **#>** `Param` ください。 ステートメントが含まれていないスクリプトでは、 `Param` ヘルプトピックの最後のコメントと最初の関数宣言の間に、少なくとも2つの空白行が必要です。 これらの空白行がない場合、get-help は、スクリプトではなく、関数にヘルプトピックを関連付けます。
 
 ```powershell
 <#
@@ -257,7 +257,7 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
 ## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>例 3: Param ステートメント内のパラメーターの説明
 
-この例では、関数またはスクリプトの `Param` ステートメントに parameterdescriptions を挿入する方法を示します。 この形式は、パラメーターの説明が brief の場合に最も役立ちます。
+この例で `Param` は、関数またはスクリプトのステートメントに parameterdescriptions を挿入する方法を示します。 この形式は、パラメーターの説明が brief の場合に最も役立ちます。
 
 ```powershell
 function Add-Extension
@@ -282,11 +282,11 @@ function Add-Extension
     #>
 ```
 
-結果は、例1の結果と同じです。 Get-help は、パラメーターの説明を `.Parameter` キーワードと共に解釈します。
+結果は、例1の結果と同じです。 Get-help は、キーワードが付いているかのようにパラメーターの説明を解釈し `.Parameter` ます。
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>例 4: XML ファイルへのリダイレクト
 
-関数とスクリプトの XML ベースのヘルプトピックを記述できます。 コメントベースのヘルプは実装が簡単ですが、ヘルプコンテンツをより細かく制御する場合や、ヘルプトピックを複数の言語に変換する場合は、XML ベースのヘルプが必要です。次の例は、Update-Month スクリプトの最初の数行を示しています。 スクリプトでは、`.ExternalHelp` キーワードを使用して、スクリプトの XML ベースのヘルプトピックへのパスを指定します。
+関数とスクリプトの XML ベースのヘルプトピックを記述できます。 コメントベースのヘルプは実装が簡単ですが、ヘルプコンテンツをより細かく制御する場合や、ヘルプトピックを複数の言語に変換する場合は、XML ベースのヘルプが必要です。次の例は、Update-Month スクリプトの最初の数行を示しています。 スクリプトでは、キーワードを使用して、 `.ExternalHelp` スクリプトの XML ベースのヘルプトピックへのパスを指定します。
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
@@ -296,7 +296,7 @@ function Add-Extension
     function Get-Data { }
 ```
 
-次の例は、関数での `.ExternalHelp` キーワードの使用方法を示しています。
+次の例は、関数でキーワードを使用する方法を示して `.ExternalHelp` います。
 
 ```powershell
 function Add-Extension
@@ -311,7 +311,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>例 5: 別のヘルプトピックへのリダイレクト
 
-次のコードは、Windows PowerShell の組み込み `Help` 関数の先頭から抜粋したもので、一度に1画面のヘルプテキストを表示します。 Get-help コマンドレットのヘルプトピックでは Help 関数について説明しているので、Help 関数は `.ForwardHelpTargetName` キーワードと `.ForwardHelpCategory` キーワードを使用して、ユーザーを Get-help コマンドレットのヘルプトピックにリダイレクトします。
+次のコードは、Windows PowerShell の組み込み関数の先頭から抜粋したもので、一度 `Help` に1画面のヘルプテキストを表示します。 Get-help コマンドレットのヘルプトピックでは Help 関数について説明しているので、Help 関数はキーワードとキーワードを使用して `.ForwardHelpTargetName` `.ForwardHelpCategory` ユーザーを get-help コマンドレットのヘルプトピックにリダイレクトします。
 
 ```powershell
 function help

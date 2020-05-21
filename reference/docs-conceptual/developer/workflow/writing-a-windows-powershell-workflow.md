@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 2551ceed-836f-4275-9fc0-ea68446d6a35
 caps.latest.revision: 7
-ms.openlocfilehash: 4f0be193fb5b5c753d040a48e5f49235ece11708
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0f8a9938a1685e9abc2f1dbfb18c3b2b9008d9be
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366011"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564928"
 ---
 # <a name="writing-a-windows-powershell-workflow"></a>Windows PowerShell ワークフローを記述する
 
@@ -36,12 +36,12 @@ Windows PowerShell アセンブリによって公開されているアクティ�
 
   次のトピックでは、Windows PowerShell アクティビティを使用してワークフローを作成する方法について説明します。
 
-- [Visual Studio ツールボックスへの Windows PowerShell アクティビティの追加](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)
+- [Visual Studio ツールボックスに Windows PowerShell アクティビティを追加する](./adding-windows-powershell-activities-to-the-visual-studio-toolbox.md)
 
-- [Windows PowerShell アクティビティを使用したワークフローの作成](./creating-a-workflow-with-windows-powershell-activities.md)
+- [Windows PowerShell アクティビティでワークフローを作成する](./creating-a-workflow-with-windows-powershell-activities.md)
 
-- [Windows PowerShell スクリプトを使用したワークフローの作成](./creating-a-workflow-by-using-a-windows-powershell-script.md)
+- [Windows PowerShell スクリプトを利用してワークフローを作成する](./creating-a-workflow-by-using-a-windows-powershell-script.md)
 
-- [Windows PowerShell ワークフローのインポートと呼び出し](./importing-and-invoking-a-windows-powershell-workflow.md)
+- [Windows PowerShell ワークフローをインポートして呼び出す](./importing-and-invoking-a-windows-powershell-workflow.md)
 
-- [Windows PowerShell コマンドレットからのワークフローアクティビティの作成](./creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md)
+- [Windows PowerShell コマンドレットからワークフロー アクティビティを作成する](./creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md)

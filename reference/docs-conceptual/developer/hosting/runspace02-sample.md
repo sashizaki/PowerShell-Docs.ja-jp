@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 7630bb63-ef39-4abd-b795-8000f984c1e5
 caps.latest.revision: 9
-ms.openlocfilehash: 6352169cffbb8a8bf59a42f79979f5003c150fa4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 997b1d6841ff014093ba54bf7a1db7b0b7d746b8
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360981"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564808"
 ---
 # <a name="runspace02-sample"></a>Runspace02 サンプル
 
-このサンプル[では、system.servicemodel クラスを](/dotnet/api/system.management.automation.powershell)使用して、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)および[Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object)コマンドレットを同期的に実行する方法を示します。 [Get process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットは、ローカルコンピューター上で実行されている各プロセスの System.Diagnostics.Process.Id オブジェクトを返します。このコマンドレットは `Sort-Object`、 [*](/dotnet/api/System.Diagnostics.Process.Id)プロパティに基づい[てオブジェクトを](/dotnet/api/System.Diagnostics.Process)並べ替えます。 これらのコマンドの結果[は、system.string コントロールを](/dotnet/api/System.Windows.Forms.DataGridView)使用して表示されます。
+このサンプル[では、system.servicemodel クラスを](/dotnet/api/system.management.automation.powershell)使用して、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)および[Sort-Object](/powershell/module/Microsoft.PowerShell.Utility/Sort-Object)コマンドレットを同期的に実行する方法を示します。 [Get process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットは、ローカルコンピューター上で実行[されて](/dotnet/api/System.Diagnostics.Process)いる各プロセスの System.Diagnostics.Process.Id オブジェクトを返し、はそれらのオブジェクトをその `Sort-Object` [*](/dotnet/api/System.Diagnostics.Process.Id)プロパティに基づいて並べ替えます。 これらのコマンドの結果[は、system.string コントロールを](/dotnet/api/System.Windows.Forms.DataGridView)使用して表示されます。
 
 ## <a name="requirements"></a>要件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>使用例
+## <a name="demonstrates"></a>対象
 
 このサンプルでは、次のことを示します。
 
@@ -116,4 +116,4 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell ホストアプリケーションの作成](./writing-a-windows-powershell-host-application.md)
+[Windows PowerShell ホスト アプリケーションを記述する](./writing-a-windows-powershell-host-application.md)

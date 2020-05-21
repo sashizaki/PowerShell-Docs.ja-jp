@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: e67298ee-a773-4402-8afb-d97ad0e030e5
 caps.latest.revision: 4
-ms.openlocfilehash: c7e20ff0f36e8cab2d414ff2e5924b3359ad9c60
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 52244ee7496b99e11f0306e93728736fc9c51be5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366271"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564705"
 ---
 # <a name="public-resource-schema"></a>パブリック リソース スキーマ
 
@@ -38,13 +38,13 @@ class PswsTest_Process
 
 各プロパティ名の前にはデータ型が付きます。 この例のデータ型は、.NET Framework のプリミティブな CLR データ型に対応していますが、プロパティは、後で説明する他のリソースや複合型への参照にすることもできます。
 
-`Key` 修飾子は、プロパティがリソースインスタンスを一意に識別するために使用されることを示します。 1つのリソースに複数のキーを含めることができます。
+修飾子は、 `Key` プロパティがリソースインスタンスを一意に識別するために使用されることを示します。 1つのリソースに複数のキーを含めることができます。
 
-`Required` 修飾子は、プロパティが必須であることを示します。 `Key` 修飾子を使用してプロパティにラベルが付けられている場合は、必須であると見なされ、`Required` 修飾子は必要ありません。
+修飾子は、 `Required` プロパティが必須であることを示します。 修飾子を使用してプロパティにラベルが付けられている場合は、必須である `Key` と見なされ、 `Required` 修飾子は必要ありません。
 
 ### <a name="complex-data-types"></a>複合データ型
 
-エンティティのプロパティには、複合データ型を含めることができます。 複合データ型は、C プログラミング言語の構造体と同様に、他の型で構成される型です。 次の例に示すように、複合型は、MOF ファイルで `ComplexType` 修飾子を持つクラスとして宣言されます。
+エンティティのプロパティには、複合データ型を含めることができます。 複合データ型は、C プログラミング言語の構造体と同様に、他の型で構成される型です。 `ComplexType`次の例に示すように、複合型は、MOF ファイルで修飾子を使用したクラスとして宣言されます。
 
 ```csharp
 [ComplexType]
@@ -55,7 +55,7 @@ class PswsTest_ProcessModule
 };
 ```
 
-複合型としてエンティティプロパティを宣言するには、複合型の名前を含む、`EmbeddedInstance` 修飾子を使用して `string` 型として宣言します。 次の例は、前の例で宣言した `PswsTest_ProcessModule` 型のプロパティの宣言を示しています。
+複合型としてエンティティプロパティを宣言するには、複合型の名前を含む、修飾子を使用して型として宣言し `string` `EmbeddedInstance` ます。 次の例は、前の例で宣言した型のプロパティの宣言を示して `PswsTest_ProcessModule` います。
 
 ```csharp
 [Required, EmbeddedInstance("PswsTest_ProcessModule")] String Modules[];

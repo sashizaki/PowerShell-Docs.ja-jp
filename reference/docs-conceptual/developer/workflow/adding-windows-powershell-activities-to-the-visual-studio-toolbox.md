@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9c8ef289-0659-42d1-9976-044b144201eb
 caps.latest.revision: 6
-ms.openlocfilehash: 2a8372d937fc3c959f7d829bb52495048423d506
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ecd23d3eb722137bdda0498fc71e0e966c57a589
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359651"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561191"
 ---
 # <a name="adding-windows-powershell-activities-to-the-visual-studio-toolbox"></a>Visual Studio ツールボックスに Windows PowerShell アクティビティを追加する
 
@@ -29,11 +29,11 @@ ms.locfileid: "72359651"
 
    タブを追加すると、PowerShell アクティビティをツールボックスの他のツールとは別にグループ化できます。
 
-4. 新しいツールボックス タブで、**項目の選択**... をクリックします。**ツールボックスアイテムの選択** ダイアログボックスが表示されます。
+4. [新しいツールボックス] タブで、[**項目の選択**...] をクリックします。[**ツールボックスアイテムの選択**] ダイアログボックスが表示されます。
 
-5. **[ツールボックスアイテムの選択]** ダイアログで、 **[システム]** タブをクリックします。
+5. [**ツールボックスアイテムの選択**] ダイアログで、[**システム**] タブをクリックします。
 
-6. **[Browse]** をクリックします。
+6. **[参照]** をクリックします。
 
 7. %WINDIR%\Microsoft.NET\assembly\ GAC_MSIL \Microsoft.PowerShell.Core.Activities\v4.0_3.0.0. 0__31bf3856ad364e フォルダーに移動し、[] をダブルクリックします。
 
@@ -43,4 +43,4 @@ ms.locfileid: "72359651"
 
 [Windows PowerShell ワークフローを記述する](./writing-a-windows-powershell-workflow.md)
 
-[Windows PowerShell アクティビティを使用したワークフローの作成](./creating-a-workflow-with-windows-powershell-activities.md)
+[Windows PowerShell アクティビティでワークフローを作成する](./creating-a-workflow-with-windows-powershell-activities.md)

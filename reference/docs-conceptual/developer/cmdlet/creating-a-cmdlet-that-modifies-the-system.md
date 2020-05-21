@@ -13,12 +13,12 @@ helpviewer_keywords:
 - confirm impact [PowerShell Programmer's Guide]
 ms.assetid: 59be4120-1700-4d92-a308-ef4a32ccf11a
 caps.latest.revision: 8
-ms.openlocfilehash: 8a65915b88a04e36e773853b903528a65fe11e99
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f0ce30c3fa76141908680934bcac41a989622c42
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365761"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560068"
 ---
 # <a name="creating-a-cmdlet-that-modifies-the-system"></a>システムを変更するコマンドレットを作成する
 
@@ -26,15 +26,15 @@ ms.locfileid: "72365761"
 
 確認をサポートするには、コマンドレットで2つの処理を行う必要があります。
 
-- このコマンドレットでは、Supportsを `true`に設定することによっ[て、指定](/dotnet/api/System.Management.Automation.CmdletAttribute)した場合の確認がサポートされることを宣言します。
+- Supportsをに設定するキーワードをに設定することによっ[て、この](/dotnet/api/System.Management.Automation.CmdletAttribute)コマンドレットでの確認がサポートされていることを宣言 `true` します。
 
 - コマンドレットの実行中に、次の例に示すように、「」というコマンドレット[を呼び出します](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)。
 
-コマンドレットは、確認をサポートすることで、Windows PowerShell によって提供される `Confirm` および `WhatIf` パラメーターを公開します。また、コマンドレットの開発ガイドラインにも適合します (コマンドレット開発ガイドラインの詳細については、「[コマンドレット開発ガイドライン](./cmdlet-development-guidelines.md)」を参照してください)。
+確認をサポートすることで、コマンドレットは、 `Confirm` `WhatIf` Windows PowerShell によって提供されるパラメーターとパラメーターを公開します。また、コマンドレットの開発ガイドラインにも適合します (コマンドレット開発ガイドラインの詳細については、「[コマンドレット開発ガイドライン](./cmdlet-development-guidelines.md)」を参照してください)。
 
 ## <a name="changing-the-system"></a>システムの変更
 
-"システムの変更" の動作は、Windows PowerShell の外部でシステムの状態を変更する可能性のあるすべてのコマンドレットを指します。 たとえば、プロセスを停止したり、ユーザーアカウントを有効または無効にしたり、データベーステーブルに行を追加したりすると、システムに対するすべての変更が確認されます。 これに対して、データの読み取りまたは一時的な接続の確立を行う操作は、システムを変更するのではなく、通常は確認を必要としません。 また、`set-variable`など、Windows PowerShell ランタイム内で効果が制限されている操作についても、確認は必要ありません。 永続的な変更を行う可能性のあるコマンドレットは、永続的な変更を行う必要がある場合にのみ、`SupportsShouldProcess` を宣言して呼び出す必要があり[ます。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
+"システムの変更" の動作は、Windows PowerShell の外部でシステムの状態を変更する可能性のあるすべてのコマンドレットを指します。 たとえば、プロセスを停止したり、ユーザーアカウントを有効または無効にしたり、データベーステーブルに行を追加したりすると、システムに対するすべての変更が確認されます。 これに対して、データの読み取りまたは一時的な接続の確立を行う操作は、システムを変更するのではなく、通常は確認を必要としません。 また、などの Windows PowerShell ランタイム内で効果が制限されている操作についても、確認は必要ありません `set-variable` 。 永続的な変更を行う可能性があるかどうかにかかわらず、コマンドレットが永続的な変更を行う場合にのみ、変更を宣言して呼び出す必要があり `SupportsShouldProcess` [ます。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
 
 > [!NOTE]
 > "プロセスの確認" はコマンドレットにのみ適用されます。 コマンドまたはスクリプトが、.NET のメソッドまたはプロパティを直接呼び出すか、Windows PowerShell の外部でアプリケーションを呼び出すことによって、システムの実行状態を変更した場合、この形式の確認は使用できません。
@@ -55,25 +55,25 @@ ms.locfileid: "72365761"
 public class StopProcCommand : Cmdlet
 ```
 
-この[場合、`SupportsShouldProcess`](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute キーワードが `true` に設定されていることに注意してください。これにより、コマンドレットは、... [...](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) ............................. [...](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) このキーワードが設定されていない場合、ユーザーは `Confirm` パラメーターと `WhatIf` パラメーターを使用できません。
+この[場合、](/dotnet/api/System.Management.Automation.CmdletAttribute)属性キーワードがに設定されていることに注意してください。これにより、このコマンドレットでは、.................................... コマンドレット `SupportsShouldProcess` `true` の[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)呼び出しを行う[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)ことができます。 このキーワードが設定されていない場合、 `Confirm` および `WhatIf` パラメーターはユーザーが使用できません。
 
 ### <a name="extremely-destructive-actions"></a>非常に破壊的操作
 
-操作の中には、アクティブなハードディスクパーティションの再フォーマットなど、非常に破壊的なものがあります。 このような場合は、コマンドレットによって `ConfirmImpact` = `ConfirmImpact.High` が設定さ[れている](/dotnet/api/System.Management.Automation.CmdletAttribute)必要があります。 この設定により、ユーザーが `Confirm` パラメーターを指定していない場合でも、コマンドレットはユーザー確認を要求します。 ただし、コマンドレットの開発者は、ユーザーアカウントの削除など、破壊的な可能性がある操作については、乱用 `ConfirmImpact` 回避する必要があります。 `ConfirmImpact` が " [System. Automation. ConfirmImpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **high"** に設定されていることに注意してください。
+操作の中には、アクティブなハードディスクパーティションの再フォーマットなど、非常に破壊的なものがあります。 このような場合は、コマンドレットを設定して、system.servicemodel 属性を `ConfirmImpact`  =  `ConfirmImpact.High` 宣言する[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)必要があります。 この設定により、ユーザーがパラメーターを指定していない場合でも、コマンドレットはユーザー確認を要求し `Confirm` ます。 ただし、コマンドレットの開発者は、 `ConfirmImpact` ユーザーアカウントの削除など、破壊的な可能性がある操作の乱用を避ける必要があります。 `ConfirmImpact`が " [System. Automation. confirmimpact](/dotnet/api/System.Management.Automation.ConfirmImpact) **high"** に設定されている場合は注意してください。
 
-同様に、一部の操作は破壊的になる可能性はほとんどありませんが、理論的には Windows PowerShell の外部でシステムの実行状態を変更します。 このようなコマンドレットでは、`ConfirmImpact` を[system.string に設定できます。](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0) これにより、ユーザーが中程度の影響と大きな影響を与える操作のみを確認するように求められた場合に、確認要求がバイパスされます。
+同様に、一部の操作は破壊的になる可能性はほとんどありませんが、理論的には Windows PowerShell の外部でシステムの実行状態を変更します。 このようなコマンドレットは `ConfirmImpact` 、 ["system.object"](/dotnet/api/system.management.automation.confirmimpact?view=powershellsdk-1.1.0)に設定できます。 これにより、ユーザーが中程度の影響と大きな影響を与える操作のみを確認するように求められた場合に、確認要求がバイパスされます。
 
 ## <a name="defining-parameters-for-system-modification"></a>システム変更のパラメーターの定義
 
 このセクションでは、システムの変更をサポートするために必要なコマンドレットなど、コマンドレットのパラメーターの定義方法について説明します。 パラメーターの定義に関する全般的な情報が必要な場合は、「[コマンドライン入力を処理するパラメーターを追加](./adding-parameters-that-process-command-line-input.md)する」を参照してください。
 
-Stop Proc コマンドレットは、`Name`、`Force`、および `PassThru`の3つのパラメーターを定義します。
+Stop Proc コマンドレットは `Name` 、、、およびの3つのパラメーターを定義します `Force` `PassThru` 。
 
-`Name` パラメーターは、プロセス入力オブジェクトの `Name` プロパティに対応しています。 このサンプルの `Name` パラメーターは必須であることに注意してください。停止する名前付きプロセスがない場合、コマンドレットは失敗します。
+パラメーターは、 `Name` `Name` プロセス入力オブジェクトのプロパティに対応します。 `Name`このサンプルのパラメーターは必須であることに注意してください。停止する名前付きプロセスがない場合、コマンドレットは失敗します。
 
-`Force` パラメーターを使用すると、ユーザーは、システムの呼び出しをオーバーライドでき[ます。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) 実際、`Force` を指定すると、コマンドレットによって `Force` パラメーターが設定されて[いる必要があります](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)。これにより、コマンドレットは、コマンドレットによる呼び出しをスキップし、操作を続行します[。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) これは、[システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)の呼び出しには影響しないことに注意してください。
+パラメーターを使用すると `Force` 、ユーザーは、システムの呼び出しをオーバーライドでき[ます。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) 実際には、を指定すると、コマンドレットによって、が指定されたときに、コマンドレットによって、その呼び出しがスキップされ、操作が続行されるように、パラメーターが設定されて[いる必要があります](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) `Force` `Force` [。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) これは、[システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)の呼び出しには影響しないことに注意してください。
 
-`PassThru` パラメーターを使用すると、コマンドレットがパイプライン (この場合はプロセスが停止した後) を介して出力オブジェクトを渡すかどうかを指定できます。 このパラメーターは、入力オブジェクトのプロパティではなく、コマンドレット自体に関連付けられていることに注意してください。
+`PassThru`パラメーターを使用すると、コマンドレットがパイプライン (この場合はプロセスが停止した後) を介して出力オブジェクトを渡すかどうかを指定できます。 このパラメーターは、入力オブジェクトのプロパティではなく、コマンドレット自体に関連付けられていることに注意してください。
 
 Stop Proc コマンドレットのパラメーター宣言を次に示します。
 
@@ -120,7 +120,7 @@ private bool passThru;
 
 ## <a name="overriding-an-input-processing-method"></a>入力処理メソッドのオーバーライド
 
-コマンドレットでは、入力処理メソッドをオーバーライドする必要があります。 次のコードは、サンプルの Stop Proc コマンドレットで使用される、system.object[のオーバーライドを](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)示しています。 このメソッドは、要求されたプロセス名ごとに、プロセスが特別なプロセスではないことを確認し、プロセスを停止し、`PassThru` パラメーターが指定されている場合は出力オブジェクトを送信します。
+コマンドレットでは、入力処理メソッドをオーバーライドする必要があります。 次のコードは、サンプルの Stop Proc コマンドレットで使用される、system.object[のオーバーライドを](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)示しています。 このメソッドは、要求されたプロセス名ごとに、プロセスが特別なプロセスではないことを確認し、そのプロセスを停止して、パラメーターが指定されている場合は出力オブジェクトを送信し `PassThru` ます。
 
 ```csharp
 protected override void ProcessRecord()
@@ -243,7 +243,7 @@ if (!ShouldProcess(string.Format("{0} ({1})", processName,
 
 ## <a name="calling-the-shouldcontinue-method"></a>"メソッドの続行" メソッドの呼び出し
 
-システムの呼び出しによって、ユーザーにセカンダリメッセージが送信されるように[なり](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)ます。 この呼び出しは、`Force` パラメーターが `true`に設定されていない場合に `true`[を返す呼び出しの後に行わ](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)れます。 ユーザーは、操作を続行する必要があるかどうかを伝えるフィードバックを提供できます。 コマンドレットでは、system.object を呼び出し[ます。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)危険性の高いシステム変更については、追加のチェックとして続行するか、すべてのオプションをユーザーに提供する必要があるかどうかを確認してください。
+システムの呼び出しによって、ユーザーにセカンダリメッセージが送信されるように[なり](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)ます。 この呼び出しは、system.object の呼び出しが[返された後に行わ](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)れ、 `true` パラメーターが `Force` に設定されていない場合 `true` はになります。 ユーザーは、操作を続行する必要があるかどうかを伝えるフィードバックを提供できます。 コマンドレットでは、system.object を呼び出し[ます。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)危険性の高いシステム変更については、追加のチェックとして続行するか、すべてのオプションをユーザーに提供する必要があるかどうかを確認してください。
 
 次の例では、System... コマンドレットの呼び出しを示して[います。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)サンプルの Stop Proc コマンドレット[で、このメソッドの](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)オーバーライドから続行します。
 
@@ -270,11 +270,11 @@ if (criticalProcess &&!force)
 
 ## <a name="stopping-input-processing"></a>入力処理の停止
 
-システムの変更を行うコマンドレットの入力処理メソッドでは、入力の処理を停止する方法が提供される必要があります。 この Stop Proc コマンドレットの場合は[、system.](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) [..](/dotnet/api/System.Diagnostics.Process.Kill) ....................................................... `PassThru` パラメーターは `true`に設定されて[いるので](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)、 [WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)も呼び出されて、プロセスオブジェクトがパイプラインに送信されます。この処理が行われます。
+システムの変更を行うコマンドレットの入力処理メソッドでは、入力の処理を停止する方法が提供される必要があります。 この Stop Proc コマンドレットの場合は[、system.](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) [..](/dotnet/api/System.Diagnostics.Process.Kill) ....................................................... `PassThru`パラメーターがに設定されているので `true` 、 [WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)も呼び出されて、プロセスオブジェクトがパイプラインに送信されるように[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)なっています。
 
 ## <a name="code-sample"></a>コード サンプル
 
-完全なC#サンプルコードについては、「 [StopProcessSample01 sample](./stopprocesssample01-sample.md)」を参照してください。
+完全な C# サンプルコードについては、「 [StopProcessSample01 sample](./stopprocesssample01-sample.md)」を参照してください。
 
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類と書式設定の定義
 
@@ -288,13 +288,13 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
 
 コマンドレットが Windows PowerShell に登録されている場合は、コマンドラインで実行することでテストできます。 ここでは、Stop Proc コマンドレットをテストするいくつかのテストについて説明します。 コマンドラインからコマンドレットを使用する方法の詳細については、「 [Windows PowerShell を使用したはじめに](/powershell/scripting/getting-started/getting-started-with-windows-powershell)」を参照してください。
 
-- 次に示すように、Windows PowerShell を起動し、Stop-Proc コマンドレットを使用して処理を停止します。 コマンドレットでは `Name` パラメーターを必須として指定しているので、コマンドレットではパラメーターに対してクエリを行います。
+- 次に示すように、Windows PowerShell を起動し、Stop-Proc コマンドレットを使用して処理を停止します。 コマンドレットではパラメーターを必須と指定しているので、 `Name` コマンドレットはパラメーターを照会します。
 
     ```powershell
     PS> stop-proc
     ```
 
-次のような出力が表示されます。
+    次のような出力が表示されます。
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -308,7 +308,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     PS> stop-proc -Name notepad
     ```
 
-次のような出力が表示されます。
+    次のような出力が表示されます。
 
     ```
     Confirm
@@ -323,7 +323,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     PS> stop-proc -Name Winlogon
     ```
 
-次のような出力が表示されます。
+    次のような出力が表示されます。
 
     ```output
     Confirm
@@ -335,13 +335,13 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-- ここで、警告を受信せずに WINLOGON プロセスを停止してみましょう。 このコマンドの入力では、`Force` パラメーターを使用して警告を上書きすることに注意してください。
+- ここで、警告を受信せずに WINLOGON プロセスを停止してみましょう。 このコマンドの入力では、パラメーターを使用して警告を上書きすることに注意 `Force` してください。
 
     ```powershell
     PS> stop-proc -Name winlogon -Force
     ```
 
-次のような出力が表示されます。
+    次のような出力が表示されます。
 
     ```output
     Confirm
@@ -360,4 +360,4 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
-[コマンドレットのサンプル](./cmdlet-samples.md)
+[コマンドレット サンプル](./cmdlet-samples.md)

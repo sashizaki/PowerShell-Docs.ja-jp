@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 65fbac8b-07d0-4513-bc8d-79f1f389be0f
 caps.latest.revision: 5
-ms.openlocfilehash: 7aadee07b38d2e9d87c5f0c548d13a5cdad1939f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5c55ec1346e1f2a9a3fd59445ce267c80bdb5ae4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366171"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561707"
 ---
 # <a name="authoring-the-mof-schema-file-for-a-management-odata-web-service"></a>Management OData Web サービスの MOF スキーマ ファイルを作成する
 
@@ -23,7 +23,7 @@ ms.locfileid: "72366171"
 
 次のファイルは、サービスリソースとプロセスリソースを定義します。 これらの各リソースは、一連の Windows PowerShell コマンドレットで管理できるオブジェクトに対応します。 これらのプロパティは、これらのコマンドレットによって使用されるパラメーターに対応します。
 
-2つの各リソースには、複合型のプロパティが含まれています。 複合型は、`ComplexType` 修飾子を使用して変更されたクラスとして定義されます。
+2つの各リソースには、複合型のプロパティが含まれています。 複合型は、修飾子を使用して変更されたクラスとして定義され `ComplexType` ます。
 
 ```csharp
 
@@ -211,6 +211,6 @@ class PswsTest_Stream
 
 ## <a name="see-also"></a>参照
 
-[管理 OData Web サービスの作成](./creating-a-management-odata-web-service.md)
+[Management OData Web サービスを作成する](./creating-a-management-odata-web-service.md)
 
-[パブリックリソーススキーマ](./public-resource-schema.md)
+[パブリック リソース スキーマ](./public-resource-schema.md)

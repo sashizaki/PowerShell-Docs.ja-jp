@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e83c9d9-6d06-4247-94d9-e3bfd4013b11
 caps.latest.revision: 4
-ms.openlocfilehash: b830571418fe75bbfc68df02f20a6012efefd99a
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 7ccdeeb2833b79cabc7c77d1a400e0c9132b2dcd
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76996068"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561466"
 ---
 # <a name="authoring-the-xml-schema-file-for-a-management-odata-web-service"></a>Management OData Web サービスの XML スキーマ ファイルを作成する
 
@@ -48,10 +48,10 @@ XML ファイルの最初の部分は、MOF スキーマファイルで定義さ
 |------------------|-----------------|
 |作成|作成|
 |読み取り|クエリ|
-|更新プログラム、更新|更新プログラム、更新|
+|更新|更新|
 |削除|削除|
 
-次の例は、`Service` リソースに対する作成、読み取り、および更新の各操作のマッピングを示しています。
+次の例は、リソースに対する作成、読み取り、更新の各操作のマッピングを示して `Service` います。
 
 ```xml
 <ClassImplementations>
@@ -157,10 +157,10 @@ XML ファイルの最初の部分は、MOF スキーマファイルで定義さ
         </Class>
 ```
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
-[管理用の OData web サービスの MOF スキーマファイルを作成する](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[Management OData Web サービスの MOF スキーマ ファイルを作成する](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[リソースマッピングスキーマ](./resource-mapping-schema.md)
+[リソース マッピング スキーマ](./resource-mapping-schema.md)
 
-[管理 OData Web サービスの作成](./creating-a-management-odata-web-service.md)
+[Management OData Web サービスを作成する](./creating-a-management-odata-web-service.md)

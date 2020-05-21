@@ -31,12 +31,12 @@ helpviewer_keywords:
 - user notifications
 ms.assetid: 14c13acb-f0b7-4613-bc7d-c361d14da1a2
 caps.latest.revision: 8
-ms.openlocfilehash: 9079f40e75dae86c22fd8b4f8a45d501c6125498
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9b9a598b592d0ac60099020e564ec7fffa54e683
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74416031"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561071"
 ---
 # <a name="adding-user-messages-to-your-cmdlet"></a>コマンドレットにユーザー メッセージを追加する
 
@@ -56,7 +56,7 @@ ms.locfileid: "74416031"
 
 コマンドレットの作成の最初の手順では、常にコマンドレットに名前を付け、コマンドレットを実装する .NET クラスを宣言します。 任意の種類のコマンドレットは、入力処理メソッドからユーザー通知を書き込むことができます。そのため、一般に、このコマンドレットには、コマンドレットで実行されるシステム変更を示す動詞を使用して名前を指定できます。 承認されたコマンドレット動詞の詳細については、「[コマンドレットの動詞名](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
 
-Stop Proc コマンドレットは、システムを変更するように設計されています。したがって、.NET クラスの system.servicemodel[属性](/dotnet/api/System.Management.Automation.CmdletAttribute)宣言には、`SupportsShouldProcess` attribute キーワードを含め、`true`に設定する必要があります。
+Stop Proc コマンドレットは、システムを変更するように設計されています。したがって、.NET クラスの[system.string 宣言には、](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute キーワードを含め、をに設定する必要があり `SupportsShouldProcess` ます。 `true`
 
 次のコードは、この Stop Proc コマンドレットクラスの定義です。 この定義の詳細については、「[システムを変更するコマンドレットを作成](./creating-a-cmdlet-that-modifies-the-system.md)する」を参照してください。
 
@@ -68,7 +68,7 @@ public class StopProcCommand : Cmdlet
 
 ## <a name="defining-parameters-for-system-modification"></a>システム変更のパラメーターの定義
 
-Stop Proc コマンドレットは、`Name`、`Force`、および `PassThru`の3つのパラメーターを定義します。 これらのパラメーターの定義の詳細については、「[システムを変更するコマンドレットを作成](./creating-a-cmdlet-that-modifies-the-system.md)する」を参照してください。
+Stop Proc コマンドレットは `Name` 、、、およびの3つのパラメーターを定義します `Force` `PassThru` 。 これらのパラメーターの定義の詳細については、「[システムを変更するコマンドレットを作成](./creating-a-cmdlet-that-modifies-the-system.md)する」を参照してください。
 
 Stop Proc コマンドレットのパラメーター宣言を次に示します。
 
@@ -143,7 +143,7 @@ WriteVerbose(message);
 コマンドレットの操作のトラブルシューティングに使用できるデバッグメッセージを記述するには、このメソッドを[使用します](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)。 この呼び出しは、入力処理メソッドによって行われます。
 
 > [!NOTE]
-> Windows PowerShell では、詳細情報とデバッグ情報の両方を表示する `Debug` パラメーターも定義されています。 コマンド[レットでこの](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)パラメーターがサポートされている場合は、 [system](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).......................................................
+> Windows PowerShell では、 `Debug` 詳細情報とデバッグ情報の両方を表示するパラメーターも定義されています。 コマンド[レットでこの](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)パラメーターがサポートされている場合は、 [system](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).......................................................
 
 次のサンプルの Stop Proc コマンドレットのコードの2つのセクションでは、system............................... [. コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)のオーバーライドから、[システム](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)の呼び出しを示しています。
 
@@ -168,7 +168,7 @@ WriteObject(process);
 
 Windows PowerShell は、トレースインフラストラクチャとコマンドレットに対して、すべての[システム](/dotnet/api/System.Management.Automation.Cmdlet.WriteDebug)の呼び出しを自動的にルーティングします。 これにより、メソッド呼び出しをホストアプリケーション、ファイル、またはデバッガーにトレースできます。コマンドレット内で追加の開発作業を行う必要はありません。 次のコマンドラインエントリは、トレース操作を実装します。
 
-**PS > トレース-式の停止-proc-file proc .log-command stop-proc notepad**
+**PS> トレース-式の停止-proc-file proc .log-command stop-proc notepad**
 
 ## <a name="writing-a-warning-message"></a>警告メッセージを書き込んでいます
 
@@ -208,7 +208,7 @@ WriteProgress(pr);
 
 ## <a name="code-sample"></a>コード サンプル
 
-完全なC#サンプルコードについては、「 [StopProcessSample02 sample](./stopprocesssample02-sample.md)」を参照してください。
+完全な C# サンプルコードについては、「 [StopProcessSample02 sample](./stopprocesssample02-sample.md)」を参照してください。
 
 ## <a name="define-object-types-and-formatting"></a>オブジェクトの種類と書式を定義する
 
@@ -228,7 +228,7 @@ Windows PowerShell は、.NET オブジェクトを使用してコマンドレ�
     PS> stop-proc -Name notepad -Verbose -Debug
     ```
 
-次のような出力が表示されます。
+    次のような出力が表示されます。
 
     ```
     VERBOSE: Attempting to stop process " notepad ".

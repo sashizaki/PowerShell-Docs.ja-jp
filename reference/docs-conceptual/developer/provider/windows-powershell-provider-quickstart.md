@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3e879ba7-c334-460b-94a1-3e9b63d3d8de
 caps.latest.revision: 5
-ms.openlocfilehash: 949c0d63b1e5bca1bfe670362df4297c29e98fcc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4693a2ec02a8f010f900bebf5a50853edef88cb1
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359921"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560935"
 ---
 # <a name="windows-powershell-provider-quickstart"></a>Windows PowerShell プロバイダー クイック スタート
 
@@ -21,7 +21,7 @@ ms.locfileid: "72359921"
 
 ## <a name="writing-a-basic-provider"></a>基本的なプロバイダーの作成
 
-Windows PowerShell プロバイダーの最も基本的な機能は、ドライブを作成および削除することです。 この例では、[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) クラスの[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) * メソッドと[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを実装しています。この例では、クラスが使用されています。この例を次に示します。 また、プロバイダークラスを宣言する方法についても説明します。
+Windows PowerShell プロバイダーの最も基本的な機能は、ドライブを作成および削除することです。 この例では、Drivecmdletprovider クラスの[Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) * メソッドと[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを実装しています。この例では、 [System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスが使用されています。この例を次に示します。 また、プロバイダークラスを宣言する方法についても説明します。
 
 プロバイダーを作成するときに、プロバイダーが利用可能になったときに自動的に作成される既定のドライブドライブを指定できます。 また、そのプロバイダーを使用する新しいドライブを作成するためのメソッドを定義します。
 
@@ -35,15 +35,15 @@ Visual Studio で、AccessDBProviderSample という名前のクラスライブ�
 
 1. プロジェクトへの参照として、system.servicemodel アセンブリを追加します。
 
-2. **[プロジェクト > AccessDBProviderSample のプロパティ > デバッグ]** をクリックします。 **[プロジェクトの開始]** で、 **[外部プログラムの開始]** をクリックし、Windows PowerShell 実行可能ファイル (通常は c:\Windows\System32\WindowsPowerShell\v1.0\\) に移動します。
+2. [**プロジェクト > AccessDBProviderSample のプロパティ > デバッグ**] をクリックします。 [**プロジェクトの開始**] で、[**外部プログラムの開始**] をクリックし、Windows PowerShell 実行可能ファイル (通常は c:\Windows\System32\WindowsPowerShell\v1.0) に移動し \\ ます。
 
-3. **[開始オプション]** で、 **[コマンドライン引数]** ボックスに次のように入力し `-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
+3. [**開始オプション**] で、[**コマンドライン引数**] ボックスに次のように入力します。`-noexit -command "[reflection.assembly]::loadFrom(AccessDBProviderSample.dll' ) | import-module"`
 
 ### <a name="declaring-the-provider-class"></a>プロバイダークラスの宣言
 
 このプロバイダーは、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスから派生します。 実際の機能 (項目へのアクセスと操作、データストア内の移動、項目のコンテンツの取得と設定) を提供する[ほとんどのプロバイダーは、system.servicemodel](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラスから派生します。
 
-クラスが [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider) から派生することを指定するだけでなく、例に示すように、このクラスをプロバイダーの[System.Management.Automation.Provider.Cmdletproviderattribute](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)属性で修飾する必要がありますが、
+クラスが Drivecmdletprovider から派生することを指定するだけでなく、例に示すように、このクラスを[System.Management.Automation.Provider.Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)プロバイダーの[属性](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)で修飾する必要がありますが、
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers
@@ -69,7 +69,7 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 [Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)メソッドは、ユーザーがプロバイダーの名前を指定して[NewPSDriveCommand](/dotnet/api/Microsoft.PowerShell.Commands.Newpsdrivecommand)コマンドレットを呼び出したときに、Windows PowerShell エンジンによって呼び出されたときに使用されます。 System.management.automation.psdriveinfo パラメーターは Windows PowerShell エンジンによって渡され、メソッドは新しいドライブを Windows PowerShell エンジンに返します。 このメソッドは、上記で作成したクラス内で宣言する必要があります。
 
-メソッドは、最初に、渡されたドライブオブジェクトとドライブルートの両方が存在することを確認し、そのいずれかが存在しない場合は `null` を返します。 次に、内部クラス AccessDBPSDriveInfo のコンストラクターを使用して、新しいドライブと、ドライブが表す Access データベースへの接続を作成します。
+メソッドは、最初に、渡されたドライブオブジェクトとドライブルートの両方が存在することを確認し、 `null` いずれかの場合はを返します。 次に、内部クラス AccessDBPSDriveInfo のコンストラクターを使用して、新しいドライブと、ドライブが表す Access データベースへの接続を作成します。
 
 ```csharp
 protected override PSDriveInfo NewDrive(PSDriveInfo drive)

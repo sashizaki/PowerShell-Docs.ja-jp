@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 931ccace-c565-4a98-8dcc-df00f86394b1
 caps.latest.revision: 8
-ms.openlocfilehash: d210a852a90d94df2ab360dd86f0b83a396330e3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7c4098c6c670f22253fe7d463b33e45208d00790
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415648"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560000"
 ---
 # <a name="adding-aliases-wildcard-expansion-and-help-to-cmdlet-parameters"></a>エイリアス、ワイルドカード展開、ヘルプをコマンドレット パラメーターに追加する
 
@@ -35,13 +35,13 @@ public class StopProcCommand : Cmdlet
 
 ## <a name="defining-parameters-for-system-modification"></a>システム変更のパラメーターの定義
 
-コマンドレットでは、システムの変更とユーザーフィードバックをサポートするパラメーターを定義する必要があります。 コマンドレットでは、`Name` パラメーターまたはそれと同等のものを定義して、コマンドレットが何らかの種類の識別子でシステムを変更できるようにする必要があります。 さらに、コマンドレットでは、`Force` パラメーターと `PassThru` パラメーターを定義する必要があります。 これらのパラメーターの詳細については、「[システムを変更するコマンドレットを作成](./creating-a-cmdlet-that-modifies-the-system.md)する」を参照してください。
+コマンドレットでは、システムの変更とユーザーフィードバックをサポートするパラメーターを定義する必要があります。 コマンドレットでは、 `Name` パラメーターまたは同等のものを定義して、コマンドレットが何らかの種類の識別子でシステムを変更できるようにする必要があります。 さらに、コマンドレットでは、パラメーターとパラメーターを定義する必要があり `Force` `PassThru` ます。 これらのパラメーターの詳細については、「[システムを変更するコマンドレットを作成](./creating-a-cmdlet-that-modifies-the-system.md)する」を参照してください。
 
 ## <a name="defining-a-parameter-alias"></a>パラメーターの別名の定義
 
 パラメーターエイリアスは、コマンドレットパラメーターの代替名または適切に定義された1文字または2文字の短い名前にすることができます。 どちらの場合も、エイリアスを使用する目的は、コマンドラインからのユーザーエントリを簡略化することです。 Windows PowerShell では、宣言構文 [Alias ()] を使用する、system.string[属性のパラメーター](/dotnet/api/System.Management.Automation.AliasAttribute)エイリアスがサポートされています。
 
-次のコードは、`Name` パラメーターにエイリアスを追加する方法を示しています。
+次のコードは、パラメーターにエイリアスを追加する方法を示して `Name` います。
 
 ```csharp
 /// <summary>
@@ -64,13 +64,13 @@ public string[] Name
 private string[] processNames;
 ```
 
-Windows PowerShell ランタイムでは、 [alias 属性を](/dotnet/api/System.Management.Automation.AliasAttribute)使用するだけでなく、別名が指定されていない場合でも、部分的な名前の一致が実行されます。 たとえば、コマンドレットに `FileName` パラメーターがあり、それが `F`で始まる唯一のパラメーターである場合、ユーザーは `Filename`、`Filenam`、`File`、`Fi`、`F` を入力しても、エントリを `FileName` パラメーターとして認識できます。
+Windows PowerShell ランタイムでは、 [alias 属性を](/dotnet/api/System.Management.Automation.AliasAttribute)使用するだけでなく、別名が指定されていない場合でも、部分的な名前の一致が実行されます。 たとえば、コマンドレットにパラメーターがあり、 `FileName` で始まる唯一のパラメーターである場合、 `F` ユーザーは、、、 `Filename` `Filenam` `File` `Fi` 、、またはを入力 `F` しても、パラメーターとしてエントリを認識でき `FileName` ます。
 
 ## <a name="creating-help-for-parameters"></a>パラメーターのヘルプの作成
 
-Windows PowerShell では、コマンドレットパラメーターのヘルプを作成できます。 この操作は、システムの変更やユーザーフィードバックに使用される任意のパラメーターに対して行います。 ヘルプをサポートする各パラメーターに対して、`HelpMessage` attribute キーワード[を、この](/dotnet/api/System.Management.Automation.ParameterAttribute)属性宣言で設定できます。 このキーワードは、パラメーターを使用する際の参考としてユーザーに表示するテキストを定義します。 また、`HelpMessageBaseName` キーワードを設定して、メッセージに使用するリソースの基本名を指定することもできます。 このキーワードを設定する場合は、`HelpMessageResourceId` キーワードを設定してリソース識別子を指定する必要もあります。
+Windows PowerShell では、コマンドレットパラメーターのヘルプを作成できます。 この操作は、システムの変更やユーザーフィードバックに使用される任意のパラメーターに対して行います。 ヘルプをサポートする各パラメーターに対して、属性キーワードを設定することができます。この属性は、属性 `HelpMessage` 宣言で[System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)指定します。 このキーワードは、パラメーターを使用する際の参考としてユーザーに表示するテキストを定義します。 また、キーワードを設定して、 `HelpMessageBaseName` メッセージに使用するリソースの基本名を指定することもできます。 このキーワードを設定する場合は、 `HelpMessageResourceId` リソース識別子を指定するようにキーワードも設定する必要があります。
 
-この Stop Proc コマンドレットの次のコードは、`Name` パラメーターの `HelpMessage` attribute キーワードを定義します。
+この Stop Proc コマンドレットの次のコードは、 `HelpMessage` パラメーターの属性キーワードを定義し `Name` ます。
 
 ```csharp
 /// <summary>
@@ -92,7 +92,7 @@ Windows PowerShell では、コマンドレットパラメーターのヘルプ�
 
 ## <a name="supporting-wildcard-expansion"></a>ワイルドカード拡張のサポート
 
-複数のオブジェクトを選択できるようにするには、コマンドレットで[Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern)クラスと[Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions)クラスを使用して、パラメーター入力のワイルドカード拡張サポートを提供します。 ワイルドカードパターンの例としては、lsa *、\*.txt、および [a-c]\*があります。 パターンに文字どおりに使用する必要がある文字が含まれている場合は、二重引用符文字 (') をエスケープ文字として使用します。
+複数のオブジェクトを選択できるようにするには、コマンドレットで[Wildcardpattern](/dotnet/api/System.Management.Automation.WildcardPattern)クラスと[Wildcardoptions](/dotnet/api/System.Management.Automation.WildcardOptions)クラスを使用して、パラメーター入力のワイルドカード拡張サポートを提供します。 ワイルドカードパターンの例としては、lsa *、 \* .txt、および [a-c] が \* あります。 パターンに文字どおりに使用する必要がある文字が含まれている場合は、二重引用符文字 (') をエスケープ文字として使用します。
 
 ファイル名とパス名のワイルドカードによる展開は、複数のオブジェクトを選択する必要がある場合に、コマンドレットでパス入力のサポートを許可する一般的なシナリオの例です。 通常、ファイルシステムには、現在のフォルダーに存在するすべてのファイルが表示されます。
 
@@ -100,7 +100,7 @@ Windows PowerShell では、コマンドレットパラメーターのヘルプ�
 
 - **疑問符 (?)。** 指定した位置にある任意の文字と一致します。
 
-- **アスタリスク (\*)。** 指定した位置から始まる0個以上の文字と一致します。
+- **アスタリスク ( \* )。** 指定した位置から始まる0個以上の文字と一致します。
 
 - **角かっこ ([) を開きます。** 文字または文字の範囲を含めることができるパターン角かっこ式を導入します。 範囲が必要な場合は、範囲を示すためにハイフン (-) が使用されます。
 
@@ -111,7 +111,7 @@ Windows PowerShell では、コマンドレットパラメーターのヘルプ�
 > [!NOTE]
 > ワイルドカードパターンの詳細については、「[コマンドレットパラメーターでのワイルドカードのサポート](./supporting-wildcard-characters-in-cmdlet-parameters.md)」を参照してください。
 
-次のコードは、ワイルドカードオプションを設定し、このコマンドレットの `Name` パラメーターの解決に使用するワイルドカードパターンを定義する方法を示しています。
+次のコードは、ワイルドカードオプションを設定し、このコマンドレットのパラメーターの解決に使用するワイルドカードパターンを定義する方法を示して `Name` います。
 
 ```csharp
 WildcardOptions options = WildcardOptions.IgnoreCase |
@@ -130,7 +130,7 @@ if (!wildcard.IsMatch(processName))
 
 ## <a name="code-sample"></a>コード サンプル
 
-完全なC#サンプルコードについては、「 [StopProcessSample03 sample](./stopprocesssample03-sample.md)」を参照してください。
+完全な C# サンプルコードについては、「 [StopProcessSample03 sample](./stopprocesssample03-sample.md)」を参照してください。
 
 ## <a name="define-object-types-and-formatting"></a>オブジェクトの種類と書式を定義する
 
@@ -144,13 +144,13 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
 
 コマンドレットが Windows PowerShell に登録されている場合は、コマンドラインで実行することでテストできます。 Stop-Proc コマンドレットのサンプルをテストしてみましょう。 コマンドラインからコマンドレットを使用する方法の詳細については、「 [Windows PowerShell を使用したはじめに](/powershell/scripting/getting-started/getting-started-with-windows-powershell)」を参照してください。
 
-- Windows PowerShell を起動し、`Name` パラメーターの ProcessName エイリアスを使用してプロセスを停止するには、Stop Proc を使用します。
+- Windows PowerShell を起動し、パラメーターの ProcessName エイリアスを使用してプロセスを停止するには、Stop Proc を使用し `Name` ます。
 
     ```powershell
     PS> stop-proc -ProcessName notepad
     ```
 
-次のような出力が表示されます。
+    次のような出力が表示されます。
 
     ```
     Confirm
@@ -165,7 +165,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     PS> stop-proc
     ```
 
-次のような出力が表示されます。
+    次のような出力が表示されます。
 
     ```
     Cmdlet stop-proc at command pipeline position 1
@@ -176,13 +176,13 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     Name[0]: notepad
     ```
 
-- ここで、次のエントリを作成して、ワイルドカードパターン "* note\*" に一致するすべてのプロセスを停止します。 パターンに一致する各プロセスを停止する前に、メッセージが表示されます。
+- ここで、ワイルドカードパターン "* note" に一致するすべてのプロセスを停止するには、次のエントリを作成し \* ます。 パターンに一致する各プロセスを停止する前に、メッセージが表示されます。
 
     ```powershell
     PS> stop-proc -Name *note*
     ```
 
-次のような出力が表示されます。
+    次のような出力が表示されます。
 
     ```
     Confirm
@@ -191,7 +191,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
     ```
 
-次のような出力が表示されます。
+    次のような出力が表示されます。
 
     ```
     Confirm
@@ -200,7 +200,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
     [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): N
     ```
 
-次のような出力が表示されます。
+    次のような出力が表示されます。
 
     ```
     Confirm

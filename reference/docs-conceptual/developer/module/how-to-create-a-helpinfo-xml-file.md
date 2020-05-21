@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 3971ce1f-271c-4938-a9d3-47ff3aaf7219
 caps.latest.revision: 9
-ms.openlocfilehash: 7df9764fd573b75f285fec592448a550e481bea3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1f09146a9e6456584f67edb52407193d8a9330ce
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367321"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564791"
 ---
 # <a name="how-to-create-a-helpinfo-xml-file"></a>HelpInfo XML ファイルを作成する方法
 
@@ -33,9 +33,9 @@ HelpInfo XML ファイルは慎重に管理することが重要です。 新し
 
 - [HelpInfo XML スキーマ](./helpinfo-xml-schema.md)
 
-- [HelpInfo XML サンプルファイル](./helpinfo-xml-sample-file.md)
+- [HelpInfo XML サンプル ファイル](./helpinfo-xml-sample-file.md)
 
-- [HelpInfo XML ファイルに名前を指定する方法](./how-to-name-a-helpinfo-xml-file.md)
+- [HelpInfo XML ファイルに名前を付ける方法](./how-to-name-a-helpinfo-xml-file.md)
 
 - [HelpInfo XML バージョン番号を設定する方法](./how-to-set-helpinfo-xml-version-numbers.md)
 

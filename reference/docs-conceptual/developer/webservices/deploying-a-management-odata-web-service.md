@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4497b64c-7875-4047-bf77-07e04c098ffe
 caps.latest.revision: 4
-ms.openlocfilehash: 376d90394b632e82322b848cb124f002ff91d8b3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d29a652b32d07b7825bc5bed5099daa67dd32ff4
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366181"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564597"
 ---
 # <a name="deploying-a-management-odata-web-service"></a>Management OData Web サービスを展開する
 
@@ -23,7 +23,7 @@ ms.locfileid: "72366181"
 
 管理 OData web サービスをデプロイするには、次の手順を実行します。
 
-1. IIS `WWWRoot` ディレクトリの下に web アプリケーション用のディレクトリを作成します。
+1. IIS ディレクトリの下に web アプリケーション用のディレクトリを作成 `WWWRoot` します。
 
 2. MOF スキーマファイル、XML スキーマファイル、 [Customauthorization](/dotnet/api/Microsoft.Management.Odata.CustomAuthorization)と[register-pssessionconfiguration](/dotnet/api/System.Management.Automation.Remoting.PSSessionConfiguration)の各インターフェイスをエクスポートする dll、および web.config ファイルをアプリケーションディレクトリにコピーします。このファイルは、アプリケーションディレクトリにコピーします。
 
@@ -427,14 +427,14 @@ Start-Sleep 10
 
 ## <a name="see-also"></a>参照
 
-[管理 OData web サービスのカスタム承認の実装](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+[Management OData Web サービスのカスタム認可を実装する](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-[管理 OData web サービスに SessionConfiguration を実装する](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+[Management OData Web サービスの SessionConfiguration を実装する](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-[管理用の OData web サービスの MOF スキーマファイルを作成する](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+[Management OData Web サービスの MOF スキーマ ファイルを作成する](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-[管理用の OData web サービス用の XML スキーマファイルの作成](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+[Management OData Web サービスの XML スキーマ ファイルを作成する](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
-[管理 OData web サービスの Web.config ファイルを作成する](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
+[Management OData Web サービスの Web.config ファイルを作成する](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
 
-[管理 OData Web サービスの作成](./creating-a-management-odata-web-service.md)
+[Management OData Web サービスを作成する](./creating-a-management-odata-web-service.md)

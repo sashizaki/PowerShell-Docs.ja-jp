@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 947a3add-3593-400d-8144-8b44c8adbe5e
 caps.latest.revision: 5
-ms.openlocfilehash: 44b718e024eb98ac562edb50076287a31f5edc6b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4849735bf412497f5590b109c67760b6a197cb2b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359811"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561732"
 ---
 # <a name="associating-management-odata-entities"></a>Management OData エンティティを関連付ける
 
-多くの場合、2つの異なる管理 OData エンティティ間のアソシエーションを作成すると便利です。 たとえば、管理 OData サービスは、カテゴリ内に編成された製品のカタログを管理するエンティティを持つことができ、エンティティ `Product` と `Category`を定義します。 これら2つのエンティティを関連付けることにより、クライアントは、web サービスへの単一の要求を使用して、カテゴリ内のすべての製品に関する情報を取得できます。
+多くの場合、2つの異なる管理 OData エンティティ間のアソシエーションを作成すると便利です。 たとえば、管理 OData サービスは、カテゴリで編成された製品のカタログを管理するエンティティを持つことができ、エンティティ `Product` とを定義し `Category` ます。 これら2つのエンティティを関連付けることにより、クライアントは、web サービスへの単一の要求を使用して、カテゴリ内のすべての製品に関する情報を取得できます。
 
 エンティティ間の関連付けを作成する方法を示すサンプルは、[アソシエーションサンプル](https://code.msdn.microsoft.com:443/windowsdesktop/Association-sample-0f0fa87e)でダウンロードできます。
 
@@ -43,9 +43,9 @@ string Products[];
 }
 ```
 
-`Category` クラスは、そのカテゴリに属する製品の名前の配列であるプロパティを定義します。
+クラスは、 `Category` そのカテゴリに属する製品の名前の配列であるプロパティを定義します。
 
-2つのエンティティを関連付けるには、サービスのリソーススキーマ MOF ファイルで `Association` 属性を持つクラスを定義する必要があります。 クラスでは、関連付けの `ends` と呼ばれる、関連付ける2つのエンティティを定義する必要があります。 次の例は、カテゴリと製品のエンティティ間の関連付けを定義するクラスの定義を示しています。
+2つのエンティティを関連付けるには、 `Association` サービスのリソーススキーマ MOF ファイルで属性を使用してクラスを定義する必要があります。 クラスでは、アソシエーションのと呼ばれる、関連付ける2つのエンティティを定義する必要があり `ends` ます。 次の例は、カテゴリと製品のエンティティ間の関連付けを定義するクラスの定義を示しています。
 
 ```csharp
 [Association]
@@ -55,7 +55,7 @@ Product ref theProducts;
 }
 ```
 
-Category クラスの Products プロパティの宣言も変更する必要があります。 `AssociationClass` キーワードを使用して、プロパティがアソシエーションの1つの end であることを指定します。 プロパティは、文字列の配列ではなく、別のエンティティへの参照としても定義する必要があります。 これを行うには、`ref` キーワードを使用します。 次の例は、アソシエーションのプロパティ定義を示しています。
+Category クラスの Products プロパティの宣言も変更する必要があります。 キーワードを使用して、 `AssociationClass` プロパティがアソシエーションの1つの end であることを指定します。 プロパティは、文字列の配列ではなく、別のエンティティへの参照としても定義する必要があります。 これを行うには、キーワードを使用し `ref` ます。 次の例は、アソシエーションのプロパティ定義を示しています。
 
 ```csharp
 class Sample_Category {
@@ -67,7 +67,7 @@ Sample_Product ref AssociatedProducts[];
 };
 ```
 
-最後に、プロパティ定義を `Product` クラスに追加して、アソシエーションのもう一方の end を宣言する必要があります。 これは、配列または単一のエンティティへの参照です。 各製品が1つのカテゴリにのみ属していると仮定すると、定義は次のようになります。
+最後に、プロパティ定義をクラスに追加して、アソシエーションのもう一方の end を宣言する必要があり `Product` ます。 これは、配列または単一のエンティティへの参照です。 各製品が1つのカテゴリにのみ属していると仮定すると、定義は次のようになります。
 
 ```csharp
 class Sample_Product {
@@ -82,7 +82,7 @@ Sample_Category ref AssociatedCategory;
 
 #### <a name="steps-for-associating-entities-in-the-resource-schema-file"></a>リソーススキーマファイル内のエンティティを関連付ける手順
 
-- `Association` キーワードを使用して、アソシエーションをクラスとして定義します。
+- キーワードを使用して、アソシエーションをクラスとして定義し `Association` ます。
 
 - アソシエーションの end を定義するには、AssociationClass キーワードを使用して、関連付けられているエンティティのプロパティを限定します。
 
@@ -94,7 +94,7 @@ Sample_Category ref AssociatedCategory;
 
 - ナビゲーションプロパティが基になるに存在する場合は。 .NET Framework 型、およびそのプロパティに外部キーが含まれているため、明示的なマッピングは必要ありません。
 
-- ナビゲーションプロパティが基になる .NET Framework 型に存在しない場合は、関連付けられているインスタンスのキーの一覧を取得するコマンドレットを指定する必要があります。 これを行うには、他の CRUD コマンドの `cmdlets` を定義する要素に従って、`CmdletImplementation` 要素の下に入れ子になっている `Association` 要素を追加します。
+- ナビゲーションプロパティが基になる .NET Framework 型に存在しない場合は、関連付けられているインスタンスのキーの一覧を取得するコマンドレットを指定する必要があります。 これを行うには、 `Association` 要素の下に入れ子になった要素を追加し `CmdletImplementation` 、 `cmdlets` 他の CRUD コマンドのを定義する要素に従います。
 
   ```xml
   Class Name=" Category">
@@ -177,7 +177,7 @@ Sample_Category ref AssociatedCategory;
 
 #### <a name="constructing-queries-for-associated-entities"></a>関連付けられたエンティティに対するクエリの構築
 
-- クライアントは、関連付けられている製品を取得せずに、カテゴリの詳細を要求できます。 たとえば、次の要求では、`food` カテゴリの詳細が取得されます。
+- クライアントは、関連付けられている製品を取得せずに、カテゴリの詳細を要求できます。 たとえば、次の要求では、カテゴリの詳細が取得され `food` ます。
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')
@@ -189,13 +189,13 @@ Sample_Category ref AssociatedCategory;
   http://localhost:7000/MODataSvc/sample.svc/Category('food')/AssociatedProducts
   ```
 
-- 製品の Url のみを取得するには、要求で `$links` 修飾子を使用します。
+- 製品の Url のみを取得するには、 `$links` 要求で修飾子を使用します。
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')/$links/AssociatedProducts
   ```
 
-- クライアントは、`$expand` の修飾子を使用して、カテゴリの詳細とそれに関連付けられている製品の両方を取得できます。
+- クライアントは、修飾子を使用して、カテゴリの詳細とそれに関連付けられている製品の両方を取得でき `$expand` ます。
 
   ```
   http://localhost:7000/MODataSvc/sample.svc/Category('food')?$expand=AssociatedProducts

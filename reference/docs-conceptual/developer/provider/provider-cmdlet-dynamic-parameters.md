@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
 caps.latest.revision: 6
-ms.openlocfilehash: a50de014988336c473c565b506a73de1c864d7e0
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9e70fbeaef61d04e66f16d06519742ff2f679df6
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359951"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564242"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>コマンドレット コマンドレットの動的パラメーター
 
-プロバイダーは、ユーザーがコマンドレットのいずれかの静的パラメーターに特定の値を指定した場合に、プロバイダーコマンドレットに追加される動的パラメーターを定義できます。 たとえば、プロバイダーは、`Get-Item` または `Set-Item` プロバイダーコマンドレットを呼び出すときに、ユーザーが指定するパスに基づいて、さまざまな動的パラメーターを追加できます。
+プロバイダーは、ユーザーがコマンドレットのいずれかの静的パラメーターに特定の値を指定した場合に、プロバイダーコマンドレットに追加される動的パラメーターを定義できます。 たとえば、プロバイダーは、プロバイダーのコマンドレットを呼び出すときに、ユーザーが指定するパスに基づいて、さまざまな動的パラメーターを追加でき `Get-Item` `Set-Item` ます。
 
 ## <a name="dynamic-parameter-methods"></a>動的パラメーターメソッド
 
@@ -65,48 +65,48 @@ internal sealed class CertificateProviderDynamicParameters
 
 動的パラメーターの追加に使用できる静的パラメーターの一覧を次に示します。
 
-`Clear-Content` コマンドレットを使用すると、 [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters)メソッドを実装することにより、clear clear コマンドレットの `Path` パラメーターによってトリガーされる動的パラメーターを定義できます。
+`Clear-Content`コマンドレットを使用すると、 `Path` [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.ClearContentDynamicParameters)メソッドを実装することにより、clear clear コマンドレットのパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-`Clear-Item` コマンドレットを使用すると、`Clear-Item` コマンドレットの `Path` パラメーターによってトリガーされる動的パラメーターを定義できます。そのためには、[このメソッドを](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters)実装します。
+`Clear-Item`コマンドレットを使用すると `Path` 、コマンドレットのパラメーターによってトリガーされる動的パラメーターを定義できます。これを行う `Clear-Item` には、このメソッドを実装[System.Management.Automation.Provider.Itemcmdletprovider.Clearitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters)します。
 
-`Clear-ItemProperty` コマンドレットを使用すると、 [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters)メソッドを実装することによって、`Clear-ItemProperty` コマンドレットの `Path` パラメーターによってトリガーされる動的パラメーターを定義できます。
+`Clear-ItemProperty`コマンドレットを使用して、 `Path` `Clear-ItemProperty` [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.ClearPropertyDynamicParameters)メソッドを実装することで、コマンドレットのパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-`Copy-Item` コマンドレットを使用すると、 [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)メソッドを実装することによって、`Copy-Item` コマンドレットの `Path`、`Destination`、および `Recurse` パラメーターによってトリガーされる動的パラメーターを定義できます。
+`Copy-Item`コマンドレットを使用して、 `Path` `Destination` `Recurse` `Copy-Item` [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.CopyItemDynamicParameters)メソッドを実装することで、コマンドレットの、、およびパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-ChildItems コマンドレットは、 [Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)メソッドと Containercmdletprovider パラメーター * メソッドを実装することによって、`Get-ChildItem` コマンドレットの `Path` および `Recurse` パラメーターによってトリガーされる動的パラメーターを定義できます。この引数には、 [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)を使用します。
+ChildItems コマンドレットは、 `Path` `Recurse` `Get-ChildItem` [Containercmdletprovider. Getchilditemsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildItemsDynamicParameters)メソッドと[dynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.GetChildNamesDynamicParameters)メソッドを実装することによって、コマンドレットのパラメーターとパラメーターによってトリガーされる動的パラメーターを定義することができます。また、
 
-`Get-Content` コマンドレットを使用すると、 [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters)メソッドを実装することによって、`Get-Content` コマンドレットの `Path` パラメーターによってトリガーされる動的パラメーターを定義できます。
+`Get-Content`コマンドレットを使用すると、 `Path` `Get-Content` [Icontentcmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentReaderDynamicParameters)メソッドを実装することによって、コマンドレットのパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-`Get-Item` コマンドレットを使用すると、 [Getitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters)メソッドを実装することによって、`Get-Item` コマンドレットの `Path` パラメーターによってトリガーされる動的パラメーターを定義できます。
+`Get-Item`コマンドレットを使用して、 `Path` `Get-Item` [Getitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters)メソッドを実装することで、コマンドレットのパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-`Get-ItemProperty` コマンドレットでは、Ipropertycmdletprovider を実装することによって、`Get-ItemProperty` コマンドレットの `Path` と `Name` パラメーターによってトリガーされる動的パラメーターを定義できます。 [System.Management.Automation.Provider.Ipropertycmdletprovider.Getpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters)メソッド。
+`Get-ItemProperty`コマンドレットを使用して、 `Path` `Name` `Get-ItemProperty` [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.GetPropertyDynamicParameters)メソッドを実装することで、コマンドレットのパラメーターとパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-`Invoke-Item` コマンドレットを使用すると、`Invoke-Item` コマンドレットの `Path` パラメーターによってトリガーされる動的パラメーターを定義できます。そのためには、 [Invokedefaultactiondynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters)メソッドを実装します。
+`Invoke-Item`コマンドレットを使用すると `Path` 、コマンドレットのパラメーターによってトリガーされる動的パラメーターを定義できます。これを行う `Invoke-Item` には、このメソッドを実装[System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultactiondynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters)します。
 
-`Move-Item` コマンドレットを使用すると、`Move-Item` コマンドレットの `Path` と `Destination` パラメーターによってトリガーされる動的パラメーターを定義できます。これを行うに[は、](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters)コマンドレットを使用します。
+`Move-Item`コマンドレットを使用する `Path` と、 `Destination` コマンドレットのパラメーターとパラメーターによってトリガーされる動的パラメーターを定義できます `Move-Item` [。これ](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItemDynamicParameters)を行うには、このメソッドを実装します。
 
-`New-Item` コマンドレットを使用すると、 [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters)メソッドを実装することによって、`New-Item` コマンドレットの `Path`、`ItemType`、および `Value` パラメーターによってトリガーされる動的パラメーターを定義できます。
+`New-Item`コマンドレットを使用すると、 `Path` `ItemType` `Value` `New-Item` [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.NewItemDynamicParameters)メソッドを実装することによって、コマンドレットの、、およびパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-`New-ItemProperty` コマンドレットを使用すると、 [Idynamicpropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)メソッドを実装することによって、`Value` コマンドレットの `Path`、`Name`、`PropertyType`、および `New-ItemProperty` パラメーターによってトリガーされる動的パラメーターを定義できます。
+`New-ItemProperty`コマンドレットを使用する `Path` `Name` と、 `PropertyType` `Value` `New-ItemProperty` [Idynamicpropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)メソッドを実装することによって、コマンドレットの、、、およびパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-`New-PSDrive` コマンドレットを使用して、 [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) `New-PSDrive` コマンドレットによって返される system.management.automation.psdriveinfo オブジェクトによってトリガーされる動的パラメーターを定義できます。[System.Management.Automation.Provider.Drivecmdletprovider.Newdrivedynamicparameters*](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)メソッドを提供します。
+`New-PSDrive`コマンドレットを使用して、 [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) `New-PSDrive` [Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)メソッドを実装することによってコマンドレットによって返される system.management.automation.psdriveinfo オブジェクトによってトリガーされる動的パラメーターを定義できます。
 
-`Remove-Item`、 [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)メソッドを実装することによって、`Remove-Item` コマンドレットの `Path` と `Recurse` パラメーターによってトリガーされる動的パラメーターを定義できます。
+`Remove-Item``Path` `Recurse` `Remove-Item` [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)メソッドを実装することによって、コマンドレットのパラメーターとパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-`Remove-ItemProperty`、 [Idynamicpropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters)メソッドを実装することによって、`Remove-ItemProperty` コマンドレットの `Path` と `Name` パラメーターによってトリガーされる動的パラメーターを定義できます。
+`Remove-ItemProperty``Path` `Name` `Remove-ItemProperty` [Idynamicpropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RemovePropertyDynamicParameters)メソッドを実装することによって、コマンドレットのパラメーターとパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-`Rename-Item` コマンドレットでは、Containercmdletprovider を実装することによって、`Rename-Item` コマンドレットの `Path` と `NewName` パラメーターによってトリガーされる動的パラメーターを定義できます。 [System.Management.Automation.Provider.Containercmdletprovider.Renameitemdynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters)メソッド。
+`Rename-Item`コマンドレットを使用して、 `Path` `NewName` `Rename-Item` [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RenameItemDynamicParameters)メソッドを実装することで、コマンドレットのパラメーターとパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-`Rename-ItemProperty`、 [Idynamicpropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters)メソッドを実装することによって、`Rename-ItemProperty` コマンドレットの `Path`、`Name`、および `NewName` パラメーターによってトリガーされる動的パラメーターを定義できます。
+`Rename-ItemProperty``Path` `Name` `NewName` `Rename-ItemProperty` [Idynamicpropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.RenamePropertyDynamicParameters)メソッドを実装することによって、コマンドレットの、、およびパラメーターによってトリガーされる動的パラメーターを定義することができます。
 
-`Set-Content` コマンドレットでは、 [Getcontentwriterdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters)メソッドを実装することによって、`Set-Content` コマンドレットの `Path` パラメーターによってトリガーされる動的パラメーターを定義できます。
+`Set-Content`コマンドレットを使用して、 `Path` `Set-Content` [Icontentcmdletprovider. Getcontentwriterdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider.GetContentWriterDynamicParameters)メソッドを実装することで、コマンドレットのパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-`Set-Item` コマンドレットでは、 [Setitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters)メソッドを実装することによって、`Set-Item` コマンドレットの `Path` と `Value` パラメーターによってトリガーされる動的パラメーターを定義できます。
+`Set-Item`コマンドレットを使用して、 `Path` `Value` `Set-Item` [Setitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters)メソッドを実装することで、コマンドレットのパラメーターとパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-`Set-ItemProperty` コマンドレットでは、Ipropertycmdletprovider を実装することによって、`Set-Item` コマンドレットの `Path` と `Value` パラメーターによってトリガーされる動的パラメーターを定義できます。 [System.Management.Automation.Provider.Ipropertycmdletprovider.Setpropertydynamicparameters*](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters)メソッド。
+`Set-ItemProperty`コマンドレットを使用して、 `Path` `Value` `Set-Item` [Ipropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IPropertyCmdletProvider.SetPropertyDynamicParameters)メソッドを実装することで、コマンドレットのパラメーターとパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-`Test-Path` コマンドレットを使用すると、`Test-Path` コマンドレットの `Path` パラメーターによってトリガーされる動的パラメーターを定義できます。そのためには、 [Invokedefaultactiondynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters)メソッドを実装します。
+`Test-Path`コマンドレットを使用すると `Path` 、コマンドレットのパラメーターによってトリガーされる動的パラメーターを定義できます。これを行う `Test-Path` には、このメソッドを実装[System.Management.Automation.Provider.Itemcmdletprovider.Invokedefaultactiondynamicparameters*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters)します。
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell プロバイダーの作成](./writing-a-windows-powershell-provider.md)
+[Windows PowerShell プロバイダーを記述する](./writing-a-windows-powershell-provider.md)

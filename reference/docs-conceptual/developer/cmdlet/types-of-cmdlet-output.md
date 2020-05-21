@@ -10,12 +10,12 @@ helpviewer_keywords:
 - cmdlets [PowerShell SDK], output
 ms.assetid: 547e6695-e936-4cac-a90b-417d0dab393d
 caps.latest.revision: 12
-ms.openlocfilehash: 3efa98c7aa22fdaee8042bae99282aea0618ef5f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: de21d9ebfec4f23d3819695df225f7a230864a7b
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369291"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561416"
 ---
 # <a name="types-of-cmdlet-output"></a>コマンドレットの出力の種類
 
@@ -54,7 +54,7 @@ PowerShell には、コマンドレットによって出力を生成するため
 
 コマンドレット[では、system.string メソッドを](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)呼び出すことで警告メッセージを表示できます。
 
-既定では、警告メッセージが表示されます。 ただし、警告メッセージを構成するには、`$WarningPreference` 変数を使用するか、コマンドレットが呼び出されたときに**Verbose**パラメーターと**Debug**パラメーターを使用します。
+既定では、警告メッセージが表示されます。 ただし、警告メッセージを構成するには、変数を使用する `$WarningPreference` か、コマンドレットが呼び出されたときに**Verbose**パラメーターと**Debug**パラメーターを使用します。
 
 ## <a name="displaying-output"></a>出力の表示
 
@@ -64,10 +64,10 @@ PowerShell には、コマンドレットによって出力を生成するため
 
 PowerShell ランタイムを使用してホストアプリケーションの出力機能に直接アクセスするようにコマンドレットを設計することもできます。 [System.](/dotnet/api/System.Console) [Windows. フォーム](/dotnet/api/System.Windows.Forms)ではなく、PowerShell によって提供されるホスト api を使用すると、コマンドレットがさまざまなホストで動作することが保証されます。 たとえば、 **powershell**のコンソールホスト、 **powershell_ise**のグラフィカルホスト、powershell リモート処理ホスト、サードパーティのホストなどです。
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
-[エラー報告の概念](./error-reporting-concepts.md)
+[エラー レポートの概念](./error-reporting-concepts.md)
 
 [コマンドレットの概要](./cmdlet-overview.md)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

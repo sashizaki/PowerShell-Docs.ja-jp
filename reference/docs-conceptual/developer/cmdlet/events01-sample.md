@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
 caps.latest.revision: 10
-ms.openlocfilehash: 8f745cc0e5ef6db7a6bbdf39d826103f3b8a98ce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 772f73793449856651ab6b03e1ccc14faed941fc
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369741"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83561449"
 ---
 # <a name="events01-sample"></a>Events01 サンプル
 
@@ -29,8 +29,8 @@ ms.locfileid: "72369741"
 2. ソリューション (.sln) ファイルのアイコンをダブルクリックします。
    これにより、Microsoft Visual Studio でサンプルプロジェクトが開きます。
 
-3. **[ビルド]** メニューの **[ソリューションのビルド]** を選択します。
-   このサンプルのライブラリは、既定の `\bin` または `\bin\debug` フォルダーに組み込まれています。
+3. **[ビルド]** メニューで、**[ソリューションのビルド]** を選択します。
+   サンプルのライブラリは、既定の `\bin` フォルダーまたはフォルダーに組み込まれ `\bin\debug` ます。
 
 ### <a name="how-to-run-the-sample"></a>サンプルを実行する方法
 
@@ -77,14 +77,14 @@ A file was created in the TEMP directory
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>使用例
+## <a name="demonstrates"></a>対象
 
 このサンプルでは、次のことを示します。
 
 ### <a name="how-to-write-a-cmdlet-for-event-registration"></a>イベント登録用のコマンドレットを記述する方法
 
-コマンドレットは、 [ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)クラスから派生します。このクラスは、`Register-*Event` コマンドレットに共通のパラメーターをサポートしています。
-[ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)から派生したコマンドレットでは、特定のパラメーターを定義し、`GetSourceObject` および `GetSourceObjectEventName` 抽象メソッドをオーバーライドするだけで済みます。
+コマンドレットは、コマンドレットに共通のパラメーターをサポートする[ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)クラスから派生します。 `Register-*Event`
+[ObjectEventRegistrationBase](/dotnet/api/Microsoft.PowerShell.Commands.ObjectEventRegistrationBase)から派生したコマンドレットでは、特定のパラメーターを定義し、 `GetSourceObject` および抽象メソッドをオーバーライドするだけで済みます。 `GetSourceObjectEventName`
 
 ## <a name="example"></a>例
 
@@ -189,4 +189,4 @@ namespace Sample
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](writing-a-windows-powershell-cmdlet.md)
