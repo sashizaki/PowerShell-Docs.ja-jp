@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a7b2cc4d-292f-4714-888b-3b81536bef5d
 caps.latest.revision: 7
-ms.openlocfilehash: 3b00f0900325b4e95b2c129d93d03d6b5d60f77e
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: 38cd295bd34c55fe0d68faeffcfb4c47f64f3b70
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995901"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560748"
 ---
-# <a name="resource-mapping-schema"></a><span data-ttu-id="613fe-102">リソース マッピング スキーマ</span><span class="sxs-lookup"><span data-stu-id="613fe-102">Resource Mapping Schema</span></span>
+# <a name="resource-mapping-schema"></a><span data-ttu-id="7fa69-102">リソース マッピング スキーマ</span><span class="sxs-lookup"><span data-stu-id="7fa69-102">Resource Mapping Schema</span></span>
 
-<span data-ttu-id="613fe-103">Management OData IIS 拡張機能は、XML ファイルを使用してリソースマッピングを定義します。</span><span class="sxs-lookup"><span data-stu-id="613fe-103">Management OData IIS Extension uses XML files to define resource mapping.</span></span> <span data-ttu-id="613fe-104">次の XSD は、これらのファイルに使用されるスキーマを定義します。</span><span class="sxs-lookup"><span data-stu-id="613fe-104">The following XSD defines the schema used for these files.</span></span>
+<span data-ttu-id="7fa69-103">Management OData IIS 拡張機能は、XML ファイルを使用してリソースマッピングを定義します。</span><span class="sxs-lookup"><span data-stu-id="7fa69-103">Management OData IIS Extension uses XML files to define resource mapping.</span></span> <span data-ttu-id="7fa69-104">次の XSD は、これらのファイルに使用されるスキーマを定義します。</span><span class="sxs-lookup"><span data-stu-id="7fa69-104">The following XSD defines the schema used for these files.</span></span>
 
-## <a name="resource-mapping-file-xsd"></a><span data-ttu-id="613fe-105">リソースマッピングファイルの XSD</span><span class="sxs-lookup"><span data-stu-id="613fe-105">Resource Mapping File XSD</span></span>
+## <a name="resource-mapping-file-xsd"></a><span data-ttu-id="7fa69-105">リソースマッピングファイルの XSD</span><span class="sxs-lookup"><span data-stu-id="7fa69-105">Resource Mapping File XSD</span></span>
 
-<span data-ttu-id="613fe-106">次の XSD は、管理用の OData IIS 拡張機能のリソースマッピングファイルのスキーマを定義します。</span><span class="sxs-lookup"><span data-stu-id="613fe-106">The following XSD defines the schema for Management OData IIS Extension resource mapping files.</span></span>
+<span data-ttu-id="7fa69-106">次の XSD は、管理用の OData IIS 拡張機能のリソースマッピングファイルのスキーマを定義します。</span><span class="sxs-lookup"><span data-stu-id="7fa69-106">The following XSD defines the schema for Management OData IIS Extension resource mapping files.</span></span>
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>

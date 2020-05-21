@@ -8,18 +8,18 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 9bd9d599-faa7-4154-ac36-1f35ccf8e320
 caps.latest.revision: 7
-ms.openlocfilehash: 5ad28cfbc73628ba818e42b87128d8f4ad273bda
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 38e022012bc5302fb28cd2e3d9f3a8d2859d72f6
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366611"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83559881"
 ---
-# <a name="runspace02-vbnet-code-sample"></a><span data-ttu-id="2d38d-102">Runspace02 (VB.NET) コード サンプル</span><span class="sxs-lookup"><span data-stu-id="2d38d-102">Runspace02 (VB.NET) Code Sample</span></span>
+# <a name="runspace02-vbnet-code-sample"></a><span data-ttu-id="a7f1c-102">Runspace02 (VB.NET) コード サンプル</span><span class="sxs-lookup"><span data-stu-id="a7f1c-102">Runspace02 (VB.NET) Code Sample</span></span>
 
-<span data-ttu-id="2d38d-103">Runspace02 サンプルの VB.NET ソースコードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="2d38d-103">Here is the VB.NET source code for the Runspace02 sample.</span></span> <span data-ttu-id="2d38d-104">このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、`Get-Process` コマンドレットを同期的に実行します。</span><span class="sxs-lookup"><span data-stu-id="2d38d-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.</span></span> <span data-ttu-id="2d38d-105">次に、Windows フォームとデータバインディングを使用して、DataGridView コントロールに結果を表示します。</span><span class="sxs-lookup"><span data-stu-id="2d38d-105">Windows Forms and data binding are then used to display the results in a DataGridView control.</span></span>
+<span data-ttu-id="a7f1c-103">Runspace02 サンプルの VB.NET ソースコードを次に示します。</span><span class="sxs-lookup"><span data-stu-id="a7f1c-103">Here is the VB.NET source code for the Runspace02 sample.</span></span> <span data-ttu-id="a7f1c-104">このサンプルでは、 [Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke)クラスを使用して、 `Get-Process` コマンドレットを同期的に実行します。</span><span class="sxs-lookup"><span data-stu-id="a7f1c-104">This sample uses the [System.Management.Automation.Runspaceinvoke](/dotnet/api/System.Management.Automation.RunspaceInvoke) class to execute the `Get-Process` cmdlet synchronously.</span></span> <span data-ttu-id="a7f1c-105">次に、Windows フォームとデータバインディングを使用して、DataGridView コントロールに結果を表示します。</span><span class="sxs-lookup"><span data-stu-id="a7f1c-105">Windows Forms and data binding are then used to display the results in a DataGridView control.</span></span>
 
-## <a name="code-sample"></a><span data-ttu-id="2d38d-106">コード サンプル</span><span class="sxs-lookup"><span data-stu-id="2d38d-106">Code Sample</span></span>
+## <a name="code-sample"></a><span data-ttu-id="a7f1c-106">コード サンプル</span><span class="sxs-lookup"><span data-stu-id="a7f1c-106">Code Sample</span></span>
 
 ```vb
 Imports System
@@ -86,6 +86,6 @@ End Namespace
 
 <!-- TODO!!!: [!code-csharp[Runspace02.vb](../../powershell-sdk-samples/SDK-2.0/vb/Runspace02/Runspace02.vb#L09-L68 "Runspace02.vb")] -->
 
-## <a name="see-also"></a><span data-ttu-id="2d38d-107">参照</span><span class="sxs-lookup"><span data-stu-id="2d38d-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a7f1c-107">参照</span><span class="sxs-lookup"><span data-stu-id="a7f1c-107">See Also</span></span>
 
-[<span data-ttu-id="2d38d-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="2d38d-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="a7f1c-108">Windows PowerShell SDK</span><span class="sxs-lookup"><span data-stu-id="a7f1c-108">Windows PowerShell SDK</span></span>](../windows-powershell-reference.md)
