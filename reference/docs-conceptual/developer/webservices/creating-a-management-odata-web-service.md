@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 06b1b050-0bf7-48f5-ba05-43f489d597c0
 caps.latest.revision: 10
-ms.openlocfilehash: 476fce9fc087b870bad93a9204a820c5a84df99e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f903c99300a34c0dfbed598738e96142588d69d9
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359721"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691488"
 ---
 # <a name="creating-a-management-odata-web-service"></a>Management OData Web サービスを作成する
 
@@ -24,30 +24,30 @@ Management ODATA IIS 拡張機能は、Windows PowerShell コマンドレット�
 > [!IMPORTANT]
 > Windows Server 2008 R2 SP1 で管理 ODATA IIS 拡張機能を有効にする前に、次の機能を有効にする必要があります。
 >
-> 1.  IIS-WebServerRole
-> 2.  IIS-WebServer
-> 3.  IIS-HttpTracing
-> 4.  IIS-ManagementOData
+> 1. IIS-WebServerRole
+> 2. IIS-WebServer
+> 3. IIS-HttpTracing
+> 4. IIS-ManagementOData
 
 ## <a name="steps-for-creating-a-management-odata-web-service"></a>管理用の OData web サービスを作成する手順
 
 次のトピックでは、管理 OData web サービスを作成および展開する方法について説明します。
 
-- [管理 OData Web サービスへのリソースの追加](./adding-resources-to-a-management-odata-web-service.md)
+- [Management OData Web サービスにリソースを追加する](./adding-resources-to-a-management-odata-web-service.md)
 
-- [管理 OData web サービスのカスタム承認の実装](./implementing-custom-authorization-for-a-management-odata-web-service.md)
+- [Management OData Web サービスのカスタム認可を実装する](./implementing-custom-authorization-for-a-management-odata-web-service.md)
 
-- [管理 OData web サービスに SessionConfiguration を実装する](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
+- [Management OData Web サービスの SessionConfiguration を実装する](./implementing-sessionconfiguration-for-a-management-odata-web-service.md)
 
-- [管理用の OData web サービスの MOF スキーマファイルを作成する](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
+- [Management OData Web サービスの MOF スキーマ ファイルを作成する](./authoring-the-mof-schema-file-for-a-management-odata-web-service.md)
 
-- [管理用の OData web サービス用の XML スキーマファイルの作成](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
+- [Management OData Web サービスの XML スキーマ ファイルを作成する](./authoring-the-xml-schema-file-for-a-management-odata-web-service.md)
 
-- [管理 OData web サービスの Web.config ファイルを作成する](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
+- [Management OData Web サービスの Web.config ファイルを作成する](./authoring-the-web-config-file-for-a-management-odata-web-service.md)
 
-- [Management OData web サービスのデプロイ](./deploying-a-management-odata-web-service.md)
+- [Management OData Web サービスを展開する](./deploying-a-management-odata-web-service.md)
 
-- [管理 OData エンティティの関連付け](./associating-management-odata-entities.md)
+- [Management OData エンティティを関連付ける](./associating-management-odata-entities.md)
 
 ## <a name="see-also"></a>参照
 

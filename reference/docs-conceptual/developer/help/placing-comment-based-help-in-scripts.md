@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 49f8267c-d887-4d7d-b9b7-80dc624b1261
 caps.latest.revision: 4
-ms.openlocfilehash: d199c53a748ac57bb2a5f998b5056e39d3e80c0d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1bebfbd822963830363012060067c656d7709543
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361181"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565528"
 ---
 # <a name="placing-comment-based-help-in-scripts"></a>スクリプトにコメント ベースのヘルプを配置する
 
-このトピックでは、`Get-Help` コマンドレットがコメントベースのヘルプトピックをスクリプトに関連付け、スクリプト内に存在する可能性のある関数を使用しないように、スクリプトのコメントベースのヘルプを配置する場所について説明します。
+このトピックでは、スクリプトにコメントベースのヘルプトピックを配置する方法について説明し `Get-Help` ます。このコマンドレットは、スクリプトに含まれる関数ではなく、スクリプトにコメントベースのヘルプトピックを関連付けます。
 
 ## <a name="where-to-place-comment-based-help-for-a-script"></a>スクリプトのコメントベースのヘルプを配置する場所
 

@@ -8,37 +8,37 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a26661f2-a63c-4ca7-ad3e-dcb4d32ce5a1
 caps.latest.revision: 8
-ms.openlocfilehash: d7d6d3b377a0089bcf96d0ea46e866321441b537
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8c3974e272fe1032557b492c36504b0f16b3c9c1
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359971"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692482"
 ---
 # <a name="accessdbprovidersample05"></a>AccessDBProviderSample05
 
-このサンプルでは、コンテナーメソッドを上書きして、`Move-Item` および `Join-Path` のコマンドレットの呼び出しをサポートする方法を示します。 これらのメソッドは、ユーザーがコンテナー内で項目を移動する必要があり、データ ストアに入れ子状態のコンテナーが含まれる場合に実装する必要があります。 このサンプルのプロバイダークラス[は、system.servicemodel クラスの](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラスから派生しています。
+このサンプルでは、およびコマンドレットの呼び出しをサポートするためにコンテナーメソッドを上書きする方法を示し `Move-Item` `Join-Path` ます。 これらのメソッドは、ユーザーがコンテナー内で項目を移動する必要があり、データ ストアに入れ子状態のコンテナーが含まれる場合に実装する必要があります。 このサンプルのプロバイダークラス[は、system.servicemodel クラスの](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)クラスから派生しています。
 
-## <a name="demonstrates"></a>使用例
+## <a name="demonstrates"></a>対象
 
 > [!IMPORTANT]
 > プロバイダークラスは、ほとんどの場合、次のいずれかのクラスから派生し、他のプロバイダーインターフェイスを実装する可能性があります。
 >
-> -   ...........[プロバイダー](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)クラス。 「 [AccessDBProviderSample03](./accessdbprovidersample03.md)」を参照してください。
-> -   [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスを提供します。 「 [AccessDBProviderSample04](./accessdbprovidersample04.md)」を参照してください。
-> -   ...... [.。](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
+> - ...........[プロバイダー](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)クラス。 「 [AccessDBProviderSample03](./accessdbprovidersample03.md)」を参照してください。
+> - [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスを提供します。 「 [AccessDBProviderSample04](./accessdbprovidersample04.md)」を参照してください。
+> - ...... [.。](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
 >
 > プロバイダーの機能に基づいて派生するプロバイダークラスを選択する方法の詳細については、「 [Windows PowerShell プロバイダーの設計](./provider-types.md)」を参照してください。
 
-このサンプルは、次の操作方法を示します。
+このサンプルでは、次の方法を示します。
 
-- `CmdletProvider` 属性を宣言しています。
+- 属性を宣言 `CmdletProvider` しています。
 
 - System.servicemodel クラスから[派生した](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)プロバイダークラスを定義していますが、
 
-- `Move-Item` コマンドレットの動作を変更し、ユーザーが1つの場所から別の場所に項目を移動できるようにする[には、このメソッドを](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)上書きします。 (このサンプルでは、`Move-Item` コマンドレットに動的パラメーターを追加する方法については説明しません)。
+- このコマンド[System.Management.Automation.Provider.Navigationcmdletprovider.Moveitem*](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MoveItem)レットの動作を変更し `Move-Item` 、ユーザーがある場所から別の場所に項目を移動できるようにするには、このメソッドを上書きします。 (このサンプルでは、コマンドレットに動的パラメーターを追加する方法については説明しません `Move-Item` )。
 
-- `Join-Path` コマンドレットの動作を変更するには、system.servicemodel[パス *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)メソッドを上書きしています。
+- コマンドレットの動作を変更するには、system.servicemodel[パス *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.MakePath)メソッドを上書きしています。 `Join-Path`
 
 - [Isitemcontainer *](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider.IsItemContainer)メソッドを上書きしています。このメソッドは、
 
@@ -2082,4 +2082,4 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 [システムの管理...。](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
 
-[Windows PowerShell プロバイダーの設計](./provider-types.md)
+[Windows PowerShell プロバイダーを設計する](./provider-types.md)

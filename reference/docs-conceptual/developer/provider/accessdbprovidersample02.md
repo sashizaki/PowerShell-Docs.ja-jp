@@ -8,41 +8,41 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: aaf9351e-157f-4d48-8b8f-1fd64855b682
 caps.latest.revision: 10
-ms.openlocfilehash: d291e401bbf3da998735ebb00f1eb35521f9a19c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d86148d54535822f00d3d752b509be690c0e4ff2
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366371"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83690888"
 ---
 # <a name="accessdbprovidersample02"></a>AccessDBProviderSample02
 
-このサンプルでは、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) * メソッドと[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを上書きして、`New-PSDrive` と `Remove-PSDrive` のコマンドレットの呼び出しをサポートする方法を示します。この例では、. このサンプルのプロバイダークラスは、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスから派生しています。
+このサンプルでは、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive) * メソッドと[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを上書きし `New-PSDrive` て、コマンドレットとコマンドレットの呼び出しをサポートする方法を示しています。この例を次に示し `Remove-PSDrive` ます。 このサンプルのプロバイダークラスは、 [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスから派生しています。
 
-## <a name="demonstrates"></a>使用例
+## <a name="demonstrates"></a>対象
 
 > [!IMPORTANT]
 > プロバイダークラスは、ほとんどの場合、次のいずれかのクラスから派生し、他のプロバイダーインターフェイスを実装する可能性があります。
 >
-> -   ...........[プロバイダー](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)クラス。 「 [AccessDBProviderSample03](./accessdbprovidersample03.md)」を参照してください。
-> -   [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスを提供します。 「 [AccessDBProviderSample04](./accessdbprovidersample04.md)」を参照してください。
-> -   ...... [.。](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) 「 [AccessDBProviderSample05](./accessdbprovidersample05.md)」を参照してください。
+> - ...........[プロバイダー](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider)クラス。 「 [AccessDBProviderSample03](./accessdbprovidersample03.md)」を参照してください。
+> - [Containercmdletprovider](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider)クラスを提供します。 「 [AccessDBProviderSample04](./accessdbprovidersample04.md)」を参照してください。
+> - ...... [.。](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider) 「 [AccessDBProviderSample05](./accessdbprovidersample05.md)」を参照してください。
 >
 > プロバイダーの機能に基づいて派生するプロバイダークラスを選択する方法の詳細については、「 [Windows PowerShell プロバイダーの設計](./provider-types.md)」を参照してください。
 
-このサンプルは、次の操作方法を示します。
+このサンプルでは、次の方法を示します。
 
-- `CmdletProvider` 属性を宣言しています。
+- 属性を宣言 `CmdletProvider` しています。
 
 - [Drivecmdletprovider](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider)クラスによって駆動されるプロバイダークラスを定義します。
 
-- 新しいドライブの作成をサポートするように[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)メソッドを上書きします。 (このサンプルでは、`New-PSDrive` コマンドレットに動的パラメーターを追加する方法については説明しません)。
+- 新しいドライブの作成をサポートするように[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)メソッドを上書きします。 (このサンプルでは、コマンドレットに動的パラメーターを追加する方法については説明しません `New-PSDrive` )。
 
 - 既存のドライブの削除をサポートするように[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを上書きします。
 
 ## <a name="example"></a>例
 
-このサンプルでは、 [Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)メソッドと[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを上書きする方法を示しています。この例では、このメソッドを上書きしています。 このサンプルプロバイダーでは、ドライブが作成されると、その接続情報が `AccessDBPsDriveInfo` オブジェクトに格納されます。
+このサンプルでは、 [Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDrive)メソッドと[Drivecmdletprovider *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.RemoveDrive)メソッドを上書きする方法を示しています。この例では、このメソッドを上書きしています。 このサンプルプロバイダーでは、ドライブの作成時に、接続情報がオブジェクトに格納され `AccessDBPsDriveInfo` ます。
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Providers
@@ -205,4 +205,4 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 [システムの管理...。](/dotnet/api/System.Management.Automation.Provider.NavigationCmdletProvider)
 
-[Windows PowerShell プロバイダーの設計](./provider-types.md)
+[Windows PowerShell プロバイダーを設計する](./provider-types.md)

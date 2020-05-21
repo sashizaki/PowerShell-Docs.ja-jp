@@ -8,22 +8,22 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: c1e05821-6aec-437b-84a5-218a5727f88b
 caps.latest.revision: 10
-ms.openlocfilehash: 8a5b84b6a461e9fc340a5981578d95ca2ac6b9f7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6036f30816e253b3f0c40c6b916279d0643acdb8
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363901"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692491"
 ---
 # <a name="defining-conditions-for-displaying-data"></a>データの表示条件を定義する
 
-ビューまたはコントロールによって表示されるデータを定義するときに、表示されるデータに必要な条件を指定できます。 条件は、特定のプロパティによって、またはスクリプトまたはプロパティの値が `true`に評価されるときにトリガーされます。 選択条件が満たされると、ビューまたはコントロールの定義が使用されます。
+ビューまたはコントロールによって表示されるデータを定義するときに、表示されるデータに必要な条件を指定できます。 条件は、特定のプロパティによって、またはスクリプトまたはプロパティの値がに評価されるときにトリガーされ `true` ます。 選択条件が満たされると、ビューまたはコントロールの定義が使用されます。
 
 ## <a name="specifying-a-selection-condition-for-a-definition"></a>定義の選択条件の指定
 
-ビューまたはコントロールの定義を作成するときに、`EntrySelectedBy` 要素を使用して、定義を使用するオブジェクトまたは定義を使用するために必要な条件を指定します。 条件は `SelectionCondition` 要素によって指定されます。
+ビューまたはコントロールの定義を作成するときに、要素を使用して、定義を `EntrySelectedBy` 使用するオブジェクトまたは定義を使用するために必要な条件を指定します。 条件は、要素によって指定され `SelectionCondition` ます。
 
-次の例では、テーブルビューの定義に対して選択条件が指定されています。 この例では、指定されたスクリプトが `true`に評価される場合にのみ、定義が使用されます。
+次の例では、テーブルビューの定義に対して選択条件が指定されています。 この例では、指定されたスクリプトがに評価されるときにのみ、定義が使用され `true` ます。
 
 ```xml
 <TableRowEntry>
@@ -46,7 +46,7 @@ ms.locfileid: "72363901"
 
 ## <a name="specifying-a-selection-condition-for-an-item"></a>項目の選択条件の指定
 
-項目定義に `ItemSelectionCondition` 要素を含めることによって、リストビューまたはコントロールの項目をいつ使用するかを指定することもできます。 次の例では、リストビューの項目に対して選択条件が指定されています。 この例では、この項目は、スクリプトが `true`に評価されるときにのみ使用されます。
+項目定義に要素を含めることによって、リストビューまたはコントロールの項目をいつ使用するかを指定することもでき `ItemSelectionCondition` ます。 次の例では、リストビューの項目に対して選択条件が指定されています。 この例では、項目は、スクリプトがに評価されるときにのみ使用され `true` ます。
 
 ```xml
 <ListItem>
@@ -65,40 +65,40 @@ ms.locfileid: "72363901"
 
 - 次の要素は、ビュー定義の選択条件を指定します。
 
-    - [TableControl の EntrySelectedBy の SelectionCondition 要素 (Format)](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)
+  - [TableControl の EntrySelectedBy の SelectionCondition 要素 (書式)](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)
 
-    - [ListControl (Format) の EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
+  - [ListControl の EntrySelectedBy の SelectionCondition 要素 (書式)](./selectioncondition-element-for-entryselectedby-for-listcontrol-format.md)
 
-    - [WideControl (Format) の EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)
+  - [WideControl の EntrySelectedBy の SelectionCondition 要素 (書式)](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)
 
-    - [CustomControl (Format) の EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)
+  - [CustomControl の EntrySelectedBy の SelectionCondition 要素 (書式)](./selectioncondition-element-for-entryselectedby-for-customcontrol-format.md)
 
 - 次の要素は、共通およびビューのコントロール定義の選択条件を指定します。
 
-    - [構成用のコントロール (Format) の EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
+  - [Configuration の Controls の EntrySelectedBy の SelectionCondition 要素 (書式)](./selectioncondition-element-for-entryselectedby-for-controls-for-configuration-format.md)
 
-    - [ビューのコントロール (Format) に対する EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md)
+  - [View の Controls の EntrySelectedBy の SelectionCondition 要素 (書式)](./selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md)
 
 - 次の要素は、コレクションオブジェクトを展開するための選択条件を指定します。
 
-    - [列挙 Able膨張 (形式) の EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)
+  - [EnumerableExpansion の EntrySelectedBy の SelectionCondition 要素 (書式)](./selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format.md)
 
 - 次の要素は、新しいデータグループを表示するための選択条件を指定します。
 
-    - [GroupBy (Format) の EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)
+  - [GroupBy の EntrySelectedBy の SelectionCondition 要素 (書式)](./selectioncondition-element-for-entryselectedby-for-groupby-format.md)
 
 - 次の要素は、リストビューの項目選択条件を指定します。
 
-    - [ListControl の ListItem の ItemSelectionCondition 要素 (形式)](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)
+  - [ListControl の ListItem の ItemSelectionCondition 要素 (書式)](./itemselectioncondition-element-for-listitem-for-listcontrol-format.md)
 
 - 次の要素は、コントロールの項目選択条件を指定します。
 
-    - [構成用のコントロールの式のバインドの ItemSelectionCondition 要素 (形式)](./itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md)
+  - [Configuration の Controls の ExpressionBinding の ItemSelectionCondition 要素 (書式)](./itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format.md)
 
-    - [ビューのコントロール (Format) の式のバインドの ItemSelectionCondition 要素](./itemselectioncondition-element-for-expressionbinding-for-controls-for-view-format.md)
+  - [View の Controls の ExpressionBinding の ItemSelectionCondition 要素 (書式)](./itemselectioncondition-element-for-expressionbinding-for-controls-for-view-format.md)
 
-    - [CustomControl (Format) の式のバインドの ItemSelectionCondition 要素](./itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md)
+  - [CustomControl の ExpressionBinding の ItemSelectionCondition 要素 (書式)](./itemselectioncondition-element-for-expressionbinding-for-customcontrol-format.md)
 
 ## <a name="see-also"></a>参照
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

@@ -8,26 +8,26 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: a52ab737-753c-4d04-8af7-758d5c805e18
 caps.latest.revision: 7
-ms.openlocfilehash: ad0fe5c63b145c681f14328d5ef5a8784a035e26
-ms.sourcegitcommit: bc9a4904c2b1561386d748fc9ac242699d2f1694
+ms.openlocfilehash: a5618b72827d8ef70201437c4a99ea8bf68cdfd3
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76995927"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565545"
 ---
 # <a name="how-to-add-return-values-to-a-cmdlet-help-topic"></a>コマンドレットのヘルプ トピックに戻り値を追加する方法
 
 このセクションでは、Windows PowerShell®コマンドレットのヘルプトピックに OUTPUTS セクションを追加する方法について説明します。 OUTPUTS セクションには、コマンドレットが返す、またはパイプラインを渡すオブジェクトの .NET クラスが一覧表示されます。
 
-OUTPUTS セクションに追加できるクラスの数に制限はありません。 コマンドレットの戻り値の型は、\<コマンド: returnValues > node で囲みます。各クラスは、\<command: 戻り値 > 要素で囲まれています。
+OUTPUTS セクションに追加できるクラスの数に制限はありません。 コマンドレットの戻り値の型は、 \< コマンド: returnValues> ノードに囲まれており、各クラスは \< command: returnvalues 要素で囲まれています。
 
 コマンドレットで出力が生成されない場合は、出力がないことを示すためにこのセクションを使用します。 たとえば、クラス名の代わりに "None" を記述し、簡単な説明を入力します。 コマンドレットによって出力が条件付きで生成される場合は、このノードを使用して条件を説明し、条件付き出力を記述します。
 
-このスキーマには、各 \<コマンドに2つの \<maml: description > 要素が含まれています: 戻り > 要素。 ただし、`Get-Help` コマンドレットを実行すると、\<command: 戻り >/\<maml: description > 要素の内容のみが表示されます。
+スキーマには、 \< 各コマンドに2つの maml: description> 要素が含まれています \< : 戻り> 要素。 ただし、コマンドレットでは、 `Get-Help` \< Command: 戻り>/ \< maml: description> 要素の内容のみが表示されます。
 
-Windows PowerShell 3.0 以降では、`Get-Help` コマンドレットは \<maml: uri > 要素の内容を表示します。 この要素を使用すると、.NET クラスを説明するトピックにユーザーを誘導できます。
+Windows PowerShell 3.0 以降では、 `Get-Help` コマンドレットにより、 \< maml: uri> 要素の内容が表示されます。 この要素を使用すると、.NET クラスを説明するトピックにユーザーを誘導できます。
 
-次の XML は、\<maml: returnValues > ノードを示しています。
+次の XML は、 \< maml: returnValues> ノードを示しています。
 
 ```xml
 <command:returnValues>
@@ -45,7 +45,7 @@ Windows PowerShell 3.0 以降では、`Get-Help` コマンドレットは \<maml
 </command: returnValues>
 ```
 
-次の XML は、\<maml: returnValues > ノードを使用して、出力の種類を文書化する例を示しています。
+次の XML は、 \< maml: returnValues> ノードを使用して、出力の種類を文書化する例を示しています。
 
 ```xml
 <command:returnValues>
@@ -61,6 +61,3 @@ Windows PowerShell 3.0 以降では、`Get-Help` コマンドレットは \<maml
   </command: returnValue>
 </command: returnValues>
 ```
-
-
-

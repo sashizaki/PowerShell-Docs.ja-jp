@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateCount attribute
 ms.assetid: 516af1ef-2c2e-408d-84bc-865f5bccf761
 caps.latest.revision: 11
-ms.openlocfilehash: ffc45f6b80a2b7ed22f27d083d042b1de7f353f6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3cae95fab30a4abe4e544ed5cb7dadc9f4debf02
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369231"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692373"
 ---
 # <a name="validatecount-attribute-declaration"></a>ValidateCount 属性の宣言
 
@@ -31,11 +31,11 @@ ValidateCount 属性では、コマンドレットパラメーターに許可さ
 
 #### <a name="parameters"></a>パラメーター
 
-`MinLength` ([System.Int32][]) が必要です。 引数の最小数を指定します。
+`MinLength`([System.string][]) が必要です。 引数の最小数を指定します。
 
-`MaxLength`([System.Int32][]) が必要です。 引数の最大数を指定します。
+`MaxLength`([System.string][]) が必要です。 引数の最大数を指定します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 - この属性を宣言する方法の詳細については、「[引数カウントを検証する方法][]」を参照してください。
 
@@ -43,11 +43,11 @@ ValidateCount 属性では、コマンドレットパラメーターに許可さ
 
 - Windows PowerShell ランタイムは、次の状況でエラーをスローします。
 
-    - `MinLength` 属性と `MaxLength` 属性パラメーター[System.Int32][]system.string ではありません。
+  - `MinLength`属性と `MaxLength` 属性のパラメーターが、system.string [System.Int32][]型ではありません。
 
-    - `MaxLength` 属性パラメーターの値が `MinLength` 属性パラメーターの値未満です。
+  - 属性パラメーターの値 `MaxLength` が、属性パラメーターの値未満です `MinLength` 。
 
-- ValidateCount 属性は、 [System. Automation. ValidateCountAttribute][]よって定義されています。
+- ValidateCount 属性は、 [system.string クラスに][]よって定義されています。
 
 ## <a name="see-also"></a>参照
 
@@ -55,10 +55,10 @@ ValidateCount 属性では、コマンドレットパラメーターに許可さ
 
 [引数カウントを検証する方法][]
 
-[Windows PowerShell コマンドレットの記述][]
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)][]
 
 [引数カウントを検証する方法]: how-to-validate-an-argument-count.md
-[Windows PowerShell コマンドレットの記述]: writing-a-windows-powershell-cmdlet.md
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)]: writing-a-windows-powershell-cmdlet.md
 
 [System.Int32]: /dotnet/api/System.Int32
 [System. Automation. ValidateCountAttribute]: /dotnet/api/System.Management.Automation.ValidateCountAttribute

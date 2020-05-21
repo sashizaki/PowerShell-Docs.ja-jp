@@ -12,12 +12,12 @@ helpviewer_keywords:
 - attributes, ValidateRange
 ms.assetid: 1f8066e6-e5d3-4f4e-8948-a90af5dace82
 caps.latest.revision: 11
-ms.openlocfilehash: 155a406b9855c435041fe175ac7d983a4b4eb8b7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 560fa105ac3f93ae6334df0112f5290dfa20576c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369131"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692009"
 ---
 # <a name="validaterange-attribute-declaration"></a>ValidateRange 属性の宣言
 
@@ -31,19 +31,19 @@ ValidateRange 属性は、コマンドレットパラメーター引数の最小
 
 #### <a name="parameters"></a>パラメーター
 
-`MinRange` ([system.object](/dotnet/api/system.object)) が必要です。 許容される最小値を指定します。
+`MinRange`([System.object](/dotnet/api/system.object)) が必要です。 許容される最小値を指定します。
 
-`MaxRange` ([system.object](/dotnet/api/system.object)) が必要です。 許容される最大値を指定します。
+`MaxRange`([System.object](/dotnet/api/system.object)) が必要です。 許容される最大値を指定します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
-- `MinRange` パラメーターの値が `MaxRange` パラメーターの値よりも大きい場合、Windows PowerShell ランタイムは構築エラーをスローします。
+- パラメーターの値 `MinRange` がパラメーターの値よりも大きい場合、Windows PowerShell ランタイムは構築エラーをスローし `MaxRange` ます。
 
 - Windows PowerShell ランタイムは、次の条件下で検証エラーをスローします。
 
-    - 引数の値が `MinRange` 制限より小さい場合、または `MaxRange` 制限を超える場合。
+  - 引数の値が制限よりも小さいか、または制限を超えている場合 `MinRange` `MaxRange` 。
 
-    - 引数が `MinRange` と `MaxRange` パラメーターと同じ型ではない場合。
+  - 引数がおよびパラメーターと同じ型ではない場合 `MinRange` `MaxRange` 。
 
 - ValidateRange 属性は、system.servicemodel[属性](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)クラスによって定義されます。
 
@@ -51,4 +51,4 @@ ValidateRange 属性は、コマンドレットパラメーター引数の最小
 
 [System. Automation. Validaterangeattribute](/dotnet/api/System.Management.Automation.ValidateRangeAttribute)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

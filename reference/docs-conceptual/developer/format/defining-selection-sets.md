@@ -8,16 +8,16 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
 caps.latest.revision: 16
-ms.openlocfilehash: 596212f2e64401a751cf3dca0ee7d60b80912c00
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 95eeb037b3b9190fec1212a68029624993f3fd9f
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368851"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692286"
 ---
 # <a name="defining-selection-sets"></a>選択セットを定義する
 
-複数のビューおよびコントロールを作成する場合は、選択セットと呼ばれるオブジェクトのセットを定義できます。 選択セットを使用すると、各ビューまたはコントロールに対して個別に定義しなくても、オブジェクトを一度定義することができます。 通常、選択セットは、関連する一連の .NET オブジェクトがある場合に使用されます。 たとえば、`FileSystem` の書式設定ファイル (types.ps1xml) では、複数のビューが使用するファイルシステムの種類の選択セットが定義されています。
+複数のビューおよびコントロールを作成する場合は、選択セットと呼ばれるオブジェクトのセットを定義できます。 選択セットを使用すると、各ビューまたはコントロールに対して個別に定義しなくても、オブジェクトを一度定義することができます。 通常、選択セットは、関連する一連の .NET オブジェクトがある場合に使用されます。 たとえば、 `FileSystem` 書式設定ファイル (types.ps1xml) では、複数のビューで使用されるファイルシステムの種類の選択セットが定義されています。
 
 ## <a name="where-selection-sets-are-defined-and-referenced"></a>選択セットが定義され参照されている場所
 
@@ -35,15 +35,15 @@ ms.locfileid: "72368851"
 
 選択セットは、次の方法で参照できます。
 
-- 各ビューには、ビューを使用して表示されるオブジェクトを定義する `ViewSelectedBy` 要素があります。 `ViewSelectedBy` 要素には、ビューのすべての定義で使用する選択セットを指定する `SelectionSetName` 子要素があります。 ビューから参照できる選択セットの数に制限はありません。
+- 各ビューには `ViewSelectedBy` 、ビューを使用して表示されるオブジェクトを定義する要素があります。 `ViewSelectedBy`要素には、 `SelectionSetName` ビューのすべての定義で使用される選択セットを指定する子要素があります。 ビューから参照できる選択セットの数に制限はありません。
 
-- ビューまたはコントロールの各定義では、`EntrySelectedBy` 要素によって、その定義を使用して表示されるオブジェクトが定義されます。 通常、ビューまたはコントロールには定義が1つだけ存在するので、オブジェクトは `ViewSelectedBy` 要素によって定義されます。 定義の `EntrySelectedBy` 要素には、選択セットを指定する `SelectionSetName` 子要素があります。 定義の選択セットを指定する場合は、`EntrySelectedBy` 要素の他の子要素を指定することはできません。
+- ビューまたはコントロールの各定義では、 `EntrySelectedBy` 要素によって、その定義を使用して表示されるオブジェクトが定義されます。 通常、ビューまたはコントロールには定義が1つしかないため、オブジェクトは要素によって定義され `ViewSelectedBy` ます。 `EntrySelectedBy`定義の要素には、 `SelectionSetName` 選択セットを指定する子要素があります。 定義の選択セットを指定する場合、要素の他の子要素を指定することはできません `EntrySelectedBy` 。
 
-- ビューまたはコントロールの各定義では、`SelectionCondition` 要素を使用して、定義を使用するときの条件を指定できます。 `SelectionCondition` 要素には、条件をトリガーする選択セットを指定する `SelectionSetName` 子要素があります。 この条件は、選択セットで定義されたオブジェクトのいずれかが表示されたときにトリガーされます。 これらの条件を設定する方法の詳細については、「[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+- ビューまたはコントロールの各定義では、要素を使用して、 `SelectionCondition` 定義を使用するときの条件を指定できます。 `SelectionCondition`要素には、 `SelectionSetName` 条件をトリガーする選択セットを指定する子要素があります。 この条件は、選択セットで定義されたオブジェクトのいずれかが表示されたときにトリガーされます。 これらの条件を設定する方法の詳細については、「[データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ## <a name="selection-set-example"></a>選択セットの例
 
-次の例は、Windows PowerShell によって提供される `FileSystem` フォーマットファイルから直接取得される選択セットを示しています。 その他の Windows PowerShell フォーマットファイルの詳細については、「 [Windows powershell の書式設定ファイル](./powershell-formatting-files.md)」を参照してください。
+次の例は、Windows PowerShell によって提供される書式設定ファイルから直接取得される選択セットを示して `FileSystem` います。 その他の Windows PowerShell フォーマットファイルの詳細については、「 [Windows powershell の書式設定ファイル](./powershell-formatting-files.md)」を参照してください。
 
 ```xml
 <SelectionSets>
@@ -59,7 +59,7 @@ ms.locfileid: "72368851"
 </SelectionSets>
 ```
 
-前の選択セットは、テーブルビューの `ViewSelectedBy` 要素で参照されます。
+前の選択セットは、 `ViewSelectedBy` テーブルビューの要素で参照されます。
 
 ```xml
 <ViewDefinitions>
@@ -90,47 +90,47 @@ ms.locfileid: "72368851"
 
 - 次の要素は、ビューのすべての定義で使用する選択セットを指定します。
 
-    - [ViewSelectedBy (Format) の SelectionSetName 要素](./selectionsetname-element-for-viewselectedby-format.md)
+  - [ViewSelectedBy の SelectionSetName 要素 (書式)](./selectionsetname-element-for-viewselectedby-format.md)
 
-    - [GroupBy (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
+  - [GroupBy の EntrySelectedBy の SelectionSetName 要素 (書式)](./selectionsetname-element-for-entryselectedby-for-groupby-format.md)
 
 - 次の要素は、1つのビュー定義で使用される選択セットを指定します。
 
-    - [ListControl (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
+  - [ListControl の EntrySelectedBy の SelectionSetName 要素 (書式)](./selectionsetname-element-for-entryselectedby-for-listcontrol-format.md)
 
-    - [TableControl (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
+  - [TableControl の EntrySelectedBy の SelectionSetName 要素 (書式)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
 
-    - [WideControl (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
+  - [WideControl の EntrySelectedBy の SelectionSetName 要素 (書式)](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
 
-    - [CustomControl for View (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)
+  - [View の CustomControl の EntrySelectedBy の SelectionSetName 要素 (書式)](./selectionsetname-element-for-entryselectedby-for-customcontrol-for-view-format.md)
 
 - 次の要素は、コモンコントロール定義と view コントロール定義で使用される選択セットを指定します。
 
-    - [ビューのコントロール (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)
+  - [View の Controls の EntrySelectedBy の SelectionSetName 要素 (書式)](./selectionsetname-element-for-entryselectedby-for-controls-for-view-format.md)
 
-    - [構成用のコントロール (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format.md)
+  - [Configuration の Controls の EntrySelectedBy の SelectionSetName 要素 (書式)](./selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format.md)
 
 - 次の要素では、拡張するオブジェクトを定義するときに使用する選択セットを指定します。
 
-    - [列挙 Able膨張 (形式) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)
+  - [EnumerableExpansion の EntrySelectedBy の SelectionSetName 要素 (書式)](./selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format.md)
 
 - 次の要素は、選択条件で使用される選択セットを指定します。
 
-    - [構成用のコントロールの SelectionCondition の SelectionSetName 要素 (形式)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
+  - [Configuration の Controls の SelectionCondition の SelectionSetName 要素 (書式)](./selectionsetname-element-for-selectioncondition-for-controls-for-configuration-format.md)
 
-    - [ビューのコントロール (Format) の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
+  - [View の Controls の SelectionCondition の SelectionSetName 要素 (書式)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
 
-    - [View (Format) の CustomControl の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
+  - [View の CustomControl の SelectionCondition の SelectionSetName 要素 (書式)](./selectionsetname-element-for-selectioncondition-for-customcontrol-for-view-format.md)
 
-    - [列挙 Able膨張 (Format) の EntrySelectedBy の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
+  - [EnumerableExpansion の EntrySelectedBy の SelectionCondition の SelectionSetName 要素 (書式)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)
 
-    - [EntrySelectedBy for ListEntry (Format) の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)
+  - [ListEntry の EntrySelectedBy の SelectionCondition の SelectionSetName 要素 (書式)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-listentry-format.md)
 
-    - [TableControl の EntrySelectedBy の SelectionCondition の SelectionSetName 要素 (Format)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
+  - [TableControl の EntrySelectedBy の SelectionCondition の SelectionSetName 要素 (書式)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-tablecontrol-format.md)
 
-    - [EntrySelectedBy for WideEntry (Format) の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
+  - [WideEntry の EntrySelectedBy の SelectionCondition の SelectionSetName 要素 (書式)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
 
-    - [GroupBy (Format) の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)
+  - [GroupBy の SelectionCondition の SelectionSetName 要素 (書式)](./selectionsetname-element-for-selectioncondition-for-groupby-format.md)
 
 ## <a name="see-also"></a>参照
 
@@ -142,7 +142,7 @@ ms.locfileid: "72368851"
 
 [型](./types-element-for-selectionset-format.md)
 
-[PowerShell のフォーマットファイル](./powershell-formatting-files.md)
+[PowerShell 書式設定ファイル](./powershell-formatting-files.md)
 
 [データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)
 

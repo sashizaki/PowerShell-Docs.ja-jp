@@ -12,12 +12,12 @@ helpviewer_keywords:
 - ValidateLength attribute
 ms.assetid: 82fe3a35-a94b-4bc1-ad9e-dfc5f1e788b3
 caps.latest.revision: 13
-ms.openlocfilehash: a25fa2410fcc6803563573596af1bc99052c3ffa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a1a494534169b2da470286020dfacfa8e9084839
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369181"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692330"
 ---
 # <a name="validatelength-attribute-declaration"></a>ValidateLength 属性の宣言
 
@@ -31,11 +31,11 @@ ValidateLength 属性は、コマンドレットパラメーター引数の文�
 
 #### <a name="parameters"></a>パラメーター
 
-`MinLength` ([Int32](/dotnet/api/System.Int32)) が必要です。 許容される最小文字数を指定します。
+`MinLength`([System.string](/dotnet/api/System.Int32)) が必要です。 許容される最小文字数を指定します。
 
-`MaxLength` ([Int32](/dotnet/api/System.Int32)) が必要です。 許容される最大文字数を指定します。
+`MaxLength`([System.string](/dotnet/api/System.Int32)) が必要です。 許容される最大文字数を指定します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 - この属性を宣言する方法の詳細については、「[入力検証規則を宣言する方法](./how-to-validate-parameter-input.md)」を参照してください。
 
@@ -43,11 +43,11 @@ ValidateLength 属性は、コマンドレットパラメーター引数の文�
 
 - Windows PowerShell ランタイムは、次の状況でエラーをスローします。
 
-    - `MaxLength` 属性パラメーターの値が `MinLength` 属性パラメーターの値より小さい場合。
+  - `MaxLength`属性パラメーターの値が属性パラメーターの値より小さい場合 `MinLength` 。
 
-    - `MaxLength` 属性パラメーターが0に設定されている場合。
+  - `MaxLength`属性パラメーターが0に設定されている場合。
 
-    - 引数が文字列でない場合。
+  - 引数が文字列でない場合。
 
 - ValidateLength 属性は、 [Validatelengthattribute](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)クラスによって定義されます。
 
@@ -55,4 +55,4 @@ ValidateLength 属性は、コマンドレットパラメーター引数の文�
 
 [Validatelengthattribute (システム管理)](/dotnet/api/System.Management.Automation.ValidateLengthAttribute)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
