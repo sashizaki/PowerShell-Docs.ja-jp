@@ -1,57 +1,48 @@
 - name: このドキュメントの使用方法
   href: how-to-use-docs.md
 - name: 概要
-  href: overview.md
+  expanded: true
+  items:
+    - name: PowerShell とは
+      href: overview.md
+    - name: PowerShell のサポート ライフサイクル
+      href: powershell-support-lifecycle.md
 - name: インストール
   items:
-    - name: PowerShell のさまざまなバージョンのインストール
+    - name: 概要
       href: install/installing-powershell.md
-    - name: PowerShell のインストール
-      items:
-        - name: Windows への PowerShell のインストール
-          href: install/installing-powershell-core-on-windows.md
-        - name: Linux への PowerShell のインストール
-          href: install/installing-powershell-core-on-linux.md
-        - name: macOS への PowerShell のインストール
-          href: install/installing-powershell-core-on-macos.md
-        - name: ARM への PowerShell のインストール
-          href: install/powershell-core-on-arm.md
-    - name: Windows PowerShell 5.1 のインストール
-      items:
-        - name: Windows PowerShell のインストール
-          href: install/installing-windows-powershell.md
-        - name: Windows PowerShell 2.0 エンジンのインストール
-          href: install/installing-the-windows-powershell-2.0-engine.md
-        - name: Windows PowerShell のシステム要件
-          href: install/windows-powershell-system-requirements.md
+    - name: Windows PowerShell 5.1 から PowerShell 7 への移行
+      href: install/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
+    - name: Windows への PowerShell のインストール
+      href: install/installing-powershell-core-on-windows.md
+    - name: Linux への PowerShell のインストール
+      href: install/installing-powershell-core-on-linux.md
+    - name: macOS への PowerShell のインストール
+      href: install/installing-powershell-core-on-macos.md
+    - name: ARM への PowerShell のインストール
+      href: install/powershell-core-on-arm.md
     - name: Docker での PowerShell の使用
       href: install/PowerShell-in-Docker.md
-- name: はじめに
-  items:
-    - name: PowerShell の概要
-      href: getting-started/getting-started-with-windows-powershell.md
-    - name: Windows PowerShell の開始
-      href: getting-started/starting-windows-powershell.md
-    - name: Windows PowerShell 2.0 エンジンの開始
-      href: getting-started/starting-the-windows-powershell-2.0-engine.md
 - name: PowerShell の習得
   items:
-    - name: PowerShell の重要な概念を理解する
-      href: learn/understanding-important-powershell-concepts.md
-    - name: PowerShell で用いられる名前の習得
-      href: learn/learning-powershell-names.md
-    - name: 使い慣れたコマンド名の使用
-      href: learn/using-familiar-command-names.md
-    - name: 詳しいヘルプ情報の取得
-      href: learn/getting-detailed-help-information.md
-    - name: コマンドに関する情報の取得
-      href: learn/getting-information-about-commands.md
-    - name: 変数を使用したオブジェクトの保存
-      href: learn/using-variables-to-store-objects.md
-    - name: PowerShell パイプラインを理解する
-      href: learn/understanding-the-powershell-pipeline.md
-    - name: PowerShell の詳細情報
-      href: learn/more-powershell-learning.md
+    - name: PowerShell 101
+      items:
+        - name: PowerShell で用いられる名前の習得
+          href: learn/ps101/learning-powershell-names.md
+        - name: 使い慣れたコマンド名の使用
+          href: learn/ps101/using-familiar-command-names.md
+        - name: 詳しいヘルプ情報の取得
+          href: learn/ps101/getting-detailed-help-information.md
+        - name: コマンドに関する情報の取得
+          href: learn/ps101/getting-information-about-commands.md
+        - name: 変数を使用したオブジェクトの保存
+          href: learn/ps101/using-variables-to-store-objects.md
+        - name: PowerShell のコマンド ライン オプション
+          href: learn/ps101/powershell.exe-command-line-help.md
+        - name: タブ拡張の使用
+          href: learn/ps101/using-tab-expansion.md
+    - name: 試験的な機能の使用
+      href: learn/experimental-features.md
     - name: PowerShell リモート処理
       items:
         - name: Just Enough Administration (JEA)
@@ -82,167 +73,12 @@
           href: learn/remoting/winrmsecurity.md
         - name: PowerShell リモート処理での次ホップの実行
           href: learn/remoting/ps-remoting-second-hop.md
+    - name: その他のリソース
+      href: learn/more-powershell-learning.md
     - name: 用語集
-      href: learn/windows-powershell-glossary.md
-- name: Components
-  items:
-    - name: コンソール
-      items:
-        - name: PowerShell のコマンド ライン オプション
-          href: components/console/powershell.exe-command-line-help.md
-        - name: タブ拡張の使用
-          href: components/console/using-tab-expansion.md
-    - name: ISE
-      items:
-        - name: Windows PowerShell ISE の概要
-          href: components/ise/introducing-the-windows-powershell-ise.md
-        - name: Windows PowerShell ISE の使用
-          items:
-            - name: Windows PowerShell ISE の操作
-              href: components/ise/exploring-the-windows-powershell-ise.md
-            - name: Windows PowerShell ISE で PowerShell タブを作成する方法
-              href: components/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
-            - name: Windows PowerShell ISE でスクリプトをデバッグする方法
-              href: components/ise/how-to-debug-scripts-in-windows-powershell-ise.md
-            - name: Windows PowerShell ISE でプロファイルを使用する方法
-              href: components/ise/how-to-use-profiles-in-windows-powershell-ise.md
-            - name: スクリプト ウィンドウとコンソール ウィンドウでタブ補完を使用する方法
-              href: components/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
-            - name: Windows PowerShell ISE でコンソール ウィンドウを使用する方法
-              href: components/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
-            - name: Windows PowerShell ISE でスクリプトを記述および実行する方法
-              href: components/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
-            - name: Windows PowerShell ISE のキーボード ショートカット
-              href: components/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
-            - name: Windows PowerShell ISE のアクセシビリティ
-              href: components/ise/accessibility-in-windows-powershell-ise.md
-        - name: ISE スクリプティング オブジェクト モデル
-          items:
-            - name: Windows PowerShell ISE スクリプト オブジェクト モデルの目的
-              href: components/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
-            - name: ISE オブジェクト モデルの階層
-              href: components/ise/object-model/the-ise-object-model-hierarchy.md
-            - name: ObjectModelRoot オブジェクト
-              href: components/ise/object-model/the-objectmodelroot-object.md
-            - name: ISEAddOnToolCollection オブジェクト
-              href: components/ise/object-model/the-iseaddontoolcollection-object.md
-            - name: ISEAddOnTool オブジェクト
-              href: components/ise/object-model/the-iseaddontool-object.md
-            - name: ISEEditor オブジェクト
-              href: components/ise/object-model/the-iseeditor-object.md
-            - name: ISEFileCollection オブジェクト
-              href: components/ise/object-model/the-isefilecollection-object.md
-            - name: ISEFile オブジェクト
-              href: components/ise/object-model/the-isefile-object.md
-            - name: ISEMenuItemCollection オブジェクト
-              href: components/ise/object-model/the-isemenuitemcollection-object.md
-            - name: ISEMenuItem オブジェクト
-              href: components/ise/object-model/the-isemenuitem-object.md
-            - name: ISEOptions オブジェクト
-              href: components/ise/object-model/the-iseoptions-object.md
-            - name: ISESnippetCollection オブジェクト
-              href: components/ise/object-model/the-isesnippetcollection-object.md
-            - name: ISESnippetObject
-              href: components/ise/object-model/the-isesnippetobject.md
-            - name: PowerShellTabCollection オブジェクト
-              href: components/ise/object-model/the-powershelltabcollection-object.md
-            - name: PowerShellTab オブジェクト
-              href: components/ise/object-model/the-powershelltab-object.md
-- name: PowerShell ギャラリー
-  items:
-    - name: 概要
-      href: gallery/overview.md
-    - name: PowerShellGet のインストール
-      href: gallery/installing-psget.md
-    - name: 作業の開始
-      href: gallery/getting-started.md
-    - name: 操作方法
-      items:
-        - name: ギャラリーのパッケージの検索
-          items:
-            - name: パッケージの検索
-              href: gallery/how-to/finding-packages/search-syntax.md
-            - name: 互換性での検索
-              href: gallery/how-to/finding-packages/searching-by-compatibility.md
-            - name: 検索結果のフィルター処理
-              href: gallery/how-to/finding-packages/filtering-packages.md
-        - name: ギャラリーへの公開
-          items:
-            - name: パッケージの作成と公開
-              href: gallery/how-to/publishing-packages/publishing-a-package.md
-            - name: PowerShellGallery アカウントの作成
-              href: gallery/how-to/publishing-packages/creating-an-account.md
-            - name: パッケージをリストから外す
-              href: gallery/how-to/publishing-packages/unlisting-packages.md
-            - name: パッケージを削除する
-              href: gallery/how-to/publishing-packages/deleting-packages.md
-            - name: パッケージの所有者を管理する
-              href: gallery/how-to/publishing-packages/managing-package-owners.md
-        - name: パッケージを操作する
-          items:
-            - name: FileList ビュー
-              href: gallery/how-to/working-with-packages/filelist-view.md
-            - name: Azure Automation にデプロイする
-              href: gallery/how-to/working-with-packages/deploy-to-azure-automation.md
-            - name: パッケージの手動ダウンロード
-              href: gallery/how-to/working-with-packages/manual-download.md
-            - name: ライセンス同意が必要なパッケージ
-              href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
-            - name: パッケージの所有者に連絡する
-              href: gallery/how-to/working-with-packages/contacting-package-owners.md
-            - name: ソーシャル メディアやコメントを使用したフィードバックの提供
-              href: gallery/how-to/working-with-packages/social-media-feedback.md
-        - name: アカウント プロファイルの管理
-          items:
-            - name: PowerShell ギャラリーのアカウント設定
-              href: gallery/how-to/managing-profile/managing-account.md
-            - name: API キーの管理
-              href: gallery/how-to/managing-profile/creating-apikeys.md
-        - name: PowerShellGet プライベート リポジトリの操作
-          href: gallery/how-to/working-with-local-psrepositories.md
-    - name: 概念
-      items:
-        - name: 公開に関するガイドラインとベスト プラクティス
-          href: gallery/concepts/publishing-guidelines.md
-        - name: パッケージのマニフェストとギャラリーの UI
-          href: gallery/concepts/package-manifest-affecting-ui.md
-        - name: 特定の PSEditions の必須化
-          items:
-            - name: PSEditions のサポートを使用してスクリプトを記述する
-              href: gallery/concepts/script-psedition-support.md
-            - name: PSEditions のサポートを使用してモジュールを記述する
-              href: gallery/concepts/module-psedition-support.md
-        - name: ライセンス同意の必須化
-          items:
-            - name: スクリプトでのライセンス同意の必須化
-              href: gallery/concepts/script-license-acceptance.md
-            - name: モジュールでのライセンス同意の必須化
-              href: gallery/concepts/module-license-acceptance.md
-        - name: パッケージをプレリリースとして定義する
-          items:
-            - name: モジュールをプレリリースとして定義する
-              href: gallery/concepts/module-prerelease-support.md
-            - name: スクリプトをプレリリースとして定義する
-              href: gallery/concepts/script-prerelease-support.md
-        - name: PSScriptAnalyzer ルール プロファイル
-          href: gallery/concepts/scriptanalyzer-rule-profile.md
-    - name: サポートの入手
-      items:
-        - name: 不正報告
-          href: gallery/how-to/getting-support/report-abuse.md
-        - name: 争いの解決
-          href: gallery/how-to/getting-support/dispute-resolution.md
-        - name: 管理者に連絡する
-          href: gallery/how-to/getting-support/contacting-administrators.md
-        - name: トラブルシューティング
-          href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
-        - name: NuGet プロバイダーと NuGet.exe をブートストラップする
-          href: gallery/how-to/getting-support/bootstrapping-nuget.md
-        - name: GDPR コンプライアンス
-          href: gallery/how-to/getting-support/gdpr-dsr-policy.md
-    - name: ギャラリーに関してよく寄せられる質問
-      href: gallery/faqs.md
+      href: learn/glossary.md
 - name: 新機能
+  expanded: true
   items:
     - name: PowerShell 7.x の新機能
       items:
@@ -260,71 +96,135 @@
           href: whats-new/breaking-changes-ps6.md
         - name: PowerShell Core 6.0 の既知の問題
           href: whats-new/known-issues-ps6.md
-    - name: PowerShell Core 5.x の新機能
-      items:
-        - name: Windows PowerShell 5.x の新機能
-          href: whats-new/what-s-new-in-windows-powershell-50.md
-        - name: PowerShell 5.0 ISE の新機能
-          href: whats-new/what-s-new-in-the-powershell-50-ise.md
-    - name: Windows PowerShell 5.1 から PowerShell 7 への移行
-      href: whats-new/Migrating-from-Windows-PowerShell-51-to-PowerShell-7.md
-    - name: 試験的な機能の使用
-      href: whats-new/experimental-features.md
     - name: モジュールとコマンドレットのリリース履歴
       href: whats-new/cmdlet-versions.md
     - name: モジュール互換性リスト
       href: whats-new/module-compatibility.md
-- name: PowerShell のサポート ライフサイクル
-  href: powershell-support-lifecycle.md
-- name: Windows Management Framework (WMF)
+- name: Windows PowerShell
   items:
-    - name: 概要
-      href: wmf/overview.md
-    - name: インストール
+    - name: Windows PowerShell 5.1 のインストール
       items:
-        - name: WMF 5.1 のインストールと構成
-          href: wmf/setup/install-configure.md
-        - name: WMF 5.0 のアンインストール
-          href: wmf/setup/uninstall.md
-    - name: 新機能
-      expanded: true
+        - name: Windows PowerShell のインストール
+          href: windows-powershell/install/installing-windows-powershell.md
+        - name: Windows PowerShell 2.0 エンジンのインストール
+          href: windows-powershell/install/installing-the-windows-powershell-2.0-engine.md
+        - name: Windows PowerShell のシステム要件
+          href: windows-powershell/install/windows-powershell-system-requirements.md
+    - name: PowerShell Core 5.x の新機能
       items:
-        - name: WMF 5.x のリリース ノート
-          href: wmf/whats-new/release-notes.md
-        - name: WMF 5.1 のバグ修正
-          href: wmf/whats-new/bugfixes.md
-        - name: 新規および更新されたコマンドレット
-          href: wmf/whats-new/new-updated-cmdlets.md
-        - name: PowerShell クラスを使用したカスタム型の作成
-          href: wmf/whats-new/class-overview.md
-        - name: WMF 5.1 のコンソール機能強化
-          href: wmf/whats-new/console-improvements.md
-        - name: PowerShell スクリプト デバッグの強化
-          href: wmf/whats-new/debug-overview.md
-        - name: スクリプトのトレースとログ
-          href: wmf/whats-new/script-logging.md
-        - name: WMF 5.1 の DSC 機能強化
-          href: wmf/whats-new/DSC-improvements.md
-        - name: WMF 5.1 の PowerShell エンジン機能強化
-          href: wmf/whats-new/engine-improvements.md
-        - name: 情報ストリーム
-          href: wmf/whats-new/informationstream-overview.md
-        - name: Just Enough Administration (JEA) の強化
-          href: wmf/whats-new/jea-improvements.md
-        - name: WMF 5.1 のパッケージ管理の機能強化
-          href: wmf/whats-new/package-management-improvements.md
-        - name: ソフトウェア インベントリ ログ (SIL)
-          href: wmf/whats-new/sil-overview.md
-        - name: 製品の互換性の状態
-          href: wmf/whats-new/compatibility.md
-    - name: 既知の問題
+        - name: Windows PowerShell 5.x の新機能
+          href: windows-powershell/whats-new/what-s-new-in-windows-powershell-50.md
+        - name: PowerShell 5.0 ISE の新機能
+          href: windows-powershell/whats-new/what-s-new-in-the-powershell-50-ise.md
+    - name: ISE
       items:
-        - name: WMF 5.0 の既知の問題
-          href: wmf/known-issues/known-issues-50.md
-        - name: WMF 5.1 の既知の問題
-          href: wmf/known-issues/known-issues-51.md
-        - name: DSC の既知の問題と制限事項
-          href: wmf/known-issues/known-issues-dsc.md
+        - name: Windows PowerShell ISE の概要
+          href: windows-powershell/ise/introducing-the-windows-powershell-ise.md
+        - name: Windows PowerShell ISE の使用
+          items:
+            - name: Windows PowerShell ISE の操作
+              href: windows-powershell/ise/exploring-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE で PowerShell タブを作成する方法
+              href: windows-powershell/ise/how-to-create-a-powershell-tab-in-windows-powershell-ise.md
+            - name: Windows PowerShell ISE でスクリプトをデバッグする方法
+              href: windows-powershell/ise/how-to-debug-scripts-in-windows-powershell-ise.md
+            - name: Windows PowerShell ISE でプロファイルを使用する方法
+              href: windows-powershell/ise/how-to-use-profiles-in-windows-powershell-ise.md
+            - name: スクリプト ウィンドウとコンソール ウィンドウでタブ補完を使用する方法
+              href: windows-powershell/ise/how-to-use-tab-completion-in-the-script-pane-and-console-pane.md
+            - name: Windows PowerShell ISE でコンソール ウィンドウを使用する方法
+              href: windows-powershell/ise/how-to-use-the-console-pane-in-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE でスクリプトを記述および実行する方法
+              href: windows-powershell/ise/how-to-write-and-run-scripts-in-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE のキーボード ショートカット
+              href: windows-powershell/ise/keyboard-shortcuts-for-the-windows-powershell-ise.md
+            - name: Windows PowerShell ISE のアクセシビリティ
+              href: windows-powershell/ise/accessibility-in-windows-powershell-ise.md
+        - name: ISE スクリプティング オブジェクト モデル
+          items:
+            - name: Windows PowerShell ISE スクリプト オブジェクト モデルの目的
+              href: windows-powershell/ise/object-model/purpose-of-the-windows-powershell-ise-scripting-object-model.md
+            - name: ISE オブジェクト モデルの階層
+              href: windows-powershell/ise/object-model/the-ise-object-model-hierarchy.md
+            - name: ObjectModelRoot オブジェクト
+              href: windows-powershell/ise/object-model/the-objectmodelroot-object.md
+            - name: ISEAddOnToolCollection オブジェクト
+              href: windows-powershell/ise/object-model/the-iseaddontoolcollection-object.md
+            - name: ISEAddOnTool オブジェクト
+              href: windows-powershell/ise/object-model/the-iseaddontool-object.md
+            - name: ISEEditor オブジェクト
+              href: windows-powershell/ise/object-model/the-iseeditor-object.md
+            - name: ISEFileCollection オブジェクト
+              href: windows-powershell/ise/object-model/the-isefilecollection-object.md
+            - name: ISEFile オブジェクト
+              href: windows-powershell/ise/object-model/the-isefile-object.md
+            - name: ISEMenuItemCollection オブジェクト
+              href: windows-powershell/ise/object-model/the-isemenuitemcollection-object.md
+            - name: ISEMenuItem オブジェクト
+              href: windows-powershell/ise/object-model/the-isemenuitem-object.md
+            - name: ISEOptions オブジェクト
+              href: windows-powershell/ise/object-model/the-iseoptions-object.md
+            - name: ISESnippetCollection オブジェクト
+              href: windows-powershell/ise/object-model/the-isesnippetcollection-object.md
+            - name: ISESnippetObject
+              href: windows-powershell/ise/object-model/the-isesnippetobject.md
+            - name: PowerShellTabCollection オブジェクト
+              href: windows-powershell/ise/object-model/the-powershelltabcollection-object.md
+            - name: PowerShellTab オブジェクト
+              href: windows-powershell/ise/object-model/the-powershelltab-object.md
+    - name: Windows Management Framework (WMF)
+      items:
+        - name: 概要
+          href: windows-powershell/wmf/overview.md
+        - name: インストール
+          items:
+            - name: WMF 5.1 のインストールと構成
+              href: windows-powershell/wmf/setup/install-configure.md
+            - name: WMF 5.0 のアンインストール
+              href: windows-powershell/wmf/setup/uninstall.md
+        - name: 新機能
+          expanded: true
+          items:
+            - name: WMF 5.x のリリース ノート
+              href: windows-powershell/wmf/whats-new/release-notes.md
+            - name: WMF 5.1 のバグ修正
+              href: windows-powershell/wmf/whats-new/bugfixes.md
+            - name: 新規および更新されたコマンドレット
+              href: windows-powershell/wmf/whats-new/new-updated-cmdlets.md
+            - name: PowerShell クラスを使用したカスタム型の作成
+              href: windows-powershell/wmf/whats-new/class-overview.md
+            - name: WMF 5.1 のコンソール機能強化
+              href: windows-powershell/wmf/whats-new/console-improvements.md
+            - name: PowerShell スクリプト デバッグの強化
+              href: windows-powershell/wmf/whats-new/debug-overview.md
+            - name: スクリプトのトレースとログ
+              href: windows-powershell/wmf/whats-new/script-logging.md
+            - name: WMF 5.1 の DSC 機能強化
+              href: windows-powershell/wmf/whats-new/DSC-improvements.md
+            - name: WMF 5.1 の PowerShell エンジン機能強化
+              href: windows-powershell/wmf/whats-new/engine-improvements.md
+            - name: 情報ストリーム
+              href: windows-powershell/wmf/whats-new/informationstream-overview.md
+            - name: Just Enough Administration (JEA) の強化
+              href: windows-powershell/wmf/whats-new/jea-improvements.md
+            - name: WMF 5.1 のパッケージ管理の機能強化
+              href: windows-powershell/wmf/whats-new/package-management-improvements.md
+            - name: ソフトウェア インベントリ ログ (SIL)
+              href: windows-powershell/wmf/whats-new/sil-overview.md
+            - name: 製品の互換性の状態
+              href: windows-powershell/wmf/whats-new/compatibility.md
+            - name: 既知の問題
+              items:
+                - name: WMF 5.0 の既知の問題
+                  href: windows-powershell/wmf/known-issues/known-issues-50.md
+                - name: WMF 5.1 の既知の問題
+                  href: windows-powershell/wmf/known-issues/known-issues-51.md
+                - name: DSC の既知の問題と制限事項
+                  href: windows-powershell/wmf/known-issues/known-issues-dsc.md
+    - name: Windows PowerShell の開始
+      href: windows-powershell/starting-windows-powershell.md
+    - name: Windows PowerShell 2.0 エンジンの開始
+      href: windows-powershell/starting-the-windows-powershell-2.0-engine.md
 - name: Desired State Configuration (DSC)
   items:
     - name: 概要
@@ -618,6 +518,44 @@
       items:
         - name: ホワイトペーパー
           href: dsc/further-reading/whitepapers.md
+- name: コミュニティ
+  items:
+    - name: コミュニティの更新情報
+      href: community/community-update.yml
+    - name: コミュニティ サポート
+      href: community/community-support.md
+    - name: 殿堂入り共同作成者
+      href: community/hall-of-fame.md
+    - name: Docs の新機能
+      items:
+        - name: 2020 年第 2 四半期
+          href: community/2020-Q2.md
+        - name: 2020 年第 1 四半期
+          href: community/2020-Q1.md
+    - name: 共同作成者ガイド
+      items:
+        - name: 概要
+          href: community/contributing/overview.md
+        - name: ドキュメントの問題をファイルにする方法
+          href: community/contributing/file-an-issue.md
+        - name: ドキュメントの作成を開始する
+          href: community/contributing/get-started-writing.md
+        - name: プル要求の送信
+          href: community/contributing/pull-requests.md
+        - name: PowerShell ドキュメントのスタイル ガイド
+          href: community/contributing/powershell-style-guide.md
+        - name: コマンドレット リファレンスの編集
+          href: community/contributing/editing-cmdlet-ref.md
+        - name: その他のリソース
+          items:
+            - name: 編集のチェックリスト
+              href: community/contributing/editorial-checklist.md
+            - name: 問題の管理方法
+              href: community/contributing/managing-issues.md
+            - name: プル要求を管理する方法
+              href: community/contributing/managing-pull-requests.md
+    - name: デジタル アート
+      href: community/digital-art.md
 - name: サンプルのスクリプト
   items:
     - name: 管理のサンプル スクリプト
@@ -702,124 +640,125 @@
           href: samples/appendix-1---compatibility-aliases.md
         - name: 付録 2 - カスタムの PowerShell ショートカットの作成
           href: samples/appendix-2---creating-a-custom-powershell-shortcut.md
-- name: コミュニティ
-  expanded: true
+- name: PowerShell ギャラリー
   items:
-    - name: コミュニティの更新情報
-      href: community/community-update.yml
-    - name: コミュニティ サポート
-      href: community/community-support.md
-    - name: 殿堂入り共同作成者
-      href: community/hall-of-fame.md
-    - name: Docs の新機能
+    - name: 概要
+      href: gallery/overview.md
+    - name: PowerShellGet のインストール
+      href: gallery/installing-psget.md
+    - name: 作業の開始
+      href: gallery/getting-started.md
+    - name: 操作方法
       items:
-        - name: 2020 年第 2 四半期
-          href: community/2020-Q2.md
-        - name: 2020 年第 1 四半期
-          href: community/2020-Q1.md
-    - name: 共同作成者ガイド
-      items:
-        - name: 概要
-          href: community/contributing/overview.md
-        - name: ドキュメントの問題をファイルにする方法
-          href: community/contributing/file-an-issue.md
-        - name: ドキュメントの作成を開始する
-          href: community/contributing/get-started-writing.md
-        - name: プル要求の送信
-          href: community/contributing/pull-requests.md
-        - name: PowerShell ドキュメントのスタイル ガイド
-          href: community/contributing/powershell-style-guide.md
-        - name: コマンドレット リファレンスの編集
-          href: community/contributing/editing-cmdlet-ref.md
-        - name: その他のリソース
+        - name: ギャラリーのパッケージの検索
           items:
-            - name: 編集のチェックリスト
-              href: community/contributing/editorial-checklist.md
-            - name: 問題の管理方法
-              href: community/contributing/managing-issues.md
-            - name: プル要求を管理する方法
-              href: community/contributing/managing-pull-requests.md
-    - name: デジタル アート
-      href: community/digital-art.md
+            - name: パッケージの検索
+              href: gallery/how-to/finding-packages/search-syntax.md
+            - name: 互換性での検索
+              href: gallery/how-to/finding-packages/searching-by-compatibility.md
+            - name: 検索結果のフィルター処理
+              href: gallery/how-to/finding-packages/filtering-packages.md
+        - name: ギャラリーへの公開
+          items:
+            - name: パッケージの作成と公開
+              href: gallery/how-to/publishing-packages/publishing-a-package.md
+            - name: PowerShellGallery アカウントの作成
+              href: gallery/how-to/publishing-packages/creating-an-account.md
+            - name: パッケージをリストから外す
+              href: gallery/how-to/publishing-packages/unlisting-packages.md
+            - name: パッケージを削除する
+              href: gallery/how-to/publishing-packages/deleting-packages.md
+            - name: パッケージの所有者を管理する
+              href: gallery/how-to/publishing-packages/managing-package-owners.md
+        - name: パッケージを操作する
+          items:
+            - name: FileList ビュー
+              href: gallery/how-to/working-with-packages/filelist-view.md
+            - name: Azure Automation にデプロイする
+              href: gallery/how-to/working-with-packages/deploy-to-azure-automation.md
+            - name: パッケージの手動ダウンロード
+              href: gallery/how-to/working-with-packages/manual-download.md
+            - name: ライセンス同意が必要なパッケージ
+              href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
+            - name: パッケージの所有者に連絡する
+              href: gallery/how-to/working-with-packages/contacting-package-owners.md
+            - name: ソーシャル メディアやコメントを使用したフィードバックの提供
+              href: gallery/how-to/working-with-packages/social-media-feedback.md
+        - name: アカウント プロファイルの管理
+          items:
+            - name: PowerShell ギャラリーのアカウント設定
+              href: gallery/how-to/managing-profile/managing-account.md
+            - name: API キーの管理
+              href: gallery/how-to/managing-profile/creating-apikeys.md
+        - name: PowerShellGet プライベート リポジトリの操作
+          href: gallery/how-to/working-with-local-psrepositories.md
+    - name: 概念
+      items:
+        - name: 公開に関するガイドラインとベスト プラクティス
+          href: gallery/concepts/publishing-guidelines.md
+        - name: パッケージのマニフェストとギャラリーの UI
+          href: gallery/concepts/package-manifest-affecting-ui.md
+        - name: 特定の PSEditions の必須化
+          items:
+            - name: PSEditions のサポートを使用してスクリプトを記述する
+              href: gallery/concepts/script-psedition-support.md
+            - name: PSEditions のサポートを使用してモジュールを記述する
+              href: gallery/concepts/module-psedition-support.md
+        - name: ライセンス同意の必須化
+          items:
+            - name: スクリプトでのライセンス同意の必須化
+              href: gallery/concepts/script-license-acceptance.md
+            - name: モジュールでのライセンス同意の必須化
+              href: gallery/concepts/module-license-acceptance.md
+        - name: パッケージをプレリリースとして定義する
+          items:
+            - name: モジュールをプレリリースとして定義する
+              href: gallery/concepts/module-prerelease-support.md
+            - name: スクリプトをプレリリースとして定義する
+              href: gallery/concepts/script-prerelease-support.md
+        - name: PSScriptAnalyzer ルール プロファイル
+          href: gallery/concepts/scriptanalyzer-rule-profile.md
+    - name: サポートの入手
+      items:
+        - name: 不正報告
+          href: gallery/how-to/getting-support/report-abuse.md
+        - name: 争いの解決
+          href: gallery/how-to/getting-support/dispute-resolution.md
+        - name: 管理者に連絡する
+          href: gallery/how-to/getting-support/contacting-administrators.md
+        - name: トラブルシューティング
+          href: gallery/how-to/getting-support/troubleshooting-cmdlets.md
+        - name: NuGet プロバイダーと NuGet.exe をブートストラップする
+          href: gallery/how-to/getting-support/bootstrapping-nuget.md
+        - name: GDPR コンプライアンス
+          href: gallery/how-to/getting-support/gdpr-dsr-policy.md
+    - name: ギャラリーに関してよく寄せられる質問
+      href: gallery/faqs.md
 - name: スクリプト作成と開発
   items:
     - name: Visual Studio Code
       items:
         - name: Visual Studio Code の使用
-          href: components/vscode/using-vscode.md
+          href: dev-cross-plat/vscode/using-vscode.md
         - name: Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法
-          href: components/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
+          href: dev-cross-plat/vscode/How-To-Replicate-the-ISE-Experience-In-VSCode.md
         - name: Visual Studio Code を使用したリモート編集およびデバッグ
-          href: components/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
+          href: dev-cross-plat/vscode/Using-VSCode-for-Remote-Editing-and-Debugging.md
         - name: VS Code と PowerShell でのファイルのエンコードの概要
-          href: components/vscode/understanding-file-encoding.md
+          href: dev-cross-plat/vscode/understanding-file-encoding.md
     - name: 移植可能なモジュールの作成
-      href: learn/writing-portable-modules.md
+      href: dev-cross-plat/writing-portable-modules.md
     - name: レガシ PowerShell SDK
       items:
         - name: 概要
           href: developer/windows-powershell.md
         - name: Windows PowerShell SDK のインストール
           href: developer/installing-the-windows-powershell-sdk.md
-        - name: Windows PowerShell モジュールを記述する
-          href: developer/module/writing-a-windows-powershell-module.md
-          items:
-            - name: Windows PowerShell モジュールを理解する
-              href: developer/module/understanding-a-windows-powershell-module.md
-            - name: PowerShell スクリプト モジュールを記述する方法
-              href: developer/module/how-to-write-a-powershell-script-module.md
-            - name: PowerShell バイナリ モジュールを記述する方法
-              href: developer/module/how-to-write-a-powershell-binary-module.md
-            - name: PowerShell モジュール マニフェストを記述する方法
-              href: developer/module/how-to-write-a-powershell-module-manifest.md
-            - name: PowerShell モジュールをインストールする
-              href: developer/module/installing-a-powershell-module.md
-            - name: PSModulePath インストール パスを変更する
-              href: developer/module/modifying-the-psmodulepath-installation-path.md
-            - name: PowerShell モジュールをインポートする
-              href: developer/module/importing-a-powershell-module.md
-            - name: Windows PowerShell モジュールのヘルプを記述する
-              href: developer/module/writing-help-for-windows-powershell-modules.md
-              items:
-                - name: ヘルプ ファイルに名前を付ける
-                  href: developer/module/naming-help-files.md
-                - name: 更新可能なヘルプのサポート
-                  href: developer/module/supporting-updatable-help.md
-                  items:
-                    - name: 更新可能なヘルプの概要
-                      href: developer/module/updatable-help-overview.md
-                    - name: '更新可能なヘルプの作成: ステップバイステップ'
-                      href: developer/module/updatable-help-authoring-step-by-step.md
-                    - name: 更新可能なヘルプのしくみ
-                      href: developer/module/how-updatable-help-works.md
-                    - name: HelpInfo XML ファイルを作成する方法
-                      href: developer/module/how-to-create-a-helpinfo-xml-file.md
-                      items:
-                        - name: HelpInfo XML スキーマ
-                          href: developer/module/helpinfo-xml-schema.md
-                        - name: HelpInfo XML サンプル ファイル
-                          href: developer/module/helpinfo-xml-sample-file.md
-                        - name: HelpInfo XML ファイルに名前を付ける方法
-                          href: developer/module/how-to-name-a-helpinfo-xml-file.md
-                        - name: HelpInfo XML バージョン番号を設定する方法
-                          href: developer/module/how-to-set-helpinfo-xml-version-numbers.md
-                    - name: 更新可能なヘルプ CAB ファイルを準備する方法
-                      href: developer/module/how-to-prepare-updatable-help-cab-files.md
-                      items:
-                        - name: CAB ファイルを作成してアップロードする方法
-                          href: developer/module/how-to-create-and-upload-cab-files.md
-                        - name: 更新可能なヘルプ CAB ファイルに名前を付ける方法
-                          href: developer/module/how-to-name-an-updatable-help-cab-file.md
-                        - name: 更新可能なヘルプ CAB ファイルで許可されるファイルの種類
-                          href: developer/module/file-types-permitted-in-an-updatable-help-cab-file.md
-                    - name: ヘルプ ファイルを更新する方法
-                      href: developer/module/how-to-update-help-files.md
-                    - name: 更新可能なヘルプをテストする方法
-                      href: developer/module/how-to-test-updatable-help.md
-                - name: オンライン ヘルプのサポート
-                  href: developer/module/supporting-online-help.md
+        - name: Windows PowerShell リファレンス
+          href: developer/windows-powershell-reference.md
+        - name: 新機能
+          href: developer/windows-powershell-reference-whats-new.md
         - name: Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)
-          href: developer/cmdlet/writing-a-windows-powershell-cmdlet.md
           items:
             - name: コマンドレットの概要
               href: developer/cmdlet/cmdlet-overview.md
@@ -926,20 +865,6 @@
                           href: developer/cmdlet/defining-default-member-sets-for-objects.md
                     - name: ファイルにカスタム書式設定を適用する
                       href: developer/cmdlet/custom-formatting-files.md
-                - name: コマンドレットを登録する
-                  href: developer/cmdlet/registering-cmdlets.md
-                  items:
-                    - name: モジュールとスナップイン
-                      href: developer/cmdlet/modules-and-snap-ins.md
-                    - name: モジュールを使用してコマンドレットをインポートする方法
-                      href: developer/cmdlet/how-to-import-cmdlets-using-modules.md
-                    - name: Windows PowerShell スナップインを作成する方法
-                      href: developer/cmdlet/how-to-create-a-windows-powershell-snap-in.md
-                      items:
-                        - name: Windows PowerShell スナップインを記述する
-                          href: developer/cmdlet/writing-a-windows-powershell-snap-in.md
-                        - name: カスタム Windows PowerShell スナップインを記述する
-                          href: developer/cmdlet/writing-a-custom-windows-powershell-snap-in.md
                 - name: 確認を要求する
                   href: developer/cmdlet/requesting-confirmation.md
                   items:
@@ -1061,8 +986,41 @@
                   href: developer/cmdlet/stopprocesssample04-sample.md
                 - name: Events01 サンプル
                   href: developer/cmdlet/events01-sample.md
+        - name: Windows PowerShell モジュールを記述する
+          items:
+            - name: 概要
+              href: developer/module/writing-a-windows-powershell-module.md
+            - name: Windows PowerShell モジュールを理解する
+              href: developer/module/understanding-a-windows-powershell-module.md
+            - name: PowerShell スクリプト モジュールを記述する方法
+              href: developer/module/how-to-write-a-powershell-script-module.md
+            - name: PowerShell バイナリ モジュールを記述する方法
+              href: developer/module/how-to-write-a-powershell-binary-module.md
+            - name: PowerShell モジュール マニフェストを記述する方法
+              href: developer/module/how-to-write-a-powershell-module-manifest.md
+            - name: PowerShell モジュールをインストールする
+              href: developer/module/installing-a-powershell-module.md
+            - name: PSModulePath インストール パスを変更する
+              href: developer/module/modifying-the-psmodulepath-installation-path.md
+            - name: コマンドレットを登録する
+              items:
+                - name: 概要
+                  href: developer/module/registering-cmdlets.md
+                - name: モジュールとスナップイン
+                  href: developer/module/modules-and-snap-ins.md
+                - name: モジュールを使用してコマンドレットをインポートする方法
+                  href: developer/module/how-to-import-cmdlets-using-modules.md
+                - name: Windows PowerShell スナップインを作成する方法
+                  items:
+                    - name: 概要
+                      href: developer/module/how-to-create-a-windows-powershell-snap-in.md
+                    - name: Windows PowerShell スナップインを記述する
+                      href: developer/module/writing-a-windows-powershell-snap-in.md
+                    - name: カスタム Windows PowerShell スナップインを記述する
+                      href: developer/module/writing-a-custom-windows-powershell-snap-in.md
+            - name: PowerShell モジュールをインポートする
+              href: developer/module/importing-a-powershell-module.md
         - name: Windows PowerShell プロバイダーを記述する
-          href: developer/provider/writing-a-windows-powershell-provider.md
           items:
             - name: Windows PowerShell プロバイダー クイック スタート
               href: developer/provider/windows-powershell-provider-quickstart.md
@@ -1099,7 +1057,6 @@
                 - name: AccessDBProviderSample06
                   href: developer/provider/accessdbprovidersample06.md
         - name: Windows PowerShell ホスト アプリケーションを記述する
-          href: developer/hosting/writing-a-windows-powershell-host-application.md
           items:
             - name: Windows PowerShell ホスト クイック スタート
               href: developer/hosting/windows-powershell-host-quickstart.md
@@ -1176,13 +1133,13 @@
                     - name: RemoteRunspacePool01 サンプル
                       href: developer/hosting/remoterunspacepool01-sample.md
         - name: PowerShell 書式設定ファイルを記述する
-          href: developer/format/writing-a-powershell-formatting-file.md
           items:
             - name: 書式設定ファイルの概要
               href: developer/format/formatting-file-overview.md
             - name: 書式設定ファイルの概念
-              href: developer/format/formatting-file-concepts.md
               items:
+                - name: 概要
+                  href: developer/format/formatting-file-concepts.md
                 - name: テーブル ビューを作成する
                   href: developer/format/creating-a-table-view.md
                 - name: リスト ビューを作成する
@@ -1201,13 +1158,14 @@
                   href: developer/format/defining-conditions-for-displaying-data.md
                 - name: 表示されるデータの書式を設定する
                   href: developer/format/formatting-displayed-data.md
-                - name: PowerShell 書式設定ファイル
-                  href: developer/format/powershell-formatting-files.md
-            - name: 書式設定ファイルの例
-              href: developer/format/examples-of-formatting-files.md
+            - name: PowerShell 書式設定ファイル
               items:
+                - name: 概要
+                  href: developer/format/powershell-formatting-files.md
                 - name: 書式設定ファイルを作成する方法 (.format.ps1xml)
                   href: developer/format/how-to-create-a-formatting-file-format-ps1xml.md
+            - name: 書式設定ファイルの例
+              items:
                 - name: ワイド ビュー (基本)
                   href: developer/format/wide-view-basic.md
                 - name: ワイド ビュー (グループ別)
@@ -1639,22 +1597,14 @@
                   href: developer/format/wrap-element-for-tablerowentry-for-tablecontrol-format.md
                 - name: WrapTables 要素 (書式)
                   href: developer/format/wraptables-element-format.md
-        - name: コメントベースのヘルプ トピックを記述する
-          href: developer/help/writing-comment-based-help-topics.md
+        - name: Windows PowerShell のヘルプを記述する
           items:
-            - name: Windows PowerShell コマンドレットのヘルプを記述する
-              href: developer/help/writing-help-for-windows-powershell-cmdlets.md
-            - name: Windows PowerShell プロバイダーのヘルプを記述する
-              items:
-                - name: プロバイダーのヘルプ トピックに動的パラメーターを追加する方法
-                  href: developer/help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
-                - name: プロバイダーのヘルプ トピックに関連項目を追加する方法
-                  href: developer/help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
-            - name: Windows PowerShell のスクリプトと関数のヘルプを記述する
+            - name: 概要
               href: developer/help/writing-help-for-windows-powershell-scripts-and-functions.md
             - name: コメントベースのヘルプ トピックを記述する
-              href: developer/help/writing-comment-based-help-topics.md
               items:
+                - name: 概要
+                  href: developer/help/writing-comment-based-help-topics.md
                 - name: コメント ベースのヘルプの構文
                   href: developer/help/syntax-of-comment-based-help.md
                 - name: コメント ベースのヘルプのキーワード
@@ -1669,39 +1619,92 @@
                   href: developer/help/examples-of-comment-based-help.md
             - name: コマンドに XML ベースのヘルプ トピックを記述する
               items:
-                - name: コマンドレットのヘルプ ファイルを作成する方法
-                  href: developer/help/how-to-create-the-cmdlet-help-file.md
-                - name: コマンドレットのヘルプ トピックにコマンドレットの名前と概要を追加する方法
-                  href: developer/help/how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md
-                - name: コマンドレットの説明を追加する方法
-                  href: developer/help/how-to-add-a-cmdlet-description.md
-                - name: コマンドレットのヘルプ トピックに構文を追加する方法
-                  href: developer/help/how-to-add-syntax-to-a-cmdlet-help-topic.md
-                - name: パラメーター情報を追加する方法
-                  href: developer/help/how-to-add-parameter-information.md
-                - name: コマンドレットのヘルプ トピックに入力の種類を追加する方法
-                  href: developer/help/how-to-add-input-types-to-a-cmdlet-help-topic.md
-                - name: コマンドレットのヘルプ トピックに戻り値を追加する方法
-                  href: developer/help/how-to-add-return-values-to-a-cmdlet-help-topic.md
-                - name: コマンドレットのヘルプ トピックに注を追加する方法
-                  href: developer/help/how-to-add-notes-to-a-cmdlet-help-topic.md
-                - name: コマンドレットのヘルプ トピックに例を追加する方法
-                  href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
-                - name: コマンドレットのヘルプ トピックに関連リンクを追加する方法
-                  href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
+                - name: Windows PowerShell コマンドレットのヘルプを記述する
+                  items:
+                    - name: 概要
+                      href: developer/help/writing-help-for-windows-powershell-cmdlets.md
+                    - name: コマンドレットのヘルプ ファイルを作成する方法
+                      href: developer/help/how-to-create-the-cmdlet-help-file.md
+                    - name: コマンドレットのヘルプ トピックにコマンドレットの名前と概要を追加する方法
+                      href: developer/help/how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md
+                    - name: コマンドレットの説明を追加する方法
+                      href: developer/help/how-to-add-a-cmdlet-description.md
+                    - name: コマンドレットのヘルプ トピックに構文を追加する方法
+                      href: developer/help/how-to-add-syntax-to-a-cmdlet-help-topic.md
+                    - name: パラメーター情報を追加する方法
+                      href: developer/help/how-to-add-parameter-information.md
+                    - name: コマンドレットのヘルプ トピックに入力の種類を追加する方法
+                      href: developer/help/how-to-add-input-types-to-a-cmdlet-help-topic.md
+                    - name: コマンドレットのヘルプ トピックに戻り値を追加する方法
+                      href: developer/help/how-to-add-return-values-to-a-cmdlet-help-topic.md
+                    - name: コマンドレットのヘルプ トピックに注を追加する方法
+                      href: developer/help/how-to-add-notes-to-a-cmdlet-help-topic.md
+                    - name: コマンドレットのヘルプ トピックに例を追加する方法
+                      href: developer/help/how-to-add-examples-to-a-cmdlet-help-topic.md
+                    - name: コマンドレットのヘルプ トピックに関連リンクを追加する方法
+                      href: developer/help/how-to-add-related-links-to-a-cmdlet-help-topic.md
+                - name: Windows PowerShell モジュールのヘルプを記述する
+                  href: developer/module/writing-help-for-windows-powershell-modules.md
+                  items:
+                    - name: ヘルプ ファイルに名前を付ける
+                      href: developer/help/naming-help-files.md
+                    - name: 更新可能なヘルプのサポート
+                      href: developer/help/supporting-updatable-help.md
+                      items:
+                        - name: 更新可能なヘルプの概要
+                          href: developer/help/updatable-help-overview.md
+                        - name: '更新可能なヘルプの作成: ステップバイステップ'
+                          href: developer/help/updatable-help-authoring-step-by-step.md
+                        - name: 更新可能なヘルプのしくみ
+                          href: developer/help/how-updatable-help-works.md
+                        - name: HelpInfo XML ファイルを作成する方法
+                          href: developer/help/how-to-create-a-helpinfo-xml-file.md
+                          items:
+                            - name: HelpInfo XML スキーマ
+                              href: developer/help/helpinfo-xml-schema.md
+                            - name: HelpInfo XML サンプル ファイル
+                              href: developer/help/helpinfo-xml-sample-file.md
+                            - name: HelpInfo XML ファイルに名前を付ける方法
+                              href: developer/help/how-to-name-a-helpinfo-xml-file.md
+                            - name: HelpInfo XML バージョン番号を設定する方法
+                              href: developer/help/how-to-set-helpinfo-xml-version-numbers.md
+                        - name: 更新可能なヘルプ CAB ファイルを準備する方法
+                          href: developer/help/how-to-prepare-updatable-help-cab-files.md
+                          items:
+                            - name: CAB ファイルを作成してアップロードする方法
+                              href: developer/help/how-to-create-and-upload-cab-files.md
+                            - name: 更新可能なヘルプ CAB ファイルに名前を付ける方法
+                              href: developer/help/how-to-name-an-updatable-help-cab-file.md
+                            - name: 更新可能なヘルプ CAB ファイルで許可されるファイルの種類
+                              href: developer/help/file-types-permitted-in-an-updatable-help-cab-file.md
+                            - name: ヘルプ ファイルを更新する方法
+                              href: developer/help/how-to-update-help-files.md
+                            - name: 更新可能なヘルプをテストする方法
+                              href: developer/help/how-to-test-updatable-help.md
+                        - name: オンライン ヘルプのサポート
+                          href: developer/help/supporting-online-help.md
+                - name: Windows PowerShell プロバイダーのヘルプを記述する
+                  items:
+                    - name: プロバイダーのヘルプ トピックに動的パラメーターを追加する方法
+                      href: developer/help/how-to-add-dynamic-parameters-to-a-provider-help-topic.md
+                    - name: プロバイダーのヘルプ トピックに関連項目を追加する方法
+                      href: developer/help/how-to-add-a-see-also-section-to-a-provider-help-topic.md
         - name: Management OData Web サービスを作成する
-          href: developer/webservices/creating-a-management-odata-web-service.md
           items:
+            - name: 概要
+              href: developer/webservices/creating-a-management-odata-web-service.md
             - name: Management OData Web サービスにリソースを追加する
               href: developer/webservices/adding-resources-to-a-management-odata-web-service.md
             - name: Management OData Web サービスのカスタム認可を実装する
-              href: developer/webservices/implementing-custom-authorization-for-a-management-odata-web-service.md
               items:
+                - name: 概要
+                  href: developer/webservices/implementing-custom-authorization-for-a-management-odata-web-service.md
                 - name: ロール ベースの認可を構成する
                   href: developer/webservices/configuring-role-based-authorization.md
-                  items:
-                    - name: ロール ベースの認可の構成スキーマ
-                      href: developer/webservices/role-based-authorization-configuration-schema.md
+                - name: ロール ベースの認可の構成スキーマ
+                  href: developer/webservices/role-based-authorization-configuration-schema.md
+                - name: Management OData Web サービスで Windows PowerShell コマンドレットを呼び出す
+                  href: developer/webservices/invoking-windows-powershell-cmdlets-with-management-odata-web-services.md
             - name: Management OData Web サービスの SessionConfiguration を実装する
               href: developer/webservices/implementing-sessionconfiguration-for-a-management-odata-web-service.md
             - name: Management OData Web サービスの MOF スキーマ ファイルを作成する
@@ -1714,32 +1717,32 @@
               href: developer/webservices/deploying-a-management-odata-web-service.md
             - name: Management OData エンティティを関連付ける
               href: developer/webservices/associating-management-odata-entities.md
-            - name: Management OData Web サービスで Windows PowerShell コマンドレットを呼び出す
-              href: developer/webservices/invoking-windows-powershell-cmdlets-with-management-odata-web-services.md
             - name: Management OData IIS 拡張機能のスキーマ ファイル
-              href: developer/webservices/management-odata-iis-extension-schema-files.md
               items:
+                - name: 概要
+                  href: developer/webservices/management-odata-iis-extension-schema-files.md
                 - name: リソース マッピング スキーマ
                   href: developer/webservices/resource-mapping-schema.md
                 - name: パブリック リソース スキーマ
                   href: developer/webservices/public-resource-schema.md
         - name: Windows PowerShell ワークフローを記述する
-          href: developer/workflow/writing-a-windows-powershell-workflow.md
           items:
+            - name: 概要
+              href: developer/workflow/writing-a-windows-powershell-workflow.md
             - name: Visual Studio ツールボックスに Windows PowerShell アクティビティを追加する
               href: developer/workflow/adding-windows-powershell-activities-to-the-visual-studio-toolbox.md
-            - name: 共通ワークフロー パラメーター
-              href: developer/workflow/common-workflow-parameters.md
-            - name: Windows PowerShell コマンドレットからワークフロー アクティビティを作成する
-              href: developer/workflow/creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md
-            - name: Windows PowerShell スクリプトを利用してワークフローを作成する
-              href: developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
             - name: Windows PowerShell アクティビティでワークフローを作成する
               href: developer/workflow/creating-a-workflow-with-windows-powershell-activities.md
+            - name: Windows PowerShell スクリプトを利用してワークフローを作成する
+              href: developer/workflow/creating-a-workflow-by-using-a-windows-powershell-script.md
             - name: Windows PowerShell ワークフローをインポートして呼び出す
               href: developer/workflow/importing-and-invoking-a-windows-powershell-workflow.md
+            - name: Windows PowerShell コマンドレットからワークフロー アクティビティを作成する
+              href: developer/workflow/creating-a-workflow-activity-from-a-windows-powershell-cmdlet.md
             - name: Windows PowerShell API でジョブをスケジュールする
               href: developer/workflow/scheduling-jobs-with-the-windows-powershell-api.md
+            - name: 共通ワークフロー パラメーター
+              href: developer/workflow/common-workflow-parameters.md
         - name: Windows PowerShell プログラマー ガイド
           href: developer/prog-guide/windows-powershell-programmer-s-guide.md
           items:
@@ -1866,8 +1869,3 @@
                   href: developer/prog-guide/runspace09-code-sample.md
                 - name: RunSpace10 コード サンプル
                   href: developer/prog-guide/runspace10-code-sample.md
-        - name: Windows PowerShell リファレンス
-          href: developer/windows-powershell-reference.md
-          items:
-            - name: 新機能
-              href: developer/windows-powershell-reference-whats-new.md
