@@ -2,12 +2,12 @@
 ms.date: 08/09/2018
 keywords: インストール、windows、linux、macOS、ARM、raspbian
 title: PowerShell のインストール
-ms.openlocfilehash: 22c88bfbbe4cd6b163e69ab5e599a98528caf9c8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: fd62d33945e0253b43b80f294964d5e9b8ba03a0
+ms.sourcegitcommit: c752ae8d0fa47eaaf3c5eae2a5a770f06c63921c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78405053"
+ms.lasthandoff: 05/26/2020
+ms.locfileid: "83841006"
 ---
 # <a name="installing-various-versions-of-powershell"></a>PowerShell のさまざまなバージョンのインストール
 
@@ -24,4 +24,4 @@ PowerShell Core は [GitHub](https://github.com/powershell/powershell) のオー
 
 ## <a name="windows-powershell"></a>Windows PowerShell
 
-以前のバージョンの PowerShell を Windows 上にインストールする方法について詳しくは、「[Windows PowerShell のインストール](installing-windows-powershell.md)」をご覧ください。
+以前のバージョンの PowerShell を Windows 上にインストールする方法について詳しくは、「[Windows PowerShell のインストール](../windows-powershell/install/installing-windows-powershell.md)」をご覧ください。
