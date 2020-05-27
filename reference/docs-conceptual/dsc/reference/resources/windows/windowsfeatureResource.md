@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC WindowsFeature リソース
-ms.openlocfilehash: 7f9b200b4d10aef6c8a3f76c497f4d60e8062cb5
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d3384b1f45324df6b6b209f25b64d9d77615ad7f
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557399"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "71954629"
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature リソース
 
@@ -35,9 +35,9 @@ WindowsFeature [string] #ResourceName
 
 |プロパティ |説明 |
 |---|---|
-|名前 |追加または削除されることを保証する役割または機能の名前を示します。 これは、**Get-WindowsFeature** コマンドレットからの [Name](/powershell/module/servermanager/Get-WindowsFeature) プロパティと同じものであり、役割または機能の表示名ではありません。 |
+|名前 |追加または削除されることを保証する役割または機能の名前を示します。 これは、[Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) コマンドレットからの **Name** プロパティと同じものであり、役割または機能の表示名ではありません。 |
 |資格情報 |役割または機能の追加や削除に使用する資格情報を示します。 |
-|IncludeAllSubFeature |`$true`Name**プロパティで指定した機能の状態を使用して必要なすべてのサブ機能の状態を保証するには、このプロパティを** に設定します。 |
+|IncludeAllSubFeature |**Name** プロパティで指定した機能の状態を使用して必要なすべてのサブ機能の状態を保証するには、このプロパティを `$true` に設定します。 |
 |LogPath |リソース プロバイダーの操作を記録するログ ファイルへのパスを示します。 |
 |source |必要に応じて、インストールに使用するソース ファイルの場所を示します。 |
 

@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC 環境リソース
-ms.openlocfilehash: 5670646b6e94019f436d85296deff4de8da920f6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d6d3b4a2086be28fbfa2bf200acef9b13b7b7825
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560357"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "71954719"
 ---
 # <a name="dsc-environment-resource"></a>DSC 環境リソース
 
@@ -34,7 +34,7 @@ Environment [string] #ResourceName
 |プロパティ |説明 |
 |---|---|
 |名前 |特定の状態を保証する環境変数の名前を示します。 |
-|Path |構成されている環境変数を定義します。 変数が `$true`Path**変数である場合は、このプロパティを** に設定します。それ以外の場合は、`$false` に設定します。 既定では、 `$false`です。 構成されている変数が **Path** 変数である場合は、**Value** プロパティによって提供される値が既存の値に追加されます。 |
+|Path |構成されている環境変数を定義します。 変数が **Path** 変数である場合は、このプロパティを `$true` に設定します。それ以外の場合は、`$false` に設定します。 既定では、 `$false`です。 構成されている変数が **Path** 変数である場合は、**Value** プロパティによって提供される値が既存の値に追加されます。 |
 |値 |環境変数に割り当てる値。 |
 
 ## <a name="common-properties"></a>共通プロパティ

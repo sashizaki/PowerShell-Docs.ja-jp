@@ -2,16 +2,16 @@
 ms.date: 12/12/2018
 keywords: dsc, powershell, 構成, サービス, セットアップ
 title: 構成の作成、コンパイル、適用
-ms.openlocfilehash: eb61e518762b9f13e617ecd4711bfef7a86814ec
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 11de1d4552bc9c438adf9e3dea2059834e11e10c
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76818160"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808301"
 ---
-> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
-
 # <a name="write-compile-and-apply-a-configuration"></a>構成の作成、コンパイル、適用
+
+> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
 この演習では、Desired State Configuration (DSC) の構成の作成と適用について最初から最後まで説明します。
 次の例では、非常に単純な構成を作成して適用する方法について学習します。 この構成により、"HelloWorld.txt" ファイルがローカル コンピューターに存在していることが確保されます。 ファイルを削除する場合は、次に更新されるときに DSC によってファイルが再作成されます。

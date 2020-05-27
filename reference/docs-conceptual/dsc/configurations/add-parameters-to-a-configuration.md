@@ -187,7 +187,7 @@ $State="Running"
 ```
 
 > [!NOTE]
-> `parameter` 属性を使用するときは、`validation` 属性を指定する必要はありません。
+> `validation` 属性を使用するときは、`parameter` 属性を指定する必要はありません。
 
 `parameter` および検証属性について詳しくは、[関数の高度なパラメーター](/powershell/module/microsoft.powershell.core/about/about_Functions_Advanced_Parameters)に関する記事をご覧ください。
 

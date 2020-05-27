@@ -3,12 +3,12 @@ title: イシューを管理する方法
 description: この記事では、PowerShell-Docs チームがプル要求を管理する方法について説明します。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: cd7aba83d42a6a2eba1ce73910fdd34096342c21
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 018200f1a9384f1ea956c9b27a7605db21f2da9e
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79060277"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692535"
 ---
 # <a name="how-we-manage-issues"></a>イシューを管理する方法
 
@@ -60,21 +60,25 @@ PowerShell ドキュメント チームは、週に 1 回集まって、前回�
 - その顧客に対して、製品フィードバックであることを示すコメントを入力し、適切なフィードバック チャネルへのリンクを提供します。
 - 省略可能:イシューを適切な製品フィードバックの場所にコピーし、コピーした項目へのリンクを追加して、イシューを閉じます。 イシューを UserVoice にコピーしないでください。
 
-  | ドキュメント セット    | 製品フィードバックの URL                                         |
-  | --------- | ------------------------------------------------------------ |
-  | developer | https://github.com/PowerShell/PowerShell/issues/new/choose   |
-  | dsc       | https://windowsserver.uservoice.com/forums/301869-powershell |
-  | ギャラリー   | https://github.com/powershell/powershellgallery/issues/new   |
-  | jea       | https://github.com/powershell/jea/issues/new                 |
-  | reference | https://github.com/PowerShell/PowerShell/issues/new/choose   |
-  | wmf       | https://windowsserver.uservoice.com/forums/301869-powershell |
+  | ドキュメント セット    | 製品フィードバックの URL                                           |
+  | --------- | -------------------------------------------------------------- |
+  | developer | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
+  | dsc       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
+  | ギャラリー   | `https://github.com/powershell/powershellgallery/issues/new`   |
+  | jea       | `https://github.com/powershell/jea/issues/new`                 |
+  | reference | `https://github.com/PowerShell/PowerShell/issues/new/choose`   |
+  | wmf       | `https://windowsserver.uservoice.com/forums/301869-powershell` |
 
 ### <a name="support-requests"></a>サポート要求
 
 - サポートに関する質問が単純な場合は、質問に丁寧に答えてイシューを閉じます。
 - 質問が複雑な場合や、送信者からさらに多くの質問が返ってきた場合は、フォーラムおよびサポート チャネルにリダイレクトします。 フォーラムにリダイレクトする際の推奨されるテキストは次のとおりです。
 
-    > これは、この種の質問に適したフォーラムではありません。 コミュニティ サポート フォーラムで質問を投稿してください。 コミュニティ フォーラムの一覧については、 https://docs.microsoft.com/powershell/scripting/community/community-support をご覧ください。
+  ```Markdown
+  > This is not the right forum for these kinds of questions. Try posting your question in a
+  > community support forum. For a list of community forums see:
+  > https://docs.microsoft.com/powershell/scripting/community/community-support
+  ```
 
 ### <a name="code-of-conduct-violations"></a>行動規範違反
 

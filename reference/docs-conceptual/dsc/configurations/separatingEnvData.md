@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データと環境データの分離
-ms.openlocfilehash: 076e17054cfa20fad5ca925df126e239a77268db
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: b16243fc9096f786a25ed20868e94a3aa85e403e
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692427"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "71954439"
 ---
 # <a name="separating-configuration-and-environment-data"></a>構成データと環境データの分離
 
@@ -32,14 +32,14 @@ ms.locfileid: "83692427"
 ```powershell
 Configuration MyDscConfiguration {
 
-  Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
+    Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
     {
-  WindowsFeature IISInstall {
-    Ensure = 'Present'
-    Name   = 'Web-Server'
-  }
+        WindowsFeature IISInstall {
+            Ensure = 'Present'
+            Name   = 'Web-Server'
+        }
 
- }
+    }
     Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
         WindowsFeature HyperVInstall {
@@ -68,7 +68,7 @@ $MyData =
 MyDscConfiguration -ConfigurationData $MyData
 ```
 
-このスクリプトの最後の行は、`$MyData`ConfigurationData**パラメーターの値として** を渡して、構成をコンパイルします。
+このスクリプトの最後の行は、**ConfigurationData** パラメーターの値として `$MyData` を渡して、構成をコンパイルします。
 
 その結果、2 つの MOF ファイルが作成されます。
 
@@ -82,7 +82,7 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
 
-`$MyData` が、それぞれ独自の `NodeName` と `Role` を持つ、2 つの異なるノードを指定します。 構成は、 **(具体的には**) から取得したノードのコレクションを集めることで動的に`$MyData`ノード`$AllNodes` ブロックを作成し、そのコレクションを `Role` プロパティと突き合わせてフィルタ―処理します。
+`$MyData` が、それぞれ独自の `NodeName` と `Role` を持つ、2 つの異なるノードを指定します。 構成は、`$MyData` (具体的には `$AllNodes`) から取得したノードのコレクションを集めることで動的に**ノード** ブロックを作成し、そのコレクションを `Role` プロパティと突き合わせてフィルタ―処理します。
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>構成データを使用して、開発および運用環境を定義する
 
@@ -102,7 +102,7 @@ Mode                LastWriteTime         Length Name
             SQLServerName   = "MySQLServer"
             SqlSource       = "C:\Software\Sql"
             DotNetSrc       = "C:\Software\sxs"
-            WebSiteName     = "New website"
+        WebSiteName     = "New website"
         },
 
         @{
@@ -253,12 +253,11 @@ Mode                LastWriteTime         Length Name
 
 追加キーへのアクセスには、特殊な変数 **$ConfigurationData** を使用します。
 この例では `ConfigFileContents` は、次の行を使用してアクセスします。
-
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
-
  これは `File` リソース ブロック内です。
+
 
 ```powershell
 $MyData =
@@ -312,8 +311,8 @@ configuration WebsiteConfig
 }
 ```
 
-## <a name="see-also"></a>参照
 
+## <a name="see-also"></a>参照
 - [構成データの使用](configData.md)
 - [構成データでの資格情報オプション](configDataCredentials.md)
 - [DSC 構成](configurations.md)

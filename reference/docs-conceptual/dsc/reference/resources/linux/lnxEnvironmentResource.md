@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 DSC の nxEnvironment リソース
-ms.openlocfilehash: 64de54fbde15f9d4d7fac425af27b6ef11347dce
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 55c1b2402e23c1042ed48b40c1084aa63c515b36
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560897"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "71953229"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>Linux 用 DSC の nxEnvironment リソース
 
@@ -32,7 +32,7 @@ nxEnvironment <string> #ResourceName
 |---|---|
 |名前 |特定の状態を保証する環境変数の名前を示します。 |
 |値 |環境変数に割り当てる値。 |
-|Path |構成されている環境変数を定義します。 変数が `$true`Path**変数である場合は、このプロパティを** に設定します。それ以外の場合は、`$false` に設定します。 既定では、 `$false`です。 構成されている変数が **Path** 変数である場合は、**Value** プロパティによって提供される値が既存の値に追加されます。 |
+|Path |構成されている環境変数を定義します。 変数が **Path** 変数である場合は、このプロパティを `$true` に設定します。それ以外の場合は、`$false` に設定します。 既定では、 `$false`です。 構成されている変数が **Path** 変数である場合は、**Value** プロパティによって提供される値が既存の値に追加されます。 |
 
 ## <a name="common-properties"></a>共通プロパティ
 
