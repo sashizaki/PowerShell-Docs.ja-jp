@@ -1,13 +1,13 @@
 ---
 title: macOS への PowerShell のインストール
 description: macOS への PowerShell のインストールに関する情報
-ms.date: 12/12/2018
-ms.openlocfilehash: 4640cef3f99aefe36d69d4eb7cb4859bde1c0347
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.date: 05/21/2020
+ms.openlocfilehash: 32b3ebf3eb4017af41fc1a062f2f0a2e08629a58
+ms.sourcegitcommit: fd6a33b9fac973b3554fecfea7f51475e650a606
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80977524"
+ms.lasthandoff: 05/22/2020
+ms.locfileid: "83791470"
 ---
 # <a name="installing-powershell-on-macos"></a>macOS への PowerShell のインストール
 
@@ -90,13 +90,13 @@ brew cask upgrade powershell-preview
 
 ## <a name="installation-via-direct-download"></a>直接ダウンロードによるインストール
 
-PKG パッケージ `powershell-lts-7.0.0-osx-x64.pkg` を
+PKG パッケージ `powershell-lts-7.0.1-osx-x64.pkg` を
 [リリース][] ページから macOS コンピューターにダウンロードします。
 
 ファイルをダブルクリックして画面の指示に従うか、ターミナルからインストールします。
 
 ```sh
-sudo installer -pkg powershell-lts-7.0.0-osx-x64.pkg -target /
+sudo installer -pkg powershell-lts-7.0.1-osx-x64.pkg -target /
 ```
 
 [OpenSSL](#install-openssl) をインストールします。 PowerShell リモート処理および CIM 操作の場合は OpenSSL が必要です。
@@ -119,19 +119,19 @@ macOS プラットフォームで高度な展開シナリオを実行するた�
 
 ```sh
 # Download the powershell '.tar.gz' archive
-curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.0.0/powershell-7.0.0-osx-x64.tar.gz
+curl -L -o /tmp/powershell.tar.gz https://github.com/PowerShell/PowerShell/releases/download/v7.0.1/powershell-7.0.1-osx-x64.tar.gz
 
 # Create the target folder where powershell will be placed
-sudo mkdir -p /usr/local/microsoft/powershell/7.0.0
+sudo mkdir -p /usr/local/microsoft/powershell/7.0.1
 
 # Expand powershell to the target folder
-sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.0.0
+sudo tar zxf /tmp/powershell.tar.gz -C /usr/local/microsoft/powershell/7.0.1
 
 # Set execute permissions
-sudo chmod +x /usr/local/microsoft/powershell/7.0.0/pwsh
+sudo chmod +x /usr/local/microsoft/powershell/7.0.1/pwsh
 
 # Create the symbolic link that points to pwsh
-sudo ln -s /usr/local/microsoft/powershell/7.0.0/pwsh /usr/local/bin/pwsh
+sudo ln -s /usr/local/microsoft/powershell/7.0.1/pwsh /usr/local/bin/pwsh
 ```
 
 [OpenSSL](#install-openssl) をインストールします。 PowerShell リモート処理および CIM 操作の場合は OpenSSL が必要です。
@@ -184,7 +184,7 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 
 ## <a name="paths"></a>パス
 
-* `$PSHOME` は `/usr/local/microsoft/powershell/7.0.0/` です
+* `$PSHOME` は `/usr/local/microsoft/powershell/7.0.1/` です
 * ユーザー プロファイルは `~/.config/powershell/profile.ps1` から読み込まれます
 * 既定のプロファイルは `$PSHOME/profile.ps1` から読み込まれます
 * ユーザー モジュールは `~/.local/share/powershell/Modules` から読み込まれます
@@ -198,7 +198,7 @@ sudo rm -rf /usr/local/bin/pwsh /usr/local/microsoft/powershell
 PowerShell は、macOS の [XDG ベース ディレクトリ仕様][xdg-bds]を尊重しています。
 
 macOS は BSD から派生しているので、プレフィックスに `/opt` ではなく `/usr/local` が使用されます。
-そのため、`$PSHOME` は `/usr/local/microsoft/powershell/7.0.0/` となり、シンボリック リンクは `/usr/local/bin/pwsh` に配置されます。
+そのため、`$PSHOME` は `/usr/local/microsoft/powershell/7.0.1/` となり、シンボリック リンクは `/usr/local/bin/pwsh` に配置されます。
 
 ## <a name="additional-resources"></a>その他のリソース
 

@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: PowerShell ギャラリー UI に影響を与えるパッケージ マニフェストの値
-ms.openlocfilehash: 9e37fec879f2f5cbe3926c7dbc946389425d856a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 460b1c67af0af81dd993a45c4f988b825dc2f3eb
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417050"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560425"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell ギャラリー UI に影響を与えるパッケージ マニフェストの値
 
@@ -45,7 +45,6 @@ ms.locfileid: "74417050"
 | **プロジェクト サイト** | プロジェクト サイトは、モジュールでは ProjectURI を指定することにより、モジュール マニフェストの Privatedata\PSData セクション内で指定されます。 スクリプト マニフェストでは、.PROJECTURI を指定することにより制御されます。 | はい | はい |
 | **License** | ライセンス リンクは、モジュールでは LicenseURI を指定することにより、モジュール マニフェストの Privatedata\PSData セクション内で指定されます。 スクリプト マニフェストでは、.LICENSEURI を指定することにより制御されます。 LicenseURI を通してライセンスが指定されていない、またはモジュール内にライセンスが指定されていない場合には、PowerShell ギャラリーの使用条件によってパッケージの使用条件が指定されることに注意する必要があります。 詳細については、使用条件をご覧ください。 | はい | はい |
 | **アイコン** | スクリプト マニフェストまたはモジュール マニフェストの Privatedata-PSData セクションに IconURI フラグを指定することで、PowerShell Gallery のパッケージにアイコンを指定できます。 IconURI は透明の背景を持つ 32x32 の画像を指す必要があります。 URI は直接的な画像 URL にする**必要があり**、PowerShell Gallery パッケージの画像またはファイルが含まれる Web ページに移動することは**できません**。 | はい | はい |
-
 
 ## <a name="editing-package-details"></a>パッケージの詳細の編集
 

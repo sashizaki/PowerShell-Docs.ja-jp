@@ -3,12 +3,12 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 description: ターゲット ノード上のローカル グループを管理するためのメカニズムを備えています。
 title: DSC GroupSet リソース
-ms.openlocfilehash: d36274741b2c96a0852f384ccf5d187ac8d27131
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 99b9cafdd4d799e18e1b9b1f08d7dd41ec435711
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953179"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560340"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet リソース
 

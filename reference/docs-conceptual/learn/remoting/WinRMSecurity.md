@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: WinRMSecurity
-ms.openlocfilehash: 59717e4806857e6760de523335bbee6028da8e84
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ec194a4cc5abba5061e43152e0cb851c22611445
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "62086367"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564431"
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell リモート処理のセキュリティに関する考慮事項
 
@@ -69,11 +69,9 @@ NTLM 認証プロトコルではターゲット サーバーの ID を保証で�
 SSL 証明書を NTLM 接続用のサーバーに展開できない場合は、そのサーバーを WinRM の **TrustedHosts** 一覧に追加することで ID エラーの発生を抑制できます。 ホスト自体の信頼性を示すために、サーバー名を TrustedHosts の一覧に追加することは考えないでください。NTLM 認証プロトコルでは、実際に接続しているホストが、必ずしも意図して接続しているホストであるとは限りません。
 代わりに、TrustedHosts の設定を、サーバーの ID を確認できないことが原因で生成されたエラーを抑制するホストの一覧と考える必要があります。
 
-
 ### <a name="ongoing-communication"></a>進行中の通信
 
 初期認証が完了すると、[PowerShell リモート処理プロトコル](https://msdn.microsoft.com/library/dd357801.aspx)によって、進行中の通信はすべて、セッションごとの AES 256 対称キーを使用して暗号化されます。
-
 
 ## <a name="making-the-second-hop"></a>次ホップの実行
 

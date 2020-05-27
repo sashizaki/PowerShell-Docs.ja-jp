@@ -1,12 +1,12 @@
 ---
 title: PowerShell 7 モジュールの互換性
 ms.date: 02/03/2020
-ms.openlocfilehash: 02095b8233b6fc7b6d2a30bcb841bfd831a50031
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 273e25e3b7cd48e09b63e50c34ed0b98a4e766f0
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78935190"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565065"
 ---
 # <a name="powershell-7-module-compatibility"></a>PowerShell 7 モジュールの互換性
 
@@ -25,7 +25,6 @@ Install-WindowsFeature -Name ActiveDirectory
 ```
 
 Windows 10 では、Windows 管理モジュールは **Windows オプション機能**または **Windows 機能**として使用できます。 次のコマンドは、 **[管理者として実行]** を使用して、管理者特権セッションから実行する必要があります。
-
 
 - Windows オプション機能の場合
 

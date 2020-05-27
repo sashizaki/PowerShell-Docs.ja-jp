@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: 検索結果のフィルター処理
-ms.openlocfilehash: 13270a310613a974e1588a9f56d443a936cfebb8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 51f8d243cb9b1f4ff7413eec8839697299e8dd52
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328043"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691470"
 ---
 # <a name="filtering-search-results"></a>検索結果のフィルター処理
 
@@ -20,12 +20,14 @@ ms.locfileid: "71328043"
 ## <a name="filter-by"></a>フィルター条件
 
 [フィルター条件] の下にあるドロップダウンでは、結果を次の条件でフィルター処理できます。
+
 - プレリリースを含める
 - 安定版パッケージのみ
 
 "プレリリース" と "安定版パッケージ" の詳細については、PowerShell チームのブログの「[Prerelease Versioning Added to PowerShellGet and PowerShell Gallery (PowerShellGet と PowerShell ギャラリーにプレリリースのバージョン管理が追加)](https://blogs.msdn.microsoft.com/powershell/2017/12/05/prerelease-versioning-added-to-powershellget-and-powershell-gallery/)」をご覧ください。
 
 ドロップダウンの下にあるチェック ボックスでは、結果を次の条件でフィルター処理できます。
+
 - パッケージの種類
   - Module
   - スクリプト
@@ -49,6 +51,7 @@ PowerShell ギャラリー内のモジュールのみを表示するには、[�
 ## <a name="sort-by"></a>並べ替え条件
 
 [並べ替え条件] ドロップダウンでは、結果を次の条件で並べ替えることができます。
+
 - [人気度] - 人気度はダウンロード数によって決定します
 - [A - Z] - パッケージ名のアルファベット順です
 - [最近使ったパッケージ] - 公開日に応じてパッケージが表示されます

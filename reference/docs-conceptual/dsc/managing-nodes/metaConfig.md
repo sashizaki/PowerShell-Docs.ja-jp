@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: ローカル構成マネージャーの構成
-ms.openlocfilehash: 5847a29efd165724ffe9f1f0e89cfaf358ade31c
-ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
+ms.openlocfilehash: c736f1c6a7cd6740f9d777dd68559f29909bc5b6
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83271850"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691991"
 ---
 # <a name="configuring-the-local-configuration-manager"></a>ローカル構成マネージャーの構成
 
@@ -125,6 +125,7 @@ Web ベースの構成サーバーを定義するには、**ConfigurationReposit
 |ProxyCredential*|pscredential|http プロキシに使用する資格情報。|
 
 > [!NOTE]
+>
 > * Windows バージョン 1809 以降でサポートされています。
 
 オンプレミス ノードの ConfigurationRepositoryWeb 値の設定を簡単に行うサンプル スクリプトが用意されています。「[DSC メタ構成の生成](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)」を参照してください。
@@ -152,6 +153,7 @@ Web ベースのリソース サーバーを定義するには、**ResourceRepos
 |ProxyCredential*|pscredential|http プロキシに使用する資格情報。|
 
 > [!NOTE]
+>
 > * Windows バージョン 1809 以降でサポートされています。
 
 オンプレミス ノードの ResourceRepositoryWeb 値の設定を簡単に行うサンプル スクリプトが用意されています。「[DSC メタ構成の生成](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)」を参照してください。
@@ -180,6 +182,7 @@ SMB ベースのリソース サーバーを定義するには、**ResourceRepos
 |ProxyCredential*|pscredential|http プロキシに使用する資格情報。|
 
 > [!NOTE]
+>
 > * Windows バージョン 1809 以降でサポートされています。
 
 オンプレミス ノードの ReportServerWeb 値の設定を簡単に行うサンプル スクリプトが用意されています。「[DSC メタ構成の生成](https://docs.microsoft.com/azure/automation/automation-dsc-onboarding#generating-dsc-metaconfigurations)」を参照してください。

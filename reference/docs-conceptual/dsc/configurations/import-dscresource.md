@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Import-DSCResource の使用
-ms.openlocfilehash: a041169ad557becf7ca87641d9ce5222ee8f6beb
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1b066e231d158fb5b6333e42c91d24690e9b0223
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79402449"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692465"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource の使用
 
@@ -123,10 +123,12 @@ IntelliSence とスキーマ検証により、解析とコンパイル時の間�
 
 > [!NOTE]
 > 各 DSC リソースは、名前と、リソースのスキーマによって定義された **FriendlyName** を持つことができます。 "MSFT_ServiceResource.shema.mof" の先頭の 2 行を次に示します。
+>
 > ```syntax
 > [ClassVersion("1.0.0"),FriendlyName("Service")]
 > class MSFT_ServiceResource : OMI_BaseResource
 > ```
+>
 > このリソースを Configuration で使用するときは、**MSFT_ServiceResource** または **Service** を指定できます。
 
 ## <a name="powershell-v4-and-v5-differences"></a>PowerShell の v4 と v5 の違い

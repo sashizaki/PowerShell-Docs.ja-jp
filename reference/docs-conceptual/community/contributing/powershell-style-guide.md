@@ -3,12 +3,12 @@ title: PowerShell ドキュメントのスタイル ガイド
 description: この記事では、PowerShell ドキュメントを記述するためのスタイル規則について説明します。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 90dc93d608440ce7388614b552c0cd873a385cd9
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: b60ad9a4965e75cc5f68309604f1893e5757f351
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "81624790"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83690844"
 ---
 # <a name="powershell-docs-style-guide"></a>PowerShell ドキュメントのスタイル ガイド
 

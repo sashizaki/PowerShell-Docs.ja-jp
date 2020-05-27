@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 の新機能
 description: PowerShell Core 6.1 でリリースされた新機能と変更
 ms.date: 09/13/2018
-ms.openlocfilehash: 079d5a472c743ce94f2e93143c1dcb4ff406951f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 070ecb871003487e2f1ff7b0d56c44c562acaaf8
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78277741"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83565082"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 の新機能
 
@@ -93,7 +93,6 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 Windows 10 1809 更新プログラムと Windows Server 2019 では、複数の組み込み PowerShell モジュールが更新され、PowerShell Core と互換性有りとマークされました。
 
 PowerShell Core 6.1 は起動すると、`$windir\System32` 環境変数の一部として `PSModulePath` を自動的にインクルードします。 ただし、`Get-Module` が `Import-Module` と互換性有りとマークされている場合は、`CompatiblePSEdition` および `Core` に対してのみモジュールを公開します。
-
 
 ```powershell
 Get-Module -ListAvailable

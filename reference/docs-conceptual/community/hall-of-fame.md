@@ -2,12 +2,12 @@
 title: PowerShell ドキュメントの新機能
 description: PowerShell ドキュメントに対する変更の一覧
 ms.date: 04/29/2020
-ms.openlocfilehash: a3b99c4d98362f2509ca9974d32c1a4d4780b664
-ms.sourcegitcommit: e6a9b13a4799667b74e0ba0f742dded4511d32b4
+ms.openlocfilehash: 6f1e6bbc04efa13287154be45eceaab204fbdd7c
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82630908"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692509"
 ---
 # <a name="community-contributor-hall-of-fame"></a>殿堂入りコミュニティ共同作成者
 
@@ -15,7 +15,7 @@ PowerShell コミュニティは、活気のあるコラボレーション グ�
 
 2020 年 4 月現在、以下の GitHub ユーザーがコミュニティのトップ共同作成者となっています。
 
-### <a name="pull-requests-opened"></a>プル要求のオープン
+## <a name="pull-requests-opened"></a>プル要求のオープン
 
 プル要求により、これらの問題を修正し、すべてのユーザー向けにドキュメントを改善します。
 
@@ -40,7 +40,7 @@ PowerShell コミュニティは、活気のあるコラボレーション グ�
 | exchange12rocks    |      |    7 |    3 |      |      |          10 |
 | KirkMunro          |    1 |    1 |    2 |    6 |      |          10 |
 
-### <a name="github-issues-opened"></a>GitHub イシューのオープン
+## <a name="github-issues-opened"></a>GitHub イシューのオープン
 
 GitHub イシューにより、Microsoft は弊社のドキュメントのエラーや矛盾点を特定することができます。
 

@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: パッケージの所有者を管理する
-ms.openlocfilehash: 5cf26a7195ac446177cbb7f3a055e8e0a78569cc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 72a3ff72818c5461c74d46de5689e2d6c59b19bf
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328263"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83564671"
 ---
 # <a name="managing-package-owners"></a>パッケージの所有者を管理する
 
@@ -41,7 +41,6 @@ PowerShell ギャラリーにパッケージを公開した後、パッケージ
 
 "Authors" メタデータは完全に自由形式のテキストです。"Owners" だけがコントロールされます。
 
-
 ## <a name="removing-owners"></a>所有者を削除する
 
 パッケージに複数の所有者が設定されているとき、そのうちの 1 名を削除するプロセスは単純です。
@@ -50,8 +49,6 @@ PowerShell ギャラリーにパッケージを公開した後、パッケージ
 2. [パッケージ] タブを使用するか、ユーザー名を検索するかクリックしてパッケージ ページに移動し、[ **[Manage My Packages]** ](https://www.powershellgallery.com/account/Packages) \(マイ パッケージの管理) をクリックします。
 3. パッケージの所有者としてログオンすると、'Manage Owners' (所有者の管理) リンクが左側に表示されるのでそれをクリックします。
 4. 削除する所有者の隣にある [削除] リンクをクリックします。
-
-
 
 ## <a name="transferring-package-ownership"></a>パッケージの所有権を譲渡する
 
@@ -65,7 +62,6 @@ PowerShell ギャラリーにパッケージを公開した後、パッケージ
 
 - パッケージの所有権が開発者間で変更される
 - パッケージが間違ったアカウントで公開された
-
 
 ## <a name="orphaned-packages"></a>孤立したパッケージ
 

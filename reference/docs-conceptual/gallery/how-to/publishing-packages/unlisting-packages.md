@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: パッケージをリストから外す
-ms.openlocfilehash: b7404420db531ac5d97debd46e1b84c6fdd49d9a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4291b910dcea65b2ca241e55838ea00d4ec53ee4
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80978272"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692351"
 ---
 # <a name="unlisting-packages"></a>パッケージをリストから外す
 
@@ -32,6 +32,7 @@ PowerShell ギャラリーでモジュールやスクリプトなどのパッケ
 
 パッケージを削除しなければならない場合、PowerShell ギャラリーの管理者にお問い合わせください。
 削除が必要になる場合:
+
 - 著作権侵害が問題になった。
 - パッケージに有害なコンテンツが含まれている。
 - パッケージに機密データが含まれている。

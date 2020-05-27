@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC リソースのデバッグ
-ms.openlocfilehash: c088e13a25ba31ceebaf52b2d24b5d32b96ae2fc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 53ee9ea5652ffb577f0c7fba2f240f63816281db
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954259"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83691963"
 ---
 # <a name="debugging-dsc-resources"></a>DSC リソースのデバッグ
 
@@ -22,7 +22,6 @@ PowerShell 5.0 では、構成が適用されているときに DSC リソース
 [Get-DscLocalConfigurationManager](/powershell/module/PSDesiredStateConfiguration/Get-DscLocalConfigurationManager) への呼び出しの結果を参照して、デバッグが有効になっていることを確認できます。
 
 次の PowerShell 出力は、デバッグを有効にした結果を示しています。
-
 
 ```powershell
 PS C:\DebugTest> $LCM = Get-DscLocalConfigurationManager
@@ -40,7 +39,6 @@ ResourceScriptBreakAll
 
 PS C:\DebugTest>
 ```
-
 
 ## <a name="starting-a-configuration-with-debug-enabled"></a>デバッグを有効にした構成の開始
 DSC リソースをデバッグするには、そのリソースを呼び出す構成を開始します。
@@ -61,6 +59,7 @@ Configuration PSWebAccess
     }
 PSWebAccess
 ```
+
 構成をコンパイルした後、[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) を呼び出して開始します。
 構成は、ローカル構成マネージャー (LCM) が構成の最初のリソースを呼び出したときに停止します。
 `-Verbose` および `-Wait` パラメーターを使用した場合、デバッグを開始するために入力する必要がある行が出力に表示されます。
@@ -85,6 +84,7 @@ Enter-PSSession -ComputerName TEST-SRV -Credential <credentials>
 Enter-PSHostProcess -Id 9000 -AppDomainName DscPsPluginWkr_AppDomain
 Debug-Runspace -Id 9
 ```
+
 この時点で、LCM はリソースを呼び出し、最初のブレーク ポイントに到達しています。
 出力の最後の 3 行は、プロセスに接続し、リソース スクリプトのデバッグを開始する方法を示しています。
 

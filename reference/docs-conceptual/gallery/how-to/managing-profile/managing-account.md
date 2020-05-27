@@ -3,12 +3,12 @@ ms.date: 09/05/2018
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーのアカウント設定
-ms.openlocfilehash: db61c3fd8c73048b51f3411a8c1dab52fb03d08a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7f67311b42123f247a00a9c7a5bf775685b64d48
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278108"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560459"
 ---
 # <a name="powershell-gallery-account-settings"></a>PowerShell ギャラリーのアカウント設定
 
@@ -65,7 +65,6 @@ PowerShell ギャラリーには、次の通知オプションが用意されて
    ![ログイン アカウントの設定](media/managing-account/PSGallery_LoginAccountChange-3.png)
 
 4. 新しいアカウントのパスワードを入力します。 パスワードを入力すると、ログイン アカウントが更新されたことを示す [アカウント設定] ページに戻ります。
-
 
 ## <a name="enable-two-factor-authentication-2fa"></a>2 要素認証 (2FA) の有効化
 
