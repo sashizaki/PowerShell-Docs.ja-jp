@@ -2,18 +2,18 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成を入れ子にする
-ms.openlocfilehash: e74c0fe1d7f7b198c2d6f796c0bf120eb0ec21d9
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 07e4fb5b9d406153d2fbb4285e28b8d1f0dfdcf5
+ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564031"
+ms.lasthandoff: 04/22/2020
+ms.locfileid: "75417858"
 ---
-# <a name="nesting-dsc-configurations"></a><span data-ttu-id="c2dbe-103">DSC 構成を入れ子にする</span><span class="sxs-lookup"><span data-stu-id="c2dbe-103">Nesting DSC configurations</span></span>
+# <a name="nesting-dsc-configurations"></a><span data-ttu-id="eeeee-103">DSC 構成を入れ子にする</span><span class="sxs-lookup"><span data-stu-id="eeeee-103">Nesting DSC configurations</span></span>
 
-<span data-ttu-id="c2dbe-104">入れ子構成 (複合構成とも呼ぶ) とは、別の構成内でリソースとして呼び出される構成です。</span><span class="sxs-lookup"><span data-stu-id="c2dbe-104">A nested configuration (also called composite configuration) is a configuration that's called within another configuration as if it were a resource.</span></span> <span data-ttu-id="c2dbe-105">両方の構成は、同じファイルで定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="c2dbe-105">Both configurations must be defined in the same file.</span></span>
+<span data-ttu-id="eeeee-104">入れ子構成 (複合構成とも呼ぶ) とは、別の構成内でリソースとして呼び出される構成です。</span><span class="sxs-lookup"><span data-stu-id="eeeee-104">A nested configuration (also called composite configuration) is a configuration that's called within another configuration as if it were a resource.</span></span> <span data-ttu-id="eeeee-105">両方の構成は、同じファイルで定義する必要があります。</span><span class="sxs-lookup"><span data-stu-id="eeeee-105">Both configurations must be defined in the same file.</span></span>
 
-<span data-ttu-id="c2dbe-106">簡単な例を見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="c2dbe-106">Let's look at a simple example:</span></span>
+<span data-ttu-id="eeeee-106">簡単な例を見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="eeeee-106">Let's look at a simple example:</span></span>
 
 ```powershell
 Configuration FileConfig
@@ -49,10 +49,10 @@ Configuration NestedFileConfig
 }
 ```
 
-<span data-ttu-id="c2dbe-107">この例では、`FileConfig` は **CopyFrom** および **CopyTo** という 2 つの必須パラメーターを受け取り、それらは **リソース ブロック内の**SourcePath**プロパティおよび**DestinationPath`File` プロパティの値として使用されます。</span><span class="sxs-lookup"><span data-stu-id="c2dbe-107">In this example, `FileConfig` takes two mandatory parameters, **CopyFrom** and **CopyTo**, which are used as the values for the **SourcePath** and **DestinationPath** properties in the `File` resource block.</span></span> <span data-ttu-id="c2dbe-108">`NestedConfig` 構成は `FileConfig` をリソースとして呼び出します。</span><span class="sxs-lookup"><span data-stu-id="c2dbe-108">The `NestedConfig` configuration calls `FileConfig` as if it were a resource.</span></span> <span data-ttu-id="c2dbe-109">`NestedConfig` リソース ブロック内のプロパティ (**CopyFrom** と **CopyTo**) は、`FileConfig` 構成のパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="c2dbe-109">The properties in the `NestedConfig` resource block (**CopyFrom** and **CopyTo**) are the parameters of the `FileConfig` configuration.</span></span>
+<span data-ttu-id="eeeee-107">この例では、`FileConfig` は **CopyFrom** および **CopyTo** という 2 つの必須パラメーターを受け取り、それらは `File` リソース ブロック内の **SourcePath** プロパティおよび **DestinationPath** プロパティの値として使用されます。</span><span class="sxs-lookup"><span data-stu-id="eeeee-107">In this example, `FileConfig` takes two mandatory parameters, **CopyFrom** and **CopyTo**, which are used as the values for the **SourcePath** and **DestinationPath** properties in the `File` resource block.</span></span> <span data-ttu-id="eeeee-108">`NestedConfig` 構成は `FileConfig` をリソースとして呼び出します。</span><span class="sxs-lookup"><span data-stu-id="eeeee-108">The `NestedConfig` configuration calls `FileConfig` as if it were a resource.</span></span> <span data-ttu-id="eeeee-109">`NestedConfig` リソース ブロック内のプロパティ (**CopyFrom** と **CopyTo**) は、`FileConfig` 構成のパラメーターです。</span><span class="sxs-lookup"><span data-stu-id="eeeee-109">The properties in the `NestedConfig` resource block (**CopyFrom** and **CopyTo**) are the parameters of the `FileConfig` configuration.</span></span>
 
-<span data-ttu-id="c2dbe-110">現在、DSC では、入れ子になった構成内に構成を入れ子にすることはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="c2dbe-110">DSC doesn't currently support nesting configurations within nested configurations.</span></span> <span data-ttu-id="c2dbe-111">構成を入れ子にできるレイヤーの深さは 1 つだけです。</span><span class="sxs-lookup"><span data-stu-id="c2dbe-111">You can only nest a configuration one layer deep.</span></span>
+<span data-ttu-id="eeeee-110">現在、DSC では、入れ子になった構成内に構成を入れ子にすることはサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="eeeee-110">DSC doesn't currently support nesting configurations within nested configurations.</span></span> <span data-ttu-id="eeeee-111">構成を入れ子にできるレイヤーの深さは 1 つだけです。</span><span class="sxs-lookup"><span data-stu-id="eeeee-111">You can only nest a configuration one layer deep.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="c2dbe-112">参照</span><span class="sxs-lookup"><span data-stu-id="c2dbe-112">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="eeeee-112">参照</span><span class="sxs-lookup"><span data-stu-id="eeeee-112">See Also</span></span>
 
-- [<span data-ttu-id="c2dbe-113">複合リソース: リソースとしての DSC 構成の使用</span><span class="sxs-lookup"><span data-stu-id="c2dbe-113">Composite resources--Using a DSC configuration as a resource</span></span>](../resources/authoringResourceComposite.md)
+- [<span data-ttu-id="eeeee-113">複合リソース: リソースとしての DSC 構成の使用</span><span class="sxs-lookup"><span data-stu-id="eeeee-113">Composite resources--Using a DSC configuration as a resource</span></span>](../resources/authoringResourceComposite.md)

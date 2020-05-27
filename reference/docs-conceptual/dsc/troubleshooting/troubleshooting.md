@@ -2,33 +2,33 @@
 ms.date: 10/30/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC のトラブルシューティング
-ms.openlocfilehash: 5cbe6496a6e0b9940f4b69e13d1e19e43b3915f0
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 83e59b9f7148b52071d4782522ca7642027d795a
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79402409"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692312"
 ---
-# <a name="troubleshooting-dsc"></a><span data-ttu-id="38dbc-103">DSC のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="38dbc-103">Troubleshooting DSC</span></span>
+# <a name="troubleshooting-dsc"></a><span data-ttu-id="a2b6b-103">DSC のトラブルシューティング</span><span class="sxs-lookup"><span data-stu-id="a2b6b-103">Troubleshooting DSC</span></span>
 
-<span data-ttu-id="38dbc-104">_適用対象: Windows PowerShell 4.0、Windows PowerShell 5.0_</span><span class="sxs-lookup"><span data-stu-id="38dbc-104">_Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0_</span></span>
+<span data-ttu-id="a2b6b-104">_適用先:Windows PowerShell 4.0、Windows PowerShell 5.0_</span><span class="sxs-lookup"><span data-stu-id="a2b6b-104">_Applies To: Windows PowerShell 4.0, Windows PowerShell 5.0_</span></span>
 
-<span data-ttu-id="38dbc-105">このトピックでは、問題が発生した場合の DSC のトラブルシューティング方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-105">This topic describes ways to troubleshoot DSC when problems arise.</span></span>
+<span data-ttu-id="a2b6b-105">このトピックでは、問題が発生した場合の DSC のトラブルシューティング方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-105">This topic describes ways to troubleshoot DSC when problems arise.</span></span>
 
-## <a name="winrm-dependency"></a><span data-ttu-id="38dbc-106">WinRM の依存関係</span><span class="sxs-lookup"><span data-stu-id="38dbc-106">WinRM Dependency</span></span>
+## <a name="winrm-dependency"></a><span data-ttu-id="a2b6b-106">WinRM の依存関係</span><span class="sxs-lookup"><span data-stu-id="a2b6b-106">WinRM Dependency</span></span>
 
-<span data-ttu-id="38dbc-107">Windows PowerShell Desired State Configuration (DSC) は、WinRM に依存します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-107">Windows PowerShell Desired State Configuration (DSC) depends on WinRM.</span></span> <span data-ttu-id="38dbc-108">WinRM は、Windows Server 2008 R2 および Windows 7 では既定で無効になっています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-108">WinRM is not enabled by default on Windows Server 2008 R2 and Windows 7.</span></span> <span data-ttu-id="38dbc-109">WinRM を有効にするには、Windows PowerShell 管理者特権セッションで `Set-WSManQuickConfig` を実行します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-109">Run `Set-WSManQuickConfig`, in a Windows PowerShell elevated session, to enable WinRM.</span></span>
+<span data-ttu-id="a2b6b-107">Windows PowerShell Desired State Configuration (DSC) は、WinRM に依存します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-107">Windows PowerShell Desired State Configuration (DSC) depends on WinRM.</span></span> <span data-ttu-id="a2b6b-108">WinRM は、Windows Server 2008 R2 および Windows 7 では既定で無効になっています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-108">WinRM is not enabled by default on Windows Server 2008 R2 and Windows 7.</span></span> <span data-ttu-id="a2b6b-109">WinRM を有効にするには、Windows PowerShell 管理者特権セッションで `Set-WSManQuickConfig` を実行します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-109">Run `Set-WSManQuickConfig`, in a Windows PowerShell elevated session, to enable WinRM.</span></span>
 
-## <a name="using-get-dscconfigurationstatus"></a><span data-ttu-id="38dbc-110">Get-DscConfigurationStatus の使用</span><span class="sxs-lookup"><span data-stu-id="38dbc-110">Using Get-DscConfigurationStatus</span></span>
+## <a name="using-get-dscconfigurationstatus"></a><span data-ttu-id="a2b6b-110">Get-DscConfigurationStatus の使用</span><span class="sxs-lookup"><span data-stu-id="a2b6b-110">Using Get-DscConfigurationStatus</span></span>
 
-<span data-ttu-id="38dbc-111">[Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) コマンドレットは、ターゲット ノードから構成状態に関する情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-111">The [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) cmdlet gets information about configuration status from a target node.</span></span> <span data-ttu-id="38dbc-112">構成の実行が成功したかどうかについての基本情報を含む、リッチ オブジェクトが返されます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-112">A rich object is returned that includes high-level information about whether or not the configuration run was successful or not.</span></span> <span data-ttu-id="38dbc-113">オブジェクトを調べ、次に挙げるような構成の実行に関する詳細を知ることができます:</span><span class="sxs-lookup"><span data-stu-id="38dbc-113">You can dig into the object to discover details about the configuration run such as:</span></span>
+<span data-ttu-id="a2b6b-111">[Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) コマンドレットは、ターゲット ノードから構成状態に関する情報を取得します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-111">The [Get-DscConfigurationStatus](/powershell/module/PSDesiredStateConfiguration/Get-DscConfigurationStatus) cmdlet gets information about configuration status from a target node.</span></span> <span data-ttu-id="a2b6b-112">構成の実行が成功したかどうかについての基本情報を含む、リッチ オブジェクトが返されます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-112">A rich object is returned that includes high-level information about whether or not the configuration run was successful or not.</span></span> <span data-ttu-id="a2b6b-113">オブジェクトを調べ、次に挙げるような構成の実行に関する詳細を知ることができます:</span><span class="sxs-lookup"><span data-stu-id="a2b6b-113">You can dig into the object to discover details about the configuration run such as:</span></span>
 
-- <span data-ttu-id="38dbc-114">失敗したすべてのリソース</span><span class="sxs-lookup"><span data-stu-id="38dbc-114">All of the resources that failed</span></span>
-- <span data-ttu-id="38dbc-115">再起動を要求したすべてのリソース</span><span class="sxs-lookup"><span data-stu-id="38dbc-115">Any resource that requested a reboot</span></span>
-- <span data-ttu-id="38dbc-116">構成の実行時のメタ構成の設定</span><span class="sxs-lookup"><span data-stu-id="38dbc-116">Meta-Configuration settings at time of configuration run</span></span>
-- <span data-ttu-id="38dbc-117">など</span><span class="sxs-lookup"><span data-stu-id="38dbc-117">Etc.</span></span>
+- <span data-ttu-id="a2b6b-114">失敗したすべてのリソース</span><span class="sxs-lookup"><span data-stu-id="a2b6b-114">All of the resources that failed</span></span>
+- <span data-ttu-id="a2b6b-115">再起動を要求したすべてのリソース</span><span class="sxs-lookup"><span data-stu-id="a2b6b-115">Any resource that requested a reboot</span></span>
+- <span data-ttu-id="a2b6b-116">構成の実行時のメタ構成の設定</span><span class="sxs-lookup"><span data-stu-id="a2b6b-116">Meta-Configuration settings at time of configuration run</span></span>
+- <span data-ttu-id="a2b6b-117">など</span><span class="sxs-lookup"><span data-stu-id="a2b6b-117">Etc.</span></span>
 
-<span data-ttu-id="38dbc-118">次のパラメーター セットは、最後の構成の実行状況に関する情報を返します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-118">The following parameter set returns the status information for the last configuration run:</span></span>
+<span data-ttu-id="a2b6b-118">次のパラメーター セットは、最後の構成の実行状況に関する情報を返します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-118">The following parameter set returns the status information for the last configuration run:</span></span>
 
 ```
 Get-DscConfigurationStatus [-CimSession <CimSession[]>]
@@ -36,7 +36,8 @@ Get-DscConfigurationStatus [-CimSession <CimSession[]>]
                            [-AsJob]
                            [<CommonParameters>]
 ```
-<span data-ttu-id="38dbc-119">次のパラメーター セットは、以前のすべての構成の実行状況に関する情報を返します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-119">The following parameter set returns the status information for all previous configuration runs:</span></span>
+
+<span data-ttu-id="a2b6b-119">次のパラメーター セットは、以前のすべての構成の実行状況に関する情報を返します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-119">The following parameter set returns the status information for all previous configuration runs:</span></span>
 
 ```
 Get-DscConfigurationStatus -All
@@ -46,7 +47,7 @@ Get-DscConfigurationStatus -All
                            [<CommonParameters>]
 ```
 
-## <a name="example"></a><span data-ttu-id="38dbc-120">例</span><span class="sxs-lookup"><span data-stu-id="38dbc-120">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a2b6b-120">例</span><span class="sxs-lookup"><span data-stu-id="a2b6b-120">Example</span></span>
 
 ```powershell
 PS C:\> $Status = Get-DscConfigurationStatus
@@ -79,16 +80,16 @@ StartDate             :    11/24/2015  3:44:56
 PSComputerName        :
 ```
 
-## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a><span data-ttu-id="38dbc-121">スクリプトが実行されない: DSC ログを使用したスクリプト エラーの診断</span><span class="sxs-lookup"><span data-stu-id="38dbc-121">My script won't run: Using DSC logs to diagnose script errors</span></span>
+## <a name="my-script-wont-run-using-dsc-logs-to-diagnose-script-errors"></a><span data-ttu-id="a2b6b-121">スクリプトが実行されない:DSC ログを使用したスクリプト エラーの診断</span><span class="sxs-lookup"><span data-stu-id="a2b6b-121">My script won't run: Using DSC logs to diagnose script errors</span></span>
 
-<span data-ttu-id="38dbc-122">すべての Windows ソフトウェアと同じく、DSC は[イベント ビューアー](https://support.microsoft.com/hub/4338813/windows-help)から参照可能な[ログ](/windows/desktop/EventLog/about-event-logging)にエラーとイベントを記録します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-122">Like all Windows software, DSC records errors and events in [logs](/windows/desktop/EventLog/about-event-logging) that can be viewed from the [Event Viewer](https://support.microsoft.com/hub/4338813/windows-help).</span></span>
-<span data-ttu-id="38dbc-123">これらのログを調べることは、特定の操作が失敗した理由や、今後エラーを防止する方法を理解するために役立ちます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-123">Examining these logs can help you understand why a particular operation failed, and how to prevent failure in the future.</span></span> <span data-ttu-id="38dbc-124">構成スクリプトの記述は複雑になることがあります。そのため、作成しながらエラーをより簡単に追跡できるように、DSC ログ リソースを使用して DSC 分析イベント ログで構成の進行状況を追跡してください。</span><span class="sxs-lookup"><span data-stu-id="38dbc-124">Writing configuration scripts can be tricky, so to make tracking errors easier as you author, use the DSC Log resource to track the progress of your configuration in the DSC Analytic event log.</span></span>
+<span data-ttu-id="a2b6b-122">すべての Windows ソフトウェアと同じく、DSC は[イベント ビューアー](https://support.microsoft.com/hub/4338813/windows-help)から参照可能な[ログ](/windows/desktop/EventLog/about-event-logging)にエラーとイベントを記録します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-122">Like all Windows software, DSC records errors and events in [logs](/windows/desktop/EventLog/about-event-logging) that can be viewed from the [Event Viewer](https://support.microsoft.com/hub/4338813/windows-help).</span></span>
+<span data-ttu-id="a2b6b-123">これらのログを調べることは、特定の操作が失敗した理由や、今後エラーを防止する方法を理解するために役立ちます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-123">Examining these logs can help you understand why a particular operation failed, and how to prevent failure in the future.</span></span> <span data-ttu-id="a2b6b-124">構成スクリプトの記述は複雑になることがあります。そのため、作成しながらエラーをより簡単に追跡できるように、DSC ログ リソースを使用して DSC 分析イベント ログで構成の進行状況を追跡してください。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-124">Writing configuration scripts can be tricky, so to make tracking errors easier as you author, use the DSC Log resource to track the progress of your configuration in the DSC Analytic event log.</span></span>
 
-## <a name="where-are-dsc-event-logs"></a><span data-ttu-id="38dbc-125">DSC イベント ログの場所</span><span class="sxs-lookup"><span data-stu-id="38dbc-125">Where are DSC event logs?</span></span>
+## <a name="where-are-dsc-event-logs"></a><span data-ttu-id="a2b6b-125">DSC イベント ログの場所</span><span class="sxs-lookup"><span data-stu-id="a2b6b-125">Where are DSC event logs?</span></span>
 
-<span data-ttu-id="38dbc-126">イベント ビューアーでは、DSC イベントは **Applications and Services Logs/Microsoft/Windows/Desired State Configuration** にあります。</span><span class="sxs-lookup"><span data-stu-id="38dbc-126">In Event Viewer, DSC events are in: **Applications and Services Logs/Microsoft/Windows/Desired State Configuration**</span></span>
+<span data-ttu-id="a2b6b-126">イベント ビューアーでは、DSC イベントは **Applications and Services Logs/Microsoft/Windows/Desired State Configuration** にあります。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-126">In Event Viewer, DSC events are in: **Applications and Services Logs/Microsoft/Windows/Desired State Configuration**</span></span>
 
-<span data-ttu-id="38dbc-127">対応する PowerShell コマンドレット [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) を次のように実行して、イベント ログを表示することもできます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-127">The corresponding PowerShell cmdlet, [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent), can also be run to view the event logs:</span></span>
+<span data-ttu-id="a2b6b-127">対応する PowerShell コマンドレット [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent) を次のように実行して、イベント ログを表示することもできます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-127">The corresponding PowerShell cmdlet, [Get-WinEvent](/powershell/module/Microsoft.PowerShell.Diagnostics/Get-WinEvent), can also be run to view the event logs:</span></span>
 
 ```
 PS C:\> Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
@@ -100,16 +101,16 @@ TimeCreated                     Id LevelDisplayName Message
 11/17/2014 10:27:23 PM        4102 Information      Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 ```
 
-<span data-ttu-id="38dbc-128">上に示すように、DSC のプライマリ ログ名は **Microsoft->Windows->DSC** です (簡略化のため、Windows の下にあるその他のログ名は表示していません)。</span><span class="sxs-lookup"><span data-stu-id="38dbc-128">As shown above, DSC's primary log name is **Microsoft->Windows->DSC** (other log names under Windows are not shown here for brevity).</span></span> <span data-ttu-id="38dbc-129">完全なログ名を作成するには、プライマリ名にチャネル名を追加します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-129">The primary name is appended to the channel name to create the complete log name.</span></span> <span data-ttu-id="38dbc-130">DSC エンジンは、主に 3 種類のログに書き込みます。[操作ログ、分析ログ、およびデバッグ ログ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11))です。</span><span class="sxs-lookup"><span data-stu-id="38dbc-130">The DSC engine writes mainly into three types of logs: [Operational, Analytic, and Debug logs](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)).</span></span> <span data-ttu-id="38dbc-131">分析ログとデバッグ ログは既定でオフになっているため、それらをイベント ビューアーで有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="38dbc-131">Since the analytic and debug logs are turned off by default, you should enable them in Event Viewer.</span></span> <span data-ttu-id="38dbc-132">これを行うには、Windows PowerShell で「Show-EventLog」と入力するか、または、 **[スタート]** ボタンをクリックし、 **[コントロール パネル]** 、 **[管理ツール]** 、 **[イベント ビューアー]** の順にクリックして、イベント ビューアーを開きます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-132">To do this, open Event Viewer by typing Show-EventLog in Windows PowerShell; or, click the **Start** button, click **Control Panel**, click **Administrative Tools**, and then click **Event Viewer**.</span></span>
-<span data-ttu-id="38dbc-133">イベント ビューアーの **[表示]** メニューで、 **[分析およびデバッグ ログの表示]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="38dbc-133">On the **View** menu in Event viewer, click **Show Analytic and Debug Logs**.</span></span> <span data-ttu-id="38dbc-134">分析チャネルのログ名は **Microsoft-Windows-Dsc/Analytic** で、デバッグ チャネルのログ名は **Microsoft-Windows-Dsc/Debug** です。</span><span class="sxs-lookup"><span data-stu-id="38dbc-134">The log name for the analytic channel is **Microsoft-Windows-Dsc/Analytic**, and the debug channel is **Microsoft-Windows-Dsc/Debug**.</span></span> <span data-ttu-id="38dbc-135">次の例に示すように、[wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) ユーティリティを使用してログを有効にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-135">You could also use the [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) utility to enable the logs, as shown in the following example.</span></span>
+<span data-ttu-id="a2b6b-128">上に示すように、DSC のプライマリ ログ名は **Microsoft->Windows->DSC** です (簡略化のため、Windows の下にあるその他のログ名は表示していません)。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-128">As shown above, DSC's primary log name is **Microsoft->Windows->DSC** (other log names under Windows are not shown here for brevity).</span></span> <span data-ttu-id="a2b6b-129">完全なログ名を作成するには、プライマリ名にチャネル名を追加します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-129">The primary name is appended to the channel name to create the complete log name.</span></span> <span data-ttu-id="a2b6b-130">DSC エンジンは、主に[操作ログ、分析ログ、デバッグ ログ](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11))という 3 種類のログに書き込みます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-130">The DSC engine writes mainly into three types of logs: [Operational, Analytic, and Debug logs](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc722404(v=ws.11)).</span></span> <span data-ttu-id="a2b6b-131">分析ログとデバッグ ログは既定でオフになっているため、それらをイベント ビューアーで有効にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-131">Since the analytic and debug logs are turned off by default, you should enable them in Event Viewer.</span></span> <span data-ttu-id="a2b6b-132">これを行うには、Windows PowerShell で「Show-EventLog」と入力するか、または、**[スタート]** ボタンをクリックし、**[コントロール パネル]**、**[管理ツール]**、**[イベント ビューアー]** の順にクリックして、イベント ビューアーを開きます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-132">To do this, open Event Viewer by typing Show-EventLog in Windows PowerShell; or, click the **Start** button, click **Control Panel**, click **Administrative Tools**, and then click **Event Viewer**.</span></span>
+<span data-ttu-id="a2b6b-133">イベント ビューアーの **[表示]** メニューで、**[分析およびデバッグ ログの表示]** をクリックします。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-133">On the **View** menu in Event viewer, click **Show Analytic and Debug Logs**.</span></span> <span data-ttu-id="a2b6b-134">分析チャネルのログ名は **Microsoft-Windows-Dsc/Analytic** で、デバッグ チャネルのログ名は **Microsoft-Windows-Dsc/Debug** です。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-134">The log name for the analytic channel is **Microsoft-Windows-Dsc/Analytic**, and the debug channel is **Microsoft-Windows-Dsc/Debug**.</span></span> <span data-ttu-id="a2b6b-135">次の例に示すように、[wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) ユーティリティを使用してログを有効にすることもできます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-135">You could also use the [wevtutil](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/cc732848(v=ws.11)) utility to enable the logs, as shown in the following example.</span></span>
 
 ```powershell
 wevtutil.exe set-log "Microsoft-Windows-Dsc/Analytic" /q:true /e:true
 ```
 
-## <a name="what-do-dsc-logs-contain"></a><span data-ttu-id="38dbc-136">DSC ログに含まれる内容</span><span class="sxs-lookup"><span data-stu-id="38dbc-136">What do DSC logs contain?</span></span>
+## <a name="what-do-dsc-logs-contain"></a><span data-ttu-id="a2b6b-136">DSC ログに含まれる内容</span><span class="sxs-lookup"><span data-stu-id="a2b6b-136">What do DSC logs contain?</span></span>
 
-<span data-ttu-id="38dbc-137">DSC ログは、メッセージの重要度に基づいて 3 つのログ チャネルに分割されています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-137">DSC logs are split over the three log channels based on the importance of the message.</span></span> <span data-ttu-id="38dbc-138">DSC の操作ログにはすべてのエラー メッセージが含まれ、問題の識別に使用できます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-138">The operational log in DSC contains all error messages, and can be used to identify a problem.</span></span> <span data-ttu-id="38dbc-139">分析ログには、より大量のイベントが含まれ、エラーがどこで発生したかを識別できます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-139">The analytic log has a higher volume of events, and can identify where error(s) occurred.</span></span> <span data-ttu-id="38dbc-140">このチャネルには、詳細メッセージも含まれます (ある場合)。</span><span class="sxs-lookup"><span data-stu-id="38dbc-140">This channel also contains verbose messages (if any).</span></span> <span data-ttu-id="38dbc-141">デバッグ ログには、エラーがどのように発生したかを理解するのに役立つログが含まれています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-141">The debug log contains logs that can help you understand how the errors occurred.</span></span> <span data-ttu-id="38dbc-142">DSC イベント メッセージは、すべてのイベント メッセージの先頭が、DSC 操作を一意に表すジョブ ID になるように構成されています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-142">DSC event messages are structured such that every event message begins with a job ID that uniquely represents a DSC operation.</span></span> <span data-ttu-id="38dbc-143">次の例では、DSC 操作ログに記録された最初のイベントからメッセージを取得しようとしています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-143">The example below attempts to obtain the message from the first event logged into the operational DSC log.</span></span>
+<span data-ttu-id="a2b6b-137">DSC ログは、メッセージの重要度に基づいて 3 つのログ チャネルに分割されています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-137">DSC logs are split over the three log channels based on the importance of the message.</span></span> <span data-ttu-id="a2b6b-138">DSC の操作ログにはすべてのエラー メッセージが含まれ、問題の識別に使用できます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-138">The operational log in DSC contains all error messages, and can be used to identify a problem.</span></span> <span data-ttu-id="a2b6b-139">分析ログには、より大量のイベントが含まれ、エラーがどこで発生したかを識別できます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-139">The analytic log has a higher volume of events, and can identify where error(s) occurred.</span></span> <span data-ttu-id="a2b6b-140">このチャネルには、詳細メッセージも含まれます (ある場合)。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-140">This channel also contains verbose messages (if any).</span></span> <span data-ttu-id="a2b6b-141">デバッグ ログには、エラーがどのように発生したかを理解するのに役立つログが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-141">The debug log contains logs that can help you understand how the errors occurred.</span></span> <span data-ttu-id="a2b6b-142">DSC イベント メッセージは、すべてのイベント メッセージの先頭が、DSC 操作を一意に表すジョブ ID になるように構成されています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-142">DSC event messages are structured such that every event message begins with a job ID that uniquely represents a DSC operation.</span></span> <span data-ttu-id="a2b6b-143">次の例では、DSC 操作ログに記録された最初のイベントからメッセージを取得しようとしています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-143">The example below attempts to obtain the message from the first event logged into the operational DSC log.</span></span>
 
 ```powershell
 PS C:\> $AllDscOpEvents = Get-WinEvent -LogName "Microsoft-Windows-Dsc/Operational"
@@ -119,16 +120,16 @@ Job {02C38626-D95A-47F1-9DA2-C1D44A7128E7} :
 Consistency engine was run successfully.
 ```
 
-<span data-ttu-id="38dbc-144">DSC イベントは、ユーザーが 1 つの DSC ジョブからイベントを集計できるように特定の構造に記録されます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-144">DSC events are logged in a particular structure that enables the user to aggregate events from one DSC job.</span></span> <span data-ttu-id="38dbc-145">構造は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="38dbc-145">The structure is as follows:</span></span>
+<span data-ttu-id="a2b6b-144">DSC イベントは、ユーザーが 1 つの DSC ジョブからイベントを集計できるように特定の構造に記録されます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-144">DSC events are logged in a particular structure that enables the user to aggregate events from one DSC job.</span></span> <span data-ttu-id="a2b6b-145">構造は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-145">The structure is as follows:</span></span>
 
 ```
 Job ID : <Guid>
 <Event Message>
 ```
 
-## <a name="gathering-events-from-a-single-dsc-operation"></a><span data-ttu-id="38dbc-146">1 つの DSC 操作からのイベントの収集</span><span class="sxs-lookup"><span data-stu-id="38dbc-146">Gathering events from a single DSC operation</span></span>
+## <a name="gathering-events-from-a-single-dsc-operation"></a><span data-ttu-id="a2b6b-146">1 つの DSC 操作からのイベントの収集</span><span class="sxs-lookup"><span data-stu-id="a2b6b-146">Gathering events from a single DSC operation</span></span>
 
-<span data-ttu-id="38dbc-147">DSC イベント ログには、各種の DSC 操作によって生成されたイベントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-147">DSC event logs contain events generated by various DSC operations.</span></span> <span data-ttu-id="38dbc-148">ただし、通常、関心があるのはある特定の操作の詳細のみです。</span><span class="sxs-lookup"><span data-stu-id="38dbc-148">However, you'll usually be concerned with the detail about just one particular operation.</span></span> <span data-ttu-id="38dbc-149">すべての DSC ログは、それぞれの DSC 操作に対して一意であるジョブ ID プロパティによってグループ化できます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-149">All DSC logs can be grouped by the job ID property that is unique for every DSC operation.</span></span> <span data-ttu-id="38dbc-150">ジョブ ID は、すべての DSC イベントの最初のプロパティ値として表示されます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-150">The job ID is displayed as the first property value in all DSC events.</span></span> <span data-ttu-id="38dbc-151">次の手順では、グループ化された配列構造にすべてのイベントを蓄積する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-151">The following steps explain how to accumulate all events in a grouped array structure.</span></span>
+<span data-ttu-id="a2b6b-147">DSC イベント ログには、各種の DSC 操作によって生成されたイベントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-147">DSC event logs contain events generated by various DSC operations.</span></span> <span data-ttu-id="a2b6b-148">ただし、通常、関心があるのはある特定の操作の詳細のみです。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-148">However, you'll usually be concerned with the detail about just one particular operation.</span></span> <span data-ttu-id="a2b6b-149">すべての DSC ログは、それぞれの DSC 操作に対して一意であるジョブ ID プロパティによってグループ化できます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-149">All DSC logs can be grouped by the job ID property that is unique for every DSC operation.</span></span> <span data-ttu-id="a2b6b-150">ジョブ ID は、すべての DSC イベントの最初のプロパティ値として表示されます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-150">The job ID is displayed as the first property value in all DSC events.</span></span> <span data-ttu-id="a2b6b-151">次の手順では、グループ化された配列構造にすべてのイベントを蓄積する方法について説明します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-151">The following steps explain how to accumulate all events in a grouped array structure.</span></span>
 
 ```powershell
 <##########################################################################
@@ -159,7 +160,7 @@ $DscEvents=[System.Array](Get-WinEvent "Microsoft-Windows-Dsc/Operational") `
 $SeparateDscOperations = $DscEvents | Group {$_.Properties[0].value}
 ```
 
-<span data-ttu-id="38dbc-152">ここでは、変数 `$SeparateDscOperations` にジョブ ID でグループ化されたログが含まれています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-152">Here, the variable `$SeparateDscOperations` contains logs grouped by the job IDs.</span></span> <span data-ttu-id="38dbc-153">この変数の各配列要素は、さまざまな DSC 操作によって記録されたイベントのグループを表しており、ログの詳細にアクセスできるようになっています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-153">Each array element of this variable represents a group of events logged by a different DSC operation, allowing access to more information about the logs.</span></span>
+<span data-ttu-id="a2b6b-152">ここでは、変数 `$SeparateDscOperations` にジョブ ID でグループ化されたログが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-152">Here, the variable `$SeparateDscOperations` contains logs grouped by the job IDs.</span></span> <span data-ttu-id="a2b6b-153">この変数の各配列要素は、さまざまな DSC 操作によって記録されたイベントのグループを表しており、ログの詳細にアクセスできるようになっています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-153">Each array element of this variable represents a group of events logged by a different DSC operation, allowing access to more information about the logs.</span></span>
 
 ```
 PS C:\> $SeparateDscOperations
@@ -192,11 +193,11 @@ TimeCreated                     Id LevelDisplayName Message
 12/2/2013 3:47:29 PM          4182 Information      Job {1A776B6A-5BAC-11E3-BF41-00155D553612} : ...
 ```
 
-<span data-ttu-id="38dbc-154">[Where-Object](/powershell/module/microsoft.powershell.core/where-object) を使用して変数 `$SeparateDscOperations` 内のデータを抽出できます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-154">You can extract the data in the variable `$SeparateDscOperations` using [Where-Object](/powershell/module/microsoft.powershell.core/where-object).</span></span> <span data-ttu-id="38dbc-155">次に、DSC のトラブルシューティングに役立つデータを抽出する 5 つのシナリオを示します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-155">Following are five scenarios in which you might want to extract data for troubleshooting DSC:</span></span>
+<span data-ttu-id="a2b6b-154">[Where-Object](/powershell/module/microsoft.powershell.core/where-object) を使用して変数 `$SeparateDscOperations` 内のデータを抽出できます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-154">You can extract the data in the variable `$SeparateDscOperations` using [Where-Object](/powershell/module/microsoft.powershell.core/where-object).</span></span> <span data-ttu-id="a2b6b-155">次に、DSC のトラブルシューティングに役立つデータを抽出する 5 つのシナリオを示します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-155">Following are five scenarios in which you might want to extract data for troubleshooting DSC:</span></span>
 
-### <a name="1-operations-failures"></a><span data-ttu-id="38dbc-156">1: 操作エラー</span><span class="sxs-lookup"><span data-stu-id="38dbc-156">1: Operations failures</span></span>
+### <a name="1-operations-failures"></a><span data-ttu-id="a2b6b-156">1:操作エラー</span><span class="sxs-lookup"><span data-stu-id="a2b6b-156">1: Operations failures</span></span>
 
-<span data-ttu-id="38dbc-157">すべてのイベントには[重大度レベル](/windows/desktop/WES/defining-severity-levels)があります。</span><span class="sxs-lookup"><span data-stu-id="38dbc-157">All events have [severity levels](/windows/desktop/WES/defining-severity-levels).</span></span> <span data-ttu-id="38dbc-158">この情報を使用して、エラー イベントを識別できます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-158">This information can be used to identify the error events:</span></span>
+<span data-ttu-id="a2b6b-157">すべてのイベントには[重大度レベル](/windows/desktop/WES/defining-severity-levels)があります。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-157">All events have [severity levels](/windows/desktop/WES/defining-severity-levels).</span></span> <span data-ttu-id="a2b6b-158">この情報を使用して、エラー イベントを識別できます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-158">This information can be used to identify the error events:</span></span>
 
 ```
 PS C:\> $SeparateDscOperations | Where-Object {$_.Group.LevelDisplayName -contains "Error"}
@@ -206,9 +207,9 @@ Count Name                      Group
    38 {5BCA8BE7-5BB6-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord, System.Diagnostics....
 ```
 
-### <a name="2-details-of-operations-run-in-the-last-half-hour"></a><span data-ttu-id="38dbc-159">2: 過去 30 分間に実行された操作の詳細</span><span class="sxs-lookup"><span data-stu-id="38dbc-159">2: Details of operations run in the last half hour</span></span>
+### <a name="2-details-of-operations-run-in-the-last-half-hour"></a><span data-ttu-id="a2b6b-159">2:過去 30 分間に実行された操作の詳細</span><span class="sxs-lookup"><span data-stu-id="a2b6b-159">2: Details of operations run in the last half hour</span></span>
 
-<span data-ttu-id="38dbc-160">それぞれの Windows イベントのプロパティである `TimeCreated` は、イベントが作成された時刻を示します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-160">`TimeCreated`, a property of every Windows event, states the time the event was created.</span></span> <span data-ttu-id="38dbc-161">このプロパティを特定の日付/時刻オブジェクトと比較すると、すべてのイベントをフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-161">Comparing this property with a particular date/time object can be used to filter all events:</span></span>
+<span data-ttu-id="a2b6b-160">それぞれの Windows イベントのプロパティである `TimeCreated` は、イベントが作成された時刻を示します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-160">`TimeCreated`, a property of every Windows event, states the time the event was created.</span></span> <span data-ttu-id="a2b6b-161">このプロパティを特定の日付/時刻オブジェクトと比較すると、すべてのイベントをフィルター処理できます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-161">Comparing this property with a particular date/time object can be used to filter all events:</span></span>
 
 ```powershell
 PS C:\> $DateLatest = (Get-Date).AddMinutes(-30)
@@ -219,10 +220,10 @@ Count Name                      Group
     1 {6CEC5B09-5BB0-11E3-BF... {System.Diagnostics.Eventing.Reader.EventLogRecord}
 ```
 
-### <a name="3-messages-from-the-latest-operation"></a><span data-ttu-id="38dbc-162">3: 最後の操作からのメッセージ</span><span class="sxs-lookup"><span data-stu-id="38dbc-162">3: Messages from the latest operation</span></span>
+### <a name="3-messages-from-the-latest-operation"></a><span data-ttu-id="a2b6b-162">3:最後の操作からのメッセージ</span><span class="sxs-lookup"><span data-stu-id="a2b6b-162">3: Messages from the latest operation</span></span>
 
-<span data-ttu-id="38dbc-163">最後の操作は、配列グループ `$SeparateDscOperations` の最初のインデックスに格納されています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-163">The latest operation is stored in the first index of the array group `$SeparateDscOperations`.</span></span>
-<span data-ttu-id="38dbc-164">グループのメッセージに対してインデックス 0 のクエリを実行すると、最後の操作に関するすべてのメッセージが返されます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-164">Querying the group's messages for index 0 returns all messages for the latest operation:</span></span>
+<span data-ttu-id="a2b6b-163">最後の操作は、配列グループ `$SeparateDscOperations` の最初のインデックスに格納されています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-163">The latest operation is stored in the first index of the array group `$SeparateDscOperations`.</span></span>
+<span data-ttu-id="a2b6b-164">グループのメッセージに対してインデックス 0 のクエリを実行すると、最後の操作に関するすべてのメッセージが返されます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-164">Querying the group's messages for index 0 returns all messages for the latest operation:</span></span>
 
 ```powershell
 PS C:\> $SeparateDscOperations[0].Group.Message
@@ -242,9 +243,9 @@ Displaying messages from built-in DSC resources:
  Message : [INCH-VM]:                            [] Consistency check completed.
 ```
 
-### <a name="4-error-messages-logged-for-recent-failed-operations"></a><span data-ttu-id="38dbc-165">4: 最近失敗した操作について記録されたエラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="38dbc-165">4: Error messages logged for recent failed operations</span></span>
+### <a name="4-error-messages-logged-for-recent-failed-operations"></a><span data-ttu-id="a2b6b-165">4:最近失敗した操作について記録されたエラー メッセージ</span><span class="sxs-lookup"><span data-stu-id="a2b6b-165">4: Error messages logged for recent failed operations</span></span>
 
-<span data-ttu-id="38dbc-166">`$SeparateDscOperations[0].Group` には、最後の操作に関する一連のイベントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-166">`$SeparateDscOperations[0].Group` contains a set of events for the latest operation.</span></span> <span data-ttu-id="38dbc-167">レベル表示名に基づいてイベントをフィルター処理するには、`Where-Object` コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-167">Run the `Where-Object` cmdlet to filter the events based on their level display name.</span></span> <span data-ttu-id="38dbc-168">結果は `$myFailedEvent` 変数に格納され、これをより細かく分析してイベント メッセージを取得できます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-168">Results are stored in the `$myFailedEvent` variable, which can be further dissected to get the event message:</span></span>
+<span data-ttu-id="a2b6b-166">`$SeparateDscOperations[0].Group` には、最後の操作に関する一連のイベントが含まれています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-166">`$SeparateDscOperations[0].Group` contains a set of events for the latest operation.</span></span> <span data-ttu-id="a2b6b-167">レベル表示名に基づいてイベントをフィルター処理するには、`Where-Object` コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-167">Run the `Where-Object` cmdlet to filter the events based on their level display name.</span></span> <span data-ttu-id="a2b6b-168">結果は `$myFailedEvent` 変数に格納され、これをより細かく分析してイベント メッセージを取得できます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-168">Results are stored in the `$myFailedEvent` variable, which can be further dissected to get the event message:</span></span>
 
 ```powershell
 PS C:\> $myFailedEvent = ($SeparateDscOperations[0].Group | Where-Object {$_.LevelDisplayName -eq "Error"})
@@ -258,9 +259,9 @@ rameter to specify a configuration file and create a current configuration first
 Error Code : 1
 ```
 
-### <a name="5-all-events-generated-for-a-particular-job-id"></a><span data-ttu-id="38dbc-169">5: 特定のジョブ ID 用に生成されたすべてのイベント</span><span class="sxs-lookup"><span data-stu-id="38dbc-169">5: All events generated for a particular job ID.</span></span>
+### <a name="5-all-events-generated-for-a-particular-job-id"></a><span data-ttu-id="a2b6b-169">5:特定のジョブ ID 用に生成されたすべてのイベント</span><span class="sxs-lookup"><span data-stu-id="a2b6b-169">5: All events generated for a particular job ID.</span></span>
 
-<span data-ttu-id="38dbc-170">`$SeparateDscOperations` はグループの配列で、グループのそれぞれに固有のジョブ ID として名前が付けられています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-170">`$SeparateDscOperations` is an array of groups, each of which has the name as the unique job ID.</span></span> <span data-ttu-id="38dbc-171">`Where-Object` コマンドレットを実行すると、特定のジョブ ID を持つイベントのグループを抽出できます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-171">By running the `Where-Object` cmdlet, you can extract those groups of events that have a particular job ID:</span></span>
+<span data-ttu-id="a2b6b-170">`$SeparateDscOperations` はグループの配列で、グループのそれぞれに固有のジョブ ID として名前が付けられています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-170">`$SeparateDscOperations` is an array of groups, each of which has the name as the unique job ID.</span></span> <span data-ttu-id="a2b6b-171">`Where-Object` コマンドレットを実行すると、特定のジョブ ID を持つイベントのグループを抽出できます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-171">By running the `Where-Object` cmdlet, you can extract those groups of events that have a particular job ID:</span></span>
 
 ```powershell
 PS C:\> ($SeparateDscOperations | Where-Object {$_.Name -eq $jobX} ).Group
@@ -275,13 +276,13 @@ TimeCreated                     Id LevelDisplayName Message
 12/2/2013 4:33:24 PM          4120 Information      Job {847A5619-5BB2-11E3-BF41-00155D553612} : ...
 ```
 
-## <a name="using-xdscdiagnostics-to-analyze-dsc-logs"></a><span data-ttu-id="38dbc-172">xDscDiagnostics を使用した DSC ログの分析</span><span class="sxs-lookup"><span data-stu-id="38dbc-172">Using xDscDiagnostics to analyze DSC logs</span></span>
+## <a name="using-xdscdiagnostics-to-analyze-dsc-logs"></a><span data-ttu-id="a2b6b-172">xDscDiagnostics を使用した DSC ログの分析</span><span class="sxs-lookup"><span data-stu-id="a2b6b-172">Using xDscDiagnostics to analyze DSC logs</span></span>
 
-<span data-ttu-id="38dbc-173">**xDscDiagnostics** は、コンピューター上の DSC 障害の分析に役立つ複数の関数で構成される PowerShell モジュールです。</span><span class="sxs-lookup"><span data-stu-id="38dbc-173">**xDscDiagnostics** is a PowerShell module that consists of several functions that can help analyze DSC failures on your machine.</span></span> <span data-ttu-id="38dbc-174">これらの関数は、過去の DSC 操作からのすべてのローカル イベント、またはリモート コンピューター上の DSC イベントの識別に役立ちます (有効な資格情報を使用)。</span><span class="sxs-lookup"><span data-stu-id="38dbc-174">These functions can help you identify all local events from past DSC operations, or DSC events on remote computers (with valid credentials).</span></span> <span data-ttu-id="38dbc-175">ここでは、開始から終了まで 1 回の一意の DSC 実行を定義するために、DSC 操作という用語を使用します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-175">Here, the term DSC operation is used to define a single unique DSC execution from its start to its end.</span></span> <span data-ttu-id="38dbc-176">たとえば、`Test-DscConfiguration` は独立した DSC 操作です。</span><span class="sxs-lookup"><span data-stu-id="38dbc-176">For example, `Test-DscConfiguration` would be a separate DSC operation.</span></span> <span data-ttu-id="38dbc-177">同様に、DSC の他のすべてのコマンドレット (`Get-DscConfiguration` や `Start-DscConfiguration` など) をそれぞれ別の DSC 操作として識別できます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-177">Similarly, every other cmdlet in DSC (such as `Get-DscConfiguration`, `Start-DscConfiguration`, etc.) could each be identified as separate DSC operations.</span></span> <span data-ttu-id="38dbc-178">この関数は、[xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics) で説明されています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-178">The functions are explained at [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics).</span></span> <span data-ttu-id="38dbc-179">ヘルプを参照するには、`Get-Help <cmdlet name>` を実行します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-179">Help is available by running `Get-Help <cmdlet name>`.</span></span>
+<span data-ttu-id="a2b6b-173">**xDscDiagnostics** は、コンピューター上の DSC 障害の分析に役立つ複数の関数で構成される PowerShell モジュールです。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-173">**xDscDiagnostics** is a PowerShell module that consists of several functions that can help analyze DSC failures on your machine.</span></span> <span data-ttu-id="a2b6b-174">これらの関数は、過去の DSC 操作からのすべてのローカル イベント、またはリモート コンピューター上の DSC イベントの識別に役立ちます (有効な資格情報を使用)。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-174">These functions can help you identify all local events from past DSC operations, or DSC events on remote computers (with valid credentials).</span></span> <span data-ttu-id="a2b6b-175">ここでは、開始から終了まで 1 回の一意の DSC 実行を定義するために、DSC 操作という用語を使用します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-175">Here, the term DSC operation is used to define a single unique DSC execution from its start to its end.</span></span> <span data-ttu-id="a2b6b-176">たとえば、`Test-DscConfiguration` は独立した DSC 操作です。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-176">For example, `Test-DscConfiguration` would be a separate DSC operation.</span></span> <span data-ttu-id="a2b6b-177">同様に、DSC の他のすべてのコマンドレット (`Get-DscConfiguration` や `Start-DscConfiguration` など) をそれぞれ別の DSC 操作として識別できます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-177">Similarly, every other cmdlet in DSC (such as `Get-DscConfiguration`, `Start-DscConfiguration`, etc.) could each be identified as separate DSC operations.</span></span> <span data-ttu-id="a2b6b-178">この関数は、[xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics) で説明されています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-178">The functions are explained at [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics).</span></span> <span data-ttu-id="a2b6b-179">ヘルプを参照するには、`Get-Help <cmdlet name>` を実行します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-179">Help is available by running `Get-Help <cmdlet name>`.</span></span>
 
-### <a name="getting-details-of-dsc-operations"></a><span data-ttu-id="38dbc-180">DSC 操作の詳細の取得</span><span class="sxs-lookup"><span data-stu-id="38dbc-180">Getting details of DSC operations</span></span>
+### <a name="getting-details-of-dsc-operations"></a><span data-ttu-id="a2b6b-180">DSC 操作の詳細の取得</span><span class="sxs-lookup"><span data-stu-id="a2b6b-180">Getting details of DSC operations</span></span>
 
-<span data-ttu-id="38dbc-181">`Get-xDscOperation` 関数は、1 台以上のコンピューターで実行される DSC 操作の結果を検索し、それぞれの DSC 操作で生成されたイベントのコレクションが含まれているオブジェクトを返すことができます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-181">The `Get-xDscOperation` function lets you find the results of the DSC operations that run on one or multiple computers, and returns an object that contains the collection of events produced by each DSC operation.</span></span> <span data-ttu-id="38dbc-182">たとえば、次の出力では、3 つのコマンドが実行されました。</span><span class="sxs-lookup"><span data-stu-id="38dbc-182">For example, in the following output, three commands were run.</span></span> <span data-ttu-id="38dbc-183">1 つ目のコマンドは成功し、他の 2 つのコマンドは失敗しました。</span><span class="sxs-lookup"><span data-stu-id="38dbc-183">The first one passed, and the other two failed.</span></span> <span data-ttu-id="38dbc-184">これらの結果が `Get-xDscOperation` の出力にまとめられています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-184">These results are summarized in the output of `Get-xDscOperation`.</span></span>
+<span data-ttu-id="a2b6b-181">`Get-xDscOperation` 関数は、1 台以上のコンピューターで実行される DSC 操作の結果を検索し、それぞれの DSC 操作で生成されたイベントのコレクションが含まれているオブジェクトを返すことができます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-181">The `Get-xDscOperation` function lets you find the results of the DSC operations that run on one or multiple computers, and returns an object that contains the collection of events produced by each DSC operation.</span></span> <span data-ttu-id="a2b6b-182">たとえば、次の出力では、3 つのコマンドが実行されました。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-182">For example, in the following output, three commands were run.</span></span> <span data-ttu-id="a2b6b-183">1 つ目のコマンドは成功し、他の 2 つのコマンドは失敗しました。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-183">The first one passed, and the other two failed.</span></span> <span data-ttu-id="a2b6b-184">これらの結果が `Get-xDscOperation` の出力にまとめられています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-184">These results are summarized in the output of `Get-xDscOperation`.</span></span>
 
 ```powershell
 PS C:\DiagnosticsTest> Get-xDscOperation
@@ -293,7 +294,7 @@ SRV1   2          6/23/2016 9:36:54 AM  Failure  7e8e2d6e-395c-11e6-9165-00155d3
 SRV1   3          6/23/2016 9:36:54 AM  Success  af72c6aa-3960-11e6-9165-00155d390509  {@{Message=Operati...
 ```
 
-<span data-ttu-id="38dbc-185">また、`Newest` パラメーターを使用して最近の操作の結果のみを表示するように指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-185">You can also specify that you want only results for the most recent operations by using the `Newest` parameter:</span></span>
+<span data-ttu-id="a2b6b-185">また、`Newest` パラメーターを使用して最近の操作の結果のみを表示するように指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-185">You can also specify that you want only results for the most recent operations by using the `Newest` parameter:</span></span>
 
 ```powershell
 PS C:\DiagnosticsTest> Get-xDscOperation -Newest 5
@@ -306,12 +307,12 @@ SRV1   4          6/23/2016 4:36:54 PM  Success  5c06402a-399b-11e6-9165-00155d3
 SRV1   5          6/23/2016 4:36:51 PM  Success                                        {@{Message=; TimeC...
 ```
 
-### <a name="getting-details-of-dsc-events"></a><span data-ttu-id="38dbc-186">DSC イベントの詳細の取得</span><span class="sxs-lookup"><span data-stu-id="38dbc-186">Getting details of DSC events</span></span>
+### <a name="getting-details-of-dsc-events"></a><span data-ttu-id="a2b6b-186">DSC イベントの詳細の取得</span><span class="sxs-lookup"><span data-stu-id="a2b6b-186">Getting details of DSC events</span></span>
 
-<span data-ttu-id="38dbc-187">`Trace-xDscOperation` コマンドレットは、イベント、そのイベントの種類、および特定の DSC 操作から生成されたメッセージ出力のコレクションが含まれているオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-187">The `Trace-xDscOperation` cmdlet returns an object containing a collection of events, their event types, and the message output generated from a particular DSC operation.</span></span> <span data-ttu-id="38dbc-188">通常、`Get-xDscOperation` を使用した操作のいずれかでエラーが発生した場合、その操作をトレースすると、どのイベントによってエラーが発生したかがわかります。</span><span class="sxs-lookup"><span data-stu-id="38dbc-188">Typically, when you find a failure in any of the operations using `Get-xDscOperation`, you would trace that operation to find out which of the events caused a failure.</span></span>
+<span data-ttu-id="a2b6b-187">`Trace-xDscOperation` コマンドレットは、イベント、そのイベントの種類、および特定の DSC 操作から生成されたメッセージ出力のコレクションが含まれているオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-187">The `Trace-xDscOperation` cmdlet returns an object containing a collection of events, their event types, and the message output generated from a particular DSC operation.</span></span> <span data-ttu-id="a2b6b-188">通常、`Get-xDscOperation` を使用した操作のいずれかでエラーが発生した場合、その操作をトレースすると、どのイベントによってエラーが発生したかがわかります。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-188">Typically, when you find a failure in any of the operations using `Get-xDscOperation`, you would trace that operation to find out which of the events caused a failure.</span></span>
 
-<span data-ttu-id="38dbc-189">`SequenceID` パラメーターを使用して特定のコンピューターの特定の操作に対するイベントを取得します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-189">Use the `SequenceID` parameter to get the events for a specific operation for a specific computer.</span></span>
-<span data-ttu-id="38dbc-190">たとえば、`SequenceID` に 9 を指定すると、`Trace-xDscOperaion` は最後の操作から 9 番目の DSC 操作のトレースを取得します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-190">For example, if you specify a `SequenceID` of 9, `Trace-xDscOperaion` get the trace for the DSC operation that was 9th from the last operation:</span></span>
+<span data-ttu-id="a2b6b-189">`SequenceID` パラメーターを使用して特定のコンピューターの特定の操作に対するイベントを取得します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-189">Use the `SequenceID` parameter to get the events for a specific operation for a specific computer.</span></span>
+<span data-ttu-id="a2b6b-190">たとえば、`SequenceID` に 9 を指定すると、`Trace-xDscOperaion` は最後の操作から 9 番目の DSC 操作のトレースを取得します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-190">For example, if you specify a `SequenceID` of 9, `Trace-xDscOperaion` get the trace for the DSC operation that was 9th from the last operation:</span></span>
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -SequenceID 9
@@ -327,7 +328,7 @@ SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Job runs under the following LCM setti
 SRV1   OPERATIONAL  6/24/2016 10:51:54 AM Operation Consistency Check or Pull completed successfully.
 ```
 
-<span data-ttu-id="38dbc-191">割り当てられた **GUID** を特定の DSC 操作に渡すと (`Get-xDscOperation` コマンドレットが返したときに)、その DSC 操作のイベントの詳細を取得できます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-191">Pass the **GUID** assigned to a specific DSC operation (as returned by the `Get-xDscOperation` cmdlet) to get the event details for that DSC operation:</span></span>
+<span data-ttu-id="a2b6b-191">割り当てられた **GUID** を特定の DSC 操作に渡すと (`Get-xDscOperation` コマンドレットが返したときに)、その DSC 操作のイベントの詳細を取得できます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-191">Pass the **GUID** assigned to a specific DSC operation (as returned by the `Get-xDscOperation` cmdlet) to get the event details for that DSC operation:</span></span>
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -JobID 9e0bfb6b-3a3a-11e6-9165-00155d390509
@@ -366,9 +367,9 @@ SRV1   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull co
 SRV1   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCache.mof
 ```
 
-<span data-ttu-id="38dbc-192">`Trace-xDscOperation` では、分析ログ、デバッグ ログ、および操作ログからイベントを集計するため、上記のようにこれらのログを有効にするように、プロンプトで要求されます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-192">Note that, since `Trace-xDscOperation` aggregates events from the Analytic, Debug, and Operational logs, it will prompt you to enable these logs as described above.</span></span>
+<span data-ttu-id="a2b6b-192">`Trace-xDscOperation` では、分析ログ、デバッグ ログ、および操作ログからイベントを集計するため、上記のようにこれらのログを有効にするように、プロンプトで要求されます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-192">Note that, since `Trace-xDscOperation` aggregates events from the Analytic, Debug, and Operational logs, it will prompt you to enable these logs as described above.</span></span>
 
-<span data-ttu-id="38dbc-193">また、`Trace-xDscOperation` の出力を変数に保存して、イベントに関する情報を収集することもできます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-193">Alternately, you can gather information on the events by saving the output of `Trace-xDscOperation` into a variable.</span></span> <span data-ttu-id="38dbc-194">次のコマンドを使用すると、特定の DSC 操作のすべてのイベントを表示できます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-194">You can use the following commands to display all the events for a particular DSC operation.</span></span>
+<span data-ttu-id="a2b6b-193">また、`Trace-xDscOperation` の出力を変数に保存して、イベントに関する情報を収集することもできます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-193">Alternately, you can gather information on the events by saving the output of `Trace-xDscOperation` into a variable.</span></span> <span data-ttu-id="a2b6b-194">次のコマンドを使用すると、特定の DSC 操作のすべてのイベントを表示できます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-194">You can use the following commands to display all the events for a particular DSC operation.</span></span>
 
 ```powershell
 PS C:\DiagnosticsTest> $Trace = Trace-xDscOperation -SequenceID 4
@@ -376,7 +377,7 @@ PS C:\DiagnosticsTest> $Trace = Trace-xDscOperation -SequenceID 4
 PS C:\DiagnosticsTest> $Trace.Event
 ```
 
-<span data-ttu-id="38dbc-195">次の出力のように、`Get-WinEvent` コマンドレットと同じ結果が表示されます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-195">This will display the same results as the `Get-WinEvent` cmdlet, such as in the output below:</span></span>
+<span data-ttu-id="a2b6b-195">次の出力のように、`Get-WinEvent` コマンドレットと同じ結果が表示されます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-195">This will display the same results as the `Get-WinEvent` cmdlet, such as in the output below:</span></span>
 
 ```output
    ProviderName: Microsoft-Windows-DSC
@@ -412,17 +413,17 @@ TimeCreated                     Id LevelDisplayName Message
 6/23/2016 8:06:54 AM          4312 Information      The DscTimer is running LCM method PerformRequiredConfigurationChecks with the flag set to 5.
 ```
 
-<span data-ttu-id="38dbc-196">まず、`Get-xDscOperation` を使用して、コンピューターでの DSC 構成実行のうち、最新のいくつかを一覧表示すると理想的です。</span><span class="sxs-lookup"><span data-stu-id="38dbc-196">Ideally, you would first use `Get-xDscOperation` to list out the last few DSC configuration runs on your machines.</span></span> <span data-ttu-id="38dbc-197">次に、`Trace-xDscOperation` でいずれかの単一の操作を (その SequenceID または JobID を使用して) 調べると、バックグラウンドで何が行われたかがわかります。</span><span class="sxs-lookup"><span data-stu-id="38dbc-197">Following this, you can examine any single operation (using its SequenceID or JobID) with `Trace-xDscOperation` to discover what it did behind the scenes.</span></span>
+<span data-ttu-id="a2b6b-196">まず、`Get-xDscOperation` を使用して、コンピューターでの DSC 構成実行のうち、最新のいくつかを一覧表示すると理想的です。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-196">Ideally, you would first use `Get-xDscOperation` to list out the last few DSC configuration runs on your machines.</span></span> <span data-ttu-id="a2b6b-197">次に、`Trace-xDscOperation` でいずれかの単一の操作を (その SequenceID または JobID を使用して) 調べると、バックグラウンドで何が行われたかがわかります。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-197">Following this, you can examine any single operation (using its SequenceID or JobID) with `Trace-xDscOperation` to discover what it did behind the scenes.</span></span>
 
-### <a name="getting-events-for-a-remote-computer"></a><span data-ttu-id="38dbc-198">リモート コンピューターのイベントの取得</span><span class="sxs-lookup"><span data-stu-id="38dbc-198">Getting events for a remote computer</span></span>
+### <a name="getting-events-for-a-remote-computer"></a><span data-ttu-id="a2b6b-198">リモート コンピューターのイベントの取得</span><span class="sxs-lookup"><span data-stu-id="a2b6b-198">Getting events for a remote computer</span></span>
 
-<span data-ttu-id="38dbc-199">`Trace-xDscOperation` コマンドレットの `ComputerName` パラメーターを使用して、リモート コンピューターのイベントの詳細を取得します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-199">Use the `ComputerName` parameter of the `Trace-xDscOperation` cmdlet to get the event details on a remote computer.</span></span> <span data-ttu-id="38dbc-200">これを行う前に、ファイアウォール ルールを作成してリモート コンピューターでのリモート管理を許可する必要があります。</span><span class="sxs-lookup"><span data-stu-id="38dbc-200">Before you can do this, you have to create a firewall rule to allow remote administration on the remote computer:</span></span>
+<span data-ttu-id="a2b6b-199">`Trace-xDscOperation` コマンドレットの `ComputerName` パラメーターを使用して、リモート コンピューターのイベントの詳細を取得します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-199">Use the `ComputerName` parameter of the `Trace-xDscOperation` cmdlet to get the event details on a remote computer.</span></span> <span data-ttu-id="a2b6b-200">これを行う前に、ファイアウォール ルールを作成してリモート コンピューターでのリモート管理を許可する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-200">Before you can do this, you have to create a firewall rule to allow remote administration on the remote computer:</span></span>
 
 ```powershell
 New-NetFirewallRule -Name "Service RemoteAdmin" -DisplayName "Remote" -Action Allow
 ```
 
-<span data-ttu-id="38dbc-201">これで、`Trace-xDscOperation` への呼び出しでそのコンピューターを指定できます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-201">Now you can specify that computer in your call to `Trace-xDscOperation`:</span></span>
+<span data-ttu-id="a2b6b-201">これで、`Trace-xDscOperation` への呼び出しでそのコンピューターを指定できます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-201">Now you can specify that computer in your call to `Trace-xDscOperation`:</span></span>
 
 ```powershell
 PS C:\DiagnosticsTest> Trace-xDscOperation -ComputerName SRV2 -Credential Get-Credential -SequenceID 5
@@ -461,16 +462,16 @@ SRV2   OPERATIONAL  6/24/2016 11:36:56 AM Operation Consistency Check or Pull co
 SRV2   ANALYTIC     6/24/2016 11:36:56 AM Deleting file from C:\Windows\System32\Configuration\DSCEngineCach...
 ```
 
-## <a name="my-resources-wont-update-how-to-reset-the-cache"></a><span data-ttu-id="38dbc-202">リソースが更新されない: キャッシュをリセットする方法</span><span class="sxs-lookup"><span data-stu-id="38dbc-202">My resources won't update: How to reset the cache</span></span>
+## <a name="my-resources-wont-update-how-to-reset-the-cache"></a><span data-ttu-id="a2b6b-202">リソースが更新されない:キャッシュをリセットする方法</span><span class="sxs-lookup"><span data-stu-id="a2b6b-202">My resources won't update: How to reset the cache</span></span>
 
-<span data-ttu-id="38dbc-203">DSC エンジンは、効率化のために、PowerShell モジュールとして実装されているリソースをキャッシュします。</span><span class="sxs-lookup"><span data-stu-id="38dbc-203">The DSC engine caches resources implemented as a PowerShell module for efficiency purposes.</span></span>
-<span data-ttu-id="38dbc-204">ただし、リソースを作成すると同時にテストする場合には、このことによって問題が発生することがあります。これは、DSC では、プロセスが再開されるまで、キャッシュされたバージョンを読み込むためです。</span><span class="sxs-lookup"><span data-stu-id="38dbc-204">However, this can cause problems when you are authoring a resource and testing it simultaneously because DSC will load the cached version until the process is restarted.</span></span> <span data-ttu-id="38dbc-205">新しいバージョンが読み込まれるようにする唯一の方法は、DSC エンジンをホストしているプロセスを明示的に強制終了することです。</span><span class="sxs-lookup"><span data-stu-id="38dbc-205">The only way to make DSC load the newer version is to explicitly kill the process hosting the DSC engine.</span></span>
+<span data-ttu-id="a2b6b-203">DSC エンジンは、効率化のために、PowerShell モジュールとして実装されているリソースをキャッシュします。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-203">The DSC engine caches resources implemented as a PowerShell module for efficiency purposes.</span></span>
+<span data-ttu-id="a2b6b-204">ただし、リソースを作成すると同時にテストする場合には、このことによって問題が発生することがあります。これは、DSC では、プロセスが再開されるまで、キャッシュされたバージョンを読み込むためです。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-204">However, this can cause problems when you are authoring a resource and testing it simultaneously because DSC will load the cached version until the process is restarted.</span></span> <span data-ttu-id="a2b6b-205">新しいバージョンが読み込まれるようにする唯一の方法は、DSC エンジンをホストしているプロセスを明示的に強制終了することです。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-205">The only way to make DSC load the newer version is to explicitly kill the process hosting the DSC engine.</span></span>
 
-<span data-ttu-id="38dbc-206">同様に、カスタム リソースを追加および変更した後で `Start-DscConfiguration` を実行した場合、その変更はコンピューターを再起動しないと反映されません。</span><span class="sxs-lookup"><span data-stu-id="38dbc-206">Similarly, when you run `Start-DscConfiguration`, after adding and modifying a custom resource, the modification may not execute unless, or until, the computer is rebooted.</span></span> <span data-ttu-id="38dbc-207">これは、DSC が WMI Provider Host Process (WmiPrvSE) で動作し、通常、WmiPrvSE のインスタンスは同時にいくつも動作しているためです。</span><span class="sxs-lookup"><span data-stu-id="38dbc-207">This is because DSC runs in the WMI Provider Host Process (WmiPrvSE), and usually, there are many instances of WmiPrvSE running at once.</span></span> <span data-ttu-id="38dbc-208">コンピューターを再起動すると、ホスト プロセスが再起動し、キャッシュがクリアされます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-208">When you reboot, the host process is restarted and the cache is cleared.</span></span>
+<span data-ttu-id="a2b6b-206">同様に、カスタム リソースを追加および変更した後で `Start-DscConfiguration` を実行した場合、その変更はコンピューターを再起動しないと反映されません。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-206">Similarly, when you run `Start-DscConfiguration`, after adding and modifying a custom resource, the modification may not execute unless, or until, the computer is rebooted.</span></span> <span data-ttu-id="a2b6b-207">これは、DSC が WMI Provider Host Process (WmiPrvSE) で動作し、通常、WmiPrvSE のインスタンスは同時にいくつも動作しているためです。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-207">This is because DSC runs in the WMI Provider Host Process (WmiPrvSE), and usually, there are many instances of WmiPrvSE running at once.</span></span> <span data-ttu-id="a2b6b-208">コンピューターを再起動すると、ホスト プロセスが再起動し、キャッシュがクリアされます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-208">When you reboot, the host process is restarted and the cache is cleared.</span></span>
 
-<span data-ttu-id="38dbc-209">コンピューターを再起動することなく、構成を正常にリサイクルし、キャッシュをクリアするには、ホスト プロセスを停止してから再起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="38dbc-209">To successfully recycle the configuration and clear the cache without rebooting, you must stop and then restart the host process.</span></span> <span data-ttu-id="38dbc-210">このことは、プロセスを識別し、停止し、再起動することで、インスタンスごとに実行できます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-210">This can be done on a per instance basis, whereby you identify the process, stop it, and restart it.</span></span> <span data-ttu-id="38dbc-211">また、以下に示すように、`DebugMode` を使用して PowerShell DSC リソースを再読み込みすることもできます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-211">Or, you can use `DebugMode`, as demonstrated below, to reload the PowerShell DSC resource.</span></span>
+<span data-ttu-id="a2b6b-209">コンピューターを再起動することなく、構成を正常にリサイクルし、キャッシュをクリアするには、ホスト プロセスを停止してから再起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-209">To successfully recycle the configuration and clear the cache without rebooting, you must stop and then restart the host process.</span></span> <span data-ttu-id="a2b6b-210">このことは、プロセスを識別し、停止し、再起動することで、インスタンスごとに実行できます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-210">This can be done on a per instance basis, whereby you identify the process, stop it, and restart it.</span></span> <span data-ttu-id="a2b6b-211">また、以下に示すように、`DebugMode` を使用して PowerShell DSC リソースを再読み込みすることもできます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-211">Or, you can use `DebugMode`, as demonstrated below, to reload the PowerShell DSC resource.</span></span>
 
-<span data-ttu-id="38dbc-212">DSC エンジンをホストしているプロセスを識別し、インスタンスごとにそのプロセスを停止するには、DSC エンジンをホストしている WmiPrvSE のプロセス ID を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-212">To identify which process is hosting the DSC engine and stop it on a per instance basis, you can list the process ID of the WmiPrvSE which is hosting the DSC engine.</span></span> <span data-ttu-id="38dbc-213">次に、プロバイダーを更新するために、次のコマンドを使用して WmiPrvSE プロセスを停止し、再度 **Start-DscConfiguration** を実行します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-213">Then, to update the provider, stop the WmiPrvSE process using the commands below, and then run **Start-DscConfiguration** again.</span></span>
+<span data-ttu-id="a2b6b-212">DSC エンジンをホストしているプロセスを識別し、インスタンスごとにそのプロセスを停止するには、DSC エンジンをホストしている WmiPrvSE のプロセス ID を一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-212">To identify which process is hosting the DSC engine and stop it on a per instance basis, you can list the process ID of the WmiPrvSE which is hosting the DSC engine.</span></span> <span data-ttu-id="a2b6b-213">次に、プロバイダーを更新するために、次のコマンドを使用して WmiPrvSE プロセスを停止し、再度 **Start-DscConfiguration** を実行します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-213">Then, to update the provider, stop the WmiPrvSE process using the commands below, and then run **Start-DscConfiguration** again.</span></span>
 
 ```powershell
 ###
@@ -486,11 +487,11 @@ Select-Object -ExpandProperty HostProcessIdentifier
 Get-Process -Id $dscProcessID | Stop-Process
 ```
 
-## <a name="using-debugmode"></a><span data-ttu-id="38dbc-214">DebugMode の使用</span><span class="sxs-lookup"><span data-stu-id="38dbc-214">Using DebugMode</span></span>
+## <a name="using-debugmode"></a><span data-ttu-id="a2b6b-214">DebugMode の使用</span><span class="sxs-lookup"><span data-stu-id="a2b6b-214">Using DebugMode</span></span>
 
-<span data-ttu-id="38dbc-215">ホスト プロセスの再起動時に `DebugMode` を使用して常にキャッシュをクリアするように、DSC ローカル構成マネージャー (LCM) を構成できます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-215">You can configure the DSC Local Configuration Manager (LCM) to use `DebugMode` to always clear the cache when the host process is restarted.</span></span> <span data-ttu-id="38dbc-216">**TRUE** に設定すると、エンジンは常に PowerShell DSC リソースを再読み込みします。</span><span class="sxs-lookup"><span data-stu-id="38dbc-216">When set to **TRUE**, it causes the engine to always reload the PowerShell DSC resource.</span></span> <span data-ttu-id="38dbc-217">リソースの書き込みが完了した後、**FALSE** に設定し直して、モジュールをキャッシュするようにエンジンの動作を戻すことができます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-217">Once you are done writing your resource, you can set it back to **FALSE** and the engine will revert to its behavior of caching the modules.</span></span>
+<span data-ttu-id="a2b6b-215">ホスト プロセスの再起動時に `DebugMode` を使用して常にキャッシュをクリアするように、DSC ローカル構成マネージャー (LCM) を構成できます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-215">You can configure the DSC Local Configuration Manager (LCM) to use `DebugMode` to always clear the cache when the host process is restarted.</span></span> <span data-ttu-id="a2b6b-216">**TRUE** に設定すると、エンジンは常に PowerShell DSC リソースを再読み込みします。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-216">When set to **TRUE**, it causes the engine to always reload the PowerShell DSC resource.</span></span> <span data-ttu-id="a2b6b-217">リソースの書き込みが完了した後、**FALSE** に設定し直して、モジュールをキャッシュするようにエンジンの動作を戻すことができます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-217">Once you are done writing your resource, you can set it back to **FALSE** and the engine will revert to its behavior of caching the modules.</span></span>
 
-<span data-ttu-id="38dbc-218">次は、`DebugMode` がどのようにキャッシュを自動的に更新できるかを示すデモです。</span><span class="sxs-lookup"><span data-stu-id="38dbc-218">Following is a demonstration to show how `DebugMode` can automatically refresh the cache.</span></span> <span data-ttu-id="38dbc-219">まず、既定の構成を見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="38dbc-219">First, let's look at the default configuration:</span></span>
+<span data-ttu-id="a2b6b-218">次は、`DebugMode` がどのようにキャッシュを自動的に更新できるかを示すデモです。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-218">Following is a demonstration to show how `DebugMode` can automatically refresh the cache.</span></span> <span data-ttu-id="a2b6b-219">まず、既定の構成を見てみましょう。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-219">First, let's look at the default configuration:</span></span>
 
 ```powershell
 PS C:\> Get-DscLocalConfigurationManager
@@ -513,9 +514,9 @@ RefreshMode                    : PUSH
 PSComputerName                 :
 ```
 
-<span data-ttu-id="38dbc-220">`DebugMode` が **"None"** に設定されています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-220">You can see that `DebugMode` is set to **"None"**.</span></span>
+<span data-ttu-id="a2b6b-220">`DebugMode` が **"None"** に設定されています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-220">You can see that `DebugMode` is set to **"None"**.</span></span>
 
-<span data-ttu-id="38dbc-221">`DebugMode` のデモを設定するには、次の PowerShell リソースを使用します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-221">To set up the `DebugMode` demonstration, use the following PowerShell resource:</span></span>
+<span data-ttu-id="a2b6b-221">`DebugMode` のデモを設定するには、次の PowerShell リソースを使用します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-221">To set up the `DebugMode` demonstration, use the following PowerShell resource:</span></span>
 
 ```powershell
 function Get-TargetResource
@@ -547,7 +548,7 @@ function Test-TargetResource
 }
 ```
 
-<span data-ttu-id="38dbc-222">ここで、上記のリソースを使用して `TestProviderDebugMode` という名前で構成を作成します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-222">Now, author a configuration using the above resource called `TestProviderDebugMode`:</span></span>
+<span data-ttu-id="a2b6b-222">ここで、上記のリソースを使用して `TestProviderDebugMode` という名前で構成を作成します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-222">Now, author a configuration using the above resource called `TestProviderDebugMode`:</span></span>
 
 ```powershell
 Configuration ConfigTestDebugMode
@@ -564,9 +565,9 @@ Configuration ConfigTestDebugMode
 ConfigTestDebugMode
 ```
 
-<span data-ttu-id="38dbc-223">ファイル `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` の内容は **1** になっています。</span><span class="sxs-lookup"><span data-stu-id="38dbc-223">You will see that the contents of file: `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` is **1**.</span></span>
+<span data-ttu-id="a2b6b-223">ファイル `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` の内容は **1** になっています。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-223">You will see that the contents of file: `$env:SystemDrive\OutputFromTestProviderDebugMode.txt` is **1**.</span></span>
 
-<span data-ttu-id="38dbc-224">ここで、次のスクリプトを使用してプロバイダー コードを更新します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-224">Now, update the provider code using the following script:</span></span>
+<span data-ttu-id="a2b6b-224">ここで、次のスクリプトを使用してプロバイダー コードを更新します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-224">Now, update the provider code using the following script:</span></span>
 
 ```powershell
 $newResourceOutput = Get-Random -Minimum 5 -Maximum 30
@@ -601,9 +602,9 @@ function Test-TargetResource
 "@ | Out-File -FilePath "C:\Program Files\WindowsPowerShell\Modules\MyPowerShellModules\DSCResources\TestProviderDebugMode\TestProviderDebugMode.psm1
 ```
 
-<span data-ttu-id="38dbc-225">このスクリプトは、乱数を生成し、それに合わせてプロバイダー コードを更新します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-225">This script generates a random number and updates the provider code accordingly.</span></span> <span data-ttu-id="38dbc-226">`DebugMode` を false に設定しても、ファイル " **$env:SystemDrive\OutputFromTestProviderDebugMode.txt**" の内容は変わりません。</span><span class="sxs-lookup"><span data-stu-id="38dbc-226">With `DebugMode` set to false, the contents of the file "**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**" are never changed.</span></span>
+<span data-ttu-id="a2b6b-225">このスクリプトは、乱数を生成し、それに合わせてプロバイダー コードを更新します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-225">This script generates a random number and updates the provider code accordingly.</span></span> <span data-ttu-id="a2b6b-226">`DebugMode` を false に設定しても、ファイル "**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**" の内容は変わりません。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-226">With `DebugMode` set to false, the contents of the file "**$env:SystemDrive\OutputFromTestProviderDebugMode.txt**" are never changed.</span></span>
 
-<span data-ttu-id="38dbc-227">ここで、ご利用の構成スクリプト内で `DebugMode` を **"ForceModuleImport"** に設定します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-227">Now, set `DebugMode` to **"ForceModuleImport"** in your configuration script:</span></span>
+<span data-ttu-id="a2b6b-227">ここで、ご利用の構成スクリプト内で `DebugMode` を **"ForceModuleImport"** に設定します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-227">Now, set `DebugMode` to **"ForceModuleImport"** in your configuration script:</span></span>
 
 ```powershell
 LocalConfigurationManager
@@ -612,7 +613,7 @@ LocalConfigurationManager
 }
 ```
 
-<span data-ttu-id="38dbc-228">上記のスクリプトを再度実行すると、ファイルの内容が毎回異なるものになります。</span><span class="sxs-lookup"><span data-stu-id="38dbc-228">When you run the above script again, you will see that the content of the file is different every time.</span></span> <span data-ttu-id="38dbc-229">(`Get-DscConfiguration` を実行して確認できます)。</span><span class="sxs-lookup"><span data-stu-id="38dbc-229">(You can run `Get-DscConfiguration` to check it).</span></span> <span data-ttu-id="38dbc-230">次に、さらに 2 つの実行の結果を示します (実際にスクリプトを実行した結果は異なる場合があります)。</span><span class="sxs-lookup"><span data-stu-id="38dbc-230">Below is the result of two additional runs (your results may be different when you run the script):</span></span>
+<span data-ttu-id="a2b6b-228">上記のスクリプトを再度実行すると、ファイルの内容が毎回異なるものになります。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-228">When you run the above script again, you will see that the content of the file is different every time.</span></span> <span data-ttu-id="a2b6b-229">(`Get-DscConfiguration` を実行して確認できます)。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-229">(You can run `Get-DscConfiguration` to check it).</span></span> <span data-ttu-id="a2b6b-230">次に、さらに 2 つの実行の結果を示します (実際にスクリプトを実行した結果は異なる場合があります)。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-230">Below is the result of two additional runs (your results may be different when you run the script):</span></span>
 
 ```powershell
 PS C:\> Get-DscConfiguration -CimSession (New-CimSession localhost)
@@ -628,9 +629,9 @@ onlyProperty                            PSComputerName
 14                                      localhost
 ```
 
-## <a name="dsc-returns-unexpected-response-code-internalservererror-when-registering-with-windows-pull-server"></a><span data-ttu-id="38dbc-231">Windows プル サーバーに登録すると、DSC から "予期しない応答コード InternalServerError" が返されます。</span><span class="sxs-lookup"><span data-stu-id="38dbc-231">DSC returns "unexpected response code InternalServerError" when registering with Windows Pull Server</span></span>
+## <a name="dsc-returns-unexpected-response-code-internalservererror-when-registering-with-windows-pull-server"></a><span data-ttu-id="a2b6b-231">Windows プル サーバーに登録すると、DSC から "予期しない応答コード InternalServerError" が返されます。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-231">DSC returns "unexpected response code InternalServerError" when registering with Windows Pull Server</span></span>
 
-<span data-ttu-id="38dbc-232">サーバーにメタ構成を適用して、それを Windows プル サーバーのインスタンスに登録すると、次のエラーが発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="38dbc-232">When applying a metaconfiguration to a server to register it with an instance of Windows Pull Server, you might encounter the following error.</span></span>
+<span data-ttu-id="a2b6b-232">サーバーにメタ構成を適用して、それを Windows プル サーバーのインスタンスに登録すると、次のエラーが発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-232">When applying a metaconfiguration to a server to register it with an instance of Windows Pull Server, you might encounter the following error.</span></span>
 
 ```PowerShell
 Registration of the Dsc Agent with the server https://<serverfqdn>:8080/PSDSCPullServer.svc failed. The underlying error is: The attempt to register Dsc Agent with AgentId <ID> with the server 
@@ -640,25 +641,25 @@ https://<serverfqdn>:8080/PSDSCPullServer.svc/Nodes(AgentId='<ID>') returned une
     + PSComputerName        : <computername>
 ```
 
-<span data-ttu-id="38dbc-233">トラフィックを暗号化するためにサーバー上で使用される証明書に、URL を解決するためにノードによって使用される DNS 名とは異なる共通名 (CN) が含まれている場合に、これは発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="38dbc-233">This can occur when the certificate used on the server to encrypt traffic has a common name (CN) that is different than the DNS name used by the node to resolve the URL.</span></span>
-<span data-ttu-id="38dbc-234">正しい名前の証明書を使用するように Windows プルサーバーのインスタンスを更新します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-234">Update the Windows Pull Server instance to use a certificate with a corrected name.</span></span>
+<span data-ttu-id="a2b6b-233">トラフィックを暗号化するためにサーバー上で使用される証明書に、URL を解決するためにノードによって使用される DNS 名とは異なる共通名 (CN) が含まれている場合に、これは発生する可能性があります。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-233">This can occur when the certificate used on the server to encrypt traffic has a common name (CN) that is different than the DNS name used by the node to resolve the URL.</span></span>
+<span data-ttu-id="a2b6b-234">正しい名前の証明書を使用するように Windows プルサーバーのインスタンスを更新します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-234">Update the Windows Pull Server instance to use a certificate with a corrected name.</span></span>
 
-## <a name="error-when-running-sysprep-after-applying-a-dsc-configuration"></a><span data-ttu-id="38dbc-235">DSC 構成の適用後に Sysprep を実行するとエラーが発生する</span><span class="sxs-lookup"><span data-stu-id="38dbc-235">Error when running Sysprep after applying a DSC Configuration</span></span>
+## <a name="error-when-running-sysprep-after-applying-a-dsc-configuration"></a><span data-ttu-id="a2b6b-235">DSC 構成の適用後に Sysprep を実行するとエラーが発生する</span><span class="sxs-lookup"><span data-stu-id="a2b6b-235">Error when running Sysprep after applying a DSC Configuration</span></span>
 
-<span data-ttu-id="38dbc-236">DSC 構成を適用した後に Sysprep を実行して Windows Server を一般化しようとすると、次のエラーが発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="38dbc-236">When attempting to run Sysprep to generalize a Windows Server after applying a DSC configuration, you might encounter the following error.</span></span>
+<span data-ttu-id="a2b6b-236">DSC 構成を適用した後に Sysprep を実行して Windows Server を一般化しようとすると、次のエラーが発生することがあります。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-236">When attempting to run Sysprep to generalize a Windows Server after applying a DSC configuration, you might encounter the following error.</span></span>
 
 ```
 SYSPRP LaunchDll:Failure occurred while executing 'DscCore.dll,SysPrep_Cleanup', returned error code 0x2
 ```
 
-<span data-ttu-id="38dbc-237">Windows PowerShell Desired State Configuration を使用して構成された後のサーバーの一般化は、サポートされているシナリオではありません。</span><span class="sxs-lookup"><span data-stu-id="38dbc-237">Generalizing a server after it has been configured using Windows PowerShell Desired State Configuration is not a supported scenario.</span></span>  <span data-ttu-id="38dbc-238">代わりに、Windows セットアップの Specialize フェーズが完了した後で、構成を Windows に適用します。</span><span class="sxs-lookup"><span data-stu-id="38dbc-238">Instead, apply configurations to Windows after the Specialize phase of Windows Setup has completed.</span></span>
+<span data-ttu-id="a2b6b-237">Windows PowerShell Desired State Configuration を使用して構成された後のサーバーの一般化は、サポートされているシナリオではありません。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-237">Generalizing a server after it has been configured using Windows PowerShell Desired State Configuration is not a supported scenario.</span></span>  <span data-ttu-id="a2b6b-238">代わりに、Windows セットアップの Specialize フェーズが完了した後で、構成を Windows に適用します。</span><span class="sxs-lookup"><span data-stu-id="a2b6b-238">Instead, apply configurations to Windows after the Specialize phase of Windows Setup has completed.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="38dbc-239">参照</span><span class="sxs-lookup"><span data-stu-id="38dbc-239">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a2b6b-239">参照</span><span class="sxs-lookup"><span data-stu-id="a2b6b-239">See Also</span></span>
 
-### <a name="concepts"></a><span data-ttu-id="38dbc-240">概念</span><span class="sxs-lookup"><span data-stu-id="38dbc-240">Concepts</span></span>
+### <a name="concepts"></a><span data-ttu-id="a2b6b-240">概念</span><span class="sxs-lookup"><span data-stu-id="a2b6b-240">Concepts</span></span>
 
-- [<span data-ttu-id="38dbc-241">Build Custom Windows PowerShell Desired State Configuration Resources (カスタム Windows PowerShell Desired State Configuration のビルド)</span><span class="sxs-lookup"><span data-stu-id="38dbc-241">Build Custom Windows PowerShell Desired State Configuration Resources</span></span>](../resources/authoringResource.md)
+- [<span data-ttu-id="a2b6b-241">Build Custom Windows PowerShell Desired State Configuration Resources (カスタム Windows PowerShell Desired State Configuration のビルド)</span><span class="sxs-lookup"><span data-stu-id="a2b6b-241">Build Custom Windows PowerShell Desired State Configuration Resources</span></span>](../resources/authoringResource.md)
 
-### <a name="other-resources"></a><span data-ttu-id="38dbc-242">その他のリソース</span><span class="sxs-lookup"><span data-stu-id="38dbc-242">Other Resources</span></span>
+### <a name="other-resources"></a><span data-ttu-id="a2b6b-242">その他のリソース</span><span class="sxs-lookup"><span data-stu-id="a2b6b-242">Other Resources</span></span>
 
-- [<span data-ttu-id="38dbc-243">Windows PowerShell Desired State Configuration Cmdlets (Windows PowerShell Desired State Configuration のコマンドレット)</span><span class="sxs-lookup"><span data-stu-id="38dbc-243">Windows PowerShell Desired State Configuration Cmdlets</span></span>](/powershell/module/psdesiredstateconfiguration/)
+- [<span data-ttu-id="a2b6b-243">Windows PowerShell Desired State Configuration Cmdlets (Windows PowerShell Desired State Configuration のコマンドレット)</span><span class="sxs-lookup"><span data-stu-id="a2b6b-243">Windows PowerShell Desired State Configuration Cmdlets</span></span>](/powershell/module/psdesiredstateconfiguration/)
