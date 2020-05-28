@@ -2,12 +2,12 @@
 ms.date: 02/28/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC リソース
-ms.openlocfilehash: 863898d910cc3c75c3e5977a5b6b0657ba7ed512
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: bae08447763a3bdb6ee8fcdd4f8d49209a5de805
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278250"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692203"
 ---
 # <a name="dsc-resources"></a>DSC リソース
 
@@ -22,9 +22,9 @@ Desired State Configuration (DSC) リソースは、DSC 構成の構成要素を
 各リソースには、[Configuration](../configurations/configurations.md) でリソースを使用するために必要な構文を決定する*スキーマがあります。
 リソースのスキーマは、次のように定義できます。
 
-- **'Schema.Mof'** ファイル:ほとんどのリソースは、[管理オブジェクト フォーマット](/windows/desktop/wmisdk/managed-object-format--mof-)を使用して 'schema.mof' ファイルに "_スキーマ_" を定義します。
-- **'\<リソース名\>.schema.psm1'** ファイル:[複合リソース](../configurations/compositeConfigs.md)では、[パラメーター ブロック](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters) を使用して '<ResourceName>.schema.psm1' ファイルに "*スキーマ*" を定義します。
-- **'\<リソース名\>.psm1'** ファイル:クラス ベースの DSC リソースは、クラス定義で "_スキーマ_" を定義します。 構文の項目は Class プロパティとして表されます。 詳細については、「[about_Remote](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)」を参照してください。
+- `Schema.Mof` ファイル:ほとんどのリソースは、[管理オブジェクト フォーマット](/windows/desktop/wmisdk/managed-object-format--mof-)を使用して 'schema.mof' ファイルに "_スキーマ_" を定義します。
+- `<Resource Name>.schema.psm1` ファイル:[複合リソース](../configurations/compositeConfigs.md)では、[パラメーター ブロック](/powershell/module/microsoft.powershell.core/about/about_functions?view=powershell-6#functions-with-parameters)を使用して、`<ResourceName>.schema.psm1` ファイルに*スキーマ*を定義します。
+- `<Resource Name>.psm1` ファイル:クラス ベースの DSC リソースは、クラス定義で "_スキーマ_" を定義します。 構文の項目は Class プロパティとして表されます。 詳細については、「[about_Remote](/powershell/module/psdesiredstateconfiguration/about/about_classes_and_dsc)」を参照してください。
 
 DSC リソースの構文を取得するには、`-Syntax` パラメーターを指定した [Get-DSCResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) コマンドレットを使用します。 この使用法は、`-Syntax` パラメーターを指定した [Get-Command](/powershell/module/microsoft.powershell.core/get-command)を使用してコマンドレットの構文を取得する場合と似ています。 表示される出力には、指定したリソースのリソース ブロックに使用されているテンプレートが示されます。
 

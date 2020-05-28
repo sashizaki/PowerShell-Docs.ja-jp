@@ -1,73 +1,156 @@
 ---
-ms.date: 08/27/2018
+ms.date: 05/22/2020
 keywords: powershell,コマンドレット
-title: PowerShell スクリプト
-ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+title: PowerShell とは
+ms.openlocfilehash: 267b2938a0892c99c3a961bc7107f573df40a683
+ms.sourcegitcommit: 38215ad49e237b219e62bb5a5f0eb3b6b048df1e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "62058490"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83868481"
 ---
-# <a name="powershell"></a>PowerShell
+# <a name="what-is-powershell"></a>PowerShell とは
 
-PowerShell は、.NET 上に構築されたタスクベースのコマンド ライン シェルおよびスクリプト言語です。
-PowerShell は、システム管理者およびパワー ユーザーが、オペレーティング システム (Linux、macOS、および Windows) とプロセスを管理するタスクを迅速に自動化するのに役立ちます。
+PowerShell は、コマンドライン シェルとスクリプト言語で構成される、クロスプラットフォームのタスク自動化および構成管理フレームワークです。 .NET の共通言語ランタイム (CLR) を基に構築されている PowerShell は、テキストを受け取ってテキストを返す多くのシェルとは異なり、.NET オブジェクトを受け取って返します。 この根本的な変更により、自動化のためのまったく新しいツールと方法になっています。
 
-PowerShell コマンドを使用すると、コマンド ラインからコンピューターを管理できます。 PowerShell プロバイダーを使用すると、レジストリや証明書ストアなどのデータ ストアに、ファイル システムにアクセスする場合と同じくらい簡単にアクセスできます。 PowerShell には、豊富な式パーサーと、完全に開発されたスクリプト言語があります。
+<!-- removing images until we can get replacements
+:::row:::
+   :::column span="":::
+      Windows
+      [![PowerShell on Windows](media/overview/windows-desktop-660.gif)](media/overview/windows-desktop.gif#lightbox)
+      [Install on Windows](install/installing-powershell-core-on-windows.md)
+   :::column-end:::
+   :::column span="":::
+      Linux
+      [![PowerShell on Linux](media/overview/linux-desktop-660.gif)](media/overview/linux-desktop.gif#lightbox)
+      [Install on Linux](install/installing-powershell-core-on-linux.md)
+   :::column-end:::
+   :::column span="":::
+      macOS
+      [![PowerShell on macOS](media/overview/macos-desktop-660.gif)](media/overview/macos-desktop.gif#lightbox)
+      [Install on macOS](install/installing-powershell-core-on-macos.md)
+   :::column-end:::
+:::row-end:::
+-->
 
-## <a name="powershell-is-open-source"></a>オープン ソースの PowerShell
+## <a name="output-is-object-based"></a>オブジェクト ベースの出力
 
-PowerShell ベースのソース コードは現在、GitHub で入手可能であり、コミュニティ投稿が可能です。
-[GitHub の PowerShell のソース](https://github.com/powershell/powershell)を参照してください。
+従来のコマンドライン インターフェイスとは異なり、 PowerShell コマンドレットは、オブジェクトを扱うように設計されています。
+オブジェクトは、画面上に表示される文字による単なる文字列ではない、より詳細な構造化された情報です。 コマンドの実行結果は、常に補足的な情報と共に出力され、必要に応じてこの情報を活用できます。
 
-「[PowerShell を入手](https://github.com/PowerShell/PowerShell#get-powershell)」で必要なものから開始できます。
-または、「[はじめに](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)」からクイック ツアーを開始します。
+テキスト処理ツールを使用して過去のデータを処理すると、PowerShell で使用された場合とは異なる動作になることがわかるでしょう。 ほとんどの場合、テキスト処理ツールを使用して特定の情報を抽出する必要はありません。 標準の PowerShell オブジェクト構文を使用して、データの一部に直接アクセスします。
 
-## <a name="powershell-design-goals"></a>PowerShell の設計目標
+## <a name="the-command-family-is-extensible"></a>拡張可能なコマンド ファミリ
 
-PowerShell は、従来からの問題を排除し、新しい機能を追加することにより、コマンド ラインおよびスクリプト環境を改善することを目的として設計されています。
+`cmd.exe` などのインターフェイスには、組み込みのコマンド セットを直接拡張する手段がありません。 `cmd.exe` 内で実行される外部のコマンドライン ツールを作成する必要があります。 しかし、これらの外部ツールには、ヘルプの統合などのサービスがありません。 `cmd.exe` は、これらの外部ツールが有効なコマンドであることを自動認識しません。
 
-### <a name="discoverability"></a>Discoverability (探索可能性)
+PowerShell のコマンドは_コマンドレット_と呼ばれています。 各コマンドレットは個別に使用することもできますが、組み合わせて使い複雑なタスクを実行すると、その力を実感できます。 多くのシェルと同じように、PowerShell ではコンピューター上のファイル システムにアクセスできます。 PowerShell の_プロバイダー_を使うと、レジストリや証明書ストアなどのその他のデータ ストアに、ファイル システムとほぼ同様に簡単にアクセスできるようになります。
 
-PowerShell では、簡単にその機能を見つけられます。 たとえば、Windows サービスを表示したり変更したりするコマンドレットの一覧を検索するには、次のように入力します。
+コンパイル済みのコードまたはスクリプトを使用すると、あなた独自のコマンドレットや関数モジュールを作成できます。 モジュールは、シェルにコマンドレットとプロバイダーを追加できます。 また、PowerShell では、UNIX のシェル スクリプトや `cmd.exe` のバッチ ファイルに似たスクリプトもサポートしています。
+
+## <a name="support-for-command-aliases"></a>コマンドのエイリアスをサポートします
+
+PowerShell では、代替名でコマンドを参照するエイリアスをサポートしています。 エイリアスがあることで、他のシェルの経験があるユーザーは、既に知っている一般的なコマンド名を PowerShell のほぼ同じ操作に利用できます。
+
+エイリアスは、新しい名前を別のコマンドに関連付けます。 たとえば、PowerShell には、出力ウィンドウをクリアする `Clear-Host` という内部関数があります。 コマンド プロンプトに `cls` または `clear` エイリアスのどちらかを入力できます。 PowerShell はこれらのエイリアスを解釈して、`Clear-Host` 関数を実行します。
+
+この機能は、ユーザーが PowerShell を習得するうえで役立ちます。 まず、ほとんどの `cmd.exe` および Unix ユーザーは、既に名前は知っている多数のコマンドのレパートリーを持っています。 同等の PowerShell のコマンドでは、同一の結果が得られない場合があります。 しかし、十分に近い結果になるので、PowerShell のコマンド名を知らなくてもユーザーが既知のコマンドを利用することは可能です。 新しいコマンド シェルを習得する上でのもう 1 つの主なストレス要因は、"身体が覚えている" ことです。 長年にわたって `cmd.exe` を使用してきた場合、画面をクリアするのに、反射的に `cls` コマンドを入力してしまうでしょう。 `Clear-Host` のエイリアスがなければ、エラー メッセージを受け取ってしまい、出力をクリアするにはどうすればいいかわからないでしょう。
+
+## <a name="powershell-handles-console-input-and-display"></a>PowerShell によってコンソールの入力と表示が処理される
+
+コマンドを入力すると、常に、コマンドラインの入力が PowerShell によって直接処理されます。 また、PowerShell では、出力を画面上で確認できるように書式設定します。 各コマンドレットで必要な作業が減るため、これは大きな差になります。 どのコマンドレットでも常に同じように作業できることが、保証されます。 コマンドレットの開発者は、コマンドライン引数の解析や出力形式の設定のために、コードを記述する必要はありません。
+
+従来のコマンドライン ツールでは、ヘルプの要求と表示に独自の体系が採用されていました。 一部のコマンドライン ツールでは、`/?` を使用してヘルプを表示します。他では、`-?`、`/H`、または `//` を使用します。 ヘルプがコンソール画面に表示される代わりに、GUI のウィンドウに表示されるものもあります。 間違ったパラメーターを使用すると、入力内容が無視され、タスクの実行が自動的に開始される場合もあります。
+PowerShell はコマンドラインを自動的に解析して処理するため、`-?` パラメーターは常に "このコマンドのヘルプを表示する" ことを意味します。
+
+> [!NOTE]
+> PowerShell でグラフィック アプリケーションを実行した場合は、そのアプリケーションのウィンドウが開きます。
+> PowerShell が介在するのは、ユーザーによって指定されたコマンドライン入力を処理するときと、コンソール ウィンドウに返されたアプリケーション出力を処理するときだけです。 アプリケーション内部の動作には影響しません。
+
+## <a name="powershell-has-a-pipeline"></a>PowerShell にはパイプラインがある
+
+パイプラインは、コマンドライン インターフェイスで使用される最も重要な概念と言っても過言ではありません。 パイプラインは、適切に利用すれば、複雑なコマンドを使用する負荷を軽減し、より簡単に作業フローを確認できます。 パイプライン内の各コマンドは、項目ごとに次のコマンドに出力を渡します。 コマンドでは、一度に複数の項目を処理する必要がなくなります。 結果として、リソース使用量が減り、出力をすぐに取得できるようになります。
+
+パイプラインで使用される表記は、他のシェルで使用される表記とほぼ同じです。 PowerShell でのパイプラインの違いは、一目見ただけではわかりにくいかもしれません。 画面にはテキストが表示されますが、PowerShell は、コマンド間ではテキストではなくオブジェクトを受け渡します。
+
+たとえば、`Out-Host` コマンドレットを使用して、別のコマンドからの出力をページ単位で表示させると、通常のテキストがページごとに分割されて画面上に表示されているだけのように見えます。
 
 ```powershell
-Get-Command *-Service
+Get-ChildItem | Out-Host -Paging
 ```
 
-タスクを実行するコマンドレットが見つかったら、`Get-Help` コマンドレットを使用して、コマンドレットの詳細を確認することができます。 たとえば、`Get-Service` コマンドレットのヘルプを表示するには、次のように入力します。
+```Output
+    Directory: /mnt/c/Git/PS-Docs/PowerShell-Docs/reference/7.0/Microsoft.PowerShell.Core
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          05/22/2020    08:30                About
+-----          05/20/2020    14:36           9044 Add-History.md
+-----          05/20/2020    14:36          12227 Clear-History.md
+-----          05/20/2020    14:36           3566 Clear-Host.md
+-----          05/20/2020    14:36          29087 Connect-PSSession.md
+-----          05/20/2020    14:36           5705 Debug-Job.md
+-----          05/20/2020    14:36           3515 Disable-ExperimentalFeature.md
+-----          05/20/2020    14:36          25531 Disable-PSRemoting.md
+-----          05/20/2020    14:36           7852 Disable-PSSessionConfiguration.md
+-----          05/20/2020    14:36          25355 Disconnect-PSSession.md
+-----          05/20/2020    14:36           3491 Enable-ExperimentalFeature.md
+-----          05/20/2020    14:36          13310 Enable-PSRemoting.md
+-----          05/20/2020    14:36           8401 Enable-PSSessionConfiguration.md
+-----          05/20/2020    14:36           9531 Enter-PSHostProcess.md
+...
+<SPACE> next page; <CR> next line; Q quit
+```
+
+また、表示する完全なページが準備できると、`Out-Host` コマンドレットに処理が転送されるため、ページングによって CPU 使用率が低下します。 パイプライン内で先行するコマンドレットは、次のページの出力が利用可能になるまで、実行を一時停止します。
+
+### <a name="objects-in-the-pipeline"></a>パイプライン内のオブジェクト
+
+PowerShell でコマンドレットを実行した場合、コンソール ウィンドウではオブジェクトをテキストで表す必要があるため、テキストが表示されます。 テキスト出力では、出力されるオブジェクトのすべてのプロパティが必ず表示されるわけではありません。
+
+たとえば、`Get-Location` コマンドレットについて考えてみます。 テキストの出力は情報の要約であり、`Get-Location` から返されたオブジェクトの完全な表現ではありません。 出力の見出しは、画面の表示用にデータを書式設定する処理によって、追加されます。
 
 ```powershell
-Get-Help Get-Service
+Get-Location
 ```
 
-ほとんどのコマンドレットでは、操作が加えられて表示用のテキストとしてレンダリングできるオブジェクトが返されます。 コマンドレットの出力を完全に理解するには、`Get-Member` コマンドレットにその出力をパイプ処理します。 たとえば、次のコマンドは、`Get-Service` コマンドレットによって出力されるオブジェクトのメンバーについての情報を表示します。
+```Output
+Path
+----
+C:\
+```
+
+出力を `Get-Member` コマンドレットにパイプ処理すると、`Get-Location` から返されたオブジェクトに関する情報が表示されます。
 
 ```powershell
-Get-Service | Get-Member
+Get-Location | Get-Member
 ```
 
-### <a name="consistency"></a>一貫性
+```Output
+   TypeName: System.Management.Automation.PathInfo
 
-システム管理は複雑な作業になる場合があります。 一貫性のあるインターフェースを備えたツールを使用することで、システム管理に特有の複雑な作業を制御しやすくなります。 残念ながら、コマンド ライン ツールもスクリプト可能なコンポーネント オブジェクト モデル (COM) オブジェクトも一貫性に優れてはいません。
+Name         MemberType Definition
+----         ---------- ----------
+Equals       Method     bool Equals(System.Object obj)
+GetHashCode  Method     int GetHashCode()
+GetType      Method     type GetType()
+ToString     Method     string ToString()
+Drive        Property   System.Management.Automation.PSDriveInfo Drive {get;}
+Path         Property   string Path {get;}
+Provider     Property   System.Management.Automation.ProviderInfo Provider {get;}
+ProviderPath Property   string ProviderPath {get;}
+```
 
-PowerShell の持つ一貫性は、その主要な利点の 1 つです。 たとえば、`Sort-Object` コマンドレットの使用法を習得すると、その知識を利用してあらゆるコマンドレットの出力を並べ替えることができます。 コマンドレットごとに異なる並べ替えルーチンを習得する必要はありません。
+`Get-Location` は、現在のパスとその他の情報を含む **PathInfo** オブジェクトを返します。
 
-さらに、コマンドレットの開発者は、コマンドレットの並べ替え機能を設計する必要はありません。 PowerShell では、一貫性を適用する基本的な機能を、フレームワークに対して提供しています。 フレームワークを使用すると、開発者に委ねられている一部の選択肢は利用できなくなります。 ただし、その見返りとして、コマンドレットの開発はずっと簡単になります。
+## <a name="built-in-help-system"></a>組み込みのヘルプ システム
 
-### <a name="interactive-and-scripting-environments"></a>対話型環境とスクリプト環境
+PowerShell には、Unix の `man` ページと似た PowerShell の概念とコマンド構文を詳細に説明するヘルプ記事があります。 [Get-Help][] コマンドレットを使用すると、これらの記事をコマンド プロンプトで表示できます。PowerShell ドキュメント オンラインでは、これらの記事の最新版を参照できます。
 
-Windows コマンド プロンプトは、コマンドライン ツールと基本的なスクリプトへのアクセスを備えた対話型シェルを提供しています。 Windows Script Host (WSH) は、スクリプトを作成できるコマンドライン ツールと COM 自動化オブジェクトを備えていますが、対話型シェルは提供していません。
+## <a name="next-steps"></a>次のステップ
 
-PowerShell では、対話型シェルとスクリプト環境を組み合わせています。 PowerShell では、コマンド ライン ツール、COM オブジェクト、および .NET クラス ライブラリにアクセスできます。 この機能の組み合わせによって、対話型ユーザー、スクリプトの作成者、およびシステム管理者が利用できる機能が拡張されます。
+PowerShell の詳細については、このサイトの「**PowerShell の習得**」のセクションを参照してください。
 
-### <a name="object-orientation"></a>オブジェクト指向
+<!-- link references -->
 
-PowerShell は、テキストではなくオブジェクトに基づいています。 コマンドの出力は、オブジェクトです。 出力されたオブジェクトは、パイプライン経由で、別のコマンドに入力として送信できます。
-
-このパイプラインは、他のシェルの使用経験があるユーザーにとって使い慣れたインターフェイスを提供しています。 PowerShell では、テキストではなくオブジェクトを送信することによって、この概念を拡張します。
-
-### <a name="easy-transition-to-scripting"></a>スクリプトへの移行が容易
-
-PowerShell のコマンドは見つけやすいので、対話的なコマンドの入力からスクリプトの作成および実行へと、簡単に移行できます。 PowerShell のトランスクリプトと履歴を利用して、コマンドをファイルにコピーして、簡単にスクリプトとして使用できます。
+[Get-Help]: /powershell/module/microsoft.powershell.core/Get-Help

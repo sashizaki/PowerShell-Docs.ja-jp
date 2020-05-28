@@ -2,12 +2,12 @@
 title: PowerShell 7.0 の新機能
 description: PowerShell 7.0 でリリースされた新機能と変更
 ms.date: 03/04/2020
-ms.openlocfilehash: 84631d9fa169c8d1b4cd4dd23eb3d7c1bca120bb
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 313ed2b663262b57abd52bfc7378e1f4661dc03a
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80263137"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808403"
 ---
 # <a name="whats-new-in-powershell-70"></a>PowerShell 7.0 の新機能
 
@@ -53,19 +53,20 @@ PowerShell 7.0 は、異種環境とハイブリッド クラウドを管理す�
 
 ## <a name="running-powershell-7"></a>PowerShell 7 の実行
 
-PowerShell 7 は新しいディレクトリにインストールされ、Windows PowerShell 5.1 と side-by-side 実行されます。 PowerShell Core 6.x がインストールされている場合、PowerShell 7 にインプレース アップグレードされ、PowerShell Core 6.x は削除されます。
+PowerShell 7 は、Windows PowerShell とは別のディレクトリにインストールされます。
+これにより、PowerShell 7 を Windows PowerShell 5.1 と共存させて実行することができます。 PowerShell Core 6.x がインストールされている場合、PowerShell 7 にインプレース アップグレードされ、PowerShell Core 6.x は削除されます。
 
 - PowerShell 7 は `%programfiles%\PowerShell\7` にインストールされます
 - `%programfiles%\PowerShell\7` フォルダーは `$env:PATH` に追加されます
 
-PowerShell 7 インストーラー パッケージにより、以前のバージョンの PowerShell Core 6.x がアップグレードされます。
+PowerShell 7 のインストーラー パッケージは、以前のバージョンの PowerShell Core 6.x をアップグレードします。
 
 - Windows 上の PowerShell Core 6.x: `%programfiles%\PowerShell\6` が `%programfiles%\PowerShell\7` に置き換えられます
 - Linux: `/opt/microsoft/powershell/6` が `/opt/microsoft/powershell/7` に置き換えられます
 - macOS: `/usr/local/microsoft/powershell/6` が `/usr/local/microsoft/powershell/7` に置き換えられます
 
 > [!NOTE]
-> Windows PowerShell では、PowerShell を起動する実行可能ファイルには `powershell.exe` という名前が付けられます。 バージョン 6 以降、この実行可能ファイルは、side-by-side 実行をサポートするように変更されています。 PowerShell 7 を起動する新しい実行可能ファイルは `pwsh.exe` です。 プレビュー ビルドは、7-preview ディレクトリで `pwsh` ではなく `pwsh-preview` としてインプレースのままです。
+> Windows PowerShell では、PowerShell を起動する実行可能ファイルには `powershell.exe` という名前が付けられます。 この実行可能ファイルは、バージョン 6 以降では、side-by-side 実行をサポートするように名前変更されています。 PowerShell 7 を起動する新しい実行可能ファイルの名前は `pwsh.exe` です。 プレビュー ビルドは、7-preview ディレクトリに、`pwsh` ではなく `pwsh-preview` としてそのまま存在します。
 
 ## <a name="improved-backwards-compatibility-with-windows-powershell"></a>Windows PowerShell との下位互換性の向上
 
@@ -266,7 +267,7 @@ ${a}?[0]
 
 ## <a name="new-view-conciseview-and-cmdlet-get-error"></a>新しい ConciseView ビューと Get-Error コマンドレット
 
-エラー メッセージの表示が改善され、対話型エラーとスクリプト エラーの読みやすさが向上し、新しい既定のビュー **ConciseView** を利用できます。 ビューは、ユーザー設定変数 `$ErrorView` を使用してユーザーが選択できます。
+PowerShell 7.0 には、対話型エラーとスクリプト エラーを見やすく表示する、エラー メッセージの表示が改善された新しい既定のビューの **ConciseView** があります。 ビューは、ユーザー設定変数 `$ErrorView` を使用してユーザーが選択できます。
 
 **ConciseView** を使用すると、スクリプトのエラーまたはパーサー エラーでない場合、エラー メッセージは 1 行になります。
 
@@ -282,8 +283,8 @@ Get-ChildItem: Cannot find path 'C:\NotReal' because it does not exist
 
 ![スクリプトからのエラー表示](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
-PowerShell 7 の既定のビューは **ConciseView** です。 前の既定のビューは **NormalView** で、ユーザー設定変数 `$ErrorView` を設定して、ユーザーが選択できます。
-
+PowerShell 7 の既定のビューは **ConciseView** です。 以前の既定のビューの **NormalView** は、ユーザー設定変数 `$ErrorView` を設定して選択できます。
+ 
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
 $ErrorView = 'ConciseView' # Sets the error view to ConciseView
@@ -292,7 +293,7 @@ $ErrorView = 'ConciseView' # Sets the error view to ConciseView
 > [!NOTE]
 > エラー メッセージのアクセント カラーの変更をサポートするために、新しいプロパティ **ErrorAccentColor** が `$Host.PrivateData` に追加されています。
 
-新しいコマンドレット `Get-Error` は、必要に応じて、完全修飾エラーの完全な詳細ビューを提供します。
+新しいコマンドレットである `Get-Error` では、必要に応じてエラーの詳細を完全に表示できます。
 既定では、このコマンドレットによって、最後に発生したエラーの詳細 (内部例外を含む) が表示されます。
 
 ![Get-Error からの表示](./media/What-s-New-in-PowerShell-70/myscript-geterror.png)
@@ -517,7 +518,7 @@ Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration
 - 先月のコミットで発生する CodeFactor スタイルの問題をクリーンアップ (#10591) (@iSazonov に感謝)
 - 試験的な PSTernaryOperator 機能の説明の入力ミスを修正 (#10586) (@bergmeister に感謝)
 - ActionPreference.Suspend 列挙値をサポートされていない予約済み状態に変換し、ユーザー設定変数で ActionPreference.Ignore を使用するときの制限を削除 (#10317) (@KirkMunro に感謝)
-- 機能を変更することなくコードの読みやすさと信頼性を高めるために ArrayList を List<T> に置換 (#10333) (@iSazonov に感謝)
+- 機能を変更することなくコードの読みやすさと信頼性を高めるために ArrayList を List\<T> に置換 (#10333) (@iSazonov に感謝)
 - TestConnectionCommand へのコード スタイルの修正 (#10439) (@vexx32 に感謝)
 - AutomationEngine をクリーンアップし、余分な SetSessionStateDrive メソッド呼び出しを削除 (#10416) (@iSazonov に感謝)
 - 既定の ParameterSetName の名前を ConvertTo-Csv および ConvertFrom-Csv の Delimiter に再度変更 (#10425)

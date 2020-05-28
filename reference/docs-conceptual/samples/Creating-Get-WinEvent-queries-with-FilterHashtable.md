@@ -1,12 +1,12 @@
 ---
 ms.date: 09/13/2019
 title: FilterHashtable を使った Get-WinEvent クエリの作成
-ms.openlocfilehash: 35d18dc894d90e698b38395b79ff4cf395515909
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 485b0cf05489d9add201c71c01fe2ed0c48db387
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "73444394"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83563934"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>FilterHashtable を使った Get-WinEvent クエリの作成
 
@@ -99,7 +99,7 @@ Get-WinEvent -FilterHashtable @{
 
 ![[Windows イベント ビューアー] のソースの画像。](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
-ハッシュ テーブルを更新して、キーが **ProviderName、値が **.NET Runtime** である**キーと値**のペアを含めます。
+ハッシュ テーブルを更新して、キーが **ProviderName** で、値が **.NET Runtime** である**キーと値**のペアを含めます。
 
 ```powershell
 Get-WinEvent -FilterHashtable @{

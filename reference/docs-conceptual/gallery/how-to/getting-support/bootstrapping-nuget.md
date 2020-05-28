@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: NuGet のブートストラップ
-ms.openlocfilehash: 70403006c7a48ac70a6766de3aa52d80cebbd86a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 139b2c5a9e742eca8f5ac36c9acd721216584335
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78935173"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83690870"
 ---
 # <a name="bootstrap-the-nuget-provider-and-nugetexe"></a>NuGet プロバイダーと NuGet.exe をブートストラップする
 
@@ -146,7 +146,7 @@ NuGet.exe プロバイダーを手動でブートストラップするプロセ�
 
 1 つは、インターネット接続されているマシンをブートストラップしてから、信頼されたプロセスを使用してオンラインのマシンにファイルをコピーする方法です。 インターネット接続されているマシンをブートストラップすると、次の 2 つのフォルダーのいずれかに NuGet.exe バイナリが配置されます。
 
- - `Publish-Module` または `Publish-Script` コマンドレットが、昇格されたアクセス許可で (管理者として) 実行された場合:
+- `Publish-Module` または `Publish-Script` コマンドレットが、昇格されたアクセス許可で (管理者として) 実行された場合:
 
    ```powershell
    $env:ProgramData\Microsoft\Windows\PowerShell\PowerShellGet
@@ -158,7 +158,7 @@ NuGet.exe プロバイダーを手動でブートストラップするプロセ�
   $env:userprofile\AppData\Local\Microsoft\Windows\PowerShell\PowerShellGet\
   ```
 
-2 つ目は、NuGet.Org の Web サイト ([https://dist.nuget.org/index.html](https://www.nuget.org/downloads)) から NuGet.exe をダウンロードする方法です。運用環境のマシンで使用する NugGet のバージョンを選択するときに、2.8.5.208 よりも新しく、"推奨" の表記があるバージョンであることを確認してください。 ブラウザーを使用してダウンロードした場合、ファイルのブロックを解除することを忘れないようにしてください。 この操作は `Unblock-File` コマンドレットを使用して実行できます。
+2 つ目は、次に示す NuGet.Org の Web サイトから NuGet.exe をダウンロードする方法です: [https://dist.nuget.org/index.html](https://www.nuget.org/downloads)。運用環境のマシンで使用する NugGet のバージョンを選択するときに、2.8.5.208 よりも新しく、"推奨" の表記があるバージョンであることを確認してください。 ブラウザーを使用してダウンロードした場合、ファイルのブロックを解除することを忘れないようにしてください。 この操作は `Unblock-File` コマンドレットを使用して実行できます。
 
 どちらの場合も、NuGet.exe ファイルを `$env:path` の任意の場所にコピーできますが、通常は次の場所にコピーします。
 

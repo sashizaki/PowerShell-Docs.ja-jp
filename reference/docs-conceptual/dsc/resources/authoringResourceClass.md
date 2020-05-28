@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell クラスを使用したカスタム DSC リソースの記述
-ms.openlocfilehash: 34356f65bcb83153e7395a16d2a4a5cf2e507332
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: f96a567253ab4808381c004df243c96886948407
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71952829"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692215"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell クラスを使用したカスタム DSC リソースの記述
 
@@ -500,7 +500,7 @@ class FileResource {
 
 1 つのモジュールで複数のクラスベースの DSC リソースを定義できます。 次の方法でフォルダー構造を作成できます。
 
-1. "<ModuleName>.psm1" ファイルに最初のリソースを定義し、以降のリソースは **DSCResources** フォルダー以下に定義します。
+1. `<ModuleName>.psm1` ファイルに最初のリソースを定義し、以降のリソースは **DSCResources** フォルダー以下に定義します。
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)

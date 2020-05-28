@@ -2,12 +2,12 @@
 title: PowerShell Core のサポート ライフサイクル
 description: PowerShell Core のサポートを管理するポリシー
 ms.date: 03/09/2020
-ms.openlocfilehash: c319371778eb4615559ae12e0cd153a535ed22bf
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: e7ec0fd9a702b7d23a784eff6e730fc3a6c30467
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500989"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83560731"
 ---
 # <a name="powershell-support-lifecycle"></a>PowerShell のサポート ライフサイクル
 
@@ -23,7 +23,7 @@ GitHub でも[コミュニティ サポート][]を用意しています。問�
 
 ## <a name="lifecycle-of-powershell-7"></a>PowerShell 7 のライフサイクル
 
-PowerShell 7 のリリースでは、PowerShell は [Microsoft モダン ライフサイクル ポリシー][modern]で引き続きサポートされていますが、サポート日は [.NET Core のサポート ライフサイクル][Long-Term]にリンクされています。 このサービス方法では、お客様は長期サポート (LTS) リリースまたは最新リリースを選択できます。 PowerShell 7.0 は LTS リリースです。 サポートは、.NET Core 3.1 のサポートで終了します。 次の LTS リリースは、次の .NET Core LTS リリースの後になります。 最新のサポート終了日については、[「PowerShell リリースのサポート終了」の表](#powershell-releases-end-of-life)を参照してください。 LTS リリースの更新プログラムには、既存のワークロードへの影響を回避または最小限に抑えるように設計された重要なセキュリティとサービスの更新プログラムおよび修正プログラムのみが含まれます。
+PowerShell 7 のリリースでは、PowerShell は [Microsoft モダン ライフサイクル ポリシー][modern]で引き続きサポートされていますが、サポート日は [.NET Core のサポート ライフサイクル][Long-Term]にリンクされています。 このサービス方法では、お客様は長期サポート (LTS) リリースまたは最新リリースを選択できます。 PowerShell 7.0 は LTS リリースです。 サポートは、.NET Core 3.1 のサポートで終了します。 次の LTS リリースは、次の .NET Core LTS リリースの後になります。 現在のサポート終了日については、「[PowerShell リリースのサポート終了](#powershell-releases-end-of-life)」の表を参照してください。 LTS リリースの更新プログラムには、既存のワークロードへの影響を回避または最小限に抑えるように設計された重要なセキュリティとサービスの更新プログラムおよび修正プログラムのみが含まれます。
 
 最新リリースは、LTS リリース間で発生するリリースです。 最新リリースには、重要な修正プログラム、イノベーション、新機能が含まれています。 最新リリースは、次の最新リリースまたは LTS リリース後 3 か月間サポートされます。
 
@@ -139,6 +139,17 @@ PowerShell 7 では、Windows PowerShell 用に記述された既存の PowerShe
 
 [試験的な機能][]には[コミュニティ サポート](#community-support)のみが与えられます。
 
+## <a name="security-servicing-criteria"></a>セキュリティ サービス提供の基準
+
+PowerShell は、「[Windows での Microsoft セキュリティ サービス提供の基準][]」に従っています。
+次の表は、サービス提供の基準を満たす機能と、満たさない機能の概要を示しています。
+
+| 機能                          | Type             |
+|----------------------------------|------------------|
+| 実行ポリシー                 | 多層防御 |
+| システム ロックダウン - AppLocker を使用 | 多層防御 |
+| システム ロックダウン - WDAC を使用      | セキュリティ機能 |
+
 ## <a name="release-history"></a>リリース履歴
 
 PowerShell のメジャー リリースのタイムラインを、次の表に示します。 この表は、履歴の参照用に掲載されています。 サポート ライフサイクルの決定に使用するためのものではありません。
@@ -172,3 +183,4 @@ PowerShell のメジャー リリースのタイムラインを、次の表に�
 [モジュールの互換性の一覧]: /powershell/scripting/whats-new/module-compatibility
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [試験的な機能]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures
+[Windows での Microsoft セキュリティ サービス提供の基準]: https://www.microsoft.com/en-us/msrc/windows-security-servicing-criteria

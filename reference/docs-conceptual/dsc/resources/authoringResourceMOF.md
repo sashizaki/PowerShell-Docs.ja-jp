@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MOF を使用したカスタム DSC リソースの記述
-ms.openlocfilehash: 24e9d15bcbe1eddd297daeb04e0713c443e52c38
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7dd107431e756e5cbfc2d6babec41331b89743cc
+ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71952899"
+ms.lasthandoff: 05/20/2020
+ms.locfileid: "83692245"
 ---
 # <a name="writing-a-custom-dsc-resource-with-mof"></a>MOF を使用したカスタム DSC リソースの記述
 
@@ -67,7 +67,7 @@ class Demo_IISWebsite : OMI_BaseResource
 
 ### <a name="writing-the-resource-script"></a>リソース スクリプトの作成
 
-リソース スクリプトでは、リソースのロジックを実装します。 このモジュールでは、**Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** という 3 つの関数を含める必要があります。 3 つのすべての関数は、リソース用に作成した MOF スキーマで定義されている一連のプロパティと同じパラメーター セットを受け取る必要があります。 このドキュメントでは、この一連のプロパティを "リソース プロパティ" と呼びます。 これらの 3 つの関数は、<ResourceName>.psm1 というファイルに格納します。 次の例では、関数は Demo_IISWebsite.psm1 というファイルに格納されます。
+リソース スクリプトでは、リソースのロジックを実装します。 このモジュールでは、**Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** という 3 つの関数を含める必要があります。 3 つのすべての関数は、リソース用に作成した MOF スキーマで定義されている一連のプロパティと同じパラメーター セットを受け取る必要があります。 このドキュメントでは、この一連のプロパティを "リソース プロパティ" と呼びます。 これらの 3 つの関数は `<ResourceName>.psm1`というファイルに格納します。 次の例では、関数は Demo_IISWebsite.psm1 というファイルに格納されます。
 
 > [!NOTE]
 > リソースに対して同じ構成スクリプトを複数回実行する場合、エラーが発生せずに、スクリプトを 1 回実行したときと同じ状態にリソースが保たれる必要があります。 これを実現するには、**Get-TargetResource** と **Test-TargetResource** 関数によってリソースが変更されないようにし、シーケンス内で同じパラメーター値を使用して **Set-TargetResource** 関数を複数回呼び出した場合に、1 回呼び出した場合と常に同じ結果になるようにします。
@@ -221,7 +221,7 @@ $result
 
 ### <a name="creating-the-module-manifest"></a>モジュール マニフェストの作成
 
-最後に、**New-ModuleManifest** コマンドレットを使用して、カスタム リソース モジュールの <ResourceName>.psd1 ファイルを定義します。 このコマンドレットを呼び出すときに、前のセクションで説明したスクリプト モジュール (.psm1) ファイルを参照します。 **Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** をエクスポートする関数の一覧に含めます。 マニフェスト ファイルの例を次に示します。
+最後に、**New-ModuleManifest** コマンドレットを使用して、ご自分のカスタム リソース モジュールに `<ResourceName>.psd1` ファイルを定義します。 このコマンドレットを呼び出すときに、前のセクションで説明したスクリプト モジュール (.psm1) ファイルを参照します。 **Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** をエクスポートする関数の一覧に含めます。 マニフェスト ファイルの例を次に示します。
 
 ```powershell
 # Module manifest for module 'Demo.IIS.Website'

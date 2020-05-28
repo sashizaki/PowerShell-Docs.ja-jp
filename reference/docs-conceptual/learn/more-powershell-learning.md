@@ -1,25 +1,25 @@
 ---
 ms.date: 06/18/2019
 keywords: powershell,コマンドレット
-title: PowerShell の詳細情報
-ms.openlocfilehash: 9d756d24e46215bea5cb9530c2628b996327cb87
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+title: PowerShell の学習用リソース
+ms.openlocfilehash: 5681fd903b323ab3cf87dc212ba64dbfdf2d78e7
+ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74416750"
+ms.lasthandoff: 05/23/2020
+ms.locfileid: "83808437"
 ---
-# <a name="more-powershell-learning"></a>PowerShell の詳細情報
+# <a name="powershell-learning-resources"></a>PowerShell の学習用リソース
 
-PowerShell の詳細に関する他の情報源
+PowerShell のその他の学習用リソース。
 
-## <a name="resources-for-powershell-users"></a>PowerShell ユーザー向けのリソース
+## <a name="blogs-and-community"></a>ブログとコミュニティ
 
 コマンド ラインで使用可能なヘルプに加え、次のリソースには、PowerShell を実行するユーザー向けの詳細情報があります。
 
 - [PowerShell チーム ブログ](https://devblogs.microsoft.com/powershell/)。 PowerShell 製品チームから直接学ぶのに最適なリソースです。
 - [Hey, Scripting Guy!ブログ](https://devblogs.microsoft.com/scripting/)の記事はシナリオに基づいた形式で、いきいきとした引き付けられる内容になっています。
-- PowerShell の使用に関する質問はありませんか。 [PowerShell コミュニティ](/powershell/#pivot=main&panel=community) ページに掲載されている多数のコミュニティ フォーラムのいずれかで、同じような関心を持っている何百人ものユーザーとつながりましょう。
+- PowerShell の使用に関する質問はありませんか。 [PowerShell コミュニティ](/powershell/scripting/community/community-support) ページに掲載されている多数のコミュニティ フォーラムのいずれかで、同じような関心を持っている何百人ものユーザーとつながりましょう。
 
 ## <a name="channel-9-videos"></a>Channel 9 の動画
 

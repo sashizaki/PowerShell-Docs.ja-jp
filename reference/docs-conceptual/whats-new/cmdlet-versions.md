@@ -2,12 +2,12 @@
 ms.date: 02/03/2020
 keywords: powershell、core
 title: モジュールとコマンドレットのリリース履歴
-ms.openlocfilehash: 824380c7aa732e6a2027d86be33cbde901ab11e1
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4cb69e9d53151a0a221654f76ad7eb5eeb8fa218
+ms.sourcegitcommit: cae9885e01c13690268151d33efac168536e9287
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80082726"
+ms.lasthandoff: 05/21/2020
+ms.locfileid: "83751324"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>モジュールとコマンドレットのリリース履歴
 
@@ -77,7 +77,6 @@ ms.locfileid: "80082726"
 | Get-IseSnippet    | &check; |      |       |       | Windows のみ |
 | Import-IseSnippet | &check; |      |       |       | Windows のみ |
 | New-IseSnippet    | &check; |      |       |       | Windows のみ |
-
 
 ### <a name="microsoftpowershellarchive"></a>Microsoft.PowerShell.Archive
 
@@ -260,7 +259,7 @@ ms.locfileid: "80082726"
 | Rename-ItemProperty           | &check; | &check; | &check; | &check; |                                  |
 | Reset-ComputerMachinePassword | &check; |         |         |         | Windows のみ                     |
 | Resolve-Path                  | &check; | &check; | &check; | &check; |                                  |
-| Restart-Computer              | &check; | &check; | &check; | &check; |                                  |
+| Restart-Computer              | &check; | &check; | &check; | &check; | 7\.1 で Linux と macOS のサポートが追加 |
 | Restart-Service               | &check; | &check; | &check; | &check; | Windows のみ                     |
 | Restore-Computer              | &check; |         |         |         | Windows のみ                     |
 | Resume-Service                | &check; | &check; | &check; | &check; | Windows のみ                     |
@@ -278,7 +277,7 @@ ms.locfileid: "80082726"
 | Start-Process                 | &check; | &check; | &check; | &check; |                                  |
 | Start-Service                 | &check; | &check; | &check; | &check; | Windows のみ                     |
 | Start-Transaction             | &check; |         |         |         | Windows のみ                     |
-| Stop-Computer                 | &check; | &check; | &check; | &check; | 7\.0 で Linux/macOS サポートが追加されました |
+| Stop-Computer                 | &check; | &check; | &check; | &check; | 7\.1 で Linux と macOS のサポートが追加 |
 | Stop-Process                  | &check; | &check; | &check; | &check; |                                  |
 | Stop-Service                  | &check; | &check; | &check; | &check; | Windows のみ                     |
 | Suspend-Service               | &check; | &check; | &check; | &check; | Windows のみ                     |

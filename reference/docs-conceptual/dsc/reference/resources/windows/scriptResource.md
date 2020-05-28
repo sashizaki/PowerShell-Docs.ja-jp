@@ -2,16 +2,16 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Script リソース
-ms.openlocfilehash: e09e86011fa7dbb2a4d7f28b5032b4328b6f6ec2
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 50d4667396c8c619079288ec51599152ed2d6cd5
+ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953069"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83557024"
 ---
 # <a name="dsc-script-resource"></a>DSC Script リソース
 
-> 適用先: Windows PowerShell 4.0、Windows PowerShell 5.x
+> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell Desired State Configuration (DSC) の **Script** リソースは、ターゲット ノードで Windows PowerShell スクリプトのブロックを実行するためのメカニズムを備えています。 **Script** リソースでは、対応する DSC 状態操作を実行するために、定義するスクリプト ブロックを含む **GetScript**、**SetScript**、および **TestScript** プロパティを使用します。
 
@@ -73,7 +73,7 @@ DSC では **GetScript** からの出力が使用されません。 [Get-DscConf
 
 ## <a name="examples"></a>例
 
-### <a name="example-1-write-sample-text-using-a-script-resource"></a>例 1: Script リソースを使用して、サンプル テキストを作成する
+### <a name="example-1-write-sample-text-using-a-script-resource"></a>例 1:Script リソースを使用して、サンプル テキストを作成する
 
 この例では、各ノード上の `C:\TempFolder\TestFile.txt` の有無についてテストします。 このファイルがない場合は、`SetScript` を使用してファイルを作成します。 `GetScript` はファイルのコンテンツを返し、その戻り値は使用されません。
 
@@ -98,7 +98,7 @@ Configuration ScriptTest
 }
 ```
 
-### <a name="example-2-compare-version-information-using-a-script-resource"></a>例 2: Script リソースを使用してバージョン情報を比較する
+### <a name="example-2-compare-version-information-using-a-script-resource"></a>例 2:Script リソースを使用してバージョン情報を比較する
 
 この例は、オーサリング コンピューター上のテキスト ファイルから *compliant* バージョン情報を取得して、これを `$version` 変数に格納します。 ノードの MOF ファイルを生成するときに、各スクリプト ブロックの `$using:version` 変数は、DSC によって `$version` 変数の値に置き換えられます。
 実行時に *compliant* バージョンが各ノード上のテキスト ファイルに格納され、以降の実行で比較され更新されます。
@@ -136,4 +136,63 @@ Configuration ScriptTest
         }
     }
 }
+```
+
+### <a name="example-3-utilizing-parameters-in-a-script-resource"></a>例 3: スクリプト リソースでパラメーターを使用する
+
+この例では、`using` スコープを使用して、スクリプト リソース内からパラメーターにアクセスします。 なお、**ConfigurationData** も同様の方法でアクセスできます。 例 2 と同様に、バージョンはターゲット ノードのローカル ファイル内に格納されます。 ローカル ファイル パスとそのバージョンは両方とも構成できますが、構成データからコードを分離する必要があります。
+
+```powershell
+Configuration ScriptTest
+{
+    param
+    (
+        [Version]
+        $Version,
+
+        [string]
+        $FilePath
+    )
+
+    Import-DscResource -ModuleName 'PSDesiredStateConfiguration'
+
+    Node localhost
+    {
+        Script UpdateConfigurationVersion
+        {
+            GetScript = {
+                $currentVersion = Get-Content -Path $using:FilePath
+                return @{ 'Result' = "$currentVersion" }
+            }
+            TestScript = {
+                # Create and invoke a scriptblock using the $GetScript automatic variable, which contains a string representation of the GetScript.
+                $state = [scriptblock]::Create($GetScript).Invoke()
+
+                if( $state['Result'] -eq $using:Version )
+                {
+                    Write-Verbose -Message ('{0} -eq {1}' -f $state['Result'],$using:version)
+                    return $true
+                }
+
+                Write-Verbose -Message ('Version up-to-date: {0}' -f $using:version)
+                return $false
+            }
+            SetScript = {
+                Set-Content -Path $using:FilePath -Value $using:Version
+            }
+        }
+    }
+}
+```
+
+生成される MOF ファイルには、`using` スコープを通じてアクセスされる変数とその値が含まれます。
+これらは、この変数を使用する各スクリプトブロックに挿入されます。 TestScript と SetScript は、簡潔にするために削除しています。
+
+```Output
+instance of MSFT_ScriptResource as $MSFT_ScriptResource1ref
+{
+ GetScript = "$FilePath ='C:\\Config.ini'\n\n $currentVersion = Get-Content -Path $FilePath\n return @{ 'Result' = \"$currentVersion\" }\n";
+ TestScript = ...;
+ SetScript = ...;
+};
 ```
