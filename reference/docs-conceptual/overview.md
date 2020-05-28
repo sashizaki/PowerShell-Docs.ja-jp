@@ -1,73 +1,156 @@
 ---
-ms.date: 08/27/2018
+ms.date: 05/22/2020
 keywords: powershell,コマンドレット
-title: PowerShell スクリプト
-ms.openlocfilehash: 281f2e798b3d3fa1c150b079d633cb7e8490dcec
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+title: PowerShell とは
+ms.openlocfilehash: 267b2938a0892c99c3a961bc7107f573df40a683
+ms.sourcegitcommit: 38215ad49e237b219e62bb5a5f0eb3b6b048df1e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "62058490"
+ms.lasthandoff: 05/27/2020
+ms.locfileid: "83868481"
 ---
-# <a name="powershell"></a><span data-ttu-id="faa99-103">PowerShell</span><span class="sxs-lookup"><span data-stu-id="faa99-103">PowerShell</span></span>
+# <a name="what-is-powershell"></a><span data-ttu-id="75a9f-103">PowerShell とは</span><span class="sxs-lookup"><span data-stu-id="75a9f-103">What is PowerShell?</span></span>
 
-<span data-ttu-id="faa99-104">PowerShell は、.NET 上に構築されたタスクベースのコマンド ライン シェルおよびスクリプト言語です。</span><span class="sxs-lookup"><span data-stu-id="faa99-104">PowerShell is a task-based command-line shell and scripting language built on .NET.</span></span>
-<span data-ttu-id="faa99-105">PowerShell は、システム管理者およびパワー ユーザーが、オペレーティング システム (Linux、macOS、および Windows) とプロセスを管理するタスクを迅速に自動化するのに役立ちます。</span><span class="sxs-lookup"><span data-stu-id="faa99-105">PowerShell helps system administrators and power-users rapidly automate tasks that manage operating systems (Linux, macOS, and Windows) and processes.</span></span>
+<span data-ttu-id="75a9f-104">PowerShell は、コマンドライン シェルとスクリプト言語で構成される、クロスプラットフォームのタスク自動化および構成管理フレームワークです。</span><span class="sxs-lookup"><span data-stu-id="75a9f-104">PowerShell is a cross-platform task automation and configuration management framework, consisting of a command-line shell and scripting language.</span></span> <span data-ttu-id="75a9f-105">.NET の共通言語ランタイム (CLR) を基に構築されている PowerShell は、テキストを受け取ってテキストを返す多くのシェルとは異なり、.NET オブジェクトを受け取って返します。</span><span class="sxs-lookup"><span data-stu-id="75a9f-105">Unlike most shells, which accept and return text, PowerShell is built on top of the .NET Common Language Runtime (CLR), and accepts and returns .NET objects.</span></span> <span data-ttu-id="75a9f-106">この根本的な変更により、自動化のためのまったく新しいツールと方法になっています。</span><span class="sxs-lookup"><span data-stu-id="75a9f-106">This fundamental change brings entirely new tools and methods for automation.</span></span>
 
-<span data-ttu-id="faa99-106">PowerShell コマンドを使用すると、コマンド ラインからコンピューターを管理できます。</span><span class="sxs-lookup"><span data-stu-id="faa99-106">PowerShell commands let you manage computers from the command line.</span></span> <span data-ttu-id="faa99-107">PowerShell プロバイダーを使用すると、レジストリや証明書ストアなどのデータ ストアに、ファイル システムにアクセスする場合と同じくらい簡単にアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="faa99-107">PowerShell providers let you access data stores, such as the registry and certificate store, as easily as you access the file system.</span></span> <span data-ttu-id="faa99-108">PowerShell には、豊富な式パーサーと、完全に開発されたスクリプト言語があります。</span><span class="sxs-lookup"><span data-stu-id="faa99-108">PowerShell includes a rich expression parser and a fully developed scripting language.</span></span>
+<!-- removing images until we can get replacements
+:::row:::
+   :::column span="":::
+      Windows
+      [![PowerShell on Windows](media/overview/windows-desktop-660.gif)](media/overview/windows-desktop.gif#lightbox)
+      [Install on Windows](install/installing-powershell-core-on-windows.md)
+   :::column-end:::
+   :::column span="":::
+      Linux
+      [![PowerShell on Linux](media/overview/linux-desktop-660.gif)](media/overview/linux-desktop.gif#lightbox)
+      [Install on Linux](install/installing-powershell-core-on-linux.md)
+   :::column-end:::
+   :::column span="":::
+      macOS
+      [![PowerShell on macOS](media/overview/macos-desktop-660.gif)](media/overview/macos-desktop.gif#lightbox)
+      [Install on macOS](install/installing-powershell-core-on-macos.md)
+   :::column-end:::
+:::row-end:::
+-->
 
-## <a name="powershell-is-open-source"></a><span data-ttu-id="faa99-109">オープン ソースの PowerShell</span><span class="sxs-lookup"><span data-stu-id="faa99-109">PowerShell is open-source</span></span>
+## <a name="output-is-object-based"></a><span data-ttu-id="75a9f-107">オブジェクト ベースの出力</span><span class="sxs-lookup"><span data-stu-id="75a9f-107">Output is object-based</span></span>
 
-<span data-ttu-id="faa99-110">PowerShell ベースのソース コードは現在、GitHub で入手可能であり、コミュニティ投稿が可能です。</span><span class="sxs-lookup"><span data-stu-id="faa99-110">PowerShell base source code is now available in GitHub and open to community contributions.</span></span>
-<span data-ttu-id="faa99-111">[GitHub の PowerShell のソース](https://github.com/powershell/powershell)を参照してください。</span><span class="sxs-lookup"><span data-stu-id="faa99-111">See [PowerShell source on GitHub](https://github.com/powershell/powershell).</span></span>
+<span data-ttu-id="75a9f-108">従来のコマンドライン インターフェイスとは異なり、 PowerShell コマンドレットは、オブジェクトを扱うように設計されています。</span><span class="sxs-lookup"><span data-stu-id="75a9f-108">Unlike traditional command-line interfaces, PowerShell cmdlets are designed to deal with objects.</span></span>
+<span data-ttu-id="75a9f-109">オブジェクトは、画面上に表示される文字による単なる文字列ではない、より詳細な構造化された情報です。</span><span class="sxs-lookup"><span data-stu-id="75a9f-109">An object is structured information that is more than just the string of characters appearing on the screen.</span></span> <span data-ttu-id="75a9f-110">コマンドの実行結果は、常に補足的な情報と共に出力され、必要に応じてこの情報を活用できます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-110">Command output always carries extra information that you can use if you need it.</span></span>
 
-<span data-ttu-id="faa99-112">「[PowerShell を入手](https://github.com/PowerShell/PowerShell#get-powershell)」で必要なものから開始できます。</span><span class="sxs-lookup"><span data-stu-id="faa99-112">You can start with the bits you need at [Get PowerShell](https://github.com/PowerShell/PowerShell#get-powershell).</span></span>
-<span data-ttu-id="faa99-113">または、「[はじめに](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell)」からクイック ツアーを開始します。</span><span class="sxs-lookup"><span data-stu-id="faa99-113">Or, perhaps, with a quick tour at [Getting Started](https://github.com/PowerShell/PowerShell/blob/master/docs/learning-powershell).</span></span>
+<span data-ttu-id="75a9f-111">テキスト処理ツールを使用して過去のデータを処理すると、PowerShell で使用された場合とは異なる動作になることがわかるでしょう。</span><span class="sxs-lookup"><span data-stu-id="75a9f-111">If you've used text-processing tools to process data in the past, you'll find that they behave differently when used in PowerShell.</span></span> <span data-ttu-id="75a9f-112">ほとんどの場合、テキスト処理ツールを使用して特定の情報を抽出する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="75a9f-112">In most cases, you don't need text-processing tools to extract specific information.</span></span> <span data-ttu-id="75a9f-113">標準の PowerShell オブジェクト構文を使用して、データの一部に直接アクセスします。</span><span class="sxs-lookup"><span data-stu-id="75a9f-113">You directly access portions of the data using standard PowerShell object syntax.</span></span>
 
-## <a name="powershell-design-goals"></a><span data-ttu-id="faa99-114">PowerShell の設計目標</span><span class="sxs-lookup"><span data-stu-id="faa99-114">PowerShell design goals</span></span>
+## <a name="the-command-family-is-extensible"></a><span data-ttu-id="75a9f-114">拡張可能なコマンド ファミリ</span><span class="sxs-lookup"><span data-stu-id="75a9f-114">The command family is extensible</span></span>
 
-<span data-ttu-id="faa99-115">PowerShell は、従来からの問題を排除し、新しい機能を追加することにより、コマンド ラインおよびスクリプト環境を改善することを目的として設計されています。</span><span class="sxs-lookup"><span data-stu-id="faa99-115">PowerShell is designed to improve the command-line and scripting environment by eliminating long-standing problems and adding new features.</span></span>
+<span data-ttu-id="75a9f-115">`cmd.exe` などのインターフェイスには、組み込みのコマンド セットを直接拡張する手段がありません。</span><span class="sxs-lookup"><span data-stu-id="75a9f-115">Interfaces such as `cmd.exe` don't provide a way for you to directly extend the built-in command set.</span></span> <span data-ttu-id="75a9f-116">`cmd.exe` 内で実行される外部のコマンドライン ツールを作成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="75a9f-116">You can create external command-line tools that run in `cmd.exe`.</span></span> <span data-ttu-id="75a9f-117">しかし、これらの外部ツールには、ヘルプの統合などのサービスがありません。</span><span class="sxs-lookup"><span data-stu-id="75a9f-117">But these external tools don't have services, such as Help integration.</span></span> <span data-ttu-id="75a9f-118">`cmd.exe` は、これらの外部ツールが有効なコマンドであることを自動認識しません。</span><span class="sxs-lookup"><span data-stu-id="75a9f-118">`cmd.exe` doesn't automatically know that these external tools are valid commands.</span></span>
 
-### <a name="discoverability"></a><span data-ttu-id="faa99-116">Discoverability (探索可能性)</span><span class="sxs-lookup"><span data-stu-id="faa99-116">Discoverability</span></span>
+<span data-ttu-id="75a9f-119">PowerShell のコマンドは_コマンドレット_と呼ばれています。</span><span class="sxs-lookup"><span data-stu-id="75a9f-119">The commands in PowerShell are known as _cmdlets_.</span></span> <span data-ttu-id="75a9f-120">各コマンドレットは個別に使用することもできますが、組み合わせて使い複雑なタスクを実行すると、その力を実感できます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-120">You can use each cmdlet separately, but their power is realized when you combine them to perform complex tasks.</span></span> <span data-ttu-id="75a9f-121">多くのシェルと同じように、PowerShell ではコンピューター上のファイル システムにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-121">Like many shells, PowerShell gives you access to the file system on the computer.</span></span> <span data-ttu-id="75a9f-122">PowerShell の_プロバイダー_を使うと、レジストリや証明書ストアなどのその他のデータ ストアに、ファイル システムとほぼ同様に簡単にアクセスできるようになります。</span><span class="sxs-lookup"><span data-stu-id="75a9f-122">PowerShell _providers_ enable you to access other data stores, such as the registry and the certificate stores, as easily as you access the file system.</span></span>
 
-<span data-ttu-id="faa99-117">PowerShell では、簡単にその機能を見つけられます。</span><span class="sxs-lookup"><span data-stu-id="faa99-117">PowerShell makes it easy to discover its features.</span></span> <span data-ttu-id="faa99-118">たとえば、Windows サービスを表示したり変更したりするコマンドレットの一覧を検索するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="faa99-118">For example, to find a list of cmdlets that view and change Windows services, type:</span></span>
+<span data-ttu-id="75a9f-123">コンパイル済みのコードまたはスクリプトを使用すると、あなた独自のコマンドレットや関数モジュールを作成できます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-123">You can create your own cmdlet and function modules using compiled code or scripts.</span></span> <span data-ttu-id="75a9f-124">モジュールは、シェルにコマンドレットとプロバイダーを追加できます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-124">Modules can add cmdlets and providers to the shell.</span></span> <span data-ttu-id="75a9f-125">また、PowerShell では、UNIX のシェル スクリプトや `cmd.exe` のバッチ ファイルに似たスクリプトもサポートしています。</span><span class="sxs-lookup"><span data-stu-id="75a9f-125">PowerShell also supports scripts that are analogous to UNIX shell scripts and `cmd.exe` batch files.</span></span>
+
+## <a name="support-for-command-aliases"></a><span data-ttu-id="75a9f-126">コマンドのエイリアスをサポートします</span><span class="sxs-lookup"><span data-stu-id="75a9f-126">Support for command aliases</span></span>
+
+<span data-ttu-id="75a9f-127">PowerShell では、代替名でコマンドを参照するエイリアスをサポートしています。</span><span class="sxs-lookup"><span data-stu-id="75a9f-127">PowerShell supports aliases to refer to commands by alternate names.</span></span> <span data-ttu-id="75a9f-128">エイリアスがあることで、他のシェルの経験があるユーザーは、既に知っている一般的なコマンド名を PowerShell のほぼ同じ操作に利用できます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-128">Aliasing allows users with experience in other shells to use common command names that they already know for similar operations in PowerShell.</span></span>
+
+<span data-ttu-id="75a9f-129">エイリアスは、新しい名前を別のコマンドに関連付けます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-129">Aliasing associates a new name with another command.</span></span> <span data-ttu-id="75a9f-130">たとえば、PowerShell には、出力ウィンドウをクリアする `Clear-Host` という内部関数があります。</span><span class="sxs-lookup"><span data-stu-id="75a9f-130">For example, PowerShell has an internal function named `Clear-Host` that clears the output window.</span></span> <span data-ttu-id="75a9f-131">コマンド プロンプトに `cls` または `clear` エイリアスのどちらかを入力できます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-131">You can type either the `cls` or `clear` alias at a command prompt.</span></span> <span data-ttu-id="75a9f-132">PowerShell はこれらのエイリアスを解釈して、`Clear-Host` 関数を実行します。</span><span class="sxs-lookup"><span data-stu-id="75a9f-132">PowerShell interprets these aliases and runs the `Clear-Host` function.</span></span>
+
+<span data-ttu-id="75a9f-133">この機能は、ユーザーが PowerShell を習得するうえで役立ちます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-133">This feature helps users to learn PowerShell.</span></span> <span data-ttu-id="75a9f-134">まず、ほとんどの `cmd.exe` および Unix ユーザーは、既に名前は知っている多数のコマンドのレパートリーを持っています。</span><span class="sxs-lookup"><span data-stu-id="75a9f-134">First, most `cmd.exe` and Unix users have a large repertoire of commands that users already know by name.</span></span> <span data-ttu-id="75a9f-135">同等の PowerShell のコマンドでは、同一の結果が得られない場合があります。</span><span class="sxs-lookup"><span data-stu-id="75a9f-135">The PowerShell equivalents may not produce identical results.</span></span> <span data-ttu-id="75a9f-136">しかし、十分に近い結果になるので、PowerShell のコマンド名を知らなくてもユーザーが既知のコマンドを利用することは可能です。</span><span class="sxs-lookup"><span data-stu-id="75a9f-136">However, the results are close enough that users can do work without knowing the PowerShell command name.</span></span> <span data-ttu-id="75a9f-137">新しいコマンド シェルを習得する上でのもう 1 つの主なストレス要因は、"身体が覚えている" ことです。</span><span class="sxs-lookup"><span data-stu-id="75a9f-137">"Muscle memory" is another major source of frustration when learning a new command shell.</span></span> <span data-ttu-id="75a9f-138">長年にわたって `cmd.exe` を使用してきた場合、画面をクリアするのに、反射的に `cls` コマンドを入力してしまうでしょう。</span><span class="sxs-lookup"><span data-stu-id="75a9f-138">If you have used `cmd.exe` for years, you might reflexively type the `cls` command to clear the screen.</span></span> <span data-ttu-id="75a9f-139">`Clear-Host` のエイリアスがなければ、エラー メッセージを受け取ってしまい、出力をクリアするにはどうすればいいかわからないでしょう。</span><span class="sxs-lookup"><span data-stu-id="75a9f-139">Without the alias for `Clear-Host`, you receive an error message and won't know what to do to clear the output.</span></span>
+
+## <a name="powershell-handles-console-input-and-display"></a><span data-ttu-id="75a9f-140">PowerShell によってコンソールの入力と表示が処理される</span><span class="sxs-lookup"><span data-stu-id="75a9f-140">PowerShell handles console input and display</span></span>
+
+<span data-ttu-id="75a9f-141">コマンドを入力すると、常に、コマンドラインの入力が PowerShell によって直接処理されます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-141">When you type a command, PowerShell always processes the command-line input directly.</span></span> <span data-ttu-id="75a9f-142">また、PowerShell では、出力を画面上で確認できるように書式設定します。</span><span class="sxs-lookup"><span data-stu-id="75a9f-142">PowerShell also formats the output that you see on the screen.</span></span> <span data-ttu-id="75a9f-143">各コマンドレットで必要な作業が減るため、これは大きな差になります。</span><span class="sxs-lookup"><span data-stu-id="75a9f-143">This difference is significant because it reduces the work required of each cmdlet.</span></span> <span data-ttu-id="75a9f-144">どのコマンドレットでも常に同じように作業できることが、保証されます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-144">It ensures that you can always do things the same way with any cmdlet.</span></span> <span data-ttu-id="75a9f-145">コマンドレットの開発者は、コマンドライン引数の解析や出力形式の設定のために、コードを記述する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="75a9f-145">Cmdlet developers don't need to write code to parse the command-line arguments or format the output.</span></span>
+
+<span data-ttu-id="75a9f-146">従来のコマンドライン ツールでは、ヘルプの要求と表示に独自の体系が採用されていました。</span><span class="sxs-lookup"><span data-stu-id="75a9f-146">Traditional command-line tools have their own schemes for requesting and displaying Help.</span></span> <span data-ttu-id="75a9f-147">一部のコマンドライン ツールでは、`/?` を使用してヘルプを表示します。他では、`-?`、`/H`、または `//` を使用します。</span><span class="sxs-lookup"><span data-stu-id="75a9f-147">Some command-line tools use `/?` to trigger the Help display; others use `-?`, `/H`, or even `//`.</span></span> <span data-ttu-id="75a9f-148">ヘルプがコンソール画面に表示される代わりに、GUI のウィンドウに表示されるものもあります。</span><span class="sxs-lookup"><span data-stu-id="75a9f-148">Some will display Help in a GUI window, rather than in the console display.</span></span> <span data-ttu-id="75a9f-149">間違ったパラメーターを使用すると、入力内容が無視され、タスクの実行が自動的に開始される場合もあります。</span><span class="sxs-lookup"><span data-stu-id="75a9f-149">If you use the wrong parameter, the tool might ignore what you typed and begin executing a task automatically.</span></span>
+<span data-ttu-id="75a9f-150">PowerShell はコマンドラインを自動的に解析して処理するため、`-?` パラメーターは常に "このコマンドのヘルプを表示する" ことを意味します。</span><span class="sxs-lookup"><span data-stu-id="75a9f-150">Since PowerShell automatically parses and processes the command line, the `-?` parameter always means "show me Help for this command".</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="75a9f-151">PowerShell でグラフィック アプリケーションを実行した場合は、そのアプリケーションのウィンドウが開きます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-151">If you run a graphic application in PowerShell, the window for the application opens.</span></span>
+> <span data-ttu-id="75a9f-152">PowerShell が介在するのは、ユーザーによって指定されたコマンドライン入力を処理するときと、コンソール ウィンドウに返されたアプリケーション出力を処理するときだけです。</span><span class="sxs-lookup"><span data-stu-id="75a9f-152">PowerShell intervenes only when processing the command-line input you supply or the application output returned to the console window.</span></span> <span data-ttu-id="75a9f-153">アプリケーション内部の動作には影響しません。</span><span class="sxs-lookup"><span data-stu-id="75a9f-153">It does not affect how the application works internally.</span></span>
+
+## <a name="powershell-has-a-pipeline"></a><span data-ttu-id="75a9f-154">PowerShell にはパイプラインがある</span><span class="sxs-lookup"><span data-stu-id="75a9f-154">PowerShell has a pipeline</span></span>
+
+<span data-ttu-id="75a9f-155">パイプラインは、コマンドライン インターフェイスで使用される最も重要な概念と言っても過言ではありません。</span><span class="sxs-lookup"><span data-stu-id="75a9f-155">Pipelines are arguably the most valuable concept used in command-line interfaces.</span></span> <span data-ttu-id="75a9f-156">パイプラインは、適切に利用すれば、複雑なコマンドを使用する負荷を軽減し、より簡単に作業フローを確認できます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-156">When used properly, pipelines reduce the effort of using complex commands and make it easier to see the flow of work.</span></span> <span data-ttu-id="75a9f-157">パイプライン内の各コマンドは、項目ごとに次のコマンドに出力を渡します。</span><span class="sxs-lookup"><span data-stu-id="75a9f-157">Each command in a pipeline passes its output, item by item, to the next command.</span></span> <span data-ttu-id="75a9f-158">コマンドでは、一度に複数の項目を処理する必要がなくなります。</span><span class="sxs-lookup"><span data-stu-id="75a9f-158">Commands don't have to handle more than one item at a time.</span></span> <span data-ttu-id="75a9f-159">結果として、リソース使用量が減り、出力をすぐに取得できるようになります。</span><span class="sxs-lookup"><span data-stu-id="75a9f-159">The result is reduced resource consumption and the ability to get output immediately.</span></span>
+
+<span data-ttu-id="75a9f-160">パイプラインで使用される表記は、他のシェルで使用される表記とほぼ同じです。</span><span class="sxs-lookup"><span data-stu-id="75a9f-160">The notation used for pipelines is similar to the notation used in other shells.</span></span> <span data-ttu-id="75a9f-161">PowerShell でのパイプラインの違いは、一目見ただけではわかりにくいかもしれません。</span><span class="sxs-lookup"><span data-stu-id="75a9f-161">At first glance, it may not be apparent how pipelines are different in PowerShell.</span></span> <span data-ttu-id="75a9f-162">画面にはテキストが表示されますが、PowerShell は、コマンド間ではテキストではなくオブジェクトを受け渡します。</span><span class="sxs-lookup"><span data-stu-id="75a9f-162">Although you see text on the screen, PowerShell pipes objects, not text, between commands.</span></span>
+
+<span data-ttu-id="75a9f-163">たとえば、`Out-Host` コマンドレットを使用して、別のコマンドからの出力をページ単位で表示させると、通常のテキストがページごとに分割されて画面上に表示されているだけのように見えます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-163">For example, if you use the `Out-Host` cmdlet to force a page-by-page display of output from another command, the output looks just like the normal text displayed on the screen, broken up into pages:</span></span>
 
 ```powershell
-Get-Command *-Service
+Get-ChildItem | Out-Host -Paging
 ```
 
-<span data-ttu-id="faa99-119">タスクを実行するコマンドレットが見つかったら、`Get-Help` コマンドレットを使用して、コマンドレットの詳細を確認することができます。</span><span class="sxs-lookup"><span data-stu-id="faa99-119">After discovering which cmdlet accomplishes a task, you can learn more about the cmdlet by using the `Get-Help` cmdlet.</span></span> <span data-ttu-id="faa99-120">たとえば、`Get-Service` コマンドレットのヘルプを表示するには、次のように入力します。</span><span class="sxs-lookup"><span data-stu-id="faa99-120">For example, to display help about the `Get-Service` cmdlet, type:</span></span>
+```Output
+    Directory: /mnt/c/Git/PS-Docs/PowerShell-Docs/reference/7.0/Microsoft.PowerShell.Core
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----          05/22/2020    08:30                About
+-----          05/20/2020    14:36           9044 Add-History.md
+-----          05/20/2020    14:36          12227 Clear-History.md
+-----          05/20/2020    14:36           3566 Clear-Host.md
+-----          05/20/2020    14:36          29087 Connect-PSSession.md
+-----          05/20/2020    14:36           5705 Debug-Job.md
+-----          05/20/2020    14:36           3515 Disable-ExperimentalFeature.md
+-----          05/20/2020    14:36          25531 Disable-PSRemoting.md
+-----          05/20/2020    14:36           7852 Disable-PSSessionConfiguration.md
+-----          05/20/2020    14:36          25355 Disconnect-PSSession.md
+-----          05/20/2020    14:36           3491 Enable-ExperimentalFeature.md
+-----          05/20/2020    14:36          13310 Enable-PSRemoting.md
+-----          05/20/2020    14:36           8401 Enable-PSSessionConfiguration.md
+-----          05/20/2020    14:36           9531 Enter-PSHostProcess.md
+...
+<SPACE> next page; <CR> next line; Q quit
+```
+
+<span data-ttu-id="75a9f-164">また、表示する完全なページが準備できると、`Out-Host` コマンドレットに処理が転送されるため、ページングによって CPU 使用率が低下します。</span><span class="sxs-lookup"><span data-stu-id="75a9f-164">Paging also reduces CPU utilization because processing transfers to the `Out-Host` cmdlet when it has a complete page ready to display.</span></span> <span data-ttu-id="75a9f-165">パイプライン内で先行するコマンドレットは、次のページの出力が利用可能になるまで、実行を一時停止します。</span><span class="sxs-lookup"><span data-stu-id="75a9f-165">The cmdlets that precede it in the pipeline pause execution until the next page of output is available.</span></span>
+
+### <a name="objects-in-the-pipeline"></a><span data-ttu-id="75a9f-166">パイプライン内のオブジェクト</span><span class="sxs-lookup"><span data-stu-id="75a9f-166">Objects in the pipeline</span></span>
+
+<span data-ttu-id="75a9f-167">PowerShell でコマンドレットを実行した場合、コンソール ウィンドウではオブジェクトをテキストで表す必要があるため、テキストが表示されます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-167">When you run a cmdlet in PowerShell, you see text output because it is necessary to represent objects as text in a console window.</span></span> <span data-ttu-id="75a9f-168">テキスト出力では、出力されるオブジェクトのすべてのプロパティが必ず表示されるわけではありません。</span><span class="sxs-lookup"><span data-stu-id="75a9f-168">The text output may not display all of the properties of the object being output.</span></span>
+
+<span data-ttu-id="75a9f-169">たとえば、`Get-Location` コマンドレットについて考えてみます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-169">For example, consider the `Get-Location` cmdlet.</span></span> <span data-ttu-id="75a9f-170">テキストの出力は情報の要約であり、`Get-Location` から返されたオブジェクトの完全な表現ではありません。</span><span class="sxs-lookup"><span data-stu-id="75a9f-170">The text output is a summary of information, not a complete representation of the object returned by `Get-Location`.</span></span> <span data-ttu-id="75a9f-171">出力の見出しは、画面の表示用にデータを書式設定する処理によって、追加されます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-171">The heading in the output is added by the process that formats the data for onscreen display.</span></span>
 
 ```powershell
-Get-Help Get-Service
+Get-Location
 ```
 
-<span data-ttu-id="faa99-121">ほとんどのコマンドレットでは、操作が加えられて表示用のテキストとしてレンダリングできるオブジェクトが返されます。</span><span class="sxs-lookup"><span data-stu-id="faa99-121">Most cmdlets return objects that can be manipulated and then rendered as text for display.</span></span> <span data-ttu-id="faa99-122">コマンドレットの出力を完全に理解するには、`Get-Member` コマンドレットにその出力をパイプ処理します。</span><span class="sxs-lookup"><span data-stu-id="faa99-122">To fully understand the output of a cmdlet, pipe the output to the `Get-Member` cmdlet.</span></span> <span data-ttu-id="faa99-123">たとえば、次のコマンドは、`Get-Service` コマンドレットによって出力されるオブジェクトのメンバーについての情報を表示します。</span><span class="sxs-lookup"><span data-stu-id="faa99-123">For example, the following command displays information about the members of the object output by the `Get-Service` cmdlet.</span></span>
+```Output
+Path
+----
+C:\
+```
+
+<span data-ttu-id="75a9f-172">出力を `Get-Member` コマンドレットにパイプ処理すると、`Get-Location` から返されたオブジェクトに関する情報が表示されます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-172">Piping the output to the `Get-Member` cmdlet displays information about the object returned by `Get-Location`.</span></span>
 
 ```powershell
-Get-Service | Get-Member
+Get-Location | Get-Member
 ```
 
-### <a name="consistency"></a><span data-ttu-id="faa99-124">一貫性</span><span class="sxs-lookup"><span data-stu-id="faa99-124">Consistency</span></span>
+```Output
+   TypeName: System.Management.Automation.PathInfo
 
-<span data-ttu-id="faa99-125">システム管理は複雑な作業になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="faa99-125">Managing systems can be a complex task.</span></span> <span data-ttu-id="faa99-126">一貫性のあるインターフェースを備えたツールを使用することで、システム管理に特有の複雑な作業を制御しやすくなります。</span><span class="sxs-lookup"><span data-stu-id="faa99-126">Tools that have a consistent interface help to control the inherent complexity.</span></span> <span data-ttu-id="faa99-127">残念ながら、コマンド ライン ツールもスクリプト可能なコンポーネント オブジェクト モデル (COM) オブジェクトも一貫性に優れてはいません。</span><span class="sxs-lookup"><span data-stu-id="faa99-127">Unfortunately, command-line tools and scriptable Component Object Model (COM) objects aren't known for their consistency.</span></span>
+Name         MemberType Definition
+----         ---------- ----------
+Equals       Method     bool Equals(System.Object obj)
+GetHashCode  Method     int GetHashCode()
+GetType      Method     type GetType()
+ToString     Method     string ToString()
+Drive        Property   System.Management.Automation.PSDriveInfo Drive {get;}
+Path         Property   string Path {get;}
+Provider     Property   System.Management.Automation.ProviderInfo Provider {get;}
+ProviderPath Property   string ProviderPath {get;}
+```
 
-<span data-ttu-id="faa99-128">PowerShell の持つ一貫性は、その主要な利点の 1 つです。</span><span class="sxs-lookup"><span data-stu-id="faa99-128">The consistency of PowerShell is one of its primary assets.</span></span> <span data-ttu-id="faa99-129">たとえば、`Sort-Object` コマンドレットの使用法を習得すると、その知識を利用してあらゆるコマンドレットの出力を並べ替えることができます。</span><span class="sxs-lookup"><span data-stu-id="faa99-129">For example, if you learn how to use the `Sort-Object` cmdlet, you can use that knowledge to sort the output of any cmdlet.</span></span> <span data-ttu-id="faa99-130">コマンドレットごとに異なる並べ替えルーチンを習得する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="faa99-130">You don't have to learn the different sorting routines of each cmdlet.</span></span>
+<span data-ttu-id="75a9f-173">`Get-Location` は、現在のパスとその他の情報を含む **PathInfo** オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="75a9f-173">`Get-Location` returns a **PathInfo** object that contains the current path and other information.</span></span>
 
-<span data-ttu-id="faa99-131">さらに、コマンドレットの開発者は、コマンドレットの並べ替え機能を設計する必要はありません。</span><span class="sxs-lookup"><span data-stu-id="faa99-131">Additionally, cmdlet developers don't have to design sorting features for their cmdlets.</span></span> <span data-ttu-id="faa99-132">PowerShell では、一貫性を適用する基本的な機能を、フレームワークに対して提供しています。</span><span class="sxs-lookup"><span data-stu-id="faa99-132">PowerShell provides a framework with the basic features that forces consistency.</span></span> <span data-ttu-id="faa99-133">フレームワークを使用すると、開発者に委ねられている一部の選択肢は利用できなくなります。</span><span class="sxs-lookup"><span data-stu-id="faa99-133">The framework eliminates some choices that are left to the developer.</span></span> <span data-ttu-id="faa99-134">ただし、その見返りとして、コマンドレットの開発はずっと簡単になります。</span><span class="sxs-lookup"><span data-stu-id="faa99-134">But, in return, it makes the development of cmdlets much simpler.</span></span>
+## <a name="built-in-help-system"></a><span data-ttu-id="75a9f-174">組み込みのヘルプ システム</span><span class="sxs-lookup"><span data-stu-id="75a9f-174">Built-in help system</span></span>
 
-### <a name="interactive-and-scripting-environments"></a><span data-ttu-id="faa99-135">対話型環境とスクリプト環境</span><span class="sxs-lookup"><span data-stu-id="faa99-135">Interactive and scripting environments</span></span>
+<span data-ttu-id="75a9f-175">PowerShell には、Unix の `man` ページと似た PowerShell の概念とコマンド構文を詳細に説明するヘルプ記事があります。</span><span class="sxs-lookup"><span data-stu-id="75a9f-175">Similar to Unix `man` pages, PowerShell includes detailed help articles that explain PowerShell concepts and command syntax.</span></span> <span data-ttu-id="75a9f-176">[Get-Help][] コマンドレットを使用すると、これらの記事をコマンド プロンプトで表示できます。PowerShell ドキュメント オンラインでは、これらの記事の最新版を参照できます。</span><span class="sxs-lookup"><span data-stu-id="75a9f-176">Use the [Get-Help][] cmdlet to display these articles at the command prompt or view the most recently updated versions of these articles in the PowerShell documentation online.</span></span>
 
-<span data-ttu-id="faa99-136">Windows コマンド プロンプトは、コマンドライン ツールと基本的なスクリプトへのアクセスを備えた対話型シェルを提供しています。</span><span class="sxs-lookup"><span data-stu-id="faa99-136">The Windows Command Prompt provides an interactive shell with access to command-line tools and basic scripting.</span></span> <span data-ttu-id="faa99-137">Windows Script Host (WSH) は、スクリプトを作成できるコマンドライン ツールと COM 自動化オブジェクトを備えていますが、対話型シェルは提供していません。</span><span class="sxs-lookup"><span data-stu-id="faa99-137">Windows Script Host (WSH) has scriptable command-line tools and COM automation objects, but doesn't provide an interactive shell.</span></span>
+## <a name="next-steps"></a><span data-ttu-id="75a9f-177">次のステップ</span><span class="sxs-lookup"><span data-stu-id="75a9f-177">Next steps</span></span>
 
-<span data-ttu-id="faa99-138">PowerShell では、対話型シェルとスクリプト環境を組み合わせています。</span><span class="sxs-lookup"><span data-stu-id="faa99-138">PowerShell combines an interactive shell and a scripting environment.</span></span> <span data-ttu-id="faa99-139">PowerShell では、コマンド ライン ツール、COM オブジェクト、および .NET クラス ライブラリにアクセスできます。</span><span class="sxs-lookup"><span data-stu-id="faa99-139">PowerShell can access command-line tools, COM objects, and .NET class libraries.</span></span> <span data-ttu-id="faa99-140">この機能の組み合わせによって、対話型ユーザー、スクリプトの作成者、およびシステム管理者が利用できる機能が拡張されます。</span><span class="sxs-lookup"><span data-stu-id="faa99-140">This combination of features extends the capabilities of the interactive user, the script writer, and the system administrator.</span></span>
+<span data-ttu-id="75a9f-178">PowerShell の詳細については、このサイトの「**PowerShell の習得**」のセクションを参照してください。</span><span class="sxs-lookup"><span data-stu-id="75a9f-178">To learn more about PowerShell, see the **Learning PowerShell** section of this site.</span></span>
 
-### <a name="object-orientation"></a><span data-ttu-id="faa99-141">オブジェクト指向</span><span class="sxs-lookup"><span data-stu-id="faa99-141">Object orientation</span></span>
+<!-- link references -->
 
-<span data-ttu-id="faa99-142">PowerShell は、テキストではなくオブジェクトに基づいています。</span><span class="sxs-lookup"><span data-stu-id="faa99-142">PowerShell is based on object not text.</span></span> <span data-ttu-id="faa99-143">コマンドの出力は、オブジェクトです。</span><span class="sxs-lookup"><span data-stu-id="faa99-143">The output of a command is an object.</span></span> <span data-ttu-id="faa99-144">出力されたオブジェクトは、パイプライン経由で、別のコマンドに入力として送信できます。</span><span class="sxs-lookup"><span data-stu-id="faa99-144">You can send the output object, through the pipeline, to another command as its input.</span></span>
-
-<span data-ttu-id="faa99-145">このパイプラインは、他のシェルの使用経験があるユーザーにとって使い慣れたインターフェイスを提供しています。</span><span class="sxs-lookup"><span data-stu-id="faa99-145">This pipeline provides a familiar interface for people experienced with other shells.</span></span> <span data-ttu-id="faa99-146">PowerShell では、テキストではなくオブジェクトを送信することによって、この概念を拡張します。</span><span class="sxs-lookup"><span data-stu-id="faa99-146">PowerShell extends this concept by sending objects rather than text.</span></span>
-
-### <a name="easy-transition-to-scripting"></a><span data-ttu-id="faa99-147">スクリプトへの移行が容易</span><span class="sxs-lookup"><span data-stu-id="faa99-147">Easy transition to scripting</span></span>
-
-<span data-ttu-id="faa99-148">PowerShell のコマンドは見つけやすいので、対話的なコマンドの入力からスクリプトの作成および実行へと、簡単に移行できます。</span><span class="sxs-lookup"><span data-stu-id="faa99-148">PowerShell's command discoverability makes it easy to transition from typing commands interactively to creating and running scripts.</span></span> <span data-ttu-id="faa99-149">PowerShell のトランスクリプトと履歴を利用して、コマンドをファイルにコピーして、簡単にスクリプトとして使用できます。</span><span class="sxs-lookup"><span data-stu-id="faa99-149">PowerShell transcripts and history make it easy to copy commands to a file for use as a script.</span></span>
+[Get-Help]: /powershell/module/microsoft.powershell.core/Get-Help
