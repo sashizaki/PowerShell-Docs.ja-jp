@@ -41,8 +41,28 @@
           href: learn/ps101/powershell.exe-command-line-help.md
         - name: タブ拡張の使用
           href: learn/ps101/using-tab-expansion.md
-    - name: 試験的な機能の使用
-      href: learn/experimental-features.md
+    - name: 詳しく調べる
+      items:
+        - name: 概要
+          href: learn/deep-dives/overview.md
+        - name: 配列について知りたいことのすべて
+          href: learn/deep-dives/everything-about-arrays.md
+        - name: ハッシュテーブルについて知りたいことのすべて
+          href: learn/deep-dives/everything-about-hashtable.md
+        - name: PSCustomObject について知りたいことのすべて
+          href: learn/deep-dives/everything-about-pscustomobject.md
+        - name: 文字列の置換について知りたいことのすべて
+          href: learn/deep-dives/everything-about-string-substitutions.md
+        - name: if/then/else について知りたいことのすべて
+          href: learn/deep-dives/everything-about-if.md
+        - name: スイッチについて知りたいことのすべて
+          href: learn/deep-dives/everything-about-switch.md
+        - name: 例外について知りたかったことのすべて
+          href: learn/deep-dives/everything-about-exceptions.md
+        - name: $null について知りたいことのすべて
+          href: learn/deep-dives/everything-about-null.md
+        - name: ShouldProcess について知りたいことのすべて
+          href: learn/deep-dives/everything-about-shouldprocess.md
     - name: PowerShell リモート処理
       items:
         - name: Just Enough Administration (JEA)
@@ -73,6 +93,8 @@
           href: learn/remoting/winrmsecurity.md
         - name: PowerShell リモート処理での次ホップの実行
           href: learn/remoting/ps-remoting-second-hop.md
+    - name: 試験的な機能の使用
+      href: learn/experimental-features.md
     - name: その他のリソース
       href: learn/more-powershell-learning.md
     - name: 用語集
@@ -748,6 +770,8 @@
           href: dev-cross-plat/vscode/understanding-file-encoding.md
     - name: 移植可能なモジュールの作成
       href: dev-cross-plat/writing-portable-modules.md
+    - name: 標準ライブラリのバイナリ モジュールの作成方法
+      href: dev-cross-plat/create-standard-library-binary-module.md
     - name: レガシ PowerShell SDK
       items:
         - name: 概要
