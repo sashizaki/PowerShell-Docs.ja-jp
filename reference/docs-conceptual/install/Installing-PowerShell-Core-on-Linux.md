@@ -2,12 +2,12 @@
 title: Linux への PowerShell のインストール
 description: さまざまな Linux ディストリビューションへの PowerShell のインストールに関する情報
 ms.date: 05/21/2020
-ms.openlocfilehash: b87827635cc66de3714100dfac6de56860495d79
-ms.sourcegitcommit: fd6a33b9fac973b3554fecfea7f51475e650a606
+ms.openlocfilehash: 1f3526507f84c43fbe44235e9a44e43d7f3d3e37
+ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/22/2020
-ms.locfileid: "83791503"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84148465"
 ---
 # <a name="installing-powershell-on-linux"></a>Linux への PowerShell のインストール
 
@@ -84,7 +84,7 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-スーパーユーザーとして、Microsoft リポジトリを 1 回登録します。 登録後は、`sudo apt-get upgrade powershell` を使って PowerShell を更新できます。
+スーパーユーザーとして、Microsoft リポジトリを 1 回登録します。 登録後は、`sudo apt-get install powershell` を使って PowerShell を更新できます。
 
 ### <a name="installation-via-direct-download---ubuntu-1604"></a>直接ダウンロードによるインストール - Ubuntu 16.04
 
@@ -134,7 +134,7 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-スーパーユーザーとして、Microsoft リポジトリを 1 回登録します。 登録後は、`sudo apt-get upgrade powershell` を使って PowerShell を更新できます。
+スーパーユーザーとして、Microsoft リポジトリを 1 回登録します。 登録後は、`sudo apt-get install powershell` を使って PowerShell を更新できます。
 
 ### <a name="installation-via-direct-download---ubuntu-1804"></a>直接ダウンロードによるインストール - Ubuntu 18.04
 
@@ -203,7 +203,7 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-スーパーユーザーとして、Microsoft リポジトリを 1 回登録します。 登録後は、`sudo apt-get upgrade powershell` を使って PowerShell を更新できます。
+スーパーユーザーとして、Microsoft リポジトリを 1 回登録します。 登録後は、`sudo apt-get install powershell` を使って PowerShell を更新できます。
 
 ## <a name="debian-9"></a>Debian 9
 
@@ -234,7 +234,7 @@ sudo apt-get install -y powershell
 pwsh
 ```
 
-スーパーユーザーとして、Microsoft リポジトリを 1 回登録します。 登録後は、`sudo apt-get upgrade powershell` を使って PowerShell を更新できます。
+スーパーユーザーとして、Microsoft リポジトリを 1 回登録します。 登録後は、`sudo apt-get install powershell` を使って PowerShell を更新できます。
 
 ### <a name="installation-via-direct-download---debian-9"></a>直接ダウンロードによるインストール - Debian 9
 
