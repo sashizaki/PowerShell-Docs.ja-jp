@@ -3,12 +3,12 @@ title: 例外について知りたかったことのすべて
 description: エラー処理は、コードを記述するときにはなくてはならないものです。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: fd3ddacbf14d1faeee98682697161f86c6ff0c72
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 3ecb1669fa8d58bc742d4e8e77051b3ace4452a0
+ms.sourcegitcommit: 4a40e3ea3601c02366be3495a5dcc7f4cac9f1ea
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149545"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84337184"
 ---
 # <a name="everything-you-wanted-to-know-about-exceptions"></a>例外について知りたかったことのすべて
 
@@ -55,7 +55,7 @@ ms.locfileid: "84149545"
 独自の例外イベントを作成するには、`throw` キーワードを使用して例外をスローします。
 
 ```powershell
-function Do-Something
+function Start-Something
 {
     throw "Bad thing happened"
 }
@@ -64,7 +64,7 @@ function Do-Something
 これにより、終了エラーであるランタイム例外が作成されます。 これは、呼び出し元の関数の `catch` によって処理されるか、またはこのようなメッセージを使用してスクリプトを終了します。
 
 ```powershell
-PS> Do-Something
+PS> Start-Something
 
 Bad thing happened
 At line:1 char:1
@@ -89,7 +89,7 @@ Write-Error -Message "Houston, we have a problem." -ErrorAction Stop
 高度な関数またはコマンドレットで `-ErrorAction Stop` を指定すると、すべての `Write-Error` ステートメントが、実行を停止するか `catch` によって処理できる終了エラーになります。
 
 ```powershell
-Do-Something -ErrorAction Stop
+Start-Something -ErrorAction Stop
 ```
 
 ### <a name="trycatch"></a>Try/Catch
@@ -99,7 +99,7 @@ PowerShell (およびその他の多くの言語) での例外処理のしくみ
 ```powershell
 try
 {
-    Do-Something
+    Start-Something
 }
 catch
 {
@@ -108,7 +108,7 @@ catch
 
 try
 {
-    Do-Something -ErrorAction Stop
+    Start-Something -ErrorAction Stop
 }
 catch
 {
@@ -213,7 +213,7 @@ InvocationName        : Get-Resource
 ```powershell
 PS> $PSItem.ScriptStackTrace
 at Get-Resource, C:\blog\throwerror.ps1: line 13
-at Do-Something, C:\blog\throwerror.ps1: line 5
+at Start-Something, C:\blog\throwerror.ps1: line 5
 at <ScriptBlock>, C:\blog\throwerror.ps1: line 18
 ```
 
@@ -276,7 +276,7 @@ at CallSite.Target(Closure , CallSite , Type , String )
 ```powershell
 try
 {
-    Do-Something -Path $path
+    Start-Something -Path $path
 }
 catch [System.IO.FileNotFoundException]
 {
@@ -300,7 +300,7 @@ catch [System.IO.IOException]
 ```powershell
 try
 {
-    Do-Something -Path $path -ErrorAction Stop
+    Start-Something -Path $path -ErrorAction Stop
 }
 catch [System.IO.DirectoryNotFoundException],[System.IO.FileNotFoundException]
 {
@@ -449,7 +449,6 @@ At line:31 char:9
     + FullyQualifiedErrorId : Unable to find the specified file.
 ```
 
-
 31 行目で `throw` を呼び出したためにスクリプトが失敗したと通知するエラー メッセージは、スクリプトのユーザーに対して表示する適切なメッセージではありません。 これは役に立つものではありません。
 
 Dexter Dhami 氏が、`ThrowTerminatingError()` を使用してこれを訂正できることを指摘しました。
@@ -495,13 +494,13 @@ catch
 Kirk Munro 氏は、一部の例外は `try/catch` ブロック内で実行された場合に単なる終了エラーとなることを指摘しています。 これは、0 除算のランタイム例外を生成する例です。
 
 ```powershell
-function Do-Something { 1/(1-1) }
+function Start-Something { 1/(1-1) }
 ```
 
 次に、これを以下のように呼び出して、エラーが生成され、メッセージも出力されることを確認します。
 
 ```powershell
-&{ Do-Something; Write-Output "We did it. Send Email" }
+&{ Start-Something; Write-Output "We did it. Send Email" }
 ```
 
 しかし、同じコードを `try/catch` 内に配置すると、別の現象が発生します。
@@ -509,14 +508,13 @@ function Do-Something { 1/(1-1) }
 ```powershell
 try
 {
-    &{ Do-Something; Write-Output "We did it. Send Email" }
+    &{ Start-Something; Write-Output "We did it. Send Email" }
 }
 catch
 {
     Write-Output "Notify Admin to fix error and send email"
 }
 ```
-
 
 エラーが終了エラーになり、最初のメッセージが出力されないことがわかります。 何が問題かというと、このコードを関数に含めることができるが、`try/catch` が使用されると動作が異なるということです。
 
@@ -528,12 +526,12 @@ catch
 
 ### <a name="public-function-templates"></a>パブリック関数のテンプレート
 
-Kirk Munro 氏との会話の中で得られた最後の重要な点は、すべての高度な関数のすべての `begin`、`process`、および `end` ブロックの周りに `try{...}catch{...}` を配置することです。 これらの汎用 catch ブロックでは、`$PSCmdlet.ThrowTerminatingError($PSitem)` を使用する単一行により、関数を離れるすべての例外を処理します。
+Kirk Munro 氏との会話の中で得られた最後の重要な点は、すべての高度な関数のすべての `begin`、`process`、および `end` ブロックの周りに `try{...}catch{...}` を配置することです。 これらの汎用 catch ブロックでは、`$PSCmdlet.ThrowTerminatingError($PSItem)` を使用する単一行により、関数を離れるすべての例外を処理します。
 
 ```powershell
-function Do-Something
+function Start-Something
 {
-    [cmdletbinding()]
+    [CmdletBinding()]
     param()
 
     process
@@ -544,7 +542,7 @@ function Do-Something
         }
         catch
         {
-            $PSCmdlet.ThrowTerminatingError($PSitem)
+            $PSCmdlet.ThrowTerminatingError($PSItem)
         }
     }
 }
