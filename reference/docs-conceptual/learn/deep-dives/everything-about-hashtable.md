@@ -3,12 +3,12 @@ title: ハッシュテーブルについて知りたかったことのすべて
 description: ハッシュテーブルは PowerShell で非常に重要であるため、十分に理解しておくことをお勧めします。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 60a5172485b9caf6343f54194563cd048648206e
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 336c32cca351cc7d87f3300364c075ba7bd8aaeb
+ms.sourcegitcommit: 0b9268e7b92fb76b47169b72e28de43e4bfe7fbf
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149515"
+ms.lasthandoff: 06/03/2020
+ms.locfileid: "84307131"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>ハッシュテーブルについて知りたかったことのすべて
 
@@ -541,10 +541,9 @@ $person = @{
 ```powershell
 $person.location.city
 Austin
-```powershell
+```
 
-There are many ways to approach the structure of your objects. Here is a second way to look at a
-nested hashtable.
+オブジェクトの構造にはさまざまな方法で対処できます。 入れ子になったハッシュテーブルを確認するもう 1 つの方法です。
 
 ```powershell
 $people = @{
@@ -671,6 +670,36 @@ $people = Get-Content -Path $path -Raw | ConvertFrom-JSON
 
 この方法には重要な点が 2 つあります。 1 点目は、JSON は複数行に書き出されるため、`-Raw` オプションを使用して 1 つの文字列に読み込み直す必要があるということです。 2 点目は、インポートされたオブジェクトは `[hashtable]` ではなくなるということです。 これは `[pscustomobject]` であり、予期していない場合は問題が発生する可能性があります。
 
+深い入れ子になったハッシュテーブルを監視します。 JSON に変換した場合、期待どおりの結果が得られないことがあります。
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json
+
+{
+  "a": {
+    "b": {
+      "c": "System.Collections.Hashtable"
+    }
+  }
+}
+```
+
+**Depth** パラメーターを使用して、入れ子になったすべてのハッシュテーブルが展開されていることを確認します。
+
+```powershell
+@{ a = @{ b = @{ c = @{ d = "e" }}}} | ConvertTo-Json -Depth 3
+
+{
+  "a": {
+    "b": {
+      "c": {
+        "d": "e"
+      }
+    }
+  }
+}
+```
+
 インポート時に `[hashtable]` であることが必要な場合は、`Export-CliXml` および `Import-CliXml` コマンドを使用する必要があります。
 
 ### <a name="converting-json-to-hashtable"></a>JSON をハッシュテーブルに変換する
@@ -682,6 +711,18 @@ JSON を `[hashtable]` に変換する必要がある場合に、.NET で [JavaS
 $JSSerializer = [System.Web.Script.Serialization.JavaScriptSerializer]::new()
 $JSSerializer.Deserialize($json,'Hashtable')
 ```
+
+PowerShell v6 以降では、JSON サポートに NewtonSoft JSON.NET が使用され、ハッシュテーブルのサポートが追加されます。
+
+```powershell
+'{ "a": "b" }' | ConvertFrom-Json -AsHashtable
+
+Name      Value
+----      -----
+a         b
+```
+
+PowerShell 6.2 が `ConvertFrom-Json` に **Depth** パラメーターを追加しました。 既定の **Depth** は 1024 です。
 
 ### <a name="reading-directly-from-a-file"></a>ファイルから直接読み取る
 
@@ -698,9 +739,9 @@ $hashtable = ( & $scriptBlock )
 
 それに関連して、モジュール マニフェスト (psd1 ファイル) はハッシュテーブルであることを知っていましたか。
 
-## <a name="keys-are-just-strings"></a>キーは単なる文字列
+## <a name="keys-can-be-any-object"></a>キーには任意のオブジェクトを指定できます。
 
-前にこれについては説明しませんでしたが、キーは単なる文字列です。 したがって、任意のものを引用符で囲んで、キーにすることができます。
+ほとんどの場合、キーは文字列にすぎません。 したがって、任意のものを引用符で囲んで、キーにすることができます。
 
 ```powershell
 $person = @{
@@ -721,13 +762,34 @@ $person.$key
 
 何かを行うことができるからといって、推奨されるわけではありません。 最後のものは、バグが発生するのを待っているようです。このコードを読む人によって簡単に誤解されるでしょう。
 
-厳密に言うと、キーは文字列である必要はありませんが、文字列のみを使用する方が考えやすくなります。
+厳密に言うと、キーは文字列である必要はありませんが、文字列のみを使用する方が考えやすくなります。 ただし、インデックス作成は複雑なキーでは適切に機能しません。
+
+```powershell
+$ht = @{ @(1,2,3) = "a" }
+$ht
+
+Name                           Value
+----                           -----
+{1, 2, 3}                      a
+```
+
+キーによってハッシュテーブルの値にアクセスするのは、常に機能するわけではありません。 次に例を示します。
+
+```powershell
+$key = $ht.keys[0]
+$ht.$key
+$ht[$key]
+a
+```
+
+メンバー アクセス (`.`) 表記を使用すると、何も返されません。 ただし、配列インデックス (`[]`) 表記を使用することはできます。
 
 ## <a name="use-in-automatic-variables"></a>自動変数での使用
 
 ### <a name="psboundparameters"></a>$PSBoundParameters
 
-[$PSBoundParameters][] は、関数のコンテキスト内にのみ存在する自動変数です。 これには、関数の呼び出し時に指定されたすべてのパラメーターが含まれます。 これは厳密にはハッシュテーブルではありませんがよく似ているため、そのように扱うことができます。
+[$PSBoundParameters][] は、関数のコンテキスト内にのみ存在する自動変数です。
+これには、関数の呼び出し時に指定されたすべてのパラメーターが含まれます。 これは厳密にはハッシュテーブルではありませんがよく似ているため、そのように扱うことができます。
 
 これには、キーの削除と他の関数へのスプラッティングが含まれます。 プロキシ関数を作成する場合は、これについて詳細を調べてください。
 
@@ -893,8 +955,6 @@ function Get-DeepClone
 ## <a name="anything-else"></a>その他
 
 この記事では、多岐にわたって手早く説明しました。 この記事を読むたびに、新しいことを学んだり、理解を深めたりしていただければ幸いです。 この機能の全範囲について説明したので、すぐにはご自身に該当しない側面もあるでしょう。 それはまったく問題ではなく、どの程度 PowerShell を使用するかに応じて予想されることです。
-
-目的の項目にすぐに戻れるよう、説明されているすべての項目の一覧を次に示します。 通常、これは先頭に来るべきものですが、それまでのすべての事項を基にした例と共に、上から下に記述されています。
 
 <!-- link references -->
 [オリジナル バージョン]: https://powershellexplained.com/2016-11-06-powershell-hashtable-everything-you-wanted-to-know-about/
