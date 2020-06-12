@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Registry リソース
-ms.openlocfilehash: 9f65815cbe6a94831b88cb3425bf688e1a99a9c0
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 3acd79fa81bc731f344d810371b961dc3af3a11d
+ms.sourcegitcommit: 1ab59991c18e1b9692333d5e58ce649eaa75594f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83559904"
+ms.lasthandoff: 05/29/2020
+ms.locfileid: "84203649"
 ---
 # <a name="dsc-registry-resource"></a>DSC Registry リソース
 
@@ -54,9 +54,11 @@ Registry [string] #ResourceName
 > [!NOTE]
 > **PsDscRunAsCredential** という共通プロパティは、他の資格情報という文脈の中であらゆる DSC リソースを実行するために WMF 5.0 で追加されました。 詳細については、「[DSC リソースに対して資格情報を使用する](../../../configurations/runasuser.md)」を参照してください。
 
-## <a name="example"></a>例
+## <a name="examples"></a>例
 
-次の例では、"ExampleKey" という名前のキーが **HKEY\_LOCAL\_MACHINE** ハイブに存在していることを確認します。
+### <a name="example-1-ensure-specified-value-and-data-under-specified-registry-key"></a>例 1:指定された値とデータが指定されたレジストリ キーの下に存在することを確認する
+
+この例では、"ExampleKey1" という名前のキーの下にあるレジストリ値 "TestValue" が `HKEY\_LOCAL\_MACHINE` ハイブに存在し、データ "TestData" を含んでいることを確認します。
 
 ```powershell
 Configuration RegistryTest
@@ -64,9 +66,25 @@ Configuration RegistryTest
     Registry RegistryExample
     {
         Ensure      = "Present"  # You can also set Ensure to "Absent"
-        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey"
+        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey1"
         ValueName   = "TestValue"
         ValueData   = "TestData"
+    }
+}
+```
+
+### <a name="example-2-ensure-specified-registry-key-exists"></a>例 2:指定されたレジストリ キーが存在することを確認する
+
+次の例では、"ExampleKey2" という名前のキーが **HKEY\_LOCAL\_MACHINE** ハイブに存在していることを確認します。
+
+```powershell
+Configuration RegistryTest
+{
+    Registry RegistryExample
+    {
+        Ensure      = "Present"  # You can also set Ensure to "Absent"
+        Key         = "HKEY_LOCAL_MACHINE\SOFTWARE\ExampleKey2"
+        ValueName   = ""
     }
 }
 ```
