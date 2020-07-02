@@ -8,25 +8,25 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: dc5ce5a2-50e9-4c88-abf1-ac148a8a6b7b
 caps.latest.revision: 15
-ms.openlocfilehash: b176d8439025ac132962859f79e72ae6f9703e82
-ms.sourcegitcommit: 4a26c05f162c4fa347a9d67e339f8a33e230b9ba
+ms.openlocfilehash: 02e9868fc5c536629f7abc319df06f9a4a394ac8
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 03/06/2020
-ms.locfileid: "78405049"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837496"
 ---
 # <a name="modifying-the-psmodulepath-installation-path"></a>PSModulePath インストール パスを変更する
 
-`PSModulePath` 環境変数には、ディスクにインストールされているモジュールの場所へのパスが格納されます。 PowerShell では、モジュールへの完全パスをユーザーが指定しない場合、この変数を使用してモジュールを検索します。 この変数のパスは、表示されている順序で検索されます。
+環境変数には、 `PSModulePath` ディスクにインストールされているモジュールの場所へのパスが格納されます。 PowerShell では、モジュールへの完全パスをユーザーが指定しない場合、この変数を使用してモジュールを検索します。 この変数のパスは、表示されている順序で検索されます。
 
-PowerShell を起動すると、`PSModulePath` がシステム環境変数として作成されます。既定値は、Windows の場合は `$HOME\Documents\PowerShell\Modules; $PSHOME\Modules`、Linux または Mac の場合は `$HOME/.local/share/powershell/Modules: usr/local/share/powershell/Modules`、Windows PowerShell の場合は `$HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules` です。
+PowerShell を起動すると、 `PSModulePath` はシステム環境変数として作成されます。既定値は、windows の場合 `$HOME\Documents\PowerShell\Modules; $PSHOME\Modules` は、 `$HOME/.local/share/powershell/Modules: usr/local/share/powershell/Modules` Linux または Mac の場合は、 `$HOME\Documents\WindowsPowerShell\Modules; $PSHOME\Modules` windows powershell の場合はです。
 
 > [!NOTE]
-> ユーザー固有の**CurrentUser**の場所は、ユーザープロファイル内の**ドキュメント**の場所にある `WindowsPowerShell\Modules` フォルダーです。 その場所の特定のパスは、Windows のバージョンと、フォルダーリダイレクトを使用しているかどうかによって異なります。 既定では、Windows 10 の場合、その場所は `$HOME\Documents\WindowsPowerShell\Modules`です。
+> ユーザー固有の**CurrentUser**の場所は、 `WindowsPowerShell\Modules` ユーザープロファイル内の**ドキュメント**の場所にあるフォルダーです。 その場所の特定のパスは、Windows のバージョンと、フォルダーリダイレクトを使用しているかどうかによって異なります。 既定では、Windows 10 の場合、その場所は `$HOME\Documents\WindowsPowerShell\Modules` です。
 
 ## <a name="to-view-the-psmodulepath-variable"></a>PSModulePath 変数を表示するには
 
-`PSModulePath` 変数に指定されているパスを表示するには、次のコマンドを入力します。
+変数に指定されているパスを表示するには、 `PSModulePath` 次のコマンドを入力します。
 
 `$env:PSModulePath`
 
@@ -38,13 +38,13 @@ PowerShell を起動すると、`PSModulePath` がシステム環境変数とし
 
   `$env:PSModulePath = $env:PSModulePath + "$([System.IO.Path]::PathSeparator)$MyModulePath"`
 
-- セッションが開かれるたびに使用できる永続的な値を追加するには、上記のコマンドを PowerShell プロファイルファイル (`$PROFILE`) に追加し >
+- セッションが開かれるたびに使用できる永続的な値を追加するには、上記のコマンドを PowerShell プロファイルファイル () に追加し `$PROFILE` >
 
   プロファイルの詳細については、「[about_Profiles](/powershell/module/microsoft.powershell.core/about/about_profiles)」を参照してください。
 
-- 永続変数をレジストリに追加するには、**システムのプロパティ** ダイアログボックスの 環境変数エディター を使用して、`PSModulePath` という名前の新しいユーザー環境変数を作成します。
+- 永続変数をレジストリに追加するには、 `PSModulePath` [**システムのプロパティ**] ダイアログボックスの [環境変数エディター] を使用して、という名前の新しいユーザー環境変数を作成します。
 
-- スクリプトを使用して永続変数を追加する[には、](https://docs.microsoft.com/dotnet/api/system.environment) [SetEnvironmentVariable](https://docs.microsoft.com/dotnet/api/system.environment.setenvironmentvariable)クラスの .net メソッドを使用します。 たとえば、次のスクリプトは、コンピューターの `PSModulePath` 環境変数の値に `C:\Program Files\Fabrikam\Module` パスを追加します。 ユーザー `PSModulePath` 環境変数にパスを追加するには、ターゲットを "User" に設定します。
+- スクリプトを使用して永続変数を追加する[には、](/dotnet/api/system.environment) [SetEnvironmentVariable](/dotnet/api/system.environment.setenvironmentvariable)クラスの .net メソッドを使用します。 たとえば、次のスクリプトは、 `C:\Program Files\Fabrikam\Module` コンピューターの環境変数の値にパスを追加し `PSModulePath` ます。 ユーザー環境変数にパスを追加するには、 `PSModulePath` ターゲットを "user" に設定します。
 
   ```powershell
   $CurrentValue = [Environment]::GetEnvironmentVariable("PSModulePath", "Machine")
@@ -54,10 +54,10 @@ PowerShell を起動すると、`PSModulePath` がシステム環境変数とし
 
 ## <a name="to-remove-locations-from-the-psmodulepath"></a>PSModulePath から場所を削除するには
 
-同様のメソッドを使用して、変数からパスを削除できます。たとえば、`$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"` によって、現在のセッションから**C:\ モジュールパス**パスが削除されます。
+同様のメソッドを使用して、変数からパスを削除できます。たとえば、 `$env:PSModulePath = $env:PSModulePath -replace "$([System.IO.Path]::PathSeparator)c:\\ModulePath"` は、現在のセッションから**C:\ モジュールパス**パスを削除します。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
-[Windows PowerShell モジュールの作成](./writing-a-windows-powershell-module.md)
+[Windows PowerShell モジュールを記述する](./writing-a-windows-powershell-module.md)
 
 [about_Modules](/powershell/module/microsoft.powershell.core/about/about_modules)
