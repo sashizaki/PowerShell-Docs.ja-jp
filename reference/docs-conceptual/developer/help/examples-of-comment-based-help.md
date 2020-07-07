@@ -8,12 +8,11 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 868194a2-17e9-4184-bc36-c04a33f26494
 caps.latest.revision: 4
-ms.openlocfilehash: fbaea91c12eede70d30e29dce3fd2d36d7f55994
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
-ms.translationtype: MT
+ms.openlocfilehash: 30f7a52adaebac9373279b6edc4480277ba183e4
+ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564842"
+ms.lasthandoff: 07/07/2020
+ms.locfileid: "86035435"
 ---
 # <a name="examples-of-comment-based-help"></a>コメント ベースのヘルプの例
 
@@ -185,7 +184,7 @@ param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
 ```
 
-次のコマンドは、スクリプトのヘルプを取得します。 スクリプトが Path 環境変数に指定されたディレクトリではないため、スクリプトヘルプを取得する Get-help コマンドではスクリプトパスを指定する必要があります。
+次のコマンドは、スクリプトのヘルプを取得します。 スクリプトは Path 環境変数に示されているディレクトリ内にないため、スクリプトヘルプを取得する Get-help コマンドではスクリプトパスを指定する必要があります。
 
 ```powershell
 C:\PS> get-help c:\ps-test\update-month.ps1 -full
@@ -257,7 +256,7 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
 
 ## <a name="example-3-parameter-descriptions-in-a-param-statement"></a>例 3: Param ステートメント内のパラメーターの説明
 
-この例で `Param` は、関数またはスクリプトのステートメントに parameterdescriptions を挿入する方法を示します。 この形式は、パラメーターの説明が brief の場合に最も役立ちます。
+この例で `Param` は、関数またはスクリプトのステートメントでパラメーターの説明を挿入する方法を示します。 この形式は、パラメーターの説明が brief の場合に最も役立ちます。
 
 ```powershell
 function Add-Extension
@@ -286,7 +285,7 @@ function Add-Extension
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>例 4: XML ファイルへのリダイレクト
 
-関数とスクリプトの XML ベースのヘルプトピックを記述できます。 コメントベースのヘルプは実装が簡単ですが、ヘルプコンテンツをより細かく制御する場合や、ヘルプトピックを複数の言語に変換する場合は、XML ベースのヘルプが必要です。次の例は、Update-Month スクリプトの最初の数行を示しています。 スクリプトでは、キーワードを使用して、 `.ExternalHelp` スクリプトの XML ベースのヘルプトピックへのパスを指定します。
+関数とスクリプトの XML ベースのヘルプトピックを記述できます。 コメントベースのヘルプは実装が簡単ですが、ヘルプコンテンツをより細かく制御する場合や、ヘルプトピックを複数の言語に変換する場合は、XML ベースのヘルプが必要です。次の例は、Update-Month.ps1 スクリプトの最初の数行を示しています。 スクリプトでは、キーワードを使用して、 `.ExternalHelp` スクリプトの XML ベースのヘルプトピックへのパスを指定します。
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
