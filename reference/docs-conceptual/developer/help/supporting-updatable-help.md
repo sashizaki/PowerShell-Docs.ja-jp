@@ -1,25 +1,16 @@
 ---
-title: 更新可能なヘルプのサポート |Microsoft Docs
-ms.custom: ''
+title: 更新可能なヘルプのサポート
 ms.date: 10/28/2012
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-applies_to:
-- Windows PowerShell 3.0
-ms.assetid: 832ea622-25a9-4760-904d-e15d6105bb27
-caps.latest.revision: 7
-ms.openlocfilehash: 331634f44e8c06f7d2a479dccf30dbef1067f515
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 6fa1a9e1f7f3cd42b512a72d7b68ae4a4976978f
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811391"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893341"
 ---
 # <a name="supporting-updatable-help"></a>更新可能なヘルプのサポート
 
-Windows®8および Windows Server®2012で導入された*Windows PowerShell 更新可能ヘルプシステム*は、ユーザーがローカルコンピューターのコマンドプロンプトで常に最新のヘルプトピックを確実に使用できるように設計されています。 更新可能なヘルプは、Windows PowerShell のオンラインヘルプと共に、ユーザーに完全なヘルプソリューションを提供します。 このセクションでは、更新可能なヘルプシステムについて説明し、モジュールの作成者がモジュールの更新可能なヘルプをサポートする方法について説明します。
+Windows 8 および windows Server 2012 で導入された*Windows PowerShell の更新可能なヘルプシステム*は、ユーザーがローカルコンピューターのコマンドプロンプトで常に最新のヘルプトピックを使用できるように設計されています。 更新可能なヘルプは、Windows PowerShell のオンラインヘルプと共に、ユーザーに完全なヘルプソリューションを提供します。 このセクションでは、更新可能なヘルプシステムについて説明し、モジュールの作成者がモジュールの更新可能なヘルプをサポートする方法について説明します。
 
 このセクションには、次のトピックがあります。
 

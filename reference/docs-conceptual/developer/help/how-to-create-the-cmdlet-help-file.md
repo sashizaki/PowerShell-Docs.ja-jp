@@ -8,49 +8,49 @@ ms.tgt_pltfrm: ''
 ms.topic: article
 ms.assetid: 4a88dd89-6beb-494f-9e2a-6b10baed1a8d
 caps.latest.revision: 17
-ms.openlocfilehash: cc77c0546de98e492c9724e051b9d72f1ebfdcb6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b5a5f3e187634b38ba3ce3da18a7ad64ccc09ce2
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560170"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893018"
 ---
 # <a name="how-to-create-the-cmdlet-help-file"></a>コマンドレットのヘルプ ファイルを作成する方法
 
 このセクションでは、Windows PowerShell コマンドレットのヘルプトピックを含む有効な XML ファイルを作成する方法について説明します。 このセクションでは、ヘルプファイルに名前を付ける方法、適切な XML ヘッダーを追加する方法、コマンドレットのヘルプコンテンツのさまざまなセクションを含むノードを追加する方法について説明します。
 
 > [!NOTE]
-> ヘルプファイルの完全なビューを表示するには、Windows PowerShell のインストールディレクトリにあるいずれかの dll-Help ファイルを開きます。 たとえば、dll-Help ファイルには、いくつかの Windows PowerShell コマンドレットのコンテンツが含まれています。
+> ヘルプファイルの完全なビューを表示するには、 `dll-Help.xml` Windows PowerShell のインストールディレクトリにあるいずれかのファイルを開きます。 たとえば、ファイルには、 `Microsoft.PowerShell.Commands.Management.dll-Help.xml` いくつかの PowerShell コマンドレットのコンテンツが含まれています。
 
 ### <a name="how-to-create-a-cmdlet-help-file"></a>コマンドレットのヘルプファイルを作成する方法
 
-1. テキストファイルを作成し、UTF8 エンコーディングを使用して保存します。 Windows PowerShell でコマンドレットヘルプファイルとして検出できるように、ファイル名は次の形式である必要があります。
+1. テキストファイルを作成し、UTF8 エンコーディングを使用して保存します。 ファイル名は、Windows PowerShell がコマンドレットヘルプファイルとして検出できるように、次の形式にする必要があります。
 
    `<PSSnapInAssemblyName>.dll-Help.xml`
 
-2. 次の XML ヘッダーをテキストファイルに追加します。 ファイルは、マルチエージェントモデリング言語 (MAML) スキーマに対して検証されることに注意してください。 現在、Windows PowerShell には、ファイルを検証するためのツールは用意されていません。
+1. 次の XML ヘッダーをテキストファイルに追加します。 ファイルは、Microsoft アシスタンスマークアップ言語 (MAML) スキーマに対して検証されることに注意してください。 現在、PowerShell には、ファイルを検証するためのツールは用意されていません。
 
    `<?xml version="1.0" encoding="utf-8" ?> <helpItems xmlns="http://msh" schema="maml">`
 
-3. コマンドノードを、アセンブリ内の各コマンドレットのコマンドレットヘルプファイルに追加します。 コマンドノード内の各ノードは、コマンドレットのヘルプトピックのさまざまなセクションに関連しています。
+1. **コマンド**ノードを、アセンブリ内の各コマンドレットのコマンドレットヘルプファイルに追加します。 **コマンド**ノード内の各ノードは、コマンドレットのヘルプトピックのさまざまなセクションに関連しています。
 
    次の表に、各ノードの XML 要素と各ノードの説明を示します。
 
-   |Node|Description|
-   |----------|-----------------|
-   |`<details>`|コマンドレットのヘルプトピックの [名前] セクションと [概要] セクションの内容を追加します。 詳細については、「[コマンドレット名と概要の追加方法](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)」を参照してください。|
-   |`<maml:description>`|コマンドレットのヘルプトピックの [説明] セクションの内容を追加します。 詳細については、[コマンドレットのヘルプトピックの「詳細な説明を追加する方法](./how-to-add-a-cmdlet-description.md)」を参照してください。|
-   |`<command:syntax>`|コマンドレットのヘルプトピックの「構文」セクションの内容を追加します。 詳細については、[コマンドレットヘルプトピックの「構文を追加する方法](./how-to-add-syntax-to-a-cmdlet-help-topic.md)」を参照してください。|
-   |`<command:parameters>`|コマンドレットのヘルプトピックの PARAMETERS セクションにコンテンツを追加します。 詳細については、「[コマンドレットにパラメーターを追加する方法](./how-to-add-parameter-information.md)」を参照してください。|
-   |`<command:inputTypes>`|コマンドレットのヘルプトピックの入力セクションの内容を追加します。 詳細については、[コマンドレットヘルプトピックの「入力の種類を追加する方法](./how-to-add-input-types-to-a-cmdlet-help-topic.md)」を参照してください。|
-   |`<command:returnValues>`|コマンドレットヘルプトピックの出力セクションの内容を追加します。 詳細については、[コマンドレットヘルプトピックの「戻り値を追加する方法](./how-to-add-return-values-to-a-cmdlet-help-topic.md)」を参照してください。|
-   |`<maml:alertset>`|コマンドレットのヘルプトピックのメモセクションにコンテンツを追加します。 詳細については、「[コマンドレットにメモを追加する方法](./how-to-add-notes-to-a-cmdlet-help-topic.md)」を参照してください。|
-   |`<command:examples>`|コマンドレットのヘルプトピックの「例」セクションの内容を追加します。 詳細については、「 [How To Add 例をコマンドレットヘルプトピックに追加する方法](./how-to-add-examples-to-a-cmdlet-help-topic.md)」を参照してください。|
-   |`<maml:relatedLinks>`|コマンドレットヘルプトピックの「関連リンク」セクションの内容を追加します。 詳細については、[コマンドレットヘルプトピックの「関連リンクを追加する方法](./how-to-add-related-links-to-a-cmdlet-help-topic.md)」を参照してください。|
+   |           Node           |                                                                                                     説明                                                                                                     |
+   | ------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+   | `<details>`              | コマンドレットのヘルプトピックの [名前] セクションと [概要] セクションの内容を追加します。 詳細については、「[コマンドレット名と概要の追加方法](./how-to-add-the-cmdlet-name-and-synopsis-to-a-cmdlet-help-topic.md)」を参照してください。 |
+   | `<maml:description>`     | コマンドレットのヘルプトピックの [説明] セクションの内容を追加します。 詳細については、[コマンドレットのヘルプトピックの「詳細な説明を追加する方法](./how-to-add-a-cmdlet-description.md)」を参照してください。                    |
+   | `<command:syntax>`       | コマンドレットのヘルプトピックの「構文」セクションの内容を追加します。 詳細については、[コマンドレットヘルプトピックの「構文を追加する方法](./how-to-add-syntax-to-a-cmdlet-help-topic.md)」を参照してください。                                  |
+   | `<command:parameters>`   | コマンドレットのヘルプトピックの PARAMETERS セクションにコンテンツを追加します。 詳細については、「[コマンドレットにパラメーターを追加する方法](./how-to-add-parameter-information.md)」を参照してください。                                  |
+   | `<command:inputTypes>`   | コマンドレットのヘルプトピックの入力セクションの内容を追加します。 詳細については、[コマンドレットヘルプトピックの「入力の種類を追加する方法](./how-to-add-input-types-to-a-cmdlet-help-topic.md)」を参照してください。                        |
+   | `<command:returnValues>` | コマンドレットヘルプトピックの出力セクションの内容を追加します。 詳細については、[コマンドレットヘルプトピックの「戻り値を追加する方法](./how-to-add-return-values-to-a-cmdlet-help-topic.md)」を参照してください。                   |
+   | `<maml:alertset>`        | コマンドレットのヘルプトピックのメモセクションの内容を追加します。 詳細については、「[コマンドレットにメモを追加する方法](./how-to-add-notes-to-a-cmdlet-help-topic.md)」を参照してください。                                      |
+   | `<command:examples>`     | コマンドレットのヘルプトピックの「例」セクションの内容を追加します。 詳細については、「 [How To Add 例をコマンドレットヘルプトピックに追加する方法](./how-to-add-examples-to-a-cmdlet-help-topic.md)」を参照してください。                            |
+   | `<maml:relatedLinks>`    | コマンドレットヘルプトピックの「関連リンク」セクションの内容を追加します。 詳細については、[コマンドレットヘルプトピックの「関連リンクを追加する方法](./how-to-add-related-links-to-a-cmdlet-help-topic.md)」を参照してください。             |
 
 ## <a name="example"></a>例
 
- コマンドレットのヘルプトピックのさまざまなセクションのノードを含むコマンドノードの例を次に示します。
+ コマンドレットのヘルプトピックのさまざまなセクションのノードを含む**コマンド**ノードの例を次に示します。
 
 ```xml
 <command:command

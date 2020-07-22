@@ -1,19 +1,12 @@
 ---
-title: HelpInfo XML スキーマ |Microsoft Docs
-ms.custom: ''
+title: HelpInfo XML スキーマ
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 74dcb396-c295-4457-b84c-4432bdaa8df3
-caps.latest.revision: 7
-ms.openlocfilehash: 3e2a113e120c61fab1ba76c4fd897ded67d13319
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: e894c1f2695ddbc5a386f8fec96054a7b31e7778
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811521"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893256"
 ---
 # <a name="helpinfo-xml-schema"></a>HelpInfo XML スキーマ
 
@@ -54,12 +47,12 @@ HelpInfo XML ファイルは、次の XML スキーマに基づいています�
 
 HelpInfo XML ファイルには、次の要素が含まれています。
 
-HelpContentURI には、モジュールのヘルプ CAB ファイルの場所の URI が含まれています。 URI は "http" または "https" で始まる必要があります。 URI にはインターネットの場所を指定する必要がありますが、CAB ファイル名を含めることはできません。 **Helpcontenturi**値は、 **Helpinfouri**値と同じか、または異なる場合があります。
+- **Helpcontenturi** -モジュールのヘルプ CAB ファイルの場所の URI が含まれています。 URI は "http" または "https" で始まる必要があります。 URI にはインターネットの場所を指定する必要がありますが、CAB ファイル名を含めることはできません。 **Helpcontenturi**値は、 **Helpinfouri**値と同じか、または異なる場合があります。
 
-SupportedUICultures は、すべての UI カルチャのモジュールのヘルプファイルを表します。 **UICulture**要素が含まれます。各要素は、指定された UI カルチャのモジュールのヘルプファイルのセットを表します。
+- **SupportedUICultures** -すべての UI カルチャのモジュールのヘルプファイルを表します。 **UICulture**要素が含まれます。各要素は、指定された UI カルチャのモジュールのヘルプファイルのセットを表します。
 
-UICulture は、指定された UI カルチャのモジュールのヘルプファイルのセットを表します。 ヘルプファイルが記述されている各 UI カルチャの**UICulture**要素を追加します。
+- **UICulture** -指定された UI カルチャに含まれるモジュールのヘルプファイルのセットを表します。 ヘルプファイルが記述されている各 UI カルチャの**UICulture**要素を追加します。
 
-UICultureName には、ヘルプファイルが記述されている UI カルチャの言語コードが含まれています。
+- **UICultureName** -ヘルプファイルが記述されている UI カルチャの言語コードを格納します。
 
-UICultureVersion には、"N1" に4つの部分から構成されるバージョン番号が含まれています。N2.N3.N4 "UI カルチャのヘルプ CAB ファイルのバージョンを表す形式です。 **UICultureName**で指定された UI カルチャで新しいヘルプ CAB ファイルをアップロードするたびに、このバージョン番号をインクリメントします。 この値の詳細については、MSDN の「バージョンクラス (システム)」を参照してください。
+- **UICultureVersion** -"N1. に4つの部分で構成されるバージョン番号が含まれています。N2.N3.N4 "UI カルチャのヘルプ CAB ファイルのバージョンを表す形式です。 **UICultureName**で指定された UI カルチャで新しいヘルプ CAB ファイルをアップロードするたびに、このバージョン番号をインクリメントします。 この値の詳細については、「[バージョンクラス](/dotnet/api/system.version)」を参照してください。

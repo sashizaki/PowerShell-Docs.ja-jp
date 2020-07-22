@@ -1,23 +1,16 @@
 ---
-title: HelpInfo XML ファイルを作成する方法 |Microsoft Docs
-ms.custom: ''
+title: HelpInfo XML ファイルを作成する方法
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 3971ce1f-271c-4938-a9d3-47ff3aaf7219
-caps.latest.revision: 9
-ms.openlocfilehash: 1f09146a9e6456584f67edb52407193d8a9330ce
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: e395746e51309477bbcbff51b4591de3f73ce0db
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83811771"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893307"
 ---
 # <a name="how-to-create-a-helpinfo-xml-file"></a>HelpInfo XML ファイルを作成する方法
 
-このセクションのこのトピックでは、Windows PowerShell の更新可能なヘルプ機能について、"HelpInfo XML ファイル" と呼ばれるヘルプ情報ファイルを作成および設定する方法について説明します。
+このセクションのこのトピックでは、PowerShell の更新可能なヘルプ機能について、"HelpInfo XML ファイル" と呼ばれるヘルプ情報ファイルを作成および設定する方法について説明します。
 
 ## <a name="helpinfo-xml-file-overview"></a>HelpInfo XML ファイルの概要
 

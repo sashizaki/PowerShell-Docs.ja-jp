@@ -1,23 +1,16 @@
 ---
-title: Windows PowerShell ヘルプ | を作成するMicrosoft Docs
-ms.custom: ''
+title: Windows PowerShell ヘルプの作成
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 20cbf009-9633-476e-b0b3-5604117ef2dd
-caps.latest.revision: 4
-ms.openlocfilehash: adde7c205f26c9bb87307f7eaa56988cefccdeaf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8807fe48c6354022900738de0b912c55dec9febb
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367671"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86892899"
 ---
 # <a name="writing-windows-powershell-help"></a>Windows PowerShell ヘルプの作成
 
-このドキュメントは、Windows PowerShell コマンドレット、プロバイダー、および `Get-Help` コマンドレットを使用してコマンドラインで表示できる概念に関するトピックのヘルプコンテンツを記述するすべてのユーザー向けに書かれています。
+このドキュメントは、PowerShell コマンドレット、プロバイダー、およびコマンドレットを使用してコマンドラインで表示できる概念に関するトピックに関するヘルプコンテンツを作成するすべてのユーザー向けに書かれてい `Get-Help` ます。
 
 ## <a name="cmdlet-help"></a>コマンドレットのヘルプ
 

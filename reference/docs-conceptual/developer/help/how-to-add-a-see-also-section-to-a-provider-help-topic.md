@@ -1,19 +1,12 @@
 ---
-title: プロバイダーヘルプトピックの「関連項目」セクションを追加する方法Microsoft Docs
-ms.custom: ''
+title: プロバイダーのヘルプ トピックに関連項目を追加する方法
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 9c754ac3-cee3-4c13-9bad-e499c8a68a09
-caps.latest.revision: 4
-ms.openlocfilehash: b6561120d1bbe848ab4ebcdec7de92c6cad96314
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 54adf4bb941888583eb749b7b5322b27d84c7af7
+ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564825"
+ms.lasthandoff: 07/22/2020
+ms.locfileid: "86893477"
 ---
 # <a name="how-to-add-a-see-also-section-to-a-provider-help-topic"></a>プロバイダーのヘルプ トピックに関連項目を追加する方法
 
@@ -23,13 +16,14 @@ ms.locfileid: "83564825"
 
 オンライントピックを参照するときは、プレーンテキストで URI または検索語句を指定します。 コマンドレットでは、 `Get-Help` 一覧のどのトピックにもリンクまたはリダイレクトされません。 また、 `Online` コマンドレットのパラメーターは、 `Get-Help` プロバイダーのヘルプでは機能しません。
 
-「参照」セクションは、 `RelatedLinks` 要素とそれに含まれるタグから作成されます。 タグを追加する方法を次の XML に示します。
+**「参照**」セクションは、 `RelatedLinks` 要素とそれに含まれるタグから作成されます。
+タグを追加する方法を次の XML に示します。
 
-### <a name="to-add-see-also-topics"></a>「関連項目」を追加するには
+### <a name="to-add-see-also-topics"></a>追加するには、「関連項目」も参照してください。
 
-1. Dll-help ファイル*の*要素内に、 `providerHelp` 要素を追加 `RelatedLinks` します。 要素は、 `RelatedLinks` 要素の最後の要素である必要があり `providerHelp` ます。 `RelatedLinks`各プロバイダーヘルプトピックでは、1つの要素のみが許可されます。
+1. ファイルの `<AssemblyName>.dll-help.xml` 要素内に `providerHelp` 要素を追加 `RelatedLinks` します。 要素は、 `RelatedLinks` 要素の最後の要素である必要があり `providerHelp` ます。 `RelatedLinks`各プロバイダーヘルプトピックでは、1つの要素のみが許可されます。
 
-   たとえば、次のように入力します。
+   次に例を示します。
 
     ```xml
     <providerHelp>
@@ -38,9 +32,9 @@ ms.locfileid: "83564825"
     </providerHelp>
     ```
 
-2. **「関連**項目」セクションの各トピックについて、要素内に `RelatedLinks` 要素を追加し `navigationLink` ます。 次に、各 `navigationLink` 要素内に1つの `linkText` 要素と1つの要素を追加し `uri` ます。 要素を使用していない場合は `uri` 、空の要素 (uri/>) として追加でき \< ます。
+1. **「関連**項目」セクションの各トピックについて、要素内に `RelatedLinks` 要素を追加し `navigationLink` ます。 次に、各 `navigationLink` 要素内に1つの `linkText` 要素と1つの要素を追加し `uri` ます。 要素を使用していない場合は `uri` 、空の要素 () として追加でき \<uri/> ます。
 
-   たとえば、次のように入力します。
+   次に例を示します。
 
     ```xml
     <providerHelp>
@@ -53,7 +47,7 @@ ms.locfileid: "83564825"
     </providerHelp>
     ```
 
-3. タグの間にトピック名を入力し `linkText` ます。 URI を指定する場合は、タグの間に入力し `uri` ます。 現在のプロバイダーのヘルプトピックのオンラインバージョンを示すには、タグの間に、 `linkText` トピック名の代わりに「online version:」と入力します。 通常、"オンラインバージョン:" リンクは、「関連項目」の一覧の最初のトピックです。
+1. タグの間にトピック名を入力し `linkText` ます。 URI を指定する場合は、タグの間に入力し `uri` ます。 現在のプロバイダーのヘルプトピックのオンラインバージョンを示すには、タグの間に、 `linkText` トピック名の代わりに「online version:」と入力します。 通常、"オンラインバージョン:" リンクは、「関連項目」の一覧の最初のトピックです。
 
    次の例には、3つのトピックも含まれています。 最初のは、現在のトピックのオンラインバージョンを参照します。 2番目のコマンドレットは、Windows PowerShell コマンドレットのヘルプトピックを参照します。 3番目のトピックでは、別のオンライントピックを参照します。
 
