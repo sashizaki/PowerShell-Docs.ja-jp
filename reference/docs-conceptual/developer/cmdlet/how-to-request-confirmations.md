@@ -1,19 +1,12 @@
 ---
 title: 確認を要求する方法 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f24f77d5-e224-4b62-b128-535e045d333e
-caps.latest.revision: 9
-ms.openlocfilehash: 19e96b612a8778d82cdbafb528a7ffeb01f15f99
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ebe928724f1b750afc11c1e3c1207375f4ec8e42
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369681"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784097"
 ---
 # <a name="how-to-request-confirmations"></a>確認を要求する方法
 
@@ -24,14 +17,14 @@ ms.locfileid: "72369681"
 
 ## <a name="to-request-confirmation"></a>確認を要求するには
 
-1. コマンドレット属性の `SupportsShouldProcess` パラメーターが `true`に設定されていることを確認します。 (関数の場合は、この属性は、"パラメーター" になります。
+1. `SupportsShouldProcess`コマンドレット属性のパラメーターがに設定されていることを確認し `true` ます。 (関数の場合は、この属性は、"パラメーター" になります。
 
     ```csharp
     [Cmdlet(VerbsDiagnostic.Test, "RequestConfirmationTemplate1",
             SupportsShouldProcess = true)]
     ```
 
-2. コマンドレットに `Force` パラメーターを追加して、ユーザーが確認要求を上書きできるようにします。
+2. `Force`コマンドレットにパラメーターを追加して、ユーザーが確認要求をオーバーライドできるようにします。
 
     ```csharp
     [Parameter()]
@@ -43,13 +36,13 @@ ms.locfileid: "72369681"
     private bool force;
     ```
 
-3. [システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)の戻り値を使用する `if` ステートメントを追加します。このメソッドを使用すると、system..............[コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)が呼び出されるかどうかが判断されます。
+3. System.string メソッド `if` の戻り値を使用するステートメント[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)を[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)追加し、このメソッドが呼び出されるかどうかを確認します。このメソッドは、を呼び出します。
 
-4. 2番目の `if` ステートメントを追加します。このステートメントで[は、このメソッドの](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)戻り値を使用し、`Force` パラメーターの値を使用して、操作を実行するかどうかを決定します。
+4. `if`[システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)の戻り値を使用する2番目のステートメントを追加し、パラメーターの値を指定して、 `Force` 操作を実行するかどうかを決定します。
 
 ## <a name="example"></a>例
 
-次のコード例では、次のように、をオーバーライドすることによって、[System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)の[System.Management.Automation.Cmdlet.ShouldContinue](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)オーバーライドメソッドを使用して、コマンドレットの[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord).............. コマンドレット ただし、他の入力処理メソッドからこれらのメソッドを呼び出すこともできます。
+次のコード例では、 [system..](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) [...](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) .................... [...](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ......... ただし、他の入力処理メソッドからこれらのメソッドを呼び出すこともできます。
 
 ```csharp
 protected override void ProcessRecord()
@@ -66,4 +59,4 @@ protected override void ProcessRecord()
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

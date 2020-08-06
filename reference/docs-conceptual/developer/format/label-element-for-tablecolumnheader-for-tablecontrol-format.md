@@ -1,25 +1,18 @@
 ---
 title: TableControl (Format) の TableColumnHeader の Label 要素 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7196f039-2f6a-41fd-b252-5b1623ebb9f9
-caps.latest.revision: 11
-ms.openlocfilehash: 09183a538c179f19347c3f1ed45b4ad38c2ca451
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b7b1d6825d3bca0e36b230415d19c2ac48377a46
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365171"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785746"
 ---
 # <a name="label-element-for-tablecolumnheader-for-tablecontrol-format"></a>TableControl の TableColumnHeader の Label 要素 (書式)
 
 列の上部に表示されるラベルを定義します。 この要素は、テーブルビューを定義するときに使用されます。
 
-Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) TableControl Element (Format) TableHeaders 要素の tablecontrol (format) TableColumnHeader 要素の tablecontrol (Format) ラベル要素のTableControl (Format) の TableColumnHeader
+Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) TableControl Element (Format) TableHeaders 要素の tablecontrol (format) TableColumnHeader for tablecontrol (format) Label Element for tablecontrol (Format) の TableColumnHeader 要素
 
 ## <a name="syntax"></a>構文
 
@@ -28,9 +21,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`Label` 要素の属性、子要素、および親要素について説明します。 各列に対して使用できるラベルは1つだけです。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `Label` ます。 各列に対して使用できるラベルは1つだけです。
 
 ### <a name="attributes"></a>属性
 
@@ -42,7 +35,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableControl の TableHeaders の TableColumnHeader 要素 (Format)](./tablecolumnheader-element-format.md)|テーブルの列のデータのラベル、幅、および配置を定義します。|
 
@@ -50,7 +43,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 テーブルの列の上部に表示されるテキストを指定します。 列ラベルに使用できる文字は制限されていません。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 ラベルが指定されていない場合は、行に表示される値を持つプロパティの名前が使用されます。
 
@@ -58,7 +51,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="example"></a>例
 
-この例は、ラベルが "Column 1" である `TableColumnHeader` 要素を示しています。
+この例で `TableColumnHeader` は、ラベルが "Column 1" である要素を示しています。
 
 ```xml
 <TableColumnHeader>
@@ -70,8 +63,8 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="see-also"></a>参照
 
-[テーブルビューの作成](./creating-a-table-view.md)
+[テーブル ビューを作成する](./creating-a-table-view.md)
 
-[TableColumnHeader 要素 (Format)](./tablecolumnheader-element-format.md)
+[TableColumnHeader 要素 (書式)](./tablecolumnheader-element-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

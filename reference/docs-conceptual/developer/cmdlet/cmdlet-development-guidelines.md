@@ -1,22 +1,15 @@
 ---
 title: コマンドレットの開発ガイドライン |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - development guidelines [PowerShell Programmer's Guide]
 - cmdlets [PowerShell Programmer's Guide], development guidelines
-ms.assetid: c30cc3c0-e958-4a8f-b81f-1e38de772f13
-caps.latest.revision: 14
-ms.openlocfilehash: 89c7682e87fa6f389349fc44275be0d2ffc83957
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5dd83b12a9052ff5f146c4c4e077a9358907cbd0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369921"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784488"
 ---
 # <a name="cmdlet-development-guidelines"></a>コマンドレット開発ガイドライン
 
@@ -26,12 +19,12 @@ ms.locfileid: "72369921"
 
 - [必要な開発ガイドライン](./required-development-guidelines.md)
 
-- [開発に関する推奨事項](./strongly-encouraged-development-guidelines.md)
+- [強くお勧めする開発ガイドライン](./strongly-encouraged-development-guidelines.md)
 
-- [アドバイザリ開発ガイドライン](./advisory-development-guidelines.md)
+- [お勧めする開発ガイドライン](./advisory-development-guidelines.md)
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

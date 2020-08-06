@@ -1,19 +1,12 @@
 ---
 title: TableControl (Format) の TableColumnHeader の Alignment 要素 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ff85e83a-c9c2-4c37-accc-e6a27c182f3c
-caps.latest.revision: 19
-ms.openlocfilehash: 16b41535109ca503e679a135f5ba30054e33de5b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1bf395b84af90d725c14b2f0ef569f72b5fcc613
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364381"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783927"
 ---
 # <a name="alignment-element-for-tablecolumnheader-for-tablecontrol-format"></a>TableControl の TableColumnHeader の Alignment 要素 (書式)
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 <Alignment>AlignmentType</Alignment>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`Alignment` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `Alignment` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,13 +34,13 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[TableColumnHeader 要素 (Format)](./tablecolumnheader-element-format.md)|テーブルの列のデータのラベル、幅、および配置を定義します。|
+|[TableColumnHeader 要素 (書式)](./tablecolumnheader-element-format.md)|テーブルの列のデータのラベル、幅、および配置を定義します。|
 
 ## <a name="text-value"></a>テキスト値
 
-次のいずれかの値を指定します。 これらの値の大文字と小文字は区別されません。
+次のいずれかの値を指定します。 これらの値では大文字と小文字が区別されません。
 
 左揃えこの要素が指定されていない場合は、左側の列に表示されるデータが既定値になります。
 
@@ -55,13 +48,13 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 中央には、列に表示されるデータが中央に配置されます。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-この例では、データが左側に揃えられている `TableColumnHeader` 要素を示します。
+この例では、 `TableColumnHeader` データが左側に揃えられている要素を示します。
 
 ```xml
 <TableColumnHeader>
@@ -73,8 +66,8 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="see-also"></a>参照
 
-[テーブルビューの作成](./creating-a-table-view.md)
+[テーブル ビューを作成する](./creating-a-table-view.md)
 
-[TableColumnHeader 要素 (Format)](./tablecolumnheader-element-format.md)
+[TableColumnHeader 要素 (書式)](./tablecolumnheader-element-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

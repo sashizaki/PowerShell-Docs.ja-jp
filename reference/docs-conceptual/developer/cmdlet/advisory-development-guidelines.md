@@ -1,19 +1,12 @@
 ---
 title: アドバイザリ開発ガイドライン |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 79c9bcbc-a2eb-4253-a4b8-65ba54ce8d01
-caps.latest.revision: 9
-ms.openlocfilehash: 980b488800587e31286e2ca2ece924e07f8af3f3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: dc8ef586954106f6d7fbce550dc22cd935018936
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72370041"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782431"
 ---
 # <a name="advisory-development-guidelines"></a>お勧めする開発ガイドライン
 
@@ -25,17 +18,17 @@ ms.locfileid: "72370041"
 
 ### <a name="support-an-inputobject-parameter-ad01"></a>InputObject パラメーター (AD01) のサポート
 
-Windows PowerShell は Microsoft .NET Framework オブジェクトで直接動作するため、ユーザーが特定の操作を実行するために必要な型と正確に一致する .NET Framework オブジェクトを使用できます。 `InputObject` は、このようなオブジェクトを入力として受け取るパラメーターの標準名です。 たとえば、 [Stopproc チュートリアル](./stopproc-tutorial.md)の**Stop proc**コマンドレットの例では、パイプラインからの入力をサポートする Process 型の `InputObject` パラメーターを定義しています。 ユーザーは、一連のプロセスオブジェクトを取得し、それらを操作して、停止するオブジェクトを正確に選択し、そのオブジェクトを**Stop Proc**コマンドレットに直接渡すことができます。
+Windows PowerShell は Microsoft .NET Framework オブジェクトで直接動作するため、ユーザーが特定の操作を実行するために必要な型と正確に一致する .NET Framework オブジェクトを使用できます。 `InputObject`は、このようなオブジェクトを入力として受け取るパラメーターの標準名です。 たとえば、 [Stopproc チュートリアル](./stopproc-tutorial.md)の**Stop proc**コマンドレットは、 `InputObject` パイプラインからの入力をサポートする型のパラメーターを定義します。 ユーザーは、一連のプロセスオブジェクトを取得し、それらを操作して、停止するオブジェクトを正確に選択し、そのオブジェクトを**Stop Proc**コマンドレットに直接渡すことができます。
 
 ### <a name="support-the-force-parameter-ad02"></a>Force パラメーター (AD02) のサポート
 
-場合によっては、コマンドレットでユーザーが要求された操作を実行できないように保護する必要があります。 このようなコマンドレットは、ユーザーが操作を実行するアクセス許可を持っている場合に、ユーザーがその保護をオーバーライドできるようにするために、`Force` パラメーターをサポートする必要があります。
+場合によっては、コマンドレットでユーザーが要求された操作を実行できないように保護する必要があります。 このようなコマンドレットは、ユーザーが `Force` 操作を実行するアクセス許可を持っている場合に、ユーザーがその保護をオーバーライドできるようにするために、パラメーターをサポートする必要があります。
 
-たとえば、項目の[削除](/powershell/module/microsoft.powershell.management/remove-item)コマンドレットは、通常、読み取り専用ファイルを削除しません。 ただし、このコマンドレットは `Force` パラメーターをサポートしているので、ユーザーは読み取り専用ファイルを強制的に削除できます。 読み取り専用属性を変更するアクセス許可がユーザーに既に与えられていて、ユーザーがそのファイルを削除した場合は、`Force` パラメーターを使用すると操作が簡略化されます。 ただし、ファイルを削除する権限がユーザーに与えられていない場合、`Force` パラメーターを指定しても効果はありません。
+たとえば、項目の[削除](/powershell/module/microsoft.powershell.management/remove-item)コマンドレットは、通常、読み取り専用ファイルを削除しません。 ただし、このコマンドレットではパラメーターがサポートされている `Force` ため、ユーザーは読み取り専用ファイルを強制的に削除できます。 読み取り専用属性を変更するアクセス許可がユーザーに既に与えられていて、ユーザーがファイルを削除した場合、パラメーターを使用すると `Force` 操作が簡略化されます。 ただし、ファイルを削除する権限がユーザーに与えられていない場合、パラメーターを指定して `Force` も効果はありません。
 
 ### <a name="handle-credentials-through-windows-powershell-ad03"></a>Windows PowerShell (AD03) を使用して資格情報を処理する
 
-コマンドレットでは、資格情報を表すために `Credential` パラメーターを定義する必要があります。 このパラメーターは[、型が system.servicemodel で、](/dotnet/api/System.Management.Automation.PSCredential) Credential 属性の宣言を使用して定義されている必要があります。 このサポートによって、ユーザーは、パスワードのユーザー名を入力するか、完全な資格情報が直接指定されていない場合の両方に対して自動的にプロンプトが表示されます。 Credential 属性の詳細については、「 [Credential 属性の宣言](./credential-attribute-declaration.md)」を参照してください。
+コマンドレットでは、 `Credential` 資格情報を表すパラメーターを定義する必要があります。 このパラメーターは[、型が system.servicemodel で、](/dotnet/api/System.Management.Automation.PSCredential) Credential 属性の宣言を使用して定義されている必要があります。 このサポートによって、ユーザーは、パスワードのユーザー名を入力するか、完全な資格情報が直接指定されていない場合の両方に対して自動的にプロンプトが表示されます。 Credential 属性の詳細については、「 [Credential 属性の宣言](./credential-attribute-declaration.md)」を参照してください。
 
 ### <a name="support-encoding-parameters-ad04"></a>パラメーターのエンコード (AD04) のサポート
 
@@ -55,11 +48,11 @@ Windows PowerShell は Microsoft .NET Framework オブジェクトで直接動�
 
 #### <a name="define-a-cmdlet-in-the-correct-namespace"></a>正しい名前空間のコマンドレットを定義する
 
-通常は、"を追加する .NET Framework 名前空間のコマンドレットのクラスを定義します。コマンドレットを実行する製品を表す名前空間を指定します。 たとえば、Windows PowerShell に含まれているコマンドレットは、`Microsoft.PowerShell.Commands` 名前空間で定義されています。
+通常は、"を追加する .NET Framework 名前空間のコマンドレットのクラスを定義します。コマンドレットを実行する製品を表す名前空間を指定します。 たとえば、Windows PowerShell に含まれているコマンドレットは、名前空間で定義されてい `Microsoft.PowerShell.Commands` ます。
 
 #### <a name="name-the-cmdlet-class-to-match-the-cmdlet-name"></a>コマンドレット名と一致するようにコマンドレットクラスの名前を指定します
 
-コマンドレットを実装する .NET Framework クラスに名前を付けた場合は、クラスに " *\<verb > **\<名詞 >** \<コマンド >* " を指定します。ここで\<*動詞 >* と *\<名詞 >* プレースホルダーは、コマンドレット名に使用される動詞と名詞に置き換えられます。 たとえば、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットは、`GetProcessCommand`というクラスによって実装されます。
+コマンドレットを実装する .NET Framework クラスに名前を付けた場合は、クラスに "" という名前を付け *\<Verb>**\<Noun>**\<Command>* ます。ここで、とのプレースホルダーを、 *\<Verb>* *\<Noun>* コマンドレット名に使用される動詞と名詞に置き換えます。 たとえば、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットは、というクラスによって実装され `GetProcessCommand` ます。
 
 ### <a name="if-no-pipeline-input-override-the-beginprocessing-method-ac02"></a>パイプライン入力が BeginProcessing メソッドをオーバーライドしない場合 (AC02)
 
@@ -73,7 +66,7 @@ Windows PowerShell は Microsoft .NET Framework オブジェクトで直接動�
 
 コマンドレット[に、(](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)パイプラインに書き込まれる) の破棄されないオブジェクトが含まれている場合、コマンドレットでは追加のオブジェクトの破棄が必要になることがあります。 たとえば、コマンドレットが、その[システム](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)のファイルハンドルを開いて、そのハンドルを開いたままにして[、プロセスの](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)終了時にハンドルを開いたままにした場合、このハンドルを閉じておく必要があるとします。
 
-Windows PowerShell ランタイムで[は、必ずしも system.servicemodel メソッドが](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)呼び出されるわけではありません。 たとえば、コマンドレットが操作の途中で取り消された場合、またはコマンドレットのいずれかの部分で終了エラーが発生した場合、[このメソッドは](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)呼び出されないことがあります。 したがって、オブジェクトのクリーンアップを必要とするコマンドレットの .NET Framework クラスは、ファイナライザーを含む完全な [system.servicemodel](/dotnet/api/System.IDisposable) インターフェイスパターンを実装する必要があります。これにより、Windows PowerShell ランタイムは、 [System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)処理の最後に、システムの.... コマンドレットと system.servicemodel [System.IDisposable.Dispose*](/dotnet/api/System.IDisposable.Dispose)メソッドを実行します。
+Windows PowerShell ランタイムで[は、必ずしも system.servicemodel メソッドが](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)呼び出されるわけではありません。 たとえば、コマンドレットが操作の途中で取り消された場合、またはコマンドレットのいずれかの部分で終了エラーが発生した場合、[このメソッドは](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)呼び出されないことがあります。 したがって、オブジェクトのクリーンアップを必要とするコマンドレットの .NET Framework クラスは、ファイナライザーを含む完全な system.servicemodel インターフェイスパターンを実装する必要があります。これにより、Windows PowerShell ランタイムは、処理の最後に、[システム](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)の両方[のメソッドを](/dotnet/api/System.IDisposable.Dispose)呼び出すことができるように[なります。](/dotnet/api/System.IDisposable)
 
 ### <a name="use-serialization-friendly-parameter-types-ac05"></a>シリアル化に対応したパラメーターの型 (AC05) を使用する
 
@@ -91,7 +84,7 @@ Windows PowerShell ランタイムで[は、必ずしも system.servicemodel メ
 
 - PSPrimitiveDictionary
 
-- スイッチ パラメーター
+- SwitchParameter
 
 - PSListModifier
 
@@ -119,6 +112,6 @@ Windows PowerShell ランタイムで[は、必ずしも system.servicemodel メ
 
 [必要な開発ガイドライン](./required-development-guidelines.md)
 
-[開発に関する推奨事項](./strongly-encouraged-development-guidelines.md)
+[強くお勧めする開発ガイドライン](./strongly-encouraged-development-guidelines.md)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

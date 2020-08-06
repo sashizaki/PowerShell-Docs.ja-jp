@@ -1,24 +1,17 @@
 ---
 title: Windows PowerShell エラーレコード |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - error category [PowerShell SDK]
 - error identifier [PowerShell SDK]
 - error records [PowerShell SDK]
 - error category string [PowerShell SDK]
-ms.assetid: bdd66fea-eb63-4bb6-9cbe-9a799e5e0db5
-caps.latest.revision: 9
-ms.openlocfilehash: 5412d88b690a1f5f1ef387416e3bf9da3a32c95d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 52243916adf18b4f3a1e00f1fb4199c2619946e9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369111"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783978"
 ---
 # <a name="windows-powershell-error-records"></a>Windows PowerShell エラー レコード
 
@@ -38,7 +31,7 @@ ms.locfileid: "72369111"
 
 - エラーをスローしたコマンドレットに関するオプションの呼び出し情報。 この情報は、Windows PowerShell によって指定されます (「呼び出しメッセージ」を参照してください)。
 
-- エラーが発生したときに処理されていたターゲットオブジェクト。 これは入力オブジェクトである場合もあれば、コマンドレットが処理していた別のオブジェクトである場合もあります。 たとえば、コマンド `remove-item -recurse c:\somedirectory`の場合、エラーは "c:\somedirectory\lockedfile" の FileInfo オブジェクトのインスタンスである可能性があります。 ターゲットオブジェクトの情報は省略可能です。
+- エラーが発生したときに処理されていたターゲットオブジェクト。 これは入力オブジェクトである場合もあれば、コマンドレットが処理していた別のオブジェクトである場合もあります。 たとえば、コマンドの場合、 `remove-item -recurse c:\somedirectory` エラーは "c:\somedirectory\lockedfile" の FileInfo オブジェクトのインスタンスである可能性があります。 ターゲットオブジェクトの情報は省略可能です。
 
 ## <a name="error-identifier"></a>エラー識別子
 
@@ -60,7 +53,7 @@ ms.locfileid: "72369111"
 
 ## <a name="error-category"></a>エラー カテゴリ
 
-エラーレコードを作成するときに、 [ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)列挙体で定義されている定数の1つを使用して、エラーのカテゴリを指定します。 Windows PowerShell は、ユーザーが `$ErrorView` 変数を `"CategoryView"`に設定したときに、エラーカテゴリを使用してエラー情報を表示します。
+エラーレコードを作成するときに、 [ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0)列挙体で定義されている定数の1つを使用して、エラーのカテゴリを指定します。 Windows PowerShell は、ユーザーが変数をに設定したときに、エラーカテゴリを使用してエラー情報を表示し `$ErrorView` `"CategoryView"` ます。
 
 [ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory?view=pscore-6.2.0) **notspecified**定数は使用しないでください。 エラーまたはエラーの原因となった操作に関する情報がある場合は、カテゴリが完全に一致していない場合でも、エラーまたは操作について最もよく説明されているカテゴリを選択します。
 
@@ -120,6 +113,6 @@ Windows PowerShell によって表示される情報は、カテゴリビュー�
 
 [Invocationinfo (システム管理)](/dotnet/api/System.Management.Automation.InvocationInfo)
 
-[Windows PowerShell エラー報告](./error-reporting-concepts.md)
+[Windows PowerShell エラー レポート](./error-reporting-concepts.md)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

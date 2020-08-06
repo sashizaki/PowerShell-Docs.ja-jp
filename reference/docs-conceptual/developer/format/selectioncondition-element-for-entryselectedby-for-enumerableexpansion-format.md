@@ -1,25 +1,18 @@
 ---
 title: 列挙 Able膨張 (Format) の EntrySelectedBy の SelectionCondition 要素Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8c012115-9241-4851-9015-841eb508faf3
-caps.latest.revision: 10
-ms.openlocfilehash: d6adf2fa62384d671fd6a07dd185a941daa44cec
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d5858145e092dc962174a776889a4f62db366d71
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362011"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785338"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion の EntrySelectedBy の SelectionCondition 要素 (書式)
 
 この定義のコレクションオブジェクトを展開するために必要な条件を定義します。
 
-Configuration 要素 (Format) DefaultSettings 要素 (format) 列挙 Able膨張要素 (format) 列挙 able膨張拡張要素 (format) の Entryselectedby 要素の entryselectedby 要素の EntrySelectedBy 要素列挙 Able展開 (形式)
+Configuration 要素 (Format) DefaultSettings Element (format) 列挙 able膨張要素 (format) 列挙 able膨張拡張要素 (format) EntrySelectedBy (format) の Entryselectedby の SelectionCondition 要素を列挙します。
 
 ## <a name="syntax"></a>構文
 
@@ -32,9 +25,9 @@ Configuration 要素 (Format) DefaultSettings 要素 (format) 列挙 Able膨張�
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`SelectionCondition` 要素の属性、子要素、および親要素について説明します。 1つの `PropertyName` または `ScriptBlock` 要素を指定する必要があります。 `SelectionSetName` 要素と `TypeName` 要素は省略可能です。 いずれかの要素を指定できます。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `SelectionCondition` ます。 1つまたは複数の要素を指定する必要があり `PropertyName` `ScriptBlock` ます。 `SelectionSetName`要素と `TypeName` 要素は省略可能です。 いずれかの要素を指定できます。
 
 ### <a name="attributes"></a>属性
 
@@ -42,20 +35,20 @@ Configuration 要素 (Format) DefaultSettings 要素 (format) 列挙 Able膨張�
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[列挙 Able膨張 (形式) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
-|[列挙 Able展開の EntrySelectedBy の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーするスクリプトを指定します。|
-|[列挙 Able膨張 (Format) の EntrySelectedBy の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型のセットを指定します。|
-|[列挙型拡張の EntrySelectedBy の SelectionCondition の TypeName 要素 (Format)](./typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型を指定します。|
+|[EnumerableExpansion の EntrySelectedBy の SelectionCondition の PropertyName 要素 (書式)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
+|[EnumerableExpansion の EntrySelectedBy の SelectionCondition の ScriptBlock 要素 (書式)](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーするスクリプトを指定します。|
+|[EnumerableExpansion の EntrySelectedBy の SelectionCondition の SelectionSetName 要素 (書式)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型のセットを指定します。|
+|[EnumerableExpansion の EntrySelectedBy の SelectionCondition の TypeName 要素 (書式)](./typename-element-for-selectioncondition-for-entryselectedby-for-enumerableexpansion-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[列挙 Able展開 (形式) の EntrySelectedBy 要素](./entryselectedby-element-for-enumerableexpansion-format.md)|この定義によって展開される .NET コレクションオブジェクトを定義します。|
+|[EnumerableExpansion の EntrySelectedBy 要素 (書式)](./entryselectedby-element-for-enumerableexpansion-format.md)|この定義によって展開される .NET コレクションオブジェクトを定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 各定義には、少なくとも1つの型名、選択セット、または選択条件が定義されている必要があります。
 
@@ -73,4 +66,4 @@ Configuration 要素 (Format) DefaultSettings 要素 (format) 列挙 Able膨張�
 
 [データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

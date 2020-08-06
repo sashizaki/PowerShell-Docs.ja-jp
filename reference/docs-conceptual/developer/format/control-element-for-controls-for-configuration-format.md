@@ -1,19 +1,12 @@
 ---
 title: Configuration のコントロールの Control 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: bddf7ffa-04d3-4354-90b9-5e714e096260
-caps.latest.revision: 13
-ms.openlocfilehash: 26fe417c9ca60dda22bdc23d9d339d40135a0c9b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9447efac84cff3cc33468aeebc97a8bdd6137518
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369011"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783825"
 ---
 # <a name="control-element-for-controls-for-configuration-format"></a>Configuration の Controls の Control 要素 (書式)
 
@@ -30,9 +23,9 @@ Configuration 要素 (Format) コントロールの構成 (書式) のコント�
 </Control>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`Control` 要素の属性、子要素、および親要素について説明します。 各子要素のうち1つだけを指定する必要があります。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `Control` ます。 各子要素のうち1つだけを指定する必要があります。
 
 ### <a name="attributes"></a>属性
 
@@ -40,18 +33,18 @@ Configuration 要素 (Format) コントロールの構成 (書式) のコント�
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[構成用コントロールのコントロールの CustomControl 要素 (形式)](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|必須の要素です。<br /><br /> コントロールを定義します。|
+|[Configuration の Controls の Control の CustomControl 要素 (書式)](./customcontrol-element-for-control-for-controls-for-configuration-format.md)|必須の要素です。<br /><br /> コントロールを定義します。|
 |[Configuration のコントロールの Name 要素 (Format)](./name-element-for-control-for-controls-for-configuration-format.md)|必須の要素です。<br /><br /> コントロールを参照するために使用する名前を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[Configuration の Controls 要素 (Format)](./controls-element-for-configuration-format.md)|書式設定ファイルのすべてのビューまたはその他のコントロールで使用できるコモンコントロールを定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 このコントロールに指定される名前は、次の要素で参照できます。
 
@@ -69,6 +62,6 @@ Configuration 要素 (Format) コントロールの構成 (書式) のコント�
 
 [ビューの GroupBy 要素 (Format)](./groupby-element-for-view-format.md)
 
-[構成用コントロールのコントロールの Name 要素 (Format)](./name-element-for-control-for-controls-for-configuration-format.md)
+[Configuration の Controls の Control の Name 要素 (書式)](./name-element-for-control-for-controls-for-configuration-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

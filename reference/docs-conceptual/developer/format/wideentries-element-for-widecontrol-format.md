@@ -1,19 +1,12 @@
 ---
 title: WideControl の WideEntries 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0c4bff45-0960-4b3a-95e7-47f2cee03ac5
-caps.latest.revision: 12
-ms.openlocfilehash: 083f3c8df8136858e32778ed231943ef983e47aa
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 74383b288c945008c1d7b5119363a166c04802ae
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361431"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785049"
 ---
 # <a name="wideentries-element-for-widecontrol-format"></a>WideControl の WideEntries 要素 (書式)
 
@@ -30,9 +23,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`WideEntries` 要素の属性、子要素、および親要素について説明します。 少なくとも1つの子要素を指定する必要があります。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `WideEntries` ます。 少なくとも1つの子要素を指定する必要があります。
 
 ### <a name="attributes"></a>属性
 
@@ -40,23 +33,23 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[WideEntry 要素 (Format)](./wideentry-element-for-widecontrol-format.md)|ワイドビューの定義を提供します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[WideControl 要素 (Format)](./widecontrol-element-format.md)|ビューのワイド (単一値) リスト形式を定義します。|
+|[WideControl 要素 (書式)](./widecontrol-element-format.md)|ビューのワイド (単一値) リスト形式を定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 ワイドビューは、オブジェクトごとに1つのプロパティ値またはスクリプト値を表示するリスト形式です。 ワイドビューのコンポーネントの詳細については、「[ワイドビューコンポーネント](./creating-a-wide-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-次の例は、単一の `WideEntry` 要素を定義する `WideEntries` 要素を示しています。 `WideEntry` 要素には、ビューに表示されるプロパティまたはスクリプトの値を定義する1つの `WideItem` 要素が含まれています。
+次の例は、 `WideEntries` 1 つの要素を定義する要素を示して `WideEntry` います。 要素には、 `WideEntry` `WideItem` ビューに表示されるプロパティまたはスクリプトの値を定義する1つの要素が含まれます。
 
 ```xml
 <WideControl>
@@ -72,10 +65,10 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="see-also"></a>参照
 
-[ワイドビューの作成](./creating-a-wide-view.md)
+[ワイド ビューを作成する](./creating-a-wide-view.md)
 
-[WideControl 要素 (Format)](./widecontrol-element-format.md)
+[WideControl 要素 (書式)](./widecontrol-element-format.md)
 
 [WideEntry 要素 (Format)](./wideentry-element-for-widecontrol-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

@@ -1,23 +1,16 @@
 ---
 title: カスタムの書式設定ファイル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 85d27545-8097-4010-9947-6d8b3ce2eac0
-caps.latest.revision: 15
-ms.openlocfilehash: 71c1c181058c5646c817b90d9832976a78c6c7de
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a9633e2ee18e1817459645b4a5950ea8a622850b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369831"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784352"
 ---
 # <a name="custom-formatting-files"></a>ファイルにカスタム書式設定を適用する
 
-コマンドレット、関数、およびスクリプトによって返されるオブジェクトの表示形式は、フォーマットファイル (types.ps1xml ファイル) を使用して定義されます。 これらのファイルのいくつかは、windows powershell コマンドレットによって返されるオブジェクトの既定の表示形式を定義するために、Windows PowerShell によって提供されます。 ただし、独自のカスタム書式設定ファイルを作成して、既定の表示形式を上書きしたり、独自のコマンドによって返されるオブジェクトの表示を定義したりすることもできます。
+コマンドレット、関数、およびスクリプトによって返されるオブジェクトの表示形式は、書式設定ファイル (format.ps1xml ファイル) を使用して定義されます。 これらのファイルのいくつかは、windows powershell コマンドレットによって返されるオブジェクトの既定の表示形式を定義するために、Windows PowerShell によって提供されます。 ただし、独自のカスタム書式設定ファイルを作成して、既定の表示形式を上書きしたり、独自のコマンドによって返されるオブジェクトの表示を定義したりすることもできます。
 
 Windows PowerShell は、これらの書式設定ファイルのデータを使用して、表示される内容と、データの書式設定を決定します。 表示されるデータには、オブジェクトのプロパティまたはスクリプトブロックの値を含めることができます。  スクリプトブロックは、オブジェクトのプロパティから直接使用できない値を表示する場合に使用します。 たとえば、オブジェクトの2つのプロパティの値を加算し、その合計を個別のデータとして表示することができます。 独自の書式設定ファイルを作成する場合は、表示するオブジェクトの*ビュー*を定義する必要があります。 各オブジェクトに対して1つのビューを定義したり、複数のオブジェクトに対して1つのビューを定義したり、同じオブジェクトに対して複数のビューを定義したりできます。 定義できるビューの数に制限はありません。
 
@@ -40,7 +33,7 @@ Windows PowerShell は、これらの書式設定ファイルのデータを使�
 
 ## <a name="view-xml-elements"></a>XML 要素の表示
 
-次の例は、2つの列を含むテーブルビューを定義するために使用される XML タグを示しています。 [Viewdefinitions](../format/viewdefinitions-element-format.md)要素は、書式設定ファイルで定義されているすべてのビューのコンテナー要素です。 [View](../format/view-element-format.md)要素は、特定のテーブル、リスト、ワイド、またはカスタムビューを定義します。 各ビュー内では、 [name](../format/name-element-for-view-format.md)要素はビューの名前を指定し、 [viewselectedby](../format/viewselectedby-element-format.md)要素はビューを使用するオブジェクトを定義し、さまざまなコントロール要素 (`TableControl` 要素など) がビューの形式を定義します。
+次の例は、2つの列を含むテーブルビューを定義するために使用される XML タグを示しています。 [Viewdefinitions](../format/viewdefinitions-element-format.md)要素は、書式設定ファイルで定義されているすべてのビューのコンテナー要素です。 [View](../format/view-element-format.md)要素は、特定のテーブル、リスト、ワイド、またはカスタムビューを定義します。 各ビュー内では、 [name](../format/name-element-for-view-format.md)要素はビューの名前を指定し、 [viewselectedby](../format/viewselectedby-element-format.md)要素はビューを使用するオブジェクトを定義し、さまざまなコントロール要素 ( `TableControl` 要素など) がビューの形式を定義します。
 
 ```xml
 ViewDefinitions
@@ -81,10 +74,10 @@ ViewDefinitions
 
 [テーブルビュー](../format/creating-a-table-view.md)
 
-[リスト ビュー](../format/creating-a-list-view.md)
+[リストビュー](../format/creating-a-list-view.md)
 
 [ワイドビュー](../format/creating-a-wide-view.md)
 
 [カスタムビュー](../format/creating-custom-controls.md)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

@@ -1,22 +1,15 @@
 ---
 title: コマンドレットクラス宣言 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell SDK], declaring
 - declaring cmdlets [PowerShell SDK]
-ms.assetid: 1fcc4c5e-0c75-496c-a712-5f844e310576
-caps.latest.revision: 14
-ms.openlocfilehash: 0de49d979c31b0e8d111323a2e1899d97868ec3f
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 96ce8144795346b6f46878ee6163ce69cdb1799a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978714"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784505"
 ---
 # <a name="cmdlet-class-declaration"></a>コマンドレットのクラス宣言
 
@@ -30,7 +23,7 @@ Microsoft .NET Framework クラスは、クラスのメタデータとして**�
 
 コマンドレットの名詞は、コマンドレットが処理するリソースを指定します。 名詞は、コマンドレットを他のコマンドレットと区別します。
 
-コマンドレット名の名詞は固有である必要があります。また、*サーバー*などの汎用名詞の場合は、リソースを他の類似リソースと区別する短いプレフィックスを追加することをお勧めします。 たとえば、プレフィックスを持つ名詞を含むコマンドレット名は `Get-SQLServer`です。 特定の名詞とより一般的な動詞を組み合わせることで、ユーザーはコマンドレットをアクションですばやく検索し、不要なコマンドレット名の重複を回避して、コマンドレットをリソースで識別できます。
+コマンドレット名の名詞は固有である必要があります。また、*サーバー*などの汎用名詞の場合は、リソースを他の類似リソースと区別する短いプレフィックスを追加することをお勧めします。 たとえば、というプレフィックスを持つ名詞を含むコマンドレット名は、 `Get-SQLServer` です。 特定の名詞とより一般的な動詞を組み合わせることで、ユーザーはコマンドレットをアクションですばやく検索し、不要なコマンドレット名の重複を回避して、コマンドレットをリソースで識別できます。
 
 コマンドレット名に使用できない特殊文字の一覧については、「[必要な開発ガイドライン](./required-development-guidelines.md)」を参照してください。
 
@@ -54,7 +47,7 @@ Microsoft .NET Framework クラスは、クラスのメタデータとして**�
 
 ## <a name="pascal-casing"></a>Pascal 形式の文字種
 
-コマンドレットに名前を指定する場合は、Pascal 形式を使用します。 たとえば、コマンドレットに名前を付けるときに、`Get-Item` および `Get-ItemProperty` のコマンドレットを使用すると、大文字小文字を正しく使用することができます。
+コマンドレットに名前を指定する場合は、Pascal 形式を使用します。 たとえば、コマンドレット `Get-Item` と `Get-ItemProperty` コマンドレットは、コマンドレットに名前を付けるときに大文字小文字を使用する正しい方法を示しています。
 
 ## <a name="see-also"></a>参照
 
@@ -64,6 +57,6 @@ Microsoft .NET Framework クラスは、クラスのメタデータとして**�
 
 [コマンドレットの動詞名](./approved-verbs-for-windows-powershell-commands.md)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

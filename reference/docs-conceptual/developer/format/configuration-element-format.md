@@ -1,19 +1,12 @@
 ---
 title: Configuration 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d46df0cb-50b7-4b81-82ba-37186a7b7a7f
-caps.latest.revision: 28
-ms.openlocfilehash: 296c63d0c774a0bf56e90dbaa32f2c221d4c3dbd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 90be02f8e27c0bd391e01da1a08ecd8eeb29b84c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363501"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783842"
 ---
 # <a name="configuration-element-format"></a>Configuration 要素 (書式)
 
@@ -33,9 +26,9 @@ Configuration 要素
 
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`Configuration` 要素の属性、子要素、および親要素について説明します。 この要素は、各書式設定ファイルのルート要素である必要があり、この要素には少なくとも1つの子要素が含まれている必要があります。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `Configuration` ます。 この要素は、各書式設定ファイルのルート要素である必要があり、この要素には少なくとも1つの子要素が含まれている必要があります。
 
 ### <a name="attributes"></a>属性
 
@@ -43,29 +36,29 @@ Configuration 要素
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[Configuration の Controls 要素 (Format)](./controls-element-for-configuration-format.md)|省略可能な要素です。<br /><br /> 書式設定ファイルのすべてのビューで使用できる共通コントロールを定義します。|
-|[DefaultSettings 要素 (Format)](./defaultsettings-element-format.md)|省略可能な要素です。<br /><br /> 書式設定ファイルのすべてのビューに適用される共通設定を定義します。|
+|[Configuration の Controls 要素 (書式)](./controls-element-for-configuration-format.md)|省略可能な要素です。<br /><br /> 書式設定ファイルのすべてのビューで使用できる共通コントロールを定義します。|
+|[DefaultSettings 要素 (書式)](./defaultsettings-element-format.md)|省略可能な要素です。<br /><br /> 書式設定ファイルのすべてのビューに適用される共通設定を定義します。|
 |[SelectionSets 要素の形式](./selectionsets-element-format.md)|省略可能な要素です。<br /><br /> 書式設定ファイルのすべてのビューで使用できる .NET オブジェクトの共通セットを定義します。|
-|[ViewDefinitions 要素 (形式)](./viewdefinitions-element-format.md)|省略可能な要素です。<br /><br /> オブジェクトを表示するために使用するビューを定義します。|
+|[ViewDefinitions 要素 (書式)](./viewdefinitions-element-format.md)|省略可能な要素です。<br /><br /> オブジェクトを表示するために使用するビューを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-なし。
+[なし] :
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 書式設定ファイルは、オブジェクトの表示方法を定義します。 ほとんどの場合、このルート要素には、書式設定ファイルのテーブル、リスト、およびワイドビューを定義する[Viewdefinitions](./viewdefinitions-element-format.md)要素が含まれています。 ビュー定義に加えて、書式設定ファイルでは、これらのビューで使用できる共通の選択セット、設定、およびコントロールを定義できます。
 
 ## <a name="see-also"></a>参照
 
-[Configuration の Controls 要素 (Format)](./controls-element-for-configuration-format.md)
+[Configuration の Controls 要素 (書式)](./controls-element-for-configuration-format.md)
 
-[DefaultSettings 要素 (Format)](./defaultsettings-element-format.md)
+[DefaultSettings 要素 (書式)](./defaultsettings-element-format.md)
 
-[SelectionSets 要素 (Format)](./selectionsets-element-format.md)
+[SelectionSets 要素 (書式)](./selectionsets-element-format.md)
 
-[ViewDefinitions 要素 (形式)](./viewdefinitions-element-format.md)
+[ViewDefinitions 要素 (書式)](./viewdefinitions-element-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

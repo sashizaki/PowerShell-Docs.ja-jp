@@ -1,19 +1,12 @@
 ---
 title: GetProc チュートリアル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4663905f-560a-4e39-9b03-6db2c315c322
-caps.latest.revision: 6
-ms.openlocfilehash: bbd07a0d0abd30742b7e02482adedae3af43aca4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cc99cb4de8e3b8fcab8eac28b21162764aecd8a1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364441"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784267"
 ---
 # <a name="getproc-tutorial"></a>GetProc チュートリアル
 
@@ -33,11 +26,11 @@ ms.locfileid: "72364441"
 
 ## <a name="see-also"></a>参照
 
-[パラメーターを指定せずにコマンドレットを作成する](./creating-a-cmdlet-without-parameters.md)
+[パラメーターなしでコマンドレットを作成する](./creating-a-cmdlet-without-parameters.md)
 
 [コマンドライン入力を処理するパラメーターの追加](./adding-parameters-that-process-command-line-input.md)
 
-[パイプライン入力を処理するパラメーターの追加](./adding-parameters-that-process-pipeline-input.md)
+[パイプライン入力を処理するパラメーターを追加する](./adding-parameters-that-process-pipeline-input.md)
 
 [コマンドレットに終了しないエラー報告を追加しています](./adding-non-terminating-error-reporting-to-your-cmdlet.md)
 

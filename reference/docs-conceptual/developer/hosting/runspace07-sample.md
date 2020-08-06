@@ -1,25 +1,18 @@
 ---
 title: Runspace07 サンプル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 4f7bf81e-4f95-4150-afc3-c0872b24d026
-caps.latest.revision: 7
-ms.openlocfilehash: a39a6bd83f5a41ad341d7fe3d465eb73ba1d034d
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: c7cca58a67e522a0e0fb1d362a60c0ca94953f3e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565225"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783179"
 ---
 # <a name="runspace07-sample"></a>Runspace07 サンプル
 
 このサンプルでは、実行空間を作成し、その実行空間を使用して、[複数のコマンド](/dotnet/api/system.management.automation.powershell)レットを同期的に実行する方法を示します。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 

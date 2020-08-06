@@ -1,19 +1,12 @@
 ---
 title: ShowError 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a456e5df-fbf9-42b6-a6d8-4b2adafb86b1
-caps.latest.revision: 9
-ms.openlocfilehash: ff320619b7f768718ace7d482332a60a73c625b7
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4b48e532aeb51a947b1dc4f49c2487bb41e5d0bb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368241"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785219"
 ---
 # <a name="showerror-element-format"></a>ShowError 要素 (書式)
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) DefaultSettings Element (Format) ShowError 要素 
 <ShowError/>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`ShowError` 要素の属性、子要素、および親要素について説明します。 この要素の既定値は `false`です。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `ShowError` ます。 この要素の既定値は `false` です。
 
 ### <a name="attributes"></a>属性
 
@@ -41,12 +34,12 @@ Configuration 要素 (Format) DefaultSettings Element (Format) ShowError 要素 
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[DefaultSettings 要素 (Format)](./defaultsettings-element-format.md)|書式設定ファイルのすべてのビューに適用される共通設定を定義します。|
+|[DefaultSettings 要素 (書式)](./defaultsettings-element-format.md)|書式設定ファイルのすべてのビューに適用される共通設定を定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 ## <a name="see-also"></a>参照
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

@@ -1,22 +1,15 @@
 ---
 title: パラメーターを指定せずにコマンドレットを作成する |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell Programmers Guide], creating
 - cmdlets [PowerShell Programmers Guide], basic cmdlet
-ms.assetid: 54236ef3-82db-45f8-9114-1ecb7ff65d3e
-caps.latest.revision: 8
-ms.openlocfilehash: af41c2c9855310d047404114a07b27180a7aa8fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a14d25660d596ebd12cd7d74b607eab6ac9fd1be
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415674"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784386"
 ---
 # <a name="creating-a-cmdlet-without-parameters"></a>パラメーターなしでコマンドレットを作成する
 
@@ -29,11 +22,11 @@ ms.locfileid: "74415674"
 
 コマンドレット名は、コマンドレットによって実行されるアクションを示す動詞と、コマンドレットが処理する項目を示す名詞で構成されます。 このサンプルの Get Proc コマンドレットはプロセスオブジェクトを取得するので、 [Verbscommon](/dotnet/api/System.Management.Automation.VerbsCommon)列挙型によって定義された動詞 "Get" を使用し、"Proc" という名詞を使用して、コマンドレットがプロセス項目で動作することを示します。
 
-コマンドレットに名前を付けるときは、#、() {} [] &-/\ $; のいずれの文字も使用しないでください。: "' < > &#124;ですか? @ ` .
+コマンドレットに名前を付けるときは、#、() {} [] &-/\ $;: "' <> &#124;  のいずれの文字も使用しないでください。 @ ` .
 
 ### <a name="choosing-a-noun"></a>名詞の選択
 
-固有の名詞を選択する必要があります。 製品名の短縮版をプレフィックスとして使用することをお勧めします。 この種類のコマンドレット名の例としては、"`Get-SQLServer`" があります。
+固有の名詞を選択する必要があります。 製品名の短縮版をプレフィックスとして使用することをお勧めします。 この種類のコマンドレット名の例は、" `Get-SQLServer` " です。
 
 ### <a name="choosing-a-verb"></a>動詞の選択
 
@@ -54,7 +47,7 @@ Public Class GetProcCommand
     Inherits Cmdlet
 ```
 
-クラス定義の前に、このクラスをコマンドレットとして識別するために、`[Cmdlet(verb, noun, ...)]`構文を使用して、このクラスが使用されていることに[注意して](/dotnet/api/System.Management.Automation.CmdletAttribute)ください。 これは、すべてのコマンドレットに必要な唯一の属性であり、Windows PowerShell ランタイムでそれらを正しく呼び出すことができます。 必要に応じて、クラスをさらに宣言する属性キーワードを設定できます。 サンプルの Getproc コマンドクラスの属性宣言では、Get Proc コマンドレットの名詞と動詞の名前のみが宣言されることに注意してください。
+クラス定義の前に、構文を使用[System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute)して、 `[Cmdlet(verb, noun, ...)]` このクラスをコマンドレットとして指定することに注意してください。 これは、すべてのコマンドレットに必要な唯一の属性であり、Windows PowerShell ランタイムでそれらを正しく呼び出すことができます。 必要に応じて、クラスをさらに宣言する属性キーワードを設定できます。 サンプルの Getproc コマンドクラスの属性宣言では、Get Proc コマンドレットの名詞と動詞の名前のみが宣言されることに注意してください。
 
 > [!NOTE]
 > すべての Windows PowerShell 属性クラスに対して設定できるキーワードは、属性クラスのプロパティに対応しています。
@@ -78,11 +71,11 @@ System.servicemodel[クラスには、3](/dotnet/api/System.Management.Automatio
 > [!NOTE]
 > Windows PowerShell では、コマンドレットが呼び出されたときに指定されるパラメーター値のセットを記述するために "レコード" という用語が使用されます。
 
-コマンドレットがパイプライン入力を受け入れる場合は、この[メソッドを](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)オーバーライドする必要があります。また、[必要に応じて、](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) system.object メソッドをオーバーライドする必要があります。 たとえば、コマンドレット[を使用してすべて](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)の入力を収集し、`Sort-Object` 一度に1つの要素ではなく1つの要素として入力を操作すると、コマンドレットの実行時に両方のメソッドがオーバーライドされる可能性があります。
+コマンドレットがパイプライン入力を受け入れる場合は、この[メソッドを](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)オーバーライドする必要があります。また、[必要に応じて、](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing) system.object メソッドをオーバーライドする必要があります。 たとえば、コマンドレットを使用してすべての入力を[収集し、](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)コマンドレットの実行時に、一度に1つの要素ではなく全体として入力を操作すると、両方のメソッドがオーバーライドされる可能性があり `Sort-Object` ます。
 
 コマンドレットがパイプライン入力を受け取らない場合[は、このメソッドを](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)オーバーライドする必要があります。 このメソッドは、並べ替えコマンドレットの場合と同様に、一度に1つの要素に対してコマンドレットを実行できない場合に、その代わりに使用されることに注意して[ください](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)。
 
-このサンプルの Get Proc コマンドレットは、パイプラインの入力を受け取る必要があるため、[System.Management.Automation.Cmdlet.ProcessRecord](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)このメソッドをオーバーライドして、システムの既定の実装を使用します。 [System.Management.Automation.Cmdlet.BeginProcessing](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)と共に、を行います[System.Management.Automation.Cmdlet.EndProcessing](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)。 [WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)メソッドを使用して、プロセスを取得し、コマンドラインに書き込むプロセスを取得するために、[このオーバーライドが](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)実行されます。
+このサンプルの Get Proc コマンド[レットは、](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)パイプラインの入力を受け取る必要があるため、このメソッドをオーバーライドし、システムの既定の実装を使用し[て、.](/dotnet/api/System.Management.Automation.Cmdlet.EndProcessing)... [...](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing) ...... [WriteObject](/dotnet/api/System.Management.Automation.Cmdlet.WriteObject)メソッドを使用して、プロセスを取得し、コマンドラインに書き込むプロセスを取得するために、[このオーバーライドが](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)実行されます。
 
 ```csharp
 protected override void ProcessRecord()
@@ -131,7 +124,7 @@ End Sub 'ProcessRecord
 
 ## <a name="code-sample"></a>コード サンプル
 
-完全なC#サンプルコードについては、「 [GetProcessSample01 sample](./getprocesssample01-sample.md)」を参照してください。
+完全な C# サンプルコードについては、「 [GetProcessSample01 sample](./getprocesssample01-sample.md)」を参照してください。
 
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類と書式設定の定義
 
@@ -233,7 +226,7 @@ Windows PowerShell は、.NET オブジェクトを使用してコマンドレ�
     ...
     ```
 
-7. `Get-Member` コマンドレットを使用して、各プロセスで使用可能なプロパティを一覧表示します。
+7. `Get-Member`各プロセスで使用可能なプロパティを一覧表示するには、コマンドレットを使用します。
 
     ```powershell
     $p | Get-Member -MemberType property
@@ -270,4 +263,4 @@ Windows PowerShell は、.NET オブジェクトを使用してコマンドレ�
 
 [Windows PowerShell リファレンス](../windows-powershell-reference.md)
 
-[コマンドレットのサンプル](./cmdlet-samples.md)
+[コマンドレット サンプル](./cmdlet-samples.md)

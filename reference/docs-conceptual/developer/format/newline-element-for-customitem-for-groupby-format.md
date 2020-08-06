@@ -1,25 +1,18 @@
 ---
 title: GroupBy (Format) の CustomItem の改行要素 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8e37477e-cf2c-4ebd-85d1-eb923e2f4eea
-caps.latest.revision: 6
-ms.openlocfilehash: 790abbccad2c9e57d64e444b7b04d805decd4ed6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0c998c9a85238feaa8bc48fd3eb4f66b4f7f8d66
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362601"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783519"
 ---
 # <a name="newline-element-for-customitem-for-groupby-format"></a>GroupBy の CustomItem の NewLine 要素 (書式)
 
 コントロールの表示に空白行を追加します。 この要素は、新しいオブジェクトのグループをどのように表示するかを定義するときに使用されます。
 
-Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (形式) GroupBy 要素の groupby (format) CustomControl 要素の groupby (format) CustomEntry 要素の CustomControl の CustomEntries 要素Groupby (format) CustomItem 要素の CustomControl for groupby (書式) の CustomItem の改行 (Format) の改行
+Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (形式) の GroupBy 要素については、groupby (形式) の CustomControl 要素を使用して、groupby (形式) を指定します。 CustomControl for groupby (書式) customentries 要素の for groupby (format) の CustomEntry 要素を groupby (形式) の Customentries
 
 ## <a name="syntax"></a>構文
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (�
 <NewLine/>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`NewLine` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `NewLine` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,14 +34,14 @@ Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (�
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[GroupBy の CustomEntry の CustomItem 要素 (形式)](./customitem-element-for-customentry-for-groupby-format.md)|カスタムコントロールビューのコントロールを定義します。|
+|[GroupBy の CustomEntry の CustomItem 要素 (書式)](./customitem-element-for-customentry-for-groupby-format.md)|カスタムコントロールビューのコントロールを定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 ## <a name="see-also"></a>参照
 
-[GroupBy の CustomEntry の CustomItem 要素 (形式)](./customitem-element-for-customentry-for-groupby-format.md)
+[GroupBy の CustomEntry の CustomItem 要素 (書式)](./customitem-element-for-customentry-for-groupby-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

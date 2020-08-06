@@ -1,19 +1,12 @@
 ---
 title: TableColumnHeader 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 49ff3062-6396-4aa8-919b-3fd3ac60899a
-caps.latest.revision: 19
-ms.openlocfilehash: d3ad7fa563def17d43ce4dc64d155b65b650521f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6296aea5c567663b1c3c0a2cf0a57b21aa5394de
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361851"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785185"
 ---
 # <a name="tablecolumnheader-element-format"></a>TableColumnHeader 要素 (書式)
 
@@ -31,9 +24,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </TableColumnHeader>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`TableColumnHeader` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `TableColumnHeader` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,23 +34,23 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableControl (Format) の TableColumnHeader の Label 要素](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> 列の上部に表示されるラベルを定義します。 ラベルが指定されていない場合は、行に表示される値を持つプロパティの名前が使用されます。|
-|[TableControl の TableColumnHeader の Width 要素 (Format)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|必須の要素です。<br /><br /> 列の幅 (文字数) を指定します。|
-|[TableControl (Format) の TableColumnHeader の Alignment 要素](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> 列のラベルを表示する方法を指定します。 アラインメントが指定されていない場合、ラベルは左揃えで配置されます。|
+|[TableControl の TableColumnHeader の Width 要素 (書式)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)|必須の要素です。<br /><br /> 列の幅 (文字数) を指定します。|
+|[TableControl の TableColumnHeader の Alignment 要素 (書式)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> 列のラベルを表示する方法を指定します。 アラインメントが指定されていない場合、ラベルは左揃えで配置されます。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[TableHeaders 要素 (書式)](./tableheaders-element-format.md)|テーブルビューの列を定義します。|
+|[TableHeaders 要素 (Format)](./tableheaders-element-format.md)|テーブルビューの列を定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
-テーブルの列ごとにヘッダーを指定します。 列は `TableColumnHeader` の要素が定義されている順序で表示されます。
+テーブルの列ごとにヘッダーを指定します。 列は、要素が定義されている順序で表示され `TableColumnHeader` ます。
 
-テーブルの `TableColumnHeader` 要素の数は、`TableRowEntry` 要素と同じである必要があります。 列ヘッダーは、テーブルの上部のテキストの表示方法を定義します。 行のエントリによって、テーブルの行に表示されるデータが定義されます。
+テーブルには、要素と同じ数の要素が含まれている必要があり `TableColumnHeader` `TableRowEntry` ます。 列ヘッダーは、テーブルの上部のテキストの表示方法を定義します。 行のエントリによって、テーブルの行に表示されるデータが定義されます。
 
 テーブルビューのコンポーネントの詳細については、「[テーブルビュー](./creating-a-table-view.md)」を参照してください。
 
@@ -82,14 +75,14 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="see-also"></a>参照
 
-[TableControl (Format) の TableColumnHeader の Alignment 要素](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[TableControl の TableColumnHeader の Alignment 要素 (書式)](./alignment-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
-[テーブルビューの作成](./creating-a-table-view.md)
+[テーブル ビューを作成する](./creating-a-table-view.md)
 
-[TableControl (Format) の TableColumnHeader の Label 要素](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)
+[TableControl の TableColumnHeader の Label 要素 (書式)](./label-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
 [TableControl の TableHeaders 要素 (Format)](./tableheaders-element-format.md)
 
 [TableColumnHeader for TableControl 要素の幅 (形式)](./width-element-for-tablecolumnheader-for-tablecontrol-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

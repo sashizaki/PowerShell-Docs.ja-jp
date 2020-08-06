@@ -1,19 +1,12 @@
 ---
 title: WideControl の AutoSize 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: def37479-7b6e-40cf-bc81-0f7cbc651b31
-caps.latest.revision: 11
-ms.openlocfilehash: 6dbaef5886a0600bd9fe96dbc8d21f00a674dfcf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 64e62142738916978b37eb1cd3a73536b0447099
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369051"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783876"
 ---
 # <a name="autosize-element-for-widecontrol-format"></a>WideControl の AutoSize 要素 (書式)
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 <AutoSize/>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`AutoSize` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `AutoSize` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -37,17 +30,17 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-None
+なし
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[WideControl 要素 (Format)](./widecontrol-element-format.md)|ビューのワイド (単一値) リスト形式を定義します。|
+|[WideControl 要素 (書式)](./widecontrol-element-format.md)|ビューのワイド (単一値) リスト形式を定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
-ワイドビューを定義する場合は、`AutoSize` 要素または[Columnnumber](./columnnumber-element-for-widecontrol-format.md)要素を追加できますが、両方を追加することはできません。
+ワイドビューを定義する場合は、 `AutoSize` 要素または[columnnumber](./columnnumber-element-for-widecontrol-format.md)要素を追加できますが、両方を追加することはできません。
 
 ワイドビューのコンポーネントの詳細については、「[ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
 
@@ -55,10 +48,10 @@ None
 
 ## <a name="see-also"></a>参照
 
-[WideControl の ColumnNumber 要素 (形式)](./columnnumber-element-for-widecontrol-format.md)
+[WideControl の ColumnNumber 要素 (書式)](./columnnumber-element-for-widecontrol-format.md)
 
-[ワイドビューの作成](./creating-a-wide-view.md)
+[ワイド ビューを作成する](./creating-a-wide-view.md)
 
-[WideControl 要素 (Format)](./widecontrol-element-format.md)
+[WideControl 要素 (書式)](./widecontrol-element-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

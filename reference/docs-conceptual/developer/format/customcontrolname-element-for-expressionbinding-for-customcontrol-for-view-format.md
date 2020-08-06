@@ -1,25 +1,18 @@
 ---
 title: View (Format) の CustomControl の式のバインドの CustomControlName 要素 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ea821e8b-4d65-4263-b7e4-6aeca9f534c2
-caps.latest.revision: 9
-ms.openlocfilehash: b44ced75bbaac7c0744f347bdc97f87365b8fe39
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6f1ffca045b7efcecb4dce4e788a8c508fa6ef08
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364111"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783757"
 ---
 # <a name="customcontrolname-element-for-expressionbinding-for-customcontrol-for-view-format"></a>View の CustomControl の ExpressionBinding の CustomControlName 要素 (書式)
 
 コモンコントロールまたはビューコントロールの名前を指定します。 この要素は、カスタムコントロールビューを定義するときに使用されます。
 
-Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (形式) の CustomControl 要素のビュー (形式) の CustomEntries 要素のビュー (形式) の Custommentry 要素 for view (format) Customentries の CustomControlCustomItem (format) の式のバインドのために、CustomEntry for ビュー (形式) の式のバインド要素の CustomControlName 要素の要素を定義します。
+Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (形式) の CustomControl 要素のビュー (format) CustomEntries 要素の CustomControl for view (format) customentries 要素に対して、CustomEntries for view (format) CustomControlName 要素の customentries (format) 式バインドのバインド要素 (形式) を指定します。
 
 ## <a name="syntax"></a>構文
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 <CustomControlName>NameofCustomControl</CustomControlName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`CustomControlName` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `CustomControlName` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,7 +34,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[CustomItem の式のバインド要素 (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|コントロールによって表示されるデータを定義します。|
 
@@ -49,20 +42,20 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 コントロールの名前を指定します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 書式設定ファイルのすべてのビューで使用できるコモンコントロールを作成したり、特定のビューで使用できるビューコントロールを作成したりできます。 これらのコントロールの名前は、次の要素によって指定されます。
 
-- [構成用コントロールのコントロールの Name 要素 (Format)](./name-element-for-control-for-controls-for-configuration-format.md)
+- [Configuration の Controls の Control の Name 要素 (書式)](./name-element-for-control-for-controls-for-configuration-format.md)
 
-- [ビューのコントロールに対する Control の Name 要素 (Format)](./name-element-for-control-for-controls-for-view-format.md)
+- [View の Controls の Control の Name 要素 (書式)](./name-element-for-control-for-controls-for-view-format.md)
 
 ## <a name="see-also"></a>参照
 
-[構成用コントロールのコントロールの Name 要素 (Format)](./name-element-for-control-for-controls-for-configuration-format.md)
+[Configuration の Controls の Control の Name 要素 (書式)](./name-element-for-control-for-controls-for-configuration-format.md)
 
-[ビューのコントロールに対する Control の Name 要素 (Format)](./name-element-for-control-for-controls-for-view-format.md)
+[View の Controls の Control の Name 要素 (書式)](./name-element-for-control-for-controls-for-view-format.md)
 
 [CustomItem の式のバインド要素 (Format)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

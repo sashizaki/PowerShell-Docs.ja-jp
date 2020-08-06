@@ -1,19 +1,12 @@
 ---
 title: PowerShell モジュールマニフェストを記述する方法 |Microsoft Docs
-ms.custom: ''
 ms.date: 10/16/2019
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e082c2e3-12ce-4032-9caf-bf6b2e0dcf81
-caps.latest.revision: 23
-ms.openlocfilehash: 992148c9e39b6edbfa26907de03a5ae57691d831
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 734adab5ce26df6e26353de8e0bc9084e0fd3f3b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84148398"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784913"
 ---
 # <a name="how-to-write-a-powershell-module-manifest"></a>PowerShell モジュールマニフェストを記述する方法
 
@@ -66,7 +59,7 @@ PowerShell モジュールを作成した後、モジュールに関する情報
 |**GUID**<br /> 型: `GUID`|`'<GUID>'`|このモジュールを一意に識別するために使用する ID。 値が指定されていない場合、 `New-ModuleManifest` オプティマイザー値を生成します。 現在、 **GUID**によってモジュールをインポートすることはできません。 <br /> 例: `GUID = 'cfc45206-1e49-459d-a8ad-5b571ef94857'`|
 |**Author**<br /> 型: `String`|`'<Current user>'`|このモジュールの作成者。 値が指定されていない場合、は `New-ModuleManifest` 現在のユーザーを使用します。 <br /> 例: `Author = 'AuthorNameHere'`|
 |**CompanyName**<br /> 型: `String`|`'Unknown'`|このモジュールの会社またはベンダー。 値が指定されていない場合、は `New-ModuleManifest` 既定のを使用します。<br /> 例: `CompanyName = 'Fabrikam'`|
-|**侵害**<br /> 型: `String`|`'(c) <Author>. All rights reserved.'`| このモジュールの著作権に関する声明。 値が指定されていない場合、は `New-ModuleManifest` 現在のユーザーの既定のをとして使用し `<Author>` ます。 作成者を指定するには、 **author**パラメーターを使用します。 <br /> 例: `Copyright = '2019 AuthorName. All rights reserved.'`|
+|**Copyright**<br /> 型: `String`|`'(c) <Author>. All rights reserved.'`| このモジュールの著作権に関する声明。 値が指定されていない場合、は `New-ModuleManifest` 現在のユーザーの既定のをとして使用し `<Author>` ます。 作成者を指定するには、 **author**パラメーターを使用します。 <br /> 例: `Copyright = '2019 AuthorName. All rights reserved.'`|
 |**説明**<br /> 型: `String`|`<empty string>`|このモジュールによって提供される機能の説明です。<br /> 例: `Description = 'This is the module's description.'`|
 |**PowerShellVersion**<br /> 型: `Version`|`<empty string>`|このモジュールに必要な PowerShell エンジンの最小バージョン。 有効な値は、1.0、2.0、3.0、4.0、5.0、5.1、6、および7です。<br /> 例: `PowerShellVersion = '5.0'`|
 |**PowerShellHostName**<br /> 型: `String`|`<empty string>`|このモジュールが必要とする PowerShell ホストの名前。 この名前は、PowerShell によって提供されます。 ホストプログラムの名前を検索するには、プログラムで「」と入力 `$host.name` します。<br /> 例: `PowerShellHostName = 'ConsoleHost'`|
@@ -88,7 +81,7 @@ PowerShell モジュールを作成した後、モジュールに関する情報
 |**ModuleList**<br /> 型: `Object[]`|`@()`|このモジュールでパッケージ化されているすべてのモジュールを指定します。 これらのモジュールは、名前、コンマ区切りの文字列、または**ModuleName**キーと**GUID**キーを持つハッシュテーブルとして入力できます。 ハッシュテーブルには、省略可能な**ModuleVersion**キーを含めることもできます。 **Modulelist**キーは、モジュールインベントリとして機能するように設計されています。 これらのモジュールは自動的に処理されません。 <br /> 例: `ModuleList = @("SampleModule", "MyModule", @{ModuleName="MyModule"; ModuleVersion="1.0.0.0"; GUID="50cdb55f-5ab7-489f-9e94-4ec21ff51e59"})`|
 |**ファイル一覧**<br /> 型: `String[]`|`@()`|このモジュールでパッケージ化されたすべてのファイルの一覧。 **Modulelist**と同様に、 **FileList**はインベントリリストであり、それ以外の場合は処理されません。 <br /> 例: `FileList = @("File1", "File2", "File3")`|
 |**PrivateData**<br /> 型: `Object`|`@{...}`|**RootModule** (Alias: **ModuleToProcess**) キーによって指定されたルートモジュールに渡す必要があるプライベートデータを指定します。 **Privatedata**は、 **Tags**、 **LicenseUri**、 **ProjectURI**、 **IconUri**、 **ReleaseNotes**、**プレリリース**、 **RequireLicenseAcceptance**、 **externalmoduledependencies**の複数の要素で構成されるハッシュテーブルです。 |
-|**Tags** <br /> 型: `String[]` |`@()`| タグは、オンラインギャラリーのモジュール検出に役立ちます。 <br /> 例: `Tags = "PackageManagement", "PowerShell", "Manifest"`|
+|**タグ** <br /> 型: `String[]` |`@()`| タグは、オンラインギャラリーのモジュール検出に役立ちます。 <br /> 例: `Tags = "PackageManagement", "PowerShell", "Manifest"`|
 |**LicenseUri**<br /> 型: `Uri` |`<empty string>`| このモジュールのライセンスの URL。 <br /> 例: `LicenseUri = 'https://www.contoso.com/license'`|
 |**ProjectUri**<br /> 型: `Uri` |`<empty string>`| このプロジェクトのメイン web サイトの URL。 <br /> 例: `ProjectUri = 'https://www.contoso.com/project'`|
 |**IconUri**<br /> 型: `Uri` |`<empty string>`| このモジュールを表すアイコンの URL。 <br /> 例: `IconUri = 'https://www.contoso.com/icons/icon.png'`|
@@ -253,4 +246,4 @@ PrivateData = @{
 
 [Update-ModuleManifest](/powershell/module/powershellget/update-modulemanifest)
 
-[Windows PowerShell モジュールを記述する](./writing-a-windows-powershell-module.md)
+[Windows PowerShell モジュールの作成](./writing-a-windows-powershell-module.md)

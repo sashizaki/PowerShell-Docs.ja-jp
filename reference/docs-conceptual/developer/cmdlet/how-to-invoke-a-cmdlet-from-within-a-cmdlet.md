@@ -1,23 +1,16 @@
 ---
 title: コマンドレット内からコマンドレットを呼び出す方法 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: efa4dc9c-ddee-46a3-978a-9dbb61e9bb6f
-caps.latest.revision: 12
-ms.openlocfilehash: 57543a88d04eb66c9d109249a99ddd272b02ef9d
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2d5b0788d3310d0dd7b311f86c497afe8eec9d11
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365551"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784148"
 ---
 # <a name="how-to-invoke-a-cmdlet-from-within-a-cmdlet"></a>コマンドレット内からコマンドレットを呼び出す方法
 
-この例では、別のコマンドレット内からコマンドレットを呼び出す方法を示します。このコマンドレットを使用すると、開発中のコマンドレットに、呼び出されたコマンドレットの機能を追加できます。 この例では、`Get-Process` コマンドレットを呼び出して、ローカルコンピューター上で実行されているプロセスを取得します。 `Get-Process` コマンドレットの呼び出しは、次のコマンドと同じです。 このコマンドは、名前が "a" ~ "t" で始まるすべてのプロセスを取得します。
+この例では、別のコマンドレット内からコマンドレットを呼び出す方法を示します。このコマンドレットを使用すると、開発中のコマンドレットに、呼び出されたコマンドレットの機能を追加できます。 この例では、 `Get-Process` コマンドレットを呼び出して、ローカルコンピューター上で実行されているプロセスを取得します。 コマンドレットの呼び出し `Get-Process` は、次のコマンドと同じです。 このコマンドは、名前が "a" ~ "t" で始まるすべてのプロセスを取得します。
 
 ```powershell
 Get-Process -name [a-t]
@@ -28,7 +21,7 @@ Get-Process -name [a-t]
 
 ## <a name="to-invoke-a-cmdlet-from-within-a-cmdlet"></a>コマンドレット内からコマンドレットを呼び出すには
 
-1. 呼び出すコマンドレットを定義するアセンブリが参照されていること、および適切な `using` ステートメントが追加されていることを確認します。 この例では、次の名前空間が追加されています。
+1. 呼び出すコマンドレットを定義するアセンブリが参照されていること、および適切なステートメントが追加されていることを確認し `using` ます。 この例では、次の名前空間が追加されています。
 
     ```csharp
     using System.Diagnostics;
@@ -43,7 +36,7 @@ Get-Process -name [a-t]
     gp.Name = new string[] { "[a-t]*" };
     ```
 
-3. `Get-Process` コマンドレットを呼び出すには、system.servicemodel [*](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)メソッドを呼び出します。
+3. コマンドレットを呼び出すには、system.servicemodel [*](/dotnet/api/System.Management.Automation.Cmdlet.Invoke)メソッドを呼び出します。 `Get-Process`
 
     ```csharp
       foreach (Process p in gp.Invoke<Process>())
@@ -55,7 +48,7 @@ Get-Process -name [a-t]
 
 ## <a name="example"></a>例
 
-この例では、`Get-Process` コマンドレットは、コマンドレットの system.servicemodel[処理](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッド内から呼び出されます。
+この例では、コマンドレットは、コマンド `Get-Process` レットの System.servicemodel[処理](/dotnet/api/System.Management.Automation.Cmdlet.BeginProcessing)メソッド内から呼び出されます。
 
 ```csharp
 using System;
@@ -105,4 +98,4 @@ namespace SendGreeting
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

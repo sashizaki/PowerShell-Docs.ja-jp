@@ -1,25 +1,18 @@
 ---
 title: 列挙 Able膨張 (Format) の EntrySelectedBy の SelectionSetName 要素 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 936d09f2-2c48-49e8-ab2d-0c8729199a2e
-caps.latest.revision: 8
-ms.openlocfilehash: 8ba8931ea5e34f610878351396cad42023393ad6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8745ef9e6f326c3e8a5dbf185a595bbe93e92414
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368331"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785321"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-enumerableexpansion-format"></a>EnumerableExpansion の EntrySelectedBy の SelectionSetName 要素 (書式)
 
 この定義によって展開される .NET 型のセットを指定します。
 
-Configuration 要素 (Format) DefaultSettings 要素 (format) には、EntrySelectedBy 要素 (format) の entryselectedby 要素 (format) を指定します。この場合、EntrySelectedBy の SelectionSetName 要素を指定します。列挙 Able展開 (形式)
+Configuration 要素 (Format) DefaultSettings 要素 (format) enumerableexpansions 要素 (format) 列挙 able膨張拡張要素 (format) の entryselectedby (format) SelectionSetName 要素 (format Able膨張の場合は Format) のエントリを列挙します。
 
 ## <a name="syntax"></a>構文
 
@@ -28,9 +21,9 @@ Configuration 要素 (Format) DefaultSettings 要素 (format) には、EntrySele
 
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`SelectionSetName` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `SelectionSetName` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -42,15 +35,15 @@ Configuration 要素 (Format) DefaultSettings 要素 (format) には、EntrySele
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[列挙 Able展開 (形式) の EntrySelectedBy 要素](./entryselectedby-element-for-enumerableexpansion-format.md)|この定義によって展開される .NET コレクションオブジェクトを定義します。|
+|[EnumerableExpansion の EntrySelectedBy 要素 (書式)](./entryselectedby-element-for-enumerableexpansion-format.md)|この定義によって展開される .NET コレクションオブジェクトを定義します。|
 
 ## <a name="text-value"></a>テキスト値
 
 選択セットの名前を指定します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 各定義には、1つ以上の型名、選択セット、または選択条件を指定する必要があります。
 
@@ -58,8 +51,8 @@ Configuration 要素 (Format) DefaultSettings 要素 (format) には、EntrySele
 
 ## <a name="see-also"></a>参照
 
-[選択セットの定義](./defining-selection-sets.md)
+[選択セットを定義する](./defining-selection-sets.md)
 
-[列挙 Able展開 (形式) の EntrySelectedBy 要素](./entryselectedby-element-for-enumerableexpansion-format.md)
+[EnumerableExpansion の EntrySelectedBy 要素 (書式)](./entryselectedby-element-for-enumerableexpansion-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

@@ -1,28 +1,21 @@
 ---
 title: パイプライン入力を処理するパラメーターを追加する |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - cmdlets [PowerShell Programmer's Guide], pipeline input
 - parameters [PowerShell Programmer's Guide], pipeline input
-ms.assetid: 09bf70a9-7c76-4ffe-b3f0-a1d5f10a0931
-caps.latest.revision: 8
-ms.openlocfilehash: 4966ac274713899e7ea9e0c375dca220a972a1b5
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: a678df30a13086b317d5680ee0fbc4d3c3391235
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978731"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784556"
 ---
 # <a name="adding-parameters-that-process-pipeline-input"></a>パイプライン入力を処理するパラメーターを追加する
 
 コマンドレットの1つの入力ソースは、上流のコマンドレットで発生したパイプライン上のオブジェクトです。 このセクションでは、コマンドレットがパイプラインオブジェクトを処理できるように、Get Proc コマンドレット ([最初のコマンドレットの作成](./creating-a-cmdlet-without-parameters.md)に関するページで説明) にパラメーターを追加する方法について説明します。
 
-この Get Proc コマンドレットは、パイプラインオブジェクトからの入力を受け入れ、指定された名前に基づいてローカルコンピューターからプロセス情報を取得し、コマンドラインでプロセスに関する情報を表示する `Name` パラメーターを使用します。
+この Get Proc コマンドレットは、 `Name` パイプラインオブジェクトからの入力を受け入れ、指定された名前に基づいてローカルコンピューターからプロセス情報を取得し、コマンドラインでプロセスに関する情報を表示するパラメーターを使用します。
 
 ## <a name="defining-the-cmdlet-class"></a>コマンドレットクラスの定義
 
@@ -43,12 +36,12 @@ Public Class GetProcCommand
 
 ## <a name="defining-input-from-the-pipeline"></a>パイプラインからの入力の定義
 
-このセクションでは、コマンドレットのパイプラインからの入力を定義する方法について説明します。 この Get Proc コマンドレットは、「[コマンドライン入力を処理するパラメーターの追加](./adding-parameters-that-process-command-line-input.md)」で説明されているように、`Name` パラメーターを表すプロパティを定義します。
+このセクションでは、コマンドレットのパイプラインからの入力を定義する方法について説明します。 この Get Proc コマンドレットは、 `Name` 「[コマンドライン入力を処理するパラメーターの追加](./adding-parameters-that-process-command-line-input.md)」で説明されているように、パラメーターを表すプロパティを定義します。
 (パラメーターの宣言に関する一般的な情報については、「」を参照してください)。
 
-ただし、コマンドレットでパイプラインの入力を処理する必要がある場合は、Windows PowerShell ランタイムによって入力値にバインドされたパラメーターを持つ必要があります。 これを行うには、`ValueFromPipeline` キーワードを追加するか、または `ValueFromPipelineByProperty` キーワードを[system.object 属性宣言](/dotnet/api/System.Management.Automation.ParameterAttribute)に追加する必要があります。 コマンドレットが入力オブジェクト全体にアクセスする場合は、`ValueFromPipeline` キーワードを指定します。 コマンドレットがオブジェクトのプロパティのみにアクセスする場合は、`ValueFromPipelineByProperty` を指定します。
+ただし、コマンドレットでパイプラインの入力を処理する必要がある場合は、Windows PowerShell ランタイムによって入力値にバインドされたパラメーターを持つ必要があります。 これを行うには、キーワードを追加するか、またはキーワードを system.string 属性宣言に追加する必要があり `ValueFromPipeline` `ValueFromPipelineByProperty` ます。 [System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute) `ValueFromPipeline`コマンドレットが入力オブジェクト全体にアクセスする場合は、キーワードを指定します。 `ValueFromPipelineByProperty`コマンドレットがオブジェクトのプロパティのみにアクセスする場合は、を指定します。
 
-パイプライン入力を受け入れるこの Get Proc コマンドレットの `Name` パラメーターのパラメーター宣言を次に示します。
+`Name`パイプラインの入力を受け入れる、この Get Proc コマンドレットのパラメーターのパラメーター宣言を次に示します。
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/GetProcessSample03/GetProcessSample03.cs" range="35-44":::
 
@@ -69,16 +62,16 @@ End Property
 
 <!-- TODO!!!: review snippet reference  [!CODE [Msh_samplesgetproc03#GetProc03VBNameParameter](Msh_samplesgetproc03#GetProc03VBNameParameter)]  -->
 
-前の宣言では、`ValueFromPipeline` キーワードを `true` に設定しています。これにより、オブジェクトがパラメーターと同じ型である場合、または同じ型に強制的に変換できる場合は、Windows PowerShell ランタイムがパラメーターを受信オブジェクトにバインドします。 `ValueFromPipelineByPropertyName` キーワードも `true` に設定されます。これにより、Windows PowerShell ランタイムは `Name` プロパティの受信オブジェクトを確認します。 受信オブジェクトにこのようなプロパティがある場合、ランタイムは、受信オブジェクトの `Name` プロパティに `Name` パラメーターをバインドします。
+前の宣言では、 `ValueFromPipeline` キーワードをに設定します `true` 。これにより、オブジェクトがパラメーターと同じ型である場合、または同じ型に強制的に変換できる場合は、Windows PowerShell ランタイムによってパラメーターが受信オブジェクトにバインドされます。 `ValueFromPipelineByPropertyName`キーワードは、 `true` Windows PowerShell ランタイムがプロパティの受信オブジェクトを確認するようににも設定されてい `Name` ます。 受信オブジェクトにこのようなプロパティがある場合、ランタイムは、 `Name` 受信したオブジェクトのプロパティにパラメーターをバインドし `Name` ます。
 
 > [!NOTE]
-> パラメーターの `ValueFromPipeline` attribute キーワードの設定は、`ValueFromPipelineByPropertyName` キーワードの設定よりも優先されます。
+> `ValueFromPipeline`パラメーターの属性キーワードの設定は、キーワードの設定よりも優先され `ValueFromPipelineByPropertyName` ます。
 
 ## <a name="overriding-an-input-processing-method"></a>入力処理メソッドのオーバーライド
 
 コマンドレットがパイプライン入力を処理する場合は、適切な入力処理メソッドをオーバーライドする必要があります。 基本的な入力処理方法は、[最初のコマンドレットを作成するとき](./creating-a-cmdlet-without-parameters.md)に導入されます。
 
-この Get Proc コマンドレットは、ユーザーまたはスクリプトによって指定された `Name` パラメーターの入力を処理するために、 [system.servicemodel メソッドを](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)オーバーライドします。 このメソッドは、要求された各プロセス名のプロセスを取得します。名前が指定されていない場合は、すべてのプロセスを取得します。 [WriteObject (system.object, system.string)](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)の呼び出しが、出力オブジェクトをパイプラインに送信するための出力機構として使用されていることに注意し[てください。](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) この呼び出しの2番目のパラメーターである `enumerateCollection`は `true` に設定され、プロセスオブジェクトの配列を列挙し、一度に1つのプロセスをコマンドラインに書き込むように Windows PowerShell ランタイムに指示します。
+この Get Proc コマンドレット[は、](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) `Name` ユーザーまたはスクリプトによって指定されたパラメーター入力を処理するために、system.servicemodel メソッドをオーバーライドします。 このメソッドは、要求された各プロセス名のプロセスを取得します。名前が指定されていない場合は、すべてのプロセスを取得します。 [WriteObject (system.object, system.string)](/dotnet/api/system.management.automation.cmdlet.writeobject#System_Management_Automation_Cmdlet_WriteObject_System_Object_System_Boolean_)の呼び出しが、出力オブジェクトをパイプラインに送信するための出力機構として使用されていることに注意し[てください。](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord) この呼び出しの2番目のパラメーターは、をに設定して、 `enumerateCollection` `true` プロセスオブジェクトの配列を列挙し、一度に1つのプロセスをコマンドラインに書き込むように Windows PowerShell ランタイムに指示します。
 
 ```csharp
 protected override void ProcessRecord()
@@ -127,7 +120,7 @@ End Sub 'ProcessRecord
 
 ## <a name="code-sample"></a>コード サンプル
 
-完全なC#サンプルコードについては、「 [GetProcessSample03 sample](./getprocesssample03-sample.md)」を参照してください。
+完全な C# サンプルコードについては、「 [GetProcessSample03 sample](./getprocesssample03-sample.md)」を参照してください。
 
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類と書式設定の定義
 
@@ -158,7 +151,7 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
      3927      62  71836   26984    467  195.19  1848  OUTLOOK
   ```
 
-- 次の行を入力して、"IEXPLORE.EXE" というプロセスから `Name` プロパティを持つプロセスオブジェクトを取得します。 この例では、(Windows PowerShell によって提供される) `Get-Process` コマンドレットを上流のコマンドとして使用して、"IEXPLORE.EXE" プロセスを取得します。
+- 次の行を入力して、 `Name` "iexplore.exe" というプロセスのプロパティを持つプロセスオブジェクトを取得します。 この例では、 `Get-Process` コマンドレット (Windows PowerShell によって提供) をアップストリームコマンドとして使用して、"iexplore.exe" プロセスを取得します。
 
   ```powershell
   PS> get-process iexplore | get-proc
@@ -187,4 +180,4 @@ Windows PowerShell は、.Net オブジェクトを使用してコマンドレ�
 
 [Windows PowerShell リファレンス](../windows-powershell-reference.md)
 
-[コマンドレットのサンプル](./cmdlet-samples.md)
+[コマンドレット サンプル](./cmdlet-samples.md)

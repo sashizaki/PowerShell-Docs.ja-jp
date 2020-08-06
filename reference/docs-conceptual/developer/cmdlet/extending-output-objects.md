@@ -1,27 +1,20 @@
 ---
 title: 出力オブジェクトの拡張 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a252e0ec-d456-42d7-bd49-d6b8bc57f388
-caps.latest.revision: 11
-ms.openlocfilehash: 12a826363221b8a7ce06245c787a7bd0529e42f8
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 48f4f2996159d84257ad72d499e3a796aeaa9116
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690907"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784318"
 ---
 # <a name="extending-output-objects"></a>出力オブジェクトを拡張する
 
-型ファイル (types.ps1xml) を使用して、コマンドレット、関数、およびスクリプトによって返される .NET Framework オブジェクトを拡張できます。 型ファイルは、既存のオブジェクトにプロパティとメソッドを追加できる XML ベースのファイルです。 たとえば、Windows PowerShell は types.ps1xml ファイルを提供します。これにより、既存の複数の .NET Framework オブジェクトに要素が追加されます。 Types.ps1xml ファイルは、Windows PowerShell インストールディレクトリ () にあります。 `$pshome` 独自の型ファイルを作成して、それらのオブジェクトをさらに拡張したり、他のオブジェクトを拡張したりすることができます。 型ファイルを使用してオブジェクトを拡張すると、そのオブジェクトのすべてのインスタンスが新しい要素で拡張されます。
+型ファイル (types.ps1xml) を使用して、コマンドレット、関数、およびスクリプトによって返される .NET Framework オブジェクトを拡張できます。 型ファイルは、既存のオブジェクトにプロパティとメソッドを追加できる XML ベースのファイルです。 たとえば、Windows PowerShell には Types.ps1xml ファイルが用意されています。これにより、既存のいくつかの .NET Framework オブジェクトに要素が追加されます。 Types.ps1xml ファイルは、Windows PowerShell インストールディレクトリ () にあり `$pshome` ます。 独自の型ファイルを作成して、それらのオブジェクトをさらに拡張したり、他のオブジェクトを拡張したりすることができます。 型ファイルを使用してオブジェクトを拡張すると、そのオブジェクトのすべてのインスタンスが新しい要素で拡張されます。
 
 ## <a name="extending-the-systemarray-object"></a>System.string オブジェクトの拡張
 
-次の例は、Windows PowerShell によっ[て types.ps1xml](/dotnet/api/System.Array)ファイル内の system.string オブジェクトがどのように拡張されるかを示しています。 既定では、 [system.string オブジェクトに](/dotnet/api/System.Array)は、 `Length` 配列内のオブジェクトの数を一覧表示するプロパティがあります。 ただし、名前 "length" はプロパティを明確に記述していないため、Windows PowerShell は `Count` alias プロパティを追加します。このプロパティには、プロパティと同じ値が表示され `Length` ます。 次の XML は、 `Count` プロパティを system.string 型に追加[します](/dotnet/api/System.Array)。
+次の例は、Windows PowerShell が Types.ps1xml ファイル内の[system.string オブジェクトを](/dotnet/api/System.Array)拡張する方法を示しています。 既定では、 [system.string オブジェクトに](/dotnet/api/System.Array)は、 `Length` 配列内のオブジェクトの数を一覧表示するプロパティがあります。 ただし、名前 "length" はプロパティを明確に記述していないため、Windows PowerShell は `Count` alias プロパティを追加します。このプロパティには、プロパティと同じ値が表示され `Length` ます。 次の XML は、 `Count` プロパティを system.string 型に追加[します](/dotnet/api/System.Array)。
 
 ```xml
 <Type>
@@ -57,7 +50,7 @@ Get            Method        System.Object Get(Int32 )
 Length         Property      System.Int32 Length {get;}
 ```
 
-プロパティまたはプロパティのいずれかを使用して、 `Count` `Length` 配列内のオブジェクトの数を確認できます。 たとえば、次のように入力します。
+プロパティまたはプロパティのいずれかを使用して、 `Count` `Length` 配列内のオブジェクトの数を確認できます。 次に例を示します。
 
 ```powershell
 PS> (1, 2, 3, 4).Count
@@ -89,7 +82,7 @@ PS> (1, 2, 3, 4).Length
 
 独自の拡張型を定義したら、次のいずれかの方法を使用して拡張オブジェクトを使用できるようにします。
 
-- 拡張型ファイルを現在のセッションで使用できるようにするには、[更新-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData)コマンドレットを使用して、新しいファイルを追加します。 型を他の型のファイル (types.ps1xml ファイルを含む) で定義されている型よりも優先する場合は、 `PrependData` [更新-typedata](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData)コマンドレットのパラメーターを使用します。
+- 拡張型ファイルを現在のセッションで使用できるようにするには、[更新-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData)コマンドレットを使用して、新しいファイルを追加します。 他の型ファイル (Types.ps1xml ファイルを含む) で定義されている型よりも型を優先する場合は、 `PrependData` [更新-typedata](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData)コマンドレットのパラメーターを使用します。
 - 拡張型ファイルを今後のすべてのセッションで使用できるようにするには、モジュールに型ファイルを追加するか、現在のセッションをエクスポートするか、または[更新-TypeData](/powershell/module/Microsoft.PowerShell.Utility/Update-TypeData)コマンドを Windows PowerShell プロファイルに追加します。
 
 ## <a name="signing-types-files"></a>署名の種類ファイル

@@ -1,25 +1,18 @@
 ---
 title: CustomControl for ビュー (Format) の CustomItem の改行要素 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1ca84152-c2b7-492c-8a2e-d0587ab9d7b9
-caps.latest.revision: 9
-ms.openlocfilehash: 48ef14b2a70eecb6ae885739dd3c58ef6e9adb1f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 89fdcfaf8fdea44921ec6967e8e152d81fd63cc9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365071"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785644"
 ---
 # <a name="newline-element-for-customitem-for-customcontrol-for-view-format"></a>View の CustomControl の CustomItem の NewLine 要素 (書式)
 
 コントロールの表示に空白行を追加します。 この要素は、カスタムコントロールビューを定義するときに使用されます。
 
-Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) CustomControl 要素 (形式) の CustomEntries 要素を表示するための CustomEntries for ビュー (形式) の Custommentry 要素カスタム項目 (形式) のための CustomEntry for View (Format) の改行要素
+Configuration 要素 (Format) ViewDefinitions 要素 (形式) ビュー要素 (形式) CustomControl Element (Format) CustomEntries for CustomControl for view (format) customentries for CustomEntries for CustomEntry to view (format) for Customentries (format) の for view (format) 改行要素 (形式)
 
 ## <a name="syntax"></a>構文
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 <NewLine/>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`NewLine` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `NewLine` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,14 +34,14 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[CustomEntry for ビューの CustomItem 要素](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|カスタムコントロールビューのコントロールを定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 ## <a name="see-also"></a>参照
 
 [CustomEntry for ビューの CustomItem 要素](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

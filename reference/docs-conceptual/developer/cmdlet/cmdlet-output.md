@@ -1,19 +1,12 @@
 ---
 title: コマンドレットの出力 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1362f4cd-4e05-4ace-ade6-7128da8ad86c
-caps.latest.revision: 10
-ms.openlocfilehash: 4c6aacd49b0a87bca6806ba5f08a1b4d48a90959
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7697db01c8c4d1c831202c07256559bf638aeaef
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365941"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784437"
 ---
 # <a name="cmdlet-output"></a>コマンドレット出力
 
@@ -27,10 +20,10 @@ ms.locfileid: "72365941"
 
 [出力オブジェクトの拡張](./extending-output-objects.md)型ファイル (types.ps1xml) を使用して、コマンドレット、関数、およびスクリプトによって返される .NET Framework オブジェクトを拡張する方法について説明します。
 
-[PowerShell のフォーマットファイル](../format/powershell-formatting-files.md)Windows PowerShell で .NET Framework オブジェクトの特定のセットの既定の表示を定義する、書式設定ファイル (types.ps1xml) ファイルについて説明します。
+[PowerShell のフォーマットファイル](../format/powershell-formatting-files.md)Windows PowerShell の特定の .NET Framework オブジェクトのセットに対する既定の表示を定義するフォーマットファイル (.format.ps1xml) ファイルについて説明します。
 
 [カスタムの書式設定ファイル](./custom-formatting-files.md)独自のカスタム書式設定ファイルを作成して、既定の表示形式を上書きしたり、独自のコマンドによって返されるオブジェクトの表示を定義したりする方法について説明します。
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

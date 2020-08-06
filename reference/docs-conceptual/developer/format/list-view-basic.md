@@ -1,19 +1,12 @@
 ---
 title: リストビュー (基本) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 918f381c-43e6-4594-a468-a40bfa8a16d6
-caps.latest.revision: 7
-ms.openlocfilehash: 3c94d8e98f179286112a417230fce659dc0b614c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 74ff8f6eee0a9358c123455aa00736a11e7f085d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362811"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783553"
 ---
 # <a name="list-view-basic"></a>リスト ビュー (基本)
 
@@ -23,14 +16,14 @@ ms.locfileid: "72362811"
 
 1. このトピックの「例」のセクションにある XML をテキストファイルにコピーします。
 
-2. テキスト ファイルを保存します。 `format.ps1xml` 拡張機能をファイルに追加して、フォーマットファイルとして識別するようにしてください。
+2. テキスト ファイルを保存します。 ファイルに拡張子を追加して、 `format.ps1xml` 書式設定ファイルとして識別するようにしてください。
 
-3. Windows PowerShell を開き、次のコマンドを実行して、書式設定ファイルを現在のセッションに読み込みます: `Update-formatdata -prependpath PathToFormattingFile`。
+3. Windows PowerShell を開き、次のコマンドを実行して、書式設定ファイルを現在のセッションに読み込み `Update-formatdata -prependpath PathToFormattingFile` ます。
 
    > [!WARNING]
-   > この書式設定ファイルは、Windows PowerShell の書式設定ファイルによって既に定義されているオブジェクトの表示を定義します。 コマンドレットの実行時には `prependPath` パラメーターを使用する必要があり、このフォーマットファイルをモジュールとして読み込むことはできません。
+   > この書式設定ファイルは、Windows PowerShell の書式設定ファイルによって既に定義されているオブジェクトの表示を定義します。 `prependPath`コマンドレットを実行するときにパラメーターを使用する必要があります。このフォーマットファイルをモジュールとして読み込むことはできません。
 
-## <a name="demonstrates"></a>使用例
+## <a name="demonstrates"></a>対象
 
 この書式設定ファイルは、次の XML 要素を示しています。
 
@@ -129,6 +122,6 @@ ServiceType : Win32OwnProcess
 
 ## <a name="see-also"></a>参照
 
-[フォーマットファイルの例](./examples-of-formatting-files.md)
+[書式設定ファイルの例](./examples-of-formatting-files.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

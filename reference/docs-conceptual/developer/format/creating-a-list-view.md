@@ -1,19 +1,12 @@
 ---
 title: リストビューを作成する |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8c7a40ca-1786-46f0-bab5-6ce229daa7ee
-caps.latest.revision: 14
-ms.openlocfilehash: 25d24063501196d44e0f806a55bb699c82f771ce
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 24eb673e0db011a1439fa5ba1f2966fcc3bdc338
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368981"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783774"
 ---
 # <a name="creating-a-list-view"></a>リスト ビューを作成する
 
@@ -255,7 +248,7 @@ ServiceType         : Win32OwnProcess
 
 ## <a name="using-format-strings"></a>書式指定文字列の使用
 
-書式設定文字列をビューに追加して、データの表示方法をさらに定義できます。 次の例は、`StartTime` プロパティの値の書式設定文字列を定義する方法を示しています。
+書式設定文字列をビューに追加して、データの表示方法をさらに定義できます。 次の例は、プロパティの値の書式設定文字列を定義する方法を示して `StartTime` います。
 
 ```xml
 <ListItem>
@@ -274,7 +267,7 @@ ServiceType         : Win32OwnProcess
 
 - [ScriptBlock](./scriptblock-element-for-listitem-for-listcontrol-format.md)要素 (表示されません) は、ビューによって値が表示されるスクリプトを指定します。 スクリプトまたはプロパティのいずれかを指定する必要がありますが、両方を指定することはできません。
 
-次の例では、スクリプトの値の書式を設定するために、`ToString` メソッドが呼び出されています。 スクリプトは、オブジェクトの任意のメソッドを呼び出すことができます。 したがって、オブジェクトに、書式設定パラメーターを持つメソッド (`ToString`など) がある場合、スクリプトはそのメソッドを呼び出してスクリプトの出力値を書式設定できます。
+次の例では、 `ToString` スクリプトの値の書式を設定するためにメソッドが呼び出されています。 スクリプトは、オブジェクトの任意のメソッドを呼び出すことができます。 したがって、オブジェクトに、書式設定パラメーターを持つなどのメソッドがある場合、 `ToString` スクリプトはそのメソッドを呼び出してスクリプトの出力値を書式設定できます。
 
 ```xml
 <ListItem>
@@ -285,7 +278,7 @@ ServiceType         : Win32OwnProcess
 </ListItem>
 ```
 
-次の XML 要素を使用して、`ToString` メソッドを呼び出すことができます。
+次の XML 要素を使用して、メソッドを呼び出すことができ `ToString` ます。
 
 - [ListItem](./listitem-element-for-listitems-for-listcontrol-format.md)要素は、ビューによって表示されるデータを指定します。
 
@@ -293,4 +286,4 @@ ServiceType         : Win32OwnProcess
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](../cmdlet/writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](../cmdlet/writing-a-windows-powershell-cmdlet.md)

@@ -1,19 +1,12 @@
 ---
 title: Expand 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: faa0314b-f6f1-44fd-ad2b-b00cbe38923f
-caps.latest.revision: 9
-ms.openlocfilehash: 8b924c989133b47e4d95d8429778003c76595d58
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: deee832254bb8a774ee2c1f5bd451d3ced1bd47a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368741"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783655"
 ---
 # <a name="expand-element-format"></a>Expand 要素 (書式)
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) DefaultSettings 要素 (Format) 列挙 Ableexpand 
 <Expand>EnumOnly, CoreOnly, Both</Expand>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`Expand` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `Expand` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,9 +34,9 @@ Configuration 要素 (Format) DefaultSettings 要素 (Format) 列挙 Ableexpand 
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[列挙 Able展開要素 (形式)](./enumerableexpansion-element-format.md)|特定の .NET コレクションオブジェクトをビューに表示するときに展開する方法を定義します。|
+|[EnumerableExpansion 要素 (書式)](./enumerableexpansion-element-format.md)|特定の .NET コレクションオブジェクトをビューに表示するときに展開する方法を定義します。|
 
 ## <a name="text-value"></a>テキスト値
 
@@ -55,7 +48,7 @@ Configuration 要素 (Format) DefaultSettings 要素 (Format) 列挙 Ableexpand 
 
 - Both: コレクション内のオブジェクトのプロパティと、コレクションオブジェクトのプロパティを表示します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 この要素は、コレクションオブジェクトとコレクション内のオブジェクトをどのように表示するかを定義するために使用されます。 この場合、コレクションオブジェクト**は、system.string インターフェイスを**サポートする任意のオブジェクトを参照します。
 
@@ -63,4 +56,4 @@ Configuration 要素 (Format) DefaultSettings 要素 (Format) 列挙 Ableexpand 
 
 ## <a name="see-also"></a>参照
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

@@ -1,25 +1,18 @@
 ---
 title: コマンドレット Alias |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d0d70864-33fb-49ce-8054-c41ba19fd554
-caps.latest.revision: 11
-ms.openlocfilehash: 32f45702cc0d28e6652ef61ebdbe085291013408
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fed4055f09e01c5f3fa87584d48551918606f4eb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369981"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784539"
 ---
 # <a name="cmdlet-aliases"></a>コマンドレット エイリアス
 
 コマンドレットのエイリアスを使用して、コマンドレットのユーザーエクスペリエンスを向上させることができます。 頻繁に使用するコマンドレットにエイリアスを追加して、入力を減らし、タスクをすばやく完了できるようにすることができます。 組み込みのエイリアスをコマンドレットに含めることも、ユーザーが独自のカスタムエイリアスを定義することもできます。
 
-たとえば、 [Get コマンド](/powershell/module/microsoft.powershell.core/get-command)レットには `gcm` エイリアスが組み込まれています。 エイリアスを使用して、他の言語のコマンド名を追加して、ユーザーが新しいコマンドを習得する必要がないようにすることもできます。
+たとえば、 [Get コマンド](/powershell/module/microsoft.powershell.core/get-command)レットには、組み込みのエイリアスがあり `gcm` ます。 エイリアスを使用して、他の言語のコマンド名を追加して、ユーザーが新しいコマンドを習得する必要がないようにすることもできます。
 
 ## <a name="alias-guidelines"></a>エイリアスのガイドライン
 
@@ -27,7 +20,7 @@ ms.locfileid: "72369981"
 
 - エイリアスを割り当てる前に、Windows PowerShell を起動してから、 [Get Alias](/powershell/module/Microsoft.PowerShell.Utility/Get-Alias)コマンドレットを実行して、既に使用されているエイリアスを確認します。
 
-- コマンドレット名の動詞を参照するエイリアスプレフィックスと、コマンドレット名の名詞を参照するエイリアスサフィックスを含めます。 たとえば、`Import-Module` コマンドレットのエイリアスは "ipmo" です。 すべての動詞とそのエイリアスの一覧については、「[コマンドレットの動詞](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
+- コマンドレット名の動詞を参照するエイリアスプレフィックスと、コマンドレット名の名詞を参照するエイリアスサフィックスを含めます。 たとえば、 `Import-Module` コマンドレットのエイリアスは "ipmo" です。 すべての動詞とそのエイリアスの一覧については、「[コマンドレットの動詞](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
 
 - 同じ動詞を持つコマンドレットの場合は、同じエイリアスプレフィックスを含めます。 たとえば、名前に "Get" という動詞があるすべての Windows PowerShell コマンドレットのエイリアスは、"g" プレフィックスを使用します。
 
@@ -39,4 +32,4 @@ ms.locfileid: "72369981"
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

@@ -1,19 +1,12 @@
 ---
 title: PowerShell モジュールのインストール |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fb82827e-fdb7-4cbf-b3d4-093e72b3ff0e
-caps.latest.revision: 28
-ms.openlocfilehash: 60ac4bf9089232a9fa879e835e32da53422489fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6a4e9ac2884d0b300b5c1ad8b6156525438a1650
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367071"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784862"
 ---
 # <a name="installing-a-powershell-module"></a>PowerShell モジュールをインストールする
 
@@ -31,14 +24,14 @@ PowerShell モジュールを作成した後は、システムにモジュール
 
 既定では、 **PSModulePath**環境変数の値には、次のシステムおよびユーザーモジュールのディレクトリが含まれていますが、値を追加して編集することができます。
 
-- `$PSHome\Modules` (%Windir%\System32\WindowsPowerShell\v1.0\Modules)
+- `$PSHome\Modules`%Windir%\System32\WindowsPowerShell\v1.0\Modules
 
   > [!WARNING]
   > この場所は、Windows に付属するモジュール用に予約されています。 この場所にモジュールをインストールしないでください。
 
-- `$Home\Documents\WindowsPowerShell\Modules` (%UserProfile%\Documents\WindowsPowerShell\Modules)
+- `$Home\Documents\WindowsPowerShell\Modules`(%UserProfile%\Documents\WindowsPowerShell\Modules)
 
-- `$Env:ProgramFiles\WindowsPowerShell\Modules` (%ProgramFiles%\WindowsPowerShell\Modules)
+- `$Env:ProgramFiles\WindowsPowerShell\Modules`%ProgramFiles%\WindowsPowerShell\Modules
 
   **PSModulePath**環境変数の値を取得するには、次のいずれかのコマンドを使用します。
 
@@ -47,7 +40,7 @@ PowerShell モジュールを作成した後は、システムにモジュール
   [Environment]::GetEnvironmentVariable("PSModulePath")
   ```
 
-  **PSModulePath**環境変数の値の値にモジュールパスを追加するには、次のコマンド形式を使用します。 この形式で**は、SetEnvironmentVariable クラスの**メソッドを使用して、 **PSModulePath**環境変数に対するセッションに依存しない変更を行います。
+  **PSModulePath**環境変数の値の値にモジュールパスを追加するには、次のコマンド形式を使用します。 この形式で**は、SetEnvironmentVariable クラスの** **SetEnvironmentVariable**メソッドを使用して、 **PSModulePath**環境変数に対するセッションに依存しない変更を行います。
 
   ```powershell
   #Save the current value in the $p variable.
@@ -62,7 +55,7 @@ PowerShell モジュールを作成した後は、システムにモジュール
   ```
 
   > [!IMPORTANT]
-  > パスを**PSModulePath**に追加したら、変更に関する環境メッセージをブロードキャストする必要があります。 変更をブロードキャストすると、シェルなどの他のアプリケーションが変更を取得できるようになります。 変更をブロードキャストするには、製品のインストールコードで、`lParam` が文字列 "Environment" に設定された**WM_SETTINGCHANGE**メッセージを送信するようにします。 モジュールのインストールコードが**PSModulePath**を更新した後に、必ずメッセージを送信してください。
+  > パスを**PSModulePath**に追加したら、変更に関する環境メッセージをブロードキャストする必要があります。 変更をブロードキャストすると、シェルなどの他のアプリケーションが変更を取得できるようになります。 変更をブロードキャストするには、製品のインストールコードから**WM_SETTINGCHANGE** 、 `lParam` 文字列 "Environment" に設定された WM_SETTINGCHANGE メッセージを送信するようにします。 モジュールのインストールコードが**PSModulePath**を更新した後に、必ずメッセージを送信してください。
 
 ### <a name="use-the-correct-module-directory-name"></a>正しいモジュールディレクトリ名を使用する
 
@@ -70,7 +63,7 @@ PowerShell モジュールを作成した後は、システムにモジュール
 
 ファイルの "ベース名" は、ファイル名拡張子のない名前です。 適切な形式のモジュールでは、モジュールファイルが格納されているディレクトリの名前が、モジュール内の少なくとも1つのファイルの基本名と一致している必要があります。
 
-たとえば、サンプルの Fabrikam モジュールでは、モジュールファイルを含むディレクトリの名前は "Fabrikam" で、少なくとも1つのファイルには "Fabrikam" という基本名があります。 この場合、.psd1 と Fabrikam の両方に "Fabrikam" という基本名があります。
+たとえば、サンプルの Fabrikam モジュールでは、モジュールファイルを含むディレクトリの名前は "Fabrikam" で、少なくとも1つのファイルには "Fabrikam" という基本名があります。 この場合、Fabrikam.psd1 と Fabrikam.dll の両方に "Fabrikam" という基本名があります。
 
 ```
 C:\Program Files
@@ -89,7 +82,7 @@ C:\Program Files
 
 - モジュールの自動読み込み機能では、モジュールを自動的にインポートすることはできません。
 
-- [Get モジュール](/powershell/module/Microsoft.PowerShell.Core/Get-Module)コマンドレットの `ListAvailable` パラメーターがモジュールを見つけることができません。
+- `ListAvailable` [Get モジュール](/powershell/module/Microsoft.PowerShell.Core/Get-Module)コマンドレットのパラメーターは、モジュールを見つけることができません。
 
 - モジュールの[インポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットがモジュールを見つけることができません。 モジュールをインポートするには、ルートモジュールファイルまたはモジュールマニフェストファイルへの完全パスを指定する必要があります。
 
@@ -101,7 +94,7 @@ C:\Program Files
 
 - [コマンド](/powershell/module/Microsoft.PowerShell.Utility/Show-Command)レットでは、モジュール内のコマンドを見つけて表示することはできません。
 
-  モジュール内のコマンドが、Windows PowerShell Integrated Scripting Environment (ISE) の [`Show-Command`] ウィンドウに表示されていません。
+  `Show-Command`Windows PowerShell Integrated Scripting Environment (ISE) のウィンドウにモジュールのコマンドがありません。
 
 ## <a name="where-to-install-modules"></a>モジュールをインストールする場所
 
@@ -153,7 +146,7 @@ $p += ";C:\Program Files\Fabrikam Technologies\Fabrikam Manager\Modules\"
 
 1つの製品の複数のコンポーネントまたは複数のバージョンの製品でモジュールが使用されている場合は、%ProgramFiles%\Common Files\Modules サブディレクトリのモジュール固有のサブディレクトリにモジュールをインストールします。
 
-次の例では、Fabrikam モジュールは `%ProgramFiles%\Common Files\Modules` サブディレクトリの Fabrikam サブディレクトリにインストールされます。 各モジュールは Modules サブディレクトリ内の独自のサブディレクトリに存在することに注意してください。
+次の例では、Fabrikam モジュールは、サブディレクトリの Fabrikam サブディレクトリにインストールされ `%ProgramFiles%\Common Files\Modules` ます。 各モジュールは Modules サブディレクトリ内の独自のサブディレクトリに存在することに注意してください。
 
 ```
 C:\Program Files
@@ -185,7 +178,7 @@ $p = $q -join ';'
 2. モジュールのバージョンごとにモジュールマニフェストを作成します。 マニフェストの**ModuleVersion**キーの値に、モジュールのバージョン番号を入力します。 マニフェストファイル (.psd1) をモジュールのバージョン固有のディレクトリに保存します。
 3. 次の例に示すように、モジュールルートフォルダーのパスを**PSModulePath**環境変数の値に追加します。
 
-モジュールの特定のバージョンをインポートするために、エンドユーザーは、[モジュールのインポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットの `MinimumVersion` パラメーターまたは `RequiredVersion` パラメーターを使用できます。
+モジュールの特定のバージョンをインポートするために、エンドユーザーは、 `MinimumVersion` モジュールの `RequiredVersion` [インポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットのパラメーターまたはパラメーターを使用できます。
 
 たとえば、Fabrikam モジュールをバージョン8.0 および9.0 で使用できる場合、Fabrikam モジュールのディレクトリ構造は次のようになります。
 
@@ -210,7 +203,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 [Environment]::SetEnvironmentVariable("PSModulePath",$p)
 ```
 
-これらの手順が完了すると、 [Get Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module)コマンドレットの**ListAvailable**パラメーターは、両方の Fabrikam モジュールを取得します。 特定のモジュールをインポートするには、[モジュールのインポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットの `MinimumVersion` パラメーターまたは `RequiredVersion` パラメーターを使用します。
+これらの手順が完了すると、 [Get Module](/powershell/module/Microsoft.PowerShell.Core/Get-Module)コマンドレットの**ListAvailable**パラメーターは、両方の Fabrikam モジュールを取得します。 特定のモジュールをインポートするに `MinimumVersion` は、 `RequiredVersion` [モジュールのインポート](/powershell/module/Microsoft.PowerShell.Core/Import-Module)コマンドレットのパラメーターまたはパラメーターを使用します。
 
 両方のモジュールが同じセッションにインポートされ、モジュールに同じ名前のコマンドレットが含まれている場合、最後にインポートされたコマンドレットはセッションで有効になります。
 
@@ -220,7 +213,7 @@ $p += ";C:\Program Files\Fabrikam\Fabrikam8;C:\Program Files\Fabrikam\Fabrikam9"
 
 セッションに同じ名前の2つのコマンドが含まれている場合、Windows PowerShell は、優先されるコマンドの種類を実行します。 セッションに同じ名前と同じ種類の2つのコマンドが含まれている場合、Windows PowerShell は、直前にセッションに追加されたコマンドを実行します。 既定では実行されないコマンドを実行する場合、ユーザーはコマンド名をモジュール名で修飾できます。
 
-たとえば、セッションに `Get-Date` 関数と `Get-Date` コマンドレットが含まれている場合、Windows PowerShell は既定で関数を実行します。 コマンドレットを実行するには、次のように、コマンドの先頭にモジュール名を付けます。
+たとえば、セッションに関数とコマンドレットが含まれている場合、 `Get-Date` `Get-Date` Windows PowerShell は既定で関数を実行します。 コマンドレットを実行するには、次のように、コマンドの先頭にモジュール名を付けます。
 
 ```powershell
 Microsoft.PowerShell.Utility\Get-Date
@@ -228,7 +221,7 @@ Microsoft.PowerShell.Utility\Get-Date
 
 名前の競合を防ぐために、モジュールの作成者はモジュールマニフェストの**Defaultcommandprefix**キーを使用して、モジュールからエクスポートされたすべてのコマンドの名詞プレフィックスを指定できます。
 
-ユーザーは、`Import-Module` コマンドレットの**prefix**パラメーターを使用して、代替のプレフィックスを使用できます。 **Prefix**パラメーターの値は、 **defaultcommandprefix**キーの値よりも優先されます。
+ユーザーは、コマンドレットの**prefix**パラメーターを使用して、 `Import-Module` 代替プレフィックスを使用できます。 **Prefix**パラメーターの値は、 **defaultcommandprefix**キーの値よりも優先されます。
 
 ## <a name="see-also"></a>参照
 
