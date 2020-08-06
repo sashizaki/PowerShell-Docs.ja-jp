@@ -1,53 +1,46 @@
 ---
 title: コマンドの追加と呼び出し |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
-caps.latest.revision: 5
-ms.openlocfilehash: f776f13fe743a3f5f67de0d94883e3f754040ffc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b51c4ae3fa5c5239e3c5c5e65bf7aa63c58c4da9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367641"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779796"
 ---
-# <a name="adding-and-invoking-commands"></a><span data-ttu-id="5e584-102">コマンドを追加し、呼び出す</span><span class="sxs-lookup"><span data-stu-id="5e584-102">Adding and invoking commands</span></span>
+# <a name="adding-and-invoking-commands"></a><span data-ttu-id="053b1-102">コマンドを追加し、呼び出す</span><span class="sxs-lookup"><span data-stu-id="053b1-102">Adding and invoking commands</span></span>
 
-<span data-ttu-id="5e584-103">実行空間を作成した後、Windows PowerShellcommands とスクリプトをパイプラインに追加し、同期または非同期でパイプラインを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="5e584-103">After creating a runspace, you can add Windows PowerShellcommands and scripts to a pipeline, and then invoke the pipeline synchronously or asynchronously.</span></span>
+<span data-ttu-id="053b1-103">実行空間を作成した後、Windows PowerShellcommands とスクリプトをパイプラインに追加し、同期または非同期でパイプラインを呼び出すことができます。</span><span class="sxs-lookup"><span data-stu-id="053b1-103">After creating a runspace, you can add Windows PowerShellcommands and scripts to a pipeline, and then invoke the pipeline synchronously or asynchronously.</span></span>
 
-## <a name="creating-a-pipeline"></a><span data-ttu-id="5e584-104">パイプラインを作成する</span><span class="sxs-lookup"><span data-stu-id="5e584-104">Creating a pipeline</span></span>
+## <a name="creating-a-pipeline"></a><span data-ttu-id="053b1-104">パイプラインを作成する</span><span class="sxs-lookup"><span data-stu-id="053b1-104">Creating a pipeline</span></span>
 
- <span data-ttu-id="5e584-105">[System. Automation. Powershell](/dotnet/api/system.management.automation.powershell)クラスには、コマンド、パラメーター、およびスクリプトをパイプラインに追加するためのメソッドがいくつか用意されています。</span><span class="sxs-lookup"><span data-stu-id="5e584-105">The [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class provides several methods to add commands, parameters, and scripts to the pipeline.</span></span> <span data-ttu-id="5e584-106">パイプラインを同期的に呼び出すには、[システム](/dotnet/api/System.Management.Automation.PowerShell.Invoke)のオーバーロードを呼び出すか、または、システムのオーバーロードを呼び出して非同期的に呼び出します。また[は、次](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)に、その後に、システムの呼び出しを実行して、その後で、[このメソッドを](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)呼び出します。</span><span class="sxs-lookup"><span data-stu-id="5e584-106">You can invoke the pipeline synchronously by calling an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, or asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) and then the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
+ <span data-ttu-id="053b1-105">[System. Automation. Powershell](/dotnet/api/system.management.automation.powershell)クラスには、コマンド、パラメーター、およびスクリプトをパイプラインに追加するためのメソッドがいくつか用意されています。</span><span class="sxs-lookup"><span data-stu-id="053b1-105">The [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) class provides several methods to add commands, parameters, and scripts to the pipeline.</span></span> <span data-ttu-id="053b1-106">パイプラインを同期的に呼び出すには、[システム](/dotnet/api/System.Management.Automation.PowerShell.Invoke)のオーバーロードを呼び出すか、または、システムのオーバーロードを呼び出して非同期的に呼び出します。また[は、次](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)に、その後に、システムの呼び出しを実行して、その後で、[このメソッドを](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)呼び出します。</span><span class="sxs-lookup"><span data-stu-id="053b1-106">You can invoke the pipeline synchronously by calling an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, or asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) and then the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
 
-### <a name="addcommand"></a><span data-ttu-id="5e584-107">AddCommand</span><span class="sxs-lookup"><span data-stu-id="5e584-107">AddCommand</span></span>
+### <a name="addcommand"></a><span data-ttu-id="053b1-107">AddCommand</span><span class="sxs-lookup"><span data-stu-id="053b1-107">AddCommand</span></span>
 
-1. <span data-ttu-id="5e584-108">システムの[管理. Powershell](/dotnet/api/system.management.automation.powershell)オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="5e584-108">Create a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
+1. <span data-ttu-id="053b1-108">システムの[管理. Powershell](/dotnet/api/system.management.automation.powershell)オブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="053b1-108">Create a [System.Management.Automation.Powershell](/dotnet/api/system.management.automation.powershell) object.</span></span>
 
    ```csharp
    PowerShell ps = PowerShell.Create();
    ```
 
-2. <span data-ttu-id="5e584-109">実行するコマンドを追加します。</span><span class="sxs-lookup"><span data-stu-id="5e584-109">Add the command that you want to execute.</span></span>
+2. <span data-ttu-id="053b1-109">実行するコマンドを追加します。</span><span class="sxs-lookup"><span data-stu-id="053b1-109">Add the command that you want to execute.</span></span>
 
    ```csharp
    ps.AddCommand("Get-Process");
    ```
 
-3. <span data-ttu-id="5e584-110">コマンドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="5e584-110">Invoke the command.</span></span>
+3. <span data-ttu-id="053b1-110">コマンドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="053b1-110">Invoke the command.</span></span>
 
    ```csharp
    ps.Invoke();
    ```
 
- <span data-ttu-id="5e584-111">System. powershell. powershell. [powershell. Invoke \*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)メソッドを呼び出す前に、[このメソッドを](/dotnet/api/System.Management.Automation.PowerShell.AddCommand)複数回呼び出した場合、最初のコマンドの結果がパイプ処理され、次のようになります (以降同様)。</span><span class="sxs-lookup"><span data-stu-id="5e584-111">If you call the [System.Management.Automation.Powershell.Addcommand\*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) method more than once before you call the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, the result of the first command is piped to the second, and so on.</span></span> <span data-ttu-id="5e584-112">パイプを使用して前のコマンドの結果をコマンドに渡したくない場合は[、代わりに system.object](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)を呼び出して追加してください。</span><span class="sxs-lookup"><span data-stu-id="5e584-112">If you do not want to pipe the result of a previous command to a command, add it by calling the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) instead.</span></span>
+ <span data-ttu-id="053b1-111">System. powershell. powershell. [powershell. Invoke \*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)メソッドを呼び出す前に、[このメソッドを](/dotnet/api/System.Management.Automation.PowerShell.AddCommand)複数回呼び出した場合、最初のコマンドの結果がパイプ処理され、次のようになります (以降同様)。</span><span class="sxs-lookup"><span data-stu-id="053b1-111">If you call the [System.Management.Automation.Powershell.Addcommand\*](/dotnet/api/System.Management.Automation.PowerShell.AddCommand) method more than once before you call the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method, the result of the first command is piped to the second, and so on.</span></span> <span data-ttu-id="053b1-112">パイプを使用して前のコマンドの結果をコマンドに渡したくない場合は[、代わりに system.object](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)を呼び出して追加してください。</span><span class="sxs-lookup"><span data-stu-id="053b1-112">If you do not want to pipe the result of a previous command to a command, add it by calling the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) instead.</span></span>
 
-### <a name="addparameter"></a><span data-ttu-id="5e584-113">AddParameter</span><span class="sxs-lookup"><span data-stu-id="5e584-113">AddParameter</span></span>
+### <a name="addparameter"></a><span data-ttu-id="053b1-113">AddParameter</span><span class="sxs-lookup"><span data-stu-id="053b1-113">AddParameter</span></span>
 
- <span data-ttu-id="5e584-114">前の例では、パラメーターを指定せずに1つのコマンドを実行しています。</span><span class="sxs-lookup"><span data-stu-id="5e584-114">The previous example executes a single command without any parameters.</span></span> <span data-ttu-id="5e584-115">コマンドにパラメーターを追加するに[は、次](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)のコードを使用します。たとえば、次のコードは、コンピューター上で実行されている `PowerShell` という名前のすべてのプロセスの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="5e584-115">You can add parameters to the command by using the [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) method For example, the following code gets a list of all of the processes that are named `PowerShell` running on the machine.</span></span>
+ <span data-ttu-id="053b1-114">前の例では、パラメーターを指定せずに1つのコマンドを実行しています。</span><span class="sxs-lookup"><span data-stu-id="053b1-114">The previous example executes a single command without any parameters.</span></span> <span data-ttu-id="053b1-115">コマンドにパラメーターを追加するに[は、次](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)のコード例のように、 `PowerShell` コンピューター上で実行されているという名前のすべてのプロセスの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="053b1-115">You can add parameters to the command by using the [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) method For example, the following code gets a list of all of the processes that are named `PowerShell` running on the machine.</span></span>
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -55,7 +48,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- <span data-ttu-id="5e584-116">追加のパラメーターを追加するには、さらにパラメーターを追加します。 [Addparameter \*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)を繰り返します。</span><span class="sxs-lookup"><span data-stu-id="5e584-116">You can add additional parameters by calling [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) repeatedly.</span></span>
+ <span data-ttu-id="053b1-116">追加のパラメーターを追加するには、さらにパラメーターを追加します。 [Addparameter \*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)を繰り返します。</span><span class="sxs-lookup"><span data-stu-id="053b1-116">You can add additional parameters by calling [System.Management.Automation.Pscommand.Addparameter\*](/dotnet/api/System.Management.Automation.PSCommand.AddParameter) repeatedly.</span></span>
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -64,7 +57,7 @@ PowerShell.Create().AddCommand("Get-Process")
                    .Invoke();
 ```
 
- <span data-ttu-id="5e584-117">また、パラメーターの名前と値のディクショナリを追加するには、 [System. Powershell. Addparameters \*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters)メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="5e584-117">You can also add a dictionary of parameter names and values by calling the [System.Management.Automation.Powershell.Addparameters\*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) method.</span></span>
+ <span data-ttu-id="053b1-117">また、パラメーターの名前と値のディクショナリを追加するには、 [System. Powershell. Addparameters \*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters)メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="053b1-117">You can also add a dictionary of parameter names and values by calling the [System.Management.Automation.Powershell.Addparameters\*](/dotnet/api/System.Management.Automation.PowerShell.AddParameters) method.</span></span>
 
 ```csharp
 IDictionary parameters = new Dictionary<String, String>();
@@ -77,9 +70,9 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ```
 
-### <a name="addstatement"></a><span data-ttu-id="5e584-118">AddStatement</span><span class="sxs-lookup"><span data-stu-id="5e584-118">AddStatement</span></span>
+### <a name="addstatement"></a><span data-ttu-id="053b1-118">AddStatement</span><span class="sxs-lookup"><span data-stu-id="053b1-118">AddStatement</span></span>
 
- <span data-ttu-id="5e584-119">バッチ処理をシミュレートするには、次のコードで実行中のプロセスの一覧を名前`PowerShell`で取得します。このメソッドを使用して、パイプラインの末尾にステートメントを追加します。 [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)次に、実行中のサービスの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="5e584-119">You can simulate batching by using the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) method, which adds an additional statement to the end of the pipeline The following code gets a list of running processes with the name `PowerShell`, and then gets the list of running services.</span></span>
+ <span data-ttu-id="053b1-119">バッチ処理をシミュレートするには[System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) 、次のコードで実行中のプロセスの一覧を名前で取得し、 `PowerShell` 実行中のサービスの一覧を取得します。このメソッドを使用して、パイプラインの末尾にステートメントを追加します。</span><span class="sxs-lookup"><span data-stu-id="053b1-119">You can simulate batching by using the [System.Management.Automation.Powershell.Addstatement\*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) method, which adds an additional statement to the end of the pipeline The following code gets a list of running processes with the name `PowerShell`, and then gets the list of running services.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -88,25 +81,25 @@ ps.AddStatement().AddCommand("Get-Service");
 ps.Invoke();
 ```
 
-### <a name="addscript"></a><span data-ttu-id="5e584-120">AddScript</span><span class="sxs-lookup"><span data-stu-id="5e584-120">AddScript</span></span>
+### <a name="addscript"></a><span data-ttu-id="053b1-120">AddScript</span><span class="sxs-lookup"><span data-stu-id="053b1-120">AddScript</span></span>
 
- <span data-ttu-id="5e584-121">既存のスクリプトを実行するには、 [System. Powershell. Addscript \*](/dotnet/api/System.Management.Automation.PowerShell.AddScript)メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="5e584-121">You can run an existing script by calling the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method.</span></span> <span data-ttu-id="5e584-122">次の例では、パイプラインにスクリプトを追加して実行します。</span><span class="sxs-lookup"><span data-stu-id="5e584-122">The following example adds a script to the pipeline and runs it.</span></span> <span data-ttu-id="5e584-123">この例では、`D:\PSScripts`という名前のフォルダーに `MyScript.ps1` という名前のスクリプトが既に存在することを前提としています。</span><span class="sxs-lookup"><span data-stu-id="5e584-123">This example assumes there is already a script named `MyScript.ps1` in a folder named `D:\PSScripts`.</span></span>
+ <span data-ttu-id="053b1-121">既存のスクリプトを実行するには、 [System. Powershell. Addscript \*](/dotnet/api/System.Management.Automation.PowerShell.AddScript)メソッドを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="053b1-121">You can run an existing script by calling the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method.</span></span> <span data-ttu-id="053b1-122">次の例では、パイプラインにスクリプトを追加して実行します。</span><span class="sxs-lookup"><span data-stu-id="053b1-122">The following example adds a script to the pipeline and runs it.</span></span> <span data-ttu-id="053b1-123">この例では、という名前のフォルダーにという名前のスクリプトが既に存在することを前提としてい `MyScript.ps1` `D:\PSScripts` ます。</span><span class="sxs-lookup"><span data-stu-id="053b1-123">This example assumes there is already a script named `MyScript.ps1` in a folder named `D:\PSScripts`.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- <span data-ttu-id="5e584-124">また、`useLocalScope`という名前のブール型パラメーターを受け取るバージョンの[System. Powershell. Addscript \*](/dotnet/api/System.Management.Automation.PowerShell.AddScript)メソッドもあります。</span><span class="sxs-lookup"><span data-stu-id="5e584-124">There is also a version of the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method that takes a boolean parameter named `useLocalScope`.</span></span> <span data-ttu-id="5e584-125">このパラメーターが `true`に設定されている場合、スクリプトはローカルスコープで実行されます。</span><span class="sxs-lookup"><span data-stu-id="5e584-125">If this parameter is set to `true`, then the script is run in the local scope.</span></span> <span data-ttu-id="5e584-126">次のコードでは、スクリプトがローカルスコープで実行されます。</span><span class="sxs-lookup"><span data-stu-id="5e584-126">The following code will run the script in the local scope.</span></span>
+ <span data-ttu-id="053b1-124">また、という名前のブール型パラメーターを受け取る、バージョンの system.string. [Addscript \*](/dotnet/api/System.Management.Automation.PowerShell.AddScript)メソッドもあり `useLocalScope` ます。</span><span class="sxs-lookup"><span data-stu-id="053b1-124">There is also a version of the [System.Management.Automation.Powershell.Addscript\*](/dotnet/api/System.Management.Automation.PowerShell.AddScript) method that takes a boolean parameter named `useLocalScope`.</span></span> <span data-ttu-id="053b1-125">このパラメーターがに設定されている場合、 `true` スクリプトはローカルスコープで実行されます。</span><span class="sxs-lookup"><span data-stu-id="053b1-125">If this parameter is set to `true`, then the script is run in the local scope.</span></span> <span data-ttu-id="053b1-126">次のコードでは、スクリプトがローカルスコープで実行されます。</span><span class="sxs-lookup"><span data-stu-id="053b1-126">The following code will run the script in the local scope.</span></span>
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 ```
 
-### <a name="invoking-a-pipeline-synchronously"></a><span data-ttu-id="5e584-127">パイプラインの同期的な呼び出し</span><span class="sxs-lookup"><span data-stu-id="5e584-127">Invoking a pipeline synchronously</span></span>
+### <a name="invoking-a-pipeline-synchronously"></a><span data-ttu-id="053b1-127">パイプラインの同期的な呼び出し</span><span class="sxs-lookup"><span data-stu-id="053b1-127">Invoking a pipeline synchronously</span></span>
 
- <span data-ttu-id="5e584-128">パイプラインに要素を追加したら、それを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="5e584-128">After you add elements to the pipeline, you invoke it.</span></span> <span data-ttu-id="5e584-129">パイプラインを同期的に呼び出すには、 [System. Powershell. invoke \*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)メソッドのオーバーロードを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="5e584-129">To invoke the pipeline synchronously, you call an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method.</span></span> <span data-ttu-id="5e584-130">次の例は、パイプラインを同期的に呼び出す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="5e584-130">The following example shows how to synchronously invoke a pipeline.</span></span>
+ <span data-ttu-id="053b1-128">パイプラインに要素を追加したら、それを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="053b1-128">After you add elements to the pipeline, you invoke it.</span></span> <span data-ttu-id="053b1-129">パイプラインを同期的に呼び出すには、 [System. Powershell. invoke \*](/dotnet/api/System.Management.Automation.PowerShell.Invoke)メソッドのオーバーロードを呼び出します。</span><span class="sxs-lookup"><span data-stu-id="053b1-129">To invoke the pipeline synchronously, you call an overload of the [System.Management.Automation.Powershell.Invoke\*](/dotnet/api/System.Management.Automation.PowerShell.Invoke) method.</span></span> <span data-ttu-id="053b1-130">次の例は、パイプラインを同期的に呼び出す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="053b1-130">The following example shows how to synchronously invoke a pipeline.</span></span>
 
 ```csharp
 using System;
@@ -136,11 +129,11 @@ namespace HostPS1e
 }
 ```
 
-### <a name="invoking-a-pipeline-asynchronously"></a><span data-ttu-id="5e584-131">パイプラインの非同期呼び出し</span><span class="sxs-lookup"><span data-stu-id="5e584-131">Invoking a pipeline asynchronously</span></span>
+### <a name="invoking-a-pipeline-asynchronously"></a><span data-ttu-id="053b1-131">パイプラインの非同期呼び出し</span><span class="sxs-lookup"><span data-stu-id="053b1-131">Invoking a pipeline asynchronously</span></span>
 
- <span data-ttu-id="5e584-132">パイプラインを非同期的に呼び出すには、[システム](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)のオーバーロードを呼び出して、 [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx)オブジェクトを作成し、次に、その後に system.servicemodel [\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)メソッドを呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="5e584-132">You invoke a pipeline asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) to create an [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) object, and then calling the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
+ <span data-ttu-id="053b1-132">パイプラインを非同期的に呼び出すには、[システム](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke)のオーバーロードを呼び出して、 [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx)オブジェクトを作成し、次に、その後に system.servicemodel [\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke)メソッドを呼び出す必要があります。</span><span class="sxs-lookup"><span data-stu-id="053b1-132">You invoke a pipeline asynchronously by calling an overload of the [System.Management.Automation.Powershell.Begininvoke\*](/dotnet/api/System.Management.Automation.PowerShell.BeginInvoke) to create an [IAsyncResult](https://msdn.microsoft.com/library/system.iasyncresult\(v=vs.110\).aspx) object, and then calling the [System.Management.Automation.Powershell.Endinvoke\*](/dotnet/api/System.Management.Automation.PowerShell.EndInvoke) method.</span></span>
 
- <span data-ttu-id="5e584-133">次の例は、パイプラインを非同期的に呼び出す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="5e584-133">The following example shows how to invoke a pipeline asynchronously.</span></span>
+ <span data-ttu-id="053b1-133">次の例は、パイプラインを非同期的に呼び出す方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="053b1-133">The following example shows how to invoke a pipeline asynchronously.</span></span>
 
 ```csharp
 using System;
@@ -182,8 +175,8 @@ namespace HostPS3
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="5e584-134">参照</span><span class="sxs-lookup"><span data-stu-id="5e584-134">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="053b1-134">参照</span><span class="sxs-lookup"><span data-stu-id="053b1-134">See Also</span></span>
 
- [<span data-ttu-id="5e584-135">InitialSessionState の作成</span><span class="sxs-lookup"><span data-stu-id="5e584-135">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="053b1-135">InitialSessionState を作成する</span><span class="sxs-lookup"><span data-stu-id="053b1-135">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
 
- [<span data-ttu-id="5e584-136">制約付き実行空間の作成</span><span class="sxs-lookup"><span data-stu-id="5e584-136">Creating a constrained runspace</span></span>](./creating-a-constrained-runspace.md)
+ [<span data-ttu-id="053b1-136">制約付き実行空間を作成する</span><span class="sxs-lookup"><span data-stu-id="053b1-136">Creating a constrained runspace</span></span>](./creating-a-constrained-runspace.md)

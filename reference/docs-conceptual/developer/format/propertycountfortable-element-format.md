@@ -1,28 +1,21 @@
 ---
 title: PropertyCountForTable 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b2faa062-a959-49ff-932b-a64279f8ff2e
-caps.latest.revision: 4
-ms.openlocfilehash: 6055b9ffaa3e5a71a0c2fa0d15746d63db0c6d81
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 71e1ee9d3de6d06f512181ee50b69a377130bbe2
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362581"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780910"
 ---
-# <a name="propertycountfortable-element-format"></a><span data-ttu-id="d6dd0-102">PropertyCountForTable 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="d6dd0-102">PropertyCountForTable Element (Format)</span></span>
+# <a name="propertycountfortable-element-format"></a><span data-ttu-id="db9dd-102">PropertyCountForTable 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="db9dd-102">PropertyCountForTable Element (Format)</span></span>
 
-<span data-ttu-id="d6dd0-103">概要をここに挿入してください。</span><span class="sxs-lookup"><span data-stu-id="d6dd0-103">Insert introduction here.</span></span>
+<span data-ttu-id="db9dd-103">概要をここに挿入。</span><span class="sxs-lookup"><span data-stu-id="db9dd-103">Insert introduction here.</span></span>
 
-## <a name="section-heading"></a><span data-ttu-id="d6dd0-104">セクションの見出し</span><span class="sxs-lookup"><span data-stu-id="d6dd0-104">Section Heading</span></span>
+## <a name="section-heading"></a><span data-ttu-id="db9dd-104">セクション見出し</span><span class="sxs-lookup"><span data-stu-id="db9dd-104">Section Heading</span></span>
 
-<span data-ttu-id="d6dd0-105">ここにセクションの本文を挿入してください。</span><span class="sxs-lookup"><span data-stu-id="d6dd0-105">Insert section body here.</span></span>
+<span data-ttu-id="db9dd-105">ここにセクションの本文を挿入します。</span><span class="sxs-lookup"><span data-stu-id="db9dd-105">Insert section body here.</span></span>
 
-### <a name="subsection-heading"></a><span data-ttu-id="d6dd0-106">サブセクションの見出し</span><span class="sxs-lookup"><span data-stu-id="d6dd0-106">Subsection Heading</span></span>
+### <a name="subsection-heading"></a><span data-ttu-id="db9dd-106">サブセクションの見出し</span><span class="sxs-lookup"><span data-stu-id="db9dd-106">Subsection Heading</span></span>
 
-<span data-ttu-id="d6dd0-107">ここにサブセクションの本文を挿入してください。</span><span class="sxs-lookup"><span data-stu-id="d6dd0-107">Insert subsection body here.</span></span>
+<span data-ttu-id="db9dd-107">ここにサブセクション本文を挿入。</span><span class="sxs-lookup"><span data-stu-id="db9dd-107">Insert subsection body here.</span></span>

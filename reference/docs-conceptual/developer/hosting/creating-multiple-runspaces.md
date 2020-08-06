@@ -1,27 +1,20 @@
 ---
 title: 複数の実行空間を作成する |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 42c40c7f-1ee7-4021-950c-2e013c8f2a4a
-caps.latest.revision: 4
-ms.openlocfilehash: 606a2ee4e70d303bf1b1d69b7523eb8649f9be0c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1047492d2b859ae14ddd279e25e5e1dff0013820
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367611"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779628"
 ---
-# <a name="creating-multiple-runspaces"></a><span data-ttu-id="aec2d-102">複数の実行空間を作成する</span><span class="sxs-lookup"><span data-stu-id="aec2d-102">Creating multiple runspaces</span></span>
+# <a name="creating-multiple-runspaces"></a><span data-ttu-id="acf25-102">複数の実行空間を作成する</span><span class="sxs-lookup"><span data-stu-id="acf25-102">Creating multiple runspaces</span></span>
 
-<span data-ttu-id="aec2d-103">多数の実行空間を作成する場合は、実行空間プールを作成することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="aec2d-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="aec2d-104">同じ特性を持つ多数の個別の実行空間を作成するのではなく、 [Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool)オブジェクトを使用すると、パフォーマンスを向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="aec2d-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
+<span data-ttu-id="acf25-103">多数の実行空間を作成する場合は、実行空間プールを作成することを検討してください。</span><span class="sxs-lookup"><span data-stu-id="acf25-103">If you create a large number of runspaces, you might consider creating a runspace pool.</span></span> <span data-ttu-id="acf25-104">同じ特性を持つ多数の個別の実行空間を作成するのではなく、 [Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool)オブジェクトを使用すると、パフォーマンスを向上させることができます。</span><span class="sxs-lookup"><span data-stu-id="acf25-104">Using a [System.Management.Automation.Runspaces.Runspacepool](/dotnet/api/System.Management.Automation.Runspaces.RunspacePool) object, rather than creating a large number of individual runspaces with the same characteristics, can improve performance.</span></span>
 
-## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="aec2d-105">実行空間プールを作成して使用する。</span><span class="sxs-lookup"><span data-stu-id="aec2d-105">Creating and using a runspace pool.</span></span>
+## <a name="creating-and-using-a-runspace-pool"></a><span data-ttu-id="acf25-105">実行空間プールを作成して使用する。</span><span class="sxs-lookup"><span data-stu-id="acf25-105">Creating and using a runspace pool.</span></span>
 
- <span data-ttu-id="aec2d-106">次の例は、実行空間プールを作成する方法と、プールの実行空間でコマンドを非同期的に実行する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="aec2d-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
+ <span data-ttu-id="acf25-106">次の例は、実行空間プールを作成する方法と、プールの実行空間でコマンドを非同期的に実行する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="acf25-106">The following example shows how to create a runspace pool and how to run a command asynchronously in a runspace of the pool.</span></span>
 
 ```csharp
 namespace HostRunspacePool
@@ -79,6 +72,6 @@ namespace HostRunspacePool
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="aec2d-107">参照</span><span class="sxs-lookup"><span data-stu-id="aec2d-107">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="acf25-107">参照</span><span class="sxs-lookup"><span data-stu-id="acf25-107">See Also</span></span>
 
- [<span data-ttu-id="aec2d-108">InitialSessionState の作成</span><span class="sxs-lookup"><span data-stu-id="aec2d-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="acf25-108">InitialSessionState を作成する</span><span class="sxs-lookup"><span data-stu-id="acf25-108">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
