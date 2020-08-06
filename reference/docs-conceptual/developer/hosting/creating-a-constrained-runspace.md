@@ -1,23 +1,16 @@
 ---
 title: 制約付き実行空間を作成する |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 59125e65-7030-40bb-9926-756120b2d952
-caps.latest.revision: 5
-ms.openlocfilehash: 20ac1e2af8e047b8b572d86a55439676aa8df25c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 30ecb80dbd96278ee9aa5a609d27bfc4eaa423e9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367651"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779813"
 ---
 # <a name="creating-a-constrained-runspace"></a>制約付き実行空間を作成する
 
-パフォーマンスまたはセキュリティ上の理由により、ホストアプリケーションで使用できる Windows PowerShell コマンドを制限する必要がある場合があります。 これを行うには、 [Initialsessionstate *](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create)メソッドを呼び出して、空の[Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)を作成してから、使用するコマンドのみを追加します。これには、次のように入力します。
+パフォーマンスまたはセキュリティ上の理由により、ホストアプリケーションで使用できる Windows PowerShell コマンドを制限する必要がある場合があります。 これを行うには、System.Management.Automation.Runspaces.Initialsessionstate を呼び出して、空の[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)を作成し[ます。*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create)メソッドを作成し、使用可能なコマンドのみを追加します。
 
  指定したコマンドのみを読み込む実行空間を使用すると、パフォーマンスが大幅に向上します。
 
@@ -122,4 +115,4 @@ this.runspace.Open();
 
 ## <a name="see-also"></a>参照
 
- [InitialSessionState の作成](./creating-an-initialsessionstate.md)
+ [InitialSessionState を作成する](./creating-an-initialsessionstate.md)

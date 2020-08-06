@@ -1,19 +1,12 @@
 ---
 title: ViewSelectedBy (Format) の TypeName 要素 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0ad807a9-d7d8-4e96-b799-9c6a7677cc2d
-caps.latest.revision: 12
-ms.openlocfilehash: e2028c479103cc414295dc24a0f9bb69190bfc66
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e9a391565c3e66041dd9a340455dccfce9ce929b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361441"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780034"
 ---
 # <a name="typename-element-for-viewselectedby-format"></a>ViewSelectedBy の TypeName 要素 (書式)
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 <TypeName>FullyQualifiedTypeName</TypeName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`TypeName` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `TypeName` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,15 +34,15 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[ViewSelectedBy 要素 (形式)](./viewselectedby-element-format.md)|ビューに表示される .NET オブジェクトを定義します。|
+|[ViewSelectedBy 要素 (書式)](./viewselectedby-element-format.md)|ビューに表示される .NET オブジェクトを定義します。|
 
 ## <a name="text-value"></a>テキスト値
 
-`System.IO.DirectoryInfo`など、.NET 型の完全修飾名を指定します。
+.NET 型の完全修飾名 (など) を指定し `System.IO.DirectoryInfo` ます。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 この要素をさまざまなビューで使用する方法の詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」、「[リストビュー](./creating-a-list-view.md)の作成」、「[ワイドビューの作成](./creating-a-wide-view.md)」、および「[カスタムビューコンポーネント](./creating-custom-controls.md)」を参照してください。
 
@@ -69,14 +62,14 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="see-also"></a>参照
 
-[リストビューの作成](./creating-a-list-view.md)
+[リスト ビューを作成する](./creating-a-list-view.md)
 
-[テーブルビューの作成](./creating-a-table-view.md)
+[テーブル ビューを作成する](./creating-a-table-view.md)
 
-[ワイドビューの作成](./creating-a-wide-view.md)
+[ワイド ビューを作成する](./creating-a-wide-view.md)
 
-[カスタム コントロールの作成](./creating-custom-controls.md)
+[カスタム コントロールを作成する](./creating-custom-controls.md)
 
-[ViewSelectedBy 要素 (形式)](./viewselectedby-element-format.md)
+[ViewSelectedBy 要素 (書式)](./viewselectedby-element-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

@@ -1,23 +1,18 @@
 ---
 title: データ ストアにアクセスするためのコマンドレットを作成する
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.openlocfilehash: 3096965ba9f99f70994f2fb5b180cc58691b04f8
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a595805a820c355937e581f0e00fa2a9a9fc3df0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74415701"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782142"
 ---
 # <a name="creating-a-cmdlet-to-access-a-data-store"></a>データ ストアにアクセスするためのコマンドレットを作成する
 
 このセクションでは、Windows PowerShell プロバイダーを介して格納されたデータにアクセスするコマンドレットを作成する方法について説明します。 この種類のコマンドレットは、Windows PowerShell ランタイムの Windows PowerShell プロバイダーインフラストラクチャを使用するため、コマンドレットクラスは[PSCmdlet](/dotnet/api/System.Management.Automation.PSCmdlet)基底クラスから派生する必要があります。
 
-ここで説明する Select-Str コマンドレットは、ファイルまたはオブジェクト内の文字列を検索して選択できます。 文字列を識別するために使用されるパターンは、コマンドレットの `Path` パラメーターを使用して明示的に指定することも、`Script` パラメーターを使用して暗黙的に指定することもできます。
+ここで説明する Select-Str コマンドレットは、ファイルまたはオブジェクト内の文字列を検索して選択できます。 文字列を識別するために使用されるパターンは、コマンドレットのパラメーターを使用して明示的に指定することも、パラメーターを使用して暗黙的に指定することもでき `Path` `Script` ます。
 
 コマンドレットは、 [Icontentcmdletprovider](/dotnet/api/System.Management.Automation.Provider.IContentCmdletProvider)から派生した任意の Windows PowerShell プロバイダーを使用するように設計されています。 たとえば、コマンドレットでは、Windows PowerShell によって提供されるファイルシステムプロバイダーまたは変数プロバイダーを指定できます。 Windows PowerShell プロバイダーの詳細については、「 [Windows powershell プロバイダーの設計](../prog-guide/designing-your-windows-powershell-provider.md)」を参照してください。
 
@@ -34,18 +29,18 @@ ms.locfileid: "74415701"
 public class SelectStringCommand : PSCmdlet
 ```
 
-このコマンドレットは、`DefaultParameterSetName` attribute キーワードをクラス宣言に追加することによって、既定のパラメーターセットを定義します。 `Script` パラメーターが指定されていない場合は、`PatternParameterSet` 既定のパラメーターセットが使用されます。 このパラメーターセットの詳細については、次のセクションの `Pattern` と `Script` パラメーターの説明を参照してください。
+このコマンドレットは、 `DefaultParameterSetName` class 宣言に attribute キーワードを追加することによって、既定のパラメーターセットを定義します。 パラメーターが指定されていない場合は、既定のパラメーターセット `PatternParameterSet` が使用され `Script` ます。 このパラメーターセットの詳細については、 `Pattern` 次のセクションのおよびパラメーターの説明を参照してください `Script` 。
 
 ## <a name="defining-parameters-for-data-access"></a>データアクセスのためのパラメーターの定義
 
-このコマンドレットは、ユーザーが格納されたデータにアクセスして確認できるようにするいくつかのパラメーターを定義します。 これらのパラメーターには、データストアの場所を示す `Path` パラメーター、検索で使用されるパターンを指定する `Pattern` パラメーター、および検索の実行方法をサポートするいくつかのパラメーターが含まれます。
+このコマンドレットは、ユーザーが格納されたデータにアクセスして確認できるようにするいくつかのパラメーターを定義します。 これらのパラメーターには、 `Path` データストアの場所を示すパラメーター、 `Pattern` 検索で使用するパターンを指定するパラメーター、および検索の実行方法をサポートするその他のいくつかのパラメーターが含まれます。
 
 > [!NOTE]
 > パラメーターの定義の基本の詳細については、「[コマンドライン入力を処理するパラメーターの追加](./adding-parameters-that-process-command-line-input.md)」を参照してください。
 
 ### <a name="declaring-the-path-parameter"></a>Path パラメーターの宣言
 
-データストアを検索するには、このコマンドレットで Windows PowerShell のパスを使用して、データストアにアクセスするように設計されている Windows PowerShell プロバイダーを識別する必要があります。 したがって、プロバイダーの場所を示す文字列配列型の `Path` パラメーターを定義します。
+データストアを検索するには、このコマンドレットで Windows PowerShell のパスを使用して、データストアにアクセスするように設計されている Windows PowerShell プロバイダーを識別する必要があります。 したがって、 `Path` プロバイダーの場所を示す文字列配列型のパラメーターを定義します。
 
 ```csharp
 [Parameter(
@@ -68,13 +63,13 @@ private string[] paths;
 
 このパラメーターは、2つの異なるパラメーターセットに属しており、別名を持っていることに注意してください。
 
-2[つの system.object 属性は](/dotnet/api/System.Management.Automation.ParameterAttribute)、`Path` パラメーターが `ScriptParameterSet` と `PatternParameterSet`に属していることを宣言します。 パラメーターセットの詳細については、「[コマンドレットへのパラメーターセットの追加](./adding-parameter-sets-to-a-cmdlet.md)」を参照してください。
+2[つの system.object 属性は](/dotnet/api/System.Management.Automation.ParameterAttribute)、パラメーターがとに属していることを宣言します。 `Path` `ScriptParameterSet` `PatternParameterSet` パラメーターセットの詳細については、「[コマンドレットへのパラメーターセットの追加](./adding-parameter-sets-to-a-cmdlet.md)」を参照してください。
 
-System.string[属性は、](/dotnet/api/System.Management.Automation.AliasAttribute) `Path` パラメーターの `PSPath` エイリアスを宣言します。 Windows PowerShell プロバイダーにアクセスする他のコマンドレットとの一貫性を確保するために、このエイリアスを宣言することを強くお勧めします。 Windows PowerShell パスの詳細については、「 [Windows powershell の動作](/previous-versions//ms714658(v=vs.85))のしくみ」の「PowerShell パスの概念」を参照してください。
+System.string[属性は、](/dotnet/api/System.Management.Automation.AliasAttribute) `PSPath` パラメーターの別名を宣言します。 `Path` Windows PowerShell プロバイダーにアクセスする他のコマンドレットとの一貫性を確保するために、このエイリアスを宣言することを強くお勧めします。 Windows PowerShell パスの詳細については、「 [Windows powershell の動作](/previous-versions//ms714658(v=vs.85))のしくみ」の「PowerShell パスの概念」を参照してください。
 
 ### <a name="declaring-the-pattern-parameter"></a>Pattern パラメーターの宣言
 
-このコマンドレットは、検索するパターンを指定するために、文字列の配列である `Pattern` パラメーターを宣言します。 データストアにパターンが見つかった場合は、正の結果が返されます。 これらのパターンは、コンパイル済みの正規表現の配列、またはリテラル検索に使用されるワイルドカードパターンの配列にコンパイルできます。
+検索するパターンを指定するために、このコマンドレット `Pattern` は文字列の配列であるパラメーターを宣言します。 データストアにパターンが見つかった場合は、正の結果が返されます。 これらのパターンは、コンパイル済みの正規表現の配列、またはリテラル検索に使用されるワイルドカードパターンの配列にコンパイルできます。
 
 ```csharp
 [Parameter(
@@ -91,13 +86,13 @@ private Regex[] regexPattern;
 private WildcardPattern[] wildcardPattern;
 ```
 
-このパラメーターを指定すると、コマンドレットは `PatternParameterSet`既定のパラメーターセットを使用します。 この場合、コマンドレットは、ここで指定されたパターンを使用して文字列を選択します。 これに対し、`Script` パラメーターを使用して、パターンを含むスクリプトを指定することもできます。 `Script` パラメーターと `Pattern` パラメーターでは、2つの異なるパラメーターセットが定義されているため、相互に排他的です。
+このパラメーターを指定すると、コマンドレットは既定のパラメーターセットを使用し `PatternParameterSet` ます。 この場合、コマンドレットは、ここで指定されたパターンを使用して文字列を選択します。 これに対し `Script` て、パラメーターを使用して、パターンを含むスクリプトを指定することもできます。 `Script`パラメーターと `Pattern` パラメーターは2つの異なるパラメーターセットを定義するため、相互に排他的です。
 
 ### <a name="declaring-search-support-parameters"></a>検索サポートパラメーターの宣言
 
 このコマンドレットは、コマンドレットの検索機能を変更するために使用できる次のサポートパラメーターを定義します。
 
-`Script` パラメーターは、コマンドレットの代替検索メカニズムを提供するために使用できるスクリプトブロックを指定します。 このスクリプトには、照合に使用されるパターンが含まれている必要があります。[また、このオブジェクトを](/dotnet/api/System.Management.Automation.PSObject)返します。 このパラメーターは、`ScriptParameterSet` パラメーターセットを識別する一意のパラメーターでもあることに注意してください。 Windows PowerShell ランタイムは、このパラメーターを認識すると、`ScriptParameterSet` パラメーターセットに属するパラメーターのみを使用します。
+パラメーターは、 `Script` コマンドレットの代替検索メカニズムを提供するために使用できるスクリプトブロックを指定します。 このスクリプトには、照合に使用されるパターンが含まれている必要があります。[また、このオブジェクトを](/dotnet/api/System.Management.Automation.PSObject)返します。 このパラメーターは、パラメーターセットを識別する一意のパラメーターでもあることに注意して `ScriptParameterSet` ください。 Windows PowerShell ランタイムは、このパラメーターを認識すると、パラメーターセットに属するパラメーターのみを使用し `ScriptParameterSet` ます。
 
 ```csharp
 [Parameter(
@@ -112,7 +107,7 @@ public ScriptBlock Script
 ScriptBlock script;
 ```
 
-`SimpleMatch` パラメーターは、指定されたパターンをコマンドレットが明示的に一致させるかどうかを示すスイッチパラメーターです。 ユーザーがコマンドライン (`true`) でパラメーターを指定すると、コマンドレットは、指定されたパターンを使用します。 パラメーターが指定されていない場合 (`false`)、このコマンドレットでは正規表現を使用します。 このパラメーターの既定値は `false`です。
+パラメーターは、 `SimpleMatch` 指定されたパターンをコマンドレットが明示的に一致させるかどうかを示すスイッチパラメーターです。 ユーザーがコマンドライン () でパラメーターを指定すると、コマンド `true` レットは、指定されたパターンを使用します。 パラメーターが指定されていない場合 ( `false` )、コマンドレットは正規表現を使用します。 このパラメーターの既定値は `false` です。
 
 ```csharp
 [Parameter]
@@ -124,7 +119,7 @@ public SwitchParameter SimpleMatch
 private bool simpleMatch;
 ```
 
-`CaseSensitive` パラメーターは、大文字と小文字を区別する検索を実行するかどうかを示すスイッチパラメーターです。 ユーザーがコマンドライン (`true`) でパラメーターを指定すると、パターンを比較するときに、コマンドレットによって大文字と小文字がチェックされます。 パラメーターが指定されていない場合 (`false`)、このコマンドレットでは大文字と小文字が区別されません。 たとえば、"MyFile" と "myfile" は、両方とも正のヒットとして返されます。 このパラメーターの既定値は `false`です。
+パラメーターは、 `CaseSensitive` 大文字と小文字を区別する検索を実行するかどうかを示すスイッチパラメーターです。 ユーザーがコマンドライン () でパラメーターを指定すると、パターンを比較するときに、コマンドレットによって `true` 大文字と小文字がチェックされます。 パラメーターが指定されていない場合 ( `false` )、このコマンドレットでは大文字と小文字が区別されません。 たとえば、"MyFile" と "myfile" は、両方とも正のヒットとして返されます。 このパラメーターの既定値は `false` です。
 
 ```csharp
 [Parameter]
@@ -136,7 +131,7 @@ public SwitchParameter CaseSensitive
 private bool caseSensitive;
 ```
 
-`Exclude` パラメーターと `Include` パラメーターは、検索に明示的に除外されている項目または検索に含まれる項目を識別します。 既定では、このコマンドレットはデータストア内のすべての項目を検索します。 ただし、コマンドレットによって実行される検索を制限するために、これらのパラメーターを使用して、検索に含める項目を明示的に指定することも、省略することもできます。
+`Exclude`およびパラメーターは、 `Include` 検索に明示的に除外されている項目または検索に含まれる項目を識別します。 既定では、このコマンドレットはデータストア内のすべての項目を検索します。 ただし、コマンドレットによって実行される検索を制限するために、これらのパラメーターを使用して、検索に含める項目を明示的に指定することも、省略することもできます。
 
 ```csharp
 [Parameter]
@@ -175,7 +170,7 @@ internal WildcardPattern[] include = null;
 
 ### <a name="declaring-parameter-sets"></a>パラメーターセットの宣言
 
-このコマンドレットでは、データアクセスで使用される2つのパラメーターセットの名前として2つのパラメーターセット (`ScriptParameterSet` と `PatternParameterSet`が既定値) を使用します。 `PatternParameterSet` は既定のパラメーターセットであり、`Pattern` パラメーターを指定するときに使用されます。 `ScriptParameterSet` は、ユーザーが `Script` パラメーターを使用して代替検索メカニズムを指定するときに使用されます。 パラメーターセットの詳細については、「[コマンドレットへのパラメーターセットの追加](./adding-parameter-sets-to-a-cmdlet.md)」を参照してください。
+このコマンドレットは `ScriptParameterSet` `PatternParameterSet` 、データアクセスで使用される2つのパラメーターセットの名前として、2つのパラメーターセット (既定) を使用します。 `PatternParameterSet`は既定のパラメーターセットであり、パラメーターが指定されている場合に使用され `Pattern` ます。 `ScriptParameterSet`は、ユーザーがパラメーターを使用して代替検索機構を指定するときに使用され `Script` ます。 パラメーターセットの詳細については、「[コマンドレットへのパラメーターセットの追加](./adding-parameter-sets-to-a-cmdlet.md)」を参照してください。
 
 ## <a name="overriding-input-processing-methods"></a>オーバーライド (入力処理メソッドを)
 
@@ -1115,7 +1110,7 @@ namespace Microsoft.Samples.PowerShell.Commands
     Pattern      : .NET
     ```
 
-2. メモファイルで、"over" という単語が続き、その後に他のテキストが含まれている行を検索します。 `SimpleMatch` パラメーターは、`false`の既定値を使用しています。 `CaseSensitive` パラメーターが `false`に設定されているため、検索では大文字と小文字が区別されません。
+2. メモファイルで、"over" という単語が続き、その後に他のテキストが含まれている行を検索します。 パラメーターは、 `SimpleMatch` の既定値を使用し `false` ます。 `CaseSensitive`パラメーターがに設定されているため、検索では大文字と小文字が区別され `false` ません。
 
     ```powershell
     select-str -Path notes -Pattern "over*" -SimpleMatch -CaseSensitive:$false

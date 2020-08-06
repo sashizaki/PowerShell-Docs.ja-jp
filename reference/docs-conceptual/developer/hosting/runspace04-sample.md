@@ -1,25 +1,18 @@
 ---
 title: Runspace04 サンプル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a6a04f15-b5d8-475b-ac9c-e75c58ec8933
-caps.latest.revision: 8
-ms.openlocfilehash: 416061e5812e608f2099ca833bcaac4f0e651f59
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 73f48c797a4ce9bf4bc78ff34abb5efa41cda121
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557620"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779507"
 ---
 # <a name="runspace04-sample"></a>Runspace04 サンプル
 
 このサンプルでは、 [Powershell](/dotnet/api/system.management.automation.powershell)クラスを使用してコマンドを実行する方法と、コマンドの実行時にスローされる終了エラーをキャッチする方法を示します。 2 つのコマンドが実行され、最後のコマンドには無効なパラメーターの引数が渡されます。 結果として、オブジェクトは返されず、終了するエラーがスローされます。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 

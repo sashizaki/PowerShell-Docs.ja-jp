@@ -1,26 +1,19 @@
 ---
 title: 共通パラメーター名 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0db9f54c-4014-4450-9e81-c9f5fe562a0e
-caps.latest.revision: 12
-ms.openlocfilehash: c65deeda6b2ef1b52de55035dc606259a7f2d232
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d0939cfa5bf90ec55f0c0afcdeff56223d9dc78d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365741"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782227"
 ---
 # <a name="common-parameter-names"></a>共有パラメーター名
 
 このトピックで説明するパラメーターは、*共通パラメーター*と呼ばれます。 これらは、Windows PowerShell ランタイムによってコマンドレットに追加され、コマンドレットで宣言することはできません。
 
 > [!NOTE]
-> これらのパラメーターは、プロバイダーのコマンドレットおよび `CmdletBinding` 属性で修飾された関数にも追加されます。
+> これらのパラメーターは、プロバイダーのコマンドレットと、属性で修飾された関数にも追加され `CmdletBinding` ます。
 
 ## <a name="general-common-parameters"></a>一般的な共通パラメーター
 
@@ -108,6 +101,6 @@ ms.locfileid: "72365741"
 
 [システムの管理. 内部パラメーター](/dotnet/api/System.Management.Automation.Internal.TransactionParameters)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

@@ -1,23 +1,16 @@
 ---
 title: パラメーターの別名 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 7c9096a1-46fa-48ea-9b8a-a583484b9d68
-caps.latest.revision: 13
-ms.openlocfilehash: 6545e71ea18d10621ee9c203e70f64dece460ef5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e320eeb4d2ab91acf2116fdc817a50e93c82aead
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369591"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781989"
 ---
 # <a name="parameter-aliases"></a>パラメーターのエイリアス
 
-コマンドレット パラメーターはエイリアスを持つこともできます。 コマンドでパラメーターを入力または指定するときに、パラメーター名の代わりにエイリアスを使用できます。
+コマンドレットのパラメーターには別名を設定することもできます。 コマンドでパラメーターを入力または指定するときに、パラメーター名の代わりにエイリアスを使用できます。
 
 ## <a name="benefits-of-using-aliases"></a>エイリアスを使用する利点
 
@@ -50,8 +43,8 @@ private string userName;
 
 ## <a name="see-also"></a>参照
 
-[共通パラメーター名](./common-parameter-names.md)
+[共有パラメーター名](./common-parameter-names.md)
 
-[コマンドレットのパラメーターを宣言する方法](./how-to-declare-cmdlet-parameters.md)
+[コマンドレット パラメーターを宣言する方法](./how-to-declare-cmdlet-parameters.md)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

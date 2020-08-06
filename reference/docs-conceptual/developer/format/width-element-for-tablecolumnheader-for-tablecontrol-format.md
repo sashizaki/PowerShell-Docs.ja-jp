@@ -1,25 +1,18 @@
 ---
 title: TableControl (Format) の TableColumnHeader の Width 要素 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 94eb0535-8002-4f17-9a2b-4be75ec20e5c
-caps.latest.revision: 18
-ms.openlocfilehash: 4a25c9d81df670dc10955065bfb66766cdb1bd33
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e9540d3d351041ad7cb98a21bb360ebea7eca117
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367871"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779915"
 ---
 # <a name="width-element-for-tablecolumnheader-for-tablecontrol-format"></a>TableControl の TableColumnHeader の Width 要素 (書式)
 
 列の幅 (文字数) を定義します。
 
-Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) TableControl Element (Format) TableHeaders 要素 TableControl (format) の TableColumnHeader 要素 TableHeaders for TableControl (Format) Width 要素TableControl (Format) の TableColumnHeader
+Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) TableControl Element (Format) TableHeaders 要素 tablecontrol (format) TableColumnHeader 要素 TableHeaders for tablecontrol (format) TableColumnHeader for TableControl (Format)
 
 ## <a name="syntax"></a>構文
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 <Width>NumberOfCharacters</Width>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-以下のセクションでは、列ヘッダーを定義するときに使用する `Width` 要素の属性、子要素、および親要素について説明します。
+以下のセクションでは、 `Width` 列ヘッダーを定義するときに使用する要素の属性、子要素、および親要素について説明します。
 
 ### <a name="attributes"></a>属性
 
@@ -41,7 +34,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableControl の TableHeaders の TableColumnHeader 要素 (Format)](./tablecolumnheader-element-format.md)|テーブルの列のデータのラベル、幅、および配置を定義します。|
 
@@ -49,13 +42,13 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 可能な限り、表示されるプロパティ値の長さを超える幅 (文字数) を指定します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-次の例は、幅が16文字の `TableColumnHeader` 要素を示しています。
+次の例は、 `TableColumnHeader` 幅が16文字の要素を示しています。
 
 ```xml
 <TableColumnHeader>
@@ -67,8 +60,8 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="see-also"></a>参照
 
-[テーブルビューの作成](./creating-a-table-view.md)
+[テーブル ビューを作成する](./creating-a-table-view.md)
 
 [TableControl の TableHeader の TableColumnHeader 要素 (Format)](./tablecolumnheader-element-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

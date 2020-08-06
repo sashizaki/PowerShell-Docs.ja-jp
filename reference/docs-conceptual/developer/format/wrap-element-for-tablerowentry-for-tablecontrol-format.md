@@ -1,25 +1,18 @@
 ---
 title: TableControl (Format) の TableRowEntry の Wrap 要素 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 64087c6c-2abd-446d-b837-7d3ee03a6874
-caps.latest.revision: 11
-ms.openlocfilehash: 102fe1b9c3bd04562aa296f390ec549d5f8f35e9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1ef1f6133f9e5e7da685933cfe90d39a0519ff44
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361391"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779881"
 ---
 # <a name="wrap-element-for-tablerowentry-for-tablecontrol--format"></a>TableControl の TableRowEntry の Wrap 要素 (書式)
 
 列幅を超えるテキストを次の行に表示するように指定します。 既定では、列幅を超えるテキストは切り捨てられます。
 
-Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) TableControl Element (Format) TableRowEntries 要素の tablecontrol (format) TableRowEntry 要素の TableRowEntries for TableControl (Format) Wrap 要素TableControl (Format) の TableRowEntry
+Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) TableControl 要素 (Format) TableRowEntries の tablecontrol (format) TableRowEntry 要素の TableRowEntries for tablecontrol (Format) for tablecontrol (format)
 
 ## <a name="syntax"></a>構文
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 <Wrap/>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`Wrap` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `Wrap` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,18 +34,18 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[TableControl (Format) の TableRowEntries の TableRowEntry 要素](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|テーブルの行に表示されるデータを定義します。|
+|[TableControl の TableRowEntries の TableRowEntry 要素 (書式)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|テーブルの行に表示されるデータを定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 
-[テーブルビューの作成](./creating-a-table-view.md)
+[テーブル ビューを作成する](./creating-a-table-view.md)
 
-[TableControl (Format) の TableRowEntries の TableRowEntry 要素](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
+[TableControl の TableRowEntries の TableRowEntry 要素 (書式)](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

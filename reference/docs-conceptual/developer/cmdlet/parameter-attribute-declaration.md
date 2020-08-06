@@ -1,23 +1,16 @@
 ---
 title: Parameter 属性宣言 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes, Parameter
 - Parameter attribute, described
 - Parameter attribute
-ms.assetid: 08433d0b-169b-42c8-9335-2881d9034698
-caps.latest.revision: 13
-ms.openlocfilehash: 7482690c44cdaabf23b886107ac5d112c0fa5c9d
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 55b157b93c3a42324d63e16ddfa8db1f0d38f82b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692391"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781853"
 ---
 # <a name="parameter-attribute-declaration"></a>パラメーター属性の宣言
 
@@ -32,17 +25,17 @@ Parameter 属性は、コマンドレットパラメーターとしてコマン�
 
 #### <a name="parameters"></a>パラメーター
 
-`Mandatory`([System.string) 省略](/dotnet/api/System.Boolean)可能な名前付きパラメーター。 `True`コマンドレットパラメーターが必要であることを示します。 コマンドレットが呼び出されたときに必要なパラメーターが指定されていない場合、Windows PowerShell はユーザーにパラメーター値の入力を求めます。 既定値は `false` です。
+`Mandatory`([System.string) 省略](/dotnet/api/System.Boolean)可能な名前付きパラメーター。 `True`コマンドレットパラメーターが必要であることを示します。 コマンドレットが呼び出されたときに必要なパラメーターが指定されていない場合、Windows PowerShell はユーザーにパラメーター値の入力を求めます。 既定では、 `false`です。
 
 `ParameterSetName`([System.string](/dotnet/api/System.String)) 省略可能な名前付きパラメーター。 このコマンドレットパラメーターが属するパラメーターセットを指定します。 パラメーターセットが指定されていない場合、パラメーターはすべてのパラメーターセットに属します。
 
 `Position`([System.string](/dotnet/api/System.Int32)) 省略可能な名前付きパラメーター。 Windows PowerShell コマンド内のパラメーターの位置を指定します。
 
-`ValueFromPipeline`([System.string) 省略](/dotnet/api/System.Boolean)可能な名前付きパラメーター。 `True`コマンドレットパラメーターがパイプラインオブジェクトからの値を受け取ることを示します。 コマンドレットがオブジェクトのプロパティだけでなく、完全なオブジェクトにアクセスする場合は、このキーワードを指定します。 既定値は `false` です。
+`ValueFromPipeline`([System.string) 省略](/dotnet/api/System.Boolean)可能な名前付きパラメーター。 `True`コマンドレットパラメーターがパイプラインオブジェクトからの値を受け取ることを示します。 コマンドレットがオブジェクトのプロパティだけでなく、完全なオブジェクトにアクセスする場合は、このキーワードを指定します。 既定では、 `false`です。
 
-`ValueFromPipelineByPropertyName`([System.string) 省略](/dotnet/api/System.Boolean)可能な名前付きパラメーター。 `True`コマンドレットパラメーターが、このパラメーターと同じ名前または別名を持つパイプラインオブジェクトのプロパティから値を取得することを示します。 たとえば、コマンドレットにパラメーターがあり、パイプラインオブジェクトにもプロパティがある場合、 `Name` `Name` プロパティの値 `Name` は `Name` コマンドレットのパラメーターに割り当てられます。 既定値は `false` です。
+`ValueFromPipelineByPropertyName`([System.string) 省略](/dotnet/api/System.Boolean)可能な名前付きパラメーター。 `True`コマンドレットパラメーターが、このパラメーターと同じ名前または別名を持つパイプラインオブジェクトのプロパティから値を取得することを示します。 たとえば、コマンドレットにパラメーターがあり、パイプラインオブジェクトにもプロパティがある場合、 `Name` `Name` プロパティの値 `Name` は `Name` コマンドレットのパラメーターに割り当てられます。 既定では、 `false`です。
 
-`ValueFromRemainingArguments`([System.string) 省略](/dotnet/api/System.Boolean)可能な名前付きパラメーター。 `True`コマンドレットパラメーターが、コマンドレットに渡される残りのすべての引数を受け入れることを示します。 既定値は `false` です。
+`ValueFromRemainingArguments`([System.string) 省略](/dotnet/api/System.Boolean)可能な名前付きパラメーター。 `True`コマンドレットパラメーターが、コマンドレットに渡される残りのすべての引数を受け入れることを示します。 既定では、 `false`です。
 
 `HelpMessage`省略可能な名前付きパラメーター。 パラメーターの短い説明を指定します。 コマンドレットが実行され、必須パラメーターが指定されていない場合、Windows PowerShell はこのメッセージを表示します。
 

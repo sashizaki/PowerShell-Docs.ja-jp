@@ -1,25 +1,18 @@
 ---
 title: ListControl の ListItem の PropertyName 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 01ae8cbe-acdc-4043-bd6e-1118a5691a55
-caps.latest.revision: 12
-ms.openlocfilehash: 405184f7bdbf1955f1df7766bf2723c244dcc27f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 9ee466d7f73e53b129f8d46f49a21549683bb32c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362381"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780833"
 ---
 # <a name="propertyname-element-for-listitem-for-listcontrol-format"></a>ListControl の ListItem の PropertyName 要素 (書式)
 
 値が一覧に表示される .NET プロパティを指定します。
 
-Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) ListControl 要素 (形式) ListEntries Element (format) ListEntry Element (Format) ListItems Element (Format) ListItem Element (Format) PropertyName 要素ListItem (形式)
+Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) ListControl Element (format) ListEntries 要素 (format) ListEntry Element (Format) ListItems Element (Format) ListItem 要素 (format) ListItem (format) の PropertyName 要素
 
 ## <a name="syntax"></a>構文
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`PropertyName` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `PropertyName` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,7 +34,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[ListItem 要素 (形式)](./listitem-element-for-listitems-for-listcontrol-format.md)|リストビューの行に表示される値を持つプロパティまたはスクリプトを定義します。|
 
@@ -49,7 +42,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 値が表示されるプロパティの名前を指定します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 この要素が指定されている場合、 [ScriptBlock](./scriptblock-element-for-listitem-for-listcontrol-format.md)要素を指定することはできません。
 
@@ -69,10 +62,10 @@ ListItem>
 
 ## <a name="see-also"></a>参照
 
-[ListControl の ListItem の ScriptBlock 要素 (形式)](./scriptblock-element-for-listitem-for-listcontrol-format.md)
+[ListControl の ListItem の ScriptBlock 要素 (書式)](./scriptblock-element-for-listitem-for-listcontrol-format.md)
 
-[リストビューの作成](./creating-a-list-view.md)
+[リスト ビューを作成する](./creating-a-list-view.md)
 
 [ListControl の ListItem 要素 (形式)](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

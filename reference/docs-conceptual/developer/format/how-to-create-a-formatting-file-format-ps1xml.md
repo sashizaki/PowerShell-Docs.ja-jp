@@ -1,28 +1,21 @@
 ---
-title: 書式設定ファイル (types.ps1xml) を作成する方法 |Microsoft Docs
-ms.custom: ''
+title: 書式設定ファイルを作成する方法 (.format.ps1xml) |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: eb568878-f63e-4561-98e2-16ee2ac7559d
-caps.latest.revision: 8
-ms.openlocfilehash: 7a578dd63a53562f992b2970573258b8676e2a52
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: abdbd4e15b0c4cb1dafcde087d24ed5792c86c3d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692271"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781258"
 ---
 # <a name="how-to-create-a-formatting-file-formatps1xml"></a>書式設定ファイルを作成する方法 (.format.ps1xml)
 
-このトピックでは、書式設定ファイル (types.ps1xml) を作成する方法について説明します。
+このトピックでは、書式設定ファイル (.format.ps1xml) を作成する方法について説明します。
 
 > [!NOTE]
 > また、Windows PowerShell によって提供されるいずれかのファイルのコピーを作成することによって、フォーマットファイルを作成することもできます。 既存のファイルのコピーを作成する場合は、既存のデジタル署名を削除し、独自の署名を新しいファイルに追加します。
 
-### <a name="to-create-a-formatps1xml-file"></a>Types.ps1xml ファイルを作成します。
+### <a name="to-create-a-formatps1xml-file"></a>.format.ps1xml ファイルを作成します。
 
 1. メモ帳などのテキストエディターを使用して、テキストファイル (.txt) を作成します。
 

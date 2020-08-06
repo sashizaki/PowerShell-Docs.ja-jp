@@ -1,19 +1,12 @@
 ---
 title: ファイルの概念のフォーマット |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1804dbe4-69eb-4b0b-bc40-cbb2f00bb083
-caps.latest.revision: 10
-ms.openlocfilehash: 81b035f3cb44dcb672f5951511d03542e694cc42
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6849a61ab1796ae49c73550b48e78de6f787274e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362981"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781496"
 ---
 # <a name="formatting-file-concepts"></a>書式設定ファイルの概念
 
@@ -29,7 +22,7 @@ ms.locfileid: "72362981"
 
 [カスタムコントロールの作成](./creating-custom-controls.md)カスタムコントロールの例を示します。
 
-[共通の構成機能の定義](./defining-common-configuration-features.md)
+[共通構成機能を定義する](./defining-common-configuration-features.md)
 
 [選択セットの定義](./defining-selection-sets.md)例と、選択セットの作成に使用する XML 要素について説明します。
 

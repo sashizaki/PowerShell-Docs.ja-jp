@@ -1,25 +1,18 @@
 ---
 title: InitialSessionState | を作成するMicrosoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5ae707db-52e0-408c-87fa-b35c42eaaab1
-caps.latest.revision: 5
-ms.openlocfilehash: 9140d03e046def2fbbcc2a842b9ea1b9e1fa2985
-ms.sourcegitcommit: 4eda0bc902658d4a188159bd7310e64399f6e178
+ms.openlocfilehash: 946adf1006d1afcad2810c85e39f14514e837327
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/13/2020
-ms.locfileid: "83271884"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779728"
 ---
 # <a name="creating-an-initialsessionstate"></a>InitialSessionState を作成する
 
 PowerShell コマンドは実行空間で実行されます。
 アプリケーションで PowerShell をホストする[には、system.servicemodel オブジェクトを](/dotnet/api/System.Management.Automation.Runspaces.Runspace)作成する必要があります。
-すべての実行空間には、 [InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトが関連付けられています。
+各実行空間には、 [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトが関連付けられています。
 InitialSessionState は、その実行空間で使用できるコマンド、変数、モジュールなどの実行空間の特性を指定します。
 
 ## <a name="create-a-default-initialsessionstate"></a>既定の InitialSessionState を作成する

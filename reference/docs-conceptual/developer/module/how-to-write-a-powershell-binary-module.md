@@ -1,19 +1,12 @@
 ---
 title: PowerShell バイナリモジュールを記述する方法 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: eb4e72e6-24c4-42b6-b7b9-a62585c17f26
-caps.latest.revision: 15
-ms.openlocfilehash: ed614de125f78cbcf8411cc334baf3c95933dd47
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 92395bd6b8be1bd3741888eb3716d62f0253e213
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367121"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779269"
 ---
 # <a name="how-to-write-a-powershell-binary-module"></a>PowerShell バイナリ モジュールを記述する方法
 
@@ -23,7 +16,7 @@ ms.locfileid: "72367121"
 
 #### <a name="how-to-create-and-install-a-powershell-binary-module"></a>PowerShell バイナリモジュールを作成してインストールする方法
 
-1. バイナリ PowerShell ソリューション (でC#記述されたコマンドレットなど) を作成し、必要な機能を使用して、正常に動作することを確認します。
+1. 必要な機能を備えたバイナリ PowerShell ソリューション (C# で記述されたコマンドレットなど) を作成し、正常に動作することを確認します。
 
    コードの観点から見ると、バイナリモジュールの中核となるのは、単なるコマンドレットアセンブリです。 実際、PowerShell は、1つのコマンドレットアセンブリを読み込みとアンロードという点でモジュールとして処理し、開発者の作業を追加する必要はありません。 コマンドレットの記述の詳細については、「 [Windows PowerShell コマンドレットの記述](../cmdlet/writing-a-windows-powershell-cmdlet.md)」を参照してください。
 
@@ -34,7 +27,7 @@ ms.locfileid: "72367121"
    そのため、モジュールマニフェストは、主に、複数のファイルを1つのパッケージに結合したり、特定のアセンブリに対してパブリケーションを明示的に制御したりする場合に役立ちます。
    詳細については、「 [PowerShell モジュールマニフェストを記述する方法](how-to-write-a-powershell-module-manifest.md)」を参照してください。
 
-   次のコードは、モジュールとC#して使用できる同じファイル内に3つのコマンドレットを含む、非常に単純なコードブロックです。
+   次のコードは、モジュールとして使用できる同じファイル内に3つのコマンドレットを含む、非常に単純な C# コードブロックです。
 
    ```csharp
    using System.Management.Automation;           // Windows PowerShell namespace.
@@ -73,9 +66,9 @@ ms.locfileid: "72367121"
 
 3. ソリューションをパッケージ化し、PowerShell モジュールパス内の任意の場所にパッケージを保存します。
 
-   `PSModulePath` グローバル環境変数は、PowerShell がモジュールを検索するために使用する既定のパスを記述します。 たとえば、システムにモジュールを保存するための一般的なパスは、`%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>`ます。 既定のパスを使用しない場合は、インストール中にモジュールの場所を明示的に指定する必要があります。 ソリューションの複数のアセンブリとファイルを格納するフォルダーが必要になる場合があるので、モジュールを保存するためのフォルダーを必ず作成してください。
+   `PSModulePath`グローバル環境変数は、PowerShell がモジュールを検索するために使用する既定のパスを記述します。 たとえば、システムにモジュールを保存するための一般的なパスは、のようになり `%SystemRoot%\users\<user>\Documents\WindowsPowerShell\Modules\<moduleName>` ます。 既定のパスを使用しない場合は、インストール中にモジュールの場所を明示的に指定する必要があります。 ソリューションの複数のアセンブリとファイルを格納するフォルダーが必要になる場合があるので、モジュールを保存するためのフォルダーを必ず作成してください。
 
-   技術的には、`PSModulePath` 上の任意の場所にモジュールをインストールする必要がないことに注意してください。これらは、PowerShell がモジュールを検索する既定の場所です。 ただし、モジュールを他の場所に格納することが適切な理由がない限り、ベストプラクティスと考えてください。 詳細については、「 [Powershell モジュールのインストール](./installing-a-powershell-module.md)」および「 [Powershell モジュールのインストールパスの変更](./modifying-the-psmodulepath-installation-path.md)」を参照してください。
+   技術的には、でモジュールをインストールする必要がないことに注意してください `PSModulePath` 。これらは、PowerShell がモジュールを検索する既定の場所です。 ただし、モジュールを他の場所に格納することが適切な理由がない限り、ベストプラクティスと考えてください。 詳細については、「 [Powershell モジュールのインストール](./installing-a-powershell-module.md)」および「 [Powershell モジュールのインストールパスの変更](./modifying-the-psmodulepath-installation-path.md)」を参照してください。
 
 4. モジュールを PowerShell にインポートし[、モジュールを呼び出します。](/powershell/module/Microsoft.PowerShell.Core/Import-Module)
 

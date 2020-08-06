@@ -1,19 +1,12 @@
 ---
 title: Quantity パラメーター |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8c0bd8a9-1749-4885-ab24-38c0a4d9f2cb
-caps.latest.revision: 6
-ms.openlocfilehash: 7a3efc60fcc8729d833f6de070016cfd08cc9b88
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7ff6562380bb6336b08879b31d8d9fed47bfb6a7
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369561"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781819"
 ---
 # <a name="quantity-parameters"></a>数量のパラメーター
 
@@ -21,16 +14,16 @@ ms.locfileid: "72369561"
 
 |パラメーター|機能|
 |---|---|
-|**All**<br>データ型: ブール値|このパラメーターは、リソースの既定のサブセットではなく、すべてのリソースを処理する必要があることを `true` に示すために実装します。 `false` がリソースのサブセットを示すように、このパラメーターを実装します。|
+|**すべて**<br>データ型: ブール値|このパラメーターは、 `true` リソースの既定のサブセットではなく、すべてのリソースを処理する必要があることを示すために実装します。 リソースのサブセットを示すように、このパラメーターを実装 `false` します。|
 |**Allocation**<br>データ型: Int32|割り当てられる項目の数をユーザーが指定できるように、このパラメーターを実装します。|
 |**ブロック数**<br>データ型: Int64|ユーザーがブロックカウントを指定できるように、このパラメーターを実装します。|
 |**Count**<br>データ型: Int64|ユーザーがカウントを指定できるように、このパラメーターを実装します。|
-|**Scope**<br>データ型: キーワード|操作するスコープをユーザーが指定できるように、このパラメーターを実装します。|
+|**スコープ**<br>データ型: キーワード|操作するスコープをユーザーが指定できるように、このパラメーターを実装します。|
 
 ## <a name="see-also"></a>参照
 
 [コマンドレットのパラメーター](./cmdlet-parameters.md)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

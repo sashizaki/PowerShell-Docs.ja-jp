@@ -1,25 +1,18 @@
 ---
 title: 構成用のコントロールの式のバインドの PropertyName 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: f4da7f70-acfb-4cae-9dc9-e15d8fe19d63
-caps.latest.revision: 6
-ms.openlocfilehash: 93389adbfa13e2404354f1081ac545d967589e4b
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f4343eeb157a1e3fc94a43c610ca5bdc94a5f667
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364971"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87780911"
 ---
 # <a name="propertyname-element-for-expressionbinding-for-controls-for-configuration-format"></a>Configuration の Controls の ExpressionBinding の PropertyName 要素 (書式)
 
 コモンコントロールによって表示される値を持つ .NET プロパティを指定します。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
 
-Configuration 要素 (Format) 構成用の CustomControl の Configuration (format) CustomEntries 要素の構成 (形式) の CustomControl 要素の構成 (書式設定) 要素のコントロール要素Format) CustomEntry 要素を構成するための CustomControl 用の CustomEntry 要素。 configuration (format) の CustomItem 要素の構成式のバインド要素を構成するためのコントロールの構成 (Format) PropertyName 要素構成用のコントロールの式バインドの場合 (形式)
+Configuration 要素 (Format) コントロールの configuration (format) コントロールの要素の構成 (format) の CustomControl 要素の構成 (形式) の CustomControl の構成 (書式) の CustomEntries 要素のコントロール要素 CustomControl for Controls の構成 (書式) Customentries 要素のコントロールの構成式のバインド要素の構成のためのコントロールの構成 (format) PropertyName 要素の構成のためのコントロールの構成 (形式) のバインド要素
 
 ## <a name="syntax"></a>構文
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 <PropertyName>.NetTypeProperty</PropertyName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`PropertyName` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `PropertyName` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,18 +34,18 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[構成用のコントロールに対する CustomItem の式のバインド要素 (形式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|コントロールによって表示されるデータを定義します。|
+|[Configuration の Controls の CustomItem の ExpressionBinding 要素 (書式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|コントロールによって表示されるデータを定義します。|
 
 ## <a name="text-value"></a>テキスト値
 
 コントロールによって表示される値を持つ .NET プロパティの名前を指定します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 ## <a name="see-also"></a>参照
 
-[構成用のコントロールに対する CustomItem の式のバインド要素 (形式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+[Configuration の Controls の CustomItem の ExpressionBinding 要素 (書式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

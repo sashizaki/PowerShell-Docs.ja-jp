@@ -1,30 +1,23 @@
 ---
 title: Windows PowerShell 項目プロバイダーを作成する |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - item providers [PowerShell Programmer's Guide]
 - providers [PowerShell Programmer's Guide], item provider
-ms.assetid: a5a304ce-fc99-4a5b-a779-de7d85e031fe
-caps.latest.revision: 6
-ms.openlocfilehash: 32f58d70dc01130f37639960109bf9ef4a8aa7cc
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: b00af7d6fbb75b08027dc18ee6647472d23b83b7
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978442"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779055"
 ---
 # <a name="creating-a-windows-powershell-item-provider"></a>Windows PowerShell アイテム プロバイダーを作成する
 
 このトピックでは、データストア内のデータを操作できる Windows PowerShell プロバイダーを作成する方法について説明します。 このトピックでは、ストア内のデータの要素を、データストアの "項目" と呼びます。 その結果、ストア内のデータを操作できるプロバイダーは、Windows PowerShell 項目プロバイダーと呼ばれます。
 
 > [!NOTE]
-> このプロバイダーのC#ソースファイル (AccessDBSampleProvider03.cs) をダウンロードするには、Microsoft Windows Software Development Kit For windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
-> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。 その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。
+> このプロバイダーの C# ソースファイル (AccessDBSampleProvider03.cs) は、Windows Vista および .NET Framework 3.0 ランタイムコンポーネントの Microsoft Windows Software Development Kit を使用してダウンロードできます。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
+> ダウンロードしたソースファイルは、ディレクトリにあり **\<PowerShell Samples>** ます。 その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。
 
 このトピックで説明する Windows PowerShell 項目プロバイダーは、Access データベースからデータの項目を取得します。 この場合、"item" は Access データベースのテーブルまたはテーブル内の行のいずれかです。
 
@@ -48,7 +41,7 @@ Windows PowerShell 項目プロバイダーがストア内の項目を操作で�
 ## <a name="checking-for-path-validity"></a>パスの有効性を確認しています
 
 Windows powershell ランタイムは、データの項目を検索するときに、windows powershell の[動作につい](/previous-versions/ms714658(v=vs.85))ての「Pspath の概念」セクションで定義されているように、プロバイダーへの windows powershell パスを提供します。
-Windows PowerShell 項目プロバイダーは、指定されたパスの構文とセマンティックの有効性を検証する必要があります。そのためには、 [System.](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) .................. を実装します。 このメソッドは、パスが有効な場合は `true` を返し、それ以外の場合は `false` を返します。 このメソッドの実装では、パスに項目が存在するかどうかを検証しないことに注意してください。ただし、パスの構文的で意味が正しいことだけを確認してください。
+Windows PowerShell 項目プロバイダーは、指定されたパスの構文とセマンティックの有効性を検証する必要があります。そのためには、 [System.](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath) .................. を実装します。 `true`パスが有効な場合、このメソッドはを返し `false` ます。それ以外の場合はを返します。 このメソッドの実装では、パスに項目が存在するかどうかを検証しないことに注意してください。ただし、パスの構文的で意味が正しいことだけを確認してください。
 
 ここでは、このプロバイダーのシステムの管理を実装しています。このプロバイダーの[Isvalidpath *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.IsValidPath)メソッド。 この実装では、NormalizePath ヘルパーメソッドを呼び出して、パス内のすべての区切り記号を一様なものに変換することに注意してください。
 
@@ -56,7 +49,7 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 ## <a name="determining-if-an-item-exists"></a>項目が存在するかどうかを判断する
 
-パスを確認した後、Windows PowerShell ランタイムは、データの項目がそのパスに存在するかどうかを判断する必要があります。 この種類のクエリをサポートするために、Windows PowerShell 項目プロバイダーは、[システムの管理](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)を実装しています。 このメソッドは、指定したパスに項目が見つかった `true` を返します。それ以外の場合は `false` (既定)。
+パスを確認した後、Windows PowerShell ランタイムは、データの項目がそのパスに存在するかどうかを判断する必要があります。 この種類のクエリをサポートするために、Windows PowerShell 項目プロバイダーは、[システムの管理](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)を実装しています。 このメソッド `true` は、指定されたパスで見つかった項目を返し `false` ます (既定値)。それ以外の場合は。
 
 次に示すのは、このプロバイダーの system.servicemodel.................... [Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)メソッドの実装です。 このメソッドは PathIsDrive、ChunkPath、および GetTable helper メソッドを呼び出し、プロバイダーによって定義されたオブジェクトを使用します。
 
@@ -66,13 +59,13 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 次の条件は、システムの実装に適用される場合があります。 [Itemexists *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists):
 
-- プロバイダークラスを定義すると、Windows PowerShell 項目プロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合、[システム](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)の実装では、メソッドに渡されるパスが指定された機能の要件を満たしていることを確認する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 [".](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
+- プロバイダークラスを定義すると、Windows PowerShell 項目プロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合、[システム](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)の実装では、メソッドに渡されるパスが指定された機能の要件を満たしていることを確認する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 ["..](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
 
-- このメソッドの実装では、項目がユーザーに表示される可能性のある項目への任意の形式のアクセスを処理する必要があります。 たとえば、ユーザーがファイルシステムプロバイダー (Windows PowerShell によって提供される) を介してファイルに対する書き込みアクセス権を持っていても、読み取りアクセス権を持っていない場合は、ファイルがまだ存在していて、かつ、`true`[が返され](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)ます。 子項目を列挙できるかどうかを確認するために、の実装で親項目を確認することが必要になる場合があります。
+- このメソッドの実装では、項目がユーザーに表示される可能性のある項目への任意の形式のアクセスを処理する必要があります。 たとえば、ユーザーがファイルシステムプロバイダー (Windows PowerShell によって提供される) を介してファイルに対する書き込みアクセス権を持っていても、 [System.Management.Automation.Provider.Itemcmdletprovider.Itemexists*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists)読み取りアクセス権を持っていない場合、ファイルはまだ存在しています`true`。 子項目を列挙できるかどうかを確認するために、の実装で親項目を確認することが必要になる場合があります。
 
 ## <a name="attaching-dynamic-parameters-to-the-test-path-cmdlet"></a>テストパスコマンドレットへの動的パラメーターのアタッチ
 
-場合によっては、`Test-Path` コマンドレットを実行すると、実行時に動的に指定される追加のパラメーターが必要になることが[あります。](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで、system.servicemodel.............................- [Dynamicsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters)メソッドを実装します。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Test-Path` コマンドレットにパラメーターを追加します。
+場合によっては、コマンドレットには、 `Test-Path` 実行時に動的に指定される追加のパラメーターが必要です[。](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExists) これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで、system.servicemodel.............................- [Dynamicsdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ItemExistsDynamicParameters)メソッドを実装します。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスまたは system.servicemodel 型の Parameterdictionary と同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクト。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、コマンドレットにパラメーターを追加し `Test-Path` ます。
 
 この Windows PowerShell 項目プロバイダーは、このメソッドを実装していません。 ただし、次のコードは、このメソッドの既定の実装です。
 
@@ -80,7 +73,7 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 ## <a name="retrieving-an-item"></a>項目を取得する
 
-項目を取得するには、Windows PowerShell 項目プロバイダーが、`Get-Item` コマンドレットからの呼び出しをサポートするように、system.string [* Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)メソッドをオーバーライドする必要があります。 このメソッドは、[システム](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)の.............................. を使用して項目を書き込みます。
+項目を取得するには、Windows PowerShell 項目プロバイダーが、コマンドレットからの呼び出しをサポートするように、system.string [* Getitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)メソッドをオーバーライドする必要があり `Get-Item` ます。 このメソッドは、[システム](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject)の.............................. を使用して項目を書き込みます。
 
 次に示すのは、このプロバイダーに対する system.servicemodel......................... [...](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)を実装したものです。 このメソッドは、GetTable と GetRow のヘルパーメソッドを使用して、Access データベース内のテーブルまたはデータテーブル内の行のいずれかの項目を取得します。
 
@@ -88,15 +81,15 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 #### <a name="things-to-remember-about-implementing-getitem"></a>GetItem の実装に関する注意事項
 
-次の条件は、[システム](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)の実装に適用される可能性があります。
+次の条件は、[システム](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem)の実装に適用される可能性があります。...
 
-- プロバイダークラスを定義すると、Windows PowerShell 項目プロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合は、メソッドに渡されるパスが要件を満たしているかどうかを確認する必要[があります。](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 [".](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
+- プロバイダークラスを定義すると、Windows PowerShell 項目プロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合は、メソッドに渡されるパスが要件を満たしているかどうかを確認する必要[があります。](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 ["..](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
 
-- 既定では、このメソッドをオーバーライドしても、通常はユーザーに表示されないオブジェクトを取得しないでください。この場合、 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティが `true`に設定されている必要があります。 たとえば、FileSystem プロバイダーの場合は、system [.](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) ................................................... [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) ... [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) .......。
+- 既定では、このメソッドをオーバーライドしても、通常はユーザーに表示されないオブジェクトを取得しないでください。この場合、 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティがに設定されている必要があり `true` ます。 たとえば、FileSystem プロバイダーの場合は、system [.](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItem) ................................................... [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force) ... [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteItemObject) .......。
 
 ## <a name="attaching-dynamic-parameters-to-the-get-item-cmdlet"></a>動的パラメーターの Get Item コマンドレットへのアタッチ
 
-`Get-Item` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで[Getitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters)メソッドを実装する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Get-Item` コマンドレットにパラメーターを追加します。
+コマンドレットには、 `Get-Item` 実行時に動的に指定される追加のパラメーターが必要な場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで[Getitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.GetItemDynamicParameters)メソッドを実装する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスまたは system.servicemodel 型の Parameterdictionary と同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクト。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、コマンドレットにパラメーターを追加し `Get-Item` ます。
 
 このプロバイダーは、このメソッドを実装していません。 ただし、次のコードは、このメソッドの既定の実装です。
 
@@ -104,7 +97,7 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 ## <a name="setting-an-item"></a>項目を設定する
 
-項目を設定するには、Windows PowerShell 項目プロバイダーで[Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドをオーバーライドして、`Set-Item` コマンドレットからの呼び出しをサポートする必要があります。 このメソッドは、指定されたパスにある項目の値を設定します。
+項目を設定するには、Windows PowerShell 項目プロバイダーで[Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドをオーバーライドして、コマンドレットからの呼び出しをサポートする必要があります。 `Set-Item` このメソッドは、指定されたパスにある項目の値を設定します。
 
 このプロバイダーでは、 [Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドのオーバーライドは提供されていませんが、 ただし、このメソッドの既定の実装は次のとおりです。
 
@@ -114,17 +107,17 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 [Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)の実装には、次の条件が当てはまる場合があります:。
 
-- プロバイダークラスを定義すると、Windows PowerShell 項目プロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合は、 [Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)の実装によって、メソッドに渡されるパスが要件を満たしていることを確認する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 [".](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
+- プロバイダークラスを定義すると、Windows PowerShell 項目プロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合は、 [Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)の実装によって、メソッドに渡されるパスが要件を満たしていることを確認する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 ["..](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
 
-- 既定では、このメソッドのオーバーライドでは、ユーザーに表示されないオブジェクトを設定または作成する必要はありません。この場合、 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティが `true`に設定されている必要があります。 パスが非表示の項目と[WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) * を表している場合、このメソッドにはエラーを送信する必要があります。 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)は、`false`に設定されています。
+- 既定では、このメソッドのオーバーライドでは、ユーザーに表示されないオブジェクトを設定または作成することはできません。この場合、 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティがに設定されている必要があり `true` ます。 パスが非表示の項目と[WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) * を表している場合は、このメソッドにエラーを送信する必要があります。 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)は、に設定されてい `false` ます。
 
 - [Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドを実装するには、システムを呼び出す必要があり[ます。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)その場合は、データストアに変更を加える前に、その戻り値を確認してから、その戻り値を確認してください。 このメソッドは、ファイルの削除など、データストアに変更が加えられたときの操作の実行を確認するために使用されます。 " [System.](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) .......................................................................
 
-  Setitem の呼び出しによって `true`[が返され](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)た後、 [*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドは、system.servicemodel メソッドを呼び出す必要があります。[このメソッドは](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)、................. このメソッドは、ユーザーにメッセージを送信して、操作を続行する必要があるかどうかを確認するフィードバックを許可します。 System.object を呼び出すと、危険性の高いシステム変更を追加で確認できるように[なります。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)
+  Setitem を呼び出すと、[が返され](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)ます。このメソッドは、system........................ を呼び出す `true` 必要があり[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)ます。 このメソッドは、ユーザーにメッセージを送信して、操作を続行する必要があるかどうかを確認するフィードバックを許可します。 System.object を呼び出すと、危険性の高いシステム変更を追加で確認できるように[なります。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)
 
 ## <a name="retrieving-dynamic-parameters-for-setitem"></a>SetItem の動的パラメーターの取得
 
-`Set-Item` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで[Setitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters)メソッドを実装する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Set-Item` コマンドレットにパラメーターを追加します。
+コマンドレットには、 `Set-Item` 実行時に動的に指定される追加のパラメーターが必要な場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで[Setitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItemDynamicParameters)メソッドを実装する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスまたは system.servicemodel 型の Parameterdictionary と同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクト。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、コマンドレットにパラメーターを追加し `Set-Item` ます。
 
 このプロバイダーは、このメソッドを実装していません。 ただし、次のコードは、このメソッドの既定の実装です。
 
@@ -132,7 +125,7 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 ## <a name="clearing-an-item"></a>項目のクリア
 
-項目をクリアするには、Windows PowerShell 項目プロバイダーが、`Clear-Item` コマンドレットからの呼び出しをサポートするために、system.object を実装します。 [Clearitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)メソッド。 このメソッドは、指定されたパスのデータ項目を消去します。
+項目をクリアするには、Windows PowerShell 項目プロバイダーが、コマンドレットからの呼び出しをサポートするために、system.object を実装します。 [Clearitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)メソッドを実装します。 `Clear-Item` このメソッドは、指定されたパスのデータ項目を消去します。
 
 このプロバイダーは、このメソッドを実装していません。 ただし、次のコードは、このメソッドの既定の実装です。
 
@@ -142,17 +135,17 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 次の条件は、システムの実装に適用される場合があります。 [clearitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem):
 
-- プロバイダークラスを定義すると、Windows PowerShell 項目プロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合、[システム](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)の実装では、メソッドに渡されるパスが要件を満たしていることを確認する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 [".](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
+- プロバイダークラスを定義すると、Windows PowerShell 項目プロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合、[システム](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItem)の実装では、メソッドに渡されるパスが要件を満たしていることを確認する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 ["..](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
 
-- 既定では、このメソッドのオーバーライドでは、ユーザーに表示されないオブジェクトを設定または作成する必要はありません。この場合、 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティが `true`に設定されている必要があります。 パスが、ユーザーと[WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) * によって非表示になっている項目を表している場合、このメソッドにはエラーを送信する必要があります。 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)は `false`に設定されます。
+- 既定では、このメソッドのオーバーライドでは、ユーザーに表示されないオブジェクトを設定または作成することはできません。この場合、 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティがに設定されている必要があり `true` ます。 パスが、ユーザーおよび[WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) * によって非表示になっている項目を表している場合、このメソッドにはエラーを送信する必要があります。 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)はに設定され `false` ます。
 
 - [Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドを実装するには、システムを呼び出す必要があり[ます。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)その場合は、データストアに変更を加える前に、その戻り値を確認してから、その戻り値を確認してください。 このメソッドは、ファイルの削除など、データストアに変更が加えられたときの操作の実行を確認するために使用されます。 [System.](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess) ........................................................
 
-  Setitem の呼び出しによって `true`[が返され](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)た後、 [*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドは、system.servicemodel メソッドを呼び出す必要があります。[このメソッドは](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)、................. このメソッドは、ユーザーにメッセージを送信して、操作を続行する必要があるかどうかを確認するフィードバックを許可します。 System.object を呼び出すと、危険性の高いシステム変更を追加で確認できるように[なります。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)
+  Setitem を呼び出すと、[が返され](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldProcess)ます。このメソッドは、system........................ を呼び出す `true` 必要があり[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem) [System.Management.Automation.Provider.Cmdletprovider.ShouldContinue](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)ます。 このメソッドは、ユーザーにメッセージを送信して、操作を続行する必要があるかどうかを確認するフィードバックを許可します。 System.object を呼び出すと、危険性の高いシステム変更を追加で確認できるように[なります。](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.ShouldContinue)
 
 ## <a name="retrieve-dynamic-parameters-for-clearitem"></a>ClearItem の動的パラメーターの取得
 
-`Clear-Item` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで、システムを実装する必要があります。 [Clearitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters)メソッド。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Clear-Item` コマンドレットにパラメーターを追加します。
+コマンドレットには、 `Clear-Item` 実行時に動的に指定される追加のパラメーターが必要な場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーで、システムを実装する必要があります。 [Clearitemdynamicparameters *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.ClearItemDynamicParameters)メソッド。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスまたは system.servicemodel 型の Parameterdictionary と同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクト。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、コマンドレットにパラメーターを追加し `Clear-Item` ます。
 
 この項目プロバイダーは、このメソッドを実装していません。 ただし、次のコードは、このメソッドの既定の実装です。
 
@@ -160,7 +153,7 @@ Windows PowerShell 項目プロバイダーは、指定されたパスの構文�
 
 ## <a name="performing-a-default-action-for-an-item"></a>項目の既定のアクションを実行する
 
-Windows PowerShell 項目プロバイダーは、 [Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)メソッドを実装して、`Invoke-Item` コマンドレットからの呼び出しをサポートします。これにより、プロバイダーは、指定されたパスにある項目に対して既定のアクションを実行できます。 たとえば、FileSystem プロバイダーは、このメソッドを使用して、特定の項目に対して ShellExecute を呼び出す場合があります。
+Windows PowerShell 項目プロバイダーは、 [Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)メソッドを実装して、コマンドレットからの呼び出しをサポートできます。これにより、 `Invoke-Item` プロバイダーは、指定されたパスにある項目に対して既定のアクションを実行できます。 たとえば、FileSystem プロバイダーは、このメソッドを使用して、特定の項目に対して ShellExecute を呼び出す場合があります。
 
 このプロバイダーは、このメソッドを実装していません。 ただし、次のコードは、このメソッドの既定の実装です。
 
@@ -170,13 +163,13 @@ Windows PowerShell 項目プロバイダーは、 [Invokedefaultaction *](/dotne
 
 [Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)の実装には、次の条件が適用される場合があります。
 
-- プロバイダークラスを定義すると、Windows PowerShell 項目プロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合は、 [Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)の実装によって、メソッドに渡されるパスが要件を満たしていることを確認する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 [".](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
+- プロバイダークラスを定義すると、Windows PowerShell 項目プロバイダーは、ExpandWildcards カード、フィルター、包含、または除外のプロバイダー機能を、[システム](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙体から宣言できます。 このような場合は、 [Invokedefaultaction *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultAction)の実装によって、メソッドに渡されるパスが要件を満たしていることを確認する必要があります。 これを行うには、メソッドが適切なプロパティにアクセスする必要があります。たとえば、 ["..](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Exclude) .............................................. [...](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Include) ...
 
-- 既定では、このメソッドのオーバーライドでは、system.string [*](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティが `true`に設定されていない限り、ユーザーに対して非表示のオブジェクトを設定または記述することはできません。 パスが、ユーザーと[WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) * によって非表示になっている項目を表している場合、このメソッドにはエラーを送信する必要があります。 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)は `false`に設定されます。
+- 既定では、このメソッドのオーバーライドでは、ユーザーに対して非表示のオブジェクトを設定または作成することはできません。ただし、 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)プロパティがに設定されている必要があり `true` ます。 パスが、ユーザーおよび[WriteError](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.WriteError) * によって非表示になっている項目を表している場合、このメソッドにはエラーを送信する必要があります。 [Force *](/dotnet/api/System.Management.Automation.Provider.CmdletProvider.Force)はに設定され `false` ます。
 
 ## <a name="retrieve-dynamic-parameters-for-invokedefaultaction"></a>InvokeDefaultAction の動的パラメーターの取得
 
-`Invoke-Item` コマンドレットでは、実行時に動的に指定される追加のパラメーターが必要になる場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーでは、system.string [*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters)メソッドを実装する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスや[system.string オブジェクトと](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、`Invoke-Item` コマンドレットに動的パラメーターを追加します。
+コマンドレットには、 `Invoke-Item` 実行時に動的に指定される追加のパラメーターが必要な場合があります。 これらの動的パラメーターを指定するには、Windows PowerShell 項目プロバイダーでは、system.string [*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.InvokeDefaultActionDynamicParameters)メソッドを実装する必要があります。 このメソッドは、指定されたパスにある項目の動的パラメーターを取得し、コマンドレットクラスまたは system.servicemodel 型の Parameterdictionary と同様に解析属性を持つプロパティとフィールドを持つオブジェクトを返します。 [System.Management.Automation.Runtimedefinedparameterdictionary](/dotnet/api/System.Management.Automation.RuntimeDefinedParameterDictionary)オブジェクト。 Windows PowerShell ランタイムは、返されたオブジェクトを使用して、コマンドレットに動的パラメーターを追加し `Invoke-Item` ます。
 
 この項目プロバイダーは、このメソッドを実装していません。 ただし、次のコードは、このメソッドの既定の実装です。
 
@@ -188,7 +181,7 @@ Windows PowerShell 項目プロバイダーは、 [Invokedefaultaction *](/dotne
 
 ### <a name="normalizepath-method"></a>NormalizePath メソッド
 
-この項目プロバイダーは、パスが一貫した形式であることを保証するために、NormalizePath ヘルパーメソッドを実装します。 指定された形式では、区切り記号として円記号 (\\) を使用します。
+この項目プロバイダーは、パスが一貫した形式であることを保証するために、NormalizePath ヘルパーメソッドを実装します。 指定された形式では、区切り記号として円記号 () が使用され \\ ます。
 
 ### <a name="pathisdrive-method"></a>PathIsDrive メソッド
 
@@ -238,7 +231,7 @@ Windows PowerShell 項目プロバイダーは、 [Invokedefaultaction *](/dotne
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
 
-[Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell プログラマー ガイド](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell プロバイダーの作成](./how-to-create-a-windows-powershell-provider.md)
 

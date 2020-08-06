@@ -1,19 +1,12 @@
 ---
 title: Windows PowerShell ホストのクイックスタート |Microsoft Docs
-ms.custom: ''
 ms.date: 09/12/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5a134b81-bd0c-4e1c-a2f0-9acbe852745a
-caps.latest.revision: 9
-ms.openlocfilehash: 390eb2d0153c65967d8c0711c852aa6e13fe4660
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fea6bd5ae49ecf552c583271ee9d869b1ccebae8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360821"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779405"
 ---
 # <a name="windows-powershell-host-quickstart"></a>Windows PowerShell ホスト クイック スタート
 
@@ -58,7 +51,7 @@ AddCommand メソッドを複数回呼び出す前に、[このメソッドを](
 
 前の例では、パラメーターを指定せずに1つのコマンドを実行しています。
 コマンドにパラメーターを追加するには、を使用します。そのためには、 [AddParameter](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)メソッドを使用します。
-たとえば、次のコードは、コンピューター上で実行されている `PowerShell` という名前のすべてのプロセスの一覧を取得します。
+たとえば、次のコードは、 `PowerShell` コンピューター上で実行されているという名前のすべてのプロセスの一覧を取得します。
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -91,7 +84,7 @@ PowerShell.Create().AddCommand("Get-Process")
 ### <a name="addstatement"></a>AddStatement
 
 バッチ処理をシミュレートするには、追加のステートメントをパイプラインの末尾に追加する、 [addstatement](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)メソッドを使用します。
-次のコードでは、`PowerShell`という名前の実行中のプロセスの一覧を取得し、実行中のサービスの一覧を取得します。
+次のコードでは、という名前の実行中のプロセスの一覧を取得 `PowerShell` し、実行中のサービスの一覧を取得します。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -104,15 +97,15 @@ ps.Invoke();
 
 既存のスクリプトを実行するには、. [PowerShell. AddScript](/dotnet/api/System.Management.Automation.PowerShell.AddScript)メソッドを呼び出します。
 次の例では、パイプラインにスクリプトを追加して実行します。
-この例では、`D:\PSScripts`という名前のフォルダーに `MyScript.ps1` という名前のスクリプトが既に存在することを前提としています。
+この例では、という名前のフォルダーにという名前のスクリプトが既に存在することを前提としてい `MyScript.ps1` `D:\PSScripts` ます。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
-また、`useLocalScope`という名前のブール型パラメーターを受け取る AddScript メソッドのバージョンもあります。
-このパラメーターが `true`に設定されている場合、スクリプトはローカルスコープで実行されます。
+また、という名前のブール型パラメーターを受け取る AddScript メソッドのバージョンもあり `useLocalScope` ます。
+このパラメーターがに設定されている場合、 `true` スクリプトはローカルスコープで実行されます。
 次のコードでは、スクリプトがローカルスコープで実行されます。
 
 ```csharp
@@ -125,11 +118,11 @@ ps.AddScript(@"D:\PSScripts\MyScript.ps1", true).Invoke();
 前の例で使用した既定の実行空間は、すべてのコア Windows PowerShell コマンドを読み込みますが、指定されたすべてのコマンドのサブセットのみを読み込むカスタム実行空間を作成できます。
 これを行うと、パフォーマンスを向上させることができます (多数のコマンドを読み込むとパフォーマンスが低下します)。または、ユーザーの機能を制限して操作を実行できます。
 限られた数のコマンドのみを公開する実行空間は、制約付き実行空間と呼ばれます。
-制約付き実行空間を作成するには、 [InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)クラスと、その実行空間クラスを使用[してい](/dotnet/api/System.Management.Automation.Runspaces.Runspace)ます。
+制約付き実行空間を作成する[には、tialSessionState クラスと](/dotnet/api/System.Management.Automation.Runspaces.Runspace) [System.Management.Automation.Runspaces.Ini](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)クラスを使用します。
 
 ### <a name="creating-an-initialsessionstate-object"></a>InitialSessionState オブジェクトの作成
 
-カスタム実行空間を作成するには、まず[InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトを作成する必要があります。
+カスタム実行空間を作成するには、最初に[System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトを作成する必要があります。
 次の例では、 [RunspaceFactory](/dotnet/api/System.Management.Automation.Runspaces.RunspaceFactory)を使用して、既定の InitialSessionState オブジェクトを作成した後に実行空間を作成します。
 
 ```csharp
@@ -144,14 +137,14 @@ ps.Invoke();
 
 ### <a name="constraining-the-runspace"></a>実行空間の制約
 
-前の例では、組み込みのコア Windows PowerShell をすべて読み込む、既定の[InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトを作成しましたが、
-また、InitialSessionState メソッドを呼び出して、 [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2)スナップインのコマンドのみを読み込む InitialSessionState オブジェクトを作成することもできました。このメソッドを呼び出すこともできます。
-より制約のある実行空間を作成するには、 [InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create)メソッドを呼び出し、InitialSessionState にコマンドを追加することによって、空の InitialSessionState オブジェクトを作成する必要があります。
+前の例では、組み込みのコア Windows PowerShell をすべて読み込む既定の[System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)オブジェクトを作成しました。
+また、tialSessionState メソッドをSystem.Management.Automation.Runspaces.Ini呼び出して、 [CreateDefault2](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.CreateDefault2)スナップインのコマンドのみを読み込む InitialSessionState オブジェクトを作成することもできます。
+より制約のある実行空間を作成するには、 [System.Management.Automation.Runspaces.InitialSessionState](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create)メソッドを呼び出し、InitialSessionState にコマンドを追加することによって、空の InitialSessionState オブジェクトを作成する必要があります。
 
 指定したコマンドのみを読み込む実行空間を使用すると、パフォーマンスが大幅に向上します。
 
 最初のセッション状態のコマンドレットを定義するには、system.servicemodel. [Sessionstatecmd・ entry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry)クラスのメソッドを使用します。
-次の例では、空の初期セッション状態を作成し、`Get-Command` および `Import-Module` のコマンドを初期セッション状態に定義して追加します。
+次の例では、空の初期セッション状態を作成し、を定義して、 `Get-Command` `Import-Module` コマンドとコマンドを初期セッション状態に追加します。
 その後、その最初のセッション状態によって制約された実行空間を作成し、その実行空間でコマンドを実行します。
 
 初期セッション状態を作成します。

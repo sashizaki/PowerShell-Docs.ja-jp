@@ -1,25 +1,18 @@
 ---
 title: Windows PowerShell モジュールの記述 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: bfbccc5b-2b2b-432a-a971-9f8ab503cdc3
-caps.latest.revision: 17
-ms.openlocfilehash: 0b7263ea19745e902fff04b993933e443d4d6333
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: d2398a8111a9832af2465d045be0bdefc3cf927a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72360621"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779150"
 ---
 # <a name="writing-a-windows-powershell-module"></a>Windows PowerShell モジュールを記述する
 
 このドキュメントは、Windows PowerShell コマンドレットをパッケージ化して配布する必要がある管理者、スクリプト開発者、およびコマンドレットの開発者を対象に書かれています。 Windows PowerShell モジュールを使用すると、コンパイルされた言語を使用せずに、Windows PowerShell ソリューションをパッケージ化して配布することができます。
 
-Windows PowerShell モジュールを使用すると、Windows PowerShell コードをパーティション分割し、自己完結型の再利用可能な単位にまとめることができます。 これらの再利用可能なユニットを使用すると、モジュールを他のユーザーと直接簡単に共有できます。 スクリプト開発者は、サードパーティのモジュールを再パッケージ化して、カスタムスクリプトベースのアプリケーションを作成することもできます。 モジュールは、Perl や Python などの他のスクリプト言語のモジュールに似ており、再頒布可能な再頒布可能コンポーネントを使用する実稼働対応のスクリプトソリューションを実現し、複数のコンポーネントを再パッケージ化して抽象化することが可能になりました。カスタムソリューションを作成します。
+Windows PowerShell モジュールを使用すると、Windows PowerShell コードをパーティション分割し、自己完結型の再利用可能な単位にまとめることができます。 これらの再利用可能なユニットを使用すると、モジュールを他のユーザーと直接簡単に共有できます。 スクリプト開発者は、サードパーティのモジュールを再パッケージ化して、カスタムスクリプトベースのアプリケーションを作成することもできます。 モジュールは、Perl や Python などの他のスクリプト言語のモジュールに似ており、再頒布可能な再頒布可能コンポーネントを使用する実稼働対応のスクリプトソリューションを実現し、複数のコンポーネントを再パッケージ化および抽象化してカスタムソリューションを作成できるようになりました。
 
 基本的には、Windows PowerShell は、hbase-runner.psm1 ファイルに保存されている有効な Windows PowerShell スクリプトコードをモジュールとして扱います。 また、PowerShell は、バイナリコマンドレットアセンブリをモジュールとして自動的に処理します。 ただし、モジュール (具体的にはモジュールマニフェスト) を使用して、ソリューション全体をまとめてバンドルすることもできます。 次のシナリオでは、Windows PowerShell モジュールの一般的な使用方法について説明します。
 
@@ -37,16 +30,16 @@ Windows PowerShell モジュールを使用すると、Windows PowerShell コー
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell モジュールについて](./understanding-a-windows-powershell-module.md)
+[Windows PowerShell モジュールを理解する](./understanding-a-windows-powershell-module.md)
 
-[PowerShell スクリプトモジュールを記述する方法](./how-to-write-a-powershell-script-module.md)
+[PowerShell スクリプト モジュールを記述する方法](./how-to-write-a-powershell-script-module.md)
 
-[PowerShell バイナリモジュールを記述する方法](./how-to-write-a-powershell-binary-module.md)
+[PowerShell バイナリ モジュールを記述する方法](./how-to-write-a-powershell-binary-module.md)
 
-[PowerShell モジュールマニフェストを記述する方法](how-to-write-a-powershell-module-manifest.md)
+[PowerShell モジュール マニフェストを記述する方法](how-to-write-a-powershell-module-manifest.md)
 
-[PSModulePath インストールパスの変更](./modifying-the-psmodulepath-installation-path.md)
+[PSModulePath インストール パスを変更する](./modifying-the-psmodulepath-installation-path.md)
 
-[PowerShell モジュールのインポート](./importing-a-powershell-module.md)
+[PowerShell モジュールをインポートする](./importing-a-powershell-module.md)
 
-[PowerShell モジュールのインストール](./installing-a-powershell-module.md)
+[PowerShell モジュールをインストールする](./installing-a-powershell-module.md)

@@ -1,19 +1,12 @@
 ---
 title: 確認メッセージ |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a886a26d-7730-4586-aeac-fd3f0bc60b88
-caps.latest.revision: 8
-ms.openlocfilehash: 229725b5b9f1f0082592dcebe11564fd2f630ce1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 8f8192f6ed96b1eeb22e3b28ce1366eee8e7c16a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365731"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782193"
 ---
 # <a name="confirmation-messages"></a>確認メッセージ
 
@@ -24,7 +17,7 @@ ms.locfileid: "72365731"
 
 ## <a name="specifying-the-resource"></a>リソースの指定
 
-変更しようとしているリソースを指定するには、このコマンドレットを呼び出してください[。Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0)メソッド。 この場合、メソッドの `target` パラメーターを使用してリソースを指定すると、Windows PowerShell によって操作が追加されます。 次のメッセージでは、"MyResource" というテキストが使用されるリソースであり、操作は呼び出しを行うコマンドの名前です。
+変更しようとしているリソースを指定するには、このコマンドレットを呼び出してください[。Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0)メソッド。 この場合、メソッドのパラメーターを使用してリソースを指定する `target` と、操作は Windows PowerShell によって追加されます。 次のメッセージでは、"MyResource" というテキストが使用されるリソースであり、操作は呼び出しを行うコマンドの名前です。
 
 ```output
 Confirm
@@ -48,7 +41,7 @@ Continue with this operation?
 
 ## <a name="specifying-the-operation-and-resource"></a>操作とリソースの指定
 
-変更しようとしているリソースと、コマンドが実行される操作を指定するには、そのリソースを使用します。この場合、 [% 2a を呼び出します。Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0)メソッド。 この場合は、`target` パラメーターを使用してリソースを指定し、`target` パラメーターを使用して操作を行います。 次のメッセージでは、"MyResource" というテキストが動作しているリソースであり、"Myresource" は実行される操作です。
+変更しようとしているリソースと、コマンドが実行される操作を指定するには、そのリソースを使用します。この場合、 [% 2a を呼び出します。Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess?view=powershellsdk-1.1.0)メソッド。 この場合、パラメーターを使用してリソースを指定し、パラメーターを使用して `target` 操作を `target` 行います。 次のメッセージでは、"MyResource" というテキストが動作しているリソースであり、"Myresource" は実行される操作です。
 
 ```output
 Confirm
@@ -72,4 +65,4 @@ Continue with this operation?
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

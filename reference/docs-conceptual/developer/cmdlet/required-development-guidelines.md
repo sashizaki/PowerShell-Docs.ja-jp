@@ -1,19 +1,12 @@
 ---
 title: 必要な開発ガイドライン |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 41d2b308-a36a-496f-8542-666b6a21eedc
-caps.latest.revision: 19
-ms.openlocfilehash: e68e43a91f9139e8d3dc636b5740121515aab2e6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ca0168050e3c1c2e7537036f96da62f52d50982e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369521"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781700"
 ---
 # <a name="required-development-guidelines"></a>必要な開発ガイドライン
 
@@ -75,7 +68,7 @@ ms.locfileid: "72369521"
 
 承認された動詞名の詳細については、「[コマンドレットの動詞](./approved-verbs-for-windows-powershell-commands.md)」を参照してください。
 
-ユーザーには、検出可能な一連のコマンドレット名が必要です。 適切な動詞を使用して、ユーザーがコマンドレットの動作を迅速に評価し、システムの機能を簡単に検出できるようにします。 たとえば、次のコマンドラインコマンドは、名前が "start" で始まるシステム上のすべてのコマンドの一覧を取得します。 `get-command start-*`です。 コマンドレットの名詞を使用して、他のコマンドレットとコマンドレットを区別します。 名詞は、操作が実行されるリソースを示します。 操作自体は動詞によって表されます。
+ユーザーには、検出可能な一連のコマンドレット名が必要です。 適切な動詞を使用して、ユーザーがコマンドレットの動作を迅速に評価し、システムの機能を簡単に検出できるようにします。 たとえば、次のコマンドラインコマンドは、名前が "start" で始まるシステム上のすべてのコマンドの一覧を取得し `get-command start-*` ます。 コマンドレットの名詞を使用して、他のコマンドレットとコマンドレットを区別します。 名詞は、操作が実行されるリソースを示します。 操作自体は動詞によって表されます。
 
 ### <a name="cmdlet-names-characters-that-cannot-be-used-rd02"></a>コマンドレット名: 使用できない文字 (RD02)
 
@@ -84,7 +77,7 @@ ms.locfileid: "72369521"
 |文字|名前|
 |---------------|----------|
 |#|数値の符号|
-|、|コンマ|
+|,|コンマ|
 |()|かっこ|
 |{}|かっこ|
 |[]|カッコ|
@@ -93,7 +86,7 @@ ms.locfileid: "72369521"
 |/|スラッシュ記号|
 |\\| 円記号|
 |$|ドル記号|
-|^|キャレット|
+|^|caret|
 |;|セミコロン|
 |:|:)|
 |"|二重引用符|
@@ -103,7 +96,7 @@ ms.locfileid: "72369521"
 |?|疑問符|
 |@|アットマーク記号|
 |`|バックチック (アクサングラーブ)|
-|*|アスタリスク、星印|
+|*|アスタリスク|
 |%|パーセント記号|
 |+|プラス記号|
 |=|等号 (=)|
@@ -117,12 +110,12 @@ Windows PowerShell は、すべてのコマンドレットにパラメーター�
 
 システムを変更する操作を実行するコマンドレットについては、確認を要求するために、system.string [*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッドを呼び出す必要があります。また、特殊なケース[では、](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)このメソッドを呼び出します。 (" [System](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ......................................................... [...](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)
 
-これらの呼び出しを行うには、コマンドレット属性の `SupportsShouldProcess` キーワードを設定して、コマンドレットで確認要求をサポートするように指定する必要があります。 この属性の設定の詳細については、「[コマンドレット属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
+これらの呼び出しを行うには、コマンドレット属性のキーワードを設定して、コマンドレットで確認要求をサポートするように指定する必要があり `SupportsShouldProcess` ます。 この属性の設定の詳細については、「[コマンドレット属性の宣言](./cmdlet-attribute-declaration.md)」を参照してください。
 
 > [!NOTE]
 > コマンドレットクラスの Cmdlet 属性によって、コマンドレットが[システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)の呼び出しをサポートしていることが示されている場合、コマンドレットは、system..... [. コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)の呼び出しを実行できません。また、コマンドレットは、システムを予期せず変更する可能性があります。
 
-システムを変更する場合は、System...[コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)を使用します。 ユーザー設定と `WhatIf` パラメーターによって、system.object [*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッドが制御されます。 これに[対して、"..](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ....................................... このメソッドは、ユーザー設定または `WhatIf` パラメーターによって制御されません。 コマンドレットで system.string [*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドを呼び出す場合、この2つのメソッドの呼び出しをバイパスし、操作を続行する `Force` パラメーターが必要になります。 これは、非対話型のスクリプトやホストでコマンドレットを使用できるようにするために重要です。
+システムを変更する場合は、System...[コマンドレット](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)を使用します。 ユーザー設定とパラメーターによって `WhatIf` 、system.string [*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)メソッドが制御されます。 これに[対して、"..](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue) ....................................... このメソッドは、ユーザー設定またはパラメーターによって制御されません `WhatIf` 。 コマンドレットで、system.string [*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドを呼び出す場合は、 `Force` この2つのメソッドの呼び出しをバイパスして操作を続行するパラメーターが必要です。 これは、非対話型のスクリプトやホストでコマンドレットを使用できるようにするために重要です。
 
 コマンドレットがこれらの呼び出しをサポートしている場合、ユーザーはアクションを実際に実行するかどうかを判断できます。 たとえば、 [Stop Process](/powershell/module/microsoft.powershell.management/stop-process)コマンドレットは、システム、Winlogon、spoolsv.exe の各プロセスを含む一連の重要なプロセスを停止する前に、system.string [*](/dotnet/api/System.Management.Automation.Cmdlet.ShouldContinue)メソッドを呼び出します。
 
@@ -200,7 +193,7 @@ OutputType 属性 (Windows PowerShell 2.0 で導入) では、コマンドレッ
 
 - [ThrowTerminatingError *](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)メソッドと WriteError * メソッドによって参照されている、 [*](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)メソッドのコアでは、例外が必要になります。[このオブジェクトを](/dotnet/api/System.Management.Automation.ErrorRecord)参照してください。 使用する例外を決定するときは、.NET Framework 設計ガイドラインに従ってください。 エラーが意味的に既存の例外と同じ場合は、その例外を使用するか、その例外から派生させます。 それ以外の場合は、新しい例外または例外の階層を[system.exception](/dotnet/api/System.Exception)型から直接派生させます。
 
-また、[システムの管理. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクトには、ユーザーのエラーをグループ化するエラーカテゴリも必要です。 ユーザーは、`$ErrorView` シェル変数の値を category ビューに設定することにより、カテゴリに基づいてエラーを表示できます。 使用可能なカテゴリは、 [ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)列挙型によって定義されます。
+また、[システムの管理. ErrorRecord](/dotnet/api/System.Management.Automation.ErrorRecord)オブジェクトには、ユーザーのエラーをグループ化するエラーカテゴリも必要です。 ユーザーは、シェル変数の値を category ビューに設定することにより、カテゴリに基づいてエラーを表示でき `$ErrorView` ます。 使用可能なカテゴリは、 [ErrorCategory](/dotnet/api/System.Management.Automation.ErrorCategory)列挙型によって定義されます。
 
 - コマンドレットによって新しいスレッドが作成され、そのスレッドで実行されているコードがハンドルされない例外をスローした場合、Windows PowerShell はエラーをキャッチせず、プロセスを終了します。
 
@@ -212,8 +205,8 @@ OutputType 属性 (Windows PowerShell 2.0 で導入) では、コマンドレッ
 
 ## <a name="see-also"></a>参照
 
-[開発に関する推奨事項](./strongly-encouraged-development-guidelines.md)
+[強くお勧めする開発ガイドライン](./strongly-encouraged-development-guidelines.md)
 
-[アドバイザリ開発ガイドライン](./advisory-development-guidelines.md)
+[お勧めする開発ガイドライン](./advisory-development-guidelines.md)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

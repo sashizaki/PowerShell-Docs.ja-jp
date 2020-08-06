@@ -1,19 +1,12 @@
 ---
 title: カスタムホストのサンプル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 55aee25b-bbcb-4d41-a4c0-fb8e30c4cdc1
-caps.latest.revision: 11
-ms.openlocfilehash: 1e58b74cf1c37c70ebfb0f4970cfbf8a8263ec5c
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6a10d3da6d8bf93986a3f5b029fdae3afb23a903
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367511"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779524"
 ---
 # <a name="custom-host-samples"></a>カスタム ホストのサンプル
 
@@ -23,7 +16,7 @@ ms.locfileid: "72367511"
 
  [Vmhost01 サンプル](./host01-sample.md)このサンプルでは、基本的なカスタムホストを使用するホストアプリケーションを実装する方法を示します。
 
- [Host02 サンプル](./host02-sample.md)このサンプルでは、Windows PowerShell ランタイムをカスタムホスト実装と共に使用するホストアプリケーションを記述する方法を示します。 ホストアプリケーションはホストカルチャをドイツ語に設定し、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットを実行して結果を表示します。これは pwrsh .exe を使用して表示されます。その後、現在のデータと時刻をドイツ語で印刷します。
+ [Host02 サンプル](./host02-sample.md)このサンプルでは、Windows PowerShell ランタイムをカスタムホスト実装と共に使用するホストアプリケーションを記述する方法を示します。 ホストアプリケーションはホストカルチャをドイツ語に設定し、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)コマンドレットを実行して、pwrsh.exe を使用して表示されるように結果を表示します。次に、現在のデータと時刻をドイツ語で印刷します。
 
  [Host03 サンプル](./host03-sample.md)このサンプルでは、コマンドラインからコマンドを読み取ってコマンドを実行し、結果をコンソールに表示する対話型コンソールベースのホストアプリケーションを構築する方法を示します。
 

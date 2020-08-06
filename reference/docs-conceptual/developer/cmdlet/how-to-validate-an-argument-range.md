@@ -1,21 +1,14 @@
 ---
 title: 引数の範囲を検証する方法 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - ValidateRange attribute, example
-ms.assetid: 3cba3ab7-c3b6-4d17-aa17-88377496551b
-caps.latest.revision: 9
-ms.openlocfilehash: a39e34d1f1c333185f09b4a934819e1368d29a48
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b48b1b87425add51e855c48ec700c78c3ae296c1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365521"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782074"
 ---
 # <a name="how-to-validate-an-argument-range"></a>引数範囲を検証する方法
 
@@ -26,7 +19,7 @@ ms.locfileid: "72365521"
 
 ### <a name="to-validate-an-argument-range"></a>引数の範囲を検証するには
 
-- 次のコードに示すように、ValidateRange 属性を追加します。 この例では、`InputData` パラメーターに 0 ~ 5 の範囲を指定します。
+- 次のコードに示すように、ValidateRange 属性を追加します。 この例では、パラメーターに 0 ~ 5 の範囲を指定し `InputData` ます。
 
     ```csharp
     [ValidateRange(0, 5)]
@@ -45,4 +38,4 @@ ms.locfileid: "72365521"
 
 [ValidateRange 属性の宣言](./validaterange-attribute-declaration.md)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

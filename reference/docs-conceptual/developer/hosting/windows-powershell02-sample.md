@@ -1,31 +1,24 @@
 ---
 title: Windows PowerShell02 サンプル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 92492a7e-257d-47d3-b119-89df3c5545e8
-caps.latest.revision: 9
-ms.openlocfilehash: 4d697e73ff4ab4cc4b88593f814d589f89005663
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: a82366a88addb08e186eede79e621d90d915c50f
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978646"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779388"
 ---
 # <a name="windows-powershell02-sample"></a>Windows PowerShell02 サンプル
 
 このサンプルでは、実行空間プールの実行空間を使用して、コマンドを非同期的に実行する方法を示します。 このサンプルでは、コマンドの一覧を生成し、それらのコマンドを実行します。 Windows PowerShell エンジンは、必要に応じて、プールから実行空間を開きます。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 - このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>例
+## <a name="demonstrates"></a>対象
 
-このサンプルは、次の操作方法を示します。
+このサンプルでは、次の方法を示します。
 
 - 実行空間の最小数と最大数を指定して RunspacePool オブジェクトを作成し、同時に開くことができるようにします。
 - コマンドの一覧を作成します。
@@ -41,4 +34,4 @@ ms.locfileid: "80978646"
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell ホストアプリケーションの作成](./writing-a-windows-powershell-host-application.md)
+[Windows PowerShell ホスト アプリケーションを記述する](./writing-a-windows-powershell-host-application.md)

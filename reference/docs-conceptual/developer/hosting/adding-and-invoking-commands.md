@@ -1,19 +1,12 @@
 ---
 title: コマンドの追加と呼び出し |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 62be8432-28c1-4ca2-bcdb-d0350163fa8c
-caps.latest.revision: 5
-ms.openlocfilehash: f776f13fe743a3f5f67de0d94883e3f754040ffc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b51c4ae3fa5c5239e3c5c5e65bf7aa63c58c4da9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367641"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87779796"
 ---
 # <a name="adding-and-invoking-commands"></a>コマンドを追加し、呼び出す
 
@@ -47,7 +40,7 @@ ms.locfileid: "72367641"
 
 ### <a name="addparameter"></a>AddParameter
 
- 前の例では、パラメーターを指定せずに1つのコマンドを実行しています。 コマンドにパラメーターを追加するに[は、次](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)のコードを使用します。たとえば、次のコードは、コンピューター上で実行されている `PowerShell` という名前のすべてのプロセスの一覧を取得します。
+ 前の例では、パラメーターを指定せずに1つのコマンドを実行しています。 コマンドにパラメーターを追加するに[は、次](/dotnet/api/System.Management.Automation.PSCommand.AddParameter)のコード例のように、 `PowerShell` コンピューター上で実行されているという名前のすべてのプロセスの一覧を取得します。
 
 ```csharp
 PowerShell.Create().AddCommand("Get-Process")
@@ -79,7 +72,7 @@ PowerShell.Create().AddCommand("Get-Process")
 
 ### <a name="addstatement"></a>AddStatement
 
- バッチ処理をシミュレートするには、次のコードで実行中のプロセスの一覧を名前`PowerShell`で取得します。このメソッドを使用して、パイプラインの末尾にステートメントを追加します。 [System.Management.Automation.Powershell.Addstatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement)次に、実行中のサービスの一覧を取得します。
+ バッチ処理をシミュレートするには[System.Management.Automation.Powershell.Addstatement*](/dotnet/api/System.Management.Automation.PowerShell.AddStatement) 、次のコードで実行中のプロセスの一覧を名前で取得し、 `PowerShell` 実行中のサービスの一覧を取得します。このメソッドを使用して、パイプラインの末尾にステートメントを追加します。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -90,14 +83,14 @@ ps.Invoke();
 
 ### <a name="addscript"></a>AddScript
 
- 既存のスクリプトを実行するには、 [System. Powershell. Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)メソッドを呼び出します。 次の例では、パイプラインにスクリプトを追加して実行します。 この例では、`D:\PSScripts`という名前のフォルダーに `MyScript.ps1` という名前のスクリプトが既に存在することを前提としています。
+ 既存のスクリプトを実行するには、 [System. Powershell. Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)メソッドを呼び出します。 次の例では、パイプラインにスクリプトを追加して実行します。 この例では、という名前のフォルダーにという名前のスクリプトが既に存在することを前提としてい `MyScript.ps1` `D:\PSScripts` ます。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
 ps.AddScript("D:\PSScripts\MyScript.ps1").Invoke();
 ```
 
- また、`useLocalScope`という名前のブール型パラメーターを受け取るバージョンの[System. Powershell. Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)メソッドもあります。 このパラメーターが `true`に設定されている場合、スクリプトはローカルスコープで実行されます。 次のコードでは、スクリプトがローカルスコープで実行されます。
+ また、という名前のブール型パラメーターを受け取る、バージョンの system.string. [Addscript *](/dotnet/api/System.Management.Automation.PowerShell.AddScript)メソッドもあり `useLocalScope` ます。 このパラメーターがに設定されている場合、 `true` スクリプトはローカルスコープで実行されます。 次のコードでは、スクリプトがローカルスコープで実行されます。
 
 ```csharp
 PowerShell ps = PowerShell.Create();
@@ -184,6 +177,6 @@ namespace HostPS3
 
 ## <a name="see-also"></a>参照
 
- [InitialSessionState の作成](./creating-an-initialsessionstate.md)
+ [InitialSessionState を作成する](./creating-an-initialsessionstate.md)
 
- [制約付き実行空間の作成](./creating-a-constrained-runspace.md)
+ [制約付き実行空間を作成する](./creating-a-constrained-runspace.md)

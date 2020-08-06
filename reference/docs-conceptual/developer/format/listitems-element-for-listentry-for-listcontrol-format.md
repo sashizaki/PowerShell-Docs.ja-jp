@@ -1,19 +1,12 @@
 ---
 title: ListControl (Format) の ListEntry の ListItems 要素Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: d2c1da6d-acc7-4fe8-9e7d-6dcddc2787cd
-caps.latest.revision: 9
-ms.openlocfilehash: c25f18489d9c7abd8889758499dbbacd6ee29304
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 03b89a3df2ab0498533d0c00f303f643e0039b25
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362741"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781139"
 ---
 # <a name="listitems-element-for-listentry-for-listcontrol-format"></a>ListControl の ListEntry の ListItems 要素 (書式)
 
@@ -29,9 +22,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </ListItems>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`ListItems` 要素の属性、子要素、および親要素について説明します。 指定できる子要素の数に制限はありません。 子要素の順序は、リストビューに表示される値の順序を定義します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `ListItems` ます。 指定できる子要素の数に制限はありません。 子要素の順序は、リストビューに表示される値の順序を定義します。
 
 ### <a name="attributes"></a>属性
 
@@ -39,17 +32,17 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[ListControl の ListItem 要素 (形式)](./listitem-element-for-listitems-for-listcontrol-format.md)|必須の要素です。<br /><br /> リストビューによって表示される値を持つプロパティまたはスクリプトを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[ListControl の ListEntry 要素 (形式)](./listentry-element-for-listcontrol-format.md)|リストビューの定義を提供します。|
+|[ListControl の ListEntry 要素 (書式)](./listentry-element-for-listcontrol-format.md)|リストビューの定義を提供します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 この種類のビューの詳細については、「[リストビューの作成](./creating-a-list-view.md)」を参照してください。
 
@@ -75,10 +68,10 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="see-also"></a>参照
 
-[ListControl の ListEntry 要素 (形式)](./listentry-element-for-listcontrol-format.md)
+[ListControl の ListEntry 要素 (書式)](./listentry-element-for-listcontrol-format.md)
 
 [ListControl の ListItem 要素 (形式)](./listitem-element-for-listitems-for-listcontrol-format.md)
 
-[リストビューの作成](./creating-a-list-view.md)
+[リスト ビューを作成する](./creating-a-list-view.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

@@ -1,25 +1,18 @@
 ---
 title: 構成用のコントロールの式のバインドの ItemSelectionCondition 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: fd3ddc33-b21c-4464-b3f2-a78dbe0062a8
-caps.latest.revision: 8
-ms.openlocfilehash: 4865d716ebe0460b662253a3019e93e82428b882
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3bfd3efe916b4d88c024de8f959482cab515f777
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362921"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781224"
 ---
 # <a name="itemselectioncondition-element-for-expressionbinding-for-controls-for-configuration-format"></a>Configuration の Controls の ExpressionBinding の ItemSelectionCondition 要素 (書式)
 
 このコントロールを使用するために必要な条件を定義します。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
 
-Configuration 要素 (Format) 構成用の CustomControl の Configuration (format) CustomEntries 要素の構成 (形式) の CustomControl 要素の構成 (書式設定) 要素のコントロール要素形式) CustomControl の CustomEntry 要素を構成するためのコントロール用の CustomEntry 要素を構成するためのコントロール用 CustomItem 要素の構成式のバインド要素 CustomItem の構成 (形式)構成用のコントロールの式のバインドの ItemSelectionCondition 要素 (形式)
+Configuration 要素 (Format) コントロールの構成 (format) コントロールの要素の構成 (format) の CustomControl 要素の構成のためのコントロールの要素の構成 (形式) CustomControl の構成 (書式) の CustomEntries 要素 CustomControl の CustomEntry 要素コントロールのために、CustomEntry 用のカスタム Customentries 要素を構成するためのコントロールに対して、構成のためのコントロールのための構成 (Format) ItemSelectionCondition 要素の構成 (形式) のコントロールのための式のバインド要素のバインド要素
 
 ## <a name="syntax"></a>構文
 
@@ -30,9 +23,9 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 </ItemSelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`ItemSelectionCondition` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `ItemSelectionCondition` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -40,18 +33,18 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[構成用のコントロールの ItemSelectionCondition の PropertyName 要素 (形式)](./propertyname-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
 |[構成用のコントロールの ItemSelectionCondition の ScriptBlock 要素 (形式)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーするスクリプトを指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[構成用のコントロールに対する CustomItem の式のバインド要素 (形式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|コントロールによって表示されるデータを定義します。|
+|[Configuration の Controls の CustomItem の ExpressionBinding 要素 (書式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|コントロールによって表示されるデータを定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 この条件には、1つのプロパティ名またはスクリプトを指定できますが、両方を指定することはできません。
 
@@ -61,6 +54,6 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 [構成用のコントロールの ItemSelectionCondition の ScriptBlock 要素 (形式)](./scriptblock-element-for-itemseclectioncondition-for-controls-for-configuration-format.md)
 
-[構成用のコントロールに対する CustomItem の式のバインド要素 (形式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+[Configuration の Controls の CustomItem の ExpressionBinding 要素 (書式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

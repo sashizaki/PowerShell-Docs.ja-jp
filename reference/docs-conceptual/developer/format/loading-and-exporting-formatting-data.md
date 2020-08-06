@@ -1,19 +1,12 @@
 ---
 title: 書式設定データの読み込みとエクスポート |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2a48de31-7961-4b0e-b58b-93466e38370b
-caps.latest.revision: 6
-ms.openlocfilehash: 5c5168ffd74c15066b914ad1b39d9ead947c5e7f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b449b280ccee561679d58f2f2a8b467c83150766
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365121"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87781122"
 ---
 # <a name="loading-and-exporting-formatting-data"></a>書式設定データを読み込んでエクスポートする
 
@@ -31,11 +24,11 @@ ms.locfileid: "72365121"
 
 - プログラムによってコマンドを呼び出す場合は、コマンドが実行される実行空間の初期セッション状態に、書式設定ファイルエントリを追加できます。 書式設定ファイルの追加に使用される .NET 型の詳細については、Sessionstateformatentry を参照してください。 [Displayproperty = Fullname](/dotnet/api/System.Management.Automation.Runspaces.SessionStateFormatEntry)クラス。
 
-フォーマットファイルが読み込まれると、コマンドラインでオブジェクトを表示するときに使用するビューを決定するために Windows PowerShell で使用される内部リストに追加されます。 書式設定ファイルは、リストの先頭に付加することも、リストの末尾に追加することもできます。 Windows PowerShell コアコマンドレットによって返されるオブジェクトの変更方法を変更する場合など、既存のビューが定義されているオブジェクトのビューを定義する書式設定ファイルを読み込む場合は、書式設定ファイルがこのリストに追加された場所を知っておくことが重要です。 さ. オブジェクトのビューのみを定義する書式設定ファイルを読み込む場合は、前述の方法のいずれかを使用できます。  オブジェクトの別のビューを定義する書式設定ファイルを読み込む場合は、[更新プログラムの FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData)コマンドレットを使用して、ファイルをリストの先頭に付加する必要があります。
+フォーマットファイルが読み込まれると、コマンドラインでオブジェクトを表示するときに使用するビューを決定するために Windows PowerShell で使用される内部リストに追加されます。 書式設定ファイルは、リストの先頭に付加することも、リストの末尾に追加することもできます。 Windows PowerShell コアコマンドレットによって返されるオブジェクトの表示方法を変更する場合など、既存のビューが定義されているオブジェクトのビューを定義するフォーマットファイルを読み込む場合は、書式設定ファイルがこのリストに追加されている場所を把握することが重要です。 オブジェクトのビューのみを定義する書式設定ファイルを読み込む場合は、前述の方法のいずれかを使用できます。  オブジェクトの別のビューを定義する書式設定ファイルを読み込む場合は、[更新プログラムの FormatData](/powershell/module/Microsoft.PowerShell.Utility/Update-FormatData)コマンドレットを使用して、ファイルをリストの先頭に付加する必要があります。
 
 ## <a name="storing-your-formatting-file"></a>書式設定ファイルの格納
 
-フォーマットファイルがディスクに格納される場所に関する要件はありません。 ただし、次のフォルダーに格納することを強くお勧めします: `user\documents\windowspowershell\`
+フォーマットファイルがディスクに格納される場所に関する要件はありません。 ただし、次のフォルダーに格納することを強くお勧めします。`user\documents\windowspowershell\`
 
 #### <a name="loading-a-format-file-using-import-formatdata"></a>Import-FormatData を使用してフォーマットファイルを読み込む
 
@@ -59,4 +52,4 @@ ms.locfileid: "72365121"
 
 ## <a name="exporting-format-data"></a>フォーマットデータのエクスポート
 
-ここにセクションの本文を挿入してください。
+ここにセクションの本文を挿入します。
