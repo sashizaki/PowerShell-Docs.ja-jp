@@ -1,75 +1,68 @@
 ---
 title: StopProcessSample02 サンプル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
-caps.latest.revision: 10
-ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bab32f5a2544905bd858bcecf5b0b2e2d127e642
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369381"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786443"
 ---
-# <a name="stopprocesssample02-sample"></a><span data-ttu-id="0ace1-102">StopProcessSample02 サンプル</span><span class="sxs-lookup"><span data-stu-id="0ace1-102">StopProcessSample02 Sample</span></span>
+# <a name="stopprocesssample02-sample"></a><span data-ttu-id="da66d-102">StopProcessSample02 サンプル</span><span class="sxs-lookup"><span data-stu-id="da66d-102">StopProcessSample02 Sample</span></span>
 
-<span data-ttu-id="0ace1-103">このサンプルでは、ローカルコンピューター上のプロセスを停止しているときに、debug (WriteDebug)、verbose (Writedebug)、および warning (Writedebug) メッセージを書き込むコマンドレットを記述する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="0ace1-103">This sample shows how to write a cmdlet that writes debug (WriteDebug), verbose (WriteVerbose), and warning (WriteWarning) messages while stopping processes on the local computer.</span></span> <span data-ttu-id="0ace1-104">このコマンドレットは、Windows PowerShell 2.0 によって提供される `Stop-Process` コマンドレットに似ています。</span><span class="sxs-lookup"><span data-stu-id="0ace1-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="da66d-103">このサンプルでは、ローカルコンピューター上のプロセスを停止しているときに、debug (WriteDebug)、verbose (Writedebug)、および warning (Writedebug) メッセージを書き込むコマンドレットを記述する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="da66d-103">This sample shows how to write a cmdlet that writes debug (WriteDebug), verbose (WriteVerbose), and warning (WriteWarning) messages while stopping processes on the local computer.</span></span> <span data-ttu-id="da66d-104">このコマンドレットは、 `Stop-Process` Windows PowerShell 2.0 によって提供されるコマンドレットに似ています。</span><span class="sxs-lookup"><span data-stu-id="da66d-104">This cmdlet is similar to the `Stop-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="0ace1-105">Visual Studio を使用してサンプルをビルドする方法。</span><span class="sxs-lookup"><span data-stu-id="0ace1-105">How to build the sample by using Visual Studio.</span></span>
+### <a name="how-to-build-the-sample-by-using-visual-studio"></a><span data-ttu-id="da66d-105">Visual Studio を使用してサンプルをビルドする方法。</span><span class="sxs-lookup"><span data-stu-id="da66d-105">How to build the sample by using Visual Studio.</span></span>
 
-1. <span data-ttu-id="0ace1-106">Windows Internet Explorer を開き、Samples ディレクトリの下の StopProcessSample02 ディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="0ace1-106">Open Windows Internet Explorer and navigate to the StopProcessSample02 directory under the Samples directory.</span></span>
+1. <span data-ttu-id="da66d-106">Windows Internet Explorer を開き、Samples ディレクトリの下の StopProcessSample02 ディレクトリに移動します。</span><span class="sxs-lookup"><span data-stu-id="da66d-106">Open Windows Internet Explorer and navigate to the StopProcessSample02 directory under the Samples directory.</span></span>
 
-    <span data-ttu-id="0ace1-107">Windows PowerShell 2.0 SDK がインストールされている状態で、StopProcessSample02 フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="0ace1-107">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample02 folder.</span></span> <span data-ttu-id="0ace1-108">既定の場所は C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02. です。</span><span class="sxs-lookup"><span data-stu-id="0ace1-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span></span>
+    <span data-ttu-id="da66d-107">Windows PowerShell 2.0 SDK がインストールされている状態で、StopProcessSample02 フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="da66d-107">With the Windows PowerShell 2.0 SDK installed, navigate to the StopProcessSample02 folder.</span></span> <span data-ttu-id="da66d-108">既定の場所は C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02. です。</span><span class="sxs-lookup"><span data-stu-id="da66d-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\StopProcessSample02.</span></span>
 
-2. <span data-ttu-id="0ace1-109">ソリューション (.sln) ファイルのアイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="0ace1-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="0ace1-110">これにより、Microsoft Visual Studio でサンプルプロジェクトが開きます。</span><span class="sxs-lookup"><span data-stu-id="0ace1-110">This opens the sample project in Microsoft Visual Studio.</span></span>
+2. <span data-ttu-id="da66d-109">ソリューション (.sln) ファイルのアイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="da66d-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="da66d-110">これにより、Microsoft Visual Studio でサンプルプロジェクトが開きます。</span><span class="sxs-lookup"><span data-stu-id="da66d-110">This opens the sample project in Microsoft Visual Studio.</span></span>
 
-3. <span data-ttu-id="0ace1-111">**[ビルド]** メニューの **[ソリューションのビルド]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="0ace1-111">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="da66d-111">**[ビルド]** メニューで、 **[ソリューションのビルド]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="da66d-111">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="0ace1-112">サンプルのライブラリは、既定の \bin フォルダーまたは \bin\debug フォルダーに構築されます。</span><span class="sxs-lookup"><span data-stu-id="0ace1-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="da66d-112">サンプルのライブラリは、既定の \bin フォルダーまたは \bin\debug フォルダーに構築されます。</span><span class="sxs-lookup"><span data-stu-id="da66d-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="0ace1-113">サンプルを実行する方法</span><span class="sxs-lookup"><span data-stu-id="0ace1-113">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="da66d-113">サンプルを実行する方法</span><span class="sxs-lookup"><span data-stu-id="da66d-113">How to run the sample</span></span>
 
-1. <span data-ttu-id="0ace1-114">次のモジュールフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="0ace1-114">Create the following module folder:</span></span>
+1. <span data-ttu-id="da66d-114">次のモジュールフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="da66d-114">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/StopProcessSample02`
 
-2. <span data-ttu-id="0ace1-115">サンプルアセンブリをモジュールフォルダーにコピーします。</span><span class="sxs-lookup"><span data-stu-id="0ace1-115">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="da66d-115">サンプルアセンブリをモジュールフォルダーにコピーします。</span><span class="sxs-lookup"><span data-stu-id="da66d-115">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="0ace1-116">Windows PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="0ace1-116">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="da66d-116">Windows PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="da66d-116">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="0ace1-117">次のコマンドを実行して、Windows PowerShell にアセンブリを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="0ace1-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="da66d-117">次のコマンドを実行して、Windows PowerShell にアセンブリを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="da66d-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module stopprossessample02`
 
-5. <span data-ttu-id="0ace1-118">次のコマンドを実行して、コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="0ace1-118">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="da66d-118">次のコマンドを実行して、コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="da66d-118">Run the following command to run the cmdlet:</span></span>
 
     `stop-proc`
 
-## <a name="requirements"></a><span data-ttu-id="0ace1-119">要件</span><span class="sxs-lookup"><span data-stu-id="0ace1-119">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="da66d-119">必要条件</span><span class="sxs-lookup"><span data-stu-id="da66d-119">Requirements</span></span>
 
-<span data-ttu-id="0ace1-120">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="0ace1-120">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="da66d-120">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="da66d-120">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="0ace1-121">使用例</span><span class="sxs-lookup"><span data-stu-id="0ace1-121">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="da66d-121">対象</span><span class="sxs-lookup"><span data-stu-id="da66d-121">Demonstrates</span></span>
 
-<span data-ttu-id="0ace1-122">このサンプルでは、次のことを示します。</span><span class="sxs-lookup"><span data-stu-id="0ace1-122">This sample demonstrates the following.</span></span>
+<span data-ttu-id="da66d-122">このサンプルでは、次のことを示します。</span><span class="sxs-lookup"><span data-stu-id="da66d-122">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="0ace1-123">コマンドレット属性を使用してコマンドレットクラスを宣言する。</span><span class="sxs-lookup"><span data-stu-id="0ace1-123">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="da66d-123">コマンドレット属性を使用してコマンドレットクラスを宣言する。</span><span class="sxs-lookup"><span data-stu-id="da66d-123">Declaring a cmdlet class by using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="0ace1-124">パラメーター属性を使用してコマンドレットパラメーターを宣言する。</span><span class="sxs-lookup"><span data-stu-id="0ace1-124">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
+- <span data-ttu-id="da66d-124">パラメーター属性を使用してコマンドレットパラメーターを宣言する。</span><span class="sxs-lookup"><span data-stu-id="da66d-124">Declaring a cmdlet parameters by using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="0ace1-125">詳細メッセージの書き込み。</span><span class="sxs-lookup"><span data-stu-id="0ace1-125">Writing verbose messages.</span></span> <span data-ttu-id="0ace1-126">詳細メッセージの書き込みに使用される方法の詳細については、「 [System](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)...........................</span><span class="sxs-lookup"><span data-stu-id="0ace1-126">For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span></span>
+- <span data-ttu-id="da66d-125">詳細メッセージの書き込み。</span><span class="sxs-lookup"><span data-stu-id="da66d-125">Writing verbose messages.</span></span> <span data-ttu-id="da66d-126">詳細メッセージの書き込みに使用される方法の詳細については、「 [System](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose)...........................</span><span class="sxs-lookup"><span data-stu-id="da66d-126">For more information about the method used to write verbose messages, see [System.Management.Automation.Cmdlet.WriteVerbose](/dotnet/api/System.Management.Automation.Cmdlet.WriteVerbose).</span></span>
 
-- <span data-ttu-id="0ace1-127">エラーメッセージを書き込んでいます。</span><span class="sxs-lookup"><span data-stu-id="0ace1-127">Writing error messages.</span></span> <span data-ttu-id="0ace1-128">エラーメッセージの書き込みに使用される方法の詳細については、「 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="0ace1-128">For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span></span>
+- <span data-ttu-id="da66d-127">エラーメッセージを書き込んでいます。</span><span class="sxs-lookup"><span data-stu-id="da66d-127">Writing error messages.</span></span> <span data-ttu-id="da66d-128">エラーメッセージの書き込みに使用される方法の詳細については、「 [WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="da66d-128">For more information about the method used to write error messages, see [System.Management.Automation.Cmdlet.WriteError](/dotnet/api/System.Management.Automation.Cmdlet.WriteError).</span></span>
 
-- <span data-ttu-id="0ace1-129">警告メッセージを書き込んでいます。</span><span class="sxs-lookup"><span data-stu-id="0ace1-129">Writing warning messages.</span></span> <span data-ttu-id="0ace1-130">警告メッセージを記述するために使用される方法の詳細については、「system.string」を参照し[てください。](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)</span><span class="sxs-lookup"><span data-stu-id="0ace1-130">For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span></span>
+- <span data-ttu-id="da66d-129">警告メッセージを書き込んでいます。</span><span class="sxs-lookup"><span data-stu-id="da66d-129">Writing warning messages.</span></span> <span data-ttu-id="da66d-130">警告メッセージを記述するために使用される方法の詳細については、「system.string」を参照し[てください。](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning)</span><span class="sxs-lookup"><span data-stu-id="da66d-130">For more information about the method used to write warning messages, see [System.Management.Automation.Cmdlet.WriteWarning](/dotnet/api/System.Management.Automation.Cmdlet.WriteWarning).</span></span>
 
-## <a name="example"></a><span data-ttu-id="0ace1-131">例</span><span class="sxs-lookup"><span data-stu-id="0ace1-131">Example</span></span>
+## <a name="example"></a><span data-ttu-id="da66d-131">例</span><span class="sxs-lookup"><span data-stu-id="da66d-131">Example</span></span>
 
-<span data-ttu-id="0ace1-132">このサンプルでは、`WriteDebug`、`WriteVerbose`、および `WriteWarning` メソッドを使用して、デバッグメッセージ、詳細メッセージ、警告メッセージを書き込む方法を示します。</span><span class="sxs-lookup"><span data-stu-id="0ace1-132">This sample shows how to write debug, verbose, and warning messages by using the `WriteDebug`, `WriteVerbose`, and `WriteWarning` methods.</span></span>
+<span data-ttu-id="da66d-132">このサンプルでは、、、およびの各メソッドを使用して、デバッグメッセージ、詳細メッセージ、警告メッセージを書き込む方法を示し `WriteDebug` `WriteVerbose` `WriteWarning` ます。</span><span class="sxs-lookup"><span data-stu-id="da66d-132">This sample shows how to write debug, verbose, and warning messages by using the `WriteDebug`, `WriteVerbose`, and `WriteWarning` methods.</span></span>
 
 ```csharp
 using System;
@@ -310,6 +303,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="0ace1-133">参照</span><span class="sxs-lookup"><span data-stu-id="0ace1-133">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="da66d-133">参照</span><span class="sxs-lookup"><span data-stu-id="da66d-133">See Also</span></span>
 
-[<span data-ttu-id="0ace1-134">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="0ace1-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="da66d-134">Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)</span><span class="sxs-lookup"><span data-stu-id="da66d-134">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

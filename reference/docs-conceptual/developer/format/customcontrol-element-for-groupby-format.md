@@ -1,27 +1,20 @@
 ---
 title: GroupBy (Format) の CustomControl 要素Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2472e256-8f4f-4288-8b67-a3300649dafa
-caps.latest.revision: 9
-ms.openlocfilehash: 2e84e770a345e272d4c5917b00afe7520840e1db
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: b8265e872d34ea5dbcedfaa1668d21df8c3b35eb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368961"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786069"
 ---
-# <a name="customcontrol-element-for-groupby-format"></a><span data-ttu-id="41c35-102">GroupBy の CustomControl 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="41c35-102">CustomControl Element for GroupBy (Format)</span></span>
+# <a name="customcontrol-element-for-groupby-format"></a><span data-ttu-id="f2633-102">GroupBy の CustomControl 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="f2633-102">CustomControl Element for GroupBy (Format)</span></span>
 
-<span data-ttu-id="41c35-103">新しいグループを表示するカスタムコントロールを定義します。</span><span class="sxs-lookup"><span data-stu-id="41c35-103">Defines the custom control that displays the new group.</span></span>
+<span data-ttu-id="f2633-103">新しいグループを表示するカスタムコントロールを定義します。</span><span class="sxs-lookup"><span data-stu-id="f2633-103">Defines the custom control that displays the new group.</span></span>
 
-<span data-ttu-id="41c35-104">Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (書式) groupby 要素 (format) の CustomControl 要素を指定します。</span><span class="sxs-lookup"><span data-stu-id="41c35-104">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) GroupBy Element for View (Format) CustomControl Element for GroupBy (Format)</span></span>
+<span data-ttu-id="f2633-104">Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (書式) groupby 要素 (format) の CustomControl 要素を指定します。</span><span class="sxs-lookup"><span data-stu-id="f2633-104">Configuration Element (Format) ViewDefinitions Element (Format) View Element (Format) GroupBy Element for View (Format) CustomControl Element for GroupBy (Format)</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="41c35-105">構文</span><span class="sxs-lookup"><span data-stu-id="41c35-105">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="f2633-105">構文</span><span class="sxs-lookup"><span data-stu-id="f2633-105">Syntax</span></span>
 
 ```xml
 <CustomControl>
@@ -29,32 +22,32 @@ ms.locfileid: "72368961"
 <CustomControl>
 ```
 
-## <a name="attributes-and-elements"></a><span data-ttu-id="41c35-106">属性と要素</span><span class="sxs-lookup"><span data-stu-id="41c35-106">Attributes and Elements</span></span>
+## <a name="attributes-and-elements"></a><span data-ttu-id="f2633-106">属性および要素</span><span class="sxs-lookup"><span data-stu-id="f2633-106">Attributes and Elements</span></span>
 
-<span data-ttu-id="41c35-107">次のセクションでは、`CustomControl` 要素の属性、子要素、および親要素について説明します。</span><span class="sxs-lookup"><span data-stu-id="41c35-107">The following sections describe the attributes, child elements, and parent element of the `CustomControl` element.</span></span> <span data-ttu-id="41c35-108">任意の数の子要素を指定し、任意の順序で一覧表示することができます。</span><span class="sxs-lookup"><span data-stu-id="41c35-108">You can specify any number of child elements and list them in any order.</span></span>
+<span data-ttu-id="f2633-107">次のセクションでは、要素の属性、子要素、および親要素について説明し `CustomControl` ます。</span><span class="sxs-lookup"><span data-stu-id="f2633-107">The following sections describe the attributes, child elements, and parent element of the `CustomControl` element.</span></span> <span data-ttu-id="f2633-108">任意の数の子要素を指定し、任意の順序で一覧表示することができます。</span><span class="sxs-lookup"><span data-stu-id="f2633-108">You can specify any number of child elements and list them in any order.</span></span>
 
-### <a name="attributes"></a><span data-ttu-id="41c35-109">属性</span><span class="sxs-lookup"><span data-stu-id="41c35-109">Attributes</span></span>
+### <a name="attributes"></a><span data-ttu-id="f2633-109">属性</span><span class="sxs-lookup"><span data-stu-id="f2633-109">Attributes</span></span>
 
-<span data-ttu-id="41c35-110">なし。</span><span class="sxs-lookup"><span data-stu-id="41c35-110">None.</span></span>
+<span data-ttu-id="f2633-110">なし。</span><span class="sxs-lookup"><span data-stu-id="f2633-110">None.</span></span>
 
-### <a name="child-elements"></a><span data-ttu-id="41c35-111">子要素</span><span class="sxs-lookup"><span data-stu-id="41c35-111">Child Elements</span></span>
+### <a name="child-elements"></a><span data-ttu-id="f2633-111">子要素</span><span class="sxs-lookup"><span data-stu-id="f2633-111">Child Elements</span></span>
 
-|<span data-ttu-id="41c35-112">要素</span><span class="sxs-lookup"><span data-stu-id="41c35-112">Element</span></span>|<span data-ttu-id="41c35-113">[説明]</span><span class="sxs-lookup"><span data-stu-id="41c35-113">Description</span></span>|
+|<span data-ttu-id="f2633-112">要素</span><span class="sxs-lookup"><span data-stu-id="f2633-112">Element</span></span>|<span data-ttu-id="f2633-113">説明</span><span class="sxs-lookup"><span data-stu-id="f2633-113">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="41c35-114">GroupBy (Format) の CustomControl の CustomEntries 要素</span><span class="sxs-lookup"><span data-stu-id="41c35-114">CustomEntries Element for CustomControl for GroupBy (Format)</span></span>](./customentries-element-for-customcontrol-for-groupby-format.md)|<span data-ttu-id="41c35-115">必須の要素です。</span><span class="sxs-lookup"><span data-stu-id="41c35-115">Required element.</span></span><br /><br /> <span data-ttu-id="41c35-116">コントロールの定義を提供します。</span><span class="sxs-lookup"><span data-stu-id="41c35-116">Provides the definitions for the control.</span></span>|
+|[<span data-ttu-id="f2633-114">GroupBy の CustomControl の CustomEntries 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="f2633-114">CustomEntries Element for CustomControl for GroupBy (Format)</span></span>](./customentries-element-for-customcontrol-for-groupby-format.md)|<span data-ttu-id="f2633-115">必須の要素です。</span><span class="sxs-lookup"><span data-stu-id="f2633-115">Required element.</span></span><br /><br /> <span data-ttu-id="f2633-116">コントロールの定義を提供します。</span><span class="sxs-lookup"><span data-stu-id="f2633-116">Provides the definitions for the control.</span></span>|
 
-### <a name="parent-elements"></a><span data-ttu-id="41c35-117">親要素</span><span class="sxs-lookup"><span data-stu-id="41c35-117">Parent Elements</span></span>
+### <a name="parent-elements"></a><span data-ttu-id="f2633-117">親要素</span><span class="sxs-lookup"><span data-stu-id="f2633-117">Parent Elements</span></span>
 
-|<span data-ttu-id="41c35-118">要素</span><span class="sxs-lookup"><span data-stu-id="41c35-118">Element</span></span>|<span data-ttu-id="41c35-119">[説明]</span><span class="sxs-lookup"><span data-stu-id="41c35-119">Description</span></span>|
+|<span data-ttu-id="f2633-118">要素</span><span class="sxs-lookup"><span data-stu-id="f2633-118">Element</span></span>|<span data-ttu-id="f2633-119">説明</span><span class="sxs-lookup"><span data-stu-id="f2633-119">Description</span></span>|
 |-------------|-----------------|
-|[<span data-ttu-id="41c35-120">ビューの GroupBy 要素 (Format)</span><span class="sxs-lookup"><span data-stu-id="41c35-120">GroupBy Element for View (Format)</span></span>](./groupby-element-for-view-format.md)|<span data-ttu-id="41c35-121">Windows PowerShell がオブジェクトの新しいグループを表示する方法を定義します。</span><span class="sxs-lookup"><span data-stu-id="41c35-121">Defines how Windows PowerShell displays a new group of objects.</span></span>|
+|[<span data-ttu-id="f2633-120">View の GroupBy 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="f2633-120">GroupBy Element for View (Format)</span></span>](./groupby-element-for-view-format.md)|<span data-ttu-id="f2633-121">Windows PowerShell がオブジェクトの新しいグループを表示する方法を定義します。</span><span class="sxs-lookup"><span data-stu-id="f2633-121">Defines how Windows PowerShell displays a new group of objects.</span></span>|
 
-## <a name="remarks"></a><span data-ttu-id="41c35-122">コメント</span><span class="sxs-lookup"><span data-stu-id="41c35-122">Remarks</span></span>
+## <a name="remarks"></a><span data-ttu-id="f2633-122">解説</span><span class="sxs-lookup"><span data-stu-id="f2633-122">Remarks</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="41c35-123">参照</span><span class="sxs-lookup"><span data-stu-id="41c35-123">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f2633-123">参照</span><span class="sxs-lookup"><span data-stu-id="f2633-123">See Also</span></span>
 
-[<span data-ttu-id="41c35-124">GroupBy (Format) の CustomControl の CustomEntries 要素</span><span class="sxs-lookup"><span data-stu-id="41c35-124">CustomEntries Element for CustomControl for GroupBy (Format)</span></span>](./customentries-element-for-customcontrol-for-groupby-format.md)
+[<span data-ttu-id="f2633-124">GroupBy の CustomControl の CustomEntries 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="f2633-124">CustomEntries Element for CustomControl for GroupBy (Format)</span></span>](./customentries-element-for-customcontrol-for-groupby-format.md)
 
-[<span data-ttu-id="41c35-125">ビューの GroupBy 要素 (Format)</span><span class="sxs-lookup"><span data-stu-id="41c35-125">GroupBy Element for View (Format)</span></span>](./groupby-element-for-view-format.md)
+[<span data-ttu-id="f2633-125">View の GroupBy 要素 (書式)</span><span class="sxs-lookup"><span data-stu-id="f2633-125">GroupBy Element for View (Format)</span></span>](./groupby-element-for-view-format.md)
 
-[<span data-ttu-id="41c35-126">PowerShell フォーマットファイルの作成</span><span class="sxs-lookup"><span data-stu-id="41c35-126">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
+[<span data-ttu-id="f2633-126">PowerShell 書式設定ファイルを記述する</span><span class="sxs-lookup"><span data-stu-id="f2633-126">Writing a PowerShell Formatting File</span></span>](./writing-a-powershell-formatting-file.md)
