@@ -1,23 +1,16 @@
 ---
 title: StopProcessSample02 サンプル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 213ca1a4-e9fe-4969-b7d0-2fca070c6142
-caps.latest.revision: 10
-ms.openlocfilehash: 594c06367baedd1f9bfdbfff9f0e072d579b4099
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bab32f5a2544905bd858bcecf5b0b2e2d127e642
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369381"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786443"
 ---
 # <a name="stopprocesssample02-sample"></a>StopProcessSample02 サンプル
 
-このサンプルでは、ローカルコンピューター上のプロセスを停止しているときに、debug (WriteDebug)、verbose (Writedebug)、および warning (Writedebug) メッセージを書き込むコマンドレットを記述する方法を示します。 このコマンドレットは、Windows PowerShell 2.0 によって提供される `Stop-Process` コマンドレットに似ています。
+このサンプルでは、ローカルコンピューター上のプロセスを停止しているときに、debug (WriteDebug)、verbose (Writedebug)、および warning (Writedebug) メッセージを書き込むコマンドレットを記述する方法を示します。 このコマンドレットは、 `Stop-Process` Windows PowerShell 2.0 によって提供されるコマンドレットに似ています。
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドする方法。
 
@@ -27,7 +20,7 @@ ms.locfileid: "72369381"
 
 2. ソリューション (.sln) ファイルのアイコンをダブルクリックします。 これにより、Microsoft Visual Studio でサンプルプロジェクトが開きます。
 
-3. **[ビルド]** メニューの **[ソリューションのビルド]** を選択します。
+3. **[ビルド]** メニューで、 **[ソリューションのビルド]** を選択します。
 
     サンプルのライブラリは、既定の \bin フォルダーまたは \bin\debug フォルダーに構築されます。
 
@@ -49,11 +42,11 @@ ms.locfileid: "72369381"
 
     `stop-proc`
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>使用例
+## <a name="demonstrates"></a>対象
 
 このサンプルでは、次のことを示します。
 
@@ -69,7 +62,7 @@ ms.locfileid: "72369381"
 
 ## <a name="example"></a>例
 
-このサンプルでは、`WriteDebug`、`WriteVerbose`、および `WriteWarning` メソッドを使用して、デバッグメッセージ、詳細メッセージ、警告メッセージを書き込む方法を示します。
+このサンプルでは、、、およびの各メソッドを使用して、デバッグメッセージ、詳細メッセージ、警告メッセージを書き込む方法を示し `WriteDebug` `WriteVerbose` `WriteWarning` ます。
 
 ```csharp
 using System;
@@ -312,4 +305,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

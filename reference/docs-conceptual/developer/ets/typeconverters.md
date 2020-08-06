@@ -1,13 +1,12 @@
 ---
 title: 拡張型システム型コンバーター
 ms.date: 07/09/2020
-ms.topic: conceptual
-ms.openlocfilehash: f709a64febe68733b79ed8af804714d3f3ddeaac
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+ms.openlocfilehash: 0d04293fffde9901ed2e33a9bab21e6612ce9cd5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86217974"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786188"
 ---
 # <a name="ets-type-converters"></a>型コンバーターの型変換
 
@@ -19,27 +18,27 @@ ms.locfileid: "86217974"
 
 | From (valueToConvert) |  To (resultType)  |                                                                               戻り値                                                                               |
 | --------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Null                  | 文字列型            | ""                                                                                                                                                                  |
-| Null                  | Char              | '\0'                                                                                                                                                                |
-| Null                  | 数値           | `0`**resultType**パラメーターで指定された型の。                                                                                                          |
-| Null                  | ブール型           | メソッドの呼び出しの結果 `IsTrue(System.Object)(Null)` 。                                                                                                        |
-| Null                  | PSObject          | **PSObject**型の新しいオブジェクト。                                                                                                                                    |
-| Null                  | 非値型    | 空白.                                                                                                                                                               |
-| Null                  | Null 値を許容する &lt; T&gt; | 空白.                                                                                                                                                               |
-| 派生クラス         | 基底クラス        | **valueToConvert**                                                                                                                                                  |
+| [Null]                  | String            | ""                                                                                                                                                                  |
+| [Null]                  | Char              | '\0'                                                                                                                                                                |
+| [Null]                  | 数値           | `0`**resultType**パラメーターで指定された型の。                                                                                                          |
+| [Null]                  | Boolean           | メソッドの呼び出しの結果 `IsTrue(System.Object)(Null)` 。                                                                                                        |
+| [Null]                  | PSObject          | **PSObject**型の新しいオブジェクト。                                                                                                                                    |
+| [Null]                  | 非値型    | 空白.                                                                                                                                                               |
+| [Null]                  | Null 値を許容する &lt; T&gt; | 空白.                                                                                                                                                               |
+| 派生クラス         | 基本クラス        | **valueToConvert**                                                                                                                                                  |
 | 何か              | Void              | **Automationnull.value**                                                                                                                                            |
-| 何か              | 文字列型            | `ToString`機構を呼び出します。                                                                                                                                         |
-| 何か              | ブール型           | `IsTrue(System.Object) (valueToConvert)`                                                                                                                            |
+| 何か              | String            | `ToString`機構を呼び出します。                                                                                                                                         |
+| 何か              | Boolean           | `IsTrue(System.Object) (valueToConvert)`                                                                                                                            |
 | 何か              | PSObject          | メソッドの呼び出しの結果 `AsPSObject(System.Object) (valueToConvert)` 。                                                                                         |
 | 何か              | Xml ドキュメント      | **ValueToConvert**を文字列に変換し、 **XMLDocument**コンストラクターを呼び出します。                                                                                      |
-| 配列                 | 配列             | 配列の各要素の変換を試みます。                                                                                                                      |
-| シングルトン             | 配列             | `Array[0]`は、配列の要素型に変換される**valueToConvert**と等しくなります。                                                                            |
+| Array                 | Array             | 配列の各要素の変換を試みます。                                                                                                                      |
+| シングルトン             | Array             | `Array[0]`は、配列の要素型に変換される**valueToConvert**と等しくなります。                                                                            |
 | IDictionary           | ハッシュテーブル        | Hashtable (valueToConvert) の呼び出しの結果。                                                                                                                       |
-| 文字列型                | Char[]            | `valueToConvert.ToCharArray`                                                                                                                                        |
-| 文字列型                | RegEx             | の呼び出しの結果 `Regx(valueToConvert)` 。                                                                                                                          |
-| 文字列型                | 種類              | **ValueToConvert**パラメーターを使用して**RunspaceConfiguration**を検索し、適切な型を返します。                                                 |
+| String                | Char[]            | `valueToConvert.ToCharArray`                                                                                                                                        |
+| String                | RegEx             | の呼び出しの結果 `Regx(valueToConvert)` 。                                                                                                                          |
+| String                | Type              | **ValueToConvert**パラメーターを使用して**RunspaceConfiguration**を検索し、適切な型を返します。                                                 |
 | String                | 数値           | **ValueToConvert**が "" の場合、 `0` **resultType**のを返します。 それ以外の場合は、カルチャ "culture 不変" を使用して数値が生成されます。                       |
-| 整数型               | System.Enum       | 整数が列挙体によって定義されている場合は、整数を定数に変換します。 整数が定義されていない場合は、 **PSInvalidCastException**例外がスローされます。 |
+| Integer               | System.Enum       | 整数が列挙体によって定義されている場合は、整数を定数に変換します。 整数が定義されていない場合は、 **PSInvalidCastException**例外がスローされます。 |
 
 ## <a name="custom-conversions"></a>カスタム変換
 

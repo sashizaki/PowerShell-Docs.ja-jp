@@ -1,13 +1,12 @@
 ---
 title: 拡張型システムのエラーと例外
 ms.date: 07/09/2020
-ms.topic: conceptual
-ms.openlocfilehash: 0e0b158e51d15db266415fb1ea6bb16fba319e62
-ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
+ms.openlocfilehash: f60c53e33c031168eda53726e0d296bf91139fda
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/10/2020
-ms.locfileid: "86218016"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786290"
 ---
 # <a name="errors-and-exceptions-in-the-extended-type-system"></a>拡張型システムのエラーと例外
 

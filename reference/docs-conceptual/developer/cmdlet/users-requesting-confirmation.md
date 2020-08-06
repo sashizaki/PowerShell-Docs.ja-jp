@@ -1,36 +1,29 @@
 ---
 title: 確認を求めるユーザー |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 6f337498-c534-40ed-968a-09d4d9ca3849
-caps.latest.revision: 8
-ms.openlocfilehash: ed9ff9fc1668a89e1ac0ceac8f0800a15b349226
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6f0effb35a110f33248a582fab874e3ab95c7df4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369251"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786341"
 ---
 # <a name="users-requesting-confirmation"></a>ユーザーの確認要求
 
-コマンドレットの属性宣言の `SupportsShouldProcess` パラメーターに `true` の値を指定すると、ユーザーはコマンドプロンプトで `Confirm` パラメーターを指定できます。
+コマンド `true` レットの属性宣言のパラメーターに値を指定すると `SupportsShouldProcess` 、ユーザーは `Confirm` コマンドプロンプトでパラメーターを指定できます。
 
-既定の環境では、ユーザーは `Confirm` パラメーターまたは `"-Confirm:$true` を指定できます。これにより、[システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)のメソッドが呼び出されたときに確認が要求されます。 これは、システムの管理をバイパス[します。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)影響の大きい操作の場合でも、確認要求を処理します。
+既定の環境では、ユーザーはパラメーターを指定することもできます。 `Confirm` `"-Confirm:$true` これにより、[システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)のメソッドが呼び出されたときに確認が要求されます。 これは、システムの管理をバイパス[します。](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)影響の大きい操作の場合でも、確認要求を処理します。
 
-`Confirm` が指定されていない場合は、`$ConfirmPreference` ユーザー設定変数がコマンドレットまたはプロバイダーの `ConfirmImpact` 設定以上であるかどうかを確認するために、[システム](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)の呼び出し要求が呼び出されます。 `$ConfirmPreference` の既定の設定は [高] です。 そのため、既定の環境では、影響の大きいアクション要求の確認を指定するコマンドレットとプロバイダーのみが対象となります。
+が指定されていない場合は、ユーザー `Confirm` [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) `$ConfirmPreference` 設定変数が `ConfirmImpact` コマンドレットまたはプロバイダーの設定以上であるかどうかの確認を求めるメッセージが、システムによって呼び出されます。 の既定の設定 `$ConfirmPreference` は High です。 そのため、既定の環境では、影響の大きいアクション要求の確認を指定するコマンドレットとプロバイダーのみが対象となります。
 
-`Confirm` が false の場合、または `"-Confirm:$false` が指定されている場合は、ユーザーからの確認要求[が呼び出され](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess)、`$ConfirmPreference` シェル変数は無視されます。
+が false の場合、またはが指定されている場合は、 `Confirm` `"-Confirm:$false` ユーザーからの確認要求が呼び出され、 [System.Management.Automation.Cmdlet.ShouldProcess](/dotnet/api/System.Management.Automation.Cmdlet.ShouldProcess) `$ConfirmPreference` シェル変数は無視されます。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
-- `ConfirmImpact`ではなく `SupportsShouldProcess`を指定するコマンドレットとプロバイダーでは、これらのアクションは "中程度の影響" アクションとして処理され、既定ではプロンプトは表示されません。 影響レベルは、`$ConfirmPreference` ユーザー設定変数の既定の設定よりも小さくなります。
+- を指定するコマンドレットとプロバイダーについては、 `SupportsShouldProcess` `ConfirmImpact` これらのアクションは "中程度の影響" アクションとして処理され、既定ではプロンプトは表示されません。 影響レベルは、ユーザー設定変数の既定の設定よりも小さくなってい `$ConfirmPreference` ます。
 
-- ユーザーが `Verbose` パラメーターを指定すると、確認メッセージが表示されない場合でも、操作が通知されます。
+- ユーザーがパラメーターを指定すると `Verbose` 、確認メッセージが表示されない場合でも、操作が通知されます。
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

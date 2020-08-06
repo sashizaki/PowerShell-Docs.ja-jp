@@ -1,23 +1,16 @@
 ---
 title: ValidateSet 属性宣言 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes, ValidateSet
 - ValidateSet attribute, described
 - ValidateSet attribute
-ms.assetid: 4a6f97ab-45b2-4f3d-84d4-30acf8e074d0
-caps.latest.revision: 12
-ms.openlocfilehash: b036f39cd01ffe4b4ce7db9627cb6da0d5327190
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0b6833efb0ce8e9474e9d91049fd201fc845cbea
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364281"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787769"
 ---
 # <a name="validateset-attribute-declaration"></a>ValidateSet 属性の宣言
 
@@ -34,16 +27,16 @@ ValidateSetAttribute 属性は、コマンドレットパラメーターの引�
 
 #### <a name="parameters"></a>パラメーター
 
-`ValidValues` ([system.string](/dotnet/api/System.String)) が必要です。 有効なパラメーター要素の値を指定します。 次のサンプルは、1つまたは複数の要素を指定する方法を示しています。
+`ValidValues`([System.string](/dotnet/api/System.String)) が必要です。 有効なパラメーター要素の値を指定します。 次のサンプルは、1つまたは複数の要素を指定する方法を示しています。
 
 ```csharp
 [ValidateSetAttribute("Steve")]
 [ValidateSetAttribute("Steve","Mary")]
 ```
 
-`IgnoreCase` ([system.string](/dotnet/api/System.Boolean)) 省略可能な名前付きパラメーター。 `true` の既定値は、大文字小文字を区別しないことを示します。 `false` の値を指定すると、コマンドレットで大文字と小文字が区別されます。
+`IgnoreCase`([System.string) 省略](/dotnet/api/System.Boolean)可能な名前付きパラメーター。 の既定値は、 `true` 大文字小文字を区別しないことを示します。 値をにすると `false` 、コマンドレットでは大文字と小文字が区別されます。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 - この属性は、パラメーターごとに1回だけ使用できます。
 
@@ -55,4 +48,4 @@ ValidateSetAttribute 属性は、コマンドレットパラメーターの引�
 
 [Validatesetattribute (システム管理)](/dotnet/api/System.Management.Automation.ValidateSetAttribute)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

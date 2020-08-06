@@ -1,19 +1,12 @@
 ---
 title: CustomControl の CustomEntries 要素のビュー (形式) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: cb412831-94f7-4054-b19e-32c1b14c66dd
-caps.latest.revision: 11
-ms.openlocfilehash: 827baacd22ef258dd9b0c8a383a23fce7d975f7f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c89eb25f6922a92e2c18298d0128c4c2ca93df3d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364081"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785967"
 ---
 # <a name="customentries-element-for-customcontrol-for-view-format"></a>View の CustomControl の CustomEntries 要素 (書式)
 
@@ -29,9 +22,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </CustomEntries>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`CustomControlEntries` 要素の属性、子要素、および親要素について説明します。 1つまたは複数の子要素を指定する必要があります。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `CustomControlEntries` ます。 1つまたは複数の子要素を指定する必要があります。
 
 ### <a name="attributes"></a>属性
 
@@ -39,24 +32,24 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[View (Format) の CustomEntries の CustomEntry 要素](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)|必須の要素です。<br /><br /> カスタムコントロールビューの定義を提供します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[View (Format) の CustomControl 要素](./customcontrol-element-for-view-format.md)|必須の要素です。<br /><br /> ビューのカスタムコントロール形式を定義します。|
+|[View の CustomControl 要素 (書式)](./customcontrol-element-for-view-format.md)|必須の要素です。<br /><br /> ビューのカスタムコントロール形式を定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
-ほとんどの場合、コントロールには定義が1つだけあります。定義は1つの `CustomEntry` 要素で定義されます。 ただし、同じコントロールを使用して異なる .NET オブジェクトを表示する場合は、複数の定義を含めることができます。 このような場合は、オブジェクトまたはオブジェクトのセットごとに `CustomEntry` 要素を定義できます。
+ほとんどの場合、コントロールには定義が1つだけあります。定義は1つの要素で定義されてい `CustomEntry` ます。 ただし、同じコントロールを使用して異なる .NET オブジェクトを表示する場合は、複数の定義を含めることができます。 そのような場合は、 `CustomEntry` オブジェクトまたはオブジェクトのセットごとに要素を定義できます。
 
 ## <a name="see-also"></a>参照
 
-[View (Format) の CustomControl 要素](./customcontrol-element-for-view-format.md)
+[View の CustomControl 要素 (書式)](./customcontrol-element-for-view-format.md)
 
 [View (Format) の CustomEntries の CustomEntry 要素](./customentry-element-for-customentries-for-customcontrol-for-view-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

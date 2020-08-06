@@ -1,25 +1,18 @@
 ---
 title: ビュー (Format) のコントロールに対する EntrySelectedBy の SelectionCondition 要素Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2623407e-fa10-4d27-a804-204f6d50ef22
-caps.latest.revision: 6
-ms.openlocfilehash: ea15e647a9dd7a7064718a0c536c4a3178d62d95
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1c14b2638249bdbfe25f7a96e917d66ea10ed239
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362051"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787582"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-controls-for-view-format"></a>View の Controls の EntrySelectedBy の SelectionCondition 要素 (書式)
 
 コントロール定義を使用するために必要な条件を定義します。 この要素は、ビューで使用できるコントロールを定義するときに使用されます。
 
-Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (書式) コントロールの要素 (書式) コントロールのコントロール要素を表示するためのコントロール (format) の CustomControl 要素のコントロール要素ビュー用のコントロールの CustomControl (書式) の CustomEntry 要素のコントロール用のカスタムエントリのためのコントロールのためのコントロールのためのコントロールのためのコントロールのための、ビューのコントロールの EntrySelectedBy の SelectionCondition 要素を表示するためのコントロール (形式
+Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (書式) コントロールのコントロールに対して、ビューのコントロールの要素 (形式) コントロール要素 (format) コントロールの要素 (書式) を制御するためのコントロール要素 (書式) の CustomControl 要素 (形式) に対して、コントロールの CustomControl view (format) CustomEntry 要素を使用して、ビュー (format) のコントロールに対して、参照 (format) の項目を表示するためのコントロールの参照 (format) SelectionCondition 要素を表示するためのコントロールに対して、EntrySelectedBy を使用します。
 
 ## <a name="syntax"></a>構文
 
@@ -32,9 +25,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`SelectionCondition` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `SelectionCondition` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -42,20 +35,20 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[ビューのコントロールの SelectionCondition の PropertyName 要素 (Format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
-|[ビューのコントロールの SelectionCondition の ScriptBlock 要素 (Format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーするスクリプトを指定します。|
-|[ビューのコントロール (Format) の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型のセットを指定します。|
-|[ビューのコントロールの SelectionCondition の TypeName 要素 (Format)](./typename-element-for-selectioncondition-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型を指定します。|
+|[View の Controls の SelectionCondition の PropertyName 要素 (書式)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
+|[View の Controls の SelectionCondition の ScriptBlock 要素 (書式)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーするスクリプトを指定します。|
+|[View の Controls の SelectionCondition の SelectionSetName 要素 (書式)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型のセットを指定します。|
+|[View の Controls の SelectionCondition の TypeName 要素 (書式)](./typename-element-for-selectioncondition-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[ビューのコントロールに対する CustomEntry 要素 (形式)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|このコントロール定義を使用する .NET 型、またはこの定義を使用するために必要な条件を定義します。|
+|[View の Controls の CustomEntry の EntrySelectedBy 要素 (書式)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)|このコントロール定義を使用する .NET 型、またはこの定義を使用するために必要な条件を定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 選択条件を定義する場合は、次の要件が適用されます。
 
@@ -67,14 +60,14 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="see-also"></a>参照
 
-[ビューのコントロールの SelectionCondition の PropertyName 要素 (Format)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)
+[View の Controls の SelectionCondition の PropertyName 要素 (書式)](./propertyname-element-for-selectioncondition-for-controls-for-view-format.md)
 
-[ビューのコントロールの SelectionCondition の ScriptBlock 要素 (Format)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md)
+[View の Controls の SelectionCondition の ScriptBlock 要素 (書式)](./scriptblock-element-for-selectioncondition-for-controls-for-view-format.md)
 
-[ビューのコントロール (Format) の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
+[View の Controls の SelectionCondition の SelectionSetName 要素 (書式)](./selectionsetname-element-for-selectioncondition-for-controls-for-view-format.md)
 
-[ビューのコントロールの SelectionCondition の TypeName 要素 (Format)](./typename-element-for-selectioncondition-for-controls-for-view-format.md)
+[View の Controls の SelectionCondition の TypeName 要素 (書式)](./typename-element-for-selectioncondition-for-controls-for-view-format.md)
 
-[ビューのコントロールに対する CustomEntry 要素 (形式)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)
+[View の Controls の CustomEntry の EntrySelectedBy 要素 (書式)](./entryselectedby-element-for-customentry-for-controls-for-view-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

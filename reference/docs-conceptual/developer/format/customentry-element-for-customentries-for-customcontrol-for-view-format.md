@@ -1,19 +1,12 @@
 ---
 title: CustomControl for ビュー (Format) の CustomEntries の CustomEntry 要素Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: ac3c0a25-f2ca-4e28-b3dc-9cb06a76d92a
-caps.latest.revision: 11
-ms.openlocfilehash: 7804155bffeb1f0df8339f797bf59f8def56a3fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a13e83ec941bed80eaab02e40131054432fcce00
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364021"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785882"
 ---
 # <a name="customentry-element-for-customentries-for-customcontrol-for-view-format"></a>View の CustomControl の CustomEntries の CustomEntry 要素 (書式)
 
@@ -30,9 +23,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </CustomEntry>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`CustomEntry` 要素の属性、子要素、および親要素について説明します。 定義によって表示される項目を指定する必要があります。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `CustomEntry` ます。 定義によって表示される項目を指定する必要があります。
 
 ### <a name="attributes"></a>属性
 
@@ -40,27 +33,27 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[CustomEntry for ビューの EntrySelectedBy 要素](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)|省略可能な要素です。<br /><br /> カスタムコントロールビューの定義、またはこの定義を使用するために存在する必要がある条件を使用する .NET 型を定義します。|
 |[CustomEntry for ビューの CustomItem 要素](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)|カスタムコントロール定義のコントロールを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[CustomControl for View (Format) の CustomEntries 要素](./customentries-element-for-customcontrol-for-view-format.md)|カスタムコントロールビューの定義を提供します。 カスタムコントロールビューでは、1つまたは複数の定義を指定する必要があります。|
+|[View の CustomControl の CustomEntries 要素 (書式)](./customentries-element-for-customcontrol-for-view-format.md)|カスタムコントロールビューの定義を提供します。 カスタムコントロールビューでは、1つまたは複数の定義を指定する必要があります。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 ほとんどの場合、カスタムコントロールビューごとに1つの定義のみが必要ですが、同じビューを使用して異なる .NET オブジェクトを表示する場合は、複数の定義を指定できます。 このような場合は、オブジェクトまたはオブジェクトのセットごとに個別の定義を指定できます。
 
 ## <a name="see-also"></a>参照
 
-[View (Format) の CustomControl 要素](./customcontrol-element-for-view-format.md)
+[View の CustomControl 要素 (書式)](./customcontrol-element-for-view-format.md)
 
 [CustomEntry for ビューの CustomItem 要素](./customitem-element-for-customentry-for-customcontrol-for-view-format.md)
 
 [CustomEntry for ビューの EntrySelectedBy 要素](./entryselectedby-element-for-customentry-for-customcontrol-for-view-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

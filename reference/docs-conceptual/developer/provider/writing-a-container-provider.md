@@ -1,19 +1,12 @@
 ---
 title: コンテナープロバイダーを作成する |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 524fd900-c0fe-4d13-87f2-14903a8fd5a4
-caps.latest.revision: 5
-ms.openlocfilehash: 48ab9102e8f1b17b3b533cc3b0aa1dacef0e2076
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: da91f18226d6e6c236c6a6e469db0f692af48abf
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72366241"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786800"
 ---
 # <a name="writing-a-container-provider"></a>コンテナー プロバイダーを記述する
 
@@ -542,6 +535,6 @@ protected override void RemoveItem(string path, bool recurse)
 
 ## <a name="see-also"></a>参照
 
-[ナビゲーションプロバイダーの作成](./writing-a-navigation-provider.md)
+[ナビゲーション プロバイダーを記述する](./writing-a-navigation-provider.md)
 
 [Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)

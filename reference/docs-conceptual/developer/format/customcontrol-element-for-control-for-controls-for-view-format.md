@@ -1,19 +1,12 @@
 ---
 title: ビューのコントロール用の CustomControl 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: eee505c3-ff2c-4bfb-b48a-037ec34bce72
-caps.latest.revision: 8
-ms.openlocfilehash: a0c8548dd916a5b32a56462058858f887a9d5803
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2020725bf6afb086901e14a976abbdc04366869c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363371"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786103"
 ---
 # <a name="customcontrol-element-for-control-for-controls-for-view-format"></a>View の Controls の Control の CustomControl 要素 (書式)
 
@@ -29,9 +22,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 </CustomControl>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`CustomControl` 要素の属性、子要素、および親要素について説明します。 子要素を1つだけ指定する必要があります。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `CustomControl` ます。 子要素を1つだけ指定する必要があります。
 
 ### <a name="attributes"></a>属性
 
@@ -39,22 +32,22 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[View (Format) 用のコントロールの CustomControl の CustomEntries 要素](./customentries-element-for-customcontrol-for-controls-for-view-format.md)|必須の要素です。<br /><br /> コントロールの定義を提供します。|
+|[View の Controls の CustomControl の CustomEntries 要素 (書式)](./customentries-element-for-customcontrol-for-controls-for-view-format.md)|必須の要素です。<br /><br /> コントロールの定義を提供します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[ビューのコントロールの Control 要素 (Format)](./control-element-for-controls-for-view-format.md)|ビューで使用できるコントロールと、コントロールを参照するために使用される名前を定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 ## <a name="see-also"></a>参照
 
-[CustomControl for View (Format) の CustomEntries 要素](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)
+[View の CustomControl の CustomEntries 要素 (書式)](./customentries-element-for-customcontrol-for-controls-for-configuration-format.md)
 
 [ビューのコントロールの Control 要素 (Format)](./control-element-for-controls-for-view-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

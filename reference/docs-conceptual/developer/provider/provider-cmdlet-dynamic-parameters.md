@@ -1,19 +1,12 @@
 ---
 title: プロバイダーコマンドレット動的パラメーター |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8f1069f7-8fa8-4622-9e2c-af29b0b961c2
-caps.latest.revision: 6
-ms.openlocfilehash: 9e70fbeaef61d04e66f16d06519742ff2f679df6
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 4aaa5ee39e98de9a9925fc65cac3cc6c32d9c2bc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564242"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786817"
 ---
 # <a name="provider-cmdlet-dynamic-parameters"></a>コマンドレット コマンドレットの動的パラメーター
 
@@ -89,7 +82,7 @@ ChildItems コマンドレットは、 `Path` `Recurse` `Get-ChildItem` [Contain
 
 `New-ItemProperty`コマンドレットを使用する `Path` `Name` と、 `PropertyType` `Value` `New-ItemProperty` [Idynamicpropertycmdletprovider *](/dotnet/api/System.Management.Automation.Provider.IDynamicPropertyCmdletProvider.NewPropertyDynamicParameters)メソッドを実装することによって、コマンドレットの、、、およびパラメーターによってトリガーされる動的パラメーターを定義できます。
 
-`New-PSDrive`コマンドレットを使用して、 [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) `New-PSDrive` [Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)メソッドを実装することによってコマンドレットによって返される system.management.automation.psdriveinfo オブジェクトによってトリガーされる動的パラメーターを定義できます。
+`New-PSDrive`コマンドレットを使用して、 [System.Management.Automation.PSDriveinfo](/dotnet/api/System.Management.Automation.PSDriveInfo) `New-PSDrive` [Drivecmdletprovider. Newdrivedynamicparameters *](/dotnet/api/System.Management.Automation.Provider.DriveCmdletProvider.NewDriveDynamicParameters)メソッドを実装することで、コマンドレットによって返されるSystem.Management.Automation.PSDriveinfo オブジェクトによってトリガーされる動的パラメーターを定義できます。
 
 `Remove-Item``Path` `Recurse` `Remove-Item` [Containercmdletprovider *](/dotnet/api/System.Management.Automation.Provider.ContainerCmdletProvider.RemoveItemDynamicParameters)メソッドを実装することによって、コマンドレットのパラメーターとパラメーターによってトリガーされる動的パラメーターを定義できます。
 

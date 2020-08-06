@@ -1,25 +1,18 @@
 ---
 title: CustomEntry for Controls for Controls の CustomItem 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 73fb11ee-0ebd-477a-ac36-acdfbb32e70d
-caps.latest.revision: 7
-ms.openlocfilehash: bd0cb69770817ec215ddb1862a43a838baddefcf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bb8124242496f192717127f201674bc1428e5de0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364031"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87785865"
 ---
 # <a name="customitem-element-for-customentry-for-controls-for-configuration-format"></a>Configuration の Controls の CustomEntry の CustomItem 要素 (書式)
 
 コントロールによって表示されるデータとその表示方法を定義します。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
 
-Configuration 要素 (Format) 構成用の CustomControl の Configuration (format) CustomEntries 要素の構成 (形式) の CustomControl 要素の構成 (書式設定) 要素のコントロール要素形式) CustomControl の CustomEntry 要素を構成するための管理用の Configuration (形式) CustomItem 要素を構成するためのコントロール用に設定します。
+Configuration 要素 (Format) コントロールの構成 (format) コントロールの要素の構成 (形式) の CustomControl 要素の構成のためのコントロールの構成 (形式) の CustomEntries 要素を構成するための CustomControl の構成 (形式) の Custommentry 要素を構成するための CustomEntry の構成 (形式) Customentries 要素
 
 ## <a name="syntax"></a>構文
 
@@ -32,9 +25,9 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 </CustomItem>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`CustomItem` 要素の属性、子要素、および親要素について説明します。 詳細については、「解説」を参照してください。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `CustomItem` ます。 詳細については、「解説」を参照してください。
 
 ### <a name="attributes"></a>属性
 
@@ -42,37 +35,37 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[構成用のコントロールに対する CustomItem の式のバインド要素 (形式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> コントロールによって表示されるデータを定義します。|
-|[構成用のコントロールの CustomItem の Frame 要素 (形式)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> データを左右に移動するなど、データの表示方法を定義します。|
-|[構成用のコントロールの CustomItem の改行要素 (形式)](./newline-element-for-customitem-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> コントロールの表示に空白行を追加します。|
-|[構成用のコントロールの CustomItem のテキスト要素 (形式)](./text-element-for-customitem-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> かっこや角かっこなどのテキストをコントロールの表示に追加します。|
+|[Configuration の Controls の CustomItem の ExpressionBinding 要素 (書式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> コントロールによって表示されるデータを定義します。|
+|[Configuration の Controls の CustomItem の Frame 要素 (書式)](./frame-element-for-customitem-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> データを左右に移動するなど、データの表示方法を定義します。|
+|[Configuration の Controls の CustomItem の NewLine 要素 (書式)](./newline-element-for-customitem-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> コントロールの表示に空白行を追加します。|
+|[Configuration の Controls の CustomItem の Text 要素 (書式)](./text-element-for-customitem-for-controls-for-configuration-format.md)|省略可能な要素です。<br /><br /> かっこや角かっこなどのテキストをコントロールの表示に追加します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[CustomControl の CustomEntry 要素 (構成用コントロール用) (形式)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|コントロールの定義を提供します。|
+|[Configuration の Controls の CustomControl の CustomEntry 要素 (書式)](./customentry-element-for-customcontrol-for-controls-for-configuration-format.md)|コントロールの定義を提供します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
-`CustomItem` 要素の子要素を指定する場合は、次の点に注意してください。
+要素の子要素を指定する場合 `CustomItem` は、次の点に注意してください。
 
-- 子要素は、`ExpressionBinding`、`NewLine`、`Text`、および `Frame`の順に追加する必要があります。
+- 子要素は、、、、およびの順に追加する必要があり `ExpressionBinding` `NewLine` `Text` `Frame` ます。
 
 - 指定できるシーケンスの数に上限はありません。
 
-- 各シーケンスには、使用できる `ExpressionBinding` 要素の数に上限はありません。
+- 各シーケンスには、使用できる要素の数に上限がありません `ExpressionBinding` 。
 
 ## <a name="see-also"></a>参照
 
-[構成用のコントロールに対する CustomItem の式のバインド要素 (形式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
+[Configuration の Controls の CustomItem の ExpressionBinding 要素 (書式)](./expressionbinding-element-for-customitem-for-controls-for-configuration-format.md)
 
-[構成用のコントロールの CustomItem の Frame 要素 (形式)](./frame-element-for-customitem-for-controls-for-configuration-format.md)
+[Configuration の Controls の CustomItem の Frame 要素 (書式)](./frame-element-for-customitem-for-controls-for-configuration-format.md)
 
-[構成用のコントロールの CustomItem の改行要素 (形式)](./newline-element-for-customitem-for-controls-for-configuration-format.md)
+[Configuration の Controls の CustomItem の NewLine 要素 (書式)](./newline-element-for-customitem-for-controls-for-configuration-format.md)
 
-[構成用のコントロールの CustomItem のテキスト要素 (形式)](./text-element-for-customitem-for-controls-for-configuration-format.md)
+[Configuration の Controls の CustomItem の Text 要素 (書式)](./text-element-for-customitem-for-controls-for-configuration-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

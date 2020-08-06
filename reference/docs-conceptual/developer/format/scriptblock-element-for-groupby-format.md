@@ -1,19 +1,12 @@
 ---
 title: GroupBy (Format) の ScriptBlock 要素Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 30183927-6f0e-4717-b6f5-f07a6e134cfb
-caps.latest.revision: 6
-ms.openlocfilehash: 37a297228eb33ff75daf94a12635d42b52c6cc9f
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e761e02a7910cd598449d564e827889162da9f25
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364931"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787684"
 ---
 # <a name="scriptblock-element-for-groupby-format"></a>GroupBy の ScriptBlock 要素 (書式)
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビューの要素
 <ScriptBlock>ScriptToEvaluate</ScriptBlock>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`ScriptBlock` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `ScriptBlock` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,15 +34,15 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビューの要素
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[ビューの GroupBy 要素 (Format)](./groupby-element-for-view-format.md)|.NET オブジェクトのグループを表示する方法を定義します。|
+|[View の GroupBy 要素 (書式)](./groupby-element-for-view-format.md)|.NET オブジェクトのグループを表示する方法を定義します。|
 
 ## <a name="text-value"></a>テキスト値
 
 評価されるスクリプトを指定します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 このスクリプトの値が変更されるたびに、PowerShell によって新しいグループが開始されます。
 
@@ -57,8 +50,8 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビューの要素
 
 ## <a name="see-also"></a>参照
 
-[GroupBy (Format) の PropertyName 要素](propertyname-element-for-groupby-format.md)
+[GroupBy の PropertyName 要素 (書式)](propertyname-element-for-groupby-format.md)
 
-[ビューの GroupBy 要素 (Format)](groupby-element-for-view-format.md)
+[View の GroupBy 要素 (書式)](groupby-element-for-view-format.md)
 
-[PowerShell フォーマットファイルの作成](writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](writing-a-powershell-formatting-file.md)

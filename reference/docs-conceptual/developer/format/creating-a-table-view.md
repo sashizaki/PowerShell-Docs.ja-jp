@@ -1,19 +1,12 @@
 ---
 title: テーブルビューを作成する |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1f405afb-70b5-4fe0-9986-bc07401d93fd
-caps.latest.revision: 23
-ms.openlocfilehash: 862f942facafff6cea66c4f8f1040772c6a62ec3
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: cbe81962a0f68d64506062898a8f21a1596cc29a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363411"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786154"
 ---
 # <a name="creating-a-table-view"></a>テーブル ビューを作成する
 
@@ -21,7 +14,7 @@ ms.locfileid: "72363411"
 
 ## <a name="a-table-view-display"></a>テーブルビューの表示
 
-次の例では、Servicecontroller コマンドレット[Get-Service](/powershell/module/microsoft.powershell.management/get-service)によって返される[System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトが Windows PowerShell によってどのように表示されるかを示します。 このオブジェクトの場合、Windows PowerShell では、`Status` プロパティ、`Name` プロパティ (このプロパティは `ServiceName` プロパティのエイリアスプロパティ)、および `DisplayName` プロパティを表示するテーブルビューが定義されています。 テーブルの各行は、コマンドレットによって返されるオブジェクトを表します。
+次の例で[は、Servicecontroller コマンドレット](/powershell/module/microsoft.powershell.management/get-service)によって返される[System.Serviceprocess.Servicecontroller](/dotnet/api/System.ServiceProcess.ServiceController)オブジェクトが Windows PowerShell によってどのように表示されるかを示します。 このオブジェクトの場合、Windows PowerShell では、プロパティ、プロパティ `Status` (このプロパティ `Name` はプロパティのエイリアスプロパティ)、およびプロパティを表示するテーブルビューが定義されてい `ServiceName` `DisplayName` ます。 テーブルの各行は、コマンドレットによって返されるオブジェクトを表します。
 
 ```output
 Status   Name               DisplayName
@@ -215,7 +208,7 @@ Running  Appinfo            Application Information
 
 ## <a name="using-format-strings"></a>書式指定文字列の使用
 
-書式設定文字列をビューに追加して、データの表示方法をさらに定義できます。 次の例は、`StartTime` プロパティの値の書式設定文字列を定義する方法を示しています。
+書式設定文字列をビューに追加して、データの表示方法をさらに定義できます。 次の例は、プロパティの値の書式設定文字列を定義する方法を示して `StartTime` います。
 
 ```xml
 <TableColumnItem>
@@ -232,7 +225,7 @@ Running  Appinfo            Application Information
 
 - [FormatString](./label-element-for-listitem-for-listcontrol-format.md)要素は、プロパティまたはスクリプトの値の表示方法を定義する形式パターンを指定します。
 
-次の例では、スクリプトの値の書式を設定するために、`ToString` メソッドが呼び出されています。 スクリプトは、オブジェクトの任意のメソッドを呼び出すことができます。 したがって、オブジェクトに、書式設定パラメーターを持つメソッド (`ToString`など) がある場合、スクリプトはそのメソッドを呼び出してスクリプトの出力値を書式設定できます。
+次の例では、 `ToString` スクリプトの値の書式を設定するためにメソッドが呼び出されています。 スクリプトは、オブジェクトの任意のメソッドを呼び出すことができます。 したがって、オブジェクトに、書式設定パラメーターを持つなどのメソッドがある場合、 `ToString` スクリプトはそのメソッドを呼び出してスクリプトの出力値を書式設定できます。
 
 ```xml
 <ListItem>
@@ -243,7 +236,7 @@ Running  Appinfo            Application Information
 </ListItem>
 ```
 
-次の XML 要素を使用して、`ToString` メソッドを呼び出すことができます。
+次の XML 要素を使用して、メソッドを呼び出すことができ `ToString` ます。
 
 - [TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)要素は、値が行の列に表示されるプロパティまたはスクリプトを定義します。 行の各列には[TableColumnItem](./tablecolumnitem-element-for-tablecolumnitems-for-tablecontrol-format.md)要素が必要です。 最初のエントリは最初の列に、2番目の列には2番目のエントリが表示されます。
 
@@ -251,4 +244,4 @@ Running  Appinfo            Application Information
 
 ## <a name="see-also"></a>参照
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

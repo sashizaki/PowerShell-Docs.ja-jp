@@ -1,30 +1,23 @@
 ---
 title: Windows PowerShell のサンプルコード |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 1106829a-8ddc-454e-bbdd-ade15d4bffb4
-caps.latest.revision: 7
-ms.openlocfilehash: 76b4195eb33a1058109df8f6174a89708ba039d1
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 8dcbe6d8760d77666a8191ca78416ef63dfebdeb
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563252"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786936"
 ---
 # <a name="windows-powershell-sample-code"></a>Windows PowerShell サンプル コード
 
 Windows PowerShell®のサンプルは、Windows SDK を通じて入手できます。 このセクションには、Windows SDK のサンプルに含まれているサンプルコードが含まれています。
 
 > [!NOTE]
-> Windows SDK がインストールされると、すべての Windows PowerShell サンプルが使用可能になる**サンプル**ディレクトリが作成されます。 一般的なインストールディレクトリは**C:\Program て SDKs\Windows\v6.0**です。 Windows PowerShell を起動し、 **「cd Samples\SysMgmt\PowerShell」** と入力して、Windows powershell Samples ディレクトリを見つけます。 このドキュメントでは、Windows PowerShell Samples ディレクトリを** \< powershell サンプル>** と呼びます。
+> Windows SDK がインストールされると、すべての Windows PowerShell サンプルが使用可能になる**サンプル**ディレクトリが作成されます。 一般的なインストールディレクトリは**C:\Program て SDKs\Windows\v6.0**です。 Windows PowerShell を起動し、 **「cd Samples\SysMgmt\PowerShell」** と入力して、Windows powershell Samples ディレクトリを見つけます。 このドキュメントでは、Windows PowerShell Samples ディレクトリをと呼び **\<PowerShell Samples>** ます。
 
 ## <a name="sample-code-listing"></a>サンプルコードリスト
 
-|                                    サンプル コード                                    |                                                                                                                                           Description                                                                                                                                           |
+|                                    サンプル コード                                    |                                                                                                                                           説明                                                                                                                                           |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | [AccessDbProviderSample01 コード サンプル](./accessdbprovidersample01-code-sample.md) | これは、「基本的な[Windows PowerShell プロバイダーの作成](./creating-a-basic-windows-powershell-provider.md)」で説明されているプロバイダーです。                                                                                                                                                            |
 | [AccessDbProviderSample02 コード サンプル](./accessdbprovidersample02-code-sample.md) | これは、「 [Windows PowerShell ドライブプロバイダーの作成](./creating-a-windows-powershell-drive-provider.md)」で説明されているプロバイダーです。                                                                                                                                                            |

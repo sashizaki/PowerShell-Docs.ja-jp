@@ -1,19 +1,12 @@
 ---
 title: ジョブをサポートする方法 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 5eac452c-eae2-4193-b4da-0b618bef3677
-caps.latest.revision: 9
-ms.openlocfilehash: 65f6b3d44910a0a3e848b4d2cd3e619186e5ed25
-ms.sourcegitcommit: 0a3f9945d52e963e9cba2538ffb33e42156e1395
+ms.openlocfilehash: 7ae4e6c118965c73ba6b3d4d38b1bd3171d2b3da
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77706242"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786630"
 ---
 # <a name="how-to-support-jobs"></a>ジョブをサポートする方法
 
@@ -21,7 +14,7 @@ ms.locfileid: "77706242"
 
 ## <a name="to-support-jobs"></a>ジョブをサポートするには
 
-1. コマンドレットをジョブとして実行するかどうかをユーザーが決定できるように、`AsJob` スイッチパラメーターを定義します。
+1. `AsJob`コマンドレットをジョブとして実行するかどうかをユーザーが決定できるように、スイッチパラメーターを定義します。
 
     AsJob パラメーター宣言の例を次に示します。
 
@@ -47,7 +40,7 @@ ms.locfileid: "77706242"
 
     <!-- TODO!!!: review snippet reference      [!CODE [msh_samplesGetProc06#GetProc06JobObject](msh_samplesGetProc06#GetProc06JobObject)]  -->
 
-3. レコード処理メソッドで、コマンドレットをジョブとして実行する必要があるかどうかを検出する `if` ステートメントを追加します。 次のコードでは、[このメソッドを使用してい](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)ます。
+3. レコード処理メソッドで、ステートメントを追加し `if` て、コマンドレットをジョブとして実行する必要があるかどうかを検出します。 次のコードでは、[このメソッドを使用してい](/dotnet/api/System.Management.Automation.Cmdlet.ProcessRecord)ます。
 
     ```csharp
     protected override void ProcessRecord()

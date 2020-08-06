@@ -1,22 +1,15 @@
 ---
 title: 基本的な Windows PowerShell プロバイダーを作成する |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - base provider [PowerShell Programmer's Guide]
 - providers [PowerShell Programmer's Guide], base provider
-ms.assetid: 11eeea41-15c8-47ad-9016-0f4b72573305
-caps.latest.revision: 7
-ms.openlocfilehash: 0f8621cd22ca402f3a564ccdfb36c97da68dac6a
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 16cadb6099bb4f315bacda4aea617b89f9af5626
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978510"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787225"
 ---
 # <a name="creating-a-basic-windows-powershell-provider"></a>基本的な Windows PowerShell プロバイダーを作成する
 
@@ -29,9 +22,9 @@ ms.locfileid: "80978510"
 
 ## <a name="defining-the-windows-powershell-provider-class"></a>Windows PowerShell プロバイダークラスの定義
 
-Windows PowerShell プロバイダーを作成するための最初の手順は、.NET クラスを定義することです。 この基本プロバイダーは、`AccessDBProvider` というクラスを定義しています。このクラスは、[この基本クラス](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)から派生します。
+Windows PowerShell プロバイダーを作成するための最初の手順は、.NET クラスを定義することです。 この基本プロバイダーでは、というクラスを定義しています。このクラスは、という `AccessDBProvider` [プロバイダー](/dotnet/api/System.Management.Automation.Provider.CmdletProvider)の基底クラスから派生します。
 
-プロバイダークラスは、API 名前空間の `Providers` 名前空間 (たとえば、xxx) に配置することをお勧めします。PowerShell. プロバイダー。 このプロバイダーは `Microsoft.Samples.PowerShell.Provider` 名前空間を使用します。この名前空間では、すべての Windows PowerShell プロバイダーのサンプルが実行されます。
+プロバイダークラスは、 `Providers` API 名前空間の名前空間 (たとえば、xxx) に配置することをお勧めします。PowerShell. プロバイダー。 このプロバイダーは、 `Microsoft.Samples.PowerShell.Provider` すべての Windows PowerShell プロバイダーのサンプルを実行する名前空間を使用します。
 
 > [!NOTE]
 > Windows PowerShell プロバイダーのクラスは、明示的にパブリックとしてマークされている必要があります。 パブリックとしてマークされていないクラスは、既定で内部に設定され、Windows PowerShell ランタイムによって検出されません。
@@ -40,7 +33,7 @@ Windows PowerShell プロバイダーを作成するための最初の手順は�
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/AccessDBProviderSample01/AccessDBProviderSample01.cs" range="23-24":::
 
-クラス定義の直前に、構文 [の表示プロバイダー ()] を使用して、"system.servicemodel" 属性を宣言する必要が[あります。](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)
+クラス定義の直前に、構文 [[の表示プロバイダー ()] を使用して、"system.servicemodel" 属性を宣言する必要が[あります。](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)
 
 必要に応じて、クラスをさらに宣言する属性キーワードを設定できます。 ここで宣言されている system.string 属性に[は、2つのパラメーター](/dotnet/api/System.Management.Automation.Provider.CmdletProviderAttribute)が含まれていることに注意してください。 最初の属性パラメーターは、プロバイダーの既定のわかりやすい名前を指定します。ユーザーは後で変更できます。 2番目のパラメーターは、コマンドの処理中にプロバイダーが Windows PowerShell ランタイムに公開する Windows PowerShell 定義の機能を指定します。 プロバイダー機能に使用できる値は、system.servicemodel[機能](/dotnet/api/System.Management.Automation.Provider.ProviderCapabilities)の列挙型によって定義されます。 これは基本プロバイダーであるため、機能をサポートしていません。
 
@@ -85,13 +78,13 @@ Windows PowerShell プロバイダーが使用するリソースを解放する�
 
 ## <a name="testing-the-windows-powershell-provider"></a>Windows PowerShell プロバイダーのテスト
 
-Windows powershell プロバイダーが Windows PowerShell に登録されたら、サポートされているコマンドレットをコマンドラインで実行することでテストできます。 この基本プロバイダーでは、新しいシェルを実行し、`Get-PSProvider` コマンドレットを使用してプロバイダーの一覧を取得し、AccessDb プロバイダーが存在することを確認します。
+Windows powershell プロバイダーが Windows PowerShell に登録されたら、サポートされているコマンドレットをコマンドラインで実行することでテストできます。 この基本プロバイダーでは、新しいシェルを実行し、コマンドレットを使用して `Get-PSProvider` プロバイダーの一覧を取得し、AccessDb プロバイダーが存在することを確認します。
 
 ```powershell
 Get-PSProvider
 ```
 
-次のような出力が表示されます。
+次の出力が表示されます。
 
 ```Output
 Name                 Capabilities                  Drives
@@ -108,4 +101,4 @@ Registry             ShouldProcess                 {HKLM, HKCU}
 
 [Windows PowerShell プロバイダーの作成](./how-to-create-a-windows-powershell-provider.md)
 
-[Windows PowerShell プロバイダーの設計](./designing-your-windows-powershell-provider.md)
+[Windows PowerShell プロバイダーを設計する](./designing-your-windows-powershell-provider.md)

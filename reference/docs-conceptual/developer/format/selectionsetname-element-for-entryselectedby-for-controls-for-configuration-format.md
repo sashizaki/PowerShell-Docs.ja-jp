@@ -1,25 +1,18 @@
 ---
 title: 構成用のコントロール (Format) の EntrySelectedBy の SelectionSetName 要素Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 42143d1e-7cda-4c4a-b568-fa1951bb9417
-caps.latest.revision: 6
-ms.openlocfilehash: 9060ee54d6f88c7f910b16cf5c9b87f37844b736
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 72072d8d13e6ca22afdb9bca2e0237d29ba0594f
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364791"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787565"
 ---
 # <a name="selectionsetname-element-for-entryselectedby-for-controls-for-configuration-format"></a>Configuration の Controls の EntrySelectedBy の SelectionSetName 要素 (書式)
 
 コントロールのこの定義を使用する .NET 型のセットを指定します。 この要素は、書式設定ファイル内のすべてのビューで使用できるコモンコントロールを定義するときに使用されます。
 
-Configuration 要素 (Format) 構成用の CustomControl の Configuration (format) CustomEntries 要素の構成 (形式) の CustomControl 要素の構成 (書式設定) 要素のコントロール要素Format) CustomControl 用の CustomEntry 要素を構成するためのコントロール用の customentry 要素の構成 (形式) を構成するために、EntrySelectedBy の configuration (format) SelectionSetName 要素を構成するためのコントロール (形式)
+Configuration 要素 (Format) コントロールの configuration (format) CustomControl 要素のコントロール要素を構成するためのコントロールの要素の構成 (形式) CustomControl の構成 (形式) の CustomEntries 要素の構成 (形式) CustoCustomControl 用の Mentry 要素は、構成 (format) のコントロールに対して EntrySelectedBy の Configuration (format) SelectionSetName 要素を構成するためのコントロール用の構成 (format) 要素を構成 (format) します。
 
 ## <a name="syntax"></a>構文
 
@@ -28,13 +21,13 @@ Configuration 要素 (Format) 構成用の CustomControl の Configuration (form
 
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`SelectionSetName` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `SelectionSetName` ます。
 
 ### <a name="attributes"></a>属性
 
-None
+なし
 
 ### <a name="child-elements"></a>子要素
 
@@ -42,15 +35,15 @@ None
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[Configuration 用のコントロール用の CustomEntry 要素 (形式)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|このコントロール定義を使用する .NET 型、またはこの定義を使用するために必要な条件を定義します。|
+|[Configuration の Controls の CustomEntry の EntrySelectedBy 要素 (書式)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)|このコントロール定義を使用する .NET 型、またはこの定義を使用するために必要な条件を定義します。|
 
 ## <a name="text-value"></a>テキスト値
 
 選択セットの名前を指定します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 各コントロール定義には、少なくとも1つの型名、選択セット、または選択条件が定義されている必要があります。
 
@@ -58,6 +51,6 @@ None
 
 ## <a name="see-also"></a>参照
 
-[Configuration 用のコントロール用の CustomEntry 要素 (形式)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
+[Configuration の Controls の CustomEntry の EntrySelectedBy 要素 (書式)](./entryselectedby-element-for-customentry-for-controls-for-configuration-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

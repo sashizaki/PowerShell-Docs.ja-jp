@@ -1,19 +1,12 @@
 ---
 title: DefaultSettings 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 41c56499-ee20-4821-830a-478fdcc33f83
-caps.latest.revision: 11
-ms.openlocfilehash: bc95c62222eb2806f92499257a397c2e4ec5dbab
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 7da7948fc0814e38a8f3910596e223470ec27d75
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363871"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787735"
 ---
 # <a name="defaultsettings-element-format"></a>DefaultSettings 要素 (書式)
 
@@ -33,9 +26,9 @@ Configuration 要素 (Format) DefaultSettings 要素 (形式)
 </DefaultSettings>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`DefaultSettings` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `DefaultSettings` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -43,34 +36,34 @@ Configuration 要素 (Format) DefaultSettings 要素 (形式)
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[DisplayError 要素 (Format)](./displayerror-element-format.md)|省略可能な要素です。<br /><br /> データの表示中にエラーが発生した場合に、文字列 #ERR が表示されることを指定します。|
-|[列挙 Able展開要素 (形式)](./enumerableexpansions-element-format.md)|省略可能な要素です。<br /><br /> .NET オブジェクトをビューに表示するときに展開するさまざまな方法を定義します。|
+|[DisplayError 要素 (書式)](./displayerror-element-format.md)|省略可能な要素です。<br /><br /> データの表示中にエラーが発生した場合に、文字列 #ERR が表示されることを指定します。|
+|[EnumerableExpansions 要素 (書式)](./enumerableexpansions-element-format.md)|省略可能な要素です。<br /><br /> .NET オブジェクトをビューに表示するときに展開するさまざまな方法を定義します。|
 |[PropertyCountForTable (形式)](./propertycountfortable-element-format.md)|省略可能な要素です。<br /><br /> オブジェクトをテーブルビューに表示するために必要なプロパティの最小数を指定します。|
-|[ShowError 要素 (形式)](./showerror-element-format.md)|省略可能な要素です。<br /><br /> データの一部を表示しているときにエラーが発生した場合に、完全なエラーレコードが表示されることを指定します。|
-|[WrapTables 要素 (Format)](./wraptables-element-format.md)|省略可能な要素です。<br /><br /> 列の幅に合わない場合に、テーブル内のデータを次の行に移動するように指定します。|
+|[ShowError 要素 (書式)](./showerror-element-format.md)|省略可能な要素です。<br /><br /> データの一部を表示しているときにエラーが発生した場合に、完全なエラーレコードが表示されることを指定します。|
+|[WrapTables 要素 (書式)](./wraptables-element-format.md)|省略可能な要素です。<br /><br /> 列の幅に合わない場合に、テーブル内のデータを次の行に移動するように指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[Configuration 要素](./configuration-element-format.md)|書式設定ファイルのトップレベルの要素を表します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 ## <a name="see-also"></a>参照
 
 [Configuration 要素](./configuration-element-format.md)
 
-[DisplayError 要素 (Format)](./displayerror-element-format.md)
+[DisplayError 要素 (書式)](./displayerror-element-format.md)
 
-[列挙 Able展開要素 (形式)](./enumerableexpansions-element-format.md)
+[EnumerableExpansions 要素 (書式)](./enumerableexpansions-element-format.md)
 
 [PropertyCountForTable (形式)](./propertycountfortable-element-format.md)
 
-[ShowError 要素 (形式)](./showerror-element-format.md)
+[ShowError 要素 (書式)](./showerror-element-format.md)
 
-[WrapTables 要素 (Format)](./wraptables-element-format.md)
+[WrapTables 要素 (書式)](./wraptables-element-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

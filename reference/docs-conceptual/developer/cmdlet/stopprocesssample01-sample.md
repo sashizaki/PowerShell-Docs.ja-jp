@@ -1,23 +1,16 @@
 ---
 title: StopProcessSample01 サンプル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b7bed607-369b-4507-87fa-f6011c2f1970
-caps.latest.revision: 9
-ms.openlocfilehash: 2ce146df05ef876d9c17f560628ebac2c39e57bf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 6d4737d0526a7d142b4a986986974bcbdc12ec7e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365301"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786460"
 ---
 # <a name="stopprocesssample01-sample"></a>StopProcessSample01 サンプル
 
-このサンプルでは、プロセスを停止する前にユーザーからのフィードバックを要求するコマンドレットを記述する方法と、ユーザーがコマンドレットにオブジェクトを返すことを示す `PassThru` パラメーターを実装する方法を示します。 このコマンドレットは、Windows PowerShell 2.0 によって提供される `Stop-Process` コマンドレットに似ています。
+このサンプルでは、プロセスを停止する前にユーザーからのフィードバックを要求するコマンドレットを記述する方法と、 `PassThru` ユーザーがコマンドレットにオブジェクトを返すことを示すパラメーターを実装する方法を示します。 このコマンドレットは、 `Stop-Process` Windows PowerShell 2.0 によって提供されるコマンドレットに似ています。
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドする方法。
 
@@ -25,7 +18,7 @@ ms.locfileid: "72365301"
 
 2. ソリューション (.sln) ファイルのアイコンをダブルクリックします。 これにより、Microsoft Visual Studio でサンプルプロジェクトが開きます。
 
-3. **[ビルド]** メニューの **[ソリューションのビルド]** を選択します。
+3. **[ビルド]** メニューで、 **[ソリューションのビルド]** を選択します。
 
     サンプルのライブラリは、既定の \bin フォルダーまたは \bin\debug フォルダーに構築されます。
 
@@ -47,11 +40,11 @@ ms.locfileid: "72365301"
 
     `stop-proc`
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>使用例
+## <a name="demonstrates"></a>対象
 
 このサンプルでは、次のことを示します。
 
@@ -61,11 +54,11 @@ ms.locfileid: "72365301"
 
 - 確認を要求するために、メソッドを呼び出します。
 
-- ユーザーがオブジェクトを返すかどうかを示す `PassThru` パラメーターを実装する。 既定では、このコマンドレットはパイプラインにオブジェクトを返しません。
+- `PassThru`コマンドレットがオブジェクトを返すかどうかを示すパラメーターを実装します。 既定では、このコマンドレットはパイプラインにオブジェクトを返しません。
 
 ## <a name="example"></a>例
 
-このサンプルでは、ユーザーがオブジェクトを返すことを示す `PassThru` パラメーターを実装する方法と、`ShouldProcess` メソッドと `ShouldContinue` メソッドの呼び出しによってユーザーフィードバックを要求する方法を示します。
+このサンプルでは、 `PassThru` ユーザーがオブジェクトを返すことを示すパラメーターの実装方法、およびメソッドとメソッドの呼び出しによってユーザーフィードバックを要求する方法を示し `ShouldProcess` `ShouldContinue` ます。
 
 ```csharp
 using System;
@@ -265,4 +258,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

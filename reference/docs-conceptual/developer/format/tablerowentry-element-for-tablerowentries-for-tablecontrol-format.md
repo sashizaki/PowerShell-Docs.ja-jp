@@ -1,19 +1,12 @@
 ---
 title: TableControl (Format) の TableRowEntries の TableRowEntry 要素Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 18d86af7-7ff9-4968-81be-2caa61937d49
-caps.latest.revision: 10
-ms.openlocfilehash: 946ffb3fe857503c02b9000238a86775969abbd6
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 83076ae5b2c48992ce5e621c65fc9937efb68b87
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361801"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787412"
 ---
 # <a name="tablerowentry-element-for-tablerowentries-for-tablecontrol-format"></a>TableControl の TableRowEntries の TableRowEntry 要素 (書式)
 
@@ -31,9 +24,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </TableRowEntry>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`TableRowEntry` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `TableRowEntry` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,27 +34,27 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableControl (Format) の TableRowEntry の EntrySelectedBy 要素](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)|必須の要素です。<br /><br /> プロパティ値が行内に表示されるオブジェクトを定義します。|
-|[TableControl (Format) の TableRowEntry の TableColumnItems 要素](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|必須の要素です。<br /><br /> 値が表示されるプロパティまたはスクリプトを定義します。|
+|[TableControl の TableRowEntry の TableColumnItems 要素 (書式)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)|必須の要素です。<br /><br /> 値が表示されるプロパティまたはスクリプトを定義します。|
 |[TableControl (Format) の TableRowEntry の Wrap 要素](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> 列幅を超えるテキストを次の行に表示するように指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[TableControl (Format) の TableRowEntries 要素](./tablerowentries-element-for-tablecontrol-format.md)|テーブルの行を定義します。|
+|[TableControl の TableRowEntries 要素 (書式)](./tablerowentries-element-for-tablecontrol-format.md)|テーブルの行を定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
-1つの `TableColumnItems` 要素と1つの `EntrySelectedBy` 要素を指定する必要があります。
+1つ `TableColumnItems` の要素と1つの `EntrySelectedBy` 要素を指定する必要があります。
 
 テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-次の例は、`TableRowEntry` の2つのプロパティの値を表示する行を定義する要素を示してい[ます。](/dotnet/api/System.Diagnostics.Process)
+次の例は、system.string `TableRowEntry` オブジェクトの2つのプロパティの値を表示する行を[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)定義する要素を示しています。
 
 ```xml
 <TableRowEntry>
@@ -81,14 +74,14 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="see-also"></a>参照
 
-[テーブルビューの作成](./creating-a-table-view.md)
+[テーブル ビューを作成する](./creating-a-table-view.md)
 
 [TableControl (Format) の TableRowEntry の EntrySelectedBy 要素](./entryselectedby-element-for-tablerowentry-for-tablecontrol-format.md)
 
-[TableControl (Format) の TableRowEntry の TableColumnItems 要素](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)
+[TableControl の TableRowEntry の TableColumnItems 要素 (書式)](./tablecolumnitems-element-for-tablerowentry-for-tablecontrol-format.md)
 
-[TableControl (Format) の TableRowEntries 要素](./tablerowentries-element-for-tablecontrol-format.md)
+[TableControl の TableRowEntries 要素 (書式)](./tablerowentries-element-for-tablecontrol-format.md)
 
 [TableControl (Format) の TableRowEntry の Wrap 要素](./wrap-element-for-tablerowentry-for-tablecontrol-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

@@ -1,19 +1,12 @@
 ---
 title: コマンドレット内のコマンドレットとスクリプトの呼び出し |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e7040a5c-4a47-42df-a2ea-96b134a4ed9b
-caps.latest.revision: 10
-ms.openlocfilehash: f20708ff41d9a6de90090997a875ba5371eccd74
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 3d5f76242c02763c41b81215bbb031e19869066a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364291"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786579"
 ---
 # <a name="invoking-cmdlets-and-scripts-within-a-cmdlet"></a>コマンドレット内でコマンドレットとスクリプトを呼び出す
 
@@ -31,11 +24,11 @@ Emumerator この variant を[呼び出す](/dotnet/api/System.Management.Automa
 
 ## <a name="examples"></a>例
 
-|例|[説明]|
+|例|説明|
 |-------------|-----------------|
 |[コマンドレット内でのコマンドレットの呼び出し](./how-to-invoke-a-cmdlet-from-within-a-cmdlet.md)|この例は、別のコマンドレット内からコマンドレットを呼び出す方法を示しています。|
 |[コマンドレット内でのスクリプトの呼び出し](./how-to-invoke-scripts-within-a-cmdlet.md)|この例では、別のコマンドレット内からコマンドレットに指定されたスクリプトを呼び出す方法を示します。|
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

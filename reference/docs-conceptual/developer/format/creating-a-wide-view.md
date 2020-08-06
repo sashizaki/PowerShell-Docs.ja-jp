@@ -1,19 +1,12 @@
 ---
 title: ワイドビューを作成する |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2d4303c5-b451-4ccb-9831-b17a17ceac20
-caps.latest.revision: 16
-ms.openlocfilehash: 651de5d3bc2619f20438f3951ac5a8c4b0bf46d4
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0cf6a35201c47e4b12dd160191570eccec3427ef
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368951"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786137"
 ---
 # <a name="creating-a-wide-view"></a>ワイド ビューを作成する
 
@@ -220,7 +213,7 @@ View>
 
 ## <a name="using-format-strings"></a>書式指定文字列の使用
 
-書式設定文字列をワイドビューに追加して、データの表示方法をさらに詳細に定義できます。 次の例は、`StartTime` プロパティの値の書式設定文字列を定義する方法を示しています。
+書式設定文字列をワイドビューに追加して、データの表示方法をさらに詳細に定義できます。 次の例は、プロパティの値の書式設定文字列を定義する方法を示して `StartTime` います。
 
 ```xml
 <WideItem>
@@ -239,7 +232,7 @@ View>
 
 - [ScriptBlock](./scriptblock-element-for-wideitem-for-widecontrol-format.md)要素 (表示されません) は、ビューによって値が表示されるスクリプトを指定します。 スクリプトまたはプロパティのいずれかを指定する必要がありますが、両方を指定することはできません。
 
-次の例では、スクリプトの値の書式を設定するために、`ToString` メソッドが呼び出されています。 スクリプトは、オブジェクトの任意のメソッドを呼び出すことができます。 したがって、オブジェクトに、書式設定パラメーターを持つメソッド (`ToString`など) がある場合、スクリプトはそのメソッドを呼び出してスクリプトの出力値を書式設定できます。
+次の例では、 `ToString` スクリプトの値の書式を設定するためにメソッドが呼び出されています。 スクリプトは、オブジェクトの任意のメソッドを呼び出すことができます。 したがって、オブジェクトに、書式設定パラメーターを持つなどのメソッドがある場合、 `ToString` スクリプトはそのメソッドを呼び出してスクリプトの出力値を書式設定できます。
 
 ```xml
 <WideItem>
@@ -250,7 +243,7 @@ View>
 </WideItem>
 ```
 
-次の XML 要素を使用して、`ToString` メソッドを呼び出すことができます。
+次の XML 要素を使用して、メソッドを呼び出すことができ `ToString` ます。
 
 - [WideItem](./wideitem-element-for-widecontrol-format.md)要素は、ビューによって表示されるデータを指定します。
 
@@ -258,8 +251,8 @@ View>
 
 ## <a name="see-also"></a>参照
 
-[ワイドビュー (基本)](./wide-view-basic.md)
+[ワイド ビュー (基本)](./wide-view-basic.md)
 
-[Wide ビュー (GroupBy)](./wide-view-groupby.md)
+[ワイド ビュー (グループ別)](./wide-view-groupby.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

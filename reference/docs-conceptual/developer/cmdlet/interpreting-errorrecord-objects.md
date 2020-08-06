@@ -1,19 +1,12 @@
 ---
 title: ErrorRecord オブジェクトの解釈 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 2a65b964-5bc6-4ade-a66b-b6afa7351ce7
-caps.latest.revision: 9
-ms.openlocfilehash: 32ebf2531237bfd1042310ccc4155193a58401fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 249fff7d14023806d75aeca40f4d9b7231e14311
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365421"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786596"
 ---
 # <a name="interpreting-errorrecord-objects"></a>ErrorRecord オブジェクトを解釈する
 
@@ -52,7 +45,7 @@ ms.locfileid: "72365421"
 
 エラーレコードに含まれる例外はコマンドレットによって提供され、この例外は[、システムの](/dotnet/api/System.Management.Automation.ErrorRecord)管理. errorrecord オブジェクトの system.string [*](/dotnet/api/System.Management.Automation.ErrorRecord.Exception)プロパティを介してアクセスできます。
 
-ホストアプリケーションは、`is` キーワードを使用して、例外が特定のクラスまたは派生クラスであることを識別できます。 次の例に示すように、例外の種類に分岐することをお勧めします。
+ホストアプリケーションはキーワードを使用して、 `is` 例外が特定のクラスまたは派生クラスであることを識別できます。 次の例に示すように、例外の種類に分岐することをお勧めします。
 
 `if (MyNonTerminatingError.Exception is AccessDeniedException)`
 
@@ -68,7 +61,7 @@ ms.locfileid: "72365421"
 
 前の例では、最初のトークンはエラー識別子であり、その後にコマンドレットクラスの名前が続きます。 エラー識別子には、1つのトークンを指定することも、識別子を検査するときに分岐を許可するドット区切りの識別子を指定することもできます。 エラー識別子に空白または句読点を使用しないでください。 コンマを使用しないことが特に重要です。Windows PowerShell では、識別子とコマンドレットのクラス名を区切るためにコンマが使用されます。
 
-### <a name="other-information"></a>関連情報
+### <a name="other-information"></a>その他の情報
 
 また[、エラー](/dotnet/api/System.Management.Automation.ErrorRecord)が発生した環境を説明する情報を提供することもできます。 この情報には、エラーの詳細、呼び出し情報、エラーが発生したときに処理されていた対象オブジェクトなどが含まれます。 この情報はホストアプリケーションにとって有用な場合がありますが、通常はエラーを識別するために使用されません。 この情報は、次のプロパティを使用して取得できます。
 
@@ -90,8 +83,8 @@ ms.locfileid: "72365421"
 
 [Throwterminatingerror * のようになります。](/dotnet/api/System.Management.Automation.Cmdlet.ThrowTerminatingError)
 
-[コマンドレットに終了しないエラー報告を追加する](./adding-non-terminating-error-reporting-to-your-cmdlet.md)
+[終了しないエラーのレポートをコマンドレットに追加する](./adding-non-terminating-error-reporting-to-your-cmdlet.md)
 
-[Windows PowerShell エラー報告](./error-reporting-concepts.md)
+[Windows PowerShell エラー レポート](./error-reporting-concepts.md)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

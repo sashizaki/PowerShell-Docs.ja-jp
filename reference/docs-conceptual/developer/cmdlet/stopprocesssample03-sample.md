@@ -1,23 +1,16 @@
 ---
 title: StopProcessSample03 サンプル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 31298f1b-8b76-4637-8406-863f5ad27e53
-caps.latest.revision: 8
-ms.openlocfilehash: 91b56a78f878e0d9c0fc11e4b882399bdfb108ac
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 76a74c099a3c82cfb55e93e5b6173d728ac88b93
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369371"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787837"
 ---
 # <a name="stopprocesssample03-sample"></a>StopProcessSample03 サンプル
 
-このサンプルでは、パラメーターにエイリアスがあり、ワイルドカード文字をサポートするパラメーターを持つコマンドレットを記述する方法を示します。 このコマンドレットは、Windows PowerShell 2.0 によって提供される `Stop-Process` コマンドレットに似ています。
+このサンプルでは、パラメーターにエイリアスがあり、ワイルドカード文字をサポートするパラメーターを持つコマンドレットを記述する方法を示します。 このコマンドレットは、 `Stop-Process` Windows PowerShell 2.0 によって提供されるコマンドレットに似ています。
 
 ### <a name="how-to-build-the-sample-by-using-visual-studio"></a>Visual Studio を使用してサンプルをビルドする方法。
 
@@ -25,7 +18,7 @@ ms.locfileid: "72369371"
 
 2. ソリューション (.sln) ファイルのアイコンをダブルクリックします。 これにより、Microsoft Visual Studio でサンプルプロジェクトが開きます。
 
-3. **[ビルド]** メニューの **[ソリューションのビルド]** を選択します。
+3. **[ビルド]** メニューで、 **[ソリューションのビルド]** を選択します。
 
     サンプルのライブラリは、既定の \bin フォルダーまたは \bin\debug フォルダーに構築されます。
 
@@ -47,11 +40,11 @@ ms.locfileid: "72369371"
 
     `stop-proc`
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 
-## <a name="demonstrates"></a>使用例
+## <a name="demonstrates"></a>対象
 
 このサンプルでは、次のことを示します。
 
@@ -352,4 +345,4 @@ namespace Microsoft.Samples.PowerShell.Commands
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

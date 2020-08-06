@@ -1,23 +1,16 @@
 ---
 title: ValidatePattern 属性宣言 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - attributes, ValidatePattern
 - ValidatePattern attribute, described
 - ValidatePattern attribute
-ms.assetid: 87b811be-6d93-4e7d-b9d0-c567a19bb0ef
-caps.latest.revision: 13
-ms.openlocfilehash: 5edcb65a6fbe1cb2fe2d0efe3f763fb84628b049
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 713fa7a46a8eeefdbfd679a5e8436285fac085f8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369161"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787803"
 ---
 # <a name="validatepattern-attribute-declaration"></a>ValidatePattern 属性の宣言
 
@@ -34,15 +27,15 @@ ValidatePattern がコマンドレット内で呼び出されると、Windows Po
 
 #### <a name="parameters"></a>パラメーター
 
-`RegexString` ([system.string](/dotnet/api/System.String)) が必要です。 パラメーター引数を検証する正規表現を指定します。
+`RegexString`([System.string](/dotnet/api/System.String)) が必要です。 パラメーター引数を検証する正規表現を指定します。
 
 オプション ([system.text.regularexpressions.regexoptions. Regexoptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions)) 省略可能な名前付きパラメーター。 正規表現オプションを指定する[system.text.regularexpressions.regexoptions の Regexoptions](/dotnet/api/System.Text.RegularExpressions.RegexOptions)フラグのビットごとの組み合わせを指定します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 - この属性は、パラメーターごとに1回だけ使用できます。
 
-- 属性の `Option` パラメーターを使用して、パターンをさらに定義できます。 たとえば、パターンの大文字と小文字を区別することができます。
+- 属性のパラメーターを使用して、 `Option` パターンをさらに定義できます。 たとえば、パターンの大文字と小文字を区別することができます。
 
 - この属性をコレクションに適用する場合は、コレクション内の各要素がパターンと一致する必要があります。
 
@@ -52,4 +45,4 @@ ValidatePattern がコマンドレット内で呼び出されると、Windows Po
 
 [システムの管理. Validatepattern 属性](/dotnet/api/System.Management.Automation.ValidatePatternAttribute)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

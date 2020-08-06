@@ -1,19 +1,12 @@
 ---
 title: TableControl (Format) の TableRowEntry の EntrySelectedBy 要素Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 49623fcf-1238-4d20-a7ce-238d47d9d565
-caps.latest.revision: 15
-ms.openlocfilehash: 9302bfed0324773cb98d698acdcf608f34ee19c1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 047a10fb6b38dfa8f78a7741fd50b781d4a14b6d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363341"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787701"
 ---
 # <a name="entryselectedby-element-for-tablerowentry--for-tablecontrol-format"></a>TableControl の TableRowEntry の EntrySelectedBy 要素 (書式)
 
@@ -31,9 +24,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`EntrySelectedBy` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `EntrySelectedBy` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,29 +34,29 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[TableControl の EntrySelectedBy の SelectionCondition 要素 (Format)](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> このテーブルビュー定義を使用するために必要な条件を定義します。|
-|[TableControl (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> このテーブルビュー定義を使用する一連の .NET 型を指定します。|
-|[TableControl の EntrySelectedBy の TypeName 要素 (Format)](./typename-element-for-entryselectedby-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> このテーブルビュー定義を使用する .NET 型を指定します。|
+|[TableControl の EntrySelectedBy の SelectionCondition 要素 (書式)](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> このテーブルビュー定義を使用するために必要な条件を定義します。|
+|[TableControl の EntrySelectedBy の SelectionSetName 要素 (書式)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> このテーブルビュー定義を使用する一連の .NET 型を指定します。|
+|[TableControl の EntrySelectedBy の TypeName 要素 (書式)](./typename-element-for-entryselectedby-for-tablecontrol-format.md)|省略可能な要素です。<br /><br /> このテーブルビュー定義を使用する .NET 型を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[TableControl (Format) の TableRowEntry 要素](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)|テーブルの行に表示されるデータを定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 テーブルビュー定義には、少なくとも1つの種類、選択セット、または選択条件を指定する必要があります。 使用できる子要素の数に上限はありません。
 
-選択条件を使用して、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプトが `true`として評価される場合など、使用する定義に存在する必要がある条件を定義します。 選択条件の詳細については、「[ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件は、オブジェクトが特定のプロパティを持っている場合や、特定のプロパティ値またはスクリプトがに評価される場合など、使用する定義のために存在する必要がある条件を定義するために使用され `true` ます。 選択条件の詳細については、「[ビューエントリまたは項目が使用される場合の条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 テーブルビューのコンポーネントの詳細については、「[テーブルビューの作成](./creating-a-table-view.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-次の例[は、`TableRowEntry` のオブジェクトの](/dotnet/api/System.Diagnostics.Process)プロパティを表示するために使用される要素を示しています。
+次の例は、 `TableRowEntry` system.object オブジェクトのプロパティを表示するために使用[System.Diagnostics.Process](/dotnet/api/System.Diagnostics.Process)される要素を示しています。
 
 ```xml
 <TableRowEntry>
@@ -83,14 +76,14 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="see-also"></a>参照
 
-[テーブルビューの作成](./creating-a-table-view.md)
+[テーブル ビューを作成する](./creating-a-table-view.md)
 
-[TableControl の EntrySelectedBy の SelectionCondition 要素 (Format)](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)
+[TableControl の EntrySelectedBy の SelectionCondition 要素 (書式)](./selectioncondition-element-for-entryselectedby-for-tablecontrol-format.md)
 
-[TableControl (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
+[TableControl の EntrySelectedBy の SelectionSetName 要素 (書式)](./selectionsetname-element-for-entryselectedby-for-tablecontrol-format.md)
 
 [TableControl (Format) の TableRowEntry 要素](./tablerowentry-element-for-tablerowentries-for-tablecontrol-format.md)
 
-[TableControl の EntrySelectedBy の TypeName 要素 (Format)](./typename-element-for-entryselectedby-for-tablecontrol-format.md)
+[TableControl の EntrySelectedBy の TypeName 要素 (書式)](./typename-element-for-entryselectedby-for-tablecontrol-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

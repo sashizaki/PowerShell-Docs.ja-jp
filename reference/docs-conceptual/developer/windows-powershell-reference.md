@@ -1,21 +1,14 @@
 ---
 title: Windows PowerShell リファレンス |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Windows PowerShell SDK
-ms.assetid: cbba4879-bcac-484a-9906-4bbe2cd1eb33
-caps.latest.revision: 11
-ms.openlocfilehash: c00590df4d07e0f5ed9e93fd84a2780329753e39
-ms.sourcegitcommit: d97b200e7a49315ce6608cd619e3e2fd99193edd
+ms.openlocfilehash: 1c1a3a4de2df2043fe12cad6a69b7bc36ab9d3d7
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/10/2020
-ms.locfileid: "75870865"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786681"
 ---
 # <a name="windows-powershell-reference"></a>Windows PowerShell リファレンス
 
@@ -42,7 +35,7 @@ Windows Live Search を使用して、他の Windows PowerShell のブログと�
 
 [PowerShell モジュールブラウザー](/powershell/module/)には、最新バージョンのコマンドラインヘルプトピックが用意されています。
 
-## <a name="class-libraries"></a>クラス ライブラリ
+## <a name="class-libraries"></a>クラスライブラリ
 
 [この名前](/dotnet/api/System.Management.Automation)空間は、Windows PowerShell のルート名前空間です。 これには、カスタムコマンドレットを実装するために必要なクラス、列挙体、およびインターフェイスが含まれています。 具体的には、すべてのコマンドレットクラスを派生させる必要がある基本クラス[です。](/dotnet/api/System.Management.Automation.Cmdlet) コマンドレットの詳細については、「」を参照してください。
 
@@ -52,6 +45,6 @@ System.servicemodel この名前空間には、Windows PowerShell プロバイ�
 
 [この名前](/dotnet/api/System.Management.Automation.Host)空間には、ユーザーと Windows PowerShell の間の対話を定義するためにコマンドレットが使用するクラス、列挙体、およびインターフェイスが含まれています。
 
-[この名前](/dotnet/api/System.Management.Automation.Internal)空間には、他の名前空間クラスで使用される基本クラスが含まれています。 たとえば、システムの管理[System.Management.Automation.Internal.Cmdletmetadataattribute](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute)................. [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) ...................................
+[この名前](/dotnet/api/System.Management.Automation.Internal)空間には、他の名前空間クラスで使用される基本クラスが含まれています。 たとえば、システムの[管理](/dotnet/api/System.Management.Automation.Internal.CmdletMetadataAttribute)................. [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) ...................................
 
 [この名前](/dotnet/api/System.Management.Automation.Runspaces)空間には、Windows PowerShell 実行空間の作成に使用されるクラス、列挙体、およびインターフェイスが含まれています。 このコンテキストでは、Windows PowerShell 実行空間は、1つ以上の Windows PowerShell パイプラインによってコマンドレットが呼び出されるコンテキストです。 つまり、コマンドレットは、Windows PowerShell 実行空間のコンテキスト内で動作します。 Windows PowerShell 実行空間の詳細については、「 [Windows powershell 実行空間](hosting/creating-runspaces.md)」を参照してください。

@@ -1,19 +1,12 @@
 ---
 title: カスタムコントロールの作成 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: c3baa406-cd33-4420-be5a-07ef09d93480
-caps.latest.revision: 8
-ms.openlocfilehash: 3504ab1d974c55e9279172d0e851961474ccb926
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: c36fa9b778e01501a3c88f735cdefdfbb04411a0
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363381"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786120"
 ---
 # <a name="creating-custom-controls"></a>カスタム コントロールを作成する
 
@@ -21,7 +14,7 @@ ms.locfileid: "72363381"
 
 ## <a name="custom-control-example"></a>カスタムコントロールの例
 
-次の例は、types.ps1xml ファイルで定義されているカスタムコントロールを示しています。 このカスタムコントロールは、テーブルビューに表示さ[れるオブジェクトを](/dotnet/api/System.Management.Automation.Signature)区切るために使用されます。
+次の例は、Certificates.Format.ps1xml ファイルで定義されているカスタムコントロールを示しています。 このカスタムコントロールは、テーブルビューに表示さ[れるオブジェクトを](/dotnet/api/System.Management.Automation.Signature)区切るために使用されます。
 
 ```xml
 <Controls>
@@ -53,4 +46,4 @@ ms.locfileid: "72363381"
 
 ## <a name="see-also"></a>参照
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

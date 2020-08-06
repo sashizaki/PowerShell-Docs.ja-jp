@@ -1,13 +1,12 @@
 ---
 title: Windows PowerShell API でジョブをスケジュールする
 ms.date: 09/13/2016
-ms.topic: article
-ms.openlocfilehash: 4e1d4ed6bffd858b92bf29b1dc6d8503454fafda
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 19962d3140b6e20164c378e63a317b888120e13b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359831"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786732"
 ---
 # <a name="scheduling-jobs-with-the-windows-powershell-api"></a>Windows PowerShell API でジョブをスケジュールする
 
@@ -31,11 +30,11 @@ ScheduledJobTrigger jobTrigger = ScheduledJobTrigger.CreateOnceTrigger(
 
 Windows PowerShell ジョブを定義するには、パラメーター辞書を作成します。 次のパラメーターがサポートされています。
 
-|パラメーター名|[説明]|
+|パラメーター名|説明|
 |---|---|
-|名前|ジョブの名前を指定します。|
+|名前|ジョブの名前。|
 |ScriptBock|ジョブの動作を指定する Windows PowerShell スクリプトブロック。|
-|ファイル パス|ジョブの動作を指定する Windows PowerShell スクリプトブロックを含むファイルへのパスです。|
+|FilePath|ジョブの動作を指定する Windows PowerShell スクリプトブロックを含むファイルへのパスです。|
 |InitializationScript|ジョブを初期化する Windows PowerShell スクリプトブロック。|
 |ArgumentList|ジョブによって実行される引数を指定するオブジェクトの配列です。|
 |RunAs32|32ビットプロセスでジョブを実行するかどうかを指定するブール値です。|

@@ -1,19 +1,12 @@
 ---
 title: コマンドレットパラメーターの種類 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 6602730d-3892-4656-80c7-7bca2d14337f
-caps.latest.revision: 14
-ms.openlocfilehash: f5781c0c03aca41d01a44598a9a8c00d6d21d2fd
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e704aae6e23568be9935e228752f652929863a98
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369311"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786375"
 ---
 # <a name="types-of-cmdlet-parameters"></a>コマンドレット パラメーターの種類
 
@@ -23,7 +16,7 @@ ms.locfileid: "72369311"
 
 すべてのコマンドレットパラメーターには、名前付きパラメーターまたは位置指定パラメーターがあります。 名前付きパラメーターを使用するには、コマンドレットを呼び出すときに、パラメーターの名前と引数を入力する必要があります。 位置指定パラメーターでは、引数を相対順序で入力するだけで済みます。 次に、最初の名前のない引数が最初の位置指定パラメーターにマップされます。 2番目の無名の引数が、2番目の無名のパラメーターにマップされます。 既定では、すべてのコマンドレットパラメーターは名前付きパラメーターです。
 
-名前付きパラメーターを定義するには、次のパラメーター宣言に示すように、 **parameter**属性の宣言で `Position` キーワードを省略します。
+名前付きパラメーターを定義するには、 `Position` 次のパラメーター宣言に示すように、 **parameter**属性の宣言でキーワードを省略します。
 
 ```csharp
 [Parameter(ValueFromPipeline=true)]
@@ -35,7 +28,7 @@ public string UserName
 private string userName;
 ```
 
-位置指定パラメーターを定義するには、パラメーター属性の宣言に `Position` キーワードを追加し、位置を指定します。 次の例では、`UserName` パラメーターが位置0の位置指定パラメーターとして宣言されています。 これは、呼び出しの最初の引数がこのパラメーターに自動的にバインドされることを意味します。
+位置指定パラメーターを定義するには、 `Position` パラメーター属性の宣言にキーワードを追加し、位置を指定します。 次の例では、 `UserName` パラメーターは位置0の位置指定パラメーターとして宣言されています。 これは、呼び出しの最初の引数がこのパラメーターに自動的にバインドされることを意味します。
 
 ```csharp
 [Parameter(Position = 0)]
@@ -52,7 +45,7 @@ private string userName;
 
 位置指定パラメーターと名前付きパラメーターは、単一の引数またはコンマで区切られた複数の引数を受け取ります。 パラメーターが文字列の配列などのコレクションを受け入れる場合にのみ、複数の引数を指定できます。 同じコマンドレットで、位置指定パラメーターと名前付きパラメーターを混在させることができます。 この場合、システムはまず名前付き引数を取得してから、残りの名前なし引数を位置指定パラメーターにマップしようとします。
 
-次のコマンドは、`Get-Command` コマンドレットのパラメーターに1つ以上の引数を指定するさまざまな方法を示しています。 最後の2つのサンプルでは、`Name` パラメーターが位置パラメーターとして定義されているため、 **-name**を指定する必要はありません。
+次のコマンドは、コマンドレットのパラメーターに1つ以上の引数を指定するさまざまな方法を示して `Get-Command` います。 最後の2つのサンプルでは、パラメーターが位置指定パラメーターとして定義されているため、 **-name**を指定する必要はないことに注意して `Name` ください。
 
 ```powershell
 Get-Command -Name get-service
@@ -65,7 +58,7 @@ Get-Command get-service,set-service
 
 コマンドレットのパラメーターは、必須パラメーターまたは省略可能なパラメーターとして定義することもできます。 (Windows PowerShell ランタイムがコマンドレットを呼び出す前に、必須パラメーターを指定する必要があります)。 既定では、パラメーターはオプションとして定義されます。
 
-必須パラメーターを定義するには、次のパラメーター宣言に示すように、Parameter 属性宣言に `Mandatory` キーワードを追加し、それを `true`に設定します。
+必須パラメーターを定義するには、 `Mandatory` `true` 次のパラメーター宣言に示すように、パラメーター属性の宣言にキーワードを追加し、それをに設定します。
 
 ```csharp
 [Parameter(Position = 0, Mandatory = true)]
@@ -77,7 +70,7 @@ public string UserName
 private string userName;
 ```
 
-省略可能なパラメーターを定義するには、次のパラメーター宣言に示すように、 **parameter**属性の宣言で `Mandatory` キーワードを省略します。
+省略可能なパラメーターを定義するには、 `Mandatory` 次のパラメーター宣言に示すように、 **parameter**属性の宣言でキーワードを省略します。
 
 ```csharp
 [Parameter(Position = 0)]
@@ -91,11 +84,11 @@ private string userName;
 
 ## <a name="switch-parameters"></a>スイッチパラメーター
 
-Windows PowerShell には、コマンドレットの呼び出し時にパラメーターが指定されていない場合に、値が自動的に `false` に設定されるパラメーターを定義できるようにする、 [switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)型が用意されています。 可能な限り、ブール型パラメーターの代わりにスイッチパラメーターを使用してください。
+Windows PowerShell には、コマンドレットの呼び出し時にパラメーターが指定されていない場合に値が自動的にに設定されるパラメーターを定義できるようにする、 [switchparameter](/dotnet/api/System.Management.Automation.SwitchParameter)型が用意されています。 `false` 可能な限り、ブール型パラメーターの代わりにスイッチパラメーターを使用してください。
 
-次の例について考えてみましょう。 既定では、いくつかの Windows PowerShell コマンドレットは、出力オブジェクトをパイプラインの下位に渡しません。 ただし、これらのコマンドレットには、既定の動作をオーバーライドする `PassThru` スイッチパラメーターがあります。 これらのコマンドレットを呼び出すときに `PassThru` パラメーターを指定した場合、コマンドレットは出力オブジェクトをパイプラインに返します。
+次の例について考えてみましょう。 既定では、いくつかの Windows PowerShell コマンドレットは、出力オブジェクトをパイプラインの下位に渡しません。 ただし、これらのコマンドレットには、 `PassThru` 既定の動作をオーバーライドするスイッチパラメーターがあります。 これらの `PassThru` コマンドレットを呼び出すときにパラメーターを指定すると、コマンドレットは出力オブジェクトをパイプラインに返します。
 
-パラメーターが呼び出しで指定されていない場合に、パラメーターの既定値 `true` を持つ必要がある場合は、パラメーターの意味を逆にすることを検討してください。 サンプルの場合は、parameter 属性を `true`のブール値に設定するのではなく、プロパティを system.string[パラメーター](/dotnet/api/System.Management.Automation.SwitchParameter)の型として宣言し、パラメーターの既定値を `false`に設定します。
+パラメーターが呼び出しで指定されていない場合、パラメーターの既定値をにする必要がある場合は `true` 、パラメーターの意味を逆にすることを検討してください。 サンプルの場合は、パラメーター属性をのブール値に設定する代わりに `true` 、プロパティを System.string[パラメーター](/dotnet/api/System.Management.Automation.SwitchParameter)型として宣言し、パラメーターの既定値をに設定し `false` ます。
 
 スイッチパラメーターを定義するには、次の例に示すように、プロパティを system.string[パラメーター](/dotnet/api/System.Management.Automation.SwitchParameter)の型として宣言します。
 
@@ -124,4 +117,4 @@ protected override void ProcessRecord()
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

@@ -1,19 +1,12 @@
 ---
 title: AccessDbProviderSample03 コードサンプル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: af25b560-017a-4d53-a8c3-97c5ab66b9d4
-caps.latest.revision: 5
-ms.openlocfilehash: ee4a0cb6032361aecdf21ab7346521b4757f7030
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: 6eddbec6369fd861a3a67bbbebe3d6f98c4bc164
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978561"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787293"
 ---
 # <a name="accessdbprovidersample03-code-sample"></a>AccessDbProviderSample03 コード サンプル
 
@@ -21,8 +14,8 @@ ms.locfileid: "80978561"
 このプロバイダーは、データストア内のデータを操作できます。
 
 > [!NOTE]
-> このプロバイダーのC#ソースファイル (AccessDBSampleProvider03.cs) をダウンロードするには、Microsoft Windows Software Development Kit For windows Vista および .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
-> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。 その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。
+> このプロバイダーの C# ソースファイル (AccessDBSampleProvider03.cs) は、Windows Vista および .NET Framework 3.0 ランタイムコンポーネントの Microsoft Windows Software Development Kit を使用してダウンロードできます。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
+> ダウンロードしたソースファイルは、ディレクトリにあり **\<PowerShell Samples>** ます。 その他の Windows PowerShell プロバイダーの実装の詳細については、「 [Windows Powershell プロバイダーの設計](./designing-your-windows-powershell-provider.md)」を参照してください。
 
 ## <a name="code-sample"></a>コード サンプル
 
@@ -999,6 +992,6 @@ namespace Microsoft.Samples.PowerShell.Providers
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell プログラマー ガイド](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)

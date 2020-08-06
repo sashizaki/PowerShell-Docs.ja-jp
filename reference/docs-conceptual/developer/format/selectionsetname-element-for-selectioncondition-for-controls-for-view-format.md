@@ -1,25 +1,18 @@
 ---
 title: ビューのコントロールの SelectionCondition の SelectionSetName 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: daea8c6f-873a-4639-9eee-599642822958
-caps.latest.revision: 6
-ms.openlocfilehash: 697f2ea284393ebddd77a862c408f27f3d332900
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 0feb23f860487952344680f75ee674e9e0e6dcc6
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361971"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87787531"
 ---
 # <a name="selectionsetname-element-for-selectioncondition-for-controls-for-view-format"></a>View の Controls の SelectionCondition の SelectionSetName 要素 (書式)
 
 条件をトリガーする .NET 型のセットを指定します。 このセット内のいずれかの型が存在する場合、条件が満たされ、このコントロールを使用してオブジェクトが表示されます。 この要素は、ビューで使用できるコントロールを定義するときに使用されます。
 
-Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (書式) コントロールの要素 (書式) コントロールのコントロール要素を表示するためのコントロール (format) の CustomControl 要素のコントロール要素ビュー用のコントロールの CustomControl (書式) の CustomEntry 要素のコントロール用のカスタムエントリのためのコントロールのためのコントロールのためのコントロールのためのコントロールのための、ビューのコントロールの EntrySelectedBy の SelectionCondition 要素を表示するためのコントロール (Format) ビューのコントロール (Format) の SelectionCondition の SelectionSetName 要素
+Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (書式) コントロールのコントロールの要素 (形式) コントロールのコントロール要素 (format) のコントロールの要素 (書式) を制御するためのコントロールの要素 (書式) の CustomControl 要素 (format) のコントロールの CustomControl のカスタム CustomEntries ビュー (format) のためのコントロールの CustomEntries の参照 (format) の参照 (format) の SelectionCondition 要素を表示するためのコントロールのための SelectionSetName 要素の参照 (format) の selectioncondition 要素を表示するためのコントロールの参照 (format) 要素
 
 ## <a name="syntax"></a>構文
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 <SelectionSetName>NameofSelectionSet</SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`SelectionSetName` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `SelectionSetName` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,15 +34,15 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[ビューのコントロール (Format) に対する EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md)|コントロール定義を使用するために必要な条件を定義します。|
+|[View の Controls の EntrySelectedBy の SelectionCondition 要素 (書式)](./selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md)|コントロール定義を使用するために必要な条件を定義します。|
 
 ## <a name="text-value"></a>テキスト値
 
 選択セットの名前を指定します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 選択セットは、書式設定ファイルによって定義される任意のビューで使用できる .NET オブジェクトの一般的なグループです。 選択セットの作成と参照の詳細については、「[選択セットの定義](./defining-selection-sets.md)」を参照してください。
 
@@ -57,10 +50,10 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="see-also"></a>参照
 
-[ビューのコントロール (Format) に対する EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md)
+[View の Controls の EntrySelectedBy の SelectionCondition 要素 (書式)](./selectioncondition-element-for-entryselectedby-for-controls-for-view-format.md)
 
 [データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)
 
-[選択セットの定義](./defining-selection-sets.md)
+[選択セットを定義する](./defining-selection-sets.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

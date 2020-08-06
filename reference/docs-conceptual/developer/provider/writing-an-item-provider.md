@@ -1,19 +1,12 @@
 ---
 title: 項目プロバイダーを作成する |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 606c880c-6cf1-4ea6-8730-dbf137bfabff
-caps.latest.revision: 5
-ms.openlocfilehash: 12d2cb8c40c9fd6278bb964a6259d03167536195
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1df30e7af1b534756f797b9b5d4e29b689cbc782
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72359881"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786766"
 ---
 # <a name="writing-an-item-provider"></a>アイテム プロバイダーを記述する
 
@@ -85,7 +78,7 @@ protected override void GetItem(string path)
 
 ### <a name="implementing-setitem"></a>SetItem の実装
 
-[System.Management.Automation.Provider.Itemcmdletprovider.Setitem*](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドは、ユーザーが SetItemCommand コマンドレットを呼び出したときに、powershell エンジンによって呼び出されます。このメソッドは、ユーザーが[Microsoft.PowerShell.Commands.SetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.setitemcommand)コマンドレットを呼び出したときに呼び出されます。 このメソッドは、指定されたパスにある項目の値を設定します。
+[Setitem *](/dotnet/api/System.Management.Automation.Provider.ItemCmdletProvider.SetItem)メソッドは、ユーザーが SetItemCommand コマンドレットを呼び出したときに、powershell エンジンによって呼び出されます。このメソッドは、ユーザーが[Microsoft.PowerShell.Commands.SetItemCommand](/dotnet/api/Microsoft.PowerShell.Commands.setitemcommand)コマンドレットを呼び出したときに呼び出されます。 このメソッドは、指定されたパスにある項目の値を設定します。
 
 Access データベースの例では、項目が行である場合にのみ項目の値を設定することが理にかなっています。そのため、項目が行でない場合、メソッドは[NotSupportedException](/dotnet/api/system.notsupportedexception?view=netframework-4.8)をスローします。
 
@@ -221,14 +214,14 @@ protected override bool IsValidPath(string path)
        }
 ```
 
-## <a name="next-steps"></a>次の手順
+## <a name="next-steps"></a>次のステップ
 
 典型的な現実世界のプロバイダーは、他の項目を含む項目をサポートしたり、ドライブ内のあるパスから別のパスに項目を移動したりすることができます。 コンテナーをサポートするプロバイダーの例については、「[コンテナープロバイダーの作成](./writing-a-container-provider.md)」を参照してください。 項目の移動をサポートするプロバイダーの例については、「[ナビゲーションプロバイダーの作成](./writing-a-navigation-provider.md)」を参照してください。
 
 ## <a name="see-also"></a>参照
 
-[コンテナープロバイダーの作成](./writing-a-container-provider.md)
+[コンテナー プロバイダーを記述する](./writing-a-container-provider.md)
 
-[ナビゲーションプロバイダーの作成](./writing-a-navigation-provider.md)
+[ナビゲーション プロバイダーを記述する](./writing-a-navigation-provider.md)
 
 [Windows PowerShell プロバイダーの概要](./windows-powershell-provider-overview.md)

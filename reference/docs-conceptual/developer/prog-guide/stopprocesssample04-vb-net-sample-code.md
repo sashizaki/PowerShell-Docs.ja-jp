@@ -1,28 +1,21 @@
 ---
 title: StopProcessSample04 (VB.NET) サンプルコード |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 48019ceb-0aeb-4cd1-8b42-79f2c29c3e65
-caps.latest.revision: 5
-ms.openlocfilehash: 3e709f0897b0d77f4c5f12e1c042edd4e24b142a
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5526bec79f3bb38f0de11680302a94699240a3d9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417808"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786987"
 ---
 # <a name="stopprocesssample04-vbnet-sample-code"></a>StopProcessSample04 (VB.NET) サンプル コード
 
-StopProc04 sample コマンドレットの完全な VB.NET サンプルコードを次に示します。 これは、「[コマンドレットにパラメーターセットを追加する](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)」で説明されている `Stop-Process` コマンドレットのコードです。 `Stop-Process` コマンドレットは、Get Proc コマンドレットを使用して取得されたプロセスを停止するように設計されています ([最初のコマンドレットの作成](../cmdlet/creating-a-cmdlet-without-parameters.md)に関するページを参照してください)。
+StopProc04 sample コマンドレットの完全な VB.NET サンプルコードを次に示します。 これは、 `Stop-Process` 「[コマンドレットにパラメーターセットを追加する](../cmdlet/adding-parameter-sets-to-a-cmdlet.md)」で説明されているコマンドレットのコードです。 `Stop-Process`コマンドレットは、Get Proc コマンドレットを使用して取得したプロセスを停止するように設計されています (「[最初のコマンドレットを作成](../cmdlet/creating-a-cmdlet-without-parameters.md)する」を参照)。
 
 > [!NOTE]
 > VB.NET (stopprocesssample04) ソースファイルをダウンロードするには、Windows Vista 用 Microsoft Windows ソフトウェア開発キットおよび .NET Framework 3.0 ランタイムコンポーネントを使用します。 ダウンロードの手順については、「 [Windows powershell をインストールする方法」および「Windows POWERSHELL SDK をダウンロードする方法](/powershell/scripting/developer/installing-the-windows-powershell-sdk)」を参照してください。
 >
-> ダウンロードしたソースファイルは、 **\<PowerShell Samples >** ディレクトリにあります。
+> ダウンロードしたソースファイルは、ディレクトリにあり **\<PowerShell Samples>** ます。
 
 ```vb
 Imports System
@@ -479,6 +472,6 @@ End Namespace
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell プログラマーズガイド](./windows-powershell-programmer-s-guide.md)
+[Windows PowerShell プログラマー ガイド](./windows-powershell-programmer-s-guide.md)
 
 [Windows PowerShell SDK](../windows-powershell-reference.md)
