@@ -1,71 +1,64 @@
 ---
 title: GetProcessSample02 サンプル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 481f557d-3344-4d33-b2da-4736a0165181
-caps.latest.revision: 7
-ms.openlocfilehash: fa4cd8a724793e71b615c84a5c5a833aa92c93fc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: fa10774508b70f4aab4546cf4d6fbe8978032f1b
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364571"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784233"
 ---
-# <a name="getprocesssample02-sample"></a><span data-ttu-id="cf329-102">GetProcessSample02 サンプル</span><span class="sxs-lookup"><span data-stu-id="cf329-102">GetProcessSample02 Sample</span></span>
+# <a name="getprocesssample02-sample"></a><span data-ttu-id="dcfcb-102">GetProcessSample02 サンプル</span><span class="sxs-lookup"><span data-stu-id="dcfcb-102">GetProcessSample02 Sample</span></span>
 
-<span data-ttu-id="cf329-103">このサンプルでは、ローカルコンピューター上のプロセスを取得するコマンドレットを記述する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="cf329-103">This sample shows how to write a cmdlet that retrieves the processes on the local computer.</span></span> <span data-ttu-id="cf329-104">これには、取得するプロセスを指定するために使用できる `Name` パラメーターが用意されています。</span><span class="sxs-lookup"><span data-stu-id="cf329-104">It provides a `Name` parameter that can be used to specify the processes to be retrieved.</span></span> <span data-ttu-id="cf329-105">このコマンドレットは、Windows PowerShell 2.0 によって提供される `Get-Process` コマンドレットの簡略化されたバージョンです。</span><span class="sxs-lookup"><span data-stu-id="cf329-105">This cmdlet is a simplified version of the `Get-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="dcfcb-103">このサンプルでは、ローカルコンピューター上のプロセスを取得するコマンドレットを記述する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-103">This sample shows how to write a cmdlet that retrieves the processes on the local computer.</span></span> <span data-ttu-id="dcfcb-104">これには、 `Name` 取得するプロセスを指定するために使用できるパラメーターが用意されています。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-104">It provides a `Name` parameter that can be used to specify the processes to be retrieved.</span></span> <span data-ttu-id="dcfcb-105">このコマンドレットは、 `Get-Process` Windows PowerShell 2.0 によって提供されるコマンドレットの簡略化されたバージョンです。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-105">This cmdlet is a simplified version of the `Get-Process` cmdlet provided by Windows PowerShell 2.0.</span></span>
 
-## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="cf329-106">Visual Studio を使用してサンプルをビルドする方法。</span><span class="sxs-lookup"><span data-stu-id="cf329-106">How to build the sample using Visual Studio.</span></span>
+## <a name="how-to-build-the-sample-using-visual-studio"></a><span data-ttu-id="dcfcb-106">Visual Studio を使用してサンプルをビルドする方法。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-106">How to build the sample using Visual Studio.</span></span>
 
-1. <span data-ttu-id="cf329-107">Windows PowerShell 2.0 SDK がインストールされている状態で、GetProcessSample02 フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="cf329-107">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample02 folder.</span></span> <span data-ttu-id="cf329-108">既定の場所は C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample02. です。</span><span class="sxs-lookup"><span data-stu-id="cf329-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample02.</span></span>
+1. <span data-ttu-id="dcfcb-107">Windows PowerShell 2.0 SDK がインストールされている状態で、GetProcessSample02 フォルダーに移動します。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-107">With the Windows PowerShell 2.0 SDK installed, navigate to the GetProcessSample02 folder.</span></span> <span data-ttu-id="dcfcb-108">既定の場所は C:\Program Files (x86) \Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample02. です。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-108">The default location is C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\csharp\GetProcessSample02.</span></span>
 
-2. <span data-ttu-id="cf329-109">ソリューション (.sln) ファイルのアイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="cf329-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="cf329-110">これにより、Visual Studio でサンプルプロジェクトが開きます。</span><span class="sxs-lookup"><span data-stu-id="cf329-110">This opens the sample project in Visual Studio.</span></span>
+2. <span data-ttu-id="dcfcb-109">ソリューション (.sln) ファイルのアイコンをダブルクリックします。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-109">Double-click the icon for the solution (.sln) file.</span></span> <span data-ttu-id="dcfcb-110">これにより、Visual Studio でサンプルプロジェクトが開きます。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-110">This opens the sample project in Visual Studio.</span></span>
 
-3. <span data-ttu-id="cf329-111">**[ビルド]** メニューの **[ソリューションのビルド]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="cf329-111">In the **Build** menu, select **Build Solution**.</span></span>
+3. <span data-ttu-id="dcfcb-111">**[ビルド]** メニューで、 **[ソリューションのビルド]** を選択します。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-111">In the **Build** menu, select **Build Solution**.</span></span>
 
-    <span data-ttu-id="cf329-112">サンプルのライブラリは、既定の \bin フォルダーまたは \bin\debug フォルダーに構築されます。</span><span class="sxs-lookup"><span data-stu-id="cf329-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
+    <span data-ttu-id="dcfcb-112">サンプルのライブラリは、既定の \bin フォルダーまたは \bin\debug フォルダーに構築されます。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-112">The library for the sample will be built in the default \bin or \bin\debug folders.</span></span>
 
-### <a name="how-to-run-the-sample"></a><span data-ttu-id="cf329-113">サンプルを実行する方法</span><span class="sxs-lookup"><span data-stu-id="cf329-113">How to run the sample</span></span>
+### <a name="how-to-run-the-sample"></a><span data-ttu-id="dcfcb-113">サンプルを実行する方法</span><span class="sxs-lookup"><span data-stu-id="dcfcb-113">How to run the sample</span></span>
 
-1. <span data-ttu-id="cf329-114">次のモジュールフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="cf329-114">Create the following module folder:</span></span>
+1. <span data-ttu-id="dcfcb-114">次のモジュールフォルダーを作成します。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-114">Create the following module folder:</span></span>
 
     `[user]/documents/windowspowershell/modules/GetProcessSample02`
 
-2. <span data-ttu-id="cf329-115">サンプルアセンブリをモジュールフォルダーにコピーします。</span><span class="sxs-lookup"><span data-stu-id="cf329-115">Copy the sample assembly to the module folder.</span></span>
+2. <span data-ttu-id="dcfcb-115">サンプルアセンブリをモジュールフォルダーにコピーします。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-115">Copy the sample assembly to the module folder.</span></span>
 
-3. <span data-ttu-id="cf329-116">Windows PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="cf329-116">Start Windows PowerShell.</span></span>
+3. <span data-ttu-id="dcfcb-116">Windows PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-116">Start Windows PowerShell.</span></span>
 
-4. <span data-ttu-id="cf329-117">次のコマンドを実行して、Windows PowerShell にアセンブリを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="cf329-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
+4. <span data-ttu-id="dcfcb-117">次のコマンドを実行して、Windows PowerShell にアセンブリを読み込みます。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-117">Run the following command to load the assembly into Windows PowerShell:</span></span>
 
     `import-module getprossessample02`
 
-5. <span data-ttu-id="cf329-118">次のコマンドを実行して、コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="cf329-118">Run the following command to run the cmdlet:</span></span>
+5. <span data-ttu-id="dcfcb-118">次のコマンドを実行して、コマンドレットを実行します。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-118">Run the following command to run the cmdlet:</span></span>
 
     `get-proc`
 
-## <a name="requirements"></a><span data-ttu-id="cf329-119">要件</span><span class="sxs-lookup"><span data-stu-id="cf329-119">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="dcfcb-119">必要条件</span><span class="sxs-lookup"><span data-stu-id="dcfcb-119">Requirements</span></span>
 
-<span data-ttu-id="cf329-120">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="cf329-120">This sample requires Windows PowerShell 2.0.</span></span>
+<span data-ttu-id="dcfcb-120">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-120">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="cf329-121">使用例</span><span class="sxs-lookup"><span data-stu-id="cf329-121">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="dcfcb-121">対象</span><span class="sxs-lookup"><span data-stu-id="dcfcb-121">Demonstrates</span></span>
 
-<span data-ttu-id="cf329-122">このサンプルでは、次のことを示します。</span><span class="sxs-lookup"><span data-stu-id="cf329-122">This sample demonstrates the following.</span></span>
+<span data-ttu-id="dcfcb-122">このサンプルでは、次のことを示します。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-122">This sample demonstrates the following.</span></span>
 
-- <span data-ttu-id="cf329-123">コマンドレットの属性を使用して、コマンドレットクラスを宣言します。</span><span class="sxs-lookup"><span data-stu-id="cf329-123">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
+- <span data-ttu-id="dcfcb-123">コマンドレットの属性を使用して、コマンドレットクラスを宣言します。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-123">Declaring a cmdlet class using the Cmdlet attribute.</span></span>
 
-- <span data-ttu-id="cf329-124">Parameter 属性を使用してコマンドレットパラメーターを宣言しています。</span><span class="sxs-lookup"><span data-stu-id="cf329-124">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
+- <span data-ttu-id="dcfcb-124">Parameter 属性を使用してコマンドレットパラメーターを宣言しています。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-124">Declaring a cmdlet parameter using the Parameter attribute.</span></span>
 
-- <span data-ttu-id="cf329-125">パラメーターの位置を指定します。</span><span class="sxs-lookup"><span data-stu-id="cf329-125">Specifying the position of the parameter.</span></span>
+- <span data-ttu-id="dcfcb-125">パラメーターの位置を指定します。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-125">Specifying the position of the parameter.</span></span>
 
-- <span data-ttu-id="cf329-126">パラメーター入力の検証属性を宣言しています。</span><span class="sxs-lookup"><span data-stu-id="cf329-126">Declaring a validation attribute for the parameter input.</span></span>
+- <span data-ttu-id="dcfcb-126">パラメーター入力の検証属性を宣言しています。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-126">Declaring a validation attribute for the parameter input.</span></span>
 
-## <a name="example"></a><span data-ttu-id="cf329-127">例</span><span class="sxs-lookup"><span data-stu-id="cf329-127">Example</span></span>
+## <a name="example"></a><span data-ttu-id="dcfcb-127">例</span><span class="sxs-lookup"><span data-stu-id="dcfcb-127">Example</span></span>
 
-<span data-ttu-id="cf329-128">このサンプルでは、`Name` パラメーターを含む Get Proc コマンドレットの実装を示します。</span><span class="sxs-lookup"><span data-stu-id="cf329-128">This sample shows an implementation of the Get-Proc cmdlet that includes a `Name` parameter.</span></span>
+<span data-ttu-id="dcfcb-128">このサンプルでは、パラメーターを含む Get Proc コマンドレットの実装を示し `Name` ます。</span><span class="sxs-lookup"><span data-stu-id="dcfcb-128">This sample shows an implementation of the Get-Proc cmdlet that includes a `Name` parameter.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Commands
@@ -135,6 +128,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="cf329-129">参照</span><span class="sxs-lookup"><span data-stu-id="cf329-129">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="dcfcb-129">参照</span><span class="sxs-lookup"><span data-stu-id="dcfcb-129">See Also</span></span>
 
-[<span data-ttu-id="cf329-130">Windows PowerShell コマンドレットの記述</span><span class="sxs-lookup"><span data-stu-id="cf329-130">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="dcfcb-130">Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)</span><span class="sxs-lookup"><span data-stu-id="dcfcb-130">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)

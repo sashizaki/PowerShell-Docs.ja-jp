@@ -1,43 +1,36 @@
 ---
 title: RemoteRunspacePool01 サンプル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: dffedd31-c10d-4e11-a9ee-4fdfe9a869e8
-caps.latest.revision: 8
-ms.openlocfilehash: 894c995474d4bf5b7fe11c1289c4500371c9dd43
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 77283008f1c6bce79cec60d426e3933508fced64
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367431"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783196"
 ---
-# <a name="remoterunspacepool01-sample"></a><span data-ttu-id="41941-102">RemoteRunspacePool01 サンプル</span><span class="sxs-lookup"><span data-stu-id="41941-102">RemoteRunspacePool01 Sample</span></span>
+# <a name="remoterunspacepool01-sample"></a><span data-ttu-id="c4a06-102">RemoteRunspacePool01 サンプル</span><span class="sxs-lookup"><span data-stu-id="c4a06-102">RemoteRunspacePool01 Sample</span></span>
 
-<span data-ttu-id="41941-103">このサンプルでは、リモートの実行空間プールを作成する方法と、このプールを使用して複数のコマンドを同時に実行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="41941-103">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
+<span data-ttu-id="c4a06-103">このサンプルでは、リモートの実行空間プールを作成する方法と、このプールを使用して複数のコマンドを同時に実行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c4a06-103">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="41941-104">要件</span><span class="sxs-lookup"><span data-stu-id="41941-104">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="c4a06-104">必要条件</span><span class="sxs-lookup"><span data-stu-id="c4a06-104">Requirements</span></span>
 
- <span data-ttu-id="41941-105">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="41941-105">This sample requires Windows PowerShell 2.0.</span></span>
+ <span data-ttu-id="c4a06-105">このサンプルには、Windows PowerShell 2.0 が必要です。</span><span class="sxs-lookup"><span data-stu-id="c4a06-105">This sample requires Windows PowerShell 2.0.</span></span>
 
-## <a name="demonstrates"></a><span data-ttu-id="41941-106">使用例</span><span class="sxs-lookup"><span data-stu-id="41941-106">Demonstrates</span></span>
+## <a name="demonstrates"></a><span data-ttu-id="c4a06-106">対象</span><span class="sxs-lookup"><span data-stu-id="c4a06-106">Demonstrates</span></span>
 
-- <span data-ttu-id="41941-107">[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを作成しています。</span><span class="sxs-lookup"><span data-stu-id="41941-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="c4a06-107">[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを作成しています。</span><span class="sxs-lookup"><span data-stu-id="c4a06-107">Creating a [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="41941-108">Wsmanconnectioninfo オブジェクトの[Runspaceconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) \* プロパティと[Runspaceconnectioninfo. Opentimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)プロパティを設定しています。この値を設定すると、[System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトのプロパティが設定されます。</span><span class="sxs-lookup"><span data-stu-id="41941-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
+- <span data-ttu-id="c4a06-108">Wsmanconnectioninfo オブジェクトの[Runspaceconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) \* プロパティと[Runspaceconnectioninfo. Opentimeout \*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout)プロパティを設定しています。この値を設定すると、 [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトのプロパティが設定されます。</span><span class="sxs-lookup"><span data-stu-id="c4a06-108">Setting the [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Operationtimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OperationTimeout) and [System.Management.Automation.Runspaces.Runspaceconnectioninfo.Opentimeout\*](/dotnet/api/System.Management.Automation.Runspaces.RunspaceConnectionInfo.OpenTimeout) properties of the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object.</span></span>
 
-- <span data-ttu-id="41941-109">リモート接続を確立するために[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを使用するリモート実行空間を作成する。</span><span class="sxs-lookup"><span data-stu-id="41941-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
+- <span data-ttu-id="c4a06-109">リモート接続を確立するために[Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo)オブジェクトを使用するリモート実行空間を作成する。</span><span class="sxs-lookup"><span data-stu-id="c4a06-109">Creating a remote runspace that uses the [System.Management.Automation.Runspaces.Wsmanconnectioninfo](/dotnet/api/System.Management.Automation.Runspaces.WSManConnectionInfo) object to establish the remote connection.</span></span>
 
-- <span data-ttu-id="41941-110">リモート実行空間プールを使用して、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)および[get Service](/powershell/module/microsoft.powershell.management/get-service)コマンドレットを同時に実行します。</span><span class="sxs-lookup"><span data-stu-id="41941-110">Running the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlets concurrently by using the remote runspace pool.</span></span>
+- <span data-ttu-id="c4a06-110">リモート実行空間プールを使用して、 [Get Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process)および[get Service](/powershell/module/microsoft.powershell.management/get-service)コマンドレットを同時に実行します。</span><span class="sxs-lookup"><span data-stu-id="c4a06-110">Running the [Get-Process](/powershell/module/Microsoft.PowerShell.Management/Get-Process) and [Get-Service](/powershell/module/microsoft.powershell.management/get-service) cmdlets concurrently by using the remote runspace pool.</span></span>
 
-- <span data-ttu-id="41941-111">リモート接続を解放するために、リモートの実行空間プールを閉じています。</span><span class="sxs-lookup"><span data-stu-id="41941-111">Closing the remote runspace pool to release the remote connection.</span></span>
+- <span data-ttu-id="c4a06-111">リモート接続を解放するために、リモートの実行空間プールを閉じています。</span><span class="sxs-lookup"><span data-stu-id="c4a06-111">Closing the remote runspace pool to release the remote connection.</span></span>
 
-## <a name="example"></a><span data-ttu-id="41941-112">例</span><span class="sxs-lookup"><span data-stu-id="41941-112">Example</span></span>
+## <a name="example"></a><span data-ttu-id="c4a06-112">例</span><span class="sxs-lookup"><span data-stu-id="c4a06-112">Example</span></span>
 
- <span data-ttu-id="41941-113">このサンプルでは、リモートの実行空間プールを作成する方法と、このプールを使用して複数のコマンドを同時に実行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="41941-113">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
+ <span data-ttu-id="c4a06-113">このサンプルでは、リモートの実行空間プールを作成する方法と、このプールを使用して複数のコマンドを同時に実行する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="c4a06-113">This sample shows how to construct a remote runspace pool and how to run multiple commands concurrently by using this pool.</span></span>
 
 ```csharp
 namespace Samples
@@ -132,4 +125,4 @@ namespace Samples
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="41941-114">参照</span><span class="sxs-lookup"><span data-stu-id="41941-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c4a06-114">参照</span><span class="sxs-lookup"><span data-stu-id="c4a06-114">See Also</span></span>
