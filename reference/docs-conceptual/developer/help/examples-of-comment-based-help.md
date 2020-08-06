@@ -1,20 +1,20 @@
 ---
 title: コメント ベースのヘルプの例
 ms.date: 09/12/2016
-ms.openlocfilehash: 3858fa7f15d71c505dacaf9679910d45ef4640e5
-ms.sourcegitcommit: de59ff77c6535fc772c1e327b3c823295eaed6ea
+ms.openlocfilehash: fe5d054c84952367a4e7c2d5d9e32551a4e5c3a8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/22/2020
-ms.locfileid: "86893494"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772299"
 ---
-# <a name="examples-of-comment-based-help"></a><span data-ttu-id="8fccd-102">コメント ベースのヘルプの例</span><span class="sxs-lookup"><span data-stu-id="8fccd-102">Examples of Comment-Based Help</span></span>
+# <a name="examples-of-comment-based-help"></a><span data-ttu-id="add65-102">コメント ベースのヘルプの例</span><span class="sxs-lookup"><span data-stu-id="add65-102">Examples of Comment-Based Help</span></span>
 
-<span data-ttu-id="8fccd-103">このトピックには、スクリプトや関数にコメントベースのヘルプを使用する方法を示す例が含まれています。</span><span class="sxs-lookup"><span data-stu-id="8fccd-103">This topic includes example that demonstrate how to use comment-based help for scripts and functions.</span></span>
+<span data-ttu-id="add65-103">このトピックには、スクリプトや関数にコメントベースのヘルプを使用する方法を示す例が含まれています。</span><span class="sxs-lookup"><span data-stu-id="add65-103">This topic includes example that demonstrate how to use comment-based help for scripts and functions.</span></span>
 
-## <a name="example-1-comment-based-help-for-a-function"></a><span data-ttu-id="8fccd-104">例 1: 関数のコメントベースのヘルプ</span><span class="sxs-lookup"><span data-stu-id="8fccd-104">Example 1: Comment-Based Help for a Function</span></span>
+## <a name="example-1-comment-based-help-for-a-function"></a><span data-ttu-id="add65-104">例 1: 関数のコメントベースのヘルプ</span><span class="sxs-lookup"><span data-stu-id="add65-104">Example 1: Comment-Based Help for a Function</span></span>
 
- <span data-ttu-id="8fccd-105">次のサンプル関数には、コメントベースのヘルプが含まれています。</span><span class="sxs-lookup"><span data-stu-id="8fccd-105">The following sample function includes comment-based Help.</span></span>
+ <span data-ttu-id="add65-105">次のサンプル関数には、コメントベースのヘルプが含まれています。</span><span class="sxs-lookup"><span data-stu-id="add65-105">The following sample function includes comment-based Help.</span></span>
 
 ```powershell
 function Add-Extension
@@ -64,7 +64,7 @@ function Add-Extension
 }
 ```
 
-<span data-ttu-id="8fccd-106">次の出力は、 `Get-Help` 関数のヘルプを表示するコマンドの結果を示して `Add-Extension` います。</span><span class="sxs-lookup"><span data-stu-id="8fccd-106">The following output shows the results of a `Get-Help` command that displays the help for the `Add-Extension` function.</span></span>
+<span data-ttu-id="add65-106">次の出力は、 `Get-Help` 関数のヘルプを表示するコマンドの結果を示して `Add-Extension` います。</span><span class="sxs-lookup"><span data-stu-id="add65-106">The following output shows the results of a `Get-Help` command that displays the help for the `Add-Extension` function.</span></span>
 
 ```powershell
 C:\PS> get-help add-extension -full
@@ -134,11 +134,11 @@ C:\PS> get-help add-extension -full
             Set-Item
 ```
 
-## <a name="example-2-comment-based-help-for-a-script"></a><span data-ttu-id="8fccd-107">例 2: スクリプトのコメントベースのヘルプ</span><span class="sxs-lookup"><span data-stu-id="8fccd-107">Example 2: Comment-Based Help for a Script</span></span>
+## <a name="example-2-comment-based-help-for-a-script"></a><span data-ttu-id="add65-107">例 2: スクリプトのコメントベースのヘルプ</span><span class="sxs-lookup"><span data-stu-id="add65-107">Example 2: Comment-Based Help for a Script</span></span>
 
-<span data-ttu-id="8fccd-108">次のサンプル関数には、コメントベースのヘルプが含まれています。</span><span class="sxs-lookup"><span data-stu-id="8fccd-108">The following sample function includes comment-based Help.</span></span>
+<span data-ttu-id="add65-108">次のサンプル関数には、コメントベースのヘルプが含まれています。</span><span class="sxs-lookup"><span data-stu-id="add65-108">The following sample function includes comment-based Help.</span></span>
 
-<span data-ttu-id="8fccd-109">終了とステートメントの間に空白行があることに注意して **#>** `Param` ください。</span><span class="sxs-lookup"><span data-stu-id="8fccd-109">Notice the blank lines between the closing **#>** and the `Param` statement.</span></span> <span data-ttu-id="8fccd-110">ステートメントが含まれていないスクリプトでは、 `Param` ヘルプトピックの最後のコメントと最初の関数宣言の間に、少なくとも2つの空白行が必要です。</span><span class="sxs-lookup"><span data-stu-id="8fccd-110">In a script that does not have a `Param` statement, there must be at least two blank lines between the final comment in the Help topic and the first function declaration.</span></span> <span data-ttu-id="8fccd-111">これらの空白行がない場合、はスクリプトでは `Get-Help` なく関数にヘルプトピックを関連付けます。</span><span class="sxs-lookup"><span data-stu-id="8fccd-111">Without these blank lines, `Get-Help` associates the Help topic with the function, instead of the script.</span></span>
+<span data-ttu-id="add65-109">終了とステートメントの間に空白行があることに注意して **#>** `Param` ください。</span><span class="sxs-lookup"><span data-stu-id="add65-109">Notice the blank lines between the closing **#>** and the `Param` statement.</span></span> <span data-ttu-id="add65-110">ステートメントが含まれていないスクリプトでは、 `Param` ヘルプトピックの最後のコメントと最初の関数宣言の間に、少なくとも2つの空白行が必要です。</span><span class="sxs-lookup"><span data-stu-id="add65-110">In a script that does not have a `Param` statement, there must be at least two blank lines between the final comment in the Help topic and the first function declaration.</span></span> <span data-ttu-id="add65-111">これらの空白行がない場合、はスクリプトでは `Get-Help` なく関数にヘルプトピックを関連付けます。</span><span class="sxs-lookup"><span data-stu-id="add65-111">Without these blank lines, `Get-Help` associates the Help topic with the function, instead of the script.</span></span>
 
 ```powershell
 <#
@@ -178,7 +178,7 @@ param ([string]$InputPath, [string]$OutPutPath)
 function Get-Data { }
 ```
 
-<span data-ttu-id="8fccd-112">次のコマンドは、スクリプトのヘルプを取得します。</span><span class="sxs-lookup"><span data-stu-id="8fccd-112">The following command gets the script Help.</span></span> <span data-ttu-id="8fccd-113">スクリプトは Path 環境変数に示されているディレクトリにないため、スクリプトヘルプを `Get-Help` 取得するコマンドではスクリプトパスを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="8fccd-113">Because the script is not in a directory that is listed in the Path environment variable, the `Get-Help` command that gets the script Help must specify the script path.</span></span>
+<span data-ttu-id="add65-112">次のコマンドは、スクリプトのヘルプを取得します。</span><span class="sxs-lookup"><span data-stu-id="add65-112">The following command gets the script Help.</span></span> <span data-ttu-id="add65-113">スクリプトは Path 環境変数に示されているディレクトリにないため、スクリプトヘルプを `Get-Help` 取得するコマンドではスクリプトパスを指定する必要があります。</span><span class="sxs-lookup"><span data-stu-id="add65-113">Because the script is not in a directory that is listed in the Path environment variable, the `Get-Help` command that gets the script Help must specify the script path.</span></span>
 
 ```powershell
 C:\PS> get-help c:\ps-test\update-month.ps1 -full
@@ -248,9 +248,9 @@ C:\PS> get-help c:\ps-test\update-month.ps1 -full
             RELATED LINKS
 ```
 
-## <a name="example-3-parameter-descriptions-in-a-param-statement"></a><span data-ttu-id="8fccd-114">例 3: Param ステートメント内のパラメーターの説明</span><span class="sxs-lookup"><span data-stu-id="8fccd-114">Example 3: Parameter Descriptions in a Param Statement</span></span>
+## <a name="example-3-parameter-descriptions-in-a-param-statement"></a><span data-ttu-id="add65-114">例 3: Param ステートメント内のパラメーターの説明</span><span class="sxs-lookup"><span data-stu-id="add65-114">Example 3: Parameter Descriptions in a Param Statement</span></span>
 
-<span data-ttu-id="8fccd-115">この例で `Param` は、関数またはスクリプトのステートメントでパラメーターの説明を挿入する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="8fccd-115">This example shows how to insert parameter descriptions in the `Param` statement of a function or script.</span></span> <span data-ttu-id="8fccd-116">この形式は、パラメーターの説明が brief の場合に最も役立ちます。</span><span class="sxs-lookup"><span data-stu-id="8fccd-116">This format is most useful when the parameter descriptions are brief.</span></span>
+<span data-ttu-id="add65-115">この例で `Param` は、関数またはスクリプトのステートメントでパラメーターの説明を挿入する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="add65-115">This example shows how to insert parameter descriptions in the `Param` statement of a function or script.</span></span> <span data-ttu-id="add65-116">この形式は、パラメーターの説明が brief の場合に最も役立ちます。</span><span class="sxs-lookup"><span data-stu-id="add65-116">This format is most useful when the parameter descriptions are brief.</span></span>
 
 ```powershell
 function Add-Extension
@@ -275,11 +275,11 @@ function Add-Extension
     #>
 ```
 
-<span data-ttu-id="8fccd-117">結果は、例1の結果と同じです。</span><span class="sxs-lookup"><span data-stu-id="8fccd-117">The results are the same as the results for Example 1.</span></span> <span data-ttu-id="8fccd-118">`Get-Help`パラメーターの説明は、キーワードが付いているかのように解釈され `.Parameter` ます。</span><span class="sxs-lookup"><span data-stu-id="8fccd-118">`Get-Help` interprets the parameter descriptions as though they were accompanied by the `.Parameter` keyword.</span></span>
+<span data-ttu-id="add65-117">結果は、例1の結果と同じです。</span><span class="sxs-lookup"><span data-stu-id="add65-117">The results are the same as the results for Example 1.</span></span> <span data-ttu-id="add65-118">`Get-Help`パラメーターの説明は、キーワードが付いているかのように解釈され `.Parameter` ます。</span><span class="sxs-lookup"><span data-stu-id="add65-118">`Get-Help` interprets the parameter descriptions as though they were accompanied by the `.Parameter` keyword.</span></span>
 
-## <a name="example-4--redirecting-to-an-xml-file"></a><span data-ttu-id="8fccd-119">例 4: XML ファイルへのリダイレクト</span><span class="sxs-lookup"><span data-stu-id="8fccd-119">Example 4:  Redirecting to an XML File</span></span>
+## <a name="example-4--redirecting-to-an-xml-file"></a><span data-ttu-id="add65-119">例 4: XML ファイルへのリダイレクト</span><span class="sxs-lookup"><span data-stu-id="add65-119">Example 4:  Redirecting to an XML File</span></span>
 
-<span data-ttu-id="8fccd-120">関数とスクリプトの XML ベースのヘルプトピックを記述できます。</span><span class="sxs-lookup"><span data-stu-id="8fccd-120">You can write XML-based Help topics for functions and scripts.</span></span> <span data-ttu-id="8fccd-121">コメントベースのヘルプは実装が簡単ですが、ヘルプコンテンツをより細かく制御する場合や、ヘルプトピックを複数の言語に変換する場合は、XML ベースのヘルプが必要です。次の例は、スクリプトの最初の数行を示して `Update-Month.ps1` います。</span><span class="sxs-lookup"><span data-stu-id="8fccd-121">Although comment-based Help is easier to implement, XML-based Help is required if you want more precise control over Help content or if you are translating Help topics into multiple languages.The following example shows the first few lines of the `Update-Month.ps1` script.</span></span> <span data-ttu-id="8fccd-122">スクリプトでは、キーワードを使用して、 `.ExternalHelp` スクリプトの XML ベースのヘルプトピックへのパスを指定します。</span><span class="sxs-lookup"><span data-stu-id="8fccd-122">The script uses the `.ExternalHelp` keyword to specify the path to an XML-based Help topic for the script.</span></span>
+<span data-ttu-id="add65-120">関数とスクリプトの XML ベースのヘルプトピックを記述できます。</span><span class="sxs-lookup"><span data-stu-id="add65-120">You can write XML-based Help topics for functions and scripts.</span></span> <span data-ttu-id="add65-121">コメントベースのヘルプは実装が簡単ですが、ヘルプコンテンツをより細かく制御する場合や、ヘルプトピックを複数の言語に変換する場合は、XML ベースのヘルプが必要です。次の例は、スクリプトの最初の数行を示して `Update-Month.ps1` います。</span><span class="sxs-lookup"><span data-stu-id="add65-121">Although comment-based Help is easier to implement, XML-based Help is required if you want more precise control over Help content or if you are translating Help topics into multiple languages.The following example shows the first few lines of the `Update-Month.ps1` script.</span></span> <span data-ttu-id="add65-122">スクリプトでは、キーワードを使用して、 `.ExternalHelp` スクリプトの XML ベースのヘルプトピックへのパスを指定します。</span><span class="sxs-lookup"><span data-stu-id="add65-122">The script uses the `.ExternalHelp` keyword to specify the path to an XML-based Help topic for the script.</span></span>
 
 ```powershell
 #  .ExternalHelp C:\MyScripts\Update-Month-Help.xml
@@ -289,7 +289,7 @@ function Add-Extension
     function Get-Data { }
 ```
 
-<span data-ttu-id="8fccd-123">次の例は、関数でキーワードを使用する方法を示して `.ExternalHelp` います。</span><span class="sxs-lookup"><span data-stu-id="8fccd-123">The following example shows the use of the `.ExternalHelp` keyword in a function.</span></span>
+<span data-ttu-id="add65-123">次の例は、関数でキーワードを使用する方法を示して `.ExternalHelp` います。</span><span class="sxs-lookup"><span data-stu-id="add65-123">The following example shows the use of the `.ExternalHelp` keyword in a function.</span></span>
 
 ```powershell
 function Add-Extension
@@ -302,9 +302,9 @@ function Add-Extension
 }
 ```
 
-## <a name="example-5--redirecting-to-a-different-help-topic"></a><span data-ttu-id="8fccd-124">例 5: 別のヘルプトピックへのリダイレクト</span><span class="sxs-lookup"><span data-stu-id="8fccd-124">Example 5:  Redirecting to a Different Help Topic</span></span>
+## <a name="example-5--redirecting-to-a-different-help-topic"></a><span data-ttu-id="add65-124">例 5: 別のヘルプトピックへのリダイレクト</span><span class="sxs-lookup"><span data-stu-id="add65-124">Example 5:  Redirecting to a Different Help Topic</span></span>
 
-<span data-ttu-id="8fccd-125">次のコードは、PowerShell の組み込み関数の先頭から抜粋したもので、一度 `Help` に1画面のヘルプテキストを表示します。</span><span class="sxs-lookup"><span data-stu-id="8fccd-125">The following code is an excerpt from the beginning of the built-in `Help` function in PowerShell, which displays one screen of Help text at a time.</span></span> <span data-ttu-id="8fccd-126">Get-help コマンドレットのヘルプトピックでは Help 関数について説明しているので、Help 関数はキーワードとキーワードを使用して `.ForwardHelpTargetName` `.ForwardHelpCategory` ユーザーを get-help コマンドレットのヘルプトピックにリダイレクトします。</span><span class="sxs-lookup"><span data-stu-id="8fccd-126">Because the Help topic for the Get-Help cmdlet describes the Help function, the Help function uses the `.ForwardHelpTargetName` and `.ForwardHelpCategory` keywords to redirect the user to the Get-Help cmdlet Help topic.</span></span>
+<span data-ttu-id="add65-125">次のコードは、PowerShell の組み込み関数の先頭から抜粋したもので、一度 `Help` に1画面のヘルプテキストを表示します。</span><span class="sxs-lookup"><span data-stu-id="add65-125">The following code is an excerpt from the beginning of the built-in `Help` function in PowerShell, which displays one screen of Help text at a time.</span></span> <span data-ttu-id="add65-126">Get-help コマンドレットのヘルプトピックでは Help 関数について説明しているので、Help 関数はキーワードとキーワードを使用して `.ForwardHelpTargetName` `.ForwardHelpCategory` ユーザーを get-help コマンドレットのヘルプトピックにリダイレクトします。</span><span class="sxs-lookup"><span data-stu-id="add65-126">Because the Help topic for the Get-Help cmdlet describes the Help function, the Help function uses the `.ForwardHelpTargetName` and `.ForwardHelpCategory` keywords to redirect the user to the Get-Help cmdlet Help topic.</span></span>
 
 ```powershell
 function help
@@ -322,7 +322,7 @@ function help
     ...
 ```
 
-<span data-ttu-id="8fccd-127">次のコマンドでは、この機能を使用します。</span><span class="sxs-lookup"><span data-stu-id="8fccd-127">The following command uses this feature.</span></span> <span data-ttu-id="8fccd-128">ユーザーが関数のコマンドを入力すると `Get-Help` `Help` 、によってコマンド `Get-Help` レットのヘルプトピックが表示され `Get-Help` ます。</span><span class="sxs-lookup"><span data-stu-id="8fccd-128">When a user types a `Get-Help` command for the `Help` function, `Get-Help` displays the Help topic for the `Get-Help` cmdlet.</span></span>
+<span data-ttu-id="add65-127">次のコマンドでは、この機能を使用します。</span><span class="sxs-lookup"><span data-stu-id="add65-127">The following command uses this feature.</span></span> <span data-ttu-id="add65-128">ユーザーが関数のコマンドを入力すると `Get-Help` `Help` 、によってコマンド `Get-Help` レットのヘルプトピックが表示され `Get-Help` ます。</span><span class="sxs-lookup"><span data-stu-id="add65-128">When a user types a `Get-Help` command for the `Help` function, `Get-Help` displays the Help topic for the `Get-Help` cmdlet.</span></span>
 
 ```powershell
 C:\PS> get-help help
