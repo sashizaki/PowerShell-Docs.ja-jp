@@ -1,23 +1,16 @@
 ---
 title: 選択セットの定義 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 00dbb5ee-93d4-4914-a082-ef4d8b236b5c
-caps.latest.revision: 16
-ms.openlocfilehash: 95eeb037b3b9190fec1212a68029624993f3fd9f
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 58c812b69f92c33304bf7fc7b2891cc2a0227918
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692286"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774305"
 ---
 # <a name="defining-selection-sets"></a>選択セットを定義する
 
-複数のビューおよびコントロールを作成する場合は、選択セットと呼ばれるオブジェクトのセットを定義できます。 選択セットを使用すると、各ビューまたはコントロールに対して個別に定義しなくても、オブジェクトを一度定義することができます。 通常、選択セットは、関連する一連の .NET オブジェクトがある場合に使用されます。 たとえば、 `FileSystem` 書式設定ファイル (types.ps1xml) では、複数のビューで使用されるファイルシステムの種類の選択セットが定義されています。
+複数のビューおよびコントロールを作成する場合は、選択セットと呼ばれるオブジェクトのセットを定義できます。 選択セットを使用すると、各ビューまたはコントロールに対して個別に定義しなくても、オブジェクトを一度定義することができます。 通常、選択セットは、関連する一連の .NET オブジェクトがある場合に使用されます。 たとえば、 `FileSystem` 書式設定ファイル (FileSystem.format.ps1xml) では、複数のビューで使用するファイルシステムの種類の選択セットが定義されています。
 
 ## <a name="where-selection-sets-are-defined-and-referenced"></a>選択セットが定義され参照されている場所
 
@@ -138,7 +131,7 @@ ms.locfileid: "83692286"
 
 [SelectionSet](./selectionset-element-format.md)
 
-[名前](./name-element-for-selectionset-format.md)
+[Name](./name-element-for-selectionset-format.md)
 
 [型](./types-element-for-selectionset-format.md)
 

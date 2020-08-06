@@ -1,11 +1,6 @@
 ---
 title: コマンドレットのパラメーター |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - optional parameters [PowerShell SDK]
 - aliases [PowerShell SDK]
@@ -14,14 +9,12 @@ helpviewer_keywords:
 - mandatory parameters [PowerShell SDK]
 - positional parameters [PowerShell SDK]
 - cmdlets [PowerShell SDK], parameters
-ms.assetid: 3f1cca5f-5b95-4bce-94a6-a22db1aefd47
-caps.latest.revision: 23
-ms.openlocfilehash: c1d8984f4aad7bae6f9be66a2222e2c74c8afa3d
-ms.sourcegitcommit: cab4e4e67dbed024864887c7f8984abb4db3a78b
+ms.openlocfilehash: 98b1d5fd0e7ffbf2d4d161f1bed73fb96a737bd4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "76022212"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774764"
 ---
 # <a name="cmdlet-parameters"></a>コマンドレットのパラメーター
 
@@ -47,13 +40,13 @@ ms.locfileid: "76022212"
 
 [パラメーター入力の検証](./validating-parameter-input.md)コマンドレットパラメーターに渡された引数を Windows PowerShell が検証する方法について説明します。
 
-[入力フィルターパラメーター](./input-filter-parameters.md)コマンドレットによって影響を与える入力オブジェクトのセットをフィルター処理する、`Filter`、`Include`、および `Exclude` パラメーターについて説明します。
+[入力フィルターパラメーター](./input-filter-parameters.md)コマンドレットによって `Filter` `Include` 影響を `Exclude` 与える入力オブジェクトのセットをフィルター処理する、、、およびの各パラメーターについて説明します。
 
-## <a name="related-sections"></a>関連セクション
+## <a name="related-sections"></a>関連項目
 
 [パラメーター入力を検証する方法](./how-to-validate-parameter-input.md)
 
-## <a name="see-also"></a>関連項目
+## <a name="see-also"></a>参照
 
 [パラメーター属性の宣言](./parameter-attribute-declaration.md)
 

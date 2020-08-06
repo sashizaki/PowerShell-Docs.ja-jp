@@ -1,19 +1,12 @@
 ---
 title: エラー情報の表示 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 76fcc0c1-9795-45d3-a564-40f822b657b5
-caps.latest.revision: 8
-ms.openlocfilehash: 4bc8666ee9053eb368402c8644558f4fe2dcc9ee
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: e542110e9c35a74c5d4c112b0a831f7f8ad9242e
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369971"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774577"
 ---
 # <a name="displaying-error-information"></a>エラー情報を表示する
 
@@ -26,7 +19,7 @@ $ stop-service lanmanworkstation
 You do not have sufficient permissions to stop the service Workstation.
 ```
 
-ただし、ユーザーは `$ErrorView` 変数を `"CategoryView"`に設定することによって、エラーをカテゴリ別に表示できます。 カテゴリビューでは、エラーの詳細な説明ではなく、エラーレコードからの特定の情報が表示されます。 このビューは、スキャンするエラーの一覧が長い場合に便利です。 カテゴリビューでは、前のエラーメッセージが次のように表示されます。
+ただし、ユーザーは変数をに設定することによって、エラーをカテゴリ別に表示でき `$ErrorView` `"CategoryView"` ます。 カテゴリビューでは、エラーの詳細な説明ではなく、エラーレコードからの特定の情報が表示されます。 このビューは、スキャンするエラーの一覧が長い場合に便利です。 カテゴリビューでは、前のエラーメッセージが次のように表示されます。
 
 ```powershell
 $ $ErrorView = "CategoryView"
@@ -38,6 +31,6 @@ CloseError: (System.ServiceProcess.ServiceController:ServiceController) [stop-se
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell エラーレコード](./windows-powershell-error-records.md)
+[Windows PowerShell エラー レコード](./windows-powershell-error-records.md)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

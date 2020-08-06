@@ -1,19 +1,12 @@
 ---
 title: ViewDefinitions 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 29840c10-2b30-4bb1-a8a0-ddf84d19c2d0
-caps.latest.revision: 18
-ms.openlocfilehash: c5ec80350c7707ccd41112ab5e1952e5dc198cca
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: a108c4f8b03e3dec3905181b390aee2c82ab0028
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72361421"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772486"
 ---
 # <a name="viewdefinitions-element-format"></a>ViewDefinitions 要素 (書式)
 
@@ -30,9 +23,9 @@ Configuration 要素 (Format) ViewDefinitions (フォーマット XML) 要素
 </ViewDefinitions>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`ViewDefinitions` 要素の属性、子要素、および親要素について説明します。 書式設定ファイルで定義できるビューの数に制限はありません。また、任意の順序で追加することもできます。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `ViewDefinitions` ます。 書式設定ファイルで定義できるビューの数に制限はありません。また、任意の順序で追加することもできます。
 
 ### <a name="attributes"></a>属性
 
@@ -40,31 +33,31 @@ Configuration 要素 (Format) ViewDefinitions (フォーマット XML) 要素
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[View 要素 (Format)](./view-element-format.md)|1つ以上の .NET オブジェクトを表示するために使用されるビューを定義します。|
+|[View 要素 (書式)](./view-element-format.md)|1つ以上の .NET オブジェクトを表示するために使用されるビューを定義します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[Configuration 要素 (形式)](./configuration-element-format.md)|書式設定ファイルのトップレベルの要素を表します。|
+|[Configuration 要素 (書式)](./configuration-element-format.md)|書式設定ファイルのトップレベルの要素を表します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 さまざまな種類のビューのコンポーネントの詳細については、次のトピックを参照してください。
 
-- [テーブルビューの作成](./creating-a-table-view.md)
+- [テーブル ビューを作成する](./creating-a-table-view.md)
 
-- [リストビューの作成](./creating-a-list-view.md)
+- [リスト ビューを作成する](./creating-a-list-view.md)
 
-- [ワイドビューの作成](./creating-a-wide-view.md)
+- [ワイド ビューを作成する](./creating-a-wide-view.md)
 
 - [カスタムコントロール](./creating-custom-controls.md)
 
 ## <a name="example"></a>例
 
-この例は、テーブルビューとリストビューの親要素を含む `ViewDefinitions` 要素を示しています。
+この例は、 `ViewDefinitions` テーブルビューとリストビューの親要素を含む要素を示しています。
 
 ```xml
 <Configuration>
@@ -81,16 +74,16 @@ Configuration 要素 (Format) ViewDefinitions (フォーマット XML) 要素
 
 ## <a name="see-also"></a>参照
 
-[Configuration 要素 (形式)](./configuration-element-format.md)
+[Configuration 要素 (書式)](./configuration-element-format.md)
 
-[View 要素 (Format)](./view-element-format.md)
+[View 要素 (書式)](./view-element-format.md)
 
-[テーブルビューの作成](./creating-a-table-view.md)
+[テーブル ビューを作成する](./creating-a-table-view.md)
 
-[リストビューの作成](./creating-a-list-view.md)
+[リスト ビューを作成する](./creating-a-list-view.md)
 
-[ワイドビューの作成](./creating-a-wide-view.md)
+[ワイド ビューを作成する](./creating-a-wide-view.md)
 
 [カスタムコントロール](./creating-custom-controls.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

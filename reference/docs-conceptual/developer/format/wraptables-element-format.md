@@ -1,19 +1,12 @@
 ---
 title: WrapTables 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 47358eca-7719-4d77-9e49-676b78e25aec
-caps.latest.revision: 7
-ms.openlocfilehash: 66d32f1a5c4994ae578aea0a2a52c2510f97a3b9
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: bb0bf4785eed0c2d271e01968cf2ccbc862d94c7
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72367921"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772316"
 ---
 # <a name="wraptables-element-format"></a>WrapTables 要素 (書式)
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) DefaultSettings 要素 (format) WrapTables 要素 
 <WrapTables/>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`WrapTables` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `WrapTables` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,12 +34,12 @@ Configuration 要素 (Format) DefaultSettings 要素 (format) WrapTables 要素 
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[DefaultSettings 要素 (Format)](./defaultsettings-element-format.md)|書式設定ファイルのすべてのビューに適用される共通設定を定義します。|
+|[DefaultSettings 要素 (書式)](./defaultsettings-element-format.md)|書式設定ファイルのすべてのビューに適用される共通設定を定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 ## <a name="see-also"></a>参照
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

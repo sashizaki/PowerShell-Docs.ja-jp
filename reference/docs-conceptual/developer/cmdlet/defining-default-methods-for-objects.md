@@ -1,19 +1,12 @@
 ---
 title: オブジェクトの既定のメソッドの定義 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 53fe744a-485f-4c21-9623-1cb546372211
-caps.latest.revision: 9
-ms.openlocfilehash: 346a194c6b4c81aa61a6331cdb62ae380a17bb1e
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 10917de9e897fc1eed362430d63ff5b9cb7e813d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365691"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774594"
 ---
 # <a name="defining-default-methods-for-objects"></a>オブジェクトの既定のメソッドを定義する
 
@@ -21,13 +14,13 @@ ms.locfileid: "72365691"
 これらのメソッドの定義に使用される XML については、次のセクションで説明します。
 
 > [!NOTE]
-> 次のセクションの例は、Windows PowerShell インストールディレクトリ (`$PSHOME`) の `Types.ps1xml` の種類のファイルに含まれています。 詳細については、「 [types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)」を参照してください。
+> 次のセクションの例は、 `Types.ps1xml` Windows PowerShell インストールディレクトリ () の種類のファイルに含まれてい `$PSHOME` ます。 詳細については、「 [About Types.ps1xml](/powershell/module/microsoft.powershell.core/about/about_types.ps1xml)」を参照してください。
 
 ## <a name="code-methods"></a>コードメソッド
 
 コードメソッドは、.NET Framework オブジェクトの静的メソッドを参照しています。
 
-次の例では、 **ToString**メソッドが[system.xml](/dotnet/api/System.Xml.XmlNode)型に追加されます。 [Pscodemethod](/dotnet/api/system.management.automation.pscodemethod)要素は、拡張メソッドをコードメソッドとして定義します。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name)要素は、拡張メソッドの名前を指定します。 また、 [Codereference 参照](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference)要素は静的メソッドを指定します。 [Pscodemethod](/dotnet/api/system.management.automation.pscodemethod)要素を[psmembers](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0)要素のメンバーに追加することもできます。
+次の例では、 **ToString**メソッドが[System.Xml.Xmlノード](/dotnet/api/System.Xml.XmlNode)型に追加されます。 [Pscodemethod](/dotnet/api/system.management.automation.pscodemethod)要素は、拡張メソッドをコードメソッドとして定義します。 [Name](/dotnet/api/system.management.automation.psmemberinfo.name?view=pscore-6.2.0#System_Management_Automation_PSMemberInfo_Name)要素は、拡張メソッドの名前を指定します。 また、 [Codereference 参照](/dotnet/api/system.management.automation.pscodemethod.codereference?view=pscore-6.2.0#System_Management_Automation_PSCodeMethod_CodeReference)要素は静的メソッドを指定します。 [Pscodemethod](/dotnet/api/system.management.automation.pscodemethod)要素を[psmembers](/dotnet/api/system.management.automation.psmemberset?view=pscore-6.2.0)要素のメンバーに追加することもできます。
 
 ```xml
 <Type>
@@ -62,6 +55,6 @@ ms.locfileid: "72365691"
 </Type>
 ```
 
-## <a name="see-also"></a>「
+## <a name="see-also"></a>関連項目
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

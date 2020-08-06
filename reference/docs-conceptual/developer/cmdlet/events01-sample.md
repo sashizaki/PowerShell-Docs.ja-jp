@@ -1,19 +1,12 @@
 ---
 title: Events01 サンプル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 27d0ee5e-2589-4530-92ef-c09996b80994
-caps.latest.revision: 10
-ms.openlocfilehash: 772f73793449856651ab6b03e1ccc14faed941fc
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: c7b0f759ca6f3c078649a462eac1713e8214a237
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83561449"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774459"
 ---
 # <a name="events01-sample"></a>Events01 サンプル
 
@@ -29,7 +22,7 @@ ms.locfileid: "83561449"
 2. ソリューション (.sln) ファイルのアイコンをダブルクリックします。
    これにより、Microsoft Visual Studio でサンプルプロジェクトが開きます。
 
-3. **[ビルド]** メニューで、**[ソリューションのビルド]** を選択します。
+3. **[ビルド]** メニューで、 **[ソリューションのビルド]** を選択します。
    サンプルのライブラリは、既定の `\bin` フォルダーまたはフォルダーに組み込まれ `\bin\debug` ます。
 
 ### <a name="how-to-run-the-sample"></a>サンプルを実行する方法
@@ -73,7 +66,7 @@ Set-Content $env:temp\test.txt "This is a test file"
 A file was created in the TEMP directory
 ```
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 

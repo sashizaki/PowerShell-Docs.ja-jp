@@ -1,23 +1,16 @@
 ---
 title: コマンドレットのサンプル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b99d53fc-0af9-426b-82ce-09955e031d4b
-caps.latest.revision: 13
-ms.openlocfilehash: 0fa4a5f804586c51ae6a36121f9aab041b0989cc
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 633e4a5108673b09a92679c7992421b6b3405b72
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365881"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774747"
 ---
 # <a name="cmdlet-samples"></a>コマンドレット サンプル
 
-このセクションでは、Windows PowerShell 2.0 SDK で提供されるサンプルコードについて説明します。 このセクションのトピックからコードをコピーするか、SDK と共にインストールされたソースファイルを開くことができます。 [Windows PowerShell 2.0 ソフトウェア開発キット (SDK)](https://www.microsoft.com/en-us/download/details.aspx?id=2560)には、各サンプルの ReadMe ファイル、ソースファイル、および Visual Studio プロジェクトファイルが用意されています。 SDK がインストールされているので、[`<Drive>:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\`] フォルダーの下にサンプルを見つけることができます。
+このセクションでは、Windows PowerShell 2.0 SDK で提供されるサンプルコードについて説明します。 このセクションのトピックからコードをコピーするか、SDK と共にインストールされたソースファイルを開くことができます。 [Windows PowerShell 2.0 ソフトウェア開発キット (SDK)](https://www.microsoft.com/en-us/download/details.aspx?id=2560)には、各サンプルの ReadMe ファイル、ソースファイル、および Visual Studio プロジェクトファイルが用意されています。 SDK がインストールされているので、このフォルダーの下にサンプルを見つけることができ `<Drive>:\Program Files (x86)\Microsoft SDKs\Windows\v7.0\Samples\sysmgmt\WindowsPowerShell\` ます。
 
 ## <a name="in-this-section"></a>このセクションの内容
 
@@ -31,7 +24,7 @@ ms.locfileid: "72365881"
 
 [GetProcessSample05 サンプル](./getprocesssample05-sample.md)このサンプルでは、Get Proc コマンドレットの完全なバージョンを示します。
 
-[StopProcessSample01 サンプル](./stopprocesssample01-sample.md)このサンプルでは、プロセスを停止する前にユーザーからのフィードバックを要求するコマンドレットを記述する方法と、ユーザーがコマンドレットにオブジェクトを返すことを示す `PassThru` パラメーターを実装する方法を示します。
+[StopProcessSample01 サンプル](./stopprocesssample01-sample.md)このサンプルでは、プロセスを停止する前にユーザーからのフィードバックを要求するコマンドレットを記述する方法と、 `PassThru` ユーザーがコマンドレットにオブジェクトを返すことを示すパラメーターを実装する方法を示します。
 
 [StopProcessSample02 サンプル](./stopprocesssample02-sample.md)このサンプルでは、ローカルコンピューター上のプロセスを停止している間に、デバッグメッセージ、詳細メッセージ、警告メッセージを書き込むコマンドレットを記述する方法を示します。
 
@@ -43,4 +36,4 @@ ms.locfileid: "72365881"
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

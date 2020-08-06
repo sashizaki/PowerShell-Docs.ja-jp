@@ -1,21 +1,14 @@
 ---
 title: コマンドレットにパラメーターセットを追加する |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - parameter sets [PowerShell Programmer's Guide]
-ms.assetid: a6131db4-fd6e-45f1-bd47-17e7174afd56
-caps.latest.revision: 8
-ms.openlocfilehash: 6e17ff3d8ad3f7b2c511b879c913633f320bf511
-ms.sourcegitcommit: 7f2479edd329dfdc55726afff7019d45e45f9156
+ms.openlocfilehash: b1e808694b02676d81101a2678cbea341c7bd52c
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/08/2020
-ms.locfileid: "80978629"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774985"
 ---
 # <a name="adding-parameter-sets-to-a-cmdlet"></a>コマンドレットにパラメーター セットを追加する
 
@@ -23,11 +16,11 @@ ms.locfileid: "80978629"
 
 Windows PowerShell では、パラメーターセットを、一緒に動作するパラメーターのグループとして定義します。 コマンドレットのパラメーターをグループ化することによって、ユーザーが指定するパラメーターのグループに基づいて機能を変更できる単一のコマンドレットを作成できます。
 
-2つのパラメーターセットを使用して異なる機能を定義するコマンドレットの例として、Windows PowerShell によって提供される `Get-EventLog` コマンドレットがあります。 このコマンドレットは、ユーザーが `List` または `LogName` パラメーターを指定すると、異なる情報を返します。 `LogName` パラメーターが指定されている場合、コマンドレットは、特定のイベントログ内のイベントに関する情報を返します。 `List` パラメーターが指定されている場合、コマンドレットは、ログファイル自体に関する情報 (含まれるイベント情報ではありません) を返します。 この場合、`List` パラメーターと `LogName` パラメーターによって、2つの異なるパラメーターセットが識別されます。
+2つのパラメーターセットを使用して異なる機能を定義するコマンドレットの例とし `Get-EventLog` て、Windows PowerShell によって提供されるコマンドレットがあります。 このコマンドレットは、ユーザーがまたはパラメーターを指定すると、異なる情報を返し `List` `LogName` ます。 パラメーターを指定した場合 `LogName` 、コマンドレットは、特定のイベントログ内のイベントに関する情報を返します。 パラメーターを指定した場合 `List` 、コマンドレットは、ログファイル自体に関する情報 (含まれるイベント情報ではありません) を返します。 この場合、 `List` `LogName` パラメーターとパラメーターは2つの異なるパラメーターセットを識別します。
 
 パラメーターセットについて覚えておく必要がある2つの重要な点は、Windows PowerShell ランタイムでは特定の入力に対して1つのパラメーターセットだけを使用し、各パラメーターセットには、そのパラメーターセットに対して一意のパラメーターを1つ以上含める必要があることです。
 
-最後の点を示すために、この Stop Proc コマンドレットは、`ProcessName`、`ProcessId`、および `InputObject`の3つのパラメーターセットを使用します。 これらの各パラメーターセットには、他のパラメーターセットに含まれていないパラメーターが1つあります。 パラメーターセットは他のパラメーターを共有できますが、コマンドレットは、一意のパラメーター `ProcessName`、`ProcessId`、および `InputObject` を使用して、Windows PowerShell ランタイムが使用するパラメーターのセットを識別します。
+最後の点を示すために、この Stop Proc コマンドレットは `ProcessName` 、、、およびの3つのパラメーターセットを使用し `ProcessId` `InputObject` ます。 これらの各パラメーターセットには、他のパラメーターセットに含まれていないパラメーターが1つあります。 パラメーターセットは他のパラメーターを共有できますが、コマンドレットは、一意のパラメーター、、およびを使用して、 `ProcessName` `ProcessId` `InputObject` Windows PowerShell ランタイムが使用するパラメーターのセットを識別します。
 
 ## <a name="declaring-the-cmdlet-class"></a>コマンドレットクラスの宣言
 
@@ -54,11 +47,11 @@ Public Class StopProcCommand
 
 ## <a name="declaring-the-parameters-of-the-cmdlet"></a>コマンドレットのパラメーターの宣言
 
-このコマンドレットは、コマンドレットへの入力として必要な3つのパラメーター (これらのパラメーターもパラメーターセットを定義します `Force`) と、コマンドレットがパイプラインを介して出力オブジェクトを送信するかどうかを決定する `PassThru` パラメーターを定義します。 既定では、このコマンドレットはパイプラインを介してオブジェクトを渡しません。 これらの最後の2つのパラメーターの詳細については、「[システムを変更するコマンドレットを作成](./creating-a-cmdlet-that-modifies-the-system.md)する」を参照してください。
+このコマンドレットは、コマンドレットへの入力として必要な3つのパラメーター (これらのパラメーターもパラメーターセットを定義します) と、コマンド `Force` `PassThru` レットがパイプラインを介して出力オブジェクトを送信するかどうかを決定するパラメーターを定義します。 既定では、このコマンドレットはパイプラインを介してオブジェクトを渡しません。 これらの最後の2つのパラメーターの詳細については、「[システムを変更するコマンドレットを作成](./creating-a-cmdlet-that-modifies-the-system.md)する」を参照してください。
 
 ### <a name="declaring-the-name-parameter"></a>Name パラメーターの宣言
 
-この入力パラメーターを使用すると、停止するプロセスの名前をユーザーが指定できます。 このパラメーターに対して設定されている `ProcessName` パラメーターを指定するのは、 [`ParameterSetName` attribute キーワード](/dotnet/api/System.Management.Automation.ParameterAttribute)であることに注意してください。
+この入力パラメーターを使用すると、停止するプロセスの名前をユーザーが指定できます。 `ParameterSetName`このパラメーターに設定されているパラメーターを指定することに注意して[ください。](/dotnet/api/System.Management.Automation.ParameterAttribute) `ProcessName`
 
 :::code language="csharp" source="~/../powershell-sdk-samples/SDK-2.0/csharp/StopProcessSample04/StopProcessSample04.cs" range="44-58":::
 
@@ -84,7 +77,7 @@ Private processNames() As String
 
 ### <a name="declaring-the-id-parameter"></a>Id パラメーターの宣言
 
-この入力パラメーターを使用すると、停止するプロセスの識別子をユーザーが指定できます。 System.object[属性の](/dotnet/api/System.Management.Automation.ParameterAttribute)`ParameterSetName` attribute キーワードは、`ProcessId` パラメーターセットを指定していることに注意してください。
+この入力パラメーターを使用すると、停止するプロセスの識別子をユーザーが指定できます。 System.object 属性 `ParameterSetName` の attribute キーワードによっ[System.Management.Automation.Parameterattribute](/dotnet/api/System.Management.Automation.ParameterAttribute)て、パラメーターセットが指定されていることに注意して `ProcessId` ください。
 
 ```csharp
 [Parameter(
@@ -122,7 +115,7 @@ Private processIds() As Integer
 
 ### <a name="declaring-the-inputobject-parameter"></a>InputObject パラメーターの宣言
 
-この入力パラメーターを使用すると、停止するプロセスに関する情報を含む入力オブジェクトをユーザーが指定できます。 このパラメーターに対して設定されている `InputObject` パラメーターを指定するのは、 [`ParameterSetName` attribute キーワード](/dotnet/api/System.Management.Automation.ParameterAttribute)であることに注意してください。
+この入力パラメーターを使用すると、停止するプロセスに関する情報を含む入力オブジェクトをユーザーが指定できます。 `ParameterSetName`このパラメーターに設定されているパラメーターを指定することに注意して[ください。](/dotnet/api/System.Management.Automation.ParameterAttribute) `InputObject`
 
 ```csharp
 [Parameter(
@@ -213,7 +206,7 @@ End Sub 'ProcessRecord ' ProcessRecord
 
 ## <a name="code-sample"></a>コード サンプル
 
-完全なC#サンプルコードについては、「 [StopProcessSample04 sample](./stopprocesssample04-sample.md)」を参照してください。
+完全な C# サンプルコードについては、「 [StopProcessSample04 sample](./stopprocesssample04-sample.md)」を参照してください。
 
 ## <a name="defining-object-types-and-formatting"></a>オブジェクトの種類と書式設定の定義
 
@@ -225,9 +218,9 @@ Windows PowerShell は、.NET オブジェクトを使用してコマンドレ�
 
 ## <a name="testing-the-cmdlet"></a>コマンドレットのテスト
 
-コマンドレットが Windows PowerShell に登録されている場合は、コマンドラインで実行してテストします。 ここでは、`ProcessId` パラメーターと `InputObject` パラメーターを使用してパラメーターセットをテストしてプロセスを停止する方法を示すテストをいくつか示します。
+コマンドレットが Windows PowerShell に登録されている場合は、コマンドラインで実行してテストします。 ここでは、 `ProcessId` パラメーターとパラメーターを使用して、 `InputObject` プロセスを停止するためにパラメーターセットをテストする方法を示すテストをいくつか示します。
 
-- Windows PowerShell を起動したら、`ProcessId` パラメーターを設定して Stop Proc コマンドレットを実行し、その識別子に基づいてプロセスを停止します。 この場合、コマンドレットは `ProcessId` パラメーターセットを使用してプロセスを停止します。
+- Windows PowerShell を起動した状態で、パラメーターを設定して Stop Proc コマンドレットを実行し、 `ProcessId` その識別子に基づいてプロセスを停止します。 この場合、コマンドレットはパラメーターセットを使用して `ProcessId` プロセスを停止します。
 
   ```
   PS> stop-proc -Id 444
@@ -237,7 +230,7 @@ Windows PowerShell は、.NET オブジェクトを使用してコマンドレ�
   [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"): Y
   ```
 
-- Windows PowerShell を起動したら、`InputObject` パラメーターを設定して Stop Proc コマンドレットを実行し、`Get-Process` コマンドによって取得されるメモ帳オブジェクトのプロセスを停止します。
+- Windows PowerShell を起動したら、パラメーターを設定して Stop Proc コマンドレットを実行し、 `InputObject` コマンドによって取得されるメモ帳オブジェクトのプロセスを停止し `Get-Process` ます。
 
   ```
   PS> get-process notepad | stop-proc

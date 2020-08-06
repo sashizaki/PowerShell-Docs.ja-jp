@@ -1,19 +1,12 @@
 ---
 title: 型の TypeName 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0595b99e-b438-4240-b47b-555cf0316f33
-caps.latest.revision: 15
-ms.openlocfilehash: bd5baa03c2050b2c3bbe1d7697c253d923175d39
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 40fad73c66124d6c3b0d969b4268713a492c963a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368031"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772537"
 ---
 # <a name="typename-element-for-types-format"></a>Types の TypeName 要素 (書式)
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) SelectionSets 要素 (形式) Selectionsets 要素
 <TypeName>Nameof.NetType</Name>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`TypeName` 要素の属性、子要素、および親要素について説明します。 選択セットには、少なくとも1つの `TypeName` 要素が含まれている必要があります。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `TypeName` ます。 `TypeName`選択セットには、少なくとも1つの要素を含める必要があります。
 
 ### <a name="attributes"></a>属性
 
@@ -41,7 +34,7 @@ Configuration 要素 (Format) SelectionSets 要素 (形式) Selectionsets 要素
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[Types 要素 (Format)](./types-element-for-selectionset-format.md)|選択セット内の .NET オブジェクトを定義します。|
 
@@ -49,15 +42,15 @@ Configuration 要素 (Format) SelectionSets 要素 (形式) Selectionsets 要素
 
 .NET 型の完全修飾名を指定します。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 継承によって関連付けられたオブジェクトのセットなど、1つの名前を使用して参照する関連オブジェクトのセットがある場合は、選択セットを使用できます。 ビューを定義するときに、各ビュー内のすべてのオブジェクトを一覧表示するのではなく、選択したセットの名前を使用してオブジェクトのセットを指定できます。
 
-共通選択セットは、書式設定ファイルのビューを定義するときに、名前によって指定されます。 このような場合、ビューの `ViewSelectedBy` 要素の `SelectionSetName` 子要素によって、セットが指定されます。 ただし、ビューのエントリごとに、そのビューのエントリのみに適用される選択セットを指定することもできます。 選択セットの詳細については、「[オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
+共通選択セットは、書式設定ファイルのビューを定義するときに、名前によって指定されます。 このような場合は、 `SelectionSetName` ビューの要素の子要素によって `ViewSelectedBy` セットが指定されます。 ただし、ビューのエントリごとに、そのビューのエントリのみに適用される選択セットを指定することもできます。 選択セットの詳細については、「[オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-次の例は、4つの .NET 型を定義する `SelectionSet` 要素を示しています。
+次の例は、 `SelectionSet` 4 つの .net 型を定義する要素を示しています。
 
 ```
 <SelectionSets>
@@ -75,12 +68,12 @@ Configuration 要素 (Format) SelectionSets 要素 (形式) Selectionsets 要素
 
 ## <a name="see-also"></a>参照
 
-[選択セットの定義](./defining-selection-sets.md)
+[選択セットを定義する](./defining-selection-sets.md)
 
-[SelectionSet 要素 (形式)](./selectionset-element-format.md)
+[SelectionSet 要素 (書式)](./selectionset-element-format.md)
 
-[SelectionSets 要素 (Format)](./selectionsets-element-format.md)
+[SelectionSets 要素 (書式)](./selectionsets-element-format.md)
 
 [Types 要素 (Format)](./types-element-for-selectionset-format.md)
 
-[Windows PowerShell のフォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[Windows PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

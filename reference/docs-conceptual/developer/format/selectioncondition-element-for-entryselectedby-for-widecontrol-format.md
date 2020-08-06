@@ -1,25 +1,18 @@
 ---
 title: WideControl (Format) の EntrySelectedBy の SelectionCondition 要素Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: b7a9f086-b1ca-4400-9be7-9ec1ec8880f3
-caps.latest.revision: 11
-ms.openlocfilehash: f20679e3392b99a049c075f24c7712262bab08e1
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 4115ad1ee8729ea4fc16bc19698018d2f4ed9be1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72364781"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772707"
 ---
 # <a name="selectioncondition-element-for-entryselectedby-for-widecontrol-format"></a>WideControl の EntrySelectedBy の SelectionCondition 要素 (書式)
 
 この定義を使用するために必要な条件を定義します。 ワイドエントリの定義に指定できる選択条件の数に制限はありません。
 
-Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) WideControl Element (format) WideEntries Element (format) WideEntry Element (format) WideEntry (Format) SelectionCondition 要素の (Format) 項目の EntrySelectedBy 要素WideEntry の EntrySelectedBy (形式)
+Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (Format) WideControl Element (format) WideEntries Element (format) WideEntry Element (format) WideEntry (Format) の (Format) SelectionCondition 要素の EntrySelectedBy for WideEntry (Format)
 
 ## <a name="syntax"></a>構文
 
@@ -32,9 +25,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </SelectionCondition>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`SelectionCondition` 要素の属性、子要素、および親要素について説明します。 1つの `PropertyName` または `ScriptBlock` 要素を指定する必要があります。 `SelectionSetName` 要素と `TypeName` 要素は省略可能です。 いずれかの要素を指定できます。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `SelectionCondition` ます。 1つまたは複数の要素を指定する必要があり `PropertyName` `ScriptBlock` ます。 `SelectionSetName`要素と `TypeName` 要素は省略可能です。 いずれかの要素を指定できます。
 
 ### <a name="attributes"></a>属性
 
@@ -42,20 +35,20 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[WideEntry (Format) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
+|[WideEntry の EntrySelectedBy の SelectionCondition の PropertyName 要素 (書式)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET プロパティを指定します。|
 |[WideEntry (Format) の EntrySelectedBy の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーするスクリプトブロックを指定します。|
-|[EntrySelectedBy for WideEntry (Format) の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型のセットを指定します。|
+|[WideEntry の EntrySelectedBy の SelectionCondition の SelectionSetName 要素 (書式)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型のセットを指定します。|
 |[WideEntry (Format) の EntrySelectedBy の SelectionCondition の TypeName 要素](./typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)|省略可能な要素です。<br /><br /> 条件をトリガーする .NET 型を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[WideEntry の EntrySelectedBy 要素 (形式)](./entryselectedby-element-for-wideentry-format.md)|このワイドエントリを使用する .NET 型、またはこのエントリが使用されるために必要な条件を定義します。|
+|[WideEntry の EntrySelectedBy 要素 (書式)](./entryselectedby-element-for-wideentry-format.md)|このワイドエントリを使用する .NET 型、またはこのエントリが使用されるために必要な条件を定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 各ワイドエントリには、少なくとも1つの型名、選択セット、または選択条件が定義されている必要があります。
 
@@ -71,18 +64,18 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ## <a name="see-also"></a>参照
 
-[ワイドビューの作成](./creating-a-wide-view.md)
+[ワイド ビューを作成する](./creating-a-wide-view.md)
 
 [データを表示するときの条件の定義](./defining-conditions-for-displaying-data.md)
 
-[WideEntry の EntrySelectedBy 要素 (形式)](./entryselectedby-element-for-wideentry-format.md)
+[WideEntry の EntrySelectedBy 要素 (書式)](./entryselectedby-element-for-wideentry-format.md)
 
-[WideEntry (Format) の EntrySelectedBy の SelectionCondition の PropertyName 要素](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
+[WideEntry の EntrySelectedBy の SelectionCondition の PropertyName 要素 (書式)](./propertyname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
 
 [WideEntry (Format) の EntrySelectedBy の SelectionCondition の ScriptBlock 要素](./scriptblock-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)
 
-[EntrySelectedBy for WideEntry (Format) の SelectionCondition の SelectionSetName 要素](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
+[WideEntry の EntrySelectedBy の SelectionCondition の SelectionSetName 要素 (書式)](./selectionsetname-element-for-selectioncondition-for-entryselectedby-for-wideentry-format.md)
 
 [WideEntry (Format) の EntrySelectedBy の SelectionCondition の TypeName 要素](./typename-element-for-selectioncondition-for-entryselectedby-for-widecontrol-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

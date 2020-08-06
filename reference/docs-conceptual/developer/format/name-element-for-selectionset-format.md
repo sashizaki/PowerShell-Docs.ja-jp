@@ -1,19 +1,12 @@
 ---
 title: SelectionSet の Name 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 914917f7-0efc-4d1f-88bd-de714bedd98f
-caps.latest.revision: 15
-ms.openlocfilehash: 29dbdbd335511e4ca2706a625541554825838f23
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 1fc33eeb87a6912ed6793629ab1969cd65b5f0c5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72362671"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773302"
 ---
 # <a name="name-element-for-selectionset-format"></a>SelectionSet の Name 要素 (書式)
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) SelectionSets 要素 (形式) Selectionsets 要素
 <Name>Name of selection set</Name>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`Name` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `Name` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,21 +34,21 @@ Configuration 要素 (Format) SelectionSets 要素 (形式) Selectionsets 要素
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[SelectionSet 要素 (形式)](./selectionset-element-format.md)|セットの名前で参照できる .NET オブジェクトの1つのセットを定義します。|
+|[SelectionSet 要素 (書式)](./selectionset-element-format.md)|セットの名前で参照できる .NET オブジェクトの1つのセットを定義します。|
 
 ## <a name="text-value"></a>テキスト値
 
 選択セットを参照する名前を指定します。 使用できる文字に関する制限はありません。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
-ここで指定された名前は、`SelectionSetName` 要素で使用されます。 ビューで使用できる選択セット (ビューには複数の定義を含めることができます)、または選択条件を指定する場合に使用できます。 選択セットの詳細については、「[オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
+ここで指定された名前は、要素で使用され `SelectionSetName` ます。 ビューで使用できる選択セット (ビューには複数の定義を含めることができます)、または選択条件を指定する場合に使用できます。 選択セットの詳細については、「[オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
 
 ## <a name="example"></a>例
 
-この例は、4つの .NET 型を定義する `SelectionSet` 要素を示しています。 選択セットの名前は "FileSystemTypes" です。
+この例は、 `SelectionSet` 4 つの .net 型を定義する要素を示しています。 選択セットの名前は "FileSystemTypes" です。
 
 ```xml
 <SelectionSets>
@@ -73,8 +66,8 @@ Configuration 要素 (Format) SelectionSets 要素 (形式) Selectionsets 要素
 
 ## <a name="see-also"></a>参照
 
-[選択セットの定義](./defining-selection-sets.md)
+[選択セットを定義する](./defining-selection-sets.md)
 
-[SelectionSet 要素 (形式)](./selectionset-element-format.md)
+[SelectionSet 要素 (書式)](./selectionset-element-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

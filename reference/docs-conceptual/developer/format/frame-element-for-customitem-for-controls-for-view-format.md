@@ -1,25 +1,18 @@
 ---
 title: ビュー用のコントロールの CustomItem の Frame 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a5729091-78a9-4bc1-abac-210bc20c6dbe
-caps.latest.revision: 7
-ms.openlocfilehash: f93dc20a9c5f87c14605578062b1e60f5a3d25cf
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 5ade36c183a026cb9001a2abbe91d31638a87108
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363651"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87773455"
 ---
 # <a name="frame-element-for-customitem-for-controls-for-view-format"></a>View の Controls の CustomItem の Frame 要素 (書式)
 
 データを左右に移動するなど、データの表示方法を定義します。 この要素は、ビューで使用できるコントロールを定義するときに使用されます。
 
-Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (書式) コントロールの要素 (書式) コントロールのコントロール要素を表示するためのコントロール (format) の CustomControl 要素のコントロール要素CustomControl for view (format) CustomEntry 要素は、ビュー (Format) のコントロールに対して Customentries のビュー (format) フレーム要素のビュー (書式) の Customentries 要素のコントロールの CustomEntries 要素を表示します。
+Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (書式) コントロールの要素 (形式) コントロールのコントロール要素を表示するためのコントロールの CustomControl 要素 (format) CustomControl のビュー (書式) の CustomEntries 要素 for view (format) CustomEntry 要素を使用して、コントロールのカスタム項目のビュー (形式) の Customentries 要素を表示するためのコントロールの Customentries の Frame 要素を表示するためのコントロール (形式)
 
 ## <a name="syntax"></a>構文
 
@@ -33,9 +26,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 </Frame>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`Frame` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `Frame` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -43,7 +36,7 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |`CustomItem Element`|必須の要素|
 |[ビューのコントロールのフレームの FirstLineHanging 要素 (形式)](./firstlinehanging-element-for-frame-for-controls-for-view-format.md)|省略可能な要素です。<br /><br /> 最初の行を左にシフトする文字数を指定します。|
@@ -53,13 +46,13 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[ビュー用のコントロール用の Custommentry の CustomItem 要素 (形式)](./customitem-element-for-customentry-for-controls-for-view-format.md)|コントロールによって表示されるデータとその表示方法を定義します。|
+|[View の Controls の CustomEntry の CustomItem 要素 (書式)](./customitem-element-for-customentry-for-controls-for-view-format.md)|コントロールによって表示されるデータとその表示方法を定義します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
-同じ `Frame` 要素で[Firstlinehanging](./firstlinehanging-element-for-frame-for-controls-for-view-format.md)と[firstlinehanging](./firstlineindent-element-for-frame-for-controls-for-view-format.md)要素を指定することはできません。
+同じ要素で[Firstlinehanging](./firstlinehanging-element-for-frame-for-controls-for-view-format.md)と[firstlinehanging](./firstlineindent-element-for-frame-for-controls-for-view-format.md)要素を指定することはできません `Frame` 。
 
 ## <a name="see-also"></a>参照
 
@@ -71,6 +64,6 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 [ビューのコントロールのフレームの右インデント要素 (書式)](./rightindent-element-for-frame-for-controls-for-view-format.md)
 
-[ビュー用のコントロール用の Custommentry の CustomItem 要素 (形式)](./customitem-element-for-customentry-for-controls-for-view-format.md)
+[View の Controls の CustomEntry の CustomItem 要素 (書式)](./customitem-element-for-customentry-for-controls-for-view-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

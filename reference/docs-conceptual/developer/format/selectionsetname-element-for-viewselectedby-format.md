@@ -1,19 +1,12 @@
 ---
 title: ViewSelectedBy (Format) の SelectionSetName 要素Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 8ab0f033-df09-4435-a8bd-76ec2d01f13b
-caps.latest.revision: 13
-ms.openlocfilehash: d1de2b30860bac80bf17508f40eec33c2794c4b2
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: f6410b463bcb00d2758849c2f7e13cd839277e50
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72368261"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772605"
 ---
 # <a name="selectionsetname-element-for-viewselectedby-format"></a>ViewSelectedBy の SelectionSetName 要素 (書式)
 
@@ -27,9 +20,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 <SelectionSetName>Name of selection set<SelectionSetName>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`SelectionSetName` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `SelectionSetName` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,15 +34,15 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
-|[ViewSelectedBy 要素 (形式)](./viewselectedby-element-format.md)|ビューに表示される .NET オブジェクトを定義します。|
+|[ViewSelectedBy 要素 (書式)](./viewselectedby-element-format.md)|ビューに表示される .NET オブジェクトを定義します。|
 
 ## <a name="text-value"></a>テキスト値
 
-選択セットの `Name` 要素によって定義される選択セットの名前を指定します。
+選択セットの要素によって定義される選択セットの名前を指定し `Name` ます。
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 継承によって関連付けられたオブジェクトのセットなど、1つの名前を使用して参照する関連オブジェクトのセットがある場合は、選択セットを使用できます。 選択セットの定義と参照の詳細については、「[オブジェクトのセットの定義](./defining-selection-sets.md)」を参照してください。
 
@@ -69,8 +62,8 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (�
 
 ## <a name="see-also"></a>参照
 
-[選択セットの定義](./defining-selection-sets.md)
+[選択セットを定義する](./defining-selection-sets.md)
 
-[ViewSelectedBy 要素 (形式)](./viewselectedby-element-format.md)
+[ViewSelectedBy 要素 (書式)](./viewselectedby-element-format.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

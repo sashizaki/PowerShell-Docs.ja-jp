@@ -1,19 +1,12 @@
 ---
 title: WideEntry の EntrySelectedBy 要素 (Format) |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: e0c98933-b7a5-4205-b811-06c0b0bf8988
-caps.latest.revision: 9
-ms.openlocfilehash: 54c7c261a23075721cd7bce75e530150dc0e0212
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: ba0a776839c39d753d12859335388c5326639fd4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363331"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774084"
 ---
 # <a name="entryselectedby-element-for-wideentry-format"></a>WideEntry の EntrySelectedBy 要素 (書式)
 
@@ -31,9 +24,9 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 </EntrySelectedBy>
 ```
 
-## <a name="attributes-and-elements"></a>属性と要素
+## <a name="attributes-and-elements"></a>属性および要素
 
-次のセクションでは、`EntrySelectedBy` 要素の属性、子要素、および親要素について説明します。
+次のセクションでは、要素の属性、子要素、および親要素について説明し `EntrySelectedBy` ます。
 
 ### <a name="attributes"></a>属性
 
@@ -41,23 +34,23 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 ### <a name="child-elements"></a>子要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[WideEntry (Format) の EntrySelectedBy の SelectionCondition 要素](./selectioncondition-element-for-entryselectedby-for-widecontrol-format.md)|省略可能な要素です。<br /><br /> このワイドビュー定義を使用するために必要な条件を定義します。|
 |[WideEntry (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)|省略可能な要素です。<br /><br /> このワイドビュー定義を使用する一連の .NET 型を指定します。|
-|[WideEntry (Format) の EntrySelectedBy の TypeName 要素](./typename-element-for-entryselectedby-for-wideentry-format.md)|省略可能な要素です。<br /><br /> このワイドビュー定義を使用する .NET 型を指定します。|
+|[WideEntry の EntrySelectedBy の TypeName 要素 (書式)](./typename-element-for-entryselectedby-for-wideentry-format.md)|省略可能な要素です。<br /><br /> このワイドビュー定義を使用する .NET 型を指定します。|
 
 ### <a name="parent-elements"></a>親要素
 
-|要素|[説明]|
+|要素|説明|
 |-------------|-----------------|
 |[WideEntry 要素 (Format)](./wideentry-element-for-widecontrol-format.md)|ワイドビューの定義を提供します。|
 
-## <a name="remarks"></a>コメント
+## <a name="remarks"></a>解説
 
 ワイドビュー定義には、少なくとも1つの種類、選択セット、または選択条件を指定する必要があります。 使用できる子要素の数に上限はありません。
 
-選択条件は、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプト値が `true`に評価される場合など、使用する定義のために存在する必要がある条件を定義するために使用されます。 選択条件の詳細については、「[データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
+選択条件は、オブジェクトに特定のプロパティがある場合や、特定のプロパティ値またはスクリプト値がに評価される場合など、使用する定義のために存在する必要がある条件を定義するために使用され `true` ます。 選択条件の詳細については、「[データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)」を参照してください。
 
 ワイドビューのその他のコンポーネントの詳細については、「[ワイドビューの作成](./creating-a-wide-view.md)」を参照してください。
 
@@ -69,10 +62,10 @@ Configuration 要素 (Format) ViewDefinitions 要素 (書式) ビュー要素 (F
 
 [WideEntry (Format) の EntrySelectedBy の SelectionSetName 要素](./selectionsetname-element-for-entryselectedby-for-widecontrol-format.md)
 
-[WideEntry (Format) の EntrySelectedBy の TypeName 要素](./typename-element-for-entryselectedby-for-wideentry-format.md)
+[WideEntry の EntrySelectedBy の TypeName 要素 (書式)](./typename-element-for-entryselectedby-for-wideentry-format.md)
 
-[ワイドビューの作成](./creating-a-wide-view.md)
+[ワイド ビューを作成する](./creating-a-wide-view.md)
 
-[データを表示するための条件の定義](./defining-conditions-for-displaying-data.md)
+[データの表示条件を定義する](./defining-conditions-for-displaying-data.md)
 
-[PowerShell フォーマットファイルの作成](./writing-a-powershell-formatting-file.md)
+[PowerShell 書式設定ファイルを記述する](./writing-a-powershell-formatting-file.md)

@@ -1,23 +1,16 @@
 ---
-title: Windows PowerShell プログラマーズ&#39;ガイド |Microsoft Docs
-ms.custom: ''
+title: Windows PowerShell プログラマーズ&#39;s ガイド |Microsoft Docs
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
 helpviewer_keywords:
 - Windows PowerShell Programmer's Guide
-ms.assetid: f3aaf667-af84-4ea8-a5ad-d454d0d700b8
-caps.latest.revision: 9
-ms.openlocfilehash: f8cbaf464345b8f2b693e72f3dbe781a47605b28
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 64feb66b8e42ab12b279025ebe6c86d7f91ecae5
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74417779"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771568"
 ---
-# <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell プログラマーズ&#39;ガイド
+# <a name="windows-powershell-programmer39s-guide"></a>Windows PowerShell プログラマーズ&#39;s ガイド
 
 このプログラマーズガイドは、システム管理者向けのコマンドライン管理環境を提供することに関心がある開発者を対象としています。 Windows PowerShell では、.NET オブジェクトを公開する管理コマンドを簡単に構築できます。一方、Windows PowerShell では、ほとんどの作業を行うことができます。
 
@@ -37,7 +30,7 @@ ms.locfileid: "74417779"
 
 Windows PowerShell では、開発で使用できるコマンドの種類がいくつか定義されています。 これらのコマンドには、関数、フィルター、スクリプト、エイリアス、および実行可能ファイル (アプリケーション) があります。 このガイドで説明されている主なコマンドの種類は、"コマンドレット" と呼ばれる単純な小さなコマンドです。 Windows PowerShell は、一連のコマンドレットを提供し、環境に合わせてコマンドレットのカスタマイズを完全にサポートしています。 Windows PowerShell ランタイムは、コマンドレットと同じように、パイプラインを使用して、すべてのコマンドの種類を処理します。
 
-Windows PowerShell では、コマンドに加えて、特定のコマンドレットのセットを提供するさまざまなカスタマイズ可能な Windows PowerShell プロバイダーがサポートされています。 シェルは、Windows PowerShell によって提供されるホストアプリケーション (Windows PowerShell .exe) 内で動作しますが、特定の要件を満たすために開発できるカスタムホストアプリケーションからも同様にアクセスできます。 詳細については、「 [Windows PowerShell のしくみ](/previous-versions//ms714658(v=vs.85))」を参照してください。
+Windows PowerShell では、コマンドに加えて、特定のコマンドレットのセットを提供するさまざまなカスタマイズ可能な Windows PowerShell プロバイダーがサポートされています。 シェルは、Windows PowerShell によって提供されるホストアプリケーション (Windows PowerShell.exe) 内で動作しますが、特定の要件を満たすために開発できるカスタムホストアプリケーションからも同様にアクセスできます。 詳細については、「 [Windows PowerShell のしくみ](/previous-versions//ms714658(v=vs.85))」を参照してください。
 
 ### <a name="windows-powershell-cmdlets"></a>Windows PowerShell コマンドレット
 
@@ -55,7 +48,7 @@ Windows PowerShell には、いくつかの既定の Windows PowerShell プロ�
 
 ### <a name="host-application"></a>[ホスト アプリケーション]
 
-Windows PowerShell には、既定のホストアプリケーションの PowerShell .exe が含まれています。これは、ユーザーと対話し、コンソールウィンドウを使用して Windows PowerShell ランタイムをホストするコンソールアプリケーションです。
+Windows PowerShell には、既定のホストアプリケーション powershell.exe が含まれています。これは、ユーザーと対話し、コンソールウィンドウを使用して Windows PowerShell ランタイムをホストするコンソールアプリケーションです。
 
 カスタマイズはサポートされていますが、Windows PowerShell 用に独自のホストアプリケーションを作成する必要が生じることはほとんどありません。 独自のアプリケーションが必要になるケースの1つとして、既定のホストアプリケーションによって提供されるインターフェイスよりも高度な GUI インターフェイスの要件がある場合が挙げられます。 コマンドラインで GUI を使用する場合は、カスタムアプリケーションが必要になることもあります。 詳細については、「 [Windows PowerShell ホストアプリケーションを作成する方法](/powershell/scripting/developer/hosting/writing-a-windows-powershell-host-application)」を参照してください。
 
@@ -79,7 +72,7 @@ Windows PowerShell では、.NET や XML オブジェクトなど、さまざま
 
 - カスタマイズされたオブジェクトを書き込んでいます。
 
-  この方法を使用すると、Windows PowerShell 言語と互換性のある柔軟な新しい "型" を作成できます。 .NET 開発者は、スクリプトに適用される Windows PowerShell 言語と同じセマンティクスを使用してオブジェクトを操作できます。たとえば、オブジェクトが `true`に評価されるかどうかを判断します。
+  この方法を使用すると、Windows PowerShell 言語と互換性のある柔軟な新しい "型" を作成できます。 .NET 開発者は、Windows PowerShell 言語がスクリプトに適用されるのと同じセマンティクスを使用してオブジェクトを操作できます。たとえば、オブジェクトがに評価されるかどうかを判断し `true` ます。
 
   Windows PowerShell でのオブジェクトの使用方法と方法の詳細については、「 [Windows Powershell オブジェクトの概念](/powershell/scripting/learn/understanding-important-powershell-concepts?view=powershell-6)」を参照してください。
 
@@ -102,7 +95,7 @@ Windows PowerShell シェルの使用を開始する方法の詳細について�
 |[Windows PowerShell プロバイダーを作成する方法](./how-to-create-a-windows-powershell-provider.md)|このセクションでは、windows PowerShell 用の Windows PowerShell プロバイダーを構築する方法について説明します。|
 |[Windows PowerShell ホストアプリケーションを作成する方法](/powershell/scripting/developer/hosting/writing-a-windows-powershell-host-application)|このセクションでは、実行空間を操作するホストアプリケーションを記述する方法と、独自のカスタムホストを実装するホストアプリケーションを作成する方法について説明します。|
 |[Windows PowerShell スナップインを作成する方法](../cmdlet/how-to-create-a-windows-powershell-snap-in.md)|このセクションでは、アセンブリ内のすべてのコマンドレットとプロバイダーを登録するために使用されるスナップインを作成する方法と、カスタムスナップインを作成する方法について説明します。|
-|[コンソールシェルを作成する方法](./how-to-create-a-console-shell.md)|このセクションでは、拡張できないコンソールシェルを作成する方法について説明します。|
+|[コンソール シェルを作成する方法](./how-to-create-a-console-shell.md)|このセクションでは、拡張できないコンソールシェルを作成する方法について説明します。|
 |[Windows PowerShell の概念](./windows-powershell-concepts.md)|このセクションには、開発者の視点から Windows PowerShell を理解するのに役立つ概念情報が含まれています。|
 
 ## <a name="see-also"></a>参照

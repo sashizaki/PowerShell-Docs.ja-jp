@@ -1,19 +1,12 @@
 ---
 title: バックグラウンドジョブ |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: a0ef5ac9-8254-4832-ace8-84b356c10f08
-caps.latest.revision: 13
-ms.openlocfilehash: ff4fe159eedc47fc69f4d783cd90d2b0e888c0d5
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 2a1297b8dfe087474564078cca2a5a0526ed0f36
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72363561"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774849"
 ---
 # <a name="background-jobs"></a>バックグラウンド ジョブ
 
@@ -35,11 +28,11 @@ ms.locfileid: "72363561"
 
 バックグラウンドジョブとして実行できるコマンドレットを作成するには、次のタスクを完了する必要があります。
 
-- コマンドレットをバックグラウンドジョブとして実行するかどうかをユーザーが決定できるように、`asJob` スイッチパラメーターを定義します。
+- `asJob`コマンドレットをバックグラウンドジョブとして実行するかどうかをユーザーが決定できるように、スイッチパラメーターを定義します。
 
 - System.object[クラスから派生した](/dotnet/api/System.Management.Automation.Job)オブジェクトを作成します。 このオブジェクトには、カスタムジョブオブジェクト、または Windows PowerShell によって提供されるジョブオブジェクト ( [Pseventjob](/dotnet/api/System.Management.Automation.PSEventJob)オブジェクトなど) を指定できます。
 
-- レコード処理メソッドで、コマンドレットをバックグラウンドジョブとして実行する必要があるかどうかを検出する `if` ステートメントを追加します。
+- レコード処理メソッドで、 `if` コマンドレットをバックグラウンドジョブとして実行する必要があるかどうかを検出するステートメントを追加します。
 
 - カスタムジョブオブジェクトの場合は、job クラスを実装します。
 
@@ -91,4 +84,4 @@ Windows PowerShell バックグラウンド ジョブを停止します。
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

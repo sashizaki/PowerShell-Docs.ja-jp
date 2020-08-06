@@ -1,19 +1,12 @@
 ---
 title: オブジェクトの既定のメンバーセットの定義 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 77f94326-8ffe-4d40-bd2a-b79fb0b4a4e5
-caps.latest.revision: 8
-ms.openlocfilehash: 2d634e7638ec0e0117d65ca0b2d08e68f0068a03
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 80e1f54890d3aac1702414699ead16fcf38271e1
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72369781"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774628"
 ---
 # <a name="defining-default-member-sets-for-objects"></a>オブジェクトの既定のメンバー セットを定義する
 
@@ -43,7 +36,7 @@ PSStandardMembers メンバーセットは、オブジェクトの既定のプ�
   </MemberSet>
 ```
 
-次の出力は、[フォーマットリスト](/powershell/module/Microsoft.PowerShell.Utility/Format-List)コマンドレットによって返される既定のプロパティを示しています。 各プロセスオブジェクトに対して返されるのは、`Id`、`Handles`、`CPU`、および `Name` プロパティだけです。
+次の出力は、[フォーマットリスト](/powershell/module/Microsoft.PowerShell.Utility/Format-List)コマンドレットによって返される既定のプロパティを示しています。 `Id`各プロセスオブジェクトに対して返されるのは、、、 `Handles` `CPU` 、およびの `Name` 各プロパティだけです。
 
 ```powershell
 Get-Process | format-list
@@ -64,4 +57,4 @@ Name    : agrsmsvc
 
 ## <a name="see-also"></a>参照
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)

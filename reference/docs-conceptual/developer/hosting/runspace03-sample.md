@@ -1,25 +1,18 @@
 ---
 title: Runspace03 サンプル |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 31df99d7-6954-4fdc-b6f5-06ecba094f43
-caps.latest.revision: 8
-ms.openlocfilehash: 980c75b07e1c35b293d00e6f2bca828499b3bd28
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d4fa3bca883fb8d78ca1bc8b0c0f9b70f304be06
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83561020"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87772180"
 ---
 # <a name="runspace03-sample"></a>Runspace03 サンプル
 
 このサンプルでは、 [System. Powershell](/dotnet/api/system.management.automation.powershell)クラスを使用してスクリプトを同期的に実行する方法と、終了しないエラーを処理する方法を示します。 このスクリプトはプロセス名の一覧を受信し、これらのプロセスを取得します。 スクリプトの実行時に生成された終了しないエラーを含む、スクリプトの結果がコンソール ウィンドウに表示されます。
 
-## <a name="requirements"></a>要件
+## <a name="requirements"></a>必要条件
 
 このサンプルには、Windows PowerShell 2.0 が必要です。
 

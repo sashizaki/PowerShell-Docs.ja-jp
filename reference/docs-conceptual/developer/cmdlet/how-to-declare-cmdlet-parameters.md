@@ -1,19 +1,12 @@
 ---
 title: コマンドレットのパラメーターを宣言する方法 |Microsoft Docs
-ms.custom: ''
 ms.date: 09/13/2016
-ms.reviewer: ''
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: article
-ms.assetid: 0c0509cc-5a50-49ad-a74f-5527023d0270
-caps.latest.revision: 10
-ms.openlocfilehash: 80e3e27bcf72b078c192525a843a3b3afb306529
-ms.sourcegitcommit: debd2b38fb8070a7357bf1a4bf9cc736f3702f31
+ms.openlocfilehash: 97e86a1eb715f149a8383a1a4529c00da4f0eba8
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "72365681"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87774390"
 ---
 # <a name="how-to-declare-cmdlet-parameters"></a>コマンドレット パラメーターを宣言する方法
 
@@ -21,7 +14,7 @@ ms.locfileid: "72365681"
 
 ## <a name="how-to-declare-a-named-parameter"></a>名前付きパラメーターを宣言する方法
 
-- 次のコードに示すように、パブリックプロパティを定義します。 パラメーター属性を追加するときは、属性から `Position` キーワードを省略します。
+- 次のコードに示すように、パブリックプロパティを定義します。 パラメーター属性を追加するときは、 `Position` 属性からキーワードを省略します。
 
     ```csharp
     [Parameter()]
@@ -37,7 +30,7 @@ Parameter 属性の詳細については、「 [Parameter 属性の宣言](./par
 
 ## <a name="how-to-declare-a-positional-parameter"></a>位置指定パラメーターを宣言する方法
 
-- 次のコードに示すように、パブリックプロパティを定義します。 パラメーター属性を追加するときは、`Position` キーワードを引数の位置に設定します。 値が0の場合は、最初の位置を示します。
+- 次のコードに示すように、パブリックプロパティを定義します。 パラメーター属性を追加するときに、 `Position` キーワードを引数の位置に設定します。 値が0の場合は、最初の位置を示します。
 
     ```csharp
     [Parameter(Position = 0)]
@@ -53,7 +46,7 @@ Parameter 属性の詳細については、「 [Parameter 属性の宣言](./par
 
 ## <a name="how-to-declare-a-mandatory-parameter"></a>必須パラメーターを宣言する方法
 
-- 次のコードに示すように、パブリックプロパティを定義します。 パラメーター属性を追加するときは、`Mandatory` キーワードを `true`に設定します。
+- 次のコードに示すように、パブリックプロパティを定義します。 パラメーター属性を追加するときに、 `Mandatory` キーワードをに設定 `true` します。
 
     ```csharp
     [Parameter(Position = 0, Mandatory = true)]
@@ -69,7 +62,7 @@ Parameter 属性の詳細については、「 [Parameter 属性の宣言](./par
 
 ## <a name="how-to-declare-an-optional-parameter"></a>省略可能なパラメーターを宣言する方法
 
-- 次のコードに示すように、パブリックプロパティを定義します。 パラメーター属性を追加する場合は、`Mandatory` キーワードを省略します。
+- 次のコードに示すように、パブリックプロパティを定義します。 パラメーター属性を追加する場合は、キーワードを省略し `Mandatory` ます。
 
     ```csharp
     [Parameter(Position = 0)]
@@ -116,10 +109,10 @@ Alias 属性の詳細については、「 [Alias 属性の宣言](./alias-attri
 
 ## <a name="see-also"></a>参照
 
-[.... SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)
+[System.Management.Automation.SwitchParameter](/dotnet/api/System.Management.Automation.SwitchParameter)
 
 [パラメーター属性の宣言](./parameter-attribute-declaration.md)
 
 [エイリアス属性の宣言](./alias-attribute-declaration.md)
 
-[Windows PowerShell コマンドレットの記述](./writing-a-windows-powershell-cmdlet.md)
+[Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)](./writing-a-windows-powershell-cmdlet.md)
