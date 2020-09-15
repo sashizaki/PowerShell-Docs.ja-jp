@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC WindowsFeature リソース
-ms.openlocfilehash: d3384b1f45324df6b6b209f25b64d9d77615ad7f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: b15b267c6898697816b386a381e5a6d59acd492a
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954629"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464113"
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature リソース
 
@@ -24,7 +24,6 @@ WindowsFeature [string] #ResourceName
     [ Credential = [PSCredential] ]
     [ IncludeAllSubFeature = [bool] ]
     [ LogPath = [string] ]
-    [ Source = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present }  ]
     [ PsDscRunAsCredential = [PSCredential] ]
@@ -39,7 +38,6 @@ WindowsFeature [string] #ResourceName
 |資格情報 |役割または機能の追加や削除に使用する資格情報を示します。 |
 |IncludeAllSubFeature |**Name** プロパティで指定した機能の状態を使用して必要なすべてのサブ機能の状態を保証するには、このプロパティを `$true` に設定します。 |
 |LogPath |リソース プロバイダーの操作を記録するログ ファイルへのパスを示します。 |
-|source |必要に応じて、インストールに使用するソース ファイルの場所を示します。 |
 
 ## <a name="common-properties"></a>共通プロパティ
 

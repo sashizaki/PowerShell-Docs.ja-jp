@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC ServiceSet リソース
-ms.openlocfilehash: a071a8cdd4a7dc6fd050fc1b88901aa0ce428615
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b51cfa86aa6d2114553a0eee681cb88ea93e213f
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563962"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464402"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet リソース
 

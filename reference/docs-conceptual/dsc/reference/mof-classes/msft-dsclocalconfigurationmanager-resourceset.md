@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: ResourceSet メソッド
-ms.openlocfilehash: 18364027b249e502e1f0b8802d9f3e031c7b07ce
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: c015960b2a5ffca0d28b714d571aa616400555bd
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954959"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464055"
 ---
 # <a name="resourceset-method"></a>ResourceSet メソッド
 
@@ -26,13 +26,13 @@ uint32 ResourceSet(
 
 ## <a name="parameters"></a>パラメーター
 
-*ResourceType* \[in\] 呼び出すリソースの名前。
+**ResourceType** \[in\] 呼び出すリソースの名前。
 
-*ModuleName* \[in\] 呼び出すリソースを含むモジュールの名前。
+**ModuleName** \[in\] 呼び出すリソースを含むモジュールの名前。
 
-*resourceProperty* \[in\] ハッシュ テーブルで、リソースのプロパティ名と値を、それぞれキーと値として指定します。 リソースのプロパティと種類を検出するには、[Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) コマンドレットを使用します。
+**resourceProperty** \[in\] ハッシュ テーブルで、リソースのプロパティ名と値を、それぞれキーと値として指定します。 リソースのプロパティと種類を検出するには、[Get-DscResource](/powershell/module/PSDesiredStateConfiguration/Get-DscResource) コマンドレットを使用します。
 
-*RebootRequired* \[out\] ターゲット ノードの再起動が必要な場合、制御が戻るときに、このプロパティは **true** に設定されます。
+**RebootRequired** \[out\] ターゲット ノードの再起動が必要な場合、制御が戻るときに、このプロパティは **true** に設定されます。
 
 ## <a name="return-value"></a>戻り値
 

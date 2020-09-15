@@ -3,12 +3,12 @@ ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 description: ターゲット ノード上のローカル グループを管理するためのメカニズムを備えています。
 title: DSC GroupSet リソース
-ms.openlocfilehash: 99b9cafdd4d799e18e1b9b1f08d7dd41ec435711
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 90e0c3f0e09c6a300988869265dfdb432ed5d217
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560340"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464197"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet リソース
 
@@ -24,8 +24,6 @@ PowerShell Desired State Configuration (DSC) の **GroupSet** リソースは、
 Group [string] #ResourceName
 {
     GroupName = [string[]]
-    [ Members = [string[]] ]
-    [ Description = [string[]] ]
     [ MembersToInclude = [string[]] ]
     [ MembersToExclude = [string[]] ]
     [ Credential = [PSCredential] ]
@@ -41,7 +39,6 @@ Group [string] #ResourceName
 |---|---|
 |GroupName |特定の状態を保証するグループの名前です。 |
 |メンバー |このプロパティは、現在のグループ メンバーシップを指定したメンバーで置き換えるために使用します。 このプロパティの値は、`Domain\UserName` 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**MembersToExclude** プロパティおよび **MembersToInclude** プロパティは併用しないでください。 併用した場合、エラーが発生します。 |
-|説明 |グループの説明です。 |
 |MembersToInclude |このプロパティは、グループの既存のメンバーシップにメンバーを追加するために使用します。 このプロパティの値は、`Domain\UserName` 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**Members** プロパティは使用しないでください。 併用した場合、エラーが発生します。 |
 |MembersToExclude |このプロパティは、グループの既存のメンバーシップからメンバーを削除するために使用します。 このプロパティの値は、`Domain\UserName` 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**Members** プロパティは使用しないでください。 併用した場合、エラーが発生します。 |
 |資格情報 |リモート リソースにアクセスするために必要な資格情報です このアカウントには、ローカルではないすべてのアカウントをグループに追加できる、Active Directory への適切なアクセス許可が必要です。このアクセス許可がない場合、エラーが発生します。 |
@@ -57,7 +54,7 @@ Group [string] #ResourceName
 > [!NOTE]
 > **PsDscRunAsCredential** という共通プロパティは、他の資格情報という文脈の中であらゆる DSC リソースを実行するために WMF 5.0 で追加されました。 詳細については、「[DSC リソースに対して資格情報を使用する](../../../configurations/runasuser.md)」を参照してください。
 
-## <a name="example-1-ensuring-groups-are-present"></a>例 1:グループが存在することを確認する
+## <a name="example-1-ensuring-groups-are-present"></a>例 1: グループが存在することを確認する
 
 次に、"myGroup" と "myOtherGroup" という 2 つのグループが存在することを保証する例を示します。
 

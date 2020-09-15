@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 DSC の nxArchive リソース
-ms.openlocfilehash: 56f8df65945f16a93c69407ea30f51878a201b63
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 386378fa6e1608117d6934b983dcebe23e55d60d
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560918"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464249"
 ---
 # <a name="dsc-for-linux-nxarchive-resource"></a>Linux 用 DSC の nxArchive リソース
 

@@ -3,12 +3,12 @@ title: switch ステートメントについて知りたかったことのすべ
 description: PowerShell の switch ステートメントには、他の言語では見つからない機能が用意されています。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: ebf6191d56374273465ae6bee49ef82a02cc1580
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 685a5691599408a0d54ca99bf383bcd7702322a6
+ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149425"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86469720"
 ---
 # <a name="everything-you-ever-wanted-to-know-about-the-switch-statement"></a>switch ステートメントについて知りたかったことのすべて
 
@@ -17,7 +17,7 @@ ms.locfileid: "84149425"
 > [!NOTE]
 > この記事の[オリジナル バージョン][]は、[@KevinMarquette][] 氏のブログ記事です。 このコンテンツを共有してくださった Kevin 氏に、PowerShell チームより感謝を申し上げます。 [PowerShellExplained.com][] のブログをご確認ください。
 
-## <a name="if-statement"></a>if ステートメント
+## <a name="the-if-statement"></a>`if` ステートメント
 
 最初に学習するステートメントの 1 つは、`if` ステートメントです。 ステートメントが `$true` の場合にスクリプト ブロックが実行されるようにできます。
 
