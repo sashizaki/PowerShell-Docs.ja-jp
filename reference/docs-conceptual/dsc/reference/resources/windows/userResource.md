@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC User リソース
-ms.openlocfilehash: bbfa74bda984110471dd193339c9d965c659a909
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 340fce45a2074930ae14ca1aaeef7eff78531916
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560816"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463773"
 ---
 # <a name="dsc-user-resource"></a>DSC User リソース
 

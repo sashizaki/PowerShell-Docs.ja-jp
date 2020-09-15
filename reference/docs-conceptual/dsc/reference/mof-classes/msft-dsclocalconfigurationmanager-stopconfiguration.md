@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: StopConfiguration メソッド
-ms.openlocfilehash: e1de175032a3bddf11af218bc4a15bdbe554a9d5
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 76e50c98b09dca86983320918c6899082580672a
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953359"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463705"
 ---
 # <a name="stopconfiguration-method"></a>StopConfiguration メソッド
 
@@ -23,7 +23,7 @@ uint32 StopConfiguration(
 
 ## <a name="parameters"></a>パラメーター
 
-*force* \[in\] **true** の場合、構成を強制的に中止します。
+**force** \[in\] **true** の場合、構成を強制的に中止します。
 
 ## <a name="return-value"></a>戻り値
 

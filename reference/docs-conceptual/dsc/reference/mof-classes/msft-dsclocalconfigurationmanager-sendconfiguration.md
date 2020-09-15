@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: SendConfiguration メソッド
-ms.openlocfilehash: 4feba090bc58844659c2329a304dd9805255564f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: afd6e8d7acc969df16fad1d0ba15c9fe0b1a26fd
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953389"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463943"
 ---
 # <a name="sendconfiguration-method"></a>SendConfiguration メソッド
 
@@ -24,9 +24,9 @@ uint32 SendConfiguration(
 
 ## <a name="parameters"></a>パラメーター
 
-*ConfigurationData* \[in\] 構成用の環境データ。
+**ConfigurationData** \[in\] 構成用の環境データ。
 
-*force* \[in\] **true** の場合、構成を強制的に中止します。
+**force** \[in\] **true** の場合、構成を強制的に中止します。
 
 ## <a name="return-value"></a>戻り値
 

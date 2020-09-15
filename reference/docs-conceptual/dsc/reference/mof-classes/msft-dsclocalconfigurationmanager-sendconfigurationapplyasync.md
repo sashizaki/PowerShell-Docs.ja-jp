@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: SendConfigurationApplyAsync メソッド
-ms.openlocfilehash: c0e6dc9418757ee719e848fa8e7006dd73d91ad8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4cfac5edb5fed94ee69deb98d7aa6be56b51c5b3
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953379"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463739"
 ---
 # <a name="sendconfigurationapplyasync-method"></a>SendConfigurationApplyAsync メソッド
 
@@ -25,11 +25,11 @@ uint32 SendConfigurationApplyAsync(
 
 ## <a name="parameters"></a>パラメーター
 
-*ConfigurationData* \[in\] 構成用の環境データ。
+**ConfigurationData** \[in\] 構成用の環境データ。
 
-*force* \[in\] **true** の場合、構成を強制的に中止します。
+**force** \[in\] **true** の場合、構成を強制的に中止します。
 
-*jobId* \[in\] 構成を送信するジョブの ID です。
+**jobId** \[in\] 構成を送信するジョブの ID です。
 
 ## <a name="return-value"></a>戻り値
 

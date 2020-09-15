@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/14/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: ApplyConfiguration メソッド
-ms.openlocfilehash: 0425b9a7db37e421830ba37da8f5c0a4877a1b72
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: bec74ccd6f75448484adfd26bf8a4af4e224eb3f
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953459"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463841"
 ---
 # <a name="applyconfiguration-method"></a>ApplyConfiguration メソッド
 
@@ -25,7 +25,9 @@ uint32 ApplyConfiguration(
 
 ## <a name="parameters"></a>パラメーター
 
-*force* \[in\]**true** の場合、保留中の構成があっても、現在の構成が再適用されます。
+### <a name="force"></a>force
+
+**true** の場合、保留中の構成があっても、現在の構成が再適用されます。
 
 ## <a name="return-value"></a>戻り値
 
@@ -39,7 +41,7 @@ uint32 ApplyConfiguration(
 
 **MOF:** DscCore.mof
 
-**名前空間**:Root\Microsoft\Windows\DesiredStateConfiguration
+**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

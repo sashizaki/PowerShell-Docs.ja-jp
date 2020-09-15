@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: SendMetaConfigurationApply メソッド
-ms.openlocfilehash: b2e420bafb8ea22aea43800f6e429d3ed785d1e8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 896afe2f3370e108b48583aafb33ee7b0eb1301b
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954879"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463722"
 ---
 # <a name="sendmetaconfigurationapply-method"></a>SendMetaConfigurationApply メソッド
 
@@ -24,9 +24,9 @@ uint32 SendMetaConfigurationApply(
 
 ## <a name="parameters"></a>パラメーター
 
-*ConfigurationData* \[in\] 構成用の環境データ。
+**ConfigurationData** \[in\] 構成用の環境データ。
 
-*force* \[in\] **true** の場合、構成を強制的に中止します。
+**force** \[in\] **true** の場合、構成を強制的に中止します。
 
 ## <a name="return-value"></a>戻り値
 

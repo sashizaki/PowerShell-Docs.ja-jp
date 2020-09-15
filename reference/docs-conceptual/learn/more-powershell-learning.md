@@ -1,13 +1,13 @@
 ---
-ms.date: 06/18/2019
+ms.date: 06/11/2020
 keywords: powershell,コマンドレット
 title: PowerShell の学習用リソース
-ms.openlocfilehash: 5681fd903b323ab3cf87dc212ba64dbfdf2d78e7
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: d9d2f77090a7da7a5bef0c6d0c2af80c3a07be46
+ms.sourcegitcommit: 56463fb628a7d83dec4364e89417d83316c3e53b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808437"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84722849"
 ---
 # <a name="powershell-learning-resources"></a>PowerShell の学習用リソース
 
@@ -23,7 +23,7 @@ PowerShell のその他の学習用リソース。
 
 ## <a name="channel-9-videos"></a>Channel 9 の動画
 
-Channel 9 は、Microsoft の動画公開プラットフォームです。 PowerShell に関する数百件の動画を利用できます。 [「PowerShell」を検索](https://channel9.msdn.com/Search?term=PowerShell&sortBy=top-rated)すると、利用できる動画が表示されます。
+Channel 9 は、Microsoft の動画公開プラットフォームです。 PowerShell に関する数百件の動画を利用できます。 [「PowerShell」を検索](https://channel9.msdn.com/Tags/powershell)すると、利用できる動画が表示されます。
 
 ### <a name="microsoft-virtual-academy"></a>Microsoft Virtual Academy
 

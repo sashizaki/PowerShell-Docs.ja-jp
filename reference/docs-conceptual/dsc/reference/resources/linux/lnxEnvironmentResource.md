@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 DSC の nxEnvironment リソース
-ms.openlocfilehash: 55c1b2402e23c1042ed48b40c1084aa63c515b36
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 2f673dfbc3b6e93d7e186e4a63b75d16a31b5181
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953229"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463688"
 ---
 # <a name="dsc-for-linux-nxenvironment-resource"></a>Linux 用 DSC の nxEnvironment リソース
 

@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/17/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: GetConfiguration メソッド
-ms.openlocfilehash: eabc536cfe69abe1144ff031a6f64c09a772e638
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 989aeef4cd9aa5d55741b48c8565c657c4b6512c
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71955049"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463824"
 ---
 # <a name="getconfiguration-method"></a>GetConfiguration メソッド
 
@@ -24,9 +24,9 @@ uint32 GetConfiguration(
 
 ## <a name="parameters"></a>パラメーター
 
-*configurationData* \[in\] 送信する構成データを指定します。
+**configurationData** \[in\] 送信する構成データを指定します。
 
-*configurations* \[out\] 制御が戻ったとき、その構成の埋め込みインスタンスが含まれます。
+**configurations** \[out\] 制御が戻ったとき、その構成の埋め込みインスタンスが含まれます。
 
 ## <a name="return-value"></a>戻り値
 

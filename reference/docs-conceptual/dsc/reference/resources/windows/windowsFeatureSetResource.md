@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC WindowsFeatureSet リソース
-ms.openlocfilehash: 4707616b23a125e49e17031e0b75fd3cde4b9a3d
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 856c56e0b35a26add729ef77db9dca71fdc0a4d0
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565419"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463858"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet リソース
 

@@ -3,12 +3,12 @@ title: PowerShell ドキュメントのスタイル ガイド
 description: この記事では、PowerShell ドキュメントを記述するためのスタイル規則について説明します。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: b60ad9a4965e75cc5f68309604f1893e5757f351
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 32df641f7cafa2a5bfcf1bcbf94be594aa77c7d0
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690844"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837445"
 ---
 # <a name="powershell-docs-style-guide"></a>PowerShell ドキュメントのスタイル ガイド
 
@@ -240,7 +240,7 @@ Example:
 - `[about_Splatting](about_Splatting.md#splatting-with-arrays)`
 - `[custom key bindings](https://code.visualstudio.com/docs/getstarted/keybindings#_custom-keybindings-for-refactorings)`
 
-詳細については、「[ドキュメントでリンクを使用する](https://docs.microsoft.com/contribute/how-to-write-links)」を参照してください。
+詳細については、「[ドキュメントでリンクを使用する](/contribute/how-to-write-links)」を参照してください。
 
 ## <a name="formatting-command-syntax-elements"></a>コマンド構文要素の書式設定
 
