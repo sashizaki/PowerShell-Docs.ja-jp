@@ -2,12 +2,12 @@
 ms.date: 08/15/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Windows 用 Desired State Configuration (DSC) の概要
-ms.openlocfilehash: 2add2c936e60c0c9446bf4b398fbf7b4bd6407f7
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 00e1cf545b19f054b4b1ff468c9f6ad94e5cef55
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75416159"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236324"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-windows"></a>Windows 用 Desired State Configuration (DSC) の概要
 
@@ -31,7 +31,7 @@ DSC に関する一般的な情報については、「[Windows PowerShell Desir
 
 ## <a name="installing-dsc"></a>DSC のインストール
 
-PowerShell Desired State Configuration は Windows に含まれており、Windows Management Framework を通じて更新されます。 最新バージョンは [Windows Management Framework 5.1](https://www.microsoft.com/en-us/download/details.aspx?id=54616) です。
+PowerShell Desired State Configuration は Windows に含まれており、Windows Management Framework を通じて更新されます。 最新バージョンは [Windows Management Framework 5.1](https://www.microsoft.com/download/details.aspx?id=54616) です。
 
 > [!NOTE]
 > DSC を使ってコンピューターを管理するために、Windows Server の 'DSC-Service' 機能を有効にする必要はありません。

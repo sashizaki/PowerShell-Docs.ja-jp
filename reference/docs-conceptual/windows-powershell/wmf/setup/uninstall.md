@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.0 のアンインストール
-ms.openlocfilehash: f562a4a4506bfdede6b23bd186b80f40cc9e45ca
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: fa76bacb4b62025d0d2350b9a0e072068ca83ab1
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808678"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236307"
 ---
 # <a name="uninstallation-instructions"></a>アンインストール手順
 
 ## <a name="using-command-prompt"></a>コマンド プロンプトを使用
 
 1. **コマンド プロンプト**を開きます。
-2. [Windows Update スタンドアロン ランチャー](https://support.microsoft.com/en-us/kb/934307)を次のように実行します。
+2. [Windows Update スタンドアロン ランチャー](https://support.microsoft.com/kb/934307)を次のように実行します。
 
 Windows Server 2012 R2 および Windows 8.1:
 

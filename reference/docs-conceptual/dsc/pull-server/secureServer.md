@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: プル サーバーのベスト プラクティス
-ms.openlocfilehash: 2d707dc64c327cf30d09104aee140e5b78ee7c29
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 7b717e9e3bd753ef287701f3e2406e3fde1e2542
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692256"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236256"
 ---
 # <a name="pull-server-best-practices"></a>プル サーバーのベスト プラクティス
 
@@ -64,7 +64,7 @@ Windows Update から最新のコンテンツをインストールすること�
 ### <a name="wmf"></a>WMF
 
 Windows Server 2012 R2 には、DSC サービスという機能が含まれています。 DSC サービス機能では、OData エンドポイントをサポートするバイナリを含む、プル サーバー機能が提供されます。 WMF は Windows Server に含まれており、Windows Server のリリースに応じて迅速に更新されます。
-[新しいバージョンの WMF 5.0](https://www.microsoft.com/en-us/download/details.aspx?id=54616) には、DSC サービス機能の更新プログラムが含まれる場合があります。 そのため、WMF の最新リリースをダウンロードし、リリース ノートを確認し、リリースに DSC サービス機能の更新プログラムが含まれるかどうか判断することをお勧めします。 さらに、更新プログラムまたはシナリオの設計が安定状態であるか実験状態であるかを示すリリース ノートのセクションを確認する必要もあります。 アジャイル リリース サイクルを可能にするために、個々の機能を安定したものとして宣言することができます。これにより、WMF がプレビューでリリースされている間でも、機能は運用環境で使用する準備ができていることが示されます。 WMF リリースで既に更新されている他の機能は、次のとおりです (詳細については、WMF リリース ノートを参照)。
+[新しいバージョンの WMF 5.0](https://www.microsoft.com/download/details.aspx?id=54616) には、DSC サービス機能の更新プログラムが含まれる場合があります。 そのため、WMF の最新リリースをダウンロードし、リリース ノートを確認し、リリースに DSC サービス機能の更新プログラムが含まれるかどうか判断することをお勧めします。 さらに、更新プログラムまたはシナリオの設計が安定状態であるか実験状態であるかを示すリリース ノートのセクションを確認する必要もあります。 アジャイル リリース サイクルを可能にするために、個々の機能を安定したものとして宣言することができます。これにより、WMF がプレビューでリリースされている間でも、機能は運用環境で使用する準備ができていることが示されます。 WMF リリースで既に更新されている他の機能は、次のとおりです (詳細については、WMF リリース ノートを参照)。
 
 - Windows PowerShell、Windows PowerShell Integrated Scripting Environment (ISE)
 - Windows PowerShell Web サービス (Management OData IIS 拡張機能)

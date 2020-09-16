@@ -2,12 +2,12 @@
 ms.date: 07/09/2019
 keywords: DSC, GPO, PowerShell, 構成, セットアップ
 title: クイック スタート - グループ ポリシーを DSC に変換する
-ms.openlocfilehash: a9ce9cecd71fe00d2908024a3ee474ec836af3ba
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 852710f261ea1d57228c05d4093c1d78584e0ca5
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808250"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236239"
 ---
 # <a name="quickstart-convert-group-policy-into-dsc"></a>クイック スタート:グループ ポリシーを DSC に変換する
 
@@ -23,7 +23,7 @@ ms.locfileid: "83808250"
 
 上述のコマンドレットによって、ベースラインが DSC `.mof` ファイルに変換されます。 編集して再コンパイルすることができる、構成スクリプト (`.ps1`) を出力することを選択することもできます。 このコマンドレットでは、不足しているリソースや重複したリソース ブロックに対する複雑なエラーを検出することができます。 複雑なエラーの原因になるリソース ブロックは、コメント アウトされます。
 
-次の例では、[Microsoft セキュリティ ベースライン](https://www.microsoft.com/en-us/download/details.aspx?id=55319)が DSC 構成スクリプト (`.ps1`) と `.mof` ファイルに変換されます。
+次の例では、[Microsoft セキュリティ ベースライン](https://www.microsoft.com/download/details.aspx?id=55319)が DSC 構成スクリプト (`.ps1`) と `.mof` ファイルに変換されます。
 
 ```powershell
 Install-Module BaselineManagement
