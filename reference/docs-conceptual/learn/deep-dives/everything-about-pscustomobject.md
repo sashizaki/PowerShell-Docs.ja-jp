@@ -3,12 +3,12 @@ title: PSCustomObject について知りたかったことのすべて
 description: PSCustomObject は、構造化データを作成するためのシンプルな方法です。
 ms.date: 07/29/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 9a5cab7e662ef89b6565a29079ce1d5a657f94d0
-ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
+ms.openlocfilehash: 52620fd628d03f62db574210a2a5758c3bf29135
+ms.sourcegitcommit: a1886ba2cf35aebd650aafb3e5d7437c4e381781
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87410140"
+ms.lasthandoff: 09/19/2020
+ms.locfileid: "90804782"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>PSCustomObject について知りたかったことのすべて
 
@@ -139,7 +139,7 @@ $myObject.$property
 
 これは奇妙に見えますが、うまく機能します。
 
-### <a name="convert-pscustombobject-into-a-hashtable"></a>PSCustombObject をハッシュテーブルに変換する
+### <a name="convert-pscustomobject-into-a-hashtable"></a>PSCustomObject をハッシュテーブルに変換する
 
 最後のセクションから作業を続行する場合、プロパティを動的にウォークして、そこからハッシュテーブルを作成することができます。
 
