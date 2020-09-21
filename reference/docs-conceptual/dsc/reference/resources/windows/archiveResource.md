@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Archive リソース
-ms.openlocfilehash: 679de8b965304c149b10321e73e42b224f49ecc5
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: cbe32012c2035fb3e145bd06fadd73cdba93fd3e
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560374"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463790"
 ---
 # <a name="dsc-archive-resource"></a>DSC Archive リソース
 
@@ -23,6 +23,7 @@ Archive [string] #ResourceName
     Destination = [string]
     Path = [string]
     [ Checksum = [string] { CreatedDate | ModifiedDate | SHA-1 | SHA-256 | SHA-512 } ]
+    [ Credential = [PSCredential] ]
     [ Force = [bool] ]
     [ Validate = [bool] ]
     [ Ensure = [string] { Absent | Present } ]
@@ -35,11 +36,12 @@ Archive [string] #ResourceName
 
 |プロパティ |説明 |
 |---|---|
-|宛先 |アーカイブ コンテンツが抽出されることを保証する場所を指定します。 |
-|Path |アーカイブ ファイルのソース パスを指定します。 |
-|Checksum |2 つのファイルが同じであるかどうかを決定するときに使用するタイプを定義します。 **Checksum** が指定されていない場合、ファイルまたはディレクトリ名のみが比較に使用されます。 有効な値は、次のとおりです。**SHA-1**、**SHA-256**、**SHA-512**、**createdDate**、**modifiedDate**。 **Validate** を指定せずに **Checksum** を指定した場合、構成は失敗します。 |
-|Force |特定のファイル操作 (ファイルの上書き、空でないディレクトリの削除など) によって、エラーが発生します。 **Force** プロパティを使用すると、このようなエラーがオーバーライドされます。 既定値は **False**です。 |
-|検証| **Checksum** プロパティを使用して、アーカイブが署名と一致するかどうかを確認します。 **Validate** を指定せずに **Checksum** を指定した場合、構成は失敗します。 **Checksum** を指定せずに **Validate** を指定した場合、_SHA-256_ **チェックサム**が既定で使用されます。 |
+| 宛先 | アーカイブ コンテンツが抽出されることを保証する場所を指定します。 |
+| Path | アーカイブ ファイルのソース パスを指定します。 |
+| Checksum | 2 つのファイルが同じであるかどうかを決定するときに使用するタイプを定義します。 **Checksum** が指定されていない場合、ファイルまたはディレクトリ名のみが比較に使用されます。 有効な値は、次のとおりです。**SHA-1**、**SHA-256**、**SHA-512**、**createdDate**、**modifiedDate**。 **Validate** を指定せずに **Checksum** を指定した場合、構成は失敗します。 |
+| 資格情報 | 必要に応じて、指定されたアーカイブ パスと宛先にアクセスするためのアクセス許可を持つユーザー アカウントの資格情報。 |
+| Force | 特定のファイル操作 (ファイルの上書き、空でないディレクトリの削除など) によって、エラーが発生します。 **Force** プロパティを使用すると、このようなエラーがオーバーライドされます。 既定値は **False**です。 |
+| 検証| **Checksum** プロパティを使用して、アーカイブが署名と一致するかどうかを確認します。 **Validate** を指定せずに **Checksum** を指定した場合、構成は失敗します。 **Checksum** を指定せずに **Validate** を指定した場合、_SHA-256_ **チェックサム**が既定で使用されます。 |
 
 ## <a name="common-properties"></a>共通プロパティ
 
@@ -54,7 +56,7 @@ Archive [string] #ResourceName
 
 ## <a name="example"></a>例
 
-次の例は、Archive リソースを使用して、`Test.zip` というアーカイブ ファイルのコンテンツが指定した宛先に存在し、抽出されていることを保証する方法を示します。
+次の例は、使用されている承認済みの指定した宛先に、`Test.zip` という名前のアーカイブ ファイルのコンテンツが存在し、抽出され、承認されていることを、Archive リソースを使用して確実にする方法を示しています。
 
 ```powershell
 Archive ArchiveExample {

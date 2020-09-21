@@ -2,12 +2,12 @@
 title: PowerShell Core 6.1 の新機能
 description: PowerShell Core 6.1 でリリースされた新機能と変更
 ms.date: 09/13/2018
-ms.openlocfilehash: 079d5a472c743ce94f2e93143c1dcb4ff406951f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7a50bc3a909df38d21a604399d590a2805359593
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78277741"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837546"
 ---
 # <a name="whats-new-in-powershell-core-61"></a>PowerShell Core 6.1 の新機能
 
@@ -34,9 +34,9 @@ Windows の .NET チームが [.NET Core 用の Windows 互換機能パック](h
 
 Windows 互換機能パックにより、PowerShell Core では **Windows 10 October 2018 Update および Windows Server 2019 に付属する 1900 を超えるコマンドレット**を使用できます。
 
-## <a name="support-for-application-whitelisting"></a>アプリケーション ホワイトリストのサポート
+## <a name="support-for-application-allow-lists"></a>アプリケーション許可リストのサポート
 
-PowerShell Core 6.1 では、Windows PowerShell 5.1 と同じように、[AppLocker](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) および [Device Guard](https://docs.microsoft.com/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) のアプリケーション ホワイトリストをサポートします。 アプリケーション ホワイトリストを使用すると、PowerShell の[制約付き言語モード](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)で実行できるバイナリを細かく制御できます。
+PowerShell Core 6.1 では、Windows PowerShell 5.1 と同じように、[AppLocker](/windows/security/threat-protection/windows-defender-application-control/applocker/applocker-overview) および [Device Guard](/windows/security/threat-protection/device-guard/introduction-to-device-guard-virtualization-based-security-and-windows-defender-application-control) のアプリケーション許可リストがサポートされています。 アプリケーション許可リストを使用すると、PowerShell の[制約付き言語モード](https://blogs.msdn.microsoft.com/powershell/2017/11/02/powershell-constrained-language-mode/)で実行できるバイナリを細かく制御できます。
 
 ## <a name="performance-improvements"></a>パフォーマンスの向上
 
@@ -88,12 +88,11 @@ Measure-Command {Get-Content .\foo.json | ConvertFrom-Json}
 | 時間 (秒)   | 0.259                  | 0.577               | 0.125                  |
 | 高速化 (%) | 該当なし                    | -122.8%             | 78.3% (WPS から 51.7%) |
 
-## <a name="check-system32-for-compatible-in-box-modules-on-windows"></a>Windows で互換性のある組み込みモジュールについては `system32` を確認する
+## <a name="check-system32-for-compatible-built-in-modules-on-windows"></a>Windows の互換性のある組み込みモジュールについて、`system32` を確認する
 
-Windows 10 1809 更新プログラムと Windows Server 2019 では、複数の組み込み PowerShell モジュールが更新され、PowerShell Core と互換性有りとマークされました。
+Windows 10 1809 更新プログラムと Windows Server 2019 では、複数の組み込み PowerShell モジュールが更新され、PowerShell Core との互換性があるとしてマークされました。
 
 PowerShell Core 6.1 は起動すると、`PSModulePath` 環境変数の一部として `$windir\System32` を自動的にインクルードします。 ただし、`CompatiblePSEdition` が `Core` と互換性有りとマークされている場合は、`Get-Module` および `Import-Module` に対してのみモジュールを公開します。
-
 
 ```powershell
 Get-Module -ListAvailable

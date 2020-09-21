@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/14/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MSFT_DSCLocalConfigurationManager クラス
-ms.openlocfilehash: 09b30edd48384c0e8412e0e6ee926a719249c5b8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 20c9ac5128fcfbbcb2113b89d9e5b53693744b45
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71953269"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464283"
 ---
 # <a name="msft_dsclocalconfigurationmanager-class"></a>MSFT_DSCLocalConfigurationManager クラス
 
@@ -34,12 +34,12 @@ class MSFT_DSCLocalConfigurationManager
 
 **MSFT_DSCLocalConfigurationManager** クラスでは、次のメソッドを使用できます。
 
-|方法 |説明 |
+|メソッド |説明 |
 |:--- |:---|
-| [ApplyConfiguration](msft-dsclocalconfigurationmanager-applyconfiguration.md)| 構成エージェントを使用して、保留中の構成を適用します。|
-| [DisableDebugConfiguration](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| DSC リソースのデバッグを無効にします。|
-| [EnableDebugConfiguration](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| DSC リソースのデバッグを有効にします。|
-| [GetConfiguration](msft-dsclocalconfigurationmanager-getconfiguration.md)| 構成ドキュメントを管理ノードに送信し、構成エージェントの **Get** メソッドを使用して構成を適用します。|
+| [ApplyConfiguration (ブール値)](msft-dsclocalconfigurationmanager-applyconfiguration.md)| 構成エージェントを使用して、保留中の構成を適用します。|
+| [DisableDebugConfiguration()](msft-dsclocalconfigurationmanager-disabledebugconfiguration.md)| DSC リソースのデバッグを無効にします。|
+| [EnableDebugConfiguration (ブール値)](msft-dsclocalconfigurationmanager-enabledebugconfiguration.md)| DSC リソースのデバッグを有効にします。|
+| [GetConfiguration()](msft-dsclocalconfigurationmanager-getconfiguration.md)| 構成ドキュメントを管理ノードに送信し、構成エージェントの **Get** メソッドを使用して構成を適用します。|
 | [GetConfigurationResultOutput](msft-dsclocalconfigurationmanager-getconfigurationresultoutput.md)| 特定のジョブに関連する構成エージェントの出力を取得します。|
 | [GetConfigurationStatus](msft-dsclocalconfigurationmanager-getconfigurationstatus.md)| 構成状態の履歴を取得します。|
 | [GetMetaConfiguration](msft-dsclocalconfigurationmanager-getmetaconfiguration.md)| 構成エージェントを制御するために使用する LCM 設定を取得します。|

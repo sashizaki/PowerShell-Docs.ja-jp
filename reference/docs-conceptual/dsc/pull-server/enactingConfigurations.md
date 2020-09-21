@@ -2,12 +2,12 @@
 ms.date: 10/16/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成の適用
-ms.openlocfilehash: 3bbe90c7cf09a7e236f6dd14f731ae306f497a0d
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 1437521471d95fd80dc6a6cec62a0b75df4224ec
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78277902"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783077"
 ---
 # <a name="enacting-configurations"></a>構成の適用
 
@@ -17,7 +17,7 @@ PowerShell Desired State Configuration (DSC) 構成を適用するには、プ�
 
 ## <a name="push-mode"></a>プッシュ モード
 
-![プッシュ モード](media/enactingConfigurations/pushModel.png "プッシュ モードのしくみ")
+![プッシュ モードの概要](media/enactingConfigurations/pushModel.png "プッシュ モードのしくみ")
 
 プッシュ モードは、[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを呼び出してターゲット ノードに構成を適用するユーザー アクティビティを示します。
 
@@ -28,7 +28,7 @@ PowerShell Desired State Configuration (DSC) 構成を適用するには、プ�
 
 ## <a name="pull-mode"></a>プル モード
 
-![プル モード](media/enactingConfigurations/pullModel.png "プル モードのしくみ")
+![プル モードの概要](media/enactingConfigurations/pullModel.png "プル モードのしくみ")
 
 プル モードでは、プル クライアントはリモート プル サービスから Desired State Configuration を取得するように構成されます。 同様に、プル サービスは、DSC サービスをホストするようにセットアップされ、プル クライアントに必要な構成とリソースを使用してプロビジョニングされています。 それぞれのプル クライアントには、ノードの構成に対して定期的なコンプライアンス チェックを実行するイベントがスケジュールされています。 イベントが最初にトリガーされたとき、プル クライアント上のローカル構成マネージャー (LCM) によって、LCM で指定された構成を取得するためのプル サービスへの要求が行われます。 プル サービスにその構成が存在し、最初の検証チェックに合格した場合、構成はプル クライアントにダウンロードされ、LCM によって実行されます。
 
@@ -40,6 +40,6 @@ Windows Server でのプル サービスのセットアップについては、�
 
 次のトピックでは、プル サービスとクライアントについて説明します。
 
-- [Azure Automation DSC の概要](https://docs.microsoft.com/azure/automation/automation-dsc-overview)
+- [Azure Automation DSC の概要](/azure/automation/automation-dsc-overview)
 - [Setting up an SMB pull server (SMB プル サーバーのセットアップ)](pullServerSMB.md)
 - [Configuring a pull client (プル クライアントの構成)](pullClientConfigID.md)

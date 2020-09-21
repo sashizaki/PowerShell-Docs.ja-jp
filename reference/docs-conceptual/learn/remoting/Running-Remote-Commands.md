@@ -1,19 +1,19 @@
 ---
-ms.date: 08/14/2018
+ms.date: 08/21/2020
 keywords: powershell,コマンドレット
 title: リモート コマンドの実行
-ms.openlocfilehash: d6609deafd8dec4f34a8412439d87dacd20d46f1
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: ab6d464c31144349ee38cd01e82a2cf1470aaa95
+ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030317"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799623"
 ---
 # <a name="running-remote-commands"></a>リモート コマンドの実行
 
 1 つの PowerShell コマンドを使用し、1 台から数百台のコンピューターでコマンドを実行できます。 Windows PowerShell は、WMI、RPC、WS-Management など、さまざまなテクノロジを使用してリモート コンピューティングをサポートします。
 
-PowerShell Core では、WMI、WS-Management、および SSH リモート処理をサポートしています。 RPC のサポートは終了しました。
+PowerShell Core では、WMI、WS-Management、および SSH リモート処理をサポートしています。 PowerShell 6 では、RPC はサポートされなくなりました。 PowerShell 7 以降では、RPC は Windows でのみサポートされています。
 
 PowerShell Core でのリモート処理の詳細については、次の記事を参照してください。
 
@@ -55,8 +55,7 @@ Windows PowerShell のリモート処理を構成すると、それ以降は、�
 
 ### <a name="start-an-interactive-session"></a>対話型セッションの開始
 
-1 台のリモート コンピューターとの対話型セッションを開始するには、[Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) コマンドレットを使用します。
-たとえば、Server01 リモート コンピューターと対話型セッションを開始するには、次のように入力します。
+1 台のリモート コンピューターとの対話型セッションを開始するには、[Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession) コマンドレットを使用します。 たとえば、Server01 リモート コンピューターと対話型セッションを開始するには、次のように入力します。
 
 ```powershell
 Enter-PSSession Server01
@@ -138,7 +137,7 @@ WSMan プロバイダーの詳細については、[WSMan Provider](https://tech
 - [Register-PSSessionConfiguration](https://go.microsoft.com/fwlink/?LinkId=821508)
 - [Import-PSSession](https://go.microsoft.com/fwlink/?LinkId=821821)
 
-リモート処理のエラーに関するヘルプは、「[about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx)」をご覧ください。
+リモート処理のエラーに関するヘルプは、「[about_Remote_Troubleshooting](https://technet.microsoft.com/library/dd347642.aspx)」を参照してください。
 
 ## <a name="see-also"></a>参照
 

@@ -1,18 +1,18 @@
 ---
-title: IF ステートメントについて知りたかったことのすべて
+title: if ステートメントについて知りたかったことのすべて
 description: 他の多くの言語と同様に、PowerShell には、スクリプト内でコードを条件付き実行するためのステートメントがあります。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 6ffb70af694e80430d31991045b9fadc1a2cc3f0
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: b6bafb99bfb8ecd0152bae841e5c58d4c27ccd3e
+ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149525"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86469754"
 ---
-# <a name="everything-you-wanted-to-know-about-the-if-statement"></a>IF ステートメントについて知りたかったことのすべて
+# <a name="everything-you-wanted-to-know-about-the-if-statement"></a>`if` ステートメントについて知りたかったことのすべて
 
-他の多くの言語と同様に、PowerShell には、スクリプト内でコードを条件付き実行するためのステートメントがあります。 それらのステートメントの 1 つが [if][] ステートメントです。 本日は、PowerShell の最も基本的なコマンドの 1 つについて詳しく説明します。
+他の多くの言語と同様に、PowerShell には、スクリプト内でコードを条件付き実行するためのステートメントがあります。 それらのステートメントの 1 つが [If][] ステートメントです。 本日は、PowerShell の最も基本的なコマンドの 1 つについて詳しく説明します。
 
 > [!NOTE]
 > この記事の[オリジナル バージョン][]は、[@KevinMarquette][] 氏のブログに掲載されました。 このコンテンツを共有してくださった Kevin 氏に、PowerShell チームより感謝を申し上げます。 [PowerShellExplained.com][] のブログをご確認ください。
@@ -22,7 +22,7 @@ ms.locfileid: "84149525"
 多くの場合、スクリプトでは決定を下し、それらの決定に基づいて異なるロジックを実行する必要があります。
 これが、条件付き実行の意味です。 評価するステートメントまたは値が 1 つあると、その評価に基づいてコードの別のセクションを実行します。 これがまさに、`if` ステートメントで行われることです。
 
-## <a name="the-if-statement"></a>if ステートメント
+## <a name="the-if-statement"></a>`if` ステートメント
 
 次に、`if` ステートメントの基本的な例を示します。
 
@@ -60,7 +60,7 @@ if ( 5 -eq $value )
 
 考えられるユース ケースの 1 つは、値に対してアクションを実行する前に、値の状態をチェックすることです。 サービスを取得し、その状態が実行中であることを確認してから、それに対して `Restart-Service` を呼び出すことができます。
 
-C# のような他の言語では、等価性のチェックに `==` を使用する (例: `5 == $value`) のが一般的ですが、これは PowerShell では機能しません。 別のよくある誤りは、変数に値を代入するために予約されている等号 (例: `5 = $value`) を使用することです。 既知の値を左側に配置することで、その誤りをより起こしにくくします。
+C# のような他の言語では、等価性のチェックに `==` を使用する (例: `5 == $value`) のが一般的ですが、これは PowerShell では機能しません。 別のよくある誤りは、変数に値を代入するために予約されている等号 (例: `5 = $value`) を使用することです。 既知の値を左側に配置することで、その誤りを発生しにくくします。
 
 この演算子 (およびその他) には、いくつかのバリエーションがあります。
 
@@ -533,7 +533,7 @@ else
 }
 ```
 
-各スクリプト ブロックでは、コマンドの結果または値をパイプラインに配置しています。 次に、if ステートメントの結果を `$discount` 変数に代入します。 その例では、それらの値を直接、各スクリプト ブロック内の `$discount` 変数に簡単に割り当てることができました。 私は、`if` ステートメントでこれを頻繁に使用しているとは言えませんが、確かにこれを最近使用した例があります。
+各スクリプト ブロックでは、コマンドの結果または値をパイプラインに配置しています。 次に、`if` ステートメントの結果を `$discount` 変数に代入します。 その例では、それらの値を直接、各スクリプト ブロック内の `$discount` 変数に簡単に割り当てることができました。 私は、`if` ステートメントでこれを頻繁に使用しているとは言えませんが、確かにこれを最近使用した例があります。
 
 ### <a name="array-inline"></a>インライン配列
 
@@ -567,7 +567,7 @@ $snowSqlParam = @(
 
 ## <a name="simplify-complex-operations"></a>複雑な操作を簡略化する
 
-調べる比較の数があまりにも多すぎて、if ステートメントが画面右側のずっと遠くへスクロールするような状況におちいることは避けられません。
+確認する比較が多すぎて `If` ステートメントが画面右側の遠くの方へスクロールされてしまうという状況を避けることはできません。
 
 ```powershell
 $user = Get-ADUser -Identity $UserName
@@ -599,7 +599,7 @@ if ($null -ne $user -and
 
 ### <a name="pre-calculating-results"></a>結果の事前計算
 
-if ステートメントから目的のステートメントを取り出して、結果だけを調べることができます。
+`if` ステートメントから目的のステートメントを取り出して、結果だけを調べることができます。
 
 ```powershell
 $needsSecureHomeDrive = $null -ne $user -and
@@ -691,11 +691,11 @@ if ( -not (Test-Path -Path $folder) )
 `if` ステートメントはあのように単純なステートメントですが、PowerShell の基本となっている部分です。 これは、自分が記述するほとんどすべてのスクリプトで、複数回使用しているのに気付くことになります。 以前よりも理解を深めていただけたならば幸いです。
 
 <!-- link references -->
-[オリジナル バージョン]: https://powershellexplained.com/2019-08-11-PowerShell-if-then-else-equals-operator/
+[オリジナル バージョン]: https://powershellexplained.com/2019-08-11-Powershell-if-then-else-equals-operator/
 [powershellexplained.com]: https://powershellexplained.com/
 [@KevinMarquette]: https://twitter.com/KevinMarquette
 [if]: /powershell/module/microsoft.powershell.core/about/about_if
-[ビットごとの演算子]: https://powershellexplained.com/powershell/module/microsoft.powershell.core/about/about_arithmetic_operators#bitwise-operators
+[ビットごとの演算子]: /powershell/module/microsoft.powershell.core/about/about_arithmetic_operators#bitwise-operators
 [正規表現を使用するさまざまな方法]: https://powershellexplained.com/2017-07-31-Powershell-regex-regular-expression/
 [例外について知りたかったことのすべて]: everything-about-exceptions.md
 [$null について知りたかったことのすべて]: everything-about-null.md

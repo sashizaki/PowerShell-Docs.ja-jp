@@ -2,12 +2,12 @@
 title: Visual Studio Code を使用したリモート編集およびデバッグ
 description: Visual Studio Code を使用したリモート編集およびデバッグ
 ms.date: 06/13/2019
-ms.openlocfilehash: 5ce7f575d90ff47fd6b8a0a2b567e972ec3a9fef
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 0394348b4dfbe813549c02035e9d3b035cba72e4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809278"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784641"
 ---
 # <a name="using-visual-studio-code-for-remote-editing-and-debugging"></a>Visual Studio Code を使用したリモート編集およびデバッグ
 
@@ -47,11 +47,11 @@ VSCode 用 PowerShell 拡張機能を開始し、PowerShell 統合コンソー�
 
 - 余白にブレークポイントを追加します
 
-  ![余白にブレークポイントを追加する](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
+  ![余白へのブレークポイントの追加](media/Using-VSCode-for-Remote-Editing-and-Debugging/2-adding-breakpoint-gutter.png)
 
 - F5 キーを押して PowerShell スクリプトをデバッグします。
 
-  ![PowerShell のローカル スクリプトをデバッグする](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
+  ![ローカルの PowerShell スクリプトのデバッグ](media/Using-VSCode-for-Remote-Editing-and-Debugging/3-local-debug.png)
 
 デバッグ中に、デバッグ コンソールと対話し、左側でスコープ内の変数を確認し、他のすべての標準デバッグ ツールを使用できます。
 
@@ -73,20 +73,20 @@ VSCode 用 PowerShell 拡張機能を開始し、PowerShell 統合コンソー�
 
 まず、統合コンソールで `Enter-PSSession` を実行します。 プロンプトの左側に `[<hostname>]` が表示されたら、リモート セッションに接続しています。
 
-![Enter-PSSession の呼び出し](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
+![Enter-PSSession を呼び出してリモート セッションに接続します](media/Using-VSCode-for-Remote-Editing-and-Debugging/4-enter-pssession.png)
 
 これで、ローカル スクリプトを編集する場合と同じ手順を実行できるようになりました。
 
 1. `Open-EditorFile test.ps1` または `psedit test.ps1` を実行してリモートの `test.ps1` ファイルを開きます
 
-  ![Open-EditorFile the test.ps1 ファイル](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
+  ![リモート システムでスクリプトを編集します](media/Using-VSCode-for-Remote-Editing-and-Debugging/5-open-remote-file.png)
 
 1. ファイルを編集し、ブレークポイントを設定します
 
-   ![編集とブレークポイントの設定](media/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
+   ![ブレークポイントを編集して設定します](media/Using-VSCode-for-Remote-Editing-and-Debugging/6-set-breakpoints.png)
 
 1. リモート ファイルのデバッグを開始します (F5)
 
-   ![リモート ファイルのデバッグ](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
+   ![リモート スクリプトのデバッグ](media/Using-VSCode-for-Remote-Editing-and-Debugging/7-start-debugging.png)
 
 何か問題があれば、[GitHub リポジトリ](https://github.com/powershell/vscode-powershell)で問題を開いてください。

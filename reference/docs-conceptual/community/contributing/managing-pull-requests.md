@@ -3,12 +3,12 @@ title: プル要求を管理する方法
 description: この記事では、PowerShell-Docs チームがプル要求を管理する方法について説明します。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: b9b37816dfdf38e4d8b7c2d66799164d0e97d257
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: af5280e91aa3744b6172dc3555df6989cb0ce1a2
+ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "79060387"
+ms.lasthandoff: 07/09/2020
+ms.locfileid: "86158175"
 ---
 # <a name="managing-pull-requests"></a>プル要求の管理
 

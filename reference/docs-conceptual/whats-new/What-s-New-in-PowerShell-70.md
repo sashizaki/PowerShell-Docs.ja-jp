@@ -2,12 +2,12 @@
 title: PowerShell 7.0 の新機能
 description: PowerShell 7.0 でリリースされた新機能と変更
 ms.date: 03/04/2020
-ms.openlocfilehash: 313ed2b663262b57abd52bfc7378e1f4661dc03a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: d52b536efd9d7a1f8e6b01a58952f08ca49016b1
+ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808403"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162462"
 ---
 # <a name="whats-new-in-powershell-70"></a>PowerShell 7.0 の新機能
 
@@ -284,7 +284,7 @@ Get-ChildItem: Cannot find path 'C:\NotReal' because it does not exist
 ![スクリプトからのエラー表示](./media/What-s-New-in-PowerShell-70/myscript-error.png)
 
 PowerShell 7 の既定のビューは **ConciseView** です。 以前の既定のビューの **NormalView** は、ユーザー設定変数 `$ErrorView` を設定して選択できます。
- 
+
 ```powershell
 $ErrorView = 'NormalView' # Sets the error view to NormalView
 $ErrorView = 'ConciseView' # Sets the error view to ConciseView
@@ -357,11 +357,12 @@ $Env:POWERSHELL_UPDATECHECK = 'Default'
 
 このコマンドレットは、構成ドキュメントを作成せずに、DSC リソースを直接呼び出します。 このコマンドレットを使用すると、構成管理製品で DSC リソースを使って Windows または Linux を管理できます。 DSC エンジンの実行中、デバッグが有効になっている場合は、このコマンドレットでリソースのデバッグを有効にすることもできます。
 
-このコマンドは、Log という名前のリソースの **Set** メソッドを呼び出して、**Message** プロパティを指定します。
+このコマンドは、**WindowsProcess** という名前のリソースの **Set** メソッドを呼び出し、指定された Windows プロセスを開始するために必須の **Path** プロパティと **Arguments** プロパティを指定します。
 
 ```powershell
-Invoke-DscResource -Name Log -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
-  Message = 'Hello World'
+Invoke-DscResource -Name WindowsProcess -Method Set -ModuleName PSDesiredStateConfiguration -Property @{
+  Path = 'C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe'
+  Arguments = ''
 }
 ```
 

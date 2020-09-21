@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC 環境リソース
-ms.openlocfilehash: d6d3b4a2086be28fbfa2bf200acef9b13b7b7825
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: d8519a66d457767dcbc0e08b01a69a9264997479
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954719"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86464419"
 ---
 # <a name="dsc-environment-resource"></a>DSC 環境リソース
 
@@ -22,6 +22,7 @@ Environment [string] #ResourceName
 {
     Name = [string]
     [ Path = [bool] ]
+    [ Target = [string] { Process | Machine } ]
     [ Value = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present }  ]
@@ -35,6 +36,7 @@ Environment [string] #ResourceName
 |---|---|
 |名前 |特定の状態を保証する環境変数の名前を示します。 |
 |Path |構成されている環境変数を定義します。 変数が **Path** 変数である場合は、このプロパティを `$true` に設定します。それ以外の場合は、`$false` に設定します。 既定では、 `$false`です。 構成されている変数が **Path** 変数である場合は、**Value** プロパティによって提供される値が既存の値に追加されます。 |
+|移行先| 変数を取得する場所 (マシンまたはプロセス) を示します。 両方が示されている場合は、マシンからの値のみが返されます。 既定では両方であり、これは残りのリソースでの既定でもあります。 |
 |値 |環境変数に割り当てる値。 |
 
 ## <a name="common-properties"></a>共通プロパティ

@@ -1,13 +1,13 @@
 ---
-ms.date: 10/31/2017
+ms.date: 07/06/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: MOF ファイルのセキュリティ保護
-ms.openlocfilehash: 30b7ff276781b398aeae94e710c810f5fccafdfb
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: b1319167010a85e639fdb51a1a0b8b472dfda3a6
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83556389"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87778153"
 ---
 # <a name="securing-the-mof-file"></a>MOF ファイルのセキュリティ保護
 
@@ -15,10 +15,10 @@ ms.locfileid: "83556389"
 
 DSC では、ローカル構成マネージャー (LCM) が必要な終了状態を実装する、MOF ファイルに格納されている情報を適用することで、サーバー ノードの構成を管理します。 このファイルには構成の詳細が含まれているため、安全に保つことが重要です。 このトピックでは、ターゲット ノードがファイルを暗号化したことを確認する方法について説明します。
 
-PowerShell バージョン 5.0 以降では、`Start-DSCConfiguration` コマンドレットを使用してノードに適用されている場合、MOF ファイル全体が既定で暗号化されます。 この記事で説明されているプロセスが必要になるのは、証明書が管理されていない場合にプル サービス プロトコルを使用してソリューションを実装する場合のみです。これにより、ターゲット ノードによってダウンロードされた構成を暗号化解除し、適用される前にシステムで読み取れるようになります (たとえば、Windows Server でプル サービスが使用できるようになります)。 [Azure Automation DSC](https://docs.microsoft.com/azure/automation/automation-dsc-overview) に登録されているノードには自動的に証明書がインストールされ、サービスによって管理されます。管理オーバーヘッドは必要ありません。
+PowerShell バージョン 5.0 以降では、`Start-DSCConfiguration` コマンドレットを使用してノードに適用されている場合、MOF ファイル全体が既定で暗号化されます。 この記事で説明されているプロセスが必要になるのは、証明書が管理されていない場合にプル サービス プロトコルを使用してソリューションを実装する場合のみです。これにより、ターゲット ノードによってダウンロードされた構成を暗号化解除し、適用される前にシステムで読み取れるようになります (たとえば、Windows Server でプル サービスが使用できるようになります)。 [Azure Automation DSC](/azure/automation/automation-dsc-overview) に登録されているノードには自動的に証明書がインストールされ、サービスによって管理されます。管理オーバーヘッドは必要ありません。
 
 > [!NOTE]
-> このトピックでは、暗号化に使用する証明書について説明します。 暗号化には、自己署名証明書で十分です。秘密キーは常に秘密に保たれますし、暗号化はドキュメントの信頼性を意味しないからです。 認証の目的では、自己署名証明書を使用*しないでください*。 認証の目的では、常に信頼された証明機関 (CA) からの証明書を使用する必要があります。
+> このトピックでは、暗号化に使用する証明書について説明します。 暗号化には、自己署名証明書で十分です。秘密キーは常に秘密に保たれますし、暗号化はドキュメントの信頼性を意味しないからです。 認証の目的では、自己署名証明書を使用_しないでください_。 認証の目的では、常に信頼された証明機関 (CA) からの証明書を使用する必要があります。
 
 ## <a name="prerequisites"></a>前提条件
 
@@ -29,14 +29,17 @@ DSC 構成のセキュリティ保護に使用される資格情報を正常に�
 - **各ターゲット ノードでは、暗号化可能な証明書がそれぞれの個人用ストアに保存されています**。 Windows PowerShell では、ストアへのパスは Cert:\LocalMachine\My です。 このトピックの例では、"ワークステーション認証" テンプレートを使用します。このテンプレートは、その他の証明書テンプレートと共に、[[既定の証明書テンプレート]](https://technet.microsoft.com/library/cc740061(v=WS.10).aspx) にあります。
 - ターゲット ノード以外のコンピューターでこの構成を実行する場合は、**証明書の公開キーをエクスポート**して、構成の実行元であるコンピューターにインポートします。 **公開**キーのみをエクスポートし、秘密キーは安全に保護してください。
 
+> [!NOTE]
+> スクリプト リソースには、暗号化に関する制限があります。 詳細については、「[スクリプト リソース](../reference/resources/windows/scriptResource.md#known-limitations)」を参照してください。
+
 ## <a name="overall-process"></a>全体的なプロセス
 
  1. ターゲット ノードごとに証明書のコピーが保持され、構成コンピューターに公開キーと拇印が保持されるように、証明書、キー、および拇印をセットアップします。
- 2. 公開キーのパスと拇印が含まれた構成データ ブロックを作成します。
- 3. ターゲット ノードに必要な構成を定義し、ターゲット ノードで暗号化の解除をセットアップする構成スクリプトを作成します。暗号化の解除は、証明書とその拇印を使用して構成データを解読するように、ローカル構成マネージャーに指示することによって行います。
- 4. 構成を実行すると、ローカル構成マネージャーの設定が行われ、DSC 構成が起動します。
+ 1. 公開キーのパスと拇印が含まれた構成データ ブロックを作成します。
+ 1. ターゲット ノードに必要な構成を定義し、ターゲット ノードで暗号化の解除をセットアップする構成スクリプトを作成します。暗号化の解除は、証明書とその拇印を使用して構成データを解読するように、ローカル構成マネージャーに指示することによって行います。
+ 1. 構成を実行すると、ローカル構成マネージャーの設定が行われ、DSC 構成が起動します。
 
-![Diagram1](media/secureMOF/CredentialEncryptionDiagram1.png)
+![資格情報の暗号化のプロセス フロー](media/secureMOF/CredentialEncryptionDiagram1.png)
 
 ## <a name="certificate-requirements"></a>証明書の要件
 
@@ -45,14 +48,14 @@ DSC 構成のセキュリティ保護に使用される資格情報を正常に�
 1. **キー使用法**:
    - 含める必要がある: "KeyEncipherment" と "DataEncipherment"。
    - 含める "_べきではない_": "Digital Signature"。
-2. **拡張キー使用法**:
+1. **拡張キー使用法**:
    - 含める必要がある: ドキュメントの暗号化 (1.3.6.1.4.1.311.80.1)。
    - 含める "_べきではない_": クライアント認証 (1.3.6.1.5.5.7.3.2) とサーバー認証 (1.3.6.1.5.5.7.3.1)。
-3. 証明書の秘密キーが *ターゲット ノード_ で使用可能であること。
-4. 証明書の**プロバイダー**は、"Microsoft RSA SChannel Cryptographic Provider" でなければならない。
+1. 証明書の秘密キーが *ターゲット ノード_ で使用可能であること。
+1. 証明書の**プロバイダー**は、"Microsoft RSA SChannel Cryptographic Provider" でなければならない。
 
 > [!IMPORTANT]
-> 'Digital Signature' のキー使用法またはいずれかの認証 EKU が含まれている証明書を使用することもできますが、暗号化キーを誤用しやすくなり、攻撃に対して脆弱になります。 したがって、ベスト プラクティスとしては、DSC の資格情報をセキュリティで保護する目的で特別に作成した証明書を使い、その証明書ではこれらのキー使用法と EKU を省略することをお勧めします。
+> 'Digital Signature' のキー使用法またはいずれかの認証 EKU が含まれている証明書を使用することはできますが、暗号化キーの誤用や、攻撃に対する脆弱性を引き起こしやすくなります。 したがって、ベスト プラクティスとしては、DSC の資格情報をセキュリティで保護する目的で特別に作成した証明書を使い、その証明書ではこれらのキー使用法と EKU を省略することをお勧めします。
 
 _ターゲット ノード_にある既存の証明書で、これらの条件を満たしているものがあれば、DSC 資格情報をセキュリティで保護するために使うことができます。
 
@@ -61,7 +64,7 @@ _ターゲット ノード_にある既存の証明書で、これらの条件�
 必要な暗号化証明書 (公開/秘密キー ペア) を作成して使用するための方法は 2 つあります。
 
 1. **ターゲット ノード**上に作成し、公開キーのみを**オーサリング ノード**にエクスポートする
-2. **オーサリング ノード**上に作成し、キー ペア全体を**ターゲット ノード**にエクスポートする
+1. **オーサリング ノード**上に作成し、キー ペア全体を**ターゲット ノード**にエクスポートする
 
 MOF の証明書の暗号化を解除するための秘密キーが常にターゲット ノードで保持されるため、1 つ目の方法をお勧めします。
 
@@ -70,8 +73,8 @@ MOF の証明書の暗号化を解除するための秘密キーが常にター�
 秘密キーは、**ターゲット ノード**で MOF の暗号化解除に使用されるため、秘密に保つ必要があります。そのための最も簡単な方法は、**ターゲット ノード**で秘密キー証明書を作成し、DSC 構成を MOF ファイルに作成するために使用されるコンピューターに**公開キー証明書**をコピーすることです。 次に例を示します。
 
 1. **ターゲット ノード**で証明書を作成します。
-2. 公開キー証明書を**ターゲット ノード**にエクスポートします。
-3. 公開キー証明書を**オーサリング ノード**の**マイ**証明書ストアにインポートします。
+1. 公開キー証明書を**ターゲット ノード**にエクスポートします。
+1. 公開キー証明書を**オーサリング ノード**の**マイ**証明書ストアにインポートします。
 
 #### <a name="on-the-target-node-create-and-export-the-certificate"></a>ターゲット ノード: 証明書を作成してエクスポートする
 
@@ -87,6 +90,7 @@ $cert | Export-Certificate -FilePath "$env:temp\DscPublicKey.cer" -Force
 エクスポートしたら、`DscPublicKey.cer` を**オーサリング ノード**にコピーする必要があります。
 
 > ターゲット ノード: Windows Server 2012 R2/Windows 8.1 以前
+
 > [!WARNING]
 > Windows 10 および Windows Server 2016 より前の Windows オペレーティング システムの `New-SelfSignedCertificate` コマンドレットでは、**Type** パラメーターがサポートされていないため、これらのオペレーティング システムでは、他の方法でこの証明書を作成する必要があります。 この場合は、`makecert.exe` または `certutil.exe` を使って証明書を作成できます。 また、別の方法として、[Microsoft スクリプト センターから New-SelfSignedCertificateEx.ps1 スクリプトをダウンロード](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)し、それを使用して証明書を作成することもできます。
 
@@ -128,9 +132,9 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 **オーサリング ノード**で暗号化証明書を作成し、**秘密キー**と共に PFX ファイルとしてエクスポートして、**ターゲット ノード**にインポートすることもできます。 これは、DSC 資格情報の暗号化を実装するために _Nano Server_ で実行されている現在の手法です。 PFX はパスワードで保護されていますが、転送中はセキュリティで保護する必要があります。 次に例を示します。
 
 1. **オーサリング ノード**で証明書を作成します。
-2. **オーサリング ノード**で、秘密キーを含む証明書をエクスポートします。
-3. **オーサリング ノード**から秘密キーを削除します。ただし、公開キー証明書を**マイ** ストアに保管しておきます。
-4. 秘密キー証明書を**ターゲット ノード**のマイ (個人用) 証明書ストアにインポートします。
+1. **オーサリング ノード**で、秘密キーを含む証明書をエクスポートします。
+1. **オーサリング ノード**から秘密キーを削除します。ただし、公開キー証明書を**マイ** ストアに保管しておきます。
+1. 秘密キー証明書を**ターゲット ノード**のマイ (個人用) 証明書ストアにインポートします。
    - これはルート ストアに追加されるため、**ターゲット ノード**で信頼されるようになります。
 
 #### <a name="on-the-authoring-node-create-and-export-the-certificate"></a>オーサリング ノード: 証明書を作成してエクスポートする
@@ -152,6 +156,7 @@ Import-Certificate -FilePath "$env:temp\DscPublicKey.cer" -CertStoreLocation Cer
 エクスポートしたら、`DscPrivateKey.pfx` を**ターゲット ノード**にコピーする必要があります。
 
 > ターゲット ノード: Windows Server 2012 R2/Windows 8.1 以前
+
 > [!WARNING]
 > Windows 10 および Windows Server 2016 より前の Windows オペレーティング システムの `New-SelfSignedCertificate` コマンドレットでは、**Type** パラメーターがサポートされていないため、これらのオペレーティング システムでは、他の方法でこの証明書を作成する必要があります。 この場合は、`makecert.exe` または `certutil.exe` を使って証明書を作成できます。 また、別の方法として、[Microsoft スクリプト センターから New-SelfSignedCertificateEx.ps1 スクリプトをダウンロード](https://gallery.technet.microsoft.com/scriptcenter/Self-signed-certificate-5920a7c6)し、それを使用して証明書を作成することもできます。
 
@@ -221,8 +226,8 @@ $ConfigData= @{
                 # The thumbprint of the Encryption Certificate
                 # used to decrypt the credentials on target node
                 Thumbprint = "AC23EA3A9E291A75757A556D0B71CBBF8C4F6FD8"
-            };
-        );
+            }
+        )
     }
 ```
 
@@ -237,8 +242,7 @@ configuration CredentialEncryptionExample
         [Parameter(Mandatory=$true)]
         [ValidateNotNullorEmpty()]
         [PsCredential] $credential
-        )
-
+    )
 
     Node $AllNodes.NodeName
     {
@@ -279,8 +283,7 @@ configuration CredentialEncryptionExample
         [Parameter(Mandatory=$true)]
         [ValidateNotNullorEmpty()]
         [PsCredential] $credential
-        )
-
+    )
 
     Node $AllNodes.NodeName
     {
@@ -336,8 +339,7 @@ configuration CredentialEncryptionExample
         [Parameter(Mandatory=$true)]
         [ValidateNotNullorEmpty()]
         [PsCredential] $credential
-        )
-
+    )
 
     Node $AllNodes.NodeName
     {
@@ -361,7 +363,6 @@ function Start-CredentialEncryptionExample
 {
     [CmdletBinding()]
     param ($computerName)
-
 
     [string] $thumbprint = Get-EncryptionCertificate -computerName $computerName -Verbose
     Write-Verbose "using cert: $thumbprint"
@@ -394,9 +395,7 @@ function Start-CredentialEncryptionExample
 
     Write-Verbose "Starting Configuration..."
     Start-DscConfiguration .\CredentialEncryptionExample -wait -Verbose
-
 }
-
 
 #region HelperFunctions
 
@@ -408,28 +407,30 @@ function Get-EncryptionCertificate
 {
     [CmdletBinding()]
     param ($computerName)
+
     $returnValue= Invoke-Command -ComputerName $computerName -ScriptBlock {
-            $certificates = dir Cert:\LocalMachine\my
+        $certificates = dir Cert:\LocalMachine\my
 
-            $certificates | %{
+        $certificates | %{
                     # Verify the certificate is for Encryption and valid
-                    if ($_.PrivateKey.KeyExchangeAlgorithm -and $_.Verify())
-                    {
-                        # Create the folder to hold the exported public key
-                        $folder= Join-Path -Path $env:SystemDrive\ -ChildPath $using:publicKeyFolder
-                        if (! (Test-Path $folder))
-                        {
-                            md $folder | Out-Null
-                        }
+            if ($_.PrivateKey.KeyExchangeAlgorithm -and $_.Verify())
+            {
+                # Create the folder to hold the exported public key
+                $folder= Join-Path -Path $env:SystemDrive\ -ChildPath $using:publicKeyFolder
+                if (! (Test-Path $folder))
+                {
+                    md $folder | Out-Null
+                }
 
-                        # Export the public key to a well known location
-                        $certPath = Export-Certificate -Cert $_ -FilePath (Join-Path -path $folder -childPath "EncryptionCertificate.cer")
+                # Export the public key to a well known location
+                $certPath = Export-Certificate -Cert $_ -FilePath (Join-Path -path $folder -childPath "EncryptionCertificate.cer")
 
-                        # Return the thumbprint, and exported certificate path
-                        return @($_.Thumbprint,$certPath);
-                    }
-                  }
+                # Return the thumbprint, and exported certificate path
+                return @($_.Thumbprint,$certPath);
+            }
         }
+    }
+
     Write-Verbose "Identified and exported cert..."
     # Copy the exported certificate locally
     $destinationPath = join-path -Path "$env:SystemDrive\$script:publicKeyFolder" -childPath "$computername.EncryptionCertificate.cer"

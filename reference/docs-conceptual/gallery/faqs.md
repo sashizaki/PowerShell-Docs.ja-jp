@@ -3,20 +3,20 @@ ms.date: 06/12/2017
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーに関してよく寄せられる質問
-ms.openlocfilehash: 035681e108e1a3e05fe5d659d527ae1ad1c64cf4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 29f930cf552abec8acbbf02f5570c6ac0a14066d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500583"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87777824"
 ---
 # <a name="frequently-asked-questions"></a>よく寄せられる質問
 
-## <a name="what-is-a-powershell-module"></a>PowerShell モジュールとは何ですか。
+## <a name="what-is-a-powershell-module"></a>PowerShell モジュールとは
 
 PowerShell モジュールは、いくつかの PowerShell 機能を含む再利用可能なパッケージです。 PowerShell のすべてのもの (関数、変数、DSC リソースなど) がモジュールでパッケージ化されます。 通常、モジュールとは、特定のパス上に保存される、特定の種類のファイルを含むフォルダーです。 PowerShell モジュールには、いくつかの種類があります。
 
-## <a name="what-is-a-powershell-script"></a>PowerShell スクリプトとは何ですか。
+## <a name="what-is-a-powershell-script"></a>PowerShell スクリプトとは
 
 PowerShell スクリプトとは、再利用と共有を可能にするため、.ps1 ファイルに保存される一連のコマンドです。 PowerShell ワークフローは PowerShell スクリプトでもあり、一連のタスクとそのタスクの順序の概要を示します。 詳細については、「[PowerShell ファースト ステップ ガイド](https://technet.microsoft.com/library/jj134242.aspx)」を参照してください。
 
@@ -24,8 +24,8 @@ PowerShell スクリプトとは、再利用と共有を可能にするため、
 
 モジュールは一般に共有に適していますが、ワークフローとスクリプトのコミュニティへの投稿を容易にするため、スクリプト共有を有効にしています。 詳細については、次のブログを参照してください。
 
-- [スクリプトを作成するのではなく、PowerShell モジュールを作成しよう](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
-- [PowerShell モジュールの概要](https://blogs.technet.microsoft.com/heyscriptingguy/2015/07/10/understanding-powershell-modules/)
+- [Don't Write Scripts, Write PowerShell Modules (スクリプトではなく、PowerShell モジュールを記述しよう)](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
+- [Understanding PowerShell Modules (PowerShell モジュールの概要)](https://blogs.technet.microsoft.com/heyscriptingguy/2015/07/10/understanding-powershell-modules/)
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>どのようにして PowerShell ギャラリーに公開できますか。
 
@@ -36,7 +36,7 @@ PowerShell スクリプトとは、再利用と共有を可能にするため、
 
 **パッケージをインストールまたは保存するためにギャラリーに登録またはサインインする必要はありません。**
 
-## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>PowerShell ギャラリーに項目を公開しようとして、"要求を処理できませんでした。 '指定した API キーが無効か、指定したパッケージへのアクセス許可がありません。' リモート サーバーがエラーを返しました: (403) 許可されていません" というエラーを受信しました。 これはどういう意味でしょうか。
+## <a name="i-received-failed-to-process-request-the-specified-api-key-is-invalid-or-does-not-have-permission-to-access-the-specified-package-the-remote-server-returned-an-error-403-forbidden-error-when-i-tried-to-publish-a-package-to-the-powershell-gallery-what-does-that-mean"></a>PowerShell ギャラリーに項目を公開しようとして、"要求を処理できませんでした。 '指定した API キーが無効か、指定したパッケージへのアクセス許可がありません。' リモート サーバーがエラーを返しました: (403) 許可されていません" というエラーを受信しました。 これはどういう意味ですか。
 
 このエラーは、次の理由で発生することがあります。
 
@@ -114,7 +114,7 @@ PackageManagement はどのパッケージ マネージャーでも機能する�
 
 PowerShellGet は PowerShell パッケージのパッケージ マネージャーです。 PackageManagement を介して PowerShellGet 機能を公開する PSModule パッケージ プロバイダーがあります。 このため、[Install-Module][] または Install-Package -Provider PSModule を実行して、PowerShell ギャラリーからモジュールをインストールすることができます。 [Update-Module][] および [Publish-Module][] を含む特定の PowerShellGet 機能には、PackageManagement コマンドではアクセスできません。
 
-つまり、PowerShellGet はPowerShell コンテンツのプレミアム パッケージ管理エクスペリエンスにのみ重点を置いています。 PackageManagement は、単一の一般的なツール セットによるすべてのパッケージ管理エクスペリエンスの公開に重点を置いています。 この回答では不十分な場合は、このドキュメントの下部にある「**PackageManagement は実際に PowerShellGet にどのように関連しているでしょうか。** 」のセクションに詳しい回答があります。
+つまり、PowerShellGet はPowerShell コンテンツのプレミアム パッケージ管理エクスペリエンスにのみ重点を置いています。 PackageManagement は、単一の一般的なツール セットによるすべてのパッケージ管理エクスペリエンスの公開に重点を置いています。 この回答では不十分な場合は、このドキュメントの下部にある「**PackageManagement は実際に PowerShellGet にどのように関連しているでしょうか。**」のセクションに詳しい回答があります。
 
 詳細については、[PackageManagement プロジェクトのページ](https://oneget.org/)にアクセスしてください。
 
@@ -137,7 +137,7 @@ PowerShell コマンドレット層で、[Install-Module][] は実際には `Ins
 
 PackageManagement パッケージ プロバイダー層では、PSModule パッケージ プロバイダーは実際に他の PackageManagement パッケージ プロバイダーを呼び出します。 たとえば、NuGet ベースのギャラリー (PowerShell ギャラリーなど) を使用している場合、PSModule パッケージ プロバイダーでは、リポジトリで使用できるように NuGet パッケージ プロバイダーを使用します。
 
-![PowerShellGet アーキテクチャ](media/faqs/powershellgetArchitecture.png)
+![PowerShellGet アーキテクチャの図](media/faqs/powershellgetArchitecture.png)
 
 図 1: PowerShellGet アーキテクチャ
 

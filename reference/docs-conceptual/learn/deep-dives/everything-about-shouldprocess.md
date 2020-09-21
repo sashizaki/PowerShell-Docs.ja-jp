@@ -3,12 +3,12 @@ title: ShouldProcess について知りたかったことのすべて
 description: ShouldProcess は、見過ごされることがよくある重要な機能です。 WhatIf と Confirm パラメーターを使用すると、関数に簡単に追加できます。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 1d9110302a191b90bd11bdf742f77704a8c9d6f0
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 6bd4dbd5255203f2daf804163aa2a84d992d6697
+ms.sourcegitcommit: 0afff6edbe560e88372dd5f1cdf51d77f9349972
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149485"
+ms.lasthandoff: 07/20/2020
+ms.locfileid: "86469737"
 ---
 # <a name="everything-you-wanted-to-know-about-shouldprocess"></a>ShouldProcess について知りたかったことのすべて
 
@@ -481,7 +481,7 @@ if ($PSCmdlet.ShouldProcess('TARGET')){
 
 `-Force` と `-WhatIf` の両方が指定されている場合は、`-WhatIf` を優先する必要があります。 この方法では、`ShouldProcess` が常に実行されるため、`-WhatIf` の処理が保持されます。
 
-`ShouldProcess` を含む if ステートメントの中に `$Force` 値のチェックを追加しないでください。 これは、この特定のシナリオの場合のアンチパターンですが、次のセクションの `ShouldContinue` でこれについて説明します。
+`ShouldProcess` が含まれる `if` ステートメントの中に `$Force` 値のチェックを追加しないでください。 これは、この特定のシナリオの場合のアンチパターンですが、次のセクションの `ShouldContinue` でこれについて説明します。
 
 ### <a name="shouldcontinue--force"></a>ShouldContinue -Force
 

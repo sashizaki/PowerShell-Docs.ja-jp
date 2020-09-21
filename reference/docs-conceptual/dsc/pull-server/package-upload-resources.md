@@ -2,12 +2,12 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: リソースをパッケージ化してプル サーバーにアップロードする
-ms.openlocfilehash: 8aac343d7495ecda94ed76d1d97079397eecd65f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: d0e070b7aa43acbbbf087729d53f06dbc7e7734a
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278505"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782890"
 ---
 # <a name="package-and-upload-resources-to-a-pull-server"></a>リソースをパッケージ化してプル サーバーにアップロードする
 
@@ -20,14 +20,14 @@ ms.locfileid: "78278505"
 
 ## <a name="package-resource-modules"></a>リソース モジュールをパッケージ化する
 
-クライアントでダウンロードできるようにする各リソースは、".zip" ファイルに格納する必要があります。 以下の例では、[xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0) リソースを使用して必要な手順を示します。
+クライアントでダウンロードできる各リソースは、`.zip` ファイルに格納する必要があります。 以下の例では、[xPSDesiredStateConfiguration](https://www.powershellgallery.com/packages/xPSDesiredStateConfiguration/8.4.0.0) リソースを使用して必要な手順を示します。
 
 > [!NOTE]
-> PowerShell 4.0 を使っているクライアントがある場合は、リソース フォルダーの構造をフラット化し、すべてのバージョン フォルダーを削除する必要があります。 詳しくは、「[Multiple Resource Versions (複数のリソース バージョン)](../configurations/import-dscresource.md#multiple-resource-versions)」をご覧ください。
+> PowerShell 4.0 を使用しているクライアントがある場合は、リソース フォルダーの構造をフラット化し、すべてのバージョン フォルダーを削除する必要があります。 詳しくは、「[Multiple Resource Versions (複数のリソース バージョン)](../configurations/import-dscresource.md#multiple-resource-versions)」をご覧ください。
 
-好みのユーティリティ、スクリプト、または方法を使って、リソース ディレクトリを圧縮することができます。 Windows では、"xPSDesiredStateConfiguration" ディレクトリを "*右クリック*" して [送る] を選択し、[圧縮フォルダー] を選択します。
+好みのユーティリティ、スクリプト、または方法を使って、リソース ディレクトリを圧縮することができます。 Windows の場合、`xPSDesiredStateConfiguration` ディレクトリを "_右クリック_" して、 **[送信先]** 、 **[圧縮フォルダー]** の順に選択します。
 
-![右クリック](media/package-upload-resources/right-click.gif)
+![右クリック - [送信先] - [圧縮フォルダー]](media/package-upload-resources/right-click.gif)
 
 ### <a name="naming-the-resource-archive"></a>リソース アーカイブの名前を指定する
 
@@ -37,11 +37,11 @@ ms.locfileid: "78278505"
 {ModuleName}_{Version}.zip
 ```
 
-上の例では、"xPSDesiredStateConfiguration.zip" の名前を "xPSDesiredStateConfiguration_8.4.4.0.zip" に変更する必要があります。
+上の例では、`xPSDesiredStateConfiguration.zip` の名前を `xPSDesiredStateConfiguration_8.4.4.0.zip` に変更する必要があります。
 
 ### <a name="create-checksums"></a>チェックサムを作成する
 
-リソース モジュールを圧縮して名前を変更した後は、**チェックサム**を作成する必要があります。  **チェックサム**は、クライアント上の LCM によって、リソースが変更されていて、再度ダウンロードする必要があるかどうかを判断するために使われます。 次の例で示すように、**チェックサム**は [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) コマンドレットで作成できます。
+リソース モジュールを圧縮して名前を変更した後は、**チェックサム**を作成する必要があります。 **チェックサム**は、クライアント上の LCM によって、リソースが変更されていて、再度ダウンロードする必要があるかどうかを判断するために使われます。 次の例で示すように、**チェックサム**は [New-DSCCheckSum](/powershell/module/PSDesiredStateConfiguration/New-DSCCheckSum) コマンドレットで作成できます。
 
 ```powershell
 New-DscChecksum -Path .\xPSDesiredStateConfiguration_8.4.4.0.zip

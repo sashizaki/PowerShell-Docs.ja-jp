@@ -3,12 +3,12 @@ title: プル要求を送信する方法
 description: この記事では、PowerShell-Docs リポジトリにプル要求を送信する方法について説明します。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: b56911dd4703530f31dd077a8d85ac131c82ee65
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 8b392a36c9469b83cf4f088c1799720a091434b4
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83690947"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782652"
 ---
 # <a name="how-to-submit-pull-requests"></a>プル要求を送信する方法
 
@@ -58,7 +58,7 @@ Docs platform, so the values set in these 3 places will be ignored. Please remov
 1. PR を送信します。
 1. PR の状態を示す GitHub コメント内に、リポジトリで有効になっている "チェック" の状態が表示されます。 この例では、"Commit Validation" (コミットの検証) と "OpenPublishing.Build" の 2 つのチェックが有効になっています。
 
-   ![失敗したチェック](media/pull-requests/validation-failed.png)
+   ![検証の状態 - 一部のチェックに失敗しました](media/pull-requests/validation-failed.png)
 
    コミットの検証に失敗した場合でも、ビルドは検証を通過できます。
 
@@ -66,7 +66,7 @@ Docs platform, so the values set in these 3 places will be ignored. Please remov
 1. [詳細] ページには、失敗したすべての検証チェックと、問題を修正する方法に関する情報が表示されます。
 1. 検証が成功すると、PR に次のコメントが追加されます。
 
-   ![ビルドの検証](media/pull-requests/build-validation.png)
+   ![検証の状態: 成功](media/pull-requests/build-validation.png)
 
 > [!NOTE]
 > 外部 (Microsoft の従業員以外) の共同作成者の場合、詳細なビルド レポートやプレビュー リンクにアクセスすることはできません。

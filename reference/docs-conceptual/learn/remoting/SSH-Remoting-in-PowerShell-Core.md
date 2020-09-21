@@ -1,13 +1,13 @@
 ---
 title: SSH 経由の PowerShell リモート処理
 description: SSH を使用した PowerShell Core のリモート処理
-ms.date: 09/30/2019
-ms.openlocfilehash: 9fe3e22c54a4695a1027f416acf113f2f7fd2cd7
-ms.sourcegitcommit: 7c7f8bb9afdc592d07bf7ff4179d000a48716f13
+ms.date: 07/23/2020
+ms.openlocfilehash: cc65db481fcedcafec16093dbf7e6af4975c73db
+ms.sourcegitcommit: 9dddf1d2e91ebcd347fcfb7bf6ef670d49a12ab7
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/27/2020
-ms.locfileid: "82174137"
+ms.lasthandoff: 07/24/2020
+ms.locfileid: "87133471"
 ---
 # <a name="powershell-remoting-over-ssh"></a>SSH 経由の PowerShell リモート処理
 
@@ -25,7 +25,7 @@ SSH リモート処理では、Windows コンピューターと Linux コンピ�
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-リモート セッションを作成するために、`HostName` パラメーターでターゲット コンピューターを指定し、`UserName` でユーザー名を指定できます。 コマンドレットを対話的に実行する場合は、パスワードの入力を求められます。 また、`KeyFilePath` パラメーターでプライベート キー ファイルを使って、SSH キー認証を使用できます。
+リモート セッションを作成するには、**HostName** パラメーターでターゲット コンピューターを指定し、**UserName** でユーザー名を指定します。 コマンドレットを対話的に実行する場合は、パスワードの入力を求められます。 また、**KeyFilePath** パラメーターでプライベート キー ファイルを使用して、SSH キー認証を使用することもできます。
 
 ## <a name="general-setup-information"></a>一般的なセットアップ情報
 
@@ -64,7 +64,7 @@ PowerShell 6 以降と SSH がすべてのコンピューターにインスト�
    リモート コンピューターで PowerShell プロセスをホストする SSH サブシステムを作成します。
 
    ```
-   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo -NoProfile
+   Subsystem powershell c:/progra~1/powershell/7/pwsh.exe -sshs -NoLogo
    ```
 
    > [!NOTE]
@@ -122,7 +122,7 @@ PowerShell 6 以降と SSH がすべてのコンピューターにインスト�
    PowerShell サブシステム エントリを追加します。
 
    ```
-   Subsystem powershell /usr/bin/pwsh -sshs -NoLogo -NoProfile
+   Subsystem powershell /usr/bin/pwsh -sshs -NoLogo
    ```
 
    > [!NOTE]
@@ -168,7 +168,7 @@ PowerShell 6 以降と SSH がすべてのコンピューターにインスト�
    PowerShell サブシステム エントリを追加します。
 
    ```
-   Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo -NoProfile
+   Subsystem powershell /usr/local/bin/pwsh -sshs -NoLogo
    ```
 
    > [!NOTE]
@@ -191,12 +191,14 @@ PowerShell 6 以降と SSH がすべてのコンピューターにインスト�
 
 SSH を使用する PowerShell リモート処理では、SSH クライアントと SSH サービスの間の認証交換に依存し、認証スキーム自体は何も実装されません。 結果として、多要素認証などの構成されている認証スキームはすべて SSH によって処理され、PowerShell からは独立します。 たとえば、セキュリティ強化のため、公開キー認証と 1 回限りのパスワードを要求するように、SSH サービスを構成できます。 多要素認証の構成については、このドキュメントでは説明されていません。 多要素認証を正しく構成し、PowerShell リモート処理での使用を試みる前に PowerShell の外部での動作を検証する方法については、SSH のドキュメントをご覧ください。
 
+> [!NOTE]
+> ユーザーは、リモート セッションで同じ特権を保持します。 つまり、管理者は管理者特権シェルにアクセスできますが、通常のユーザーはアクセスできません。
+
 ## <a name="powershell-remoting-example"></a>PowerShell リモート処理の例
 
 リモート処理をテストする最も簡単な方法は、1 台のコンピューターでリモート処理を試行することです。 以下の例では、同じ Linux コンピューターに戻るリモート セッションを作成します。 PowerShell コマンドレットを対話的に使用しているので、SSH からホスト コンピューターの確認を求めるプロンプトと、パスワードを求めるプロンプトが表示されています。 Windows コンピューター上で同じ操作を行って、リモート処理の動作を確実にすることができます。 その後、ホスト名を変更して、コンピューター間をリモート接続します。
 
 ```powershell
-#
 # Linux to Linux
 #
 $session = New-PSSession -HostName UbuntuVM1 -UserName TestUser
@@ -249,7 +251,7 @@ Handles  NPM(K)    PM(K)      WS(K)     CPU(s)     Id  SI ProcessName           
 Enter-PSSession -HostName WinVM1 -UserName PTestName
 ```
 
-```Output
+```
 PTestName@WinVM1s password:
 ```
 
@@ -318,9 +320,13 @@ GitCommitId                    v6.0.0-alpha.17
 [WinVM2]: PS C:\Users\PSRemoteUser\Documents>
 ```
 
-### <a name="known-issues"></a>既知の問題
+### <a name="limitations"></a>制限事項
 
-**sudo** コマンドは、Linux コンピューターへのリモート セッションでは機能しません。
+- **sudo** コマンドは、Linux コンピューターへのリモート セッションでは機能しません。
+
+- SSH 経由の PSRemoting は、プロファイルをサポートしていないため、`$PROFILE` へのアクセス権がありません。 セッションでは、完全なファイルパスが含まれるプロファイルをドット ソースで実行することで、プロファイルを読み込むことができます。 これは、SSH プロファイルには関連していません。 PowerShell を既定のシェルとして使用するように SSH サーバーを構成して、SSH を使用してプロファイルを読み込むことはできます。 詳細については、SSH のドキュメントを参照してください。
+
+- PowerShell 7.1 より前では、SSH 経由のリモート処理は、次ホップのリモート セッションをサポートしていませんでした。 この機能は、WinRM を使用したセッションに限定されていました。 PowerShell 7.1 を使用すると、任意の対話型リモート セッション内で `Enter-PSSession` と `Enter-PSHostProcess` が機能します。
 
 ## <a name="see-also"></a>関連項目
 

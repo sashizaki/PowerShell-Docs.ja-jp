@@ -1,14 +1,14 @@
 ---
 title: PSCustomObject について知りたかったことのすべて
 description: PSCustomObject は、構造化データを作成するためのシンプルな方法です。
-ms.date: 05/23/2020
+ms.date: 07/29/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: fbc8b5b6d2cfafaa75fa820f420762a1804074ac
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: 9a5cab7e662ef89b6565a29079ce1d5a657f94d0
+ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149495"
+ms.lasthandoff: 07/29/2020
+ms.locfileid: "87410140"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>PSCustomObject について知りたかったことのすべて
 
@@ -71,7 +71,7 @@ $myObject = New-Object -TypeName PSObject -Property $myHashtable
 
 ### <a name="saving-to-a-file"></a>ファイルへの保存
 
-ハッシュテーブルをファイルに保存する最善の方法は、JSON として保存することだと考えられます。 これをもう一度 `[PSCusomObject]` にインポートすることができます
+ハッシュテーブルをファイルに保存する最善の方法は、JSON として保存することだと考えられます。 これをもう一度 `[PSCustomObject]` にインポートすることができます
 
 ```powershell
 $myObject | ConvertTo-Json -depth 1- | Set-Content -Path $Path
@@ -139,7 +139,7 @@ $myObject.$property
 
 これは奇妙に見えますが、うまく機能します。
 
-### <a name="convert-pscustomboject-into-a-hashtable"></a>pscustomboject をハッシュテーブルに変換する
+### <a name="convert-pscustombobject-into-a-hashtable"></a>PSCustombObject をハッシュテーブルに変換する
 
 最後のセクションから作業を続行する場合、プロパティを動的にウォークして、そこからハッシュテーブルを作成することができます。
 
@@ -254,6 +254,9 @@ $myObject = [PSCustomObject]@{
 ```
 
 これはこの言語にとてもよく合っています。 これで、適切な型名を持つオブジェクトを作成できたので、さらにいくつかの操作を行うことができます。
+
+> [!NOTE]
+> PowerShell クラスを使用して、カスタム PowerShell 型を作成することもできます。 詳細については、[PowerShell クラスの概要](/powershell/module/Microsoft.PowerShell.Core/About/about_Classes)に関する記事を参照してください。
 
 ## <a name="using-defaultpropertyset-the-long-way"></a>DefaultPropertySet の使用 (長い道のり)
 

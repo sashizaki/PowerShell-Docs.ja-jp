@@ -1,12 +1,12 @@
 ---
 title: PowerShell 7 モジュールの互換性
 ms.date: 02/03/2020
-ms.openlocfilehash: 273e25e3b7cd48e09b63e50c34ed0b98a4e766f0
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d618f9e55f5997bfd724a4e58bb94c348bd681ce
+ms.sourcegitcommit: 56463fb628a7d83dec4364e89417d83316c3e53b
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83565065"
+ms.lasthandoff: 06/12/2020
+ms.locfileid: "84722815"
 ---
 # <a name="powershell-7-module-compatibility"></a>PowerShell 7 モジュールの互換性
 
@@ -69,13 +69,14 @@ Windows 10 では、Windows 管理モジュールは **Windows オプション�
 | モジュール名                        | Status                               | サポート対象 OS                       |
 | ---------------------------------- | ------------------------------------ | ---------------------------------- |
 | ActiveDirectory                    | ネイティブに互換性あり                  | RSAT-AD-PowerShell 搭載 Windows Server 1809 以降<br>Rsat.ActiveDirectory.DS-LDS.Tools 搭載 Windows 10 1809 以降 |
+| ADDSDeployment                     | 互換性レイヤーで動作する       |  Windows Server 2019 1809+         |
 | ADFS                               | 互換性レイヤーでテストされていない    |                                    |
 | AppBackgroundTask                  | ネイティブに互換性あり                  | Windows 10 1903 以降                   |
 | AppLocker                          | 互換性レイヤーでテストされていない    |                                    |
 | AppvClient                         | 互換性レイヤーでテストされていない    |                                    |
-| Appx                               | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降 |
+| appx                               | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降 |
 | AssignedAccess                     | ネイティブに互換性あり                  | Windows 10 1809 以降                   |
-| BestPractices                      | 互換性レイヤーでテストされていない    |                                    |
+| BestPractices                      | 互換性レイヤーでサポートされていない |                                    |
 | BitLocker                          | ネイティブに互換性あり                  | BitLocker 搭載 Windows Server 1809 以降<br>Windows 10 1809 以降 |
 | BitsTransfer                       | ネイティブに互換性あり                  | Windows Server 20H1<br>Windows 10 20H1 |
 | BootEventCollector                 | 互換性レイヤーでテストされていない    |                                        |
@@ -101,7 +102,7 @@ Windows 10 では、Windows 管理モジュールは **Windows オプション�
 | HgsDiagnostics                     | ネイティブに互換性あり                  | Hyper-V または RSAT-Shielded-VM-Tools 搭載 Windows Server 1809 以降<br>Rsat.Shielded.VM.Tools 搭載 Windows 10 1809 以降 |
 | Hyper-V                            | ネイティブに互換性あり                  | Hyper-V-PowerShell 搭載 Windows Server 1809 以降<br>Microsoft-Hyper-V-Management-PowerShell 搭載 Windows 10 1809 以降 |
 | IISAdministration                  | 互換性レイヤーでテストされていない    |                                               |
-| International                      | ネイティブに互換性あり                  | Windows Server 1903 以降<br>Windows 10 1903 以降      |
+| 地域と言語                      | ネイティブに互換性あり                  | Windows Server 1903 以降<br>Windows 10 1903 以降      |
 | IpamServer                         | 互換性レイヤーでテストされていない    |                                               |
 | iSCSI                              | 互換性レイヤーでテストされていない    |                                               |
 | IscsiTarget                        | 互換性レイヤーでテストされていない    |                                               |
@@ -148,7 +149,7 @@ Windows 10 では、Windows 管理モジュールは **Windows オプション�
 | プロビジョニング                       | 互換性レイヤーでテストされていない    |                                               |
 | PSDesiredStateConfiguration        | 部分的                            | PowerShell 7 に組み込み                       |
 | PSDiagnostics                      | ネイティブに互換性あり                  | PowerShell 7 に組み込み                       |
-| PSScheduledJob                     | 互換性レイヤーで動作しない | PowerShell 5.1 に組み込み                     |
+| PSScheduledJob                     | 互換性レイヤーでサポートされていない | PowerShell 5.1 に組み込み                     |
 | PSWorkflow                         | 互換性レイヤーでテストされていない    |                                               |
 | PSWorkflowUtility                  | 互換性レイヤーでテストされていない    |                                               |
 | RemoteAccess                       | 互換性レイヤーでテストされていない    |                                               |
@@ -156,7 +157,7 @@ Windows 10 では、Windows 管理モジュールは **Windows オプション�
 | ScheduledTasks                     | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降      |
 | SecureBoot                         | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降      |
 | ServerCore                         | 互換性レイヤーでテストされていない    |                                               |
-| ServerManager                      | 互換性レイヤーでテストされていない    |                                               |
+| ServerManager                      | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Rsat.ServerManager.Tools 搭載 Windows 10 1809 以降<br>"_下記のメモを参照してください_" |
 | ServerManagerTasks                 | 互換性レイヤーでテストされていない    |                                               |
 | ShieldedVMDataFile                 | ネイティブに互換性あり                  | RSAT-Shielded-VM-Tools 搭載 Windows Server 1903 以降<br>Rsat.Shielded.VM.Tools 搭載 Windows 10 1903 以降 |
 | ShieldedVMProvisioning             | ネイティブに互換性あり                  | HostGuardian 搭載 Windows Server 1809 以降<br>HostGuardian 搭載 Windows 10 1809 以降  |
@@ -164,7 +165,7 @@ Windows 10 では、Windows 管理モジュールは **Windows オプション�
 | SmbShare                           | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降      |
 | SmbWitness                         | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降      |
 | SMISConfig                         | ネイティブに互換性あり                  | WindowsStorageManagementService 搭載 Windows Server 1903 以降 |
-| sms                                | 互換性レイヤーでテストされていない    |                                               |
+| SMS                                | 互換性レイヤーでテストされていない    |                                               |
 | SoftwareInventoryLogging           | ネイティブに互換性あり                  | Windows Server 1809 以降                          |
 | StartLayout                        | ネイティブに互換性あり                  | デスクトップ エクスペリエンス搭載 Windows Server 1809 以降<br>Windows 10 1809 以降 |
 | ストレージ                            | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降      |
@@ -178,7 +179,7 @@ Windows 10 では、Windows 管理モジュールは **Windows オプション�
 | TroubleshootingPack                | ネイティブに互換性あり                  | Windows 10 1903 以降                              |
 | TrustedPlatformModule              | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降      |
 | UEV                                | ネイティブに互換性あり                  | Windows Server ??将来のバージョンのデスクトップ エクスペリエンス搭載サーバー??<br>Windows 10 1903 以降 |
-| UpdateServices                     | 互換性レイヤーで動作しない |                                               |
+| UpdateServices                     | 互換性レイヤーでサポートされていない |                                               |
 | VpnClient                          | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降      |
 | Wdac                               | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降      |
 | WebAdministration                  | 互換性レイヤーでテストされていない    |                                               |
@@ -189,3 +190,10 @@ Windows 10 では、Windows 管理モジュールは **Windows オプション�
 | WindowsServerBackup                | ネイティブに互換性あり                  | Windows-Server-Backup 搭載 Windows Server 19H2 |
 | WindowsUpdate                      | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降       |
 | WindowsUpdateProvider              | ネイティブに互換性あり                  | Windows Server 1809 以降<br>Windows 10 1809 以降       |
+
+## <a name="notes"></a>メモ
+
+### <a name="servermanager-module"></a>ServerManager モジュール
+
+モジュールには、PowerShell 7 の書式付き出力に関するマイナーな互換性の問題がいくつかあります。 たとえば、`Get-WindowsFeature` コマンドレットは、すべてのプロパティが含まれる適切なオブジェクトを返しますが、既定の表示書式を使用すると、一部のプロパティが空として表示されます。 実際の値は、`Select-Object` を使用するか直接メンバー アクセスによって、オブジェクトのプロパティで確認できます。
+

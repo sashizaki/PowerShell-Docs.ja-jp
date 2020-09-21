@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: PowerShell クラスを使用したカスタム DSC リソースの記述
-ms.openlocfilehash: f96a567253ab4808381c004df243c96886948407
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: b7f6d3135cb1da7ade106f8a4cc41e3afb7306af
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692215"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217561"
 ---
 # <a name="writing-a-custom-dsc-resource-with-powershell-classes"></a>PowerShell クラスを使用したカスタム DSC リソースの記述
 
@@ -15,17 +15,19 @@ ms.locfileid: "83692215"
 
 Windows PowerShell 5.0 の PowerShell クラスの導入により、クラスを作成して DSC リソースを定義できるようになりました。 クラスでは、スキーマとリソースの実装の両方を定義するため、MOF ファイルを別途作成する必要がありません。 **DSCResources** フォルダーが必要ないため、クラスベースのリソースのフォルダー構造は単純になりました。
 
-クラスベースの DSC リソースでは、スキーマは、プロパティの型を指定する属性で変更できるクラスのプロパティとして定義されます。 リソースは、**Get()** 、**Set()** 、および **Test()** メソッド (スクリプト リソースの **Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** 関数に相当します) によって実装されます。
+クラスベースの DSC リソースでは、スキーマは、プロパティの型を指定する属性で変更できるクラスのプロパティとして定義されます。 リソースは、`Get()` 、`Set()` 、および `Test()` メソッド (スクリプト リソースの `Get-TargetResource`、`Set-TargetResource`、および `Test-TargetResource` 関数に相当します) によって実装されます。
 
 このトピックでは、指定されたパス内のファイルを管理する **FileResource** という名前の単純なリソースを作成します。
 
 DSC リソースの詳細については、「[カスタム Windows PowerShell Desired State Configuration のビルド](authoringResource.md)」をご覧ください。
 
->**注:** クラスベースのリソースでは、汎用コレクションはサポートされていません。
+> [!Note]
+> クラスベースのリソースでは、汎用コレクションはサポートされていません。
 
 ## <a name="folder-structure-for-a-class-resource"></a>クラス リソースのフォルダー構造
 
-PowerShell クラスを使用して DSC カスタム リソースを実装するには、次のフォルダー構造を作成します。 クラスは **MyDscResource.psm1** で定義し、モジュール マニフェストは **MyDscResource.psd1** で定義します。
+PowerShell クラスを使用して DSC カスタム リソースを実装するには、次のフォルダー構造を作成します。
+クラスは `MyDscResource.psm1` で定義し、モジュール マニフェストは `MyDscResource.psd1` で定義します。
 
 ```
 $env:ProgramFiles\WindowsPowerShell\Modules (folder)
@@ -36,7 +38,7 @@ $env:ProgramFiles\WindowsPowerShell\Modules (folder)
 
 ## <a name="create-the-class"></a>クラスの作成
 
-PowerShell クラスを作成するには、class キーワードを使用します。 クラスを DSC リソースとして指定するには、**DscResource()** 属性を使用します。 クラスの名前は、DSC リソースの名前です。
+PowerShell クラスを作成するには、class キーワードを使用します。 クラスを DSC リソースとして指定するには、`DscResource()` 属性を使用します。 クラスの名前は、DSC リソースの名前です。
 
 ```powershell
 [DscResource()]
@@ -66,10 +68,10 @@ DSC リソースのスキーマは、クラスのプロパティとして定義�
 
 - **DscProperty(Key)** :このプロパティは必須です。 プロパティはキーです。 キーとしてマークされたすべてのプロパティの値を組み合わせて、構成内のリソース インスタンスを一意に識別する必要があります。
 - **DscProperty(Mandatory)** :このプロパティは必須です。
-- **DscProperty(NotConfigurable)** :このプロパティは読み取り専用です。 この属性でマークされたプロパティは、構成で設定できませんが、**Get()** メソッド (存在する場合) によって設定されます。
+- **DscProperty(NotConfigurable)** :このプロパティは読み取り専用です。 この属性でマークされたプロパティは、構成で設定できませんが、`Get()` メソッド (存在する場合) によって設定されます。
 - **DscProperty()** :このプロパティは構成可能ですが、必須ではありません。
 
-**$Path** プロパティと **$SourcePath** プロパティは、両方とも文字列です。 **$CreationTime** は、[DateTime](/dotnet/api/system.datetime) プロパティです。 **$Ensure** プロパティは、次のように定義された列挙型です。
+`$Path` プロパティと `$SourcePath` プロパティは、両方とも文字列です。 `$CreationTime` は、[DateTime](/dotnet/api/system.datetime) プロパティです。 `$Ensure` プロパティは、次のように定義された列挙型です。
 
 ```powershell
 enum Ensure
@@ -81,9 +83,9 @@ enum Ensure
 
 ### <a name="implementing-the-methods"></a>メソッドの実装
 
-**Get()** 、**Set()** 、および **Test()** メソッドは、スクリプト リソースの **Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** 関数に似ています。
+`Get()` 、`Set()` 、および `Test()` メソッドは、スクリプト リソースの `Get-TargetResource`、`Set-TargetResource`、および `Test-TargetResource` 関数に似ています。
 
-このコードには、ファイルを **$SourcePath** から **$Path** にコピーするヘルパー関数である CopyFile() 関数も含まれています。
+このコードには、ファイルを `$SourcePath` から `$Path` にコピーするヘルパー関数である `CopyFile()` 関数も含まれています。
 
 ```powershell
     <#
@@ -416,7 +418,7 @@ class FileResource
 
 ## <a name="create-a-manifest"></a>マニフェストの作成
 
-クラスベースのリソースを DSC エンジンで使用できるようにするには、マニフェスト ファイルに、リソースをエクスポートするようにモジュールに指示する **DscResourcesToExport** ステートメントを含める必要があります。 この例では、マニフェストは次のようになります。
+クラスベースのリソースを DSC エンジンで使用できるようにするには、マニフェスト ファイルに、リソースをエクスポートするようにモジュールに指示する `DscResourcesToExport` ステートメントを含める必要があります。 この例では、マニフェストは次のようになります。
 
 ```powershell
 @{
@@ -473,15 +475,13 @@ Start-DscConfiguration -Wait -Force Test
 
 ## <a name="supporting-psdscrunascredential"></a>PsDscRunAsCredential のサポート
 
->**注:** **PsDscRunAsCredential** は PowerShell 5.0 以降でサポートされています。
+> [注] **PsDscRunAsCredential** は、PowerShell 5.0 以降でサポートされています。
 
-**PsDscRunAsCredential** プロパティを [DSC 構成](../configurations/configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。
-詳細については、「[ユーザーの資格情報を指定して DSC を実行する](../configurations/runAsUser.md)」を参照してください。
+**PsDscRunAsCredential** プロパティを [DSC 構成](../configurations/configurations.md)リソース ブロックで使用して、指定した資格情報のもとでリソースを実行する必要があることを指定できます。 詳細については、「[ユーザーの資格情報を指定して DSC を実行する](../configurations/runAsUser.md)」を参照してください。
 
 ### <a name="require-or-disallow-psdscrunascredential-for-your-resource"></a>使用するリソースに対する PsDscRunAsCredential の要求または却下
 
-**DscResource()** 属性でオプションのパラメーター **RunAsCredential** を指定します。
-このパラメーターには以下の 3 つの値のいずれかを指定します。
+`DscResource()` 属性でオプションのパラメーター **RunAsCredential** を指定します。 このパラメーターには以下の 3 つの値のいずれかを指定します。
 
 - `Optional` **PsDscRunAsCredential** は、このリソースを呼び出す構成ではオプションです。 これが既定値です。
 - `Mandatory` **PsDscRunAsCredential** は、このリソースを呼び出す構成で使用する必要があります。
@@ -511,7 +511,7 @@ class FileResource {
            |- SecondResource.psm1
    ```
 
-2. すべてのリソースは、**DSCResources** フォルダー以下で定義します。
+1. すべてのリソースは、**DSCResources** フォルダー以下で定義します。
 
    ```
    $env:ProgramFiles\WindowsPowerShell\Modules (folder)

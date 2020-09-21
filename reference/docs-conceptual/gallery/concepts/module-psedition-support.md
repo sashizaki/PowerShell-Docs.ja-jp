@@ -1,18 +1,18 @@
 ---
-ms.date: 03/28/2019
+ms.date: 06/10/2020
 contributor: manikb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: 互換性のある PowerShell エディションが含まれるモジュール
-ms.openlocfilehash: 425588c168a4f864fdc0c52aa53cfd748b80dc98
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 522493714916e9fd21f67a6e7bc2cfb165041807
+ms.sourcegitcommit: 4a283fe5419f47102e6c1de7060880a934842ee9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71328503"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84671412"
 ---
 # <a name="modules-with-compatible-powershell-editions"></a>互換性のある PowerShell エディションが含まれるモジュール
 
-バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備える別のエディションで使用できます。
+バージョン 5.1 から、PowerShell はさまざまな機能セットとプラットフォーム互換性を備えるさまざまなエディションで使用できます。
 
 - **Desktop Edition:** .NET Framework に基づいて構成され、Windows デスクトップ、Windows Server、Windows Server Core、およびその他のほとんどの Windows エディション上の Windows PowerShell v4.0 以下と Windows PowerShell 5.1 に適用されます。
 - **Core Edition:** .NET Core に基づいて構築され、Windows IoT や Windows Nanoserver などのフットプリントが小さい Windows エディション上の PowerShell Core 6.0 以上と Windows PowerShell 5.1 に適用されます。
@@ -21,10 +21,10 @@ PowerShell のエディションの詳細については、[about_PowerShell_Edi
 
 ## <a name="declaring-compatible-editions"></a>互換性のあるエディションを宣言する
 
-モジュールの作成者は、CompatiblePSEditions モジュール マニフェスト キーを使用して、モジュールが 1 つ以上の PowerShell エディションと互換性があることを宣言できます。 このキーは、PowerShell 5.1 以降でのみサポートされます。
+モジュールの作成者は、`CompatiblePSEditions` モジュール マニフェスト キーを使用して、モジュールが 1 つ以上の PowerShell エディションと互換性があることを宣言できます。 このキーは、PowerShell 5.1 以降でのみサポートされます。
 
 > [!NOTE]
-> CompatiblePSEditions キーを使用してモジュール マニフェストを指定すると、バージョン 4 以下の PowerShell にはインポートできません。
+> `CompatiblePSEditions` キーを使用して指定された、または `$PSEdition` 変数を使用したモジュール マニフェストは、PowerShell v4 またはそれ以前にインポートすることはできません。
 
 ```powershell
 New-ModuleManifest -Path .\TestModuleWithEdition.psd1 -CompatiblePSEditions Desktop,Core -PowerShellVersion 5.1
@@ -58,7 +58,6 @@ Get-Module -ListAvailable -PSEdition Desktop
 ```Output
     Directory: C:\Program Files\WindowsPowerShell\Modules
 
-
 ModuleType Version    Name                                ExportedCommands
 ---------- -------    ----                                ----------------
 Manifest   1.0        ModuleWithPSEditions
@@ -73,13 +72,30 @@ Desktop
 Core
 ```
 
+PowerShell 6 以降では、モジュールが `$env:windir\System32\WindowsPowerShell\v1.0\Modules` からインポートされた場合にそのモジュールに互換性があるかどうかを判断するために `CompatiblePSEditions` 値が使用されます。
+この動作は、Windows にのみ適用されます。 このシナリオ以外では、値はメタデータとしてのみ使用されます。
+
+## <a name="finding-compatible-modules"></a>互換性のあるモジュールの検索
+
+PowerShell ギャラリー ユーザーは、**PSEdition_Desktop** および **PSEdition_Core** のタグを使用して特定の PowerShell エディションでサポートされているモジュールの一覧を表示できます。
+
+**PSEdition_Desktop** および **PSEdition_Core** のタグがないモジュールは、PowerShell Desktop エディションで正常に動作するものと見なされます。
+
+```powershell
+# Find modules supported on PowerShell Desktop edition
+Find-Module -Tag PSEdition_Desktop
+
+# Find modules supported on PowerShell Core editions
+Find-Module -Tag PSEdition_Core
+```
+
 ## <a name="targeting-multiple-editions"></a>複数のエディションを対象にする
 
 モジュールの作成者が、PowerShell エディションのどちらかまたは両方を対象とする 1 つのモジュールを発行することができます。
 
-1 つのモジュールが、デスクトップとコアの両方のエディションで動作します。そのモジュール内で、作成者は、$PSEdition 変数を使用して、RootModule またはモジュール マニフェストで必要なロジックを追加する必要があります。 モジュールでは、CoreCLR と FullCLR の両方を対象とするコンパイル済み DLL の 2 つのセットを使用できます。 次に、適切な dll を読み込むためのロジックを含むモジュールをパッケージ化するためのいくつかのオプションを示します。
+1 つのモジュールが、Desktop と Core の両方のエディションで動作します。そのモジュール内で、作成者は、`$PSEdition` 変数を使用して、RootModule またはモジュール マニフェストで必要なロジックを追加する必要があります。 モジュールでは、**CoreCLR** と **FullCLR** の両方を対象とするコンパイル済み DLL の 2 つのセットを使用できます。 適切な DLL を読み込むためのロジックを含むパッケージ化オプションを次に示します。
 
-### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>オプション 1: PowerShell の複数のバージョンおよび複数のエディションをターゲットとしてモジュールをパッケージ化する
+### <a name="option-1-packaging-a-module-for-targeting-multiple-versions-and-multiple-editions-of-powershell"></a>オプション 1: PowerShell の複数のバージョンおよび複数のエディションを対象としてパッケージ化する
 
 モジュール フォルダーの内容
 
@@ -101,7 +117,7 @@ Core
 - Settings\ScriptingStyle.psd1
 - Settings\ScriptSecurity.psd1
 
-PSScriptAnalyzer.psd1 ファイルの内容
+`PSScriptAnalyzer.psd1` ファイルの内容
 
 ```powershell
 @{
@@ -121,7 +137,7 @@ ModuleVersion = '1.6.1'
 
 以下のロジックは、現在のエディションまたはバージョンに応じて必要なアセンブリを読み込みます。
 
-PSScriptAnalyzer.psm1 ファイルの内容:
+`PSScriptAnalyzer.psm1` ファイルの内容:
 
 ```powershell
 #
@@ -157,14 +173,11 @@ $PSModule.OnRemove = {
 }
 ```
 
-### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls-and-nestedrequired-modules"></a>オプション 2:PSD1 ファイルで $PSEdition 変数を使用して適切な DLL と入れ子になった/必要なモジュールを読み込む
+### <a name="option-2-use-psedition-variable-in-the-psd1-file-to-load-the-proper-dlls"></a>オプション 2:PSD1 ファイルで $PSEdition 変数を使用して適切な DLL を読み込む
 
-PS 5.1 以降では、$PSEdition グローバル変数をモジュール マニフェスト ファイル内で使用できます。 この変数を使用すると、モジュールの作成者が、モジュール マニフェスト ファイル内で条件値を指定できます。 $PSEdition 変数は、制限された言語モードまたはデータ セクション内で参照できます。
+PS 5.1 以降では、`$PSEdition` グローバル変数をモジュール マニフェスト ファイル内で使用できます。 この変数を使用すると、モジュールの作成者が、モジュール マニフェスト ファイル内で条件値を指定できます。 `$PSEdition` 変数は、制限された言語モードまたはデータ セクション内で参照できます。
 
-> [!NOTE]
-> CompatiblePSEditions キーまたは `$PSEdition` 変数を使用してモジュール マニフェストを指定した後、古いバージョンの PowerShell にインポートすることはできません。
-
-CompatiblePSEditions キーを使用するサンプルのモジュール マニフェスト ファイル
+`CompatiblePSEditions` キーを持つサンプル モジュール マニフェスト ファイル。
 
 ```powershell
 @{
@@ -195,49 +208,15 @@ CompatiblePSEditions キーを使用するサンプルのモジュール マニ�
 }
 ```
 
-### <a name="module-contents"></a>モジュールの内容
+モジュールの内容
 
-```powershell
-dir -Recurse
-```
-
-```Output
-    Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions
-
-Mode           LastWriteTime   Length Name
-----           -------------   ------ ----
-d-----    7/5/2016   1:37 PM          clr
-d-----    7/5/2016   1:36 PM          coreclr
--a----    7/5/2016   1:34 PM     4906 ModuleWithEditions.psd1
-
-    Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\clr
-
-Mode           LastWriteTime    Length Name
-----           -------------    ------ ----
--a----    7/5/2016   1:35 PM         0 MyFullClrNM1.dll
--a----    7/5/2016   1:35 PM         0 MyFullClrNM2.dll
--a----    7/5/2016   1:35 PM         0 MyFullClrRM.dl
-
-    Directory: C:\Users\manikb\Documents\WindowsPowerShell\Modules\ModuleWithEditions\coreclr
-
-Mode           LastWriteTime   Length Name
-----           -------------   ------ ----
--a----    7/5/2016   1:35 PM        0 MyCoreClrNM1.dll
--a----    7/5/2016   1:35 PM        0 MyCoreClrNM2.dll
--a----    7/5/2016   1:35 PM        0 MyCoreClrRM.dl
-```
-
-PowerShell ギャラリー ユーザーは、PSEdition_Desktop および PSEdition_Core タグを使用して特定の PowerShell エディションでサポートされているモジュールの一覧を表示できます。
-
-PSEdition_Desktop および PSEdition_Core タグがないモジュールは、PowerShell Desktop エディションで正常に動作するものと見なされます。
-
-```powershell
-# Find modules supported on PowerShell Desktop edition
-Find-Module -Tag PSEdition_Desktop
-
-# Find modules supported on PowerShell Core editions
-Find-Module -Tag PSEdition_Core
-```
+- ModuleWithEditions\ModuleWithEditions.psd1
+- ModuleWithEditions\clr\MyFullClrNM1.dll
+- ModuleWithEditions\clr\MyFullClrNM2.dll
+- ModuleWithEditions\clr\MyFullClrRM.dll
+- ModuleWithEditions\coreclr\MyCoreClrNM1.dll
+- ModuleWithEditions\coreclr\MyCoreClrNM2.dll
+- ModuleWithEditions\coreclr\MyCoreClrRM.dll
 
 ## <a name="more-details"></a>詳細
 

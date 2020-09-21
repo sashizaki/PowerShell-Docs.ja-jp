@@ -1,13 +1,13 @@
 ---
-ms.date: 09/20/2019
+ms.date: 07/16/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC ファイル リソース
-ms.openlocfilehash: 54f4de9b3d337a6b9ad36c143eac70d5ef6b1c15
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 28e9ea3a590a0972e505912efae4a934bc39ba1d
+ms.sourcegitcommit: 9a8bb1b459b5939c95e1f6d9499fcb13d01a58c4
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560476"
+ms.lasthandoff: 08/25/2020
+ms.locfileid: "88799606"
 ---
 # <a name="dsc-file-resource"></a>DSC ファイル リソース
 
@@ -46,7 +46,7 @@ File [string] #ResourceName
 |内容 |**File** **型**に使用した場合にのみ有効です。 **Ensure** (保証) するコンテンツがターゲット ファイルで **Present** または **Absent** であることを示します。 |
 |資格情報 |ソース ファイルなどのリソースにアクセスするために必要な資格情報。 |
 |Force |結果としてエラーになるアクセス操作 (ファイルの上書き、空でないディレクトリの削除など) をオーバーライドします。 既定値は `$false` です。 |
-|Recurse |**Directory** **型**に使用した場合にのみ有効です。 すべてのサブディレクトリに対して状態操作を再帰的に実行します。 既定値は `$false` です。 |
+|Recurse |**Directory** **型**に使用した場合にのみ有効です。 すべてのディレクトリ コンテンツ、サブディレクトリ、およびサブディレクトリ コンテンツに対して状態操作を再帰的に実行します。 既定値は `$false` です。 |
 |SourcePath |ファイルまたはフォルダー リソースのコピー元のパス。 |
 |Type |構成されるリソースの種類。 有効な値は **Directory** と **File** です。 既定値は **File** です。 |
 |MatchSource |最初のコピー後にソース ディレクトリに追加された新しいファイルをリソースで監視するかどうかを決定します。 `$true` の値は、最初のコピー後、すべての新しいソース ファイルが指定した場所にコピーされることを示します。 `$false` に設定した場合、リソースではソース ディレクトリの内容がキャッシュされ、最初のコピー後に追加されたファイルはすべて無視されます。 既定値は `$false` です。 |
@@ -69,6 +69,7 @@ File [string] #ResourceName
 
 - **DestinationPath** のみを指定した場合、リソースではパスが存在すること (**Present**) または存在しないこと (**Absent**) が保証されます。
 - **Type** の値が **Directory** の **SourcePath** と **DestinationPath** を指定すると、リソースではソース ディレクトリがコピー先のパスにコピーされます。 プロパティ **Recurse**、**Force**、**MatchSource** で実行されるコピー操作の種類が変更され、**Credential** ではソース ディレクトリへのアクセスに使用するアカウントが決まります。
+- ディレクトリをコピーするときに **Recurse** プロパティを `$true` に設定しない場合、既存のディレクトリの内容はコピーされません。 指定したディレクトリのみがコピーされます。
 - **Attributes** プロパティの **ReadOnly** 値を **DestinationPath** と共に指定した場合、**Ensure** **Present** で指定のパスが作成され、**Contents** でファイルのコンテンツが設定されます。 **Ensure** **Absent** 設定で **Attributes** プロパティ全体が無視され、指定のパスで任意のファイルが削除されます。
 
 ## <a name="example"></a>例

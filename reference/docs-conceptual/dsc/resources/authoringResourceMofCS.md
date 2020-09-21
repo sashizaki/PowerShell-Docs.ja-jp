@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: C# での DSC リソースの作成
-ms.openlocfilehash: a19559c225dd91eceed397df91dd584a577cd7d4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 4652d5d99c32685e124f2cd1b718f973380ab16a
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "74417702"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217510"
 ---
 # <a name="authoring-a-dsc-resource-in-c"></a>C\# での DSC リソースの作成
 
@@ -18,6 +18,7 @@ ms.locfileid: "74417702"
 C# でコマンドレットとしてリソースを実装すること以外に、MOF スキーマの作成、フォルダー構造の作成、およびカスタム DSC リソースのインポートと使用のプロセスは、「[MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)」で説明されていることと同じです。
 
 ## <a name="writing-a-cmdlet-based-resource"></a>コマンドレットベースのリソースの記述
+
 この例では、テキスト ファイルとその内容を管理する単純なリソースを実装します。
 
 ### <a name="writing-the-mof-schema"></a>MOF スキーマの記述
@@ -35,6 +36,7 @@ class MSFT_XDemoFile : OMI_BaseResource
 ```
 
 ### <a name="setting-up-the-visual-studio-project"></a>Visual Studio プロジェクトの設定
+
 #### <a name="setting-up-a-cmdlet-project"></a>コマンドレット プロジェクトの設定
 
 1. Visual Studio を開きます。
@@ -46,11 +48,9 @@ class MSFT_XDemoFile : OMI_BaseResource
 
 ### <a name="writing-the-cmdlet-code"></a>コマンドレット コードの記述
 
-次の C# コードでは、**Get-TargetResource**、**Set-TargetResource**、および **Test-TargetResource** コマンドレットを実装します。
+次の C# コードによって、`Get-TargetResource`、`Set-TargetResource`、`Test-TargetResource` の各コマンドレットが実装されます。
 
 ```C#
-
-
 namespace cSharpDSCResourceExample
 {
     using System;
@@ -278,7 +278,11 @@ $env: psmodulepath (folder)
 ```
 
 ### <a name="see-also"></a>参照
+
 #### <a name="concepts"></a>概念
+
 [MOF を使用したカスタム DSC リソースの記述](authoringResourceMOF.md)
+
 #### <a name="other-resources"></a>その他のリソース
+
 [Windows PowerShell コマンドレットの記述](/powershell/scripting/developer/windows-powershell)

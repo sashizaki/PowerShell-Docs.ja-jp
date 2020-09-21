@@ -2,12 +2,12 @@
 title: PowerShell Core のサポート ライフサイクル
 description: PowerShell Core のサポートを管理するポリシー
 ms.date: 03/09/2020
-ms.openlocfilehash: e7ec0fd9a702b7d23a784eff6e730fc3a6c30467
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 717fd5c4845835f314eaf7c3617d5123318da2dc
+ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560731"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89236205"
 ---
 # <a name="powershell-support-lifecycle"></a>PowerShell のサポート ライフサイクル
 
@@ -34,7 +34,7 @@ PowerShell 7 のリリースでは、PowerShell は [Microsoft モダン ライ�
 
 PowerShell Core では、[Microsoft モダン ライフサイクル ポリシー][modern]を使用しました。 このサポート ライフサイクルでは、最新バージョンで最新の機能を常に提供します。
 
-PowerShell Core のバージョン 6.x ブランチは約半年に一回更新されました (例: 6.0、6.1、6.2 など)。 ただし、PowerShell 7 のリリースと共に、6.x のマイナー バージョン リリースはなくなります。 PowerShell 6.2.x は、サポートされている間、サービス更新プログラムが引き続き受信されます。
+PowerShell Core のバージョン 6.x ブランチは約半年に一回更新されました (例: 6.0、6.1、6.2 など)。 ただし、PowerShell 7 のリリースに伴い、6.x のマイナー バージョン リリースはなくなります。 PowerShell 6.2.x は、サポートされている間、サービス更新プログラムが引き続き受信されます。
 
 > [!IMPORTANT]
 > 引き続きサポートを受けるには、新しいマイナー バージョンの公開後、6 か月以内に更新する必要があります。
@@ -96,6 +96,9 @@ Modern Lifecycle Policy では、製品 (つまり、PowerShell Core) のサポ�
 |   6.2   | 2020 年 9 月 4 日  |
 |   6.1   | 2019 年 9 月 28 日 |
 |   6.0   | 2019 年 2 月 13 日  |
+
+> [!NOTE]
+> このドキュメントでは、PowerShell Core 6 と PowerShell 7 のサポートについて説明します。 Windows PowerShell (1.0 から 5.1) は、Windows OS のコンポーネントです。 コンポーネントは、親製品または親プラットフォームと同様のサポートを受けます。 詳細については、「[製品およびサービスのライフサイクル情報の検索](/lifecycle/products/)」を参照してください。
 
 ## <a name="unsupported-platforms"></a>サポートされないプラットフォーム
 
@@ -183,4 +186,4 @@ PowerShell のメジャー リリースのタイムラインを、次の表に�
 [モジュールの互換性の一覧]: /powershell/scripting/whats-new/module-compatibility
 [WindowsPSModulePath]: https://www.powershellgallery.com/packages/WindowsPSModulePath/
 [試験的な機能]: /powershell/module/microsoft.powershell.core/about/about_powershell_config#experimentalfeatures
-[Windows での Microsoft セキュリティ サービス提供の基準]: https://www.microsoft.com/en-us/msrc/windows-security-servicing-criteria
+[Windows での Microsoft セキュリティ サービス提供の基準]: https://www.microsoft.com/msrc/windows-security-servicing-criteria

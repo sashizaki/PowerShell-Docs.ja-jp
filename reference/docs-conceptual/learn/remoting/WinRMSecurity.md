@@ -1,13 +1,13 @@
 ---
-ms.date: 06/05/2017
+ms.date: 06/11/2020
 keywords: powershell,コマンドレット
 title: WinRMSecurity
-ms.openlocfilehash: ec194a4cc5abba5061e43152e0cb851c22611445
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: ee7e5f2c9c9a863e29c9278c40703a05c1943246
+ms.sourcegitcommit: fd223afa50092839c74d8d5fbba791869665455f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83564431"
+ms.lasthandoff: 06/25/2020
+ms.locfileid: "85353840"
 ---
 # <a name="powershell-remoting-security-considerations"></a>PowerShell リモート処理のセキュリティに関する考慮事項
 
@@ -15,7 +15,7 @@ PowerShell リモート処理は、Windows システムの管理に推奨され�
 
 ## <a name="what-is-powershell-remoting"></a>PowerShell リモート処理とは
 
-PowerShell リモート処理は、[Windows リモート管理 (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426.aspx) を使用しています。これは、ユーザーがリモート コンピューター上で PowerShell コマンドを実行できるように、Microsoft によって [Web Services for Management (WS-Management)](https://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) プロトコルが実装されたものです。 PowerShell リモート処理の使用方法の詳細については、「[リモート コマンドの実行](https://technet.microsoft.com/library/dd819505.aspx)」を参照してください。
+PowerShell リモート処理は、[Windows リモート管理 (WinRM)](/windows/win32/winrm/portal) を使用しています。これは、ユーザーがリモート コンピューター上で PowerShell コマンドを実行できるように、Microsoft によって [Web Services for Management (WS-Management)](https://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf) プロトコルが実装されたものです。 PowerShell リモート処理の使用方法の詳細については、「[リモート コマンドの実行](running-remote-commands.md)」を参照してください。
 
 PowerShell リモート処理は、コマンドレットの **ComputerName** パラメーターを使用してリモート コンピューターでコマンドを実行することとは異なります。この場合は、基盤となるプロトコルとしてリモート プロシージャ コール (RPC) が使用されています。
 
@@ -26,16 +26,17 @@ PowerShell リモート処理 (および WinRM) は、次のポートをリッ�
 - HTTP: 5985
 - HTTPS: 5986
 
-既定では、PowerShell リモート処理で許可されている接続は、Administrators グループのメンバーからのもののみです。 セッションはユーザーのコンテキストで開始されるため、PowerShell リモート処理を介して接続されている間は、個々のユーザーとグループに適用されているオペレーティング システムのアクセス制御がすべて、そのセッションに引き続き適用されます。
+既定では、PowerShell リモート処理で許可されている接続は、Administrators グループのメンバーからのもののみです。
+セッションはユーザーのコンテキストで開始されるため、PowerShell リモート処理を介して接続されている間は、個々のユーザーとグループに適用されているオペレーティング システムのアクセス制御がすべて、そのセッションに引き続き適用されます。
 
 プライベート ネットワークの場合、PowerShell リモート処理の既定の Windows ファイアウォール規則はすべての接続を受け入れます。 パブリック ネットワークの場合、既定の Windows ファイアウォール規則で許可されるのは、同じサブネット内からの PowerShell リモート処理接続のみです。 パブリック ネットワーク上のすべての接続に対して PowerShell リモート処理を可能にするには、その規則を明示的に変更する必要があります。
 
->**警告:** パブリック ネットワークのファイアウォール規則は、悪意のある外部接続からコンピューターを保護することを目的としています。 この規則を削除する際は注意してください。
+> [!Warning]
+> パブリック ネットワークのファイアウォール規則は、悪意のある外部接続からコンピューターを保護することを目的としています。 この規則を削除する際は注意してください。
 
 ## <a name="process-isolation"></a>プロセスの分離
 
-PowerShell リモート処理では、コンピューター間の通信に [Windows リモート管理 (WinRM)](https://msdn.microsoft.com/library/windows/desktop/aa384426) を使用します。
-WinRM は Network Service アカウントでサービスとして実行されており、ユーザー アカウントとして実行される分離プロセスを生成して、PowerShell インスタンスをホストします。 1 ユーザーとして実行されている PowerShell のインスタンスは、別のユーザーとして PowerShell のインスタンスを実行しているプロセスにアクセスすることはできません。
+PowerShell リモート処理によって、コンピューター間の通信に WinRM が使用されます。 WinRM は Network Service アカウントでサービスとして実行されており、ユーザー アカウントとして実行される分離プロセスを生成して、PowerShell インスタンスをホストします。 1 ユーザーとして実行されている PowerShell のインスタンスは、別のユーザーとして PowerShell のインスタンスを実行しているプロセスにアクセスすることはできません。
 
 ## <a name="event-logs-generated-by-powershell-remoting"></a>PowerShell リモート処理によって生成されたイベント ログ
 
@@ -45,16 +46,15 @@ FireEye は、PowerShell リモート処理セッションによって生成さ�
 
 PowerShell リモート処理の接続のセキュリティについては、初期認証と進行中の通信という 2 つの観点から考慮することをお勧めします。
 
-使用されているトランスポート プロトコル (HTTP または HTTPS) に関係なく、PowerShell リモート処理では、常にすべての通信が、初期認証後に、セッションごとの AES 256 対称キーを使用して暗号化されます。
+使用されているトランスポート プロトコル (HTTP または HTTPS) に関係なく、WinRM により、常にすべての PowerShell リモート処理の通信が、初期認証後に暗号化されます。
 
 ### <a name="initial-authentication"></a>初期認証
 
 認証では、サーバーに対するクライアントの ID と、理想的にはクライアントに対するサーバーを確認します。
 
-クライアントがコンピューター名 (server01 や server01.contoso.com など) を使用してドメイン サーバーに接続する場合、既定の認証プロトコルは [Kerberos](https://msdn.microsoft.com/library/windows/desktop/aa378747.aspx) です。
-Kerberos では、再利用可能な資格情報を送信しなくても、ユーザー ID とサーバー ID の両方が保証されます。
+クライアントがコンピューター名を使用してドメイン サーバーに接続する場合、既定の認証プロトコルは [Kerberos](/windows/win32/secauthn/microsoft-kerberos) です。 Kerberos では、再利用可能な資格情報を送信しなくても、ユーザー ID とサーバー ID の両方が保証されます。
 
-クライアントが IP アドレスを使用してドメイン サーバーに接続する場合、またはワークグループ サーバーに接続する場合は、Kerberos 認証を使用できません。 その場合は、PowerShell リモート処理は [NTLM 認証プロトコル](https://msdn.microsoft.com/library/windows/desktop/aa378749.aspx)を利用します。 NTLM 認証プロトコルでは、委任可能な資格情報を送信しなくてもユーザー ID が保証されます。 NTLM プロトコルは、ユーザー ID を証明するために、クライアントとサーバーの両方でユーザーのパスワードからセッション キーを計算することを要求します。パスワード自体は交換しません。 サーバーは、通常ユーザーのパスワードを知らないため、ドメイン コントローラーと通信します。ドメイン コントローラーがユーザーのパスワードを知っていて、サーバー用にセッション キーを計算します。
+クライアントが IP アドレスを使用してドメイン サーバーに接続する場合、またはワークグループ サーバーに接続する場合は、Kerberos 認証を使用できません。 その場合は、PowerShell リモート処理は [NTLM 認証プロトコル](/windows/win32/secauthn/microsoft-ntlm)を利用します。 NTLM 認証プロトコルでは、委任可能な資格情報を送信しなくてもユーザー ID が保証されます。 NTLM プロトコルは、ユーザー ID を証明するために、クライアントとサーバーの両方でユーザーのパスワードからセッション キーを計算することを要求します。パスワード自体は交換しません。 サーバーは、通常ユーザーのパスワードを知らないため、ドメイン コントローラーと通信します。ドメイン コントローラーがユーザーのパスワードを知っていて、サーバー用にセッション キーを計算します。
 
 一方、NTLM プロトコルでは、サーバー ID が保証されません。 ドメインに参加しているコンピューターのコンピューター アカウントにアクセスできる攻撃者は、認証に NTLM を使用するプロトコルと同様にドメイン コントローラーを呼び出して NTLM セッション キーを計算することで、サーバーになりすます場合があります。
 
@@ -62,21 +62,34 @@ NTLM ベースの認証は既定では無効になっていますが、ターゲ
 
 #### <a name="using-ssl-certificates-to-validate-server-identity-during-ntlm-based-connections"></a>NTLM ベースの接続時に SSL 証明書を使用してサーバー ID を検証する
 
-NTLM 認証プロトコルではターゲット サーバーの ID を保証できないため (パスワードを認識しているだけのため)、PowerShell リモート処理に SSL を使用するようターゲット サーバーを構成できます。 SSL 証明書をターゲット サーバーに割り当てると (クライアントも信頼している証明機関によって発行されている場合)、ユーザー ID とサーバー ID の両方が保証される NTLM ベースの認証が可能になります。
+NTLM 認証プロトコルではターゲット サーバーの ID を保証できないため (パスワードを認識しているだけのため)、PowerShell リモート処理に SSL を使用するようターゲット サーバーを構成できます。
+SSL 証明書をターゲット サーバーに割り当てると (クライアントも信頼している証明機関によって発行されている場合)、ユーザー ID とサーバー ID の両方が保証される NTLM ベースの認証が可能になります。
 
 #### <a name="ignoring-ntlm-based-server-identity-errors"></a>NTLM ベースのサーバー ID を無視する
 
-SSL 証明書を NTLM 接続用のサーバーに展開できない場合は、そのサーバーを WinRM の **TrustedHosts** 一覧に追加することで ID エラーの発生を抑制できます。 ホスト自体の信頼性を示すために、サーバー名を TrustedHosts の一覧に追加することは考えないでください。NTLM 認証プロトコルでは、実際に接続しているホストが、必ずしも意図して接続しているホストであるとは限りません。
-代わりに、TrustedHosts の設定を、サーバーの ID を確認できないことが原因で生成されたエラーを抑制するホストの一覧と考える必要があります。
+SSL 証明書を NTLM 接続用のサーバーに展開できない場合は、そのサーバーを WinRM の **TrustedHosts** 一覧に追加することで ID エラーの発生を抑制できます。 サーバー名を **TrustedHosts** の一覧に追加することは、ホスト自体の信頼性を表明するいずれの形でもないことにご注意ください。NTLM 認証プロトコルでは、実際に接続先となるホストが、意図する接続先であるとは限らないからです。 代わりに、TrustedHosts の設定を、サーバーの ID を確認できないことが原因で生成されたエラーを抑制するホストの一覧と考える必要があります。
 
 ### <a name="ongoing-communication"></a>進行中の通信
 
-初期認証が完了すると、[PowerShell リモート処理プロトコル](https://msdn.microsoft.com/library/dd357801.aspx)によって、進行中の通信はすべて、セッションごとの AES 256 対称キーを使用して暗号化されます。
+初期認証が完了すると、WinRM では、進行中の通信が暗号化されます。 HTTPS 経由で接続する場合は、データの転送に使用される暗号化をネゴシエートするために TLS プロトコルが使用されます。
+HTTP 経由で接続する場合、メッセージレベルの暗号化は、使用される初期認証プロトコルによって決定されます。
+
+- 基本認証では、暗号化は行われません。
+- NTLM 認証では、128 ビット キーを使用して RC4 暗号が使用されます。
+- Kerberos 認証の暗号化は、TGS チケットの `etype` によって決定されます。 これは、最新のシステムでの AES-256 です。
+- CredSSP 暗号化では、ハンドシェイクでネゴシエートされた TLS 暗号スイートが使用されます。
 
 ## <a name="making-the-second-hop"></a>次ホップの実行
 
-PowerShell リモート処理では、既定で、認証に Kerberos (使用可能な場合) または NTLM が使用されます。 このどちらのプロトコルも、資格情報を送信することなく、リモート コンピューターに対して認証を行います。
-これは認証方法としては最も安全ですが、リモート コンピューターにユーザーの資格情報がないため、このリモート コンピューターは、ユーザーに代わって他のコンピューターおよびサービスにアクセスすることはできません。
-これは "次ホップの問題" と呼ばれます。
+PowerShell リモート処理では、既定で、認証に Kerberos (使用可能な場合) または NTLM が使用されます。 このどちらのプロトコルも、資格情報を送信することなく、リモート コンピューターに対して認証を行います。 これは認証方法としては最も安全ですが、リモート コンピューターにユーザーの資格情報がないため、このリモート コンピューターは、ユーザーに代わって他のコンピューターおよびサービスにアクセスすることはできません。 これは "次ホップの問題" と呼ばれます。
 
 この問題を回避する方法はいくつかあります。 これらの方法およびその長所と短所については、「[PowerShell リモート処理での次ホップの実行](PS-remoting-second-hop.md)」をご覧ください。
+
+## <a name="references"></a>References
+
+- [Windows リモート管理 (WinRM)](/windows/win32/winrm/portal)
+- [Web Services for Management (WS-Management)](https://www.dmtf.org/sites/default/files/standards/documents/DSP0226_1.2.0.pdf)
+- [2.2.9.1 暗号化されたメッセージ型](/openspecs/windows_protocols/ms-wsmv/58421aa4-861a-4410-831a-c999f094cdb7)
+- [Kerberos](/windows/win32/secauthn/microsoft-kerberos)
+- [NTLM 認証プロトコル](/windows/win32/secauthn/microsoft-ntlm)
+- [PowerShell 攻撃の調査](https://www.fireeye.com/content/dam/fireeye-www/global/en/solutions/pdfs/wp-lazanciyan-investigating-powershell-attacks.pdf)

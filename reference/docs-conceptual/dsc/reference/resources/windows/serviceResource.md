@@ -2,12 +2,12 @@
 ms.date: 09/20/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC Service リソース
-ms.openlocfilehash: acd0710fb4b131876e3edece15b07cff8e9a8a9e
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: f936f58ffd00f84d8c6d5d41d93378eaa8db5879
+ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83557007"
+ms.lasthandoff: 07/18/2020
+ms.locfileid: "86463586"
 ---
 # <a name="dsc-service-resource"></a>DSC Service リソース
 
@@ -23,14 +23,18 @@ Service [string] #ResourceName
     Name = [string]
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
+    [ StartupTimeout = [uint32]]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
-    [ State = [string] { Running | Stopped }  ]
+    [ State = [string] { Ignore | Running | Stopped }  ]
+    [ Dependencies = [string[]] ]
     [ Description = [string] ]
+    [ DesktopInteract = [boolean]]
     [ DisplayName = [string] ]
     [ Path = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present } ]
     [ PsDscRunAsCredential = [PSCredential] ]
+    [ TerminateTimeout = [uint32] ]
 }
 ```
 
@@ -41,9 +45,13 @@ Service [string] #ResourceName
 |名前 |サービス名を示します。 これは、表示名とは異なることがあります。 `Get-Service` コマンドレットを使用すると、サービスとその現在の状態の一覧を取得できます。 |
 |BuiltInAccount |サービスに使用するサインイン アカウントを示します。 このプロパティで有効な値は、**LocalService**、**LocalSystem**、**NetworkService** です。 |
 |資格情報 |サービスを実行するアカウントの資格情報を示します。 このプロパティおよび **BuiltinAccount** プロパティを同時に使用することはできません。 |
+|StartupTimeout | サービスが実行されるまで待機する時間 (ミリ秒)。|
 |StartupType |サービスのスタートアップの種類を示します。 このプロパティで有効な値は、**Automatic**、**Disabled**、**Manual** です。 |
 |State |サービスに対して保証する状態を示します。 値は次のとおりです。**Running** または **Stopped**。 |
+|TerminateTimeout |サービスが停止されるまで待機する時間 (ミリ秒)。|
+|依存関係 | サービスに含まれる依存関係の名前の配列。 |
 |説明 |ターゲット サービスの説明を示します。 |
+|DesktopInteract | サービスがデスクトップ上のウィンドウと通信できるかどうかを示します。 LocalSystem として実行されていないサービスの場合は、false にする必要があります。|
 |DisplayName |ターゲット サービスの表示名を示します。 |
 |Path |新しいサービスのバイナリ ファイルのパスを示します。 |
 

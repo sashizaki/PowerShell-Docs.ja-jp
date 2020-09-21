@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: レジストリ エントリの操作
-ms.openlocfilehash: c1fd6f57f13240eb2039f2d5756796678800aee0
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 7f8ee87cebb8b220570bcb969445071a72a68526
+ms.sourcegitcommit: d3f78120bdc9096c72aa0dfdbdd91efaf254c738
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030720"
+ms.lasthandoff: 08/04/2020
+ms.locfileid: "87758484"
 ---
 # <a name="working-with-registry-entries"></a>レジストリ エントリの操作
 
@@ -111,7 +111,7 @@ DevicePath   : C:\WINDOWS\inf
 このコマンドは、標準の Windows PowerShell のプロパティと **DevicePath** プロパティを返します。
 
 > [!NOTE]
-> `Get-ItemProperty` には **Filter**、**Include**、**Exclude** パラメーターが含まれていますが、これらはプロパティ名でフィルター処理するためには使えません。 これらのパラメーターではレジストリ キーを参照します。これは項目のパスであり、レジストリ エントリではありません。 項目のプロパティであるレジストリ エントリです。
+> `Get-ItemProperty` には **Filter**、**Include**、**Exclude** パラメーターが含まれていますが、これらはプロパティ名でフィルター処理するためには使えません。 これらのパラメーターはレジストリ キー (項目のパス) を参照するものであり、レジストリ エントリ (項目のプロパティ) を参照しているのではありません。
 
 別のオプションとして、Reg.exe コマンド ライン ツールを使用することもできます。 reg.exe のヘルプを表示するには、コマンド プロンプトで `reg.exe /?` と入力します。 DevicePath エントリを検索するには、次のコマンドに示すように reg.exe を使用します。
 
@@ -190,7 +190,7 @@ PowerShellPath : C:\Program Files\Windows PowerShell\v1.0
 
 **PropertyType** は、次の表の **Microsoft.Win32.RegistryValueKind** 列挙体のメンバーの名前にする必要があります。
 
-|PropertyType の値|意味|
+|PropertyType の値|説明|
 |----------------------|-----------|
 |Binary|Binary Data|
 |DWord|有効な UInt32 である数字|

@@ -2,12 +2,12 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: Windows PowerShell 5.0 の新機能
-ms.openlocfilehash: dba016546fe034684f6b7afe43ec2e7a1b793d96
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 314be1d4da2d3df967ac8898745b7b1aaf69de2a
+ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809218"
+ms.lasthandoff: 06/23/2020
+ms.locfileid: "85216007"
 ---
 # <a name="whats-new-in-windows-powershell-50"></a>Windows PowerShell 5.0 の新機能
 
@@ -187,7 +187,7 @@ Windows PowerShell 4.0 での Windows PowerShell Desired State Configuration (DS
 
 ### <a name="new-features-in-windows-powershell-ise"></a>Windows PowerShell ISE の新機能
 
-- Windows PowerShell ISE のローカル コピーでリモートの Windows PowerShell のスクリプトとファイルを編集できるようになりました。この編集を行うには、Enter-PSSession を実行して、編集するファイルを保存しているコンピューター上でリモート セッションを開始し、**PSEdit \<リモート コンピューター上のパスとファイル名\>** を実行します。 この機能を使用すると、Windows PowerShell ISE を実行できない Windows Server の Server Core インストール オプションに保存されている Windows PowerShell ファイルの編集が簡単になります。
+- Windows PowerShell ISE のローカル コピーでリモートの Windows PowerShell のスクリプトとファイルを編集できるようになりました。この編集を行うには、Enter-PSSession を実行し、編集するファイルが保存されているコンピューター上でリモート セッションを開始して、**PSEdit \<path and file name on the remote computer\>** を実行します。 この機能を使用すると、Windows PowerShell ISE を実行できない Windows Server の Server Core インストール オプションに保存されている Windows PowerShell ファイルの編集が簡単になります。
 - Start-Transcript コマンドレットが Windows PowerShell ISE でサポートされるようになりました。
 - Windows PowerShell ISE でリモート スクリプトをデバッグできるようになりました。
 - 新しいメニュー コマンド、**Break All** (Ctrl+B) は、ローカルとリモートで実行中の両方のスクリプトを中断し、デバッガーに移ります。
@@ -353,7 +353,7 @@ Windows PowerShell ワークフローの利点を次に示します。
 
 Windows PowerShell Web Access は、Windows PowerShell のコマンドとスクリプトをユーザーが Web ベースのコンソールで実行できる Windows Server 2012 の機能です。 Web ベースのコンソールを使用するデバイスでは、Windows PowerShell、リモート管理ソフトウェアまたはブラウザー プラグインをインストールする必要はありません。 必要なのは、適切に構成された Windows PowerShell Web Access ゲートウェイと、JavaScript をサポートし、Cookie を許可するクライアント デバイスのブラウザーのみです。
 
-詳細については、「[ Windows PowerShell Web Access の展開](/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access)」を参照してください。
+詳細については、「[ Windows PowerShell Web Access の展開](/previous-versions/powershell/scripting/components/web-access/install-and-use-windows-powershell-web-access)」を参照してください。
 
 ### <a name="new-windows-powershell-ise-features"></a>Windows PowerShell ISE の新機能
 

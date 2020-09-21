@@ -2,12 +2,12 @@
 title: VS Code と PowerShell でのファイルのエンコードの概要
 description: VS Code と PowerShell でのファイルのエンコードの構成
 ms.date: 02/28/2019
-ms.openlocfilehash: 1333c5aedd5abd16078ac32979f19f38818a26c8
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: a4b13bcfbe5cffc4e015a37a5fd64fbb8b91f949
+ms.sourcegitcommit: 01a1c253f48b61c943f6d6aca4e603118014015f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809898"
+ms.lasthandoff: 08/06/2020
+ms.locfileid: "87900010"
 ---
 # <a name="understanding-file-encoding-in-vs-code-and-powershell"></a>VS Code と PowerShell でのファイルのエンコードの概要
 
@@ -17,7 +17,7 @@ VS Code を使用して PowerShell スクリプトを作成および編集する
 
 VS Code により、人間が文字列をバッファーに入力することと、バイトのブロックをファイル システムに読み取りおよび書き込みすることの間のインターフェイスが管理されます。 VS Code では、ファイルを保存するとき、テキスト エンコードを使用して各文字がどのバイトになるかが判断されます。
 
-同様に、PowerShell によりスクリプトが実行されるときは、ファイルを PowerShell プログラムに再構築するために、ファイル内のバイトを文字に変換する必要があります。 VS Code によりファイルが書き込まれ、PowerShell によりファイルが読み取られるため、これらでは同じエンコード システムを使用する必要があります。 PowerShell スクリプトを解析するこのプロセスは、*バイト* -> *文字* -> *トークン* -> *抽象構文木* -> *実行*の順に行われます。
+同様に、PowerShell によりスクリプトが実行されるときは、ファイルを PowerShell プログラムに再構築するために、ファイル内のバイトを文字に変換する必要があります。 VS Code によりファイルが書き込まれ、PowerShell によりファイルが読み取られるため、これらでは同じエンコード システムを使用する必要があります。 PowerShell スクリプトを解析するこのプロセスは、_バイト_ -> _文字_ -> _トークン_ -> _抽象構文木_ -> _実行_の順に行われます。
 
 VS Code と PowerShell は両方とも、実用的な既定のエンコード構成でインストールされています。 ただし、PowerShell により使用される既定のエンコードは、PowerShell Core (v6.x) のリリースで変わりました。 VS Code で PowerShell または PowerShell 拡張機能を使用しても確実に問題がないようにするには、VS Code と PowerShell の設定を正しく構成する必要があります。
 
@@ -41,27 +41,27 @@ VS Code と PowerShell は両方とも、実用的な既定のエンコード構
 
 ### <a name="how-to-tell-when-you-have-encoding-issues"></a>エンコードの問題が発生したときの判断方法
 
-多くの場合、エンコード エラーはスクリプト内の解析エラーとして現れます。 スクリプト内に通常とは異なる文字シーケンスが見つかった場合は、それが問題になる可能性があります。 以下の例では、半角ダッシュ (`–`) が `â&euro;"` という文字で表示されています。
+多くの場合、エンコード エラーはスクリプト内の解析エラーとして現れます。 スクリプト内に通常とは異なる文字シーケンスが見つかった場合は、それが問題になる可能性があります。 以下の例では、半角ダッシュ (`–`) が `â€"` という文字で表示されています。
 
 ```Output
 Send-MailMessage : A positional parameter cannot be found that accepts argument 'Testing FuseMail SMTP...'.
 At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtpRelay.ps1:6 char:1
-+ Send-MailMessage â&euro;"From $from â&euro;"To $recipient1 â&euro;"Subject $subject  ...
++ Send-MailMessage â€"From $from â€"To $recipient1 â€"Subject $subject  ...
 + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     + CategoryInfo          : InvalidArgument: (:) [Send-MailMessage], ParameterBindingException
     + FullyQualifiedErrorId : PositionalParameterNotFound,Microsoft.PowerShell.Commands.SendMailMessage
 ```
 
-この問題は、VS Code により UTF-8 の文字 `–` がバイト `0xE2 0x80 0x93` としてエンコードされるために発生します。 このようなバイトが Windows-1252 としてデコードされると、`â&euro;"` という文字に解釈されます。
+この問題は、VS Code により UTF-8 の文字 `–` がバイト `0xE2 0x80 0x93` としてエンコードされるために発生します。 このようなバイトが Windows-1252 としてデコードされると、`â€"` という文字に解釈されます。
 
 よく見られる通常とは異なる文字シーケンスの例を次に示します。
 
 <!-- markdownlint-disable MD038 -->
-- `–` の代わりに `â&euro;"`
-- `—` の代わりに `â&euro;"`
+- `–` の代わりに `â€"`
+- `—` の代わりに `â€"`
 - `Ä` の代わりに `Ã„2`
 - ` ` の代わりに `Â` (改行なしスペース)
-- `é` の代わりに `Ã&copy;`
+- `é` の代わりに `Ã©`
 <!-- markdownlint-enable MD038 -->
 
 こちらの便利な[関連ドキュメント](https://www.i18nqa.com/debug/utf8-debug.html)には、UTF-8/Windows-1252 エンコードの問題を示す一般的なパターンの一覧が掲載されています。
@@ -71,8 +71,8 @@ At C:\Users\<User>\<OneDrive>\Development\PowerShell\Scripts\Send-EmailUsingSmtp
 PowerShell 拡張機能は、さまざまな方法でスクリプトとやりとりします。
 
 1. スクリプトが VS Code により編集されると、そのコンテンツは VS Code によって拡張機能に送信されます。 [言語サーバー プロトコル][]では、このコンテンツを UTF-8 で転送することを義務付けています。 そのため、拡張機能が不適切なエンコードが取得されることはありません。
-2. 統合されたコンソールでスクリプトを直接実行されると、PowerShell によってファイルから直接読み取られます。 PowerShell のエンコードが VS Code のエンコードと異なる場合は、ここで何か問題が起こる可能性があります。
-3. VS Code で開かれているスクリプトにより VS Code で開かれていない別のスクリプトが参照されている場合、拡張機能はフォール バックして、そのスクリプトのコンテンツをファイル システムから読み込みます。 PowerShell 拡張機能の既定は UTF-8 エンコードですが、[バイト オーダー マーク][] (BOM) 検出を使用して正しいエンコードが選択されます。
+1. 統合されたコンソールでスクリプトを直接実行されると、PowerShell によってファイルから直接読み取られます。 PowerShell のエンコードが VS Code のエンコードと異なる場合は、ここで何か問題が起こる可能性があります。
+1. VS Code で開かれているスクリプトにより VS Code で開かれていない別のスクリプトが参照されている場合、拡張機能はフォール バックして、そのスクリプトのコンテンツをファイル システムから読み込みます。 PowerShell 拡張機能の既定は UTF-8 エンコードですが、[バイト オーダー マーク][] (BOM) 検出を使用して正しいエンコードが選択されます。
 
 問題は、BOM なしの形式 (BOM なしの [UTF-8][] や [Windows-1252][] など) のエンコードを想定しているときに発生します。 PowerShell 拡張機能の既定値は UTF-8 です。 この拡張機能では VS Code のエンコード設定を変更できません。 詳細については、[問題番号 824](https://github.com/Microsoft/VSCode/issues/824) を参照してください。
 
@@ -187,7 +187,7 @@ finally
 - [@mklement0] の [StackOverflow 上の PowerShell エンコードに関する回答](https://stackoverflow.com/a/40098904)。
 - [@rkeithhill] の [PowerShell での BOM なしの UTF-8 入力の処理に関するブログ投稿](https://rkeithhill.wordpress.com/2010/05/26/handling-native-exe-output-encoding-in-utf8-with-no-bom/)。
 
-PowerShell に特定の入力エンコードの使用を強制することはできません。 BOM がない場合、PowerShell 5.1 以前では既定で Windows-1252 エンコードが使用されます。 相互運用性の理由から、BOM ありの Unicode 形式でスクリプトを保存することをお勧めします。
+PowerShell に特定の入力エンコードの使用を強制することはできません。 ロケールが en-US に設定された Windows で実行される PowerShell 5.1 以前では、BOM がない場合、既定値は Windows-1252 エンコードです。 他のロケール設定では、別のエンコードを使用できます。 相互運用性を確保するには、BOM が含まれる Unicode 形式でスクリプトを保存することをお勧めします。
 
 > [!IMPORTANT]
 > PowerShell スクリプトに触れる他のツールがある場合、そのツールがエンコードの選択の影響を受ける場合や、ツールによってスクリプトが別のエンコードに再エンコードされる場合があります。
@@ -261,7 +261,7 @@ PowerShell でのエンコードとエンコードの構成に関するお勧め
   - [#1680](https://github.com/PowerShell/VSCode-powershell/issues/1680)
   - [#1744](https://github.com/PowerShell/VSCode-powershell/issues/1744)
   - [#1751](https://github.com/PowerShell/VSCode-powershell/issues/1751)
-- [*Joel on Software* が Unicode について書いた以前の投稿](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+- [_Joel on Software_ が Unicode について書いた以前の投稿](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
 - [.NET Standard のエンコード](https://github.com/dotnet/standard/issues/260#issuecomment-289549508)
 
 [@mklement0]: https://github.com/mklement0

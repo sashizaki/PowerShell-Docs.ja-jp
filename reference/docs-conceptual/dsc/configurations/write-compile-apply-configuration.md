@@ -1,20 +1,20 @@
 ---
-ms.date: 12/12/2018
+ms.date: 06/22/2020
 keywords: dsc, powershell, 構成, サービス, セットアップ
 title: 構成の作成、コンパイル、適用
-ms.openlocfilehash: 11de1d4552bc9c438adf9e3dea2059834e11e10c
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 9acb2db882795d7150326fadb2964deb1105b2cc
+ms.sourcegitcommit: 7eea0885dd7ac90ab36e5664501438a292217f7f
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808301"
+ms.lasthandoff: 06/24/2020
+ms.locfileid: "85295677"
 ---
 # <a name="write-compile-and-apply-a-configuration"></a>構成の作成、コンパイル、適用
 
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
-この演習では、Desired State Configuration (DSC) の構成の作成と適用について最初から最後まで説明します。
-次の例では、非常に単純な構成を作成して適用する方法について学習します。 この構成により、"HelloWorld.txt" ファイルがローカル コンピューターに存在していることが確保されます。 ファイルを削除する場合は、次に更新されるときに DSC によってファイルが再作成されます。
+この演習では、Desired State Configuration (DSC) の構成の作成と適用について最初から最後まで説明します。 次の例では、非常に単純な構成を作成して適用する方法について学習します。 この構成により、"HelloWorld.txt" ファイルがローカル コンピューターに存在していることが確保されます。
+ファイルを削除する場合は、次に更新されるときに DSC によってファイルが再作成されます。
 
 DSC の概要としくみついては、[開発者向けの Desired State Configuration の概要](../overview/overview.md)に関するページをご覧ください。
 
@@ -34,10 +34,12 @@ Configuration HelloWorld {
     # Import the module that contains the File resource.
     Import-DscResource -ModuleName PsDesiredStateConfiguration
 
-    # The Node statement specifies which targets to compile MOF files for, when this configuration is executed.
+    # The Node statement specifies which targets to compile MOF files for, when
+    # this configuration is executed.
     Node 'localhost' {
 
-        # The File resource can ensure the state of files, or copy them from a source to a destination with persistent updates.
+        # The File resource can ensure the state of files, or copy them from a
+        # source to a destination with persistent updates.
         File HelloWorld {
             DestinationPath = "C:\Temp\HelloWorld.txt"
             Ensure = "Present"
@@ -47,8 +49,8 @@ Configuration HelloWorld {
 }
 ```
 
-> [重要] 多くの DSC リソースを同じ構成で操作できるように複数のモジュールをインポートすることが必要な、より高度なシナリオの場合は、`Import-DscResource` を使って各モジュールを別々の行に配置するようにしてください。
-> こちらの方がソース管理で管理しやすく、また Azure State Configuration の DSC を使用する場合に必要になります。
+> [!IMPORTANT]
+> 多くの DSC リソースを同じ構成で操作できるように複数のモジュールをインポートすることが必要な、より高度なシナリオの場合は、`Import-DscResource` を使って各モジュールを別々の行に配置するようにしてください。 こちらの方がソース管理で管理しやすく、また Azure State Configuration の DSC を使用する場合に必要になります。
 >
 > ```powershell
 >  Configuration HelloWorld {
@@ -67,13 +69,10 @@ Configuration HelloWorld {
 
 ## <a name="compile-the-configuration"></a>構成のコンパイル
 
-DSC 構成をノードに適用するには、最初にコンパイルを行い、MOF ファイルを出力する必要があります。
-関数のように構成を実行すると、`Node` ブロックで定義されたノードごとに、".mof" ファイルを 1 つコンパイルします。
-構成を実行するために、"HelloWorld.ps1" スクリプトを現在の範囲に*ドット ソース*で使用する必要があります。
-詳細については、[スクリプト](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)に関するページを参照してください。
+DSC 構成をノードに適用するには、最初にコンパイルを行い、MOF ファイルを出力する必要があります。 関数のように構成を実行すると、`Node` ブロックで定義されたノードごとに、`.mof` ファイルが 1 つコンパイルされます。 構成を実行するには、現在の範囲で `HelloWorld.ps1` スクリプトを "_ドット ソース_" で実行する必要があります。 詳細については、[スクリプト](/powershell/module/microsoft.powershell.core/about/about_scripts?view=powershell-6#script-scope-and-dot-sourcing)に関するページを参照してください。
 
 <!-- markdownlint-disable MD038 -->
-`. ` (ドット、スペース) の後に保存した場所のパスを入力することで、"HelloWorld.ps1" スクリプトを "*ドット ソース*" で使用します。 その後、関数のように呼び出すことで、構成を実行することができます。
+`HelloWorld.ps1` スクリプトを "_ドット ソース_" で実行するには、`. ` (ドット、スペース) の後で、それを保存した場所のパス内に入力します。 その後、関数のように呼び出すことで、構成を実行することができます。 また、スクリプトの一番下にある構成関数を呼び出すと、ドット ソースで実行する必要がなくなります。
 <!-- markdownlint-enable MD038 -->
 
 ```powershell
@@ -83,7 +82,7 @@ HelloWorld
 
 これにより、次の出力が生成されます。
 
-```output
+```Output
 Directory: C:\Scripts\HelloWorld
 
 
@@ -96,10 +95,9 @@ Mode                LastWriteTime         Length Name
 
 コンパイル済みの MOF があるため、[Start-DscConfiguration](/powershell/module/psdesiredstateconfiguration/start-dscconfiguration) コマンドレットを呼び出すことで、ターゲット ノード (今回の場合はローカル コンピューター) に構成を適用できます。
 
-`Start-DscConfiguration` コマンドレットから[ローカル構成マネージャー (LCM)](../managing-nodes/metaConfig.md) (DSC のエンジン) に対して構成の適用を指示します。
-LCM はDSC リソースを呼び出し、構成を適用します。
+`Start-DscConfiguration` コマンドレットから[ローカル構成マネージャー (LCM)](../managing-nodes/metaConfig.md) (DSC のエンジン) に対して構成の適用を指示します。 LCM はDSC リソースを呼び出し、構成を適用します。
 
-以下のコードを使用して、`Start-DSCConfiguration` コマンドレットを実行します。 "localhost.mof" が保存されているディレクトリ パスを `-Path` パラメーターに指定します。 `Start-DSCConfiguration` コマンドレットは、任意の "\<computername\>.mof" ファイルに対して指定されたディレクトリが対象になります。 `Start-DSCConfiguration` コマンドレットでは、見つかった各 ".mof" ファイルを、ファイル名 ("localhost"、"server01"、"dc-02" など) で指定されたコンピューター名に適用しようとします。
+以下のコードを使用して、`Start-DSCConfiguration` コマンドレットを実行します。 `localhost.mof` が保存されているディレクトリ パスを **Path** パラメーターに指定します。 `Start-DSCConfiguration` コマンドレットは、任意の `<computername>.mof` ファイルに対して指定されたディレクトリが対象になります。 `Start-DSCConfiguration` コマンドレットでは、見つかった各 `.mof` ファイルを、ファイル名 ("localhost"、"server01"、"dc-02" など) で指定された `computername` に適用する試みが行われます。
 
 > [!NOTE]
 > `-Wait` パラメーターが指定されていない場合、`Start-DSCConfiguration` では操作を実行するためにバックグラウンド ジョブが作成されます。 `-Verbose` パラメーターを指定すると、操作の**詳細**出力を確認できます。 `-Wait` および `-Verbose` は、どちらも省略可能なパラメーターです。
@@ -110,17 +108,17 @@ Start-DscConfiguration -Path C:\Scripts\HelloWorld -Verbose -Wait
 
 ## <a name="test-the-configuration"></a>構成をテストする
 
-`Start-DSCConfiguration` コマンドレットが完了すると、指定した場所に "HelloWorld.txt" ファイルが表示されます。 [Get-Content](/powershell/module/microsoft.powershell.management/get-content) コマンドレットを使用して、コンテンツを確認できます。
+`Start-DSCConfiguration` コマンドレットが完了すると、指定した場所に `HelloWorld.txt` ファイルが表示されます。 [Get-Content](/powershell/module/microsoft.powershell.management/get-content) コマンドレットを使用して、コンテンツを確認できます。
 
-[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) を使用して、現在の状態を*テスト*することもできます。
+[Test-DSCConfiguration](/powershell/module/psdesiredstateconfiguration/Test-DSCConfiguration) を使用して、現在の状態を_テスト_することもできます。
 
-現在、ノードが適用された構成に準拠している場合、出力は "True" になります。
+現在、ノードが適用された構成に準拠している場合、出力は `True` になります。
 
 ```powershell
 Test-DSCConfiguration
 ```
 
-```output
+```Output
 True
 ```
 
@@ -128,7 +126,7 @@ True
 Get-Content -Path C:\Temp\HelloWorld.txt
 ```
 
-```output
+```Output
 Hello World from DSC!
 ```
 

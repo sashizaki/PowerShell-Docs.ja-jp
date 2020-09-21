@@ -2,12 +2,12 @@
 title: PowerShell 開発のための Visual Studio Code の使用
 description: PowerShell 開発のための Visual Studio Code の使用
 ms.date: 11/07/2019
-ms.openlocfilehash: b492e59f340f4cec92c177ad44bbab9dc95da5da
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 181746e7d3df2880223d1f15a0c8b99b324f5b98
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808858"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87782533"
 ---
 # <a name="using-visual-studio-code-for-powershell-development"></a>PowerShell 開発のための Visual Studio Code の使用
 
@@ -54,7 +54,7 @@ ms.locfileid: "83808858"
    1. サイド バーに **[拡張機能]** ビューが開きます。 Microsoft の PowerShell の拡張機能を選択します。
       次の画像のような Visual Studio Code の画面が表示されるはずです。
 
-      ![Visual Studio Code](media/using-vscode/vscode.png)
+      ![Visual Studio Code - PowerShell 拡張機能の表示](media/using-vscode/vscode.png)
 
    1. Microsoft の PowerShell 拡張機能の、 **[インストール]** ボタンをクリックします。
    1. インストール後、 **[インストール]** ボタンが **[再読み込み]** に変わった場合は、 **[再読み込み]** をクリックします。
@@ -190,7 +190,7 @@ PowerShell の既定のバージョンを設定するには、セッション �
 
 まず、[拡張機能] ペインを開いて「`PowerShell`」を検索します。 次に、歯車をクリックして、 **[Install another version...]\(別のバージョンをインストール...\)** を選択します。
 
-![別のバージョンをインストール...](media/using-vscode/install-another-version.png)
+![メニュー項目 - 別のバージョンをインストール...](media/using-vscode/install-another-version.png)
 
 次に、バージョン **2020.1.0** を選択します。 このバージョンの拡張機能は、v3 と v4 がサポートされている最後のバージョンです。 拡張機能のバージョンが自動的に更新されないように、必ず次の設定を追加します。
 

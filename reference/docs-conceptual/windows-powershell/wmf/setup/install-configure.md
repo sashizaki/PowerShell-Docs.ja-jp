@@ -1,15 +1,15 @@
 ---
-ms.date: 06/12/2017
+ms.date: 06/10/2020
 ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 contributor: keithb
 title: WMF 5.1 のインストールと構成
-ms.openlocfilehash: 241f52be011e1afc87d25c9a934db0c1e0361b76
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 9e0b4b6ed387b0a0d7fcf62a913677986d70de92
+ms.sourcegitcommit: 4a283fe5419f47102e6c1de7060880a934842ee9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808478"
+ms.lasthandoff: 06/10/2020
+ms.locfileid: "84671395"
 ---
 # <a name="install-and-configure-wmf-51"></a>WMF 5.1 のインストールと構成
 
@@ -51,18 +51,17 @@ Windows Server 2008 R2 SP1 または Windows 7 SP1 に WMF 5.1 をインスト�
 
 - 最新の Service Pack をインストールする必要があります。
 - WMF 3.0 をインストール**しないでください**。 WMF 3.0 経由で WMF 5.1 をインストールすると、**PSModulePath** (`$env:PSModulePath`) が失われ、これによって他のアプリケーションで障害が発生する場合があります。 WMF 5.1 をインストールする前に WMF 3.0 をアンインストールするか、**PSModulePath** を保存して、WMF 5.1 のインストールが完了した後に手動で復元する必要があります。
-- WMF 5.1には少なくとも [.NET Framework 4.5.2 ](https://www.microsoft.com/download/details.aspx?id=42642)が必要です。
-  Microsoft .NET Framework 4.5.2 をインストールするには、ダウンロード場所で提供されている手順に従ってください。
+- WMF 5.1には少なくとも [.NET Framework 4.5.2 ](https://www.microsoft.com/download/details.aspx?id=42642)が必要です。 Microsoft .NET Framework 4.5.2 をインストールするには、ダウンロード場所で提供されている手順に従ってください。
 
 ### <a name="installing-wmf-51-on-windows-server-2008-r2-and-windows-7"></a>Windows Server 2008 R2 および Windows 7 で WMF 5.1 をインストールする
 
 1. ZIP ファイルをダウンロードしたフォルダーに移動します。
 
-2. ZIP ファイルを右クリックし、 **[すべて展開...]** を選択します。ZIP ファイルには、2 つのファイルが含まれています (MSU と `Install-WMF5.1.ps1` スクリプト ファイル)。 ZIP ファイルを展開したら、Windows 7 または Windows Server 2008 R2 を実行する任意のコンピューターにコンテンツをコピーすることができます。
+1. ZIP ファイルを右クリックし、 **[すべて展開...]** を選択します。ZIP ファイルには、2 つのファイルが含まれています (MSU と `Install-WMF5.1.ps1` スクリプト ファイル)。 ZIP ファイルを展開したら、Windows 7 または Windows Server 2008 R2 を実行する任意のコンピューターにコンテンツをコピーすることができます。
 
-3. ZIP ファイルを展開した後、PowerShell を管理者として開き、その ZIP ファイルの内容を含むフォルダーに移動します。
+1. ZIP ファイルを展開した後、PowerShell を管理者として開き、その ZIP ファイルの内容を含むフォルダーに移動します。
 
-4. そのフォルダーの `Install-WMF5.1.ps1` スクリプトを実行して、指示に従います。 このスクリプトはローカル コンピューターの前提条件を確認し、前提条件を満たしている場合に WMF 5.1 をインストールします。 前提条件は次のとおりです。
+1. そのフォルダーの `Install-WMF5.1.ps1` スクリプトを実行して、指示に従います。 このスクリプトはローカル コンピューターの前提条件を確認し、前提条件を満たしている場合に WMF 5.1 をインストールします。 前提条件は次のとおりです。
 
    `Install-WMF5.1.ps1` では、Windows Server 2008 R2 および Windows 7 でのインストールの自動化を容易にするため、次のパラメーターが使用されます。
 
@@ -78,16 +77,16 @@ Windows PowerShell Desired State Configuration (DSC) は、WinRM に依存しま
 ### <a name="install-from-windows-file-explorer"></a>エクスプローラーからインストールする
 
 1. MSU ファイルをダウンロードしたフォルダーに移動します。
-2. MSU をダブルクリックして実行します。
+1. MSU をダブルクリックして実行します。
 
 ### <a name="installing-from-the-command-prompt"></a>コマンド プロンプトからインストールする
 
 1. コンピューターのアーキテクチャに適切なパッケージをダウンロードした後、管理者特権 (管理者として実行) を使ってコマンド プロンプト ウィンドウを開きます。 Windows Server 2012 R2、Windows Server 2012、Windows Server 2008 R2 SP1 の Server Core インストール オプションで、既定で管理者特権でコマンド プロンプトが開きます。
-2. WMF 5.1 のインストール パッケージをダウンロードまたはコピーしたフォルダーにディレクトリを変更します。
-3. 次のいずれかのコマンドを実行します。
-   - Windows Server 2012 R2 または Windows 8.1 x64 を実行しているコンピューターの場合は、`Win8.1AndW2K12R2-KB3191564-x64.msu /quiet` を実行します。
-   - Windows Server 2012 を実行しているコンピューターの場合は、`W2K12-KB3191565-x64.msu /quiet` を実行します。
-   - Windows 8.1 x86 を実行しているコンピューターの場合は、`Win8.1-KB3191564-x86.msu /quiet` を実行します。
+1. WMF 5.1 のインストール パッケージをダウンロードまたはコピーしたフォルダーにディレクトリを変更します。
+1. 次のいずれかのコマンドを実行します。
+   - Windows Server 2012 R2 または Windows 8.1 x64 を実行しているコンピューターの場合は、`Win8.1AndW2K12R2-KB3191564-x64.msu /quiet /norestart` を実行します。
+   - Windows Server 2012 を実行しているコンピューターの場合は、`W2K12-KB3191565-x64.msu /quiet /norestart` を実行します。
+   - Windows 8.1 x86 を実行しているコンピューターの場合は、`Win8.1-KB3191564-x86.msu /quiet /norestart` を実行します。
 
-> [!NOTE]
-> WMF 5.1 をインストールするには、再起動が必要です。 `/quiet` オプションを使用すると、警告なしでシステムが再起動されます。 再起動しないようにするには、`/norestart` オプションを使用します。 ただし、再起動が完了するまで、WMF 5.1 はインストールされません。
+   > [!NOTE]
+   > WMF 5.1 をインストールするには、再起動が必要です。 `/quiet` オプションを使用すると、システムは警告なしで再起動します。 再起動しないようにするには、`/norestart` オプションを使用します。 ただし、再起動が完了するまで、WMF 5.1 はインストールされません。

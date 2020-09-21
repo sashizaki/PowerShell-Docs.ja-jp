@@ -3,12 +3,12 @@ ms.date: 11/06/2018
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery, PsGet
 title: ローカルの PSRepositories の操作
-ms.openlocfilehash: c1bd905674ae76a3badd3eff50780f0e1bb5fc64
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 421b73c141c7551224e2298f51464a19bc736d0e
+ms.sourcegitcommit: 105c69ecedfe5180d8c12e8015d667c5f1a71579
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75415816"
+ms.lasthandoff: 07/02/2020
+ms.locfileid: "85837581"
 ---
 # <a name="working-with-private-powershellget-repositories"></a>PowerShellGet プライベート リポジトリの操作
 
@@ -109,16 +109,16 @@ PowerShell ギャラリーの場合と同じように、`Publish-Module` およ�
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
-Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey $nuGetApiKey
 ```
+
+> [!IMPORTANT]
+> セキュリティを確保するため、API キーをスクリプトにハード コーディングしてはなりません。 セキュリティ保護されたキー管理システムを使用します。 コマンドを手動で実行する場合は、ログ記録を回避するために API キーをプレーン テキストとして渡すことはできません。API キーの値を安全に渡すには、`Read-Host` コマンドレットを使用することができます。
 
 ```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'c:\projects\MyModule' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
-
-> [!IMPORTANT]
-> セキュリティを確保するため、API キーをスクリプトにハード コーディングしてはなりません。 セキュリティ保護されたキー管理システムを使用します。
 
 ### <a name="publishing-a-module-from-the-psgallery"></a>PSGallery からモジュールを発行する
 
@@ -179,18 +179,20 @@ Install-PowerShellGetOffline -LocalFolder 'F:\OfflinePowerShellGet'
 
 ```powershell
 # Publish to a NuGet Server repository using my NuGetAPI key
-Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApiKey 'oy2bi4avlkjolp6bme6azdyssn6ps3iu7ib2qpiudrtbji'
+Publish-Module -Path 'F:\OfflinePowershellGet' -Repository LocalPsRepo -NuGetApiKey $nuGetApiKey
+```
 
+> [!IMPORTANT]
+> セキュリティを確保するため、API キーをスクリプトにハード コーディングしてはなりません。 セキュリティ保護されたキー管理システムを使用します。 コマンドを手動で実行する場合は、ログ記録を回避するために API キーをプレーン テキストとして渡すことはできません。API キーの値を安全に渡すには、`Read-Host` コマンドレットを使用することができます。
+
+```powershell
 # Publish to a file share repo - the NuGet API key must be a non-blank string
 Publish-Module -Path 'F:\OfflinePowerShellGet' -Repository LocalPsRepo -NuGetApiKey 'AnyStringWillDo'
 ```
 
 ## <a name="use-packaging-solutions-to-host-powershellget-repositories"></a>パッケージ化ソリューションを使用して PowerShellGet リポジトリをホストする
 
-また、Azure Artifacts などのパッケージ化ソリューションを使用して、プライベートまたはパブリックの PowerShellGet リポジトリをホストすることもできます。 詳細と手順については、[Azure Artifacts のドキュメント](https://docs.microsoft.com/azure/devops/artifacts/tutorials/private-powershell-library)を参照してください。
-
-> [!IMPORTANT]
-> セキュリティを確保するため、API キーをスクリプトにハード コーディングしてはなりません。 セキュリティ保護されたキー管理システムを使用します。
+また、Azure Artifacts などのパッケージ化ソリューションを使用して、プライベートまたはパブリックの PowerShellGet リポジトリをホストすることもできます。 詳細と手順については、[Azure Artifacts のドキュメント](/azure/devops/artifacts/tutorials/private-powershell-library)を参照してください。
 
 <!-- external links -->
 [OfflinePowerShellGetDeploy]: https://www.powershellgallery.com/packages/OfflinePowerShellGetDeploy/0.1.1

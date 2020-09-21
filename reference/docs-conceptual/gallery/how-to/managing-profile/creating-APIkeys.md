@@ -3,12 +3,12 @@ ms.date: 09/10/2018
 contributor: JKeithB
 keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: API キーの管理
-ms.openlocfilehash: 0f44a080415f1acf13680771b6e9db5b805f8f45
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: c428689d065c63716db6bc546434623e9375f8ba
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78278304"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87777580"
 ---
 # <a name="managing-api-keys"></a>API キーの管理
 
@@ -59,7 +59,7 @@ PowerShell ギャラリーでは、さまざまな公開要件をサポートす
 
 既存のキーの一部の設定を変更することができます。 前述したように、既存の API キーのセキュリティ スコープを変更したり、有効期限を変更することはできません。 変更可能なオプションは、次のスクリーンショットに示されているとおりです。
 
-![新しい API キー値を取得する](media/creating-APIkeys/PSGallery_EditAPIKey.png)
+![API キー値の編集](media/creating-APIkeys/PSGallery_EditAPIKey.png)
 
 キーによって制御されるパッケージを変更するには、一覧から個々のパッケージを選択するか、glob パターンを変更します。
 

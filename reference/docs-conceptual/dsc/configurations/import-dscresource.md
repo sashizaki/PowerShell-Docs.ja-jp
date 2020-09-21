@@ -2,28 +2,29 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Import-DSCResource の使用
-ms.openlocfilehash: 1b066e231d158fb5b6333e42c91d24690e9b0223
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 0fa11755558510b986ac24df120579ea15a43689
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692465"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786715"
 ---
 # <a name="using-import-dscresource"></a>Import-DSCResource の使用
 
-`Import-DScResource` は動的なキーワードであり、Configuration スクリプト ブロックの内部でのみ使用できます。 `Import-DSCResource` キーワードは、ご自身の Configuration で必要なリソースをインポートするために使います。 `$pshome` の下にあるリソースは自動的にインポートされますが、ご自身の [Configuration](Configurations.md) 内で使用されるすべてのリソースを明示的にインポートするのがやはりベスト プラクティスと考えられます。
+`Import-DScResource` は動的なキーワードであり、Configuration スクリプト ブロックの内部でのみ使用できます。 `Import-DSCResource` キーワードは、ご自身の Configuration で必要なリソースをインポートするために使います。
+`$pshome` の下にあるリソースは自動的にインポートされますが、ご自身の [Configuration](Configurations.md) 内で使用されるすべてのリソースを明示的にインポートするのがやはりベスト プラクティスと考えられます。
 
-`Import-DSCResource` の構文は次に示すとおりです。  モジュールを名前で指定するときは、1 行に 1 つずつ列記する必要があります。
+`Import-DSCResource` の構文は次に示すとおりです。 モジュールを名前で指定するときは、1 行に 1 つずつ列記する必要があります。
 
 ```syntax
 Import-DscResource [-Name <ResourceName(s)>] [-ModuleName <ModuleName>] [-ModuleVersion <ModuleVersion>]
 ```
 
-|パラメーター  |説明  |
-|---------|---------|
-|`-Name`|インポートする必要がある DSC リソースの名前です。 モジュール名を指定した場合は、このコマンドにより、そのモジュール内でこれらの DSC リソースが検索されます。それ以外の場合は、このコマンドにより、すべての DSC リソース パスで DSC リソースが検索されます。 ワイルドカードを利用できます。|
-|`-ModuleName`|モジュール名またはモジュールの指定です。  モジュールからインポートするリソースを指定した場合は、このコマンドにより、それらのリソースだけのインポートが試みられます。 モジュールのみを指定した場合は、このコマンドにより、モジュール内のすべての DSC リソースがインポートされます。|
-|`-ModuleVersion`|PowerShell 5.0 以降では、構成で使用するモジュールのバージョンを指定できます。 詳細については、「[インストールされているリソースの特定のバージョンをインポートする](sxsresource.md)」を参照してください。|
+|    パラメーター     |                                                                                                                      説明                                                                                                                      |
+| ---------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `-Name`          | インポートする必要がある DSC リソースの名前です。 モジュール名を指定した場合は、このコマンドにより、そのモジュール内でこれらの DSC リソースが検索されます。それ以外の場合は、このコマンドにより、すべての DSC リソース パスで DSC リソースが検索されます。 ワイルドカードを利用できます。 |
+| `-ModuleName`    | モジュール名またはモジュールの指定です。  モジュールからインポートするリソースを指定した場合は、このコマンドにより、それらのリソースだけのインポートが試みられます。 モジュールのみを指定した場合は、このコマンドにより、モジュール内のすべての DSC リソースがインポートされます。            |
+| `-ModuleVersion` | PowerShell 5.0 以降では、構成で使用するモジュールのバージョンを指定できます。 詳細については、「[インストールされているリソースの特定のバージョンをインポートする](sxsresource.md)」を参照してください。                                                    |
 
 ```powershell
 Import-DscResource -ModuleName xActiveDirectory
@@ -54,7 +55,8 @@ Configuration MSDSCConfiguration
 ```
 
 > [!NOTE]
-> 同じコマンド内でリソース名およびモジュール名に複数の値を指定することはサポートされていません。 同じリソースが複数のモジュールに存在する場合、どのモジュールからどのリソースが読み込まれるかについて、決定論的でない動作が含まれることがあります。 次のコマンドでは、コンパイル中にエラーが発生します。
+> 同じコマンド内でリソース名およびモジュール名に複数の値を指定することはサポートされていません。
+> 同じリソースが複数のモジュールに存在する場合、どのモジュールからどのリソースが読み込まれるかについて、決定論的でない動作が含まれることがあります。 次のコマンドでは、コンパイル中にエラーが発生します。
 >
 > ```powershell
 > Import-DscResource -Name UserConfigProvider*,TestLogger1 -ModuleName UserConfigProv,PsModuleForTestLogger
@@ -73,20 +75,19 @@ Name パラメーターのみを使用するときに考慮すべき事項:
 - リソースが定義されているモジュールを明示的に定義することで、正しいリソースが確実に読み込まれます。
 
 > [!NOTE]
-> PowerShell 5.0 では、DSC リソースに複数バージョンを用意することができ、コンピューターにその複数のバージョンをサイド バイ サイドでインストールできます。 これを実装するには、リソース モジュールの複数のバージョンを同じモジュール フォルダーに格納します。
-> 詳細については、「[複数のバージョンがあるリソースの使用](sxsresource.md)」を参照してください。
+> PowerShell 5.0 では、DSC リソースに複数バージョンを用意することができ、コンピューターにその複数のバージョンをサイド バイ サイドでインストールできます。 これを実装するには、リソース モジュールの複数のバージョンを同じモジュール フォルダーに格納します。 詳細については、「[複数のバージョンがあるリソースの使用](sxsresource.md)」を参照してください。
 
 ## <a name="intellisense-with-import-dscresource"></a>Import-DSCResource での IntelliSense
 
-ISE で DSC の構成を作成するとき、PowerShell ではリソースおよびリソースのプロパティに対して IntelliSence が提供されます。 `$pshome` モジュール パスの下にあるリソースの定義が、自動的に読み込まれます。 `Import-DSCResource` キーワードを使ってリソースをインポートすると、指定したリソース定義が追加されて、インポートされたリソースのスキーマを含むように IntelliSence が拡張されます。
+ISE で DSC の構成を作成するとき、PowerShell ではリソースおよびリソースのプロパティに対して IntelliSence が提供されます。 `$pshome` モジュール パスの下にあるリソースの定義が、自動的に読み込まれます。
+`Import-DSCResource` キーワードを使ってリソースをインポートすると、指定したリソース定義が追加されて、インポートされたリソースのスキーマを含むように IntelliSence が拡張されます。
 
-![リソースの IntelliSense](media/import-dscresource/resource-intellisense.png)
+![DSC リソースの ISE の Intellisense](media/import-dscresource/resource-intellisense.png)
 
 > [!NOTE]
 > PowerShell 5.0 以降では、DSC リソースとそのプロパティ用の ISE に対して Tab 補完機能が追加されました。 詳しくは、[リソース](../resources/resources.md)に関する記事をご覧ください。
 
-Configuration をコンパイルするとき、PowerShell では、インポートされたリソース定義を使って、構成内のすべてのリソース ブロックが検証されます。
-リソースのスキーマ定義を使って、各リソース ブロックで次の規則が検証されます。
+Configuration をコンパイルするとき、PowerShell では、インポートされたリソース定義を使って、構成内のすべてのリソース ブロックが検証されます。 リソースのスキーマ定義を使って、各リソース ブロックで次の規則が検証されます。
 
 - スキーマで定義されているプロパティのみが使用されている。
 - 各プロパティのデータ型が正しい。
@@ -115,8 +116,10 @@ Configuration SchemaValidationInCorrectEnumValue
 
 この Configuration をコンパイルすると、結果はエラーになります。
 
-```output
-PSDesiredStateConfiguration\WindowsFeature: At least one of the values 'Invalid' is not supported or valid for property 'Ensure' on class 'WindowsFeature'. Please specify only supported values: Present, Absent.
+```Output
+PSDesiredStateConfiguration\WindowsFeature: At least one of the values 'Invalid' is not supported or
+valid for property 'Ensure' on class 'WindowsFeature'. Please specify only supported values:
+Present, Absent.
 ```
 
 IntelliSence とスキーマ検証により、解析とコンパイル時の間にさらに多くのエラーをキャッチでき、実行時の問題を回避できます。
@@ -141,15 +144,16 @@ Configuration を作成するときに、複数の相違点が PowerShell 4.0 �
 
 次の図では、2 つのバージョンの **xPSDesiredStateConfiguration** モジュールがインストールされています。
 
-![修正された複数リソース バージョン](media/import-dscresource/multiple-resource-versions-broken.png)
+![フォルダーにインストールされている複数のリソース バージョン](media/import-dscresource/multiple-resource-versions-broken.png)
 
 必要なモジュールのバージョンの内容を、モジュール ディレクトリの最上位レベルにコピーします。
 
-![修正された複数リソース バージョン](media/import-dscresource/multiple-resource-versions-fixed.png)
+![必要なバージョンを最上位レベルのモジュール ディレクトリにコピーします](media/import-dscresource/multiple-resource-versions-fixed.png)
 
 ### <a name="resource-location"></a>リソースの場所
 
-Configuration を作成してコンパイルするとき、[PSModulePath](/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path) で指定した任意のディレクトリにリソースを格納できます。 PowerShell 4.0 の LCM では、すべての DSC リソース モジュールが "Program Files\WindowsPowerShell\Modules" または `$pshome\Modules` に格納されている必要があります。 PowerShell 5.0 以降では、この要件はなくなり、`PSModulePath` で指定した任意のディレクトリにリソース モジュールを格納できます。
+Configuration を作成してコンパイルするとき、[PSModulePath](/powershell/scripting/developer/module/modifying-the-psmodulepath-installation-path) で指定した任意のディレクトリにリソースを格納できます。
+PowerShell 4.0 の LCM では、すべての DSC リソース モジュールが "Program Files\WindowsPowerShell\Modules" または `$pshome\Modules` に格納されている必要があります。 PowerShell 5.0 以降では、この要件はなくなり、`PSModulePath` で指定した任意のディレクトリにリソース モジュールを格納できます。
 
 ### <a name="moduleversion-added"></a>ModuleVersion の追加
 

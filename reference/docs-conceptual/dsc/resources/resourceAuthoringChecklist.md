@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 07/08/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: リソース作成のチェックリスト
-ms.openlocfilehash: 85e0963d46358cd37cb87ea94fe6d1178a4f6a4a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: f21e2e8563880e0c10cf50b044e9c56ca09fe0fa
+ms.sourcegitcommit: d26e2237397483c6333abcf4331bd82f2e72b4e3
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500624"
+ms.lasthandoff: 07/10/2020
+ms.locfileid: "86217646"
 ---
 # <a name="resource-authoring-checklist"></a>リソース作成のチェックリスト
 
@@ -35,7 +35,7 @@ xPSDesiredStateConfiguration
 
 ## <a name="resource-and-schema-are-correct"></a>リソースとスキーマが正しい
 
-リソース スキーマ (*.schema.mof) ファイルを確認します。 [DSC リソース デザイナー](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0)をスキーマの開発と試験に利用できます。 次のことを確認してください。
+リソース スキーマ (`*.schema.mof`) ファイルを確認します。 [DSC リソース デザイナー](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0)をスキーマの開発と試験に利用できます。 次のことを確認してください。
 
 - プロパティの型が正しい (たとえば、数値を受け入れるプロパティには文字列を使用せず、UInt32 またはその他の数値型を代わりに使用する必要があります)
 - プロパティの属性が正しく指定されている ([key]、[required]、[write]、[read])
@@ -55,7 +55,7 @@ xPSDesiredStateConfiguration
 
 - すべてのフィールドにわかりやすい説明があります。 PowerShell GitHub リポジトリには、[xRemoteFile の .schema.mof](https://github.com/dsccommunity/xPSDesiredStateConfiguration/blob/master/source/DSCResources/DSC_xRemoteFile/DSC_xRemoteFile.schema.mof) などの優れた例があります
 
-また、[DSC リソース デザイナー](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0)から **Test-xDscResource** および **Test-xDscSchema** コマンドレットを使用して、リソースとスキーマを自動的に確認する必要があります。
+また、[DSC リソース デザイナー](https://www.powershellgallery.com/packages/xDSCResourceDesigner/1.12.0.0)の `Test-xDscResource` コマンドレットと `Test-xDscSchema` コマンドレットを使用して、リソースとスキーマを自動的に確認する必要があります。
 
 ```
 Test-xDscResource <Resource_folder>
@@ -99,29 +99,29 @@ File file {
 コンピューターの状態を変更し、DSC を再実行することで、`Set-TargetResource` と `Test-TargetResource` が適切に機能することを確認できます。 実行する手順を次に示します。
 
 1. 目的の状態でないリソースで開始します。
-2. リソースで構成を実行します。
-3. `Test-DscConfiguration` が true を返すことを確認します。
-4. 構成対象アイテムが目的の状態から抜けるように変更します。
-5. `Test-DscConfiguration` が false を返すことを確認します。
+1. リソースで構成を実行します。
+1. `Test-DscConfiguration` が true を返すことを確認します。
+1. 構成対象アイテムが目的の状態から抜けるように変更します。
+1. `Test-DscConfiguration` が false を返すことを確認します。
 
 レジストリ リソースを使用した具体的な例を次に示します。
 
 1. 目的の状態でないレジストリ キーで開始します。
-2. `Start-DscConfiguration` を構成で実行し、目的の状態にして正常終了することを確認します。
-3. `Test-DscConfiguration` を実行し、戻り値が true であることを確認します。
-4. キーの値を変更して、目的でない状態にします。
-5. `Test-DscConfiguration` を実行し、戻り値が false であることを確認します。
-6. `Get-DscConfiguration` を使用して `Get-TargetResource` 機能が確認されました
+1. `Start-DscConfiguration` を構成で実行し、目的の状態にして正常終了することを確認します。
+1. `Test-DscConfiguration` を実行し、戻り値が true であることを確認します。
+1. キーの値を変更して、目的でない状態にします。
+1. `Test-DscConfiguration` を実行し、戻り値が false であることを確認します。
+1. `Get-DscConfiguration` を使用して `Get-TargetResource` 機能が確認されました
 
 `Get-TargetResource` は、リソースの現在の状態の詳細を返す必要があります。 構成を適用した後に `Get-DscConfiguration` を呼び出し、出力がマシンの現在の状態を正しく反映していることを確認することによってテストします。 この領域の問題は `Start-DscConfiguration` の呼び出し時には出現しないため、個別にテストすることが重要です。
 
 ## <a name="call-getsettest-targetresource-functions-directly"></a>**Get/Set/Test-TargetResource** 関数を直接呼び出す
 
-リソースに実装されている **Get/Set/Test-TargetResource** 関数をテストするには、それらを直接呼び出し、期待どおりに動作することを確認します。
+リソースに実装されている `Get/Set/Test-TargetResource` 関数を直接呼び出して、期待どおりに動作することを確認することで、必ずテストを行ってください。
 
-## <a name="verify-end-to-end-using-start-dscconfiguration"></a>**Start-DscConfiguration** を使用してエンド ツー エンドで確認する
+## <a name="verify-end-to-end-using-start-dscconfiguration"></a>Start-DscConfiguration を使用してエンド ツー エンドで確認する
 
-直接呼び出すことによって **Get/Set/Test-TargetResource** 関数をテストすることは重要ですが、この方法ですべての問題が検出されるわけではありません。 テストにおいては、`Start-DscConfiguration` やプル サーバーの使用に関する部分を重視する必要があります。 これはユーザーが実際にリソースを使用する方法であり、この種類のテストの重要性を過小評価しないようにしてください。 可能性がある問題の種類:
+`Get/Set/Test-TargetResource` 関数を直接呼び出してテストを行うことは重要ですが、この方法ですべての問題が検出されるわけではありません。 テストにおいては、`Start-DscConfiguration` やプル サーバーの使用に関する部分を重視する必要があります。 これはユーザーが実際にリソースを使用する方法であり、この種類のテストの重要性を過小評価しないようにしてください。 可能性がある問題の種類:
 
 - DSC エージェントはサービスとして実行されるため、資格情報またはセッションの動作が異なる可能性があります。 機能は必ずエンド ツー エンドでテストしてください。
 - `Start-DscConfiguration` によるエラー出力は、`Set-TargetResource` 関数を直接呼び出したときに表示されるものとは異なる場合があります。
@@ -148,9 +148,9 @@ File file {
 - その後の例は、これらの例の上にビルドし (VHD からの VM の作成、VM の削除、VM の変更など)、高度な機能を示します (動的メモリがある VM の作成など)。
 - 構成の例はパラメーター化する必要があります (すべての値は構成にパラメーターとして渡す必要があり、ハードコードされた値は使用しません)。
 
-  ```powershell
-  configuration Sample_xRemoteFile_DownloadFile
-  {
+```powershell
+configuration Sample_xRemoteFile_DownloadFile
+{
     param
     (
         [string[]] $nodeName = 'localhost',
@@ -180,23 +180,23 @@ File file {
             Headers = $headers
         }
     }
-  }
-  ```
+}
+```
 
 - スクリプトの例の最後に、実際の値を使用して構成を呼び出す方法の例 (コメント アウト) を含めることをお勧めします。 たとえば、上記の構成では、UserAgent を指定する最善の方法が次のとおりであることは必ずしも明白ではありません。
 
   `UserAgent = [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer` その場合、その構成で意図する実行内容をコメントで明らかにできます。
 
-  ```powershell
-  <#
-  Sample use (parameter values need to be changed according to your scenario):
+```powershell
+<#
+Sample use (parameter values need to be changed according to your scenario):
 
-  Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg"
+Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg"
 
-  Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg" `
-  -userAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -headers @{"Accept-Language" = "en-US"}
-  #>
-  ```
+Sample_xRemoteFile_DownloadFile -destinationPath "$env:SystemDrive\fileName.jpg" -uri "http://www.contoso.com/image.jpg" `
+-userAgent [Microsoft.PowerShell.Commands.PSUserAgent]::InternetExplorer -headers @{"Accept-Language" = "en-US"}
+#>
+```
 
 - 各例で、実行内容を示す簡単な説明と、パラメーターの意味を記述します。
 - リソースのほとんどの重要なシナリオが例でカバーされていることを確認し、不足がない場合は、すべてが実行され、マシンを目的の状態にすることを検証します。
@@ -271,7 +271,7 @@ $programFilesPath = ${env:ProgramFiles(x86)}
 
 ## <a name="resource-does-not-require-interactive-input"></a>リソースには対話型の入力は不要です。
 
-**Get/Set/Test-TargetResource** 関数は自動的に実行される必要があり、実行のいずれの段階でもユーザーの入力を待機することはできません (たとえば、これらの関数内で `Get-Credential` を使用することはできません)。 ユーザーの入力を提供する必要がある場合は、コンパイル フェーズ中にパラメーターとして構成に渡す必要があります。
+`Get/Set/Test-TargetResource` 関数は自動的に実行される必要があり、実行のいずれの段階でも、ユーザーの入力を待機することはできません (たとえば、これらの関数内で `Get-Credential` を使用することはできません)。 ユーザーの入力を提供する必要がある場合は、コンパイル フェーズ中にパラメーターとして構成に渡す必要があります。
 
 ## <a name="resource-functionality-was-thoroughly-tested"></a>リソース機能が十分にテストされている
 
@@ -279,30 +279,14 @@ $programFilesPath = ${env:ProgramFiles(x86)}
 
 ## <a name="best-practice-resource-module-contains-tests-folder-with-resourcedesignertestsps1-script"></a>ベスト プラクティス:リソース モジュールに、ResourceDesignerTests.ps1 スクリプトを含む Test フォルダーが含まれている
 
-リソース モジュール内に "Test" フォルダーを作成し、`ResourceDesignerTests.ps1` ファイルを作成し、指定したモジュール内のすべてのリソースに対して **Test-xDscResource** と **Test-xDscSchema** を使用してテストを追加することをお勧めします。 この方法で、指定したモジュールのすべてのリソースのスキーマをすばやく検証し、発行する前にサニティ チェックを実行できます。 xRemoteFile の場合、`ResourceTests.ps1` は次のように単純になります。
+リソース モジュール内に "Tests" フォルダーを作成し、`ResourceDesignerTests.ps1` ファイルを作成し、指定したモジュール内のすべてのリソースに対して `Test-xDscResource` と `Test-xDscSchema` を使用してテストを追加することをお勧めします。 この方法で、指定したモジュールのすべてのリソースのスキーマをすばやく検証し、発行する前にサニティ チェックを実行できます。 xRemoteFile の場合、`ResourceTests.ps1` は次のように単純になります。
 
 ```powershell
 Test-xDscResource ..\DSCResources\MSFT_xRemoteFile
 Test-xDscSchema ..\DSCResources\MSFT_xRemoteFile\MSFT_xRemoteFile.schema.mof
 ```
 
-## <a name="best-practice-resource-folder-contains-resource-designer-script-for-generating-schema"></a>ベスト プラクティス:リソース フォルダーにスキーマを生成するためのリソース デザイナー スクリプトが含まれている
-
-各リソースに、リソースの mof スキーマを生成する、リソース デザイナー スクリプトを含める必要があります。 このファイルを `<ResourceName>\ResourceDesignerScripts` に配置し、Generate `<ResourceName>Schema.ps1` という名前を付ける必要があります。xRemoteFile リソースの場合、このファイルは `GenerateXRemoteFileSchema.ps1` と呼ばれ、次を含みます。
-
-```powershell
-$DestinationPath = New-xDscResourceProperty -Name DestinationPath -Type String -Attribute Key -Description 'Path under which downloaded or copied file should be accessible after operation.'
-$Uri = New-xDscResourceProperty -Name Uri -Type String -Attribute Required -Description 'Uri of a file which should be copied or downloaded. This parameter supports HTTP and HTTPS values.'
-$Headers = New-xDscResourceProperty -Name Headers -Type Hashtable[] -Attribute Write -Description 'Headers of the web request.'
-$UserAgent = New-xDscResourceProperty -Name UserAgent -Type String -Attribute Write -Description 'User agent for the web request.'
-$Ensure = New-xDscResourceProperty -Name Ensure -Type String -Attribute Read -ValidateSet "Present", "Absent" -Description 'Says whether DestinationPath exists on the machine'
-$Credential = New-xDscResourceProperty -Name Credential -Type PSCredential -Attribute Write -Description 'Specifies a user account that has permission to send the request.'
-$CertificateThumbprint = New-xDscResourceProperty -Name CertificateThumbprint -Type String -Attribute Write -Description 'Digital public key certificate that is used to send the request.'
-
-New-xDscResource -Name MSFT_xRemoteFile -Property @($DestinationPath, $Uri, $Headers, $UserAgent, $Ensure, $Credential, $CertificateThumbprint) -ModuleName xPSDesiredStateConfiguration2 -FriendlyName xRemoteFile
-```
-
-## <a name="best-practice-resource-supports--whatif"></a>ベスト プラクティス:リソースによる -WhatIf のサポート
+## <a name="best-practice-resource-supports--whatif"></a>ベスト プラクティス: リソースによる -WhatIf のサポート
 
 リソースが "危険な" 操作を実行する場合は、`-WhatIf` 機能を実装することをお勧めします。 完了したら、`-WhatIf` スイッチを使用しないでコマンドが実行された場合にどのようなことが発生するかについて、`-WhatIf` 出力で正しく記述されていることを確認します。 また、`–WhatIf` スイッチが存在する場合は、その操作が実行されない (ノードの状態の変更は行われない) ことも確認します。 たとえば、File リソースをテストすると仮定します。 "test" の内容を持つファイル `test.txt` を作成する単純な構成を次に示します。
 

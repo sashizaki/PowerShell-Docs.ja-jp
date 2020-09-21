@@ -5,12 +5,12 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: 0f72fb5baf5b829142b18ed774261e9b3b66291b
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+ms.openlocfilehash: e8938a5d36cd1c9c5a74eed1c22cd5d0e1a91966
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438023"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786749"
 ---
 # <a name="chapter-1---getting-started-with-powershell"></a>第 1 章 - PowerShell の概要
 
@@ -29,7 +29,7 @@ Windows オペレーティング システムのすべての最新バージョ�
 
 Windows 10 で PowerShell を見つける最も簡単な方法は、図 1-1 に示すように、検索バーに「**PowerShell**」と入力することです。
 
-![図 1-1](media/figure1-1.png)
+![図 1-1 - [スタート] メニューでの PowerShell の検索](media/figure1-1.png)
 
 図 1-1 には PowerShell の 4 つの異なるショートカットが示されていることに注意してください。 このドキュメントでデモに使用しているコンピューターでは、64 ビット バージョンの Windows 10 が実行されています。そのため、64 ビット バージョンの PowerShell コンソールと PowerShell ISE (統合スクリプト環境) に加え、その 32 ビット バージョンがそれぞれあります (ショートカットの (x86) サフィックスで示されます)。 32 ビット バージョンの Windows 10 を実行している場合は、2 つのショートカットだけが表示されます。 これらの項目には (x86) サフィックスはありませんが、32 ビット バージョンです。 64 ビットのオペレーティング システムを使用している場合は、32 ビット バージョンを実行する特別な理由がない限り、64 ビット バージョンの PowerShell を実行することをお勧めします。
 
@@ -41,7 +41,7 @@ Windows 10 で PowerShell を見つける最も簡単な方法は、図 1-1 に�
 
 私は、図 1-1 に示すように、[Windows PowerShell] ショートカットをクリックして PowerShell コンソールを起動しました。
 
-![図 1-4](media/figure1-4.png)
+![図 1-4 - PowerShell ウィンドウのタイトル バー](media/figure1-4.png)
 
 図 1-4 に示すように、PowerShell コンソールのタイトル バーに "Windows PowerShell" と表示されていることに注意してください。 一部のコマンドは正常に実行されますが、PowerShell をユーザー アクセス制御 (UAC) に参加させることはできません。 つまり、管理者の承認を必要とするタスクの昇格を要求することはできません。
 次のエラー メッセージが生成されます。
@@ -66,7 +66,7 @@ At line:1 char:29
 
 PowerShell を閉じます。 PowerShell コンソールを再起動します。ただし、今回は、図 1-5 に示すように **[Windows PowerShell]** ショートカットを右クリックし、 **[管理者として実行]** を選択します。
 
-![図 1-5](media/figure1-5.png)
+![図 1-5 - コンテキスト メニュー - [管理者として実行]](media/figure1-5.png)
 
 通常のユーザーとして Windows にログインしている場合は、資格情報の入力を求められます。 図 1-6 に示すように、ドメイン ユーザーとローカル管理者であるユーザー アカウントの資格情報を入力します。
 
@@ -86,11 +86,11 @@ PowerShell をもう一度検索します。ただし今回は、図 1-8 に示�
 
 タスク バーにピン留めされた PowerShell ショートカットを右クリックし、図 1-9 に示すように [プロパティ] を選択します。
 
-![図 1-9](media/figure1-9.png)
+![図 1-9 - [ユーザー アカウント制御] - [資格情報を入力]](media/figure1-9.png)
 
 図 1-10 の番号 1 で示されている [詳細設定] をクリックし、図 1-10 の番号 2 で示されている [管理者として実行] チェック ボックスをオンにします。[OK] を 2 回クリックして変更を受け入れ、両方のダイアログ ボックスを終了します。
 
-![図 1-10](media/figure1-10.png)
+![図 1-10 - "管理者" と表示されているタイトル バー](media/figure1-10.png)
 
 これで、PowerShell を見つけることや PowerShell が管理者として実行されているかどうかについて再び心配する必要がなくなります。
 
@@ -217,13 +217,15 @@ Start-Service -Name w32time
 この章で説明しているトピックについてもっと詳しく知りたい方は、次の PowerShell のヘルプ トピックを読むことをお勧めします。
 
 - [about_Automatic_Variables][]
+- [about_Hash_Tables][]
 - [about_Execution_Policies][]
 
 次の章では、PowerShell のコマンドの見つけやすさについて学習します。 扱われている項目の 1 つでは、PowerShell を更新して、これらのヘルプ トピックをインターネットで表示する代わりに PowerShell 内から直接表示できるようにする方法について説明します。
 
 <!-- link references -->
 [about_Automatic_Variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
-[about_Execution_Policies]: /powershell//powershell/module/microsoft.powershell.core/about/about_execution_policies
+[about_Hash_Tables]: /powershell/module/microsoft.powershell.core/about/about_hash_tables
+[about_Execution_Policies]: /powershell/module/microsoft.powershell.core/about/about_execution_policies
 [既存の Windows PowerShell をアップグレードする]: /powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell
 [PowerShell のインストール]: /powershell/scripting/install/installing-powershell
 [Windows PowerShell の開始]: /powershell/scripting/windows-powershell/starting-windows-powershell

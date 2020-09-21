@@ -3,12 +3,12 @@ ms.date: 06/12/2017
 ms.topic: conceptual
 keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 の DSC 機能強化
-ms.openlocfilehash: 78c15f453977384ba437b0bd69cd620eb1a29fbd
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 445d0f7bb54c6b21b6af26c4174f3d6422caf6dd
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809098"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87771551"
 ---
 # <a name="improvements-in-desired-state-configuration-dsc-in-wmf-51"></a>WMF 5.1 の Desired State Configuration (DSC) の機能強化
 
@@ -80,7 +80,7 @@ WMF 5.0 では、PowerShell デバッガーは、クラス ベースのリソー
 
 - 生成された MOF ファイルに組み込まれている 'ConfigurationName'。
 
-  ![生成された mof ファイルのサンプル](media/DSC-improvements/PartialGeneratedMof.png)
+  ![生成された MOF ファイルのサンプル](media/DSC-improvements/PartialGeneratedMof.png)
 
 - プル構成リポジトリの FileName
 
@@ -345,12 +345,12 @@ Set-DscLocalConfigurationManager -Path .\EnableSignatureValidation -Verbose
   Start-DscConfiguration -Path .\Test -Wait -Verbose -Force
   ```
 
-  ![ErrorUnsignedMofPushed](media/DSC-improvements/PushUnsignedMof.png)
+  ![エラー - 署名のない MOF ファイルがプッシュされました](media/DSC-improvements/PushUnsignedMof.png)
 
 - コード署名証明書を利用し、構成ファイルに署名します。
 
-  ![SignMofFile](media/DSC-improvements/SignMofFile.png)
+  ![MOF ファイルに署名する](media/DSC-improvements/SignMofFile.png)
 
 - 署名された MOF ファイルをプッシュしてみます。
 
-  ![PushSignedMofFile](media/DSC-improvements/PushSignedMof.png)
+  ![署名された MOF ファイルをプッシュする](media/DSC-improvements/PushSignedMof.png)

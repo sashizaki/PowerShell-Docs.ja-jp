@@ -2,12 +2,12 @@
 title: Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法
 description: Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法
 ms.date: 08/06/2018
-ms.openlocfilehash: 899e1c393fd49b0659631b88d610e80ec885e69e
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+ms.openlocfilehash: 6b0b8ce054695d6cc0fc578290c554e2dc1472bc
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809598"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87784624"
 ---
 # <a name="how-to-replicate-the-ise-experience-in-visual-studio-code"></a>Visual Studio Code で ISE のエクスペリエンスをレプリケートする方法
 
@@ -25,7 +25,7 @@ Visual Studio Code で ISE のエクスペリエンスを最も簡単にレプ�
 
 このコマンドでは、下に説明する設定が自動的に適用されます。結果は次のようになります。
 
-![ISE モード](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
+![ISE モードでの Visual Studio Code](media/How-To-Replicate-the-ISE-Experience-In-VSCode/3-ise-mode.png)
 
 ## <a name="ise-mode-configuration-settings"></a>ISE モードの構成設定
 
@@ -53,7 +53,7 @@ ISE モードでは VS Code 設定に対して次の変更が行われます。
 
   これらの設定により、次の赤いボックス内に表示されている "アクティビティ バー" と "デバッグ サイド バー" のセクションが非表示になります。
 
-  ![強調表示されたセクションにはアクティビティ バーとデバッグ サイド バーが含まれている](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
+  ![強調表示されたセクションにアクティビティ バーとデバッグ サイド バーが含まれています](media/How-To-Replicate-the-ISE-Experience-In-VSCode/1-highlighted-sidebar.png)
 
   最終的な結果は次のようになります。
 
@@ -122,7 +122,7 @@ ISE モードでは VS Code 設定に対して次の変更が行われます。
 
 - 4sysops には、VS Code をより ISE に似せて構成する方法に関する[優れた記事][4sysops]が掲載されています。
 - Mike F Robbins には VS Code の設定に関する[優れた投稿][mikefrobbins]があります。
-- Learn PowerShell には、PowerShell に関する[優れた記事][learnpwsh]があります。
+<!-- - Learn PowerShell has [an excellent write up][learnpwsh] setup for PowerShell. -->
 
 ## <a name="vs-code-tips"></a>VS Code のヒント
 
@@ -144,8 +144,8 @@ PR や寄付も常に歓迎しています。
 
 <!-- link references -->
 [vsc-docs]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
-[[コマンド パレット]]: #vs-code-tips
-[問題を開いて]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
+[コマンド パレット]: #vs-code-tips
+[問題を開く]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
 
 [4sysops]: https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/
 [mikefrobbins]: https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/

@@ -1,12 +1,12 @@
 ---
 ms.date: 09/13/2019
 title: FilterHashtable を使った Get-WinEvent クエリの作成
-ms.openlocfilehash: 485b0cf05489d9add201c71c01fe2ed0c48db387
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: 002d84515368663e0e807f48ffe883bd533be1d9
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83563934"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87786647"
 ---
 # <a name="creating-get-winevent-queries-with-filterhashtable"></a>FilterHashtable を使った Get-WinEvent クエリの作成
 
@@ -97,7 +97,7 @@ Get-WinEvent -FilterHashtable @{
 
 **ProviderName** キーを使ってハッシュ テーブルの作成を続けます。 **ProviderName** は、 **[Windows イベント ビューアー]** の **[ソース]** フィールドに表示される名前です。 たとえば、次のスクリーン ショットの **[.NET Runtime]\(.NET ランタイム\)** です。
 
-![[Windows イベント ビューアー] のソースの画像。](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
+![[Windows イベント ビューアー] のソースの画像](./media/creating-get-winEvent-queries-with-filterhashtable/providername.png)
 
 ハッシュ テーブルを更新して、キーが **ProviderName** で、値が **.NET Runtime** である**キーと値**のペアを含めます。
 
@@ -127,7 +127,7 @@ PowerShell では、**Keywords** キーに対して、**Security** などの文�
 **[Windows イベント ビューアー]** を開き、 **[操作]** ウィンドウから **[現在のログをフィルター]** をクリックします。
 次のスクリーン ショットに示すように、使用可能なキーワードが **[キーワード]** ドロップダウン メニューに表示されます。
 
-![[Windows イベント ビューアー] のキーワードの画像。](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
+![[Windows イベント ビューアー] のキーワードの画像](./media/creating-get-winEvent-queries-with-filterhashtable/keywords.png)
 
 次のコマンドを使って、`StandardEventKeywords` プロパティの名前を表示します。
 

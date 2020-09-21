@@ -1,24 +1,26 @@
 ---
-ms.date: 06/12/2017
+ms.date: 08/11/2020
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC リソース メソッドの直接呼び出し
-ms.openlocfilehash: 9955de4f284c182a724b004c17080a8b8e19808d
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 029a278c938e414820e172b85fac3cb3ad4b4afa
+ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692402"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162496"
 ---
 # <a name="calling-dsc-resource-methods-directly"></a>DSC リソース メソッドの直接呼び出し
 
 >適用先: Windows PowerShell 5.0
 
-[Invoke DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) コマンドレットを使用すると、DSC リソースの関数やメソッド (MOF ベースのリソースの **Get-TargetResource**、**Set-TargetResource**、**Test-TargetResource** 関数、またはクラスベースのリソースの **Get**、**Set**、**Test** メソッド) を直接呼び出すことができます。
-これは、DSC リソースを使用するサード パーティが使用したり、リソースの開発中に役立つツールとして利用したりできます。
+[Invoke DscResource](/powershell/module/PSDesiredStateConfiguration/Invoke-DscResource) コマンドレットを使用すると、DSC リソースの関数またはメソッド (MOF ベースのリソースの `Get-TargetResource` 関数、`Set-TargetResource` 関数、`Test-TargetResource` 関数、またはクラスベースのリソースの **Get** メソッド、**Set** メソッド、**Test** メソッド) を直接呼び出すことができます。 これは、DSC リソースを使用するサード パーティが使用したり、リソースの開発中に役立つツールとして利用したりできます。
+
+> [!NOTE]
+> PowerShell 7.0 以降では、`Invoke-DscResource` は WMI DSC リソースの呼び出しをサポートしなくなりました。 これには、**PSDesiredStateConfiguration** の**ファイル** リソースと**ログ** リソースが含まれます。
 
 通常このコマンドレットは、メタ構成プロパティ `refreshMode = 'Disabled'` と組み合わせて使用されますが、どの **refreshMode** が設定されているかに関係なく使用できます。
 
-**Invoke-DscResource** コマンドレットを呼び出すときに、**Method** パラメーターを使用して、呼び出すメソッドまたは関数を指定します。 リソースのプロパティを指定するには、ハッシュ テーブルを、**Property** パラメーターの値として渡します。
+`Invoke-DscResource` コマンドレットを呼び出すときに、**Method** パラメーターを使用して、呼び出すメソッドまたは関数を指定します。 リソースのプロパティを指定するには、ハッシュ テーブルを、**Property** パラメーターの値として渡します。
 
 リソースのメソッドを直接呼び出す例を次に示します。
 
@@ -49,7 +51,8 @@ $result = Invoke-DscResource -Name File -Method Get -Property @{
 $result.ItemValue | fl
 ```
 
->**注:** 複合リソースのメソッドを直接呼び出すことはできません。 代わりに、複合リソースの基になるリソースのメソッドを呼び出してください。
+>[!NOTE]
+> 複合リソースのメソッドを直接呼び出すことはできません。 代わりに、複合リソースの基になるリソースのメソッドを呼び出してください。
 
 ## <a name="see-also"></a>参照
 

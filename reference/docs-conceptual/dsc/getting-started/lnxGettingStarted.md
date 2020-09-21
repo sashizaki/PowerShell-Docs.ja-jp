@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: Linux 用 Desired State Configuration (DSC) の概要
-ms.openlocfilehash: b1bc9b9fafd89a1af0f967de38a817bff1f3ffe3
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 64657dda04fa2df97fa2ad7c7a5c2d15b66a270a
+ms.sourcegitcommit: 4bb44f183dcbfa8dced57f075812e02d3b45fd70
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "73933844"
+ms.lasthandoff: 07/14/2020
+ms.locfileid: "86301337"
 ---
 # <a name="get-started-with-desired-state-configuration-dsc-for-linux"></a>Linux 用 Desired State Configuration (DSC) の概要
 
@@ -15,25 +15,14 @@ ms.locfileid: "73933844"
 
 ## <a name="supported-linux-operation-system-versions"></a>サポートされている Linux オペレーティング システム バージョン
 
-Linux 用 DSC では、次の Linux オペレーティング システム バージョンがサポートされています。
+次の Linux オペレーティング システム バージョンは、Linux 用 DSC によってサポートされています。
 
 - CentOS 5、6、および 7 (x86/x64)
 - Debian GNU/Linux 6、7、および 8 (x86/x64)
 - Oracle Linux 5、6 および 7 (x86/x64)
 - Red Hat Enterprise Linux Server 5、6、および 7 (x86/x64)
 - SUSE Linux Enterprise Server 10、11、および 12 (x86/x64)
-- Ubuntu Server 12.04 LTS、14.04 LTS、および 16.04 LTS (x86/x64)
-
-次の表では、Linux 用 DSC で必要なパッケージの依存関係について説明します。
-
-|  必須パッケージ |  説明 |  最小バージョン |
-|---|---|---|
-| glibc| GNU ライブラリ| 2\...4 - 31.30|
-| Python| Python| 2.4 - 3.4|
-| omiserver| Open Management Infrastructure (オープン管理インフラストラクチャ)| 1.0.8.1|
-| openssl| OpenSSL ライブラリ| 0.9.8 または 1.0|
-| ctypes| Python CTypes ライブラリ| Python のバージョンに一致する必要があります。|
-| libcurl| cURL http クライアント ライブラリ| 7.15.1|
+- Ubuntu Server 12.04 LTS、14.04 LTS、16.04 LTS (x86/x64)
 
 ## <a name="installing-dsc-for-linux"></a>Linux 用 DSC のインストール
 
@@ -41,7 +30,7 @@ Linux 用 DSC をインストールする前に、[Open Management Infrastructur
 
 ### <a name="installing-omi"></a>OMI のインストール
 
-Linux 用 Desired State Configuration には、Open Management Infrastructure (OMI) CIM サーバーの 1.0.8.1 以降のバージョンが必要です。 OMI は、Open Group: [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi) からダウンロードできます。
+Linux 用 Desired State Configuration には、Open Management Infrastructure (OMI) CIM サーバーの 1.0.8.1 以降のバージョンが必要です。 OMI は、The Open Group: [Open Management Infrastructure (OMI)](https://github.com/Microsoft/omi) からダウンロードできます。
 
 OMI をインストールするには、Linux システムに適したパッケージ (.rpm または .deb)、OpenSSL バージョンに適したパッケージ (ssl_098 または ssl_100)、およびアーキテクチャに適したパッケージ (x86/x64) をインストールします。 CentOS、Red Hat Enterprise Linux、SUSE Linux Enterprise Server、および Oracle Linux には、RPM パッケージが適しています。 Debian GNU/Linux および Ubuntu Server には、DEB パッケージが適しています。 OpenSSL 0.9.8 がインストールされているコンピューターには ssl_098 パッケージが適し、OpenSSL 1.0 がインストールされているコンピューターには ssl_100 パッケージが適しています。
 
@@ -137,7 +126,7 @@ Linux ノードに DSC 構成をプッシュするには、次のコマンドを
 
 ### <a name="distribute-the-configuration-with-a-pull-server"></a>プル サーバーを使用した構成の配布
 
-構成を Linux コンピューターに配布するには、Windows コンピューターの場合と同じく、プル サーバーを使用できます。 プル サーバーを使用する方法の詳細については、「[DSC Web プル サーバーのセットアップ](../pull-server/pullServer.md)」を参照してください。 プル サーバーでの Linux コンピューターの使用に関する追加情報および制限事項については、Linux 用 Desired State Configuration のリリース ノートをご覧ください。
+構成を Linux コンピューターに配布するには、Windows コンピューターの場合と同じく、プル サーバーを使用できます。 プル サーバーを使用する方法の詳細については、「[DSC Web プル サーバーのセットアップ](../pull-server/pullServer.md)」をご覧ください。 プル サーバーでの Linux コンピューターの使用に関する追加情報および制限事項については、Linux 用 Desired State Configuration のリリース ノートをご覧ください。
 
 ### <a name="working-with-configurations-locally"></a>ローカルでの構成の操作
 

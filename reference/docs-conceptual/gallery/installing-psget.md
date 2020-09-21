@@ -3,12 +3,12 @@ ms.date: 09/19/2019
 contributor: manikb
 keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: PowerShellGet のインストール
-ms.openlocfilehash: f42eb0df101eb63a5dc267196fa9f666747b8e35
-ms.sourcegitcommit: 23ea4a36ee85f923684657de5313a5adf0b6b094
+ms.openlocfilehash: 4a10699be9ff2b64e5848c6749bdd3dedf55e3c7
+ms.sourcegitcommit: f05f18154913d346012527c23020d48d87ccac74
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/21/2020
-ms.locfileid: "83727797"
+ms.lasthandoff: 08/13/2020
+ms.locfileid: "88162513"
 ---
 # <a name="installing-powershellget"></a>PowerShellGet のインストール
 
@@ -25,7 +25,6 @@ ms.locfileid: "83727797"
 
 ```powershell
 Install-PackageProvider -Name NuGet -Force
-Exit
 ```
 
 ### <a name="for-systems-with-powershell-50-or-newer-you-can-install-the-latest-powershellget"></a>PowerShell 5.0 (またはそれ以降) のシステムには、最新の PowerShellGet をインストール可能
@@ -34,7 +33,6 @@ Windows 10、Windows Server 2016、WMF 5.0 または 5.1 がインストール�
 
 ```powershell
 Install-Module -Name PowerShellGet -Force
-Exit
 ```
 
 `Update-Module` を使用して新しいバージョンを取得します。
@@ -53,28 +51,50 @@ Exit
 詳細については、「[Save-Module](/powershell/module/PowershellGet/Save-Module)」を参照してください。
 
 > [!NOTE]
-> PowerShell 3.0 と PowerShell 4.0 では、1 つしかモジュールのバージョンをサポートしていません。 モジュールは PowerShell 5.0 以降、`<modulename>\<version>` にインストールされます。 これにより、複数のバージョンを共存させインストールできるようになりました。 `Save-Module` を使用してモジュールをダウンロードしたら、`<modulename>\<version>` から、コピー先のコンピューターの `<modulename>` フォルダーにファイルをコピーする必要があります。
+> PowerShell 3.0 と PowerShell 4.0 では、1 つしかモジュールのバージョンをサポートしていません。 モジュールは PowerShell 5.0 以降、`<modulename>\<version>` にインストールされます。 これにより、複数のバージョンを共存させインストールできるようになります。 次の手順に示しているように、`Save-Module` を使用してモジュールをダウンロードしたら、`<modulename>\<version>` から、コピー先のコンピューターの `<modulename>` フォルダーにファイルをコピーする必要があります。
+
+#### <a name="preparatory-step-on-computers-running-powershell-30"></a>PowerShell 3.0 を実行しているコンピューターでの準備手順
+
+以下のセクションの手順では、ディレクトリ `$env:ProgramFiles\WindowsPowerShell\Modules` にモジュールをインストールします。
+PowerShell 3.0 では、このディレクトリは既定で `$env:PSModulePath` にリストされないため、モジュールを自動読み込みするには、このディレクトリを追加する必要があります。 
+
+管理者特権の PowerShell セッションを開き、次のコマンドを実行します (今後のセッションで反映されます)。
+
+```powershell
+[Environment]::SetEnvironmentVariable(
+  'PSModulePath',
+  ((([Environment]::GetEnvironmentVariable('PSModulePath', 'Machine') -split ';') + "$env:ProgramFiles\WindowsPowerShell\Modules") -join ';'),
+  'Machine'
+)
+```
 
 #### <a name="computers-with-the-packagemanagement-preview-installed"></a>PackageManagement Preview がインストールされているコンピューター
 
-1. PowerShell セッションから `Save-Module` を使用し、ローカル ディレクトリにモジュールを保存します。
+> [!NOTE] 
+> PackageManagement Preview は、PowerShellGet を PowerShell バージョン 3 および 4 で使用できるようにするためのダウンロード可能なコンポーネントでしたが、現在は利用できなくなっています。
+> これが特定のコンピューターにインストールされているかどうかをテストするには、`Get-Module -ListAvailable PowerShellGet` を実行します。
+
+1. PowerShell セッションで `Save-Module` を使用して、現在のバージョンの **PowerShellGet** をダウンロードします。 2 つのフォルダーがダウンロードされます。**PowerShellGet** と **PackageManagement** です。 各フォルダーには、バージョン番号付きのサブフォルダーが含まれています。
 
    ```powershell
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
    ```
 
 1. **PowerShellGet** モジュールと **PackageManagement** モジュールが他のプロセスで確実に読み込まれていないようにします。
-1. フォルダー: `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` と `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` のコンテンツを削除します。
+
 1. 管理者特権で PowerShell コンソールを再度開き、次のコマンドを実行します。
 
    ```powershell
-   Copy-Item "C:\LocalFolder\PowerShellGet\<version>\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\" -Recurse -Force
-   Copy-Item "C:\LocalFolder\PackageManagement\<version>\*" "$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\" -Recurse -Force
+   'PowerShellGet', 'PackageManagement' | % { 
+     $targetDir = "$env:ProgramFiles\WindowsPowerShell\Modules\$_"
+     Remove-Item $targetDir\* -Recurse -Force
+     Copy-Item C:\LocalFolder\$_\*\* $targetDir\ -Recurse -Force
+   }
    ```
 
 #### <a name="computers-without-powershellget"></a>PowerShellGet のないコンピューター
 
-いかなるバージョンの **PowerShellGet** もインストールされていないコンピューターの場合、モジュールをインストールするには、**PowerShellGet** がインストールされているコンピューターが必要になります。
+いかなるバージョンの **PowerShellGet** もインストールされていないコンピューターの場合 (`Get-Module -ListAvailable PowerShellGet` を使用してテストする)、モジュールをインストールするには、**PowerShellGet** がインストールされているコンピューターが必要になります。
 
 1. **PowerShellGet** がインストールされているコンピューターから、`Save-Module` を使用して **PowerShellGet** の最新版をダウンロードします。 2 つのフォルダーがダウンロードされます。**PowerShellGet** と **PackageManagement** です。 各フォルダーには、バージョン番号付きのサブフォルダーが含まれています。
 
@@ -82,6 +102,16 @@ Exit
    Save-Module -Name PowerShellGet -Path C:\LocalFolder -Repository PSGallery
    ```
 
-1. **PowerShellGet** がインストールされていないコンピューターに **PowerShellGet** フォルダーと **PackageManagement** フォルダーをコピーします。
+1. **PowerShellGet** および **PackageManagement** フォルダー内の各 `<version>` サブフォルダーを、**PowerShellGet** がインストールされていないコンピューターのフォルダー `$env:ProgramFiles\WindowsPowerShell\Modules\PowerShellGet\` と `$env:ProgramFiles\WindowsPowerShell\Modules\PackageManagement\` にそれぞれコピーします。これには、管理者特権でのセッションが必要です。
+   
+1. たとえば、他方のコンピューター (たとえば、`ws1`) のダウンロード フォルダーに、ターゲット コンピューターから UNC パス (たとえば、`\\ws1\C$\LocalFolder`) を使用してアクセスできる場合は、管理者特権で PowerShell コンソールを開き、次のコマンドを実行します。
 
-   宛先ディレクトリは `$env:ProgramFiles\WindowsPowerShell\Modules` です。
+   ```powershell
+   'PowerShellGet', 'PackageManagement' | % {
+     $targetDir = "$env:ProgramFiles\WindowsPowerShell\Modules\$_"
+     $null = New-Item -Type Directory -Force $targetDir
+     $fromComputer = 'ws1'  # Specify the name of the other computer here.
+     Copy-Item \\$fromComputer\C$\LocalFolder\$_\*\* $targetDir -Recurse -Force
+     if (-not (Get-ChildItem $targetDir)) { Throw "Copying failed." }
+   }
+   ```

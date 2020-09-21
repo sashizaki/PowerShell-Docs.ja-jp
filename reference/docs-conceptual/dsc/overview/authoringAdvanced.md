@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: CI/CD パイプラインでの DSC のロールについて
-ms.openlocfilehash: 8d7244a6e5e2c215d9d3ada959b716df2cce0b83
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: 6df621f45caed3ac8a8b4dd1afa575d413259e0d
+ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500820"
+ms.lasthandoff: 08/05/2020
+ms.locfileid: "87783111"
 ---
 # <a name="understanding-dscs-role-in-a-cicd-pipeline"></a>CI/CD パイプラインでの DSC のロールについて
 
 この記事では、構成とリソースを結合するために使用できるアプローチの種類について説明します。
 各シナリオの目標は同じで、サーバーの展開の終了状態に到達するために複数の構成を選択する場合の複雑さを軽減することです。 この例には、アプリケーションの状態を維持するアプリケーション所有者や、セキュリティ ベースラインへの変更をリリースする中央の管理チームなど、サーバーの展開の結果に貢献する複数のチームが考えられます。 ここでは、各アプローチのメリットとリスクなどを含む、微妙な差異について詳しく説明します。
 
-![パイプライン](media/authoringAdvanced/Pipeline.jpg)
+![CI/CD パイプラインのプロセス フロー](media/authoringAdvanced/Pipeline.jpg)
 
 ## <a name="types-of-collaborative-authoring-techniques"></a>コラボレーションの作成方法の種類
 
@@ -33,7 +33,7 @@ ms.locfileid: "80500820"
 
 部分構成を使用する場合、ローカルの Configuration Manager は複数の構成を個別に管理するように構成されます。 構成は個別にコンパイルされてから、ノードに割り当てられます。 これには、各構成の名前を使用して、LCM を事前に構成する必要があります。
 
-![PartialConfiguration](media/authoringAdvanced/PartialConfiguration.jpg)
+![部分構成の図](media/authoringAdvanced/PartialConfiguration.jpg)
 
 部分構成では、2 つ以上のチームにサーバーの構成に対する完全な制御を提供します。多くの場合、コミュニケーションやコラボレーションの利点はありません。
 
@@ -45,7 +45,7 @@ ms.locfileid: "80500820"
 
 次の図では、チーム B はチーム A に部分構成をリリースします。そしてチーム A は両方の構成が適用されたサーバーに対してテストを実行します。 このモデルでは、1 つの機関だけが実稼働環境で変更を行う権限を持っています。
 
-![PartialSinglePipeline](media/authoringAdvanced/PartialSinglePipeline.jpg)
+![部分的な 1 つのパイプラインの図](media/authoringAdvanced/PartialSinglePipeline.jpg)
 
 チーム B から変更が必要な場合は、チーム A のソース管理環境に対して Pull Request を送信する必要があります。 次に、チーム A がテスト自動化を使用して変更を確認し、その変更によってサーバーでホストされているアプリケーションやサービスでエラーが発生しないことが確認できたら、運用環境にリリースします。
 
@@ -53,7 +53,7 @@ ms.locfileid: "80500820"
 
 複合リソースは、リソースとしてパッケージ化された単なる DSC 構成です。 複合リソースを受け入れるように LCM を構成するための特別な要件はありません。 リソースは新しい構成内で使用され、1 つのコンパイル結果が 1 つの MOF ファイルになります。
 
-![CompositeResource](media/authoringAdvanced/CompositeResource.jpg)
+![複合リソースの図](media/authoringAdvanced/CompositeResource.jpg)
 
 複合リソースには、2 つの一般的なシナリオがあります。 1 つ目は、複雑さを軽減し、独自の概念を抽象化することです。 2 つ目は、すべてのテストが成功した後で、アプリケーション チームがリリース パイプラインを通じて運用環境に安全に展開するために、ベースラインのパッケージ化を許可することです。
 

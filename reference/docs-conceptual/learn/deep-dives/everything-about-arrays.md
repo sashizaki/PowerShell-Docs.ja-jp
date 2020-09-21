@@ -1,14 +1,14 @@
 ---
 title: 配列について知りたかったことのすべて
 description: 配列は、ほとんどのプログラミング言語の基本的な言語機能の 1 つです。
-ms.date: 05/23/2020
+ms.date: 07/07/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 5cab354a99b122401f8f8119de24e075cf9d21f8
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+ms.openlocfilehash: e744878844a3cfd32d6124538a44a29ba90798ab
+ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149605"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86092101"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>配列について知りたかったことのすべて
 
@@ -241,6 +241,8 @@ Lee Dailey 氏は、`$data.GetUpperBound(0)` を使用して最大インデッ�
 
 ```powershell
 PS> $data.GetUpperBound(0)
+3
+PS> $data[ $data.GetUpperBound(0) ]
 Three
 ```
 
