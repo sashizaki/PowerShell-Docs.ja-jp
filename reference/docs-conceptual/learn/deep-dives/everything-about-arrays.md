@@ -3,12 +3,12 @@ title: 配列について知りたかったことのすべて
 description: 配列は、ほとんどのプログラミング言語の基本的な言語機能の 1 つです。
 ms.date: 07/07/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: e744878844a3cfd32d6124538a44a29ba90798ab
-ms.sourcegitcommit: 57df49488015e7ac17ff1df402a94441aa6d6064
+ms.openlocfilehash: 307189bf27d383159d34181eca4dac1f77792e51
+ms.sourcegitcommit: c8d1ffeab215e74e87ea1b0af8cd606c1a6a80ab
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/08/2020
-ms.locfileid: "86092101"
+ms.lasthandoff: 09/29/2020
+ms.locfileid: "91543374"
 ---
 # <a name="everything-you-wanted-to-know-about-arrays"></a>配列について知りたかったことのすべて
 
@@ -752,7 +752,10 @@ if ( -not ( $results -ne 'Passed') )
 
 ## <a name="adding-to-arrays"></a>配列への追加
 
-ここにきて、配列に項目を追加する方法が気になり始めています。 簡単に答えると、それはできません。 配列は、メモリ内で固定サイズです。 それを拡張したり、それに単一の項目を追加したりする必要がある場合は、新しい配列を作成して、古い配列からすべての値をコピーする必要があります。 これには高いコストと多大な労力がかかるように思われますが、PowerShell では新しい配列の作成の複雑さは見えません。
+ここにきて、配列に項目を追加する方法が気になり始めています。 簡単に答えると、それはできません。 配列は、メモリ内で固定サイズです。 それを拡張したり、それに単一の項目を追加したりする必要がある場合は、新しい配列を作成して、古い配列からすべての値をコピーする必要があります。 これには多大な労力がかかるように思われますが、PowerShell では新しい配列の作成の複雑さは見えません。 PowerShell は、配列の加算演算子 (`+`) を実装します。
+
+> [!NOTE]
+> PowerShell は減算演算を実装していません。 配列に代わる柔軟な方法が必要な場合は、[ジェネリック `List`](#generic-list) オブジェクトを使用する必要があります。
 
 ### <a name="array-addition"></a>配列の加算
 
@@ -814,8 +817,6 @@ $array = foreach ( $node in (1..5))
     "ATX-SQL-$node"
 }
 ```
-
-`foreach` の結果を変数に代入すると、すべてのオブジェクトがキャプチャされ、1 つの配列が作成されます。
 
 ## <a name="array-types"></a>配列の型
 
