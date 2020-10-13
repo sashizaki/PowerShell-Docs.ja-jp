@@ -1,14 +1,14 @@
 ---
 title: PSCustomObject について知りたかったことのすべて
 description: PSCustomObject は、構造化データを作成するためのシンプルな方法です。
-ms.date: 07/29/2020
+ms.date: 10/05/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: 52620fd628d03f62db574210a2a5758c3bf29135
-ms.sourcegitcommit: a1886ba2cf35aebd650aafb3e5d7437c4e381781
+ms.openlocfilehash: ccbdcdae5ad38f555233dffbed7e8a6ec2b0726b
+ms.sourcegitcommit: 1695df0d241c0390cac71a7401e61198fc6ff756
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/19/2020
-ms.locfileid: "90804782"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772322"
 ---
 # <a name="everything-you-wanted-to-know-about-pscustomobject"></a>PSCustomObject について知りたかったことのすべて
 
@@ -159,10 +159,10 @@ foreach( $property in $myobject.psobject.properties.name )
 if( $null -ne $myObject.ID )
 ```
 
-ただし、値が `$null` である可能性があってもそれを確認する必要がある場合は、その `psobject.properties` を確認できます。
+ただし、値が `$null` である可能性がある場合は、`psobject.properties` をチェックすることで、これが存在するかどうかを確認できます。
 
 ```powershell
-if( $myobject.psobject.properties.match('ID') )
+if( $myobject.psobject.properties.match('ID').Count )
 ```
 
 ## <a name="adding-object-methods"></a>オブジェクト メソッドの追加
@@ -264,7 +264,7 @@ PowerShell では、既定で表示するプロパティが自動的に決定さ
 
 ```powershell
 $defaultDisplaySet = 'Name','Language'
-$defaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet(‘DefaultDisplayPropertySet’,[string[]]$defaultDisplaySet)
+$defaultDisplayPropertySet = New-Object System.Management.Automation.PSPropertySet('DefaultDisplayPropertySet',[string[]]$defaultDisplaySet)
 $PSStandardMembers = [System.Management.Automation.PSMemberInfo[]]@($defaultDisplayPropertySet)
 $MyObject | Add-Member MemberSet PSStandardMembers $PSStandardMembers
 ```

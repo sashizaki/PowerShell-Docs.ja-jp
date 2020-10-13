@@ -3,12 +3,12 @@ ms.date: 06/09/2017
 schema: 2.0.0
 keywords: powershell
 title: PowerShell ギャラリー UI に影響を与えるパッケージ マニフェストの値
-ms.openlocfilehash: 460b1c67af0af81dd993a45c4f988b825dc2f3eb
-ms.sourcegitcommit: 173556307d45d88de31086ce776770547eece64c
+ms.openlocfilehash: d5e0b85a635c4090f8ccb814277a1a6dd6a951e2
+ms.sourcegitcommit: 1695df0d241c0390cac71a7401e61198fc6ff756
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/19/2020
-ms.locfileid: "83560425"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "91772305"
 ---
 # <a name="package-manifest-values-that-impact-the-powershell-gallery-ui"></a>PowerShell ギャラリー UI に影響を与えるパッケージ マニフェストの値
 
@@ -33,8 +33,8 @@ ms.locfileid: "83560425"
 | **著作権** | モジュール マニフェストの [著作権] フィールドです。スクリプト マニフェストでは .COPYRIGHT です。 | はい | はい |
 | **FileList** | PowerShell ギャラリーへの公開時に、パッケージからこのファイル一覧が取得されます。 マニフェストの情報で制御することはできません。 注: PowerShell ギャラリーで各パッケージと共に表示される追加の .nuspec ファイルがあります。これは、システムにパッケージをインストールした後には存在しません。 これはパッケージの Nuget パッケージ マニフェストであり、無視してかまいません。 | いいえ | いいえ |
 | **タグ** | モジュールの場合、タグは PSData\PrivateData に置かれています。 スクリプトの場合は、このセクションは .TAGS とラベル付けされています。 タグにはスペースを含めることはできません。タグを引用符で囲っても同様です。 タグには詳細な要件と意味があります。これについては、このトピックの後半の「タグの詳細」セクションで説明します。 | はい | はい |
-| **コマンドレット** | モジュール マニフェストの CmdletsToExport で指定されます。 ワイルドカード “*” を使用せずに項目を明示的に表示すると、ユーザーのロードモジュール パフォーマンスが向上するため、この方法が推奨されます。 | はい | いいえ |
-| **関数** | モジュール マニフェストの FunctionsToExport で指定されます。 ワイルドカード “*” を使用せずに項目を明示的に表示すると、ユーザーのロードモジュール パフォーマンスが向上するため、この方法が推奨されます。 | はい | いいえ |
+| **コマンドレット** | モジュール マニフェストの CmdletsToExport で指定されます。 ワイルドカード "*" を使用せずに項目を明示的に表示すると、ユーザーのロードモジュール パフォーマンスが向上するため、この方法が推奨されます。 | はい | いいえ |
+| **関数** | モジュール マニフェストの FunctionsToExport で指定されます。 ワイルドカード "*" を使用せずに項目を明示的に表示すると、ユーザーのロードモジュール パフォーマンスが向上するため、この方法が推奨されます。 | はい | いいえ |
 | **DSC リソース** | PowerShell バージョン 5.0 以降で使用されるモジュールの場合、これはマニフェストの DscResourcesToExport で指定されます。 モジュールが PowerShell 4 で使用される場合には、DSCResourcesToExport はサポート対象外のマニフェスト キーであるため、使用できません (PowerShell 4 以前には DSC が提供されていませんでした)。 | はい | いいえ |
 | **ワークフロー** | ワークフローは PowerShell ギャラリーにスクリプトとして公開され、コードにワークフローとして指定されます (例については、[Connect-AzureVM](https://www.powershellgallery.com/packages/Connect-AzureVM/1.0/Content/Connect-AzureVM.ps1) に関するページをご覧ください)。 これは、マニフェストによって制御されません。 | いいえ | いいえ |
 | **ロール機能** | PowerShell ギャラリーに公開されたモジュールに 1 つ以上のロール機能 (.psrc) ファイルが含まれる場合に表示されます。このファイルは JEA で使用されます。 [ロール機能](/powershell/scripting/learn/remoting/jea/role-capabilities)の詳細については、JEA のドキュメントをご覧ください。 | はい | いいえ |
@@ -44,7 +44,7 @@ ms.locfileid: "83560425"
 | **バージョン履歴** | バージョン履歴は、モジュールに加えられた更新を PowerShell ギャラリーに反映します。 削除機能を使用してパッケージのバージョンを非表示にしている場合、パッケージの所有者以外には、パッケージのバージョンはバージョン履歴に表示されません。 | いいえ | いいえ |
 | **プロジェクト サイト** | プロジェクト サイトは、モジュールでは ProjectURI を指定することにより、モジュール マニフェストの Privatedata\PSData セクション内で指定されます。 スクリプト マニフェストでは、.PROJECTURI を指定することにより制御されます。 | はい | はい |
 | **License** | ライセンス リンクは、モジュールでは LicenseURI を指定することにより、モジュール マニフェストの Privatedata\PSData セクション内で指定されます。 スクリプト マニフェストでは、.LICENSEURI を指定することにより制御されます。 LicenseURI を通してライセンスが指定されていない、またはモジュール内にライセンスが指定されていない場合には、PowerShell ギャラリーの使用条件によってパッケージの使用条件が指定されることに注意する必要があります。 詳細については、使用条件をご覧ください。 | はい | はい |
-| **アイコン** | スクリプト マニフェストまたはモジュール マニフェストの Privatedata-PSData セクションに IconURI フラグを指定することで、PowerShell Gallery のパッケージにアイコンを指定できます。 IconURI は透明の背景を持つ 32x32 の画像を指す必要があります。 URI は直接的な画像 URL にする**必要があり**、PowerShell Gallery パッケージの画像またはファイルが含まれる Web ページに移動することは**できません**。 | はい | はい |
+| **アイコン** | スクリプト マニフェストまたはモジュール マニフェストの Privatedata-PSData セクションに IconURI フラグを指定することで、PowerShell Gallery のパッケージにアイコンを指定できます。 IconURI は透明の背景を持つ 85x85 の画像を指す必要があります。 URI は直接的な画像 URL にする**必要があり**、PowerShell Gallery パッケージの画像またはファイルが含まれる Web ページに移動することは**できません**。 | はい | はい |
 
 ## <a name="editing-package-details"></a>パッケージの詳細の編集
 
