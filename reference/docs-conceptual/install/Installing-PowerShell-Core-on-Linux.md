@@ -2,12 +2,12 @@
 title: Linux への PowerShell のインストール
 description: さまざまな Linux ディストリビューションへの PowerShell のインストールに関する情報
 ms.date: 07/30/2020
-ms.openlocfilehash: ce69f75416eb326e38d42991a4ae85a3a7298c5d
-ms.sourcegitcommit: 79d430fe48ad77a058f42b6bc9955d21b657987e
+ms.openlocfilehash: f35366b5b1a0f54ce2c90d0e3cba59be7b9ce82c
+ms.sourcegitcommit: 2ca12827dc64198b4263e8873a45b9466f22a67c
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/30/2020
-ms.locfileid: "87441764"
+ms.lasthandoff: 10/15/2020
+ms.locfileid: "92079797"
 ---
 # <a name="installing-powershell-on-linux"></a>Linux への PowerShell のインストール
 
@@ -71,18 +71,18 @@ Linux 向けの PowerShell は、インストールと更新を容易にする�
 推奨される方法は次のとおりです。
 
 ```sh
+# Update the list of packages
+sudo apt-get update
+# Install pre-requisite packages.
+sudo apt-get install -y wget apt-transport-https
 # Download the Microsoft repository GPG keys
 wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb
-
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
-
-# Update the list of products
+# Update the list of packages after we added packages.microsoft.com
 sudo apt-get update
-
 # Install PowerShell
 sudo apt-get install -y powershell
-
 # Start PowerShell
 pwsh
 ```
@@ -118,21 +118,20 @@ Linux 向けの PowerShell は、インストールと更新を容易にする�
 推奨される方法は次のとおりです。
 
 ```sh
+# Update the list of packages
+sudo apt-get update
+# Install pre-requisite packages.
+sudo apt-get install -y wget apt-transport-https
 # Download the Microsoft repository GPG keys
 wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb
-
 # Register the Microsoft repository GPG keys
 sudo dpkg -i packages-microsoft-prod.deb
-
 # Update the list of products
 sudo apt-get update
-
 # Enable the "universe" repositories
 sudo add-apt-repository universe
-
 # Install PowerShell
 sudo apt-get install -y powershell
-
 # Start PowerShell
 pwsh
 ```

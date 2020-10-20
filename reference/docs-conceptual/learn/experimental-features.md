@@ -1,13 +1,13 @@
 ---
-ms.date: 09/14/2020
+ms.date: 10/15/2020
 title: PowerShell の試験的機能の使用
 description: 現在使用できる試験的機能とその使用方法を示します。
-ms.openlocfilehash: 74623240bfb19022ae342a5d23e2ed4f455afa45
-ms.sourcegitcommit: 30c0c1563f8e840f24b65297e907f3583d90e677
+ms.openlocfilehash: e98b1222755f3d4ffbd432af6b01d56f63307bb2
+ms.sourcegitcommit: 108686b166672cc08817c637dd93eb1ad830511d
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "90574472"
+ms.lasthandoff: 10/17/2020
+ms.locfileid: "92156577"
 ---
 # <a name="using-experimental-features-in-powershell"></a>PowerShell の試験的機能の使用
 
@@ -34,9 +34,10 @@ PowerShell の試験的機能のサポートは、試験的機能を PowerShell 
 | PSDesiredStateConfiguration.InvokeDscResource              |         | &check; | &check; |
 | PSNullConditionalOperators (PS 7.1 以降のメインストリーム)         |         | &check; |         |
 | PSUnixFileStat (Windows 以外)                          |         | &check; | &check; |
-| PSNativePSPathResolution (PS 7.1 以降のメインストリーム)           |         |         |         |
+| PSNativePSPathResolution                                   |         |         | &check; |
 | PSCultureInvariantReplaceOperator                          |         |         | &check; |
 | PSNotApplyErrorActionToStderr                              |         |         | &check; |
+| PSSubsystemPluginModel                                     |         |         | &check; |
 
 ## <a name="microsoftpowershellutilitypsmanagebreakpointsinrunspace"></a>Microsoft.PowerShell.Utility.PSManageBreakpointsInRunspace
 
@@ -153,9 +154,6 @@ FileSystem プロバイダーを使用する PSDrive パスがネイティブ �
 - パスが PSDrive または `~` (Windows) でない場合、パスの正規化は行われません
 - パスが単一引用符で囲まれている場合、そのパスは解決されず、リテラルとして扱われます
 
-> [!NOTE]
-> この機能は試験段階から移行され、PowerShell 7.1 以降のメインストリーム機能になりました。
-
 ## <a name="psnotapplyerroractiontostderr"></a>PSNotApplyErrorActionToStderr
 
 この試験的機能を有効にすると、ネイティブ コマンドからリダイレクトされるエラー レコード (リダイレクト演算子 (`2>&1`) を使用する場合のように) が、`$Error` 変数に書き込まれず、ユーザー設定変数 `$ErrorActionPreference` はリダイレクトされた出力に影響しません。
@@ -228,3 +226,11 @@ drwxr-xr-x jimtru    staff         11/8/2019 10:37         896 tools
 
 > [!NOTE]
 > この機能は試験段階から移行され、PowerShell 7 以降のメインストリーム機能になりました。
+
+## <a name="pssubsystempluginmodel"></a>PSSubsystemPluginModel
+
+この機能により、PowerShell でサブシステム プラグイン モデルが有効になります。 この機能により、`System.Management.Automation.dll` のコンポーネントを、独自のアセンブリに存在する個々のサブシステムに分けることができます。 この分割により、コア PowerShell エンジンのディスク占有領域が削減され、これらのコンポーネントを最小限の PowerShell インストールに対するオプション機能にすることができます。
+
+現時点では、**CommandPredictor** サブシステムのみがサポートされています。 このサブシステムは、カスタム予測プラグインを提供するために、PSReadLine モジュールと共に使用されます。 今後、**Job**、**CommandCompleter**、**Remoting** などのコンポーネントは、`System.Management.Automation.dll` 外のサブシステム アセンブリに分割される可能性があります。
+
+この試験的機能には、新しいコマンドレット [Get-PSSubsystem](xref:Microsoft.PowerShell.Core.Get-PSSubsystem) が含まれています。 このコマンドレットは、機能が有効になっている場合にのみ使用できます。 このコマンドレットを使用すると、システムで使用可能なサブシステムに関する情報が返されます。
