@@ -2,12 +2,13 @@
 ms.date: 07/10/2019
 keywords: JEA, PowerShell, セキュリティ
 title: JEA の構成の登録
-ms.openlocfilehash: 7cc67e891bc14dd667c97e9a8b550b33b4c2b874
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: システムに JEA エンドポイントを登録すると、ユーザーおよび自動化エンジンでエンドポイントが使用できるようになります。
+ms.openlocfilehash: 6e7f8cdc1e7a666bddaa42034d70fcbcf55c1972
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706208"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499911"
 ---
 # <a name="registering-jea-configurations"></a>JEA の構成の登録
 
@@ -61,7 +62,7 @@ DSC で JEA を展開するには、次の前提条件が満たされている�
 - 各コンピューターで管理操作ができる、またはコンピューターの管理に使われる DSC プル サーバーにアクセスできる資格情報があること。
 - [JEA DSC リソース](https://github.com/powershell/JEA/tree/master/DSC%20Resource)をダウンロードしてあること。
 
-ターゲット コンピューターまたはプル サーバー上で、JEA エンドポイント用の DSC 構成を作成します。 この構成では、**JustEnoughAdministration** DSC リソースでセッション構成ファイルを定義し、**File** リソースでファイル共有からロール機能をコピーします。
+ターゲット コンピューターまたはプル サーバー上で、JEA エンドポイント用の DSC 構成を作成します。 この構成では、 **JustEnoughAdministration** DSC リソースでセッション構成ファイルを定義し、 **File** リソースでファイル共有からロール機能をコピーします。
 
 DSC リソースを使って次のプロパティを構成できます。
 

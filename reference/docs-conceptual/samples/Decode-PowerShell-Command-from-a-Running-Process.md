@@ -3,12 +3,13 @@ ms.date: 11/13/2018
 keywords: powershell,コマンドレット
 title: 実行中のプロセスからの PowerShell コマンドをデコードする
 author: randomnote1
-ms.openlocfilehash: a6c01d8edf67aba6c47350a97cc0ceec4801ad29
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、PowerShell プロセスで現在実行中のスクリプト ブロックをデコードする方法を示します。
+ms.openlocfilehash: 95b4b806665bf8137712ebb183329039bc1e1deb
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "66470971"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500489"
 ---
 # <a name="decode-a-powershell-command-from-a-running-process"></a>実行中のプロセスからの PowerShell コマンドをデコードする
 
@@ -33,7 +34,7 @@ powershell.exe -Command {
 
 ## <a name="view-the-process"></a>プロセスを表示する
 
-PowerShell で実行されているコマンドの本体は、[Win32_Process][] クラスの **CommandLine** プロパティに格納されています。 コマンドがエンコードされたコマンドである場合、**CommandLine** プロパティには文字列 "EncodedCommand" が含まれています。 この情報を使用して、次のプロセスにより、エンコードされたコマンドを難読化解除できます。
+PowerShell で実行されているコマンドの本体は、 [Win32_Process][] クラスの **CommandLine** プロパティに格納されています。 コマンドがエンコードされたコマンドである場合、 **CommandLine** プロパティには文字列 "EncodedCommand" が含まれています。 この情報を使用して、次のプロセスにより、エンコードされたコマンドを難読化解除できます。
 
 管理者として PowerShell を開始します。 PowerShell を管理者として実行することが重要です。そうしないと、実行中のプロセスのクエリを実行しても結果は返されません。
 
@@ -81,7 +82,7 @@ $commandDetails[0]
 
 デコードされたコマンド プロパティを選択することで、デコードされたコマンドを確認できるようになります。
 
-```output
+```Output
 ProcessId      : 8752
 EncodedCommand : IAAKAAoACgAgAAoAIAAgACAAIAAkAGkAIAA9ACAAMQAgAAoACgAKACAACgAgACAAIAAgAHcAaABpAGwAZQAgACgAIAAkAGkAIAAtAG
                  wAZQAgADEAMAAgACkAIAAKAAoACgAgAAoAIAAgACAAIAB7ACAACgAKAAoAIAAKACAAIAAgACAAIAAgACAAIABXAHIAaQB0AGUALQBP
