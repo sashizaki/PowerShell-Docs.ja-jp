@@ -1,12 +1,14 @@
 ---
-title: PropertyCountForTable 要素 (Format) |Microsoft Docs
 ms.date: 09/12/2016
-ms.openlocfilehash: 71e1ee9d3de6d06f512181ee50b69a377130bbe2
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
-ms.translationtype: MT
+ms.topic: reference
+title: PropertyCountForTable 要素 (書式)
+description: PropertyCountForTable 要素 (書式)
+ms.openlocfilehash: bb78507d21fc6acd36ddaa97607a302d290426be
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87780910"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92666299"
 ---
 # <a name="propertycountfortable-element-format"></a>PropertyCountForTable 要素 (書式)
 
