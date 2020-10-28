@@ -720,8 +720,6 @@
               href: gallery/how-to/working-with-packages/packages-that-require-license-acceptance.md
             - name: パッケージの所有者に連絡する
               href: gallery/how-to/working-with-packages/contacting-package-owners.md
-            - name: ソーシャル メディアやコメントを使用したフィードバックの提供
-              href: gallery/how-to/working-with-packages/social-media-feedback.md
         - name: アカウント プロファイルの管理
           items:
             - name: PowerShell ギャラリーのアカウント設定
