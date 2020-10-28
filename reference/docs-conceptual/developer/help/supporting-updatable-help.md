@@ -1,16 +1,18 @@
 ---
-title: 更新可能なヘルプのサポート
 ms.date: 10/28/2012
-ms.openlocfilehash: bc5f08d2989b1031806c91acf43dd6a3b2646f04
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.topic: reference
+title: 更新可能なヘルプのサポート
+description: 更新可能なヘルプのサポート
+ms.openlocfilehash: 671365303b403942d6085bd4dfe1244552a4c5ec
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236341"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658081"
 ---
 # <a name="supporting-updatable-help"></a>更新可能なヘルプのサポート
 
-Windows 8 および Windows Server 2012 で導入された "*Windows PowerShell の更新可能なヘルプ システム*" は、ユーザーがローカル コンピューター上のコマンド プロンプトで、常に最新のヘルプ トピックを確認できるように設計されています。 Windows PowerShell のオンライン ヘルプと共に、更新可能なヘルプには、ユーザー向けの完全なヘルプ ソリューションが用意されています。 このセクションでは、更新可能なヘルプ システムについて説明し、モジュールの作成者が自分のモジュールについて更新可能なヘルプをサポートする方法について説明します。
+Windows 8 および Windows Server 2012 で導入された " *Windows PowerShell の更新可能なヘルプ システム* " は、ユーザーがローカル コンピューター上のコマンド プロンプトで、常に最新のヘルプ トピックを確認できるように設計されています。 Windows PowerShell のオンライン ヘルプと共に、更新可能なヘルプには、ユーザー向けの完全なヘルプ ソリューションが用意されています。 このセクションでは、更新可能なヘルプ システムについて説明し、モジュールの作成者が自分のモジュールについて更新可能なヘルプをサポートする方法について説明します。
 
 このセクションには、次のトピックがあります。
 

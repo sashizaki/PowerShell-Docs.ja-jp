@@ -1,16 +1,14 @@
 ---
-title: PowerShell コマンドに承認されている動詞 | Microsoft Docs
 ms.date: 09/07/2018
-helpviewer_keywords:
-- action names [PowerShell SDK]
-- verb names [PowerShell SDK]
-- cmdlets [PowerShell SDK], verb names
-ms.openlocfilehash: 96ba7397f46bfcb7036f0242da1367c3df5d3de9
-ms.sourcegitcommit: 0e18be0a2869beaa711ba3eca7a8a15514e5e962
+ms.topic: reference
+title: PowerShell コマンドに承認されている動詞
+description: PowerShell コマンドに承認されている動詞
+ms.openlocfilehash: 237355ba9729cfe16c335b39f19ab20e40999457
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91899858"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655826"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>PowerShell コマンドに承認されている動詞
 
@@ -18,13 +16,13 @@ PowerShell の場合、コマンドレットの名前を表すため、および
 名前の動詞の部分は、コマンドレットで実行されるアクションを識別します。 名前の名詞の部分は、アクションが実行される対象であるエンティティを識別します。 たとえば、`Get-Command` は、PowerShell に登録されているすべてのコマンドを取得するコマンドレットです。
 
 > [!NOTE]
-> PowerShell の場合、"_動詞_" という用語は、アクションを意味する単語 (その単語が英語の標準的な動詞でない場合でも) を記述するために使用されます。 たとえば、_New_ という用語は英語の動詞ではありませんが、アクションを意味しているため、有効な PowerShell 動詞の名前です。
+> PowerShell の場合、" _動詞_ " という用語は、アクションを意味する単語 (その単語が英語の標準的な動詞でない場合でも) を記述するために使用されます。 たとえば、 _New_ という用語は英語の動詞ではありませんが、アクションを意味しているため、有効な PowerShell 動詞の名前です。
 
 <!--
 01234567890123456789012345678901234567890123456789012345678901234567890123456789
 -->
 
-承認された各動詞には、対応する "_エイリアスのプレフィックス_" が定義されています。
+承認された各動詞には、対応する " _エイリアスのプレフィックス_ " が定義されています。
 このエイリアスのプレフィックスは、その動詞を使用するコマンドのエイリアスで使用します。
 たとえば、`Import` のエイリアスのプレフィックスは `ip` であり、したがって `Import-Module` のエイリアスは `ipmo` です。  これは推奨事項ですが、規則ではありません。特に、他の環境の既知のコマンドを模倣しているコマンド エイリアスの場合は、従う必要はありません。
 
