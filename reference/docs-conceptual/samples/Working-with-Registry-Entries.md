@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: レジストリ エントリの操作
-ms.openlocfilehash: 7f8ee87cebb8b220570bcb969445071a72a68526
-ms.sourcegitcommit: d3f78120bdc9096c72aa0dfdbdd91efaf254c738
+description: この記事では、PowerShell を使用してレジストリ エントリを処理する方法について説明します。
+ms.openlocfilehash: 65f8b4ed7b2f9af26bfd22f34577a4bd52f35e70
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/04/2020
-ms.locfileid: "87758484"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501458"
 ---
 # <a name="working-with-registry-entries"></a>レジストリ エントリの操作
 
@@ -57,7 +58,7 @@ PF_AccessoriesName  : Accessories
 (default)           :
 ```
 
-キーの Windows PowerShell 関連のプロパティには、**PSPath**、**PSParentPath**、**PSChildName**、および **PSProvider** のように、すべて先頭に "PS" が付きます。
+キーの Windows PowerShell 関連のプロパティには、 **PSPath** 、 **PSParentPath** 、 **PSChildName** 、および **PSProvider** のように、すべて先頭に "PS" が付きます。
 
 現在の場所を参照するために、`*.*` 表記を使用できます。 `Set-Location` を使用して、まず **CurrentVersion** レジストリのコンテナーに変更します。
 
@@ -91,7 +92,7 @@ ProgramFilesDir     : C:\Program Files
 
 レジストリ キーの特定のエントリを取得する場合は、いくつかの可能なアプローチのいずれかを使用できます。 この例では、`HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion` の **DevicePath** の値を検索します。
 
-`Get-ItemProperty` を使用する場合、**Path** パラメーターを使用してキーの名前を指定し、**Name** パラメーターを使用して **DevicePath** のエントリの名前を指定します。
+`Get-ItemProperty` を使用する場合、 **Path** パラメーターを使用してキーの名前を指定し、 **Name** パラメーターを使用して **DevicePath** のエントリの名前を指定します。
 
 ```powershell
 Get-ItemProperty -Path HKLM:\Software\Microsoft\Windows\CurrentVersion -Name DevicePath
@@ -111,7 +112,7 @@ DevicePath   : C:\WINDOWS\inf
 このコマンドは、標準の Windows PowerShell のプロパティと **DevicePath** プロパティを返します。
 
 > [!NOTE]
-> `Get-ItemProperty` には **Filter**、**Include**、**Exclude** パラメーターが含まれていますが、これらはプロパティ名でフィルター処理するためには使えません。 これらのパラメーターはレジストリ キー (項目のパス) を参照するものであり、レジストリ エントリ (項目のプロパティ) を参照しているのではありません。
+> `Get-ItemProperty` には **Filter** 、 **Include** 、 **Exclude** パラメーターが含まれていますが、これらはプロパティ名でフィルター処理するためには使えません。 これらのパラメーターはレジストリ キー (項目のパス) を参照するものであり、レジストリ エントリ (項目のプロパティ) を参照しているのではありません。
 
 別のオプションとして、Reg.exe コマンド ライン ツールを使用することもできます。 reg.exe のヘルプを表示するには、コマンド プロンプトで `reg.exe /?` と入力します。 DevicePath エントリを検索するには、次のコマンドに示すように reg.exe を使用します。
 
@@ -126,7 +127,7 @@ HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion
     DevicePath  REG_EXPAND_SZ   %SystemRoot%\inf
 ```
 
-また、**WshShell** COM オブジェクトを使っていくつかのレジストリ エントリを検索することもできますが、大きなバイナリ データや、"\\" のような文字を含むレジストリ エントリ名を使う場合、この方法は機能しません。 プロパティ名を区切り記号 \\ と共に項目のパスに追加します。
+また、 **WshShell** COM オブジェクトを使っていくつかのレジストリ エントリを検索することもできますが、大きなバイナリ データや、"\\" のような文字を含むレジストリ エントリ名を使う場合、この方法は機能しません。 プロパティ名を区切り記号 \\ と共に項目のパスに追加します。
 
 ```powershell
 (New-Object -ComObject WScript.Shell).RegRead("HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\DevicePath")
@@ -151,13 +152,13 @@ Set-ItemProperty -Path HKCU:\Environment -Name Path -Value $newpath
 ```
 
 > [!NOTE]
-> `Set-ItemProperty` には **Filter**、**Include**、**Exclude** パラメーターが含まれていますが、これらはプロパティ名でフィルター処理するためには使えません。 これらのパラメーターはレジストリ キー (項目のパス) を参照し、レジストリ エントリ (項目のプロパティ) を参照するのではありません。
+> `Set-ItemProperty` には **Filter** 、 **Include** 、 **Exclude** パラメーターが含まれていますが、これらはプロパティ名でフィルター処理するためには使えません。 これらのパラメーターはレジストリ キー (項目のパス) を参照し、レジストリ エントリ (項目のプロパティ) を参照するのではありません。
 
-別のオプションとして、Reg.exe コマンド ライン ツールを使用することもできます。 reg.exe のヘルプを表示するには、コマンド プロンプトで「**reg.exe /?** 」と入力します。
+別のオプションとして、Reg.exe コマンド ライン ツールを使用することもできます。 reg.exe のヘルプを表示するには、コマンド プロンプトで「 **reg.exe /?** 」と入力します。
 at a command prompt.
 
 次の例では、上記の例で追加したパスを削除することで **Path** エントリを変更します。
-`reg query` から返された文字列を解析しなくて済むようにするため、`Get-ItemProperty` を引き続き使って現在の値を取得します。 **Path** エントリに追加された最後のパスを取得するために、**SubString** および **LastIndexOf** メソッドを使います。
+`reg query` から返された文字列を解析しなくて済むようにするため、`Get-ItemProperty` を引き続き使って現在の値を取得します。 **Path** エントリに追加された最後のパスを取得するために、 **SubString** および **LastIndexOf** メソッドを使います。
 
 ```powershell
 $value = Get-ItemProperty -Path HKCU:\Environment -Name Path
@@ -207,7 +208,7 @@ New-ItemProperty -Name PowerShellPath -PropertyType String -Value $PSHome `
   -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion, HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion
 ```
 
-また、**Force** パラメーターを任意の `New-ItemProperty` コマンドに追加して、既存のレジストリ エントリの値を上書きすることもできます。
+また、 **Force** パラメーターを任意の `New-ItemProperty` コマンドに追加して、既存のレジストリ エントリの値を上書きすることもできます。
 
 ## <a name="renaming-registry-entries"></a>レジストリ エントリの名前変更
 
@@ -217,7 +218,7 @@ New-ItemProperty -Name PowerShellPath -PropertyType String -Value $PSHome `
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome
 ```
 
-名前が変更された値を表示するには、**PassThru** パラメーターをコマンドに追加します。
+名前が変更された値を表示するには、 **PassThru** パラメーターをコマンドに追加します。
 
 ```powershell
 Rename-ItemProperty -Path HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion -Name PowerShellPath -NewName PSHome -passthru

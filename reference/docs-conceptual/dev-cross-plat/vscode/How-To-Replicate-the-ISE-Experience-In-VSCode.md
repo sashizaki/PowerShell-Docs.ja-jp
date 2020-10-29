@@ -116,7 +116,7 @@ ISE モードでは VS Code 設定に対して次の変更が行われます。
 
 - ISE で開く
 
-  Windows PowerShell ISE でファイルを開く場合は、[[コマンド パレット]][] を開き、"ISE で開く" を検索して、 **[PowerShell: Open Current File in PowerShell ISE]\(PowerShell: PowerShell ISE で現在のファイルを開く\)** を選択します。
+  Windows PowerShell ISE でファイルを開く場合は、 [[コマンド パレット]][] を開き、"ISE で開く" を検索して、 **[PowerShell: Open Current File in PowerShell ISE]\(PowerShell: PowerShell ISE で現在のファイルを開く\)** を選択します。
 
 ## <a name="other-resources"></a>その他のリソース
 
@@ -134,7 +134,7 @@ ISE モードでは VS Code 設定に対して次の変更が行われます。
 
 - デバッグ コンソールを無効にする
 
-  PowerShell スクリプト用に VS Code のみを使用する計画である場合は、**デバッグ コンソール**を非表示にすることができます。これは PowerShell 拡張機能では使用されないからです。 これを行うには、 **[デバッグ コンソール]** を右クリックしてから、それを非表示するためのチェック マークをオンにします。
+  PowerShell スクリプト用に VS Code のみを使用する計画である場合は、 **デバッグ コンソール** を非表示にすることができます。これは PowerShell 拡張機能では使用されないからです。 これを行うには、 **[デバッグ コンソール]** を右クリックしてから、それを非表示するためのチェック マークをオンにします。
 
 ## <a name="more-settings"></a>詳細設定
 
@@ -145,7 +145,7 @@ PR や寄付も常に歓迎しています。
 <!-- link references -->
 [vsc-docs]: https://code.visualstudio.com/docs/getstarted/userinterface#_command-palette
 [コマンド パレット]: #vs-code-tips
-[問題を開く]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
+[問題を開いて]: https://github.com/PowerShell/VSCode-powershell/issues/new/choose
 
 [4sysops]: https://4sysops.com/archives/make-visual-studio-code-look-and-behave-like-powershell-ise/
 [mikefrobbins]: https://mikefrobbins.com/2017/08/24/how-to-install-visual-studio-code-and-configure-it-as-a-replacement-for-the-powershell-ise/

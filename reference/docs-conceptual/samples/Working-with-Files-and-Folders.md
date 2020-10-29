@@ -2,16 +2,17 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: ファイルとフォルダーの操作
-ms.openlocfilehash: 8876ff70adbd10c9019f6d80ce7ad327f2932c74
-ms.sourcegitcommit: 08acbea14c69a347f2f46aafcb215a5233c7d830
+description: この記事では、PowerShell を使用して特定のファイルとフォルダーを操作するタスクについて説明します。
+ms.openlocfilehash: c0c3abb082b05296daa480ac06bcbfa3a784e0c9
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/01/2020
-ms.locfileid: "82691495"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500030"
 ---
 # <a name="working-with-files-and-folders"></a>ファイルとフォルダーの操作
 
-Windows PowerShell ドライブ間を移動したり、Windows PowerShell ドライブ上の項目を操作したりすることは、Windows の物理ディスク ドライブ上のファイルやフォルダーを操作することと似ています。 このセクションでは、PowerShell を使用して特定のファイルとフォルダーを操作するタスクについて説明します。
+Windows PowerShell ドライブ間を移動したり、Windows PowerShell ドライブ上の項目を操作したりすることは、Windows の物理ディスク ドライブ上のファイルやフォルダーを操作することと似ています。 この記事では、PowerShell を使用して特定のファイルとフォルダーを操作するタスクについて説明します。
 
 ## <a name="listing-all-the-files-and-folders-within-a-folder"></a>フォルダー内のすべてのファイルとフォルダーの一覧表示
 
@@ -27,7 +28,7 @@ Get-ChildItem -Path C:\ -Force
 Get-ChildItem -Path C:\ -Force -Recurse
 ```
 
-`Get-ChildItem` は、**Path**、**Filter**、**Include**、**Exclude** の各パラメーターを使用して項目をフィルター処理できますが、通常、これらは名前にのみ基づいています。 `Where-Object` を使用することにより、項目の他のプロパティに基づいた複雑なフィルター処理を実行できます。
+`Get-ChildItem` は、 **Path** 、 **Filter** 、 **Include** 、 **Exclude** の各パラメーターを使用して項目をフィルター処理できますが、通常、これらは名前にのみ基づいています。 `Where-Object` を使用することにより、項目の他のプロパティに基づいた複雑なフィルター処理を実行できます。
 
 次のコマンドは、Program Files フォルダー内にある、2005 年 10 月 1 日より後に最終更新され、1 メガバイト以上、10 メガバイト以下のすべての実行可能ファイルを検出します。
 
@@ -43,7 +44,7 @@ Get-ChildItem -Path $env:ProgramFiles -Recurse -Include *.exe | Where-Object -Fi
 Copy-Item -Path C:\boot.ini -Destination C:\boot.bak
 ```
 
-コピー先のファイルが既に存在する場合、コピー操作は失敗します。 既存のコピー先ファイルを上書きするには、**Force** パラメーターを使用します。
+コピー先のファイルが既に存在する場合、コピー操作は失敗します。 既存のコピー先ファイルを上書きするには、 **Force** パラメーターを使用します。
 
 ```powershell
 Copy-Item -Path C:\boot.ini -Destination C:\boot.bak -Force
@@ -63,7 +64,7 @@ Copy-Item C:\temp\test1 -Recurse C:\temp\DeleteMe
 Copy-Item -Filter *.txt -Path c:\data -Recurse -Destination C:\temp\text
 ```
 
-ファイル システムのコピー操作には、他のツールを使用することもできます。 XCOPY、ROBOCOPY、および COM オブジェクト (**Scripting.FileSystemObject** など) はすべて Windows PowerShell で動作します。 たとえば、Windows Script Host の **Scripting.FileSystem COM** クラスを使用して、`C:\boot.ini` を `C:\boot.bak` にバックアップするには、次のように入力します。
+ファイル システムのコピー操作には、他のツールを使用することもできます。 XCOPY、ROBOCOPY、および COM オブジェクト ( **Scripting.FileSystemObject** など) はすべて Windows PowerShell で動作します。 たとえば、Windows Script Host の **Scripting.FileSystem COM** クラスを使用して、`C:\boot.ini` を `C:\boot.bak` にバックアップするには、次のように入力します。
 
 ```powershell
 (New-Object -ComObject Scripting.FileSystemObject).CopyFile('C:\boot.ini', 'C:\boot.bak')
@@ -86,7 +87,7 @@ New-Item -Path 'C:\temp\New Folder\file.txt' -ItemType File
 ```
 
 > [!IMPORTANT]
-> **Force** スイッチを `New-Item` コマンドで使用してフォルダーを作成し、そのフォルダーが既に存在している場合は、フォルダーが上書きされたり、置き換えたりすることは_ありません_。 単に既存のフォルダー オブジェクトを返します。 ただし、既に存在するファイルに対して `New-Item -Force` を使用すると、ファイルは完全に上書き_されます_。
+> **Force** スイッチを `New-Item` コマンドで使用してフォルダーを作成し、そのフォルダーが既に存在している場合は、フォルダーが上書きされたり、置き換えたりすることは _ありません_ 。 単に既存のフォルダー オブジェクトを返します。 ただし、既に存在するファイルに対して `New-Item -Force` を使用すると、ファイルは完全に上書き _されます_ 。
 
 ## <a name="removing-all-files-and-folders-within-a-folder"></a>フォルダー内のすべてのファイルとフォルダーの削除
 
@@ -103,7 +104,7 @@ sure you want to continue?
 (default is "Y"):
 ```
 
-内包されている項目ごとに削除の確認が行われないようにする場合は、**Recurse** パラメーターを使用します。
+内包されている項目ごとに削除の確認が行われないようにする場合は、 **Recurse** パラメーターを使用します。
 
 ```powershell
 Remove-Item -Path C:\temp\DeleteMe -Recurse

@@ -1,12 +1,13 @@
 ---
 title: 詳しく調べる
 ms.date: 05/23/2020
-ms.openlocfilehash: 9ba687c81f5bdc64881fa78a6e4ebbe051320358
-ms.sourcegitcommit: ed4a895d672334c7b02fb7ef6e950dbc2ba4a197
+description: このドキュメントの「詳しく調べる」セクションには、コマンドレット リファレンスより詳細な情報と例を提供する記事が含まれています。
+ms.openlocfilehash: da42df8ff4590d12be88132ebc98278821d4f9ee
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/28/2020
-ms.locfileid: "84149405"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501067"
 ---
 # <a name="deep-dive-articles"></a>詳細情報記事
 

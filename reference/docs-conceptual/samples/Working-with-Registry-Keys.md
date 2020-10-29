@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,コマンドレット
 title: レジストリ キーの操作
-ms.openlocfilehash: 3feaf6d26db51a507434a6cec1f1095c9013efc8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、PowerShell を使用してレジストリ キーを処理する方法について説明します。
+ms.openlocfilehash: 90e8417fc3454b959dc2a86fc63e722832bdab23
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75736847"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501390"
 ---
 # <a name="working-with-registry-keys"></a>レジストリ キーの操作
 
@@ -57,13 +58,13 @@ Get-ChildItem -Path Microsoft.PowerShell.Core\Registry::HKCU
 Get-ChildItem HKCU:
 ```
 
-これらのコマンドは、**Cmd.exe** の `DIR` コマンドや UNIX シェルの `ls` を使用したときと同様に、直接含まれている項目のみ一覧表示します。 内包されている項目を表示するには、**Recurse** パラメーターを指定する必要があります。 `HKCU:` 内のすべてのレジストリ キーを一覧表示するには、次のコマンドを使用します。
+これらのコマンドは、 **Cmd.exe** の `DIR` コマンドや UNIX シェルの `ls` を使用したときと同様に、直接含まれている項目のみ一覧表示します。 内包されている項目を表示するには、 **Recurse** パラメーターを指定する必要があります。 `HKCU:` 内のすべてのレジストリ キーを一覧表示するには、次のコマンドを使用します。
 
 ```powershell
 Get-ChildItem -Path HKCU:\ -Recurse
 ```
 
-`Get-ChildItem` は、**Path**、**Filter**、**Include**、**Exclude** の各パラメーターを使用して複雑なフィルター処理機能を実行できますが、これらのパラメーターは通常、名前にのみ基づいています。 `Where-Object` コマンドレットを使用することにより、項目の他のプロパティに基づいた複雑なフィルター処理を実行できます。 次のコマンドは、1 つのサブキーと 4 つの値を持つ、`HKCU:\Software` 内のすべてのキーを検索します。
+`Get-ChildItem` は、 **Path** 、 **Filter** 、 **Include** 、 **Exclude** の各パラメーターを使用して複雑なフィルター処理機能を実行できますが、これらのパラメーターは通常、名前にのみ基づいています。 `Where-Object` コマンドレットを使用することにより、項目の他のプロパティに基づいた複雑なフィルター処理を実行できます。 次のコマンドは、1 つのサブキーと 4 つの値を持つ、`HKCU:\Software` 内のすべてのキーを検索します。
 
 ```powershell
 Get-ChildItem -Path HKCU:\Software -Recurse |
@@ -78,13 +79,13 @@ Get-ChildItem -Path HKCU:\Software -Recurse |
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination HKCU:
 ```
 
-レジストリ エディター内、または `Get-ChildItem` を使用してこの新しいキーを調べると、格納されているサブキーのコピーが新しい場所に存在しないことがわかります。 コンテナーのすべての内容をコピーするために、**Recurse** パラメーターを指定する必要があります。 上記のコピー コマンドを再帰的に実行するには、次のコマンドを使用します。
+レジストリ エディター内、または `Get-ChildItem` を使用してこの新しいキーを調べると、格納されているサブキーのコピーが新しい場所に存在しないことがわかります。 コンテナーのすべての内容をコピーするために、 **Recurse** パラメーターを指定する必要があります。 上記のコピー コマンドを再帰的に実行するには、次のコマンドを使用します。
 
 ```powershell
 Copy-Item -Path 'HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion' -Destination HKCU: -Recurse
 ```
 
-ファイル システムのコピーは、使用可能な他の既存のツールを使用して行うこともできます。 任意のレジストリ編集ツール (**reg.exe**、**regini.exe**、**regedit.exe** など) およびレジストリの編集をサポートする COM オブジェクト (**WScript.Shell** や WMI の **StdRegProv** クラスなど) を Windows PowerShell 内から使用できます。
+ファイル システムのコピーは、使用可能な他の既存のツールを使用して行うこともできます。 任意のレジストリ編集ツール ( **reg.exe** 、 **regini.exe** 、 **regedit.exe** など) およびレジストリの編集をサポートする COM オブジェクト ( **WScript.Shell** や WMI の **StdRegProv** クラスなど) を Windows PowerShell 内から使用できます。
 
 ## <a name="creating-keys"></a>キーの作成
 
@@ -125,7 +126,7 @@ the item. Are you sure you want to continue?
 [Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "Y"):
 ```
 
-確認のメッセージを表示せずに、内包されている項目を削除するには、**Recurse** パラメーターを指定します。
+確認のメッセージを表示せずに、内包されている項目を削除するには、 **Recurse** パラメーターを指定します。
 
 ```powershell
 Remove-Item -Path HKCU:\CurrentVersion -Recurse

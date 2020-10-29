@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,コマンドレット
 title: コンピューターに関する情報の収集
-ms.openlocfilehash: 9407ff15b3c3ca6b3adab60d4d01d957c599e79e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、WMI と CIM コマンドレットを使用して、コンピューターの構成に関する情報を収集する方法を示します。
+ms.openlocfilehash: 5088960ab7c049085a9d7c05ec4571b6fd7e3545
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75737238"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500591"
 ---
 # <a name="collecting-information-about-computers"></a>コンピューターに関する情報の収集
 
@@ -26,7 +27,7 @@ Get-CimInstance -ClassName Win32_Desktop
 > [!NOTE]
 > WMI のクラスによっては、非常に詳しい情報が返されます。その WMI クラスのメタデータが含まれる場合もあります。
 
-こうしたメタデータのプロパティには、通常、**Cim** で始まる名前が付いているため、`Select-Object` を使用することでこれらのプロパティをフィルター処理できます。 **-ExcludeProperty** パラメーターと値に "Cim*" を指定します。 次に例を示します。
+こうしたメタデータのプロパティには、通常、 **Cim** で始まる名前が付いているため、`Select-Object` を使用することでこれらのプロパティをフィルター処理できます。 **-ExcludeProperty** パラメーターと値に "Cim*" を指定します。 次に例を示します。
 
 ```powershell
 Get-CimInstance -ClassName Win32_Desktop | Select-Object -ExcludeProperty "CIM*"
@@ -154,7 +155,7 @@ ServicePackMinorVersion : 0
 
 ## <a name="listing-local-users-and-owner"></a>ローカル ユーザーと所有者を一覧表示する
 
-ライセンスされたユーザー数、現在のユーザー数、所有者名など、ローカル ユーザーの全般的な情報は、**Win32_OperatingSystem** クラスのプロパティを選択することによって取得できます。 表示するプロパティを明示的に選ぶには、次のように入力します。
+ライセンスされたユーザー数、現在のユーザー数、所有者名など、ローカル ユーザーの全般的な情報は、 **Win32_OperatingSystem** クラスのプロパティを選択することによって取得できます。 表示するプロパティを明示的に選ぶには、次のように入力します。
 
 ```powershell
 Get-CimInstance -ClassName Win32_OperatingSystem |
@@ -198,7 +199,7 @@ Size      326846914560
 
 ## <a name="getting-logon-session-information"></a>ログオン セッション情報を取得する
 
-ユーザーに関連付けられたログオン セッションの全般的な情報は、**Win32_LogonSession** WMI クラスを使って取得できます。
+ユーザーに関連付けられたログオン セッションの全般的な情報は、 **Win32_LogonSession** WMI クラスを使って取得できます。
 
 ```powershell
 Get-CimInstance -ClassName Win32_LogonSession
@@ -214,7 +215,7 @@ Get-CimInstance -ClassName Win32_ComputerSystem -Property UserName
 
 ## <a name="getting-local-time-from-a-computer"></a>コンピューターのローカル時刻を取得する
 
-特定のコンピューターにおける現在のローカル時刻を取得するには、**Win32_LocalTime** WMI クラスを使用します。
+特定のコンピューターにおける現在のローカル時刻を取得するには、 **Win32_LocalTime** WMI クラスを使用します。
 
 ```powershell
 Get-CimInstance -ClassName Win32_LocalTime
@@ -236,7 +237,7 @@ PSComputerName :
 
 ## <a name="displaying-service-status"></a>サービスの状態を表示する
 
-特定のコンピューターを対象にすべてのサービスの状態を表示するには、ローカルで `Get-Service` コマンドレットを使用します。 リモート システムの場合は、**Win32_Service** WMI クラスを使用します。 `Select-Object` を併用して結果をフィルター処理し、**Status**、**Name**、**DisplayName** だけを抽出した場合は、`Get-Service` を実行した場合とほぼ同じ出力形式になります。
+特定のコンピューターを対象にすべてのサービスの状態を表示するには、ローカルで `Get-Service` コマンドレットを使用します。 リモート システムの場合は、 **Win32_Service** WMI クラスを使用します。 `Select-Object` を併用して結果をフィルター処理し、 **Status** 、 **Name** 、 **DisplayName** だけを抽出した場合は、`Get-Service` を実行した場合とほぼ同じ出力形式になります。
 
 ```powershell
 Get-CimInstance -ClassName Win32_Service | Select-Object -Property Status,Name,DisplayName

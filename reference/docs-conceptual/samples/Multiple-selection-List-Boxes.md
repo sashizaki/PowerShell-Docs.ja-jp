@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: 複数選択のリスト ボックス
-ms.openlocfilehash: 7bf71fb76a11f88c4ad4790bf3a2b383d0babb81
-ms.sourcegitcommit: 3e343f005fe76960c998ef1869a1a093d37ef349
+description: この記事では、Windows PowerShell で .NET Framework フォーム作成機能を使用して、複数選択のリスト ボックス コントロールを作成する方法を示します。
+ms.openlocfilehash: e11d1f545f748e0503b92c02bc7a101d8014bd96
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85216075"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500285"
 ---
 # <a name="multiple-selection-list-boxes"></a>複数選択のリスト ボックス
 
@@ -81,11 +82,11 @@ $form = New-Object System.Windows.Forms.Form
 
 フォーム クラスのインスタンスを作成したら、このクラスの次の 3 つのプロパティに値を割り当てます。
 
-- **Text**。 ウィンドウのタイトルになります。
+- **Text** 。 ウィンドウのタイトルになります。
 
-- **Size**。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
+- **Size** 。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
 
-- **StartingPosition**。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。 このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
+- **StartingPosition** 。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。 このプロパティを追加しない場合は、Windows によりフォームが開かれる場所が選択されます。 **StartingPosition** を **CenterScreen** に設定すると、フォームは読み込まれるたびに画面中央に自動的に表示されます。
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -127,7 +128,7 @@ $label.Text = 'Please make a selection from the list below:'
 $form.Controls.Add($label)
 ```
 
-ラベルのテキストに記述した情報をユーザーに提供するコントロール (この場合はリスト ボックス) を追加します。 テキスト ボックスに加えて、他に多数の適用可能なコントロールがあります。その他のコントロールについては、MSDN の「[System.Windows.Forms 名前空間](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx)」をご覧ください。
+ラベルのテキストに記述されている情報をユーザーが提供できるコントロール (この場合はリスト ボックス) を追加します。 テキスト ボックスに加えて、他に多数の適用可能なコントロールがあります。その他のコントロールについては、MSDN の「[System.Windows.Forms 名前空間](https://msdn.microsoft.com/library/k50ex0x9(v=vs.110).aspx)」をご覧ください。
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.Listbox
@@ -135,7 +136,7 @@ $listBox.Location = New-Object System.Drawing.Point(10,40)
 $listBox.Size = New-Object System.Drawing.Size(260,20)
 ```
 
-ユーザーが一覧から複数の値を選択できるようにするよう指定する方法を次に示します。
+ユーザーが一覧から複数の値を選択できるよう指定する方法を次に示します。
 
 ```powershell
 $listBox.SelectionMode = 'MultiExtended'
@@ -157,7 +158,7 @@ $listBox.SelectionMode = 'MultiExtended'
 $listBox.Height = 70
 ```
 
-リスト ボックス コントロールをフォームに追加してから、フォームを開くときに他のウィンドウとダイアログ ボックスの最上部に開くよう、Windows に指示します。
+リスト ボックス コントロールをフォームに追加してから、フォームを開くときに他のウィンドウやダイアログ ボックスより前面に開くよう、Windows に指示します。
 
 ```powershell
 $form.Controls.Add($listBox)
@@ -170,7 +171,7 @@ $form.Topmost = $true
 $result = $form.ShowDialog()
 ```
 
-最後に、**If** ブロック内のコードは、ユーザーがリスト ボックスから 1 つ以上のオプションを選んだ後のフォームの操作を Windows に指示します。その後、 **[OK]** ボタンをクリックするか、**Enter** キーを押します。
+最後に、 **If** ブロック内のコードは、ユーザーがリスト ボックスから 1 つ以上のオプションを選んだ後のフォームの操作を Windows に指示します。その後、 **[OK]** ボタンをクリックするか、 **Enter** キーを押します。
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)

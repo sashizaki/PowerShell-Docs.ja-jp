@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,コマンドレット
 title: プリンターの操作
-ms.openlocfilehash: 1d6b9a57ec61f06af694757dc8017d50b4dd40fe
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、WMI オブジェクトと COM インターフェイスを使用して Windows でプリンターを管理する方法を示します。
+ms.openlocfilehash: 2606753783043eeae8e9d461e56f0901149cb8e3
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "78935211"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501084"
 ---
 # <a name="working-with-printers-in-windows"></a>Windows でのプリンターの操作
 
@@ -31,7 +32,7 @@ Get-CimInstance -Class Win32_Printer
 
 ## <a name="adding-a-network-printer"></a>ネットワーク プリンターの追加
 
-新しいネットワーク プリンターを追加するには、**WScript.Network** を使用します。
+新しいネットワーク プリンターを追加するには、 **WScript.Network** を使用します。
 
 ```powershell
 (New-Object -ComObject WScript.Network).AddWindowsPrinterConnection("\\Printserver01\Xerox5")
@@ -39,7 +40,7 @@ Get-CimInstance -Class Win32_Printer
 
 ## <a name="setting-a-default-printer"></a>通常使うプリンターの設定
 
-通常使うプリンターを WMI を使用して設定するには、**Win32_Printer** コレクションでプリンターを検索し、**SetDefaultPrinter** メソッドを呼び出します。
+通常使うプリンターを WMI を使用して設定するには、 **Win32_Printer** コレクションでプリンターを検索し、 **SetDefaultPrinter** メソッドを呼び出します。
 
 ```powershell
 $printer = Get-CimInstance -Class Win32_Printer -Filter "Name='HP LaserJet 5Si'"
@@ -54,7 +55,7 @@ Invoke-CimMethod -InputObject $printer -MethodName SetDefaultPrinter
 
 ## <a name="removing-a-printer-connection"></a>プリンター接続の削除
 
-プリンター接続を削除するには、**WScript.Network RemovePrinterConnection** メソッドを使用します。
+プリンター接続を削除するには、 **WScript.Network RemovePrinterConnection** メソッドを使用します。
 
 ```powershell
 (New-Object -ComObject WScript.Network).RemovePrinterConnection("\\Printserver01\Xerox5")

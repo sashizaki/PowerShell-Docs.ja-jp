@@ -2,12 +2,13 @@
 ms.date: 02/03/2020
 keywords: powershell、core
 title: PowerShell Core 6.0 の重要な変更
-ms.openlocfilehash: 9ead635232930598634141369fd2cc299f0b1799
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+description: この記事では、Windows PowerShell 5.1 と PowerShell 6.0 の違いについてまとめます。
+ms.openlocfilehash: 7ed6e811b9136cb1c35422a9d682ba2bfaa136a0
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158192"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501696"
 ---
 # <a name="breaking-changes-for-powershell-6x"></a>PowerShell 6.x の破壊的変更
 
@@ -27,7 +28,7 @@ ms.locfileid: "86158192"
 
 ### <a name="powershell-workflow"></a>PowerShell ワークフロー
 
-[PowerShell ワークフロー][workflow]は、[Windows Workflow Foundation (WF)][workflow-foundation] をベースに構築された Windows PowerShell の機能です。これを使うと、実行時間の長いタスクや並列化されたタスクのための堅牢な Runbook を作成できます。
+[PowerShell ワークフロー][workflow]は、実行時間の長い、または並列化されたタスクための堅牢な Runbook の作成を可能にする [Windows Workflow Foundation (WF)][workflow-foundation] の上に構築される Windows PowerShell の機能です。
 
 .NET Core では Windows Workflow Foundation がサポートされていないため、PowerShell Core では PowerShell ワークフローはサポートされていません。
 
@@ -162,7 +163,7 @@ Windows Presentation Framework は、CoreCLR ではサポートされていま�
 
 ## <a name="enginelanguage-changes"></a>エンジンおよび言語の変更
 
-### <a name="rename-powershellexe-to-pwshexe-5101"></a>`powershell.exe` から `pwsh.exe` への名前変更 [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
+### <a name="rename-powershellexe-to-pwshexe-5101"></a>`powershell.exe` から  への名前変更 `pwsh.exe` [#5101](https://github.com/PowerShell/PowerShell/issues/5101)
 
 ユーザーが (Windows PowerShell ではなく) Windows 上で PowerShell Core を確実な方法で呼び出せるよう、PowerShell Core のバイナリが Windows では `pwsh.exe` に、Windows 以外のプラットフォームでは `pwsh` に変更されました。
 
@@ -184,7 +185,7 @@ Windows Presentation Framework は、CoreCLR ではサポートされていま�
 
 スコープの作成を高速化するために、大部分の既定エイリアスから `AllScope` が削除されました。 検索が高速化できる使用頻度の高いいくつかのエイリアスでは `AllScope` のままになっています。
 
-### <a name="-verbose-and--debug-no-longer-overrides-erroractionpreference-5113"></a>`-Verbose` および `-Debug` による `$ErrorActionPreference` のオーバーライドの終了 [#5113](https://github.com/PowerShell/PowerShell/issues/5113)
+### <a name="-verbose-and--debug-no-longer-overrides-erroractionpreference-5113"></a>`-Verbose` および `-Debug` による  のオーバーライドの終了 `$ErrorActionPreference` [#5113](https://github.com/PowerShell/PowerShell/issues/5113)
 
 以前は、`-Verbose` または `-Debug` が指定された場合、それにより `$ErrorActionPreference` の動作がオーバーライドされていました。 今回の変更により、`-Verbose` および `-Debug` が `$ErrorActionPreference` の動作に影響を与えることはなくなります。
 
@@ -214,7 +215,7 @@ CoreFX の RPC リモート処理 (特に Windows 以外のプラットフォー
 
 以前は、`ConvertFrom-Csv` を使用してインポートされた `TypeInformation` を含む `Export-CSV` を使用してオブジェクトをエクスポートすると、型情報が保持されませんでした。 今回の変更により、CSV ファイルから使用可能な場合は `PSTypeNames` メンバーに型情報が追加されます。
 
-### <a name="-notypeinformation-should-be-default-on-export-csv-5131"></a>`-NoTypeInformation` の既定値を `Export-Csv` に設定 [#5131](https://github.com/PowerShell/PowerShell/issues/5131)
+### <a name="-notypeinformation-should-be-default-on-export-csv-5131"></a>`-NoTypeInformation` の既定値を  に設定 `Export-Csv` [#5131](https://github.com/PowerShell/PowerShell/issues/5131)
 
 お客様からの声を反映して、`Export-CSV` の既定の動作として型情報を含めるよう変更されました。
 
@@ -230,7 +231,7 @@ HTTP を使用する場合、パスワードなどのコンテンツはクリア
 
 パフォーマンス向上のため、`Add-Type` から `AddTypeCommandBase` クラスが削除されました。 このクラスは、Add-Type コマンドレットでのみ使用されており、ユーザーに影響はありません。
 
-### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080"></a>コマンドレットと `-Encoding` パラメーターを `System.Text.Encoding` 型に統合 [#5080](https://github.com/PowerShell/PowerShell/issues/5080)
+### <a name="unify-cmdlets-with-parameter--encoding-to-be-of-type-systemtextencoding-5080"></a>コマンドレットと `-Encoding` パラメーターを  型に統合 `System.Text.Encoding` [#5080](https://github.com/PowerShell/PowerShell/issues/5080)
 
 `-Encoding` の値 `Byte`はファイルシステム プロバイダーのコマンドレットから削除されました。 新しいパラメーター `-AsByteStream` を使用して、入力としてバイト ストリームが必要なこと、あるいは出力がバイト ストリームであることを指定してください。
 
@@ -249,15 +250,15 @@ HTTP を使用する場合、パスワードなどのコンテンツはクリア
 [runspaceconfig]: /dotnet/api/system.management.automation.runspaces.runspaceconfiguration
 [iss]: /dotnet/api/system.management.automation.runspaces.initialsessionstate
 
-### <a name="commandinvocationintrinsicsinvokescript-bind-arguments-to-input-instead-of-args-4923"></a>`CommandInvocationIntrinsics.InvokeScript` が引数を `$input` ではなく `$args` にバインド [#4923](https://github.com/PowerShell/PowerShell/issues/4923)
+### <a name="commandinvocationintrinsicsinvokescript-bind-arguments-to-input-instead-of-args-4923"></a>`CommandInvocationIntrinsics.InvokeScript` が引数を  ではなく `$input` にバインド `$args` [#4923](https://github.com/PowerShell/PowerShell/issues/4923)
 
 引数内のパラメーターの位置が正しくないため、引数ではなく入力として渡されていました。
 
-### <a name="remove-unsupported--showwindow-switch-from-get-help-4903"></a>サポートされていなかった `-showwindow` スイッチを `Get-Help` から削除 [#4903](https://github.com/PowerShell/PowerShell/issues/4903)
+### <a name="remove-unsupported--showwindow-switch-from-get-help-4903"></a>サポートされていなかった `-showwindow` スイッチを  から削除 `Get-Help` [#4903](https://github.com/PowerShell/PowerShell/issues/4903)
 
 `-showwindow` では、CoreCLR でサポートされていない、WPF を使用します。
 
-### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866"></a>`Remove-Item` のレジストリ パスで * が使用可能に [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
+### <a name="allow--to-be-used-in-registry-path-for-remove-item-4866"></a> のレジストリ パスで * が使用可能に `Remove-Item` [#4866](https://github.com/PowerShell/PowerShell/issues/4866)
 
 以前は、ワイルドカードを渡された `-LiteralPath` は `-Path` と同様に処理され、ワイルドカードを使ってファイルが検出されない場合は、何も返さず終了していました。 正しい動作として、ファイルが存在しない場合はエラーを返すには、`-LiteralPath` はリテラルである必要があります。 `-Literal` にワイルドカードを使用した場合、リテラルとして処理するよう変更されました。
 
@@ -265,7 +266,7 @@ HTTP を使用する場合、パスワードなどのコンテンツはクリア
 
 以前は、`New-Service -StartupType foo` を使用している場合、`foo` は無視され、既定のスタートアップ タイプを使用して、サービスが作成されていました。 今回の変更により、無効なスタートアップ タイプの場合は、エラーが明示的にスローされます。
 
-### <a name="rename-isosx-to-ismacos-4700"></a>`$IsOSX` の名前を `$IsMacOS` に変更 [#4700](https://github.com/PowerShell/PowerShell/issues/4700)
+### <a name="rename-isosx-to-ismacos-4700"></a>`$IsOSX` の名前を  に変更 `$IsMacOS` [#4700](https://github.com/PowerShell/PowerShell/issues/4700)
 
 PowerShell の名前付けが Microsoft の名前規則に準拠し、OSX ではなく Apple の macOS が使用する名前付け規則に準拠している必要があります。 ただし、読みやすさと整合性の目的で、引き続き Pascal の形式に従っています。
 
@@ -279,13 +280,13 @@ API がサポートされていないため、改善されたソリューショ�
 
 ### <a name="executing-powershell-script-with-bool-parameter-does-not-work-4036"></a>ブール値のパラメーターを使用する PowerShell スクリプトが正しく動作しない [#4036](https://github.com/PowerShell/PowerShell/issues/4036)
 
-以前は、**powershell.exe** (現在は **pwsh.exe**) で `-File` を使用して PowerShell スクリプトを実行する場合、`$true`/`$false` をパラメーター値として渡すことができませんでした。 解析された値としての `$true`/`$false` パラメーターのサポートが追加されました。 現在、ドキュメントに記載されている構文が機能しないため、スイッチの値もサポートされます。
+以前は、 **powershell.exe** (現在は **pwsh.exe** ) で `-File` を使用して PowerShell スクリプトを実行する場合、`$true`/`$false` をパラメーター値として渡すことができませんでした。 解析された値としての `$true`/`$false` パラメーターのサポートが追加されました。 現在、ドキュメントに記載されている構文が機能しないため、スイッチの値もサポートされます。
 
-### <a name="remove-clrversion-property-from-psversiontable-4027"></a>`ClrVersion` から `$PSVersionTable` プロパティを削除 [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
+### <a name="remove-clrversion-property-from-psversiontable-4027"></a> から `ClrVersion` プロパティを削除 `$PSVersionTable` [#4027](https://github.com/PowerShell/PowerShell/issues/4027)
 
 `$PSVersionTable` の `ClrVersion` プロパティは CoreCLR では有用でないため、エンドユーザーは、互換性を判定するためにこの値を使用しないでください。
 
-### <a name="change-positional-parameter-for-powershellexe-from--command-to--file-4019"></a>`powershell.exe` の位置指定パラメーターを `-Command` から `-File` に変更 [#4019](https://github.com/PowerShell/PowerShell/issues/4019)
+### <a name="change-positional-parameter-for-powershellexe-from--command-to--file-4019"></a>`powershell.exe` の位置指定パラメーターを `-Command` から  に変更 `-File` [#4019](https://github.com/PowerShell/PowerShell/issues/4019)
 
 Windows 以外のプラットフォームでの PowerShell のシバン使用を有効化します。 Unix ベースのシステムでは、`pwsh` を明示的に呼び出すのではなく、自動的に PowerShell を起動するスクリプト実行可能ファイルを作成できます。 また、`-File` を指定せずに `powershell foo.ps1` または `powershell fooScript` のようなコマンドを実行できます。 ただし、今回の変更後、`powershell.exe Get-Command` などのコマンドを実行しようとする場合は `-c` または `-Command` を明示的に指定する必要があります。
 
@@ -344,7 +345,7 @@ CoreFX でサポートされていないハッシュ アルゴリズムがあり
 - `Get-WmiObject -Class`
 - `Get-WmiObject -Property`
 
-### <a name="add-support-w3c-extended-log-file-format-in-import-csv-2482"></a>`Import-Csv` に W3C 拡張ログ ファイル形式のサポートを追加 [#2482](https://github.com/PowerShell/PowerShell/issues/2482)
+### <a name="add-support-w3c-extended-log-file-format-in-import-csv-2482"></a> に W3C 拡張ログ ファイル形式のサポートを追加 `Import-Csv` [#2482](https://github.com/PowerShell/PowerShell/issues/2482)
 
 以前は、`Import-Csv` コマンドレットを使用して、W3C 拡張ログ形式でログ ファイルを直接インポートできず、追加の操作が必要でした。 今回の変更により、W3C 拡張ログ形式がサポートされます。
 
@@ -352,7 +353,7 @@ CoreFX でサポートされていないハッシュ アルゴリズムがあり
 
 `ValueFromRemainingArguments` は、それ自体が配列である単一の値ではなく、値を配列として返すよう変更されました。
 
-### <a name="buildversion-is-removed-from-psversiontable-1415"></a>`BuildVersion` を `$PSVersionTable` から削除 [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
+### <a name="buildversion-is-removed-from-psversiontable-1415"></a> を `BuildVersion` から削除 `$PSVersionTable` [#1415](https://github.com/PowerShell/PowerShell/issues/1415)
 
 `$PSVersionTable` から `BuildVersion` プロパティを削除してください。 このプロパティは、Windows のビルド バージョンと関連付けられていました。 代わりに、`GitCommitId` を使用して、PowerShell Core の正確なビルド バージョンを取得することをお勧めします。
 

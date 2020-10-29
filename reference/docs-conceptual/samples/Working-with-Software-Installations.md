@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,コマンドレット
 title: ソフトウェア インストールの操作
-ms.openlocfilehash: f3023d8819d6cdcc9f55befcfedb21e6ff9d282c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、WMI を使用して Windows にインストールされたソフトウェアを管理する方法を示します。
+ms.openlocfilehash: 3cf8e3c58e9f2814e2551b3602bd7b47b375aed8
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76996123"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500880"
 ---
 # <a name="working-with-software-installations"></a>ソフトウェア インストールの操作
 
@@ -103,7 +104,7 @@ IdentifyingNumber : {ACC73072-9AD5-416C-94BF-D82DDCEA0F1B}
 
 ほとんどの標準的なアプリケーションでは Windows にアンインストーラーが登録されるため、Windows レジストリでこれらを検索することで、ローカルで操作できます。 システム上のすべてのアプリケーションを検索する確実な方法はありません。 ただし、次のレジストリ キーで **[プログラムの追加と削除]** に表示されるリストを備えているプログラムをすべて検索することは可能です。
 
-`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall`
+`HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall`.
 
 このキーを調べて、アプリケーションを検索することができます。 Uninstall キーを簡単に表示できるように、このレジストリの場所に PowerShell ドライブをマップできます。
 
@@ -199,7 +200,7 @@ Windows インストーラーのテクノロジが使われないアプリケー
 
 ## <a name="removing-applications"></a>アプリケーションの削除
 
-PowerShell を使用した Windows インストーラー パッケージの削除は、パッケージのインストールとほとんど同じ方法で機能します。 名前に基づいてアンインストールするパッケージを選択する例を以下に示します。場合によっては、**IdentifyingNumber** を使用してフィルター処理した方が簡単になることがあります。
+PowerShell を使用した Windows インストーラー パッケージの削除は、パッケージのインストールとほとんど同じ方法で機能します。 名前に基づいてアンインストールするパッケージを選択する例を以下に示します。場合によっては、 **IdentifyingNumber** を使用してフィルター処理した方が簡単になることがあります。
 
 ```powershell
 Get-CimInstance -Class Win32_Product -Filter "Name='ILMerge'" | Invoke-CimMethod -MethodName Uninstall

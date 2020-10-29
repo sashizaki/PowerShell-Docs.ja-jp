@@ -4,12 +4,13 @@ ms.date: 06/02/2020
 ms.topic: guide
 ms.custom: Contributor-mikefrobbins
 ms.reviewer: mirobb
-ms.openlocfilehash: c48340b2fa6141d207c3f7948063f81971183780
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+description: これは、Mike F. Robbins の著書『PowerShell 101』の概要です。
+ms.openlocfilehash: d85590c2ef34c4e8b5cb7f2707bd9d6dd9b84b89
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438223"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501509"
 ---
 # <a name="introduction"></a>はじめに
 
@@ -38,7 +39,7 @@ ms.locfileid: "84438223"
 
 ## <a name="about-the-author"></a>著者について
 
-Mike F Robbins は元 Microsoft MVP で、『_Windows PowerShell TFM 4th Edition_』の共著者、そして『_PowerShell Deep Dives_』ブックの寄稿者でもあります。 Mike は PowerShell コミュニティの強力なサポーターとして活躍しており、現在は Microsoft の [Azure PowerShell][] の筆頭ライターです。 Mike のブログのアドレスは [mikefrobbins.com][]、Twitter のアカウントは [@mikefrobbins][] です。
+Mike F Robbins は元 Microsoft MVP で、『 _Windows PowerShell TFM 4th Edition_ 』の共著者、そして『 _PowerShell Deep Dives_ 』ブックの寄稿者でもあります。 Mike は PowerShell コミュニティの強力なサポーターとして活躍しており、現在は Microsoft の [Azure PowerShell][] の筆頭ライターです。 Mike のブログのアドレスは [mikefrobbins.com][]、Twitter のアカウントは [@mikefrobbins][] です。
 
 ## <a name="lab-environment"></a>ラボ環境
 

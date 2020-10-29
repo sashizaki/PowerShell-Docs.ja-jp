@@ -1,13 +1,13 @@
 ---
 title: SSH 経由の PowerShell リモート処理
-description: SSH を使用した PowerShell Core のリモート処理
-ms.date: 07/23/2020
-ms.openlocfilehash: cc65db481fcedcafec16093dbf7e6af4975c73db
-ms.sourcegitcommit: 9dddf1d2e91ebcd347fcfb7bf6ef670d49a12ab7
+ms.date: 10/19/2020
+description: PowerShell のリモート処理用に SSH プロトコルを設定する方法について説明します。
+ms.openlocfilehash: c3373ac30fd915d42e8c9fb7f1eae348a2aee7f1
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/24/2020
-ms.locfileid: "87133471"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501339"
 ---
 # <a name="powershell-remoting-over-ssh"></a>SSH 経由の PowerShell リモート処理
 
@@ -25,15 +25,15 @@ SSH リモート処理では、Windows コンピューターと Linux コンピ�
 [-HostName <string>]  [-UserName <string>]  [-KeyFilePath <string>]
 ```
 
-リモート セッションを作成するには、**HostName** パラメーターでターゲット コンピューターを指定し、**UserName** でユーザー名を指定します。 コマンドレットを対話的に実行する場合は、パスワードの入力を求められます。 また、**KeyFilePath** パラメーターでプライベート キー ファイルを使用して、SSH キー認証を使用することもできます。
+リモート セッションを作成するには、 **HostName** パラメーターでターゲット コンピューターを指定し、 **UserName** でユーザー名を指定します。 コマンドレットを対話的に実行する場合は、パスワードの入力を求められます。 また、 **KeyFilePath** パラメーターでプライベート キー ファイルを使用して、SSH キー認証を使用することもできます。 SSH 認証用のキーの作成は、プラットフォームによって異なります。
 
 ## <a name="general-setup-information"></a>一般的なセットアップ情報
 
-PowerShell 6 以降と SSH がすべてのコンピューターにインストールされている必要があります。 コンピューター間でリモート処理を行うには、SSH クライアント (`ssh.exe`) とサーバー (`sshd.exe`) の両方をインストールします。 OpenSSH for Windows が Windows 10 ビルド 1809 と Windows Server 2019 で利用できるようになりました。 詳細については、[OpenSSH で Windows を管理する](/windows-server/administration/openssh/openssh_overview)方法に関するページを参照してください。 Linux の場合、お使いのプラットフォームに適した SSH (sshd サーバーを含む) をインストールします。 また、SSH リモート処理の機能を取得するために、GitHub から PowerShell をインストールする必要があります。 SSH サーバーは、リモート コンピューター上で PowerShell プロセスをホストする SSH サブシステムを作成するように構成される必要があります。 また、**パスワード**や**キーベース**の認証を有効にする必要があります。
+PowerShell 6 以降と SSH がすべてのコンピューターにインストールされている必要があります。 コンピューター間でリモート処理を行うには、SSH クライアント (`ssh.exe`) とサーバー (`sshd.exe`) の両方をインストールします。 OpenSSH for Windows が Windows 10 ビルド 1809 と Windows Server 2019 で利用できるようになりました。 詳細については、[OpenSSH で Windows を管理する](/windows-server/administration/openssh/openssh_overview)方法に関するページを参照してください。 Linux の場合、お使いのプラットフォームに適した SSH (sshd サーバーを含む) をインストールします。 また、SSH リモート処理の機能を取得するために、GitHub から PowerShell をインストールする必要があります。 SSH サーバーは、リモート コンピューター上で PowerShell プロセスをホストする SSH サブシステムを作成するように構成される必要があります。 また、 **パスワード** や **キーベース** の認証を有効にする必要があります。
 
 ## <a name="set-up-on-a-windows-computer"></a>Windows コンピューターでの設定
 
-1. PowerShell の最新バージョンをインストールします。「[Windows への PowerShell Core のインストール](../../install/installing-powershell-core-on-windows.md#msi)」を参照してください。
+1. 最新バージョンの PowerShell をインストールします。 詳細については、[Windows への PowerShell Core のインストール](../../install/installing-powershell-core-on-windows.md#msi)に関するページを参照してください。
 
    `New-PSSession` パラメーター セットをリストアップすることで、PowerShell で SSH リモート処理がサポートされていることを確認できます。 **SSH** で始まるパラメーター セット名があることに気付くでしょう。 そのパラメーター セットに **SSH** パラメーターが含まれています。
 
@@ -119,6 +119,14 @@ PowerShell 6 以降と SSH がすべてのコンピューターにインスト�
    PasswordAuthentication yes
    ```
 
+   必要であれば、キー認証を有効にします。
+
+   ```
+   PubkeyAuthentication yes
+   ```
+
+   Ubuntu での SSH キーの作成の詳細については、[ssh-keygen](http://manpages.ubuntu.com/manpages/xenial/man1/ssh-keygen.1.html) のマニュアル ページを参照してください。
+
    PowerShell サブシステム エントリを追加します。
 
    ```
@@ -134,15 +142,15 @@ PowerShell 6 以降と SSH がすべてのコンピューターにインスト�
    PubkeyAuthentication yes
    ```
 
-1. **sshd** サービスを再起動します。
+1. **ssh** サービスを再起動します。
 
    ```bash
-   sudo service sshd restart
+   sudo service ssh restart
    ```
 
 ## <a name="set-up-on-a-macos-computer"></a>macOS コンピューターでの設定
 
-1. PowerShell の最新バージョンをインストールします。「[macOS への PowerShell Core のインストール](../../install/installing-powershell-core-on-macos.md)」を参照してください。
+1. 最新バージョンの PowerShell をインストールします。 詳細については、[macOS への PowerShell Core のインストール](../../install/installing-powershell-core-on-macos.md)に関するページを参照してください。
 
    次の手順で SSH リモート処理が有効になっていることを確認します
 

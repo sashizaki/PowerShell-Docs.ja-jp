@@ -2,12 +2,13 @@
 ms.date: 05/22/2020
 keywords: powershell,コマンドレット
 title: PowerShell とは
-ms.openlocfilehash: 267b2938a0892c99c3a961bc7107f573df40a683
-ms.sourcegitcommit: 38215ad49e237b219e62bb5a5f0eb3b6b048df1e
+description: この記事では、PowerShell のスクリプト環境とその機能の概要について説明します。
+ms.openlocfilehash: 91fc580af9a3adf43a24c40b4aaf3f1843882705
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/27/2020
-ms.locfileid: "83868481"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500778"
 ---
 # <a name="what-is-powershell"></a>PowerShell とは
 
@@ -44,7 +45,7 @@ PowerShell は、コマンドライン シェルとスクリプト言語で構�
 
 `cmd.exe` などのインターフェイスには、組み込みのコマンド セットを直接拡張する手段がありません。 `cmd.exe` 内で実行される外部のコマンドライン ツールを作成する必要があります。 しかし、これらの外部ツールには、ヘルプの統合などのサービスがありません。 `cmd.exe` は、これらの外部ツールが有効なコマンドであることを自動認識しません。
 
-PowerShell のコマンドは_コマンドレット_と呼ばれています。 各コマンドレットは個別に使用することもできますが、組み合わせて使い複雑なタスクを実行すると、その力を実感できます。 多くのシェルと同じように、PowerShell ではコンピューター上のファイル システムにアクセスできます。 PowerShell の_プロバイダー_を使うと、レジストリや証明書ストアなどのその他のデータ ストアに、ファイル システムとほぼ同様に簡単にアクセスできるようになります。
+PowerShell のコマンドは _コマンドレット_ と呼ばれています。 各コマンドレットは個別に使用することもできますが、組み合わせて使い複雑なタスクを実行すると、その力を実感できます。 多くのシェルと同じように、PowerShell ではコンピューター上のファイル システムにアクセスできます。 PowerShell の _プロバイダー_ を使うと、レジストリや証明書ストアなどのその他のデータ ストアに、ファイル システムとほぼ同様に簡単にアクセスできるようになります。
 
 コンパイル済みのコードまたはスクリプトを使用すると、あなた独自のコマンドレットや関数モジュールを作成できます。 モジュールは、シェルにコマンドレットとプロバイダーを追加できます。 また、PowerShell では、UNIX のシェル スクリプトや `cmd.exe` のバッチ ファイルに似たスクリプトもサポートしています。
 
@@ -149,7 +150,7 @@ PowerShell には、Unix の `man` ページと似た PowerShell の概念とコ
 
 ## <a name="next-steps"></a>次のステップ
 
-PowerShell の詳細については、このサイトの「**PowerShell の習得**」のセクションを参照してください。
+PowerShell の詳細については、このサイトの「 **PowerShell の習得** 」のセクションを参照してください。
 
 <!-- link references -->
 

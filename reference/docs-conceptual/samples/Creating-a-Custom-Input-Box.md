@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: ユーザー設定の入力ボックスを作成する
-ms.openlocfilehash: ff0588b44169bc276e2833254cec60eda759e2c8
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、Windows PowerShell で .NET Framework のフォーム作成機能を使用して、カスタム入力ボックスを作成する方法を示します。
+ms.openlocfilehash: 18fba743b169010936d2ea83dca4e95203664fe9
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706191"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500557"
 ---
 # <a name="creating-a-custom-input-box"></a>ユーザー設定の入力ボックスを作成する
 
@@ -73,12 +74,12 @@ $form = New-Object System.Windows.Forms.Form
 
 フォーム クラスのインスタンスを作成したら、このクラスの次の 3 つのプロパティに値を割り当てます。
 
-- **Text**。 ウィンドウのタイトルになります。
+- **Text** 。 ウィンドウのタイトルになります。
 
-- **Size**。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
+- **Size** 。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
 
-- **StartingPosition**。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。
-  このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
+- **StartingPosition** 。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。
+  このプロパティを追加しない場合は、Windows によりフォームが開かれる場所が選択されます。 **StartingPosition** を **CenterScreen** に設定すると、フォームは読み込まれるたびに画面中央に自動的に表示されます。
 
 ```powershell
 $form.Text = 'Data Entry Form'
@@ -120,7 +121,7 @@ $label.Text = 'Please enter the information in the space below:'
 $form.Controls.Add($label)
 ```
 
-ラベルのテキストに記述した情報をユーザーに提供できるようにするコントロール (この場合はテキスト ボックス) を追加します。 テキスト ボックスに加えて、他に多数の適用可能なコントロールがあります。その他のコントロールについては、MSDN の「[System.Windows.Forms 名前空間](/dotnet/api/system.windows.forms)」をご覧ください。
+ラベルのテキストに記述されている情報をユーザーが提供できるコントロール (この場合はテキスト ボックス) を追加します。 テキスト ボックスに加えて、他に多数の適用可能なコントロールがあります。その他のコントロールについては、MSDN の「[System.Windows.Forms 名前空間](/dotnet/api/system.windows.forms)」をご覧ください。
 
 ```powershell
 $textBox = New-Object System.Windows.Forms.TextBox
@@ -147,13 +148,13 @@ $form.Add_Shown({$textBox.Select()})
 $result = $form.ShowDialog()
 ```
 
-最後に、**If** ブロック内のコードは、ユーザーがテキスト ボックスにテキストを入力した後のフォームの操作を Windows に指示します。続いて **[OK]** ボタンをクリックするか、**Enter** キーを押します。
+最後に、 **If** ブロック内のコードは、ユーザーがテキスト ボックスにテキストを入力した後の Windows の動作を指示します。続いて **[OK]** ボタンをクリックするか、 **Enter** キーを押します。
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-    $x = $textBox.Text
-    $x
+    $x = $textBox.Text
+    $x
 }
 ```
 

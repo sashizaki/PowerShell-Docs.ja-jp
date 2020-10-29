@@ -2,17 +2,18 @@
 ms.date: 07/28/2020
 keywords: powershell,コマンドレット
 title: ファイル、フォルダー、レジストリ キーの操作
-ms.openlocfilehash: 7ead5d0e82feb852845468fb3a012a0908a4ce75
-ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
+description: この記事では、PowerShell を使用してレジストリ キー操作タスクを処理する方法について説明します。
+ms.openlocfilehash: 6f653c1fb409a238aa05658e89261a12e96f6fe1
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87410191"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499979"
 ---
 # <a name="working-with-files-folders-and-registry-keys"></a>ファイル、フォルダー、レジストリ キーの操作
 
 Windows PowerShell は、名詞の **Item** を使用して Windows PowerShell ドライブで検出された項目を参照します。
-Windows PowerShell FileSystem プロバイダーを処理する場合、**Item** は、ファイル、フォルダー、または Windows PowerShell ドライブである可能性があります。 これらの項目を一覧表示して操作することは、ほとんどの管理設定において重要で基本的なタスクであるため、これらのタスクについては詳細に説明します。
+Windows PowerShell FileSystem プロバイダーを処理する場合、 **Item** は、ファイル、フォルダー、または Windows PowerShell ドライブである可能性があります。 これらの項目を一覧表示して操作することは、ほとんどの管理設定において重要で基本的なタスクであるため、これらのタスクについては詳細に説明します。
 
 ## <a name="enumerating-files-folders-and-registry-keys-get-childitem"></a>ファイル、フォルダー、およびレジストリ キーの列挙 (Get-ChildItem)
 
@@ -32,7 +33,7 @@ Mode                LastWriteTime     Length Name
 ...
 ```
 
-一覧は、**Cmd.exe** で `dir` コマンドを入力したとき、または UNIX コマンド シェルで `ls` コマンドを入力したときに表示されるものと似ています。
+一覧は、 **Cmd.exe** で `dir` コマンドを入力したとき、または UNIX コマンド シェルで `ls` コマンドを入力したときに表示されるものと似ています。
 
 `Get-ChildItem` コマンドレットのパラメーターを使用して、複雑な一覧表示を実行できます。 次に、いくつかのシナリオで見ていきます。 `Get-ChildItem` コマンドレットの構文を確認するには、次のように入力します。
 
@@ -129,9 +130,9 @@ Get-ChildItem -Path C:\Windows\[xz]*
 
 `Get-ChildItem` の **Exclude** パラメーターを使用して、特定の項目を除外できます。 これにより、単一のステートメントで複雑なフィルター処理を実行できます。
 
-たとえば、**System32** フォルダーで Windows タイム サービスの DLL を検索しようとしていて、DLL の名前について覚えているのは、"W" で始まり "32" が含まれている、ということだけだとします。
+たとえば、 **System32** フォルダーで Windows タイム サービスの DLL を検索しようとしていて、DLL の名前について覚えているのは、"W" で始まり "32" が含まれている、ということだけだとします。
 
-`w*32*.dll` のような式によって、条件を満たすすべての DLL が検索されますが、さらにファイルをフィルターで除外し、win32 ファイルを省略したい場合もあります。 これらのファイルを省略するには、**Exclude** パラメーターにパターン `win*` を指定します。
+`w*32*.dll` のような式によって、条件を満たすすべての DLL が検索されますが、さらにファイルをフィルターで除外し、win32 ファイルを省略したい場合もあります。 これらのファイルを省略するには、 **Exclude** パラメーターにパターン `win*` を指定します。
 
 ```
 PS> Get-ChildItem -Path C:\WINDOWS\System32\w*32*.dll -Exclude win*
@@ -161,7 +162,7 @@ Windows フォルダーに文字 "z" で始まる DLL が 2 つ存在しても�
 
 返される結果がないのは、パスの一部にワイルドカードを指定したためです。 コマンドが再帰的でも、`Get-ChildItem` コマンドレットは、Windows フォルダー内にあり、名前が `.dll` で終わる項目に制限しています。
 
-名前が特殊なパターンに一致するファイルに対して再帰的な検索を指定するには、**Include** パラメーターを使用します。
+名前が特殊なパターンに一致するファイルに対して再帰的な検索を指定するには、 **Include** パラメーターを使用します。
 
 ```
 PS> Get-ChildItem -Path C:\Windows -Include *.dll -Recurse -Exclude [a-y]*.dll

@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,コマンドレット
 title: ネットワーク関連タスクの実行
-ms.openlocfilehash: e0aa3b8ef3d911ab0fe851f6621d70e1265c5bd4
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、PowerShell で WMI クラスを使用して、Windows のネットワーク構成の設定を管理する方法を示します。
+ms.openlocfilehash: 95b05c193f4168cdcdf8414399c4f8c569bff754
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75737204"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500251"
 ---
 # <a name="performing-networking-tasks"></a>ネットワーク関連タスクの実行
 
@@ -52,7 +53,7 @@ Name      MemberType Definition
 IPAddress Property   string[] IPAddress {get;}
 ```
 
-各ネットワーク アダプターの IPAddress プロパティは、実際には配列です。 Definition 列に示されている中かっこは、**IPAddress** が **System.String** 値ではなく、**System.String** 値の配列であることを示しています。
+各ネットワーク アダプターの IPAddress プロパティは、実際には配列です。 Definition 列に示されている中かっこは、 **IPAddress** が **System.String** 値ではなく、 **System.String** 値の配列であることを示しています。
 
 ## <a name="listing-ip-configuration-data"></a>IP 構成データの一覧表示
 
@@ -108,7 +109,7 @@ StatusCode が 0 の場合、ping が成功したことを示します。
 
 同じコマンド形式を使用して、サブネット上のすべてのコンピューターに ping を送信できます。たとえば、ネットワーク番号が 192.168.1.0 で、標準的なクラス C のサブネット マスク (255.255.255.0) を使用しているプライベート ネットワークを調べる場合、実際に調べる必要があるローカル アドレスは 192.168.1.1 ～ 192.168.1.254 の範囲のアドレスだけです (0 および 255 は、それぞれネットワーク番号およびサブネットのブロードキャスト アドレスとして常に予約されています)。
 
-PowerShell で 1 から 254 の数値の配列を表現するには、**1..254** というステートメントを使用します。
+PowerShell で 1 から 254 の数値の配列を表現するには、 **1..254** というステートメントを使用します。
 まず、この配列を生成した後、それぞれの値を、ping ステートメントのアドレスの一部として使用すると、サブネット全体に対して ping を送信できます。
 
 ```powershell
@@ -125,7 +126,7 @@ $ips = 1..254 | ForEach-Object -Process {'192.168.1.' + $_}
 
 ## <a name="retrieving-network-adapter-properties"></a>ネットワーク アダプターのプロパティの取得
 
-前に、**Win32_NetworkAdapterConfiguration** クラスを使用して一般的な構成プロパティを取得できることを説明しました。 厳密には TCP/IP 情報とは言えませんが、MAC アドレスやアダプター タイプなどのネットワーク アダプター情報は、コンピューターでどのようなことが起こっているかを把握する上で有益な手段です。 この情報の要約を取得するには、次のコマンドを使用します。
+前に、 **Win32_NetworkAdapterConfiguration** クラスを使用して一般的な構成プロパティを取得できることを説明しました。 厳密には TCP/IP 情報とは言えませんが、MAC アドレスやアダプター タイプなどのネットワーク アダプター情報は、コンピューターでどのようなことが起こっているかを把握する上で有益な手段です。 この情報の要約を取得するには、次のコマンドを使用します。
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapter -ComputerName .
@@ -133,7 +134,7 @@ Get-CimInstance -Class Win32_NetworkAdapter -ComputerName .
 
 ## <a name="assigning-the-dns-domain-for-a-network-adapter"></a>ネットワーク アダプターの DNS ドメインの割り当て
 
-自動名前解決のために DNS ドメインを割り当てるには、**Win32_NetworkAdapterConfiguration** の **SetDNSDomain** メソッドを使用します。 DNS ドメインは、各ネットワーク アダプター構成に対して別々に割り当てることになります。したがって、`ForEach-Object` ステートメントを使用して、各アダプターにドメインを割り当てる必要があります。
+自動名前解決のために DNS ドメインを割り当てるには、 **Win32_NetworkAdapterConfiguration** の **SetDNSDomain** メソッドを使用します。 DNS ドメインは、各ネットワーク アダプター構成に対して別々に割り当てることになります。したがって、`ForEach-Object` ステートメントを使用して、各アダプターにドメインを割り当てる必要があります。
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true |
@@ -186,7 +187,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter IPEnabled=$true
   ForEach-Object -Process {$_.EnableDHCP()}
 ```
 
-既に有効化されている DHCP は除外するために、**Filter** ステートメントとして `IPEnabled=$true and DHCPEnabled=$false` を使用できます。ただし、この手順を省略しても、エラーは発生しません。
+既に有効化されている DHCP は除外するために、 **Filter** ステートメントとして `IPEnabled=$true and DHCPEnabled=$false` を使用できます。ただし、この手順を省略しても、エラーは発生しません。
 
 ### <a name="releasing-and-renewing-dhcp-leases-on-specific-adapters"></a>特定のアダプターの DHCP リースの解放および更新
 
@@ -198,7 +199,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$tru
     ForEach-Object -Process {$_.ReleaseDHCPLease()}
 ```
 
-DHCP リースを更新する場合は、**ReleaseDHCPLease** メソッドの代わりに **RenewDHCPLease** メソッドを使用するだけです。
+DHCP リースを更新する場合は、 **ReleaseDHCPLease** メソッドの代わりに **RenewDHCPLease** メソッドを使用するだけです。
 
 ```powershell
 Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$true and DHCPEnabled=$true" |
@@ -214,7 +215,7 @@ Get-CimInstance -Class Win32_NetworkAdapterConfiguration -Filter "IPEnabled=$tru
 **Win32_NetworkAdapterConfiguration** の **ReleaseDHCPLeaseAll** メソッドと **RenewDHCPLeaseAll** メソッドを使用すれば、すべてのアダプターを対象に DHCP アドレスをグローバルに解放または更新できます。
 ただし、リースの解放と更新をグローバルに実行する場合、実行の対象は、特定のアダプターではなく、WMI クラスになります。したがって、コマンドは特定のアダプターに適用するのではなく、WMI クラスに適用する必要があります。
 
-すべての WMI クラスを一覧表示して、目的のクラスだけを名前で選べば、特定の WMI クラスの参照 (クラスのインスタンスではない) を取得できます。 たとえば、**Win32_NetworkAdapterConfiguration** クラスを取得するには、次のコマンドを実行します。
+すべての WMI クラスを一覧表示して、目的のクラスだけを名前で選べば、特定の WMI クラスの参照 (クラスのインスタンスではない) を取得できます。 たとえば、 **Win32_NetworkAdapterConfiguration** クラスを取得するには、次のコマンドを実行します。
 
 ```powershell
 Get-CimInstance -List | Where-Object {$_.Name -eq 'Win32_NetworkAdapterConfiguration'}
@@ -236,7 +237,7 @@ Get-CimInstance -List | Where-Object {$_.Name -eq 'Win32_NetworkAdapterConfigura
 
 ## <a name="creating-a-network-share"></a>ネットワーク共有の作成
 
-ネットワーク共有を作成するには、**Win32_Share** の **Create** メソッドを使用します。
+ネットワーク共有を作成するには、 **Win32_Share** の **Create** メソッドを使用します。
 
 ```powershell
 (Get-CimInstance -List |
@@ -253,7 +254,7 @@ net share tempshare=c:\temp /users:25 /remark:"test share of the temp folder"
 
 ## <a name="removing-a-network-share"></a>ネットワーク共有の削除
 
-ネットワーク共有を削除する場合も **Win32_Share** を使用できます。ただし、そのプロセスは共有を作成する場合と若干異なります。共有を作成する場合は、フィルターで **Win32_Share** クラスを取得していました。これに対し、共有を削除する場合は、削除対象となる特定の共有を取得する必要があります。 次のステートメントでは、**TempShare** という共有を削除します。
+ネットワーク共有を削除する場合も **Win32_Share** を使用できます。ただし、そのプロセスは共有を作成する場合と若干異なります。共有を作成する場合は、フィルターで **Win32_Share** クラスを取得していました。これに対し、共有を削除する場合は、削除対象となる特定の共有を取得する必要があります。 次のステートメントでは、 **TempShare** という共有を削除します。
 
 ```powershell
 (Get-CimInstance -Class Win32_Share -Filter "Name='TempShare'").Delete()
@@ -271,7 +272,7 @@ tempshare was deleted successfully.
 
 ## <a name="connecting-a-windows-accessible-network-drive"></a>Windows でアクセス可能なネットワーク ドライブの接続
 
-`New-PSDrive` コマンドレットを使用すると、PowerShell ドライブを作成できます。しかし、この方法で作成されたドライブは、PowerShell でしかアクセスできません。 新しいネットワーク ドライブを作成するには、**WScript.Network** という COM オブジェクトを使用します。 次のコマンドは、共有 `\\FPS01\users` をローカルの `B:` ドライブにマッピングします。
+`New-PSDrive` コマンドレットを使用すると、PowerShell ドライブを作成できます。しかし、この方法で作成されたドライブは、PowerShell でしかアクセスできません。 新しいネットワーク ドライブを作成するには、 **WScript.Network** という COM オブジェクトを使用します。 次のコマンドは、共有 `\\FPS01\users` をローカルの `B:` ドライブにマッピングします。
 
 ```powershell
 (New-Object -ComObject WScript.Network).MapNetworkDrive('B:', '\\FPS01\users')

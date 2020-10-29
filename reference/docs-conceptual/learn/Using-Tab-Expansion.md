@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: タブ拡張の使用
-ms.openlocfilehash: d96cbf848f464aff29a7bed9b70d0b6a000aa808
-ms.sourcegitcommit: 0d958eac5bde5ccf5ee2c1bac4f009a63bf71368
+description: PowerShell でタブ拡張機能を使用する方法について説明します。
+ms.openlocfilehash: d3408aac8cc9325666082577a7b00bc3362bfca3
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 06/05/2020
-ms.locfileid: "84438273"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500047"
 ---
 # <a name="using-tab-expansion"></a>タブ拡張の使用
 

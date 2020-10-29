@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,コマンドレット
 title: WMI オブジェクトの取得 Get CimInstance
-ms.openlocfilehash: 4ff47844fd367a49f554c7c05c491bdddf28eabc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、コンピューター システムから WMI オブジェクトのインスタンスを取得する方法の例をいくつか示します。
+ms.openlocfilehash: f7a005bbf39cf141e6474815d3e050314830453c
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77002652"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500455"
 ---
 # <a name="getting-wmi-objects-get-ciminstance"></a>WMI オブジェクトの取得 (Get-CimInstance)
 
@@ -43,7 +44,7 @@ Win32_ThreadStopTrace
 ...
 ```
 
-同じ情報をリモート コンピューターから取得するには、次のように、**ComputerName** パラメーターにコンピューター名や IP アドレスを指定します。
+同じ情報をリモート コンピューターから取得するには、次のように、 **ComputerName** パラメーターにコンピューター名や IP アドレスを指定します。
 
 ```powershell
 Get-CimClass -Namespace root/CIMV2 -ComputerName 192.168.1.29
@@ -57,7 +58,7 @@ Get-CimClass -Namespace root/CIMV2 -ComputerName 192.168.1.29
 
 ### <a name="displaying-wmi-class-details"></a>WMI クラスの詳細を表示する
 
-WMI クラスの名前がわかっている場合は、その名前を使って情報をすぐに取得できます。 たとえば、コンピューターに関する情報を取得するためによく使われる WMI クラスの 1 つに、**Win32_OperatingSystem** があります。
+WMI クラスの名前がわかっている場合は、その名前を使って情報をすぐに取得できます。 たとえば、コンピューターに関する情報を取得するためによく使われる WMI クラスの 1 つに、 **Win32_OperatingSystem** があります。
 
 ```powershell
 Get-CimInstance -Class Win32_OperatingSystem
@@ -104,7 +105,7 @@ DataExecutionPrevention_Available         Property   bool DataExecutionPreventio
 
 #### <a name="displaying-non-default-properties-with-format-cmdlets"></a>既定以外のプロパティを Format コマンドレットで表示する
 
-**Win32_OperatingSystem** クラスに含まれている情報のうち、既定では表示されない情報を表示するには、**Format** コマンドレットを使います。 たとえば、利用可能なメモリのデータを表示するには、次のように入力します。
+**Win32_OperatingSystem** クラスに含まれている情報のうち、既定では表示されない情報を表示するには、 **Format** コマンドレットを使います。 たとえば、利用可能なメモリのデータを表示するには、次のように入力します。
 
 ```powershell
 Get-CimInstance -Class Win32_OperatingSystem |

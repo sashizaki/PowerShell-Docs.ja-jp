@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: Process コマンドレットによるプロセスの管理
-ms.openlocfilehash: 8de0cbae508958bf7970ce69e03257ea0a8dca6f
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell には、ローカル コンピューター上およびリモート コンピューター上のプロセスを管理するのに役立つコマンドレットがいくつか用意されています。
+ms.openlocfilehash: 977a3459eeac22536341753ccd59357d718745f2
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870746"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500438"
 ---
 # <a name="managing-processes-with-process-cmdlets"></a>Process コマンドレットによるプロセスの管理
 
@@ -27,7 +28,7 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
       0       0        0         16     0               0 Idle
 ```
 
-場合によっては、コマンドレットからデータが返されないこともあります。しかし、**Get-Process** で ProcessId を使用してプロセスを指定した場合は、通常、実行中の既知のプロセスを取得することが目的であるため、一致するプロセスが見つからないときはエラーが発生します。 指定された ID と一致するプロセスが存在しない場合、その ID が間違っているか、プロセスが既に終了している可能性があります。
+場合によっては、コマンドレットからデータが返されないこともあります。しかし、 **Get-Process** で ProcessId を使用してプロセスを指定した場合は、通常、実行中の既知のプロセスを取得することが目的であるため、一致するプロセスが見つからないときはエラーが発生します。 指定された ID と一致するプロセスが存在しない場合、その ID が間違っているか、プロセスが既に終了している可能性があります。
 
 ```
 PS> Get-Process -Id 99
@@ -143,7 +144,7 @@ Performing operation "Stop-Process" on Target "taskmgr (4072)".
 Get-Process | Where-Object -FilterScript {$_.Responding -eq $false} | Stop-Process
 ```
 
-他の状況でも、これと同じアプローチを使用できます。 たとえば、あるアプリケーションを起動すると、補助的なアプリケーションが自動的に実行され、通知領域に表示されるとします。 このとき、ターミナル サービスのセッションで補助的なアプリケーションが正しく起動しないことがわかりました。しかし、物理的なコンピューター コンソールで実行されているセッションでは起動したままにしておく必要があります。 物理的なコンピューター デスクトップに関連付けられたセッションには、常にセッション ID として 0 が割り当てられます。したがって、**Where-Object** およびプロセスの **SessionId** を使用することで、その他のセッションに属するプロセスのすべてのインスタンスを停止できます。
+他の状況でも、これと同じアプローチを使用できます。 たとえば、あるアプリケーションを起動すると、補助的なアプリケーションが自動的に実行され、通知領域に表示されるとします。 このとき、ターミナル サービスのセッションで補助的なアプリケーションが正しく起動しないことがわかりました。しかし、物理的なコンピューター コンソールで実行されているセッションでは起動したままにしておく必要があります。 物理的なコンピューター デスクトップに関連付けられたセッションには、常にセッション ID として 0 が割り当てられます。したがって、 **Where-Object** およびプロセスの **SessionId** を使用することで、その他のセッションに属するプロセスのすべてのインスタンスを停止できます。
 
 ```powershell
 Get-Process -Name BadApp | Where-Object -FilterScript {$_.SessionId -neq 0} | Stop-Process
@@ -159,7 +160,7 @@ Invoke-Command -ComputerName Server01 {Stop-Process Powershell}
 
 現在のセッションを除いて、実行中のすべての Windows PowerShell セッションを停止できると便利な場合があります。 特定のセッションで大量のリソースが消費されていたり、セッションがアクセスできない状態になっている場合 (リモートから実行されていたり、別のデスクトップ セッションで使用されている場合など)、そのプロセスを直接停止できない場合があります。 しかし、実行中のすべてのセッションを停止しようとすると、現在のセッションまで停止されてしまう可能性があります。
 
-Windows PowerShell の各セッションには、Windows PowerShell プロセスの ID を保持する環境変数 PID が割り当てられます。 $PID と各セッションの ID を照合することによって、異なる ID を持つ Windows PowerShell セッションだけを強制終了できます。これは、次のパイプライン コマンドで実現できます。また、**PassThru** パラメーターを使用しているため、強制終了されたセッションが一覧表示されます。
+Windows PowerShell の各セッションには、Windows PowerShell プロセスの ID を保持する環境変数 PID が割り当てられます。 $PID と各セッションの ID を照合することによって、異なる ID を持つ Windows PowerShell セッションだけを強制終了できます。これは、次のパイプライン コマンドで実現できます。また、 **PassThru** パラメーターを使用しているため、強制終了されたセッションが一覧表示されます。
 
 ```
 PS> Get-Process -Name powershell | Where-Object -FilterScript {$_.Id -ne $PID} | Stop-Process -PassThru

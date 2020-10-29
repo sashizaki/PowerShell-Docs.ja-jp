@@ -2,16 +2,17 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: オブジェクトの構造を表示する (Get-member)
-ms.openlocfilehash: 80b36abd303a708195f12d96511e616178d11b5a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Get-Member は、PowerShell のオブジェクトの型と構造を表示できる強力なツールです。
+ms.openlocfilehash: 3c294fe47294e2cf8daf125aac55661dd38cf9bb
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030711"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501220"
 ---
 # <a name="viewing-object-structure-get-member"></a>オブジェクトの構造を表示する (Get-member)
 
-オブジェクトは、Windows PowerShell において非常に中心的な役割を担っているため、任意のオブジェクトの種類で動作するよう設計されたネイティブ コマンドがいくつかあります。 最も重要なコマンドは、**Get-Member** コマンドです。
+オブジェクトは、Windows PowerShell において非常に中心的な役割を担っているため、任意のオブジェクトの種類で動作するよう設計されたネイティブ コマンドがいくつかあります。 最も重要なコマンドは、 **Get-Member** コマンドです。
 
 コマンドで返されるオブジェクトを分析するための最も単純な手法は、パイプを使用してそのコマンドの出力を **Get-Member** コマンドレットに渡すことです。 **Get-Member** コマンドレットでは、オブジェクトの種類の正式な名前とそのメンバーの完全な一覧が表示されます。 返される要素の数が非常に多いことがあります。 たとえば、プロセス オブジェクトには 100 を超えるメンバーが含まれることがあります。
 
@@ -23,7 +24,7 @@ Get-Process | Get-Member | Out-Host -Paging
 
 このコマンドの出力は次のようになります。
 
-```output
+```Output
 TypeName: System.Diagnostics.Process
 
 Name                           MemberType     Definition

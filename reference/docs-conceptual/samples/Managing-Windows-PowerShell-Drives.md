@@ -2,18 +2,19 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: Windows PowerShell ドライブの管理
-ms.openlocfilehash: 5d1aba459caeaab2542e17e74534da6713b0faa9
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell ドライブは、PowerShell でファイル システム ドライブのようにアクセスできるデータ ストアの場所です。 PowerShell には既定で、ファイル システム、レジストリ、証明書ストアなどをサポートするプロバイダーが含まれます。
+ms.openlocfilehash: e4e5347c3f3458f25cea31c8e5a499474985220a
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "70215510"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500336"
 ---
 # <a name="managing-windows-powershell-drives"></a>Windows PowerShell ドライブの管理
 
-*Windows PowerShell ドライブ*は、Windows PowerShell のファイル システム ドライブのようにアクセスできるデータ格納場所です。 Windows PowerShell プロバイダーは、ファイル システムのドライブ (C: および D: を含む)、レジストリ ドライブ (HKCU: および HKLM:)、および証明書ドライブ (Cert:) など、いくつかのドライブを作成して、独自の Windows PowerShell ドライブを作成できます。 これらのドライブは非常に便利ですが、Windows PowerShell 内でのみ利用可能です。 ファイル エクスプローラーや Cmd.exe など、他の Windows ツールを使用してアクセスすることはできません。
+*Windows PowerShell ドライブ* は、Windows PowerShell のファイル システム ドライブのようにアクセスできるデータ格納場所です。 Windows PowerShell プロバイダーは、ファイル システムのドライブ (C: および D: を含む)、レジストリ ドライブ (HKCU: および HKLM:)、および証明書ドライブ (Cert:) など、いくつかのドライブを作成して、独自の Windows PowerShell ドライブを作成できます。 これらのドライブは非常に便利ですが、Windows PowerShell 内でのみ利用可能です。 ファイル エクスプローラーや Cmd.exe など、他の Windows ツールを使用してアクセスすることはできません。
 
-Windows PowerShell ドライブに対して使用できるコマンドには、**PSDrive** という名詞が使用されています。 Windows PowerShell セッションに存在する Windows PowerShell ドライブを一覧表示するには、**Get-PSDrive** コマンドレットを使用します。
+Windows PowerShell は、名詞 **PSDrive** を Windows PowerShell ドライブを操作するコマンドに使用します。 Windows PowerShell セッションの Windows PowerShell ドライブの一覧では、 **Get-PSDrive** コマンドレットを使用します。
 
 ```
 PS> Get-PSDrive
@@ -32,11 +33,11 @@ HKLM       Registry      HKEY_LOCAL_MACHINE
 Variable   Variable
 ```
 
-表示されるドライブはシステムのドライブに応じて異なりますが、一覧は上記の **Get-PSDrive** コマンドの出力のようになります。
+表示内のドライブは、システムのドライブに応じて異なりますが、一覧は上記の **Get-PSDrive** コマンドの出力のようになります。
 
 ファイル システムのドライブは、Windows PowerShell ドライブのサブセットです。 [プロバイダー] 列の FileSystem のエントリによって、ファイル システムのドライブを識別できます。 (Windows PowerShell のファイル システムのドライブは、Windows PowerShell FileSystem プロバイダーによってサポートされます。)
 
-**Get-PSDrive** コマンドレットの構文を表示するには、**Get-Command** コマンドに **Syntax** パラメーターを指定して入力します。
+**Get-PSDrive** コマンドレットの構文を表示するには、 **Get-Command** コマンドに **Syntax** パラメーターを指定して入力します。
 
 ```
 PS> Get-Command -Name Get-PSDrive -Syntax
@@ -46,7 +47,7 @@ erbose] [-Debug] [-ErrorAction <ActionPreference>] [-ErrorVariable <String>] [-
 OutVariable <String>] [-OutBuffer <Int32>]
 ```
 
-**PSProvider** パラメーターでは、特定のプロバイダーによってサポートされている Windows PowerShell ドライブのみを表示できます。 たとえば、Windows PowerShell FileSystem プロバイダーによってサポートされる Windows PowerShell ドライブのみを表示するには、**Get-PSDrive** コマンドに **PSProvider** パラメーターと **FileSystem** の値を指定して入力します。
+**PSProvider** パラメーターでは、特定のプロバイダーによってサポートされている Windows PowerShell ドライブのみを表示できます。 たとえば、Windows PowerShell FileSystem プロバイダーによってサポートされる Windows PowerShell ドライブのみを表示するには、 **Get-PSDrive** コマンドに **PSProvider** パラメーターと **FileSystem** の値を指定して入力します。
 
 ```
 PS> Get-PSDrive -PSProvider FileSystem
@@ -58,7 +59,7 @@ C          FileSystem    C:\                           ...nd Settings\PowerUser
 D          FileSystem    D:\
 ```
 
-レジストリ ハイブを表す Windows PowerShell ドライブを表示するには、**PSProvider** パラメーターを使用して、Windows PowerShell Registry プロバイダーによってサポートされる Windows PowerShell ドライブのみを表示します。
+レジストリ ハイブを表す Windows PowerShell ドライブを表示するには、 **PSProvider** パラメーターを使用して、Windows PowerShell Registry プロバイダーによってサポートされる Windows PowerShell ドライブのみを表示します。
 
 ```
 PS> Get-PSDrive -PSProvider Registry
@@ -83,7 +84,7 @@ HKLM:\SOFTWARE\Microsoft
 
 ## <a name="adding-new-windows-powershell-drives-new-psdrive"></a>新しい Windows PowerShell ドライブの追加 (New-PSDrive)
 
-**New-PSDrive** コマンドを使用して、独自の Windows PowerShell ドライブを追加できます。 **New-PSDrive** コマンドの構文を取得するには、**Get-Command** コマンドに **Syntax** パラメーターを指定して入力します。
+**New-PSDrive** コマンドを使用して、独自の Windows PowerShell ドライブを追加できます。 **New-PSDrive** コマンドの構文を取得するには、 **Get-Command** コマンドに **Syntax** パラメーターを指定して入力します。
 
 ```
 PS> Get-Command -Name New-PSDrive -Syntax
@@ -102,7 +103,7 @@ ring>] [-OutBuffer <Int32>] [-WhatIf] [-Confirm]
 
 - ルート、つまり、新しいドライブのルートのパス
 
-たとえば、**C:\\Program Files\\Microsoft Office\\OFFICE11** のように、コンピューターの Microsoft Office アプリケーションを含むフォルダーにマップされる、"Office" という名前のドライブを作成できます。 ドライブを作成するには、次のコマンドを入力します。
+たとえば、 **C:\\Program Files\\Microsoft Office\\OFFICE11** のように、コンピューターの Microsoft Office アプリケーションを含むフォルダーにマップされる、"Office" という名前のドライブを作成できます。 ドライブを作成するには、次のコマンドを入力します。
 
 ```
 PS> New-PSDrive -Name Office -PSProvider FileSystem -Root "C:\Program Files\Microsoft Office\OFFICE11"
@@ -127,7 +128,7 @@ Name       Provider      Root                                   CurrentLocation
 cvkey      Registry      HKLM\Software\Microsoft\Windows\...
 ```
 
-**cvkey:** ドライブに場所を移動するには、他のドライブと同様、次のように入力します。
+他のドライブと同様に、 **cvkey:** ドライブに場所を変更できます。
 
 ```
 PS> cd cvkey:
@@ -149,13 +150,13 @@ New-PsDrive コマンドレットが、現在の Windows PowerShell セッショ
 
 **Remove-PSDrive** コマンドレットを使用して、Windows PowerShell からドライブを削除できます。 **Remove-PSDrive** コマンドレットは簡単に使用できます。特定の Windows PowerShell ドライブを削除するには、Windows PowerShell ドライブの名前を指定するだけです。
 
-たとえば、**New-PSDrive** のトピックでは、**Office:** という Windows PowerShell ドライブを追加しました。このドライブを削除するには、次のように入力します。
+たとえば、 **Office:** Windows PowerShell ドライブを **New-PSDrive** のトピックに示すように追加した場合、次のように入力して削除できます。
 
 ```powershell
 Remove-PSDrive -Name Office
 ```
 
-**New-PSDrive** トピックで使用した **cvkey:** という Windows PowerShell ドライブを削除するには、次のコマンドを使用します。
+**cvkey:** Windows PowerShell ドライブを削除するには、 **New-PSDrive** のトピックに示すように、次のコマンドを使用します。
 
 ```powershell
 Remove-PSDrive -Name cvkey
@@ -173,4 +174,4 @@ At line:1 char:15
 
 ## <a name="adding-and-removing-drives-outside-windows-powershell"></a>Windows PowerShell の外部のドライブを追加および削除する
 
-Windows PowerShell は、マップされるネットワーク ドライブ、挿入される USB ドライブ、削除されるドライブ (Windows Script Host (WSH) スクリプトから **net use** コマンドまたは **WScript.NetworkMapNetworkDrive**、**RemoveNetworkDrive** メソッドを使用) など、Windows に追加または削除されるファイル システムのドライブを検出します。
+Windows PowerShell は、マップされるネットワーク ドライブ、挿入される USB ドライブ、削除されるドライブ (Windows Script Host (WSH) スクリプトから **net use** コマンドまたは **WScript.NetworkMapNetworkDrive** 、 **RemoveNetworkDrive** メソッドを使用) など、Windows に追加または削除されるファイル システムのドライブを検出します。

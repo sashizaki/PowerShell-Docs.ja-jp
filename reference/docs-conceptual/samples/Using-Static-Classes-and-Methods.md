@@ -2,16 +2,17 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: 静的なクラスとメソッドの使用
-ms.openlocfilehash: 437e7b430f37224de7c617e120e37c3efcd7787a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、.NET の静的クラスのプロパティとメソッドを識別して使用する方法について説明します。
+ms.openlocfilehash: 2e83fe442f7b3fdf62ceaab587450251ac4e7958
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030735"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501254"
 ---
 # <a name="using-static-classes-and-methods"></a>静的なクラスとメソッドの使用
 
-.NET Framework のクラスの中には、**New-Object** では作成できないものもあります。 たとえば、**New-Object** で **System.Environment** オブジェクトや **System.Math** オブジェクトを作成しようとすると、次のようなエラー メッセージが表示されます。
+.NET Framework のクラスの中には、 **New-Object** では作成できないものもあります。 たとえば、 **New-Object** で **System.Environment** オブジェクトや **System.Math** オブジェクトを作成しようとすると、次のようなエラー メッセージが表示されます。
 
 ```
 PS> New-Object System.Environment
@@ -27,7 +28,7 @@ At line:1 char:11
 + New-Object  <<<< System.Math
 ```
 
-エラーが発生する理由は、これらのクラスからは、新しいオブジェクトを作成することができないためです。 これらのクラスは、メソッドおよびプロパティが収められている参照用のライブラリであり、状態の変化を伴いません。 これらのメソッドやプロパティは、オブジェクトを作成しなくても使用できます。 これらのクラスやメソッドは、作成、破棄、変更されないため、*静的クラス*と呼ばれます。 この点をわかりやすく説明するために、実際に静的クラスを使用する例を紹介します。
+エラーが発生する理由は、これらのクラスからは、新しいオブジェクトを作成することができないためです。 これらのクラスは、メソッドおよびプロパティが収められている参照用のライブラリであり、状態の変化を伴いません。 これらのメソッドやプロパティは、オブジェクトを作成しなくても使用できます。 これらのクラスやメソッドは、作成、破棄、変更されないため、 *静的クラス* と呼ばれます。 この点をわかりやすく説明するために、実際に静的クラスを使用する例を紹介します。
 
 ## <a name="getting-environment-data-with-systemenvironment"></a>System.Environment による環境データの取得
 
@@ -35,7 +36,7 @@ At line:1 char:11
 
 ### <a name="referring-to-the-static-systemenvironment-class"></a>静的クラス System.Environment の参照
 
-静的クラスを参照するには、そのクラス名を角かっこで囲みます。 たとえば、**System.Environment** を参照するには、角かっこの内側に名前を入力します。 これにより、型に関する一般的な情報が表示されます。
+静的クラスを参照するには、そのクラス名を角かっこで囲みます。 たとえば、 **System.Environment** を参照するには、角かっこの内側に名前を入力します。 これにより、型に関する一般的な情報が表示されます。
 
 ```
 PS> [System.Environment]
@@ -46,11 +47,11 @@ True     False    Environment                              System.Object
 ```
 
 > [!NOTE]
-> 既に説明したように、**New-Object** を使用するとき、 型名の前には ’**System.** ’ が自動的に追加されます。 角かっこで囲まれた型名を使用する場合も同様です。つまり、 **\[System.Environment]** は、 **\[Environment]** と指定することもできます。
+> 既に説明したように、 **New-Object** を使用するとき、 型名の前には ’ **System.** ’ が自動的に追加されます。 角かっこで囲まれた型名を使用する場合も同様です。つまり、 **\[System.Environment]** は、 **\[Environment]** と指定することもできます。
 
 **System.Environment** クラスには、現在のプロセス (Windows PowerShell 内で作業している場合は powershell.exe) の作業環境に関する一般情報が格納されます。
 
-「**\[System.Environment] | Get-Member**」と入力してこのクラスの詳細を表示しようとすると、オブジェクトの種類は、**System.Environment** ではなく、**System.RuntimeType** であると報告されます。
+「 **\[System.Environment] | Get-Member** 」と入力してこのクラスの詳細を表示しようとすると、オブジェクトの種類は、 **System.Environment** ではなく、 **System.RuntimeType** であると報告されます。
 
 ```
 PS> [System.Environment] | Get-Member
@@ -58,7 +59,7 @@ PS> [System.Environment] | Get-Member
    TypeName: System.RuntimeType
 ```
 
-Get-Member で静的メンバーを表示するには、**Static** パラメーターを指定します。
+Get-Member で静的メンバーを表示するには、 **Static** パラメーターを指定します。
 
 ```
 PS> [System.Environment] | Get-Member -Static
@@ -93,7 +94,7 @@ TickCount                               ExitCode
 
 ### <a name="displaying-static-properties-of-systemenvironment"></a>System.Environment の静的プロパティの表示
 
-System.Environment の場合はプロパティも静的です。通常のプロパティとは異なる方法で指定する必要があります。 操作の対象が静的メソッドまたは静的プロパティであることを Windows PowerShell に伝えるには **::** を使用します。 Windows PowerShell の起動に使ったコマンドを表示するには、次のように入力して、**CommandLine** プロパティを確認します。
+System.Environment の場合はプロパティも静的です。通常のプロパティとは異なる方法で指定する必要があります。 操作の対象が静的メソッドまたは静的プロパティであることを Windows PowerShell に伝えるには **::** を使用します。 Windows PowerShell の起動に使ったコマンドを表示するには、次のように入力して、 **CommandLine** プロパティを確認します。
 
 ```
 PS> [System.Environment]::Commandline
@@ -110,7 +111,7 @@ PS> [System.Environment]::OSVersion
             Win32NT Service Pack 2      5.1.2600.131072     Microsoft Windows...
 ```
 
-コンピューターがシャットダウンの処理中であるかどうかを確認するには、**HasShutdownStarted** プロパティを表示します。
+コンピューターがシャットダウンの処理中であるかどうかを確認するには、 **HasShutdownStarted** プロパティを表示します。
 
 ```
 PS> [System.Environment]::HasShutdownStarted
@@ -119,7 +120,7 @@ False
 
 ## <a name="doing-math-with-systemmath"></a>System.Math による数学的演算の実行
 
-System.Math 静的クラスは、数学的演算を行うのに役立ちます。 **System.Math** の重要なメンバーのほとんどはメソッドであり、**Get-Member** を使って表示できます。
+System.Math 静的クラスは、数学的演算を行うのに役立ちます。 **System.Math** の重要なメンバーのほとんどはメソッドであり、 **Get-Member** を使って表示できます。
 
 > [!NOTE]
 > System.Math には同じ名前の複数のメソッドが存在しますが、これらはパラメーターの型が異なります。

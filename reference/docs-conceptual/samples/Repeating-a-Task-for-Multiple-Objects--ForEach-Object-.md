@@ -2,12 +2,13 @@
 ms.date: 12/23/2019
 keywords: powershell,コマンドレット
 title: 複数のオブジェクトのタスクを繰り返す (ForEach-Object)
-ms.openlocfilehash: bf89070fd9b006fa9b0b262ab63ffadd81072ecc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: ForEach-Object を使用すると、パイプラインを通して渡された各オブジェクトに対して、コマンドのセットを繰り返すことができます。
+ms.openlocfilehash: 7353be833dc8bf77dd18b7fc45bdd97e092ff6ef
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75736881"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92499959"
 ---
 # <a name="repeating-a-task-for-multiple-objects-foreach-object"></a>複数のオブジェクトのタスクを繰り返す (ForEach-Object)
 
@@ -36,7 +37,7 @@ Get-CimInstance -Class Win32_LogicalDisk |
 48318.01171875
 ```
 
-残念ながら、出力はラベルとは関連付けられていないデータになります。 この例のように、WMI プロパティは読み取り専用なので、**FreeSpace** を直接変換することはできません。 次のように入力するとします。
+残念ながら、出力はラベルとは関連付けられていないデータになります。 この例のように、WMI プロパティは読み取り専用なので、 **FreeSpace** を直接変換することはできません。 次のように入力するとします。
 
 ```powershell
 Get-CimInstance -Class Win32_LogicalDisk |

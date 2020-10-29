@@ -2,21 +2,23 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: オブジェクトの並べ替え
-ms.openlocfilehash: ed78e7e333f3468781c9cd96df2194fbdfebe753
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: Sort-Object コマンドレットを使用すると、オブジェクトのコレクションを 1 つまたは複数のプロパティで並べ替えることができます。
+ms.openlocfilehash: 836207adfc566003e9714e45920d9b4e24a677e9
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030774"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501016"
 ---
 # <a name="sorting-objects"></a>オブジェクトの並べ替え
 
-`Sort-Object` コマンドレットを使用すると、表示データを見やすく整理できます。 `Sort-Object` では、並べ替え条件としてプロパティ名 (複数可) を指定すると、そのプロパティ値で並べ替えられたデータが返されます。
+`Sort-Object` コマンドレットを使用すると、表示データを見やすく整理できます。
+`Sort-Object` では、並べ替え条件としてプロパティ名 (複数可) を指定すると、そのプロパティ値で並べ替えられたデータが返されます。
 
 ## <a name="basic-sorting"></a>基本的な並べ替え
 
 現在のディレクトリ内のサブディレクトリとファイルを一覧表示する問題について考えます。
-**LastWriteTime** で並べ替えた後、**Name** で並べ替えるには、次のように入力します。
+**LastWriteTime** で並べ替えた後、 **Name** で並べ替えるには、次のように入力します。
 
 ```powershell
 Get-ChildItem |
@@ -67,11 +69,11 @@ LastWriteTime          Name
 ## <a name="using-hash-tables"></a>ハッシュ テーブルを使用する
 
 配列でハッシュ テーブルを使用することにより、異なるプロパティを異なる順序で並べ替えることができます。
-各ハッシュ テーブルでは、**Expression** キーを使用してプロパティ名を文字列として指定し、**Ascending** または **Descending** キーを使用して `$true` または `$false` で並べ替え順序を指定します。
+各ハッシュ テーブルでは、 **Expression** キーを使用してプロパティ名を文字列として指定し、 **Ascending** または **Descending** キーを使用して `$true` または `$false` で並べ替え順序を指定します。
 **Expression** キーは必須です。
 **Ascending** キーまたは **Descending** キーは省略可能です。
 
-次の例では、オブジェクトを **LastWriteTime** については降順に、**Name** については昇順に並べ替えます。
+次の例では、オブジェクトを **LastWriteTime** については降順に、 **Name** については昇順に並べ替えます。
 
 ```powershell
 Get-ChildItem |
@@ -94,7 +96,7 @@ LastWriteTime          Name
 **Expression** キーに対してスクリプトブロックを設定することもできます。
 `Sort-Object` コマンドレットを実行すると、スクリプトブロックが実行されて、結果が並べ替えに使用されます。
 
-次の例では、**CreationTime** から **LastWriteTime** までの期間について、オブジェクトを降順に並べ替えます。
+次の例では、 **CreationTime** から **LastWriteTime** までの期間について、オブジェクトを降順に並べ替えます。
 
 ```powershell
 Get-ChildItem |
@@ -118,7 +120,7 @@ LastWriteTime          CreationTime
 
 ## <a name="tips"></a>ヒント
 
-次のように、**Property** パラメーター名は省略できます。
+次のように、 **Property** パラメーター名は省略できます。
 
 ```powershell
 Sort-Object LastWriteTime, Name
@@ -136,7 +138,7 @@ sort LastWriteTime, Name
 Sort-Object @{ e = 'LastWriteTime'; d = $true }, @{ e = 'Name'; a = $true }
 ```
 
-この例では、**e** は **Expression** を表し、**d** は **Descending** を表し、**a** は **Ascending** を表します。
+この例では、 **e** は **Expression** を表し、 **d** は **Descending** を表し、 **a** は **Ascending** を表します。
 
 読みやすさを向上させるため、ハッシュ テーブルを別の変数に配置できます。
 

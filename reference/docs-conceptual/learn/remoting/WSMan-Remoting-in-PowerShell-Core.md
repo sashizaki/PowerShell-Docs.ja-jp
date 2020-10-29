@@ -2,27 +2,22 @@
 title: PowerShell Core の WS-Management (WSMan) リモート処理
 description: WSMan を使用した PowerShell Core のリモート処理
 ms.date: 08/06/2018
-ms.openlocfilehash: e5f00128bc8ebc1b432cc77a5896a9e09d684109
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+ms.openlocfilehash: fdc4159279db28b8ee60bc0853e19512a1f9ec14
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "62058881"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501305"
 ---
 # <a name="ws-management-wsman-remoting-in-powershell-core"></a>PowerShell Core の WS-Management (WSMan) リモート処理
 
 ## <a name="instructions-to-create-a-remoting-endpoint"></a>リモート エンドポイントの作成手順
 
-Windows PowerShell Core パッケージには、WinRM プラグイン (`pwrshplugin.dll`) とインストール スクリプト (`Install-PowerShellRemoting.ps1`) が `$PSHome` に含まれています。
-これらのファイルにより、そのエンドポイントが指定されている場合、PowerShell が受信の PowerShell リモート接続を受け入れるようになります。
+Windows PowerShell Core パッケージには、WinRM プラグイン (`pwrshplugin.dll`) とインストール スクリプト (`Install-PowerShellRemoting.ps1`) が `$PSHome` に含まれています。 これらのファイルにより、そのエンドポイントが指定されている場合、PowerShell が受信の PowerShell リモート接続を受け入れるようになります。
 
 ### <a name="motivation"></a>目的
 
-PowerShell をインストールすると、`New-PSSession` と `Enter-PSSession` を使用したリモート コンピューターへの PowerShell セッションを確立できます。
-PowerShell でリモートからの受信接続を受け入れるようにするには、ユーザーが WinRM リモート エンドポイントを作成する必要があります。
-これは、ユーザーが Install-PowerShellRemoting.ps1 を実行し、WinRM エンドポイントを作成することを明示的に選択するシナリオです。
-このインストール スクリプトは、`Enable-PSRemoting` に同じアクションを実行する機能が追加されるまでの短期的なソリューションです。
-詳細については、問題 [#1193](https://github.com/PowerShell/PowerShell/issues/1193) を参照してください。
+PowerShell をインストールすると、`New-PSSession` と `Enter-PSSession` を使用したリモート コンピューターへの PowerShell セッションを確立できます。 PowerShell でリモートからの受信接続を受け入れるようにするには、ユーザーが WinRM リモート エンドポイントを作成する必要があります。 これは、ユーザーが Install-PowerShellRemoting.ps1 を実行し、WinRM エンドポイントを作成することを明示的に選択するシナリオです。 このインストール スクリプトは、`Enable-PSRemoting` に同じアクションを実行する機能が追加されるまでの短期的なソリューションです。 詳細については、問題 [#1193](https://github.com/PowerShell/PowerShell/issues/1193) を参照してください。
 
 ### <a name="script-actions"></a>[スクリプト操作]
 
@@ -56,7 +51,8 @@ Set-Location -Path 'C:\Program Files\PowerShell\6.0.0\'
 .\Install-PowerShellRemoting.ps1 -PowerShellHome "C:\Program Files\PowerShell\6.0.0\"
 ```
 
-**注:** リモート処理の登録スクリプトによって WinRM は再起動されるので、既存のすべての PSRP セッションはこのスクリプトの実行後、直ちに終了します。 リモート セッション中に実行される場合、これによって接続は終了します。
+> [!NOTE]
+> リモート処理登録スクリプトによって、WinRM が再起動されます。 既存のすべての PSRP セッションは、スクリプトが実行された直後に終了します。 リモート セッションの間も実行していると、スクリプトによって接続が終了されます。
 
 ## <a name="how-to-connect-to-the-new-endpoint"></a>新しいエンドポイントに接続する方法
 

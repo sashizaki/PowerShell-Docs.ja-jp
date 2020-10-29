@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: Out-* コマンドレットを使用してデータをリダイレクトする
-ms.openlocfilehash: d4cc14e26bdef0f973f948177d0c1e68929605fa
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、PowerShell で出力を管理するコマンドレットを使用する方法を示します。
+ms.openlocfilehash: 3a9e3b1ac06f5be4e6f3bbc52a15c4afb5b12cef
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "67030086"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500217"
 ---
 # <a name="redirecting-data-with-out--cmdlets"></a>Out-* コマンドレットを使用してデータをリダイレクトする
 
@@ -35,9 +36,9 @@ Handles  NPM(K)    PM(K)      WS(K) VM(M)   CPU(s)     Id ProcessName
 ...
 ```
 
-**Out-Host** コマンドレットは、データを直接にコンソールに送信します。したがって、**Format-List** コマンドは、書式を設定するものを何も受信しません。
+**Out-Host** コマンドレットは、データを直接にコンソールに送信します。したがって、 **Format-List** コマンドは、書式を設定するものを何も受信しません。
 
-このコマンドを構築する正しい方法は、次に示すように、**Out-Host** コマンドレットをパイプラインの最後に置くことです。 これによって、データがページングされて表示される前に、リスト形式に書式設定するよう処理されます。
+このコマンドを構築する正しい方法は、次に示すように、 **Out-Host** コマンドレットをパイプラインの最後に置くことです。 これによって、データがページングされて表示される前に、リスト形式に書式設定するよう処理されます。
 
 ```
 PS> Get-Process | Format-List | Out-Host -Paging
@@ -75,7 +76,7 @@ Name    : explorer
 Get-Command | Out-Host -Paging
 ```
 
-**more** 関数を使用して、データをページングすることも可能です。 Windows PowerShell では、**more** は、**Out-Host -Paging** を呼び出す関数です。 次のコマンドの使用例は、**more** 関数を使用して、Get-Command の出力をページングします。
+**more** 関数を使用して、データをページングすることも可能です。 Windows PowerShell では、 **more** は、 **Out-Host -Paging** を呼び出す関数です。 次のコマンドの使用例は、 **more** 関数を使用して、Get-Command の出力をページングします。
 
 ```powershell
 Get-Command | more
@@ -126,9 +127,9 @@ Get-Command Get-Command | Out-Printer -Name 'Microsoft Office Document Image Wri
 Get-Process | Out-File -FilePath C:\temp\processlist.txt
 ```
 
-従来の出力のリダイレクトを使用している場合、**Out-File** コマンドレットを使用した結果は、期待どおりではない可能性があります。 その動作を理解するために、**Out-File** コマンドレット操作の状況を把握しておく必要があります。
+従来の出力のリダイレクトを使用している場合、 **Out-File** コマンドレットを使用した結果は、期待どおりではない可能性があります。 その動作を理解するために、 **Out-File** コマンドレット操作の状況を把握しておく必要があります。
 
-既定では、**Out-File** コマンドレットは、Unicode ファイルを生成します。 長期的には、これが最適な既定です。しかし、ASCII ファイルを前提とするツールは、既定の出力形式では正しく動作しないことになります。 **Encoding** パラメーターを使用して、既定の出力フォーマットを ASCII 形式に変更することができます。
+既定では、 **Out-File** コマンドレットは、Unicode ファイルを生成します。 長期的には、これが最適な既定です。しかし、ASCII ファイルを前提とするツールは、既定の出力形式では正しく動作しないことになります。 **Encoding** パラメーターを使用して、既定の出力フォーマットを ASCII 形式に変更することができます。
 
 ```powershell
 Get-Process | Out-File -FilePath C:\temp\processlist.txt -Encoding ASCII
@@ -150,7 +151,7 @@ Cmdlet          Add-History                     Add-History [[-InputObject] ...
 ...
 ```
 
-行の折り返しを画面の幅に合わせないで出力するには、**Width** パラメーターを使用して行の幅を指定します。 **Width** が 32 ビットの整数パラメーターであるため、最大値は 2147483647 です。 行の幅に、この最大値を設定するには、次のように入力します。
+行の折り返しを画面の幅に合わせないで出力するには、 **Width** パラメーターを使用して行の幅を指定します。 **Width** が 32 ビットの整数パラメーターであるため、最大値は 2147483647 です。 行の幅に、この最大値を設定するには、次のように入力します。
 
 ```powershell
 Get-Command | Out-File -FilePath c:\temp\output.txt -Width 2147483647

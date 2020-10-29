@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: グラフィカルな日付の選択を作成する
-ms.openlocfilehash: b748e301b24ed643488079b547e2da1a5a7a6551
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、Windows PowerShell で .NET Framework のフォーム作成機能を使用して、カレンダー スタイルのカスタム コントロールを作成する方法を示します。
+ms.openlocfilehash: b73c9ba78817af7c38c20642402752765a7a3674
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706132"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500506"
 ---
 # <a name="creating-a-graphical-date-picker"></a>グラフィカルな日付の選択を作成する
 
@@ -60,7 +61,7 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 }
 ```
 
-最初に、スクリプトは次の 2 つの .NET Framework クラスを読み込みます。**System.Drawing** と **System.Windows.Forms** です。 次に、.NET Framework クラス **Windows.Forms.Form** の新しいインスタンスを開始します。これにより、コントロールの追加を開始する空白のフォームまたはウィンドウが作成されます。
+このスクリプトは 2 つの .NET Framework クラス、つまり **System.Drawing** と **System.Windows.Forms** を最初に読み込みます。 次に、.NET Framework クラス **Windows.Forms.Form** の新しいインスタンスを開始します。これにより、コントロールの追加を開始する空白のフォームまたはウィンドウが作成されます。
 
 ```powershell
 $form = New-Object Windows.Forms.Form -Property @{
@@ -71,16 +72,16 @@ $form = New-Object Windows.Forms.Form -Property @{
 }
 ```
 
-この例では、**Property** プロパティとハッシュ テーブルを使って、このクラスの 4 つのプロパティに値を割り当てます。
+この例では、 **Property** プロパティとハッシュ テーブルを使って、このクラスの 4 つのプロパティに値を割り当てます。
 
-1. **StartPosition**:このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 このプロパティを **CenterScreen** に設定すると、読み込まれるたびにフォームが画面中央に自動的に表示されます。
+1. **StartPosition** :このプロパティを追加しない場合は、Windows によりフォームが開かれる場所が選択されます。 このプロパティを **CenterScreen** に設定すると、フォームは読み込まれるたびに画面中央に自動的に表示されます。
 
-2. **Size**:フォームのサイズをピクセル単位で表します。
+2. **Size** :フォームのサイズをピクセル単位で表します。
    前述のスクリプトにより、幅 243 ピクセル、高さ 230 ピクセルのフォームが作成されます。
 
-3. **Text**:ウィンドウのタイトルになります。
+3. **Text** :ウィンドウのタイトルになります。
 
-4. **Topmost**:このプロパティを `$true` に設定すると、開いているその他のウィンドウとダイアログ ボックスの最上部にウィンドウが強制的に開きます。
+4. **Topmost** :このプロパティを `$true` に設定すると、開いているその他のウィンドウとダイアログ ボックスの最上部にウィンドウが強制的に開きます。
 
 次に、作成し、フォームに [カレンダー] コントロールを追加します。
 この例では、現在の日付は強調表示されておらず、丸で囲まれてもいません。
@@ -138,5 +139,5 @@ if ($result -eq [Windows.Forms.DialogResult]::OK) {
 
 ## <a name="see-also"></a>参照
 
-- [GitHub:Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week:グラフィカルな日付の選択を作成する](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730942(v=technet.10))
+- [GitHub: Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
+- [Windows PowerShell Tip of the Week: グラフィカルな日付の選択を作成する](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730942(v=technet.10))

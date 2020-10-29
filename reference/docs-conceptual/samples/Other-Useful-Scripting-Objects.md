@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: その他の役に立つスクリプティング オブジェクト
-ms.openlocfilehash: 4f236246714b0608658bbd535851489912430336
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、Windows PowerShell ISE で追加のスクリプト機能を提供するオブジェクトについて説明します。
+ms.openlocfilehash: c20daa0045bc07b1f21aafa42a80ce7c47ee7331
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71325157"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500268"
 ---
 # <a name="other-useful-scripting-objects"></a>その他の役に立つスクリプティング オブジェクト
 
@@ -39,7 +40,7 @@ $psUnsupportedConsoleApplications
 $psLocalHelp | Format-List
 ```
 
-```output
+```Output
 Key   : Add-Computer
 Value : WindowsPowerShellHelp.chm::/html/093f660c-b8d5-43cf-aa0c-54e5e54e76f9.htm
 
@@ -61,7 +62,7 @@ $psLocalHelp.Add("get-myNoun", "c:\MyFolder\MyHelpChm.chm::/html/0198854a-1298-5
 $psOnlineHelp | Format-List
 ```
 
-```output
+```Output
 Key   : Add-Computer
 Value : https://go.microsoft.com/fwlink/p/?LinkID=135194
 

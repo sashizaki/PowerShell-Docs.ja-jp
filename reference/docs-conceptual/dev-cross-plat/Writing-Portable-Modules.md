@@ -1,13 +1,14 @@
 ---
-ms.date: 01/10/2020
+ms.date: 10/21/2020
 keywords: powershell,コマンドレット
 title: 移植可能なモジュールの作成
-ms.openlocfilehash: a6b2f8b263e71b6c9dbd50900536cb5072597e71
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+description: この記事では、PowerShell によってサポートされるプラットフォーム間で動作するように、新しいモジュールを作成する方法、または既存のモジュールを更新する方法について説明します。
+ms.openlocfilehash: 6d5c36263c3c6d1219f963cea2e94ae92b07e863
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158124"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500795"
 ---
 # <a name="portable-modules"></a>移植可能なモジュール
 
@@ -17,10 +18,9 @@ Windows PowerShell が [.NET Framework][] 用であるのに対し、PowerShell 
 
 ### <a name="porting-a-pssnapin"></a>PSSnapIn の移植
 
-PowerShell [スナップイン](/powershell/scripting/developer/cmdlet/modules-and-snap-ins)は、PowerShell Core ではサポートされていません。 ただし、PSSnapIn を PowerShell モジュールに変換するのは簡単です。 通常、PSSnapIn の登録コードは、[PSSnapIn][] の派生クラスの単一のソース ファイルに含まれます。
-このソース ファイルは、必要ありませんので、ビルドから削除します。
+PowerShell [スナップイン](/powershell/scripting/developer/cmdlet/modules-and-snap-ins)は、PowerShell Core ではサポートされていません。 ただし、PSSnapIn を PowerShell モジュールに変換するのは簡単です。 通常、PSSnapIn の登録コードは、[PSSnapIn][] の派生クラスの単一のソース ファイルに含まれます。 このソース ファイルは、必要ありませんので、ビルドから削除します。
 
-[New-ModuleManifest][] を使って、PSSnapIn 登録コードに必要なものを置き換える新しいモジュール マニフェストを作成します。 **PSSnapIn** の値の一部 (**Description** など) は、モジュール マニフェスト内で再利用できます。
+[New-ModuleManifest][] を使って、PSSnapIn 登録コードに必要なものを置き換える新しいモジュール マニフェストを作成します。 **PSSnapIn** の値の一部 ( **Description** など) は、モジュール マニフェスト内で再利用できます。
 
 モジュール マニフェストの **RootModule** プロパティは、コマンドレットを実装するアセンブリ (dll) の名前に設定する必要があります。
 
@@ -32,7 +32,7 @@ Windows PowerShell 用に記述されたモジュールを PowerShell Core で�
 
 新しいモジュールを作成する場合に推奨されるのは、[.NET CLI][] の使用です。
 
-### <a name="installing-the-powershell-standard-module-template"></a>PowerShell 標準モジュール テンプレートのインストール
+### <a name="installing-the-powershell-standard-module-template"></a>PowerShell の標準モジュール テンプレートのインストール
 
 .NET CLI をインストールした後、簡単な PowerShell モジュールを生成するためのテンプレート ライブラリをインストールします。
 そのモジュールは、Windows PowerShell、PowerShell Core、Windows、Linux、および macOS と互換性を持つようになります。
@@ -65,11 +65,11 @@ Options:
   -lang, --language   Filters templates based on language and specifies the language of the template to create.
 
 
-Templates                                         Short Name         Language          Tags
-----------------------------------------------------------------------------------------------------------------------------
-Console Application                               console            [C#], F#, VB      Common/Console
-Class library                                     classlib           [C#], F#, VB      Common/Library
-PowerShell Standard Module                        psmodule           [C#]              Library/PowerShell/Module
+Templates                        Short Name         Language          Tags
+-----------------------------------------------------------------------------------------------
+Console Application              console            [C#], F#, VB      Common/Console
+Class library                    classlib           [C#], F#, VB      Common/Library
+PowerShell Standard Module       psmodule           [C#]              Library/PowerShell/Module
 ...
 ```
 
@@ -156,9 +156,15 @@ FavoriteNumber FavoritePet
              7 Cat
 ```
 
+### <a name="debugging-the-module"></a>モジュールのデバッグ
+
+モジュールをデバッグするための Visual Studio Code の設定のガイドについては、[Visual Studio Code を使用したコンパイル済みコマンドレットのデバッグ][]に関するページを参照してください。
+
+## <a name="supporting-technologies"></a>サポート テクノロジ
+
 次のセクションでは、このテンプレートで使用されているテクノロジの一部について詳しく説明します。
 
-## <a name="net-standard-library"></a>.NET 標準ライブラリ
+### <a name="net-standard-library"></a>.NET 標準ライブラリ
 
 [.NET Standard][] は、すべての .NET 実装で使用できる .NET API の正式な仕様です。 .NET Standard をターゲットとするマネージド コードは、.NET Standard のそのバージョンと互換性のある .NET Framework および .NET Core のバージョンで動作します。
 
@@ -170,7 +176,7 @@ FavoriteNumber FavoritePet
 
 ただし、互換性のある API を使用してさえいれば、.NET Standard をターゲットにしなくても、モジュールは Windows PowerShell と PowerShell Core の両方で動作します。 中間言語 (IL) は、2 つのランタイムの間で互換性があります。 .NET Framework 4.6.1 をターゲットにでき、これは .NET Standard 2.0 と互換性があります。 .NET Standard 2.0 の対象外の API を使用していなければ、モジュールは再コンパイルしなくても PowerShell Core 6 で動作します。
 
-## <a name="powershell-standard-library"></a>PowerShell Standard ライブラリ
+### <a name="powershell-standard-library"></a>PowerShell Standard ライブラリ
 
 [PowerShell Standard][] ライブラリは、その標準のバージョン以降のすべての PowerShell のバージョンで利用可能な PowerShell API の正式な仕様です。
 
@@ -179,9 +185,9 @@ FavoriteNumber FavoritePet
 PowerShell Standard ライブラリを使用してモジュールをコンパイルすることをお勧めします。 ライブラリにより、API が使用可能で、Windows PowerShell と PowerShell Core 6 の両方で実装されていることが保証されます。
 PowerShell Standard は、常に上位互換性があるように意図されています。 PowerShell Standard ライブラリ 5.1 を使用してビルドされたモジュールは、PowerShell の将来のバージョンと常に互換性があります。
 
-## <a name="module-manifest"></a>モジュール マニフェスト
+### <a name="module-manifest"></a>モジュール マニフェスト
 
-### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a>Windows PowerShell および PowerShell Core との互換性を示す
+#### <a name="indicating-compatibility-with-windows-powershell-and-powershell-core"></a>Windows PowerShell および PowerShell Core との互換性を示す
 
 モジュールが Windows PowerShell と PowerShell Core の両方で動作することを検証した後は、モジュール マニフェストで [CompatiblePSEditions][] プロパティを使用して、互換性を明示的に示す必要があります。 値 `Desktop` はモジュールに Windows PowerShell との互換性があることを意味し、値 `Core` はモジュールに PowerShell Core との互換性があることを意味します。 `Desktop` と `Core` の両方を含めると、モジュールに Windows PowerShell および PowerShell Core の両方との互換性があることを意味します。
 
@@ -249,7 +255,7 @@ PowerShell Standard は、常に上位互換性があるように意図されて
 }
 ```
 
-## <a name="dependency-on-native-libraries"></a>ネイティブ ライブラリに対する依存関係
+### <a name="dependency-on-native-libraries"></a>ネイティブ ライブラリに対する依存関係
 
 さまざまなオペレーティング システムまたはプロセッサ アーキテクチャでの使用を目的としたモジュールは、それ自体が何らかのネイティブ ライブラリに依存するマネージド ライブラリに依存する場合があります。
 
@@ -259,33 +265,33 @@ PowerShell 7 では、読み込まれるネイティブ バイナリは、[.NET 
 
 ```
 managed.dll folder
-                |
-                |--- 'win-x64' folder
-                |       |--- native.dll
-                |
-                |--- 'win-x86' folder
-                |       |--- native.dll
-                |
-                |--- 'win-arm' folder
-                |       |--- native.dll
-                |
-                |--- 'win-arm64' folder
-                |       |--- native.dll
-                |
-                |--- 'linux-x64' folder
-                |       |--- native.so
-                |
-                |--- 'linux-x86' folder
-                |       |--- native.so
-                |
-                |--- 'linux-arm' folder
-                |       |--- native.so
-                |
-                |--- 'linux-arm64' folder
-                |       |--- native.so
-                |
-                |--- 'osx-x64' folder
-                |       |--- native.dylib
+    |
+    |--- 'win-x64' folder
+    |       |--- native.dll
+    |
+    |--- 'win-x86' folder
+    |       |--- native.dll
+    |
+    |--- 'win-arm' folder
+    |       |--- native.dll
+    |
+    |--- 'win-arm64' folder
+    |       |--- native.dll
+    |
+    |--- 'linux-x64' folder
+    |       |--- native.so
+    |
+    |--- 'linux-x86' folder
+    |       |--- native.so
+    |
+    |--- 'linux-arm' folder
+    |       |--- native.so
+    |
+    |--- 'linux-arm64' folder
+    |       |--- native.so
+    |
+    |--- 'osx-x64' folder
+    |       |--- native.dylib
 ```
 
 <!-- reference links -->
@@ -295,6 +301,7 @@ managed.dll folder
 [New-ModuleManifest]: /powershell/module/microsoft.powershell.core/new-modulemanifest
 [ランタイム チェック]: /dotnet/api/system.runtime.interopservices.runtimeinformation.frameworkdescription#System_Runtime_InteropServices_RuntimeInformation_FrameworkDescription
 [.NET CLI]: /dotnet/core/tools/?tabs=netcore2x
+[Visual Studio Code を使用したコンパイル済みコマンドレットのデバッグ]: vscode/using-vscode-for-debugging-compiled-cmdlets.md
 [.NET Standard]: /dotnet/standard/net-standard
 [PowerShell Standard]: https://github.com/PowerShell/PowerShellStandard
 [PowerShell Standard 5.1]: https://www.nuget.org/packages/PowerShellStandard.Library/5.1.0

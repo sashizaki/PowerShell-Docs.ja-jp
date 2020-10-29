@@ -1,20 +1,19 @@
 ---
 title: PowerShell Core のサポート ライフサイクル
-description: PowerShell Core のサポートを管理するポリシー
+description: PowerShell のサポートを管理するポリシーの詳細を説明します
 ms.date: 03/09/2020
-ms.openlocfilehash: 717fd5c4845835f314eaf7c3617d5123318da2dc
-ms.sourcegitcommit: c4906f4c9fa4ef1a16dcd6dd00ff960d19446d71
+ms.openlocfilehash: 1681df188d03a1115b13518fb88c21ebf79701d4
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 09/01/2020
-ms.locfileid: "89236205"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501747"
 ---
 # <a name="powershell-support-lifecycle"></a>PowerShell のサポート ライフサイクル
 
 PowerShell は、Windows PowerShell とは別に出荷され、インストールされ、構成される別個のツール セットであり、コンポーネント セットです。 PowerShell は、Windows ライセンス契約には含まれていません。
 
-PowerShell は、[有料サポート][]、[Microsoft Enterprise Agreements][enterprise-agreement]、[マイクロソフト ソフトウェア アシュアランス][assurance]など、従来の Microsoft サポート契約でサポートされています。
-サポート リクエストで問題を報告して PowerShell の[サポート][]を受け、それに対して支払うこともできます。
+PowerShell は、[有料サポート][]、[Microsoft Enterprise Agreements][enterprise-agreement]、[マイクロソフト ソフトウェア アシュアランス][assurance]など、従来の Microsoft サポート契約でサポートされています。 サポート リクエストで問題を報告して PowerShell の[サポート][]を受け、それに対して支払うこともできます。
 
 ## <a name="community-support"></a>コミュニティ サポート
 

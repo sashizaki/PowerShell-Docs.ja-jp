@@ -2,12 +2,13 @@
 ms.date: 07/29/2020
 keywords: powershell,コマンドレット
 title: PowerShell ドキュメントの使用方法
-ms.openlocfilehash: 1cfeb9eea564e7618062e1b8ada4948bd9e22969
-ms.sourcegitcommit: 9f9eb95bc859e9e0fed48101327a602b2ced351d
+description: この記事では、検索のフィルター処理やバージョンの選択など、このサイトの機能を使用する方法について説明します。
+ms.openlocfilehash: 32f0c613e10329cc4830386b744e766eeeab0187
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87821531"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501118"
 ---
 # <a name="how-to-use-the-powershell-documentation"></a>PowerShell ドキュメントの使用方法
 

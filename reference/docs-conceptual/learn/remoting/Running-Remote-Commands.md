@@ -2,12 +2,13 @@
 ms.date: 08/21/2020
 keywords: powershell,コマンドレット
 title: リモート コマンドの実行
-ms.openlocfilehash: f12d08b03757b24d1de50402b301faff193f27be
-ms.sourcegitcommit: 9d95532afe81c235c8094eae28ab84b2f77f8c48
+description: PowerShell を使用してリモート システムでコマンドを実行する方法について説明します。
+ms.openlocfilehash: e9e07fec96cbd93d3bf06be2a1f98ec7aa7d8f19
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/07/2020
-ms.locfileid: "91814737"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501356"
 ---
 # <a name="running-remote-commands"></a>リモート コマンドの実行
 

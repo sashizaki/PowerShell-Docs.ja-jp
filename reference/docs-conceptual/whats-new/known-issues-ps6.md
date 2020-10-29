@@ -2,12 +2,13 @@
 ms.date: 02/03/2020
 keywords: powershell、core
 title: PowerShell 6.0 の既知の問題
-ms.openlocfilehash: e9550e3db53865cfc2713d1d80665cced6f0d47a
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: これは、PowerShell 6 での既知の問題または制限事項の概要です。
+ms.openlocfilehash: 528315eff660167513045542227dce335355a7b8
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "76996100"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501679"
 ---
 # <a name="known-issues-for-powershell-60"></a>PowerShell 6.0 の既知の問題
 
@@ -15,7 +16,7 @@ ms.locfileid: "76996100"
 
 Linux および macOS での PowerShell のアルファ版リリースは、ほとんど正常に機能しますが、重要な制限事項と使いやすさの問題がいくつかあります。 Linux および macOS での PowerShell のベータ版リリースは、アルファ版リリースよりもよく機能し安定していますが、まだ機能セットの一部が足りなかったり、バグを含んでいたりする可能性があります。 こうした問題は、単純にまだ修正されていないバグである場合があります。 それ以外の場合は (ls、cp などの既定のエイリアスと同様)、改善に関するコミュニティからのフィードバックをお待ちしております。
 
-注:Linux と macOS の PowerShell は、ベースになっている多くのサブシステムの類似性により、機能とバグの両面において成熟度が同じレベルである傾向があります。 以下の例外を除き、このセクションの問題は両方のオペレーティング システムに該当します。
+注: Linux と macOS の PowerShell は、ベースになっている多くのサブシステムの類似性により、機能とバグの両面において成熟度が同じレベルである傾向があります。 以下の例外を除き、このセクションの問題は両方のオペレーティング システムに該当します。
 
 ### <a name="case-sensitivity-in-powershell"></a>PowerShell での大文字と小文字の区別
 
@@ -102,12 +103,12 @@ PowerShell では、ほとんどのコマンドがメモリ内で実行される
 
 Linux/macOS での PowerShell で動作しないことが知られているコマンドを、次の表に一覧表示します。
 
-|コマンド|動作状態|Notes|
+|コマンド|動作状態|メモ|
 |--------|-----------------|-----|
 |`Get-Service`, `New-Service`, `Restart-Service`, `Resume-Service`, `Set-Service`, `Start-Service`, `Stop-Service`, `Suspend-Service`|使用できません。|これらのコマンドは認識されません。 将来のリリースで修正する必要があります。|
 |`Get-Acl`, `Get-AuthenticodeSignature`, `Get-CmsMessage`, `New-FileCatalog`, `Protect-CmsMessage`, `Set-Acl`, `Set-AuthenticodeSignature`, `Test-FileCatalog`, `Unprotect-CmsMessage`|使用できません。|これらのコマンドは認識されません。 将来のリリースで修正する必要があります。|
 |`Wait-Process`|使用できますが、正常に動作しません。 |たとえば、`Start-Process gvim -PassThru | Wait-Process` は動作しません。プロセスの待機に失敗します。|
-|`Connect-PSSession`、`Disable-PSRemoting`、`Disable-PSSessionConfiguration`、`Disconnect-PSSession`、`Enable-PSRemoting`、`Enable-PSSessionConfiguration`、`Get-PSSessionCapability`、`Get-PSSessionConfiguration`、`New-PSSessionConfigurationFile`、`Receive-PSSession`、`Register-PSSessionConfiguration`、`Set-PSSessionConfiguration`、`Test-PSSessionConfigurationFile`、`Unregister-PSSessionConfiguration`|使用できません。|これらのコマンドは認識されません。 将来のリリースで修正する必要があります。|
-|`Get-Event`、`New-Event`、`Register-EngineEvent`、`Remove-Event`、`Unregister-Event`|使用できますが、イベント ソースを使用できません。|PowerShell のイベント処理コマンドは存在はしますが、各コマンドで使用されるイベント ソース (System.Timers.Timer など) のほとんどが Linux では使用できません。そのため、アルファ版リリースではこれらのコマンドは役に立ちません。|
+|`Connect-PSSession`, `Disable-PSRemoting`, `Disable-PSSessionConfiguration`, `Disconnect-PSSession`, `Enable-PSRemoting`, `Enable-PSSessionConfiguration`, `Get-PSSessionCapability`, `Get-PSSessionConfiguration`, `New-PSSessionConfigurationFile`, `Receive-PSSession`, `Register-PSSessionConfiguration`, `Set-PSSessionConfiguration`, `Test-PSSessionConfigurationFile`, `Unregister-PSSessionConfiguration`|使用できません。|これらのコマンドは認識されません。 将来のリリースで修正する必要があります。|
+|`Get-Event`, `New-Event`, `Register-EngineEvent`, `Remove-Event`, `Unregister-Event`|使用できますが、イベント ソースを使用できません。|PowerShell のイベント処理コマンドは存在はしますが、各コマンドで使用されるイベント ソース (System.Timers.Timer など) のほとんどが Linux では使用できません。そのため、アルファ版リリースではこれらのコマンドは役に立ちません。|
 |`Set-ExecutionPolicy`|使用できますが、動作しません。|このプラットフォームでサポートされていないことを示すメッセージが返されます。 実行ポリシーとは、ユーザーに重点を置いた "安全ベルト" であり、ユーザーがコストの高いミスをすることを回避します。 これはセキュリティ境界ではありません。|
 |`New-PSSessionOption`, `New-PSTransportOption`|使用できますが、`New-PSSession` が機能しません。|`New-PSSession` が動作するようになったため、`New-PSSessionOption` と `New-PSTransportOption` の動作は現在確認されていません。|

@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: リスト ボックスから項目を選択する
-ms.openlocfilehash: 048bccd403e01e2290a8930a0faba30d4c7caa73
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、Windows PowerShell で .NET Framework のフォーム作成機能を使用して、リスト ボックス コントロールを作成する方法を示します。
+ms.openlocfilehash: cfd6110a9cfcc3cea891d68d8ce7be5b332a949a
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "77706174"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92501050"
 ---
 # <a name="selecting-items-from-a-list-box"></a>リスト ボックスから項目を選択する
 
@@ -83,12 +84,12 @@ Add-Type -AssemblyName System.Drawing
 
 フォーム クラスのインスタンスを作成したら、このクラスの次の 3 つのプロパティに値を割り当てます。
 
-- **Text**。 ウィンドウのタイトルになります。
+- **Text** 。 ウィンドウのタイトルになります。
 
-- **Size**。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
+- **Size** 。 フォームのサイズをピクセル単位で表します。 前述のスクリプトにより、幅 300 ピクセル、高さ 200 ピクセルのフォームが作成されます。
 
-- **StartingPosition**。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。
-  このプロパティを追加しない場合、Windows はフォームを開いたときの場所を選択します。 **StartingPosition** を **CenterScreen** に設定すると、フォームを読み込むたびに、フォームが画面中央に自動的に表示されます。
+- **StartingPosition** 。 前述のスクリプトでは、この省略可能なプロパティは **CenterScreen** に設定されています。
+  このプロパティを追加しない場合は、Windows によりフォームが開かれる場所が選択されます。 **StartingPosition** を **CenterScreen** に設定すると、フォームは読み込まれるたびに画面中央に自動的に表示されます。
 
 ```powershell
 $form.Text = 'Select a Computer'
@@ -130,7 +131,7 @@ $label.Text = 'Please select a computer:'
 $form.Controls.Add($label)
 ```
 
-ラベルのテキストに記述した情報をユーザーに提供するコントロール (この場合はリスト ボックス) を追加します。 リスト ボックスに加えて、他に多数の適用可能なコントロールがあります。その他のコントロールについては、MSDN の「[System.Windows.Forms 名前空間](/dotnet/api/system.windows.forms)」を参照してください。
+ラベルのテキストに記述されている情報をユーザーが提供できるコントロール (この場合はリスト ボックス) を追加します。 リスト ボックスに加えて、他に多数の適用可能なコントロールがあります。その他のコントロールについては、MSDN の「[System.Windows.Forms 名前空間](/dotnet/api/system.windows.forms)」を参照してください。
 
 ```powershell
 $listBox = New-Object System.Windows.Forms.ListBox
@@ -154,7 +155,7 @@ $listBox.Height = 80
 [void] $listBox.Items.Add('atl-dc-007')
 ```
 
-リスト ボックス コントロールをフォームに追加してから、フォームを開くときに他のウィンドウとダイアログ ボックスの最上部に開くよう、Windows に指示します。
+リスト ボックス コントロールをフォームに追加してから、フォームを開くときに他のウィンドウやダイアログ ボックスより前面に開くよう、Windows に指示します。
 
 ```powershell
 $form.Controls.Add($listBox)
@@ -167,17 +168,17 @@ $form.Topmost = $true
 $result = $form.ShowDialog()
 ```
 
-最後に、**If** ブロック内のコードは、ユーザーがリスト ボックスからオプションを選択した後のフォームの操作を Windows に指示します。その後、 **[OK]** ボタンをクリックするか、**Enter** キーを押します。
+最後に、 **If** ブロック内のコードは、ユーザーがリスト ボックスからオプションを選択した後のフォームの操作を Windows に指示します。その後、 **[OK]** ボタンをクリックするか、 **Enter** キーを押します。
 
 ```powershell
 if ($result -eq [System.Windows.Forms.DialogResult]::OK)
 {
-    $x = $listBox.SelectedItem
-    $x
+    $x = $listBox.SelectedItem
+    $x
 }
 ```
 
 ## <a name="see-also"></a>参照
 
 - [GitHub: Dave Wyatt の WinFormsExampleUpdates](https://github.com/dlwyatt/WinFormsExampleUpdates)
-- [Windows PowerShell Tip of the Week: リスト ボックスからアイテムを選択する](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10))
+- [今週の Windows PowerShell ヒント: リスト ボックスからアイテムを選択する](/previous-versions/windows/it-pro/windows-powershell-1.0/ff730949(v=technet.10))

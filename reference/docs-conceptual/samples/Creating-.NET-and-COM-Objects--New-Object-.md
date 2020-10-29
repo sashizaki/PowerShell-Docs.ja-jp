@@ -2,12 +2,13 @@
 ms.date: 06/05/2017
 keywords: powershell,コマンドレット
 title: .NET オブジェクトと COM オブジェクトを作成する (New-Object)
-ms.openlocfilehash: 6e98a159451bc7da4ba3b37eaeb813eb71590d2b
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: オブジェクト指向のスクリプト言語として、PowerShell により .NET と COM ベースの両方のオブジェクトがサポートされています。 この記事では、これらのオブジェクトを作成して操作する方法を示します。
+ms.openlocfilehash: e6189ba465749dd045add7015fc82223c31c7e32
+ms.sourcegitcommit: 9080316e3ca4f11d83067b41351531672b667b7a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71325165"
+ms.lasthandoff: 10/24/2020
+ms.locfileid: "92500574"
 ---
 # <a name="creating-net-and-com-objects-new-object"></a>.NET オブジェクトと COM オブジェクトを作成する (New-Object)
 
@@ -15,7 +16,7 @@ ms.locfileid: "71325165"
 
 ## <a name="using-new-object-for-event-log-access"></a>New-Object によるイベント ログへのアクセス
 
-.NET Framework のクラス ライブラリには、イベント ログの管理に使用する **System.Diagnostics.EventLog** というクラスが含まれています。 .NET Framework クラスの新しいインスタンスを作成するには、**New-Object** コマンドレットと **TypeName** パラメーターを使用します。 たとえば、次のコマンドを実行すると、イベント ログの参照が作成されます。
+.NET Framework のクラス ライブラリには、イベント ログの管理に使用する **System.Diagnostics.EventLog** というクラスが含まれています。 .NET Framework クラスの新しいインスタンスを作成するには、 **New-Object** コマンドレットと **TypeName** パラメーターを使用します。 たとえば、次のコマンドを実行すると、イベント ログの参照が作成されます。
 
 ```
 PS> New-Object -TypeName System.Diagnostics.EventLog
@@ -28,7 +29,7 @@ PS> New-Object -TypeName System.Diagnostics.EventLog
 
 ### <a name="using-constructors-with-new-object"></a>New-Object でのコンストラクターの使用
 
-特定のイベント ログを参照するには、ログの名前を指定する必要があります。 **New-Object** には、**ArgumentList** というパラメーターがあります。 このパラメーターの値として渡した引数は、オブジェクトの特殊な初期化メソッドで使用されます。 オブジェクトを構築 (construct) する目的で使用されることから、このメソッドは*コンストラクター*と呼ばれています。 たとえば、Application ログの参照を取得するには、"Application" という文字列を引数として指定します。
+特定のイベント ログを参照するには、ログの名前を指定する必要があります。 **New-Object** には、 **ArgumentList** というパラメーターがあります。 このパラメーターの値として渡した引数は、オブジェクトの特殊な初期化メソッドで使用されます。 オブジェクトを構築 (construct) する目的で使用されることから、このメソッドは *コンストラクター* と呼ばれています。 たとえば、Application ログの参照を取得するには、"Application" という文字列を引数として指定します。
 
 ```
 PS> New-Object -TypeName System.Diagnostics.EventLog -ArgumentList Application
@@ -63,7 +64,7 @@ PS> $AppLog
 
 ### <a name="accessing-a-remote-event-log-with-new-object"></a>New-Object によるリモートのイベント ログへのアクセス
 
-前のセクションで使用したコマンドは、アクセス先としてローカル コンピューターを想定していました。ローカル コンピューターのイベント ログを取得するのであれば、**Get-EventLog** コマンドレットを使って行うこともできます。 リモート コンピューターの Application ログにアクセスするには、引数として、ログの名前とコンピューター名 (または IP アドレス) の両方を指定する必要があります。
+前のセクションで使用したコマンドは、アクセス先としてローカル コンピューターを想定していました。ローカル コンピューターのイベント ログを取得するのであれば、 **Get-EventLog** コマンドレットを使って行うこともできます。 リモート コンピューターの Application ログにアクセスするには、引数として、ログの名前とコンピューター名 (または IP アドレス) の両方を指定する必要があります。
 
 ```
 PS> $RemoteAppLog = New-Object -TypeName System.Diagnostics.EventLog Application,192.168.1.81
@@ -101,7 +102,7 @@ WriteEntry                Method     System.Void WriteEntry(String message),...
 WriteEvent                Method     System.Void WriteEvent(EventInstance in...
 ```
 
-イベント ログをクリアするには、**Clear()** メソッドを使用します。 メソッドを呼び出すときは、引数が不要な場合でも、メソッド名の後に丸かっこを必ず入力する必要があります。 Windows PowerShell は、丸かっこの有無により、それがメソッド名なのか、同名のプロパティ名なのかを判断します。 **Clear** メソッドを呼び出すには、次のように入力します。
+イベント ログをクリアするには、 **Clear()** メソッドを使用します。 メソッドを呼び出すときは、引数が不要な場合でも、メソッド名の後に丸かっこを必ず入力する必要があります。 Windows PowerShell は、丸かっこの有無により、それがメソッド名なのか、同名のプロパティ名なのかを判断します。 **Clear** メソッドを呼び出すには、次のように入力します。
 
 ```
 PS> $RemoteAppLog.Clear()
@@ -118,11 +119,11 @@ PS> $RemoteAppLog
 ```
 
 ## <a name="creating-com-objects-with-new-object"></a>New-Object による COM オブジェクトの作成
-コンポーネント オブジェクト モデル (COM) のコンポーネントを操作するには、**New-Object** を使用します。 一口にコンポーネントと言っても、その種類は Windows Script Host (WSH) に含まれている各種ライブラリから、Internet Explorer のようなほとんどのシステムにインストールされている ActiveX アプリケーションまで多岐にわたります。
+コンポーネント オブジェクト モデル (COM) のコンポーネントを操作するには、 **New-Object** を使用します。 一口にコンポーネントと言っても、その種類は Windows Script Host (WSH) に含まれている各種ライブラリから、Internet Explorer のようなほとんどのシステムにインストールされている ActiveX アプリケーションまで多岐にわたります。
 
-**New-Object** では、.NET Framework ランタイム呼び出し可能ラッパーを使って COM オブジェクトを作成します。したがって、COM オブジェクトを呼び出す際には .NET Framework の場合と同じ制限が適用されます。 COM オブジェクトを作成するには、使用する COM クラスのプログラム識別子 (*ProgId*) を **ComObject** パラメーターで指定する必要があります。 COM の使用上の制限や、システム上で利用できる ProgId の調査方法については、このマニュアルの範囲を超えているので詳しく説明しません。しかし、WSH などの環境に存在する、一般によく知られているようなオブジェクトについては、Windows PowerShell 内で使用できます。
+**New-Object** では、.NET Framework ランタイム呼び出し可能ラッパーを使って COM オブジェクトを作成します。したがって、COM オブジェクトを呼び出す際には .NET Framework の場合と同じ制限が適用されます。 COM オブジェクトを作成するには、使用する COM クラスのプログラム識別子 ( *ProgId* ) を **ComObject** パラメーターで指定する必要があります。 COM の使用上の制限や、システム上で利用できる ProgId の調査方法については、このマニュアルの範囲を超えているので詳しく説明しません。しかし、WSH などの環境に存在する、一般によく知られているようなオブジェクトについては、Windows PowerShell 内で使用できます。
 
-WSH オブジェクトは、**WScript.Shell**、**WScript.Network**、**Scripting.Dictionary**、**Scripting.FileSystemObject** などを ProgId として指定すれば作成できます。 これらのオブジェクトを作成するコマンドの例を次に示します。
+WSH オブジェクトは、 **WScript.Shell** 、 **WScript.Network** 、 **Scripting.Dictionary** 、 **Scripting.FileSystemObject** などを ProgId として指定すれば作成できます。 これらのオブジェクトを作成するコマンドの例を次に示します。
 
 ```powershell
 New-Object -ComObject WScript.Shell
@@ -135,7 +136,7 @@ New-Object -ComObject Scripting.FileSystemObject
 
 ## <a name="creating-a-desktop-shortcut-with-wscriptshell"></a>WScript.Shell によるデスクトップ ショートカットの作成
 
-COM オブジェクトの使用が適しているタスクの 1 つに、ショートカットの作成があります。 Windows PowerShell のホーム フォルダーに対するショートカットをデスクトップ上に作成するとします。 まず必要なことは、**WScript.Shell** の参照を作成することです。ここでは、この参照を **$WshShell** という変数に格納することにします。
+COM オブジェクトの使用が適しているタスクの 1 つに、ショートカットの作成があります。 Windows PowerShell のホーム フォルダーに対するショートカットをデスクトップ上に作成するとします。 まず必要なことは、 **WScript.Shell** の参照を作成することです。ここでは、この参照を **$WshShell** という変数に格納することにします。
 
 ```powershell
 $WshShell = New-Object -ComObject WScript.Shell
@@ -155,7 +156,7 @@ CreateShortcut           Method                IDispatch CreateShortcut (str...
 ...
 ```
 
-**Get-Member** には、省略可能なパラメーター **InputObject** があります。**Get-Member** に対する入力をパイプで渡す代わりに、このパラメーターを使用することもできます。 **Get-Member -InputObject $WshShell** コマンドを使用しても表示される出力結果は同じです。 **InputObject** を使用した場合、その引数は単一の項目として扱われます。 つまり、1 つの変数に複数のオブジェクトが格納されている場合、**Get-Member** では、それらはオブジェクトの配列として扱われます。 次に例を示します。
+**Get-Member** には、省略可能なパラメーター **InputObject** があります。 **Get-Member** に対する入力をパイプで渡す代わりに、このパラメーターを使用することもできます。 **Get-Member -InputObject $WshShell** コマンドを使用しても表示される出力結果は同じです。 **InputObject** を使用した場合、その引数は単一の項目として扱われます。 つまり、1 つの変数に複数のオブジェクトが格納されている場合、 **Get-Member** では、それらはオブジェクトの配列として扱われます。 次に例を示します。
 
 ```
 PS> $a = 1,2,"three"
@@ -195,7 +196,7 @@ Save             Method       void Save ()
 TargetPath       Property     string TargetPath () {get} {set}
 ```
 
-**TargetPath** (Windows PowerShell のアプリケーション フォルダー) を指定した後、**Save** メソッドを呼び出してショートカット **$lnk** を保存する必要があります。 Windows PowerShell のアプリケーション フォルダーのパスは変数 **$PSHome** に保存されているため、次のように入力します。
+**TargetPath** (Windows PowerShell のアプリケーション フォルダー) を指定した後、 **Save** メソッドを呼び出してショートカット **$lnk** を保存する必要があります。 Windows PowerShell のアプリケーション フォルダーのパスは変数 **$PSHome** に保存されているため、次のように入力します。
 
 ```powershell
 $lnk.TargetPath = $PSHome
@@ -215,7 +216,7 @@ $ie = New-Object -ComObject InternetExplorer.Application
 このコマンドでは、Internet Explorer は起動しますが、表示はされません。 「Get-Process」と入力すると、iexplore という名前のプロセスが実行されていることがわかります。 実際、Windows PowerShell を終了しても、このプロセスは実行されたままです。 iexplore プロセスを終了するには、コンピューターを再起動するか、またはタスク マネージャーなどのツールを使用する必要があります。
 
 > [!NOTE]
-> 独立したプロセスとして起動する COM オブジェクトは、一般に *ActiveX 実行可能ファイル*と呼ばれ、起動時にユーザー インターフェイス ウィンドウを表示するものと、表示しないものが存在します。 Internet Explorer のように、ウィンドウは作成されても、表示状態にはしない COM オブジェクトの場合、フォーカスが Windows デスクトップに移されることが多く、ユーザーが操作できるようにするためには、ウィンドウを表示状態にする必要があります。
+> 独立したプロセスとして起動する COM オブジェクトは、一般に *ActiveX 実行可能ファイル* と呼ばれ、起動時にユーザー インターフェイス ウィンドウを表示するものと、表示しないものが存在します。 Internet Explorer のように、ウィンドウは作成されても、表示状態にはしない COM オブジェクトの場合、フォーカスが Windows デスクトップに移されることが多く、ユーザーが操作できるようにするためには、ウィンドウを表示状態にする必要があります。
 
 **$ie | Get-Member** と入力すると、Internet Explorer のプロパティおよびメソッドを表示できます。 Internet Explorer ウィンドウを表示するには、次のように、Visible プロパティを $true に設定します。
 
@@ -263,7 +264,7 @@ Remove-Variable ie
 
 ## <a name="getting-warnings-about-net-framework-wrapped-com-objects"></a>.NET Framework によってラップされた COM オブジェクトの警告の取得
 
-COM オブジェクトに、.NET Framework *ランタイム呼び出し可能ラッパー* (RCW) が関連付けられていて、これが **New-Object** で使用されることがあります。 RCW の動作は通常の COM オブジェクトの動作とは異なる場合があるため、**New-Object** には、RCW アクセスに関する警告を取得する **Strict** パラメーターが用意されています。 **Strict** パラメーターを指定し、RCW を使用する COM オブジェクトを作成した場合、次のような警告メッセージが表示されます。
+COM オブジェクトに、.NET Framework *ランタイム呼び出し可能ラッパー* (RCW) が関連付けられていて、これが **New-Object** で使用されることがあります。 RCW の動作は通常の COM オブジェクトの動作とは異なる場合があるため、 **New-Object** には、RCW アクセスに関する警告を取得する **Strict** パラメーターが用意されています。 **Strict** パラメーターを指定し、RCW を使用する COM オブジェクトを作成した場合、次のような警告メッセージが表示されます。
 
 ```
 PS> $xl = New-Object -ComObject Excel.Application -Strict
