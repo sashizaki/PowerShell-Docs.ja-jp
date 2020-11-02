@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: ResourceGet メソッド
-ms.openlocfilehash: aa7671989db6f4a98d879fd449d09503eddbeda3
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: ResourceGet メソッド
+ms.openlocfilehash: bff737f04e02740fa09fd82d7b27c75b11303dad
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463960"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92650763"
 ---
 # <a name="resourceget-method"></a>ResourceGet メソッド
 
@@ -17,10 +18,10 @@ DSC リソースの **Get** メソッドを直接呼び出します。
 
 ```mof
 uint32 ResourceGet(
-  [in]  string           ResourceType,
-  [in]  string           ModuleName,
-  [in]  uint8            resourceProperty[],
-  [out] OMI_BaseResource configurations
+  [in]  string           ResourceType,
+  [in]  string           ModuleName,
+  [in]  uint8            resourceProperty[],
+  [out] OMI_BaseResource configurations
 );
 ```
 
@@ -46,7 +47,7 @@ uint32 ResourceGet(
 
 **MOF:** DscCore.mof
 
-**名前空間**:Root\Microsoft\Windows\DesiredStateConfiguration
+**名前空間** :Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

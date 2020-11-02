@@ -1,13 +1,13 @@
 ---
 ms.date: 06/12/2017
-keywords: WMF, PowerShell, セットアップ
 title: WMF 5.0 の既知の問題
-ms.openlocfilehash: 1db656884736c742ef78354b7452879e319d4a0a
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5.0 の既知の問題
+ms.openlocfilehash: 3f8dcf0f7aab27ff9d3c3a17377959988844a430
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809088"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663368"
 ---
 # <a name="known-issues-in-wmf-50"></a>WMF 5.0 の既知の問題
 

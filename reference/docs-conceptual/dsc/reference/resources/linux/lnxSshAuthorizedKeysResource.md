@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: Linux 用 DSC の nxSshAuthorizedKeys リソース
-ms.openlocfilehash: 3a62bb7a3dbdebae4f0ca6084db1624c1b76ab1f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Linux 用 DSC の nxSshAuthorizedKeys リソース
+ms.openlocfilehash: 881e94aa583a745cdac7f01b6e445352ef4ca937
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464470"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662762"
 ---
 # <a name="dsc-for-linux-nxsshauthorizedkeys-resource"></a>Linux 用 DSC の nxSshAuthorizedKeys リソース
 

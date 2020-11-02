@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成 ID (v4/v5) を使用してプル サーバーに発行する
-ms.openlocfilehash: 99c5b89e7d556fa72eaa6a3ba1654936f96a0b9d
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、リソースをアップロードしてダウンロードできるようにする方法と、リソースを自動的にダウンロードするようにクライアントを構成する方法を示します。
+ms.openlocfilehash: 20e12e3cac6b6e4a86563576f4a915429b18aadb
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500758"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646835"
 ---
 # <a name="publish-to-a-pull-server-using-configuration-ids-v4v5"></a>構成 ID (v4/v5) を使用してプル サーバーに発行する
 
@@ -16,7 +17,7 @@ ms.locfileid: "80500758"
 - [DSC SMB プル サーバーを設定する](pullServerSmb.md)
 - [DSC HTTP プル サーバーを設定する](pullServer.md)
 
-各ターゲット ノードは、構成やリソースをダウンロードし、さらにその状態を報告するように構成できます。 この記事では、リソースをアップロードしてダウンロードできるようにする方法と、リソースを自動的にダウンロードするようにクライアントを構成する方法を示します。 ノードは、**プル**または**プッシュ** (v5) によって割り当てられた構成を受け取ると、その構成で要求されているすべてのリソースを、ローカル構成マネージャー (LCM) で指定された場所から自動的にダウンロードします。
+各ターゲット ノードは、構成やリソースをダウンロードし、さらにその状態を報告するように構成できます。 この記事では、リソースをアップロードしてダウンロードできるようにする方法と、リソースを自動的にダウンロードするようにクライアントを構成する方法を示します。 ノードは、 **プル** または **プッシュ** (v5) によって割り当てられた構成を受け取ると、その構成で要求されているすべてのリソースを、ローカル構成マネージャー (LCM) で指定された場所から自動的にダウンロードします。
 
 ## <a name="compile-configurations"></a>構成をコンパイルする
 
@@ -37,7 +38,7 @@ GenericConfig
 
 ## <a name="renaming-the-mof-file"></a>MOF ファイルの名前を変更する
 
-構成の `.mof` ファイルは、**ConfigurationName** または **ConfigurationID** によってプル サーバーに格納できます。 プル クライアントのセットアップ方法に応じて、以下のセクションを選択し、コンパイル済みの `.mof` ファイルの名前を適切に変更できます。
+構成の `.mof` ファイルは、 **ConfigurationName** または **ConfigurationID** によってプル サーバーに格納できます。 プル クライアントのセットアップ方法に応じて、以下のセクションを選択し、コンパイル済みの `.mof` ファイルの名前を適切に変更できます。
 
 ### <a name="configuration-ids-guid"></a>構成 ID (GUID)
 
@@ -61,7 +62,7 @@ Guid
 Rename-Item -Path .\localhost.mof -NewName '64856475-939e-41fb-aba5-4469f4006059.mof'
 ```
 
-環境で **Guid** を使用する詳細については、[Guid の計画](secureServer.md#guids)に関する項を参照してください。
+環境で **Guid** を使用する詳細については、 [Guid の計画](secureServer.md#guids)に関する項を参照してください。
 
 ### <a name="configuration-names"></a>構成名
 
@@ -76,7 +77,7 @@ Rename-Item -Path .\localhost.mof -NewName 'GenericConfig.mof'
 プル サーバーまたは SMB 共有に格納される各 `.mof` ファイルには、`.checksum` ファイルを関連付ける必要があります。
 このファイルにより、クライアントは、関連付けられている `.mof` ファイルが変更され、もう一度ダウンロードする必要が生じたときに把握することができます。
 
-**チェックサム**は [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) コマンドレットで作成できます。 また、`-Path` パラメーターを使用すると、ファイルのディレクトリに対して `New-DSCCheckSum` を実行することもできます。
+**チェックサム** は [New-DSCCheckSum](/powershell/module/psdesiredstateconfiguration/new-dscchecksum) コマンドレットで作成できます。 また、`-Path` パラメーターを使用すると、ファイルのディレクトリに対して `New-DSCCheckSum` を実行することもできます。
 チェックサムが既に存在する場合は、`-Force` パラメーターを使用して強制的に再作成できます。 次の例では、前のセクションの `.mof` ファイルが含まれているディレクトリを指定し、`-Force` パラメーターを使用しています。
 
 ```powershell
@@ -89,7 +90,7 @@ New-DscChecksum -Path '.\' -Force
 
 ### <a name="on-a-dsc-http-pull-server"></a>DSC HTTP プル サーバー上
 
-HTTP プル サーバーをセットアップするときは、「[DSC HTTP プル サーバーを設定する](pullServer.md)」で説明されているように、**ModulePath** キーと **ConfigurationPath** キーに対するディレクトリを指定します。 **ModulePath** キーでは、モジュールのパッケージ化された `.zip` ファイルを格納する必要がある場所を示します。 **ConfigurationPath** では、`.mof` ファイルと `.checksum` ファイルを格納する必要がある場所を示します。
+HTTP プル サーバーをセットアップするときは、「 [DSC HTTP プル サーバーを設定する](pullServer.md)」で説明されているように、 **ModulePath** キーと **ConfigurationPath** キーに対するディレクトリを指定します。 **ModulePath** キーでは、モジュールのパッケージ化された `.zip` ファイルを格納する必要がある場所を示します。 **ConfigurationPath** では、`.mof` ファイルと `.checksum` ファイルを格納する必要がある場所を示します。
 
 ```powershell
     xDscWebService PSDSCPullServer
@@ -104,8 +105,8 @@ HTTP プル サーバーをセットアップするときは、「[DSC HTTP プ�
 
 ### <a name="on-an-smb-share"></a>SMB 共有上
 
-SMB 共有を使うようプル クライアントを設定するときは、**ConfigurationRepositoryShare** を指定します。
-すべての `.mof` ファイルと `.checksum` ファイルを、**ConfigurationRepositoryShare** ブロックの **SourcePath** ディレクトリに格納する必要があります。
+SMB 共有を使うようプル クライアントを設定するときは、 **ConfigurationRepositoryShare** を指定します。
+すべての `.mof` ファイルと `.checksum` ファイルを、 **ConfigurationRepositoryShare** ブロックの **SourcePath** ディレクトリに格納する必要があります。
 
 ```powershell
 ConfigurationRepositoryShare SMBPullServer
@@ -114,7 +115,7 @@ ConfigurationRepositoryShare SMBPullServer
 }
 ```
 
-## <a name="next-steps"></a>次のステップ
+## <a name="next-steps"></a>次の手順
 
 次に、指定した構成をプルするようにプル クライアントを構成します。 詳しくは、次のいずれかのガイドをご覧ください。
 

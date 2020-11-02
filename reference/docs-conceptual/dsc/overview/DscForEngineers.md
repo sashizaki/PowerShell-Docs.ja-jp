@@ -2,12 +2,13 @@
 ms.date: 10/13/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: エンジニア向けの Desired State Configuration の概要
-ms.openlocfilehash: dbed274d5333c216970247b88d2a0956025e969d
-ms.sourcegitcommit: a5e945e0889d0635b7af767d80d6a13bc5526269
+description: このドキュメントは、開発および運用チームに対して PowerShell Desired State Configuration (DSC) の利点を説明するためのものです。
+ms.openlocfilehash: c98295d0e78f4dc89e5df429e3c1de9a0c024054
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/29/2020
-ms.locfileid: "82584510"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646929"
 ---
 # <a name="desired-state-configuration-overview-for-engineers"></a>エンジニア向けの Desired State Configuration の概要
 
@@ -67,7 +68,7 @@ else
 }
 ```
 
-ロジックやエラー処理が増えたため、スクリプトが複雑になっています。 このスクリプトがわかりにくくなった理由は、目的ではなく_実行方法_を記載したためです。
+ロジックやエラー処理が増えたため、スクリプトが複雑になっています。 このスクリプトがわかりにくくなった理由は、目的ではなく _実行方法_ を記載したためです。
 
 DSC ではやりたいことを記載し、基になるロジックを抽象化することができます。
 

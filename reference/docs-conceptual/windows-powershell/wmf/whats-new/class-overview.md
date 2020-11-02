@@ -1,12 +1,13 @@
 ---
 ms.date: 07/29/2020
 title: PowerShell 5.0 の新しい言語機能
-ms.openlocfilehash: dada39c4121a810c7ce87a642f232934152104e5
-ms.sourcegitcommit: 339e5fc8a4cc18b4ff6956fe5180343588e40e30
+description: PowerShell 5.0 では、他のオブジェクト指向プログラミング言語のように、形式的構文とセマンティクスを使って、クラスや他のユーザー定義型を定義する機能が追加されました。
+ms.openlocfilehash: 31ff54ba6f2800a0680c1a2db3832ca97246973d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/29/2020
-ms.locfileid: "87410174"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663308"
 ---
 # <a name="new-language-features-in-powershell-50"></a>PowerShell 5.0 の新しい言語機能
 
@@ -57,7 +58,7 @@ enum OtherEnum { Max = [SomeEnum]::Max + 1 }
 
 ### <a name="import-dscresource"></a>Import-DscResource
 
-`Import-DscResource` は真の動的キーワードです。 PowerShell では、**DscResource** 属性を含むクラスを探して、指定されたモジュールのルート モジュールを解析します。
+`Import-DscResource` は真の動的キーワードです。 PowerShell では、 **DscResource** 属性を含むクラスを探して、指定されたモジュールのルート モジュールを解析します。
 
 ### <a name="implementingassembly"></a>ImplementingAssembly
 

@@ -1,17 +1,17 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,コマンドレット
 title: ISEAddOnToolCollection オブジェクト
-ms.openlocfilehash: e07a47169381307b50ac190165307c926b4ad94e
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: ISEAddOnToolCollection オブジェクトは、 **ISEAddOnTool** オブジェクトのコレクションです。
+ms.openlocfilehash: ba08ffd82a7ff2fa469540a5ea542abee8d4dc82
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809718"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658312"
 ---
 # <a name="the-iseaddontoolcollection-object"></a>ISEAddOnToolCollection オブジェクト
 
-**ISEAddOnToolCollection** オブジェクトは、**ISEAddOnTool** オブジェクトのコレクションです。 例は、`$psISE.CurrentPowerShellTab.VerticalAddOnTools` オブジェクトです。
+**ISEAddOnToolCollection** オブジェクトは、 **ISEAddOnTool** オブジェクトのコレクションです。 例は、`$psISE.CurrentPowerShellTab.VerticalAddOnTools` オブジェクトです。
 
 ## <a name="methods"></a>メソッド
 

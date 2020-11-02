@@ -1,14 +1,14 @@
 ---
 ms.date: 06/12/2017
 ms.topic: conceptual
-keywords: WMF, PowerShell, セットアップ
 title: WMF 5.1 の既知の問題
-ms.openlocfilehash: 4f4c85e1f4984d9e91ea74ba65fdbf7188c5c7ab
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: WMF 5.1 の既知の問題
+ms.openlocfilehash: 7d27bc570108a0ae1470ae06f5bdf5fcd7849d16
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808708"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663330"
 ---
 # <a name="known-issues-in-wmf-51"></a>WMF 5.1 の既知の問題
 
@@ -20,7 +20,7 @@ WMF がインストールされている場合に、管理者としてショー�
 
 このリリースでは、Nano Server で Pester を利用するとき、2 つの問題に注意する必要があります。
 
-- Pester 自体にテストを実行すると、FULL CLR と CORE CLR の違いに起因し、エラーが発生します。 具体的には、**Validate** メソッドは **XmlDocument** 型で利用できません。 NUnit 出力ログのスキーマの検証を試行するテストが 6 つありますが、これでエラーが発生することが確認されています。
+- Pester 自体にテストを実行すると、FULL CLR と CORE CLR の違いに起因し、エラーが発生します。 具体的には、 **Validate** メソッドは **XmlDocument** 型で利用できません。 NUnit 出力ログのスキーマの検証を試行するテストが 6 つありますが、これでエラーが発生することが確認されています。
 - **WindowsFeature** DSC リソースが Nano Server にないため、コード カバレッジの 1 つでエラーが発生します。 しかしながら、以上のエラーは一般的に無害であり、無視しても問題ありません。
 
 ## <a name="operation-validation"></a>操作検証

@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: Linux 用 DSC の nxService リソース
-ms.openlocfilehash: 2aec8b943d386fad33dfc1cfdd916c5e18039eaa
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Linux 用 DSC の nxService リソース
+ms.openlocfilehash: 4eefe491c491c9245732def1cc85260f368ef9e1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463637"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648787"
 ---
 # <a name="dsc-for-linux-nxservice-resource"></a>Linux 用 DSC の nxService リソース
 
@@ -47,7 +48,7 @@ nxService <string> #ResourceName
 
 ## <a name="example"></a>例
 
-次の例では、**SystemD** サービス コントローラーを使用して登録された 'httpd' サービス (Apache HTTP Server の場合) の構成を示します。
+次の例では、 **SystemD** サービス コントローラーを使用して登録された 'httpd' サービス (Apache HTTP Server の場合) の構成を示します。
 
 ```powershell
 Import-DSCResource -Module nx

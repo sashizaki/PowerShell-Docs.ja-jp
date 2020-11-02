@@ -1,13 +1,13 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,コマンドレット
 title: Windows PowerShell ISE でスクリプトを記述および実行する方法
-ms.openlocfilehash: 2e3122a3b436ba878d2c5f9d72d4f9e024d4d031
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: この記事では、スクリプト ウィンドウでスクリプトを作成、編集、実行、保存する方法について説明します。
+ms.openlocfilehash: 8e85da1d4eecbb975f2dd799c91512e0081309d2
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808758"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663645"
 ---
 # <a name="how-to-write-and-run-scripts-in-the-windows-powershell-ise"></a>Windows PowerShell ISE でスクリプトを記述および実行する方法
 
@@ -69,9 +69,9 @@ Windows PowerShell ファイルは、スクリプト ウィンドウで開いた
 
 ### <a name="to-find-text-in-the-script-pane"></a>スクリプト ウィンドウでテキストを検索するには
 
-1. 任意の場所にあるテキストを検索するには、<kbd>Ctrl</kbd> + <kbd>F</kbd> キーを押すか、または **[編集]** メニューの **[スクリプト内を検索]** をクリックします。
-2. カーソルより後の場所にあるテキストを検索するには、<kbd>F3</kbd> キーを押すか、または **[編集]** メニューの **[スクリプト内で次を検索]** をクリックします。
-3. カーソルより前の場所にあるテキストを検索するには、<kbd>Shift</kbd> + <kbd>F3</kbd> キーを押すか、または **[編集]** メニューの **[スクリプト内で前を検索]** をクリックします。
+1. 任意の場所にあるテキストを検索するには、 <kbd>Ctrl</kbd> + <kbd>F</kbd> キーを押すか、または **[編集]** メニューの **[スクリプト内を検索]** をクリックします。
+2. カーソルより後の場所にあるテキストを検索するには、 <kbd>F3</kbd> キーを押すか、または **[編集]** メニューの **[スクリプト内で次を検索]** をクリックします。
+3. カーソルより前の場所にあるテキストを検索するには、 <kbd>Shift</kbd> + <kbd>F3</kbd> キーを押すか、または **[編集]** メニューの **[スクリプト内で前を検索]** をクリックします。
 
 ### <a name="to-find-and-replace-text-in-the-script-pane"></a>スクリプト ウィンドウでテキストを検索して置換するには
 
@@ -92,7 +92,7 @@ Windows PowerShell ファイルは、スクリプト ウィンドウで開いた
 ### <a name="to-cut-text-in-the-script-pane"></a>スクリプト ウィンドウでテキストを切り取るには
 
 1. スクリプト ウィンドウで、切り取るテキストを選択します。
-2. <kbd>Ctrl</kbd> + <kbd> </kbd>X**キーを押すか、ツール バーで**[切り取り]**アイコンをクリックするか、または**[編集]**メニューの**[切り取り] をクリックします。
+2. <kbd>Ctrl</kbd> + <kbd></kbd>X **キーを押すか、ツール バーで** [切り取り] **アイコンをクリックするか、または** [編集] **メニューの** [切り取り] をクリックします。
 
 ### <a name="to-paste-text-into-the-script-pane"></a>スクリプト ウィンドウにテキストを貼り付けるには
 
@@ -123,7 +123,7 @@ Windows PowerShell ファイルは、スクリプト ウィンドウで開いた
 
 ### <a name="to-save-a-script-in-ascii-encoding"></a>ASCII エンコードでスクリプトを保存するには
 
-既定では、Windows PowerShell ISE は新しいスクリプト ファイル (`.ps1`)、スクリプト データ ファイル (`.psd1`)、スクリプト モジュール ファイル (`.psm1`) を Unicode (BigEndianUnicode) として保存します。 ASCII (ANSI) など、別のエンコードでスクリプトを保存するには、[$psISE.CurrentFile](object-model/the-ise-object-model-hierarchy.md) オブジェクトの **Save** または **SaveAs** メソッドを使います。
+既定では、Windows PowerShell ISE は新しいスクリプト ファイル (`.ps1`)、スクリプト データ ファイル (`.psd1`)、スクリプト モジュール ファイル (`.psm1`) を Unicode (BigEndianUnicode) として保存します。 ASCII (ANSI) など、別のエンコードでスクリプトを保存するには、 [$psISE.CurrentFile](object-model/the-ise-object-model-hierarchy.md) オブジェクトの **Save** または **SaveAs** メソッドを使います。
 
 次のコマンドでは、新しいスクリプトを MyScript.ps1 という名前の ASCII エンコードで保存します。
 

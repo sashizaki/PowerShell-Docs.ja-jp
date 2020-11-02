@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DependsOn を使用したリソースの依存関係
-ms.openlocfilehash: 5ea08c76c203188f41513ad0cc1f4571579b4172
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 構成が大きくなり、複雑になってきたら、`DependsOn` キーを使用して、リソースが別のリソースに依存するように指定することで、リソースの適用順序を変更できます。
+ms.openlocfilehash: 18f19a3606834ede0737213930e6af0e251225ab
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954479"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645097"
 ---
 # <a name="resource-dependencies-using-dependson"></a>DependsOn を使用したリソースの依存関係
 
@@ -118,13 +119,13 @@ VERBOSE: Operation 'Invoke CimMethod' complete.
 VERBOSE: Time taken for configuration job to complete is 15.385 seconds
 ```
 
-これにより、何らかの理由で **FirewallProfile** リソースが失敗した場合、**ファイアウォール** ブロックが最初に定義されていても実行されなくなります。 `DependsOn` キーにより、リソース ブロックのグループ化の柔軟性が高まり、リソースの実行前に依存関係が解決されます。
+これにより、何らかの理由で **FirewallProfile** リソースが失敗した場合、 **ファイアウォール** ブロックが最初に定義されていても実行されなくなります。 `DependsOn` キーにより、リソース ブロックのグループ化の柔軟性が高まり、リソースの実行前に依存関係が解決されます。
 
 より高度な構成では、[ノード間依存関係](crossNodeDependencies.md)を使用して、さらに詳細に制御する (たとえば、クライアントをドメインに参加させる前に、ドメイン コントローラーが構成されるようにする) こともできます。
 
 ## <a name="cleaning-up"></a>クリーンアップ
 
-上記の構成を適用した場合、キーを反転して、すべての変更を元に戻すことができます。 上記の例では、**Enabled** キーを false に設定すると、ファイアウォール規則とプロファイルが無効になります。 必要に応じて、ターゲット ノードの以前の構成済みの状態に一致するように、例を変更する必要があります。
+上記の構成を適用した場合、キーを反転して、すべての変更を元に戻すことができます。 上記の例では、 **Enabled** キーを false に設定すると、ファイアウォール規則とプロファイルが無効になります。 必要に応じて、ターゲット ノードの以前の構成済みの状態に一致するように、例を変更する必要があります。
 
 ```powershell
         Firewall Firewall
@@ -141,6 +142,6 @@ VERBOSE: Time taken for configuration job to complete is 15.385 seconds
         }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [ノード間依存関係の使用](./crossNodeDependencies.md)

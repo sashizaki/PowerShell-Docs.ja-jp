@@ -1,19 +1,19 @@
 ---
 ms.date: 06/12/2017
-keywords: WMF, PowerShell, セットアップ
 title: 情報ストリーム
-ms.openlocfilehash: 1a8df66f7489910b964ec398e90b76e9f30cd2e2
-ms.sourcegitcommit: 87b9b989f261b52969e99159e99ee28ad8d8839a
+description: PowerShell 5.0 に、スクリプトとそのホストの間で構造化データを転送する新しい構造化された **情報** ストリームが追加されました。
+ms.openlocfilehash: 818c99ce281f5ada596ff92cd7bafb8b7cacf709
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/21/2020
-ms.locfileid: "86567843"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92646707"
 ---
 # <a name="information-stream"></a>情報ストリーム
 
-PowerShell 5.0 に、スクリプトとそのホストの間で構造化データを転送する新しい構造化された**情報**ストリームが追加されました。 `Write-Host` も更新され、**情報**ストリームに送った出力をキャプチャしたり、サイレント状態にしたりできるようになりました。 新しい `Write-Information` コマンドレットを **InformationVariable** および **InformationAction** 共通パラメーターと一緒に使うと、柔軟性と機能が向上します。
+PowerShell 5.0 に、スクリプトとそのホストの間で構造化データを転送する新しい構造化された **情報** ストリームが追加されました。 `Write-Host` も更新され、 **情報** ストリームに送った出力をキャプチャしたり、サイレント状態にしたりできるようになりました。 新しい `Write-Information` コマンドレットを **InformationVariable** および **InformationAction** 共通パラメーターと一緒に使うと、柔軟性と機能が向上します。
 
-次の関数では、新しい**情報**ストリームを利用するコマンドレットを使用します。
+次の関数では、新しい **情報** ストリームを利用するコマンドレットを使用します。
 
 ```powershell
 function OutputGusher {
@@ -60,7 +60,7 @@ $r.Id
 4008
 ```
 
-`Write-Host` の **InformationVariable** パラメーターを使用すると、`Write-Information` コマンドレットとは異なり、出力を変数にキャプチャできます。 **タグ**を使用すると、**情報**ストリームに送信されたメッセージのチャネルを分けることができます。
+`Write-Host` の **InformationVariable** パラメーターを使用すると、`Write-Information` コマンドレットとは異なり、出力を変数にキャプチャできます。 **タグ** を使用すると、 **情報** ストリームに送信されたメッセージのチャネルを分けることができます。
 
 ```powershell
 $r = OutputGusher -InformationVariable iv
@@ -83,7 +83,7 @@ Process              {System.Diagnostics.Process (powershell)}
 PSHOST               {Preparing to give you output!, =============================, I , <3 ...}
 ```
 
-タグを使用して**情報**ストリームにメッセージを送ると、そのメッセージはホスト アプリケーションには表示されず、タグ名を使用して取得されるようになります。 次に例を示します。
+タグを使用して **情報** ストリームにメッセージを送ると、そのメッセージはホスト アプリケーションには表示されず、タグ名を使用して取得されるようになります。 次に例を示します。
 
 ```powershell
 $iv | where Tags -eq 'LogHigh'

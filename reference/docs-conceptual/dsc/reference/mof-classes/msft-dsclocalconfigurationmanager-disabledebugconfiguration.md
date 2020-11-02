@@ -1,13 +1,14 @@
 ---
 ms.date: 07/14/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DisableDebugConfiguration メソッド
-ms.openlocfilehash: 52d55ff6b1fd126482bbaa9480efc131ab2f100c
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DisableDebugConfiguration メソッド
+ms.openlocfilehash: 6894f86d9626ca03f93477477f573f45a5de4c49
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463756"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92648993"
 ---
 # <a name="disabledebugconfiguration-method"></a>DisableDebugConfiguration メソッド
 
@@ -35,7 +36,7 @@ uint32 DisableDebugConfiguration();
 
 **MOF:** DscCore.mof
 
-**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
+**名前空間** : Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>参照
 

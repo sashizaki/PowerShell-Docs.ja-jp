@@ -1,13 +1,13 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,コマンドレット
 title: Windows PowerShell ISE でコンソール ウィンドウを使用する方法
-ms.openlocfilehash: f0ef07e410ed494f5732eab360c4e050c9c09a7f
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Windows PowerShell ISE でコンソール ウィンドウを使用する方法
+ms.openlocfilehash: 7f6d3f5a3e4e596beb0d5c0bc395e3e7bf39906d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808728"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663657"
 ---
 # <a name="how-to-use-the-console-pane-in-the-windows-powershell-ise"></a>Windows PowerShell ISE でコンソール ウィンドウを使用する方法
 
@@ -19,7 +19,7 @@ Windows PowerShell Integrated Scripting Environment (ISE) のコンソール ウ
 
 Windows PowerShell v3 以降で、出力ウィンドウがコンソール ウィンドウと結合されました。 これの利点は、スタンドアロンの Windows PowerShell コンソールと同様の動作になったことと、この 2 つが独立していたときに必要だった手順の違いが解消されたことです。 次のようにすることができます。
 
-- コンソール ウィンドウからテキストを選択してクリップボードにコピーし、他の任意のウィンドウに貼り付けます。 テキストを選択するには、出力ウィンドウでマウスをクリックし、マウス ボタンを押したまま、取り込みたいテキスト上をドラッグします。 また、<kbd>Shift</kbd> キーを押しながら方向キーを押して、テキストを選択することもできます。 その後、<kbd>Ctrl</kbd> + <kbd>C</kbd> キーを押すか、ツール バーの **[コピー]** アイコンをクリックします。
+- コンソール ウィンドウからテキストを選択してクリップボードにコピーし、他の任意のウィンドウに貼り付けます。 テキストを選択するには、出力ウィンドウでマウスをクリックし、マウス ボタンを押したまま、取り込みたいテキスト上をドラッグします。 また、<kbd>Shift</kbd> キーを押しながら方向キーを押して、テキストを選択することもできます。 その後、 <kbd>Ctrl</kbd> + <kbd>C</kbd> キーを押すか、ツール バーの **[コピー]** アイコンをクリックします。
 
 - 選択したテキストを現在のカーソル位置に貼り付けます。 ツール バーの **[貼り付け]** アイコンをクリックします。
 
