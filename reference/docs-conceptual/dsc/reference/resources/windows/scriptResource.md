@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC Script リソース
-ms.openlocfilehash: 9b89981c17e87b3681c6416c7dee44a75c432ea1
-ms.sourcegitcommit: eb6a7c01e6385809656ac828b9211683e0b1a6fe
+description: DSC Script リソース
+ms.openlocfilehash: f404bf3137caa9f57ad56034895cb15c8944ec07
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/27/2020
-ms.locfileid: "89041131"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142975"
 ---
 # <a name="dsc-script-resource"></a>DSC Script リソース
 
@@ -15,6 +16,8 @@ ms.locfileid: "89041131"
 
 Windows PowerShell Desired State Configuration (DSC) の `Script` リソースは、ターゲット ノードで Windows PowerShell スクリプトのブロックを実行するためのメカニズムを備えています。 `Script` リソースでは、対応する DSC 状態操作を実行するために定義したスクリプト ブロックが含まれる `GetScript`、
 `SetScript`、`TestScript` の各プロパティを使用します。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>構文
 
@@ -141,7 +144,7 @@ Configuration ScriptTest
 ### <a name="example-3-utilizing-parameters-in-a-script-resource"></a>例 3: スクリプト リソースでパラメーターを使用する
 
 この例では、`using` スコープを使用して、スクリプト リソース内からパラメーターにアクセスします。
-なお、**ConfigurationData** も同様の方法でアクセスできます。 例 2 と同様に、バージョンはターゲット ノードのローカル ファイル内に格納されます。 ローカル ファイル パスとそのバージョンは両方とも構成できますが、構成データからコードを分離する必要があります。
+なお、 **ConfigurationData** も同様の方法でアクセスできます。 例 2 と同様に、バージョンはターゲット ノードのローカル ファイル内に格納されます。 ローカル ファイル パスとそのバージョンは両方とも構成できますが、構成データからコードを分離する必要があります。
 
 ```powershell
 Configuration ScriptTest

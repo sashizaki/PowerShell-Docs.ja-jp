@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC Registry リソース
-ms.openlocfilehash: da4be9152a58d9945051f9c811270e871612ca0d
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC Registry リソース
+ms.openlocfilehash: 075f64abffb429b83958d859b0328b4eeec4cee6
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463620"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142499"
 ---
 # <a name="dsc-registry-resource"></a>DSC Registry リソース
 
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell Desired State Configuration (DSC) の **Registry** リソースは、ターゲット ノードでレジストリ キーと値を管理するためのメカニズムを備えています。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>構文
 
@@ -37,11 +40,11 @@ Registry [string] #ResourceName
 |プロパティ |説明 |
 |---|---|
 |Key |特定の状態を確認するレジストリ キーのパスを示します。 このパスには、ハイブを含める必要があります。 |
-|ValueName |レジストリ値の名前を示します。 レジストリ キーを追加または削除するには、**ValueType** または **ValueData** を指定せずに、このプロパティを空の文字列で指定します。 レジストリ キーの既定値を変更または削除するには、**ValueType** または **ValueData** を指定し、このプロパティを空の文字列で指定します。 |
-|Force |指定のレジストリ キーが存在する場合、**Force** はそのキーを新しい値で上書きします。 レジストリ キーをサブキーと共に削除する場合は、これが `$true` である必要があります。 |
+|ValueName |レジストリ値の名前を示します。 レジストリ キーを追加または削除するには、 **ValueType** または **ValueData** を指定せずに、このプロパティを空の文字列で指定します。 レジストリ キーの既定値を変更または削除するには、 **ValueType** または **ValueData** を指定し、このプロパティを空の文字列で指定します。 |
+|Force |指定のレジストリ キーが存在する場合、 **Force** はそのキーを新しい値で上書きします。 レジストリ キーをサブキーと共に削除する場合は、これが `$true` である必要があります。 |
 |Hex |16 進形式でデータを表現するかどうかを示します。 指定した場合、DWORD/QWORD 値データが 16 進形式で表示されます。 その他の種類に対しては無効です。 既定値は `$false` です。 |
 |ValueData |レジストリ値のデータ。 |
-|ValueType |値の種類を示します。 サポートされている型は次のとおりです。**String** (REG_SZ)、**Binary** (REG-BINARY)、**Dword** (32 ビット REG_DWORD)、**Qword** (64 ビット REG_QWORD)、**MultiString** (REG_MULTI_SZ)、**ExpandString** (REG_EXPAND_SZ)。 |
+|ValueType |値の種類を示します。 サポートされている型は次のとおりです。 **String** (REG_SZ)、 **Binary** (REG-BINARY)、 **Dword** (32 ビット REG_DWORD)、 **Qword** (64 ビット REG_QWORD)、 **MultiString** (REG_MULTI_SZ)、 **ExpandString** (REG_EXPAND_SZ)。 |
 
 ## <a name="common-properties"></a>共通プロパティ
 

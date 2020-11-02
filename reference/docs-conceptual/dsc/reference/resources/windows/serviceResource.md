@@ -1,19 +1,22 @@
 ---
 ms.date: 09/20/2019
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC Service リソース
-ms.openlocfilehash: f936f58ffd00f84d8c6d5d41d93378eaa8db5879
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC Service リソース
+ms.openlocfilehash: 24121688bc46dcef70e3751d243d140fb7fcc7c9
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463586"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142626"
 ---
 # <a name="dsc-service-resource"></a>DSC Service リソース
 
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.x
 
 PowerShell Desired State Configuration (DSC) の **Service** リソースは、ターゲット ノード上でサービスを管理するためのメカニズムを備えています。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>構文
 
@@ -23,18 +26,15 @@ Service [string] #ResourceName
     Name = [string]
     [ BuiltInAccount = [string] { LocalService | LocalSystem | NetworkService }  ]
     [ Credential = [PSCredential] ]
-    [ StartupTimeout = [uint32]]
     [ StartupType = [string] { Automatic | Disabled | Manual }  ]
     [ State = [string] { Ignore | Running | Stopped }  ]
     [ Dependencies = [string[]] ]
     [ Description = [string] ]
-    [ DesktopInteract = [boolean]]
     [ DisplayName = [string] ]
     [ Path = [string] ]
     [ DependsOn = [string[]] ]
     [ Ensure = [string] { Absent | Present } ]
     [ PsDscRunAsCredential = [PSCredential] ]
-    [ TerminateTimeout = [uint32] ]
 }
 ```
 
@@ -43,15 +43,12 @@ Service [string] #ResourceName
 |プロパティ |説明 |
 |---|---|
 |名前 |サービス名を示します。 これは、表示名とは異なることがあります。 `Get-Service` コマンドレットを使用すると、サービスとその現在の状態の一覧を取得できます。 |
-|BuiltInAccount |サービスに使用するサインイン アカウントを示します。 このプロパティで有効な値は、**LocalService**、**LocalSystem**、**NetworkService** です。 |
+|BuiltInAccount |サービスに使用するサインイン アカウントを示します。 このプロパティで有効な値は、 **LocalService** 、 **LocalSystem** 、 **NetworkService** です。 |
 |資格情報 |サービスを実行するアカウントの資格情報を示します。 このプロパティおよび **BuiltinAccount** プロパティを同時に使用することはできません。 |
-|StartupTimeout | サービスが実行されるまで待機する時間 (ミリ秒)。|
-|StartupType |サービスのスタートアップの種類を示します。 このプロパティで有効な値は、**Automatic**、**Disabled**、**Manual** です。 |
-|State |サービスに対して保証する状態を示します。 値は次のとおりです。**Running** または **Stopped**。 |
-|TerminateTimeout |サービスが停止されるまで待機する時間 (ミリ秒)。|
+|StartupType |サービスのスタートアップの種類を示します。 このプロパティで有効な値は、 **Automatic** 、 **Disabled** 、 **Manual** です。 |
+|State |サービスに対して保証する状態を示します。 値は次のとおりです。 **Running** または **Stopped** 。 |
 |依存関係 | サービスに含まれる依存関係の名前の配列。 |
 |説明 |ターゲット サービスの説明を示します。 |
-|DesktopInteract | サービスがデスクトップ上のウィンドウと通信できるかどうかを示します。 LocalSystem として実行されていないサービスの場合は、false にする必要があります。|
 |DisplayName |ターゲット サービスの表示名を示します。 |
 |Path |新しいサービスのバイナリ ファイルのパスを示します。 |
 

@@ -1,14 +1,14 @@
 ---
 ms.date: 09/20/2019
-keywords: DSC, PowerShell, 構成, セットアップ
-description: ターゲット ノード上のローカル グループを管理するためのメカニズムを備えています。
+ms.topic: reference
 title: DSC GroupSet リソース
-ms.openlocfilehash: 90e0c3f0e09c6a300988869265dfdb432ed5d217
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC GroupSet リソース
+ms.openlocfilehash: a9d1803aca40ac3571d42a5fd762489c03ed274e
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464197"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142890"
 ---
 # <a name="dsc-groupset-resource"></a>DSC GroupSet リソース
 
@@ -18,10 +18,12 @@ PowerShell Desired State Configuration (DSC) の **GroupSet** リソースは、
 
 このリソースは、複数のグループに対して同じメンバー一覧の追加/削除を行うとき、複数のグループを削除するとき、同じメンバー一覧の複数のグループを追加するときに使用します。
 
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
 ## <a name="syntax"></a>構文
 
 ```Syntax
-Group [string] #ResourceName
+GroupSet [string] #ResourceName
 {
     GroupName = [string[]]
     [ MembersToInclude = [string[]] ]
@@ -38,9 +40,9 @@ Group [string] #ResourceName
 |プロパティ |説明 |
 |---|---|
 |GroupName |特定の状態を保証するグループの名前です。 |
-|メンバー |このプロパティは、現在のグループ メンバーシップを指定したメンバーで置き換えるために使用します。 このプロパティの値は、`Domain\UserName` 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**MembersToExclude** プロパティおよび **MembersToInclude** プロパティは併用しないでください。 併用した場合、エラーが発生します。 |
-|MembersToInclude |このプロパティは、グループの既存のメンバーシップにメンバーを追加するために使用します。 このプロパティの値は、`Domain\UserName` 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**Members** プロパティは使用しないでください。 併用した場合、エラーが発生します。 |
-|MembersToExclude |このプロパティは、グループの既存のメンバーシップからメンバーを削除するために使用します。 このプロパティの値は、`Domain\UserName` 形式の文字列の配列です。 構成でこのプロパティを設定する場合、**Members** プロパティは使用しないでください。 併用した場合、エラーが発生します。 |
+|メンバー |このプロパティは、現在のグループ メンバーシップを指定したメンバーで置き換えるために使用します。 このプロパティの値は、`Domain\UserName` 形式の文字列の配列です。 構成でこのプロパティを設定する場合、 **MembersToExclude** プロパティおよび **MembersToInclude** プロパティは併用しないでください。 併用した場合、エラーが発生します。 |
+|MembersToInclude |このプロパティは、グループの既存のメンバーシップにメンバーを追加するために使用します。 このプロパティの値は、`Domain\UserName` 形式の文字列の配列です。 構成でこのプロパティを設定する場合、 **Members** プロパティは使用しないでください。 併用した場合、エラーが発生します。 |
+|MembersToExclude |このプロパティは、グループの既存のメンバーシップからメンバーを削除するために使用します。 このプロパティの値は、`Domain\UserName` 形式の文字列の配列です。 構成でこのプロパティを設定する場合、 **Members** プロパティは使用しないでください。 併用した場合、エラーが発生します。 |
 |資格情報 |リモート リソースにアクセスするために必要な資格情報です このアカウントには、ローカルではないすべてのアカウントをグループに追加できる、Active Directory への適切なアクセス許可が必要です。このアクセス許可がない場合、エラーが発生します。 |
 
 ## <a name="common-properties"></a>共通プロパティ

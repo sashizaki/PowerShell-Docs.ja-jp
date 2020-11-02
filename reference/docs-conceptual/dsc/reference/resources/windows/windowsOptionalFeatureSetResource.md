@@ -1,21 +1,24 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC WindowsOptionalFeatureSet リソース
-ms.openlocfilehash: e4f88f1cae6d7ddb3596ab4f27eb3766259f1a31
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WindowsOptionalFeatureSet リソース
+ms.openlocfilehash: f72cc27bfc8847d2c87cfb289f3e2c729a21d1f4
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464164"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143043"
 ---
 # <a name="dsc-windowsoptionalfeatureset-resource"></a>DSC WindowsOptionalFeatureSet リソース
 
 > 適用先:Windows PowerShell 5.x
 
-Windows PowerShell Desired State Configuration (DSC) の **WindowsOptionalFeatureSet** リソースは、オプション機能をターゲット ノードで有効にするためのメカニズムを備えています。 このリソースは[複合リソース](../../../resources/authoringResourceComposite.md)であり、**Name** プロパティに指定されている機能ごとに [WindowsOptionalFeature リソース](windowsOptionalFeatureResource.md)を呼び出します。
+Windows PowerShell Desired State Configuration (DSC) の **WindowsOptionalFeatureSet** リソースは、オプション機能をターゲット ノードで有効にするためのメカニズムを備えています。 このリソースは [複合リソース](../../../resources/authoringResourceComposite.md)であり、 **Name** プロパティに指定されている機能ごとに [WindowsOptionalFeature リソース](windowsOptionalFeatureResource.md)を呼び出します。
 
 Windows のオプション機能の数を同じ状態に構成するときにこのリソースを使用します。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>構文
 
@@ -40,7 +43,7 @@ WindowsOptionalFeatureSet [string] #ResourceName
 |名前 |有効または無効にする機能の名前を示します。 |
 |NoWindowsUpdateCheck |機能を有効にするソース ファイルを検索するとき、DISM が Windows Update (WU) を確認するかどうかを指定します。 `$true` の場合、DISM は WU に接続しません。 |
 |RemoveFilesOnDisable |**Ensure** が **Absent** に設定されているときに、`$true` に設定すると、その機能に関連付けられているすべてのファイルが削除されます。 |
-|LogLevel |ログに表示される最大の出力レベル。 有効な値は**ErrorsOnly**、**ErrorsAndWarning**、**ErrorsAndWarningAndInformation** です。 |
+|LogLevel |ログに表示される最大の出力レベル。 有効な値は **ErrorsOnly** 、 **ErrorsAndWarning** 、 **ErrorsAndWarningAndInformation** です。 |
 |LogPath |リソース プロバイダーの操作を記録するログ ファイルへのパス。 |
 
 ## <a name="common-properties"></a>共通プロパティ

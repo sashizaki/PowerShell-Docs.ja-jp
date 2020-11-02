@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC WindowsFeature リソース
-ms.openlocfilehash: b15b267c6898697816b386a381e5a6d59acd492a
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WindowsFeature リソース
+ms.openlocfilehash: 0089e1d2a045e9398aa53a3cedc3f64285c7cd58
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464113"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142992"
 ---
 # <a name="dsc-windowsfeature-resource"></a>DSC WindowsFeature リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell Desired State Configuration (DSC) の **WindowsFeature** リソースは、役割と機能がターゲット ノードで追加または削除されることを保証するためのメカニズムを備えています。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>構文
 
@@ -34,7 +37,7 @@ WindowsFeature [string] #ResourceName
 
 |プロパティ |説明 |
 |---|---|
-|名前 |追加または削除されることを保証する役割または機能の名前を示します。 これは、[Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) コマンドレットからの **Name** プロパティと同じものであり、役割または機能の表示名ではありません。 |
+|名前 |追加または削除されることを保証する役割または機能の名前を示します。 これは、 [Get-WindowsFeature](/powershell/module/servermanager/Get-WindowsFeature) コマンドレットからの **Name** プロパティと同じものであり、役割または機能の表示名ではありません。 |
 |資格情報 |役割または機能の追加や削除に使用する資格情報を示します。 |
 |IncludeAllSubFeature |**Name** プロパティで指定した機能の状態を使用して必要なすべてのサブ機能の状態を保証するには、このプロパティを `$true` に設定します。 |
 |LogPath |リソース プロバイダーの操作を記録するログ ファイルへのパスを示します。 |

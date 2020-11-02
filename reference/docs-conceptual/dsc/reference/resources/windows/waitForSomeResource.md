@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC WaitForSome リソース
-ms.openlocfilehash: ea2618fbb77dd24a0c73fd9357e87862da514b66
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WaitForSome リソース
+ms.openlocfilehash: bc9c3df2b476e7046ccfe6257acc1d1641e7594b
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464385"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143094"
 ---
 # <a name="dsc-waitforsome-resource"></a>DSC WaitForSome リソース
 
@@ -15,10 +16,12 @@ ms.locfileid: "86464385"
 
 **WaitForSome** Desired State Configuration (DSC) リソースを [DSC 構成](../../../configurations/configurations.md)のノード ブロック内で使用して、他のノードの構成の依存関係を指定することができます。
 
-このリソースは、**ResourceName** プロパティで指定されたリソースが、**NodeName** プロパティで定義された最小数 (**NodeCount** で指定) のノードで目的の状態になった場合に成功します。
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
+このリソースは、 **ResourceName** プロパティで指定されたリソースが、 **NodeName** プロパティで定義された最小数 ( **NodeCount** で指定) のノードで目的の状態になった場合に成功します。
 
 > [!NOTE]
-> **WaitForSome** リソースでは、Windows リモート管理を使用して他のノードの状態を確認します。 WinRM でのポートとセキュリティ要件の詳細については、「[PowerShell リモート処理のセキュリティに関する考慮事項](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)」を参照してください。
+> **WaitForSome** リソースでは、Windows リモート管理を使用して他のノードの状態を確認します。 WinRM でのポートとセキュリティ要件の詳細については、「[PowerShell リモート処理のセキュリティに関する考慮事項](/powershell/scripting/learn/remoting/winrmsecurity)」を参照してください。
 
 ## <a name="syntax"></a>構文
 

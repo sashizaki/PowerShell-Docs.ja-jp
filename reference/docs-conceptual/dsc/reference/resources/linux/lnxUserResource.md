@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: Linux 用 DSC の nxUser リソース
-ms.openlocfilehash: 30c9d4efb5bcbce9f18652b6f34e9a1b060cece4
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Linux 用 DSC の nxUser リソース
+ms.openlocfilehash: 298caa8f5ea6d4587f9782a02d0544147ee33e84
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463909"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92667387"
 ---
 # <a name="dsc-for-linux-nxuser-resource"></a>Linux 用 DSC の nxUser リソース
 
@@ -49,7 +50,7 @@ nxUser <string> #ResourceName
 |プロパティ |説明 |
 |---|---|
 |DependsOn |このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が ResourceName で、そのタイプが ResourceType である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。 |
-|Ensure |アカウントが存在するかどうかを指定します。 このアカウントの存在を保証するには、このプロパティを **Present** に設定し、アカウントが存在しないことを保証するには、**Absent** に設定します。 |
+|Ensure |アカウントが存在するかどうかを指定します。 このアカウントの存在を保証するには、このプロパティを **Present** に設定し、アカウントが存在しないことを保証するには、 **Absent** に設定します。 |
 
 ## <a name="example"></a>例
 

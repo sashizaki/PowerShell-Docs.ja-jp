@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC Log リソース
-ms.openlocfilehash: bc59bb2670561306a039d024fcff5e0746a659f2
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC Log リソース
+ms.openlocfilehash: 281d1f8aeeb4d075f073419ac02a0f81888ed2b5
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464028"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142465"
 ---
 # <a name="dsc-log-resource"></a>DSC Log リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell Desired State Configuration (DSC) の **Log** リソースは、Microsoft-Windows-Desired State Configuration/Analytic イベント ログにメッセージを書き込むためのメカニズムを備えています。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>構文
 
@@ -50,7 +53,7 @@ Log [string] #ResourceName
 次の例では、Microsoft-Windows-Desired State Configuration/Analytic イベント ログにメッセージを含める方法を示します。
 
 > [!NOTE]
-> このリソースが構成されている状態で [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration?view=powershell-5.1) を実行すると、常に **$false** が返されます。
+> このリソースが構成されている状態で [Test-DscConfiguration](/powershell/module/PSDesiredStateConfiguration/test-dscconfiguration) を実行すると、常に **$false** が返されます。
 
 ```powershell
 Configuration logResourceTest

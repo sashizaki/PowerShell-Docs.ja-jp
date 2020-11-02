@@ -2,12 +2,13 @@
 ms.date: 10/11/2019
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 意思決定者向け Desired State Configuration の概要
-ms.openlocfilehash: bb73ee8fe636272f99989aa45712fe34fedad617
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: このドキュメントでは、PowerShell Desired State Configuration (DSC) を使用するビジネス上の利点について説明します。これはテクニカル ガイドではありません。
+ms.openlocfilehash: fc28c9290c993131fc7bf2046eb64b144d3da609
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "75870797"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654146"
 ---
 # <a name="desired-state-configuration-overview-for-decision-makers"></a>意思決定者向け Desired State Configuration の概要
 
@@ -25,7 +26,7 @@ DSC には、監視とレポートの機能が組み込まれています。 シ
 
 構成の設計によって、それらの読み取り、保存、および更新を行う方法が簡略化されます。 構成では、ターゲット デバイスの状態が宣言されます。デバイスをその状態にするための手順が記述されるわけではありません。 これらの要因によって、DSC を使用した構成の学習、導入、実装、および保守にかかるコストが削減されます。
 
-構成を作成することは、複雑な展開手順が 1 つの場所で、**信頼できる唯一のソース**として取得されることを意味します。 構成を使うと、コンピューターの特定のセットを繰り返し展開する場合にエラーが発生する可能性が低下します。 また、展開の速度と信頼性が向上するため、複雑な展開での迅速なターンアラウンドを実現できます。
+構成を作成することは、複雑な展開手順が 1 つの場所で、 **信頼できる唯一のソース** として取得されることを意味します。 構成を使うと、コンピューターの特定のセットを繰り返し展開する場合にエラーが発生する可能性が低下します。 また、展開の速度と信頼性が向上するため、複雑な展開での迅速なターンアラウンドを実現できます。
 
 構成は、[PowerShell ギャラリー](https://powershellgallery.com)を介して共有できます。 実行する必要がある作業について、一般的なシナリオやベスト プラクティスが既に存在している可能性があります。
 

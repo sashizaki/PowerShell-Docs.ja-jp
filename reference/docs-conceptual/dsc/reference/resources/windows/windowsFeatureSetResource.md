@@ -1,21 +1,24 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC WindowsFeatureSet リソース
-ms.openlocfilehash: 856c56e0b35a26add729ef77db9dca71fdc0a4d0
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WindowsFeatureSet リソース
+ms.openlocfilehash: 327c5e907e9b100f42b6a15684f8b131c1f20a41
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463858"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143077"
 ---
 # <a name="dsc-windowsfeatureset-resource"></a>DSC WindowsFeatureSet リソース
 
 > 適用先:Windows PowerShell 5.x
 
-Windows PowerShell Desired State Configuration (DSC) の **WindowsFeatureSet** リソースは、役割と機能がターゲット ノードで追加または削除されることを保証するためのメカニズムを備えています。 このリソースは[複合リソース](../../../resources/authoringResourceComposite.md)であり、**Name** プロパティに指定されている機能ごとに [WindowsFeature リソース](windowsfeatureResource.md)を呼び出します。
+Windows PowerShell Desired State Configuration (DSC) の **WindowsFeatureSet** リソースは、役割と機能がターゲット ノードで追加または削除されることを保証するためのメカニズムを備えています。 このリソースは [複合リソース](../../../resources/authoringResourceComposite.md)であり、 **Name** プロパティに指定されている機能ごとに [WindowsFeature リソース](windowsfeatureResource.md)を呼び出します。
 
 Windows 機能の数を同じ状態に構成するときにこのリソースを使用します。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>構文
 
@@ -37,7 +40,7 @@ WindowsFeatureSet [string] #ResourceName
 
 |  プロパティ  |  説明   |
 |---|---|
-|名前 |追加または削除する役割または機能の名前。 これは [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature?view=winserver2012r2-ps) コマンドレットの **Name** プロパティと同じものであり、役割または機能の表示名ではありません。 |
+|名前 |追加または削除する役割または機能の名前。 これは [Get-WindowsFeature](/powershell/module/servermanager/get-windowsfeature) コマンドレットの **Name** プロパティと同じものであり、役割または機能の表示名ではありません。 |
 |source |必要に応じて、インストールに使用するソース ファイルの場所を示します。 |
 |IncludeAllSubFeature |**Name** プロパティで指定した機能を使用して必要なすべてのサブ機能を含めるには、このプロパティを `$true` に設定します。 |
 |資格情報 |役割または機能の追加や削除に使用する資格情報。 |
@@ -56,7 +59,7 @@ WindowsFeatureSet [string] #ResourceName
 
 ## <a name="example"></a>例
 
-次の構成では、**Web-Server** (IIS) 機能、**SMTP Server** 機能、各機能のすべてのサブ機能がインストールされます。
+次の構成では、 **Web-Server** (IIS) 機能、 **SMTP Server** 機能、各機能のすべてのサブ機能がインストールされます。
 
 ```powershell
 configuration FeatureSetTest

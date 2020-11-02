@@ -1,23 +1,26 @@
 ---
 ms.date: 07/15/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC の PackageManagementSource リソース
-ms.openlocfilehash: b24558574f192347aace5a809d57385e01d9acb3
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC の PackageManagementSource リソース
+ms.openlocfilehash: 495b6548ef86f639e93b914ec8bd8ea7818ff8dd
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463892"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142856"
 ---
 # <a name="dsc-packagemanagementsource-resource"></a>DSC の PackageManagementSource リソース
 
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell Desired State Configuration (DSC) の **PackageManagementSource** リソースは、ターゲット ノードで Package Management ソースを登録または登録解除するメカニズムを備えています。
-**この方法で登録された Package Management ソースは System コンテキストで登録されるため、System アカウントまたは DSC エンジンで使用することができます。** このリソースには **PackageManagement** モジュールが必要です。これは、[PowerShell Gallery](https://PowerShellGallery.com) から入手できます。
+**この方法で登録された Package Management ソースは System コンテキストで登録されるため、System アカウントまたは DSC エンジンで使用することができます。** このリソースには **PackageManagement** モジュールが必要です。これは、 [PowerShell Gallery](https://PowerShellGallery.com) から入手できます。
 
 > [!IMPORTANT]
 > **PackageManagement** モジュールは、次のプロパティ情報が適切であるようにバージョン 1.1.7.0 以降である必要があります。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>構文
 
@@ -42,7 +45,7 @@ PackageManagementSource [String] #ResourceName
 |名前 |システムで登録または登録解除するパッケージ ソースの名前を指定します。 |
 |ProviderName |パッケージ ソースとの相互運用に使用できる OneGet プロバイダーの名前を指定します。 |
 |SourceLocation |パッケージ ソースの URI を指定します。 |
-|InstallationPolicy |組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージのソースを信頼するかどうかを決定します。 つぎのいずれかです。**Untrusted** または **Trusted**。 |
+|InstallationPolicy |組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージのソースを信頼するかどうかを決定します。 つぎのいずれかです。 **Untrusted** または **Trusted** 。 |
 |SourceCredential |リモート ソースのパッケージへのアクセスを提供します。 |
 
 ## <a name="common-properties"></a>共通プロパティ
@@ -58,7 +61,7 @@ PackageManagementSource [String] #ResourceName
 
 ## <a name="example"></a>例
 
-この例では、**PackageManagementSource** DSC リソースを使用して `https://nuget.org` パッケージ ソースを登録しています。
+この例では、 **PackageManagementSource** DSC リソースを使用して `https://nuget.org` パッケージ ソースを登録しています。
 
 ```powershell
 Configuration PackageManagementSourceTest

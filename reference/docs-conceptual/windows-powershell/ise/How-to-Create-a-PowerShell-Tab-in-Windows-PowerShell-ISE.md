@@ -1,13 +1,13 @@
 ---
 ms.date: 01/02/2020
-keywords: powershell,コマンドレット
 title: Windows PowerShell ISE で PowerShell タブを作成する方法
-ms.openlocfilehash: 39df0b76c337bb7c02d36d66b325c5396afbbe00
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: Windows PowerShell Integrated Scripting Environment (ISE) のタブを使うと、同じアプリケーション内で複数の実行環境を同時に作成して使用することができます。 PowerShell の各タブは、独立した実行環境またはセッションに対応します。
+ms.openlocfilehash: 62054014be9890b3fa0296f717f65a85534628d8
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808838"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92663774"
 ---
 # <a name="how-to-create-a-powershell-tab-in-windows-powershell-ise"></a>Windows PowerShell ISE で PowerShell タブを作成する方法
 

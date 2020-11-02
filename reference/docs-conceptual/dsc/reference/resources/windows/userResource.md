@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC User リソース
-ms.openlocfilehash: 340fce45a2074930ae14ca1aaeef7eff78531916
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC User リソース
+ms.openlocfilehash: b14f8d434ef3e1eb220fe7b0b18a011014c9ae6c
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463773"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142602"
 ---
 # <a name="dsc-user-resource"></a>DSC User リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.x
 
 PowerShell Desired State Configuration (DSC) の **User** リソースは、ターゲット ノード上でローカル ユーザー アカウントを管理するためのメカニズムを備えています。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>構文
 
@@ -52,7 +55,7 @@ User [string] #ResourceName
 |プロパティ |説明 |
 |---|---|
 |DependsOn |このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が ResourceName で、そのタイプが ResourceType である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。 |
-|Ensure |アカウントが存在するかどうかを示します。 このアカウントの存在を保証するには、このプロパティを **Present** に設定し、アカウントが存在しないことを保証するには、**Absent** に設定します。 既定値は **Present** です。 |
+|Ensure |アカウントが存在するかどうかを示します。 このアカウントの存在を保証するには、このプロパティを **Present** に設定し、アカウントが存在しないことを保証するには、 **Absent** に設定します。 既定値は **Present** です。 |
 |PsDscRunAsCredential |リソース全体を実行するための資格情報を設定します。 |
 
 > [!NOTE]

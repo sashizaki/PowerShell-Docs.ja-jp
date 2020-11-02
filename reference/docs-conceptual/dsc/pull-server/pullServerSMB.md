@@ -2,19 +2,20 @@
 ms.date: 04/11/2018
 keywords: DSC, PowerShell, 構成, セットアップ
 title: DSC SMB プル サーバーのセットアップ
-ms.openlocfilehash: be41f7a708f1a129919fae8300fc4307441097f7
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: DSC SMB プル サーバーは、DSC 構成ファイルと DSC リソースを必要なときにターゲット ノードに提供する SMB ファイル共有をホストするコンピューターです。
+ms.openlocfilehash: 4ac1b0db719fa124d6fa9a654acb64ec24d9ea41
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500703"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92658434"
 ---
 # <a name="setting-up-a-dsc-smb-pull-server"></a>DSC SMB プル サーバーのセットアップ
 
-適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
+適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
+> プル サーバー (Windows Feature *DSC-Service* ) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
 
 DSC [SMB](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh831795(v=ws.11)) プル サーバーは、DSC 構成ファイルと DSC リソースを必要なときにターゲット ノードに提供する SMB ファイル共有をホストするコンピューターです。
 
@@ -37,7 +38,7 @@ SMB ファイル共有を設定する方法はいくつかありますが、こ�
 
 ### <a name="create-the-directory-and-file-share"></a>ディレクトリとファイル共有を作成する
 
-次の構成では、**File** リソースを使って共有するディレクトリを作成し、**xSmbShare** リソースを使って SMB 共有をセットアップします。
+次の構成では、 **File** リソースを使って共有するディレクトリを作成し、 **xSmbShare** リソースを使って SMB 共有をセットアップします。
 
 ```powershell
 Configuration SmbShare
@@ -76,7 +77,7 @@ Configuration SmbShare
 
 ### <a name="give-file-system-access-to-the-pull-client"></a>ファイル システムにプル クライアントへのアクセス権限を付与する
 
-クライアント ノードに **ReadAccess** を与えると、そのノードは SMB 共有にアクセスできるようになりますが、その共有内のファイルやフォルダーにはアクセスできません。 クライアント ノードに、SMB 共有のフォルダーやサブフォルダーに対するアクセス権限を明示的に許可する必要があります。 DSC でこれを行うには、[cNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) モジュールに含まれている **cNtfsPermissionEntry** リソースを使用して追加します。
+クライアント ノードに **ReadAccess** を与えると、そのノードは SMB 共有にアクセスできるようになりますが、その共有内のファイルやフォルダーにはアクセスできません。 クライアント ノードに、SMB 共有のフォルダーやサブフォルダーに対するアクセス権限を明示的に許可する必要があります。 DSC でこれを行うには、 [cNtfsAccessControl](https://www.powershellgallery.com/packages/cNtfsAccessControl/1.2.0) モジュールに含まれている **cNtfsPermissionEntry** リソースを使用して追加します。
 次の構成では、プル クライアントに ReadAndExecute アクセスを付与する **cNtfsPermissionEntry** ブロックを追加します。
 
 ```powershell
@@ -131,7 +132,7 @@ Configuration DSCSMB
 
 クライアント ノードがプルする必要のある構成 MOF ファイルや DSC リソースを SMB 共有フォルダーに保存します。
 
-すべての構成 MOF ファイルは、*ConfigurationID*.mof という名前である必要があります。ここで、*ConfigurationID* はターゲット ノードの LCM の **ConfigurationID** プロパティの値です。 プル クライアントの設定の詳細については、「[構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)」を参照してください。
+すべての構成 MOF ファイルは、 *ConfigurationID* .mof という名前である必要があります。ここで、 *ConfigurationID* はターゲット ノードの LCM の **ConfigurationID** プロパティの値です。 プル クライアントの設定の詳細については、「[構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)」を参照してください。
 
 > [!NOTE]
 > SMB プル サーバーを使っている場合は、構成 ID を使う必要があります。 構成名は、SMB ではサポートされません。
@@ -159,7 +160,7 @@ SMB 共有から構成とリソースの両方または一方をプルするク�
 LCM 構成の詳細については、「[構成 ID を使用したプル クライアントのセットアップ](pullClientConfigID.md)」をご覧ください。
 
 > [!NOTE]
-> わかりやすくする目的で、この例では **PSDscAllowPlainTextPassword** を使用し、**Credential** パラメーターにプレーンテキスト パスワードを渡すようにしています。 資格情報をより安全に渡す方法については、「[構成データでの資格情報オプション](../configurations/configDataCredentials.md)」を参照してください。 リソースをプルするだけであっても、SMB プル サーバーのメタ構成の**設定**ブロックに **ConfigurationID** を指定する**必要があります**。
+> わかりやすくする目的で、この例では **PSDscAllowPlainTextPassword** を使用し、 **Credential** パラメーターにプレーンテキスト パスワードを渡すようにしています。 資格情報をより安全に渡す方法については、「[構成データでの資格情報オプション](../configurations/configDataCredentials.md)」を参照してください。 リソースをプルするだけであっても、SMB プル サーバーのメタ構成の **設定** ブロックに **ConfigurationID** を指定する **必要があります** 。
 
 ```powershell
 $secpasswd = ConvertTo-SecureString "Pass1Word" -AsPlainText -Force
@@ -210,7 +211,7 @@ $ConfigurationData = @{
 - DSC で SMB を使用することに関する Mike F. Robbins 氏の投稿を、このトピックの内容として参考にしました。 彼のブログは [Mike F Robbins](http://mikefrobbins.com/) にあります。
 - **cNtfsAccessControl** モジュールを作成した Serge Nikalaichyk 氏。 このモジュールのソースは [cNtfsAccessControl](https://github.com/SNikalaichyk/cNtfsAccessControl) にあります。
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 [Windows PowerShell Desired State Configuration の概要](../overview/overview.md)
 

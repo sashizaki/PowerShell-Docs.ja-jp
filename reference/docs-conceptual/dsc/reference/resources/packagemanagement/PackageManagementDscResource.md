@@ -1,22 +1,25 @@
 ---
 ms.date: 07/15/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC の PackageManagement リソース
-ms.openlocfilehash: 983a288398f710ecc5d2bc557028282ccd58561b
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC の PackageManagement リソース
+ms.openlocfilehash: 83839adbef8bd8d3265a06b44a3101108b2a4486
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464266"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142907"
 ---
 # <a name="dsc-packagemanagement-resource"></a>DSC の PackageManagement リソース
 
 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0、Windows PowerShell 5.1
 
-Windows PowerShell Desired State Configuration (DSC) の **PackageManagement** リソースは、ターゲット ノードで Package Management パッケージをインストールまたはアンインストールするメカニズムを備えています。 このリソースには **PackageManagement** モジュールが必要です。これは、[https://PowerShellGallery.com](https://PowerShellGallery.com) から入手できます。
+Windows PowerShell Desired State Configuration (DSC) の **PackageManagement** リソースは、ターゲット ノードで Package Management パッケージをインストールまたはアンインストールするメカニズムを備えています。 このリソースには **PackageManagement** モジュールが必要です。これは、 [https://PowerShellGallery.com](https://PowerShellGallery.com) から入手できます。
 
 > [!IMPORTANT]
 > **PackageManagement** モジュールは、次のプロパティ情報が適切であるようにバージョン 1.1.7.0 以降である必要があります。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>構文
 
@@ -44,9 +47,9 @@ PackageManagement [string] #ResourceName
 |名前 |インストールまたはアンインストールするパッケージの名前を指定します。 |
 |AdditionalParameters |`Get-Package -AdditionalArguments` に渡されるパラメーターのプロバイダー固有のハッシュ テーブル。 たとえば、NuGet プロバイダーでは DestinationPath のような追加のパラメーターを渡すことができます。 |
 |MaximumVersion |検索するパッケージで許容される最大バージョンを指定します。 このパラメーターを追加しない場合、リソースでは利用できるパッケージの最新バージョンが検索されます。 |
-|MinimumVersion |検索するパッケージで許容される最小バージョンを指定します。 このパラメーターを追加しない場合、**MaximumVersion** パラメーターで指定された最大バージョンも満たす、パッケージで利用可能な最新バージョンがリソースによって検索されます。 |
+|MinimumVersion |検索するパッケージで許容される最小バージョンを指定します。 このパラメーターを追加しない場合、 **MaximumVersion** パラメーターで指定された最大バージョンも満たす、パッケージで利用可能な最新バージョンがリソースによって検索されます。 |
 |ProviderName |パッケージの検索先となるパッケージ プロバイダー名を指定します。 `Get-PackageProvider` コマンドレットを実行して、パッケージ プロバイダー名を取得できます。 |
-|RequiredVersion |インストールするパッケージの正確なバージョンを指定します。 このパラメーターを指定しない場合、**MaximumVersion** パラメーターで指定された最大バージョンも満たす、パッケージで利用可能な最新バージョンがこの DSC リソースによってインストールされます。 |
+|RequiredVersion |インストールするパッケージの正確なバージョンを指定します。 このパラメーターを指定しない場合、 **MaximumVersion** パラメーターで指定された最大バージョンも満たす、パッケージで利用可能な最新バージョンがこの DSC リソースによってインストールされます。 |
 |source |パッケージのあるパッケージ ソースの名前を指定します。 これは、URI か、`Register-PackageSource` または PackageManagementSource の DSC リソースに登録されたソースのどちらかになります。 |
 |SourceCredential |指定したパッケージ プロバイダーまたはソースのパッケージをインストールする権限を持つユーザー アカウントを指定します。 |
 
@@ -57,7 +60,7 @@ PackageManagement [string] #ResourceName
 |パラメーター |説明 |
 |---|---|
 |DestinationPath |組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージをインストールするファイルの場所を指定します。 |
-|InstallationPolicy |組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージのソースを信頼するかどうかを決定します。 つぎのいずれかです。**Untrusted** または **Trusted**。 |
+|InstallationPolicy |組み込みの Nuget プロバイダーなどのプロバイダーによって使用されます。 パッケージのソースを信頼するかどうかを決定します。 つぎのいずれかです。 **Untrusted** または **Trusted** 。 |
 
 ## <a name="common-properties"></a>共通プロパティ
 
@@ -72,7 +75,7 @@ PackageManagement [string] #ResourceName
 
 ## <a name="example"></a>例
 
-この例では、**PackageManagement** DSC リソースを使用して、**JQuery** NuGet パッケージおよび **GistProvider** PowerShell モジュールをインストールします。 この例では、最初に必要なパッケージのソースが利用できることを確認し、次に **JQuery** および **GistProvider** のパッケージ (それぞれ NuGet と PowerShell) の予期される状態を定義しています。
+この例では、 **PackageManagement** DSC リソースを使用して、 **JQuery** NuGet パッケージおよび **GistProvider** PowerShell モジュールをインストールします。 この例では、最初に必要なパッケージのソースが利用できることを確認し、次に **JQuery** および **GistProvider** のパッケージ (それぞれ NuGet と PowerShell) の予期される状態を定義しています。
 
 ```powershell
 Configuration PackageTest

@@ -1,13 +1,14 @@
 ---
 ms.date: 07/17/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: Linux 用 DSC の nxGroup リソース
-ms.openlocfilehash: f196c74b94ec27818d58b59d1e489facd8ab0a65
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: Linux 用 DSC の nxGroup リソース
+ms.openlocfilehash: 3544bee763c0a4456002f9a02fde38de5d4fb65c
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464436"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664251"
 ---
 # <a name="dsc-for-linux-nxgroup-resource"></a>Linux 用 DSC の nxGroup リソース
 
@@ -43,7 +44,7 @@ nxGroup <string> #ResourceName
 |プロパティ |説明 |
 |---|---|
 |DependsOn |このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が ResourceName で、そのタイプが ResourceType である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。 |
-|Ensure |グループが存在するかどうかを決定します。 グループの存在を保証するには、このプロパティを **Present** に設定します。 グループが存在しないことを保証するには、**Absent** に設定します。 既定値は **Present** です。 |
+|Ensure |グループが存在するかどうかを決定します。 グループの存在を保証するには、このプロパティを **Present** に設定します。 グループが存在しないことを保証するには、 **Absent** に設定します。 既定値は **Present** です。 |
 
 ## <a name="example"></a>例
 

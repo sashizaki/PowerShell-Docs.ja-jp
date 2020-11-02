@@ -1,19 +1,22 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC WindowsProcess リソース
-ms.openlocfilehash: a1f8840a5894049efd27c5d213a66363cd8dbebc
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WindowsProcess リソース
+ms.openlocfilehash: 3076e9cb857b78953c164253351b23e7da9b40c6
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464130"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143009"
 ---
 # <a name="dsc-windowsprocess-resource"></a>DSC WindowsProcess リソース
 
 > 適用先: Windows PowerShell 4.0、Windows PowerShell 5.x
 
 Windows PowerShell Desired State Configuration (DSC) の **WindowsProcess** リソースは、ターゲット ノードにプロセスを構成するためのメカニズムを備えています。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>構文
 
@@ -50,5 +53,5 @@ WindowsProcess [string] #ResourceName
 |プロパティ |説明 |
 |---|---|
 |DependsOn |このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が ResourceName で、そのタイプが ResourceType である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。 |
-|Ensure |プロセスが存在するかどうかを示します。 プロセスの存在を保証するには、このプロパティを **Present** に設定します。 それ以外の場合は、**Absent** に設定します。 既定値は **Present** です。 |
+|Ensure |プロセスが存在するかどうかを示します。 プロセスの存在を保証するには、このプロパティを **Present** に設定します。 それ以外の場合は、 **Absent** に設定します。 既定値は **Present** です。 |
 |PsDscRunAsCredential |リソース全体を実行するための資格情報を設定します。 |

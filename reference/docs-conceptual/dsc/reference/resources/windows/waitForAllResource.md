@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC WaitForAll リソース
-ms.openlocfilehash: a0cf553af96ecc3df4968581f8f393b72fc3dabf
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WaitForAll リソース
+ms.openlocfilehash: a477584cf97a56815bda9973cb2befc9b71d14d1
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464368"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143111"
 ---
 # <a name="dsc-waitforall-resource"></a>DSC WaitForAll リソース
 
@@ -15,10 +16,12 @@ ms.locfileid: "86464368"
 
 **WaitForAll** Desired State Configuration (DSC) リソースを [DSC 構成](../../../configurations/configurations.md)のノード ブロック内で使用して、他のノードの構成の依存関係を指定することができます。
 
-このリソースは、**ResourceName** プロパティで指定されたリソースが、**NodeName** プロパティで定義されたすべてのターゲット ノード上で目的の状態になった場合に成功します。
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
+
+このリソースは、 **ResourceName** プロパティで指定されたリソースが、 **NodeName** プロパティで定義されたすべてのターゲット ノード上で目的の状態になった場合に成功します。
 
 > [!NOTE]
-> **WaitForAll** リソースでは、Windows リモート管理を使用して他のノードの状態を確認します。 WinRM でのポートとセキュリティ要件の詳細については、「[PowerShell リモート処理のセキュリティに関する考慮事項](/powershell/scripting/learn/remoting/winrmsecurity?view=powershell-6)」を参照してください。
+> **WaitForAll** リソースでは、Windows リモート管理を使用して他のノードの状態を確認します。 WinRM でのポートとセキュリティ要件の詳細については、「[PowerShell リモート処理のセキュリティに関する考慮事項](/powershell/scripting/learn/remoting/winrmsecurity)」を参照してください。
 
 ## <a name="syntax"></a>構文
 

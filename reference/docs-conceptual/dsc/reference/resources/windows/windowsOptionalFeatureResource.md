@@ -1,13 +1,14 @@
 ---
 ms.date: 08/28/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC WindowsOptionalFeature リソース
-ms.openlocfilehash: f24173c1a9ed605bac43767a9da2d4dbded78883
-ms.sourcegitcommit: 06b6f4012e4eca71d414733cdba23ef75535223c
+description: DSC WindowsOptionalFeature リソース
+ms.openlocfilehash: 1c7e888ea49b0d1710cc22c975cb618999238f67
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/29/2020
-ms.locfileid: "89093252"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143060"
 ---
 # <a name="dsc-windowsoptionalfeature-resource"></a>DSC WindowsOptionalFeature リソース
 
@@ -17,6 +18,8 @@ Windows PowerShell Desired State Configuration (DSC) の **WindowsOptionalFeatur
 
 > [!NOTE]
 > **WindowsOptionalFeature** は、Windows 10 などの Windows クライアント コンピューターでのみ機能します。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>構文
 
@@ -41,7 +44,7 @@ WindowsOptionalFeature [string] #ResourceName
 |名前 |有効または無効にする機能の名前を示します。 |
 |NoWindowsUpdateCheck |機能を有効にするソース ファイルを検索するとき、DISM が Windows Update (WU) を確認するかどうかを指定します。 `$true` の場合、DISM は WU に接続しません。 |
 |RemoveFilesOnDisable |**Ensure** が **Absent** に設定されているときに、`$true` に設定すると、その機能に関連付けられているすべてのファイルが削除されます。 |
-|LogLevel |ログに表示される最大の出力レベル。 有効な値は**ErrorsOnly**、**ErrorsAndWarning**、**ErrorsAndWarningAndInformation** です。 |
+|LogLevel |ログに表示される最大の出力レベル。 有効な値は **ErrorsOnly** 、 **ErrorsAndWarning** 、 **ErrorsAndWarningAndInformation** です。 |
 |LogPath |リソース プロバイダーの操作を記録するログ ファイルへのパス。 |
 
 ## <a name="common-properties"></a>共通プロパティ

@@ -1,17 +1,17 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,コマンドレット
 title: ISESnippetCollection オブジェクト
-ms.openlocfilehash: 6cdc43dd1d82e94f66122d7f7b313c02e755fed7
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: ISESnippetCollection オブジェクトは、ISESnippet オブジェクトのコレクションです。 PowerShellTab オブジェクトに関連付けられているファイル コレクションは、このクラスのメンバーです。
+ms.openlocfilehash: e6170ddf72d5ead840aa3015d4de1dcb21dbfeff
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83808578"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92655973"
 ---
 # <a name="the-isesnippetcollection-object"></a>ISESnippetCollection オブジェクト
 
-**ISESnippetCollection** オブジェクトは、**ISESnippet** オブジェクトのコレクションです。 **PowerShellTab** オブジェクトに関連付けられているファイル コレクションは、このクラスのメンバーです。 例は、`$psISE.CurrentPowerShellTab.Files` コレクションです。
+**ISESnippetCollection** オブジェクトは、 **ISESnippet** オブジェクトのコレクションです。 **PowerShellTab** オブジェクトに関連付けられているファイル コレクションは、このクラスのメンバーです。 例は、`$psISE.CurrentPowerShellTab.Files` コレクションです。
 
 ## <a name="methods"></a>メソッド
 

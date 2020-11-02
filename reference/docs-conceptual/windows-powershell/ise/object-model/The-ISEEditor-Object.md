@@ -1,17 +1,17 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,コマンドレット
 title: ISEEditor オブジェクト
-ms.openlocfilehash: cb63acebc1a8bb9fa6cc07199088ae0d5441bc91
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: ISEEditor オブジェクトは、Microsoft.PowerShell.Host.ISE.ISEEditor クラスのインスタンスです。 コンソール ウィンドウは ISEEditor オブジェクトです。
+ms.openlocfilehash: ffcb6e35e1160beab6efb29cc84847fa9ffd012b
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809698"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654062"
 ---
 # <a name="the-iseeditor-object"></a>ISEEditor オブジェクト
 
-**ISEEditor** オブジェクトは、Microsoft.PowerShell.Host.ISE.ISEEditor クラスのインスタンスです。 コンソール ウィンドウは **ISEEditor** オブジェクトです。 各 [ISEFile](The-ISEFile-Object.md) オブジェクトには、関連付けられている **ISEEditor** オブジェクトがあります。 次のセクションでは、**ISEEditor** オブジェクトのメソッドとプロパティについて説明します。
+**ISEEditor** オブジェクトは、Microsoft.PowerShell.Host.ISE.ISEEditor クラスのインスタンスです。 コンソール ウィンドウは **ISEEditor** オブジェクトです。 各 [ISEFile](The-ISEFile-Object.md) オブジェクトには、関連付けられている **ISEEditor** オブジェクトがあります。 次のセクションでは、 **ISEEditor** オブジェクトのメソッドとプロパティについて説明します。
 
 ## <a name="methods"></a>メソッド
 
@@ -90,7 +90,7 @@ Windows PowerShell ISE 2.0 以降でサポートされています。
 
 Windows PowerShell ISE 2.0 以降でサポートされています。
 
-**startLine**、**startColumn**、**endLine**、**endColumn** パラメーターからテキストを選択します。
+**startLine** 、 **startColumn** 、 **endLine** 、 **endColumn** パラメーターからテキストを選択します。
 
 **startLine** - 整数。選択範囲が開始する行。
 

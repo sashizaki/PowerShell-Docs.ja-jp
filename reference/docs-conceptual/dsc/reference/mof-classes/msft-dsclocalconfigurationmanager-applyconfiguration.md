@@ -1,13 +1,14 @@
 ---
 ms.date: 07/14/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: ApplyConfiguration メソッド
-ms.openlocfilehash: bec74ccd6f75448484adfd26bf8a4af4e224eb3f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: ApplyConfiguration メソッド
+ms.openlocfilehash: aa99221b33d39c3ecc70156a11eaee10b540e2dc
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86463841"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92664283"
 ---
 # <a name="applyconfiguration-method"></a>ApplyConfiguration メソッド
 
@@ -19,7 +20,7 @@ ms.locfileid: "86463841"
 
 ```mof
 uint32 ApplyConfiguration(
-  [in] boolean force
+  [in] boolean force
 );
 ```
 
@@ -41,7 +42,7 @@ uint32 ApplyConfiguration(
 
 **MOF:** DscCore.mof
 
-**名前空間**: Root\Microsoft\Windows\DesiredStateConfiguration
+**名前空間** :Root\Microsoft\Windows\DesiredStateConfiguration
 
 ## <a name="see-also"></a>関連項目
 

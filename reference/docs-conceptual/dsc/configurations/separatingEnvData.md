@@ -2,19 +2,19 @@
 ms.date: 06/12/2017
 keywords: DSC, PowerShell, 構成, セットアップ
 title: 構成データと環境データの分離
-ms.openlocfilehash: b16243fc9096f786a25ed20868e94a3aa85e403e
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: 構成データを使用して、DSC 構成で使用するデータを構成自体と切り離しておくと便利です。 そうすることにより、複数の環境に 1 つの構成を使用することができます。
+ms.openlocfilehash: 84ca4e4945a36111d23116524fd8f98c04e16d32
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "71954439"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92645063"
 ---
 # <a name="separating-configuration-and-environment-data"></a>構成データと環境データの分離
 
->適用先: Windows PowerShell 4.0、Windows PowerShell 5.0
+> 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
-構成データを使用して、DSC 構成で使用するデータを構成自体と切り離しておくと便利です。
-そうすることにより、複数の環境に 1 つの構成を使用することができます。
+構成データを使用して、DSC 構成で使用するデータを構成自体と切り離しておくと便利です。 そうすることにより、複数の環境に 1 つの構成を使用することができます。
 
 たとえば、アプリケーションを開発している場合は、開発環境と運用環境の両方に 1 つの構成を使用し、構成データを使用して各環境のデータを指定することができます。
 
@@ -22,24 +22,23 @@ ms.locfileid: "71954439"
 
 構成データはハッシュ テーブルで定義されるデータで、その構成をコンパイルするときに DSC 構成に渡されます。
 
-**ConfigurationData** ハッシュ テーブルの詳細については、[構成データの使用](configData.md)に関するページを参照してください。
+**ConfigurationData** ハッシュ テーブルの詳細については、 [構成データの使用](configData.md)に関するページを参照してください。
 
 ## <a name="a-simple-example"></a>簡単な例
 
-簡単な例で仕組みを見てみましょう。
-一部のノードには **IIS** を、他のノードには **Hyper-V** を存在させる 1 つの構成を作成します。
+簡単な例で仕組みを見てみましょう。 一部のノードには **IIS** を、他のノードには **Hyper-V** を存在させる 1 つの構成を作成します。
 
 ```powershell
 Configuration MyDscConfiguration {
 
-    Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
+  Node $AllNodes.Where{$_.Role -eq "WebServer"}.NodeName
     {
-        WindowsFeature IISInstall {
-            Ensure = 'Present'
-            Name   = 'Web-Server'
-        }
+  WindowsFeature IISInstall {
+    Ensure = 'Present'
+    Name   = 'Web-Server'
+  }
 
-    }
+ }
     Node $AllNodes.Where{$_.Role -eq "VMHost"}.NodeName
     {
         WindowsFeature HyperVInstall {
@@ -68,7 +67,7 @@ $MyData =
 MyDscConfiguration -ConfigurationData $MyData
 ```
 
-このスクリプトの最後の行は、**ConfigurationData** パラメーターの値として `$MyData` を渡して、構成をコンパイルします。
+このスクリプトの最後の行は、 **ConfigurationData** パラメーターの値として `$MyData` を渡して、構成をコンパイルします。
 
 その結果、2 つの MOF ファイルが作成されます。
 
@@ -82,7 +81,7 @@ Mode                LastWriteTime         Length Name
 -a----        3/31/2017   5:09 PM           1970 VM-2.mof
 ```
 
-`$MyData` が、それぞれ独自の `NodeName` と `Role` を持つ、2 つの異なるノードを指定します。 構成は、`$MyData` (具体的には `$AllNodes`) から取得したノードのコレクションを集めることで動的に**ノード** ブロックを作成し、そのコレクションを `Role` プロパティと突き合わせてフィルタ―処理します。
+`$MyData` が、それぞれ独自の `NodeName` と `Role` を持つ、2 つの異なるノードを指定します。 構成は、`$MyData` (具体的には `$AllNodes`) から取得したノードのコレクションを集めることで動的に **ノード** ブロックを作成し、そのコレクションを `Role` プロパティと突き合わせてフィルタ―処理します。
 
 ## <a name="using-configuration-data-to-define-development-and-production-environments"></a>構成データを使用して、開発および運用環境を定義する
 
@@ -102,7 +101,7 @@ Mode                LastWriteTime         Length Name
             SQLServerName   = "MySQLServer"
             SqlSource       = "C:\Software\Sql"
             DotNetSrc       = "C:\Software\sxs"
-        WebSiteName     = "New website"
+            WebSiteName     = "New website"
         },
 
         @{
@@ -129,13 +128,11 @@ Mode                LastWriteTime         Length Name
 
 ### <a name="configuration-script-file"></a>構成スクリプト ファイル
 
-次に、`.ps1` で定義されている構成において、`DevProdEnvData.psd1` に定義したノードを役割別 (`MSSQL`、`Dev`、またはその両方) にフィルター処理し、役割に応じて構成します。
-開発環境では 1 つのノードに SQL Server と IIS の両方がありますが、運用環境では、SQL Server と IIS はそれぞれ 2 つの異なるノードにあります。
-`SiteContents` プロパティで指定したように、サイトのコンテンツも異なります。
+次に、`.ps1` で定義されている構成において、`DevProdEnvData.psd1` に定義したノードを役割別 (`MSSQL`、`Dev`、またはその両方) にフィルター処理し、役割に応じて構成します。 開発環境では 1 つのノードに SQL Server と IIS の両方がありますが、運用環境では、SQL Server と IIS はそれぞれ 2 つの異なるノードにあります。 `SiteContents` プロパティで指定したように、サイトのコンテンツも異なります。
 
 構成スクリプトの最後の行で、`DevProdEnvData.psd1` を `$ConfigurationData` パラメーターとして渡して、構成を呼び出し (MOF ドキュメントに構成をコンパイルし) ます。
 
->**注:** この構成には、ターゲット ノードにインストールされるモジュール `xSqlPs` と `xWebAdministration` が必要です。
+> **注:** この構成には、ターゲット ノードにインストールされるモジュール `xSqlPs` と `xWebAdministration` が必要です。
 
 `MyWebApp.ps1` という名前のファイルで構成を定義しましょう。
 
@@ -229,7 +226,7 @@ Configuration MyWebApp
 MyWebApp -ConfigurationData DevProdEnvData.psd1
 ```
 
-この構成を実行すると、3 つの MOF ファイルが作成されます (**AllNodes** 配列内の名付けられたエントリごとに 1 つ)。
+この構成を実行すると、3 つの MOF ファイルが作成されます ( **AllNodes** 配列内の名付けられたエントリごとに 1 つ)。
 
 ```
     Directory: C:\DscTests\MyWebApp
@@ -244,75 +241,70 @@ Mode                LastWriteTime         Length Name
 
 ## <a name="using-non-node-data"></a>ノード外のデータを使用する
 
-ノードに固有ではないデータの **ConfigurationData** ハッシュ テーブルに追加キーを追加できます。
-次の構成では、2 つの Web サイトが存在するようにします。
-それぞれの Web サイトのデータは **AllNodes** 配列に定義されています。
-ファイル `Config.xml` は両方の Web サイトに使用されるので、それを追加キーで `NonNodeData` という名前で定義します。
-追加キーは必要な数だけ設定でき、名前の付け方も自由です。
-`NonNodeData` は予約語ではなく、ここでの追加キーにこのように名前を付けただけです。
+ノードに固有ではないデータの **ConfigurationData** ハッシュ テーブルに追加キーを追加できます。 次の構成では、2 つの Web サイトが存在するようにします。 それぞれの Web サイトのデータは **AllNodes** 配列に定義されています。 ファイル `Config.xml` は両方の Web サイトに使用されるので、それを追加キーで `NonNodeData` という名前で定義します。 追加キーは必要な数だけ設定でき、名前の付け方も自由です。 `NonNodeData` は予約語ではなく、ここでの追加キーにこのように名前を付けただけです。
 
-追加キーへのアクセスには、特殊な変数 **$ConfigurationData** を使用します。
-この例では `ConfigFileContents` は、次の行を使用してアクセスします。
+追加キーへのアクセスには、特殊な変数 **$ConfigurationData** を使用します。 この例では `ConfigFileContents` は、次の行を使用してアクセスします。
+
 ```powershell
  Contents = $ConfigurationData.NonNodeData.ConfigFileContents
  ```
- これは `File` リソース ブロック内です。
 
+ これは `File` リソース ブロック内です。
 
 ```powershell
 $MyData =
 @{
-    AllNodes =
-    @(
-        @{
-            NodeName           = "*"
-            LogPath            = "C:\Logs"
-        },
+    AllNodes =
+    @(
+        @{
+            NodeName           = "*"
+            LogPath            = "C:\Logs"
+        },
 
-        @{
-            NodeName = "VM-1"
-            SiteContents = "C:\Site1"
-            SiteName = "Website1"
-        },
+        @{
+            NodeName = "VM-1"
+            SiteContents = "C:\Site1"
+            SiteName = "Website1"
+        },
 
 
-        @{
-            NodeName = "VM-2"
-            SiteContents = "C:\Site2"
-            SiteName = "Website2"
-        }
-    );
+        @{
+            NodeName = "VM-2"
+            SiteContents = "C:\Site2"
+            SiteName = "Website2"
+        }
+    );
 
-    NonNodeData =
-    @{
-        ConfigFileContents = (Get-Content C:\Template\Config.xml)
-     }
+    NonNodeData =
+    @{
+        ConfigFileContents = (Get-Content C:\Template\Config.xml)
+     }
 }
 
 configuration WebsiteConfig
 {
-    Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
+    Import-DscResource -ModuleName xWebAdministration -Name MSFT_xWebsite
 
-    node $AllNodes.NodeName
-    {
-        xWebsite Site
-        {
-            Name         = $Node.SiteName
-            PhysicalPath = $Node.SiteContents
-            Ensure       = "Present"
-        }
+    node $AllNodes.NodeName
+    {
+        xWebsite Site
+        {
+            Name         = $Node.SiteName
+            PhysicalPath = $Node.SiteContents
+            Ensure       = "Present"
+        }
 
-        File ConfigFile
-        {
-            DestinationPath = $Node.SiteContents + "\\config.xml"
-            Contents = $ConfigurationData.NonNodeData.ConfigFileContents
-        }
-    }
+        File ConfigFile
+        {
+            DestinationPath = $Node.SiteContents + "\\config.xml"
+            Contents = $ConfigurationData.NonNodeData.ConfigFileContents
+        }
+    }
 }
 ```
 
-
 ## <a name="see-also"></a>参照
+
 - [構成データの使用](configData.md)
 - [構成データでの資格情報オプション](configDataCredentials.md)
 - [DSC 構成](configurations.md)

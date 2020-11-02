@@ -1,13 +1,14 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC WindowsPackageCab リソース
-ms.openlocfilehash: 7205a454d100bb369fd6cf0c5ac419585c8bbe86
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC WindowsPackageCab リソース
+ms.openlocfilehash: 3ac10eb2a7da502b8cac23ab8bfee869a4e26fd3
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464147"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93143026"
 ---
 # <a name="dsc-windowspackagecab-resource"></a>DSC WindowsPackageCab リソース
 
@@ -16,6 +17,8 @@ ms.locfileid: "86464147"
 Windows PowerShell Desired State Configuration (DSC) の **WindowsPackageCab** リソースは、ターゲット ノードで Windows cabinet (.cab) パッケージをインストールまたはアンインストールするメカニズムを備えています。
 
 ターゲット ノードには DISM PowerShell モジュールをインストールする必要があります。 詳細については、「[Use DISM in Windows PowerShell (Windows PowerShell の DISM の使用)](/windows-hardware/manufacture/desktop/use-dism-in-windows-powershell-s14)」を参照してください。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>構文
 
@@ -43,7 +46,7 @@ Windows PowerShell Desired State Configuration (DSC) の **WindowsPackageCab** �
 |プロパティ |説明 |
 |---|---|
 |DependsOn |このリソースを構成する前に、他のリソースの構成を実行する必要があることを示します。 たとえば、最初に実行するリソース構成スクリプト ブロックの ID が ResourceName で、そのタイプが ResourceType である場合、このプロパティを使用する構文は `DependsOn = "[ResourceType]ResourceName"` になります。 |
-|Ensure |パッケージがインストールされるかどうかを示します。 パッケージが確実にインストールされないようにする (またはパッケージがインストールされている場合はアンインストールされるようにする) には、このプロパティを **Absent** に設定します。 パッケージが確実にインストールされるようにするには、これを **Present** に設定します。 **WindowsPackageCab** リソースでは、**Ensure** は必須のプロパティです。 |
+|Ensure |パッケージがインストールされるかどうかを示します。 パッケージが確実にインストールされないようにする (またはパッケージがインストールされている場合はアンインストールされるようにする) には、このプロパティを **Absent** に設定します。 パッケージが確実にインストールされるようにするには、これを **Present** に設定します。 **WindowsPackageCab** リソースでは、 **Ensure** は必須のプロパティです。 |
 |PsDscRunAsCredential |リソース全体を実行するための資格情報を設定します。 |
 
 ## <a name="example"></a>例

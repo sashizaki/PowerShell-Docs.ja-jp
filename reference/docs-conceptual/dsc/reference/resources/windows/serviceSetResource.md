@@ -1,21 +1,24 @@
 ---
 ms.date: 07/16/2020
-keywords: DSC, PowerShell, 構成, セットアップ
+ms.topic: reference
 title: DSC ServiceSet リソース
-ms.openlocfilehash: b51cfa86aa6d2114553a0eee681cb88ea93e213f
-ms.sourcegitcommit: 41e1acbd9ce0f49a23c6eb99facd2c280d836836
+description: DSC ServiceSet リソース
+ms.openlocfilehash: bcb8382440d80c37179cdc1d1e17376b2511c3f3
+ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/18/2020
-ms.locfileid: "86464402"
+ms.lasthandoff: 10/31/2020
+ms.locfileid: "93142958"
 ---
 # <a name="dsc-serviceset-resource"></a>DSC ServiceSet リソース
 
 > 適用先:Windows PowerShell 4.0、Windows PowerShell 5.x
 
-PowerShell Desired State Configuration (DSC) の **ServiceSet** リソースは、ターゲット ノード上でサービスを管理するためのメカニズムを備えています。 このリソースは[複合リソース](../../../resources/authoringResourceComposite.md)であり、**Name** プロパティに指定されているサービスごとに [Service リソース](serviceResource.md)を呼び出します。
+PowerShell Desired State Configuration (DSC) の **ServiceSet** リソースは、ターゲット ノード上でサービスを管理するためのメカニズムを備えています。 このリソースは [複合リソース](../../../resources/authoringResourceComposite.md)であり、 **Name** プロパティに指定されているサービスごとに [Service リソース](serviceResource.md)を呼び出します。
 
 サービスの数を同じ状態に構成するときにこのリソースを使用します。
+
+[!INCLUDE [Updated DSC Resources](../../../../../includes/dsc-resources.md)]
 
 ## <a name="syntax"></a>構文
 
@@ -38,9 +41,9 @@ ServiceSet [string] #ResourceName
 |プロパティ |説明 |
 |---|---|
 |名前 |サービス名を示します。 これは表示名とは異なることがあります。 `Get-Service` コマンドレットを使用すると、サービスとその現在の状態の一覧を取得できます。 |
-|StartupType |サービスのスタートアップの種類を示します。 このプロパティで有効な値は、**Automatic**、**Disabled**、**Manual** です。 |
-|BuiltInAccount |サービスに使用するサインイン アカウントを示します。 このプロパティで有効な値は、**LocalService**、**LocalSystem**、**NetworkService** です。 |
-|State |サービスに対して保証する状態を次のように示します。**Stopped** または **Running**。 |
+|StartupType |サービスのスタートアップの種類を示します。 このプロパティで有効な値は、 **Automatic** 、 **Disabled** 、 **Manual** です。 |
+|BuiltInAccount |サービスに使用するサインイン アカウントを示します。 このプロパティで有効な値は、 **LocalService** 、 **LocalSystem** 、 **NetworkService** です。 |
+|State |サービスに対して保証する状態を次のように示します。 **Stopped** または **Running** 。 |
 |資格情報 |サービス リソースを実行するアカウントの資格情報を示します。 このプロパティおよび **BuiltinAccount** プロパティを同時に使用することはできません。 |
 
 ## <a name="common-properties"></a>共通プロパティ
