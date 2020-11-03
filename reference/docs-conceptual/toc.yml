@@ -75,6 +75,8 @@
           href: learn/deep-dives/everything-about-shouldprocess.md
         - name: マルチスレッドでの Write-Progress
           href: learn/deep-dives/write-progress-across-multiple-threads.md
+        - name: PowerShell 関数への資格情報サポートの追加
+          href: learn/deep-dives/add-credentials-to-powershell-functions.md
     - name: PowerShell リモート処理
       items:
         - name: Just Enough Administration (JEA)
@@ -564,6 +566,8 @@
       href: community/hall-of-fame.md
     - name: Docs の新機能
       items:
+        - name: 2020-Q4
+          href: community/2020-Q4.md
         - name: 2020-Q3
           href: community/2020-Q3.md
         - name: 2020 年第 2 四半期
