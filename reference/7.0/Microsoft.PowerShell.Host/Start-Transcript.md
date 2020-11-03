@@ -1,0 +1,262 @@
+---
+external help file: Microsoft.PowerShell.ConsoleHost.dll-Help.xml
+keywords: powershell,コマンドレット
+Locale: en-US
+Module Name: Microsoft.PowerShell.Host
+ms.date: 04/22/2020
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: Start-Transcript
+ms.openlocfilehash: 5f964cec2458309eb736bf2d2930fc65a72b0fe4
+ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/03/2020
+ms.locfileid: "93211160"
+---
+# <span data-ttu-id="96ae0-103">Start-Transcript</span><span class="sxs-lookup"><span data-stu-id="96ae0-103">Start-Transcript</span></span>
+
+## <span data-ttu-id="96ae0-104">概要</span><span class="sxs-lookup"><span data-stu-id="96ae0-104">SYNOPSIS</span></span>
+<span data-ttu-id="96ae0-105">テキストファイルへの PowerShell セッションのすべてまたは一部のレコードを作成します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-105">Creates a record of all or part of a PowerShell session to a text file.</span></span>
+
+## <span data-ttu-id="96ae0-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="96ae0-106">SYNTAX</span></span>
+
+### <span data-ttu-id="96ae0-107">ByPath (既定値)</span><span class="sxs-lookup"><span data-stu-id="96ae0-107">ByPath (Default)</span></span>
+
+```
+Start-Transcript [[-Path] <String>] [-Append] [-Force] [-NoClobber] [-IncludeInvocationHeader]
+ [-UseMinimalHeader] [-WhatIf] [-Confirm]  [<CommonParameters>]
+```
+
+### <span data-ttu-id="96ae0-108">ByLiteralPath</span><span class="sxs-lookup"><span data-stu-id="96ae0-108">ByLiteralPath</span></span>
+
+```
+Start-Transcript [[-LiteralPath] <String>] [-Append] [-Force] [-NoClobber]
+ [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf] [-Confirm]  [<CommonParameters>]
+```
+
+### <span data-ttu-id="96ae0-109">ByOutputDirectory</span><span class="sxs-lookup"><span data-stu-id="96ae0-109">ByOutputDirectory</span></span>
+
+```
+Start-Transcript [[-OutputDirectory] <String>] [-Append] [-Force] [-NoClobber]
+ [-IncludeInvocationHeader] [-UseMinimalHeader] [-WhatIf] [-Confirm]  [<CommonParameters>]
+```
+
+## <span data-ttu-id="96ae0-110">Description</span><span class="sxs-lookup"><span data-stu-id="96ae0-110">DESCRIPTION</span></span>
+
+<span data-ttu-id="96ae0-111">コマンドレットにより、 `Start-Transcript` PowerShell セッションのすべてまたは一部のレコードがテキストファイルに作成されます。</span><span class="sxs-lookup"><span data-stu-id="96ae0-111">The `Start-Transcript` cmdlet creates a record of all or part of a PowerShell session to a text file.</span></span> <span data-ttu-id="96ae0-112">トランスクリプトには、ユーザーが入力したすべてのコマンドと、コンソールに表示されたすべての出力が含まれます。</span><span class="sxs-lookup"><span data-stu-id="96ae0-112">The transcript includes all command that the user types and all output that appears on the console.</span></span>
+
+<span data-ttu-id="96ae0-113">Windows PowerShell 5.0 以降、では、 `Start-Transcript` すべてのトランスクリプトの生成されたファイル名にホスト名が含まれています。</span><span class="sxs-lookup"><span data-stu-id="96ae0-113">Starting in Windows PowerShell 5.0, `Start-Transcript` includes the hostname in the generated file name of all transcripts.</span></span> <span data-ttu-id="96ae0-114">これは、企業のログ記録が集中管理されている場合に特に便利です。</span><span class="sxs-lookup"><span data-stu-id="96ae0-114">This is especially useful when your enterprise's logging is centralized.</span></span>
+<span data-ttu-id="96ae0-115">コマンドレットによって作成されるファイルには、 `Start-Transcript` 2 つ以上のトランスクリプトが同時に開始された場合に上書きや重複が発生しないように、名前にランダムな文字が含まれます。</span><span class="sxs-lookup"><span data-stu-id="96ae0-115">Files that are created by the `Start-Transcript` cmdlet include random characters in names to prevent potential overwrites or duplication when two or more transcripts are started simultaneously.</span></span>
+<span data-ttu-id="96ae0-116">これにより、一元化されたファイル共有に保存されているトランスクリプトの不正な検出も防止されます。</span><span class="sxs-lookup"><span data-stu-id="96ae0-116">This also prevents unauthorized discovery of transcripts that are stored in a centralized file share.</span></span>
+
+## <span data-ttu-id="96ae0-117">例</span><span class="sxs-lookup"><span data-stu-id="96ae0-117">EXAMPLES</span></span>
+
+### <span data-ttu-id="96ae0-118">例 1: 既定の設定を使用してトランスクリプトファイルを開始する</span><span class="sxs-lookup"><span data-stu-id="96ae0-118">Example 1: Start a transcript file with default settings</span></span>
+
+```powershell
+Start-Transcript
+```
+
+<span data-ttu-id="96ae0-119">このコマンドは、既定のファイルの場所を使用してトランスクリプトを開始します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-119">This command starts a transcript in the default file location.</span></span>
+
+### <span data-ttu-id="96ae0-120">例 2: 特定の場所でトランスクリプトファイルを開始する</span><span class="sxs-lookup"><span data-stu-id="96ae0-120">Example 2: Start a transcript file at a specific location</span></span>
+
+```powershell
+Start-Transcript -Path "C:\transcripts\transcript0.txt" -NoClobber
+```
+
+<span data-ttu-id="96ae0-121">このコマンドは、のファイルでトランスクリプトを開始 `Transcript0.txt` `C:\transcripts` します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-121">This command starts a transcript in the `Transcript0.txt` file in `C:\transcripts`.</span></span> <span data-ttu-id="96ae0-122">**NoClobber** パラメーターが使用されているため、既存のファイルは上書きされません。</span><span class="sxs-lookup"><span data-stu-id="96ae0-122">Since the **NoClobber** parameter is used, the command prevents any existing files from being overwritten.</span></span> <span data-ttu-id="96ae0-123">ファイルが `Transcript0.txt` 既に存在する場合、コマンドは失敗します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-123">If the `Transcript0.txt` file already exists, the command fails.</span></span>
+
+## <span data-ttu-id="96ae0-124">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="96ae0-124">PARAMETERS</span></span>
+
+### <span data-ttu-id="96ae0-125">-追加</span><span class="sxs-lookup"><span data-stu-id="96ae0-125">-Append</span></span>
+
+<span data-ttu-id="96ae0-126">このコマンドレットが、新しいトランスクリプトを既存のファイルの末尾に追加することを示します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-126">Indicates that this cmdlet adds the new transcript to the end of an existing file.</span></span> <span data-ttu-id="96ae0-127">**Path** パラメーターを使用して、ファイルを指定します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-127">Use the **Path** parameter to specify the file.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="96ae0-128">-Force</span><span class="sxs-lookup"><span data-stu-id="96ae0-128">-Force</span></span>
+
+<span data-ttu-id="96ae0-129">コマンドレットがトランスクリプトを既存の読み取り専用ファイルに追加することを許可します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-129">Allows the cmdlet to append the transcript to an existing read-only file.</span></span> <span data-ttu-id="96ae0-130">読み取り専用ファイルで使用した場合、このコマンドレットはファイルのアクセス許可を読み取り/書き込みに変更します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-130">When used on a read-only file, the cmdlet changes the file permission to read-write.</span></span> <span data-ttu-id="96ae0-131">このパラメーターが使用されている場合、コマンドレットでセキュリティ制限をオーバーライドすることはできません。</span><span class="sxs-lookup"><span data-stu-id="96ae0-131">The cmdlet cannot override security restrictions when this parameter is used.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="96ae0-132">-IncludeInvocationHeader</span><span class="sxs-lookup"><span data-stu-id="96ae0-132">-IncludeInvocationHeader</span></span>
+
+<span data-ttu-id="96ae0-133">コマンドの実行時に、このコマンドレットによってタイムスタンプがログに記録されることを示します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-133">Indicates that this cmdlet logs the time stamp when commands are run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="96ae0-134">-UseMinimalHeader</span><span class="sxs-lookup"><span data-stu-id="96ae0-134">-UseMinimalHeader</span></span>
+
+<span data-ttu-id="96ae0-135">既定では、詳細ヘッダーではなく、短いヘッダーをトランスクリプトに追加します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-135">Prepend a short header to the transcript, instead of the detailed header included by default.</span></span> <span data-ttu-id="96ae0-136">このパラメーターは、PowerShell 6.2 で追加されました。</span><span class="sxs-lookup"><span data-stu-id="96ae0-136">This parameter was added in PowerShell 6.2.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="96ae0-137">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="96ae0-137">-LiteralPath</span></span>
+
+<span data-ttu-id="96ae0-138">トランスクリプトファイルの場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-138">Specifies a location to the transcript file.</span></span> <span data-ttu-id="96ae0-139">**Path** パラメーターと異なり、 **LiteralPath** パラメーターの値は入力したとおりに使用されます。</span><span class="sxs-lookup"><span data-stu-id="96ae0-139">Unlike the **Path** parameter, the value of the **LiteralPath** parameter is used exactly as it is typed.</span></span> <span data-ttu-id="96ae0-140">ワイルドカードとして解釈される文字はありません。</span><span class="sxs-lookup"><span data-stu-id="96ae0-140">No characters are interpreted as wildcards.</span></span> <span data-ttu-id="96ae0-141">パスにエスケープ文字が含まれている場合は、単一引用符で囲みます。</span><span class="sxs-lookup"><span data-stu-id="96ae0-141">If the path includes escape characters, enclose it in single quotation marks.</span></span> <span data-ttu-id="96ae0-142">単一引用符は、文字をエスケープシーケンスとして解釈しないことを PowerShell に伝えます。</span><span class="sxs-lookup"><span data-stu-id="96ae0-142">Single quotation marks inform PowerShell not to interpret any characters as escape sequences.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByLiteralPath
+Aliases: PSPath, LP
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="96ae0-143">-NoClobber</span><span class="sxs-lookup"><span data-stu-id="96ae0-143">-NoClobber</span></span>
+
+<span data-ttu-id="96ae0-144">このコマンドレットが既存のファイルを上書きしないことを示します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-144">Indicates that this cmdlet will not overwrite of an existing file.</span></span> <span data-ttu-id="96ae0-145">既定では、指定されたパスにトランスクリプトファイルが存在する場合、は `Start-Transcript` 警告なしにファイルを上書きします。</span><span class="sxs-lookup"><span data-stu-id="96ae0-145">By default, if a transcript file exists in the specified path, `Start-Transcript` overwrites the file without warning.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: NoOverwrite
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="96ae0-146">-OutputDirectory</span><span class="sxs-lookup"><span data-stu-id="96ae0-146">-OutputDirectory</span></span>
+
+<span data-ttu-id="96ae0-147">トランスクリプトを保存する特定のパスとフォルダーを指定します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-147">Specifies a specific path and folder in which to save a transcript.</span></span> <span data-ttu-id="96ae0-148">PowerShell では、トランスクリプト名が自動的に割り当てられます。</span><span class="sxs-lookup"><span data-stu-id="96ae0-148">PowerShell automatically assigns the transcript name.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByOutputDirectory
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="96ae0-149">-Path</span><span class="sxs-lookup"><span data-stu-id="96ae0-149">-Path</span></span>
+
+<span data-ttu-id="96ae0-150">トランスクリプトファイルの場所を指定します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-150">Specifies a location to the transcript file.</span></span> <span data-ttu-id="96ae0-151">ファイルへのパスを入力 `.txt` します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-151">Enter a path to a `.txt` file.</span></span> <span data-ttu-id="96ae0-152">ワイルドカードは使用できません。</span><span class="sxs-lookup"><span data-stu-id="96ae0-152">Wildcards are not permitted.</span></span>
+
+<span data-ttu-id="96ae0-153">パスを指定しない場合、は `Start-Transcript` グローバル変数の値のパスを使用し `$Transcript` ます。</span><span class="sxs-lookup"><span data-stu-id="96ae0-153">If you do not specify a path, `Start-Transcript` uses the path in the value of the `$Transcript` global variable.</span></span> <span data-ttu-id="96ae0-154">この変数を作成していない場合は、によって `Start-Transcript` ファイルにトランスクリプトが格納され `$Home\My Documents directory as \PowerShell_transcript.<time-stamp>.txt` ます。</span><span class="sxs-lookup"><span data-stu-id="96ae0-154">If you have not created this variable, `Start-Transcript` stores the transcripts in the `$Home\My Documents directory as \PowerShell_transcript.<time-stamp>.txt` files.</span></span>
+
+<span data-ttu-id="96ae0-155">パス内のいずれかのディレクトリが存在しない場合、コマンドは失敗します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-155">If any of the directories in the path do not exist, the command fails.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: ByPath
+Aliases:
+
+Required: False
+Position: 0
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="96ae0-156">-Confirm</span><span class="sxs-lookup"><span data-stu-id="96ae0-156">-Confirm</span></span>
+
+<span data-ttu-id="96ae0-157">コマンドレットの実行前に確認を求めるメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="96ae0-157">Prompts you for confirmation before running the cmdlet.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: cf
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="96ae0-158">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="96ae0-158">-WhatIf</span></span>
+
+<span data-ttu-id="96ae0-159">コマンドレットの実行時に発生する内容を示します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-159">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="96ae0-160">このコマンドレットは実行されません。</span><span class="sxs-lookup"><span data-stu-id="96ae0-160">The cmdlet is not run.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases: wi
+
+Required: False
+Position: Named
+Default value: False
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="96ae0-161">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="96ae0-161">CommonParameters</span></span>
+
+<span data-ttu-id="96ae0-162">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="96ae0-162">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="96ae0-163">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="96ae0-163">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+
+## <span data-ttu-id="96ae0-164">入力</span><span class="sxs-lookup"><span data-stu-id="96ae0-164">INPUTS</span></span>
+
+### <span data-ttu-id="96ae0-165">なし</span><span class="sxs-lookup"><span data-stu-id="96ae0-165">None</span></span>
+
+<span data-ttu-id="96ae0-166">このコマンドレットにパイプを使用してオブジェクトを渡すことはできません。</span><span class="sxs-lookup"><span data-stu-id="96ae0-166">You cannot pipe objects to this cmdlet.</span></span>
+
+## <span data-ttu-id="96ae0-167">出力</span><span class="sxs-lookup"><span data-stu-id="96ae0-167">OUTPUTS</span></span>
+
+### <span data-ttu-id="96ae0-168">System.String</span><span class="sxs-lookup"><span data-stu-id="96ae0-168">System.String</span></span>
+
+<span data-ttu-id="96ae0-169">このコマンドレットは、確認メッセージと出力ファイルへのパスを含む文字列を返します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-169">This cmdlet returns a string that contains a confirmation message and the path to the output file.</span></span>
+
+## <span data-ttu-id="96ae0-170">注</span><span class="sxs-lookup"><span data-stu-id="96ae0-170">NOTES</span></span>
+
+<span data-ttu-id="96ae0-171">トランスクリプトを停止するには、コマンドレットを使用し `Stop-Transcript` ます。</span><span class="sxs-lookup"><span data-stu-id="96ae0-171">To stop a transcript, use the `Stop-Transcript` cmdlet.</span></span>
+
+<span data-ttu-id="96ae0-172">セッション全体を記録するには、 `Start-Transcript` プロファイルにコマンドを追加します。</span><span class="sxs-lookup"><span data-stu-id="96ae0-172">To record an entire session, add the `Start-Transcript` command to your profile.</span></span> <span data-ttu-id="96ae0-173">詳細については、「 [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="96ae0-173">For more information, see [about_Profiles](../Microsoft.PowerShell.Core/About/about_Profiles.md).</span></span>
+
+## <span data-ttu-id="96ae0-174">関連リンク</span><span class="sxs-lookup"><span data-stu-id="96ae0-174">RELATED LINKS</span></span>
+
+[<span data-ttu-id="96ae0-175">Stop-Transcript</span><span class="sxs-lookup"><span data-stu-id="96ae0-175">Stop-Transcript</span></span>](Stop-Transcript.md)
