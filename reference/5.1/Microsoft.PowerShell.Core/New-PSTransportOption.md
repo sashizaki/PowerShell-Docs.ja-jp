@@ -1,0 +1,391 @@
+---
+external help file: System.Management.Automation.dll-Help.xml
+keywords: powershell,コマンドレット
+Locale: en-US
+Module Name: Microsoft.PowerShell.Core
+ms.date: 06/09/2017
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pstransportoption?view=powershell-5.1&WT.mc_id=ps-gethelp
+schema: 2.0.0
+title: New-PSSessionOption
+ms.openlocfilehash: 9257c0a1829cc9cc85029f7c6fdc8e61b0ed7e56
+ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.translationtype: MT
+ms.contentlocale: ja-JP
+ms.lasthandoff: 07/23/2020
+ms.locfileid: "93218168"
+---
+# New-PSSessionOption
+
+## 概要
+
+セッション構成の詳細設定オプションが格納されたオブジェクトを作成します。
+
+## SYNTAX
+
+```
+New-PSTransportOption [-MaxIdleTimeoutSec <Int32>] [-ProcessIdleTimeoutSec <Int32>] [-MaxSessions <Int32>]
+ [-MaxConcurrentCommandsPerSession <Int32>] [-MaxSessionsPerUser <Int32>] [-MaxMemoryPerSessionMB <Int32>]
+ [-MaxProcessesPerSession <Int32>] [-MaxConcurrentUsers <Int32>] [-IdleTimeoutSec <Int32>]
+ [-OutputBufferingMode <OutputBufferingMode>] [<CommonParameters>]
+```
+
+## Description
+
+**New-PSTransportOption** コマンドレットは、セッション構成のトランスポート オプションを含むオブジェクトを作成します。
+オブジェクトは、Register-PSSessionConfiguration や Set-PSSessionConfiguration のコマンドレットなど、セッション構成を作成または変更するコマンドレットの *TransportOption* パラメーターの値として使用できます。
+
+また、WSMan: ドライブのセッション構成のプロパティの値を編集することにより、トランスポート オプション設定を変更することもできます。
+詳細については、「WSMan Provider」を参照してください。
+
+セッション構成オプションは、サーバー側またはリモート接続の受信側で設定されたセッション値を表します。
+クライアント側または接続の送信側は、セッションが作成されたとき、またはクライアントがセッションから切断または再接続したときに、セッションオプションの値を設定できます。
+特に明記しない限り、設定値が競合した場合、クライアント側の値が優先されます。
+ただし、クライアント側の値は、セッション構成に設定された最大値とクォータを超えることはできません。
+
+パラメーターを指定しない場合、 **new-pstransportoption** は、すべてのオプションに対して null 値を持つトランスポートオプションオブジェクトを生成します。
+パラメーターを省略した場合、オブジェクトではパラメーターが表すプロパティに対して null 値が保持されます。
+Null 値は、セッション構成には影響しません。
+
+セッションオプションの詳細については、「New-PSSessionOption」を参照してください。
+セッション構成の詳細については、「 [about_Session_Configurations](About/about_Session_Configurations.md)」を参照してください。
+
+このコマンドレットは、Windows PowerShell 3.0 で導入されました。
+
+## 例
+
+### 例 1: 既定のトランスポートオプションを生成する
+
+```
+PS C:\> New-PSTransportOption
+ProcessIdleTimeoutSec           :
+MaxIdleTimeoutSec               :
+MaxSessions                     :
+MaxConcurrentCommandsPerSession :
+MaxSessionsPerUser              :
+MaxMemoryPerSessionMB           :
+MaxProcessesPerSession          :
+MaxConcurrentUsers              :
+IdleTimeoutSec                  :
+OutputBufferingMode             :
+```
+
+このコマンドは、パラメーターを指定せずに **new-pstransportoption** を実行します。
+出力には、コマンドレットがすべてのプロパティに対して null 値を持つトランスポートオプションオブジェクトを生成することが示されています。
+
+### 例 2: セッション構成オプションを取得する
+
+```
+The first command uses the **New-PSTransportOption** cmdlet to create a transport options object, which it saves in the $t variable. The command uses the *MaxSessions* parameter to increase the maximum number of sessions to 40.
+PS C:\> $t = New-PSTransportOption -MaxSessions 40
+
+The second command uses the **Register-PSSessionConfiguration** cmdlet create the ITTasks session configuration. The command uses the *TransportOption* parameter to specify the transport options object in the $t variable.
+PS C:\> Register-PSSessionConfiguration -Name ITTasks -TransportOption $t
+
+The third command uses the Get-PSSessionConfiguration cmdlet to get the ITTasks session configurations and the Format-List cmdlet to display all of the properties of the session configuration object in a list. The output shows that the value of the **MaxShells** property of the session configuration is 40.
+PS C:\> Get-PSSessionConfiguration -Name ITTasks | Format-List -Property *
+Architecture                  : 64
+Filename                      : %windir%\system32\pwrshplugin.dll
+ResourceUri                   : http://schemas.microsoft.com/powershell/ITTasks
+MaxConcurrentCommandsPerShell : 1000
+UseSharedProcess              : false
+ProcessIdleTimeoutSec         : 0
+xmlns                         : http://schemas.microsoft.com/wbem/wsman/1/config/PluginConfiguration
+MaxConcurrentUsers            : 5
+lang                          : en-US
+SupportsOptions               : true
+ExactMatch                    : true
+RunAsUser                     :
+IdleTimeoutms                 : 7200000
+PSVersion                     : 3.0
+OutputBufferingMode           : Block
+AutoRestart                   : false
+MaxShells                     : 40
+MaxMemoryPerShellMB           : 1024
+MaxIdleTimeoutms              : 43200000
+SDKVersion                    : 2
+Name                          : ITTasks
+XmlRenderingType              : text
+Capability                    : {Shell}
+RunAsPassword                 :
+MaxProcessesPerShell          : 15
+Enabled                       : True
+MaxShellsPerUser              : 25
+Permission                    :
+```
+
+この例では、トランスポートオプションオブジェクトを使用してセッション構成オプションを設定する方法を示します。
+
+### 例 3: トランスポートオプションを設定する
+
+```
+The first command uses the **New-PSTransportOption** cmdlet to create a transport option object. The command uses the *IdleTimeoutSec* parameter to set the **IdleTimeoutSec** property value of the object to one hour (3600 seconds). The command saves the transport objects object in the $t variable.
+PS C:\> $t = New-PSTransportOption -IdleTimeoutSec 3600
+
+The second command uses the Set-PSSessionConfiguration cmdlet to change the transport options of the ITTasks session configuration. The command uses the *TransportOption* parameter to specify the transport options object in the $t variable.
+PS C:\> Set-PSSessionConfiguration -Name ITTasks -TransportOption $t
+
+The third command uses the New-PSSession cmdlet to create the MyITTasks session on the local computer. The command uses the **ConfigurationName** property to specify the ITTasks session configuration. The command saves the session in the $s variable.Notice that the command does not use the *SessionOption* parameter of **New-PSSession** to set a custom idle time-out for the session. If it did, the idle time-out value set in the session option would take precedence over the idle time-out set in the session configuration.
+PS C:\> $s = New-PSSession -Name MyITTasks -ConfigurationName ITTasks
+
+The fourth command uses the Format-List cmdlet to display all properties of the session in the $s variable in a list. The output shows that the session has an idle time-out of one hour (360,000 milliseconds).
+PS C:\> $s | Format-List -Property *
+State                  : Opened
+IdleTimeout            : 3600000
+OutputBufferingMode    : Block
+ComputerName           : localhost
+ConfigurationName      : ITTasks
+InstanceId             : 4110c3f5-68ea-40fa-9bbf-04a433dbb02d
+Id                     : 1
+Name                   : MyITTasks
+Availability           : Available
+ApplicationPrivateData : {PSVersionTable}
+Runspace               : System.Management.Automation.RemoteRunspace
+```
+
+このコマンドは、セッション構成内のトランスポート オプションを設定することで、セッション構成を使用するセッションに与える影響を示します。
+
+## PARAMETERS
+
+### -IdleTimeoutSec
+
+リモートコンピューターがローカルコンピューターからの通信を受信していない場合に、各セッションが開いたままになる期間を指定します。
+これにはハートビート信号も含まれます。
+この期間が経過すると、セッションは閉じられます。
+
+アイドルタイムアウト値は、ユーザーがセッションを切断して再接続する場合に非常に重要です。
+ユーザーは、セッションがまだタイムアウトしていない場合のみ再接続できます。
+
+*IdleTimeoutSec* パラメーターは、セッション構成の **IdleTimeoutMs** プロパティに対応します。
+
+値を秒単位で入力します。
+既定値は 7,200 (2 時間) です。
+最小値は 60 (1 分) です。
+最大値は、WSMan 構成 () 内のシェルオブジェクトの **IdleTimeout** プロパティの値です `WSMan:\\\<ComputerName\>\Shell\IdleTimeout` 。
+既定値は 7,200,000 ミリ秒 (2 時間) です。
+
+アイドルタイムアウト値がセッションオプションとセッション構成で設定されている場合、セッションオプションで設定された値が優先されますが、セッション構成の **MaxIdleTimeoutMs** プロパティの値を超えることはできません。
+**MaxIdleTimeoutMs** プロパティの値を設定するには、 *MaxIdleTimeoutSec* パラメーターを使用します。
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -MaxConcurrentCommandsPerSession
+
+各セッションで同時に実行できるコマンドの数を指定された値に制限します。
+既定値は 1000 です。
+
+*MaxConcurrentCommandsPerSession* パラメーターは、セッション構成の **MaxConcurrentCommandsPerShell** プロパティに対応しています。
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -MaxConcurrentUsers
+
+各セッションで同時にコマンドを実行できるユーザーの数を指定された値に制限します。
+既定値は 5 です。
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -MaxIdleTimeoutSec
+
+各セッションのアイドルタイムアウトセットを、指定された値に制限します。
+既定値は \[ Int \] :: MaxValue (~ 25 日) です。
+
+アイドルタイムアウト値は、ユーザーがセッションを切断して再接続する場合に非常に重要です。
+ユーザーは、セッションがまだタイムアウトしていない場合のみ再接続できます。
+
+*MaxIdleTimeoutSec* パラメーターは、セッション構成の **MaxIdleTimeoutMs** プロパティに対応しています。
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -MaxMemoryPerSessionMB
+
+各セッションで使用されるメモリを、指定された値に制限します。
+値はメガバイトで入力します。
+既定値は 1,024 メガバイト (1 GB) です。
+
+*Maxmemorypersessionmb* パラメーターは、セッション構成の **Maxmemorypersessionmb** プロパティに対応しています。
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -MaxProcessesPerSession
+
+各セッションで実行するプロセスの数を、指定された値に制限します。
+既定値は 15 です。
+
+*MaxProcessesPerSession* パラメーターは、セッション構成の **Maxproces pershell** プロパティに対応しています。
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -MaxSessions
+
+セッション構成を使用するセッションの数を制限します。
+既定値は 25 です。
+
+*Maxsessions* パラメーターは、セッション構成の **maxsessions** プロパティに対応しています。
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -MaxSessionsPerUser
+
+セッション構成を使用して特定のユーザーの資格情報で実行するセッションの数を、指定された値に制限します。
+既定値は 25 です。
+
+この値を指定する場合は、多くのユーザーが実行ユーザーの資格情報を使用している可能性があります。
+
+*Maxsessionsperuser* パラメーターは、セッション構成の **MaxShellsPerUser** プロパティに対応しています。
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -OutputBufferingMode
+
+出力バッファーがいっぱいになったときに切断されたセッションでコマンドの出力を管理する方法を指定します。
+このパラメーターの有効値は、次のとおりです。
+
+- ブロック。
+出力バッファーがいっぱいのとき、バッファーが空くまで実行が中断されます。
+- Drop : 
+出力バッファーがいっぱいのとき、実行は続行されます。
+新しい出力が保存されると、最も古い出力が破棄されます。
+- なし。
+出力バッファー モードが指定されません。
+
+セッションの **OutputBufferingMode** プロパティの既定値は Block です。
+
+```yaml
+Type: System.Nullable`1[System.Management.Automation.Runspaces.OutputBufferingMode]
+Parameter Sets: (All)
+Aliases:
+Accepted values: None, Drop, Block
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### -ProcessIdleTimeoutSec
+
+各ホストプロセスのタイムアウトを、指定された値に制限します。
+既定値の0は、プロセスのタイムアウト値がないことを意味します。
+
+他のセッション構成には、プロセスごとのタイムアウト値があります。
+たとえば、28800秒 (8 時間) のプロセスごとのタイムアウト値が設定さ **れている** とします。
+
+```yaml
+Type: System.Nullable`1[System.Int32]
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: True (ByPropertyName)
+Accept wildcard characters: False
+```
+
+### 共通パラメーター
+このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。 詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。
+
+## 入力
+
+### なし
+
+パイプを使用してこのコマンドレットに入力を渡すことはできません。
+
+## 出力
+
+### Microsoft. PowerShell. コマンド。 WSManConfigurationOption
+
+## 注
+
+- セッション構成オブジェクトのプロパティは、セッション構成に設定されているオプションとその値によって異なります。 また、セッション構成ファイルを使用するセッション構成には追加のプロパティがあります。
+
+## 関連リンク
+
+[New-PSSession](New-PSSession.md)
+
+[New-PSSessionOption](New-PSSessionOption.md)
+
+[Register-PSSessionConfiguration](Register-PSSessionConfiguration.md)
+
+[Set-PSSessionConfiguration](Set-PSSessionConfiguration.md)
