@@ -4,15 +4,15 @@ keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
 ms.date: 11/01/2020
-online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-culture?view=powershell-7&WT.mc_id=ps-gethelp
+online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-culture?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-Culture
-ms.openlocfilehash: afb6a8067bba477e2849a44386550729eadc24d8
+ms.openlocfilehash: 6cadebfbcdc8cc7a333d62c3c7b9ff5fb6635168
 ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
 ms.translationtype: MT
 ms.contentlocale: ja-JP
 ms.lasthandoff: 11/03/2020
-ms.locfileid: "93239813"
+ms.locfileid: "93239833"
 ---
 # Get-Culture
 
