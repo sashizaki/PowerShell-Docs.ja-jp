@@ -1,17 +1,17 @@
 ---
 ms.date: 12/31/2019
-keywords: powershell,コマンドレット
 title: ISEFile オブジェクト
-ms.openlocfilehash: 1069e46aa586b8df2050129194a909b90f77b745
-ms.sourcegitcommit: 2aec310ad0c0b048400cb56f6fa64c1e554c812a
+description: ISEFile オブジェクトは、Windows PowerShell ISE 内のファイルを表します。
+ms.openlocfilehash: 0de19c45bde7e5629d5721635150d3b0915aaa7d
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/23/2020
-ms.locfileid: "83809888"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662125"
 ---
 # <a name="the-isefile-object"></a>ISEFile オブジェクト
 
-**ISEFile** オブジェクトは、Windows PowerShell® Integrated Scripting Environment (ISE) のファイルを表します。 これは **Microsoft.PowerShell.Host.ISE.ISEFile** クラスのインスタンスです。 このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。 `$psISE.CurrentFile` と、PowerShell タブのファイル コレクション内のファイルは、\*\***Microsoft.PowerShell.Host.ISE.ISEFile** クラスのすべてのインスタンスです。
+**ISEFile** オブジェクトは、Windows PowerShell&reg; Integrated Scripting Environment (ISE) のファイルを表します。 これは **Microsoft.PowerShell.Host.ISE.ISEFile** クラスのインスタンスです。 このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。 `$psISE.CurrentFile` と、PowerShell タブのファイル コレクション内のファイルは、\*\***Microsoft.PowerShell.Host.ISE.ISEFile** クラスのすべてのインスタンスです。
 
 ## <a name="methods"></a>メソッド
 
@@ -25,7 +25,7 @@ Windows PowerShell ISE 2.0 以降でサポートされています。
 
 ### <a name="exceptions"></a>例外
 
-- **System.IO.IOException**: ファイルを保存できませんでした。
+- **System.IO.IOException** : ファイルを保存できませんでした。
 
 ```powershell
 # Save the file using the default encoding (UTF8)
@@ -51,9 +51,9 @@ Windows PowerShell ISE 2.0 以降でサポートされています。
 
 ### <a name="exceptions"></a>例外
 
-- **System.ArgumentNullException**: **filename** パラメーターが null です。
-- **System.ArgumentException**: **filename** パラメータが空です。
-- **System.IO.IOException**: ファイルを保存できませんでした。
+- **System.ArgumentNullException** : **filename** パラメーターが null です。
+- **System.ArgumentException** : **filename** パラメータが空です。
+- **System.IO.IOException** : ファイルを保存できませんでした。
 
 ```powershell
 # Save the file with a full path and name.

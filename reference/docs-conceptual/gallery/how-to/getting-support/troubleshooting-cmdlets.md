@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: manikb
-keywords: ギャラリー, PowerShell, コマンドレット, PSGet
 title: コマンドレットのトラブルシューティング
-ms.openlocfilehash: d87c680472c2588efbfe8b3c4d6f2dbee6883a0c
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: この記事では、PowerShell ギャラリーを使用してエラーのトラブルシューティングを行うための情報と手順を示します
+ms.openlocfilehash: db9e58c185c6f3bca26ff3639af85fa2dba48909
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "72352112"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92661061"
 ---
 # <a name="troubleshooting-cmdlets"></a>コマンドレットのトラブルシューティング
 

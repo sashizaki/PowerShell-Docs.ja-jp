@@ -1,16 +1,15 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: ギャラリー, PowerShell, コマンドレット, PSGallery
 title: PowerShell ギャラリーに関してよく寄せられる質問
-ms.openlocfilehash: 29f930cf552abec8acbbf02f5570c6ac0a14066d
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+description: PowerShell ギャラリーに関してよく寄せられる質問
+ms.openlocfilehash: 045db04d49e0c65f807fef254a17bf20bb877ff6
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87777824"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92654160"
 ---
-# <a name="frequently-asked-questions"></a>よく寄せられる質問
+# <a name="frequently-asked-questions-about-the-powershell-gallery"></a>PowerShell ギャラリーに関してよく寄せられる質問
 
 ## <a name="what-is-a-powershell-module"></a>PowerShell モジュールとは
 
@@ -56,7 +55,7 @@ PowerShell スクリプトとは、再利用と共有を可能にするため、
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>モジュールを PowerShell ギャラリーに公開するための要件は何ですか。
 
-PowerShell モジュールのどの種類 (スクリプト モジュール、バイナリ モジュール、マニフェスト モジュールなど) でも、ギャラリーに公開できます。 モジュールを公開するには、PowerShellGet がそのバージョン、説明、作成者、そのライセンス取得方法について認識している必要があります。 この情報は、*モジュール マニフェスト* (.psd1) ファイル、または[Publish-Module][] コマンドレットの **LicenseUri** パラメーターの値から公開プロセスの一環として読み取られます。 ギャラリーに公開されるすべてのモジュールに、モジュール マニフェストが必要です。 マニフェストに次の情報を含むモジュールはすべて、ギャラリーに公開できます。
+PowerShell モジュールのどの種類 (スクリプト モジュール、バイナリ モジュール、マニフェスト モジュールなど) でも、ギャラリーに公開できます。 モジュールを公開するには、PowerShellGet がそのバージョン、説明、作成者、そのライセンス取得方法について認識している必要があります。 この情報は、 *モジュール マニフェスト* (.psd1) ファイル、または [Publish-Module][] コマンドレットの **LicenseUri** パラメーターの値から公開プロセスの一環として読み取られます。 ギャラリーに公開されるすべてのモジュールに、モジュール マニフェストが必要です。 マニフェストに次の情報を含むモジュールはすべて、ギャラリーに公開できます。
 
 - Version
 - 説明
@@ -65,7 +64,7 @@ PowerShell モジュールのどの種類 (スクリプト モジュール、バ
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>正しい形式のモジュール マニフェストはどのように作成できますか。
 
-モジュール マニフェストを作成する最も簡単な方法は、[New-ModuleManifest][] コマンドレットを実行することです。 PowerShell 5.0 以降、New-ModuleManifest によって、**ProjectUri**、**LicenseUri**、**Tags** などの有用なメタデータのフィールドが空白のまま、正しい形式のマニフェストが生成されるようになりました。 空白を埋めるか、正しい形式のサンプルとして生成されたマニフェストを使用します。
+モジュール マニフェストを作成する最も簡単な方法は、[New-ModuleManifest][] コマンドレットを実行することです。 PowerShell 5.0 以降、New-ModuleManifest によって、 **ProjectUri** 、 **LicenseUri** 、 **Tags** などの有用なメタデータのフィールドが空白のまま、正しい形式のマニフェストが生成されるようになりました。 空白を埋めるか、正しい形式のサンプルとして生成されたマニフェストを使用します。
 
 必要なメタデータ フィールドがすべて正しく入力されているかどうかを確認するには、[Test-ModuleManifest][] コマンドレットを使用します。
 
@@ -94,7 +93,7 @@ PowerShell スクリプトのどの種類 (スクリプトまたはワークフ�
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>正しい形式のスクリプト ファイルはどのように作成できますか。
 
-正しく書式設定されたスクリプトを作成する最も簡単な方法は、[New-ScriptFileInfo][] コマンドレットを実行することです。 PowerShell 5.0 以降、New-ScriptFileInfo によって、**ProjectUri**、**LicenseUri**、**Tags** などの有用なメタデータのフィールドが空白のまま、正しい形式のスクリプト ファイルが生成されるようになりました。 空白を埋めるか、正しい形式のサンプルとして生成されたスクリプト ファイルを使用します。
+正しく書式設定されたスクリプトを作成する最も簡単な方法は、[New-ScriptFileInfo][] コマンドレットを実行することです。 PowerShell 5.0 以降、New-ScriptFileInfo によって、 **ProjectUri** 、 **LicenseUri** 、 **Tags** などの有用なメタデータのフィールドが空白のまま、正しい形式のスクリプト ファイルが生成されるようになりました。 空白を埋めるか、正しい形式のサンプルとして生成されたスクリプト ファイルを使用します。
 
 必要なメタデータ フィールドがすべて正しく入力されているかどうかを確認するには、[Test-ScriptFileInfo][] コマンドレットを使用します。
 
@@ -114,7 +113,7 @@ PackageManagement はどのパッケージ マネージャーでも機能する�
 
 PowerShellGet は PowerShell パッケージのパッケージ マネージャーです。 PackageManagement を介して PowerShellGet 機能を公開する PSModule パッケージ プロバイダーがあります。 このため、[Install-Module][] または Install-Package -Provider PSModule を実行して、PowerShell ギャラリーからモジュールをインストールすることができます。 [Update-Module][] および [Publish-Module][] を含む特定の PowerShellGet 機能には、PackageManagement コマンドではアクセスできません。
 
-つまり、PowerShellGet はPowerShell コンテンツのプレミアム パッケージ管理エクスペリエンスにのみ重点を置いています。 PackageManagement は、単一の一般的なツール セットによるすべてのパッケージ管理エクスペリエンスの公開に重点を置いています。 この回答では不十分な場合は、このドキュメントの下部にある「**PackageManagement は実際に PowerShellGet にどのように関連しているでしょうか。**」のセクションに詳しい回答があります。
+つまり、PowerShellGet はPowerShell コンテンツのプレミアム パッケージ管理エクスペリエンスにのみ重点を置いています。 PackageManagement は、単一の一般的なツール セットによるすべてのパッケージ管理エクスペリエンスの公開に重点を置いています。 この回答では不十分な場合は、このドキュメントの下部にある「 **PackageManagement は実際に PowerShellGet にどのように関連しているでしょうか。** 」のセクションに詳しい回答があります。
 
 詳細については、[PackageManagement プロジェクトのページ](https://oneget.org/)にアクセスしてください。
 
@@ -145,9 +144,9 @@ PackageManagement パッケージ プロバイダー層では、PSModule パッ�
 
 一般的には、PowerShellGet モジュールの最新バージョンを選択することをお勧めします (これには .NET 4.5 が必要です)。
 
-**PowerShellGet** モジュールは **PowerShell 3.0 以降**を必要とします。
+**PowerShellGet** モジュールは **PowerShell 3.0 以降** を必要とします。
 
-そのため、**PowerShellGet** は次のいずれかのオペレーティング システムを必要とします。
+そのため、 **PowerShellGet** は次のいずれかのオペレーティング システムを必要とします。
 
 - Windows 10
 - Windows 8.1 Pro

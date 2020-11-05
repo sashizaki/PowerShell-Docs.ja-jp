@@ -2,12 +2,13 @@
 ms.date: 12/12/2018
 keywords: dsc,powershell,リソース,ギャラリー,セットアップ
 title: 構成にパラメーターを追加する
-ms.openlocfilehash: 9dd9f2be58c13840be2b24e7e21a0d4af79b67cc
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: DSC 構成をパラメーター化し、ユーザー入力に基づいて構成をいっそう動的にすることができます。
+ms.openlocfilehash: aea230d34994a7b20076559c44990abe554d5395
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80263154"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92656820"
 ---
 # <a name="add-parameters-to-a-configuration"></a>構成にパラメーターを追加する
 
@@ -42,12 +43,12 @@ Configuration TestConfig
 | `-DependsOn`            | [複合構成](compositeconfigs.md)の定義で使用されます                             |
 | `-PSDSCRunAsCredential` | [複合構成](compositeconfigs.md)の定義で使用されます                             |
 | `-ConfigurationData`    | 構成で使用する構造化[構成データ](configData.md)を渡すために使用されます。 |
-| `-OutputPath`           | "\<コンピューター名\>.mof" ファイルがコンパイルされる場所を指定するために使用されます                      |
+| `-OutputPath`           | "\<computername\>.mof" ファイルがコンパイルされる場所を指定するために使用されます                      |
 
 ## <a name="adding-your-own-parameters-to-configurations"></a>構成に独自のパラメーターを追加する
 
 組み込みパラメーターに加えて、独自のパラメーターを構成に追加することもできます。
-関数と同様、パラメーター ブロックを構成の宣言内で直接指定します。 構成のパラメーター ブロックは、すべての**ノード**宣言の外部で、すべての "*インポート*" ステートメントより上に置く必要があります。 パラメーターを追加することにより、構成をいっそう堅牢で動的にすることができます。
+関数と同様、パラメーター ブロックを構成の宣言内で直接指定します。 構成のパラメーター ブロックは、すべての **ノード** 宣言の外部で、すべての " *インポート* " ステートメントより上に置く必要があります。 パラメーターを追加することにより、構成をいっそう堅牢で動的にすることができます。
 
 ```powershell
 Configuration TestConfig
@@ -96,7 +97,7 @@ Configuration TestConfig
 {
     param
     (
-        [String]
+        [String[]]
         $ComputerName="localhost"
     )
 
@@ -119,7 +120,7 @@ TestConfig -ComputerName "server01", "server02", "server03"
 ## <a name="advanced-parameters-in-configurations"></a>構成の高度なパラメーター
 
 `-ComputerName` パラメーターに加えて、サービス名と状態のパラメーターを追加することができます。
-次の例では、`-ServiceName` パラメーターでパラメーター ブロックを追加し、それを使用して **Service** リソース ブロックを動的に定義しています。 また、`-State` パラメーターを追加し、**Service** リソース ブロック内で **State** を動的に定義しています。
+次の例では、`-ServiceName` パラメーターでパラメーター ブロックを追加し、それを使用して **Service** リソース ブロックを動的に定義しています。 また、`-State` パラメーターを追加し、 **Service** リソース ブロック内で **State** を動的に定義しています。
 
 ```powershell
 Configuration TestConfig
@@ -170,7 +171,7 @@ $ServiceName="Spooler"
 $ServiceName
 ```
 
-各 `parameter` 属性に対して引数を指定し、定義されているパラメーターの要素を制御できます。 次の例では、`$ServiceName` を**必須**パラメーターにしています。
+各 `parameter` 属性に対して引数を指定し、定義されているパラメーターの要素を制御できます。 次の例では、`$ServiceName` を **必須** パラメーターにしています。
 
 ```powershell
 [parameter(Mandatory)]
@@ -178,7 +179,7 @@ $ServiceName
 $ServiceName
 ```
 
-`$State` パラメーターでは、事前に定義されているセット (Running、Stopped など) 以外の値をユーザーが指定するのを防ぐため、`ValidationSet*` 属性でユーザーがそのような値を指定できないようにします。 次の例では、`ValidationSet` 属性を `$State` パラメーターに追加しています。 `$State` パラメーターを**必須**にはしたくないので、既定値を追加する必要があります。
+`$State` パラメーターでは、事前に定義されているセット (Running、Stopped など) 以外の値をユーザーが指定するのを防ぐため、`ValidationSet*` 属性でユーザーがそのような値を指定できないようにします。 次の例では、`ValidationSet` 属性を `$State` パラメーターに追加しています。 `$State` パラメーターを **必須** にはしたくないので、既定値を追加する必要があります。
 
 ```powershell
 [ValidateSet("Running", "Stopped")]
@@ -226,7 +227,7 @@ Configuration TestConfig
 }
 ```
 
-## <a name="see-also"></a>参照
+## <a name="see-also"></a>関連項目
 
 - [DSC 構成のヘルプを作成する](configHelp.md)
 - [動的な構成](flow-control-in-configurations.md)

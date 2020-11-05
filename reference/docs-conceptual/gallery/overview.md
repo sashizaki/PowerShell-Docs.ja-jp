@@ -1,14 +1,13 @@
 ---
 ms.date: 06/12/2017
-contributor: JKeithB
-keywords: ギャラリー, PowerShell, コマンドレット, PSGallery, PsGet
 title: PowerShell ギャラリー
-ms.openlocfilehash: e489d2dd4db087b53eb07d2a8793c8f586c9b210
-ms.sourcegitcommit: 6545c60578f7745be015111052fd7769f8289296
+description: PowerShell ギャラリーは、PowerShell モジュール、スクリプト、および DSC リソースの中央リポジトリです。
+ms.openlocfilehash: 1aa3d351e71211259cac4e6d6f0ebd68c0df6ff1
+ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/22/2020
-ms.locfileid: "80500563"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "92662116"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell ギャラリー
 
@@ -27,15 +26,15 @@ PowerShellGet モジュールには、[PowerShell ギャラリー](https://www.P
 
 ## <a name="supported-operating-systems"></a>サポートされるオペレーティング システム
 
-**PowerShellGet** モジュールは **PowerShell 3.0 以降**を必要とします。
+**PowerShellGet** モジュールは **PowerShell 3.0 以降** を必要とします。
 
 **PowerShellGet** には、.NET Framework 4.5 以降が必要です。 .NET Framework 4.5 以降を[ここ](https://msdn.microsoft.com/library/5a4x27ek.aspx)からインストールできます。
 
-**PowerShell Core** はクロス プラットフォームであるため、Windows、Linux、MacOS で動作し、**PowerShellGet** をこれらのシステムで使用することもできます。 **PowerShell Core** でサポートされるシステムの完全な一覧については、[PowerShell のインストール](/powershell/scripting/install/installing-powershell)に関するページを参照してください。
+**PowerShell Core** はクロス プラットフォームであるため、Windows、Linux、MacOS で動作し、 **PowerShellGet** をこれらのシステムで使用することもできます。 **PowerShell Core** でサポートされるシステムの完全な一覧については、 [PowerShell のインストール](/powershell/scripting/install/installing-powershell)に関するページを参照してください。
 
 ギャラリーでホストされているモジュールの多くは、さまざまな OS をサポートしており、追加の要件があります。
 詳細については、モジュールのドキュメントをご覧ください。
 
-## <a name="got-a-question-have-feedback"></a>ご質問または フィードバックがある場合は、
+## <a name="got-a-question-have-feedback"></a>ご質問または ご意見およびご提案がある場合は、
 
 PowerShell ギャラリーと PowerShellGet の詳細を [[はじめに]](getting-started.md) ページで確認できます。 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell) でご意見とご感想をお寄せください。問題がございましたら、ご報告ください。
