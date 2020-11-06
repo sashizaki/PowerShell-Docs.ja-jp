@@ -5,12 +5,12 @@ ms.date: 04/09/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_numeric_literals?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: 数値リテラルについて
-ms.openlocfilehash: 62f00ae9f3643724808146134fd03b6f01c29bce
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: dc1a55dbec1f0de99e06011645e6884b37480233
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93224688"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354831"
 ---
 # <a name="about-numeric-literals"></a>数値リテラルについて
 
@@ -22,7 +22,7 @@ ms.locfileid: "93224688"
 
 整数リテラルには、型サフィックスと乗数サフィックスを含めることができます。
 
-| サフィックス |            説明             |          注意           |
+| サフィックス |            意味             |          メモ           |
 | ------ | ------------------------------ | ----------------------- |
 | ○      | 符号付きバイトデータ型          | PowerShell 6.2 で追加 |
 | uy     | unsigned byte データ型        | PowerShell 6.2 で追加 |
@@ -61,7 +61,7 @@ ms.locfileid: "93224688"
 
 実際のリテラルは、型サフィックスと乗数サフィックスを持つことができます。
 
-| サフィックス |       説明       |
+| サフィックス |       意味       |
 | ------ | ------------------- |
 | d      | decimal データ型   |
 | kb     | キロバイト乗数 |
@@ -108,7 +108,7 @@ PS> 0x12Lpb
 
 PowerShell では、次の種類のアクセラレータがサポートされています。
 
-| アクセラレータ |         注意         |           説明            |
+| アクセラレータ |         メモ         |           [説明]            |
 | ----------- | -------------------- | -------------------------------- |
 | `[byte]`    |                      | バイト (符号なし)                  |
 | `[sbyte]`   |                      | バイト (符号付き)                    |
@@ -157,7 +157,7 @@ PS> [bigint]'111111111111111111111111111111111111111111111111111111'
 |  Number  |  Type   |    値     |
 | -------: | ------- | -----------: |
 |      100 | Int32   |          100 |
-|     100D | Decimal (10 進数型) |          100 |
+|     100D | Decimal |          100 |
 |     100l | Int64   |          100 |
 |    100uL | UInt64  |          100 |
 |    100us | UInt16  |          100 |
@@ -168,7 +168,7 @@ PS> [bigint]'111111111111111111111111111111111111111111111111111111'
 |    0x1e2 | Int32   |          482 |
 |   0x1e2L | Int64   |          482 |
 |   0x1e2D | Int32   |         7725 |
-|     482D | Decimal (10 進数型) |          482 |
+|     482D | Decimal |          482 |
 |    48 gb | Int64   | 517543559168 |
 | 0x1e2lgb | Int64   | 517543559168 |
 
@@ -210,4 +210,4 @@ Int32
 最初の2つの例では、リテラル値をかっこで囲まずに使用します。これは、PowerShell パーサーが数値リテラルの終了位置と **GetType** メソッドの開始位置を判別できるためです。
 
 <!-- reference links -->
-[bigint]: /dotnet/api/system.numerics.biginteger?view=netcore-2.2
+[bigint]: /dotnet/api/system.numerics.biginteger
