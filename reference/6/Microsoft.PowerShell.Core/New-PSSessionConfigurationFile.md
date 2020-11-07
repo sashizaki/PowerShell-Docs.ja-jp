@@ -7,12 +7,12 @@ ms.date: 06/24/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/new-pssessionconfigurationfile?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-PSSessionConfigurationFile
-ms.openlocfilehash: 1045c22cdaadb9fe1a45ec01ea86d5d8a276b05a
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: e393916f00e3670cd1ed3b5772bf165c43cc3a2f
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93216411"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343948"
 ---
 # New-PSSessionConfigurationFile
 
@@ -951,6 +951,8 @@ Accept wildcard characters: True
 このコマンドレットは出力を生成しません。
 
 ## 注
+
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
 
 - **VisibleCmdlets** や **VisibleProviders** などのパラメーターでは、セッションに項目がインポートされません。 代わりに、セッションにインポートされた項目の中から選択します。 たとえば、VisibleProviders パラメーターの値が証明書プロバイダーであるにもかかわらず、 **ModulesToImport** パラメーターで証明書プロバイダーが含まれる **VisibleProviders** モジュールが指定されていない場合、証明書プロバイダーはセッションに表示されませ **ん。**
 - `New-PSSessionConfigurationFile`**path** パラメーターで指定したパスに .pssc ファイル名拡張子を持つセッション構成ファイルを作成します。 セッション構成ファイルを使用してセッション構成を作成すると、このコマンドレットによって `Register-PSSessionConfiguration` 構成ファイルがコピーされ、ファイルのアクティブなコピーがディレクトリの **sessionconfig** サブディレクトリに保存され `$PSHOME` ます。

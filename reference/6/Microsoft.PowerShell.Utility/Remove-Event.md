@@ -7,12 +7,12 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/remove-event?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Event
-ms.openlocfilehash: cf7236d31ccd248701a0464c84e94d0d910cc26f
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: fb5c6761427ea3c79075a18e551bfa7b39f72dc3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93216056"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343421"
 ---
 # Remove-Event
 
@@ -34,10 +34,10 @@ Remove-Event [-EventIdentifier] <Int32> [-WhatIf] [-Confirm] [<CommonParameters>
 ```
 
 ## Description
-**イベントの削除** コマンドレットは、現在のセッションのイベントキューからイベントを削除します。
 
-このコマンドレットは、現在キューにあるイベントのみを削除します。
-イベントの登録の取り消しまたはサブスクリプションの解除を行うには、Unregister-Event コマンドレットを使用します。
+`Remove-Event`コマンドレットは、現在のセッションのイベントキューからイベントを削除します。
+
+このコマンドレットは、現在キューにあるイベントのみを削除します。 イベントの登録またはサブスクライブ解除を取り消すには、コマンドレットを使用し `Unregister-Event` ます。
 
 ## 例
 
@@ -68,8 +68,8 @@ PS C:\> Get-Event | Remove-Event
 ## PARAMETERS
 
 ### -EventIdentifier
-コマンドレットが削除するイベント識別子を指定します。
-すべてのコマンドには、 *EventIdentifier* パラメーターまたは *SourceIdentifier* パラメーターが必要です。
+
+コマンドレットが削除するイベント識別子を指定します。 すべてのコマンドには、 **EventIdentifier** パラメーターまたは **SourceIdentifier** パラメーターが必要です。
 
 ```yaml
 Type: System.Int32
@@ -84,9 +84,8 @@ Accept wildcard characters: False
 ```
 
 ### -SourceIdentifier
-このコマンドレットによってイベントが削除されるソース識別子を指定します。
-ワイルドカードは使用できません。
-すべてのコマンドには、 *EventIdentifier* パラメーターまたは *SourceIdentifier* パラメーターが必要です。
+
+このコマンドレットによってイベントが削除されるソース識別子を指定します。 ワイルドカードは使用できません。 すべてのコマンドには、 **EventIdentifier** パラメーターまたは **SourceIdentifier** パラメーターが必要です。
 
 ```yaml
 Type: System.String
@@ -101,6 +100,7 @@ Accept wildcard characters: False
 ```
 
 ### -Confirm
+
 コマンドレットの実行前に確認を求めるメッセージが表示されます。
 
 ```yaml
@@ -116,8 +116,8 @@ Accept wildcard characters: False
 ```
 
 ### -WhatIf
-コマンドレットの実行時に発生する内容を示します。
-このコマンドレットは実行されません。
+
+コマンドレットの実行時に発生する内容を示します。 このコマンドレットは実行されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -132,23 +132,26 @@ Accept wildcard characters: False
 ```
 
 ### 共通パラメーター
+
 このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。 詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。
 
 ## 入力
 
 ### PSEventArgs (システム管理)
-パイプを使用して Get-Event からイベントを **削除** できます。
+
+パイプを使用して、イベントをからにパイプすることができ `Get-Event` `Remove-Event` ます。
 
 ## 出力
 
 ### なし
+
 このコマンドレットは出力を生成しません。
 
 ## 注
 
-* イベント、イベント サブスクリプション、およびイベント キューは、現在のセッションにのみ存在します。 現在のセッションを閉じた場合、イベント キューが破棄され、イベント サブスクリプションが取り消されます。
+Linux または macOS プラットフォームで使用できるイベントソースがありません。
 
-*
+イベント、イベント サブスクリプション、およびイベント キューは、現在のセッションにのみ存在します。 現在のセッションを閉じた場合、イベント キューが破棄され、イベント サブスクリプションが取り消されます。
 
 ## 関連リンク
 

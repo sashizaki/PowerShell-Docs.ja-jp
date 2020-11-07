@@ -7,17 +7,16 @@ ms.date: 11/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/test-filecatalog?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-FileCatalog
-ms.openlocfilehash: 128405fdbcf0c1d059287191850ffdca53278ec1
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 8f5e11fca51bf92386c19a77fa9a66503b2d47a5
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93214200"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343244"
 ---
 # Test-FileCatalog
 
 ## 概要
-
 `Test-FileCatalog` 信頼性を検証するために、カタログファイル (.cat) に含まれるハッシュが実際のファイルのハッシュと一致するかどうかを検証します。
 
 このコマンドレットは、Windows でのみサポートされています。
@@ -31,10 +30,7 @@ Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <Strin
 
 ## Description
 
-`Test-FileCatalog` カタログファイル (.cat) のファイルハッシュとディスク上の実際のファイルのハッシュを比較することによって、ファイルの信頼性を検証します。
-不一致が検出されると、ValidationFailed としてステータスが返されます。 -Detailed パラメーターを利用し、この情報をすべて取得できます。
-また、カタログファイルでコマンドレットを呼び出した場合と同じ、署名プロパティにカタログの署名の状態が表示され `Get-AuthenticodeSignature` ます。
--FilesToSkip パラメーターを利用し、検証中にファイルをスキップすることもできます。
+`Test-FileCatalog` カタログファイル (.cat) のファイルハッシュとディスク上の実際のファイルのハッシュを比較することによって、ファイルの信頼性を検証します。 不一致が検出されると、ValidationFailed としてステータスが返されます。 -Detailed パラメーターを利用し、この情報をすべて取得できます。 また、カタログファイルでコマンドレットを呼び出した場合と同じ、署名プロパティにカタログの署名の状態が表示され `Get-AuthenticodeSignature` ます。 -FilesToSkip パラメーターを利用し、検証中にファイルをスキップすることもできます。
 
 このコマンドレットは、Windows でのみサポートされています。
 
@@ -154,8 +150,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-コマンドレットの実行時に発生する内容を示します。
-このコマンドレットは実行されません。
+コマンドレットの実行時に発生する内容を示します。 このコマンドレットは実行されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter

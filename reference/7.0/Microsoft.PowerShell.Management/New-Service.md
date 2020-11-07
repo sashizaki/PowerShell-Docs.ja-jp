@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
-ms.openlocfilehash: 17b28b14a9610dd48a03cc8c654806e75d3d97e3
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: 0963e90f1f994a9bd6f3f61e80bf56eebff09384
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93210955"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343115"
 ---
 # New-Service
 
@@ -186,8 +186,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-サービスの名前を指定します。
-このパラメーターは必須です。
+サービスの名前を指定します。 このパラメーターは必須です。
 
 ```yaml
 Type: System.String
@@ -261,8 +260,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-コマンドレットの実行時に発生する内容を示します。
-このコマンドレットは実行されません。
+コマンドレットの実行時に発生する内容を示します。 このコマンドレットは実行されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -294,7 +292,9 @@ Accept wildcard characters: False
 
 ## 注
 
-Windows Vista 以降のバージョンの Windows オペレーティングシステムでこのコマンドレットを実行するには、[管理者として実行] オプションを使用して PowerShell を起動します。
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
+
+このコマンドレットを実行するには、[ **管理者として実行** ] オプションを使用して PowerShell を起動します。
 
 ## 関連リンク
 

@@ -7,12 +7,12 @@ ms.date: 10/25/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/new-service?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: New-Service
-ms.openlocfilehash: 3249ce91a63417f2790997d37e2420c6fcb374d8
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 5647f9bfa909cba9740e7be17f262b6be0e5c8e9
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93214603"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94342928"
 ---
 # New-Service
 
@@ -177,8 +177,7 @@ Accept wildcard characters: False
 
 ### -Name
 
-サービスの名前を指定します。
-このパラメーターは必須です。
+サービスの名前を指定します。 このパラメーターは必須です。
 
 ```yaml
 Type: System.String
@@ -236,8 +235,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-コマンドレットの実行時に発生する内容を示します。
-このコマンドレットは実行されません。
+コマンドレットの実行時に発生する内容を示します。 このコマンドレットは実行されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -269,7 +267,7 @@ Accept wildcard characters: False
 
 ## 注
 
-Windows Vista 以降のバージョンの Windows オペレーティングシステムでこのコマンドレットを実行するには、[管理者として実行] オプションを使用して PowerShell を起動します。
+このコマンドレットを実行するには、[ **管理者として実行** ] オプションを使用して PowerShell を起動します。
 
 サービスを削除するには、Sc.exe を使用するか、コマンドレットを使用して `Get-CimInstance` サービスを表す **Win32_Service** オブジェクトを取得し、 **delete** メソッドを使用してサービスを削除します。 `Get-Service`を返すオブジェクトには、delete メソッドがありません。
 
