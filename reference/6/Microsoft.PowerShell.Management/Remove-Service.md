@@ -7,61 +7,61 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/remove-service?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Remove-Service
-ms.openlocfilehash: c55a7ef01171e63e8c64ee03446ca1bdcd838e2a
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d5189dfb39e9505efd39bfd55791d512e40a7c3e
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93216939"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343795"
 ---
-# <span data-ttu-id="d880f-103">Remove-Service</span><span class="sxs-lookup"><span data-stu-id="d880f-103">Remove-Service</span></span>
+# <span data-ttu-id="58d7e-103">Remove-Service</span><span class="sxs-lookup"><span data-stu-id="58d7e-103">Remove-Service</span></span>
 
-## <span data-ttu-id="d880f-104">概要</span><span class="sxs-lookup"><span data-stu-id="d880f-104">SYNOPSIS</span></span>
-<span data-ttu-id="d880f-105">Windows サービスを削除します。</span><span class="sxs-lookup"><span data-stu-id="d880f-105">Removes a Windows service.</span></span>
+## <span data-ttu-id="58d7e-104">概要</span><span class="sxs-lookup"><span data-stu-id="58d7e-104">SYNOPSIS</span></span>
+<span data-ttu-id="58d7e-105">Windows サービスを削除します。</span><span class="sxs-lookup"><span data-stu-id="58d7e-105">Removes a Windows service.</span></span>
 
-## <span data-ttu-id="d880f-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="d880f-106">SYNTAX</span></span>
+## <span data-ttu-id="58d7e-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="58d7e-106">SYNTAX</span></span>
 
-### <span data-ttu-id="d880f-107">名前 (既定値)</span><span class="sxs-lookup"><span data-stu-id="d880f-107">Name (Default)</span></span>
+### <span data-ttu-id="58d7e-107">名前 (既定値)</span><span class="sxs-lookup"><span data-stu-id="58d7e-107">Name (Default)</span></span>
 
 ```
 Remove-Service [-Name] <String> [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d880f-108">InputObject</span><span class="sxs-lookup"><span data-stu-id="d880f-108">InputObject</span></span>
+### <span data-ttu-id="58d7e-108">InputObject</span><span class="sxs-lookup"><span data-stu-id="58d7e-108">InputObject</span></span>
 
 ```
 Remove-Service [-InputObject <ServiceController>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="d880f-109">Description</span><span class="sxs-lookup"><span data-stu-id="d880f-109">DESCRIPTION</span></span>
+## <span data-ttu-id="58d7e-109">Description</span><span class="sxs-lookup"><span data-stu-id="58d7e-109">DESCRIPTION</span></span>
 
-<span data-ttu-id="d880f-110">`Remove-Service`コマンドレットは、レジストリとサービスデータベース内の Windows サービスを削除します。</span><span class="sxs-lookup"><span data-stu-id="d880f-110">The `Remove-Service` cmdlet removes a Windows service in the registry and in the service database.</span></span>
+<span data-ttu-id="58d7e-110">`Remove-Service`コマンドレットは、レジストリとサービスデータベース内の Windows サービスを削除します。</span><span class="sxs-lookup"><span data-stu-id="58d7e-110">The `Remove-Service` cmdlet removes a Windows service in the registry and in the service database.</span></span>
 
-<span data-ttu-id="d880f-111">`Remove-Service`コマンドレットは、PowerShell 6.0 で導入されました。</span><span class="sxs-lookup"><span data-stu-id="d880f-111">The `Remove-Service` cmdlet was introduced in PowerShell 6.0.</span></span>
+<span data-ttu-id="58d7e-111">`Remove-Service`コマンドレットは、PowerShell 6.0 で導入されました。</span><span class="sxs-lookup"><span data-stu-id="58d7e-111">The `Remove-Service` cmdlet was introduced in PowerShell 6.0.</span></span>
 
-## <span data-ttu-id="d880f-112">例</span><span class="sxs-lookup"><span data-stu-id="d880f-112">EXAMPLES</span></span>
+## <span data-ttu-id="58d7e-112">例</span><span class="sxs-lookup"><span data-stu-id="58d7e-112">EXAMPLES</span></span>
 
-### <span data-ttu-id="d880f-113">例 1: サービスを削除する</span><span class="sxs-lookup"><span data-stu-id="d880f-113">Example 1: Remove a service</span></span>
+### <span data-ttu-id="58d7e-113">例 1: サービスを削除する</span><span class="sxs-lookup"><span data-stu-id="58d7e-113">Example 1: Remove a service</span></span>
 
-<span data-ttu-id="d880f-114">これにより、TestService という名前のサービスが削除されます。</span><span class="sxs-lookup"><span data-stu-id="d880f-114">This removes a service named TestService.</span></span>
+<span data-ttu-id="58d7e-114">これにより、TestService という名前のサービスが削除されます。</span><span class="sxs-lookup"><span data-stu-id="58d7e-114">This removes a service named TestService.</span></span>
 
 ```powershell
 Remove-Service -Name "TestService"
 ```
 
-### <span data-ttu-id="d880f-115">例 2: 表示名を使用してサービスを削除する</span><span class="sxs-lookup"><span data-stu-id="d880f-115">Example 2: Remove a service using the display name</span></span>
+### <span data-ttu-id="58d7e-115">例 2: 表示名を使用してサービスを削除する</span><span class="sxs-lookup"><span data-stu-id="58d7e-115">Example 2: Remove a service using the display name</span></span>
 
-<span data-ttu-id="d880f-116">この例では、TestService という名前のサービスを削除します。</span><span class="sxs-lookup"><span data-stu-id="d880f-116">This example removes a service named TestService.</span></span> <span data-ttu-id="d880f-117">このコマンドは、を使用し `Get-Service` て、TestService サービスを表すオブジェクトを表示名を使用して取得します。</span><span class="sxs-lookup"><span data-stu-id="d880f-117">The command uses `Get-Service` to get an object that represents the TestService service using the display name.</span></span> <span data-ttu-id="d880f-118">パイプライン演算子 () は、 `|` オブジェクトをにパイプ `Remove-Service` 処理します。これにより、サービスが削除されます。</span><span class="sxs-lookup"><span data-stu-id="d880f-118">The pipeline operator (`|`) pipes the object to `Remove-Service`, which removes the service.</span></span>
+<span data-ttu-id="58d7e-116">この例では、TestService という名前のサービスを削除します。</span><span class="sxs-lookup"><span data-stu-id="58d7e-116">This example removes a service named TestService.</span></span> <span data-ttu-id="58d7e-117">このコマンドは、を使用し `Get-Service` て、TestService サービスを表すオブジェクトを表示名を使用して取得します。</span><span class="sxs-lookup"><span data-stu-id="58d7e-117">The command uses `Get-Service` to get an object that represents the TestService service using the display name.</span></span> <span data-ttu-id="58d7e-118">パイプライン演算子 () は、 `|` オブジェクトをにパイプ `Remove-Service` 処理します。これにより、サービスが削除されます。</span><span class="sxs-lookup"><span data-stu-id="58d7e-118">The pipeline operator (`|`) pipes the object to `Remove-Service`, which removes the service.</span></span>
 
 ```powershell
 Get-Service -DisplayName "Test Service" | Remove-Service
 ```
 
-## <span data-ttu-id="d880f-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="d880f-119">PARAMETERS</span></span>
+## <span data-ttu-id="58d7e-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="58d7e-119">PARAMETERS</span></span>
 
-### <span data-ttu-id="d880f-120">-InputObject</span><span class="sxs-lookup"><span data-stu-id="d880f-120">-InputObject</span></span>
+### <span data-ttu-id="58d7e-120">-InputObject</span><span class="sxs-lookup"><span data-stu-id="58d7e-120">-InputObject</span></span>
 
-<span data-ttu-id="d880f-121">削除するサービスを表す **ServiceController** オブジェクトを指定します。</span><span class="sxs-lookup"><span data-stu-id="d880f-121">Specifies **ServiceController** objects that represent the services to remove.</span></span> <span data-ttu-id="d880f-122">オブジェクトが格納されている変数を入力するか、オブジェクトを取得するコマンドまたは式を入力します。</span><span class="sxs-lookup"><span data-stu-id="d880f-122">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span>
+<span data-ttu-id="58d7e-121">削除するサービスを表す **ServiceController** オブジェクトを指定します。</span><span class="sxs-lookup"><span data-stu-id="58d7e-121">Specifies **ServiceController** objects that represent the services to remove.</span></span> <span data-ttu-id="58d7e-122">オブジェクトが格納されている変数を入力するか、オブジェクトを取得するコマンドまたは式を入力します。</span><span class="sxs-lookup"><span data-stu-id="58d7e-122">Enter a variable that contains the objects, or type a command or expression that gets the objects.</span></span>
 
 ```yaml
 Type: System.ServiceProcess.ServiceController
@@ -75,9 +75,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d880f-123">-Name</span><span class="sxs-lookup"><span data-stu-id="d880f-123">-Name</span></span>
+### <span data-ttu-id="58d7e-123">-Name</span><span class="sxs-lookup"><span data-stu-id="58d7e-123">-Name</span></span>
 
-<span data-ttu-id="d880f-124">削除するサービスのサービス名を指定します。</span><span class="sxs-lookup"><span data-stu-id="d880f-124">Specifies the service names of the services to remove.</span></span> <span data-ttu-id="d880f-125">ワイルドカード文字を使用できます。</span><span class="sxs-lookup"><span data-stu-id="d880f-125">Wildcard characters are permitted.</span></span>
+<span data-ttu-id="58d7e-124">削除するサービスのサービス名を指定します。</span><span class="sxs-lookup"><span data-stu-id="58d7e-124">Specifies the service names of the services to remove.</span></span> <span data-ttu-id="58d7e-125">ワイルドカード文字を使用できます。</span><span class="sxs-lookup"><span data-stu-id="58d7e-125">Wildcard characters are permitted.</span></span>
 
 ```yaml
 Type: System.String
@@ -91,9 +91,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="d880f-126">-Confirm</span><span class="sxs-lookup"><span data-stu-id="d880f-126">-Confirm</span></span>
+### <span data-ttu-id="58d7e-126">-Confirm</span><span class="sxs-lookup"><span data-stu-id="58d7e-126">-Confirm</span></span>
 
-<span data-ttu-id="d880f-127">コマンドレットの実行前に確認を求めるメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="d880f-127">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="58d7e-127">コマンドレットの実行前に確認を求めるメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="58d7e-127">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -107,9 +107,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d880f-128">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="d880f-128">-WhatIf</span></span>
+### <span data-ttu-id="58d7e-128">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="58d7e-128">-WhatIf</span></span>
 
-<span data-ttu-id="d880f-129">コマンドレットの実行時に発生する内容を示します。</span><span class="sxs-lookup"><span data-stu-id="d880f-129">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="d880f-130">このコマンドレットは実行されません。</span><span class="sxs-lookup"><span data-stu-id="d880f-130">The cmdlet is not run.</span></span>
+<span data-ttu-id="58d7e-129">コマンドレットの実行時に発生する内容を示します。</span><span class="sxs-lookup"><span data-stu-id="58d7e-129">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="58d7e-130">このコマンドレットは実行されません。</span><span class="sxs-lookup"><span data-stu-id="58d7e-130">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -123,38 +123,40 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d880f-131">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="d880f-131">CommonParameters</span></span>
+### <span data-ttu-id="58d7e-131">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="58d7e-131">CommonParameters</span></span>
 
-<span data-ttu-id="d880f-132">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="d880f-132">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d880f-133">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d880f-133">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="58d7e-132">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="58d7e-132">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="58d7e-133">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="58d7e-133">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="d880f-134">入力</span><span class="sxs-lookup"><span data-stu-id="d880f-134">INPUTS</span></span>
+## <span data-ttu-id="58d7e-134">入力</span><span class="sxs-lookup"><span data-stu-id="58d7e-134">INPUTS</span></span>
 
-### <span data-ttu-id="d880f-135">ServiceController (System.string)、System.string</span><span class="sxs-lookup"><span data-stu-id="d880f-135">System.ServiceProcess.ServiceController, System.String</span></span>
+### <span data-ttu-id="58d7e-135">ServiceController (System.string)、System.string</span><span class="sxs-lookup"><span data-stu-id="58d7e-135">System.ServiceProcess.ServiceController, System.String</span></span>
 
-<span data-ttu-id="d880f-136">このコマンドレットには、サービスオブジェクトまたはサービス名を含む文字列をパイプすることができます。</span><span class="sxs-lookup"><span data-stu-id="d880f-136">You can pipe a service object or a string that contains the name of a service to this cmdlet.</span></span>
+<span data-ttu-id="58d7e-136">このコマンドレットには、サービスオブジェクトまたはサービス名を含む文字列をパイプすることができます。</span><span class="sxs-lookup"><span data-stu-id="58d7e-136">You can pipe a service object or a string that contains the name of a service to this cmdlet.</span></span>
 
-## <span data-ttu-id="d880f-137">出力</span><span class="sxs-lookup"><span data-stu-id="d880f-137">OUTPUTS</span></span>
+## <span data-ttu-id="58d7e-137">出力</span><span class="sxs-lookup"><span data-stu-id="58d7e-137">OUTPUTS</span></span>
 
-### <span data-ttu-id="d880f-138">なし</span><span class="sxs-lookup"><span data-stu-id="d880f-138">None</span></span>
+### <span data-ttu-id="58d7e-138">なし</span><span class="sxs-lookup"><span data-stu-id="58d7e-138">None</span></span>
 
-<span data-ttu-id="d880f-139">このコマンドレットによる戻り値はありません。</span><span class="sxs-lookup"><span data-stu-id="d880f-139">This cmdlet does not return any output.</span></span>
+<span data-ttu-id="58d7e-139">このコマンドレットによる戻り値はありません。</span><span class="sxs-lookup"><span data-stu-id="58d7e-139">This cmdlet does not return any output.</span></span>
 
-## <span data-ttu-id="d880f-140">注</span><span class="sxs-lookup"><span data-stu-id="d880f-140">NOTES</span></span>
+## <span data-ttu-id="58d7e-140">注</span><span class="sxs-lookup"><span data-stu-id="58d7e-140">NOTES</span></span>
 
-<span data-ttu-id="d880f-141">このコマンドレットを実行するには、[ **管理者として実行** ] オプションを使用して PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="d880f-141">To run this cmdlet, start PowerShell by using the **Run as administrator** option.</span></span>
+<span data-ttu-id="58d7e-141">このコマンドレットは、Windows プラットフォームでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="58d7e-141">This cmdlet is only available on Windows platforms.</span></span>
 
-## <span data-ttu-id="d880f-142">関連リンク</span><span class="sxs-lookup"><span data-stu-id="d880f-142">RELATED LINKS</span></span>
+<span data-ttu-id="58d7e-142">このコマンドレットを実行するには、[ **管理者として実行** ] オプションを使用して PowerShell を起動します。</span><span class="sxs-lookup"><span data-stu-id="58d7e-142">To run this cmdlet, start PowerShell by using the **Run as administrator** option.</span></span>
 
-[<span data-ttu-id="d880f-143">Get-Service</span><span class="sxs-lookup"><span data-stu-id="d880f-143">Get-Service</span></span>](Get-Service.md)
+## <span data-ttu-id="58d7e-143">関連リンク</span><span class="sxs-lookup"><span data-stu-id="58d7e-143">RELATED LINKS</span></span>
 
-[<span data-ttu-id="d880f-144">Restart-Service</span><span class="sxs-lookup"><span data-stu-id="d880f-144">Restart-Service</span></span>](Restart-Service.md)
+[<span data-ttu-id="58d7e-144">Get-Service</span><span class="sxs-lookup"><span data-stu-id="58d7e-144">Get-Service</span></span>](Get-Service.md)
 
-[<span data-ttu-id="d880f-145">Resume-Service</span><span class="sxs-lookup"><span data-stu-id="d880f-145">Resume-Service</span></span>](Resume-Service.md)
+[<span data-ttu-id="58d7e-145">Restart-Service</span><span class="sxs-lookup"><span data-stu-id="58d7e-145">Restart-Service</span></span>](Restart-Service.md)
 
-[<span data-ttu-id="d880f-146">Set-Service</span><span class="sxs-lookup"><span data-stu-id="d880f-146">Set-Service</span></span>](Set-Service.md)
+[<span data-ttu-id="58d7e-146">Resume-Service</span><span class="sxs-lookup"><span data-stu-id="58d7e-146">Resume-Service</span></span>](Resume-Service.md)
 
-[<span data-ttu-id="d880f-147">Start-Service</span><span class="sxs-lookup"><span data-stu-id="d880f-147">Start-Service</span></span>](Start-Service.md)
+[<span data-ttu-id="58d7e-147">Set-Service</span><span class="sxs-lookup"><span data-stu-id="58d7e-147">Set-Service</span></span>](Set-Service.md)
 
-[<span data-ttu-id="d880f-148">Stop-Service</span><span class="sxs-lookup"><span data-stu-id="d880f-148">Stop-Service</span></span>](Stop-Service.md)
+[<span data-ttu-id="58d7e-148">Start-Service</span><span class="sxs-lookup"><span data-stu-id="58d7e-148">Start-Service</span></span>](Start-Service.md)
 
-[<span data-ttu-id="d880f-149">Suspend-Service</span><span class="sxs-lookup"><span data-stu-id="d880f-149">Suspend-Service</span></span>](Suspend-Service.md)
+[<span data-ttu-id="58d7e-149">Stop-Service</span><span class="sxs-lookup"><span data-stu-id="58d7e-149">Stop-Service</span></span>](Stop-Service.md)
+
+[<span data-ttu-id="58d7e-150">Suspend-Service</span><span class="sxs-lookup"><span data-stu-id="58d7e-150">Suspend-Service</span></span>](Suspend-Service.md)

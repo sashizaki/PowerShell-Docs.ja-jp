@@ -7,54 +7,54 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/get-timezone?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-TimeZone
-ms.openlocfilehash: 6b275867a626965ce7210cadf7fa3c618cfaa145
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 0a2beb778001267beda0b23afaf1264b0440a5e5
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93215040"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94343969"
 ---
-# <span data-ttu-id="d4665-103">Get-TimeZone</span><span class="sxs-lookup"><span data-stu-id="d4665-103">Get-TimeZone</span></span>
+# <span data-ttu-id="a4f9a-103">Get-TimeZone</span><span class="sxs-lookup"><span data-stu-id="a4f9a-103">Get-TimeZone</span></span>
 
-## <span data-ttu-id="d4665-104">概要</span><span class="sxs-lookup"><span data-stu-id="d4665-104">SYNOPSIS</span></span>
-<span data-ttu-id="d4665-105">現在のタイムゾーンまたは使用可能なタイムゾーンの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="d4665-105">Gets the current time zone or a list of available time zones.</span></span>
+## <span data-ttu-id="a4f9a-104">概要</span><span class="sxs-lookup"><span data-stu-id="a4f9a-104">SYNOPSIS</span></span>
+<span data-ttu-id="a4f9a-105">現在のタイムゾーンまたは使用可能なタイムゾーンの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="a4f9a-105">Gets the current time zone or a list of available time zones.</span></span>
 
-## <span data-ttu-id="d4665-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="d4665-106">SYNTAX</span></span>
+## <span data-ttu-id="a4f9a-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="a4f9a-106">SYNTAX</span></span>
 
-### <span data-ttu-id="d4665-107">名前 (既定値)</span><span class="sxs-lookup"><span data-stu-id="d4665-107">Name (Default)</span></span>
+### <span data-ttu-id="a4f9a-107">名前 (既定値)</span><span class="sxs-lookup"><span data-stu-id="a4f9a-107">Name (Default)</span></span>
 
 ```
 Get-TimeZone [[-Name] <String[]>] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d4665-108">Id</span><span class="sxs-lookup"><span data-stu-id="d4665-108">Id</span></span>
+### <span data-ttu-id="a4f9a-108">Id</span><span class="sxs-lookup"><span data-stu-id="a4f9a-108">Id</span></span>
 
 ```
 Get-TimeZone -Id <String[]> [<CommonParameters>]
 ```
 
-### <span data-ttu-id="d4665-109">ListAvailable</span><span class="sxs-lookup"><span data-stu-id="d4665-109">ListAvailable</span></span>
+### <span data-ttu-id="a4f9a-109">ListAvailable</span><span class="sxs-lookup"><span data-stu-id="a4f9a-109">ListAvailable</span></span>
 
 ```
 Get-TimeZone [-ListAvailable] [<CommonParameters>]
 ```
 
-## <span data-ttu-id="d4665-110">Description</span><span class="sxs-lookup"><span data-stu-id="d4665-110">DESCRIPTION</span></span>
+## <span data-ttu-id="a4f9a-110">Description</span><span class="sxs-lookup"><span data-stu-id="a4f9a-110">DESCRIPTION</span></span>
 
-<span data-ttu-id="d4665-111">**Get TimeZone** コマンドレットは、現在のタイムゾーンまたは使用可能なタイムゾーンの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="d4665-111">The **Get-TimeZone** cmdlet gets the current time zone or a list of available time zones.</span></span>
+<span data-ttu-id="a4f9a-111">**Get TimeZone** コマンドレットは、現在のタイムゾーンまたは使用可能なタイムゾーンの一覧を取得します。</span><span class="sxs-lookup"><span data-stu-id="a4f9a-111">The **Get-TimeZone** cmdlet gets the current time zone or a list of available time zones.</span></span>
 
-## <span data-ttu-id="d4665-112">例</span><span class="sxs-lookup"><span data-stu-id="d4665-112">EXAMPLES</span></span>
+## <span data-ttu-id="a4f9a-112">例</span><span class="sxs-lookup"><span data-stu-id="a4f9a-112">EXAMPLES</span></span>
 
-### <span data-ttu-id="d4665-113">例 1: 現在のタイムゾーンを取得する</span><span class="sxs-lookup"><span data-stu-id="d4665-113">Example 1: Get the current time zone</span></span>
+### <span data-ttu-id="a4f9a-113">例 1: 現在のタイムゾーンを取得する</span><span class="sxs-lookup"><span data-stu-id="a4f9a-113">Example 1: Get the current time zone</span></span>
 
 ```
 PS C:\> Get-TimeZone
 Pacific Standard Time
 ```
 
-<span data-ttu-id="d4665-114">このコマンドは、現在のタイムゾーンを取得します。</span><span class="sxs-lookup"><span data-stu-id="d4665-114">This command gets the current time zone.</span></span>
+<span data-ttu-id="a4f9a-114">このコマンドは、現在のタイムゾーンを取得します。</span><span class="sxs-lookup"><span data-stu-id="a4f9a-114">This command gets the current time zone.</span></span>
 
-### <span data-ttu-id="d4665-115">例 2: 指定した文字列に一致するタイムゾーンを取得する</span><span class="sxs-lookup"><span data-stu-id="d4665-115">Example 2: Get time zones that match a specified string</span></span>
+### <span data-ttu-id="a4f9a-115">例 2: 指定した文字列に一致するタイムゾーンを取得する</span><span class="sxs-lookup"><span data-stu-id="a4f9a-115">Example 2: Get time zones that match a specified string</span></span>
 
 ```
 PS C:\> Get-TimeZone -Name "*pac*"
@@ -73,21 +73,21 @@ West Pacific Standard Time
 Central Pacific Standard Time
 ```
 
-<span data-ttu-id="d4665-116">このコマンドは、指定されたワイルドカードと一致するすべてのタイムゾーンを取得します。</span><span class="sxs-lookup"><span data-stu-id="d4665-116">This command gets all time zones that match the specified wildcard.</span></span>
+<span data-ttu-id="a4f9a-116">このコマンドは、指定されたワイルドカードと一致するすべてのタイムゾーンを取得します。</span><span class="sxs-lookup"><span data-stu-id="a4f9a-116">This command gets all time zones that match the specified wildcard.</span></span>
 
-### <span data-ttu-id="d4665-117">例 3: 使用可能なすべてのタイムゾーンを取得する</span><span class="sxs-lookup"><span data-stu-id="d4665-117">Example 3: Get all available time zones</span></span>
+### <span data-ttu-id="a4f9a-117">例 3: 使用可能なすべてのタイムゾーンを取得する</span><span class="sxs-lookup"><span data-stu-id="a4f9a-117">Example 3: Get all available time zones</span></span>
 
 ```
 PS C:\> Get-TimeZone -ListAvailable
 ```
 
-<span data-ttu-id="d4665-118">このコマンドは、使用可能なすべてのタイムゾーンを取得します。</span><span class="sxs-lookup"><span data-stu-id="d4665-118">This command gets all available time zones.</span></span>
+<span data-ttu-id="a4f9a-118">このコマンドは、使用可能なすべてのタイムゾーンを取得します。</span><span class="sxs-lookup"><span data-stu-id="a4f9a-118">This command gets all available time zones.</span></span>
 
-## <span data-ttu-id="d4665-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="d4665-119">PARAMETERS</span></span>
+## <span data-ttu-id="a4f9a-119">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="a4f9a-119">PARAMETERS</span></span>
 
-### <span data-ttu-id="d4665-120">-Id</span><span class="sxs-lookup"><span data-stu-id="d4665-120">-Id</span></span>
+### <span data-ttu-id="a4f9a-120">-Id</span><span class="sxs-lookup"><span data-stu-id="a4f9a-120">-Id</span></span>
 
-<span data-ttu-id="d4665-121">文字列配列として、このコマンドレットが取得するタイムゾーンの ID または id を指定します。</span><span class="sxs-lookup"><span data-stu-id="d4665-121">Specifies, as a string array, the ID or IDs of the time zones that this cmdlet gets.</span></span>
+<span data-ttu-id="a4f9a-121">文字列配列として、このコマンドレットが取得するタイムゾーンの ID または id を指定します。</span><span class="sxs-lookup"><span data-stu-id="a4f9a-121">Specifies, as a string array, the ID or IDs of the time zones that this cmdlet gets.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -101,9 +101,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d4665-122">-ListAvailable</span><span class="sxs-lookup"><span data-stu-id="d4665-122">-ListAvailable</span></span>
+### <span data-ttu-id="a4f9a-122">-ListAvailable</span><span class="sxs-lookup"><span data-stu-id="a4f9a-122">-ListAvailable</span></span>
 
-<span data-ttu-id="d4665-123">このコマンドレットがすべての使用可能なタイムゾーンを取得することを示します。</span><span class="sxs-lookup"><span data-stu-id="d4665-123">Indicates that this cmdlet gets all available time zones.</span></span>
+<span data-ttu-id="a4f9a-123">このコマンドレットがすべての使用可能なタイムゾーンを取得することを示します。</span><span class="sxs-lookup"><span data-stu-id="a4f9a-123">Indicates that this cmdlet gets all available time zones.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -117,9 +117,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="d4665-124">-Name</span><span class="sxs-lookup"><span data-stu-id="d4665-124">-Name</span></span>
+### <span data-ttu-id="a4f9a-124">-Name</span><span class="sxs-lookup"><span data-stu-id="a4f9a-124">-Name</span></span>
 
-<span data-ttu-id="d4665-125">文字列配列として、このコマンドレットが取得するタイムゾーンの名前または名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="d4665-125">Specifies, as a string array, the name or names of the time zones that this cmdlet gets.</span></span>
+<span data-ttu-id="a4f9a-125">文字列配列として、このコマンドレットが取得するタイムゾーンの名前または名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="a4f9a-125">Specifies, as a string array, the name or names of the time zones that this cmdlet gets.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -133,20 +133,22 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="d4665-126">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="d4665-126">CommonParameters</span></span>
+### <span data-ttu-id="a4f9a-126">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="a4f9a-126">CommonParameters</span></span>
 
-<span data-ttu-id="d4665-127">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="d4665-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d4665-128">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d4665-128">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="a4f9a-127">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="a4f9a-127">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a4f9a-128">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a4f9a-128">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="d4665-129">入力</span><span class="sxs-lookup"><span data-stu-id="d4665-129">INPUTS</span></span>
+## <span data-ttu-id="a4f9a-129">入力</span><span class="sxs-lookup"><span data-stu-id="a4f9a-129">INPUTS</span></span>
 
-### <span data-ttu-id="d4665-130">System.String[]</span><span class="sxs-lookup"><span data-stu-id="d4665-130">System.String[]</span></span>
+### <span data-ttu-id="a4f9a-130">System.String[]</span><span class="sxs-lookup"><span data-stu-id="a4f9a-130">System.String[]</span></span>
 
-## <span data-ttu-id="d4665-131">出力</span><span class="sxs-lookup"><span data-stu-id="d4665-131">OUTPUTS</span></span>
+## <span data-ttu-id="a4f9a-131">出力</span><span class="sxs-lookup"><span data-stu-id="a4f9a-131">OUTPUTS</span></span>
 
-### <span data-ttu-id="d4665-132">TimeZoneInfo []</span><span class="sxs-lookup"><span data-stu-id="d4665-132">System.TimeZoneInfo[]</span></span>
+### <span data-ttu-id="a4f9a-132">TimeZoneInfo []</span><span class="sxs-lookup"><span data-stu-id="a4f9a-132">System.TimeZoneInfo[]</span></span>
 
-## <span data-ttu-id="d4665-133">注</span><span class="sxs-lookup"><span data-stu-id="d4665-133">NOTES</span></span>
+## <span data-ttu-id="a4f9a-133">注</span><span class="sxs-lookup"><span data-stu-id="a4f9a-133">NOTES</span></span>
 
-## <span data-ttu-id="d4665-134">関連リンク</span><span class="sxs-lookup"><span data-stu-id="d4665-134">RELATED LINKS</span></span>
+<span data-ttu-id="a4f9a-134">このコマンドレットは、Windows プラットフォームでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="a4f9a-134">This cmdlet is only available on Windows platforms.</span></span>
 
-[<span data-ttu-id="d4665-135">Set-TimeZone</span><span class="sxs-lookup"><span data-stu-id="d4665-135">Set-TimeZone</span></span>](Set-TimeZone.md)
+## <span data-ttu-id="a4f9a-135">関連リンク</span><span class="sxs-lookup"><span data-stu-id="a4f9a-135">RELATED LINKS</span></span>
+
+[<span data-ttu-id="a4f9a-136">Set-TimeZone</span><span class="sxs-lookup"><span data-stu-id="a4f9a-136">Set-TimeZone</span></span>](Set-TimeZone.md)
