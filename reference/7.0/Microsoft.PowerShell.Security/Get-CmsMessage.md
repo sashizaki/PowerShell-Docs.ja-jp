@@ -7,54 +7,54 @@ ms.date: 02/03/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/get-cmsmessage?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Get-CmsMessage
-ms.openlocfilehash: b90059cd735e26eceb66d211533abbe25894d0ec
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: bbb4fe84a1c41afa6d16f4b127475b3405c7f81d
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93209808"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94347093"
 ---
-# <span data-ttu-id="53ac8-103">Get-CmsMessage</span><span class="sxs-lookup"><span data-stu-id="53ac8-103">Get-CmsMessage</span></span>
+# <span data-ttu-id="ef10f-103">Get-CmsMessage</span><span class="sxs-lookup"><span data-stu-id="ef10f-103">Get-CmsMessage</span></span>
 
-## <span data-ttu-id="53ac8-104">概要</span><span class="sxs-lookup"><span data-stu-id="53ac8-104">SYNOPSIS</span></span>
-<span data-ttu-id="53ac8-105">暗号化メッセージ構文形式を使用して暗号化されたコンテンツを取得します。</span><span class="sxs-lookup"><span data-stu-id="53ac8-105">Gets content that has been encrypted by using the Cryptographic Message Syntax format.</span></span>
+## <span data-ttu-id="ef10f-104">概要</span><span class="sxs-lookup"><span data-stu-id="ef10f-104">SYNOPSIS</span></span>
+<span data-ttu-id="ef10f-105">暗号化メッセージ構文形式を使用して暗号化されたコンテンツを取得します。</span><span class="sxs-lookup"><span data-stu-id="ef10f-105">Gets content that has been encrypted by using the Cryptographic Message Syntax format.</span></span>
 
-## <span data-ttu-id="53ac8-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="53ac8-106">SYNTAX</span></span>
+## <span data-ttu-id="ef10f-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="ef10f-106">SYNTAX</span></span>
 
-### <span data-ttu-id="53ac8-107">ByContent</span><span class="sxs-lookup"><span data-stu-id="53ac8-107">ByContent</span></span>
+### <span data-ttu-id="ef10f-107">ByContent</span><span class="sxs-lookup"><span data-stu-id="ef10f-107">ByContent</span></span>
 
 ```
 Get-CmsMessage [-Content] <String> [<CommonParameters>]
 ```
 
-### <span data-ttu-id="53ac8-108">ByPath</span><span class="sxs-lookup"><span data-stu-id="53ac8-108">ByPath</span></span>
+### <span data-ttu-id="ef10f-108">ByPath</span><span class="sxs-lookup"><span data-stu-id="ef10f-108">ByPath</span></span>
 
 ```
 Get-CmsMessage [-Path] <String> [<CommonParameters>]
 ```
 
-### <span data-ttu-id="53ac8-109">ByLiteralPath</span><span class="sxs-lookup"><span data-stu-id="53ac8-109">ByLiteralPath</span></span>
+### <span data-ttu-id="ef10f-109">ByLiteralPath</span><span class="sxs-lookup"><span data-stu-id="ef10f-109">ByLiteralPath</span></span>
 
 ```
 Get-CmsMessage [-LiteralPath] <String> [<CommonParameters>]
 ```
 
-## <span data-ttu-id="53ac8-110">Description</span><span class="sxs-lookup"><span data-stu-id="53ac8-110">DESCRIPTION</span></span>
+## <span data-ttu-id="ef10f-110">Description</span><span class="sxs-lookup"><span data-stu-id="ef10f-110">DESCRIPTION</span></span>
 
-<span data-ttu-id="53ac8-111">`Get-CmsMessage`コマンドレットでは、暗号化メッセージ構文 (CMS) 形式を使用して暗号化されたコンテンツを取得します。</span><span class="sxs-lookup"><span data-stu-id="53ac8-111">The `Get-CmsMessage` cmdlet gets content that has been encrypted using the Cryptographic Message Syntax (CMS) format.</span></span>
+<span data-ttu-id="ef10f-111">`Get-CmsMessage`コマンドレットでは、暗号化メッセージ構文 (CMS) 形式を使用して暗号化されたコンテンツを取得します。</span><span class="sxs-lookup"><span data-stu-id="ef10f-111">The `Get-CmsMessage` cmdlet gets content that has been encrypted using the Cryptographic Message Syntax (CMS) format.</span></span>
 
-<span data-ttu-id="53ac8-112">CMS コマンドレットは、 [RFC5652](https://tools.ietf.org/html/rfc5652)によって説明されているように、メッセージを暗号化して保護するための IETF 形式を使用したコンテンツの暗号化と暗号化解除をサポートします。</span><span class="sxs-lookup"><span data-stu-id="53ac8-112">The CMS cmdlets support encryption and decryption of content using the IETF format for cryptographically protecting messages, as documented by [RFC5652](https://tools.ietf.org/html/rfc5652).</span></span>
+<span data-ttu-id="ef10f-112">CMS コマンドレットは、 [RFC5652](https://tools.ietf.org/html/rfc5652)によって説明されているように、メッセージを暗号化して保護するための IETF 形式を使用したコンテンツの暗号化と暗号化解除をサポートします。</span><span class="sxs-lookup"><span data-stu-id="ef10f-112">The CMS cmdlets support encryption and decryption of content using the IETF format for cryptographically protecting messages, as documented by [RFC5652](https://tools.ietf.org/html/rfc5652).</span></span>
 
-<span data-ttu-id="53ac8-113">CMS 暗号化標準では、公開キー暗号化を使用します。この暗号化では、コンテンツの暗号化に使用されるキー (公開キー) とコンテンツの暗号化を解除するために使用されるキー (秘密キー) は区別されます。</span><span class="sxs-lookup"><span data-stu-id="53ac8-113">The CMS encryption standard uses public key cryptography, where the keys used to encrypt content (the public key) and the keys used to decrypt content (the private key) are separate.</span></span> <span data-ttu-id="53ac8-114">公開キーは広く共有でき、機密性の高いデータではありません。</span><span class="sxs-lookup"><span data-stu-id="53ac8-114">Your public key can be shared widely, and is not sensitive data.</span></span> <span data-ttu-id="53ac8-115">いずれかのコンテンツがこの公開キーで暗号化された場合、秘密キーのみが暗号化を解除できます。</span><span class="sxs-lookup"><span data-stu-id="53ac8-115">If any content is encrypted with this public key, only your private key can decrypt it.</span></span> <span data-ttu-id="53ac8-116">公開キー暗号化の詳細については、「[公開鍵暗号](https://en.wikipedia.org/wiki/Public-key_cryptography)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="53ac8-116">For more information, see [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).</span></span>
+<span data-ttu-id="ef10f-113">CMS 暗号化標準では、公開キー暗号化を使用します。この暗号化では、コンテンツの暗号化に使用されるキー (公開キー) とコンテンツの暗号化を解除するために使用されるキー (秘密キー) は区別されます。</span><span class="sxs-lookup"><span data-stu-id="ef10f-113">The CMS encryption standard uses public key cryptography, where the keys used to encrypt content (the public key) and the keys used to decrypt content (the private key) are separate.</span></span> <span data-ttu-id="ef10f-114">公開キーは広く共有でき、機密性の高いデータではありません。</span><span class="sxs-lookup"><span data-stu-id="ef10f-114">Your public key can be shared widely, and is not sensitive data.</span></span> <span data-ttu-id="ef10f-115">いずれかのコンテンツがこの公開キーで暗号化された場合、秘密キーのみが暗号化を解除できます。</span><span class="sxs-lookup"><span data-stu-id="ef10f-115">If any content is encrypted with this public key, only your private key can decrypt it.</span></span> <span data-ttu-id="ef10f-116">公開キー暗号化の詳細については、「[公開鍵暗号](https://en.wikipedia.org/wiki/Public-key_cryptography)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ef10f-116">For more information, see [Public-key cryptography](https://en.wikipedia.org/wiki/Public-key_cryptography).</span></span>
 
-<span data-ttu-id="53ac8-117">`Get-CmsMessage` CMS 形式で暗号化されたコンテンツを取得します。</span><span class="sxs-lookup"><span data-stu-id="53ac8-117">`Get-CmsMessage` gets content that has been encrypted in CMS format.</span></span> <span data-ttu-id="53ac8-118">コンテンツの暗号化を解除したり保護を解除したりすることはありません。</span><span class="sxs-lookup"><span data-stu-id="53ac8-118">It does not decrypt or unprotect content.</span></span> <span data-ttu-id="53ac8-119">このコマンドレットを実行すると、暗号化されたコンテンツを取得できます。そのためには、コマンドレットを実行し `Protect-CmsMessage` ます。</span><span class="sxs-lookup"><span data-stu-id="53ac8-119">You can run this cmdlet to get content that you have encrypted by running the `Protect-CmsMessage` cmdlet.</span></span> <span data-ttu-id="53ac8-120">暗号化を解除するコンテンツを文字列として指定することも、暗号化されたコンテンツへのパスを指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="53ac8-120">You can specify content that you want to decrypt as a string, or by path to the encrypted content.</span></span> <span data-ttu-id="53ac8-121">`Get-CmsMessage` `Unprotect-CmsMessage` コンテンツの暗号化に使用されたドキュメント暗号化証明書に関する情報がある場合は、の結果をにパイプして、コンテンツの暗号化を解除することができます。</span><span class="sxs-lookup"><span data-stu-id="53ac8-121">You can pipe the results of `Get-CmsMessage` to `Unprotect-CmsMessage` to decrypt the content, provided that you have information about the document encryption certificate that was used to encrypt the content.</span></span>
+<span data-ttu-id="ef10f-117">`Get-CmsMessage` CMS 形式で暗号化されたコンテンツを取得します。</span><span class="sxs-lookup"><span data-stu-id="ef10f-117">`Get-CmsMessage` gets content that has been encrypted in CMS format.</span></span> <span data-ttu-id="ef10f-118">コンテンツの暗号化を解除したり保護を解除したりすることはありません。</span><span class="sxs-lookup"><span data-stu-id="ef10f-118">It does not decrypt or unprotect content.</span></span> <span data-ttu-id="ef10f-119">このコマンドレットを実行すると、暗号化されたコンテンツを取得できます。そのためには、コマンドレットを実行し `Protect-CmsMessage` ます。</span><span class="sxs-lookup"><span data-stu-id="ef10f-119">You can run this cmdlet to get content that you have encrypted by running the `Protect-CmsMessage` cmdlet.</span></span> <span data-ttu-id="ef10f-120">暗号化を解除するコンテンツを文字列として指定することも、暗号化されたコンテンツへのパスを指定することもできます。</span><span class="sxs-lookup"><span data-stu-id="ef10f-120">You can specify content that you want to decrypt as a string, or by path to the encrypted content.</span></span> <span data-ttu-id="ef10f-121">`Get-CmsMessage` `Unprotect-CmsMessage` コンテンツの暗号化に使用されたドキュメント暗号化証明書に関する情報がある場合は、の結果をにパイプして、コンテンツの暗号化を解除することができます。</span><span class="sxs-lookup"><span data-stu-id="ef10f-121">You can pipe the results of `Get-CmsMessage` to `Unprotect-CmsMessage` to decrypt the content, provided that you have information about the document encryption certificate that was used to encrypt the content.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="53ac8-122">このコマンドレットは、Windows でのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="53ac8-122">This cmdlet is only available on Windows.</span></span>
+> <span data-ttu-id="ef10f-122">このコマンドレットは、Windows でのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="ef10f-122">This cmdlet is only available on Windows.</span></span>
 
-## <span data-ttu-id="53ac8-123">例</span><span class="sxs-lookup"><span data-stu-id="53ac8-123">EXAMPLES</span></span>
+## <span data-ttu-id="ef10f-123">例</span><span class="sxs-lookup"><span data-stu-id="ef10f-123">EXAMPLES</span></span>
 
-### <span data-ttu-id="53ac8-124">例 1: 暗号化されたコンテンツを取得する</span><span class="sxs-lookup"><span data-stu-id="53ac8-124">Example 1: Get encrypted content</span></span>
+### <span data-ttu-id="ef10f-124">例 1: 暗号化されたコンテンツを取得する</span><span class="sxs-lookup"><span data-stu-id="ef10f-124">Example 1: Get encrypted content</span></span>
 
 ```powershell
 $Msg = Get-CmsMessage -Path "C:\Users\Test\Documents\PowerShell\Future_Plans.txt"
@@ -74,9 +74,9 @@ KMnBoD1dkb/FzSWAEBaL8xkFwCu0e1AtDj7nSJc=
 -----END CMS-----
 ```
 
-<span data-ttu-id="53ac8-125">このコマンドは、C:\Users\Test\Documents\PowerShell\Future_Plans.txt にある暗号化されたコンテンツを取得します。</span><span class="sxs-lookup"><span data-stu-id="53ac8-125">This command gets encrypted content located at C:\Users\Test\Documents\PowerShell\Future_Plans.txt.</span></span>
+<span data-ttu-id="ef10f-125">このコマンドは、C:\Users\Test\Documents\PowerShell\Future_Plans.txt にある暗号化されたコンテンツを取得します。</span><span class="sxs-lookup"><span data-stu-id="ef10f-125">This command gets encrypted content located at C:\Users\Test\Documents\PowerShell\Future_Plans.txt.</span></span>
 
-### <span data-ttu-id="53ac8-126">例 2: パイプで暗号化されたコンテンツを Unprotect-CmsMessage に</span><span class="sxs-lookup"><span data-stu-id="53ac8-126">Example 2: Pipe encrypted content to Unprotect-CmsMessage</span></span>
+### <span data-ttu-id="ef10f-126">例 2: パイプで暗号化されたコンテンツを Unprotect-CmsMessage に</span><span class="sxs-lookup"><span data-stu-id="ef10f-126">Example 2: Pipe encrypted content to Unprotect-CmsMessage</span></span>
 
 ```powershell
 $Msg = Get-CmsMessage -Path "C:\Users\Test\Documents\PowerShell\Future_Plans.txt"
@@ -87,13 +87,13 @@ $Msg | Unprotect-CmsMessage -To "cn=youralias@emailaddress.com"
 Try the new Break All command
 ```
 
-<span data-ttu-id="53ac8-127">このコマンドは、コマンドレットの結果を `Get-CmsMessage` 例1からにパイプし、 `Unprotect-CmsMessage` メッセージの暗号化を解除してプレーンテキストで読み取ります。</span><span class="sxs-lookup"><span data-stu-id="53ac8-127">This command pipes the results of the `Get-CmsMessage` cmdlet from Example 1 to `Unprotect-CmsMessage`, to decrypt the message and read it in plain text.</span></span> <span data-ttu-id="53ac8-128">この場合、 **To** パラメーターの値は、暗号化された証明書の件名行の値になります。</span><span class="sxs-lookup"><span data-stu-id="53ac8-128">In this case, the value of the **To** parameter is the value of the encrypting certificate's Subject line.</span></span> <span data-ttu-id="53ac8-129">暗号化が解除されたことを示します。 "新しい Break All コマンドを試してください" というメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="53ac8-129">The decrypted message, "Try the new Break All command," is the result.</span></span>
+<span data-ttu-id="ef10f-127">このコマンドは、コマンドレットの結果を `Get-CmsMessage` 例1からにパイプし、 `Unprotect-CmsMessage` メッセージの暗号化を解除してプレーンテキストで読み取ります。</span><span class="sxs-lookup"><span data-stu-id="ef10f-127">This command pipes the results of the `Get-CmsMessage` cmdlet from Example 1 to `Unprotect-CmsMessage`, to decrypt the message and read it in plain text.</span></span> <span data-ttu-id="ef10f-128">この場合、 **To** パラメーターの値は、暗号化された証明書の件名行の値になります。</span><span class="sxs-lookup"><span data-stu-id="ef10f-128">In this case, the value of the **To** parameter is the value of the encrypting certificate's Subject line.</span></span> <span data-ttu-id="ef10f-129">暗号化が解除されたことを示します。 "新しい Break All コマンドを試してください" というメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="ef10f-129">The decrypted message, "Try the new Break All command," is the result.</span></span>
 
-## <span data-ttu-id="53ac8-130">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="53ac8-130">PARAMETERS</span></span>
+## <span data-ttu-id="ef10f-130">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="ef10f-130">PARAMETERS</span></span>
 
-### <span data-ttu-id="53ac8-131">-コンテンツ</span><span class="sxs-lookup"><span data-stu-id="53ac8-131">-Content</span></span>
+### <span data-ttu-id="ef10f-131">-コンテンツ</span><span class="sxs-lookup"><span data-stu-id="ef10f-131">-Content</span></span>
 
-<span data-ttu-id="53ac8-132">暗号化された文字列、または暗号化された文字列を含む変数を指定します。</span><span class="sxs-lookup"><span data-stu-id="53ac8-132">Specifies an encrypted string, or a variable containing an encrypted string.</span></span>
+<span data-ttu-id="ef10f-132">暗号化された文字列、または暗号化された文字列を含む変数を指定します。</span><span class="sxs-lookup"><span data-stu-id="ef10f-132">Specifies an encrypted string, or a variable containing an encrypted string.</span></span>
 
 ```yaml
 Type: System.String
@@ -107,10 +107,10 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="53ac8-133">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="53ac8-133">-LiteralPath</span></span>
+### <span data-ttu-id="ef10f-133">-LiteralPath</span><span class="sxs-lookup"><span data-stu-id="ef10f-133">-LiteralPath</span></span>
 
-<span data-ttu-id="53ac8-134">取得する暗号化されたコンテンツへのパスを指定します。</span><span class="sxs-lookup"><span data-stu-id="53ac8-134">Specifies the path to encrypted content that you want to get.</span></span> <span data-ttu-id="53ac8-135">**Path** とは異なり、 **LiteralPath** の値は入力した内容のまま使用されます。</span><span class="sxs-lookup"><span data-stu-id="53ac8-135">Unlike **Path** , the value of **LiteralPath** is used exactly as it is typed.</span></span> <span data-ttu-id="53ac8-136">ワイルドカードとして解釈される文字はありません。</span><span class="sxs-lookup"><span data-stu-id="53ac8-136">No characters are interpreted as wildcard characters.</span></span> <span data-ttu-id="53ac8-137">パスにエスケープ文字が含まれている場合は、それぞれを単一引用符で囲みます。</span><span class="sxs-lookup"><span data-stu-id="53ac8-137">If the path includes escape characters, enclose each one in single quotation marks.</span></span>
-<span data-ttu-id="53ac8-138">単一引用符で囲まれた文字はエスケープ文字として解釈されません。</span><span class="sxs-lookup"><span data-stu-id="53ac8-138">Single quotation marks tell PowerShell not to interpret enclosed characters as escape characters.</span></span>
+<span data-ttu-id="ef10f-134">取得する暗号化されたコンテンツへのパスを指定します。</span><span class="sxs-lookup"><span data-stu-id="ef10f-134">Specifies the path to encrypted content that you want to get.</span></span> <span data-ttu-id="ef10f-135">**Path** とは異なり、 **LiteralPath** の値は入力した内容のまま使用されます。</span><span class="sxs-lookup"><span data-stu-id="ef10f-135">Unlike **Path** , the value of **LiteralPath** is used exactly as it is typed.</span></span> <span data-ttu-id="ef10f-136">ワイルドカードとして解釈される文字はありません。</span><span class="sxs-lookup"><span data-stu-id="ef10f-136">No characters are interpreted as wildcard characters.</span></span> <span data-ttu-id="ef10f-137">パスにエスケープ文字が含まれている場合は、それぞれを単一引用符で囲みます。</span><span class="sxs-lookup"><span data-stu-id="ef10f-137">If the path includes escape characters, enclose each one in single quotation marks.</span></span>
+<span data-ttu-id="ef10f-138">単一引用符で囲まれた文字はエスケープ文字として解釈されません。</span><span class="sxs-lookup"><span data-stu-id="ef10f-138">Single quotation marks tell PowerShell not to interpret enclosed characters as escape characters.</span></span>
 
 ```yaml
 Type: System.String
@@ -124,9 +124,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="53ac8-139">-Path</span><span class="sxs-lookup"><span data-stu-id="53ac8-139">-Path</span></span>
+### <span data-ttu-id="ef10f-139">-Path</span><span class="sxs-lookup"><span data-stu-id="ef10f-139">-Path</span></span>
 
-<span data-ttu-id="53ac8-140">暗号化を解除する暗号化されたコンテンツへのパスを指定します。</span><span class="sxs-lookup"><span data-stu-id="53ac8-140">Specifies the path to encrypted content that you want to decrypt.</span></span>
+<span data-ttu-id="ef10f-140">暗号化を解除する暗号化されたコンテンツへのパスを指定します。</span><span class="sxs-lookup"><span data-stu-id="ef10f-140">Specifies the path to encrypted content that you want to decrypt.</span></span>
 
 ```yaml
 Type: System.String
@@ -140,20 +140,22 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="53ac8-141">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="53ac8-141">CommonParameters</span></span>
+### <span data-ttu-id="ef10f-141">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="ef10f-141">CommonParameters</span></span>
 
-<span data-ttu-id="53ac8-142">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="53ac8-142">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="53ac8-143">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="53ac8-143">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="ef10f-142">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="ef10f-142">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="ef10f-143">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="ef10f-143">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="53ac8-144">入力</span><span class="sxs-lookup"><span data-stu-id="53ac8-144">INPUTS</span></span>
+## <span data-ttu-id="ef10f-144">入力</span><span class="sxs-lookup"><span data-stu-id="ef10f-144">INPUTS</span></span>
 
-## <span data-ttu-id="53ac8-145">出力</span><span class="sxs-lookup"><span data-stu-id="53ac8-145">OUTPUTS</span></span>
+## <span data-ttu-id="ef10f-145">出力</span><span class="sxs-lookup"><span data-stu-id="ef10f-145">OUTPUTS</span></span>
 
-## <span data-ttu-id="53ac8-146">注</span><span class="sxs-lookup"><span data-stu-id="53ac8-146">NOTES</span></span>
+## <span data-ttu-id="ef10f-146">注</span><span class="sxs-lookup"><span data-stu-id="ef10f-146">NOTES</span></span>
 
-## <span data-ttu-id="53ac8-147">関連リンク</span><span class="sxs-lookup"><span data-stu-id="53ac8-147">RELATED LINKS</span></span>
+<span data-ttu-id="ef10f-147">このコマンドレットは、Windows プラットフォームでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="ef10f-147">This cmdlet is only available on Windows platforms.</span></span>
 
-[<span data-ttu-id="53ac8-148">about_Providers</span><span class="sxs-lookup"><span data-stu-id="53ac8-148">about_Providers</span></span>](../Microsoft.PowerShell.Core/About/about_Providers.md)
+## <span data-ttu-id="ef10f-148">関連リンク</span><span class="sxs-lookup"><span data-stu-id="ef10f-148">RELATED LINKS</span></span>
 
-[<span data-ttu-id="53ac8-149">Protect-CmsMessage</span><span class="sxs-lookup"><span data-stu-id="53ac8-149">Protect-CmsMessage</span></span>](Protect-CmsMessage.md)
+[<span data-ttu-id="ef10f-149">about_Providers</span><span class="sxs-lookup"><span data-stu-id="ef10f-149">about_Providers</span></span>](../Microsoft.PowerShell.Core/About/about_Providers.md)
 
-[<span data-ttu-id="53ac8-150">Unprotect-CmsMessage</span><span class="sxs-lookup"><span data-stu-id="53ac8-150">Unprotect-CmsMessage</span></span>](Unprotect-CmsMessage.md)
+[<span data-ttu-id="ef10f-150">Protect-CmsMessage</span><span class="sxs-lookup"><span data-stu-id="ef10f-150">Protect-CmsMessage</span></span>](Protect-CmsMessage.md)
+
+[<span data-ttu-id="ef10f-151">Unprotect-CmsMessage</span><span class="sxs-lookup"><span data-stu-id="ef10f-151">Unprotect-CmsMessage</span></span>](Unprotect-CmsMessage.md)
