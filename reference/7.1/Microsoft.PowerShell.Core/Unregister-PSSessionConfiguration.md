@@ -7,63 +7,63 @@ ms.date: 03/28/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/unregister-pssessionconfiguration?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Unregister-PSSessionConfiguration
-ms.openlocfilehash: d56d71dccc54c07154a6f3302634b84779c00129
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 0ee32b680aee940df36d3219e4b24ab594e79284
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93218760"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345818"
 ---
-# <span data-ttu-id="a92c2-103">Unregister-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="a92c2-103">Unregister-PSSessionConfiguration</span></span>
+# <span data-ttu-id="18873-103">Unregister-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="18873-103">Unregister-PSSessionConfiguration</span></span>
 
-## <span data-ttu-id="a92c2-104">概要</span><span class="sxs-lookup"><span data-stu-id="a92c2-104">SYNOPSIS</span></span>
-<span data-ttu-id="a92c2-105">登録されたセッション構成をコンピューターから削除します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-105">Deletes registered session configurations from the computer.</span></span>
+## <span data-ttu-id="18873-104">概要</span><span class="sxs-lookup"><span data-stu-id="18873-104">SYNOPSIS</span></span>
+<span data-ttu-id="18873-105">登録されたセッション構成をコンピューターから削除します。</span><span class="sxs-lookup"><span data-stu-id="18873-105">Deletes registered session configurations from the computer.</span></span>
 
-## <span data-ttu-id="a92c2-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="a92c2-106">SYNTAX</span></span>
+## <span data-ttu-id="18873-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="18873-106">SYNTAX</span></span>
 
 ```
 Unregister-PSSessionConfiguration [-Name] <String> [-Force] [-NoServiceRestart] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="a92c2-107">Description</span><span class="sxs-lookup"><span data-stu-id="a92c2-107">DESCRIPTION</span></span>
+## <span data-ttu-id="18873-107">Description</span><span class="sxs-lookup"><span data-stu-id="18873-107">DESCRIPTION</span></span>
 
-<span data-ttu-id="a92c2-108">コマンドレットでは、 `Unregister-PSSessionConfiguration` 登録されているセッション構成をコンピューターから削除します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-108">The `Unregister-PSSessionConfiguration` cmdlet deletes registered session configurations from the computer.</span></span> <span data-ttu-id="a92c2-109">このコマンドレットは、システム管理者がユーザー用にカスタマイズされたセッション構成を管理するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="a92c2-109">This cmdlet is designed for system administrators to manage customized session configurations for users.</span></span>
+<span data-ttu-id="18873-108">コマンドレットでは、 `Unregister-PSSessionConfiguration` 登録されているセッション構成をコンピューターから削除します。</span><span class="sxs-lookup"><span data-stu-id="18873-108">The `Unregister-PSSessionConfiguration` cmdlet deletes registered session configurations from the computer.</span></span> <span data-ttu-id="18873-109">このコマンドレットは、システム管理者がユーザー用にカスタマイズされたセッション構成を管理するように設計されています。</span><span class="sxs-lookup"><span data-stu-id="18873-109">This cmdlet is designed for system administrators to manage customized session configurations for users.</span></span>
 
-<span data-ttu-id="a92c2-110">変更を有効にするために、は `Unregister-PSSessionConfiguration` **WinRM** サービスを再起動します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-110">To make the change effective, `Unregister-PSSessionConfiguration` restarts the **WinRM** service.</span></span> <span data-ttu-id="a92c2-111">再起動が行われないようにするには、 **NoServiceRestart** パラメーターを指定します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-111">To prevent the restart, specify the **NoServiceRestart** parameter.</span></span>
+<span data-ttu-id="18873-110">変更を有効にするために、は `Unregister-PSSessionConfiguration` **WinRM** サービスを再起動します。</span><span class="sxs-lookup"><span data-stu-id="18873-110">To make the change effective, `Unregister-PSSessionConfiguration` restarts the **WinRM** service.</span></span> <span data-ttu-id="18873-111">再起動が行われないようにするには、 **NoServiceRestart** パラメーターを指定します。</span><span class="sxs-lookup"><span data-stu-id="18873-111">To prevent the restart, specify the **NoServiceRestart** parameter.</span></span>
 
-<span data-ttu-id="a92c2-112">既定の **Microsoft PowerShell** または **microsoft.powershell32** セッション構成を誤って削除した場合は、コマンドレットを使用して `Enable-PSRemoting` 復元します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-112">If you accidentally delete the default **Microsoft.PowerShell** or **Microsoft.PowerShell32** session configurations, use the `Enable-PSRemoting` cmdlet to restore them.</span></span> <span data-ttu-id="a92c2-113">詳細については、「 [about_Session_Configurations](About/about_Session_Configurations.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a92c2-113">For more information, see [about_Session_Configurations](About/about_Session_Configurations.md).</span></span>
+<span data-ttu-id="18873-112">既定の **Microsoft PowerShell** または **microsoft.powershell32** セッション構成を誤って削除した場合は、コマンドレットを使用して `Enable-PSRemoting` 復元します。</span><span class="sxs-lookup"><span data-stu-id="18873-112">If you accidentally delete the default **Microsoft.PowerShell** or **Microsoft.PowerShell32** session configurations, use the `Enable-PSRemoting` cmdlet to restore them.</span></span> <span data-ttu-id="18873-113">詳細については、「 [about_Session_Configurations](About/about_Session_Configurations.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="18873-113">For more information, see [about_Session_Configurations](About/about_Session_Configurations.md).</span></span>
 
-## <span data-ttu-id="a92c2-114">例</span><span class="sxs-lookup"><span data-stu-id="a92c2-114">EXAMPLES</span></span>
+## <span data-ttu-id="18873-114">例</span><span class="sxs-lookup"><span data-stu-id="18873-114">EXAMPLES</span></span>
 
-### <span data-ttu-id="a92c2-115">例 1: セッション構成を削除する</span><span class="sxs-lookup"><span data-stu-id="a92c2-115">Example 1: Delete a session configuration</span></span>
+### <span data-ttu-id="18873-115">例 1: セッション構成を削除する</span><span class="sxs-lookup"><span data-stu-id="18873-115">Example 1: Delete a session configuration</span></span>
 
-<span data-ttu-id="a92c2-116">この例では、 **MaintenanceShell** セッション構成をコンピューターから削除します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-116">This example deletes the **MaintenanceShell** session configuration from the computer.</span></span>
+<span data-ttu-id="18873-116">この例では、 **MaintenanceShell** セッション構成をコンピューターから削除します。</span><span class="sxs-lookup"><span data-stu-id="18873-116">This example deletes the **MaintenanceShell** session configuration from the computer.</span></span>
 
 ```powershell
 Unregister-PSSessionConfiguration -Name "MaintenanceShell"
 ```
 
-### <span data-ttu-id="a92c2-117">例 2: セッション構成を削除し、WinRM サービスを再起動する</span><span class="sxs-lookup"><span data-stu-id="a92c2-117">Example 2: Delete a session configuration and restart the WinRM service</span></span>
+### <span data-ttu-id="18873-117">例 2: セッション構成を削除し、WinRM サービスを再起動する</span><span class="sxs-lookup"><span data-stu-id="18873-117">Example 2: Delete a session configuration and restart the WinRM service</span></span>
 
-<span data-ttu-id="a92c2-118">この例では、 **MaintenanceShell** 構成を削除し、WinRM サービスを再起動します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-118">In this example, we delete the **MaintenanceShell** configuration and restart the WinRM service.</span></span> <span data-ttu-id="a92c2-119">**Force** パラメーターを指定すると、プロンプトを表示せずに、 **WinRM** サービスを再起動するためのすべてのユーザーメッセージが抑制されます。</span><span class="sxs-lookup"><span data-stu-id="a92c2-119">The **Force** parameter suppresses all user messages to restart the **WinRM** service without prompting.</span></span>
+<span data-ttu-id="18873-118">この例では、 **MaintenanceShell** 構成を削除し、WinRM サービスを再起動します。</span><span class="sxs-lookup"><span data-stu-id="18873-118">In this example, we delete the **MaintenanceShell** configuration and restart the WinRM service.</span></span> <span data-ttu-id="18873-119">**Force** パラメーターを指定すると、プロンプトを表示せずに、 **WinRM** サービスを再起動するためのすべてのユーザーメッセージが抑制されます。</span><span class="sxs-lookup"><span data-stu-id="18873-119">The **Force** parameter suppresses all user messages to restart the **WinRM** service without prompting.</span></span>
 
 ```powershell
 Unregister-PSSessionConfiguration -Name MaintenanceShell -Force
 ```
 
-### <span data-ttu-id="a92c2-120">例 3: すべてのセッション構成を削除する</span><span class="sxs-lookup"><span data-stu-id="a92c2-120">Example 3: Delete all session configurations</span></span>
+### <span data-ttu-id="18873-120">例 3: すべてのセッション構成を削除する</span><span class="sxs-lookup"><span data-stu-id="18873-120">Example 3: Delete all session configurations</span></span>
 
-<span data-ttu-id="a92c2-121">この例では、コンピューター上のすべてのセッション構成を削除する2つの方法を示します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-121">This examples show two ways to delete all the session configurations on the computer.</span></span> <span data-ttu-id="a92c2-122">どちらのコマンドも同じ効果を持ち、同義に使用できます。</span><span class="sxs-lookup"><span data-stu-id="a92c2-122">Both commands have the same effect and can be used interchangeably.</span></span>
+<span data-ttu-id="18873-121">この例では、コンピューター上のすべてのセッション構成を削除する2つの方法を示します。</span><span class="sxs-lookup"><span data-stu-id="18873-121">This examples show two ways to delete all the session configurations on the computer.</span></span> <span data-ttu-id="18873-122">どちらのコマンドも同じ効果を持ち、同義に使用できます。</span><span class="sxs-lookup"><span data-stu-id="18873-122">Both commands have the same effect and can be used interchangeably.</span></span>
 
 ```
 Unregister-PSSessionConfiguration -Name *
 Get-PSSessionConfiguration -Name * | Unregister-PSSessionConfiguration
 ```
 
-### <span data-ttu-id="a92c2-123">例 4: 再起動せずに登録を解除する</span><span class="sxs-lookup"><span data-stu-id="a92c2-123">Example 4: Unregister without a restart</span></span>
+### <span data-ttu-id="18873-123">例 4: 再起動せずに登録を解除する</span><span class="sxs-lookup"><span data-stu-id="18873-123">Example 4: Unregister without a restart</span></span>
 
-<span data-ttu-id="a92c2-124">この例では、 **NoServiceRestart** パラメーターを使用して、コンピューター上のセッションを中断するサービスの再起動を防止する効果を示します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-124">This example shows the effect of using the **NoServiceRestart** parameter to prevent a service restart that would disrupt any sessions on the computer.</span></span>
+<span data-ttu-id="18873-124">この例では、 **NoServiceRestart** パラメーターを使用して、コンピューター上のセッションを中断するサービスの再起動を防止する効果を示します。</span><span class="sxs-lookup"><span data-stu-id="18873-124">This example shows the effect of using the **NoServiceRestart** parameter to prevent a service restart that would disrupt any sessions on the computer.</span></span>
 
 ```
 PS> Unregister-PSSessionConfiguration -Name "MaintenanceShell" -NoServiceRestart
@@ -91,22 +91,22 @@ PS> New-PSSession -ConfigurationName MaintenanceShell
  + FullyQualifiedErrorId : PSSessionOpenFailed
 ```
 
-<span data-ttu-id="a92c2-125">によって、 `Unregister-PSSessionConfiguration` **MaintenanceShell** セッション構成が削除されます。</span><span class="sxs-lookup"><span data-stu-id="a92c2-125">The `Unregister-PSSessionConfiguration` deletes the **MaintenanceShell** session configuration.</span></span>
-<span data-ttu-id="a92c2-126">ただし、このコマンドでは **NoServiceRestart** パラメーターが使用されるため、 **WinRM** サービスは再起動されず、変更はまだ完全に有効になりません。</span><span class="sxs-lookup"><span data-stu-id="a92c2-126">However, because the command uses the **NoServiceRestart** parameter, the **WinRM** service is not restarted and the change is not yet completely effective.</span></span>
+<span data-ttu-id="18873-125">によって、 `Unregister-PSSessionConfiguration` **MaintenanceShell** セッション構成が削除されます。</span><span class="sxs-lookup"><span data-stu-id="18873-125">The `Unregister-PSSessionConfiguration` deletes the **MaintenanceShell** session configuration.</span></span>
+<span data-ttu-id="18873-126">ただし、このコマンドでは **NoServiceRestart** パラメーターが使用されるため、 **WinRM** サービスは再起動されず、変更はまだ完全に有効になりません。</span><span class="sxs-lookup"><span data-stu-id="18873-126">However, because the command uses the **NoServiceRestart** parameter, the **WinRM** service is not restarted and the change is not yet completely effective.</span></span>
 
-<span data-ttu-id="a92c2-127">次に、は `Get-PSSessionConfiguration` **MaintenanceShell** セッションを取得しようとします。</span><span class="sxs-lookup"><span data-stu-id="a92c2-127">Next, the `Get-PSSessionConfiguration` tries to get the **MaintenanceShell** session.</span></span> <span data-ttu-id="a92c2-128">セッションは WS-Management リソーステーブルから削除されているため、で `Get-PSSessionConfiguration` 返すことはできません。</span><span class="sxs-lookup"><span data-stu-id="a92c2-128">Because the session has been removed from the WS-Management resource table, `Get-PSSessionConfiguration` cannot return it.</span></span>
+<span data-ttu-id="18873-127">次に、は `Get-PSSessionConfiguration` **MaintenanceShell** セッションを取得しようとします。</span><span class="sxs-lookup"><span data-stu-id="18873-127">Next, the `Get-PSSessionConfiguration` tries to get the **MaintenanceShell** session.</span></span> <span data-ttu-id="18873-128">セッションは WS-Management リソーステーブルから削除されているため、で `Get-PSSessionConfiguration` 返すことはできません。</span><span class="sxs-lookup"><span data-stu-id="18873-128">Because the session has been removed from the WS-Management resource table, `Get-PSSessionConfiguration` cannot return it.</span></span>
 
-<span data-ttu-id="a92c2-129">コマンドレットでは、 `New-PSSession` **MaintenanceShell** 構成を使用してセッションを作成します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-129">The `New-PSSession` cmdlet creates a session using the **MaintenanceShell** configuration.</span></span> <span data-ttu-id="a92c2-130">このコマンドは成功します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-130">The command succeeds.</span></span> <span data-ttu-id="a92c2-131">次に、 **WinRM** サービスを再起動します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-131">Next, we restart the **WinRM** service.</span></span>
+<span data-ttu-id="18873-129">コマンドレットでは、 `New-PSSession` **MaintenanceShell** 構成を使用してセッションを作成します。</span><span class="sxs-lookup"><span data-stu-id="18873-129">The `New-PSSession` cmdlet creates a session using the **MaintenanceShell** configuration.</span></span> <span data-ttu-id="18873-130">このコマンドは成功します。</span><span class="sxs-lookup"><span data-stu-id="18873-130">The command succeeds.</span></span> <span data-ttu-id="18873-131">次に、 **WinRM** サービスを再起動します。</span><span class="sxs-lookup"><span data-stu-id="18873-131">Next, we restart the **WinRM** service.</span></span>
 
-<span data-ttu-id="a92c2-132">最後に、 `New-PSSession` コマンドレットは、 **MaintenanceShell** 構成を使用するセッションを作成しようとします。</span><span class="sxs-lookup"><span data-stu-id="a92c2-132">Finally, the `New-PSSession` cmdlet tries to create a session that uses the **MaintenanceShell** configuration.</span></span> <span data-ttu-id="a92c2-133">今回は、WinRM サービスの再起動時に **MaintenanceShell** 構成が削除されたため、セッションが失敗します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-133">This time, the session fails because the **MaintenanceShell** configuration was deleted when the WinRM service restarted.</span></span>
+<span data-ttu-id="18873-132">最後に、 `New-PSSession` コマンドレットは、 **MaintenanceShell** 構成を使用するセッションを作成しようとします。</span><span class="sxs-lookup"><span data-stu-id="18873-132">Finally, the `New-PSSession` cmdlet tries to create a session that uses the **MaintenanceShell** configuration.</span></span> <span data-ttu-id="18873-133">今回は、WinRM サービスの再起動時に **MaintenanceShell** 構成が削除されたため、セッションが失敗します。</span><span class="sxs-lookup"><span data-stu-id="18873-133">This time, the session fails because the **MaintenanceShell** configuration was deleted when the WinRM service restarted.</span></span>
 
-## <span data-ttu-id="a92c2-134">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="a92c2-134">PARAMETERS</span></span>
+## <span data-ttu-id="18873-134">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="18873-134">PARAMETERS</span></span>
 
-### <span data-ttu-id="a92c2-135">-Force</span><span class="sxs-lookup"><span data-stu-id="a92c2-135">-Force</span></span>
+### <span data-ttu-id="18873-135">-Force</span><span class="sxs-lookup"><span data-stu-id="18873-135">-Force</span></span>
 
-<span data-ttu-id="a92c2-136">コマンドレットによって確認メッセージが表示されないことを示し、プロンプトを表示せずに **WinRM** サービスを再起動します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-136">Indicates that the cmdlet does not prompt you for confirmation, and restarts the **WinRM** service without prompting.</span></span> <span data-ttu-id="a92c2-137">サービスを再起動すると、構成の変更が有効になります。</span><span class="sxs-lookup"><span data-stu-id="a92c2-137">Restarting the service makes the configuration change effective.</span></span>
+<span data-ttu-id="18873-136">コマンドレットによって確認メッセージが表示されないことを示し、プロンプトを表示せずに **WinRM** サービスを再起動します。</span><span class="sxs-lookup"><span data-stu-id="18873-136">Indicates that the cmdlet does not prompt you for confirmation, and restarts the **WinRM** service without prompting.</span></span> <span data-ttu-id="18873-137">サービスを再起動すると、構成の変更が有効になります。</span><span class="sxs-lookup"><span data-stu-id="18873-137">Restarting the service makes the configuration change effective.</span></span>
 
-<span data-ttu-id="a92c2-138">再起動を回避し、再起動メッセージを表示しないようにするには、 **NoServiceRestart** パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-138">To prevent a restart and suppress the restart prompt, use the **NoServiceRestart** parameter.</span></span>
+<span data-ttu-id="18873-138">再起動を回避し、再起動メッセージを表示しないようにするには、 **NoServiceRestart** パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="18873-138">To prevent a restart and suppress the restart prompt, use the **NoServiceRestart** parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -120,11 +120,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a92c2-139">-Name</span><span class="sxs-lookup"><span data-stu-id="a92c2-139">-Name</span></span>
+### <span data-ttu-id="18873-139">-Name</span><span class="sxs-lookup"><span data-stu-id="18873-139">-Name</span></span>
 
-<span data-ttu-id="a92c2-140">削除するセッション構成の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-140">Specifies the names of the session configurations to delete.</span></span> <span data-ttu-id="a92c2-141">1 つのセッション構成名または構成名パターンを入力します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-141">Enter one session configuration name or a configuration name pattern.</span></span> <span data-ttu-id="a92c2-142">ワイルドカード文字を使用できます。</span><span class="sxs-lookup"><span data-stu-id="a92c2-142">Wildcard characters are permitted.</span></span> <span data-ttu-id="a92c2-143">このパラメーターは必須です。</span><span class="sxs-lookup"><span data-stu-id="a92c2-143">This parameter is required.</span></span>
+<span data-ttu-id="18873-140">削除するセッション構成の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="18873-140">Specifies the names of the session configurations to delete.</span></span> <span data-ttu-id="18873-141">1 つのセッション構成名または構成名パターンを入力します。</span><span class="sxs-lookup"><span data-stu-id="18873-141">Enter one session configuration name or a configuration name pattern.</span></span> <span data-ttu-id="18873-142">ワイルドカード文字を使用できます。</span><span class="sxs-lookup"><span data-stu-id="18873-142">Wildcard characters are permitted.</span></span> <span data-ttu-id="18873-143">このパラメーターは必須です。</span><span class="sxs-lookup"><span data-stu-id="18873-143">This parameter is required.</span></span>
 
-<span data-ttu-id="a92c2-144">パイプを使用してセッション構成をにパイプすることもでき `Unregister-PSSessionConfiguration` ます。</span><span class="sxs-lookup"><span data-stu-id="a92c2-144">You can also pipe a session configurations to `Unregister-PSSessionConfiguration`.</span></span>
+<span data-ttu-id="18873-144">パイプを使用してセッション構成をにパイプすることもでき `Unregister-PSSessionConfiguration` ます。</span><span class="sxs-lookup"><span data-stu-id="18873-144">You can also pipe a session configurations to `Unregister-PSSessionConfiguration`.</span></span>
 
 ```yaml
 Type: System.String
@@ -138,13 +138,13 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: True
 ```
 
-### <span data-ttu-id="a92c2-145">-NoServiceRestart</span><span class="sxs-lookup"><span data-stu-id="a92c2-145">-NoServiceRestart</span></span>
+### <span data-ttu-id="18873-145">-NoServiceRestart</span><span class="sxs-lookup"><span data-stu-id="18873-145">-NoServiceRestart</span></span>
 
-<span data-ttu-id="a92c2-146">このコマンドレットが **WinRM** サービスを再起動せず、サービスの再起動を求めるメッセージを表示しないことを示します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-146">Indicates that this cmdlet does not restart the **WinRM** service, and suppresses the prompt to restart the service.</span></span>
+<span data-ttu-id="18873-146">このコマンドレットが **WinRM** サービスを再起動せず、サービスの再起動を求めるメッセージを表示しないことを示します。</span><span class="sxs-lookup"><span data-stu-id="18873-146">Indicates that this cmdlet does not restart the **WinRM** service, and suppresses the prompt to restart the service.</span></span>
 
-<span data-ttu-id="a92c2-147">既定では、コマンドを実行すると、 `Unregister-PSSessionConfiguration` 変更を有効にするために **WinRM** サービスを再起動するように求められます。</span><span class="sxs-lookup"><span data-stu-id="a92c2-147">By default, when you run an `Unregister-PSSessionConfiguration` command, you are prompted to restart the **WinRM** service to make the change effective.</span></span> <span data-ttu-id="a92c2-148">**WinRM** サービスが再起動されるまで、が見つからない場合でも、ユーザーは登録されていないセッション構成を引き続き使用できます `Get-PSSessionConfiguration` 。</span><span class="sxs-lookup"><span data-stu-id="a92c2-148">Until the **WinRM** service is restarted, users can still use the unregistered session configuration, even though `Get-PSSessionConfiguration` does not find it.</span></span>
+<span data-ttu-id="18873-147">既定では、コマンドを実行すると、 `Unregister-PSSessionConfiguration` 変更を有効にするために **WinRM** サービスを再起動するように求められます。</span><span class="sxs-lookup"><span data-stu-id="18873-147">By default, when you run an `Unregister-PSSessionConfiguration` command, you are prompted to restart the **WinRM** service to make the change effective.</span></span> <span data-ttu-id="18873-148">**WinRM** サービスが再起動されるまで、が見つからない場合でも、ユーザーは登録されていないセッション構成を引き続き使用できます `Get-PSSessionConfiguration` 。</span><span class="sxs-lookup"><span data-stu-id="18873-148">Until the **WinRM** service is restarted, users can still use the unregistered session configuration, even though `Get-PSSessionConfiguration` does not find it.</span></span>
 
-<span data-ttu-id="a92c2-149">プロンプトを表示せずに **WinRM** サービスを再起動するには、 **Force** パラメーターを指定します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-149">To restart the **WinRM** service without prompting, specify the **Force** parameter.</span></span> <span data-ttu-id="a92c2-150">**WinRM** サービスを手動で再起動するには、コマンドレットを使用し `Restart-Service` ます。</span><span class="sxs-lookup"><span data-stu-id="a92c2-150">To restart the **WinRM** service manually, use the `Restart-Service` cmdlet.</span></span>
+<span data-ttu-id="18873-149">プロンプトを表示せずに **WinRM** サービスを再起動するには、 **Force** パラメーターを指定します。</span><span class="sxs-lookup"><span data-stu-id="18873-149">To restart the **WinRM** service without prompting, specify the **Force** parameter.</span></span> <span data-ttu-id="18873-150">**WinRM** サービスを手動で再起動するには、コマンドレットを使用し `Restart-Service` ます。</span><span class="sxs-lookup"><span data-stu-id="18873-150">To restart the **WinRM** service manually, use the `Restart-Service` cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -158,9 +158,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a92c2-151">-Confirm</span><span class="sxs-lookup"><span data-stu-id="a92c2-151">-Confirm</span></span>
+### <span data-ttu-id="18873-151">-Confirm</span><span class="sxs-lookup"><span data-stu-id="18873-151">-Confirm</span></span>
 
-<span data-ttu-id="a92c2-152">コマンドレットの実行前に確認を求めるメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="a92c2-152">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="18873-152">コマンドレットの実行前に確認を求めるメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="18873-152">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -174,10 +174,10 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a92c2-153">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="a92c2-153">-WhatIf</span></span>
+### <span data-ttu-id="18873-153">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="18873-153">-WhatIf</span></span>
 
-<span data-ttu-id="a92c2-154">コマンドレットの実行時に発生する内容を示します。</span><span class="sxs-lookup"><span data-stu-id="a92c2-154">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="a92c2-155">このコマンドレットは実行されません。</span><span class="sxs-lookup"><span data-stu-id="a92c2-155">The cmdlet is not run.</span></span>
+<span data-ttu-id="18873-154">コマンドレットの実行時に発生する内容を示します。</span><span class="sxs-lookup"><span data-stu-id="18873-154">Shows what would happen if the cmdlet runs.</span></span>
+<span data-ttu-id="18873-155">このコマンドレットは実行されません。</span><span class="sxs-lookup"><span data-stu-id="18873-155">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -191,49 +191,50 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a92c2-156">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="a92c2-156">CommonParameters</span></span>
+### <span data-ttu-id="18873-156">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="18873-156">CommonParameters</span></span>
 
-<span data-ttu-id="a92c2-157">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="a92c2-157">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a92c2-158">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a92c2-158">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="18873-157">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="18873-157">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="18873-158">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="18873-158">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="a92c2-159">入力</span><span class="sxs-lookup"><span data-stu-id="a92c2-159">INPUTS</span></span>
+## <span data-ttu-id="18873-159">入力</span><span class="sxs-lookup"><span data-stu-id="18873-159">INPUTS</span></span>
 
-### <span data-ttu-id="a92c2-160">Register-pssessionconfiguration # のコマンド # には、</span><span class="sxs-lookup"><span data-stu-id="a92c2-160">Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration</span></span>
+### <span data-ttu-id="18873-160">Register-pssessionconfiguration # のコマンド # には、</span><span class="sxs-lookup"><span data-stu-id="18873-160">Microsoft.PowerShell.Commands.PSSessionConfigurationCommands#PSSessionConfiguration</span></span>
 
-<span data-ttu-id="a92c2-161">セッション構成オブジェクトをからこのコマンドレットにパイプすることができ `Get-PSSessionConfiguration` ます。</span><span class="sxs-lookup"><span data-stu-id="a92c2-161">You can pipe a session configuration object from `Get-PSSessionConfiguration` to this cmdlet.</span></span>
+<span data-ttu-id="18873-161">セッション構成オブジェクトをからこのコマンドレットにパイプすることができ `Get-PSSessionConfiguration` ます。</span><span class="sxs-lookup"><span data-stu-id="18873-161">You can pipe a session configuration object from `Get-PSSessionConfiguration` to this cmdlet.</span></span>
 
-## <span data-ttu-id="a92c2-162">出力</span><span class="sxs-lookup"><span data-stu-id="a92c2-162">OUTPUTS</span></span>
+## <span data-ttu-id="18873-162">出力</span><span class="sxs-lookup"><span data-stu-id="18873-162">OUTPUTS</span></span>
 
-### <span data-ttu-id="a92c2-163">なし</span><span class="sxs-lookup"><span data-stu-id="a92c2-163">None</span></span>
+### <span data-ttu-id="18873-163">なし</span><span class="sxs-lookup"><span data-stu-id="18873-163">None</span></span>
 
-<span data-ttu-id="a92c2-164">このコマンドレットはオブジェクトを返しません。</span><span class="sxs-lookup"><span data-stu-id="a92c2-164">This cmdlet does not return any objects.</span></span>
+<span data-ttu-id="18873-164">このコマンドレットはオブジェクトを返しません。</span><span class="sxs-lookup"><span data-stu-id="18873-164">This cmdlet does not return any objects.</span></span>
 
-## <span data-ttu-id="a92c2-165">注</span><span class="sxs-lookup"><span data-stu-id="a92c2-165">NOTES</span></span>
+## <span data-ttu-id="18873-165">注</span><span class="sxs-lookup"><span data-stu-id="18873-165">NOTES</span></span>
 
-<span data-ttu-id="a92c2-166">このコマンドレットを実行するには、[ **管理者として実行** ] オプションを使用して PowerShell を起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a92c2-166">To run this cmdlet you must start PowerShell by using the **Run as administrator** option.</span></span>
+<span data-ttu-id="18873-166">このコマンドレットは、Windows プラットフォームでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="18873-166">This cmdlet is only available on Windows platforms.</span></span>
 
-## <span data-ttu-id="a92c2-167">関連リンク</span><span class="sxs-lookup"><span data-stu-id="a92c2-167">RELATED LINKS</span></span>
+<span data-ttu-id="18873-167">このコマンドレットを実行するには、[ **管理者として実行** ] オプションを使用して PowerShell を起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="18873-167">To run this cmdlet you must start PowerShell by using the **Run as administrator** option.</span></span>
 
-[<span data-ttu-id="a92c2-168">Disable-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="a92c2-168">Disable-PSSessionConfiguration</span></span>](Disable-PSSessionConfiguration.md)
+## <span data-ttu-id="18873-168">関連リンク</span><span class="sxs-lookup"><span data-stu-id="18873-168">RELATED LINKS</span></span>
 
-[<span data-ttu-id="a92c2-169">Enable-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="a92c2-169">Enable-PSSessionConfiguration</span></span>](Enable-PSSessionConfiguration.md)
+[<span data-ttu-id="18873-169">Disable-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="18873-169">Disable-PSSessionConfiguration</span></span>](Disable-PSSessionConfiguration.md)
 
-[<span data-ttu-id="a92c2-170">Get-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="a92c2-170">Get-PSSessionConfiguration</span></span>](Get-PSSessionConfiguration.md)
+[<span data-ttu-id="18873-170">Enable-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="18873-170">Enable-PSSessionConfiguration</span></span>](Enable-PSSessionConfiguration.md)
 
-[<span data-ttu-id="a92c2-171">New-PSSessionConfigurationFile</span><span class="sxs-lookup"><span data-stu-id="a92c2-171">New-PSSessionConfigurationFile</span></span>](New-PSSessionConfigurationFile.md)
+[<span data-ttu-id="18873-171">Get-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="18873-171">Get-PSSessionConfiguration</span></span>](Get-PSSessionConfiguration.md)
 
-[<span data-ttu-id="a92c2-172">New-PSSessionOption</span><span class="sxs-lookup"><span data-stu-id="a92c2-172">New-PSSessionOption</span></span>](New-PSSessionOption.md)
+[<span data-ttu-id="18873-172">New-PSSessionConfigurationFile</span><span class="sxs-lookup"><span data-stu-id="18873-172">New-PSSessionConfigurationFile</span></span>](New-PSSessionConfigurationFile.md)
 
-[<span data-ttu-id="a92c2-173">Register-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="a92c2-173">Register-PSSessionConfiguration</span></span>](Register-PSSessionConfiguration.md)
+[<span data-ttu-id="18873-173">New-PSSessionOption</span><span class="sxs-lookup"><span data-stu-id="18873-173">New-PSSessionOption</span></span>](New-PSSessionOption.md)
 
-[<span data-ttu-id="a92c2-174">Set-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="a92c2-174">Set-PSSessionConfiguration</span></span>](Set-PSSessionConfiguration.md)
+[<span data-ttu-id="18873-174">Register-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="18873-174">Register-PSSessionConfiguration</span></span>](Register-PSSessionConfiguration.md)
 
-[<span data-ttu-id="a92c2-175">Test-PSSessionConfigurationFile</span><span class="sxs-lookup"><span data-stu-id="a92c2-175">Test-PSSessionConfigurationFile</span></span>](Test-PSSessionConfigurationFile.md)
+[<span data-ttu-id="18873-175">Set-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="18873-175">Set-PSSessionConfiguration</span></span>](Set-PSSessionConfiguration.md)
 
-[<span data-ttu-id="a92c2-176">Unregister-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="a92c2-176">Unregister-PSSessionConfiguration</span></span>](Unregister-PSSessionConfiguration.md)
+[<span data-ttu-id="18873-176">Test-PSSessionConfigurationFile</span><span class="sxs-lookup"><span data-stu-id="18873-176">Test-PSSessionConfigurationFile</span></span>](Test-PSSessionConfigurationFile.md)
 
-[<span data-ttu-id="a92c2-177">WSMan プロバイダー</span><span class="sxs-lookup"><span data-stu-id="a92c2-177">WSMan Provider</span></span>](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
+[<span data-ttu-id="18873-177">Unregister-PSSessionConfiguration</span><span class="sxs-lookup"><span data-stu-id="18873-177">Unregister-PSSessionConfiguration</span></span>](Unregister-PSSessionConfiguration.md)
 
-[<span data-ttu-id="a92c2-178">about_Session_Configurations</span><span class="sxs-lookup"><span data-stu-id="a92c2-178">about_Session_Configurations</span></span>](About/about_Session_Configurations.md)
+[<span data-ttu-id="18873-178">WSMan プロバイダー</span><span class="sxs-lookup"><span data-stu-id="18873-178">WSMan Provider</span></span>](../Microsoft.WsMan.Management/About/about_WSMan_Provider.md)
 
-[<span data-ttu-id="a92c2-179">about_Session_Configuration_Files</span><span class="sxs-lookup"><span data-stu-id="a92c2-179">about_Session_Configuration_Files</span></span>](About/about_Session_Configuration_Files.md)
+[<span data-ttu-id="18873-179">about_Session_Configurations</span><span class="sxs-lookup"><span data-stu-id="18873-179">about_Session_Configurations</span></span>](About/about_Session_Configurations.md)
 
+[<span data-ttu-id="18873-180">about_Session_Configuration_Files</span><span class="sxs-lookup"><span data-stu-id="18873-180">about_Session_Configuration_Files</span></span>](About/about_Session_Configuration_Files.md)
