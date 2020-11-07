@@ -7,12 +7,12 @@ ms.date: 03/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/enable-pssessionconfiguration?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Enable-PSSessionConfiguration
-ms.openlocfilehash: 07c36741991a23f13238e34e93074dfc19ca9580
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: df7f288f4ca609a6b53c9ba33d86ba73078f60eb
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93217248"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345444"
 ---
 # Enable-PSSessionConfiguration
 
@@ -219,6 +219,8 @@ Accept wildcard characters: False
 このコマンドレットはオブジェクトを返しません。
 
 ## 注
+
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
 
 このコマンドレットを使用するには、[ **管理者として実行** ] オプションを使用して PowerShell を起動する必要があります。
 

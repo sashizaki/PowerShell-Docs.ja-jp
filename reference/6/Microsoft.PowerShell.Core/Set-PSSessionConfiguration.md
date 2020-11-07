@@ -7,12 +7,12 @@ ms.date: 03/26/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/set-pssessionconfiguration?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Set-PSSessionConfiguration
-ms.openlocfilehash: 8a769959295de0eed7776cc972b007514cfe8734
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: 30950cb31a6d70b61416883a16603262c297f0d1
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93218651"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345410"
 ---
 # Set-PSSessionConfiguration
 
@@ -609,6 +609,8 @@ Accept wildcard characters: False
 ### WSManConfigLeafElement のようになります。
 
 ## 注
+
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
 
 このコマンドレットを実行するには、[管理者として実行] オプションを使用して PowerShell を起動します。
 

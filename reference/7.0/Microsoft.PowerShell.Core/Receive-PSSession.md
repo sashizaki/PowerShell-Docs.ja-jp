@@ -7,12 +7,12 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
-ms.openlocfilehash: 43f9823f19df9ceec44f1e27d5183cca418647ba
-ms.sourcegitcommit: 37abf054ad9eda8813be8ff4487803b10e1842ef
+ms.openlocfilehash: b0177a00bbbf93659775ee94f7d4898a99f570f3
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/23/2020
-ms.locfileid: "93218488"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94345580"
 ---
 # Receive-PSSession
 
@@ -372,7 +372,7 @@ Accept wildcard characters: False
 切断されたセッションに再接続するためにコマンドでユーザー資格情報を認証するために使用するメカニズムを指定します。 このパラメーターの有効値は、次のとおりです。
 
 - Default
-- Basic
+- 基本
 - Credssp
 - ダイジェスト
 - Kerberos
@@ -758,6 +758,8 @@ Accept wildcard characters: False
 このコマンドレットは、切断されたセッションで実行されたコマンドの結果を返します (存在する場合)。 **Outtarget** パラメーターの値または既定値が job の場合、は `Receive-PSSession` ジョブオブジェクトを返します。 それ以外の場合には、コマンドの結果を示すオブジェクトを返します。
 
 ## 注
+
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
 
 `Receive-PSSession` 切断されたセッションからのみ結果を取得します。 PowerShell 3.0 以降のバージョンを実行しているコンピューターは、接続されている、または終了したセッションのみを切断し、再接続することができます。
 

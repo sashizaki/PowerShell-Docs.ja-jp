@@ -7,12 +7,12 @@ ms.date: 02/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/register-engineevent?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Register-EngineEvent
-ms.openlocfilehash: 005e495ff5f532cc947edf894a67c078e524a72c
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 35218a3860db9746b99ec441e122fcd5e2370f72
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93216051"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344764"
 ---
 # Register-EngineEvent
 
@@ -44,7 +44,9 @@ Register-EngineEvent [-SourceIdentifier] <String> [[-Action] <ScriptBlock>] [-Me
 
 ```powershell
 $S = New-PSSession -ComputerName "Server01, Server02"
-Invoke-Command -Session $S { Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward }
+Invoke-Command -Session $S {
+Register-EngineEvent -SourceIdentifier ([System.Management.Automation.PsEngineEvent]::Exiting) -Forward
+}
 ```
 
 `New-PSSession` 各リモートコンピューター上にユーザー管理セッション (PSSession) を作成します。 `Invoke-Command` コマンドレットは、 `Register-EngineEvent` リモートセッションでコマンドを実行します。
@@ -256,6 +258,8 @@ Accept wildcard characters: False
 **Action** パラメーターを使用すると、は `Register-EngineEvent` **PSEventJob** オブジェクトを返します。 それ以外の場合、出力は生成されません。
 
 ## 注
+
+Linux または macOS プラットフォームで使用できるイベントソースがありません。
 
 イベント、イベント サブスクリプション、およびイベント キューは、現在のセッションにのみ存在します。 現在のセッションを閉じた場合、イベント キューが破棄され、イベント サブスクリプションが取り消されます。
 

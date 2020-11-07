@@ -7,12 +7,12 @@ ms.date: 11/02/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.security/test-filecatalog?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Test-FileCatalog
-ms.openlocfilehash: 072e0b4420613f2de356b35e741a558501c05e1c
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: 007b4e3e186e6902b42bada02a4b18a6738914a6
+ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93216875"
+ms.lasthandoff: 11/07/2020
+ms.locfileid: "94344781"
 ---
 # Test-FileCatalog
 
@@ -30,10 +30,7 @@ Test-FileCatalog [-Detailed] [-FilesToSkip <String[]>] [-CatalogFilePath] <Strin
 
 ## Description
 
-`Test-FileCatalog` カタログファイル (.cat) のファイルハッシュとディスク上の実際のファイルのハッシュを比較することによって、ファイルの信頼性を検証します。
-不一致が検出されると、ValidationFailed としてステータスが返されます。 -Detailed パラメーターを利用し、この情報をすべて取得できます。
-また、カタログファイルでコマンドレットを呼び出した場合と同じ、署名プロパティにカタログの署名の状態が表示され `Get-AuthenticodeSignature` ます。
--FilesToSkip パラメーターを利用し、検証中にファイルをスキップすることもできます。
+`Test-FileCatalog` カタログファイル (.cat) のファイルハッシュとディスク上の実際のファイルのハッシュを比較することによって、ファイルの信頼性を検証します。 不一致が検出されると、ValidationFailed としてステータスが返されます。 -Detailed パラメーターを利用し、この情報をすべて取得できます。 また、カタログファイルでコマンドレットを呼び出した場合と同じ、署名プロパティにカタログの署名の状態が表示され `Get-AuthenticodeSignature` ます。 -FilesToSkip パラメーターを利用し、検証中にファイルをスキップすることもできます。
 
 このコマンドレットは、Windows でのみサポートされています。
 
@@ -153,8 +150,7 @@ Accept wildcard characters: False
 
 ### -WhatIf
 
-コマンドレットの実行時に発生する内容を示します。
-このコマンドレットは実行されません。
+コマンドレットの実行時に発生する内容を示します。 このコマンドレットは実行されません。
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -170,7 +166,7 @@ Accept wildcard characters: False
 
 ### 共通パラメーター
 
-このコマンドレットは、、、、、、、、、、、およびの共通パラメーターをサポートしてい `-Debug` `-ErrorAction` `-ErrorVariable` `-InformationAction` `-InformationVariable` `-OutVariable` `-OutBuffer` `-PipelineVariable` `-Verbose` `-WarningAction` `-WarningVariable` ます。 詳細については、「[about_CommonParameters](../Microsoft.PowerShell.Core/About/about_CommonParameters.md)」を参照してください。
+このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。 詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。
 
 ## 入力
 
@@ -189,6 +185,8 @@ Accept wildcard characters: False
 を使用するときに返されるより詳細なオブジェクト。これを使用すると、 `-Detailed` 検証に合格した特定のファイル、予想されるハッシュ、検出されたハッシュ、およびカタログで使用されるアルゴリズムを分析できます。
 
 ## 注
+
+このコマンドレットは、Windows プラットフォームでのみ使用できます。
 
 ## 関連リンク
 
