@@ -3,12 +3,12 @@ title: ハッシュテーブルについて知りたかったことのすべて
 description: ハッシュテーブルは PowerShell で非常に重要であるため、十分に理解しておくことをお勧めします。
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
-ms.openlocfilehash: c67f00911b6c9d05fa9b5b5a700bbae795cf9244
-ms.sourcegitcommit: d0461273abb6db099c5e784ef00f57fd551be4a6
+ms.openlocfilehash: 1539cf6444cab718c1108384c640193d66c85daf
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/01/2020
-ms.locfileid: "85353823"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354424"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>ハッシュテーブルについて知りたかったことのすべて
 
@@ -19,11 +19,11 @@ ms.locfileid: "85353823"
 
 ## <a name="hashtable-as-a-collection-of-things"></a>もののコレクションとしてのハッシュテーブル
 
-まず、ハッシュテーブルの従来の定義どおり、**ハッシュテーブル**をコレクションとして見てください。 この定義により、後でより高度なことに使用する場合の動作に関する基本的な理解が得られます。 この理解をスキップすることは、多くの場合、混乱の原因になります。
+まず、ハッシュテーブルの従来の定義どおり、 **ハッシュテーブル** をコレクションとして見てください。 この定義により、後でより高度なことに使用する場合の動作に関する基本的な理解が得られます。 この理解をスキップすることは、多くの場合、混乱の原因になります。
 
 ## <a name="what-is-an-array"></a>配列とは
 
-**ハッシュテーブル**とは何かを説明する前に、まず[配列][]について説明する必要があります。 このディスカッションでは、配列は値またはオブジェクトのリストまたはコレクションです。
+**ハッシュテーブル** とは何かを説明する前に、まず [配列][]について説明する必要があります。 このディスカッションでは、配列は値またはオブジェクトのリストまたはコレクションです。
 
 ```powershell
 $array = @(1,2,3,5,7,11)
@@ -966,7 +966,7 @@ function Get-DeepClone
 [パフォーマンスが重要ならテストせよ]: https://github.com/PoshCode/PowerShellPracticeAndStyle/blob/master/Best-Practices/Performance.md
 [スプラッティング]: /powershell/module/microsoft.powershell.core/about/about_splatting
 [pscustomobject]: everything-about-pscustomobject.md
-[JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8
+[JavaScriptSerializer]: /dotnet/api/system.web.script.serialization.javascriptserializer?view=netframework-4.8&preserve-view=true
 [PSBoundParameters]: https://tommymaynard.com/the-psboundparameters-automatic-variable-2016/
 [about_Automatic_Variables]: /powershell/module/microsoft.powershell.core/about/about_automatic_variables
 [自動既定値]: https://www.simple-talk.com/sysadmin/PowerShell/PowerShell-time-saver-automatic-defaults/

@@ -3,12 +3,12 @@ title: PowerShell 関数への資格情報サポートの追加
 description: PowerShell のスクリプト、関数、およびコマンドレットに資格情報パラメーターを追加する方法。
 ms.date: 10/29/2020
 ms.custom: contributor-JoshDuffney
-ms.openlocfilehash: fb85d47121dc106ae04742254f418e2c727f6157
-ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
+ms.openlocfilehash: 3e4a3f41ccbca1cf97f2e96fd60f22d89be7bc5a
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93143155"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354628"
 ---
 # <a name="add-credential-support-to-powershell-functions"></a>PowerShell 関数への資格情報サポートの追加
 
@@ -292,7 +292,7 @@ Get-AllSQLDatabases -SQLServer SQL01 -Credential $Credential
 [BetterCredentials]: https://www.powershellgallery.com/packages/BetterCredentials/
 [Azure Key Vault]: https://azure.microsoft.com/services/key-vault/
 [Vault Project]: https://www.vaultproject.io/
-[高度な関数内でのパラメーターのスプラッティング]: http://duffney.io/Splatting-Parameters-Within-AdvancedFunctions
+[高度な関数内でのパラメーターのスプラッティング]: https://duffney.io/Splatting-Parameters-Within-AdvancedFunctions
 [Windows での Jenkins と PowerShell を使用した自動化 - パート 2]: https://hodgkins.io/automating-with-jenkins-and-powershell-on-windows-part-2
 [PSCredential]: /dotnet/api/system.management.automation.pscredential
 [The Pester Book]: https://leanpub.com/the-pester-book
