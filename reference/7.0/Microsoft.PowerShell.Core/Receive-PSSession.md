@@ -7,36 +7,36 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
-ms.openlocfilehash: b0177a00bbbf93659775ee94f7d4898a99f570f3
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 5c7783cb6f865aead9aae7ae0df77d9ee2db7b16
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94345580"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391359"
 ---
-# <span data-ttu-id="1b588-103">Receive-PSSession</span><span class="sxs-lookup"><span data-stu-id="1b588-103">Receive-PSSession</span></span>
+# <span data-ttu-id="d063b-103">Receive-PSSession</span><span class="sxs-lookup"><span data-stu-id="d063b-103">Receive-PSSession</span></span>
 
-## <span data-ttu-id="1b588-104">概要</span><span class="sxs-lookup"><span data-stu-id="1b588-104">SYNOPSIS</span></span>
+## <span data-ttu-id="d063b-104">概要</span><span class="sxs-lookup"><span data-stu-id="d063b-104">SYNOPSIS</span></span>
 
-<span data-ttu-id="1b588-105">切断されたセッションのコマンドの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-105">Gets results of commands in disconnected sessions</span></span>
+<span data-ttu-id="d063b-105">切断されたセッションのコマンドの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-105">Gets results of commands in disconnected sessions</span></span>
 
-## <span data-ttu-id="1b588-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="1b588-106">SYNTAX</span></span>
+## <span data-ttu-id="d063b-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="d063b-106">SYNTAX</span></span>
 
-### <span data-ttu-id="1b588-107">セッション (既定)</span><span class="sxs-lookup"><span data-stu-id="1b588-107">Session (Default)</span></span>
+### <span data-ttu-id="d063b-107">セッション (既定)</span><span class="sxs-lookup"><span data-stu-id="d063b-107">Session (Default)</span></span>
 
 ```
 Receive-PSSession [-Session] <PSSession> [-OutTarget <OutTarget>] [-JobName <String>] [-WhatIf]
  [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="1b588-108">Id</span><span class="sxs-lookup"><span data-stu-id="1b588-108">Id</span></span>
+### <span data-ttu-id="d063b-108">Id</span><span class="sxs-lookup"><span data-stu-id="d063b-108">Id</span></span>
 
 ```
 Receive-PSSession [-Id] <Int32> [-OutTarget <OutTarget>] [-JobName <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="1b588-109">コンピューターのセッション名</span><span class="sxs-lookup"><span data-stu-id="1b588-109">ComputerSessionName</span></span>
+### <span data-ttu-id="d063b-109">コンピューターのセッション名</span><span class="sxs-lookup"><span data-stu-id="d063b-109">ComputerSessionName</span></span>
 
 ```
 Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-ConfigurationName <String>]
@@ -45,7 +45,7 @@ Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-Configu
  [-UseSSL] [-SessionOption <PSSessionOption>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="1b588-110">ComputerInstanceId</span><span class="sxs-lookup"><span data-stu-id="1b588-110">ComputerInstanceId</span></span>
+### <span data-ttu-id="d063b-110">ComputerInstanceId</span><span class="sxs-lookup"><span data-stu-id="d063b-110">ComputerInstanceId</span></span>
 
 ```
 Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-ConfigurationName <String>]
@@ -54,7 +54,7 @@ Receive-PSSession [-ComputerName] <String> [-ApplicationName <String>] [-Configu
  [-UseSSL] [-SessionOption <PSSessionOption>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="1b588-111">ConnectionUriSessionName セッション名</span><span class="sxs-lookup"><span data-stu-id="1b588-111">ConnectionUriSessionName</span></span>
+### <span data-ttu-id="d063b-111">ConnectionUriSessionName セッション名</span><span class="sxs-lookup"><span data-stu-id="d063b-111">ConnectionUriSessionName</span></span>
 
 ```
 Receive-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri> [-AllowRedirection]
@@ -63,7 +63,7 @@ Receive-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri> [-AllowRe
  [-SessionOption <PSSessionOption>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="1b588-112">ConnectionUriInstanceId</span><span class="sxs-lookup"><span data-stu-id="1b588-112">ConnectionUriInstanceId</span></span>
+### <span data-ttu-id="d063b-112">ConnectionUriInstanceId</span><span class="sxs-lookup"><span data-stu-id="d063b-112">ConnectionUriInstanceId</span></span>
 
 ```
 Receive-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri> [-AllowRedirection]
@@ -72,66 +72,66 @@ Receive-PSSession [-ConfigurationName <String>] [-ConnectionUri] <Uri> [-AllowRe
  [-SessionOption <PSSessionOption>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### <span data-ttu-id="1b588-113">InstanceId</span><span class="sxs-lookup"><span data-stu-id="1b588-113">InstanceId</span></span>
+### <span data-ttu-id="d063b-113">InstanceId</span><span class="sxs-lookup"><span data-stu-id="d063b-113">InstanceId</span></span>
 
 ```
 Receive-PSSession -InstanceId <Guid> [-OutTarget <OutTarget>] [-JobName <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="1b588-114">セッション</span><span class="sxs-lookup"><span data-stu-id="1b588-114">SessionName</span></span>
+### <span data-ttu-id="d063b-114">セッション</span><span class="sxs-lookup"><span data-stu-id="d063b-114">SessionName</span></span>
 
 ```
 Receive-PSSession -Name <String> [-OutTarget <OutTarget>] [-JobName <String>] [-WhatIf] [-Confirm]
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="1b588-115">Description</span><span class="sxs-lookup"><span data-stu-id="1b588-115">DESCRIPTION</span></span>
+## <span data-ttu-id="d063b-115">Description</span><span class="sxs-lookup"><span data-stu-id="d063b-115">DESCRIPTION</span></span>
 
-<span data-ttu-id="1b588-116">`Receive-PSSession`コマンドレットは、切断された PowerShell セッション ( **PSSession** ) で実行されているコマンドの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-116">The `Receive-PSSession` cmdlet gets the results of commands running in PowerShell sessions ( **PSSession** ) that were disconnected.</span></span> <span data-ttu-id="1b588-117">セッションが現在接続されている場合、は、 `Receive-PSSession` セッションが切断されたときに実行されていたコマンドの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-117">If the session is currently connected, `Receive-PSSession` gets the results of commands that were running when the session was disconnected.</span></span> <span data-ttu-id="1b588-118">セッションがまだ切断されている場合、は `Receive-PSSession` セッションに接続し、中断されたすべてのコマンドを再開して、セッションで実行されているコマンドの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-118">If the session is still disconnected, `Receive-PSSession` connects to the session, resumes any commands that were suspended, and gets the results of commands running in the session.</span></span>
+<span data-ttu-id="d063b-116">`Receive-PSSession`コマンドレットは、切断された PowerShell セッション ( **PSSession** ) で実行されているコマンドの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-116">The `Receive-PSSession` cmdlet gets the results of commands running in PowerShell sessions ( **PSSession** ) that were disconnected.</span></span> <span data-ttu-id="d063b-117">セッションが現在接続されている場合、は、 `Receive-PSSession` セッションが切断されたときに実行されていたコマンドの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-117">If the session is currently connected, `Receive-PSSession` gets the results of commands that were running when the session was disconnected.</span></span> <span data-ttu-id="d063b-118">セッションがまだ切断されている場合、は `Receive-PSSession` セッションに接続し、中断されたすべてのコマンドを再開して、セッションで実行されているコマンドの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-118">If the session is still disconnected, `Receive-PSSession` connects to the session, resumes any commands that were suspended, and gets the results of commands running in the session.</span></span>
 
-<span data-ttu-id="1b588-119">このコマンドレットは、PowerShell 3.0 で導入されました。</span><span class="sxs-lookup"><span data-stu-id="1b588-119">This cmdlet was introduced in PowerShell 3.0.</span></span>
+<span data-ttu-id="d063b-119">このコマンドレットは、PowerShell 3.0 で導入されました。</span><span class="sxs-lookup"><span data-stu-id="d063b-119">This cmdlet was introduced in PowerShell 3.0.</span></span>
 
-<span data-ttu-id="1b588-120">`Receive-PSSession`コマンドの代わりに、またはを使用でき `Connect-PSSession` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-120">You can use a `Receive-PSSession` in addition to or instead of a `Connect-PSSession` command.</span></span>
-<span data-ttu-id="1b588-121">`Receive-PSSession` は、他のセッションまたは他のコンピューターで開始された切断または再接続されたセッションに接続できます。</span><span class="sxs-lookup"><span data-stu-id="1b588-121">`Receive-PSSession` can connect to any disconnected or reconnected session that was started in other sessions or on other computers.</span></span>
+<span data-ttu-id="d063b-120">`Receive-PSSession`コマンドの代わりに、またはを使用でき `Connect-PSSession` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-120">You can use a `Receive-PSSession` in addition to or instead of a `Connect-PSSession` command.</span></span>
+<span data-ttu-id="d063b-121">`Receive-PSSession` は、他のセッションまたは他のコンピューターで開始された切断または再接続されたセッションに接続できます。</span><span class="sxs-lookup"><span data-stu-id="d063b-121">`Receive-PSSession` can connect to any disconnected or reconnected session that was started in other sessions or on other computers.</span></span>
 
-<span data-ttu-id="1b588-122">`Receive-PSSession`**PSSessions** `Disconnect-PSSession` コマンドレットまたは `Invoke-Command` **indisconnectedsession** パラメーターを使用して意図的に切断された pssession で動作します。</span><span class="sxs-lookup"><span data-stu-id="1b588-122">`Receive-PSSession` works on **PSSessions** that were disconnected intentionally using the `Disconnect-PSSession` cmdlet or the `Invoke-Command` **InDisconnectedSession** parameter.</span></span> <span data-ttu-id="1b588-123">または、ネットワークの中断によって意図せず切断されました。</span><span class="sxs-lookup"><span data-stu-id="1b588-123">Or disconnected unintentionally by a network interruption.</span></span>
+<span data-ttu-id="d063b-122">`Receive-PSSession`**PSSessions** `Disconnect-PSSession` コマンドレットまたは `Invoke-Command` **indisconnectedsession** パラメーターを使用して意図的に切断された pssession で動作します。</span><span class="sxs-lookup"><span data-stu-id="d063b-122">`Receive-PSSession` works on **PSSessions** that were disconnected intentionally using the `Disconnect-PSSession` cmdlet or the `Invoke-Command` **InDisconnectedSession** parameter.</span></span> <span data-ttu-id="d063b-123">または、ネットワークの中断によって意図せず切断されました。</span><span class="sxs-lookup"><span data-stu-id="d063b-123">Or disconnected unintentionally by a network interruption.</span></span>
 
-<span data-ttu-id="1b588-124">コマンドレットを使用し `Receive-PSSession` て、コマンドが実行または中断されていないセッションに接続する場合、は `Receive-PSSession` セッションに接続しますが、出力またはエラーは返しません。</span><span class="sxs-lookup"><span data-stu-id="1b588-124">If you use the `Receive-PSSession` cmdlet to connect to a session in which no commands are running or suspended, `Receive-PSSession` connects to the session, but returns no output or errors.</span></span>
+<span data-ttu-id="d063b-124">コマンドレットを使用し `Receive-PSSession` て、コマンドが実行または中断されていないセッションに接続する場合、は `Receive-PSSession` セッションに接続しますが、出力またはエラーは返しません。</span><span class="sxs-lookup"><span data-stu-id="d063b-124">If you use the `Receive-PSSession` cmdlet to connect to a session in which no commands are running or suspended, `Receive-PSSession` connects to the session, but returns no output or errors.</span></span>
 
-<span data-ttu-id="1b588-125">切断されたセッションの機能の詳細については、「[about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1b588-125">For more information about the Disconnected Sessions feature, see [about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md).</span></span>
+<span data-ttu-id="d063b-125">切断されたセッションの機能の詳細については、「[about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d063b-125">For more information about the Disconnected Sessions feature, see [about_Remote_Disconnected_Sessions](./About/about_Remote_Disconnected_Sessions.md).</span></span>
 
-<span data-ttu-id="1b588-126">いくつかの例では、スプラッティングを使用して、行の長さを減らし、読みやすさを向上させます。</span><span class="sxs-lookup"><span data-stu-id="1b588-126">Some examples use splatting to reduce the line length and improve readability.</span></span> <span data-ttu-id="1b588-127">詳細については、「 [about_Splatting](./About/about_Splatting.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1b588-127">For more information, see [about_Splatting](./About/about_Splatting.md).</span></span>
+<span data-ttu-id="d063b-126">いくつかの例では、スプラッティングを使用して、行の長さを減らし、読みやすさを向上させます。</span><span class="sxs-lookup"><span data-stu-id="d063b-126">Some examples use splatting to reduce the line length and improve readability.</span></span> <span data-ttu-id="d063b-127">詳細については、「 [about_Splatting](./About/about_Splatting.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d063b-127">For more information, see [about_Splatting](./About/about_Splatting.md).</span></span>
 
-## <span data-ttu-id="1b588-128">例</span><span class="sxs-lookup"><span data-stu-id="1b588-128">EXAMPLES</span></span>
+## <span data-ttu-id="d063b-128">例</span><span class="sxs-lookup"><span data-stu-id="d063b-128">EXAMPLES</span></span>
 
-### <span data-ttu-id="1b588-129">例 1: PSSession に接続する</span><span class="sxs-lookup"><span data-stu-id="1b588-129">Example 1: Connect to a PSSession</span></span>
+### <span data-ttu-id="d063b-129">例 1: PSSession に接続する</span><span class="sxs-lookup"><span data-stu-id="d063b-129">Example 1: Connect to a PSSession</span></span>
 
-<span data-ttu-id="1b588-130">この例では、リモートコンピューター上のセッションに接続し、セッションで実行されているコマンドの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-130">This example connects to a session on a remote computer and gets the results of commands that are running in a session.</span></span>
+<span data-ttu-id="d063b-130">この例では、リモートコンピューター上のセッションに接続し、セッションで実行されているコマンドの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-130">This example connects to a session on a remote computer and gets the results of commands that are running in a session.</span></span>
 
 ```powershell
 Receive-PSSession -ComputerName Server01 -Name ITTask
 ```
 
-<span data-ttu-id="1b588-131">は、 `Receive-PSSession` **ComputerName** パラメーターを使用してリモートコンピューターを指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-131">The `Receive-PSSession` specifies the remote computer with the **ComputerName** parameter.</span></span> <span data-ttu-id="1b588-132">**Name** パラメーターは、Server01 コンピューター上の ittask セッションを識別します。</span><span class="sxs-lookup"><span data-stu-id="1b588-132">The **Name** parameter identifies the ITTask session on the Server01 computer.</span></span> <span data-ttu-id="1b588-133">この例では、ITTask セッションで実行されていたコマンドの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-133">The example gets the results of commands that were running in the ITTask session.</span></span>
+<span data-ttu-id="d063b-131">は、 `Receive-PSSession` **ComputerName** パラメーターを使用してリモートコンピューターを指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-131">The `Receive-PSSession` specifies the remote computer with the **ComputerName** parameter.</span></span> <span data-ttu-id="d063b-132">**Name** パラメーターは、Server01 コンピューター上の ittask セッションを識別します。</span><span class="sxs-lookup"><span data-stu-id="d063b-132">The **Name** parameter identifies the ITTask session on the Server01 computer.</span></span> <span data-ttu-id="d063b-133">この例では、ITTask セッションで実行されていたコマンドの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-133">The example gets the results of commands that were running in the ITTask session.</span></span>
 
-<span data-ttu-id="1b588-134">コマンドは **Outtarget** パラメーターを使用しないため、結果はコマンドラインに表示されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-134">Because the command doesn't use the **OutTarget** parameter, the results appear on the command line.</span></span>
+<span data-ttu-id="d063b-134">コマンドは **Outtarget** パラメーターを使用しないため、結果はコマンドラインに表示されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-134">Because the command doesn't use the **OutTarget** parameter, the results appear on the command line.</span></span>
 
-### <span data-ttu-id="1b588-135">例 2: 切断されたセッションのすべてのコマンドの結果を取得する</span><span class="sxs-lookup"><span data-stu-id="1b588-135">Example 2: Get results of all commands on disconnected sessions</span></span>
+### <span data-ttu-id="d063b-135">例 2: 切断されたセッションのすべてのコマンドの結果を取得する</span><span class="sxs-lookup"><span data-stu-id="d063b-135">Example 2: Get results of all commands on disconnected sessions</span></span>
 
-<span data-ttu-id="1b588-136">この例では、2台のリモートコンピューター上の切断されたすべてのセッションで実行されているすべてのコマンドの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-136">This example gets the results of all commands running in all disconnected sessions on two remote computers.</span></span>
+<span data-ttu-id="d063b-136">この例では、2台のリモートコンピューター上の切断されたすべてのセッションで実行されているすべてのコマンドの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-136">This example gets the results of all commands running in all disconnected sessions on two remote computers.</span></span>
 
-<span data-ttu-id="1b588-137">セッションが切断されていない場合、またはコマンドを実行していない場合、は `Receive-PSSession` セッションに接続せず、出力もエラーも返しません。</span><span class="sxs-lookup"><span data-stu-id="1b588-137">If any session wasn't disconnected or isn't running commands, `Receive-PSSession` doesn't connect to the session and doesn't return any output or errors.</span></span>
+<span data-ttu-id="d063b-137">セッションが切断されていない場合、またはコマンドを実行していない場合、は `Receive-PSSession` セッションに接続せず、出力もエラーも返しません。</span><span class="sxs-lookup"><span data-stu-id="d063b-137">If any session wasn't disconnected or isn't running commands, `Receive-PSSession` doesn't connect to the session and doesn't return any output or errors.</span></span>
 
 ```powershell
 Get-PSSession -ComputerName Server01, Server02 | Receive-PSSession
 ```
 
-<span data-ttu-id="1b588-138">`Get-PSSession`**ComputerName** パラメーターを使用して、リモートコンピューターを指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-138">`Get-PSSession` uses the **ComputerName** parameter to specify the remote computers.</span></span> <span data-ttu-id="1b588-139">オブジェクトは、パイプラインの下位に送信され `Receive-PSSession` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-139">The objects are sent down the pipeline to `Receive-PSSession`.</span></span>
+<span data-ttu-id="d063b-138">`Get-PSSession`**ComputerName** パラメーターを使用して、リモートコンピューターを指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-138">`Get-PSSession` uses the **ComputerName** parameter to specify the remote computers.</span></span> <span data-ttu-id="d063b-139">オブジェクトは、パイプラインの下位に送信され `Receive-PSSession` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-139">The objects are sent down the pipeline to `Receive-PSSession`.</span></span>
 
-### <span data-ttu-id="1b588-140">例 3: セッションで実行されているスクリプトの結果を取得する</span><span class="sxs-lookup"><span data-stu-id="1b588-140">Example 3: Get the results of a script running in a session</span></span>
+### <span data-ttu-id="d063b-140">例 3: セッションで実行されているスクリプトの結果を取得する</span><span class="sxs-lookup"><span data-stu-id="d063b-140">Example 3: Get the results of a script running in a session</span></span>
 
-<span data-ttu-id="1b588-141">この例では、コマンドレットを使用して、 `Receive-PSSession` リモートコンピューターのセッションで実行されていたスクリプトの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-141">This example uses the `Receive-PSSession` cmdlet to get the results of a script that was running in a remote computer's session.</span></span>
+<span data-ttu-id="d063b-141">この例では、コマンドレットを使用して、 `Receive-PSSession` リモートコンピューターのセッションで実行されていたスクリプトの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-141">This example uses the `Receive-PSSession` cmdlet to get the results of a script that was running in a remote computer's session.</span></span>
 
 ```powershell
 $parms = @{
@@ -150,15 +150,15 @@ Id     Name            State         HasMoreData     Location
 16     ITTaskJob01     Running       True            Server01
 ```
 
-<span data-ttu-id="1b588-142">このコマンドでは、 **ComputerName** および **Name** の 2　つのパラメーターを使用して、切断されたセッションを特定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-142">The command uses the **ComputerName** and **Name** parameters to identify the disconnected session.</span></span>
-<span data-ttu-id="1b588-143">この例では、 **Outtarget** パラメーターに job という値を指定して、 `Receive-PSSession` 結果をジョブとして返すように指示しています。</span><span class="sxs-lookup"><span data-stu-id="1b588-143">It uses the **OutTarget** parameter with a value of Job to direct `Receive-PSSession` to return the results as a job.</span></span> <span data-ttu-id="1b588-144">**JobName** パラメーターは、再接続されたセッションのジョブの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-144">The **JobName** parameter specifies a name for the job in the reconnected session.</span></span>
-<span data-ttu-id="1b588-145">**Credential** パラメーターは、 `Receive-PSSession` ドメイン管理者のアクセス許可を使用してコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="1b588-145">The **Credential** parameter runs the `Receive-PSSession` command using the permissions of a domain administrator.</span></span>
+<span data-ttu-id="d063b-142">このコマンドでは、 **ComputerName** および **Name** の 2　つのパラメーターを使用して、切断されたセッションを特定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-142">The command uses the **ComputerName** and **Name** parameters to identify the disconnected session.</span></span>
+<span data-ttu-id="d063b-143">この例では、 **Outtarget** パラメーターに job という値を指定して、 `Receive-PSSession` 結果をジョブとして返すように指示しています。</span><span class="sxs-lookup"><span data-stu-id="d063b-143">It uses the **OutTarget** parameter with a value of Job to direct `Receive-PSSession` to return the results as a job.</span></span> <span data-ttu-id="d063b-144">**JobName** パラメーターは、再接続されたセッションのジョブの名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-144">The **JobName** parameter specifies a name for the job in the reconnected session.</span></span>
+<span data-ttu-id="d063b-145">**Credential** パラメーターは、 `Receive-PSSession` ドメイン管理者のアクセス許可を使用してコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="d063b-145">The **Credential** parameter runs the `Receive-PSSession` command using the permissions of a domain administrator.</span></span>
 
-<span data-ttu-id="1b588-146">出力は、が `Receive-PSSession` 現在のセッションのジョブとして結果を返したことを示しています。</span><span class="sxs-lookup"><span data-stu-id="1b588-146">The output shows that `Receive-PSSession` returned the results as a job in the current session.</span></span> <span data-ttu-id="1b588-147">ジョブの結果を取得するには、コマンドを使用します。 `Receive-Job`</span><span class="sxs-lookup"><span data-stu-id="1b588-147">To get the job results, use a `Receive-Job` command</span></span>
+<span data-ttu-id="d063b-146">出力は、が `Receive-PSSession` 現在のセッションのジョブとして結果を返したことを示しています。</span><span class="sxs-lookup"><span data-stu-id="d063b-146">The output shows that `Receive-PSSession` returned the results as a job in the current session.</span></span> <span data-ttu-id="d063b-147">ジョブの結果を取得するには、コマンドを使用します。 `Receive-Job`</span><span class="sxs-lookup"><span data-stu-id="d063b-147">To get the job results, use a `Receive-Job` command</span></span>
 
-### <span data-ttu-id="1b588-148">例 4: ネットワークが停止した後に結果を取得する</span><span class="sxs-lookup"><span data-stu-id="1b588-148">Example 4: Get results after a network outage</span></span>
+### <span data-ttu-id="d063b-148">例 4: ネットワークが停止した後に結果を取得する</span><span class="sxs-lookup"><span data-stu-id="d063b-148">Example 4: Get results after a network outage</span></span>
 
-<span data-ttu-id="1b588-149">この例では、コマンドレットを使用して、ネットワークの停止によっ `Receive-PSSession` てセッション接続が中断された後にジョブの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-149">This example uses the `Receive-PSSession` cmdlet to get the results of a job after a network outage disrupts a session connection.</span></span> <span data-ttu-id="1b588-150">PowerShell は、次の4分間にセッションの再接続を自動的に1回試行します。これにより、4分間のすべての試行が失敗した場合にのみ、作業が破棄されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-150">PowerShell automatically attempts to reconnect the session once per second for the next four minutes and abandons the effort only if all attempts in the four-minute interval fail.</span></span>
+<span data-ttu-id="d063b-149">この例では、コマンドレットを使用して、ネットワークの停止によっ `Receive-PSSession` てセッション接続が中断された後にジョブの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-149">This example uses the `Receive-PSSession` cmdlet to get the results of a job after a network outage disrupts a session connection.</span></span> <span data-ttu-id="d063b-150">PowerShell は、次の4分間にセッションの再接続を自動的に1回試行します。これにより、4分間のすべての試行が失敗した場合にのみ、作業が破棄されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-150">PowerShell automatically attempts to reconnect the session once per second for the next four minutes and abandons the effort only if all attempts in the four-minute interval fail.</span></span>
 
 ```
 PS> $s = New-PSSession -ComputerName Server01 -Name AD -ConfigurationName ADEndpoint
@@ -201,19 +201,19 @@ Id  Name    ComputerName    State         ConfigurationName     Availability
 8  AD       Server01        Opened        ADEndpoint               Available
 ```
 
-<span data-ttu-id="1b588-151">コマンドレットでは、 `New-PSSession` Server01 コンピューター上にセッションを作成し、そのセッションを変数に保存し `$s` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-151">The `New-PSSession` cmdlet creates a session on the Server01 computer and saves the session in the `$s` variable.</span></span> <span data-ttu-id="1b588-152">変数は、 `$s` **状態** が開かれていて、 **可用性** が使用可能であることを示します。</span><span class="sxs-lookup"><span data-stu-id="1b588-152">The `$s` variable displays that the **State** is Opened and the **Availability** is Available.</span></span> <span data-ttu-id="1b588-153">これらの値は、セッションに接続していて、セッションでコマンドを実行できることを示しています。</span><span class="sxs-lookup"><span data-stu-id="1b588-153">These values indicate that you're connected to the session and can run commands in the session.</span></span>
+<span data-ttu-id="d063b-151">コマンドレットでは、 `New-PSSession` Server01 コンピューター上にセッションを作成し、そのセッションを変数に保存し `$s` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-151">The `New-PSSession` cmdlet creates a session on the Server01 computer and saves the session in the `$s` variable.</span></span> <span data-ttu-id="d063b-152">変数は、 `$s` **状態** が開かれていて、 **可用性** が使用可能であることを示します。</span><span class="sxs-lookup"><span data-stu-id="d063b-152">The `$s` variable displays that the **State** is Opened and the **Availability** is Available.</span></span> <span data-ttu-id="d063b-153">これらの値は、セッションに接続していて、セッションでコマンドを実行できることを示しています。</span><span class="sxs-lookup"><span data-stu-id="d063b-153">These values indicate that you're connected to the session and can run commands in the session.</span></span>
 
-<span data-ttu-id="1b588-154">`Invoke-Command`コマンドレットは、変数内のセッションでスクリプトを実行し `$s` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-154">The `Invoke-Command` cmdlet runs a script in the session in the `$s` variable.</span></span> <span data-ttu-id="1b588-155">スクリプトが開始され、データを返し始めたところで、ネットワークが停止し、セッションが中断しました。</span><span class="sxs-lookup"><span data-stu-id="1b588-155">The script begins to run and return data, but a network outage occurs that interrupts the session.</span></span> <span data-ttu-id="1b588-156">ユーザーは、セッションを終了し、ローカル コンピューターを再起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1b588-156">The user has to exit the session and restart the local computer.</span></span>
+<span data-ttu-id="d063b-154">`Invoke-Command`コマンドレットは、変数内のセッションでスクリプトを実行し `$s` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-154">The `Invoke-Command` cmdlet runs a script in the session in the `$s` variable.</span></span> <span data-ttu-id="d063b-155">スクリプトが開始され、データを返し始めたところで、ネットワークが停止し、セッションが中断しました。</span><span class="sxs-lookup"><span data-stu-id="d063b-155">The script begins to run and return data, but a network outage occurs that interrupts the session.</span></span> <span data-ttu-id="d063b-156">ユーザーは、セッションを終了し、ローカル コンピューターを再起動する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d063b-156">The user has to exit the session and restart the local computer.</span></span>
 
-<span data-ttu-id="1b588-157">コンピューターが再起動すると、ユーザーは PowerShell を起動し、コマンドを実行して `Get-PSSession` Server01 コンピューター上のセッションを取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-157">When the computer restarts, the user starts PowerShell and runs a `Get-PSSession` command to get sessions on the Server01 computer.</span></span> <span data-ttu-id="1b588-158">出力には、Server01 コンピューターに **AD** セッションがまだ存在していることが示されています。</span><span class="sxs-lookup"><span data-stu-id="1b588-158">The output shows that the **AD** session still exists on the Server01 computer.</span></span> <span data-ttu-id="1b588-159">この **状態** は、 **AD** セッションが切断されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="1b588-159">The **State** indicates that the **AD** session is disconnected.</span></span> <span data-ttu-id="1b588-160">**Availability** 値が None の場合は、セッションがどのクライアントセッションにも接続されていないことを示します。</span><span class="sxs-lookup"><span data-stu-id="1b588-160">The **Availability** value of None, indicates that the session isn't connected to any client sessions.</span></span>
+<span data-ttu-id="d063b-157">コンピューターが再起動すると、ユーザーは PowerShell を起動し、コマンドを実行して `Get-PSSession` Server01 コンピューター上のセッションを取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-157">When the computer restarts, the user starts PowerShell and runs a `Get-PSSession` command to get sessions on the Server01 computer.</span></span> <span data-ttu-id="d063b-158">出力には、Server01 コンピューターに **AD** セッションがまだ存在していることが示されています。</span><span class="sxs-lookup"><span data-stu-id="d063b-158">The output shows that the **AD** session still exists on the Server01 computer.</span></span> <span data-ttu-id="d063b-159">この **状態** は、 **AD** セッションが切断されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="d063b-159">The **State** indicates that the **AD** session is disconnected.</span></span> <span data-ttu-id="d063b-160">**Availability** 値が None の場合は、セッションがどのクライアントセッションにも接続されていないことを示します。</span><span class="sxs-lookup"><span data-stu-id="d063b-160">The **Availability** value of None, indicates that the session isn't connected to any client sessions.</span></span>
 
-<span data-ttu-id="1b588-161">`Receive-PSSession`コマンドレットは、 **AD** セッションに再接続し、セッションで実行されたスクリプトの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-161">The `Receive-PSSession` cmdlet reconnects to the **AD** session and gets the results of the script that ran in the session.</span></span> <span data-ttu-id="1b588-162">このコマンドは、 **Outtarget** パラメーターを使用して、 **adjob** という名前のジョブに結果を要求します。</span><span class="sxs-lookup"><span data-stu-id="1b588-162">The command uses the **OutTarget** parameter to request the results in a job named **ADJob**.</span></span> <span data-ttu-id="1b588-163">このコマンドはジョブオブジェクトを返し、出力はスクリプトがまだ実行されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="1b588-163">The command returns a job object and the output indicates that the script is still running.</span></span>
+<span data-ttu-id="d063b-161">`Receive-PSSession`コマンドレットは、 **AD** セッションに再接続し、セッションで実行されたスクリプトの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-161">The `Receive-PSSession` cmdlet reconnects to the **AD** session and gets the results of the script that ran in the session.</span></span> <span data-ttu-id="d063b-162">このコマンドは、 **Outtarget** パラメーターを使用して、 **adjob** という名前のジョブに結果を要求します。</span><span class="sxs-lookup"><span data-stu-id="d063b-162">The command uses the **OutTarget** parameter to request the results in a job named **ADJob**.</span></span> <span data-ttu-id="d063b-163">このコマンドはジョブオブジェクトを返し、出力はスクリプトがまだ実行されていることを示します。</span><span class="sxs-lookup"><span data-stu-id="d063b-163">The command returns a job object and the output indicates that the script is still running.</span></span>
 
-<span data-ttu-id="1b588-164">`Get-PSSession`コマンドレットは、ジョブの状態を確認するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-164">The `Get-PSSession` cmdlet is used to check the job state.</span></span> <span data-ttu-id="1b588-165">出力は、 `Receive-PSSession` コマンドレットが **AD** セッションに再接続されたことを確認します。このセッションは、現在開いていて、コマンドで使用できます。</span><span class="sxs-lookup"><span data-stu-id="1b588-165">The output confirms that the `Receive-PSSession` cmdlet reconnected to the **AD** session, which is now open and available for commands.</span></span> <span data-ttu-id="1b588-166">また、スクリプトは実行を再開し、スクリプトの結果を取得しています。</span><span class="sxs-lookup"><span data-stu-id="1b588-166">And, the script resumed execution and is getting the script results.</span></span>
+<span data-ttu-id="d063b-164">`Get-PSSession`コマンドレットは、ジョブの状態を確認するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-164">The `Get-PSSession` cmdlet is used to check the job state.</span></span> <span data-ttu-id="d063b-165">出力は、 `Receive-PSSession` コマンドレットが **AD** セッションに再接続されたことを確認します。このセッションは、現在開いていて、コマンドで使用できます。</span><span class="sxs-lookup"><span data-stu-id="d063b-165">The output confirms that the `Receive-PSSession` cmdlet reconnected to the **AD** session, which is now open and available for commands.</span></span> <span data-ttu-id="d063b-166">また、スクリプトは実行を再開し、スクリプトの結果を取得しています。</span><span class="sxs-lookup"><span data-stu-id="d063b-166">And, the script resumed execution and is getting the script results.</span></span>
 
-### <span data-ttu-id="1b588-167">例 5: 切断されたセッションに再接続する</span><span class="sxs-lookup"><span data-stu-id="1b588-167">Example 5: Reconnect to disconnected sessions</span></span>
+### <span data-ttu-id="d063b-167">例 5: 切断されたセッションに再接続する</span><span class="sxs-lookup"><span data-stu-id="d063b-167">Example 5: Reconnect to disconnected sessions</span></span>
 
-<span data-ttu-id="1b588-168">この例では、コマンドレットを使用して、 `Receive-PSSession` 意図的に切断されたセッションに再接続し、セッションで実行されていたジョブの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-168">This example uses the `Receive-PSSession` cmdlet to reconnect to sessions that were intentionally disconnected and get the results of jobs that were running in the sessions.</span></span>
+<span data-ttu-id="d063b-168">この例では、コマンドレットを使用して、 `Receive-PSSession` 意図的に切断されたセッションに再接続し、セッションで実行されていたジョブの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-168">This example uses the `Receive-PSSession` cmdlet to reconnect to sessions that were intentionally disconnected and get the results of jobs that were running in the sessions.</span></span>
 
 ```
 PS> $parms = @{
@@ -257,18 +257,18 @@ ComputerName          BugCount          LastUpdated
 Server01              121               Friday, December 30, 2011 5:03:34 PM
 ```
 
-<span data-ttu-id="1b588-169">`Invoke-Command`コマンドレットは、3台のリモートコンピューター上でスクリプトを実行します。</span><span class="sxs-lookup"><span data-stu-id="1b588-169">The `Invoke-Command` cmdlet runs a script on three remote computers.</span></span> <span data-ttu-id="1b588-170">このスクリプトでは、複数のデータベースからデータを収集して集計するため、スクリプトが完了するまでに長い時間がかかることがよくあります。</span><span class="sxs-lookup"><span data-stu-id="1b588-170">Because the script gathers and summarizes data from multiple databases, it often takes the script an extended time to finish.</span></span> <span data-ttu-id="1b588-171">このコマンドは、スクリプトを開始する **Indisconnectedsession** パラメーターを使用して、セッションを直ちに切断します。</span><span class="sxs-lookup"><span data-stu-id="1b588-171">The command uses the **InDisconnectedSession** parameter that starts the scripts and then immediately disconnects the sessions.</span></span> <span data-ttu-id="1b588-172">**Sessionoption** パラメーターは、切断されたセッションの **IdleTimeout** 値を拡張します。</span><span class="sxs-lookup"><span data-stu-id="1b588-172">The **SessionOption** parameter extends the **IdleTimeout** value of the disconnected session.</span></span> <span data-ttu-id="1b588-173">切断されたセッションは、切断された時点からアイドル状態と見なされます。</span><span class="sxs-lookup"><span data-stu-id="1b588-173">Disconnected sessions are considered idle from the moment they're disconnected.</span></span> <span data-ttu-id="1b588-174">コマンドが完了し、セッションに再接続できるように、十分な長さのアイドルタイムアウトを設定することが重要です。</span><span class="sxs-lookup"><span data-stu-id="1b588-174">It's important to set the idle time-out for long enough so that the commands can complete and you can reconnect to the session.</span></span> <span data-ttu-id="1b588-175">IdleTimeout を設定できるのは、 **PSSession** を作成したときだけです。また、その接続を切断した場合にのみ、 **IdleTimeout** を変更できます。</span><span class="sxs-lookup"><span data-stu-id="1b588-175">You can set the **IdleTimeout** only when you create the **PSSession** and change it only when you disconnect from it.</span></span> <span data-ttu-id="1b588-176">**PSSession** に接続するとき、またはその結果を受信するときに、 **IdleTimeout** 値を変更することはできません。</span><span class="sxs-lookup"><span data-stu-id="1b588-176">You can't change the **IdleTimeout** value when you connect to a **PSSession** or receiving its results.</span></span> <span data-ttu-id="1b588-177">コマンドを実行すると、ユーザーは PowerShell を終了し、コンピューターを閉じます。</span><span class="sxs-lookup"><span data-stu-id="1b588-177">After running the command, the user exits PowerShell and closes the computer.</span></span>
+<span data-ttu-id="d063b-169">`Invoke-Command`コマンドレットは、3台のリモートコンピューター上でスクリプトを実行します。</span><span class="sxs-lookup"><span data-stu-id="d063b-169">The `Invoke-Command` cmdlet runs a script on three remote computers.</span></span> <span data-ttu-id="d063b-170">このスクリプトでは、複数のデータベースからデータを収集して集計するため、スクリプトが完了するまでに長い時間がかかることがよくあります。</span><span class="sxs-lookup"><span data-stu-id="d063b-170">Because the script gathers and summarizes data from multiple databases, it often takes the script an extended time to finish.</span></span> <span data-ttu-id="d063b-171">このコマンドは、スクリプトを開始する **Indisconnectedsession** パラメーターを使用して、セッションを直ちに切断します。</span><span class="sxs-lookup"><span data-stu-id="d063b-171">The command uses the **InDisconnectedSession** parameter that starts the scripts and then immediately disconnects the sessions.</span></span> <span data-ttu-id="d063b-172">**Sessionoption** パラメーターは、切断されたセッションの **IdleTimeout** 値を拡張します。</span><span class="sxs-lookup"><span data-stu-id="d063b-172">The **SessionOption** parameter extends the **IdleTimeout** value of the disconnected session.</span></span> <span data-ttu-id="d063b-173">切断されたセッションは、切断された時点からアイドル状態と見なされます。</span><span class="sxs-lookup"><span data-stu-id="d063b-173">Disconnected sessions are considered idle from the moment they're disconnected.</span></span> <span data-ttu-id="d063b-174">コマンドが完了し、セッションに再接続できるように、十分な長さのアイドルタイムアウトを設定することが重要です。</span><span class="sxs-lookup"><span data-stu-id="d063b-174">It's important to set the idle time-out for long enough so that the commands can complete and you can reconnect to the session.</span></span> <span data-ttu-id="d063b-175">IdleTimeout を設定できるのは、 **PSSession** を作成したときだけです。また、その接続を切断した場合にのみ、 **IdleTimeout** を変更できます。</span><span class="sxs-lookup"><span data-stu-id="d063b-175">You can set the **IdleTimeout** only when you create the **PSSession** and change it only when you disconnect from it.</span></span> <span data-ttu-id="d063b-176">**PSSession** に接続するとき、またはその結果を受信するときに、 **IdleTimeout** 値を変更することはできません。</span><span class="sxs-lookup"><span data-stu-id="d063b-176">You can't change the **IdleTimeout** value when you connect to a **PSSession** or receiving its results.</span></span> <span data-ttu-id="d063b-177">コマンドを実行すると、ユーザーは PowerShell を終了し、コンピューターを閉じます。</span><span class="sxs-lookup"><span data-stu-id="d063b-177">After running the command, the user exits PowerShell and closes the computer.</span></span>
 
-<span data-ttu-id="1b588-178">次に、ユーザーが Windows を再開し、PowerShell を起動して、を使用して `Get-PSSession` スクリプトが実行されていたセッションを取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-178">The next day, the user resumes Windows, starts PowerShell, and uses `Get-PSSession` to get the sessions in which the scripts were running.</span></span> <span data-ttu-id="1b588-179">コマンドは、コンピューター名、セッション名、セッション構成の名前を指定してセッションを識別し、そのセッションを変数に保存し `$s` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-179">The command identifies the sessions by the computer name, session name, and the name of the session configuration and saves the sessions in the `$s` variable.</span></span> <span data-ttu-id="1b588-180">変数の値 `$s` が表示され、セッションが切断されているがビジー状態ではないことが示されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-180">The value of the `$s` variable is displayed and shows that the sessions are disconnected, but aren't busy.</span></span>
+<span data-ttu-id="d063b-178">次に、ユーザーが Windows を再開し、PowerShell を起動して、を使用して `Get-PSSession` スクリプトが実行されていたセッションを取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-178">The next day, the user resumes Windows, starts PowerShell, and uses `Get-PSSession` to get the sessions in which the scripts were running.</span></span> <span data-ttu-id="d063b-179">コマンドは、コンピューター名、セッション名、セッション構成の名前を指定してセッションを識別し、そのセッションを変数に保存し `$s` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-179">The command identifies the sessions by the computer name, session name, and the name of the session configuration and saves the sessions in the `$s` variable.</span></span> <span data-ttu-id="d063b-180">変数の値 `$s` が表示され、セッションが切断されているがビジー状態ではないことが示されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-180">The value of the `$s` variable is displayed and shows that the sessions are disconnected, but aren't busy.</span></span>
 
-<span data-ttu-id="1b588-181">`Receive-PSSession`コマンドレットは、変数内のセッションに接続 `$s` し、その結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-181">The `Receive-PSSession` cmdlet connects to the sessions in the `$s` variable and gets their results.</span></span>
-<span data-ttu-id="1b588-182">このコマンドは、変数に結果を保存し `$Results` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-182">The command saves the results in the `$Results` variable.</span></span> <span data-ttu-id="1b588-183">`$s`変数が表示され、セッションが接続されていて、コマンドで使用できることが示されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-183">The `$s` variable is displayed and shows that the sessions are connected and available for commands.</span></span>
+<span data-ttu-id="d063b-181">`Receive-PSSession`コマンドレットは、変数内のセッションに接続 `$s` し、その結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-181">The `Receive-PSSession` cmdlet connects to the sessions in the `$s` variable and gets their results.</span></span>
+<span data-ttu-id="d063b-182">このコマンドは、変数に結果を保存し `$Results` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-182">The command saves the results in the `$Results` variable.</span></span> <span data-ttu-id="d063b-183">`$s`変数が表示され、セッションが接続されていて、コマンドで使用できることが示されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-183">The `$s` variable is displayed and shows that the sessions are connected and available for commands.</span></span>
 
-<span data-ttu-id="1b588-184">スクリプトの結果 `$Results` 変数が PowerShell コンソールに表示されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-184">The script results in the `$Results` variable are displayed in the PowerShell console.</span></span> <span data-ttu-id="1b588-185">結果のいずれかが予期しないものである場合、ユーザーはセッションでコマンドを実行して根本原因を調査できます。</span><span class="sxs-lookup"><span data-stu-id="1b588-185">If any of the results are unexpected, the user can run commands in the sessions to investigate the root cause.</span></span>
+<span data-ttu-id="d063b-184">スクリプトの結果 `$Results` 変数が PowerShell コンソールに表示されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-184">The script results in the `$Results` variable are displayed in the PowerShell console.</span></span> <span data-ttu-id="d063b-185">結果のいずれかが予期しないものである場合、ユーザーはセッションでコマンドを実行して根本原因を調査できます。</span><span class="sxs-lookup"><span data-stu-id="d063b-185">If any of the results are unexpected, the user can run commands in the sessions to investigate the root cause.</span></span>
 
-### <span data-ttu-id="1b588-186">例 6: 切断されたセッションでジョブを実行する</span><span class="sxs-lookup"><span data-stu-id="1b588-186">Example 6: Running a job in a disconnected session</span></span>
+### <span data-ttu-id="d063b-186">例 6: 切断されたセッションでジョブを実行する</span><span class="sxs-lookup"><span data-stu-id="d063b-186">Example 6: Running a job in a disconnected session</span></span>
 
-<span data-ttu-id="1b588-187">この例では、切断されたセッションで実行されているジョブに対して何が起こるかを示します。</span><span class="sxs-lookup"><span data-stu-id="1b588-187">This example shows what happens to a job that's running in a disconnected session.</span></span>
+<span data-ttu-id="d063b-187">この例では、切断されたセッションで実行されているジョブに対して何が起こるかを示します。</span><span class="sxs-lookup"><span data-stu-id="d063b-187">This example shows what happens to a job that's running in a disconnected session.</span></span>
 
 ```
 PS> $s = New-PSSession -ComputerName Server01 -Name Test
@@ -308,30 +308,30 @@ Return 3
 Return 4
 ```
 
-<span data-ttu-id="1b588-188">コマンドレットにより、 `New-PSSession` Server01 コンピューター上にテストセッションが作成されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-188">The `New-PSSession` cmdlet creates the Test session on the Server01 computer.</span></span> <span data-ttu-id="1b588-189">このコマンドでは、セッションが `$s` 変数に保存されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-189">The command saves the session in the `$s` variable.</span></span>
+<span data-ttu-id="d063b-188">コマンドレットにより、 `New-PSSession` Server01 コンピューター上にテストセッションが作成されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-188">The `New-PSSession` cmdlet creates the Test session on the Server01 computer.</span></span> <span data-ttu-id="d063b-189">このコマンドでは、セッションが `$s` 変数に保存されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-189">The command saves the session in the `$s` variable.</span></span>
 
-<span data-ttu-id="1b588-190">`Invoke-Command`コマンドレットは、変数内のセッションでコマンドを実行し `$s` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-190">The `Invoke-Command` cmdlet runs a command in the session in the `$s` variable.</span></span> <span data-ttu-id="1b588-191">このコマンドは、 **AsJob** パラメーターを使用して、ジョブとしてコマンドを実行し、現在のセッションにジョブオブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="1b588-191">The command uses the **AsJob** parameter to run the command as a job and creates the job object in the current session.</span></span>
-<span data-ttu-id="1b588-192">このコマンドは、変数に保存されているジョブオブジェクトを返し `$j` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-192">The command returns a job object that's saved in the `$j` variable.</span></span> <span data-ttu-id="1b588-193">変数は、 `$j` ジョブオブジェクトを表示します。</span><span class="sxs-lookup"><span data-stu-id="1b588-193">The `$j` variable displays the job object.</span></span>
+<span data-ttu-id="d063b-190">`Invoke-Command`コマンドレットは、変数内のセッションでコマンドを実行し `$s` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-190">The `Invoke-Command` cmdlet runs a command in the session in the `$s` variable.</span></span> <span data-ttu-id="d063b-191">このコマンドは、 **AsJob** パラメーターを使用して、ジョブとしてコマンドを実行し、現在のセッションにジョブオブジェクトを作成します。</span><span class="sxs-lookup"><span data-stu-id="d063b-191">The command uses the **AsJob** parameter to run the command as a job and creates the job object in the current session.</span></span>
+<span data-ttu-id="d063b-192">このコマンドは、変数に保存されているジョブオブジェクトを返し `$j` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-192">The command returns a job object that's saved in the `$j` variable.</span></span> <span data-ttu-id="d063b-193">変数は、 `$j` ジョブオブジェクトを表示します。</span><span class="sxs-lookup"><span data-stu-id="d063b-193">The `$j` variable displays the job object.</span></span>
 
-<span data-ttu-id="1b588-194">変数内のセッションオブジェクト `$s` がに送信され、 `Disconnect-PSSession` セッションが切断されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-194">The session object in the `$s` variable is sent down the pipeline to `Disconnect-PSSession` and the session is disconnected.</span></span>
+<span data-ttu-id="d063b-194">変数内のセッションオブジェクト `$s` がに送信され、 `Disconnect-PSSession` セッションが切断されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-194">The session object in the `$s` variable is sent down the pipeline to `Disconnect-PSSession` and the session is disconnected.</span></span>
 
-<span data-ttu-id="1b588-195">`$j`変数が表示され、変数内のジョブオブジェクトを切断した場合の影響が示され `$j` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-195">The `$j` variable is displayed and shows the effect of disconnecting the job object in the `$j` variable.</span></span> <span data-ttu-id="1b588-196">ジョブの状態が、Disconnected になっています。</span><span class="sxs-lookup"><span data-stu-id="1b588-196">The job state is now Disconnected.</span></span>
+<span data-ttu-id="d063b-195">`$j`変数が表示され、変数内のジョブオブジェクトを切断した場合の影響が示され `$j` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-195">The `$j` variable is displayed and shows the effect of disconnecting the job object in the `$j` variable.</span></span> <span data-ttu-id="d063b-196">ジョブの状態が、Disconnected になっています。</span><span class="sxs-lookup"><span data-stu-id="d063b-196">The job state is now Disconnected.</span></span>
 
-<span data-ttu-id="1b588-197">は、 `Receive-Job` 変数のジョブで実行され `$j` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-197">The `Receive-Job` is run on the job in the `$j` variable.</span></span> <span data-ttu-id="1b588-198">出力には、ジョブがセッションの前に出力を返し、ジョブが切断されたことが示されています。</span><span class="sxs-lookup"><span data-stu-id="1b588-198">The output shows that the job began to return output before the session and the job were disconnected.</span></span>
+<span data-ttu-id="d063b-197">は、 `Receive-Job` 変数のジョブで実行され `$j` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-197">The `Receive-Job` is run on the job in the `$j` variable.</span></span> <span data-ttu-id="d063b-198">出力には、ジョブがセッションの前に出力を返し、ジョブが切断されたことが示されています。</span><span class="sxs-lookup"><span data-stu-id="d063b-198">The output shows that the job began to return output before the session and the job were disconnected.</span></span>
 
-<span data-ttu-id="1b588-199">`Connect-PSSession`コマンドレットは、同じクライアントセッションで実行されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-199">The `Connect-PSSession` cmdlet is run in the same client session.</span></span> <span data-ttu-id="1b588-200">コマンドは、Server01 コンピューター上のテストセッションに再接続し、セッションを変数に保存し `$s2` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-200">The command reconnects to the Test session on the Server01 computer and saves the session in the `$s2` variable.</span></span>
+<span data-ttu-id="d063b-199">`Connect-PSSession`コマンドレットは、同じクライアントセッションで実行されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-199">The `Connect-PSSession` cmdlet is run in the same client session.</span></span> <span data-ttu-id="d063b-200">コマンドは、Server01 コンピューター上のテストセッションに再接続し、セッションを変数に保存し `$s2` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-200">The command reconnects to the Test session on the Server01 computer and saves the session in the `$s2` variable.</span></span>
 
-<span data-ttu-id="1b588-201">`Receive-PSSession`コマンドレットは、セッションで実行されていたジョブの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-201">The `Receive-PSSession` cmdlet gets the results of the job that was running in the session.</span></span> <span data-ttu-id="1b588-202">コマンドは同じセッションで実行されるので、 `Receive-PSSession` 既定では結果をジョブとして返し、同じジョブオブジェクトを再利用します。</span><span class="sxs-lookup"><span data-stu-id="1b588-202">Because the command is run in the same session, `Receive-PSSession` returns the results as a job by default and reuses the same job object.</span></span> <span data-ttu-id="1b588-203">このコマンドは、ジョブを変数に保存し `$j2` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-203">The command saves the job in the `$j2` variable.</span></span> <span data-ttu-id="1b588-204">`Receive-Job`コマンドレットは、変数内のジョブの結果を取得し `$j` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-204">The `Receive-Job` cmdlet gets the results of the job in the `$j` variable.</span></span>
+<span data-ttu-id="d063b-201">`Receive-PSSession`コマンドレットは、セッションで実行されていたジョブの結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-201">The `Receive-PSSession` cmdlet gets the results of the job that was running in the session.</span></span> <span data-ttu-id="d063b-202">コマンドは同じセッションで実行されるので、 `Receive-PSSession` 既定では結果をジョブとして返し、同じジョブオブジェクトを再利用します。</span><span class="sxs-lookup"><span data-stu-id="d063b-202">Because the command is run in the same session, `Receive-PSSession` returns the results as a job by default and reuses the same job object.</span></span> <span data-ttu-id="d063b-203">このコマンドは、ジョブを変数に保存し `$j2` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-203">The command saves the job in the `$j2` variable.</span></span> <span data-ttu-id="d063b-204">`Receive-Job`コマンドレットは、変数内のジョブの結果を取得し `$j` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-204">The `Receive-Job` cmdlet gets the results of the job in the `$j` variable.</span></span>
 
-## <span data-ttu-id="1b588-205">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="1b588-205">PARAMETERS</span></span>
+## <span data-ttu-id="d063b-205">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="d063b-205">PARAMETERS</span></span>
 
-### <span data-ttu-id="1b588-206">-AllowRedirection</span><span class="sxs-lookup"><span data-stu-id="1b588-206">-AllowRedirection</span></span>
+### <span data-ttu-id="d063b-206">-AllowRedirection</span><span class="sxs-lookup"><span data-stu-id="d063b-206">-AllowRedirection</span></span>
 
-<span data-ttu-id="1b588-207">このコマンドレットがこの接続を代替 Uniform Resource Identifier (URI) にリダイレクトできることを示します。</span><span class="sxs-lookup"><span data-stu-id="1b588-207">Indicates that this cmdlet allows redirection of this connection to an alternate Uniform Resource Identifier (URI).</span></span>
+<span data-ttu-id="d063b-207">このコマンドレットがこの接続を代替 Uniform Resource Identifier (URI) にリダイレクトできることを示します。</span><span class="sxs-lookup"><span data-stu-id="d063b-207">Indicates that this cmdlet allows redirection of this connection to an alternate Uniform Resource Identifier (URI).</span></span>
 
-<span data-ttu-id="1b588-208">**ConnectionURI** パラメーターを使用すると、リモートの送信先は別の URI にリダイレクトするように指示を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="1b588-208">When you use the **ConnectionURI** parameter, the remote destination can return an instruction to redirect to a different URI.</span></span> <span data-ttu-id="1b588-209">既定では、PowerShell は接続をリダイレクトしませんが、このパラメーターを使用して接続をリダイレクトできるようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="1b588-209">By default, PowerShell doesn't redirect connections, but you can use this parameter to enable it to redirect the connection.</span></span>
+<span data-ttu-id="d063b-208">**ConnectionURI** パラメーターを使用すると、リモートの送信先は別の URI にリダイレクトするように指示を返すことができます。</span><span class="sxs-lookup"><span data-stu-id="d063b-208">When you use the **ConnectionURI** parameter, the remote destination can return an instruction to redirect to a different URI.</span></span> <span data-ttu-id="d063b-209">既定では、PowerShell は接続をリダイレクトしませんが、このパラメーターを使用して接続をリダイレクトできるようにすることができます。</span><span class="sxs-lookup"><span data-stu-id="d063b-209">By default, PowerShell doesn't redirect connections, but you can use this parameter to enable it to redirect the connection.</span></span>
 
-<span data-ttu-id="1b588-210">また、 **MaximumConnectionRedirectionCount** セッション オプション値を変更することで、接続をリダイレクトする回数を制限することもできます。</span><span class="sxs-lookup"><span data-stu-id="1b588-210">You can also limit the number of times the connection is redirected by changing the **MaximumConnectionRedirectionCount** session option value.</span></span> <span data-ttu-id="1b588-211">コマンドレットの **Maximumredirection** パラメーターを使用する `New-PSSessionOption` か、Preference 変数の **MaximumConnectionRedirectionCount** プロパティを設定し `$PSSessionOption` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-211">Use the **MaximumRedirection** parameter of the `New-PSSessionOption` cmdlet or set the **MaximumConnectionRedirectionCount** property of the `$PSSessionOption` preference variable.</span></span> <span data-ttu-id="1b588-212">既定値は 5 です。</span><span class="sxs-lookup"><span data-stu-id="1b588-212">The default value is 5.</span></span>
+<span data-ttu-id="d063b-210">また、 **MaximumConnectionRedirectionCount** セッション オプション値を変更することで、接続をリダイレクトする回数を制限することもできます。</span><span class="sxs-lookup"><span data-stu-id="d063b-210">You can also limit the number of times the connection is redirected by changing the **MaximumConnectionRedirectionCount** session option value.</span></span> <span data-ttu-id="d063b-211">コマンドレットの **Maximumredirection** パラメーターを使用する `New-PSSessionOption` か、Preference 変数の **MaximumConnectionRedirectionCount** プロパティを設定し `$PSSessionOption` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-211">Use the **MaximumRedirection** parameter of the `New-PSSessionOption` cmdlet or set the **MaximumConnectionRedirectionCount** property of the `$PSSessionOption` preference variable.</span></span> <span data-ttu-id="d063b-212">既定値は 5 です。</span><span class="sxs-lookup"><span data-stu-id="d063b-212">The default value is 5.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -345,15 +345,15 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-213">-ApplicationName</span><span class="sxs-lookup"><span data-stu-id="1b588-213">-ApplicationName</span></span>
+### <span data-ttu-id="d063b-213">-ApplicationName</span><span class="sxs-lookup"><span data-stu-id="d063b-213">-ApplicationName</span></span>
 
-<span data-ttu-id="1b588-214">アプリケーションを指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-214">Specifies an application.</span></span> <span data-ttu-id="1b588-215">このコマンドレットは、指定されたアプリケーションを使用するセッションにのみ接続します。</span><span class="sxs-lookup"><span data-stu-id="1b588-215">This cmdlet connects only to sessions that use the specified application.</span></span>
+<span data-ttu-id="d063b-214">アプリケーションを指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-214">Specifies an application.</span></span> <span data-ttu-id="d063b-215">このコマンドレットは、指定されたアプリケーションを使用するセッションにのみ接続します。</span><span class="sxs-lookup"><span data-stu-id="d063b-215">This cmdlet connects only to sessions that use the specified application.</span></span>
 
-<span data-ttu-id="1b588-216">接続 URI のアプリケーション名セグメントを入力します。</span><span class="sxs-lookup"><span data-stu-id="1b588-216">Enter the application name segment of the connection URI.</span></span> <span data-ttu-id="1b588-217">たとえば、次の接続 URI では、WSMan はアプリケーション名 `http://localhost:5985/WSMAN` です。</span><span class="sxs-lookup"><span data-stu-id="1b588-217">For example, in the following connection URI, WSMan is the application name: `http://localhost:5985/WSMAN`.</span></span>
+<span data-ttu-id="d063b-216">接続 URI のアプリケーション名セグメントを入力します。</span><span class="sxs-lookup"><span data-stu-id="d063b-216">Enter the application name segment of the connection URI.</span></span> <span data-ttu-id="d063b-217">たとえば、次の接続 URI では、WSMan はアプリケーション名 `http://localhost:5985/WSMAN` です。</span><span class="sxs-lookup"><span data-stu-id="d063b-217">For example, in the following connection URI, WSMan is the application name: `http://localhost:5985/WSMAN`.</span></span>
 
-<span data-ttu-id="1b588-218">セッションのアプリケーション名は、セッションの **Runspace.ConnectionInfo.AppName** プロパティに保存されています。</span><span class="sxs-lookup"><span data-stu-id="1b588-218">The application name of a session is stored in the **Runspace.ConnectionInfo.AppName** property of the session.</span></span>
+<span data-ttu-id="d063b-218">セッションのアプリケーション名は、セッションの **Runspace.ConnectionInfo.AppName** プロパティに保存されています。</span><span class="sxs-lookup"><span data-stu-id="d063b-218">The application name of a session is stored in the **Runspace.ConnectionInfo.AppName** property of the session.</span></span>
 
-<span data-ttu-id="1b588-219">パラメーターの値は、セッションを選択してフィルター処理するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-219">The parameter's value is used to select and filter sessions.</span></span> <span data-ttu-id="1b588-220">セッションで使用されるアプリケーションは変更されません。</span><span class="sxs-lookup"><span data-stu-id="1b588-220">It doesn't change the application that the session uses.</span></span>
+<span data-ttu-id="d063b-219">パラメーターの値は、セッションを選択してフィルター処理するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-219">The parameter's value is used to select and filter sessions.</span></span> <span data-ttu-id="d063b-220">セッションで使用されるアプリケーションは変更されません。</span><span class="sxs-lookup"><span data-stu-id="d063b-220">It doesn't change the application that the session uses.</span></span>
 
 ```yaml
 Type: System.String
@@ -367,24 +367,24 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-221">-認証</span><span class="sxs-lookup"><span data-stu-id="1b588-221">-Authentication</span></span>
+### <span data-ttu-id="d063b-221">-認証</span><span class="sxs-lookup"><span data-stu-id="d063b-221">-Authentication</span></span>
 
-<span data-ttu-id="1b588-222">切断されたセッションに再接続するためにコマンドでユーザー資格情報を認証するために使用するメカニズムを指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-222">Specifies the mechanism that's used to authenticate the user credentials in the command to reconnect to a disconnected session.</span></span> <span data-ttu-id="1b588-223">このパラメーターの有効値は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="1b588-223">The acceptable values for this parameter are:</span></span>
+<span data-ttu-id="d063b-222">切断されたセッションに再接続するためにコマンドでユーザー資格情報を認証するために使用するメカニズムを指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-222">Specifies the mechanism that's used to authenticate the user credentials in the command to reconnect to a disconnected session.</span></span> <span data-ttu-id="d063b-223">このパラメーターの有効値は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="d063b-223">The acceptable values for this parameter are:</span></span>
 
-- <span data-ttu-id="1b588-224">Default</span><span class="sxs-lookup"><span data-stu-id="1b588-224">Default</span></span>
-- <span data-ttu-id="1b588-225">基本</span><span class="sxs-lookup"><span data-stu-id="1b588-225">Basic</span></span>
-- <span data-ttu-id="1b588-226">Credssp</span><span class="sxs-lookup"><span data-stu-id="1b588-226">Credssp</span></span>
-- <span data-ttu-id="1b588-227">ダイジェスト</span><span class="sxs-lookup"><span data-stu-id="1b588-227">Digest</span></span>
-- <span data-ttu-id="1b588-228">Kerberos</span><span class="sxs-lookup"><span data-stu-id="1b588-228">Kerberos</span></span>
-- <span data-ttu-id="1b588-229">ネゴシエート</span><span class="sxs-lookup"><span data-stu-id="1b588-229">Negotiate</span></span>
-- <span data-ttu-id="1b588-230">NegotiateWithImplicitCredential</span><span class="sxs-lookup"><span data-stu-id="1b588-230">NegotiateWithImplicitCredential</span></span>
+- <span data-ttu-id="d063b-224">Default</span><span class="sxs-lookup"><span data-stu-id="d063b-224">Default</span></span>
+- <span data-ttu-id="d063b-225">Basic</span><span class="sxs-lookup"><span data-stu-id="d063b-225">Basic</span></span>
+- <span data-ttu-id="d063b-226">Credssp</span><span class="sxs-lookup"><span data-stu-id="d063b-226">Credssp</span></span>
+- <span data-ttu-id="d063b-227">ダイジェスト</span><span class="sxs-lookup"><span data-stu-id="d063b-227">Digest</span></span>
+- <span data-ttu-id="d063b-228">Kerberos</span><span class="sxs-lookup"><span data-stu-id="d063b-228">Kerberos</span></span>
+- <span data-ttu-id="d063b-229">ネゴシエート</span><span class="sxs-lookup"><span data-stu-id="d063b-229">Negotiate</span></span>
+- <span data-ttu-id="d063b-230">NegotiateWithImplicitCredential</span><span class="sxs-lookup"><span data-stu-id="d063b-230">NegotiateWithImplicitCredential</span></span>
 
-<span data-ttu-id="1b588-231">既定値は Default です。</span><span class="sxs-lookup"><span data-stu-id="1b588-231">The default value is Default.</span></span>
+<span data-ttu-id="d063b-231">既定値は Default です。</span><span class="sxs-lookup"><span data-stu-id="d063b-231">The default value is Default.</span></span>
 
-<span data-ttu-id="1b588-232">このパラメーターの値の詳細については、「 [Authenticationmechanism 列挙型](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1b588-232">For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).</span></span>
+<span data-ttu-id="d063b-232">このパラメーターの値の詳細については、「 [Authenticationmechanism 列挙型](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d063b-232">For more information about the values of this parameter, see [AuthenticationMechanism Enumeration](/dotnet/api/system.management.automation.runspaces.authenticationmechanism).</span></span>
 
 > [!CAUTION]
-> <span data-ttu-id="1b588-233">ユーザー資格情報が認証対象のリモートコンピューターに渡される Credential Security Support Provider (CredSSP) 認証は、リモートネットワーク共有へのアクセスなど、複数のリソースでの認証を必要とするコマンド向けに設計されています。</span><span class="sxs-lookup"><span data-stu-id="1b588-233">Credential Security Support Provider (CredSSP) authentication, in which the user credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.</span></span> <span data-ttu-id="1b588-234">このメカニズムを使用すると、リモート操作のセキュリティ リスクが高まります。</span><span class="sxs-lookup"><span data-stu-id="1b588-234">This mechanism increases the security risk of the remote operation.</span></span> <span data-ttu-id="1b588-235">リモート コンピューターのセキュリティが低下している場合は、そのリモート コンピューターに渡される資格情報を使用してネットワーク セッションが制御される場合があります。</span><span class="sxs-lookup"><span data-stu-id="1b588-235">If the remote computer is compromised, the credentials that are passed to it can be used to control the network session.</span></span>
+> <span data-ttu-id="d063b-233">ユーザー資格情報が認証対象のリモートコンピューターに渡される Credential Security Support Provider (CredSSP) 認証は、リモートネットワーク共有へのアクセスなど、複数のリソースでの認証を必要とするコマンド向けに設計されています。</span><span class="sxs-lookup"><span data-stu-id="d063b-233">Credential Security Support Provider (CredSSP) authentication, in which the user credentials are passed to a remote computer to be authenticated, is designed for commands that require authentication on more than one resource, such as accessing a remote network share.</span></span> <span data-ttu-id="d063b-234">このメカニズムを使用すると、リモート操作のセキュリティ リスクが高まります。</span><span class="sxs-lookup"><span data-stu-id="d063b-234">This mechanism increases the security risk of the remote operation.</span></span> <span data-ttu-id="d063b-235">リモート コンピューターのセキュリティが低下している場合は、そのリモート コンピューターに渡される資格情報を使用してネットワーク セッションが制御される場合があります。</span><span class="sxs-lookup"><span data-stu-id="d063b-235">If the remote computer is compromised, the credentials that are passed to it can be used to control the network session.</span></span>
 
 ```yaml
 Type: System.Management.Automation.Runspaces.AuthenticationMechanism
@@ -399,13 +399,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-236">-CertificateThumbprint</span><span class="sxs-lookup"><span data-stu-id="1b588-236">-CertificateThumbprint</span></span>
+### <span data-ttu-id="d063b-236">-CertificateThumbprint</span><span class="sxs-lookup"><span data-stu-id="d063b-236">-CertificateThumbprint</span></span>
 
-<span data-ttu-id="1b588-237">切断されたセッションに接続するためのアクセス許可を持つユーザー アカウントのデジタル公開キー証明書 (X509) を指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-237">Specifies the digital public key certificate (X509) of a user account that has permission to connect to the disconnected session.</span></span> <span data-ttu-id="1b588-238">証明書の拇印を入力します。</span><span class="sxs-lookup"><span data-stu-id="1b588-238">Enter the certificate thumbprint of the certificate.</span></span>
+<span data-ttu-id="d063b-237">切断されたセッションに接続するためのアクセス許可を持つユーザー アカウントのデジタル公開キー証明書 (X509) を指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-237">Specifies the digital public key certificate (X509) of a user account that has permission to connect to the disconnected session.</span></span> <span data-ttu-id="d063b-238">証明書の拇印を入力します。</span><span class="sxs-lookup"><span data-stu-id="d063b-238">Enter the certificate thumbprint of the certificate.</span></span>
 
-<span data-ttu-id="1b588-239">証明書は、クライアント証明書ベースの認証で使用されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-239">Certificates are used in client certificate-based authentication.</span></span> <span data-ttu-id="1b588-240">証明書は、ローカルユーザーアカウントにしかマップできず、ドメインアカウントでは使用できません。</span><span class="sxs-lookup"><span data-stu-id="1b588-240">Certificates can be mapped only to local user accounts, and don't work with domain accounts.</span></span>
+<span data-ttu-id="d063b-239">証明書は、クライアント証明書ベースの認証で使用されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-239">Certificates are used in client certificate-based authentication.</span></span> <span data-ttu-id="d063b-240">証明書は、ローカルユーザーアカウントにしかマップできず、ドメインアカウントでは使用できません。</span><span class="sxs-lookup"><span data-stu-id="d063b-240">Certificates can be mapped only to local user accounts, and don't work with domain accounts.</span></span>
 
-<span data-ttu-id="1b588-241">証明書の拇印を取得するに `Get-Item` は、PowerShell ドライブでまたはコマンドを使用し `Get-ChildItem` `Cert:` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-241">To get a certificate thumbprint, use a `Get-Item` or `Get-ChildItem` command in the PowerShell `Cert:` drive.</span></span>
+<span data-ttu-id="d063b-241">証明書の拇印を取得するに `Get-Item` は、PowerShell ドライブでまたはコマンドを使用し `Get-ChildItem` `Cert:` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-241">To get a certificate thumbprint, use a `Get-Item` or `Get-ChildItem` command in the PowerShell `Cert:` drive.</span></span>
 
 ```yaml
 Type: System.String
@@ -419,12 +419,12 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-242">-ComputerName</span><span class="sxs-lookup"><span data-stu-id="1b588-242">-ComputerName</span></span>
+### <span data-ttu-id="d063b-242">-ComputerName</span><span class="sxs-lookup"><span data-stu-id="d063b-242">-ComputerName</span></span>
 
-<span data-ttu-id="1b588-243">切断されたセッションが格納されているコンピューターを指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-243">Specifies the computer on which the disconnected session is stored.</span></span> <span data-ttu-id="1b588-244">セッションは、サーバー側または接続の受信側にあるコンピューターに格納されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-244">Sessions are stored on the computer that's at the server-side, or receiving end of a connection.</span></span> <span data-ttu-id="1b588-245">既定値はローカル コンピューターです。</span><span class="sxs-lookup"><span data-stu-id="1b588-245">The default is the local computer.</span></span>
+<span data-ttu-id="d063b-243">切断されたセッションが格納されているコンピューターを指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-243">Specifies the computer on which the disconnected session is stored.</span></span> <span data-ttu-id="d063b-244">セッションは、サーバー側または接続の受信側にあるコンピューターに格納されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-244">Sessions are stored on the computer that's at the server-side, or receiving end of a connection.</span></span> <span data-ttu-id="d063b-245">既定値はローカル コンピューターです。</span><span class="sxs-lookup"><span data-stu-id="d063b-245">The default is the local computer.</span></span>
 
-<span data-ttu-id="1b588-246">1台のコンピューターの NetBIOS 名、IP アドレス、または完全修飾ドメイン名 (FQDN) を入力します。</span><span class="sxs-lookup"><span data-stu-id="1b588-246">Type the NetBIOS name, an IP address, or a fully qualified domain name (FQDN) of one computer.</span></span>
-<span data-ttu-id="1b588-247">ワイルドカード文字は使用できません。</span><span class="sxs-lookup"><span data-stu-id="1b588-247">Wildcard characters aren't permitted.</span></span> <span data-ttu-id="1b588-248">ローカルコンピューターを指定するには、コンピューター名、ドット ( `.` )、 `$env:COMPUTERNAME` 、または localhost を入力します。</span><span class="sxs-lookup"><span data-stu-id="1b588-248">To specify the local computer, type the computer name, a dot (`.`), `$env:COMPUTERNAME`, or localhost.</span></span>
+<span data-ttu-id="d063b-246">1台のコンピューターの NetBIOS 名、IP アドレス、または完全修飾ドメイン名 (FQDN) を入力します。</span><span class="sxs-lookup"><span data-stu-id="d063b-246">Type the NetBIOS name, an IP address, or a fully qualified domain name (FQDN) of one computer.</span></span>
+<span data-ttu-id="d063b-247">ワイルドカード文字は使用できません。</span><span class="sxs-lookup"><span data-stu-id="d063b-247">Wildcard characters aren't permitted.</span></span> <span data-ttu-id="d063b-248">ローカルコンピューターを指定するには、コンピューター名、ドット ( `.` )、 `$env:COMPUTERNAME` 、または localhost を入力します。</span><span class="sxs-lookup"><span data-stu-id="d063b-248">To specify the local computer, type the computer name, a dot (`.`), `$env:COMPUTERNAME`, or localhost.</span></span>
 
 ```yaml
 Type: System.String
@@ -438,19 +438,19 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-249">-ConfigurationName</span><span class="sxs-lookup"><span data-stu-id="1b588-249">-ConfigurationName</span></span>
+### <span data-ttu-id="d063b-249">-ConfigurationName</span><span class="sxs-lookup"><span data-stu-id="d063b-249">-ConfigurationName</span></span>
 
-<span data-ttu-id="1b588-250">セッション構成の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-250">Specifies the name of a session configuration.</span></span> <span data-ttu-id="1b588-251">このコマンドレットは、指定されたセッション構成を使用するセッションにのみ接続します。</span><span class="sxs-lookup"><span data-stu-id="1b588-251">This cmdlet connects only to sessions that use the specified session configuration.</span></span>
+<span data-ttu-id="d063b-250">セッション構成の名前を指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-250">Specifies the name of a session configuration.</span></span> <span data-ttu-id="d063b-251">このコマンドレットは、指定されたセッション構成を使用するセッションにのみ接続します。</span><span class="sxs-lookup"><span data-stu-id="d063b-251">This cmdlet connects only to sessions that use the specified session configuration.</span></span>
 
-<span data-ttu-id="1b588-252">セッション構成の構成名または完全修飾リソース URI を入力します。</span><span class="sxs-lookup"><span data-stu-id="1b588-252">Enter a configuration name or the fully qualified resource URI for a session configuration.</span></span> <span data-ttu-id="1b588-253">構成名のみを指定する場合は、次のスキーマ URI が先頭に付加されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-253">If you specify only the configuration name, the following schema URI is prepended:</span></span>
+<span data-ttu-id="d063b-252">セッション構成の構成名または完全修飾リソース URI を入力します。</span><span class="sxs-lookup"><span data-stu-id="d063b-252">Enter a configuration name or the fully qualified resource URI for a session configuration.</span></span> <span data-ttu-id="d063b-253">構成名のみを指定する場合は、次のスキーマ URI が先頭に付加されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-253">If you specify only the configuration name, the following schema URI is prepended:</span></span>
 
-<span data-ttu-id="1b588-254">`http://schemas.microsoft.com/powershell`.</span><span class="sxs-lookup"><span data-stu-id="1b588-254">`http://schemas.microsoft.com/powershell`.</span></span>
+<span data-ttu-id="d063b-254">`http://schemas.microsoft.com/powershell`.</span><span class="sxs-lookup"><span data-stu-id="d063b-254">`http://schemas.microsoft.com/powershell`.</span></span>
 
-<span data-ttu-id="1b588-255">セッションの構成名は、セッションの **ConfigurationName** プロパティに保存されています。</span><span class="sxs-lookup"><span data-stu-id="1b588-255">The configuration name of a session is stored in the **ConfigurationName** property of the session.</span></span>
+<span data-ttu-id="d063b-255">セッションの構成名は、セッションの **ConfigurationName** プロパティに保存されています。</span><span class="sxs-lookup"><span data-stu-id="d063b-255">The configuration name of a session is stored in the **ConfigurationName** property of the session.</span></span>
 
-<span data-ttu-id="1b588-256">パラメーターの値は、セッションを選択してフィルター処理するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-256">The parameter's value is used to select and filter sessions.</span></span> <span data-ttu-id="1b588-257">セッションが使用するセッション構成が変更されることはありません。</span><span class="sxs-lookup"><span data-stu-id="1b588-257">It doesn't change the session configuration that the session uses.</span></span>
+<span data-ttu-id="d063b-256">パラメーターの値は、セッションを選択してフィルター処理するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-256">The parameter's value is used to select and filter sessions.</span></span> <span data-ttu-id="d063b-257">セッションが使用するセッション構成が変更されることはありません。</span><span class="sxs-lookup"><span data-stu-id="d063b-257">It doesn't change the session configuration that the session uses.</span></span>
 
-<span data-ttu-id="1b588-258">セッション構成の詳細については、「 [about_Session_Configurations](./About/about_Session_Configurations.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1b588-258">For more information about session configurations, see [about_Session_Configurations](./About/about_Session_Configurations.md).</span></span>
+<span data-ttu-id="d063b-258">セッション構成の詳細については、「 [about_Session_Configurations](./About/about_Session_Configurations.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d063b-258">For more information about session configurations, see [about_Session_Configurations](./About/about_Session_Configurations.md).</span></span>
 
 ```yaml
 Type: System.String
@@ -464,23 +464,23 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-259">-ConnectionUri</span><span class="sxs-lookup"><span data-stu-id="1b588-259">-ConnectionUri</span></span>
+### <span data-ttu-id="d063b-259">-ConnectionUri</span><span class="sxs-lookup"><span data-stu-id="d063b-259">-ConnectionUri</span></span>
 
-<span data-ttu-id="1b588-260">切断されたセッションに再接続するために使用する接続エンドポイントを定義する URI を指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-260">Specifies a URI that defines the connection endpoint that is used to reconnect to the disconnected session.</span></span>
+<span data-ttu-id="d063b-260">切断されたセッションに再接続するために使用する接続エンドポイントを定義する URI を指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-260">Specifies a URI that defines the connection endpoint that is used to reconnect to the disconnected session.</span></span>
 
-<span data-ttu-id="1b588-261">URI は完全修飾名にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="1b588-261">The URI must be fully qualified.</span></span> <span data-ttu-id="1b588-262">文字列の形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="1b588-262">The string's format is as follows:</span></span>
+<span data-ttu-id="d063b-261">URI は完全修飾名にする必要があります。</span><span class="sxs-lookup"><span data-stu-id="d063b-261">The URI must be fully qualified.</span></span> <span data-ttu-id="d063b-262">文字列の形式は次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="d063b-262">The string's format is as follows:</span></span>
 
 `<Transport>://<ComputerName>:<Port>/<ApplicationName>`
 
-<span data-ttu-id="1b588-263">既定値は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="1b588-263">The default value is as follows:</span></span>
+<span data-ttu-id="d063b-263">既定値は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="d063b-263">The default value is as follows:</span></span>
 
 `http://localhost:5985/WSMAN`
 
-<span data-ttu-id="1b588-264">接続 URI を指定しない場合は、 **UseSSL** 、 **ComputerName** 、 **Port** 、および **APPLICATIONNAME** パラメーターを使用して接続 uri の値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="1b588-264">If you don't specify a connection URI, you can use the **UseSSL** , **ComputerName** , **Port** , and **ApplicationName** parameters to specify the connection URI values.</span></span>
+<span data-ttu-id="d063b-264">接続 URI を指定しない場合は、 **UseSSL** 、 **ComputerName** 、 **Port** 、および **APPLICATIONNAME** パラメーターを使用して接続 uri の値を指定できます。</span><span class="sxs-lookup"><span data-stu-id="d063b-264">If you don't specify a connection URI, you can use the **UseSSL** , **ComputerName** , **Port** , and **ApplicationName** parameters to specify the connection URI values.</span></span>
 
-<span data-ttu-id="1b588-265">URI の **Transport** セグメントの有効な値は、HTTP および HTTPS です。</span><span class="sxs-lookup"><span data-stu-id="1b588-265">Valid values for the **Transport** segment of the URI are HTTP and HTTPS.</span></span> <span data-ttu-id="1b588-266">トランスポートセグメントを使用して接続 URI を指定し、ポートを指定しない場合、セッションは標準のポート80を使用して HTTP と443が HTTPS 用に作成されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-266">If you specify a connection URI with a Transport segment, but don't specify a port, the session is created with standard ports: 80 for HTTP and 443 for HTTPS.</span></span> <span data-ttu-id="1b588-267">PowerShell リモート処理に既定のポートを使用するには、HTTP の場合はポート5985、HTTPS の場合は5986を指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-267">To use the default ports for PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.</span></span>
+<span data-ttu-id="d063b-265">URI の **Transport** セグメントの有効な値は、HTTP および HTTPS です。</span><span class="sxs-lookup"><span data-stu-id="d063b-265">Valid values for the **Transport** segment of the URI are HTTP and HTTPS.</span></span> <span data-ttu-id="d063b-266">トランスポートセグメントを使用して接続 URI を指定し、ポートを指定しない場合、セッションは標準のポート80を使用して HTTP と443が HTTPS 用に作成されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-266">If you specify a connection URI with a Transport segment, but don't specify a port, the session is created with standard ports: 80 for HTTP and 443 for HTTPS.</span></span> <span data-ttu-id="d063b-267">PowerShell リモート処理に既定のポートを使用するには、HTTP の場合はポート5985、HTTPS の場合は5986を指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-267">To use the default ports for PowerShell remoting, specify port 5985 for HTTP or 5986 for HTTPS.</span></span>
 
-<span data-ttu-id="1b588-268">対象のコンピューターが接続を別の URI にリダイレクトする場合、コマンドで **Allowredirection** パラメーターを使用しない限り、PowerShell によってリダイレクトが禁止されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-268">If the destination computer redirects the connection to a different URI, PowerShell prevents the redirection unless you use the **AllowRedirection** parameter in the command.</span></span>
+<span data-ttu-id="d063b-268">対象のコンピューターが接続を別の URI にリダイレクトする場合、コマンドで **Allowredirection** パラメーターを使用しない限り、PowerShell によってリダイレクトが禁止されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-268">If the destination computer redirects the connection to a different URI, PowerShell prevents the redirection unless you use the **AllowRedirection** parameter in the command.</span></span>
 
 ```yaml
 Type: System.Uri
@@ -494,16 +494,16 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-269">-Credential</span><span class="sxs-lookup"><span data-stu-id="1b588-269">-Credential</span></span>
+### <span data-ttu-id="d063b-269">-Credential</span><span class="sxs-lookup"><span data-stu-id="d063b-269">-Credential</span></span>
 
-<span data-ttu-id="1b588-270">切断されたセッションに接続するためのアクセス許可を持つユーザー アカウントを指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-270">Specifies a user account that has permission to connect to the disconnected session.</span></span> <span data-ttu-id="1b588-271">既定値は現在のユーザーです。</span><span class="sxs-lookup"><span data-stu-id="1b588-271">The default is the current user.</span></span>
+<span data-ttu-id="d063b-270">切断されたセッションに接続するためのアクセス許可を持つユーザー アカウントを指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-270">Specifies a user account that has permission to connect to the disconnected session.</span></span> <span data-ttu-id="d063b-271">既定値は現在のユーザーです。</span><span class="sxs-lookup"><span data-stu-id="d063b-271">The default is the current user.</span></span>
 
-<span data-ttu-id="1b588-272">**User01** や **domain01\user01」** などのユーザー名を入力するか、コマンドレットによって生成される **PSCredential** オブジェクトを入力し `Get-Credential` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-272">Type a user name, such as **User01** or **Domain01\User01** , or enter a **PSCredential** object generated by the `Get-Credential` cmdlet.</span></span> <span data-ttu-id="1b588-273">ユーザー名を入力すると、パスワードを入力するように求められます。</span><span class="sxs-lookup"><span data-stu-id="1b588-273">If you type a user name, you're prompted to enter the password.</span></span>
+<span data-ttu-id="d063b-272">**User01** や **domain01\user01」** などのユーザー名を入力するか、コマンドレットによって生成される **PSCredential** オブジェクトを入力し `Get-Credential` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-272">Type a user name, such as **User01** or **Domain01\User01** , or enter a **PSCredential** object generated by the `Get-Credential` cmdlet.</span></span> <span data-ttu-id="d063b-273">ユーザー名を入力すると、パスワードを入力するように求められます。</span><span class="sxs-lookup"><span data-stu-id="d063b-273">If you type a user name, you're prompted to enter the password.</span></span>
 
-<span data-ttu-id="1b588-274">資格情報は [PSCredential](/dotnet/api/system.management.automation.pscredential) オブジェクトに格納され、パスワードは [SecureString](/dotnet/api/system.security.securestring)として格納されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-274">Credentials are stored in a [PSCredential](/dotnet/api/system.management.automation.pscredential) object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).</span></span>
+<span data-ttu-id="d063b-274">資格情報は [PSCredential](/dotnet/api/system.management.automation.pscredential) オブジェクトに格納され、パスワードは [SecureString](/dotnet/api/system.security.securestring)として格納されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-274">Credentials are stored in a [PSCredential](/dotnet/api/system.management.automation.pscredential) object and the password is stored as a [SecureString](/dotnet/api/system.security.securestring).</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="1b588-275">**SecureString** data protection の詳細については、「 [How To secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1b588-275">For more information about **SecureString** data protection, see [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).</span></span>
+> <span data-ttu-id="d063b-275">**SecureString** data protection の詳細については、「 [How To secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d063b-275">For more information about **SecureString** data protection, see [How secure is SecureString?](/dotnet/api/system.security.securestring#how-secure-is-securestring).</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -517,11 +517,11 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-276">-Id</span><span class="sxs-lookup"><span data-stu-id="1b588-276">-Id</span></span>
+### <span data-ttu-id="d063b-276">-Id</span><span class="sxs-lookup"><span data-stu-id="d063b-276">-Id</span></span>
 
-<span data-ttu-id="1b588-277">切断されたセッションの ID を指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-277">Specifies the ID of a disconnected session.</span></span> <span data-ttu-id="1b588-278">**Id** パラメーターは、切断されたセッションが現在のセッションに既に接続されている場合にのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="1b588-278">The **Id** parameter works only when the disconnected session was previously connected to the current session.</span></span>
+<span data-ttu-id="d063b-277">切断されたセッションの ID を指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-277">Specifies the ID of a disconnected session.</span></span> <span data-ttu-id="d063b-278">**Id** パラメーターは、切断されたセッションが現在のセッションに既に接続されている場合にのみ機能します。</span><span class="sxs-lookup"><span data-stu-id="d063b-278">The **Id** parameter works only when the disconnected session was previously connected to the current session.</span></span>
 
-<span data-ttu-id="1b588-279">セッションがローカルコンピューターに格納されているが、現在のセッションに接続されていない場合、このパラメーターは有効ですが、有効ではありません。</span><span class="sxs-lookup"><span data-stu-id="1b588-279">This parameter is valid, but not effective, when the session is stored on the local computer, but wasn't connected to the current session.</span></span>
+<span data-ttu-id="d063b-279">セッションがローカルコンピューターに格納されているが、現在のセッションに接続されていない場合、このパラメーターは有効ですが、有効ではありません。</span><span class="sxs-lookup"><span data-stu-id="d063b-279">This parameter is valid, but not effective, when the session is stored on the local computer, but wasn't connected to the current session.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -535,9 +535,9 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-280">-InstanceId</span><span class="sxs-lookup"><span data-stu-id="1b588-280">-InstanceId</span></span>
+### <span data-ttu-id="d063b-280">-InstanceId</span><span class="sxs-lookup"><span data-stu-id="d063b-280">-InstanceId</span></span>
 
-<span data-ttu-id="1b588-281">切断されたセッションのインスタンス ID を指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-281">Specifies the instance ID of the disconnected session.</span></span> <span data-ttu-id="1b588-282">インスタンス ID は、ローカルコンピューターまたはリモートコンピューター上の **PSSession** を一意に識別する GUID です。</span><span class="sxs-lookup"><span data-stu-id="1b588-282">The instance ID is a GUID that uniquely identifies a **PSSession** on a local or remote computer.</span></span> <span data-ttu-id="1b588-283">インスタンス ID は、 **PSSession** の **InstanceID** プロパティに格納されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-283">The instance ID is stored in the **InstanceID** property of the **PSSession**.</span></span>
+<span data-ttu-id="d063b-281">切断されたセッションのインスタンス ID を指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-281">Specifies the instance ID of the disconnected session.</span></span> <span data-ttu-id="d063b-282">インスタンス ID は、ローカルコンピューターまたはリモートコンピューター上の **PSSession** を一意に識別する GUID です。</span><span class="sxs-lookup"><span data-stu-id="d063b-282">The instance ID is a GUID that uniquely identifies a **PSSession** on a local or remote computer.</span></span> <span data-ttu-id="d063b-283">インスタンス ID は、 **PSSession** の **InstanceID** プロパティに格納されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-283">The instance ID is stored in the **InstanceID** property of the **PSSession**.</span></span>
 
 ```yaml
 Type: System.Guid
@@ -551,17 +551,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-284">-JobName</span><span class="sxs-lookup"><span data-stu-id="1b588-284">-JobName</span></span>
+### <span data-ttu-id="d063b-284">-JobName</span><span class="sxs-lookup"><span data-stu-id="d063b-284">-JobName</span></span>
 
-<span data-ttu-id="1b588-285">が返すジョブのフレンドリ名を指定し `Receive-PSSession` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-285">Specifies a friendly name for the job that `Receive-PSSession` returns.</span></span>
+<span data-ttu-id="d063b-285">が返すジョブのフレンドリ名を指定し `Receive-PSSession` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-285">Specifies a friendly name for the job that `Receive-PSSession` returns.</span></span>
 
-<span data-ttu-id="1b588-286">`Receive-PSSession`**Outtarget** パラメーターの値が job の場合、または切断されたセッションで実行されているジョブが現在のセッションで開始された場合に、ジョブを返します。</span><span class="sxs-lookup"><span data-stu-id="1b588-286">`Receive-PSSession` returns a job when the value of the **OutTarget** parameter is Job or the job that's running in the disconnected session was started in the current session.</span></span>
+<span data-ttu-id="d063b-286">`Receive-PSSession`**Outtarget** パラメーターの値が job の場合、または切断されたセッションで実行されているジョブが現在のセッションで開始された場合に、ジョブを返します。</span><span class="sxs-lookup"><span data-stu-id="d063b-286">`Receive-PSSession` returns a job when the value of the **OutTarget** parameter is Job or the job that's running in the disconnected session was started in the current session.</span></span>
 
-<span data-ttu-id="1b588-287">切断されたセッションで実行されているジョブが現在のセッションで開始された場合、PowerShell は、セッションの元のジョブオブジェクトを再利用し、 **JobName** パラメーターの値を無視します。</span><span class="sxs-lookup"><span data-stu-id="1b588-287">If the job that's running in the disconnected session was started in the current session, PowerShell reuses the original job object in the session and ignores the value of the **JobName** parameter.</span></span>
+<span data-ttu-id="d063b-287">切断されたセッションで実行されているジョブが現在のセッションで開始された場合、PowerShell は、セッションの元のジョブオブジェクトを再利用し、 **JobName** パラメーターの値を無視します。</span><span class="sxs-lookup"><span data-stu-id="d063b-287">If the job that's running in the disconnected session was started in the current session, PowerShell reuses the original job object in the session and ignores the value of the **JobName** parameter.</span></span>
 
-<span data-ttu-id="1b588-288">切断されたセッションで実行されているジョブが別のセッションで開始された場合は、PowerShell によって新しいジョブオブジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-288">If the job that's running in the disconnected session was started in a different session, PowerShell creates a new job object.</span></span> <span data-ttu-id="1b588-289">通常は既定の名前を使用ますが、このパラメータを使用して名前を変更することもできます。</span><span class="sxs-lookup"><span data-stu-id="1b588-289">It uses a default name, but you can use this parameter to change the name.</span></span>
+<span data-ttu-id="d063b-288">切断されたセッションで実行されているジョブが別のセッションで開始された場合は、PowerShell によって新しいジョブオブジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-288">If the job that's running in the disconnected session was started in a different session, PowerShell creates a new job object.</span></span> <span data-ttu-id="d063b-289">通常は既定の名前を使用ますが、このパラメータを使用して名前を変更することもできます。</span><span class="sxs-lookup"><span data-stu-id="d063b-289">It uses a default name, but you can use this parameter to change the name.</span></span>
 
-<span data-ttu-id="1b588-290">**Outtarget** パラメーターの既定値または明示的な値が Job でない場合、コマンドは成功しますが、 **JobName** パラメーターを指定しても効果はありません。</span><span class="sxs-lookup"><span data-stu-id="1b588-290">If the default value or explicit value of the **OutTarget** parameter isn't Job, the command succeeds, but the **JobName** parameter has no effect.</span></span>
+<span data-ttu-id="d063b-290">**Outtarget** パラメーターの既定値または明示的な値が Job でない場合、コマンドは成功しますが、 **JobName** パラメーターを指定しても効果はありません。</span><span class="sxs-lookup"><span data-stu-id="d063b-290">If the default value or explicit value of the **OutTarget** parameter isn't Job, the command succeeds, but the **JobName** parameter has no effect.</span></span>
 
 ```yaml
 Type: System.String
@@ -575,9 +575,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-291">-Name</span><span class="sxs-lookup"><span data-stu-id="1b588-291">-Name</span></span>
+### <span data-ttu-id="d063b-291">-Name</span><span class="sxs-lookup"><span data-stu-id="d063b-291">-Name</span></span>
 
-<span data-ttu-id="1b588-292">切断されたセッションのフレンドリ名を指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-292">Specifies the friendly name of the disconnected session.</span></span>
+<span data-ttu-id="d063b-292">切断されたセッションのフレンドリ名を指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-292">Specifies the friendly name of the disconnected session.</span></span>
 
 ```yaml
 Type: System.String
@@ -591,16 +591,16 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-293">-OutTarget</span><span class="sxs-lookup"><span data-stu-id="1b588-293">-OutTarget</span></span>
+### <span data-ttu-id="d063b-293">-OutTarget</span><span class="sxs-lookup"><span data-stu-id="d063b-293">-OutTarget</span></span>
 
-<span data-ttu-id="1b588-294">セッションの結果を返す方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-294">Determines how the session results are returned.</span></span> <span data-ttu-id="1b588-295">このパラメーターの有効値は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="1b588-295">The acceptable values for this parameter are:</span></span>
+<span data-ttu-id="d063b-294">セッションの結果を返す方法を指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-294">Determines how the session results are returned.</span></span> <span data-ttu-id="d063b-295">このパラメーターの有効値は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="d063b-295">The acceptable values for this parameter are:</span></span>
 
-- <span data-ttu-id="1b588-296">**ジョブ** 。</span><span class="sxs-lookup"><span data-stu-id="1b588-296">**Job**.</span></span> <span data-ttu-id="1b588-297">ジョブ オブジェクトで結果を非同期的に返します。</span><span class="sxs-lookup"><span data-stu-id="1b588-297">Returns the results asynchronously in a job object.</span></span> <span data-ttu-id="1b588-298">ジョブに名前を付けたり、名前を変更したりするには、 **JobName** パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="1b588-298">You can use the **JobName** parameter to specify a name or new name for the job.</span></span>
-- <span data-ttu-id="1b588-299">**ホスト** 。</span><span class="sxs-lookup"><span data-stu-id="1b588-299">**Host**.</span></span> <span data-ttu-id="1b588-300">コマンドラインに (同期的に) 結果を返します。</span><span class="sxs-lookup"><span data-stu-id="1b588-300">Returns the results to the command line (synchronously).</span></span> <span data-ttu-id="1b588-301">コマンドを再開しようとしている場合、または結果が多数のオブジェクトで構成される場合には、応答が遅くなる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="1b588-301">If the command is being resumed or the results consist of a large number of objects, the response might be delayed.</span></span>
+- <span data-ttu-id="d063b-296">**ジョブ** 。</span><span class="sxs-lookup"><span data-stu-id="d063b-296">**Job**.</span></span> <span data-ttu-id="d063b-297">ジョブ オブジェクトで結果を非同期的に返します。</span><span class="sxs-lookup"><span data-stu-id="d063b-297">Returns the results asynchronously in a job object.</span></span> <span data-ttu-id="d063b-298">ジョブに名前を付けたり、名前を変更したりするには、 **JobName** パラメーターを使用します。</span><span class="sxs-lookup"><span data-stu-id="d063b-298">You can use the **JobName** parameter to specify a name or new name for the job.</span></span>
+- <span data-ttu-id="d063b-299">**ホスト** 。</span><span class="sxs-lookup"><span data-stu-id="d063b-299">**Host**.</span></span> <span data-ttu-id="d063b-300">コマンドラインに (同期的に) 結果を返します。</span><span class="sxs-lookup"><span data-stu-id="d063b-300">Returns the results to the command line (synchronously).</span></span> <span data-ttu-id="d063b-301">コマンドを再開しようとしている場合、または結果が多数のオブジェクトで構成される場合には、応答が遅くなる可能性があります。</span><span class="sxs-lookup"><span data-stu-id="d063b-301">If the command is being resumed or the results consist of a large number of objects, the response might be delayed.</span></span>
 
-<span data-ttu-id="1b588-302">**Outtarget** パラメーターの既定値は Host です。</span><span class="sxs-lookup"><span data-stu-id="1b588-302">The default value of the **OutTarget** parameter is Host.</span></span> <span data-ttu-id="1b588-303">切断されたセッションで受信しているコマンドが現在のセッションで開始された場合、 **Outtarget** パラメーターの既定値は、コマンドが開始されたフォームです。</span><span class="sxs-lookup"><span data-stu-id="1b588-303">If the command that's being received in a disconnected session was started in the current session, the default value of the **OutTarget** parameter is the form in which the command was started.</span></span> <span data-ttu-id="1b588-304">コマンドがジョブとして開始された場合、既定ではジョブとして返されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-304">If the command was started as a job, by default, it's returned as a job.</span></span> <span data-ttu-id="1b588-305">それ以外の場合は、既定でホストプログラムに返されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-305">Otherwise, it's returned to the host program by default.</span></span>
+<span data-ttu-id="d063b-302">**Outtarget** パラメーターの既定値は Host です。</span><span class="sxs-lookup"><span data-stu-id="d063b-302">The default value of the **OutTarget** parameter is Host.</span></span> <span data-ttu-id="d063b-303">切断されたセッションで受信しているコマンドが現在のセッションで開始された場合、 **Outtarget** パラメーターの既定値は、コマンドが開始されたフォームです。</span><span class="sxs-lookup"><span data-stu-id="d063b-303">If the command that's being received in a disconnected session was started in the current session, the default value of the **OutTarget** parameter is the form in which the command was started.</span></span> <span data-ttu-id="d063b-304">コマンドがジョブとして開始された場合、既定ではジョブとして返されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-304">If the command was started as a job, by default, it's returned as a job.</span></span> <span data-ttu-id="d063b-305">それ以外の場合は、既定でホストプログラムに返されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-305">Otherwise, it's returned to the host program by default.</span></span>
 
-<span data-ttu-id="1b588-306">ホスト プログラムは通常、返されたオブジェクトを直ちにコマンド ラインに返します。ただし、この動作は変更することができます。</span><span class="sxs-lookup"><span data-stu-id="1b588-306">Typically, the host program displays returned objects at the command line without delay, but this behavior can vary.</span></span>
+<span data-ttu-id="d063b-306">ホスト プログラムは通常、返されたオブジェクトを直ちにコマンド ラインに返します。ただし、この動作は変更することができます。</span><span class="sxs-lookup"><span data-stu-id="d063b-306">Typically, the host program displays returned objects at the command line without delay, but this behavior can vary.</span></span>
 
 ```yaml
 Type: Microsoft.PowerShell.Commands.OutTarget
@@ -615,17 +615,17 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-307">-Port</span><span class="sxs-lookup"><span data-stu-id="1b588-307">-Port</span></span>
+### <span data-ttu-id="d063b-307">-Port</span><span class="sxs-lookup"><span data-stu-id="d063b-307">-Port</span></span>
 
-<span data-ttu-id="1b588-308">セッションへの再接続に使用するリモートコンピューターのネットワークポートを指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-308">Specifies the remote computer's network port that's used to reconnect to the session.</span></span> <span data-ttu-id="1b588-309">リモートコンピューターに接続するには、接続が使用するポートでリッスンしている必要があります。</span><span class="sxs-lookup"><span data-stu-id="1b588-309">To connect to a remote computer, it must be listening on the port that the connection uses.</span></span> <span data-ttu-id="1b588-310">既定のポートは5985で、これは HTTP 用の WinRM ポート、および HTTPS 用の WinRM ポートである5986です。</span><span class="sxs-lookup"><span data-stu-id="1b588-310">The default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM port for HTTPS.</span></span>
+<span data-ttu-id="d063b-308">セッションへの再接続に使用するリモートコンピューターのネットワークポートを指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-308">Specifies the remote computer's network port that's used to reconnect to the session.</span></span> <span data-ttu-id="d063b-309">リモートコンピューターに接続するには、接続が使用するポートでリッスンしている必要があります。</span><span class="sxs-lookup"><span data-stu-id="d063b-309">To connect to a remote computer, it must be listening on the port that the connection uses.</span></span> <span data-ttu-id="d063b-310">既定のポートは5985で、これは HTTP 用の WinRM ポート、および HTTPS 用の WinRM ポートである5986です。</span><span class="sxs-lookup"><span data-stu-id="d063b-310">The default ports are 5985, which is the WinRM port for HTTP, and 5986, which is the WinRM port for HTTPS.</span></span>
 
-<span data-ttu-id="1b588-311">代替ポートを使用する前に、そのポートでリッスンするようにリモートコンピューター上の WinRM リスナーを構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="1b588-311">Before using an alternate port, you must configure the WinRM listener on the remote computer to listen on that port.</span></span> <span data-ttu-id="1b588-312">リスナーを構成するには、PowerShell プロンプトで次の2つのコマンドを入力します。</span><span class="sxs-lookup"><span data-stu-id="1b588-312">To configure the listener, type the following two commands at the PowerShell prompt:</span></span>
+<span data-ttu-id="d063b-311">代替ポートを使用する前に、そのポートでリッスンするようにリモートコンピューター上の WinRM リスナーを構成する必要があります。</span><span class="sxs-lookup"><span data-stu-id="d063b-311">Before using an alternate port, you must configure the WinRM listener on the remote computer to listen on that port.</span></span> <span data-ttu-id="d063b-312">リスナーを構成するには、PowerShell プロンプトで次の2つのコマンドを入力します。</span><span class="sxs-lookup"><span data-stu-id="d063b-312">To configure the listener, type the following two commands at the PowerShell prompt:</span></span>
 
 `Remove-Item -Path WSMan:\Localhost\listener\listener* -Recurse`
 
 `New-Item -Path WSMan:\Localhost\listener -Transport http -Address * -Port \<port-number\>`
 
-<span data-ttu-id="1b588-313">必要な場合を除き、 **Port** パラメーターは使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="1b588-313">Don't use the **Port** parameter unless it's necessary.</span></span> <span data-ttu-id="1b588-314">コマンドで設定されたポートは、コマンドを実行するすべてのコンピューターまたはセッションに適用されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-314">The port that's set in the command applies to all computers or sessions on which the command runs.</span></span> <span data-ttu-id="1b588-315">代替ポートの設定によっては、コマンドがすべてのコンピューターで実行されない場合があります。</span><span class="sxs-lookup"><span data-stu-id="1b588-315">An alternate port setting might prevent the command from running on all computers.</span></span>
+<span data-ttu-id="d063b-313">必要な場合を除き、 **Port** パラメーターは使用しないでください。</span><span class="sxs-lookup"><span data-stu-id="d063b-313">Don't use the **Port** parameter unless it's necessary.</span></span> <span data-ttu-id="d063b-314">コマンドで設定されたポートは、コマンドを実行するすべてのコンピューターまたはセッションに適用されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-314">The port that's set in the command applies to all computers or sessions on which the command runs.</span></span> <span data-ttu-id="d063b-315">代替ポートの設定によっては、コマンドがすべてのコンピューターで実行されない場合があります。</span><span class="sxs-lookup"><span data-stu-id="d063b-315">An alternate port setting might prevent the command from running on all computers.</span></span>
 
 ```yaml
 Type: System.Int32
@@ -639,9 +639,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-316">-セッション</span><span class="sxs-lookup"><span data-stu-id="1b588-316">-Session</span></span>
+### <span data-ttu-id="d063b-316">-セッション</span><span class="sxs-lookup"><span data-stu-id="d063b-316">-Session</span></span>
 
-<span data-ttu-id="1b588-317">切断されたセッションを指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-317">Specifies the disconnected session.</span></span> <span data-ttu-id="1b588-318">**Pssession** を含む変数、またはコマンドなどの **pssession** を作成または取得するコマンドを入力し `Get-PSSession` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-318">Enter a variable that contains the **PSSession** or a command that creates or gets the **PSSession** , such as a `Get-PSSession` command.</span></span>
+<span data-ttu-id="d063b-317">切断されたセッションを指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-317">Specifies the disconnected session.</span></span> <span data-ttu-id="d063b-318">**Pssession** を含む変数、またはコマンドなどの **pssession** を作成または取得するコマンドを入力し `Get-PSSession` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-318">Enter a variable that contains the **PSSession** or a command that creates or gets the **PSSession** , such as a `Get-PSSession` command.</span></span>
 
 ```yaml
 Type: System.Management.Automation.Runspaces.PSSession
@@ -655,15 +655,15 @@ Accept pipeline input: True (ByPropertyName, ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-319">-SessionOption</span><span class="sxs-lookup"><span data-stu-id="1b588-319">-SessionOption</span></span>
+### <span data-ttu-id="d063b-319">-SessionOption</span><span class="sxs-lookup"><span data-stu-id="d063b-319">-SessionOption</span></span>
 
-<span data-ttu-id="1b588-320">セッションの詳細オプションを指定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-320">Specifies advanced options for the session.</span></span> <span data-ttu-id="1b588-321">コマンドレットを使用して作成する **sessionoption** オブジェクト、 `New-PSSessionOption` またはキーがセッションオプションの名前で、値がセッションオプションの値であるハッシュテーブルを入力します。</span><span class="sxs-lookup"><span data-stu-id="1b588-321">Enter a **SessionOption** object, such as one that you create by using the `New-PSSessionOption` cmdlet, or a hash table in which the keys are session option names and the values are session option values.</span></span>
+<span data-ttu-id="d063b-320">セッションの詳細オプションを指定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-320">Specifies advanced options for the session.</span></span> <span data-ttu-id="d063b-321">コマンドレットを使用して作成する **sessionoption** オブジェクト、 `New-PSSessionOption` またはキーがセッションオプションの名前で、値がセッションオプションの値であるハッシュテーブルを入力します。</span><span class="sxs-lookup"><span data-stu-id="d063b-321">Enter a **SessionOption** object, such as one that you create by using the `New-PSSessionOption` cmdlet, or a hash table in which the keys are session option names and the values are session option values.</span></span>
 
-<span data-ttu-id="1b588-322">オプションの既定値は、設定されている場合は、ユーザー設定変数の値によって決まり `$PSSessionOption` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-322">The default values for the options are determined by the value of the `$PSSessionOption` preference variable, if it's set.</span></span> <span data-ttu-id="1b588-323">それ以外の場合、既定値はセッション構成で設定されたオプションによって決まります。</span><span class="sxs-lookup"><span data-stu-id="1b588-323">Otherwise, the default values are established by options set in the session configuration.</span></span>
+<span data-ttu-id="d063b-322">オプションの既定値は、設定されている場合は、ユーザー設定変数の値によって決まり `$PSSessionOption` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-322">The default values for the options are determined by the value of the `$PSSessionOption` preference variable, if it's set.</span></span> <span data-ttu-id="d063b-323">それ以外の場合、既定値はセッション構成で設定されたオプションによって決まります。</span><span class="sxs-lookup"><span data-stu-id="d063b-323">Otherwise, the default values are established by options set in the session configuration.</span></span>
 
-<span data-ttu-id="1b588-324">セッションオプションの値は、ユーザー設定変数およびセッション構成で設定されたセッションの既定値よりも優先され `$PSSessionOption` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-324">The session option values take precedence over default values for sessions set in the `$PSSessionOption` preference variable and in the session configuration.</span></span> <span data-ttu-id="1b588-325">ただし、セッション構成で設定された最大値、クォータ、または制限よりも優先されるわけではありません。</span><span class="sxs-lookup"><span data-stu-id="1b588-325">However, they don't take precedence over maximum values, quotas, or limits set in the session configuration.</span></span>
+<span data-ttu-id="d063b-324">セッションオプションの値は、ユーザー設定変数およびセッション構成で設定されたセッションの既定値よりも優先され `$PSSessionOption` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-324">The session option values take precedence over default values for sessions set in the `$PSSessionOption` preference variable and in the session configuration.</span></span> <span data-ttu-id="d063b-325">ただし、セッション構成で設定された最大値、クォータ、または制限よりも優先されるわけではありません。</span><span class="sxs-lookup"><span data-stu-id="d063b-325">However, they don't take precedence over maximum values, quotas, or limits set in the session configuration.</span></span>
 
-<span data-ttu-id="1b588-326">既定値を含むセッションオプションの説明については、「」を参照してください `New-PSSessionOption` 。</span><span class="sxs-lookup"><span data-stu-id="1b588-326">For a description of the session options that includes the default values, see `New-PSSessionOption`.</span></span> <span data-ttu-id="1b588-327">**$PSSessionOption** ユーザー設定変数の詳細については、「 [about_Preference_Variables](./About/about_Preference_Variables.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1b588-327">For information about the **$PSSessionOption** preference variable, see [about_Preference_Variables](./About/about_Preference_Variables.md).</span></span> <span data-ttu-id="1b588-328">セッション構成の詳細については、「 [about_Session_Configurations](./About/about_Session_Configurations.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1b588-328">For more information about session configurations, see [about_Session_Configurations](./About/about_Session_Configurations.md).</span></span>
+<span data-ttu-id="d063b-326">既定値を含むセッションオプションの説明については、「」を参照してください `New-PSSessionOption` 。</span><span class="sxs-lookup"><span data-stu-id="d063b-326">For a description of the session options that includes the default values, see `New-PSSessionOption`.</span></span> <span data-ttu-id="d063b-327">**$PSSessionOption** ユーザー設定変数の詳細については、「 [about_Preference_Variables](./About/about_Preference_Variables.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d063b-327">For information about the **$PSSessionOption** preference variable, see [about_Preference_Variables](./About/about_Preference_Variables.md).</span></span> <span data-ttu-id="d063b-328">セッション構成の詳細については、「 [about_Session_Configurations](./About/about_Session_Configurations.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d063b-328">For more information about session configurations, see [about_Session_Configurations](./About/about_Session_Configurations.md).</span></span>
 
 ```yaml
 Type: System.Management.Automation.Remoting.PSSessionOption
@@ -677,13 +677,13 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-329">-UseSSL</span><span class="sxs-lookup"><span data-stu-id="1b588-329">-UseSSL</span></span>
+### <span data-ttu-id="d063b-329">-UseSSL</span><span class="sxs-lookup"><span data-stu-id="d063b-329">-UseSSL</span></span>
 
-<span data-ttu-id="1b588-330">このコマンドレットが、切断されたセッションに接続するために Secure Sockets Layer (SSL) プロトコルを使用することを示します。</span><span class="sxs-lookup"><span data-stu-id="1b588-330">Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to connect to the disconnected session.</span></span> <span data-ttu-id="1b588-331">既定では、SSL は使用されません。</span><span class="sxs-lookup"><span data-stu-id="1b588-331">By default, SSL isn't used.</span></span>
+<span data-ttu-id="d063b-330">このコマンドレットが、切断されたセッションに接続するために Secure Sockets Layer (SSL) プロトコルを使用することを示します。</span><span class="sxs-lookup"><span data-stu-id="d063b-330">Indicates that this cmdlet uses the Secure Sockets Layer (SSL) protocol to connect to the disconnected session.</span></span> <span data-ttu-id="d063b-331">既定では、SSL は使用されません。</span><span class="sxs-lookup"><span data-stu-id="d063b-331">By default, SSL isn't used.</span></span>
 
-<span data-ttu-id="1b588-332">WS-Management は、ネットワーク経由で送信されるすべての PowerShell コンテンツを暗号化します。</span><span class="sxs-lookup"><span data-stu-id="1b588-332">WS-Management encrypts all PowerShell content transmitted over the network.</span></span> <span data-ttu-id="1b588-333">**UseSSL** は、HTTP 接続ではなく HTTPS 接続を使用してデータを送信することによって、セキュリティをさらに高める役割を果たします。</span><span class="sxs-lookup"><span data-stu-id="1b588-333">**UseSSL** is an additional protection that sends the data across an HTTPS connection instead of an HTTP connection.</span></span>
+<span data-ttu-id="d063b-332">WS-Management は、ネットワーク経由で送信されるすべての PowerShell コンテンツを暗号化します。</span><span class="sxs-lookup"><span data-stu-id="d063b-332">WS-Management encrypts all PowerShell content transmitted over the network.</span></span> <span data-ttu-id="d063b-333">**UseSSL** は、HTTP 接続ではなく HTTPS 接続を使用してデータを送信することによって、セキュリティをさらに高める役割を果たします。</span><span class="sxs-lookup"><span data-stu-id="d063b-333">**UseSSL** is an additional protection that sends the data across an HTTPS connection instead of an HTTP connection.</span></span>
 
-<span data-ttu-id="1b588-334">このパラメーターを使用していて、コマンドに使用されているポートで SSL が使用できない場合、コマンドは失敗します。</span><span class="sxs-lookup"><span data-stu-id="1b588-334">If you use this parameter and SSL isn't available on the port that's used for the command, the command fails.</span></span>
+<span data-ttu-id="d063b-334">このパラメーターを使用していて、コマンドに使用されているポートで SSL が使用できない場合、コマンドは失敗します。</span><span class="sxs-lookup"><span data-stu-id="d063b-334">If you use this parameter and SSL isn't available on the port that's used for the command, the command fails.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -697,9 +697,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-335">-Confirm</span><span class="sxs-lookup"><span data-stu-id="1b588-335">-Confirm</span></span>
+### <span data-ttu-id="d063b-335">-Confirm</span><span class="sxs-lookup"><span data-stu-id="d063b-335">-Confirm</span></span>
 
-<span data-ttu-id="1b588-336">コマンドレットの実行前に確認を求めるメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-336">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="d063b-336">コマンドレットの実行前に確認を求めるメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-336">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -713,9 +713,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-337">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="1b588-337">-WhatIf</span></span>
+### <span data-ttu-id="d063b-337">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="d063b-337">-WhatIf</span></span>
 
-<span data-ttu-id="1b588-338">コマンドレットの実行時に発生する内容を示します。</span><span class="sxs-lookup"><span data-stu-id="1b588-338">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="1b588-339">コマンドレットは実行されません。</span><span class="sxs-lookup"><span data-stu-id="1b588-339">The cmdlet isn't run.</span></span>
+<span data-ttu-id="d063b-338">コマンドレットの実行時に発生する内容を示します。</span><span class="sxs-lookup"><span data-stu-id="d063b-338">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="d063b-339">コマンドレットは実行されません。</span><span class="sxs-lookup"><span data-stu-id="d063b-339">The cmdlet isn't run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -729,93 +729,93 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="1b588-340">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="1b588-340">CommonParameters</span></span>
+### <span data-ttu-id="d063b-340">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="d063b-340">CommonParameters</span></span>
 
-<span data-ttu-id="1b588-341">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="1b588-341">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="1b588-342">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1b588-342">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="d063b-341">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="d063b-341">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="d063b-342">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d063b-342">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="1b588-343">入力</span><span class="sxs-lookup"><span data-stu-id="1b588-343">INPUTS</span></span>
+## <span data-ttu-id="d063b-343">入力</span><span class="sxs-lookup"><span data-stu-id="d063b-343">INPUTS</span></span>
 
-### <span data-ttu-id="1b588-344">システム管理. 実行空間</span><span class="sxs-lookup"><span data-stu-id="1b588-344">System.Management.Automation.Runspaces.PSSession</span></span>
+### <span data-ttu-id="d063b-344">システム管理. 実行空間</span><span class="sxs-lookup"><span data-stu-id="d063b-344">System.Management.Automation.Runspaces.PSSession</span></span>
 
-<span data-ttu-id="1b588-345">コマンドレットによって返されるオブジェクトなど、セッションオブジェクトをこのコマンドレットにパイプすることができ `Get-PSSession` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-345">You can pipe session objects to this cmdlet, such as objects returned by the `Get-PSSession` cmdlet.</span></span>
+<span data-ttu-id="d063b-345">コマンドレットによって返されるオブジェクトなど、セッションオブジェクトをこのコマンドレットにパイプすることができ `Get-PSSession` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-345">You can pipe session objects to this cmdlet, such as objects returned by the `Get-PSSession` cmdlet.</span></span>
 
-### <span data-ttu-id="1b588-346">System.Int32</span><span class="sxs-lookup"><span data-stu-id="1b588-346">System.Int32</span></span>
+### <span data-ttu-id="d063b-346">System.Int32</span><span class="sxs-lookup"><span data-stu-id="d063b-346">System.Int32</span></span>
 
-<span data-ttu-id="1b588-347">このコマンドレットには、セッション Id をパイプすることができます。</span><span class="sxs-lookup"><span data-stu-id="1b588-347">You can pipe session Ids to this cmdlet.</span></span>
+<span data-ttu-id="d063b-347">このコマンドレットには、セッション Id をパイプすることができます。</span><span class="sxs-lookup"><span data-stu-id="d063b-347">You can pipe session Ids to this cmdlet.</span></span>
 
-### <span data-ttu-id="1b588-348">System.Guid</span><span class="sxs-lookup"><span data-stu-id="1b588-348">System.Guid</span></span>
+### <span data-ttu-id="d063b-348">System.Guid</span><span class="sxs-lookup"><span data-stu-id="d063b-348">System.Guid</span></span>
 
-<span data-ttu-id="1b588-349">パイプを使用して、このコマンドレットのセッションのインスタンス Id をパイプすることができます。</span><span class="sxs-lookup"><span data-stu-id="1b588-349">You can pipe the instance Ids of sessions this cmdlet.</span></span>
+<span data-ttu-id="d063b-349">パイプを使用して、このコマンドレットのセッションのインスタンス Id をパイプすることができます。</span><span class="sxs-lookup"><span data-stu-id="d063b-349">You can pipe the instance Ids of sessions this cmdlet.</span></span>
 
-### <span data-ttu-id="1b588-350">System.String</span><span class="sxs-lookup"><span data-stu-id="1b588-350">System.String</span></span>
+### <span data-ttu-id="d063b-350">System.String</span><span class="sxs-lookup"><span data-stu-id="d063b-350">System.String</span></span>
 
-<span data-ttu-id="1b588-351">このコマンドレットには、セッション名をパイプすることができます。</span><span class="sxs-lookup"><span data-stu-id="1b588-351">You can pipe session names to this cmdlet.</span></span>
+<span data-ttu-id="d063b-351">このコマンドレットには、セッション名をパイプすることができます。</span><span class="sxs-lookup"><span data-stu-id="d063b-351">You can pipe session names to this cmdlet.</span></span>
 
-## <span data-ttu-id="1b588-352">出力</span><span class="sxs-lookup"><span data-stu-id="1b588-352">OUTPUTS</span></span>
+## <span data-ttu-id="d063b-352">出力</span><span class="sxs-lookup"><span data-stu-id="d063b-352">OUTPUTS</span></span>
 
-### <span data-ttu-id="1b588-353">システム管理. ジョブまたは PSObject</span><span class="sxs-lookup"><span data-stu-id="1b588-353">System.Management.Automation.Job or PSObject</span></span>
+### <span data-ttu-id="d063b-353">システム管理. ジョブまたは PSObject</span><span class="sxs-lookup"><span data-stu-id="d063b-353">System.Management.Automation.Job or PSObject</span></span>
 
-<span data-ttu-id="1b588-354">このコマンドレットは、切断されたセッションで実行されたコマンドの結果を返します (存在する場合)。</span><span class="sxs-lookup"><span data-stu-id="1b588-354">This cmdlet returns the results of commands that ran in the disconnected session, if any.</span></span> <span data-ttu-id="1b588-355">**Outtarget** パラメーターの値または既定値が job の場合、は `Receive-PSSession` ジョブオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="1b588-355">If the value or default value of the **OutTarget** parameter is Job, `Receive-PSSession` returns a job object.</span></span> <span data-ttu-id="1b588-356">それ以外の場合には、コマンドの結果を示すオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="1b588-356">Otherwise, it returns objects that represent that command results.</span></span>
+<span data-ttu-id="d063b-354">このコマンドレットは、切断されたセッションで実行されたコマンドの結果を返します (存在する場合)。</span><span class="sxs-lookup"><span data-stu-id="d063b-354">This cmdlet returns the results of commands that ran in the disconnected session, if any.</span></span> <span data-ttu-id="d063b-355">**Outtarget** パラメーターの値または既定値が job の場合、は `Receive-PSSession` ジョブオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="d063b-355">If the value or default value of the **OutTarget** parameter is Job, `Receive-PSSession` returns a job object.</span></span> <span data-ttu-id="d063b-356">それ以外の場合には、コマンドの結果を示すオブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="d063b-356">Otherwise, it returns objects that represent that command results.</span></span>
 
-## <span data-ttu-id="1b588-357">注</span><span class="sxs-lookup"><span data-stu-id="1b588-357">NOTES</span></span>
+## <span data-ttu-id="d063b-357">注</span><span class="sxs-lookup"><span data-stu-id="d063b-357">NOTES</span></span>
 
-<span data-ttu-id="1b588-358">このコマンドレットは、Windows プラットフォームでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="1b588-358">This cmdlet is only available on Windows platforms.</span></span>
+<span data-ttu-id="d063b-358">このコマンドレットは、Windows プラットフォームでのみ使用できます。</span><span class="sxs-lookup"><span data-stu-id="d063b-358">This cmdlet is only available on Windows platforms.</span></span>
 
-<span data-ttu-id="1b588-359">`Receive-PSSession` 切断されたセッションからのみ結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="1b588-359">`Receive-PSSession` gets results only from sessions that were disconnected.</span></span> <span data-ttu-id="1b588-360">PowerShell 3.0 以降のバージョンを実行しているコンピューターは、接続されている、または終了したセッションのみを切断し、再接続することができます。</span><span class="sxs-lookup"><span data-stu-id="1b588-360">Only sessions that are connected to, or terminate at, computers that run PowerShell 3.0 or later versions can be disconnected and reconnected.</span></span>
+<span data-ttu-id="d063b-359">`Receive-PSSession` 切断されたセッションからのみ結果を取得します。</span><span class="sxs-lookup"><span data-stu-id="d063b-359">`Receive-PSSession` gets results only from sessions that were disconnected.</span></span> <span data-ttu-id="d063b-360">PowerShell 3.0 以降のバージョンを実行しているコンピューターは、接続されている、または終了したセッションのみを切断し、再接続することができます。</span><span class="sxs-lookup"><span data-stu-id="d063b-360">Only sessions that are connected to, or terminate at, computers that run PowerShell 3.0 or later versions can be disconnected and reconnected.</span></span>
 
-<span data-ttu-id="1b588-361">切断されたセッションで実行されていたコマンドが結果を生成しなかった場合、または結果が既に別のセッションに戻されている場合、は `Receive-PSSession` 出力を生成しません。</span><span class="sxs-lookup"><span data-stu-id="1b588-361">If the commands that were running in the disconnected session didn't generate results or if the results were already returned to another session, `Receive-PSSession` doesn't generate any output.</span></span>
+<span data-ttu-id="d063b-361">切断されたセッションで実行されていたコマンドが結果を生成しなかった場合、または結果が既に別のセッションに戻されている場合、は `Receive-PSSession` 出力を生成しません。</span><span class="sxs-lookup"><span data-stu-id="d063b-361">If the commands that were running in the disconnected session didn't generate results or if the results were already returned to another session, `Receive-PSSession` doesn't generate any output.</span></span>
 
-<span data-ttu-id="1b588-362">セッションの出力バッファーモードは、セッションが切断されたときにセッション内のコマンドが出力を管理する方法を決定します。</span><span class="sxs-lookup"><span data-stu-id="1b588-362">A session's output buffering mode determines how commands in the session manage output when the session is disconnected.</span></span> <span data-ttu-id="1b588-363">セッションの **OutputBufferingMode** オプションの値が Drop で、出力バッファーがいっぱいの場合、コマンドは出力の削除を開始します。</span><span class="sxs-lookup"><span data-stu-id="1b588-363">When the value of the **OutputBufferingMode** option of the session is Drop and the output buffer is full, the command starts to delete output.</span></span> <span data-ttu-id="1b588-364">`Receive-PSSession` この出力を回復できません。</span><span class="sxs-lookup"><span data-stu-id="1b588-364">`Receive-PSSession` can't recover this output.</span></span> <span data-ttu-id="1b588-365">出力バッファーモードオプションの詳細については、 [新しい-PSSessionOption](New-PSSessionOption.md) と [new-pstransportoption](New-PSTransportOption.md) コマンドレットのヘルプ記事を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1b588-365">For more information about the output buffering mode option, see the help articles for the [New-PSSessionOption](New-PSSessionOption.md) and [New-PSTransportOption](New-PSTransportOption.md) cmdlets.</span></span>
+<span data-ttu-id="d063b-362">セッションの出力バッファーモードは、セッションが切断されたときにセッション内のコマンドが出力を管理する方法を決定します。</span><span class="sxs-lookup"><span data-stu-id="d063b-362">A session's output buffering mode determines how commands in the session manage output when the session is disconnected.</span></span> <span data-ttu-id="d063b-363">セッションの **OutputBufferingMode** オプションの値が Drop で、出力バッファーがいっぱいの場合、コマンドは出力の削除を開始します。</span><span class="sxs-lookup"><span data-stu-id="d063b-363">When the value of the **OutputBufferingMode** option of the session is Drop and the output buffer is full, the command starts to delete output.</span></span> <span data-ttu-id="d063b-364">`Receive-PSSession` この出力を回復できません。</span><span class="sxs-lookup"><span data-stu-id="d063b-364">`Receive-PSSession` can't recover this output.</span></span> <span data-ttu-id="d063b-365">出力バッファーモードオプションの詳細については、 [新しい-PSSessionOption](New-PSSessionOption.md) と [new-pstransportoption](New-PSTransportOption.md) コマンドレットのヘルプ記事を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d063b-365">For more information about the output buffering mode option, see the help articles for the [New-PSSessionOption](New-PSSessionOption.md) and [New-PSTransportOption](New-PSTransportOption.md) cmdlets.</span></span>
 
-<span data-ttu-id="1b588-366">Pssession に接続するとき **、または** 結果を受信するときに、 **pssession** のアイドルタイムアウト値を変更することはできません。</span><span class="sxs-lookup"><span data-stu-id="1b588-366">You can't change the idle time-out value of a **PSSession** when you connect to the **PSSession** or receive results.</span></span> <span data-ttu-id="1b588-367">の **sessionoption** パラメーターは、 `Receive-PSSession` **IdleTimeout** 値を持つ **sessionoption** オブジェクトを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="1b588-367">The **SessionOption** parameter of `Receive-PSSession` takes a **SessionOption** object that has an **IdleTimeout** value.</span></span> <span data-ttu-id="1b588-368">ただし、 **Sessionoption** オブジェクトの **idletimeout** 値と変数の **idletimeout** 値 `$PSSessionOption` は、 **PSSession** に接続するとき、または結果を受信するときに無視されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-368">However, the **IdleTimeout** value of the **SessionOption** object and the **IdleTimeout** value of the `$PSSessionOption` variable are ignored when it connects to a **PSSession** or receiving results.</span></span>
+<span data-ttu-id="d063b-366">Pssession に接続するとき **、または** 結果を受信するときに、 **pssession** のアイドルタイムアウト値を変更することはできません。</span><span class="sxs-lookup"><span data-stu-id="d063b-366">You can't change the idle time-out value of a **PSSession** when you connect to the **PSSession** or receive results.</span></span> <span data-ttu-id="d063b-367">の **sessionoption** パラメーターは、 `Receive-PSSession` **IdleTimeout** 値を持つ **sessionoption** オブジェクトを受け取ります。</span><span class="sxs-lookup"><span data-stu-id="d063b-367">The **SessionOption** parameter of `Receive-PSSession` takes a **SessionOption** object that has an **IdleTimeout** value.</span></span> <span data-ttu-id="d063b-368">ただし、 **Sessionoption** オブジェクトの **idletimeout** 値と変数の **idletimeout** 値 `$PSSessionOption` は、 **PSSession** に接続するとき、または結果を受信するときに無視されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-368">However, the **IdleTimeout** value of the **SessionOption** object and the **IdleTimeout** value of the `$PSSessionOption` variable are ignored when it connects to a **PSSession** or receiving results.</span></span>
 
-- <span data-ttu-id="1b588-369">**Pssession の作成時、** またはコマンドレットを使用して pssession のアイドルタイムアウト **を設定** および変更したり、 `New-PSSession` `Invoke-Command` **pssession** から切断したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="1b588-369">You can set and change the idle time-out of a **PSSession** when you create the **PSSession** , by using the `New-PSSession` or `Invoke-Command` cmdlets, and when you disconnect from the **PSSession**.</span></span>
-- <span data-ttu-id="1b588-370">**PSSession** の **IdleTimeout** プロパティは、切断されたセッションをリモートコンピューターで保持する期間を決定するため、切断されたセッションにとって重要です。</span><span class="sxs-lookup"><span data-stu-id="1b588-370">The **IdleTimeout** property of a **PSSession** is critical to disconnected sessions because it determines how long a disconnected session is maintained on the remote computer.</span></span> <span data-ttu-id="1b588-371">セッションが切断されると、その時点からアイドル状態であると判断されます。これは、そのセッションでコマンドを実行している場合であっても同じです。</span><span class="sxs-lookup"><span data-stu-id="1b588-371">Disconnected sessions are considered to be idle from the moment that they are disconnected, even if commands are running in the disconnected session.</span></span>
+- <span data-ttu-id="d063b-369">**Pssession の作成時、** またはコマンドレットを使用して pssession のアイドルタイムアウト **を設定** および変更したり、 `New-PSSession` `Invoke-Command` **pssession** から切断したりすることができます。</span><span class="sxs-lookup"><span data-stu-id="d063b-369">You can set and change the idle time-out of a **PSSession** when you create the **PSSession** , by using the `New-PSSession` or `Invoke-Command` cmdlets, and when you disconnect from the **PSSession**.</span></span>
+- <span data-ttu-id="d063b-370">**PSSession** の **IdleTimeout** プロパティは、切断されたセッションをリモートコンピューターで保持する期間を決定するため、切断されたセッションにとって重要です。</span><span class="sxs-lookup"><span data-stu-id="d063b-370">The **IdleTimeout** property of a **PSSession** is critical to disconnected sessions because it determines how long a disconnected session is maintained on the remote computer.</span></span> <span data-ttu-id="d063b-371">セッションが切断されると、その時点からアイドル状態であると判断されます。これは、そのセッションでコマンドを実行している場合であっても同じです。</span><span class="sxs-lookup"><span data-stu-id="d063b-371">Disconnected sessions are considered to be idle from the moment that they are disconnected, even if commands are running in the disconnected session.</span></span>
 
-<span data-ttu-id="1b588-372">コマンドレットの **AsJob** パラメーターを使用してリモートセッションでジョブの開始ジョブを開始すると、ジョブがリモートセッションで実行されている場合で `Invoke-Command` も、現在のセッションでジョブオブジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-372">If you start a start a job in a remote session by using the **AsJob** parameter of the `Invoke-Command` cmdlet, the job object is created in the current session, even though the job runs in the remote session.</span></span> <span data-ttu-id="1b588-373">リモートセッションを切断すると、現在のセッションのジョブオブジェクトがジョブから切断されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-373">If you disconnect the remote session, the job object in the current session is disconnected from the job.</span></span> <span data-ttu-id="1b588-374">ジョブオブジェクトには、返された結果が含まれていますが、切断されたセッションのジョブから新しい結果を受け取ることはありません。</span><span class="sxs-lookup"><span data-stu-id="1b588-374">The job object contains any results that were returned to it, but doesn't receive new results from the job in the disconnected session.</span></span>
+<span data-ttu-id="d063b-372">コマンドレットの **AsJob** パラメーターを使用してリモートセッションでジョブの開始ジョブを開始すると、ジョブがリモートセッションで実行されている場合で `Invoke-Command` も、現在のセッションでジョブオブジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-372">If you start a start a job in a remote session by using the **AsJob** parameter of the `Invoke-Command` cmdlet, the job object is created in the current session, even though the job runs in the remote session.</span></span> <span data-ttu-id="d063b-373">リモートセッションを切断すると、現在のセッションのジョブオブジェクトがジョブから切断されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-373">If you disconnect the remote session, the job object in the current session is disconnected from the job.</span></span> <span data-ttu-id="d063b-374">ジョブオブジェクトには、返された結果が含まれていますが、切断されたセッションのジョブから新しい結果を受け取ることはありません。</span><span class="sxs-lookup"><span data-stu-id="d063b-374">The job object contains any results that were returned to it, but doesn't receive new results from the job in the disconnected session.</span></span>
 
-<span data-ttu-id="1b588-375">実行中のジョブを含むセッションに別のクライアントが接続した場合、元のセッションの元のジョブオブジェクトに配信された結果は、新しく接続されたセッションでは使用できません。</span><span class="sxs-lookup"><span data-stu-id="1b588-375">If a different client connects to the session that contains the running job, the results that were delivered to the original job object in the original session aren't available in the newly connected session.</span></span> <span data-ttu-id="1b588-376">再接続したセッションでは、元のジョブ オブジェクトに配信されなかった結果のみ利用できます。</span><span class="sxs-lookup"><span data-stu-id="1b588-376">Only results that were not delivered to the original job object are available in the reconnected session.</span></span>
+<span data-ttu-id="d063b-375">実行中のジョブを含むセッションに別のクライアントが接続した場合、元のセッションの元のジョブオブジェクトに配信された結果は、新しく接続されたセッションでは使用できません。</span><span class="sxs-lookup"><span data-stu-id="d063b-375">If a different client connects to the session that contains the running job, the results that were delivered to the original job object in the original session aren't available in the newly connected session.</span></span> <span data-ttu-id="d063b-376">再接続したセッションでは、元のジョブ オブジェクトに配信されなかった結果のみ利用できます。</span><span class="sxs-lookup"><span data-stu-id="d063b-376">Only results that were not delivered to the original job object are available in the reconnected session.</span></span>
 
-<span data-ttu-id="1b588-377">同様に、セッションでスクリプトを開始し、セッションから切断した場合、セッションに接続している別のクライアントが切断する前にスクリプトがセッションに配信された結果が返されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-377">Similarly, if you start a script in a session and then disconnect from the session, any results that the script delivers to the session before disconnecting aren't available to another client that connects to the session.</span></span>
+<span data-ttu-id="d063b-377">同様に、セッションでスクリプトを開始し、セッションから切断した場合、セッションに接続している別のクライアントが切断する前にスクリプトがセッションに配信された結果が返されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-377">Similarly, if you start a script in a session and then disconnect from the session, any results that the script delivers to the session before disconnecting aren't available to another client that connects to the session.</span></span>
 
-<span data-ttu-id="1b588-378">切断するセッションでデータが失われないようにするには、コマンドレットの **Indisconnectedsession** パラメーターを使用し `Invoke-Command` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-378">To prevent data loss in sessions that you intend to disconnect, use the **InDisconnectedSession** parameter of the `Invoke-Command` cmdlet.</span></span> <span data-ttu-id="1b588-379">このパラメーターは現在のセッションに結果が返されないようにするものであるため、セッションに再接続した時点で結果がすべて利用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="1b588-379">Because this parameter prevents results from being returned to the current session, all results are available when the session is reconnected.</span></span>
+<span data-ttu-id="d063b-378">切断するセッションでデータが失われないようにするには、コマンドレットの **Indisconnectedsession** パラメーターを使用し `Invoke-Command` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-378">To prevent data loss in sessions that you intend to disconnect, use the **InDisconnectedSession** parameter of the `Invoke-Command` cmdlet.</span></span> <span data-ttu-id="d063b-379">このパラメーターは現在のセッションに結果が返されないようにするものであるため、セッションに再接続した時点で結果がすべて利用できるようになります。</span><span class="sxs-lookup"><span data-stu-id="d063b-379">Because this parameter prevents results from being returned to the current session, all results are available when the session is reconnected.</span></span>
 
-<span data-ttu-id="1b588-380">コマンドレットを使用して `Invoke-Command` リモートセッションでコマンドを実行することで、データの損失を防ぐこともでき `Start-Job` ます。</span><span class="sxs-lookup"><span data-stu-id="1b588-380">You can also prevent data loss by using the `Invoke-Command` cmdlet to run a `Start-Job` command in the remote session.</span></span> <span data-ttu-id="1b588-381">この場合には、リモート セッションでジョブ オブジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-381">In this case, the job object is created in the remote session.</span></span> <span data-ttu-id="1b588-382">コマンドレットを使用し `Receive-PSSession` てジョブの結果を取得することはできません。</span><span class="sxs-lookup"><span data-stu-id="1b588-382">You can't use the `Receive-PSSession` cmdlet to get the job results.</span></span> <span data-ttu-id="1b588-383">代わりに、コマンドレットを使用して `Connect-PSSession` セッションに接続し、コマンドレットを使用して `Invoke-Command` `Receive-Job` セッションでコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="1b588-383">Instead, use the `Connect-PSSession` cmdlet to connect to the session and then use the `Invoke-Command` cmdlet to run a `Receive-Job` command in the session.</span></span>
+<span data-ttu-id="d063b-380">コマンドレットを使用して `Invoke-Command` リモートセッションでコマンドを実行することで、データの損失を防ぐこともでき `Start-Job` ます。</span><span class="sxs-lookup"><span data-stu-id="d063b-380">You can also prevent data loss by using the `Invoke-Command` cmdlet to run a `Start-Job` command in the remote session.</span></span> <span data-ttu-id="d063b-381">この場合には、リモート セッションでジョブ オブジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-381">In this case, the job object is created in the remote session.</span></span> <span data-ttu-id="d063b-382">コマンドレットを使用し `Receive-PSSession` てジョブの結果を取得することはできません。</span><span class="sxs-lookup"><span data-stu-id="d063b-382">You can't use the `Receive-PSSession` cmdlet to get the job results.</span></span> <span data-ttu-id="d063b-383">代わりに、コマンドレットを使用して `Connect-PSSession` セッションに接続し、コマンドレットを使用して `Invoke-Command` `Receive-Job` セッションでコマンドを実行します。</span><span class="sxs-lookup"><span data-stu-id="d063b-383">Instead, use the `Connect-PSSession` cmdlet to connect to the session and then use the `Invoke-Command` cmdlet to run a `Receive-Job` command in the session.</span></span>
 
-<span data-ttu-id="1b588-384">実行中のジョブを含むセッションを切断して再接続すると、元のジョブオブジェクトが再利用されるのは、ジョブが切断されて同じセッションに再接続され、再接続するコマンドで新しいジョブ名が指定されていない場合のみです。</span><span class="sxs-lookup"><span data-stu-id="1b588-384">When a session that contains a running job is disconnected and then reconnected, the original job object is reused only if the job is disconnected and reconnected to the same session, and the command to reconnect doesn't specify a new job name.</span></span> <span data-ttu-id="1b588-385">セッションが別のクライアントセッションに再接続された場合、または新しいジョブ名を指定した場合は、PowerShell によって新しいセッションの新しいジョブオブジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="1b588-385">If the session is reconnected to a different client session or a new job name is specified, PowerShell creates a new job object for the new session.</span></span>
+<span data-ttu-id="d063b-384">実行中のジョブを含むセッションを切断して再接続すると、元のジョブオブジェクトが再利用されるのは、ジョブが切断されて同じセッションに再接続され、再接続するコマンドで新しいジョブ名が指定されていない場合のみです。</span><span class="sxs-lookup"><span data-stu-id="d063b-384">When a session that contains a running job is disconnected and then reconnected, the original job object is reused only if the job is disconnected and reconnected to the same session, and the command to reconnect doesn't specify a new job name.</span></span> <span data-ttu-id="d063b-385">セッションが別のクライアントセッションに再接続された場合、または新しいジョブ名を指定した場合は、PowerShell によって新しいセッションの新しいジョブオブジェクトが作成されます。</span><span class="sxs-lookup"><span data-stu-id="d063b-385">If the session is reconnected to a different client session or a new job name is specified, PowerShell creates a new job object for the new session.</span></span>
 
-<span data-ttu-id="1b588-386">**PSSession** を切断すると、セッション状態は Disconnected になり、可用性は None になります。</span><span class="sxs-lookup"><span data-stu-id="1b588-386">When you disconnect a **PSSession** , the session state is Disconnected and the availability is None.</span></span>
+<span data-ttu-id="d063b-386">**PSSession** を切断すると、セッション状態は Disconnected になり、可用性は None になります。</span><span class="sxs-lookup"><span data-stu-id="d063b-386">When you disconnect a **PSSession** , the session state is Disconnected and the availability is None.</span></span>
 
-- <span data-ttu-id="1b588-387">**State** プロパティの値は、現在のセッションに関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="1b588-387">The value of the **State** property is relative to the current session.</span></span> <span data-ttu-id="1b588-388">値が Disconnected の場合は、 **PSSession** が現在のセッションに接続されていないことを示します。</span><span class="sxs-lookup"><span data-stu-id="1b588-388">A value of Disconnected means that the **PSSession** isn't connected to the current session.</span></span> <span data-ttu-id="1b588-389">ただし、 **PSSession** がすべてのセッションから切断されているわけではありません。</span><span class="sxs-lookup"><span data-stu-id="1b588-389">However, it doesn't mean that the **PSSession** is disconnected from all sessions.</span></span> <span data-ttu-id="1b588-390">別のセッションに接続されている可能性があるためです。</span><span class="sxs-lookup"><span data-stu-id="1b588-390">It might be connected to a different session.</span></span>
-  <span data-ttu-id="1b588-391">セッションに接続または再接続できるかどうかを確認するには、 **Availability** プロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="1b588-391">To determine whether you can connect or reconnect to the session, use the **Availability** property.</span></span>
-- <span data-ttu-id="1b588-392">**Availability** の値が None の場合は、セッションに接続できることを示します。</span><span class="sxs-lookup"><span data-stu-id="1b588-392">An **Availability** value of None indicates that you can connect to the session.</span></span> <span data-ttu-id="1b588-393">値が Busy の場合は、PSSession が別のセッションに接続されているため、 **PSSession** に接続できないことを示します。</span><span class="sxs-lookup"><span data-stu-id="1b588-393">A value of Busy indicates that you can't connect to the **PSSession** because it's connected to another session.</span></span>
-- <span data-ttu-id="1b588-394">セッションの **State** プロパティの値の詳細については、MSDN ライブラリの「 [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate) 」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1b588-394">For more information about the values of the **State** property of sessions, see [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate) in the MSDN library.</span></span>
-- <span data-ttu-id="1b588-395">セッションの **Availability** プロパティの値の詳細については、「 [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1b588-395">For more information about the values of the **Availability** property of sessions, see [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).</span></span>
+- <span data-ttu-id="d063b-387">**State** プロパティの値は、現在のセッションに関連付けられています。</span><span class="sxs-lookup"><span data-stu-id="d063b-387">The value of the **State** property is relative to the current session.</span></span> <span data-ttu-id="d063b-388">値が Disconnected の場合は、 **PSSession** が現在のセッションに接続されていないことを示します。</span><span class="sxs-lookup"><span data-stu-id="d063b-388">A value of Disconnected means that the **PSSession** isn't connected to the current session.</span></span> <span data-ttu-id="d063b-389">ただし、 **PSSession** がすべてのセッションから切断されているわけではありません。</span><span class="sxs-lookup"><span data-stu-id="d063b-389">However, it doesn't mean that the **PSSession** is disconnected from all sessions.</span></span> <span data-ttu-id="d063b-390">別のセッションに接続されている可能性があるためです。</span><span class="sxs-lookup"><span data-stu-id="d063b-390">It might be connected to a different session.</span></span>
+  <span data-ttu-id="d063b-391">セッションに接続または再接続できるかどうかを確認するには、 **Availability** プロパティを使用します。</span><span class="sxs-lookup"><span data-stu-id="d063b-391">To determine whether you can connect or reconnect to the session, use the **Availability** property.</span></span>
+- <span data-ttu-id="d063b-392">**Availability** の値が None の場合は、セッションに接続できることを示します。</span><span class="sxs-lookup"><span data-stu-id="d063b-392">An **Availability** value of None indicates that you can connect to the session.</span></span> <span data-ttu-id="d063b-393">値が Busy の場合は、PSSession が別のセッションに接続されているため、 **PSSession** に接続できないことを示します。</span><span class="sxs-lookup"><span data-stu-id="d063b-393">A value of Busy indicates that you can't connect to the **PSSession** because it's connected to another session.</span></span>
+- <span data-ttu-id="d063b-394">セッションの **State** プロパティの値の詳細については、「 [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d063b-394">For more information about the values of the **State** property of sessions, see [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate).</span></span>
+- <span data-ttu-id="d063b-395">セッションの **Availability** プロパティの値の詳細については、「 [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="d063b-395">For more information about the values of the **Availability** property of sessions, see [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability).</span></span>
 
-## <span data-ttu-id="1b588-396">関連リンク</span><span class="sxs-lookup"><span data-stu-id="1b588-396">RELATED LINKS</span></span>
+## <span data-ttu-id="d063b-396">関連リンク</span><span class="sxs-lookup"><span data-stu-id="d063b-396">RELATED LINKS</span></span>
 
-[<span data-ttu-id="1b588-397">about_PSSessions</span><span class="sxs-lookup"><span data-stu-id="1b588-397">about_PSSessions</span></span>](./About/about_PSSessions.md)
+[<span data-ttu-id="d063b-397">about_PSSessions</span><span class="sxs-lookup"><span data-stu-id="d063b-397">about_PSSessions</span></span>](./About/about_PSSessions.md)
 
-[<span data-ttu-id="1b588-398">about_Remote</span><span class="sxs-lookup"><span data-stu-id="1b588-398">about_Remote</span></span>](./About/about_Remote.md)
+[<span data-ttu-id="d063b-398">about_Remote</span><span class="sxs-lookup"><span data-stu-id="d063b-398">about_Remote</span></span>](./About/about_Remote.md)
 
-[<span data-ttu-id="1b588-399">about_Remote_Disconnected_Sessions</span><span class="sxs-lookup"><span data-stu-id="1b588-399">about_Remote_Disconnected_Sessions</span></span>](./About/about_Remote_Disconnected_Sessions.md)
+[<span data-ttu-id="d063b-399">about_Remote_Disconnected_Sessions</span><span class="sxs-lookup"><span data-stu-id="d063b-399">about_Remote_Disconnected_Sessions</span></span>](./About/about_Remote_Disconnected_Sessions.md)
 
-[<span data-ttu-id="1b588-400">about_Session_Configurations</span><span class="sxs-lookup"><span data-stu-id="1b588-400">about_Session_Configurations</span></span>](./About/about_Session_Configurations.md)
+[<span data-ttu-id="d063b-400">about_Session_Configurations</span><span class="sxs-lookup"><span data-stu-id="d063b-400">about_Session_Configurations</span></span>](./About/about_Session_Configurations.md)
 
-[<span data-ttu-id="1b588-401">Connect-PSSession</span><span class="sxs-lookup"><span data-stu-id="1b588-401">Connect-PSSession</span></span>](Connect-PSSession.md)
+[<span data-ttu-id="d063b-401">Connect-PSSession</span><span class="sxs-lookup"><span data-stu-id="d063b-401">Connect-PSSession</span></span>](Connect-PSSession.md)
 
-[<span data-ttu-id="1b588-402">Enter-PSSession</span><span class="sxs-lookup"><span data-stu-id="1b588-402">Enter-PSSession</span></span>](Enter-PSSession.md)
+[<span data-ttu-id="d063b-402">Enter-PSSession</span><span class="sxs-lookup"><span data-stu-id="d063b-402">Enter-PSSession</span></span>](Enter-PSSession.md)
 
-[<span data-ttu-id="1b588-403">Exit-PSSession</span><span class="sxs-lookup"><span data-stu-id="1b588-403">Exit-PSSession</span></span>](Exit-PSSession.md)
+[<span data-ttu-id="d063b-403">Exit-PSSession</span><span class="sxs-lookup"><span data-stu-id="d063b-403">Exit-PSSession</span></span>](Exit-PSSession.md)
 
-[<span data-ttu-id="1b588-404">Get-PSSession</span><span class="sxs-lookup"><span data-stu-id="1b588-404">Get-PSSession</span></span>](Get-PSSession.md)
+[<span data-ttu-id="d063b-404">Get-PSSession</span><span class="sxs-lookup"><span data-stu-id="d063b-404">Get-PSSession</span></span>](Get-PSSession.md)
 
-[<span data-ttu-id="1b588-405">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="1b588-405">Invoke-Command</span></span>](Invoke-Command.md)
+[<span data-ttu-id="d063b-405">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="d063b-405">Invoke-Command</span></span>](Invoke-Command.md)
 
-[<span data-ttu-id="1b588-406">New-PSSession</span><span class="sxs-lookup"><span data-stu-id="1b588-406">New-PSSession</span></span>](New-PSSession.md)
+[<span data-ttu-id="d063b-406">New-PSSession</span><span class="sxs-lookup"><span data-stu-id="d063b-406">New-PSSession</span></span>](New-PSSession.md)
 
-[<span data-ttu-id="1b588-407">New-PSSessionOption</span><span class="sxs-lookup"><span data-stu-id="1b588-407">New-PSSessionOption</span></span>](New-PSSessionOption.md)
+[<span data-ttu-id="d063b-407">New-PSSessionOption</span><span class="sxs-lookup"><span data-stu-id="d063b-407">New-PSSessionOption</span></span>](New-PSSessionOption.md)
 
-[<span data-ttu-id="1b588-408">New-PSSessionOption</span><span class="sxs-lookup"><span data-stu-id="1b588-408">New-PSTransportOption</span></span>](New-PSTransportOption.md)
+[<span data-ttu-id="d063b-408">New-PSSessionOption</span><span class="sxs-lookup"><span data-stu-id="d063b-408">New-PSTransportOption</span></span>](New-PSTransportOption.md)
 
-[<span data-ttu-id="1b588-409">Remove-PSSession</span><span class="sxs-lookup"><span data-stu-id="1b588-409">Remove-PSSession</span></span>](Remove-PSSession.md)
+[<span data-ttu-id="d063b-409">Remove-PSSession</span><span class="sxs-lookup"><span data-stu-id="d063b-409">Remove-PSSession</span></span>](Remove-PSSession.md)
