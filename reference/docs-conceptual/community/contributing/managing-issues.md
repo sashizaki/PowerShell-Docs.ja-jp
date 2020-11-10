@@ -1,14 +1,14 @@
 ---
 title: イシューを管理する方法
-description: この記事では、PowerShell-Docs チームがプル要求を管理する方法について説明します。
+description: この記事では、PowerShell-Docs チームがイシューを管理する方法について説明します。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 018200f1a9384f1ea956c9b27a7605db21f2da9e
-ms.sourcegitcommit: 17d798a041851382b406ed789097843faf37692d
+ms.openlocfilehash: 56f0ea5b4c5c700db8fdd0b16e3ce1c4040a43dc
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 05/20/2020
-ms.locfileid: "83692535"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354594"
 ---
 # <a name="how-we-manage-issues"></a>イシューを管理する方法
 
@@ -41,7 +41,7 @@ ms.locfileid: "83692535"
 
 #### <a name="milestones"></a>Milestones
 
-イシューと PR は、適切なマイルストーンでタグ付けする必要があります。 イシューが特定のバージョンを対象としていない場合、マイルストーンは使用されません。 PowerShell コード ベースにまだマージされていない変更に関するドキュメント PR のイシューは、**Future** マイルストーンに割り当てる必要があります。 コードの変更がマージされたら、マイルストーンを適切なバージョンに変更します。
+イシューと PR は、適切なマイルストーンでタグ付けする必要があります。 イシューが特定のバージョンを対象としていない場合、マイルストーンは使用されません。 PowerShell コード ベースにまだマージされていない変更に関するドキュメント PR のイシューは、 **Future** マイルストーンに割り当てる必要があります。 コードの変更がマージされたら、マイルストーンを適切なバージョンに変更します。
 
 |    マイルストーン     |                    説明                     |
 | ---------------- | -------------------------------------------------- |

@@ -1,12 +1,14 @@
 ---
-ms.openlocfilehash: f46b14e44c32ce31b4da1a14580fe03564bf9946
-ms.sourcegitcommit: 0e18be0a2869beaa711ba3eca7a8a15514e5e962
+ms.openlocfilehash: d94024926a8ff8c33df08b4a8b58e9f8b0430f9b
+ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91899267"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "93239883"
 ---
 # <a name="microsoft-open-source-code-of-conduct"></a>Microsoft オープン ソース倫理規定
+
+> 更新:2020/11/02
 
 このプロジェクトは、「[Microsoft のオープン ソースの倫理規定](https://opensource.microsoft.com/codeofconduct/)」を採用しています。 詳細については[論理規定についてのよくある質問](https://opensource.microsoft.com/codeofconduct/faq/)をご覧ください。また、追加の質問やコメントがある場合は[opencode@microsoft.com](mailto:opencode@microsoft.com)にお問い合わせください。
 
@@ -48,7 +50,7 @@ ms.locfileid: "91899267"
 
 ## <a name="contributing"></a>寄与
 
-このリポジトリへの公開投稿は、_ステージング_ ブランチへの [pull request](https://help.github.com/articles/using-pull-requests/) から行ってください。
+このリポジトリへの公開投稿は、 _ステージング_ ブランチへの [pull request](https://help.github.com/articles/using-pull-requests/) から行ってください。
 pull request が受け入れられるには、[貢献者使用許諾契約書](https://cla.microsoft.com/)に署名する必要があります。 これは 1 回限りの要件です。
 
 投稿の詳細については、[共同作成者ガイド](https://aka.ms/PSDocsContributor)を参照してください。 共同作成者ガイドには、ドキュメント、お勧めのツール、スタイルや書式設定に関する要求を投稿する方法についての詳細情報が記載されています。 異なるバージョン間で一貫性のあるドキュメントを保つため、問題と Pull Request のテンプレートを使用してください。

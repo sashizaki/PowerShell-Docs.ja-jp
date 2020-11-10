@@ -1,14 +1,14 @@
 ---
 title: PowerShell ドキュメントへの投稿
-description: この記事では、PowerShell ドキュメントの共同作成者として作業を開始する方法の概要を説明します。
+description: この記事では、PowerShell ドキュメントに投稿するために必要な手順について説明します。
 ms.date: 03/05/2020
 ms.topic: conceptual
-ms.openlocfilehash: 3ea08c3acf4a31cbb7262aac57bf28b75388275d
-ms.sourcegitcommit: b0488ca6557501184f20c8343b0ed5147b09e3fe
+ms.openlocfilehash: 255b74a75b8412ed509f6da930eb722d54233711
+ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/09/2020
-ms.locfileid: "86158158"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "93354406"
 ---
 # <a name="contributing-to-powershell-documentation"></a>PowerShell ドキュメントへの投稿
 

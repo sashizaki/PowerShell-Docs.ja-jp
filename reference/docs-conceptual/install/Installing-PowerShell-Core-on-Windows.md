@@ -2,12 +2,12 @@
 title: Windows への PowerShell のインストール
 description: Windows への PowerShell のインストールに関する情報
 ms.date: 10/30/2020
-ms.openlocfilehash: 1b341b496cef34a2a98afeac9d24f0a51e8dbda0
-ms.sourcegitcommit: 196c7f8cd24560cac70c88acc89909f17a86aea9
+ms.openlocfilehash: 825c9066d0a4e4734b9255514520b32f0876ecea
+ms.sourcegitcommit: 109ff625773389be56e98e994b7e56146f2b9d93
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/31/2020
-ms.locfileid: "93142788"
+ms.lasthandoff: 11/04/2020
+ms.locfileid: "93296370"
 ---
 # <a name="installing-powershell-on-windows"></a>Windows への PowerShell のインストール
 
@@ -24,7 +24,7 @@ WSMan を介して PowerShell のリモート処理を有効にするには、�
 
 ## <a name="download-the-installer-package"></a>インストーラー パッケージをダウンロードする
 
-Windows に PowerShell をインストールするには、GitHub の[リリース][releases] ページからインストール パッケージをダウンロードします。 リリース ページの **[Assets]** セクションまで下にスクロールします。 **[Assets]** セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
+Windows に PowerShell をインストールするには、[最新][]のインストール パッケージを GitHub からダウンロードします。 最新のプレビュー バージョンは、[[リリース]][] ページでも確認できます。 リリース ページの **[Assets]** セクションまで下にスクロールします。 **[Assets]** セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
 
 ## <a name="installing-the-msi-package"></a><a id="msi" />MSI パッケージのインストール
 
@@ -83,7 +83,7 @@ PowerShell 7.1 以降では、MSI パッケージによって、インストー�
 > [!NOTE]
 > 現時点では、MSIX パッケージは公式にサポートされていません。 私たちは引き続き、内部テストのみを目的としてパッケージをビルドします。
 
-Windows 10 クライアントに MSIX パッケージを手動でインストールするには、Microsoft の GitHub [リリース][releases] ページから MSIX パッケージをダウンロードしてください。 インストールしたいリリースの **[Assets]** セクションまでスクロールダウンします。 [Assets] セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
+Windows 10 クライアントに MSIX パッケージを手動でインストールするには、Microsoft の GitHub [リリース][リリース] ページから MSIX パッケージをダウンロードしてください。 インストールしたいリリースの **[Assets]** セクションまでスクロールダウンします。 [Assets] セクションは折りたたまれている場合があります。その場合は、クリックして展開する必要があります。
 
 MSIX ファイルは、`PowerShell-<version>-win-<os-arch>.msix` のようになります。
 
@@ -95,7 +95,7 @@ Add-AppxPackage PowerShell-<version>-win-<os-arch>.msix
 
 ## <a name="installing-the-zip-package"></a><a id="zip" />ZIP パッケージのインストール
 
-PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 [リリース][releases] ページから、次のいずれかの ZIP アーカイブをダウンロードします。
+PowerShell バイナリ ZIP アーカイブは、高度な展開シナリオ用に用意されています。 [リリース][リリース] ページから、次のいずれかの ZIP アーカイブをダウンロードします。
 
 - PowerShell-7.0.3-win-x64.zip
 - PowerShell-7.0.3-win-x86.zip
@@ -263,11 +263,12 @@ PowerShell では、WSMan と SSH の両方について PowerShell Remoting Prot
 
 ## <a name="installation-support"></a>インストールのサポート
 
-Microsoft は、このドキュメントでインストール方法をサポートしています。 他のソースには、利用可能な別のインストール方法が存在する可能性があります。 そのようなツールと方法は機能しても、Microsoft ではそれらの方法をサポートできません。
+Microsoft は、このドキュメントでインストール方法をサポートしています。 他のソースには、利用可能な別のインストール方法が存在する可能性があります。 そのようなツールや方法が役に立つものであっても、Microsoft は、そのような方法をサポートすることはできません。
 
 <!-- link references -->
 
-[releases]: https://github.com/PowerShell/PowerShell/releases
+[リリース]: https://github.com/PowerShell/PowerShell/releases
+[latest]: https://github.com/PowerShell/PowerShell/releases/latest
 [ssh-remoting]: ../learn/remoting/SSH-Remoting-in-PowerShell-Core.md
 [wsman-remoting]: ../learn/remoting/WSMan-Remoting-in-PowerShell-Core.md
 [AppVeyor]: https://ci.appveyor.com/project/PowerShell/powershell
