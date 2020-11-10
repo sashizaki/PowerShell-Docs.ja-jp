@@ -7,12 +7,12 @@ ms.date: 11/06/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/connect-pssession?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Connect-PSSession
-ms.openlocfilehash: 3d38ac38fb06f3dd414e9549ea4f279e47b2aff8
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 568fee4f17f44e7bbafe17137ff125cadbd2dd96
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94347365"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391053"
 ---
 # Connect-PSSession
 
@@ -27,7 +27,7 @@ ms.locfileid: "94347365"
 Connect-PSSession -Name <String[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
 ```
 
-### Session
+### セッション
 
 ```
 Connect-PSSession [-Session] <PSSession[]> [-ThrottleLimit <Int32>] [-WhatIf] [-Confirm] [<CommonParameters>]
@@ -251,7 +251,7 @@ Accept wildcard characters: False
 切断されたセッションに再接続するためにコマンドでユーザー資格情報を認証するために使用するメカニズムを指定します。 このパラメーターの有効値は、次のとおりです。
 
 - Default
-- 基本
+- Basic
 - Credssp
 - ダイジェスト
 - Kerberos
@@ -260,7 +260,7 @@ Accept wildcard characters: False
 
 既定値は Default です。
 
-このパラメーターの値の詳細については、MSDN ライブラリの「 [Authenticationmechanism 列挙型](https://msdn.microsoft.com/library/system.management.automation.runspaces.authenticationmechanism) 」を参照してください。
+このパラメーターの値の詳細については、「 [Authenticationmechanism 列挙型](/dotnet/api/system.management.automation.runspaces.authenticationmechanism)」を参照してください。
 
 > [!CAUTION]
 > ユーザーの資格情報が認証対象のリモート コンピューターに渡される Credential Security Support Provider (CredSSP) 認証は、リモート ネットワーク共有にアクセスする場合など、複数のリソースの認証を必要とするコマンドを対象としています。 このメカニズムを使用すると、リモート操作のセキュリティ リスクが高まります。 リモート コンピューターのセキュリティが低下している場合は、そのリモート コンピューターに渡される資格情報を使用してネットワーク セッションが制御される場合があります。
@@ -610,9 +610,9 @@ Accept wildcard characters: False
 
   **Availability** の値が None の場合は、セッションに接続できることを示します。 値が Busy の場合は、PSSession が別のセッションに接続されているため、 **PSSession** に接続できないことを示します。
 
-  セッションの **State** プロパティの値の詳細については、MSDN ライブラリの「 [RunspaceState 列挙型](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspacestate) 」を参照してください。
+  セッションの **State** プロパティの値の詳細については、「 [RunspaceState Enumeration](/dotnet/api/system.management.automation.runspaces.runspacestate)」を参照してください。
 
-  セッションの **Availability** プロパティの値の詳細については、MSDN ライブラリの「 [RunspaceAvailability 列挙型](https://msdn.microsoft.com/library/system.management.automation.runspaces.runspaceavailability) 」を参照してください。
+  セッションの **Availability** プロパティの値の詳細については、「 [RunspaceAvailability Enumeration](/dotnet/api/system.management.automation.runspaces.runspaceavailability)」を参照してください。
 
 - Pssession に接続するときに、 **pssession** のアイドルタイムアウト値を変更することはできませ **ん。** の **sessionoption** パラメーターは、 `Connect-PSSession` **IdleTimeout** 値を持つ **sessionoption** オブジェクトを受け取ります。 ただし、PSSession に接続するときは、 **Sessionoption** オブジェクトの **idletimeout** 値と変数の **idletimeout** 値 `$PSSessionOption` は無視さ **PSSession** れます。
 
