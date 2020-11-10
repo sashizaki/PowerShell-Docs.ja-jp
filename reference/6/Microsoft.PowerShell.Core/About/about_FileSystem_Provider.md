@@ -6,16 +6,17 @@ ms.date: 10/18/2018
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_filesystem_provider?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: FileSystem プロバイダー
-ms.openlocfilehash: 24c30e311ba43842e759e884424ce3abfb92aae7
-ms.sourcegitcommit: f874dc1d4236e06a3df195d179f59e0a7d9f8436
+ms.openlocfilehash: 3464dbcbc1a7f357cdbc5368dc7a1e4d21f5ed5e
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "93221664"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387595"
 ---
 # <a name="filesystem-provider"></a>FileSystem プロバイダー
 
 ## <a name="provider-name"></a>プロバイダー名
+
 FileSystem (ファイル システム)
 
 ## <a name="drives"></a>ドライブ
@@ -205,7 +206,7 @@ $e[0]
 Get-Acl -Path test.txt | Format-List -Property *
 ```
 
-このオブジェクトの詳細については、コマンドを [Get Member](xref:Microsoft.PowerShell.Utility.Get-Member) コマンドレットにパイプ処理してください。 または、MSDN (Microsoft Developer Network) ライブラリの「[System.security.accesscontrol.filesecurity](/dotnet/api/system.security.accesscontrol.filesecurity) クラス」を参照してください。
+このオブジェクトの詳細については、コマンドを [Get Member](xref:Microsoft.PowerShell.Utility.Get-Member) コマンドレットにパイプ処理してください。 または、「 [System.security.accesscontrol.filesecurity](/dotnet/api/system.security.accesscontrol.filesecurity) クラス」を参照してください。
 
 ### <a name="modify-the-acl-for-a-file"></a>ファイルの ACL を変更する
 

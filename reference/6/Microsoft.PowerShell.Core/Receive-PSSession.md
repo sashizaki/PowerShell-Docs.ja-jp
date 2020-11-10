@@ -7,12 +7,12 @@ ms.date: 12/11/2019
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/receive-pssession?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Receive-PSSession
-ms.openlocfilehash: d40c6074c792ed8d5e094a3e9c1b3784a1c7670d
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: 3572d95724158b0ad4462d76d8d2aceb75d2fa18
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94345461"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94387279"
 ---
 # Receive-PSSession
 
@@ -372,7 +372,7 @@ Accept wildcard characters: False
 切断されたセッションに再接続するためにコマンドでユーザー資格情報を認証するために使用するメカニズムを指定します。 このパラメーターの有効値は、次のとおりです。
 
 - Default
-- 基本
+- Basic
 - Credssp
 - ダイジェスト
 - Kerberos
@@ -789,7 +789,7 @@ Pssession に接続するとき **、または** 結果を受信するときに�
 - **State** プロパティの値は、現在のセッションに関連付けられています。 値が Disconnected の場合は、 **PSSession** が現在のセッションに接続されていないことを示します。 ただし、 **PSSession** がすべてのセッションから切断されているわけではありません。 別のセッションに接続されている可能性があるためです。
   セッションに接続または再接続できるかどうかを確認するには、 **Availability** プロパティを使用します。
 - **Availability** の値が None の場合は、セッションに接続できることを示します。 値が Busy の場合は、PSSession が別のセッションに接続されているため、 **PSSession** に接続できないことを示します。
-- セッションの **State** プロパティの値の詳細については、MSDN ライブラリの「 [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate) 」を参照してください。
+- セッションの **State** プロパティの値の詳細については、「 [RunspaceState](/dotnet/api/system.management.automation.runspaces.runspacestate)」を参照してください。
 - セッションの **Availability** プロパティの値の詳細については、「 [RunspaceAvailability](/dotnet/api/system.management.automation.runspaces.runspaceavailability)」を参照してください。
 
 ## 関連リンク
