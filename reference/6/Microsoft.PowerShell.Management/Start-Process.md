@@ -3,16 +3,16 @@ external help file: Microsoft.PowerShell.Commands.Management.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Management
-ms.date: 08/03/2020
+ms.date: 11/11/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.management/start-process?view=powershell-6&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Start-Process
-ms.openlocfilehash: a221c6126bbbf22dffb493828f759bcbd4cfe759
-ms.sourcegitcommit: 4fc8cf397cb725ae973751d1d5d542f34f0db2d7
+ms.openlocfilehash: 53c06982abcf980897c049b6f6bd0c159f2eb4b5
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/03/2020
-ms.locfileid: "93219059"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524690"
 ---
 # Start-Process
 
@@ -117,6 +117,19 @@ runasuser
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c dir `"%systemdrive%\program files`""
 Start-Process -FilePath "$env:comspec" -ArgumentList "/c","dir","`"%systemdrive%\program files`""
 ```
+
+### 例 8: デタッチされたプロセスを Linux で作成する
+
+Windows では、は、 `Start-Process` 起動中のシェルとは無関係に実行される独立したプロセスを作成します。 Windows 以外のプラットフォームでは、新しく起動されたプロセスは、を起動したシェルにアタッチされます。 起動中のシェルを閉じると、子プロセスは終了します。
+
+Unix のようなプラットフォームで子プロセスを終了しないようにするには、とを組み合わせることができ `Start-Process` `nohup` ます。 次の例では、起動中のセッションを閉じた後でも、Linux で PowerShell のバックグラウンドインスタンスを起動して、そのままにします。 コマンドは、 `nohup` 現在のディレクトリ内のファイルの出力を収集し `nohup.out` ます。
+
+```powershell
+# Runs for 2 minutes and appends output to ./nohup.out
+Start-Process nohup 'pwsh -noprofile -c "1..120 | % { Write-Host . -NoNewline; sleep 1 }"'
+```
+
+この例で `Start-Process` は、は、デタッチされ `nohup` `pwsh` たプロセスとして起動する Linux コマンドを実行しています。 詳細については、 [nohup](https://linux.die.net/man/1/nohup)の man ページを参照してください。
 
 ## PARAMETERS
 
