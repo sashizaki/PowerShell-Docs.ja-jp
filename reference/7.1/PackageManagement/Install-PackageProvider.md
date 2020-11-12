@@ -7,21 +7,21 @@ ms.date: 06/09/2017
 online version: https://docs.microsoft.com/powershell/module/packagemanagement/install-packageprovider?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Install-PackageProvider
-ms.openlocfilehash: ed69b50019b3393eeeda42a250d65d4dfb809a51
-ms.sourcegitcommit: 9b28fb9a3d72655bb63f62af18b3a5af6a05cd3f
+ms.openlocfilehash: d68745e467e211279272c30ffd0388d48f1daf11
+ms.sourcegitcommit: aac365f7813756e16b59322832a904e703e0465b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/07/2020
-ms.locfileid: "93215784"
+ms.lasthandoff: 11/12/2020
+ms.locfileid: "94524673"
 ---
-# <span data-ttu-id="a252d-103">Install-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="a252d-103">Install-PackageProvider</span></span>
+# <span data-ttu-id="da99e-103">Install-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="da99e-103">Install-PackageProvider</span></span>
 
-## <span data-ttu-id="a252d-104">概要</span><span class="sxs-lookup"><span data-stu-id="a252d-104">SYNOPSIS</span></span>
-<span data-ttu-id="a252d-105">1つまたは複数の Package Management パッケージプロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-105">Installs one or more Package Management package providers.</span></span>
+## <span data-ttu-id="da99e-104">概要</span><span class="sxs-lookup"><span data-stu-id="da99e-104">SYNOPSIS</span></span>
+<span data-ttu-id="da99e-105">1つまたは複数の Package Management パッケージプロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="da99e-105">Installs one or more Package Management package providers.</span></span>
 
-## <span data-ttu-id="a252d-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="a252d-106">SYNTAX</span></span>
+## <span data-ttu-id="da99e-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="da99e-106">SYNTAX</span></span>
 
-### <span data-ttu-id="a252d-107">PackageBySearch (既定)</span><span class="sxs-lookup"><span data-stu-id="a252d-107">PackageBySearch (Default)</span></span>
+### <span data-ttu-id="da99e-107">PackageBySearch (既定)</span><span class="sxs-lookup"><span data-stu-id="da99e-107">PackageBySearch (Default)</span></span>
 
 ```
 Install-PackageProvider [-Name] <String[]> [-RequiredVersion <String>] [-MinimumVersion <String>]
@@ -30,7 +30,7 @@ Install-PackageProvider [-Name] <String[]> [-RequiredVersion <String>] [-Minimum
  [<CommonParameters>]
 ```
 
-### <span data-ttu-id="a252d-108">PackageByInputObject</span><span class="sxs-lookup"><span data-stu-id="a252d-108">PackageByInputObject</span></span>
+### <span data-ttu-id="da99e-108">PackageByInputObject</span><span class="sxs-lookup"><span data-stu-id="da99e-108">PackageByInputObject</span></span>
 
 ```
 Install-PackageProvider [-Scope <String>] [-InputObject] <SoftwareIdentity[]> [-Proxy <Uri>]
@@ -38,80 +38,65 @@ Install-PackageProvider [-Scope <String>] [-InputObject] <SoftwareIdentity[]> [-
  [<CommonParameters>]
 ```
 
-## <span data-ttu-id="a252d-109">Description</span><span class="sxs-lookup"><span data-stu-id="a252d-109">DESCRIPTION</span></span>
+## <span data-ttu-id="da99e-109">Description</span><span class="sxs-lookup"><span data-stu-id="da99e-109">DESCRIPTION</span></span>
 
-<span data-ttu-id="a252d-110">**Install-PackageProvider** コマンドレットは、 **PowerShellGet** に登録されているパッケージソースで使用できる、一致する Package Management プロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-110">The **Install-PackageProvider** cmdlet installs matching Package Management providers that are available in package sources registered with **PowerShellGet** .</span></span>
-<span data-ttu-id="a252d-111">既定では、 **PackageManagement** タグを持つ PowerShell ギャラリーで利用できるモジュールが含まれます。</span><span class="sxs-lookup"><span data-stu-id="a252d-111">By default, this includes modules available in the PowerShell Gallery with the **PackageManagement** tag.</span></span>
-<span data-ttu-id="a252d-112">**PowerShellGet** Package Management プロバイダーは、これらのリポジトリ内のプロバイダーを検索するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="a252d-112">The **PowerShellGet** Package Management provider is used for finding providers in these repositories.</span></span>
+<span data-ttu-id="da99e-110">`Install-PackageProvider`コマンドレットは、 **PowerShellGet** に登録されているパッケージソースで使用できる、一致する Package Management プロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="da99e-110">The `Install-PackageProvider` cmdlet installs matching Package Management providers that are available in package sources registered with **PowerShellGet**.</span></span> <span data-ttu-id="da99e-111">既定では、 **PackageManagement** タグを持つ Windows PowerShell ギャラリーで使用できるモジュールが含まれます。</span><span class="sxs-lookup"><span data-stu-id="da99e-111">By default, this includes modules available in the Windows PowerShell Gallery with the **PackageManagement** tag.</span></span> <span data-ttu-id="da99e-112">**PowerShellGet** Package Management プロバイダーは、これらのリポジトリ内のプロバイダーを検索するために使用されます。</span><span class="sxs-lookup"><span data-stu-id="da99e-112">The **PowerShellGet** Package Management provider is used for finding providers in these repositories.</span></span>
 
-<span data-ttu-id="a252d-113">このコマンドレットは、Package Management ブートストラップアプリケーションを使用して使用できる一致する Package Management プロバイダーもインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-113">This cmdlet also installs matching Package Management providers that are available using the Package Management bootstrapping application.</span></span>
+<span data-ttu-id="da99e-113">このコマンドレットは、Package Management ブートストラップアプリケーションを使用して使用できる一致する Package Management プロバイダーもインストールします。</span><span class="sxs-lookup"><span data-stu-id="da99e-113">This cmdlet also installs matching Package Management providers that are available using the Package Management bootstrapping application.</span></span>
 
-<span data-ttu-id="a252d-114">このコマンドレットは、Package Management Azure Blob ストアで利用できる一致する Package Management プロバイダーもインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-114">This cmdlet also installs matching Package Management providers that are available in the Package Management Azure Blob store.</span></span>
-<span data-ttu-id="a252d-115">ブートストラッププロバイダーを使用して、それらを検索してインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-115">Use the bootstrapper provider to find and install them.</span></span>
+<span data-ttu-id="da99e-114">このコマンドレットは、Package Management Azure Blob ストアで利用できる一致する Package Management プロバイダーもインストールします。</span><span class="sxs-lookup"><span data-stu-id="da99e-114">This cmdlet also installs matching Package Management providers that are available in the Package Management Azure Blob store.</span></span> <span data-ttu-id="da99e-115">ブートストラッププロバイダーを使用して、それらを検索してインストールします。</span><span class="sxs-lookup"><span data-stu-id="da99e-115">Use the bootstrapper provider to find and install them.</span></span>
 
-<span data-ttu-id="a252d-116">最初に実行するには、PackageManagement が Nuget パッケージプロバイダーをダウンロードするためにインターネット接続を必要とします。</span><span class="sxs-lookup"><span data-stu-id="a252d-116">In order to execute the first time, PackageManagement requires an internet connection to download the Nuget package provider.</span></span>
-<span data-ttu-id="a252d-117">ただし、コンピューターがインターネットに接続されておらず、Nuget または PowerShellGet プロバイダーを使用する必要がある場合は、それらを別のコンピューターにダウンロードして、対象のコンピューターにコピーすることができます。</span><span class="sxs-lookup"><span data-stu-id="a252d-117">However, if your computer does not have an internet connection and you need to use the Nuget or PowerShellGet provider, you can download them on another computer and copy them to your target computer.</span></span>
-<span data-ttu-id="a252d-118">これを行うには、次の手順を使用します。</span><span class="sxs-lookup"><span data-stu-id="a252d-118">Use the following steps to do this:</span></span>
+<span data-ttu-id="da99e-116">最初に実行するには、PackageManagement が NuGet パッケージプロバイダーをダウンロードするためにインターネット接続を必要とします。</span><span class="sxs-lookup"><span data-stu-id="da99e-116">In order to execute the first time, PackageManagement requires an internet connection to download the NuGet package provider.</span></span> <span data-ttu-id="da99e-117">ただし、コンピューターがインターネットに接続されておらず、NuGet または PowerShellGet プロバイダーを使用する必要がある場合は、それらを別のコンピューターにダウンロードして、対象のコンピューターにコピーすることができます。</span><span class="sxs-lookup"><span data-stu-id="da99e-117">However, if your computer does not have an internet connection and you need to use the NuGet or PowerShellGet provider, you can download them on another computer and copy them to your target computer.</span></span> <span data-ttu-id="da99e-118">これを行うには、次の手順を使用します。</span><span class="sxs-lookup"><span data-stu-id="da99e-118">Use the following steps to do this:</span></span>
 
-1.
-<span data-ttu-id="a252d-119">を実行し `Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force` て、インターネットに接続されたコンピューターからプロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-119">Run `Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force` to install the provider from a computer with an internet connection.</span></span>
+1. <span data-ttu-id="da99e-119">を実行し `Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force` て、インターネットに接続されたコンピューターからプロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="da99e-119">Run `Install-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201 -Force` to install the provider from a computer with an internet connection.</span></span>
+1. <span data-ttu-id="da99e-120">インストール後、またはにインストールされているプロバイダーを見つけることができ `$env:ProgramFiles\PackageManagement\ReferenceAssemblies\<ProviderName>\<ProviderVersion>` `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\<ProviderName>\<ProviderVersion>` ます。</span><span class="sxs-lookup"><span data-stu-id="da99e-120">After the install, you can find the provider installed in `$env:ProgramFiles\PackageManagement\ReferenceAssemblies\<ProviderName>\<ProviderVersion>` or `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\<ProviderName>\<ProviderVersion>`.</span></span>
+1. <span data-ttu-id="da99e-121">`<ProviderName>`フォルダー (この場合は NuGet フォルダー) を、ターゲットコンピューター上の対応する場所に配置します。</span><span class="sxs-lookup"><span data-stu-id="da99e-121">Place the `<ProviderName>` folder, which in this case is the NuGet folder, in the corresponding location on your target computer.</span></span> <span data-ttu-id="da99e-122">ターゲットコンピューターが Nano server の場合は、 `Install-PackageProvider` Nano server からを実行して、正しい NuGet バイナリをダウンロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="da99e-122">If your target computer is a Nano server, you need to run `Install-PackageProvider` from Nano Server to download the correct NuGet binaries.</span></span>
+1. <span data-ttu-id="da99e-123">PowerShell を再起動して、パッケージプロバイダーを自動読み込みします。</span><span class="sxs-lookup"><span data-stu-id="da99e-123">Restart PowerShell to auto-load the package provider.</span></span> <span data-ttu-id="da99e-124">または、を実行して、 `Get-PackageProvider -ListAvailable` コンピューターで使用可能なすべてのパッケージプロバイダーを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="da99e-124">Alternatively, run `Get-PackageProvider -ListAvailable` to list all the package providers available on the computer.</span></span>
+   <span data-ttu-id="da99e-125">次に、を使用して `Import-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201` 、プロバイダーを現在の Windows PowerShell セッションにインポートします。</span><span class="sxs-lookup"><span data-stu-id="da99e-125">Then use `Import-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201` to import the provider to the current Windows PowerShell session.</span></span>
 
-2.
-<span data-ttu-id="a252d-120">インストール後、またはにインストールされているプロバイダーを見つけることができ `$env:ProgramFiles\PackageManagement\ReferenceAssemblies\\\<ProviderName\>\\\<ProviderVersion\>` `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\\\<ProviderName\>\\\<ProviderVersion\>` ます。</span><span class="sxs-lookup"><span data-stu-id="a252d-120">After the install, you can find the provider installed in `$env:ProgramFiles\PackageManagement\ReferenceAssemblies\\\<ProviderName\>\\\<ProviderVersion\>` or `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies\\\<ProviderName\>\\\<ProviderVersion\>`.</span></span>
+## <span data-ttu-id="da99e-126">例</span><span class="sxs-lookup"><span data-stu-id="da99e-126">EXAMPLES</span></span>
 
-3.
-<span data-ttu-id="a252d-121">\<ProviderName\>フォルダー (この場合は Nuget フォルダー) を、ターゲットコンピューター上の対応する場所に配置します。</span><span class="sxs-lookup"><span data-stu-id="a252d-121">Place the \<ProviderName\> folder, which in this case is the Nuget folder, in the corresponding location on your target computer.</span></span>
-<span data-ttu-id="a252d-122">ターゲットコンピューターが Nano server の場合は、Nano Server から **Install-PackageProvider** を実行して、正しい Nuget バイナリをダウンロードする必要があります。</span><span class="sxs-lookup"><span data-stu-id="a252d-122">If your target computer is a Nano server, you need to run **Install-PackageProvider** from Nano Server to download the correct Nuget binaries.</span></span>
+### <span data-ttu-id="da99e-127">例 1: PowerShell ギャラリーからパッケージプロバイダーをインストールする</span><span class="sxs-lookup"><span data-stu-id="da99e-127">Example 1: Install a package provider from the PowerShell Gallery</span></span>
 
-4.
-<span data-ttu-id="a252d-123">PowerShell を再起動して、パッケージプロバイダーを自動読み込みします。</span><span class="sxs-lookup"><span data-stu-id="a252d-123">Restart PowerShell to auto-load the package provider.</span></span>
-<span data-ttu-id="a252d-124">または、を実行して、 `Get-PackageProvider -ListAvailable` コンピューターで使用可能なすべてのパッケージプロバイダーを一覧表示します。</span><span class="sxs-lookup"><span data-stu-id="a252d-124">Alternatively, run `Get-PackageProvider -ListAvailable` to list all the package providers available on the computer.</span></span>
-<span data-ttu-id="a252d-125">次に、を使用して、 `Import-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201` 現在の PowerShell セッションにプロバイダーをインポートします。</span><span class="sxs-lookup"><span data-stu-id="a252d-125">Then use `Import-PackageProvider -Name NuGet -RequiredVersion 2.8.5.201` to import the provider to the current PowerShell session.</span></span>
+<span data-ttu-id="da99e-128">このコマンドにより、PowerShell ギャラリーから GistProvider パッケージプロバイダーがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="da99e-128">This command installs the GistProvider package provider from the PowerShell Gallery.</span></span>
 
-## <span data-ttu-id="a252d-126">例</span><span class="sxs-lookup"><span data-stu-id="a252d-126">EXAMPLES</span></span>
-
-### <span data-ttu-id="a252d-127">例 1: PowerShell ギャラリーからパッケージプロバイダーをインストールする</span><span class="sxs-lookup"><span data-stu-id="a252d-127">Example 1: Install a package provider from the PowerShell Gallery</span></span>
-
-```
-PS C:\> Install-PackageProvider -Name "Gistprovider" -Verbose
+```powershell
+Install-PackageProvider -Name "GistProvider" -Verbose
 ```
 
-<span data-ttu-id="a252d-128">このコマンドは、PowerShell ギャラリーから Gistprovider をインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-128">This command installs the Gistprovider from the PowerShell Gallery.</span></span>
+### <span data-ttu-id="da99e-129">例 2: 指定したバージョンのパッケージプロバイダーをインストールする</span><span class="sxs-lookup"><span data-stu-id="da99e-129">Example 2: Install a specified version of a package provider</span></span>
 
-### <span data-ttu-id="a252d-129">例 2: 指定したバージョンのパッケージプロバイダーをインストールする</span><span class="sxs-lookup"><span data-stu-id="a252d-129">Example 2: Install a specified version of a package provider</span></span>
+<span data-ttu-id="da99e-130">この例では、指定されたバージョンの NuGet パッケージプロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="da99e-130">This example installs a specified version of the NuGet package provider.</span></span>
 
-```
-PS C:\> Find-PackageProvider -Name "Nuget" -AllVersions
-PS C:\> Install-PackageProvider -Name "Nuget" -RequiredVersion "2.8.5.216" -Force
-```
+<span data-ttu-id="da99e-131">最初のコマンドは、NuGet という名前のパッケージプロバイダーのすべてのバージョンを検索します。</span><span class="sxs-lookup"><span data-stu-id="da99e-131">The first command finds all versions of the package provider named NuGet.</span></span>
+<span data-ttu-id="da99e-132">2番目のコマンドは、指定されたバージョンの NuGet パッケージプロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="da99e-132">The second command installs a specified version of the NuGet package provider.</span></span>
 
-<span data-ttu-id="a252d-130">この例では、指定されたバージョンの Nuget パッケージプロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-130">This example installs a specified version of the Nuget package provider.</span></span>
-
-<span data-ttu-id="a252d-131">最初のコマンドは、Nuget という名前のパッケージプロバイダーのすべてのバージョンを検索します。</span><span class="sxs-lookup"><span data-stu-id="a252d-131">The first command finds all versions of the package provider named Nuget.</span></span>
-<span data-ttu-id="a252d-132">2番目のコマンドは、指定されたバージョンの Nuget パッケージプロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-132">The second command installs a specified version of the Nuget package provider.</span></span>
-
-### <span data-ttu-id="a252d-133">例 3: プロバイダーを検索してインストールする</span><span class="sxs-lookup"><span data-stu-id="a252d-133">Example 3: Find a provider and install it</span></span>
-
-```
-PS C:\> Find-PackageProvider -Name "Gistprovider" | Install-PackageProvider -Verbose
+```powershell
+Find-PackageProvider -Name "NuGet" -AllVersions
+Install-PackageProvider -Name "NuGet" -RequiredVersion "2.8.5.216" -Force
 ```
 
-<span data-ttu-id="a252d-134">このコマンドは、 **検索 packageprovider** とパイプラインを使用して、Gist プロバイダーを検索してインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-134">This command uses **Find-PackageProvider** and the pipeline to search for the Gist provider and install it.</span></span>
+### <span data-ttu-id="da99e-133">例 3: プロバイダーを検索してインストールする</span><span class="sxs-lookup"><span data-stu-id="da99e-133">Example 3: Find a provider and install it</span></span>
 
-### <span data-ttu-id="a252d-135">例 4: 現在のユーザーのモジュールフォルダーにプロバイダーをインストールする</span><span class="sxs-lookup"><span data-stu-id="a252d-135">Example 4: Install a provider to the current user's module folder</span></span>
+<span data-ttu-id="da99e-134">この例では、とパイプラインを使用して、 `Find-PackageProvider` Gist プロバイダーを検索してインストールします。</span><span class="sxs-lookup"><span data-stu-id="da99e-134">This example uses `Find-PackageProvider` and the pipeline to search for the Gist provider and install it.</span></span>
 
+```powershell
+Find-PackageProvider -Name "GistProvider" | Install-PackageProvider -Verbose
 ```
-PS C:\> Install-PackageProvider -Name Gistprovider -Verbose -Scope CurrentUser
+
+### <span data-ttu-id="da99e-135">例 4: 現在のユーザーのモジュールフォルダーにプロバイダーをインストールする</span><span class="sxs-lookup"><span data-stu-id="da99e-135">Example 4: Install a provider to the current user's module folder</span></span>
+
+<span data-ttu-id="da99e-136">このコマンドは、 `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies` 現在のユーザーのみが使用できるように、パッケージプロバイダーをにインストールします。</span><span class="sxs-lookup"><span data-stu-id="da99e-136">This command installs a package provider to `$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies` so that only the current user can use it.</span></span>
+
+```powershell
+Install-PackageProvider -Name GistProvider -Verbose -Scope CurrentUser
 ```
 
-<span data-ttu-id="a252d-136">このコマンドは、現在のユーザーのみが使用できるように $env: Localappdata\packagemanagement\providerassemblies からにパッケージプロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-136">This command installs a package provider to $env:LOCALAPPDATA\PackageManagement\ProviderAssemblies so that only the current user can use it.</span></span>
+## <span data-ttu-id="da99e-137">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="da99e-137">PARAMETERS</span></span>
 
-## <span data-ttu-id="a252d-137">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="a252d-137">PARAMETERS</span></span>
+### <span data-ttu-id="da99e-138">-AllVersions</span><span class="sxs-lookup"><span data-stu-id="da99e-138">-AllVersions</span></span>
 
-### <span data-ttu-id="a252d-138">-AllVersions</span><span class="sxs-lookup"><span data-stu-id="a252d-138">-AllVersions</span></span>
-
-<span data-ttu-id="a252d-139">このコマンドレットによって、使用可能なすべてのバージョンのパッケージプロバイダーがインストールされることを示します。</span><span class="sxs-lookup"><span data-stu-id="a252d-139">Indicates that this cmdlet installs all available versions of the package provider.</span></span>
-<span data-ttu-id="a252d-140">既定では、 **Install-PackageProvider** は、使用可能な最も高いバージョンのみを返します。</span><span class="sxs-lookup"><span data-stu-id="a252d-140">By default, **Install-PackageProvider** only returns the highest available version.</span></span>
+<span data-ttu-id="da99e-139">このコマンドレットによって、使用可能なすべてのバージョンのパッケージプロバイダーがインストールされることを示します。</span><span class="sxs-lookup"><span data-stu-id="da99e-139">Indicates that this cmdlet installs all available versions of the package provider.</span></span> <span data-ttu-id="da99e-140">既定では、は、 `Install-PackageProvider` 使用可能な最も高いバージョンのみを返します。</span><span class="sxs-lookup"><span data-stu-id="da99e-140">By default, `Install-PackageProvider` only returns the highest available version.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -125,9 +110,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a252d-141">-Credential</span><span class="sxs-lookup"><span data-stu-id="a252d-141">-Credential</span></span>
+### <span data-ttu-id="da99e-141">-Credential</span><span class="sxs-lookup"><span data-stu-id="da99e-141">-Credential</span></span>
 
-<span data-ttu-id="a252d-142">パッケージプロバイダーをインストールするアクセス許可を持つユーザーアカウントを指定します。</span><span class="sxs-lookup"><span data-stu-id="a252d-142">Specifies a user account that has permission to install package providers.</span></span>
+<span data-ttu-id="da99e-142">パッケージプロバイダーをインストールするアクセス許可を持つユーザーアカウントを指定します。</span><span class="sxs-lookup"><span data-stu-id="da99e-142">Specifies a user account that has permission to install package providers.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -141,26 +126,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a252d-143">-Force</span><span class="sxs-lookup"><span data-stu-id="a252d-143">-Force</span></span>
+### <span data-ttu-id="da99e-143">-Force</span><span class="sxs-lookup"><span data-stu-id="da99e-143">-Force</span></span>
 
-<span data-ttu-id="a252d-144">このコマンドレットが強制的に実行できるこのコマンドレットのすべての操作を強制することを示します。</span><span class="sxs-lookup"><span data-stu-id="a252d-144">Indicates that this cmdlet forces all actions with this cmdlet that can be forced.</span></span>
-<span data-ttu-id="a252d-145">現時点では、 *Force* パラメーターは *forcebootstrap* パラメーターと同じように動作します。</span><span class="sxs-lookup"><span data-stu-id="a252d-145">Currently, this means the *Force* parameter acts the same as the *ForceBootstrap* parameter.</span></span>
-
-```yaml
-Type: System.Management.Automation.SwitchParameter
-Parameter Sets: (All)
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="a252d-146">-ForceBootstrap</span><span class="sxs-lookup"><span data-stu-id="a252d-146">-ForceBootstrap</span></span>
-
-<span data-ttu-id="a252d-147">このコマンドレットによってパッケージプロバイダーが自動的にインストールされることを示します。</span><span class="sxs-lookup"><span data-stu-id="a252d-147">Indicates that this cmdlet automatically installs the package provider.</span></span>
+<span data-ttu-id="da99e-144">このコマンドレットが強制的に実行できるこのコマンドレットのすべての操作を強制することを示します。</span><span class="sxs-lookup"><span data-stu-id="da99e-144">Indicates that this cmdlet forces all actions with this cmdlet that can be forced.</span></span> <span data-ttu-id="da99e-145">現時点では、 **Force** パラメーターは **forcebootstrap** パラメーターと同じように動作します。</span><span class="sxs-lookup"><span data-stu-id="da99e-145">Currently, this means the **Force** parameter acts the same as the **ForceBootstrap** parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -174,10 +142,25 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a252d-148">-InputObject</span><span class="sxs-lookup"><span data-stu-id="a252d-148">-InputObject</span></span>
+### <span data-ttu-id="da99e-146">-ForceBootstrap</span><span class="sxs-lookup"><span data-stu-id="da99e-146">-ForceBootstrap</span></span>
 
-<span data-ttu-id="a252d-149">**ソフトウェア id** オブジェクトを指定します。</span><span class="sxs-lookup"><span data-stu-id="a252d-149">Specifies a **SoftwareIdentity** object.</span></span>
-<span data-ttu-id="a252d-150">**検索 packageprovider** コマンドレットを使用して、 **Install-packageprovider** にパイプするための **ソフトウェア id** オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="a252d-150">Use the **Find-PackageProvider** cmdlet to obtain a **SoftwareIdentity** object to pipe into **Install-PackageProvider** .</span></span>
+<span data-ttu-id="da99e-147">このコマンドレットによってパッケージプロバイダーが自動的にインストールされることを示します。</span><span class="sxs-lookup"><span data-stu-id="da99e-147">Indicates that this cmdlet automatically installs the package provider.</span></span>
+
+```yaml
+Type: System.Management.Automation.SwitchParameter
+Parameter Sets: (All)
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da99e-148">-InputObject</span><span class="sxs-lookup"><span data-stu-id="da99e-148">-InputObject</span></span>
+
+<span data-ttu-id="da99e-149">**ソフトウェア id** オブジェクトを指定します。</span><span class="sxs-lookup"><span data-stu-id="da99e-149">Specifies a **SoftwareIdentity** object.</span></span> <span data-ttu-id="da99e-150">コマンドレットを使用して `Find-PackageProvider` 、パイプするための **ソフトウェア id** オブジェクトを取得し `Install-PackageProvider` ます。</span><span class="sxs-lookup"><span data-stu-id="da99e-150">Use the `Find-PackageProvider` cmdlet to obtain a **SoftwareIdentity** object to pipe into `Install-PackageProvider`.</span></span>
 
 ```yaml
 Type: Microsoft.PackageManagement.Packaging.SoftwareIdentity[]
@@ -191,27 +174,9 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a252d-151">-MaximumVersion</span><span class="sxs-lookup"><span data-stu-id="a252d-151">-MaximumVersion</span></span>
+### <span data-ttu-id="da99e-151">-MaximumVersion</span><span class="sxs-lookup"><span data-stu-id="da99e-151">-MaximumVersion</span></span>
 
-<span data-ttu-id="a252d-152">インストールするパッケージプロバイダーの許可される最大バージョンを指定します。</span><span class="sxs-lookup"><span data-stu-id="a252d-152">Specifies the maximum allowed version of the package provider that you want to install.</span></span>
-<span data-ttu-id="a252d-153">このパラメーターを追加しない場合、 **インストール-PackageProvider** は、使用可能な最も高いバージョンのプロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-153">If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the provider.</span></span>
-
-```yaml
-Type: System.String
-Parameter Sets: PackageBySearch
-Aliases:
-
-Required: False
-Position: Named
-Default value: None
-Accept pipeline input: False
-Accept wildcard characters: False
-```
-
-### <span data-ttu-id="a252d-154">-MinimumVersion</span><span class="sxs-lookup"><span data-stu-id="a252d-154">-MinimumVersion</span></span>
-
-<span data-ttu-id="a252d-155">インストールするパッケージプロバイダーの許可される最小バージョンを指定します。</span><span class="sxs-lookup"><span data-stu-id="a252d-155">Specifies the minimum allowed version of the package provider that you want to install.</span></span>
-<span data-ttu-id="a252d-156">このパラメーターを追加しない場合、 **Install-PackageProvider** は、 *MaximumVersion* パラメーターで指定された要件を満たす、利用可能な最も高いバージョンのパッケージをインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-156">If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the package that also satisfies any requirement specified by the *MaximumVersion* parameter.</span></span>
+<span data-ttu-id="da99e-152">インストールするパッケージプロバイダーの許可される最大バージョンを指定します。</span><span class="sxs-lookup"><span data-stu-id="da99e-152">Specifies the maximum allowed version of the package provider that you want to install.</span></span> <span data-ttu-id="da99e-153">このパラメーターを追加しない場合、では、 `Install-PackageProvider` 使用可能な最も高いバージョンのプロバイダーがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="da99e-153">If you do not add this parameter, `Install-PackageProvider` installs the highest available version of the provider.</span></span>
 
 ```yaml
 Type: System.String
@@ -225,11 +190,26 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a252d-157">-Name</span><span class="sxs-lookup"><span data-stu-id="a252d-157">-Name</span></span>
+### <span data-ttu-id="da99e-154">-MinimumVersion</span><span class="sxs-lookup"><span data-stu-id="da99e-154">-MinimumVersion</span></span>
 
-<span data-ttu-id="a252d-158">1つまたは複数のパッケージプロバイダーモジュール名を指定します。</span><span class="sxs-lookup"><span data-stu-id="a252d-158">Specifies one or more package provider module names.</span></span>
-<span data-ttu-id="a252d-159">複数のパッケージ名はコンマで区切ります。</span><span class="sxs-lookup"><span data-stu-id="a252d-159">Separate multiple package names with commas.</span></span>
-<span data-ttu-id="a252d-160">ワイルドカード文字はサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="a252d-160">Wildcard characters are not supported.</span></span>
+<span data-ttu-id="da99e-155">インストールするパッケージプロバイダーの許可される最小バージョンを指定します。</span><span class="sxs-lookup"><span data-stu-id="da99e-155">Specifies the minimum allowed version of the package provider that you want to install.</span></span> <span data-ttu-id="da99e-156">このパラメーターを追加しない場合、では、 `Install-PackageProvider` *MaximumVersion* パラメーターで指定された要件を満たす、利用可能な最も高いバージョンのパッケージがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="da99e-156">If you do not add this parameter, `Install-PackageProvider` installs the highest available version of the package that also satisfies any requirement specified by the *MaximumVersion* parameter.</span></span>
+
+```yaml
+Type: System.String
+Parameter Sets: PackageBySearch
+Aliases:
+
+Required: False
+Position: Named
+Default value: None
+Accept pipeline input: False
+Accept wildcard characters: False
+```
+
+### <span data-ttu-id="da99e-157">-Name</span><span class="sxs-lookup"><span data-stu-id="da99e-157">-Name</span></span>
+
+<span data-ttu-id="da99e-158">1つまたは複数のパッケージプロバイダーモジュール名を指定します。</span><span class="sxs-lookup"><span data-stu-id="da99e-158">Specifies one or more package provider module names.</span></span> <span data-ttu-id="da99e-159">複数のパッケージ名はコンマで区切ります。</span><span class="sxs-lookup"><span data-stu-id="da99e-159">Separate multiple package names with commas.</span></span>
+<span data-ttu-id="da99e-160">ワイルドカード文字はサポートされていません。</span><span class="sxs-lookup"><span data-stu-id="da99e-160">Wildcard characters are not supported.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -243,7 +223,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a252d-161">-プロキシ</span><span class="sxs-lookup"><span data-stu-id="a252d-161">-Proxy</span></span>
+### <span data-ttu-id="da99e-161">-プロキシ</span><span class="sxs-lookup"><span data-stu-id="da99e-161">-Proxy</span></span>
+
+<span data-ttu-id="da99e-162">インターネットリソースに直接接続するのではなく、要求のプロキシサーバーを指定します。</span><span class="sxs-lookup"><span data-stu-id="da99e-162">Specifies a proxy server for the request, rather than connecting directly to the Internet resource.</span></span>
 
 ```yaml
 Type: System.Uri
@@ -257,7 +239,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a252d-162">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="a252d-162">-ProxyCredential</span></span>
+### <span data-ttu-id="da99e-163">-ProxyCredential</span><span class="sxs-lookup"><span data-stu-id="da99e-163">-ProxyCredential</span></span>
+
+<span data-ttu-id="da99e-164">**Proxy** パラメーターに指定したプロキシ サーバーを使用するアクセス許可を持つユーザー アカウントを指定します。</span><span class="sxs-lookup"><span data-stu-id="da99e-164">Specifies a user account that has permission to use the proxy server that is specified by the **Proxy** parameter.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSCredential
@@ -271,10 +255,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a252d-163">-RequiredVersion</span><span class="sxs-lookup"><span data-stu-id="a252d-163">-RequiredVersion</span></span>
+### <span data-ttu-id="da99e-165">-RequiredVersion</span><span class="sxs-lookup"><span data-stu-id="da99e-165">-RequiredVersion</span></span>
 
-<span data-ttu-id="a252d-164">インストールするパッケージプロバイダーの完全に許可されているバージョンを指定します。</span><span class="sxs-lookup"><span data-stu-id="a252d-164">Specifies the exact allowed version of the package provider that you want to install.</span></span>
-<span data-ttu-id="a252d-165">このパラメーターを追加しない場合、 **Install-PackageProvider** は、 *MaximumVersion* パラメーターで指定された最大バージョンも満たすプロバイダーの利用可能な最も高いバージョンをインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-165">If you do not add this parameter, **Install-PackageProvider** installs the highest available version of the provider that also satisfies any maximum version specified by the *MaximumVersion* parameter.</span></span>
+<span data-ttu-id="da99e-166">インストールするパッケージプロバイダーの完全に許可されているバージョンを指定します。</span><span class="sxs-lookup"><span data-stu-id="da99e-166">Specifies the exact allowed version of the package provider that you want to install.</span></span> <span data-ttu-id="da99e-167">このパラメーターを追加しない場合、では、 `Install-PackageProvider` **MaximumVersion** パラメーターで指定された最大バージョンも満たす、利用可能な最も高いバージョンのプロバイダーがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="da99e-167">If you do not add this parameter, `Install-PackageProvider` installs the highest available version of the provider that also satisfies any maximum version specified by the **MaximumVersion** parameter.</span></span>
 
 ```yaml
 Type: System.String
@@ -288,16 +271,14 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a252d-166">-スコープ</span><span class="sxs-lookup"><span data-stu-id="a252d-166">-Scope</span></span>
+### <span data-ttu-id="da99e-168">-スコープ</span><span class="sxs-lookup"><span data-stu-id="da99e-168">-Scope</span></span>
 
-<span data-ttu-id="a252d-167">プロバイダーのインストールスコープを指定します。</span><span class="sxs-lookup"><span data-stu-id="a252d-167">Specifies the installation scope of the provider.</span></span>
-<span data-ttu-id="a252d-168">このパラメーターに指定できる値は、 **AllUsers** と **CurrentUser** です。</span><span class="sxs-lookup"><span data-stu-id="a252d-168">The acceptable values for this parameter are: **AllUsers** and **CurrentUser** .</span></span>
+<span data-ttu-id="da99e-169">プロバイダーのインストールスコープを指定します。</span><span class="sxs-lookup"><span data-stu-id="da99e-169">Specifies the installation scope of the provider.</span></span> <span data-ttu-id="da99e-170">このパラメーターの有効値は、次のとおりです。</span><span class="sxs-lookup"><span data-stu-id="da99e-170">The acceptable values for this parameter are:</span></span>
 
-<span data-ttu-id="a252d-169">**AllUsers** スコープは、コンピューターのすべてのユーザーがアクセスできる場所にプロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="a252d-169">The **AllUsers** scope installs providers in a location that is accessible to all users of the computer.</span></span>
-<span data-ttu-id="a252d-170">既定では、これは **$env:P rogramfiles\packagemanagement\providerassemblies.**</span><span class="sxs-lookup"><span data-stu-id="a252d-170">By default, this is **$env:ProgramFiles\PackageManagement\ProviderAssemblies.**</span></span>
+- <span data-ttu-id="da99e-171">**AllUsers** -コンピューターのすべてのユーザーがアクセスできる場所にプロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="da99e-171">**AllUsers** - installs providers in a location that is accessible to all users of the computer.</span></span>
+  <span data-ttu-id="da99e-172">既定では、これは **$env:P rogramfiles\packagemanagement\providerassemblies.**</span><span class="sxs-lookup"><span data-stu-id="da99e-172">By default, this is **$env:ProgramFiles\PackageManagement\ProviderAssemblies.**</span></span>
 
-<span data-ttu-id="a252d-171">**CurrentUser** スコープでは、現在のユーザーだけがアクセスできる場所にプロバイダーがインストールされます。</span><span class="sxs-lookup"><span data-stu-id="a252d-171">The **CurrentUser** scope installs providers in a location where they are only accessible to the current user.</span></span>
-<span data-ttu-id="a252d-172">既定では **$env: LOCALAPPDATA\PackageManagement\ProviderAssemblies.**</span><span class="sxs-lookup"><span data-stu-id="a252d-172">By default, this is **$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies.**</span></span>
+- <span data-ttu-id="da99e-173">**CurrentUser** -現在のユーザーだけがアクセスできる場所にプロバイダーをインストールします。</span><span class="sxs-lookup"><span data-stu-id="da99e-173">**CurrentUser** - installs providers in a location where they are only accessible to the current user.</span></span> <span data-ttu-id="da99e-174">既定では **$env: LOCALAPPDATA\PackageManagement\ProviderAssemblies.**</span><span class="sxs-lookup"><span data-stu-id="da99e-174">By default, this is **$env:LOCALAPPDATA\PackageManagement\ProviderAssemblies.**</span></span>
 
 ```yaml
 Type: System.String
@@ -312,10 +293,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a252d-173">-Source</span><span class="sxs-lookup"><span data-stu-id="a252d-173">-Source</span></span>
+### <span data-ttu-id="da99e-175">-Source</span><span class="sxs-lookup"><span data-stu-id="da99e-175">-Source</span></span>
 
-<span data-ttu-id="a252d-174">1つまたは複数のパッケージソースを指定します。</span><span class="sxs-lookup"><span data-stu-id="a252d-174">Specifies one or more package sources.</span></span>
-<span data-ttu-id="a252d-175">使用可能なパッケージソースの一覧を取得するには、Get-PackageSource コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="a252d-175">Use the Get-PackageSource cmdlet to get a list of available package sources.</span></span>
+<span data-ttu-id="da99e-176">1つまたは複数のパッケージソースを指定します。</span><span class="sxs-lookup"><span data-stu-id="da99e-176">Specifies one or more package sources.</span></span> <span data-ttu-id="da99e-177">`Get-PackageSource`使用可能なパッケージソースの一覧を取得するには、コマンドレットを使用します。</span><span class="sxs-lookup"><span data-stu-id="da99e-177">Use the `Get-PackageSource` cmdlet to get a list of available package sources.</span></span>
 
 ```yaml
 Type: System.String[]
@@ -329,9 +309,9 @@ Accept pipeline input: True (ByPropertyName)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a252d-176">-Confirm</span><span class="sxs-lookup"><span data-stu-id="a252d-176">-Confirm</span></span>
+### <span data-ttu-id="da99e-178">-Confirm</span><span class="sxs-lookup"><span data-stu-id="da99e-178">-Confirm</span></span>
 
-<span data-ttu-id="a252d-177">コマンドレットの実行前に確認を求めるメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="a252d-177">Prompts you for confirmation before running the cmdlet.</span></span>
+<span data-ttu-id="da99e-179">コマンドレットの実行前に確認を求めるメッセージが表示されます。</span><span class="sxs-lookup"><span data-stu-id="da99e-179">Prompts you for confirmation before running the cmdlet.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -345,10 +325,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a252d-178">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="a252d-178">-WhatIf</span></span>
+### <span data-ttu-id="da99e-180">-WhatIf</span><span class="sxs-lookup"><span data-stu-id="da99e-180">-WhatIf</span></span>
 
-<span data-ttu-id="a252d-179">コマンドレットの実行時に発生する内容を示します。</span><span class="sxs-lookup"><span data-stu-id="a252d-179">Shows what would happen if the cmdlet runs.</span></span>
-<span data-ttu-id="a252d-180">このコマンドレットは実行されません。</span><span class="sxs-lookup"><span data-stu-id="a252d-180">The cmdlet is not run.</span></span>
+<span data-ttu-id="da99e-181">コマンドレットの実行時に発生する内容を示します。</span><span class="sxs-lookup"><span data-stu-id="da99e-181">Shows what would happen if the cmdlet runs.</span></span> <span data-ttu-id="da99e-182">このコマンドレットは実行されません。</span><span class="sxs-lookup"><span data-stu-id="da99e-182">The cmdlet is not run.</span></span>
 
 ```yaml
 Type: System.Management.Automation.SwitchParameter
@@ -362,26 +341,24 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a252d-181">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="a252d-181">CommonParameters</span></span>
+### <span data-ttu-id="da99e-183">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="da99e-183">CommonParameters</span></span>
 
-<span data-ttu-id="a252d-182">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="a252d-182">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a252d-183">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a252d-183">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="da99e-184">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="da99e-184">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="da99e-185">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="da99e-185">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="a252d-184">入力</span><span class="sxs-lookup"><span data-stu-id="a252d-184">INPUTS</span></span>
+## <span data-ttu-id="da99e-186">入力</span><span class="sxs-lookup"><span data-stu-id="da99e-186">INPUTS</span></span>
 
-### <span data-ttu-id="a252d-185">Microsoft. パッケージ Id</span><span class="sxs-lookup"><span data-stu-id="a252d-185">Microsoft.PackageManagement.Packaging.SoftwareIdentity</span></span>
+### <span data-ttu-id="da99e-187">Microsoft. パッケージ Id</span><span class="sxs-lookup"><span data-stu-id="da99e-187">Microsoft.PackageManagement.Packaging.SoftwareIdentity</span></span>
 
-<span data-ttu-id="a252d-186">パイプを使用して、このコマンドレットに **ソフトウェア id** オブジェクトをパイプすることができます。</span><span class="sxs-lookup"><span data-stu-id="a252d-186">You can pipe a **SoftwareIdentity** object to this cmdlet.</span></span>
-<span data-ttu-id="a252d-187">Find-PackageProvider を使用して、 **インストール-PackageProvider** にパイプできる **ソフトウェア id** オブジェクトを取得します。</span><span class="sxs-lookup"><span data-stu-id="a252d-187">Use Find-PackageProvider to get a **SoftwareIdentity** object that can be piped into **Install-PackageProvider** .</span></span>
+<span data-ttu-id="da99e-188">パイプを使用して、このコマンドレットに **ソフトウェア id** オブジェクトをパイプすることができます。</span><span class="sxs-lookup"><span data-stu-id="da99e-188">You can pipe a **SoftwareIdentity** object to this cmdlet.</span></span> <span data-ttu-id="da99e-189">に `Find-PackageProvider` パイプ処理できる **ソフトウェア id** オブジェクトを取得するには、を使用し `Install-PackageProvider` ます。</span><span class="sxs-lookup"><span data-stu-id="da99e-189">Use `Find-PackageProvider` to get a **SoftwareIdentity** object that can be piped into `Install-PackageProvider`.</span></span>
 
-## <span data-ttu-id="a252d-188">出力</span><span class="sxs-lookup"><span data-stu-id="a252d-188">OUTPUTS</span></span>
+## <span data-ttu-id="da99e-190">出力</span><span class="sxs-lookup"><span data-stu-id="da99e-190">OUTPUTS</span></span>
 
-## <span data-ttu-id="a252d-189">注</span><span class="sxs-lookup"><span data-stu-id="a252d-189">NOTES</span></span>
+## <span data-ttu-id="da99e-191">注</span><span class="sxs-lookup"><span data-stu-id="da99e-191">NOTES</span></span>
 
-## <span data-ttu-id="a252d-190">関連リンク</span><span class="sxs-lookup"><span data-stu-id="a252d-190">RELATED LINKS</span></span>
+## <span data-ttu-id="da99e-192">関連リンク</span><span class="sxs-lookup"><span data-stu-id="da99e-192">RELATED LINKS</span></span>
 
-[<span data-ttu-id="a252d-191">Find-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="a252d-191">Find-PackageProvider</span></span>](Find-PackageProvider.md)
+[<span data-ttu-id="da99e-193">Find-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="da99e-193">Find-PackageProvider</span></span>](Find-PackageProvider.md)
 
-[<span data-ttu-id="a252d-192">Get-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="a252d-192">Get-PackageProvider</span></span>](Get-PackageProvider.md)
+[<span data-ttu-id="da99e-194">Get-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="da99e-194">Get-PackageProvider</span></span>](Get-PackageProvider.md)
 
-[<span data-ttu-id="a252d-193">Import-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="a252d-193">Import-PackageProvider</span></span>](Import-PackageProvider.md)
-
+[<span data-ttu-id="da99e-195">Import-PackageProvider</span><span class="sxs-lookup"><span data-stu-id="da99e-195">Import-PackageProvider</span></span>](Import-PackageProvider.md)
