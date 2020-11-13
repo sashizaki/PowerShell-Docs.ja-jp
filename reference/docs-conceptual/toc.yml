@@ -55,24 +55,26 @@
       items:
         - name: 概要
           href: learn/deep-dives/overview.md
-        - name: 配列について知りたいことのすべて
-          href: learn/deep-dives/everything-about-arrays.md
-        - name: ハッシュテーブルについて知りたいことのすべて
-          href: learn/deep-dives/everything-about-hashtable.md
-        - name: PSCustomObject について知りたいことのすべて
-          href: learn/deep-dives/everything-about-pscustomobject.md
-        - name: 文字列の置換について知りたいことのすべて
-          href: learn/deep-dives/everything-about-string-substitutions.md
-        - name: if/then/else について知りたいことのすべて
-          href: learn/deep-dives/everything-about-if.md
-        - name: スイッチについて知りたいことのすべて
-          href: learn/deep-dives/everything-about-switch.md
-        - name: 例外について知りたかったことのすべて
-          href: learn/deep-dives/everything-about-exceptions.md
-        - name: $null について知りたいことのすべて
-          href: learn/deep-dives/everything-about-null.md
-        - name: ShouldProcess について知りたいことのすべて
-          href: learn/deep-dives/everything-about-shouldprocess.md
+        - name: ...について知りたいことのすべて
+          items:
+            - name: 配列について知りたいことのすべて
+              href: learn/deep-dives/everything-about-arrays.md
+            - name: ハッシュテーブルについて知りたいことのすべて
+              href: learn/deep-dives/everything-about-hashtable.md
+            - name: PSCustomObject について知りたいことのすべて
+              href: learn/deep-dives/everything-about-pscustomobject.md
+            - name: 文字列の置換について知りたいことのすべて
+              href: learn/deep-dives/everything-about-string-substitutions.md
+            - name: if/then/else について知りたいことのすべて
+              href: learn/deep-dives/everything-about-if.md
+            - name: スイッチについて知りたいことのすべて
+              href: learn/deep-dives/everything-about-switch.md
+            - name: 例外について知りたかったことのすべて
+              href: learn/deep-dives/everything-about-exceptions.md
+            - name: $null について知りたいことのすべて
+              href: learn/deep-dives/everything-about-null.md
+            - name: ShouldProcess について知りたいことのすべて
+              href: learn/deep-dives/everything-about-shouldprocess.md
         - name: マルチスレッドでの Write-Progress
           href: learn/deep-dives/write-progress-across-multiple-threads.md
         - name: PowerShell 関数への資格情報サポートの追加
@@ -120,6 +122,8 @@
   items:
     - name: PowerShell 7.x の新機能
       items:
+        - name: PowerShell 7.1 の新機能
+          href: whats-new/what-s-new-in-powershell-71.md
         - name: PowerShell 7.0 の新機能
           href: whats-new/what-s-new-in-powershell-70.md
     - name: PowerShell Core 6.x の新機能
