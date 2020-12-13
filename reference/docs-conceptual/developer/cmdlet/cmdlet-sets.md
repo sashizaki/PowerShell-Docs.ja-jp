@@ -1,32 +1,34 @@
 ---
-title: コマンドレットの設定 |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 9595c9ca09148de05c69d60a2ede5688c3db61b0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: コマンドレット セット
+description: コマンドレット セット
+ms.openlocfilehash: b4bcb6548f9d64a8cc5e3fc3a66c671a5566001d
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87774815"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92668237"
 ---
-# <a name="cmdlet-sets"></a><span data-ttu-id="a2ca3-102">コマンドレット セット</span><span class="sxs-lookup"><span data-stu-id="a2ca3-102">Cmdlet Sets</span></span>
+# <a name="cmdlet-sets"></a><span data-ttu-id="a5b46-103">コマンドレット セット</span><span class="sxs-lookup"><span data-stu-id="a5b46-103">Cmdlet Sets</span></span>
 
-<span data-ttu-id="a2ca3-103">コマンドレットを設計するときに、同じデータに対して複数の操作を実行することが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="a2ca3-103">When you design your cmdlets, you might encounter cases in which you need to perform several actions on the same piece of data.</span></span> <span data-ttu-id="a2ca3-104">たとえば、データの取得と設定、またはプロセスの開始と停止が必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="a2ca3-104">For example, you might need to get and set data or start and stop a process.</span></span> <span data-ttu-id="a2ca3-105">各アクションを実行するために個別のコマンドレットを作成する必要がありますが、コマンドレットの設計には、個々のコマンドレットのクラスの派生元である基本クラスが含まれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="a2ca3-105">Although you will need to create separate cmdlets to perform each action, your cmdlet design should include a base class from which the classes for the individual cmdlets are derived.</span></span>
+<span data-ttu-id="a5b46-104">コマンドレットを設計するときに、同じデータに対して複数の操作を実行することが必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="a5b46-104">When you design your cmdlets, you might encounter cases in which you need to perform several actions on the same piece of data.</span></span> <span data-ttu-id="a5b46-105">たとえば、データの取得と設定、またはプロセスの開始と停止が必要になる場合があります。</span><span class="sxs-lookup"><span data-stu-id="a5b46-105">For example, you might need to get and set data or start and stop a process.</span></span> <span data-ttu-id="a5b46-106">各アクションを実行するために個別のコマンドレットを作成する必要がありますが、コマンドレットの設計には、個々のコマンドレットのクラスの派生元である基本クラスが含まれている必要があります。</span><span class="sxs-lookup"><span data-stu-id="a5b46-106">Although you will need to create separate cmdlets to perform each action, your cmdlet design should include a base class from which the classes for the individual cmdlets are derived.</span></span>
 
-<span data-ttu-id="a2ca3-106">基底クラスを実装する場合は、次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="a2ca3-106">Keep the following things in mind when implementing a base class.</span></span>
+<span data-ttu-id="a5b46-107">基底クラスを実装する場合は、次の点に注意してください。</span><span class="sxs-lookup"><span data-stu-id="a5b46-107">Keep the following things in mind when implementing a base class.</span></span>
 
-- <span data-ttu-id="a2ca3-107">基底クラスのすべての派生コマンドレットで使用される共通パラメーターを宣言します。</span><span class="sxs-lookup"><span data-stu-id="a2ca3-107">Declare any common parameters used by all the derived cmdlets in the base class.</span></span>
+- <span data-ttu-id="a5b46-108">基底クラスのすべての派生コマンドレットで使用される共通パラメーターを宣言します。</span><span class="sxs-lookup"><span data-stu-id="a5b46-108">Declare any common parameters used by all the derived cmdlets in the base class.</span></span>
 
-- <span data-ttu-id="a2ca3-108">コマンドレット固有のパラメーターを適切なコマンドレットクラスに追加します。</span><span class="sxs-lookup"><span data-stu-id="a2ca3-108">Add cmdlet-specific parameters to the appropriate cmdlet class.</span></span>
+- <span data-ttu-id="a5b46-109">コマンドレット固有のパラメーターを適切なコマンドレットクラスに追加します。</span><span class="sxs-lookup"><span data-stu-id="a5b46-109">Add cmdlet-specific parameters to the appropriate cmdlet class.</span></span>
 
-- <span data-ttu-id="a2ca3-109">基底クラスの適切な入力処理メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="a2ca3-109">Override the appropriate input processing method in the base class.</span></span>
+- <span data-ttu-id="a5b46-110">基底クラスの適切な入力処理メソッドをオーバーライドします。</span><span class="sxs-lookup"><span data-stu-id="a5b46-110">Override the appropriate input processing method in the base class.</span></span>
 
-- <span data-ttu-id="a2ca3-110">すべてのコマンドレットクラスで[system.servicemodel 属性を](/dotnet/api/System.Management.Automation.CmdletAttribute)宣言しますが、基底クラスでは宣言しません。</span><span class="sxs-lookup"><span data-stu-id="a2ca3-110">Declare the [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute on all cmdlet classes, but do not declare it on the base class.</span></span>
+- <span data-ttu-id="a5b46-111">すべてのコマンドレットクラスで [system.servicemodel 属性を](/dotnet/api/System.Management.Automation.CmdletAttribute) 宣言しますが、基底クラスでは宣言しません。</span><span class="sxs-lookup"><span data-stu-id="a5b46-111">Declare the [System.Management.Automation.CmdletAttribute](/dotnet/api/System.Management.Automation.CmdletAttribute) attribute on all cmdlet classes, but do not declare it on the base class.</span></span>
 
-- <span data-ttu-id="a2ca3-111">コマンドレットのセットを反映した名前と説明を持つ[add-pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn)または[Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn)クラスを実装します。</span><span class="sxs-lookup"><span data-stu-id="a2ca3-111">Implement a [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) or [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) class whose name and description reflects the set of cmdlets.</span></span>
+- <span data-ttu-id="a5b46-112">コマンドレットのセットを反映した名前と説明を持つ [add-pssnapin](/dotnet/api/System.Management.Automation.PSSnapIn) または [Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) クラスを実装します。</span><span class="sxs-lookup"><span data-stu-id="a5b46-112">Implement a [System.Management.Automation.PSSnapIn](/dotnet/api/System.Management.Automation.PSSnapIn) or [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) class whose name and description reflects the set of cmdlets.</span></span>
 
-## <a name="example"></a><span data-ttu-id="a2ca3-112">例</span><span class="sxs-lookup"><span data-stu-id="a2ca3-112">Example</span></span>
+## <a name="example"></a><span data-ttu-id="a5b46-113">例</span><span class="sxs-lookup"><span data-stu-id="a5b46-113">Example</span></span>
 
-<span data-ttu-id="a2ca3-113">次の例は、同じ基本クラスから派生した、Get Proc と Stop Proc コマンドレットによって使用される基底クラスの実装を示しています。</span><span class="sxs-lookup"><span data-stu-id="a2ca3-113">The following example shows the implementation of a base class that is used by Get-Proc and Stop-Proc cmdlet that derive from the same base class.</span></span>
+<span data-ttu-id="a5b46-114">次の例は、同じ基本クラスから派生する Get-Proc および Stop-Proc コマンドレットによって使用される基底クラスの実装を示しています。</span><span class="sxs-lookup"><span data-stu-id="a5b46-114">The following example shows the implementation of a base class that is used by Get-Proc and Stop-Proc cmdlet that derive from the same base class.</span></span>
 
 ```csharp
 using System;
@@ -163,6 +165,6 @@ namespace Microsoft.Samples.PowerShell.Commands
 }
 ```
 
-## <a name="see-also"></a><span data-ttu-id="a2ca3-114">参照</span><span class="sxs-lookup"><span data-stu-id="a2ca3-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a5b46-115">参照</span><span class="sxs-lookup"><span data-stu-id="a5b46-115">See Also</span></span>
 
-[<span data-ttu-id="a2ca3-115">Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)</span><span class="sxs-lookup"><span data-stu-id="a2ca3-115">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="a5b46-116">Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)</span><span class="sxs-lookup"><span data-stu-id="a5b46-116">Writing a Windows PowerShell Cmdlet</span></span>](./writing-a-windows-powershell-cmdlet.md)
