@@ -1,18 +1,20 @@
 ---
-title: コメント ベースのヘルプの例
 ms.date: 09/12/2016
-ms.openlocfilehash: fe5d054c84952367a4e7c2d5d9e32551a4e5c3a8
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: コメント ベースのヘルプの例
+description: コメント ベースのヘルプの例
+ms.openlocfilehash: 35fe9103a261483c56af629f620dbd6b3c642e68
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87772299"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92667642"
 ---
 # <a name="examples-of-comment-based-help"></a>コメント ベースのヘルプの例
 
 このトピックには、スクリプトや関数にコメントベースのヘルプを使用する方法を示す例が含まれています。
 
-## <a name="example-1-comment-based-help-for-a-function"></a>例 1: 関数のコメントベースのヘルプ
+## <a name="example-1-comment-based-help-for-a-function"></a>例 1: 関数のヘルプを Comment-Based
 
  次のサンプル関数には、コメントベースのヘルプが含まれています。
 
@@ -134,7 +136,7 @@ C:\PS> get-help add-extension -full
             Set-Item
 ```
 
-## <a name="example-2-comment-based-help-for-a-script"></a>例 2: スクリプトのコメントベースのヘルプ
+## <a name="example-2-comment-based-help-for-a-script"></a>例 2: スクリプトのヘルプを Comment-Based する
 
 次のサンプル関数には、コメントベースのヘルプが含まれています。
 
@@ -275,7 +277,7 @@ function Add-Extension
     #>
 ```
 
-結果は、例1の結果と同じです。 `Get-Help`パラメーターの説明は、キーワードが付いているかのように解釈され `.Parameter` ます。
+結果は、例1の結果と同じです。 `Get-Help` パラメーターの説明は、キーワードが付いているかのように解釈され `.Parameter` ます。
 
 ## <a name="example-4--redirecting-to-an-xml-file"></a>例 4: XML ファイルへのリダイレクト
 
@@ -304,7 +306,7 @@ function Add-Extension
 
 ## <a name="example-5--redirecting-to-a-different-help-topic"></a>例 5: 別のヘルプトピックへのリダイレクト
 
-次のコードは、PowerShell の組み込み関数の先頭から抜粋したもので、一度 `Help` に1画面のヘルプテキストを表示します。 Get-help コマンドレットのヘルプトピックでは Help 関数について説明しているので、Help 関数はキーワードとキーワードを使用して `.ForwardHelpTargetName` `.ForwardHelpCategory` ユーザーを get-help コマンドレットのヘルプトピックにリダイレクトします。
+次のコードは、PowerShell の組み込み関数の先頭から抜粋したもので、一度 `Help` に1画面のヘルプテキストを表示します。 Get-Help コマンドレットのヘルプトピックでは Help 関数について説明しているので、Help 関数はキーワードとキーワードを使用して、 `.ForwardHelpTargetName` `.ForwardHelpCategory` ユーザーを Get-Help コマンドレットヘルプトピックにリダイレクトします。
 
 ```powershell
 function help
