@@ -1,70 +1,69 @@
 ---
-title: カスタム Windows PowerShell スナップインを作成する |Microsoft Docs
 ms.date: 09/13/2016
-helpviewer_keywords:
-- snap-ins [PowerShell SDK], custom PSSnapin example
-- cmdlets [PowerShell SDK], specified in snap-ins
-ms.openlocfilehash: 3672dcc2e962b6795888ab5be3d461380e379315
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: カスタム Windows PowerShell スナップインを記述する
+description: カスタム Windows PowerShell スナップインを記述する
+ms.openlocfilehash: e79c0c3db583fa0add9287745e97958a71360592
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779218"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92659529"
 ---
-# <a name="writing-a-custom-windows-powershell-snap-in"></a><span data-ttu-id="1a2b7-102">カスタム Windows PowerShell スナップインを記述する</span><span class="sxs-lookup"><span data-stu-id="1a2b7-102">Writing a Custom Windows PowerShell Snap-in</span></span>
+# <a name="writing-a-custom-windows-powershell-snap-in"></a><span data-ttu-id="36b44-103">カスタム Windows PowerShell スナップインを記述する</span><span class="sxs-lookup"><span data-stu-id="36b44-103">Writing a Custom Windows PowerShell Snap-in</span></span>
 
-<span data-ttu-id="1a2b7-103">この例では、特定のコマンドレットを登録する Windows PowerShell スナップインを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-103">This example shows how to write a Windows PowerShell snap-in that registers specific cmdlets.</span></span>
+<span data-ttu-id="36b44-104">この例では、特定のコマンドレットを登録する Windows PowerShell スナップインを作成する方法を示します。</span><span class="sxs-lookup"><span data-stu-id="36b44-104">This example shows how to write a Windows PowerShell snap-in that registers specific cmdlets.</span></span>
 
-<span data-ttu-id="1a2b7-104">この種類のスナップインでは、登録するコマンドレット、プロバイダー、種類、または形式を指定します。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-104">With this type of snap-in, you specify which cmdlets, providers, types, or formats to register.</span></span> <span data-ttu-id="1a2b7-105">アセンブリ内のすべてのコマンドレットとプロバイダーを登録するスナップインを作成する方法の詳細については、「 [Windows PowerShell スナップインの作成](./writing-a-windows-powershell-snap-in.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-105">For more information about how to write a snap-in that registers all the cmdlets and providers in an assembly, see [Writing a Windows PowerShell Snap-in](./writing-a-windows-powershell-snap-in.md).</span></span>
+<span data-ttu-id="36b44-105">この種類のスナップインでは、登録するコマンドレット、プロバイダー、種類、または形式を指定します。</span><span class="sxs-lookup"><span data-stu-id="36b44-105">With this type of snap-in, you specify which cmdlets, providers, types, or formats to register.</span></span> <span data-ttu-id="36b44-106">アセンブリ内のすべてのコマンドレットとプロバイダーを登録するスナップインを作成する方法の詳細については、「 [Windows PowerShell スナップインの作成](./writing-a-windows-powershell-snap-in.md)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="36b44-106">For more information about how to write a snap-in that registers all the cmdlets and providers in an assembly, see [Writing a Windows PowerShell Snap-in](./writing-a-windows-powershell-snap-in.md).</span></span>
 
-## <a name="to-write-a-windows-powershell-snap-in-that-registers-specific-cmdlets"></a><span data-ttu-id="1a2b7-106">特定のコマンドレットを登録する Windows PowerShell スナップインを作成するには</span><span class="sxs-lookup"><span data-stu-id="1a2b7-106">To write a Windows PowerShell Snap-in that registers specific cmdlets.</span></span>
+## <a name="to-write-a-windows-powershell-snap-in-that-registers-specific-cmdlets"></a><span data-ttu-id="36b44-107">特定のコマンドレットを登録する Windows PowerShell スナップインを作成するには</span><span class="sxs-lookup"><span data-stu-id="36b44-107">To write a Windows PowerShell Snap-in that registers specific cmdlets.</span></span>
 
-1. <span data-ttu-id="1a2b7-107">Runインストーラ属性属性を追加します。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-107">Add the RunInstallerAttribute attribute.</span></span>
-2. <span data-ttu-id="1a2b7-108">[Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn)クラスから派生するパブリッククラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-108">Create a public class that derives from the [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) class.</span></span>
+1. <span data-ttu-id="36b44-108">Runインストーラ属性属性を追加します。</span><span class="sxs-lookup"><span data-stu-id="36b44-108">Add the RunInstallerAttribute attribute.</span></span>
+2. <span data-ttu-id="36b44-109">[Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn)クラスから派生するパブリッククラスを作成します。</span><span class="sxs-lookup"><span data-stu-id="36b44-109">Create a public class that derives from the [System.Management.Automation.Custompssnapin](/dotnet/api/System.Management.Automation.CustomPSSnapIn) class.</span></span>
 
-   <span data-ttu-id="1a2b7-109">この例では、クラス名は "CustomPSSnapinTest" です。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-109">In this example, the class name is "CustomPSSnapinTest".</span></span>
+   <span data-ttu-id="36b44-110">この例では、クラス名は "CustomPSSnapinTest" です。</span><span class="sxs-lookup"><span data-stu-id="36b44-110">In this example, the class name is "CustomPSSnapinTest".</span></span>
 
-3. <span data-ttu-id="1a2b7-110">スナップインの名前のパブリックプロパティを追加します (必須)。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-110">Add a public property for the name of the snap-in (required).</span></span> <span data-ttu-id="1a2b7-111">スナップインに名前を付ける場合、 `#` 、、 `.` `,` 、、 `(` 、 `)` `{` `}` `[` `]` `&` `-` `/` `\` `$` `;` `:` `"` `'` `<` `>` `|` `?` `@` 、、、 `` ` `` 、、、、、、、、、、、、、、、、、、、、、、、、`*`</span><span class="sxs-lookup"><span data-stu-id="1a2b7-111">When naming snap-ins, do not use any of the following characters: `#`, `.`, `,`, `(`, `)`, `{`, `}`, `[`, `]`, `&`, `-`, `/`, `\`, `$`, `;`, `:`, `"`, `'`, `<`, `>`, `|`, `?`, `@`, `` ` ``, `*`</span></span>
+3. <span data-ttu-id="36b44-111">スナップインの名前のパブリックプロパティを追加します (必須)。</span><span class="sxs-lookup"><span data-stu-id="36b44-111">Add a public property for the name of the snap-in (required).</span></span> <span data-ttu-id="36b44-112">スナップインに名前を付ける場合、 `#` 、、 `.` `,` 、、 `(` 、 `)` `{` `}` `[` `]` `&` `-` `/` `\` `$` `;` `:` `"` `'` `<` `>` `|` `?` `@` 、、、 `` ` `` 、、、、、、、、、、、、、、、、、、、、、、、、 `*`</span><span class="sxs-lookup"><span data-stu-id="36b44-112">When naming snap-ins, do not use any of the following characters: `#`, `.`, `,`, `(`, `)`, `{`, `}`, `[`, `]`, `&`, `-`, `/`, `\`, `$`, `;`, `:`, `"`, `'`, `<`, `>`, `|`, `?`, `@`, `` ` ``, `*`</span></span>
 
-   <span data-ttu-id="1a2b7-112">この例では、スナップインの名前は "CustomPSSnapInTest" です。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-112">In this example, the name of the snap-in is "CustomPSSnapInTest".</span></span>
+   <span data-ttu-id="36b44-113">この例では、スナップインの名前は "CustomPSSnapInTest" です。</span><span class="sxs-lookup"><span data-stu-id="36b44-113">In this example, the name of the snap-in is "CustomPSSnapInTest".</span></span>
 
-4. <span data-ttu-id="1a2b7-113">スナップインのベンダのパブリックプロパティを追加します (必須)。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-113">Add a public property for the vendor of the snap-in (required).</span></span>
+4. <span data-ttu-id="36b44-114">スナップインのベンダのパブリックプロパティを追加します (必須)。</span><span class="sxs-lookup"><span data-stu-id="36b44-114">Add a public property for the vendor of the snap-in (required).</span></span>
 
-   <span data-ttu-id="1a2b7-114">この例では、ベンダーは "Microsoft" です。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-114">In this example, the vendor is "Microsoft".</span></span>
+   <span data-ttu-id="36b44-115">この例では、ベンダーは "Microsoft" です。</span><span class="sxs-lookup"><span data-stu-id="36b44-115">In this example, the vendor is "Microsoft".</span></span>
 
-5. <span data-ttu-id="1a2b7-115">スナップインのベンダリソースのパブリックプロパティを追加します (省略可能)。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-115">Add a public property for the vendor resource of the snap-in (optional).</span></span>
+5. <span data-ttu-id="36b44-116">スナップインのベンダリソースのパブリックプロパティを追加します (省略可能)。</span><span class="sxs-lookup"><span data-stu-id="36b44-116">Add a public property for the vendor resource of the snap-in (optional).</span></span>
 
-   <span data-ttu-id="1a2b7-116">この例では、ベンダリソースは "CustomPSSnapInTest, Microsoft" です。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-116">In this example, the vendor resource is "CustomPSSnapInTest,Microsoft".</span></span>
+   <span data-ttu-id="36b44-117">この例では、ベンダリソースは "CustomPSSnapInTest, Microsoft" です。</span><span class="sxs-lookup"><span data-stu-id="36b44-117">In this example, the vendor resource is "CustomPSSnapInTest,Microsoft".</span></span>
 
-6. <span data-ttu-id="1a2b7-117">スナップインの説明のパブリックプロパティを追加します (必須)。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-117">Add a public property for the description of the snap-in (required).</span></span>
+6. <span data-ttu-id="36b44-118">スナップインの説明のパブリックプロパティを追加します (必須)。</span><span class="sxs-lookup"><span data-stu-id="36b44-118">Add a public property for the description of the snap-in (required).</span></span>
 
-   <span data-ttu-id="1a2b7-118">この例での説明は次のとおりです。 "これは、 `Test-HelloWorld` コマンドレットとコマンドレットを含むカスタムの Windows PowerShell スナップインです `Test-CustomSnapinTest` 。"</span><span class="sxs-lookup"><span data-stu-id="1a2b7-118">In this example, the description is: "This is a custom Windows PowerShell snap-in that includes the `Test-HelloWorld` and `Test-CustomSnapinTest` cmdlets".</span></span>
+   <span data-ttu-id="36b44-119">この例での説明は次のとおりです。 "これは、 `Test-HelloWorld` コマンドレットとコマンドレットを含むカスタムの Windows PowerShell スナップインです `Test-CustomSnapinTest` 。"</span><span class="sxs-lookup"><span data-stu-id="36b44-119">In this example, the description is: "This is a custom Windows PowerShell snap-in that includes the `Test-HelloWorld` and `Test-CustomSnapinTest` cmdlets".</span></span>
 
-7. <span data-ttu-id="1a2b7-119">スナップインの説明リソースのパブリックプロパティを追加します (省略可能)。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-119">Add a public property for the description resource of the snap-in (optional).</span></span>
+7. <span data-ttu-id="36b44-120">スナップインの説明リソースのパブリックプロパティを追加します (省略可能)。</span><span class="sxs-lookup"><span data-stu-id="36b44-120">Add a public property for the description resource of the snap-in (optional).</span></span>
 
-   <span data-ttu-id="1a2b7-120">この例では、ベンダリソースは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-120">In this example, the vendor resource is:</span></span>
+   <span data-ttu-id="36b44-121">この例では、ベンダリソースは次のようになります。</span><span class="sxs-lookup"><span data-stu-id="36b44-121">In this example, the vendor resource is:</span></span>
 
-   > <span data-ttu-id="1a2b7-121">CustomPSSnapInTest は、このカスタム Windows PowerShell スナップインです。これには、テスト HelloWorld とテスト用の CustomSnapinTest コマンドレットが含まれています。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-121">CustomPSSnapInTest, This is a custom Windows PowerShell snap-in that includes the Test-HelloWorld and Test-CustomSnapinTest cmdlets".</span></span>
+   > <span data-ttu-id="36b44-122">CustomPSSnapInTest は、Test-HelloWorld と Test-CustomSnapinTest のコマンドレットを含むカスタムの Windows PowerShell スナップインです。</span><span class="sxs-lookup"><span data-stu-id="36b44-122">CustomPSSnapInTest, This is a custom Windows PowerShell snap-in that includes the Test-HelloWorld and Test-CustomSnapinTest cmdlets".</span></span>
 
-8. <span data-ttu-id="1a2b7-122">カスタムスナップインに属するコマンドレットを指定します (省略可能[)。このクラスを](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry)使用してください。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-122">Specify the cmdlets that belong to the custom snap-in (optional) using the [System.Management.Automation.Runspaces.Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) class.</span></span> <span data-ttu-id="1a2b7-123">ここで追加される情報には、コマンドレットの名前、.NET の種類、コマンドレットのヘルプファイル名 (コマンドレットヘルプファイル名の形式) が含まれてい `name.dll-help.xml` ます。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-123">The information added here includes the name of the cmdlet, its .NET type, and the cmdlet Help file name (the format of the cmdlet Help file name should be `name.dll-help.xml`).</span></span>
+8. <span data-ttu-id="36b44-123">カスタムスナップインに属するコマンドレットを指定します (省略可能 [)。このクラスを](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) 使用してください。</span><span class="sxs-lookup"><span data-stu-id="36b44-123">Specify the cmdlets that belong to the custom snap-in (optional) using the [System.Management.Automation.Runspaces.Cmdletconfigurationentry](/dotnet/api/System.Management.Automation.Runspaces.CmdletConfigurationEntry) class.</span></span> <span data-ttu-id="36b44-124">ここで追加される情報には、コマンドレットの名前、.NET の種類、コマンドレットのヘルプファイル名 (コマンドレットヘルプファイル名の形式) が含まれてい `name.dll-help.xml` ます。</span><span class="sxs-lookup"><span data-stu-id="36b44-124">The information added here includes the name of the cmdlet, its .NET type, and the cmdlet Help file name (the format of the cmdlet Help file name should be `name.dll-help.xml`).</span></span>
 
-   <span data-ttu-id="1a2b7-124">この例では、テスト HelloWorld と TestCustomSnapinTest コマンドレットを追加します。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-124">This example adds the Test-HelloWorld and TestCustomSnapinTest cmdlets.</span></span>
+   <span data-ttu-id="36b44-125">この例では、Test-HelloWorld と TestCustomSnapinTest コマンドレットを追加します。</span><span class="sxs-lookup"><span data-stu-id="36b44-125">This example adds the Test-HelloWorld and TestCustomSnapinTest cmdlets.</span></span>
 
-9. <span data-ttu-id="1a2b7-125">カスタムスナップインに属するプロバイダーを指定します (省略可能)。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-125">Specify the providers that belong to the custom snap-in (optional).</span></span>
+9. <span data-ttu-id="36b44-126">カスタムスナップインに属するプロバイダーを指定します (省略可能)。</span><span class="sxs-lookup"><span data-stu-id="36b44-126">Specify the providers that belong to the custom snap-in (optional).</span></span>
 
-   <span data-ttu-id="1a2b7-126">この例では、プロバイダーが指定されていません。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-126">This example does not specify any providers.</span></span>
+   <span data-ttu-id="36b44-127">この例では、プロバイダーが指定されていません。</span><span class="sxs-lookup"><span data-stu-id="36b44-127">This example does not specify any providers.</span></span>
 
-10. <span data-ttu-id="1a2b7-127">カスタムスナップインに属する種類を指定します (省略可能)。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-127">Specify the types that belong to the custom snap-in (optional).</span></span>
+10. <span data-ttu-id="36b44-128">カスタムスナップインに属する種類を指定します (省略可能)。</span><span class="sxs-lookup"><span data-stu-id="36b44-128">Specify the types that belong to the custom snap-in (optional).</span></span>
 
-    <span data-ttu-id="1a2b7-128">この例では、型は指定しません。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-128">This example does not specify any types.</span></span>
+    <span data-ttu-id="36b44-129">この例では、型は指定しません。</span><span class="sxs-lookup"><span data-stu-id="36b44-129">This example does not specify any types.</span></span>
 
-11. <span data-ttu-id="1a2b7-129">カスタムスナップインに属する形式を指定します (省略可能)。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-129">Specify the formats that belong to the custom snap-in (optional).</span></span>
+11. <span data-ttu-id="36b44-130">カスタムスナップインに属する形式を指定します (省略可能)。</span><span class="sxs-lookup"><span data-stu-id="36b44-130">Specify the formats that belong to the custom snap-in (optional).</span></span>
 
-    <span data-ttu-id="1a2b7-130">この例では、形式は指定されていません。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-130">This example does not specify any formats.</span></span>
+    <span data-ttu-id="36b44-131">この例では、形式は指定されていません。</span><span class="sxs-lookup"><span data-stu-id="36b44-131">This example does not specify any formats.</span></span>
 
-## <a name="example"></a><span data-ttu-id="1a2b7-131">例</span><span class="sxs-lookup"><span data-stu-id="1a2b7-131">Example</span></span>
+## <a name="example"></a><span data-ttu-id="36b44-132">例</span><span class="sxs-lookup"><span data-stu-id="36b44-132">Example</span></span>
 
-<span data-ttu-id="1a2b7-132">この例では、およびコマンドレットの登録に使用できるカスタム Windows PowerShell スナップインを記述する方法を示し `Test-HelloWorld` `Test-CustomSnapinTest` ます。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-132">This example shows how to write a Custom Windows PowerShell snap-in that can be used to register the `Test-HelloWorld` and `Test-CustomSnapinTest` cmdlets.</span></span> <span data-ttu-id="1a2b7-133">この例では、完全なアセンブリに、このスナップインによって登録されない他のコマンドレットとプロバイダーが含まれている可能性があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-133">Be aware that in this example, the complete assembly could contain other cmdlets and providers that would not be registered by this snap-in.</span></span>
+<span data-ttu-id="36b44-133">この例では、およびコマンドレットの登録に使用できるカスタム Windows PowerShell スナップインを記述する方法を示し `Test-HelloWorld` `Test-CustomSnapinTest` ます。</span><span class="sxs-lookup"><span data-stu-id="36b44-133">This example shows how to write a Custom Windows PowerShell snap-in that can be used to register the `Test-HelloWorld` and `Test-CustomSnapinTest` cmdlets.</span></span> <span data-ttu-id="36b44-134">この例では、完全なアセンブリに、このスナップインによって登録されない他のコマンドレットとプロバイダーが含まれている可能性があることに注意してください。</span><span class="sxs-lookup"><span data-stu-id="36b44-134">Be aware that in this example, the complete assembly could contain other cmdlets and providers that would not be registered by this snap-in.</span></span>
 
 ```csharp
 [RunInstaller(true)]
@@ -207,10 +206,10 @@ public class CustomPSSnapinTest : CustomPSSnapIn
 }
 ```
 
-<span data-ttu-id="1a2b7-134">スナップインの登録の詳細については、「 [Windows PowerShell プログラマーズガイド](../prog-guide/windows-powershell-programmer-s-guide.md)」の「[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions/ms714644(v=vs.85))」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="1a2b7-134">For more information about registering snap-ins, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions/ms714644(v=vs.85)) in the [Windows PowerShell Programmer's Guide](../prog-guide/windows-powershell-programmer-s-guide.md).</span></span>
+<span data-ttu-id="36b44-135">スナップインの登録の詳細については、「 [Windows PowerShell プログラマーズガイド](../prog-guide/windows-powershell-programmer-s-guide.md)」の「[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions/ms714644(v=vs.85))」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="36b44-135">For more information about registering snap-ins, see [How to Register Cmdlets, Providers, and Host Applications](/previous-versions/ms714644(v=vs.85)) in the [Windows PowerShell Programmer's Guide](../prog-guide/windows-powershell-programmer-s-guide.md).</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="1a2b7-135">参照</span><span class="sxs-lookup"><span data-stu-id="1a2b7-135">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="36b44-136">参照</span><span class="sxs-lookup"><span data-stu-id="36b44-136">See Also</span></span>
 
-<span data-ttu-id="1a2b7-136">[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions/ms714644(v=vs.85))</span><span class="sxs-lookup"><span data-stu-id="1a2b7-136">[How to Register Cmdlets, Providers, and Host Applications](/previous-versions/ms714644(v=vs.85))</span></span>
+<span data-ttu-id="36b44-137">[コマンドレット、プロバイダー、およびホストアプリケーションを登録する方法](/previous-versions/ms714644(v=vs.85))</span><span class="sxs-lookup"><span data-stu-id="36b44-137">[How to Register Cmdlets, Providers, and Host Applications](/previous-versions/ms714644(v=vs.85))</span></span>
 
-[<span data-ttu-id="1a2b7-137">Windows PowerShell Shell SDK</span><span class="sxs-lookup"><span data-stu-id="1a2b7-137">Windows PowerShell Shell SDK</span></span>](../windows-powershell-reference.md)
+[<span data-ttu-id="36b44-138">Windows PowerShell シェル SDK</span><span class="sxs-lookup"><span data-stu-id="36b44-138">Windows PowerShell Shell SDK</span></span>](../windows-powershell-reference.md)
