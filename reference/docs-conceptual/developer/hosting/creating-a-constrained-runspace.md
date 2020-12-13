@@ -1,26 +1,28 @@
 ---
-title: 制約付き実行空間を作成する |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 30ecb80dbd96278ee9aa5a609d27bfc4eaa423e9
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: 制約付き実行空間を作成する
+description: 制約付き実行空間を作成する
+ms.openlocfilehash: 53fee3cc7d8625425bc6a73196aee9eee7f17ed6
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87779813"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92651172"
 ---
-# <a name="creating-a-constrained-runspace"></a><span data-ttu-id="e503d-102">制約付き実行空間を作成する</span><span class="sxs-lookup"><span data-stu-id="e503d-102">Creating a constrained runspace</span></span>
+# <a name="creating-a-constrained-runspace"></a><span data-ttu-id="981f6-103">制約付き実行空間を作成する</span><span class="sxs-lookup"><span data-stu-id="981f6-103">Creating a constrained runspace</span></span>
 
-<span data-ttu-id="e503d-103">パフォーマンスまたはセキュリティ上の理由により、ホストアプリケーションで使用できる Windows PowerShell コマンドを制限する必要がある場合があります。</span><span class="sxs-lookup"><span data-stu-id="e503d-103">For performance or security reasons, you might want to restrict the Windows PowerShell commands available to your host application.</span></span> <span data-ttu-id="e503d-104">これを行うには、System.Management.Automation.Runspaces.Initialsessionstate を呼び出して、空の[System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState)を作成し[ます。\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create)メソッドを作成し、使用可能なコマンドのみを追加します。</span><span class="sxs-lookup"><span data-stu-id="e503d-104">To do this you create an empty [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) by calling the [System.Management.Automation.Runspaces.Initialsessionstate.Create\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) method, and then add only the commands you want available.</span></span>
+<span data-ttu-id="981f6-104">パフォーマンスまたはセキュリティ上の理由により、ホストアプリケーションで使用できる Windows PowerShell コマンドを制限する必要がある場合があります。</span><span class="sxs-lookup"><span data-stu-id="981f6-104">For performance or security reasons, you might want to restrict the Windows PowerShell commands available to your host application.</span></span> <span data-ttu-id="981f6-105">これを行うには、System.Management.Automation.Runspaces.Initialsessionstate を呼び出して、空の [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) を作成し [ ます。\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) メソッドを作成し、使用可能なコマンドのみを追加します。</span><span class="sxs-lookup"><span data-stu-id="981f6-105">To do this you create an empty [System.Management.Automation.Runspaces.Initialsessionstate](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState) by calling the [System.Management.Automation.Runspaces.Initialsessionstate.Create\*](/dotnet/api/System.Management.Automation.Runspaces.InitialSessionState.Create) method, and then add only the commands you want available.</span></span>
 
- <span data-ttu-id="e503d-105">指定したコマンドのみを読み込む実行空間を使用すると、パフォーマンスが大幅に向上します。</span><span class="sxs-lookup"><span data-stu-id="e503d-105">Using a runspace that loads only the commands that you specify provides significantly improved performance.</span></span>
+ <span data-ttu-id="981f6-106">指定したコマンドのみを読み込む実行空間を使用すると、パフォーマンスが大幅に向上します。</span><span class="sxs-lookup"><span data-stu-id="981f6-106">Using a runspace that loads only the commands that you specify provides significantly improved performance.</span></span>
 
- <span data-ttu-id="e503d-106">最初のセッション状態のコマンドレットを定義するには、system.servicemodel. [Sessionstatecmd・ entry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry)クラスのメソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="e503d-106">You use the methods of the [System.Management.Automation.Runspaces.Sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) class to define cmdlets for the initial session state.</span></span>
+ <span data-ttu-id="981f6-107">最初のセッション状態のコマンドレットを定義するには、system.servicemodel. [Sessionstatecmd・ entry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) クラスのメソッドを使用します。</span><span class="sxs-lookup"><span data-stu-id="981f6-107">You use the methods of the [System.Management.Automation.Runspaces.Sessionstatecmdletentry](/dotnet/api/System.Management.Automation.Runspaces.SessionStateCmdletEntry) class to define cmdlets for the initial session state.</span></span>
 
- <span data-ttu-id="e503d-107">コマンドをプライベートにすることもできます。</span><span class="sxs-lookup"><span data-stu-id="e503d-107">You can also make commands private.</span></span> <span data-ttu-id="e503d-108">プライベートコマンドはホストアプリケーションで使用できますが、アプリケーションのユーザーは使用できません。</span><span class="sxs-lookup"><span data-stu-id="e503d-108">Private commands can be used by the host application, but not by users of the application.</span></span>
+ <span data-ttu-id="981f6-108">コマンドをプライベートにすることもできます。</span><span class="sxs-lookup"><span data-stu-id="981f6-108">You can also make commands private.</span></span> <span data-ttu-id="981f6-109">プライベートコマンドはホストアプリケーションで使用できますが、アプリケーションのユーザーは使用できません。</span><span class="sxs-lookup"><span data-stu-id="981f6-109">Private commands can be used by the host application, but not by users of the application.</span></span>
 
-## <a name="adding-commands-to-an-empty-runspace"></a><span data-ttu-id="e503d-109">空の実行空間にコマンドを追加する</span><span class="sxs-lookup"><span data-stu-id="e503d-109">Adding commands to an empty runspace</span></span>
+## <a name="adding-commands-to-an-empty-runspace"></a><span data-ttu-id="981f6-110">空の実行空間にコマンドを追加する</span><span class="sxs-lookup"><span data-stu-id="981f6-110">Adding commands to an empty runspace</span></span>
 
- <span data-ttu-id="e503d-110">次の例は、空の InitialSessionState を作成してコマンドを追加する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="e503d-110">The following example demonstrates how to create an empty InitialSessionState and add commands to it.</span></span>
+ <span data-ttu-id="981f6-111">次の例は、空の InitialSessionState を作成してコマンドを追加する方法を示しています。</span><span class="sxs-lookup"><span data-stu-id="981f6-111">The following example demonstrates how to create an empty InitialSessionState and add commands to it.</span></span>
 
 ```csharp
 namespace Microsoft.Samples.PowerShell.Runspaces
@@ -100,9 +102,9 @@ namespace Microsoft.Samples.PowerShell.Runspaces
 }
 ```
 
-## <a name="making-commands-private"></a><span data-ttu-id="e503d-111">コマンドをプライベートにする</span><span class="sxs-lookup"><span data-stu-id="e503d-111">Making commands private</span></span>
+## <a name="making-commands-private"></a><span data-ttu-id="981f6-112">コマンドをプライベートにする</span><span class="sxs-lookup"><span data-stu-id="981f6-112">Making commands private</span></span>
 
- <span data-ttu-id="e503d-112">また、コマンド**をプライベートに**設定することも[できます。](/dotnet/api/System.Management.Automation.CommandInfo.Visibility)これを行うには、SessionStateEntryVisibility プロパティを[system](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility)に設定します。</span><span class="sxs-lookup"><span data-stu-id="e503d-112">You can also make a command private, by setting it's [System.Management.Automation.Commandinfo.Visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) property to [System.Management.Automation.SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private**.</span></span> <span data-ttu-id="e503d-113">ホストアプリケーションやその他のコマンドは、そのコマンドを呼び出すことができますが、アプリケーションのユーザーは呼び出せません。</span><span class="sxs-lookup"><span data-stu-id="e503d-113">The host application and other commands can call that command, but the user of the application cannot.</span></span> <span data-ttu-id="e503d-114">次の例では、 [get-childitem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem)コマンドはプライベートです。</span><span class="sxs-lookup"><span data-stu-id="e503d-114">In the following example, the [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) command is private.</span></span>
+ <span data-ttu-id="981f6-113">また、コマンド **をプライベートに** 設定することも [できます。](/dotnet/api/System.Management.Automation.CommandInfo.Visibility)これを行うには、SessionStateEntryVisibility プロパティを [system](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility)に設定します。</span><span class="sxs-lookup"><span data-stu-id="981f6-113">You can also make a command private, by setting it's [System.Management.Automation.Commandinfo.Visibility](/dotnet/api/System.Management.Automation.CommandInfo.Visibility) property to [System.Management.Automation.SessionStateEntryVisibility](/dotnet/api/System.Management.Automation.SessionStateEntryVisibility) **Private**.</span></span> <span data-ttu-id="981f6-114">ホストアプリケーションやその他のコマンドは、そのコマンドを呼び出すことができますが、アプリケーションのユーザーは呼び出せません。</span><span class="sxs-lookup"><span data-stu-id="981f6-114">The host application and other commands can call that command, but the user of the application cannot.</span></span> <span data-ttu-id="981f6-115">次の例では、 [get-childitem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) コマンドはプライベートです。</span><span class="sxs-lookup"><span data-stu-id="981f6-115">In the following example, the [Get-ChildItem](/powershell/module/Microsoft.PowerShell.Management/Get-ChildItem) command is private.</span></span>
 
 ```csharp
 defaultSessionState = InitialSessionState.CreateDefault();
@@ -113,6 +115,6 @@ this.runspace = RunspaceFactory.CreateRunspace(defaultSessionState);
 this.runspace.Open();
 ```
 
-## <a name="see-also"></a><span data-ttu-id="e503d-115">参照</span><span class="sxs-lookup"><span data-stu-id="e503d-115">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="981f6-116">参照</span><span class="sxs-lookup"><span data-stu-id="981f6-116">See Also</span></span>
 
- [<span data-ttu-id="e503d-116">InitialSessionState を作成する</span><span class="sxs-lookup"><span data-stu-id="e503d-116">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
+ [<span data-ttu-id="981f6-117">InitialSessionState を作成する</span><span class="sxs-lookup"><span data-stu-id="981f6-117">Creating an InitialSessionState</span></span>](./creating-an-initialsessionstate.md)
