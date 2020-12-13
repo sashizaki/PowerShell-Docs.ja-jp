@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: PowerShell ギャラリーに関してよく寄せられる質問
 description: PowerShell ギャラリーに関してよく寄せられる質問
-ms.openlocfilehash: 045db04d49e0c65f807fef254a17bf20bb877ff6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 52c89d570041e1fce3466f574af7de25f05ec4c5
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92654160"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389895"
 ---
 # <a name="frequently-asked-questions-about-the-powershell-gallery"></a>PowerShell ギャラリーに関してよく寄せられる質問
 
@@ -17,14 +17,14 @@ PowerShell モジュールは、いくつかの PowerShell 機能を含む再利
 
 ## <a name="what-is-a-powershell-script"></a>PowerShell スクリプトとは
 
-PowerShell スクリプトとは、再利用と共有を可能にするため、.ps1 ファイルに保存される一連のコマンドです。 PowerShell ワークフローは PowerShell スクリプトでもあり、一連のタスクとそのタスクの順序の概要を示します。 詳細については、「[PowerShell ファースト ステップ ガイド](https://technet.microsoft.com/library/jj134242.aspx)」を参照してください。
+PowerShell スクリプトとは、再利用と共有を可能にするため、.ps1 ファイルに保存される一連のコマンドです。 PowerShell ワークフローは PowerShell スクリプトでもあり、一連のタスクとそのタスクの順序の概要を示します。 詳細については、「[PowerShell ファースト ステップ ガイド](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134242(v=ws.11))」を参照してください。
 
 ## <a name="how-are-powershell-scripts-different-from-powershell-modules"></a>PowerShell スクリプトと PowerShell モジュールの違いは何ですか。
 
 モジュールは一般に共有に適していますが、ワークフローとスクリプトのコミュニティへの投稿を容易にするため、スクリプト共有を有効にしています。 詳細については、次のブログを参照してください。
 
-- [Don't Write Scripts, Write PowerShell Modules (スクリプトではなく、PowerShell モジュールを記述しよう)](https://blogs.technet.microsoft.com/heyscriptingguy/2011/06/27/dont-write-scripts-write-powershell-modules/)
-- [Understanding PowerShell Modules (PowerShell モジュールの概要)](https://blogs.technet.microsoft.com/heyscriptingguy/2015/07/10/understanding-powershell-modules/)
+- [Don't Write Scripts, Write PowerShell Modules (スクリプトではなく、PowerShell モジュールを記述しよう)](https://devblogs.microsoft.com/scripting/dont-write-scripts-write-powershell-modules/)
+- [Understanding PowerShell Modules (PowerShell モジュールの概要)](https://devblogs.microsoft.com/scripting/understanding-powershell-modules/)
 
 ## <a name="how-can-i-publish-to-the-powershell-gallery"></a>どのようにして PowerShell ギャラリーに公開できますか。
 
@@ -55,7 +55,7 @@ PowerShell スクリプトとは、再利用と共有を可能にするため、
 
 ## <a name="what-are-the-requirements-to-publish-a-module-to-the-powershell-gallery"></a>モジュールを PowerShell ギャラリーに公開するための要件は何ですか。
 
-PowerShell モジュールのどの種類 (スクリプト モジュール、バイナリ モジュール、マニフェスト モジュールなど) でも、ギャラリーに公開できます。 モジュールを公開するには、PowerShellGet がそのバージョン、説明、作成者、そのライセンス取得方法について認識している必要があります。 この情報は、 *モジュール マニフェスト* (.psd1) ファイル、または [Publish-Module][] コマンドレットの **LicenseUri** パラメーターの値から公開プロセスの一環として読み取られます。 ギャラリーに公開されるすべてのモジュールに、モジュール マニフェストが必要です。 マニフェストに次の情報を含むモジュールはすべて、ギャラリーに公開できます。
+PowerShell モジュールのどの種類 (スクリプト モジュール、バイナリ モジュール、マニフェスト モジュールなど) でも、ギャラリーに公開できます。 モジュールを公開するには、PowerShellGet がそのバージョン、説明、作成者、そのライセンス取得方法について認識している必要があります。 この情報は、*モジュール マニフェスト* (.psd1) ファイル、または [Publish-Module][] コマンドレットの **LicenseUri** パラメーターの値から公開プロセスの一環として読み取られます。 ギャラリーに公開されるすべてのモジュールに、モジュール マニフェストが必要です。 マニフェストに次の情報を含むモジュールはすべて、ギャラリーに公開できます。
 
 - Version
 - 説明
@@ -64,7 +64,7 @@ PowerShell モジュールのどの種類 (スクリプト モジュール、バ
 
 ## <a name="how-do-i-create-a-correctly-formatted-module-manifest"></a>正しい形式のモジュール マニフェストはどのように作成できますか。
 
-モジュール マニフェストを作成する最も簡単な方法は、[New-ModuleManifest][] コマンドレットを実行することです。 PowerShell 5.0 以降、New-ModuleManifest によって、 **ProjectUri** 、 **LicenseUri** 、 **Tags** などの有用なメタデータのフィールドが空白のまま、正しい形式のマニフェストが生成されるようになりました。 空白を埋めるか、正しい形式のサンプルとして生成されたマニフェストを使用します。
+モジュール マニフェストを作成する最も簡単な方法は、[New-ModuleManifest][] コマンドレットを実行することです。 PowerShell 5.0 以降、New-ModuleManifest によって、**ProjectUri**、**LicenseUri**、**Tags** などの有用なメタデータのフィールドが空白のまま、正しい形式のマニフェストが生成されるようになりました。 空白を埋めるか、正しい形式のサンプルとして生成されたマニフェストを使用します。
 
 必要なメタデータ フィールドがすべて正しく入力されているかどうかを確認するには、[Test-ModuleManifest][] コマンドレットを使用します。
 
@@ -93,7 +93,7 @@ PowerShell スクリプトのどの種類 (スクリプトまたはワークフ�
 
 ## <a name="how-do-i-create-a-correctly-formatted-script-file"></a>正しい形式のスクリプト ファイルはどのように作成できますか。
 
-正しく書式設定されたスクリプトを作成する最も簡単な方法は、[New-ScriptFileInfo][] コマンドレットを実行することです。 PowerShell 5.0 以降、New-ScriptFileInfo によって、 **ProjectUri** 、 **LicenseUri** 、 **Tags** などの有用なメタデータのフィールドが空白のまま、正しい形式のスクリプト ファイルが生成されるようになりました。 空白を埋めるか、正しい形式のサンプルとして生成されたスクリプト ファイルを使用します。
+正しく書式設定されたスクリプトを作成する最も簡単な方法は、[New-ScriptFileInfo][] コマンドレットを実行することです。 PowerShell 5.0 以降、New-ScriptFileInfo によって、**ProjectUri**、**LicenseUri**、**Tags** などの有用なメタデータのフィールドが空白のまま、正しい形式のスクリプト ファイルが生成されるようになりました。 空白を埋めるか、正しい形式のサンプルとして生成されたスクリプト ファイルを使用します。
 
 必要なメタデータ フィールドがすべて正しく入力されているかどうかを確認するには、[Test-ScriptFileInfo][] コマンドレットを使用します。
 
@@ -113,7 +113,7 @@ PackageManagement はどのパッケージ マネージャーでも機能する�
 
 PowerShellGet は PowerShell パッケージのパッケージ マネージャーです。 PackageManagement を介して PowerShellGet 機能を公開する PSModule パッケージ プロバイダーがあります。 このため、[Install-Module][] または Install-Package -Provider PSModule を実行して、PowerShell ギャラリーからモジュールをインストールすることができます。 [Update-Module][] および [Publish-Module][] を含む特定の PowerShellGet 機能には、PackageManagement コマンドではアクセスできません。
 
-つまり、PowerShellGet はPowerShell コンテンツのプレミアム パッケージ管理エクスペリエンスにのみ重点を置いています。 PackageManagement は、単一の一般的なツール セットによるすべてのパッケージ管理エクスペリエンスの公開に重点を置いています。 この回答では不十分な場合は、このドキュメントの下部にある「 **PackageManagement は実際に PowerShellGet にどのように関連しているでしょうか。** 」のセクションに詳しい回答があります。
+つまり、PowerShellGet はPowerShell コンテンツのプレミアム パッケージ管理エクスペリエンスにのみ重点を置いています。 PackageManagement は、単一の一般的なツール セットによるすべてのパッケージ管理エクスペリエンスの公開に重点を置いています。 この回答では不十分な場合は、このドキュメントの下部にある「**PackageManagement は実際に PowerShellGet にどのように関連しているでしょうか。**」のセクションに詳しい回答があります。
 
 詳細については、[PackageManagement プロジェクトのページ](https://oneget.org/)にアクセスしてください。
 
@@ -146,7 +146,7 @@ PackageManagement パッケージ プロバイダー層では、PSModule パッ�
 
 **PowerShellGet** モジュールは **PowerShell 3.0 以降** を必要とします。
 
-そのため、 **PowerShellGet** は次のいずれかのオペレーティング システムを必要とします。
+そのため、**PowerShellGet** は次のいずれかのオペレーティング システムを必要とします。
 
 - Windows 10
 - Windows 8.1 Pro
@@ -156,7 +156,7 @@ PackageManagement パッケージ プロバイダー層では、PSModule パッ�
 - Windows Server 2012 R2
 - Windows Server 2008 R2 SP1
 
-**PowerShellGet** には、.NET Framework 4.5 以降も必要です。 .NET Framework 4.5 以降を[ここ](https://msdn.microsoft.com/library/5a4x27ek.aspx)からインストールできます。
+**PowerShellGet** には、.NET Framework 4.5 以降も必要です。 詳細については、「[開発者向けの .NET Framework のインストール](/dotnet/framework/install/guide-for-developers)」を参照してください。
 
 ## <a name="is-it-possible-to-reserve-names-for-packages-that-will-be-published-in-future"></a>将来的に公開されるパッケージの名前を予約することはできますか。
 

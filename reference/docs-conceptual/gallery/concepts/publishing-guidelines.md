@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 description: この記事では、PowerShell ギャラリーに公開されたパッケージが広く使用され、ユーザーに高い価値を提供していることを確認するための、推奨の手順について説明します。
 title: PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
-ms.openlocfilehash: 949340aeba36df26c68f92422b8c11869ed3bf11
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 97af3761fad1efb849b7197761a3855c9f1b05a4
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656156"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391172"
 ---
 # <a name="powershellgallery-publishing-guidelines-and-best-practices"></a>PowerShell ギャラリーへの公開に関するガイドラインとベスト プラクティス
 
@@ -41,7 +41,7 @@ PowerShell ギャラリーへのパッケージの公開の仕組みについて
 
 ## <a name="use-psscriptanalyzer"></a>PSScriptAnalyzer を使用する
 
-[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) は、PowerShell コードに対応した無料の静的コード分析ツールです。 **PSScriptAnalyzer** では PowerShell のコードで頻繁に見られる問題を特定し、多くの場合、推奨される問題の解決方法を示します。 このツールは簡単に使用でき、問題はエラー (重大であり対処が必須)、警告 (確認が必要であり対処した方がよい)、情報 (ベスト プラクティスの観点からチェックに値する) に分類されます。 PowerShell ギャラリーに公開されたすべてのパッケージは、 **PSScriptAnalyzer** によりスキャンされます。エラーがある場合には所有者に報告されるので、対処を行う必要があります。
+[PSScriptAnalyzer](https://www.powershellgallery.com/packages/PSScriptAnalyzer) は、PowerShell コードに対応した無料の静的コード分析ツールです。 **PSScriptAnalyzer** では PowerShell のコードで頻繁に見られる問題を特定し、多くの場合、推奨される問題の解決方法を示します。 このツールは簡単に使用でき、問題はエラー (重大であり対処が必須)、警告 (確認が必要であり対処した方がよい)、情報 (ベスト プラクティスの観点からチェックに値する) に分類されます。 PowerShell ギャラリーに公開されたすべてのパッケージは、**PSScriptAnalyzer** によりスキャンされます。エラーがある場合には所有者に報告されるので、対処を行う必要があります。
 
 `-Recurse` と `-Severity` として警告を指定して、`Invoke-ScriptAnalyzer` を実行することをお勧めします。
 
@@ -50,7 +50,7 @@ PowerShell ギャラリーへのパッケージの公開の仕組みについて
 - すべてのエラーが修正され、ドキュメントに記載されます。
 - すべての警告が確認され、必要に応じて対処されます。
 
-PowerShell ギャラリーからパッケージをダウンロードするユーザーには、 **PSScriptAnalyzer** を実行してすべてのエラーと警告を確認することが強く推奨されています。 **PSScriptAnalyzer** によってエラーが報告された場合、おそらくユーザーはパッケージの所有者に問い合わせます。 パッケージにエラーのフラグが付くコードをやむを得ずそのままにする場合は、その旨をドキュメントに追加して、同じ質問を何度も受けるのを回避します。
+PowerShell ギャラリーからパッケージをダウンロードするユーザーには、**PSScriptAnalyzer** を実行してすべてのエラーと警告を確認することが強く推奨されています。 **PSScriptAnalyzer** によってエラーが報告された場合、おそらくユーザーはパッケージの所有者に問い合わせます。 パッケージにエラーのフラグが付くコードをやむを得ずそのままにする場合は、その旨をドキュメントに追加して、同じ質問を何度も受けるのを回避します。
 
 ## <a name="include-documentation-and-examples"></a>ドキュメントとサンプルを含める
 
@@ -71,7 +71,7 @@ PowerShell ギャラリーからパッケージをダウンロードするユー
 
 ## <a name="manage-dependencies"></a>依存関係の管理
 
-お客様のモジュールが依存しているモジュールを、モジュール マニフェストで指定することが重要です。 これにより、エンド ユーザーは、お客様のモジュールが依存している適切なバージョンのモジュールのインストールについて心配する必要がなくなります。 依存モジュールを指定するには、モジュール マニフェスト内の必須モジュール フィールドを使う必要があります。 これによって、一覧にあるすべてのモジュールが、お客様のモジュールをインポートする前に (既に読み込まれている場合を除いて) グローバル環境に読み込まれます。 たとえば、別のモジュールによって一部のモジュールが既に読み込まれている場合があります。 また、 **ModuleVersion** フィールドではなく **RequiredVersion** フィールドを使って、特定のバージョンを読み込むように指定することもできます。 **ModuleVersion** を使う場合は、最小バージョンの指定で、使用可能な最新バージョンが読み込まれます。 特定のバージョンを指定する **RequiredVersion** フィールドを使わない場合は、必須モジュールのバージョン更新を監視することが重要です。 モジュールのユーザー エクスペリエンスに影響する可能性のある破壊的変更には、特に注意する必要があります。
+お客様のモジュールが依存しているモジュールを、モジュール マニフェストで指定することが重要です。 これにより、エンド ユーザーは、お客様のモジュールが依存している適切なバージョンのモジュールのインストールについて心配する必要がなくなります。 依存モジュールを指定するには、モジュール マニフェスト内の必須モジュール フィールドを使う必要があります。 これによって、一覧にあるすべてのモジュールが、お客様のモジュールをインポートする前に (既に読み込まれている場合を除いて) グローバル環境に読み込まれます。 たとえば、別のモジュールによって一部のモジュールが既に読み込まれている場合があります。 また、**ModuleVersion** フィールドではなく **RequiredVersion** フィールドを使って、特定のバージョンを読み込むように指定することもできます。 **ModuleVersion** を使う場合は、最小バージョンの指定で、使用可能な最新バージョンが読み込まれます。 特定のバージョンを指定する **RequiredVersion** フィールドを使わない場合は、必須モジュールのバージョン更新を監視することが重要です。 モジュールのユーザー エクスペリエンスに影響する可能性のある破壊的変更には、特に注意する必要があります。
 
 ```powershell
 Example: RequiredModules = @(@{ModuleName="myDependentModule"; ModuleVersion="2.0"; Guid="cfc45206-1e49-459d-a8ad-5b571ef94857"})
@@ -139,7 +139,7 @@ ProjectURI が記載されている場合、PowerShell ギャラリーではパ�
 
 ## <a name="include-andor-link-to-license-terms"></a>ライセンス条項を含めるか、ライセンス条項へのリンクを提供する (またはその両方)
 
-PowerShell ギャラリーに公開するすべてのパッケージには、ライセンス条項を指定するか、 [使用条件](https://www.powershellgallery.com/policies/Terms)に関するページの「 **Exhibit A** 」 (別紙 A) に記載されているライセンスで拘束する必要があります。別のライセンスを指定する最適な方法は、 **PSData** の **LicenseURI** を利用してライセンスへのリンクを提供することです。 詳細については、[パッケージ マニフェストとギャラリー UI](package-manifest-affecting-ui.md) に関するページを参照してください。
+PowerShell ギャラリーに公開するすべてのパッケージには、ライセンス条項を指定するか、[使用条件](https://www.powershellgallery.com/policies/Terms)に関するページの「**Exhibit A**」 (別紙 A) に記載されているライセンスで拘束する必要があります。別のライセンスを指定する最適な方法は、**PSData** の **LicenseURI** を利用してライセンスへのリンクを提供することです。 詳細については、[パッケージ マニフェストとギャラリー UI](package-manifest-affecting-ui.md) に関するページを参照してください。
 
 ```powershell
 PrivateData = @{
@@ -188,7 +188,7 @@ PowerShell は SemVer の公開前に作成されたため、SemVer の大半の
 PowerShell ギャラリーは、公開プロセスのテストの対象としては設計されていません。 PowerShell ギャラリーへのエンドツーエンドの公開プロセスをテストする最良の方法は、独自のローカル リポジトリを設定して使用することです。 これは、次のいくつかの方法で行うことができます。
 
 - GitHub で [PS プライベート ギャラリー プロジェクト](https://github.com/PowerShell/PSPrivateGallery)を使用して、PowerShell ギャラリーのローカル インスタンスを設定します。 このプレビュー プロジェクトでは、制御可能でありテスト対象である PowerShell ギャラリーのインスタンスを容易に設定することができます。
-- [Nuget 内部リポジトリ](https://blogs.msdn.microsoft.com/powershell/2014/05/20/setting-up-an-internal-powershellget-repository/)を設定します。
+- [Nuget 内部リポジトリ](https://devblogs.microsoft.com/powershell/setting-up-an-internal-powershellget-repository/)を設定します。
   これには追加の設定作業が必要です。ただし、利点として、API キーの使用を検証したり、公開時にターゲット内に依存関係が存在するかどうかを検証したりするなど、追加の要件をいくつか検証することができます。
 - ファイル共有をテスト **リポジトリ** として設定します。 この設定は簡単ですが、ファイル共有であるため、上記の検証は行われません。 この場合の潜在的な利点の 1 つは、ファイル共有で (必須の) API キーが確認されないため、PowerShell ギャラリーに公開するのと同じキーを使用できるということです。
 
@@ -198,10 +198,10 @@ PowerShell ギャラリーは、公開プロセスのテストの対象として
 
 ## <a name="use-powershellget-to-publish"></a>PowerShellGet を使用して公開する
 
-発行元は、PowerShell ギャラリーを使用するときは `Publish-Module` と `Publish-Script` コマンドレットを使用することを強くお勧めします。 **PowerShellGet** は、PowerShell ギャラリーからインストールをしたり、PowerShell ギャラリーに公開したりする場合の重要な詳細情報を覚えておかなくても済むように作成されました。 時折、発行元は、 **PowerShellGet** をスキップして、`Publish-Module` の代わりに **NuGet** クライアントを使用したり、 **PackageManagement** コマンドレットを使用したりすることがあります。 簡単に見落としてしまう詳細な設定がいくつもあり、その結果さまざまなサポート要求が発生します。
+発行元は、PowerShell ギャラリーを使用するときは `Publish-Module` と `Publish-Script` コマンドレットを使用することを強くお勧めします。 **PowerShellGet** は、PowerShell ギャラリーからインストールをしたり、PowerShell ギャラリーに公開したりする場合の重要な詳細情報を覚えておかなくても済むように作成されました。 時折、発行元は、**PowerShellGet** をスキップして、`Publish-Module` の代わりに **NuGet** クライアントを使用したり、**PackageManagement** コマンドレットを使用したりすることがあります。 簡単に見落としてしまう詳細な設定がいくつもあり、その結果さまざまなサポート要求が発生します。
 
 `Publish-Module` または `Publish-Script` を使用できない理由がある場合には、弊社にお知らせください。
-**PowerShellGet** の GitHub リポジトリにイシューを登録し、 **NuGet** または **PackageManagement** を選択することになった理由を詳細にご記入ください。
+**PowerShellGet** の GitHub リポジトリにイシューを登録し、**NuGet** または **PackageManagement** を選択することになった理由を詳細にご記入ください。
 
 ## <a name="recommended-workflow"></a>推奨されるワークフロー
 

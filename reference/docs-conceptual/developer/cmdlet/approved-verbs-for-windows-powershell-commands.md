@@ -4,10 +4,10 @@ ms.topic: reference
 title: PowerShell コマンドに承認されている動詞
 description: PowerShell コマンドに承認されている動詞
 ms.openlocfilehash: fc1ff989ae86862e0f9cc24d8bcba2ff02ef68cc
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
-ms.translationtype: HT
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
+ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/10/2020
 ms.locfileid: "93355104"
 ---
 # <a name="approved-verbs-for-powershell-commands"></a>PowerShell コマンドに承認されている動詞
@@ -16,9 +16,9 @@ PowerShell の場合、コマンドレットの名前を表すため、および
 名前の動詞の部分は、コマンドレットで実行されるアクションを識別します。 名前の名詞の部分は、アクションが実行される対象であるエンティティを識別します。 たとえば、`Get-Command` は、PowerShell に登録されているすべてのコマンドを取得するコマンドレットです。
 
 > [!NOTE]
-> PowerShell の場合、" _動詞_ " という用語は、アクションを意味する単語 (その単語が英語の標準的な動詞でない場合でも) を記述するために使用されます。 たとえば、 _New_ という用語は英語の動詞ではありませんが、アクションを意味しているため、有効な PowerShell 動詞の名前です。
+> PowerShell の場合、"_動詞_" という用語は、アクションを意味する単語 (その単語が英語の標準的な動詞でない場合でも) を記述するために使用されます。 たとえば、_New_ という用語は英語の動詞ではありませんが、アクションを意味しているため、有効な PowerShell 動詞の名前です。
 
-承認された各動詞には、対応する " _エイリアスのプレフィックス_ " が定義されています。 このエイリアスのプレフィックスは、その動詞を使用するコマンドのエイリアスで使用します。 たとえば、`Import` のエイリアスのプレフィックスは `ip` であり、したがって `Import-Module` のエイリアスは `ipmo` です。 これは推奨事項ですが、規則ではありません。特に、他の環境の既知のコマンドを模倣しているコマンド エイリアスの場合は、従う必要はありません。
+承認された各動詞には、対応する "_エイリアスのプレフィックス_" が定義されています。 このエイリアスのプレフィックスは、その動詞を使用するコマンドのエイリアスで使用します。 たとえば、`Import` のエイリアスのプレフィックスは `ip` であり、したがって `Import-Module` のエイリアスは `ipmo` です。 これは推奨事項ですが、規則ではありません。特に、他の環境の既知のコマンドを模倣しているコマンド エイリアスの場合は、従う必要はありません。
 
 ## <a name="verb-naming-recommendations"></a>動詞の名前付けに関する推奨事項
 

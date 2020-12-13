@@ -3,19 +3,19 @@ ms.date: 06/12/2017
 description: このドキュメントには、DSC プル サーバーを展開するエンジニアを支援するためのベスト プラクティスが記載されています。
 keywords: DSC, PowerShell, 構成, セットアップ
 title: プル サーバーのベスト プラクティス
-ms.openlocfilehash: 0021baa219a0936405eccf2cc7741e042f8bf09f
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 6c754e6d035cc714a86da86ec916ba2c7f833268
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92664331"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94389387"
 ---
 # <a name="pull-server-best-practices"></a>プル サーバーのベスト プラクティス
 
 適用先:Windows PowerShell 4.0、Windows PowerShell 5.0
 
 > [!IMPORTANT]
-> プル サーバー (Windows Feature *DSC-Service* ) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
+> プル サーバー (Windows Feature *DSC-Service*) は、Windows Server のサポート対象のコンポーネントですが、新機能がオファーされる予定はありません。 管理対象のクライアントは、(Windows Server のプル サーバー以降の機能が含まれる) [Azure Automation DSC](/azure/automation/automation-dsc-getting-started) または、[こちら](pullserver.md#community-solutions-for-pull-service)に列挙されているコミュニティ ソリューションのいずれかに切り替えを開始することをお勧めします。
 
 概要: このドキュメントは、ソリューションを準備するエンジニアを支援するプロセスと拡張機能を示すためのものです。 ベスト プラクティスに関する推奨事項は、将来を見据えた安定したものにするために、お客様によって確認され、製品チームによって検証されたベスト プラクティスの詳細を示す必要があります。
 
@@ -72,7 +72,7 @@ Windows Server 2012 R2 には、DSC サービスという機能が含まれて�
 
 ### <a name="dsc-resource"></a>DSC リソース
 
-プル サーバーの展開は、DSC 構成スクリプトを使用してサービスをプロビジョニングすることで簡略化できます。 このドキュメントには、運用準備ができているサーバー ノードの展開で使用できる構成スクリプトが含まれています。 構成スクリプトを使用するには、Windows Server に含まれていない DSC モジュールが必要になります。 必要なモジュール名は **xPSDesiredStateConfiguration** で、DSC リソースの **xDscWebService** が含まれます。 xPSDesiredStateConfiguration モジュールは[こちら](https://gallery.technet.microsoft.com/xPSDesiredStateConfiguratio-417dc71d)からダウンロードできます。
+プル サーバーの展開は、DSC 構成スクリプトを使用してサービスをプロビジョニングすることで簡略化できます。 このドキュメントには、運用準備ができているサーバー ノードの展開で使用できる構成スクリプトが含まれています。 構成スクリプトを使用するには、Windows Server に含まれていない DSC モジュールが必要になります。 必要なモジュール名は **xPSDesiredStateConfiguration** で、DSC リソースの **xDscWebService** が含まれます。 xPSDesiredStateConfiguration モジュールは[こちら](https://github.com/dsccommunity/xPSDesiredStateConfiguration)からダウンロードできます。
 
 **PowerShellGet** モジュールから `Install-Module` コマンドレットを使用します。
 
