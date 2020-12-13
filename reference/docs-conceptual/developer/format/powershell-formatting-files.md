@@ -1,31 +1,33 @@
 ---
-title: Windows PowerShell のフォーマットファイル |Microsoft Docs
 ms.date: 09/13/2016
-ms.openlocfilehash: 54fae12163f8d439c2acc24df17ed140a556cba0
-ms.sourcegitcommit: 0907b8c6322d2c7c61b17f8168d53452c8964b41
+ms.topic: reference
+title: Windows PowerShell 書式設定ファイル
+description: Windows PowerShell 書式設定ファイル
+ms.openlocfilehash: 7fa58a3463dc4b2a23d38d161d83387744334d44
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 08/05/2020
-ms.locfileid: "87783502"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "92666367"
 ---
-# <a name="windows-powershell-formatting-files"></a><span data-ttu-id="730db-102">Windows PowerShell 書式設定ファイル</span><span class="sxs-lookup"><span data-stu-id="730db-102">Windows PowerShell Formatting Files</span></span>
+# <a name="windows-powershell-formatting-files"></a><span data-ttu-id="b08b9-103">Windows PowerShell 書式設定ファイル</span><span class="sxs-lookup"><span data-stu-id="b08b9-103">Windows PowerShell Formatting Files</span></span>
 
-<span data-ttu-id="730db-103">Windows PowerShell には、インストールディレクトリ () に格納されているいくつかの書式設定ファイル (.format.ps1xml) が用意されて `$pshome` います。</span><span class="sxs-lookup"><span data-stu-id="730db-103">Windows PowerShell provides several formatting files (.format.ps1xml) that are located in the installation directory (`$pshome`).</span></span> <span data-ttu-id="730db-104">これらの各ファイルは、.NET オブジェクトの特定のセットの既定の表示を定義します。</span><span class="sxs-lookup"><span data-stu-id="730db-104">Each of these files defines the default display for a specific set of .NET objects.</span></span> <span data-ttu-id="730db-105">これらのファイルは変更しないでください。</span><span class="sxs-lookup"><span data-stu-id="730db-105">These files should never be changed.</span></span> <span data-ttu-id="730db-106">ただし、独自のカスタム書式設定ファイルを作成するためのリファレンスとして使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="730db-106">However, you can use them as a reference for creating your own custom formatting files.</span></span>
+<span data-ttu-id="b08b9-104">Windows PowerShell には、インストールディレクトリ () に格納されているいくつかの書式設定ファイル (.format.ps1xml) が用意されて `$pshome` います。</span><span class="sxs-lookup"><span data-stu-id="b08b9-104">Windows PowerShell provides several formatting files (.format.ps1xml) that are located in the installation directory (`$pshome`).</span></span> <span data-ttu-id="b08b9-105">これらの各ファイルは、.NET オブジェクトの特定のセットの既定の表示を定義します。</span><span class="sxs-lookup"><span data-stu-id="b08b9-105">Each of these files defines the default display for a specific set of .NET objects.</span></span> <span data-ttu-id="b08b9-106">これらのファイルは変更しないでください。</span><span class="sxs-lookup"><span data-stu-id="b08b9-106">These files should never be changed.</span></span> <span data-ttu-id="b08b9-107">ただし、独自のカスタム書式設定ファイルを作成するためのリファレンスとして使用することもできます。</span><span class="sxs-lookup"><span data-stu-id="b08b9-107">However, you can use them as a reference for creating your own custom formatting files.</span></span>
 
-<span data-ttu-id="730db-107">`Certificate.Format.ps1xml`X.509 証明書や証明書ストアなど、証明書ストア内のオブジェクトの表示を定義します。</span><span class="sxs-lookup"><span data-stu-id="730db-107">`Certificate.Format.ps1xml` Defines the display of objects in the Certificate store such as x.509 certificates and certificate stores.</span></span>
+<span data-ttu-id="b08b9-108">`Certificate.Format.ps1xml` X.509 証明書や証明書ストアなど、証明書ストア内のオブジェクトの表示を定義します。</span><span class="sxs-lookup"><span data-stu-id="b08b9-108">`Certificate.Format.ps1xml` Defines the display of objects in the Certificate store such as x.509 certificates and certificate stores.</span></span>
 
-<span data-ttu-id="730db-108">`DotNetTypes.Format.ps1xml`CultureInfo、FileVersionInfo、EventLogEntry オブジェクトなど、その他の .NET オブジェクトの表示を定義します。</span><span class="sxs-lookup"><span data-stu-id="730db-108">`DotNetTypes.Format.ps1xml` Defines the display of miscellaneous .NET objects such as CultureInfo, FileVersionInfo, and EventLogEntry objects.</span></span>
+<span data-ttu-id="b08b9-109">`DotNetTypes.Format.ps1xml` CultureInfo、FileVersionInfo、EventLogEntry オブジェクトなど、その他の .NET オブジェクトの表示を定義します。</span><span class="sxs-lookup"><span data-stu-id="b08b9-109">`DotNetTypes.Format.ps1xml` Defines the display of miscellaneous .NET objects such as CultureInfo, FileVersionInfo, and EventLogEntry objects.</span></span>
 
-<span data-ttu-id="730db-109">`FileSystem.Format.ps1xml`ファイルやディレクトリオブジェクトなどのファイルシステムオブジェクトの表示を定義します。</span><span class="sxs-lookup"><span data-stu-id="730db-109">`FileSystem.Format.ps1xml` Defines the display of file system objects such as file and directory objects.</span></span>
+<span data-ttu-id="b08b9-110">`FileSystem.Format.ps1xml` ファイルやディレクトリオブジェクトなどのファイルシステムオブジェクトの表示を定義します。</span><span class="sxs-lookup"><span data-stu-id="b08b9-110">`FileSystem.Format.ps1xml` Defines the display of file system objects such as file and directory objects.</span></span>
 
-<span data-ttu-id="730db-110">`Help.Format.ps1xml`詳細、完全、パラメーター、例のビューなど、 [get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help)コマンドレットで使用するさまざまなビューを定義します。</span><span class="sxs-lookup"><span data-stu-id="730db-110">`Help.Format.ps1xml` Defines the different views used by the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet, such as the detailed, full, parameters, and example views.</span></span>
+<span data-ttu-id="b08b9-111">`Help.Format.ps1xml` 詳細、完全、パラメーター、例のビューなど、 [get-help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) コマンドレットで使用するさまざまなビューを定義します。</span><span class="sxs-lookup"><span data-stu-id="b08b9-111">`Help.Format.ps1xml` Defines the different views used by the [Get-Help](/powershell/module/Microsoft.PowerShell.Core/Get-Help) cmdlet, such as the detailed, full, parameters, and example views.</span></span>
 
-<span data-ttu-id="730db-111">`PowerShellCore.Format.ps1xml`[Get Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member)および[get-help](/powershell/module/Microsoft.PowerShell.Core/Get-History)コマンドレットによって返されるオブジェクトなど、Windows PowerShell のコアコマンドレットによって生成されるオブジェクトの表示を定義します。</span><span class="sxs-lookup"><span data-stu-id="730db-111">`PowerShellCore.Format.ps1xml` Defines the display of the objects generated by Windows PowerShell core cmdlets, such as the objects returned by the [Get-Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member) and [Get-History](/powershell/module/Microsoft.PowerShell.Core/Get-History) cmdlets.</span></span>
+<span data-ttu-id="b08b9-112">`PowerShellCore.Format.ps1xml`[Get Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member)および[get-help](/powershell/module/Microsoft.PowerShell.Core/Get-History)コマンドレットによって返されるオブジェクトなど、Windows PowerShell のコアコマンドレットによって生成されるオブジェクトの表示を定義します。</span><span class="sxs-lookup"><span data-stu-id="b08b9-112">`PowerShellCore.Format.ps1xml` Defines the display of the objects generated by Windows PowerShell core cmdlets, such as the objects returned by the [Get-Member](/powershell/module/Microsoft.PowerShell.Utility/Get-Member) and [Get-History](/powershell/module/Microsoft.PowerShell.Core/Get-History) cmdlets.</span></span>
 
-<span data-ttu-id="730db-112">`PowerShellTrace.Format.ps1xml`Trace[コマンド](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command)レットによって生成されるトレースオブジェクトなど、トレースオブジェクトの表示を定義します。</span><span class="sxs-lookup"><span data-stu-id="730db-112">`PowerShellTrace.Format.ps1xml` Defines the display of trace objects such as those generated by the [Trace-Command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) cmdlet.</span></span>
+<span data-ttu-id="b08b9-113">`PowerShellTrace.Format.ps1xml` Trace [コマンド](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) レットによって生成されるトレースオブジェクトなど、トレースオブジェクトの表示を定義します。</span><span class="sxs-lookup"><span data-stu-id="b08b9-113">`PowerShellTrace.Format.ps1xml` Defines the display of trace objects such as those generated by the [Trace-Command](/powershell/module/Microsoft.PowerShell.Utility/Trace-Command) cmdlet.</span></span>
 
-<span data-ttu-id="730db-113">`Registry.Format.ps1xml`キーオブジェクトやエントリオブジェクトなど、レジストリオブジェクトの表示を定義します。</span><span class="sxs-lookup"><span data-stu-id="730db-113">`Registry.Format.ps1xml` Defines the display of registry objects such as key and entry objects.</span></span>
+<span data-ttu-id="b08b9-114">`Registry.Format.ps1xml` キーオブジェクトやエントリオブジェクトなど、レジストリオブジェクトの表示を定義します。</span><span class="sxs-lookup"><span data-stu-id="b08b9-114">`Registry.Format.ps1xml` Defines the display of registry objects such as key and entry objects.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="730db-114">参照</span><span class="sxs-lookup"><span data-stu-id="730db-114">See Also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b08b9-115">参照</span><span class="sxs-lookup"><span data-stu-id="b08b9-115">See Also</span></span>
 
-[<span data-ttu-id="730db-115">Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)</span><span class="sxs-lookup"><span data-stu-id="730db-115">Writing a Windows PowerShell Cmdlet</span></span>](../cmdlet/writing-a-windows-powershell-cmdlet.md)
+[<span data-ttu-id="b08b9-116">Writing a Windows PowerShell Cmdlet (Windows PowerShell コマンドレットの記述)</span><span class="sxs-lookup"><span data-stu-id="b08b9-116">Writing a Windows PowerShell Cmdlet</span></span>](../cmdlet/writing-a-windows-powershell-cmdlet.md)
