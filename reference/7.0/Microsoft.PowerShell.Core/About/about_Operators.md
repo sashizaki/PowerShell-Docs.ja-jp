@@ -6,12 +6,12 @@ ms.date: 11/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Operators
-ms.openlocfilehash: 736ca53ff4992ea430ec89ad1795dcf278b0da41
-ms.sourcegitcommit: 768816a5c05cc2d07ffd84bed95b0499f4b49f2d
+ms.openlocfilehash: 88369b1ccf3157e56dd5266784d8ca16e55b1f8f
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94483130"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94892523"
 ---
 # <a name="about-operators"></a>演算子について
 
@@ -542,7 +542,7 @@ ${a}?[0]
 > [!NOTE]
 > PowerShell では、変数名の一部として `?` が許可されるため、これらの演算子を使用するには、変数名の正式な仕様が必要です。 したがって、変数名は、`${a}` や、`?` が変数名 `${a?}` に含まれる場合のように、`{}` で囲む必要があります。
 >
-> の変数名の構文は、 `${<name>}` 部分式演算子と混同しないようにしてください `$()` 。 詳細については、「 [about_Variables](about_Variables.md#Variable-names-that-include-special-characters)」の「変数名」セクションを参照してください。
+> の変数名の構文は、 `${<name>}` 部分式演算子と混同しないようにしてください `$()` 。 詳細については、「 [about_Variables](about_Variables.md#variable-names-that-include-special-characters)」の「変数名」セクションを参照してください。
 
 ## <a name="see-also"></a>関連項目
 

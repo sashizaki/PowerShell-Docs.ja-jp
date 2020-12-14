@@ -3,12 +3,12 @@ ms.date: 12/12/2018
 keywords: dsc,powershell,リソース,ギャラリー,セットアップ
 title: 構成にパラメーターを追加する
 description: DSC 構成をパラメーター化し、ユーザー入力に基づいて構成をいっそう動的にすることができます。
-ms.openlocfilehash: aea230d34994a7b20076559c44990abe554d5395
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 72f3cf9efb5d99170e71992bed86a20a57132250
+ms.sourcegitcommit: 62282bb9c36fea3b4290b9263c1cd8e9ac216e29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92656820"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470334"
 ---
 # <a name="add-parameters-to-a-configuration"></a>構成にパラメーターを追加する
 
@@ -48,7 +48,7 @@ Configuration TestConfig
 ## <a name="adding-your-own-parameters-to-configurations"></a>構成に独自のパラメーターを追加する
 
 組み込みパラメーターに加えて、独自のパラメーターを構成に追加することもできます。
-関数と同様、パラメーター ブロックを構成の宣言内で直接指定します。 構成のパラメーター ブロックは、すべての **ノード** 宣言の外部で、すべての " *インポート* " ステートメントより上に置く必要があります。 パラメーターを追加することにより、構成をいっそう堅牢で動的にすることができます。
+関数と同様、パラメーター ブロックを構成の宣言内で直接指定します。 構成のパラメーター ブロックは、すべての **ノード** 宣言の外部で、すべての "*インポート*" ステートメントより上に置く必要があります。 パラメーターを追加することにより、構成をいっそう堅牢で動的にすることができます。
 
 ```powershell
 Configuration TestConfig
@@ -120,7 +120,7 @@ TestConfig -ComputerName "server01", "server02", "server03"
 ## <a name="advanced-parameters-in-configurations"></a>構成の高度なパラメーター
 
 `-ComputerName` パラメーターに加えて、サービス名と状態のパラメーターを追加することができます。
-次の例では、`-ServiceName` パラメーターでパラメーター ブロックを追加し、それを使用して **Service** リソース ブロックを動的に定義しています。 また、`-State` パラメーターを追加し、 **Service** リソース ブロック内で **State** を動的に定義しています。
+次の例では、`-ServiceName` パラメーターでパラメーター ブロックを追加し、それを使用して **Service** リソース ブロックを動的に定義しています。 また、`-State` パラメーターを追加し、**Service** リソース ブロック内で **State** を動的に定義しています。
 
 ```powershell
 Configuration TestConfig
@@ -210,7 +210,7 @@ Configuration TestConfig
         $State="Running",
 
         [String]
-        $ComputerName="localhost",
+        $ComputerName="localhost"
     )
 
     # It is best practice to explicitly import any required resources or modules.
