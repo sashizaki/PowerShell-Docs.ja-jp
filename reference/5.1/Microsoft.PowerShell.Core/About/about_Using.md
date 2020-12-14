@@ -1,17 +1,16 @@
 ---
 description: セッションで使用される名前空間を指定できます。
-keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 01/29/2020
+ms.date: 11/18/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_using?view=powershell-5.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Using
-ms.openlocfilehash: ff6b43c3af1deddb5cb1b4c2e2c86a2cc2cac5d4
-ms.sourcegitcommit: ae8b89e12c6fa2108075888dd6da92788d6c2888
+ms.openlocfilehash: b48cd85e200f44cdf9fdf278de78e07a918386c8
+ms.sourcegitcommit: 22c93550c87af30c4895fcb9e9dd65e30d60ada0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "93224944"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "94891348"
 ---
 # <a name="about-using"></a>使用について
 
@@ -26,7 +25,7 @@ ms.locfileid: "93224944"
 
 ステートメントは、 `using` `using:` 変数のスコープ修飾子と混同しないようにしてください。 詳細については、「 [about_Remote_Variables](about_Remote_Variables.md)」を参照してください。
 
-## <a name="syntax"></a>構文
+## <a name="namespace-syntax"></a>名前空間の構文
 
 型の解決に使用する .NET 名前空間を指定するには、次のようにします。
 
@@ -34,11 +33,32 @@ ms.locfileid: "93224944"
 using namespace <.NET-namespace>
 ```
 
+名前空間を指定すると、短い名前を使用して型を簡単に参照できます。
+
+## <a name="module-syntax"></a>モジュールの構文
+
 PowerShell モジュールからクラスを読み込むには、次のようにします。
 
 ```
 using module <module-name>
 ```
+
+の値には、 `<module-name>` モジュール名、モジュールの完全な指定、またはモジュールファイルへのパスを指定できます。
+
+`<module-name>`がパスの場合は、完全修飾パスまたは相対パスを指定できます。 相対パスは、using ステートメントを含むスクリプトに対して相対的に解決されます。
+
+`<module-name>`が名前またはモジュールの指定である場合、PowerShell は指定されたモジュールの **PSModulePath** を検索します。
+
+モジュール仕様は、次のキーを持つハッシュテーブルです。
+
+- `ModuleName` - **必須** モジュール名を指定します。
+- `GUID` - **省略可能** モジュールの GUID を指定します。
+- 以下の3つのキーのいずれかを指定する **必要** もあります。 これらのキーを一緒に使用することはできません。
+  - `ModuleVersion` -モジュールの許容される最小バージョンを指定します。
+  - `RequiredVersion` -モジュールの正確な必須バージョンを指定します。
+  - `MaximumVersion` -モジュールの許容される最大バージョンを指定します。
+
+## <a name="assembly-syntax"></a>アセンブリ構文
 
 .NET アセンブリから型をプリロードするには、次のようにします。
 
@@ -46,8 +66,6 @@ using module <module-name>
 using assembly <.NET-assembly-path>
 using assembly <.NET-namespace>
 ```
-
-名前空間を指定すると、短い名前を使用して型を簡単に参照できます。
 
 アセンブリを読み込むと、解析時にそのアセンブリから .NET 型がスクリプトにプリロードされます。 これにより、プリロードされたアセンブリの型を使用する新しい PowerShell クラスを作成できます。
 
