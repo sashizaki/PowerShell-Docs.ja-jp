@@ -3,52 +3,52 @@ external help file: Microsoft.PowerShell.Commands.Utility.dll-Help.xml
 keywords: powershell,コマンドレット
 Locale: en-US
 Module Name: Microsoft.PowerShell.Utility
-ms.date: 01/24/2020
+ms.date: 12/09/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/measure-command?view=powershell-7&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: Measure-Command
-ms.openlocfilehash: 970c72d5661796c25d6beb30eb08b6cd7032ceb1
-ms.sourcegitcommit: de63e9481cf8024883060aae61fb02c59c2de662
+ms.openlocfilehash: a7aed986ccd94472fe2dc89a43cc6b4d054494ca
+ms.sourcegitcommit: 165d10405d9db3a68c417a239d3181378fd02b9b
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 07/03/2020
-ms.locfileid: "93211184"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96935920"
 ---
-# <span data-ttu-id="a0638-103">Measure-Command</span><span class="sxs-lookup"><span data-stu-id="a0638-103">Measure-Command</span></span>
+# <span data-ttu-id="288fe-103">Measure-Command</span><span class="sxs-lookup"><span data-stu-id="288fe-103">Measure-Command</span></span>
 
-## <span data-ttu-id="a0638-104">概要</span><span class="sxs-lookup"><span data-stu-id="a0638-104">SYNOPSIS</span></span>
-<span data-ttu-id="a0638-105">スクリプト ブロックとコマンドレットの実行に要する時間を計測します。</span><span class="sxs-lookup"><span data-stu-id="a0638-105">Measures the time it takes to run script blocks and cmdlets.</span></span>
+## <span data-ttu-id="288fe-104">概要</span><span class="sxs-lookup"><span data-stu-id="288fe-104">SYNOPSIS</span></span>
+<span data-ttu-id="288fe-105">スクリプト ブロックとコマンドレットの実行に要する時間を計測します。</span><span class="sxs-lookup"><span data-stu-id="288fe-105">Measures the time it takes to run script blocks and cmdlets.</span></span>
 
-## <span data-ttu-id="a0638-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="a0638-106">SYNTAX</span></span>
+## <span data-ttu-id="288fe-106">SYNTAX</span><span class="sxs-lookup"><span data-stu-id="288fe-106">SYNTAX</span></span>
 
 ```
 Measure-Command [-InputObject <PSObject>] [-Expression] <ScriptBlock> [<CommonParameters>]
 ```
 
-## <span data-ttu-id="a0638-107">Description</span><span class="sxs-lookup"><span data-stu-id="a0638-107">DESCRIPTION</span></span>
+## <span data-ttu-id="288fe-107">Description</span><span class="sxs-lookup"><span data-stu-id="288fe-107">DESCRIPTION</span></span>
 
-<span data-ttu-id="a0638-108">コマンドレットでは、 `Measure-Command` スクリプトブロックまたはコマンドレットを内部で実行し、操作の実行時間を指定して、実行時間を返します。</span><span class="sxs-lookup"><span data-stu-id="a0638-108">The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the execution of the operation, and returns the execution time.</span></span>
+<span data-ttu-id="288fe-108">コマンドレットでは、 `Measure-Command` スクリプトブロックまたはコマンドレットを内部で実行し、操作の実行時間を指定して、実行時間を返します。</span><span class="sxs-lookup"><span data-stu-id="288fe-108">The `Measure-Command` cmdlet runs a script block or cmdlet internally, times the execution of the operation, and returns the execution time.</span></span>
 
 > [!NOTE]
-> <span data-ttu-id="a0638-109">スクリプトブロックは、 `Measure-Command` 子スコープではなく、現在のスコープで実行されます。</span><span class="sxs-lookup"><span data-stu-id="a0638-109">Script blocks run by `Measure-Command` run in the current scope, not a child scope.</span></span>
+> <span data-ttu-id="288fe-109">スクリプトブロックは、 `Measure-Command` 子スコープではなく、現在のスコープで実行されます。</span><span class="sxs-lookup"><span data-stu-id="288fe-109">Script blocks run by `Measure-Command` run in the current scope, not a child scope.</span></span>
 
-## <span data-ttu-id="a0638-110">例</span><span class="sxs-lookup"><span data-stu-id="a0638-110">EXAMPLES</span></span>
+## <span data-ttu-id="288fe-110">例</span><span class="sxs-lookup"><span data-stu-id="288fe-110">EXAMPLES</span></span>
 
-### <span data-ttu-id="a0638-111">例 1: コマンドを測定する</span><span class="sxs-lookup"><span data-stu-id="a0638-111">Example 1: Measure a command</span></span>
+### <span data-ttu-id="288fe-111">例 1: コマンドを測定する</span><span class="sxs-lookup"><span data-stu-id="288fe-111">Example 1: Measure a command</span></span>
 
-<span data-ttu-id="a0638-112">この例では、 `Get-EventLog` Windows PowerShell イベントログ内のイベントを取得するコマンドの実行にかかる時間を計測します。</span><span class="sxs-lookup"><span data-stu-id="a0638-112">This example measures the time it takes to run a `Get-EventLog` command that gets the events in the Windows PowerShell event log.</span></span>
+<span data-ttu-id="288fe-112">この例では、 `Get-EventLog` Windows PowerShell イベントログ内のイベントを取得するコマンドの実行にかかる時間を計測します。</span><span class="sxs-lookup"><span data-stu-id="288fe-112">This example measures the time it takes to run a `Get-EventLog` command that gets the events in the Windows PowerShell event log.</span></span>
 
 ```powershell
 Measure-Command { Get-EventLog "windows powershell" }
 ```
 
-### <span data-ttu-id="a0638-113">例 2: Measure-Command の2つの出力を比較する</span><span class="sxs-lookup"><span data-stu-id="a0638-113">Example 2: Compare two outputs from Measure-Command</span></span>
+### <span data-ttu-id="288fe-113">例 2: Measure-Command の2つの出力を比較する</span><span class="sxs-lookup"><span data-stu-id="288fe-113">Example 2: Compare two outputs from Measure-Command</span></span>
 
-<span data-ttu-id="a0638-114">最初のコマンドは、 `Get-ChildItem` **Path** パラメーターを使用して `.txt` `C:\Windows` ディレクトリとそのサブディレクトリ内のファイルのみを取得する再帰コマンドを処理するためにかかる時間を計測します。</span><span class="sxs-lookup"><span data-stu-id="a0638-114">The first command measures the time it takes to process a recursive `Get-ChildItem` command that uses the **Path** parameter to get only `.txt` files in the `C:\Windows` directory and its subdirectories.</span></span>
+<span data-ttu-id="288fe-114">最初のコマンドは、 `Get-ChildItem` **Path** パラメーターを使用して `.txt` `C:\Windows` ディレクトリとそのサブディレクトリ内のファイルのみを取得する再帰コマンドを処理するためにかかる時間を計測します。</span><span class="sxs-lookup"><span data-stu-id="288fe-114">The first command measures the time it takes to process a recursive `Get-ChildItem` command that uses the **Path** parameter to get only `.txt` files in the `C:\Windows` directory and its subdirectories.</span></span>
 
-<span data-ttu-id="a0638-115">2番目のコマンドは、プロバイダー固有の ' パラメーターを使用する再帰コマンドの処理にかかる時間を測定し `Get-ChildItem` ます。</span><span class="sxs-lookup"><span data-stu-id="a0638-115">The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific \` parameter.</span></span>
+<span data-ttu-id="288fe-115">2番目のコマンドは、プロバイダー固有の ' パラメーターを使用する再帰コマンドの処理にかかる時間を測定し `Get-ChildItem` ます。</span><span class="sxs-lookup"><span data-stu-id="288fe-115">The second command measures the time it takes to process a recursive `Get-ChildItem` command that uses the provider-specific \` parameter.</span></span>
 
-<span data-ttu-id="a0638-116">これらのコマンドは、PowerShell コマンドでプロバイダー固有のフィルターを使用した値を表示します。</span><span class="sxs-lookup"><span data-stu-id="a0638-116">These commands show the value of using a provider-specific filter in PowerShell commands.</span></span>
+<span data-ttu-id="288fe-116">これらのコマンドは、PowerShell コマンドでプロバイダー固有のフィルターを使用した値を表示します。</span><span class="sxs-lookup"><span data-stu-id="288fe-116">These commands show the value of using a provider-specific filter in PowerShell commands.</span></span>
 
 ```powershell
 Measure-Command { Get-ChildItem -Path C:\Windows\*.txt -Recurse }
@@ -86,9 +86,9 @@ TotalSeconds      : 1.1409189
 TotalMilliseconds : 1140.9189
 ```
 
-### <span data-ttu-id="a0638-117">例 3: 入力を Measure-Command にパイプする</span><span class="sxs-lookup"><span data-stu-id="a0638-117">Example 3: Piping input to Measure-Command</span></span>
+### <span data-ttu-id="288fe-117">例 3: 入力を Measure-Command にパイプする</span><span class="sxs-lookup"><span data-stu-id="288fe-117">Example 3: Piping input to Measure-Command</span></span>
 
-<span data-ttu-id="a0638-118">パイプ処理されたオブジェクト `Measure-Command` は、 **Expression** パラメーターに渡されるスクリプトブロックで使用できます。</span><span class="sxs-lookup"><span data-stu-id="a0638-118">Objects that are piped to `Measure-Command` are available to the script block that is passed to the **Expression** parameter.</span></span> <span data-ttu-id="a0638-119">スクリプトブロックは、パイプラインのオブジェクトごとに1回実行されます。</span><span class="sxs-lookup"><span data-stu-id="a0638-119">The script block is executed once for each object on the pipeline.</span></span>
+<span data-ttu-id="288fe-118">パイプ処理されたオブジェクト `Measure-Command` は、 **Expression** パラメーターに渡されるスクリプトブロックで使用できます。</span><span class="sxs-lookup"><span data-stu-id="288fe-118">Objects that are piped to `Measure-Command` are available to the script block that is passed to the **Expression** parameter.</span></span> <span data-ttu-id="288fe-119">スクリプトブロックは、パイプラインのオブジェクトごとに1回実行されます。</span><span class="sxs-lookup"><span data-stu-id="288fe-119">The script block is executed once for each object on the pipeline.</span></span>
 
 ```powershell
 # Perform a simple operation to demonstrate the InputObject parameter
@@ -110,9 +110,9 @@ TotalSeconds      : 0.0122672
 TotalMilliseconds : 12.2672
 ```
 
-### <span data-ttu-id="a0638-120">例 4: 測定されたコマンドの出力を表示する</span><span class="sxs-lookup"><span data-stu-id="a0638-120">Example 4: Displaying output of measured command</span></span>
+### <span data-ttu-id="288fe-120">例 4: 測定されたコマンドの出力を表示する</span><span class="sxs-lookup"><span data-stu-id="288fe-120">Example 4: Displaying output of measured command</span></span>
 
-<span data-ttu-id="a0638-121">に式の出力を表示するに `Measure-Command` は、パイプを使用し `Out-Default` ます。</span><span class="sxs-lookup"><span data-stu-id="a0638-121">To display output of expression in `Measure-Command` you can use a pipe to `Out-Default`.</span></span>
+<span data-ttu-id="288fe-121">に式の出力を表示するに `Measure-Command` は、パイプを使用し `Out-Default` ます。</span><span class="sxs-lookup"><span data-stu-id="288fe-121">To display output of expression in `Measure-Command` you can use a pipe to `Out-Default`.</span></span>
 
 ```powershell
 # Perform the same operation as above adding Out-Default to every execution.
@@ -139,9 +139,9 @@ TotalSeconds      : 0.0113745
 TotalMilliseconds : 11.3745
 ```
 
-### <span data-ttu-id="a0638-122">例 5: 子スコープで実行を測定する</span><span class="sxs-lookup"><span data-stu-id="a0638-122">Example 5: Measuring execution in a child scope</span></span>
+### <span data-ttu-id="288fe-122">例 5: 子スコープで実行を測定する</span><span class="sxs-lookup"><span data-stu-id="288fe-122">Example 5: Measuring execution in a child scope</span></span>
 
-<span data-ttu-id="a0638-123">`Measure-Command` 現在のスコープでスクリプトブロックを実行します。これにより、スクリプトブロックは現在のスコープ内の値を変更できます。</span><span class="sxs-lookup"><span data-stu-id="a0638-123">`Measure-Command` runs the script block in the current scope, so the script block can modify values in the current scope.</span></span> <span data-ttu-id="a0638-124">現在のスコープが変更されないようにするには、スクリプトブロックを中かっこ () で囲み、 `{}` 呼び出し演算子 () を使用して `&` 子スコープでブロックを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="a0638-124">To avoid changes to the current scope, you must wrap the script block in braces (`{}`) and use the invocation operator (`&`) to execute the block in a child scope.</span></span>
+<span data-ttu-id="288fe-123">`Measure-Command` 現在のスコープでスクリプトブロックを実行します。これにより、スクリプトブロックは現在のスコープ内の値を変更できます。</span><span class="sxs-lookup"><span data-stu-id="288fe-123">`Measure-Command` runs the script block in the current scope, so the script block can modify values in the current scope.</span></span> <span data-ttu-id="288fe-124">現在のスコープが変更されないようにするには、スクリプトブロックを中かっこ () で囲み、 `{}` 呼び出し演算子 () を使用して `&` 子スコープでブロックを実行する必要があります。</span><span class="sxs-lookup"><span data-stu-id="288fe-124">To avoid changes to the current scope, you must wrap the script block in braces (`{}`) and use the invocation operator (`&`) to execute the block in a child scope.</span></span>
 
 ```powershell
 $foo = 'Value 1'
@@ -156,13 +156,13 @@ Value 2
 Value 2
 ```
 
-<span data-ttu-id="a0638-125">呼び出し演算子の詳細については、「 [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#call-operator-)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0638-125">For more information about the invocation operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#call-operator-).</span></span>
+<span data-ttu-id="288fe-125">呼び出し演算子の詳細については、「 [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#call-operator-)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="288fe-125">For more information about the invocation operator, see [about_Operators](../Microsoft.PowerShell.Core/About/about_Operators.md#call-operator-).</span></span>
 
-## <span data-ttu-id="a0638-126">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="a0638-126">PARAMETERS</span></span>
+## <span data-ttu-id="288fe-126">PARAMETERS</span><span class="sxs-lookup"><span data-stu-id="288fe-126">PARAMETERS</span></span>
 
-### <span data-ttu-id="a0638-127">-式</span><span class="sxs-lookup"><span data-stu-id="a0638-127">-Expression</span></span>
+### <span data-ttu-id="288fe-127">-式</span><span class="sxs-lookup"><span data-stu-id="288fe-127">-Expression</span></span>
 
-<span data-ttu-id="a0638-128">時間の計測する式を指定します。</span><span class="sxs-lookup"><span data-stu-id="a0638-128">Specifies the expression that is being timed.</span></span> <span data-ttu-id="a0638-129">式を中かっこ () で囲み `{}` ます。</span><span class="sxs-lookup"><span data-stu-id="a0638-129">Enclose the expression in braces (`{}`).</span></span>
+<span data-ttu-id="288fe-128">時間の計測する式を指定します。</span><span class="sxs-lookup"><span data-stu-id="288fe-128">Specifies the expression that is being timed.</span></span> <span data-ttu-id="288fe-129">式を中かっこ () で囲み `{}` ます。</span><span class="sxs-lookup"><span data-stu-id="288fe-129">Enclose the expression in braces (`{}`).</span></span>
 
 ```yaml
 Type: System.Management.Automation.ScriptBlock
@@ -176,9 +176,9 @@ Accept pipeline input: False
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a0638-130">-InputObject</span><span class="sxs-lookup"><span data-stu-id="a0638-130">-InputObject</span></span>
+### <span data-ttu-id="288fe-130">-InputObject</span><span class="sxs-lookup"><span data-stu-id="288fe-130">-InputObject</span></span>
 
-<span data-ttu-id="a0638-131">**InputObject** パラメーターにバインドされたオブジェクトは、 **Expression** パラメーターに渡されるスクリプトブロックに対する省略可能な入力です。</span><span class="sxs-lookup"><span data-stu-id="a0638-131">Objects bound to the **InputObject** parameter are optional input for the script block passed to the **Expression** parameter.</span></span> <span data-ttu-id="a0638-132">スクリプトブロック内では、を使用して、 `$_` パイプライン内の現在のオブジェクトを参照できます。</span><span class="sxs-lookup"><span data-stu-id="a0638-132">Inside the script block, `$_` can be used to reference the current object in the pipeline.</span></span>
+<span data-ttu-id="288fe-131">**InputObject** パラメーターにバインドされたオブジェクトは、 **Expression** パラメーターに渡されるスクリプトブロックに対する省略可能な入力です。</span><span class="sxs-lookup"><span data-stu-id="288fe-131">Objects bound to the **InputObject** parameter are optional input for the script block passed to the **Expression** parameter.</span></span> <span data-ttu-id="288fe-132">スクリプトブロック内では、を使用して、 `$_` パイプライン内の現在のオブジェクトを参照できます。</span><span class="sxs-lookup"><span data-stu-id="288fe-132">Inside the script block, `$_` can be used to reference the current object in the pipeline.</span></span>
 
 ```yaml
 Type: System.Management.Automation.PSObject
@@ -192,26 +192,26 @@ Accept pipeline input: True (ByValue)
 Accept wildcard characters: False
 ```
 
-### <span data-ttu-id="a0638-133">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="a0638-133">CommonParameters</span></span>
+### <span data-ttu-id="288fe-133">共通パラメーター</span><span class="sxs-lookup"><span data-stu-id="288fe-133">CommonParameters</span></span>
 
-<span data-ttu-id="a0638-134">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="a0638-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="a0638-135">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="a0638-135">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
+<span data-ttu-id="288fe-134">このコマンドレットは、一般的なパラメーターをサポートしています。-Debug、-ErrorAction、-ErrorVariable、-InformationAction、-InformationVariable、-OutVariable、-OutBuffer、-PipelineVariable、-Verbose、-WarningAction、-WarningVariable です。</span><span class="sxs-lookup"><span data-stu-id="288fe-134">This cmdlet supports the common parameters: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction, and -WarningVariable.</span></span> <span data-ttu-id="288fe-135">詳細については、「[about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216)」を参照してください。</span><span class="sxs-lookup"><span data-stu-id="288fe-135">For more information, see [about_CommonParameters](https://go.microsoft.com/fwlink/?LinkID=113216).</span></span>
 
-## <span data-ttu-id="a0638-136">入力</span><span class="sxs-lookup"><span data-stu-id="a0638-136">INPUTS</span></span>
+## <span data-ttu-id="288fe-136">入力</span><span class="sxs-lookup"><span data-stu-id="288fe-136">INPUTS</span></span>
 
-### <span data-ttu-id="a0638-137">システム管理. PSObject</span><span class="sxs-lookup"><span data-stu-id="a0638-137">System.Management.Automation.PSObject</span></span>
+### <span data-ttu-id="288fe-137">システム管理. PSObject</span><span class="sxs-lookup"><span data-stu-id="288fe-137">System.Management.Automation.PSObject</span></span>
 
-<span data-ttu-id="a0638-138">パイプを使用してオブジェクトをにパイプすることができ `Measure-Command` ます。</span><span class="sxs-lookup"><span data-stu-id="a0638-138">You can pipe an object to `Measure-Command`.</span></span>
+<span data-ttu-id="288fe-138">パイプを使用してオブジェクトをにパイプすることができ `Measure-Command` ます。</span><span class="sxs-lookup"><span data-stu-id="288fe-138">You can pipe an object to `Measure-Command`.</span></span>
 
-## <span data-ttu-id="a0638-139">出力</span><span class="sxs-lookup"><span data-stu-id="a0638-139">OUTPUTS</span></span>
+## <span data-ttu-id="288fe-139">出力</span><span class="sxs-lookup"><span data-stu-id="288fe-139">OUTPUTS</span></span>
 
-### <span data-ttu-id="a0638-140">System.TimeSpan</span><span class="sxs-lookup"><span data-stu-id="a0638-140">System.TimeSpan</span></span>
+### <span data-ttu-id="288fe-140">System.TimeSpan</span><span class="sxs-lookup"><span data-stu-id="288fe-140">System.TimeSpan</span></span>
 
-<span data-ttu-id="a0638-141">`Measure-Command` 結果を表す期間オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="a0638-141">`Measure-Command` returns a time span object that represents the result.</span></span>
+<span data-ttu-id="288fe-141">`Measure-Command` 結果を表す期間オブジェクトを返します。</span><span class="sxs-lookup"><span data-stu-id="288fe-141">`Measure-Command` returns a time span object that represents the result.</span></span>
 
-## <span data-ttu-id="a0638-142">注</span><span class="sxs-lookup"><span data-stu-id="a0638-142">NOTES</span></span>
+## <span data-ttu-id="288fe-142">注</span><span class="sxs-lookup"><span data-stu-id="288fe-142">NOTES</span></span>
 
-## <span data-ttu-id="a0638-143">関連リンク</span><span class="sxs-lookup"><span data-stu-id="a0638-143">RELATED LINKS</span></span>
+## <span data-ttu-id="288fe-143">関連リンク</span><span class="sxs-lookup"><span data-stu-id="288fe-143">RELATED LINKS</span></span>
 
-[<span data-ttu-id="a0638-144">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="a0638-144">Invoke-Command</span></span>](../Microsoft.PowerShell.Core/Invoke-Command.md)
+[<span data-ttu-id="288fe-144">Invoke-Command</span><span class="sxs-lookup"><span data-stu-id="288fe-144">Invoke-Command</span></span>](../Microsoft.PowerShell.Core/Invoke-Command.md)
 
-[<span data-ttu-id="a0638-145">Trace-Command</span><span class="sxs-lookup"><span data-stu-id="a0638-145">Trace-Command</span></span>](Trace-Command.md)
+[<span data-ttu-id="288fe-145">Trace-Command</span><span class="sxs-lookup"><span data-stu-id="288fe-145">Trace-Command</span></span>](Trace-Command.md)
