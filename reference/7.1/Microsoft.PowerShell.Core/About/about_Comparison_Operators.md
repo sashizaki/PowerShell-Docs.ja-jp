@@ -1,17 +1,16 @@
 ---
 description: PowerShell の値を比較する演算子について説明します。
-keywords: powershell,コマンドレット
 Locale: en-US
-ms.date: 01/16/2020
+ms.date: 12/10/2020
 online version: https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1&WT.mc_id=ps-gethelp
 schema: 2.0.0
 title: about_Comparison_Operators
-ms.openlocfilehash: fe00608edd4cbada275112cb3ce7c20b34f5c5c6
-ms.sourcegitcommit: c9e56ec489522c706b8d6b8733f3f015d6d7e893
+ms.openlocfilehash: ea48d5928f71983f6d035f0e5e6074ce36754d80
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "93224544"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090513"
 ---
 # <a name="about-comparison-operators"></a>比較演算子について
 
@@ -26,7 +25,7 @@ PowerShell には、次の比較演算子が含まれています。
 
 | Type        | 演算子    | 説明                                 |
 | ----------- | ------------ | --------------------------------------------|
-| 等式    | -eq          | 次の値に等しい                                      |
+| 等式    | -eq          | equals                                      |
 |             | -ne          | 等しくない                                  |
 |             | -gt          | より大きい                                |
 |             | -ge          | 以上                       |
@@ -80,13 +79,13 @@ System.Object[]
 > hello
 > ```
 
-### <a name="equality-operators"></a>等値演算子
+## <a name="equality-operators"></a>等値演算子
 
 等値演算子 ( `-eq` 、 `-ne` ) は、1つ以上の入力値が指定されたパターンと同じ場合に TRUE または一致する値を返します。 パターン全体が値全体と一致している必要があります。
 
 例:
 
-#### <a name="-eq"></a>-eq
+### <a name="-eq"></a>-eq
 
 説明: と等しい。 には、同じ値が含まれます。
 
@@ -111,7 +110,7 @@ PS> "abc", "def" -eq "abc"
 abc
 ```
 
-#### <a name="-ne"></a>-ne
+### <a name="-ne"></a>-ne
 
 説明: 等しくない。 に別の値が含まれています。
 
@@ -131,7 +130,7 @@ PS> "abc", "def" -ne "abc"
 def
 ```
 
-#### <a name="-gt"></a>-gt
+### <a name="-gt"></a>-gt
 
 説明: より大きい。
 
@@ -148,7 +147,7 @@ PS> 7, 8, 9 -gt 8
 > [!NOTE]
 > `>`他の多くのプログラミング言語では、大なり演算子と混同しないようにしてください。 PowerShell で `>` は、はリダイレクトに使用されます。 詳細については、「 [About_redirection](about_Redirection.md#potential-confusion-with-comparison-operators)」を参照してください。
 
-#### <a name="-ge"></a>-ge
+### <a name="-ge"></a>-ge
 
 説明: より大きいか等しい。
 
@@ -163,7 +162,7 @@ PS> 7, 8, 9 -ge 8
 9
 ```
 
-#### <a name="-lt"></a>-lt
+### <a name="-lt"></a>-lt
 
 説明: より小さい。
 
@@ -178,7 +177,7 @@ PS> 7, 8, 9 -lt 8
 7
 ```
 
-#### <a name="-le"></a>-le
+### <a name="-le"></a>-le
 
 説明: 次の値より小さいか等しい。
 
@@ -193,7 +192,7 @@ PS> 7, 8, 9 -le 8
 8
 ```
 
-### <a name="matching-operators"></a>照合演算子
+## <a name="matching-operators"></a>照合演算子
 
 Like 演算子 ( `-like` および) は、 `-notlike` ワイルドカード式を使用して、指定したパターンに一致するか一致しない要素を検索します。
 
@@ -215,7 +214,7 @@ Like 演算子 ( `-like` および) は、 `-notlike` ワイルドカード式�
 <string[]> -notmatch <regular-expression>
 ```
 
-#### <a name="-like"></a>-like
+### <a name="-like"></a>-like
 
 説明: ワイルドカード文字 () を使用して一致し \* ます。
 
@@ -229,7 +228,7 @@ PS> "PowerShell", "Server" -like "*shell"
 PowerShell
 ```
 
-#### <a name="-notlike"></a>-notlike
+### <a name="-notlike"></a>-notlike
 
 説明: は、ワイルドカード文字 () を使用して一致しません \* 。
 
@@ -322,7 +321,7 @@ Name                           Value
 0                              day
 ```
 
-#### <a name="-notmatch"></a>-notmatch
+### <a name="-notmatch"></a>-notmatch
 
 説明: が文字列と一致しません。 正規表現を使用します。 入力がスカラーの場合は、自動変数が設定され `$Matches` ます。
 
@@ -341,13 +340,13 @@ PS> "Sunday", "Monday" -notmatch "sun"
 Monday
 ```
 
-### <a name="containment-operators"></a>含有演算子
+## <a name="containment-operators"></a>含有演算子
 
 含有演算子 ( `-contains` と `-notcontains` ) は、等値演算子に似ています。 ただし、入力がコレクションの場合でも、コンテインメント演算子は常にブール値を返します。
 
 また、等値演算子とは異なり、コンテインメント演算子は、最初の一致を検出するとすぐに値を返します。 等値演算子は、すべての入力を評価し、コレクション内のすべての一致を返します。
 
-#### <a name="-contains"></a>-contains
+### <a name="-contains"></a>-contains
 
 説明: コンテインメント演算子。 参照値のコレクションに1つのテスト値が含まれているかどうかを示します。 常にブール値を返します。 テスト値が参照値の少なくとも1つと完全に一致する場合にのみ TRUE を返します。
 
@@ -382,7 +381,7 @@ PS> $a, "ghi" -contains $a
 True
 ```
 
-#### <a name="-notcontains"></a>-notcontains
+### <a name="-notcontains"></a>-notcontains
 
 説明: コンテインメント演算子。 参照値のコレクションに1つのテスト値が含まれているかどうかを示します。 常にブール値を返します。 テスト値が参照値の少なくとも1つと完全に一致しない場合に TRUE を返します。
 
@@ -421,7 +420,7 @@ Tee
 Where
 ```
 
-#### <a name="-in"></a>-in
+### <a name="-in"></a>-in
 
 説明: In 演算子。 テスト値が参照値のコレクションに表示されるかどうかを示します。 常にブール値として返されます。 テスト値が参照値の少なくとも1つと完全に一致する場合にのみ TRUE を返します。
 
@@ -458,7 +457,7 @@ PS> $thisComputer -in  $domainServers
 True
 ```
 
-#### <a name="-notin"></a>-notin
+### <a name="-notin"></a>-notin
 
 Description: テスト値が参照値のコレクションに表示されるかどうかを示します。 常にブール値を返します。 テスト値が参照値の少なくとも1つと完全に一致しない場合に TRUE を返します。
 
@@ -497,51 +496,94 @@ Tee
 Where
 ```
 
-### <a name="replacement-operator"></a>置換演算子
+## <a name="replacement-operator"></a>置換演算子
 
-演算子は、 `-replace` 値のすべてまたは一部を、正規表現を使用して、指定された値に置き換えます。 `-replace`演算子は、ファイル名の変更など、多くの管理タスクに使用できます。 たとえば、次のコマンドは、すべての .txt ファイルのファイル名拡張子を .log に変更します。
+`-replace`演算子の構文は次のとおりです。
+
+`<input> -replace <original>, <substitute>`
+
+`<original>`プレースホルダーは、置換する文字と一致する正規表現です。 `<substitute>`プレースホルダーは、それらを置き換えるリテラル文字列です。
+
+演算子は、値のすべてまたは一部を、正規表現を使用して、指定された値に置き換えます。 演算子は、ファイル名の変更など、多くの管理タスクに使用できます。 たとえば、次のコマンドは、すべてのファイルのファイル名拡張子 `.txt` をに変更し `.log` ます。
 
 ```powershell
 Get-ChildItem *.txt | Rename-Item -NewName { $_.name -replace '\.txt$','.log' }
 ```
 
-演算子の構文は次のようになります。プレースホルダーは、置換する `-replace` 文字を表し、プレースホルダーはそれらを `<original>` `<substitute>` 置き換える文字を表します。
-
-`<input> <operator> <original>, <substitute>`
+### <a name="case-sensitive-matches"></a>大文字と小文字を区別する一致
 
 既定では、 `-replace` 演算子は大文字と小文字を区別しません。 大文字と小文字を区別するには、を使用 `-creplace` します。 大文字と小文字を区別しないようにするには、を使用 `-ireplace` します。
 
-次の例を考慮してください。
+次に例を示します。
 
 ```powershell
 PS> "book" -replace "B", "C"
-```
-
-```Output
 Cook
 ```
 
 ```powershell
-"book" -ireplace "B", "C"
-```
-
-```Output
+PS> "book" -ireplace "B", "C"
 Cook
 ```
 
 ```powershell
-"book" -creplace "B", "C"
-```
-
-```Output
+PS> "book" -creplace "B", "C"
 book
 ```
 
-また、正規表現を使用して、キャプチャグループと置換を使用してテキストを動的に置換することもできます。 詳細については、「 [about_Regular_Expressions](about_Regular_Expressions.md)」を参照してください。
+### <a name="substitutions-in-regular-expressions"></a>正規表現での置換
+
+また、正規表現を使用して、キャプチャグループと置換を使用してテキストを動的に置換することもできます。 キャプチャグループは、 `<substitute>` `$` グループ識別子の前にドル記号 () を使用して、文字列内で参照できます。
+
+キャプチャグループは、**数値** または **名前** で参照できます
+
+- **数値** キャプチャグループには、左から右に番号が付けられます。
+
+  ```powershell
+  PS> "John D. Smith" -replace "(\w+) (\w+)\. (\w+)", '$1.$2.$3@contoso.com'
+  John.D.Smith@contoso.com
+  ```
+
+- **名前** のキャプチャグループは、名前によって参照することもできます。
+
+  ```powershell
+  PS> "CONTOSO\Administrator" -replace '\w+\\(?<user>\w+)', 'FABRIKAM\${user}'
+  FABRIKAM\Administrator
+  ```
+
+> [!WARNING]
+> 文字は `$` 文字列の展開で使用されるため、リテラル文字列を使用するか、文字をエスケープする必要があり `$` ます。
+>
+> ```powershell
+> PS> 'Hello World' -replace '(\w+) \w+', "`$1 Universe"
+> Hello Universe
+> ```
+>
+> また、文字は `$` 代入で使用されるため、文字列内のすべてのインスタンスをエスケープする必要があります。
+>
+> ```powershell
+> PS> '5.72' -replace '(.+)', '$$$1'
+> $5.72
+> ```
+
+詳細については、「[正規表現での](/dotnet/standard/base-types/substitutions-in-regular-expressions) [about_Regular_Expressions](about_Regular_Expressions.md)と置換」を参照してください。
+
+### <a name="substituting-in-a-collection"></a>コレクション内での置換
+
+`<input>`演算子へのが `-replace` コレクションである場合、PowerShell はコレクションのすべての値に置換を適用します。 次に例を示します。
+
+```powershell
+"B1","B2","B3","B4","B5" -replace "B", 'a'
+a1
+a2
+a3
+a4
+a5
+```
 
 ### <a name="scriptblock-substitutions"></a>ScriptBlock の置換
 
-PowerShell 6 以降では、 *代替* テキストに **ScriptBlock** 引数を使用できます。 **ScriptBlock** は、 *入力* 文字列で見つかった一致ごとに実行されます。
+PowerShell 6 以降では、_代替_ テキストに **ScriptBlock** 引数を使用できます。 **ScriptBlock** は、_入力_ 文字列で見つかった一致ごとに実行されます。
 
 **ScriptBlock** 内では、自動変数を使用し `$_` て、現在の **system.text.regularexpressions.regexoptions** オブジェクトを参照します。 **Match** オブジェクトを使用すると、置き換えられる現在の入力テキストに加えて、その他の有用な情報にアクセスできます。
 
@@ -552,11 +594,11 @@ PS> "072101108108111" -replace "\d{3}", {[char][int]$_.Value}
 Hello
 ```
 
-### <a name="type-comparison"></a>型の比較
+## <a name="type-comparison"></a>型の比較
 
 型の比較演算子 ( `-is` と `-isnot` ) は、オブジェクトが特定の型であるかどうかを判断するために使用されます。
 
-#### <a name="-is"></a>-が
+### <a name="-is"></a>-が
 
 構文:
 
@@ -573,7 +615,7 @@ PS> $a -is $b.GetType()
 False
 ```
 
-#### <a name="-isnot"></a>-isnot
+### <a name="-isnot"></a>-isnot
 
 構文:
 
