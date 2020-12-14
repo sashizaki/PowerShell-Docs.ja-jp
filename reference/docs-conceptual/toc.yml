@@ -126,7 +126,7 @@
           href: whats-new/what-s-new-in-powershell-71.md
         - name: PowerShell 7.0 の新機能
           href: whats-new/what-s-new-in-powershell-70.md
-    - name: PowerShell Core 6.x の新機能
+    - name: PowerShell Core 6.x リリースノート
       items:
         - name: PowerShell Core 6.2 の新機能
           href: whats-new/what-s-new-in-powershell-core-62.md
@@ -590,8 +590,6 @@
           href: community/contributing/pull-requests.md
         - name: PowerShell ドキュメントのスタイル ガイド
           href: community/contributing/powershell-style-guide.md
-        - name: コマンドレット リファレンスの編集
-          href: community/contributing/editing-cmdlet-ref.md
         - name: その他のリソース
           items:
             - name: 編集のチェックリスト
