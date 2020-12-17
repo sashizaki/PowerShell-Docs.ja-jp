@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 12/01/2020
 title: PowerShell ギャラリー
 description: PowerShell ギャラリーは、PowerShell モジュール、スクリプト、および DSC リソースの中央リポジトリです。
-ms.openlocfilehash: 1aa3d351e71211259cac4e6d6f0ebd68c0df6ff1
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: f1ce6a8e2d5d72ac14cf3e4854626ef612d27891
+ms.sourcegitcommit: 62282bb9c36fea3b4290b9263c1cd8e9ac216e29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662116"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470317"
 ---
 # <a name="the-powershell-gallery"></a>PowerShell ギャラリー
 
@@ -28,13 +28,17 @@ PowerShellGet モジュールには、[PowerShell ギャラリー](https://www.P
 
 **PowerShellGet** モジュールは **PowerShell 3.0 以降** を必要とします。
 
-**PowerShellGet** には、.NET Framework 4.5 以降が必要です。 .NET Framework 4.5 以降を[ここ](https://msdn.microsoft.com/library/5a4x27ek.aspx)からインストールできます。
+**PowerShellGet** には、.NET Framework 4.5 以降が必要です。 詳細については、「[開発者向けの .NET Framework のインストール](/dotnet/framework/install/guide-for-developers)」を参照してください。
 
-**PowerShell Core** はクロス プラットフォームであるため、Windows、Linux、MacOS で動作し、 **PowerShellGet** をこれらのシステムで使用することもできます。 **PowerShell Core** でサポートされるシステムの完全な一覧については、 [PowerShell のインストール](/powershell/scripting/install/installing-powershell)に関するページを参照してください。
+**PowerShell Core** はクロス プラットフォームであるため、Windows、Linux、MacOS で動作し、**PowerShellGet** をこれらのシステムで使用することもできます。 **PowerShell Core** でサポートされるシステムの完全な一覧については、[PowerShell のインストール](/powershell/scripting/install/installing-powershell)に関するページを参照してください。
 
 ギャラリーでホストされているモジュールの多くは、さまざまな OS をサポートしており、追加の要件があります。
 詳細については、モジュールのドキュメントをご覧ください。
 
 ## <a name="got-a-question-have-feedback"></a>ご質問または ご意見およびご提案がある場合は、
 
-PowerShell ギャラリーと PowerShellGet の詳細を [[はじめに]](getting-started.md) ページで確認できます。 [UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell) でご意見とご感想をお寄せください。問題がございましたら、ご報告ください。
+PowerShell ギャラリーと PowerShellGet の詳細を [[はじめに]](getting-started.md) ページで確認できます。
+
+PowerShell ギャラリー サービスの現在の状態を確認するには、GitHub の [PowerShell Gallery Status](https://github.com/PowerShell/PowerShellGallery/blob/master/psgallery_status.md) ページを参照してください。
+
+[GitHub リポジトリ](https://github.com/PowerShell/PowerShellGallery/issues)でご意見とご感想をお寄せください。問題がございましたら、ご報告ください。

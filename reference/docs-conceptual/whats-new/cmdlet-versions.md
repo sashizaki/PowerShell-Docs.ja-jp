@@ -3,23 +3,18 @@ ms.date: 02/03/2020
 keywords: powershell、core
 title: モジュールとコマンドレットのリリース履歴
 description: この記事では、PowerShell のさまざまなバージョンに含まれるモジュールとコマンドレットの一覧を示します。
-ms.openlocfilehash: 43ea0cde106e9f0aafe9c18726589f931724b35f
-ms.sourcegitcommit: 177ae45034b58ead716853096b2e72e4864e6df6
+ms.openlocfilehash: e79735e516c9aaa485c6513fb80de623014f06f5
+ms.sourcegitcommit: 2fc6ee49a70bda4c59135136bd5cc7782836a124
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94342860"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "94810353"
 ---
 # <a name="release-history-of-modules-and-cmdlets"></a>モジュールとコマンドレットのリリース履歴
 
 この記事では、PowerShell のさまざまなバージョンに含まれるモジュールとコマンドレットの一覧を示します。 これは、リリース ノートに記載されている情報のまとめです。 詳細については、リリース ノートを参照してください。
 
 - [PowerShell 7.0 の新機能](what-s-new-in-powershell-70.md)
-- [PowerShell 6.2 の新機能](what-s-new-in-powershell-core-62.md)
-- [PowerShell 6.1 の新機能](what-s-new-in-powershell-core-61.md)
-- [PowerShell 6.0 の新機能](what-s-new-in-powershell-core-60.md)
-- [PowerShell 6.0 の破壊的変更](breaking-changes-ps6.md)
-- [PowerShell 6.0 の既知の問題](known-issues-ps6.md)
 
 この記事は作成中です。 以下の情報を最新の状態に保つためにご協力ください。
 
@@ -45,7 +40,8 @@ ms.locfileid: "94342860"
 | PSDesiredStateConfiguration               | &check; | &check; | &check; | &check; |              |
 | PSDiagnostics                             | &check; | &check; | &check; | &check; | Windows のみ |
 | PSReadline 1.x                            | &check; |         |         |         | Windows のみ |
-| PSReadline 2.x                            |         | &check; | &check; | &check; |              |
+| PSReadline 2.0                            |         | &check; | &check; |         |              |
+| PSReadline 2.1                            |         |         |         | &check; |              |
 | PSScheduledJob                            | &check; |         |         |         | Windows のみ |
 | PSWorkflow                                | &check; |         |         |         | Windows のみ |
 | PSWorkflowUtility                         | &check; |         |         |         | Windows のみ |

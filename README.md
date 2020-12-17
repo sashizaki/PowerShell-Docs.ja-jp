@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d94024926a8ff8c33df08b4a8b58e9f8b0430f9b
-ms.sourcegitcommit: fcf7bd222f5ee3fdbe21ffddcae47050cffe7e42
+ms.openlocfilehash: 61a70db9ae7a38d6731f1cefb011072c12d1e39a
+ms.sourcegitcommit: 077488408c820c860131382324bdd576d0edf52a
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93239883"
+ms.lasthandoff: 11/24/2020
+ms.locfileid: "95514917"
 ---
 # <a name="microsoft-open-source-code-of-conduct"></a>Microsoft オープン ソース倫理規定
 
@@ -34,9 +34,9 @@ ms.locfileid: "93239883"
 - `assets` - ドキュメントにリンクされているダウンロード可能なファイルが含まれています
 - `reference` - [docs.microsoft.com]([https://docs.microsoft.com/powershell/scripting/) に発行されたドキュメントが含まれています。 これには、リファレンスと概念のコンテンツの両方が含まれます。
   - `5.1` - コマンドレット リファレンスと PowerShell 5.1 に関するトピックが含まれています
-  - `6` - コマンドレット リファレンスと PowerShell 6 に関するトピックが含まれています
   - `7.0` - コマンドレット リファレンスと PowerShell 7.0 に関するトピックが含まれています
   - `7.1` - コマンドレット リファレンスと PowerShell 7.1 に関するトピックが含まれています
+  - `7.2` - コマンドレット リファレンスと PowerShell 7.2 (プレビュー) に関するトピックが含まれています
   - `bread` - 階層リンク ナビゲーションに使用される TOC が含まれています
   - `docs-conceptual` - ドキュメント サイトに公開されている概念説明の記事が含まれています。 一般に、フォルダー構造は目次 (TOC) を反映しています。
   - `mapping` - ビルド システムで使用されるバージョン マッピング構成が含まれています
@@ -50,7 +50,7 @@ ms.locfileid: "93239883"
 
 ## <a name="contributing"></a>寄与
 
-このリポジトリへの公開投稿は、 _ステージング_ ブランチへの [pull request](https://help.github.com/articles/using-pull-requests/) から行ってください。
+このリポジトリへの公開投稿は、_ステージング_ ブランチへの [pull request](https://help.github.com/articles/using-pull-requests/) から行ってください。
 pull request が受け入れられるには、[貢献者使用許諾契約書](https://cla.microsoft.com/)に署名する必要があります。 これは 1 回限りの要件です。
 
 投稿の詳細については、[共同作成者ガイド](https://aka.ms/PSDocsContributor)を参照してください。 共同作成者ガイドには、ドキュメント、お勧めのツール、スタイルや書式設定に関する要求を投稿する方法についての詳細情報が記載されています。 異なるバージョン間で一貫性のあるドキュメントを保つため、問題と Pull Request のテンプレートを使用してください。

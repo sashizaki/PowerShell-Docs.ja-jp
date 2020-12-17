@@ -2,12 +2,12 @@
 ms.date: 06/12/2017
 title: PowerShell ギャラリーの概要
 description: この記事では、PowerShell ギャラリーと PowerShellGet コマンドレットの使用を開始する方法について説明します
-ms.openlocfilehash: 02d84c64e39245b2a16c03029982796a74301bd6
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: a5045e4ecee2eb8bc9aa373a6b8ec3a940b4de33
+ms.sourcegitcommit: 560a9f3c3148acab4655e91e8b07745ab74d5d26
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661413"
+ms.lasthandoff: 12/09/2020
+ms.locfileid: "96913282"
 ---
 # <a name="getting-started-with-the-powershell-gallery"></a>PowerShell ギャラリーの概要
 
@@ -69,7 +69,7 @@ PowerShell ギャラリーからパッケージをダウンロードするとき
 
 ### <a name="deploy"></a>配置
 
-パッケージを PowerShell ギャラリーから Azure Automation にデプロイするには、 **[Azure Automation]** をクリックした後、パッケージの詳細ページで **[Deploy to Azure Automation]\(Azure Automation にデプロイする\)** をクリックします。 Azure 管理ポータルにリダイレクトされるため、そこで Azure アカウント資格情報を使用してサインインします。 依存関係のあるパッケージをデプロイすると、すべての依存関係が Azure Automation にデプロイされることに注意してください。 [Azure Automation にデプロイする] ボタンは、 **AzureAutomationNotSupported** タグをパッケージのメタデータに追加すると無効にできます。
+パッケージを PowerShell ギャラリーから Azure Automation にデプロイするには、**[Azure Automation]** をクリックした後、パッケージの詳細ページで **[Deploy to Azure Automation]\(Azure Automation にデプロイする\)** をクリックします。 Azure 管理ポータルにリダイレクトされるため、そこで Azure アカウント資格情報を使用してサインインします。 依存関係のあるパッケージをデプロイすると、すべての依存関係が Azure Automation にデプロイされることに注意してください。 [Azure Automation にデプロイする] ボタンは、**AzureAutomationNotSupported** タグをパッケージのメタデータに追加すると無効にできます。
 
 Azure Automation の詳細については、[Azure Automation](/azure/automation) のドキュメントをご覧ください。
 
@@ -90,10 +90,14 @@ PowerShell ギャラリーからどのモジュールをインストールした
 PowerShell ギャラリーでは、次のホスト名が使用されます。
 
 - `psg-prod-eastus.azureedge.net` - CDN ホスト名
+- `az818661.vo.msecnd.net` - CDN ホスト名
 - `devopsgallerystorage.blob.core.windows.net` - ストレージ アカウントのホスト名
 - `*.powershellgallery.com` - Web サイト
+- `go.microsoft.com` - リダイレクト サービス
 
 これらのホスト名は、ご利用のネットワークからのアクセスを制御する許可リストに追加する必要があります。
+
+[!INCLUDE [TLS 1.2 Requirement](../../includes/tls-gallery.md)]
 
 [Find-DscResource]: /powershell/module/powershellget/Find-DscResource
 [Find-Module]: /powershell/module/powershellget/Find-Module

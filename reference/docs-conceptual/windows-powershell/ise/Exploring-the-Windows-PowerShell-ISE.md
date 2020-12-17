@@ -2,14 +2,14 @@
 ms.date: 01/02/2020
 title: Windows PowerShell ISE の操作
 description: この記事では、Windows PowerShell ISE の機能の概要について説明します。
-ms.topic: landing-page
+ms.topic: conceptual
 ms.custom: ISE-F1-page
-ms.openlocfilehash: 4ef3f471f11c2f1de818491a193fcf34201cb04a
-ms.sourcegitcommit: 109ff625773389be56e98e994b7e56146f2b9d93
+ms.openlocfilehash: 91161763c817972a62b4da1558a7ca119d8c8616
+ms.sourcegitcommit: ba7315a496986451cfc1296b659d73ea2373d3f0
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93296366"
+ms.lasthandoff: 12/10/2020
+ms.locfileid: "97090448"
 ---
 # <a name="exploring-the-windows-powershell-ise"></a>Windows PowerShell ISE の操作
 
@@ -79,7 +79,8 @@ Windows PowerShell タブは、Windows PowerShell スクリプトが動作する
 
 ## <a name="help"></a>ヘルプ
 
-Windows PowerShell ISE のヘルプは、Web 上の TechNet ライブラリで利用できます。 ヘルプを開くには、 **[ヘルプ]** メニューの **[Windows PowerShell ISE ヘルプ]** をクリックするか、 <kbd>F1</kbd> キーを押します。これは、スクリプト ウィンドウまたはコンソール ウィンドウでコマンドレット名の上にカーソルがある場合を除き、どこからでも実行できます。 **[ヘルプ]** メニューからは、`Update-Help` コマンドレットを実行することや、コマンド ウィンドウを表示することもできます。コマンド ウィンドウは、コマンドレットのすべてのパラメーターを示したり、使いやすいフォームにパラメーターを入力できるようにしたりして、コマンドの作成を助けます。
+Windows PowerShell ISE のヘルプは docs.microsoft.com にあります。 ヘルプを開くには、 **[ヘルプ]** メニューの **[Windows PowerShell ISE ヘルプ]** をクリックするか、<kbd>F1</kbd> キーを押します。これは、スクリプト ウィンドウまたはコンソール ウィンドウでコマンドレット名の上にカーソルがある場合を除き、どこからでも実行できます。
+**[ヘルプ]** メニューからは、`Update-Help` コマンドレットを実行することや、コマンド ウィンドウを表示することもできます。コマンド ウィンドウは、コマンドレットのすべてのパラメーターを示したり、使いやすいフォームにパラメーターを入力できるようにしたりして、コマンドの作成を助けます。
 
 ## <a name="see-also"></a>参照
 

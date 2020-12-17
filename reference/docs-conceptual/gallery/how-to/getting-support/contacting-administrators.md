@@ -1,13 +1,13 @@
 ---
-ms.date: 06/12/2017
+ms.date: 12/01/2020
 title: ギャラリーの管理者に問い合わせる
 description: この記事では、どのような場合に、どのような方法で PowerShell ギャラリーの管理者に連絡するかについて説明します
-ms.openlocfilehash: 500fff8ccc8f595d92b66e79c64ebf5e66185313
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: 6e3dccc44242e451fc6062aad6b8ae5a0ca54a9d
+ms.sourcegitcommit: 62282bb9c36fea3b4290b9263c1cd8e9ac216e29
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92661185"
+ms.lasthandoff: 12/01/2020
+ms.locfileid: "96470368"
 ---
 # <a name="contact-gallery-administrators"></a>ギャラリーの管理者に問い合わせる
 
@@ -25,4 +25,4 @@ ms.locfileid: "92661185"
 
 1. 電子メールをお送りください: cgadmin@microsoft.com。
 1. パッケージの不正使用について報告する場合、左パネルのパッケージ情報の下に [不正使用を報告] リンクがあります。
-1. その他、ギャラリーに関する一般的な質問がございましたら、[UserVoice](http://windowsserver.uservoice.com/forums/301869-powershell) に送信してください。
+1. その他、ギャラリーに関する一般的な質問がございましたら、GitHub の [PowerShell Gallery Issues](https://github.com/PowerShell/PowerShellGallery/issues) ページに送信してください。

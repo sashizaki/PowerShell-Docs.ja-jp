@@ -2,16 +2,16 @@
 ms.date: 12/31/2019
 title: ISEFile オブジェクト
 description: ISEFile オブジェクトは、Windows PowerShell ISE 内のファイルを表します。
-ms.openlocfilehash: 0de19c45bde7e5629d5721635150d3b0915aaa7d
-ms.sourcegitcommit: 488a940c7c828820b36a6ba56c119f64614afc29
+ms.openlocfilehash: b5ea70219787f254fe85d728518cbc4746c00250
+ms.sourcegitcommit: 2c311274ce721cd1072dcf2dc077226789e21868
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92662125"
+ms.lasthandoff: 11/10/2020
+ms.locfileid: "94391495"
 ---
 # <a name="the-isefile-object"></a>ISEFile オブジェクト
 
-**ISEFile** オブジェクトは、Windows PowerShell&reg; Integrated Scripting Environment (ISE) のファイルを表します。 これは **Microsoft.PowerShell.Host.ISE.ISEFile** クラスのインスタンスです。 このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。 `$psISE.CurrentFile` と、PowerShell タブのファイル コレクション内のファイルは、\*\***Microsoft.PowerShell.Host.ISE.ISEFile** クラスのすべてのインスタンスです。
+**ISEFile** オブジェクトは、Windows PowerShell Integrated Scripting Environment (ISE) のファイルを表します。 これは **Microsoft.PowerShell.Host.ISE.ISEFile** クラスのインスタンスです。 このトピックでは、そのメンバー メソッドとメンバー プロパティについて説明します。 `$psISE.CurrentFile` と、PowerShell タブのファイル コレクション内のファイルは、\*\***Microsoft.PowerShell.Host.ISE.ISEFile** クラスのすべてのインスタンスです。
 
 ## <a name="methods"></a>メソッド
 
@@ -21,11 +21,11 @@ Windows PowerShell ISE 2.0 以降でサポートされています。
 
 ファイルをディスクに保存します。
 
-**\[saveEncoding\]** - 省略可能な [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)。保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
+`[saveEncoding]` - 省略可能な [System.Text.Encoding](/dotnet/api/system.text.encoding)。保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
 
 ### <a name="exceptions"></a>例外
 
-- **System.IO.IOException** : ファイルを保存できませんでした。
+- **System.IO.IOException**: ファイルを保存できませんでした。
 
 ```powershell
 # Save the file using the default encoding (UTF8)
@@ -47,13 +47,13 @@ Windows PowerShell ISE 2.0 以降でサポートされています。
 
 **filename** - ファイルを保存するために使用する名前の文字列。
 
-**\[saveEncoding\]** - 省略可能な [System.Text.Encoding](https://msdn.microsoft.com/library/system.text.encoding.aspx)。保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
+`[saveEncoding]` - 省略可能な [System.Text.Encoding](/dotnet/api/system.text.encoding)。保存したファイルで使用する省略可能な文字エンコード パラメーター。 既定値は **UTF8** です。
 
 ### <a name="exceptions"></a>例外
 
-- **System.ArgumentNullException** : **filename** パラメーターが null です。
-- **System.ArgumentException** : **filename** パラメータが空です。
-- **System.IO.IOException** : ファイルを保存できませんでした。
+- **System.ArgumentNullException**: **filename** パラメーターが null です。
+- **System.ArgumentException**: **filename** パラメータが空です。
+- **System.IO.IOException**: ファイルを保存できませんでした。
 
 ```powershell
 # Save the file with a full path and name.
