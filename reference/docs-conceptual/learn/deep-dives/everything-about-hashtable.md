@@ -4,10 +4,10 @@ description: ハッシュテーブルは PowerShell で非常に重要である�
 ms.date: 05/23/2020
 ms.custom: contributor-KevinMarquette
 ms.openlocfilehash: 1539cf6444cab718c1108384c640193d66c85daf
-ms.sourcegitcommit: 39c2a697228276d5dae39e540995fa479c2b5f39
+ms.sourcegitcommit: 0c31814bed14ff715dc7d4aace07cbdc6df2438e
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/05/2020
+ms.lasthandoff: 12/17/2020
 ms.locfileid: "93354424"
 ---
 # <a name="everything-you-wanted-to-know-about-hashtables"></a>ハッシュテーブルについて知りたかったことのすべて
@@ -19,7 +19,7 @@ ms.locfileid: "93354424"
 
 ## <a name="hashtable-as-a-collection-of-things"></a>もののコレクションとしてのハッシュテーブル
 
-まず、ハッシュテーブルの従来の定義どおり、 **ハッシュテーブル** をコレクションとして見てください。 この定義により、後でより高度なことに使用する場合の動作に関する基本的な理解が得られます。 この理解をスキップすることは、多くの場合、混乱の原因になります。
+まず、ハッシュテーブルの従来の定義どおり、**ハッシュテーブル** をコレクションとして見てください。 この定義により、後でより高度なことに使用する場合の動作に関する基本的な理解が得られます。 この理解をスキップすることは、多くの場合、混乱の原因になります。
 
 ## <a name="what-is-an-array"></a>配列とは
 
